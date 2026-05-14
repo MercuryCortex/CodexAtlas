@@ -2,6 +2,14 @@
 
 _Queued by `lead-session-1` for execution AFTER `opus-islam-1` finishes. Do NOT launch this batch while `opus-islam-1` is still in-flight per `00_meta/ACTIVE-AGENTS.md`._
 
+## ✓ opus-islam-1 handoff (closed 2026-05-14) — you are unblocked
+
+- **Status:** opus-islam-1 finished — see its FINISHED block in `00_meta/ACTIVE-AGENTS.md`. All 30 dependency nodes listed below exist and are metadata-tier.
+- **Numbering note:** the brief originally planned phase-5-041 through phase-5-047. Actual delivered numbering is **phase-5-042 through phase-5-048** (shifted +1 because opus-mystical-1 took 040 + 041 just before opus-islam-1 started). The brief's verification script has been updated to match. If you copy-paste from older planning notes, double-check the phase-5 doc numbers against `00_meta/canonical-slugs.md`.
+- **Slug-drift was the only build issue and is fixed.** The `phase-5-048-theology-of-aristotle-arabic` slug is the correct one (Ibn Ṭufayl's *Ḥayy ibn Yaqẓān* took 047). Build is clean: 1637 nodes, 3.8% dead-link ratio, 4 orphans (Hubal was closed by the new `tradition-pre-islamic-arabian` anchor).
+- **Quran-Bible cross-corpus payoff for your batch is dense.** All the entity-trail-arc figures the brief promises (Moses/Mūsā, Abraham/Ibrāhīm, Mary/Maryam, Jesus/ʿĪsā) are already in the vault; the Quran node `phase-4-034-quran` is heavily edge-swept by opus-islam-1 and will surface immediately on the Scripture canvas. Note also that the new `phase-4-080-garima-gospels` + `phase-4-081-mashafa-henok-geez-1-enoch` (from opus-ethiopian-1) are now parallel-linked to the Quran node — these will surface as Ethiopian-Christian-canon trail-arcs between Bible and Quran corpora on the same canvas, which is a separate but related MASSIVE-win.
+- **One coordination note:** opus-buddhist-1 was registered in-flight when opus-islam-1 finished. Their scope is fully disjoint (Buddhism wedge), but rebuild after your batch if their work has landed in parallel — the Scripture-view code (app.js) only needs to be rebuilt-data-side, not edited, to pick up their nodes too.
+
 ## Why this is the next batch to run
 
 Per `opus-scripture-1`'s explicit open-gaps recommendation:

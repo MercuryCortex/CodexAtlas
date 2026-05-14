@@ -13,8 +13,10 @@ floruit-latest: -530
 historicity: "documented"
 texts-authored: []
 texts-attributed-to: ["the Cyrus Cylinder (Akkadian; royal proclamation, composed by Babylonian scribes in his name)"]
-events-participated: ["Conquest of Media -550", "Conquest of Lydia -547", "Conquest of Babylon -539", "Liberation/restoration edict for the Judahite exiles -538"]
-mentioned-in: ["Cyrus Cylinder", "Nabonidus Chronicle", "Behistun inscription (referenced by Darius)", "Herodotus Histories book 1", "Xenophon Cyropaedia", "Ezra 1, 6", "Isaiah 44:28, 45:1 ('YHWH's anointed' — the only Gentile so called)"]
+events-participated: ["Conquest of Media -550", "Conquest of Lydia -547", "[[event-cyrus-conquest-of-babylon-539-bce]] (the foundational Zoroastrian-Jewish theological-cultural-contact moment)", "Liberation/restoration edict for the Judahite exiles -538"]
+mentioned-in: ["Cyrus Cylinder", "Nabonidus Chronicle", "Behistun inscription (referenced by [[darius-i-the-great]])", "Herodotus Histories book 1", "Xenophon Cyropaedia", "Ezra 1, 6", "Isaiah 44:28, 45:1 ('YHWH's anointed' — the only Gentile so called)"]
+successor: "[[darius-i-the-great]] (third Achaemenid king after Cyrus and Cambyses; the Zoroastrian-imperial-religious systematizer)"
+priestly-class-of-cyrus's-religion: "[[the-magi]] (the Zoroastrian priestly class; explicitly named in Matthew 2 Christian Nativity as 'Wise Men from the East')"
 status: "stub"
 refs:
   - title: "From Cyrus to Alexander: A History of the Persian Empire"

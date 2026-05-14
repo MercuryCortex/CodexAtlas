@@ -10,10 +10,11 @@ period-active-latest: 700
 domains: ["the Lie (druj)", "evil", "cosmic adversary", "death", "non-being"]
 gender: "masculine"
 role: "cosmic adversary of Ahura Mazda; principle of evil"
-parent-of: ["the daēvas (demons)"]
+parent-of: ["[[aeshma]] (daeva of wrath; principal demon, the etymological source of Asmodeus)", "[[druj]] (the cosmic Lie principle)", "the daēvas (demons) generally"]
 child-of: []
-consort: ["Jeh / Jahi (the Whore, in Pahlavi-period mythology)"]
+consort: ["Jeh / Jahi (the Whore-demoness, in Pahlavi-period mythology — a specific form of [[druj]])"]
 attributes: ["darkness", "the serpent"]
+defeated-by: ["[[saoshyant]] (at the [[frashokereti-cosmic-renovation]] — the cosmic-eschatological combat)"]
 attested-in: ["[[phase-2-002-gathas-of-zarathustra]]", "[[phase-2-004-yasna-younger-avesta]]", "Pahlavi Bundahishn"]
 equivalents: []
 syncretic-edges:

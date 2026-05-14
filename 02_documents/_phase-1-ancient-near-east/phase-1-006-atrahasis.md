@@ -15,7 +15,7 @@ script: "Cuneiform"
 region: "Mesopotamia (Babylonia)"
 city-of-origin: "Sippar (most extensive OB tablets bear Sippar scribal colophons)"
 authorship: "known (the OB colophons name Ku-Aya / Nūr-Aya as scribe; ultimate composer anonymous)"
-key-figures: []
+key-figures: ["[[atrahasis-flood-hero]] (the Akkadian flood-hero — the epic is named for him)"]
 themes: ["[[flood-motif]]", "[[primordial-waters]]", "[[divine-council]]", "[[creation-by-word]]", "[[antediluvian-civilization]]"]
 parallels: ["[[phase-1-004-gilgamesh-old-babylonian]]", "[[phase-1-008-enuma-elish]]"]
 influenced-by: ["earlier Sumerian flood traditions (Eridu Genesis, Sumerian Flood Story / Ziusudra)"]

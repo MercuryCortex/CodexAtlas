@@ -411,6 +411,17 @@ def collect_node_edges(nodes_by_id):
         ("appearances",       "symbol-attests-in"),
         ("deity-instances",   "symbol-iconography-of"),
         ("tradition-context", "symbol-in-tradition"),
+        # EVENT node outgoing fields. The pre-existing schema-event.md uses these YAML
+        # keys (participants / traditions-affected / documents-affected / documents-produced)
+        # but they were never registered as edge-emitters — so every event had ONLY incoming
+        # edges (from other nodes' `events-participated` etc.). That left the new monument
+        # event nodes orphaned in the Pantheon Monuments view (no edges → no family
+        # derivation → all bucket to "Other"). Registering these fields here closes the gap.
+        ("participants",        "participated-in"),   # event → person (mirrors person→event from events-participated)
+        ("traditions-affected", "affects-tradition"), # event → tradition (e.g., Chalcedon → Christianity, Hegira → Islam)
+        ("documents-affected",  "affects-document"),  # event → document (e.g., Nag Hammadi → Gospel of Thomas)
+        ("documents-produced",  "produces-document"), # event → document (e.g., Council of Nicaea → Nicene Creed)
+        ("deities-affected",    "affects-deity"),     # event → deity (rare; e.g., Akhenaten reform → Aten elevation)
     ]
     for node_id, node in nodes_by_id.items():
         fm = node["frontmatter"]

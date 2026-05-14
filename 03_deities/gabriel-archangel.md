@@ -23,6 +23,12 @@ syncretic-edges:
   - target: "[[the-amesha-spentas]]"
     type: "scholarly-parallel"
     source: "Boyce, Shaked, and others argue Second Temple Jewish archangelology absorbs Zoroastrian Amesha Spenta heptad; Gabriel-Michael-Raphael-Uriel + three more parallels the Zoroastrian seven"
+  - target: "[[sraosha]]"
+    type: "scholarly-parallel"
+    source: "Both are principal angelic-messenger figures + announcers (Sraosha announces with the rooster + the dawn; Gabriel announces the Annunciation = the dawn of the new age in Lk 1). Direct Zoroastrian → Jewish-Christian angelology influence documented at the Second-Temple-Judaism level (Boyce 1991, Hultgård 1998)"
+  - target: "[[asha-vahishta]]"
+    type: "scholarly-parallel"
+    source: "First Amesha Spenta (cosmic Truth-and-Order); Gabriel is first-named archangel in many Jewish-Christian-Islamic angel-hierarchies. Possible structural-parallel inheritance of the 'first-named-supreme-divine-being-after-God' angelological pattern"
 status: "stub"
 refs:
   - title: "Ascent to Heaven in Jewish and Christian Apocalypses"

@@ -7,7 +7,7 @@ date-end: 1872
 duration-years: 1
 region: "United Kingdom (British Museum, London)"
 event-type: "discovery"
-participants: ["George Smith (1840–1876, British Museum cuneiformist)"]
+participants: ["[[george-smith-cuneiformist]] (1840–1876, British Museum cuneiformist)"]
 traditions-affected: ["[[tradition-sumerian-mesopotamian]]", "[[tradition-judaism]]", "[[tradition-christianity-canonical]]"]
 documents-produced: []
 documents-affected: ["[[phase-1-004-gilgamesh-old-babylonian]]", "[[phase-1-006-atrahasis]]", "[[phase-1-008-enuma-elish]]", "Genesis 6–9 (biblical flood narrative)"]

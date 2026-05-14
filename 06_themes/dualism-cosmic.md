@@ -5,7 +5,9 @@ name: "Cosmic dualism"
 aka: ["cosmic-dualism", "Zoroastrian dualism", "two-principles dualism"]
 category: "theological"
 appearances: ["[[phase-2-002-gathas-of-zarathustra]]", "[[phase-2-004-yasna-younger-avesta]]", "[[phase-3-008-book-of-daniel]]", "[[phase-3-011-dead-sea-scrolls]]", "[[phase-4-014-cologne-mani-codex]]", "[[phase-4-015-kephalaia-of-the-teacher]]", "[[phase-4-016-shabuhragan]]"]
-deity-instances: ["[[ahura-mazda]]", "[[angra-mainyu-ahriman]]", "[[spenta-mainyu]]", "[[father-of-greatness]]", "[[prince-of-darkness-manichaean]]"]
+deity-instances: ["[[ahura-mazda]]", "[[angra-mainyu-ahriman]]", "[[spenta-mainyu]]", "[[asha-vahishta]] (cosmic Truth-and-Order — the principle-side of the foundational dualism)", "[[druj]] (the cosmic Lie principle — the counter-principle whose metaphysical-structure grounds the entire cosmic-dualism move)", "[[vohu-manah]] (Good Mind, the right-thought principle)", "[[aeshma]] (daeva of wrath — the etymological source of Christian Asmodeus)", "[[father-of-greatness]]", "[[prince-of-darkness-manichaean]]"]
+related-themes: ["[[frashokereti-cosmic-renovation]] (the cosmic-dualistic combat's eschatological resolution)", "[[cinvat-bridge-judgment]] (the individual-soul-judgment-application of cosmic-dualism)"]
+related-events: ["[[event-cyrus-conquest-of-babylon-539-bce]] (the foundational Zoroastrian-Jewish theological-cultural contact moment)"]
 status: "stub"
 refs:
   - title: "Zoroastrians: Their Religious Beliefs and Practices"

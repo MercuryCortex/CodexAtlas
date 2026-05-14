@@ -14,7 +14,11 @@ parent-of: ["Spenta Mainyu (the Bounteous Spirit, in some accounts identified wi
 child-of: []
 consort: ["Spənta Ārmaiti (Holy Devotion, an Amesha Spenta) in some traditions"]
 attributes: ["winged-disc fravahar (later iconography)", "fire as symbol/presence", "the seven Amesha Spentas as his hypostases"]
-attested-in: ["[[phase-2-002-gathas-of-zarathustra]]", "[[phase-2-004-yasna-younger-avesta]]", "Achaemenid royal inscriptions (Bisotun, Persepolis)"]
+attested-in: ["[[phase-2-002-gathas-of-zarathustra]]", "[[phase-2-004-yasna-younger-avesta]]", "Achaemenid royal inscriptions (Bisotun / [[darius-i-the-great]]'s Behistun Inscription, Persepolis, Naqsh-e Rustam)"]
+parent-of: ["[[asha-vahishta]] (the first Amesha Spenta)", "[[vohu-manah]] (the second Amesha Spenta)", "[[atar]] (the divine fire)", "Spenta Mainyu (the Bounteous Spirit, in some accounts identified with Ahura Mazda himself)"]
+related-events: ["[[event-cyrus-conquest-of-babylon-539-bce]]"]
+eschatological-agents: ["[[saoshyant]] (the future cosmic-savior whose deeds inaugurate the [[frashokereti-cosmic-renovation]])", "[[sraosha]] (psychopomp at the [[cinvat-bridge-judgment|Cinvat Bridge]])"]
+priestly-class: "[[the-magi]]"
 equivalents: []
 syncretic-edges:
   - target: "varuna"

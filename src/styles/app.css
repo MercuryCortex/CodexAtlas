@@ -1260,6 +1260,76 @@ footer select:focus, footer input:focus { border-color: var(--gold-soft); }
 .alch-remove-wrap:hover .alch-remove { fill: var(--gold); }
 .alch-remove-wrap:hover circle.alch-remove { fill: var(--bg-3); stroke: var(--gold); }
 
+/* ATLAS view (opus-design-3) — equirectangular world map. Inherits the tier
+   overlay automatically because .atlas-mark carries data-tier (see app.js
+   VIEWS.atlas). All sizes use scale tokens; motion via --t-* / --ease. */
+/* Suppress the canvas radial gradient on Atlas so the map frame reads cleanly. */
+body.view-atlas main.canvas { background: var(--bg-0); }
+.atlas-frame {
+  fill: var(--bg-1);
+  stroke: var(--border);
+  stroke-width: 1;
+}
+.atlas-grid {
+  stroke: var(--text-3);
+  stroke-width: 0.6;
+  stroke-dasharray: 4 6;
+  opacity: 0.35;
+  pointer-events: none;
+}
+.atlas-equator { opacity: 0.55; }   /* the equator reads stronger */
+.atlas-continent {
+  fill: rgba(212, 165, 90, 0.08);
+  stroke: var(--gold-soft);
+  stroke-width: 1;
+  stroke-opacity: 0.75;
+  pointer-events: none;
+}
+.atlas-node { cursor: pointer; }
+.atlas-mark {
+  stroke: rgba(255, 255, 255, 0.20);
+  stroke-width: 0.8;
+  transition: r var(--t-micro) var(--ease),
+              stroke-width var(--t-micro) var(--ease),
+              opacity var(--t-micro) var(--ease);
+}
+.atlas-node:hover .atlas-mark { stroke: var(--gold); stroke-width: 2; }
+.atlas-node.atlas-hot .atlas-mark { stroke: var(--gold); stroke-width: 2; }
+.atlas-node.atlas-dim { opacity: 0.18; }
+.atlas-trail {
+  stroke: var(--gold);
+  stroke-opacity: 0.55;
+  stroke-width: 1;
+  pointer-events: none;
+  fill: none;
+}
+.atlas-label {
+  font-family: var(--serif);
+  font-size: var(--micro);
+  fill: var(--text-2);
+  text-anchor: middle;
+  pointer-events: none;
+  paint-order: stroke fill;
+  stroke: var(--bg-0);
+  stroke-width: 2.5;
+  stroke-linejoin: round;
+}
+.atlas-label.hub {
+  font-size: var(--lbl-md);
+  fill: var(--text-0);
+  letter-spacing: 0.02em;
+}
+.atlas-empty {
+  font-family: var(--serif);
+  font-size: var(--h2-size);
+  fill: var(--text-2);
+}
+.atlas-empty.sub {
+  font-size: var(--lbl-md);
+  fill: var(--text-3);
+  font-style: italic;
+}
+
 /* AUTHORS view */
 .authors-pane .authors-toolbar {
   position: sticky; top: 0; z-index: 2;

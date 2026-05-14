@@ -15,7 +15,7 @@ script: "Cuneiform"
 region: "Mesopotamia"
 city-of-origin: "Nippur (the principal manuscript, CBS 10673, is from the Nippur scribal-school excavations)"
 authorship: "anonymous (Sumerian scribal-school)"
-key-figures: ["Ziusudra (the flood hero — last antediluvian king of Shuruppak)"]
+key-figures: ["[[ziusudra]] (the flood hero — last antediluvian king of Shuruppak)"]
 themes: ["[[flood-motif]]", "[[antediluvian-civilization]]", "[[divine-council]]", "[[primordial-waters]]", "[[four-ages-degeneration]]"]
 parallels: ["[[phase-1-006-atrahasis]]", "[[phase-1-015-sumerian-king-list]]", "[[phase-1-004-gilgamesh-old-babylonian]]", "[[phase-2-005-hebrew-bible-j-source]]"]
 influenced-by: ["older oral Sumerian flood traditions; the Sumerian King List frame"]

@@ -7,9 +7,12 @@ date-emergence: -1200
 date-end:
 region-origin: "Eastern Iran / Bactria"
 regions-spread: ["Iranian plateau", "Achaemenid empire (pan-Near East)", "Sasanian empire", "Parsi diaspora (India, from ~9th c. CE)", "global modern diaspora"]
-key-deities: ["[[ahura-mazda]]", "[[angra-mainyu-ahriman]]", "[[spenta-mainyu]]", "[[the-amesha-spentas]]", "[[mithra-zoroastrian]]", "[[anahita]]"]
-key-persons: ["[[zarathustra]]", "[[cyrus-the-great]]"]
+key-deities: ["[[ahura-mazda]]", "[[angra-mainyu-ahriman]]", "[[spenta-mainyu]]", "[[the-amesha-spentas]]", "[[asha-vahishta]]", "[[vohu-manah]]", "[[mithra-zoroastrian]]", "[[anahita]]", "[[saoshyant]]", "[[sraosha]]", "[[verethragna]]", "[[atar]]", "[[yima-jamshid]]", "[[aeshma]]", "[[druj]]"]
+key-persons: ["[[zarathustra]]", "[[cyrus-the-great]]", "[[darius-i-the-great]]", "[[the-magi]]"]
 key-documents: ["[[phase-2-002-gathas-of-zarathustra]]", "[[phase-2-004-yasna-younger-avesta]]"]
+key-symbols: ["[[faravahar]]", "[[sacred-fire-atash]]", "[[haoma]]"]
+key-themes: ["[[frashokereti-cosmic-renovation]]", "[[cinvat-bridge-judgment]]", "[[dualism-cosmic]]"]
+key-events: ["[[event-cyrus-conquest-of-babylon-539-bce]]"]
 sister-traditions: ["[[tradition-vedic-hinduism]]", "[[tradition-judaism]]"]
 status: "stub"
 refs:

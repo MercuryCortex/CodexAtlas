@@ -1,7 +1,145 @@
 # Handoff — fresh-session pickup
 
-**Last updated:** 2026-05-14, end-of-session before folder-rename-aware fresh restart.
+**Last updated:** 2026-05-14 ~22:00 (after the `opus-hermetic-1` / `opus-scripture-2` / infra-sweep block — vault is now under git for the first time).
 **Read me first if you're a fresh Claude Code session opening this vault.**
+
+---
+
+## 🆕 Session 2026-05-14 late-PM closing remarks (read this first)
+
+### Headline change for new agents
+
+The vault is **now under git** (initialized this session — `git log` shows 4 commits; the housekeeper agents are committing their own batches). **Your batch should commit at end-of-batch** — do not leave uncommitted state. Use `git add -A && git commit -m "<handle>: <one-line>"` with the `Co-Authored-By: Claude Opus 4.7 (1M context) <noreply@anthropic.com>` trailer. Don't push; there is no remote yet (per John's intent).
+
+### New tools you should run during pre-flight
+
+In addition to reading DASHBOARD + canonical-slugs + methodology + per-phase _TODO:
+
+```bash
+python3 lint_yaml.py            # 0.3s — flags missing YAML, slug drift, date inversions, dead wikilinks
+                                # writes 00_meta/lint-report.md; --strict exits 1 on any ERROR
+```
+
+The DASHBOARD now also has an **"Open AUDIT proposals"** section at the top listing all 12 standing audits in `AUDIT/`. Read these *before* starting an architectural batch — proposals there have been sitting unimplemented across multiple sessions because the work-queue routing only surfaces unstubbed-wikilink targets, not the architectural extensions in `AUDIT/04_methodology_proposals.md` (material-witness layer, geographic map view, scholar role-class, new edge types).
+
+### What just finished in this block (post-flood-1)
+
+| Batch | Scope | Count / artifact |
+|---|---|---|
+| `opus-hermetic-1` | Corpus Hermeticum primary-text deepening: CH XIII rebirth dialogue, Stobaean Hermetica + Kore Kosmou, Armenian Definitions (Mahé), NHC VI,7 Prayer of Thanksgiving, NHC VI,8 Coptic Asclepius; persons Fowden / Copenhaver / Nock / Festugière / Mahé / van Bladel / Tat / Lactantius; themes hermetic-rebirth / hermetic-piety / hermetic-cosmogony; events Stobaeus c500 / Sabian-Harranian transmission c800–1000 | 18 nodes + 4 edge-sweeps |
+| `opus-scripture-2` | Scripture-view corpora wiring: **Hermetica** (13 books × 6 sections) + **Nag Hammadi** (16 tractates × 8 codices) + **Qurʾān** (single-island starter — 39 entities, the densest single hull in the wiring pass). Scripture tab now has 6 live corpora total (Bible · Kebra Nagast · Ethiopic Tewahedo · Hermetica · Nag Hammadi · Qurʾān) | app-code only |
+| `AUDIT/10_app-and-infrastructure-audit.md` | App / engineering / UX / infra audit, complementary to the content-side audits 00–09. Headline: no git, no CI, no URL routing, no map view, no responsive layout, no PWA, no test suite. Top-10 fix list. §6 surfaces the structural meta-finding that DASHBOARD doesn't surface AUDIT proposals so they rot. | new audit |
+| infra-sweep (this agent) | Three fast+critical audit-10 fixes: **`git init`** + .gitignore (later extended by housekeeper-2 to also ignore data.js + per-phase _TODO + .obsidian/workspace.json + .claude/), **`build_dashboard.py` → "Open AUDIT proposals" section** at top of DASHBOARD, **`lint_yaml.py`** stdlib linter (0.3s; ERROR/WARN tracks; CI-ready). Caught + fixed 1 ERROR (empty `tradition-slavic.md` — filled with proper stub). | 2 commits, 1 stub fix, 4 audits surfaced |
+| concurrent agents (housekeeper-1, housekeeper-2, others) | Vault-wide cleanup including .obsidian/{app,appearance,core-plugins,graph}.json normalization, .gitignore extension, AUDIT/12 status track, dashboard regen | tracked in their own commits |
+
+**Vault delta this block:** ~1681 → **1691 nodes scanned** by the linter at session-close (live count likely 1700+ as concurrent agents land work) · dead-link ratio improved to **3.6%** · 9556 edges (likely 9700+ after the in-flight commits land).
+
+### What's still in flight at session close
+
+Multiple agents have uncommitted concurrent work staged at session-close (the final session-close commit will sweep these). If you start a fresh session immediately, do `git status` first — there may be loose state.
+
+### Top-of-mind things for the next session
+
+1. **Hash-based URL router** — fastest remaining audit-10 win (~50 lines, ~1hr). Unblocks every "share with someone" use case.
+2. **`.github/workflows/check.yml`** — needs git remote first. When John adds one, this is a 1-day setup that gives CI on `lint_yaml.py --strict` + `build_dashboard.py`.
+3. **`AUDIT/04_methodology_proposals.md` items** — material-witness `09_material/` layer, geographic Map view, scholar role-class — all still untouched. The DASHBOARD now surfaces these so any pre-flight will see them.
+4. **Lint warnings to chip away at** — 34 schema/date warnings (mostly the `id: foo` vs file stem `event-foo` / `tradition-foo` drift documented in scripture-1 v2's open-gap list). Mechanical fix; a one-shot script could correct them.
+
+---
+
+---
+
+## 🆕 Session 2026-05-14 PM closing remarks (most recent — read this first)
+
+> This block is the latest fresh-session-pickup. The original 2026-05-14 morning handoff follows below; it remains valid context but is partly historical now.
+
+### What just finished (5 batches, this session)
+
+| Batch | Scope | Count |
+|---|---|---|
+| `opus-ethiopian-1` | Aksumite-to-modern Tewahedo + Coptic/Oriental-Orthodox parent layer (foundational Ethiopian Christian wedge) | 37 nodes |
+| `opus-ethiopian-2` | Ethiopian-canonical figures: Watchers, full Enochic 7-archangels, Jubilees Mastema + Angel-of-Presence, Parables Son-of-Man + Head-of-Days, pre-Christian Aksumite pantheon (Almaqah/Mahrem/Astar/Beher/Meder), Meqabyan trio | 21 nodes |
+| `opus-ethiopian-3` | Scripture-view Ethiopian corpora wiring (Kebra Nagast + Ethiopic Tewahedo Broader Canon) | app-code only |
+| `opus-ethiopian-4` | Extra Ethiopian-canonical books (4 Ezra, Mashafa Kidan, Sinodos, Yosippon) + characters (Hermas, Cainan, Shepherd, Lady-Ecclesia, Mary-of-Zion) + 4 more Watchers + 4 Nephilim **incl. Gilgamesh-Nephilim MASSIVE-win** | 17 nodes |
+| `opus-flood-1` | Cross-tradition Flood wedge: 9 flood-heroes across Mesopotamian/Hebrew/Greek/Vedic/Chinese traditions + Matsya/Bergelmir/Gonggong + Berossus + George Smith + Ovid Met 1 + Black Sea Deluge 1997 + Ark/Rainbow/Ararat symbols + flood-motif theme upgrade | 17 nodes + theme upgrade |
+
+**Vault delta across the session:** ~1467 → **1767 nodes** · dead-link ratio held in the 3.4–4.6% band · final state **3.4%** · edges grew to **10,561**.
+
+### What's still in flight (don't collide with)
+
+Check `ACTIVE-AGENTS.md` at-a-glance table at the top before picking work. As of close-out, in-flight content batches:
+- **`opus-hellenic-3`** — Mystery-cult capstone (Iacchus, Triptolemus, Apuleius, Bacchae, Oresteia).
+- **`opus-gaps-1`** — Coptic/Oriental-Orthodox founders + Buddhist follow-ups + dead-link closure. Owns several slugs I was tempted to do (Dioscorus, Severus, Jacob Baradaeus, Shenoute, hagiography theme, tewahedo-christology). **DO NOT DUPLICATE.**
+
+### What the user explicitly wants done next (open gaps from this session's batches)
+
+The user's framing across the session: **"MASSIVE wins"** = cross-tradition tracing edges from later traditions back to older ones, especially anything Christianity → older. **And "across all families"** when adding a thematic cluster (flood, etc.). The user prefers terse onboarding → dig style; don't over-plan.
+
+**Ethiopian wedge — remaining ~15-20% (priorities from opus-ethiopian-4's open-gaps section):**
+
+1. **Modern Ethiopia + Beta Israel** — historical [[menelik-ii]] (defeated Italy at Adwa 1896), [[tewodros-ii]], [[yohannes-iv]], [[fasilides]], [[susenyos-i]], [[yekuno-amlak]]; events: [[event-battle-of-adwa-1896]] (a huge anti-colonial moment), [[event-italian-invasion-of-ethiopia-1935-1941]], [[event-ethiopian-church-autocephaly-1959]], [[event-derg-period-1974-1991]]; Beta Israel tradition + [[abba-sabra]] + [[event-operation-moses-1984]] + [[event-operation-solomon-1991]].
+2. **Yodit/Gudit** — legendary 10th-c. Jewish queen who attacked Aksum.
+3. **17th-c. Zara Yacob the philosopher** — distinct from the 15th-c. emperor [[zara-yaqob-emperor]]; *Hatata* author. Authenticity contested (Conti Rossini 1920 forgery claim vs. Sumner 1976 authenticity defense).
+4. **Walatta Petros as a person node** — her hagiography exists as [[phase-7-040-walatta-petros-hagiography]] but she herself does not.
+
+**Flood wedge — remaining ~10-15% (priorities from opus-flood-1's open-gaps section):**
+
+5. **Mesoamerican flood-survivors** — Tata + Nene (Aztec Nahui Atl); the wooden-men flood from Popol Vuh (already in [[phase-8-001-popol-vuh]] but no character nodes).
+6. **Andean Viracocha-era flood** + Pachakamak.
+7. **Polynesian flood-narratives** (Hawaiian, Maori).
+8. **Tiddalik the frog** (Australian Aboriginal).
+9. **Native American flood-narratives** (Pacific Northwest, Inuit, Algonquian — extensive corpus).
+10. **Babel-und-Bibel controversy 1902–1904** as event + **Friedrich Delitzsch** as person — the German-Protestant institutionalization of comparative-religion question after Smith 1872.
+11. **Andrew George** and **W.G. Lambert** as person nodes — the critical-edition editors of Mesopotamian flood texts.
+
+**Sister Oriental Orthodox layer (opus-gaps-1 owns some of this):**
+
+12. Whatever opus-gaps-1 doesn't close: tradition-malankara-syrian (Indian Saint Thomas Christians); founders Severus/Dioscorus/etc. that opus-gaps-1 didn't get to.
+
+### Pre-flight protocol (mandatory — see `AGENTS.md` at vault root for the 60-second version)
+
+```
+1. Read this HANDOFF.md (you're here).
+2. Read 00_meta/STATUS.md — the recently-completed batches headlines.
+3. Read 00_meta/ACTIVE-AGENTS.md at-a-glance table — DO NOT COLLIDE with in-flight slugs.
+4. Read 00_meta/canonical-slugs.md before naming any new node — slug drift was the #1 dead-link source.
+5. Read the relevant 00_meta/schema-<type>.md for the node type you're creating.
+6. Append your `opus-<wedge>-<n>` claim block to ACTIVE-AGENTS.md (table row + full block) before starting.
+7. After your batch: `cd "~/Desktop/Codex Atlas" && python3 build_data.py && python3 build_dashboard.py`
+8. Update your claim block to `Status: finished` with full delivery list + MASSIVE-win edges + open-gaps for next agent.
+9. Add a one-paragraph entry to STATUS.md "Recently completed batches" block.
+```
+
+### Memory pointers (for future sessions of mine)
+
+Memory dir: `~/.claude/projects/-Users-user-Desktop-Codex-Atlas/memory/`
+
+Already saved:
+- `MEMORY.md` (index) + `project_codex_atlas.md` + `user_role.md` (John) + `feedback_massive_wins.md` + `feedback_preflight_protocol.md` + `feedback_multi_agent_coordination.md` + `project_ethiopian_wedge.md` + `project_audit_folder.md`.
+
+The feedback_preflight_protocol.md was extended mid-session by another agent (opus-housekeeper-1) to include the AGENTS.md + ACTIVE-AGENTS at-a-glance table reading steps. The `feedback_multi_agent_coordination.md` covers the register-your-batch-in-the-group protocol that John explicitly asked for.
+
+### Quick-start commands for a fresh session
+
+```bash
+# verify write access
+touch "~/Desktop/Codex Atlas/03_deities/_perm_test" && rm "~/Desktop/Codex Atlas/03_deities/_perm_test" && echo "OK"
+
+# state-of-vault snapshot
+cd "~/Desktop/Codex Atlas" && head -40 00_meta/DASHBOARD.md
+
+# in-flight agents to coordinate with
+head -33 00_meta/ACTIVE-AGENTS.md
+```
+
+### One-line recommendation for the next agent
+
+**The highest-leverage next batch is modern Ethiopia + Beta Israel** (#1 above) — this closes the most-visible remaining gap in the user-prized Ethiopian wedge: Battle of Adwa 1896 is a single huge moment that connects the wedge to global late-19th-c. anti-colonial history. Roughly 12-15 nodes; ~30-40 minutes of focused work.
+
+---
+
+## (Original 2026-05-14 morning handoff continues below — partly historical now)
+
 
 The user is John (memory at `~/.claude/projects/-Users-user-Desktop-John-Bio/memory/`). The vault is **Codex Atlas** at `~/Desktop/Codex Atlas/`. The project is a cross-tradition investigation tool — a map of every named deity, primary religious document, key historical figure, event, theme, and tradition across time, plus the people behind the texts (authors, redactors, scribes, translators).
 

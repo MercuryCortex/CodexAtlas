@@ -15,7 +15,7 @@ script: "Cuneiform"
 region: "Mesopotamia (Babylonia and Diyala region)"
 city-of-origin: "Babylon / Larsa / Sippar (uncertain — multiple OB centers)"
 authorship: "anonymous (drawing on earlier Sumerian Gilgamesh poems)"
-key-figures: []
+key-figures: ["[[gilgamesh-king]]", "[[utnapishtim]] (Tablet XI flood-hero narrator)"]
 themes: ["[[afterlife-judgment]]", "[[divine-kingship]]", "[[flood-motif]]", "[[dying-rising-god]]", "[[sacred-marriage]]"]
 parallels: ["[[phase-1-006-atrahasis]]", "[[phase-1-008-enuma-elish]]", "[[phase-1-005-instructions-of-shuruppak]]"]
 influenced-by: ["earlier Sumerian Gilgamesh poems (Bilgames and Akka; Bilgames and Huwawa; Bilgames and the Bull of Heaven; Bilgames and the Netherworld; Death of Bilgames)"]

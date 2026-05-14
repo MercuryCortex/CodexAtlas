@@ -13,8 +13,8 @@ if (!window.VAULT_DATA) document.getElementById('missing-data').style.display = 
 // dropdowns/menus until the implementation lands.
 // ============================================================
 const FEATURES = {
-  pantheonMonuments: false, // placeholder mode — no payload yet
-  atlasMap:          false, // proposed: lat/lon world view
+  pantheonMonuments: true,  // 23 monument-tagged events live (opus-monuments-1, 2026-05-14)
+  atlasMap:          true,  // opus-design-3 — lat/lon world map view
   transmissionFlow:  false, // proposed: cross-tradition Sankey
   threadsView:       false, // proposed: bridge-figure ladder
   tierOverlay:       true,  // opus-design-2 — Source-Integrity-Tier overlay
@@ -38,7 +38,33 @@ DATA.nodes.forEach(n => {
 });
 
 const NODES_BY_ID = Object.fromEntries(DATA.nodes.map(n => [n.id, n]));
-const EDGES = DATA.edges.filter(e => NODES_BY_ID[e.source] && NODES_BY_ID[e.target]);
+
+// Slug-drift resolver — applied at the EDGES pipeline at app init so drifted edges get
+// canonicalized once for all views to use, rather than dropped. The vault has inconsistent
+// ID conventions: tradition nodes sometimes use `tradition-X`, sometimes plain `X`
+// (christianity-canonical, egyptian, greek-religion, buddhism); documents use `PX-NNN-*`
+// but wikilinks often write `phase-X-NNN-*`. Edges land on the drifted form. Resolving
+// at this layer means every view (Pantheon family-derivation, Connections, Detail panel,
+// edge rendering) all see the same canonical IDs. ~4800 previously-dropped edges return.
+function _resolveNodeId(id) {
+  if (NODES_BY_ID[id]) return id;
+  if (typeof id !== 'string') return null;
+  if (id.startsWith('tradition-') && NODES_BY_ID[id.slice(10)]) return id.slice(10);
+  if (NODES_BY_ID['tradition-' + id]) return 'tradition-' + id;
+  const m = id.match(/^phase-(\d+)-(\d+)([a-z]?)-(.+)$/);
+  if (m) {
+    const alt = `P${m[1]}-${m[2]}${m[3]}-${m[4]}`;
+    if (NODES_BY_ID[alt]) return alt;
+  }
+  return null;
+}
+const EDGES = DATA.edges.map(e => {
+  const s = _resolveNodeId(e.source);
+  const t = _resolveNodeId(e.target);
+  if (!s || !t) return null;
+  if (s === e.source && t === e.target) return e;       // already canonical — pass through
+  return Object.assign({}, e, { source: s, target: t }); // rewrite source/target only
+}).filter(Boolean);
 const TRADITIONS = DATA.traditions || [];
 const FAMILIES = DATA.families || [];
 
@@ -209,6 +235,18 @@ const symbolDiamondEqual = {
   },
 };
 
+// Defensive accessor for node tags. ~17 nodes in the vault have `tags` serialized as a
+// STRING by build_data.py (multi-line YAML array truncation bug) instead of an array,
+// which throws when callers do `n.tags.map/some/includes`. This normalizes any shape —
+// array, string, undefined, null — into a string[] for safe iteration.
+function tagsOf(n) {
+  const t = n && n.tags;
+  if (!t) return [];
+  if (Array.isArray(t)) return t.map(x => String(x).toLowerCase());
+  if (typeof t === 'string') return t.replace(/[\[\]"']/g, '').split(/[,\s]+/).filter(Boolean).map(x => x.toLowerCase());
+  return [];
+}
+
 // Custom symbol for monuments — a small "temple" silhouette: a triangle pediment over
 // a rectangular base. Reads as built architecture (church, temple, mosque, stupa).
 // Designed to fit a bounding box of ~2r × ~2r so it sizes the same as a circle.
@@ -251,7 +289,7 @@ function shapeFor(n) {
       // Events tagged as `monument` render as a temple silhouette (pediment+base), not
       // the standard star. Lets the Pantheon Monuments mode read at a glance — discovery
       // sites, churches, temples, mosques all share this little-building icon.
-      if ((n.tags || []).some(t => String(t).toLowerCase() === 'monument')) return symbolMonument;
+      if (tagsOf(n).includes('monument')) return symbolMonument;
       return d3.symbolStar;
     case 'document':  return d3.symbolSquare;
     case 'theme':     return d3.symbolTriangle;
@@ -452,6 +490,12 @@ const svg = d3.select('#svg');
 const legend = d3.select('#legend');
 
 function setView(name) {
+  // Track whether this is a view CHANGE vs a re-render of the same view (driven by
+  // ResizeObserver or window resize). On a re-render, we must NOT touch the detail-panel
+  // collapse state — that would close the panel a user just opened by clicking a node.
+  // The ResizeObserver fires ~220ms after a node click because the panel-open animation
+  // changes the SVG width; without this guard, the panel would slam shut.
+  const _isViewChange = STATE.view !== name;
   STATE.view = name; STATE.focusId = null;
   // Body class for view-specific styling hooks (e.g., timeline gets uniform bg, no radial gradient).
   document.body.className = document.body.className.replace(/\bview-\S+\b/g, '').trim() + ' view-' + name;
@@ -467,11 +511,12 @@ function setView(name) {
   hideTooltip();
   // Map thumbnail only on geo-relevant views; hide elsewhere
   const showMap = (name === 'pantheon' || name === 'documents' || name === 'timeline' || name === 'alchemy' || name === 'scripture');
-  // Default-collapse the detail panel when entering ANY map view so the canvas claims full
-  // width. The panel reopens automatically when the user clicks a node (selectNode below).
-  // Per user request: "when you click timeline the side panel is default not active collapsed
-  // (the same should go to the MAPS)". The toggle glyph is flipped to match.
-  if (showMap) {
+  // Default-collapse the detail panel ONLY on a view CHANGE (e.g., Pantheon → Timeline),
+  // not on a re-render of the same view. Re-renders are triggered by ResizeObserver and
+  // window-resize listeners — if we collapsed on those, clicking a Timeline event would
+  // open the panel briefly and then snap shut ~220ms later when the ResizeObserver fires
+  // (because opening the panel changes the SVG width, which trips the observer).
+  if (showMap && _isViewChange) {
     document.body.classList.add('detail-collapsed');
     const dt = document.getElementById('detail-toggle');
     if (dt) dt.textContent = '‹';
@@ -645,7 +690,7 @@ VIEWS.pantheon = {
         // No 'monument' node type exists yet — see AUDIT/ for future work. For now,
         // anything tagged `monument` or with a `monument` category passes; in practice
         // this filter returns ~zero nodes and the empty-state card below explains.
-        const tags = (n.tags || []).map(t => String(t).toLowerCase());
+        const tags = tagsOf(n);
         if (!tags.includes('monument') && (n.category || '').toLowerCase() !== 'monument') return false;
       }
       const f = STATE.filter;
@@ -671,6 +716,63 @@ VIEWS.pantheon = {
     // events / monuments (battles, polemics, syncretic sites) draw natural edges between
     // wedges. Monuments are events with `tags: [monument]` per the v1 data model.
     if (mode === 'events' || mode === 'monuments') {
+      // Slug-drift resolver: the vault has inconsistent ID conventions. Some tradition
+      // nodes use `tradition-X`, others use plain `X` (christianity-canonical, egyptian,
+      // greek-religion, buddhism). Documents use `PX-NNN-*` but wikilinks often write
+      // `phase-X-NNN-*`. Many edges therefore land on un-resolvable target IDs. Probe
+      // alternates so drifted edges still contribute to family voting.
+      function resolveAlias(id) {
+        if (NODES_BY_ID[id]) return NODES_BY_ID[id];
+        if (id.startsWith('tradition-') && NODES_BY_ID[id.slice(10)]) return NODES_BY_ID[id.slice(10)];
+        if (NODES_BY_ID['tradition-' + id]) return NODES_BY_ID['tradition-' + id];
+        const m = id.match(/^phase-(\d+)-(\d+)([a-z]?)-(.+)$/);
+        if (m) {
+          const alt = `P${m[1]}-${m[2]}${m[3]}-${m[4]}`;
+          if (NODES_BY_ID[alt]) return NODES_BY_ID[alt];
+        }
+        return null;
+      }
+      // Mirror of build_data.py's tradition_family() — tradition nodes themselves carry
+      // family:"Other" in the build output (the function only runs on deity/document
+      // nodes' tradition fields, not on tradition nodes themselves). So when a vote
+      // resolves to a tradition, fall back to deriving the family from the tradition's
+      // slug or title. Without this, Parthenon's only edge (to `tradition-greek-religion`)
+      // contributes no vote; with it, Greek wins.
+      function familyFromTraditionSlug(slug) {
+        const s = String(slug || '').toLowerCase();
+        if (!s) return null;
+        if (/gnostic|sethian|valentinian|thomasine/.test(s))                                return 'Gnostic';
+        if (/mandae/.test(s))                                                                return 'Mandaean';
+        if (/manichae/.test(s))                                                              return 'Manichaean';
+        if (/neoplaton|plotin|iambl|procl/.test(s))                                          return 'Neoplatonist';
+        if (/hermetic|hermetism/.test(s))                                                    return 'Hermetic';
+        if (/mystery|mithra|orphic|eleusin|phrygian|bacchic/.test(s))                        return 'Mystery';
+        if (/christian|patristic|coptic|byzantine|lutheran|calvinist|reformed|protestant|catholic|anglican|rosicrucian|freemason|mormon|baha|scientology|spiritualist|new-age|wicca|rastafari/.test(s)) return 'Christian';
+        if (/rabbinic|mishnah|talmud|midrash|kabbal|hasidic|hasidism|merkavah|hekhalot|sabbatean|frankist/.test(s)) return 'Rabbinic';
+        if (/islam|qur|sufi|shia|ismaili|alevi|druze|yazidi|muslim/.test(s))                 return 'Islamic';
+        if (/buddh|theravada|mahayana|zen|chan|vajra|pure-land|dzogchen|bon\b/.test(s))      return 'Buddhist';
+        if (/sikh|vedic|hindu|upanish|brahman|tantric|vaishnav|shakta|shaiv|bhakti|vedanta|jain|hindutva/.test(s)) return 'Vedic';
+        if (/zoroastr|mazda|parsi/.test(s))                                                  return 'Zoroastrian';
+        if (/greek-religion|hellenistic-philosophy|stoic|pythagor|platon\b|aristotel/.test(s)) return 'Greek';
+        if (/roman-religion|etruscan|italic/.test(s))                                        return 'Roman';
+        if (/egyptian|kemetic/.test(s))                                                      return 'Egyptian';
+        if (/mesopotam|sumer|akkad|babylonian|assyrian|canaanite|ugarit|phoeni/.test(s))     return 'Mesopotamian';
+        if (/norse|germanic|asatru/.test(s))                                                 return 'Norse';
+        if (/celt|druid/.test(s))                                                            return 'Celtic';
+        if (/slavic|finno|finn|karel/.test(s))                                               return 'Slavic-Finnic';
+        if (/yoruba|ifa|vodou|santeria|lucumi|african|akan|dogon|zulu/.test(s))              return 'African';
+        if (/aztec|maya|mexica|inca|andean|mesoamerican/.test(s))                            return 'Mesoamerican';
+        if (/polynesian|maori|hawaiian|pacific|aboriginal|melanesian/.test(s))               return 'Pacific';
+        if (/native-american|navajo|hopi|iroquois|lakota/.test(s))                           return 'Native-American';
+        if (/confucian|daoist|chinese|tao\b/.test(s))                                        return 'Chinese';
+        return null;
+      }
+      function familyOf(node) {
+        if (node.family && node.family !== 'Other') return node.family;
+        // Tradition nodes default to "Other" in the build output — recover via slug.
+        if (node.type === 'tradition') return familyFromTraditionSlug(node.id) || familyFromTraditionSlug(node.title);
+        return null;
+      }
       // Build a family → color lookup from any existing typed node (deities have it set).
       const famColor = {};
       DATA.nodes.forEach(n => {
@@ -681,14 +783,15 @@ VIEWS.pantheon = {
       // Vote tally for each event.
       const votes = {};
       EDGES.forEach(e => {
-        const s = NODES_BY_ID[e.source], t = NODES_BY_ID[e.target];
+        const s = resolveAlias(e.source);
+        const t = resolveAlias(e.target);
         if (!s || !t) return;
         let evId = null, other = null;
         if (s.type === 'event') { evId = s.id; other = t; }
         else if (t.type === 'event') { evId = t.id; other = s; }
         else return;
-        const fam = other.family;
-        if (!fam || fam === 'Other') return;
+        const fam = familyOf(other);
+        if (!fam) return;
         votes[evId] = votes[evId] || {};
         votes[evId][fam] = (votes[evId][fam] || 0) + 1;
       });
@@ -1962,7 +2065,13 @@ VIEWS.timeline = {
         bEnter.append('path').attr('class', 'tl-event-shape')
           .attr('data-tier', p => p.d._tier ?? 'none');
       }
-      bEnter.on('click', (ev, p) => selectNode(p.d.id))
+      bEnter.on('click', (ev, p) => {
+              // stopPropagation: keep the click from bubbling to the SVG-level
+              // empty-click handler (which would otherwise immediately close the
+              // detail panel that selectNode just opened). Matches Pantheon's pattern.
+              ev.stopPropagation();
+              selectNode(p.d.id);
+            })
             .on('mouseenter', (ev, p) => {
               showTooltip(
                 `${tooltipThumb(p.d)}<div class="ttitle">${p.d.title}</div>
@@ -2488,7 +2597,36 @@ const SCRIPTURE_CORPORA = {
     ],
   },
   // Placeholders — surface in the dropdown, render an empty-state card when picked.
-  'tanakh':         { label: 'Tanakh · Hebrew Bible (separate canon view)',  available: false },
+  // ----- Tanakh — Jewish canonical TaNaKh organization (Torah/Neviʼim/Ketuvim),
+  // deliberately distinct from the Christian-Bible corpus view. Shares the same
+  // source documents but excludes the NT, deutero-canonical books (Wisdom-of-
+  // Solomon / Sirach / 4 Maccabees etc.), and Christian apocrypha. -----
+  'tanakh': {
+    label: 'Tanakh · Hebrew Bible (Jewish canonical order)',
+    available: true,
+    sections: [
+      { id: 'tanakh-torah', label: 'Torah · source-critical strata', color: '#9aa55a', books: [
+        { id: 'phase-2-005-hebrew-bible-j-source', label: 'J · Yahwist source' },
+        { id: 'phase-2-007-hebrew-bible-e-source', label: 'E · Elohist source' },
+        { id: 'phase-2-011-hebrew-bible-d-source', label: 'D · Deuteronomist' },
+        { id: 'phase-2-018-hebrew-bible-p-source', label: 'P · Priestly source' },
+      ]},
+      { id: 'tanakh-nevi-im-rishonim', label: 'Neviʼim Rishonim · Former Prophets', color: '#8aa07a', books: [
+        { id: 'phase-2-010-hebrew-bible-early-prophets', label: 'Former Prophets' },
+        { id: 'phase-2-019-deuteronomistic-history',     label: 'Deuteronomistic History' },
+      ]},
+      { id: 'tanakh-nevi-im-aharonim', label: 'Neviʼim Aharonim · Latter Prophets', color: '#7a9580', books: [
+        { id: 'phase-3-001-second-third-isaiah', label: 'Second & Third Isaiah' },
+      ]},
+      { id: 'tanakh-ketuvim', label: 'Ketuvim · Writings', color: '#a09a78', books: [
+        { id: 'phase-3-008-book-of-daniel', label: 'Daniel' },
+        { id: 'phase-2-020-lamentations',   label: 'Lamentations' },
+      ]},
+      { id: 'tanakh-qumran-matrix', label: 'Qumran textual matrix', color: '#a8a3b8', books: [
+        { id: 'phase-3-011-dead-sea-scrolls', label: 'Dead Sea Scrolls' },
+      ]},
+    ],
+  },
   // ----- Qurʾān corpus (wired by opus-scripture-2 — single-island starter) -----
   // The entire Qurʾān as one document until split by sura into Meccan / Medinan groups
   // by a future agent. Cross-tradition payoff (Moses / Abraham / Mary / Jesus / Joseph
@@ -2503,7 +2641,48 @@ const SCRIPTURE_CORPORA = {
       ]},
     ],
   },
-  'vedas':          { label: 'Vedic corpus (Ṛg-Veda → Upaniṣads)',           available: false },
+  // ----- Vedic corpus — Indic sacred-textual tradition clockwise in roughly
+  // compositional order: Saṃhitās → Brāhmaṇas / Āraṇyakas → Upaniṣads → epic-Smṛti
+  // → Darśana → Purāṇas → medieval Vedānta → Tantric. Cross-corpus trail-arcs
+  // on hover: Krishna across Bhagavad Gītā + Bhagavata Purāṇa + Mahābhārata;
+  // Indra / Agni / Soma across Ṛg-Veda + Atharva-Veda + Upaniṣads; Yājñavalkya
+  // across Brihadaranyaka + adjacent Upaniṣads. -----
+  'vedas': {
+    label: 'Vedic corpus (Ṛg-Veda → medieval Vedānta + Tantra)',
+    available: true,
+    sections: [
+      { id: 'vedic-samhitas', label: 'Saṃhitās · Vedic hymns (1500–900 BCE)', color: '#e08a3a', books: [
+        { id: 'phase-2-001-rig-veda-family-books', label: 'Ṛg-Veda · family books' },
+        { id: 'phase-2-003-atharva-veda',          label: 'Atharva-Veda' },
+      ]},
+      { id: 'vedic-brahmanas-aranyakas', label: 'Brāhmaṇas / Āraṇyakas · ritual + forest texts', color: '#c47453', books: [
+        { id: 'phase-2-006-brahmanas-aranyakas', label: 'Brāhmaṇas / Āraṇyakas (overview)' },
+      ]},
+      { id: 'vedic-upanishads', label: 'Upaniṣads · philosophical end of the Veda', color: '#a85e44', books: [
+        { id: 'phase-2-012-brihadaranyaka-upanishad', label: 'Brihadāraṇyaka Upaniṣad' },
+        { id: 'phase-2-013-chandogya-upanishad',      label: 'Chāndogya Upaniṣad' },
+        { id: 'phase-2-021-shvetashvatara-upanishad', label: 'Śvetāśvatara Upaniṣad' },
+      ]},
+      { id: 'vedic-epic-smriti', label: 'Epic + Smṛti', color: '#c89a3a', books: [
+        { id: 'phase-2-017-mahabharata-ramayana-oral-layers', label: 'Mahābhārata + Rāmāyaṇa (oral layers)' },
+        { id: 'phase-2-027-bhagavad-gita',                    label: 'Bhagavad Gītā' },
+      ]},
+      { id: 'vedic-darsana', label: 'Darśana · classical philosophy', color: '#9a8550', books: [
+        { id: 'phase-3-023-yoga-sutras-of-patanjali', label: 'Yoga-Sūtras of Patañjali' },
+        { id: 'phase-3-024-natyashastra',             label: 'Nāṭyaśāstra (Bharata)' },
+      ]},
+      { id: 'vedic-purana', label: 'Purāṇa · devotional theology', color: '#b8845a', books: [
+        { id: 'phase-4-065-bhagavata-purana', label: 'Bhāgavata Purāṇa' },
+      ]},
+      { id: 'vedic-vedanta-exegesis', label: 'Medieval Vedānta exegesis', color: '#a07050', books: [
+        { id: 'phase-5-016-ramanuja-sribhasya', label: 'Rāmānuja · Śrī-Bhāṣya' },
+      ]},
+      { id: 'vedic-tantra', label: 'Tantra · Kashmir Śaiva + later esoteric', color: '#80604a', books: [
+        { id: 'phase-5-006-vijnana-bhairava-tantra', label: 'Vijñāna-Bhairava Tantra' },
+        { id: 'phase-5-014-abhinavagupta-tantraloka', label: 'Abhinavagupta · Tantrāloka' },
+      ]},
+    ],
+  },
   // ----- Buddhist canon (wired by opus-buddhist-1) -----
   // Spans Theravāda Pali + Mahāyāna sūtras + Madhyamaka + Chan/Zen + Vajrayāna in
   // compositional/canonical-reception order so the ring reads clockwise as the canon's
@@ -2550,10 +2729,78 @@ const SCRIPTURE_CORPORA = {
       ]},
     ],
   },
-  'avesta':         { label: 'Avesta (Zoroastrian)',                         available: false },
+  // ----- Avesta — Zoroastrian sacred corpus. Old Avestan Gathic stratum is
+  // the earliest layer (traditionally attributed to Zarathustra himself,
+  // ~1200–1000 BCE per the most defensible linguistic dating). Younger Avesta
+  // (Yasna body, Yashts, Vendidad) accreted over ~700 BCE – 300 CE. Hāošyaŋha
+  // / Yima / Mithra / Anāhitā / Vərəθraγna anchor the cross-corpus mythology. -----
+  'avesta': {
+    label: 'Avesta · Zoroastrian sacred corpus',
+    available: true,
+    sections: [
+      { id: 'avesta-old-gathic', label: 'Old Avestan · Gāthās of Zarathustra', color: '#5a6cc4', books: [
+        { id: 'phase-2-002-gathas-of-zarathustra', label: 'Gāthās of Zarathustra' },
+      ]},
+      { id: 'avesta-younger', label: 'Younger Avesta · Yasna corpus', color: '#4a5aa0', books: [
+        { id: 'phase-2-004-yasna-younger-avesta', label: 'Yasna · Younger Avesta' },
+      ]},
+    ],
+  },
   'kojiki-nihongi': { label: 'Kojiki / Nihon Shoki (Shintō)',                available: false },
-  'guru-granth':    { label: 'Gurū Granth Sāhib (Sikh)',                     available: false },
-  'mormon':         { label: 'Book of Mormon',                               available: false },
+  // ----- Sikh canonical scripture. The Ādi Granth (compiled 1604 by Guru
+  // Arjan, expanded 1678 into the Gurū Granth Sāhib by Guru Gobind Singh)
+  // is the eleventh and eternal Guru of Sikhism — uniquely a SCRIPTURE
+  // installed as a living teacher. Bhakti-mystic poets (Kabīr, Ravidās, Namdev,
+  // Farīd) are co-canonical authors alongside the Gurus. -----
+  'guru-granth': {
+    label: 'Gurū Granth Sāhib · Sikh canonical scripture',
+    available: true,
+    sections: [
+      { id: 'sikh-canonical', label: 'Ādi Granth / Gurū Granth Sāhib (1604 / 1678)', color: '#5a6cc4', books: [
+        { id: 'phase-6-016-guru-granth-sahib', label: 'Gurū Granth Sāhib' },
+      ]},
+    ],
+  },
+  // ----- The Book of Mormon (1830, Joseph Smith) — the keystone LDS/Latter-
+  // day Saint scripture, claimed translation from golden plates of the Nephite
+  // and Lamanite peoples (pre-Columbian Israelite migration in the LDS narrative).
+  // Single-document corpus for now; could expand to include the Doctrine and
+  // Covenants, the Pearl of Great Price, and the Book of Abraham. -----
+  'mormon': {
+    label: 'Book of Mormon · LDS keystone scripture (1830)',
+    available: true,
+    sections: [
+      { id: 'lds-keystone', label: 'Keystone scripture · LDS canon', color: '#a87040', books: [
+        { id: 'phase-7-001-book-of-mormon', label: 'The Book of Mormon (1830)' },
+      ]},
+    ],
+  },
+  // ----- Confucian classics — pre-Confucian Five-Classics roots (Shijing /
+  // Shujing, ~10th–6th c. BCE), the foundational Confucian and rival-school
+  // Spring-and-Autumn-period texts (Analects → Mengzi → Xunzi, Mozi, Han Feizi).
+  // The Confucian canon was the orthodox state-examination curriculum of
+  // imperial China from the Han through Qing dynasties — the longest-lived
+  // state-orthodox scriptural canon in world history. -----
+  'confucian-classics': {
+    label: 'Confucian classics + Hundred-Schools rivals',
+    available: true,
+    sections: [
+      { id: 'pre-confucian-classics', label: 'Pre-Confucian classical roots', color: '#a87045', books: [
+        { id: 'phase-1-024-shijing', label: 'Shijing · Classic of Poetry' },
+        { id: 'phase-1-025-shujing', label: 'Shujing · Classic of Documents' },
+      ]},
+      { id: 'confucian-foundational', label: 'Foundational Confucian · Analects → Mengzi → Xunzi', color: '#8a6c5a', books: [
+        { id: 'phase-2-015-analects-of-confucius', label: 'Analects of Confucius' },
+        { id: 'phase-2-023-mengzi',                label: 'Mengzi' },
+        { id: 'phase-2-024-xunzi',                 label: 'Xunzi' },
+      ]},
+      { id: 'rival-schools', label: 'Rival schools · Mohist + Legalist', color: '#6a5a4a', books: [
+        { id: 'phase-2-025-mozi',     label: 'Mozi (Mohist)' },
+        { id: 'phase-2-026-han-feizi', label: 'Han Feizi (Legalist)' },
+      ]},
+    ],
+  },
+
   'kebra-nagast': {
     label: 'Kebra Nagast (Glory of the Kings — Ethiopian / Rastafari foundational)',
     available: true,
@@ -2598,7 +2845,23 @@ const SCRIPTURE_CORPORA = {
       ]},
     ],
   },
-  'tao-corpus':     { label: 'Dao corpus (Daodejing → Zhuangzi)',            available: false },
+  // ----- Dao corpus — foundational Daoist philosophical-mystical texts.
+  // Daodejing (the *Lǎozǐ*, ~6th–4th c. BCE) sets the metaphysical baseline;
+  // Zhuāngzǐ (~4th c. BCE) develops it through paradox and dream-logic. Later
+  // Daoist religious-scriptural corpora (the Daozang, Highest Clarity, Numinous
+  // Treasure, Celestial Master traditions) are not yet wired as documents. -----
+  'tao-corpus': {
+    label: 'Dao corpus · Daoist philosophical mysticism',
+    available: true,
+    sections: [
+      { id: 'dao-foundational', label: 'Foundational · Daodejing (Lǎozǐ)', color: '#5a9a8f', books: [
+        { id: 'phase-2-014-daodejing', label: 'Daodejing (Lǎozǐ)' },
+      ]},
+      { id: 'dao-inner-chapters', label: 'Inner Chapters · Zhuāngzǐ', color: '#4a857a', books: [
+        { id: 'phase-2-022-zhuangzi', label: 'Zhuāngzǐ' },
+      ]},
+    ],
+  },
   // ----- Nag Hammadi corpus (wired by opus-scripture-2) -----
   // Organized by codex (Codex I = Jung Codex; II/III/VI = densest; VIII/XI/XIII =
   // Sethian Platonist registers; BG 8502 = Berlin Codex, related-but-not-NHC).
@@ -2789,6 +3052,7 @@ VIEWS.scripture = {
       'kebra-nagast': 'Kebra Nagast',
       'ethiopic-tewahedo-canon': 'Tewahedo',
       'tao-corpus': 'Dao',
+      'confucian-classics': 'Confucian',
       'nag-hammadi': 'Nag Hammadi',
       'hermetica': 'Hermetica',
     };
@@ -3778,6 +4042,281 @@ VIEWS.alchemy = {
       });
   }
 };
+
+// ============================================================
+// ATLAS — lat/lon world map view (opus-design-3).
+// Plots every geo-tagged node on an equirectangular projection. The projection
+// helpers (geoToMap + CONTINENT_OUTLINES) live above in the data-load block —
+// previously used only at 360x180 thumbnail size; here they're scaled to fill
+// the canvas. Tier overlay applies automatically because every plotted shape
+// carries data-tier.
+// ============================================================
+VIEWS.atlas = {
+  title: 'Atlas',
+  subtitle: 'geography of the vault · every geo-tagged node plotted at lat/lon · hover for trails to linked places',
+  render() {
+    const W = svg.node().clientWidth, H = svg.node().clientHeight;
+    // Fit the 2:1 equirectangular projection into the canvas with letterboxing.
+    const scale = Math.min(W / MAP_W, H / MAP_H);
+    const projW = MAP_W * scale, projH = MAP_H * scale;
+    const offsetX = (W - projW) / 2, offsetY = (H - projH) / 2;
+
+    // Map [lat, lon] to canvas pixel coordinates inside the projected viewport.
+    const project = (lat, lon) => {
+      const [mx, my] = geoToMap(lat, lon);
+      return [offsetX + mx * scale, offsetY + my * scale];
+    };
+
+    // ---- Filtered geo-tagged node set ----
+    const era = STATE.atlasEra || { lo: -3500, hi: 2050 };
+    if (!STATE.atlasEra) STATE.atlasEra = era;
+    const geoNodes = DATA.nodes.filter(n => {
+      if (!n.geo || typeof n.geo.lat !== 'number' || typeof n.geo.lon !== 'number') return false;
+      if (!matchesFilter(n)) return false;
+      // Era window — accept if the node has a date_earliest and it lands inside the window,
+      // OR if it has no date (deities/themes/persons may lack one — they get included by default).
+      if (typeof n.date_earliest === 'number') {
+        if (n.date_earliest < era.lo || n.date_earliest > era.hi) return false;
+      }
+      return true;
+    });
+
+    if (!geoNodes.length) {
+      const g = svg.append('g').attr('class', 'atlas-empty-wrap')
+        .attr('transform', `translate(${W/2}, ${H/2})`);
+      g.append('text').attr('class', 'atlas-empty')
+        .attr('text-anchor', 'middle').attr('y', -8).text('No geo-tagged nodes match the filter.');
+      g.append('text').attr('class', 'atlas-empty sub')
+        .attr('text-anchor', 'middle').attr('y', 14).text('Loosen filters, widen the era window, or pick a different family.');
+      return;
+    }
+
+    // ---- Root <g> for pan/zoom ----
+    const root = svg.append('g').attr('class', 'atlas-root');
+
+    // Frame (the projected viewport rectangle — gives the map a visible bounds)
+    root.append('rect').attr('class', 'atlas-frame')
+      .attr('x', offsetX).attr('y', offsetY)
+      .attr('width', projW).attr('height', projH);
+
+    // Equator + tropic lines (anchor latitudes for spatial reading)
+    const lat = (deg) => offsetY + (90 - deg) * (MAP_H / 180) * scale;
+    [['equator', 0], ['cancer', 23.4], ['capricorn', -23.4]].forEach(([cls, l]) => {
+      root.append('line').attr('class', `atlas-grid atlas-${cls}`)
+        .attr('x1', offsetX).attr('x2', offsetX + projW)
+        .attr('y1', lat(l)).attr('y2', lat(l));
+    });
+
+    // ---- Continent outlines ----
+    const outlineLayer = root.append('g').attr('class', 'atlas-outline-layer');
+    CONTINENT_OUTLINES.forEach(poly => {
+      const pts = poly.map(([la, lo]) => project(la, lo).join(',')).join(' ');
+      outlineLayer.append('polygon').attr('class', 'atlas-continent').attr('points', pts);
+    });
+
+    // ---- Trail layer (under nodes so trails don't overdraw the marks) ----
+    const trailLayer = root.append('g').attr('class', 'atlas-trail-layer');
+
+    // ---- Pre-compute each node's projected x/y ----
+    const xyById = new Map();
+    geoNodes.forEach(n => {
+      const [x, y] = project(n.geo.lat, n.geo.lon);
+      xyById.set(n.id, { x, y, n });
+    });
+
+    // ---- Node marks (small family-colored circles, with tier data-attr) ----
+    const nodeLayer = root.append('g').attr('class', 'atlas-node-layer');
+    const nodeSel = nodeLayer.selectAll('g.atlas-node')
+      .data(geoNodes, n => n.id).enter().append('g')
+      .attr('class', 'atlas-node')
+      .attr('transform', n => {
+        const p = xyById.get(n.id);
+        return `translate(${p.x},${p.y})`;
+      })
+      .on('click', (ev, n) => selectNode(n.id, true))
+      .on('mouseenter', (ev, n) => {
+        showTooltip(
+          `${tooltipThumb(n)}<div class="ttitle">${n.title}</div>
+           <div class="tmeta">${n.type}${n.family ? ' · ' + n.family : ''}${n.geo.label ? ' · ' + n.geo.label : ''}</div>
+           <div class="tmeta">${fmtDateRange(n.date_earliest, n.date_latest) || '—'}</div>`, ev);
+        // Draw trail to linked geo-nodes
+        const nbrs = NEIGHBORS.get(n.id);
+        if (!nbrs) return;
+        const here = xyById.get(n.id);
+        const trailData = [];
+        for (const id of nbrs) {
+          const there = xyById.get(id);
+          if (there) trailData.push({ x1: here.x, y1: here.y, x2: there.x, y2: there.y, otherId: id });
+        }
+        trailLayer.selectAll('line.atlas-trail').data(trailData).enter().append('line')
+          .attr('class', 'atlas-trail')
+          .attr('x1', d => d.x1).attr('y1', d => d.y1)
+          .attr('x2', d => d.x2).attr('y2', d => d.y2);
+        nodeLayer.selectAll('g.atlas-node').classed('atlas-dim', d => d.id !== n.id && !nbrs.has(d.id));
+        nodeLayer.selectAll('g.atlas-node').classed('atlas-hot', d => d.id === n.id || nbrs.has(d.id));
+      })
+      .on('mousemove', ev => tooltip.style('left', (ev.clientX + 14) + 'px').style('top', (ev.clientY + 14) + 'px'))
+      .on('mouseleave', () => {
+        hideTooltip();
+        trailLayer.selectAll('line.atlas-trail').remove();
+        nodeLayer.selectAll('g.atlas-node').classed('atlas-dim', false).classed('atlas-hot', false);
+      });
+
+    nodeSel.append('circle').attr('class', 'atlas-mark')
+      .attr('r', n => 2.5 + Math.sqrt(DEGREE.get(n.id) || 0) * 0.7)
+      .attr('fill', n => n.family_color || n.tradition_color || '#7a8090')
+      .attr('data-tier', n => n._tier ?? 'none');
+
+    // ---- Labels with progressive zoom-reveal (LOD).
+    // Pattern mirrored from VIEWS.pantheon: every node gets a degree-tier (0..3);
+    // labels render once for every node, then visibility/opacity is driven by the
+    // current zoom k + a debounced bbox deconflict. Result: at k≈1 only top-1%
+    // hubs read; as you zoom in, more progressively appear and never overlap.
+    const labelMode = STATE.atlasLabelMode || 'hub';   // 'off' | 'hub' | 'all'
+    if (!STATE.atlasLabelMode) STATE.atlasLabelMode = labelMode;
+
+    // Degree-percentile tiering (0 = top hubs, 3 = leaves). 4 tiers keep the
+    // reveal cadence smooth across zoom k ∈ [0.5, 12].
+    const sortedByDegree = [...geoNodes].sort((a, b) => (DEGREE.get(b.id) || 0) - (DEGREE.get(a.id) || 0));
+    const tierEdges = [
+      Math.max(1, Math.ceil(sortedByDegree.length * 0.012)),  // top ~1%
+      Math.max(2, Math.ceil(sortedByDegree.length * 0.05)),   // top ~5%
+      Math.max(4, Math.ceil(sortedByDegree.length * 0.18)),   // top ~18%
+    ];
+    const tierById = new Map();
+    sortedByDegree.forEach((n, i) => {
+      tierById.set(n.id, i < tierEdges[0] ? 0 : i < tierEdges[1] ? 1 : i < tierEdges[2] ? 2 : 3);
+    });
+    const TIER_BASE_FONT = [13, 11, 9.5, 8.5];
+
+    const labelLayer = root.append('g').attr('class', 'atlas-label-layer');
+    const labelSel = labelLayer.selectAll('text.atlas-label').data(geoNodes, n => n.id)
+      .enter().append('text')
+        .attr('class', n => 'atlas-label tier-' + tierById.get(n.id) + (tierById.get(n.id) <= 1 ? ' hub' : ''))
+        .attr('x', n => xyById.get(n.id).x)
+        .text(n => n.title);
+
+    function smoothstepAtlas(a, b, x) {
+      const t = Math.max(0, Math.min(1, (x - a) / (b - a)));
+      return t * t * (3 - 2 * t);
+    }
+    function updateAtlasLOD(k) {
+      const growth = 1 + 0.5 * Math.max(0, Math.min(1, (k - 1) / 3));  // 1.0 → 1.5 by k=4
+      const eff    = Math.max(1, k);
+      // Node-mark radius — gentle shrink with zoom so dots don't bulldoze each other.
+      const sizeScale = 1 / Math.pow(k, 0.65);
+      nodeLayer.selectAll('.atlas-mark')
+        .attr('r', n => (2.5 + Math.sqrt(DEGREE.get(n.id) || 0) * 0.7) * sizeScale);
+      // Labels: opacity by tier + zoom (mode 'all' shows every tier subject to deconflict only).
+      labelSel
+        .attr('y', n => xyById.get(n.id).y - ((2.5 + Math.sqrt(DEGREE.get(n.id) || 0) * 0.7) * sizeScale + 3))
+        .style('font-size', n => (TIER_BASE_FONT[tierById.get(n.id)] * growth / eff).toFixed(2) + 'px')
+        .style('opacity', n => {
+          if (labelMode === 'off') return 0;
+          const t = tierById.get(n.id);
+          if (labelMode === 'all') {
+            if (t === 0 || t === 1) return 1;
+            if (t === 2) return smoothstepAtlas(0.8, 1.2, k);
+            return smoothstepAtlas(1.0, 1.5, k);
+          }
+          // 'hub' mode — the default. Tier-staggered reveal across the zoom range.
+          if (t === 0) return 1;
+          if (t === 1) return smoothstepAtlas(0.85, 1.15, k);
+          if (t === 2) return smoothstepAtlas(1.65, 2.20, k);
+          return smoothstepAtlas(3.20, 4.20, k);
+        })
+        .style('visibility', '');
+      // Debounced bbox deconflict — claim by degree, hide overlaps.
+      clearTimeout(updateAtlasLOD._t);
+      updateAtlasLOD._t = setTimeout(deconflictAtlasLabels, 60);
+    }
+    function deconflictAtlasLabels() {
+      const items = [];
+      labelSel.each(function (n) {
+        const opa = parseFloat(this.style.opacity || '1');
+        if (opa <= 0.05) return;
+        items.push({ n, txt: this, deg: DEGREE.get(n.id) || 0 });
+      });
+      items.forEach(it => { it.bb = it.txt.getBoundingClientRect(); });
+      items.sort((a, b) => b.deg - a.deg);
+      const claimed = [];
+      const PAD = 2;
+      items.forEach(it => {
+        const bb = it.bb;
+        if (!bb.width || !bb.height) return;
+        const x0 = bb.left - PAD, x1 = bb.right + PAD;
+        const y0 = bb.top - PAD,  y1 = bb.bottom + PAD;
+        const conflict = claimed.some(c => !(x1 < c.x0 || c.x1 < x0 || y1 < c.y0 || c.y1 < y0));
+        if (conflict) {
+          it.txt.style.visibility = 'hidden';
+        } else {
+          it.txt.style.visibility = '';
+          claimed.push({ x0, x1, y0, y1 });
+        }
+      });
+    }
+
+    // ---- View-controls toolbar ----
+    document.getElementById('view-controls').innerHTML = `
+      <select class="btn btn-mini atlas-era-select" id="atlas-era-select" title="Filter by historical era window">
+        <option value="all"        ${eraVal(era) === 'all'        ? 'selected' : ''}>all eras</option>
+        <option value="prehistory" ${eraVal(era) === 'prehistory' ? 'selected' : ''}>−3500 to −1000 · prehistory + ANE</option>
+        <option value="axial"      ${eraVal(era) === 'axial'      ? 'selected' : ''}>−1000 to +100 · Axial + early</option>
+        <option value="late-ant"   ${eraVal(era) === 'late-ant'   ? 'selected' : ''}>+100 to +800 · Late Antiquity</option>
+        <option value="medieval"   ${eraVal(era) === 'medieval'   ? 'selected' : ''}>+800 to +1500 · Medieval</option>
+        <option value="modern"     ${eraVal(era) === 'modern'     ? 'selected' : ''}>+1500 to today · Early-modern + modern</option>
+      </select>
+      <button class="btn btn-mini" id="btn-atlas-labels">labels: ${labelMode}</button>
+      <button class="btn btn-mini" id="btn-atlas-recenter">recenter</button>
+    `;
+    document.getElementById('atlas-era-select').onchange = (ev) => {
+      STATE.atlasEra = eraFromVal(ev.target.value);
+      setView('atlas');
+    };
+    document.getElementById('btn-atlas-labels').onclick = () => {
+      const order = ['off', 'hub', 'all'];
+      STATE.atlasLabelMode = order[(order.indexOf(labelMode) + 1) % order.length];
+      setView('atlas');
+    };
+    document.getElementById('btn-atlas-recenter').onclick = () => {
+      svg.transition().duration(400).call(zoomBehavior.transform, d3.zoomIdentity);
+    };
+
+    // ---- Zoom / pan + wire the existing zoom-meter chrome (+/- buttons in top-right) ----
+    const zoomBehavior = d3.zoom().scaleExtent([0.5, 12])
+      .on('zoom', (ev) => { root.attr('transform', ev.transform); updateAtlasLOD(ev.transform.k); });
+    svg.call(zoomBehavior).on('dblclick.zoom', null);
+    document.getElementById('zm-in').onclick    = () => svg.transition().duration(220).call(zoomBehavior.scaleBy, 1.4);
+    document.getElementById('zm-out').onclick   = () => svg.transition().duration(220).call(zoomBehavior.scaleBy, 1 / 1.4);
+    document.getElementById('zm-reset').onclick = () => svg.transition().duration(380).call(zoomBehavior.transform, d3.zoomIdentity);
+
+    // Initial LOD pass — k = 1 baseline.
+    updateAtlasLOD(1);
+  }
+};
+// Helpers for the era-window dropdown (kept local to Atlas).
+function eraVal(era) {
+  if (!era) return 'all';
+  const k = era.lo + ':' + era.hi;
+  return ({
+    '-3500:2050': 'all',
+    '-3500:-1000': 'prehistory',
+    '-1000:100':   'axial',
+    '100:800':     'late-ant',
+    '800:1500':    'medieval',
+    '1500:2050':   'modern',
+  })[k] || 'all';
+}
+function eraFromVal(v) {
+  return ({
+    'all':        { lo: -3500, hi: 2050 },
+    'prehistory': { lo: -3500, hi: -1000 },
+    'axial':      { lo: -1000, hi: 100  },
+    'late-ant':   { lo: 100,   hi: 800  },
+    'medieval':   { lo: 800,   hi: 1500 },
+    'modern':     { lo: 1500,  hi: 2050 },
+  })[v] || { lo: -3500, hi: 2050 };
+}
 
 // ============================================================
 // AUTHORS — three distinct signals, kept separate so investigation rigor isn't lost.

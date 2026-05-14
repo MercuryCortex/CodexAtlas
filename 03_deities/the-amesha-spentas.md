@@ -14,6 +14,7 @@ parent-of: []
 child-of: ["Ahura Mazda"]
 consort: []
 attributes: ["each presides over one creation: cattle, fire, metals, earth, waters, plants"]
+individual-Amesha-Spentas: ["[[asha-vahishta]] (Truth/Cosmic-Order — first Amesha Spenta; presides over fire)", "[[vohu-manah]] (Good Mind — second Amesha Spenta; presides over cattle)", "Khshathra Vairya (Desirable Dominion — third; presides over metals; *not yet stubbed as individual node*)", "Spenta Armaiti (Holy Devotion — fourth; presides over earth; *not yet stubbed*)", "Haurvatat (Wholeness — fifth; presides over waters; *not yet stubbed*)", "Ameretat (Immortality — sixth; presides over plants; *not yet stubbed*)"]
 attested-in: ["[[phase-2-002-gathas-of-zarathustra]]", "[[phase-2-004-yasna-younger-avesta]]"]
 equivalents: []
 syncretic-edges:

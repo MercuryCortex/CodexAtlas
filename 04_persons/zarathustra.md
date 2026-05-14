@@ -13,9 +13,12 @@ floruit-latest: -1000
 historicity: "likely-historical"
 texts-authored: ["[[phase-2-002-gathas-of-zarathustra]]"]
 texts-attributed-to: ["[[phase-2-004-yasna-younger-avesta]] (some hymns are later attributions)"]
-originator-of: ["[[dualism-cosmic]]"]
+originator-of: ["[[dualism-cosmic]]", "[[frashokereti-cosmic-renovation]]"]
 events-participated: []
 mentioned-in: ["[[phase-2-002-gathas-of-zarathustra]]", "[[phase-2-004-yasna-younger-avesta]]", "Pahlavi Bundahishn, Denkard, Zardošt-namah"]
+eschatological-descendant: "[[saoshyant]] (the future cosmic-savior born of a virgin impregnated by Zarathustra's miraculously-preserved seed; the principal eschatological-figure of Zoroastrian theology)"
+priestly-tradition: "[[the-magi]] (the institutional priestly-class custodial of Zarathustra's teaching across 1,350+ years)"
+disciples-and-revealers: "[[vohu-manah]] (the first Amesha Spenta whom Zarathustra addresses in the opening verses of the Gathas — Yasna 28.1)"
 status: "stub"
 refs:
   - title: "A History of Zoroastrianism, vol. I"

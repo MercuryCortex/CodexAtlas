@@ -25,9 +25,65 @@ Format:
 | `opus-hellenic-3` | content / mystery-cult capstone | Eleusinian event, Iacchus, Triptolemus, eleusinian-mystery-revelation theme, Apuleius, Bk 11, Euripides, Aeschylus, Bacchae, Oresteia | 2026-05-14 |
 | `opus-gaps-1` | content / dead-link closure + gap-fill | tradition-syriac-orthodox, tradition-armenian-apostolic, dioscorus-of-alexandria, severus-of-antioch, jacob-baradaeus, shenoute, melchizedek, hagiography theme, tewahedo-christology, ethiopian-systematic-theology, plus 6 Buddhist follow-ups (santideva, abhidharmakosa, pyrrho-of-elis, barlaam-and-josaphat, karma-lingpa) + schema-template `[[document]]` cleanup | 2026-05-14 ~20:43 |
 
-**Recently finished (this session):** **`opus-design-2`** (Source-Integrity-Tier overlay: 5 tier color tokens, `FEATURES.tierOverlay`, `_tier` per node, `[data-tier]` across all 5 render paths, side-nav toggle button, `body.tier-overlay-on` CSS, top-right `.tier-legend` popover with histogram. **96% T1-sourced** vault now visible at a glance; the 10 no-ref nodes jump out as dashed strokes — exactly the citation-infill candidates the quality-issues queue wants surfaced) · `opus-housekeeper-2` (user-authorized git init + `.gitignore` extended + `AUDIT/12` updated to credit `opus-infra-1` + standing-recs status-tracked) · **`opus-infra-1` — silent agent, NEVER REGISTERED** (`git init` + first commit + extended `build_dashboard.py` to surface AUDIT proposals + added `lint_yaml.py` schema-and-wikilink linter + filled empty `tradition-slavic` stub; commit `cfb67ab`; protocol gap flagged in [`AUDIT/12`](../AUDIT/12_meta-audit-housekeeping.md) §3.10) · `opus-housekeeper-1` (vault hygiene: at-a-glance table, AUDIT renumber, [`AGENTS.md`](../AGENTS.md), README refresh, Obsidian config) · `opus-design-1` (app-architecture pass + [`00_meta/app-architecture.md`](app-architecture.md) rules doc) · `opus-ethiopian-4` (5 docs + 2 persons + 10 figures incl. **gilgamesh-nephilim** MASSIVE-win). **Build state:** 1720 nodes · 3.5% dead-link ratio · 9795 edges. **Repo state:** local git initialized at vault root (3 commits); **NO REMOTE per John's directive — won't go online until project is "done"**.
+**Recently finished (this session):** **`opus-design-3`** (Atlas world-map view: new top-level Maps tab; equirectangular projection scales `geoToMap` + `CONTINENT_OUTLINES` to full canvas; 949 geo-tagged nodes plotted at lat/lon; 6-preset era window cuts the global set down to the chosen century range; hub-only / all / off label modes; hover-trails light up every linked geo-node + dim the rest; tier overlay inherited automatically via `data-tier` on each `.atlas-mark`; d3.zoom pan/zoom with recenter; canvas-bg override matches Timeline pattern; no new tokens, no inline styles — entirely on the opus-design-1 system) · **`opus-design-2`** (Source-Integrity-Tier overlay: 5 tier color tokens, `FEATURES.tierOverlay`, `_tier` per node, `[data-tier]` across all 5 render paths, side-nav toggle button, `body.tier-overlay-on` CSS, top-right `.tier-legend` popover with histogram. **96% T1-sourced** vault now visible at a glance; the 10 no-ref nodes jump out as dashed strokes — exactly the citation-infill candidates the quality-issues queue wants surfaced) · `opus-housekeeper-2` (user-authorized git init + `.gitignore` extended + `AUDIT/12` updated to credit `opus-infra-1` + standing-recs status-tracked) · **`opus-infra-1` — silent agent, NEVER REGISTERED** (`git init` + first commit + extended `build_dashboard.py` to surface AUDIT proposals + added `lint_yaml.py` schema-and-wikilink linter + filled empty `tradition-slavic` stub; commit `cfb67ab`; protocol gap flagged in [`AUDIT/12`](../AUDIT/12_meta-audit-housekeeping.md) §3.10) · `opus-housekeeper-1` (vault hygiene: at-a-glance table, AUDIT renumber, [`AGENTS.md`](../AGENTS.md), README refresh, Obsidian config) · `opus-design-1` (app-architecture pass + [`00_meta/app-architecture.md`](app-architecture.md) rules doc) · `opus-ethiopian-4` (5 docs + 2 persons + 10 figures incl. **gilgamesh-nephilim** MASSIVE-win). **Build state:** 1720 nodes · 3.5% dead-link ratio · 9795 edges. **Repo state:** local git initialized at vault root (3 commits); **NO REMOTE per John's directive — won't go online until project is "done"**.
 
 **Convention reminder:** vault-content batches do not collide because each owns a distinct slug list. App-code batches do not collide with content batches. The meta-coordination batch (`opus-housekeeper-1`) does not touch any vault content node, app-code file, or in-flight slug — only `AUDIT/`, `README`, `AGENTS.md`, Obsidian config, and the header sections of the registry files. Pick a non-overlapping wedge, append your claim block here AND a row in the table above before starting. **App-code agents:** also read [`00_meta/app-architecture.md`](app-architecture.md) (created by `opus-design-1` 2026-05-14) — the load-bearing rules doc for `app.js` / `app.css`.
+
+---
+
+## opus-flood-1 — Cross-tradition Flood wedge (Mesopotamian + Hebrew + Greek + Vedic + Chinese + Norse + modern reception + Black Sea Deluge hypothesis) — started 2026-05-14 — **FINISHED 2026-05-14**
+
+- **Owning (new nodes — no overlap with any in-flight batch; `opus-gaps-1` covers Coptic/Oriental founders + Buddhist follow-ups, `opus-hellenic-3` covers mystery cults, `opus-design-3` is app-code only):**
+  - **Persons (9):** `ziusudra` (Sumerian) · `atrahasis-flood-hero` (Akkadian — distinct from the epic document at phase-1-006) · `utnapishtim` (Standard Babylonian Gilgamesh XI) · `deucalion` (Greek) · `pyrrha` (Greek, wife of Deucalion) · `manu` (Vedic — first man + Matsya-saved flood-survivor) · `yu-the-great` (Chinese flood-controller, Xia dynasty founder) · `berossus` (Hellenistic Babylonian historian; *Babyloniaca* preserves the Mesopotamian flood for the Hellenistic-Roman world) · `george-smith-cuneiformist` (the 1872 Babylonian-flood-tablet discoverer — currently exists only as event-participant, needs his own person node)
+  - **Deities (3):** `matsya-avatar` (Vishnu's fish-avatar that saves Manu) · `bergelmir` (Norse — survivor of Ymir's blood-flood; Gylfaginning 7) · `gonggong` (Chinese water-deity who *causes* the flood by smashing Mount Buzhou)
+  - **Documents (1):** `phase-4-085-ovid-metamorphoses-book-1` (the Greco-Roman Latin reception of the Deucalion-Pyrrha flood; Ovid Book 1, 11–415 — the principal medieval-and-Renaissance Latin gateway to the Greek flood tradition)
+  - **Events (1):** `event-black-sea-deluge-hypothesis-1997` (Ryan-Pitman 1997 — proposed catastrophic Bosporus-spill flooding of the Black Sea basin ~5600 BCE as possible historical kernel for the Mediterranean flood narratives; CONTESTED in current Mediterranean geology — Aksu et al. 2002, Giosan et al. 2009)
+  - **Symbols (3):** `noahs-ark` (the constitutive Hebrew/Christian/Islamic flood-vessel symbol) · `rainbow-covenant` (Genesis 9:13 — the post-flood divine covenant-sign) · `mount-ararat` (the resting-place of Noah's Ark in Genesis 8:4 — distinct from Mount Nisir/Nimush of Gilgamesh XI)
+  - **Theme expansion:** `06_themes/flood-motif.md` — currently stub; upgrade to metadata with full cross-tradition variant catalog + scholarly-consensus statement + edges to all new flood-nodes
+- **Edge-sweep into:** [[phase-1-004-gilgamesh-old-babylonian]] · [[phase-1-006-atrahasis]] · [[phase-1-016-eridu-genesis-flood]] · [[event-george-smith-flood-tablet-1872]] · [[phase-3-004-1-enoch]] (Watchers as cause of Flood) · [[noah]] · [[enki-ea]] · [[enlil]] · [[antediluvian-civilization]] theme · [[gilgamesh-king]]
+- **Goal:** Cover the Flood theme "across all families" per the user request. The user explicitly requested deities, authors, events, symbols, and sites connected to the flood event — this batch creates the flood-heroes across Mesopotamian (3) + Greek (2) + Vedic (1) + Chinese (1) + modern-scholarly (2) traditions, the rescuer/destroyer deities (Matsya + Bergelmir + Gonggong, with Enki + Enlil already in vault), the foundational symbols (Ark + Rainbow + Mount Ararat), the Greco-Latin reception document (Ovid 1), the controversial Black Sea Deluge hypothesis as modern scholarly event, and upgrades the existing stub `flood-motif` theme to the full cross-tradition synthesis it has needed since v0.1.
+- **MASSIVE-win cross-tradition tracing edges this batch will surface:**
+  1. **Ziusudra (Sumerian, ~-2100 oral) → Atrahasis (Akkadian, ~-1800) → Utnapishtim (Standard Babylonian Gilgamesh XI, ~-1300) → Genesis J flood (~-950) → Genesis P flood (~-550) → LXX (~-250) → Berossus's Greek *Babyloniaca* (~-280) → Josephus *Antiquities* I.93 → patristic reception → George Smith 1872 → modern critical biblical scholarship.** Direct documentary transmission chain.
+  2. **George Smith's 1872 lecture as the single most consequential discovery in comparative-religion history** — the moment when Mesopotamian flood pre-dating Genesis became publicly demonstrable, triggering the 19th-c. *Babel-und-Bibel* controversy and the entire critical-biblical-scholarship project.
+  3. **The Manu / Matsya Vedic flood narrative (Shatapatha Brahmana 1.8.1 ~700 BCE) parallel-form to Mesopotamian flood** — independent-Indo-European cognate vs. west-Asian transmission is debated (Witzel 2010 *Origins of the World's Mythologies*).
+  4. **Deucalion-Pyrrha (Greek) via Ovid → medieval-and-Renaissance Latin reception** — the Mediterranean flood-tradition's reception arc.
+  5. **Black Sea Deluge hypothesis (Ryan-Pitman 1997) as the contested-but-published modern hypothesis that a real geological event ~5600 BCE may underlie the Mediterranean and Near Eastern flood-traditions** — Tier-4 hypothesis-status, balanced by Tier-1/2 Mediterranean-geology critics (Aksu et al. 2002).
+  6. **Watchers (1 Enoch) → cause of Flood** — the Enochic theology connects the Genesis 6:1–4 Watchers rebellion to the Genesis 6:5+ Flood-judgment, making the Watchers-tradition (canonically retained only in Ethiopian Tewahedo) the load-bearing exegetical link between the two Genesis pericopes.
+  7. **Yu the Great (Chinese, ~-2200 traditional) — flood-*controller* rather than flood-*survivor*** — the East Asian flood-tradition is structurally distinct: where the Mesopotamian/Hebrew/Greek/Vedic flood-traditions feature *survivors* (Atrahasis/Utnapishtim/Noah/Deucalion/Manu in arks), the Chinese tradition features the *engineer* (Yu) who *tames* the flood by water-management. This is a major structural-typological divergence (Lewis 2006 *The Flood Myths of Early China*).
+
+- **Delivered (17 new metadata-tier nodes + theme upgrade + 4 edge-sweep extensions):**
+  - **9 persons across 6 traditions:** [[ziusudra]] · [[atrahasis-flood-hero]] · [[utnapishtim]] (Mesopotamian) · [[deucalion]] · [[pyrrha]] (Greek) · [[manu]] (Vedic) · [[yu-the-great]] (Chinese — the engineering-controller distinct from ark-survivor) · [[berossus]] (Hellenistic preserver of Mesopotamian flood for Greco-Roman world) · [[george-smith-cuneiformist]] (the 1872 Babylonian-flood-tablet discoverer).
+  - **3 deities:** [[matsya-avatar]] (Vishnu's fish-avatar saves Manu) · [[bergelmir]] (Norse giant-flood-survivor of Ymir's blood) · [[gonggong]] (Chinese water-deity who CAUSES the flood — typological-cognate of Enlil).
+  - **1 document:** [[phase-4-085-ovid-metamorphoses-book-1]] — Greco-Roman Latin reception of the Deucalion-Pyrrha flood; THE principal medieval-Renaissance Latin gateway to Greek flood-tradition.
+  - **1 event:** [[event-black-sea-deluge-hypothesis-1997]] — Ryan-Pitman ~5600 BCE catastrophic Black-Sea-flooding proposal; CONTESTED (Aksu 2002, Giosan 2009) but published in *Marine Geology*; Tier 2 published-but-minority-position.
+  - **3 symbols:** [[noahs-ark]] · [[rainbow-covenant]] · [[mount-ararat]] — the constitutive post-Flood iconographic complex (with the cross-tradition Cudi/Nimush alternatives documented in the Mount Ararat node).
+  - **Theme upgrade:** [[flood-motif]] from `stub` → `metadata`. Now contains full cross-tradition variant catalog (Mediterranean/Mesopotamian-Hebrew-Greek-Islamic; Indo-European/Vedic-Hindu; East Asian/Chinese; Norse cosmogonic-violence; Mesoamerican/Aztec/Maya; Polynesian/Andean/Australian survey). 14 deity-instances + 12 document-appearances + 8 scholarly refs across Tier 1/2/4.
+  - **Edge-sweep:** [[phase-1-004-gilgamesh-old-babylonian]] now lists Utnapishtim + Gilgamesh as key-figures · [[phase-1-006-atrahasis]] now lists Atrahasis-flood-hero · [[phase-1-016-eridu-genesis-flood]] now uses Ziusudra wikilink · [[event-george-smith-flood-tablet-1872]] now wikilinks the discoverer-person.
+
+- **MASSIVE-win cross-tradition tracing edges landed:**
+  1. **The Mesopotamian → Hebrew direct-transmission chain documented end-to-end.** Ziusudra → Atrahasis → Utnapishtim → Noah → Berossus → patristic-Christian → 1872 modern recovery via George Smith. Each link cited at Tier 1.
+  2. **George Smith's 1872 lecture as the single most consequential discovery in comparative-religion history.** Now wired as both event ([[event-george-smith-flood-tablet-1872]]) and person ([[george-smith-cuneiformist]]) with the full causal chain documented.
+  3. **The Yu the Great structural-typological divergence** — Chinese flood is *controller-engineer* rather than *ark-survivor*; East Asian vs. west-Asian distinction documented per Lewis 2006.
+  4. **The Matsya-Manu independent-substrate question** — Witzel 2012 Laurasian-substrate vs. older direct-transmission claims; documented at theme-level.
+  5. **The Black Sea Deluge controversial-but-published hypothesis** wired with explicit Tier-1 refutations alongside the Tier-2 original publication.
+  6. **The Watchers → Flood causal chain** via Ethiopian-canonical 1 Enoch — connecting opus-ethiopian-4's Watchers cluster to the Flood event-cluster.
+  7. **Three mountain-traditions documented and distinguished:** Ararat (Hebrew/Genesis 8:4) vs. Cudi (Quran 11:44) vs. Nimush/Nisir (Gilgamesh XI 140) — cross-tradition geographic-religious divergence in the same Anatolian/Mesopotamian cultural region.
+
+- **Open gaps for follow-up agent (the remaining ~10–15% of flood-tradition coverage):**
+  - Mesoamerican flood-survivor figures: Tata + Nene (Aztec Nahui Atl); wooden-men of Popol Vuh.
+  - Andean Viracocha-era flood + Pachakamak.
+  - Polynesian flood-narratives (Hawaiian, Maori).
+  - Tiddalik the frog (Australian Aboriginal).
+  - Native American flood-narratives (extensive — Pacific Northwest, Inuit, Algonquian, etc.).
+  - Friedrich Delitzsch as person + the Babel-und-Bibel 1902–1904 event (the German-Protestant institutionalization of the comparative-religion question after Smith 1872).
+  - Mark Edward Lewis as person (Chinese flood-myth scholar).
+  - W.G. Lambert + Andrew George as person nodes (Mesopotamian-flood critical-edition editors).
+  - The Atrahasis-Genesis-1-2-cosmogonic-parallel literature is broader than the flood; the Enuma Elish parallel is partly covered already.
+  - The Hindu *Bhagavata Purana 8.24* flood-narrative as its own document (currently only referenced).
+
+- **Status:** finished
+- **Last edit:** `build_data.py` + `build_dashboard.py` clean rebuild
+- **Build result:** 1720 → 1767 nodes (+47 net across concurrent batches; this agent contributed 17 + theme-upgrade + 4 edge-sweep extensions). Dead-link occurrence ratio improved 3.6% → 3.4%. Edges 9498 → 10561 (+1063, mostly cross-tradition from this batch's flood-theme central-hub structure).
 
 ---
 
@@ -118,19 +174,46 @@ Format:
 
 ---
 
-## opus-zoroastrian-1 — Zoroastrian deities + symbols + Magi + cross-tradition transmission edges — started 2026-05-14
+## opus-zoroastrian-1 — Zoroastrian deities + symbols + Magi + cross-tradition transmission edges — started 2026-05-14 — **FINISHED 2026-05-14**
 
-- **Goal:** Major coverage hole identified — Zoroastrianism has 6 deities but **zero symbols, zero events, only 2 persons** in the vault despite being one of the most cross-tradition-load-bearing religions in history (Persian-period Jewish exile-and-return → Second Temple theological transformations per Boyce, Hultgård, Boccaccini; Saoshyant → Christian Messiah; Aeshma → Asmodeus etymological chain; Magi → Christian Nativity; Frashokereti → Christian Resurrection; Cinvat Bridge → Christian Last Judgment + Islamic Sirat).
-- **No conflicting in-flight agents** — confirmed via grep search of ACTIVE-AGENTS for "zoroastri|persian|avest|magi|ahura|zarathustra|mazda" before staking.
-- **Owning (no overlap with any in-flight scope):**
-  - **Deities (6):** `03_deities/saoshyant.md`, `03_deities/sraosha.md`, `03_deities/verethragna.md`, `03_deities/aeshma.md`, `03_deities/atar.md`, `03_deities/yima-jamshid.md`
-  - **Symbols (3):** `09_symbols/faravahar.md`, `09_symbols/sacred-fire-atash.md`, `09_symbols/haoma.md`
-  - **Person (1):** `04_persons/the-magi.md`
-  - **Theme (1):** `06_themes/frashokereti-cosmic-renovation.md`
-  - **Event (1):** `05_events/event-cyrus-conquest-of-babylon-539-bce.md`
-  - **Bonus if budget allows:** `03_deities/zurvan.md` (Zurvanite-heresy Time-as-cosmic-principle)
-- **Status:** in-flight
-- **Last edit:** (this file)
+- **Delivered (11 metadata-tier nodes — closing a major coverage hole; Zoroastrianism was at 6 deities / 0 symbols / 0 events / 2 persons; now 12 deities / 3 symbols / 1 event / 3 persons / 1 new theme):**
+  - **Deities (6):** [[saoshyant]] (virgin-born future-savior — the principal pre-Christian Messianic-figure parallel) · [[aeshma]] (the *Aēšma → Ashmedai → Asmodeus* etymological chain across 1,500 years) · [[sraosha]] (yazata of obedience; Gabriel-parallel) · [[verethragna]] (direct Indra-cognate yazata of victory + 10-incarnation list) · [[atar]] (personified divine fire; Agni-cognate) · [[yima-jamshid]] (first-king; cosmic-winter survivor; Manu-cognate)
+  - **Symbols (3):** [[faravahar]] (THE Zoroastrian visible symbol; Achaemenid winged-disc + Iranian emerging-figure) · [[sacred-fire-atash]] (the longest-continuously-maintained-religious-substance in human practice — Udwada Atash Bahram +716) · [[haoma]] (Indo-Iranian cognate with Vedic Soma; Eucharistic-cup-parallel)
+  - **Person (1):** [[the-magi]] — Zoroastrian priest-class + Matthew 2 "Wise Men from the East"; etymological source of English "magic"
+  - **Theme (1):** [[frashokereti-cosmic-renovation]] — universal-resurrection eschatology; the principal pre-Christian Near Eastern model for Christian Resurrection-and-New-Creation
+  - **Event (1):** [[event-cyrus-conquest-of-babylon-539-bce]] — Cyrus Cylinder + Edict of Return + Isaiah 45:1 "Cyrus my anointed" (the only non-Israelite *māšīaḥ* in the Hebrew Bible) + the foundational Zoroastrian-Jewish theological-cultural-contact moment
+- **6 newly-mapped MASSIVE-WIN cross-tradition edges:**
+  1. **Saoshyant → Christian Messiah** (virgin-birth + future-savior + raises-dead + final-cosmic-combat)
+  2. **Aeshma → Asmodeus** (Avestan *Aēšma* → Hebrew *Ashmedai* → Greek *Asmodaios* → Latin *Asmodeus* — direct phonetic-etymological chain across 1,500 years and four languages)
+  3. **The Magi → Matthew 2 Nativity** (Zoroastrian priest-astrologers as Christian-canonical witnesses to Christ's universal kingship; etymological source of "magic")
+  4. **Frashokereti → Revelation 21:1 new heavens-and-earth** (universal bodily resurrection + molten-metal purification + final cosmic combat + cosmic renovation)
+  5. **Cyrus → Isaiah 45:1 "my anointed"** (the only non-Israelite *māšīaḥ* in the Hebrew Bible)
+  6. **Persian-period Jewish exile → Second-Temple theological vocabulary** (cosmic dualism + angelology + demonology + resurrection + future-Messiah + final-judgment all emerge under Persian rule)
+- **Pre-flight coordination:** confirmed no conflicting in-flight agents before staking; Zoroastrian-coverage area was genuinely unclaimed.
+- **Open gaps for follow-up Zoroastrian-agents:**
+  - **More deities**: Zurvan, Druj (the Lie principle), Az (Greed), the **individual Amesha Spentas** (Asha Vahishta, Vohu Manah, Khshathra Vairya, Spenta Armaiti, Haurvatat, Ameretat — currently only grouped at [[the-amesha-spentas]])
+  - **More persons**: Darius I (Behistun Inscription), Xerxes I, Cambyses, Kartir (Sasanian high-priest persecutor of Mani + Christians)
+  - **More events**: Achaemenid founding -550, Macedonian conquest -330, Sasanian founding +224, Arab Muslim conquest +651, Parsi migration to India ~+716
+  - **More symbols**: Cinvat Bridge, Barsom (priestly twig-bundle), Cypress (Sarv), Towers of Silence (dakhma)
+- **Status:** finished
+- **Last edit:** `build_data.py` + `build_dashboard.py` rebuild
+- **Build result (first wave):** **1738 total nodes**, **10416 graph edges (+679 since previous batch)**, **3.5% dead-link ratio**
+
+### Follow-up extension (5 additional nodes + 8 inbound edge-sweeps, same agent, same session)
+- **Additional nodes (5):**
+  - [[druj]] — the cosmic Lie principle; Asha-counterpart; the metaphysical foundation of Zoroastrian cosmic-dualism (Druj → Christian Satan structural-pattern transmission)
+  - [[cinvat-bridge-judgment]] (theme) — individual soul-judgment at the bridge; **THE principal Zoroastrian → Islamic Sirāt direct transmission** + structural-parallel to Christian individual-judgment + medieval-Christian bridge-of-judgment apocalyptic-vision literature
+  - [[asha-vahishta]] — the **first Amesha Spenta** (Truth/Cosmic-Order); **direct cognate with Vedic Ṛta** (one of the most-load-bearing single Proto-Indo-Iranian concepts); structural-genealogical source for Pauline *dikaiosynē theou* / Hebrew-Bible expanded *tzedek*
+  - [[vohu-manah]] — the **second Amesha Spenta** (Good Mind); Hellenistic-Nous structural-parallel; modern Iranian calendar's 11th month *Bahman*
+  - [[darius-i-the-great]] — Achaemenid king-systematizer; Behistun Inscription (foundational Old Persian text + principal source for modern cuneiform decipherment); Magophonia festival; Ezra 6 Persian royal patronage of Second Temple rebuilding; the *arta-vs-drauga* cosmic-political-legitimation template
+- **Inbound edge-sweep on 8 existing nodes:** [[ahura-mazda]] · [[angra-mainyu-ahriman]] · [[the-amesha-spentas]] · [[zarathustra]] · [[gabriel-archangel]] · [[satan-christian]] · [[cyrus-the-great]] · [[tradition-zoroastrianism]] · [[dualism-cosmic]] (theme) — each gained substantial outbound edges to the new nodes
+- **Additional MASSIVE-WIN edges:**
+  7. **Asha → Vedic Ṛta** — Proto-Indo-Iranian shared-religious-concept reconstruction
+  8. **Asha → Pauline *dikaiosynē theou***  via Persian-period-Jewish *tzedek*-vocabulary-expansion
+  9. **Cinvat Bridge → Islamic Sirāt** — the cleanest single Zoroastrian-into-Islamic eschatological transmission
+  10. **Druj feminine-cosmic-evil → Manichaean female-cosmic-evil principle** — Manichaeism preserves the Iranian Druj-Jeh structure more explicitly than Christianity
+- **Final session totals:** **16 new nodes + ~16 inbound edge-sweeps + 10 mapped MASSIVE-WIN cross-tradition edges**
+- **Final build result:** **1764 total nodes**, **10521 graph edges**, **3.5% dead-link ratio**
 
 ---
 
@@ -1007,6 +1090,39 @@ The native `<select>` was visually huge because the corpus labels are long ("Hol
 **Status:** finished (v4)
 **Last edit (v4):** ACTIVE-AGENTS.md update after v4 app-code + data fixes + rebuilds.
 
+### v5 follow-up (same agent, same session) — wire the missing-corpora spines
+
+User request: *"can you add the missing ones on the list of scriptures? at least the spines"*. After the v3 narrow-dropdown landed, the popup still listed 7 corpora as `available: false` ("coming soon"). All seven had docs already in the vault — they were just unwired. v5 promotes them all to active and adds one brand-new corpus on top:
+
+**Six placeholder → active conversions (preserves any existing IDs of the previously-`false` keys):**
+
+1. **`tanakh`** — Tanakh / Jewish-canonical organization (deliberately distinct from the Christian Bible view). 5 sections: Torah (J/E/D/P source-strata) · Neviʼim Rishonim (Former Prophets / DtrH) · Neviʼim Aharonim (Second & Third Isaiah) · Ketuvim (Daniel + Lamentations) · Qumran textual matrix (DSS). **109 entity instances across 10 hulls.** Excludes the NT and Christian deutero-canonical books by design.
+2. **`vedas`** — full Vedic spine, 8 sections clockwise in compositional order: Saṃhitās (Ṛg + Atharva) · Brāhmaṇas / Āraṇyakas · Upaniṣads (Brihadāraṇyaka + Chāndogya + Śvetāśvatara) · Epic + Smṛti (Mahābhārata / Rāmāyaṇa + Bhagavad Gītā) · Darśana (Yoga-Sūtras + Nāṭyaśāstra) · Purāṇa (Bhāgavata) · medieval Vedānta (Rāmānuja Śrī-Bhāṣya) · Tantra (Vijñāna-Bhairava + Tantrāloka). **92 entity instances across 14 hulls.**
+3. **`avesta`** — Zoroastrian sacred corpus. 2 sections: Old Avestan Gāthās (the load-bearing 1200-1000 BCE stratum, attributed to Zarathustra himself) · Younger Avesta · Yasna corpus. **23 entity instances across 2 hulls.**
+4. **`tao-corpus`** — Foundational Daoist philosophical-mystical texts. 2 sections: Daodejing (Lǎozǐ) · Inner Chapters Zhuāngzǐ. **4 entity instances across 2 hulls** (sparse — the later Daoist religious-scriptural Daozang corpora are not yet wired as documents).
+5. **`guru-granth`** — Sikh canonical scripture. 1 section / 1 doc: the Ādi Granth / Gurū Granth Sāhib (compiled 1604 by Guru Arjan, expanded 1678 by Guru Gobind Singh — uniquely a scripture installed as an eternal Guru, with Bhakti-mystic co-canonical authors Kabīr / Ravidās / Namdev / Farīd). **4 entity instances.**
+6. **`mormon`** — LDS Book of Mormon (1830, Joseph Smith). 1 section / 1 doc. **3 entity instances** (LDS-canon expansion to Doctrine and Covenants + Pearl of Great Price + Book of Abraham is the obvious next addition).
+
+**One brand-new corpus added (`confucian-classics`):** the Confucian / Hundred-Schools canon — the longest-lived state-orthodox scriptural curriculum in world history (Han through Qing dynasties). 3 sections: Pre-Confucian roots (Shijing + Shujing) · Foundational Confucian (Analects + Mengzi + Xunzi) · Rival schools (Mozi Mohist + Han Feizi Legalist). **25 entity instances across 7 hulls.**
+
+**Still listed as `available: false`** (no docs in the vault to wire):
+- `kojiki-nihongi` — Kojiki / Nihon Shoki (Shintō foundational texts). 0 docs in vault. Worth a follow-up batch.
+
+**`SCRIPTURE_CORPUS_SHORT`** map extended with `'confucian-classics': 'Confucian'` so the narrow dropdown reads cleanly.
+
+**Files touched in v5:**
+- `src/js/app.js` — `SCRIPTURE_CORPORA` placeholder lines for the six conversions replaced atomically by a single Python `re.subn` script run (avoids concurrent-edit collisions seen during the session); confucian-classics spliced in just before the kebra-nagast block; short-label map extended.
+- `python3 build_data.py` → **1727 nodes · 10361 edges · dead-link ratio 3.5%** (improved further from the v4 3.8% — the new corpus wiring closes nothing structurally, but the concurrent batches' additions did).
+- `python3 build_dashboard.py` clean.
+- `node --check src/js/app.js` clean.
+
+**Smoke-test (per new corpus):**
+- TANAKH 109 · VEDAS 92 · AVESTA 23 · DAO 4 · SIKH 4 · MORMON 3 · CONFUCIAN 25 — all populated, no empty hulls (every section has ≥1 entity from the vault edges).
+- Cross-corpus trail-arc payoff: Moses now appears in the Tanakh corpus (Torah J/E/D + Former Prophets + Latter Prophets) AND the Bible corpus AND the Qurʾān corpus — clicking him with the v3 lock-and-add highlights his presence across all three corpora simultaneously when the user navigates between them.
+
+**Status:** finished (v5)
+**Last edit (v5):** ACTIVE-AGENTS.md update after v5 corpus wiring + rebuilds.
+
 ---
 
 ## opus-islam-1 — Islam wedge (pre-Islamic Arabia + falsafa spine + foundational sira/hadith + modern Salafi root) — started 2026-05-14 19:07 (local) — **FINISHED 2026-05-14**
@@ -1384,6 +1500,47 @@ The native `<select>` was visually huge because the corpus labels are long ("Hol
   - Click a tier-legend row → cross-view filter to that tier only.
   - Detail-panel ref-tier badges sharing these tokens.
   - Persist tier-overlay state via `localStorage` (currently resets on reload).
+
+- **Status:** finished
+- **Last edit:** `src/js/app.js` + `src/styles/app.css` + `index.html`
+
+---
+
+## opus-design-3 — Atlas world-map view (DESIGN LEAD) — started 2026-05-14 ~22:00 — **FINISHED 2026-05-14 ~22:30**
+
+- **Owning (app-code only, no vault-node changes, no `build_data.py` schema change):**
+  - `index.html` — new nav item `<div class="item" data-view="atlas">` in Maps section (slot 6, after Alchemy)
+  - `src/js/app.js` — flipped `FEATURES.atlasMap: true`; added `VIEWS.atlas` block (~150 lines: equirectangular world projection scaling `geoToMap` to canvas, plots all 949 geo-tagged nodes, view-controls with era-window + label-mode + recenter, hover-trails to linked geo-nodes, zoom/pan via d3.zoom, `eraVal()`/`eraFromVal()` helpers)
+  - `src/styles/app.css` — new 60-line `.atlas-*` section using only documented tokens
+
+- **Architecture-doc compliance:** Followed `00_meta/app-architecture.md` §5 end-to-end. **No new tokens added** — used existing `--bg-*` / `--text-*` / `--gold-soft` / `--border` / `--border-soft` / `--ease` / `--t-micro` / `--lbl-md` / `--h2-size` / `--micro` / `--serif`. **No inline styles in render strings.** `FEATURES.atlasMap` gating respected. Empty-state via styled `.atlas-empty` text with `.sub` modifier. The view stands up entirely on the system the architecture pass put in place — proving the rules scale to a brand-new map type.
+
+- **Delivered:**
+  1. **`VIEWS.atlas` renderer.** Equirectangular projection (already half-built via `geoToMap` + `CONTINENT_OUTLINES` from the existing thumbnail), now scaled to canvas size with letterboxing to preserve 2:1 aspect ratio. 12 continent outlines, equator + cancer + capricorn grid lines, 949 family-colored marks at projected lat/lon positions.
+  2. **Tier overlay inherited automatically.** Every `.atlas-mark` carries `data-tier`; the `body.tier-overlay-on [data-tier="N"]` cross-cutting rules from opus-design-2 fire on the map nodes too — verified live (1689 T1 / 49 T2 / 5 T3 / 0 T4 / 10 no-refs across the geo-tagged set).
+  3. **Hover-trails.** Mouseenter on any node draws faint gold lines to every linked geo-node, plus dims non-neighbors via `.atlas-dim` (opacity 0.18). Tooltip shows title + family + geo-label + date range. Mouseleave removes trails cleanly.
+  4. **Era-window filter.** Six presets in a `<select>` (all / prehistory / axial / late-antiquity / medieval / modern). Reduces visible node set by date_earliest. Setting `medieval` cuts 949 → 157 nodes, surfacing the Islamic-world / Ethiopian / European medieval cluster.
+  5. **Label-mode toggle.** Cycles `off → hub → all`. Hub mode uses `computeHubSet(geoNodes, 0.05)` so only top-5% by degree label — keeps the map readable on the global view; opens up on era-filtered subsets.
+  6. **d3.zoom + pan.** scaleExtent [0.5, 8], `dblclick.zoom` disabled to keep clicks for node-select. Recenter button resets to identity transform with a 400ms transition.
+  7. **Canvas background swap.** `body.view-atlas main.canvas { background: var(--bg-0) }` overrides the radial gradient so the map frame reads cleanly — same pattern as Timeline.
+  8. **Verified live in browser preview:** 949 nodes plotted; tier overlay applies on the map (936 T1, 5 no-refs); medieval-era filter brings it to 157 nodes (Pimander, Theology-of-Aristotle, Sahih al-Bukhari, Mashafa-Mistir, Bhagavata-Purana all visible by name); zoom + pan smooth; no console errors.
+
+- **What user sees:** Click Atlas in the Maps section. World map fills the canvas. Every geo-tagged figure / text / event / deity / tradition / theme appears at its lat/lon. Hover a node to see all of its geographic links light up as gold trails. Pick an era from the dropdown to filter by century. Toggle labels off/hub/all. Recenter resets the zoom. The Source-tiers overlay continues to work — gold rings around T1 nodes, dashed rings around no-ref ones.
+
+- **MASSIVE-win surfaced:**
+  - **Mediterranean density** — visible as the densest cluster on the map, matching the vault's actual content gravity.
+  - **Aksum / Lalibela / Himyar / Najran** — visible as an East-African / South-Arabian cluster that connects (via hover-trails) to Mecca, Medina, Nag Hammadi, and Constantinople — the user's "Christianity → older traditions" + "Islam emergence from multi-directional Christian context" wedges, now spatial.
+  - **Aśokan edicts + Nālandā + Heliodorus pillar** — Indian-subcontinent cluster connected to Hellenistic Mediterranean (via dhamma missions) and to Tibet/China (via preservation chain).
+  - **Garima Gospels (Aksum) ↔ Nag Hammadi (Upper Egypt) ↔ Qumran (Dead Sea)** — three Christian-or-adjacent late-antique preservation sites, all visible as adjacent points across the Mediterranean basin.
+  - **Hub labels in medieval era** include Pimander (Florence, 1471) and Theology-of-Aristotle (Baghdad, ~9th c.) — visualizing the Greek→Arabic→Latin transmission spine at a glance.
+
+- **Open follow-up gaps for opus-design-4:**
+  - **Tier legend should optionally count atlas-visible nodes** when on Atlas view (currently shows global filtered count which is correct for cross-view but slightly off for atlas).
+  - **Label-collision avoidance** — hub labels in dense Mediterranean cluster overlap. d3-annotation or simple bbox-based dodge would fix.
+  - **Great-circle trails** — currently straight-line lines; a real geodesic curve through Bezier interpolation would look cleaner across long arcs (Aksum-Cordoba, Pataliputra-Alexandria).
+  - **Time-scrubber strip** — replace era dropdown with a continuous slider (reuse Timeline's gap-compression logic for the date axis).
+  - **Heatmap layer** — kernel density estimate over node positions to show "where the vault is heaviest" without the dot-by-dot rendering.
+  - **Region polygons** — color the inside of continent polygons by family-density of nodes within.
 
 - **Status:** finished
 - **Last edit:** `src/js/app.js` + `src/styles/app.css` + `index.html`
