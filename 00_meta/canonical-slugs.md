@@ -17,10 +17,11 @@ canonical-slug
 ## Currently resolved slugs (auto-seeded — every existing file)
 
 
-### deity (329 nodes)
+### deity (333 nodes)
 
 - `abathur`
 - `adonis-hellenistic`
+- `aeshma`
 - `agni`
 - `ahura-mazda`
 - `al-haqq`
@@ -273,6 +274,7 @@ canonical-slug
 - `ruha`
 - `sabazios`
 - `samantabhadra-buddha`
+- `saoshyant`
 - `saraqael-archangel`
 - `saraswati`
 - `satan-christian`
@@ -295,6 +297,7 @@ canonical-slug
 - `soma`
 - `sophia-gnostic`
 - `spenta-mainyu`
+- `sraosha`
 - `sun-goddess-of-arinna`
 - `surya`
 - `tane`
@@ -334,6 +337,7 @@ canonical-slug
 - `vajrasattva`
 - `varuna`
 - `venus-roman`
+- `verethragna`
 - `vesta`
 - `viracocha`
 - `vishnu`
@@ -692,13 +696,14 @@ canonical-slug
 - `phase-8-017-santeria-lucumi`
 - `phase-8-018-kalevala`
 
-### event (118 nodes)
+### event (124 nodes)
 
 - `event-aboriginal-stolen-generations-1905-1969`
 - `event-ahmad-gragn-invasion-1529`
 - `event-aksumite-christianization-c330`
 - `event-albigensian-crusade-1209-1229`
 - `event-altamira-cave-paintings-c-22000-bce`
+- `event-angkor-wat-construction-c-1113-1150`
 - `event-arabic-harranian-hermetica-c800-1000`
 - `event-asokan-dhamma-missions-c-250-bce`
 - `event-augustine-of-canterbury-mission-597`
@@ -706,12 +711,14 @@ canonical-slug
 - `event-bar-kokhba-revolt-132-136`
 - `event-battle-of-actium-31-bce`
 - `event-bhakti-movement-c-700-1700`
+- `event-borobudur-construction-c-750-825`
 - `event-bruce-recovers-enoch-1773`
 - `event-bruno-execution-1600`
 - `event-buddha-parinirvana-c-400-bce`
 - `event-burning-of-library-of-alexandria`
 - `event-casaubon-redates-hermetica-1614`
 - `event-catalhoyuk-c-7400-6200-bce`
+- `event-chartres-cathedral-construction-1194-1220`
 - `event-chauvet-cave-paintings-c-32000-bce`
 - `event-closure-of-pagan-mysteries-392-393`
 - `event-closure-platonic-academy-529`
@@ -772,11 +779,13 @@ canonical-slug
 - `event-kaaba-pre-islamic-and-islamic-foundation`
 - `event-kaleb-aksum-himyar-invasion-525`
 - `event-karbala-680`
+- `event-karnak-temple-complex-construction-c-2055-bce-100-ce`
 - `event-lascaux-cave-paintings-c-17000-bce`
 - `event-linear-b-decipherment-1952`
 - `event-luther-95-theses-1517`
 - `event-lyon-martyrs-177`
 - `event-magdala-expedition-1868`
+- `event-mahabodhi-temple-construction-c-260-bce-onwards`
 - `event-malta-temples-c-3600-2500-bce`
 - `event-mani-execution-274-or-277`
 - `event-mongol-sack-of-baghdad-1258`
@@ -786,6 +795,7 @@ canonical-slug
 - `event-new-atheism-2004-2010`
 - `event-nine-saints-mission-c480`
 - `event-parliament-of-world-religions-1893`
+- `event-parthenon-construction-447-432-bce`
 - `event-perpetua-felicity-203`
 - `event-pike-2018-neanderthal-cave-art-c-64800-bce`
 - `event-pittsburgh-platform-1885`
@@ -1372,10 +1382,11 @@ canonical-slug
 - `zhuangzi-person`
 - `zosimos-of-panopolis`
 
-### symbol (45 nodes)
+### symbol (50 nodes)
 
 - `ankh`
 - `asclepian-rod`
+- `aum-om`
 - `beauseant`
 - `bull`
 - `caduceus`
@@ -1384,6 +1395,7 @@ canonical-slug
 - `coptic-cross`
 - `crescent-moon-star`
 - `cross-pattee-templar`
+- `dharmachakra`
 - `eye`
 - `eye-of-horus-wedjat`
 - `fish-ichthys`
@@ -1396,7 +1408,9 @@ canonical-slug
 - `lotus`
 - `maltese-cross`
 - `mandala-circle`
+- `menorah`
 - `mithraic-cross`
+- `monas-hieroglyphica`
 - `ouroboros`
 - `pelican-in-piety`
 - `pentagram`
@@ -1407,6 +1421,7 @@ canonical-slug
 - `serpent-cosmic-enemy`
 - `serpent-wisdom-chthonic`
 - `spiral`
+- `star-of-ishtar`
 - `sun-disk`
 - `swastika`
 - `tau-cross`
@@ -1753,15 +1768,13 @@ canonical-slug
 
 | Refs | Dead target | Suggested canonical (existing) |
 |---:|---|---|
-| 4 | `ragnarok-apocalyptic` | `apocalyptic-cosmic-warfare` |
-| 4 | `primordial-darkness` | `eros-primordial` |
+| 4 | `ragnarok-apocalyptic` | `apocalyptic-revelation` |
+| 4 | `primordial-darkness` | `primordial-waters` |
 | 4 | `messianic-revelation` | `messianic-secret` |
-| 4 | `genealogical-cosmogony` | `mesoamerican-cosmogony` |
-| 4 | `evolutionary-cosmogony` | `mesoamerican-cosmogony` |
+| 4 | `genealogical-cosmogony` | `hermetic-cosmogony` |
+| 4 | `evolutionary-cosmogony` | `hermetic-cosmogony` |
 | 3 | `the-evil-god-cathar` | `the-good-god-cathar` |
-| 3 | `phase-2-005-1-2-kings` | `phase-2-008-homeric-epics` |
-| 3 | `messianic-genealogy` | `solomonic-genealogy` |
+| 3 | `phase-2-005-1-2-kings` | `phase-2-003-atharva-veda` |
+| 3 | `messianic-genealogy` | `messianic-secret` |
 | 2 | `yam-canaanite` | `astarte-canaanite` |
-| 2 | `tradition-minoan-religion` | `tradition-mandaeism` |
-| 2 | `tradition-eastern-orthodoxy` | `tradition-mandaeism` |
-| 2 | `phase-1-013-babylonian-theodicy` | `phase-1-015-sumerian-king-list` |
+| 2 | `phase-1-013-babylonian-theodicy` | `phase-1-018-gudea-cylinders` |

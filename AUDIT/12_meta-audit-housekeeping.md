@@ -62,43 +62,51 @@ Already being closed by `opus-gaps-1` in this same session — schema files used
 
 ---
 
-## 3. Standing recommendations carried forward (NOT done this batch)
+## 3. Standing recommendations — status as of `opus-housekeeper-2` close-out
 
-These are the high-leverage hygiene moves that are still on the table. They are listed with rough effort estimates and the audit file that originally proposed them so future agents can pick one without rediscovering the rationale.
+These are the high-leverage hygiene moves identified in this and prior audits. **Several have landed since `opus-housekeeper-1` finished** — both by user-authorized `opus-housekeeper-2` follow-up and by an undeclared `opus-infra-1` batch that ran in parallel without registering in `ACTIVE-AGENTS.md` (protocol gap — flagged in §4 below). Status legend: ✅ DONE · 🟡 IN PROGRESS · ⏳ PENDING · ❌ DEFERRED.
 
-### 3.1 `git init` at vault root (CRITICAL — proposed in [`10_app-and-infrastructure-audit.md`](10_app-and-infrastructure-audit.md) §1.1)
+### 3.1 `git init` at vault root (CRITICAL — proposed in [`10_app-and-infrastructure-audit.md`](10_app-and-infrastructure-audit.md) §1.1) — **✅ DONE**
 
-The single highest-impact gap. Six months of investigation work + 1,681 markdown nodes + hand-edited registry files are running without history, blame, or rollback. One bad batch destroys irrecoverable work. ~1 hour: `git init`, `.gitignore` (`data.js` regenerable; `_assets/thumbs_cache.json`; macOS `.DS_Store`), commit current state, push to a private remote.
+Done by `opus-infra-1` at 2026-05-14 ~20:55 (commit `844bf2b`); `opus-housekeeper-2` confirmed user authorization (John: *"im cool with your recco, but just note, that im not putting this online at all until its done"*) and added the second commit (`60c79a1`) carrying `AGENTS.md` + this AUDIT file + the at-a-glance table + Obsidian config. Local repo only — **no remote, no push, will not go online until John explicitly publishes**. `.gitignore` extended by `opus-housekeeper-2` to exclude `data.js` (12MB regenerable), per-phase `_TODO.md` (auto-regenerated noise), `.obsidian/workspace.json` (per-user state), `.claude/worktrees/` (embedded Claude worktrees from concurrent sessions), `*.bak`, OS noise.
 
-### 3.2 Per-agent claim-block files + rollup script (proposed in [`11_opus-buddhist-1-audit.md`](11_opus-buddhist-1-audit.md) §1)
+### 3.2 Per-agent claim-block files + rollup script (proposed in [`11_opus-buddhist-1-audit.md`](11_opus-buddhist-1-audit.md) §1) — **❌ DEFERRED**
 
-Replaces the contention-prone single ACTIVE-AGENTS.md with per-agent files (`00_meta/agents/opus-<wedge>-<n>.md`) + a 30-line `build_agents.py` script that concatenates them into ACTIVE-AGENTS.md as the rendered registry view. Same pattern for STATUS via `STATUS-fragments/YYYY-MM-DD-opus-<wedge>-<n>.md`. ~1 hour. Removes the single most reliable source of frustration in the parallel-agent workflow.
+Replaces the contention-prone single ACTIVE-AGENTS.md with per-agent files (`00_meta/agents/opus-<wedge>-<n>.md`) + a 30-line `build_agents.py` script that concatenates them into ACTIVE-AGENTS.md as the rendered registry view. Same pattern for STATUS via `STATUS-fragments/YYYY-MM-DD-opus-<wedge>-<n>.md`. ~1 hour. **Why deferred:** would require migrating ACTIVE-AGENTS.md from hand-edited to auto-generated — clobbers any in-flight agent's writes during the migration. **Trigger condition:** zero in-flight rows in the at-a-glance table. Next housekeeper agent should pick this up first thing if no agents are working when they land.
 
-### 3.3 `build_dashboard.py` should surface AUDIT proposals (proposed in [`10_app-and-infrastructure-audit.md`](10_app-and-infrastructure-audit.md) §6)
+### 3.3 `build_dashboard.py` should surface AUDIT proposals (proposed in [`10_app-and-infrastructure-audit.md`](10_app-and-infrastructure-audit.md) §6) — **✅ DONE (mostly)**
 
-DASHBOARD.md is the work queue agents pick from. It surfaces dead-link counts and unstubbed wikilink targets. It does NOT surface the AUDIT/ folder's standing proposals — and as a result they sit unread while agents add more nodes against the easier-to-count queue. Adding a "## Open AUDIT proposals (last touched: ...)" section at the top of DASHBOARD.md is ~30 lines in `build_dashboard.py` and unsticks the architectural backlog. Same logic for surfacing `quality-issues.md`, `orphan-nodes.md`, and `themes-to-create.md` in the dashboard.
+Done by `opus-infra-1` at 2026-05-14 ~20:55 (commit `cfb67ab`). [`build_dashboard.py`](../build_dashboard.py) now scans `AUDIT/*.md` and emits an "## Open AUDIT proposals" section at the top of DASHBOARD.md with H1 + mtime per audit. Quality-issues + orphans were already in DASHBOARD.md prior. **Remaining:** `themes-to-create.md` is currently a 3-line "safe to delete" stub so surfacing it in the dashboard would be marginal — skip until it accumulates content.
 
-### 3.4 YAML linter + canonical-slug check (proposed in [`10_app-and-infrastructure-audit.md`](10_app-and-infrastructure-audit.md) §1.3)
+### 3.4 YAML linter + canonical-slug check (proposed in [`10_app-and-infrastructure-audit.md`](10_app-and-infrastructure-audit.md) §1.3) — **✅ DONE**
 
-Slug drift is preventable with ~1 day of `lint_yaml.py`: parse each YAML frontmatter, ASSERT each value against schema, verify each `[[wikilink]]` resolves to either a real file or a known canonical-slugs alias. Run in pre-commit (after §3.1) or on every `build_data.py`.
+Done by `opus-infra-1` at 2026-05-14 ~20:55 (commit `cfb67ab`). [`lint_yaml.py`](../lint_yaml.py) is ~250 lines stdlib-only, runs in 0.3s on ~1700 nodes. Catches missing YAML frontmatter, missing required type/title fields, file-stem ↔ YAML-id slug drift, date inversions (date-composed-latest < earliest, date-died < born), and per-source unresolved wikilinks. Writes `00_meta/lint-report.md`. `--strict` flag returns exit 1 on any ERROR (CI-ready). Caught the empty `tradition-slavic.md` stub on first run — `opus-infra-1` filled it in the same commit. **Next:** wire to a pre-commit hook now that git is initialized.
 
-### 3.5 7-day archive policy for ACTIVE-AGENTS.md (proposed this batch)
+### 3.5 7-day archive policy for ACTIVE-AGENTS.md (proposed this batch) — **❌ DEFERRED**
 
-Finished claim blocks older than 7 days move to `00_meta/agents-archive/YYYY-MM-DD.md`. Implementation deferred — would compete with §3.2 (per-agent files), which subsumes it.
+Finished claim blocks older than 7 days move to `00_meta/agents-archive/YYYY-MM-DD.md`. Subsumed by §3.2 (per-agent files); skip independently.
 
-### 3.6 Hash-based URL router for the atlas (proposed in [`10_app-and-infrastructure-audit.md`](10_app-and-infrastructure-audit.md) §2.1)
+### 3.6 Hash-based URL router for the atlas (proposed in [`10_app-and-infrastructure-audit.md`](10_app-and-infrastructure-audit.md) §2.1) — **⏳ PENDING**
 
-`#/pantheon`, `#/timeline`, `#/scripture/hermetica`, `#/node/yaldabaoth`. ~50 lines. Unblocks every "share with someone" use case. Also lets the user (and agents in browser sessions) link directly to a particular node when discussing it in chat.
+`#/pantheon`, `#/timeline`, `#/scripture/hermetica`, `#/node/yaldabaoth`. ~50 lines. Unblocks every "share with someone" use case. Also lets the user (and agents in browser sessions) link directly to a particular node when discussing it in chat. Worth queuing as `opus-design-3` after the Source-Integrity-Tier overlay (`opus-design-2`) lands.
 
-### 3.7 STATUS.md → STATUS.md + CHANGELOG.md split (proposed this batch)
+### 3.7 STATUS.md → STATUS.md + CHANGELOG.md split (proposed this batch) — **⏳ PENDING**
 
-Steady-state project identity in STATUS.md; per-batch headlines in CHANGELOG.md. Cuts a long scroll that incoming readers do every session.
+Steady-state project identity in STATUS.md; per-batch headlines in CHANGELOG.md. Cuts a long scroll that incoming readers do every session. ~30 min.
 
-### 3.8 Sacred-sites, material-witnesses, scholar-lineage layers ([`04_methodology_proposals.md`](04_methodology_proposals.md), [`10_app-and-infrastructure-audit.md`](10_app-and-infrastructure-audit.md) §4)
+### 3.8 Sacred-sites, material-witnesses, scholar-lineage layers ([`04_methodology_proposals.md`](04_methodology_proposals.md), [`10_app-and-infrastructure-audit.md`](10_app-and-infrastructure-audit.md) §4) — **⏳ PENDING (now reachable)**
 
-Five large structural extensions (material witnesses → `09_material/`, geographic map view, scholar role-class, new edge types, scholar-lineage modelling, sacred-sites layer → `10_sites/`) sit unimplemented because of the dashboard-routing problem in §3.3. Fix that first, then these surface as work-queue items naturally.
+Five large structural extensions (material witnesses → `09_material/`, geographic map view, scholar role-class, new edge types, scholar-lineage modelling, sacred-sites layer → `10_sites/`) — previously stuck behind the dashboard-routing problem. **Now reachable:** §3.3 landed (DASHBOARD surfaces AUDIT proposals), so the next agent's pre-flight will see these as work-queue items. Pick whichever wedge advances a MASSIVE-win edge first.
+
+### 3.9 Pre-commit hook running `lint_yaml.py --strict` + `build_dashboard.py` (NEW — now possible after §3.1 landed)
+
+With both git (§3.1) and the linter (§3.4) in place, a `.git/hooks/pre-commit` (or `.husky/`-style after `gh-action`) running `python3 lint_yaml.py --strict && python3 build_dashboard.py` would catch every malformed YAML / dead-link regression at commit time instead of post-hoc. ~10 lines of shell. Add as part of the next housekeeper batch.
 
 ---
+
+### 3.10 Protocol gap — `opus-infra-1` ran without registering (NEW finding)
+
+`opus-infra-1` did three high-impact deliverables (git init, dashboard extension, `lint_yaml.py`) at 2026-05-14 ~20:55 in commit `cfb67ab` — visible only in `git log` because they never appended a claim block to `ACTIVE-AGENTS.md`. **No collision occurred this time** (their scope was disjoint from every other in-flight agent), but the protocol gap is real: an undeclared agent could have collided with `opus-housekeeper-2`'s git-init plan, or with `opus-design-2`'s app-code work. **Mitigation for future protocol enforcement:** when `opus-infra-2` (or any infra batch) lands, `lint_yaml.py` could be extended to assert that any `git log` author whose committed paths overlap a 24h-window must have an `ACTIVE-AGENTS.md` claim block matching by handle. Cheap to write, hard to bypass. **Posthumous credit added** to STATUS.md "Recently completed batches" by `opus-housekeeper-2`.
 
 ## 4. Conventions formalized (or re-formalized) by this batch
 

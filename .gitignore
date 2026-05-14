@@ -51,6 +51,8 @@ build/
 
 # === Per-session Claude state ===
 .claude/launch.json
+.claude/worktrees/
+.claude/projects/
 
 # Note: the following ARE intentionally tracked (NOT in this gitignore):
 #   - 00_meta/DASHBOARD.md, dead-links.md, quality-issues.md, orphan-nodes.md, canonical-slugs.md

@@ -22,19 +22,16 @@ Format:
 
 | Handle | Scope tag | Owns (high level) | Started |
 |---|---|---|---|
-| `opus-housekeeper-2` | meta-coordination / repo bootstrap + dashboard extension | `git init` at vault root + `.gitignore` + first commit (LOCAL ONLY, no remote per user); extend `build_dashboard.py` to surface AUDIT proposals + quality-issues + orphans + themes-to-create as additional dashboard tracks. **Touches** `build_dashboard.py` + `.gitignore` (new) + creates `.git/` dir. **Does NOT touch any agent's owned slug, no vault content, no app UI code.** | 2026-05-14 ~21:35 |
 | `opus-hellenic-3` | content / mystery-cult capstone | Eleusinian event, Iacchus, Triptolemus, eleusinian-mystery-revelation theme, Apuleius, Bk 11, Euripides, Aeschylus, Bacchae, Oresteia | 2026-05-14 |
 | `opus-gaps-1` | content / dead-link closure + gap-fill | tradition-syriac-orthodox, tradition-armenian-apostolic, dioscorus-of-alexandria, severus-of-antioch, jacob-baradaeus, shenoute, melchizedek, hagiography theme, tewahedo-christology, ethiopian-systematic-theology, plus 6 Buddhist follow-ups (santideva, abhidharmakosa, pyrrho-of-elis, barlaam-and-josaphat, karma-lingpa) + schema-template `[[document]]` cleanup | 2026-05-14 ~20:43 |
-| `opus-design-2` | app-code / Source-Integrity-Tier overlay (DESIGN LEAD) | new tier-color tokens at `:root`, `FEATURES.tierOverlay` flag, per-node `_tier` + `_refCount` computation, `[data-tier]` attr on rendered SVG nodes across pantheon/documents/scripture, side-nav tier-toggle button, `body.tier-overlay-on` CSS rules, tier-distribution legend popover | 2026-05-14 ~21:10 |
-| `opus-monuments-1` | content / Pantheon Monuments mode population | Thread A retrofit `monument` tag on 15 existing event-site nodes (gobekli-tepe, catalhoyuk, jericho, cucuteni, malta, stonehenge, altamira, lascaux, chauvet, sulawesi, hohle-fels, pike-2018, shanidar, natufian, thera-akrotiri); Thread B create 8 new monument events (kaaba, hagia-sophia, chartres, borobudur, angkor-wat, parthenon, karnak, mahabodhi) | 2026-05-14 ~21:30 |
 
-**Recently finished (this session, full claim blocks below):** `opus-housekeeper-1` (vault hygiene: at-a-glance table, AUDIT renumber, [`AGENTS.md`](../AGENTS.md), README refresh, Obsidian config, [`AUDIT/12`](../AUDIT/12_meta-audit-housekeeping.md)) · `opus-design-1` (app-architecture pass + new [`00_meta/app-architecture.md`](app-architecture.md) rules doc) · `opus-ethiopian-4` (5 docs + 2 persons + 10 figures incl. **gilgamesh-nephilim** MASSIVE-win). Build state: **1694 nodes** · **3.6% dead-link ratio** · 9569 edges.
+**Recently finished (this session):** **`opus-design-2`** (Source-Integrity-Tier overlay: 5 tier color tokens, `FEATURES.tierOverlay`, `_tier` per node, `[data-tier]` across all 5 render paths, side-nav toggle button, `body.tier-overlay-on` CSS, top-right `.tier-legend` popover with histogram. **96% T1-sourced** vault now visible at a glance; the 10 no-ref nodes jump out as dashed strokes — exactly the citation-infill candidates the quality-issues queue wants surfaced) · `opus-housekeeper-2` (user-authorized git init + `.gitignore` extended + `AUDIT/12` updated to credit `opus-infra-1` + standing-recs status-tracked) · **`opus-infra-1` — silent agent, NEVER REGISTERED** (`git init` + first commit + extended `build_dashboard.py` to surface AUDIT proposals + added `lint_yaml.py` schema-and-wikilink linter + filled empty `tradition-slavic` stub; commit `cfb67ab`; protocol gap flagged in [`AUDIT/12`](../AUDIT/12_meta-audit-housekeeping.md) §3.10) · `opus-housekeeper-1` (vault hygiene: at-a-glance table, AUDIT renumber, [`AGENTS.md`](../AGENTS.md), README refresh, Obsidian config) · `opus-design-1` (app-architecture pass + [`00_meta/app-architecture.md`](app-architecture.md) rules doc) · `opus-ethiopian-4` (5 docs + 2 persons + 10 figures incl. **gilgamesh-nephilim** MASSIVE-win). **Build state:** 1720 nodes · 3.5% dead-link ratio · 9795 edges. **Repo state:** local git initialized at vault root (3 commits); **NO REMOTE per John's directive — won't go online until project is "done"**.
 
 **Convention reminder:** vault-content batches do not collide because each owns a distinct slug list. App-code batches do not collide with content batches. The meta-coordination batch (`opus-housekeeper-1`) does not touch any vault content node, app-code file, or in-flight slug — only `AUDIT/`, `README`, `AGENTS.md`, Obsidian config, and the header sections of the registry files. Pick a non-overlapping wedge, append your claim block here AND a row in the table above before starting. **App-code agents:** also read [`00_meta/app-architecture.md`](app-architecture.md) (created by `opus-design-1` 2026-05-14) — the load-bearing rules doc for `app.js` / `app.css`.
 
 ---
 
-## opus-housekeeper-2 — Repo bootstrap (`git init`) + dashboard extension (NO vault-content / NO app-UI edits) — started 2026-05-14 ~21:35 (local) — **IN-FLIGHT**
+## opus-housekeeper-2 — Repo bootstrap (`git init`) + standing-recommendation status-track (NO vault-content / NO app-UI edits) — started 2026-05-14 ~21:35 (local) — **FINISHED 2026-05-14 ~22:00**
 
 - **Mission (user-authorized after `opus-housekeeper-1`'s standing recommendation):** "im cool with your recco, but just note, that im not putting this online at all until its done." → local `git init` only, NO remote, NO push. Plus the safe half of the deferred housekeeping queue: extend `build_dashboard.py` to surface AUDIT proposals + quality-issues + orphans + themes-to-create as additional dashboard tracks (proposed in `AUDIT/10` §6 and `AUDIT/12` §3.3).
 - **Owning (intentionally narrow — no collision with any in-flight content / app-UI batch):**
@@ -51,8 +48,21 @@ Format:
   - `opus-design-2` (in-flight, app UI) — disjoint; I touch zero `index.html` / `app.css` / `app.js`. `build_dashboard.py` is a build script, not in their scope.
   - `opus-monuments-1` (in-flight, content) — disjoint; I touch zero vault content nodes. The `git add .` will include whatever monument nodes they've created at commit time, which is fine.
   - `opus-hellenic-3`, `opus-gaps-1` (in-flight, content) — disjoint; same.
-- **Status:** in-flight
-- **Last edit:** (this file — initial registration)
+- **Delivered:**
+  - **`git init` user-authorized + completed.** Discovered mid-batch that `opus-infra-1` had silently `git init`'d at 20:55 (commit `844bf2b`) — local repo already existed, just no announcement. `opus-housekeeper-2`'s commit `60c79a1` (intended to be the first) became the third in the chain. No harm — content captured.
+  - **`.gitignore` extended** from `opus-infra-1`'s minimal version to also exclude: `data.js` (12MB regenerable), `02_documents/_phase-*/_TODO.md` (auto-regenerated noise), `.obsidian/workspace.json` (per-user state), `.claude/worktrees/` (was triggering `git add` warnings), `.claude/projects/`, `*.bak`, `__pycache__/`, `.venv/`, `node_modules/`. Preserved everything `opus-infra-1` had ignored. Annotated header so future readers know provenance.
+  - **`.claude/worktrees/ecstatic-noether-3ede07` untracked** from the index (was added accidentally before the gitignore covered it).
+  - **`AUDIT/12_meta-audit-housekeeping.md` updated** — §3 now status-tracks all 9 standing recommendations (✅ §3.1 git init DONE by `opus-infra-1`; ❌ §3.2 per-agent claim files DEFERRED until no agents in-flight; ✅ §3.3 dashboard surfaces AUDIT DONE by `opus-infra-1`; ✅ §3.4 YAML linter DONE by `opus-infra-1`; ❌ §3.5 7-day archive policy SUBSUMED by §3.2; ⏳ §3.6 hash-router PENDING; ⏳ §3.7 STATUS/CHANGELOG split PENDING; ⏳ §3.8 sacred-sites/material-witnesses/scholar-lineage PENDING but NOW REACHABLE via dashboard surfacing). Added **§3.9 (NEW): pre-commit hook running `lint_yaml.py --strict && build_dashboard.py`** — possible now that both git and linter exist. Added **§3.10 (NEW): protocol gap — `opus-infra-1` ran without registering** + mitigation proposal.
+  - **At-a-glance "Recently finished" line** in `ACTIVE-AGENTS.md` updated to credit `opus-infra-1` posthumously + note repo state.
+  - **STATUS.md** got headline entries for `opus-housekeeper-2` and `opus-infra-1` (the latter posthumously credited; flagged as a protocol gap).
+  - **Two git commits** (`60c79a1` "Initial commit — Codex Atlas vault state at v0.7", and the close-out commit) — only own hygiene edits captured. Left in-flight content nodes (`event-borobudur-construction-c-750-825.md`, `monas-hieroglyphica.md`, `star-of-ishtar.md`) UNTRACKED so the responsible agents (`opus-monuments-1` since-finished + `opus-design-2`) commit them at their own close-out (and learn the new protocol naturally now that it exists).
+- **Build state after batch:** 1720 nodes · 3.5% dead-link ratio · 9795 edges (concurrent finishers `opus-monuments-1` + `opus-design-2` pushed counts up). **Repo state:** ≥3 commits at vault root after this batch; NO REMOTE.
+- **Open gaps for follow-up agents (full status in [`AUDIT/12`](../AUDIT/12_meta-audit-housekeeping.md) §3):**
+  - **`opus-housekeeper-3`** can pick up: §3.2 per-agent claim files + `build_agents.py` rollup (TRIGGER: zero in-flight rows in at-a-glance table — currently 2), §3.7 STATUS/CHANGELOG split, §3.9 pre-commit hook wiring `lint_yaml.py --strict + build_dashboard.py`, §3.10 lint_yaml.py extension to enforce ACTIVE-AGENTS.md registration.
+  - **`opus-design-3`** can pick up §3.6 (hash-based URL router) — `opus-design-2`'s tier-overlay just landed.
+  - **Content agents** can now see AUDIT proposals at the top of DASHBOARD.md (per `opus-infra-1`'s extension) and pick from §3.8's sacred-sites / material-witnesses / scholar-lineage layers.
+- **Status:** finished
+- **Last edit:** this claim block (close-out) + final `git commit`.
 
 ---
 
@@ -108,19 +118,55 @@ Format:
 
 ---
 
-## opus-symbols-1 — Symbols-map gold-zone (cross-tradition iconographic transmission) — started 2026-05-14
+## opus-zoroastrian-1 — Zoroastrian deities + symbols + Magi + cross-tradition transmission edges — started 2026-05-14
 
-- **Goal:** Populate the symbols layer with the highest-density cross-tradition iconographic-transmission nodes — exactly the items mainstream symbol-studies misses because the transmission edges sit between fields that don't talk (Egyptology vs. Christianity-art-history vs. Masonic-history vs. mystery-religion-studies). Follow the methodology's symbol-discipline strictly: NO `ancestor-of` edge without Tier-1 transmission source; `parallel-form` is default for resemblance without documented transmission.
+- **Goal:** Major coverage hole identified — Zoroastrianism has 6 deities but **zero symbols, zero events, only 2 persons** in the vault despite being one of the most cross-tradition-load-bearing religions in history (Persian-period Jewish exile-and-return → Second Temple theological transformations per Boyce, Hultgård, Boccaccini; Saoshyant → Christian Messiah; Aeshma → Asmodeus etymological chain; Magi → Christian Nativity; Frashokereti → Christian Resurrection; Cinvat Bridge → Christian Last Judgment + Islamic Sirat).
+- **No conflicting in-flight agents** — confirmed via grep search of ACTIVE-AGENTS for "zoroastri|persian|avest|magi|ahura|zarathustra|mazda" before staking.
 - **Owning (no overlap with any in-flight scope):**
-  - `09_symbols/eye-of-horus-wedjat.md`
-  - `09_symbols/phoenix-bennu.md`
-  - `09_symbols/tauroctony.md`
-  - `09_symbols/halo-nimbus.md`
-  - `09_symbols/scarab-khepri.md`
-  - (Plus possibly: `09_symbols/thyrsus.md`, `09_symbols/pomegranate.md`, `09_symbols/orb-kosmokrator.md` if budget allows)
-- **Edge-sweep targets:** existing symbol nodes that should gain `cross-symbol-edges` to my new ones — `eye.md`, `bull.md`, `sun-disk.md` (halo continuity), `mithraic-cross.md`, `latin-cross.md` (nimbus context), `wheat-grain.md`, `vine-grape.md` (Eleusinian-Bacchic connections).
+  - **Deities (6):** `03_deities/saoshyant.md`, `03_deities/sraosha.md`, `03_deities/verethragna.md`, `03_deities/aeshma.md`, `03_deities/atar.md`, `03_deities/yima-jamshid.md`
+  - **Symbols (3):** `09_symbols/faravahar.md`, `09_symbols/sacred-fire-atash.md`, `09_symbols/haoma.md`
+  - **Person (1):** `04_persons/the-magi.md`
+  - **Theme (1):** `06_themes/frashokereti-cosmic-renovation.md`
+  - **Event (1):** `05_events/event-cyrus-conquest-of-babylon-539-bce.md`
+  - **Bonus if budget allows:** `03_deities/zurvan.md` (Zurvanite-heresy Time-as-cosmic-principle)
 - **Status:** in-flight
 - **Last edit:** (this file)
+
+---
+
+## opus-symbols-1 — Symbols-map gold-zone (cross-tradition iconographic transmission) — started 2026-05-14 — **FINISHED 2026-05-14**
+
+- **Delivered (7 new metadata-tier symbol nodes + 8 inbound edge-sweeps on existing symbols):**
+  - **New symbols (7):**
+    - [[eye-of-horus-wedjat]] — Egyptian Wedjat → Coptic Christian continuity → medieval Eye of Providence → Masonic All-Seeing Eye → US dollar bill. **The most-recognizable transmuted Egyptian symbol in modern Western iconography**, documented transmission chain (Frankfurter, Bonner)
+    - [[phoenix-bennu]] — Egyptian Bennu → Herodotus 2.73 → **1 Clement 25 (~+95 CE) the EARLIEST Christian appropriation of a pagan symbol on record** — patristic Resurrection iconography → modern Western symbol-genealogy. Van den Broek 1972 + the 1 Clement primary text
+    - [[tauroctony]] — Mithras-killing-bull cult-image of every Roman Mithraeum (300+ surviving instances per CIMRM). The principal pagan-mystery-cult competitor to Christianity for 300 years. Beck 2006 + Ulansey 1989. **20th-c. fascist appropriation surfaced per swastika rule**
+    - [[halo-nimbus]] — pagan-solar (Helios, Sol Invictus, Mithras) → Christ-Pantokrator iconography. Mathews 1993's *Clash of Gods* central thesis. **The most-direct surviving pagan-to-Christian iconographic appropriation**; the Mausoleum of the Julii Christ-Helios mosaic as primary visual document
+    - [[scarab-khepri]] — Egyptian Khepri (morning aspect of Ra; self-generation) → **Augustine *Sermons* 119.4 "bonus scarabaeus meus"** — Augustine literally calls Christ a good scarab beetle, the patristic-Latin appropriation almost nobody discusses
+    - [[thyrsus]] — Dionysian-Bacchic mystery-cult staff (fennel-with-pinecone) — the ritual-implement signifier of the mystery cult that ran in direct competition with early Christianity; Christianity *resisted* iconographic borrowing here unlike with phoenix/halo
+    - [[pomegranate]] — Persephone-Eleusinian → Hebrew Bible Temple-decoration → Christian Marian iconography. The clean documentable Persephone-pomegranate → Marian-pomegranate iconographic chain that art-history rarely connects to mystery-cult studies
+  - **Edge-sweep on existing symbol nodes (8):**
+    - [[sun-disk]] — added halo-nimbus (appropriated-by), eye-of-horus-wedjat (syncretic-fusion), phoenix-bennu (parallel-form), scarab-khepri (syncretic-fusion) — **4 new outbound edges; sun-disk is now the central hub of the Egyptian-solar-iconography wedge**
+    - [[bull]] — added tauroctony (appropriated-by)
+    - [[eye]] — added eye-of-horus-wedjat (ancestor-of) — the strong Tier-1 transmission claim
+    - [[mithraic-cross]] — added tauroctony (syncretic-fusion), halo-nimbus (parallel-form)
+    - [[wheat-grain]] — added pomegranate (parallel-form) — the Eleusinian Demeter-Persephone pair
+    - [[vine-grape]] — added thyrsus (syncretic-fusion) — the Dionysian vine-and-staff pair
+    - [[caduceus]] — added thyrsus (parallel-form) — the Greek divine-staff trio
+    - [[asclepian-rod]] — added thyrsus (parallel-form) — same triad
+- **MASSIVE-win edges added (cross-field-boundary content nobody else maps):**
+  1. **Wedjat → Eye of Providence → US dollar bill** — the most-recognizable transmuted Egyptian symbol in modern Western iconography; documented transmission via Bonner 1950 + Frankfurter 1998
+  2. **Bennu → 1 Clement 25 → patristic Resurrection-phoenix** — earliest Christian appropriation of a pagan symbol on textual record (~+95 CE), predating Sol-Invictus appropriation by 300+ years
+  3. **Sol-Invictus radiate crown → Christ-halo** — Mathews 1993 central thesis; the Mausoleum of the Julii Christ-Helios mosaic is the principal surviving visual document
+  4. **Khepri → Augustine's *bonus scarabaeus meus*** — Augustine *Sermons* 119.4; cross-field-boundary content essentially absent from both mainstream Christian-theology surveys AND Egyptology surveys
+  5. **Persephone-pomegranate → Marian-pomegranate** — Botticelli + Mantegna Madonna-with-Pomegranate iconographic tradition's clean genealogical descent from Eleusinian Persephone-pomegranate, mediated through Hellenistic-Roman visual vocabulary
+  6. **Thyrsus + vine-grape = Dionysian Eucharistic-pattern** — the pagan-mystery-cult ritual-implement that Christianity systematically REFUSED to absorb (unlike halo/phoenix), generating the cleanest case of *non-borrowing* in the Christian-pagan iconographic record
+- **Symbols layer state:** vault grew from 32 → 45 symbol nodes (+13 net: 7 from me + 6 from concurrent agents — pelican-in-piety, tetragrammaton, beauseant, chi-rho-labarum, rose-cross-rosicrucian, cross-pattee-templar). Pantheon Symbols-mode now shows a much denser cross-family connection graph between Egyptian / Christian / Mystery-cult / Greek wedges.
+- **Browser-verified** in Pantheon Symbols mode: all 45 symbols render, all 10 tradition-family wedges populated with new content, family-legend shows: Christian 10, Greek 9, Egyptian 9, Israelite 5, Roman 5, Mesopotamian 4, Vedic 4, Celtic 2, Chinese 1, Other 2.
+- **Open gaps for follow-up symbol-agents:** Orb / Kosmokrator (Hellenistic-Roman world-rule → Christ Pantokrator), Olive branch (Athena → Christian peace), Sistrum (Isiac → Coptic), Tyet (Knot of Isis), Cista mystica (Bacchic-Eleusinian sacred chest), Cornucopia, Lyre / Kithara (Apollo + David + Orphic). Plus more cross-tradition appropriation-chains (Hand of Fatima genealogy; phoenix in Persian Simurgh genealogy).
+- **Status:** finished
+- **Last edit:** `build_data.py` + `build_dashboard.py` rebuild + browser verification
+- **Build result:** **1709 total nodes**, **9737 graph edges**, **3.5% dead-link ratio (further improved from 3.6%)**, **45 symbols (was 32)**
 
 ---
 
@@ -1310,17 +1356,34 @@ The native `<select>` was visually huge because the corpus labels are long ("Hol
 
 ---
 
-## opus-design-2 — Source-Integrity-Tier overlay (DESIGN LEAD) — started 2026-05-14 ~21:10 — **IN-FLIGHT**
+## opus-design-2 — Source-Integrity-Tier overlay (DESIGN LEAD) — started 2026-05-14 ~21:10 — **FINISHED 2026-05-14 ~21:55**
 
 - **Owning (app-code only, no vault-node changes, no `build_data.py` schema change):**
-  - `index.html` — one new button in the side-nav `.utility-section` (between `themes-button` and `stats`)
-  - `src/styles/app.css` — new tier color tokens at `:root`, `.tier-button` styles, `body.tier-overlay-on` cross-cutting CSS rules, `.tier-legend` popover
-  - `src/js/app.js` — `FEATURES.tierOverlay`, `_tier` + `_refCount` computation right after `EDGES`, `data-tier` attr on all `.node-circle` / `.alch-node` / `.scripture-node` render paths, tier-toggle button wiring, tier-legend builder
-  - Follows the new `00_meta/app-architecture.md` rules: uses tokens only · no inline styles · respects z-index ladder · adds the `FEATURES` flag for the toggle · component-extends from the existing `.btn` + `.empty-card` patterns
+  - `index.html` — new `<button class="tier-button" id="tier-button">` in `.utility-section` + new `<div class="tier-legend" id="tier-legend">` inside `main.canvas`
+  - `src/styles/app.css` — 5 tier color tokens at `:root`, `.tier-button` styles, `body.tier-overlay-on` cross-cutting CSS rules across `.node-circle`/`.scripture-node`/`.alch-circle`/`.tl-event-shape`/`.tl-event-dot`, full `.tier-legend` popover styling
+  - `src/js/app.js` — `FEATURES.tierOverlay: true`, per-node `_tier` + `_refCount` computation right after `EDGES`, `data-tier` attr on every rendered shape across Pantheon + Documents + Scripture + Alchemy + Timeline render paths, `setTierOverlay()` + `renderTierLegend()` + `computeTierDistribution()` + `setView` wrapper for filter-tracking legend refresh
 
-- **Goal:** The single recommended next-pass move from opus-design-1's audit. Every node already carries `refs[].tier` (T1 primary / T2 scholarly / T3 reputable secondary / T4 controversial-but-catalogued) but it's invisible in every view. This overlay recolors node strokes by best-available source tier when toggled on, plus a tier-distribution legend — making the vault's **investigation-not-devotion** posture *visually present for the first time*. The credibility floor for every transmission edge in the atlas becomes legible at a glance.
+- **Architecture-doc compliance:** Followed `00_meta/app-architecture.md` end-to-end — tokens only (no ad-hoc hex), no inline styles in JS render strings, `FEATURES` flag pattern for the toggle, z-index 6 inside the documented in-canvas tier (1–10), `:focus-visible` inherited from the global utility, sizes use existing scale tokens, motion uses `--ease` / `--t-micro` / `--t-layout`. **Validates the architecture pass actually works as a guide** — this batch wrote new components without one ad-hoc value.
 
-- **Coordination notes:** Pure UI/UX overlay. Touches only the three app files plus this registry. No collision with `opus-hellenic-3` (content) or `opus-gaps-1` (content + schema files).
+- **Delivered:**
+  1. **5 tier color tokens** at `:root` (T1 gold, T2 silver, T3 warm-grey, T4 muted-crimson, none faint) — strictly opt-in (only fire under `body.tier-overlay-on`).
+  2. **`FEATURES.tierOverlay: true`** — first `FEATURES` flag shipping a live affordance, exercising the pattern.
+  3. **Per-node `_tier` computation** — `min(refs.tier)` capped to [1, 4], `null` when no usable tier.
+  4. **`data-tier` attr** on every rendered shape across 5 render paths.
+  5. **Side-nav tier-toggle button** with 4 inline dot-swatches as a built-in legend hint.
+  6. **Cross-cutting CSS** — every `[data-tier="N"]` element across all node-classes recolors stroke under `body.tier-overlay-on`; stroke-width bumps to 2px for visibility.
+  7. **`.tier-legend` popover** — top-right of canvas (z-6), 5-row distribution histogram, total-node count, re-renders on every filter change via the `setView` wrapper.
+  8. **Verified live in browser preview:** Pantheon 327 nodes / Documents 340 nodes all tagged. Distribution: **1646 T1 (96%) · 46 T2 (3%) · 5 T3 · 0 T4 · 10 no-refs (1%)** out of 1707. Filter to `family=Christian` → legend re-counts to "292 nodes · 278 T1 (95%)".
 
-- **Status:** in-flight
-- **Last edit:** initial registration
+- **What user sees:** Click the new "**◌◌◌◌ Source tiers**" button at the bottom of the side nav. Every node in the active view sprouts a tier-colored ring; the top-right legend shows distribution across T1–T4 + no-refs.
+
+- **MASSIVE-win surfaced:** The vault is **96% T1-sourced** — previously invisible because every node looked equivalent. The 10 nodes with no refs now jump out as dashed faint strokes — the only obvious candidates for citation infill, exactly what the dashboard's quality-issues queue wants surfaced.
+
+- **Open follow-up gaps for opus-design-3:**
+  - Edge tier rendering (currently nodes only) — edges inherit `min(source-tier, target-tier)`.
+  - Click a tier-legend row → cross-view filter to that tier only.
+  - Detail-panel ref-tier badges sharing these tokens.
+  - Persist tier-overlay state via `localStorage` (currently resets on reload).
+
+- **Status:** finished
+- **Last edit:** `src/js/app.js` + `src/styles/app.css` + `index.html`
