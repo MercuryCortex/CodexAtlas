@@ -49,6 +49,22 @@ tradition-context:
   - "[[tradition-mystery-cults]]"
   - "[[tradition-aztec-mexica]]"
 cross-symbol-edges:
+  - target: "halo-nimbus"
+    type: "appropriated-by"
+    notes: "**THE LOAD-BEARING SUN-DISK → CHRISTIAN-HALO EDGE.** Mathews 1993 *Clash of Gods* makes the decisive argument that Christian halo-iconography descends from Hellenistic-Roman solar-disk / radiate-crown vocabulary (Helios, Sol Invictus, Mithras). The transmission is one of the most-direct surviving pagan-to-Christian iconographic appropriations; the Mausoleum of the Julii Christ-Helios mosaic (~+250–325) is the principal surviving visual document."
+    refs: ["Mathews 1993", "Hijmans 2009"]
+  - target: "eye-of-horus-wedjat"
+    type: "syncretic-fusion"
+    notes: "The Eye of Ra (the right-Wedjat variant) fuses iconographically with the solar-disk; 'the eye is the sun' is Egyptian theological commonplace. Khepri-Ra-Wedjat form a Heliopolitan solar-iconographic triad."
+    refs: ["Hornung 1982", "Wilkinson 2003"]
+  - target: "phoenix-bennu"
+    type: "parallel-form"
+    notes: "The Egyptian Bennu (phoenix) is the solar-bird perched on the benben primordial mound at Heliopolis; iconographically + theologically allied with solar-disk of Ra. Both Heliopolitan solar-cosmogonic emblems."
+    refs: ["Van den Broek 1972", "Frankfurter 1998"]
+  - target: "scarab-khepri"
+    type: "syncretic-fusion"
+    notes: "Khepri (scarab) is the *morning aspect of Ra*; scarab + sun-disk forms the standard 'Khepri-Ra' iconographic compound — the sun-emerging-from-darkness as cosmic self-generation."
+    refs: ["Hornung 1982"]
   - target: "eye"
     type: "parallel-form"
     notes: "The Eye of Ra (Egyptian solar-feminine destructive aspect — Sekhmet, Hathor) is iconographically and theologically connected to the solar disk; the eye-as-solar-emblem case crosses both this node and [[eye]]. Same Egyptian iconographic vocabulary; the eye-and-disk are not strictly the same symbol but are intimately paired."

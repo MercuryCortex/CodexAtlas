@@ -55,7 +55,7 @@ refs:
     type: "article"
     tier: 2
     notes: "Argues the PPNA tower was aligned to mark the solstitial sunset over the Mount of Quarantal escarpment; ritual-temporal-marker reading; speculative but published"
-tags: [event, discovery, prehistory, phase-0, neolithic, ppna, ppnb, jericho, tell-es-sultan, southern-levant, megalithic, plastered-skulls, ancestor-cult, fortification-debate]
+tags: [event, discovery, prehistory, phase-0, neolithic, ppna, ppnb, jericho, tell-es-sultan, southern-levant, megalithic, plastered-skulls, ancestor-cult, fortification-debate, monument]
 ---
 
 # Jericho (Tell es-Sultan) PPNA Tower and PPNB Plastered Skulls (c. 9,500–6,500 BCE)

@@ -48,7 +48,7 @@ refs:
     type: "monograph"
     tier: 2
     notes: "Comprehensive survey of Upper Palaeolithic art including Altamira"
-tags: [event, discovery, prehistory, phase-0, paleolithic, upper-paleolithic, solutrean, magdalenian, cave-art, altamira, cantabria, spain, polychrome-bison]
+tags: [event, discovery, prehistory, phase-0, paleolithic, upper-paleolithic, solutrean, magdalenian, cave-art, altamira, cantabria, spain, polychrome-bison, monument]
 ---
 
 # Altamira Cave Polychrome Paintings (c. 36,000–13,000 BCE)

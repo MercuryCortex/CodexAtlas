@@ -33,6 +33,10 @@ tradition-context:
   - "[[tradition-hermeticism]]"
   - "[[tradition-renaissance-hermeticism]]"
 cross-symbol-edges:
+  - target: "thyrsus"
+    type: "parallel-form"
+    notes: "Caduceus (Hermes's snake-entwined staff), thyrsus (Dionysus's pinecone-fennel staff), and asclepian-rod (Asclepius's single-snake staff) form the three principal Greek ritual-staff types — each tradition-specific (Hermetic / Bacchic / Asclepian), structurally parallel as 'divine staff identifying the carrier'. Burkert 1985 treats them as the canonical Greek divine-staff trio."
+    refs: ["Burkert 1985"]
   - target: "asclepian-rod"
     type: "appropriated-by"
     notes: "**THE CADUCEUS/ASCLEPIAN CONFLATION.** The caduceus is NOT a medical symbol historically — Hermes / Mercury is the god of trade, messengers, and psychopomps, not healing. The widespread use of the caduceus in American medical logos derives from a 1902 US Army Medical Corps adoption (Captain Frederick P. Reynolds) that conflated the caduceus with the (historically correct medical) Rod of Asclepius. Friedlander 1992 documents the full history; Wilcox & Whitham 2003 in *Annals of Internal Medicine* is the peer-reviewed scholarly correction. **This conflation is a textbook case of iconographic-history slippage; ~76% of American commercial medical organizations use the caduceus while ~62% of professional medical associations use the (correct) Rod of Asclepius (Wilcox & Whitham 2003).**"

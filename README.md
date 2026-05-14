@@ -43,22 +43,34 @@ Views: **Pantheon** (deity graph, clustered by tradition), **Timeline**, **Docum
 ```
 Codex Atlas/
 ├── README.md                 — this file
-├── index.html · data.js · build_data.py    — atlas app
-├── 00_meta/                  — methodology, schemas, label taxonomy, source-integrity policy, app-usage
+├── AGENTS.md                 — 60-second onboarding for any agent landing in the vault
+├── index.html · data.js · build_data.py · build_dashboard.py · linkcheck.py · fetch_thumbnails.py
+├── src/
+│   ├── styles/app.css        — atlas-app CSS
+│   └── js/app.js             — atlas-app JS
+├── 00_meta/                  — methodology, schemas, registries (DASHBOARD, ACTIVE-AGENTS, STATUS, canonical-slugs, dead-links, quality-issues, orphan-nodes, locations, label-taxonomy, source-integrity, app-usage, HANDOFF)
 ├── 01_timeline/              — master chronological index (all nodes by date)
 ├── 02_documents/             — primary texts, organized by phase
 │   ├── _phase-1-ancient-near-east/        (~2600–1500 BCE)
 │   ├── _phase-2-axial-age/                (~1500–500 BCE)
 │   ├── _phase-3-hellenistic-second-temple/ (~500 BCE–100 CE)
-│   └── _phase-4-late-antiquity/           (1st–7th cent. CE)
+│   ├── _phase-4-late-antiquity/           (1st–7th c. CE)
+│   ├── _phase-5-medieval/                 (~600–1500)
+│   ├── _phase-6-early-modern/             (~1500–1800)
+│   ├── _phase-7-modern/                   (~1800–2000)
+│   └── _phase-8-non-mediterranean/        (oral / non-Western canons)
 ├── 03_deities/               — one note per named god/divine figure
-├── 04_persons/               — prophets, scribes, kings, philosophers, redactors
+├── 04_persons/               — prophets, scribes, kings, philosophers, redactors, scholars
 ├── 05_events/                — historical events and discoveries
-├── 06_themes/                — recurring motifs (flood, dualism, etc.)
+├── 06_themes/                — recurring motifs (flood, dualism, demiurge, etc.)
 ├── 07_traditions/            — overview per tradition
 ├── 08_refs/                  — catalog of sources (scholars, repositories, editions)
+├── 09_symbols/               — symbology layer (per AUDIT/06 methodology)
+├── _assets/                  — atlas-app static assets (thumbnail cache, screenshots)
 ├── _graph/                   — cross-influence edge lists, visual exports
-└── 99_ingest/                — raw drops (images, screenshots, unprocessed PDFs)
+├── 99_ingest/                — raw drops (images, screenshots, unprocessed PDFs)
+├── AUDIT/                    — standing audits and proposals (00 = index)
+└── .obsidian/                — Obsidian config (vault opens cleanly)
 ```
 
 ## Status legend (per document)
@@ -74,4 +86,8 @@ See [[00_meta/methodology]] for the standing operating procedure. In short: agen
 
 ## Current phase
 
-**v0.1 — Skeleton + Phase 1–4 metadata seeding.** Four parallel agents populate `02_documents/_phase-*/` with one stub-to-metadata file per core text plus its scholarly refs and provisional cross-links.
+**v0.7 — Multi-wedge expansion in progress.** All 8 phases are populated. Live state and counts in [`00_meta/DASHBOARD.md`](00_meta/DASHBOARD.md); recently-completed batches in [`00_meta/STATUS.md`](00_meta/STATUS.md). As of 2026-05-14 the vault holds **1,664 content nodes** (335 documents, 322 deities, 544 persons, 116 events, 222 themes, 93 traditions, 32 symbols) with **~19,500 wikilink occurrences** and a **3.9% dead-link occurrence ratio**. Multiple parallel agent batches run per session — coordination protocol in [`AGENTS.md`](AGENTS.md).
+
+## For agents
+
+If you are a Claude / agent landing in this vault, start with **[`AGENTS.md`](AGENTS.md)** (60-second onboarding) and then [`00_meta/DASHBOARD.md`](00_meta/DASHBOARD.md) (live work queue) and [`00_meta/ACTIVE-AGENTS.md`](00_meta/ACTIVE-AGENTS.md) (claim-your-batch registry).

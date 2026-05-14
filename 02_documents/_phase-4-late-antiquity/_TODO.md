@@ -2,7 +2,7 @@
 
 _Auto-generated 2026-05-14._
 
-## Documents not yet at `partial` (91 of 95)
+## Documents not yet at `partial` (92 of 96)
 
 - [ ] `phase-4-065-bhagavata-purana` — status: metadata (7 refs)
 - [ ] `phase-4-083-mashafa-kidan-testament-of-our-lord` — status: metadata (4 refs)
@@ -34,6 +34,7 @@ _Auto-generated 2026-05-14._
 - [ ] `phase-4-046-john-of-damascus-exposition-orthodox-faith` — status: metadata (4 refs)
 - [ ] `phase-4-017-ginza-rba` — status: metadata (5 refs)
 - [ ] `phase-4-052-gregory-dialogues` — status: metadata (6 refs)
+- [ ] `phase-4-077-abhidharmakosa` — status: metadata (6 refs)
 - [ ] `phase-4-022-chaldean-oracles` — status: metadata (4 refs)
 - [ ] `phase-4-063-ignatius-letters` — status: metadata (5 refs)
 - [ ] `phase-4-040-pliny-trajan-correspondence` — status: metadata (4 refs)

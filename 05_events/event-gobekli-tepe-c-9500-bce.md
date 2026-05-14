@@ -48,7 +48,7 @@ refs:
     type: "monograph"
     tier: 1
     notes: "English translation and revised edition of the 2006 German monograph"
-tags: [event, discovery, prehistory, phase-0, neolithic, ppna, ppnb, gobekli-tepe, anatolia, megalithic, t-pillar, temple-vs-domestic-debate, urfa-region]
+tags: [event, discovery, prehistory, phase-0, neolithic, ppna, ppnb, gobekli-tepe, anatolia, megalithic, t-pillar, temple-vs-domestic-debate, urfa-region, monument]
 ---
 
 # Göbekli Tepe (c. 9,500–8,000 BCE)

@@ -47,7 +47,7 @@ tags: []
 One paragraph: who this deity is in its primary tradition, key epithets, principal domain(s).
 
 ## Earliest attestation
-- First documentary appearance: `[[document-slug]]`, date.
+- First documentary appearance: (link to a `02_documents/` node here), date.
 - Iconographic attestations (statues, reliefs, seals) if relevant.
 
 ## Mythological role

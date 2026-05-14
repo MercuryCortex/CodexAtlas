@@ -55,7 +55,7 @@ refs:
     type: "excavation-report"
     tier: 1
     notes: "The technical excavation-report series"
-tags: [event, discovery, prehistory, phase-0, neolithic, ppnb, late-neolithic, catalhoyuk, anatolia, proto-urban, mother-goddess-debate, bucrania, intramural-burial, figurines]
+tags: [event, discovery, prehistory, phase-0, neolithic, ppnb, late-neolithic, catalhoyuk, anatolia, proto-urban, mother-goddess-debate, bucrania, intramural-burial, figurines, monument]
 ---
 
 # Çatalhöyük (c. 7,400–6,200 BCE)

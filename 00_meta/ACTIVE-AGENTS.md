@@ -18,21 +18,45 @@ Format:
 
 ---
 
-## 🚦 In-flight claims at a glance (current as of 2026-05-14 ~20:50)
+## 🚦 In-flight claims at a glance (current as of 2026-05-14 ~21:35)
 
 | Handle | Scope tag | Owns (high level) | Started |
 |---|---|---|---|
-| `opus-housekeeper-1` | meta-coordination / hygiene | `AUDIT/00`, `AUDIT/12`, `README.md`, `AGENTS.md`, `.obsidian/{app,appearance}.json`, header sections of `ACTIVE-AGENTS.md` + `STATUS.md`. **No vault-content edits, no app-code edits.** | 2026-05-14 ~20:50 |
+| `opus-housekeeper-2` | meta-coordination / repo bootstrap + dashboard extension | `git init` at vault root + `.gitignore` + first commit (LOCAL ONLY, no remote per user); extend `build_dashboard.py` to surface AUDIT proposals + quality-issues + orphans + themes-to-create as additional dashboard tracks. **Touches** `build_dashboard.py` + `.gitignore` (new) + creates `.git/` dir. **Does NOT touch any agent's owned slug, no vault content, no app UI code.** | 2026-05-14 ~21:35 |
 | `opus-hellenic-3` | content / mystery-cult capstone | Eleusinian event, Iacchus, Triptolemus, eleusinian-mystery-revelation theme, Apuleius, Bk 11, Euripides, Aeschylus, Bacchae, Oresteia | 2026-05-14 |
-| `opus-ethiopian-4` | content / Ethiopian-canonical extras | 4 Ezra Ethiopic, Book of Giants, Mashafa Kidan, Sinodos, Yosippon-Ethiopic + 2 persons + 10 deities (Watchers, Nephilim incl. **gilgamesh-nephilim** MASSIVE-win) | 2026-05-14 |
-| `opus-design-1` | app-code / UI/UX design lead | `index.html`, `src/styles/app.css`, `src/js/app.js` (audit-and-propose phase complete, awaiting user pick) | 2026-05-14 |
 | `opus-gaps-1` | content / dead-link closure + gap-fill | tradition-syriac-orthodox, tradition-armenian-apostolic, dioscorus-of-alexandria, severus-of-antioch, jacob-baradaeus, shenoute, melchizedek, hagiography theme, tewahedo-christology, ethiopian-systematic-theology, plus 6 Buddhist follow-ups (santideva, abhidharmakosa, pyrrho-of-elis, barlaam-and-josaphat, karma-lingpa) + schema-template `[[document]]` cleanup | 2026-05-14 ~20:43 |
+| `opus-design-2` | app-code / Source-Integrity-Tier overlay (DESIGN LEAD) | new tier-color tokens at `:root`, `FEATURES.tierOverlay` flag, per-node `_tier` + `_refCount` computation, `[data-tier]` attr on rendered SVG nodes across pantheon/documents/scripture, side-nav tier-toggle button, `body.tier-overlay-on` CSS rules, tier-distribution legend popover | 2026-05-14 ~21:10 |
+| `opus-monuments-1` | content / Pantheon Monuments mode population | Thread A retrofit `monument` tag on 15 existing event-site nodes (gobekli-tepe, catalhoyuk, jericho, cucuteni, malta, stonehenge, altamira, lascaux, chauvet, sulawesi, hohle-fels, pike-2018, shanidar, natufian, thera-akrotiri); Thread B create 8 new monument events (kaaba, hagia-sophia, chartres, borobudur, angkor-wat, parthenon, karnak, mahabodhi) | 2026-05-14 ~21:30 |
 
-**Convention reminder:** vault-content batches do not collide because each owns a distinct slug list. App-code batches (`opus-design-1`) do not collide with content batches. The meta-coordination batch (`opus-housekeeper-1`) does not touch any vault content node, app-code file, or in-flight slug — only `AUDIT/`, `README`, `AGENTS.md`, Obsidian config, and the header sections of the registry files. Pick a non-overlapping wedge, append your claim block here AND a row in the table above before starting.
+**Recently finished (this session, full claim blocks below):** `opus-housekeeper-1` (vault hygiene: at-a-glance table, AUDIT renumber, [`AGENTS.md`](../AGENTS.md), README refresh, Obsidian config, [`AUDIT/12`](../AUDIT/12_meta-audit-housekeeping.md)) · `opus-design-1` (app-architecture pass + new [`00_meta/app-architecture.md`](app-architecture.md) rules doc) · `opus-ethiopian-4` (5 docs + 2 persons + 10 figures incl. **gilgamesh-nephilim** MASSIVE-win). Build state: **1694 nodes** · **3.6% dead-link ratio** · 9569 edges.
+
+**Convention reminder:** vault-content batches do not collide because each owns a distinct slug list. App-code batches do not collide with content batches. The meta-coordination batch (`opus-housekeeper-1`) does not touch any vault content node, app-code file, or in-flight slug — only `AUDIT/`, `README`, `AGENTS.md`, Obsidian config, and the header sections of the registry files. Pick a non-overlapping wedge, append your claim block here AND a row in the table above before starting. **App-code agents:** also read [`00_meta/app-architecture.md`](app-architecture.md) (created by `opus-design-1` 2026-05-14) — the load-bearing rules doc for `app.js` / `app.css`.
 
 ---
 
-## opus-housekeeper-1 — Meta-coordination & vault hygiene (NO vault-content / NO app-code edits) — started 2026-05-14 ~20:50 (local) — **IN-FLIGHT**
+## opus-housekeeper-2 — Repo bootstrap (`git init`) + dashboard extension (NO vault-content / NO app-UI edits) — started 2026-05-14 ~21:35 (local) — **IN-FLIGHT**
+
+- **Mission (user-authorized after `opus-housekeeper-1`'s standing recommendation):** "im cool with your recco, but just note, that im not putting this online at all until its done." → local `git init` only, NO remote, NO push. Plus the safe half of the deferred housekeeping queue: extend `build_dashboard.py` to surface AUDIT proposals + quality-issues + orphans + themes-to-create as additional dashboard tracks (proposed in `AUDIT/10` §6 and `AUDIT/12` §3.3).
+- **Owning (intentionally narrow — no collision with any in-flight content / app-UI batch):**
+  - `git init` at vault root → creates `.git/` directory.
+  - `.gitignore` (NEW) — excludes `data.js` (12MB regenerable), `.DS_Store`, `.obsidian/workspace.json` (per-user), `02_documents/_phase-*/_TODO.md` (auto-regenerated noise), `*.bak`, `_assets/thumbs_cache.json` if present.
+  - `git add .` + `git commit -m "Initial commit — Codex Atlas vault state at v0.7"` — captures whatever state the vault is in at commit time (in-flight agent edits get included in their current state, which is fine — they keep editing, next commit captures their finish).
+  - `build_dashboard.py` (build script, not in `opus-design-2`'s UI scope) — extend to add three new sections to `DASHBOARD.md`: Open AUDIT proposals (touch-time sorted), Quality issues by status:metadata-but-1-ref bucket, Orphan-aging track. Pure additive extension; existing dashboard tracks unchanged.
+  - Re-run `python3 build_dashboard.py` at end (regenerates DASHBOARD.md with the new tracks).
+- **Explicitly NOT doing this batch:**
+  - **Per-agent claim-block file split + `build_agents.py` rollup** (proposed in `AUDIT/11` §1, `AUDIT/12` §3.2) — DEFERRED until no agents are in-flight. Migrating ACTIVE-AGENTS.md from hand-edited to auto-generated mid-session would clobber the in-flight agents' writes. Trigger condition: zero in-flight rows in the at-a-glance table.
+  - **Remote setup / push** — user explicitly declined ("not putting this online at all until its done").
+  - **No vault content / no app UI** (same scope-discipline as `opus-housekeeper-1`).
+- **Coordination notes:**
+  - `opus-design-2` (in-flight, app UI) — disjoint; I touch zero `index.html` / `app.css` / `app.js`. `build_dashboard.py` is a build script, not in their scope.
+  - `opus-monuments-1` (in-flight, content) — disjoint; I touch zero vault content nodes. The `git add .` will include whatever monument nodes they've created at commit time, which is fine.
+  - `opus-hellenic-3`, `opus-gaps-1` (in-flight, content) — disjoint; same.
+- **Status:** in-flight
+- **Last edit:** (this file — initial registration)
+
+---
+
+## opus-housekeeper-1 — Meta-coordination & vault hygiene (NO vault-content / NO app-code edits) — started 2026-05-14 ~20:50 (local) — **FINISHED 2026-05-14 ~21:05**
 
 - **Mission (user-assigned):** "audit this project to keep it TIGHT and clean so it becomes HYPER optimized — every time an agent comes in should be super easy to connect work from other agents — catalogue things properly — Obsidian files updated — whatever Claude and agents work best in practice for this project (MEGA) start to apply — make yourself known to the other agents."
 - **Scope (intentionally narrow — no collision risk with any in-flight content batch):**
@@ -54,8 +78,49 @@ Format:
   - `opus-hellenic-3`, `opus-ethiopian-4`, `opus-gaps-1` — disjoint slug-wise; my batch creates no vault-content nodes.
   - `opus-design-1` — disjoint; I touch zero app-code files.
   - If any of you finishes during my batch and runs `build_dashboard.py` first, that's fine — I run it again at the end and our edits will compose.
+- **Delivered (8 file edits, 2 file creations, 1 file rename — pure infrastructure, zero vault content, zero app code):**
+  - **`00_meta/ACTIVE-AGENTS.md`** — added 🚦 In-flight at-a-glance table at top; archive-policy note (proposed 7-day finished-block archive); pointer to `AGENTS.md`; this claim block; updated in-text reference to renamed buddhist audit (`10_` → `11_`).
+  - **`AUDIT/10_opus-buddhist-1-audit.md` → `AUDIT/11_opus-buddhist-1-audit.md`** — resolved numbering collision with `10_app-and-infrastructure-audit.md`.
+  - **[`AUDIT/00_AUDIT_OVERVIEW.md`](../AUDIT/00_AUDIT_OVERVIEW.md)** — refreshed index from stale 01–05 listing to comprehensive 01–12 with categorical grouping (content audits / scoped feature briefs / engineering & process audits) and a numbering-convention note that prevents future collisions.
+  - **[`AGENTS.md`](../AGENTS.md) (NEW at vault root)** — 60-second agent-onboarding doc compressing pre-flight protocol + coordination protocol + canonical-slug check + DO-NOT list + folder map + status legend + MASSIVE-win framing + quick-links into one screen. Includes app-code-agent extension (read `app-architecture.md`).
+  - **[`README.md`](../README.md)** — folder map updated from stale phases-1-4-only to current state (phases 1–8, AUDIT/, src/, _assets/, 09_symbols/, AGENTS.md); current-phase line updated from v0.1 to v0.7 with live counts (1,694 nodes; 3.6% dead-link ratio); new "For agents" section pointing to AGENTS.md.
+  - **[`.obsidian/app.json`](../.obsidian/app.json)** — was 2-byte `{}`; now sane defaults (`alwaysUpdateLinks: true`, `newLinkFormat: shortest`, `useMarkdownLinks: false`, `attachmentFolderPath: 99_ingest`, `promptDelete: true`, `readableLineLength: true`, `showFrontmatter: true`, `foldHeading: true`, `spellcheck: true`).
+  - **[`.obsidian/appearance.json`](../.obsidian/appearance.json)** — was 2-byte `{}`; now reading-friendly defaults (`baseFontSize: 16`, monospace fallback chain, accent color).
+  - **[`00_meta/STATUS.md`](STATUS.md)** — added headline entry to "Recently completed batches" block at top.
+  - **[`AUDIT/12_meta-audit-housekeeping.md`](../AUDIT/12_meta-audit-housekeeping.md) (NEW)** — durable record of this pass: what was found, what was changed, the standing recommendations carried forward (git init, per-agent claim files, dashboard surfacing AUDIT, YAML linter, hash-router, STATUS/CHANGELOG split, methodology proposals).
+  - **`python3 build_data.py && python3 build_dashboard.py` clean rebuild** — picks up `opus-design-1` + `opus-ethiopian-4` + `opus-gaps-1` deltas from this same window.
+- **Build state after this batch (composed with concurrent finishers):** 1694 nodes scanned (1664 → 1694 = +30 from concurrent batches; this batch added zero) · dead-link occurrence ratio **3.6%** (was 3.9%) · 486 dead targets (was 499) · 4 orphans (unchanged) · 109 quality issues (unchanged) · 9569 edges.
+- **Net effect on next-agent friction:**
+  - **Onboarding cost dropped** from "stitch DASHBOARD + ACTIVE-AGENTS + STATUS + methodology + canonical-slugs + HANDOFF" (5–7 files) to "read AGENTS.md, then DASHBOARD" (2 files).
+  - **Live-claim discovery cost dropped** from "scroll past 18 claim blocks (~1,200 lines) to find in-flight ones" to "read at-a-glance table at top of ACTIVE-AGENTS.md (3 rows + 1 row recently-finished)".
+  - **AUDIT findability cost dropped** from "stale 05-row index, no awareness of files 06–11" to "12-row categorical index with status notes per file".
+  - **Obsidian opens cleanly** for the first time (vault was renderable but had no preferences set, so attachment drops scattered, link format inconsistent, no readable line length).
+- **Open gaps for follow-up agents (full list in `AUDIT/12_meta-audit-housekeeping.md` §3):**
+  - **`git init` + remote** (#1 standing infrastructure gap; ~1 hour).
+  - **Per-agent claim-block file split + `build_agents.py` rollup** (proposed in `AUDIT/11`; ~1 hour; subsumes the 7-day archive policy).
+  - **`build_dashboard.py` should surface AUDIT proposals + quality-issues + orphans + themes-to-create** as additional dashboard tracks (proposed in `AUDIT/10`; ~30 lines).
+  - **YAML schema + canonical-slug linter** (`lint_yaml.py`; ~1 day; pre-commit gate after git lands).
+  - **STATUS.md → STATUS.md + CHANGELOG.md split** (this batch; ~30 min).
+  - **Hash-based URL router** (`#/pantheon`, `#/node/yaldabaoth` etc.; ~50 lines; unblocks every "share with someone" use case).
+  - **Sacred-sites layer (`10_sites/`) + material-witnesses layer (`09_material/`) + scholar-lineage layer** (proposed in `AUDIT/04` and `AUDIT/10` §4; conditional on dashboard surfacing AUDIT proposals so they actually reach agent work queues).
+- **Status:** finished
+- **Last edit:** this claim block (close-out) + `AUDIT/12_meta-audit-housekeeping.md` + clean rebuild.
+
+---
+
+## opus-symbols-1 — Symbols-map gold-zone (cross-tradition iconographic transmission) — started 2026-05-14
+
+- **Goal:** Populate the symbols layer with the highest-density cross-tradition iconographic-transmission nodes — exactly the items mainstream symbol-studies misses because the transmission edges sit between fields that don't talk (Egyptology vs. Christianity-art-history vs. Masonic-history vs. mystery-religion-studies). Follow the methodology's symbol-discipline strictly: NO `ancestor-of` edge without Tier-1 transmission source; `parallel-form` is default for resemblance without documented transmission.
+- **Owning (no overlap with any in-flight scope):**
+  - `09_symbols/eye-of-horus-wedjat.md`
+  - `09_symbols/phoenix-bennu.md`
+  - `09_symbols/tauroctony.md`
+  - `09_symbols/halo-nimbus.md`
+  - `09_symbols/scarab-khepri.md`
+  - (Plus possibly: `09_symbols/thyrsus.md`, `09_symbols/pomegranate.md`, `09_symbols/orb-kosmokrator.md` if budget allows)
+- **Edge-sweep targets:** existing symbol nodes that should gain `cross-symbol-edges` to my new ones — `eye.md`, `bull.md`, `sun-disk.md` (halo continuity), `mithraic-cross.md`, `latin-cross.md` (nimbus context), `wheat-grain.md`, `vine-grape.md` (Eleusinian-Bacchic connections).
 - **Status:** in-flight
-- **Last edit:** (this file — initial registration + at-a-glance table)
+- **Last edit:** (this file)
 
 ---
 
@@ -1200,3 +1265,62 @@ The native `<select>` was visually huge because the corpus labels are long ("Hol
 - **Last edit:** (this file)
 
 ---
+
+## opus-gaps-1 — FINISHED 2026-05-14 ~21:05
+
+**Delivered (17 new metadata-tier nodes + 5 schema-template cleanups + 5 slug-drift wikilink fixes):**
+
+  - **Traditions (2 new):** [[tradition-syriac-orthodox]] (closed #1 dead-link target, 7 refs) · [[tradition-armenian-apostolic]] (closed 5 refs)
+  - **Persons (8 new):**
+    - [[dioscorus-of-alexandria]] (closed 5 refs — central deposed figure of Chalcedon 451)
+    - [[severus-of-antioch]] (6th-c. patriarch; foundational Miaphysite systematic theologian)
+    - [[jacob-baradaeus]] (saved the Miaphysite hierarchy underground; eponym of "Jacobite")
+    - [[shenoute]] (closed 4 refs — foundational figure of Coptic-language Christianity)
+    - [[melchizedek]] (closed 5 refs — priest-king of Salem; Hebrews 7 / 11Q13 / 2 Enoch / NHC IX,1 / Mormon Priesthood typology)
+    - [[santideva]] (8th-c. Bodhicaryāvatāra author)
+    - [[pyrrho-of-elis]] (Greek skeptic; Beckwith Buddhist-origin hypothesis figure)
+    - [[barlaam-and-josaphat]] (MASSIVE-WIN — Christianized Buddha; Catholic feast 27 Nov until 1969; the most consequential Buddhist→Christian hagiographic transmission ever traced)
+    - [[karma-lingpa]] (closed 2-ref dead-link; Bardo Thödol revealer)
+  - **Themes (3 new):** [[hagiography]] (closed 4 refs — cross-tradition genre) · [[tewahedo-christology]] (closed 4 refs) · [[ethiopian-systematic-theology]] (closed 4 refs)
+  - **Documents (2 new):** [[phase-5-049-bodhicaryavatara]] (Śāntideva's foundational Mahāyāna ethical-classic) · [[phase-4-077-abhidharmakosa]] (Vasubandhu's Sarvāstivāda Abhidharma synthesis)
+
+  - **Schema-template `[[document]]` placeholder leak — closed in 5 files:**
+    - `00_meta/schema-deity.md`, `00_meta/schema-symbol.md`, `00_meta/schema-theme.md`, `00_meta/schema-document.md`, `00_meta/schema-tradition.md`, `00_meta/schema-person.md`, `AUDIT/06_symbology_proposal.md` — all `[[document]]` / `[[other-document]]` / `[[other-tradition]]` / `[[document-slug]]` etc. template-placeholder wikilinks rewritten to parenthetical instructions ("link to a `02_documents/` node here") that the dashboard scanner doesn't index.
+
+  - **Slug-drift fix:** 5 wikilinks `[[origen-of-alexandria]]` → `[[origen]]` rewritten in [[ethiopian-marian-devotion]] + [[tradition-coptic-orthodox]] (the canonical slug per the existing file [[origen]]).
+
+- **Cross-batch MASSIVE-win edges added:**
+  1. **Oriental Orthodox communion fully wired**: [[tradition-syriac-orthodox]] + [[tradition-armenian-apostolic]] + [[dioscorus-of-alexandria]] + [[severus-of-antioch]] + [[jacob-baradaeus]] + [[shenoute]] now anchor the cluster that opus-ethiopian-1+2+3 was pointing at. The Coptic-Syriac-Armenian-Ethiopian-Indian-Malankara communion-family is now navigable.
+  2. **Buddhist → Christian hagiographic transmission**: [[barlaam-and-josaphat]] is the canonical case of the historical Buddha becoming a Christian saint. Bodhisattva → Bodhasaf → Yūdāsaf → Iōdasaph → Iosaphat with the full transmission chain (Buddhist substrate → Manichaean adaptation → Arabic *Kitāb Bilawhar wa Yūdāsaf* → Georgian *Balavariani* → Greek John-of-Damascus-attributed *Barlaam and Ioasaph* → Latin Christian saints' calendar 1583-1969).
+  3. **Pyrrho-Buddhist contact**: [[pyrrho-of-elis]] is the load-bearing figure for the Beckwith 2015 hypothesis that Greek skepticism has Buddhist origins. Now wired forward into [[tradition-greco-buddhism]].
+  4. **Melchizedek cross-tradition cluster**: priest-king-of-Salem typology connects Gen 14 → Ps 110 → Qumran 11Q13 → 2 Enoch 70-72 → Philo *Legum Allegoriae* → Hebrews 7 → Nag Hammadi *Melchizedek* (NHC IX,1) → Mandaean Right Ginza → Mormon Melchizedek Priesthood. Single figure with **7 distinct tradition-receptions**.
+
+- **Build result:** 1637 → 1694 net nodes after the session (17 from this batch; ~40 from concurrent agents). Dead-link occurrence ratio **3.6% → 3.5%** (715 → 703 — net -12 after my edits which both closed ~50 dead-links via my new nodes AND introduced ~38 new wikilinks pointing to other still-missing nodes from inside my new nodes). The 4 highest-volume targets in the priority queue (`tradition-syriac-orthodox`, `tradition-armenian-apostolic`, `dioscorus-of-alexandria`, `melchizedek`) all closed. Top remaining dead-link targets are now the schema-meta `document` (the dashboard scanner doesn't respect backticks; needs a `build_dashboard.py` fix) and `liturgical-calendar` (6 refs — Ethiopian-wedge-adjacent).
+
+- **Open gaps for follow-up agents:**
+  - **Dashboard scanner backtick-respect** — `build_dashboard.py`'s wikilink extractor counts `\`[[foo]]\`` as a real wikilink. Fix this and the remaining `document` (6 refs from meta-discussion in ACTIVE-AGENTS + AUDIT/11 + AUDIT/12) drops to 0.
+  - **`liturgical-calendar`** (6 refs) — Ethiopian-Marian-feast-cycle theme; obvious next stub.
+  - **`tummal-chronicle`** (4 refs) — Sumerian king-list-related document; opus-mystical / opus-ane-1 territory.
+  - **`hyperdiffusionism`** (4 refs) — needed theme (referenced from Hancock/Donnelly nodes).
+  - **`primordial-darkness`, `genealogical-cosmogony`, `evolutionary-cosmogony`, `underworld-descent`, `norse-cosmogony`, `ragnarok-apocalyptic`** (4 refs each) — Phase 8 (non-Western traditional) cosmogony themes still dead-linked.
+  - **Africa-Yoruba-Vodun wedge batch** — see my AUDIT/11 — still the largest mission-vs-reality content gap; 1-ref deities for Damballa / Erzulie / Oshun / Ogun / Baron-Samedi need their tradition-Yoruba and tradition-Vodun anchors.
+
+- **Status:** finished
+- **Last edit:** This finished-block + `python3 build_data.py && python3 build_dashboard.py` clean rebuild.
+
+---
+
+## opus-design-2 — Source-Integrity-Tier overlay (DESIGN LEAD) — started 2026-05-14 ~21:10 — **IN-FLIGHT**
+
+- **Owning (app-code only, no vault-node changes, no `build_data.py` schema change):**
+  - `index.html` — one new button in the side-nav `.utility-section` (between `themes-button` and `stats`)
+  - `src/styles/app.css` — new tier color tokens at `:root`, `.tier-button` styles, `body.tier-overlay-on` cross-cutting CSS rules, `.tier-legend` popover
+  - `src/js/app.js` — `FEATURES.tierOverlay`, `_tier` + `_refCount` computation right after `EDGES`, `data-tier` attr on all `.node-circle` / `.alch-node` / `.scripture-node` render paths, tier-toggle button wiring, tier-legend builder
+  - Follows the new `00_meta/app-architecture.md` rules: uses tokens only · no inline styles · respects z-index ladder · adds the `FEATURES` flag for the toggle · component-extends from the existing `.btn` + `.empty-card` patterns
+
+- **Goal:** The single recommended next-pass move from opus-design-1's audit. Every node already carries `refs[].tier` (T1 primary / T2 scholarly / T3 reputable secondary / T4 controversial-but-catalogued) but it's invisible in every view. This overlay recolors node strokes by best-available source tier when toggled on, plus a tier-distribution legend — making the vault's **investigation-not-devotion** posture *visually present for the first time*. The credibility floor for every transmission edge in the atlas becomes legible at a glance.
+
+- **Coordination notes:** Pure UI/UX overlay. Touches only the three app files plus this registry. No collision with `opus-hellenic-3` (content) or `opus-gaps-1` (content + schema files).
+
+- **Status:** in-flight
+- **Last edit:** initial registration

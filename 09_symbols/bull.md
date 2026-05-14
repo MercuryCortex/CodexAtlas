@@ -55,6 +55,10 @@ tradition-context:
   - "[[tradition-greek-religion]]"
   - "[[tradition-mystery-cults]]"
 cross-symbol-edges:
+  - target: "tauroctony"
+    type: "appropriated-by"
+    notes: "The Roman Mithraic tauroctony deploys the bull-symbol — pervasive across Near Eastern and Mediterranean religion (Apis-bull, Cretan bull, Vedic-Indra bull, golden calf) — as cosmic-sacrificial-victim in distinctively Mithraic theological context. The tauroctony is the iconographic cult-image of every Roman Mithraeum."
+    refs: ["Beck 2006", "Ulansey 1989"]
   - target: "mithraic-cross"
     type: "syncretic-fusion"
     notes: "The Mithras tauroctony scene IS the iconographic core of Mithraic iconography; the X / cross arrangement of the tauroctony attendants (dog, snake, scorpion, raven + Sol-Luna axis) is what makes the Mithraic-cross node a cruciform sub-cluster within the Mithraic mystery cult. (Ulansey 1989; Beck 2006.)"

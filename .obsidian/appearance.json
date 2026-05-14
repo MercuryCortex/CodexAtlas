@@ -1,1 +1,11 @@
-{}
+{
+  "baseFontSize": 16,
+  "monospaceFontFamily": "ui-monospace, SFMono-Regular, Menlo, Consolas, monospace",
+  "interfaceFontFamily": "",
+  "textFontFamily": "",
+  "theme": "obsidian",
+  "translucency": false,
+  "showViewHeader": true,
+  "nativeMenus": false,
+  "accentColor": "#7c3aed"
+}

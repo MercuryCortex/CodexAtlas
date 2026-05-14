@@ -349,7 +349,7 @@ canonical-slug
 - `zagreus`
 - `zeus`
 
-### document (339 nodes)
+### document (340 nodes)
 
 - `phase-1-001-kesh-temple-hymn`
 - `phase-1-002-pyramid-texts`
@@ -530,6 +530,7 @@ canonical-slug
 - `phase-4-075-mulamadhyamakakarika`
 - `phase-4-076-stobaean-hermetica-kore-kosmou`
 - `phase-4-076-visuddhimagga`
+- `phase-4-077-abhidharmakosa`
 - `phase-4-077-definitions-hermes-asclepius-armenian`
 - `phase-4-078-prayer-of-thanksgiving-nhc-vi-7`
 - `phase-4-079-coptic-asclepius-nhc-vi-8`
@@ -691,7 +692,7 @@ canonical-slug
 - `phase-8-017-santeria-lucumi`
 - `phase-8-018-kalevala`
 
-### event (116 nodes)
+### event (118 nodes)
 
 - `event-aboriginal-stolen-generations-1905-1969`
 - `event-ahmad-gragn-invasion-1529`
@@ -758,6 +759,7 @@ canonical-slug
 - `event-ghost-dance-wounded-knee-1890`
 - `event-gobekli-tepe-c-9500-bce`
 - `event-great-schism-1054`
+- `event-hagia-sophia-construction-537`
 - `event-haitian-revolution-1791-1804`
 - `event-hegira-622`
 - `event-hohle-fels-figurines-c-35000-bce`
@@ -767,6 +769,7 @@ canonical-slug
 - `event-jericho-pre-pottery-neolithic-c-9000-bce`
 - `event-jesuit-mission-ethiopia-1557-1632`
 - `event-jewish-expulsion-spain-1492`
+- `event-kaaba-pre-islamic-and-islamic-foundation`
 - `event-kaleb-aksum-himyar-invasion-525`
 - `event-karbala-680`
 - `event-lascaux-cave-paintings-c-17000-bce`
@@ -810,7 +813,7 @@ canonical-slug
 - `event-vatican-ii-aftermath-1965-present`
 - `event-zagwe-lalibela-churches-c1200`
 
-### person (554 nodes)
+### person (556 nodes)
 
 - `aaron`
 - `abba-garima`
@@ -875,6 +878,7 @@ canonical-slug
 - `bahaullah`
 - `bahya-ibn-paquda`
 - `bardaisan-of-edessa`
+- `barlaam-and-josaphat`
 - `barnabas`
 - `bart-ehrman`
 - `bartholomew-apostle`
@@ -1114,6 +1118,7 @@ canonical-slug
 - `kanishka`
 - `karen-armstrong`
 - `karen-king`
+- `karma-lingpa`
 - `keshub-chandra-sen`
 - `kevin-van-bladel`
 - `khadija-bint-khuwaylid`
@@ -1367,18 +1372,23 @@ canonical-slug
 - `zhuangzi-person`
 - `zosimos-of-panopolis`
 
-### symbol (32 nodes)
+### symbol (45 nodes)
 
 - `ankh`
 - `asclepian-rod`
+- `beauseant`
 - `bull`
 - `caduceus`
 - `celtic-cross`
+- `chi-rho-labarum`
 - `coptic-cross`
 - `crescent-moon-star`
+- `cross-pattee-templar`
 - `eye`
+- `eye-of-horus-wedjat`
 - `fish-ichthys`
 - `greek-cross`
+- `halo-nimbus`
 - `hexagram`
 - `indus-valley-script`
 - `latin-cross`
@@ -1388,13 +1398,21 @@ canonical-slug
 - `mandala-circle`
 - `mithraic-cross`
 - `ouroboros`
+- `pelican-in-piety`
 - `pentagram`
+- `phoenix-bennu`
+- `pomegranate`
+- `rose-cross-rosicrucian`
+- `scarab-khepri`
 - `serpent-cosmic-enemy`
 - `serpent-wisdom-chthonic`
 - `spiral`
 - `sun-disk`
 - `swastika`
 - `tau-cross`
+- `tauroctony`
+- `tetragrammaton`
+- `thyrsus`
 - `tree-of-life`
 - `triskelion`
 - `vesica-piscis`
@@ -1735,15 +1753,15 @@ canonical-slug
 
 | Refs | Dead target | Suggested canonical (existing) |
 |---:|---|---|
-| 4 | `ragnarok-apocalyptic` | `apocalyptic-revelation` |
+| 4 | `ragnarok-apocalyptic` | `apocalyptic-cosmic-warfare` |
 | 4 | `primordial-darkness` | `eros-primordial` |
 | 4 | `messianic-revelation` | `messianic-secret` |
 | 4 | `genealogical-cosmogony` | `mesoamerican-cosmogony` |
 | 4 | `evolutionary-cosmogony` | `mesoamerican-cosmogony` |
 | 3 | `the-evil-god-cathar` | `the-good-god-cathar` |
-| 3 | `phase-2-005-1-2-kings` | `phase-2-003-atharva-veda` |
-| 3 | `messianic-genealogy` | `messianic-secret` |
+| 3 | `phase-2-005-1-2-kings` | `phase-2-008-homeric-epics` |
+| 3 | `messianic-genealogy` | `solomonic-genealogy` |
 | 2 | `yam-canaanite` | `astarte-canaanite` |
-| 2 | `tradition-minoan-religion` | `tradition-mithraic-mysteries` |
-| 2 | `tradition-eastern-orthodoxy` | `tradition-mithraic-mysteries` |
-| 2 | `phase-1-013-babylonian-theodicy` | `phase-1-014-ugaritic-ritual-texts` |
+| 2 | `tradition-minoan-religion` | `tradition-mandaeism` |
+| 2 | `tradition-eastern-orthodoxy` | `tradition-mandaeism` |
+| 2 | `phase-1-013-babylonian-theodicy` | `phase-1-015-sumerian-king-list` |

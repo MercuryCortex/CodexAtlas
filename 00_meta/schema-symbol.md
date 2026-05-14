@@ -86,7 +86,7 @@ tags: []                            # include the category, the families, any sp
 One paragraph. What this symbol IS — its glyph form, its semiotic structure (life-sign | hieroglyph | logograph | cosmographic-diagram | apotropaic-mark).
 
 ## Earliest attestation
-- First documentary appearance: `[[document-slug]]`, date.
+- First documentary appearance: (link to a `02_documents/` node here), date.
 - Iconographic earliest: object / site / inscription if relevant (museum number, archaeological context).
 
 ## Meaning(s) attested

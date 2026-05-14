@@ -44,6 +44,10 @@ tradition-context:
   - "[[tradition-christianity-canonical]]"
   - "[[tradition-vedic-hinduism]]"
 cross-symbol-edges:
+  - target: "thyrsus"
+    type: "syncretic-fusion"
+    notes: "The Dionysian thyrsus (fennel-stalk-with-pinecone) is iconographically wrapped with vine/ivy; the vine and the thyrsus fuse in the cult-image of Dionysus. Inseparable iconographic pair within Bacchic-mystery iconography."
+    refs: ["Burkert 1985", "Henrichs 1982"]
   - target: "wheat-grain"
     type: "parallel-form"
     notes: "Wine and bread / grape and wheat are the Christian eucharistic pair, both inherited from Greco-Roman votive iconography (Demeter-wheat ↔ Dionysus-vine). Together they form the iconographic-ritual dyad of Christian Eucharist."

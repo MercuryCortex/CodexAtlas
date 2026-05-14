@@ -45,6 +45,10 @@ tradition-context:
   - "[[tradition-egyptian]]"
   - "[[tradition-mystery-cults]]"
 cross-symbol-edges:
+  - target: "pomegranate"
+    type: "parallel-form"
+    notes: "The Eleusinian Demeter-wheat / Persephone-pomegranate iconographic pair: Demeter carries wheat (cultivated-life), Persephone the pomegranate (underworld-binding-and-return). The two symbols form the iconographic core of the Mother-Daughter complex at Eleusis."
+    refs: ["Kerényi 1967", "Burkert 1985"]
   - target: "vine-grape"
     type: "parallel-form"
     notes: "Wheat-and-vine / bread-and-wine form the Christian eucharistic pair, both inherited from Greco-Roman votive iconography. Together: the iconographic-ritual dyad of Christian Eucharist."

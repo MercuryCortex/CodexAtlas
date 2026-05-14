@@ -48,7 +48,7 @@ What is this tradition, when and where did it emerge, what are its defining feat
 - ...
 
 ## Relations to neighbors
-- vs. [[other-tradition]]: shared milieu, contested points, mutual influence.
+- vs. (link to another `07_traditions/` node): shared milieu, contested points, mutual influence.
 
 ## Refs
 1. ...

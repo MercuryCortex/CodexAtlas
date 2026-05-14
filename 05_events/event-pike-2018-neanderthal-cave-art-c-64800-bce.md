@@ -47,7 +47,7 @@ refs:
     publisher: "Cambridge Archaeological Journal 28(4): 605–620"
     type: "journal-article"
     tier: 1
-tags: [event, discovery, prehistory, paleolithic, neanderthal, cave-art, contested, iberia, 2018]
+tags: [event, discovery, prehistory, paleolithic, neanderthal, cave-art, contested, iberia, 2018, monument]
 ---
 
 # Pike et al. 2018: Neanderthal-attributed cave art at La Pasiega, Maltravieso, Ardales

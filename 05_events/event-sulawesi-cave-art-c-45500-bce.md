@@ -41,7 +41,7 @@ refs:
     type: "article"
     tier: 1
     notes: "Earlier paper establishing late-Pleistocene U-Th dates for Sulawesi hand-stencils and figurative animals (initial breakthrough)"
-tags: [event, discovery, prehistory, phase-0, paleolithic, upper-paleolithic, cave-art, sulawesi, indonesia, figurative-art, therianthrope, narrative-scene, uranium-thorium-dating]
+tags: [event, discovery, prehistory, phase-0, paleolithic, upper-paleolithic, cave-art, sulawesi, indonesia, figurative-art, therianthrope, narrative-scene, uranium-thorium-dating, monument]
 ---
 
 # Sulawesi Cave Art (c. 45,500 BCE — and possibly earlier)

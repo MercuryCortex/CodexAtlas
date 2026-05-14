@@ -48,7 +48,7 @@ refs:
     type: "article"
     tier: 1
     notes: "The original palynological claim; the source-paper for the flower-burial interpretation"
-tags: [event, discovery, prehistory, phase-0, paleolithic, middle-paleolithic, neanderthal, burial, shanidar, mortuary-ritual, contested-interpretation]
+tags: [event, discovery, prehistory, phase-0, paleolithic, middle-paleolithic, neanderthal, burial, shanidar, mortuary-ritual, contested-interpretation, monument]
 ---
 
 # Shanidar Cave Neanderthal Burials (c. 75,000–45,000 BCE)

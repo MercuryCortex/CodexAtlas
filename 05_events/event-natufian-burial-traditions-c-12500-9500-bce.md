@@ -48,7 +48,7 @@ refs:
     type: "book-chapter"
     tier: 1
     notes: "Argues for direct Natufian → PPNB continuity in mortuary practice, including the skull-curation tradition that culminates in the PPNB plastered skulls"
-tags: [event, discovery, prehistory, phase-0, epipalaeolithic, mesolithic, natufian, southern-levant, intramural-burial, shaman-burial, hilazon-tachtit, mortuary-ritual, feasting]
+tags: [event, discovery, prehistory, phase-0, epipalaeolithic, mesolithic, natufian, southern-levant, intramural-burial, shaman-burial, hilazon-tachtit, mortuary-ritual, feasting, monument]
 ---
 
 # Natufian Burial Traditions and the Hilazon Tachtit "Shaman" Burial (c. 12,500–9,500 BCE)

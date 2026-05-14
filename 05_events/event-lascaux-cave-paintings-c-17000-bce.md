@@ -48,7 +48,7 @@ refs:
     type: "official-listing"
     tier: 2
     notes: "Inscribed 1979 as part of 'Decorated Caves of the Vézère Valley'"
-tags: [event, discovery, prehistory, phase-0, paleolithic, upper-paleolithic, magdalenian, solutrean, cave-art, lascaux, dordogne, france, polychrome, therianthrope, bird-man-shaft]
+tags: [event, discovery, prehistory, phase-0, paleolithic, upper-paleolithic, magdalenian, solutrean, cave-art, lascaux, dordogne, france, polychrome, therianthrope, bird-man-shaft, monument]
 ---
 
 # Lascaux Cave Paintings (c. 19,000–15,000 BCE)

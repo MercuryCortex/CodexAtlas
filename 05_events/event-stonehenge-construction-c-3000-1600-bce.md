@@ -55,7 +55,7 @@ refs:
     type: "article"
     tier: 1
     notes: "Geochemical sourcing of 50 of the 52 surviving sarsens to West Woods, near Marlborough, Wiltshire; resolves the long-standing sarsen-source question"
-tags: [event, discovery, prehistory, phase-0, neolithic, chalcolithic, bronze-age, stonehenge, salisbury-plain, england, britain, megalithic, henge, sarsen, bluestone, solstitial-alignment]
+tags: [event, discovery, prehistory, phase-0, neolithic, chalcolithic, bronze-age, stonehenge, salisbury-plain, england, britain, megalithic, henge, sarsen, bluestone, solstitial-alignment, monument]
 ---
 
 # Stonehenge Construction (c. 3000–1600 BCE)

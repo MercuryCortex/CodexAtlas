@@ -48,7 +48,7 @@ refs:
     type: "edited-volume"
     tier: 1
     notes: "Companion volume to *Chauvet Cave: The Art of Earliest Times*; site formation and conservation"
-tags: [event, discovery, prehistory, phase-0, paleolithic, upper-paleolithic, aurignacian, gravettian, cave-art, chauvet, france, figurative-art, therianthrope, lewis-williams-shamanism-hypothesis]
+tags: [event, discovery, prehistory, phase-0, paleolithic, upper-paleolithic, aurignacian, gravettian, cave-art, chauvet, france, figurative-art, therianthrope, lewis-williams-shamanism-hypothesis, monument]
 ---
 
 # Chauvet-Pont d'Arc Cave Paintings (c. 37,000–28,000 BCE)

@@ -49,6 +49,12 @@
     <button class="themes-button" id="themes-button">
       <span class="util-sym">◇</span><span class="util-lbl">Themes</span><span class="caret">▾</span>
     </button>
+    <button class="tier-button" id="tier-button" title="Toggle source-integrity tier coloring on every node">
+      <span class="tier-swatches" aria-hidden="true">
+        <span class="ts-dot" data-t="1"></span><span class="ts-dot" data-t="2"></span><span class="ts-dot" data-t="3"></span><span class="ts-dot" data-t="4"></span>
+      </span>
+      <span class="util-lbl">Source tiers</span>
+    </button>
     <div class="stats" id="stats">
       <span class="stat"><strong id="s-docs">0</strong>docs</span>
       <span class="stat"><strong id="s-deities">0</strong>deities</span>
@@ -98,6 +104,8 @@
   </div>
   <svg id="svg"></svg>
   <div class="legend" id="legend" style="display:none"></div>
+  <!-- Tier-overlay distribution legend — shown only when body.tier-overlay-on. Populated by JS on toggle. -->
+  <div class="tier-legend" id="tier-legend" aria-live="polite"></div>
   <div class="map-thumb" id="map-thumb" style="display:none">
     <svg viewBox="0 0 360 180" preserveAspectRatio="xMidYMid meet" id="map-thumb-svg">
       <!-- Equirectangular world: lon ∈ [-180,180] maps x ∈ [0,360]; lat ∈ [-90,90] maps y ∈ [180,0] -->

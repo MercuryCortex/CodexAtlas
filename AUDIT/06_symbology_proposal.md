@@ -113,8 +113,8 @@ tags: [symbol, egyptian, geometric, life, eternity]
 One paragraph. What this symbol IS — its glyph form, its semiotic structure (life | hieroglyph | logograph).
 
 ## Earliest attestation
-- First documentary appearance: `[[document-slug]]`, date.
-- Iconographic earliest: `[[material-witness-slug]]` if 09_material exists.
+- First documentary appearance: (link to a `02_documents/` node here), date.
+- Iconographic earliest: (link to a `09_material/` node here) if 09_material exists.
 
 ## Meaning(s) attested
 Documented interpretations IN THE PRIMARY TRADITION (Egyptian texts on the ankh).

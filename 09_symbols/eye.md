@@ -39,6 +39,10 @@ tradition-context:
   - "[[tradition-freemasonry]]"
   - "[[tradition-renaissance-hermeticism]]"
 cross-symbol-edges:
+  - target: "eye-of-horus-wedjat"
+    type: "ancestor-of"
+    notes: "The Egyptian Wedjat (Eye of Horus / Eye of Ra) is the principal historical source of the generic 'eye' iconographic-amulet tradition that runs through Hellenistic-Roman magical amulets (Bonner 1950) into Coptic Christianity (Frankfurter 1998) and from there into medieval Christian Eye-of-Providence imagery, Masonic All-Seeing-Eye, and US Great Seal / dollar bill iconography. Tier-1 transmission documented."
+    refs: ["Frankfurter 1998", "Bonner 1950", "Pinch 1994"]
   - target: "sun-disk"
     type: "parallel-form"
     notes: "The Eye of Ra (solar-feminine destructive emanation of the sun-god) is iconographically and theologically connected to the solar disk. The eye-as-solar-emblem case crosses both nodes; the Egyptian iconographic vocabulary pairs sun-disk and Eye-of-Ra in many contexts."

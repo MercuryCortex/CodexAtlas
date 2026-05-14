@@ -28,9 +28,9 @@ What is this motif? Precise enough to be diagnostic — when do we say a text "h
 
 ## Earliest attestations
 By tradition, where do we first see this motif?
-- Mesopotamian: `[[document-slug]]` (date)
-- Egyptian: `[[document-slug]]` (date)
-- Vedic: `[[document-slug]]` (date)
+- Mesopotamian: (link to a 02_documents node) (date)
+- Egyptian: (link to a 02_documents node) (date)
+- Vedic: (link to a 02_documents node) (date)
 - etc.
 
 ## Variants

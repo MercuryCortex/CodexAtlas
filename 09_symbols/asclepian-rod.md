@@ -24,6 +24,10 @@ tradition-context:
   - "[[tradition-roman-religion]]"
   - "[[tradition-hellenistic-philosophy]]"
 cross-symbol-edges:
+  - target: "thyrsus"
+    type: "parallel-form"
+    notes: "Asclepian rod, caduceus, and thyrsus form the three canonical Greek divine-staff types (Asclepian / Hermetic / Bacchic) — structurally parallel ritual-implements identifying the carrier's divine-cultic association."
+    refs: ["Burkert 1985"]
   - target: "caduceus"
     type: "polemic-inversion"
     notes: "**THE LOAD-BEARING EDGE for this pair.** The Asclepian rod (ONE snake, NO wings, healing-deity attribute) is the historically correct medical symbol. The caduceus (TWO snakes + wings, Hermes / messenger / psychopomp attribute) has been **appropriated** into a medical-symbol role since 1902 (US Army Medical Corps), conflating two iconographically and theologically distinct symbols. Friedlander 1992 + Wilcox & Whitham 2003 document. The Wilcox & Whitham survey: ~76% of commercial medical organizations use caduceus (the wrong one) vs. ~62% of professional medical associations using Rod of Asclepius (the correct one). **The iconographic-history correction is now scholarly consensus but has not displaced the entrenched American commercial usage.**"

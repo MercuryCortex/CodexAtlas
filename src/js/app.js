@@ -17,9 +17,25 @@ const FEATURES = {
   atlasMap:          false, // proposed: lat/lon world view
   transmissionFlow:  false, // proposed: cross-tradition Sankey
   threadsView:       false, // proposed: bridge-figure ladder
+  tierOverlay:       true,  // opus-design-2 — Source-Integrity-Tier overlay
 };
 
 const DATA = window.VAULT_DATA || { nodes: [], edges: [], counts: {}, traditions: [], families: [] };
+
+// SOURCE-INTEGRITY TIER COMPUTATION (opus-design-2) — each node gets:
+//   _tier      : 1..4 (best/lowest tier among refs) or null if no refs
+//   _refCount  : count of refs (any tier)
+// Rendering is gated by body.tier-overlay-on; render paths set data-tier on shapes.
+DATA.nodes.forEach(n => {
+  const refs = Array.isArray(n.refs) ? n.refs : [];
+  n._refCount = refs.length;
+  let best = null;
+  for (const r of refs) {
+    const t = +(r && r.tier);
+    if (t >= 1 && t <= 4 && (best === null || t < best)) best = t;
+  }
+  n._tier = best;
+});
 
 const NODES_BY_ID = Object.fromEntries(DATA.nodes.map(n => [n.id, n]));
 const EDGES = DATA.edges.filter(e => NODES_BY_ID[e.source] && NODES_BY_ID[e.target]);
@@ -193,6 +209,31 @@ const symbolDiamondEqual = {
   },
 };
 
+// Custom symbol for monuments — a small "temple" silhouette: a triangle pediment over
+// a rectangular base. Reads as built architecture (church, temple, mosque, stupa).
+// Designed to fit a bounding box of ~2r × ~2r so it sizes the same as a circle.
+const symbolMonument = {
+  draw(context, size) {
+    // r ≈ half the bounding-box side. Total area ≈ 2.5r² (triangle ~r² + rect ~1.5r²),
+    // so r = √(size / 2.5).
+    const r = Math.sqrt(size / 2.5);
+    const baseW = r * 1.6;     // rectangular base width
+    const baseH = r * 0.95;    // rectangular base height
+    const pediH = r * 0.95;    // triangle pediment height
+    // Triangle pediment (apex up, base aligned with top of rectangle)
+    context.moveTo(0, -pediH);
+    context.lineTo(baseW / 2 + 1, 0);
+    context.lineTo(-baseW / 2 - 1, 0);
+    context.closePath();
+    // Rectangular base below the triangle
+    context.moveTo(-baseW / 2, 0);
+    context.lineTo( baseW / 2, 0);
+    context.lineTo( baseW / 2, baseH);
+    context.lineTo(-baseW / 2, baseH);
+    context.closePath();
+  },
+};
+
 // Shape-per-type — each node category gets a distinct silhouette so a mixed-type view
 // (Alchemy, Timeline) reads at a glance. Pantheon's Authors mode also benefits: deities
 // stay as circles, persons render as equilateral diamonds, etc.
@@ -206,7 +247,12 @@ function shapeFor(n) {
     // equidistant from center — visually a square rotated 45°. Distinct from documents
     // (axis-aligned square) and from d3.symbolDiamond (tall lozenge).
     case 'person':    return symbolDiamondEqual;
-    case 'event':     return d3.symbolStar;
+    case 'event':
+      // Events tagged as `monument` render as a temple silhouette (pediment+base), not
+      // the standard star. Lets the Pantheon Monuments mode read at a glance — discovery
+      // sites, churches, temples, mosques all share this little-building icon.
+      if ((n.tags || []).some(t => String(t).toLowerCase() === 'monument')) return symbolMonument;
+      return d3.symbolStar;
     case 'document':  return d3.symbolSquare;
     case 'theme':     return d3.symbolTriangle;
     case 'tradition': return d3.symbolWye;
@@ -615,6 +661,50 @@ VIEWS.pantheon = {
       }
       return true;
     });
+
+    // EVENTS + MONUMENTS MODES — both ship with `family: "Other"` from the build pipeline
+    // because they don't have a single tradition. So we derive each one's family at render-
+    // time from its neighborhood: walk all edges incident on the node, tally the families
+    // of adjacent non-event / non-Other nodes, and assign the majority family. This makes
+    // the wedge clustering meaningful — Council of Nicaea lands in Christian, Hegira in
+    // Islamic, Borobudur in Buddhist, Chartres Cathedral in Christian, etc. Cross-family
+    // events / monuments (battles, polemics, syncretic sites) draw natural edges between
+    // wedges. Monuments are events with `tags: [monument]` per the v1 data model.
+    if (mode === 'events' || mode === 'monuments') {
+      // Build a family → color lookup from any existing typed node (deities have it set).
+      const famColor = {};
+      DATA.nodes.forEach(n => {
+        if (n.family && n.family !== 'Other' && n.family_color && !famColor[n.family]) {
+          famColor[n.family] = n.family_color;
+        }
+      });
+      // Vote tally for each event.
+      const votes = {};
+      EDGES.forEach(e => {
+        const s = NODES_BY_ID[e.source], t = NODES_BY_ID[e.target];
+        if (!s || !t) return;
+        let evId = null, other = null;
+        if (s.type === 'event') { evId = s.id; other = t; }
+        else if (t.type === 'event') { evId = t.id; other = s; }
+        else return;
+        const fam = other.family;
+        if (!fam || fam === 'Other') return;
+        votes[evId] = votes[evId] || {};
+        votes[evId][fam] = (votes[evId][fam] || 0) + 1;
+      });
+      // Map to derived-family copies so we don't mutate the originals (shared across views).
+      deities = deities.map(ev => {
+        const v = votes[ev.id];
+        if (!v) return ev;
+        const top = Object.entries(v).sort((a, b) => b[1] - a[1])[0];
+        if (!top) return ev;
+        return Object.assign({}, ev, {
+          family: top[0],
+          family_color: famColor[top[0]] || ev.family_color,
+        });
+      });
+    }
+
     if (deities.length === 0) {
       const emptyMsg =
           mode === 'monuments' ? 'Monuments — coming soon. Add `tags: [monument]` to event/site nodes (Göbekli Tepe, Chartres, the Kaaba, etc.) to populate this view.'
@@ -947,7 +1037,8 @@ VIEWS.pantheon = {
     nodeSel.append('path')
       .attr('class', 'node-circle')
       .attr('d', d => shapePath(d, 5 + Math.sqrt(DEGREE.get(d.id) || 0) * 1.8))
-      .attr('fill', d => nodeColor(d));
+      .attr('fill', d => nodeColor(d))
+      .attr('data-tier', d => d._tier ?? 'none');
 
     // Labels live in a sibling layer drawn AFTER the node layer. They never catch pointer events
     // (pointer-events: none in CSS), so hover/click still routes to the underlying circles.
@@ -1443,7 +1534,8 @@ VIEWS.documents = {
 
     nodeSel.append('circle').attr('class', 'node-circle')
       .attr('r', d => 4 + Math.sqrt(DEGREE.get(d.id) || 0) * 1.5)
-      .attr('fill', d => nodeColor(d));
+      .attr('fill', d => nodeColor(d))
+      .attr('data-tier', d => d._tier ?? 'none');
 
     nodeSel.append('text').attr('class', d => 'node-label' + (hubs.has(d.id) ? ' hub' : ''))
       .attr('dy', d => -(6 + Math.sqrt(DEGREE.get(d.id) || 0) * 1.5))
@@ -1864,9 +1956,11 @@ VIEWS.timeline = {
       // via symbolSquare2, event = star). Mini overview uses tiny circles — at
       // dotR ≈ 1.6px shapes don't read, so a uniform circle is cleaner there.
       if (isMini) {
-        bEnter.append('circle').attr('class', 'tl-event-dot');
+        bEnter.append('circle').attr('class', 'tl-event-dot')
+          .attr('data-tier', p => p.d._tier ?? 'none');
       } else {
-        bEnter.append('path').attr('class', 'tl-event-shape');
+        bEnter.append('path').attr('class', 'tl-event-shape')
+          .attr('data-tier', p => p.d._tier ?? 'none');
       }
       bEnter.on('click', (ev, p) => selectNode(p.d.id))
             .on('mouseenter', (ev, p) => {
@@ -3113,6 +3207,7 @@ VIEWS.scripture = {
       });
 
     nodeSel.append('path').attr('class', 'scripture-node')
+      .attr('data-tier', n => n.d._tier ?? 'none')
       .attr('d', n => {
         const r = 3.0 + Math.min(2.2, Math.sqrt(DEGREE.get(n.entityId) || 0) * 0.5);
         // Scripture-specific shape override: persons render as an EQUAL-ASPECT 45°
@@ -3636,6 +3731,7 @@ VIEWS.alchemy = {
     // nodes are larger (radius 14) than bridge nodes (radius 7) so the eye reads them as primary.
     nodeSel.append('path')
       .attr('class', 'alch-circle')
+      .attr('data-tier', n => n.d._tier ?? 'none')
       .attr('d', n => shapePath(n.d, n.isPick ? 14 : 7))
       .attr('fill', n => nodeColor(n.d))
       .attr('stroke', n => n.isPick ? 'var(--gold)' : 'rgba(255,255,255,0.18)')
@@ -4113,6 +4209,68 @@ document.getElementById('themes-close').addEventListener('click', closeThemesMen
 document.addEventListener('keydown', (ev) => {
   if (ev.key === 'Escape') closeThemesMenu();
 });
+
+// ============================================================
+// SOURCE-INTEGRITY TIER OVERLAY (opus-design-2)
+// Toggle: body.tier-overlay-on. Legend populated from filtered node set.
+// Distribution is computed over nodes that survive the current filter — so the
+// legend reflects what the user is actually looking at, not the whole vault.
+// ============================================================
+function computeTierDistribution() {
+  const filtered = DATA.nodes.filter(matchesFilter);
+  const buckets = { 1: 0, 2: 0, 3: 0, 4: 0, none: 0 };
+  filtered.forEach(n => { buckets[n._tier ?? 'none']++; });
+  return { buckets, total: filtered.length };
+}
+function renderTierLegend() {
+  const el = document.getElementById('tier-legend');
+  if (!el) return;
+  const { buckets, total } = computeTierDistribution();
+  const labels = {
+    1: 'T1 · primary',
+    2: 'T2 · scholarly',
+    3: 'T3 · reputable secondary',
+    4: 'T4 · catalogued',
+    none: 'no refs',
+  };
+  const max = Math.max(1, ...Object.values(buckets));
+  const rows = ['1','2','3','4','none'].map(k => {
+    const n = buckets[k] || 0;
+    const pct = total ? Math.round(n / total * 100) : 0;
+    const w   = Math.round(n / max * 100);
+    return `<div class="tl-row" data-t="${k}">
+      <span class="tl-swatch"></span>
+      <span class="tl-name">${labels[k]}</span>
+      <span class="tl-bar"><span class="tl-bar-fill" style="width:${w}%"></span></span>
+      <span class="tl-count">${n}<span class="tl-pct">${pct}%</span></span>
+    </div>`;
+  }).join('');
+  el.innerHTML = `
+    <div class="tl-header">
+      <span class="tl-title">Source integrity</span>
+      <span class="tl-total">${total} nodes</span>
+    </div>
+    ${rows}
+    <div class="tl-foot">Stroke color on every node = best available source tier. Toggle off via the side-nav button.</div>
+  `;
+}
+function setTierOverlay(on) {
+  document.body.classList.toggle('tier-overlay-on', !!on);
+  document.getElementById('tier-button')?.classList.toggle('active', !!on);
+  if (on) renderTierLegend();
+}
+document.getElementById('tier-button')?.addEventListener('click', () => {
+  setTierOverlay(!document.body.classList.contains('tier-overlay-on'));
+});
+// Keep the legend's filtered counts honest when filters or view change.
+// setView is the single funnel every filter / nav click goes through, so wrapping
+// it covers every re-render path without us having to find each filter listener.
+const _origSetView = setView;
+setView = function patchedSetView(...args) {
+  const r = _origSetView.apply(this, args);
+  if (document.body.classList.contains('tier-overlay-on')) renderTierLegend();
+  return r;
+};
 
 // ============================================================
 // WIRING

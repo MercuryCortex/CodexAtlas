@@ -48,7 +48,7 @@ refs:
     type: "monograph"
     tier: 2
     notes: "Catalogue and analysis of the figurine corpus; standard reference for the female-figurine question"
-tags: [event, discovery, prehistory, phase-0, neolithic, chalcolithic, cucuteni, trypillia, old-europe, romania, ukraine, moldova, mega-site, proto-urban, female-figurines, gimbutas-controversy]
+tags: [event, discovery, prehistory, phase-0, neolithic, chalcolithic, cucuteni, trypillia, old-europe, romania, ukraine, moldova, mega-site, proto-urban, female-figurines, gimbutas-controversy, monument]
 ---
 
 # Cucuteni-Trypillia Culture (c. 5500–2750 BCE)

@@ -40,6 +40,15 @@
   --t-micro:   140ms;
   --t-layout:  240ms;
   --t-overlay: 280ms;
+
+  /* SOURCE-INTEGRITY TIER COLORS — used only when body.tier-overlay-on is set.
+     Scale: T1 (primary, deep gold) → T2 (scholarly, silver) → T3 (reputable secondary, warm grey)
+     → T4 (controversial-but-catalogued, muted crimson) → none (no refs yet, faint). */
+  --tier-1:    #d4a55a;
+  --tier-2:    #b8c3d0;
+  --tier-3:    #8a8a82;
+  --tier-4:    #a85a5a;
+  --tier-none: #3e424a;
 }
 
 * { box-sizing: border-box; }
@@ -374,9 +383,11 @@ body.nav-collapsed .utility-section .util-lbl { display: none; }
 body.nav-collapsed .utility-section .caret { display: none; }
 body.nav-collapsed .utility-section .stats { display: none; }
 body.nav-collapsed .utility-section .style-button,
-body.nav-collapsed .utility-section .themes-button {
+body.nav-collapsed .utility-section .themes-button,
+body.nav-collapsed .utility-section .tier-button {
   width: 32px; padding: 6px; justify-content: center;
 }
+body.nav-collapsed .utility-section .tier-button .util-lbl { display: none; }
 
 /* When nav collapses, the bottom-anchored style-menu + the full-overlay themes-menu
    need to follow the nav's new left edge. */
@@ -398,6 +409,121 @@ body.nav-collapsed .brand-section { padding: 14px 0 12px; justify-content: cente
 .themes-button.open { border-color: var(--gold); color: var(--gold); background: rgba(212,165,90,0.08); }
 .themes-button .caret { font-size: 9px; transition: transform 180ms ease; }
 .themes-button.open .caret { transform: rotate(180deg); }
+
+/* SOURCE-TIER TOGGLE BUTTON (opus-design-2). Sits in the side-nav utility-section
+   between Themes and Stats. Active state shows a gold fill; the 4 dot-swatches act
+   as a built-in legend hint. */
+.tier-button {
+  background: transparent; border: 1px solid var(--border);
+  color: var(--text-1); font-family: var(--sans); font-size: 10.5px;
+  padding: 5px 11px; border-radius: 3px; cursor: pointer;
+  letter-spacing: 0.14em; text-transform: uppercase;
+  display: flex; align-items: center; gap: 8px;
+  transition: all var(--t-micro) var(--ease);
+}
+.tier-button:hover { border-color: var(--gold-soft); color: var(--gold); }
+.tier-button.active { border-color: var(--gold); color: var(--gold); background: rgba(212,165,90,0.08); }
+.tier-button .tier-swatches { display: inline-flex; gap: 3px; }
+.tier-button .ts-dot {
+  width: 6px; height: 6px; border-radius: 50%;
+  background: var(--ts-color, var(--tier-none));
+}
+.tier-button .ts-dot[data-t="1"] { --ts-color: var(--tier-1); }
+.tier-button .ts-dot[data-t="2"] { --ts-color: var(--tier-2); }
+.tier-button .ts-dot[data-t="3"] { --ts-color: var(--tier-3); }
+.tier-button .ts-dot[data-t="4"] { --ts-color: var(--tier-4); }
+
+/* OVERLAY CSS — only fires when body.tier-overlay-on. Targets every node-class
+   that has a data-tier attribute. Stroke color = tier color; stroke width bumps
+   slightly so the ring is visible against the fill. Filter-dimmed and hover/hot
+   states still take precedence via their own selectors. */
+body.tier-overlay-on .node-circle[data-tier],
+body.tier-overlay-on .scripture-node[data-tier],
+body.tier-overlay-on .alch-circle[data-tier],
+body.tier-overlay-on .tl-event-shape[data-tier],
+body.tier-overlay-on .tl-event-dot[data-tier] {
+  stroke-width: 2;
+  transition: stroke var(--t-micro) var(--ease), stroke-width var(--t-micro) var(--ease);
+}
+body.tier-overlay-on [data-tier="1"]    { stroke: var(--tier-1); }
+body.tier-overlay-on [data-tier="2"]    { stroke: var(--tier-2); }
+body.tier-overlay-on [data-tier="3"]    { stroke: var(--tier-3); }
+body.tier-overlay-on [data-tier="4"]    { stroke: var(--tier-4); }
+body.tier-overlay-on [data-tier="none"] { stroke: var(--tier-none); stroke-dasharray: 2 2; }
+
+/* TIER LEGEND (opus-design-2) — floating distribution panel, top-right corner of
+   the canvas, only visible when body.tier-overlay-on. Mirrors the existing
+   .legend pattern but with histogram-bar rows so tier distribution is glanceable. */
+.tier-legend {
+  position: absolute; top: 56px; right: 24px;
+  width: 260px; padding: 14px 16px;
+  background: rgba(13,17,25,0.92); backdrop-filter: blur(6px);
+  border: 1px solid var(--gold-soft); border-radius: 4px;
+  box-shadow: 0 8px 28px rgba(0,0,0,0.45);
+  z-index: 6; pointer-events: auto;
+  opacity: 0; transform: translateY(-4px);
+  transition: opacity var(--t-layout) var(--ease), transform var(--t-layout) var(--ease);
+  pointer-events: none;
+  font-family: var(--sans); font-size: var(--lbl-md);
+  color: var(--text-1);
+}
+body.tier-overlay-on .tier-legend { opacity: 1; transform: translateY(0); pointer-events: auto; }
+/* If zoom-meter is also visible, push the tier-legend below it. */
+body.zoom-visible .tier-legend { top: 56px; right: 24px; }
+.tier-legend .tl-header {
+  display: flex; align-items: baseline; justify-content: space-between;
+  padding-bottom: 8px; margin-bottom: 10px;
+  border-bottom: 1px solid var(--border-soft);
+}
+.tier-legend .tl-title {
+  font-family: var(--serif); font-size: var(--h3-size);
+  color: var(--text-0); letter-spacing: 0.06em;
+  text-transform: uppercase; font-weight: 500;
+}
+.tier-legend .tl-total {
+  font-family: var(--mono); font-size: 10px;
+  color: var(--text-3); letter-spacing: 0.04em;
+}
+.tier-legend .tl-row {
+  display: grid; grid-template-columns: 10px 1fr 70px 44px;
+  gap: 8px; align-items: center;
+  padding: 4px 0;
+}
+.tier-legend .tl-swatch {
+  width: 10px; height: 10px; border-radius: 50%;
+  background: var(--tl-row-color, var(--tier-none));
+}
+.tier-legend .tl-row[data-t="1"]    { --tl-row-color: var(--tier-1); }
+.tier-legend .tl-row[data-t="2"]    { --tl-row-color: var(--tier-2); }
+.tier-legend .tl-row[data-t="3"]    { --tl-row-color: var(--tier-3); }
+.tier-legend .tl-row[data-t="4"]    { --tl-row-color: var(--tier-4); }
+.tier-legend .tl-row[data-t="none"] { --tl-row-color: var(--tier-none); }
+.tier-legend .tl-row[data-t="none"] .tl-swatch { border: 1px dashed var(--text-3); background: transparent; }
+.tier-legend .tl-name {
+  font-family: var(--mono); font-size: 10px;
+  color: var(--text-1); letter-spacing: 0.04em;
+  white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+}
+.tier-legend .tl-bar {
+  height: 4px; background: var(--bg-2); border-radius: 2px; overflow: hidden;
+}
+.tier-legend .tl-bar-fill {
+  display: block; height: 100%;
+  background: var(--tl-row-color, var(--tier-none));
+  transition: width var(--t-layout) var(--ease);
+}
+.tier-legend .tl-count {
+  font-family: var(--mono); font-size: 10px;
+  color: var(--text-0); text-align: right;
+  display: flex; flex-direction: column; align-items: flex-end;
+}
+.tier-legend .tl-pct { color: var(--text-3); font-size: 9px; }
+.tier-legend .tl-foot {
+  margin-top: 10px; padding-top: 10px;
+  border-top: 1px solid var(--border-soft);
+  font-style: italic; font-size: 10px; color: var(--text-3);
+  line-height: 1.5;
+}
 
 .themes-menu {
   /* Constrained to the canvas region (between nav and detail panel) so it never overlays

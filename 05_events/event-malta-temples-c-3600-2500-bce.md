@@ -55,7 +55,7 @@ refs:
     type: "article"
     tier: 1
     notes: "Recent radiocarbon-modeling refinement of the Temple Period chronology and end-of-culture analysis (the ~2350 BCE collapse)"
-tags: [event, discovery, prehistory, phase-0, neolithic, chalcolithic, malta, gozo, megalithic, ggantija, hagar-qim, mnajdra, tarxien, hal-saflieni-hypogeum, sleeping-lady-figurine, fat-lady-figurines, mediterranean]
+tags: [event, discovery, prehistory, phase-0, neolithic, chalcolithic, malta, gozo, megalithic, ggantija, hagar-qim, mnajdra, tarxien, hal-saflieni-hypogeum, sleeping-lady-figurine, fat-lady-figurines, mediterranean, monument]
 ---
 
 # Maltese Megalithic Temple Complex (c. 3850–2350 BCE)

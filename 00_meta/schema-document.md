@@ -62,7 +62,7 @@ One paragraph. Factual. What is the document, in what form does it survive, what
 Bullet list with wikilinks to theme nodes. One sentence each on how the theme appears here.
 
 ## Connections (provisional)
-- → [[other-document]] — *parallel-motif* / *direct-quote* / *redaction-of* / *polemic-against* / *shared-milieu* / *syncretic-identification* / *manuscript-transmission* / *commentary-on*: one-sentence reasoning + ref.
+- → (link to another `02_documents/` node) — *parallel-motif* / *direct-quote* / *redaction-of* / *polemic-against* / *shared-milieu* / *syncretic-identification* / *manuscript-transmission* / *commentary-on*: one-sentence reasoning + ref.
 
 ## Disputes
 Where dates, authorship, or interpretation are contested, list the positions with refs. Omit section if no live dispute.

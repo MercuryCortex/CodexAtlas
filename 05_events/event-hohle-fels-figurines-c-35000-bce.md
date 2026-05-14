@@ -48,7 +48,7 @@ refs:
     type: "monograph"
     tier: 2
     notes: "Influential shamanism-interpretation framework; cited with the caveat that the framework is contested, not consensus"
-tags: [event, discovery, prehistory, phase-0, paleolithic, upper-paleolithic, aurignacian, swabian-jura, hohle-fels, lowenmensch, venus-figurine, mobiliary-art, music, therianthrope]
+tags: [event, discovery, prehistory, phase-0, paleolithic, upper-paleolithic, aurignacian, swabian-jura, hohle-fels, lowenmensch, venus-figurine, mobiliary-art, music, therianthrope, monument]
 ---
 
 # Swabian Jura Aurignacian Figurines and Flutes (c. 40,000–33,000 BCE)

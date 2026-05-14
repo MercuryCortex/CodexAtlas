@@ -24,6 +24,14 @@ tradition-context:
   - "[[tradition-mystery-cults]]"
   - "[[tradition-roman-religion]]"
 cross-symbol-edges:
+  - target: "tauroctony"
+    type: "syncretic-fusion"
+    notes: "The tauroctony scene's X-formation (bull-killing Mithras with attendant Cautes/Cautopates + Sol-Luna axis) IS the Mithraic-cross iconographic content. Tauroctony and Mithraic-cross are two slices of the same iconographic complex."
+    refs: ["Beck 2006", "Ulansey 1989"]
+  - target: "halo-nimbus"
+    type: "parallel-form"
+    notes: "Sol-Invictus radiate-crown in the upper-left of the canonical tauroctony is the principal solar-iconographic site from which Christian halo-iconography descends. The Mithraic context is one of the principal precedent-sites."
+    refs: ["Mathews 1993", "Beck 2006"]
   - target: "latin-cross"
     type: "parallel-form"
     notes: "The Mithraic X-form and the Christian cross are CONTEMPORARY competing iconographic systems in the 2nd–4th c. Roman urban world. Older (Cumontian) accounts asserted Christian borrowing from Mithras; Beck 2006 and Ulansey 1989 explicitly REJECT that as overreach. The relationship is `parallel-form` — independent / parallel cultic iconographies sharing only the broader late-antique Roman cultural matrix. NOT `ancestor-of` in either direction."

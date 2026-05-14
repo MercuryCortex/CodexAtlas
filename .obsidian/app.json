@@ -1,1 +1,19 @@
-{}
+{
+  "alwaysUpdateLinks": true,
+  "newLinkFormat": "shortest",
+  "useMarkdownLinks": false,
+  "attachmentFolderPath": "99_ingest",
+  "newFileLocation": "current",
+  "showUnsupportedFiles": false,
+  "promptDelete": true,
+  "showLineNumber": true,
+  "readableLineLength": true,
+  "strictLineBreaks": false,
+  "trashOption": "system",
+  "spellcheck": true,
+  "showFrontmatter": true,
+  "foldHeading": true,
+  "foldIndent": true,
+  "showInlineTitle": true,
+  "tabSize": 2
+}

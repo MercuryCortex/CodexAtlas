@@ -35,7 +35,7 @@ Three distinct claims, three distinct fields. Keep them separate — the *whole 
 
 - **`texts-authored`** — works the consensus of critical scholarship treats as *actually by this person*. Blavatsky → *Isis Unveiled*; Plato → *Timaeus*; Paul → Romans / 1 Corinthians / Galatians / Philippians / 1 Thessalonians / Philemon / 2 Corinthians (the seven undisputed letters).
 - **`texts-attributed-to`** — works traditionally credited to this person whose actual authorship is disputed, pseudonymous, or composite. Moses → Pentateuch (composite, JEDP); Solomon → Ecclesiastes / Song of Songs / Wisdom (pseudonymous attribution); Paul → Ephesians / Colossians / 2 Thessalonians / pastorals (deutero-Pauline); Hermes Trismegistus → *Corpus Hermeticum* (pseudepigraphic).
-- **`originator-of`** — concepts, themes, or motifs this person is credited with introducing to the historical discourse. Plato → [[demiurge]]; Plotinus → [[the-one]]; Zoroaster → [[cosmic-dualism]]; Mani → [[two-principles]]; Marcion → [[anti-cosmic-canon-rejection]]; Augustine → [[original-sin]]; Anselm → [[satisfaction-atonement]]; Blavatsky → [[root-races]]; Jung → [[archetypes]].
+- **`originator-of`** — concepts, themes, or motifs this person is credited with introducing to the historical discourse. Examples (refer to the listed nodes when used in real frontmatter): Plato → demiurge; Plotinus → the-one; Zoroaster → cosmic-dualism; Mani → two-principles; Marcion → anti-cosmic-canon-rejection; Augustine → original-sin; Anselm → satisfaction-atonement; Blavatsky → root-races; Jung → archetypes.
 
 When the attribution is contested or the origination is one of several competing claims, note it in the body's **Disputes** section rather than removing the link.
 

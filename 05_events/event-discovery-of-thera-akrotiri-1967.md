@@ -45,7 +45,7 @@ refs:
     publisher: "INSTAP Academic Press"
     type: "monograph"
     tier: 1
-tags: [event, discovery, 1967, akrotiri, thera, santorini, minoan, marinatos, aegean-bronze-age, modern-recovery]
+tags: [event, discovery, 1967, akrotiri, thera, santorini, minoan, marinatos, aegean-bronze-age, modern-recovery, monument]
 ---
 
 # Discovery and Excavation of Akrotiri, Thera
