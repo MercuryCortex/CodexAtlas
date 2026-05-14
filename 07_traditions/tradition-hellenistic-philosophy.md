@@ -1,6 +1,6 @@
 ---
 type: tradition
-id: "hellenistic-philosophy"
+id: "tradition-hellenistic-philosophy"
 name: "Hellenistic Philosophy"
 parent-tradition: ""
 date-emergence: -323

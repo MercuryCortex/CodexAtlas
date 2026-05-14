@@ -1,6 +1,6 @@
 ---
 type: event
-id: "bruce-recovers-enoch-1773"
+id: "event-bruce-recovers-enoch-1773"
 name: "James Bruce recovers Ge'ez 1 Enoch manuscripts from Gondar (1773)"
 date-start: 1773
 date-end: 1773

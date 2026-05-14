@@ -1,6 +1,6 @@
 ---
 type: event
-id: "jesuit-mission-ethiopia-1557-1632"
+id: "event-jesuit-mission-ethiopia-1557-1632"
 name: "Jesuit Mission to Ethiopia and its Expulsion (1557–1632)"
 date-start: 1557
 date-end: 1632

@@ -1,6 +1,6 @@
 ---
 type: event
-id: "aksumite-christianization-c330"
+id: "event-aksumite-christianization-c330"
 name: "Aksumite Christianization (~330 CE)"
 date-start: 320
 date-end: 350

@@ -1,6 +1,6 @@
 ---
 type: event
-id: "aboriginal-stolen-generations-1905-1969"
+id: "event-aboriginal-stolen-generations-1905-1969"
 name: "Australian Aboriginal Stolen Generations"
 date-start: 1905
 date-end: 1969

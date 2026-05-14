@@ -1,6 +1,6 @@
 ---
 type: event
-id: "solomonic-restoration-1270"
+id: "event-solomonic-restoration-1270"
 name: "Solomonic Restoration of 1270"
 date-start: 1270
 date-end: 1285

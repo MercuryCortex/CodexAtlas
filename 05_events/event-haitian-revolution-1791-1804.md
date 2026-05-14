@@ -1,6 +1,6 @@
 ---
 type: event
-id: "haitian-revolution-1791-1804"
+id: "event-haitian-revolution-1791-1804"
 name: "Haitian Revolution (Bois Caïman to Haitian Independence)"
 date-start: 1791
 date-end: 1804

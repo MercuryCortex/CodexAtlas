@@ -1,6 +1,6 @@
 ---
 type: event
-id: "ghost-dance-wounded-knee-1890"
+id: "event-ghost-dance-wounded-knee-1890"
 name: "Ghost Dance and Wounded Knee Massacre"
 date-start: 1889
 date-end: 1890

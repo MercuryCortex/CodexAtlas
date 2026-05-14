@@ -1,6 +1,6 @@
 ---
 type: event
-id: "pizarro-conquest-of-inca-1533"
+id: "event-pizarro-conquest-of-inca-1533"
 name: "Pizarro's Conquest of the Inca Empire"
 date-start: 1532
 date-end: 1533

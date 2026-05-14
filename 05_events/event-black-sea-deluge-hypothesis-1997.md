@@ -1,6 +1,6 @@
 ---
 type: event
-id: "black-sea-deluge-hypothesis-1997"
+id: "event-black-sea-deluge-hypothesis-1997"
 name: "Black Sea Deluge hypothesis (Ryan-Pitman 1997)"
 date-start: 1997
 date-end: 1997

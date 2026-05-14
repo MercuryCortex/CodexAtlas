@@ -1,6 +1,6 @@
 ---
 type: tradition
-id: "mystery-cults"
+id: "tradition-mystery-cults"
 name: "Greco-Roman Mystery Cults"
 parent-tradition: ""
 date-emergence: -1500

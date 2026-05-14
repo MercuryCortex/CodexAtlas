@@ -1,6 +1,6 @@
 ---
 type: tradition
-id: "greek-religion"
+id: "tradition-greek-religion"
 name: "Greek Religion (Archaic and Classical)"
 parent-tradition: ""
 date-emergence: -1600

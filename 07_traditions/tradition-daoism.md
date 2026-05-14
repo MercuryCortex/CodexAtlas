@@ -1,6 +1,6 @@
 ---
 type: tradition
-id: "daoism"
+id: "tradition-daoism"
 name: "Daoism"
 parent-tradition: ""
 date-emergence: -400

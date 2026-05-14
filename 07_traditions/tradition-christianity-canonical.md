@@ -1,6 +1,6 @@
 ---
 type: tradition
-id: "christianity-canonical"
+id: "tradition-christianity-canonical"
 name: "Canonical Christianity (Earliest stratum — through ~+150)"
 parent-tradition: "[[tradition-judaism]]"
 date-emergence: 30

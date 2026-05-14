@@ -1,6 +1,6 @@
 ---
 type: event
-id: "ahmad-gragn-invasion-1529"
+id: "event-ahmad-gragn-invasion-1529"
 name: "Ahmad Gragn's invasion of Christian Ethiopia (1529–1543)"
 date-start: 1529
 date-end: 1543

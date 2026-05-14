@@ -1,6 +1,6 @@
 ---
 type: theme
-id: "apocalyptic-imminence"
+id: "eschatological-imminence"
 name: "Eschatological Imminence"
 aka: ["the end is near", "imminent kingdom", "this generation will not pass"]
 category: "eschatological"

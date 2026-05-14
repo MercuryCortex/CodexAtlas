@@ -1,6 +1,6 @@
 ---
 type: tradition
-id: "roman-religion"
+id: "tradition-roman-religion"
 name: "Roman Religion"
 parent-tradition: ""
 date-emergence: -700

@@ -1,6 +1,6 @@
 ---
 type: tradition
-id: "vedic-hinduism"
+id: "tradition-vedic-hinduism"
 name: "Vedic Religion and early Hinduism"
 parent-tradition: ""
 date-emergence: -1500

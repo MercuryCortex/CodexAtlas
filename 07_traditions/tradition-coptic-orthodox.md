@@ -1,6 +1,6 @@
 ---
 type: tradition
-id: "coptic-orthodox"
+id: "tradition-coptic-orthodox"
 name: "Coptic Orthodox Christianity"
 parent-tradition: "[[tradition-oriental-orthodox]]"
 date-emergence: 42

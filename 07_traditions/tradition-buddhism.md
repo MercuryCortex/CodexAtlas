@@ -1,6 +1,6 @@
 ---
 type: tradition
-id: "buddhism"
+id: "tradition-buddhism"
 name: "Buddhism"
 parent-tradition: ""
 date-emergence: -500

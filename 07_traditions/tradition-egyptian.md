@@ -1,6 +1,6 @@
 ---
 type: tradition
-id: "egyptian"
+id: "tradition-egyptian"
 name: "Ancient Egyptian Religion"
 parent-tradition: ""
 date-emergence: -3500

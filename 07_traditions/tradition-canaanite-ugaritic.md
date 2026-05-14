@@ -1,6 +1,6 @@
 ---
 type: tradition
-id: "canaanite-ugaritic"
+id: "tradition-canaanite-ugaritic"
 name: "Canaanite / Ugaritic Religion"
 parent-tradition: ""
 date-emergence: -2500

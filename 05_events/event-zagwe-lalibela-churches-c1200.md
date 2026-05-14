@@ -1,6 +1,6 @@
 ---
 type: event
-id: "zagwe-lalibela-churches-c1200"
+id: "event-zagwe-lalibela-churches-c1200"
 name: "Zagwe rock-hewn churches of Lalibela (~1181–1221 traditional; substantial pre-Lalibela phases)"
 date-start: 1137
 date-end: 1270

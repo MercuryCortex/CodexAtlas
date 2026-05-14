@@ -1,6 +1,6 @@
 ---
 type: event
-id: "magdala-expedition-1868"
+id: "event-magdala-expedition-1868"
 name: "British Magdala Expedition (1868) and Ethiopian Manuscript Removal"
 date-start: 1867
 date-end: 1868

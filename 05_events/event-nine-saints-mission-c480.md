@@ -1,6 +1,6 @@
 ---
 type: event
-id: "nine-saints-mission-c480"
+id: "event-nine-saints-mission-c480"
 name: "Mission of the Nine Saints to Aksum (~480–540 CE)"
 date-start: 480
 date-end: 540

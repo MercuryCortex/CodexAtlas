@@ -1,6 +1,6 @@
 ---
 type: tradition
-id: "oriental-orthodox"
+id: "tradition-oriental-orthodox"
 name: "Oriental Orthodox Communion (Non-Chalcedonian / Miaphysite Christianity)"
 parent-tradition: "[[tradition-christianity-canonical]]"
 date-emergence: 451

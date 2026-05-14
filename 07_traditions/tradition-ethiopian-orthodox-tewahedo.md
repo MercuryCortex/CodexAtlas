@@ -1,6 +1,6 @@
 ---
 type: tradition
-id: "ethiopian-orthodox-tewahedo"
+id: "tradition-ethiopian-orthodox-tewahedo"
 name: "Ethiopian Orthodox Tewahedo Christianity"
 parent-tradition: "[[tradition-oriental-orthodox]]"
 date-emergence: 330

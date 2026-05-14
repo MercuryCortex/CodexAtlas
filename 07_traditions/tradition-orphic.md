@@ -1,6 +1,6 @@
 ---
 type: tradition
-id: "orphic"
+id: "tradition-orphic"
 name: "Orphism (Orphic mysteries)"
 parent-tradition: "[[tradition-greek-religion]]"
 date-emergence: -600

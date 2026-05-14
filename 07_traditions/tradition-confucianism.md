@@ -1,6 +1,6 @@
 ---
 type: tradition
-id: "confucianism"
+id: "tradition-confucianism"
 name: "Confucianism"
 parent-tradition: ""
 date-emergence: -500

@@ -1,6 +1,6 @@
 ---
 type: tradition
-id: "jainism"
+id: "tradition-jainism"
 name: "Jainism"
 parent-tradition: ""
 date-emergence: -600

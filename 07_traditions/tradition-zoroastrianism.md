@@ -1,6 +1,6 @@
 ---
 type: tradition
-id: "zoroastrianism"
+id: "tradition-zoroastrianism"
 name: "Zoroastrianism"
 parent-tradition: ""
 date-emergence: -1200

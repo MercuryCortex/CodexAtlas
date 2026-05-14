@@ -1,6 +1,6 @@
 ---
 type: event
-id: "kaleb-aksum-himyar-invasion-525"
+id: "event-kaleb-aksum-himyar-invasion-525"
 name: "Kaleb's invasion of Himyar (Yemen) — 525 CE"
 date-start: 523
 date-end: 530

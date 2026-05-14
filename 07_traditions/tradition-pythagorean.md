@@ -1,6 +1,6 @@
 ---
 type: tradition
-id: "pythagorean"
+id: "tradition-pythagorean"
 name: "Pythagoreanism"
 parent-tradition: "[[tradition-greek-religion]]"
 date-emergence: -530

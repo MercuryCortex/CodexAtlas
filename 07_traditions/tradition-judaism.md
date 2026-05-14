@@ -1,6 +1,6 @@
 ---
 type: tradition
-id: "judaism"
+id: "tradition-judaism"
 name: "Judaism (Israelite religion through Second Temple seed)"
 parent-tradition: ""
 date-emergence: -1200
