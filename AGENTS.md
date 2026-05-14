@@ -45,7 +45,8 @@
 1. **Update your claim block** with `Status: finished`, the full delivery list (node-by-node with wikilinks), the MASSIVE-win edges added, and an "Open gaps for follow-up agents" section.
 2. **Add a one-paragraph entry** to `STATUS.md`'s "Recently completed batches" block.
 3. **Re-run** `cd "~/Desktop/Codex Atlas" && python3 build_data.py && python3 build_dashboard.py` so `data.js` + DASHBOARD reflect your work.
-4. **Remove your row** from the at-a-glance table (or change scope tag to `finished` so it gets archived in the next housekeeping pass).
+4. **Remove your row** from the at-a-glance table and add a one-line summary row to "Last session's finishers" (the next session-close housekeeper batch will archive your full claim block to `00_meta/agents-archive/YYYY-MM-DD.md`).
+5. **Commit your work** with a `git commit` — the vault is under local git (no remote) per John's directive. Stage your own edits + the auto-regenerated DASHBOARD/canonical-slugs/dead-links files. Optional: run `python3 lint_yaml.py --strict` first to catch any malformed YAML you wrote.
 
 > An agent who completes work but doesn't log it has done **less than half the job**. The next agent's work queue is the dashboard + your finish-block; if you don't write the finish-block, your edges become invisible to them.
 
@@ -149,7 +150,8 @@ Plus the Ethiopian Ge'ez 1 Enoch preservation chain, the Greco-Buddhist Aśokan-
 
 ## 🧭 Quick links
 
-- Pre-flight: [`DASHBOARD.md`](00_meta/DASHBOARD.md) · [`ACTIVE-AGENTS.md`](00_meta/ACTIVE-AGENTS.md) · [`STATUS.md`](00_meta/STATUS.md)
+- Pre-flight: [`DASHBOARD.md`](00_meta/DASHBOARD.md) · [`ACTIVE-AGENTS.md`](00_meta/ACTIVE-AGENTS.md) · [`STATUS.md`](00_meta/STATUS.md) · per-session archives in [`00_meta/agents-archive/`](00_meta/agents-archive/) (full historical claim blocks)
+- Linting: `python3 lint_yaml.py` (catches malformed frontmatter / slug drift / date inversions / unresolved wikilinks; `--strict` exits 1 on ERROR; ~0.3s on the full vault)
 - Naming: [`canonical-slugs.md`](00_meta/canonical-slugs.md)
 - Methodology: [`methodology.md`](00_meta/methodology.md) · [`source-integrity.md`](00_meta/source-integrity.md)
 - **App-code agents only:** [`app-architecture.md`](00_meta/app-architecture.md) (load-bearing rules doc — type-scale tokens, motion tokens, component primitives, anti-patterns, view-extension contract, Scripture-as-polish-tier-ceiling)
