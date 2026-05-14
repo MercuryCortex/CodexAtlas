@@ -38,7 +38,7 @@ refs:
     publisher: "Bloomsbury"
     type: "monograph"
     tier: 1
-tags: [event, phase-7, portugal, sintra, regaleira, carvalho-monteiro, manini, esoteric, masonic, rosicrucian, templar, alchemy, initiation-well, unesco, 1904-1910]
+tags: [event, phase-7, portugal, sintra, regaleira, carvalho-monteiro, manini, esoteric, masonic, rosicrucian, templar, alchemy, initiation-well, unesco, 1904-1910, astrology, armillary-sphere]
 ---
 
 # Construction of Quinta da Regaleira (Carvalho Monteiro's esoteric estate)

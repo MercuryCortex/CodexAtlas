@@ -46,7 +46,7 @@ refs:
     type: "monograph"
     tier: 4
     notes: "Tier 4 — primary source for the Traditionalist tradition; do NOT cite as Tier-1 or Tier-2 evidence for cross-cultural symbolic transmission claims, per `00_meta/methodology.md` §Symbol-research discipline."
-tags: [person, phase-7, france, egypt, philosophy, esotericism, traditionalism, perennialism, sufism, guenon, kali-yuga, primordial-tradition]
+tags: [person, phase-7, france, egypt, philosophy, esotericism, traditionalism, perennialism, sufism, guenon, kali-yuga, primordial-tradition, astrology, symbolic-astrology]
 ---
 
 # René Guénon

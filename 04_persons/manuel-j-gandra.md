@@ -45,7 +45,7 @@ refs:
     type: "monograph"
     tier: 4
     notes: "Tier 4 — Gandra's principal monograph on Portuguese mythical-history and symbolic-geography. Primary source for the Portuguese hermetic-symbology tradition."
-tags: [person, phase-7, portugal, scholar, sebastianismo, hermeticism, templar, mafra, sintra, regaleira, pessoa-scholar, joaquimism, contemporary, gandra]
+tags: [person, phase-7, portugal, scholar, sebastianismo, hermeticism, templar, mafra, sintra, regaleira, pessoa-scholar, joaquimism, contemporary, gandra, astrology, astrology-portugal-historian]
 ---
 
 # Manuel J. Gandra

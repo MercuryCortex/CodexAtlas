@@ -56,7 +56,7 @@ refs:
     publisher: "Cambridge UP"
     type: "monograph"
     tier: 1
-tags: [phase-7, france, egypt, guenon, traditionalism, perennialism, symbolism, esoteric, sufism, vedanta, sophia-perennis, 1962, posthumous, tier-4]
+tags: [phase-7, france, egypt, guenon, traditionalism, perennialism, symbolism, esoteric, sufism, vedanta, sophia-perennis, 1962, posthumous, tier-4, astrology, symbolic-astrology, solar-lunar-symbolism, zodiacal-symbolism]
 ---
 
 # Symbols of Sacred Science (Symboles fondamentaux de la Science sacrée)

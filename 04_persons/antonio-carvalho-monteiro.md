@@ -33,7 +33,7 @@ refs:
     publisher: "Quetzal Editores"
     type: "monograph"
     tier: 2
-tags: [person, phase-7, portugal, brazil, businessman, esotericist, freemason, rosicrucian, regaleira, sintra, carvalho-monteiro, monteiro-dos-milhoes]
+tags: [person, phase-7, portugal, brazil, businessman, esotericist, freemason, rosicrucian, regaleira, sintra, carvalho-monteiro, monteiro-dos-milhoes, astrology, armillary-sphere, zodiacal-programme]
 ---
 
 # António Augusto Carvalho Monteiro

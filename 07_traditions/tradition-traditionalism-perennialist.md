@@ -39,7 +39,7 @@ refs:
     type: "monograph"
     tier: 4
     notes: "Tier 4 — Traditionalist primary source; cite as evidence for the tradition's own self-understanding, NOT as evidence for cross-cultural symbolic transmission claims (per `00_meta/methodology.md` §symbol-research-discipline)."
-tags: [tradition, traditionalism, perennialism, guenon, schuon, coomaraswamy, evola, esotericism, sophia-perennis, sedgwick]
+tags: [tradition, traditionalism, perennialism, guenon, schuon, coomaraswamy, evola, esotericism, sophia-perennis, sedgwick, astrology, symbolic-astrology]
 ---
 
 # Traditionalism (Perennialist School)

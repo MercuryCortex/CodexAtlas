@@ -53,7 +53,7 @@ refs:
     publisher: "Cambridge UP"
     type: "monograph"
     tier: 1
-tags: [tradition, portuguese, hermeticism, sebastianism, templar, rosicrucian, masonic, pessoa, mafra, sintra, regaleira, tomar, iberian-esotericism]
+tags: [tradition, portuguese, hermeticism, sebastianism, templar, rosicrucian, masonic, pessoa, mafra, sintra, regaleira, tomar, iberian-esotericism, astrology]
 ---
 
 # Portuguese Hermeticism (Hermetismo Português)

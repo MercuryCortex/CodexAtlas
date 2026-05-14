@@ -47,7 +47,7 @@ refs:
     publisher: "Aries: Journal for the Study of Western Esotericism 18: 192–223"
     type: "journal-article"
     tier: 1
-tags: [person, phase-7, portugal, modernism, heteronym, esoteric, theosophy, rosicrucian, hermeticism, sebastianismo, crowley, blavatsky, pessoa]
+tags: [person, phase-7, portugal, modernism, heteronym, esoteric, theosophy, rosicrucian, hermeticism, sebastianismo, crowley, blavatsky, pessoa, astrology, astrologer, horoscope-corpus, raphael-baldaya-heteronym]
 ---
 
 # Fernando Pessoa

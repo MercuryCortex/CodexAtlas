@@ -59,7 +59,7 @@ refs:
     publisher: "Bloomsbury"
     type: "monograph"
     tier: 1
-tags: [phase-7, portugal, gandra, mythical-history, symbolic-geography, hermeticism, sebastianismo, mafra, sintra, regaleira, templar, quinto-imperio, 2009, tier-4]
+tags: [phase-7, portugal, gandra, mythical-history, symbolic-geography, hermeticism, sebastianismo, mafra, sintra, regaleira, templar, quinto-imperio, 2009, tier-4, astrology]
 ---
 
 # Da Face Oculta do Rosto da Europa: Prolegómenos a uma História Mítica de Portugal

@@ -56,7 +56,7 @@ refs:
     publisher: "Editorial Presença"
     type: "monograph"
     tier: 2
-tags: [phase-7, portugal, pessoa, modernism, sebastianismo, encoberto, quinto-imperio, hermeticism, rosicrucian, 1934, mensagem]
+tags: [phase-7, portugal, pessoa, modernism, sebastianismo, encoberto, quinto-imperio, hermeticism, rosicrucian, 1934, mensagem, astrology, heraldic-astrology]
 ---
 
 # Mensagem

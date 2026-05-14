@@ -43,7 +43,7 @@ refs:
     publisher: "Pauvert"
     type: "monograph"
     tier: 4
-tags: [person, phase-7, france, alchemy, hermeticism, pseudonymous, fulcanelli, canseliet, champagne, mystery-of-cathedrals, contested-identity]
+tags: [person, phase-7, france, alchemy, hermeticism, pseudonymous, fulcanelli, canseliet, champagne, mystery-of-cathedrals, contested-identity, astrology, zodiacal-portals]
 ---
 
 # Fulcanelli
