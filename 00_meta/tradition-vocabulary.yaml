@@ -1,0 +1,1089 @@
+# Tradition Controlled Vocabulary
+#
+# Built 2026-05-14 in response to AUDIT/01_integrity_issues.md item #2:
+# "Tradition-string normalisation is broken."
+#
+# Purpose: collapse the ~300 free-text `tradition:` strings used in
+# 03_deities/*.md and 04_persons/*.md into a small set of canonical
+# IDs grouped by cultural cluster.
+#
+# Schema for each entry:
+#   - id:       lowercase slug (the canonical identifier)
+#   - display:  human-readable label for UI / dashboards
+#   - cluster:  one of the cluster IDs in `clusters:` below
+#   - aliases:  the exact tradition strings observed in node YAML.
+#               build_data.py should normalise on these — any tradition
+#               string equal to (or starting with) an alias resolves to
+#               this id.
+#   - notes:    optional commentary on scope boundaries
+#
+# Frequencies in the alias lists below were derived from
+# `grep -h "^tradition:" 03_deities/*.md 04_persons/*.md | sort | uniq -c`
+# run on 2026-05-14.
+#
+# Follow-up work (NOT done in this batch):
+#   - build_data.py must be upgraded to consult this file and cluster
+#     nodes by canonical id rather than by raw string.
+#   - Optionally, a one-shot rewriter could replace every raw alias in
+#     node YAML with its canonical id. We do NOT do that in this batch
+#     because the rewrite touches several hundred files and should be
+#     reviewed downstream.
+#   - This file is intentionally not exhaustive: tradition strings
+#     observed exactly once and unambiguously sub-classified (e.g.
+#     "Patristic Christian (Quartodeciman Asian)") collapse to their
+#     obvious parent id by prefix-match. Aliases below capture the
+#     high-frequency forms and the ambiguous cases.
+
+clusters:
+  - id: ane
+    display: "Ancient Near East (Mesopotamia & periphery)"
+  - id: levant
+    display: "Levant / Canaanite / Israelite-Judahite"
+  - id: egypt
+    display: "Egyptian (Pharaonic)"
+  - id: hellenic
+    display: "Greek (archaic, classical, Hellenistic, philosophical)"
+  - id: roman
+    display: "Roman (state cult, philosophical, syncretic mystery cults)"
+  - id: persian-iranian
+    display: "Persian / Iranian (Zoroastrian, Manichaean, Mandaean)"
+  - id: abrahamic
+    display: "Abrahamic mainstream (Judaism, Christianity, Islam, Baha'i)"
+  - id: gnostic
+    display: "Gnostic / heterodox-Christian / dualist movements"
+  - id: esoteric-western
+    display: "Western esoteric (Hermeticism, Kabbalah, Theosophy, magick, Rosicrucian)"
+  - id: indic
+    display: "South Asian (Vedic, Hindu, Jain, Sikh, Indian Buddhist)"
+  - id: buddhist
+    display: "Buddhism (pan-traditional, Theravada, Mahayana, Vajrayana, Zen, Pure Land)"
+  - id: sinic
+    display: "Chinese (Daoist, Confucian, Chinese popular religion, Chinese Buddhist)"
+  - id: japonic
+    display: "Japanese (Shinto, Japanese Buddhism)"
+  - id: indigenous-european-pre-christian
+    display: "Pre-Christian European (Norse, Celtic, Slavic, Finno-Karelian)"
+  - id: indigenous-african
+    display: "Indigenous African and African-diasporic"
+  - id: indigenous-american
+    display: "Indigenous American (North, Mesoamerican, Andean, Amazonian)"
+  - id: indigenous-pacific
+    display: "Indigenous Pacific (Polynesian, Melanesian, Australian Aboriginal)"
+  - id: modern-syncretic
+    display: "Modern syncretic and new religious movements"
+  - id: modern-secular
+    display: "Modern secular, academic-comparative, scientific naturalism"
+
+canonical-traditions:
+
+  # ============================================================
+  # CLUSTER: ane — Ancient Near East
+  # ============================================================
+  - id: mesopotamian
+    display: "Mesopotamian"
+    cluster: ane
+    aliases:
+      - "Sumerian"
+      - "Akkadian"
+      - "Babylonian"
+      - "Babylonian / Assyrian"
+      - "Babylonian (with Sumerian-period antecedents)"
+      - "Babylonian (Old Babylonian)"
+      - "Babylonian (Akkadian) — drawing on Sumerian prototypes"
+      - "Sumerian / Mesopotamian"
+      - "Sumerian / Akkadian"
+      - "Sumerian / Babylonian"
+      - "Sumerian / Akkadian / Babylonian"
+      - "Sumerian / Akkadian / Mesopotamian"
+      - "Sumerian / Akkadian / West Semitic"
+      - "Sumerian / Akkadian (Sargonic period)"
+      - "Sumerian / Akkadian (First Dynasty of Isin)"
+      - "Sumerian (Third Dynasty of Ur)"
+      - "Sumerian (Second Dynasty of Lagash, post-Gutian period)"
+      - "Sumerian (Second Dynasty of Lagash, late Gutian period)"
+      - "Sumerian (early); subsequently absorbed into Akkadian Antu"
+      - "Akkadian / Babylonian"
+      - "Akkadian / Babylonian / Assyrian"
+      - "Akkadian (Sumerian / Mesopotamian)"
+    notes: >
+      The single largest source of tradition-string drift in the
+      corpus. Methodology says individual deity dyads (Inanna/Ishtar,
+      An/Anu, Enki/Ea) live in separate deity nodes with
+      syncretic-identification edges; that splitting happens at the
+      *node* level, not the tradition level. For clustering and
+      pantheon-display purposes everything in this list collapses to
+      `mesopotamian`.
+
+  # ============================================================
+  # CLUSTER: egypt — Egyptian
+  # ============================================================
+  - id: egyptian
+    display: "Egyptian"
+    cluster: egypt
+    aliases:
+      - "Egyptian"
+      - "Egyptian (Old Kingdom)"
+      - "Egyptian (Memphite cult)"
+      - "Egyptian (Amarna religion)"
+
+  # ============================================================
+  # CLUSTER: levant — Canaanite / Israelite / Judahite
+  # ============================================================
+  - id: canaanite-ugaritic
+    display: "Canaanite / Ugaritic"
+    cluster: levant
+    aliases:
+      - "Canaanite / Ugaritic"
+      - "Canaanite / Ugaritic / West Semitic"
+      - "Canaanite / Ugaritic / Israelite folk religion"
+      - "Canaanite / Ugaritic / (Egyptian under 19th Dynasty)"
+      - "Canaanite / Phoenician"
+      - "Northwest Semitic / Canaanite / Philistine"
+
+  - id: israelite-judahite
+    display: "Israelite / Judahite (pre-rabbinic)"
+    cluster: levant
+    aliases:
+      - "Israelite religion (founder-figure)"
+      - "Israelite religion (early)"
+      - "Israelite religion / Second Temple apocalyptic"
+      - "Israelite religion / Second Temple apocalyptic / Qumran"
+      - "Israelite religion / Second Temple apocalyptic / Jewish demonology"
+      - "Israelite-Jewish (founder-figure)"
+      - "Israelite / Jewish"
+      - "Israelite / Hebrew Bible"
+      - "Israelite (pre-exilic)"
+      - "Israelite (Northern Kingdom)"
+      - "Judahite"
+      - "Judahite (exilic)"
+
+  # ============================================================
+  # CLUSTER: abrahamic — Judaism, Christianity, Islam, Baha'i
+  # ============================================================
+  - id: hebrew-bible
+    display: "Hebrew Bible / Second Temple Judaism"
+    cluster: abrahamic
+    aliases:
+      - "Hellenistic Judaism"
+      - "Hellenistic Judaism (Pharisaic education); Flavian Roman patronage"
+      - "Hellenistic Judaism (Middle Platonist)"
+      - "Second Temple Judaism → origin of Christianity"
+      - "Second Temple Judaism → Christianity → Islam → Mandaeism"
+      - "Second Temple Judaism (sectarian, apocalyptic); proto-Christianity"
+      - "Hasmonean-aligned Judaism (with Idumean origin); Roman client kingdom"
+
+  - id: rabbinic-judaism
+    display: "Rabbinic Judaism"
+    cluster: abrahamic
+    aliases:
+      - "Tannaitic Judaism"
+      - "Tannaitic Judaism / Kabbalistic tradition"
+      - "Pharisaic / proto-rabbinic Judaism"
+      - "Pharisaic Judaism (early Tannaitic)"
+      - "Pharisaic Judaism → earliest Christianity"
+      - "Rabbinic Judaism (Tannaitic)"
+      - "Rabbinic Judaism — Geonic"
+      - "Rabbinic Judaism — medieval Aristotelian philosophy"
+      - "Rabbinic Judaism — medieval Jewish pietism / Sufi-influenced ethics"
+      - "Rabbinic Judaism (early); Kabbalistic Judaism (mature)"
+      - "early Rabbinic Judaism (Tannaitic)"
+      - "early Rabbinic Judaism (Tannaitic; Pharisaic background)"
+      - "early Rabbinic Judaism (Tannaitic; Hillelite tendency)"
+      - "early Rabbinic Judaism (Tannaitic; Shammaite tendency)"
+      - "early Rabbinic Judaism (Tannaitic); ascribed founder of *Hekhalot* mysticism by later tradition"
+
+  - id: kabbalah
+    display: "Jewish Kabbalah"
+    cluster: abrahamic
+    aliases:
+      - "Kabbalistic Judaism"
+      - "Kabbalistic Judaism — Prophetic Kabbalah"
+      - "Jewish Kabbalah"
+      - "Jewish Kabbalah (Lurianic)"
+      - "Jewish Kabbalah → Hasidism"
+      - "Jewish mystical / Hekhalot / Kabbalistic"
+      - "Early Kabbalah (Provençal school)"
+      - "Jewish folkloric / Kabbalistic (with Mesopotamian roots)"
+    notes: >
+      Kabbalah is treated here as a sub-cluster of the abrahamic group
+      because its primary corpus is Jewish; Christian Kabbalah and
+      Hermetic-Kabbalah hybrids resolve to the esoteric-western
+      cluster below.
+
+  - id: jewish-messianic-heterodox
+    display: "Heterodox Jewish messianic movements (Sabbatean, Frankist)"
+    cluster: abrahamic
+    aliases:
+      - "Jewish messianism (Sabbatean)"
+      - "Jewish messianism (Sabbatean — heterodox)"
+      - "Frankism (Sabbatean offshoot — heterodox)"
+
+  - id: earliest-christianity
+    display: "Earliest Christianity (1st-c.)"
+    cluster: abrahamic
+    aliases:
+      - "earliest Christianity"
+      - "earliest Christianity (Pauline circle)"
+      - "earliest Christianity (Jewish-Christian)"
+      - "earliest Christianity (Jerusalem Jewish-Christian)"
+      - "earliest Christianity; Johannine"
+      - "earliest Christianity; Gnostic traditions"
+      - "earliest Christianity; Sethian/Cainite Gnostic re-evaluation"
+      - "earliest Christianity; Syriac Christianity; Thomasine tradition"
+      - "earliest Christianity; encratite/proto-Gnostic currents"
+      - "earliest Christianity; Armenian Apostolic; Syriac Christianity"
+      - "early Christianity (Johannine community)"
+      - "early Jewish-Christian / proto-Gnostic"
+      - "Late-first-century Christianity (Asia Minor)"
+
+  - id: patristic-christian
+    display: "Patristic Christianity (2nd–7th c.)"
+    cluster: abrahamic
+    aliases:
+      - "Patristic Christian"
+      - "Patristic Christian (proto-orthodox)"
+      - "Patristic Christian (proto-orthodox); North African"
+      - "Patristic Christian (proto-orthodox; schismatic)"
+      - "Patristic Christian (Cappadocian)"
+      - "Patristic Christian (Alexandrian)"
+      - "Patristic Christian (Alexandrian school)"
+      - "Patristic Christian (Antiochene)"
+      - "Patristic Christian (Antiochene scribal tradition)"
+      - "Patristic Christian (Latin)"
+      - "Patristic Christian (Latin) — later Montanist"
+      - "Patristic Christian (Egyptian Coptic)"
+      - "Patristic Christian (Egyptian Coptic / Cappadocian-trained)"
+      - "Patristic Christian (Syrian)"
+      - "Patristic Christian (Quartodeciman Asian)"
+      - "Patristic Christian (anti-Arian, condemned for Christology)"
+      - "Patristic Christian; possibly Montanist-leaning"
+      - "Patristic Christian → Encratite"
+      - "Antiochene Christian"
+      - "Nicene Christian"
+
+  - id: latin-christian
+    display: "Latin / Western Catholic Christianity (medieval & later)"
+    cluster: abrahamic
+    aliases:
+      - "Latin Christian"
+      - "Latin Christian (Anglo-Saxon)"
+      - "Latin Christian (Anglo-Saxon → Frankish)"
+      - "Latin Christian (Visigothic Spain)"
+      - "Latin Christian (Carolingian)"
+      - "Latin Christian — Carolingian Neoplatonism"
+      - "Latin Christian (monastic)"
+      - "Latin Christian (with Egyptian-monastic and Antiochene formation)"
+      - "Latin Christian — Benedictine visionary tradition"
+      - "Latin Christian — early scholastic"
+      - "Latin Christian — Dominican scholastic"
+      - "Latin Christian — Dominican Rhineland mysticism"
+      - "Latin Christian — Franciscan scholastic"
+      - "Latin Christian / Roman Neoplatonist"
+      - "Latin Christian (Catholic)"
+
+  - id: roman-catholic-modern
+    display: "Roman Catholicism (modern / post-Reformation)"
+    cluster: abrahamic
+    aliases:
+      - "Roman Catholicism / ressourcement / Augustinian"
+      - "Roman Catholicism / Society of Jesus / ressourcement / nouvelle théologie"
+      - "Roman Catholicism / Society of Jesus (briefly) / ressourcement / Communio"
+      - "Roman Catholicism / Society of Jesus (Jesuit background)"
+      - "Roman Catholicism / Mexican Jesuit"
+      - "Roman Catholicism / Mexica ethnography"
+      - "Jesuit universal-history scholarship / Catholic Renaissance Hermeticism"
+
+  - id: eastern-orthodox-christian
+    display: "Eastern Christian / Orthodox"
+    cluster: abrahamic
+    aliases:
+      - "Eastern Christian (Chalcedonian)"
+      - "Eastern Christian — Chalcedonian"
+      - "Eastern Orthodox Christianity — Byzantine monastic mysticism"
+      - "Eastern Orthodox Christianity — Hesychast / Palamite"
+      - "Eastern Orthodox theology / classical theism / Christian universalism"
+      - "Christianity (Byzantine and Eastern Orthodox iconographic tradition)"
+
+  - id: syriac-christian
+    display: "Syriac Christianity"
+    cluster: abrahamic
+    aliases:
+      - "Syriac Christian"
+      - "Syriac Christian (Persian Sassanid territory)"
+      - "Syriac Christianity (heterodox Edessan)"
+
+  - id: christian-generic
+    display: "Christianity (cross-confessional)"
+    cluster: abrahamic
+    aliases:
+      - "Christianity"
+      - "Christianity (Trinitarian)"
+      - "Christianity / Judaism"
+      - "Christianity / Judaism / Islam"
+      - "Judaism / Christianity / Islam"
+      - "Christian (eclectic, Platonist-Stoic-leaning)"
+      - "Christian (Alexandrian; condemned)"
+      - "Christian (Constantinopolitan monastic; Monophysite)"
+      - "Christian (Hispano-Galician; ascetic / esoteric / accused of Manichaeism)"
+      - "Christian (Adoptionist / dynamic-monarchian)"
+      - "Christian (Anglican)"
+      - "Christian Neoplatonism / mystical theology"
+
+  - id: protestant-mainline
+    display: "Protestant Christianity (mainline / Reformed)"
+    cluster: abrahamic
+    aliases:
+      - "Protestant Christianity (Lutheran)"
+      - "Reformed Protestant Christianity (Zwinglian)"
+      - "Reformed Protestant Christianity (Calvinist)"
+      - "Christian (Lutheran) / existential theology"
+      - "Christian (Lutheran) / Confessing Church"
+      - "Calvinist Protestant humanism / classical scholarship"
+      - "Anglican (Church of England) / historical Jesus / Pauline studies"
+      - "Anglican (Church in Wales / Church of England) / patristic and Russian-Orthodox-informed theology"
+      - "Anglican Christianity (Church Mission Society) / Yoruba"
+
+  - id: monarchian-modalist
+    display: "Modalist Monarchianism (early heterodox Christian)"
+    cluster: abrahamic
+    aliases:
+      - "Modalist Monarchianism"
+      - "Modalist Monarchianism (early form)"
+      - "Sabellianism / Modalist Monarchianism"
+
+  - id: montanism
+    display: "Montanism (the New Prophecy)"
+    cluster: abrahamic
+    aliases:
+      - "Montanism (the *New Prophecy*)"
+
+  - id: marcionite
+    display: "Marcionite Christianity"
+    cluster: abrahamic
+    aliases:
+      - "Marcionite Christianity"
+      - "Marcionite → Apellean"
+
+  - id: islam-sunni
+    display: "Sunni Islam"
+    cluster: abrahamic
+    aliases:
+      - "Sunni Islam"
+      - "Sunni Islam — Shāfiʿī school of jurisprudence"
+      - "Sunni Islam — Shāfiʿī jurisprudence / Ash'arite theology / Sufism"
+      - "Sunni Islam / Naqshbandi Sufism / Indian Islamic reform"
+
+  - id: islam-shia
+    display: "Shia Islam"
+    cluster: abrahamic
+    aliases:
+      - "Islam (Shi'a foundational figure)"
+
+  - id: islam-generic
+    display: "Islam (cross-sectarian or pre-sectarian)"
+    cluster: abrahamic
+    aliases:
+      - "Islam"
+      - "Islam (and pre-Islamic Arabian high-god, with continuity disputed in degree)"
+
+  - id: sufism
+    display: "Sufi Islam"
+    cluster: abrahamic
+    aliases:
+      - "Sufi Islam — Akbarī school"
+      - "Sufi Islam — Mevlevi (Mawlawiyya)"
+      - "Sufi Islam — early ecstatic Sufism"
+      - "Sufi Islam — early Basran ascetic / love-mysticism"
+
+  - id: islamic-philosophy
+    display: "Islamic philosophy (Falsafa, Ishrāqī, Transcendent)"
+    cluster: abrahamic
+    aliases:
+      - "Islamic philosophy — Illuminationism (Ishrāqiyya)"
+      - "Islamic philosophy / Sufism — Transcendent Philosophy (*Hikmat al-Muta'aliya*)"
+
+  - id: islamic-modernism
+    display: "Islamic modernism and Islamist movements"
+    cluster: abrahamic
+    aliases:
+      - "Islamic modernism"
+      - "Islamic modernism / proto-Salafism"
+      - "Islamism / Muslim Brotherhood radical wing"
+
+  - id: bahai
+    display: "Bahá'í Faith (and Bábí precursor)"
+    cluster: abrahamic
+    aliases:
+      - "Bahá'í Faith"
+      - "Bábí / Bahá'í Faith (precursor manifestation)"
+
+  - id: mandaean
+    display: "Mandaean"
+    cluster: abrahamic
+    aliases:
+      - "Mandaean"
+
+  # ============================================================
+  # CLUSTER: gnostic — heterodox Christian and dualist
+  # ============================================================
+  - id: sethian-gnostic
+    display: "Sethian Gnostic"
+    cluster: gnostic
+    aliases:
+      - "Sethian Gnostic"
+      - "Sethian Gnosticism"
+      - "Sethian / Valentinian Gnostic"
+
+  - id: valentinian-gnostic
+    display: "Valentinian Gnostic"
+    cluster: gnostic
+    aliases:
+      - "Valentinian Gnosticism (Italian school)"
+      - "Valentinian Gnostic Christianity"
+      - "Valentinian Gnostic Christianity (Italian school)"
+      - "Valentinian Gnostic Christianity (Italian branch)"
+      - "Valentinian Gnostic Christianity (Eastern school)"
+      - "Valentinian Gnostic Christianity (Marcosian sub-school)"
+
+  - id: gnostic-generic
+    display: "Gnostic / proto-Gnostic (broad)"
+    cluster: gnostic
+    aliases:
+      - "Gnostic Christian / Sethian / Valentinian"
+      - "Gnostic Christian / Sethian / Valentinian (concept-figure)"
+      - "Gnostic (Sethian / Valentinian)"
+      - "Antiochene proto-Gnostic / Encratite-Gnostic"
+      - "Samaritan religious milieu; proto-Gnosticism (per heresiologists)"
+      - "Samaritan religious milieu; Simonian / proto-Gnostic"
+      - "Syrian-Roman proto-Gnostic; reported teacher of [[marcion-of-sinope]]"
+      - "Basilidean Gnostic Christianity"
+      - "Carpocratian Gnostic"
+
+  - id: manichaean
+    display: "Manichaean"
+    cluster: gnostic
+    aliases:
+      - "Manichaean"
+      - "Manichaeism"
+
+  - id: medieval-dualism
+    display: "Medieval Christian dualism (Cathar, Bogomil)"
+    cluster: gnostic
+    aliases:
+      - "Catharism — medieval Christian dualism"
+      - "Bogomilism — medieval Christian dualism"
+      - "Bogomilism / Catharism — medieval Christian dualism"
+
+  # ============================================================
+  # CLUSTER: hellenic — Greek
+  # ============================================================
+  - id: greek-religion
+    display: "Greek religion (civic / mythological)"
+    cluster: hellenic
+    aliases:
+      - "Greek"
+      - "Greek (Athenian)"
+      - "Greek religion (Cretan-Dionysian)"
+      - "Greek religion / Roman religion / Chaldean Oracles"
+      - "Greek and Roman mystery-cult layers (distinguished from civic Olympian Dionysus)"
+
+  - id: greek-mystery-religion
+    display: "Greek mystery religion (Orphic, Eleusinian)"
+    cluster: hellenic
+    aliases:
+      - "Orphic (within Greek mystery religion)"
+      - "Greek mystery religion (Orphism); influence on Pythagoreanism, Platonism, and later esoteric currents"
+
+  - id: greek-philosophy
+    display: "Greek philosophy (presocratic, classical)"
+    cluster: hellenic
+    aliases:
+      - "Greek philosophy"
+      - "Greek philosophy (Presocratic)"
+      - "Greek philosophy (Presocratic, Eleatic)"
+      - "Greek philosophy — Peripatetic / Lyceum"
+      - "Greek philosophy — Stoicism (founder)"
+      - "Greek philosophy — Epicureanism"
+      - "Greek Second Sophistic (pagan)"
+      - "Greek medical and Platonist-Aristotelian (pagan)"
+
+  - id: pythagoreanism
+    display: "Pythagoreanism"
+    cluster: hellenic
+    aliases:
+      - "Pythagoreanism"
+      - "Pythagoreanism (and via influence: Platonism, Neoplatonism, Hermeticism, Neo-Pythagoreanism)"
+      - "Neo-Pythagorean Greek philosophy with theurgic and miraculous elements"
+
+  - id: middle-platonism
+    display: "Middle Platonism"
+    cluster: hellenic
+    aliases:
+      - "Middle Platonism (pagan)"
+      - "Middle Platonism with strong Neo-Pythagorean and Eastern-religious syncretic interests"
+      - "Platonism / Middle Platonism / Neoplatonism (concept-figure)"
+
+  - id: neoplatonism
+    display: "Neoplatonism"
+    cluster: hellenic
+    aliases:
+      - "Neoplatonism"
+      - "Neoplatonism (Athenian)"
+      - "Neoplatonism (theurgic)"
+      - "Alexandrian Neoplatonism"
+
+  - id: stoicism
+    display: "Stoicism"
+    cluster: hellenic
+    aliases:
+      - "Stoicism"
+      - "Stoicism (Roman)"
+      - "Stoic philosophy"
+      - "Stoicism (Roman state religion as practice)"
+
+  # ============================================================
+  # CLUSTER: roman — Roman state and syncretic
+  # ============================================================
+  - id: roman-state-religion
+    display: "Roman state religion (pagan)"
+    cluster: roman
+    aliases:
+      - "Roman religion"
+      - "Roman state religion (pagan)"
+      - "Roman state religion (pagan; Punic-African background)"
+      - "Roman state religion (pagan; Jovian self-identification)"
+      - "Roman state religion (pagan); Hellenophile"
+      - "Roman aristocratic literary (pagan)"
+      - "Roman religion / Italic religion; Hellenistic-Roman mystery cult"
+      - "Roman state cult (3rd–4th centuries CE); broader syncretic solar theology"
+      - "Roman imperial administration (under Tiberius)"
+      - "Roman (pagan restorationist; Iamblichean Neoplatonist)"
+      - "Roman (converted to Christianity)"
+
+  - id: roman-mystery-cult
+    display: "Roman-era mystery cults (Mithras, Cybele, Isis)"
+    cluster: roman
+    aliases:
+      - "Roman mystery cult"
+      - "Phrygian → Greek → Roman mystery cult"
+      - "Phrygian / Thracian (origin); Hellenistic-Roman syncretism"
+      - "Levantine → Greek → Roman mystery cult"
+      - "Hellenistic-Roman mystery cult (with Egyptian roots)"
+      - "Greco-Egyptian (Ptolemaic syncretic state cult)"
+      - "Greco-Egyptian Hermetic syncretism"
+
+  # ============================================================
+  # CLUSTER: persian-iranian
+  # ============================================================
+  - id: zoroastrianism
+    display: "Zoroastrianism"
+    cluster: persian-iranian
+    aliases:
+      - "Zoroastrian"
+      - "Achaemenid Persian"
+
+  # ============================================================
+  # CLUSTER: indic — South Asian
+  # ============================================================
+  - id: vedic
+    display: "Vedic (early Indo-Aryan)"
+    cluster: indic
+    aliases:
+      - "Vedic Hindu (Vedic-period); reconstructed Proto-Indo-European ancestor"
+      - "Vedic / proto-Hindu"
+      - "Vedic / Upaniṣadic Hindu"
+      - "Vedic / Sāṃkhya / classical Hindu"
+
+  - id: hindu-vaishnava
+    display: "Hindu — Vaishnava"
+    cluster: indic
+    aliases:
+      - "Vedic / Hindu"
+      - "Vedic / Vaishnava Hinduism"
+      - "Vaishnavism"
+      - "Vaishnavism / Bhakti"
+      - "Hindu — Vaiṣṇava"
+      - "Hindu — Vaiṣṇava; pan-Hindu"
+      - "Hindu — Vaiṣṇava (Rāma-bhakti); pan-Hindu"
+      - "Hindu — Vishishtadvaita (Sri Vaishnavism)"
+      - "Hindu — Shuddhadvaita Vedanta / Pushtimarg Vaishnavism"
+      - "Hindu — Dvaitādvaita Vedanta / Nimbarka sampradaya / Radha-Krishna bhakti"
+      - "Hindu Bhakti (Tamil Vaishnava — Alvar tradition; Sri Vaishnavism)"
+      - "Hindu Bhakti (Gaudiya Vaishnava)"
+      - "Hindu Bhakti (Vaishnava — Ram-bhakti)"
+      - "Hindu Bhakti (Vaishnava — Krishna-bhakti)"
+      - "Hindu Bhakti (Vaishnava — Krishna-bhakti, Pushtimarg)"
+      - "Gaudiya Vaishnavism (with antecedents in Bengali, Braj, and earlier bhakti)"
+
+  - id: hindu-shaiva
+    display: "Hindu — Shaiva"
+    cluster: indic
+    aliases:
+      - "Hindu — Shaivism (the broader cultic-theological tradition; the Tamil Shaiva Siddhānta, the Kashmir Trika non-dualist Shaivism, the Lingāyat/Vīraśaiva, the Nāth, and the Smārta integrations are all distinct sub-traditions)"
+      - "Hindu — Shaivism (Tantric, especially Kashmir Trika and Kāpālika streams)"
+      - "Hindu — Kashmir Shaivism (Trika); also classical Sanskrit aesthetics"
+      - "Hindu — Kashmir Shaivism (Pratyabhijñā / Trika)"
+      - "Hindu — Lingayat / Vīraśaiva tradition"
+      - "Hindu — Pan-Hindu (Śaiva origin)"
+      - "Hindu Bhakti (Tamil Shaivism — Saiva Siddhanta)"
+      - "Hindu Bhakti (Tamil Shaivism — Nayanar tradition)"
+      - "Hindu — classical Sanskrit aesthetics and dramatic theory; closely tied to Śaiva-Brahmanical ritual context"
+      - "Hindu (Śaiva) and Vajrayāna Buddhism (both lineages)"
+
+  - id: hindu-shakta
+    display: "Hindu — Shakta"
+    cluster: indic
+    aliases:
+      - "Hindu — Shakta / Tantric"
+      - "Hindu — Shakta / Shaivite / Pan-Hindu"
+      - "Hindu Bhakti (Shakta)"
+
+  - id: hindu-pan
+    display: "Hindu — pan-Hindu / syncretic"
+    cluster: indic
+    aliases:
+      - "Hindu — Pan-Hindu (Vedic origin)"
+      - "Hindu — pan-Indian; especially Tamil Murugan-cult of South India and Sri Lanka"
+      - "Hindu — pan-Indian syncretic; especially central in Maharashtra (Nāth-sampradāya), Karnataka, Gujarat"
+      - "Hindu — syncretic Vaishnava-Shaiva composite"
+
+  - id: hindu-vedanta-advaita
+    display: "Hindu — Advaita Vedanta"
+    cluster: indic
+    aliases:
+      - "Hindu — Advaita Vedanta"
+      - "Hindu — Advaita Vedanta; Vijayanagara state ideology"
+      - "Hindu modernism / Advaita Vedanta"
+
+  - id: hindu-vedanta-dvaita
+    display: "Hindu — Dvaita Vedanta"
+    cluster: indic
+    aliases:
+      - "Hindu — Dvaita Vedanta"
+
+  - id: hindu-yoga
+    display: "Hindu — Yoga / Tantra (Nath, Hatha, Kaula)"
+    cluster: indic
+    aliases:
+      - "Hindu — Yoga / Sāṃkhya-Yoga"
+      - "Hindu — Nath Yoga / Hatha Yoga"
+      - "Hindu — Nath sampradaya / Kaula Tantra; also claimed by Tibetan Buddhist mahāsiddha tradition as Mīnapā"
+
+  - id: hindu-modernism
+    display: "Hindu modernism"
+    cluster: indic
+    aliases:
+      - "Hindu modernism / Ramakrishna Mission"
+      - "Hindu modernism / Kriya Yoga"
+      - "Hindu modernism / Integral Yoga"
+      - "Hindu modernism — Brahmo Samaj"
+      - "Hindu modernism — Brahmo Samaj / Naba-Bidhan (New Dispensation)"
+      - "Hindu modernism — Arya Samaj"
+      - "Hindutva / Hindu nationalism"
+
+  - id: sant-tradition
+    display: "Sant tradition / North Indian bhakti"
+    cluster: indic
+    aliases:
+      - "Sant tradition (North Indian bhakti); also revered by Sikhs"
+
+  - id: sikhism
+    display: "Sikhism"
+    cluster: indic
+    aliases:
+      - "Sikhism"
+
+  - id: jainism
+    display: "Jainism"
+    cluster: indic
+    aliases:
+      - "Jainism"
+
+  # ============================================================
+  # CLUSTER: buddhist — Buddhism (pan-tradition)
+  # ============================================================
+  - id: buddhism-generic
+    display: "Buddhism (cross-school)"
+    cluster: buddhist
+    aliases:
+      - "Buddhism"
+      - "Buddhism (Sarvāstivāda → Yogācāra)"
+
+  - id: buddhism-mahayana
+    display: "Mahayana Buddhism"
+    cluster: buddhist
+    aliases:
+      - "Mahayana Buddhism"
+      - "Mahayana Buddhism — Pure Land schools"
+      - "Mahayana Buddhism (Yogācāra/Cittamātra school)"
+      - "Mahayana Buddhism (Madhyamaka school)"
+      - "Mahāyāna and Vajrayāna Buddhism"
+      - "Mahayana / Vajrayana Buddhism"
+      - "Mahāyāna / Vajrayāna Buddhism — Kadampa origins"
+
+  - id: buddhism-vajrayana
+    display: "Vajrayana / Tibetan Buddhism"
+    cluster: buddhist
+    aliases:
+      - "Vajrayāna Buddhism"
+      - "Vajrayāna Buddhism — late Indian / Tibetan"
+      - "Vajrayāna Buddhism — Tibetan, Mongolian, Himalayan; older Mahāyāna roots"
+      - "Vajrayāna Buddhism — Sarma (New Translation) schools"
+      - "Vajrayāna Buddhism — Nyingma"
+      - "Vajrayāna Buddhism — Nyingma school"
+      - "Vajrayāna Buddhism — Kagyu school"
+      - "Vajrayāna Buddhism — Kagyu (Indian origins)"
+      - "Vajrayāna Buddhism — Gelug (Yellow Hat)"
+      - "Vajrayana Buddhism / Shambhala Buddhism"
+      - "Vajrayana Buddhism / Gelug school"
+
+  - id: buddhism-zen
+    display: "Zen / Chan Buddhism"
+    cluster: buddhist
+    aliases:
+      - "Zen Buddhism — Sōtō school"
+      - "Rinzai Zen Buddhism"
+      - "Chan / Zen Buddhism — Southern School"
+
+  - id: buddhism-modern
+    display: "Buddhist modernism"
+    cluster: buddhist
+    aliases:
+      - "Buddhist modernism / Zen"
+      - "Buddhist modernism / Engaged Buddhism / Plum Village"
+      - "Theosophy / Buddhist modernism"
+
+  # ============================================================
+  # CLUSTER: sinic — Chinese
+  # ============================================================
+  - id: daoism
+    display: "Daoism"
+    cluster: sinic
+    aliases:
+      - "Daoism"
+
+  - id: confucianism
+    display: "Confucianism"
+    cluster: sinic
+    aliases:
+      - "Confucianism"
+
+  - id: chinese-religion
+    display: "Chinese (pre-imperial / popular / Buddhist-Chinese)"
+    cluster: sinic
+    aliases:
+      - "Chinese (Shang / early Zhou)"
+      - "Chinese (Zhou onward)"
+      - "Chinese Mahāyāna Buddhism (and East Asian Buddhism more broadly); Chinese popular religion"
+
+  # ============================================================
+  # CLUSTER: indigenous-european-pre-christian
+  # ============================================================
+  - id: norse-germanic
+    display: "Norse / Germanic (pre-Christian)"
+    cluster: indigenous-european-pre-christian
+    aliases:
+      - "Norse / Germanic"
+      - "Medieval Icelandic Christianity / Norse mythography"
+      - "Asatru / Heathenry"
+
+  - id: celtic-pre-christian
+    display: "Celtic (pre-Christian)"
+    cluster: indigenous-european-pre-christian
+    aliases:
+      - "Celtic (pan-Celtic — Gaulish, Iberian, Insular)"
+
+  - id: finno-karelian
+    display: "Finno-Karelian (pre-Christian / Kalevalan)"
+    cluster: indigenous-european-pre-christian
+    aliases:
+      - "Finno-Karelian (pre-Christian)"
+      - "Finno-Karelian — Kalevala / runo-poetry tradition"
+      - "Finnish Lutheran / national-romantic folklore"
+
+  # ============================================================
+  # CLUSTER: indigenous-african
+  # ============================================================
+  - id: yoruba
+    display: "Yoruba"
+    cluster: indigenous-african
+    aliases:
+      - "Yoruba"
+      - "Yoruba (and Vodou via Dahomean-Yoruba transmission)"
+
+  - id: vodou-haitian
+    display: "Haitian Vodou (and diasporic descendants)"
+    cluster: indigenous-african
+    aliases:
+      - "Haitian Vodou"
+      - "Haitian Vodou / Haitian Revolution"
+      - "New Orleans Voodoo (Louisiana, descended from Haitian Vodou) / Roman Catholicism (practicing)"
+
+  - id: ethiopian-orthodox-rastafari
+    display: "Ethiopian Orthodox / Rastafari"
+    cluster: indigenous-african
+    aliases:
+      - "Ethiopian Orthodox Christianity (officially) / [[tradition-rastafari]] (object of religious veneration outside Ethiopia)"
+
+  # ============================================================
+  # CLUSTER: indigenous-american
+  # ============================================================
+  - id: nahua-aztec
+    display: "Nahua / Aztec / pan-Mesoamerican"
+    cluster: indigenous-american
+    aliases:
+      - "Nahua / Aztec"
+      - "Nahua / Aztec (Mexica)"
+      - "Nahua / Aztec (Mexica) — Mexica-specific patron"
+      - "Nahua / Aztec (Mexica) — and broader Mesoamerican"
+      - "Nahua / Aztec — pan-Mesoamerican"
+      - "Toltec (Nahua)"
+
+  - id: maya
+    display: "Maya"
+    cluster: indigenous-american
+    aliases:
+      - "Maya"
+      - "Yucatec Maya"
+      - "Yucatec Maya / pan-Maya"
+      - "Yucatec Maya / K'iche' Maya — pan-Mesoamerican Feathered-Serpent complex"
+
+  - id: andean
+    display: "Andean (Inca, Quechua, Aymara)"
+    cluster: indigenous-american
+    aliases:
+      - "Inca / pre-Inca Andean"
+      - "Inca (Tawantinsuyu) / Andean Quechua"
+      - "Quechua / Aymara / pan-Andean"
+
+  - id: north-american-indigenous
+    display: "North American indigenous (Algonquian, Lakota, Paiute, Lakota-Catholic)"
+    cluster: indigenous-american
+    aliases:
+      - "Algonquian — especially Anishinaabe (Ojibwe, Odawa, Potawatomi); related concepts among Cree, other Algonquian peoples"
+      - "Lakota (and broader Sioux — Dakota, Nakota)"
+      - "Northern Paiute / pan-tribal Ghost Dance"
+      - "Oglala Lakota / Roman Catholicism (later)"
+
+  # ============================================================
+  # CLUSTER: indigenous-pacific
+  # ============================================================
+  - id: polynesian
+    display: "Polynesian (Māori, Hawaiian, pan-Polynesian)"
+    cluster: indigenous-pacific
+    aliases:
+      - "Māori"
+      - "Māori (specific iwi — Tūhoe, Ngāti Kahungunu, others; contested pre-contact authenticity)"
+      - "Hawaiian"
+      - "Hawaiian (Kanaka Maoli)"
+      - "Pan-Polynesian — Māori, Tahitian, Samoan; Hawaiian Kanaloa is the cognate"
+
+  - id: australian-aboriginal
+    display: "Australian Aboriginal"
+    cluster: indigenous-pacific
+    aliases:
+      - "Australian Aboriginal — widely attested across northern, central, and parts of southeastern Aboriginal Australia"
+      - "Specific southeastern Australian Aboriginal nations — Wiradjuri, Kamilaroi, Wonnarua, Eora; contested as pan-Aboriginal"
+
+  # ============================================================
+  # CLUSTER: esoteric-western
+  # ============================================================
+  - id: hermeticism
+    display: "Hermeticism"
+    cluster: esoteric-western
+    aliases:
+      - "Hermetic"
+
+  - id: renaissance-esoteric
+    display: "Renaissance esoteric (Hermetic-Kabbalist, magic, Platonism)"
+    cluster: esoteric-western
+    aliases:
+      - "Renaissance magic / Hermetic-Kabbalist syncretism"
+      - "Renaissance esoteric / angelic magic"
+      - "Renaissance esoteric / Hermetic-Kabbalist"
+      - "Renaissance Platonism / Hermeticism"
+      - "Renaissance Hermeticism / philosophical pantheism"
+      - "Renaissance Hermetic-Kabbalist Platonism"
+      - "Florentine Renaissance"
+      - "English Hermetic-Paracelsian-Rosicrucian"
+      - "Christian Kabbalah / German Hebraism"
+      - "Christian alchemy / Renaissance magic"
+
+  - id: christian-theosophy-early-modern
+    display: "Christian theosophy / Behmenist / Swedenborgian"
+    cluster: esoteric-western
+    aliases:
+      - "Christian theosophy (Lutheran spiritualist)"
+      - "Lutheran / Rosicrucian / esoteric Protestant"
+      - "Christian esoteric / Swedenborgian (New Church)"
+      - "Rosicrucianism (legendary)"
+
+  - id: theosophy
+    display: "Theosophy"
+    cluster: esoteric-western
+    aliases:
+      - "Theosophy"
+
+  - id: anthroposophy
+    display: "Anthroposophy"
+    cluster: esoteric-western
+    aliases:
+      - "Anthroposophy"
+
+  - id: thelema
+    display: "Thelema and successors"
+    cluster: esoteric-western
+    aliases:
+      - "Thelema"
+      - "Hermetic Order of the Golden Dawn / Thelema (briefly)"
+      - "Chaos magick / late-20th-century esotericism / Thelemic descent"
+
+  - id: lhp-modern
+    display: "Modern left-hand-path / Satanism"
+    cluster: esoteric-western
+    aliases:
+      - "LaVeyan Satanism"
+
+  - id: wicca-neopagan
+    display: "Wicca and modern paganism"
+    cluster: esoteric-western
+    aliases:
+      - "Wicca / Modern Pagan"
+
+  - id: gurdjieff-fourth-way
+    display: "Gurdjieff / The Fourth Way"
+    cluster: esoteric-western
+    aliases:
+      - "The Fourth Way"
+
+  # ============================================================
+  # CLUSTER: modern-syncretic — new religious movements
+  # ============================================================
+  - id: mormonism
+    display: "Mormonism / Latter-day Saint movement"
+    cluster: modern-syncretic
+    aliases:
+      - "Mormonism / Latter-day Saint"
+      - "Mormonism (LDS / Utah branch)"
+
+  - id: christian-science
+    display: "Christian Science"
+    cluster: modern-syncretic
+    aliases:
+      - "Christian Science"
+
+  - id: jehovahs-witnesses
+    display: "Jehovah's Witnesses / Bible Student movement"
+    cluster: modern-syncretic
+    aliases:
+      - "Jehovah's Witnesses (via the Bible Student / Watch Tower movement)"
+
+  - id: unification-church
+    display: "Unification Church"
+    cluster: modern-syncretic
+    aliases:
+      - "Unification Church / Family Federation for World Peace and Unification"
+
+  - id: scientology
+    display: "Scientology"
+    cluster: modern-syncretic
+    aliases:
+      - "Scientology"
+
+  - id: new-age
+    display: "New Age / channeled / popular esotericism"
+    cluster: modern-syncretic
+    aliases:
+      - "A Course in Miracles / New Age"
+      - "New Message from God / New Age channeled"
+      - "American esoteric / trance prophecy"
+      - "American populist / 19th-century popular esoteric-archaeological"
+      - "Late-20th / early-21st-century popular pseudoarchaeology"
+      - "20th-century academic history (Keene State College); subsequently absorbed into popular pseudoarchaeology"
+
+  # ============================================================
+  # CLUSTER: modern-secular — academic / philosophical / scientific
+  # ============================================================
+  - id: comparative-religion-academic
+    display: "Comparative religion / academic religious studies"
+    cluster: modern-secular
+    aliases:
+      - "Comparative religion (academic)"
+      - "Comparative religion (popular)"
+      - "Comparative religion (popular-academic) / literary criticism / 'American Gnosticism' thesis"
+      - "Comparative religion (popular) / Islam (Shia background)"
+      - "Comparative religion (academic) / Gnostic studies / Coptic Christianity"
+      - "Comparative religion (academic) / philosophy of religion"
+      - "Comparative religion (academic) / history of religions"
+      - "Comparative religion (academic) / history of ideas / Warburg Institute"
+      - "Comparative religion (academic) / early Christianity / Gnostic studies"
+      - "Comparative religion (academic) / early Christian history"
+      - "Comparative religion (academic) / early Christian history / Gnosticism studies"
+      - "Comparative religion (academic) / Victorian-evolutionist anthropology"
+      - "Comparative religion (academic) / South Asian studies / modern yoga studies"
+      - "Comparative religion (academic) / Sociology of religion"
+      - "Comparative religion (academic) / Phenomenology of religion / German liberal Protestantism"
+      - "Comparative religion (academic) / Old Testament criticism"
+      - "Comparative religion (academic) / New Testament textual criticism"
+      - "Comparative religion (academic) / Judaic studies"
+      - "Comparative religion (academic) / Indology"
+      - "Comparative religion (academic) / Gnostic studies / Neoplatonism"
+      - "Comparative religion (academic) / Dead Sea Scrolls / Second Temple Judaism / historical Jesus"
+      - "Comparative religion (academic) / Daoism / contemplative studies"
+      - "Comparative religion (academic, popularizing register) / Jungian-adjacent"
+      - "academic anthropology / Lutheran Christian (background)"
+
+  - id: depth-psychology-religion
+    display: "Depth psychology of religion (Jungian, archetypal, mythological)"
+    cluster: modern-secular
+    aliases:
+      - "Jungian depth psychology (his school)"
+      - "Jungian / post-Jungian depth psychology"
+      - "Jungian / post-Jungian / archetypal psychology"
+      - "Clinical psychology + Jungian / mythological reading of religion (popular)"
+      - "Cognitive neuroscience / philosophy of mind / cultural history of religion"
+
+  - id: early-modern-rationalism
+    display: "Early modern rationalism / dialogical philosophy"
+    cluster: modern-secular
+    aliases:
+      - "Early modern rationalism / Sephardic Jewish background (excommunicated)"
+      - "German-Jewish philosophy / dialogical philosophy"
+
+  # ============================================================
+  # CLUSTER: hellenistic-east — Greek-speaking but cross-cultural,
+  # this is currently mapped under the dominant cluster on a case-by-case
+  # basis. The Seleucid Empire entry is a hybrid stub; leave it for
+  # downstream review.
+  # ============================================================
+  - id: seleucid-empire
+    display: "Seleucid (Hellenistic-near-eastern syncretism)"
+    cluster: hellenic
+    aliases:
+      - "Seleucid Empire"
+
+# ----------------------------------------------------------------
+# Notes on intentionally NOT-yet-mapped strings
+# ----------------------------------------------------------------
+#
+# A handful of observed tradition strings span multiple clusters and
+# resist single-bucket assignment. The intended resolution is that
+# build_data.py, when it gains vocabulary support, will accept multiple
+# `cluster` memberships per node by reading the canonical id list. The
+# strings below are *deliberately* not folded into a single id; in the
+# downstream rewriter we will split them into a list of canonical ids:
+#
+#   - "Hebrew Bible; Christian Bible; Quran; Sethian and Valentinian
+#      Gnosticism; Hermetism; Kabbalah; Mandaeism"
+#     → [israelite-judahite, christian-generic, islam-generic,
+#        sethian-gnostic, valentinian-gnostic, hermeticism, kabbalah,
+#        mandaean]
+#
+#   - "Hebrew Bible; Sethian Gnostic Christianity; Mandaeism (as Šitil);
+#      Islam"
+#     → [israelite-judahite, sethian-gnostic, mandaean, islam-generic]
+#
+# These multi-tradition strings appear on a small number of cross-corpus
+# concept-figures (e.g. Adam, Seth) where the single-tradition model
+# breaks down by design. They are a feature, not a bug. The downstream
+# rewriter must NOT collapse them into a single id.

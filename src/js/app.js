@@ -1,0 +1,4282 @@
+// ============================================================
+// CODEX ATLAS — viewer
+// Pantheon (radial-wedge deity graph) · Documents (polar time-by-tradition)
+// Timeline (drag-pan + grow-on-zoom + compressed-gap breaks)
+// Visual family-filter · cross-family hover-reveal · multi-palette theming
+// ============================================================
+
+if (!window.VAULT_DATA) document.getElementById('missing-data').style.display = 'flex';
+
+const DATA = window.VAULT_DATA || { nodes: [], edges: [], counts: {}, traditions: [], families: [] };
+
+const NODES_BY_ID = Object.fromEntries(DATA.nodes.map(n => [n.id, n]));
+const EDGES = DATA.edges.filter(e => NODES_BY_ID[e.source] && NODES_BY_ID[e.target]);
+const TRADITIONS = DATA.traditions || [];
+const FAMILIES = DATA.families || [];
+
+// degree + neighbor maps
+const DEGREE = new Map();
+const NEIGHBORS = new Map();
+EDGES.forEach(e => {
+  DEGREE.set(e.source, (DEGREE.get(e.source) || 0) + 1);
+  DEGREE.set(e.target, (DEGREE.get(e.target) || 0) + 1);
+  if (!NEIGHBORS.has(e.source)) NEIGHBORS.set(e.source, new Set());
+  if (!NEIGHBORS.has(e.target)) NEIGHBORS.set(e.target, new Set());
+  NEIGHBORS.get(e.source).add(e.target);
+  NEIGHBORS.get(e.target).add(e.source);
+});
+
+function computeHubSet(nodes, percentile = 0.15) {
+  if (!nodes.length) return new Set();
+  const sorted = [...nodes].sort((a, b) => (DEGREE.get(b.id) || 0) - (DEGREE.get(a.id) || 0));
+  const cutoff = Math.max(1, Math.ceil(sorted.length * percentile));
+  return new Set(sorted.slice(0, cutoff).map(n => n.id));
+}
+
+// stats
+document.getElementById('s-docs').textContent    = DATA.counts.document || 0;
+document.getElementById('s-deities').textContent = DATA.counts.deity || 0;
+document.getElementById('s-themes').textContent  = DATA.counts.theme || 0;
+document.getElementById('s-edges').textContent   = EDGES.length;
+
+// family filter populator
+const famSel = document.getElementById('filter-family');
+FAMILIES.forEach(f => {
+  const o = document.createElement('option');
+  o.value = f.name; o.textContent = `${f.name} (${f.count})`;
+  famSel.appendChild(o);
+});
+
+// state
+const STATE = {
+  view: 'pantheon',
+  selected: null,
+  filter: { family: '', type: '', search: '', theme: '' },
+  focusId: null,
+  // Sticky/additive selection. When non-empty, the listed IDs are "locked" highlighted.
+  // Clicking a connected node adds to the set; clicking an unrelated node resets it;
+  // clicking empty space clears it. Implemented per-view in render().
+  lockedSet: new Set(),
+  // Cross-view filter — a Set of node IDs. When set, every view restricts to these IDs.
+  // Triggered by the pantheon "view in timeline" button; cleared by the timeline reset chip.
+  crossViewFilter: null,
+  // Alchemy view state — user-picked node IDs. Bridge nodes are computed from these.
+  alchemyPicks: [],
+  // Pantheon mode toggle — 'deities' (default), 'authors' (persons with authorship/originator
+  // edges), or 'symbols' (09_symbols/ nodes clustered by origin family with cross-family
+  // symbol edges drawn prominently — the user's "MASSIVE wins" view).
+  pantheonMode: 'deities',
+};
+
+// ============================================================
+// COLOR HELPERS
+// ============================================================
+
+// Edge type → color/width. **Thin lines by default everywhere.** Color carries the
+// edge-type distinction (gold for transmission, red for polemic, blue for milieu/parallel,
+// green for kin, etc.) — width does NOT. Highlighted state lives in CSS (.edge-line.hot
+// at 1.6px). User explicitly: "I HATE BIG THICK LINES, except when highlighted."
+//
+// Width-ceiling discipline:
+//   - 0.50 hard ceiling for any baseline (non-highlighted) edge
+//   - 0.20–0.32 = "ambient" edges (tradition membership, has-theme, context — these
+//     get rendered in dense quantity so they must stay nearly invisible by default)
+//   - 0.32–0.50 = "named" edges (transmission, polemic, syncretic-identification — the
+//     ones that ARE the story; color makes them distinguishable; width keeps them subtle)
+//
+// `vector-effect: non-scaling-stroke` in CSS pins these widths regardless of zoom.
+const EDGE_STYLE = {
+  // ------- Syncretic / lineage / kin (gold–brown–green tints) -------
+  'syncretic-identification':         { c: '#b08840', w: 0.42, op: 0.36 },  // muted gold
+  'syncretic-ancient-identification': { c: '#b08840', w: 0.38, op: 0.30 },
+  'syncretic-scholarly-parallel':     { c: '#947030', w: 0.34, op: 0.24 },
+  'syncretic-folk-syncretism':        { c: '#7d5e28', w: 0.30, op: 0.20 },
+  'syncretic':                        { c: '#b08840', w: 0.36, op: 0.28 },
+  'parent-of':                        { c: '#5a7458', w: 0.34, op: 0.30 },
+  'child-of':                         { c: '#5a7458', w: 0.34, op: 0.24 },
+  'consort':                          { c: '#a85e44', w: 0.36, op: 0.30 },
+  // ------- Textual / scholarly (slate-teal-blue) -------
+  'polemic-against':                  { c: '#a83e4a', w: 0.38, op: 0.32 },  // red — clear semantic
+  'direct-quote':                     { c: '#4a8a86', w: 0.34, op: 0.28 },
+  'redaction-of':                     { c: '#8a6a30', w: 0.32, op: 0.24 },
+  'commentary-on':                    { c: '#8a6a8a', w: 0.30, op: 0.22 },
+  'parallel-motif':                   { c: '#5a6a82', w: 0.28, op: 0.22 },
+  'shared-milieu':                    { c: '#4a5aa4', w: 0.28, op: 0.20 },  // ★ the pleasant blue the user liked
+  'shared-tradition':                 { c: '#4a5aa4', w: 0.28, op: 0.18 },
+  'manuscript-transmission':          { c: '#6a5a40', w: 0.28, op: 0.20 },
+  'influenced-by':                    { c: '#4a8a86', w: 0.30, op: 0.24 },
+  'influences':                       { c: '#4a8a86', w: 0.30, op: 0.24 },
+  // ------- Ambient / structural (kept barely-visible — these flood the graph in volume) -------
+  'attests':                          { c: '#3a4a66', w: 0.22, op: 0.12 },
+  'attested-in':                      { c: '#3a4a66', w: 0.22, op: 0.12 },
+  'has-theme':                        { c: '#3a5a3e', w: 0.22, op: 0.12 },
+  'context':                          { c: '#3a3e48', w: 0.22, op: 0.12 },
+  'tradition-deity':                  { c: '#2f3a4e', w: 0.18, op: 0.10 },
+  'tradition-doc':                    { c: '#2f3a4e', w: 0.18, op: 0.10 },
+  'tradition-person':                 { c: '#2f3a4e', w: 0.18, op: 0.10 },
+  'authored':                         { c: '#8a6a30', w: 0.30, op: 0.24 },
+  // ------- Cross-symbol edge types (09_symbols/) -------
+  // PREVIOUSLY these were force-loud at w ≥ 0.95 per the "MASSIVE wins" demand. User has
+  // since seen the result and asked for everything thin. Color now does ALL the work:
+  // gold = transmission, red = polemic-inversion, amber = merger/appropriation, grey =
+  // weakest claim. Hover/.hot in CSS still bumps to 1.6px when highlighted.
+  'ancestor-of':                      { c: '#d4a55a', w: 0.46, op: 0.55 },  // bright gold, directional, primary
+  'parallel-form':                    { c: '#a08a5a', w: 0.34, op: 0.36 },  // muted gold — resemblance, not transmission
+  'syncretic-fusion':                 { c: '#c47a3a', w: 0.42, op: 0.50 },  // amber — two-into-one merger
+  'appropriated-by':                  { c: '#c4a05a', w: 0.42, op: 0.50 },  // adoption across traditions
+  'polemic-inversion':                { c: '#a83e4a', w: 0.46, op: 0.55 },  // red — swastika-Nazi case
+  'visual-cognate':                   { c: '#7a8090', w: 0.30, op: 0.28 },  // grey — weakest claim
+  // Symbol → other-node edges. High volume → kept nearly invisible.
+  'symbol-attests-in':                { c: '#6a7a90', w: 0.26, op: 0.16 },
+  'symbol-iconography-of':            { c: '#8a6a5a', w: 0.28, op: 0.20 },
+  'symbol-in-tradition':              { c: '#5a7080', w: 0.24, op: 0.14 },
+};
+// Set of edge types that count as "cross-family connections between symbols" — used by
+// the Pantheon Symbols mode to surface those edges with prominent styling. The user's
+// MASSIVE-win demos (ankh → coptic-cross, swastika polemic-inversion) live here.
+const SYMBOL_CROSS_EDGE_TYPES = new Set([
+  'ancestor-of', 'parallel-form', 'syncretic-fusion',
+  'appropriated-by', 'polemic-inversion', 'visual-cognate',
+]);
+const EDGE_DEFAULT = { c: '#3a4a66', w: 0.25, op: 0.13 };  // very subtle baseline
+function edgeStyle(t) { return EDGE_STYLE[t] || EDGE_DEFAULT; }
+
+// String hash → 0..2^31
+function hashStr(s) { let h = 2166136261 >>> 0; for (let i = 0; i < s.length; i++) { h = Math.imul(h ^ s.charCodeAt(i), 16777619); } return h >>> 0; }
+
+// per-node color: slight HSL shift on family color, deterministic by subtradition+title
+function nodeColor(n) {
+  const base = d3.hsl(n.family_color || n.tradition_color || '#7a8090');
+  if (!isFinite(base.h)) base.h = 30;
+  const h = hashStr((n.tradition || '') + '|' + (n.title || '') + (n.role || ''));
+  // Subtle per-deity variation — keeps family identity strong while still distinguishing individuals.
+  // Hue is held tight (±5°) so a wedge reads as one color; lightness/saturation vary a bit more.
+  const dh = ((h % 10) - 5);              // ±5° hue
+  const ds = (((h >> 8) % 18) - 9) / 100; // ±9% saturation
+  const dl = (((h >> 16) % 16) - 8) / 100; // ±8% lightness
+  base.h = (base.h + dh + 360) % 360;
+  base.s = Math.max(0.30, Math.min(0.85, base.s + ds));
+  base.l = Math.max(0.38, Math.min(0.70, base.l + dl));
+  return base.formatHex();
+}
+
+// polar coordinates in d3-arc convention: 0 = top (12 o'clock), increasing clockwise
+function polarXY(angle, r) { return [r * Math.sin(angle), -r * Math.cos(angle)]; }
+
+// Shape-per-type — each node category gets a distinct silhouette so a mixed-type view
+// (Alchemy, Timeline) reads at a glance. Pantheon's Authors mode also benefits: deities
+// stay as circles, persons render as diamonds, etc.
+// For SYMBOLS specifically, shape varies by the symbol's category (geometric vs.
+// theriomorphic vs. phytomorphic, etc.) — see schema-symbol.md.
+function shapeFor(n) {
+  if (!n) return d3.symbolCircle;
+  switch (n.type) {
+    case 'deity':     return d3.symbolCircle;
+    // person/author = diamond. Matches the Scripture view (which already uses
+    // symbolDiamond via shapeFor) so Justin Martyr / Peter / Paul / etc. read the
+    // same shape across Pantheon, Timeline, and Scripture. Documents stay as
+    // axis-aligned squares — visually distinct from the 45°-rotated diamond.
+    case 'person':    return d3.symbolDiamond;
+    case 'event':     return d3.symbolStar;
+    case 'document':  return d3.symbolSquare;
+    case 'theme':     return d3.symbolTriangle;
+    case 'tradition': return d3.symbolWye;
+    case 'symbol':
+      // Map symbol category → d3 shape. Falls through to symbolStar (the generic
+      // symbol-ish shape) if category is missing or unrecognized.
+      switch ((n.category || '').toLowerCase()) {
+        case 'geometric':       return d3.symbolStar;
+        case 'theriomorphic':   return d3.symbolDiamond;
+        case 'phytomorphic':    return d3.symbolTriangle;
+        case 'anthropomorphic': return d3.symbolWye;
+        case 'astral':          return d3.symbolCircle;
+        case 'cosmological':    return d3.symbolSquare;
+        case 'mystery':         return d3.symbolCross;
+        default:                return d3.symbolStar;
+      }
+    default:          return d3.symbolCircle;
+  }
+}
+// d3.symbol().size() is a BOUNDING-BOX AREA. Convert a desired visual radius to size.
+// We over-area slightly for non-circular shapes so they don't read smaller than the circle.
+function shapeSizeFor(n, r) {
+  const base = Math.PI * r * r;
+  switch (n && n.type) {
+    case 'diamond':
+    case 'person':    return base * 1.5;     // diamond looks small at equal area → bump
+    case 'event':     return base * 1.4;     // star
+    case 'theme':     return base * 1.6;     // triangle
+    case 'document':  return base * 1.1;
+    case 'tradition': return base * 1.3;     // wye
+    case 'symbol':    return base * 1.5;     // shapes vary by category — bump uniformly so symbols read
+    default:          return base;
+  }
+}
+const _shapeGen = d3.symbol();
+function shapePath(n, r) {
+  return _shapeGen.type(shapeFor(n)).size(shapeSizeFor(n, r))();
+}
+
+// ============================================================
+// UTILS
+// ============================================================
+function fmtDate(y) {
+  if (y === undefined || y === null || y === "") return '—';
+  if (typeof y !== 'number') return String(y);
+  if (y < 0) return Math.abs(y) + ' BCE';
+  return y + ' CE';
+}
+function fmtDateRange(a, b) {
+  if (a == null && b == null) return '';
+  if (a != null && b != null && a !== b) return fmtDate(a) + ' – ' + fmtDate(b);
+  return fmtDate(a ?? b);
+}
+function matchesFilter(n) {
+  const f = STATE.filter;
+  if (f.family && (n.family || 'Other') !== f.family) return false;
+  if (f.type && n.type !== f.type) return false;
+  if (f.theme) {
+    // a node matches the theme if it links to that theme id
+    const tied = NEIGHBORS.get(n.id);
+    if (!tied || !tied.has(f.theme)) return false;
+  }
+  if (f.search) {
+    const q = f.search.toLowerCase();
+    // Hay now includes aka (alternative names) and the full body prose so search
+    // hits body content (was: only metadata fields, which missed e.g. "nomad").
+    const hay = (
+      n.title + ' ' + n.id + ' ' +
+      (n.aka || []).join(' ') + ' ' +
+      (n.tags || []).join(' ') + ' ' +
+      (n.themes || []).join(' ') + ' ' +
+      (n.tradition || '') + ' ' +
+      (n.body || '')
+    ).toLowerCase();
+    if (!hay.includes(q)) return false;
+  }
+  return true;
+}
+function neighborsOf(id, hops = 1) {
+  const out = new Set([id]);
+  let frontier = [id];
+  for (let h = 0; h < hops; h++) {
+    const next = [];
+    frontier.forEach(x => {
+      const nbs = NEIGHBORS.get(x);
+      if (nbs) nbs.forEach(n => { if (!out.has(n)) { out.add(n); next.push(n); } });
+    });
+    frontier = next;
+  }
+  return out;
+}
+
+// ============================================================
+// MAP THUMBNAIL — small world map bottom-right, highlights the deity/doc/event's region.
+// Uses inline minimal continent outlines (equirectangular projection so the math is trivial).
+// On hover or sticky-lock, .setMapTarget(node) shows the geo dot.
+// ============================================================
+const MAP_W = 360, MAP_H = 180;
+// equirectangular projection: lon ∈ [-180,180] → x ∈ [0,360]; lat ∈ [-90,90] → y ∈ [180,0]
+function geoToMap(lat, lon) {
+  return [
+    (lon + 180) * (MAP_W / 360),
+    (90 - lat) * (MAP_H / 180),
+  ];
+}
+// Minimal continent outlines (very simplified — enough to recognize continents at thumbnail size).
+// Each path is an array of [lat, lon] pairs traced clockwise.
+const CONTINENT_OUTLINES = [
+  // Europe (very rough)
+  [[58,-9],[68,5],[71,25],[60,40],[45,40],[38,28],[36,15],[43,-4],[50,-9],[58,-9]],
+  // Africa (rough)
+  [[36,-7],[34,11],[31,33],[12,42],[-12,40],[-34,18],[-35,20],[-22,14],[-7,9],[6,3],[14,-17],[22,-17],[34,-9],[36,-7]],
+  // Asia (rough)
+  [[71,30],[78,60],[78,100],[72,140],[55,135],[40,140],[25,122],[12,108],[8,80],[20,68],[26,60],[36,46],[43,40],[60,40],[71,25],[71,30]],
+  // North America (rough)
+  [[70,-160],[72,-90],[70,-60],[50,-55],[30,-78],[18,-95],[20,-105],[35,-120],[55,-135],[70,-160]],
+  // South America (rough)
+  [[12,-72],[8,-50],[-10,-35],[-30,-50],[-55,-70],[-40,-75],[-15,-78],[-2,-80],[12,-72]],
+  // Australia (rough)
+  [[-12,130],[-12,144],[-30,153],[-38,146],[-35,120],[-25,113],[-15,123],[-12,130]],
+  // Greenland (rough)
+  [[83,-30],[78,-20],[70,-22],[60,-44],[78,-58],[83,-30]],
+  // British Isles (very rough)
+  [[59,-7],[58,-2],[50,-5],[52,-10],[59,-7]],
+  // Indonesia / Philippines / SE Asia archipelago (rough sweep)
+  [[6,95],[2,110],[-7,108],[-9,118],[-2,128],[8,124],[18,121],[6,95]],
+  // Japan (rough)
+  [[44,141],[36,141],[33,131],[35,130],[40,140],[44,141]],
+  // Madagascar (rough)
+  [[-12,49],[-15,50],[-25,47],[-25,44],[-15,46],[-12,49]],
+  // New Zealand (rough)
+  [[-35,173],[-41,176],[-47,168],[-41,170],[-35,173]],
+];
+function projectOutlines() {
+  const pathsEl = document.getElementById('map-thumb-paths');
+  if (!pathsEl) return;
+  pathsEl.innerHTML = CONTINENT_OUTLINES.map(poly => {
+    const pts = poly.map(([lat, lon]) => geoToMap(lat, lon).map(v => v.toFixed(1)).join(',')).join(' ');
+    return `<polygon points="${pts}" />`;
+  }).join('');
+}
+projectOutlines();
+
+let mapThumbVisible = false;
+function setMapTarget(node) {
+  const thumb = document.getElementById('map-thumb');
+  const marker = document.getElementById('map-thumb-marker');
+  const label = document.getElementById('map-thumb-label');
+  if (!node || !node.geo) {
+    if (mapThumbVisible) {
+      thumb.style.opacity = '0.45';
+      label.textContent = '— ' + (node ? '(no region)' : 'hover a node');
+      marker.innerHTML = '';
+    } else {
+      thumb.style.display = 'none';
+    }
+    return;
+  }
+  thumb.style.display = 'block';
+  thumb.style.opacity = '1';
+  const [x, y] = geoToMap(node.geo.lat, node.geo.lon);
+  marker.innerHTML = `
+    <circle cx="${x}" cy="${y}" r="6" fill="none" stroke="var(--gold)" stroke-width="0.8" stroke-opacity="0.5"/>
+    <circle class="pulse" cx="${x}" cy="${y}" r="2.6"/>
+  `;
+  label.textContent = node.geo.label || node.region || '';
+  mapThumbVisible = true;
+}
+function clearMapTarget() {
+  const thumb = document.getElementById('map-thumb');
+  thumb.style.display = 'none';
+  mapThumbVisible = false;
+}
+window.setMapTarget = setMapTarget;
+window.clearMapTarget = clearMapTarget;
+
+const tooltip = d3.select('#tooltip');
+function showTooltip(html, ev) {
+  tooltip.html(html).classed('show', true)
+    .style('left', (ev.clientX + 14) + 'px')
+    .style('top', (ev.clientY + 14) + 'px');
+}
+function hideTooltip() { tooltip.classed('show', false); }
+
+// Small Wikipedia thumbnail inline in tooltip (when one is cached for the node).
+function tooltipThumb(d) {
+  return d && d.thumbnail
+    ? `<img class="tt-thumb" src="${d.thumbnail}" onerror="this.remove()" alt="" />`
+    : '';
+}
+
+// ============================================================
+// VIEW DISPATCH
+// ============================================================
+const VIEWS = {};
+const svg = d3.select('#svg');
+const legend = d3.select('#legend');
+
+function setView(name) {
+  STATE.view = name; STATE.focusId = null;
+  // Body class for view-specific styling hooks (e.g., timeline gets uniform bg, no radial gradient).
+  document.body.className = document.body.className.replace(/\bview-\S+\b/g, '').trim() + ' view-' + name;
+  document.querySelectorAll('nav.side .item').forEach(el => el.classList.toggle('active', el.dataset.view === name));
+  svg.selectAll('*').remove();
+  // clear any view-specific event bindings on the svg root so they don't leak between views
+  svg.on('wheel', null).on('wheel.zoom', null).on('mousedown.zoom', null)
+     .on('.drag', null).on('click', null);
+  svg.style('cursor', 'default');
+  document.getElementById('view-controls').innerHTML = '';
+  legend.style('display', 'none').html('');
+  document.querySelectorAll('.list-pane,.about-pane,.alch-toolbox,.alch-palette,.tl-zoom-presets').forEach(el => el.remove());
+  hideTooltip();
+  // Map thumbnail only on geo-relevant views; hide elsewhere
+  const showMap = (name === 'pantheon' || name === 'documents' || name === 'timeline' || name === 'alchemy' || name === 'scripture');
+  // Default-collapse the detail panel when entering ANY map view so the canvas claims full
+  // width. The panel reopens automatically when the user clicks a node (selectNode below).
+  // Per user request: "when you click timeline the side panel is default not active collapsed
+  // (the same should go to the MAPS)". The toggle glyph is flipped to match.
+  if (showMap) {
+    document.body.classList.add('detail-collapsed');
+    const dt = document.getElementById('detail-toggle');
+    if (dt) dt.textContent = '‹';
+  }
+  document.getElementById('map-thumb').style.display = showMap ? 'block' : 'none';
+  if (showMap) {
+    document.getElementById('map-thumb').style.opacity = '0.45';
+    document.getElementById('map-thumb-label').textContent = '— hover a node';
+    document.getElementById('map-thumb-marker').innerHTML = '';
+    mapThumbVisible = true;
+  }
+  // Zoom meter — visible on zoomable views; its handlers are rewired per-view by the renderer.
+  document.getElementById('zoom-meter').style.display = showMap ? 'inline-flex' : 'none';
+  // Body flag so the view-header can reserve top-right space for the meter.
+  document.body.classList.toggle('zoom-visible', showMap);
+  const v = VIEWS[name];
+  document.getElementById('view-title').textContent = v.title;
+  document.getElementById('view-subtitle').textContent = v.subtitle;
+  v.render();
+}
+function selectNode(id, opensDetail) {
+  STATE.selected = id; renderDetail();
+  // Default behavior: clicking a node opens the detail panel. Pass `opensDetail: false`
+  // only to update selection without uncollapsing the panel. Previously the default was the
+  // opposite — only index-view callers passed `true`, graph clicks left the panel state
+  // untouched. User: "when we click on a event the side panel should open to show info".
+  if (opensDetail !== false) {
+    document.body.classList.remove('detail-collapsed');
+    const dt = document.getElementById('detail-toggle');
+    if (dt) dt.textContent = '›';
+  }
+  d3.selectAll('.node-circle').classed('selected', d => d && d.id === id);
+}
+window.selectNode = selectNode;
+
+// ============================================================
+// DETAIL
+// ============================================================
+function renderDetail() {
+  const el = document.getElementById('detail-inner');
+  const id = STATE.selected;
+  if (!id || !NODES_BY_ID[id]) { el.innerHTML = '<div class="empty">Select a node to inspect.</div>'; return; }
+  const n = NODES_BY_ID[id];
+  const dateStr = fmtDateRange(n.date_earliest, n.date_latest);
+  const outEdges = EDGES.filter(e => e.source === id).slice(0, 80);
+  const inEdges  = EDGES.filter(e => e.target === id).slice(0, 80);
+
+  const bodyHTML = n.body
+    ? marked.parse(n.body.replace(/\[\[([^\]\|]+)(?:\|[^\]]*)?\]\]/g, (m, link) => {
+        const target = link.trim().replace(/^.*\//, '').replace(/\.md$/, '');
+        const targetNode = NODES_BY_ID[target];
+        if (targetNode) return `<a href="#" onclick="event.preventDefault(); selectNode('${target}'); return false;">${targetNode.title}</a>`;
+        return `<span style="color:var(--text-3)">${link}</span>`;
+      }))
+    : '<p style="color:var(--text-3)"><em>No body content (stub).</em></p>';
+
+  const refsHTML = (n.refs && n.refs.length)
+    ? '<h4 style="font-family: var(--serif); color: var(--gold); margin-top: 1.4em;">References</h4>' +
+      '<ol style="padding-left: 18px; font-size: 12px;">' +
+      n.refs.map(r => {
+        if (typeof r === 'string') return `<li>${r}</li>`;
+        const title = r.title || ''; const author = r.author || '';
+        const year = r.year ? ` (${r.year})` : ''; const pub = r.publisher ? `, ${r.publisher}` : '';
+        const url = r.url ? ` <a href="${r.url}" target="_blank">→</a>` : '';
+        const tier = r.tier ? ` <span style="color:var(--text-3); font-family: var(--mono); font-size: 10px;">T${r.tier}</span>` : '';
+        return `<li>${author}${year}. <em>${title}</em>${pub}.${url}${tier}</li>`;
+      }).join('') + '</ol>'
+    : '';
+
+  const thumbHTML = n.thumbnail
+    ? `<img class="thumb" src="${n.thumbnail}" alt="${n.title}" onerror="this.style.display='none'; if (this.nextElementSibling) this.nextElementSibling.style.display='none'" />
+       <div class="thumb-attribution">
+         <span>${n.thumb_title || ''}</span>
+         ${n.thumb_page ? `<a href="${n.thumb_page}" target="_blank">wikipedia →</a>` : ''}
+       </div>`
+    : '';
+
+  el.innerHTML = `
+    ${thumbHTML}
+    <h3>${n.title}</h3>
+    <div class="meta">
+      <span class="pill" style="color:${n.family_color || n.tradition_color}; border-color:${n.family_color || n.tradition_color}">${n.type}</span>
+      ${n.family ? `<span class="pill family">${n.family}</span>` : ''}
+      ${n.tradition && n.tradition !== n.family ? `<span class="pill" style="color: var(--text-2)">${n.tradition}</span>` : ''}
+      ${dateStr ? `<span class="pill date">${dateStr}</span>` : ''}
+      ${n.status ? `<span class="pill status">${n.status}</span>` : ''}
+      ${n.label ? `<span class="pill">${n.label}</span>` : ''}
+    </div>
+    <div class="body-md">${bodyHTML}</div>
+    ${refsHTML}
+    ${(outEdges.length || inEdges.length) ? `
+      <div class="links-out">
+        ${outEdges.length ? `
+          <h4>Outgoing edges (${outEdges.length})</h4>
+          ${outEdges.map(e => {
+            const t = NODES_BY_ID[e.target];
+            return `<div class="link-edge" onclick="selectNode('${e.target}')">
+              <span class="etype">${e.type}</span>
+              <span class="etarget">${t ? t.title : e.target}</span>
+            </div>`;
+          }).join('')}` : ''}
+        ${inEdges.length ? `
+          <h4 style="margin-top:14px;">Incoming edges (${inEdges.length})</h4>
+          ${inEdges.map(e => {
+            const t = NODES_BY_ID[e.source];
+            return `<div class="link-edge" onclick="selectNode('${e.source}')">
+              <span class="etype">${e.type}</span>
+              <span class="etarget">${t ? t.title : e.source}</span>
+            </div>`;
+          }).join('')}` : ''}
+      </div>` : ''}
+    <div style="margin-top: 16px; font-family: var(--mono); font-size: 10px; color: var(--text-3);">
+      ${n.path || ''}
+    </div>
+  `;
+}
+
+// ============================================================
+// PANTHEON — radial wedge layout
+// Each family gets an angular wedge proportional to sqrt(memberCount).
+// Family labels sit OUTSIDE the ring, rotated tangentially.
+// ============================================================
+VIEWS.pantheon = {
+  title: 'Pantheon',
+  subtitle: '',
+  render() {
+    // Mode: 'deities' (gods clustered by family) | 'authors' (persons who authored, were
+    // attributed-to, originated a concept, or are listed as a doc's key-figure) | 'symbols'
+    // (iconographic units clustered by origin family with cross-family edges loud) |
+    // 'events' (historical events clustered by tradition/region) | 'monuments' (placeholder
+    // — discovery sites / temples / churches; node type not yet in vault).
+    // 'scripture' is intercepted in the dropdown handler and redirects to the Scripture view.
+    const mode = STATE.pantheonMode || 'deities';
+    const titleByMode = {
+      'deities':   'Pantheon',
+      'authors':   'Authors of the Pantheon',
+      'symbols':   'Symbols of the Pantheon',
+      'events':    'Events of the Pantheon',
+      'monuments': 'Monuments of the Pantheon',
+    };
+    document.getElementById('view-title').textContent = titleByMode[mode] || 'Pantheon';
+
+    // Precompute "is-author" set for the authors mode — uses authorship-bearing edges.
+    let authorSet = null;
+    if (mode === 'authors') {
+      authorSet = new Set();
+      const authorEdgeTypes = new Set(['authored', 'attributed-author', 'originated', 'key-figure']);
+      EDGES.forEach(e => {
+        if (!authorEdgeTypes.has(e.type)) return;
+        // For 'key-figure' edges (source = document → person), the PERSON is the author-figure.
+        // For other types (source = person → work/concept), the SOURCE is the author-figure.
+        const candidateId = (e.type === 'key-figure') ? e.target : e.source;
+        const cand = NODES_BY_ID[candidateId];
+        if (cand && cand.type === 'person') authorSet.add(candidateId);
+      });
+    }
+
+    // In Pantheon, family filter is applied VISUALLY (not by removing nodes) — so wedges
+    // and positions stay stable when you focus a family. Other filters still apply at data level.
+    let deities = DATA.nodes.filter(n => {
+      if (mode === 'deities') {
+        if (n.type !== 'deity') return false;
+      } else if (mode === 'authors') {
+        if (n.type !== 'person') return false;
+        if (!authorSet.has(n.id)) return false;
+      } else if (mode === 'symbols') {
+        if (n.type !== 'symbol') return false;
+      } else if (mode === 'events') {
+        if (n.type !== 'event') return false;
+      } else if (mode === 'monuments') {
+        // No 'monument' node type exists yet — see AUDIT/ for future work. For now,
+        // anything tagged `monument` or with a `monument` category passes; in practice
+        // this filter returns ~zero nodes and the empty-state card below explains.
+        const tags = (n.tags || []).map(t => String(t).toLowerCase());
+        if (!tags.includes('monument') && (n.category || '').toLowerCase() !== 'monument') return false;
+      }
+      const f = STATE.filter;
+      if (f.type && n.type !== f.type) return false;
+      if (f.theme) {
+        const tied = NEIGHBORS.get(n.id);
+        if (!tied || !tied.has(f.theme)) return false;
+      }
+      if (f.search) {
+        const q = f.search.toLowerCase();
+        const hay = (n.title + ' ' + n.id + ' ' + (n.aka||[]).join(' ') + ' ' + (n.tags||[]).join(' ') + ' ' + (n.themes||[]).join(' ') + ' ' + (n.tradition||'') + ' ' + (n.body||'')).toLowerCase();
+        if (!hay.includes(q)) return false;
+      }
+      return true;
+    });
+    if (deities.length === 0) {
+      const emptyMsg =
+          mode === 'monuments' ? 'Monuments — coming soon. Add `tags: [monument]` to event/site nodes (Göbekli Tepe, Chartres, the Kaaba, etc.) to populate this view.'
+        : mode === 'deities'   ? 'No deities match the current filter.'
+        : mode === 'authors'   ? 'No authors match the current filter.'
+        : mode === 'symbols'   ? 'No symbols match the current filter.'
+        : mode === 'events'    ? 'No events match the current filter.'
+                               : 'No nodes match the current filter.';
+      svg.append('text').attr('x', '50%').attr('y', '50%')
+        .attr('text-anchor', 'middle').attr('fill', 'var(--text-3)')
+        .style('font-family', 'var(--serif)').style('font-size', '18px')
+        .style('max-width', '500px')
+        .text(emptyMsg);
+      return;
+    }
+
+    const W = svg.node().clientWidth, H = svg.node().clientHeight;
+    const cx = W / 2, cy = H / 2;
+    // Generous ring with deep wedges for breathing room
+    const Router = Math.min(W, H) * 0.46;
+    const Rinner = Router * 0.34;
+    const labelR = Router + 56;  // labels pushed further out
+
+    // group by family in adjacency order
+    const famByName = {};
+    deities.forEach(d => {
+      const f = d.family || 'Other';
+      if (!famByName[f]) famByName[f] = { name: f, members: [], color: d.family_color || '#7a8090' };
+      famByName[f].members.push(d);
+    });
+    const ringOrder = FAMILIES.map(f => f.name).filter(n => famByName[n]);
+    Object.keys(famByName).forEach(n => { if (!ringOrder.includes(n)) ringOrder.push(n); });
+
+    // angular allocation with generous gap between wedges
+    const GAP = 0.105;  // ~6.0° between wedges — wide visual gutter
+    const totalGap = GAP * ringOrder.length;
+    const totalArc = 2 * Math.PI - totalGap;
+    // Minimum-weight floor so tiny families (Christian, Celtic with 1–2 deities) still get a visible wedge.
+    const weights = ringOrder.map(n => Math.max(1.1, Math.sqrt(famByName[n].members.length)));
+    const totalW = d3.sum(weights);
+    let cursor = -Math.PI * 0.55;
+    const wedges = {};
+    ringOrder.forEach((name, i) => {
+      const arcSize = totalArc * (weights[i] / totalW);
+      wedges[name] = { a0: cursor, a1: cursor + arcSize, center: cursor + arcSize / 2, members: famByName[name].members };
+      cursor += arcSize + GAP;
+    });
+
+    // anchor positions: 1, 2, or 3 concentric rows within each wedge depending on size
+    deities.forEach(d => {
+      const w = wedges[d.family || 'Other'];
+      if (!w) return;
+      const N = w.members.length;
+      const idx = w.members.indexOf(d);
+      const wedgePad = Math.min(0.05, (w.a1 - w.a0) * 0.12);
+      const aSpan = (w.a1 - w.a0) - wedgePad * 2;
+      const rowCount = N <= 4 ? 1 : N <= 9 ? 2 : 3;
+      const row = idx % rowCount;
+      const indexInRow = Math.floor(idx / rowCount);
+      // count members in this row exactly
+      const inThisRow = Math.ceil((N - row) / rowCount);
+      const tA = inThisRow > 1 ? (indexInRow / (inThisRow - 1)) : 0.5;
+      const a = w.a0 + wedgePad + aSpan * tA;
+      // radial positions
+      let r;
+      if (rowCount === 1) r = (Rinner + Router) / 2;
+      else if (rowCount === 2) r = row === 0 ? Router - 14 : Rinner + 14;
+      else r = row === 0 ? Router - 8 : row === 1 ? (Rinner + Router) / 2 : Rinner + 8;
+      // tiny deterministic jitter so it doesn't look mechanical
+      r += ((hashStr(d.id) % 10) - 5);
+      const [ax, ay] = polarXY(a, r);
+      d._ax = cx + ax; d._ay = cy + ay;
+      d.x = d._ax; d.y = d._ay;
+    });
+
+    const hubs = computeHubSet(deities);
+
+    // Pantheon mode selector — was 3 toggle buttons (deities | authors | symbols), now a
+    // dropdown supporting 6 modes per user request: + EVENTS (important events), + SCRIPTURE
+    // (shortcut to the Scripture view), + MONUMENTS (sites / temples / churches — placeholder
+    // until that node type lands in the vault). The dropdown form scales — more modes can be
+    // added without crowding the toolbar.
+    document.getElementById('view-controls').innerHTML = `
+      <select class="btn btn-mini pantheon-mode-select" id="pantheon-mode-select" title="What the wedges show">
+        <option value="deities"   ${mode === 'deities'   ? 'selected' : ''}>◯ Deities</option>
+        <option value="authors"   ${mode === 'authors'   ? 'selected' : ''}>✎ Authors</option>
+        <option value="symbols"   ${mode === 'symbols'   ? 'selected' : ''}>✦ Symbols</option>
+        <option value="events"    ${mode === 'events'    ? 'selected' : ''}>★ Events</option>
+        <option value="scripture" ${mode === 'scripture' ? 'selected' : ''}>✠ Scripture →</option>
+        <option value="monuments" ${mode === 'monuments' ? 'selected' : ''}>⛬ Monuments</option>
+      </select>
+      <button class="btn btn-mini" id="btn-labels">labels: hub</button>
+      <button class="btn btn-mini active" id="btn-hulls">hulls</button>
+      <button class="btn btn-mini" id="btn-ego">ego focus</button>
+      <button class="btn btn-mini" id="btn-view-in-timeline" style="display:none">view in timeline →</button>
+      <button class="btn btn-mini" id="btn-recenter">recenter</button>
+    `;
+    document.getElementById('pantheon-mode-select').onchange = (ev) => {
+      const next = ev.target.value;
+      // 'scripture' is a shortcut — the Scripture view already exists as its own top-level
+      // map. Jumping straight to it keeps users' mental model simple.
+      if (next === 'scripture') { setView('scripture'); return; }
+      if (STATE.pantheonMode === next) return;
+      STATE.pantheonMode = next;
+      setView('pantheon');
+    };
+
+    const legendStartCollapsed = (() => { try { return localStorage.getItem('legend-collapsed') === '1'; } catch (e) { return false; } })();
+    legend.style('display', 'block')
+      .classed('collapsed', legendStartCollapsed)
+      .html(
+        '<button class="legend-burger" id="legend-burger" title="Collapse families">≡</button>' +
+        '<div class="ltitle">Families · click to filter</div>' +
+        ringOrder.map(name => {
+          const f = famByName[name];
+          return `<div class="lrow${STATE.filter.family === name ? ' active' : ''}" data-family="${name}">
+            <span class="lswatch" style="background:${f.color}"></span>
+            <span>${name}</span>
+            <span class="lcount">${f.members.length}</span>
+          </div>`;
+        }).join('')
+      );
+    legend.selectAll('.lrow').on('click', function (ev) {
+      const name = this.dataset.family;
+      STATE.filter.family = (STATE.filter.family === name) ? '' : name;
+      document.getElementById('filter-family').value = STATE.filter.family;
+      applyVisualFamilyFilter();
+      if (typeof updateResetButton === 'function') updateResetButton();
+    });
+    // Hover-preview: while pointer is on a legend row (and no filter is locked),
+    // ghost-highlight that family on the canvas. Mouseleave reverts.
+    legend.selectAll('.lrow')
+      .on('mouseenter', function () {
+        if (STATE.filter.family) return;   // a real filter is already locked → no preview interference
+        const fam = this.dataset.family;
+        nodeSel.select('.node-circle').classed('preview-fade', d => (d.family || 'Other') !== fam);
+        labelSel.classed('preview-fade', d => (d.family || 'Other') !== fam);
+        hullSel.classed('preview-fade', name => name !== fam);
+        famLabelSel.classed('preview-fade', name => name !== fam);
+      })
+      .on('mouseleave', function () {
+        if (STATE.filter.family) return;
+        nodeSel.select('.node-circle').classed('preview-fade', false);
+        labelSel.classed('preview-fade', false);
+        hullSel.classed('preview-fade', false);
+        famLabelSel.classed('preview-fade', false);
+      });
+    document.getElementById('legend-burger').addEventListener('click', (ev) => {
+      ev.stopPropagation();
+      const node = legend.node();
+      const willCollapse = !node.classList.contains('collapsed');
+      node.classList.toggle('collapsed', willCollapse);
+      try { localStorage.setItem('legend-collapsed', willCollapse ? '1' : '0'); } catch (e) {}
+    });
+
+    const deityIds = new Set(deities.map(d => d.id));
+    const links = EDGES
+      .filter(e => deityIds.has(e.source) && deityIds.has(e.target))
+      .map(e => ({ source: e.source, target: e.target, type: e.type }));
+
+    const g = svg.append('g');
+    let currentK = 1;
+    const zoom = d3.zoom().scaleExtent([0.35, 4.5]).on('zoom', (ev) => {
+      g.attr('transform', ev.transform);
+      currentK = ev.transform.k;
+      updateLOD(currentK);
+      updateZoomMeter(currentK);
+    });
+    svg.call(zoom);
+
+    // Zoom meter wiring (pantheon-scoped). Buttons step by 1.4× and the baseline returns to identity.
+    function updateZoomMeter(k) {
+      const ro = document.getElementById('zm-readout');
+      if (ro) ro.textContent = k.toFixed(2) + '×';
+      const baseline = document.getElementById('zm-reset');
+      if (baseline) baseline.style.color = Math.abs(k - 1) < 0.02 ? 'var(--gold)' : 'var(--gold-soft)';
+    }
+    document.getElementById('zm-in').onclick = () => svg.transition().duration(220).call(zoom.scaleBy, 1.4);
+    document.getElementById('zm-out').onclick = () => svg.transition().duration(220).call(zoom.scaleBy, 1 / 1.4);
+    document.getElementById('zm-reset').onclick = () => svg.transition().duration(380).call(zoom.transform, d3.zoomIdentity);
+    updateZoomMeter(1);
+
+    // SECTOR HULLS
+    const sectorArc = d3.arc()
+      .innerRadius(Rinner - 22)
+      .outerRadius(Router + 22)
+      .padAngle(0.014)
+      .cornerRadius(8);
+    let hullsOn = true;
+    const hullGroup = g.append('g').attr('class', 'hull-layer').attr('transform', `translate(${cx},${cy})`);
+    const hullSel = hullGroup.selectAll('path.sector-hull')
+      .data(ringOrder, n => n).enter().append('path')
+      .attr('class', 'sector-hull')
+      .attr('d', name => sectorArc({ startAngle: wedges[name].a0, endAngle: wedges[name].a1 }))
+      .attr('fill', name => famByName[name].color)
+      .attr('stroke', name => famByName[name].color);
+
+    // FAMILY LABELS — HORIZONTAL, anchored on each wedge's pie axis at a consistent radius.
+    // To make label-to-wedge ownership unambiguous when wedges are narrow, a short radial
+    // tick is drawn from the outer hull edge to the label baseline. Font size scales with
+    // wedge angular size so small wedges get small labels that won't overlap neighbors.
+    const famLabelG = g.append('g').attr('class', 'family-label-layer');
+
+    // Leader-line tick: thin radial segment from just outside the hull to just inside the label.
+    famLabelG.selectAll('line.family-tick').data(ringOrder, n => n).enter().append('line')
+      .attr('class', 'family-tick')
+      .attr('x1', name => cx + polarXY(wedges[name].center, Router + 6)[0])
+      .attr('y1', name => cy + polarXY(wedges[name].center, Router + 6)[1])
+      .attr('x2', name => cx + polarXY(wedges[name].center, Router + 38)[0])
+      .attr('y2', name => cy + polarXY(wedges[name].center, Router + 38)[1])
+      .attr('stroke', name => famByName[name].color)
+      .attr('stroke-width', 0.8)
+      .attr('stroke-opacity', 0.45);
+
+    function familyLabelFontSize(name) {
+      // narrower wedge → smaller label. arc in radians.
+      const arc = wedges[name].a1 - wedges[name].a0;
+      // arc of 0.5 rad (~28°, big family) → 13.5px; arc of 0.06 rad (~3.5°, tiny family) → 9px floor
+      return Math.max(9, Math.min(14, 8 + arc * 11));
+    }
+
+    const famLabelSel = famLabelG.selectAll('text.family-label')
+      .data(ringOrder, n => n).enter().append('text')
+      .attr('class', name => 'family-label' + (famByName[name].members.length >= 6 ? ' bright' : ''))
+      .attr('text-anchor', name => {
+        const a = wedges[name].center;
+        const dx = Math.sin(a);
+        if (dx >  0.35) return 'start';
+        if (dx < -0.35) return 'end';
+        return 'middle';
+      })
+      .attr('dy', name => {
+        const a = wedges[name].center;
+        const dy = -Math.cos(a);
+        if (dy < -0.55) return '0em';      // top — baseline above text
+        if (dy >  0.55) return '0.85em';   // bottom — baseline below text
+        return '0.35em';                    // sides — vertical centre
+      })
+      .attr('x', name => cx + polarXY(wedges[name].center, labelR)[0])
+      .attr('y', name => cy + polarXY(wedges[name].center, labelR)[1])
+      .style('font-size', name => familyLabelFontSize(name) + 'px')
+      .text(name => name);
+
+    // EDGE LAYER — curved paths pulled toward centre to reduce chord-spaghetti
+    function pantheonEdgePath(d) {
+      const s = d.source, t = d.target;
+      const sx = s.x, sy = s.y, tx = t.x, ty = t.y;
+      const mx = (sx + tx) / 2, my = (sy + ty) / 2;
+      const k = 0.35;  // strength of pull toward centre
+      const cxp = mx + (cx - mx) * k, cyp = my + (cy - my) * k;
+      return `M ${sx},${sy} Q ${cxp},${cyp} ${tx},${ty}`;
+    }
+
+    // In symbols mode, identify cross-symbol-edge types so we can mark them with an extra
+    // CSS class for prominent rendering. Cross-FAMILY edges (where source.family !==
+    // target.family AND the edge is one of our cross-symbol types) are the user's
+    // "MASSIVE wins" — the ankh→coptic-cross, swastika-polemic-inversion graphic.
+    const linkSel = g.append('g').attr('class', 'edge-layer').selectAll('path')
+      .data(links).enter().append('path')
+      .attr('class', d => {
+        let cls = 'edge-line';
+        if (mode === 'symbols' && SYMBOL_CROSS_EDGE_TYPES.has(d.type)) {
+          cls += ' xsym';
+          const s = NODES_BY_ID[d.source], t = NODES_BY_ID[d.target];
+          if (s && t && (s.family || 'Other') !== (t.family || 'Other')) cls += ' xsym-xfamily';
+        }
+        return cls;
+      })
+      .each(function (d) {
+        const st = edgeStyle(d.type);
+        // Thin lines everywhere by default — color carries the semantic distinction (gold
+        // for transmission, red for polemic-inversion, blue for shared milieu, grey for
+        // weakest visual-cognate). Highlighting is handled by .edge-line.hot in CSS (1.6px).
+        // The previous "cross-family symbol edges get force-bumped to ≥1.4px" behavior was
+        // overwhelming once symbols mode had its full 32 nodes; removed in favor of the
+        // .xsym-xfamily CSS class which adds a subtle gold drop-shadow without thickening.
+        // Stash the type color as a CSS variable on the element. The actual stroke color
+        // is set in CSS — default state shows a quiet slate-blue, .hot state pulls the
+        // type-color from the var. This keeps the default canvas calm (no orange/red in
+        // unlit state) while preserving per-type color on hover/selection.
+        d3.select(this)
+          .style('--edge-type-color', st.c)
+          .attr('stroke-width', st.w)
+          .attr('stroke-opacity', st.op)
+          .attr('fill', 'none');
+      });
+
+    // NODE + LABEL LAYERS — split so every label is drawn AFTER every circle.
+    // This guarantees a node's name is never covered by another node's bubble (SVG sibling order = paint order).
+    const nodeLayer  = g.append('g').attr('class', 'node-layer');
+    const labelLayer = g.append('g').attr('class', 'label-layer');
+    const nodeSel = nodeLayer.selectAll('g.node')
+      .data(deities, d => d.id).enter().append('g').attr('class', 'node')
+      .call(d3.drag()
+        .on('start', (ev, d) => { if (!ev.active) sim.alphaTarget(0.25).restart(); d.fx = d.x; d.fy = d.y; })
+        .on('drag',  (ev, d) => { d.fx = ev.x; d.fy = ev.y; })
+        .on('end',   (ev, d) => { if (!ev.active) sim.alphaTarget(0); d.fx = null; d.fy = null; }))
+      .on('mouseenter', function (ev, d) {
+        showTooltip(`${tooltipThumb(d)}<div class="ttitle">${d.title}</div>
+          <div class="tmeta">${d.family || '—'} · ${d.tradition || ''}</div>
+          <div class="tmeta">${DEGREE.get(d.id) || 0} connections${d.geo ? ' · ' + d.geo.label : ''}</div>`, ev);
+        setMapTarget(d);
+        if (egoMode) return;
+        hoverFocus(d.id);
+      })
+      .on('mousemove', (ev) => tooltip.style('left', (ev.clientX + 14) + 'px').style('top', (ev.clientY + 14) + 'px'))
+      .on('mouseleave', () => { hideTooltip(); if (!egoMode) clearHoverFocus(); })
+      .on('click', (ev, d) => {
+        ev.stopPropagation();
+        selectNode(d.id);
+        if (egoMode) { setEgoFocus(d.id); return; }
+        // Sticky / additive selection logic
+        const nbrs = neighborsOf(d.id, 1);
+        const cur = STATE.lockedSet;
+        let touchesLock = false;
+        if (cur.size > 0) {
+          for (const id of nbrs) { if (cur.has(id)) { touchesLock = true; break; } }
+        }
+        if (cur.size === 0 || !touchesLock) {
+          STATE.lockedSet = new Set(nbrs);     // reset to this node + its neighbors
+        } else {
+          nbrs.forEach(id => cur.add(id));      // additive: extend the locked subgraph
+        }
+        applyLock();
+      });
+
+    // Shape-per-type (deity = circle, person = diamond, event = star, theme = triangle, …).
+    // We use <path> with d3.symbol() instead of <circle>, but keep the class .node-circle so
+    // every existing CSS rule (hover, dim, filter-dim, hot, selected, preview-fade) still applies.
+    nodeSel.append('path')
+      .attr('class', 'node-circle')
+      .attr('d', d => shapePath(d, 5 + Math.sqrt(DEGREE.get(d.id) || 0) * 1.8))
+      .attr('fill', d => nodeColor(d));
+
+    // Labels live in a sibling layer drawn AFTER the node layer. They never catch pointer events
+    // (pointer-events: none in CSS), so hover/click still routes to the underlying circles.
+    const labelSel = labelLayer.selectAll('text.node-label')
+      .data(deities, d => d.id).enter().append('text')
+      .attr('class', d => 'node-label' + (hubs.has(d.id) ? ' hub' : ''))
+      .attr('dy', d => -(7 + Math.sqrt(DEGREE.get(d.id) || 0) * 1.8));
+    // Two-line stacking for slashed double-names like "Enki / Ea", "Inanna / Ishtar", "Hermes / Thoth".
+    // Single-name labels keep their full title (collision pruning still hides what doesn't fit).
+    labelSel.each(function (d) {
+      const sel = d3.select(this);
+      const parts = d.title.split(/\s+\/\s+/);
+      d._lineCount = (parts.length >= 2 && d.title.length < 32) ? 2 : 1;
+      sel.text(null);   // clear any previous content
+      if (d._lineCount === 2) {
+        sel.append('tspan').attr('x', 0).text(parts[0]);
+        sel.append('tspan').attr('x', 0).attr('dy', '1em').text(parts.slice(1).join(' / '));
+      } else {
+        sel.append('tspan').attr('x', 0).text(d.title);
+      }
+    });
+
+    // FORCE SIMULATION — strong positional anchor + hard wedge clamp keeps families separated.
+    const sim = d3.forceSimulation(deities)
+      .alphaDecay(0.05)
+      .force('link', d3.forceLink(links).id(d => d.id).distance(95).strength(0.02))
+      .force('charge', d3.forceManyBody().strength(-22).distanceMax(140))
+      .force('x', d3.forceX(d => d._ax).strength(0.55))
+      .force('y', d3.forceY(d => d._ay).strength(0.55))
+      // Collide capped so high-degree hubs don't bulldoze siblings out of the wedge.
+      .force('collide', d3.forceCollide().radius(d => Math.min(17, 9 + Math.sqrt(DEGREE.get(d.id) || 0) * 1.5)).iterations(2))
+      .on('tick', tick)
+      .on('end', () => deconflictNodeLabels());
+
+    // Wedge clamp parameters — keep each node inside its family's angular sector and the radial annulus.
+    const radialPadIn = 14, radialPadOut = 14;
+    function tick() {
+      // Hard clamp BEFORE drawing — angular: project node back inside [a0+padA, a1-padA]; radial: into [Rinner+pad, Router-pad].
+      for (let i = 0; i < deities.length; i++) {
+        const d = deities[i];
+        const w = wedges[d.family || 'Other'];
+        if (!w) continue;
+        const dx = d.x - cx, dy = d.y - cy;
+        let r = Math.sqrt(dx * dx + dy * dy) || 0.0001;
+        // polarXY convention: x = r*sin(a), y = -r*cos(a)  →  a = atan2(x, -y)
+        let a = Math.atan2(dx, -dy);
+        // Signed shortest delta from wedge center, in (-π, π]
+        let delta = ((a - w.center + Math.PI * 3) % (Math.PI * 2)) - Math.PI;
+        const halfArc = (w.a1 - w.a0) / 2;
+        const padA = Math.min(0.045, halfArc * 0.22);
+        const maxDelta = Math.max(0, halfArc - padA);
+        if (delta >  maxDelta) a = w.center + maxDelta;
+        if (delta < -maxDelta) a = w.center - maxDelta;
+        if (r < Rinner + radialPadIn)  r = Rinner + radialPadIn;
+        if (r > Router - radialPadOut) r = Router - radialPadOut;
+        d.x = cx + r * Math.sin(a);
+        d.y = cy - r * Math.cos(a);
+      }
+      linkSel.attr('d', pantheonEdgePath);
+      nodeSel.attr('transform', d => `translate(${d.x},${d.y})`);
+      labelSel.attr('transform', d => `translate(${d.x},${d.y})`);
+    }
+
+    // Compute degree tiers ONCE per render — high-degree gods get larger labels.
+    // Tier 0 (top 8%): major hubs — Yaldabaoth, Yahweh, Marduk, Zeus, etc.
+    // Tier 1 (next 22%): well-connected secondary deities
+    // Tier 2 (next 35%): typical deities
+    // Tier 3 (rest): minor / peripheral
+    const degVals = deities.map(d => DEGREE.get(d.id) || 0).sort((a, b) => b - a);
+    const tierCutoffs = [
+      degVals[Math.floor(degVals.length * 0.08)] || 0,
+      degVals[Math.floor(degVals.length * 0.30)] || 0,
+      degVals[Math.floor(degVals.length * 0.65)] || 0,
+    ];
+    function degreeTier(d) {
+      const deg = DEGREE.get(d.id) || 0;
+      if (deg >= tierCutoffs[0]) return 0;
+      if (deg >= tierCutoffs[1]) return 1;
+      if (deg >= tierCutoffs[2]) return 2;
+      return 3;
+    }
+    // Per-tier font / circle sizing — smaller bubbles so labels read clearly.
+    const TIER_FONT = [12, 10.5, 9, 8.5];
+    const TIER_RADIUS = [8, 6, 4.5, 3.5];
+
+    // Smoothstep helper — eases from 0 to 1 across [a, b], so labels fade rather than pop.
+    function smoothstep(a, b, x) {
+      const t = Math.max(0, Math.min(1, (x - a) / (b - a)));
+      return t * t * (3 - 2 * t);
+    }
+
+    function updateLOD(k) {
+      const labelMode = currentLabelMode;
+      const sizeScale = 1 / Math.pow(k, 0.7);          // gentler shrink → easier to click
+      nodeSel.select('.node-circle')
+        .attr('d', d => shapePath(d, TIER_RADIUS[degreeTier(d)] * sizeScale));
+      labelSel
+        .attr('dy', d => {
+          const r = TIER_RADIUS[degreeTier(d)] * sizeScale;
+          const base = TIER_FONT[degreeTier(d)];
+          // Two-line labels need an extra line of vertical lift so both lines sit above the circle.
+          return -(r + 4 + (d._lineCount === 2 ? base : 0));
+        })
+        .style('opacity', d => {
+          if (labelMode === 'off') return 0;
+          if (labelMode === 'all') return 1;
+          // When a family filter is active, every label in THAT family is fully eligible
+          // regardless of tier — collision pruning still applies so they don't overlap.
+          // This is how mid-tier Sumerians like Apsu / Ereshkigal become visible: filter to Mesopotamian.
+          const f = STATE.filter.family;
+          if (f && (d.family || 'Other') === f) return 1;
+          const t = degreeTier(d);
+          // Tier 0 + 1 always full. Tier 2 fades in across k∈[1.30, 1.65]. Tier 3 across k∈[2.10, 2.55].
+          if (t <= 1) return 1;
+          if (t === 2) return smoothstep(1.30, 1.65, k);
+          return smoothstep(2.10, 2.55, k);
+        })
+        // Font size: past 100% zoom the visible size grows gradually from 1.0× base at k=1
+        // to 1.5× base at k=4, then locks. Below 100% it shrinks naturally with the SVG transform.
+        //   growth(k) = 1 + 0.5 · clamp((k-1) / 3, 0, 1)
+        //   font_size = base · growth(k) / max(1, k)
+        //   visible   = font_size · k = base · growth(k)  (for k ≥ 1)
+        .style('font-size', d => {
+          const base = TIER_FONT[degreeTier(d)];
+          const growth = 1 + 0.5 * Math.max(0, Math.min(1, (k - 1) / 3));
+          const eff = Math.max(1, k);
+          return (base * growth / eff).toFixed(2) + 'px';
+        })
+        .style('font-weight', d => degreeTier(d) <= 1 ? '600' : '400')
+        .style('visibility', '');
+      // Past 100% zoom, family labels grow gradually from 1.0× to 1.5× (locked at k≥4).
+      const _famGrowth = 1 + 0.5 * Math.max(0, Math.min(1, (k - 1) / 3));
+      const famZoomScale = _famGrowth / Math.max(1, k);
+      famLabelSel
+        .style('opacity', k < 3.5 ? 1 : 0.25)
+        .style('font-size', name => (familyLabelFontSize(name) * famZoomScale).toFixed(2) + 'px');
+      // Debounced collision pass — hides lower-degree labels that overlap higher-degree ones
+      clearTimeout(updateLOD._t);
+      updateLOD._t = setTimeout(deconflictNodeLabels, 80);
+    }
+
+    // NODE-LABEL DECONFLICTION: greedy claim by degree.
+    // Visible labels are sorted high-degree first; each claims a bbox; later labels that
+    // conflict are hidden (visibility:hidden, so they re-appear on hover via hover-reveal/CSS).
+    function deconflictNodeLabels() {
+      const items = [];
+      labelSel.each(function (d) {
+        const txt = this;
+        const opa = parseFloat(txt.style.opacity || '1');
+        if (opa <= 0.05) { txt.style.visibility = ''; return; }
+        items.push({ d, txt, deg: DEGREE.get(d.id) || 0 });
+      });
+      // measure after the reset above
+      items.forEach(it => { it.bb = it.txt.getBoundingClientRect(); });
+      items.sort((a, b) => b.deg - a.deg);
+      const claimed = [];
+      const PAD = 2;
+      items.forEach(it => {
+        const bb = it.bb;
+        if (!bb.width || !bb.height) { it.txt.style.visibility = ''; return; }
+        const x0 = bb.left - PAD, x1 = bb.right + PAD;
+        const y0 = bb.top - PAD, y1 = bb.bottom + PAD;
+        const conflict = claimed.some(c => !(x1 < c.x0 || c.x1 < x0 || y1 < c.y0 || c.y1 < y0));
+        if (conflict) {
+          it.txt.style.visibility = 'hidden';
+        } else {
+          it.txt.style.visibility = '';
+          claimed.push({ x0, x1, y0, y1 });
+        }
+      });
+    }
+
+    function hoverFocus(id) {
+      const nbrs = neighborsOf(id, 1);
+      const filterActive = !!STATE.filter.family;
+      // Standard focus dimming (only when no filter is active)
+      if (!filterActive) {
+        nodeSel.select('.node-circle').classed('dim', d => !nbrs.has(d.id)).classed('hot', d => d.id === id);
+        labelSel.classed('dim', d => !nbrs.has(d.id));
+        linkSel.classed('dim', d => !(nbrs.has(d.source.id || d.source) && nbrs.has(d.target.id || d.target)))
+               .classed('hot', d => (d.source.id || d.source) === id || (d.target.id || d.target) === id);
+        hullSel.classed('dim', name => !famByName[name].members.some(m => nbrs.has(m.id)));
+        famLabelSel.classed('dim', name => !famByName[name].members.some(m => nbrs.has(m.id)));
+      } else {
+        // Filter is active: don't fight filter-dim with .dim. Mark the hovered node hot,
+        // and use .hover-reveal to override .filter-dim on the hovered node + its neighbors.
+        nodeSel.select('.node-circle').classed('hot', d => d.id === id)
+          .classed('hover-reveal', d => nbrs.has(d.id));
+        labelSel.classed('hover-reveal', d => nbrs.has(d.id));
+        linkSel.classed('hot', d => (d.source.id || d.source) === id || (d.target.id || d.target) === id)
+               .classed('hover-reveal', d => (d.source.id || d.source) === id || (d.target.id || d.target) === id);
+        // Reveal hulls / family labels of the families the hovered node connects to
+        hullSel.classed('hover-reveal', name => famByName[name].members.some(m => nbrs.has(m.id)));
+        famLabelSel.classed('hover-reveal', name => famByName[name].members.some(m => nbrs.has(m.id)));
+      }
+    }
+    function clearHoverFocus() {
+      // If user has locked a selection, revert to the locked state instead of full clear.
+      if (STATE.lockedSet && STATE.lockedSet.size > 0) {
+        applyLock();
+        return;
+      }
+      nodeSel.select('.node-circle').classed('dim', false).classed('hot', false).classed('hover-reveal', false);
+      labelSel.classed('dim', false).classed('hover-reveal', false);
+      linkSel.classed('dim', false).classed('hot', false).classed('hover-reveal', false);
+      hullSel.classed('dim', false).classed('hover-reveal', false);
+      famLabelSel.classed('dim', false).classed('hover-reveal', false);
+    }
+
+    // "View in timeline" — surfaces only when a sticky selection is active. Snapshots the
+    // current locked set as a cross-view filter and jumps to the timeline.
+    const btnViewInTimeline = document.getElementById('btn-view-in-timeline');
+    if (btnViewInTimeline) btnViewInTimeline.onclick = () => {
+      if (!STATE.lockedSet || STATE.lockedSet.size === 0) return;
+      STATE.crossViewFilter = new Set(STATE.lockedSet);
+      setView('timeline');
+    };
+    function syncCrossViewBtn() {
+      if (!btnViewInTimeline) return;
+      const n = STATE.lockedSet ? STATE.lockedSet.size : 0;
+      btnViewInTimeline.style.display = n > 0 ? '' : 'none';
+      btnViewInTimeline.textContent = n > 0 ? `view ${n} in timeline →` : 'view in timeline →';
+    }
+    syncCrossViewBtn();   // initial state — reflects any preexisting lock when returning to this view
+
+    // Sticky-lock highlighter: shows STATE.lockedSet as the persistent focus.
+    function applyLock() {
+      syncCrossViewBtn();
+      const locked = STATE.lockedSet;
+      if (!locked || locked.size === 0) {
+        nodeSel.select('.node-circle').classed('dim', false).classed('hot', false);
+        labelSel.classed('dim', false);
+        linkSel.classed('dim', false).classed('hot', false);
+        hullSel.classed('dim', false);
+        famLabelSel.classed('dim', false);
+        return;
+      }
+      nodeSel.select('.node-circle')
+        .classed('dim', d => !locked.has(d.id))
+        .classed('hot', d => locked.has(d.id));
+      labelSel.classed('dim', d => !locked.has(d.id));
+      linkSel
+        .classed('dim', d => !(locked.has(d.source.id || d.source) && locked.has(d.target.id || d.target)))
+        .classed('hot', d => locked.has(d.source.id || d.source) && locked.has(d.target.id || d.target));
+      hullSel.classed('dim', name => !famByName[name].members.some(m => locked.has(m.id)));
+      famLabelSel.classed('dim', name => !famByName[name].members.some(m => locked.has(m.id)));
+    }
+
+    // Visual family filter — keeps wedge layout, dims non-matching deities/edges
+    function applyVisualFamilyFilter() {
+      const fam = STATE.filter.family;
+      legend.selectAll('.lrow').classed('active', function() { return this.dataset.family === fam; });
+      if (!fam) {
+        nodeSel.select('.node-circle').classed('filter-dim', false);
+        labelSel.classed('filter-dim', false);
+        linkSel.classed('filter-dim', false);
+        hullSel.classed('filter-dim', false);
+        famLabelSel.classed('filter-dim', false);
+        return;
+      }
+      nodeSel.select('.node-circle').classed('filter-dim', d => (d.family || 'Other') !== fam);
+      labelSel.classed('filter-dim', d => (d.family || 'Other') !== fam);
+      linkSel.classed('filter-dim', d => {
+        const s = (d.source && typeof d.source === 'object') ? d.source : (NODES_BY_ID[d.source] || {});
+        const t = (d.target && typeof d.target === 'object') ? d.target : (NODES_BY_ID[d.target] || {});
+        const sf = s.family || 'Other', tf = t.family || 'Other';
+        return sf !== fam && tf !== fam;
+      });
+      hullSel.classed('filter-dim', name => name !== fam);
+      famLabelSel.classed('filter-dim', name => name !== fam);
+      // After filter changes, redo label collision pass — many labels are now hidden,
+      // freeing space for the remaining ones to potentially show again.
+      setTimeout(deconflictNodeLabels, 60);
+    }
+    // Expose so the global filter dropdown can call it without a full re-render
+    window._pantheonApplyFamilyFilter = applyVisualFamilyFilter;
+
+    let egoMode = false;
+    function setEgoFocus(id) {
+      STATE.focusId = id;
+      const nbrs = neighborsOf(id, 1);
+      nodeSel.style('display', d => nbrs.has(d.id) ? null : 'none');
+      labelSel.style('display', d => nbrs.has(d.id) ? null : 'none');
+      linkSel.style('display', d => (nbrs.has(d.source.id || d.source) && nbrs.has(d.target.id || d.target)) ? null : 'none');
+      sim.alpha(0.3).restart();
+    }
+    function clearEgoFocus() {
+      STATE.focusId = null;
+      nodeSel.style('display', null);
+      labelSel.style('display', null);
+      linkSel.style('display', null);
+      sim.alpha(0.25).restart();
+    }
+
+    let currentLabelMode = 'hub';
+    document.getElementById('btn-labels').onclick = (ev) => {
+      currentLabelMode = currentLabelMode === 'hub' ? 'all' : currentLabelMode === 'all' ? 'off' : 'hub';
+      ev.target.textContent = 'labels: ' + currentLabelMode;
+      updateLOD(1);
+    };
+    document.getElementById('btn-hulls').onclick = (ev) => {
+      hullsOn = !hullsOn;
+      ev.target.classList.toggle('active', hullsOn);
+      hullSel.style('display', hullsOn ? null : 'none');
+    };
+    document.getElementById('btn-ego').onclick = (ev) => {
+      egoMode = !egoMode;
+      ev.target.classList.toggle('active', egoMode);
+      if (!egoMode) clearEgoFocus();
+      else if (STATE.selected) setEgoFocus(STATE.selected);
+    };
+    document.getElementById('btn-recenter').onclick = () => {
+      svg.transition().duration(500).call(zoom.transform, d3.zoomIdentity);
+      clearEgoFocus(); clearHoverFocus(); egoMode = false;
+      document.getElementById('btn-ego').classList.remove('active');
+    };
+    svg.on('click', (ev) => {
+      if (ev.target.tagName === 'svg' || ev.target === svg.node()) {
+        if (egoMode) clearEgoFocus();
+        // Click on empty space: clear sticky/additive lock
+        if (STATE.lockedSet && STATE.lockedSet.size > 0) {
+          STATE.lockedSet = new Set();
+          applyLock();
+        }
+      }
+    });
+
+    updateLOD(1);
+    // If a family filter is already set when entering the view, apply it visually now
+    applyVisualFamilyFilter();
+  }
+};
+
+// ============================================================
+// DOCUMENTS — polar time-by-family
+// angular = family wedge; radial = chronological (older → outer-→-newer toward inner)
+// flipped: actually use older near center, newer outside, so newest texts at the rim
+// ============================================================
+VIEWS.documents = {
+  title: 'Documents',
+  subtitle: 'angular = tradition family · radial = time · older near centre',
+  render() {
+    const docs = DATA.nodes.filter(n => n.type === 'document' && typeof n.date_earliest === 'number' && matchesFilter(n));
+    if (!docs.length) {
+      svg.append('text').attr('x', '50%').attr('y', '50%')
+        .attr('text-anchor', 'middle').attr('fill', 'var(--text-3)')
+        .style('font-family', 'var(--serif)').style('font-size', '18px')
+        .text('No documents match the current filter.');
+      return;
+    }
+    const W = svg.node().clientWidth, H = svg.node().clientHeight;
+    const cx = W / 2, cy = H / 2;
+    const Router = Math.min(W, H) * 0.44;
+    const Rinner = Router * 0.20;
+
+    // time scale: square root for nicer distribution since ANE texts span huge range
+    const minDate = -3100, maxDate = 700;
+    const timeR = d3.scaleLinear().domain([minDate, maxDate]).range([Rinner, Router]);
+
+    // angular allocation by family among docs
+    const famByName = {};
+    docs.forEach(d => {
+      const f = d.family || 'Other';
+      if (!famByName[f]) famByName[f] = { name: f, members: [], color: d.family_color || '#7a8090' };
+      famByName[f].members.push(d);
+    });
+    const ringOrder = FAMILIES.map(f => f.name).filter(n => famByName[n]);
+    Object.keys(famByName).forEach(n => { if (!ringOrder.includes(n)) ringOrder.push(n); });
+    const GAP = 0.025;
+    const totalGap = GAP * ringOrder.length;
+    const totalArc = 2 * Math.PI - totalGap;
+    const weights = ringOrder.map(n => Math.sqrt(famByName[n].members.length));
+    const totalW = d3.sum(weights);
+    let cursor = -Math.PI * 0.55;
+    const wedges = {};
+    ringOrder.forEach((name, i) => {
+      const arcSize = totalArc * (weights[i] / totalW);
+      wedges[name] = { a0: cursor, a1: cursor + arcSize, center: cursor + arcSize / 2, members: famByName[name].members };
+      cursor += arcSize + GAP;
+    });
+
+    // anchor each doc at (familyWedgeCenter ± small spread, timeRadius)
+    docs.forEach(d => {
+      const w = wedges[d.family || 'Other'];
+      if (!w) return;
+      // angular: small jitter around wedge center, ordered by date within wedge
+      const sortedMembers = [...w.members].sort((a,b) => a.date_earliest - b.date_earliest);
+      const idx = sortedMembers.indexOf(d);
+      const N = w.members.length;
+      const wedgePad = Math.min(0.04, (w.a1 - w.a0) * 0.10);
+      const aSpan = (w.a1 - w.a0) - wedgePad * 2;
+      const t = N > 1 ? idx / (N - 1) : 0.5;
+      const a = w.a0 + wedgePad + aSpan * t;
+      const r = timeR(d.date_earliest);
+      const [ax, ay] = polarXY(a, r);
+      d._ax = cx + ax; d._ay = cy + ay; d.x = d._ax; d.y = d._ay;
+    });
+
+    document.getElementById('view-controls').innerHTML = `
+      <button class="btn btn-mini" id="btn-doc-labels">labels: hub</button>
+      <button class="btn btn-mini active" id="btn-doc-rings">phase rings</button>
+      <button class="btn btn-mini" id="btn-doc-recenter">recenter</button>
+    `;
+
+    legend.style('display', 'block').html(
+      '<div class="ltitle">Phases (rings)</div>' +
+      `<div class="lrow"><span class="lswatch" style="background:#c25450"></span><span>P1 · ANE & Egypt</span><span class="lcount">−3100 to −1500</span></div>` +
+      `<div class="lrow"><span class="lswatch" style="background:#e08a3a"></span><span>P2 · Axial Age</span><span class="lcount">−1500 to −500</span></div>` +
+      `<div class="lrow"><span class="lswatch" style="background:#5a6cc4"></span><span>P3 · Hellenistic / 2nd Temple</span><span class="lcount">−500 to 100</span></div>` +
+      `<div class="lrow"><span class="lswatch" style="background:#6b3a8a"></span><span>P4 · Late Antiquity</span><span class="lcount">100 to 700</span></div>`
+    );
+
+    const g = svg.append('g');
+    const zoom = d3.zoom().scaleExtent([0.4, 4]).on('zoom', ev => { g.attr('transform', ev.transform); updateLOD(ev.transform.k); });
+    svg.call(zoom);
+
+    // PHASE RINGS at boundaries
+    const phaseBoundaries = [-1500, -500, 100, 700];
+    const phaseColors = ['#c25450', '#e08a3a', '#5a6cc4', '#6b3a8a'];
+    let ringsOn = true;
+    const ringG = g.append('g').attr('class', 'phase-rings');
+    phaseBoundaries.forEach((d, i) => {
+      ringG.append('circle').attr('class', 'phase-ring')
+        .attr('cx', cx).attr('cy', cy).attr('r', timeR(d));
+      ringG.append('text').attr('class', 'phase-ring-label')
+        .attr('x', cx).attr('y', cy - timeR(d) - 4)
+        .attr('text-anchor', 'middle')
+        .text(d < 0 ? Math.abs(d) + ' BCE' : d + ' CE');
+    });
+
+    // family labels on outer rim — HORIZONTAL with smart text-anchor
+    const famLabelG = g.append('g').attr('class', 'family-label-layer');
+    famLabelG.selectAll('text.family-label')
+      .data(ringOrder, n => n).enter().append('text')
+      .attr('class', name => 'family-label' + (famByName[name].members.length >= 5 ? ' bright' : ''))
+      .attr('text-anchor', name => {
+        const a = wedges[name].center;
+        const dx = Math.sin(a);
+        if (dx >  0.35) return 'start';
+        if (dx < -0.35) return 'end';
+        return 'middle';
+      })
+      .attr('dy', name => {
+        const a = wedges[name].center;
+        const dy = -Math.cos(a);
+        if (dy < -0.55) return '0em';
+        if (dy >  0.55) return '0.85em';
+        return '0.35em';
+      })
+      .attr('x', name => {
+        const a = wedges[name].center;
+        const [lx, ly] = polarXY(a, Router + 36);
+        return cx + lx;
+      })
+      .attr('y', name => {
+        const a = wedges[name].center;
+        const [lx, ly] = polarXY(a, Router + 36);
+        return cy + ly;
+      })
+      .text(name => name);
+
+    // edges among docs + doc↔theme (theme nodes are positioned outside the wedges, in a faint cloud)
+    const docIds = new Set(docs.map(d => d.id));
+    const links = EDGES.filter(e => docIds.has(e.source) && docIds.has(e.target))
+      .map(e => ({ source: e.source, target: e.target, type: e.type }));
+
+    const linkSel = g.append('g').attr('class', 'edge-layer').selectAll('path')
+      .data(links).enter().append('path').attr('class', 'edge-line')
+      .each(function (d) {
+        const st = edgeStyle(d.type);
+        // Type color → CSS var. Default stroke = quiet blue in CSS; .hot pulls the var.
+        d3.select(this).style('--edge-type-color', st.c)
+          .attr('stroke-width', st.w).attr('stroke-opacity', st.op);
+      });
+
+    const hubs = computeHubSet(docs, 0.12);
+
+    const nodeSel = g.append('g').attr('class', 'node-layer').selectAll('g.node')
+      .data(docs, d => d.id).enter().append('g').attr('class', 'node')
+      .call(d3.drag()
+        .on('start', (ev, d) => { if (!ev.active) sim.alphaTarget(0.18).restart(); d.fx = d.x; d.fy = d.y; })
+        .on('drag',  (ev, d) => { d.fx = ev.x; d.fy = ev.y; })
+        .on('end',   (ev, d) => { if (!ev.active) sim.alphaTarget(0); d.fx = null; d.fy = null; }))
+      .on('mouseenter', function (ev, d) {
+        showTooltip(`${tooltipThumb(d)}<div class="ttitle">${d.title}</div>
+          <div class="tmeta">${d.family || '—'} · ${fmtDateRange(d.date_earliest, d.date_latest)}</div>
+          <div class="tmeta">${d.label || d.tradition || ''}</div>`, ev);
+        hoverFocus(d.id);
+      })
+      .on('mousemove', (ev) => tooltip.style('left', (ev.clientX + 14) + 'px').style('top', (ev.clientY + 14) + 'px'))
+      .on('mouseleave', () => { hideTooltip(); clearHoverFocus(); })
+      .on('click', (ev, d) => selectNode(d.id));
+
+    nodeSel.append('circle').attr('class', 'node-circle')
+      .attr('r', d => 4 + Math.sqrt(DEGREE.get(d.id) || 0) * 1.5)
+      .attr('fill', d => nodeColor(d));
+
+    nodeSel.append('text').attr('class', d => 'node-label' + (hubs.has(d.id) ? ' hub' : ''))
+      .attr('dy', d => -(6 + Math.sqrt(DEGREE.get(d.id) || 0) * 1.5))
+      .text(d => d.title.length > 24 ? d.title.slice(0, 22) + '…' : d.title);
+
+    // Bezier-curved edges — toward the center to evoke radial reading
+    function curvedPath(d) {
+      const s = d.source, t = d.target;
+      const sx = s.x || s._ax, sy = s.y || s._ay;
+      const tx = t.x || t._ax, ty = t.y || t._ay;
+      const mx = (sx + tx) / 2, my = (sy + ty) / 2;
+      // pull control point toward center for inner curve
+      const k = 0.18;
+      const cxp = mx + (cx - mx) * k, cyp = my + (cy - my) * k;
+      return `M ${sx},${sy} Q ${cxp},${cyp} ${tx},${ty}`;
+    }
+
+    const sim = d3.forceSimulation(docs)
+      .alphaDecay(0.06)
+      .force('charge', d3.forceManyBody().strength(-14).distanceMax(80))
+      .force('x', d3.forceX(d => d._ax).strength(0.55))
+      .force('y', d3.forceY(d => d._ay).strength(0.55))
+      .force('collide', d3.forceCollide().radius(d => 8 + Math.sqrt(DEGREE.get(d.id) || 0) * 1.5))
+      .on('tick', tick);
+
+    function tick() {
+      linkSel.attr('d', curvedPath);
+      nodeSel.attr('transform', d => `translate(${d.x},${d.y})`);
+    }
+
+    let currentLabelMode = 'hub';
+    function updateLOD(k) {
+      nodeSel.select('text.node-label').style('opacity', d => {
+        if (currentLabelMode === 'off') return 0;
+        if (currentLabelMode === 'all') return 1;
+        if (k >= 1.5) return 1;
+        return hubs.has(d.id) ? 1 : 0;
+      }).style('font-size', () => {
+        // Past 100% zoom, grow gradually from 1.0× to 1.5× by k=4, then lock.
+        const growth = 1 + 0.5 * Math.max(0, Math.min(1, (k - 1) / 3));
+        const eff = Math.max(1, k);
+        return (10 * growth / eff).toFixed(2) + 'px';
+      });
+    }
+
+    function hoverFocus(id) {
+      const nbrs = neighborsOf(id, 1);
+      nodeSel.select('.node-circle').classed('dim', d => !nbrs.has(d.id)).classed('hot', d => d.id === id);
+      nodeSel.select('text').classed('dim', d => !nbrs.has(d.id));
+      linkSel.classed('dim', d => !(nbrs.has(d.source.id || d.source) && nbrs.has(d.target.id || d.target)))
+             .classed('hot', d => (d.source.id || d.source) === id || (d.target.id || d.target) === id);
+    }
+    function clearHoverFocus() {
+      nodeSel.select('.node-circle').classed('dim', false).classed('hot', false);
+      nodeSel.select('text').classed('dim', false);
+      linkSel.classed('dim', false).classed('hot', false);
+    }
+
+    document.getElementById('btn-doc-labels').onclick = (ev) => {
+      currentLabelMode = currentLabelMode === 'hub' ? 'all' : currentLabelMode === 'all' ? 'off' : 'hub';
+      ev.target.textContent = 'labels: ' + currentLabelMode;
+      updateLOD(1);
+    };
+    document.getElementById('btn-doc-rings').onclick = (ev) => {
+      ringsOn = !ringsOn;
+      ev.target.classList.toggle('active', ringsOn);
+      ringG.style('display', ringsOn ? null : 'none');
+    };
+    document.getElementById('btn-doc-recenter').onclick = () => {
+      svg.transition().duration(500).call(zoom.transform, d3.zoomIdentity);
+    };
+
+    updateLOD(1);
+  }
+};
+
+// ============================================================
+// TIMELINE — drag-pan, wheel-zoom, grow-on-zoom for dots and labels
+// ============================================================
+VIEWS.timeline = {
+  title: 'Timeline',
+  // Subtitle intentionally empty per user request — header clutter removed.
+  subtitle: '',
+  render() {
+    const datable = DATA.nodes.filter(n => {
+      if (!(n.type === 'document' || n.type === 'event' || n.type === 'person')) return false;
+      if (typeof n.date_earliest !== 'number') return false;
+      if (STATE.crossViewFilter && !STATE.crossViewFilter.has(n.id)) return false;
+      return matchesFilter(n);
+    });
+    if (!datable.length) {
+      svg.append('text').attr('x', '50%').attr('y', '50%')
+        .attr('text-anchor', 'middle').attr('fill', 'var(--text-3)')
+        .style('font-family', 'var(--serif)').style('font-size', '18px')
+        .text('No datable nodes match the filter.');
+      return;
+    }
+
+    const W = svg.node().clientWidth, H = svg.node().clientHeight;
+    // Tightened margins — events claim ~34px more vertical Y. Top dropped 60→50 (clears the
+    // view-header text cleanly), bottom dropped 120→96 (still fits the mini overview + axis).
+    const margin = { top: 50, right: 30, bottom: 96, left: 30 };
+    const miniH = 56;
+
+    const dates = datable.map(n => n.date_earliest);
+    const realMin = Math.min(...dates) - 200;
+    // Extend to at least 2050 so Phase 6/7 events have horizontal room
+    const realMax = Math.max(...dates, 2050) + 50;
+
+    // ---------- DATE COMPRESSION ----------
+    // Gaps > 400 years between adjacent dated nodes get compressed to ~80 years of visual
+    // space. A clear break marker is drawn at each compressed gap so the reader knows
+    // time has been "cut". The underlying data still carries real years; only the X-axis
+    // position is compressed.
+    const COMPRESS_GAP_THRESHOLD = 600;   // only compress gaps > 600 years (was 400)
+    const COMPRESSED_GAP_YEARS = 160;     // squished gap reads as 160 visual years (was 80) — keeps a clear break, less brutal
+    function buildCompressor(allDates) {
+      const sorted = [...new Set(allDates.filter(d => typeof d === 'number'))].sort((a, b) => a - b);
+      const breaks = [];
+      let cumulativeSavings = 0;
+      for (let i = 1; i < sorted.length; i++) {
+        const gap = sorted[i] - sorted[i - 1];
+        if (gap > COMPRESS_GAP_THRESHOLD) {
+          breaks.push({
+            realStart: sorted[i - 1],
+            realEnd: sorted[i],
+            realSize: gap,
+            cumBefore: cumulativeSavings,
+            cumAfter: cumulativeSavings + (gap - COMPRESSED_GAP_YEARS),
+          });
+          cumulativeSavings += gap - COMPRESSED_GAP_YEARS;
+        }
+      }
+      function compress(d) {
+        for (let i = breaks.length - 1; i >= 0; i--) {
+          const br = breaks[i];
+          if (d >= br.realEnd) return d - br.cumAfter;
+          if (d > br.realStart && d < br.realEnd) {
+            const t = (d - br.realStart) / (br.realEnd - br.realStart);
+            return br.realStart - br.cumBefore + t * COMPRESSED_GAP_YEARS;
+          }
+        }
+        return d;
+      }
+      function decompress(c) {
+        for (let i = breaks.length - 1; i >= 0; i--) {
+          const br = breaks[i];
+          const cStart = br.realStart - br.cumBefore;
+          const cEnd = cStart + COMPRESSED_GAP_YEARS;
+          if (c >= cEnd) return c + br.cumAfter;
+          if (c >= cStart && c < cEnd) {
+            const t = (c - cStart) / COMPRESSED_GAP_YEARS;
+            return br.realStart + t * (br.realEnd - br.realStart);
+          }
+        }
+        return c;
+      }
+      return { breaks, compress, decompress };
+    }
+
+    // Build the compressor from ALL date points we render — events, phase boundaries, era markers.
+    // We'll define `eraMarkers` and `phases` next; the compressor uses them via the closure on rebuild.
+    let compressor = buildCompressor(dates);
+
+    // The scale operates on COMPRESSED date space. Helper wrappers below convert real years to pixels.
+    const xMin = compressor.compress(realMin);
+    const xMax = compressor.compress(realMax);
+    const xFull = d3.scaleLinear().domain([xMin, xMax]).range([margin.left, W - margin.right]);
+    let x = xFull.copy();
+    let currentK = 1;
+
+    // Apply compression: real-year → pixel-x using the current zoom scale `x`.
+    function xc(realDate)      { return x(compressor.compress(realDate)); }
+    function xcFull(realDate)  { return xFull(compressor.compress(realDate)); }
+
+    // Families present in the current data — populates the inline filter dropdown.
+    const _famsHere = Array.from(new Set(datable.map(n => n.family).filter(Boolean))).sort();
+    const _crossOn = !!(STATE.crossViewFilter && STATE.crossViewFilter.size);
+    document.getElementById('view-controls').innerHTML = `
+      ${_crossOn ? `<button class="btn btn-mini active" id="btn-tl-clear-cross" title="Drop the cross-view filter from the pantheon and show all datable nodes">↺ reset view (${STATE.crossViewFilter.size})</button>` : ''}
+      <select class="btn btn-mini tl-family-select" id="tl-family-filter" title="Filter by family (also reflected in the footer dropdown)">
+        <option value="">all families</option>
+        ${_famsHere.map(f => `<option value="${f}"${STATE.filter.family === f ? ' selected' : ''}>${f}</option>`).join('')}
+      </select>
+      <button class="btn btn-mini" id="btn-tl-reset">reset zoom</button>
+      <button class="btn btn-mini" id="btn-tl-fit">fit data</button>
+    `;
+    document.getElementById('tl-family-filter').onchange = (ev) => {
+      STATE.filter.family = ev.target.value;
+      document.getElementById('filter-family').value = STATE.filter.family;
+      if (typeof updateResetButton === 'function') updateResetButton();
+      setView('timeline');   // full re-render so datable + axis recompute against the new filter
+    };
+    if (_crossOn) {
+      document.getElementById('btn-tl-clear-cross').onclick = () => {
+        STATE.crossViewFilter = null;
+        setView('timeline');
+      };
+    }
+
+    const phases = [
+      { label: 'Phase 1 · Ancient Near East & Egypt', a: -3100, b: -1500 },
+      { label: 'Phase 2 · Axial Age',                  a: -1500, b: -500 },
+      { label: 'Phase 3 · Hellenistic & 2nd Temple',   a: -500,  b: 100 },
+      { label: 'Phase 4 · Late Antiquity',             a: 100,   b: 700 },
+      { label: 'Phase 5 · Medieval',                   a: 700,   b: 1500 },
+      { label: 'Phase 6 · Early Modern / Renaissance', a: 1500,  b: 1800 },
+      { label: 'Phase 7 · Modern',                     a: 1800,  b: 2100 },
+    ];
+    // Secondary era markers — thin faded vertical lines for visual context at major turning points.
+    // These complement the colored phase bands by marking key sub-period boundaries.
+    const eraMarkers = [
+      { x: -2000, label: 'Bronze Age' },
+      { x: -1200, label: 'Iron Age / Bronze collapse' },
+      { x: -539,  label: 'Cyrus · Persian period' },
+      { x: -332,  label: 'Alexander · Hellenization' },
+      { x: 70,    label: '2nd Temple destroyed' },
+      { x: 325,   label: 'Nicaea' },
+      { x: 622,   label: 'Hegira' },
+      { x: 1054,  label: 'Great Schism' },
+      { x: 1453,  label: 'Fall of Constantinople' },
+      { x: 1517,  label: 'Reformation' },
+      { x: 1789,  label: 'French Revolution' },
+      { x: 1945,  label: 'Nag Hammadi' },
+    ];
+
+    // Rebuild the compressor now that we have phases + era markers in scope.
+    // Include phase boundaries and era marker years as anchor points so they stay visible
+    // even when they fall in otherwise-empty regions.
+    compressor = buildCompressor(dates.concat(phases.flatMap(p => [p.a, p.b])).concat(eraMarkers.map(e => e.x)));
+    // Reassign scale domains to the (possibly updated) compressed range.
+    const xMinNew = compressor.compress(realMin);
+    const xMaxNew = compressor.compress(realMax);
+    xFull.domain([xMinNew, xMaxNew]);
+    x = xFull.copy();
+
+    const mainG = svg.append('g');
+    // Chart-area background — a subtle slate-blue overlay so the timeline reads as a
+    // "drawn surface" rather than the void-black canvas. Especially fixes the user's
+    // complaint about the LEFT compression zone looking like a black gap. Sits beneath
+    // bands / breaks / events.
+    mainG.append('rect').attr('class', 'tl-chart-bg')
+      .attr('x', margin.left).attr('y', margin.top - 30)
+      .attr('width',  Math.max(0, W - margin.left - margin.right))
+      .attr('height', H - margin.bottom - miniH - 24 - margin.top + 30);
+    const bandG = mainG.append('g').attr('class', 'tl-bands');
+    const breakG = mainG.append('g').attr('class', 'tl-breaks');
+    const eventG = mainG.append('g').attr('class', 'tl-events');
+    const axisG = mainG.append('g').attr('class', 'tl-axis');
+
+    const miniY = H - miniH - 20;
+    const miniG = svg.append('g').attr('class', 'tl-mini').attr('transform', `translate(0,${miniY})`);
+    const miniBandG = miniG.append('g');
+    const miniBreakG = miniG.append('g');
+    const miniEventG = miniG.append('g');
+    const miniAxisG = miniG.append('g');
+    const miniBrushG = miniG.append('g').attr('class', 'tl-brush');
+
+    // sc(realYear) returns pixel-x via the supplied scale, applying compression.
+    function sc(scale, realDate) { return scale(compressor.compress(realDate)); }
+
+    function drawCompressionBreaks(scale, group, height) {
+      const sel = group.selectAll('g.tl-break').data(compressor.breaks);
+      sel.exit().remove();
+      const enter = sel.enter().append('g').attr('class', 'tl-break');
+      enter.append('rect').attr('class', 'tl-break-fill');
+      enter.append('path').attr('class', 'tl-break-zigzag');
+
+      enter.merge(sel).each(function (d) {
+        const cStart = d.realStart - d.cumBefore;
+        const cEnd = cStart + COMPRESSED_GAP_YEARS;
+        const xStart = scale(cStart);
+        const xEnd = scale(cEnd);
+        const midX = (xStart + xEnd) / 2;
+        const w = xEnd - xStart;
+        const sel = d3.select(this);
+        // Compressed-gap zone gets a slightly darker fill than the chart background so the
+        // cut reads as "time skipped" visually, not just a thin zigzag in empty space. The
+        // chart-bg rect tints the surrounding area; this rect darkens the cut on top.
+        sel.select('rect.tl-break-fill')
+          .attr('x', xStart).attr('y', 0)
+          .attr('width', w).attr('height', height);
+        // Dark zigzag, slightly opaque — registers as a gap-marker without screaming.
+        const N = Math.max(6, Math.floor(height / 14));
+        const stepY = height / N;
+        const halfW = Math.min(5, w / 3);
+        let zig = `M ${midX - halfW},0 `;
+        for (let i = 1; i <= N; i++) {
+          zig += `L ${midX + (i % 2 === 0 ? -halfW : halfW)},${stepY * i} `;
+        }
+        sel.select('path.tl-break-zigzag')
+          .attr('d', zig)
+          .attr('stroke', 'rgba(0,0,0,0.55)')
+          .attr('stroke-width', 1)
+          .attr('stroke-opacity', 1)
+          .attr('fill', 'none');
+      });
+      // Remove any pre-existing year-cut labels left over from older renders.
+      group.selectAll('text.tl-break-label').remove();
+    }
+
+    function drawEraLines(scale, group, height) {
+      // Phase boundary lines (major)
+      const phaseBoundaries = [];
+      phases.forEach((p, i) => {
+        if (i > 0) phaseBoundaries.push(p.a);
+      });
+      const majorSel = group.selectAll('line.tl-era-line.major').data(phaseBoundaries);
+      majorSel.exit().remove();
+      majorSel.enter().append('line').attr('class', 'tl-era-line major')
+        .merge(majorSel)
+        .attr('x1', d => sc(scale, d)).attr('x2', d => sc(scale, d))
+        .attr('y1', 0).attr('y2', height);
+
+      // Sub-era markers (secondary, dashed)
+      const minorSel = group.selectAll('line.tl-era-line.minor').data(eraMarkers);
+      minorSel.exit().remove();
+      minorSel.enter().append('line').attr('class', 'tl-era-line minor')
+        .merge(minorSel)
+        .attr('x1', d => sc(scale, d.x)).attr('x2', d => sc(scale, d.x))
+        .attr('y1', 0).attr('y2', height);
+
+      // Sub-era labels (tiny, near top, rotated 90°)
+      const lbl = group.selectAll('text.tl-era-label').data(eraMarkers);
+      lbl.exit().remove();
+      lbl.enter().append('text').attr('class', 'tl-era-label')
+        .merge(lbl)
+        .attr('transform', d => `translate(${sc(scale, d.x) + 3}, 36) rotate(0)`)
+        .text(d => d.label);
+    }
+
+    function drawBands(scale, group, height, withLabels) {
+      const sel = group.selectAll('rect.tl-band').data(phases);
+      sel.exit().remove();
+      const enter = sel.enter().append('rect').attr('class', 'tl-band');
+      enter.merge(sel)
+        .attr('x', d => sc(scale, d.a)).attr('y', 0)
+        .attr('width', d => Math.max(1, sc(scale, d.b) - sc(scale, d.a)))
+        .attr('height', height)
+        // Bands are now fully transparent — phase BOUNDARY lines from drawEraLines provide the
+        // only visual separation. Previously a 1.5%-white fill was applied per phase, but phases
+        // only cover -3100 to 2100, so prehistory events (e.g. -65000) sat on UN-BANDED canvas
+        // which looked darker than the banded region. Removing the fill gives a truly uniform bg.
+        .attr('fill', 'transparent');
+      if (withLabels) {
+        const lbl = group.selectAll('text.tl-band-label').data(phases);
+        lbl.exit().remove();
+        const lEnter = lbl.enter().append('text').attr('class', 'tl-band-label');
+        lEnter.merge(lbl)
+          .attr('x', d => (scale(d.a) + scale(d.b)) / 2)
+          .attr('y', 18).attr('text-anchor', 'middle')
+          .text(d => d.label);
+      }
+    }
+
+    function drawEvents(scale, group, isMini) {
+      const chartTop = margin.top - 30;
+      const chartBottom = H - margin.bottom;
+      const center = isMini ? (miniH / 2) : ((chartTop + chartBottom) / 2);
+      const half = isMini ? (miniH / 2 - 4) : ((chartBottom - chartTop) / 2 - 16);
+
+      // Dots and labels grow gently with zoom. Capped tightly so they don't crowd.
+      const k = currentK;
+      const dotR = isMini ? 1.6 : Math.min(5.5, 3.0 + (k - 1) * 0.20);
+      const rowH = isMini ? 4 : 48;         // generous vertical spacing — labels need room
+      // Past 100% zoom, grow gradually from 9.5px at k=1 to 14.25px at k=4 (1.5×), then lock.
+      const _tlGrowth = 1 + 0.5 * Math.max(0, Math.min(1, (k - 1) / 3));
+      const fontSize = isMini ? 0 : 9.5 * _tlGrowth;
+      // Auto-cap rows by actually-available vertical space (don't waste rowMax slots that exceed `half`).
+      const rowMax = isMini ? 6 : Math.max(6, Math.floor(half / rowH));
+
+      const occupied = [];
+      const placed = datable.map(d => ({ d, xi: sc(scale, d.date_earliest), yi: 0 }));
+      // Pre-compute each event's approx label width — used so nodes whose LABELS would
+      // collide get bumped to different rows even though their DOTS are far apart.
+      // Average glyph ≈ 0.55 × font-size in sans-serif at this scale; pad for breathing room.
+      const labelW = new Map();
+      placed.forEach(p => {
+        const w = isMini ? 8 : (p.d.title.length * fontSize * 0.55 + 18);
+        labelW.set(p.d.id, w);
+      });
+      // Higher-degree first wins the center
+      placed.sort((a, b) => (DEGREE.get(b.d.id) || 0) - (DEGREE.get(a.d.id) || 0));
+      // Symmetric expanding rows around center: 0, +rowH, -rowH, +2·rowH, -2·rowH, …
+      const rowOffsets = [0];
+      for (let i = 1; i < rowMax; i++) { rowOffsets.push(+i * rowH); rowOffsets.push(-i * rowH); }
+      placed.forEach(p => {
+        let placedThis = false;
+        const myW = labelW.get(p.d.id);
+        for (const off of rowOffsets) {
+          if (Math.abs(off) > half) continue;
+          // Label-aware horizontal collision: two events on the same row need
+          // (labelW(a) + labelW(b)) / 2 of horizontal pixels between them so their text doesn't overlap.
+          const conflict = occupied.some(o => {
+            const requiredDx = (myW + (o.w || 8)) / 2;
+            return Math.abs(o.x - p.xi) < requiredDx && Math.abs(o.y - off) < rowH * 0.75;
+          });
+          if (!conflict) { p.yi = off; occupied.push({ x: p.xi, y: off, w: myW }); placedThis = true; break; }
+        }
+        if (!placedThis) p.yi = 0;
+      });
+      // restore date order for stable rendering
+      placed.sort((a, b) => a.xi - b.xi);
+
+      // Two stable sub-groups so labels always paint on top of bubbles (SVG sibling-order = paint-order).
+      let bubblesG = group.select('g.tl-bubbles');
+      let labelsG  = group.select('g.tl-labels');
+      if (bubblesG.empty()) bubblesG = group.append('g').attr('class', 'tl-bubbles');
+      if (labelsG.empty())  labelsG  = group.append('g').attr('class', 'tl-labels');
+      // Ensure labelsG always sits after bubblesG in DOM order, even if a re-render reordered them.
+      labelsG.raise();
+
+      const bubbleSel = bubblesG.selectAll('g.tl-event').data(placed, p => p.d.id);
+      bubbleSel.exit().remove();
+      const bEnter = bubbleSel.enter().append('g').attr('class', 'tl-event');
+      bEnter.append('line').attr('class', 'tl-stem').attr('stroke-width', 0.5).attr('stroke-opacity', 0.45);
+      // Main pass uses per-type SVG paths (document = square, person = squared-diamond
+      // via symbolSquare2, event = star). Mini overview uses tiny circles — at
+      // dotR ≈ 1.6px shapes don't read, so a uniform circle is cleaner there.
+      if (isMini) {
+        bEnter.append('circle').attr('class', 'tl-event-dot');
+      } else {
+        bEnter.append('path').attr('class', 'tl-event-shape');
+      }
+      bEnter.on('click', (ev, p) => selectNode(p.d.id))
+            .on('mouseenter', (ev, p) => {
+              showTooltip(
+                `${tooltipThumb(p.d)}<div class="ttitle">${p.d.title}</div>
+                 <div class="tmeta">${p.d.family || '—'} · ${fmtDateRange(p.d.date_earliest, p.d.date_latest)}</div>
+                 <div class="tmeta">${p.d.type}${p.d.status ? ' · ' + p.d.status : ''}${p.d.geo ? ' · ' + p.d.geo.label : ''}</div>`, ev);
+              setMapTarget(p.d);   // hover an event → world-map thumb pulses on its geo location
+            })
+            .on('mousemove', (ev) => tooltip.style('left', (ev.clientX + 14) + 'px').style('top', (ev.clientY + 14) + 'px'))
+            .on('mouseleave', hideTooltip);
+
+      const bMerged = bEnter.merge(bubbleSel).attr('transform', p => `translate(${p.xi}, ${center + p.yi})`);
+      bMerged.select('line.tl-stem')
+        .attr('y1', p => -p.yi).attr('y2', 0)
+        .attr('stroke', p => nodeColor(p.d));
+      if (isMini) {
+        bMerged.select('circle.tl-event-dot')
+          .attr('r', dotR)
+          .attr('fill', p => nodeColor(p.d))
+          .attr('stroke', 'rgba(255,255,255,0.14)').attr('stroke-width', 0.6);
+      } else {
+        // shapePath() pulls the per-type d3 symbol (defined in shapeFor() at top of file).
+        // dotR governs the visual radius; shapeSizeFor() converts to d3.symbol().size()'s
+        // bounding-box-area units per shape.
+        bMerged.select('path.tl-event-shape')
+          .attr('d', p => shapePath(p.d, dotR))
+          .attr('fill', p => nodeColor(p.d))
+          .attr('stroke', 'rgba(255,255,255,0.14)').attr('stroke-width', 0.8);
+      }
+
+      if (!isMini) {
+        const labelDataSel = labelsG.selectAll('text.tl-event-label').data(placed, p => p.d.id);
+        labelDataSel.exit().remove();
+        const lEnter = labelDataSel.enter().append('text').attr('class', 'tl-event-label').attr('text-anchor', 'middle');
+        const labels = lEnter.merge(labelDataSel)
+          .attr('transform', p => `translate(${p.xi}, ${center + p.yi})`);
+        // Full titles — no ellipsis truncation. Labels that don't fit get hidden entirely.
+        labels.style('font-size', fontSize + 'px')
+          .attr('dy', p => p.yi < 0 ? -(dotR + 5) : (dotR + fontSize + 1))
+          .text(p => p.d.title);
+
+        // Degree-tier thresholds: only the top tier shows at default zoom (k=1).
+        // Lower tiers fade in as the user zooms in.
+        //   tier 0 (top 8%): always visible
+        //   tier 1 (next 22%): visible from k ≥ 1.30
+        //   tier 2 (next 35%): visible from k ≥ 1.85
+        //   tier 3 (rest):     visible from k ≥ 2.55
+        const degVals = placed.map(p => DEGREE.get(p.d.id) || 0).sort((a, b) => b - a);
+        const cut0 = degVals[Math.floor(degVals.length * 0.08)] || 0;
+        const cut1 = degVals[Math.floor(degVals.length * 0.30)] || 0;
+        const cut2 = degVals[Math.floor(degVals.length * 0.65)] || 0;
+        function tierOf(deg) {
+          if (deg >= cut0) return 0;
+          if (deg >= cut1) return 1;
+          if (deg >= cut2) return 2;
+          return 3;
+        }
+        function tierVisible(t, k) {
+          if (t === 0) return true;
+          if (t === 1) return k >= 1.30;
+          if (t === 2) return k >= 1.85;
+          return k >= 2.55;
+        }
+        // First pass: gate by tier × zoom. Uses class-based .tl-hidden (opacity fade)
+        // instead of display:none so the transition in app.css can animate the
+        // tier-in / tier-out visual smoothly with zoom.
+        labels.classed('tl-hidden', p => !tierVisible(tierOf(DEGREE.get(p.d.id) || 0), k));
+
+        // Second pass: greedy fit-by-width. Higher-degree labels win placement.
+        const visible = [];
+        labels.each(function (p) {
+          if (this.classList.contains('tl-hidden')) return;
+          // Approximate text width (avg glyph ≈ 0.55 × font-size for sans-serif at this scale).
+          const w = p.d.title.length * (fontSize * 0.55);
+          visible.push({ p, w, el: this });
+        });
+        visible.sort((a, b) => (DEGREE.get(b.p.d.id) || 0) - (DEGREE.get(a.p.d.id) || 0));
+        const claimed = [];
+        visible.forEach(m => {
+          const xi = m.p.xi;
+          const y = (m.p.yi < 0 ? m.p.yi - (dotR + 5) : m.p.yi + (dotR + fontSize + 1));
+          const x0 = xi - m.w / 2, x1 = xi + m.w / 2;
+          // If the FULL title doesn't fit without overlapping a higher-priority label, hide
+          // it via .tl-hidden (smooth fade-out). No ellipsis cropping.
+          const conflict = claimed.some(c => Math.abs(c.y - y) < fontSize + 3 && !(x1 < c.x0 - 4 || x0 > c.x1 + 4));
+          if (conflict) m.el.classList.add('tl-hidden');
+          else claimed.push({ x0, x1, y });
+        });
+      }
+    }
+
+    // Real-year tick generator: returns nice round REAL years within [realMin, realMax].
+    // The values are then compressed for X-positioning, but the labels show real years.
+    function generateRealTicks(realLo, realHi) {
+      const range = realHi - realLo;
+      let step;
+      if (range > 4000) step = 500;
+      else if (range > 2000) step = 250;
+      else if (range > 1000) step = 100;
+      else if (range > 400) step = 50;
+      else if (range > 200) step = 25;
+      else step = 10;
+      const ticks = [];
+      const start = Math.ceil(realLo / step) * step;
+      for (let v = start; v <= realHi; v += step) {
+        if (v !== 0) ticks.push(v);   // year 0 doesn't exist in BC/AD
+      }
+      return ticks;
+    }
+
+    function makeCompressedAxis(scale, realLo, realHi, maxTicks) {
+      const realTicks = generateRealTicks(realLo, realHi);
+      // Drop ticks that fall STRICTLY INSIDE a compressed gap — those years aren't visible
+      // on the axis and rendering them stacks garbled labels in the cut zone.
+      const insideAnyCut = (yr) => compressor.breaks.some(br => yr > br.realStart && yr < br.realEnd);
+      const candidate = realTicks.filter(yr => !insideAnyCut(yr));
+
+      // Boundary years (just before + just after each cut) are mandatory anchors — they
+      // flank the zigzag so the reader has explicit dates on each side. Mark them protected.
+      const protected_ = new Set();
+      compressor.breaks.forEach(br => { protected_.add(br.realStart); protected_.add(br.realEnd); });
+      const all = Array.from(new Set(candidate.concat(Array.from(protected_)))).sort((a, b) => a - b);
+
+      // Pixel-collision filter — guarantees no two labels overlap. Each label needs
+      // MIN_TICK_GAP_PX of horizontal room. Protected boundary years are kept first;
+      // remaining ticks are added greedily in priority order (round-most-first), and
+      // any tick whose pixel position lands too close to an already-claimed one is dropped.
+      const MIN_TICK_GAP_PX = 64;
+
+      function tickPriority(yr) {
+        // Lower number = higher priority. Protected boundaries win first, then nice round years.
+        if (protected_.has(yr)) return -1;
+        const a = Math.abs(yr);
+        if (a % 5000 === 0) return 0;
+        if (a % 1000 === 0) return 1;
+        if (a % 500 === 0)  return 2;
+        if (a % 100 === 0)  return 3;
+        if (a % 50 === 0)   return 4;
+        if (a % 25 === 0)   return 5;
+        if (a % 10 === 0)   return 6;
+        return 7;
+      }
+      const ranked = all.slice().sort((a, b) => {
+        const dp = tickPriority(a) - tickPriority(b);
+        return dp !== 0 ? dp : a - b;
+      });
+
+      const claimedPx = [];
+      const kept = [];
+      ranked.forEach(yr => {
+        const px = scale(compressor.compress(yr));
+        if (claimedPx.some(c => Math.abs(c - px) < MIN_TICK_GAP_PX)) return;
+        claimedPx.push(px);
+        kept.push(yr);
+      });
+      kept.sort((a, b) => a - b);
+
+      const compressedTicks = kept.map(compressor.compress);
+      return d3.axisBottom(scale)
+        .tickValues(compressedTicks)
+        .tickFormat((v, i) => {
+          const real = kept[i];
+          return real < 0 ? Math.abs(real) + ' BCE' : real + ' CE';
+        });
+    }
+
+    function redraw() {
+      const mainBandH = H - margin.bottom - miniH - 24 - margin.top + 30;
+      drawBands(x, bandG, mainBandH, true);
+      bandG.attr('transform', `translate(0,${margin.top - 30})`);
+      drawEraLines(x, bandG, mainBandH);
+      drawCompressionBreaks(x, breakG, mainBandH);
+      breakG.attr('transform', `translate(0,${margin.top - 30})`);
+      drawEvents(x, eventG, false);
+      // DYNAMIC date resolution: when zoomed in, the visible real-year range is smaller,
+      // so generateRealTicks selects a finer step (50 yr or 25 yr or even 10 yr). When
+      // zoomed out, coarse 500-year steps. Resolution increases automatically with zoom.
+      const dom = x.domain();
+      const visibleLo = compressor.decompress(dom[0]);
+      const visibleHi = compressor.decompress(dom[1]);
+      const axis = makeCompressedAxis(x, visibleLo, visibleHi, Math.max(6, Math.floor(W / 95)));
+      axisG.attr('transform', `translate(0,${H - margin.bottom - miniH - 24})`).call(axis);
+
+      drawBands(xFull, miniBandG, miniH, false);
+      drawCompressionBreaks(xFull, miniBreakG, miniH);
+      drawEvents(xFull, miniEventG, true);
+      const miniAxis = makeCompressedAxis(xFull, realMin, realMax, 8);
+      miniAxisG.attr('transform', `translate(0, ${miniH + 2})`).call(miniAxis);
+    }
+
+    const brush = d3.brushX()
+      .extent([[margin.left, 0], [W - margin.right, miniH]])
+      .on('brush end', (ev) => {
+        if (!ev.selection) { x = xFull.copy(); }
+        else {
+          const [x0, x1] = ev.selection;
+          x = d3.scaleLinear().domain([xFull.invert(x0), xFull.invert(x1)]).range([margin.left, W - margin.right]);
+        }
+        const fullDom = xFull.domain();
+        const curDom = x.domain();
+        currentK = (fullDom[1] - fullDom[0]) / (curDom[1] - curDom[0]);
+        redraw();
+      });
+    miniBrushG.call(brush);
+
+    // SMOOTH ZOOM — drives the brush via rAF so wheel zoom + zoom-meter buttons animate
+    // toward their target instead of jumping. Each rAF tick reassigns the brush selection,
+    // which fires the brush handler (above), which reassigns x and redraws. ~220ms ease-out-cubic
+    // feels responsive but visibly smooth. cancels any in-flight animation so rapid wheel
+    // events chain without queuing — `start` is always the CURRENT (interpolated) domain.
+    let _zoomRAF = null;
+    function smoothZoomTo(loTarget, hiTarget, ms) {
+      if (_zoomRAF) cancelAnimationFrame(_zoomRAF);
+      ms = ms == null ? 220 : ms;
+      const startDom = x.domain();
+      const t0 = performance.now();
+      function tick(now) {
+        const u = Math.min(1, (now - t0) / ms);
+        const e = 1 - Math.pow(1 - u, 3);   // ease-out-cubic
+        const lo = startDom[0] + (loTarget - startDom[0]) * e;
+        const hi = startDom[1] + (hiTarget - startDom[1]) * e;
+        miniBrushG.call(brush.move, [xFull(lo), xFull(hi)]);
+        if (u < 1) _zoomRAF = requestAnimationFrame(tick);
+        else _zoomRAF = null;
+      }
+      _zoomRAF = requestAnimationFrame(tick);
+    }
+
+    // wheel zoom — listen on SVG, ignore over mini area. Anchors zoom at the cursor so the
+    // year under the pointer stays fixed while the visible range shrinks/expands around it.
+    svg.on('wheel', (ev) => {
+      const [, my] = d3.pointer(ev, svg.node());
+      if (my > miniY - 4) return;          // hands off the mini overview
+      ev.preventDefault();
+      const mx = d3.pointer(ev, svg.node())[0];
+      const cur = x.invert(mx);
+      const dom = x.domain();
+      // Smaller per-tick factor (1.12 / 0.89) feels nicer with rAF interpolation than the
+      // previous chunky 1.18 / 0.85 — the animation smooths the rest.
+      const factor = ev.deltaY > 0 ? 1.12 : 0.89;
+      let lo = cur - (cur - dom[0]) * factor;
+      let hi = cur + (dom[1] - cur) * factor;
+      lo = Math.max(lo, xFull.domain()[0]);
+      hi = Math.min(hi, xFull.domain()[1]);
+      if (hi - lo < 50) return;
+      smoothZoomTo(lo, hi, 200);
+    });
+
+    // DRAG TO PAN — listen on SVG, skip drag start when on an event circle or in mini
+    let panAnchor = null;
+    svg.call(d3.drag()
+      .filter((ev) => {
+        if (ev.button) return false;                                  // left mouse only
+        if (ev.target && ev.target.closest('g.tl-event')) return false;
+        if (ev.target && ev.target.closest('.tl-brush'))   return false;
+        const [, my] = d3.pointer(ev, svg.node());
+        if (my > miniY - 4) return false;
+        return true;
+      })
+      .on('start', (ev) => { panAnchor = { mx: ev.x, dom: x.domain() }; svg.style('cursor', 'grabbing'); })
+      .on('drag', (ev) => {
+        if (!panAnchor) return;
+        const pxPerUnit = (W - margin.left - margin.right) / (panAnchor.dom[1] - panAnchor.dom[0]);
+        const dxUnits = (ev.x - panAnchor.mx) / pxPerUnit;
+        let lo = panAnchor.dom[0] - dxUnits;
+        let hi = panAnchor.dom[1] - dxUnits;
+        const fullD = xFull.domain();
+        if (lo < fullD[0]) { hi += (fullD[0] - lo); lo = fullD[0]; }
+        if (hi > fullD[1]) { lo -= (hi - fullD[1]); hi = fullD[1]; }
+        x = d3.scaleLinear().domain([lo, hi]).range([margin.left, W - margin.right]);
+        miniBrushG.call(brush.move, [xFull(lo), xFull(hi)]);
+      })
+      .on('end', () => { panAnchor = null; svg.style('cursor', 'grab'); }));
+    svg.style('cursor', 'grab');
+
+    document.getElementById('btn-tl-reset').onclick = () => {
+      // Smooth back to full range. 320ms is slightly longer than wheel-zoom to communicate
+      // that this is a larger, intentional jump back to "all data."
+      const fullD = xFull.domain();
+      smoothZoomTo(fullD[0], fullD[1], 320);
+    };
+    document.getElementById('btn-tl-fit').onclick = () => {
+      // dates are REAL years — convert through the compressor for the smooth-zoom target
+      const lo = compressor.compress(Math.min(...dates) - 50);
+      const hi = compressor.compress(Math.max(...dates) + 50);
+      smoothZoomTo(lo, hi, 320);
+    };
+
+    // ===== Bottom zoom-preset toolbar — quick-jump to common temporal scales =====
+    // User request: "quicktoggle zoom to scale to 100 year, 50 year, 10 year, 500 year".
+    // Each preset zooms to a window of that real-year width, centered on the current
+    // viewport midpoint (in real-year space, NOT compressed-year space — so a "100yr"
+    // window always shows 100 years of actual history regardless of where you are).
+    // The presets give a defined target zoom-tier the renderer can lean on for label
+    // density (see the tier-aware label-fade logic in drawEvents).
+    const presetsEl = document.createElement('div');
+    presetsEl.className = 'tl-zoom-presets';
+    presetsEl.innerHTML = `
+      <span class="lbl">scale</span>
+      <button data-yr="10">10y</button>
+      <button data-yr="50">50y</button>
+      <button data-yr="100">100y</button>
+      <button data-yr="200">200y</button>
+      <button data-yr="500">500y</button>
+      <button data-yr="1000">1000y</button>
+      <button data-yr="2000">2000y</button>
+      <button data-yr="all">all</button>
+      <span class="sep"></span>
+      <span class="lbl">go to</span>
+      <input type="text" class="yr-input" placeholder="-44 / 622 / 1517"
+             title="Type a year (negative for BCE, positive for CE) and press Enter. Centers that year in view, preserves current zoom width." />
+    `;
+    document.getElementById('canvas').appendChild(presetsEl);
+    function applyPreset(yr) {
+      const fullD = xFull.domain();
+      if (yr === 'all') { smoothZoomTo(fullD[0], fullD[1], 380); return; }
+      // Find the real-year midpoint of the current view, then build a target window of
+      // ±yr/2 real years around it. Convert to compressed-space for the scale domain.
+      const dom = x.domain();
+      const cMid = (dom[0] + dom[1]) / 2;
+      const realMid = compressor.decompress(cMid);
+      const yrNum = +yr;
+      let realLo = realMid - yrNum / 2;
+      let realHi = realMid + yrNum / 2;
+      // Clamp to the real-year range available.
+      if (realLo < realMin) { realHi += (realMin - realLo); realLo = realMin; }
+      if (realHi > realMax) { realLo -= (realHi - realMax); realHi = realMax; }
+      const lo = compressor.compress(realLo);
+      const hi = compressor.compress(realHi);
+      smoothZoomTo(lo, hi, 380);
+    }
+    // Year-input: type a year (e.g. -44 for 44 BCE, 622 for the Hegira, 1517 for Luther),
+    // press Enter. The view re-centers on that year while preserving current zoom width.
+    function goToYear(yearStr) {
+      const yr = parseInt(String(yearStr).replace(/[^-0-9]/g, ''), 10);
+      if (!isFinite(yr)) return;
+      const dom = x.domain();
+      const widthCompressed = dom[1] - dom[0];   // preserve zoom width in compressed space
+      const cTarget = compressor.compress(Math.max(realMin, Math.min(realMax, yr)));
+      let lo = cTarget - widthCompressed / 2;
+      let hi = cTarget + widthCompressed / 2;
+      const fullD = xFull.domain();
+      if (lo < fullD[0]) { hi += (fullD[0] - lo); lo = fullD[0]; }
+      if (hi > fullD[1]) { lo -= (hi - fullD[1]); hi = fullD[1]; }
+      smoothZoomTo(lo, hi, 320);
+    }
+    const yrInput = presetsEl.querySelector('.yr-input');
+    if (yrInput) {
+      yrInput.addEventListener('keydown', (ev) => {
+        if (ev.key === 'Enter') { ev.preventDefault(); goToYear(ev.target.value); }
+        // Prevent the global keyboard shortcuts (e.g. [ for nav-collapse) from firing
+        // when the user is typing in this field.
+        ev.stopPropagation();
+      });
+    }
+    presetsEl.querySelectorAll('button').forEach(b => {
+      b.onclick = () => {
+        applyPreset(b.dataset.yr);
+        presetsEl.querySelectorAll('button').forEach(o => o.classList.toggle('active', o === b));
+      };
+    });
+
+    // ===== Zoom meter wiring (timeline-specific) =====
+    // The timeline doesn't use an SVG transform — it remaps the x-domain. The meter shows
+    // currentK (full_range / visible_range). +/- buttons zoom in/out around the midpoint.
+    // The 100% button restores the full-data view.
+    function zmTimelineReadout() {
+      const ro = document.getElementById('zm-readout');
+      if (ro) ro.textContent = currentK.toFixed(2) + '×';
+      const baseline = document.getElementById('zm-reset');
+      if (baseline) baseline.style.color = Math.abs(currentK - 1) < 0.02 ? 'var(--gold)' : 'var(--gold-soft)';
+    }
+    function zmTimelineStep(factor) {
+      const dom = x.domain();
+      const mid = (dom[0] + dom[1]) / 2;
+      let lo = mid - (mid - dom[0]) * factor;
+      let hi = mid + (dom[1] - mid) * factor;
+      const fullD = xFull.domain();
+      lo = Math.max(lo, fullD[0]);
+      hi = Math.min(hi, fullD[1]);
+      if (hi - lo < 50) return;
+      // Smooth animate — matches the wheel-zoom feel.
+      smoothZoomTo(lo, hi, 240);
+    }
+    const zmIn = document.getElementById('zm-in');
+    const zmOut = document.getElementById('zm-out');
+    const zmBase = document.getElementById('zm-reset');
+    if (zmIn)   zmIn.onclick   = () => zmTimelineStep(1 / 1.4);   // narrow the visible range → zoom in
+    if (zmOut)  zmOut.onclick  = () => zmTimelineStep(1.4);
+    if (zmBase) zmBase.onclick = () => {
+      // 100% button — smooth animate back to full range.
+      const fullD = xFull.domain();
+      smoothZoomTo(fullD[0], fullD[1], 320);
+    };
+    zmTimelineReadout();
+    // Update readout on every brush/wheel-driven redraw.
+    const _origRedraw = redraw;
+    redraw = function() { _origRedraw.apply(this, arguments); zmTimelineReadout(); };
+
+    redraw();
+  }
+};
+
+// ============================================================
+// SCRIPTURE — one holy corpus per dropdown selection; book-islands (hulls)
+// laid out as Pantheon-style wedges around the canvas, sections (Pentateuch,
+// Prophets, Gospels, …) grouped together; inside each hull, the named
+// entities — deities, persons, events — that appear in / authored that
+// book. The same entity duplicated across multiple book-islands draws a
+// faint trail-curve between its instances (visible on entity hover).
+// User-stated priority: clarity + hygiene + small clean typography.
+// ============================================================
+
+// Corpus registry. Bible is fully wired; other holy-corpus entries are
+// placeholders that surface in the dropdown with a "(coming soon)" tag.
+// SECTIONS are listed roughly in canonical / compositional time-order so
+// the ring reads clockwise as the canon's evolution. Each book id maps to
+// a document node already present in the vault.
+const SCRIPTURE_CORPORA = {
+  'bible': {
+    label: 'Holy Bible (Christian canons)',
+    available: true,
+    sections: [
+      { id: 'pentateuch-sources', label: 'Pentateuch · source-critical strata', color: '#9aa55a', books: [
+        { id: 'phase-2-005-hebrew-bible-j-source',    label: 'J · Yahwist source' },
+        { id: 'phase-2-007-hebrew-bible-e-source',    label: 'E · Elohist source' },
+        { id: 'phase-2-011-hebrew-bible-d-source',    label: 'D · Deuteronomist' },
+        { id: 'phase-2-018-hebrew-bible-p-source',    label: 'P · Priestly source' },
+      ]},
+      { id: 'former-prophets', label: 'Former Prophets · Deuteronomistic History', color: '#8aa07a', books: [
+        { id: 'phase-2-010-hebrew-bible-early-prophets', label: 'Former Prophets' },
+        { id: 'phase-2-019-deuteronomistic-history',     label: 'Deuteronomistic History' },
+      ]},
+      { id: 'latter-prophets', label: 'Latter Prophets · Exilic poetry', color: '#7a9580', books: [
+        { id: 'phase-3-001-second-third-isaiah', label: 'Second & Third Isaiah' },
+        { id: 'phase-2-020-lamentations',        label: 'Lamentations' },
+      ]},
+      { id: 'wisdom-writings', label: 'Wisdom & later writings', color: '#c4a05a', books: [
+        { id: 'phase-3-007-sirach',            label: 'Sirach (Ben Sira)' },
+        { id: 'phase-3-008-book-of-daniel',    label: 'Daniel' },
+        { id: 'phase-3-012-wisdom-of-solomon', label: 'Wisdom of Solomon' },
+        { id: 'phase-3-019-4-maccabees',       label: '4 Maccabees' },
+      ]},
+      { id: 'apocrypha-pseudepigrapha', label: 'Apocrypha & pseudepigrapha', color: '#a08850', books: [
+        { id: 'phase-3-004-1-enoch',           label: '1 Enoch' },
+        { id: 'phase-3-009-jubilees',          label: 'Jubilees' },
+        { id: 'phase-3-010-sibylline-oracles', label: 'Sibylline Oracles' },
+        { id: 'phase-3-011-dead-sea-scrolls',  label: 'Dead Sea Scrolls' },
+      ]},
+      { id: 'canonical-translations', label: 'Canonical translations & recensions', color: '#a8a3b8', books: [
+        { id: 'phase-3-006-septuagint',                 label: 'Septuagint (LXX)' },
+        { id: 'phase-4-080-garima-gospels',             label: 'Garima Gospels (Geʿez)' },
+        { id: 'phase-4-081-mashafa-henok-geez-1-enoch', label: 'Mashafa Henok (Geʿez 1 Enoch)' },
+        { id: 'phase-4-082-ethiopic-biblical-canon',    label: 'Ethiopic 81-book canon' },
+      ]},
+      { id: 'pre-gospel', label: 'Pre-Gospel sources', color: '#d06868', books: [
+        { id: 'phase-3-014-q-source', label: 'Q source' },
+      ]},
+      { id: 'gospels', label: 'Gospels & harmony', color: '#c44a5a', books: [
+        { id: 'phase-3-016-gospel-of-mark',    label: 'Mark' },
+        { id: 'phase-3-017-gospel-of-matthew', label: 'Matthew' },
+        { id: 'phase-3-018-luke-acts',         label: 'Luke–Acts' },
+        { id: 'phase-3-020-gospel-of-john',    label: 'John' },
+        { id: 'phase-4-037-diatessaron',       label: 'Diatessaron (harmony)' },
+      ]},
+      { id: 'pauline', label: 'Pauline corpus', color: '#a83e4a', books: [
+        { id: 'phase-3-015-pauline-epistles', label: 'Undisputed Paulines' },
+      ]},
+    ],
+  },
+  // Greco-Egyptian scripture-class corpora (wired by opus-hellenic-2).
+  // The Egyptian funerary corpus is the longest-running sacred-textual tradition
+  // in human history (~2400 BCE – 400 CE). Homer + Hesiod were functionally
+  // scripture for the Greek world — Plato Rep. X 606e calls Homer "the educator
+  // of the Hellenes." The Hermetica corpus is wired separately below
+  // (by opus-scripture-2 / opus-hermetic-1) with a richer NHC-VI + Coptic +
+  // Stobaean + Armenian + Alchemical structure.
+  'egyptian-scripture': {
+    label: 'Egyptian sacred-textual tradition (2400 BCE → 400 CE)',
+    available: true,
+    sections: [
+      { id: 'egyptian-old-kingdom', label: 'Old Kingdom · royal funerary corpus', color: '#c89a3a', books: [
+        { id: 'phase-1-002-pyramid-texts', label: 'Pyramid Texts' },
+      ]},
+      { id: 'egyptian-middle-kingdom', label: 'Middle Kingdom · democratized afterlife', color: '#9a7240', books: [
+        { id: 'phase-1-009-coffin-texts', label: 'Coffin Texts' },
+      ]},
+      { id: 'egyptian-new-kingdom', label: 'New Kingdom · Book of the Dead + Amarna', color: '#6e8a5a', books: [
+        { id: 'phase-1-010-book-of-the-dead',     label: 'Book of the Dead' },
+        { id: 'phase-1-011-great-hymn-to-aten',   label: 'Great Hymn to Aten' },
+        { id: 'phase-1-012-amarna-letters',       label: 'Amarna Letters' },
+      ]},
+      { id: 'egyptian-theological-cosmological', label: 'Theological-cosmological inscriptions', color: '#4a6a7a', books: [
+        { id: 'phase-1-027-memphite-theology-shabaka-stone', label: 'Memphite Theology (Shabaka Stone)' },
+      ]},
+      { id: 'egyptian-greek-transmission', label: 'Greek-Egyptian transmission (Ptolemaic-Roman)', color: '#80604a', books: [
+        { id: 'phase-3-025-manetho-aegyptiaca',           label: 'Manetho · Aegyptiaca' },
+        { id: 'phase-3-026-diodorus-bibliotheca-book-1',  label: 'Diodorus · Bibliotheca Bk 1' },
+        { id: 'phase-4-072-plutarch-de-iside-et-osiride', label: 'Plutarch · De Iside et Osiride' },
+        { id: 'phase-2-028-herodotus-histories-book-2',   label: 'Herodotus · Histories Bk 2' },
+      ]},
+    ],
+  },
+  'greek-scripture': {
+    label: 'Greek sacred-textual tradition (Homer → Orphic)',
+    available: true,
+    sections: [
+      { id: 'greek-pan-hellenic', label: 'Pan-Hellenic foundational (Homer + Hesiod)', color: '#b07a45', books: [
+        { id: 'phase-2-008-homeric-epics',                  label: 'Homer · Iliad + Odyssey' },
+        { id: 'phase-2-009-hesiod-theogony-works-and-days', label: 'Hesiod · Theogony + Works' },
+      ]},
+      { id: 'greek-orphic-mystery', label: 'Orphic-mystery revealed corpus', color: '#6a8a9c', books: [
+        { id: 'phase-3-027-derveni-papyrus', label: 'Derveni Papyrus' },
+        { id: 'phase-3-028-orphic-hymns',    label: 'Orphic Hymns' },
+      ]},
+      { id: 'greek-philosophical-theology', label: 'Philosophical theology (Plato-Aristotle)', color: '#5a7a8c', books: [
+        { id: 'phase-3-002-plato-dialogues',                label: 'Plato · Dialogues' },
+        { id: 'phase-3-022-plato-timaeus-critias-atlantis', label: 'Plato · Timaeus + Critias' },
+        { id: 'phase-3-003-aristotle-metaphysics',          label: 'Aristotle · Metaphysics' },
+      ]},
+      { id: 'greek-ethnographic-theological', label: 'Ethnographic-theological (Greek-Egyptian)', color: '#4f6d80', books: [
+        { id: 'phase-2-028-herodotus-histories-book-2', label: 'Herodotus · Histories Bk 2 (Egypt)' },
+      ]},
+    ],
+  },
+  // Placeholders — surface in the dropdown, render an empty-state card when picked.
+  'tanakh':         { label: 'Tanakh · Hebrew Bible (separate canon view)',  available: false },
+  // ----- Qurʾān corpus (wired by opus-scripture-2 — single-island starter) -----
+  // The entire Qurʾān as one document until split by sura into Meccan / Medinan groups
+  // by a future agent. Cross-tradition payoff (Moses / Abraham / Mary / Jesus / Joseph
+  // / Solomon trail-arcs into the Bible canvas) is real even with a single hull, since
+  // the Qurʾān document's edges into those entity nodes are already in the vault.
+  'quran': {
+    label: 'Qurʾān',
+    available: true,
+    sections: [
+      { id: 'quran-canonical', label: 'Qurʾān · canonical text', color: '#5a7a5a', books: [
+        { id: 'phase-4-034-quran',                             label: 'Qurʾān (entire codex)' },
+      ]},
+    ],
+  },
+  'vedas':          { label: 'Vedic corpus (Ṛg-Veda → Upaniṣads)',           available: false },
+  // ----- Buddhist canon (wired by opus-buddhist-1) -----
+  // Spans Theravāda Pali + Mahāyāna sūtras + Madhyamaka + Chan/Zen + Vajrayāna in
+  // compositional/canonical-reception order so the ring reads clockwise as the canon's
+  // evolution from the Buddha's lifetime (~-450) through Tibetan terma (~+1326).
+  // Cross-corpus trail-arcs visible on hover: Siddhartha Gautama Buddha across nearly
+  // every Buddhist document; Avalokiteśvara across Heart + Lotus + Sukhāvatī; Mañjuśrī
+  // + Samantabhadra across Lotus + Avatamsaka; Subhūti across Asthasāhasrikā + Diamond;
+  // Śāriputra across Heart + Asthasāhasrikā; Nāgārjuna across MMK + Heart. Aśokan
+  // Edicts and Milindapañha give the Greco-Buddhist contact-zone hull. Vault `key-figures`
+  // and `deities-mentioned` arrays drive entity placement automatically.
+  'tipitaka': {
+    label: 'Buddhist canon (Pāli Tipiṭaka + Mahāyāna sūtras + Vajrayāna)',
+    available: true,
+    sections: [
+      { id: 'buddhist-pali-earliest', label: 'Pāli earliest stratum (~-450 to -250)', color: '#c89a3a', books: [
+        { id: 'phase-2-016-early-buddhist-suttas', label: 'Sutta Nipāta · Aṭṭhakavagga + Pārāyanavagga' },
+        { id: 'phase-2-029-dhammapada',            label: 'Dhammapada' },
+      ]},
+      { id: 'buddhist-indo-greek', label: 'Indo-Greek frontier dialogue (~-150 to +100)', color: '#a07050', books: [
+        { id: 'phase-3-029-milindapanha',          label: 'Milindapañha · Questions of King Milinda' },
+      ]},
+      { id: 'buddhist-prajnaparamita', label: 'Prajñāpāramitā corpus (~-100 to +700)', color: '#b06850', books: [
+        { id: 'phase-3-031-asthasahasrika-prajnaparamita', label: 'Aṣṭasāhasrikā · earliest Mahāyāna sūtra' },
+        { id: 'phase-5-002b-diamond-sutra',                label: 'Diamond Sūtra (Vajracchedikā)' },
+        { id: 'phase-5-002-heart-sutra',                   label: 'Heart Sūtra' },
+      ]},
+      { id: 'buddhist-mahayana-cosmic', label: 'Mahāyāna sūtras · cosmic + devotional + idealist (~+100 to +400)', color: '#b05060', books: [
+        { id: 'phase-4-061-lotus-sutra',           label: 'Lotus Sūtra' },
+        { id: 'phase-4-062-avatamsaka-sutra',      label: 'Avataṃsaka (Flower-Ornament) Sūtra' },
+        { id: 'phase-4-064-sukhavativyuha-larger', label: 'Larger Sukhāvatī-vyūha (Pure Land)' },
+        { id: 'phase-4-063-lankavatara-sutra',     label: 'Laṅkāvatāra Sūtra' },
+      ]},
+      { id: 'buddhist-madhyamika', label: 'Mādhyamika philosophical (~+200)', color: '#5a7a90', books: [
+        { id: 'phase-4-075-mulamadhyamakakarika',  label: 'Mūlamadhyamakakārikā · Nāgārjuna' },
+      ]},
+      { id: 'buddhist-theravada-synthesis', label: 'Theravāda systematic synthesis (~+430)', color: '#8a6a40', books: [
+        { id: 'phase-4-076-visuddhimagga',         label: 'Visuddhimagga · Buddhaghosa' },
+      ]},
+      { id: 'buddhist-chan', label: 'East Asian Chan / Zen (~+780)', color: '#4a7060', books: [
+        { id: 'phase-5-004-platform-sutra-huineng', label: 'Platform Sūtra of Huineng' },
+      ]},
+      { id: 'buddhist-vajrayana', label: 'Tibetan Vajrayāna terma (~+1326)', color: '#6a4a80', books: [
+        { id: 'phase-5-029-bardo-thodol',          label: 'Bardo Thödol · Tibetan Book of the Dead' },
+      ]},
+    ],
+  },
+  'avesta':         { label: 'Avesta (Zoroastrian)',                         available: false },
+  'kojiki-nihongi': { label: 'Kojiki / Nihon Shoki (Shintō)',                available: false },
+  'guru-granth':    { label: 'Gurū Granth Sāhib (Sikh)',                     available: false },
+  'mormon':         { label: 'Book of Mormon',                               available: false },
+  'kebra-nagast': {
+    label: 'Kebra Nagast (Glory of the Kings — Ethiopian / Rastafari foundational)',
+    available: true,
+    sections: [
+      { id: 'kebra-nagast-core', label: 'Kebra Nagast · Solomonic-genealogical national epic (Geʼez redaction 1314–1322)', color: '#b89255', books: [
+        { id: 'phase-8-008-kebra-nagast', label: 'Kebra Nagast' },
+      ]},
+    ],
+  },
+  // Ethiopic Tewahedo broader canon — the full distinctively-Ethiopian scriptural-and-canonical world.
+  // Documents arranged in roughly compositional / canonical-reception sequence: Aksumite foundational →
+  // Second-Temple Jewish material canonical only in Ethiopia → Solomonic medieval theological →
+  // hagiographic-liturgical → national-religious-foundational → Jesuit-period hagiography.
+  // Entities populate each hull via existing vault `deities-mentioned` / `key-figures` /
+  // `mentioned-in` / `events-context` edges established by opus-ethiopian-1 and opus-ethiopian-2.
+  'ethiopic-tewahedo-canon': {
+    label: 'Ethiopic Tewahedo Broader Canon (the distinctive Ethiopian scriptural world)',
+    available: true,
+    sections: [
+      { id: 'ethiopic-aksumite-foundational', label: 'Aksumite foundational (4th–7th c.)', color: '#a08850', books: [
+        { id: 'phase-4-080-garima-gospels',             label: 'Garima Gospels (Geʼez illuminated, RC 330–660 CE)' },
+        { id: 'phase-4-082-ethiopic-biblical-canon',    label: 'Ethiopic 81-book canon (overview)' },
+      ]},
+      { id: 'ethiopic-second-temple-canonical', label: 'Second-Temple Jewish material canonical only in Ethiopia', color: '#9a6f3a', books: [
+        { id: 'phase-4-081-mashafa-henok-geez-1-enoch', label: 'Mashafa Henok (Geʼez 1 Enoch)' },
+        { id: 'phase-3-009-jubilees',                    label: 'Jubilees (Mashafa Kufale)' },
+        { id: 'phase-5-040-meqabyan-ethiopian-maccabees', label: 'Meqabyan I–III (uniquely Ethiopian)' },
+      ]},
+      { id: 'ethiopic-solomonic-medieval-theology', label: 'Solomonic-era theological systematization (14th–15th c.)', color: '#7a8590', books: [
+        { id: 'phase-5-036-mashafa-mistir-giyorgis',     label: 'Mashafa Mistir (Giyorgis of Sagla)' },
+        { id: 'phase-5-038-mashafa-berhan',              label: 'Mashafa Berhan (Zarʼa Yaʼqob)' },
+        { id: 'phase-5-037-fetha-nagast',                label: 'Fetha Nagast (Law of the Kings)' },
+      ]},
+      { id: 'ethiopic-hagiographic-liturgical', label: 'Hagiographic-liturgical', color: '#8a7a90', books: [
+        { id: 'phase-5-039-sinkessar-synaxarium',        label: 'Sinkessar (Ethiopian Synaxarium)' },
+      ]},
+      { id: 'ethiopic-national-religious', label: 'National-religious-foundational', color: '#b89255', books: [
+        { id: 'phase-8-008-kebra-nagast',                label: 'Kebra Nagast (Glory of the Kings)' },
+      ]},
+      { id: 'ethiopic-jesuit-period', label: 'Post-Jesuit hagiography (17th c.)', color: '#8a5a4a', books: [
+        { id: 'phase-7-040-walatta-petros-hagiography',  label: 'Gadla Walatta Petros (Galawdewos, 1672)' },
+      ]},
+    ],
+  },
+  'tao-corpus':     { label: 'Dao corpus (Daodejing → Zhuangzi)',            available: false },
+  // ----- Nag Hammadi corpus (wired by opus-scripture-2) -----
+  // Organized by codex (Codex I = Jung Codex; II/III/VI = densest; VIII/XI/XIII =
+  // Sethian Platonist registers; BG 8502 = Berlin Codex, related-but-not-NHC).
+  // Within each codex section, books are ordered by tractate number so the ring mirrors
+  // the physical bound order of the manuscript. Hermetic and Sethian and Thomasine and
+  // Valentinian texts share the same physical codices — the cross-codex trails of
+  // Sophia / Yaldabaoth / Norea / Mary Magdalene make this visible at a glance.
+  'nag-hammadi': {
+    label: 'Nag Hammadi codices (Coptic · 4th c.)',
+    available: true,
+    sections: [
+      { id: 'nhc-i-jung', label: 'Codex I · Jung Codex', color: '#a87a4a', books: [
+        { id: 'phase-4-003-gospel-of-truth',                   label: 'I,3 · Gospel of Truth' },
+        { id: 'phase-4-059-tripartite-tractate',               label: 'I,5 · Tripartite Tractate' },
+      ]},
+      { id: 'nhc-ii', label: 'Codex II', color: '#b87850', books: [
+        { id: 'phase-4-002-apocryphon-of-john',                label: 'II,1 · Apocryphon of John' },
+        { id: 'phase-4-001-gospel-of-thomas',                  label: 'II,2 · Gospel of Thomas' },
+        { id: 'phase-4-004-gospel-of-philip',                  label: 'II,3 · Gospel of Philip' },
+        { id: 'phase-4-006-hypostasis-of-the-archons',         label: 'II,4 · Hypostasis of the Archons' },
+        { id: 'phase-4-007-on-the-origin-of-the-world',        label: 'II,5 · Origin of the World' },
+      ]},
+      { id: 'nhc-iii', label: 'Codex III', color: '#a86a48', books: [
+        { id: 'phase-4-010-sophia-of-jesus-christ',            label: 'III,4 · Sophia of Jesus Christ' },
+      ]},
+      { id: 'nhc-vi', label: 'Codex VI · Hermetic + Thunder cluster', color: '#9a8550', books: [
+        { id: 'phase-4-058-thunder-perfect-mind',              label: 'VI,2 · Thunder, Perfect Mind' },
+        { id: 'phase-4-013-discourse-on-the-eighth-and-ninth', label: 'VI,6 · Eighth & Ninth' },
+        { id: 'phase-4-078-prayer-of-thanksgiving-nhc-vi-7',   label: 'VI,7 · Prayer of Thanksgiving' },
+        { id: 'phase-4-079-coptic-asclepius-nhc-vi-8',         label: 'VI,8 · Coptic Asclepius' },
+      ]},
+      { id: 'nhc-viii', label: 'Codex VIII · Sethian Platonist', color: '#7a8a8a', books: [
+        { id: 'phase-4-056-zostrianos',                        label: 'VIII,1 · Zostrianos' },
+      ]},
+      { id: 'nhc-xi', label: 'Codex XI · Sethian Platonist', color: '#6a8a90', books: [
+        { id: 'phase-4-057-allogenes',                         label: 'XI,3 · Allogenes' },
+      ]},
+      { id: 'nhc-xiii', label: 'Codex XIII', color: '#7a7a90', books: [
+        { id: 'phase-4-008-trimorphic-protennoia',             label: 'XIII,1 · Trimorphic Protennoia' },
+      ]},
+      { id: 'bg-8502', label: 'BG 8502 · Berlin Codex (related)', color: '#a87aa0', books: [
+        { id: 'phase-4-005-gospel-of-mary',                    label: 'BG 8502,1 · Gospel of Mary' },
+      ]},
+    ],
+  },
+  // ----- Hermetica corpus (wired by opus-scripture-2 after opus-hermetic-1) -----
+  // Sections trace the Hermetic transmission spine clockwise: Greek Corpus (1st-3rd c.)
+  // → Coptic NHC VI cluster → Latin + Stobaean Greek + Armenian late-antique transmission
+  // → Alchemical Hermetica → Renaissance Latin (Ficino) → Modern Hermetic. Reading the
+  // ring clockwise reads the Hermetic literary history. Hermes Trismegistus, Tat,
+  // Asclepius, Poimandres make cross-book trail-arcs across the entire corpus on hover.
+  'hermetica': {
+    label: 'Corpus Hermeticum (philosophical + technical Hermetica)',
+    available: true,
+    sections: [
+      { id: 'hermetica-greek-corpus', label: 'Greek Corpus Hermeticum', color: '#b08a3a', books: [
+        { id: 'phase-3-021-hermetic-corpus-earliest',          label: 'Hermetica · earliest stratum (overview)' },
+        { id: 'phase-4-011-corpus-hermeticum-i',               label: 'CH I · Poimandres' },
+        { id: 'phase-4-075-corpus-hermeticum-xiii-rebirth',    label: 'CH XIII · Rebirth dialogue' },
+      ]},
+      { id: 'hermetica-coptic-nhc-vi', label: 'Coptic Hermetica · NHC VI cluster', color: '#a89060', books: [
+        { id: 'phase-4-013-discourse-on-the-eighth-and-ninth', label: 'NHC VI,6 · Eighth & Ninth' },
+        { id: 'phase-4-078-prayer-of-thanksgiving-nhc-vi-7',   label: 'NHC VI,7 · Prayer of Thanksgiving' },
+        { id: 'phase-4-079-coptic-asclepius-nhc-vi-8',         label: 'NHC VI,8 · Coptic Asclepius' },
+      ]},
+      { id: 'hermetica-late-antique-transmission', label: 'Latin · Stobaean Greek · Armenian', color: '#9a7a4a', books: [
+        { id: 'phase-4-012-asclepius',                            label: 'Latin Asclepius (Logos Teleios)' },
+        { id: 'phase-4-076-stobaean-hermetica-kore-kosmou',       label: 'Stobaean Hermetica (Kore Kosmou)' },
+        { id: 'phase-4-077-definitions-hermes-asclepius-armenian', label: 'Armenian Definitions (DH)' },
+      ]},
+      { id: 'hermetica-alchemical', label: 'Alchemical Hermetica', color: '#8c6a44', books: [
+        { id: 'phase-4-073-tabula-smaragdina',                 label: 'Tabula Smaragdina (Emerald Tablet)' },
+        { id: 'phase-4-074-zosimos-of-panopolis-corpus',       label: 'Zosimos of Panopolis corpus' },
+      ]},
+      { id: 'hermetica-renaissance-latin', label: 'Renaissance Latin recovery', color: '#c4a05a', books: [
+        { id: 'phase-6-001-ficino-pimander',                   label: 'Ficino · Pimander 1471' },
+      ]},
+      { id: 'hermetica-modern', label: 'Modern Hermetic reception', color: '#a89880', books: [
+        { id: 'phase-7-032-kybalion',                          label: 'The Kybalion (1908)' },
+      ]},
+    ],
+  },
+};
+
+// Edge types that bind a person/deity/event to a document for the Scripture view.
+// `attests` → deity mentioned in the doc (from doc's `deities-mentioned`).
+// `attested-in` → reverse direction: deity/person/event lists the doc in its own
+//                  `attested-in` array. The Egyptian corpus carries most of its
+//                  deity→doc links this way (Nephthys / Geb / Anubis all list
+//                  Pyramid Texts + Coffin Texts + Book of the Dead in their
+//                  `attested-in` rather than those docs listing them).
+// `context` → event in doc's context-set.
+// `key-figure` → doc's named author/redactor/protagonist/addressee.
+// `mentioned-in` → person whose YAML names the doc in its mentioned-in field.
+// `authored`, `attributed-author` → the doc's author / disputed author.
+const SCRIPTURE_BIND_TYPES = new Set([
+  'attests', 'attested-in', 'context', 'key-figure', 'mentioned-in', 'authored', 'attributed-author',
+]);
+
+// Vault-wide id-form mismatch shim: document nodes sometimes carry a YAML `id`
+// like "P2-005-hebrew-bible-j-source" while ~every other node references them
+// by file-stem form "phase-2-005-hebrew-bible-j-source". The dashboard's
+// dead-link tracker counts these as misses, but in this view we just need both
+// forms to resolve. Returns the actual NODES_BY_ID key if either form resolves;
+// returns null if neither does.
+function scriptureResolveBookId(rawId) {
+  if (NODES_BY_ID[rawId]) return rawId;
+  const m1 = rawId.match(/^phase-(\d+)-(.*)$/);
+  if (m1) {
+    const alt = `P${m1[1]}-${m1[2]}`;
+    if (NODES_BY_ID[alt]) return alt;
+  }
+  const m2 = rawId.match(/^P(\d+)-(.*)$/);
+  if (m2) {
+    const alt = `phase-${m2[1]}-${m2[2]}`;
+    if (NODES_BY_ID[alt]) return alt;
+  }
+  return null;
+}
+
+// Set of every id form pointing at the same document — used to match edges
+// regardless of which form the edge ended up using.
+function scriptureBookAliases(rawId) {
+  const out = new Set([rawId]);
+  const m1 = rawId.match(/^phase-(\d+)-(.*)$/);
+  if (m1) out.add(`P${m1[1]}-${m1[2]}`);
+  const m2 = rawId.match(/^P(\d+)-(.*)$/);
+  if (m2) out.add(`phase-${m2[1]}-${m2[2]}`);
+  return out;
+}
+
+// For a given book document, return the set of node ids that count as
+// "named entities appearing in that book" — deities, persons, events only.
+// Matches edges against ALL id-form aliases of the book.
+function scriptureEntitiesForBook(rawBookId) {
+  const aliases = scriptureBookAliases(rawBookId);
+  const out = new Set();
+  EDGES.forEach(e => {
+    if (!SCRIPTURE_BIND_TYPES.has(e.type)) return;
+    // Doc → entity
+    if (aliases.has(e.source)) {
+      const n = NODES_BY_ID[e.target];
+      if (n && (n.type === 'deity' || n.type === 'person' || n.type === 'event')) {
+        out.add(e.target);
+      }
+    }
+    // Entity → doc
+    if (aliases.has(e.target)) {
+      const n = NODES_BY_ID[e.source];
+      if (n && (n.type === 'deity' || n.type === 'person' || n.type === 'event')) {
+        out.add(e.source);
+      }
+    }
+  });
+  return out;
+}
+
+VIEWS.scripture = {
+  title: 'Scripture',
+  subtitle: 'pick a holy corpus · each book is its own island of named entities · cross-book trails on hover',
+  render() {
+    // ----- Currently-selected corpus key (state on STATE.scriptureCorpus) -----
+    if (!STATE.scriptureCorpus) STATE.scriptureCorpus = 'bible';
+    let corpusKey = STATE.scriptureCorpus;
+    if (!SCRIPTURE_CORPORA[corpusKey]) corpusKey = 'bible';
+    const corpus = SCRIPTURE_CORPORA[corpusKey];
+
+    // ----- Top-of-canvas corpus dropdown -----
+    const corpusOptions = Object.entries(SCRIPTURE_CORPORA).map(([key, c]) => {
+      const tag = c.available ? '' : '  (coming soon)';
+      const sel = key === corpusKey ? ' selected' : '';
+      return `<option value="${key}"${sel}>${c.label}${tag}</option>`;
+    }).join('');
+    // Short corpus labels for the narrow dropdown button. Full `corpus.label`
+    // remains the source-of-truth description shown when the dropdown is OPEN.
+    const SCRIPTURE_CORPUS_SHORT = {
+      'bible': 'Bible',
+      'egyptian-scripture': 'Egyptian',
+      'greek-scripture': 'Greek',
+      'tanakh': 'Tanakh',
+      'quran': 'Qurʾān',
+      'vedas': 'Vedas',
+      'tipitaka': 'Buddhist',
+      'avesta': 'Avesta',
+      'kojiki-nihongi': 'Kojiki',
+      'guru-granth': 'Gurū Granth',
+      'mormon': 'Mormon',
+      'kebra-nagast': 'Kebra Nagast',
+      'ethiopic-tewahedo-canon': 'Tewahedo',
+      'tao-corpus': 'Dao',
+      'nag-hammadi': 'Nag Hammadi',
+      'hermetica': 'Hermetica',
+    };
+    const shortLabelFor = (k, c) => SCRIPTURE_CORPUS_SHORT[k]
+      || (c && c.label ? c.label.split(/[(·—/]|\s—\s/)[0].trim().slice(0, 14) : k);
+
+    const currentShort = shortLabelFor(corpusKey, corpus);
+    // Build the dropdown popup rows. Available corpora first, then "coming soon" ones,
+    // each showing short label + full description so the user picks accurately.
+    const corpusEntries = Object.entries(SCRIPTURE_CORPORA);
+    const sortedKeys = corpusEntries
+      .map(([k, c]) => ({ k, c, available: !!c.available }))
+      .sort((a, b) => (b.available - a.available));
+    const popupRows = sortedKeys.map(({ k, c, available }) => `
+      <div class="scripture-corpus-option${k === corpusKey ? ' active' : ''}${available ? '' : ' soon'}" data-key="${k}">
+        <span class="sc-short">${shortLabelFor(k, c)}</span>
+        <span class="sc-desc">${c.label}${available ? '' : ' · coming soon'}</span>
+      </div>`).join('');
+
+    document.getElementById('view-controls').innerHTML = `
+      <div class="scripture-corpus-wrap">
+        <button class="scripture-corpus-btn" id="scripture-corpus-btn" title="Pick a holy corpus">
+          <span class="scb-name" id="scripture-corpus-btn-label">${currentShort}</span>
+          <span class="scb-caret">▾</span>
+        </button>
+        <div class="scripture-corpus-popup" id="scripture-corpus-popup">${popupRows}</div>
+      </div>
+      <button class="btn btn-mini" id="btn-scripture-labels">labels: all</button>
+      <button class="btn btn-mini" id="btn-scripture-trails">entity trails: on</button>
+      <button class="btn btn-mini" id="btn-scripture-recenter">recenter</button>
+      <button class="btn btn-mini scripture-lock-chip" id="btn-scripture-lock-clear" style="display:none">↺ clear lock <span class="lock-count" id="scripture-lock-count">0</span></button>
+    `;
+
+    // Wire the custom dropdown — button toggles popup; row click picks corpus; outside click closes.
+    const corpusBtn = document.getElementById('scripture-corpus-btn');
+    const corpusPopup = document.getElementById('scripture-corpus-popup');
+    const closeCorpusPopup = () => {
+      corpusBtn.classList.remove('open');
+      corpusPopup.classList.remove('open');
+    };
+    const openCorpusPopup = () => {
+      corpusBtn.classList.add('open');
+      corpusPopup.classList.add('open');
+    };
+    corpusBtn.onclick = (ev) => {
+      ev.stopPropagation();
+      if (corpusPopup.classList.contains('open')) closeCorpusPopup(); else openCorpusPopup();
+    };
+    corpusPopup.querySelectorAll('.scripture-corpus-option').forEach(row => {
+      row.addEventListener('click', (ev) => {
+        ev.stopPropagation();
+        const key = row.dataset.key;
+        STATE.scriptureCorpus = key;
+        closeCorpusPopup();
+        setView('scripture');
+      });
+    });
+    // One-shot outside-click + Esc close binding (only bind once per session).
+    if (!window._scriptureCorpusOutsideBound) {
+      window._scriptureCorpusOutsideBound = true;
+      document.addEventListener('click', (ev) => {
+        const popup = document.getElementById('scripture-corpus-popup');
+        if (!popup || !popup.classList.contains('open')) return;
+        const btn = document.getElementById('scripture-corpus-btn');
+        if (popup.contains(ev.target) || (btn && btn.contains(ev.target))) return;
+        popup.classList.remove('open');
+        if (btn) btn.classList.remove('open');
+      });
+      document.addEventListener('keydown', (ev) => {
+        if (ev.key !== 'Escape') return;
+        const popup = document.getElementById('scripture-corpus-popup');
+        if (popup && popup.classList.contains('open')) {
+          popup.classList.remove('open');
+          const btn = document.getElementById('scripture-corpus-btn');
+          if (btn) btn.classList.remove('open');
+        }
+      });
+    }
+
+    const W = svg.node().clientWidth, H = svg.node().clientHeight;
+    const cx = W / 2, cy = H / 2;
+
+    // Corpora that aren't wired up yet render an empty-state card and bail.
+    if (!corpus.available) {
+      const g = svg.append('g');
+      g.append('text').attr('class', 'scripture-empty')
+        .attr('x', cx).attr('y', cy - 14).attr('text-anchor', 'middle')
+        .text(corpus.label);
+      g.append('text').attr('class', 'scripture-empty sub')
+        .attr('x', cx).attr('y', cy + 14).attr('text-anchor', 'middle')
+        .text('corpus not yet wired up — pick Holy Bible to start');
+      return;
+    }
+
+    // ----- Compute the per-book entity sets -----
+    // For each book, we collect the (deity/person/event) ids that bind to it via
+    // the SCRIPTURE_BIND_TYPES edge set. An entity that appears in multiple books
+    // becomes multiple node *instances* (one per book), connected later by faint
+    // trail-curves.
+    const allBookIds = new Set();
+    corpus.sections.forEach(s => s.books.forEach(b => allBookIds.add(b.id)));
+
+    // entityId → array of bookIds it appears in (for trail edges).
+    const entityBookMap = new Map();
+    // Per book, sorted entity-id list (deterministic ordering).
+    const bookEntities = new Map();   // bookId → [{entityId, entityNode}]
+    let missingBookCount = 0;
+    corpus.sections.forEach(section => {
+      section.books.forEach(b => {
+        // Cache the resolved id so click + detail-panel selection target the real
+        // node regardless of which id-form it's stored under in data.js.
+        b.resolvedId = scriptureResolveBookId(b.id);
+        if (!b.resolvedId) { missingBookCount++; bookEntities.set(b.id, []); return; }
+        const ents = [...scriptureEntitiesForBook(b.id)]
+          .map(eid => ({ entityId: eid, entityNode: NODES_BY_ID[eid] }))
+          .filter(x => x.entityNode);
+        // Stable order: hub entities (high vault-degree) first so the eye finds
+        // famous figures quickly inside crowded hulls.
+        ents.sort((a, b) => (DEGREE.get(b.entityId) || 0) - (DEGREE.get(a.entityId) || 0));
+        bookEntities.set(b.id, ents);
+        ents.forEach(e => {
+          if (!entityBookMap.has(e.entityId)) entityBookMap.set(e.entityId, []);
+          entityBookMap.get(e.entityId).push(b.id);
+        });
+      });
+    });
+
+    // ----- Layout: book wedges grouped by section -----
+    // Pie-section hulls: each book occupies an annular sector from Rinner to Router
+    // bounded by the book's [a0, a1]. Entities are placed in a polar grid INSIDE
+    // the sector with enough padding from each boundary that they have room to grow.
+    const Router = Math.min(W, H) * 0.43;
+    const Rinner = Router * 0.20;
+    const bookOuterR = Router;              // book-label ring sits just outside
+    const sectionLabelR = Router + 56;     // section super-labels (outermost)
+
+    // Weight per book = sqrt(entity count + 1) so books w/ many entities get more arc,
+    // but a book w/ 0 entities still occupies a tiny slice.
+    const SECTION_GAP = 0.055;             // ~3.2° gap between sections
+    const BOOK_GAP    = 0.018;             // ~1.0° gap between books inside a section
+    const allBooks = corpus.sections.flatMap(s => s.books.map(b => ({ ...b, sectionId: s.id, sectionColor: s.color })));
+    const bookWeights = allBooks.map(b => Math.sqrt((bookEntities.get(b.id) || []).length + 1));
+    const totalWeight = d3.sum(bookWeights);
+    const numSections = corpus.sections.length;
+    const numInterBookGaps = allBooks.length - numSections;
+    const totalGap = SECTION_GAP * numSections + BOOK_GAP * Math.max(0, numInterBookGaps);
+    const arcBudget = (2 * Math.PI) - totalGap;
+
+    // Cursor starts at 12 o'clock and rotates clockwise.
+    let cursor = -Math.PI;   // -π is 12 o'clock in our polarXY convention; rotate clockwise from there
+    // Actually with polarXY(angle, r) = [r*sin(angle), -r*cos(angle)]:
+    //   angle=0     → (0, -r)  = TOP (12 o'clock)
+    //   angle=π/2   → (r, 0)   = RIGHT (3 o'clock)
+    // So cursor should start at 0 to begin at 12 o'clock and increment clockwise.
+    cursor = 0;
+
+    const bookLayout = {};   // bookId → { a0, a1, center, sectionId, sectionColor, label, members }
+    const sectionRanges = {}; // sectionId → { a0, a1, label, color }
+
+    corpus.sections.forEach(section => {
+      const sStart = cursor;
+      section.books.forEach((b, i) => {
+        const w = Math.sqrt((bookEntities.get(b.id) || []).length + 1);
+        const arc = (w / totalWeight) * arcBudget;
+        bookLayout[b.id] = {
+          a0: cursor,
+          a1: cursor + arc,
+          center: cursor + arc / 2,
+          sectionId: section.id,
+          sectionColor: section.color,
+          label: b.label,
+        };
+        cursor += arc;
+        if (i < section.books.length - 1) cursor += BOOK_GAP;
+      });
+      sectionRanges[section.id] = { a0: sStart, a1: cursor, label: section.label, color: section.color };
+      cursor += SECTION_GAP;
+    });
+
+    // ----- SVG root + zoom -----
+    const g = svg.append('g');
+    const zoom = d3.zoom().scaleExtent([0.4, 4]).on('zoom', ev => {
+      g.attr('transform', ev.transform);
+      const ro = document.getElementById('zm-readout');
+      if (ro) ro.textContent = ev.transform.k.toFixed(2) + '×';
+      updateLOD(ev.transform.k);
+    });
+    svg.call(zoom);
+    const _zmIn = document.getElementById('zm-in');
+    const _zmOut = document.getElementById('zm-out');
+    const _zmBase = document.getElementById('zm-reset');
+    if (_zmIn)   _zmIn.onclick   = () => svg.transition().duration(220).call(zoom.scaleBy, 1.4);
+    if (_zmOut)  _zmOut.onclick  = () => svg.transition().duration(220).call(zoom.scaleBy, 1 / 1.4);
+    if (_zmBase) _zmBase.onclick = () => svg.transition().duration(380).call(zoom.transform, d3.zoomIdentity);
+
+    const hullLayer     = g.append('g').attr('class', 'scripture-hull-layer');
+    const sectionLayer  = g.append('g').attr('class', 'scripture-section-layer');
+    const trailLayer    = g.append('g').attr('class', 'scripture-trail-layer');
+    const lockEdgeLayer = g.append('g').attr('class', 'scripture-lock-edge-layer');
+    const nodeLayer     = g.append('g').attr('class', 'scripture-node-layer');
+    const labelLayer    = g.append('g').attr('class', 'scripture-label-layer');
+
+    // ----- Section super-arcs + labels (outermost) -----
+    const sectionArc = d3.arc()
+      .innerRadius(Router + 28)
+      .outerRadius(Router + 29);
+    Object.entries(sectionRanges).forEach(([sid, s]) => {
+      sectionLayer.append('path').attr('class', 'scripture-section-arc')
+        .attr('d', sectionArc({ startAngle: s.a0, endAngle: s.a1 }))
+        .attr('transform', `translate(${cx},${cy})`)
+        .attr('stroke', s.color);
+
+      // Section label — placed at the section's center angle, rotated tangentially.
+      const cAng = (s.a0 + s.a1) / 2;
+      const [lx, ly] = polarXY(cAng, sectionLabelR);
+      const x = cx + lx, y = cy + ly;
+      // Smart text-anchor + dy mirroring Documents view's family-label code.
+      const dx = Math.sin(cAng);
+      const dy = -Math.cos(cAng);
+      const anchor = dx > 0.35 ? 'start' : dx < -0.35 ? 'end' : 'middle';
+      const baseline = dy < -0.55 ? '0em' : dy > 0.55 ? '0.85em' : '0.35em';
+      sectionLayer.append('text').attr('class', 'scripture-section-label')
+        .attr('x', x).attr('y', y)
+        .attr('text-anchor', anchor).attr('dy', baseline)
+        .text(s.label);
+    });
+
+    // ----- Book labels (per-book, on outer ring) -----
+    const bookLabelSel = labelLayer.selectAll('text.scripture-book-label')
+      .data(allBooks, b => b.id).enter().append('text')
+      .attr('class', 'scripture-book-label')
+      .attr('text-anchor', b => {
+        const a = bookLayout[b.id].center;
+        const dx = Math.sin(a);
+        if (dx >  0.35) return 'start';
+        if (dx < -0.35) return 'end';
+        return 'middle';
+      })
+      .attr('dy', b => {
+        const a = bookLayout[b.id].center;
+        const dy = -Math.cos(a);
+        if (dy < -0.55) return '0em';
+        if (dy >  0.55) return '0.85em';
+        return '0.35em';
+      })
+      .attr('x', b => {
+        const a = bookLayout[b.id].center;
+        const [lx] = polarXY(a, bookOuterR + 18);
+        return cx + lx;
+      })
+      .attr('y', b => {
+        const a = bookLayout[b.id].center;
+        const [, ly] = polarXY(a, bookOuterR + 18);
+        return cy + ly;
+      })
+      .text(b => b.label);
+
+    // ----- Build node instances: one instance per (book, entity), distributed in a
+    // polar grid INSIDE the book's pie sector so the entities fill the wedge instead
+    // of clumping at a single radius. Force sim then just refines spacing + handles
+    // hover. The grid aspect is matched to the wedge aspect so a tall-thin wedge gets
+    // few-cols / many-rows and a fat wedge gets many-cols / few-rows.
+    const allInstances = [];
+    const RAD_PAD = 16;    // px of clearance from the inner / outer radial walls
+    const ANG_PAD = 0.014; // rad of clearance from the angular walls of each wedge
+    allBooks.forEach(b => {
+      const ents = bookEntities.get(b.id) || [];
+      const layout = bookLayout[b.id];
+      const N = ents.length;
+      if (N === 0) return;
+
+      const r0 = Rinner + RAD_PAD;
+      const r1 = Router - RAD_PAD;
+      const a0 = layout.a0 + ANG_PAD;
+      const a1 = layout.a1 - ANG_PAD;
+      const rSpan = Math.max(12, r1 - r0);
+      const aSpan = Math.max(0.012, a1 - a0);
+      // Mean tangential arc-length at the radial midpoint, used to size the grid.
+      const tangSpan = ((r0 + r1) / 2) * aSpan;
+      const aspect = tangSpan / rSpan;
+      // Pick cols/rows so each cell is roughly square in angular-radial terms.
+      const cols = Math.max(1, Math.min(N, Math.round(Math.sqrt(N * aspect))));
+      const rows = Math.ceil(N / cols);
+
+      ents.forEach((e, i) => {
+        const row = Math.floor(i / cols);
+        const col = i % cols;
+        // Use cell centers so each entity sits in the middle of its grid slot.
+        const colT = (col + 0.5) / cols;
+        const rowT = (row + 0.5) / rows;
+        const ang = a0 + aSpan * colT;
+        const r = r0 + rSpan * rowT;
+        const [bx, by] = polarXY(ang, r);
+        const anchorX = cx + bx, anchorY = cy + by;
+        allInstances.push({
+          id: `${b.id}::${e.entityId}`,
+          entityId: e.entityId,
+          bookId: b.id,
+          sectionId: layout.sectionId,
+          sectionColor: layout.sectionColor,
+          d: e.entityNode,
+          x: anchorX, y: anchorY,
+          anchorX, anchorY,
+        });
+      });
+    });
+
+    // Trails — only for entities present in ≥2 books.
+    const trailPairs = [];
+    entityBookMap.forEach((bookIds, entityId) => {
+      if (bookIds.length < 2) return;
+      // Connect consecutive books in canonical order (i.e., the section/book ring order),
+      // which gives a clean polyline rather than a hairball.
+      const orderedBookIds = bookIds.slice().sort((a, b) => bookLayout[a].center - bookLayout[b].center);
+      for (let i = 0; i < orderedBookIds.length - 1; i++) {
+        trailPairs.push({
+          entityId,
+          sourceInstanceId: `${orderedBookIds[i]}::${entityId}`,
+          targetInstanceId: `${orderedBookIds[i + 1]}::${entityId}`,
+        });
+      }
+    });
+    const instanceById = new Map(allInstances.map(inst => [inst.id, inst]));
+
+    // ----- Hub set (per entity) for label-LOD: top 12% by vault-degree across the corpus -----
+    const uniqueEntityIds = [...new Set(allInstances.map(i => i.entityId))];
+    const entityHubSet = new Set(
+      [...uniqueEntityIds]
+        .map(eid => ({ id: eid, deg: DEGREE.get(eid) || 0 }))
+        .sort((a, b) => b.deg - a.deg)
+        .slice(0, Math.max(1, Math.ceil(uniqueEntityIds.length * 0.12)))
+        .map(x => x.id)
+    );
+
+    // ----- Pie-section hulls: each book = one annular sector [Rinner..Router] × [a0..a1] -----
+    // This gives a visible Pantheon-style boundary that bounds its entities and leaves
+    // space for them to grow. Static path — no force-sim update needed.
+    const sectorArc = d3.arc()
+      .innerRadius(Rinner)
+      .outerRadius(Router)
+      .padAngle(0.0)
+      .cornerRadius(2);
+    const hullSel = hullLayer.selectAll('path.scripture-hull')
+      .data(allBooks, b => b.id).enter().append('path')
+      .attr('class', 'scripture-hull')
+      .attr('d', b => sectorArc({ startAngle: bookLayout[b.id].a0, endAngle: bookLayout[b.id].a1 }))
+      .attr('transform', `translate(${cx},${cy})`)
+      .attr('fill', b => bookLayout[b.id].sectionColor)
+      .attr('stroke', b => bookLayout[b.id].sectionColor)
+      .attr('data-book-id', b => b.id)
+      .on('mouseenter', function (ev, b) {
+        showTooltip(
+          `<div class="ttitle">${b.label}</div>
+           <div class="tmeta">${(bookEntities.get(b.id) || []).length} named entities · ${corpus.label}</div>`, ev);
+        d3.select(this).classed('active', true);
+      })
+      .on('mousemove', (ev) => tooltip.style('left', (ev.clientX + 14) + 'px').style('top', (ev.clientY + 14) + 'px'))
+      .on('mouseleave', function () {
+        hideTooltip();
+        d3.select(this).classed('active', false);
+      })
+      .on('click', function (ev, b) {
+        // Selecting the hull opens the underlying document node in the detail panel.
+        // stopPropagation so the SVG-background-click handler doesn't fire and
+        // clear the sticky lock — opening a book's detail should not destroy the
+        // user's investigation pinboard.
+        ev.stopPropagation();
+        if (b.resolvedId) selectNode(b.resolvedId, true);
+      });
+
+    // ----- Trail curves -----
+    const trailSel = trailLayer.selectAll('path.scripture-trail')
+      .data(trailPairs, t => t.entityId + '::' + t.sourceInstanceId + '::' + t.targetInstanceId)
+      .enter().append('path')
+      .attr('class', 'scripture-trail')
+      .attr('data-entity-id', t => t.entityId);
+
+    // ----- Node instances -----
+    const nodeSel = nodeLayer.selectAll('g.scripture-node-wrap')
+      .data(allInstances, n => n.id).enter().append('g')
+      .attr('class', 'scripture-node-wrap')
+      .on('mouseenter', function (ev, n) {
+        showTooltip(
+          `${tooltipThumb(n.d)}<div class="ttitle">${n.d.title}</div>
+           <div class="tmeta">${n.d.type} · ${bookLayout[n.bookId].label}</div>
+           ${(entityBookMap.get(n.entityId) || []).length > 1
+              ? `<div class="tmeta">appears in ${(entityBookMap.get(n.entityId) || []).length} books across this corpus</div>`
+              : ''}`, ev);
+        hoverEntityFocus(n.entityId);
+      })
+      .on('mousemove', (ev) => tooltip.style('left', (ev.clientX + 14) + 'px').style('top', (ev.clientY + 14) + 'px'))
+      .on('mouseleave', () => { hideTooltip(); clearHoverFocus(); })
+      .on('click', (ev, n) => {
+        // Pantheon-style sticky / additive selection: clicking a node locks its
+        // entity + its 1-hop vault-graph neighbors. Clicking another connected
+        // entity EXTENDS the lock; clicking an unrelated entity RESETS the lock.
+        // Click on empty SVG background clears the lock entirely. The locked
+        // set lights up all instances of each entity across all books, all
+        // trail-arcs between them, and the hulls that carry them — a persistent
+        // investigation pinboard you build by clicking.
+        ev.stopPropagation();
+        selectNode(n.entityId, true);
+        const nbrs = neighborsOf(n.entityId, 1);
+        if (!STATE.lockedSet) STATE.lockedSet = new Set();
+        const cur = STATE.lockedSet;
+        let touchesLock = false;
+        if (cur.size > 0) {
+          for (const id of nbrs) { if (cur.has(id)) { touchesLock = true; break; } }
+        }
+        if (cur.size === 0 || !touchesLock) {
+          STATE.lockedSet = new Set(nbrs);
+        } else {
+          nbrs.forEach(id => cur.add(id));
+        }
+        applyLock();
+      });
+
+    nodeSel.append('path').attr('class', 'scripture-node')
+      .attr('d', n => {
+        const r = 3.0 + Math.min(2.2, Math.sqrt(DEGREE.get(n.entityId) || 0) * 0.5);
+        // Scripture-specific shape override: persons render as an EQUAL-ASPECT 45°
+        // rotated square (visual diagonal = 2r, same bounding box as the deity circle)
+        // instead of d3.symbolDiamond which is a tall lozenge. This keeps the
+        // shape silhouettes deity-circle vs. person-diamond legibly distinct while
+        // making them read at the same visual size.
+        if (n.d.type === 'person') {
+          return `M 0,${-r} L ${r},0 L 0,${r} L ${-r},0 Z`;
+        }
+        return d3.symbol().type(shapeFor(n.d)).size(shapeSizeFor(n.d, r))();
+      })
+      .attr('fill', n => nodeColor(n.d));
+
+    const nodeLabelSel = nodeLayer.selectAll('g.scripture-node-wrap').append('text')
+      .attr('class', n => 'scripture-node-label' + (entityHubSet.has(n.entityId) ? ' hub' : ''))
+      .attr('dy', -7)
+      .text(n => n.d.title.length > 22 ? n.d.title.slice(0, 20) + '…' : n.d.title);
+
+    // ----- Force simulation -----
+    // The polar grid already separates entities by design; the sim now just adds
+    // tiny micro-separation when two grid cells are close enough that node + label
+    // would visually crowd. Strong anchor pull keeps entities at their cell.
+    const sim = d3.forceSimulation(allInstances)
+      .alphaDecay(0.06)
+      .force('x', d3.forceX(d => d.anchorX).strength(0.55))
+      .force('y', d3.forceY(d => d.anchorY).strength(0.55))
+      .force('charge', d3.forceManyBody().strength(-2).distanceMax(40))
+      .force('collide', d3.forceCollide().radius(d => 6 + Math.sqrt(DEGREE.get(d.entityId) || 0) * 0.4).iterations(1))
+      .on('tick', tick);
+
+    let lockEdgeSel = lockEdgeLayer.selectAll('path');   // populated by applyLock()
+
+    function tick() {
+      nodeSel.attr('transform', d => `translate(${d.x},${d.y})`);
+      trailSel.attr('d', t => {
+        const s = instanceById.get(t.sourceInstanceId);
+        const u = instanceById.get(t.targetInstanceId);
+        if (!s || !u) return null;
+        // Bezier curve bent toward the center — keeps long cross-canvas trails readable.
+        const mx = (s.x + u.x) / 2, my = (s.y + u.y) / 2;
+        const k = 0.32;
+        const cxp = mx + (cx - mx) * k, cyp = my + (cy - my) * k;
+        return `M ${s.x},${s.y} Q ${cxp},${cyp} ${u.x},${u.y}`;
+      });
+      // Within-wedge lock-edges follow live entity positions on every tick.
+      if (lockEdgeSel && !lockEdgeSel.empty()) {
+        lockEdgeSel.attr('d', d => `M ${d.s.x},${d.s.y} L ${d.t.x},${d.t.y}`);
+      }
+    }
+
+    // ----- LOD / hover-focus / control-button wiring -----
+    // Default to 'all' — with the new polar-grid layout entities are already
+    // distributed across the pie sector so showing every label by default
+    // reads cleanly. User can toggle to 'hub' or 'off' if a particular corpus
+    // gets too dense.
+    let labelMode = 'all';      // 'all' | 'hub' | 'off'
+    let trailsOn  = true;
+
+    function updateLOD(k) {
+      nodeLabelSel.style('opacity', d => {
+        if (labelMode === 'off') return 0;
+        if (labelMode === 'all') return 1;
+        if (k >= 1.6) return 1;
+        return entityHubSet.has(d.entityId) ? 1 : 0;
+      }).style('font-size', () => {
+        // Past 100% zoom, grow gently. Past 200%, lock so labels don't bloat.
+        const growth = 1 + 0.4 * Math.max(0, Math.min(1, (k - 1) / 2));
+        const eff = Math.max(1, k);
+        return (9.2 * growth / eff).toFixed(2) + 'px';
+      });
+      trailSel.style('display', trailsOn ? null : 'none');
+    }
+
+    function hoverEntityFocus(entityId) {
+      // While a sticky lock is active, hover should AUGMENT the lock (light up the
+      // hovered entity on top of the locked subgraph), not override it. The cleanest
+      // way is to compute the union and treat it as a transient lock-state for the
+      // hover. We use a separate set of CSS classes — the `hot` class stays for
+      // locked items; the hovered entity gets `hover-hot` and dimming is computed
+      // against (locked ∪ hovered).
+      const locked = STATE.lockedSet || new Set();
+      const transient = new Set(locked);
+      transient.add(entityId);
+      nodeSel.select('path.scripture-node')
+        .classed('hot', d => locked.has(d.entityId) || d.entityId === entityId)
+        .classed('dim', d => !transient.has(d.entityId));
+      nodeLabelSel
+        .classed('hot', d => locked.has(d.entityId) || d.entityId === entityId)
+        .classed('dim', d => !transient.has(d.entityId));
+      trailSel
+        .classed('hot', t => transient.has(t.entityId))
+        .classed('dim', t => !transient.has(t.entityId));
+      const carriers = new Set();
+      allInstances.forEach(i => { if (transient.has(i.entityId)) carriers.add(i.bookId); });
+      hullSel.classed('dim', b => !carriers.has(b.id));
+      bookLabelSel
+        .classed('active', b => carriers.has(b.id))
+        .classed('dim', b => !carriers.has(b.id));
+    }
+    function clearHoverFocus() {
+      // If a sticky lock is active, leaving hover should snap BACK to the lock
+      // state — not blank everything. If no lock, fully clear.
+      if (STATE.lockedSet && STATE.lockedSet.size > 0) {
+        applyLock();
+        return;
+      }
+      nodeSel.select('path.scripture-node').classed('hot', false).classed('dim', false);
+      nodeLabelSel.classed('hot', false).classed('dim', false);
+      trailSel.classed('hot', false).classed('dim', false);
+      hullSel.classed('dim', false);
+      bookLabelSel.classed('active', false).classed('dim', false);
+    }
+
+    // Sticky-lock highlighter (Pantheon parity). The lockedSet is entity-id keyed;
+    // every per-book INSTANCE of a locked entity lights up, every trail-arc whose
+    // entity is locked lights up, every hull carrying any locked entity is active.
+    // Plus: every VAULT EDGE between two locked entities is drawn as a within-wedge
+    // line wherever they share a book — so clicking Nephthys actually draws the
+    // visible line into Geb's instance in the same hull (and equally for Geb→Osiris,
+    // Geb→Isis, Geb→Set, etc., as the user extends the lock).
+    function applyLock() {
+      syncLockChip();
+      const locked = STATE.lockedSet || new Set();
+      if (locked.size === 0) {
+        nodeSel.select('path.scripture-node').classed('hot', false).classed('dim', false);
+        nodeLabelSel.classed('hot', false).classed('dim', false);
+        trailSel.classed('hot', false).classed('dim', false);
+        hullSel.classed('dim', false);
+        bookLabelSel.classed('active', false).classed('dim', false);
+        renderLockEdges([]);
+        return;
+      }
+      nodeSel.select('path.scripture-node')
+        .classed('hot', d => locked.has(d.entityId))
+        .classed('dim', d => !locked.has(d.entityId));
+      nodeLabelSel
+        .classed('hot', d => locked.has(d.entityId))
+        .classed('dim', d => !locked.has(d.entityId));
+      trailSel
+        .classed('hot', t => locked.has(t.entityId))
+        .classed('dim', t => !locked.has(t.entityId));
+      const carriers = new Set();
+      allInstances.forEach(i => { if (locked.has(i.entityId)) carriers.add(i.bookId); });
+      hullSel.classed('dim', b => !carriers.has(b.id));
+      bookLabelSel
+        .classed('active', b => carriers.has(b.id))
+        .classed('dim', b => !carriers.has(b.id));
+      renderLockEdges(computeLockEdges(locked));
+    }
+
+    // For every vault edge whose BOTH endpoints are locked entities AND both have
+    // instances in the same book, produce a within-wedge line spec
+    // {s: srcInstance, t: tgtInstance, type: edgeType}. Pairs are deduped (parent-of
+    // ↔ child-of round-trips fold to one line). Non-entity endpoints (documents,
+    // themes, traditions) are filtered out so the canvas stays readable — entity-
+    // to-entity edges are the meaningful ones for biographical investigation.
+    function computeLockEdges(locked) {
+      if (!locked || locked.size < 2) return [];
+      const ENT = new Set(['deity', 'person', 'event']);
+      // Index instances by entityId for fast pair-finding.
+      const byEntity = new Map();
+      allInstances.forEach(i => {
+        if (!byEntity.has(i.entityId)) byEntity.set(i.entityId, []);
+        byEntity.get(i.entityId).push(i);
+      });
+      const out = [];
+      const seen = new Set();
+      EDGES.forEach(e => {
+        if (e.source === e.target) return;
+        if (!locked.has(e.source) || !locked.has(e.target)) return;
+        const sN = NODES_BY_ID[e.source];
+        const tN = NODES_BY_ID[e.target];
+        if (!sN || !tN || !ENT.has(sN.type) || !ENT.has(tN.type)) return;
+        // Pair-dedupe (regardless of direction).
+        const pairKey = e.source < e.target
+          ? `${e.source}|${e.target}` : `${e.target}|${e.source}`;
+        if (seen.has(pairKey)) return;
+        seen.add(pairKey);
+        const sIns = byEntity.get(e.source) || [];
+        const tIns = byEntity.get(e.target) || [];
+        // Connect ALL within-book pairs (handles same-book multi-instance edge cases).
+        sIns.forEach(s => tIns.forEach(t => {
+          if (s.bookId === t.bookId) out.push({ s, t, type: e.type });
+        }));
+      });
+      return out;
+    }
+
+    function renderLockEdges(edges) {
+      const sel = lockEdgeLayer.selectAll('path.scripture-lock-edge').data(edges);
+      sel.exit().remove();
+      lockEdgeSel = sel.enter().append('path')
+        .attr('class', 'scripture-lock-edge')
+        .attr('fill', 'none')
+        .merge(sel)
+        .attr('stroke', d => (EDGE_STYLE[d.type] || EDGE_DEFAULT).c)
+        .attr('data-edge-type', d => d.type)
+        .attr('d', d => `M ${d.s.x},${d.s.y} L ${d.t.x},${d.t.y}`);
+    }
+
+    function syncLockChip() {
+      const chip = document.getElementById('btn-scripture-lock-clear');
+      const count = document.getElementById('scripture-lock-count');
+      if (!chip || !count) return;
+      // Show only the count of entity-ids in the lock that actually correspond
+      // to Scripture entity instances on this canvas — otherwise leaking-in lock
+      // items from Pantheon (e.g., deities with no Bible book) would inflate
+      // the chip count and confuse the user.
+      const locked = STATE.lockedSet || new Set();
+      const visibleEntityIds = new Set(allInstances.map(i => i.entityId));
+      let n = 0;
+      locked.forEach(id => { if (visibleEntityIds.has(id)) n++; });
+      chip.style.display = n > 0 ? '' : 'none';
+      count.textContent = n;
+    }
+
+    document.getElementById('btn-scripture-labels').onclick = (ev) => {
+      labelMode = labelMode === 'all' ? 'hub' : labelMode === 'hub' ? 'off' : 'all';
+      ev.target.textContent = 'labels: ' + labelMode;
+      updateLOD(1);
+    };
+    document.getElementById('btn-scripture-trails').onclick = (ev) => {
+      trailsOn = !trailsOn;
+      ev.target.textContent = 'entity trails: ' + (trailsOn ? 'on' : 'off');
+      ev.target.classList.toggle('active', trailsOn);
+      updateLOD(1);
+    };
+    document.getElementById('btn-scripture-recenter').onclick = () => {
+      svg.transition().duration(500).call(zoom.transform, d3.zoomIdentity);
+    };
+    document.getElementById('btn-scripture-lock-clear').onclick = () => {
+      STATE.lockedSet = new Set();
+      applyLock();
+    };
+
+    // Background click on the canvas (truly empty SVG area — not a node or hull)
+    // clears the sticky lock. Node click handlers stopPropagation so they don't
+    // hit this; the hull click handlers also stop propagation so the user can
+    // open a book's detail panel without losing their lock.
+    svg.on('click', (ev) => {
+      const tag = ev.target.tagName;
+      if (tag === 'svg' || ev.target === svg.node()) {
+        if (STATE.lockedSet && STATE.lockedSet.size > 0) {
+          STATE.lockedSet = new Set();
+          applyLock();
+        }
+      }
+    });
+
+    // ----- Legend (left side, mirroring Documents view) -----
+    legend.style('display', 'block').html(
+      `<div class="ltitle">Sections · ${corpus.label}</div>` +
+      corpus.sections.map(s =>
+        `<div class="lrow"><span class="lswatch" style="background:${s.color}"></span><span>${s.label}</span><span class="lcount">${s.books.length}</span></div>`
+      ).join('') +
+      (missingBookCount ? `<div class="lrow" style="opacity:0.6"><span>· ${missingBookCount} book(s) not yet in vault</span></div>` : '')
+    );
+
+    updateLOD(1);
+    // Restore any pre-existing sticky lock (preserves the investigation pinboard
+    // across view re-renders triggered by corpus-dropdown switches, label-toggle
+    // clicks, window resizes, etc.).
+    applyLock();
+  }
+};
+
+// ============================================================
+// ============================================================
+// ALCHEMY — empty canvas. User adds nodes by name; bridges between them appear
+// automatically as the shortest path in the edge graph (capped at 5 hops to stay readable).
+// User-picked nodes are draggable + deletable; bridge nodes are clickable but ephemeral.
+// ============================================================
+
+// BFS shortest path between two node IDs using the NEIGHBORS adjacency map.
+// Caps at maxHops to keep paths readable. Returns null if no path within the cap.
+function alchemyShortestPath(srcId, dstId, maxHops) {
+  if (srcId === dstId) return [srcId];
+  const visited = new Set([srcId]);
+  const parent = new Map();
+  let frontier = [srcId];
+  for (let depth = 0; depth < maxHops; depth++) {
+    const next = [];
+    for (const cur of frontier) {
+      const nbrs = NEIGHBORS.get(cur);
+      if (!nbrs) continue;
+      for (const n of nbrs) {
+        if (visited.has(n)) continue;
+        visited.add(n);
+        parent.set(n, cur);
+        if (n === dstId) {
+          const path = [dstId];
+          let p = parent.get(dstId);
+          while (p) { path.push(p); p = parent.get(p); }
+          return path.reverse();
+        }
+        next.push(n);
+      }
+    }
+    frontier = next;
+    if (!frontier.length) break;
+  }
+  return null;
+}
+
+VIEWS.alchemy = {
+  title: 'Alchemy',
+  subtitle: 'pick deities, persons, or themes · the shortest path between them appears as bridges',
+  render() {
+    const W = svg.node().clientWidth, H = svg.node().clientHeight;
+    const cx = W / 2, cy = H / 2;
+
+    // ---- Compute the displayed-node set: user picks + bridge path-nodes ----
+    const picks = (STATE.alchemyPicks || []).filter(id => NODES_BY_ID[id]);
+    STATE.alchemyPicks = picks;   // dedupe any orphaned ids
+
+    const displayed = new Map();        // id → {node, isPick}
+    picks.forEach(id => displayed.set(id, { node: NODES_BY_ID[id], isPick: true }));
+
+    // For every ordered pair of picks, compute shortest path (max 5 hops). Union the path nodes.
+    const bridgeEdges = [];   // {source, target, type}
+    if (picks.length >= 2) {
+      for (let i = 0; i < picks.length; i++) {
+        for (let j = i + 1; j < picks.length; j++) {
+          const path = alchemyShortestPath(picks[i], picks[j], 5);
+          if (!path) continue;
+          for (let k = 0; k < path.length; k++) {
+            const nid = path[k];
+            if (!displayed.has(nid)) displayed.set(nid, { node: NODES_BY_ID[nid], isPick: false });
+            if (k > 0) {
+              // Find the actual edge between path[k-1] and path[k] to grab its type.
+              const e = EDGES.find(ed =>
+                (ed.source === path[k - 1] && ed.target === path[k]) ||
+                (ed.target === path[k - 1] && ed.source === path[k])
+              );
+              bridgeEdges.push({ source: path[k - 1], target: path[k], type: e ? e.type : 'connection' });
+            }
+          }
+        }
+      }
+    }
+
+    const nodes = Array.from(displayed.values()).map(({ node, isPick }) => ({
+      id: node.id, d: node, isPick,
+      x: cx + (Math.random() - 0.5) * 40, y: cy + (Math.random() - 0.5) * 40,
+    }));
+    const nodeById = new Map(nodes.map(n => [n.id, n]));
+    const links = bridgeEdges
+      .filter(e => nodeById.has(e.source) && nodeById.has(e.target))
+      .map(e => ({ source: e.source, target: e.target, type: e.type }));
+
+    // ---- View-controls + toolbox + search palette ----
+    document.getElementById('view-controls').innerHTML = `
+      <span class="alch-count">${picks.length} picked · ${nodes.length - picks.length} bridge${nodes.length - picks.length === 1 ? '' : 's'}</span>
+      <button class="btn btn-mini" id="btn-alch-clear">clear</button>
+    `;
+    document.getElementById('btn-alch-clear').onclick = () => {
+      STATE.alchemyPicks = [];
+      setView('alchemy');
+    };
+
+    // Toolbox + palette injected into canvas as siblings of the SVG.
+    document.querySelectorAll('.alch-toolbox, .alch-palette').forEach(el => el.remove());
+    const canvas = document.getElementById('canvas');
+    const toolbox = document.createElement('div');
+    toolbox.className = 'alch-toolbox';
+    toolbox.innerHTML = `
+      <button class="alch-add-btn" id="alch-add" title="Add a node">＋ add node</button>
+      ${picks.length === 0 ? '<span class="alch-hint">pick any deity, person, or theme to start</span>' : ''}
+    `;
+    canvas.appendChild(toolbox);
+
+    const palette = document.createElement('div');
+    palette.className = 'alch-palette';
+    palette.style.display = 'none';
+    palette.innerHTML = `
+      <input type="text" id="alch-search" placeholder="type a name…" autocomplete="off" />
+      <div class="alch-results" id="alch-results"></div>
+      <div class="alch-hint-row">↑↓ navigate · ⏎ add · esc close</div>
+    `;
+    canvas.appendChild(palette);
+
+    const searchInput = palette.querySelector('#alch-search');
+    const resultsEl = palette.querySelector('#alch-results');
+    let activeIdx = 0;
+    let currentResults = [];
+
+    function renderResults(q) {
+      const query = (q || '').trim().toLowerCase();
+      if (!query) { resultsEl.innerHTML = '<div class="alch-empty">start typing…</div>'; currentResults = []; return; }
+      const matches = DATA.nodes
+        .filter(n => n.type === 'deity' || n.type === 'person' || n.type === 'theme' || n.type === 'document' || n.type === 'event')
+        .filter(n => !STATE.alchemyPicks.includes(n.id))
+        .filter(n => (n.title + ' ' + (n.aka || []).join(' ')).toLowerCase().includes(query))
+        .slice(0, 20);
+      currentResults = matches;
+      if (matches.length === 0) { resultsEl.innerHTML = '<div class="alch-empty">no match</div>'; return; }
+      activeIdx = 0;
+      resultsEl.innerHTML = matches.map((m, i) => `
+        <div class="alch-result${i === 0 ? ' active' : ''}" data-id="${m.id}">
+          <span class="alch-r-swatch" style="background:${m.family_color || m.tradition_color || '#7a8090'}"></span>
+          <span class="alch-r-title">${m.title}</span>
+          <span class="alch-r-meta">${m.type}${m.family ? ' · ' + m.family : ''}</span>
+        </div>
+      `).join('');
+    }
+
+    function openPalette() {
+      palette.style.display = '';
+      searchInput.value = '';
+      renderResults('');
+      setTimeout(() => searchInput.focus(), 30);
+    }
+    function closePalette() {
+      palette.style.display = 'none';
+      searchInput.blur();
+    }
+    function pickResult(id) {
+      if (!id) return;
+      STATE.alchemyPicks = (STATE.alchemyPicks || []).concat([id]);
+      closePalette();
+      setView('alchemy');   // re-render the canvas to show the new node + recomputed bridges
+    }
+
+    document.getElementById('alch-add').onclick = openPalette;
+    searchInput.addEventListener('input', e => renderResults(e.target.value));
+    searchInput.addEventListener('keydown', e => {
+      if (e.key === 'Escape') { closePalette(); return; }
+      if (!currentResults.length) return;
+      if (e.key === 'ArrowDown') {
+        activeIdx = Math.min(activeIdx + 1, currentResults.length - 1);
+        resultsEl.querySelectorAll('.alch-result').forEach((el, i) => el.classList.toggle('active', i === activeIdx));
+        e.preventDefault();
+      } else if (e.key === 'ArrowUp') {
+        activeIdx = Math.max(activeIdx - 1, 0);
+        resultsEl.querySelectorAll('.alch-result').forEach((el, i) => el.classList.toggle('active', i === activeIdx));
+        e.preventDefault();
+      } else if (e.key === 'Enter') {
+        if (currentResults[activeIdx]) pickResult(currentResults[activeIdx].id);
+        e.preventDefault();
+      }
+    });
+    resultsEl.addEventListener('click', e => {
+      const row = e.target.closest('.alch-result');
+      if (row) pickResult(row.dataset.id);
+    });
+    // Click outside the palette closes it. Bind only ONCE across all alchemy renders
+    // (module-level flag) so handlers don't accumulate.
+    if (!window._alchOutsideBound) {
+      window._alchOutsideBound = true;
+      document.addEventListener('click', (ev) => {
+        const p = document.querySelector('.alch-palette');
+        if (!p || p.style.display === 'none') return;
+        if (p.contains(ev.target)) return;
+        const addBtn = document.getElementById('alch-add');
+        if (addBtn && addBtn.contains(ev.target)) return;
+        p.style.display = 'none';
+      });
+    }
+
+    if (nodes.length === 0) return;   // empty canvas — toolbox prompt does the work
+
+    // ---- SVG render ----
+    const g = svg.append('g');
+    const zoom = d3.zoom().scaleExtent([0.4, 4]).on('zoom', ev => {
+      g.attr('transform', ev.transform);
+      const ro = document.getElementById('zm-readout');
+      if (ro) ro.textContent = ev.transform.k.toFixed(2) + '×';
+    });
+    svg.call(zoom);
+    // Zoom-meter wiring (Alchemy-specific) — overrides the previous view's handlers.
+    const _zmIn = document.getElementById('zm-in');
+    const _zmOut = document.getElementById('zm-out');
+    const _zmBase = document.getElementById('zm-reset');
+    const _zmReadout = document.getElementById('zm-readout');
+    if (_zmIn)   _zmIn.onclick   = () => svg.transition().duration(220).call(zoom.scaleBy, 1.4);
+    if (_zmOut)  _zmOut.onclick  = () => svg.transition().duration(220).call(zoom.scaleBy, 1 / 1.4);
+    if (_zmBase) _zmBase.onclick = () => svg.transition().duration(380).call(zoom.transform, d3.zoomIdentity);
+    if (_zmReadout) _zmReadout.textContent = '1.00×';
+
+    const linkLayer = g.append('g').attr('class', 'alch-link-layer');
+    const nodeLayer = g.append('g').attr('class', 'alch-node-layer');
+    const labelLayer = g.append('g').attr('class', 'alch-label-layer');
+
+    const linkSel = linkLayer.selectAll('line').data(links).enter().append('line')
+      .attr('class', 'alch-link')
+      .each(function (d) {
+        // Use the canonical EDGE_STYLE width/opacity. Type color goes on a CSS variable;
+        // .alch-link CSS uses quiet blue default + .hot reveals the type color.
+        const st = edgeStyle(d.type);
+        d3.select(this)
+          .style('--edge-type-color', st.c)
+          .attr('stroke-width', st.w)
+          .attr('stroke-opacity', st.op);
+      });
+
+    const linkLabelSel = linkLayer.selectAll('text.alch-link-label').data(links).enter().append('text')
+      .attr('class', 'alch-link-label')
+      .attr('text-anchor', 'middle')
+      .text(d => d.type);
+
+    const nodeSel = nodeLayer.selectAll('g.alch-node').data(nodes, n => n.id).enter().append('g')
+      .attr('class', n => 'alch-node' + (n.isPick ? ' pick' : ' bridge'))
+      .call(d3.drag()
+        .on('start', (ev, d) => { if (!ev.active) sim.alphaTarget(0.3).restart(); d.fx = d.x; d.fy = d.y; })
+        .on('drag',  (ev, d) => { d.fx = ev.x; d.fy = ev.y; })
+        .on('end',   (ev, d) => { if (!ev.active) sim.alphaTarget(0); /* keep fx/fy → manual lock */ }))
+      .on('click', (ev, n) => {
+        ev.stopPropagation();
+        if (ev.target && ev.target.classList.contains('alch-remove')) return;
+        selectNode(n.id);
+        document.body.classList.remove('detail-collapsed');
+      })
+      .on('mouseenter', (ev, n) => showTooltip(
+        `${tooltipThumb(n.d)}<div class="ttitle">${n.d.title}</div>
+         <div class="tmeta">${n.d.type}${n.d.family ? ' · ' + n.d.family : ''}${n.isPick ? ' · picked' : ' · bridge'}</div>`, ev))
+      .on('mousemove', ev => tooltip.style('left', (ev.clientX + 14) + 'px').style('top', (ev.clientY + 14) + 'px'))
+      .on('mouseleave', hideTooltip);
+
+    // Shape-per-type — deity = circle, person = diamond, event = star, etc. User-picked
+    // nodes are larger (radius 14) than bridge nodes (radius 7) so the eye reads them as primary.
+    nodeSel.append('path')
+      .attr('class', 'alch-circle')
+      .attr('d', n => shapePath(n.d, n.isPick ? 14 : 7))
+      .attr('fill', n => nodeColor(n.d))
+      .attr('stroke', n => n.isPick ? 'var(--gold)' : 'rgba(255,255,255,0.18)')
+      .attr('stroke-width', n => n.isPick ? 2 : 1);
+
+    // × badge on pick-nodes for removal.
+    const removeSel = nodeSel.filter(n => n.isPick).append('g').attr('class', 'alch-remove-wrap');
+    removeSel.append('circle')
+      .attr('class', 'alch-remove')
+      .attr('cx', 14).attr('cy', -14).attr('r', 7)
+      .attr('fill', 'var(--bg-2)').attr('stroke', 'var(--gold-soft)').attr('stroke-width', 1);
+    removeSel.append('text')
+      .attr('class', 'alch-remove')
+      .attr('x', 14).attr('y', -11)
+      .attr('text-anchor', 'middle')
+      .text('×');
+    removeSel.on('click', (ev, n) => {
+      ev.stopPropagation();
+      STATE.alchemyPicks = STATE.alchemyPicks.filter(id => id !== n.id);
+      setView('alchemy');
+    });
+
+    const labelSel = labelLayer.selectAll('text.alch-node-label').data(nodes, n => n.id).enter().append('text')
+      .attr('class', n => 'alch-node-label' + (n.isPick ? ' pick' : ' bridge'))
+      .attr('text-anchor', 'middle')
+      .attr('dy', n => -(n.isPick ? 22 : 14))
+      .text(n => n.d.title);
+
+    // ---- Force simulation ----
+    const sim = d3.forceSimulation(nodes)
+      .force('link', d3.forceLink(links).id(d => d.id).distance(120).strength(0.4))
+      .force('charge', d3.forceManyBody().strength(-340))
+      .force('center', d3.forceCenter(cx, cy))
+      .force('collide', d3.forceCollide().radius(n => n.isPick ? 36 : 24).iterations(2))
+      .on('tick', () => {
+        linkSel
+          .attr('x1', d => d.source.x).attr('y1', d => d.source.y)
+          .attr('x2', d => d.target.x).attr('y2', d => d.target.y);
+        linkLabelSel
+          .attr('x', d => (d.source.x + d.target.x) / 2)
+          .attr('y', d => (d.source.y + d.target.y) / 2);
+        nodeSel.attr('transform', n => `translate(${n.x},${n.y})`);
+        labelSel.attr('transform', n => `translate(${n.x},${n.y})`);
+      });
+  }
+};
+
+// ============================================================
+// AUTHORS — three distinct signals, kept separate so investigation rigor isn't lost.
+//   • authored          (texts-authored)        — defensible authorship
+//   • attributed-author (texts-attributed-to)   — tradition/disputed/pseudonymous
+//   • originated        (originator-of)         — concept/theme origination, not text authorship
+// Two modes: WORKS (texts-by-person, with attribution badges) and ORIGINATORS (concepts-by-person).
+// ============================================================
+VIEWS.authors = {
+  title: 'Authors',
+  subtitle: 'every named voice — what they wrote, what was attributed to them, what they originated',
+  render() {
+    // ----- Build the three signal maps -----
+    const worksByAuthor = new Map();          // pid → [{node, status: 'authored'|'attributed'}]
+    const conceptsByOriginator = new Map();   // pid → [theme/doc node]
+    EDGES.forEach(e => {
+      if (e.type !== 'authored' && e.type !== 'attributed-author' && e.type !== 'originated') return;
+      const src = NODES_BY_ID[e.source];
+      const tgt = NODES_BY_ID[e.target];
+      if (!src || src.type !== 'person' || !tgt) return;
+      if (e.type === 'originated') {
+        if (!conceptsByOriginator.has(src.id)) conceptsByOriginator.set(src.id, []);
+        conceptsByOriginator.get(src.id).push(tgt);
+        return;
+      }
+      if (!worksByAuthor.has(src.id)) worksByAuthor.set(src.id, []);
+      worksByAuthor.get(src.id).push({ node: tgt, status: e.type === 'authored' ? 'authored' : 'attributed' });
+    });
+    // Deduplicate: if a person both `authored` and was `attributed` the same work, prefer authored.
+    worksByAuthor.forEach((arr, pid) => {
+      const byId = new Map();
+      arr.forEach(w => {
+        const prev = byId.get(w.node.id);
+        if (!prev || (prev.status === 'attributed' && w.status === 'authored')) byId.set(w.node.id, w);
+      });
+      worksByAuthor.set(pid, Array.from(byId.values()));
+    });
+
+    // ----- Era bands -----
+    const ERAS = [
+      { id: 'p1', label: 'Phase 1 · Ancient Near East & Egypt', a: -10000, b: -1500 },
+      { id: 'p2', label: 'Phase 2 · Axial Age',                  a: -1500,  b: -500 },
+      { id: 'p3', label: 'Phase 3 · Hellenistic & 2nd Temple',   a: -500,   b: 100 },
+      { id: 'p4', label: 'Phase 4 · Late Antiquity',             a: 100,    b: 700 },
+      { id: 'p5', label: 'Phase 5 · Medieval',                   a: 700,    b: 1500 },
+      { id: 'p6', label: 'Phase 6 · Early Modern',               a: 1500,   b: 1800 },
+      { id: 'p7', label: 'Phase 7 · Modern',                     a: 1800,   b: 2100 },
+      { id: 'unk', label: 'Undated / Pseudepigraphic',           a: 99000,  b: 99999 },
+    ];
+    function eraOf(year) {
+      if (typeof year !== 'number') return ERAS[ERAS.length - 1];
+      for (const e of ERAS) if (year >= e.a && year < e.b) return e;
+      return ERAS[ERAS.length - 1];
+    }
+
+    // ----- View state -----
+    let mode = 'works';      // works | originators
+    let sortMode = 'date';   // date | name | works | degree
+
+    function collectRows() {
+      const src = (mode === 'works') ? worksByAuthor : conceptsByOriginator;
+      const rows = [];
+      src.forEach((items, pid) => {
+        const p = NODES_BY_ID[pid];
+        if (!p) return;
+        const dateKey = (typeof p.date_earliest === 'number') ? p.date_earliest : 99999;
+        rows.push({ p, items, dateKey, degree: DEGREE.get(p.id) || 0 });
+      });
+      return rows;
+    }
+    function applySort(rows) {
+      const cmp = {
+        date:   (a, b) => a.dateKey - b.dateKey || a.p.title.localeCompare(b.p.title),
+        name:   (a, b) => a.p.title.localeCompare(b.p.title),
+        works:  (a, b) => b.items.length - a.items.length || a.p.title.localeCompare(b.p.title),
+        degree: (a, b) => b.degree - a.degree || a.p.title.localeCompare(b.p.title),
+      }[sortMode];
+      rows.sort(cmp);
+    }
+
+    const pane = document.createElement('div');
+    pane.className = 'list-pane authors-pane';
+    document.getElementById('canvas').appendChild(pane);
+
+    function render() {
+      const rows = collectRows();
+      applySort(rows);
+
+      const authoredCount   = EDGES.filter(e => e.type === 'authored').length;
+      const attributedCount = EDGES.filter(e => e.type === 'attributed-author').length;
+      const originatedCount = EDGES.filter(e => e.type === 'originated').length;
+
+      const headerCount = (mode === 'works')
+        ? `${rows.length} authors · ${authoredCount} authored · ${attributedCount} attributed`
+        : `${rows.length} originators · ${originatedCount} concepts originated`;
+
+      const toolbar = `<div class="authors-toolbar">
+        <span class="at-count">${headerCount}</span>
+        <span class="at-spacer"></span>
+        <span class="at-lbl">mode</span>
+        <button class="at-sort${mode === 'works' ? ' active' : ''}" data-mode="works">works</button>
+        <button class="at-sort${mode === 'originators' ? ' active' : ''}" data-mode="originators">originators</button>
+        <span class="at-divider">·</span>
+        <span class="at-lbl">sort</span>
+        ${['date','name','works','degree'].map(k =>
+          `<button class="at-sort${sortMode === k ? ' active' : ''}" data-sort="${k}">${k === 'works' && mode === 'originators' ? 'count' : k}</button>`
+        ).join('')}
+      </div>`;
+
+      function workSample(items) {
+        return items.slice(0, 4).map(w => {
+          if (mode === 'works') {
+            const badge = w.status === 'attributed' ? '<span class="at-attrib">attrib.</span> ' : '';
+            return `${badge}${w.node.title}`;
+          }
+          return w.title;
+        }).join(' · ');
+      }
+      function rowHTML(r) {
+        const p = r.p;
+        const dateLabel = (typeof p.date_earliest === 'number')
+          ? fmtDateRange(p.date_earliest, p.date_latest) || '—'
+          : '—';
+        const tradPill = p.tradition ? `<span class="row-trad">${p.tradition}</span>` : '';
+        const sample = workSample(r.items);
+        const overflow = r.items.length > 4 ? ` <span style="color:var(--text-3)">+${r.items.length - 4}</span>` : '';
+        const noun = mode === 'works'
+          ? `${r.items.length} work${r.items.length === 1 ? '' : 's'}`
+          : `${r.items.length} concept${r.items.length === 1 ? '' : 's'}`;
+        return `<div class="row" data-id="${p.id}">
+          <span class="swatch" style="background:${p.family_color || p.tradition_color || '#7a8090'}"></span>
+          <div>
+            <div class="row-title">${p.title}</div>
+            <div class="row-meta">${noun} · ${sample}${overflow}</div>
+          </div>
+          <div class="row-meta authors-date">${dateLabel}</div>
+          ${tradPill}
+          <div class="row-meta">→</div>
+        </div>`;
+      }
+
+      let body = '';
+      if (sortMode === 'date') {
+        const buckets = new Map();
+        ERAS.forEach(e => buckets.set(e.id, []));
+        rows.forEach(r => buckets.get(eraOf(r.dateKey).id).push(r));
+        body = ERAS.map(e => {
+          const list = buckets.get(e.id);
+          if (!list.length) return '';
+          return `<div class="authors-era">${e.label} <span class="at-era-count">· ${list.length}</span></div>
+                  ${list.map(rowHTML).join('')}`;
+        }).join('');
+      } else {
+        body = rows.map(rowHTML).join('');
+      }
+
+      const empty = mode === 'works'
+        ? 'No authored or attributed works yet.'
+        : 'No originator-of-concept claims wired yet. Add <code>originator-of: [[theme]]</code> to a person\'s YAML to populate this view (e.g. <code>plato.md → originator-of: [[demiurge]]</code>).';
+
+      pane.innerHTML = toolbar + (body || `<div style="color:var(--text-3); padding: 24px; font-style: italic;">${empty}</div>`);
+    }
+
+    pane.addEventListener('click', (ev) => {
+      const modeBtn = ev.target.closest('[data-mode]');
+      if (modeBtn) { mode = modeBtn.dataset.mode; render(); return; }
+      const sortBtn = ev.target.closest('[data-sort]');
+      if (sortBtn) { sortMode = sortBtn.dataset.sort; render(); return; }
+      const r = ev.target.closest('.row');
+      if (r && r.dataset.id) selectNode(r.dataset.id, true);
+    });
+    render();
+  }
+};
+
+// ============================================================
+// THEMES list, CONNECTIONS, TRADITIONS, ALL, ABOUT  — preserved
+// ============================================================
+VIEWS.themes = {
+  title: 'Themes (list)',
+  subtitle: 'recurring motifs across traditions',
+  render() {
+    const pane = document.createElement('div'); pane.className = 'list-pane';
+    const themes = DATA.nodes.filter(n => n.type === 'theme');
+    themes.sort((a, b) => a.title.localeCompare(b.title));
+    pane.innerHTML = themes.map(t => {
+      const inLinks = EDGES.filter(e => e.target === t.id).length;
+      return `<div class="row" data-id="${t.id}">
+        <span class="swatch" style="background:#6e8c6b"></span>
+        <div>
+          <div class="row-title">${t.title}</div>
+          <div class="row-meta">${t.category || ''} · ${inLinks} attestations</div>
+        </div>
+        <div class="row-trad">${t.status || ''}</div>
+        <div class="row-meta">→</div>
+      </div>`;
+    }).join('') || '<div style="color:var(--text-3); padding: 24px; font-style: italic;">No themes match the filter.</div>';
+    pane.addEventListener('click', (ev) => { const r = ev.target.closest('.row'); if (r && r.dataset.id) selectNode(r.dataset.id, true); });
+    document.getElementById('canvas').appendChild(pane);
+  }
+};
+
+VIEWS.edges = {
+  title: 'Connections',
+  subtitle: 'every claimed edge between nodes, by type',
+  render() {
+    const pane = document.createElement('div'); pane.className = 'list-pane';
+    const byType = {};
+    EDGES.forEach(e => { (byType[e.type] = byType[e.type] || []).push(e); });
+    const types = Object.keys(byType).sort();
+    pane.innerHTML = types.map(t => {
+      const st = edgeStyle(t);
+      return `
+      <div style="margin: 18px 0 6px; padding: 0 14px;
+        font-family: var(--mono); font-size: 11px; color: ${st.c};
+        letter-spacing: 0.12em; text-transform: uppercase; display: flex; align-items:center; gap:8px;">
+        <span style="display:inline-block;width:14px;height:2px;background:${st.c}"></span>
+        ${t} <span style="color:var(--text-3)">· ${byType[t].length}</span>
+      </div>
+      ${byType[t].slice(0, 150).map(e => {
+        const s = NODES_BY_ID[e.source], tg = NODES_BY_ID[e.target];
+        return `<div class="row" data-target-id="${e.target}">
+          <span class="swatch" style="background:${s.family_color || s.tradition_color || '#7a8090'}"></span>
+          <div>
+            <div class="row-title">${s.title} <span style="color:var(--text-3)">→</span> ${tg.title}</div>
+            <div class="row-meta">${s.family || s.type} → ${tg.family || tg.type}</div>
+          </div>
+          <div class="row-meta">${e.field || e.from || ''}</div>
+          <div class="row-meta">→</div>
+        </div>`;
+      }).join('')}
+    `;}).join('');
+    pane.addEventListener('click', (ev) => { const r = ev.target.closest('.row'); if (r && r.dataset.targetId) selectNode(r.dataset.targetId, true); });
+    document.getElementById('canvas').appendChild(pane);
+  }
+};
+
+VIEWS.traditions = {
+  title: 'Tradition families',
+  subtitle: 'roll-up by family · click to filter all views',
+  render() {
+    const pane = document.createElement('div'); pane.className = 'list-pane';
+    const map = {};
+    DATA.nodes.forEach(n => {
+      const f = n.family || 'Other';
+      if (!map[f]) map[f] = { deity: 0, document: 0, person: 0, theme: 0, event: 0, color: n.family_color };
+      map[f][n.type] = (map[f][n.type] || 0) + 1;
+    });
+    const ordered = (FAMILIES.length ? FAMILIES.map(f => f.name) : Object.keys(map)).filter(k => map[k]);
+    pane.innerHTML = ordered.map(f => {
+      const m = map[f];
+      const total = (m.deity||0)+(m.document||0)+(m.person||0)+(m.theme||0)+(m.event||0);
+      return `<div class="row" data-family="${f}">
+        <span class="swatch" style="background:${m.color || '#7a8090'}"></span>
+        <div>
+          <div class="row-title">${f}</div>
+          <div class="row-meta">${m.document||0} docs · ${m.deity||0} deities · ${m.person||0} persons · ${m.theme||0} themes${m.event ? ' · ' + m.event + ' events' : ''}</div>
+        </div>
+        <div class="row-meta">${total}</div>
+        <div class="row-meta">→</div>
+      </div>`;
+    }).join('');
+    pane.addEventListener('click', (ev) => {
+      const r = ev.target.closest('.row');
+      if (r && r.dataset.family) {
+        STATE.filter.family = r.dataset.family;
+        document.getElementById('filter-family').value = STATE.filter.family;
+        setView('pantheon');
+      }
+    });
+    document.getElementById('canvas').appendChild(pane);
+  }
+};
+
+VIEWS.all = {
+  title: 'All nodes',
+  subtitle: 'flat searchable index, date-sorted',
+  render() {
+    const pane = document.createElement('div'); pane.className = 'list-pane';
+    const nodes = DATA.nodes.filter(matchesFilter);
+    nodes.sort((a, b) => (a.date_earliest ?? 999999) - (b.date_earliest ?? 999999));
+    pane.innerHTML = nodes.map(n => `
+      <div class="row" data-id="${n.id}">
+        <span class="swatch" style="background:${n.family_color || n.tradition_color || '#7a8090'}"></span>
+        <div>
+          <div class="row-title">${n.title}</div>
+          <div class="row-meta">${n.type} · ${n.family || '—'} · ${fmtDateRange(n.date_earliest, n.date_latest) || '—'}</div>
+        </div>
+        <div class="row-trad">${n.status || ''}</div>
+        <div class="row-meta">→</div>
+      </div>
+    `).join('') || '<div style="color:var(--text-3); padding: 24px; font-style: italic;">Nothing matches the filter.</div>';
+    pane.addEventListener('click', (ev) => { const r = ev.target.closest('.row'); if (r && r.dataset.id) selectNode(r.dataset.id, true); });
+    document.getElementById('canvas').appendChild(pane);
+  }
+};
+
+VIEWS.about = {
+  title: 'About this atlas',
+  subtitle: 'posture, schema, sources',
+  render() {
+    const pane = document.createElement('div'); pane.className = 'about-pane';
+    pane.innerHTML = `
+      <h3>Posture</h3>
+      <p>This is an investigation, not a devotional library. Every primary document is treated as equal historical evidence regardless of canonical status. The label distinguishes form and reception, not value.</p>
+
+      <h3>Pantheon</h3>
+      <p>Deities are clustered by <strong>tradition family</strong> (a coarser grouping than the raw <code>tradition</code> field). Families are arranged around a ring in adjacency order so that historically related families sit next to each other — syncretic edges become short arcs rather than chords across the diagram. Each family fills an annular wedge with low-opacity color, sized by sqrt(member count). Family labels float just outside the ring, rotated tangentially.</p>
+
+      <h3>Documents map</h3>
+      <p>Polar coordinates: <strong>angle = family wedge</strong>, <strong>radius = chronology</strong>. Oldest texts cluster near the center, newest at the rim. Phase rings (P1 → P4) mark the period boundaries. Edges between documents (shared themes, mutual influence) curve gently toward the center.</p>
+
+      <h3>Edge palette</h3>
+      <ul>
+        <li><span style="color:#d4a55a">syncretic-identification</span> — gold</li>
+        <li><span style="color:#6e8c6b">parent-of / child-of</span> — sage</li>
+        <li><span style="color:#c47453">consort</span> — copper</li>
+        <li><span style="color:#c44a5a">polemic-against</span> — crimson</li>
+        <li><span style="color:#5aaca8">direct-quote / influenced-by</span> — teal</li>
+        <li><span style="color:#5a6cc4">shared-milieu</span> — indigo</li>
+        <li><span style="color:#7a8aa8">parallel-motif</span> — slate</li>
+        <li><span style="color:#4a5a7a">attests / has-theme</span> — faint slate (membership, not influence)</li>
+      </ul>
+
+      <h3>Source tiers</h3>
+      <p><strong>T1</strong> primary editions · <strong>T2</strong> peer-reviewed scholarship · <strong>T3</strong> reputable secondary · <strong>T4</strong> controversial / heterodox (never stand alone).</p>
+
+      <p style="margin-top: 32px; color: var(--text-3); font-style: italic; font-size: 12px;">
+        Generated: ${DATA.generated_at_utc || 'unknown'} · ${(DATA.nodes||[]).length} nodes · ${EDGES.length} edges
+      </p>
+    `;
+    document.getElementById('canvas').appendChild(pane);
+  }
+};
+
+// ============================================================
+// THEMES DROPDOWN
+// ============================================================
+function buildThemesDropdown() {
+  const themes = DATA.nodes.filter(n => n.type === 'theme');
+  // group by category
+  const byCat = {};
+  themes.forEach(t => {
+    const c = t.category || 'uncategorized';
+    if (!byCat[c]) byCat[c] = [];
+    byCat[c].push(t);
+  });
+  const catOrder = ['cosmogonic','eschatological','soteriological','theological','political-theological','anthropological','ritual','uncategorized'];
+  const orderedCats = catOrder.filter(c => byCat[c]).concat(Object.keys(byCat).filter(c => !catOrder.includes(c)));
+
+  // theme color: palette by category
+  const catColors = {
+    cosmogonic: '#5a6cc4', eschatological: '#c44a5a', soteriological: '#d4a55a',
+    theological: '#6b3a8a', 'political-theological': '#c47453', anthropological: '#5aaca8',
+    ritual: '#6e8c6b', uncategorized: '#7a8090',
+  };
+
+  const grid = document.getElementById('themes-grid');
+  grid.innerHTML = '';
+  orderedCats.forEach(cat => {
+    const head = document.createElement('div');
+    head.className = 'themes-cat';
+    head.textContent = cat;
+    grid.appendChild(head);
+    byCat[cat].sort((a,b) => a.title.localeCompare(b.title)).forEach(t => {
+      const count = EDGES.filter(e => e.target === t.id || e.source === t.id).length;
+      const card = document.createElement('div');
+      card.className = 'theme-card';
+      if (STATE.filter.theme === t.id) card.classList.add('active');
+      card.style.setProperty('--theme-color', catColors[cat] || '#d4a55a');
+      card.innerHTML = `
+        <div class="tc-swatch"></div>
+        <div class="tc-name">${t.title}</div>
+        <div class="tc-count">${count} attestations · ${cat}</div>
+      `;
+      card.onclick = () => {
+        STATE.filter.theme = (STATE.filter.theme === t.id) ? '' : t.id;
+        renderActiveTheme();
+        closeThemesMenu();
+        setView(STATE.view);
+      };
+      grid.appendChild(card);
+    });
+  });
+}
+
+function renderActiveTheme() {
+  const wrap = document.getElementById('active-theme-wrap');
+  const clearBtn = document.getElementById('themes-clear');
+  if (!STATE.filter.theme) {
+    wrap.style.display = 'none'; wrap.innerHTML = '';
+    if (clearBtn) clearBtn.style.display = 'none';
+    return;
+  }
+  const t = NODES_BY_ID[STATE.filter.theme];
+  if (!t) { wrap.style.display = 'none'; if (clearBtn) clearBtn.style.display = 'none'; return; }
+  wrap.style.display = 'flex';
+  wrap.innerHTML = `<span class="active-filter">theme: ${t.title} <span class="x">×</span></span>`;
+  wrap.querySelector('.x').onclick = () => {
+    STATE.filter.theme = '';
+    renderActiveTheme();
+    buildThemesDropdown();   // refresh drawer cards so the active highlight drops
+    setView(STATE.view);
+  };
+  if (clearBtn) clearBtn.style.display = '';
+}
+
+// Themes drawer "clear theme" button (header). Mirrors the footer chip's × but is reachable from inside the drawer.
+document.addEventListener('click', (ev) => {
+  if (ev.target && ev.target.id === 'themes-clear') {
+    STATE.filter.theme = '';
+    renderActiveTheme();
+    buildThemesDropdown();
+    setView(STATE.view);
+  }
+});
+
+function openThemesMenu() {
+  document.getElementById('themes-menu').classList.add('open');
+  document.getElementById('themes-button').classList.add('open');
+}
+function closeThemesMenu() {
+  document.getElementById('themes-menu').classList.remove('open');
+  document.getElementById('themes-button').classList.remove('open');
+}
+
+document.getElementById('themes-button').addEventListener('click', () => {
+  const menu = document.getElementById('themes-menu');
+  if (menu.classList.contains('open')) closeThemesMenu(); else openThemesMenu();
+});
+document.getElementById('themes-close').addEventListener('click', closeThemesMenu);
+document.addEventListener('keydown', (ev) => {
+  if (ev.key === 'Escape') closeThemesMenu();
+});
+
+// ============================================================
+// WIRING
+// ============================================================
+document.querySelectorAll('nav.side .item').forEach(el => {
+  el.addEventListener('click', () => setView(el.dataset.view));
+});
+
+['family', 'type'].forEach(k => {
+  document.getElementById('filter-' + k).addEventListener('change', e => {
+    STATE.filter[k] = e.target.value;
+    // Pantheon's family filter is visual — apply without a destructive re-render
+    if (STATE.view === 'pantheon' && k === 'family' && typeof window._pantheonApplyFamilyFilter === 'function') {
+      window._pantheonApplyFamilyFilter();
+    } else {
+      setView(STATE.view);
+    }
+  });
+});
+let searchTimer;
+document.getElementById('filter-search').addEventListener('input', e => {
+  clearTimeout(searchTimer);
+  searchTimer = setTimeout(() => { STATE.filter.search = e.target.value; setView(STATE.view); updateResetButton(); }, 220);
+});
+
+// Reset-all-filters button — clears family/type/search/theme in one click.
+function updateResetButton() {
+  const btn = document.getElementById('btn-reset-filters');
+  if (!btn) return;
+  const f = STATE.filter;
+  const active = !!(f.family || f.type || f.search || f.theme);
+  btn.classList.toggle('active', active);
+}
+document.getElementById('btn-reset-filters').addEventListener('click', () => {
+  STATE.filter = { family: '', type: '', theme: '', search: '' };
+  document.getElementById('filter-family').value = '';
+  document.getElementById('filter-type').value = '';
+  document.getElementById('filter-search').value = '';
+  renderActiveTheme();
+  updateResetButton();
+  setView(STATE.view);
+});
+// Also re-wire the existing family/type dropdown handlers so they call updateResetButton
+['family', 'type'].forEach(k => {
+  document.getElementById('filter-' + k).addEventListener('change', updateResetButton);
+});
+
+// Footer collapse toggle — pops the filter bar down, restores it via the floating ▾ chip.
+const _footerToggleEl = document.getElementById('footer-toggle');
+if (_footerToggleEl) _footerToggleEl.addEventListener('click', () => {
+  document.body.classList.toggle('footer-collapsed');
+});
+
+// Panel toggles: keep the view state intact (no setView re-render). The sidebar is now
+// a FIXED overlay — toggling it neither resizes nor re-layouts the canvas. The detail
+// panel is still in the grid (it owns its column).
+const _sideTabEl = document.getElementById('side-tab');
+if (_sideTabEl) _sideTabEl.addEventListener('click', () => {
+  document.body.classList.toggle('nav-collapsed');
+  _sideTabEl.textContent = document.body.classList.contains('nav-collapsed') ? '›' : '‹';
+});
+document.getElementById('detail-toggle').addEventListener('click', () => {
+  document.body.classList.toggle('detail-collapsed');
+  document.getElementById('detail-toggle').textContent = document.body.classList.contains('detail-collapsed') ? '‹' : '›';
+});
+
+// CLICK-EMPTY-TO-CLOSE — clicking the empty SVG canvas (not a node, not a legend row,
+// not a control) collapses the detail panel. Pairs with selectNode's auto-open behavior:
+// click a node → panel opens; click empty → panel closes. Single global handler, attached
+// once; setView's per-view `svg.on('click', null)` clears d3 handlers but not raw
+// addEventListener listeners, so this persists across all views.
+document.getElementById('svg').addEventListener('click', (ev) => {
+  // Bail if the click bubbled from anything clickable: a node-group, label, legend row,
+  // mode dropdown, button, etc. If `closest()` finds any of these ancestors, we treat the
+  // click as "on a thing" and let that thing's own handler manage state.
+  const tgt = ev.target;
+  if (tgt.closest && tgt.closest([
+    'g.node', 'g.tl-event', 'g.alch-node', 'g.scripture-node-wrap', 'g.tl-break',
+    '.node-circle', '.tl-event-shape', '.tl-event-dot', '.scripture-node',
+    '.legend', '.lrow', '.legend-burger',
+    '.zoom-meter', '.map-thumb', '.tl-zoom-presets',
+    '.btn', 'button', 'select', 'input', 'a',
+  ].join(','))) return;
+  // Empty canvas click. Close the detail panel if it's open.
+  if (!document.body.classList.contains('detail-collapsed')) {
+    document.body.classList.add('detail-collapsed');
+    const dt = document.getElementById('detail-toggle');
+    if (dt) dt.textContent = '‹';
+  }
+});
+
+document.addEventListener('keydown', (ev) => {
+  if (ev.target.tagName === 'INPUT') return;
+  if (ev.key === '[' && _sideTabEl) _sideTabEl.click();
+  if (ev.key === ']') document.getElementById('detail-toggle').click();
+});
+
+let resizeTimer;
+window.addEventListener('resize', () => {
+  clearTimeout(resizeTimer);
+  resizeTimer = setTimeout(() => setView(STATE.view), 200);
+});
+
+// ============================================================
+// STYLE PRESET SWITCHER (palette + typography bundled)
+// ============================================================
+const STYLES = ['codex', 'crypt', 'mystic', 'twilight', 'technical', 'parchment', 'vatican', 'nag-hammadi', 'passion', 'orthodox', 'atlantis', 'eye', 'hermes'];
+const STYLE_LABELS = {
+  'codex':       'Codex',
+  'crypt':       'Crypt',
+  'mystic':      'Mystic',
+  'twilight':    'Twilight',
+  'technical':   'Technical',
+  'parchment':   'Parchment',
+  'vatican':     'Vatican',
+  'nag-hammadi': 'Nag Hammadi',
+  'passion':     'Passion',
+  'orthodox':    'Orthodox',
+  'atlantis':    'Atlantis',
+  'eye':         'All-Seeing Eye',
+  'hermes':      'Hermes',
+};
+function applyStyle(name) {
+  if (!STYLES.includes(name)) name = 'codex';
+  STYLES.forEach(s => document.body.classList.remove('style-' + s));
+  // codex = default (no class); others add a body class
+  if (name !== 'codex') document.body.classList.add('style-' + name);
+  document.querySelectorAll('.style-option').forEach(el => {
+    el.classList.toggle('active', el.dataset.style === name);
+  });
+  const labelEl = document.getElementById('style-button-label');
+  if (labelEl) labelEl.textContent = STYLE_LABELS[name] || name;
+  try { localStorage.setItem('codex-style', name); } catch (e) {}
+}
+document.querySelectorAll('.style-option').forEach(el => {
+  el.addEventListener('click', () => {
+    applyStyle(el.dataset.style);
+    closeStyleMenu();
+  });
+});
+
+// Dropdown open/close
+const styleButton = document.getElementById('style-button');
+const styleMenu = document.getElementById('style-menu');
+function openStyleMenu()  { styleButton.classList.add('open');    styleMenu.classList.add('open'); }
+function closeStyleMenu() { styleButton.classList.remove('open'); styleMenu.classList.remove('open'); }
+function toggleStyleMenu() { styleMenu.classList.contains('open') ? closeStyleMenu() : openStyleMenu(); }
+if (styleButton) styleButton.addEventListener('click', (e) => { e.stopPropagation(); toggleStyleMenu(); });
+if (styleMenu)   styleMenu.addEventListener('click', (e) => e.stopPropagation());
+document.addEventListener('click', () => { if (styleMenu && styleMenu.classList.contains('open')) closeStyleMenu(); });
+document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeStyleMenu(); });
+
+// Initial: load saved style, with one-shot migration from the old two-key system.
+const savedStyle = (() => {
+  try {
+    const direct = localStorage.getItem('codex-style');
+    if (direct && STYLES.includes(direct)) return direct;
+    // Migrate from legacy gp-palette (eclipse/crypt/mystic/twilight)
+    const legacy = localStorage.getItem('gp-palette');
+    if (legacy === 'eclipse') return 'codex';
+    if (legacy && STYLES.includes(legacy)) return legacy;
+  } catch (e) {}
+  return null;
+})();
+applyStyle(savedStyle || 'codex');
+
+// SVG width-change observer — fixes the "timeline doesn't go all the way to the right
+// until window resize" bug. When entering Timeline (or any Map view) the detail panel
+// auto-collapses, but the CSS transition takes ~240ms to finish, during which clientWidth
+// is still the pre-collapse value. The ResizeObserver fires when the CSS transition
+// settles and triggers a re-render of the affected view. Debounced 220ms so transition
+// frames don't each trigger a re-render. Limited to views that read clientWidth at mount
+// (timeline is the most affected; others use d3 force layouts that adapt continuously).
+let _canvasResizeTimer = null;
+let _lastCanvasW = 0;
+const _canvasResizeObs = new ResizeObserver(() => {
+  clearTimeout(_canvasResizeTimer);
+  _canvasResizeTimer = setTimeout(() => {
+    const newW = svg.node().clientWidth;
+    if (Math.abs(newW - _lastCanvasW) < 30) return;     // ignore micro-jitters
+    _lastCanvasW = newW;
+    if (STATE.view === 'timeline') setView('timeline');
+  }, 220);
+});
+_canvasResizeObs.observe(document.getElementById('canvas'));
+
+// initial
+buildThemesDropdown();
+renderActiveTheme();
+updateResetButton();
+setView('pantheon');
+document.getElementById('footer-status').textContent =
+  `gen ${(DATA.generated_at_utc || '').slice(0, 10)} · build_data.py to refresh`;

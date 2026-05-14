@@ -1,0 +1,171 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Codex Atlas</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&family=EB+Garamond:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="src/styles/app.css" />
+</head>
+<body>
+
+<button class="side-tab" id="side-tab" title="Toggle sidebar (· press [ )">‹</button>
+
+<nav class="side">
+  <div class="brand-section">
+    <span class="glyph">✦</span>
+    <div class="brand-text">
+      <h1>Codex Atlas</h1>
+    </div>
+  </div>
+
+  <div class="nav-inner">
+    <div class="section-label"><span class="lbl">Maps</span></div>
+    <div class="item active" data-view="pantheon"><span class="sym">◯</span><span class="lbl">Pantheon</span></div>
+    <div class="item" data-view="timeline"><span class="sym">⎯</span><span class="lbl">Timeline</span></div>
+    <div class="item" data-view="documents"><span class="sym">▭</span><span class="lbl">Documents</span></div>
+    <div class="item" data-view="scripture"><span class="sym">✠</span><span class="lbl">Scripture</span></div>
+    <div class="item" data-view="alchemy"><span class="sym">⚗</span><span class="lbl">Alchemy</span></div>
+
+    <div class="section-label"><span class="lbl">Indexes</span></div>
+    <div class="item" data-view="authors"><span class="sym">✎</span><span class="lbl">Authors</span></div>
+    <div class="item" data-view="themes"><span class="sym">◇</span><span class="lbl">Themes list</span></div>
+    <div class="item" data-view="edges"><span class="sym">→</span><span class="lbl">Connections</span></div>
+    <div class="item" data-view="traditions"><span class="sym">∴</span><span class="lbl">Traditions</span></div>
+    <div class="item" data-view="all"><span class="sym">≡</span><span class="lbl">All nodes</span></div>
+
+    <div class="section-label"><span class="lbl">Project</span></div>
+    <div class="item" data-view="about"><span class="sym">✦</span><span class="lbl">About</span></div>
+  </div>
+
+  <div class="utility-section">
+    <button class="style-button" id="style-button" title="Visual style preset (palette + typography)">
+      <span class="swatch-dot" id="style-button-dot"></span>
+      <span id="style-button-label" class="util-lbl">Codex</span>
+      <span class="caret">▾</span>
+    </button>
+    <button class="themes-button" id="themes-button">
+      <span class="util-sym">◇</span><span class="util-lbl">Themes</span><span class="caret">▾</span>
+    </button>
+    <div class="stats" id="stats">
+      <span class="stat"><strong id="s-docs">0</strong>docs</span>
+      <span class="stat"><strong id="s-deities">0</strong>deities</span>
+      <span class="stat"><strong id="s-themes">0</strong>themes</span>
+      <span class="stat"><strong id="s-edges">0</strong>edges</span>
+    </div>
+  </div>
+</nav>
+
+<div class="style-menu" id="style-menu" role="listbox" aria-label="Visual style presets">
+  <div class="style-option" data-style="codex"       role="option"><span class="so-swatch"></span><span class="so-name">Codex</span><span class="so-tag">house</span></div>
+  <div class="style-option" data-style="crypt"       role="option"><span class="so-swatch"></span><span class="so-name">Crypt</span><span class="so-tag">occult</span></div>
+  <div class="style-option" data-style="mystic"      role="option"><span class="so-swatch"></span><span class="so-name">Mystic</span><span class="so-tag">esoteric</span></div>
+  <div class="style-option" data-style="twilight"    role="option"><span class="so-swatch"></span><span class="so-name">Twilight</span><span class="so-tag">modern</span></div>
+  <div class="style-option" data-style="technical"   role="option"><span class="so-swatch"></span><span class="so-name">Technical</span><span class="so-tag">plex</span></div>
+  <div class="style-option" data-style="parchment"   role="option"><span class="so-swatch"></span><span class="so-name">Parchment</span><span class="so-tag">light</span></div>
+  <div class="style-option" data-style="vatican"     role="option"><span class="so-swatch"></span><span class="so-name">Vatican</span><span class="so-tag">light</span></div>
+  <div class="style-option" data-style="nag-hammadi" role="option"><span class="so-swatch"></span><span class="so-name">Nag Hammadi</span><span class="so-tag">papyrus</span></div>
+  <div class="style-option" data-style="passion"     role="option"><span class="so-swatch"></span><span class="so-name">Passion</span><span class="so-tag">christ</span></div>
+  <div class="style-option" data-style="orthodox"    role="option"><span class="so-swatch"></span><span class="so-name">Orthodox</span><span class="so-tag">byzantine</span></div>
+  <div class="style-option" data-style="atlantis"    role="option"><span class="so-swatch"></span><span class="so-name">Atlantis</span><span class="so-tag">submerged</span></div>
+  <div class="style-option" data-style="eye"         role="option"><span class="so-swatch"></span><span class="so-name">All-Seeing Eye</span><span class="so-tag">masonic</span></div>
+  <div class="style-option" data-style="hermes"      role="option"><span class="so-swatch"></span><span class="so-name">Hermes</span><span class="so-tag">alchemy</span></div>
+</div>
+
+<div class="themes-menu" id="themes-menu">
+  <div class="tm-header">
+    <div>
+      <h3>Themes</h3>
+      <div class="tm-sub">the recurring motifs across every tradition — click one to filter all views</div>
+    </div>
+    <div class="tm-actions">
+      <button class="tm-clear" id="themes-clear" style="display:none">↺ clear theme</button>
+      <button class="tm-close" id="themes-close">close · esc</button>
+    </div>
+  </div>
+  <div class="themes-grid" id="themes-grid"></div>
+</div>
+
+<main class="canvas" id="canvas">
+  <div class="view-header">
+    <div>
+      <h2 id="view-title">Pantheon</h2>
+      <span class="subtitle" id="view-subtitle">every named deity · radial family wedges · hover to focus</span>
+    </div>
+    <div class="view-controls" id="view-controls"></div>
+  </div>
+  <svg id="svg"></svg>
+  <div class="legend" id="legend" style="display:none"></div>
+  <div class="map-thumb" id="map-thumb" style="display:none">
+    <svg viewBox="0 0 360 180" preserveAspectRatio="xMidYMid meet" id="map-thumb-svg">
+      <!-- Equirectangular world: lon ∈ [-180,180] maps x ∈ [0,360]; lat ∈ [-90,90] maps y ∈ [180,0] -->
+      <rect x="0" y="0" width="360" height="180" fill="rgba(13,17,25,0.55)"/>
+      <g id="map-thumb-paths" stroke="rgba(212,165,90,0.30)" stroke-width="0.5" fill="rgba(212,165,90,0.06)"></g>
+      <g id="map-thumb-marker"></g>
+    </svg>
+    <div class="map-thumb-label" id="map-thumb-label"></div>
+  </div>
+  <div class="tooltip" id="tooltip"></div>
+  <div class="zoom-meter" id="zoom-meter" style="display:none" title="Current zoom · click 1× to recenter">
+    <button class="zm-step" id="zm-out" aria-label="zoom out">−</button>
+    <button class="zm-baseline" id="zm-reset" title="recenter / reset to 100%">100%</button>
+    <button class="zm-step" id="zm-in" aria-label="zoom in">+</button>
+    <span class="zm-readout" id="zm-readout">1.00×</span>
+  </div>
+</main>
+
+<aside class="detail" id="detail">
+  <button class="detail-toggle" id="detail-toggle" title="Collapse detail">›</button>
+  <div class="detail-inner" id="detail-inner">
+    <div class="empty">Select a node to inspect.</div>
+  </div>
+</aside>
+
+<button class="footer-toggle" id="footer-toggle" title="Collapse / expand the filter bar" aria-label="Toggle filter bar">▾</button>
+
+<footer>
+  <div class="filter-group">
+    <label>family</label>
+    <select id="filter-family"><option value="">all</option></select>
+  </div>
+  <div class="filter-group">
+    <label>type</label>
+    <select id="filter-type">
+      <option value="">all</option>
+      <option value="document">documents</option>
+      <option value="deity">deities</option>
+      <option value="theme">themes</option>
+      <option value="person">persons</option>
+      <option value="event">events</option>
+      <option value="symbol">symbols</option>
+    </select>
+  </div>
+  <div class="filter-group">
+    <label>search</label>
+    <input type="text" id="filter-search" placeholder="title / id / theme..." style="width: 200px" />
+  </div>
+  <div class="filter-group" id="active-theme-wrap" style="display:none"></div>
+  <div class="filter-group">
+    <button id="btn-reset-filters" class="btn-reset" title="Clear all filters">↺ reset filters</button>
+  </div>
+  <div class="filter-group" style="margin-left:auto; color: var(--text-3)">
+    <span id="footer-status"></span>
+  </div>
+</footer>
+
+<div id="missing-data">
+  <h2>No data loaded</h2>
+  <p>Run the build script first:</p>
+  <code>cd "~/Desktop/Codex Atlas" && python3 build_data.py</code>
+  <p>Then refresh this page.</p>
+</div>
+
+<script src="data.js" onerror="document.getElementById('missing-data').style.display='flex'"></script>
+<script src="https://d3js.org/d3.v7.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+
+<script src="src/js/app.js"></script>
+</body>
+</html>

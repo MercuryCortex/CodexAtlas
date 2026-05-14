@@ -1,0 +1,20 @@
+# macOS metadata
+.DS_Store
+**/.DS_Store
+
+# Python bytecode
+__pycache__/
+*.pyc
+*.pyo
+
+# Auto-regenerable Wikipedia thumbnail cache (rebuilt by fetch_thumbnails.py)
+_assets/thumbs_cache.json
+
+# Pre-refactor backup of index.html (the Phase A monolith); keep only the new src/ layout
+index.html.bak
+
+# Editor / IDE noise
+.idea/
+.vscode/
+*.swp
+*~

@@ -1,0 +1,52 @@
+---
+type: deity
+id: "padmasambhava"
+name: "Padmasambhava (Guru Rinpoche)"
+aka: ["Padmasambhava", "Guru Rinpoche", "Lopön Rinpoche", "Lotus-Born"]
+tradition: "Vajrayāna Buddhism — Nyingma school"
+region: "Tibet, Bhutan, Nepal, Himalayan regions"
+period-active-earliest: 700
+period-active-latest: 2025
+domains: ["founder of Tibetan Buddhism (Nyingma tradition)", "second Buddha (Tibetan honorific)", "concealer of terma"]
+gender: "masculine"
+role: "deified-historical-person; revered as the founder of Tibetan Buddhism and as the principal source of the Nyingma school's revelation-tradition (terma)"
+attested-in: ["Tibetan biographical literature (the *Padma Kathang* cycle, ~12th–14th c., a hagiographic compilation)", "[[phase-5-029-bardo-thodol]] (attributed)", "[[phase-5-032-longchenpa-dzogchen]] (citing Padmasambhava as terma-source)"]
+equivalents: []
+syncretic-edges: []
+status: "stub"
+refs:
+  - title: "The Life and Liberation of Padmasambhava (Padma bKa'i Thang)"
+    author: "Douglas, Kenneth & Bays, Gwendolyn (trans.)"
+    year: 1978
+    publisher: "Dharma Publishing"
+    type: "primary-translation"
+    tier: 2
+    notes: "Hagiographic biography in two volumes"
+  - title: "Indo-Tibetan Buddhism"
+    author: "Snellgrove, David L."
+    year: 1987
+    publisher: "Shambhala"
+    type: "monograph"
+    tier: 1
+  - title: "The Nyingma School of Tibetan Buddhism: Its Fundamentals and History"
+    author: "Dudjom Rinpoche; Dorje, Gyurme & Kapstein, Matthew (trans.)"
+    year: 1991
+    publisher: "Wisdom"
+    type: "monograph"
+    tier: 1
+tags: [phase-5, buddhism, vajrayana, nyingma, padmasambhava, tibetan-buddhism-founder, terma]
+---
+
+# Padmasambhava (Guru Rinpoche)
+
+## Identity
+Padmasambhava — "the Lotus-Born" / Guru Rinpoche ("Precious Master") — is the founder of Tibetan Buddhism in the Nyingma tradition, revered as a second Buddha. The historical figure was an 8th-century Indian Tantric master invited to Tibet by King Trisong Detsen (r. 755–797) to consolidate Buddhism in Tibet and overcome obstacles (in the legendary account: to subdue indigenous Bön deities, who were converted into Buddhist protectors). Padmasambhava is the central figure of Nyingma terma-doctrine: he is said to have concealed scriptures throughout Tibet for later predestined revealers (*tertöns*) to discover — the [[phase-5-029-bardo-thodol]] and many other Nyingma scriptures are presented as Padmasambhava's hidden treasures. Iconographically: regal seated posture, holding a vajra (right hand) and a skull-cup (left hand), with a *khaṭvāṅga* staff resting on his shoulder; wearing the distinctive *lotus-hat*; consort Yeshe Tsogyal often present. Treated as both a historical figure and an ongoing transcendent presence — Nyingma practitioners enter into devotional and visionary contact with Padmasambhava through *Guru Yoga* practice. See also [[padmasambhava]] in 04_persons/ for the historical-person aspect.
+
+## Earliest attestation
+Historical: 8th c. Tibetan imperial records (the imperial chronicles, Dunhuang manuscripts). Hagiographic and deified: ~10th c. onward, with massive expansion in the *Padma Kathang* compilations of 12th–14th c.
+
+## Refs
+1. Douglas, K. & Bays, G. (1978). *The Life and Liberation of Padmasambhava*. Dharma Publishing.
+2. Snellgrove, D. (1987). *Indo-Tibetan Buddhism*. Shambhala.
+3. Dudjom Rinpoche (1991). *The Nyingma School*. Wisdom.
+4. Kapstein, M.T. (2000). *The Tibetan Assimilation of Buddhism*. OUP.

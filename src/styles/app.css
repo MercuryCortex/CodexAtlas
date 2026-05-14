@@ -1,0 +1,1532 @@
+:root {
+  --bg-0: #07090f;
+  --bg-1: #0d1119;
+  --bg-2: #141a26;
+  --bg-3: #1c2333;
+  --border: #232b3d;
+  --border-soft: #1a2030;
+  --text-0: #f1ede2;
+  --text-1: #c8c4b8;
+  --text-2: #8b8e98;
+  --text-3: #5a5e6a;
+  --gold: #d4a55a;
+  --gold-soft: #a87f3e;
+  --copper: #c47453;
+  --sage: #6e8c6b;
+  --crimson: #c44a5a;
+  --indigo: #5a6cc4;
+  --slate: #4a5a7a;
+
+  --nav-w: 220px;
+  --detail-w: 400px;
+  --nav-w-collapsed: 48px;
+  --detail-w-collapsed: 36px;
+
+  --serif: "Cormorant Garamond", "Iowan Old Style", Palatino, Georgia, serif;
+  --sans: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --mono: "JetBrains Mono", "SF Mono", Menlo, Consolas, monospace;
+
+  /* TYPE SCALE — the only legal font-size vocabulary. See 00_meta/app-architecture.md §2. */
+  --h1-size: 22px;   /* modal / panel titles (detail h3 sits here) */
+  --h2-size: 16px;   /* in-pane section titles */
+  --h3-size: 14px;   /* sub-section / row title */
+  --lbl-lg: 12px;    /* primary labels (nav items) */
+  --lbl-md: 10.5px;  /* secondary labels (subtitle, row meta) */
+  --lbl-sm: 9.5px;   /* caps section labels */
+  --micro:  9.2px;   /* SVG micro-labels only */
+
+  /* MOTION — keep these three durations / curve. See architecture §1. */
+  --ease: cubic-bezier(0.2, 0.8, 0.2, 1);
+  --t-micro:   140ms;
+  --t-layout:  240ms;
+  --t-overlay: 280ms;
+}
+
+* { box-sizing: border-box; }
+html, body {
+  margin: 0; padding: 0; height: 100%;
+  background: var(--bg-0); color: var(--text-1);
+  font-family: var(--sans); font-size: 13px; line-height: 1.5;
+  overflow: hidden;
+  transition: background 320ms ease, color 320ms ease;
+}
+
+/* ---------- STYLE PRESETS (palette + typography fused) ---------- */
+/* Default = Codex (defined in :root). Each body.style-* class overrides BOTH color vars and font vars. */
+
+body.style-crypt {
+  --bg-0: #000000; --bg-1: #050505; --bg-2: #0c0c0c; --bg-3: #161616;
+  --border: #1f1f1f; --border-soft: #131313;
+  --text-0: #f4d890; --text-1: #c8a868; --text-2: #886a3a; --text-3: #4a3818;
+  --gold: #ffd980; --gold-soft: #b08840;
+  --copper: #d48868; --sage: #889060; --crimson: #c46868; --indigo: #6878b0;
+  --serif: "EB Garamond", "Cormorant Garamond", Palatino, Georgia, serif;
+}
+
+body.style-mystic {
+  --bg-0: #0a0814; --bg-1: #110c20; --bg-2: #18142e; --bg-3: #221a3e;
+  --border: #2a244a; --border-soft: #1f1a36;
+  --text-0: #ece4f4; --text-1: #c8b8d8; --text-2: #9888a8; --text-3: #685a78;
+  --gold: #c8a4e0; --gold-soft: #9878b0;
+  --copper: #c878a8; --sage: #8898c4; --crimson: #c45a8a; --indigo: #6a78d4;
+  --slate: #5a4a78;
+}
+
+body.style-twilight {
+  --bg-0: #08101c; --bg-1: #0d1828; --bg-2: #15243a; --bg-3: #1e304c;
+  --border: #2a4060; --border-soft: #1c2e48;
+  --text-0: #f0e4dc; --text-1: #cab8a8; --text-2: #908070; --text-3: #5a4e42;
+  --gold: #e8a888; --gold-soft: #b07858;
+  --copper: #e08858; --sage: #80a098; --crimson: #d06878; --indigo: #5878c8;
+  --slate: #50607a;
+  /* --serif must remain a serif family (architecture §6). The prior value was Inter
+     (sans), which silently flipped every serif-dependent component. */
+  --serif: "EB Garamond", "Cormorant Garamond", "Iowan Old Style", Palatino, Georgia, serif;
+}
+
+/* Technical — hyper-functional, neutral grays, IBM Plex, smaller base type. No warm gold. */
+body.style-technical {
+  --bg-0: #0a0a0a; --bg-1: #121212; --bg-2: #1a1a1a; --bg-3: #232323;
+  --border: #2a2a2a; --border-soft: #1c1c1c;
+  --text-0: #e8e8e8; --text-1: #b8b8b8; --text-2: #808080; --text-3: #555555;
+  --gold: #5e95d9; --gold-soft: #3e6ea0;
+  --copper: #9080a0; --sage: #7a9080; --crimson: #b06868; --indigo: #5878b0; --slate: #606870;
+  --serif: "IBM Plex Sans", "Inter", system-ui, sans-serif;
+  --sans:  "IBM Plex Sans", "Inter", system-ui, sans-serif;
+  --mono:  "IBM Plex Mono", "JetBrains Mono", "SF Mono", Menlo, monospace;
+  font-size: 13px;
+}
+body.style-technical .brand h1 { letter-spacing: 0.04em; font-weight: 500; text-transform: none; font-size: 14px; }
+body.style-technical .brand .glyph { display: none; }
+body.style-technical .tagline { font-style: normal; opacity: 0.7; }
+body.style-technical header::after { background: none; opacity: 0; }
+body.style-technical .stat strong { color: var(--text-0); }
+
+/* Parchment — LIGHT mode, paper/manuscript */
+body.style-parchment {
+  --bg-0: #f4ecd8; --bg-1: #ede4ca; --bg-2: #e2d7b8; --bg-3: #d2c4a0;
+  --border: #c0b094; --border-soft: #d8cab0;
+  --text-0: #2a2014; --text-1: #50402c; --text-2: #786648; --text-3: #a08c70;
+  --gold: #6e4818; --gold-soft: #9a7034;
+  --copper: #a04818; --sage: #607848; --crimson: #903a3a; --indigo: #3a4870; --slate: #485870;
+  --serif: "EB Garamond", "Cormorant Garamond", Palatino, Georgia, serif;
+}
+
+/* Nag Hammadi — papyrus brown, faded ochre (high-contrast redo) */
+body.style-nag-hammadi {
+  --bg-0: #120c06; --bg-1: #1c140a; --bg-2: #281c0e; --bg-3: #382814;
+  --border: #50381e; --border-soft: #281c12;
+  --text-0: #f4e0b4; --text-1: #d8bc8c; --text-2: #b09660; --text-3: #80683c;
+  --gold: #e4b070; --gold-soft: #b08448;
+  --copper: #d49060; --sage: #98a070; --crimson: #c46050; --indigo: #788090; --slate: #645640;
+  --serif: "Cormorant Garamond", "EB Garamond", Palatino, Georgia, serif;
+}
+
+/* Passion (Christ) — wine-blood, mournful gold, liturgical serif */
+body.style-passion {
+  --bg-0: #14080a; --bg-1: #1c0c10; --bg-2: #2a1218; --bg-3: #3a1c24;
+  --border: #4a2028; --border-soft: #2c161c;
+  --text-0: #f0d8c4; --text-1: #d4b09a; --text-2: #a08074; --text-3: #685248;
+  --gold: #c08440; --gold-soft: #8c5c2c;
+  --copper: #c44a3a; --sage: #6a7c5c; --crimson: #d04030; --indigo: #5870a0; --slate: #5c4c50;
+  --serif: "EB Garamond", "Cormorant Garamond", Georgia, serif;
+}
+
+/* Atlantis — submerged civilization, deep teal + aged gold */
+body.style-atlantis {
+  --bg-0: #061824; --bg-1: #082230; --bg-2: #0e2e3c; --bg-3: #163e4c;
+  --border: #1e4858; --border-soft: #122c38;
+  --text-0: #d8eef0; --text-1: #a8c8cc; --text-2: #708890; --text-3: #406068;
+  --gold: #d8b478; --gold-soft: #9c7c4c;
+  --copper: #c0936c; --sage: #6c9c98; --crimson: #c45a68; --indigo: #4878a8; --slate: #4a6878;
+  --serif: "Cormorant Garamond", "EB Garamond", Georgia, serif;
+}
+
+/* All-Seeing Eye — black + iris gold, masonic-occult */
+body.style-eye {
+  --bg-0: #050505; --bg-1: #0c0c0c; --bg-2: #161614; --bg-3: #20201c;
+  --border: #2a2820; --border-soft: #181814;
+  --text-0: #f4dc94; --text-1: #c8a868; --text-2: #8c7440; --text-3: #4c4028;
+  --gold: #f0c860; --gold-soft: #b08838;
+  --copper: #e09848; --sage: #80785a; --crimson: #c47868; --indigo: #786e88; --slate: #5c544c;
+  --serif: "EB Garamond", "Cormorant Garamond", Georgia, serif;
+}
+
+/* Hermes — mercury silver + alchemical gold, hermetic-philosophical */
+body.style-hermes {
+  --bg-0: #16181c; --bg-1: #1c1f24; --bg-2: #24282e; --bg-3: #2e333a;
+  --border: #38404a; --border-soft: #232830;
+  --text-0: #e4e6ea; --text-1: #b8bcc4; --text-2: #80868e; --text-3: #555a62;
+  --gold: #c8b890; --gold-soft: #908068;
+  --copper: #b09878; --sage: #8898a0; --crimson: #a47878; --indigo: #6878a0; --slate: #50606c;
+  --serif: "Cormorant Garamond", "EB Garamond", Georgia, serif;
+}
+
+/* Vatican — LIGHT, marble + papal red + gilt, high Catholic */
+body.style-vatican {
+  --bg-0: #f0e8d4; --bg-1: #e8e0c8; --bg-2: #dcd2b4; --bg-3: #c8be9c;
+  --border: #a89c78; --border-soft: #c8be9c;
+  --text-0: #2a1c10; --text-1: #4a3828; --text-2: #786448; --text-3: #98886c;
+  --gold: #903828; --gold-soft: #6c2818;
+  --copper: #a04830; --sage: #607858; --crimson: #b03430; --indigo: #38486c; --slate: #4c5060;
+  --serif: "EB Garamond", "Cormorant Garamond", Georgia, serif;
+}
+
+/* Orthodox (Christian) — Byzantine deep wine + gold-leaf icon-screen */
+body.style-orthodox {
+  --bg-0: #1a0810; --bg-1: #241018; --bg-2: #321820; --bg-3: #422430;
+  --border: #582c38; --border-soft: #341820;
+  --text-0: #f0d8a8; --text-1: #c8a878; --text-2: #98785c; --text-3: #685040;
+  --gold: #e8b860; --gold-soft: #b0883c;
+  --copper: #d09844; --sage: #80784c; --crimson: #c44848; --indigo: #5868a0; --slate: #58484c;
+  --serif: "EB Garamond", "Cormorant Garamond", Georgia, serif;
+}
+
+/* ---------- STYLE DROPDOWN (preset picker button + menu) ---------- */
+.style-button {
+  background: transparent; border: 1px solid var(--border);
+  color: var(--text-1); font-family: var(--sans); font-size: 10.5px;
+  padding: 5px 10px; border-radius: 3px; cursor: pointer;
+  letter-spacing: 0.14em; text-transform: uppercase;
+  display: flex; align-items: center; gap: 8px;
+  transition: all 160ms ease;
+}
+.style-button:hover { border-color: var(--gold-soft); color: var(--gold); }
+.style-button.open { border-color: var(--gold); color: var(--gold); background: rgba(212,165,90,0.08); }
+.style-button .caret { font-size: 9px; transition: transform 180ms ease; }
+.style-button.open .caret { transform: rotate(180deg); }
+.style-button .swatch-dot {
+  width: 9px; height: 9px; border-radius: 50%; flex-shrink: 0;
+  background: var(--gold); box-shadow: 0 0 0 1px rgba(255,255,255,0.18);
+}
+
+.style-menu {
+  position: fixed;
+  left: calc(var(--nav-w) + 8px); bottom: 56px;
+  width: 240px;
+  transition: left 220ms ease, bottom 180ms ease,
+              transform 200ms cubic-bezier(0.2, 0.8, 0.2, 1),
+              opacity 160ms ease,
+              visibility 0s linear 200ms;
+  background: linear-gradient(180deg, rgba(13,17,25,0.97), rgba(7,9,15,0.98));
+  backdrop-filter: blur(14px);
+  border: 1px solid var(--gold-soft);
+  border-radius: 4px;
+  padding: 6px;
+  z-index: 250;
+  box-shadow: 0 12px 36px rgba(0,0,0,0.6);
+  transform: translateY(8px);
+  opacity: 0;
+  pointer-events: none;
+  visibility: hidden;
+  transition: transform 200ms cubic-bezier(0.2, 0.8, 0.2, 1),
+              opacity 160ms ease,
+              visibility 0s linear 200ms;
+}
+.style-menu.open {
+  transform: translateY(0);
+  opacity: 1;
+  pointer-events: auto;
+  visibility: visible;
+  transition: transform 200ms cubic-bezier(0.2, 0.8, 0.2, 1),
+              opacity 160ms ease,
+              visibility 0s linear 0s;
+}
+.style-option {
+  display: flex; align-items: center; gap: 10px;
+  padding: 7px 9px; border-radius: 3px;
+  cursor: pointer;
+  border: 1px solid transparent;
+  transition: background 120ms ease, border-color 120ms ease;
+}
+.style-option:hover { background: rgba(255,255,255,0.04); }
+.style-option.active { background: rgba(212,165,90,0.08); border-color: var(--gold-soft); }
+.style-option .so-swatch {
+  width: 14px; height: 14px; border-radius: 50%;
+  flex-shrink: 0;
+  border: 1px solid rgba(255,255,255,0.15);
+}
+.style-option .so-name {
+  font-size: 12.5px; letter-spacing: 0.04em;
+  flex: 1;
+  color: var(--text-1);
+}
+.style-option.active .so-name { color: var(--gold); }
+.style-option .so-tag {
+  font-family: "JetBrains Mono", "IBM Plex Mono", monospace; font-size: 9px;
+  color: var(--text-3); letter-spacing: 0.06em; text-transform: uppercase;
+}
+
+/* Per-preset swatches (background = bg-0, dot = accent) */
+.style-option[data-style="codex"]       .so-swatch { background: radial-gradient(circle at 65% 35%, #d4a55a 0 4px, transparent 5px), #07090f; }
+.style-option[data-style="crypt"]       .so-swatch { background: radial-gradient(circle at 65% 35%, #ffd980 0 4px, transparent 5px), #000; }
+.style-option[data-style="mystic"]      .so-swatch { background: radial-gradient(circle at 65% 35%, #c8a4e0 0 4px, transparent 5px), #0a0814; }
+.style-option[data-style="twilight"]    .so-swatch { background: radial-gradient(circle at 65% 35%, #e8a888 0 4px, transparent 5px), #08101c; }
+.style-option[data-style="technical"]   .so-swatch { background: radial-gradient(circle at 65% 35%, #5e95d9 0 4px, transparent 5px), #0a0a0a; }
+.style-option[data-style="parchment"]   .so-swatch { background: radial-gradient(circle at 65% 35%, #6e4818 0 4px, transparent 5px), #f4ecd8; border-color: rgba(0,0,0,0.18); }
+.style-option[data-style="nag-hammadi"] .so-swatch { background: radial-gradient(circle at 65% 35%, #e4b070 0 4px, transparent 5px), #120c06; }
+.style-option[data-style="passion"]     .so-swatch { background: radial-gradient(circle at 65% 35%, #c08440 0 4px, transparent 5px), #14080a; }
+.style-option[data-style="atlantis"]    .so-swatch { background: radial-gradient(circle at 65% 35%, #d8b478 0 4px, transparent 5px), #061824; }
+.style-option[data-style="eye"]         .so-swatch { background: radial-gradient(circle at 65% 35%, #f0c860 0 4px, transparent 5px), #050505; }
+.style-option[data-style="hermes"]      .so-swatch { background: radial-gradient(circle at 65% 35%, #c8b890 0 4px, transparent 5px), #16181c; }
+.style-option[data-style="vatican"]     .so-swatch { background: radial-gradient(circle at 65% 35%, #903828 0 4px, transparent 5px), #f0e8d4; border-color: rgba(0,0,0,0.18); }
+.style-option[data-style="orthodox"]    .so-swatch { background: radial-gradient(circle at 65% 35%, #e8b860 0 4px, transparent 5px), #1a0810; }
+
+/* Per-preset font preview in the option label */
+.style-option[data-style="codex"]       .so-name { font-family: "Cormorant Garamond", Georgia, serif; }
+.style-option[data-style="crypt"]       .so-name { font-family: "EB Garamond", Georgia, serif; }
+.style-option[data-style="mystic"]      .so-name { font-family: "Cormorant Garamond", Georgia, serif; }
+.style-option[data-style="twilight"]    .so-name { font-family: "Inter", system-ui, sans-serif; }
+.style-option[data-style="technical"]   .so-name { font-family: "IBM Plex Sans", "Inter", system-ui, sans-serif; font-size: 11.5px; letter-spacing: 0; }
+.style-option[data-style="parchment"]   .so-name { font-family: "EB Garamond", Georgia, serif; }
+.style-option[data-style="nag-hammadi"] .so-name { font-family: "Cormorant Garamond", Georgia, serif; }
+.style-option[data-style="passion"]     .so-name { font-family: "EB Garamond", Georgia, serif; }
+.style-option[data-style="atlantis"]    .so-name { font-family: "Cormorant Garamond", Georgia, serif; }
+.style-option[data-style="eye"]         .so-name { font-family: "EB Garamond", Georgia, serif; letter-spacing: 0.08em; }
+.style-option[data-style="hermes"]      .so-name { font-family: "Cormorant Garamond", Georgia, serif; }
+.style-option[data-style="vatican"]     .so-name { font-family: "EB Garamond", Georgia, serif; }
+.style-option[data-style="orthodox"]    .so-name { font-family: "EB Garamond", Georgia, serif; }
+a { color: var(--gold); text-decoration: none; }
+a:hover { color: var(--text-0); }
+button { font: inherit; cursor: pointer; }
+
+body {
+  display: grid;
+  /* Sidebar still position:fixed (so the brand-section / nav-inner / utility stack runs
+     the full viewport height), BUT the grid now ALLOCATES the column width for it — was
+     `0` before. With column = 0, main.canvas occupied [0, viewport-w] and content drew
+     UNDER the fixed nav overlay. User explicitly: "mind to map the frame of the tabs to
+     limit here and not behind". Now main.canvas starts at viewport-var(--nav-w) so its
+     content sits to the right of the nav strip, never behind it. The fixed nav still
+     overlays the strip's column area — they're stacked at the same x-range, no overlap. */
+  grid-template-columns: var(--nav-w) 1fr var(--detail-w);
+  grid-template-rows: 1fr;
+  grid-template-areas: "nav canvas detail";
+  height: 100vh;
+  --footer-h: 44px;   /* canvas-internal bottom elements respect this */
+  transition: grid-template-columns 220ms ease;
+}
+body.detail-collapsed  { grid-template-columns: var(--nav-w) 1fr var(--detail-w-collapsed); }
+body.nav-collapsed     { grid-template-columns: var(--nav-w-collapsed) 1fr var(--detail-w); }
+body.nav-collapsed.detail-collapsed { grid-template-columns: var(--nav-w-collapsed) 1fr var(--detail-w-collapsed); }
+body.footer-collapsed  { --footer-h: 0px; }
+
+/* BRAND-SECTION (lives at top of left nav) */
+.brand-section {
+  display: flex; align-items: center; gap: 10px;
+  padding: 14px 18px 14px 22px;
+  border-bottom: 1px solid var(--border-soft);
+  position: relative;
+}
+.brand-section::after {
+  content: "";
+  position: absolute; left: 16px; right: 16px; bottom: -1px; height: 1px;
+  background: linear-gradient(90deg, transparent, var(--gold-soft), transparent);
+  opacity: 0.4;
+}
+.brand-section .glyph {
+  font-family: var(--serif); font-size: 16px; color: var(--gold);
+  letter-spacing: 0.06em; flex-shrink: 0; width: 16px; text-align: center;
+}
+.brand-section .brand-text { display: flex; flex-direction: column; gap: 2px; min-width: 0; transition: opacity 150ms ease; }
+.brand-section h1 {
+  margin: 0; font-family: var(--serif); font-weight: 600;
+  font-size: 13px; letter-spacing: 0.10em; color: var(--text-0);
+  text-transform: uppercase; white-space: nowrap;
+}
+.brand-section .tagline {
+  margin: 0; font-size: 9.5px; color: var(--text-2);
+  font-style: italic; letter-spacing: 0.03em;
+  white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+}
+body.nav-collapsed .brand-section { padding: 14px 0; justify-content: center; }
+body.nav-collapsed .brand-section .brand-text { opacity: 0; display: none; }
+
+/* UTILITY-SECTION (lives at bottom of left nav) */
+.utility-section {
+  display: flex; flex-direction: column; gap: 6px;
+  padding: 12px 14px 14px;
+  border-top: 1px solid var(--border-soft);
+  background: linear-gradient(180deg, transparent, rgba(0,0,0,0.18));
+}
+.utility-section .stats {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 4px 10px;
+  font-family: var(--mono); font-size: 9.5px; color: var(--text-3);
+  letter-spacing: 0.04em; margin-top: 4px;
+}
+.utility-section .stat { white-space: nowrap; }
+.utility-section .stat strong { color: var(--gold-soft); font-weight: 500; margin-right: 4px; }
+.utility-section .util-sym { font-size: 12px; }
+
+body.nav-collapsed .utility-section { padding: 10px 6px; align-items: center; }
+body.nav-collapsed .utility-section .util-lbl { display: none; }
+body.nav-collapsed .utility-section .caret { display: none; }
+body.nav-collapsed .utility-section .stats { display: none; }
+body.nav-collapsed .utility-section .style-button,
+body.nav-collapsed .utility-section .themes-button {
+  width: 32px; padding: 6px; justify-content: center;
+}
+
+/* When nav collapses, the bottom-anchored style-menu + the full-overlay themes-menu
+   need to follow the nav's new left edge. */
+body.nav-collapsed .style-menu { left: calc(var(--nav-w-collapsed) + 8px); }
+body.nav-collapsed .themes-menu { left: var(--nav-w-collapsed); }
+
+body.nav-collapsed .brand-section { padding: 14px 0 12px; justify-content: center; }
+
+/* THEMES DROPDOWN */
+.themes-button {
+  background: transparent; border: 1px solid var(--border);
+  color: var(--text-1); font-family: var(--sans); font-size: 10.5px;
+  padding: 5px 11px; border-radius: 3px; cursor: pointer;
+  letter-spacing: 0.14em; text-transform: uppercase;
+  display: flex; align-items: center; gap: 8px;
+  transition: all 180ms ease;
+}
+.themes-button:hover { border-color: var(--gold-soft); color: var(--gold); }
+.themes-button.open { border-color: var(--gold); color: var(--gold); background: rgba(212,165,90,0.08); }
+.themes-button .caret { font-size: 9px; transition: transform 180ms ease; }
+.themes-button.open .caret { transform: rotate(180deg); }
+
+.themes-menu {
+  position: fixed; top: 0; left: var(--nav-w); right: 0;
+  background: linear-gradient(180deg, rgba(13,17,25,0.97) 0%, rgba(7,9,15,0.98) 100%);
+  backdrop-filter: blur(14px);
+  border-bottom: 1px solid var(--gold-soft);
+  z-index: 200; padding: 32px 48px 40px;
+  max-height: 80vh; overflow-y: auto;
+  /* slide-from-top — closed state is fully out of view, so no residual bar */
+  transform: translateY(-110%);
+  opacity: 0;
+  pointer-events: none;
+  visibility: hidden;
+  transition: transform 280ms cubic-bezier(0.2, 0.8, 0.2, 1),
+              opacity   200ms ease,
+              visibility 0s linear 280ms;
+  box-shadow: 0 12px 36px rgba(0,0,0,0.6);
+}
+.themes-menu.open {
+  transform: translateY(0);
+  opacity: 1;
+  pointer-events: auto;
+  visibility: visible;
+  transition: transform 280ms cubic-bezier(0.2, 0.8, 0.2, 1),
+              opacity   200ms ease,
+              visibility 0s linear 0s;
+}
+.themes-menu .tm-header {
+  display: flex; align-items: baseline; justify-content: space-between;
+  margin-bottom: 22px; padding-bottom: 14px; border-bottom: 1px solid var(--border);
+}
+.themes-menu h3 {
+  margin: 0; font-family: var(--serif); font-size: 16px;
+  letter-spacing: 0.10em; color: var(--text-0); font-weight: 500;
+  text-transform: uppercase;
+}
+.themes-menu .tm-sub { font-size: 11px; color: var(--text-2); font-style: italic; }
+.themes-menu .tm-actions { display: flex; align-items: center; gap: 8px; }
+.themes-menu .tm-close,
+.themes-menu .tm-clear {
+  background: transparent; border: 1px solid var(--border);
+  color: var(--text-2); font-size: 11px; padding: 4px 12px; border-radius: 3px;
+  letter-spacing: 0.06em; cursor: pointer;
+  font-family: var(--sans);
+  transition: color 140ms ease, border-color 140ms ease, background 140ms ease;
+}
+.themes-menu .tm-close:hover { color: var(--gold); border-color: var(--gold-soft); }
+.themes-menu .tm-clear { color: var(--gold-soft); border-color: var(--gold-soft); }
+.themes-menu .tm-clear:hover { color: var(--gold); border-color: var(--gold); background: rgba(212,165,90,0.08); }
+.themes-grid {
+  display: grid; gap: 14px;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+}
+.themes-cat {
+  font-family: var(--serif); font-size: 12px;
+  color: var(--gold-soft); letter-spacing: 0.18em; text-transform: uppercase;
+  margin-top: 18px; margin-bottom: 6px; grid-column: 1 / -1;
+  padding-bottom: 4px; border-bottom: 1px solid var(--border-soft);
+  font-weight: 500;
+}
+.themes-cat:first-child { margin-top: 0; }
+.theme-card {
+  position: relative;
+  background: var(--bg-2); border: 1px solid var(--border);
+  border-radius: 4px; padding: 14px 16px 16px;
+  cursor: pointer; transition: all 200ms ease;
+  overflow: hidden;
+}
+.theme-card::before {
+  content: ""; position: absolute; inset: 0; pointer-events: none;
+  background: linear-gradient(135deg, var(--theme-color, var(--gold)) 0%, transparent 60%);
+  opacity: 0.08; transition: opacity 200ms ease;
+}
+.theme-card:hover { border-color: var(--theme-color, var(--gold-soft)); transform: translateY(-1px); }
+.theme-card:hover::before { opacity: 0.20; }
+.theme-card.active { border-color: var(--theme-color, var(--gold)); box-shadow: 0 0 0 1px var(--theme-color, var(--gold)); }
+.theme-card .tc-name {
+  font-family: var(--serif); font-size: 16px; color: var(--text-0);
+  font-weight: 500; letter-spacing: 0.04em; margin-bottom: 6px;
+  position: relative; z-index: 1;
+}
+.theme-card .tc-count {
+  font-family: var(--mono); font-size: 10px; color: var(--text-2);
+  letter-spacing: 0.08em; position: relative; z-index: 1;
+}
+.theme-card .tc-swatch {
+  position: absolute; top: 14px; right: 14px;
+  width: 10px; height: 10px; border-radius: 50%;
+  background: var(--theme-color, var(--gold));
+  box-shadow: 0 0 12px var(--theme-color, var(--gold));
+}
+
+/* NAV */
+nav.side {
+  position: fixed;
+  left: 0; top: 0; bottom: 0;        /* full viewport Y — no dead slice at the bottom */
+  width: var(--nav-w); z-index: 100;
+  background: var(--bg-1);
+  border-right: 1px solid var(--border);
+  overflow: hidden;
+  display: flex; flex-direction: column;
+  transition: transform 240ms cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+/* Collapsed nav = thin icon strip (48px), NOT slid off-screen. The glyph for each view
+   stays clickable; only the text labels and section headers disappear. Previous behavior
+   was `transform: translateX(-220px)` which pushed the whole sidebar out — the user wanted
+   the persistent icon strip back. Width animates from 220→48 via the same transition. */
+body.nav-collapsed nav.side { width: var(--nav-w-collapsed); }
+
+/* SIDE-TAB — the visible toggle. Sits at the right edge of the sidebar when expanded,
+   slides to the viewport's left edge when collapsed, so it's always reachable. */
+.side-tab {
+  position: fixed;
+  left: var(--nav-w); top: 50%;
+  width: 18px; height: 64px;
+  margin-top: -32px;
+  background: rgba(13, 17, 25, 0.92);
+  backdrop-filter: blur(6px);
+  border: 1px solid var(--border); border-left: 0;
+  border-radius: 0 4px 4px 0;
+  cursor: pointer; z-index: 101;
+  display: flex; align-items: center; justify-content: center;
+  color: var(--text-2); font-family: var(--mono); font-size: 12px;
+  transition: left 240ms cubic-bezier(0.2, 0.8, 0.2, 1), color 120ms, border-color 120ms;
+}
+.side-tab:hover { color: var(--gold); border-color: var(--gold-soft); }
+/* When the nav collapses to a 48px strip, the side-tab sits flush against its right edge. */
+body.nav-collapsed .side-tab { left: var(--nav-w-collapsed); }
+.nav-toggle {
+  position: absolute; top: 8px; right: 8px; z-index: 2;
+  width: 28px; height: 28px;
+  background: var(--bg-2); border: 1px solid var(--border);
+  color: var(--text-2); border-radius: 3px;
+  display: flex; align-items: center; justify-content: center;
+  font-family: var(--mono); font-size: 14px; line-height: 1;
+  transition: all 150ms ease;
+}
+.nav-toggle:hover { color: var(--gold); border-color: var(--gold-soft); }
+.nav-inner { padding: 10px 0 14px; overflow-y: auto; flex: 1; }
+nav.side .item {
+  display: flex; align-items: center; gap: 11px;
+  padding: 9px 20px; font-size: 12px; color: var(--text-2);
+  cursor: pointer; border-left: 2px solid transparent;
+  transition: all 150ms ease; letter-spacing: 0.02em; white-space: nowrap;
+}
+nav.side .item:hover { color: var(--text-0); background: var(--bg-2); }
+nav.side .item.active {
+  color: var(--gold); border-left-color: var(--gold);
+  background: linear-gradient(90deg, rgba(212,165,90,0.10), transparent);
+}
+nav.side .item .sym { font-family: var(--serif); font-size: 15px; width: 16px; text-align: center; color: inherit; opacity: 0.85; flex-shrink: 0; }
+nav.side .item .lbl { transition: opacity 150ms ease; }
+nav.side .section-label {
+  padding: 14px 20px 5px; font-size: 9.5px;
+  text-transform: uppercase; letter-spacing: 0.16em;
+  color: var(--text-3); font-weight: 600; white-space: nowrap;
+}
+body.nav-collapsed .nav-inner { padding-left: 0; padding-right: 0; }
+body.nav-collapsed nav.side .item { padding: 11px 0; justify-content: center; }
+body.nav-collapsed nav.side .item .lbl { opacity: 0; display: none; }
+body.nav-collapsed nav.side .section-label { opacity: 0; padding: 8px 0; height: 8px; overflow: hidden; }
+
+/* CANVAS */
+main.canvas {
+  grid-area: canvas;
+  position: relative; overflow: hidden;
+  background: radial-gradient(ellipse at center, var(--bg-1) 0%, var(--bg-0) 80%);
+}
+/* On the timeline (a wide horizontal layout), the radial gradient makes the LEFT and RIGHT
+   edges look darker than the centre — reads as a "bg color change". Force a uniform fill there. */
+body.view-timeline main.canvas { background: var(--bg-0); }
+main.canvas svg { display: block; width: 100%; height: 100%; }
+.view-header {
+  position: absolute; top: 14px;
+  /* Positioned relative to main.canvas. The grid columns now allocate the nav width
+     directly, so main.canvas already starts to the right of the nav — no additional
+     var(--nav-w) offset needed (had been double-counting). 24px is just a margin. */
+  left: 24px;
+  right: 24px; z-index: 5;
+  display: flex; align-items: baseline; justify-content: space-between;
+  pointer-events: none;
+  gap: 16px;
+}
+/* When the zoom-meter is visible (pantheon/documents/timeline), reserve the right
+   side so view-controls + title can't drift under the meter. */
+body.zoom-visible .view-header { right: 230px; }
+.view-header > div:first-child { min-width: 0; flex: 1 1 auto; }   /* title block can shrink */
+.view-controls { pointer-events: auto; display: flex; gap: 8px; align-items: center; flex-shrink: 0; }
+.view-header h2 { margin: 0; font-family: var(--serif); font-size: 15px; color: var(--text-0); font-weight: 500; letter-spacing: 0.06em; text-transform: uppercase; white-space: nowrap; }
+.view-header .subtitle {
+  font-size: 10.5px; color: var(--text-2); font-style: italic; margin-left: 12px;
+  white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+}
+.btn {
+  background: var(--bg-2); border: 1px solid var(--border);
+  color: var(--text-1); font: inherit; font-size: 11px;
+  padding: 6px 12px; border-radius: 3px; cursor: pointer;
+  letter-spacing: 0.04em; transition: all 150ms ease;
+  white-space: nowrap;
+}
+.btn:hover { background: var(--bg-3); color: var(--text-0); border-color: var(--gold-soft); }
+.btn.active { background: var(--gold); color: var(--bg-0); border-color: var(--gold); }
+.btn-mini { padding: 4px 8px; font-size: 10px; }
+.pantheon-mode-toggle { display: inline-flex; align-items: center; border: 1px solid var(--border); border-radius: 3px; }
+.pantheon-mode-toggle .btn { border: 0; border-radius: 0; padding: 4px 10px; }
+.pantheon-mode-toggle .btn:not(:last-child) { border-right: 1px solid var(--border); }
+.pantheon-mode-toggle .btn.active { background: rgba(212,165,90,0.10); color: var(--gold); }
+/* Pantheon mode selector (the dropdown form added to support 6 modes: deities / authors /
+   symbols / events / scripture-shortcut / monuments-placeholder). Styled as a native
+   <select> with the same btn-mini look as its toolbar siblings. */
+.pantheon-mode-select {
+  appearance: none; -webkit-appearance: none; -moz-appearance: none;
+  background-color: var(--bg-2);
+  background-image: linear-gradient(45deg, transparent 50%, var(--text-3) 50%),
+                    linear-gradient(135deg, var(--text-3) 50%, transparent 50%);
+  background-position: calc(100% - 12px) 52%, calc(100% - 8px) 52%;
+  background-size: 4px 4px, 4px 4px;
+  background-repeat: no-repeat;
+  padding-right: 22px;
+  cursor: pointer;
+  font-weight: 500;
+}
+.pantheon-mode-select:hover { color: var(--gold); border-color: var(--gold-soft); }
+.pantheon-mode-select:focus { outline: none; border-color: var(--gold-soft); }
+.tl-family-select {
+  appearance: none; -webkit-appearance: none;
+  background-image: linear-gradient(45deg, transparent 50%, var(--text-2) 50%),
+                    linear-gradient(135deg, var(--text-2) 50%, transparent 50%);
+  background-position: calc(100% - 10px) 50%, calc(100% - 6px) 50%;
+  background-size: 4px 4px, 4px 4px;
+  background-repeat: no-repeat;
+  padding-right: 20px;
+  cursor: pointer;
+}
+.tl-family-select:hover { color: var(--gold); border-color: var(--gold-soft); }
+.tl-family-select option { background: var(--bg-1); color: var(--text-1); }
+
+/* DETAIL */
+aside.detail {
+  grid-area: detail;
+  background: var(--bg-1);
+  border-left: 1px solid var(--border);
+  overflow: hidden; position: relative;
+  display: flex; flex-direction: column;
+}
+.detail-toggle {
+  position: absolute; top: 12px; left: 8px; z-index: 4;
+  width: 22px; height: 28px;
+  background: var(--bg-2); border: 1px solid var(--border);
+  color: var(--text-2); border-radius: 3px;
+  display: flex; align-items: center; justify-content: center;
+  font-family: var(--mono); font-size: 14px; line-height: 1;
+  transition: all 150ms ease;
+}
+.detail-toggle:hover { color: var(--gold); border-color: var(--gold-soft); }
+.detail-inner {
+  flex: 1; overflow-y: auto; padding: 16px 24px 24px 38px;
+  transition: opacity 150ms ease;
+}
+body.detail-collapsed .detail-inner { opacity: 0; pointer-events: none; }
+aside.detail .empty { color: var(--text-3); font-style: italic; font-size: 13px; padding: 80px 0; text-align: center; }
+aside.detail .thumb {
+  width: 100%; max-height: 240px; object-fit: cover;
+  object-position: center top;  /* favor the subject's face (top of portrait) over the body in autocrop */
+  border-radius: 4px; border: 1px solid var(--border);
+  display: block; margin-bottom: 12px; background: var(--bg-2);
+}
+aside.detail .thumb-attribution {
+  font-size: 10px; color: var(--text-3); margin: -8px 0 14px;
+  font-family: var(--mono); letter-spacing: 0.04em;
+  display: flex; justify-content: space-between;
+}
+aside.detail h3 {
+  margin: 0 0 4px; font-family: var(--serif); font-size: 24px; color: var(--text-0);
+  font-weight: 500; letter-spacing: 0.02em;
+}
+aside.detail .meta {
+  font-family: var(--mono); font-size: 11px; color: var(--text-2);
+  display: flex; flex-wrap: wrap; gap: 8px;
+  margin-bottom: 16px; padding-bottom: 16px;
+  border-bottom: 1px solid var(--border-soft);
+}
+aside.detail .meta .pill {
+  background: var(--bg-2); border: 1px solid var(--border);
+  padding: 3px 8px; border-radius: 999px; letter-spacing: 0.04em;
+}
+aside.detail .meta .pill.family { color: var(--gold); border-color: var(--gold-soft); }
+aside.detail .meta .pill.date   { color: var(--sage); }
+aside.detail .meta .pill.status { color: var(--copper); }
+aside.detail .body-md { font-size: 13px; line-height: 1.65; color: var(--text-1); }
+aside.detail .body-md h1, aside.detail .body-md h2, aside.detail .body-md h3 {
+  font-family: var(--serif); color: var(--text-0); font-weight: 500;
+  margin-top: 1.6em; margin-bottom: 0.4em;
+}
+aside.detail .body-md h2 { font-size: 16px; letter-spacing: 0.04em; color: var(--gold); }
+aside.detail .body-md h3 { font-size: 14px; color: var(--text-0); }
+aside.detail .body-md ul, aside.detail .body-md ol { padding-left: 20px; }
+aside.detail .body-md li { margin-bottom: 4px; }
+aside.detail .body-md code {
+  background: var(--bg-2); padding: 1px 5px; border-radius: 2px;
+  font-family: var(--mono); font-size: 11.5px;
+}
+aside.detail .body-md a { word-break: break-word; }
+aside.detail .links-out { margin-top: 16px; padding-top: 16px; border-top: 1px solid var(--border-soft); }
+aside.detail .links-out h4 {
+  margin: 0 0 8px; font-size: 11px; letter-spacing: 0.12em;
+  color: var(--text-3); text-transform: uppercase; font-weight: 600;
+}
+aside.detail .link-edge {
+  display: flex; gap: 8px; align-items: baseline;
+  padding: 4px 0; font-size: 12px; cursor: pointer;
+}
+aside.detail .link-edge .etype {
+  font-family: var(--mono); font-size: 10px; color: var(--text-3);
+  letter-spacing: 0.04em; min-width: 110px; text-overflow: ellipsis; overflow: hidden;
+}
+aside.detail .link-edge:hover .etarget { color: var(--gold); }
+.etarget { color: var(--text-1); }
+
+/* FOOTER */
+footer {
+  position: fixed;
+  bottom: 0; left: var(--nav-w); right: var(--detail-w);
+  height: 44px; z-index: 50;
+  background: var(--bg-1);
+  border-top: 1px solid var(--border);
+  display: flex; align-items: center; padding: 0 24px 0 14px;
+  gap: 18px; overflow-x: auto; overflow-y: hidden;
+  font-family: var(--mono); font-size: 11px; color: var(--text-2);
+  transition: left 240ms cubic-bezier(0.2, 0.8, 0.2, 1),
+              right 240ms cubic-bezier(0.2, 0.8, 0.2, 1),
+              transform 200ms ease;
+}
+body.nav-collapsed footer    { left: var(--nav-w-collapsed); }
+body.detail-collapsed footer { right: var(--detail-w-collapsed); }
+body.footer-collapsed footer { transform: translateY(100%); }
+/* Footer toggle is a body-level fixed element (sibling of <footer>) so it stays
+   clickable when the footer collapses. Previously the toggle lived INSIDE <footer>;
+   body.footer-collapsed applies `transform: translateY(100%)` to the footer, and
+   `transform` on an ancestor establishes a new containing block for fixed-position
+   descendants — trapping the toggle inside the translated footer regardless of its
+   own position:fixed. Sibling placement avoids the trap entirely. */
+.footer-toggle {
+  position: fixed; bottom: 10px; left: calc(var(--nav-w) + 10px); z-index: 51;
+  background: rgba(13, 17, 25, 0.86); backdrop-filter: blur(6px);
+  border: 1px solid var(--border);
+  color: var(--text-2); width: 26px; height: 22px;
+  border-radius: 3px; cursor: pointer;
+  font-size: 11px; line-height: 1;
+  display: flex; align-items: center; justify-content: center;
+  transition: color 140ms, border-color 140ms,
+              transform 240ms cubic-bezier(0.2, 0.8, 0.2, 1),
+              left 240ms cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+.footer-toggle:hover { color: var(--gold); border-color: var(--gold-soft); }
+body.nav-collapsed .footer-toggle { left: calc(var(--nav-w-collapsed) + 10px); }
+body.footer-collapsed .footer-toggle { transform: rotate(180deg); }
+body.footer-collapsed {
+  grid-template-rows: 1fr 0px;
+}
+footer .filter-group { display: flex; gap: 6px; align-items: center; }
+footer label {
+  letter-spacing: 0.06em; text-transform: uppercase; color: var(--text-3); font-size: 10px;
+}
+footer select, footer input[type=text] {
+  background: var(--bg-2); border: 1px solid var(--border); color: var(--text-1);
+  padding: 4px 8px; border-radius: 3px; font: inherit; font-size: 11px; outline: none;
+}
+footer select:focus, footer input:focus { border-color: var(--gold-soft); }
+.active-filter {
+  padding: 3px 8px; border-radius: 999px; font-size: 10px;
+  background: var(--bg-2); border: 1px solid var(--gold-soft); color: var(--gold);
+  display: inline-flex; align-items: center; gap: 6px; letter-spacing: 0.06em;
+}
+.active-filter .x { cursor: pointer; color: var(--text-3); font-family: var(--mono); }
+.active-filter .x:hover { color: var(--gold); }
+
+/* GRAPH STYLES */
+.sector-hull {
+  fill-opacity: 0.07; stroke-opacity: 0.30; stroke-width: 0.8;
+  pointer-events: none;
+  transition: fill-opacity 250ms ease, stroke-opacity 250ms ease;
+}
+.sector-hull.dim { fill-opacity: 0.02; stroke-opacity: 0.08; }
+.sector-hull.hot { fill-opacity: 0.16; stroke-opacity: 0.6; }
+
+.hull {
+  fill-opacity: 0.06; stroke-opacity: 0.35; stroke-width: 1;
+  pointer-events: none; transition: fill-opacity 200ms ease;
+}
+.hull.dim { fill-opacity: 0.02; stroke-opacity: 0.10; }
+.hull.hot { fill-opacity: 0.15; stroke-opacity: 0.6; }
+
+.node-circle {
+  cursor: pointer; transition: stroke-width 120ms ease, opacity 200ms ease, r 200ms ease;
+  stroke: rgba(255,255,255,0.18); stroke-width: 1.0;
+}
+.node-circle:hover { stroke: var(--gold); stroke-width: 2.4; }
+.node-circle.selected { stroke: var(--gold); stroke-width: 3; }
+.node-circle.dim {
+  opacity: 0.10;
+  /* Locked/dimmed nodes should not catch pointer events — only highlighted nodes
+     are interactive while a sticky selection is active. */
+  pointer-events: none;
+}
+
+/* visual filter — keeps positions, fades non-matching */
+.node-circle.filter-dim {
+  opacity: 0.12;
+  pointer-events: none;   /* same rule for family-filter dimming */
+}
+.node-label.filter-dim  { opacity: 0 !important; pointer-events: none; }  /* hide non-matching node names entirely */
+.edge-line.filter-dim   { stroke-opacity: 0.020 !important; }
+.sector-hull.filter-dim { fill-opacity: 0.018; stroke-opacity: 0.08; }
+.family-label.filter-dim { opacity: 0.55; }  /* keep zone names visible — they mark the territory */
+
+/* legend row hover-preview — ghost-dims non-matching family while pointer is on the row */
+.node-circle.preview-fade { opacity: 0.16; pointer-events: none; }
+.node-label.preview-fade  { opacity: 0 !important; }
+.sector-hull.preview-fade { fill-opacity: 0.02; stroke-opacity: 0.10; }
+.family-label.preview-fade { opacity: 0.30; }
+
+/* hover-reveal overrides filter-dim — reveals cross-filter neighbors on hover */
+.node-circle.filter-dim.hover-reveal { opacity: 0.85; }
+.node-label.filter-dim.hover-reveal  { opacity: 0.90; }
+.edge-line.filter-dim.hover-reveal   { stroke-opacity: 0.85 !important; stroke-width: 1.6 !important; }
+.sector-hull.filter-dim.hover-reveal { fill-opacity: 0.10; stroke-opacity: 0.4; }
+.family-label.filter-dim.hover-reveal { opacity: 0.85; }
+.node-circle.hot { stroke: var(--gold); stroke-width: 2.4; }
+
+.node-label {
+  font-family: var(--sans); font-size: 10px; fill: var(--text-2);
+  pointer-events: none; text-anchor: middle;
+  paint-order: stroke; stroke: var(--bg-0); stroke-width: 0.22em;
+  transition: opacity 200ms ease;
+}
+.node-label.hub { fill: var(--text-0); font-weight: 500; font-size: 11px; }
+.node-label.dim { opacity: 0; }
+
+.edge-line {
+  fill: none; pointer-events: none;
+  vector-effect: non-scaling-stroke;
+  /* DEFAULT stroke is a quiet slate-blue — same for every edge type, regardless of
+     semantic. User: "I HATE BIG THICK LINES... pleasant blue... not overwhelming."
+     The per-type color (gold/red/etc.) lives in --edge-type-color (set inline by JS via
+     style('--edge-type-color', st.c)) and only appears when the edge is .hot (hovered or
+     selected) or revealed via filter-dim+hover. */
+  stroke: rgba(96, 116, 158, 0.55);
+  transition: stroke-opacity 180ms ease, stroke-width 180ms ease, stroke 180ms ease;
+}
+.edge-line.dim    { stroke-opacity: 0.02 !important; }
+/* Highlighted edges: type color from the CSS var, capped at 1.6px. */
+.edge-line.hot    {
+  stroke: var(--edge-type-color, rgba(212, 165, 90, 0.9)) !important;
+  stroke-opacity: 0.9 !important; stroke-width: 1.6 !important;
+}
+.edge-line.filter-dim.hover-reveal {
+  stroke: var(--edge-type-color, rgba(212, 165, 90, 0.85)) !important;
+  stroke-opacity: 0.8 !important; stroke-width: 1.3 !important;
+}
+
+/* Cross-symbol edges in Pantheon Symbols mode. The .xsym class marks all cross-symbol-
+   edge types (ancestor-of, parallel-form, syncretic-fusion, appropriated-by,
+   polemic-inversion, visual-cognate); the .xsym-xfamily sub-class marks the subset that
+   spans two distinct origin-traditions — the user's "MASSIVE wins". */
+.edge-line.xsym {
+  stroke-linecap: round;
+}
+.edge-line.xsym-xfamily {
+  /* Subtle drop-shadow so cross-family edges read above the wedge fills. */
+  filter: drop-shadow(0 0 1px rgba(212,165,90,0.45));
+}
+
+.family-label {
+  font-family: var(--serif); font-size: 13px; letter-spacing: 0.22em;
+  fill: var(--text-2); text-transform: uppercase; pointer-events: none;
+  text-anchor: middle; font-weight: 500;
+  paint-order: stroke; stroke: var(--bg-0); stroke-width: 0.22em;
+  transition: opacity 200ms ease, font-size 200ms ease, fill 200ms ease;
+}
+.family-label.bright { fill: var(--text-0); }
+.family-label.dim    { opacity: 0.25; }
+
+.phase-ring {
+  fill: none; stroke: var(--border); stroke-dasharray: 2 5; stroke-opacity: 0.45;
+}
+.phase-ring-label {
+  font-family: var(--mono); font-size: 9.5px; letter-spacing: 0.16em;
+  fill: var(--text-3); pointer-events: none; text-transform: uppercase;
+}
+
+/* TIMELINE */
+/* Chart-area background — fixes the "Black on the left where time condensates" complaint.
+   Strong-enough slate overlay that the timeline reads as a drawn surface across the whole
+   width. Was too subtle before (0.045 alpha was indistinguishable from the void-black
+   canvas). 0.10 alpha is the floor for "you can actually see it". */
+.tl-chart-bg { fill: rgba(80, 90, 115, 0.10); }
+/* Compressed-gap cut zone — formerly DARKENED with rgba(0,0,0,0.18), which is what made
+   the left side look black (prehistory has the biggest gaps, so most of the left edge was
+   black overlay). Now LIGHTER than the chart-bg, so the cut reads as "we skipped some
+   time here" without going darker than the rest of the canvas. The zigzag-stroke remains
+   the primary marker. */
+/* Compression-gap cut zone — NO TINT. The zigzag stroke (drawn in JS) is the only marker
+   of a cut. Previously this had a gold tint that turned the whole prehistoric left side
+   brown (prehistory has the biggest gaps → most of the canvas-left was overlay). */
+.tl-break-fill { fill: transparent; }
+/* Bottom zoom-preset toolbar — sits between the main chart and the mini overview.
+   Quick-toggle buttons to set the visible date range to a specific number of years. */
+.tl-zoom-presets {
+  position: absolute; z-index: 25;
+  bottom: calc(var(--footer-h) + 90px);
+  left: 50%; transform: translateX(-50%);
+  display: flex; gap: 6px; padding: 4px 8px;
+  background: rgba(13, 17, 25, 0.72); backdrop-filter: blur(6px);
+  border: 1px solid var(--border); border-radius: 4px;
+  font-family: var(--mono); font-size: 10px; pointer-events: auto;
+}
+.tl-zoom-presets .lbl {
+  color: var(--text-3); padding: 3px 4px 3px 0;
+  letter-spacing: 0.08em; text-transform: uppercase; align-self: center;
+}
+.tl-zoom-presets button {
+  background: transparent; border: 1px solid var(--border);
+  color: var(--text-2); padding: 3px 8px; border-radius: 3px;
+  cursor: pointer; font: inherit; font-size: 10px;
+  transition: color 120ms, border-color 120ms, background 120ms;
+}
+.tl-zoom-presets button:hover {
+  color: var(--gold); border-color: var(--gold-soft); background: rgba(212,165,90,0.05);
+}
+.tl-zoom-presets button.active {
+  color: var(--gold); border-color: var(--gold-soft); background: rgba(212,165,90,0.10);
+}
+.tl-zoom-presets .sep {
+  width: 1px; height: 16px; background: var(--border); margin: 0 4px; align-self: center;
+}
+.tl-zoom-presets .yr-input {
+  background: var(--bg-2); border: 1px solid var(--border);
+  color: var(--text-1); padding: 3px 8px; border-radius: 3px;
+  font: inherit; font-size: 10px; width: 90px; outline: none;
+  transition: border-color 120ms;
+}
+.tl-zoom-presets .yr-input:focus { border-color: var(--gold-soft); }
+.tl-zoom-presets .yr-input::placeholder { color: var(--text-3); opacity: 0.6; }
+.tl-band { fill: rgba(255,255,255,0.02); }
+.tl-band-label {
+  font-family: var(--serif); font-size: 12px; fill: var(--text-3);
+  letter-spacing: 0.14em; text-transform: uppercase;
+  paint-order: stroke; stroke: var(--bg-0); stroke-width: 4px;
+}
+.tl-axis text { fill: var(--text-2); font-family: var(--mono); font-size: 10px; }
+.tl-era-line {
+  stroke: var(--text-2); stroke-width: 0.5;
+  stroke-opacity: 0.14; stroke-dasharray: 2 5;
+  pointer-events: none;
+}
+.tl-break {
+  pointer-events: none;
+}
+.tl-break-fill { /* dark fill across the cut so events behind don't show through */ }
+.tl-break-zigzag { /* drawn by JS */ }
+.tl-break-label {
+  fill: var(--gold-soft); font-family: var(--mono); font-size: 9.5px;
+  letter-spacing: 0.08em; opacity: 0.85;
+}
+.tl-era-line.major { stroke-opacity: 0.22; stroke-dasharray: none; stroke-width: 0.6; }
+.tl-era-label {
+  fill: var(--text-3); font-family: var(--mono); font-size: 8.5px;
+  letter-spacing: 0.10em; text-anchor: start; pointer-events: none; opacity: 0.55;
+}
+.tl-axis path, .tl-axis line { stroke: var(--border); }
+.tl-event { cursor: pointer; }
+/* Main pass uses <path class="tl-event-shape">; mini overview uses <circle class="tl-event-dot">. */
+.tl-event circle.tl-event-dot,
+.tl-event path.tl-event-shape {
+  stroke: rgba(255,255,255,0.18); stroke-width: 1.0;
+  transition: stroke 150ms ease, stroke-width 150ms ease, opacity 220ms cubic-bezier(0.2,0.8,0.2,1);
+}
+.tl-event:hover circle.tl-event-dot,
+.tl-event:hover path.tl-event-shape { stroke: var(--gold); stroke-width: 2.2; }
+.tl-event-label {
+  font-family: var(--sans); fill: var(--text-2);
+  pointer-events: none;
+  paint-order: stroke; stroke: var(--bg-0); stroke-width: 0.22em;
+  /* opacity transition drives the tier-fade and collision-fade visuals — no more display:none flips. */
+  transition: font-size 200ms cubic-bezier(0.2,0.8,0.2,1),
+              opacity 240ms cubic-bezier(0.2,0.8,0.2,1);
+}
+/* Both tier-gating and collision-resolution hide a label by adding .tl-hidden. CSS fades
+   the opacity smoothly via the transition above. pointer-events:none prevents hidden labels
+   from intercepting hover. */
+.tl-event-label.tl-hidden { opacity: 0; pointer-events: none; }
+/* Bubbles get a subtle fade too — for future "fade unrelated nodes when one is selected" UX. */
+.tl-event.tl-dim path.tl-event-shape,
+.tl-event.tl-dim circle.tl-event-dot { opacity: 0.18; }
+.tl-pan-region { cursor: grab; }
+.tl-pan-region:active { cursor: grabbing; }
+.tl-brush .selection {
+  fill: var(--gold); fill-opacity: 0.10; stroke: var(--gold-soft);
+}
+
+/* LISTS */
+.list-pane {
+  position: absolute; inset: 56px 24px 24px;
+  overflow-y: auto; padding-right: 12px;
+}
+.list-pane .row {
+  display: grid; grid-template-columns: 28px 1fr auto auto;
+  gap: 14px; align-items: baseline;
+  padding: 10px 14px; border-bottom: 1px solid var(--border-soft);
+  cursor: pointer; transition: background 120ms ease;
+}
+.list-pane .row:hover { background: var(--bg-2); }
+.list-pane .row .swatch { width: 12px; height: 12px; border-radius: 50%; margin-top: 4px; align-self: flex-start; }
+.list-pane .row .row-title { color: var(--text-0); font-size: 14px; }
+.list-pane .row .row-meta { font-family: var(--mono); font-size: 10.5px; color: var(--text-2); letter-spacing: 0.04em; }
+.list-pane .row .row-trad { color: var(--gold-soft); font-size: 11px; }
+
+/* ALCHEMY view */
+.alch-toolbox {
+  position: absolute; bottom: calc(var(--footer-h) + 18px); left: 50%; transform: translateX(-50%);
+  display: inline-flex; align-items: center; gap: 14px;
+  background: rgba(13,17,25,0.88); backdrop-filter: blur(8px);
+  border: 1px solid var(--gold-soft); border-radius: 999px;
+  padding: 8px 18px; z-index: 30;
+  box-shadow: 0 8px 30px rgba(0,0,0,0.4);
+}
+.alch-add-btn {
+  background: transparent; border: 1px solid var(--gold-soft); border-radius: 999px;
+  color: var(--gold); font-family: var(--sans); font-size: 11px;
+  padding: 6px 14px; letter-spacing: 0.10em; text-transform: uppercase;
+  cursor: pointer; transition: all 140ms ease;
+}
+.alch-add-btn:hover { background: rgba(212,165,90,0.10); border-color: var(--gold); }
+.alch-toolbox .alch-hint {
+  font-family: var(--mono); font-size: 10px; color: var(--text-3);
+  letter-spacing: 0.04em; font-style: italic;
+}
+.view-controls .alch-count {
+  font-family: var(--mono); font-size: 10px; color: var(--text-2);
+  letter-spacing: 0.04em; padding-right: 4px;
+}
+
+.alch-palette {
+  position: absolute; bottom: 70px; left: 50%; transform: translateX(-50%);
+  width: 380px;
+  background: linear-gradient(180deg, rgba(13,17,25,0.97), rgba(7,9,15,0.98));
+  backdrop-filter: blur(14px);
+  border: 1px solid var(--gold-soft); border-radius: 6px;
+  padding: 10px; z-index: 40;
+  box-shadow: 0 16px 48px rgba(0,0,0,0.55);
+}
+#alch-search {
+  width: 100%;
+  background: var(--bg-2); border: 1px solid var(--border); color: var(--text-0);
+  font-family: var(--sans); font-size: 13px; padding: 8px 12px; border-radius: 4px;
+  outline: none; box-sizing: border-box;
+}
+#alch-search:focus { border-color: var(--gold-soft); }
+.alch-results { max-height: 320px; overflow-y: auto; margin-top: 6px; }
+.alch-result {
+  display: flex; align-items: center; gap: 10px;
+  padding: 6px 10px; border-radius: 3px; cursor: pointer;
+  font-size: 12px;
+}
+.alch-result:hover, .alch-result.active { background: rgba(212,165,90,0.10); }
+.alch-r-swatch { width: 8px; height: 8px; border-radius: 50%; flex-shrink: 0; }
+.alch-r-title { color: var(--text-0); flex: 1; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.alch-r-meta { font-family: var(--mono); font-size: 9.5px; color: var(--text-3); letter-spacing: 0.04em; }
+.alch-empty {
+  padding: 14px 10px; color: var(--text-3); font-size: 11px;
+  font-style: italic; text-align: center;
+}
+.alch-hint-row {
+  margin-top: 6px; padding: 6px 10px 0; border-top: 1px solid var(--border);
+  font-family: var(--mono); font-size: 9px; color: var(--text-3);
+  letter-spacing: 0.06em; text-align: center;
+}
+
+.alch-node { cursor: pointer; }
+.alch-node.bridge .alch-circle { opacity: 0.78; }
+.alch-node.bridge:hover .alch-circle { opacity: 1; }
+.alch-node-label {
+  font-family: var(--sans); fill: var(--text-1);
+  pointer-events: none; text-anchor: middle; font-size: 11px;
+  paint-order: stroke; stroke: var(--bg-0); stroke-width: 0.22em;
+}
+.alch-node-label.pick { fill: var(--text-0); font-weight: 500; font-size: 12.5px; }
+.alch-node-label.bridge { fill: var(--text-2); font-size: 9.5px; font-style: italic; }
+.alch-link {
+  /* Quiet slate-blue default — matches .edge-line discipline. Type color lives in
+     --edge-type-color (set inline by JS); only the .hot state reveals it. */
+  stroke: rgba(96, 116, 158, 0.55);
+  vector-effect: non-scaling-stroke;
+  transition: stroke-opacity 180ms ease, stroke-width 180ms ease, stroke 180ms ease;
+}
+.alch-link.hot {
+  stroke: var(--edge-type-color, var(--gold)) !important;
+  stroke-opacity: 0.9 !important; stroke-width: 1.6 !important;
+}
+.alch-link.dim { stroke-opacity: 0.05 !important; }
+.alch-link-label {
+  font-family: var(--mono); font-size: 8.5px; fill: var(--text-3);
+  text-transform: uppercase; letter-spacing: 0.06em;
+  pointer-events: none;
+  paint-order: stroke; stroke: var(--bg-0); stroke-width: 0.25em;
+}
+.alch-remove { cursor: pointer; fill: var(--text-2); font-family: var(--mono); font-size: 9px; }
+.alch-remove-wrap:hover .alch-remove { fill: var(--gold); }
+.alch-remove-wrap:hover circle.alch-remove { fill: var(--bg-3); stroke: var(--gold); }
+
+/* AUTHORS view */
+.authors-pane .authors-toolbar {
+  position: sticky; top: 0; z-index: 2;
+  display: flex; align-items: center; gap: 8px;
+  padding: 10px 14px;
+  background: linear-gradient(180deg, var(--bg-1) 0%, rgba(13,17,25,0.92) 100%);
+  border-bottom: 1px solid var(--border);
+  font-family: var(--mono); font-size: 10px;
+  color: var(--text-3); letter-spacing: 0.06em;
+}
+.authors-pane .at-count { color: var(--text-2); }
+.authors-pane .at-spacer { flex: 1; }
+.authors-pane .at-lbl { color: var(--text-3); text-transform: uppercase; margin-right: 2px; }
+.authors-pane .at-sort {
+  background: transparent; border: 1px solid var(--border);
+  color: var(--text-2); font-family: inherit; font-size: 10px;
+  padding: 3px 8px; border-radius: 3px; cursor: pointer;
+  letter-spacing: 0.08em; text-transform: uppercase;
+  transition: color 120ms, border-color 120ms, background 120ms;
+}
+.authors-pane .at-sort:hover { color: var(--gold); border-color: var(--gold-soft); }
+.authors-pane .at-sort.active { color: var(--gold); border-color: var(--gold); background: rgba(212,165,90,0.08); }
+
+.authors-pane .authors-era {
+  font-family: var(--serif); font-size: 11px;
+  color: var(--gold-soft); letter-spacing: 0.14em; text-transform: uppercase;
+  padding: 18px 14px 5px; margin-top: 4px;
+  border-bottom: 1px solid var(--border-soft);
+}
+.authors-pane .at-era-count { color: var(--text-3); font-family: var(--mono); letter-spacing: 0.04em; text-transform: none; }
+.authors-pane .row { grid-template-columns: 18px 1fr auto auto auto; align-items: start; gap: 14px; }
+.authors-pane .row .authors-date {
+  white-space: nowrap; min-width: 90px; text-align: right;
+  color: var(--text-2);
+}
+.authors-pane .at-divider { color: var(--text-3); margin: 0 4px; opacity: 0.5; }
+.authors-pane .at-attrib {
+  display: inline-block;
+  font-family: var(--mono); font-size: 8.5px;
+  color: var(--text-3); letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 1px 4px; border: 1px solid var(--border);
+  border-radius: 2px;
+  vertical-align: 1px; margin-right: 4px;
+}
+
+/* ABOUT */
+.about-pane {
+  position: absolute; inset: 56px 0 0;
+  overflow-y: auto; padding: 16px 48px 48px;
+  max-width: 760px; margin: 0 auto; left: 0; right: 0;
+}
+.about-pane h3 { font-family: var(--serif); color: var(--gold); margin-top: 1.8em; font-size: 18px; letter-spacing: 0.06em; font-weight: 500; }
+.about-pane p, .about-pane li { font-size: 13.5px; line-height: 1.7; color: var(--text-1); }
+.about-pane code { background: var(--bg-2); padding: 1px 5px; font-family: var(--mono); font-size: 11.5px; border-radius: 2px; }
+
+/* SCROLLBARS */
+::-webkit-scrollbar { width: 10px; height: 10px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: var(--bg-3); border-radius: 4px; }
+::-webkit-scrollbar-thumb:hover { background: var(--border); }
+
+/* MISSING DATA */
+#missing-data {
+  position: fixed; inset: 0; background: var(--bg-0);
+  display: none; align-items: center; justify-content: center;
+  flex-direction: column; gap: 16px; z-index: 100;
+  color: var(--text-1); font-size: 14px; text-align: center; padding: 24px;
+}
+#missing-data h2 { font-family: var(--serif); color: var(--gold); margin: 0; }
+#missing-data code { background: var(--bg-2); padding: 4px 10px; border-radius: 3px; font-family: var(--mono); }
+
+/* LEGEND */
+.btn-reset {
+  background: transparent; border: 1px solid var(--border);
+  color: var(--text-2); font-family: var(--mono); font-size: 10.5px;
+  letter-spacing: 0.06em; padding: 4px 10px; border-radius: 3px;
+  cursor: pointer; transition: color 120ms ease, border-color 120ms ease, background 120ms ease;
+}
+.btn-reset:hover { color: var(--gold); border-color: var(--gold-soft); background: rgba(212,165,90,0.06); }
+.btn-reset.active { color: var(--gold); border-color: var(--gold); }
+
+/* Map thumbnail — bottom-right, sits clear of any dashboard panels by avoiding the detail-pane width */
+/* ZOOM METER — top-right of canvas, grouped with the view-controls "tools" cluster.
+   Sits ABOVE the view-header row, so the view-header reserves space (via body.zoom-visible)
+   to prevent the controls row from running under the meter. */
+.zoom-meter {
+  position: absolute; top: 12px; right: 24px; z-index: 6;
+  display: inline-flex; align-items: center; gap: 0;
+  background: rgba(13, 17, 25, 0.86); backdrop-filter: blur(6px);
+  border: 1px solid var(--border); border-radius: 4px;
+  padding: 2px; z-index: 30;
+  font-family: var(--mono);
+}
+.zoom-meter button {
+  background: transparent; border: 0; padding: 0;
+  color: var(--text-2); cursor: pointer;
+  transition: color 120ms ease, background 120ms ease;
+  font-family: inherit; line-height: 1;
+  height: 24px;
+}
+.zm-step {
+  width: 26px;
+  font-size: 14px; font-weight: 400;
+  border-radius: 3px;
+}
+.zm-step:hover { color: var(--gold); background: rgba(212,165,90,0.08); }
+.zm-baseline {
+  padding: 0 10px;
+  font-size: 10px; letter-spacing: 0.08em; font-weight: 500;
+  color: var(--gold-soft);
+  border-radius: 3px;
+  margin: 0 2px;
+}
+.zm-baseline:hover { color: var(--gold); background: rgba(212,165,90,0.08); }
+.zm-readout {
+  font-size: 9.5px; color: var(--text-3); letter-spacing: 0.04em;
+  padding: 0 10px 0 8px; min-width: 42px; text-align: right;
+  border-left: 1px solid var(--border);
+  margin-left: 2px;
+  height: 24px; line-height: 24px;
+  display: inline-block;
+}
+
+.map-thumb {
+  position: absolute; bottom: calc(var(--footer-h) + 12px);
+  right: 14px;
+  width: 200px; height: 110px;
+  background: rgba(13, 17, 25, 0.86); backdrop-filter: blur(6px);
+  border: 1px solid var(--border); border-radius: 4px;
+  overflow: hidden; pointer-events: none;
+  transition: opacity 200ms ease;
+}
+.map-thumb svg { display: block; width: 100%; height: 100%; }
+.map-thumb-label {
+  position: absolute; bottom: 4px; left: 6px;
+  font-family: var(--mono); font-size: 9.5px; color: var(--gold);
+  letter-spacing: 0.06em; text-shadow: 0 1px 4px rgba(0,0,0,0.85);
+}
+#map-thumb-marker circle.pulse {
+  fill: var(--gold); opacity: 0.85;
+  filter: drop-shadow(0 0 4px var(--gold));
+  animation: mapPulse 1.6s ease-in-out infinite;
+}
+@keyframes mapPulse {
+  0%, 100% { r: 2.2; opacity: 0.95; }
+  50%      { r: 3.6; opacity: 0.6; }
+}
+
+.legend {
+  position: absolute; bottom: calc(var(--footer-h) + 12px);
+  /* Relative to main.canvas, which now correctly starts after the nav (grid columns
+     allocate the nav width). 24px is the canvas-internal margin. */
+  left: 24px;
+  transition: bottom 200ms ease;
+  background: rgba(13, 17, 25, 0.88); backdrop-filter: blur(6px);
+  border: 1px solid var(--border); border-radius: 4px;
+  padding: 10px 14px; font-size: 11px; color: var(--text-2);
+  pointer-events: auto; max-width: 240px;
+  display: flex; flex-direction: column; gap: 4px;
+  max-height: 50vh; overflow-y: auto;
+  transition: max-width 180ms ease, padding 180ms ease, max-height 180ms ease;
+}
+.legend.collapsed {
+  max-height: 38px; max-width: 44px; padding: 8px;
+  overflow: hidden;
+}
+/* No longer needed — main.canvas now sits in its own grid column and starts after the
+   nav, so .legend's `left: 24px` is canvas-relative and automatically respects nav width. */
+.legend.collapsed .lrow,
+.legend.collapsed .ltitle { display: none; }
+.legend.collapsed .legend-burger { transform: none; }
+.legend-burger {
+  position: absolute; top: 6px; right: 6px; width: 26px; height: 26px;
+  display: flex; align-items: center; justify-content: center;
+  font-family: var(--mono); font-size: 16px; color: var(--text-2);
+  background: transparent; border: 1px solid transparent; border-radius: 3px;
+  cursor: pointer; transition: color 120ms, background 120ms, border-color 120ms;
+  user-select: none;
+}
+.legend-burger:hover { color: var(--gold); border-color: var(--border); background: var(--bg-2); }
+.legend.collapsed .legend-burger { position: relative; top: 0; right: 0; }
+.legend .ltitle { color: var(--text-3); text-transform: uppercase; letter-spacing: 0.12em; font-size: 9.5px; margin-bottom: 4px; padding-right: 24px; }
+.legend .lrow {
+  display: flex; align-items: center; gap: 8px; cursor: pointer;
+  padding: 2px 4px; border-radius: 2px; transition: background 120ms ease;
+}
+.legend .lrow:hover { background: var(--bg-3); color: var(--text-0); }
+.legend .lrow.active { background: rgba(212,165,90,0.12); color: var(--text-0); }
+.legend .lswatch { width: 10px; height: 10px; border-radius: 50%; flex-shrink: 0; }
+.legend .lcount { font-family: var(--mono); font-size: 9.5px; color: var(--text-3); margin-left: auto; }
+
+/* TOOLTIP */
+.tooltip {
+  /* Use position:fixed so clientX/Y from mousemove map directly to viewport coords —
+     no offset surprises from positioned ancestors (main, aside, etc.). */
+  position: fixed; pointer-events: none;
+  background: rgba(13,17,25,0.96); backdrop-filter: blur(8px);
+  border: 1px solid var(--border); border-radius: 4px;
+  padding: 8px 12px; font-size: 12px; color: var(--text-0);
+  max-width: 280px; z-index: 1000;
+  font-family: var(--sans);
+  box-shadow: 0 4px 20px rgba(0,0,0,0.5);
+  opacity: 0; transition: opacity 100ms ease;
+  left: 0; top: 0;
+}
+.tooltip.show { opacity: 1; }
+.tooltip .ttitle { font-weight: 500; color: var(--text-0); margin-bottom: 2px; }
+.tooltip .tmeta { font-size: 10.5px; color: var(--text-2); font-family: var(--mono); }
+.tooltip .tt-thumb {
+  display: block; width: 100%; max-width: 220px;
+  max-height: 130px; object-fit: cover;
+  object-position: center top;   /* favor face/head over chest/body in cropped portraits */
+  border-radius: 3px; margin: -4px -2px 8px;
+  border: 1px solid var(--border);
+  background: var(--bg-2);
+}
+
+/* ============================================================
+   SCRIPTURE VIEW
+   Pantheon-style ring of book-islands (hulls), each containing the
+   named entities — deities, persons, events — that appear in that book.
+   Per the user's instructions: design priority is clarity + hygiene +
+   small clean typography. Nodes are deliberately small; labels appear
+   on hubs and on hover only by default.
+   ============================================================ */
+
+/* Custom corpus dropdown — narrow button shows short corpus name; popup below
+   reveals the full long descriptions only when open. Replaces the native
+   <select> which was visually huge with long labels like
+   "Holy Bible (Christian canons)" or "Ethiopic Tewahedo Broader Canon (...)". */
+.scripture-corpus-wrap {
+  position: relative;
+  display: inline-flex; align-items: center;
+}
+.scripture-corpus-btn {
+  background: var(--bg-2); color: var(--text-0);
+  border: 1px solid var(--border); border-radius: 3px;
+  padding: 4px 10px;
+  font-family: var(--mono); font-size: 11px;
+  letter-spacing: 0.04em;
+  cursor: pointer;
+  display: inline-flex; align-items: center; gap: 8px;
+  min-width: 110px;
+  transition: border-color 140ms ease, color 140ms ease;
+}
+.scripture-corpus-btn:hover { border-color: var(--gold-soft); color: var(--gold); }
+.scripture-corpus-btn.open  { border-color: var(--gold); color: var(--gold); }
+.scripture-corpus-btn .scb-name { white-space: nowrap; }
+.scripture-corpus-btn .scb-caret {
+  font-size: 9px; color: var(--text-3);
+  transition: transform 160ms ease, color 160ms ease;
+  margin-left: auto;
+}
+.scripture-corpus-btn.open .scb-caret { transform: rotate(180deg); color: var(--gold); }
+
+.scripture-corpus-popup {
+  position: absolute;
+  top: calc(100% + 4px); left: 0;
+  min-width: 340px; max-width: 460px;
+  background: linear-gradient(180deg, rgba(13,17,25,0.97), rgba(7,9,15,0.98));
+  backdrop-filter: blur(14px);
+  border: 1px solid var(--gold-soft); border-radius: 4px;
+  padding: 4px;
+  box-shadow: 0 12px 36px rgba(0,0,0,0.6);
+  z-index: 300;
+  opacity: 0; visibility: hidden; transform: translateY(-4px);
+  transition: opacity 140ms ease,
+              transform 180ms cubic-bezier(0.2,0.8,0.2,1),
+              visibility 0s linear 200ms;
+  pointer-events: none;
+  max-height: 70vh; overflow-y: auto;
+}
+.scripture-corpus-popup.open {
+  opacity: 1; visibility: visible; transform: translateY(0);
+  pointer-events: auto;
+  transition: opacity 140ms ease,
+              transform 180ms cubic-bezier(0.2,0.8,0.2,1);
+}
+.scripture-corpus-option {
+  display: flex; align-items: baseline; gap: 12px;
+  padding: 7px 10px;
+  cursor: pointer; border-radius: 3px;
+  transition: background 120ms ease;
+}
+.scripture-corpus-option:hover  { background: rgba(212,165,90,0.10); }
+.scripture-corpus-option.active { background: rgba(212,165,90,0.16); }
+.scripture-corpus-option .sc-short {
+  font-family: var(--mono); font-size: 11.5px;
+  color: var(--gold); flex-shrink: 0;
+  min-width: 104px;
+}
+.scripture-corpus-option .sc-desc {
+  font-family: var(--serif); font-style: italic;
+  font-size: 12.5px; color: var(--text-2);
+  flex: 1; line-height: 1.3;
+}
+.scripture-corpus-option.soon .sc-short { color: var(--text-3); }
+.scripture-corpus-option.soon .sc-desc  { color: var(--text-3); opacity: 0.7; }
+
+/* Section super-labels around the very outer ring — gold-soft, small-caps serif.
+   Sits OUTSIDE the per-book labels so it reads as a higher-order grouping. */
+.scripture-section-label {
+  font-family: var(--serif); font-style: italic;
+  font-size: 13px; letter-spacing: 0.18em;
+  text-transform: uppercase;
+  fill: var(--gold); opacity: 0.55;
+  pointer-events: none; user-select: none;
+}
+
+/* Per-book labels — sit on the outer ring like Pantheon family labels.
+   Slightly smaller so a 40-book Bible still reads. */
+.scripture-book-label {
+  font-family: var(--serif); font-size: 11.5px;
+  letter-spacing: 0.04em;
+  fill: var(--text-1); opacity: 0.78;
+  pointer-events: none; user-select: none;
+  transition: opacity 140ms ease, fill 140ms ease;
+}
+.scripture-book-label.active { fill: var(--gold); opacity: 1; }
+.scripture-book-label.dim    { opacity: 0.18; }
+
+/* Section divider arcs (faint) between consecutive section-blocks.
+   Helps the eye see where, e.g., Pentateuch ends and Prophets begins. */
+.scripture-section-arc {
+  fill: none; stroke-width: 0.9;
+  opacity: 0.18; stroke-linecap: round;
+}
+
+/* Book-island hull — pie-section / annular sector, soft fill + visible stroke.
+   Slightly louder than Pantheon's .sector-hull because in this view the hulls
+   ARE the primary content, not a backdrop. */
+.scripture-hull {
+  stroke-width: 0.85;
+  fill-opacity: 0.09;
+  stroke-opacity: 0.55;
+  cursor: pointer;
+  transition: fill-opacity 140ms ease, stroke-opacity 140ms ease;
+}
+.scripture-hull:hover  { fill-opacity: 0.16; stroke-opacity: 0.85; }
+.scripture-hull.active { fill-opacity: 0.18; stroke-opacity: 0.92; }
+.scripture-hull.dim    { fill-opacity: 0.02; stroke-opacity: 0.14; }
+
+/* Entity nodes inside the hulls — small, with deterministic per-node color
+   from nodeColor(). Stroke is a faint hairline so dark fills don't disappear. */
+.scripture-node {
+  stroke: rgba(255,255,255,0.18); stroke-width: 0.6;
+  transition: opacity 120ms ease, stroke-opacity 120ms ease;
+}
+.scripture-node.hot {
+  stroke: var(--gold); stroke-width: 1.4;
+}
+.scripture-node.dim { opacity: 0.18; }
+
+/* Entity labels — even smaller than Documents-view labels. Default hidden;
+   shown on hub set and on hover. */
+.scripture-node-label {
+  font-family: var(--mono); font-size: 9.2px;
+  letter-spacing: 0.02em;
+  fill: var(--text-1); opacity: 0.78;
+  pointer-events: none; user-select: none;
+  text-anchor: middle;
+}
+.scripture-node-label.hub { fill: var(--text-0); opacity: 1; }
+.scripture-node-label.dim { opacity: 0.12; }
+.scripture-node-label.hot { fill: var(--gold); opacity: 1; }
+
+/* Cross-book entity-trail edges — connect duplicate instances of the same
+   entity across multiple book-islands (e.g., Moses across J / E / D / Quran).
+   Very faint by default; on entity-hover they brighten to gold. */
+.scripture-trail {
+  fill: none; stroke: var(--gold-soft);
+  stroke-width: 0.5; stroke-opacity: 0.10;
+  pointer-events: none;
+  transition: stroke-opacity 140ms ease, stroke 140ms ease, stroke-width 140ms ease;
+}
+.scripture-trail.hot {
+  stroke: var(--gold); stroke-opacity: 0.85; stroke-width: 1.0;
+}
+.scripture-trail.dim { stroke-opacity: 0.03; }
+
+/* Lock-edges — within-wedge straight lines between two locked entities that have
+   instances in the same book (e.g., Nephthys → Geb in the Pyramid Texts, the
+   Coffin Texts, and the Book of the Dead). Stroke color is taken from the vault
+   edge type via EDGE_STYLE so semantics ("parent-of" sage-green, "consort"
+   copper, "polemic-against" crimson, "syncretic-identification" gold) read at
+   a glance. Width is constant so the line keeps its weight at any zoom. */
+.scripture-lock-edge {
+  fill: none;
+  stroke-width: 1.4;
+  stroke-opacity: 0.85;
+  stroke-linecap: round;
+  pointer-events: none;
+  vector-effect: non-scaling-stroke;
+}
+
+/* Empty-state copy when the user picks a corpus that isn't wired up yet. */
+.scripture-empty {
+  font-family: var(--serif); font-size: 16px;
+  fill: var(--text-2); font-style: italic;
+}
+.scripture-empty .sub {
+  font-family: var(--mono); font-size: 11px;
+  fill: var(--text-3); letter-spacing: 0.08em; text-transform: uppercase;
+}
+
+/* Lock-counter chip — only visible when STATE.lockedSet has Scripture entities.
+   Surfaces the current pinboard size + clears on click. Distinct gold accent
+   so it reads as an "active state" indicator rather than a regular toggle. */
+.btn.btn-mini.scripture-lock-chip {
+  border-color: var(--gold-soft);
+  color: var(--gold);
+}
+.btn.btn-mini.scripture-lock-chip:hover {
+  border-color: var(--gold);
+  background: rgba(212,165,90,0.10);
+}
+.btn.btn-mini.scripture-lock-chip .lock-count {
+  display: inline-block;
+  min-width: 16px;
+  padding: 0 5px;
+  margin-left: 6px;
+  border-radius: 8px;
+  background: var(--gold);
+  color: var(--bg-0);
+  font-family: var(--mono);
+  font-size: 10px;
+  font-weight: 600;
+  text-align: center;
+  line-height: 14px;
+}
+
