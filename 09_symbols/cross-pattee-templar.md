@@ -29,6 +29,10 @@ tradition-context:
   - "[[tradition-teutonic-knights]]"
   - "[[tradition-christianity-canonical]]"
 cross-symbol-edges:
+  - target: "cross-order-of-christ"
+    type: "ancestor-of"
+    notes: "**Direct documented institutional descent (1319)** — the [[cross-order-of-christ|Cross of the Order of Christ]] is derived from the Templar cross-pattée at the 1319 [[event-order-of-christ-foundation-1319|Order-of-Christ refoundation]] in Portugal. The Order of Christ form (red outer cross-pattée with smaller white interior cross-pattée superimposed — the 'cross-within-cross') modifies the Templar plain-red-cross-pattée-on-white-mantle (1147 Vézelay grant) while preserving the institutional-Templar continuity. Tier 1 transmission edge."
+    refs: ["Olival 2005", "Disney 2009", "Nicholson 2001"]
   - target: "latin-cross"
     type: "parallel-form"
     notes: "The cross-pattée is a *variant Christian cross form*, distinct from the Latin cross (long shaft) and the Greek cross (equal arms with uniform width). Within Christian iconography all cross-forms operate within the same theological-typological frame."
@@ -89,7 +93,7 @@ The **Cross-Pattée** (French *croix pattée* — "footed cross"; Latin *crux pa
 - **1147** — Pope Eugenius III grants the red cross-pattée on white mantle to the Templars at Vézelay. From this date the form is the canonical Templar visual identity.
 - **1198** — Teutonic Order formally militarized; adopts the black cross-pattée on white as its identifying mark.
 - **1307–1312** — [[event-trial-of-templars-1307-1314|Templar trial]] and suppression; the cross-pattée disappears from active Templar use but survives in:
-  - **Iberian Templar-successor orders** — the Portuguese Order of Christ (1319) and the Aragonese Order of Montesa (1317) preserve modified-Templar visual identity. The **Cross of the Order of Christ** is a red cross-pattée with internal white cross-pattée — the form Vasco da Gama and other Portuguese-Age-of-Discovery navigators used on their sails.
+  - **Iberian Templar-successor orders** — the [[tradition-order-of-christ|Portuguese Order of Christ]] (1319; see [[event-order-of-christ-foundation-1319]]) and the Aragonese Order of Montesa (1317) preserve modified-Templar visual identity. The [[cross-order-of-christ|Cross of the Order of Christ]] is a red cross-pattée with internal white cross-pattée — the form Vasco da Gama and other Portuguese-Age-of-Discovery navigators used on their sails.
   - **Continuous Teutonic Order use** — the Order survives in modified-Catholic form to the present (headquartered in Vienna).
 - **1813** — Prussian **Iron Cross** instituted by Friedrich Wilhelm III; explicit visual descent from Teutonic Cross.
 - **Modern military use** — continuous from 1813 in Prussian-German military decoration tradition.

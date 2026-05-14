@@ -59,6 +59,7 @@ _Auto-generated 2026-05-15. Targets sorted by incoming reference count (descendi
 | 2 | `ephrem-syrian` | `tatian-the-syrian`, `bardaisan-of-edessa` |
 | 2 | `hierocles` | `phase-4-039-celsus-true-word`, `apollonius-of-tyana` |
 | 2 | `fatima-bint-muhammad` | `khadija-bint-khuwaylid` |
+| 2 | `event-aleister-crowley-boca-do-inferno-1930` | `fernando-pessoa`, `tradition-portuguese-hermeticism` |
 | 2 | `aksum` | `ezana-of-aksum`, `kaleb-of-aksum` |
 | 2 | `harun-al-rashid` | `musa-al-kazim` |
 | 2 | `hecataeus-of-abdera` | `thales`, `ptolemy-i-soter` |
