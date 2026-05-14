@@ -36,6 +36,18 @@ cross-symbol-edges:
     type: "parallel-form"
     notes: "The triple-spiral form of the triskelion is iconographically continuous with single-spiral Neolithic Atlantic European megalithic art; the triple-spiral is the 'compounded' three-spiral version of the same iconographic vocabulary. Same megalithic source-context."
     refs: ["Eogan 1986"]
+  - target: "celtic-cross"
+    type: "parallel-form"
+    notes: "Both are characteristic Insular Christian iconographic motifs preserved continuously from La Tène into Insular Christian visual vocabulary; *Book of Kells* and *Book of Durrow* combine triskelion ornament with cross-page traditions."
+    refs: ["Mayr-Harting 1991", "Aldhouse-Green 1986"]
+  - target: "sun-disk"
+    type: "visual-cognate"
+    notes: "Both encode rotational solar/cosmic motion. Bronze Age Atlantic European solar-wheel cognates (Trundholm sun chariot) deploy four-spoke wheel iconography; the triskelion's three-fold rotation belongs to the same Atlantic-European rotational-cosmographic visual family."
+    refs: ["Aldhouse-Green 1986", "Eogan 1986"]
+  - target: "dharmachakra"
+    type: "visual-cognate"
+    notes: "Both are rotational wheel-form sacred-emblems with cosmographic-motion content. The Buddhist Dharma-wheel (eight-spoke) and the Celtic/Greek triskelion (three-fold) developed entirely independently — no documented transmission between Asian Buddhist and Atlantic European traditions — but cognate at the level of rotational-symmetry sacred-emblems."
+    refs: ["Aldhouse-Green 1986"]
 mystery-status: "documented"
 status: "metadata"
 refs:
@@ -67,6 +79,12 @@ refs:
     type: "monograph"
     tier: 1
     notes: "Standard numismatic reference for the Sicilian Trinacria attestations from the 4th c. BCE onward."
+  - title: "The Coming of Christianity to Anglo-Saxon England"
+    author: "Henry Mayr-Harting"
+    year: 1991
+    publisher: "Pennsylvania State University Press"
+    type: "monograph"
+    tier: 1
 tags: [symbol, geometric, celtic, sicilian, manx, insular, megalithic, triskelion, triple-spiral, methodology-discipline]
 ---
 

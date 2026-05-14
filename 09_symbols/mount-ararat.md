@@ -30,6 +30,18 @@ cross-symbol-edges:
     type: "parallel-form"
     notes: "Mount Ararat is the Ark's resting-place in Genesis 8:4; the Ark and the Mountain together form the post-Flood iconographic complex."
     refs: ["Westermann 1984"]
+  - target: "rainbow-covenant"
+    type: "parallel-form"
+    notes: "Mount Ararat and the rainbow are the two post-flood-covenant-anchor symbols of Genesis 8-9: the mountain anchors the cosmic-physical restoration, the rainbow anchors the divine-juridical covenant. Iconographically paired in Christian, Jewish, and Armenian flood-narrative-and-covenant art."
+    refs: ["Westermann 1984"]
+  - target: "tree-of-life"
+    type: "parallel-form"
+    notes: "Both are axis-mundi / cosmic-anchor emblems. The cosmic-mountain (Sumerian *kur*, Babylonian *ziggurat*-as-mountain, Hindu Meru, Greek Olympus, Christian Sinai-and-Tabor) and the cosmic-tree-of-life are the two principal Mediterranean-Near-Eastern axis-mundi iconographic forms. Mount Ararat sits within this larger cosmic-mountain family."
+    refs: ["Eliade 1959", "Smith 2001"]
+  - target: "serpent-cosmic-enemy"
+    type: "parallel-form"
+    notes: "Pre-flood chaos-waters house Leviathan / Tiamat / Apophis; Mount Ararat rises above them as the restored-order anchor. The chaos-serpent and the rescue-mountain belong to the chaoskampf + flood-narrative iconographic family."
+    refs: ["Day 1985"]
 mystery-status: "documented"
 status: "metadata"
 refs:
@@ -53,6 +65,25 @@ refs:
     type: "primary-translation"
     tier: 2
     notes: "Foundational Armenian-Christian identification of the Ararat-Masis range as the Ark's resting place"
+  - title: "The Sacred and the Profane: The Nature of Religion"
+    author: "Mircea Eliade"
+    year: 1959
+    publisher: "Harcourt"
+    type: "monograph"
+    tier: 2
+    notes: "Tier 2 per Eliade-discipline: cite his phenomenological *axis mundi* / *hierophany* categories (academic canon), NOT the pre-WWII Iron Guard writings."
+  - title: "The Origins of Biblical Monotheism"
+    author: "Mark S. Smith"
+    year: 2001
+    publisher: "Oxford University Press"
+    type: "monograph"
+    tier: 1
+  - title: "God's Conflict with the Dragon and the Sea"
+    author: "John Day"
+    year: 1985
+    publisher: "Cambridge University Press"
+    type: "monograph"
+    tier: 1
 tags: [symbol, cosmological, mountain, mount-ararat, ark, noah, flood, anatolia, armenian, eastern-turkey]
 ---
 

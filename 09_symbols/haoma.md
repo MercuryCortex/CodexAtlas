@@ -37,6 +37,18 @@ cross-symbol-edges:
     type: "parallel-form"
     notes: "The two principal Zoroastrian cult-substances: fire (Atar) and haoma. Both central to yasna-liturgy. Fire is masculine-igneous; haoma is plant-watery — structural complementarity"
     refs: ["Boyce 1975"]
+  - target: "tree-of-life"
+    type: "parallel-form"
+    notes: "Haoma in Yasna 9-11 is mythologized as the *White Haoma* / *Gaokerena* — a primordial cosmic-tree whose juice grants immortality. The Avestan Gaokerena is iconographically the Zoroastrian cosmic-tree-of-life, paralleling Mesopotamian sacred-tree + Norse Yggdrasil + Hindu Aśvattha."
+    refs: ["Boyce 1975", "Stausberg 2002"]
+  - target: "vine-grape"
+    type: "parallel-form"
+    notes: "**The Indo-European sacred-pressed-plant family.** Iranian Haoma + Vedic Soma + Mediterranean Dionysian vine constitute the three principal Indo-European sacred-plant traditions. Doniger 1981 documents the Haoma↔Soma philological-and-ritual continuity. The vine-and-wine Greek tradition shares the ritual-structure (sacrificial-pressed-plant for divine communion) without documented plant-identity transmission."
+    refs: ["Boyce 1975", "Doniger 1981"]
+  - target: "latin-cross"
+    type: "parallel-form"
+    notes: "The Christian eucharistic plant-extract-as-divine-substance (wine, blood of Christ) and the Zoroastrian haoma-as-immortality-substance share the structural pattern of ritual-plant-drink-as-cosmic-divine-communion. Independent traditions; the structural similarity is what produced 19th-century History-of-Religions comparative-religion programs (Boyce 1975 evaluates)."
+    refs: ["Boyce 1975", "McGowan 2014"]
 mystery-status: "partially-deciphered"
 status: "metadata"
 refs:
@@ -71,6 +83,24 @@ refs:
     year: 2002
     publisher: "Encyclopaedia Iranica Online"
     type: "encyclopedia"
+    tier: 1
+  - title: "Zarathustra and His Religion (3 vols.)"
+    author: "Stausberg, Michael"
+    year: 2002
+    publisher: "Brill"
+    type: "monograph"
+    tier: 1
+  - title: "The Rig Veda: An Anthology"
+    author: "Wendy Doniger (O'Flaherty)"
+    year: 1981
+    publisher: "Penguin Classics"
+    type: "primary-translation"
+    tier: 1
+  - title: "Ancient Christian Worship"
+    author: "McGowan, Andrew B."
+    year: 2014
+    publisher: "Baker Academic"
+    type: "monograph"
     tier: 1
 tags: [symbol, phytomorphic, zoroastrian, vedic, haoma, soma, ritual-drink, indo-iranian, yasna, eucharist-parallel]
 ---

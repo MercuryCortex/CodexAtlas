@@ -46,6 +46,18 @@ cross-symbol-edges:
     type: "ancestor-of"
     notes: "Secondary / indirect derivation via the coptic-cross node — the ankh's iconographic influence on Christian cross-iconography is mediated through Coptic Christianity, not directly to the Latin/Constantinian form."
     refs: ["Bagnall 1993", "Jensen 2017"]
+  - target: "monas-hieroglyphica"
+    type: "appropriated-by"
+    notes: "John Dee's *Monas Hieroglyphica* (1564) deliberately integrates the ankh-hieroglyph as one of its component elements within the composite Hermetic emblem (mediated through Horapollo's *Hieroglyphica* 1505 print + Renaissance Egyptian-revival hermeticism). The Renaissance hermetic project routinely treats the ankh as cipher-of-cosmic-life."
+    refs: ["Yates 1964", "Hakansson 2001"]
+  - target: "eye-of-horus-wedjat"
+    type: "parallel-form"
+    notes: "Both are core Egyptian apotropaic/protective hieroglyphs paired in royal regalia and amuletic contexts; the two most-produced Egyptian amulet-forms alongside the scarab. Iconographically co-occurring in the same Egyptian temple-and-funerary visual vocabulary."
+    refs: ["Gardiner 1957", "Pinch 1994"]
+  - target: "sun-disk"
+    type: "syncretic-fusion"
+    notes: "**Aten-disk-with-rays-ending-in-hands-holding-ankhs.** The Amarna iconographic innovation (c. -1340) routinely depicts Aten's rays terminating in tiny hands holding ankhs to Akhenaten's nostrils — the visible solar-disk explicitly transmitting life-via-ankh to the king. The ankh + sun-disk fusion is canonical Amarna iconographic vocabulary."
+    refs: ["Hornung 1982", "Wilkinson 2003"]
 mystery-status: "documented"
 status: "metadata"
 refs:
@@ -74,6 +86,30 @@ refs:
     type: "monograph"
     tier: 1
     notes: "Translation from German (1971); foundational on Egyptian theological structure including the iconographic logic of the ankh."
+  - title: "Magic in Ancient Egypt"
+    author: "Geraldine Pinch"
+    year: 1994
+    publisher: "British Museum Press"
+    type: "monograph"
+    tier: 1
+  - title: "The Complete Gods and Goddesses of Ancient Egypt"
+    author: "Richard H. Wilkinson"
+    year: 2003
+    publisher: "Thames & Hudson"
+    type: "monograph"
+    tier: 1
+  - title: "Giordano Bruno and the Hermetic Tradition"
+    author: "Frances A. Yates"
+    year: 1964
+    publisher: "Routledge"
+    type: "monograph"
+    tier: 1
+  - title: "Seeing the Word: John Dee and Renaissance Occultism"
+    author: "Håkan Håkansson"
+    year: 2001
+    publisher: "Lund University Press"
+    type: "monograph"
+    tier: 1
 tags: [symbol, egyptian, geometric, life, eternity, ankh, crux-ansata, hieroglyph]
 ---
 

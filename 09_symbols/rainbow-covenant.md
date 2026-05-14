@@ -30,6 +30,18 @@ cross-symbol-edges:
     type: "appropriated-by"
     notes: "Genesis 9:13 — the rainbow appears AFTER the Ark's grounding, as the divine covenant-sign that the flood will not be repeated. The two symbols form a paired flood-narrative iconographic complex."
     refs: ["Westermann 1984"]
+  - target: "mount-ararat"
+    type: "parallel-form"
+    notes: "Rainbow and Mount Ararat are the two post-flood-covenant-anchor symbols of Genesis 8-9: the mountain anchors the cosmic-physical restoration, the rainbow anchors the divine-juridical covenant. Iconographically paired in Christian flood-narrative + covenant art."
+    refs: ["Westermann 1984"]
+  - target: "tree-of-life"
+    type: "parallel-form"
+    notes: "Both are post-flood / Edenic-restoration emblems within the Hebrew Bible's cosmogonic-and-covenantal narrative arc. The Tree of Life is the lost Eden-promise; the rainbow is the post-flood covenant-promise; both register God's relationship to humanity as cosmic-natural-symbol."
+    refs: ["Westermann 1984", "Smith 2001"]
+  - target: "halo-nimbus"
+    type: "parallel-form"
+    notes: "**Christ-in-Majesty rainbow-throne.** Revelation 4:3 ('around the throne was a rainbow that shone like an emerald') generates the Christian iconographic *Maiestas Domini* with Christ enthroned within a multicolored rainbow-mandorla (Sant'Apollinare-in-Classe; Tahull San Clemente). The rainbow + halo + mandorla compound is one of the principal medieval Christian throne-of-glory iconographies."
+    refs: ["Schiller 1971", "Belting 1994"]
 mystery-status: "documented"
 status: "metadata"
 refs:
@@ -50,6 +62,24 @@ refs:
     author: "Simek, Rudolf"
     year: 1993
     publisher: "D.S. Brewer"
+    type: "monograph"
+    tier: 1
+  - title: "The Origins of Biblical Monotheism"
+    author: "Mark S. Smith"
+    year: 2001
+    publisher: "Oxford University Press"
+    type: "monograph"
+    tier: 1
+  - title: "Iconography of Christian Art"
+    author: "Schiller, Gertrud"
+    year: 1971
+    publisher: "Lund Humphries"
+    type: "monograph"
+    tier: 1
+  - title: "Likeness and Presence"
+    author: "Hans Belting"
+    year: 1994
+    publisher: "University of Chicago Press"
     type: "monograph"
     tier: 1
 tags: [symbol, astral, rainbow, covenant, flood, hebrew, christian, islamic, norse-bifrost, divine-sign]

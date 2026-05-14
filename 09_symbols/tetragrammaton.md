@@ -50,6 +50,26 @@ cross-symbol-edges:
     type: "parallel-form"
     notes: "Lévi 1854 and Golden Dawn tradition: pentagram-and-Tetragrammaton-pentagrammaton as paired ceremonial-magical signs. The five-letter pentagrammaton YHSVH is iconographically related to the five-pointed star."
     refs: ["Hanegraaff 2012"]
+  - target: "menorah"
+    type: "parallel-form"
+    notes: "Tetragrammaton and Menorah are both principal Jewish religious-iconographic forms anchoring Jewish Temple-and-liturgical tradition. Linguistic-theological (Tetragrammaton) paired with iconographic-architectural (Menorah). Both standard on Jewish ritual objects."
+    refs: ["Levine 2005"]
+  - target: "tree-of-life"
+    type: "syncretic-fusion"
+    notes: "Kabbalistic Etz Chayyim diagrams routinely inscribe the Tetragrammaton at the top (Keter) or distribute the four letters across the four worlds of emanation (Atziluth/Beriah/Yetzirah/Asiyah). The Christian Kabbalah (Reuchlin, Pico, Fludd) treats the Tree-of-Life as the cosmographic cipher of the unutterable Name."
+    refs: ["Scholem 1974", "Yates 1972"]
+  - target: "ouroboros"
+    type: "syncretic-fusion"
+    notes: "Renaissance + early-modern Christian-Kabbalistic alchemy frequently inscribes the Tetragrammaton within the ouroboros (Khunrath *Amphitheatrum* 1595; Kircher *Oedipus Aegyptiacus* 1652). The four-letter divine Name within the cyclic-serpent figures the eternal-cyclic-divinity."
+    refs: ["Yates 1972", "Hanegraaff 2012"]
+  - target: "monas-hieroglyphica"
+    type: "parallel-form"
+    notes: "Dee's *Monas Hieroglyphica* (1564) deliberately incorporates the Tetragrammaton-as-cosmic-cipher into the broader Hermetic-Kabbalistic monad; both function as 'compressed cipher of cosmic order' Renaissance Hermetic emblems."
+    refs: ["Yates 1964", "Hakansson 2001"]
+  - target: "eye"
+    type: "parallel-form"
+    notes: "Eye-of-Providence + Tetragrammaton-in-rays is a standard 17th-c.-onward Counter-Reformation altar-frontispiece motif (Italian + Spanish Baroque). The Tetragrammaton-in-clouds-with-radiating-rays + eye-of-Providence-in-triangle pattern."
+    refs: ["Schiller 1971", "Hammer 2010"]
 mystery-status: "documented"
 status: "metadata"
 refs:
@@ -83,6 +103,48 @@ refs:
     publisher: "Cambridge UP"
     type: "monograph"
     tier: 1
+  - title: "The Ancient Synagogue"
+    author: "Lee I. Levine"
+    year: 2005
+    publisher: "Yale University Press"
+    type: "monograph"
+    tier: 1
+  - title: "Kabbalah"
+    author: "Gershom Scholem"
+    year: 1974
+    publisher: "Quadrangle"
+    type: "monograph"
+    tier: 1
+  - title: "The Rosicrucian Enlightenment"
+    author: "Frances A. Yates"
+    year: 1972
+    publisher: "Routledge"
+    type: "monograph"
+    tier: 1
+  - title: "Giordano Bruno and the Hermetic Tradition"
+    author: "Frances A. Yates"
+    year: 1964
+    publisher: "Routledge"
+    type: "monograph"
+    tier: 1
+  - title: "Seeing the Word: John Dee and Renaissance Occultism"
+    author: "Hakan Hakansson"
+    year: 2001
+    publisher: "Lund University Press"
+    type: "monograph"
+    tier: 1
+  - title: "Iconography of Christian Art"
+    author: "Gertrud Schiller"
+    year: 1971
+    publisher: "Lund Humphries"
+    type: "monograph"
+    tier: 1
+  - title: "Esoteric and Mystical Traditions"
+    author: "Olav Hammer"
+    year: 2010
+    publisher: "Brill"
+    type: "monograph"
+    tier: 2
 tags: [symbol, geometric, jewish, christian, hermeticism, christian-kabbalah, divine-name, yhwh, tetragrammaton, ketef-hinnom, mesha-stele, reuchlin]
 ---
 

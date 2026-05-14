@@ -48,6 +48,22 @@ cross-symbol-edges:
     type: "parallel-form"
     notes: "Oannes / apkallu fish-sages and Quetzalcoatl feathered-serpent culture-bringers share the iconographic register of theriomorphic-civilization-bringer, with both attested as primal teachers of humanity. NO documented transmission between Mesopotamian and Mesoamerican; parallel-form only."
     refs: []
+  - target: "chi-rho-labarum"
+    type: "parallel-form"
+    notes: "**Pre-Constantinian Christian self-identifying signs.** Ichthys-acrostic and Chi-Rho both function as Christian-recognition iconography in the persecution period (2nd-3rd c. catacomb inscriptions) before becoming public-imperial under Constantine. Both pre-date the Latin-cross's iconographic dominance."
+    refs: ["Jensen 2017", "Snyder 1985"]
+  - target: "latin-cross"
+    type: "parallel-form"
+    notes: "Both are principal Christian identifying-emblems with overlapping early-Christian use. The ichthys is the pre-imperial recognition-sign; the Latin cross becomes the universal Christian sign from c. 500 onward as crucifixion-stigma dissolves."
+    refs: ["Jensen 2017", "Snyder 1985"]
+  - target: "phoenix-bennu"
+    type: "parallel-form"
+    notes: "Both are early-Christian apotropaic-symbolic adoptions of pre-Christian iconographic vocabulary as Resurrection-and-life signs (phoenix as cyclical-rebirth, ichthys as life-and-recognition). Independent traditions; parallel role within Christian iconography."
+    refs: ["Jensen 2017", "Van den Broek 1972"]
+  - target: "pelican-in-piety"
+    type: "parallel-form"
+    notes: "Both are Christian theriomorphic devotional emblems carrying Christological content: pelican-pierces-breast-for-young as Christ-on-cross substitutionary-sacrifice; ichthys-fish as Christ-acrostic. Co-occurring as Christian altar + devotional iconography in late-medieval and early-modern contexts."
+    refs: ["Schiller 1971", "Ferguson 1961"]
 mystery-status: "documented"
 status: "metadata"
 refs:
@@ -85,6 +101,24 @@ refs:
     publisher: "Harvard University Press"
     type: "monograph"
     tier: 1
+  - title: "The Myth of the Phoenix"
+    author: "Van den Broek, R."
+    year: 1972
+    publisher: "Brill"
+    type: "monograph"
+    tier: 1
+  - title: "Iconography of Christian Art"
+    author: "Schiller, Gertrud"
+    year: 1971
+    publisher: "Lund Humphries"
+    type: "monograph"
+    tier: 1
+  - title: "Signs and Symbols in Christian Art"
+    author: "Ferguson, George"
+    year: 1961
+    publisher: "Oxford University Press"
+    type: "monograph"
+    tier: 2
     notes: "Documents the ichthys in early Christian iconography alongside other early cruciform / christogram emblems; prefers the acrostic-origin reading."
 tags: [symbol, theriomorphic, christian, mesopotamian, hindu, syrian, philistine, fish, ichthys, methodology-discipline]
 ---

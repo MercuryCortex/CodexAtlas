@@ -42,6 +42,14 @@ cross-symbol-edges:
     type: "parallel-form"
     notes: "Both symbols carry the structure 'vessel-of-salvation through water'; Christian typology connects them (Tertullian *De Baptismo*: 'the *piscis* — the small fish — by which we are saved'; the Ark as the great vessel-of-salvation parallel)."
     refs: ["Jensen 2000"]
+  - target: "serpent-cosmic-enemy"
+    type: "parallel-form"
+    notes: "Both belong to the post-flood-cosmic-order vs. pre-flood-chaos iconographic-narrative cluster: chaos-waters home to Leviathan / Tiamat / Apophis; the Ark rises above them as the restored-order vessel. The chaoskampf and the flood-and-rescue narratives are iconographic twins."
+    refs: ["Day 1985", "Westermann 1984"]
+  - target: "latin-cross"
+    type: "parallel-form"
+    notes: "**Christian typological pairing.** The Ark is widely typologized as Christ's Church / cross in patristic literature (1 Peter 3:20-21 makes baptism an Ark-typology; Augustine *Sermon* 38 develops; Bede's *Hexaemeron* extends). Ark + cross are the load-bearing Christian-typological vessel-of-salvation pair."
+    refs: ["Westermann 1984", "Jensen 2000"]
 mystery-status: "documented"
 status: "metadata"
 refs:
@@ -71,6 +79,12 @@ refs:
     year: 1969
     publisher: "OUP / Eisenbrauns"
     type: "critical-edition"
+    tier: 1
+  - title: "God's Conflict with the Dragon and the Sea"
+    author: "Day, John"
+    year: 1985
+    publisher: "Cambridge University Press"
+    type: "monograph"
     tier: 1
 tags: [symbol, anthropomorphic, vessel, ark, noah, flood, mediterranean, near-eastern, christian, jewish, islamic]
 ---

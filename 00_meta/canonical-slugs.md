@@ -1812,7 +1812,7 @@ canonical-slug
 | Refs | Dead target | Suggested canonical (existing) |
 |---:|---|---|
 | 4 | `ragnarok-apocalyptic` | `apocalyptic-revelation` |
-| 4 | `primordial-darkness` | `primordial-waters` |
+| 4 | `primordial-darkness` | `eros-primordial` |
 | 4 | `messianic-revelation` | `messianic-secret` |
 | 4 | `genealogical-cosmogony` | `hermetic-cosmogony` |
 | 4 | `evolutionary-cosmogony` | `hermetic-cosmogony` |
@@ -1820,4 +1820,4 @@ canonical-slug
 | 3 | `phase-2-005-1-2-kings` | `phase-2-008-homeric-epics` |
 | 3 | `messianic-genealogy` | `messianic-secret` |
 | 2 | `yam-canaanite` | `astarte-canaanite` |
-| 2 | `phase-1-013-babylonian-theodicy` | `phase-4-033-babylonian-talmud` |
+| 2 | `phase-1-013-babylonian-theodicy` | `phase-1-016-eridu-genesis-flood` |

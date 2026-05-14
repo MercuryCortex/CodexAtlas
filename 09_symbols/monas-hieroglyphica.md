@@ -38,6 +38,22 @@ cross-symbol-edges:
     type: "parallel-form"
     notes: "Dee's Christian-Kabbalist context makes the Monas-and-Tetragrammaton conceptually adjacent: both are single-glyph compressions of cosmic-divine reality. Dee's *Monas* explicitly engages Kabbalistic letter-mysticism in Theorem 19 onward."
     refs: ["Hakansson 2001"]
+  - target: "ankh"
+    type: "syncretic-fusion"
+    notes: "Dee's *Monas* explicitly integrates the Egyptian ankh-hieroglyph as one of its component-elements; the composite glyph fuses Egyptian, Greek, and Hebrew vocabularies within a single Hermetic emblem. Mediated through Horapollo's *Hieroglyphica* (1505 print) and Ficino's hermeticism."
+    refs: ["Yates 1964", "Hakansson 2001"]
+  - target: "eye-of-horus-wedjat"
+    type: "syncretic-fusion"
+    notes: "Dee's Renaissance hermetic project draws on Egyptian iconographic vocabulary; the Wedjat is part of the Renaissance Egyptian-symbol-repertoire (mediated through Horapollo + Kircher) that Dee assembles into his composite monad."
+    refs: ["Yates 1964", "Hakansson 2001"]
+  - target: "hexagram"
+    type: "syncretic-fusion"
+    notes: "The Monas's interpenetrating-triangles geometric core is the Christian-Kabbalistic hexagram (Magen David / Solomon's seal) read as solar+lunar / fire+water Hermetic union-of-opposites. The hexagram is one of Dee's principal source-vocabularies."
+    refs: ["Yates 1964", "Hakansson 2001"]
+  - target: "pentagram"
+    type: "syncretic-fusion"
+    notes: "Dee's Hermetic-Pythagorean construction integrates the pentagram-Pentangle five-elements vocabulary alongside the hexagram + ouroboros + ankh + Tetragrammaton in the composite monad."
+    refs: ["Yates 1964", "Hakansson 2001"]
 mystery-status: "documented"
 status: "metadata"
 refs:
