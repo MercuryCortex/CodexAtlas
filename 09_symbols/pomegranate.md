@@ -41,6 +41,22 @@ cross-symbol-edges:
     type: "parallel-form"
     notes: "Both fruit-symbols with mystery-cult ritual-meal contexts (pomegranate in Eleusinian-Persephone cycle; vine-grape in Dionysian); the structural parallel is real, the iconographic genealogies are distinct."
     refs: ["Burkert 1985"]
+  - target: "menorah"
+    type: "parallel-form"
+    notes: "Pomegranate is one of the canonical Temple-cult plant-symbols: Solomon's Temple pillars Jachin and Boaz had pomegranate-finials (1 Kings 7:18-20, 42); high-priest's hem was bordered with pomegranates alternating with bells (Exodus 28:33-34). Temple-and-Tabernacle plant-iconographic vocabulary shared with Menorah."
+    refs: ["Levine 2005"]
+  - target: "latin-cross"
+    type: "syncretic-fusion"
+    notes: "Christian iconography from Late Antiquity onward routinely pairs Christ-Child or Mary holding a pomegranate with the cross (Botticelli's *Madonna of the Pomegranate*, 1487, is the locus classicus); the pomegranate-as-Resurrection emblem fuses the Persephone-pomegranate-and-return iconographic substrate into Christian Christ-and-Mary imagery."
+    refs: ["Ferguson 1961", "McGowan 2014"]
+  - target: "halo-nimbus"
+    type: "parallel-form"
+    notes: "Persephone's traditional iconographic radiance (radiate-crown, torch-radiance) and the haloed-Mary-with-pomegranate / haloed-Christ-Child-with-pomegranate Christian iconographic compound carry the radiance-and-fruit visual vocabulary continuously across the pagan-Christian transition."
+    refs: ["Ferguson 1961"]
+  - target: "thyrsus"
+    type: "parallel-form"
+    notes: "Pomegranate, thyrsus, and vine-grape function in parallel as principal mystery-cult ritual-iconographic objects: pomegranate in Eleusinian-Persephone procession, thyrsus + vine in Dionysian. The three together cover the principal Greco-Roman vegetation-mystery cult emblematic vocabulary (Burkert 1985)."
+    refs: ["Burkert 1985"]
 mystery-status: "documented"
 status: "metadata"
 refs:
@@ -78,6 +94,25 @@ refs:
     type: "monograph"
     tier: 1
     notes: "Standard scholarly reference for Christian iconography; treats the pomegranate-Marian-and-Christ symbolism"
+  - title: "Signs and Symbols in Christian Art"
+    author: "Ferguson, George"
+    year: 1961
+    publisher: "Oxford University Press"
+    type: "monograph"
+    tier: 2
+    notes: "Standard popular-academic iconographic dictionary."
+  - title: "Ancient Christian Worship"
+    author: "McGowan, Andrew B."
+    year: 2014
+    publisher: "Baker Academic"
+    type: "monograph"
+    tier: 1
+  - title: "The Ancient Synagogue"
+    author: "Levine, Lee I."
+    year: 2005
+    publisher: "Yale University Press"
+    type: "monograph"
+    tier: 1
 tags: [symbol, phytomorphic, greek, hebrew, christian, persephone, eleusinian, marian, pomegranate, fertility, mystery-cult]
 ---
 

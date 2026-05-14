@@ -57,7 +57,26 @@ cross-symbol-edges:
     type: "parallel-form"
     notes: "Both the lotus and the cosmic tree function as axis-mundi / cosmogonic-emergence emblems in their respective traditions. The Egyptian primeval mound rising from Nun is iconographically parallel to the world-tree at the centre of the cosmos in other traditions."
     refs: ["Pinch 2002"]
-mystery-status: "documented"
+  - target: "sun-disk"
+    type: "syncretic-fusion"
+    notes: "**Nefertem solar-lotus.** Egyptian iconography fuses the lotus-and-sun-disk: Nefertem is the lotus from which Ra emerges at dawn, the cosmogonic primal-flowering that brings the sun into being. The lotus-on-water-with-sun-emerging is the canonical Heliopolitan iconographic image (Pinch 2002; Wilkinson 2003)."
+    refs: ["Pinch 2002", "Wilkinson 2003"]
+  - target: "dharmachakra"
+    type: "parallel-form"
+    notes: "Lotus and Dharma-wheel are paired in Buddhist iconographic vocabulary: the *padmasana* lotus-seat from which the Buddha turns the Wheel of Dharma. Both are core Buddhist iconographic emblems carrying parallel theological functions (enlightenment-through-emergence, enlightenment-as-cosmic-teaching). Co-occurring in stupa iconography from Bharhut and Sanchi onward (Snellgrove 1987)."
+    refs: ["Snellgrove 1987", "Williams 2009"]
+  - target: "swastika"
+    type: "parallel-form"
+    notes: "Both are core Hindu-Buddhist-Jain auspicious-mark emblems (*ashtamangala* in Buddhism; *svastika* + lotus on Jain altars; both standardly present in Vaishnava and Shaiva domestic worship). The two function in parallel as principal Vedic-Buddhist iconographic markers."
+    refs: ["Flood 1996", "Snellgrove 1987"]
+  - target: "aum-om"
+    type: "parallel-form"
+    notes: "The lotus and the AUM-symbol routinely co-occur in Hindu-Buddhist iconographic compositions: AUM inscribed within the lotus, lotus-bearing-figure (Lakshmi, Saraswati, Brahma) with AUM chanting accompanying. Both are principal Vedic-Hindu sacred emblems."
+    refs: ["Flood 1996"]
+  - target: "halo-nimbus"
+    type: "parallel-form"
+    notes: "**Buddhist *prabhamandala*** (the body-halo + head-halo standardly depicted around Buddhas and bodhisattvas) and the haloed-Hellenistic-deity iconographic vocabulary develop in parallel from the Gandharan Greco-Buddhist artistic-cultural contact zone (c. 100 BCE–300 CE). The lotus-seat with body-halo is the Buddhist iconographic standard form that may have influenced (or been influenced by) the Hellenistic radiance-halo. Williams 2009 documents Gandharan Greco-Buddhist iconographic exchange."
+    refs: ["Williams 2009", "Snellgrove 1987"]
 status: "metadata"
 refs:
   - title: "Egyptian Mythology: A Guide to the Gods, Goddesses, and Traditions of Ancient Egypt"
@@ -88,6 +107,24 @@ refs:
     type: "monograph"
     tier: 1
     notes: "Already cited at [[ankh]] and [[coptic-cross]]; documents the Coptic Christian continuity with Egyptian iconographic vocabulary including lotus-on-textile and manuscript decoration."
+  - title: "The Complete Gods and Goddesses of Ancient Egypt"
+    author: "Wilkinson, Richard H."
+    year: 2003
+    publisher: "Thames & Hudson"
+    type: "monograph"
+    tier: 1
+  - title: "Mahāyāna Buddhism: The Doctrinal Foundations (2nd ed.)"
+    author: "Paul Williams"
+    year: 2009
+    publisher: "Routledge"
+    type: "monograph"
+    tier: 1
+  - title: "An Introduction to Hinduism"
+    author: "Gavin Flood"
+    year: 1996
+    publisher: "Cambridge University Press"
+    type: "monograph"
+    tier: 1
 tags: [symbol, phytomorphic, egyptian, hindu, buddhist, coptic, jain, lotus, padmasana, methodology-discipline]
 ---
 

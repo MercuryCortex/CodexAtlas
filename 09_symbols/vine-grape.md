@@ -56,6 +56,18 @@ cross-symbol-edges:
     type: "parallel-form"
     notes: "The vine and the cosmic-tree both function as cultivated-plant-as-divine-presence emblems; the John 15 vine-and-branches parable is sometimes typologically read against the Eden Tree of Life."
     refs: ["McGowan 2014"]
+  - target: "haoma"
+    type: "parallel-form"
+    notes: "**The sacred-plant cross-tradition spine.** Iranian Haoma (Yasna 9-11), Vedic Soma (RV 9 entire mandala), and Mediterranean Dionysian vine are the three principal Indo-European sacred-pressed-plant traditions. The Haoma↔Soma philological-and-ritual continuity is well-established (Doniger 1981); the Vedic Soma → Greek Dionysian vine link is more speculative (Boyce 1982 treats as parallel rather than transmission)."
+    refs: ["Boyce 1982", "Doniger 1981"]
+  - target: "latin-cross"
+    type: "syncretic-fusion"
+    notes: "**Eucharistic Christian appropriation.** Wine + vine become Eucharistic blood-of-Christ in 1st-c. Christianity (Matt 26:27-29; John 15:1-8 'I am the true vine'); the iconographic vine-and-grape becomes the Christian altar-frontal + chalice-decoration standard from Late Antiquity (Ravenna Sant'Apollinare-in-Classe 6th c. apse mosaic) — Christ-as-Dionysus iconographic appropriation."
+    refs: ["McGowan 2014", "Henrichs 1982"]
+  - target: "pomegranate"
+    type: "parallel-form"
+    notes: "Both are mystery-cult fruit-symbols: vine in Dionysian, pomegranate in Eleusinian-Persephone. Together they cover the principal Greco-Roman fertility-mystery-cult fruit-iconographic vocabulary; both feed Christian Marian + eucharistic iconography."
+    refs: ["Burkert 1985", "Ferguson 1961"]
 mystery-status: "documented"
 status: "metadata"
 refs:
@@ -87,6 +99,18 @@ refs:
     type: "popular"
     tier: 3
     notes: "Tier 3-4 — Frawley's broader Hindu-nationalist (Hindutva-adjacent) scholarship is Tier 4; this specific work on Soma is borderline Tier 3-4 depending on which claims are cited. Use carefully and only for reception-history, not for primary Vedic-substance identification."
+  - title: "Zoroastrians: Their Religious Beliefs and Practices"
+    author: "Mary Boyce"
+    year: 1982
+    publisher: "Routledge"
+    type: "monograph"
+    tier: 1
+  - title: "Signs and Symbols in Christian Art"
+    author: "George Ferguson"
+    year: 1961
+    publisher: "Oxford University Press"
+    type: "monograph"
+    tier: 2
 tags: [symbol, phytomorphic, greek, roman, christian, vedic, vine, grape, dionysus, eucharist]
 ---
 

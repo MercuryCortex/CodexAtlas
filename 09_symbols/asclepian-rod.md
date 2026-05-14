@@ -36,6 +36,14 @@ cross-symbol-edges:
     type: "ancestor-of"
     notes: "The Asclepian single-serpent emblem inherits the healing / chthonic-serpent register documented at [[serpent-wisdom-chthonic]]. The skin-sloughing snake as renewal-emblem is the iconographic source. Friedlander 1992 documents the Greek inheritance from broader Mediterranean healing-serpent iconography; Edelstein 1945 is the testimonia collation."
     refs: ["Friedlander 1992", "Edelstein 1945"]
+  - target: "latin-cross"
+    type: "parallel-form"
+    notes: "**Numbers 21:8-9 + John 3:14 typological pairing.** The bronze-serpent-on-a-pole (Nehushtan) Moses raises in the wilderness is explicitly invoked in John 3:14 as a Christ-on-cross prefiguration: 'just as Moses lifted up the serpent in the wilderness, so must the Son of Man be lifted up.' The Asclepian rod and the Nehushtan share the staff-with-single-serpent form; Christian typology fuses Nehushtan with Christ's cross. The Asclepian rod is therefore a structural-iconographic cousin of the Christian cross via the shared serpent-on-staff substrate of ancient Mediterranean healing-and-salvation iconography."
+    refs: ["Joines 1974", "Charlesworth 2010"]
+  - target: "tree-of-life"
+    type: "parallel-form"
+    notes: "The serpent-on-staff is structurally the cosmic-axis-with-chthonic-attendant: the rod is the world-tree axis, the serpent is the chthonic-renewal force. The Mesopotamian sacred-tree-flanked-by-serpents iconography (kudurru reliefs, Assyrian winged-genii) is the broader iconographic family. The Asclepian rod is the medical-cultic specification of this older type."
+    refs: ["Eliade 1956", "Joines 1974"]
 mystery-status: "documented"
 status: "metadata"
 refs:
@@ -67,6 +75,26 @@ refs:
     type: "monograph"
     tier: 1
     notes: "Standard for Greek religion; Asclepius cult contextualized within Greek hero-and-healing-deity contexts."
+  - title: "The Serpent and the Tree of Life: A Study in Iconography and Polemics"
+    author: "Karen Joines"
+    year: 1974
+    publisher: "Scholars Press"
+    type: "monograph"
+    tier: 1
+    notes: "Documents Nehushtan + Eden + Mesopotamian serpent-and-tree iconography."
+  - title: "The Good and Evil Serpent: How a Universal Symbol Became Christianized"
+    author: "James H. Charlesworth"
+    year: 2010
+    publisher: "Yale University Press"
+    type: "monograph"
+    tier: 1
+    notes: "Comprehensive treatment of serpent-as-Christological-type and its cross-cultural pre-Christian background."
+  - title: "The Forge and the Crucible"
+    author: "Mircea Eliade"
+    year: 1956
+    publisher: "University of Chicago Press"
+    type: "monograph"
+    tier: 2
 tags: [symbol, theriomorphic, greek, roman, egyptian-hellenistic, asclepius, asclepian-rod, medical, methodology-discipline]
 ---
 

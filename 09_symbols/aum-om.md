@@ -48,6 +48,22 @@ cross-symbol-edges:
     type: "parallel-form"
     notes: "Both are principal Indic religious symbols; both have continuous use across Hindu, Buddhist, Jain, and Sikh traditions."
     refs: ["Olivelle 1996"]
+  - target: "swastika"
+    type: "parallel-form"
+    notes: "Both are core Vedic-Hindu auspicious-mark sacred-emblems, co-occurring on yantras, doorway-thresholds, rangoli, and altar contexts. The two function in parallel as principal Hindu domestic-and-ritual presence-markers."
+    refs: ["Flood 1996"]
+  - target: "mandala-circle"
+    type: "syncretic-fusion"
+    notes: "AUM is routinely inscribed at the center of Hindu yantras and Buddhist mandalas (Sri Yantra, Avalokiteshvara mandalas); the syllable functions as the seed-mantra (bīja) at the cosmographic center of meditational diagrams."
+    refs: ["Olivelle 1996", "Snellgrove 1987"]
+  - target: "tetragrammaton"
+    type: "parallel-form"
+    notes: "Both are unutterable-divine-Name iconographic emblems: AUM as the unmanifest Brahman-sound (the syllable that contains all sound), Tetragrammaton as the unutterable יהוה of Jewish-Christian tradition. Structurally parallel as 'visible cipher of the divine Name'; independent traditions, parallel theological strategy."
+    refs: ["Olivelle 1996", "Scholem 1974"]
+  - target: "halo-nimbus"
+    type: "parallel-form"
+    notes: "AUM-syllable iconographically often depicted with surrounding radiance / nimbus / mandorla in Hindu-Buddhist devotional art (deity-figure with AUM at brow chakra carrying head-halo). Parallel-form within Indic devotional iconography."
+    refs: ["Flood 1996", "Snellgrove 1987"]
 mystery-status: "documented"
 status: "metadata"
 refs:
@@ -77,6 +93,24 @@ refs:
     type: "monograph"
     tier: 1
     notes: "Includes contextual treatment of Om in Hindu liturgical practice"
+  - title: "An Introduction to Hinduism"
+    author: "Gavin Flood"
+    year: 1996
+    publisher: "Cambridge University Press"
+    type: "monograph"
+    tier: 1
+  - title: "Indo-Tibetan Buddhism"
+    author: "David Snellgrove"
+    year: 1987
+    publisher: "Shambhala"
+    type: "monograph"
+    tier: 1
+  - title: "Kabbalah"
+    author: "Gershom Scholem"
+    year: 1974
+    publisher: "Quadrangle"
+    type: "monograph"
+    tier: 1
 tags: [symbol, cosmological, hindu, buddhist, jain, sikh, om, aum, mandukya-upanishad, ik-onkar, om-mani-padme-hum, devanagari, global-yoga-reception]
 ---
 

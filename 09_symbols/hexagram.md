@@ -41,7 +41,26 @@ cross-symbol-edges:
     type: "parallel-form"
     notes: "Both are geometric figures derivable from circle-and-triangle constructions; the Renaissance alchemical literature treats both as 'figures of cosmic harmony', but no documented transmission between traditions."
     refs: ["Davies 2009"]
-mystery-status: "documented"
+  - target: "menorah"
+    type: "parallel-form"
+    notes: "**Modern Jewish identifying-emblems.** Hexagram (Magen David) and Menorah are the two principal modern Jewish religious-civic symbols. The Menorah is ancient continuous (Tabernacle/Temple tradition); the hexagram's Jewish-identifying function is post-medieval (Scholem 1949). Both appear on Israeli state-and-religious iconography."
+    refs: ["Scholem 1949", "Levine 2005"]
+  - target: "tetragrammaton"
+    type: "syncretic-fusion"
+    notes: "Kabbalistic + Christian-Kabbalistic + Hermetic iconography routinely inscribes the Tetragrammaton at the center of the hexagram (Reuchlin 1517 *De arte cabalistica*; Agrippa *De occulta philosophia* 1531); the *Magen David* + יהוה visual compound is one of the canonical Renaissance Christian-Kabbalah emblems. The Tetragrammaton-in-hexagram + cross + circle becomes the standard occult magic-circle frame in *Clavicula Salomonis* and successors."
+    refs: ["Scholem 1974", "Yates 1972"]
+  - target: "star-of-ishtar"
+    type: "parallel-form"
+    notes: "Both are pre-Islamic + pre-Christian Near-Eastern astral-geometric forms. The six-pointed-star and eight-pointed-Ishtar-star are distinct astronomical-symbolic emblems with distinct genealogies; no documented direct transmission, but they belong to the same Mesopotamian-Mediterranean astral-symbol family."
+    refs: ["Black & Green 1992", "Scholem 1949"]
+  - target: "monas-hieroglyphica"
+    type: "syncretic-fusion"
+    notes: "Dee's *Monas Hieroglyphica* (1564) integrates a hexagram-derived geometric core (the two interpenetrating triangles read as solar+lunar / fire+water Hermetic union-of-opposites). The Christian-Kabbalistic hexagram tradition is one of Dee's principal source-vocabularies."
+    refs: ["Yates 1964", "Hakansson 2001"]
+  - target: "crescent-moon-star"
+    type: "visual-cognate"
+    notes: "Modern religious-civic emblems: hexagram (Magen David) for Judaism, crescent-and-star for Islam — both 19th-c.-onward emblematic crystallizations of religious-identity onto astral-geometric forms. The pair is iconographic and political rather than theological."
+    refs: ["Scholem 1949", "Tezcan 2010"]
 status: "metadata"
 refs:
   - title: "The Star of David: History of a Symbol"
@@ -72,6 +91,48 @@ refs:
     type: "monograph"
     tier: 1
     notes: "Reception of the hexagram in the *Clavicula Salomonis* and the medieval magical traditions; documents the magical-Hermetic branch alongside the Jewish-ethnic branch."
+  - title: "The Ancient Synagogue"
+    author: "Levine, Lee I."
+    year: 2005
+    publisher: "Yale University Press"
+    type: "monograph"
+    tier: 1
+  - title: "Gods, Demons and Symbols of Ancient Mesopotamia"
+    author: "Jeremy Black and Anthony Green"
+    year: 1992
+    publisher: "British Museum Press"
+    type: "monograph"
+    tier: 1
+  - title: "Kabbalah"
+    author: "Gershom Scholem"
+    year: 1974
+    publisher: "Quadrangle"
+    type: "monograph"
+    tier: 1
+  - title: "The Rosicrucian Enlightenment"
+    author: "Frances A. Yates"
+    year: 1972
+    publisher: "Routledge"
+    type: "monograph"
+    tier: 1
+  - title: "Giordano Bruno and the Hermetic Tradition"
+    author: "Frances A. Yates"
+    year: 1964
+    publisher: "Routledge"
+    type: "monograph"
+    tier: 1
+  - title: "Seeing the Word: John Dee and Renaissance Occultism"
+    author: "Hakan Hakansson"
+    year: 2001
+    publisher: "Lund University Press"
+    type: "monograph"
+    tier: 1
+  - title: "The Second Ottoman Empire"
+    author: "Baki Tezcan"
+    year: 2010
+    publisher: "Cambridge University Press"
+    type: "monograph"
+    tier: 1
 tags: [symbol, geometric, jewish, hindu, hermetic, kabbalah, hexagram, star-of-david, shatkona, methodology-discipline]
 ---
 

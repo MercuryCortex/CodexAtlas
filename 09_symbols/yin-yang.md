@@ -34,6 +34,22 @@ cross-symbol-edges:
     type: "parallel-form"
     notes: "Both are bounded-circular cosmological diagrams central to their traditions. The yin-yang and the mandala developed independently within Chinese and Indian traditions respectively; subsequent cross-Buddhist contact (Chan/Zen Buddhism in China) overlaid mandala concepts onto Chinese contexts but the canonical taijitu form remained distinct."
     refs: ["Kohn 2000"]
+  - target: "spiral"
+    type: "visual-cognate"
+    notes: "Both are rotational geometric motifs encoding cyclic continuity. The taijitu's two-comma division is structurally a closed double-spiral; independent of Atlantic European megalithic spiral tradition (Newgrange) but iconographically continuous at the level of bilateral rotation."
+    refs: ["Kohn 2000"]
+  - target: "swastika"
+    type: "visual-cognate"
+    notes: "Both are East Asian (Buddhist swastika in Chinese contexts) + Chinese-philosophical (taijitu) auspicious-and-cosmographic emblems with rotational-symmetry. The two co-occur in syncretic Buddho-Daoist visual vocabulary; structurally cognate rotational forms."
+    refs: ["Kohn 2000"]
+  - target: "monas-hieroglyphica"
+    type: "visual-cognate"
+    notes: "Renaissance and early-modern alchemical-Hermetic union-of-opposites iconography (Dee's monas; Maier *Atalanta Fugiens* emblems of *coniunctio*) deploys binary-fusion forms structurally cognate to taijitu. Jung CW 14 reads both as expressions of the same archetypal *coniunctio*; historical transmission is implausible at this date."
+    refs: ["Jung CW 14"]
+  - target: "beauseant"
+    type: "visual-cognate"
+    notes: "Both are bicolor black-and-white symbolic divisions; the Templar Beauseant's heraldic *per fess sable and argent* parallels the Daoist taijitu polarity-division geometrically while encoding radically different semiotic content (Christian *bellum justum* vs. Daoist *yin-yang*). Visual cognate only."
+    refs: ["Kohn 2000"]
 mystery-status: "documented"
 status: "metadata"
 refs:

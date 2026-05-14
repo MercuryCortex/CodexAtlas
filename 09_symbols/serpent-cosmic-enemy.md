@@ -73,6 +73,18 @@ cross-symbol-edges:
     type: "parallel-form"
     notes: "The encircling-serpent form (Jörmungandr enclosing Midgard, Apophis circling the solar barque) is iconographically continuous with the ouroboros. The Egyptian *Enigmatic Book* attestation can be read both ways: Apophis as cosmic-threat AND as boundary-marker of ordered cosmos."
     refs: ["Hornung 1999"]
+  - target: "tree-of-life"
+    type: "parallel-form"
+    notes: "**Eden Tree + serpent juxtaposition** is the load-bearing Hebrew-Bible image: the serpent coiled at the base of the Tree of Knowledge (Gen 3) is a Hebraization of the broader Mesopotamian + Canaanite cosmic-tree-with-serpent iconographic type (Joines 1974; Charlesworth 2010). Norse Yggdrasil with Níðhöggr gnawing at its root is the same iconographic pattern in independent Indo-European context — cosmic-tree axis with chthonic-serpent-threat at the base."
+    refs: ["Joines 1974", "Charlesworth 2010", "Day 1985"]
+  - target: "bull"
+    type: "parallel-form"
+    notes: "Both function as cosmic-chaos vs. cosmic-order antagonists in chaoskampf narratives — Marduk-vs-Tiamat (serpent-dragon) and Mithras-vs-cosmic-bull (tauroctony) deploy the same hero-killing-cosmic-monster structure with different beast-types. Beck 2006 frames the tauroctony as Mithraic chaoskampf with the bull in the serpent's structural role."
+    refs: ["Beck 2006", "Day 1985"]
+  - target: "mount-ararat"
+    type: "parallel-form"
+    notes: "Both belong to the post-flood-cosmic-order vs. pre-flood-chaos iconographic-narrative cluster: the chaos-waters are home to Leviathan / Tiamat / Apophis; the rescue-mountain rises above them as restored-order anchor. Mount Ararat as flood-anchor is the iconographic counter-image to the chaos-serpent of the deep."
+    refs: ["Day 1985"]
 mystery-status: "documented"
 status: "metadata"
 refs:
@@ -111,6 +123,24 @@ refs:
     type: "monograph"
     tier: 1
     notes: "Standard reference for Apophis in Egyptian liturgical texts."
+  - title: "The Serpent and the Tree of Life: A Study in Iconography and Polemics"
+    author: "Karen Joines"
+    year: 1974
+    publisher: "Scholars Press"
+    type: "monograph"
+    tier: 1
+  - title: "The Good and Evil Serpent: How a Universal Symbol Became Christianized"
+    author: "James H. Charlesworth"
+    year: 2010
+    publisher: "Yale University Press"
+    type: "monograph"
+    tier: 1
+  - title: "The Religion of the Mithras Cult in the Roman Empire"
+    author: "Roger Beck"
+    year: 2006
+    publisher: "Oxford University Press"
+    type: "monograph"
+    tier: 1
 tags: [symbol, theriomorphic, mesopotamian, canaanite, egyptian, vedic, greek, norse, hebrew, chaoskampf, serpent, dragon, methodology-discipline]
 ---
 

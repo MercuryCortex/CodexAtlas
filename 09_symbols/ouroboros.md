@@ -51,6 +51,18 @@ cross-symbol-edges:
     type: "visual-cognate"
     notes: "Both are bounded-circular cosmological emblems. Jung 1956 explicitly reads the ouroboros as a Western alchemical analogue of the mandala — but his synthesis is Jungian, not historical transmission. Flag as visual-cognate."
     refs: ["Jung CW 14"]
+  - target: "tree-of-life"
+    type: "parallel-form"
+    notes: "Norse Yggdrasil with Jörmungandr encircling Midgard at its base is the most striking ouroboros-tree pairing — the cosmic tree's axis is encircled by the world-serpent. The structural pattern (cosmic axis + encircling serpent) recurs in Mesopotamian sacred-tree iconography flanked by serpents. Renaissance alchemical emblems routinely draw the ouroboros around the philosophical-tree (Maier *Atalanta Fugiens* 1617 emblems)."
+    refs: ["Eliade 1956", "Jung CW 14"]
+  - target: "monas-hieroglyphica"
+    type: "parallel-form"
+    notes: "Dee's *Monas Hieroglyphica* (1564) and the broader Renaissance Hermetic emblematic tradition (Maier, Khunrath, Mylius) deploy the ouroboros as the canonical alchemical-Hermetic frame around composite glyphs. Both are emblematic-cosmographic Renaissance signs, mutually referencing within the Hermetic visual vocabulary."
+    refs: ["Yates 1964", "Hakansson 2001"]
+  - target: "tetragrammaton"
+    type: "syncretic-fusion"
+    notes: "Renaissance + early-modern Christian-Kabbalistic alchemy frequently inscribes the Tetragrammaton within the ouroboros (Kircher's *Oedipus Aegyptiacus* 1652; Khunrath *Amphitheatrum sapientiae aeternae* 1595). The four-letter divine Name within the cyclic-serpent figures the eternal-cyclic-divinity. Documented Renaissance-Hermetic syncretic-fusion."
+    refs: ["Yates 1972", "Hanegraaff 2012"]
 mystery-status: "documented"
 status: "metadata"
 refs:
@@ -89,6 +101,30 @@ refs:
     type: "monograph"
     tier: 1
     notes: "Documents the *Chrysopoeia of Cleopatra* manuscript tradition and the early Greek alchemical iconography including the ouroboros."
+  - title: "Giordano Bruno and the Hermetic Tradition"
+    author: "Frances A. Yates"
+    year: 1964
+    publisher: "Routledge"
+    type: "monograph"
+    tier: 1
+  - title: "The Rosicrucian Enlightenment"
+    author: "Frances A. Yates"
+    year: 1972
+    publisher: "Routledge"
+    type: "monograph"
+    tier: 1
+  - title: "Seeing the Word: John Dee and Renaissance Occultism"
+    author: "Hakan Hakansson"
+    year: 2001
+    publisher: "Lund University Press"
+    type: "monograph"
+    tier: 1
+  - title: "Esotericism and the Academy"
+    author: "Wouter J. Hanegraaff"
+    year: 2012
+    publisher: "Cambridge University Press"
+    type: "monograph"
+    tier: 1
 tags: [symbol, geometric, egyptian, hermetic, gnostic, norse, alchemy, ouroboros, jung, methodology-discipline]
 ---
 

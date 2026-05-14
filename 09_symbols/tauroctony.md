@@ -35,6 +35,22 @@ cross-symbol-edges:
     type: "parallel-form"
     notes: "Both are pre-Christian solar/cosmic-cycle symbols later subject to controversial 20th-c. fascist appropriation (Nazi reuse of Mithraic + Aryan-Iranian symbolism alongside swastika). Catalogued as parallel-form, not direct iconographic transmission; Goodrick-Clarke 2004 documents the 20th-c. occult-fascist Mithras-and-swastika appropriation."
     refs: ["Goodrick-Clarke 2004"]
+  - target: "mithraic-cross"
+    type: "syncretic-fusion"
+    notes: "The tauroctony scene's X-formation IS the Mithraic-cross iconographic content (Mithras bull-killing + Sol-Luna axis + Cautes-Cautopates flanking + cosmic animals in cruciform pattern). Tauroctony and Mithraic-cross are two slices of the same iconographic complex (Ulansey 1989, Beck 2006)."
+    refs: ["Beck 2006", "Ulansey 1989"]
+  - target: "halo-nimbus"
+    type: "ancestor-of"
+    notes: "**Load-bearing.** Sol's radiate crown in the upper-left of the canonical tauroctony is the direct iconographic source Mathews 1993 traces into Christ-halo iconography. The Mithraic context is the principal pre-Christian Roman site of Sol Invictus radiate-crown iconographic development."
+    refs: ["Mathews 1993", "Beck 2006"]
+  - target: "faravahar"
+    type: "parallel-form"
+    notes: "Mithras has demonstrable Iranian etymological-religious origin (Vedic *Mitra* / Avestan *Miθra*) although the Roman tauroctony's specific iconographic content is Greco-Roman not Iranian. The Iranian Faravahar (winged-disc with figure) belongs to the same broader Iranian religious-iconographic landscape that produces the name and theological persona of Mithra; Roman tauroctony develops the Mithra-name into a fresh Greco-Roman mystery without direct Persian iconographic borrowing (Beck 2006 explicitly rejects the older Cumontian Iranian-derivation thesis at the iconographic level)."
+    refs: ["Beck 2006", "Boyce 1982"]
+  - target: "crescent-moon-star"
+    type: "parallel-form"
+    notes: "Luna's crescent in the upper-right of the canonical tauroctony (mirroring Sol's radiate-crown upper-left) is the canonical Roman lunar emblem in this Mithraic context; the crescent-and-bull pairing is the broader iconographic substrate of which the tauroctony is the Mithraic specification."
+    refs: ["Beck 2006", "Ulansey 1989"]
 mystery-status: "partially-deciphered"
 status: "metadata"
 refs:
@@ -78,6 +94,18 @@ refs:
     type: "monograph"
     tier: 1
     notes: "Required reference for the 20th-c. occult-fascist Mithraic appropriation, per the symbol-discipline rule"
+  - title: "The Clash of Gods: A Reinterpretation of Early Christian Art"
+    author: "Mathews, Thomas F."
+    year: 1993
+    publisher: "Princeton University Press"
+    type: "monograph"
+    tier: 1
+  - title: "Zoroastrians: Their Religious Beliefs and Practices"
+    author: "Boyce, Mary"
+    year: 1982
+    publisher: "Routledge"
+    type: "monograph"
+    tier: 1
 tags: [symbol, anthropomorphic, mithraic, roman, iranian, mystery-cult, tauroctony, bull-killing, astrological, cosmic, mithras]
 ---
 
