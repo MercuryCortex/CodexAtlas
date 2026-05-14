@@ -14,11 +14,33 @@ if (!window.VAULT_DATA) document.getElementById('missing-data').style.display = 
 // ============================================================
 const FEATURES = {
   pantheonMonuments: true,  // 23 monument-tagged events live (opus-monuments-1, 2026-05-14)
-  atlasMap:          true,  // opus-design-3 — lat/lon world map view
+  atlasMapV2:        true,  // opus-map-1, 2026-05-15 — MapLibre GL + offline PMTiles vector basemap
   transmissionFlow:  false, // proposed: cross-tradition Sankey
   threadsView:       false, // proposed: bridge-figure ladder
   tierOverlay:       true,  // opus-design-2 — Source-Integrity-Tier overlay
 };
+
+// ============================================================
+// SHARED ZOOM-LOD UTILITY (opus-map-1) — degree-tier visibility thresholds used by
+// Atlas (and Timeline once it inherits). Returns smooth 0..1 opacity given a zoom k.
+// Tier 0 = top ~1% hubs (always visible), tier 3 = leaves (only at deep zoom).
+// ============================================================
+function smoothstep01(a, b, x) {
+  const t = Math.max(0, Math.min(1, (x - a) / (b - a)));
+  return t * t * (3 - 2 * t);
+}
+function tierVisibilityThreshold(tier, k, mode = 'hub') {
+  if (mode === 'off') return 0;
+  if (mode === 'all') {
+    if (tier === 0 || tier === 1) return 1;
+    if (tier === 2) return smoothstep01(0.8, 1.2, k);
+    return smoothstep01(1.0, 1.5, k);
+  }
+  if (tier === 0) return 1;
+  if (tier === 1) return smoothstep01(0.85, 1.15, k);
+  if (tier === 2) return smoothstep01(1.65, 2.20, k);
+  return smoothstep01(3.20, 4.20, k);
+}
 
 const DATA = window.VAULT_DATA || { nodes: [], edges: [], counts: {}, traditions: [], families: [] };
 
@@ -505,6 +527,18 @@ function setView(name) {
   svg.on('wheel', null).on('wheel.zoom', null).on('mousedown.zoom', null)
      .on('.drag', null).on('click', null);
   svg.style('cursor', 'default');
+  // Atlas-map container: shown only on `atlas` view; SVG is hidden in that case.
+  // The MapLibre map instance is kept alive across visits (init once, reuse).
+  // We toggle the OUTER pane — MapLibre overrides position:relative on its own
+  // container element, so the outer wrapper owns positioning + display.
+  const _atlasPaneEl = document.getElementById('atlas-pane');
+  if (name === 'atlas' && FEATURES.atlasMapV2) {
+    svg.node().style.display = 'none';
+    if (_atlasPaneEl) _atlasPaneEl.style.display = 'block';
+  } else {
+    svg.node().style.display = '';
+    if (_atlasPaneEl) _atlasPaneEl.style.display = 'none';
+  }
   document.getElementById('view-controls').innerHTML = '';
   legend.style('display', 'none').html('');
   document.querySelectorAll('.list-pane,.about-pane,.alch-toolbox,.alch-palette,.tl-zoom-presets').forEach(el => el.remove());
@@ -4044,219 +4078,115 @@ VIEWS.alchemy = {
 };
 
 // ============================================================
-// ATLAS — lat/lon world map view (opus-design-3).
-// Plots every geo-tagged node on an equirectangular projection. The projection
-// helpers (geoToMap + CONTINENT_OUTLINES) live above in the data-load block —
-// previously used only at 360x180 thumbnail size; here they're scaled to fill
-// the canvas. Tier overlay applies automatically because every plotted shape
-// carries data-tier.
+// ATLAS — vault world map (opus-map-1, 2026-05-15).
+// MapLibre GL JS rendering an offline Protomaps vector basemap (z0-z7 world,
+// 185 MB, in _assets/basemap/world-z7.pmtiles; gitignored, re-fetchable via
+// scripts/fetch-basemap.sh). The basemap is a label-free quiet backdrop in
+// our token palette (premium minimalism — Bloomberg/Stripe-style restraint).
+// Vault nodes ride above it as CSS-styled DOM markers with degree-tier
+// semantic-zoom LOD (shared with Pantheon/Timeline) and bbox declutter.
+//
+// Replaces opus-design-3's SVG/equirectangular atlas. The old geoToMap +
+// CONTINENT_OUTLINES helpers stay (the bottom-right map-thumbnail still uses
+// them) — only the old VIEWS.atlas SVG render path is gone.
 // ============================================================
+
+// Module-scoped state — the MapLibre instance and DOM markers persist across
+// atlas visits to avoid reinit cost. Render() updates filtered data in place.
+let _atlasMap = null;
+let _atlasMarkers = new Map();       // node-id → { el, marker, tier, deg, node }
+let _atlasZoomHandler = null;
+let _atlasEndHandler = null;
+let _atlasResizeObs = null;
+let _atlasProtocolRegistered = false;
+
+function _atlasRegisterProtocol() {
+  if (_atlasProtocolRegistered) return;
+  if (typeof maplibregl === 'undefined' || typeof pmtiles === 'undefined') {
+    console.warn('[atlas] MapLibre or PMTiles not loaded — basemap unavailable.');
+    return;
+  }
+  const proto = new pmtiles.Protocol();
+  maplibregl.addProtocol('pmtiles', proto.tile);
+  _atlasProtocolRegistered = true;
+}
+
+// Resolve a CSS token at runtime so basemap colors track the active style preset.
+function _atlasToken(name, fallback) {
+  const v = getComputedStyle(document.documentElement).getPropertyValue(name).trim();
+  return v || fallback;
+}
+
+// Premium minimalist basemap style — no text labels, just land/water/borders
+// drawn in our token palette. Colors are resolved at style-build time; the
+// preset-switch handler in app.js can call _atlasMap.setStyle(_atlasBuildStyle())
+// to recolor live (TODO: wire when preset consolidation lands).
+function _atlasBuildStyle() {
+  return {
+    version: 8,
+    sources: {
+      protomaps: {
+        type: 'vector',
+        url: 'pmtiles://_assets/basemap/world-z7.pmtiles',
+        attribution: '© <a href="https://openstreetmap.org/copyright" target="_blank">OpenStreetMap</a>'
+      }
+    },
+    layers: [
+      { id: 'bg', type: 'background',
+        paint: { 'background-color': _atlasToken('--bg-0', '#07090f') } },
+      { id: 'earth', source: 'protomaps', 'source-layer': 'earth', type: 'fill',
+        paint: { 'fill-color': _atlasToken('--bg-1', '#0d1119') } },
+      { id: 'landcover', source: 'protomaps', 'source-layer': 'landcover', type: 'fill',
+        paint: { 'fill-color': _atlasToken('--bg-2', '#141a26'), 'fill-opacity': 0.22 } },
+      { id: 'natural', source: 'protomaps', 'source-layer': 'natural', type: 'fill',
+        paint: { 'fill-color': _atlasToken('--bg-2', '#141a26'), 'fill-opacity': 0.30 } },
+      { id: 'water', source: 'protomaps', 'source-layer': 'water', type: 'fill',
+        paint: { 'fill-color': _atlasToken('--bg-0', '#07090f') } },
+      { id: 'boundaries-country', source: 'protomaps', 'source-layer': 'boundaries', type: 'line',
+        filter: ['<=', ['coalesce', ['get', 'kind_detail'], 2], 2],
+        paint: {
+          'line-color': _atlasToken('--border', '#232b3d'),
+          'line-width': ['interpolate', ['linear'], ['zoom'], 1, 0.35, 4, 0.85, 7, 1.4],
+          'line-opacity': 0.85
+        }
+      },
+      { id: 'boundaries-region', source: 'protomaps', 'source-layer': 'boundaries', type: 'line',
+        filter: ['>', ['coalesce', ['get', 'kind_detail'], 0], 2],
+        paint: {
+          'line-color': _atlasToken('--border-soft', '#1a2030'),
+          'line-width': ['interpolate', ['linear'], ['zoom'], 3, 0.25, 7, 0.55],
+          'line-opacity': 0.55
+        }
+      }
+    ]
+  };
+}
+
 VIEWS.atlas = {
   title: 'Atlas',
-  subtitle: 'geography of the vault · every geo-tagged node plotted at lat/lon · hover for trails to linked places',
+  subtitle: 'geography of the vault · vector basemap · semantic-zoom labels · drag to pan · scroll to zoom',
   render() {
-    const W = svg.node().clientWidth, H = svg.node().clientHeight;
-    // Fit the 2:1 equirectangular projection into the canvas with letterboxing.
-    const scale = Math.min(W / MAP_W, H / MAP_H);
-    const projW = MAP_W * scale, projH = MAP_H * scale;
-    const offsetX = (W - projW) / 2, offsetY = (H - projH) / 2;
+    _atlasRegisterProtocol();
+    const paneEl = document.getElementById('atlas-pane');
+    const mapEl  = document.getElementById('atlas-map');
 
-    // Map [lat, lon] to canvas pixel coordinates inside the projected viewport.
-    const project = (lat, lon) => {
-      const [mx, my] = geoToMap(lat, lon);
-      return [offsetX + mx * scale, offsetY + my * scale];
-    };
-
-    // ---- Filtered geo-tagged node set ----
+    // --- state ---
     const era = STATE.atlasEra || { lo: -3500, hi: 2050 };
     if (!STATE.atlasEra) STATE.atlasEra = era;
+    const labelMode = STATE.atlasLabelMode || 'hub';
+    if (!STATE.atlasLabelMode) STATE.atlasLabelMode = labelMode;
+
+    // --- filter geo-tagged nodes ---
     const geoNodes = DATA.nodes.filter(n => {
       if (!n.geo || typeof n.geo.lat !== 'number' || typeof n.geo.lon !== 'number') return false;
       if (!matchesFilter(n)) return false;
-      // Era window — accept if the node has a date_earliest and it lands inside the window,
-      // OR if it has no date (deities/themes/persons may lack one — they get included by default).
       if (typeof n.date_earliest === 'number') {
         if (n.date_earliest < era.lo || n.date_earliest > era.hi) return false;
       }
       return true;
     });
 
-    if (!geoNodes.length) {
-      const g = svg.append('g').attr('class', 'atlas-empty-wrap')
-        .attr('transform', `translate(${W/2}, ${H/2})`);
-      g.append('text').attr('class', 'atlas-empty')
-        .attr('text-anchor', 'middle').attr('y', -8).text('No geo-tagged nodes match the filter.');
-      g.append('text').attr('class', 'atlas-empty sub')
-        .attr('text-anchor', 'middle').attr('y', 14).text('Loosen filters, widen the era window, or pick a different family.');
-      return;
-    }
-
-    // ---- Root <g> for pan/zoom ----
-    const root = svg.append('g').attr('class', 'atlas-root');
-
-    // Frame (the projected viewport rectangle — gives the map a visible bounds)
-    root.append('rect').attr('class', 'atlas-frame')
-      .attr('x', offsetX).attr('y', offsetY)
-      .attr('width', projW).attr('height', projH);
-
-    // Equator + tropic lines (anchor latitudes for spatial reading)
-    const lat = (deg) => offsetY + (90 - deg) * (MAP_H / 180) * scale;
-    [['equator', 0], ['cancer', 23.4], ['capricorn', -23.4]].forEach(([cls, l]) => {
-      root.append('line').attr('class', `atlas-grid atlas-${cls}`)
-        .attr('x1', offsetX).attr('x2', offsetX + projW)
-        .attr('y1', lat(l)).attr('y2', lat(l));
-    });
-
-    // ---- Continent outlines ----
-    const outlineLayer = root.append('g').attr('class', 'atlas-outline-layer');
-    CONTINENT_OUTLINES.forEach(poly => {
-      const pts = poly.map(([la, lo]) => project(la, lo).join(',')).join(' ');
-      outlineLayer.append('polygon').attr('class', 'atlas-continent').attr('points', pts);
-    });
-
-    // ---- Trail layer (under nodes so trails don't overdraw the marks) ----
-    const trailLayer = root.append('g').attr('class', 'atlas-trail-layer');
-
-    // ---- Pre-compute each node's projected x/y ----
-    const xyById = new Map();
-    geoNodes.forEach(n => {
-      const [x, y] = project(n.geo.lat, n.geo.lon);
-      xyById.set(n.id, { x, y, n });
-    });
-
-    // ---- Node marks (small family-colored circles, with tier data-attr) ----
-    const nodeLayer = root.append('g').attr('class', 'atlas-node-layer');
-    const nodeSel = nodeLayer.selectAll('g.atlas-node')
-      .data(geoNodes, n => n.id).enter().append('g')
-      .attr('class', 'atlas-node')
-      .attr('transform', n => {
-        const p = xyById.get(n.id);
-        return `translate(${p.x},${p.y})`;
-      })
-      .on('click', (ev, n) => selectNode(n.id, true))
-      .on('mouseenter', (ev, n) => {
-        showTooltip(
-          `${tooltipThumb(n)}<div class="ttitle">${n.title}</div>
-           <div class="tmeta">${n.type}${n.family ? ' · ' + n.family : ''}${n.geo.label ? ' · ' + n.geo.label : ''}</div>
-           <div class="tmeta">${fmtDateRange(n.date_earliest, n.date_latest) || '—'}</div>`, ev);
-        // Draw trail to linked geo-nodes
-        const nbrs = NEIGHBORS.get(n.id);
-        if (!nbrs) return;
-        const here = xyById.get(n.id);
-        const trailData = [];
-        for (const id of nbrs) {
-          const there = xyById.get(id);
-          if (there) trailData.push({ x1: here.x, y1: here.y, x2: there.x, y2: there.y, otherId: id });
-        }
-        trailLayer.selectAll('line.atlas-trail').data(trailData).enter().append('line')
-          .attr('class', 'atlas-trail')
-          .attr('x1', d => d.x1).attr('y1', d => d.y1)
-          .attr('x2', d => d.x2).attr('y2', d => d.y2);
-        nodeLayer.selectAll('g.atlas-node').classed('atlas-dim', d => d.id !== n.id && !nbrs.has(d.id));
-        nodeLayer.selectAll('g.atlas-node').classed('atlas-hot', d => d.id === n.id || nbrs.has(d.id));
-      })
-      .on('mousemove', ev => tooltip.style('left', (ev.clientX + 14) + 'px').style('top', (ev.clientY + 14) + 'px'))
-      .on('mouseleave', () => {
-        hideTooltip();
-        trailLayer.selectAll('line.atlas-trail').remove();
-        nodeLayer.selectAll('g.atlas-node').classed('atlas-dim', false).classed('atlas-hot', false);
-      });
-
-    nodeSel.append('circle').attr('class', 'atlas-mark')
-      .attr('r', n => 2.5 + Math.sqrt(DEGREE.get(n.id) || 0) * 0.7)
-      .attr('fill', n => n.family_color || n.tradition_color || '#7a8090')
-      .attr('data-tier', n => n._tier ?? 'none');
-
-    // ---- Labels with progressive zoom-reveal (LOD).
-    // Pattern mirrored from VIEWS.pantheon: every node gets a degree-tier (0..3);
-    // labels render once for every node, then visibility/opacity is driven by the
-    // current zoom k + a debounced bbox deconflict. Result: at k≈1 only top-1%
-    // hubs read; as you zoom in, more progressively appear and never overlap.
-    const labelMode = STATE.atlasLabelMode || 'hub';   // 'off' | 'hub' | 'all'
-    if (!STATE.atlasLabelMode) STATE.atlasLabelMode = labelMode;
-
-    // Degree-percentile tiering (0 = top hubs, 3 = leaves). 4 tiers keep the
-    // reveal cadence smooth across zoom k ∈ [0.5, 12].
-    const sortedByDegree = [...geoNodes].sort((a, b) => (DEGREE.get(b.id) || 0) - (DEGREE.get(a.id) || 0));
-    const tierEdges = [
-      Math.max(1, Math.ceil(sortedByDegree.length * 0.012)),  // top ~1%
-      Math.max(2, Math.ceil(sortedByDegree.length * 0.05)),   // top ~5%
-      Math.max(4, Math.ceil(sortedByDegree.length * 0.18)),   // top ~18%
-    ];
-    const tierById = new Map();
-    sortedByDegree.forEach((n, i) => {
-      tierById.set(n.id, i < tierEdges[0] ? 0 : i < tierEdges[1] ? 1 : i < tierEdges[2] ? 2 : 3);
-    });
-    const TIER_BASE_FONT = [13, 11, 9.5, 8.5];
-
-    const labelLayer = root.append('g').attr('class', 'atlas-label-layer');
-    const labelSel = labelLayer.selectAll('text.atlas-label').data(geoNodes, n => n.id)
-      .enter().append('text')
-        .attr('class', n => 'atlas-label tier-' + tierById.get(n.id) + (tierById.get(n.id) <= 1 ? ' hub' : ''))
-        .attr('x', n => xyById.get(n.id).x)
-        .text(n => n.title);
-
-    function smoothstepAtlas(a, b, x) {
-      const t = Math.max(0, Math.min(1, (x - a) / (b - a)));
-      return t * t * (3 - 2 * t);
-    }
-    function updateAtlasLOD(k) {
-      const growth = 1 + 0.5 * Math.max(0, Math.min(1, (k - 1) / 3));  // 1.0 → 1.5 by k=4
-      const eff    = Math.max(1, k);
-      // Node-mark radius — gentle shrink with zoom so dots don't bulldoze each other.
-      const sizeScale = 1 / Math.pow(k, 0.65);
-      nodeLayer.selectAll('.atlas-mark')
-        .attr('r', n => (2.5 + Math.sqrt(DEGREE.get(n.id) || 0) * 0.7) * sizeScale);
-      // Labels: opacity by tier + zoom (mode 'all' shows every tier subject to deconflict only).
-      labelSel
-        .attr('y', n => xyById.get(n.id).y - ((2.5 + Math.sqrt(DEGREE.get(n.id) || 0) * 0.7) * sizeScale + 3))
-        .style('font-size', n => (TIER_BASE_FONT[tierById.get(n.id)] * growth / eff).toFixed(2) + 'px')
-        .style('opacity', n => {
-          if (labelMode === 'off') return 0;
-          const t = tierById.get(n.id);
-          if (labelMode === 'all') {
-            if (t === 0 || t === 1) return 1;
-            if (t === 2) return smoothstepAtlas(0.8, 1.2, k);
-            return smoothstepAtlas(1.0, 1.5, k);
-          }
-          // 'hub' mode — the default. Tier-staggered reveal across the zoom range.
-          if (t === 0) return 1;
-          if (t === 1) return smoothstepAtlas(0.85, 1.15, k);
-          if (t === 2) return smoothstepAtlas(1.65, 2.20, k);
-          return smoothstepAtlas(3.20, 4.20, k);
-        })
-        .style('visibility', '');
-      // Debounced bbox deconflict — claim by degree, hide overlaps.
-      clearTimeout(updateAtlasLOD._t);
-      updateAtlasLOD._t = setTimeout(deconflictAtlasLabels, 60);
-    }
-    function deconflictAtlasLabels() {
-      const items = [];
-      labelSel.each(function (n) {
-        const opa = parseFloat(this.style.opacity || '1');
-        if (opa <= 0.05) return;
-        items.push({ n, txt: this, deg: DEGREE.get(n.id) || 0 });
-      });
-      items.forEach(it => { it.bb = it.txt.getBoundingClientRect(); });
-      items.sort((a, b) => b.deg - a.deg);
-      const claimed = [];
-      const PAD = 2;
-      items.forEach(it => {
-        const bb = it.bb;
-        if (!bb.width || !bb.height) return;
-        const x0 = bb.left - PAD, x1 = bb.right + PAD;
-        const y0 = bb.top - PAD,  y1 = bb.bottom + PAD;
-        const conflict = claimed.some(c => !(x1 < c.x0 || c.x1 < x0 || y1 < c.y0 || c.y1 < y0));
-        if (conflict) {
-          it.txt.style.visibility = 'hidden';
-        } else {
-          it.txt.style.visibility = '';
-          claimed.push({ x0, x1, y0, y1 });
-        }
-      });
-    }
-
-    // ---- View-controls toolbar ----
+    // --- view-controls toolbar (always — even when empty) ---
     document.getElementById('view-controls').innerHTML = `
       <select class="btn btn-mini atlas-era-select" id="atlas-era-select" title="Filter by historical era window">
         <option value="all"        ${eraVal(era) === 'all'        ? 'selected' : ''}>all eras</option>
@@ -4279,21 +4209,231 @@ VIEWS.atlas = {
       setView('atlas');
     };
     document.getElementById('btn-atlas-recenter').onclick = () => {
-      svg.transition().duration(400).call(zoomBehavior.transform, d3.zoomIdentity);
+      if (_atlasMap) _atlasMap.easeTo({ center: [15, 25], zoom: 1.6, duration: 600 });
     };
 
-    // ---- Zoom / pan + wire the existing zoom-meter chrome (+/- buttons in top-right) ----
-    const zoomBehavior = d3.zoom().scaleExtent([0.5, 12])
-      .on('zoom', (ev) => { root.attr('transform', ev.transform); updateAtlasLOD(ev.transform.k); });
-    svg.call(zoomBehavior).on('dblclick.zoom', null);
-    document.getElementById('zm-in').onclick    = () => svg.transition().duration(220).call(zoomBehavior.scaleBy, 1.4);
-    document.getElementById('zm-out').onclick   = () => svg.transition().duration(220).call(zoomBehavior.scaleBy, 1 / 1.4);
-    document.getElementById('zm-reset').onclick = () => svg.transition().duration(380).call(zoomBehavior.transform, d3.zoomIdentity);
+    // --- empty state ---
+    const oldEmpty = paneEl.querySelector('.atlas-empty-card');
+    if (oldEmpty) oldEmpty.remove();
+    if (!geoNodes.length) {
+      paneEl.classList.add('atlas-empty-mode');
+      mapEl.style.display = 'none';
+      const card = document.createElement('div');
+      card.className = 'atlas-empty-card';
+      card.innerHTML = `
+        <div class="atlas-empty-headline">No geo-tagged nodes match the filter.</div>
+        <div class="atlas-empty-sub">LOOSEN FILTERS · WIDEN THE ERA WINDOW · TRY A DIFFERENT FAMILY</div>`;
+      paneEl.appendChild(card);
+      // Clear any leftover markers from a previous non-empty render
+      _atlasMarkers.forEach(m => m.marker.remove());
+      _atlasMarkers.clear();
+      return;
+    }
+    paneEl.classList.remove('atlas-empty-mode');
+    mapEl.style.display = '';
 
-    // Initial LOD pass — k = 1 baseline.
-    updateAtlasLOD(1);
+    // --- tier classification (top 1% / 5% / 18% / rest) ---
+    const sortedByDegree = [...geoNodes].sort((a, b) => (DEGREE.get(b.id) || 0) - (DEGREE.get(a.id) || 0));
+    const N = sortedByDegree.length;
+    const tierEdges = [
+      Math.max(1, Math.ceil(N * 0.012)),
+      Math.max(2, Math.ceil(N * 0.05)),
+      Math.max(4, Math.ceil(N * 0.18))
+    ];
+    const tierById = new Map();
+    sortedByDegree.forEach((n, i) => {
+      tierById.set(n.id, i < tierEdges[0] ? 0 : i < tierEdges[1] ? 1 : i < tierEdges[2] ? 2 : 3);
+    });
+
+    // --- init MapLibre map once ---
+    if (!_atlasMap) {
+      _atlasMap = new maplibregl.Map({
+        container: 'atlas-map',
+        style: _atlasBuildStyle(),
+        center: [15, 25],
+        zoom: 1.6,
+        minZoom: 0.6,
+        maxZoom: 7.5,
+        renderWorldCopies: true,
+        attributionControl: false,
+        fadeDuration: 220,
+        bearing: 0,
+        pitch: 0
+      });
+      _atlasMap.dragRotate.disable();
+      _atlasMap.touchZoomRotate.disableRotation();
+      _atlasMap.keyboard.disableRotation();
+      _atlasMap.addControl(new maplibregl.AttributionControl({ compact: true }), 'bottom-left');
+      _atlasMap.addControl(new maplibregl.NavigationControl({ showCompass: false, visualizePitch: false }), 'top-right');
+
+      _atlasResizeObs = new ResizeObserver(() => {
+        if (paneEl.style.display !== 'none' && _atlasMap) _atlasMap.resize();
+      });
+      _atlasResizeObs.observe(paneEl);
+    } else {
+      // Re-shown after a view switch — canvas may have new dimensions.
+      requestAnimationFrame(() => _atlasMap && _atlasMap.resize());
+    }
+
+    // --- setup callback (runs after style + sources load) ---
+    const setup = () => {
+      // Trail source/layer — singleton, lives across renders.
+      if (!_atlasMap.getSource('atlas-trails')) {
+        _atlasMap.addSource('atlas-trails', {
+          type: 'geojson',
+          data: { type: 'FeatureCollection', features: [] }
+        });
+        _atlasMap.addLayer({
+          id: 'atlas-trail-line',
+          source: 'atlas-trails',
+          type: 'line',
+          layout: { 'line-cap': 'round', 'line-join': 'round' },
+          paint: {
+            'line-color': _atlasToken('--gold', '#d4a55a'),
+            'line-width': ['interpolate', ['linear'], ['zoom'], 1, 0.9, 4, 1.3, 7, 1.9],
+            'line-opacity': 0.6,
+            'line-blur': 0.35
+          }
+        });
+      }
+
+      // Rebuild markers (clear + add for the current filtered set).
+      _atlasMarkers.forEach(m => m.marker.remove());
+      _atlasMarkers.clear();
+
+      geoNodes.forEach(n => {
+        const tier = tierById.get(n.id);
+        const deg  = DEGREE.get(n.id) || 0;
+        const el = document.createElement('div');
+        el.className = `atlas-marker tier-${tier}` + (tier <= 1 ? ' hub' : '');
+        el.dataset.id = n.id;
+        el.dataset.tier = String(n._tier ?? 'none');
+        const dotSize  = (5 + Math.sqrt(deg) * 1.2).toFixed(1);
+        const dotColor = n.family_color || n.tradition_color || '#7a8090';
+        const safeTitle = (n.title || '').replace(/[<>&]/g, c => ({ '<': '&lt;', '>': '&gt;', '&': '&amp;' }[c]));
+        el.innerHTML = `
+          <span class="atlas-marker-dot" style="--dot-size:${dotSize}px;--dot-color:${dotColor}"></span>
+          <span class="atlas-marker-label">${safeTitle}</span>
+        `;
+        el.addEventListener('click', (ev) => { ev.stopPropagation(); selectNode(n.id, true); });
+        el.addEventListener('mouseenter', (ev) => {
+          _atlasShowHoverTrails(n.id);
+          showTooltip(
+            `${tooltipThumb(n)}<div class="ttitle">${n.title}</div>
+             <div class="tmeta">${n.type}${n.family ? ' · ' + n.family : ''}${n.geo.label ? ' · ' + n.geo.label : ''}</div>
+             <div class="tmeta">${fmtDateRange(n.date_earliest, n.date_latest) || '—'}</div>`, ev);
+        });
+        el.addEventListener('mousemove', (ev) => {
+          tooltip.style('left', (ev.clientX + 14) + 'px').style('top', (ev.clientY + 14) + 'px');
+        });
+        el.addEventListener('mouseleave', () => {
+          hideTooltip();
+          _atlasHideHoverTrails();
+        });
+
+        const marker = new maplibregl.Marker({ element: el, anchor: 'left', offset: [4, 0] })
+          .setLngLat([n.geo.lon, n.geo.lat])
+          .addTo(_atlasMap);
+        _atlasMarkers.set(n.id, { el, marker, tier, deg, node: n });
+      });
+
+      _atlasUpdateLOD();
+      _atlasDeclutter();
+    };
+
+    if (_atlasMap.isStyleLoaded()) setup();
+    else _atlasMap.once('load', setup);
+
+    // Rewire zoom / end handlers (remove old, add fresh — labelMode lives in closure via STATE).
+    if (_atlasZoomHandler) _atlasMap.off('zoom', _atlasZoomHandler);
+    if (_atlasEndHandler) {
+      _atlasMap.off('zoomend', _atlasEndHandler);
+      _atlasMap.off('moveend', _atlasEndHandler);
+    }
+    _atlasZoomHandler = () => _atlasUpdateLOD();
+    _atlasEndHandler  = () => _atlasDeclutter();
+    _atlasMap.on('zoom', _atlasZoomHandler);
+    _atlasMap.on('zoomend', _atlasEndHandler);
+    _atlasMap.on('moveend', _atlasEndHandler);
   }
 };
+
+// ---- Cheap LOD pass — opacity by tier + zoom (runs every zoom frame) ----
+function _atlasUpdateLOD() {
+  if (!_atlasMap) return;
+  const k = _atlasMap.getZoom();
+  const mode = STATE.atlasLabelMode || 'hub';
+  // MapLibre zoom domain [0.6, 7.5] remapped into shared [0.5, 12] tier-space so
+  // the shared tierVisibilityThreshold curves behave consistently across views.
+  const kRemap = 0.5 + (Math.max(0.6, Math.min(7.5, k)) - 0.6) * (11.5 / 6.9);
+  _atlasMarkers.forEach(m => {
+    const op = tierVisibilityThreshold(m.tier, kRemap, mode);
+    m.el.style.opacity = op.toFixed(2);
+    m.el.style.pointerEvents = op > 0.05 ? 'auto' : 'none';
+    m.el.classList.toggle('dim', op < 0.5);
+  });
+}
+
+// ---- Expensive declutter pass — bbox conflict, runs on zoomend/moveend ----
+function _atlasDeclutter() {
+  if (!_atlasMap) return;
+  const items = [];
+  _atlasMarkers.forEach(m => {
+    const op = parseFloat(m.el.style.opacity || '1');
+    if (op <= 0.1) { m.el.classList.remove('hidden-by-declutter'); return; }
+    m.el.classList.remove('hidden-by-declutter');
+    items.push({ m, deg: m.deg, bb: m.el.getBoundingClientRect() });
+  });
+  items.sort((a, b) => b.deg - a.deg);
+  const claimed = [];
+  const PAD = 2;
+  items.forEach(it => {
+    const bb = it.bb;
+    if (!bb.width || !bb.height) return;
+    const x0 = bb.left - PAD, x1 = bb.right + PAD;
+    const y0 = bb.top - PAD,  y1 = bb.bottom + PAD;
+    const conflict = claimed.some(c => !(x1 < c.x0 || c.x1 < x0 || y1 < c.y0 || c.y1 < y0));
+    if (conflict) it.m.el.classList.add('hidden-by-declutter');
+    else claimed.push({ x0, x1, y0, y1 });
+  });
+}
+
+// ---- Hover trails: GeoJSON line source updated on the fly ----
+function _atlasShowHoverTrails(id) {
+  if (!_atlasMap) return;
+  const source = _atlasMap.getSource('atlas-trails');
+  if (!source) return;
+  const nbrs = NEIGHBORS.get(id);
+  const me = _atlasMarkers.get(id);
+  if (!me) return;
+  const meLngLat = [me.node.geo.lon, me.node.geo.lat];
+  const features = [];
+  if (nbrs) {
+    nbrs.forEach(nbId => {
+      const them = _atlasMarkers.get(nbId);
+      if (!them) return;
+      features.push({
+        type: 'Feature',
+        geometry: { type: 'LineString', coordinates: [meLngLat, [them.node.geo.lon, them.node.geo.lat]] },
+        properties: { from: id, to: nbId }
+      });
+    });
+  }
+  source.setData({ type: 'FeatureCollection', features });
+  _atlasMarkers.forEach((m, mid) => {
+    if (mid === id || (nbrs && nbrs.has(mid))) m.el.classList.add('hot');
+    else m.el.classList.add('atlas-dim');
+  });
+}
+function _atlasHideHoverTrails() {
+  if (!_atlasMap) return;
+  const source = _atlasMap.getSource('atlas-trails');
+  if (source) source.setData({ type: 'FeatureCollection', features: [] });
+  _atlasMarkers.forEach(m => {
+    m.el.classList.remove('hot');
+    m.el.classList.remove('atlas-dim');
+  });
+}
 // Helpers for the era-window dropdown (kept local to Atlas).
 function eraVal(era) {
   if (!era) return 'all';

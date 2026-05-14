@@ -1820,4 +1820,4 @@ canonical-slug
 | 3 | `phase-2-005-1-2-kings` | `phase-2-008-homeric-epics` |
 | 3 | `messianic-genealogy` | `solomonic-genealogy` |
 | 2 | `yam-canaanite` | `astarte-canaanite` |
-| 2 | `phase-1-013-babylonian-theodicy` | `phase-1-011-great-hymn-to-aten` |
+| 2 | `phase-1-013-babylonian-theodicy` | `phase-1-018-gudea-cylinders` |

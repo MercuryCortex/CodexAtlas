@@ -1260,75 +1260,159 @@ footer select:focus, footer input:focus { border-color: var(--gold-soft); }
 .alch-remove-wrap:hover .alch-remove { fill: var(--gold); }
 .alch-remove-wrap:hover circle.alch-remove { fill: var(--bg-3); stroke: var(--gold); }
 
-/* ATLAS view (opus-design-3) — equirectangular world map. Inherits the tier
-   overlay automatically because .atlas-mark carries data-tier (see app.js
-   VIEWS.atlas). All sizes use scale tokens; motion via --t-* / --ease. */
-/* Suppress the canvas radial gradient on Atlas so the map frame reads cleanly. */
+/* ============================================================
+   ATLAS view (opus-map-1, 2026-05-15) — MapLibre GL world map.
+   The basemap is a label-free vector backdrop; nodes ride above it
+   as DOM markers (one .atlas-marker per geo-tagged node). Tier
+   overlay applies because each marker carries data-tier. Motion
+   uses --t-* / --ease tokens; type uses --serif / --mono.
+   ============================================================ */
+
+/* Suppress the canvas radial gradient on Atlas so the map fills cleanly. */
 body.view-atlas main.canvas { background: var(--bg-0); }
-.atlas-frame {
-  fill: var(--bg-1);
-  stroke: var(--border);
-  stroke-width: 1;
+
+/* Atlas pane — the outer positioning wrapper for the map. Owns position:absolute
+   and the empty-state centering. MapLibre lives in the inner .atlas-map div. */
+.atlas-pane {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  background: var(--bg-0);
 }
-.atlas-grid {
-  stroke: var(--text-3);
-  stroke-width: 0.6;
-  stroke-dasharray: 4 6;
-  opacity: 0.35;
-  pointer-events: none;
+.atlas-pane.atlas-empty-mode {
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
 }
-.atlas-equator { opacity: 0.55; }   /* the equator reads stronger */
-.atlas-continent {
-  fill: rgba(212, 165, 90, 0.08);
-  stroke: var(--gold-soft);
-  stroke-width: 1;
-  stroke-opacity: 0.75;
-  pointer-events: none;
+/* Inner MapLibre target — MapLibre overrides position:relative inline,
+   so we rely on width/height 100% within the explicitly-sized .atlas-pane. */
+.atlas-map {
+  width: 100%;
+  height: 100%;
 }
-.atlas-node { cursor: pointer; }
-.atlas-mark {
-  stroke: rgba(255, 255, 255, 0.20);
-  stroke-width: 0.8;
-  transition: r var(--t-micro) var(--ease),
-              stroke-width var(--t-micro) var(--ease),
-              opacity var(--t-micro) var(--ease);
+.atlas-empty-card {
+  max-width: 380px;
+  padding: 24px 28px;
+  background: linear-gradient(180deg, var(--bg-1) 0%, var(--bg-2) 100%);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  text-align: center;
+  box-shadow: 0 24px 48px -16px rgba(0,0,0,0.55);
 }
-.atlas-node:hover .atlas-mark { stroke: var(--gold); stroke-width: 2; }
-.atlas-node.atlas-hot .atlas-mark { stroke: var(--gold); stroke-width: 2; }
-.atlas-node.atlas-dim { opacity: 0.18; }
-.atlas-trail {
-  stroke: var(--gold);
-  stroke-opacity: 0.55;
-  stroke-width: 1;
-  pointer-events: none;
-  fill: none;
+.atlas-empty-headline {
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: var(--h2-size);
+  color: var(--text-2);
+  margin-bottom: 12px;
 }
-.atlas-label {
+.atlas-empty-sub {
+  font-family: var(--mono);
+  font-size: var(--lbl-md);
+  letter-spacing: 0.08em;
+  color: var(--text-3);
+  text-transform: uppercase;
+}
+
+/* ---- Node markers (DOM children of MapLibre Marker wrapper) ---- */
+.atlas-marker {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  cursor: pointer;
+  user-select: none;
+  white-space: nowrap;
+  transition: opacity var(--t-micro) var(--ease);
+}
+.atlas-marker-dot {
+  display: inline-block;
+  width: var(--dot-size, 6px);
+  height: var(--dot-size, 6px);
+  border-radius: 999px;
+  background: var(--dot-color, #7a8090);
+  box-shadow: 0 0 0 1px rgba(255,255,255,0.18), 0 1px 3px rgba(0,0,0,0.55);
+  transition: box-shadow var(--t-micro) var(--ease), transform var(--t-micro) var(--ease);
+}
+.atlas-marker-label {
   font-family: var(--serif);
   font-size: var(--micro);
-  fill: var(--text-2);
-  text-anchor: middle;
+  color: var(--text-2);
+  letter-spacing: 0.01em;
+  text-shadow: 0 0 4px var(--bg-0), 0 0 2px var(--bg-0), 0 1px 0 var(--bg-0);
   pointer-events: none;
-  paint-order: stroke fill;
-  stroke: var(--bg-0);
-  stroke-width: 2.5;
-  stroke-linejoin: round;
+  transition: color var(--t-micro) var(--ease), font-size var(--t-micro) var(--ease);
 }
-.atlas-label.hub {
+/* Hub tier (top ~5%) — promoted hierarchy in serif + slightly larger */
+.atlas-marker.hub .atlas-marker-label {
   font-size: var(--lbl-md);
-  fill: var(--text-0);
+  color: var(--text-0);
   letter-spacing: 0.02em;
 }
-.atlas-empty {
-  font-family: var(--serif);
-  font-size: var(--h2-size);
-  fill: var(--text-2);
+.atlas-marker.tier-0 .atlas-marker-label { font-weight: 600; }
+.atlas-marker.tier-1 .atlas-marker-label { font-weight: 500; }
+.atlas-marker.tier-2 .atlas-marker-label,
+.atlas-marker.tier-3 .atlas-marker-label { font-weight: 400; }
+
+/* dim mode — when only the dot should show */
+.atlas-marker.dim .atlas-marker-label { opacity: 0; }
+
+/* Hover / hot states */
+.atlas-marker:hover .atlas-marker-dot,
+.atlas-marker.hot .atlas-marker-dot {
+  box-shadow: 0 0 0 2px var(--gold), 0 0 8px var(--gold-soft);
+  transform: scale(1.15);
 }
-.atlas-empty.sub {
-  font-size: var(--lbl-md);
-  fill: var(--text-3);
-  font-style: italic;
+.atlas-marker:hover .atlas-marker-label,
+.atlas-marker.hot .atlas-marker-label {
+  color: var(--gold);
 }
+.atlas-marker.atlas-dim {
+  opacity: 0.22 !important;
+}
+.atlas-marker.atlas-dim .atlas-marker-label { color: var(--text-3); }
+
+/* Hidden by bbox declutter — kept in DOM but visually suppressed */
+.atlas-marker.hidden-by-declutter .atlas-marker-label { visibility: hidden; }
+
+/* ---- MapLibre control theming — match our token palette ---- */
+.atlas-map .maplibregl-ctrl-group {
+  background: var(--bg-1);
+  border: 1px solid var(--border);
+  box-shadow: 0 8px 18px -10px rgba(0,0,0,0.6);
+}
+.atlas-map .maplibregl-ctrl-group button {
+  background: var(--bg-1);
+  border-color: var(--border);
+  transition: background var(--t-micro) var(--ease);
+}
+.atlas-map .maplibregl-ctrl-group button:hover {
+  background: var(--bg-3);
+}
+.atlas-map .maplibregl-ctrl-group button + button {
+  border-top-color: var(--border-soft);
+}
+.atlas-map .maplibregl-ctrl-zoom-in span,
+.atlas-map .maplibregl-ctrl-zoom-out span {
+  filter: invert(0.9) sepia(0.15) hue-rotate(20deg) saturate(0.6);
+}
+.atlas-map .maplibregl-ctrl-attrib {
+  background: rgba(13,17,25,0.62);
+  color: var(--text-3);
+  font-family: var(--mono);
+  font-size: var(--micro);
+}
+.atlas-map .maplibregl-ctrl-attrib a {
+  color: var(--text-2);
+}
+.atlas-map .maplibregl-ctrl-attrib a:hover {
+  color: var(--gold);
+}
+.atlas-map .maplibregl-ctrl-attrib-button {
+  background-color: var(--bg-1);
+}
+.atlas-map .maplibregl-canvas:focus { outline: none; }
 
 /* AUTHORS view */
 .authors-pane .authors-toolbar {

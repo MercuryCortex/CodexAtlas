@@ -18,11 +18,17 @@ Format:
 
 ---
 
-## 🚦 In-flight claims at a glance (current as of 2026-05-14 ~22:55 — empty after session-close sweep)
+## 🚦 In-flight claims at a glance (current as of 2026-05-15 ~02:00 — empty after `opus-map-1` finish)
 
 | Handle | Scope tag | Owns (high level) | Started |
 |---|---|---|---|
 | _no agents in flight — vault at rest_ | | | |
+
+**Last session's finishers (full claim blocks in [`agents-archive/2026-05-14.md`](agents-archive/2026-05-14.md) for prior batches; this session's claim block below):**
+
+| Handle | Scope | What landed |
+|---|---|---|
+| `opus-map-1` | app-code / Atlas Map rebuild (DESIGN LEAD) | MapLibre GL + offline PMTiles vector basemap rewrite of `VIEWS.atlas`; 964 DOM markers with degree-tier LOD; hover-trail GeoJSON line layer; premium minimalist token-driven basemap style; `scripts/serve.py` HTTP Range server for local dev; `scripts/fetch-basemap.sh` reproducible setup; retires opus-design-3 SVG atlas |
 
 **Last session's finishers (full claim blocks in [`agents-archive/2026-05-14.md`](agents-archive/2026-05-14.md)):**
 
@@ -94,3 +100,76 @@ Format:
 ---
 
 **Older sessions' archives:** [`agents-archive/`](agents-archive/) (one file per session-date, in chronological order).
+
+---
+
+## opus-map-1 — Atlas Map rebuild (MapLibre GL + offline PMTiles) — started 2026-05-15 01:20 — **FINISHED 2026-05-15 ~02:00**
+
+- **Mission (user-authorized, "premium SaaS bar"):** Replace the SVG/equirectangular Atlas view (opus-design-3) with a MapLibre GL JS + offline PMTiles vector-tile map. **John reframed the app as a paid subscription product on 2026-05-15** — every decision in this batch cleared a higher polish bar than vault-content work does. See `~/.claude/projects/-Users-user-Desktop-Codex-Atlas/memory/project_premium_saas_shift.md`.
+
+- **What landed (app-code only — no vault content touched):**
+  - **`index.html`** — vendor `<link>` for `maplibre-gl.css` + `<script>` tags for `_assets/vendor/maplibre/maplibre-gl.js` + `_assets/vendor/pmtiles/pmtiles.js` loaded before `app.js`. New nested `<div id="atlas-pane"><div id="atlas-map"></div></div>` container alongside `<svg id="svg">` (outer wrapper owns positioning because MapLibre overrides `position: relative` inline on its own container). Cache-buster `?v=20260515-map-1` on CSS + JS.
+  - **`src/js/app.js`** —
+    - Added `FEATURES.atlasMapV2: true`. Removed retired `FEATURES.atlasMap` flag.
+    - New shared utility `tierVisibilityThreshold(tier, k, mode)` — degree-tier visibility curves shared by Atlas (and Timeline once it inherits).
+    - Updated `setView()` to toggle `#atlas-pane` ↔ `#svg` visibility on view enter/exit.
+    - Replaced ~250 lines of SVG/equirectangular `VIEWS.atlas` (lines 4079–4329 pre-edit) with ~330 lines of MapLibre-backed implementation:
+      - Module-scoped persistent map instance (init once, reused across atlas visits — preserves zoom/pan state).
+      - `_atlasRegisterProtocol()` registers `pmtiles://` source protocol via the PMTiles JS adapter.
+      - `_atlasBuildStyle()` synthesizes a MapLibre style spec at render time, reading `--bg-0` / `--bg-1` / `--bg-2` / `--border` / `--border-soft` / `--gold` from CSS tokens so the basemap palette tracks the active preset.
+      - 7-layer style: `bg` → `earth` → `landcover` → `natural` → `water` → `boundaries-country` → `boundaries-region`. No text labels (premium minimalism — vault nodes carry the only labels).
+      - Each node renders as a DOM marker (`.atlas-marker` with `.atlas-marker-dot` + `.atlas-marker-label`) styled by tier (`tier-0..3`, `.hub` for tiers 0–1). 964 markers in the current build.
+      - Hover trails as a single `atlas-trails` GeoJSON line source; `_atlasShowHoverTrails(id)` rebuilds the FeatureCollection per hover; `_atlasHideHoverTrails()` clears.
+      - LOD via `_atlasUpdateLOD()` (cheap, every zoom frame — opacity by tier) + `_atlasDeclutter()` (expensive, only on `zoomend`/`moveend` — bbox claim by degree, hides overlaps via `.hidden-by-declutter`).
+      - View controls preserved: era-window `<select>` (6 presets), labels toggle (off / hub / all), recenter (easeTo).
+      - MapLibre `NavigationControl` (zoom +/-) and `AttributionControl` (OSM credit) added.
+      - `ResizeObserver` on the pane keeps `map.resize()` called when the canvas changes (side-panel toggle, window resize).
+  - **`src/styles/app.css`** — replaced the old `.atlas-*` SVG block (lines 1263–1331 pre-edit) with the MapLibre overlay system:
+    - `.atlas-pane` — positioning wrapper.
+    - `.atlas-marker` / `.atlas-marker-dot` / `.atlas-marker-label` — three-role font stack (serif label, dot via CSS custom-prop `--dot-color` + `--dot-size`).
+    - Tier-based label weight (`tier-0` → 600, `tier-1` → 500, `tier-2/3` → 400). `.hub` promotes font-size from `--micro` to `--lbl-md`.
+    - Hover/hot states: gold ring on dot, gold label color, 1.15× scale.
+    - `.atlas-dim` for non-neighbor markers during hover.
+    - `.hidden-by-declutter` for bbox-conflict suppression.
+    - MapLibre control theming via `.atlas-map .maplibregl-ctrl-*` — buttons, attribution, group borders all driven by our `--bg-*` / `--border` / `--gold` / `--mono` tokens.
+    - Empty-state card (`.atlas-empty-card` headline + sub) matching Scripture's empty-state pattern.
+  - **`_assets/vendor/maplibre/maplibre-gl.js` + `maplibre-gl.css`** — vendored MapLibre GL JS v5.24.0 (~1.1 MB total, COMMITTED).
+  - **`_assets/vendor/pmtiles/pmtiles.js`** — vendored PMTiles JS v4.4.1 (~20 KB, COMMITTED).
+  - **`_assets/vendor/bin/pmtiles`** — go-pmtiles CLI v1.30.2 macOS-arm64 binary (~55 MB, **GITIGNORED**, re-fetchable via `scripts/fetch-basemap.sh`).
+  - **`_assets/basemap/world-z7.pmtiles`** — z0-z7 world extract from Protomaps daily build 2026-05-14 (185 MB, **GITIGNORED**, re-fetchable). z7 is city-block resolution — perfectly sufficient for our 149 unique vault locations (mostly ancient cities/regions).
+  - **`scripts/fetch-basemap.sh`** — reproducible setup: detects OS/arch, downloads pmtiles CLI, resolves latest valid Protomaps daily build (walks back up to 14 days if today isn't built yet), extracts z0-z7. ~10 minutes one-time per repo clone.
+  - **`scripts/serve.py`** — local dev static server with **HTTP Range support**. Python's stdlib `http.server` doesn't support Range requests, which PMTiles requires (byte-range reads from a single `.pmtiles` file). This wraps `SimpleHTTPRequestHandler` with proper 206 Partial Content responses. ~95 lines, dev-only — production deploys (Vercel/Cloudflare Pages/R2+CloudFront) all support Range natively.
+  - **`.claude/launch.json`** — updated to invoke `scripts/serve.py` instead of `python -m http.server`.
+  - **`.gitignore`** — extended with `_assets/basemap/*.pmtiles` + `_assets/vendor/bin/`.
+
+- **Premium-feel design decisions made this batch:**
+  - **Basemap has zero text labels.** Bloomberg/Stripe/Linear-style restraint. Vault nodes carry all label hierarchy. Side benefit: no PBF glyph fonts needed → smaller offline footprint.
+  - **Vendored deps, not CDN.** Per the premium-SaaS posture: third-party CDN is a single point of failure for paid products.
+  - **DOM markers, not native MapLibre symbols.** Lets us use our existing `--serif` / `--mono` / token color system directly via CSS — would otherwise need PBF glyphs baked into a vendor directory. 964 markers is well within DOM-positioning performance budget.
+  - **Map instance persists across view changes.** Init cost (~150ms) only paid once per session; subsequent atlas visits reuse the same map and only refresh markers.
+
+- **Verified (browser preview, 1440×900 desktop viewport):**
+  - Basemap renders: country borders, water/ocean, regional boundaries all visible in the muted token palette.
+  - 964 markers placed accurately at lat/lon; 49 hub-tier (top 5%) labels visible by default.
+  - Hover trails: gold lines connecting the hovered node to neighbors via the atlas-trails GeoJSON source.
+  - Tooltip shows title + meta + date range; non-related markers dim, related ones go hot.
+  - View switching atlas ↔ pantheon ↔ atlas works: pane shows/hides cleanly, markers re-render on re-entry, MapLibre instance kept alive.
+  - MapLibre nav control (+/-) and attribution control render in our token palette.
+
+- **Explicitly NOT doing this batch (deferred — open gaps for follow-up agents):**
+  - **Hash-based URL router** for deep links (`#/view/atlas/era=axial` shape). ~50 lines, ~1 hour. Critical for the SaaS deep-link / SEO / onboarding use case. Goal: any view-and-filter state encodable in the URL, restorable on reload, shareable. **Priority follow-up #1 for `opus-router-1`.**
+  - **Style-preset consolidation** (13 → 3 hero). User picked "defer presets, one neutral map for now" path on 2026-05-15. The Map currently uses the active preset's CSS-token values to color the basemap (resolved at style-build time), but presets aren't yet rebuilt as marketing identities. **`opus-presets-1` follow-up batch.**
+  - **Font loadout cut** (6 → 3 families) — design-3 open queue item #9. Touches every preset; too invasive for mid-Map-rebuild. **`opus-design-4` follow-up.**
+  - **Timeline retypography + shared zoom-meter migration** — Timeline's hardcoded px values (`9.5 / 12 / 10 / 8.5`) violate the type-token contract. The shared `tierVisibilityThreshold` utility I added is ready for Timeline to consume. **`opus-timeline-1` follow-up — the user explicitly flagged Timeline as next-up after Map.**
+  - **Great-circle trail interpolation** — current trails are straight lines (which on a Mercator-ish projection cross seas at unnatural angles for Aksum-Cordoba etc.). Bezier or geodesic interpolation in `_atlasShowHoverTrails`. ~20 lines. Polish.
+  - **Live preset re-coloring** — when the user switches presets while on Atlas, the basemap doesn't recolor (style was built at the previous preset's token values). Fix: subscribe to a "preset changed" event and call `_atlasMap.setStyle(_atlasBuildStyle())`. ~10 lines.
+  - **Auth, billing/Stripe, account management, iPhone PWA, service worker** — all out of scope until John flags.
+  - **`transmissionFlow` / `threadsView`** — design-3 queue items #10–11, still flagged off.
+
+- **Coordination notes:**
+  - The map-thumbnail (bottom-right of Pantheon/Documents/Timeline) uses `geoToMap` + `CONTINENT_OUTLINES` — those helpers stay intact at app.js:391–426. Only the old `VIEWS.atlas` callsite was retired.
+  - `STATE.atlasEra` and `STATE.atlasLabelMode` are unchanged in shape — any URL router built later can read them directly.
+  - The map instance is exposed indirectly through the closures in `VIEWS.atlas.render()`. If a follow-up agent needs to expose it on `window` for cross-view orchestration, do it via a `window._atlasMap = _atlasMap` line near the init.
+
+- **Status:** finished
+- **Last edit:** this claim block close-out + cleanup of stale `FEATURES.atlasMap` flag.

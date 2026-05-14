@@ -17,6 +17,12 @@ __pycache__/
 _assets/thumbs_cache.json
 _assets/thumbs/
 
+# === Offline basemap tiles (re-fetchable via scripts/fetch-basemap.sh; 185 MB at z0-z7) ===
+_assets/basemap/*.pmtiles
+
+# === Project-local CLI binaries (re-fetchable via scripts/fetch-basemap.sh) ===
+_assets/vendor/bin/
+
 # === Pre-refactor backup of index.html (the Phase A monolith); keep only the new src/ layout ===
 index.html.bak
 *.bak
