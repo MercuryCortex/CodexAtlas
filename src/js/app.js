@@ -7,6 +7,18 @@
 
 if (!window.VAULT_DATA) document.getElementById('missing-data').style.display = 'flex';
 
+// ============================================================
+// FEATURE FLAGS — gate half-built modes/views here, per architecture §8.
+// Visible affordances must work. A `false` flag hides the option entirely from
+// dropdowns/menus until the implementation lands.
+// ============================================================
+const FEATURES = {
+  pantheonMonuments: false, // placeholder mode — no payload yet
+  atlasMap:          false, // proposed: lat/lon world view
+  transmissionFlow:  false, // proposed: cross-tradition Sankey
+  threadsView:       false, // proposed: bridge-figure ladder
+};
+
 const DATA = window.VAULT_DATA || { nodes: [], edges: [], counts: {}, traditions: [], families: [] };
 
 const NODES_BY_ID = Object.fromEntries(DATA.nodes.map(n => [n.id, n]));
@@ -163,20 +175,37 @@ function nodeColor(n) {
 // polar coordinates in d3-arc convention: 0 = top (12 o'clock), increasing clockwise
 function polarXY(angle, r) { return [r * Math.sin(angle), -r * Math.cos(angle)]; }
 
+// Custom d3 symbol: equilateral 45°-rotated square (all 4 points equidistant from center).
+// d3.symbolDiamond produces a TALL lozenge (1:tan30° aspect ≈ 1.73:1) — that's not what
+// Scripture's render uses for persons, and not what the user wants for "author shape."
+// Scripture inlines this exact geometry at its render site (~line 3107). Defining it as
+// a real d3 symbol lets shapeFor() return it directly so every view that calls shapePath
+// (Pantheon, Timeline, Alchemy) gets the same equilateral diamond.
+//   Area of an equilateral diamond with diagonals 2r × 2r = 2r²  →  r = √(size/2)
+const symbolDiamondEqual = {
+  draw(context, size) {
+    const r = Math.sqrt(size / 2);
+    context.moveTo(0, -r);
+    context.lineTo(r, 0);
+    context.lineTo(0, r);
+    context.lineTo(-r, 0);
+    context.closePath();
+  },
+};
+
 // Shape-per-type — each node category gets a distinct silhouette so a mixed-type view
 // (Alchemy, Timeline) reads at a glance. Pantheon's Authors mode also benefits: deities
-// stay as circles, persons render as diamonds, etc.
+// stay as circles, persons render as equilateral diamonds, etc.
 // For SYMBOLS specifically, shape varies by the symbol's category (geometric vs.
 // theriomorphic vs. phytomorphic, etc.) — see schema-symbol.md.
 function shapeFor(n) {
   if (!n) return d3.symbolCircle;
   switch (n.type) {
     case 'deity':     return d3.symbolCircle;
-    // person/author = diamond. Matches the Scripture view (which already uses
-    // symbolDiamond via shapeFor) so Justin Martyr / Peter / Paul / etc. read the
-    // same shape across Pantheon, Timeline, and Scripture. Documents stay as
-    // axis-aligned squares — visually distinct from the 45°-rotated diamond.
-    case 'person':    return d3.symbolDiamond;
+    // person/author = EQUILATERAL diamond (Scripture-matching geometry). All 4 points
+    // equidistant from center — visually a square rotated 45°. Distinct from documents
+    // (axis-aligned square) and from d3.symbolDiamond (tall lozenge).
+    case 'person':    return symbolDiamondEqual;
     case 'event':     return d3.symbolStar;
     case 'document':  return d3.symbolSquare;
     case 'theme':     return d3.symbolTriangle;
@@ -675,7 +704,7 @@ VIEWS.pantheon = {
         <option value="symbols"   ${mode === 'symbols'   ? 'selected' : ''}>✦ Symbols</option>
         <option value="events"    ${mode === 'events'    ? 'selected' : ''}>★ Events</option>
         <option value="scripture" ${mode === 'scripture' ? 'selected' : ''}>✠ Scripture →</option>
-        <option value="monuments" ${mode === 'monuments' ? 'selected' : ''}>⛬ Monuments</option>
+        ${FEATURES.pantheonMonuments ? `<option value="monuments" ${mode === 'monuments' ? 'selected' : ''}>⛬ Monuments</option>` : ''}
       </select>
       <button class="btn btn-mini" id="btn-labels">labels: hub</button>
       <button class="btn btn-mini active" id="btn-hulls">hulls</button>
@@ -3849,7 +3878,7 @@ VIEWS.themes = {
         <div class="row-trad">${t.status || ''}</div>
         <div class="row-meta">→</div>
       </div>`;
-    }).join('') || '<div style="color:var(--text-3); padding: 24px; font-style: italic;">No themes match the filter.</div>';
+    }).join('') || '<div class="list-pane-empty">No themes match the filter.</div>';
     pane.addEventListener('click', (ev) => { const r = ev.target.closest('.row'); if (r && r.dataset.id) selectNode(r.dataset.id, true); });
     document.getElementById('canvas').appendChild(pane);
   }
@@ -3866,11 +3895,8 @@ VIEWS.edges = {
     pane.innerHTML = types.map(t => {
       const st = edgeStyle(t);
       return `
-      <div style="margin: 18px 0 6px; padding: 0 14px;
-        font-family: var(--mono); font-size: 11px; color: ${st.c};
-        letter-spacing: 0.12em; text-transform: uppercase; display: flex; align-items:center; gap:8px;">
-        <span style="display:inline-block;width:14px;height:2px;background:${st.c}"></span>
-        ${t} <span style="color:var(--text-3)">· ${byType[t].length}</span>
+      <div class="list-pane-header" style="--lph-accent: ${st.c}">
+        <span class="lph-rule"></span>${t}<span class="lph-count">· ${byType[t].length}</span>
       </div>
       ${byType[t].slice(0, 150).map(e => {
         const s = NODES_BY_ID[e.source], tg = NODES_BY_ID[e.target];

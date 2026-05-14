@@ -14,7 +14,8 @@ historicity: "likely-historical"
 texts-authored: []
 texts-attributed-to: ["the construction of the city walls of Uruk (attributed in royal-inscription tradition and in the Gilgamesh Epic prologue, archaeologically defensible)"]
 events-participated: ["Early Dynastic II–III period kingship of Uruk", "warfare with Kish (the *Gilgamesh and Aga* tradition)"]
-mentioned-in: ["[[phase-1-004-gilgamesh-old-babylonian]]", "[[phase-1-015-sumerian-king-list]]", "[[tummal-chronicle]]"]
+mentioned-in: ["[[phase-1-004-gilgamesh-old-babylonian]]", "[[phase-1-015-sumerian-king-list]]", "[[tummal-chronicle]]", "[[phase-3-033-book-of-giants-qumran-manichaean]] (Aramaic 4Q530 + Manichaean canonical Book of Giants — the Mesopotamian Gilgamesh appears by name as a Nephilim giant; see [[gilgamesh-nephilim]] for the Watchers-tradition node)"]
+watchers-tradition-appearance: "[[gilgamesh-nephilim]]"
 status: "metadata"
 refs:
   - title: "The Babylonian Gilgamesh Epic, Volume 1: Introduction, Critical Edition, and Cuneiform Texts"

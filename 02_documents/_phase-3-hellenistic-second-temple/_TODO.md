@@ -34,18 +34,14 @@ _Auto-generated 2026-05-14._
 - [ ] `phase-3-009-jubilees` — status: metadata (5 refs)
 - [ ] `phase-3-025-manetho-aegyptiaca` — status: metadata (5 refs)
 
-## Top unstubbed wikilink targets from this phase (25)
+## Top unstubbed wikilink targets from this phase (23)
 
 (stub these to close out internal references)
 
-- [ ] `gilgamesh-nephilim` — referenced 3×
 - [ ] `socrates` — referenced 2×
 - [ ] `ascent-and-descent` — referenced 2×
 - [ ] `providence-and-fate` — referenced 2×
 - [ ] `anaxagoras` — referenced 2×
-- [ ] `ohyah-nephilim` — referenced 2×
-- [ ] `hahyah-nephilim` — referenced 2×
-- [ ] `mahaway-nephilim` — referenced 2×
 - [ ] `theodicy` — referenced 2×
 - [ ] `messianic-revelation` — referenced 2×
 - [ ] `fear-of-the-lord` — referenced 2×
@@ -63,3 +59,5 @@ _Auto-generated 2026-05-14._
 - [ ] `anthropos-primal` — referenced 1×
 - [ ] `ezra-scribe` — referenced 1×
 - [ ] `substance-and-accident` — referenced 1×
+- [ ] `teacher-of-righteousness` — referenced 1×
+- [ ] `ancient-of-days` — referenced 1×

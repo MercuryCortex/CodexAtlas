@@ -204,6 +204,41 @@ for t in ["document", "deity", "person", "event", "theme", "tradition", "symbol"
     row.append(f"**{total}**")
     dash.append(" | ".join(row) + " |")
 
+# ---------- Open AUDIT proposals ----------
+# Standing audit documents in AUDIT/ are large structural proposals that the
+# unstubbed-wikilink queue does not surface. Without this section, agents
+# repeatedly stub low-priority filler instead of picking up architectural
+# extensions (material-witness layer, geographic map, scholar role-class,
+# new edge types, etc.). See AUDIT/10_app-and-infrastructure-audit.md §6.
+audit_dir = VAULT / "AUDIT"
+audit_files = []
+if audit_dir.exists():
+    for p in sorted(audit_dir.glob("*.md")):
+        try:
+            atext = p.read_text(encoding="utf-8")
+            heading = ""
+            for ln in atext.splitlines():
+                if ln.startswith("# "):
+                    heading = ln[2:].strip()
+                    break
+            if not heading:
+                heading = p.stem
+            mtime = datetime.date.fromtimestamp(p.stat().st_mtime).isoformat()
+            audit_files.append((p.name, heading, mtime))
+        except Exception:
+            continue
+
+if audit_files:
+    dash.append("\n## Open AUDIT proposals\n")
+    dash.append(f"Standing audit documents in [`AUDIT/`](../AUDIT/). These are large structural proposals "
+                f"and content-gap surveys that the unstubbed-wikilink queue below does NOT surface. "
+                f"**Read them before starting an architectural batch** — many propose work that's been "
+                f"sitting unimplemented across multiple sessions.\n")
+    dash.append("| File | Audit | Last touched |")
+    dash.append("|---|---|---|")
+    for name, heading, mtime in audit_files:
+        dash.append(f"| [{name}](../AUDIT/{name}) | {heading} | {mtime} |")
+
 dash.append("\n## Top 30 unresolved wikilink targets (priority queue)\n")
 dash.append("These are nodes that should exist but don't. The number is how many existing nodes link to each. "
             "Stubbing high-count targets gives the biggest graph-integrity ROI.\n")

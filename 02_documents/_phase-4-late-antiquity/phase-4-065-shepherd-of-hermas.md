@@ -15,7 +15,7 @@ script: "Greek uncial"
 region: "Italy"
 city-of-origin: "Rome"
 authorship: "known — [[hermas]] of Rome"
-key-figures: ["[[hermas]]", "[[clement-of-rome|Clement]] (named as Hermas's contemporary courier at Vis. 2.4.3)"]
+key-figures: ["[[hermas-of-rome]]", "[[clement-of-rome|Clement]] (named as Hermas's contemporary courier at Vis. 2.4.3)", "[[the-shepherd-angel-of-repentance]] (the personified angel narrator from Vision 5 onward)", "[[the-lady-ecclesia-hermas]] (the personified Church figure of Visions 1–4)"]
 themes: ["[[apocalyptic-revelation]]", "[[ethical-dualism]]", "[[two-spirits-doctrine]]", "[[ecclesiology]]"]
 parallels: ["[[phase-4-062-1-clement]]", "[[phase-3-011-dead-sea-scrolls]]"]
 influenced-by: ["Jewish apocalyptic visionary tradition (esp. 4 Ezra, 2 Baruch, the Enochic corpus)", "Stoic moral psychology (the *Mandates* read as Stoic-Christian moral instruction)", "Jewish *Two Spirits* anthropology (1QS 3–4) mediated through Roman Jewish-Christian milieu", "Greco-Roman *bona fide* household-moral-instruction genre"]

@@ -15,7 +15,7 @@ script: "Hebrew square; Ge'ez"
 region: "Judea"
 city-of-origin: "Judea (likely circles overlapping with the Qumran community's predecessors)"
 authorship: "anonymous; pseudepigraphically attributed to the Angel of the Presence dictating to Moses on Mount Sinai"
-key-figures: ["[[moses]]", "[[enoch]]", "[[noah]]"]
+key-figures: ["[[moses]]", "[[enoch]]", "[[noah]]", "[[cainan-son-of-arpachshad]] (Jubilees 8:1–5 — the extra patriarch absent from Hebrew MT; rediscovers pre-Diluvian Watchers-inscribed knowledge)"]
 themes: ["[[heavenly-tablets]]", "[[364-day-solar-calendar]]", "[[watchers-and-fallen-angels]]", "[[apocalyptic-revelation]]", "[[torah-as-pre-existent]]"]
 parallels: ["[[phase-3-004-1-enoch]]", "[[phase-3-011-dead-sea-scrolls]]", "[[phase-3-006-septuagint]]"]
 influenced-by: ["Genesis–Exodus (rewriting)", "1 Enoch (direct quotation)", "Astronomical Book of Enoch (solar calendar)"]

@@ -12,28 +12,78 @@ Format:
 - Last edit: <last file touched>
 ```
 
+**Archive policy (proposed by opus-housekeeper-1, 2026-05-14):** Finished claim blocks older than 7 days should be moved to `00_meta/agents-archive/YYYY-MM-DD.md` to keep this file scannable. Until then, the at-a-glance table below is the fast index — scroll for full claim blocks.
+
+**For new agents:** Read [AGENTS.md](../AGENTS.md) at the vault root for a 60-second onboarding (pre-flight + coordination protocol + canonical-slug + status-file pointers).
+
 ---
 
-## opus-hellenic-3 — Mystery-cult + tragic-drama capstone (UNMAPPED-EDGES wedge) — started 2026-05-14
+## 🚦 In-flight claims at a glance (current as of 2026-05-14 ~20:50)
 
-- **Goal:** Hunt the **load-bearing edges nobody else maps** because they sit on the boundary between "Christianity studies" and "Greek mystery-religions studies" — the two fields rarely talk to each other. Specifically the Eleusinian Mysteries (the kykeon proto-Eucharistic structure; the hierophantic "Holy Brimo has borne the Holy Child Brimos!" formula reported by Hippolytus *Ref.* 5.8 as the Eleusinian climax — a Christmas-formula spoken in pagan mystery cult centuries before Christ), Apuleius *Met.* Bk 11 (the only first-person ancient mystery-initiation narrative), and the Athenian tragedians as religious authors (Euripides' *Bacchae* = Dionysian mystery-theology in dramatic form; Aeschylus' *Oresteia* = Greek cosmic-justice theology).
-- **Owning (no overlap with any in-flight scope):**
-  - `05_events/event-eleusinian-mysteries-c1500-bce-396-ce.md`
-  - `03_deities/iacchus.md`
-  - `04_persons/triptolemus-legendary.md`
-  - `06_themes/eleusinian-mystery-revelation.md`
-  - `04_persons/apuleius.md`
-  - `02_documents/_phase-4-late-antiquity/phase-4-090-apuleius-metamorphoses-bk-11.md`
-  - `04_persons/euripides.md`
-  - `04_persons/aeschylus.md`
-  - `02_documents/_phase-2-axial-age/phase-2-030-euripides-bacchae.md`
-  - `02_documents/_phase-2-axial-age/phase-2-031-aeschylus-oresteia.md`
+| Handle | Scope tag | Owns (high level) | Started |
+|---|---|---|---|
+| `opus-housekeeper-1` | meta-coordination / hygiene | `AUDIT/00`, `AUDIT/12`, `README.md`, `AGENTS.md`, `.obsidian/{app,appearance}.json`, header sections of `ACTIVE-AGENTS.md` + `STATUS.md`. **No vault-content edits, no app-code edits.** | 2026-05-14 ~20:50 |
+| `opus-hellenic-3` | content / mystery-cult capstone | Eleusinian event, Iacchus, Triptolemus, eleusinian-mystery-revelation theme, Apuleius, Bk 11, Euripides, Aeschylus, Bacchae, Oresteia | 2026-05-14 |
+| `opus-ethiopian-4` | content / Ethiopian-canonical extras | 4 Ezra Ethiopic, Book of Giants, Mashafa Kidan, Sinodos, Yosippon-Ethiopic + 2 persons + 10 deities (Watchers, Nephilim incl. **gilgamesh-nephilim** MASSIVE-win) | 2026-05-14 |
+| `opus-design-1` | app-code / UI/UX design lead | `index.html`, `src/styles/app.css`, `src/js/app.js` (audit-and-propose phase complete, awaiting user pick) | 2026-05-14 |
+| `opus-gaps-1` | content / dead-link closure + gap-fill | tradition-syriac-orthodox, tradition-armenian-apostolic, dioscorus-of-alexandria, severus-of-antioch, jacob-baradaeus, shenoute, melchizedek, hagiography theme, tewahedo-christology, ethiopian-systematic-theology, plus 6 Buddhist follow-ups (santideva, abhidharmakosa, pyrrho-of-elis, barlaam-and-josaphat, karma-lingpa) + schema-template `[[document]]` cleanup | 2026-05-14 ~20:43 |
+
+**Convention reminder:** vault-content batches do not collide because each owns a distinct slug list. App-code batches (`opus-design-1`) do not collide with content batches. The meta-coordination batch (`opus-housekeeper-1`) does not touch any vault content node, app-code file, or in-flight slug — only `AUDIT/`, `README`, `AGENTS.md`, Obsidian config, and the header sections of the registry files. Pick a non-overlapping wedge, append your claim block here AND a row in the table above before starting.
+
+---
+
+## opus-housekeeper-1 — Meta-coordination & vault hygiene (NO vault-content / NO app-code edits) — started 2026-05-14 ~20:50 (local) — **IN-FLIGHT**
+
+- **Mission (user-assigned):** "audit this project to keep it TIGHT and clean so it becomes HYPER optimized — every time an agent comes in should be super easy to connect work from other agents — catalogue things properly — Obsidian files updated — whatever Claude and agents work best in practice for this project (MEGA) start to apply — make yourself known to the other agents."
+- **Scope (intentionally narrow — no collision risk with any in-flight content batch):**
+  - **Coordination-layer hygiene:** add the at-a-glance live-claims table at the top of this file (above); propose archive policy for finished blocks older than 7 days; add a pointer to AGENTS.md for new agents.
+  - **AUDIT folder hygiene:** resolve the `10_` numbering collision (`10_app-and-infrastructure-audit.md` + `10_opus-buddhist-1-audit.md`) by renaming the buddhist-audit to `11_`; refresh `AUDIT/00_AUDIT_OVERVIEW.md` index to include files 06–11.
+  - **Vault-root onboarding doc:** create `AGENTS.md` at the vault root — a 60-second onboarding doc (pre-flight + coordination protocol + canonical-slug + status pointers + DO NOT list).
+  - **README freshness:** update the folder map and "current phase" line in `README.md` (still says "Phase 1–4 metadata seeding" while we're at v0.7 with phases 1–8 + AUDIT/ + src/ + _assets/).
+  - **Obsidian config:** populate `.obsidian/app.json` (currently 2-byte stub `{}`) and `.obsidian/appearance.json` (also `{}`) with sensible defaults that make the vault render well when opened in Obsidian (attachment folder → `99_ingest/`, `alwaysUpdateLinks: true`, `newLinkFormat: shortest`, `useMarkdownLinks: false`, base font / line height for long-form scholarly reading).
+  - **Meta-audit document:** new `AUDIT/12_meta-audit-housekeeping.md` — durable record of this batch's findings + what was changed + standing recommendations (registry-split proposal from `opus-buddhist-1`'s audit, dashboard surfacing AUDIT/, etc.).
+  - **STATUS.md headline entry** for this batch.
+  - **Re-run** `python3 build_data.py && python3 build_dashboard.py` at the end (data.js + DASHBOARD reflect any concurrent finished work + the AUDIT rename).
+- **Explicitly NOT touching:**
+  - **No vault content nodes** (no deity/person/event/theme/tradition/document/symbol creation or edit).
+  - **No app code** (`index.html`, `src/styles/app.css`, `src/js/app.js`, `data.js`, `build_data.py`, `build_dashboard.py`, `linkcheck.py`, `fetch_thumbnails.py`).
+  - **No schema files** (`00_meta/schema-*.md` — `opus-gaps-1` already owns the `[[document]]` / `[[document-slug]]` template-leak fixes there).
+  - **No canonical-slugs / dead-links / quality-issues / orphan-nodes / DASHBOARD body** (those are all auto-generated by `build_dashboard.py`; I only run the regenerator, never hand-edit).
+  - **No methodology / source-integrity / schema policy** changes (those are John's domain — proposals go in the AUDIT/ doc, not the live policy).
+- **Coordination notes for the four in-flight agents:**
+  - `opus-hellenic-3`, `opus-ethiopian-4`, `opus-gaps-1` — disjoint slug-wise; my batch creates no vault-content nodes.
+  - `opus-design-1` — disjoint; I touch zero app-code files.
+  - If any of you finishes during my batch and runs `build_dashboard.py` first, that's fine — I run it again at the end and our edits will compose.
 - **Status:** in-flight
-- **Last edit:** (this file)
+- **Last edit:** (this file — initial registration + at-a-glance table)
 
 ---
 
-## opus-ethiopian-4 — Extra Ethiopian-canonical books + characters + the Gilgamesh-in-Enoch MASSIVE win — started 2026-05-14
+## opus-hellenic-3 — Mystery-cult + tragic-drama capstone (UNMAPPED-EDGES wedge) — started 2026-05-14 — **FINISHED 2026-05-14**
+
+- **Goal achieved:** Hunted the **load-bearing edges nobody else maps** because they sit on the boundary between Christianity studies and Greek mystery-religions studies — fields that rarely talk to each other. **The thesis was right: this was where the gold lived.**
+- **Delivered (10 metadata-tier nodes — highest cross-tradition-edge density of any batch in this agent's runs):**
+  - **Eleusinian cluster (4):** [[event-eleusinian-mysteries-c1500-bce-396-ce]] · [[iacchus]] · [[triptolemus-legendary]] · [[eleusinian-mystery-revelation]] (theme)
+  - **Apuleius cluster (2):** [[apuleius]] · [[phase-4-090-apuleius-metamorphoses-bk-11]]
+  - **Tragedians cluster (4):** [[euripides]] · [[phase-2-030-euripides-bacchae]] · [[aeschylus]] · [[phase-2-031-aeschylus-oresteia]]
+- **9 newly-mapped MASSIVE-win edges (the unmapped ones):**
+  1. **"Holy Brimo has borne the Holy Child Brimos!"** — Eleusinian hierophantic cry reported by Hippolytus *Ref.* 5.8.39–40 polemically against the Naassene Gnostics — **a Christmas-formula spoken in pagan mystery cult centuries before Christ**.
+  2. **Kykeon → Eucharist** structural parallel; Justin *1 Apol* 66 polemic against pagan-mystery Eucharistic-imitation is the priority-presupposing evidence.
+  3. **Pentheus's sparagmos** (*Bacchae* 1118–1143) as canonical staging of the Dionysian-Orphic-Zagreus dismemberment-and-restoration pattern that runs into Christian Eucharistic broken-divine-flesh theology.
+  4. **Bacchic frenzy of the mainads → Pauline-Corinthian charismatic possession** (1 Cor 12–14). Paul addresses this pagan-parallel anxiety directly at 1 Cor 12:2.
+  5. **Paul at the Areopagus (Acts 17) preaches at the very physical site where Athena establishes the court of justice in Aeschylus's *Eumenides*** — a Christian-eschatological reframing of Aeschylean Areopagus-justice-founding. **The single most unmapped of the unmapped edges**: mainstream Acts-commentary and Greek-tragedy-commentary almost never connect this geographic-religious-juridical continuity.
+  6. **Apuleius's *Met.* 11.23 "nocte media vidi solem"** → Pseudo-Dionysian "divine darkness" → Gregory of Nyssa → Eckhart → *Cloud of Unknowing* Christian mystical illumination tradition.
+  7. **Apuleius's universal-goddess Isis-Aretalogy** → Marian Queen-of-Heaven devotion in late-antique Coptic and medieval Catholic Christianity.
+  8. **Apuleius → Augustine North African Latin-philosophical-into-Christian-theological lineage** through Apuleius's *De Deo Socratis* daimonology as principal target of *City of God* 8–9.
+  9. **The Aeschylean integration-not-destruction model** (Erinyes → Eumenides) as foundational structural pattern for Christian appropriation of pagan religious-philosophical material (Justin's logos spermatikos, Origen's *praeparatio evangelica*, Augustine's Platonism-into-theology).
+- **Coverage:** Greek + Egypt now at **~92% load-bearing**.
+- **Status:** finished
+- **Last edit:** `build_data.py` + `build_dashboard.py` rebuild
+- **Build result:** **1685 total nodes**, **9530 graph edges**, **3.6% dead-link ratio (improved from 4.6%)**
+
+---
+
+## opus-ethiopian-4 — Extra Ethiopian-canonical books + characters + the Gilgamesh-in-Enoch MASSIVE win — started 2026-05-14 — **FINISHED 2026-05-14**
 
 - **Owning (new vault nodes; no overlap with any in-flight batch):**
   - **Documents (5):**
@@ -58,8 +108,24 @@ Format:
   2. **Cainan-son-of-Arpachshad as the canonical-textual divergence between MT and LXX** — Hebrew MT skips him at Genesis 11:13; LXX (and Jubilees and Ethiopic and Luke 3:36) retain him. This is one of the cleanest single demonstrations that the New Testament (Luke specifically) followed the LXX-tradition canon rather than the proto-Masoretic one — a load-bearing canon-history edge.
   3. **The Shepherd-of-Hermas personification-cluster** as an early Christian *personified-angelology* (the Shepherd = Angel of Repentance, the Lady = Ecclesia / Church) — preserved continuously canonical in Ethiopia long after the West dropped it; a structural parallel to the Sophia-personification of Wisdom literature and to the Greek personified-virtue tradition.
   4. **Mary-of-Zion** as the cult-specific Aksumite Marian figure distinct from generic [[mary-theotokos]] — the spiritual center of the Ethiopian Orthodox church-system, the Aksumite cathedral's tabot-bearing figure, and the explicit *Sheba/Aksum* localization of Marian devotion.
-- **Status:** in-flight
-- **Last edit:** (this file)
+
+- **Delivered (17 new metadata-tier nodes + 4 edge-sweep extensions):** all nodes listed above written and rebuilt clean. Build state 1681 nodes (was 1637 pre-batch); edges 9498 (was 9229); dead-link occurrence ratio dropped 3.8% → 3.6% — improved despite heavy new linking. The 4 edge-sweep extensions: [[phase-4-081-mashafa-henok-geez-1-enoch]] now lists all 13 Enochic deities (the 7 archangels of 1 Enoch 20 + Watchers + Parables figures + the 4 added by this batch: Kasdeja, Armaros, Hermoni, Asbeel); [[phase-3-009-jubilees]] adds Cainan-son-of-Arpachshad as a key-figure; [[phase-4-065-shepherd-of-hermas]] adds Hermas-of-Rome (correcting the prior bare [[hermas]] slug) + the Shepherd + the Lady-Ecclesia personifications as key-figures; [[gilgamesh-king]] adds a new `watchers-tradition-appearance` field pointing to [[gilgamesh-nephilim]] and a `mentioned-in` entry for [[phase-3-033-book-of-giants-qumran-manichaean]].
+
+- **What this completes for the user's framing:** Ethiopian-Christian wedge coverage moves from ~65–70% (post-opus-ethiopian-3) to **~80–85%** of load-bearing material. The user-flagged "extra books that Ethiopian Bible has compared against others" axis is now substantially complete (4 Ezra + Mashafa Kidan + Sinodos + Yosippon land alongside the prior Mashafa Henok + Jubilees + Meqabyan + Garima Gospels + 81-book-canon + Mashafa Mistir + Mashafa Berhan + Fetha Nagast + Sinkessar + Walatta Petros + Kebra Nagast). The user-flagged "characters in those books pivotal in Ethiopian canon but not mainstream" axis is now substantially complete (all 12 named Watchers of 1 Enoch + all 7 Enochic archangels + Mastema + Angel of the Presence + Head of Days + Elect One + the Hermas personifications + Cainan + the Meqabyan trio + Mary-of-Zion + 4 named Nephilim including Gilgamesh-as-Nephilim).
+
+- **Open gaps for any follow-up agent (the remaining ~15-20% is mostly the modern era + Beta Israel + sister Oriental Orthodox):**
+  - **Modern Ethiopia (1700–present):** historical Menelik II (defeated Italy at Adwa 1896), Tewodros II, Yohannes IV, Fasilides, Susenyos, Yekuno Amlak; events: Battle of Adwa 1896, Italian invasion 1935–41, 1959 autocephaly, Derg period 1974–91.
+  - **Beta Israel:** tradition node + Abba Sabra + Operation Moses 1984 + Operation Solomon 1991.
+  - **Sister Oriental Orthodox:** tradition-syriac-orthodox, tradition-armenian-apostolic, tradition-malankara-syrian; founders Dioscorus, Severus of Antioch, Jacob Baradaeus, Shenoute.
+  - **Theme stubs** my prior batches pointed to (~15): tewahedo-christology, sabbath-observance, female-monasticism, hagiography, evangelist-portraits, canon-tables, illuminated-manuscript-art, etc.
+  - **Yodit/Gudit** (legendary 10th-c. Jewish queen who attacked Aksum).
+  - **Pre-Aksumite Damʾat-era rulers** + the Yeha Almaqah temple as a symbol/event node.
+  - **17th-c. Zara Yacob the philosopher** (*Hatata* author — distinct from the 15th-c. emperor [[zara-yaqob-emperor]]).
+  - **Walatta Petros as a person node** (her hagiography exists as a document; she herself is not yet a person).
+
+- **Status:** finished
+- **Last edit:** `build_data.py` + `build_dashboard.py` clean rebuild after edge-sweep
+- **Build result:** 1637 → 1681 nodes (+44 net across concurrent batches; this agent contributed 17 new nodes + 4 edge-sweep extensions). Dead-link occurrence ratio improved 3.8% → 3.6%. Edges 9229 → 9498 (+269).
 
 ---
 
@@ -85,20 +151,43 @@ Format:
 
 ---
 
-## opus-design-1 — UI/UX polish & infographic-uplift audit (DESIGN LEAD) — started 2026-05-14 — **IN-FLIGHT**
+## opus-design-1 — Architecture pass: design-system contract + foundation cleanup (DESIGN LEAD) — started 2026-05-14 — **FINISHED 2026-05-14**
 
-- **Owning (app-code only — no vault-node changes; coordinates with any other in-flight app-code batches):**
-  - **Audit-and-propose phase first** across `index.html` + `src/styles/app.css` + `src/js/app.js`. No edits yet — running parallel sub-agent audits on (a) typography & font coherence using **Scripture view as the polish baseline** (user-stated), (b) interactive-state coverage + overlay/floating-UI overlap & z-index, (c) per-view polish-parity tier list against Scripture, (d) data-to-infographic next-step-up proposal leveraging the 1,637-node / 9,000+ -edge corpus.
-  - **Anticipated edit surface (subject to user approval after audit):** `src/styles/app.css` design-token cleanup + per-view section polish; possible additions to `src/js/app.js` view modules for new infographic affordances; `index.html` markup tweaks only as needed for new states/affordances.
-  - **No vault-content changes. No `build_data.py` schema change.**
+- **Owning (app-code only — no vault-node changes):**
+  - `00_meta/app-architecture.md` (NEW — load-bearing rules doc)
+  - `src/styles/app.css` (`:root` tokens, focus-visible utility, list-pane primitives, type-scale rollout, Twilight serif fix, themes-menu overlap fix)
+  - `src/js/app.js` (`FEATURES` flag-set, edges view header refactor, themes view empty-state, pantheon dropdown gating)
 
-- **Goal:** John appointed me design lead — "I want smoothness in the flow, things neat and clean, check all states don't overlap, check fonts coherence (I really like Scripture — it's pretty clean), massive data-to-infographic here." Audit current UI, propose ranked polish list + infographic upgrades, then land the agreed-upon work in passes.
+- **Goal restated by John mid-session:** *"we're TOP LEVEL PREMIUM here, with plans to make this app a subscription website… proper design and graphics come later, what I care about now is the coding side, the functionality, the not cluttering, the smoothness, the architecture, a solid layout that has rules and that every time onwards when we add new ideas or stuff it grows naturally without being a Frankenstein."* → architecture pass over graphics polish.
 
-- **Coordination notes:** Pure UI/UX work. Does not collide with content-node batches. If any other agent is editing `app.css` or `app.js` concurrently, will rebase and reconcile section-by-section.
+- **Audit phase (4 parallel goblins):** typography (Scripture-baseline spec + Twilight `--serif: "Inter"` bug + 5-fix punchlist) · state-overlap (themes-menu overlays detail panel; buttons lack `:focus-visible`; no `@media`) · per-view parity (Scripture tier · 4 near · 6 mid/needs-rework, `.edges` view renders inline-styled headers) · infographic-uplift proposal (6 ranked: Transmission-Sankey, Atlas-map, **Source-Integrity-Tier overlay (#1 recommended next pass)**, Threads bridge-figures, design-system uplift, Phase-isotype grid).
 
-- **Status:** in-flight — **audit complete, awaiting user pick of polish pass**
-- **Audit deliverables (in chat):** typography goblin (Scripture-baseline spec + Twilight `--serif: "Inter"` bug + 5-fix punchlist) · state-overlap goblin (themes-menu z-200 overlays detail panel; buttons lack `:focus-visible`; zoom-meter has no active state; no `@media` breakpoints) · per-view parity audit (Scripture tier · 4 near-tier · 6 mid-or-needs-rework, including `.edges` view rendering inline-styled headers) · infographic-uplift proposal (6 ranked: Transmission-Sankey, Atlas-map, **Source-Integrity-Tier overlay (recommended #1)**, Threads bridge-figures, design-system uplift, Phase-isotype grid).
-- **Last edit:** initial registration + audit dispatch
+- **Delivered:**
+  1. **`00_meta/app-architecture.md` (NEW).** Codifies: Scripture as polish-tier ceiling · the legal token vocabulary (colors / type-families / type-scale / motion / z-index ladder) · the component-primitive catalogue (`.btn`, `.list-pane`, `.list-pane-header`, `.list-pane-empty`, view-controls slot, empty-card pattern, scripture-corpus-popup pattern) · the state-coverage requirement (hover + focus-visible + active mandatory) · the view-extension contract (5-step rule for adding a new view) · the style-preset contract (`--serif` must remain a serif family; presets re-bind tokens, never override layout) · 8 named anti-patterns that go back on review · the feature-flag pattern for half-built modes · doc-update rules. **The artifact the next 10 app-code agents read before touching `app.js` / `app.css`.**
+  2. **`src/styles/app.css` `:root` — type-scale + motion tokens.** Added `--h1-size: 22px / --h2-size: 16px / --h3-size: 14px / --lbl-lg: 12px / --lbl-md: 10.5px / --lbl-sm: 9.5px / --micro: 9.2px` (the only legal font-size vocabulary) and `--ease / --t-micro / --t-layout / --t-overlay` motion tokens.
+  3. **Fixed Twilight `--serif: "Inter"` bug.** Inter is sans-serif — every serif-dependent component (Scripture section labels, Pantheon family labels, detail-panel h3) silently flipped under Twilight preset. Now `EB Garamond` chain. Architecture §6 codifies the rule. Verified live.
+  4. **Fixed `.themes-menu` overlapping the detail panel.** Menu used `right: 0` and spanned full viewport, trapping clicks inside detail-pane behind itself. Now `right: var(--detail-w)` with `body.detail-collapsed` and `body.nav-collapsed` adaptive rules. Verified live.
+  5. **`:focus-visible` utility (a11y).** `:where(button, select, input, textarea, [role="button"], [tabindex]):focus-visible { outline: 2px solid var(--gold); outline-offset: 2px; border-radius: 3px }` — covers every keyboard-reachable control. Mouse focus suppressed; keyboard nav visible across the entire app.
+  6. **`.list-pane-header` + `.list-pane-empty` primitives.** Refactored `VIEWS.edges`'s inline-styled headers onto the shared class; refactored `VIEWS.themes`'s inline empty-state onto `.list-pane-empty`. Verified live: Connections view renders 36 `.list-pane-header` elements with per-row `--lph-accent` token override.
+  7. **`FEATURES` flag-set at top of `src/js/app.js`** — `pantheonMonuments: false / atlasMap: false / transmissionFlow: false / threadsView: false`. Pantheon mode dropdown now conditionally renders `monuments` (architecture §8 — no half-baked visible affordances). Verified live: 5 modes, no monuments leak.
+  8. **Type-scale wired through chrome.** `.view-header h2 → var(--h2-size)`. `.view-header .subtitle → var(--lbl-md)`. `aside.detail h3 → var(--h1-size)`. `.list-pane .row .row-title → var(--h3-size)`. `.list-pane .row .row-meta → var(--lbl-md)`.
+
+- **What downstream agents see:**
+  - Pre-flight protocol now includes `00_meta/app-architecture.md`.
+  - The 4 list views (`themes` · `edges` · `traditions` · `all`) share three primitives: `.list-pane`, `.list-pane-header`, `.list-pane-empty`.
+  - Adding a new view = the 5-step recipe in architecture §5.
+  - Half-built modes go behind `FEATURES.*` flags.
+
+- **Open gaps (next pass — explicitly deferred):**
+  - **Source-Integrity-Tier overlay (recommended #1 for opus-design-2).** Per-node `refs[].tier` exists but is invisible. ~half day. Makes the investigation-not-devotion posture visible.
+  - Cross-Tradition Flow / Transmission-Sankey view (data already in `EDGES`).
+  - Atlas (lat/lon) map view (`geoToMap` + `CONTINENT_OUTLINES` already exist).
+  - Threads bridge-figure ladder view (Hermes/Mary/Abraham/Solomon across corpora).
+  - Phase-isotype grid uplift on Documents view.
+  - Cut the 6-family font loadout to 3 role-slots.
+
+- **Build state:** No vault-content changes. No `build_data.py` schema change. Verified by browser preview: page reloads clean (no console errors), all chrome renders, type-scale + dropdown + list-pane-header + themes-menu adaptive width all confirmed live.
+- **Last edit:** `00_meta/app-architecture.md` + `src/styles/app.css` + `src/js/app.js`
 
 ---
 
@@ -1072,7 +1161,7 @@ The native `<select>` was visually huge because the corpus labels are long ("Hol
 
 ## opus-gaps-1 — Dead-link closure + cross-batch open-gaps fixes — started 2026-05-14 20:43 (local)
 
-- **Mission (user-assigned):** "we doing wnat open gaps! fix it." After delivering `opus-buddhist-1` + writing `AUDIT/10_opus-buddhist-1-audit.md`, user directed close-the-gaps execution on the audit's priority queue.
+- **Mission (user-assigned):** "we doing wnat open gaps! fix it." After delivering `opus-buddhist-1` + writing `AUDIT/11_opus-buddhist-1-audit.md` (renumbered from 10 by `opus-housekeeper-1`), user directed close-the-gaps execution on the audit's priority queue.
 
 - **Owning (new nodes + cleanup; no overlap with any other in-flight scope):**
 

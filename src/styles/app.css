@@ -51,6 +51,17 @@ html, body {
   transition: background 320ms ease, color 320ms ease;
 }
 
+/* FOCUS-VISIBLE UTILITY — every keyboard-reachable control gets a visible ring.
+   Per architecture §4: any selector that overrides this must provide a replacement,
+   never `outline: none` alone. Mouse-click focus is suppressed (no ring) — only
+   keyboard navigation surfaces it. */
+:where(button, select, input, textarea, [role="button"], [tabindex]):focus { outline: none; }
+:where(button, select, input, textarea, [role="button"], [tabindex]):focus-visible {
+  outline: 2px solid var(--gold);
+  outline-offset: 2px;
+  border-radius: 3px;
+}
+
 /* ---------- STYLE PRESETS (palette + typography fused) ---------- */
 /* Default = Codex (defined in :root). Each body.style-* class overrides BOTH color vars and font vars. */
 
@@ -389,7 +400,9 @@ body.nav-collapsed .brand-section { padding: 14px 0 12px; justify-content: cente
 .themes-button.open .caret { transform: rotate(180deg); }
 
 .themes-menu {
-  position: fixed; top: 0; left: var(--nav-w); right: 0;
+  /* Constrained to the canvas region (between nav and detail panel) so it never overlays
+     the detail panel — that previously trapped clicks inside detail behind the menu. */
+  position: fixed; top: 0; left: var(--nav-w); right: var(--detail-w);
   background: linear-gradient(180deg, rgba(13,17,25,0.97) 0%, rgba(7,9,15,0.98) 100%);
   backdrop-filter: blur(14px);
   border-bottom: 1px solid var(--gold-soft);
@@ -414,6 +427,9 @@ body.nav-collapsed .brand-section { padding: 14px 0 12px; justify-content: cente
               opacity   200ms ease,
               visibility 0s linear 0s;
 }
+/* When chrome collapses, the menu's edges track the nav/detail edges. */
+body.nav-collapsed    .themes-menu { left:  var(--nav-w-collapsed); }
+body.detail-collapsed .themes-menu { right: var(--detail-w-collapsed); }
 .themes-menu .tm-header {
   display: flex; align-items: baseline; justify-content: space-between;
   margin-bottom: 22px; padding-bottom: 14px; border-bottom: 1px solid var(--border);
@@ -575,9 +591,9 @@ main.canvas svg { display: block; width: 100%; height: 100%; }
 body.zoom-visible .view-header { right: 230px; }
 .view-header > div:first-child { min-width: 0; flex: 1 1 auto; }   /* title block can shrink */
 .view-controls { pointer-events: auto; display: flex; gap: 8px; align-items: center; flex-shrink: 0; }
-.view-header h2 { margin: 0; font-family: var(--serif); font-size: 15px; color: var(--text-0); font-weight: 500; letter-spacing: 0.06em; text-transform: uppercase; white-space: nowrap; }
+.view-header h2 { margin: 0; font-family: var(--serif); font-size: var(--h2-size); color: var(--text-0); font-weight: 500; letter-spacing: 0.06em; text-transform: uppercase; white-space: nowrap; }
 .view-header .subtitle {
-  font-size: 10.5px; color: var(--text-2); font-style: italic; margin-left: 12px;
+  font-size: var(--lbl-md); color: var(--text-2); font-style: italic; margin-left: 12px;
   white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
 }
 .btn {
@@ -660,7 +676,7 @@ aside.detail .thumb-attribution {
   display: flex; justify-content: space-between;
 }
 aside.detail h3 {
-  margin: 0 0 4px; font-family: var(--serif); font-size: 24px; color: var(--text-0);
+  margin: 0 0 4px; font-family: var(--serif); font-size: var(--h1-size); color: var(--text-0);
   font-weight: 500; letter-spacing: 0.02em;
 }
 aside.detail .meta {
@@ -1001,9 +1017,29 @@ footer select:focus, footer input:focus { border-color: var(--gold-soft); }
 }
 .list-pane .row:hover { background: var(--bg-2); }
 .list-pane .row .swatch { width: 12px; height: 12px; border-radius: 50%; margin-top: 4px; align-self: flex-start; }
-.list-pane .row .row-title { color: var(--text-0); font-size: 14px; }
-.list-pane .row .row-meta { font-family: var(--mono); font-size: 10.5px; color: var(--text-2); letter-spacing: 0.04em; }
+.list-pane .row .row-title { color: var(--text-0); font-size: var(--h3-size); }
+.list-pane .row .row-meta { font-family: var(--mono); font-size: var(--lbl-md); color: var(--text-2); letter-spacing: 0.04em; }
 .list-pane .row .row-trad { color: var(--gold-soft); font-size: 11px; }
+
+/* LIST-PANE HEADER — shared group-header pattern for index views. Replaces ad-hoc
+   inline-styled headers in VIEWS.edges (and any future grouped list). The accent
+   color is supplied via --lph-accent (set by JS per group, falls back to gold-soft). */
+.list-pane-header {
+  display: flex; align-items: center; gap: 8px;
+  margin: 18px 0 6px; padding: 0 14px;
+  font-family: var(--mono); font-size: 11px;
+  color: var(--lph-accent, var(--gold-soft));
+  letter-spacing: 0.12em; text-transform: uppercase;
+}
+.list-pane-header .lph-rule {
+  display: inline-block; width: 14px; height: 2px;
+  background: var(--lph-accent, var(--gold-soft));
+}
+.list-pane-header .lph-count { color: var(--text-3); }
+.list-pane-empty {
+  color: var(--text-3); padding: 24px; font-style: italic;
+  font-family: var(--serif); font-size: var(--h3-size);
+}
 
 /* ALCHEMY view */
 .alch-toolbox {

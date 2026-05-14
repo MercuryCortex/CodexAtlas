@@ -52,7 +52,6 @@ _Auto-generated 2026-05-14._
 - [ ] `female-monasticism` — referenced 2×
 - [ ] `anti-jesuit-resistance` — referenced 2×
 - [ ] `ethiopian-anti-catholic-polemic` — referenced 2×
-- [ ] `hagiography` — referenced 2×
 - [ ] `guru-disciple` — referenced 1×
 - [ ] `kriya-yoga` — referenced 1×
 - [ ] `ethnonationalism` — referenced 1×
@@ -69,3 +68,4 @@ _Auto-generated 2026-05-14._
 - [ ] `new-aeon` — referenced 1×
 - [ ] `oliver-cowdery` — referenced 1×
 - [ ] `evolution-spiritual` — referenced 1×
+- [ ] `supermind` — referenced 1×

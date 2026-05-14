@@ -2,7 +2,7 @@
 
 _Auto-generated 2026-05-14._
 
-## Documents not yet at `partial` (24 of 29)
+## Documents not yet at `partial` (26 of 31)
 
 - [ ] `phase-2-019-deuteronomistic-history` — status: metadata (8 refs)
 - [ ] `phase-2-022-zhuangzi` — status: metadata (6 refs)
@@ -10,6 +10,7 @@ _Auto-generated 2026-05-14._
 - [ ] `phase-2-026-han-feizi` — status: metadata (6 refs)
 - [ ] `phase-2-013-chandogya-upanishad` — status: metadata (5 refs)
 - [ ] `phase-2-003-atharva-veda` — status: metadata (4 refs)
+- [ ] `phase-2-030-euripides-bacchae` — status: metadata (5 refs)
 - [ ] `phase-2-027-bhagavad-gita` — status: metadata (7 refs)
 - [ ] `phase-2-025-mozi` — status: metadata (6 refs)
 - [ ] `phase-2-021-shvetashvatara-upanishad` — status: metadata (5 refs)
@@ -25,6 +26,7 @@ _Auto-generated 2026-05-14._
 - [ ] `phase-2-020-lamentations` — status: metadata (7 refs)
 - [ ] `phase-2-004-yasna-younger-avesta` — status: metadata (5 refs)
 - [ ] `phase-2-007-hebrew-bible-e-source` — status: metadata (5 refs)
+- [ ] `phase-2-031-aeschylus-oresteia` — status: metadata (5 refs)
 - [ ] `phase-2-006-brahmanas-aranyakas` — status: metadata (4 refs)
 - [ ] `phase-2-029-dhammapada` — status: metadata (7 refs)
 - [ ] `phase-2-015-analects-of-confucius` — status: metadata (6 refs)

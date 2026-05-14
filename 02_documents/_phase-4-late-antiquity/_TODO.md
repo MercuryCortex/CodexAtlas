@@ -2,7 +2,7 @@
 
 _Auto-generated 2026-05-14._
 
-## Documents not yet at `partial` (90 of 94)
+## Documents not yet at `partial` (91 of 95)
 
 - [ ] `phase-4-065-bhagavata-purana` — status: metadata (7 refs)
 - [ ] `phase-4-083-mashafa-kidan-testament-of-our-lord` — status: metadata (4 refs)
@@ -43,6 +43,7 @@ _Auto-generated 2026-05-14._
 - [ ] `phase-4-056-zostrianos` — status: metadata (7 refs)
 - [ ] `phase-4-036-passio-perpetuae` — status: metadata (4 refs)
 - [ ] `phase-4-084-ethiopian-sinodos` — status: metadata (4 refs)
+- [ ] `phase-4-090-apuleius-metamorphoses-bk-11` — status: metadata (5 refs)
 - [ ] `phase-4-012-asclepius` — status: metadata (4 refs)
 - [ ] `phase-4-039-celsus-true-word` — status: metadata (4 refs)
 - [ ] `phase-4-064-sukhavativyuha-larger` — status: metadata (6 refs)

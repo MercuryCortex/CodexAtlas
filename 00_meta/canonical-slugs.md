@@ -17,7 +17,7 @@ canonical-slug
 ## Currently resolved slugs (auto-seeded — every existing file)
 
 
-### deity (322 nodes)
+### deity (329 nodes)
 
 - `abathur`
 - `adonis-hellenistic`
@@ -46,7 +46,9 @@ canonical-slug
 - `apsu`
 - `ares`
 - `ariadne`
+- `armaros`
 - `artemis`
+- `asbeel`
 - `asclepius-greek`
 - `asherah`
 - `ashur`
@@ -111,11 +113,13 @@ canonical-slug
 - `ganesha`
 - `geb`
 - `geshtinanna`
+- `gilgamesh-nephilim`
 - `gitche-manitou`
 - `god-the-father-christian`
 - `guanyin`
 - `gula-akkadian`
 - `hades`
+- `hahyah-nephilim`
 - `hanuman`
 - `harihara`
 - `hathor`
@@ -130,6 +134,7 @@ canonical-slug
 - `heracles`
 - `hermes-greek`
 - `hermes-trismegistus`
+- `hermoni`
 - `hestia`
 - `holy-spirit`
 - `holy-spirit-paraclete`
@@ -180,6 +185,7 @@ canonical-slug
 - `lugus`
 - `maat`
 - `mahakala`
+- `mahaway-nephilim`
 - `mahrem`
 - `manat`
 - `manda-d-hayyi`
@@ -232,6 +238,7 @@ canonical-slug
 - `obatala`
 - `odin`
 - `ogun`
+- `ohyah-nephilim`
 - `olodumare`
 - `oshun`
 - `osiris`
@@ -342,7 +349,7 @@ canonical-slug
 - `zagreus`
 - `zeus`
 
-### document (335 nodes)
+### document (339 nodes)
 
 - `phase-1-001-kesh-temple-hymn`
 - `phase-1-002-pyramid-texts`
@@ -403,6 +410,8 @@ canonical-slug
 - `phase-2-027-bhagavad-gita`
 - `phase-2-028-herodotus-histories-book-2`
 - `phase-2-029-dhammapada`
+- `phase-2-030-euripides-bacchae`
+- `phase-2-031-aeschylus-oresteia`
 - `phase-3-001-second-third-isaiah`
 - `phase-3-002-plato-dialogues`
 - `phase-3-003-aristotle-metaphysics`
@@ -530,6 +539,7 @@ canonical-slug
 - `phase-4-083-apuleius-metamorphoses-book-11`
 - `phase-4-083-mashafa-kidan-testament-of-our-lord`
 - `phase-4-084-ethiopian-sinodos`
+- `phase-4-090-apuleius-metamorphoses-bk-11`
 - `phase-5-001-devi-mahatmya`
 - `phase-5-002-heart-sutra`
 - `phase-5-002b-diamond-sutra`
@@ -584,6 +594,7 @@ canonical-slug
 - `phase-5-046-ibn-rushd-tahafut-al-tahafut`
 - `phase-5-047-ibn-tufayl-hayy-ibn-yaqdhan`
 - `phase-5-048-theology-of-aristotle-arabic`
+- `phase-5-049-bodhicaryavatara`
 - `phase-5-049-yosippon-ethiopian-recension`
 - `phase-6-001-ficino-pimander`
 - `phase-6-002-ficino-theologia-platonica`
@@ -799,7 +810,7 @@ canonical-slug
 - `event-vatican-ii-aftermath-1965-present`
 - `event-zagwe-lalibela-churches-c1200`
 
-### person (544 nodes)
+### person (554 nodes)
 
 - `aaron`
 - `abba-garima`
@@ -809,6 +820,7 @@ canonical-slug
 - `abu-bakr`
 - `abya-meqabyan`
 - `adam`
+- `aeschylus`
 - `aisha-bint-abi-bakr`
 - `akhenaten`
 - `akiva-ben-yosef`
@@ -844,6 +856,7 @@ canonical-slug
 - `apollonius-of-tyana`
 - `apollos`
 - `april-deconick`
+- `apuleius`
 - `apuleius-of-madaura`
 - `aquila`
 - `archytas`
@@ -926,6 +939,7 @@ canonical-slug
 - `diocletian-emperor`
 - `diodore-of-tarsus`
 - `diodorus-siculus`
+- `dioscorus-of-alexandria`
 - `dogen`
 - `domitian-emperor`
 - `donnelly-ignatius`
@@ -948,6 +962,7 @@ canonical-slug
 - `epictetus`
 - `epicurus`
 - `esau`
+- `euripides`
 - `eusebius-of-caesarea`
 - `eutyches`
 - `evagrius-ponticus`
@@ -1043,6 +1058,7 @@ canonical-slug
 - `isidore-of-seville`
 - `israel-regardie`
 - `jabir-ibn-hayyan`
+- `jacob-baradaeus`
 - `jacob-frank`
 - `jacob-israel`
 - `jacques-de-molay`
@@ -1148,6 +1164,7 @@ canonical-slug
 - `maximus-the-confessor`
 - `mechthild-of-magdeburg`
 - `meister-eckhart`
+- `melchizedek`
 - `melito-of-sardis`
 - `menander-i-soter`
 - `menander-of-samaria`
@@ -1234,6 +1251,7 @@ canonical-slug
 - `ptolemaeus-valentinian`
 - `ptolemy-i-soter`
 - `ptolemy-ii-philadelphus`
+- `pyrrho-of-elis`
 - `pythagoras`
 - `quadratus-the-apologist`
 - `quetzalcoatl-historical`
@@ -1257,6 +1275,7 @@ canonical-slug
 - `saladin`
 - `samuel-ajayi-crowther`
 - `samuel-prophet`
+- `santideva`
 - `sarada-devi`
 - `sarah-matriarch`
 - `sargon-of-akkad`
@@ -1266,11 +1285,13 @@ canonical-slug
 - `seneca`
 - `septimius-severus`
 - `seth`
+- `severus-of-antioch`
 - `shabbatai-tzvi`
 - `shah-wali-allah`
 - `shammai`
 - `shankara`
 - `shariputra`
+- `shenoute`
 - `shulgi`
 - `siddhartha-gautama-buddha`
 - `silas-silvanus`
@@ -1381,7 +1402,7 @@ canonical-slug
 - `wheat-grain`
 - `yin-yang`
 
-### theme (222 nodes)
+### theme (225 nodes)
 
 - `364-day-solar-calendar`
 - `adam-kadmon`
@@ -1460,6 +1481,7 @@ canonical-slug
 - `ethical-dualism`
 - `ethical-monotheism`
 - `ethiopian-marian-devotion`
+- `ethiopian-systematic-theology`
 - `ethiopic-canon-broad`
 - `fall-of-humanity`
 - `falsafa`
@@ -1477,6 +1499,7 @@ canonical-slug
 - `gentile-mission`
 - `gnosis-as-salvation`
 - `ground-of-being`
+- `hagiography`
 - `hanif-monotheism`
 - `heavenly-tablets`
 - `heavenly-tour`
@@ -1582,6 +1605,7 @@ canonical-slug
 - `tauroctony-as-cosmic-icon`
 - `templar-gnostic-transmission-hypothesis`
 - `temple-economy`
+- `tewahedo-christology`
 - `the-five-buddha-families`
 - `the-godhead-eckhart`
 - `theurgy`
@@ -1606,10 +1630,11 @@ canonical-slug
 - `wisdom-personified`
 - `world-axis`
 
-### tradition (93 nodes)
+### tradition (96 nodes)
 
 - `tradition-african-traditional`
 - `tradition-anthroposophy`
+- `tradition-armenian-apostolic`
 - `tradition-asatru`
 - `tradition-australian-aboriginal`
 - `tradition-aztec-mexica`
@@ -1686,9 +1711,11 @@ canonical-slug
 - `tradition-shia-islam`
 - `tradition-shinto`
 - `tradition-sikhism`
+- `tradition-slavic`
 - `tradition-spiritualism`
 - `tradition-sufism`
 - `tradition-sumerian-mesopotamian`
+- `tradition-syriac-orthodox`
 - `tradition-teutonic-knights`
 - `tradition-thelema`
 - `tradition-theosophy`
@@ -1708,18 +1735,15 @@ canonical-slug
 
 | Refs | Dead target | Suggested canonical (existing) |
 |---:|---|---|
-| 10 | `tradition-syriac-orthodox` | `tradition-scientology` |
-| 5 | `tradition-armenian-apostolic` | `tradition-scientology` |
-| 5 | `dioscorus-of-alexandria` | `philo-of-alexandria` |
 | 4 | `ragnarok-apocalyptic` | `apocalyptic-revelation` |
-| 4 | `primordial-darkness` | `primordial-waters` |
+| 4 | `primordial-darkness` | `eros-primordial` |
 | 4 | `messianic-revelation` | `messianic-secret` |
 | 4 | `genealogical-cosmogony` | `mesoamerican-cosmogony` |
 | 4 | `evolutionary-cosmogony` | `mesoamerican-cosmogony` |
-| 4 | `ethiopian-systematic-theology` | `ethiopian-marian-devotion` |
 | 3 | `the-evil-god-cathar` | `the-good-god-cathar` |
 | 3 | `phase-2-005-1-2-kings` | `phase-2-003-atharva-veda` |
-| 3 | `messianic-genealogy` | `solomonic-genealogy` |
-| 3 | `gilgamesh-nephilim` | `gilgamesh-king` |
+| 3 | `messianic-genealogy` | `messianic-secret` |
 | 2 | `yam-canaanite` | `astarte-canaanite` |
-| 2 | `phase-1-013-babylonian-theodicy` | `phase-1-004-gilgamesh-old-babylonian` |
+| 2 | `tradition-minoan-religion` | `tradition-mithraic-mysteries` |
+| 2 | `tradition-eastern-orthodoxy` | `tradition-mithraic-mysteries` |
+| 2 | `phase-1-013-babylonian-theodicy` | `phase-1-014-ugaritic-ritual-texts` |

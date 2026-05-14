@@ -8,11 +8,28 @@ This folder is structured so any of the subfiles can be handed to an agent as a 
 
 ## Index
 
+**Content / scholarship audits (external, 2026-05-14 first pass):**
+
 - [01_integrity_issues.md](01_integrity_issues.md) — concrete bugs and inconsistencies the auditor found (slug drift, tradition-string drift, date-vs-role mismatches, phase-boundary anomalies, zero-ref metadata nodes, Phase 8 conceptual muddle).
 - [02_coverage_gaps_by_tradition.md](02_coverage_gaps_by_tradition.md) — missing content organized by tradition. The biggest section. Covers Chinese canon, Indic depth, Islamic canon, Second Temple pseudepigrapha, Apostolic Fathers, Hittite/Hurrian layer, Egyptian remainders, Phoenician, Mesoamerican depth, Indigenous North American, Korean, Modern theory canon, modern Catholic/Orthodox/Pentecostal, etc.
 - [03_missing_events.md](03_missing_events.md) — events that should exist but don't (Karbala 680, Linear B decipherment, Boğazköy, Council of Carthage 397, Lateran IV, Valla on the Donation of Constantine, Macaulay's Minute, etc.).
-- [04_methodology_proposals.md](04_methodology_proposals.md) — proposed extensions to the methodology: new edge types (scholarly-revision-of, counter-formation), a geographic layer, a `09_material/` folder for inscriptions and physical witnesses, scholar-lineage modelling.
+- [04_methodology_proposals.md](04_methodology_proposals.md) — proposed extensions to the methodology: new edge types (scholarly-revision-of, counter-formation), a geographic layer, a `09_material/` folder for inscriptions and physical witnesses, scholar-lineage modelling. **Status: still unimplemented as of 2026-05-14 — DASHBOARD doesn't surface AUDIT proposals so they don't reach agent work queues.**
 - [05_priority_queue.md](05_priority_queue.md) — the top 10 highest-leverage adds with concrete first steps. If the agent only does one thing, do these.
+
+**Scoped feature / methodology proposals:**
+
+- [06_symbology_proposal.md](06_symbology_proposal.md) — symbol-layer methodology, edge-typing for visual cognates, the swastika rule, Indus / Voynich / Phaistos discipline.
+- [07_lead-session-log.md](07_lead-session-log.md) — running session log of the lead agent's decisions and rationale.
+- [08_quran-scripture-wiring-brief.md](08_quran-scripture-wiring-brief.md) — brief for wiring the Quran corpus in the Scripture view (largely superseded by `opus-scripture-2`'s delivery, retained for historical context).
+- [09_timeline-progressive-reveal-plan.md](09_timeline-progressive-reveal-plan.md) — design plan for a progressive-reveal timeline view (unimplemented).
+
+**Engineering / infrastructure / process audits (post-hoc, agents reflecting on what they noticed):**
+
+- [10_app-and-infrastructure-audit.md](10_app-and-infrastructure-audit.md) — engineering / UX / infra audit (no git repo, no CI, no URL routing, no responsive layout, no deployment, top-10 highest-leverage fixes). Complementary to 00–05 (which are content). **The single highest-impact gap flagged: no git repo at vault root.**
+- [11_opus-buddhist-1-audit.md](11_opus-buddhist-1-audit.md) — post-hoc audit by `opus-buddhist-1` after delivering the Buddhism wedge: registry-contention pain (proposed split-the-registry pattern at `00_meta/agents/opus-<wedge>-<n>.md`), Scripture-tab placeholder pattern as highest-ROI feature, dead-link copy-paste artefact root cause. *(Renumbered from 10 → 11 by `opus-housekeeper-1` on 2026-05-14 to resolve numbering collision with 10_app-and-infrastructure-audit.md.)*
+- [12_meta-audit-housekeeping.md](12_meta-audit-housekeeping.md) — meta-audit by `opus-housekeeper-1` (2026-05-14): coordination-layer hygiene, AUDIT folder cleanup, agent-onboarding doc, Obsidian config, standing recommendations for ongoing tightness.
+
+**Numbering convention going forward:** `NN_short-slug.md` where `NN` is the next free integer. **No collisions** — check `ls AUDIT/` before adding. Agent-authored post-hoc audits (like 11) and content audits (00–05) and feature briefs (06–09) and infra audits (10) all share the same numeric namespace; segregating by category broke down at 10–11 collision and is not worth re-attempting.
 
 ## Headline verdict
 

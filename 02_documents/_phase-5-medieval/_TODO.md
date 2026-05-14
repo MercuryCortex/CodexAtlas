@@ -2,7 +2,7 @@
 
 _Auto-generated 2026-05-14._
 
-## Documents not yet at `partial` (53 of 55)
+## Documents not yet at `partial` (54 of 56)
 
 - [ ] `phase-5-023-liber-de-duobus-principiis` — status: metadata (6 refs)
 - [ ] `phase-5-022-madhva-brahma-sutra-bhasya` — status: metadata (5 refs)
@@ -32,6 +32,7 @@ _Auto-generated 2026-05-14._
 - [ ] `phase-5-008-eriugena-periphyseon` — status: metadata (5 refs)
 - [ ] `phase-5-012-sefer-yetzirah` — status: metadata (5 refs)
 - [ ] `phase-5-042-sahih-muslim` — status: metadata (4 refs)
+- [ ] `phase-5-049-bodhicaryavatara` — status: metadata (6 refs)
 - [ ] `phase-5-028-meister-eckhart-sermons` — status: metadata (5 refs)
 - [ ] `phase-5-018-suhrawardi-hikmat-al-ishraq` — status: metadata (5 refs)
 - [ ] `phase-5-009-tabari-tafsir` — status: metadata (5 refs)
@@ -62,12 +63,9 @@ _Auto-generated 2026-05-14._
 
 (stub these to close out internal references)
 
-- [ ] `tewahedo-christology` — referenced 4×
-- [ ] `ethiopian-systematic-theology` — referenced 3×
 - [ ] `shakti` — referenced 2×
 - [ ] `josephus-flavius` — referenced 2×
 - [ ] `messianic-revelation` — referenced 2×
-- [ ] `hagiography` — referenced 2×
 - [ ] `liturgical-calendar` — referenced 2×
 - [ ] `sabbath-observance` — referenced 2×
 - [ ] `anti-stephanite-polemic` — referenced 2×
@@ -87,3 +85,6 @@ _Auto-generated 2026-05-14._
 - [ ] `judas-maccabeus` — referenced 1×
 - [ ] `shenhui` — referenced 1×
 - [ ] `fahai` — referenced 1×
+- [ ] `markandeya-rishi` — referenced 1×
+- [ ] `mahishasura` — referenced 1×
+- [ ] `barlaam-the-calabrian` — referenced 1×
