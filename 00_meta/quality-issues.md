@@ -1,6 +1,6 @@
 # Quality issues
 
-_Auto-generated 2026-05-14. Status claims not meeting the bar in methodology.md._
+_Auto-generated 2026-05-15. Status claims not meeting the bar in methodology.md._
 
 | Node | Type | Issue |
 |---|---|---|

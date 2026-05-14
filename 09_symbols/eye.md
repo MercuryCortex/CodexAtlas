@@ -51,6 +51,18 @@ cross-symbol-edges:
     type: "parallel-form"
     notes: "The Eye of Horus is lunar (the *wedjat* restored eye); paired with the Eye of Ra as solar. Egyptian iconographic vocabulary pairs lunar-and-solar throughout."
     refs: ["Wilkinson 1994"]
+  - target: "monas-hieroglyphica"
+    type: "parallel-form"
+    notes: "John Dee's 1564 *Monas Hieroglyphica* and the broader Renaissance occult-Hermetic vocabulary include the all-seeing-eye-in-triangle as a divine-cognition emblem; Dee's monas and the Eye-of-Providence iconography both emerge from the Hermetic tradition's syncretic reading of Egyptian, Greek, and Kabbalistic divine-vision iconography. Cognate Renaissance hermetic emblems."
+    refs: ["Yates 1972", "Hakansson 2001"]
+  - target: "tetragrammaton"
+    type: "parallel-form"
+    notes: "The Eye-of-Providence and the Tetragrammaton both function in 17th-c.-onward Christian-mystical iconography as cipher-emblems of the unknowable divine. The Eye-of-Providence in a triangle paired with the Tetragrammaton in rays-of-glory becomes a standard Counter-Reformation altar-frontispiece motif (Italian and Spanish Baroque churches; the Tetragrammaton-in-clouds with eye-radiating-rays pattern)."
+    refs: ["Beale 1986", "Hammer 2010"]
+  - target: "pentagram"
+    type: "parallel-form"
+    notes: "Renaissance and modern occult iconography routinely pairs the Eye and the Pentagram as twin cognition-and-power emblems (Lévi 1854 *Dogme et rituel de la haute magie*; Crowley 1929 *Magick in Theory and Practice*). The pairing is post-Renaissance occult-synthetic, not ancient. Visual-cognate at the level of esoteric iconographic vocabulary."
+    refs: ["Hanegraaff 2012", "Yates 1972"]
 mystery-status: "documented"
 status: "metadata"
 refs:
@@ -89,6 +101,24 @@ refs:
     type: "encyclopedia"
     tier: 2
     notes: "Composite reference for Great Seal of US history; primary source documentation via Charles Thomson 1782 design papers."
+  - title: "The Rosicrucian Enlightenment"
+    author: "Frances A. Yates"
+    year: 1972
+    publisher: "Routledge"
+    type: "monograph"
+    tier: 1
+  - title: "Seeing the Word: John Dee and Renaissance Occultism"
+    author: "Håkan Håkansson"
+    year: 2001
+    publisher: "Lund University Press"
+    type: "monograph"
+    tier: 1
+  - title: "Esotericism and the Academy"
+    author: "Wouter J. Hanegraaff"
+    year: 2012
+    publisher: "Cambridge University Press"
+    type: "monograph"
+    tier: 1
 tags: [symbol, astral, egyptian, christian, masonic, american-civic, eye, wedjat, providence, methodology-discipline]
 ---
 

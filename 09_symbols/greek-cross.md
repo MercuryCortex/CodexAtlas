@@ -30,6 +30,18 @@ cross-symbol-edges:
     type: "parallel-form"
     notes: "Coptic and Byzantine cross-traditions developed in adjacent Eastern Christian zones with overlapping monastic and liturgical exchange; the equal-arms form is common to both. Documented contact in monastic literature (Bagnall 1993)."
     refs: ["Bagnall 1993", "Belting 1994"]
+  - target: "chi-rho-labarum"
+    type: "parallel-form"
+    notes: "The chi component (Χ) of the Chi-Rho IS iconographically a Greek cross (×) — the equal-arms form rotated 45°. The two emblems develop together in 4th-c. Byzantine and East-Christian iconography; the Greek cross is the principal Eastern Christian cross-form alongside the Christogram."
+    refs: ["Jensen 2017", "Belting 1994"]
+  - target: "cross-pattee-templar"
+    type: "ancestor-of"
+    notes: "The cross pattée (splayed equal-arms) is iconographically a heraldic descendant of the Greek-cross-pattée Byzantine tradition transmitted to the Latin West through Crusader contact (11th–12th c.). The military-religious orders (Templars, Hospitallers, Teutonic Knights) adopt pattée-style variants from this Byzantine substrate (Forey 1992)."
+    refs: ["Forey 1992", "Belting 1994"]
+  - target: "maltese-cross"
+    type: "ancestor-of"
+    notes: "The Maltese cross is a heraldic descendant of the Greek-cross-pattée tradition via Crusader contact in Jerusalem (Riley-Smith 1999); the eight-pointed indented form develops from the splayed pattée variant within Hospitaller heraldry."
+    refs: ["Riley-Smith 1999", "Forey 1992"]
 mystery-status: "documented"
 status: "metadata"
 refs:
@@ -50,6 +62,18 @@ refs:
     author: "Roger S. Bagnall"
     year: 1993
     publisher: "Princeton University Press"
+    type: "monograph"
+    tier: 1
+  - title: "The Military Orders 1120–1312"
+    author: "Alan Forey"
+    year: 1992
+    publisher: "Macmillan"
+    type: "monograph"
+    tier: 1
+  - title: "Hospitallers: The History of the Order of St John"
+    author: "Jonathan Riley-Smith"
+    year: 1999
+    publisher: "Hambledon Press"
     type: "monograph"
     tier: 1
 tags: [symbol, christian, geometric, cross, byzantine, greek-cross, orthodox]

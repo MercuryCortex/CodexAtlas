@@ -46,6 +46,18 @@ cross-symbol-edges:
     type: "parallel-form"
     notes: "Equal-arms Byzantine form developed in parallel with the long-shaft Latin form; the two crystallize as distinct iconographic traditions in the Eastern vs. Western liturgical zones from the 4th c. onward."
     refs: ["Jensen 2017", "Belting 1994"]
+  - target: "chi-rho-labarum"
+    type: "ancestor-of"
+    notes: "The Constantinian Chi-Rho on the *labarum* military standard (Eusebius, *Vita Constantini* 1.28–32; Lactantius, *De Mortibus Persecutorum* 44) is the 4th-c. institutional predecessor of the public-imperial Latin cross. The Christogram (☧) dominates 4th–5th c. Christian state-iconography; the standing Latin cross becomes universal only from the late 5th–6th c. as crucifixion ceases to function as a live Roman penalty and the stigma of the form dissolves (Jensen 2017 ch. 2–3)."
+    refs: ["Jensen 2017", "Mathews 1993"]
+  - target: "sun-disk"
+    type: "syncretic-fusion"
+    notes: "Constantine's adoption of cross-iconography coincides with his earlier devotion to Sol Invictus (the radiate-crown solar deity on his coinage to 318 CE) and the 25-December *Natalis Solis Invicti* festival absorbed into the Christmas date (Roll 1995; Hijmans 2003 disputes the strength of the solar-calendar borrowing but accepts the iconographic overlap). The Latin cross's later haloed-cross variant (cross with sun-rays radiating from the crossing-point) is the visible iconographic fusion of solar and crucifix imagery — see [[halo-nimbus]]."
+    refs: ["Mathews 1993", "Jensen 2017", "Roll 1995"]
+  - target: "celtic-cross"
+    type: "ancestor-of"
+    notes: "The Insular Celtic cross is a 7th-c.-onward descendant of the Latin cross developed within Roman / Latin Christianity in Britain and Ireland (Mayr-Harting 1991, Richardson 1990). The ring (nimbus) is the Insular addition; the cross-form itself is the Latin parent."
+    refs: ["Mayr-Harting 1991", "Richardson 1990"]
 mystery-status: "documented"
 status: "metadata"
 refs:
@@ -118,7 +130,9 @@ None at this level — the Latin cross is the best-documented Christian symbol. 
 - ↔ [[tau-cross]] — *parallel-form*. The older tau-form persists alongside and within the Latin tradition (Franciscan emblem, etc.).
 - ↔ [[mithraic-cross]] — *parallel-form*. Competing Roman-period cultic iconography, NOT a transmission claim.
 - ↔ [[greek-cross]] — *parallel-form*. Eastern equal-arms variant developed in parallel.
-- → [[celtic-cross]] (descendant) — see [[celtic-cross]] for the reverse-direction `descendant-of`.
+- ← [[chi-rho-labarum]] — *ancestor-of*. The Constantinian Christogram on the *labarum* standard is the 4th-c. institutional predecessor; the long-shaft Latin cross supersedes it as the universal public Christian sign from c. 500 onward.
+- ↔ [[sun-disk]] — *syncretic-fusion*. Sol-Invictus solar iconography under Constantine and the haloed-cross variant of the developed Latin form make the solar substrate visible. **MASSIVE-win edge** (Jensen 2017; Mathews 1993; Roll 1995).
+- → [[celtic-cross]] — *ancestor-of*. The Insular ringed-cross is a 7th-c. Latin-Christian development within Roman Britain / Ireland; the ring is the Insular addition.
 
 ## Refs
 

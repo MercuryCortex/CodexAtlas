@@ -42,6 +42,18 @@ cross-symbol-edges:
     type: "parallel-form"
     notes: "Both are core Egyptian apotropaic/protective hieroglyphs paired in royal regalia and amuletic contexts; no documented genealogical relationship between them but they are iconographically co-occurring."
     refs: ["Gardiner 1957"]
+  - target: "scarab-khepri"
+    type: "parallel-form"
+    notes: "Wedjat and scarab are the two most-produced Egyptian amulet-types in the entire pharaonic record (Pinch 1994). Often paired in mummy-wrappings and funerary deposits: wedjat as the seeing/protective eye, scarab as the self-generating heart. Heliopolitan-solar iconographic complementarity."
+    refs: ["Pinch 1994", "Hornung 1982"]
+  - target: "halo-nimbus"
+    type: "visual-cognate"
+    notes: "Both function as the principal iconographic carrier of divine sight + radiance — the wedjat is the eye-as-cosmos-illuminator in Egyptian theology, the halo is the divine-radiance emanating-from-figure in Hellenistic-Christian iconography. No documented direct transmission, but the structural parallel (visualizing divine perception/luminance) is striking."
+    refs: ["Mathews 1993", "Pinch 2002"]
+  - target: "monas-hieroglyphica"
+    type: "ancestor-of"
+    notes: "John Dee's 1564 *Monas Hieroglyphica* deliberately draws on Egyptian hieroglyphic vocabulary (mediated through Renaissance reception of Horapollo's *Hieroglyphica*, 1505 print); the Wedjat is part of the Renaissance hermetic vocabulary that Dee assembles into his composite monad. The line is via Horapollo + Marsilio Ficino + Athanasius Kircher (*Oedipus Aegyptiacus* 1652). Documented intermediate transmission via Renaissance hermeticism."
+    refs: ["Yates 1964", "Hakansson 2001"]
 mystery-status: "documented"
 status: "metadata"
 refs:
@@ -86,6 +98,42 @@ refs:
     type: "scholarly-article"
     tier: 2
     notes: "On the Wedjat → Christian Providential Eye → Masonic All-Seeing-Eye → US Great Seal transmission chain"
+  - title: "Conceptions of God in Ancient Egypt"
+    author: "Hornung, Erik"
+    year: 1982
+    publisher: "Cornell University Press"
+    type: "monograph"
+    tier: 1
+  - title: "The Complete Gods and Goddesses of Ancient Egypt"
+    author: "Wilkinson, Richard H."
+    year: 2003
+    publisher: "Thames & Hudson"
+    type: "monograph"
+    tier: 1
+  - title: "The Clash of Gods: A Reinterpretation of Early Christian Art"
+    author: "Mathews, Thomas F."
+    year: 1993
+    publisher: "Princeton University Press"
+    type: "monograph"
+    tier: 1
+  - title: "Egyptian Mythology"
+    author: "Pinch, Geraldine"
+    year: 2002
+    publisher: "Oxford University Press"
+    type: "monograph"
+    tier: 1
+  - title: "Giordano Bruno and the Hermetic Tradition"
+    author: "Yates, Frances A."
+    year: 1964
+    publisher: "Routledge"
+    type: "monograph"
+    tier: 1
+  - title: "Seeing the Word: John Dee and Renaissance Occultism"
+    author: "Hakansson, Hakan"
+    year: 2001
+    publisher: "Lund University Press"
+    type: "monograph"
+    tier: 1
 tags: [symbol, egyptian, anthropomorphic, eye, wedjat, udjat, horus, ra, christian-providence, masonic, dollar-bill]
 ---
 

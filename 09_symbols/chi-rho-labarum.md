@@ -40,6 +40,18 @@ cross-symbol-edges:
     type: "parallel-form"
     notes: "Both are pre-Constantinian Christian self-identifying signs (catacombs 2nd-3rd c.). The ichthys-acrostic and the chi-rho both function as Christian-recognition iconography in the persecution period before becoming public-imperial under Constantine."
     refs: ["Jensen 2000", "Snyder 1985"]
+  - target: "sun-disk"
+    type: "syncretic-fusion"
+    notes: "Constantine's coinage to c. 318 CE pairs Sol Invictus radiate-crown imagery with emerging Christian symbolism; the labarum-vision narrative occurs in an iconographic environment saturated with solar-disk imperial cult. Some surviving Constantinian gold medallions (RIC VII Ticinum 36 c. 315) show Constantine wearing Sol's radiate crown with the chi-rho on his shield — the moment of explicit visual fusion. Bardill 2012 traces the deliberate iconographic ambiguity by which Constantine kept both audiences. MASSIVE-win Christianity ← pre-Christian Roman state cult."
+    refs: ["Bardill 2012", "Mathews 1993", "Jensen 2000"]
+  - target: "tauroctony"
+    type: "parallel-form"
+    notes: "Mithraic tauroctony reliefs include solar-bust iconography (Sol Invictus crowning Mithras) — the same Sol Invictus visual vocabulary that Constantinian Chi-Rho coinage works with. Beck 2006 stresses that this is the SHARED Roman solar-cult substrate the two cults drew on independently, NOT a Christian borrowing from Mithras (the older Cumontian thesis is rejected). Parallel-form, not ancestor-of."
+    refs: ["Beck 2006", "Bardill 2012"]
+  - target: "tau-cross"
+    type: "parallel-form"
+    notes: "Pre-Constantinian Christian sign vocabulary includes both the tau (Tertullian *De Corona*; *Against Marcion* 3.22 explicitly identifies tau with cross) and the Chi-Rho (catacomb funerary inscriptions from c. 280). The two function in parallel within the 2nd–4th c. Christian sign-corpus before Constantine's institutional standardization of the Chi-Rho."
+    refs: ["Jensen 2017", "Snyder 1985"]
 mystery-status: "documented"
 status: "metadata"
 refs:
@@ -53,6 +65,19 @@ refs:
     author: "Thomas F. Mathews"
     year: 1993
     publisher: "Princeton University Press"
+    type: "monograph"
+    tier: 1
+  - title: "Constantine and the Christian Empire"
+    author: "Jonathan Bardill"
+    year: 2012
+    publisher: "Cambridge University Press"
+    type: "monograph"
+    tier: 1
+    notes: "Indispensable on the Sol-Invictus / Chi-Rho iconographic ambiguity of Constantinian state coinage and the deliberate two-audience strategy."
+  - title: "The Religion of the Mithras Cult in the Roman Empire"
+    author: "Roger Beck"
+    year: 2006
+    publisher: "Oxford University Press"
     type: "monograph"
     tier: 1
   - title: "Ante Pacem: Archaeological Evidence of Church Life before Constantine"

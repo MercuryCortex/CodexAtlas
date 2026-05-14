@@ -44,6 +44,22 @@ cross-symbol-edges:
     type: "parallel-form"
     notes: "The Eye of Horus is lunar (specifically the *wedjat* / restored eye after the Set conflict); the Eye of Ra is solar. The pair-of-eyes / sun-and-moon iconography is canonical Egyptian, paralleling the sun-disk / crescent-moon pair more broadly."
     refs: ["Wilkinson 1994"]
+  - target: "star-of-ishtar"
+    type: "parallel-form"
+    notes: "Crescent-and-eight-pointed-star is the canonical Mesopotamian astral pairing on kudurru and royal stelae: Sin (moon-crescent) + Ishtar (eight-pointed-star) + Shamash (sun-disk) appear as the celestial-witness trinity. Sumero-Akkadian astral pantheon iconography is the immediate context."
+    refs: ["Black & Green 1992", "Smith 2001"]
+  - target: "tauroctony"
+    type: "parallel-form"
+    notes: "Luna (in the canonical Mithraic tauroctony's upper-right, mirroring Sol's upper-left) carries a small crescent on her shoulder; the crescent-moon-and-bull pairing is also Mesopotamian (Sin's lapis-lazuli crescent and the Bull-of-Heaven imagery). The Mithraic tauroctony absorbs the crescent-moon visual element from this older Near Eastern astral-mythic vocabulary."
+    refs: ["Beck 2006", "Ulansey 1989"]
+  - target: "hexagram"
+    type: "visual-cognate"
+    notes: "Star-of-David hexagram and the crescent-with-star together form the dual Abrahamic-religion modern emblems (Judaism and Islam respectively); they are 19th-c.-onward conventional choices, not pre-modern theological symbols. Visual-cognate at the level of modern religious-civic emblem-use; not a transmission claim."
+    refs: ["Scholem 1949", "Tezcan 2010"]
+  - target: "fish-ichthys"
+    type: "parallel-form"
+    notes: "Both function as pre-Islamic / pre-Christian astral-marine emblems that later become primary religious identifiers — fish-ichthys for Christianity, crescent-moon for Islam (post-Ottoman). Iconographic strategies of 'compact religious recognition mark' that emerge in different cultural moments."
+    refs: ["Tezcan 2010", "Snyder 1985"]
 mystery-status: "documented"
 status: "metadata"
 refs:
@@ -75,6 +91,38 @@ refs:
     type: "monograph"
     tier: 1
     notes: "Egyptian lunar iconography including Khonsu and the Eye of Horus."
+  - title: "Gods, Demons and Symbols of Ancient Mesopotamia"
+    author: "Jeremy Black & Anthony Green"
+    year: 1992
+    publisher: "British Museum Press"
+    type: "monograph"
+    tier: 1
+    notes: "Standard iconographic dictionary for the Mesopotamian astral pantheon."
+  - title: "The Religion of the Mithras Cult in the Roman Empire"
+    author: "Roger Beck"
+    year: 2006
+    publisher: "Oxford University Press"
+    type: "monograph"
+    tier: 1
+  - title: "The Origins of the Mithraic Mysteries"
+    author: "David Ulansey"
+    year: 1989
+    publisher: "Oxford University Press"
+    type: "monograph"
+    tier: 1
+  - title: "The Star of David: History of a Symbol"
+    author: "Gershom Scholem"
+    year: 1949
+    publisher: "Schocken (essay in *Judaica*)"
+    type: "monograph"
+    tier: 1
+    notes: "Scholem's classic essay on the late provenance of the Star of David as a Jewish emblem."
+  - title: "Ante Pacem"
+    author: "Graydon F. Snyder"
+    year: 1985
+    publisher: "Mercer University Press"
+    type: "monograph"
+    tier: 1
 tags: [symbol, astral, mesopotamian, greek, roman, pre-islamic-arabian, ottoman, islamic, crescent-moon, sin, methodology-discipline]
 ---
 

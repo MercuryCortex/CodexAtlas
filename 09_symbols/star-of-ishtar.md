@@ -39,6 +39,22 @@ cross-symbol-edges:
     type: "parallel-form"
     notes: "Both are pre-Islamic-and-pre-Christian Near-Eastern iconographic geometric forms. The hexagram (six-pointed) and the octogram (eight-pointed) are distinct astronomical-cosmological symbols with distinct genealogies; no documented direct transmission."
     refs: ["Black & Green 1992"]
+  - target: "crescent-moon-star"
+    type: "parallel-form"
+    notes: "**Load-bearing Mesopotamian astral pairing.** Sin's lunar crescent and Ishtar's eight-pointed star routinely appear together on kudurru boundary-stones and royal stelae across Sumerian, Akkadian, Kassite, and Neo-Babylonian periods. The pair is the direct iconographic ancestor of the modern crescent-and-star emblem widely associated with Islam — though the Islamic adoption goes via Ottoman state-iconography (Tezcan 2010), not via direct Mesopotamian → Islamic descent."
+    refs: ["Black & Green 1992", "Tezcan 2010"]
+  - target: "pentagram"
+    type: "parallel-form"
+    notes: "Both are astral-geometric star-emblems with cosmic-witness function. The eight-pointed Ishtar-star and the five-pointed pentagram develop independently (Mesopotamian astronomy vs. Pythagorean number-mysticism) but parallel each other as 'star-as-cosmic-emblem' iconographic strategies in adjacent ancient Mediterranean traditions."
+    refs: ["Brown 2000", "Burkert 1972"]
+  - target: "tauroctony"
+    type: "parallel-form"
+    notes: "The Mithraic tauroctony's astral cast (Sol, Luna, signs of the zodiac in the surrounding border) is the late-antique Roman descendant of the Mesopotamian celestial-body iconographic vocabulary in which the star-of-Ishtar was the principal Venus-emblem. Beck 2006 emphasizes the Mithraic borrowing of Hellenistic astronomical-astrological vocabulary, which is itself a continuation of Mesopotamian astral-science."
+    refs: ["Beck 2006", "Brown 2000"]
+  - target: "rose-cross-rosicrucian"
+    type: "visual-cognate"
+    notes: "Renaissance and early-modern hermetic / Rosicrucian iconography routinely incorporates eight-pointed-star and rose-cross visual elements; the genealogy is Renaissance-syncretic (via Kabbalah, Renaissance astrology, and Hermetic literature) rather than a direct Mesopotamian-to-Rosicrucian transmission. Visual cognate within a longer iconographic chain mediated by Renaissance hermeticism."
+    refs: ["Yates 1972"]
 mystery-status: "documented"
 status: "metadata"
 refs:
@@ -68,6 +84,32 @@ refs:
     year: 2010
     publisher: "Blackwell Companion to the Ancient Near East"
     type: "edited-volume"
+    tier: 1
+  - title: "The Second Ottoman Empire"
+    author: "Baki Tezcan"
+    year: 2010
+    publisher: "Cambridge University Press"
+    type: "monograph"
+    tier: 1
+    notes: "Ottoman crescent-and-star emblem context."
+  - title: "Lore and Science in Ancient Pythagoreanism"
+    author: "Walter Burkert"
+    year: 1972
+    publisher: "Harvard University Press"
+    type: "monograph"
+    tier: 1
+    notes: "Pentagram and number-symbolism in Pythagorean tradition."
+  - title: "The Religion of the Mithras Cult in the Roman Empire"
+    author: "Roger Beck"
+    year: 2006
+    publisher: "Oxford University Press"
+    type: "monograph"
+    tier: 1
+  - title: "The Rosicrucian Enlightenment"
+    author: "Frances A. Yates"
+    year: 1972
+    publisher: "Routledge"
+    type: "monograph"
     tier: 1
 tags: [symbol, astral, mesopotamian, sumerian, akkadian, babylonian, assyrian, inanna, ishtar, venus, eight-pointed-star, kudurru, hammurabi-stele]
 ---

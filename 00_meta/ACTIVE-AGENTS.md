@@ -18,11 +18,11 @@ Format:
 
 ---
 
-## 🚦 In-flight claims at a glance (current as of 2026-05-14 ~22:55 — empty after session-close sweep)
+## 🚦 In-flight claims at a glance (current as of 2026-05-15)
 
 | Handle | Scope tag | Owns (high level) | Started |
 |---|---|---|---|
-| _no agents in flight — vault at rest_ | | | |
+| `opus-symbols-2` | content + app-code / Symbols-map next-level | All 56 `09_symbols/*.md` (edge densification + `depictions:`), 6 new symbol nodes (dove, fleur-de-lis, hamsa, alpha-omega, sefirot, sacred-heart), `build_data.py` (depictions passthrough), `src/js/app.js` side-tab thumb fallback | 2026-05-15 |
 
 **Last session's finishers (full claim blocks in [`agents-archive/2026-05-14.md`](agents-archive/2026-05-14.md)):**
 
@@ -62,7 +62,30 @@ Format:
 
 ---
 
-## opus-housekeeper-3 — Per-session archive of finished claim blocks (NO vault-content / NO app-UI edits) — started 2026-05-14 ~22:45 — **FINISHED 2026-05-14 ~22:55**
+## opus-symbols-2 — Symbols-map next-level (densify + imagery) — started 2026-05-15
+
+- **Owning:** all 56 files in `09_symbols/*.md` (frontmatter `cross-symbol-edges` + new `depictions:` entries + body "Cross-symbol edges (provisional)" sections); 6 NEW symbol nodes: `dove.md`, `fleur-de-lis.md`, `hamsa-khamsa.md`, `alpha-omega.md`, `sefirot.md`, `sacred-heart.md`; `build_data.py` (one-line passthrough so `depictions` reaches the JS layer); `src/js/app.js` (side-tab thumb fallback to `depictions[0]` when `n.thumbnail` is empty).
+- **Goal:** double the cross-symbol edge density across the existing 56 symbols (current avg ~2.5 → target ≥4 well-sourced edges per node), focusing on the eight transmission spines that surface MASSIVE-win Christianity → older-tradition connections; add side-tab imagery via curated `depictions:` entries (Wikimedia-only, license-noted, hand-picked rather than auto-fetched — addresses validation risk).
+- **Coordination:** no agent currently owns any 09_symbols slug. No collision with `opus-symbols-1` (their finished work is the first 11 symbols, status preserved + their edges retained — I add, don't overwrite). App-code touches are minimal and contained (build_data.py: one field; app.js: one HTML-template branch in the existing thumb section).
+- **MASSIVE-win edges targeted (transmission spines):**
+  1. **Cross/cruciform** — ankh→coptic-cross→latin-cross + tau↔greek-cross + chi-rho→labarum→latin-cross + Constantinian solar-wheel substrate (celtic-cross, mithraic-cross, sun-disk parallels).
+  2. **Eucharistic substrate** — wheat-grain (Demeter/Eleusis) + vine-grape (Dionysus) + pomegranate (Persephone) + thyrsus → Christian eucharist iconography.
+  3. **Egyptian → Christian** — eye-of-horus-wedjat → eye-of-providence; halo-nimbus ← sun-disk (Aten / Sol Invictus / Christ); ankh → coptic-cross.
+  4. **Mithraic → Christian** — tauroctony, mithraic-cross, sun-disk (Sol Invictus → Christmas), sacred-fire as cultic substrate.
+  5. **Tree-of-life axis-mundi** — Mesopotamian sacred tree → Kabbalistic etz chayyim/sefirot → Christian arbor vitae → Norse Yggdrasil → Mayan ceiba → Buddhist bodhi (cognate, not transmission).
+  6. **Serpent family** — caduceus ↔ asclepian-rod (the iconographic-conflation story) + serpent-wisdom ↔ Nehushtan/Eden ↔ Quetzalcoatl/Naga + ouroboros ↔ chaoskampf dragon as Jörmungandr-parallel.
+  7. **Vedic ↔ Buddhist** — lotus + dharmachakra + mandala + swastika (solar-wheel cognate-cluster) + aum-om resonance.
+  8. **Persian/Zoroastrian** — faravahar (winged-disk descent from Egyptian Behdety / Assyrian Ashur) + sacred-fire + haoma↔soma↔vine-grape (sacred-plant cognate).
+- **6 new symbol nodes (high cross-tradition density):**
+  - `dove` — Christian Holy Spirit ↔ Aphrodite-attribute ↔ Ishtar/Inanna ↔ Noah's-dove ↔ Athena. **Clean transmission case for the cross-tradition demo.**
+  - `fleur-de-lis` — Egyptian lily/lotus → French monarchy → Christian Virgin Mary / Trinity → Boy Scouts modern reception.
+  - `hamsa-khamsa` — apotropaic hand (Jewish "Hand of Miriam" / Islamic "Hand of Fatima" / Phoenician origin via Tanit).
+  - `alpha-omega` — Greek alphabet first/last → Revelation Christology → liturgical iconography → Christogram cluster.
+  - `sefirot` — Kabbalistic cosmogram of 10 emanations; sub-section of tree-of-life lineage, but acquired enough independent iconographic life to warrant its own node.
+  - `sacred-heart` — Catholic devotion (Margaret Mary Alacoque 1673) ↔ Egyptian *ib* heart ↔ Aztec heart-iconography (Mesoamerican reception via Mexican retablos) — `appropriated-by` discipline applies.
+- **Imagery approach:** I am NOT running `fetch_thumbnails.py` (network risk + validation concern). Instead I'm hand-curating a `depictions:` YAML block per symbol with Wikimedia URLs picked from the Wikipedia symbol-page lead images I can identify by description; each entry carries `src`/`caption`/`source`/`license`. The renderer falls back to `depictions[0].src` when no thumb-cache entry exists. **John can swap any image by editing the YAML — no opaque cache file.**
+- **Status:** in-flight
+- **Last edit:** this claim block.
 
 - **Mission (user-authorized after confirming all agents stopped):** archive the 24 FINISHED claim blocks from this session into `00_meta/agents-archive/2026-05-14.md` so the live `ACTIVE-AGENTS.md` stays scannable for the next agent. Per-agent claim-file split + `build_agents.py` rollup (`AUDIT/12` §3.2) was the original deferred plan; the archive approach is a simpler intermediate that captures most of the scannability win without the build-pipeline change.
 - **Owning (NO vault content, NO app code, NO methodology / schema policy):**

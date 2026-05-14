@@ -39,8 +39,16 @@ cross-symbol-edges:
     refs: ["Forey 1992", "Sire 1994"]
   - target: "greek-cross"
     type: "parallel-form"
-    notes: "Both are equal-armed Christian crosses; the pattée is a *splayed* equal-armed cross."
-    refs: ["Jensen 2000"]
+    notes: "Both are equal-armed Christian crosses; the pattée is a *splayed* equal-armed cross. The Templar pattée specifically inherits the Byzantine Greek-cross-pattée heraldic tradition transmitted to the Latin West through Crusader contact (Forey 1992)."
+    refs: ["Jensen 2000", "Forey 1992"]
+  - target: "beauseant"
+    type: "parallel-form"
+    notes: "The cross-pattée and the beauseant are the two primary Templar visual-identity emblems: cross-pattée on the personal mantle (red on white), beauseant as the field-army battle-banner (black and white). Together they form the complete Templar heraldic vocabulary; some surviving beauseant witnesses include the cross-pattée centered on the white field, fusing both."
+    refs: ["Barber 1994", "Nicholson 2001"]
+  - target: "chi-rho-labarum"
+    type: "visual-cognate"
+    notes: "The cross-pattée preserves an X-substructure (the splayed arms widening to the ends echo the chi-form of the Greek alphabet); but no documented chronological transmission. Within Western Christian heraldry the pattée is a development of the equal-armed Greek-cross tradition, not a Chi-Rho descendant per se."
+    refs: ["Jensen 2017"]
 mystery-status: "documented"
 status: "metadata"
 refs:

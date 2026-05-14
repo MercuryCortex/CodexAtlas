@@ -29,6 +29,18 @@ cross-symbol-edges:
     type: "parallel-form"
     notes: "Both are Christian cruciform symbols within the broader Latin tradition; the Maltese variant develops alongside (not from) the long-shaft Latin form, via Greek-cross-pattée heraldry."
     refs: ["Riley-Smith 1999", "Jensen 2017"]
+  - target: "cross-pattee-templar"
+    type: "parallel-form"
+    notes: "Hospitaller Maltese cross and Templar cross-pattée are the two principal military-religious-order Christian-cross identifying-marks of the Crusader era. They share the splayed-arm Byzantine substrate (Greek-cross-pattée) but differentiate into distinct heraldic forms — Templar pattée with four flat arms widening at the tips, Hospitaller Maltese with eight-pointed indented terminals. The two orders' visual identities are deliberately distinct despite shared origin (Forey 1992, Riley-Smith 1999)."
+    refs: ["Forey 1992", "Riley-Smith 1999"]
+  - target: "beauseant"
+    type: "parallel-form"
+    notes: "Maltese cross and the Templar Beauseant are the principal field-identifying military marks of the two leading Crusader orders. Both serve identical military-recognition functions in distinct heraldic vocabularies."
+    refs: ["Riley-Smith 1999", "Barber 1994"]
+  - target: "chi-rho-labarum"
+    type: "visual-cognate"
+    notes: "The Maltese cross's four arrowhead-arms preserve an X-form structural core descended from the equal-arms geometry that ultimately echoes the chi (×) of the Chi-Rho. Visual-cognate at the level of the X-substrate; no direct transmission."
+    refs: ["Jensen 2017"]
 mystery-status: "documented"
 status: "metadata"
 refs:
@@ -49,6 +61,18 @@ refs:
     author: "Robin M. Jensen"
     year: 2017
     publisher: "Harvard University Press"
+    type: "monograph"
+    tier: 1
+  - title: "The Military Orders 1120–1312"
+    author: "Alan Forey"
+    year: 1992
+    publisher: "Macmillan"
+    type: "monograph"
+    tier: 1
+  - title: "The New Knighthood: A History of the Order of the Temple"
+    author: "Malcolm Barber"
+    year: 1994
+    publisher: "Cambridge University Press"
     type: "monograph"
     tier: 1
 tags: [symbol, christian, geometric, cross, crusader, hospitaller, maltese, heraldic]
