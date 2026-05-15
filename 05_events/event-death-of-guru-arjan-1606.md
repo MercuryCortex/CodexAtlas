@@ -6,7 +6,7 @@ date-earliest: 1606
 date-latest: 1606
 region: "Lahore (Mughal Empire, present-day Pakistan)"
 traditions-involved: ["[[tradition-sikhism]]", "[[tradition-islam-mughal]]"]
-persons-involved: ["[[guru-arjan-dev-ji]]", "[[jahangir-emperor]]", "[[guru-hargobind-ji]]"]
+persons-involved: ["[[guru-arjan]]", "[[jahangir-emperor]]", "[[guru-hargobind-ji]]"]
 status: "metadata"
 refs:
   - title: "A History of the Sikhs, Vol. 1: 1469–1839"
@@ -80,10 +80,10 @@ The martyrdom of Guru Arjan transformed Sikh history with unusual speed. His son
 The most theologically significant consequence of Guru Arjan's execution: **the Adi Granth survives** — compiled just two years before his death. His own compositions in the *Granth* include the *Sukhmani* (Pearl of Peace), 24 long hymns that constitute one of the great devotional poems in Punjabi literature. The persecutors killed the compiler; the compiled work endured and was elevated to eternal Guru status. The execution made the scripture more authoritative, not less — a structural instance of persecution-as-legitimation at the textual level.
 
 ## Connections
-- → [[guru-arjan-dev-ji]] — *protagonist*
+- → [[guru-arjan]] — *protagonist*
 - → [[tradition-sikhism]] — *founding-martyrdom*: first Guru-martyr; triggers the tradition's military turn
 - → [[event-death-of-guru-tegh-bahadur-1675]] — *sequel*: the beheading of the 9th Guru completes the persecution-transformation
 - → [[theme-persecution-as-legitimation]] — *instance*: the martyrdom accelerates rather than stops Sikh institutional growth
 - → [[theme-dying-founder-paradigm]] — *instance*: the executed Guru whose death permanently changes the tradition's character
 - → [[martyrdom-theology]] — *Sikh-instance*: Guru Arjan as the *shahid* (martyr) whose death defines the Sikh concept of principled sacrifice
-- → [[guru-granth-sahib]] — *surviving-legacy*: the scripture compiled by the martyred Guru, elevated to eternal authority
+- → [[phase-6-016-guru-granth-sahib]] — *surviving-legacy*: the scripture compiled by the martyred Guru, elevated to eternal authority

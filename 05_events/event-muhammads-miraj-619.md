@@ -11,7 +11,7 @@ geo-lat: 31.778
 geo-lon: 35.235
 geo-label: "Temple Mount, Jerusalem (departure point of Mi'raj)"
 participants:
-  - "[[muhammad]] (the prophet; the ascender)"
+  - "[[muhammad-ibn-abdullah]] (the prophet; the ascender)"
   - "Gabriel (divine escort through the heavens)"
   - "Adam, Jesus, John, Joseph, Idris/Enoch, Aaron, Moses, Abraham (prophets encountered at each heaven)"
 traditions-affected:

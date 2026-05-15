@@ -17,7 +17,7 @@ canonical-slug
 ## Currently resolved slugs (auto-seeded — every existing file)
 
 
-### deity (456 nodes)
+### deity (466 nodes)
 
 - `abathur`
 - `adamastor`
@@ -60,6 +60,7 @@ canonical-slug
 - `ariadne`
 - `armaros`
 - `artemis`
+- `asase-yaa`
 - `asbeel`
 - `asclepius-greek`
 - `asha-vahishta`
@@ -83,6 +84,7 @@ canonical-slug
 - `bacchus`
 - `baiame`
 - `baldr`
+- `bandua`
 - `baphomet`
 - `baraqel`
 - `barbelo`
@@ -98,6 +100,7 @@ canonical-slug
 - `bhairava`
 - `bhaisajyaguru`
 - `boann`
+- `bondye-vodou`
 - `bragi`
 - `brahma`
 - `brigid`
@@ -181,6 +184,7 @@ canonical-slug
 - `hermes-trismegistus`
 - `hermoni`
 - `hestia`
+- `hokmah-hebrew`
 - `holy-spirit`
 - `holy-spirit-paraclete`
 - `horus`
@@ -192,6 +196,7 @@ canonical-slug
 - `iapetus`
 - `idunn`
 - `illuyanka`
+- `inanna`
 - `inanna-sumerian`
 - `inari`
 - `indra`
@@ -312,7 +317,9 @@ canonical-slug
 - `nur-muhammadi`
 - `nut`
 - `nuwa`
+- `nyame`
 - `nyx-primordial`
+- `nzambi`
 - `obatala`
 - `odin`
 - `oduduwa`
@@ -361,6 +368,7 @@ canonical-slug
 - `ratnasambhava`
 - `remiel-archangel`
 - `rhea`
+- `rhea-greek`
 - `romulus`
 - `rudra-shiva-early`
 - `ruha`
@@ -399,6 +407,7 @@ canonical-slug
 - `surya`
 - `susanoo`
 - `svarog`
+- `tammuz-dumuzi`
 - `tane`
 - `tangaroa`
 - `tangun`
@@ -473,10 +482,11 @@ canonical-slug
 - `yima-jamshid`
 - `ymir`
 - `zagreus`
+- `zao-jun`
 - `zemyna`
 - `zeus`
 
-### document (379 nodes)
+### document (380 nodes)
 
 - `document-kuntillet-ajrud-inscriptions`
 - `phase-1-001-kesh-temple-hymn`
@@ -753,6 +763,7 @@ canonical-slug
 - `phase-5-054-rumi-masnavi`
 - `phase-5-055-vilayetname-haci-bektas`
 - `phase-5-056-divine-comedy`
+- `phase-5-057-ibn-rushd-aristotle-commentaries`
 - `phase-6-001-ficino-pimander`
 - `phase-6-002-ficino-theologia-platonica`
 - `phase-6-003-pico-oration-900-conclusions`
@@ -858,7 +869,7 @@ canonical-slug
 - `phase-8-020-nihon-shoki`
 - `tummal-chronicle`
 
-### event (178 nodes)
+### event (180 nodes)
 
 - `bent-pyramid-sneferu-dahshur`
 - `el-castillo-chichen-itza`
@@ -987,6 +998,7 @@ canonical-slug
 - `event-parliament-of-world-religions-1893`
 - `event-parthenon-construction-447-432-bce`
 - `event-perpetua-felicity-203`
+- `event-phoenician-gades-foundation-1100bce`
 - `event-pike-2018-neanderthal-cave-art-c-64800-bce`
 - `event-pittsburgh-platform-1885`
 - `event-pizarro-conquest-of-inca-1533`
@@ -1020,6 +1032,7 @@ canonical-slug
 - `event-thera-eruption-c-1600-bce`
 - `event-third-buddhist-council-c-250-bce`
 - `event-third-crusade-1189-1192`
+- `event-toledo-translations-1085-1150`
 - `event-trial-of-templars-1307-1314`
 - `event-vasco-da-gama-india-voyage-1497`
 - `event-vatican-ii-aftermath-1965-present`
@@ -1039,7 +1052,7 @@ canonical-slug
 - `subterranean-chamber-great-pyramid`
 - `temple-of-inscriptions-palenque`
 
-### person (639 nodes)
+### person (643 nodes)
 
 - `aaron`
 - `abba-garima`
@@ -1094,6 +1107,7 @@ canonical-slug
 - `apuleius-of-madaura`
 - `aquila`
 - `archytas`
+- `arganthonius`
 - `aristides-of-athens`
 - `aristotle`
 - `arius`
@@ -1256,6 +1270,7 @@ canonical-slug
 - `guru-arjan`
 - `guru-gobind-singh`
 - `guru-nanak`
+- `guru-tegh-bahadur-ji`
 - `haci-bektas-veli`
 - `hadewijch-of-antwerp`
 - `hadrian-emperor`
@@ -1333,6 +1348,7 @@ canonical-slug
 - `james-hollis`
 - `james-son-of-alphaeus`
 - `james-son-of-zebedee`
+- `jan-hus`
 - `jan-van-ruusbroec`
 - `jean-pierre-mahe`
 - `jeremiah`
@@ -1635,6 +1651,7 @@ canonical-slug
 - `thutmose-iv`
 - `timothy`
 - `titus`
+- `tomas-de-torquemada`
 - `trajan-emperor`
 - `triptolemus-legendary`
 - `tsongkhapa`
@@ -1757,7 +1774,7 @@ canonical-slug
 - `wheat-grain`
 - `yin-yang`
 
-### theme (313 nodes)
+### theme (316 nodes)
 
 - `364-day-solar-calendar`
 - `adam-kadmon`
@@ -1828,6 +1845,7 @@ canonical-slug
 - `divine-feminine`
 - `divine-immanence`
 - `divine-kingship`
+- `divine-kingship-solar`
 - `divine-name`
 - `divine-twins`
 - `dualism-cosmic`
@@ -1985,6 +2003,7 @@ canonical-slug
 - `secular-spirituality`
 - `sefirot`
 - `serpent-dual-nature`
+- `shamanism`
 - `shamanism-hypothesis`
 - `shevirat-hakelim`
 - `signatures-of-things`
@@ -2071,12 +2090,14 @@ canonical-slug
 - `wisdom-personified`
 - `world-axis`
 - `world-parent-cosmogony`
+- `zep-tepi`
 - `zeus-pantokrator-transmission`
 
-### tradition (125 nodes)
+### tradition (134 nodes)
 
 - `tradition-advaita-vedanta`
 - `tradition-african-traditional`
+- `tradition-akan`
 - `tradition-alevi-bektashi`
 - `tradition-anthroposophy`
 - `tradition-armenian-apostolic`
@@ -2084,6 +2105,7 @@ canonical-slug
 - `tradition-australian-aboriginal`
 - `tradition-aztec-mexica`
 - `tradition-baha-i`
+- `tradition-bantu-kongo`
 - `tradition-bhakti-vaishnavism`
 - `tradition-bogomilism`
 - `tradition-bon`
@@ -2092,6 +2114,7 @@ canonical-slug
 - `tradition-candomble`
 - `tradition-catharism`
 - `tradition-celtic`
+- `tradition-cheondogyo`
 - `tradition-christian-kabbalah`
 - `tradition-christianity-canonical`
 - `tradition-comparative-religion-academic`
@@ -2119,6 +2142,7 @@ canonical-slug
 - `tradition-hashshashin`
 - `tradition-hasidism`
 - `tradition-hasmonean-dynasty`
+- `tradition-haudenosaunee`
 - `tradition-hawaiian`
 - `tradition-hellenistic-philosophy`
 - `tradition-hermeticism`
@@ -2137,6 +2161,7 @@ canonical-slug
 - `tradition-kabbalah`
 - `tradition-kashmir-shaivism`
 - `tradition-knights-templar`
+- `tradition-lakota`
 - `tradition-lusitanian-religion`
 - `tradition-madhyamaka`
 - `tradition-mahayana-buddhism`
@@ -2144,6 +2169,8 @@ canonical-slug
 - `tradition-manichaeism`
 - `tradition-maori`
 - `tradition-maya-religion`
+- `tradition-medieval-christianity`
+- `tradition-megalithic-atlantic`
 - `tradition-merkavah-mysticism`
 - `tradition-mesoamerican`
 - `tradition-mesopotamian`
@@ -2151,6 +2178,7 @@ canonical-slug
 - `tradition-mithraic-mysteries`
 - `tradition-mormonism`
 - `tradition-mystery-cults`
+- `tradition-navajo`
 - `tradition-neoplatonism`
 - `tradition-new-age`
 - `tradition-norse`
@@ -2197,6 +2225,7 @@ canonical-slug
 - `tradition-wicca-modern-pagan`
 - `tradition-won-buddhism`
 - `tradition-yazidi`
+- `tradition-yoruba`
 - `tradition-yoruba-ifa`
 - `tradition-zen`
 - `tradition-zoroastrianism`
@@ -2207,19 +2236,18 @@ canonical-slug
 
 | Refs | Dead target | Suggested canonical (existing) |
 |---:|---|---|
-| 4 | `divine-kingship-solar` | `divine-kingship` |
-| 3 | `tradition-medieval-christianity` | `tradition-african-traditional` |
+| 3 | `tradition-hinduism` | `tradition-jainism` |
+| 3 | `phase-8-023-gayanashagowa` | `phase-8-020-nihon-shoki` |
 | 2 | `yam-canaanite` | `astarte-canaanite` |
-| 2 | `tradition-lingayat` | `tradition-egyptian` |
-| 2 | `tradition-judaism-sephardic` | `tradition-african-traditional` |
-| 2 | `tradition-islam-shia` | `tradition-egyptian` |
-| 2 | `tradition-islam-mughal` | `tradition-egyptian` |
-| 2 | `tradition-hussitism` | `tradition-egyptian` |
-| 2 | `tradition-hinduism` | `tradition-egyptian` |
-| 2 | `tradition-christianity-catholic` | `tradition-african-traditional` |
-| 2 | `tradition-cheondogyo` | `tradition-egyptian` |
-| 2 | `tradition-bahai` | `tradition-egyptian` |
+| 2 | `tradition-lingayat` | `tradition-jainism` |
+| 2 | `tradition-judaism-sephardic` | `tradition-shia-islam` |
+| 2 | `tradition-islam-shia` | `tradition-jainism` |
+| 2 | `tradition-islam-mughal` | `tradition-jainism` |
+| 2 | `tradition-hussitism` | `tradition-jainism` |
+| 2 | `tradition-christianity-catholic` | `tradition-teutonic-knights` |
+| 2 | `tradition-bahai` | `tradition-jainism` |
+| 2 | `phase-3-019-wisdom-of-solomon` | `phase-3-010-sibylline-oracles` |
+| 2 | `phase-2-012-book-of-proverbs` | `phase-2-015-analects-of-confucius` |
 | 2 | `guru-gobind-singh-ji` | `guru-gobind-singh` |
-| 2 | `guru-arjan-dev-ji` | `guru-arjan` |
 | 2 | `aurangzeb-emperor` | `zara-yaqob-emperor` |
 | 2 | `asclepius` | `asclepius-greek` |

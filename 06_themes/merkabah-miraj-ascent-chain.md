@@ -11,7 +11,7 @@ key-figures:
   - "[[ezekiel]]"
   - "[[enoch]]"
   - "[[metatron]]"
-  - "[[muhammad]]"
+  - "[[muhammad-ibn-abdullah]]"
   - "[[ibn-arabi]]"
   - "[[dante-alighieri]]"
 documents:
