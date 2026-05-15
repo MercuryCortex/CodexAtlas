@@ -13,6 +13,7 @@ role: "primordial creator / underworld goddess (after death)"
 consort: ["[[izanagi]]"]
 attested-in: ["Kojiki (712)", "Nihon Shoki (720)"]
 equivalents: ["[[ereshkigal]]", "[[hel]]", "[[persephone-greek]]", "[[papatuanuku]]"]
+key-themes: ["[[world-parent-cosmogony]]"]
 syncretic-edges:
   - target: "[[izanagi]]"
     type: "ancient-identification"

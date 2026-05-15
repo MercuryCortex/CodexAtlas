@@ -10,7 +10,7 @@ regions-spread: ["Japan"]
 key-deities: ["Amaterasu-Ōmikami (sun goddess, ancestral deity of the imperial line)", "Susanoo-no-Mikoto (storm deity, brother of Amaterasu)", "Tsukuyomi-no-Mikoto (moon deity)", "Inari Ōkami (rice, foxes, prosperity)", "Izanagi and Izanami (creator pair)", "Ōkuninushi-no-Mikoto (earth deity)"]
 key-persons: ["Motoori Norinaga (1730–1801, Kokugaku philologist / ideologue)", "Hirata Atsutane (1776–1843, nativist restoration)", "Kūkai (774–835, Buddhist-Shintō syncretist)", "Kitabatake Chikafusa (1293–1354, Jinnō Shōtōki)"]
 key-documents: ["Kojiki (712 CE, oldest chronicle)", "Nihon Shoki (720 CE, second chronicle)", "Engishiki (927 CE, liturgical compendium)", "Man'yōshū (mid-8th c., oldest poetry anthology)", "Norito (shrine liturgical prayers, codified in Engishiki)"]
-key-themes: ["[[priestly-purity]]"]
+key-themes: ["[[priestly-purity]]", "[[world-parent-cosmogony]]"]
 sister-traditions: ["[[tradition-buddhism]]", "[[tradition-confucianism]]"]
 status: "metadata"
 refs:
@@ -71,6 +71,22 @@ The indigenous religious tradition of Japan, centered on the veneration of *kami
 - vs. [[tradition-buddhism]]: the most intimate and complex religious relationship in Japanese history. Buddhism entered Japan via the Korean kingdoms (~538 or 552 CE). Over centuries the two traditions developed *shinbutsu shūgō* (amalgamation) that blurred all institutional boundaries; most Japanese until the 19th century participated in both. The Meiji state violently separated them in 1868. Modern Japanese religious life still moves between both without contradiction.
 - vs. [[tradition-confucianism]]: Confucian social ethics (filial piety, loyalty, hierarchical propriety) were deeply absorbed by Japanese elite culture from the Nara period onward and became the ethical substrate of samurai ethics (*bushidō*) and imperial ideology — often functioning as the social-ethical layer beneath Shintō cosmological claims.
 - vs. Kokugaku and European Romanticism: 18th-century Kokugaku scholars (especially Motoori Norinaga) perform a "return to origins" through philological recovery that structurally parallels Romantic nativist movements in Europe at the same moment; both assert an unmediated national folk-spirit against cosmopolitan rational universalism. The parallel is a MASSIVE cross-tradition mapping opportunity.
+
+## MASSIVE WIN: Cross-Tradition Parallels
+
+### Izanagi-Izanami and the World-Parent archetype
+The Shintō cosmogony is one of the richest instantiations of the [[world-parent-cosmogony]] archetype — the creation-by-primordial-couple pattern that appears in Greek (Ouranos/Gaia), Egyptian (Nut/Geb), Maori (Rangi/Papa), and Mesopotamian (Apsu/Tiamat) traditions with no necessary historical connection. The Shintō version is distinctive for layering the world-parent pattern with the katabasis motif (Izanagi's failed descent to Yomi to retrieve Izanami), which parallels the Greek Orpheus/Eurydice, Sumerian Inanna/Dumuzi, and Mesopotamian Ishtar's descent. The post-Yomi *misogi* purification that births Amaterasu, Tsukuyomi, and Susanoo makes the Japanese cosmogony an unusually dense mythological node: three foundational archetypes (world-parent creation, katabasis, purification-birth) stacked in a single narrative. See [[izanagi]], [[izanami]], [[world-parent-cosmogony]].
+
+### Motoori Norinaga and European Romanticism — MASSIVE WIN
+The 18th-century Kokugaku movement under [[motoori-norinaga]] is the East Asian structural parallel to European Romantic nativism that nobody maps. Norinaga's 35-year project to recover the authentic Japanese spirit from beneath Chinese-Buddhist overlay is structurally identical to Herder's *Volksgeist* theory and the Grimm brothers' folk-tale philology — but was developed independently, in a different intellectual language, by a physician in Edo Japan. Both projects share:
+- Philological recovery of ancient texts as access to the uncontaminated national spirit
+- Anti-universalism: the particular (Japanese heart / German Volk) against cosmopolitan reason
+- Aesthetic theory of feeling against doctrine: *mono no aware* ↔ Romantic *Gefühl*
+- Nativist purification program: strip away foreign overlay to find the true
+The parallel is a precise structural mapping across two traditions with zero contact at the time of their development. See [[motoori-norinaga]].
+
+### *Kami* and the spirit-presence category
+The Shintō *kami* — sacred presences in natural features, ancestors, and places — are structurally related to the animist tradition's *mana* / *wakan* / *orenda* concepts (Polynesian, Lakota, Iroquois): the idea that sacred power is diffuse, present in specific natural loci, and accessed through ritual attunement rather than theological propositional belief. The Shintō shrine system (the *kami* are in the mountains, rivers, and rocks; the shrine marks and houses their presence) is structurally equivalent to the sacred geography practices of many indigenous traditions globally.
 
 ## Refs
 1. Breen, J. and Teeuwen, M. (2010). *A New History of Shinto*. Wiley-Blackwell.

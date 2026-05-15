@@ -58,6 +58,27 @@ Founder-figure (though tradition recognizes him as the 24th in a series, beginni
 - **Date.** Traditional Jain dating: -599 to -527. Some current scholarship favors a slightly later range (~-540 to -468), parallel to the redating of the Buddha. We carry the traditional dating in YAML; both are within Phase 2.
 - **Founder vs. reformer.** Jain tradition recognizes a series of earlier Tīrthaṅkaras, most legendary; Pārśvanātha (the 23rd, traditional dates -872 to -772) may have a historical kernel and may represent an earlier Jain-like community. Mahāvīra is then a major reformer of an existing tradition, not its sole founder.
 
+## Cross-tradition position
+
+**Mahāvīra and the Buddha — the supreme Indian parallel**
+The most structurally rich cross-tradition comparison in Indian religious history. The two founders were contemporaries (traditional dates overlap: Buddha ~-563 to -483, Mahāvīra ~-599 to -527; corrected scholarly dates bring both closer to ~-480 to -400), from the same warrior-aristocrat (*kṣatriya*) class, operating in the same śramaṇa milieu of the eastern Gangetic plain, founding competing mendicant communities, rejecting Vedic authority, and developing karma-and-liberation soteriologies. Buddhist sources independently confirm Mahāvīra's existence (calling him Nigaṇṭha Nātaputta) and document specific debates between the traditions.
+
+**The metaphysical divergence**
+
+| Feature | Mahāvīra / Jainism | The Buddha / Buddhism |
+|---|---|---|
+| Self | Permanent *jīva* (soul) exists | *Anātman* — no permanent self |
+| Karma | Literal subtle *matter* accreting to the soul | Intentional action (*cetanā*) — functional, not material |
+| Liberation | Physical: burning off karmic matter via austerity | Mental: cessation of craving and delusion |
+| Ethics | *Ahiṃsā* absolute — even unintentional killing binds | Intention paramount — unintentional harm generates no karma |
+| Creator god | Rejected (universe is eternal) | Rejected (universe is causally conditioned) |
+| Asceticism | Extreme (Digambara: complete nudity, no possessions) | Middle way — Buddha rejected the extreme asceticism he shared with Jains |
+
+The Buddha's famous abandonment of extreme asceticism *while living with Jain-influenced ascetics* (the Pali canon records this clearly) makes Mahāvīra/Jainism the specific foil against which the Buddhist "middle way" was defined. The traditions are best understood as the two poles of an argument that was happening between real people in real communities in 5th-century BCE northeastern India.
+
+**Mahāvīra and Pārśvanātha — the internal predecessor debate**
+If the 23rd Tīrthaṅkara Pārśvanātha (~-872 to -772 traditional) is historical, Mahāvīra is not the absolute founder but the most important reformer and systematizer of an existing tradition — much as the Buddha's teaching systematized and redirected an existing meditation/asceticism tradition. The two-tradition hypothesis (pre-existing Pārśvanātha community + Mahāvīra's reform) is the dominant current scholarly view.
+
 ## Refs
 1. Dundas, P. (2002). *The Jains*. Routledge.
 2. Jacobi, H. (1884–1895). *Jaina Sūtras*. SBE 22, 45. https://www.sacred-texts.com/jai/.

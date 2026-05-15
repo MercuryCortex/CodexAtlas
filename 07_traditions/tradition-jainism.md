@@ -8,8 +8,8 @@ date-end:
 region-origin: "Magadha / Videha (eastern Gangetic plain, modern Bihar)"
 regions-spread: ["pan-Indian subcontinent (concentrated in Gujarat, Rajasthan, Karnataka)", "global diaspora"]
 key-deities: []
-key-persons: ["[[mahavira]]"]
-key-documents: []
+key-persons: ["[[mahavira]]", "[[rishabha]]"]
+key-documents: ["[[phase-2-038-acharanga-sutra]]", "[[phase-2-039-sutrakritanga]]"]
 key-themes: ["[[reincarnation]]", "[[dualism-spirit-matter]]", "[[soul-immortality]]", "[[priestly-purity]]"]
 sister-traditions: ["[[tradition-buddhism]]", "[[tradition-vedic-hinduism]]", "[[tradition-sikhism]]"]
 status: "metadata"
@@ -71,6 +71,27 @@ Jainism is the religious tradition founded — or, in tradition's own account, *
 - vs. [[tradition-vedic-hinduism]]: rejects Vedic authority and śruti revelation; rejects animal sacrifice as fatally violent (*ahiṃsā* absolute). Karma and [[reincarnation|rebirth]] frameworks overlap but are reinterpreted — karma as literal subtle *matter* accreting to the soul rather than a moral accounting mechanism.
 - vs. [[tradition-sikhism]]: shared Gujarati-Rajasthani merchant milieu in the medieval period; Jain merchants were among the wealthiest patrons of Sikh *langars*. Both traditions share non-violence and egalitarian ethics at their cores.
 - vs. Greco-Roman world: Alexander's army encountered Jain monks ("gymnosophists" / "naked philosophers") in India, and several classical authors noted them. The *anekāntavāda* (non-absolutism of viewpoints) doctrine is the most sophisticated ancient multi-perspectival epistemology — structurally comparable to Academic skepticism.
+
+## MASSIVE WIN: Cross-Tradition Parallels
+
+### Jain *anekāntavāda* and Madhyamaka — the anti-absolutist pair
+Two of the most sophisticated anti-absolutist epistemologies in ancient philosophy emerged in the same Indian intellectual milieu, separated by ~700 years, and their convergence-divergence map is a signature of the vault. Both [[anekantavada]] (Jainism, ~-400 onward) and Nāgārjuna's *śūnyatā* (~150 CE) reject single-perspective absolutism about the nature of things. But:
+- *Anekāntavāda* is **additive**: all seven predications (it is, it is not, both, neither, inexpressible...) are simultaneously valid — reality is genuinely many-sided.
+- *Śūnyatā* is **dissolving**: the attempt to predicate anything ultimately fails to latch onto a fixed nature, because things have no self-nature (*svabhāva*) at all.
+Nāgārjuna would critique *anekāntavāda* as still presupposing a real object with multiple real aspects to be predicated about — a form of subtle *svabhāva*-attachment. Jain logicians counter that Madhyamaka's systematic negation is itself a one-sided absolutism (absolutism of negation). The debate is live in classical Indian philosophical texts, and unresolved.
+
+### Jain karma-matter and Gnostic pneuma-in-hylē
+The structural parallel between the Jain *jīva* (soul) weighed down by literal subtle karma-*matter* and the Gnostic pneumatic spark trapped in material darkness is one of the vault's cleaner MASSIVE WINS. Both traditions posit:
+- A luminous true self (soul / pneuma) that is inherently pure and omniscient
+- Entanglement in matter as the cause of bondage and ignorance
+- Liberation as the physical/metaphysical extraction of self from matter
+The difference in agency: in Jainism, the soul attracts karma through its own passions (liberation is a self-project); in Gnosticism, the pneuma is held captive by external archons (liberation requires cosmic rescue by a redeemer). See [[jain-karma]], [[tradition-gnosticism]].
+
+### *Ahiṃsā* as civilizational export
+Jain *ahiṃsā* is the most consequential Indian ethical export that didn't travel under a Buddhist or Hindu label. Gandhi explicitly credited his Gujarati Jain merchant community milieu — not just Hindu scripture — as the source of his non-violence doctrine. Jainism's near-total dominance of the diamond trade (ethical business as karmic minimization) and significant presence in Indian philanthropy represents a civilizational form of *ahiṃsā* applied to commerce.
+
+### Ṛṣabha absorbed into Vaiṣṇava tradition
+[[rishabha]] (Ṛṣabhanātha, the first Tīrthaṅkara) is absorbed into *Bhāgavata Purāṇa* Book V as a Vaiṣṇava saint and near-avatar — one of the vault's clearest cases of inter-tradition figure-absorption. The Jain culture-hero becomes a Hindu holy man; the Jain tradition claims the Purāṇic text borrowed from them. See [[rishabha]].
 
 ## Refs
 1. Dundas, P. (2002). *The Jains*. Routledge.

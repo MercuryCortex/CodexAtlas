@@ -15,6 +15,7 @@ consort: ["[[izanami]]"]
 attributes: ["jeweled spear Ame-no-Nuboko (Heavenly Spear)"]
 attested-in: ["Kojiki (712)", "Nihon Shoki (720)"]
 equivalents: ["[[uranus-greek]]", "[[apsu]]", "[[ranginui]]"]
+key-themes: ["[[world-parent-cosmogony]]"]
 syncretic-edges:
   - target: "[[izanami]]"
     type: "ancient-identification"
