@@ -1,6 +1,6 @@
 ---
 type: tradition
-id: "sumerian-mesopotamian"
+id: "tradition-sumerian-mesopotamian"
 name: "Sumerian / Mesopotamian Religion"
 parent-tradition: ""
 date-emergence: -3500
