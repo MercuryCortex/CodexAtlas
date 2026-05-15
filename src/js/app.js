@@ -3811,35 +3811,130 @@ VIEWS.scripture = {
 // edge graph. So a 12-pick preset typically surfaces ~20-30 nodes on canvas with the
 // connective transmission edges drawn between them. This is the visual mechanism that
 // realizes the "MASSIVE-win cross-tradition transmission spine" demos.
-//
-// All 78 node IDs verified against vault canonical-slugs. See AUDIT/14 for design rationale.
+const PRESET_CATEGORY_LABELS = {
+  egypt: 'Egypt', hermetic: 'Hermetic', templar: 'Templar',
+  gnostic: 'Gnostic', cross: 'Cross-Tradition', flood: 'Flood', astrology: 'Astrology',
+};
+const PRESET_CATEGORY_ORDER = [
+  { key: 'egypt',    label: 'Egypt — Investigation Series' },
+  { key: 'cross',    label: 'Cross-Tradition' },
+  { key: 'hermetic', label: 'Hermetic & Gnostic' },
+  { key: 'gnostic',  label: 'Gnostic' },
+  { key: 'templar',  label: 'Templar & Portuguese' },
+  { key: 'astrology',label: 'Astrology' },
+  { key: 'flood',    label: 'Flood Narratives' },
+];
 const ALCHEMY_PRESETS = [
+  // ── Egypt — Investigation Series ──────────────────────────────────
   {
-    id: 'astrology-3500-year-spine',
-    name: '3,500-Year Astrology Spine',
-    headline: 'The longest continuously-attested intellectual tradition in the vault — longer than Judaism, Christianity, or Islam. Documented institutional and textual transmission step-by-step across Mesopotamia, Egypt, Greece, Rome, Persia, Islam, Latin Renaissance, and modern occult revival.',
+    id: 'giza-theology-khafres-machine',
+    category: 'egypt',
+    name: 'Giza as Theology — Khafre\'s Machine',
+    headline: 'The Giza pyramid complex as a functioning theology machine: each architectural element maps to a moment in the Amduat\'s 12-hour solar journey — the pyramid IS the Duat, the causeway IS the liminal passage, the Sphinx IS Horus-at-the-horizon. Anchored on Khafre\'s mortuary complex (c. -2550 BCE) and still theologically active 1,100 years later when Thutmose IV received his divine dream in the Sphinx\'s shadow.',
     picks: [
-      'phase-1-019-enuma-anu-enlil', 'berossus',
-      'hermes-trismegistus-pseudepigraphic-author', 'firmicus-maternus',
-      'al-kindi', 'event-arabic-harranian-hermetica-c800-1000',
-      'cornelius-agrippa', 'john-dee',
-      'helena-blavatsky', 'aleister-crowley',
-      'fernando-pessoa', 'manuel-j-gandra',
+      'khafre', 'khufu', 'sphinx-guardian',
+      'ka-soul-double', 'zep-tepi', 'divine-kingship-solar',
+      'phase-1-031-amduat', 'event-giza-complex-construction-c2560-2490-bce',
+      'thutmose-iv', 'phase-1-032-dream-stele-thutmose-iv',
     ],
   },
   {
-    id: 'cross-tradition-flood',
-    name: 'Cross-Tradition Flood',
-    headline: 'The flood narrative across nine Old- and New-World traditions, with the 1872 George Smith decipherment as the modern reception node that triggered the entire comparative-religion field.',
+    id: 'psychostasia-last-judgment-chain',
+    category: 'egypt',
+    name: 'Soul-Weighing → Christian Last Judgment',
+    headline: 'Book of the Dead Ch. 125 (c. -1550): 42 Assessors, Anubis\'s scales, Thoth recording, Ammit the Devourer — the original courtroom of the soul. Transmitted via Coptic Egypt into Byzantine psychostasia (St. Michael with scales), Gothic cathedral Last Judgment tympana, and Lady Justice. One of the most documented Egypt→Christianity iconographic transmissions.',
     picks: [
-      'atrahasis-flood-hero', 'utnapishtim', 'noah', 'deucalion',
-      'matsya-avatar', 'yu-the-great', 'bergelmir', 'gonggong',
-      'george-smith-cuneiformist',
-      'phase-1-006-atrahasis', 'phase-1-016-eridu-genesis-flood',
+      'psychostasia-soul-weighing', 'phase-1-010-book-of-the-dead',
+      'anubis', 'thoth',
+      'tradition-coptic-orthodox', 'shenoute',
+      'event-council-of-ephesus-431', 'jan-assmann',
     ],
   },
+  {
+    id: 'djed-benben-solar-monument-chain',
+    category: 'egypt',
+    name: 'Djed, Benben & the Solar Monument Chain',
+    headline: 'From the primordial Benben stone of Heliopolis (-2600 BCE) through the Djed-pillar of Osiris — preserved in the Hebrew Bible as the twin pillars Jachin & Boaz (1 Kings 7:21) and in Freemasonry\'s foundational rite — to Napoleon\'s expedition that reintroduced the obelisk to the West and the Washington Monument (1884), the world\'s tallest obelisk with a Masonic cornerstone ceremony.',
+    picks: [
+      'djed-pillar', 'benben-stone', 'obelisk',
+      'osiris', 'event-napoleons-egypt-expedition-1798-1801',
+      'champollion', 'event-champollion-decipherment-1822',
+    ],
+  },
+  {
+    id: 'divine-pharaoh-to-son-of-god',
+    category: 'egypt',
+    name: 'Divine Pharaoh → Son of God',
+    headline: 'The royal-divinity transmission chain: Pharaoh as Son of Ra (Fifth Dynasty, c. -2494) → Akhenaten\'s monotheistic intensification → Alexander at Siwa oracle (331 BCE, "son of Ammon") → Ptolemaic divine king → Roman Divi filius → Christian "Son of God" formalized at Nicaea (325 CE). Each step documented with primary sources; Jan Assmann\'s cultural-memory thesis as interpretive framework.',
+    picks: [
+      'divine-kingship-solar', 'khafre', 'akhenaten',
+      'event-amarna-period-1353-1336-bce', 'jan-assmann',
+      'event-council-of-nicaea-325',
+    ],
+  },
+  {
+    id: 'osiris-christ-death-resurrection',
+    category: 'egypt',
+    name: 'Osiris → Christ: Death & Resurrection',
+    headline: 'The structural parallel between Osirian resurrection theology and the Christian Passion — not simple derivation (Mettinger refutes Frazer\'s "dying and rising god" thesis) but parallel responses to mortality shaped by documented Greco-Egyptian contact. Plutarch\'s De Iside et Osiride (c. 100 CE) is the key transmission text; the Amduat\'s Ra–Osiris midnight union is the Egyptian theological core.',
+    picks: [
+      'osiris', 'isis',
+      'phase-4-072-plutarch-de-iside-et-osiride',
+      'phase-1-031-amduat',
+      'tradition-coptic-orthodox', 'tradition-isis-mysteries',
+      'jan-assmann',
+    ],
+  },
+  {
+    id: 'champollion-egypt-recovered',
+    category: 'egypt',
+    name: 'Champollion & Egypt Recovered',
+    headline: 'The modern scientific recovery of 3,500 years of lost Egyptian theology: Napoleon\'s expedition (1798) finds the Rosetta Stone; Champollion cracks hieroglyphs via the cartouche-as-royal-name key (1822); Mariette excavates Khafre\'s Valley Temple (1853). Every Phase-1 document in this vault was inaccessible until 27 September 1822. Manetho\'s Aegyptiaca (-280 BCE) provides the pharaonic chronology that made the whole timeline legible.',
+    picks: [
+      'champollion', 'mariette-auguste', 'manetho',
+      'event-napoleons-egypt-expedition-1798-1801',
+      'event-champollion-decipherment-1822',
+      'shen-ring', 'phase-3-025-manetho-aegyptiaca',
+    ],
+  },
+  {
+    id: 'isis-mary-theotokos',
+    category: 'egypt',
+    name: 'Isis → Mary Theotokos',
+    headline: 'The Hellenistic Isis cult\'s iconographic transmission into early-Christian Marian devotion — Isis nursing Horus (the Isis lactans pose) prefigures the Virgin and Child; the Council of Ephesus (431 CE) formalizes the Theotokos title at a site where an Isis temple stood. One of the most-cited and best-documented Egypt→Christianity transmission edges.',
+    picks: [
+      'isis', 'isis-hellenistic',
+      'event-council-of-ephesus-431',
+      'mary-theotokos', 'mary-mother-of-jesus', 'cyril-of-alexandria',
+    ],
+  },
+  // ── Cross-Tradition ───────────────────────────────────────────────
+  {
+    id: 'greco-buddhist',
+    category: 'cross',
+    name: 'Greco-Buddhist Wedge',
+    headline: 'The Hellenistic encounter with Buddhism: Alexander\'s campaigns, Aśoka\'s 3rd-c.-BCE Dhamma missions, Menander I, the Milindapañha, and the Kanishka-era iconographic synthesis that gave us the first images of the Buddha.',
+    picks: [
+      'asoka-maurya', 'menander-i-soter', 'kanishka',
+      'phase-3-029-milindapanha', 'phase-3-030-asokan-edicts',
+      'event-asokan-dhamma-missions-c-250-bce', 'tradition-greco-buddhism',
+    ],
+  },
+  {
+    id: 'aristotle-avicenna-aquinas',
+    category: 'cross',
+    name: 'Aristotle → Avicenna → Aquinas',
+    headline: 'The 600-year Aristotelian transmission through the Islamic Golden Age (al-Farabi, Avicenna, Averroes) into 13th-century Latin scholastic synthesis under Aquinas — the philosophical spine of medieval Christian and Islamic intellectual life.',
+    picks: [
+      'aristotle', 'phase-3-003-aristotle-metaphysics',
+      'al-farabi', 'ibn-sina', 'phase-5-044-ibn-sina-kitab-al-shifa',
+      'ibn-rushd', 'thomas-aquinas', 'phase-5-024-aquinas-summa-theologiae',
+    ],
+  },
+  // ── Hermetic & Gnostic ────────────────────────────────────────────
   {
     id: 'hermetic-corpus-reception',
+    category: 'hermetic',
     name: 'Hermetic Corpus Reception',
     headline: 'The pseudonymous Hermetic Corpus from its Hellenistic-Egyptian origin (c. 100-300 CE) through Ficino\'s 1463 translation that launched the Renaissance, Casaubon\'s 1614 redating that demolished it, and the modern theosophical reception that resurrected it.',
     picks: [
@@ -3851,17 +3946,44 @@ const ALCHEMY_PRESETS = [
     ],
   },
   {
-    id: 'isis-mary-theotokos',
-    name: 'Isis → Mary Theotokos',
-    headline: 'The Hellenistic Isis cult\'s iconographic transmission into early-Christian Marian devotion, formalized at the Council of Ephesus 431 — one of the most-cited Christianity-from-older-tradition transmission edges.',
+    id: 'pessoa-esoteric-network',
+    category: 'hermetic',
+    name: 'Pessoa\'s Esoteric Network',
+    headline: 'Fernando Pessoa as the modernist-literary endpoint of multiple esoteric traditions: Sebastianismo (Bandarra), Thelema (Crowley + the 1930 Boca do Inferno hoax), Theosophy (Blavatsky, whom he translated), and Portuguese hermeticism (Carvalho Monteiro\'s Regaleira → Gandra\'s contemporary scholarship).',
     picks: [
-      'isis', 'isis-hellenistic',
-      'event-council-of-ephesus-431',
-      'mary-theotokos', 'mary-mother-of-jesus', 'cyril-of-alexandria',
+      'fernando-pessoa', 'phase-7-037-pessoa-mensagem',
+      'goncalo-annes-bandarra', 'phase-6-040-bandarra-trovas',
+      'aleister-crowley', 'helena-blavatsky',
+      'antonio-carvalho-monteiro', 'manuel-j-gandra',
+    ],
+  },
+  // ── Gnostic ───────────────────────────────────────────────────────
+  {
+    id: 'watchers-forbidden-knowledge',
+    category: 'gnostic',
+    name: 'Watchers — Forbidden Knowledge',
+    headline: 'The Enochic narrative of fallen-angel teaching — astrology, metallurgy, and magic as transgressive forbidden knowledge. The principal pre-Christian Jewish anti-astrology framing, and the doctrinal counter-pole to the integration-tradition.',
+    picks: [
+      'phase-3-004-1-enoch', 'phase-4-081-mashafa-henok-geez-1-enoch',
+      'kokabiel', 'baraqel', 'kasdeja', 'penemue', 'semyaza',
+      'watchers-and-fallen-angels',
     ],
   },
   {
+    id: 'demiurge-cross-tradition',
+    category: 'gnostic',
+    name: 'Demiurge Cross-Tradition',
+    headline: 'The demiurge concept from Plato\'s Timaeus through Gnostic appropriation (Valentinus, the Apocryphon of John) to Marcion\'s anti-cosmic canon — the principal Platonic philosophy → 2nd-century Christianity transmission edge.',
+    picks: [
+      'plato', 'phase-3-022-plato-timaeus-critias-atlantis',
+      'valentinus', 'phase-4-002-apocryphon-of-john', 'marcion-of-sinope',
+      'demiurge-gnostic', 'demiurge-platonic', 'demiurge',
+    ],
+  },
+  // ── Templar & Portuguese ──────────────────────────────────────────
+  {
     id: 'templar-survival-portuguese',
+    category: 'templar',
     name: 'Templar Survival → Portuguese Caravels',
     headline: 'The 200-year documented institutional Templar-survival via the Portuguese Order of Christ (1319). The cross of Christ on Vasco da Gama\'s caravel sails is the iconographic endpoint — distinct from speculative Templar-survival fabrications.',
     picks: [
@@ -3873,24 +3995,10 @@ const ALCHEMY_PRESETS = [
     ],
   },
   {
-    id: 'portuguese-mythological-spine',
-    name: 'Portuguese Mythological Spine',
-    headline: '2,500 years of Portuguese sacred tradition — from pre-Roman Lusitanian oracle religion (Endovélico, 500 BCE) through Camões\'s Adamastor (a Titan whose body IS the Cape of Good Hope, 1572) to Pessoa\'s esoteric national mythology (1934). Adamastor alone connects Norse cosmogony (Ymir), Yoruba ocean theology (Olokun), and the Discoveries. Sebastianism is the Portuguese instance of the cross-tradition hidden-king pattern (Mahdi, Maitreya, Saoshyant). One of the most original mythological inventions in the Renaissance mapped against 2,500 years of sacred geography.',
-    picks: [
-      'tradition-lusitanian-religion', 'endovelicus',
-      'event-order-of-christ-foundation-1319', 'henry-the-navigator',
-      'prester-john',
-      'phase-6-041-camoes-os-lusiadas', 'adamastor', 'ines-de-castro',
-      'antonio-vieira', 'fifth-empire-quinto-imperio',
-      'event-battle-of-alcacer-quibir-1578', 'sebastian-i-portugal',
-      'tradition-sebastianism',
-      'phase-7-037-pessoa-mensagem', 'fernando-pessoa',
-    ],
-  },
-  {
     id: 'templar-hardcore-roots',
+    category: 'templar',
     name: 'Templar Hardcore Roots → Portuguese Empire',
-    headline: 'The full institutional arc of the Knights Templar: founded at Troyes (1129) under Bernard of Clairvaux\'s theology of the warrior-monk → near-annihilated at Hattin (1187) → in documented contact with the Nizari Assassins (tribute + 1173 diplomatic murder) → accused of Baphomet worship under torture (1307) → dissolved (1314) → reconstituted by Dinis I as the Order of Christ (1319) → that same institution funds Vasco da Gama\'s caravel to India. Wolfram von Eschenbach\'s *Parzival* (the Grail-as-Templar-mystery text) and the Holy Grail\'s cross-tradition sacred-vessel lineage provide the mythological frame.',
+    headline: 'The full institutional arc of the Knights Templar: founded at Troyes (1129) under Bernard of Clairvaux\'s warrior-monk theology → near-annihilated at Hattin (1187) → documented contact with the Nizari Assassins → accused of Baphomet worship (1307) → dissolved (1314) → reconstituted by Dinis I as the Order of Christ (1319) → that same institution funds Vasco da Gama\'s caravel to India.',
     picks: [
       'hugues-de-payens', 'bernard-of-clairvaux',
       'event-council-of-troyes-1129', 'tradition-knights-templar',
@@ -3904,20 +4012,26 @@ const ALCHEMY_PRESETS = [
     ],
   },
   {
-    id: 'pessoa-esoteric-network',
-    name: 'Pessoa\'s Esoteric Network',
-    headline: 'Fernando Pessoa as the modernist-literary endpoint of multiple esoteric traditions: Sebastianismo (Bandarra), Thelema (Crowley + the 1930 Boca do Inferno hoax), Theosophy (Blavatsky, whom he translated), and Portuguese hermeticism (Carvalho Monteiro\'s Regaleira → Gandra\'s contemporary scholarship).',
+    id: 'portuguese-mythological-spine',
+    category: 'templar',
+    name: 'Portuguese Mythological Spine',
+    headline: '2,500 years of Portuguese sacred tradition — from pre-Roman Lusitanian oracle religion (Endovélico, 500 BCE) through Camões\'s Adamastor (a Titan whose body IS the Cape of Good Hope, 1572) to Pessoa\'s esoteric national mythology (1934). Sebastianism is the Portuguese instance of the cross-tradition hidden-king pattern (Mahdi, Maitreya, Saoshyant).',
     picks: [
-      'fernando-pessoa', 'phase-7-037-pessoa-mensagem',
-      'goncalo-annes-bandarra', 'phase-6-040-bandarra-trovas',
-      'aleister-crowley', 'helena-blavatsky',
-      'antonio-carvalho-monteiro', 'manuel-j-gandra',
+      'tradition-lusitanian-religion', 'endovelicus',
+      'event-order-of-christ-foundation-1319', 'henry-the-navigator',
+      'prester-john',
+      'phase-6-041-camoes-os-lusiadas', 'adamastor', 'ines-de-castro',
+      'antonio-vieira', 'fifth-empire-quinto-imperio',
+      'event-battle-of-alcacer-quibir-1578', 'sebastian-i-portugal',
+      'tradition-sebastianism',
+      'phase-7-037-pessoa-mensagem', 'fernando-pessoa',
     ],
   },
   {
     id: 'grail-ark-cathar-thread',
+    category: 'templar',
     name: 'Grail, Ark & the Cathar Thread',
-    headline: 'The paper trail of Western sacred-vessel mythology: from the Ark of the Covenant (disappears 586 BCE; resurfaces in Ethiopian theology, Freemasonic Royal Arch degrees, and Graham Hancock) to Robert de Boron\'s 1200 CE literary invention (Grail = Last Supper cup; Joseph of Arimathea = first Grail-keeper) to Wolfram\'s Templar guardians to the Cathar-Grail identification invented by Otto Rahn in 1933 — later weaponized by Himmler\'s SS — to the Priory of Sion fabrication (1956) that became *Holy Blood, Holy Grail* (1982) and the *Da Vinci Code* (2003). Every link documented and tiered.',
+    headline: 'The paper trail of Western sacred-vessel mythology: from the Ark of the Covenant (disappears 586 BCE) to Robert de Boron\'s 1200 CE literary invention, Wolfram\'s Templar guardians, the Cathar-Grail identification invented by Otto Rahn in 1933, and the Priory of Sion fabrication (1956) that became *Holy Blood, Holy Grail* (1982) and the *Da Vinci Code* (2003). Every link tiered.',
     picks: [
       'ark-of-the-covenant',
       'joseph-of-arimathea', 'robert-de-boron',
@@ -3928,129 +4042,32 @@ const ALCHEMY_PRESETS = [
       'event-priory-of-sion-fabrication',
     ],
   },
+  // ── Astrology ─────────────────────────────────────────────────────
   {
-    id: 'watchers-forbidden-knowledge',
-    name: 'Watchers — Forbidden Knowledge',
-    headline: 'The Enochic narrative of fallen-angel teaching — astrology, metallurgy, and magic as transgressive forbidden knowledge. The principal pre-Christian Jewish anti-astrology framing, and the doctrinal counter-pole to the integration-tradition.',
+    id: 'astrology-3500-year-spine',
+    category: 'astrology',
+    name: '3,500-Year Astrology Spine',
+    headline: 'The longest continuously-attested intellectual tradition in the vault — longer than Judaism, Christianity, or Islam. Documented institutional and textual transmission step-by-step across Mesopotamia, Egypt, Greece, Rome, Persia, Islam, Latin Renaissance, and modern occult revival.',
     picks: [
-      'phase-3-004-1-enoch', 'phase-4-081-mashafa-henok-geez-1-enoch',
-      'kokabiel', 'baraqel', 'kasdeja', 'penemue', 'semyaza',
-      'watchers-and-fallen-angels',
+      'phase-1-019-enuma-anu-enlil', 'berossus',
+      'hermes-trismegistus-pseudepigraphic-author', 'firmicus-maternus',
+      'al-kindi', 'event-arabic-harranian-hermetica-c800-1000',
+      'cornelius-agrippa', 'john-dee',
+      'helena-blavatsky', 'aleister-crowley',
+      'fernando-pessoa', 'manuel-j-gandra',
     ],
   },
+  // ── Flood Narratives ──────────────────────────────────────────────
   {
-    id: 'demiurge-cross-tradition',
-    name: 'Demiurge Cross-Tradition',
-    headline: 'The demiurge concept from Plato\'s Timaeus through Gnostic appropriation (Valentinus, the Apocryphon of John) to Marcion\'s anti-cosmic canon — the principal Platonic philosophy → 2nd-century Christianity transmission edge.',
+    id: 'cross-tradition-flood',
+    category: 'flood',
+    name: 'Cross-Tradition Flood',
+    headline: 'The flood narrative across nine Old- and New-World traditions, with the 1872 George Smith decipherment as the modern reception node that triggered the entire comparative-religion field.',
     picks: [
-      'plato', 'phase-3-022-plato-timaeus-critias-atlantis',
-      'valentinus', 'phase-4-002-apocryphon-of-john', 'marcion-of-sinope',
-      'demiurge-gnostic', 'demiurge-platonic', 'demiurge',
-    ],
-  },
-  {
-    id: 'greco-buddhist',
-    name: 'Greco-Buddhist Wedge',
-    headline: 'The Hellenistic encounter with Buddhism: Alexander\'s campaigns, Aśoka\'s 3rd-c.-BCE Dhamma missions, Menander I, the Milindapañha, and the Kanishka-era iconographic synthesis that gave us the first images of the Buddha.',
-    picks: [
-      'asoka-maurya', 'menander-i-soter', 'kanishka',
-      'phase-3-029-milindapanha', 'phase-3-030-asokan-edicts',
-      'event-asokan-dhamma-missions-c-250-bce', 'tradition-greco-buddhism',
-    ],
-  },
-  {
-    id: 'aristotle-avicenna-aquinas',
-    name: 'Aristotle → Avicenna → Aquinas',
-    headline: 'The 600-year Aristotelian transmission through the Islamic Golden Age (al-Farabi, Avicenna, Averroes) into 13th-century Latin scholastic synthesis under Aquinas — the philosophical spine of medieval Christian and Islamic intellectual life.',
-    picks: [
-      'aristotle', 'phase-3-003-aristotle-metaphysics',
-      'al-farabi', 'ibn-sina', 'phase-5-044-ibn-sina-kitab-al-shifa',
-      'ibn-rushd', 'thomas-aquinas', 'phase-5-024-aquinas-summa-theologiae',
-    ],
-  },
-  {
-    id: 'pyramid-investigation',
-    name: 'Pyramid Investigation — Open Questions',
-    headline: 'Every genuinely unsolved mystery inside the Great Pyramid and Giza — the 2017 Big Void above the Grand Gallery (muon tomography), the sealed Queen\'s Chamber shaft doors (behind which nothing has ever been directly observed), the Sphinx water-erosion hypothesis (Schoch 1992 — a credentialed geological challenge never fully answered), and the Orion shaft alignments (accepted by mainstream Egyptology; their theological meaning still contested). Cross-tradition comparison: Egyptian resurrection-machine theology and the independent Maya death-cosmogram at Palenque. Scholarly anchors: Petrie (measurement), Bauval (stellar theology), Schoch (geology).',
-    picks: [
-      'great-pyramid-of-khufu',
-      'kings-chamber-great-pyramid', 'queens-chamber-great-pyramid',
-      'subterranean-chamber-great-pyramid', 'sphinx-of-giza',
-      'theme-hall-of-records-hypothesis', 'theme-orion-correlation-theory',
-      'theme-pyramid-as-resurrection-machine',
-      'flinders-petrie', 'robert-bauval', 'robert-schoch',
-      'temple-of-inscriptions-palenque',
-      'step-pyramid-djoser-saqqara',
-    ],
-  },
-];
-
-// Active research investigations — high-value cross-tradition threads being tracked.
-// Each entry has: id, name, flag ('alert'|null), status, opened, headline, threads[], seeds[].
-// threads[]: { label, note, tier } where tier is 1|2|3|'parallel'.
-// CONVENTION (2026-05-15): any cross-tradition connection that encodes a direct
-// documented transmission OR a structural parallel strong enough to anchor new vault
-// nodes should be flagged 'alert'. Alert items surface a badge on the trigger button.
-const INVESTIGATIONS = [
-  {
-    id: 'pyramid-open-questions',
-    name: 'Pyramids — Open Questions',
-    flag: 'alert',
-    status: 'active',
-    opened: '2026-05-15',
-    headline: 'Three genuinely unsolved problems inside the most-studied monument in the world: (1) the 2017 Nature muon-tomography discovery of a 30m+ void above the Grand Gallery — never excavated; (2) the sealed Queen\'s Chamber second shaft door — never reached, with red ochre symbols behind the first door whose meaning is disputed; (3) Schoch\'s water-erosion geology on the Sphinx enclosure — presented at the Geological Society of America in 1992, technically unrefuted, archaeologically inconvenient. Plus the deepest cross-tradition parallel in the vault: Egyptian and Maya pyramid theologies are structurally identical despite zero contact.',
-    threads: [
-      { label: 'Big Void above Grand Gallery — never excavated', note: 'ScanPyramids muon tomography (Morishima et al., Nature 2017): 30m+ void above the Grand Gallery. Unknown purpose. Muon imaging cannot reveal contents. No physical access since discovery. Proves the pyramid interior is not fully mapped.', tier: 1 },
-      { label: 'Sealed Queen\'s Chamber shaft doors — second door not penetrated', note: 'Gantenbrink (1993) Upuaut-2 found limestone door at 65m; 2002 Pyramid Rover drilled through → second door; 2011 Djedi fiber-optic: red ochre symbols + copper handle remnants behind first door. Second door never opened. Contents behind it: unknown.', tier: 1 },
-      { label: 'Schoch water-erosion hypothesis — geologically unresolved', note: 'Schoch (Boston U, Geological Society of America 1992): Sphinx enclosure vertical fissuring = precipitation weathering pattern, last possible c. 7000–5000 BCE. Egyptologist counter: groundwater + differential limestone strata. The geological argument has never been fully refuted — only responded to. An unresolved multidisciplinary dispute.', tier: 2 },
-      { label: 'Empty King\'s Chamber coffer — robbed or never used?', note: 'Coffer empty at first modern opening (Al-Ma\'mun, 9th c. CE). No mummy, no lid, no inscription. Mainstream: ancient robbery. Alternative (Alford 2003): never intended for burial — the pyramid is a transformation device not a tomb. The Pyramid Texts\' language of royal \'becoming\' supports a non-burial reading but does not exclude it.', tier: 2 },
-      { label: 'Orion shaft alignments — Tier 1 accepted; Giza ground-plan — disputed', note: 'Trimble (1964) + Bauval (1994): King\'s Chamber south shaft → Al Nitak at lower culmination ~2500 BCE. Mainstream Egyptology accepts this alignment. Extension to three-pyramid = three Orion Belt stars (Bauval): statistically contested; four Giza pyramids exist; offset direction approximately right but not precisely calculable as intentional.', tier: 2 },
-      { label: 'Pyramid Texts theology confirms shaft alignment purpose', note: 'Pyramid Texts (Unas, Saqqara ~2375 BCE) — 200 years after Giza but encoding the same theology: "O King… you have not gone away dead, you have gone away alive… you are the one who will reach the height of heaven, like Orion." Independent Tier-1 textual confirmation that the Osiris/Orion stellar ascent was the theological purpose of the pyramid shafts.', tier: 1 },
-      { label: 'Construction method — Houdin internal spiral ramp + Wadi el-Jarf papyri', note: 'Houdin (2007): external ramp lower 2/3, internal helical ramp upper portion — supported by microgravimetry density anomalies. Wadi el-Jarf papyri (2013, oldest papyri in world): record official Merer delivering Tura limestone to Giza by boat ~2560 BCE — direct construction documentation. Neither the ramp method nor the internal layout is fully resolved.', tier: 2 },
-      { label: 'Step Pyramid underground complex — 5.7km tunnels + blue faience chambers', note: 'Djoser\'s Step Pyramid (Saqqara ~2650 BCE): 5.7km of subterranean galleries, blue faience tile chambers imitating reed-mat palace architecture, 40,000+ stone vessels. Imhotep — the architect — later deified as god of medicine, identified with Asclepius by Greeks. Imhotep → Asclepius → Hermes Trismegistus is a documented deification chain entering the Hermetic tradition.', tier: 1 },
-      { label: 'Egypt ↔ Maya pyramid theology — structural identity without contact', note: 'Temple of Inscriptions (Palenque 683 CE): 9-level pyramid = 9 underworld levels (Xibalba); sarcophagus wider than entrance (placed during construction — identical to Khufu\'s coffer); hidden descending staircase; sarcophagus lid = descent-and-resurrection cosmogram; psychoduct for spirit communication. Same spatial theology as Egyptian pyramid, zero contact possible.', tier: 'parallel' },
-      { label: 'Hall of Records — Theosophical fabrication vs. real seismic anomalies', note: 'Cayce (1920s–40s): archive beneath Sphinx right paw, due ~1998. Schor Foundation seismic surveys (1990s): anomalies detected beneath the Sphinx. Hawass revoked permits before excavation. Cavities are real (confirmed by multiple surveys); their nature is not. The genuine unexplored spaces (Big Void, sealed doors, sub-Sphinx) lend apparent credibility to the fabricated prediction.', tier: 3 },
-    ],
-    seeds: [
-      'great-pyramid-of-khufu',
-      'grand-gallery-great-pyramid', 'queens-chamber-great-pyramid',
-      'kings-chamber-great-pyramid', 'subterranean-chamber-great-pyramid',
-      'sphinx-of-giza',
-      'theme-pyramid-as-resurrection-machine', 'theme-orion-correlation-theory',
-      'theme-hall-of-records-hypothesis',
-      'P1-002-pyramid-texts',
-      'phase-1-035-wadi-el-jarf-papyri',
-      'robert-schoch', 'robert-bauval', 'flinders-petrie',
-      'hemiunu', 'imhotep',
-      'tradition-hermeticism',
-      'temple-of-inscriptions-palenque',
-    ],
-  },
-  {
-    id: 'consciousness-temple',
-    name: 'Consciousness Temple',
-    flag: 'alert',
-    status: 'active',
-    opened: '2026-05-15',
-    headline: 'Kashmir Shaivism (Trika) encodes the most complete non-dual consciousness framework in the vault — directly shaped Vajrayana Buddhism (Sanderson 2009), runs structurally parallel to Neoplatonism, and has a documented transmission bridge into Sufism via Lal Ded (~1320 CE). Kailasa Temple at Ellora is the physical cosmogram of the entire system. Pratyabhijñā ("recognition") is structurally identical to Valentinian gnosis.',
-    threads: [
-      { label: 'Shaivism → Vajrayana (directional)', note: 'Sanderson 2009 — skull cups, wrathful deities, mandala geometry borrowed directly from Śaiva Tantric sources', tier: 1 },
-      { label: 'Trika ↔ Neoplatonism', note: 'Both emanationist hierarchies from a single absolute; Kashmir Shaivism more monistic — Michal Just, Comparative Philosophy (San José State)', tier: 2 },
-      { label: 'Pratyabhijñā ↔ Valentinian gnosis', note: 'Recognition of inner divine nature = gnosis; parallel-form, no documented transmission', tier: 'parallel' },
-      { label: 'Lal Ded — Shaivism + Sufism', note: '~1320 CE, first Kashmiri literary corpus; simultaneously Hindu saint + Sufi mystic; launched Rishi Order (bridge node)', tier: 1 },
-      { label: 'Spanda ↔ quantum pulsation', note: 'Fritjof Capra, The Tao of Physics (1975); Nataraja statue gifted to CERN (2004)', tier: 'parallel' },
-      { label: 'Kailasa Temple ↔ Angkor Wat', note: 'Both physical Mt. Meru cosmograms; Angkor early Shaiva phase had lingam-king identification', tier: 1 },
-      { label: 'Karahan Tepe columns ↔ Shivalinga', note: '~10,000 BC Turkey — 11 upright phallus columns + masculine face above; visual cognate to lingam iconography', tier: 'parallel' },
-    ],
-    seeds: [
-      'shiva', 'rudra-shiva-early',
-      'phase-5-006-vijnana-bhairava-tantra',
-      'phase-5-014-abhinavagupta-tantraloka',
-      'phase-5-033-shiva-sutras',
-      'plotinus', 'tradition-neoplatonism',
-      'world-axis', 'bhairava',
-      'event-angkor-wat-construction-c-1113-1150',
-      'valentinus',
+      'atrahasis-flood-hero', 'utnapishtim', 'noah', 'deucalion',
+      'matsya-avatar', 'yu-the-great', 'bergelmir', 'gonggong',
+      'george-smith-cuneiformist',
+      'phase-1-006-atrahasis', 'phase-1-016-eridu-genesis-flood',
     ],
   },
 ];
@@ -4117,23 +4134,6 @@ function alchemyLoadPreset(presetId, mode) {
     STATE.alchemyPicks = valid;
   }
   STATE.alchemyActivePreset = presetId;
-  setView('alchemy');
-}
-
-// Load seeds from an investigation entry into the Alchemy canvas.
-// `mode` is 'replace' (default) or 'append'.
-function investLoadSeeds(investId, mode) {
-  const inv = INVESTIGATIONS.find(i => i.id === investId);
-  if (!inv) return;
-  const valid = inv.seeds.filter(id => NODES_BY_ID[id]);
-  if (mode === 'append') {
-    const existing = new Set(STATE.alchemyPicks || []);
-    valid.forEach(id => existing.add(id));
-    STATE.alchemyPicks = Array.from(existing);
-  } else {
-    STATE.alchemyPicks = valid;
-  }
-  STATE.alchemyActivePreset = null;
   setView('alchemy');
 }
 
@@ -4343,14 +4343,10 @@ VIEWS.alchemy = {
       ? findPresetOrTree(STATE.alchemyActivePreset)
       : null;
     const canSave = picks.length > 0;
-    const hasAlerts = INVESTIGATIONS.some(i => i.flag === 'alert');
     document.getElementById('view-controls').innerHTML = `
       <button class="btn btn-mini alch-presets-trigger" id="alch-presets-trigger" title="Load a curated cross-tradition exploration">
         <span class="alch-presets-trigger-label">${activePreset ? activePreset.name : 'Presets'}</span>
         <span class="caret">▾</span>
-      </button>
-      <button class="btn btn-mini alch-invest-trigger${hasAlerts ? ' has-alert' : ''}" id="alch-invest-trigger" title="Active research investigations — live cross-tradition threads being tracked">
-        <span>Investigations</span>${hasAlerts ? '<span class="invest-trigger-badge">!</span>' : ''}<span class="caret">▾</span>
       </button>
       <span class="alch-save-wrap" id="alch-save-wrap">
         <button class="btn btn-mini" id="btn-alch-save" ${canSave ? '' : 'disabled'} title="${canSave ? 'Save the current exploration as a custom preset' : 'Add at least one node to enable saving'}">save tree</button>
@@ -4365,7 +4361,7 @@ VIEWS.alchemy = {
     };
 
     // Toolbox + palette + dropdown injected into canvas as siblings of the SVG.
-    document.querySelectorAll('.alch-toolbox, .alch-palette, .alch-presets-dropdown, .alch-presets-pane, .alch-invest-dropdown').forEach(el => el.remove());
+    document.querySelectorAll('.alch-toolbox, .alch-palette, .alch-presets-dropdown, .alch-presets-pane').forEach(el => el.remove());
     const canvas = document.getElementById('canvas');
 
     // ---- Presets dropdown — absolutely positioned, anchored to top-right under the trigger.
@@ -4379,9 +4375,12 @@ VIEWS.alchemy = {
       const blurb = isCustom
         ? `${p.picks.length} node${p.picks.length === 1 ? '' : 's'}`
         : (p.headline ? p.headline.split('—')[0].trim() + '.' : '');
+      const tag = (!isCustom && p.category)
+        ? `<span class="alch-preset-tag ${p.category}">${PRESET_CATEGORY_LABELS[p.category] || p.category}</span>`
+        : '';
       return `
         <div class="alch-preset-card${isActive ? ' active' : ''}${isCustom ? ' custom' : ''}" data-preset="${p.id}">
-          <div class="alch-preset-name">${p.name}${isCustom ? `<button class="alch-preset-delete" data-preset="${p.id}" title="Delete this saved tree">×</button>` : ''}</div>
+          <div class="alch-preset-name">${tag}${p.name}${isCustom ? `<button class="alch-preset-delete" data-preset="${p.id}" title="Delete this saved tree">×</button>` : ''}</div>
           ${blurb ? `<div class="alch-preset-headline">${blurb}</div>` : ''}
           <div class="alch-preset-action-row" data-mode="initial">
             <button class="alch-preset-load" data-preset="${p.id}">${isActive ? 'reload' : 'load'}</button>
@@ -4405,18 +4404,26 @@ VIEWS.alchemy = {
       ` : `
         <div class="alch-presets-intro">Curated cross-tradition explorations. Click one to load — bridge nodes appear automatically between the seeded nodes via the shortest-path BFS through the vault's edges.</div>
       `}
-      <div class="alch-presets-section-label">Curated</div>
-      <div class="alch-presets-list">
-        ${ALCHEMY_PRESETS.map(p => renderPresetCard(p, false)).join('')}
+      <div class="alch-presets-body">
+        ${PRESET_CATEGORY_ORDER.map(cat => {
+          const catPresets = ALCHEMY_PRESETS.filter(p => p.category === cat.key);
+          if (!catPresets.length) return '';
+          return `
+            <div class="alch-presets-section-label">${cat.label}</div>
+            <div class="alch-presets-list">
+              ${catPresets.map(p => renderPresetCard(p, false)).join('')}
+            </div>
+          `;
+        }).join('')}
+        ${customTrees.length > 0 ? `
+          <div class="alch-presets-section-label">Your saved trees</div>
+          <div class="alch-presets-list">
+            ${customTrees.slice().reverse().map(t => renderPresetCard(t, true)).join('')}
+          </div>
+        ` : `
+          <div class="alch-presets-empty-custom">Save the current exploration as a custom tree from the toolbar →</div>
+        `}
       </div>
-      ${customTrees.length > 0 ? `
-        <div class="alch-presets-section-label">Your saved trees</div>
-        <div class="alch-presets-list">
-          ${customTrees.slice().reverse().map(t => renderPresetCard(t, true)).join('')}
-        </div>
-      ` : `
-        <div class="alch-presets-empty-custom">Save the current exploration as a custom tree from the toolbar →</div>
-      `}
     `;
     canvas.appendChild(dropdown);
 
@@ -4519,107 +4526,6 @@ VIEWS.alchemy = {
         deleteCustomTree(id);
         if (STATE.alchemyActivePreset === id) STATE.alchemyActivePreset = null;
         setView('alchemy');
-      });
-    });
-
-    // ---- Investigation dropdown — research threads with alert flags.
-    const investDropdown = document.createElement('div');
-    investDropdown.className = 'alch-invest-dropdown';
-    investDropdown.style.display = 'none';
-    const tierLabel = t => t === 'parallel' ? 'parallel-form' : `tier-${t}`;
-    investDropdown.innerHTML = `
-      <div class="alch-invest-intro">Active research threads — cross-tradition connections being actively investigated. Seeds load into Alchemy canvas.</div>
-      <div class="alch-invest-list">
-        ${INVESTIGATIONS.map(inv => `
-          <div class="alch-invest-card${inv.flag === 'alert' ? ' alert' : ''}">
-            <div class="alch-invest-header">
-              ${inv.flag === 'alert' ? '<span class="alch-invest-flag">⚠ ALERT</span>' : ''}
-              <span class="alch-invest-name">${inv.name}</span>
-              <span class="alch-invest-status">${inv.status}</span>
-            </div>
-            <div class="alch-invest-headline">${inv.headline}</div>
-            <div class="alch-invest-threads">
-              ${inv.threads.map(th => `
-                <div class="alch-invest-thread">
-                  <span class="alch-invest-thread-tier tier-${th.tier}">${tierLabel(th.tier)}</span>
-                  <span class="alch-invest-thread-label">${th.label}</span>
-                  <span class="alch-invest-thread-note">${th.note}</span>
-                </div>
-              `).join('')}
-            </div>
-            <div class="alch-invest-action-row" data-mode="initial">
-              <button class="alch-invest-load" data-invest="${inv.id}">load seeds (${inv.seeds.length})</button>
-            </div>
-            <div class="alch-invest-confirm-row" data-mode="confirm" style="display:none">
-              <span class="alch-invest-confirm-q">Replace your ${picks.length} pick${picks.length === 1 ? '' : 's'}?</span>
-              <button class="alch-invest-confirm alch-invest-append" data-invest="${inv.id}">append</button>
-              <button class="alch-invest-confirm alch-invest-replace" data-invest="${inv.id}">replace</button>
-              <button class="alch-invest-confirm alch-invest-cancel">cancel</button>
-            </div>
-          </div>
-        `).join('')}
-      </div>
-    `;
-    canvas.appendChild(investDropdown);
-
-    function positionInvestDropdown() {
-      const trigger = document.getElementById('alch-invest-trigger');
-      if (!trigger) return;
-      const rect = trigger.getBoundingClientRect();
-      const canvasRect = canvas.getBoundingClientRect();
-      investDropdown.style.top = (rect.bottom - canvasRect.top + 6) + 'px';
-      investDropdown.style.right = (canvasRect.right - rect.right) + 'px';
-      investDropdown.style.left = 'auto';
-    }
-    function openInvestDropdown() {
-      positionInvestDropdown();
-      investDropdown.style.display = '';
-      setTimeout(() => document.addEventListener('click', closeInvestOnOutside), 0);
-    }
-    function closeInvestDropdown() {
-      investDropdown.style.display = 'none';
-      document.removeEventListener('click', closeInvestOnOutside);
-    }
-    function closeInvestOnOutside(ev) {
-      if (investDropdown.contains(ev.target)) return;
-      const trigger = document.getElementById('alch-invest-trigger');
-      if (trigger && trigger.contains(ev.target)) return;
-      closeInvestDropdown();
-    }
-    const investTrigger = document.getElementById('alch-invest-trigger');
-    if (investTrigger) investTrigger.onclick = (ev) => {
-      ev.stopPropagation();
-      if (investDropdown.style.display === 'none') openInvestDropdown(); else closeInvestDropdown();
-    };
-
-    investDropdown.querySelectorAll('.alch-invest-load').forEach(btn => {
-      btn.addEventListener('click', (ev) => {
-        ev.stopPropagation();
-        const investId = btn.dataset.invest;
-        if (picks.length === 0) {
-          investLoadSeeds(investId, 'replace');
-          closeInvestDropdown();
-          return;
-        }
-        investDropdown.querySelectorAll('.alch-invest-action-row').forEach(r => r.style.display = '');
-        investDropdown.querySelectorAll('.alch-invest-confirm-row').forEach(r => r.style.display = 'none');
-        const card = btn.closest('.alch-invest-card');
-        card.querySelector('.alch-invest-action-row').style.display = 'none';
-        card.querySelector('.alch-invest-confirm-row').style.display = '';
-      });
-    });
-    investDropdown.querySelectorAll('.alch-invest-append').forEach(btn => {
-      btn.addEventListener('click', (ev) => { ev.stopPropagation(); investLoadSeeds(btn.dataset.invest, 'append'); closeInvestDropdown(); });
-    });
-    investDropdown.querySelectorAll('.alch-invest-replace').forEach(btn => {
-      btn.addEventListener('click', (ev) => { ev.stopPropagation(); investLoadSeeds(btn.dataset.invest, 'replace'); closeInvestDropdown(); });
-    });
-    investDropdown.querySelectorAll('.alch-invest-cancel').forEach(btn => {
-      btn.addEventListener('click', (ev) => {
-        ev.stopPropagation();
-        const card = btn.closest('.alch-invest-card');
-        card.querySelector('.alch-invest-confirm-row').style.display = 'none';
-        card.querySelector('.alch-invest-action-row').style.display = '';
       });
     });
 
@@ -4972,27 +4878,12 @@ function _atlasComputeFC(zoom, geoNodes, tierById) {
           dotSize: 5 + Math.sqrt(DEGREE.get(n.id) || 0) * 1.2,
           origLng: n.geo.lon,
           origLat: n.geo.lat,
-          coGroupSize: j ? j.groupSize : 1,
-          // Glyph icon by node TYPE — matches the sidebar nav vocabulary so a
-          // viewer instantly reads what each dot IS (deity vs document vs
-          // person etc.) without hovering. Rendered by atlas-node-icons layer.
-          typeIcon: _ATLAS_TYPE_ICON[n.type] || ''
+          coGroupSize: j ? j.groupSize : 1
         }
       };
     })
   };
 }
-
-// Per-node-type glyph (matches sidebar nav icons).
-const _ATLAS_TYPE_ICON = {
-  deity:     '☉',   // sun (radiating divine)
-  person:    '✎',   // pencil (author / scribe)
-  event:     '⧖',   // hourglass (passage of time)
-  document:  '▤',   // ruled rectangle (text)
-  theme:     '❖',   // diamond cluster (motif)
-  tradition: '∴',   // therefore mark (system of thought)
-  symbol:    '⚗'    // alembic (alchemy / iconography)
-};
 
 // Premium minimalist basemap style — no text labels, just land/water/borders
 // drawn in our token palette. Colors are resolved at style-build time; the
@@ -5435,42 +5326,6 @@ VIEWS.atlas = {
           console.warn('[atlas] node labels unavailable:', e.message);
         }
 
-        // Class-icon glyph centered on each dot — encodes node TYPE (deity /
-        // person / event / document / theme / tradition / symbol). Renders
-        // only from z 4 onwards so the icon has space to read; below that
-        // the colored dot alone is enough. User 2026-05-15: "yes" (icons on
-        // the atlas map to match sidebar nav vocabulary).
-        try {
-          _atlasMap.addLayer({
-            id: 'atlas-node-icons',
-            type: 'symbol',
-            source: 'atlas-nodes',
-            filter: ['!', ['has', 'point_count']],
-            minzoom: 4,
-            layout: {
-              'text-field': ['get', 'typeIcon'],
-              'text-font': ['Noto Sans Regular'],
-              'text-size': [
-                'interpolate', ['linear'], ['zoom'],
-                4, 9,
-                6, 12,
-                10, 12
-              ],
-              'text-anchor': 'center',
-              'text-allow-overlap': true,
-              'text-ignore-placement': true
-            },
-            paint: {
-              'text-color': _atlasToken('--bg-0', '#07090f'),
-              'text-halo-color': _atlasToken('--text-0', '#f1ede2'),
-              'text-halo-width': 0.6,
-              'text-opacity': 0.85
-            }
-          });
-        } catch (e) {
-          console.warn('[atlas] type-icons skipped:', e.message);
-        }
-
         // --- Hover/click on individual circles ---
         _atlasMap.on('mousemove', 'atlas-nodes-circles', (ev) => {
           if (!ev.features || !ev.features.length) return;
@@ -5492,11 +5347,10 @@ VIEWS.atlas = {
           _atlasMap.getCanvas().style.cursor = '';
           _atlasHoveredId = null;
           hideTooltip();
-          // Persistent connections (user 2026-05-15: "don't cut the connection,
-          // add connections like the Pantheon — only when we REALLY click
-          // outside we break the connection"). DO NOT clear trails here. The
-          // last-shown trails stay visible until either (a) the user hovers a
-          // different node (which replaces them) or (b) empty-click clears.
+          // Sticky-select: if a node was click-locked, restore its trails on
+          // mouseleave instead of clearing. Empty-click on the map clears the lock.
+          if (_atlasLockedId) _atlasShowHoverTrails(_atlasLockedId);
+          else _atlasHideHoverTrails();
         });
         _atlasMap.on('click', 'atlas-nodes-circles', (ev) => {
           if (!ev.features || !ev.features.length) return;

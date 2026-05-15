@@ -1165,8 +1165,12 @@ footer select:focus, footer input:focus { border-color: var(--gold-soft); }
 
 /* LISTS */
 .list-pane {
-  position: absolute; inset: 56px 24px 24px;
+  position: absolute;
+  top: 56px; bottom: 24px;
+  left: calc(var(--eff-nav-w) + 24px);
+  right: calc(var(--eff-detail-w) + 24px);
   overflow-y: auto; padding-right: 12px;
+  transition: left var(--t-layout) var(--ease), right var(--t-layout) var(--ease);
 }
 .list-pane .row {
   display: grid; grid-template-columns: 28px 1fr auto auto;
@@ -1491,106 +1495,31 @@ footer select:focus, footer input:focus { border-color: var(--gold-soft); }
 .alch-preset-replace { color: #d4a04a; border-color: rgba(212,165,90,0.45); }
 .alch-preset-cancel { color: var(--text-3); }
 
-/* ---- Investigation dropdown (sits next to Presets in the Alchemy nav) ---- */
-.alch-invest-trigger { position: relative; }
-.alch-invest-trigger.has-alert { border-color: rgba(255,140,30,0.5); color: #ff9a40; }
-.invest-trigger-badge {
-  display: inline-flex; align-items: center; justify-content: center;
-  width: 14px; height: 14px; border-radius: 50%;
-  background: rgba(255,130,30,0.85); color: #fff;
-  font-size: 8px; font-weight: 700; font-family: var(--mono);
-  margin-left: 4px; vertical-align: middle; line-height: 1;
+/* Scrollable body wrapper for grouped preset sections */
+.alch-presets-body {
+  flex: 1 1 auto; overflow-y: auto;
+  display: flex; flex-direction: column;
 }
-.alch-invest-dropdown {
-  position: absolute; z-index: 999;
-  width: 400px; max-height: 72vh; overflow-y: auto;
-  background: var(--panel-bg); backdrop-filter: var(--panel-blur);
-  border: 1px solid var(--panel-edge); border-radius: 6px;
-  box-shadow: 0 8px 32px rgba(0,0,0,0.58);
-  padding: 10px 0;
-}
-.alch-invest-intro {
-  font-family: var(--mono); font-size: 9.5px; color: var(--text-3);
-  letter-spacing: 0.04em; padding: 2px 14px 9px; line-height: 1.5;
-  border-bottom: 1px solid var(--border);
-}
-.alch-invest-list { padding: 4px 0; }
-.alch-invest-card {
-  padding: 11px 14px 9px;
-  border-bottom: 1px solid var(--border);
-}
-.alch-invest-card:last-child { border-bottom: none; }
-.alch-invest-card.alert { border-left: 2px solid rgba(255,130,30,0.65); }
-.alch-invest-header {
-  display: flex; align-items: center; gap: 7px; margin-bottom: 6px;
-}
-.alch-invest-flag {
+.alch-presets-body .alch-presets-list { padding: 4px 12px 8px; }
+.alch-presets-body .alch-presets-section-label { flex: 0 0 auto; }
+.alch-presets-body .alch-presets-empty-custom { padding: 6px 16px 12px; }
+
+/* Category badge tags on preset cards */
+.alch-preset-tag {
+  display: inline-block; vertical-align: middle;
   font-family: var(--mono); font-size: 8px; font-weight: 700;
-  color: #ff8a1e; letter-spacing: 0.08em;
-  background: rgba(255,130,30,0.12); border: 1px solid rgba(255,130,30,0.3);
-  border-radius: 2px; padding: 1px 5px; white-space: nowrap;
+  letter-spacing: .09em; text-transform: uppercase;
+  padding: 1px 5px; border-radius: 2px;
+  margin-right: 5px; margin-top: -1px;
+  opacity: .88;
 }
-.alch-invest-name {
-  font-family: var(--serif); font-size: 11.5px; font-weight: 600;
-  color: var(--text-0); letter-spacing: 0.02em;
-}
-.alch-invest-status {
-  font-family: var(--mono); font-size: 8px; color: var(--text-3);
-  letter-spacing: 0.07em; text-transform: uppercase; margin-left: auto;
-}
-.alch-invest-headline {
-  font-family: var(--sans); font-size: 9.5px; color: var(--text-2);
-  line-height: 1.55; margin-bottom: 9px;
-}
-.alch-invest-threads { margin-bottom: 9px; }
-.alch-invest-thread {
-  display: grid; grid-template-columns: 76px 1fr; gap: 3px 8px;
-  padding: 4px 0; border-top: 1px solid rgba(255,255,255,0.04);
-  align-items: start;
-}
-.alch-invest-thread:first-child { border-top: none; }
-.alch-invest-thread-tier {
-  font-family: var(--mono); font-size: 8px; letter-spacing: 0.05em;
-  text-align: right; padding-top: 1px; white-space: nowrap;
-}
-.tier-1 { color: var(--gold); }
-.tier-2 { color: rgba(212,165,90,0.65); }
-.tier-3 { color: var(--text-3); }
-.tier-parallel { color: #7ab4d0; }
-.alch-invest-thread-label {
-  font-family: var(--sans); font-size: 9.5px; color: var(--text-1); font-weight: 500;
-}
-.alch-invest-thread-note {
-  grid-column: 2; font-family: var(--mono); font-size: 8.5px;
-  color: var(--text-3); line-height: 1.45; letter-spacing: 0.02em;
-}
-.alch-invest-action-row {
-  display: flex; align-items: center; gap: 7px; padding-top: 5px;
-}
-.alch-invest-load {
-  background: var(--bg-2); border: 1px solid var(--border); border-radius: 2px;
-  color: var(--text-1); font-family: var(--mono); font-size: 9.5px;
-  padding: 3px 10px; letter-spacing: 0.05em; cursor: pointer;
-  transition: all 130ms ease;
-}
-.alch-invest-load:hover { border-color: var(--gold-soft); color: var(--gold); }
-.alch-invest-confirm-row {
-  display: flex; align-items: center; gap: 5px; flex-wrap: wrap; padding-top: 5px;
-}
-.alch-invest-confirm-q {
-  font-family: var(--mono); font-size: 9.5px; color: var(--text-2);
-  letter-spacing: 0.04em; flex: 1 1 100%; margin-bottom: 4px;
-}
-.alch-invest-confirm {
-  background: var(--bg-2); border: 1px solid var(--border); border-radius: 2px;
-  color: var(--text-1); font-family: var(--mono); font-size: 9.5px;
-  padding: 3px 9px; letter-spacing: 0.06em; cursor: pointer;
-  transition: all 130ms ease;
-}
-.alch-invest-confirm:hover { border-color: var(--gold-soft); color: var(--text-0); }
-.alch-invest-append { color: var(--gold); border-color: var(--gold-soft); }
-.alch-invest-replace { color: #d4a04a; border-color: rgba(212,165,90,0.45); }
-.alch-invest-cancel { color: var(--text-3); }
+.alch-preset-tag.egypt    { background: rgba(195,155,50,.16); color: #c8a83e; border: 1px solid rgba(195,155,50,.28); }
+.alch-preset-tag.hermetic { background: rgba(140,80,200,.16); color: #a070d8; border: 1px solid rgba(140,80,200,.26); }
+.alch-preset-tag.templar  { background: rgba(180,45,45,.16);  color: #c06262; border: 1px solid rgba(180,45,45,.26); }
+.alch-preset-tag.gnostic  { background: rgba(70,60,165,.16);  color: #8878cc; border: 1px solid rgba(70,60,165,.26); }
+.alch-preset-tag.cross    { background: rgba(40,105,175,.16); color: #6090cc; border: 1px solid rgba(40,105,175,.26); }
+.alch-preset-tag.flood    { background: rgba(30,115,145,.16); color: #50a0c2; border: 1px solid rgba(30,115,145,.26); }
+.alch-preset-tag.astrology{ background: rgba(105,65,30,.16);  color: #b07850; border: 1px solid rgba(105,65,30,.26); }
 
 /* ============================================================
    ATLAS view (opus-map-1, 2026-05-15) — MapLibre GL world map.
