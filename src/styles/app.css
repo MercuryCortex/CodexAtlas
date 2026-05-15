@@ -1628,15 +1628,17 @@ body.view-atlas main.canvas { background: var(--bg-0); }
   inset: 0;
   transform-origin: 0 0;
   pointer-events: none; /* events bubble through to .alch-board-root for pan */
+  z-index: 2; /* sits ABOVE the edges-svg so cards obscure connection lines */
 }
 .alch-board-inner > * { pointer-events: auto; }
 
-/* SVG overlay sits ABOVE the cards (z-index higher) so edge labels read.
-   Below interactivity though — pointer-events: none — clicks pass to cards. */
+/* SVG overlay sits BEHIND the cards (Unreal/Blueprint convention — lines
+   anchor on card SIDES and render under card bodies so titles/thumbnails
+   are never obscured). pointer-events: none keeps clicks falling through. */
 .alch-edges-svg {
   position: absolute; inset: 0;
   pointer-events: none;
-  z-index: 4;
+  z-index: 1;
 }
 
 /* ----- toolbar (fixed top) ----- */

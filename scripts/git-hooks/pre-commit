@@ -37,8 +37,13 @@ if [ -n "$STAGED_JS" ]; then
   FAILED=""
   for f in $STAGED_JS; do
     # Read the staged version (not the working tree — they can differ).
-    STAGED_CONTENT="$(git show ":$f")"
-    if ! echo "$STAGED_CONTENT" | "$NODE_BIN" --check - 2>/tmp/codex-precommit-err; then
+    # IMPORTANT: pipe via `git show` directly, NOT `echo "$STAGED_CONTENT"` —
+    # /bin/sh's `echo` re-interprets backslash escapes (\n, \r, \a, …) in
+    # the variable contents, corrupting any JS regex like /[^\n]/ into a
+    # literal newline before the closing `]`. This produced a false-positive
+    # "Invalid regular expression" failure the first time the hook was run
+    # against src/js/alchemy/board.js (2026-05-15, sonnet-edges-v2).
+    if ! git show ":$f" | "$NODE_BIN" --check - 2>/tmp/codex-precommit-err; then
       echo "" >&2
       echo "✗ SYNTAX ERROR in staged $f:" >&2
       sed 's/^/    /' /tmp/codex-precommit-err >&2
@@ -63,11 +68,12 @@ if [ -n "$STAGED_JS" ]; then
   # 2. Sanity check on src/js/app.js — the canaries below are load-bearing
   #    blocks that have been deleted by parallel-agent commit sweeps before.
   #    If a staged app.js LACKS them, that's almost certainly a stale-revert.
-  if echo "$STAGED_JS" | grep -q "^src/js/app.js$"; then
-    APP_STAGED="$(git show :src/js/app.js)"
+  if printf '%s\n' "$STAGED_JS" | grep -q "^src/js/app.js$"; then
     MISSING=""
     for canary in "VIEWS.astrology" "VIEWS.pantheon" "VIEWS.transmission" "window.selectNode" "VIEWS.alchemy"; do
-      if ! echo "$APP_STAGED" | grep -q "$canary"; then
+      # Pipe directly from `git show` — see note above re: /bin/sh `echo`
+      # munging backslash escapes inside JS source held in shell variables.
+      if ! git show :src/js/app.js | grep -q "$canary"; then
         MISSING="$MISSING $canary"
       fi
     done

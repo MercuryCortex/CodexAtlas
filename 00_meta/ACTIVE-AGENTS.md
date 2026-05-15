@@ -99,6 +99,9 @@ Format:
 
 | Handle | Scope tag | Owns (high level) | Started | Status |
 |---|---|---|---|---|
+| `sonnet-edges-v2` | app-code / Alchemy edge rendering | `src/js/alchemy/board.js` (drawEdges rewrite), `src/styles/app.css` (z-index), `index.html` (cache-bust) | 2026-05-15 | **FINISHED** |
+| `sonnet-decanic-clarity` | app-code / Astrology Decanic legibility | `src/js/astrology/decanic.js` (planet glyphs in sectors, sign-name ribbon, tooltips, intro), `src/styles/app.css` (decanic clarity classes), `index.html` (cache-bust → `20260515-decanic-clarity`) | 2026-05-15 | **FINISHED** |
+| `sonnet-now-events-1` | app-code / Astrology Now mode — parallel events timeline | `src/js/astrology/now.js` (second SVG strip below zodiac with vault events plotted on a year axis ±N years around scrubber), `src/styles/app.css` (events-strip classes), `index.html` (cache-bust → `20260515-now-events`) | 2026-05-15 | **in-flight** |
 | `sonnet-james-girard-1` | content / William James + Girard/scapegoat upgrades | `william-james` (NEW), `phase-7-041-varieties-of-religious-experience` (NEW), `rene-girard` (upgrade), `scapegoat-mechanism` (upgrade) | 2026-05-15 | **FINISHED** |
 | `sonnet-3rd-century-1` | content / 3rd-Century Collision Zone node + Investigation preset | `third-century-collision-zone` (NEW theme) + Investigation preset `third-century-collision` | 2026-05-15 | **FINISHED** |
 | `sonnet-korean-1` | content / Korean religious wedge | `tradition-donghak` (NEW), `event-donghak-peasant-revolution-1894` (NEW), `choe-je-u` (NEW), `tangun` (upgrade) | 2026-05-15 | **FINISHED** |
@@ -115,6 +118,44 @@ Format:
 | `sonnet-kabbalah-synthesis-1` | content / Symbol fixes + Kabbalah/Logos/Divine-Feminine synthesis | 6 symbol fixes + theme-axial-age (NEW) + 6 stub→full upgrades (logos-cosmic-reason, divine-feminine, tikkun-olam, philo-of-alexandria, tradition-kabbalah, moses-de-leon) | 2026-05-15 | **FINISHED** e8306e0+268e1da |
 | `sonnet-infra-1` | data-integrity / YAML refs sync + Lotus Sutra dedup + orphan wiring | 10 persons refs-synced, phase-4-091 deleted (merged into phase-4-061), 8 orphan nodes wired (stribog/simeon/priscillian/cassiodorus/alcuin/dove/alpha-omega/fleur-de-lis) | 2026-05-15 | **FINISHED** b0f768a+8b2b7f2 |
 | `sonnet-neoplatonics-1` | content / late-antique Neoplatonic spine | `proclus` (upgrade stub→full), `pseudo-dionysius-areopagite` (upgrade), `boethius` (upgrade), `phase-4-100-celestial-hierarchy` (NEW doc) | 2026-05-15 | **FINISHED** |
+
+---
+
+## sonnet-edges-v2 — app-code / Alchemy edge rendering — started 2026-05-15 — **FINISHED 2026-05-15**
+- Owning: `src/js/alchemy/board.js` (rewrote `drawEdges()`), `src/styles/app.css` (z-index on `.alch-edges-svg` + `.alch-board-inner`), `index.html` (cache-bust bump → `20260515-edges-v2`), `scripts/git-hooks/pre-commit` (latent bug-fix: pipe via `git show` instead of `echo "$STAGED"` — /bin/sh's `echo` was re-interpreting `\n` escapes inside JS regex literals and falsely failing the syntax check the first time the hook ran against a file using `/[^\n]/`)
+- Goal: Connection lines on Alchemy pinboard (a) render BEHIND cards, not over them; (b) anchor at card side-edges with Unreal-Blueprint-style cubic-bezier curves rather than passing through card centers.
+- Status: finished
+- Delivered:
+  - **`src/styles/app.css`** — `.alch-board-inner` gains `z-index: 2`; `.alch-edges-svg` dropped from `z-index: 4` to `z-index: 1`. Cards now fully obscure connection lines passing behind them. Comment updated to record the Unreal/Blueprint convention.
+  - **`src/js/alchemy/board.js`** — `drawEdges()` rewritten. Anchor algorithm: per edge, compare card-A and card-B centers; if `|dx| >= halfW` route horizontally (exit right-side of left card, enter left-side of right card), else route vertically (exit bottom of top card, enter top of bottom card). Cubic-Bezier control points pulled along the exit axis by `max(40, |delta| * 0.5)` px — matches Unreal Blueprint / Figma / n8n curve shape. Edge label positioned at the true bezier midpoint via `P(0.5) = 0.125 P0 + 0.375 C1 + 0.375 C2 + 0.125 P3` so it sits on the curve rather than at a straight-line midpoint.
+  - **`index.html`** — all 10 app-code `?v=20260515-restore-1` cache-bust tokens swapped to `?v=20260515-edges-v2` (CSS link + 8 JS scripts; maplibre vendor and `data.js` timestamp left untouched).
+- Verification: `node --check src/js/alchemy/board.js` exits 0; `curl http://localhost:8742/src/js/alchemy/board.js?v=test` returns 200. Browser-preview screenshot/console tools were denied so the user must eyeball the rendering — the Map view and other tabs are untouched.
+- Last edit: `00_meta/ACTIVE-AGENTS.md`
+
+---
+
+## sonnet-now-events-1 — app-code / Astrology Now mode — parallel events timeline — started 2026-05-15
+- Owning: `src/js/astrology/now.js` (events strip below zodiac strip), `src/styles/app.css` (events-strip classes, appended to Now section), `index.html` (cache-bust → `20260515-now-events`)
+- Goal: When the user scrubs in Now mode, plot vault events with `type === 'event'` and numeric `date_earliest` on a SECOND strip directly below the zodiac strip, with year axis ±N years around the scrubber date. Per John's quote: "another timeline in parallel appears WITH EVENTS from the timeline so we can check the parallel between astros and events." Range buttons ±50/±100/±200/±500y, default ±200y. Dots clickable → `selectNode`; hover → `#tooltip`.
+- Status: in-flight
+- Last edit: `00_meta/ACTIVE-AGENTS.md`
+
+---
+
+## sonnet-decanic-clarity — app-code / Astrology Decanic legibility — started 2026-05-15 — **FINISHED 2026-05-15**
+- Owning: `src/js/astrology/decanic.js`, `src/styles/app.css` (decanic clarity classes only — additive, no existing-class rewrites), `index.html` (cache-bust → `20260515-decanic-clarity`)
+- Goal: Make the Decanic view self-explanatory (John: "decanic dont understand, i see a pie with numbers inside? have no clue the use or how to read"). Layer clarity onto existing renderer — planet glyphs in sectors, sign-name ribbon, hover tooltip, rewritten intro/help block, one-line "what is this decan?" lead in side panel. No schema or architecture changes.
+- Status: finished
+- Delivered:
+  - **Planet glyphs in every sector** — each decan now carries the Chaldean face-ruler Unicode glyph (sun/moon/mercury/venus/mars/jupiter/saturn) at the outer-ring radius, white-on-color with text-shadow + dark stroke for high contrast on every palette tone. Sector colour already encoded the ruler; the glyph makes it readable without consulting the legend. Small 1–36 number moved to the inner radius so it doesn't compete.
+  - **Sign-name ribbon** — thin annular band between the wheel and the outer sign-glyphs, split into 12 wedges. Each carries the sign name + degree span (e.g. "Aries · 0°–30°") flowed along a curved `<path>` via SVG `textPath` so it reads tangentially. Auto-flips orientation across the top/bottom hemisphere so the text always reads upright. Anchors the wheel to the tropical zodiac.
+  - **Hover tooltip** — absolute-positioned panel inside the SVG wrap. Shows "Decan N · Aries 1", degree range, and ruler glyph+name on `mouseenter`; follows the cursor with edge-flipping; hides on `mouseleave`. Click-to-detail flow unchanged.
+  - **Rewritten side-panel intro** — title is now "Decanic Wheel". Paragraph explains what a decan is (10° × 36 = 360°, Egyptian 10-day weeks → Hellenistic), why it matters (cross-tradition Rosetta Stone). Three-bullet "How to read this view" block. Color-coded planet legend (7 swatches + glyph + name). Build stats (decan count · sources · ayanamsa) demoted to a small footer.
+  - **One-line decan lead** — above the head row when a decan is selected, generated from the JSON: e.g. "The first 10° of Aries (0°–10° tropical): Mars-ruled, anchored by the Egyptian decan **Knm / Knemu**, associated with Khnum (ram creator)." Data-driven, no per-decan hardcoding.
+  - **Face-ruler pill** added to the head row showing the glyph + planet name in the planet's own colour.
+- Files touched (and ONLY these): `src/js/astrology/decanic.js`, `src/styles/app.css` (additive `/* === DECANIC CLARITY LAYER === */` block only), `index.html` (one cache-bust line), `00_meta/ACTIVE-AGENTS.md`, `00_meta/STATUS.md`.
+- Verify: `node --check src/js/astrology/decanic.js` → OK · `python3 -c "import json; json.load(open('_assets/data/astrology-decans.json'))"` → OK · `curl http://localhost:8742/src/js/astrology/decanic.js` → serving.
+- Last edit: `00_meta/STATUS.md`
 
 ---
 

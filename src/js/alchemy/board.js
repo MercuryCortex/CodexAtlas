@@ -314,17 +314,65 @@
       if (drawnPairs.has(key)) return;
       drawnPairs.add(key);
 
-      const ax = (a.x + CARD_W / 2) * state.zoom + state.pan.x;
-      const ay = (a.y + CARD_H / 2) * state.zoom + state.pan.y;
-      const bx = (b.x + CARD_W / 2) * state.zoom + state.pan.x;
-      const by = (b.y + CARD_H / 2) * state.zoom + state.pan.y;
-      const color = edgeColor(e.type);
-      const mx = (ax + bx) / 2, my = (ay + by) / 2;
+      // ----- Unreal/Blueprint-style side-anchored cubic bezier -----
+      // Card-A and Card-B centers in screen-space (used only to decide orientation).
+      const acx = (a.x + CARD_W / 2) * state.zoom + state.pan.x;
+      const acy = (a.y + CARD_H / 2) * state.zoom + state.pan.y;
+      const bcx = (b.x + CARD_W / 2) * state.zoom + state.pan.x;
+      const bcy = (b.y + CARD_H / 2) * state.zoom + state.pan.y;
+      const cx = bcx - acx, cy = bcy - acy;
+
+      // Card edge offsets in screen-space (account for zoom).
+      const halfW = (CARD_W / 2) * state.zoom;
+      const halfH = (CARD_H / 2) * state.zoom;
+
+      // Choose exit edges: horizontal-dominant → exit left/right sides,
+      // vertical-dominant → exit top/bottom. The threshold (|dx| < CARD_W/2)
+      // routes near-vertically-stacked cards through top/bottom anchors so
+      // the curve doesn't loop back across itself.
+      const horizontalDominant = Math.abs(cx) >= halfW;
+      let ax, ay, bx, by, orientation;
+      if (horizontalDominant) {
+        orientation = 'h';
+        if (cx >= 0) {
+          // b is to the right of a → exit a-right, enter b-left
+          ax = acx + halfW; ay = acy;
+          bx = bcx - halfW; by = bcy;
+        } else {
+          // b is to the left of a → exit a-left, enter b-right
+          ax = acx - halfW; ay = acy;
+          bx = bcx + halfW; by = bcy;
+        }
+      } else {
+        orientation = 'v';
+        if (cy >= 0) {
+          // b is below a → exit a-bottom, enter b-top
+          ax = acx; ay = acy + halfH;
+          bx = bcx; by = bcy - halfH;
+        } else {
+          // b is above a → exit a-top, enter b-bottom
+          ax = acx; ay = acy - halfH;
+          bx = bcx; by = bcy + halfH;
+        }
+      }
+
+      // Cubic-Bezier control points pulled AWAY from each card along the
+      // exit-axis. This is the same shape Unreal Blueprint / Figma / n8n
+      // use for node-graph connections.
       const dx = bx - ax, dy = by - ay;
-      // Curve perpendicular to the line — gentle bow
-      const len = Math.sqrt(dx*dx + dy*dy);
-      const nx = -dy / (len || 1) * Math.min(40, len * 0.12);
-      const ny =  dx / (len || 1) * Math.min(40, len * 0.12);
+      const color = edgeColor(e.type);
+      let cax, cay, cbx, cby;
+      if (orientation === 'h') {
+        const pull = Math.max(40, Math.abs(dx) * 0.5);
+        const sgn = cx >= 0 ? 1 : -1;
+        cax = ax + sgn * pull; cay = ay;
+        cbx = bx - sgn * pull; cby = by;
+      } else {
+        const pull = Math.max(40, Math.abs(dy) * 0.5);
+        const sgn = cy >= 0 ? 1 : -1;
+        cax = ax; cay = ay + sgn * pull;
+        cbx = bx; cby = by - sgn * pull;
+      }
 
       // Determine visual state for this edge
       const hl = inHighlight(a, b);
@@ -334,7 +382,7 @@
       else            { strokeOpacity = 0.10; strokeWidth = 0.8; labelOpacity = 0.18; }
 
       const path = document.createElementNS('http://www.w3.org/2000/svg', 'path');
-      path.setAttribute('d', `M ${ax},${ay} Q ${mx + nx},${my + ny} ${bx},${by}`);
+      path.setAttribute('d', `M ${ax},${ay} C ${cax},${cay} ${cbx},${cby} ${bx},${by}`);
       path.setAttribute('stroke', color);
       path.setAttribute('stroke-width', strokeWidth);
       path.setAttribute('stroke-opacity', strokeOpacity);
@@ -343,10 +391,13 @@
       path.setAttribute('data-edge-type', e.type || 'related-to');
       edgesSvg.appendChild(path);
 
-      // Small label at midpoint
+      // Label at the cubic-bezier midpoint (t = 0.5):
+      //   P(0.5) = 0.125*P0 + 0.375*C1 + 0.375*C2 + 0.125*P3
+      const lx = 0.125 * ax + 0.375 * cax + 0.375 * cbx + 0.125 * bx;
+      const ly = 0.125 * ay + 0.375 * cay + 0.375 * cby + 0.125 * by;
       const lbl = document.createElementNS('http://www.w3.org/2000/svg', 'text');
-      lbl.setAttribute('x', mx + nx);
-      lbl.setAttribute('y', my + ny - 3);
+      lbl.setAttribute('x', lx);
+      lbl.setAttribute('y', ly - 3);
       lbl.setAttribute('text-anchor', 'middle');
       lbl.setAttribute('fill', color);
       lbl.setAttribute('font-family', 'var(--mono)');
