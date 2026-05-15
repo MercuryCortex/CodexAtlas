@@ -3817,9 +3817,11 @@ VIEWS.scripture = {
 const PRESET_CATEGORY_LABELS = {
   egypt: 'Egypt', hermetic: 'Hermetic', templar: 'Templar',
   gnostic: 'Gnostic', cross: 'Cross-Tradition', flood: 'Flood', astrology: 'Astrology',
+  lineage: 'Lineage & Secret Societies',
 };
 const PRESET_CATEGORY_ORDER = [
   { key: 'egypt',    label: 'Egypt — Investigation Series' },
+  { key: 'lineage',  label: 'Lineage & Secret Societies' },
   { key: 'cross',    label: 'Cross-Tradition' },
   { key: 'hermetic', label: 'Hermetic & Gnostic' },
   { key: 'gnostic',  label: 'Gnostic' },
@@ -3828,6 +3830,74 @@ const PRESET_CATEGORY_ORDER = [
   { key: 'flood',    label: 'Flood Narratives' },
 ];
 const ALCHEMY_PRESETS = [
+  // ── Lineage & Secret Societies ────────────────────────────────────
+  {
+    id: 'solomonic-five-traditions',
+    category: 'lineage',
+    name: 'Solomon → Five Living Traditions',
+    headline: 'One disputed king (~970 BCE) seeds five fully independent living traditions that never acknowledge their shared root: the Ethiopian Solomonic dynasty → Rastafari (Haile Selassie as Davidic messiah); Hiram Abiff legend → all Freemasonry (every lodge worldwide enacts Solomon\'s Temple ritual); Islamic Sulayman commanding the jinn (Quran 27, 34, 38); the Key of Solomon grimoire → Western ceremonial magic (Golden Dawn, Thelema, modern occultism); Wisdom Christology (\"greater than Solomon\", Mt 12:42). Five living traditions, zero mutual acknowledgment, one family figure.',
+    picks: [
+      'solomon-king', 'zerubbabel',
+      'makeda-queen-of-sheba', 'menelik-i-legendary', 'solomonic-genealogy', 'tradition-rastafari',
+      'tradition-freemasonry', 'tradition-scottish-rite-freemasonry',
+      'aleister-crowley', 'john-dee',
+      'theme-solomonic-transmission-spine',
+    ],
+  },
+  {
+    id: 'zadokite-priestly-chain',
+    category: 'lineage',
+    name: 'Zadokite Priestly Chain: 3,200 Years',
+    headline: 'Aaron → Zadok (Solomon\'s high priest, 970 BCE) → 818-year Zadokite monopoly over the Jerusalem Temple → Onias III (last legitimate Zadokite high priest, murdered 170 BCE) → Onias IV (flees to Egypt, builds the Temple of Leontopolis — a fully operational Jewish temple 40 km from Alexandria for 220 years) → Dead Sea Scrolls community (Zadokites who refused the Hasmonean usurpation, identified themselves as the Sons of Zadok). The same family that creates the Sadducees, Pharisees, and Essenes — every Jewish sect of Jesus\'s time is a response to the Zadokite crisis. Modern endpoint: the Cohen Modal Haplotype — genetics confirm a shared Y-chromosome ancestor ~3,000 years ago in Kohanim across all Jewish communities.',
+    picks: [
+      'zadok-priest', 'solomon-king',
+      'onias-iii', 'onias-iv',
+      'event-temple-leontopolis-foundation-c150bce',
+      'tradition-hasmonean-dynasty', 'antiochus-iv-epiphanes',
+      'herod-the-great',
+      'event-destruction-of-second-temple-70',
+      'theme-aaronide-priestly-continuity',
+    ],
+  },
+  {
+    id: 'sinclair-ramsay-scottish-rite',
+    category: 'lineage',
+    name: 'Sinclair → Ramsay → Scottish Rite',
+    headline: 'The documented family chain that created modern Freemasonry\'s most elaborate branch: Henri de Saint-Clair joins the First Crusade (1096) → William Sinclair builds Rosslyn Chapel (1446–1484) with Templar crosses, 110 Green Men, and the Apprentice Pillar — a column whose murder-legend is structurally identical to the Hiram Abiff ritual, 300 years before the Third Degree was formalized → Chevalier Ramsay\'s 1737 Oration in Paris claims Freemasonry descended from Crusader knights, encoding Jacobite (Stuart) political restoration as the \"recovery of the Lost Word\" → Scottish Rite\'s 33 degrees crystallize this Crusader-Stuart-Solomonic symbolism. The \"Scottish\" label has nothing to do with Scotland operationally — it was a French Jacobite prestige marker.',
+    picks: [
+      'william-sinclair-rosslyn', 'event-rosslyn-chapel-construction-1446',
+      'chevalier-ramsay', 'event-ramsay-oration-1737',
+      'tradition-knights-templar', 'tradition-scottish-rite-freemasonry',
+      'tradition-freemasonry', 'theme-sacred-bloodline-claim',
+    ],
+  },
+  {
+    id: 'prague-occult-court',
+    category: 'lineage',
+    name: 'Prague 1583–1612: Three Traditions, One Court',
+    headline: 'Rudolf II Habsburg moves his court to Prague and creates the densest occult-scientific nexus in European history. Simultaneously in one city: John Dee + Edward Kelley working Enochian angel-communication; the Maharal of Prague (Rabbi Judah Loew) developing Kabbalistic philosophy and the Golem legend; Tycho Brahe as Imperial Mathematician, whose 20 years of naked-eye observation data → Kepler\'s laws → Newtonian physics. Three independent traditions all probing the hidden structure of reality — angelic language, Hebrew letter-animation, empirical astronomy — none in dialogue with each other. The Rosicrucian manifestos (1614–1616) are published immediately after Rudolf\'s fall, as if the dream needed a myth now that the patron was gone.',
+    picks: [
+      'rudolf-ii-habsburg', 'event-prague-occult-court-1576-1612',
+      'john-dee', 'edward-kelley',
+      'rabbi-judah-loew', 'tycho-brahe',
+      'tradition-rosicrucianism', 'giordano-bruno',
+      'tradition-hermeticism',
+    ],
+  },
+  {
+    id: 'sacred-bloodline-cross-tradition',
+    category: 'lineage',
+    name: 'Sacred Bloodline: The Cross-Tradition Pattern',
+    headline: 'From the Sumerian King List (~2100 BCE: \"kingship descended from heaven\") through Egyptian pharaonic divinity to the Davidic covenant, the Aaronide-Zadokite priestly monopoly, the Shia Imamate (Ahl al-Bayt — ~200 million living adherents today), and the Ismaili Imamate (Aga Khan as living 49th Imam): the claim that biology transmits divine authority is the most persistent cross-tradition institutional mechanism in world religion. Endpoint: the Merovingian Holy Blood myth (1982 *Holy Blood, Holy Grail* — documented fabrication by Pierre Plantard) proves the mechanism is so powerful it can be manufactured and become culturally operative even after exposure.',
+    picks: [
+      'solomon-king', 'zadok-priest', 'zerubbabel',
+      'tradition-hasmonean-dynasty',
+      'divine-kingship',
+      'tradition-ismailism',
+      'theme-sacred-bloodline-claim', 'theme-aaronide-priestly-continuity',
+      'solomonic-genealogy',
+    ],
+  },
   // ── Egypt — Investigation Series ──────────────────────────────────
   {
     id: 'giza-theology-khafres-machine',
@@ -4080,6 +4150,76 @@ const ALCHEMY_PRESETS = [
 // parallel strong enough to anchor new vault nodes. Alert items badge the trigger button.
 // threads[]: { label, note, tier } — tier is 1|2|3|'parallel'
 const INVESTIGATIONS = [
+  {
+    id: 'solomonic-spine-five-traditions',
+    name: 'Solomonic Spine — Five Living Traditions',
+    flag: 'alert',
+    status: 'active',
+    opened: '2026-05-15',
+    headline: 'Solomon (~970 BCE) is the vault\'s highest cross-tradition multiplier: one family figure seeds five fully independent living traditions with no mutual acknowledgment. The Hiram Abiff legend makes Solomon\'s Temple the structural core of ALL Freemasonry worldwide. The Ethiopian Solomonic dynasty runs unbroken to Haile Selassie (1974) → Rastafari theology (living, global). Islamic Sulayman commands the jinn (Quran 27, 34, 38) → the grimoire tradition (Key of Solomon, Goetia) → Golden Dawn → Thelema → modern occultism. Wisdom Christology (Mt 12:42) makes Solomon the foil that defines Jesus. The Zerubbabel figure also appears in the Royal Arch Masonic degree — the same post-exile Davidic prince who carries the biblical genealogy through the Babylonian exile appears in Masonic ritual as the excavator of the lost Temple foundation.',
+    threads: [
+      { label: 'Hiram Abiff → ALL Freemasonry', note: 'Every Masonic lodge worldwide (regardless of rite) enacts the Third Degree death-and-raising of Hiram Abiff — Solomon\'s Temple builder murdered for his secret. The Apprentice Pillar at Rosslyn Chapel (1446–1484) tells the same story in stone, 300 years before the Third Degree was formalized. Documented in Stevenson (1988).', tier: 1 },
+      { label: 'Ethiopian Solomonic → Rastafari', note: 'Kebra Nagast (1314 CE): Solomon + Queen of Sheba → Menelik I → Ethiopian imperial line → Haile Selassie (1930–1974, constitutionally encoded Davidic descent) → Rastafari theology. A 3,000-year genealogical claim still alive in a global religious movement. Fully documented.', tier: 1 },
+      { label: 'Sulayman → Key of Solomon → Western magic', note: 'Quranic Sulayman commanding jinn (7th c. CE) → Arabic grimoire tradition → Clavicula Salomonis (compiled c. 14th–17th c.) → Golden Dawn, Thelema, modern Wicca. The Key of Solomon is the operating manual for all Western ceremonial magic. Torijano (2002) Tier-1.', tier: 1 },
+      { label: 'Zerubbabel in the Royal Arch', note: 'Zerubbabel (post-exile Davidic governor, ~538 BCE) appears in two independent traditions: (1) Matt 1 + Luke 3 genealogies as the link carrying Davidic lineage through the Babylonian exile, (2) the Masonic Royal Arch degree where he leads the excavation of the Temple foundation and recovery of the lost word. Same figure, zero acknowledged connection.', tier: 2 },
+      { label: 'Wisdom Christology (Mt 12:42)', note: '"Something greater than Solomon is here" — the New Testament uses Solomon as the paradigmatic Wisdom-bearer whose texts (Proverbs, Ecclesiastes, Wisdom of Solomon) become the raw material for identifying Jesus as personified Sophia. The Solomonic attribution is the mechanism. Documented in Hahn (2008).', tier: 1 },
+      { label: 'Cohen Modal Haplotype — genetic endpoint', note: 'The priestly chain (Aaron → Zadok → Kohanim) running parallel to the kingly chain (David → Solomon → Zerubbabel) has a modern genetic endpoint: 45–56% of self-identified Kohanim share a Y-chromosome ancestor ~3,000 years ago (Skorecki 1997, Thomas 1998, Nature). The only case in world religion where a hereditary religious claim has independent genetic corroboration.', tier: 1 },
+    ],
+    seeds: [
+      'solomon-king', 'zerubbabel', 'zadok-priest',
+      'makeda-queen-of-sheba', 'menelik-i-legendary', 'tradition-rastafari',
+      'tradition-freemasonry', 'tradition-scottish-rite-freemasonry',
+      'william-sinclair-rosslyn', 'event-rosslyn-chapel-construction-1446',
+      'aleister-crowley', 'john-dee',
+      'theme-solomonic-transmission-spine', 'solomonic-genealogy',
+    ],
+  },
+  {
+    id: 'zadokite-rupture',
+    name: 'The Zadokite Rupture — Priesthood That Creates Christianity\'s Context',
+    flag: 'alert',
+    status: 'active',
+    opened: '2026-05-15',
+    headline: 'The 152 BCE Hasmonean seizure of the Jerusalem high priesthood — by a family that was neither Davidic nor Zadokite — is the single most consequential institutional rupture in Second Temple Judaism. It directly generates every major Jewish sect of Jesus\'s time: Essenes (Zadokite remnant who fled to the desert → Dead Sea Scrolls), Sadducees (priestly aristocracy who accommodated the usurpers — named after Zadok), Pharisees (non-priestly scholars who relocated authority from Temple to Torah, bypassing the Zadokite monopoly). Jesus operates in the rubble of this crisis. The Oniad priestly line, expelled from Jerusalem, builds a rival Jewish Temple at Leontopolis in Egypt — 40 km from Alexandria, operating for 220 years alongside the Alexandrian milieu that produces the Septuagint, Philo, and the proto-Hermetic synthesis.',
+    threads: [
+      { label: 'Hasmonean seizure → three-way sectarian split', note: 'Jonathan Maccabee takes the high priesthood (152 BCE) despite being non-Zadokite. This single act produces: Essenes (Zadokite protest → Qumran), Sadducees (accommodation → Temple establishment), Pharisees (Torah-alternative to priestly monopoly). All three are direct institutional responses. Jesus encounters all three. Documented in Sanders (1992), Davies & Finkelstein (1989).', tier: 1 },
+      { label: 'Onias IV → Temple of Leontopolis near Alexandria', note: 'Son of the last legitimate Zadokite high priest (murdered 170 BCE) flees to Egypt, builds a Jewish temple at Leontopolis (~150 BCE). Operates 220 years until Roman closure (73 CE) — same generation as Jerusalem\'s destruction (70 CE). Both Zadokite-Temple institutions ended by Rome within 3 years. The temple\'s proximity to Alexandria raises the question of Oniad-Alexandrian intellectual contact. Josephus primary source; Hayward (1982) Tier-1.', tier: 1 },
+      { label: 'Dead Sea Scrolls community as Zadokite remnant', note: 'Community Rule (1QS) and Damascus Document (CD) open with appeals to the Sons of Zadok as legitimate priestly authorities. The community understands itself as the true Israel maintaining Zadokite purity until the final battle and Temple restoration. Cross, Vermes, VanderKam support the Zadokite-remnant identification. The scrolls are therefore not just Jewish literature — they\'re the institutional residue of the Hasmonean rupture.', tier: 1 },
+      { label: 'Sadducees named after Zadok', note: 'The Sadducees (Tsadduqim) take their name from Zadok — the priestly aristocracy who accommodated the Hasmonean usurpers. They are Zadokites who chose institutional survival over purity. Their disappearance after 70 CE (Temple-dependent) leaves the field to the Pharisees, whose successors become Rabbinic Judaism. The entire shape of post-Temple Judaism is an outcome of the 152 BCE crisis.', tier: 1 },
+      { label: 'Leontopolis-Alexandria proximity — open investigation', note: 'The Temple of Leontopolis sat ~40 km from Alexandria during the 220 years when Alexandria produced: the Septuagint, Philo\'s Jewish-Platonic synthesis, proto-Hermetic texts, early Christian Gnosticism. Whether Oniad Zadokite priests and Alexandrian Jewish intellectuals exchanged ideas is not documented — but the physical and temporal overlap makes contact nearly certain at the community level. This is an open investigative thread.', tier: 2 },
+    ],
+    seeds: [
+      'zadok-priest', 'onias-iii', 'onias-iv',
+      'event-temple-leontopolis-foundation-c150bce',
+      'tradition-hasmonean-dynasty', 'antiochus-iv-epiphanes',
+      'herod-the-great',
+      'event-destruction-of-second-temple-70',
+      'cleopatra-vii', 'ptolemy-i-soter',
+      'theme-aaronide-priestly-continuity',
+    ],
+  },
+  {
+    id: 'prague-convergence',
+    name: 'Prague Convergence: Three Traditions, One Court',
+    flag: 'alert',
+    status: 'active',
+    opened: '2026-05-15',
+    headline: 'Rudolf II Habsburg\'s Prague court (1576–1612) is the most concentrated occult-scientific nexus in European history. Simultaneously in one city: John Dee + Edward Kelley developing the Enochian angelic language system (presented to Rudolf in private audience, 1583); the Maharal of Prague (Rabbi Judah Loew ben Bezalel) developing Kabbalistic philosophy and animating the legendary Golem; Tycho Brahe as Imperial Mathematician, whose 20 years of naked-eye data at Uraniborg → Kepler\'s elliptical orbit laws → Newtonian mechanics → modern physics. Three independent traditions all probing the hidden structure of reality (angelic language, Hebrew letter-power, empirical measurement), none in dialogue. The scientific revolution runs through an occult patronage court. The Rosicrucian manifestos (1614–1616) are published in the years immediately after Rudolf\'s fall — as if the Rudolfine dream needed a myth once the patron was gone.',
+    threads: [
+      { label: 'Dee\'s Enochian + Maharal\'s Golem — parallel traditions', note: 'Dee and Kelley receive the Enochian system (divine angelic language) in sessions partly conducted in Prague (1583–84). The Maharal animates clay through Hebrew letter inscription (emet = truth on the forehead). Both are traditions of activating non-human intelligence through sacred language. Neither knew of the other. The symbolic density — Christian angel-magician and Jewish Kabbalist in the same city under the same patron — is unmatched in Western esoteric history.', tier: 2 },
+      { label: 'Brahe\'s data → Kepler\'s laws → the scientific revolution', note: 'Tycho Brahe (Imperial Mathematician, 1599–1601) brings his 20 years of Uraniborg naked-eye observations to Prague. Kepler, his assistant, inherits the data after Brahe\'s death (1601) and derives the three laws of planetary motion. The chain: Rudolf\'s occult court → empirical astronomy → modern physics. The scientific revolution\'s most important data set was gathered under an alchemist-emperor\'s patronage.', tier: 1 },
+      { label: 'Rudolf\'s court → Rosicrucianism', note: 'Frances Yates (*The Rosicrucian Enlightenment*, 1972) argues the Rosicrucian manifestos (1614–1616) are a response to the Rudolfine collapse: the hope that magic, science, and religion could coexist under an enlightened patron is expressed, after that patron\'s fall, as a secret fraternity. Michael Maier (Rudolf\'s court physician, ~1608–1611) became the most prolific Rosicrucian emblem-book author. The Prague court IS the Rosicrucian incubator.', tier: 1 },
+      { label: 'Kelley\'s imprisonment — occult patronage\'s dark side', note: 'Rudolf ennobled Kelley as a knight for his alchemical claims, then imprisoned him at Krivoklát Castle (1591) when no gold materialized. Kelley died in 1597, possibly from injuries in an escape attempt. The arc — noble enoblement → imprisonment → death — encapsulates the lethal potential of occult court patronage. Rudolf\'s investment in alchemy was not metaphorical; he expected actual gold.', tier: 1 },
+      { label: 'Giordano Bruno parallel — execution 1600', note: 'Bruno was burned in Rome on 17 February 1600 — while Brahe was arriving in Prague and Kelley was dead in Rudolf\'s dungeon. Bruno\'s pan-psychic infinite universe and memory-magic were circulating in Rudolf\'s intellectual circles during his lifetime. The contrast: Rudolf\'s Prague as (relative) shelter vs. Rome as execution site.', tier: 2 },
+    ],
+    seeds: [
+      'rudolf-ii-habsburg', 'event-prague-occult-court-1576-1612',
+      'john-dee', 'edward-kelley',
+      'rabbi-judah-loew', 'tycho-brahe',
+      'tradition-rosicrucianism', 'giordano-bruno',
+      'tradition-hermeticism', 'marsilio-ficino',
+    ],
+  },
   {
     id: 'consciousness-temple',
     name: 'Consciousness Temple',
@@ -6278,7 +6418,7 @@ VIEWS.astrology = {
     const astroNodes = DATA.nodes.filter(n => Array.isArray(n.tags) && n.tags.some(t => /^astrology/.test(t)));
     const W = astroNodes.length;
     // Live renderers (src/js/astrology/*.js). Other modes still show the stub card.
-    const liveRenderers = { spine: '_astroSpine', decanic: '_astroDecanic' };
+    const liveRenderers = { spine: '_astroSpine', decanic: '_astroDecanic', wheel: '_astroWheel' };
     const rendererKey = liveRenderers[_astrologyState.mode];
     if (rendererKey) {
       pane.classList.add('astrology-pane-live');

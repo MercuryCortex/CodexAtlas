@@ -1706,6 +1706,57 @@ body.view-atlas main.canvas { background: var(--bg-0); }
 .astro-decan-sector.selected { stroke: var(--gold); stroke-width: 2; }
 .astro-decanic-svg .astro-decanic-sign-label { letter-spacing: 0.04em; }
 
+/* ASTROLOGY · WHEEL mode — natal/event chart with tropical zodiac wheel. */
+.astro-wheel-layout {
+  position: absolute; inset: 0;
+  display: grid; grid-template-columns: 1fr 320px; gap: 0;
+}
+.astro-wheel-svg-wrap { position: relative; overflow: hidden; }
+.astro-wheel-error {
+  position: absolute; inset: 0; display: flex; align-items: center; justify-content: center;
+  color: var(--red, #c25450); font-family: var(--serif);
+}
+.astro-wheel-side {
+  border-left: 1px solid var(--border-soft); padding: 20px 22px;
+  background: rgba(8,8,12,0.2); overflow-y: auto;
+}
+.astro-wheel-side .aws-title {
+  margin: 0 0 14px; font-family: var(--serif); font-size: 16px; color: var(--gold);
+  letter-spacing: 0.04em;
+}
+.aws-controls { margin-bottom: 18px; }
+.aws-label {
+  display: inline-block; margin-right: 12px; margin-bottom: 10px;
+  font-family: var(--mono); font-size: 10px; color: var(--text-3); letter-spacing: 0.08em; text-transform: uppercase;
+}
+.aws-label input {
+  background: var(--bg-2); border: 1px solid var(--border-soft); color: var(--text-1);
+  padding: 4px 6px; font-family: var(--mono); font-size: 11px; border-radius: 3px;
+  margin-top: 3px;
+}
+.aws-presets { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 8px; }
+.aws-presets .btn-mini { font-size: 10px; padding: 3px 7px; }
+.aws-positions {
+  display: flex; flex-direction: column; gap: 4px;
+  font-family: var(--mono); font-size: 11px;
+}
+.aws-row {
+  display: grid; grid-template-columns: 22px 60px 1fr 60px 16px;
+  gap: 8px; align-items: center;
+  padding: 4px 6px; border-bottom: 1px solid var(--border-soft);
+  cursor: pointer; transition: background 120ms ease;
+}
+.aws-row:hover { background: var(--bg-2); }
+.aws-glyph { font-family: var(--serif); font-size: 16px; text-align: center; }
+.aws-name { color: var(--text-1); }
+.aws-sign { color: var(--text-2); }
+.aws-deg { color: var(--text-3); text-align: right; }
+.aws-retro { color: #d4a55a; font-size: 12px; text-align: center; }
+.aws-footer {
+  margin-top: 18px; font-family: var(--mono); font-size: 9.5px;
+  color: var(--text-3); letter-spacing: 0.1em;
+}
+
 /* Atlas pane — the outer positioning wrapper for the map. Owns position:absolute
    and the empty-state centering. MapLibre lives in the inner .atlas-map div. */
 .atlas-pane {
