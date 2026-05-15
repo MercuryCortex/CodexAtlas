@@ -602,8 +602,10 @@ function selectNode(id, opensDetail) {
   d3.selectAll('.node-circle').classed('selected', d => d && d.id === id);
 }
 window.selectNode = selectNode;
-// Expose lookup map for the card-Alchemy board (read-only consumer).
+// Expose for the card-Alchemy board (read-only data + cross-view navigation).
 window.NODES_BY_ID = NODES_BY_ID;
+window.STATE = STATE;
+window.setView = setView;
 
 // ============================================================
 // DETAIL
@@ -3135,12 +3137,13 @@ const SCRIPTURE_CORPORA = {
     ],
   },
   // ----- Dao corpus — foundational Daoist philosophical-mystical texts.
-  // Daodejing (the *Lǎozǐ*, ~6th–4th c. BCE) sets the metaphysical baseline;
-  // Zhuāngzǐ (~4th c. BCE) develops it through paradox and dream-logic. Later
-  // Daoist religious-scriptural corpora (the Daozang, Highest Clarity, Numinous
-  // Treasure, Celestial Master traditions) are not yet wired as documents. -----
+  // Daodejing (the *Lǎozǐ*, ~6th–4th c. BCE) → Zhuāngzǐ → Liezi → Huainanzi
+  // → Cantong Qi (foundational alchemy) → Baopuzi (Ge Hong, waidan + neidan)
+  // → Shangqing revelations (Lady Wei Huacun / Yang Xi automatic-writing corpus).
+  // Full Daozang (1,476 texts, Ming 1445 CE) not individually wired — represented
+  // by the Shangqing corpus as the most prestigious canonical nucleus. -----
   'tao-corpus': {
-    label: 'Dao corpus · Daoist philosophical mysticism',
+    label: 'Dao corpus · Classical Daoism to religious alchemy',
     available: true,
     sections: [
       { id: 'dao-foundational', label: 'Foundational · Daodejing (Lǎozǐ)', color: '#5a9a8f', books: [
@@ -3148,6 +3151,17 @@ const SCRIPTURE_CORPORA = {
       ]},
       { id: 'dao-inner-chapters', label: 'Inner Chapters · Zhuāngzǐ', color: '#4a857a', books: [
         { id: 'phase-2-022-zhuangzi', label: 'Zhuāngzǐ' },
+      ]},
+      { id: 'dao-classical', label: 'Classical synthesis · Liezi + Huainanzi', color: '#3d7060', books: [
+        { id: 'P4-098-liezi', label: 'Liezi' },
+        { id: 'P3-034-huainanzi', label: 'Huainanzi' },
+      ]},
+      { id: 'dao-alchemy', label: 'Daoist alchemy · Cantong Qi + Baopuzi', color: '#2d5a4a', books: [
+        { id: 'P4-096-cantong-qi', label: 'Cantong Qi (Wei Boyang)' },
+        { id: 'P4-097-baopuzi-ge-hong', label: 'Baopuzi (Ge Hong)' },
+      ]},
+      { id: 'dao-revelation', label: 'Revelation corpus · Shangqing (Supreme Clarity)', color: '#1e4436', books: [
+        { id: 'P4-099-shangqing-corpus', label: 'Shangqing Corpus (Yang Xi)' },
       ]},
     ],
   },
@@ -4423,6 +4437,7 @@ const ALCHEMY_PRESETS = [
       'tradition-buddhism',
       'xuanzang',
       'cyrus-the-great',
+      'nestorian-stele',
     ],
   },
 ];
