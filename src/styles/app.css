@@ -1009,7 +1009,7 @@ footer select:focus, footer input:focus { border-color: var(--gold-soft); }
      The per-type color (gold/red/etc.) lives in --edge-type-color (set inline by JS via
      style('--edge-type-color', st.c)) and only appears when the edge is .hot (hovered or
      selected) or revealed via filter-dim+hover. */
-  stroke: rgba(96, 116, 158, 0.55);
+  stroke: rgba(120, 140, 182, 0.72);
   transition: stroke-opacity 180ms ease, stroke-width 180ms ease, stroke 180ms ease;
 }
 .edge-line.dim    { stroke-opacity: 0.02 !important; }
@@ -1330,7 +1330,7 @@ footer select:focus, footer input:focus { border-color: var(--gold-soft); }
 .alch-link {
   /* Quiet slate-blue default — matches .edge-line discipline. Type color lives in
      --edge-type-color (set inline by JS); only the .hot state reveals it. */
-  stroke: rgba(96, 116, 158, 0.55);
+  stroke: rgba(120, 140, 182, 0.72);
   vector-effect: non-scaling-stroke;
   transition: stroke-opacity 180ms ease, stroke-width 180ms ease, stroke 180ms ease;
 }

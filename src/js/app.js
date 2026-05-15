@@ -3915,6 +3915,20 @@ const ALCHEMY_PRESETS = [
     ],
   },
   {
+    id: 'grail-ark-cathar-thread',
+    name: 'Grail, Ark & the Cathar Thread',
+    headline: 'The paper trail of Western sacred-vessel mythology: from the Ark of the Covenant (disappears 586 BCE; resurfaces in Ethiopian theology, Freemasonic Royal Arch degrees, and Graham Hancock) to Robert de Boron\'s 1200 CE literary invention (Grail = Last Supper cup; Joseph of Arimathea = first Grail-keeper) to Wolfram\'s Templar guardians to the Cathar-Grail identification invented by Otto Rahn in 1933 — later weaponized by Himmler\'s SS — to the Priory of Sion fabrication (1956) that became *Holy Blood, Holy Grail* (1982) and the *Da Vinci Code* (2003). Every link documented and tiered.',
+    picks: [
+      'ark-of-the-covenant',
+      'joseph-of-arimathea', 'robert-de-boron',
+      'theme-holy-grail', 'wolfram-von-eschenbach',
+      'tradition-catharism',
+      'tradition-knights-templar', 'baphomet',
+      'templar-gnostic-transmission-hypothesis',
+      'event-priory-of-sion-fabrication',
+    ],
+  },
+  {
     id: 'watchers-forbidden-knowledge',
     name: 'Watchers — Forbidden Knowledge',
     headline: 'The Enochic narrative of fallen-angel teaching — astrology, metallurgy, and magic as transgressive forbidden knowledge. The principal pre-Christian Jewish anti-astrology framing, and the doctrinal counter-pole to the integration-tradition.',
@@ -4060,14 +4074,14 @@ function alchemyLayoutPositions(nodes, picks, mode, spacing, W, H) {
       const x = leftPad + ((n.d.date_earliest - dateMin) / dateRange) * usable + offsetX;
       const band = TYPE_BANDS[n.d.type] ?? 0.5;
       const y = H * band;
-      positions.set(n.id, { x, y, fx: x, fy: y });
+      positions.set(n.id, { x, y });
     });
     // Undated nodes: stack on the far right by type-band.
     const farRightX = W - 30;
     undated.forEach((n, i) => {
       const band = TYPE_BANDS[n.d?.type] ?? 0.5;
       const y = H * band + (i % 3 - 1) * 16;
-      positions.set(n.id, { x: farRightX, y, fx: farRightX, fy: y });
+      positions.set(n.id, { x: farRightX, y });
     });
     return positions;
   }
@@ -4086,7 +4100,7 @@ function alchemyLayoutPositions(nodes, picks, mode, spacing, W, H) {
       const angle = (i / sorted.length) * Math.PI * 2 - Math.PI / 2;
       const x = cx + r * Math.cos(angle);
       const y = cy + r * Math.sin(angle);
-      positions.set(n.id, { x, y, fx: x, fy: y });
+      positions.set(n.id, { x, y });
     });
     return positions;
   }
@@ -4102,20 +4116,20 @@ function alchemyLayoutPositions(nodes, picks, mode, spacing, W, H) {
 
     if (pickNodes.length === 1) {
       // Single pick: place at center.
-      positions.set(pickNodes[0].id, { x: cx, y: cy, fx: cx, fy: cy });
+      positions.set(pickNodes[0].id, { x: cx, y: cy });
     } else {
       pickNodes.forEach((n, i) => {
         const angle = (i / pickNodes.length) * Math.PI * 2 - Math.PI / 2;
         const x = cx + innerR * Math.cos(angle);
         const y = cy + innerR * Math.sin(angle);
-        positions.set(n.id, { x, y, fx: x, fy: y });
+        positions.set(n.id, { x, y });
       });
     }
     bridgeNodes.forEach((n, i) => {
       const angle = (i / Math.max(1, bridgeNodes.length)) * Math.PI * 2 - Math.PI / 2;
       const x = cx + outerR * Math.cos(angle);
       const y = cy + outerR * Math.sin(angle);
-      positions.set(n.id, { x, y, fx: x, fy: y });
+      positions.set(n.id, { x, y });
     });
     return positions;
   }
@@ -4201,8 +4215,10 @@ VIEWS.alchemy = {
     }
 
     // Compute layout positions before instantiating nodes. For 'force' this returns an
-    // empty Map and nodes get random-jittered initial positions (then the sim settles
-    // them). For other layouts, positions include fx/fy to pin nodes in their slots.
+    // empty Map and nodes get random-jittered initial positions (then the sim settles).
+    // For other layouts, positions are elastic targets: forceX/forceY pull each node
+    // toward its slot but don't hard-pin it, so connections stay springy and the
+    // collide force keeps labels from overlapping.
     // W/H already in scope from the top of render().
     const rawNodesList = Array.from(displayed.values()).map(({ node, isPick }) => ({ id: node.id, d: node, isPick }));
     const layoutPositions = alchemyLayoutPositions(rawNodesList, picks, STATE.alchemyLayout, STATE.alchemySpacing, W, H);
@@ -4212,8 +4228,7 @@ VIEWS.alchemy = {
         ...n,
         x: pos ? pos.x : cx + (Math.random() - 0.5) * 40,
         y: pos ? pos.y : cy + (Math.random() - 0.5) * 40,
-        fx: pos ? pos.fx : null,
-        fy: pos ? pos.fy : null,
+        // No fx/fy — position forces handle layout elastically.
       };
     });
     const nodeById = new Map(nodes.map(n => [n.id, n]));
@@ -4577,7 +4592,7 @@ VIEWS.alchemy = {
       .call(d3.drag()
         .on('start', (ev, d) => { if (!ev.active) sim.alphaTarget(0.3).restart(); d.fx = d.x; d.fy = d.y; })
         .on('drag',  (ev, d) => { d.fx = ev.x; d.fy = ev.y; })
-        .on('end',   (ev, d) => { if (!ev.active) sim.alphaTarget(0); /* keep fx/fy → manual lock */ }))
+        .on('end',   (ev, d) => { if (!ev.active) sim.alphaTarget(0); d.fx = null; d.fy = null; }))
       .on('click', (ev, n) => {
         ev.stopPropagation();
         if (ev.target && ev.target.classList.contains('alch-remove')) return;
@@ -4625,16 +4640,23 @@ VIEWS.alchemy = {
 
     // ---- Force simulation ----
     // Spacing factor (0.5 → 1.7) tunes link distance / repulsion / collide radius.
-    // When layout is non-force, nodes carry fx/fy pins so the sim respects the layout
-    // while still adjusting link positions naturally. We drop forceCenter for pinned
-    // layouts since nodes are already positioned away from center.
+    // For non-force layouts, forceX/forceY pull each node toward its geometric target
+    // (strength 0.25) while collide + charge keep nodes from overlapping. The result is
+    // springy connections that flex under link tension rather than rigid pinned geometry.
     const _sf = 0.5 + (STATE.alchemySpacing / 100) * 1.2;
     const _isForce = STATE.alchemyLayout === 'force';
+    // Per-node position forces for non-force layouts (targets from layoutPositions).
+    const _xForce = _isForce ? null
+      : d3.forceX(n => layoutPositions.get(n.id)?.x ?? cx).strength(0.25);
+    const _yForce = _isForce ? null
+      : d3.forceY(n => layoutPositions.get(n.id)?.y ?? cy).strength(0.25);
     const sim = d3.forceSimulation(nodes)
-      .force('link', d3.forceLink(links).id(d => d.id).distance(120 * _sf).strength(_isForce ? 0.4 : 0.05))
-      .force('charge', d3.forceManyBody().strength(_isForce ? -340 * _sf : -60))
+      .force('link', d3.forceLink(links).id(d => d.id).distance(120 * _sf).strength(_isForce ? 0.4 : 0.15))
+      .force('charge', d3.forceManyBody().strength(_isForce ? -340 * _sf : -200))
       .force('center', _isForce ? d3.forceCenter(cx, cy) : null)
-      .force('collide', d3.forceCollide().radius(n => (n.isPick ? 36 : 24) * (_isForce ? _sf : 1)).iterations(2))
+      .force('collide', d3.forceCollide().radius(n => (n.isPick ? 52 : 40) * (_isForce ? _sf : 1)).iterations(3))
+      .force('x', _xForce)
+      .force('y', _yForce)
       .on('tick', () => {
         linkSel
           .attr('x1', d => d.source.x).attr('y1', d => d.source.y)
