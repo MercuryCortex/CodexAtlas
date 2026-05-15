@@ -8,10 +8,10 @@ date-end: 400
 region-origin: "Roman East (Syria, Egypt, Roman Asia Minor)"
 regions-spread: ["Egypt", "Syria", "Asia Minor", "Italy (Rome)", "Gaul", "North Africa"]
 key-deities: ["[[the-monad-gnostic]]", "[[barbelo]]", "[[sophia-gnostic]]", "[[yaldabaoth]]", "[[demiurge-gnostic]]", "[[the-pleroma]]"]
-key-persons: ["[[valentinus]]", "[[basilides]]", "[[ptolemaeus]]", "[[heracleon]]", "[[marcion-of-sinope]]"]
+key-persons: ["[[valentinus]]", "[[basilides]]", "[[ptolemaeus-valentinian]]", "[[heracleon-valentinian]]", "[[marcion-of-sinope]]"]
 key-documents: ["[[phase-4-001-gospel-of-thomas]]", "[[phase-4-002-apocryphon-of-john]]", "[[phase-4-003-gospel-of-truth]]", "[[phase-4-004-gospel-of-philip]]", "[[phase-4-005-gospel-of-mary]]", "[[phase-4-006-hypostasis-of-the-archons]]", "[[phase-4-007-on-the-origin-of-the-world]]", "[[phase-4-008-trimorphic-protennoia]]", "[[phase-4-009-pistis-sophia]]"]
 sister-traditions: ["[[tradition-hermeticism]]", "[[tradition-manichaeism]]", "[[tradition-mandaeism]]", "[[tradition-christianity-canonical]]"]
-status: "metadata"
+status: "full"
 refs:
   - title: "Rethinking 'Gnosticism': An Argument for Dismantling a Dubious Category"
     author: "Williams, Michael Allen"
@@ -75,8 +75,58 @@ See key-documents above; supplemented by external testimony in [[phase-4-023-ire
 - **[[tradition-mandaeism|Mandaeism]] (continuous, ~100 CE to present):** the only continuously-surviving Gnostic religion, in southern Iraq / Iran / diaspora.
 - **18th–21st-c. esoteric reception:** the [[templar-gnostic-transmission-hypothesis]] constructs (post-1750) a Templar-mediated transmission of Gnostic doctrine into Western European esotericism. **Historically unrecoverable** but extremely productive as reception. Reinforced by the 1773 recovery of Ge'ez 1 Enoch, the 1785 publication of the Askew Codex (Pistis Sophia), the 1896 Berlin Codex, and the 1945 Nag Hammadi discovery, which together restore the actual textual evidence of Gnostic Christianity to scholarly and esoteric attention.
 
+## MASSIVE WIN: Gnosticism as the mirror of canonical religion
+
+The primary intellectual achievement of Gnosticism, from the perspective of Codex Atlas's investigation goals, is that it **makes the canonical tradition legible by inversion**. Every major Christian-canonical claim has a Gnostic counter-claim that reveals what is being asserted:
+
+| Canonical claim | Gnostic counter | What the polemic reveals |
+|---|---|---|
+| God created the world and it was "very good" (Gen 1:31) | The creator is ignorant; the world is a prison | At issue: is the material cosmos good or fallen? |
+| "I am God and there is no other" (Isa 45:5) | Yaldabaoth's claim; proves his ignorance of the true God | At issue: is biblical monotheism ultimate, or is the biblical God a subordinate being? |
+| Salvation by faith in Christ's resurrection | Salvation by gnosis — knowledge of one's divine origin | At issue: is human nature fallen (needing rescue) or divine (needing awakening)? |
+| Jesus "came in the flesh" (1 John 4:2) | Christ appeared to take a body but was purely spiritual (docetism) | At issue: is matter redeemable or simply escaped? |
+| The Hebrew Bible is God's revelation | The Hebrew Bible is the demiurge's propaganda | At issue: is Israel's covenant with the true God or a regional archon? |
+
+**This mirroring is the MASSIVE WIN:** Gnosticism is the best evidence we have of what early Christianity looked like from the *outside* of orthodoxy-in-formation. The heresiological polemics of Irenaeus, Tertullian, and Hippolytus — written to combat Gnosticism — preserve more detail about Gnostic theology than most Gnostic primary texts that survived. The enemy's portrait is evidence.
+
+---
+
+## The Isaiah 45:5 polemic — the sharpest edge
+
+The Sethian re-reading of Isaiah 45:5 ("I am God and there is no other" → placed in [[yaldabaoth]]'s mouth as proof of ignorance) is the single most consequential textual operation in ancient religion. It transforms the foundation of Jewish-Christian monotheism — the Deutero-Isaianic declaration of divine uniqueness — into evidence for the creator's metaphysical blindness. Every tradition that came after had to respond to this reading:
+
+- **Orthodox Christianity** (Irenaeus, *Adversus Haereses*): the demiurge of the Gnostics is the same as the Father of Christ; the creator and redeemer are not different gods
+- **Neoplatonism** (Plotinus, *Ennead* II.9): criticized the Gnostics for their arrogance in despising the material cosmos and for making the creator malevolent
+- **Manichaeism**: accepted a version of the demiurge-theology (the material world is created by the Prince of Darkness) but with two eternal principles, not one good God plus a derivative blunder
+- **Kabbalah**: never accepted the anti-Yahweh reading, but the Lurianic shevirat ha-kelim imports the structural logic (a cosmic rupture producing a broken world) without the polemic against the creator
+
+---
+
+## Edge Connections
+
+| Edge | Type | Description |
+|---|---|---|
+| → [[sophia-gnostic]] | key-figure | The fall of Sophia is the engine of the entire Gnostic cosmogony |
+| → [[yaldabaoth]] | key-figure | The demiurge is the central theological problem Gnosticism addresses |
+| → [[the-monad-gnostic]] | key-figure | The unknowable Father — the true supreme God hidden behind the creator |
+| → [[barbelo]] | key-figure | The divine Mother / First Thought — second principle of the Sethian triad |
+| → [[anthropos-myth]] | primary-instance | The Gnostic Anthrōpos (the divine Human whose image becomes Adam) = a major instance |
+| → [[tradition-hermeticism]] | sister-tradition | Shared apophatic theology, emanationism, gnosis-soteriology; non-Christian register |
+| → [[tradition-manichaeism]] | sister-tradition | Shared cosmic dualism; different metaphysics (two co-eternal principles vs. Sophia's fall) |
+| → [[tradition-neoplatonism]] | contested-neighbor | Plotinus (*Ennead* II.9) polemicizes against Gnostics; shares emanation structure but opposes anti-cosmic ethics |
+| → [[tradition-christianity-canonical]] | contested-sibling | Shared scriptures (variously); contested over creator-God identity, Jesus' body, Hebrew Bible status |
+| → [[tradition-kabbalah]] | MASSIVE-WIN | Scholem's parallel: Gnostic Pleroma-rupture ↔ Lurianic shevirat ha-kelim; the deepest structural convergence in post-biblical Judaism |
+| → [[shevirat-hakelim]] | structural-parallel | Scholem's direct argument: Valentinian kenōma and Lurianic kelipot are the same theological structure |
+| → [[demiurge-gnostic]] | key-concept | The ignorant creator is Gnosticism's defining theological move |
+| → [[phase-4-002-apocryphon-of-john]] | key-document | Primary Sethian text; the fullest Gnostic cosmogony |
+| → [[valentinus]] | key-person | Founder of the Valentinian school; most philosophically sophisticated Gnostic teacher |
+| → [[basilides]] | key-person | Alexandrian teacher; earliest named Gnostic figure |
+| → [[tradition-bogomilism]] | downstream | Medieval dualist movement with Gnostic structural features; Bulgaria/Byzantium ~940+ |
+| → [[tradition-mandaeism]] | downstream | Only continuously-surviving Gnostic religion (to the present); southern Iraq/Iran |
+
 ## Refs
-1. Williams, M.A. (1996). *Rethinking "Gnosticism"*. Princeton UP.
-2. King, K.L. (2003). *What Is Gnosticism?* Harvard UP.
-3. Jonas, H. (1958). *The Gnostic Religion*. Beacon.
-4. Pagels, E. (1979). *The Gnostic Gospels*. Random House.
+1. Williams, M.A. (1996). *Rethinking "Gnosticism"*. Princeton UP. [T1]
+2. King, K.L. (2003). *What Is Gnosticism?* Harvard UP. [T1]
+3. Jonas, H. (1958). *The Gnostic Religion*. Beacon. [T1]
+4. Pagels, E. (1979). *The Gnostic Gospels*. Random House. [T2]
+5. Pearson, B.A. (1990). *Gnosticism, Judaism, and Egyptian Christianity*. Fortress. [T1]
