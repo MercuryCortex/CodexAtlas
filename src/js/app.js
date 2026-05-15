@@ -4640,6 +4640,7 @@ let _atlasHoveredId = null;          // currently-hovered node id (debounce trai
 let _atlasClusterPopup = null;       // (legacy) cluster-list popup — replaced by spiderfy
 let _atlasSpiderActive = null;       // cluster center [lng,lat] when a spider is open, else null
 let _atlasSpiderRecentering = false; // true while map is auto-easing to center a cluster for spider
+let _atlasLockedId = null;           // node id whose trails/highlight stay visible across hover (sticky-select via click)
 let _atlasZoomHandler = null;
 let _atlasEndHandler = null;
 let _atlasResizeObs = null;
@@ -4809,7 +4810,11 @@ VIEWS.atlas = {
         center: [40, 28],
         zoom: 2.2,
         minZoom: 0.6,
-        maxZoom: 7.5,
+        // maxZoom 12 — PMTiles basemap only has z0-z7 tiles so the basemap pixelates
+        // past z7, but we want the user to keep zooming so the natural co-location
+        // spiral (~0.3° radius for a 99-doc cluster) has room to spread. Marker
+        // circles + cluster rings stay crisp (GPU-rendered vector). 2026-05-15.
+        maxZoom: 12,
         // Single-world view (no horizontal wrap). The previous `true` value
         // caused the user-reported "infinite scrolling repeating tile" — markers
         // render only in the canonical world copy, so panning into duplicates
@@ -5030,12 +5035,17 @@ VIEWS.atlas = {
           _atlasMap.getCanvas().style.cursor = '';
           _atlasHoveredId = null;
           hideTooltip();
-          _atlasHideHoverTrails();
+          // Sticky-select: if a node was click-locked, restore its trails on
+          // mouseleave instead of clearing. Empty-click on the map clears the lock.
+          if (_atlasLockedId) _atlasShowHoverTrails(_atlasLockedId);
+          else _atlasHideHoverTrails();
         });
         _atlasMap.on('click', 'atlas-nodes-circles', (ev) => {
           if (!ev.features || !ev.features.length) return;
           const id = ev.features[0].properties.id;
           selectNode(id, true);
+          _atlasLockedId = id;          // lock this selection visually
+          _atlasShowHoverTrails(id);    // keep trails visible
         });
 
         // --- Hover/click on clusters: cursor pointer, click zooms in ---
@@ -5060,17 +5070,34 @@ VIEWS.atlas = {
           // offset markers connected by leader lines back to the center. (User's
           // explicit ask 2026-05-15: "the nodes expand, even if you need to spread
           // them from the same position by X position".)
-          source.getClusterExpansionZoom(clusterId).then(targetZoom => {
-            if (targetZoom > currentZoom + 0.3 && targetZoom <= 7.5) {
-              _atlasHideSpider();
-              _atlasMap.easeTo({ center: clusterCoord, zoom: targetZoom + 0.2, duration: 500 });
-            } else {
+          // Zoom-to-fill (user's 2026-05-15 ask: "when click on the big number in
+          // gold make the zoom closer so it expands as close as possible to fill
+          // screen the nodes area"). Compute a target zoom where the natural co-
+          // location spiral (precomputed at GeoJSON-build time) for this cluster
+          // fills ~60% of the shorter viewport dimension. Spider is only invoked
+          // as a fallback if we'd hit maxZoom and still need to spread.
+          const ringCount  = Math.ceil(pointCount / 8);
+          const spiralRDeg = 0.025 + Math.max(0, ringCount - 1) * 0.030;
+          const rect       = _atlasMap.getContainer().getBoundingClientRect();
+          const targetPx   = Math.min(rect.width, rect.height) * 0.6;
+          // Mercator: pixels-per-degree at zoom z (lat axis) = 256 * 2^z / 360.
+          // 2 * R * pxPerDeg = targetPx → z = log2(targetPx * 360 / (2*R*256))
+          const naiveZ     = Math.log2((targetPx * 360) / Math.max(0.001, 2 * spiralRDeg * 256));
+          const maxZ       = _atlasMap.getMaxZoom();
+          const finalZ     = Math.min(maxZ, Math.max(currentZoom + 1, naiveZ));
+          _atlasHideSpider();
+          _atlasMap.easeTo({ center: clusterCoord, zoom: finalZ, duration: 700 });
+          // Spider fallback: if we capped at maxZoom and the spiral STILL won't
+          // separate visually (only possible for an unusually large all-coincident
+          // cluster), open the spider after the move ends.
+          if (finalZ >= maxZ - 0.01 && spiralRDeg < 0.01) {
+            _atlasMap.once('moveend', () => {
               source.getClusterLeaves(clusterId, pointCount, 0, (err, leaves) => {
                 if (err || !leaves || !leaves.length) return;
                 _atlasShowSpider(clusterCoord, leaves);
               });
-            }
-          }).catch(() => { /* MapLibre versions vary; silent fallback */ });
+            });
+          }
         });
 
         // ---- SPIDER (expanded-cluster) source + layers ----
@@ -5132,25 +5159,32 @@ VIEWS.atlas = {
           _atlasMap.getCanvas().style.cursor = '';
           _atlasHoveredId = null;
           hideTooltip();
-          _atlasHideHoverTrails();
+          // Same sticky-selection logic as on the main circle layer.
+          if (_atlasLockedId) _atlasShowHoverTrails(_atlasLockedId);
+          else _atlasHideHoverTrails();
         });
         _atlasMap.on('click', 'atlas-spider-circles', (ev) => {
           if (!ev.features || !ev.features.length) return;
           const id = ev.features[0].properties.id;
           selectNode(id, true);
-          _atlasHideSpider();
+          _atlasLockedId = id;          // lock through the spider too
+          _atlasHideSpider();           // close the spider; locked trails stay on main layer
+          _atlasShowHoverTrails(id);
         });
 
-        // Background click / zoom / drag collapses the spider.
+        // Background click (anywhere off a feature) clears EVERYTHING:
+        //   • the spider (if open)
+        //   • the sticky-selected node (clears _atlasLockedId + restores opacity)
         _atlasMap.on('click', (ev) => {
-          if (!_atlasSpiderActive) return;
-          // Ignore clicks that landed on a cluster or spider feature (those have
-          // their own handlers that fire first).
-          const onSpider = _atlasMap.queryRenderedFeatures(ev.point, {
-            layers: ['atlas-spider-circles', 'atlas-clusters']
+          const onFeature = _atlasMap.queryRenderedFeatures(ev.point, {
+            layers: ['atlas-nodes-circles', 'atlas-spider-circles', 'atlas-clusters']
           });
-          if (onSpider.length) return;
-          _atlasHideSpider();
+          if (onFeature.length) return;
+          if (_atlasSpiderActive) _atlasHideSpider();
+          if (_atlasLockedId) {
+            _atlasLockedId = null;
+            _atlasHideHoverTrails();
+          }
         });
         // Ignore the synthetic zoom/move events that fire while we're auto-recentering
         // a cluster to make room for the spider expansion (item 3 polish, 2026-05-15).
