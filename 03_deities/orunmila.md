@@ -40,7 +40,12 @@ refs:
     year: 1993
     publisher: "Indiana UP"
     tier: 2
-tags: [deity, yoruba, orisha, wisdom, divination, ifa, destiny]
+  - title: "Yoruba: Nine Centuries of African Art and Thought"
+    author: "Drewal, Henry John and Pemberton, John"
+    year: 1989
+    publisher: "Center for African Art / Harry N. Abrams"
+    tier: 1
+tags: [deity, yoruba, orisha, wisdom, divination, ifa, destiny, MASSIVE-WIN]
 ---
 
 # Òrúnmìlà
@@ -55,7 +60,23 @@ tags: [deity, yoruba, orisha, wisdom, divination, ifa, destiny]
 - **[[thoth]] / [[hermes-trismegistus]]** — *scholarly-parallel*: patron of writing/knowledge/divination/destiny.
 - **Saint Francis of Assisi** — *folk-syncretism*: Cuban Lucumí equation.
 
+## MASSIVE WIN: The Divine Scribe-of-Destiny Archetype
+
+Orunmila stands in one of the vault's most cleanly defined cross-cultural archetypes: the deity who serves as divine recorder and guardian of fate/destiny — the cosmic equivalent of a divine bureaucrat who knows what was written about every soul before birth:
+
+| Figure | Tradition | What they know | How accessed |
+|---|---|---|---|
+| Orunmila / Ifá | Yoruba | Each soul's pre-birth destiny (*ori*) | Ifá divination (256 odù) |
+| [[thoth]] | Egyptian | All divine records; Book of the Dead spells | Writing, measurement, judgment |
+| [[nabu]] | Babylonian | Tablet of Destinies; scribal arts | Cuneiform tablets; prayer |
+| [[hermes-trismegistus]] | Greco-Egyptian Hermetic | All wisdom; divine science | Hermetic revelation corpus |
+| Chitragupta | Hindu | Record of every soul's deeds at death | Consulted by Yama at judgment |
+| Suriel / Uriel | Jewish/Christian | Book of Life; cosmic records | Prophetic revelation |
+
+The convergence is precise: each tradition assigns a specific deity the role of divine record-keeper who holds information that is critical to human fate and that must be accessed through specialized ritual or revelation. In Yoruba theology, this function is democratized via the Ifá system — any person can access Orunmila's knowledge through a trained *babalawo*, making Ifá divination one of the most accessible "divine records" systems in any tradition (contrast the Egyptian scribal privilege or the Babylonian priestly monopoly). See [[thoth]], [[nabu]], [[hermes-trismegistus]], [[tradition-yoruba-ifa]], [[tradition-santeria-lucumi]], [[phase-8-007-ifa-divination-corpus]].
+
 ## Refs
-1. Abimbola, *Ifá: An Exposition of Ifá Literary Corpus* (Oxford UP Ibadan, 1976) — Tier 1.
-2. Bascom, *Sixteen Cowries* (Indiana UP, 1980) — Tier 1.
-3. Brandon, *Santería from Africa to the New World* (Indiana UP, 1993) — Tier 2.
+1. Abimbola, W. (1976). *Ifá: An Exposition of Ifá Literary Corpus*. Oxford UP (Ibadan).
+2. Bascom, W. (1980). *Sixteen Cowries: Yoruba Divination from Africa to the New World*. Indiana UP.
+3. Drewal, H.J. and Pemberton, J. (1989). *Yoruba: Nine Centuries of African Art and Thought*. Center for African Art / Harry N. Abrams.
+4. Brandon, G. (1993). *Santería from Africa to the New World*. Indiana UP.

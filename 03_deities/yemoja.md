@@ -27,12 +27,24 @@ refs:
   - title: "Mami Wata: Arts for Water Spirits in Africa and Its Diasporas"
     author: "Drewal, Henry John (ed.)"
     year: 2008
+    publisher: "UCLA Fowler Museum"
     tier: 1
   - title: "Santería: African Spirits in America"
     author: "Murphy, Joseph M."
     year: 1988
+    publisher: "Beacon Press"
     tier: 1
-tags: [yoruba, west-african, orisha, water, mother, phase-8]
+  - title: "Ifa Divination: Communication between Gods and Men in West Africa"
+    author: "Bascom, William"
+    year: 1969
+    publisher: "Indiana UP"
+    tier: 1
+  - title: "Olódùmarè: God in Yoruba Belief"
+    author: "Idowu, E. Bolaji"
+    year: 1962
+    publisher: "Longmans"
+    tier: 1
+tags: [yoruba, west-african, orisha, water, mother, phase-8, MASSIVE-WIN]
 ---
 
 # Yemọja
@@ -50,11 +62,30 @@ In one Ifá narrative, Yemọja is the mother of fourteen orishas, including Ṣ
 - **Our Lady of Regla (Virgen de Regla)** — *folk-syncretism* (Cuban Lucumí): the dark-skinned Marian patroness of Regla (the harbor town across the bay from Havana) pairs with Yemayá; both are protectors of sailors and of the harbor.
 - **Mami Wata** — *scholarly-parallel*: broader West-African and African-diasporic water-spirit complex; Mami Wata is a related but distinct figure (often associated with European-influenced mermaid iconography), and the relationship is one of family-resemblance, not identity. Ref: Drewal 2008.
 
+## MASSIVE WIN: The Great Sea-Mother Archetype
+
+Yemọja stands in a cross-cultural cluster of cosmic water-mother deities that appear independently across Mediterranean, Near Eastern, Mesopotamian, and African traditions. These represent one of the vault's most robust `parallel-form` convergences — the primordial feminine governing the sea/water as both source and threat of life:
+
+| Deity | Tradition | Water domain | Maternal aspect |
+|---|---|---|---|
+| Yemọja / Yemayá | Yoruba / diaspora | River → ocean | Mother of 14 orishas; protector of children |
+| [[tiamat]] | Babylonian | Salt-sea primordial | Cosmic mother; killed to form the world |
+| [[isis]] | Egyptian | Nile flooding; cosmic | Great Mother; universal protector |
+| [[aphrodite-greek]] | Greek | Sea-born (from sea-foam) | Goddess of generative love |
+| Tethys | Greek | Ocean personified | Mother of the rivers (Oceanids) |
+| Nut | Egyptian | Sky-as-cosmic-sea | Mother of Osiris, Isis, Set, Nephthys |
+
+The Yemayá-Marian convergence in Santería (Our Lady of Regla) adds a further cross-tradition layer: both are specifically sea-protectors of sailors, both are rendered in blue (Mary's traditional color; Yemayá's sacred color), and both have significant popular basilica-shrines at coastal locations (Our Lady of Regla at Havana harbor; Our Lady of Loreto on the Adriatic coast). This convergence was not forced by missionaries but developed organically in the Cuban context (Drewal 2008) — an instance of the worshipper's theological intelligence mapping structural equivalences across traditions.
+
+**Edge type: `parallel-form`** for ancient cross-cultural convergence. **Edge type: `folk-syncretism`** for the Marian-Yemayá mapping. See [[tiamat]], [[isis]], [[aphrodite-greek]], [[tradition-yoruba-ifa]], [[tradition-santeria-lucumi]], [[tradition-candomble]].
+
 ## Iconography
 Blue-and-white cloth (Cuban / Brazilian); fish; anchor; mirror-fan; her sacred number is seven.
 
 ## Refs
 1. Drewal, H.J. (ed.) (2008). *Mami Wata: Arts for Water Spirits in Africa and Its Diasporas*. UCLA Fowler.
-2. Murphy, J.M. (1988). *Santería*. Beacon.
-3. Brandon, G. (1993). *The Dead Sell Memories*. Indiana UP.
-4. Mason, J. (1996). *Olorisha*. Yoruba Theological Archministry.
+2. Bascom, W. (1969). *Ifa Divination*. Indiana UP.
+3. Idowu, E.B. (1962). *Olódùmarè: God in Yoruba Belief*. Longmans.
+4. Murphy, J.M. (1988). *Santería*. Beacon.
+5. Brandon, G. (1993). *The Dead Sell Memories*. Indiana UP.
+6. Mason, J. (1996). *Olorisha*. Yoruba Theological Archministry.

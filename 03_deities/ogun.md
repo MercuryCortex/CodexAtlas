@@ -24,8 +24,24 @@ refs:
   - title: "Africa's Ogun: Old World and New"
     author: "Barnes, Sandra T. (ed.)"
     year: 1989
+    publisher: "Indiana UP"
     tier: 1
-tags: [yoruba, west-african, orisha, iron, war, phase-8, diasporic]
+  - title: "Ifa Divination: Communication between Gods and Men in West Africa"
+    author: "Bascom, William"
+    year: 1969
+    publisher: "Indiana UP"
+    tier: 1
+  - title: "Yoruba: Nine Centuries of African Art and Thought"
+    author: "Drewal, Henry John and Pemberton, John"
+    year: 1989
+    publisher: "Center for African Art / Harry N. Abrams"
+    tier: 1
+  - title: "Flash of the Spirit: African and Afro-American Art and Philosophy"
+    author: "Thompson, Robert Farris"
+    year: 1983
+    publisher: "Random House"
+    tier: 2
+tags: [yoruba, west-african, orisha, iron, war, phase-8, diasporic, MASSIVE-WIN]
 ---
 
 # Ògún
@@ -44,10 +60,29 @@ In a major Yoruba narrative, when the orishas first descended to earth, the bush
 - **Saint James (Santiago)** — *folk-syncretism* (some Cuban traditions, also Brazilian): the warrior-saint; Iberian *Santiago Matamoros* iconography pairs with Ògún's warrior aspect.
 - **Ogou Feray (Haitian Vodou)** — *manuscript-transmission*: direct West-African-to-Haitian transmission of the orisha; in Vodou, Ogou is a *family* of related *lwa* (Ogou Feray, Ogou Badagri, Ogou Balindjo) rather than a single figure.
 
+## MASSIVE WIN: Divine Smith Archetype
+
+The divine smith — a specialized craftsman-god isolated from the mainstream pantheon, associated with fire and the transformation of raw material into civilization-enabling tools — appears independently across multiple traditions with no documented historical connection:
+
+| Deity | Tradition | Domain | Isolation motif |
+|---|---|---|---|
+| Ògún | Yoruba | Iron, metalwork, roads | Lives in the forest, apart from other orishas |
+| [[hephaestus]] | Greek | Fire, forges, crafts | Cast from Olympus; limps; social outsider |
+| [[vulcan-roman]] | Roman | Fire, smithing | Same Hephaestus identification |
+| Goibhniu / Govannon | Celtic (Irish/Welsh) | Divine smith | Brews immortal ale; magical weapons |
+| Ilmarinen | Finnish | Divine smith | Forges the Sampo; Kalevala protagonist |
+| Tvashtr | Vedic | Artisan of the gods | Fashions the thunderbolt for Indra |
+
+The convergence pattern is striking: every major tradition with a developed pantheon assigns a specialized, often marginal or isolated deity to the domain of metalwork and fire. Barnes (1989, p. 8–12) documents the Ògún-Hephaestus structural parallel explicitly without claiming transmission. The isolation motif (Hephaestus cast from Olympus; Ògún living in the forest rather than among the orishas) is cross-traditionally consistent and has no proposed transmission pathway.
+
+**Edge type: `parallel-form`** — structural convergence, no documented transmission. See [[hephaestus]], [[tradition-yoruba-ifa]], [[tradition-vodou-haitian]], [[tradition-santeria-lucumi]], [[ares]].
+
 ## Iconography
 Iron implements — knife, machete, anvil, chains, miniature tools; green-and-black colors in Yoruba and Cuban Lucumí (red-and-black in some Vodou *nasyon*); dog as sacrificial animal.
 
 ## Refs
 1. Barnes, S.T. (ed.) (1989). *Africa's Ogun: Old World and New*. Indiana UP.
-2. Abimbola, W. (1976). *Ifa*. Oxford UP / Ibadan.
-3. Murphy, J.M. (1988). *Santería*. Beacon.
+2. Bascom, W. (1969). *Ifa Divination*. Indiana UP.
+3. Drewal, H.J. and Pemberton, J. (1989). *Yoruba: Nine Centuries of African Art and Thought*. Center for African Art / Harry N. Abrams.
+4. Thompson, R.F. (1983). *Flash of the Spirit*. Random House.
+5. Murphy, J.M. (1988). *Santería*. Beacon.

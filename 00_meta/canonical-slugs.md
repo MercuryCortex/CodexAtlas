@@ -2072,7 +2072,7 @@ canonical-slug
 - `world-parent-cosmogony`
 - `zeus-pantokrator-transmission`
 
-### tradition (119 nodes)
+### tradition (120 nodes)
 
 - `tradition-advaita-vedanta`
 - `tradition-african-traditional`
@@ -2088,6 +2088,7 @@ canonical-slug
 - `tradition-bon`
 - `tradition-buddhism`
 - `tradition-canaanite-ugaritic`
+- `tradition-candomble`
 - `tradition-catharism`
 - `tradition-celtic`
 - `tradition-christian-kabbalah`
@@ -2200,22 +2201,22 @@ canonical-slug
 
 | Refs | Dead target | Suggested canonical (existing) |
 |---:|---|---|
-| 5 | `tradition-eastern-orthodoxy` | `tradition-ordo-novi-templi` |
-| 5 | `tradition-early-christianity` | `tradition-ordo-novi-templi` |
-| 5 | `phase-1-013-babylonian-theodicy` | `phase-1-018-gudea-cylinders` |
-| 4 | `tradition-minoan-religion` | `tradition-ordo-novi-templi` |
+| 5 | `tradition-eastern-orthodoxy` | `tradition-coptic-orthodox` |
+| 5 | `tradition-early-christianity` | `tradition-coptic-orthodox` |
+| 5 | `phase-1-013-babylonian-theodicy` | `phase-1-019-enuma-anu-enlil` |
+| 4 | `tradition-minoan-religion` | `tradition-coptic-orthodox` |
 | 4 | `divine-kingship-solar` | `divine-kingship` |
-| 3 | `tradition-second-temple-judaism` | `tradition-ordo-novi-templi` |
-| 3 | `tradition-medieval-christianity` | `tradition-ordo-novi-templi` |
-| 3 | `tradition-candomble` | `tradition-ordo-novi-templi` |
-| 3 | `phase-4-007-new-testament-canon` | `phase-4-008-trimorphic-protennoia` |
-| 3 | `phase-2-005-1-2-kings` | `phase-2-003-atharva-veda` |
+| 3 | `tradition-second-temple-judaism` | `tradition-coptic-orthodox` |
+| 3 | `tradition-medieval-christianity` | `tradition-coptic-orthodox` |
+| 3 | `phase-4-007-new-testament-canon` | `phase-4-007-on-the-origin-of-the-world` |
+| 3 | `phase-2-005-1-2-kings` | `phase-2-008-homeric-epics` |
 | 2 | `yam-canaanite` | `astarte-canaanite` |
-| 2 | `tradition-islam-shia` | `tradition-ordo-novi-templi` |
-| 2 | `tradition-islam-mughal` | `tradition-ordo-novi-templi` |
-| 2 | `tradition-hussitism` | `tradition-ordo-novi-templi` |
-| 2 | `tradition-christianity-catholic` | `tradition-ordo-novi-templi` |
-| 2 | `tradition-cheondogyo` | `tradition-ordo-novi-templi` |
-| 2 | `tradition-bahai` | `tradition-new-age` |
+| 2 | `tradition-judaism-sephardic` | `tradition-coptic-orthodox` |
+| 2 | `tradition-islam-shia` | `tradition-maori` |
+| 2 | `tradition-islam-mughal` | `tradition-maori` |
+| 2 | `tradition-hussitism` | `tradition-maori` |
+| 2 | `tradition-christianity-catholic` | `tradition-coptic-orthodox` |
+| 2 | `tradition-cheondogyo` | `tradition-maori` |
+| 2 | `tradition-bahai` | `tradition-maori` |
 | 2 | `guru-arjan-dev-ji` | `guru-arjan` |
 | 2 | `asclepius` | `asclepius-greek` |

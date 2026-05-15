@@ -4,11 +4,13 @@ _Hand-maintained. Each agent currently working in the vault appends a claim bloc
 
 ---
 
-## sonnet-yoruba-1 — content / Yoruba tradition + deity MASSIVE WIN upgrades — started 2026-05-15 — **IN FLIGHT**
-- Owning: `07_traditions/tradition-yoruba-ifa.md` (upgrade), `03_deities/ogun.md` (upgrade), `03_deities/shango.md` (upgrade), `03_deities/yemoja.md` (upgrade), `03_deities/oshun.md` (upgrade), `03_deities/obatala.md` (upgrade), `03_deities/eshu.md` (upgrade), `03_deities/orunmila.md` (upgrade)
-- Goal: All 8 nodes already exist; upgrading each with MASSIVE WIN cross-tradition sections, additional Tier-1 refs (Idowu 1962, Bascom 1969, Drewal/Pemberton 1989), and complete wikilink wiring across traditions
-- Status: in-flight
-- Last edit: ACTIVE-AGENTS.md registration
+## sonnet-yoruba-1 — content / Yoruba tradition + deity MASSIVE WIN upgrades — started 2026-05-15 — **FINISHED 2026-05-15**
+- Owning: `07_traditions/tradition-yoruba-ifa.md` (upgrade), `03_deities/ogun.md` (upgrade), `03_deities/shango.md` (upgrade), `03_deities/yemoja.md` (upgrade), `03_deities/oshun.md` (upgrade), `03_deities/obatala.md` (upgrade), `03_deities/eshu.md` (upgrade), `03_deities/orunmila.md` (upgrade), `07_traditions/tradition-candomble.md` (NEW stub — Wiring Law)
+- Goal: All 8 nodes already existed; upgraded each with MASSIVE WIN cross-tradition sections + Tier-1 refs; created tradition-candomble stub per Wiring Law
+- Status: finished
+- Delivered: 8 upgrades + 1 new stub. MASSIVE WIN edges: Ogun↔Hephaestus divine-smith archetype; Shango↔Zeus/Thor/Indra thunder-god universal table; Yemoja↔Tiamat/Isis great-sea-mother table; Oshun↔Aphrodite/Hathor river-love-beauty cluster; Obatala↔Platonic-Demiurge/Ptah sub-creator table + Christ-syncretism in Candomblé; Eshu↔Hermes/Loki/Coyote crossroads-trickster table + colonial Eshu=Satan misidentification documented (Bascom 1969 p.82, Idowu 1962 p.80); Orunmila↔Thoth/Nabu/Chitragupta divine-scribe-of-destiny table; Tradition: Ifá-corpus↔Vedas structural parallel; Orisha↔Hindu-deva convergence (Idowu 1962). Oshun upgraded from 1 YAML ref → 5 (quality-issues compliance). All wikilinks verified. 3 dead `[[tradition-candomble]]` links resolved by new stub.
+- Build: **2157 nodes · 12,810 edges · 3.0% dead-link · 0 YAML errors**
+- Last edit: STATUS.md
 
 ---
 

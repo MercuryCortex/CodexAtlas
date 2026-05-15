@@ -22,7 +22,6 @@ _Auto-generated 2026-05-15. Status claims not meeting the bar in methodology.md.
 | `ukko` | deity | status:metadata but only 1 refs |
 | `baiame` | deity | status:metadata but only 1 refs |
 | `inti` | deity | status:metadata but only 1 refs |
-| `oshun` | deity | status:metadata but only 1 refs |
 | `frigg` | deity | status:metadata but only 1 refs |
 | `tlaloc` | deity | status:metadata but only 1 refs |
 | `papatuanuku` | deity | status:metadata but only 1 refs |
@@ -43,7 +42,6 @@ _Auto-generated 2026-05-15. Status claims not meeting the bar in methodology.md.
 | `abathur` | deity | status:metadata but only 1 refs |
 | `kukulkan` | deity | status:metadata but only 1 refs |
 | `thor` | deity | status:metadata but only 1 refs |
-| `ogun` | deity | status:metadata but only 1 refs |
 | `irenaeus-of-lyon` | person | status:metadata but only 1 refs |
 | `theodore-strehlow` | person | status:metadata but only 1 refs |
 | `henry-steel-olcott` | person | status:metadata but only 1 refs |

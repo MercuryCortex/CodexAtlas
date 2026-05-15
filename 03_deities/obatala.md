@@ -25,12 +25,24 @@ refs:
   - title: "Ifa: An Exposition of Ifa Literary Corpus"
     author: "Abimbola, Wande"
     year: 1976
+    publisher: "Oxford UP / Ibadan"
     tier: 1
   - title: "Santería: African Spirits in America"
     author: "Murphy, Joseph M."
     year: 1988
+    publisher: "Beacon Press"
     tier: 1
-tags: [yoruba, west-african, orisha, creator, phase-8]
+  - title: "Ifa Divination: Communication between Gods and Men in West Africa"
+    author: "Bascom, William"
+    year: 1969
+    publisher: "Indiana UP"
+    tier: 1
+  - title: "Olódùmarè: God in Yoruba Belief"
+    author: "Idowu, E. Bolaji"
+    year: 1962
+    publisher: "Longmans"
+    tier: 1
+tags: [yoruba, west-african, orisha, creator, phase-8, MASSIVE-WIN]
 ---
 
 # Obàtálá
@@ -48,11 +60,31 @@ In a major Ifá creation narrative (preserved in the *odu Ogbe Yono* and paralle
 - **Our Lady of Mercy (Las Mercedes)** — *folk-syncretism* (Cuban Santería): Obatalá is paired with Las Mercedes in Cuban Lucumí; the white-garbed Marian figure matches Obatalá's white-cloth iconography. Ref: Brandon 1993.
 - **Oxalá (Brazilian Candomblé)** — *manuscript-transmission*: the same orisha, lightly modified in Yoruba-Bahian liturgy.
 
+## MASSIVE WIN: Demiurgic Sub-Creator and Syncretism with Christ
+
+### The sub-creator pattern — MASSIVE WIN
+Obàtálá occupies a distinctive theological position: he is not the ultimate creator (Olódùmarè is), but the *craftsman-creator* who shapes material forms — specifically, he molds human bodies from clay. This sub-creator role is structurally parallel across multiple traditions:
+
+| Figure | Tradition | Role | Relationship to supreme being |
+|---|---|---|---|
+| Obàtálá | Yoruba | Molds human bodies from clay | Commissioned by Olódùmarè |
+| [[demiurge-platonic]] | Greek Platonism | Crafts cosmos according to the Forms | Subordinate to the One/Good |
+| [[demiurge-gnostic]] | Gnosticism | Creates the material world | Fallen/ignorant, opposed to true God |
+| Ptah | Egyptian | Divine craftsman, "heart and tongue of Ra" | Creates by thought+word, subordinate to Ra |
+| Brahma | Hindu | Creator-god who shapes forms | Emanation/aspect of Brahman |
+
+Obàtálá's sub-creator role differs from Gnostic demiurge theology in a key respect: his creation of human bodies is *commissioned by* the supreme deity (Olódùmarè) and is fundamentally good — the drunkenness narrative explains imperfection without attributing creation to a malevolent agent. This places Obàtálá structurally closer to Plato's *Timaeus* Demiurge (a good craftsman working with imperfect material) than to Gnostic Yaldabaoth. See [[demiurge-platonic]], [[olodumare]].
+
+### Christ syncretism in Candomblé — documented theological move
+In Brazilian Candomblé, Obàtálá (as Oxalá) is explicitly identified with Jesus Christ — the most theologically significant Orisha-Christian identification. The mapping rests on: (1) purity (both are associated with white/light); (2) creative power (Christ as Logos-creator of John 1:1 / Obàtálá as body-creator); (3) patience/suffering (Christ's Passion / Obàtálá's imprisonment narrative in one odu); (4) universal protection of the vulnerable (Christ's care for the poor / Obàtálá's protection of disabled people). This is one of the most theologically sophisticated syncretic mappings in the diaspora, going beyond surface iconography to structural theological equivalence. Murphy (1988, p. 91) and Brandon (1993) document the Candomblé theological tradition of this mapping. See [[tradition-candomble]], [[jesus-christ-deity]], [[olodumare]].
+
 ## Iconography
 White cloth, white beads (*efun* — chalk-white), occasionally a horse-tail flywhisk (*irukere*); coolness, snail-pace, deliberation are conceptual attributes.
 
 ## Refs
 1. Abimbola, W. (1976). *Ifa*. Oxford UP / Ibadan.
-2. Murphy, J.M. (1988). *Santería*. Beacon.
-3. Brandon, G. (1993). *The Dead Sell Memories*. Indiana UP.
-4. Mason, J. (1996). *Olorisha*. Yoruba Theological Archministry.
+2. Bascom, W. (1969). *Ifa Divination*. Indiana UP.
+3. Idowu, E.B. (1962). *Olódùmarè: God in Yoruba Belief*. Longmans.
+4. Murphy, J.M. (1988). *Santería*. Beacon.
+5. Brandon, G. (1993). *The Dead Sell Memories*. Indiana UP.
+6. Mason, J. (1996). *Olorisha*. Yoruba Theological Archministry.
