@@ -108,6 +108,8 @@ _Auto-generated 2026-05-15. Status claims not meeting the bar in methodology.md.
 | `charles-taze-russell` | person | status:metadata but only 1 refs |
 | `phase-7-014-gnostic-gospels` | document | status:partial but only 3 refs (need 4+) |
 | `phase-7-018-aion` | document | status:partial but only 3 refs (need 4+) |
+| `phase-8-019-kojiki` | document | status:metadata but only 0 refs |
+| `phase-8-020-nihon-shoki` | document | status:metadata but only 0 refs |
 | `tradition-aztec-mexica` | tradition | status:metadata but only 1 refs |
 | `tradition-australian-aboriginal` | tradition | status:metadata but only 1 refs |
 | `tradition-maya-religion` | tradition | status:metadata but only 1 refs |

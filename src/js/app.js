@@ -560,7 +560,7 @@ function setView(name) {
   hideTooltip();
   // Map thumbnail only on geo-relevant views; hide elsewhere.
   // Atlas view uses MapLibre (no SVG map-thumb); zoom meter shown separately.
-  const showMapThumb = (name === 'pantheon' || name === 'documents' || name === 'timeline' || name === 'alchemy' || name === 'scripture');
+  const showMapThumb = (name === 'pantheon' || name === 'documents' || name === 'timeline' || name === 'transmission' || name === 'scripture');
   const showZoomMeter = showMapThumb || name === 'atlas';
   // Default-collapse the detail panel ONLY on a view CHANGE (e.g., Pantheon → Timeline),
   // not on a re-render of the same view. Re-renders are triggered by ResizeObserver and
@@ -4525,6 +4525,75 @@ const INVESTIGATIONS = [
       'tradition-christian-kabbalah', 'giovanni-pico-della-mirandola',
     ],
   },
+  {
+    id: 'odin-sacrifice',
+    name: 'Odin\'s Sacrifice — The Norse Passion',
+    flag: 'alert',
+    status: 'active',
+    opened: '2026-05-15',
+    headline: 'Hávamál stanzas 138–139 (Poetic Edda): Odin hangs himself on Yggdrasil for nine days and nights, pierced by a spear, with no food or drink, to seize the runes — divine wisdom won through voluntary self-death. The structural parallel to Christ\'s crucifixion (voluntary death, spear-piercing, three-day darkness, resurrection-of-consciousness) is the most frequently noted Norse-Christian parallel in comparative mythology. What is not noted: this is also structurally identical to the Egyptian Osiris narrative, the Vedic Purusha dismemberment, and the Mesopotamian Inanna descent — all enacting voluntary divine self-sacrifice as the price of cosmic knowledge or renewal. The Norse version is likely independent: the Poetic Edda material predates intensive Christianization of Iceland.',
+    threads: [
+      { label: 'Hávamál 138–139 — text of the Norse Passion', note: '"I know that I hung / on the windswept tree / for nine full nights, / wounded with a spear / and given to Óðinn, / myself to myself, / on that tree of which no man knows / from what roots it rises." This is the primary Tier-1 text. The self-offering logic ("myself to myself") is not a Christian parallel but something stranger — Odin sacrifices himself to himself, which has no Christian analogue.', tier: 1 },
+      { label: 'Voluntary spear-piercing + tree death ↔ Crucifixion', note: 'Christ: voluntary death, crown of thorns, darkness, spear in side (John 19:34), resurrection. Odin: voluntary death, spear, nine days of darkness (no food/water), resurrection as rune-knower. The surface structural match is high. The content diverges entirely: Odin gains magical knowledge; Christ achieves cosmic atonement. Whether this is convergence or partial Christianization of the Norse myth is unresolved (DuBois 1999 Tier-2; Turville-Petre 1964 Tier-1).', tier: 2 },
+      { label: 'Baldr\'s death — the Norse dying god', note: 'Baldr (son of Odin, god of light) is killed by the mistletoe dart at Loki\'s instigation; all creation mourns; he descends to Hel; after Ragnarök he returns to the renewed world. This is the Norse version of the dying-and-rising deity cluster (Osiris / Adonis / Tammuz / Dionysus). The mechanism of Baldr\'s death (the one weapon he was not protected against, treachery by the excluded one) = the one weak point logic of Achilles, Siegfried, Samson.', tier: 1 },
+      { label: 'Ragnarök ↔ Zoroastrian Frashokereti', note: 'Ragnarök: gods die, world destroyed by fire and flood, then renewed — the dead return, a new earth rises from the sea. Structurally identical to Zoroastrian Frashokereti (cosmic renovation after the final battle). Both are Indo-European? The structural match is so precise that scholars have proposed a shared Proto-Indo-European eschatological myth (Lincoln 1991 Tier-2; West 2007 Tier-1 on PIE mythology). The Norse and Zoroastrian traditions split ~3000 BCE; the convergence may be inheritance not contact.', tier: 2 },
+      { label: 'Völuspá cosmogony ↔ Genesis parallels', note: 'Völuspá (Prophecy of the Völva): void → world creation → golden age → transgression → decline → apocalypse → renewal. The sequence is structurally parallel to Genesis creation → Fall → Flood → renewal sequence. Both encode a creation-to-collapse cosmological arc. Neither is likely directly dependent; both inherit the wider Indo-European mythological grammar documented in West 2007.', tier: 2 },
+      { label: 'World Tree (Yggdrasil) ↔ axis mundi cluster', note: 'Yggdrasil: the cosmic ash tree connecting nine worlds (Asgard above, Midgard middle, Hel/Niflheim below), with an eagle at the crown and Níðhöggr serpent at the roots. Structurally identical to the axis mundi in every tradition that produces one: Egyptian djed pillar (Osiris backbone = world-spine), Hindu Mount Meru, Mesopotamian sacred mountain, Indian cosmic tree (Aśvattha). The Norse version is the most elaborated world-tree in any tradition — Odin discovers the runes by hanging from it, making it simultaneously cosmic axis and initiatory instrument.', tier: 1 },
+    ],
+    seeds: [
+      'P8-014-poetic-edda', 'P8-015-prose-edda-snorri',
+      'odin', 'baldr', 'tradition-norse', 'norse-cosmogony', 'ragnarok-apocalyptic',
+      'frashokereti-cosmic-renovation', 'world-axis', 'tree-of-life',
+      'osiris', 'dionysus', 'latin-cross',
+    ],
+  },
+  {
+    id: 'independent-underworld',
+    name: 'The Independent Underworld — Xibalba ↔ Duat',
+    flag: 'alert',
+    status: 'active',
+    opened: '2026-05-15',
+    headline: 'The Popol Vuh\'s Xibalba (Maya underworld, ~1000 BCE oral tradition) and the Egyptian Duat (documented from 2400 BCE) are structurally identical despite zero possibility of contact: both are multi-level realms (9 levels in Maya / 12 hours in Egyptian night-journey), both feature named lords of death presiding over specific torments, both require the hero to navigate trials by cunning rather than force, and both frame the solar journey as literal nightly passage through the underworld. The Hero Twins Hunahpu and Xbalanque navigate Xibalba exactly as Ra navigates the Duat — through cunning, disguise, and knowledge of names. This is the deepest case of independent parallel development in the vault.',
+    threads: [
+      { label: 'Nine levels of Xibalba ↔ Twelve hours of the Duat', note: 'Egyptian night-journey: Ra\'s barque passes through 12 divisions (hours) of the Duat, encountering gates, guardians, and named obstacles. Popol Vuh: Xibalba has named levels (House of Darkness, House of Cold, House of Fire, House of Bats, etc.) presided over by named lords (One Death, Seven Death, etc.). Both: a structured hierarchical underworld navigated by the solar hero as a series of named trials with named adversaries. No contact possible.', tier: 1 },
+      { label: 'Hero navigation by knowledge of names', note: 'Popol Vuh: the Hero Twins trick the lords of Xibalba by correctly naming the wooden dummies set up to fool them — knowledge of names = power over death. Egyptian Book of the Dead: the deceased must know the names of the 42 assessors, the gates, the guardians — the entire navigational system is name-based. The identical logic (names = passage-keys) in two traditions with no contact is the most precise single parallel.', tier: 1 },
+      { label: 'Venus as dying-rising star ↔ Quetzalcoatl descent', note: 'The Dresden Codex tracks Venus with extraordinary precision (584-day cycle). Venus\'s disappearance below the horizon (inferior conjunction) = death; reappearance as morning star = resurrection. The Aztec Quetzalcoatl myth explicitly encodes Venus: the Feathered Serpent descends, dies, and rises as the morning star. This is the Inanna/Ishtar Descent in Mesoamerican form — both traditions encode the same astronomical event (Venus inferior conjunction) as a divine death-and-resurrection narrative with no possible contact.', tier: 1 },
+      { label: 'Maize creation ↔ world-body cosmogony', note: 'Popol Vuh: after four failed creation attempts, humans are finally made from maize dough — the substance of food = the substance of human bodies. Vedic Purusha Sukta: the cosmic man Purusha is dismembered and humans are made from his body-parts. Norse: Ask and Embla (first humans) made from trees. The underlying grammar — the human body made from the primordial substance of the sacred world — appears independently in Maya, Vedic, Norse, and Mesopotamian (Enuma Elish: humans made from Kingu\'s blood). The Maya maize-body is the most ecologically grounded version.', tier: 'parallel' },
+      { label: 'Temple pyramid as axis mundi ↔ Egyptian pyramid', note: 'The Temple of Inscriptions at Palenque (Pakal\'s pyramid, 683 CE): 9-level pyramid = 9 Xibalba levels; descending staircase leads to the sarcophagus; the sarcophagus lid is a descent-and-resurrection cosmogram; a psychoduct connected the tomb to the outside for spirit communication. The Great Pyramid at Giza: shafts pointing to Orion/circumpolar stars; the King\'s Chamber coffer identical cosmological function. Two pyramid civilizations, zero contact, identical spatial theology: the monument as axis mundi connecting underworld → living world → sky.', tier: 1 },
+    ],
+    seeds: [
+      'P8-001-popol-vuh', 'P8-003-dresden-codex-maya', 'P8-002-codex-borgia',
+      'quetzalcoatl', 'P1-002-pyramid-texts', 'ra', 'osiris',
+      'katabasis-and-anabasis', 'theme-pyramid-as-resurrection-machine',
+      'temple-of-inscriptions-palenque', 'great-pyramid-of-khufu',
+      'world-axis', 'sun-disk',
+    ],
+  },
+  {
+    id: 'solar-death-return',
+    name: 'The Solar Death — Universal Pattern',
+    flag: null,
+    status: 'active',
+    opened: '2026-05-15',
+    headline: 'Across every inhabited continent, the sun\'s disappearance is narrated as a divine death requiring ritual or cosmological rescue. The structural grammar is always identical: (1) solar deity retreats / dies / is hidden; (2) world enters darkness, life ceases; (3) assembled powers perform ritual to restore; (4) light returns. Egyptian: Ra navigates the Duat nightly, must defeat Apep at dawn. Japanese: Amaterasu hides in the cave, kami perform Ame-no-Uzume\'s dance to lure her back. Norse: Baldr dies, world mourns, Ragnarök ends with solar renewal. Greek: Persephone/Demeter — winter as divine grief. Zoroastrian: the eternal battle of Ahura Mazda (light) vs Angra Mainyu (darkness). Christian: the three days of Easter darkness before resurrection. The universality of this pattern — across traditions with zero mutual contact — is the single best argument for a universal cosmological grammar grounded in the astronomical reality of solar cycles.',
+    threads: [
+      { label: 'Amaterasu in the cave — Japanese solar death', note: 'Kojiki: Susanoo\'s destruction causes Amaterasu to retreat into Ama-no-Iwato (the Heavenly Rock Cave). World goes dark; evil spirits proliferate; crops fail. Eight hundred myriad kami assemble; Ame-no-Uzume performs an ecstatic dance that provokes divine laughter; Amaterasu opens the cave to look; the god of strength (Ame-no-Tajikarao) pulls her out and the world is restored. The mechanism: divine curiosity + communal laughter = solar resurrection.', tier: 1 },
+      { label: 'Ra in the Duat — Egyptian solar death', note: 'The Egyptian night-journey: Ra\'s barque enters the western horizon at sunset, sails through 12 hours of the Duat (underworld), must defeat Apep (chaos serpent) at the 12th hour to rise in the east. The Pyramid Texts and Book of the Dead encode the entire navigational system. The pharaoh\'s resurrection is modeled on Ra\'s nightly resurrection. Daily solar death and return is the foundation of Egyptian cosmology.', tier: 1 },
+      { label: 'Persephone / Demeter — Greek seasonal solar death', note: 'Persephone\'s abduction to Hades: Demeter\'s grief causes winter (crops fail, world suffers). Persephone\'s return causes spring. The Eleusinian Mysteries performed the ritual enactment of this cosmological drama — initiates experienced the descent and return. The parallel to Amaterasu\'s cave is structural: divine feminine retreat → world suffers → return → life restored. The Japanese and Greek versions are independent.', tier: 1 },
+      { label: 'Baldr\'s death — Norse solar death', note: 'Baldr (radiant, possibly solar) is killed by mistletoe; all creation weeps for him; he descends to Hel. Frigg\'s failed mission to get all things to weep (Loki as trickster refuses) maps onto the cosmological grief of the Demeter myth. After Ragnarök, Baldr returns. This is the Scandinavian version of the dying-and-rising pattern — embedded in a world-destruction eschatology rather than a seasonal one.', tier: 2 },
+      { label: 'Osiris dismemberment — Egyptian dying god', note: 'Osiris is killed by Set, dismembered (14 pieces), scattered across Egypt. Isis reassembles him — except the phallus (swallowed by a fish). He is restored enough to conceive Horus and then rules the Duat. Osiris\'s death is the template for every Egyptian royal resurrection — the pharaoh becomes Osiris in death. The annual Nile flood (identified with Osiris\'s body) made the dying god\'s return literally agricultural.', tier: 1 },
+      { label: 'Christ\'s three-day death — Christian solar death', note: 'Three days of darkness / entombment; resurrection at dawn on the first day of the week (Sunday = the sun\'s day). Easter timing tied to the spring equinox — the astronomical moment when light definitively overcomes darkness. The structural parallel to every other solar-death narrative is explicit in early Christian solar imagery: Christ as Sol Invictus, the risen Christ as the rising sun, the harrowing of Hell as the Ra-in-Duat night journey.', tier: 1 },
+      { label: 'Ame-no-Uzume ↔ Baubo — erotic divine laughter', note: 'Ame-no-Uzume\'s ecstatic, sexually provocative dance causes the assembled kami to laugh uproariously — divine laughter as the mechanism of solar restoration. In the Greek Homeric Hymn to Demeter: Baubo (or Iambe) makes Demeter laugh through obscene gesture, breaking the goddess\'s grief. Two independent traditions use the identical mechanism: divine erotic humor breaks cosmic darkness. No possible contact.', tier: 'parallel' },
+    ],
+    seeds: [
+      'P8-019-kojiki', 'amaterasu', 'izanagi',
+      'ra', 'osiris', 'P1-002-pyramid-texts',
+      'baldr', 'P8-014-poetic-edda',
+      'dionysus', 'sun-disk',
+      'theme-pyramid-as-resurrection-machine',
+      'world-axis',
+    ],
+  },
 ];
 
 // investLoadSeeds — mirror of alchemyLoadPreset for INVESTIGATIONS entries.
@@ -4540,7 +4609,7 @@ function investLoadSeeds(investId, mode) {
     STATE.alchemyPicks = valid;
   }
   STATE.alchemyActivePreset = null;
-  setView('alchemy');
+  setView('transmission');
 }
 
 // Custom user-saved trees live in localStorage under this key. Shape: an array of
@@ -4605,7 +4674,7 @@ function alchemyLoadPreset(presetId, mode) {
     STATE.alchemyPicks = valid;
   }
   STATE.alchemyActivePreset = presetId;
-  setView('alchemy');
+  setView('transmission');
 }
 
 // ALCHEMY LAYOUT POSITIONS — compute (x,y) for each node based on the active layout.
@@ -4741,8 +4810,11 @@ function alchemyShortestPath(srcId, dstId, maxHops) {
   return null;
 }
 
-VIEWS.alchemy = {
-  title: 'Alchemy',
+// VIEWS.transmission — the former Alchemy view (renamed 2026-05-15). Internal
+// state still uses `STATE.alchemyPicks` etc. for backwards compatibility with
+// localStorage and existing presets; only the user-facing view key + title changed.
+VIEWS.transmission = {
+  title: 'Transmission',
   subtitle: 'pick deities, persons, or themes · the shortest path between them appears as bridges',
   render() {
     // Restore layout + spacing prefs from localStorage on first render (idempotent).
@@ -4832,7 +4904,7 @@ VIEWS.alchemy = {
     document.getElementById('btn-alch-clear').onclick = () => {
       STATE.alchemyPicks = [];
       STATE.alchemyActivePreset = null;
-      setView('alchemy');
+      setView('transmission');
     };
 
     // Toolbox + palette + dropdowns injected into canvas as siblings of the SVG.
@@ -4948,9 +5020,9 @@ VIEWS.alchemy = {
         const name = input.value.trim();
         if (!name) { input.classList.add('invalid'); input.focus(); return; }
         saveCustomTree(name);
-        setView('alchemy');   // re-render so the new tree appears in the dropdown
+        setView('transmission');   // re-render so the new tree appears in the dropdown
       };
-      const cancel = () => { setView('alchemy'); };
+      const cancel = () => { setView('transmission'); };
       document.getElementById('alch-save-confirm').onclick = (e) => { e.stopPropagation(); commit(); };
       document.getElementById('alch-save-cancel').onclick = (e) => { e.stopPropagation(); cancel(); };
       input.addEventListener('keydown', (e) => {
@@ -5000,7 +5072,7 @@ VIEWS.alchemy = {
         const id = btn.dataset.preset;
         deleteCustomTree(id);
         if (STATE.alchemyActivePreset === id) STATE.alchemyActivePreset = null;
-        setView('alchemy');
+        setView('transmission');
       });
     });
 
@@ -5121,7 +5193,7 @@ VIEWS.alchemy = {
         ev.stopPropagation();
         STATE.alchemyLayout = btn.dataset.layout;
         try { localStorage.setItem('alch-layout', STATE.alchemyLayout); } catch (e) {}
-        setView('alchemy');
+        setView('transmission');
       });
     });
     // Wire spacing slider with debounce so re-render doesn't fire on every pixel of drag.
@@ -5132,7 +5204,7 @@ VIEWS.alchemy = {
         STATE.alchemySpacing = parseInt(ev.target.value, 10) || 50;
         try { localStorage.setItem('alch-spacing', String(STATE.alchemySpacing)); } catch (e) {}
         clearTimeout(_spacingDebounce);
-        _spacingDebounce = setTimeout(() => setView('alchemy'), 140);
+        _spacingDebounce = setTimeout(() => setView('transmission'), 140);
       });
     }
 
@@ -5185,7 +5257,7 @@ VIEWS.alchemy = {
       if (!id) return;
       STATE.alchemyPicks = (STATE.alchemyPicks || []).concat([id]);
       closePalette();
-      setView('alchemy');   // re-render the canvas to show the new node + recomputed bridges
+      setView('transmission');   // re-render the canvas to show the new node + recomputed bridges
     }
 
     document.getElementById('alch-add').onclick = openPalette;
@@ -5307,7 +5379,7 @@ VIEWS.alchemy = {
     removeSel.on('click', (ev, n) => {
       ev.stopPropagation();
       STATE.alchemyPicks = STATE.alchemyPicks.filter(id => id !== n.id);
-      setView('alchemy');
+      setView('transmission');
     });
 
     const labelSel = labelLayer.selectAll('text.alch-node-label').data(nodes, n => n.id).enter().append('text')
