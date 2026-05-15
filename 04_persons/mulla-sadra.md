@@ -47,6 +47,19 @@ Densely documented in the Iranian philosophical tradition: his substantial corpu
 ## Role in the tradition
 The dominant philosophical voice of post-Avicennan Iranian Shi'i Islam from his lifetime to the present. Khomeini studied and lectured on Mulla Sadra; Allamah Tabataba'i and the modern Iranian seminary tradition continue the school; Western scholarship through Henry Corbin and Seyyed Hossein Nasr has made Mulla Sadra increasingly visible in comparative philosophy.
 
+## Cross-tradition position — the culmination of the transmission chain
+
+Mulla Sadra is the final node in the vault's most traceable cross-tradition transmission chain:
+
+**al-Biruni (1017 CE) → Suhrawardi (1154–1191) → Ibn Arabi (1165–1240) → Mulla Sadra (1571–1640)**
+
+- **[[al-biruni]]**: First Arabic-language transmitter of Indian philosophy, including the non-dual Shaiva consciousness metaphysics. His *Kitāb al-Hind* (~1017) put the substance of Kashmir Shaivism into Arabic.
+- **[[suhrawardi]]**: Built his Illuminationist (*Ishrāqī*) philosophy on the Arabic corpus al-Biruni made available, positing self-luminous divine light (*nūr*) as the ground — structurally echoing Śiva as *prakāśa* (self-luminous light).
+- **[[ibn-arabi]]**: *Waḥdat al-wujūd* ("unity of being") — all existence is one Being disclosing itself in infinite forms. The Neoplatonic emanation + Indian non-dual consciousness metaphysics + Quran.
+- **Mulla Sadra**: *Aṣālat al-wujūd* (primacy of existence) + *ḥaraka jawhariyya* (substantial motion) — existence is not a static category but a dynamic self-differentiating intensity, the same structure as Trika's *spanda* (divine pulsation). Being is not a noun but a verb.
+
+The *spanda* parallel is the most striking: Vasugupta's (~825 CE) *spanda* doctrine (ultimate reality as dynamic pulsation, not static being) and Mulla Sadra's (~1600 CE) substantial motion (being itself moves, differentiates, intensifies) articulate structurally identical metaphysical claims in completely different cultural contexts. The chain linking them — through al-Biruni — makes indirect transmission plausible rather than mere parallel. See [[vasugupta]], [[tradition-kashmir-shaivism]].
+
 ## Refs
 1. Nasr (1978). *The Transcendent Theosophy of Sadr al-Din Shirazi*. Imperial Iranian Academy.
 2. Rizvi (2009). *Mulla Sadra*. Oxford UP.

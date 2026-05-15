@@ -80,6 +80,20 @@ The single most important Christian transmitter of Neoplatonism. Translated into
 - **Date.** Earliest possible date: post-Proclus (d. 485). Latest: pre-533 colloquy. Most scholars settle on c. 500.
 - **Theological orientation.** Whether crypto-Monophysite, crypto-Origenist, or "neutral" Chalcedonian is disputed.
 
+## Cross-tradition position — the apophatic hub
+
+Pseudo-Dionysius is the vault's primary hub for the apophatic tradition — the claim that the ultimate is best approached (or only approached) through systematic negation. The chain he anchors:
+
+**← Proclus / Plotinus / Plato's *Parmenides***: His direct philosophical sources (documented, Koch & Stiglmayr 1895). The "One beyond being" becomes the Christian God.
+
+**→ Maximus the Confessor → Eriugena → Eckhart → Rhineland mysticism**: The most traceable transmission chain in the Latin West. Each step is documented. Eriugena translates; Eckhart extends the divine-darkness apophasis to the soul's own ground. See [[john-scotus-eriugena]], [[meister-eckhart]].
+
+**→ Maximus → Palamas**: The Eastern chain runs differently — Maximus's appropriation of Dionysian hierarchy leads to Palamas's essence/energies distinction, which is the Dionysian apophatic move (God beyond being = essence unknowable) combined with a positive account of divine accessibility (energies). See [[gregory-palamas]], [[essence-energies-distinction]].
+
+**↔ Kashmir Shaivism (Trika)**: The *via negativa* / divine darkness and Trika's description of Śiva as *niṣkala* (without parts, beyond all predication) are structural parallels. Both posit: (1) the ultimate is beyond all name and category; (2) the path toward it involves negating all limited designations; (3) there is a positive experiential breakthrough at the culmination (Dionysian theosis / Trika recognition). The difference: Dionysius arrives at union with the apophatic God; Trika recognizes that one already *is* that ground. See [[tradition-kashmir-shaivism]], [[pratyabhijna]].
+
+**↔ Nāgārjuna**: The most contested parallel. Nāgārjuna's śūnyatā (no inherent existence anywhere) and Dionysian apophasis (God beyond all predication) both systematically negate. But Dionysius ultimately arrives at union with the God who *is* ("hyper-being" is still being-positive), while Nāgārjuna's śūnyatā denies even a hyper-being ground. The apophatic tradition's "God beyond being" oscillates between these poles. See [[emptiness-sunyata]].
+
 ## Refs
 1. Rorem, P. (1993). *Pseudo-Dionysius: A Commentary*. Oxford UP.
 2. Louth, A. (1989). *Denys the Areopagite*. Continuum.

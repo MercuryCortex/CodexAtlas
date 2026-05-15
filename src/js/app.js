@@ -4140,6 +4140,29 @@ const INVESTIGATIONS = [
       'essence-energies-distinction',
     ],
   },
+  {
+    id: 'non-ground-debate',
+    name: 'The Non-Ground Debate',
+    flag: 'alert',
+    status: 'active',
+    opened: '2026-05-15',
+    headline: 'The deepest unresolved split in non-dual thought: is there a positive luminous ground (Trika: Śiva-consciousness; Dzogchen: rigpa; shentong: Buddha-nature-light) or no ground at all (Madhyamaka: śūnyatā, even consciousness has no fixed nature)? This debate was never settled. It runs from Nāgārjuna (~150 CE) through the Tibetan rangtong/shentong controversy to the present, and maps onto Eckhart\'s own unresolved tension between the divine nothingness (Gottheit) and the soul\'s spark (Seelenfünklein).',
+    threads: [
+      { label: 'Nagarjuna vs Trika — the founding split', note: 'Two rival non-dual frameworks: consciousness-as-ground (Trika: Śiva is self-luminous awareness) vs no-ground (Madhyamaka: even "consciousness" cannot be asserted as ground without positing svabhāva). Mutually exclusive. Both in vault.', tier: 'parallel' },
+      { label: 'Rangtong / Shentong — Tibet', note: 'Gelugpa (rangtong): all is self-empty, including Buddha-nature. Kagyu/Jonang (shentong): Buddha-nature is other-empty — empty of defiled qualities but retaining luminous positive attributes. The split exactly replays the Trika/Madhyamaka debate in Tibetan form. Tsongkhapa in vault.', tier: 1 },
+      { label: 'Rinchen Zangpo corridor', note: 'Tibetan Great Translator (~958–1055) spent 21 years in Kashmir while Abhinavagupta was active there (~975–1025). The intellectual environment makes indirect Trika → Dzogchen transmission plausible. No direct citation found. New vault node.', tier: 2 },
+      { label: 'Eckhart\'s unresolved tension', note: 'Gottheit as nichts (divine nothingness prior to all determination) = Madhyamaka-flavored. Seelenfünklein (spark already IS the Godhead) = Trika pratyabhijñā move. These two doctrines coexist in Eckhart without resolution. Both in vault.', tier: 'parallel' },
+      { label: 'Dzogchen rigpa as attempted synthesis', note: 'Rigpa (pure awareness) is primordially present but not a reified consciousness-substance — an attempt to hold Trika (positive luminous ground) and Madhyamaka (no fixed nature) simultaneously. The Tibetan masters who attempted this synthesis (Longchenpa, Mipham) did so knowing the contradiction. Naropa/Tilopa in vault.', tier: 2 },
+      { label: 'Ungrund — Boehme\'s version', note: 'Jakob Boehme\'s Ungrund (groundless ground prior to divinity) = the abyss before any positive nature, including consciousness. Structurally this sides with Madhyamaka against Trika: the primal is prior to mind. Yet Boehme also asserts divine self-luminosity. The same tension as Eckhart. Both in vault.', tier: 'parallel' },
+    ],
+    seeds: [
+      'nagarjuna', 'emptiness-sunyata', 'tradition-madhyamaka',
+      'naropa-tilopa', 'milarepa', 'tsongkhapa',
+      'rinchen-zangpo', 'tradition-kashmir-shaivism', 'vasugupta',
+      'pratyabhijna', 'the-godhead-eckhart', 'meister-eckhart',
+      'ungrund', 'jakob-boehme',
+    ],
+  },
 ];
 
 // Custom user-saved trees live in localStorage under this key. Shape: an array of
