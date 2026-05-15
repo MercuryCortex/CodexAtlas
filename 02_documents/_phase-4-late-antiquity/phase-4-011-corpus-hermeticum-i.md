@@ -60,7 +60,7 @@ refs:
     type: "primary-translation"
     tier: 2
     notes: "Contextualizes Hermetic-Gnostic connections in late antiquity"
-tags: [phase-4, hermetic, alexandria, hermes-trismegistus, revelation, cosmogony]
+tags: [phase-4, hermetic, alexandria, hermes-trismegistus, revelation, cosmogony, astrology, hermetic-astrology]
 ---
 
 # Corpus Hermeticum I (Poimandres)

@@ -50,7 +50,7 @@ refs:
     publisher: "Inner City Books"
     type: "monograph"
     tier: 3
-tags: [person, alchemy, hermeticism, islamic-golden-age, abbasid, kufa, jabir, geber, arabic-latin-transmission, mizan-theory, ritman-mellon-canon]
+tags: [person, alchemy, hermeticism, islamic-golden-age, abbasid, kufa, jabir, geber, arabic-latin-transmission, mizan-theory, ritman-mellon-canon, astrology, alchemical-astrology, islamic-astrology]
 ---
 
 # Jabir ibn Hayyan (Geber)

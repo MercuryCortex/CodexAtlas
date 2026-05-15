@@ -65,7 +65,7 @@ refs:
     publisher: "Destiny Books"
     type: "monograph"
     tier: 3
-tags: [phase-4, hermeticism, alchemy, tabula-smaragdina, emerald-tablet, hermes-trismegistus, as-above-so-below, ritman-flagship, beinecke-mellon, arabic-latin-transmission, newton-keynes-28]
+tags: [phase-4, hermeticism, alchemy, tabula-smaragdina, emerald-tablet, hermes-trismegistus, as-above-so-below, ritman-flagship, beinecke-mellon, arabic-latin-transmission, newton-keynes-28, astrology, hermetic-correspondences-principle]
 ---
 
 # Tabula Smaragdina (Emerald Tablet)

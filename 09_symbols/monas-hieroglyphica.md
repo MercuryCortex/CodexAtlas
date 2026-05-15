@@ -88,7 +88,7 @@ refs:
     type: "primary-translation"
     tier: 2
     notes: "Modern English translation of the Monas with commentary; tier 2 because Godwin is a Hermetic-tradition publisher and the commentary is sympathetic-traditionalist rather than critical-academic"
-tags: [symbol, geometric, hermetic, christian-kabbalah, rosicrucian-ancestor, dee, monas-hieroglyphica, 1564, ritman-library-flagship, renaissance-hermeticism]
+tags: [symbol, geometric, hermetic, christian-kabbalah, rosicrucian-ancestor, dee, monas-hieroglyphica, 1564, ritman-library-flagship, renaissance-hermeticism, astrology, dee-astrological-hermetic-glyph]
 ---
 
 # Monas Hieroglyphica (Dee 1564)

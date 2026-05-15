@@ -46,7 +46,7 @@ refs:
     type: "monograph"
     tier: 1
     notes: "Specialist study of the Neo-Assyrian Nabu cult"
-tags: [deity, mesopotamian, babylonian, assyrian, scribal, wisdom, borsippa, marduk-son]
+tags: [deity, mesopotamian, babylonian, assyrian, scribal, wisdom, borsippa, marduk-son, astrology, mesopotamian-astrology, mercury-correspondence, scribe-of-fate]
 ---
 
 # Nabu

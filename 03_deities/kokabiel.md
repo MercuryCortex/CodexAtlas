@@ -37,7 +37,7 @@ refs:
     publisher: "Fortress"
     type: "primary-translation"
     tier: 1
-tags: [deity, fallen-angel, watcher, enochic, astrology, second-temple, ethiopic-canon]
+tags: [deity, fallen-angel, watcher, enochic, astrology, second-temple, ethiopic-canon, enochic-astrology-teacher, constellations-teaching]
 ---
 
 # Kokabiel

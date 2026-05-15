@@ -30,7 +30,7 @@ refs:
     publisher: "Gabalda"
     type: "monograph"
     tier: 1
-tags: [tradition, hermetic, alexandria, late-antiquity, egyptian-greek-synthesis]
+tags: [tradition, hermetic, alexandria, late-antiquity, egyptian-greek-synthesis, astrology, hermetic-astrology]
 ---
 
 # Hermeticism

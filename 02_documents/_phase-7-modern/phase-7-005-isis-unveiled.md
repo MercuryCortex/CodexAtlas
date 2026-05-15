@@ -49,7 +49,7 @@ refs:
     publisher: "Bloomsbury"
     type: "monograph"
     tier: 1
-tags: [phase-7, 1877, theosophy, blavatsky, esoteric, perennialism]
+tags: [phase-7, 1877, theosophy, blavatsky, esoteric, perennialism, astrology, theosophical-astrology]
 ---
 
 # Isis Unveiled

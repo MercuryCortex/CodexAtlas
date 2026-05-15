@@ -50,7 +50,7 @@ refs:
     publisher: "Hodder & Stoughton"
     type: "biography"
     tier: 2
-tags: [phase-7, 1904, thelema, crowley, occult, new-aeon, cairo]
+tags: [phase-7, 1904, thelema, crowley, occult, new-aeon, cairo, astrology, thelemic-astrology, new-aeon-astrology]
 ---
 
 # Liber AL vel Legis (The Book of the Law)

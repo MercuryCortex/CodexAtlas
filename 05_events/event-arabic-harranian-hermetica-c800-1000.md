@@ -48,7 +48,7 @@ refs:
     type: "primary-source"
     tier: 1
     notes: "The principal Arabic Hermetic-magical compendium; assembled in 10th-11th c. al-Andalus from earlier Arabic Hermetic material; transmitted into Latin (Picatrix Latinus) in 13th c. and shaped Renaissance magical Hermeticism"
-tags: [event, abbasid, harran, sabian, hermetic-transmission, arabic-hermes, idris, bayt-al-hikma]
+tags: [event, abbasid, harran, sabian, hermetic-transmission, arabic-hermes, idris, bayt-al-hikma, astrology, sabian-astrology-transmission, mesopotamian-astrology-survival]
 ---
 
 # Sabian-Harranian transmission of the Hermetica into Arabic (c. 800–1000 CE)

@@ -38,7 +38,7 @@ refs:
     type: "monograph"
     tier: 1
     notes: "Major recent conference volume on Berossus's reception and significance"
-tags: [person, babylonian, hellenistic, historian, berossus, babyloniaca, flood-preserver, priest-of-bel-marduk]
+tags: [person, babylonian, hellenistic, historian, berossus, babyloniaca, flood-preserver, priest-of-bel-marduk, astrology, mesopotamian-astrology, astrology-transmission-greek]
 ---
 
 # Berossus of Babylon

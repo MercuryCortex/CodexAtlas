@@ -20,7 +20,7 @@ refs:
     publisher: "Cambridge University Press"
     type: "monograph"
     tier: 1
-tags: [theme, hermeticism, correspondences, agrippa, paracelsus]
+tags: [theme, hermeticism, correspondences, agrippa, paracelsus, astrology, as-above-so-below, sympathetic-cosmology]
 ---
 
 # Hermetic Correspondences

@@ -25,7 +25,7 @@ refs:
     publisher: "Karger (rev. 1982)"
     type: "monograph"
     tier: 1
-tags: [person, paracelsus, alchemy, medicine, hermeticism, swiss, basel, christian-alchemy]
+tags: [person, paracelsus, alchemy, medicine, hermeticism, swiss, basel, christian-alchemy, astrology, medical-astrology, planet-organ-correspondences]
 ---
 
 # Paracelsus (Theophrastus von Hohenheim)

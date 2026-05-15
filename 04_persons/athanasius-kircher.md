@@ -24,7 +24,7 @@ refs:
     publisher: "University of Chicago Press"
     type: "monograph"
     tier: 1
-tags: [person, kircher, jesuit, polymath, egyptology, rome, hermeticism, sinology, baroque]
+tags: [person, kircher, jesuit, polymath, egyptology, rome, hermeticism, sinology, baroque, astrology, baroque-hermetic-astrology]
 ---
 
 # Athanasius Kircher

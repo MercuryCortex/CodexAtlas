@@ -31,7 +31,7 @@ refs:
     publisher: "U Massachusetts Press"
     type: "monograph"
     tier: 1
-tags: [person, dee, england, hermeticism, mathematics, elizabethan, kabbalah, angelic-magic, mortlake]
+tags: [person, dee, england, hermeticism, mathematics, elizabethan, kabbalah, angelic-magic, mortlake, astrology, elizabethan-astrology, court-astrologer]
 ---
 
 # John Dee

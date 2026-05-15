@@ -57,7 +57,7 @@ refs:
     type: "monograph"
     tier: 2
     notes: "Conservative-evangelical treatment of Persia-Bible connections; useful for the Magi material"
-tags: [person, zoroastrian, magi, priest-class, astrologer, achaemenid, christian-nativity, matthew-2, MASSIVE-WIN]
+tags: [person, zoroastrian, magi, priest-class, astrologer, achaemenid, christian-nativity, matthew-2, MASSIVE-WIN, astrology, zoroastrian-astrology, persian-astrology, christian-astrology-reception]
 ---
 
 # The Magi (Zoroastrian Priest-Astrologers)

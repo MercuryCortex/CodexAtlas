@@ -50,7 +50,7 @@ refs:
     type: "monograph"
     tier: 1
     notes: "For context — the falsafa tradition al-Kindi initiates"
-tags: [person, islamic, abbasid, baghdad, falsafa, philosopher, scientist, translator-supervisor, kindi-circle, neoplatonist, aristotelian, muʿtazilī-aligned, alkindus]
+tags: [person, islamic, abbasid, baghdad, falsafa, philosopher, scientist, translator-supervisor, kindi-circle, neoplatonist, aristotelian, muʿtazilī-aligned, alkindus, astrology, islamic-astrology, de-radiis]
 ---
 
 # al-Kindi (Abū Yūsuf Yaʿqūb ibn Isḥāq al-Kindī)

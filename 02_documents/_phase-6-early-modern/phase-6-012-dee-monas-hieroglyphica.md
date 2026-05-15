@@ -58,7 +58,7 @@ refs:
     type: "monograph"
     tier: 2
     notes: "Frames Dee → Rosicrucianism as a continuous trajectory"
-tags: [phase-6, dee, england, hermetic, kabbalah, alchemy, symbol, elizabethan]
+tags: [phase-6, dee, england, hermetic, kabbalah, alchemy, symbol, elizabethan, astrology, elizabethan-astrology, astrological-hermetic-glyph]
 ---
 
 # Monas Hieroglyphica

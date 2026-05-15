@@ -106,7 +106,7 @@ refs:
     publisher: "Routledge"
     type: "monograph"
     tier: 1
-tags: [symbol, anthropomorphic, mithraic, roman, iranian, mystery-cult, tauroctony, bull-killing, astrological, cosmic, mithras]
+tags: [symbol, anthropomorphic, mithraic, roman, iranian, mystery-cult, tauroctony, bull-killing, astrological, cosmic, mithras, astrology, mithraic-zodiac, precession-of-equinoxes-iconography]
 ---
 
 # Tauroctony (Mithras Killing the Bull)

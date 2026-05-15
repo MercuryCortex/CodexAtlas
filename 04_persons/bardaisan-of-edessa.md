@@ -45,7 +45,7 @@ refs:
     publisher: "in *Vigiliae Christianae* 51"
     type: "journal-article"
     tier: 1
-tags: [person, christianity, bardaisan, edessa, syriac, astrology, free-will, hymns]
+tags: [person, christianity, bardaisan, edessa, syriac, astrology, free-will, hymns, aramaic-christian-astrology, christian-astrology-reception]
 ---
 
 # Bardaisan of Edessa

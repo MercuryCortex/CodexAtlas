@@ -57,7 +57,7 @@ refs:
     publisher: "Franklin Watts / Oldbourne"
     type: "monograph"
     tier: 1
-tags: [phase-6, fludd, hermeticism, paracelsian, rosicrucian, english-esoteric, microcosm-macrocosm, kabbalah]
+tags: [phase-6, fludd, hermeticism, paracelsian, rosicrucian, english-esoteric, microcosm-macrocosm, kabbalah, astrology, cosmographic-astrology, hermetic-cosmography]
 ---
 
 # Utriusque Cosmi Historia

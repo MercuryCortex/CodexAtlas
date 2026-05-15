@@ -18,7 +18,7 @@ refs:
     publisher: "St. Martin's"
     type: "monograph"
     tier: 1
-tags: [person, phase-7, thelema, crowley, occult, 666]
+tags: [person, phase-7, thelema, crowley, occult, 666, astrology, thelemic-astrology, book-of-thoth-tarot-astrology]
 ---
 
 # Aleister Crowley

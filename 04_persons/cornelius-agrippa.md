@@ -25,7 +25,7 @@ refs:
     publisher: "Brill"
     type: "monograph"
     tier: 1
-tags: [person, renaissance, magic, hermeticism, agrippa, germany, occult-philosophy]
+tags: [person, renaissance, magic, hermeticism, agrippa, germany, occult-philosophy, astrology, renaissance-hermetic-astrology]
 ---
 
 # Heinrich Cornelius Agrippa von Nettesheim

@@ -24,7 +24,7 @@ refs:
     publisher: "Thames & Hudson"
     type: "monograph"
     tier: 2
-tags: [person, fludd, hermeticism, rosicrucian, paracelsian, english-esoteric, physician]
+tags: [person, fludd, hermeticism, rosicrucian, paracelsian, english-esoteric, physician, astrology, hermetic-cosmography, utriusque-cosmi-historia]
 ---
 
 # Robert Fludd

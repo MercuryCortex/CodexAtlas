@@ -26,7 +26,7 @@ refs:
     publisher: "Cambridge University Press"
     type: "monograph"
     tier: 1
-tags: [theme, fall, watchers, angels, second-temple, enochic, nephilim]
+tags: [theme, fall, watchers, angels, second-temple, enochic, nephilim, astrology, enochic-forbidden-astrology]
 ---
 
 # Watchers and Fallen Angels

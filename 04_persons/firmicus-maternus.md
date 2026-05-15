@@ -49,7 +49,7 @@ refs:
     publisher: "Chicago UP"
     type: "monograph"
     tier: 1
-tags: [person, christianity, latin-literature, mystery-cult-source, firmicus-maternus, astrologer-convert, de-errore-profanarum-religionum, mathesis-astrologica, anti-pagan-polemic]
+tags: [person, christianity, latin-literature, mystery-cult-source, firmicus-maternus, astrologer-convert, de-errore-profanarum-religionum, mathesis-astrologica, anti-pagan-polemic, astrology, hellenistic-astrology, latin-astrology]
 ---
 
 # Firmicus Maternus

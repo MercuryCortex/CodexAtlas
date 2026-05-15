@@ -33,7 +33,7 @@ refs:
     publisher: "Harvard University Press"
     type: "monograph"
     tier: 1
-tags: [person, renaissance, pico, christian-kabbalah, prisca-theologia, hermeticism, florence, papal-condemnation]
+tags: [person, renaissance, pico, christian-kabbalah, prisca-theologia, hermeticism, florence, papal-condemnation, astrology, anti-astrology-polemic, disputationes-adversus-astrologiam-1494]
 ---
 
 # Giovanni Pico della Mirandola

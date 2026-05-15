@@ -58,7 +58,7 @@ refs:
     url: "https://www.iranicaonline.org/articles/ekvan-al-safa"
     type: "encyclopedia"
     tier: 2
-tags: [phase-5, islam, ismaili, neoplatonism, encyclopedist, esotericism, basra]
+tags: [phase-5, islam, ismaili, neoplatonism, encyclopedist, esotericism, basra, astrology, islamic-astrology, encyclopedic-astrology]
 ---
 
 # Rasāʾil Ikhwān al-Ṣafāʾ

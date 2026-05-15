@@ -31,7 +31,7 @@ refs:
     publisher: "Fortress"
     type: "primary-translation"
     tier: 1
-tags: [deity, fallen-angel, watcher, enochic, second-temple, ethiopic-canon, childbirth-abortifacients]
+tags: [deity, fallen-angel, watcher, enochic, second-temple, ethiopic-canon, childbirth-abortifacients, astrology, enochic-lunar-astrology-teacher]
 ---
 
 # Kasdeja

@@ -67,7 +67,7 @@ refs:
     type: "monograph"
     tier: 2
     notes: "Accessible scholarly introduction; useful overview of structure and content."
-tags: [phase-1, mesopotamian, akkadian, astrology, divination, omen, neo-assyrian, ashurbanipal]
+tags: [phase-1, mesopotamian, akkadian, astrology, divination, omen, neo-assyrian, ashurbanipal, mesopotamian-astrology, foundational-astrology-text]
 ---
 
 # Enūma Anu Enlil

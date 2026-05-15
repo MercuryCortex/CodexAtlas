@@ -37,7 +37,7 @@ refs:
     publisher: "Cambridge UP"
     type: "monograph"
     tier: 1
-tags: [deity, fallen-angel, watcher, enochic, lightning, second-temple, ethiopic-canon]
+tags: [deity, fallen-angel, watcher, enochic, lightning, second-temple, ethiopic-canon, astrology, enochic-astrology-teacher]
 ---
 
 # Baraqel

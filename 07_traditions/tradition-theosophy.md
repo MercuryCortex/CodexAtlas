@@ -25,7 +25,7 @@ refs:
     publisher: "Bloomsbury"
     type: "monograph"
     tier: 1
-tags: [tradition, phase-7, theosophy, esoteric, blavatsky, perennialism]
+tags: [tradition, phase-7, theosophy, esoteric, blavatsky, perennialism, astrology, theosophical-astrology, modern-occult-astrology]
 ---
 
 # Theosophy

@@ -31,7 +31,7 @@ refs:
     publisher: "Cambridge University Press"
     type: "monograph"
     tier: 1
-tags: [tradition, renaissance, hermeticism, prisca-theologia, florence, esoteric-revival]
+tags: [tradition, renaissance, hermeticism, prisca-theologia, florence, esoteric-revival, astrology, renaissance-hermetic-astrology]
 ---
 
 # Renaissance Hermeticism

@@ -55,7 +55,7 @@ refs:
     publisher: "in Ebeling, *The Secret History of Hermes Trismegistus*, Cornell UP"
     type: "monograph"
     tier: 2
-tags: [deity, hermetic, syncretism, hermes, thoth, alexandria, wisdom-revelator, renaissance-revival]
+tags: [deity, hermetic, syncretism, hermes, thoth, alexandria, wisdom-revelator, renaissance-revival, astrology, hellenistic-astrology-patron]
 ---
 
 # Hermes Trismegistus

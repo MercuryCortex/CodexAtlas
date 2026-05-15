@@ -66,7 +66,7 @@ refs:
     type: "primary-translation"
     tier: 3
     notes: "Older translation, public-domain, widely cited"
-tags: [phase-3, second-temple, apocalyptic, pseudepigrapha, watchers, enoch, qumran]
+tags: [phase-3, second-temple, apocalyptic, pseudepigrapha, watchers, enoch, qumran, astrology, watchers-as-astrology-teachers, enochic-anti-astrology-framing]
 ---
 
 # 1 Enoch

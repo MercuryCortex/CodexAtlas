@@ -37,7 +37,7 @@ refs:
     type: "monograph"
     tier: 2
     notes: "Sin's late prominence at Harran under Nabonidus (~556–539 BCE)"
-tags: [deity, sumerian, akkadian, moon-god, ur, harran, sin]
+tags: [deity, sumerian, akkadian, moon-god, ur, harran, sin, astrology, mesopotamian-astrology, lunar-astrology]
 ---
 
 # Nanna / Sin

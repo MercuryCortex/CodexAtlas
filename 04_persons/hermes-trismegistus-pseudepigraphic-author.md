@@ -43,7 +43,7 @@ refs:
     type: "monograph"
     tier: 1
     notes: "Foundational study of the Renaissance Hermetic reception; her thesis on the centrality of Hermes for Renaissance esotericism is now nuanced but remains foundational"
-tags: [person, hermeticism, pseudonymous, legendary, hermes-trismegistus, hermes-thoth, prisca-theologia, casaubon-1614, ritman-mellon-core]
+tags: [person, hermeticism, pseudonymous, legendary, hermes-trismegistus, hermes-thoth, prisca-theologia, casaubon-1614, ritman-mellon-core, astrology, hermetic-astrology, hellenistic-astrology-patron]
 ---
 
 # Hermes Trismegistus (pseudepigraphic author)

@@ -51,7 +51,7 @@ refs:
     publisher: "Stanford University"
     type: "encyclopedia"
     tier: 3
-tags: [phase-4, neoplatonism, theurgy, chaldean-oracles, fragmentary, oracles]
+tags: [phase-4, neoplatonism, theurgy, chaldean-oracles, fragmentary, oracles, astrology, hellenistic-astrology, theurgic-astrology]
 ---
 
 # Chaldean Oracles

@@ -46,7 +46,7 @@ refs:
     publisher: "Blackwell"
     type: "monograph"
     tier: 1
-tags: [tradition, mystery-cult, mithraic-mysteries, mithras, roman-empire, tauroctony, seven-grade-initiation, christianity-competitor, beck-ulansey, ritman-mellon-adjacent]
+tags: [tradition, mystery-cult, mithraic-mysteries, mithras, roman-empire, tauroctony, seven-grade-initiation, christianity-competitor, beck-ulansey, ritman-mellon-adjacent, astrology, mithraic-zodiac, precession-cosmography]
 ---
 
 # Mithraic Mysteries (Roman Mithraism)

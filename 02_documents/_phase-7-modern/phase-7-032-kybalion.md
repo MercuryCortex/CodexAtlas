@@ -44,7 +44,7 @@ refs:
     publisher: "Bloomsbury"
     type: "monograph"
     tier: 1
-tags: [phase-7, 1908, kybalion, hermeticism-modern, new-thought, atkinson, pseudo-hermetic]
+tags: [phase-7, 1908, kybalion, hermeticism-modern, new-thought, atkinson, pseudo-hermetic, astrology, hermetic-correspondences]
 ---
 
 # The Kybalion

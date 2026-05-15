@@ -37,7 +37,7 @@ refs:
     publisher: "in *Dictionary of Deities and Demons in the Bible*, 2nd ed., Brill"
     type: "encyclopedia"
     tier: 2
-tags: [deity, sumerian, akkadian, sun-god, justice, larsa, sippar, ebabbar]
+tags: [deity, sumerian, akkadian, sun-god, justice, larsa, sippar, ebabbar, astrology, mesopotamian-astrology, solar-astrology]
 ---
 
 # Utu / Shamash

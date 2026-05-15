@@ -58,7 +58,7 @@ refs:
     publisher: "Warburg Institute (Spiritual and Demonic Magic from Ficino to Campanella)"
     type: "monograph"
     tier: 1
-tags: [phase-6, renaissance, magic, agrippa, hermetic-kabbalist, cologne, three-worlds, ceremonial-magic]
+tags: [phase-6, renaissance, magic, agrippa, hermetic-kabbalist, cologne, three-worlds, ceremonial-magic, astrology, renaissance-hermetic-astrology, occult-astrological-encyclopedia]
 ---
 
 # De Occulta Philosophia Libri Tres

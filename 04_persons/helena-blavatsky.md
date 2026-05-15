@@ -19,7 +19,7 @@ refs:
     publisher: "North Atlantic"
     type: "monograph"
     tier: 1
-tags: [person, phase-7, theosophy, blavatsky, esoteric, founder]
+tags: [person, phase-7, theosophy, blavatsky, esoteric, founder, astrology, theosophical-astrology, modern-occult-astrology]
 ---
 
 # Helena Petrovna Blavatsky
