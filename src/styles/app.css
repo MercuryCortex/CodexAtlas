@@ -1599,6 +1599,43 @@ footer select:focus, footer input:focus { border-color: var(--gold-soft); }
 /* Suppress the canvas radial gradient on Atlas so the map fills cleanly. */
 body.view-atlas main.canvas { background: var(--bg-0); }
 
+/* ASTROLOGY pane — stub state. Same layout idiom as .atlas-pane: full canvas
+   minus sidebar/detail widths via --eff-nav-w / --eff-detail-w. The mode-switch
+   pill row is rendered into #view-controls (top bar) and shares .btn.btn-mini styling. */
+.astrology-pane {
+  position: absolute;
+  top: 56px; bottom: 24px;
+  left: calc(var(--eff-nav-w) + 24px);
+  right: calc(var(--eff-detail-w) + 24px);
+  overflow: hidden;
+  display: flex; align-items: center; justify-content: center;
+  transition: left var(--t-layout) var(--ease), right var(--t-layout) var(--ease);
+}
+.astrology-stub {
+  max-width: 640px; padding: 36px 44px;
+  border: 1px solid var(--border-soft); border-radius: 6px;
+  background: rgba(212,165,90,0.04);
+  color: var(--text-1); font-family: var(--serif);
+  text-align: center;
+}
+.astrology-stub .as-mode-title {
+  font-size: 22px; color: var(--gold);
+  letter-spacing: 0.04em; margin-bottom: 18px;
+}
+.astrology-stub .as-mode-body {
+  font-size: 14px; line-height: 1.6; color: var(--text-2);
+  margin-bottom: 22px;
+}
+.astrology-stub .as-mode-meta {
+  font-family: var(--mono); font-size: 10px;
+  color: var(--text-3); letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+.btn-mini.astrology-mode.active {
+  border-color: var(--gold-soft); color: var(--gold);
+  background: rgba(212,165,90,0.10);
+}
+
 /* Atlas pane — the outer positioning wrapper for the map. Owns position:absolute
    and the empty-state centering. MapLibre lives in the inner .atlas-map div. */
 .atlas-pane {

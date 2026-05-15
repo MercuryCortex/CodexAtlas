@@ -550,7 +550,7 @@ function setView(name) {
   }
   document.getElementById('view-controls').innerHTML = '';
   legend.style('display', 'none').html('');
-  document.querySelectorAll('.list-pane,.about-pane,.alch-toolbox,.alch-palette,.tl-zoom-presets').forEach(el => el.remove());
+  document.querySelectorAll('.list-pane,.about-pane,.alch-toolbox,.alch-palette,.tl-zoom-presets,.astrology-pane').forEach(el => el.remove());
   hideTooltip();
   // Map thumbnail only on geo-relevant views; hide elsewhere.
   // Atlas view uses MapLibre (no SVG map-thumb); zoom meter shown separately.
@@ -6194,6 +6194,63 @@ VIEWS.all = {
     document.getElementById('canvas').appendChild(pane);
   }
 };
+
+// ============================================================
+// ASTROLOGY — cross-tradition sky-investigation surface.
+// Four modes share one canvas (toggled by toolbar pills):
+//   spine    — 3500 BCE → 2026 CE horizontal spine of astrology-tagged nodes
+//   wheel    — natal/event chart (tropical ↔ sidereal toggle), drop in any vault event date
+//   now      — live planetary positions + time-scrubber (drag through history)
+//   decanic  — 36 decans × 28 lunar mansions concentric wheel, cross-mapped traditions
+// STUB STATE (opus-cleanup-1): nav entry + canvas pane + pill toolbar wired.
+// Each mode body is a placeholder describing its planned role. Math (ephemeris,
+// chart geometry, decan tables) lands in subsequent batches.
+// ============================================================
+const _astrologyState = { mode: 'spine' };
+
+VIEWS.astrology = {
+  title: 'Astrology',
+  subtitle: 'cross-tradition sky investigation · spine · wheel · now · decanic',
+  render() {
+    document.getElementById('view-controls').innerHTML = `
+      <button class="btn btn-mini astrology-mode" data-mode="spine">spine</button>
+      <button class="btn btn-mini astrology-mode" data-mode="wheel">wheel</button>
+      <button class="btn btn-mini astrology-mode" data-mode="now">now</button>
+      <button class="btn btn-mini astrology-mode" data-mode="decanic">decanic</button>
+    `;
+    document.querySelectorAll('.astrology-mode').forEach(btn => {
+      if (btn.dataset.mode === _astrologyState.mode) btn.classList.add('active');
+      btn.onclick = () => { _astrologyState.mode = btn.dataset.mode; setView('astrology'); };
+    });
+
+    const pane = document.createElement('div');
+    pane.className = 'astrology-pane';
+    const astroNodes = DATA.nodes.filter(n => Array.isArray(n.tags) && n.tags.some(t => /^astrology/.test(t)));
+    const W = astroNodes.length;
+    pane.innerHTML = renderAstrologyMode(_astrologyState.mode, W);
+    document.getElementById('canvas').appendChild(pane);
+  }
+};
+
+function renderAstrologyMode(mode, count) {
+  const shell = (title, body) => `
+    <div class="astrology-stub">
+      <div class="as-mode-title">${title}</div>
+      <div class="as-mode-body">${body}</div>
+      <div class="as-mode-meta">${count} astrology-tagged vault nodes available · stub mode — math lands in next batch</div>
+    </div>`;
+  switch (mode) {
+    case 'spine':   return shell('Spine — 3,500-year horizontal transmission map',
+      'Plots every astrology-tagged node on a time axis, color-coded by tradition family. Cross-tradition transmission edges drawn as arcs. The MASSIVE-win view: Babylonian 36-star → Egyptian decans → Greek decans visible as left-to-right arrows.');
+    case 'wheel':   return shell('Wheel — natal / event chart',
+      'Tropical ↔ sidereal toggle, decans + lunar-mansions overlays. Drop in any vault event date (e.g. Jesus −4 CE) to see the sky as it stood. Click a planet → jump to its mythological node.');
+    case 'now':     return shell('Now — live planetary positions + history scrubber',
+      'World-strip map of current planetary longitudes with mythological/symbolic overlay. Time-scrubber 3000 BCE ↔ 2100 CE; watch precession of equinoxes move. Click a planet → its deity node.');
+    case 'decanic': return shell('Decanic — 36 × 28 cross-tradition wheel',
+      'Concentric wheels: 36 Egyptian decans / 28 Vedic Nakshatras / 28 Arabic Manazil / 28 Chinese Xiu. Click any cell → list of vault nodes anchored to it. Pure cross-tradition view.');
+    default: return shell('Astrology', 'Pick a mode above.');
+  }
+}
 
 VIEWS.about = {
   title: 'About this atlas',
