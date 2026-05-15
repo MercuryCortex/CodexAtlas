@@ -78,6 +78,7 @@ The floating-panel pivot was left uncommitted and partially broken. Changes have
 
 ---
 
+<<<<<<< Updated upstream
 ## opus-symbols-2 — Symbols-map next-level (densify + imagery) — started 2026-05-15 ~00:00 — **FINISHED 2026-05-15 ~02:10**
 
 - **Owning:** all 56 files in `09_symbols/*.md` (frontmatter `cross-symbol-edges` densification + one new `depictions:` entry on haoma.md); `build_data.py` (one-line passthrough so `depictions` reaches the JS layer); `src/js/app.js` (side-tab thumb prefers `depictions[0]` when present, falls back to `n.thumbnail`); `fetch_thumbnails.py` OVERRIDES extended with 56 symbol-slug→Wikipedia-article mappings.
@@ -133,6 +134,23 @@ The floating-panel pivot was left uncommitted and partially broken. Changes have
   - **Schema:** `mystery-status: documented` is now the default on 53/56 nodes; the 3 exceptions are `indus-valley-script` (`mystery`), `faravahar` + `tauroctony` (`partially-deciphered`). The schema is settled; future additions only need to honor it.
 - **Status:** finished
 - **Last edit:** this close-out block + STATUS.md headline + at-a-glance table.
+=======
+## sonnet-foundation-2 — app-code / floating-panel layout pivot — started 2026-05-15 ~03:00 — in-flight
+
+- **Model:** Claude Sonnet 4.6
+- **Mission:** Implement the premium floating-panel layout (nav + detail panels as frosted-glass overlays over a full-bleed canvas). Builds on the triage analysis from `sonnet-triage-1` — doing it right this time.
+- **Owning (app-code only — NO vault content):**
+  - `src/styles/app.css` — body → position:relative (no grid), nav.side + aside.detail → position:fixed panels with backdrop-blur, main.canvas → position:fixed full-bleed, svg#svg → position:absolute clearing both panels, view-header / zoom-meter / map-thumb / legend / footer all anchored to clear panels.
+  - `src/js/app.js` — showMapThumb/showZoomMeter split, atlas marker dot-center anchor fix, MapLibre NavigationControl removal, zoom-meter wired to MapLibre, `_atlasUpdateZoomMeter()` helper, `_canvasResizeObs` switched to observe `svg#svg`.
+  - `00_meta/ACTIVE-AGENTS.md` — this registration block.
+- **Explicitly NOT doing:** era-range slider, STATE.atlasEra rename, vault content, index.html.
+- **Status:** in-flight
+- **Last edit:** ACTIVE-AGENTS.md registration
+
+---
+
+## opus-housekeeper-3 — Per-session archive of finished claim blocks (NO vault-content / NO app-UI edits) — started 2026-05-14 ~22:45 — **FINISHED 2026-05-14 ~22:55**
+>>>>>>> Stashed changes
 
 - **Mission (user-authorized after confirming all agents stopped):** archive the 24 FINISHED claim blocks from this session into `00_meta/agents-archive/2026-05-14.md` so the live `ACTIVE-AGENTS.md` stays scannable for the next agent. Per-agent claim-file split + `build_agents.py` rollup (`AUDIT/12` §3.2) was the original deferred plan; the archive approach is a simpler intermediate that captures most of the scannability win without the build-pipeline change.
 - **Owning (NO vault content, NO app code, NO methodology / schema policy):**

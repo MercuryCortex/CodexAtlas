@@ -49,6 +49,11 @@
   --tier-3:    #8a8a82;
   --tier-4:    #a85a5a;
   --tier-none: #3e424a;
+
+  --panel-bg:     rgba(13, 17, 25, 0.82);
+  --panel-blur:   blur(18px) saturate(140%);
+  --panel-shadow: 0 12px 32px -8px rgba(0,0,0,0.55);
+  --panel-edge:   1px solid rgba(35, 43, 61, 0.55);
 }
 
 * { box-sizing: border-box; }
@@ -311,25 +316,13 @@ a:hover { color: var(--text-0); }
 button { font: inherit; cursor: pointer; }
 
 body {
-  display: grid;
-  /* Sidebar still position:fixed (so the brand-section / nav-inner / utility stack runs
-     the full viewport height), BUT the grid now ALLOCATES the column width for it — was
-     `0` before. With column = 0, main.canvas occupied [0, viewport-w] and content drew
-     UNDER the fixed nav overlay. User explicitly: "mind to map the frame of the tabs to
-     limit here and not behind". Now main.canvas starts at viewport-var(--nav-w) so its
-     content sits to the right of the nav strip, never behind it. The fixed nav still
-     overlays the strip's column area — they're stacked at the same x-range, no overlap. */
-  grid-template-columns: var(--nav-w) 1fr var(--detail-w);
-  grid-template-rows: 1fr;
-  grid-template-areas: "nav canvas detail";
+  position: relative;
   height: 100vh;
-  --footer-h: 44px;   /* canvas-internal bottom elements respect this */
-  transition: grid-template-columns 220ms ease;
+  width: 100vw;
+  --footer-h: 44px;
+  overflow: hidden;
 }
-body.detail-collapsed  { grid-template-columns: var(--nav-w) 1fr var(--detail-w-collapsed); }
-body.nav-collapsed     { grid-template-columns: var(--nav-w-collapsed) 1fr var(--detail-w); }
-body.nav-collapsed.detail-collapsed { grid-template-columns: var(--nav-w-collapsed) 1fr var(--detail-w-collapsed); }
-body.footer-collapsed  { --footer-h: 0px; }
+body.footer-collapsed { --footer-h: 0px; }
 
 /* BRAND-SECTION (lives at top of left nav) */
 .brand-section {
@@ -624,18 +617,18 @@ body.detail-collapsed .themes-menu { right: var(--detail-w-collapsed); }
 /* NAV */
 nav.side {
   position: fixed;
-  left: 0; top: 0; bottom: 0;        /* full viewport Y — no dead slice at the bottom */
-  width: var(--nav-w); z-index: 100;
-  background: var(--bg-1);
-  border-right: 1px solid var(--border);
+  left: 0; top: 0; bottom: 0;
+  width: var(--nav-w); z-index: 150;
+  background: var(--panel-bg);
+  backdrop-filter: var(--panel-blur);
+  -webkit-backdrop-filter: var(--panel-blur);
+  border-right: var(--panel-edge);
+  box-shadow: var(--panel-shadow);
   overflow: hidden;
   display: flex; flex-direction: column;
-  transition: transform 240ms cubic-bezier(0.2, 0.8, 0.2, 1);
+  transition: width var(--t-layout) var(--ease);
 }
-/* Collapsed nav = thin icon strip (48px), NOT slid off-screen. The glyph for each view
-   stays clickable; only the text labels and section headers disappear. Previous behavior
-   was `transform: translateX(-220px)` which pushed the whole sidebar out — the user wanted
-   the persistent icon strip back. Width animates from 220→48 via the same transition. */
+/* Collapsed nav = thin icon strip (48px), NOT slid off-screen. */
 body.nav-collapsed nav.side { width: var(--nav-w-collapsed); }
 
 /* SIDE-TAB — the visible toggle. Sits at the right edge of the sidebar when expanded,
@@ -693,28 +686,46 @@ body.nav-collapsed nav.side .section-label { opacity: 0; padding: 8px 0; height:
 
 /* CANVAS */
 main.canvas {
-  grid-area: canvas;
-  position: relative; overflow: hidden;
+  position: fixed;
+  inset: 0;
+  z-index: 1;
+  overflow: hidden;
   background: radial-gradient(ellipse at center, var(--bg-1) 0%, var(--bg-0) 80%);
 }
 /* On the timeline (a wide horizontal layout), the radial gradient makes the LEFT and RIGHT
    edges look darker than the centre — reads as a "bg color change". Force a uniform fill there. */
 body.view-timeline main.canvas { background: var(--bg-0); }
-main.canvas svg { display: block; width: 100%; height: 100%; }
+body.view-atlas    main.canvas { background: var(--bg-0); }
+
+/* Main viz SVG — occupies the space between the two floating panels */
+main.canvas > svg#svg {
+  position: absolute;
+  top: 0; bottom: 0;
+  left: var(--nav-w);
+  right: var(--detail-w);
+  display: block;
+  overflow: visible;
+  transition: left var(--t-layout) var(--ease), right var(--t-layout) var(--ease);
+}
+body.nav-collapsed    main.canvas > svg#svg { left: var(--nav-w-collapsed); }
+body.detail-collapsed main.canvas > svg#svg { right: var(--detail-w-collapsed); }
+/* Map-thumb SVG keeps its own 100% rule */
+.map-thumb svg { display: block; width: 100%; height: 100%; }
 .view-header {
   position: absolute; top: 14px;
-  /* Positioned relative to main.canvas. The grid columns now allocate the nav width
-     directly, so main.canvas already starts to the right of the nav — no additional
-     var(--nav-w) offset needed (had been double-counting). 24px is just a margin. */
-  left: 24px;
-  right: 24px; z-index: 5;
+  left: calc(var(--nav-w) + 24px);
+  right: calc(var(--detail-w) + 24px);
+  z-index: 5;
   display: flex; align-items: baseline; justify-content: space-between;
   pointer-events: none;
   gap: 16px;
+  transition: left var(--t-layout) var(--ease), right var(--t-layout) var(--ease);
 }
-/* When the zoom-meter is visible (pantheon/documents/timeline), reserve the right
-   side so view-controls + title can't drift under the meter. */
-body.zoom-visible .view-header { right: 230px; }
+body.nav-collapsed    .view-header { left:  calc(var(--nav-w-collapsed) + 24px); }
+body.detail-collapsed .view-header { right: calc(var(--detail-w-collapsed) + 24px); }
+/* When the zoom-meter is visible, reserve the right side so view-controls + title can't drift under the meter. */
+body.zoom-visible .view-header { right: calc(var(--detail-w) + 230px); }
+body.zoom-visible.detail-collapsed .view-header { right: calc(var(--detail-w-collapsed) + 230px); }
 .view-header > div:first-child { min-width: 0; flex: 1 1 auto; }   /* title block can shrink */
 .view-controls { pointer-events: auto; display: flex; gap: 8px; align-items: center; flex-shrink: 0; }
 .view-header h2 { margin: 0; font-family: var(--serif); font-size: var(--h2-size); color: var(--text-0); font-weight: 500; letter-spacing: 0.06em; text-transform: uppercase; white-space: nowrap; }
@@ -768,12 +779,19 @@ body.zoom-visible .view-header { right: 230px; }
 
 /* DETAIL */
 aside.detail {
-  grid-area: detail;
-  background: var(--bg-1);
-  border-left: 1px solid var(--border);
-  overflow: hidden; position: relative;
+  position: fixed;
+  right: 0; top: 0; bottom: 0;
+  width: var(--detail-w); z-index: 150;
+  background: var(--panel-bg);
+  backdrop-filter: var(--panel-blur);
+  -webkit-backdrop-filter: var(--panel-blur);
+  border-left: var(--panel-edge);
+  box-shadow: -8px 0 24px -8px rgba(0,0,0,0.45);
+  overflow: hidden;
   display: flex; flex-direction: column;
+  transition: width var(--t-layout) var(--ease);
 }
+body.detail-collapsed aside.detail { width: var(--detail-w-collapsed); }
 .detail-toggle {
   position: absolute; top: 12px; left: 8px; z-index: 4;
   width: 22px; height: 28px;
@@ -886,9 +904,6 @@ body.footer-collapsed footer { transform: translateY(100%); }
 .footer-toggle:hover { color: var(--gold); border-color: var(--gold-soft); }
 body.nav-collapsed .footer-toggle { left: calc(var(--nav-w-collapsed) + 10px); }
 body.footer-collapsed .footer-toggle { transform: rotate(180deg); }
-body.footer-collapsed {
-  grid-template-rows: 1fr 0px;
-}
 footer .filter-group { display: flex; gap: 6px; align-items: center; }
 footer label {
   letter-spacing: 0.06em; text-transform: uppercase; color: var(--text-3); font-size: 10px;
@@ -1497,17 +1512,22 @@ body.view-atlas main.canvas { background: var(--bg-0); }
 .btn-reset.active { color: var(--gold); border-color: var(--gold); }
 
 /* Map thumbnail — bottom-right, sits clear of any dashboard panels by avoiding the detail-pane width */
-/* ZOOM METER — top-right of canvas, grouped with the view-controls "tools" cluster.
-   Sits ABOVE the view-header row, so the view-header reserves space (via body.zoom-visible)
-   to prevent the controls row from running under the meter. */
+/* ZOOM METER — top-right of canvas, anchored to viewport clearing the detail panel. */
 .zoom-meter {
-  position: absolute; top: 12px; right: 24px; z-index: 6;
+  position: absolute; top: 14px;
+  right: calc(var(--detail-w) + 24px);
+  z-index: 35;
   display: inline-flex; align-items: center; gap: 0;
-  background: rgba(13, 17, 25, 0.86); backdrop-filter: blur(6px);
-  border: 1px solid var(--border); border-radius: 4px;
-  padding: 2px; z-index: 30;
+  background: var(--panel-bg);
+  backdrop-filter: var(--panel-blur);
+  -webkit-backdrop-filter: var(--panel-blur);
+  border: var(--panel-edge); border-radius: 4px;
+  padding: 2px;
   font-family: var(--mono);
+  box-shadow: var(--panel-shadow);
+  transition: right var(--t-layout) var(--ease);
 }
+body.detail-collapsed .zoom-meter { right: calc(var(--detail-w-collapsed) + 24px); }
 .zoom-meter button {
   background: transparent; border: 0; padding: 0;
   color: var(--text-2); cursor: pointer;
@@ -1540,14 +1560,16 @@ body.view-atlas main.canvas { background: var(--bg-0); }
 
 .map-thumb {
   position: absolute; bottom: calc(var(--footer-h) + 12px);
-  right: 14px;
+  right: calc(var(--detail-w) + 14px);
   width: 200px; height: 110px;
-  background: rgba(13, 17, 25, 0.86); backdrop-filter: blur(6px);
-  border: 1px solid var(--border); border-radius: 4px;
+  background: var(--panel-bg);
+  backdrop-filter: var(--panel-blur);
+  -webkit-backdrop-filter: var(--panel-blur);
+  border: var(--panel-edge); border-radius: 4px;
   overflow: hidden; pointer-events: none;
-  transition: opacity 200ms ease;
+  transition: opacity 200ms ease, right var(--t-layout) var(--ease);
 }
-.map-thumb svg { display: block; width: 100%; height: 100%; }
+body.detail-collapsed .map-thumb { right: calc(var(--detail-w-collapsed) + 14px); }
 .map-thumb-label {
   position: absolute; bottom: 4px; left: 6px;
   font-family: var(--mono); font-size: 9.5px; color: var(--gold);
@@ -1565,24 +1587,22 @@ body.view-atlas main.canvas { background: var(--bg-0); }
 
 .legend {
   position: absolute; bottom: calc(var(--footer-h) + 12px);
-  /* Relative to main.canvas, which now correctly starts after the nav (grid columns
-     allocate the nav width). 24px is the canvas-internal margin. */
-  left: 24px;
-  transition: bottom 200ms ease;
-  background: rgba(13, 17, 25, 0.88); backdrop-filter: blur(6px);
-  border: 1px solid var(--border); border-radius: 4px;
+  left: calc(var(--nav-w) + 24px);
+  background: var(--panel-bg);
+  backdrop-filter: var(--panel-blur);
+  -webkit-backdrop-filter: var(--panel-blur);
+  border: var(--panel-edge); border-radius: 4px;
   padding: 10px 14px; font-size: 11px; color: var(--text-2);
   pointer-events: auto; max-width: 240px;
   display: flex; flex-direction: column; gap: 4px;
   max-height: 50vh; overflow-y: auto;
-  transition: max-width 180ms ease, padding 180ms ease, max-height 180ms ease;
+  transition: left var(--t-layout) var(--ease), max-width 180ms ease, padding 180ms ease, max-height 180ms ease;
 }
+body.nav-collapsed .legend { left: calc(var(--nav-w-collapsed) + 24px); }
 .legend.collapsed {
   max-height: 38px; max-width: 44px; padding: 8px;
   overflow: hidden;
 }
-/* No longer needed — main.canvas now sits in its own grid column and starts after the
-   nav, so .legend's `left: 24px` is canvas-relative and automatically respects nav width. */
 .legend.collapsed .lrow,
 .legend.collapsed .ltitle { display: none; }
 .legend.collapsed .legend-burger { transform: none; }

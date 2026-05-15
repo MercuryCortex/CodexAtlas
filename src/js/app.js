@@ -543,29 +543,31 @@ function setView(name) {
   legend.style('display', 'none').html('');
   document.querySelectorAll('.list-pane,.about-pane,.alch-toolbox,.alch-palette,.tl-zoom-presets').forEach(el => el.remove());
   hideTooltip();
-  // Map thumbnail only on geo-relevant views; hide elsewhere
-  const showMap = (name === 'pantheon' || name === 'documents' || name === 'timeline' || name === 'alchemy' || name === 'scripture');
+  // Map thumbnail only on geo-relevant views; hide elsewhere.
+  // Atlas view uses MapLibre (no SVG map-thumb); zoom meter shown separately.
+  const showMapThumb = (name === 'pantheon' || name === 'documents' || name === 'timeline' || name === 'alchemy' || name === 'scripture');
+  const showZoomMeter = showMapThumb || name === 'atlas';
   // Default-collapse the detail panel ONLY on a view CHANGE (e.g., Pantheon → Timeline),
   // not on a re-render of the same view. Re-renders are triggered by ResizeObserver and
   // window-resize listeners — if we collapsed on those, clicking a Timeline event would
   // open the panel briefly and then snap shut ~220ms later when the ResizeObserver fires
   // (because opening the panel changes the SVG width, which trips the observer).
-  if (showMap && _isViewChange) {
+  if (showMapThumb && _isViewChange) {
     document.body.classList.add('detail-collapsed');
     const dt = document.getElementById('detail-toggle');
     if (dt) dt.textContent = '‹';
   }
-  document.getElementById('map-thumb').style.display = showMap ? 'block' : 'none';
-  if (showMap) {
+  document.getElementById('map-thumb').style.display = showMapThumb ? 'block' : 'none';
+  if (showMapThumb) {
     document.getElementById('map-thumb').style.opacity = '0.45';
     document.getElementById('map-thumb-label').textContent = '— hover a node';
     document.getElementById('map-thumb-marker').innerHTML = '';
     mapThumbVisible = true;
   }
-  // Zoom meter — visible on zoomable views; its handlers are rewired per-view by the renderer.
-  document.getElementById('zoom-meter').style.display = showMap ? 'inline-flex' : 'none';
+  // Zoom meter — visible on zoomable views (including atlas); its handlers are rewired per-view by the renderer.
+  document.getElementById('zoom-meter').style.display = showZoomMeter ? 'inline-flex' : 'none';
   // Body flag so the view-header can reserve top-right space for the meter.
-  document.body.classList.toggle('zoom-visible', showMap);
+  document.body.classList.toggle('zoom-visible', showZoomMeter);
   const v = VIEWS[name];
   document.getElementById('view-title').textContent = v.title;
   document.getElementById('view-subtitle').textContent = v.subtitle;
@@ -4272,7 +4274,6 @@ VIEWS.atlas = {
       _atlasMap.touchZoomRotate.disableRotation();
       _atlasMap.keyboard.disableRotation();
       _atlasMap.addControl(new maplibregl.AttributionControl({ compact: true }), 'bottom-left');
-      _atlasMap.addControl(new maplibregl.NavigationControl({ showCompass: false, visualizePitch: false }), 'top-right');
 
       _atlasResizeObs = new ResizeObserver(() => {
         if (paneEl.style.display !== 'none' && _atlasMap) _atlasMap.resize();
@@ -4339,7 +4340,8 @@ VIEWS.atlas = {
           _atlasHideHoverTrails();
         });
 
-        const marker = new maplibregl.Marker({ element: el, anchor: 'left', offset: [4, 0] })
+        const dotOffsetX = -(parseFloat(dotSize) / 2);
+        const marker = new maplibregl.Marker({ element: el, anchor: 'left', offset: [dotOffsetX, 0] })
           .setLngLat([n.geo.lon, n.geo.lat])
           .addTo(_atlasMap);
         _atlasMarkers.set(n.id, { el, marker, tier, deg, node: n });
@@ -4358,11 +4360,20 @@ VIEWS.atlas = {
       _atlasMap.off('zoomend', _atlasEndHandler);
       _atlasMap.off('moveend', _atlasEndHandler);
     }
-    _atlasZoomHandler = () => _atlasUpdateLOD();
+    _atlasZoomHandler = () => { _atlasUpdateLOD(); _atlasUpdateZoomMeter(); };
     _atlasEndHandler  = () => _atlasDeclutter();
     _atlasMap.on('zoom', _atlasZoomHandler);
     _atlasMap.on('zoomend', _atlasEndHandler);
     _atlasMap.on('moveend', _atlasEndHandler);
+
+    // Wire zoom-meter buttons to MapLibre
+    const zmIn    = document.getElementById('zm-in');
+    const zmOut   = document.getElementById('zm-out');
+    const zmReset = document.getElementById('zm-reset');
+    if (zmIn)    zmIn.onclick    = () => _atlasMap && _atlasMap.zoomIn({ duration: 260 });
+    if (zmOut)   zmOut.onclick   = () => _atlasMap && _atlasMap.zoomOut({ duration: 260 });
+    if (zmReset) zmReset.onclick = () => _atlasMap && _atlasMap.easeTo({ center: [15, 25], zoom: 1.6, duration: 600 });
+    _atlasUpdateZoomMeter();
   }
 };
 
@@ -4404,6 +4415,15 @@ function _atlasDeclutter() {
     if (conflict) it.m.el.classList.add('hidden-by-declutter');
     else claimed.push({ x0, x1, y0, y1 });
   });
+}
+
+// ---- Zoom meter readout for Atlas MapLibre map ----
+function _atlasUpdateZoomMeter() {
+  if (!_atlasMap) return;
+  const readout = document.getElementById('zm-readout');
+  if (!readout) return;
+  const mult = Math.pow(2, _atlasMap.getZoom() - 1.6);
+  readout.textContent = mult.toFixed(2) + '×';
 }
 
 // ---- Hover trails: GeoJSON line source updated on the fly ----
@@ -5142,7 +5162,7 @@ const _canvasResizeObs = new ResizeObserver(() => {
     if (STATE.view === 'timeline') setView('timeline');
   }, 220);
 });
-_canvasResizeObs.observe(document.getElementById('canvas'));
+_canvasResizeObs.observe(document.getElementById('svg'));
 
 // initial
 buildThemesDropdown();
