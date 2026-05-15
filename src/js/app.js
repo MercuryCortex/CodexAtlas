@@ -4269,7 +4269,12 @@ VIEWS.atlas = {
         zoom: 2.2,
         minZoom: 0.6,
         maxZoom: 7.5,
-        renderWorldCopies: true,
+        // Single-world view (no horizontal wrap). The previous `true` value
+        // caused the user-reported "infinite scrolling repeating tile" — markers
+        // render only in the canonical world copy, so panning into duplicates
+        // showed basemap-without-markers, creating an illusion of marker drift.
+        // (Map-drift fix, 2026-05-15.)
+        renderWorldCopies: false,
         attributionControl: false,
         fadeDuration: 220,
         bearing: 0,
