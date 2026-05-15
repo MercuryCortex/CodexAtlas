@@ -4137,7 +4137,12 @@ function _atlasBuildStyle() {
     sources: {
       protomaps: {
         type: 'vector',
-        url: 'pmtiles://_assets/basemap/world-z7.pmtiles',
+        // Use tiles array directly — avoids a TileJSON metadata fetch through the pmtiles://
+        // protocol handler, which hangs in MapLibre v5 when the source URL form is used.
+        tiles: ['pmtiles://_assets/basemap/world-z7.pmtiles/{z}/{x}/{y}'],
+        minzoom: 0,
+        maxzoom: 7,
+        bounds: [-180, -85.05, 180, 85.05],
         attribution: '© <a href="https://openstreetmap.org/copyright" target="_blank">OpenStreetMap</a>'
       }
     },
@@ -4351,8 +4356,18 @@ VIEWS.atlas = {
       _atlasDeclutter();
     };
 
-    if (_atlasMap.isStyleLoaded()) setup();
-    else _atlasMap.once('load', setup);
+    if (_atlasMap.isStyleLoaded()) {
+      setup();
+    } else {
+      // In MapLibre v5, 'load' may not fire when using custom pmtiles:// protocol.
+      // 'idle' fires once the map is fully rendered for the first time.
+      // setTimeout is the final fallback if neither event fires within 5s.
+      let setupDone = false;
+      const runSetup = () => { if (!setupDone && _atlasMap) { setupDone = true; setup(); } };
+      _atlasMap.once('load', runSetup);
+      _atlasMap.once('idle', runSetup);
+      setTimeout(runSetup, 5000);
+    }
 
     // Rewire zoom / end handlers (remove old, add fresh — labelMode lives in closure via STATE).
     if (_atlasZoomHandler) _atlasMap.off('zoom', _atlasZoomHandler);
