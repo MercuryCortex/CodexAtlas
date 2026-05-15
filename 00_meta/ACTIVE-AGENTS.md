@@ -160,19 +160,27 @@ Format:
 
 ---
 
-## sonnet-egyptian-solar-1 — content / Egyptian solar theology cluster — started 2026-05-15 — **IN-FLIGHT**
-- Owning: `05_events/event-karnak-temple-complex-construction-c-2055-bce-100-ce.md` (UPGRADE), `03_deities/amun-ra.md` (body check), `06_themes/zep-tepi.md` (body check), `06_themes/divine-kingship-solar.md` (body check), `04_persons/jan-assmann.md` (NEW)
-- Goal: Upgrade Karnak event with Opet Festival / Zep Tepi theology / axis mundi MASSIVE WIN; check amun-ra, zep-tepi, divine-kingship-solar for gaps; create Jan Assmann person node (Mosaic distinction + cultural memory theory)
-- Status: in-flight
+## sonnet-egyptian-solar-1 — content / Egyptian solar theology cluster — started 2026-05-15 — **FINISHED 2026-05-15**
+- Owning: `05_events/event-karnak-temple-complex-construction-c-2055-bce-100-ce.md` (UPGRADE), `03_deities/amun-ra.md` (UPGRADE), `06_themes/zep-tepi.md` (UPGRADE), `06_themes/divine-kingship-solar.md` (UPGRADE), `04_persons/jan-assmann.md` (NEW)
+- Goal: Egyptian solar theology cluster — Karnak, Amun-Ra, Zep Tepi, Jan Assmann
+- Status: finished
+- Delivered:
+  - **`jan-assmann.md`** (NEW, metadata) — 7 Tier-1 refs; Mosaic distinction thesis; cultural memory theory; cosmological monotheism / summodeism; 14 edge connections
+  - **`event-karnak-temple-complex-construction-c-2055-bce-100-ce.md`** (UPGRADE) — Zep Tepi sacred-space theology; oracle tradition; MASSIVE WIN axis-mundi five-tradition table
+  - **`amun-ra.md`** (UPGRADE) — Mosaic distinction section; jan-assmann + tradition-judaism/islam/zoroastrianism wired
+  - **`zep-tepi.md`** (UPGRADE) — six-tradition primordial-perfection table; jan-assmann as key scholar
+  - **`divine-kingship-solar.md`** (UPGRADE) — seven-tradition solar divine-kingship universal table
+- Build: **2222 nodes · 12,935 edges · 0 YAML errors · 0 new dead links** (commit d3bdd33)
 - Last edit: `00_meta/ACTIVE-AGENTS.md`
 
 ---
 
-## sonnet-isis-mysteries-1 — content / Isis mysteries transmission chain — started 2026-05-15 — **IN-FLIGHT**
-- Owning: `03_deities/isis-hellenistic.md` (upgrade metadata→full), `02_documents/_phase-4-late-antiquity/phase-4-072-plutarch-de-iside-et-osiride.md` (body check), `02_documents/_phase-4-late-antiquity/phase-4-105-apuleius-metamorphoses-book-11.md` (body check), `06_themes/divine-feminine.md` (check — already full)
+## sonnet-isis-mysteries-1 — content / Isis mysteries transmission chain — started 2026-05-15 — **FINISHED 2026-05-15**
+- Owning: `03_deities/isis-hellenistic.md` (upgrade metadata→full), `02_documents/_phase-4-late-antiquity/phase-4-072-plutarch-de-iside-et-osiride.md` (body check + full), `02_documents/_phase-4-late-antiquity/phase-4-105-apuleius-metamorphoses-book-11.md` (body check + full), `06_themes/divine-feminine.md` (already full — upgraded with Sophia-to-Christ + Beatrice + Isis-Lactans wires)
 - Goal: Build Isis mysteries transmission chain — Isis Lactans → nursing Madonna workshop evidence (Frankfurter); mystery initiation → baptismal theology; Queen of Heaven epithet; Osiris-search grief-motif table; divine-feminine node upgrade if needed
-- Status: in-flight
-- Last edit: `00_meta/ACTIVE-AGENTS.md`
+- Status: finished
+- Build: **2223 nodes · 12,935 edges · 2.8% dead-link · 0 YAML errors**
+- Last edit: `00_meta/STATUS.md`
 
 ---
 
