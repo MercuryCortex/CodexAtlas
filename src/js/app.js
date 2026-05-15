@@ -541,12 +541,23 @@ function setView(name) {
   // We toggle the OUTER pane — MapLibre overrides position:relative on its own
   // container element, so the outer wrapper owns positioning + display.
   const _atlasPaneEl = document.getElementById('atlas-pane');
+  const _graphPaneEl = document.getElementById('codex-graph-pane');
+  // Shared WebGL graph pane (Phase 1 = pantheon-deities only; later phases add documents/scripture/alchemy)
+  const _usesGraphPane = (name === 'pantheon' && (STATE.pantheonMode || 'deities') === 'deities');
   if (name === 'atlas' && FEATURES.atlasMapV2) {
     svg.node().style.display = 'none';
     if (_atlasPaneEl) _atlasPaneEl.style.display = 'block';
+    if (_graphPaneEl) _graphPaneEl.style.display = 'none';
+    if (window._codexGraph) window._codexGraph.unmount();
+  } else if (_usesGraphPane) {
+    svg.node().style.display = 'none';
+    if (_atlasPaneEl) _atlasPaneEl.style.display = 'none';
+    if (_graphPaneEl) _graphPaneEl.style.display = 'block';
   } else {
     svg.node().style.display = '';
     if (_atlasPaneEl) _atlasPaneEl.style.display = 'none';
+    if (_graphPaneEl) _graphPaneEl.style.display = 'none';
+    if (window._codexGraph) window._codexGraph.unmount();
   }
   document.getElementById('view-controls').innerHTML = '';
   legend.style('display', 'none').html('');
@@ -692,10 +703,60 @@ function renderDetail() {
 // Each family gets an angular wedge proportional to sqrt(memberCount).
 // Family labels sit OUTSIDE the ring, rotated tangentially.
 // ============================================================
+// Phase 1 (graph WebGL) — when STATE.pantheonMode === 'deities', delegate to
+// the shared sigma.js renderer instead of the legacy D3 SVG path. Other
+// pantheon modes (authors/symbols/events/monuments) still use the SVG path
+// below until their migration batches land.
+function _renderPantheonWebGL() {
+  document.getElementById('view-title').textContent = 'Pantheon';
+  document.getElementById('view-subtitle').textContent = 'every named deity · radial family wedges · WebGL';
+  document.getElementById('view-controls').innerHTML = '';
+  legend.style('display', 'none').html('');
+
+  const deities = DATA.nodes.filter(n => n.type === 'deity' && matchesFilter(n));
+  const idSet = new Set(deities.map(n => n.id));
+  const edges = EDGES.filter(e => idSet.has(e.source) && idSet.has(e.target));
+  const familyNames = (FAMILIES || []).map(f => f.name);
+
+  const positions = window._codexGraphLayout.polarWedge(deities, {
+    byField: 'family',
+    familyOrder: familyNames,
+    innerRadius: 90,
+    outerRadius: 440,
+    wedgeGap: 0.06
+  });
+
+  const pane = document.getElementById('codex-graph-pane');
+  if (!pane) return;
+  pane.style.display = 'block';
+  document.getElementById('svg').style.display = 'none';
+
+  window._codexGraph.mount(pane, {
+    nodes: deities,
+    edges,
+    positions,
+    onClick: id => selectNode(id, true),
+    onHover: (id, ev) => {
+      if (!id) { hideTooltip(); return; }
+      const n = NODES_BY_ID[id];
+      if (!n) return;
+      const meta = `<div class="ttitle">${n.title}</div>
+        <div class="tmeta">${n.family || '—'} · ${fmtDateRange(n.date_earliest, n.date_latest) || '—'}</div>
+        <div class="tmeta">${n.label || n.tradition || ''}</div>`;
+      const evt = ev || { clientX: window.innerWidth / 2, clientY: window.innerHeight / 2 };
+      showTooltip(meta, evt);
+    }
+  });
+}
+
 VIEWS.pantheon = {
   title: 'Pantheon',
   subtitle: '',
   render() {
+    // Phase 1: deities mode → shared WebGL renderer. Other modes fall through to legacy SVG.
+    if ((STATE.pantheonMode || 'deities') === 'deities') {
+      return _renderPantheonWebGL();
+    }
     // Mode: 'deities' (gods clustered by family) | 'authors' (persons who authored, were
     // attributed-to, originated a concept, or are listed as a doc's key-figure) | 'symbols'
     // (iconographic units clustered by origin family with cross-family edges loud) |
@@ -3814,9 +3875,11 @@ VIEWS.scripture = {
 const PRESET_CATEGORY_LABELS = {
   egypt: 'Egypt', hermetic: 'Hermetic', templar: 'Templar',
   gnostic: 'Gnostic', cross: 'Cross-Tradition', flood: 'Flood', astrology: 'Astrology',
+  persian: 'Persian Theological Spine',
 };
 const PRESET_CATEGORY_ORDER = [
   { key: 'egypt',    label: 'Egypt — Investigation Series' },
+  { key: 'persian',  label: 'Persian Theological Spine' },
   { key: 'cross',    label: 'Cross-Tradition' },
   { key: 'hermetic', label: 'Hermetic & Gnostic' },
   { key: 'gnostic',  label: 'Gnostic' },
@@ -4107,6 +4170,37 @@ const ALCHEMY_PRESETS = [
       'fernando-pessoa', 'manuel-j-gandra',
     ],
   },
+  // ── Persian Theological Spine ─────────────────────────────────────
+  {
+    id: 'persian-dualism-transmission-chain',
+    category: 'persian',
+    name: 'Zoroaster → Albigensian Crusade',
+    headline: 'One idea — the cosmos is a war between light and darkness — leaves Eastern Iran with Zoroaster (~1000 BCE), is synthesized by Mani into a world religion (~250 CE), Augustine joins it for 9 years before writing the doctrine of original sin, it reaches Southern France as Catharism by the 12th century, and Pope Innocent III destroys it with the first crusade against fellow Christians in 1209. The Albigensian Crusade is Rome killing the Western terminus of a 2,200-year transmission from Zoroaster.',
+    picks: [
+      'zarathustra', 'ahura-mazda', 'angra-mainyu-ahriman',
+      'phase-2-002-gathas-of-zarathustra',
+      'event-cyrus-conquest-of-babylon-539-bce', 'cyrus-the-great',
+      'persian-period-injection',
+      'mani', 'event-mani-execution-274-or-277',
+      'augustine-of-hippo', 'tradition-manichaeism',
+      'tradition-bogomilism', 'tradition-catharism',
+      'event-albigensian-crusade-1209-1229',
+    ],
+  },
+  {
+    id: 'bmac-to-hidden-imam',
+    category: 'persian',
+    name: 'BMAC → Hidden Imam — 4,000 Years',
+    headline: 'From the Bronze Age fire temples of Bactria-Margiana (~2100 BCE) through the asura/deva schism that split the Indo-Iranians, through Zoroaster\'s Saoshyant (the preserved hidden savior who will renovate the world), through the Persian Period injection of resurrection and angelology into Judaism, to the Shi\'a Hidden Imam in occultation since 874 CE — the same messianic-hidden-savior template running unbroken for 4,000 years in the same geographic corridor.',
+    picks: [
+      'bmac-proto-zoroastrian', 'asura-deva-inversion',
+      'zarathustra', 'ahura-mazda', 'saoshyant', 'frashokereti-cosmic-renovation',
+      'event-cyrus-conquest-of-babylon-539-bce',
+      'persian-period-injection', 'tradition-essenes', 'apkallu',
+      'occultation-hidden-imam', 'muhammad-al-mahdi',
+      'tikkun-olam',
+    ],
+  },
   // ── Flood Narratives ──────────────────────────────────────────────
   {
     id: 'cross-tradition-flood',
@@ -4126,6 +4220,38 @@ const ALCHEMY_PRESETS = [
 // flag:'alert' = direct documented transmission OR structural parallel precise enough to anchor new vault nodes.
 // threads[].tier: 1 = Tier-1 documented, 2 = plausible indirect, 'parallel' = structural only.
 const INVESTIGATIONS = [
+  {
+    id: 'persian-theological-spine',
+    name: 'The Persian Theological Spine',
+    flag: 'alert',
+    status: 'active',
+    opened: '2026-05-15',
+    headline: 'Zoroastrian theology — originating in the BMAC (~2100 BCE) and codified by Zarathustra — is the single largest doctrinal import in Abrahamic history. During the Babylonian captivity (586–538 BCE), five Zoroastrian ideas entered Judaism simultaneously: cosmic dualism, resurrection of the dead, a messianic savior figure, named angelology, and eschatological judgment. Every downstream Abrahamic tradition — Christianity, Islam, Kabbalah — runs on Zoroastrian theological infrastructure it largely does not acknowledge.',
+    threads: [
+      { label: 'BMAC fire temples → Zoroastrian ātaš — ALERT', note: 'Gonur Tepe (~2100–1800 BCE): mudbrick fire installations, haoma/soma vessels, no anthropomorphic figurines. The oldest archaeologically attested sacred fire tradition, directly ancestral to Zoroastrian fire-priest (*athravan*) culture. Now in vault.', tier: 1 },
+      { label: 'Asura/deva inversion — oldest ideological schism in vault', note: 'Same words, inverted moral valence across Sanskrit and Avestan. Records a deliberate proto-Zoroastrian reform — Zoroaster demonized the daēva class including Indra. Indra\'s demotion is the oldest prototype for the Satan/Adversary narrative. Yasna 32 documents the polemic. Now in vault.', tier: 1 },
+      { label: 'Cyrus as *mashiach* — Isaiah 45:1', note: 'The only non-Israelite to receive the Hebrew title of messiah. Persian kingship theology is the immediate model for the Davidic messiah concept. The concept was shaped by contact with its first named holder. Cyrus node + conquest event in vault.', tier: 1 },
+      { label: 'Essene Two Spirits — smoking gun for Persian injection', note: '1QS 3:13–4:26: Spirit of Truth vs Spirit of Deceit, structure-for-structure identical to Spenta Mainyu / Angra Mainyu. Philip Alexander (Tier-1): Persian influence is the most parsimonious explanation. tradition-essenes now in vault.', tier: 1 },
+      { label: 'Apkallu → Watchers inversion — Mesopotamian vector', note: 'Seven antediluvian Mesopotamian sages (beneficial teachers) recast as demonic Watchers in 1 Enoch. Zoroastrian moral dualism operating on Babylonian material during exile. Seventh Apkallu "taken to heaven" = Enoch "taken by God" — traceable transmission. Annus 2010 Tier-1. apkallu node in vault.', tier: 1 },
+      { label: 'Saoshyant ↔ Davidic Messiah ↔ Hidden Imam chain', note: 'One continuous hidden-savior template across four traditions. The Shi\'a Hidden Imam doctrine crystallized in majority-Zoroastrian Iran. occultation-hidden-imam wired to saoshyant in vault.', tier: 2 },
+      { label: 'Frashokereti ↔ Tikkun Olam — structural twins', note: 'Same three-act structure: cosmos broken → sparks scattered → righteous participation restores. Whether Luria (Safed, 1570) drew on Zoroastrian ideas directly or via structural persistence is the open question. Both nodes cross-wired in vault.', tier: 2 },
+      { label: 'Mani → Augustine → original sin', note: 'Augustine was Manichaean 9 years (374–383 CE). His *peccatum originale* reflects residual Manichaean body-as-evil logic. Most consequential individual Manichaean in Western history.', tier: 2 },
+      { label: 'Zoroaster → Cathars → Albigensian Crusade — Western terminus', note: 'Zoroastrian dualism → Mani → Paulicians → Bogomils → Cathars. Council of Saint-Félix (1167): documented Bogomil→Cathar ordination. The Albigensian Crusade (1209–1229) is Rome destroying the Western terminus of a 2,200-year transmission. All tradition nodes wired.', tier: 1 },
+    ],
+    seeds: [
+      'bmac-proto-zoroastrian', 'asura-deva-inversion',
+      'zarathustra', 'ahura-mazda', 'angra-mainyu-ahriman',
+      'phase-2-002-gathas-of-zarathustra',
+      'saoshyant', 'frashokereti-cosmic-renovation',
+      'cyrus-the-great', 'event-cyrus-conquest-of-babylon-539-bce',
+      'persian-period-injection', 'tradition-essenes', 'apkallu',
+      'mani', 'augustine-of-hippo', 'tradition-manichaeism',
+      'tradition-bogomilism', 'tradition-catharism',
+      'event-albigensian-crusade-1209-1229',
+      'occultation-hidden-imam', 'muhammad-al-mahdi',
+      'tikkun-olam',
+    ],
+  },
   {
     id: 'consciousness-temple',
     name: 'Consciousness Temple',

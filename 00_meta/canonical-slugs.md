@@ -2133,15 +2133,15 @@ canonical-slug
 
 | Refs | Dead target | Suggested canonical (existing) |
 |---:|---|---|
-| 5 | `phase-1-013-babylonian-theodicy` | `phase-1-004-gilgamesh-old-babylonian` |
-| 4 | `tradition-minoan-religion` | `tradition-kashmir-shaivism` |
-| 4 | `tradition-eastern-orthodoxy` | `tradition-kashmir-shaivism` |
-| 3 | `tradition-medieval-christianity` | `tradition-kashmir-shaivism` |
-| 3 | `tradition-early-christianity` | `tradition-kashmir-shaivism` |
-| 3 | `phase-4-007-new-testament-canon` | `phase-4-008-trimorphic-protennoia` |
+| 5 | `phase-1-013-babylonian-theodicy` | `phase-1-015-sumerian-king-list` |
+| 4 | `tradition-minoan-religion` | `tradition-knights-templar` |
+| 4 | `tradition-eastern-orthodoxy` | `tradition-knights-templar` |
+| 3 | `tradition-medieval-christianity` | `tradition-knights-templar` |
+| 3 | `tradition-early-christianity` | `tradition-knights-templar` |
+| 3 | `phase-4-007-new-testament-canon` | `phase-4-004-gospel-of-philip` |
 | 3 | `phase-2-005-1-2-kings` | `phase-2-008-homeric-epics` |
 | 3 | `divine-kingship-solar` | `divine-kingship` |
 | 2 | `yam-canaanite` | `astarte-canaanite` |
-| 2 | `tradition-lingayat` | `tradition-kashmir-shaivism` |
-| 2 | `phase-2-004-1-2-chronicles` | `phase-2-005-hebrew-bible-j-source` |
+| 2 | `tradition-lingayat` | `tradition-knights-templar` |
+| 2 | `phase-2-004-1-2-chronicles` | `phase-2-006-brahmanas-aranyakas` |
 | 2 | `asclepius` | `asclepius-greek` |
