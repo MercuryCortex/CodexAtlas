@@ -18,6 +18,21 @@ Format:
 
 ---
 
+## opus-blake-metatron-1 — content / Blake/Urizen/Metatron deep + Adam Kadmon/Anthropos full — started 2026-05-15 — **FINISHED 2026-05-15**
+- Owning: `03_deities/urizen.md` (NEW), `04_persons/william-blake.md` (NEW), `03_deities/metatron.md` (deep expand), `06_themes/adam-kadmon.md` (stub→full), `06_themes/anthropos-myth.md` (stub→full)
+- Goal: Create Blake + Urizen nodes; massively expand Metatron; upgrade Adam Kadmon and Anthropos Myth from stub to full with comprehensive cross-tradition grids
+- Status: finished
+- Delivered:
+  - **`william-blake.md`** (NEW, full) — Albion=Adam Kadmon, Urizen=Demiurge, Los=Logos/tikkun, Jerusalem=Shekinah, Four Zoas=partzufim; MASSIVE WIN: Protestant reconstruction of Gnostic-Kabbalistic cosmogony from Boehme+KJV+Milton; 14 edge connections
+  - **`urizen.md`** (NEW, full) — 7-row Urizen/Yaldabaoth independent-convergence table; Bacon/Newton/Locke as Urizenic philosophy; "Ancient of Days" image analysis
+  - **`metatron.md`** (deep expand) — name etymology section; Sar ha-Torah (Torah-mediation=Logos-mediation MASSIVE WIN); 70 names/70 nations; Shi'ur Qomah; Lurianic Metatron/Adam Kadmon relationship table; Blake's Albion as modern reception
+  - **`adam-kadmon.md`** (stub→full) — full Lurianic cosmogony; MASSIVE WIN 5-tradition grid (Puruṣa/Gayōmart/Gnostic/Paul/Blake); 13 edges
+  - **`anthropos-myth.md`** (stub→full) — 6-tradition grid; 3 explanatory frameworks; Pauline Cosmic Christ; Blake's Albion; 14 edges
+- Build: **2119 nodes · 12602 edges** (commit 278a406)
+- Last edit: `00_meta/STATUS.md`
+
+---
+
 ## sonnet-bruno-silk-1 — content / Bruno upgrade + Silk Road Investigation — started 2026-05-15 — **FINISHED 2026-05-15**
 - Owning: `04_persons/giordano-bruno.md` (upgrade), `06_themes/executed-divine-claimant.md` (Bruno section expansion), `src/js/app.js` (Silk Road preset + investigation)
 - Goal: Expand Bruno to full Yates-angle + executed-divine-claimant chain closure into modernity; add Silk Road as Investigation and preset
@@ -468,3 +483,23 @@ The things opus-foundation-1 claimed but never started are all still open:
 - Status: finished
 - Delivered: 9 existing nodes upgraded with MASSIVE-WIN cross-tradition sections; no new nodes; frashokereti↔tikkun-olam structural identity documented; Saoshyant↔Hidden Imam 6-row parallel table; Manichaeism downstream chain YAML + Augustine hinge documented; Bogomil Council of Saint-Félix transmission event; Cathar 2,400-year Zoroaster→Albigensian-Crusade chain; persian-period-injection wired to zoroastrianism/judaism/essenes. Build: **2089 nodes · 12,424 edges · 2.8% dead-link** (committed in acc2ea7 sweep).
 - Last edit: 00_meta/STATUS.md
+
+---
+
+## sonnet-persecution-1 — content / religious persecution & martyrdom investigation — started 2026-05-15 — **IN PROGRESS**
+
+- Goal: Fill the vault's most glaring content gap (no crucifixion event node!) and build the cross-tradition persecution investigation layer. Central finding: persecution → legitimation is the most consistent structural pattern in world religious history. The al-Hallaj / Jesus structural parallel (both crucified by the religious establishment for claiming divine identity) is an alert-grade cross-tradition finding.
+- Owning:
+  - `05_events/event-crucifixion-of-jesus-c30ce.md` (NEW)
+  - `05_events/event-execution-of-al-hallaj-922.md` (NEW)
+  - `05_events/event-spanish-inquisition-1478.md` (NEW)
+  - `05_events/event-death-of-jan-hus-1415.md` (NEW)
+  - `05_events/event-death-of-guru-arjan-1606.md` (NEW)
+  - `05_events/event-death-of-guru-tegh-bahadur-1675.md` (NEW)
+  - `05_events/event-bab-execution-1850.md` (NEW)
+  - `05_events/event-stoning-of-stephen-c35ce.md` (NEW)
+  - `06_themes/theme-persecution-as-legitimation.md` (NEW)
+  - `06_themes/theme-dying-founder-paradigm.md` (NEW)
+  - `06_themes/crucifixion-theology.md` (UPGRADE stub → metadata)
+  - `06_themes/martyrdom-theology.md` (UPGRADE stub → metadata)
+- Status: in progress
