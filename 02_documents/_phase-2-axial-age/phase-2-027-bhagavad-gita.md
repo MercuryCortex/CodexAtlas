@@ -108,6 +108,45 @@ The 700-verse philosophical-devotional poem embedded in Mahābhārata Book 6 (*B
 - → [[ram-mohan-roy]] / [[swami-vivekananda]] / [[sri-aurobindo]] — *direct-influence*: modern Hindu reception; the Gītā is the operational scripture of modern global Hinduism. Ram Mohan Roy's Brahmo Samaj reading; Vivekananda's Chicago presentations; Aurobindo's *Essays on the Gita* (1922-28) and Integral Yoga.
 - → **Western reception** — Wilkins 1785, Schopenhauer's enthusiasm (*Parerga und Paralipomena*), Emerson and Thoreau's Transcendentalist absorption (Emerson's "Brahma" poem; Thoreau's allusions in *Walden*), Aldous Huxley's *The Perennial Philosophy* (1945), the Hare Krishna (ISKCON) translation and dissemination (Bhaktivedanta Swami's *Bhagavad-Gita As It Is*, 1972). The Gītā is the most globally read Hindu text and the operational scripture of much modern Western spiritual culture.
 
+## Cross-tradition MASSIVE WIN parallels
+
+**1. MASSIVE WIN: Arjuna-Krishna chariot dialogue ↔ Plato's Phaedrus chariot allegory — independent convergent chariot metaphysics**
+Plato's *Phaedrus* (~370 BCE) presents the soul as a charioteer driving two horses (the noble and the base). The Gītā presents the body as a chariot, the senses as horses, the mind as the reins, and the Soul (with the divine Self as guide) as the rider — Krishna as the divine inner charioteer. Both use **the chariot as the structure of the soul** with the rational/divine element in the charioteer position guiding the passionate/sensory horses. No transmission is possible in either direction. This is the most precise structural parallel in classical philosophy — the same metaphor, the same mapping, in Greek and Sanskrit independently.
+
+**2. MASSIVE WIN: Krishna's theophany (Ch. 11 Viśvarūpa) ↔ Ezekiel's Merkavah ↔ Isaiah 6 ↔ Revelation 4 — the divine-throne vision universal**
+The Viśvarūpa is a divine self-revelation of overwhelming, terrifying totality — the human observer sees the divine in its true cosmic magnitude, is prostrated, and requires divine reassurance. The grammar is identical across traditions:
+- **Isaiah 6** (~-740 BCE): "I saw the Lord seated on a high and lofty throne... seraphim crying 'Holy, Holy, Holy'" — terrifying divine majesty; Isaiah prostrated; divine reassurance + commissioning
+- **Ezekiel 1** (~-593 BCE): the Merkavah chariot-throne — four living creatures, wheels within wheels, crystal vault, fire — overwhelming divine form; Ezekiel falls on his face
+- **Revelation 4** (~95 CE): the divine throne room — twenty-four elders, four living creatures, sea of glass, seven lamps of fire — John overwhelmed by divine presence
+- **Neoplatonic henosis** (Plotinus ~265 CE): the soul's ecstatic union with the One — overwhelming encounter with undivided being that cannot be described
+
+All are **theophany encounters with overwhelming divine totality**: human reduced to prostration; divine reassurance or commissioning follows; the experience is ineffable but must be reported.
+
+**3. Karma yoga — action without attachment ↔ Stoic *oikeiōsis* ↔ Confucian *li* ↔ Sufi *fanāʾ***
+"You have a right to perform your prescribed duties, but you are not entitled to the fruits of your actions" (2:47). The Gītā's karma-yoga doctrine — act fully in the world without ego-attachment to outcomes — is structurally parallel to:
+- **Stoic** *kathêkon* (appropriate action): do your duty as a rational social being without attachment to external outcomes; focus entirely on *prohairesis* (the will, which is yours alone)
+- **Confucian** moral rectitude: the *junzi* acts according to *li* (ritual propriety) without calculating personal gain
+- **Sufi** *fanāʾ* (annihilation of the ego in God): the mystic acts without self, as an instrument of divine will
+- **Christian** "Thy will be done" (Lord's Prayer): action surrendered to divine purpose rather than personal outcome
+
+All four articulate the same ethical insight: complete engagement in action combined with non-attachment to its fruits.
+
+**4. "I am the Self seated in the heart of all creatures" ↔ Quran 50:16 ↔ Gospel of Thomas 3 ↔ Meister Eckhart — the divine-as-inner-reality universal**
+Krishna's self-identification as the universal Ātman dwelling in every creature's heart (10:20; 15:15) is structurally identical to:
+- **Quran** 50:16: "We are closer to him than his jugular vein" — God's immanence within every human being
+- **Gospel of Thomas** 3: "The Kingdom is within you and outside you" — the divine as the inner reality closer than any external thing
+- **Meister Eckhart**: "The eye through which I see God is the same eye through which God sees me" — mystical identity of the soul's ground with the divine ground
+
+The divine-as-inner-reality claim appears in every major mystical tradition; the Gītā's formulation is among its most precise and theologically rich.
+
+**5. The three guṇas ↔ universal tripartite anthropology**
+The Gītā's analysis of nature through three *guṇas* (*tamas* / *rajas* / *sattva*) — all phenomena including human character, food, worship, and knowledge analyzed through this tripartite lens — is structurally parallel to:
+- **Platonic tripartite soul**: reason (*logistikon*) / spirit (*thymoeides*) / appetite (*epithymêtikon*) — three faculties requiring proper ordering
+- **Neoplatonic three hypostases**: One → Nous → Soul — three levels of reality
+- **Alchemical tria prima** (Paracelsus): sulphur / mercury / salt — three principles of all matter
+
+The human tendency to analyze fundamental reality through three categories is itself cross-cultural — but the Gītā's guṇa framework is one of its most sophisticated and comprehensive applications.
+
 ## Cross-tradition substrate
 - **Chapter 11 theophany.** The Gītā's cosmic Krishna-theophany — all worlds, all beings, all times present and future contained in the Lord's body — belongs to a cross-tradition substrate of *cosmic theophany* literature. Closest parallels: (a) the Hebrew Bible's Sinai theophany (Exodus 19) and Ezekiel's *merkavah* vision (Ezekiel 1, the divine chariot-throne); (b) the Mesopotamian-Babylonian cosmological imagery of Marduk in *Enuma Elish*, where the high god contains the cosmos; (c) the Hellenistic *epiphany* literature, where a god discloses cosmic identity (Aelius Aristides on Asclepius; the *Hymn to Demeter*'s Demeter-disclosure); (d) the Christian Pauline cosmic-Christ in Colossians 1:15-20 ("in him all things hold together") and the Johannine *Logos* in whom "all things were made." Five traditions independently producing cosmic-theophany literature. The Gītā 11 is among the most rhetorically intense statements of the type. Substrate; *parallel-motif*, with several independent developments and structural recurrence.
 - **Karma-yoga and the Stoic *amor fati*.** The Gītā's doctrine of action performed without attachment to fruits — "Your authority is in action alone, never in its fruits" (2:47) — is structurally parallel to the Stoic doctrine of *amor fati* / acceptance of cosmic order, the doctrine that one should align with the *Logos*'s providential pattern and do one's *kathēkon* (proper function) without attachment to outcome (Marcus Aurelius's *Meditations*, especially Books IV and VIII; Epictetus's *Enchiridion*). McEvilley 2002 *The Shape of Ancient Thought* surfaces this as a contested-but-suggestive parallel (Pyrrho's exposure to Indian thought during Alexander's campaign; later Stoic possible diffusion). Standard view: structural parallel, not transmission; the Gandhāran contact zone makes weak diffusion arguments possible but unprovable. Substrate.
