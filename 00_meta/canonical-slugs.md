@@ -466,7 +466,7 @@ canonical-slug
 - `zemyna`
 - `zeus`
 
-### document (364 nodes)
+### document (366 nodes)
 
 - `document-kuntillet-ajrud-inscriptions`
 - `phase-1-001-kesh-temple-hymn`
@@ -733,6 +733,8 @@ canonical-slug
 - `phase-5-052-sadi-gulistan`
 - `phase-5-053-hafez-divan`
 - `phase-5-054-rumi-masnavi`
+- `phase-5-055-vilayetname-haci-bektas`
+- `phase-5-056-divine-comedy`
 - `phase-6-001-ficino-pimander`
 - `phase-6-002-ficino-theologia-platonica`
 - `phase-6-003-pico-oration-900-conclusions`
@@ -995,7 +997,7 @@ canonical-slug
 - `subterranean-chamber-great-pyramid`
 - `temple-of-inscriptions-palenque`
 
-### person (621 nodes)
+### person (624 nodes)
 
 - `aaron`
 - `abba-garima`
@@ -1127,6 +1129,7 @@ canonical-slug
 - `d-t-suzuki`
 - `dalai-lama-14`
 - `daniel-prophet`
+- `dante-alighieri`
 - `darius-i-the-great`
 - `david-bentley-hart`
 - `david-brakke`
@@ -1207,6 +1210,7 @@ canonical-slug
 - `guru-arjan`
 - `guru-gobind-singh`
 - `guru-nanak`
+- `haci-bektas-veli`
 - `hadewijch-of-antwerp`
 - `hadrian-emperor`
 - `hafez`
@@ -1494,6 +1498,7 @@ canonical-slug
 - `ramanuja`
 - `ramprasad-sen`
 - `rashid-rida`
+- `rene-girard`
 - `rene-guenon`
 - `reza-aslan`
 - `rinchen-zangpo`
@@ -1982,10 +1987,11 @@ canonical-slug
 - `world-axis`
 - `zeus-pantokrator-transmission`
 
-### tradition (116 nodes)
+### tradition (117 nodes)
 
 - `tradition-advaita-vedanta`
 - `tradition-african-traditional`
+- `tradition-alevi-bektashi`
 - `tradition-anthroposophy`
 - `tradition-armenian-apostolic`
 - `tradition-asatru`
@@ -2107,12 +2113,13 @@ canonical-slug
 
 | Refs | Dead target | Suggested canonical (existing) |
 |---:|---|---|
-| 4 | `tradition-minoan-religion` | `tradition-inca-andean` |
-| 3 | `phase-4-007-new-testament-canon` | `phase-4-095-new-testament-canon` |
-| 3 | `phase-2-005-1-2-kings` | `phase-2-003-atharva-veda` |
+| 4 | `tradition-minoan-religion` | `tradition-bhakti-vaishnavism` |
+| 3 | `tradition-medieval-christianity` | `tradition-bhakti-vaishnavism` |
+| 3 | `phase-4-007-new-testament-canon` | `phase-4-003-gospel-of-truth` |
+| 3 | `phase-2-005-1-2-kings` | `phase-2-008-homeric-epics` |
 | 2 | `yam-canaanite` | `astarte-canaanite` |
-| 2 | `tradition-lingayat` | `tradition-bon` |
-| 2 | `tradition-eastern-orthodoxy` | `tradition-inca-andean` |
-| 2 | `phase-2-004-1-2-chronicles` | `phase-2-007-hebrew-bible-e-source` |
+| 2 | `tradition-lingayat` | `tradition-hindutva` |
+| 2 | `tradition-eastern-orthodoxy` | `tradition-bhakti-vaishnavism` |
+| 2 | `phase-2-004-1-2-chronicles` | `phase-2-004-yasna-younger-avesta` |
 | 2 | `phase-1-013-babylonian-theodicy` | `phase-1-010-book-of-the-dead` |
 | 2 | `asclepius` | `asclepius-greek` |

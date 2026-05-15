@@ -18,6 +18,36 @@ Format:
 
 ---
 
+## sonnet-girard-1 — content / René Girard scapegoat framework — started 2026-05-15
+- Owning: `rene-girard`, `scapegoat-mechanism`, `pharmakos`
+- Goal: Build the Girard / scapegoat-mechanism cluster that unifies Greek pharmakos + Levitical scapegoat + Romulus founding violence + Dionysus sparagmos + Christ crucifixion under one investigative frame
+- Status: in-progress
+- Last edit: 00_meta/ACTIVE-AGENTS.md
+
+---
+
+## sonnet-infra-1 — data-integrity / YAML refs sync + Lotus Sutra dedup + orphan wiring — started 2026-05-15
+- Owning: `04_persons/henry-steel-olcott.md`, `04_persons/sri-yukteswar.md`, `04_persons/rudolf-steiner.md`, `04_persons/doreen-valiente.md`, `04_persons/g-i-gurdjieff.md`, `04_persons/marshall-vian-summers.md`, `04_persons/stephen-mcnallen.md`, `04_persons/p-d-ouspensky.md`, `04_persons/v-d-savarkar.md`, `04_persons/helena-blavatsky.md`, `02_documents/_phase-4-late-antiquity/phase-4-061-lotus-sutra.md`, `02_documents/_phase-4-late-antiquity/phase-4-091-lotus-sutra.md`, `09_symbols/stribog.md`, `04_persons/simeon-the-stylite.md`, `04_persons/priscillian.md`, `04_persons/cassiodorus.md`, `04_persons/alcuin-of-york.md`, `09_symbols/dove.md`, `09_symbols/alpha-omega.md`, `09_symbols/fleur-de-lis.md`
+- Goal: YAML refs sync fix (10 persons), Lotus Sutra dedup (phase-4-091 → phase-4-061), 8 orphan nodes wired into graph — no new slugs
+- Status: in-progress
+- Last edit: 00_meta/ACTIVE-AGENTS.md
+
+---
+
+## sonnet-alevi-1 — content / Alevi-Bektashi tradition wedge — started 2026-05-15 — **FINISHED 2026-05-15**
+- Owning: `tradition-alevi-bektashi`, `haci-bektas-veli`, `phase-5-055-vilayetname-haci-bektas`
+- Goal: Add the vault's most important missing living cross-tradition synthesis — Alevi-Bektashi (Shia Islam + Sufism + pre-Islamic Anatolian + heterodox Christian survivals)
+- Status: finished
+- Delivered:
+  - [[tradition-alevi-bektashi]] (NEW) — full metadata tradition node; 5-paragraph body covering Alevism overview (cem ceremony, no-mosque heterodoxy), Bektashi Order (Janissary affiliation, Mahmud II suppression, Albanian survival, Atatürk 1925 ban), MASSIVE-WIN cross-tradition synthesis table (Shia/Sufi/pre-Islamic Anatolian/heterodox Christian streams all documented in one living community), historical formation (post-Mongol frontier dervishes, Kizilbas movement, Ottoman-Safavid wars), modern Alevism (Sivas 1993 massacre, Diyanet non-recognition, Albanian Bektashi World Center). Shankland/Birge/Mélikoff/Dressler T1 refs.
+  - [[haci-bektas-veli]] (NEW) — full metadata person node; hagiographic-vs-historical distinction foregrounded per Mélikoff; traditional biography (Khorasan origin, Yeseviyya lineage, Cappadocia settlement); Babailer Revolt 1240 connection (Ocak thesis); Bektashi Order ↔ historical Hacı Bektaş distinction (Balım Sultan as institutionalizer); Four Gates/Forty Stations *Makalat* doctrine; pre-Islamic animal-familiar + female saint signals. Mélikoff/Birge/Ocak/Shankland T1 refs.
+  - [[phase-5-055-vilayetname-haci-bektas]] (NEW) — full metadata document node; 15th-century hagiographic text (Gölpınarlı critical edition 1958); Mélikoff's argument that it reveals 15th-c. Anatolian heterodox religion more than 13th-c. biography; lion+deer animal familiars (pre-Islamic Anatolian substrate); Kadıncık Ana female saint (goddess-veneration trace); Sufi genealogy (Ahmad Yesevi lineage claim); Alid genealogy (12th Imam descent claim); all 5 synthetic streams visible in single text.
+- MASSIVE-WIN: vault's first node where Shia Islamic theology + Sufi mysticism + pre-Islamic Anatolian shamanic practice + heterodox Christian-inflected survivals coexist in a documented, living community. Unique because this is a *living* tradition, not a historical synthesis.
+- Build: **2069 nodes · 12,303 edges · 2.7% dead-link**
+- Last edit: 07_traditions/tradition-alevi-bektashi.md
+
+---
+
 ## opus-astrology-1 (spine + decanic + wheel + now) — app-code / Astrology tab full build — started 2026-05-15 evening — **FINISHED 2026-05-15**
 - Owning: src/js/astrology/{spine.js, decanic.js, wheel.js, now.js} (4 NEW files), _assets/data/astrology-decans.json (NEW, 36×5 cross-tradition data), _assets/vendor/astronomy/{astronomy.browser.min.js, astronomy.browser.js} (NEW, vendored astronomy-engine 2.1.19 ~115 KB MIT), index.html (4 new script tags + cache-bust), src/js/app.js (VIEWS.astrology liveRenderers map), src/styles/app.css (.astro-* design tokens)
 - Goal: ship all 4 Astrology modes (spine / wheel / decanic / now) John approved. Cross-tradition investigative tool plugging into existing 57 astrology-tagged vault nodes.
@@ -191,6 +221,14 @@ Format:
 - Status: finished
 - Delivered: [[norse-cosmogony]] (NEW) · [[ragnarok-apocalyptic]] (NEW) · [[afro-diasporic-syncretism]] (NEW) · [[possession-ritual]] (NEW) · [[orisha-pantheon]] (NEW) · [[baal]] alias stub (NEW). Build: 1,979 nodes · 3.0% dead-link · 11,957 edges.
 - Last edit: 00_meta/STATUS.md
+
+## sonnet-dante-wisdom-1 — content / Dante chain + Logos circuit + Hebrew wisdom books — started 2026-05-15 — **IN PROGRESS**
+- Owning: `dante-alighieri`, `phase-6-divine-comedy`, `creation-by-word` (edit only), `phase-2-job`, `phase-2-ecclesiastes`, `phase-2-song-of-songs`
+- Goal: Create Dante person + Divine Comedy document (completing Ardā Wirāz → Dante chain); wire Quranic kun fa-yakun into creation-by-word theme; create Job, Ecclesiastes, Song of Songs document nodes
+- Status: in-progress
+- Last edit: 00_meta/ACTIVE-AGENTS.md
+
+---
 
 ## 🚦 In-flight claims at a glance (current as of 2026-05-15 evening — opus-atlas-v3-evening FINISHED, vault app-code at rest)
 
