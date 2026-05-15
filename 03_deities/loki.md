@@ -15,7 +15,19 @@ child-of: ["Fárbauti and Laufey (both giants)"]
 consort: ["Sigyn"]
 attributes: ["fire imagery (contested)", "shape-shifting", "shoes that allow him to run on air and water"]
 attested-in: ["[[phase-8-014-poetic-edda]]", "[[phase-8-015-prose-edda-snorri]]"]
-syncretic-edges: []
+syncretic-edges:
+  - target: "[[trickster-archetype]]"
+    type: "instantiation"
+    notes: "Loki is the Norse instantiation of the trickster archetype: shapeshifter, boundary-crosser, simultaneous helper and destroyer of the divine order. Hyde (1998) and Radin (1956/Jung commentary) both treat Loki as a canonical trickster exemplar."
+  - target: "[[coyote-navajo]]"
+    type: "structural-parallel"
+    notes: "MASSIVE WIN: Both Loki and Coyote introduce death into the world through a specific act of trickery — Loki engineers Baldr's death through mistletoe; Coyote throws the stone that makes death permanent. Both are the hinge on which mortal existence turns. No transmission."
+  - target: "[[anansi]]"
+    type: "structural-parallel"
+    notes: "Both shapeshifting tricksters in a divine hierarchy who win through cunning what cannot be obtained through force; both negotiate with powerful craftspeople for divine gifts; both beloved storytelling figures who carry genuine danger."
+  - target: "[[hermes-greek]]"
+    type: "structural-parallel"
+    notes: "Both Greek and Norse trickster figures who simultaneously serve and undermine their respective divine orders; both are boundary-crossers; Hermes as comic-Olympian vs. Loki as the increasingly tragic Norse trickster."
 status: "metadata"
 refs:
   - title: "Loki"

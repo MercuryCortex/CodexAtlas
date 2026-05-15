@@ -16,12 +16,21 @@ consort: []
 attributes: ["red and black", "crossroads", "the *garabato* (hooked staff)", "three (his number)", "the laterite stone (cult-object)"]
 attested-in: ["[[phase-8-007-ifa-divination-corpus]]"]
 syncretic-edges:
-  - target: "[[papa-legba]] (Haitian Vodou)"
+  - target: "[[papa-legba]]"
     type: "manuscript-transmission"
-    source: "Brandon 1993; Métraux 1959"
-  - target: "Holy Child of Atocha (Niño de Atocha) / St. Anthony (Cuban regional variation)"
-    type: "folk-syncretism"
-    source: "Brandon 1993"
+    notes: "Papa Legba is Èṣù via Middle-Passage transmission, modified in Saint-Domingue (Haiti). Legba opens the Rada ceremony in Vodou as Èṣù opens the Ifá session. Brandon 1993; Métraux 1959."
+  - target: "[[trickster-archetype]]"
+    type: "instantiation"
+    notes: "Èṣù is the Yoruba instantiation of the trickster archetype — the boundary-crosser who stands at the crossroads between human and divine, whose moral ambiguity is his structural function rather than a corruption. Hyde (1998) devotes significant analysis to Eshu; Gates (1988) traces his inheritance into African-American literary signifying."
+  - target: "[[hermes-greek]]"
+    type: "structural-parallel"
+    notes: "MASSIVE WIN: the most precisely parallel trickster-crossroads deities across world traditions. Both: lord of crossroads; must be propitiated first before divine communication; messenger between human and divine; associated with chance and the moment of choice; patron of travelers and communication; boundary figure between worlds. No transmission. Gates (1988) and Thompson (1984) both explicitly note this identification."
+  - target: "[[anansi]]"
+    type: "structural-parallel"
+    notes: "Both West African trickster figures who mediate between human and divine — Èṣù controls crossroads and messages; Anansi controls stories and wisdom. Both use deception as sacred act. Yoruba and Akan traditions are geographically adjacent and structurally cognate."
+  - target: "[[coyote-navajo]]"
+    type: "structural-parallel"
+    notes: "Both necessary trickster-disruptors whose actions introduce complications into cosmic order that other divine figures must resolve; both unpredictable boundary-crossers essential to the cosmos. No transmission."
 status: "metadata"
 refs:
   - title: "The Signifying Monkey: A Theory of African-American Literary Criticism"

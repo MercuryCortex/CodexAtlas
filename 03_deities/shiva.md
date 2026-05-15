@@ -19,7 +19,13 @@ equivalents: []
 syncretic-edges:
   - target: "[[rudra-shiva-early]]"
     type: "continuous-development"
-    source: "Witzel 1997, Doniger 1973 *Asceticism and Eroticism in the Mythology of Śiva*"
+    notes: "Shiva develops from the Vedic Rudra through continuous elaboration; the Śvetāśvatara Upaniṣad is the transitional text. Witzel 1997; Doniger 1973."
+  - target: "[[cernunnos]]"
+    type: "structural-parallel"
+    notes: "MASSIVE WIN: Shiva-Pashupati ↔ Cernunnos — the horned lord-of-animals cluster. Shiva's title *Paśupati* ('Lord of Beasts') is functionally identical to Cernunnos's iconographic role (*Potnios Theron*). The Pashupati seal at Mohenjo-Daro (c. -2500) shows a cross-legged, horned/antlered figure surrounded by animals — iconographically identical to Cernunnos on the Gundestrup Cauldron (~-150 BCE). The seal figure is identified as proto-Shiva by Marshall 1931 and most subsequent scholars. Three independently attested instantiations of the horned lord-of-animals archetype: Pashupati seal → Shiva-Pashupati → Cernunnos."
+  - target: "[[pan-greek]]"
+    type: "structural-parallel"
+    notes: "Both Shiva and Pan are wild, ithyphallic nature gods associated with the untamed landscape, sexuality, fertility, and music; both inspire a form of divine madness/frenzy; both are ambivalent — dangerous and generative simultaneously. The Greek equation is typological."
 status: "metadata"
 refs:
   - title: "Asceticism and Eroticism in the Mythology of Śiva"

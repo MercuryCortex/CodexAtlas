@@ -15,11 +15,11 @@ attested-in: ["Pillar of the Boatmen (Paris, ~14–37 CE — explicit *CERNVNNOS
 equivalents: []
 syncretic-edges:
   - target: "[[pan-greek]]"
-    type: "scholarly-parallel"
-    source: "Horned wild-nature god"
-  - target: "Pashupati seal (Indus Valley)"
-    type: "scholarly-parallel"
-    source: "Disputed but iconographically striking: the Pashupati seal (c. -2500, Mohenjo-Daro) shows a cross-legged horned figure surrounded by animals — visually identical posture to Cernunnos on the Gundestrup cauldron. Most likely *parallel-form* (independent invention), not transmission; the visual cognacy is the staple of the Indus-Valley-as-proto-Hindu debate (Marshall 1931 vs. Possehl 2002)"
+    type: "structural-parallel"
+    notes: "Both horned wild-nature gods who preside over animals and the untamed landscape; both associated with sexuality and fertility; both inspire the 'panic' of the wild. Green (1986) and Detienne (1989) discuss the parallel."
+  - target: "[[shiva]]"
+    type: "structural-parallel"
+    notes: "MASSIVE WIN: the three-way horned-lord-of-animals cluster. Cernunnos ↔ Pashupati ↔ Shiva. Shiva's title Paśupati ('Lord of Beasts') is the Sanskrit equivalent of Cernunnos's *Potnios Theron* ('Lord of Animals'). The Pashupati seal at Mohenjo-Daro (c. -2500) shows a cross-legged, antlered/horned figure surrounded by animals in an iconography visually identical to Cernunnos on the Gundestrup Cauldron — and Pashupati is identified as a proto-Shiva by most scholars (Marshall 1931; Chakrabarti 1979). The chain Pashupati → Shiva-Pashupati → Cernunnos: three independently developed instantiations of the horned lord-of-animals archetype, separated by 4,000 years and two hemispheres. Transmission is NOT demonstrable per vault methodology — this is `parallel-form`."
 status: "metadata"
 refs:
   - title: "The Gods of the Celts"

@@ -18,7 +18,18 @@ attested-in: ["[[phase-8-006-huarochiri-manuscript]]"]
 syncretic-edges:
   - target: "Virgin Mary (especially Virgen del Cerro tradition)"
     type: "folk-syncretism"
-    source: "MacCormack 1991; Sallnow 1987"
+    notes: "The Virgen del Cerro painting (Potosí, 18th c.) depicts the Virgin's body as the mountain of Potosí — a direct Pachamama-Mary fusion. MacCormack 1991; Sallnow 1987."
+  - target: "[[gaia]]"
+    type: "structural-parallel"
+    notes: "The most precise structural parallel: both ARE the earth substantively rather than being deities who rule over the earth. Gaia and Pachamama are the earth itself — they receive offerings deposited INTO the ground. Both are primordial, pre-political, and survive political-religious change: Gaia outlasts the Olympians; Pachamama outlasts the Inca state cult and continues under Catholic surface. No transmission."
+  - target: "[[demeter]]"
+    type: "structural-parallel"
+    notes: "Both are earth-mother figures governing agricultural fertility whose cult is agricultural-cycle centered. Demeter's Thesmophoria (women's fertility festival) parallels Andean Pachamama harvest ceremonies. No transmission."
+  - target: "[[cybele]]"
+    type: "structural-parallel"
+    notes: "Both are mountain-rooted earth-mother figures whose cult involves the physical landscape as divine body. Cybele as 'Great Mother' of Mt. Ida / Pachamama as 'Mama Pacha' of the Andean mountain-spine. Both are Magna Mater instantiations."
+mentioned-in:
+  - "[[tradition-andean]]"
 status: "metadata"
 refs:
   - title: "Pilgrims of the Andes: Regional Cults in Cusco"
@@ -41,6 +52,20 @@ Less narratively developed than other Andean deities; Pachamama is more *operati
 
 ## Cross-tradition identifications
 - **Virgin Mary, especially Virgen del Cerro** — *folk-syncretism*: the famous 18th-c. *Virgen del Cerro* painting (Potosí) depicts the Virgin's body as the mountain of Potosí — a direct Pachamama-Mary fusion. Andean Catholic Marian devotion remains structurally Pachamama-inflected. Ref: MacCormack 1991; Sallnow 1987.
+
+## Cross-tradition MASSIVE WIN: the earth-as-deity cluster
+
+Pachamama belongs to the most universal category in world religion: the earth itself as divine being, not merely a divine domain. The theological distinction is important: Demeter is the *goddess of* grain; Pachamama IS the earth. This "substantive" rather than "domain" divinity is shared by:
+
+| Figure | Tradition | Theological form | Ritual form | Survival under Christianity |
+|---|---|---|---|---|
+| **Pachamama** | Andean (Quechua/Aymara) | Earth IS divine — offerings buried IN her | *Pago a la tierra*, August 1 | Syncretized with Virgin Mary; continues under Catholic surface |
+| **[[gaia]]** | Greek | Earth as primordial deity who IS the ground | Oath-swearing by Gaia (most binding oath) | Largely displaced, but Gaia theology revives in modern ecological thought |
+| **Nerthus** | Germanic | Earth as veiled goddess who travels in a wagon | Annual wagon-procession (Tacitus, *Germania* 40) | Absorbed into Germanic folk practice |
+| **Prithvī** | Vedic/Hindu | Earth goddess (*Pṛthivī*, "the Broad One") | Soil-contact rituals, bhoomi puja | Continuous in Hindu practice |
+| **[[cybele]]** | Phrygian/Roman | Mountain-mother (*Magna Mater*), earth as body | Galloi priesthood, galli processions, taurobolium | Absorbed into Virgin Mary imagery |
+
+The most continuous of these is Pachamama herself: the *pago a la tierra* ceremony (burying food, coca, alcohol in the earth as an offering) has no break between pre-Inca, Inca, colonial, and contemporary practice. **Every Catholic Andean farmer still offers to Pachamama.** The earth outlasts every conquering religion.
 
 ## Iconography
 Largely aniconic. Symbolic: agricultural produce, coca leaves, the mountain itself.

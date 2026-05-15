@@ -18,7 +18,16 @@ attested-in: ["[[phase-8-006-huarochiri-manuscript]]"]
 syncretic-edges:
   - target: "Christ (early colonial Andean syncretism)"
     type: "folk-syncretism"
-    source: "MacCormack 1991"
+    notes: "Andean Christians identified Viracocha with Christ based on wandering, bearded iconography, and universal-creator dimension. MacCormack 1991."
+  - target: "[[quetzalcoatl]]"
+    type: "structural-parallel"
+    notes: "MASSIVE WIN: the most precise Andean-Mesoamerican parallel. Both: (1) creator-gods who shape humanity in the current age; (2) wandering culture-bringers who move through the landscape teaching civilization; (3) disappear westward across the ocean/sea and are expected to return; (4) associated with bearded figures (Spanish colonial exploitation of both traditions). The Viracocha-as-bearded wanderer and Quetzalcoatl-as-feathered-serpent-departing-east are independently attested myths with striking narrative parallelism. No transmission."
+  - target: "[[enki-ea]]"
+    type: "structural-parallel"
+    notes: "Both are trickster-creator figures who shape humanity from existing material (Enki from clay/blood; Viracocha from clay/stone), move through the world solving cosmological problems, and are associated with fresh water and cosmic ordering. Viracocha's tears = rain; Enki's domain = the abzu (fresh water). No transmission."
+mentioned-in:
+  - "[[tradition-andean]]"
+  - "[[inti]]"
 status: "metadata"
 refs:
   - title: "Religion in the Andes"
@@ -47,6 +56,23 @@ Huarochirí: Cuni Raya Viracocha appears in rags, encounters the maiden Cavillac
 
 ## Cross-tradition identifications
 - **Christ** — *folk-syncretism* (early colonial): Andean Christians have intermittently identified Viracocha with Christ, drawing on the wandering, the bearded-iconography (Spanish reports of Viracocha as bearded), and the universal-creator dimension.
+
+## Cross-tradition MASSIVE WIN: the wandering creator-god who disappears westward
+
+The Huarochirí Viracocha (Cuni Raya Viracocha in rags, wandering the Andean landscape, testing humans, then disappearing into the Pacific) is the Andean instantiation of a genuinely cross-hemispheric archetype:
+
+**Viracocha ↔ [[quetzalcoatl]] — the most precise Andean-Mesoamerican parallel in the vault:**
+
+| Feature | Viracocha | Quetzalcoatl |
+|---|---|---|
+| **Creator function** | Creates humanity from clay; creates the present world age | Descends to Mictlan, collects bones, creates present humanity |
+| **Culture-bringer** | Travels Andean landscape teaching civilization | Rules at Tollan, teaches civilization; his reign is golden age |
+| **Appearance** | Described as bearded (Spanish colonial accounts) | Associated with a bearded figure in some iconography |
+| **Departure** | Walks into the Pacific Ocean westward and disappears | Departs eastward to the ocean on a raft of serpents |
+| **Return motif** | Expected to return (exploited by Spanish) | Expected to return from the east (exploited by Cortés) |
+| **Trickster overlay** | Cuni Raya = wandering beggar who tricks and tests | As Ehecatl (wind aspect), causes disorder and transformation |
+
+Both myths were catastrophically exploited by the Spanish: in both traditions, the return of the bearded creator-god from across the sea was used to explain why the Inca Atahualpa and Aztec Moctezuma initially hesitated before the conquistadors. The myth of the returning creator became an instrument of its own civilization's destruction.
 
 ## Iconography
 Pre-Inca / Tiwanaku: the staff-bearing central figure of the Gateway of the Sun. Inca-period iconography is less distinctive — he is the unrepresented or aniconic supreme.
