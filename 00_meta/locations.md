@@ -147,3 +147,72 @@ Sana'a                       | 15.35 | 44.21 | Sana'a
 Nag Hammadi                  | 26.05 | 32.25 | Nag Hammadi
 Ras Shamra                   | 35.60 | 35.78 | Ras Shamra (Ugarit)
 ```
+
+## Additions 2026-05-15 (geocoder coverage push)
+
+Common modern countries + regions + cities flagged as misses in the geocoder
+audit. Goal: lift overall geo coverage from 67% to >85%.
+
+```
+United States                | 39.83 | -98.58 | United States
+United Kingdom               | 54.00 |  -2.00 | United Kingdom
+Britain                      | 52.50 |  -1.50 | Britain
+England                      | 52.40 |  -1.00 | England
+Switzerland                  | 46.82 |   8.23 | Switzerland
+Germany                      | 51.16 |  10.45 | Germany
+France                       | 46.60 |   2.00 | France
+Spain                        | 40.46 |  -3.75 | Spain
+Italy                        | 42.50 |  12.50 | Italy
+Italian peninsula            | 42.00 |  13.00 | Italian peninsula
+Czechia                      | 49.82 |  15.47 | Czechia (Bohemia)
+Bohemia                      | 50.10 |  14.50 | Bohemia
+Roman Empire                 | 41.90 |  12.50 | Roman Empire (centered on Rome)
+Roman Palestine              | 31.50 |  35.00 | Roman Palestine
+Aegean / Mediterranean       | 38.00 |  23.00 | Aegean / Mediterranean
+Aegean                       | 38.00 |  23.00 | Aegean
+Mediterranean                | 36.00 |  18.00 | Mediterranean
+South Asia                   | 20.00 |  78.00 | South Asia
+Hindu diaspora               | 20.00 |  78.00 | Hindu diaspora (homeland India)
+Pan-Christian                | 31.78 |  35.22 | Pan-Christian (origin Jerusalem)
+Hawaiian Islands             | 20.80 |-157.00 | Hawaiian Islands
+Württemberg                  | 48.78 |   9.18 | Württemberg
+Castile                      | 40.10 |  -3.69 | Castile (central Spain)
+Champagne                    | 48.90 |   4.40 | Champagne
+Languedoc                    | 43.60 |   1.44 | Languedoc
+Vienne                       | 45.52 |   4.87 | Vienne
+Mediolanum                   | 45.46 |   9.19 | Mediolanum (Milan)
+Milan                        | 45.46 |   9.19 | Milan
+Caesarea Maritima            | 32.50 |  34.89 | Caesarea Maritima
+Caesarea                     | 32.50 |  34.89 | Caesarea
+Miletus                      | 37.53 |  27.28 | Miletus
+Pergamon                     | 39.13 |  27.18 | Pergamon
+Pergamum                     | 39.13 |  27.18 | Pergamum
+Ebla                         | 35.80 |  36.80 | Ebla (Tell Mardikh)
+Tell Mardikh                 | 35.80 |  36.80 | Tell Mardikh (Ebla)
+Kashmir                      | 34.08 |  74.80 | Kashmir
+Kashmir Valley               | 34.08 |  74.80 | Kashmir Valley
+Hippo Regius                 | 36.91 |   7.76 | Hippo Regius
+Roman North Africa           | 36.74 |   3.09 | Roman North Africa (Algiers approx.)
+Anglophone                   | 51.50 |  -0.13 | Anglophone (London approx.)
+Indian subcontinent          | 20.00 |  78.00 | Indian subcontinent
+Yale                         | 41.31 | -72.93 | Yale (New Haven)
+New York                     | 40.71 | -74.01 | New York
+New Haven                    | 41.31 | -72.93 | New Haven
+London                       | 51.51 |  -0.13 | London
+Troyes                       | 48.30 |   4.08 | Troyes
+Cantabria                    | 43.30 |  -4.00 | Cantabria
+Kedu plain                   |  -7.61| 110.20 | Kedu plain (central Java)
+Magelang                     |  -7.47| 110.22 | Magelang (central Java)
+Sākala                       | 32.49 |  74.53 | Sākala (Sialkot, Pakistan)
+Sialkot                      | 32.49 |  74.53 | Sialkot
+Sri Lanka                    |  7.87 |  80.77 | Sri Lanka
+Vienna                       | 48.21 |  16.37 | Vienna
+Austria                      | 47.52 |  14.55 | Austria
+Belgium                      | 50.50 |   4.47 | Belgium
+Netherlands                  | 52.13 |   5.29 | Netherlands
+Russia                       | 55.75 |  37.62 | Russia (Moscow)
+Empire-wide                  | 41.90 |  12.50 | Empire-wide (Roman)
+North India                  | 28.00 |  78.00 | North India
+Northwest India              | 30.00 |  75.00 | Northwest India
+Heavenly courts              | 31.78 |  35.22 | Heavenly courts (Jerusalem proxy)
+```
