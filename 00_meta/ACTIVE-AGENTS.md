@@ -18,11 +18,17 @@ Format:
 
 ---
 
-## 🚦 In-flight claims at a glance (current as of 2026-05-15)
+## 🚦 In-flight claims at a glance (current as of 2026-05-15 ~02:10 — empty after opus-symbols-2 close)
 
 | Handle | Scope tag | Owns (high level) | Started |
 |---|---|---|---|
-| `opus-symbols-2` | content + app-code / Symbols-map next-level | All 56 `09_symbols/*.md` (edge densification + `depictions:`), 6 new symbol nodes (dove, fleur-de-lis, hamsa, alpha-omega, sefirot, sacred-heart), `build_data.py` (depictions passthrough), `src/js/app.js` side-tab thumb fallback | 2026-05-15 |
+| _no agents in flight — vault at rest_ | | | |
+
+**Last session's finisher (full claim block below, will be archived in the next session-close housekeeper sweep):**
+
+| Handle | Scope | What landed |
+|---|---|---|
+| `opus-symbols-2` | content + app-code / Symbols-map next-level | Cross-symbol-edge density 140 → **324** (+130%) across all 56 symbols on 8 transmission spines (cross-family + solar/astral + serpent + tree/eucharist + Vedic-Buddhist + geometric/Hermetic + Persian/Zoroastrian + animals/Hebrew-flood); **55/56 symbol thumbnails** wired into side-tab via `fetch_thumbnails.py` OVERRIDES + curated `depictions:` schema-and-renderer hook |
 
 **Last session's finishers (full claim blocks in [`agents-archive/2026-05-14.md`](agents-archive/2026-05-14.md)):**
 
@@ -62,9 +68,9 @@ Format:
 
 ---
 
-## opus-symbols-2 — Symbols-map next-level (densify + imagery) — started 2026-05-15
+## opus-symbols-2 — Symbols-map next-level (densify + imagery) — started 2026-05-15 ~00:00 — **FINISHED 2026-05-15 ~02:10**
 
-- **Owning:** all 56 files in `09_symbols/*.md` (frontmatter `cross-symbol-edges` + new `depictions:` entries + body "Cross-symbol edges (provisional)" sections); 6 NEW symbol nodes: `dove.md`, `fleur-de-lis.md`, `hamsa-khamsa.md`, `alpha-omega.md`, `sefirot.md`, `sacred-heart.md`; `build_data.py` (one-line passthrough so `depictions` reaches the JS layer); `src/js/app.js` (side-tab thumb fallback to `depictions[0]` when `n.thumbnail` is empty).
+- **Owning:** all 56 files in `09_symbols/*.md` (frontmatter `cross-symbol-edges` densification + one new `depictions:` entry on haoma.md); `build_data.py` (one-line passthrough so `depictions` reaches the JS layer); `src/js/app.js` (side-tab thumb prefers `depictions[0]` when present, falls back to `n.thumbnail`); `fetch_thumbnails.py` OVERRIDES extended with 56 symbol-slug→Wikipedia-article mappings.
 - **Goal:** double the cross-symbol edge density across the existing 56 symbols (current avg ~2.5 → target ≥4 well-sourced edges per node), focusing on the eight transmission spines that surface MASSIVE-win Christianity → older-tradition connections; add side-tab imagery via curated `depictions:` entries (Wikimedia-only, license-noted, hand-picked rather than auto-fetched — addresses validation risk).
 - **Coordination:** no agent currently owns any 09_symbols slug. No collision with `opus-symbols-1` (their finished work is the first 11 symbols, status preserved + their edges retained — I add, don't overwrite). App-code touches are minimal and contained (build_data.py: one field; app.js: one HTML-template branch in the existing thumb section).
 - **MASSIVE-win edges targeted (transmission spines):**
@@ -83,9 +89,40 @@ Format:
   - `alpha-omega` — Greek alphabet first/last → Revelation Christology → liturgical iconography → Christogram cluster.
   - `sefirot` — Kabbalistic cosmogram of 10 emanations; sub-section of tree-of-life lineage, but acquired enough independent iconographic life to warrant its own node.
   - `sacred-heart` — Catholic devotion (Margaret Mary Alacoque 1673) ↔ Egyptian *ib* heart ↔ Aztec heart-iconography (Mesoamerican reception via Mexican retablos) — `appropriated-by` discipline applies.
-- **Imagery approach:** I am NOT running `fetch_thumbnails.py` (network risk + validation concern). Instead I'm hand-curating a `depictions:` YAML block per symbol with Wikimedia URLs picked from the Wikipedia symbol-page lead images I can identify by description; each entry carries `src`/`caption`/`source`/`license`. The renderer falls back to `depictions[0].src` when no thumb-cache entry exists. **John can swap any image by editing the YAML — no opaque cache file.**
-- **Status:** in-flight
-- **Last edit:** this claim block.
+- **Imagery approach (revised mid-batch):** Initial plan was YAML-only depictions, but network was available so I extended `fetch_thumbnails.py` OVERRIDES with 56 symbol slugs (each mapped to its canonical Wikipedia article: `eye`→Eye of Providence, `bull`→Sacred bull, `lion`→Lion (heraldry), `indus-valley-script`→Indus script, etc.). Ran `--force-type symbol` + `--refetch` → **55/56 symbols have Wikipedia lead-image thumbs**. Then kept the curated-`depictions:` schema + renderer hook (curated wins over auto-fetched) so John can override any auto-pick by editing YAML — `09_symbols/haoma.md` demonstrates this end-to-end (Wikipedia Haoma has no lead image; curated YAML points at Geldner's Avesta manuscript instead, PD).
+- **Delivered (5 commits across 3 batches densification + 1 batch imagery + 1 close-out):**
+  - **Cross-symbol edges 140 → 324** (+184, +131%). All 56 nodes at ≥3 edges, most at 5+. Across 8 transmission spines:
+    1. **Cross/cruciform (10 nodes, +14 edges)** — latin-cross↔sun-disk (Sol Invictus syncretic-fusion); chi-rho-labarum↔sun-disk (Constantinian coinage iconographic ambiguity, Bardill 2012); celtic-cross→sun-disk (Bronze-Age Atlantic solar-wheel substrate); greek-cross→maltese-cross/cross-pattée (Crusader heraldic descent); coptic-cross↔chi-rho-labarum (Coptic-Christian parallel iconographic streams).
+    2. **Solar/astral (10 nodes, +20 edges)** — Ishtar-star↔Sin-crescent Mesopotamian astral pairing (Black & Green 1992); faravahar→eye-of-horus parallel divine-gaze; phoenix-bennu↔scarab-khepri Heliopolitan rebirth-twin emblems; swastika's solar-wheel substrate (sun-disk + dharmachakra + spiral + aum-om).
+    3. **Serpent/staff cluster** — caduceus↔asclepian-rod conflation (1902 US Army misappropriation); Nehushtan→latin-cross typology (John 3:14); ouroboros↔Yggdrasil-Jormungandr via tree-of-life; tauroctony/Mithraic chaoskampf pairing with serpent-cosmic-enemy.
+    4. **Tree/eucharist (load-bearing MASSIVE-win cluster)** — tree-of-life 2→9 edges (Eden serpent + Yggdrasil + Mesopotamian sacred-tree + Goodenough 1953 menorah-as-cosmic-tree); wheat-grain + vine-grape → latin-cross eucharistic substrate (Demeter-Dionysus-Eleusinian inheritance); pomegranate↔menorah Solomonic Temple iconography (1 Kings 7:18-20).
+    5. **Vedic↔Buddhist** — lotus 2→7 (Nefertem-solar; Gandharan Greco-Buddhist halo-contact); AUM↔tetragrammaton unutterable-Name parallel; dharmachakra↔swastika/celtic-cross/sun-disk solar-wheel family.
+    6. **Geometric/Hermetic** — hexagram↔menorah/tetragrammaton/monas Christian-Kabbalah seal vocabulary; monas-hieroglyphica syncretic-fusion with ankh+eye-of-horus+hexagram+pentagram (Dee's composite glyph); ouroboros + tetragrammaton + tree-of-life Renaissance-Kabbalist trio.
+    7. **Persian/Zoroastrian** — sacred-fire-atash + haoma to faravahar + tauroctony + tree-of-life (Gaokerena world-tree); Indo-European sacred-pressed-plant family (haoma↔soma↔vine-grape).
+    8. **Animals + Hebrew flood + mystery** — lion 1→6 (Sekhmet solar / Throne-of-Solomon / Mithraic-Aion / St-Mark Tetramorph); bull 3→7 (Aten-rays-with-ankhs Amarna icon; IVC unicorn-seal); Hebrew flood-cluster (noahs-ark/mount-ararat/rainbow-covenant) wired to chaoskampf + latin-cross typology + tree-of-life cosmic-axis; indus-valley-script 0→3 (swastika + bull-unicorn + pipal-tree-with-figures).
+  - **MASSIVE-win demos enabled** (the three the audit called for now have 6-9 edges each instead of 3): (a) cross-is-older-than-Christianity — latin-cross + chi-rho-labarum + celtic-cross all carry sun-disk + ankh + tau substrate edges; (b) lotus-crosses-Egypt-→-India-→-Christianity — lotus 7 edges (sun-disk + dharmachakra + halo-via-Gandhara + tree-of-life + AUM + swastika + mandala); (c) swastika-handled-with-discipline — swastika 6 edges (sun-disk + dharmachakra + spiral + aum-om + greek-cross + polemic-inversion to itself, Goodrick-Clarke 2004 retained).
+  - **Imagery:** 55/56 symbol thumbnails resolved via fetch_thumbnails.py OVERRIDES (bull→Sacred bull / Procession-of-Apis image; eye→Eye of Providence; chi-rho→Labarum SVG; tree-of-life, ouroboros, ankh, swastika, etc. — all canonical lead images). Curated haoma `depictions:` covers the one Wikipedia gap. Side-tab renderer (app.js lines 591-604) handles 4 cases: Wikipedia-only / curated-only / both (curated wins) / neither — verified via Node simulation.
+  - **6 NEW symbol nodes deferred to opus-symbols-3** (dove / fleur-de-lis / hamsa-khamsa / alpha-omega / sefirot / sacred-heart) — would have been 7th batch but session budget consumed by densification. Each ready to stub from a one-paragraph spec in the original plan.
+- **Build state at close:** **1767 nodes (unchanged) · 10,737 edges (+176 cross-symbol)** · dead-link ratio 3.5% (unchanged) · all 56 symbols lint-clean (`lint_yaml.py --strict` passes). **Repo state:** 4 new commits on branch `claude/objective-lehmann-058cd2` (cross+solar / serpent+tree+Vedic+geometric / remaining-clusters / imagery), NO REMOTE.
+- **Coordination notes:**
+  - No collision with `opus-symbols-1`'s finished work (the original 11 symbols, status preserved + their edges retained — I add, don't overwrite).
+  - App-code touches contained to one-line `build_data.py` passthrough + one HTML-template branch in app.js's existing thumb block (no new tokens, no FEATURES flag needed, no new render path).
+  - `_assets/thumbs_cache.json` is gitignored per opus-housekeeper-2's .gitignore policy — committed `fetch_thumbnails.py` OVERRIDES means the next agent can run `python3 fetch_thumbnails.py --force-type symbol && python3 fetch_thumbnails.py --refetch` to regenerate the cache on their machine.
+  - **Preview verification limitation logged:** the preview sandbox blocked python3 -m http.server due to a Python 3.9 getcwd-permission issue in argparse. The renderer change was verified via (a) `node --check src/js/app.js` syntax pass, (b) data.js inspection (56 symbols / 55 thumbnails / 1 depictions correctly), and (c) a Node simulation of the 4 thumb-precedence cases (Wikipedia-only / curated-only / both / neither — all paths correct). Not browser-verified.
+- **Open gaps for opus-symbols-3:**
+  - **6 NEW symbol nodes** (deferred from this batch — high-leverage cross-tradition):
+    - `dove` — Holy Spirit ↔ Aphrodite ↔ Ishtar/Inanna ↔ Noah's-dove ↔ Athena. **Clean MASSIVE-win demo case** for the cross-tradition Christianity-←-older-pagan transmission.
+    - `fleur-de-lis` — Egyptian lily/lotus → French monarchy → Christian Virgin/Trinity → Boy Scouts modern reception.
+    - `hamsa-khamsa` — apotropaic hand (Phoenician Tanit-origin → Jewish "Hand of Miriam" + Islamic "Hand of Fatima" + Mediterranean diaspora).
+    - `alpha-omega` — Greek alphabet first/last → Revelation Christology → Christogram cluster.
+    - `sefirot` — Kabbalistic cosmogram of 10 emanations; sub-section of tree-of-life lineage that acquired enough independent iconographic life to warrant its own node.
+    - `sacred-heart` — Catholic devotion (Margaret Mary Alacoque 1673) ↔ Egyptian *ib* heart ↔ Mexican retablo reception.
+  - Also worth: `winged-disk` (currently a sub-section of faravahar.md but covers Egyptian Behdety + Assyrian Ashur + Persian Faravahar — earns its own node); `omphalos` (Delphi navel ↔ axis-mundi cosmic-axis cluster); `IHS-christogram` + `staurogram` (pre-cross Christian sign-vocabulary).
+  - **Imagery polish:** `serpent-wisdom-chthonic` currently lands on "Chthonic deities" Wikipedia article (generic; better would be a Nehushtan or Asclepius-serpent specific image — add curated YAML); `asclepian-rod` lands on "Star of Life" (modern medical, not actual rod-of-Asclepius — curated override would help); `spiral` lands on Triskelion-page image (same as triskelion's thumb — curated Newgrange-entrance-stone image would distinguish them).
+  - **fetch_thumbnails.py refinement:** the candidate-titles pass-1 hit our OVERRIDES correctly 42/56 times on first run; 14 nodes only resolved on `--refetch` retry. Suggests a 429/503 rate-limit during the initial parallel fetch with 8 workers — could lower the default `--workers` to 4 to avoid this on next run.
+  - **Schema:** `mystery-status: documented` is now the default on 53/56 nodes; the 3 exceptions are `indus-valley-script` (`mystery`), `faravahar` + `tauroctony` (`partially-deciphered`). The schema is settled; future additions only need to honor it.
+- **Status:** finished
+- **Last edit:** this close-out block + STATUS.md headline + at-a-glance table.
 
 - **Mission (user-authorized after confirming all agents stopped):** archive the 24 FINISHED claim blocks from this session into `00_meta/agents-archive/2026-05-14.md` so the live `ACTIVE-AGENTS.md` stays scannable for the next agent. Per-agent claim-file split + `build_agents.py` rollup (`AUDIT/12` §3.2) was the original deferred plan; the archive approach is a simpler intermediate that captures most of the scannability win without the build-pipeline change.
 - **Owning (NO vault content, NO app code, NO methodology / schema policy):**
