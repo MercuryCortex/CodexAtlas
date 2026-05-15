@@ -7,6 +7,7 @@ category: "eschatological"
 appearances:
   - "[[phase-2-002-gathas-of-zarathustra]]"
   - "[[phase-2-004-yasna-younger-avesta]]"
+  - "[[phase-4-086-arda-viraf-namag]]"
 deity-instances:
   - "[[ahura-mazda]]"
   - "[[saoshyant]]"
@@ -15,6 +16,8 @@ deity-instances:
 related-themes:
   - "[[theme-zoroastrian-jewish-exchange]]"
   - "[[theme-paradise-etymology]]"
+  - "[[theme-zoroastrian-cosmogony]]"
+  - "[[theme-zoroastrian-afterlife-geography]]"
   - "[[resurrection-of-the-dead]]"
   - "[[messianism]]"
 status: "metadata"
@@ -55,7 +58,7 @@ tags: [theme, zoroastrian, eschatology, cosmic-renovation, resurrection, christi
 
 The Pahlavi-period elaboration of Frashokereti (built on Avestan foundations) specifies:
 
-1. **The three Saoshyants** appear in 1000-year succession (Ushedar, Ushedar-mah, and the final Astvat-ereta = the climactic [[saoshyant]]).
+1. **The three Saoshyants** appear in 1000-year succession: Ushedar (the World-Increaser), Ushedar-mah (the Increaser-of-Righteousness), and the final **Astvat-ereta** ("he who embodies righteousness") = the climactic [[saoshyant]]. Each is born from a virgin impregnated by Zarathustra's preserved seed in **Lake Hamun** (Lake Kansaoya, in the Sistan region of eastern Iran) — a precise geographic location that grounds the messianic expectation.
 
 2. **Universal resurrection of the dead**. Bodies are reconstituted from their elements; souls reunited with bodies. **No human being is destroyed; all are raised**. (This is a critical theological feature — Zoroastrian resurrection is universal, not selective.)
 
@@ -81,7 +84,7 @@ The structural parallels with Christian eschatology are **dense and uncontested*
 
 4. **Cosmic renovation / new heavens and earth** — Frashokereti's renovated cosmos parallels Revelation 21:1: "*καινὸν οὐρανὸν καὶ γῆν καινήν*" — "**new heavens and a new earth**." 2 Peter 3:13 makes the same claim explicitly. **The Christian doctrine of the new creation is structurally Frashokereti.**
 
-5. **Universal salvation (or at least universal-purification)** — Zoroastrian Frashokereti is **universalist** (all are raised, all pass through purifying fire, all enter the renovated cosmos). This is structurally close to Origen's *apokatastasis* (the doctrine of universal eventual salvation) — Origen explicitly identified Zoroaster as a source for this doctrine (Origen *Contra Celsum* 1.16; though Origen is hostile, the identification matters).
+5. **Universal salvation (or at least universal-purification)** — Zoroastrian Frashokereti is **universalist** (all are raised, all pass through purifying fire, all enter the renovated cosmos). This is structurally close to Origen's *apokatastasis* (the doctrine of universal eventual salvation) — Origen explicitly identified Zoroaster as a source for this doctrine (Origen *Contra Celsum* 1.16; though Origen is hostile, the identification matters). More directly: **Gregory of Nyssa** (335–395 CE) develops the doctrine of *apokatastasis* in *On the Soul and Resurrection* and *The Great Catechism* — a purification-by-fire universalism structurally identical to Frashokereti's molten-metal purification. Gregory was the most philosophically sophisticated of the Cappadocian Fathers and his universalism may represent conscious or unconscious absorption of Zoroastrian eschatological logic via the Persian-Cappadocian cultural interface of late antiquity.
 
 ### Frashokereti → Islamic Yawm al-Qiyāmah
 
