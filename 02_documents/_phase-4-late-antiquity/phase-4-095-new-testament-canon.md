@@ -1,6 +1,6 @@
 ---
 type: document
-id: "phase-4-007-new-testament-canon"
+id: "phase-4-095-new-testament-canon"
 title: "New Testament Canon — Formation"
 aka: ["NT Canon", "Canon of the New Testament", "27-book canon", "Athanasius list"]
 tradition: "Christianity"

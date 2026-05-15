@@ -18,7 +18,7 @@ key-documents:
 key-themes:
   - "[[divine-feminine]]"
   - "[[dying-rising-god]]"
-  - "[[sacred-kingship]]"
+  - "[[sacred-king]]"
   - "[[serpent-dual-nature]]"
 status: "metadata"
 refs:
@@ -69,7 +69,7 @@ The tradition ends with the Mycenaean conquest of Crete (~1450 BCE) and the subs
 - **Labyrinth ↔ spiral symbolism cross-tradition**: The double spiral / meander pattern appears in Minoan art, Celtic knotwork, Hindu mandala geometry, and Native American sand-painting at striking regularity. Whether this is diffusion from a Minoan/Bronze Age Aegean source, independent invention of a psychologically resonant form, or cultural transmission via trade networks is an open question, but the Minoan instance (~1700 BCE) is among the earliest dated occurrences.
 
 ## Relations to neighbors
-- vs. [[tradition-mycenaean-greek]]: Mycenaean Greeks conquered Crete ~1450 BCE; their religion absorbed Minoan elements (Potnia, the "Lady," persists as a Mycenaean deity title; bull sacrifice; linear B lists divine names including Dionysus and Poseidon). The relationship is **absorption with transformation**.
+- vs. Mycenaean Greek religion: Mycenaean Greeks conquered Crete ~1450 BCE; their religion absorbed Minoan elements (Potnia, the "Lady," persists as a Mycenaean deity title; bull sacrifice; linear B lists divine names including Dionysus and Poseidon). The relationship is **absorption with transformation**.
 - vs. [[tradition-egyptian]]: Trade contact between Crete and Egypt is documented from ~2000 BCE (Minoan pottery in Egypt; Egyptian luxury goods in Crete; Minoan frescoes at Avaris/Tell el-Dab'a in Egypt, ~1600 BCE). Religious exchange possible but hard to specify.
 - vs. [[tradition-canaanite]]: Shared bull-deity iconography and dying-rising-consort patterns. The vectors of influence run through the Bronze Age eastern Mediterranean trade network.
 

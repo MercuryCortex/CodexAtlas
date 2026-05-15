@@ -18,7 +18,7 @@ key-persons:
   - "Tertullian (~155–220 CE — first Latin theologian; coined 'Trinity')"
   - "Irenaeus (~130–202 CE — *Against Heresies*, proto-orthodox canon)"
 key-documents:
-  - "[[phase-4-007-new-testament-canon]] — the 27-book NT canon, closed by ~4th c. CE"
+  - "[[phase-4-095-new-testament-canon]] — the 27-book NT canon, closed by ~4th c. CE"
   - "Didache (~50–120 CE) — earliest church manual"
   - "*Letters of Ignatius* (~107–110 CE)"
   - "Justin Martyr's *First Apology* (~155 CE) and *Dialogue with Trypho*"

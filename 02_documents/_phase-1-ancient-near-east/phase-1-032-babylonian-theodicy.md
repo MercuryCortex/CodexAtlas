@@ -1,6 +1,6 @@
 ---
 type: document
-id: "phase-1-013-babylonian-theodicy"
+id: "phase-1-032-babylonian-theodicy"
 title: "Babylonian Theodicy"
 aka: ["Acrostic Theodicy", "The Babylonian Theodicy", "Ludlul bel nemeqi (companion piece)"]
 tradition: "Babylonian / Akkadian"

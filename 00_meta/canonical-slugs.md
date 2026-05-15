@@ -476,7 +476,7 @@ canonical-slug
 - `zemyna`
 - `zeus`
 
-### document (384 nodes)
+### document (379 nodes)
 
 - `document-kuntillet-ajrud-inscriptions`
 - `phase-1-001-kesh-temple-hymn`
@@ -654,7 +654,6 @@ canonical-slug
 - `phase-4-062-1-clement`
 - `phase-4-063-ignatius-letters`
 - `phase-4-064-epistle-of-barnabas`
-- `phase-4-065-bhagavata-purana`
 - `phase-4-065-shepherd-of-hermas`
 - `phase-4-066-polycarp-philippians`
 - `phase-4-067-martyrdom-of-polycarp`
@@ -680,10 +679,6 @@ canonical-slug
 - `phase-4-084-ethiopian-sinodos`
 - `phase-4-085-ovid-metamorphoses-book-1`
 - `phase-4-086-arda-viraf-namag`
-- `phase-4-090-apuleius-metamorphoses-bk-11`
-- `phase-4-092-avatamsaka-sutra`
-- `phase-4-093-lankavat-sutra`
-- `phase-4-094-larger-sukhavativyuha-sutra`
 - `phase-4-095-new-testament-canon`
 - `phase-4-096-cantong-qi`
 - `phase-4-097-baopuzi-ge-hong`
@@ -2078,7 +2073,7 @@ canonical-slug
 - `world-parent-cosmogony`
 - `zeus-pantokrator-transmission`
 
-### tradition (124 nodes)
+### tradition (125 nodes)
 
 - `tradition-advaita-vedanta`
 - `tradition-african-traditional`
@@ -2179,6 +2174,7 @@ canonical-slug
 - `tradition-scientology`
 - `tradition-scottish-rite-freemasonry`
 - `tradition-sebastianism`
+- `tradition-second-temple-judaism`
 - `tradition-shia-islam`
 - `tradition-shinto`
 - `tradition-sikhism`
@@ -2211,19 +2207,19 @@ canonical-slug
 
 | Refs | Dead target | Suggested canonical (existing) |
 |---:|---|---|
-| 5 | `phase-4-061-lotus-sutra` | `phase-4-063-ignatius-letters` |
 | 4 | `divine-kingship-solar` | `divine-kingship` |
-| 3 | `tradition-second-temple-judaism` | `tradition-sebastianism` |
-| 3 | `tradition-medieval-christianity` | `tradition-pentecostalism` |
+| 3 | `tradition-medieval-christianity` | `tradition-african-traditional` |
 | 2 | `yam-canaanite` | `astarte-canaanite` |
-| 2 | `tradition-judaism-sephardic` | `tradition-sebastianism` |
-| 2 | `tradition-islam-shia` | `tradition-islam` |
-| 2 | `tradition-islam-mughal` | `tradition-islam` |
-| 2 | `tradition-hussitism` | `tradition-islam` |
-| 2 | `tradition-hinduism` | `tradition-islam` |
-| 2 | `tradition-christianity-catholic` | `tradition-pentecostalism` |
-| 2 | `tradition-cheondogyo` | `tradition-islam` |
-| 2 | `tradition-bahai` | `tradition-islam` |
+| 2 | `tradition-lingayat` | `tradition-egyptian` |
+| 2 | `tradition-judaism-sephardic` | `tradition-african-traditional` |
+| 2 | `tradition-islam-shia` | `tradition-egyptian` |
+| 2 | `tradition-islam-mughal` | `tradition-egyptian` |
+| 2 | `tradition-hussitism` | `tradition-egyptian` |
+| 2 | `tradition-hinduism` | `tradition-egyptian` |
+| 2 | `tradition-christianity-catholic` | `tradition-african-traditional` |
+| 2 | `tradition-cheondogyo` | `tradition-egyptian` |
+| 2 | `tradition-bahai` | `tradition-egyptian` |
+| 2 | `guru-gobind-singh-ji` | `guru-gobind-singh` |
 | 2 | `guru-arjan-dev-ji` | `guru-arjan` |
 | 2 | `aurangzeb-emperor` | `zara-yaqob-emperor` |
 | 2 | `asclepius` | `asclepius-greek` |

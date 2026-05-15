@@ -17,7 +17,7 @@ city-of-origin: "Aksum (traditional); Tigray region monastic milieu"
 authorship: "redactor named in colophon: Nebura'ed Yeshaq of Aksum (~1314–1322); compiled from earlier Arabic and Coptic sources"
 key-figures: ["[[wolega-tafari-makonnen-haile-selassie]]", "[[makeda-queen-of-sheba]]", "[[menelik-i-legendary]]", "Nebura'ed Yeshaq of Aksum (redactor c. 1322)"]
 themes: ["[[solomonic-genealogy]]", "[[messianic-genealogy]]", "[[ark-of-the-covenant]]", "[[tabot-ark-replica]]", "[[divine-kingship]]", "[[chosen-people]]"]
-parallels: ["[[phase-2-005-1-2-kings]]", "[[phase-2-004-1-2-chronicles]]"]
+parallels: ["[[phase-2-034-books-of-kings]]", "[[phase-2-004-1-2-chronicles]]"]
 influenced-by: ["1 Kings 10 (Solomon and Queen of Sheba narrative)", "Targum Sheni to Esther", "Quranic Solomon-Bilqis material (Surah 27)", "Coptic / Syriac Christian legends"]
 influences: ["[[event-solomonic-restoration-1270]]", "Ethiopian Solomonic dynasty legitimation (1270–1974)", "1955 Ethiopian Constitution Article 2 (Solomonic descent codified)", "[[tradition-rastafari]] (foundational for Rastafarian theology of Haile Selassie)"]
 deities-mentioned: []
@@ -82,7 +82,7 @@ The Ethiopian national epic-cum-religious chronicle ("The Glory of the Kings"), 
 - [[chosen-people]] — substitution theology: Ethiopia replaces Israel as the *new* chosen people (a move structurally parallel to but distinct from supersessionist Christian claims).
 
 ## Connections (provisional)
-- → [[phase-2-005-1-2-kings]] — *commentary-on* / *redaction-of*: the Kebra Nagast is essentially an elaboration of 1 Kings 10's Queen of Sheba pericope, given a christianized-Ethiopian frame.
+- → [[phase-2-034-books-of-kings]] — *commentary-on* / *redaction-of*: the Kebra Nagast is essentially an elaboration of 1 Kings 10's Queen of Sheba pericope, given a christianized-Ethiopian frame.
 - → Quranic Surah an-Naml (Q 27:15–44) — *parallel-motif*: Quranic Solomon-Bilqis story is structurally related to the Kebra Nagast's earlier strata; both depend on a Jewish-Christian midrashic substrate.
 - → [[tradition-rastafari]] — *manuscript-transmission* (theological): the Rastafarian identification of Haile Selassie as messianic figure descends directly from his Solomonic-dynasty claim, theologically grounded in the Kebra Nagast. Marcus Garvey's pan-African mobilization and Leonard Howell's Rastafarian movement (~1930) deployed Kebra Nagast genealogy as religious foundation.
 - → 2 Chronicles 9 — *parallel-motif*: Chronicler's Queen of Sheba treatment.

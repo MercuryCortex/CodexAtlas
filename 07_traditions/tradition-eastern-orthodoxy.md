@@ -22,13 +22,13 @@ key-documents:
   - "Philokalia (1782 CE compilation, Makarios of Corinth + Nikodemos of the Holy Mountain) — hesychast anthology"
   - "Divine Liturgy of St John Chrysostom — primary eucharistic rite"
 key-themes:
-  - "[[theosis-deification]]"
-  - "[[apophatic-theology]]"
+  - "[[apotheosis]]"
+  - "[[theme-apophatic-theology]]"
   - "[[divine-immanence]]"
   - "[[merkabah-miraj-ascent-chain]]"
 sister-traditions:
   - "[[tradition-christianity-canonical]]"
-  - "[[tradition-roman-catholicism]]"
+  - "tradition-roman-catholicism"
   - "[[tradition-coptic-orthodox]]"
   - "[[tradition-syriac-orthodox]]"
   - "[[tradition-ethiopian-orthodox-tewahedo]]"
@@ -78,7 +78,7 @@ Eastern Orthodoxy is the second-largest Christian communion (~260 million adhere
 - **Iconoclasm controversy (726–843 CE) ↔ Islamic aniconism ↔ Jewish second commandment**: The Byzantine iconoclast crisis (emperors destroying icons) was explicitly influenced by Islamic and Jewish critiques of image veneration. All three traditions trace back to the same Sinai second commandment; all three resolved it differently (Islam: total prohibition; Judaism: no images of God; Orthodoxy: icons required). The theological debate intersects [[tradition-islam]] and [[tradition-judaism]] at a precise historical moment.
 
 ## Relations to neighbors
-- vs. [[tradition-roman-catholicism]]: Filioque dispute (does the Spirit proceed from the Father alone or from Father *and* Son?), papal supremacy, purgatory doctrine, scholastic theology — the 1054 schism crystallized these into formal separation.
+- vs. tradition-roman-catholicism: Filioque dispute (does the Spirit proceed from the Father alone or from Father *and* Son?), papal supremacy, purgatory doctrine, scholastic theology — the 1054 schism crystallized these into formal separation.
 - vs. [[tradition-coptic-orthodox]] / [[tradition-syriac-orthodox]]: Oriental Orthodox churches separated at Chalcedon (451 CE) over Christ's nature (miaphysite vs. dyophysite). Eastern Orthodoxy is Chalcedonian.
 - vs. [[tradition-sufism]]: Closest mystical structural parallel outside Christianity; mutual influence possible via shared Neoplatonic background and the geography of the Byzantine-Islamic frontier.
 
