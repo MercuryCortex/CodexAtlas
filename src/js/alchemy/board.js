@@ -106,9 +106,16 @@
     `;
 
     // Drag handler — pointer events, preserves smoothness on touch
+    // Block native text-selection on shift-click. Browsers default to "extend
+    // selection" when shift is held on mousedown, which highlights the card's
+    // text instead of just toggling multi-select.
+    el.addEventListener('mousedown', (ev) => {
+      if (ev.shiftKey) ev.preventDefault();
+    });
     el.addEventListener('pointerdown', (ev) => {
       if (ev.button === 2) return; // right-click handled separately
       ev.stopPropagation();
+      ev.preventDefault(); // belt-and-suspenders for text-selection
       el.setPointerCapture(ev.pointerId);
       const startX = ev.clientX, startY = ev.clientY;
       const orig = { x: card.x, y: card.y };
@@ -291,6 +298,14 @@
     const byNodeId = new Map(state.cards.map(c => [c.nodeId, c]));
     const drawnPairs = new Set();
 
+    const inHighlight = (cardA, cardB) => {
+      if (!highlightCardIds) return null; // not in highlight mode → default look
+      const aIn = highlightCardIds.has(cardA.id);
+      const bIn = highlightCardIds.has(cardB.id);
+      if (highlightCardIds.size === 1) return aIn || bIn; // single-card mode: any edge involving it
+      return aIn && bIn; // multi-card mode: only edges within the subgraph
+    };
+
     allEdges().forEach(e => {
       const a = byNodeId.get(e.source);
       const b = byNodeId.get(e.target);
@@ -310,11 +325,19 @@
       const len = Math.sqrt(dx*dx + dy*dy);
       const nx = -dy / (len || 1) * Math.min(40, len * 0.12);
       const ny =  dx / (len || 1) * Math.min(40, len * 0.12);
+
+      // Determine visual state for this edge
+      const hl = inHighlight(a, b);
+      let strokeOpacity, strokeWidth, labelOpacity;
+      if (hl === null) { strokeOpacity = 0.55; strokeWidth = 1.4; labelOpacity = 0.85; }
+      else if (hl)    { strokeOpacity = 1;    strokeWidth = 2.2; labelOpacity = 1;    }
+      else            { strokeOpacity = 0.10; strokeWidth = 0.8; labelOpacity = 0.18; }
+
       const path = document.createElementNS('http://www.w3.org/2000/svg', 'path');
       path.setAttribute('d', `M ${ax},${ay} Q ${mx + nx},${my + ny} ${bx},${by}`);
       path.setAttribute('stroke', color);
-      path.setAttribute('stroke-width', 1.4);
-      path.setAttribute('stroke-opacity', '0.55');
+      path.setAttribute('stroke-width', strokeWidth);
+      path.setAttribute('stroke-opacity', strokeOpacity);
       path.setAttribute('fill', 'none');
       path.setAttribute('class', 'alch-edge');
       path.setAttribute('data-edge-type', e.type || 'related-to');
@@ -328,7 +351,7 @@
       lbl.setAttribute('fill', color);
       lbl.setAttribute('font-family', 'var(--mono)');
       lbl.setAttribute('font-size', '9.5');
-      lbl.setAttribute('opacity', '0.85');
+      lbl.setAttribute('opacity', labelOpacity);
       lbl.setAttribute('class', 'alch-edge-label');
       lbl.textContent = e.type || 'related-to';
       edgesSvg.appendChild(lbl);
@@ -380,17 +403,33 @@
       const c = state.cards.find(c => c.id === selectedIds[0]);
       const n = nodeById(c.nodeId);
       items.push({ label: 'Open detail panel', action: () => window.selectNode && window.selectNode(c.nodeId, true) });
-      items.push({ label: 'Spawn neighbors', action: () => spawnNeighbors(c) });
+      items.push({ label: 'Spawn all neighbors', action: () => spawnNeighbors(c) });
+      items.push({ label: 'Highlight this card\'s connections', action: () => setEdgeHighlight([c.id]) });
+      items.push({ divider: true });
+      items.push({ label: 'See this node in Transmission', action: () => sendToTransmission([c.nodeId]) });
       items.push({ divider: true });
       items.push({ label: 'Remove card', action: () => removeCard(c.id) });
     } else if (selectedIds.length >= 2) {
-      items.push({ label: `Show connections between ${selectedIds.length} cards`, action: drawEdges });
-      items.push({ label: 'Show shortest path (with ghost cards)', action: () => spawnShortestPaths(selectedIds) });
-      items.push({ label: 'Show common neighbors', action: () => spawnCommonNeighbors(selectedIds) });
+      items.push({ label: `Highlight only the ${selectedIds.length}-card subgraph`, action: () => setEdgeHighlight(selectedIds) });
+      items.push({ label: 'Spawn shortest paths (ghost cards)', action: () => spawnShortestPaths(selectedIds) });
+      items.push({ label: 'Spawn common neighbors', action: () => spawnCommonNeighbors(selectedIds) });
+      items.push({ label: 'Spawn all neighbors of any selected', action: () => spawnUnionNeighbors(selectedIds) });
+      items.push({ divider: true });
+      const selectedNodes = selectedIds.map(id => state.cards.find(c => c.id === id)?.nodeId).filter(Boolean);
+      items.push({ label: `See these ${selectedNodes.length} in Transmission`, action: () => sendToTransmission(selectedNodes) });
       items.push({ divider: true });
       items.push({ label: `Remove ${selectedIds.length} cards`, action: () => selectedIds.forEach(removeCard) });
     }
     showMenu(x, y, items);
+  }
+
+  // ----- edge highlight mode -----
+  // When set, drawEdges() draws only edges connecting cards in this set with
+  // full opacity; other edges fade out. null = default (all edges normal).
+  let highlightCardIds = null;
+  function setEdgeHighlight(cardIds) {
+    highlightCardIds = cardIds && cardIds.length ? new Set(cardIds) : null;
+    drawEdges();
   }
 
   function showEmptyBoardContextMenu(x, y) {
@@ -456,6 +495,46 @@
     toAdd.forEach((nodeId, idx) => {
       addCard(nodeId, cx + Math.cos(idx * 0.6) * 240, cy + Math.sin(idx * 0.6) * 240);
     });
+  }
+  function spawnUnionNeighbors(cardIds) {
+    const ids = cardIds.map(cid => state.cards.find(c => c.id === cid)?.nodeId).filter(Boolean);
+    if (!ids.length) return;
+    const idSet = new Set(ids);
+    const targets = new Set();
+    allEdges().forEach(e => {
+      if (idSet.has(e.source)) targets.add(e.target);
+      else if (idSet.has(e.target)) targets.add(e.source);
+    });
+    ids.forEach(id => targets.delete(id));
+    const existing = new Set(state.cards.map(c => c.nodeId));
+    const toAdd = [...targets].filter(id => !existing.has(id)).slice(0, 24);
+    const sel = state.cards.filter(c => cardIds.includes(c.id));
+    const cx = sel.reduce((s, c) => s + c.x, 0) / sel.length;
+    const cy = sel.reduce((s, c) => s + c.y, 0) / sel.length;
+    toAdd.forEach((nodeId, idx) => {
+      const ang = (idx / Math.max(8, toAdd.length)) * Math.PI * 2;
+      const r = 320 + (idx % 2) * 70;
+      addCard(nodeId, cx + Math.cos(ang) * r, cy + Math.sin(ang) * r);
+    });
+  }
+
+  // Push the given nodeIds into STATE.alchemyPicks and switch to Transmission view.
+  // The user can then continue from the same set, rendered as a force-laid graph.
+  function sendToTransmission(nodeIds) {
+    if (!nodeIds || !nodeIds.length) return;
+    if (!window.STATE) return;
+    // Keep order, de-dup
+    const seen = new Set();
+    const picks = [];
+    nodeIds.forEach(id => { if (id && !seen.has(id)) { seen.add(id); picks.push(id); } });
+    window.STATE.alchemyPicks = picks;
+    window.STATE.alchemyActivePreset = null;
+    if (typeof window.setView === 'function') window.setView('transmission');
+    else {
+      // Fallback: click the nav item
+      const nav = document.querySelector('nav.side .item[data-view="transmission"]');
+      if (nav) nav.click();
+    }
   }
   function bfsPath(srcId, dstId, maxHops) {
     if (srcId === dstId) return [srcId];
@@ -550,9 +629,10 @@
   function attachPanZoom() {
     rootEl.addEventListener('pointerdown', (ev) => {
       if (ev.target.closest('.alch-card') || ev.target.closest('.alch-toolbar') || ev.target.closest('.alch-menu')) return;
-      // Click empty board → deselect + start pan
+      // Click empty board → deselect + clear edge highlight + start pan
       state.selected.clear();
       refreshSelection();
+      if (highlightCardIds) { highlightCardIds = null; drawEdges(); }
       dismissMenu();
       if (ev.button !== 0) return;
       rootEl.setPointerCapture(ev.pointerId);
@@ -601,6 +681,7 @@
         </div>
         <button class="alch-btn" id="alch-btn-fit">Zoom to fit</button>
         <button class="alch-btn" id="alch-btn-arrange">Auto-arrange</button>
+        <button class="alch-btn alch-btn-bridge" id="alch-btn-bridge" title="Open the current board as a Transmission graph">→ Transmission</button>
         <button class="alch-btn alch-btn-danger" id="alch-btn-clear">Clear</button>
         <div class="alch-counter" id="alch-counter"></div>
       </div>
@@ -622,6 +703,14 @@
     toolbarEl.querySelector('#alch-btn-arrange').onclick = autoArrange;
     toolbarEl.querySelector('#alch-btn-clear').onclick = () => {
       if (confirm('Clear all cards from the board?')) clearBoard();
+    };
+    toolbarEl.querySelector('#alch-btn-bridge').onclick = () => {
+      const all = state.cards.map(c => c.nodeId);
+      if (!all.length) {
+        alert('Add some cards to the board first, then send them to Transmission.');
+        return;
+      }
+      sendToTransmission(all);
     };
     updateCounter();
   }

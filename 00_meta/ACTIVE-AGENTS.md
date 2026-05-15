@@ -18,6 +18,20 @@ Format:
 
 ---
 
+## sonnet-won-nestorian-1 — content / Won Buddhism + Nestorian Stele — started 2026-05-15 — **FINISHED 2026-05-15**
+- Owning: `07_traditions/tradition-won-buddhism.md` (NEW), `04_persons/sotaesan.md` (NEW), `05_events/event-nestorian-stele-781.md` (NEW), `src/js/app.js` (silk-road preset + investigation update)
+- Goal: Create Won Buddhism tradition + Sotaesan founder + Nestorian Stele event; wire nestorian-stele into silk-road preset/investigation; commit 7 orphaned nodes
+- Status: finished
+- Delivered:
+  - **`tradition-won-buddhism.md`** (NEW, metadata) — Korean Buddhist reform 1916; Irwon-sang One Circle; saenghwal bulgyo everyday practice; 5 MASSIVE-WIN edges (Irwon↔ensō↔Plotinus; Sotaesan↔James; reform↔Protestant Reformation; synthesis↔Ramakrishna; Donghak→Won arc); 4 refs T1+T2
+  - **`sotaesan.md`** (NEW, metadata) — Pak Chungbin 1891–1943; enlightenment 1916; Irwon-sang; William James four-marks match; colonial modernity cluster (Vivekananda/Choe Je-u parallel)
+  - **`event-nestorian-stele-781.md`** (NEW, metadata, id: `nestorian-stele`) — Christianity in Tang China; Alopen 635 CE; Adam/Jing-Jing bilingual author; Buddhist/Daoist vocabulary translation table; Silk Road proof-object; 4 refs T1+T2
+  - **`src/js/app.js`** — `nestorian-stele` added to silk-road-transmission-corridor preset picks + silk-road-corridor Investigation seeds; thread note updated
+  - **Orphaned commit:** 7 nodes (huainanzi, cantong-qi, baopuzi-ge-hong, liezi, event-crucifixion, event-al-hallaj-execution, theme-persecution-as-legitimation)
+- Build: 2130 nodes
+
+---
+
 ## opus-blake-metatron-1 — content / Blake/Urizen/Metatron deep + Adam Kadmon/Anthropos full — started 2026-05-15 — **FINISHED 2026-05-15**
 - Owning: `03_deities/urizen.md` (NEW), `04_persons/william-blake.md` (NEW), `03_deities/metatron.md` (deep expand), `06_themes/adam-kadmon.md` (stub→full), `06_themes/anthropos-myth.md` (stub→full)
 - Goal: Create Blake + Urizen nodes; massively expand Metatron; upgrade Adam Kadmon and Anthropos Myth from stub to full with comprehensive cross-tradition grids
@@ -65,6 +79,7 @@ Format:
 | `sonnet-khafre-symbolism-1` | content / Egyptian symbolism deep-dive | 9 symbols + 4 themes + 6 persons + 4 events + 2 documents — **25 new nodes · 194 new edges** | 2026-05-15 | **FINISHED** |
 | `sonnet-kabbalah-synthesis-1` | content / Symbol fixes + Kabbalah/Logos/Divine-Feminine synthesis | 6 symbol fixes + theme-axial-age (NEW) + 6 stub→full upgrades (logos-cosmic-reason, divine-feminine, tikkun-olam, philo-of-alexandria, tradition-kabbalah, moses-de-leon) | 2026-05-15 | **FINISHED** e8306e0+268e1da |
 | `sonnet-infra-1` | data-integrity / YAML refs sync + Lotus Sutra dedup + orphan wiring | 10 persons refs-synced, phase-4-091 deleted (merged into phase-4-061), 8 orphan nodes wired (stribog/simeon/priscillian/cassiodorus/alcuin/dove/alpha-omega/fleur-de-lis) | 2026-05-15 | **FINISHED** b0f768a+8b2b7f2 |
+| `sonnet-neoplatonics-1` | content / late-antique Neoplatonic spine | `proclus` (upgrade stub→full), `pseudo-dionysius-areopagite` (upgrade), `boethius` (upgrade), `phase-4-100-celestial-hierarchy` (NEW doc) | 2026-05-15 | **IN FLIGHT** |
 
 ---
 
@@ -503,3 +518,11 @@ The things opus-foundation-1 claimed but never started are all still open:
   - `06_themes/crucifixion-theology.md` (UPGRADE stub → metadata)
   - `06_themes/martyrdom-theology.md` (UPGRADE stub → metadata)
 - Status: in progress
+
+---
+
+## sonnet-bruno-1 — content / Giordano Bruno cluster + Origen-Lucifer misreading event — started 2026-05-15
+- Owning: `giordano-bruno` (EXISTS — already full), `marsilio-ficino` (EXISTS — already full), `event-ficino-hermetica-1463` (EXISTS as `event-ficino-corpus-hermeticum-translation-1463`), `event-origen-lucifer-misreading-c230` (NEW)
+- Goal: Build Bruno cluster nodes; discovered all main nodes pre-exist; creating one genuinely missing node: the Origen/Isaiah 14:12 misreading event that seeded 1,800 years of Satan-as-fallen-angel cosmology
+- Status: in-flight
+- Last edit: `00_meta/ACTIVE-AGENTS.md`
