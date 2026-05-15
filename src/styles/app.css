@@ -1991,8 +1991,162 @@ body.view-alchemy .zoom-meter { display: none !important; }
 .ads-vault-link:hover { color: var(--gold); text-decoration: underline; }
 .ads-empty { color: var(--text-3); font-style: italic; }
 
-.astro-decan-sector.selected { stroke: var(--gold); stroke-width: 2; }
+.astro-decan-sector.selected { stroke: var(--gold); stroke-width: 2.2; }
 .astro-decanic-svg .astro-decanic-sign-label { letter-spacing: 0.04em; }
+
+/* === DECANIC CLARITY LAYER (sonnet-decanic-clarity, 2026-05-15) === */
+
+/* Planet glyph (sun moon mercury venus mars jupiter saturn) inside each sector — high-contrast white. */
+.astro-decan-glyph {
+  font-family: var(--serif);
+  font-size: 15px;
+  fill: #ffffff;
+  pointer-events: none;
+  text-shadow: 0 0 3px rgba(0,0,0,0.55);
+  paint-order: stroke fill;
+  stroke: rgba(0,0,0,0.45);
+  stroke-width: 0.6px;
+}
+
+/* Small decan number (1-36) toward the inner radius. */
+.astro-decan-num {
+  font-family: var(--mono);
+  font-size: 9px;
+  fill: rgba(255,255,255,0.78);
+  pointer-events: none;
+  letter-spacing: 0.02em;
+}
+
+/* Sign-name ribbon — thin annular band between wheel and outer sign-glyphs. */
+.astro-decanic-ribbon-seg {
+  fill: rgba(212,165,90,0.06);
+  stroke: var(--gold-soft);
+  stroke-opacity: 0.45;
+  stroke-width: 0.8;
+}
+.astro-decanic-ribbon-text {
+  font-family: var(--serif);
+  font-size: 10.5px;
+  letter-spacing: 0.10em;
+  fill: var(--gold-soft);
+}
+
+/* Hover tooltip floating over the SVG canvas. */
+.astro-decanic-tooltip {
+  position: absolute;
+  z-index: 30;
+  pointer-events: none;
+  background: rgba(10,10,16,0.94);
+  border: 1px solid var(--gold-soft);
+  border-radius: 4px;
+  padding: 6px 9px;
+  min-width: 150px;
+  max-width: 220px;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.55);
+  color: var(--text-1);
+}
+.astro-decanic-tooltip .adt-row1 {
+  font-family: var(--serif); font-size: 12.5px;
+  color: var(--gold); margin-bottom: 2px;
+}
+.astro-decanic-tooltip .adt-row2 {
+  font-family: var(--mono); font-size: 10px;
+  color: var(--text-2); letter-spacing: 0.02em;
+}
+.astro-decanic-tooltip .adt-row3 {
+  font-family: var(--mono); font-size: 10.5px;
+  color: var(--text-1); margin-top: 4px;
+}
+.astro-decanic-tooltip .adt-glyph {
+  font-family: var(--serif); font-size: 14px; margin-right: 2px;
+}
+
+/* Side-panel intro / how-to / legend block. */
+.ads-intro-body {
+  font-family: var(--serif);
+  font-size: 12.5px;
+  line-height: 1.55;
+  color: var(--text-1);
+  margin: 0 0 14px;
+}
+.ads-intro-body b { color: var(--gold); font-weight: 600; }
+
+.ads-howto {
+  background: rgba(90,108,196,0.06);
+  border-left: 2px solid var(--gold-soft);
+  padding: 8px 12px 10px;
+  margin: 0 0 14px;
+}
+.ads-howto-title {
+  font-family: var(--mono); font-size: 9.5px;
+  color: var(--text-3); letter-spacing: 0.16em; text-transform: uppercase;
+  margin-bottom: 6px;
+}
+.ads-howto-list {
+  margin: 0; padding-left: 18px;
+  font-family: var(--serif); font-size: 12px; line-height: 1.55;
+  color: var(--text-1);
+}
+.ads-howto-list li { margin-bottom: 3px; }
+.ads-howto-list b { color: var(--text-0); font-weight: 600; }
+
+.ads-legend {
+  background: rgba(212,165,90,0.04);
+  border: 1px solid var(--border-soft);
+  border-radius: 3px;
+  padding: 8px 10px 10px;
+  margin: 0 0 18px;
+}
+.ads-legend-title {
+  font-family: var(--mono); font-size: 9.5px;
+  color: var(--text-3); letter-spacing: 0.16em; text-transform: uppercase;
+  margin-bottom: 6px;
+}
+.ads-legend-grid {
+  display: grid;
+  grid-template-columns: 16px auto 16px auto;
+  gap: 4px 8px;
+  align-items: center;
+}
+.ads-legend-swatch {
+  display: inline-block;
+  width: 14px; height: 14px;
+  border-radius: 2px;
+  border: 1px solid rgba(255,255,255,0.10);
+}
+.ads-legend-label {
+  font-family: var(--serif); font-size: 11.5px;
+  color: var(--text-1);
+}
+.ads-legend-foot {
+  font-family: var(--mono); font-size: 9.5px;
+  color: var(--text-3); margin-top: 8px; letter-spacing: 0.04em;
+}
+
+/* One-line "what is this decan?" lead above the head row. */
+.ads-decan-lead {
+  font-family: var(--serif);
+  font-size: 12.5px;
+  line-height: 1.55;
+  color: var(--text-1);
+  background: rgba(212,165,90,0.05);
+  border-left: 2px solid var(--gold);
+  padding: 8px 12px;
+  margin: 0 0 12px;
+}
+.ads-decan-lead b { color: var(--gold); font-weight: 600; }
+
+/* Face-ruler pill inside the decan head row. */
+.ads-decan-ruler {
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.04em;
+  padding: 2px 8px;
+  border-radius: 3px;
+  background: rgba(255,255,255,0.04);
+  border: 1px solid var(--border-soft);
+}
+/* === END DECANIC CLARITY LAYER === */
 
 /* ASTROLOGY · WHEEL mode — natal/event chart with tropical zodiac wheel. */
 .astro-wheel-layout {
@@ -2090,6 +2244,31 @@ body.view-alchemy .zoom-meter { display: none !important; }
   margin-top: 12px; font-family: var(--mono); font-size: 9.5px;
   color: var(--text-3); letter-spacing: 0.08em;
 }
+
+/* Now mode — parallel events timeline (sonnet-now-events-1).
+   The events strip lives inside the same SVG as the zodiac strip; these
+   classes style the scrubber-row range-switch controls and the count chip. */
+.anw-range-row {
+  display: flex; align-items: center; gap: 6px; flex-wrap: wrap;
+  margin-top: 8px;
+  font-family: var(--mono); font-size: 10px;
+  color: var(--text-3);
+}
+.anw-range-row .anw-range-label {
+  letter-spacing: 0.08em; text-transform: uppercase;
+  color: var(--text-3);
+}
+.anw-range-row .btn-mini.anw-range { font-size: 10px; padding: 3px 8px; }
+.anw-range-row .btn-mini.anw-range.active {
+  color: var(--gold); border-color: var(--gold-soft);
+  background: rgba(212,165,90,0.10);
+}
+.anw-range-count {
+  margin-left: 6px; color: var(--text-3);
+  letter-spacing: 0.06em; font-style: italic;
+}
+/* SVG dot hover — slight visual lift via stroke opacity. */
+.astro-now-event-dot:hover circle { stroke-opacity: 1; }
 
 /* Codex graph pane — shared WebGL graph canvas (sigma.js). Same positioning
    posture as .atlas-pane: full-bleed within the canvas area, behind the
