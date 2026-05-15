@@ -29,6 +29,14 @@ syncretic-edges:
     type: "structural-parallel"
     source: "Garuda Purana; Teiser (1994)"
     notes: "Both traditions have a divine judge (Yama/Yan Wang) supported by a divine scribe (Chitragupta / the Registrar of the Ten Courts). The administrative structure of cosmic justice — judge + scribe + record — appears in both Hindu and Chinese afterlife theology independently."
+  - target: "[[zao-jun]]"
+    type: "structural-parallel"
+    notes: "Yan Wang administers the post-mortem karmic audit at the Ten Courts of Hell; Zao Jun administers the annual domestic moral audit from the kitchen hearth. Both are nodes in the same Chinese celestial-bureaucratic system — one operating at death, one operating annually throughout life. Together they frame the complete divine surveillance arc: monitored in life (Zao Jun), judged after death (Yan Wang)."
+  - target: "[[psychostasia-soul-weighing]]"
+    type: "instantiation"
+    notes: "The Ten Courts of Hell are the most elaborated institutional instantiation of the psychostasia grammar in world religion — sequential categorical judgment by specialized divine courts, with a perfect karma record (the mirror), under a presiding judge, producing graduated outcomes (specific punishments + eventual rebirth). Yan Wang fills the 'divine tribunal' slot in the Hindu/Buddhist column of the psychostasia structural grammar table."
+mentioned-in:
+  - "[[psychostasia-soul-weighing]]"
 status: "metadata"
 refs:
   - title: "The Scripture on the Ten Kings and the Making of Purgatory in Medieval Chinese Buddhism"

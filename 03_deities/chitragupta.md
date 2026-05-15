@@ -33,6 +33,15 @@ syncretic-edges:
     type: "child-of"
     source: "Garuda Purana 2.1"
     notes: "Brahma meditated for 11,000 years and Chitragupta emerged from his body (*chitra* = picture/secret; *gupta* = hidden) — a deity born as the externalization of Brahma's internalized knowledge and record-keeping. His origin from Brahma's body parallels other Puranic deities born from Brahma's mental or physical substance."
+  - target: "[[zao-jun]]"
+    type: "structural-parallel"
+    notes: "MASSIVE WIN: Both are divine record-keepers whose perfect accounts form the basis of divine moral judgment. Chitragupta maintains the cosmic Agrasandhani (all souls, post-mortem); Zao Jun maintains the household annual record (one family, annually while living). Chitragupta operates at the scale of the cosmic tribunal; Zao Jun at the scale of the kitchen hearth. Together they represent the full range of the divine-accounting archetype — the same theological logic instantiated from the most intimate domestic space to the ultimate judgment of the dead."
+  - target: "[[psychostasia-soul-weighing]]"
+    type: "instantiation"
+    notes: "Chitragupta is the Hindu instantiation of the 'Record mechanism' slot in the psychostasia structural grammar: the divine figure who maintains the perfect, unfalsifiable record that makes the divine tribunal's judgment possible. His Agrasandhani is the Hindu equivalent of Thoth's scroll, the Book of Life, the Islamic two-recording-angels system. He is the most precisely documented example of this universal theological requirement."
+mentioned-in:
+  - "[[psychostasia-soul-weighing]]"
+  - "[[tradition-hinduism]]"
 status: "metadata"
 refs:
   - title: "The Garuda Purana (Saroddhara)"
