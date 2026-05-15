@@ -4863,20 +4863,66 @@ VIEWS.atlas = {
       // layer's paint expressions can data-drive everything. This eliminates the
       // DOM-marker positioning bug (markers appearing offset / drifting from their
       // basemap location) by using MapLibre's GPU projection.
+      //
+      // CO-LOCATION JITTER (2026-05-15 fix): the vault has many docs sharing the
+      // EXACT same geocoded coord (e.g. ~99 texts all at Rome's 41.9°N 12.5°E).
+      // Without jitter, even at max zoom these stack into a single visible dot and
+      // the user can't reach the individual nodes. We group features by their exact
+      // coord and spread each group on a small spiral around the centroid. The
+      // spiral radius is in DEGREES so it scales naturally with zoom: invisible at
+      // z 1-3 (still clusters together), clearly visible at z 5+ (individual dots).
+      // Original coord preserved in properties.origLng / origLat for reference.
+      const coordGroups = new Map();
+      geoNodes.forEach(n => {
+        const key = `${n.geo.lon.toFixed(4)},${n.geo.lat.toFixed(4)}`;
+        if (!coordGroups.has(key)) coordGroups.set(key, []);
+        coordGroups.get(key).push(n.id);
+      });
+      // Jitter spiral parameters. 0.025° ≈ 2.8 km at the equator, ≈ 2 km at lat 40.
+      // Items per ring grows so the spiral stays roughly circular as N increases.
+      const JITTER_R0  = 0.025;
+      const JITTER_STEP = 0.030;
+      const ITEMS_PER_RING = 8;
+
       const featureCollection = {
         type: 'FeatureCollection',
-        features: geoNodes.map(n => ({
-          type: 'Feature',
-          geometry: { type: 'Point', coordinates: [n.geo.lon, n.geo.lat] },
-          properties: {
-            id: n.id,
-            title: n.title || '',
-            family_color: n.family_color || n.tradition_color || '#7a8090',
-            tier: tierById.get(n.id),
-            deg: DEGREE.get(n.id) || 0,
-            dotSize: 5 + Math.sqrt(DEGREE.get(n.id) || 0) * 1.2
+        features: geoNodes.map(n => {
+          const key = `${n.geo.lon.toFixed(4)},${n.geo.lat.toFixed(4)}`;
+          const group = coordGroups.get(key);
+          let lng = n.geo.lon;
+          let lat = n.geo.lat;
+          if (group.length > 1) {
+            const pos    = group.indexOf(n.id);
+            const ring   = Math.floor(pos / ITEMS_PER_RING);
+            const inRing = pos % ITEMS_PER_RING;
+            const perRing = (ring === 0 && group.length < ITEMS_PER_RING)
+              ? group.length : ITEMS_PER_RING;
+            // Stagger alternating rings by half-step so outer ring sits in inner gaps.
+            const angleOff = (ring % 2) ? (Math.PI / perRing) : 0;
+            const angle = (inRing / perRing) * 2 * Math.PI - Math.PI / 2 + angleOff;
+            const r = JITTER_R0 + ring * JITTER_STEP;
+            // Adjust lon for latitude (degrees of longitude shrink toward poles).
+            const latRad = (n.geo.lat * Math.PI) / 180;
+            const lonFactor = 1 / Math.max(0.2, Math.cos(latRad));
+            lng += r * Math.cos(angle) * lonFactor;
+            lat += r * Math.sin(angle);
           }
-        }))
+          return {
+            type: 'Feature',
+            geometry: { type: 'Point', coordinates: [lng, lat] },
+            properties: {
+              id: n.id,
+              title: n.title || '',
+              family_color: n.family_color || n.tradition_color || '#7a8090',
+              tier: tierById.get(n.id),
+              deg: DEGREE.get(n.id) || 0,
+              dotSize: 5 + Math.sqrt(DEGREE.get(n.id) || 0) * 1.2,
+              origLng: n.geo.lon,
+              origLat: n.geo.lat,
+              coGroupSize: group.length
+            }
+          };
+        })
       };
 
       // Lookup map for hover-trail neighbor resolution (replaces _atlasMarkers).
