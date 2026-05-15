@@ -11,7 +11,13 @@ date-died:
 historicity: "documented"
 texts-authored: ["*The Greater Community*", "*Steps to Knowledge*", "*The New Message from God* (multi-volume channeled corpus, 1981 onward)"]
 status: "metadata"
-refs: []
+refs:
+  - title: "The New Message from God corpus"
+    author: "Summers, Marshall Vian"
+    year: 1981
+    publisher: "New Knowledge Library"
+    type: "primary-source"
+    tier: 3
 tags: [person, phase-7, new-age, channeled, summers, nrm]
 ---
 

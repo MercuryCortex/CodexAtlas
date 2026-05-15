@@ -11,7 +11,19 @@ date-died: 1925
 historicity: "documented"
 texts-authored: ["*The Philosophy of Freedom* (1894)", "*Theosophy* (1904)", "*Knowledge of the Higher Worlds* (1904)", "[[phase-7-009-outline-of-esoteric-science]]", "thousands of recorded lectures (the *Gesamtausgabe* runs to ~360 volumes)"]
 status: "metadata"
-refs: []
+refs:
+  - title: "Rudolf Steiner"
+    author: "Lachman, Gary"
+    year: 2007
+    publisher: "Floris"
+    type: "monograph"
+    tier: 1
+  - title: "Between Occultism and Nazism"
+    author: "Staudenmaier, Peter"
+    year: 2014
+    publisher: "Brill"
+    type: "monograph"
+    tier: 1
 tags: [person, phase-7, anthroposophy, steiner, waldorf, biodynamic]
 ---
 

@@ -11,7 +11,13 @@ date-died:
 historicity: "documented"
 texts-authored: ["*Asatru: A Native European Spirituality* (2015)", "many articles in *The Runestone* (newsletter, 1972 onward)"]
 status: "metadata"
-refs: []
+refs:
+  - title: "American Heathens: The Politics of Identity in a Pagan Religious Movement"
+    author: "Snook, Jennifer"
+    year: 2015
+    publisher: "Temple UP"
+    type: "monograph"
+    tier: 1
 tags: [person, phase-7, asatru, heathenry, mcnallen, modern-paganism, contested-politics]
 ---
 

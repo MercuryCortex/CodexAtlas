@@ -11,7 +11,13 @@ date-died: 1936
 historicity: "documented"
 texts-authored: ["*The Holy Science* (1894)"]
 status: "metadata"
-refs: []
+refs:
+  - title: "Autobiography of a Yogi"
+    author: "Yogananda, Paramahansa"
+    year: 1946
+    publisher: "Self-Realization Fellowship"
+    type: "primary-source"
+    tier: 1
 tags: [person, phase-7, sri-yukteswar, kriya-yoga, yogananda-guru]
 ---
 

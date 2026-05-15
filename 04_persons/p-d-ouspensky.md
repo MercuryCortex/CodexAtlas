@@ -13,7 +13,13 @@ texts-authored: ["*Tertium Organum* (1912)", "*A New Model of the Universe* (193
 mentioned-in: ["[[phase-7-016-magick-in-theory-and-practice]]"]
 influenced-by: ["[[phase-7-005-isis-unveiled]]"]
 status: "metadata"
-refs: []
+refs:
+  - title: "In Search of P.D. Ouspensky"
+    author: "Lachman, Gary"
+    year: 2004
+    publisher: "Quest"
+    type: "monograph"
+    tier: 1
 tags: [person, phase-7, ouspensky, gurdjieff, fourth-way]
 ---
 

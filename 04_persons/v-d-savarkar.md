@@ -11,7 +11,13 @@ date-died: 1966
 historicity: "documented"
 texts-authored: ["*The Indian War of Independence 1857* (1909; banned in British India)", "[[phase-7-029-hindutva]]", "*My Transportation for Life* (1927)"]
 status: "metadata"
-refs: []
+refs:
+  - title: "The Rise of Hindu Nationalism in India"
+    author: "Jaffrelot, Christophe"
+    year: 1996
+    publisher: "Penguin India"
+    type: "monograph"
+    tier: 1
 tags: [person, phase-7, hindutva, savarkar, hindu-nationalism, problematic-author]
 ---
 

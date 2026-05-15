@@ -11,7 +11,13 @@ date-died: 1907
 historicity: "documented"
 texts-authored: ["*Buddhist Catechism* (1881)", "*Old Diary Leaves* (1895–1935, 6 vols, partly posthumous)"]
 status: "metadata"
-refs: []
+refs:
+  - title: "The White Buddhist: The Asian Odyssey of Henry Steel Olcott"
+    author: "Prothero, Stephen"
+    year: 1996
+    publisher: "Indiana UP"
+    type: "monograph"
+    tier: 1
 tags: [person, phase-7, theosophy, olcott, buddhist-modernism]
 ---
 

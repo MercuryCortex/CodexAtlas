@@ -19,6 +19,18 @@ refs:
     publisher: "North Atlantic"
     type: "monograph"
     tier: 1
+  - title: "The Theosophical Enlightenment"
+    author: "Godwin, Joscelyn"
+    year: 1994
+    publisher: "SUNY"
+    type: "monograph"
+    tier: 1
+  - title: "Western Esotericism"
+    author: "Hanegraaff, Wouter J."
+    year: 2013
+    publisher: "Bloomsbury"
+    type: "monograph"
+    tier: 1
 tags: [person, phase-7, theosophy, blavatsky, esoteric, founder, astrology, theosophical-astrology, modern-occult-astrology]
 ---
 

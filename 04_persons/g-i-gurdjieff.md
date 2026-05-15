@@ -12,7 +12,13 @@ historicity: "documented"
 texts-authored: ["*Meetings with Remarkable Men* (1963 posthumous)", "*Beelzebub's Tales to His Grandson* (1950 posthumous)", "*Views from the Real World* (1973 posthumous)"]
 mentioned-in: ["[[phase-7-005-isis-unveiled]]", "[[phase-7-016-magick-in-theory-and-practice]]"]
 status: "metadata"
-refs: []
+refs:
+  - title: "Gurdjieff: A Biography"
+    author: "Moore, James"
+    year: 1991
+    publisher: "Element Books"
+    type: "monograph"
+    tier: 1
 tags: [person, phase-7, gurdjieff, fourth-way, ouspensky]
 ---
 

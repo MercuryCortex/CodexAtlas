@@ -11,7 +11,19 @@ date-died: 1999
 historicity: "documented"
 texts-authored: ["*Where Witchcraft Lives* (1962)", "*An ABC of Witchcraft* (1973)", "*Witchcraft for Tomorrow* (1978)", "*The Rebirth of Witchcraft* (1989)"]
 status: "metadata"
-refs: []
+refs:
+  - title: "The Triumph of the Moon"
+    author: "Hutton, Ronald"
+    year: 1999
+    publisher: "Oxford UP"
+    type: "monograph"
+    tier: 1
+  - title: "Doreen Valiente: Witch"
+    author: "Heselton, Philip"
+    year: 2016
+    publisher: "Centre for Pagan Studies"
+    type: "monograph"
+    tier: 1
 tags: [person, phase-7, wicca, valiente, modern-paganism]
 ---
 
