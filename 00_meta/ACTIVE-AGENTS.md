@@ -24,7 +24,7 @@ Format:
 |---|---|---|---|
 | `sonnet-triage-1` | meta / triage + coordination (TEMPORARY — read-only session) | Diagnosed opus-foundation-1 failure; reverted broken app.js + app.css; tagged checkpoint; wrote HOW-TO-OPEN.md; updated ACTIVE-AGENTS | 2026-05-15 02:45 |
 | `sonnet-foundation-2` | app-code / floating-panel layout pivot | nav + detail as frosted-glass position:fixed overlays; full-bleed canvas; SVG cleared by panel widths; atlas zoom-meter wired; dot-center marker fix | 2026-05-15 03:00 |
-| `sonnet-themes-1` | content / theme nodes + deity fills | cosmic-body-cosmogony, divine-twins, messianic-future-savior, mother-and-child-iconography, feminine-solar, apocalyptic-thunderer-vs-serpent + deity nodes: dioskouroi, romulus, kalki, muhammad-al-mahdi | 2026-05-15 |
+| `sonnet-themes-1` | content / theme nodes + deity fills | 6 theme nodes + 10 deity fills (batches a/b/c) — satan-christian expanded, serpent-dual-nature, Slavic/Baltic/Celtic/Hindu/Daoist fills — **FINISHED 2026-05-15** | 2026-05-15 |
 
 ## sonnet-themes-1 — content / pantheon theme batch — started 2026-05-15
 - Owning: 06_themes/cosmic-body-cosmogony.md, 06_themes/divine-twins.md, 06_themes/messianic-future-savior.md, 06_themes/mother-and-child-iconography.md, 06_themes/feminine-solar.md, 06_themes/apocalyptic-thunderer-vs-serpent.md, 03_deities/the-dioskouroi.md, 03_deities/romulus.md, 03_deities/kalki.md, 03_deities/muhammad-al-mahdi.md

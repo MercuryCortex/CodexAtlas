@@ -17,10 +17,11 @@ canonical-slug
 ## Currently resolved slugs (auto-seeded — every existing file)
 
 
-### deity (426 nodes)
+### deity (438 nodes)
 
 - `abathur`
 - `adonis-hellenistic`
+- `aengus-og`
 - `aeshma`
 - `aganju`
 - `agni`
@@ -88,6 +89,7 @@ canonical-slug
 - `bes`
 - `bhairava`
 - `bhaisajyaguru`
+- `boann`
 - `bragi`
 - `brahma`
 - `brigid`
@@ -95,6 +97,8 @@ canonical-slug
 - `cernunnos`
 - `chac`
 - `chaos-primordial`
+- `chernobog`
+- `chitragupta`
 - `christ-pantokrator`
 - `coatlicue`
 - `cybele`
@@ -216,6 +220,7 @@ canonical-slug
 - `kukulkan`
 - `kumarbi`
 - `lahmu-lahamu`
+- `laima`
 - `lakshmi`
 - `lamassu`
 - `leviathan`
@@ -229,6 +234,7 @@ canonical-slug
 - `lugh`
 - `lugus`
 - `maat`
+- `macha`
 - `mahakala`
 - `mahaway-nephilim`
 - `mahrem`
@@ -245,6 +251,7 @@ canonical-slug
 - `matsya-avatar`
 - `mazu`
 - `meder`
+- `meness`
 - `mercury-roman`
 - `metatron`
 - `michael-archangel`
@@ -295,6 +302,7 @@ canonical-slug
 - `obatala`
 - `odin`
 - `oduduwa`
+- `ogma`
 - `ogun`
 - `ohyah-nephilim`
 - `olodumare`
@@ -369,6 +377,7 @@ canonical-slug
 - `sophia-gnostic`
 - `spenta-mainyu`
 - `sraosha`
+- `stribog`
 - `sun-goddess-of-arinna`
 - `surya`
 - `susanoo`
@@ -421,6 +430,7 @@ canonical-slug
 - `vajrasattva`
 - `varuna`
 - `veles`
+- `velinas`
 - `venus-roman`
 - `verethragna`
 - `vesta`
@@ -438,12 +448,14 @@ canonical-slug
 - `yam`
 - `yama-vedic`
 - `yamantaka`
+- `yan-wang`
 - `yashoda`
 - `yemoja`
 - `yima-iranian`
 - `yima-jamshid`
 - `ymir`
 - `zagreus`
+- `zemyna`
 - `zeus`
 
 ### document (345 nodes)
@@ -1934,12 +1946,12 @@ canonical-slug
 | 4 | `ragnarok-apocalyptic` | `apocalyptic-revelation` |
 | 4 | `primordial-darkness` | `eros-primordial` |
 | 4 | `messianic-revelation` | `messianic-secret` |
-| 4 | `genealogical-cosmogony` | `hermetic-cosmogony` |
-| 4 | `evolutionary-cosmogony` | `hermetic-cosmogony` |
-| 3 | `phase-4-007-new-testament-canon` | `phase-4-004-gospel-of-philip` |
-| 3 | `phase-2-005-1-2-kings` | `phase-2-008-homeric-epics` |
+| 4 | `genealogical-cosmogony` | `mesoamerican-cosmogony` |
+| 4 | `evolutionary-cosmogony` | `mesoamerican-cosmogony` |
+| 3 | `phase-4-007-new-testament-canon` | `phase-4-003-gospel-of-truth` |
+| 3 | `phase-2-005-1-2-kings` | `phase-2-003-atharva-veda` |
 | 3 | `messianic-genealogy` | `solomonic-genealogy` |
 | 2 | `yam-canaanite` | `astarte-canaanite` |
-| 2 | `tradition-minoan-religion` | `tradition-vajrayana-buddhism` |
-| 2 | `tradition-eastern-orthodoxy` | `tradition-vajrayana-buddhism` |
-| 2 | `phase-1-013-babylonian-theodicy` | `phase-1-004-gilgamesh-old-babylonian` |
+| 2 | `tradition-minoan-religion` | `tradition-inca-andean` |
+| 2 | `tradition-eastern-orthodoxy` | `tradition-inca-andean` |
+| 2 | `phase-1-013-babylonian-theodicy` | `phase-1-012-amarna-letters` |

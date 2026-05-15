@@ -522,24 +522,62 @@ def load_locations() -> dict:
 
 
 def geo_for_node(fm: dict, locations: dict):
-    """Return {lat,lon,label} for a node based on its region or city-of-origin fields."""
+    """Return {lat,lon,label} for a node based on its region or city-of-origin fields.
+
+    Lookup cascade (first match wins, deduped against `seen`):
+      1. Raw string as-is
+      2. Strip trailing parenthetical: "Roman North Africa (Hippo Regius)" → "Roman North Africa"
+      3. Strip leading qualifier: "narrative setting: pre-diluvian" → "pre-diluvian"
+      4. Each comma/semicolon/slash/arrow chunk
+      5. Last-comma chunk (country-like): "Württemberg, Germany" → "Germany"
+      6. Token-level fallback (single words with len > 3)
+
+    Improvements 2026-05-15: previously only (4) + (6) existed, hitting 67% coverage.
+    Adding (1)(2)(3)(5) is meant to lift coverage past 85% without false positives.
+    """
     candidates = []
     for fld in ("city-of-origin", "region"):
         v = fm.get(fld, "")
-        if isinstance(v, str) and v.strip():
-            # Strip parenthetical / split on common separators
-            chunks = re.split(r"[;,/()]", v)
-            for ch in chunks:
-                ch = ch.strip()
-                if ch:
-                    candidates.append(ch)
+        if not (isinstance(v, str) and v.strip()):
+            continue
+        raw = v.strip()
+        candidates.append(raw)
+        # (2) drop trailing parenthetical
+        no_paren = re.sub(r"\s*\([^)]*\)\s*$", "", raw).strip()
+        if no_paren and no_paren != raw:
+            candidates.append(no_paren)
+        # (3) drop leading qualifier
+        no_qual = re.sub(
+            r"^\s*(narrative setting|modern|legendary|mythological|setting):\s*",
+            "", raw, flags=re.I,
+        ).strip()
+        if no_qual and no_qual != raw:
+            candidates.append(no_qual)
+        # (4) chunks on common separators (incl. → for "X → Y" syncretic moves)
+        chunks = re.split(r"[;,/()→]", raw)
+        for ch in chunks:
+            ch = ch.strip()
+            if ch:
+                candidates.append(ch)
+        # (5) last-comma fallback (country-like)
+        if "," in raw:
+            last = raw.rsplit(",", 1)[-1].strip()
+            if last:
+                candidates.append(last)
+    seen = set()
     for c in candidates:
-        if c.lower() in locations:
-            return locations[c.lower()]
-        # partial match — try each token
+        cl = c.lower()
+        if cl in seen:
+            continue
+        seen.add(cl)
+        if cl in locations:
+            return locations[cl]
+    # (6) token-level fallback — only words > 3 chars to avoid false matches on "the"/"of"
+    for c in candidates:
         for token in c.split():
-            if token.lower() in locations:
-                return locations[token.lower()]
+            tl = token.lower().strip(".,;:")
+            if len(tl) > 3 and tl in locations:
+                return locations[tl]
     return None
 
 
