@@ -16,7 +16,7 @@ region: "Mesopotamia (Babylonia; original stele looted to Susa, Elam)"
 city-of-origin: "Babylon"
 authorship: "known (issued by Hammurabi, king of Babylon, ~1792–1750 BCE)"
 key-figures: ["[[hammurabi]]"]
-themes: ["[[divine-kingship]]", "[[divine-council]]", "[[creation-by-word]]"]
+themes: ["[[divine-kingship]]", "[[divine-council]]", "[[creation-by-word]]", "[[theme-lex-talionis-covenant-code]]"]
 parallels: ["[[phase-1-008-enuma-elish]]", "[[phase-1-005-instructions-of-shuruppak]]"]
 influenced-by: ["earlier Mesopotamian law collections (Code of Ur-Nammu ~2100 BCE; Laws of Lipit-Ishtar ~1900 BCE; Laws of Eshnunna ~1770 BCE)"]
 influences: ["later Mesopotamian law (Middle Assyrian Laws, Neo-Babylonian Laws); (contested mechanism, shared milieu) Hebrew Bible Covenant Code (Exodus 21–23) and Deuteronomic Law"]

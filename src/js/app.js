@@ -4696,19 +4696,18 @@ function _atlasToken(name, fallback) {
   return v || fallback;
 }
 
-// Zoom-aware jitter scale (2026-05-15, piecewise rev 2).
-// Returns per-ring step in degrees. Piecewise curve hand-tuned so:
-//   z 1-3 → tiny (≈0°), 99 co-located docs cluster as a single point on overview
-//   z 4   → rapid spread starts
-//   z 6+  → inner ring members are ≥ 40 px apart on screen (well past
-//           clusterRadius of 25 px → MapLibre stops grouping them visually)
-//   z 10  → maximal spread for inspection mode
-// Trade-off accepted: at deep zoom co-located docs are geographically
-// "wrong" by up to ~200 km, but the data layer (locations.md) is untouched.
+// Zoom-aware jitter scale (2026-05-15, piecewise rev 3 — PLATEAU at z 7).
+// Returns per-ring step in degrees. User feedback: previous curve grew to
+// 2.2° at z 10 which spread 99 Rome docs across the entire Italian
+// peninsula. Now spread is BOUNDED — at deep zoom dots pack tighter and
+// circles shrink (see circle-radius interpolation in the layer paint).
+//   z 1-3 → tiny (≈0°), 99 co-located docs cluster on overview
+//   z 4-7 → rapid spread starts then ramps to ~0.15° per ring
+//   z 7+  → PLATEAU at 0.15° — co-located docs stay within their region
 function _atlasJitterScale(zoom) {
-  if (zoom < 4)  return 0.003 + 0.005 * Math.max(0, zoom - 1);   // 0.003 → 0.018
-  if (zoom < 6)  return 0.018 + 0.5   * (zoom - 4);              // 0.018 → 1.02
-  return         1.02   + 0.3   * (zoom - 6);                    // 1.02 → 2.22 (z 10)
+  if (zoom < 4) return 0.003 + 0.005 * Math.max(0, zoom - 1);   // 0.003 → 0.018
+  if (zoom < 7) return 0.018 + 0.044 * (zoom - 4);              // 0.018 → 0.150
+  return 0.15;                                                   // plateau
 }
 
 // Build (or re-build) the GeoJSON FeatureCollection for the atlas-nodes source.
@@ -5119,16 +5118,19 @@ VIEWS.atlas = {
           source: 'atlas-nodes',
           filter: ['!', ['has', 'point_count']],
           paint: {
-            // Bubbles tuned for the new maxZoom 7 — they reach their full size
-            // earlier (around z 4-5) and HOLD it past that, since we don't want
-            // them to keep growing into giant balloons when we already have
-            // plenty of space (user 2026-05-15: "redo the bubbles now to fit
-            // here, they need to grow apart more and maintain this size").
+            // Bubbles GROW up to z 6 then SHRINK at deep zoom (user 2026-05-15:
+            // "we can easily zoom to the limit and expand nodes while REDUCING
+            // their size — the names label remain readable size"). At deep
+            // zoom the jitter plateau means docs pack tighter, so smaller
+            // circles let more individual dots fit in the same area without
+            // overlapping. Labels keep their size (see atlas-node-labels paint).
             'circle-radius': [
-              'interpolate', ['exponential', 1.4], ['zoom'],
-              1, ['*', ['get', 'dotSize'], 1.5],
-              4, ['*', ['get', 'dotSize'], 2.2],
-              7, ['*', ['get', 'dotSize'], 2.8]
+              'interpolate', ['linear'], ['zoom'],
+              1,  ['*', ['get', 'dotSize'], 1.5],
+              4,  ['*', ['get', 'dotSize'], 2.2],
+              6,  ['*', ['get', 'dotSize'], 2.6],
+              8,  ['*', ['get', 'dotSize'], 1.8],
+              10, ['*', ['get', 'dotSize'], 1.3]
             ],
             'circle-color': ['get', 'family_color'],
             'circle-stroke-width': 1,
@@ -5156,9 +5158,12 @@ VIEWS.atlas = {
             layout: {
               'text-field': ['get', 'title'],
               'text-font': ['Noto Sans Regular'],
+              // Label size PLATEAUS at z 6 (user 2026-05-15: "names label
+              // remain readable size"). Labels stay legible even as circles
+              // shrink at deep zoom.
               'text-size': [
                 'interpolate', ['linear'], ['zoom'],
-                3, 10, 7, 12, 11, 14
+                3, 10, 6, 13, 10, 13
               ],
               'text-anchor': 'left',
               'text-offset': [0.8, 0],

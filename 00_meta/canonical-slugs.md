@@ -811,7 +811,7 @@ canonical-slug
 - `phase-8-017-santeria-lucumi`
 - `phase-8-018-kalevala`
 
-### event (135 nodes)
+### event (136 nodes)
 
 - `event-aboriginal-stolen-generations-1905-1969`
 - `event-ahmad-gragn-invasion-1529`
@@ -909,6 +909,7 @@ canonical-slug
 - `event-mahabodhi-temple-construction-c-260-bce-onwards`
 - `event-malta-temples-c-3600-2500-bce`
 - `event-mani-execution-274-or-277`
+- `event-mitanni-kingdom-c1500-1340-bce`
 - `event-mongol-sack-of-baghdad-1258`
 - `event-nag-hammadi-discovery`
 - `event-natufian-burial-traditions-c-12500-9500-bce`
@@ -1605,7 +1606,7 @@ canonical-slug
 - `wheat-grain`
 - `yin-yang`
 
-### theme (237 nodes)
+### theme (239 nodes)
 
 - `364-day-solar-calendar`
 - `adam-kadmon`
@@ -1821,8 +1822,10 @@ canonical-slug
 - `tewahedo-christology`
 - `the-five-buddha-families`
 - `the-godhead-eckhart`
+- `theme-habiru-hebrew-origins`
 - `theme-heroes-paradise-island`
 - `theme-holy-grail`
+- `theme-lex-talionis-covenant-code`
 - `theurgy`
 - `tikkun-olam`
 - `torah-and-wisdom-identified`
@@ -1961,16 +1964,16 @@ canonical-slug
 
 | Refs | Dead target | Suggested canonical (existing) |
 |---:|---|---|
-| 4 | `ragnarok-apocalyptic` | `apocalyptic-revelation` |
-| 4 | `primordial-darkness` | `eros-primordial` |
+| 4 | `ragnarok-apocalyptic` | `apocalyptic-cosmic-warfare` |
+| 4 | `primordial-darkness` | `primordial-waters` |
 | 4 | `messianic-revelation` | `messianic-future-savior` |
 | 4 | `genealogical-cosmogony` | `hermetic-cosmogony` |
 | 4 | `evolutionary-cosmogony` | `hermetic-cosmogony` |
-| 3 | `phase-4-007-new-testament-canon` | `phase-4-008-trimorphic-protennoia` |
+| 3 | `phase-4-007-new-testament-canon` | `phase-4-009-pistis-sophia` |
 | 3 | `phase-2-005-1-2-kings` | `phase-2-003-atharva-veda` |
-| 3 | `messianic-genealogy` | `solomonic-genealogy` |
+| 3 | `messianic-genealogy` | `messianic-future-savior` |
 | 2 | `yam-canaanite` | `astarte-canaanite` |
-| 2 | `tradition-minoan-religion` | `tradition-thelema` |
-| 2 | `tradition-eastern-orthodoxy` | `tradition-jungian-depth-psychology` |
-| 2 | `phase-1-013-babylonian-theodicy` | `phase-1-011-great-hymn-to-aten` |
+| 2 | `tradition-minoan-religion` | `tradition-greco-buddhism` |
+| 2 | `tradition-eastern-orthodoxy` | `tradition-greco-buddhism` |
+| 2 | `phase-1-013-babylonian-theodicy` | `phase-1-018-gudea-cylinders` |
 | 2 | `asclepius` | `asclepius-greek` |

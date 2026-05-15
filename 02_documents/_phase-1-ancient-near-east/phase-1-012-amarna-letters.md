@@ -16,12 +16,12 @@ region: "Egypt (find spot) / international (origin spread across the Late Bronze
 city-of-origin: "Akhetaten (find spot) / many places of origin"
 authorship: "known (each letter names its royal or vassal sender)"
 key-figures: ["[[akhenaten]]"]
-themes: ["[[divine-kingship]]", "[[divine-council]]"]
+themes: ["[[divine-kingship]]", "[[divine-council]]", "[[theme-habiru-hebrew-origins]]"]
 parallels: ["[[phase-1-011-great-hymn-to-aten]]", "[[phase-1-013-baal-cycle]]"]
 influenced-by: []
 influences: ["evidence-base for Late Bronze Age religious networks across the Near East; key context for early Israelite emergence narratives"]
 deities-mentioned: ["[[aten]]", "[[baal-hadad]]", "[[el-canaanite]]", "[[ishtar-akkadian]]", "[[utu-shamash]]"]
-events-context: ["Reigns of Amenhotep III and Akhenaten; the Late Bronze Age international system; Mitanni's collapse and Hittite expansion under Suppiluliuma I"]
+events-context: ["[[event-mitanni-kingdom-c1500-1340-bce]]", "Reigns of Amenhotep III and Akhenaten; the Late Bronze Age international system; Mitanni's collapse and Hittite expansion under Suppiluliuma I"]
 status: "metadata"
 preservation: "382 cuneiform tablets and fragments (numbered EA 1–382 in the standard catalogue) discovered in 1887 by a local Egyptian woman digging for sebakh (fertilizer) at the ruins of Akhetaten / Tell el-Amarna. The tablets are the diplomatic archive of the Egyptian Foreign Office during the reigns of Amenhotep III and Akhenaten. Now divided principally between the Vorderasiatisches Museum (Berlin), the British Museum, the Cairo Museum, the Louvre, and smaller collections."
 refs:
@@ -92,6 +92,9 @@ The diplomatic archive of the Egyptian Foreign Office at Akhetaten (modern Tell 
 - → [[phase-1-013-baal-cycle]] — *parallel-motif* / *shared-milieu*: the Canaanite vassal letters' invocations of Baal and El, and the Late Bronze Canaanite religious milieu, are continuous with the Ugaritic corpus a century later. The Amarna letters provide independent attestation of the same Late Bronze Canaanite pantheon. Ref: Smith, *The Origins of Biblical Monotheism* (2001); Rainey 1996.
 - → Hebrew Bible Joshua/Judges conquest narratives — *parallel-motif* / *background-evidence*: the Amarna letters from Levantine vassals (esp. Abdi-Heba of Jerusalem's letters EA 285–290) describe the political-military landscape into which the Hebrew tribes would emerge a century or two later. The *habiru* references are central to the debate over Israelite origins. Ref: Na'aman 2005; Finkelstein & Silberman, *The Bible Unearthed* (2001).
 - → Hittite-Mitanni treaty texts — *parallel-motif*: the divine-council oath-witness conventions of Late Bronze treaties parallel Hebrew Bible covenant structures (Mendenhall, *Law and Covenant in Israel and the Ancient Near East*, 1955). The Amarna corpus is part of this broader Late Bronze treaty-theological context.
+
+- → [[event-mitanni-kingdom-c1500-1340-bce]] — *shared-milieu*: The Mitanni block in the Amarna archive (EA 17–29, including the Mitanni Letter EA 24 in Hurrian) represents the Egyptian correspondence with the kingdom whose ruling elite used Vedic divine names (Mitra, Varuna, Indra, Nasatya) in treaties. The Amarna Letters are the primary documentary evidence for the Mitanni-Egypt relationship at the peak of Mitanni power; EA 23 (Tushrata to Amenhotep III) involves the sending of the divine image of Shaushka of Nineveh — the Mitanni-Ishtar — to Egypt. Ref: Anthony 2007; Moran 1992.
+- → [[theme-habiru-hebrew-origins]] — *direct-evidence*: The Amarna letters (especially EA 285–290, Abdi-Heba of Jerusalem; EA 254, Lab'ayu of Shechem) are the primary source for the Habiru in Canaan in the Late Bronze Age. Abdi-Heba's repeated complaint — "the Habiru are seizing the cities of the king" — places Habiru activity precisely in the territories of later Israelite settlement during the generation or two before the Moses period. This makes the Amarna Letters the single most important external document for the social-model of Israelite origins. Ref: Greenberg 1955; Na'aman 2005; Moran 1992.
 
 ## Disputes
 - **Habiru = Hebrew?** Linguistic relationship between Akkadian *ḫapiru* and Hebrew *ʿibri* is contested but plausible. Sociologically, *ḫapiru* in the Amarna letters denotes brigand/outlaw bands, not an ethnos; whether and how this group is related to the later Israelites is one of the longest-running debates in biblical-historical scholarship.

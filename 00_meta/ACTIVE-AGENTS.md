@@ -18,7 +18,15 @@ Format:
 
 ---
 
-## 🚦 In-flight claims at a glance (current as of 2026-05-15 — opus-symbols-2 merged)
+## 🚦 In-flight claims at a glance (current as of 2026-05-15 — sonnet-abraham-moses-1 finished)
+
+| Handle | Scope tag | Owns (high level) | Started |
+|---|---|---|---|
+| `sonnet-abraham-moses-1` | content / Abraham-Moses gap deep research | 3 new nodes (theme-lex-talionis-covenant-code, event-mitanni-kingdom-c1500-1340-bce, theme-habiru-hebrew-origins) + Amarna Letters edge upgrades — **FINISHED 2026-05-15** | 2026-05-15 |
+
+---
+
+## 🚦 In-flight claims at a glance (previous — opus-symbols-2 merged)
 
 | Handle | Scope tag | Owns (high level) | Started |
 |---|---|---|---|
