@@ -36,7 +36,7 @@ refs:
     publisher: "Mohr Siebeck"
     type: "monograph"
     tier: 1
-tags: [phase-5, judaism, hekhalot, angelology, metatron, enoch, two-powers, MASSIVE-WIN, cross-tradition, logos, christology, apkallu]
+tags: [phase-5, judaism, hekhalot, angelology, metatron, enoch, two-powers, MASSIVE-WIN, cross-tradition, logos, christology, apkallu, adam-kadmon, shuur-qomah, kabbalah]
 ---
 
 # Metatron
@@ -89,6 +89,109 @@ The Babylonian Talmud records the story of Elisha ben Avuyah, who became an apos
 The extraordinary thing about this text: it reports that a recognized Jewish teacher *drew the correct theological conclusion* from what he saw — there *is* a second divine power enthroned in heaven — and this conclusion was declared heresy. Metatron is then immediately flogged to demonstrate his subordination.
 
 The flogging of Metatron is an act of theological damage-control: the rabbis could not eliminate Metatron from the tradition (he was too embedded), so they staged his subordination within the narrative itself. But the tradition they were suppressing — the "two powers" theology — is preserved in the very act of suppression.
+
+## The Name: Etymology and Significance
+
+The etymology of *Metatron* is one of the most contested problems in Jewish mystical philology. No consensus exists; the leading proposals:
+
+1. **Latin *metator*** ("guide," "one who measures out" or "preparer of the way") — favored by Gershom Scholem (*Major Trends in Jewish Mysticism*, 1941; *Jewish Gnosticism*, 1960). A Roman military term: the *metator* was the advance scout who prepared a camp before the army's arrival. This would make Metatron "the one who prepares the divine way" — a fitting role for the Prince of the Presence who goes before God. The Latin loan-word would have entered Jewish Palestine through Roman administrative culture (~2nd–3rd c. CE).
+
+2. **Greek *meta* + *thronos*** ("the one behind/beside the throne") — Orlov (*The Enoch-Metatron Tradition*, 2005) and others. Metatron is explicitly enthroned on a throne like God's throne; the etymology would encode the theological claim directly in the name.
+
+3. **Greek *metathronios*** ("sharing the throne") — a compound form; describes Metatron's enthronement as co-regency rather than mere proximity.
+
+4. **Aramaic *mattera*** ("guardian" or "keeper") — proposed from the Aramaic root *ntr* meaning to guard or keep. Metatron as cosmic guardian.
+
+5. **The Name as Cipher for YHWH.** The Gematria / notarikon reading: the numerical value of *Metatron* (314 in Hebrew letter-values: מ=40, ט=9, ט=9, ר=200, ו=6, ן=50) equals the numerical value of *Shaddai* (שדי = 314). Additionally, *Metatron* and *Shaddai* share this value with each other — implying the name encodes a divine title.
+
+6. **Double-*Tet* as divine doubling.** The unusual double *tet* (ט) in the name may be intentional — a linguistic signature of Metatron's doubled status, positioned between God and creation.
+
+The etymological uncertainty is theologically productive: a name that could mean "guide," "throne-sharer," "guardian," or "God-equivalent" simultaneously captures all the functions the figure performs. The rabbis clearly felt the pressure — the name is used carefully, with anxiety, and the *Aher* story is the literary record of that anxiety.
+
+---
+
+## Sar ha-Torah: Prince of the Torah
+
+Beyond his role as Sar ha-Panim (Prince of the Presence), the Hekhalot texts develop Metatron as **Sar ha-Torah** — the heavenly Prince of the Torah, the angelic custodian of divine revelation. This role elaborates a theological claim of massive consequence: *the Torah that Moses received is the angelic Torah that Metatron guards*.
+
+The *Hekhalot Rabbati* and associated texts narrate how practitioners of Hekhalot mysticism ascend to Metatron to receive Torah secrets — Metatron is the angelic tutor of the mystic, transmitting divine knowledge that even Moses needed the angelic mediation to receive. The tradition:
+
+- Moses's forty days on Sinai were forty days learning from Metatron (or from the divine voice mediated through Metatron)
+- Torah is Metatron's "name" — the 70 letters of the Torah correspond to Metatron's 70 names
+- The angel "in whom is my name" (Exodus 23:21, "for my name is in him") is interpreted as Metatron — an exegesis that made the later rabbis deeply uncomfortable, since it appeared to give Metatron divine name-bearing status
+
+The Sar ha-Torah literature connects Metatron to the phenomenon of *maggidim* in later Kabbalah — angelic teachers who appeared to mystics and transmitted secret Torah. Joseph Karo's *Maggid Meisharim* (16th c.) describes his *maggid* in terms that closely parallel the Sar ha-Torah tradition.
+
+**MASSIVE WIN**: The Metatron-as-Torah-mediator tradition is structurally identical to the Philonic Logos-as-Mosaic-Torah interpretation, the Johannine Logos-in-whom-the-Word-dwells, and the Gnostic *Barbelo* or *Protennoia* as the divine self-disclosure that descends to teach. All are variants of: *the divine revelation requires an intermediate angelic/Logos figure to cross the ontological gap between infinite God and finite human learner.*
+
+---
+
+## The 70 Names and the 70 Nations
+
+*3 Enoch* chapter 4 specifies that Metatron was given "seventy names corresponding to the seventy nations of the world" — a structural claim of cosmic scope. The 70 names:
+
+- Each name corresponds to one of the 70 primordial nations of Genesis 10 (the Table of Nations)
+- Each nation has a *sar* (angelic prince) in the heavenly court; Metatron is the *sar* of the *sarim* — the angelic prince above all national angels
+- The 70 names include all the divine titles that appear in Scripture — Metatron "bears all the names" in the sense that his dominion encompasses the full range of divine manifestation
+
+The theological implication: Metatron is not merely the angel of Israel but the cosmic regent over all nations and all revelation. This connects to:
+
+1. **Daniel 10**: the angel of Persia, angel of Greece — a tradition of national angels contending in heaven while earthly empires rise and fall. Metatron coordinates them.
+2. **Deuteronomy 32:8 (Dead Sea Scrolls version)**: "He [God] fixed the borders of the peoples according to the number of the *sons of God*" — the LXX and Qumran text have *bene elohim* where the MT has *bene Israel*. This pre-rabbinic text implies 70 divine beings assigned to 70 nations; Metatron as their chief is the next step.
+3. **The Zohar's elaboration**: Metatron governs the outer court of the heavenly palace; the 70 nations' angels report to him; Israel bypasses the angelic hierarchy to pray directly through Metatron to the Holy One. This creates an explicit two-tier cosmic order with national/angelic sovereignty and Jewish special-access.
+
+---
+
+## Shi'ur Qomah: The Cosmic Body
+
+The *Shi'ur Qomah* ("Measure of the [Divine] Body") literature — a body of Hekhalot-adjacent texts (~3rd–7th c.) — describes the enormous measurements of God's body (or, in some readings, the body of the *Yoẓer Bereshit*, the Creator). The measurements are expressed in parasangs of astronomical scale; the names of the body parts are given in cryptic sequences. The theological shock-value is deliberate: God *has a body*, and its dimensions can be described.
+
+Metatron's connection to *Shi'ur Qomah*:
+- In several manuscripts, the cosmic body being measured is *Metatron's* body as much as God's — the "Lesser YHWH" has a body commensurate with divine immensity
+- The *Shi'ur Qomah* tradition feeds directly into the **Adam Kadmon** doctrine of Lurianic Kabbalah: the cosmic body whose dimensions define the structure of the universe
+
+The rabbinic discomfort with *Shi'ur Qomah* was extreme — Maimonides in the 12th century stated that whoever believed the *Shi'ur Qomah* texts were genuinely divine had "no share in the world to come." But the texts survived and were incorporated into Kabbalistic cosmology, where Metatron's cosmic body became one of the links between the Hekhalot anthropomorphic tradition and the Lurianic Adam Kadmon.
+
+---
+
+## Lurianic Kabbalah: Metatron and Adam Kadmon
+
+The transition from Hekhalot Metatron to Lurianic Adam Kadmon is one of the most significant transformations in Jewish mystical history. In the Lurianic system (Isaac Luria, Safed, ~1570):
+
+- **Adam Kadmon** is the first and highest *partzuf* (divine countenance) — the primordial cosmic Human through whose "body" the light of Ein Sof is channeled into the lower worlds
+- **Metatron** in the Lurianic system occupies a different position: he is the "Metatron of Atzilut" — the principal angel of the world of *Emanation*, associated with the sefirah *Keter* or with the *Partzuf* of the whole system
+- The **shevirat ha-kelim** (breaking of the vessels) occurs when the lights of Adam Kadmon — flowing through his eyes, ears, nose, and mouth — prove too intense for the lower vessels; the shards (*kelipot*) that fall create the domain of evil and the material world
+
+The structural relationship:
+
+| Hekhalot Metatron | Lurianic Adam Kadmon |
+|---|---|
+| "Lesser YHWH" — the near-divine second figure | First and highest partzuf — the divine-human template |
+| Transformed from earthly Enoch | Not earthly-derived; precedes biblical Adam |
+| Enthroned beside God | *Is* the divine throne-structure; contains all sefirot |
+| Scribe who records all creation | The lights of Adam Kadmon's eyes create all lower worlds |
+| Prince of the Presence | The Presence itself in cosmic-human form |
+| 70 names, 70 nations | Body = 613 limbs = 613 commandments = full Torah |
+
+The Lurianic Adam Kadmon absorbed the Hekhalot Metatron's cosmological role and systematized it into a full emanationist architecture. Metatron remains an important angelic figure in Lurianic cosmology (especially as the angel mediating between Atzilut and the lower worlds), but his highest attributes — divine form, cosmic body, heavenly regency — are elevated into the pre-angelic Adam Kadmon.
+
+---
+
+## Modern Reception: Blake's Albion
+
+William Blake's **Albion** is the most developed modern literary re-creation of the Enoch-Metatron-Adam Kadmon complex, independently reconstructed from Protestant English sources (~1800).
+
+Blake never had access to the Hekhalot texts; the *Shi'ur Qomah* was inaccessible; the Lurianic system he received only through the mediating lens of Jacob Boehme (who absorbed Kabbalistic ideas through Christian Kabbalah channels). Yet Albion:
+
+- Is the **cosmic Human** whose body contains the entire universe — structurally identical to Adam Kadmon's function as the cosmic template
+- **Falls into sleep** and self-division — the Lurianic shevirat ha-kelim translated into Romantic terms
+- The **Four Zoas** (Urizen/Luvah/Tharmas/Urthona) are Albion's fallen faculties — structurally analogous to the Lurianic partzufim
+- The project of **Jerusalem** (Blake's masterwork) is the awakening and restoration of Albion — tikkun at cosmic scale
+- Blake explicitly connects Albion to the biblical tradition through his poem *Jerusalem*: "And did the Countenance Divine / Shine forth upon our clouded hills?" — Albion is England, but also the universal Human, but also the primordial cosmic being
+
+The Enoch-Metatron tradition survives in Blake's reception through a different channel: Enoch as the man-translated-to-heaven who becomes the divine regent. Blake's own role as prophet is the *human* pole of this: he, like Enoch, has been raised to the divine perspective (through vision), and his work is the cosmic repair.
+
+---
 
 ## The Logos Parallel
 
