@@ -58,8 +58,27 @@ The solar variant of [[divine-kingship]] theology holds that the legitimate rule
 
 **Sol Invictus → Christmas:** The Roman feast of Sol Invictus on December 25 — the sun's "birthday" after the winter solstice — is the chronological matrix into which the Christian celebration of Christ's nativity was inserted (attested by 354 CE). The solar divine-king theology provides the structural reason the date was chosen: Christ as the true Sun of Righteousness (Mal 4:2) is born when the sun is reborn.
 
+## Universal distribution — cross-tradition table
+
+The equation of the legitimate ruler with the sun god (or as the sun god's literal offspring) is documented across more independent cultural traditions than almost any other political-theological formula in human history:
+
+| Tradition | King / institution | Solar deity | Mechanism |
+|---|---|---|---|
+| Egyptian | Pharaoh (*Sa-Ra* "Son of Ra") | [[amun-ra]] / [[ra]] | Pharaoh IS Horus in life, Osiris in death; born of Amun's divine union with queen (Deir el-Bahari reliefs) |
+| Mesopotamian | King as shepherd of Shamash | [[utu-shamash]] | King is Shamash's earthly justice-agent; code of Hammurabi opens with Hammurabi receiving law from Shamash |
+| Iranian/Persian | King of Kings as Ahura Mazda's viceroy | [[ahura-mazda]] | Achaemenid inscriptions: "By the grace of Ahura Mazda I am king"; the royal xvarnah (divine glory) is solar radiance |
+| Roman | Emperor as Sol Invictus / *Divi filius* | Sol Invictus (Apollo) | Augustus = *Divi filius* (Son of the Deified/Sun); Aurelian makes Sol Invictus state cult; Constantine transitions this to Christ |
+| Japanese | Emperor as descendant of Amaterasu | [[amaterasu]] | Imperial House descends from Amaterasu (sun goddess) per *Kojiki* (712 CE); WWII era made this politically explicit |
+| Incan | Sapa Inca as son of Inti | [[inti]] | Sapa Inca is literal son of Inti; gold = "sweat of the sun"; Coricancha (sun temple at Cusco) is Incan equivalent of Karnak |
+| Chinese | Son of Heaven (*Tianzi*) | Heaven (*Tian*) — solar aspect | Emperor as son of Heaven; the Mandate of Heaven (*tianming*) legitimates or withdraws solar-divine authorization |
+
+The structural grammar across all cases: (1) the sun is the supreme cosmic power; (2) the legitimate ruler is the sun's earthly embodiment or offspring; (3) the ruler's authority derives from maintaining the sun-god's order; (4) failure to maintain order (drought, defeat, injustice) signals the withdrawal of divine solar authorization.
+
+**The MASSIVE WIN**: this is not a series of independent coincidences. Solar divine kingship is the *most widely attested political-theological formula* in the ancient and medieval world precisely because solar order (daily, seasonal, agricultural) was the most obvious cosmological fact. The differences between traditions (Egypt's biological divine-sonship vs. Mesopotamia's functional divine-agency vs. China's conditional mandate) track the theological particularities of each tradition's conception of the divine-human relationship.
+
 ## Relations
 - parent: [[divine-kingship]]
 - grounded-in: [[zep-tepi]], [[ma-at]]
 - theological-heir: [[logos-johannine]]
-- tradition-instantiated-in: [[tradition-early-christianity]]
+- tradition-instantiated-in: [[tradition-early-christianity]], [[tradition-egyptian-religion]], [[tradition-vedic-hinduism]], [[tradition-zoroastrianism]], [[tradition-mesopotamian]]
+- key-scholar: [[jan-assmann]]

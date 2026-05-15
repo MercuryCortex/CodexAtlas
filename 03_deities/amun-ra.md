@@ -91,13 +91,29 @@ The Leiden Hymn's claim that Amun-Ra is the **one god** of whom all other gods a
 - *Ankh* and *was*-scepter
 - Central cult site: the great Hypostyle Hall at Karnak, the largest religious building of the ancient world, dedicated to Amun-Ra
 
+## Key connections
+- [[jan-assmann]] — *key-scholar*; Assmann's Mosaic distinction thesis makes Amun-Ra the theological baseline from which exclusive monotheism departed.
+- [[event-amarna-period-1353-1336]] — *theological-rupture*; Akhenaten's Aten suppressed Amun-Ra as the pivot-point of the Mosaic distinction.
+- [[tradition-judaism]], [[tradition-islam]] — *MASSIVE WIN downstream*; Assmann's cultural-memory argument places Amun-Ra theology as the translatable polytheist backdrop that the Mosaic exclusive monotheism replaced.
+- [[tradition-zoroastrianism]] — *parallel-move*; Ahura Mazda as a solar/light supreme deity parallels Amun-Ra's move toward a single divine source; both are "proto-monotheist" in the henotheist sense.
+- [[event-karnak-temple-complex-construction-c-2055-bce-100-ce]] — *cult-center*; Karnak is Amun-Ra's primary sanctuary.
+
 ## Disputes
 - **Is Amun-Ra theology proto-monotheism?** The major axis of dispute. Assmann (1995, 2014) makes the strongest case for "cosmological monotheism" / "differentiated monotheism" — one god comprehending all others. Hornung (1982) is more conservative — Egyptian religion is irreducibly polytheist in cult practice, with theological texts sometimes pushing toward unity but not redefining cult into monotheism. The question matters for the Codex Atlas's Christianity-to-older-traditions chain: if Amun-Ra is genuinely proto-monotheist, that strengthens cross-cultural lines into Hellenistic philosophical monotheism and from there into Christian theology.
 - **Continuity with Akhenaten's Aten cult.** [[akhenaten]]'s [[aten]] reform was explicitly *anti*-Amun (the Theban Amun priesthood being the rival power center). Whether Atenism's monotheism is a radical break from or a polemical inversion of incipient Amun-Ra monism is disputed (Hornung 1999; Assmann 2014).
 - **Influence on Hebrew monotheism.** The strongest version (Freud 1939, *Moses and Monotheism*) argues that Mosaic monotheism descends from Atenism; the more moderate version (Assmann 2014, *From Akhenaten to Moses*) argues for typological resonance rather than direct descent. Egyptian Amun-Ra theology is part of the substrate of both arguments.
 
+## The Mosaic Distinction — MASSIVE WIN connection
+
+[[jan-assmann]]'s *Moses the Egyptian* (1997) and *Of God and Gods* (2008) identify Amun-Ra theology as the religious baseline from which the **Mosaic distinction** departed. Before the Mosaic distinction, Egyptian religion operated by **translatability**: any god could be identified with any other across traditions; Amun = Zeus = Jupiter; the theological field is one of mutual recognition. The Leiden Hymn's triadic formula ("All gods are three — Amun, Re, Ptah") is the exemplar: all the gods are aspects of a single, unnamed divine reality that can be accessed through any of them.
+
+What Akhenaten's [[aten]] reform introduced — and what Assmann argues was transmitted through cultural memory into Mosaic monotheism — was the **counter-principle**: one form of worship is true, all others are false. This "Mosaic distinction" created for the first time a religious field of **truth claims** rather than merely **power claims**. The theological violence of subsequent religious history (persecution, heresy, crusades, jihad) all derives, Assmann argues, from this single structural innovation — the claim that my god is real and yours is not. Amun-Ra theology is the last major tradition **before** that line was crossed, representing the full sophisticated expression of the translatable polytheism it displaced.
+
+**For the vault**: Amun-Ra → Aten → Mosaic distinction → Judaism/Christianity/Islam is one of the most consequential theological sequences the vault tracks. It is documented in peer-reviewed scholarship (Assmann 1997, 2008 — Tier 1–2) and explains not just Egyptian religion but why the Abrahamic traditions share a distinctive exclusivism that their Egyptian predecessor lacked.
+
 ## Refs
 1. Assmann, J. (1995). *Egyptian Solar Religion in the New Kingdom*. Kegan Paul.
 2. Assmann, J. (2014). *From Akhenaten to Moses*. AUC Press.
-3. Hornung, E. (1982). *Conceptions of God in Ancient Egypt*. Cornell UP.
-4. Lichtheim, M. (1976). *Ancient Egyptian Literature*, Vol. II. UC Press.
+3. Assmann, J. (2008). *Of God and Gods: Egypt, Israel, and the Rise of Monotheism*. Univ of Wisconsin Press.
+4. Hornung, E. (1982). *Conceptions of God in Ancient Egypt*. Cornell UP.
+5. Lichtheim, M. (1976). *Ancient Egyptian Literature*, Vol. II. UC Press.
