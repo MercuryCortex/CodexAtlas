@@ -24,11 +24,16 @@ _Hand-maintained. Each agent currently working in the vault appends a claim bloc
 
 ---
 
-## sonnet-anzu-adapa-1 — content / Mesopotamian precursor documents — started 2026-05-15 — **IN FLIGHT**
-- Owning: `02_documents/_phase-1-ancient-near-east/phase-1-033-anzu-myth.md` (NEW), `02_documents/_phase-1-ancient-near-east/phase-1-034-adapa-myth.md` (NEW)
+## sonnet-anzu-adapa-1 — content / Mesopotamian precursor documents — started 2026-05-15 — **FINISHED 2026-05-15**
+- Owning: `02_documents/_phase-1-ancient-near-east/phase-1-033-anzu-myth.md` (NEW), `02_documents/_phase-1-ancient-near-east/phase-1-034-adapa-myth.md` (NEW), `05_events/eridu.md` (NEW stub — Wiring Law)
 - Goal: Earliest rebel-divine-court archetype (Anzu ~2000 BCE) and earliest forbidden-divine-food archetype (Adapa ~1400 BCE) — direct structural precursors to War in Heaven and Eden chains
-- Status: in-flight
-- Last edit: ACTIVE-AGENTS.md registration
+- Status: finished
+- Delivered:
+  - **`phase-1-033-anzu-myth.md`** (NEW, metadata) — Anzu/Zu bird steals Tablet of Destinies from Enlil; Ninurta defeats him. MASSIVE WIN: earliest "rebel in divine court → cosmic war → champion defeats rebel → order restored" archetype (~2000 BCE). Chain: Anzu → Watchers/1 Enoch (Annus 2010 Apkallu→Watcher inversion thesis); Anzu → Origen/Lucifer misreading structural background; Anzu → Paradise Lost (structural archetype, 3000 years prior). 4 T1 refs (Annus 2002, Dalley 1989, West 1997, Hallo/Moran 1979). Honest transmission-vs-convergence table included.
+  - **`phase-1-034-adapa-myth.md`** (NEW, metadata) — Adapa sage of Eridu refuses food/water of life on Ea's false warning; dies mortal. MASSIVE WIN: earliest "divine figure withholds life-giving substance through deception → human loses immortality" archetype (~1400 BCE). 6-row structural parallel table: Adapa vs Genesis 2–3. Key finding: moral inversion between traditions (deceptive deity is patron in Adapa; divine withholding is God in Genesis). Found in Amarna archive (Egypt) — proves international circulation near Canaan 700+ years before Genesis J-source. 4 T1 refs (Izre'el 2001, Dalley 1989, Batto 1992, Picchioni 1981).
+  - **`eridu.md`** (NEW stub, events) — Wiring Law compliance for [[eridu]] wikilink; Sumerian primordial city and Ea cult center.
+- Build: **2156 nodes · 12,801 edges · 3.0% dead-link** (commit 5f54567)
+- Last edit: `00_meta/STATUS.md`
 
 Format:
 
