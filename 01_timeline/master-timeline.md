@@ -345,7 +345,7 @@ Note: [[event-burning-of-library-of-alexandria]] spans -48 to 642 — placed con
 | Year | Event | Recovers |
 |---:|---|---|
 | 1799 | Rosetta Stone | Egyptian hieroglyphics decipherment (Champollion 1822) |
-| 1853 | Library of Ashurbanipal excavated | Mesopotamian literature in Akkadian |
+| 1853 | Library of [[ashurbanipal]] excavated | Mesopotamian literature in Akkadian |
 | 1872 | George Smith reads Babylonian flood tablet | Direct Gilgamesh-Genesis parallel revealed |
 | 1928 | Ras Shamra (Ugarit) excavated | Canaanite religion, Baal Cycle |
 | 1945 | [[event-nag-hammadi-discovery]] | Gnostic library |

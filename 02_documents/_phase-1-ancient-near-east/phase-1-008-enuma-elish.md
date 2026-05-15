@@ -23,7 +23,7 @@ influences: ["Hebrew Bible Genesis 1 cosmogony (contested mechanism — common-s
 deities-mentioned: ["[[marduk]]", "[[tiamat]]", "[[apsu]]", "[[an-sumerian]]", "[[enlil]]", "[[enki-ea]]", "[[kingu]]", "[[damkina]]"]
 events-context: ["Read aloud during the Babylonian Akitu (New Year) festival, days 4–5 of Nisanu"]
 status: "partial"
-preservation: "Seven cuneiform tablets per copy; ~1100 lines total. Best-preserved exemplars from the Library of Ashurbanipal at Nineveh (excavated 1849–1854 by Layard, Rassam, and George Smith). Additional copies from Aššur, Kish, Sippar, Sultantepe, and Babylon itself."
+preservation: "Seven cuneiform tablets per copy; ~1100 lines total. Best-preserved exemplars from the Library of [[ashurbanipal]] at Nineveh (excavated 1849–1854 by Layard, Rassam, and George Smith). Additional copies from Aššur, Kish, Sippar, Sultantepe, and Babylon itself."
 refs:
   - title: "Babylonian Creation Myths"
     author: "Lambert, Wilfred G."
@@ -136,7 +136,7 @@ Citation: King, *Enuma Elish* VI.1–8, 31–34 (1902); cf. Lambert 2013, pp. 11
 - **Political milieu.** Babylon's rise to imperial dominance. Marduk was originally a minor local Babylonian god; his elevation to "king of the gods" mirrors Babylon's political rise. Most scholars place the *final form* under Nebuchadnezzar I (~1125–1104 BCE), who recovered Marduk's statue from Elamite captivity — a moment that required cosmic-scale theological vindication. Earlier strata likely date to the Old Babylonian period (~1700 BCE).
 - **Religious milieu.** The epic functions as Babylonian state theology, displacing older Sumerian centerings (Enlil at Nippur, Enki at Eridu) by absorbing their attributes into Marduk. The fifty-names section explicitly identifies other gods' epithets with Marduk's, a syncretistic-monotheizing move within polytheism.
 - **Who was behind it.** Anonymous priestly composition, transmitted by the Esagila scribal lineage in Babylon. Performed liturgically: tablets IV–V at minimum were recited (likely chanted by the priest, the *kalû*) during the Akitu New Year festival, days 4 and 5 of the month Nisanu — the king ritually re-enacted Marduk's victory.
-- **Discovery / transmission.** Re-entered modern knowledge in 1849–1854 when Austen Henry Layard and Hormuzd Rassam excavated the Library of Ashurbanipal at Nineveh and shipped tablets to the British Museum. George Smith identified the Babylonian flood tablet in 1872; the Enuma Elish tablets were decoded soon after, and his publication "The Chaldean Account of Genesis" (1876) caused immediate sensation by demonstrating Mesopotamian creation/flood parallels with the Hebrew Bible.
+- **Discovery / transmission.** Re-entered modern knowledge in 1849–1854 when Austen Henry Layard and Hormuzd Rassam excavated the Library of [[ashurbanipal]] at Nineveh and shipped tablets to the British Museum. George Smith identified the Babylonian flood tablet in 1872; the Enuma Elish tablets were decoded soon after, and his publication "The Chaldean Account of Genesis" (1876) caused immediate sensation by demonstrating Mesopotamian creation/flood parallels with the Hebrew Bible.
 
 ## Themes and motifs
 - [[chaoskampf]] — the foundational instance: Marduk's combat with Tiamat is the textbook chaoskampf in Gunkel's analysis. The cosmos is *carved from the body of chaos*, not spoken into being.

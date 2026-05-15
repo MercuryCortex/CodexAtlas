@@ -11,7 +11,7 @@ key-deities: ["[[perun]]", "[[veles]]", "[[mokosh]]", "[[svarog]]", "[[dazhbog]]
 key-persons: []
 key-documents: []
 sister-traditions: ["[[tradition-norse]]", "[[tradition-celtic]]", "[[tradition-finno-karelian]]", "[[tradition-baltic]]"]
-status: "stub"
+status: "metadata"
 refs:
   - title: "Slavic Mythology"
     author: "Ivanov, Vyacheslav & Toporov, Vladimir"
@@ -34,7 +34,7 @@ refs:
     type: "monograph"
     tier: 2
     notes: "On the syncretic survival of Slavic paganism inside post-988 Rus' Christianity (*dvoeverie* — 'double belief')"
-tags: [tradition, slavic, pre-christian, indo-european, eastern-europe, stub]
+tags: [tradition, slavic, pre-christian, indo-european, eastern-europe]
 ---
 
 # Pre-Christian Slavic Religion
@@ -51,7 +51,15 @@ Slavic religion is significantly underdocumented compared to Norse, Greek, or Ve
 4. **Comparative Indo-European** — Dumézilian trifunctional analysis (Perun = warrior-thunder, Veles = priest/wealth, Mokosh = third-function fertility) has been applied with mixed reception.
 
 ## Status
-**Stub**, opened to fix an empty-file error caught by `lint_yaml.py`. The five named deities ([[perun]], [[veles]], [[mokosh]], [[svarog]], [[dazhbog]]) and sister-tradition links each represent open work for a follow-up agent. See `AUDIT/02_coverage_gaps_by_tradition.md` for the broader content-gap context — Slavic religion is one of the documented under-covered traditions in the vault.
+**Metadata** as of `opus-slavic-1` (2026-05-14). The five named deities ([[perun]], [[veles]], [[mokosh]], [[svarog]], [[dazhbog]]) were created in that batch, each with full metadata-tier YAML + body sections + Tier-1 ref triangulation. Remaining open work:
+
+- **Baltic sister-tradition** (`tradition-baltic`, Perkūnas, Dievas, Saulė, Žemyna, Velinas/Velnias) — flagged in `AUDIT/02 §12`; the Baltic data is the principal external control on Slavic reconstruction and Lithuania was the last pagan European nation (Christianized 1387). Next-batch target.
+- **Secondary Slavic deities**: Khors (Iranian-borrowed solar deity in the 980 Vladimirian list), Stribog (wind), Simargl (winged-griffin guardian, Iranian Simurgh-cognate), Svetovid / Svantovit (West Slavic chief god at Arkona), Triglav (West Slavic three-headed god), Lada and Lel (disputed authenticity — 19th-c. Romantic-reconstructive in some readings).
+- **Slavic *dvoeverie* theme node** (folk-survival of pagan substrate inside Orthodox Christianity — Elijah/Perun, Blaise/Veles, Paraskeva-Friday/Mokosh).
+- **Rodnovery (modern Slavic neopaganism)** — possibly a separate tradition node; the modern reception arc.
+- **Zbruch Idol** (the principal Slavic cult-object) as an event/material-witness node.
+
+See `AUDIT/02_coverage_gaps_by_tradition.md` for the broader Slavic / Baltic content-gap audit.
 
 ## Refs
 1. Ivanov, V. & Toporov, V. (1965, 1974, 1987). Foundational comparative-IE Slavic-religion studies.

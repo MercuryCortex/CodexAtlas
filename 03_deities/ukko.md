@@ -37,11 +37,11 @@ Sky-god of pre-Christian Finno-Karelian religion; god of thunder, rain, weather,
 Bishop Michael Agricola's 1551 introduction to his Finnish-language Psalter listed the chief Finnish gods of the *Tavastian* and *Karelian* regions — Ukko and Akka are among the named figures. Earlier attestation must be inferred from comparative-Finno-Ugric and from runo-poetry preserved into the 19th-c. fieldwork era. Pentikäinen 1989 is the standard scholarly synthesis.
 
 ## Mythological role
-In the Kalevala, Ukko is referenced principally in incantation-prayers and as the highest sky-power — invoked for storm-power in cosmogonic and combat episodes. He is the "old man" of the sky, distinct from Väinämöinen the cultural-shamanic hero of the cosmos's middle layer. The structural similarity to the Indo-European *Dyēus / Þórr / Indra / Perkūnas / Perun thunderstorm-sky-god pattern is striking; Ukko is the Finno-Ugric instantiation of a deep Eurasian sky-thunder-god type.
+In the Kalevala, Ukko is referenced principally in incantation-prayers and as the highest sky-power — invoked for storm-power in cosmogonic and combat episodes. He is the "old man" of the sky, distinct from Väinämöinen the cultural-shamanic hero of the cosmos's middle layer. The structural similarity to the Indo-European *Dyēus / [[thor|Þórr]] / [[indra]] / Perkūnas / [[perun]] thunderstorm-sky-god pattern is striking; Ukko is the Finno-Ugric instantiation of a deep Eurasian sky-thunder-god type.
 
 ## Cross-tradition identifications
 - **Christian God** — *folk-syncretism* (16th-c. missionary onward): Agricola already noted Ukko as the Finno-Karelian high god; Finnish-Christian translation and folk practice variously assimilated Ukko-functions to the Christian Father.
-- **Thor / Indra / Perun** — *scholarly-parallel*: pan-Eurasian thunderstorm-sky-god; the parallel is typological with possible Indo-European-Uralic deep contact debated.
+- **[[thor]] / [[indra]] / [[perun]]** — *scholarly-parallel*: pan-Eurasian thunderstorm-sky-god; the parallel is typological with possible Indo-European-Uralic deep contact debated.
 
 ## Iconography
 Largely aniconic; thunder, rainbow ("Ukko's bow"), axe / hammer in some Karelian iconography.

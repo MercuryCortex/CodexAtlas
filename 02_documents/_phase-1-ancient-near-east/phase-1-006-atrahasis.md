@@ -15,7 +15,7 @@ script: "Cuneiform"
 region: "Mesopotamia (Babylonia)"
 city-of-origin: "Sippar (most extensive OB tablets bear Sippar scribal colophons)"
 authorship: "known (the OB colophons name Ku-Aya / Nūr-Aya as scribe; ultimate composer anonymous)"
-key-figures: ["[[atrahasis-flood-hero]] (the Akkadian flood-hero — the epic is named for him)"]
+key-figures: []
 themes: ["[[flood-motif]]", "[[primordial-waters]]", "[[divine-council]]", "[[creation-by-word]]", "[[antediluvian-civilization]]"]
 parallels: ["[[phase-1-004-gilgamesh-old-babylonian]]", "[[phase-1-008-enuma-elish]]"]
 influenced-by: ["earlier Sumerian flood traditions (Eridu Genesis, Sumerian Flood Story / Ziusudra)"]
@@ -23,7 +23,7 @@ influences: ["Standard Babylonian Gilgamesh Tablet XI (direct adaptation); (cont
 deities-mentioned: ["[[enki-ea]]", "[[enlil]]", "[[an-sumerian]]", "[[ninhursag-nintud]]"]
 events-context: ["Old Babylonian period; reign of Ammi-ṣaduqa of Babylon (the OB principal manuscript is dated to his eleventh regnal year, ~1635 BCE)"]
 status: "metadata"
-preservation: "Best preserved on three OB tablets (Tablet I: ~416 lines; Tablet II: ~380 lines; Tablet III: ~390 lines) acquired by the British Museum and Geneva from antiquities dealers, with provenance ultimately Sippar. The scribe Ku-Aya / Nūr-Aya signed colophons. Later SB recension fragments from Nineveh's Library of Ashurbanipal supplement the OB. The Sumerian flood story (the so-called Eridu Genesis or Sumerian Flood Story) is a separate but related composition."
+preservation: "Best preserved on three OB tablets (Tablet I: ~416 lines; Tablet II: ~380 lines; Tablet III: ~390 lines) acquired by the British Museum and Geneva from antiquities dealers, with provenance ultimately Sippar. The scribe Ku-Aya / Nūr-Aya signed colophons. Later SB recension fragments from Nineveh's Library of [[ashurbanipal]] supplement the OB. The Sumerian flood story (the so-called Eridu Genesis or Sumerian Flood Story) is a separate but related composition."
 refs:
   - title: "Atra-Ḫasīs: The Babylonian Story of the Flood"
     author: "Lambert, W.G., and Millard, A.R."
@@ -79,7 +79,7 @@ A three-tablet Akkadian narrative poem (~1200 lines total when complete) that in
 - **Political milieu.** Late Old Babylonian period — specifically, the principal manuscript is dated by colophon to the eleventh year of Ammi-ṣaduqa of Babylon (~1635 BCE), great-great-grandson of Hammurabi. The scribal milieu is Sippar.
 - **Religious milieu.** Standard Old Babylonian pantheon, with Enki and Enlil in their classical complementary-antagonistic roles. The text crystallizes the Mesopotamian theological anthropology: humans exist *to serve the gods* (to provide food and labor); the gods need humans, and this mutual dependence is the cosmological frame. Compare the human-creation passages of [[phase-1-008-enuma-elish]] (humans made from Kingu's blood, same purpose).
 - **Who was behind it.** Two scribes signed colophons (Ku-Aya, Nūr-Aya); ultimate composer anonymous. The narrative integrates older Sumerian sources — the Sumerian Flood Story / Eridu Genesis attests an independent (and perhaps older) version of the flood whose hero is Ziusudra.
-- **Discovery / transmission.** OB tablets entered the British Museum collection in the late 19th century. The SB Library of Ashurbanipal fragments were among those identified by George Smith in the 1870s. The Atrahasis flood story's direct relationship to the SB Gilgamesh XI flood was demonstrated by Lambert & Millard (1969) — Tablet XI is a literary adaptation of Atrahasis Tablet III, sometimes line-for-line.
+- **Discovery / transmission.** OB tablets entered the British Museum collection in the late 19th century. The SB Library of [[ashurbanipal]] fragments were among those identified by George Smith in the 1870s. The Atrahasis flood story's direct relationship to the SB Gilgamesh XI flood was demonstrated by Lambert & Millard (1969) — Tablet XI is a literary adaptation of Atrahasis Tablet III, sometimes line-for-line.
 
 ## Themes and motifs
 - [[flood-motif]] — the **prototype Mesopotamian flood narrative**, with all the elements that recur in the SB Gilgamesh and in Genesis 6–9: divine decision, warning of the chosen man, boat construction, deluge, sacrifice after landing, divine regret, post-flood reorganization. The motive in Atrahasis is *noise* (human overpopulation disturbing Enlil); the SB Gilgamesh blurs this; Genesis re-motivates as *human wickedness*.

@@ -40,7 +40,7 @@ Tacitus *Germania* 9 identifies the Germans' "Hercules" — this is Þunor/Þór
 Thor's principal mythic activity is fighting giants. The most famous narratives: the *Þrymskviða* (Thor recovers his hammer by cross-dressing as Freyja); the Útgarða-Loki episode (Thor humiliated by deceptive giant-magic); the Hymir-fishing-for-Miðgarðsormr (Thor catches the Midgard-Serpent, the central cosmic-combat scene, narrowly fails to kill it). At Ragnarǫk, Thor kills the Midgard-Serpent but dies from its poison.
 
 ## Cross-tradition identifications
-- **Jupiter / Zeus / Indra / Perun / Perkūnas** — *scholarly-parallel*: Indo-European storm-god comparative complex; Thor is the Germanic instantiation of a deep IE pattern.
+- **Jupiter / Zeus / [[indra]] / [[perun]] / Perkūnas** — *scholarly-parallel*: Indo-European storm-god comparative complex; Thor is the Germanic instantiation of a deep IE pattern. Perun is the Slavic cognate (cf. *Primary Chronicle* Rus'-Byzantine treaty oaths "by Perun their god"); Perkūnas is the Baltic cognate. See [[perun]] for the Slavic reconstruction.
 - **"Hercules"** (Tacitus) — *ancient-identification*: Roman interpretatio of Germanic Thor as Hercules on the basis of strength + monster-fighting.
 
 ## Iconography

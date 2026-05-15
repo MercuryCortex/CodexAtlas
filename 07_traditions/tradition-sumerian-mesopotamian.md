@@ -1,6 +1,6 @@
 ---
 type: tradition
-id: "tradition-sumerian-mesopotamian"
+id: "sumerian-mesopotamian"
 name: "Sumerian / Mesopotamian Religion"
 parent-tradition: ""
 date-emergence: -3500
@@ -54,7 +54,7 @@ The religious culture of the city-states and empires of the Tigris-Euphrates val
 4. **Ur III** (~2112–2004 BCE) — Sumerian renaissance; royal hymns to Shulgi and his successors.
 5. **Old Babylonian** (~2000–1595 BCE) — Hammurabi; scribal canonization of Sumerian literature; integrated Akkadian Gilgamesh; [[phase-1-006-atrahasis]]; [[phase-1-007-code-of-hammurabi]].
 6. **Middle / Late Bronze** (~1595–1155 BCE) — Kassite Babylon; [[phase-1-008-enuma-elish]] in its final form; international Akkadian as Late Bronze diplomatic lingua franca.
-7. **Neo-Assyrian** (~911–609 BCE) — imperial religion centered on Aššur; Library of Ashurbanipal at Nineveh preserves much of the literature.
+7. **Neo-Assyrian** (~911–609 BCE) — imperial religion centered on Aššur; Library of [[ashurbanipal]] at Nineveh preserves much of the literature.
 8. **Neo-Babylonian** (~626–539 BCE) — Nebuchadnezzar II; Nabonidus's controversial Sin-of-Harran promotion.
 9. **Persian, Hellenistic, Parthian periods** (~539 BCE – CE 100) — gradual decline; the latest known cuneiform astronomical text is from ~75 CE.
 
