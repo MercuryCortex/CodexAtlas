@@ -466,7 +466,7 @@ canonical-slug
 - `zemyna`
 - `zeus`
 
-### document (366 nodes)
+### document (368 nodes)
 
 - `document-kuntillet-ajrud-inscriptions`
 - `phase-1-001-kesh-temple-hymn`
@@ -536,6 +536,9 @@ canonical-slug
 - `phase-2-032-shijing-book-of-songs`
 - `phase-2-033-shujing-book-of-documents`
 - `phase-2-034-books-of-kings`
+- `phase-2-035-job`
+- `phase-2-036-ecclesiastes`
+- `phase-2-037-song-of-songs`
 - `phase-3-001-second-third-isaiah`
 - `phase-3-002-plato-dialogues`
 - `phase-3-003-aristotle-metaphysics`
@@ -667,7 +670,6 @@ canonical-slug
 - `phase-4-085-ovid-metamorphoses-book-1`
 - `phase-4-086-arda-viraf-namag`
 - `phase-4-090-apuleius-metamorphoses-bk-11`
-- `phase-4-091-lotus-sutra`
 - `phase-4-092-avatamsaka-sutra`
 - `phase-4-093-lankavat-sutra`
 - `phase-4-094-larger-sukhavativyuha-sutra`
@@ -1697,7 +1699,7 @@ canonical-slug
 - `wheat-grain`
 - `yin-yang`
 
-### theme (287 nodes)
+### theme (290 nodes)
 
 - `364-day-solar-calendar`
 - `adam-kadmon`
@@ -1874,6 +1876,7 @@ canonical-slug
 - `perennial-philosophy`
 - `persian-period-injection`
 - `personal-daimon`
+- `pharmakos`
 - `possession-ritual`
 - `pratitya-samutpada`
 - `pratyabhijna`
@@ -1907,6 +1910,7 @@ canonical-slug
 - `salvation-history`
 - `satanic-verses-incident`
 - `satisfaction-atonement`
+- `scapegoat-mechanism`
 - `secular-spirituality`
 - `sefirot`
 - `serpent-dual-nature`
@@ -1937,6 +1941,7 @@ canonical-slug
 - `theme-aaronide-priestly-continuity`
 - `theme-akhenaten-moses-monotheism-thesis`
 - `theme-asha-druj-cosmic-opposition`
+- `theme-axial-age`
 - `theme-baal-set-syncretism`
 - `theme-el-yahweh-merger`
 - `theme-exodus-hyksos-thesis`
@@ -2113,13 +2118,13 @@ canonical-slug
 
 | Refs | Dead target | Suggested canonical (existing) |
 |---:|---|---|
-| 4 | `tradition-minoan-religion` | `tradition-bhakti-vaishnavism` |
-| 3 | `tradition-medieval-christianity` | `tradition-bhakti-vaishnavism` |
+| 5 | `phase-1-013-babylonian-theodicy` | `phase-1-032-babylonian-theodicy` |
+| 4 | `tradition-minoan-religion` | `tradition-spiritualism` |
+| 3 | `tradition-medieval-christianity` | `tradition-egyptian-religion` |
 | 3 | `phase-4-007-new-testament-canon` | `phase-4-003-gospel-of-truth` |
-| 3 | `phase-2-005-1-2-kings` | `phase-2-008-homeric-epics` |
+| 3 | `phase-2-005-1-2-kings` | `phase-2-003-atharva-veda` |
 | 2 | `yam-canaanite` | `astarte-canaanite` |
-| 2 | `tradition-lingayat` | `tradition-hindutva` |
-| 2 | `tradition-eastern-orthodoxy` | `tradition-bhakti-vaishnavism` |
-| 2 | `phase-2-004-1-2-chronicles` | `phase-2-004-yasna-younger-avesta` |
-| 2 | `phase-1-013-babylonian-theodicy` | `phase-1-010-book-of-the-dead` |
+| 2 | `tradition-lingayat` | `tradition-spiritualism` |
+| 2 | `tradition-eastern-orthodoxy` | `tradition-spiritualism` |
+| 2 | `phase-2-004-1-2-chronicles` | `phase-2-001-rig-veda-family-books` |
 | 2 | `asclepius` | `asclepius-greek` |

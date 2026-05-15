@@ -18,10 +18,16 @@ Format:
 
 ---
 
-## sonnet-girard-1 — content / René Girard scapegoat framework — started 2026-05-15
+## sonnet-girard-1 — content / René Girard scapegoat framework — started 2026-05-15 — **FINISHED 2026-05-15**
 - Owning: `rene-girard`, `scapegoat-mechanism`, `pharmakos`
 - Goal: Build the Girard / scapegoat-mechanism cluster that unifies Greek pharmakos + Levitical scapegoat + Romulus founding violence + Dionysus sparagmos + Christ crucifixion under one investigative frame
-- Status: in-progress
+- Status: finished
+- Delivered:
+  - [[rene-girard]] (NEW, `04_persons/rene-girard.md`) — full metadata person node; biography (Avignon 1923 → Stanford → Académie française 2005 → 2015); mimetic desire → rivalry → founding murder sequence; biblical trajectory (prophets critique → Gospels expose); legacy + critique including Burkert convergence, Strenski, J.Z. Smith; full wikilinks to scapegoat-mechanism / pharmakos / romulus / divine-twins / azazel
+  - [[scapegoat-mechanism]] (NEW, `06_themes/scapegoat-mechanism.md`) — full metadata theme; 5 primary instances documented with Tier 1 sources each (Greek pharmakos + Levitical Yom Kippur + Romulus/Remus + Dionysus sparagmos + Christ crucifixion); Girard/Burkert independent convergence documented; cross-tradition comparison table (5 rows × period / transmission status); limitations + critique section (Strenski, J.Z. Smith, falsifiability); full wikilink web
+  - [[pharmakos]] (NEW, `06_themes/pharmakos.md`) — full metadata theme; Athenian Thargelia ritual mechanics (selection → public maintenance → procession → expulsion); pharmakon poison/medicine paradox; cross-tradition structural parallel table (Greek / Levitical / Babylonian); Pauline pharmakos-as-Christ (Gal 3:13; 2 Cor 5:21); Derrida "Plato's Pharmacy" appropriation; Burkert/Girard on Oedipus as literary pharmakos
+- MASSIVE WIN: Greek pharmakos + Levitical scapegoat + Romulus/Remus founding violence + Dionysus sparagmos + Christ crucifixion now unified under one investigative frame. Pre-existing nodes ([[romulus]], [[divine-twins]], [[sacrifice-as-cosmic-renewal]], [[totemism]], [[azazel]], [[dionysus]], [[zagreus]], [[jesus-of-nazareth]], [[executed-divine-claimant]]) all link into the cluster via wikilinks.
+- Build: **2073 nodes · 12,325 edges · 2.7% dead-link**
 - Last edit: 00_meta/ACTIVE-AGENTS.md
 
 ---
