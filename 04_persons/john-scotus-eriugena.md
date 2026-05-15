@@ -39,6 +39,12 @@ John Scotus Eriugena (~810–877) was the only major Latin metaphysician of the 
 ## Role in the tradition
 The crucial transmission point of Greek Christian Neoplatonism into Latin Europe. Without Eriugena, the Pseudo-Dionysian / Maximian apophatic-emanationist theology would not have been available to Eckhart, Cusa, or the later Latin mystical tradition. The 1225 condemnation drove the *Periphyseon* underground but it continued to circulate; modern recovery from the 17th c. onward.
 
+## Cross-tradition position
+- **← Pseudo-Dionysius → Maximus**: Direct documentary inheritance. Eriugena translated both into Latin, making their Greek apophatic-emanationist theology available to the Latin West for the first time. Without this transmission, Eckhart (and thus the entire German mystical tradition) is impossible.
+- **→ Meister Eckhart**: Documented inheritance. Eckhart cites the *Periphyseon* (despite its condemnation) and explicitly builds on Eriugena's concept of God as "nothing" (*nichts*) prior to all determination.
+- **↔ Vasugupta (~825 CE, Kashmir)**: The most striking independent synchrony. In the same decade Eriugena was articulating divine self-unknowing at the Carolingian court, Vasugupta was articulating Śiva as self-luminous but self-concealing consciousness in Kashmir. Both posit: (a) the absolute is beyond discursive knowing, even self-knowing; (b) the path of return passes through the ground of consciousness; (c) the world is the absolute's own real self-expression, not illusion. No transmission is possible — the synchrony is architecture, not contact. See [[vasugupta]].
+- **↔ Gregory Palamas (essence/energies)**: Eriugena's divine darkness (God unknowable even to himself) is the direct antecedent of Palamas's οὐσία. The Ps-Dionysius → Maximus → Eriugena → Palamas chain is documented; Eriugena is the critical transmission link for the Greek apophatic tradition into Latin, and from Latin into the Byzantine doctrinal debate via the Ps-Dionysius corpus. See [[gregory-palamas]], [[essence-energies-distinction]].
+
 ## Refs
 1. Moran, D. (1989). *Eriugena*. CUP.
 2. McGinn, B. & Otten, W. (1994). *Eriugena: East and West*. Notre Dame.

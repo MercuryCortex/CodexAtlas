@@ -4135,8 +4135,9 @@ const INVESTIGATIONS = [
       'nagarjuna', 'naropa-tilopa',
       'tradition-kabbalah', 'ein-sof', 'tzimtzum',
       'apophatic-mysticism',
-      'tradition-kashmir-shaivism', 'lal-ded', 'al-biruni',
+      'tradition-kashmir-shaivism', 'vasugupta', 'lal-ded', 'al-biruni',
       'ibn-arabi', 'meister-eckhart',
+      'essence-energies-distinction',
     ],
   },
 ];

@@ -25,7 +25,7 @@ refs:
     publisher: "Paulist Press"
     type: "primary-translation"
     tier: 1
-tags: [phase-5, christian, byzantine, hesychast, palamite, essence-energies, mount-athos]
+tags: [phase-5, christian, byzantine, hesychast, palamite, essence-energies, mount-athos, cross-tradition]
 ---
 
 # Gregory Palamas
@@ -38,6 +38,14 @@ Gregory Palamas (1296–1359) was the principal defender of the Athonite Hesycha
 
 ## Role in the tradition
 Foundational; Palamism is the defining mature Eastern Orthodox doctrine of God. Recovered for modern Orthodox theology by the Russian Paris school (Florovsky, Lossky, Meyendorff). The Catholic-Orthodox dialogue over the essence/energies distinction continues.
+
+## The essence/energies distinction — cross-tradition position
+The Palamite essence/energies distinction is the most structurally precise cross-tradition parallel in the vault. See [[essence-energies-distinction]] for the full comparison. Summary:
+
+- **← Pseudo-Dionysius → Maximus → Eriugena → Palamas**: The apophatic tradition is the direct line. Ps-Dionysius's divine darkness → Maximus's *logos*/*tropos* distinction → Eriugena's divine self-unknowing → Palamas's essence/energies. Each step is documented in the transmission chain.
+- **↔ Trika Kashmir Shaivism (Śiva/Śakti)**: The Trika distinction between Śiva (pure unknowable consciousness) and Śakti (dynamic creative manifestation) is structurally identical to the Palamite essence/energies distinction across four categories simultaneously. No confirmed transmission — the structural isomorphism is independent convergence. See [[tradition-kashmir-shaivism]].
+- **↔ Ibn Arabi's tanzih/tashbih**: The Sufi framework of divine incomparability + divine self-disclosure in the perfect human mirrors the same structure. See [[ibn-arabi]].
+- **↔ Ein-Sof / Sefirot (Kabbalah)**: The Kabbalistic distinction between the unknowable Infinite (Ein-Sof) and the ten real divine attributes (Sefirot) through which God acts is structurally identical — and predates Palamas by at least a century in 12th-c. Spanish Kabbalah. See [[ein-sof]].
 
 ## Refs
 1. Meyendorff, J. (1959/1998). *A Study of Gregory Palamas*. SVS Press.
