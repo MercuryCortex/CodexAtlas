@@ -5177,19 +5177,24 @@ VIEWS.atlas = {
           // offset markers connected by leader lines back to the center. (User's
           // explicit ask 2026-05-15: "the nodes expand, even if you need to spread
           // them from the same position by X position".)
-          // SPIDER-ON-CLICK with simultaneous zoom-IN (user 2026-05-15: "the
-          // zoom needs to go BIG like almost full zoom"). Target maxZoom − 0.5
-          // so we're nearly fully zoomed in: basemap shows city-level detail,
-          // the spider's pixel-fixed radius has the most room to spread, and
-          // labels are big enough to read from a comfortable distance. On the
-          // readout this is ~34× (mult = 2^(k − 1.6)).
+          // SPIDER-ON-CLICK with simultaneous zoom-IN to near-max (user
+          // 2026-05-15: "the zoom needs to go BIG like almost full zoom").
+          // Target maxZoom − 0.5 (~34× readout).
           //
-          // MapLibre v5 changed getClusterLeaves from callback to Promise;
-          // wrap both styles defensively so we work either way.
+          // BUG GUARD (2026-05-15): MapLibre v5 fires BOTH the legacy callback
+          // AND the new Promise for getClusterLeaves. Without leavesHandled,
+          // the second fire overwrites _atlasPreSpiderState with a mid-animation
+          // center → empty-click then eases "back" to the wrong place.
+          //
+          // CRITICAL ORDERING: snapshot the pre-spider state SYNCHRONOUSLY
+          // before any leaves callback can run, so empty-click always lands at
+          // the user's true starting vantage.
+          _atlasPreSpiderState = { center: _atlasMap.getCenter(), zoom: currentZoom };
+          let leavesHandled = false;
           const TARGET_SPIDER_ZOOM = _atlasMap.getMaxZoom() - 0.5;
           const onLeaves = (leaves) => {
-            if (!leaves || !leaves.length) return;
-            _atlasPreSpiderState = { center: _atlasMap.getCenter(), zoom: currentZoom };
+            if (leavesHandled || !leaves || !leaves.length) return;
+            leavesHandled = true;
             const targetZ = Math.max(currentZoom, TARGET_SPIDER_ZOOM);
             const willMove = Math.abs(targetZ - currentZoom) > 0.1
                           || _atlasMap.getCenter().distanceTo(new maplibregl.LngLat(clusterCoord[0], clusterCoord[1])) > 100;
@@ -5342,8 +5347,17 @@ VIEWS.atlas = {
         });
         // Ignore the synthetic zoom/move events that fire while we're auto-recentering
         // a cluster to make room for the spider expansion (item 3 polish, 2026-05-15).
-        _atlasMap.on('zoomstart', () => { if (_atlasSpiderActive && !_atlasSpiderRecentering) _atlasHideSpider(); });
-        _atlasMap.on('dragstart', () => { if (_atlasSpiderActive && !_atlasSpiderRecentering) _atlasHideSpider(); });
+        // User manually pans / wheel-zooms while a spider is open: collapse the
+        // spider AND drop the pre-spider snapshot (user took control of the
+        // view — they don't want empty-click to override their new vantage).
+        const _atlasManualMoveCloseSpider = () => {
+          if (_atlasSpiderActive && !_atlasSpiderRecentering) {
+            _atlasHideSpider();
+            _atlasPreSpiderState = null;
+          }
+        };
+        _atlasMap.on('zoomstart', _atlasManualMoveCloseSpider);
+        _atlasMap.on('dragstart', _atlasManualMoveCloseSpider);
       }
     };
 
