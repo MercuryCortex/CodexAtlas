@@ -995,7 +995,7 @@ canonical-slug
 - `subterranean-chamber-great-pyramid`
 - `temple-of-inscriptions-palenque`
 
-### person (618 nodes)
+### person (619 nodes)
 
 - `aaron`
 - `abba-garima`
@@ -1072,6 +1072,7 @@ canonical-slug
 - `bartholomew-apostle`
 - `baruch-spinoza`
 - `basava`
+- `basavanna`
 - `basil-of-caesarea`
 - `basilides`
 - `bede`
@@ -1680,7 +1681,7 @@ canonical-slug
 - `wheat-grain`
 - `yin-yang`
 
-### theme (274 nodes)
+### theme (276 nodes)
 
 - `364-day-solar-calendar`
 - `adam-kadmon`
@@ -1802,6 +1803,7 @@ canonical-slug
 - `hidden-god`
 - `hierophany`
 - `holy-spirit-empowered-witness`
+- `hyperdiffusionism`
 - `i-am-sayings`
 - `i-thou`
 - `iconography-and-aniconism`
@@ -1825,6 +1827,7 @@ canonical-slug
 - `martyrdom-theology`
 - `mesoamerican-cosmogony`
 - `messianic-future-savior`
+- `messianic-genealogy`
 - `messianic-revelation`
 - `messianic-secret`
 - `messianism`
@@ -2081,12 +2084,12 @@ canonical-slug
 
 | Refs | Dead target | Suggested canonical (existing) |
 |---:|---|---|
-| 4 | `tradition-minoan-religion` | `tradition-hellenistic-philosophy` |
-| 4 | `messianic-genealogy` | `messianic-secret` |
-| 3 | `phase-4-007-new-testament-canon` | `phase-4-001-gospel-of-thomas` |
+| 4 | `tradition-minoan-religion` | `tradition-knights-templar` |
+| 3 | `phase-4-007-new-testament-canon` | `phase-4-009-pistis-sophia` |
 | 3 | `phase-2-005-1-2-kings` | `phase-2-008-homeric-epics` |
 | 2 | `yam-canaanite` | `astarte-canaanite` |
-| 2 | `tradition-eastern-orthodoxy` | `tradition-hellenistic-philosophy` |
+| 2 | `tradition-lingayat` | `tradition-knights-templar` |
+| 2 | `tradition-eastern-orthodoxy` | `tradition-knights-templar` |
 | 2 | `phase-2-004-1-2-chronicles` | `phase-2-004-yasna-younger-avesta` |
-| 2 | `phase-1-013-babylonian-theodicy` | `phase-1-019-enuma-anu-enlil` |
+| 2 | `phase-1-013-babylonian-theodicy` | `phase-1-032-babylonian-theodicy` |
 | 2 | `asclepius` | `asclepius-greek` |

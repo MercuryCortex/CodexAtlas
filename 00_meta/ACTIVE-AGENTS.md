@@ -24,11 +24,12 @@ Format:
 - Status: in-flight
 - Last edit: 00_meta/ACTIVE-AGENTS.md
 
-## sonnet-second-temple-1 — content / Second Temple dead-link closures — started 2026-05-15
+## sonnet-second-temple-1 — content / Second Temple dead-link closures — started 2026-05-15 — **FINISHED 2026-05-15**
 - Owning: `tradition-essenes`, `messianic-revelation`, `messianic-genealogy`
 - Goal: Close 3 high-count (4-ref) dead-links connecting Second Temple Judaism to Christianity and Islam
-- Status: in-flight
-- Last edit: 00_meta/ACTIVE-AGENTS.md
+- Status: finished
+- Delivered: [[tradition-essenes]] (NEW) · [[messianic-revelation]] (NEW) · [[messianic-genealogy]] (NEW). Build: **2040 nodes · 12,180 edges · 2.8% dead-link**.
+- Last edit: 00_meta/STATUS.md
 
 ---
 
