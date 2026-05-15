@@ -2162,15 +2162,15 @@ canonical-slug
 
 | Refs | Dead target | Suggested canonical (existing) |
 |---:|---|---|
-| 5 | `phase-1-013-babylonian-theodicy` | `phase-1-015-sumerian-king-list` |
-| 4 | `tradition-minoan-religion` | `tradition-theosophy` |
-| 4 | `tradition-eastern-orthodoxy` | `tradition-theosophy` |
-| 4 | `tradition-early-christianity` | `tradition-hasmonean-dynasty` |
-| 3 | `tradition-medieval-christianity` | `tradition-hasmonean-dynasty` |
-| 3 | `phase-4-007-new-testament-canon` | `phase-4-001-gospel-of-thomas` |
+| 5 | `phase-1-013-babylonian-theodicy` | `phase-1-017-descent-of-inanna` |
+| 4 | `tradition-minoan-religion` | `tradition-rastafari` |
+| 4 | `tradition-eastern-orthodoxy` | `tradition-rastafari` |
+| 4 | `tradition-early-christianity` | `tradition-inca-andean` |
+| 3 | `tradition-medieval-christianity` | `tradition-portuguese-hermeticism` |
+| 3 | `phase-4-007-new-testament-canon` | `phase-4-009-pistis-sophia` |
 | 3 | `phase-2-005-1-2-kings` | `phase-2-003-atharva-veda` |
 | 3 | `divine-kingship-solar` | `divine-kingship` |
 | 2 | `yam-canaanite` | `astarte-canaanite` |
-| 2 | `tradition-lingayat` | `tradition-theosophy` |
-| 2 | `tradition-cheondogyo` | `tradition-theosophy` |
+| 2 | `tradition-lingayat` | `tradition-rastafari` |
+| 2 | `tradition-cheondogyo` | `tradition-rastafari` |
 | 2 | `asclepius` | `asclepius-greek` |

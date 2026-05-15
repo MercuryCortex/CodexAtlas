@@ -135,7 +135,18 @@ Across all four instances, the structure is identical:
 
 ## Extension Pattern (documented, less tight structural loop)
 
-- **Giordano Bruno (1548–1600 CE)**: burned in Rome for Copernican cosmology + pantheism + plurality-of-worlds — see [[giordano-bruno]] and [[event-bruno-execution-1600]]. His execution by the Inquisition is often read as the secular-modernist version of the pattern: the claim that transgresses is now cosmological rather than mystical, but the establishment response and the community's inversion (Bruno as martyred hero of free thought) are structurally identical.
+### 5. Giordano Bruno (1548–1600 CE)
+
+[[giordano-bruno]] was burned at the Campo de' Fiori, Rome, on 17 February 1600, after eight years of imprisonment and trial. The formal charges (from the surviving *Sommario*; the principal trial dossier is lost) included: denial of the Trinity, denial of Christ's divinity, belief in infinite worlds, transmigration of souls, and — crucially — the practice of Hermetic magic and claim to *prisca-theologia*: the ancient pre-Mosaic divine wisdom of [[hermes-trismegistus]]. See [[event-bruno-execution-1600]].
+
+The **structural claim that got him killed** is closer to al-Ḥallāj's charge than to a "science vs. religion" conflict. Bruno did not claim direct mystical union in al-Ḥallāj's vocabulary (*"Anā al-Ḥaqq"*), but he claimed access to divine wisdom through an *alternative tradition* — the Hermetic *prisca-theologia* — that bypassed and preceded the mediation of the Church. This is the same structural transgression: unauthorized divine revelation via a competing tradition. The Inquisition's demand was not that Bruno stop believing in infinite worlds (a cosmological claim) but that he abjure the whole framework of Hermetic divine knowledge.
+
+Bruno refused to recant across eight years of trial — an extraordinary commitment that mirrors al-Ḥallāj's refusal and Socrates's acceptance of the hemlock. He had reportedly made several partial submissions over the years but never the full retraction demanded. His final words at sentencing are recorded (Schoppe's letter): "You perhaps fear more to pronounce my sentence than I fear to receive it."
+
+**The community's inversion:** Bruno was not rehabilitated in his own tradition — the Hermetic tradition was suppressed, not celebrated, after 1600. The inversion came from a different source: Italian republicans and anticlericals, who in 1889 erected the Ettore Ferrari statue at the Campo de' Fiori (against Vatican protests) and reread Bruno as a martyr of intellectual freedom. The modern secular-humanist reception has largely displaced the Hermetic context, creating a Bruno who died for Copernican astronomy — a reading [[frances-yates]] spent 450 pages correcting.
+
+**What makes this a MASSIVE WIN in the vault's terms:** Bruno closes the chain into modernity — the pattern runs from 399 BCE (Socrates) to 922 CE (al-Ḥallāj) to 1191 CE (Suhrawardī) to **1600 CE (Bruno)** — covering every major tradition in the vault (Greek philosophy, Christianity, Sufism, Renaissance Hermeticism) and spanning two millennia. The structural claim (unauthorized divine access via an alternative tradition) is recognizable across every instance, even though the vocabulary shifts from *daimonion* to crucifixion to *fanāʾ* to *prisca-theologia*.
+
 - **Jan Hus (1369–1415 CE)**: burned at the Council of Constance for asserting that the authority of scripture exceeds that of the papacy. A proto-Reformation divine-claimant variant: the transgression is a claim about the proper mediation of revelation rather than a mystical union claim, but the structure (authorized claim → establishment execution → community inversion producing a movement) is present.
 
 ## MASSIVE-WIN Connections

@@ -18,13 +18,21 @@ Format:
 
 ---
 
+## sonnet-bruno-silk-1 — content / Bruno upgrade + Silk Road Investigation — started 2026-05-15 — IN-FLIGHT
+- Owning: `04_persons/giordano-bruno.md` (upgrade), `06_themes/executed-divine-claimant.md` (Bruno section expansion), `src/js/app.js` (Silk Road preset + investigation)
+- Goal: Expand Bruno to full Yates-angle + executed-divine-claimant chain closure into modernity; add Silk Road as 3rd Investigation and preset
+- Status: in-flight
+- Last edit: `src/js/app.js`
+
+---
+
 ## 🚦 In-flight claims at a glance (current as of 2026-05-15)
 
 | Handle | Scope tag | Owns (high level) | Started | Status |
 |---|---|---|---|---|
 | `sonnet-james-girard-1` | content / William James + Girard/scapegoat upgrades | `william-james` (NEW), `phase-7-041-varieties-of-religious-experience` (NEW), `rene-girard` (upgrade), `scapegoat-mechanism` (upgrade) | 2026-05-15 | **FINISHED** |
 | `sonnet-3rd-century-1` | content / 3rd-Century Collision Zone node + Investigation preset | `third-century-collision-zone` (NEW theme) + Investigation preset `third-century-collision` | 2026-05-15 | **FINISHED** |
-| `sonnet-korean-1` | content / Korean religious wedge | `tradition-donghak` (NEW), `event-donghak-peasant-revolution-1894` (NEW), `choe-je-u` (NEW), `tangun` (upgrade) | 2026-05-15 | **in-flight** |
+| `sonnet-korean-1` | content / Korean religious wedge | `tradition-donghak` (NEW), `event-donghak-peasant-revolution-1894` (NEW), `choe-je-u` (NEW), `tangun` (upgrade) | 2026-05-15 | **FINISHED** |
 | `sonnet-hermetic-renaissance-1` | content / Hermetic Renaissance spine | `gemistos-plethon` (NEW), `event-council-of-florence-1439` (NEW), `prisca-theologia` (upgrade), `perennial-philosophy` (upgrade), `hermetic-transmission-chain` (NEW theme) | 2026-05-15 | **FINISHED** |
 | `sonnet-comedy-deep-1` | content / Divine Comedy deep-layer investigation | `beatrice-portinari` (NEW person), `theme-graduated-afterlife` (NEW theme), `theme-guide-through-underworld` (NEW theme) | 2026-05-15 | **FINISHED** 3cd2899 |
 | `sonnet-paradise-lost-1` | content / Paradise Lost cross-tradition investigation | `john-milton` (NEW person), `phase-6-042-paradise-lost` (NEW document), `theme-rebel-against-the-divine` (NEW theme) | 2026-05-15 | **FINISHED** 3cd2899 |
