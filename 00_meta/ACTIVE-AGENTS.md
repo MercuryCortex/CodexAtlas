@@ -28,6 +28,19 @@ Format:
 
 ---
 
+## sonnet-persian-spine-2 — content / BMAC + asura-deva-inversion + occultation-hidden-imam — started 2026-05-15 — **FINISHED 2026-05-15**
+- Owning: `06_themes/bmac-proto-zoroastrian.md`, `06_themes/asura-deva-inversion.md`, `06_themes/occultation-hidden-imam.md`
+- Goal: 3 new theme nodes deepening the Persian/Zoroastrian spine — BMAC archaeological substrate, the Indo-Iranian theological schism, and the Shi'a Hidden Imam as Saoshyant parallel
+- Status: finished
+- Delivered:
+  - [[bmac-proto-zoroastrian]] (NEW) — full metadata theme; BMAC (~2100–1800 BCE) as proto-Zoroastrian archaeological substrate; fire temples, soma/haoma vessels, aniconic tendency, Indo-Iranian split contact zone; Anthony/Sarianidi/Witzel/Watkins T1/T2 refs.
+  - [[asura-deva-inversion]] (NEW) — full metadata theme; same words opposite moral valence (deva/daeva + asura/ahura); Yasna 32/30 polemical evidence; Indra condemned by name; four-instance "old gods become demons" pattern chain; West/Gonda/Skjærvø/Kuiper T1 refs.
+  - [[occultation-hidden-imam]] (NEW) — full metadata theme; Minor/Major occultation; Wilāyat al-Faqīh → Iranian Revolution political instantiation; Saoshyant/Hidden-Imam 6-row structural parallel table; five-tradition hidden-savior cluster; Momen/Sachedina/Corbin T1 + Bausani T2.
+- Build: **2088 nodes · 12,415 edges · 2.8% dead-link**
+- Last edit: 00_meta/STATUS.md
+
+---
+
 ## sonnet-apkallu-1 — content / Apkallu antediluvian sages — started 2026-05-15
 - Owning: `apkallu` (03_deities/apkallu.md — NEW)
 - Goal: Write the Apkallu node — the Mesopotamian upstream of the Watchers/1 Enoch chain, the Utu-abzu ↔ Enoch parallel, and the Berossus/Oannes → Hellenistic transmission
