@@ -1,0 +1,129 @@
+{
+  "version": "1.0",
+  "generated": "2026-05-15",
+  "notes": "Cross-tradition deity associations for the 7 classical planets. Mappings follow the canonical Hellenistic/Hermetic tradition (Picatrix, Liber Hermetis, Manilius), the Roman interpretatio (Caesar's Mercurius for Lugus, etc.), and well-attested comparative-mythology associations. Each entry is the in-vault deity slug; entries listed but absent from data.js are gracefully skipped at render time.",
+  "sources": [
+    "Greer & Warnock 2011 — The Complete Picatrix (Books II–IV, planetary spirits)",
+    "Manilius, Astronomica (1st c. CE) — Hellenistic planet-deity table",
+    "Roman interpretatio: Tacitus Germania (Mercurius = Wotan / Odin); Caesar De Bello Gallico (Mercurius = Lugus)",
+    "Frawley 2000 — Vedic planet-deity associations (Sūrya/Sun, Chandra/Moon, Budha/Mercury, etc.)",
+    "Wilkinson 2003 — Complete Gods and Goddesses of Ancient Egypt (lunar / solar / Mars-warlike associations)",
+    "Sahagún Florentine Codex — Mesoamerican planet-as-deity (Quetzalcoatl/Venus, Huitzilopochtli/Mars)"
+  ],
+  "planets": {
+    "sun": {
+      "glyph": "☉",
+      "name": "Sun",
+      "color": "#e0a850",
+      "rulerships": "vitality · sovereignty · the heart of being · gold · the lion",
+      "deities": [
+        { "id": "ra", "tradition": "Egyptian", "note": "the supreme solar deity" },
+        { "id": "aten", "tradition": "Egyptian", "note": "Akhenaten's monotheistic solar disc" },
+        { "id": "horus", "tradition": "Egyptian", "note": "solar falcon-king" },
+        { "id": "sun-disk", "tradition": "Egyptian", "note": "the visible solar body as ritual object" },
+        { "id": "helios", "tradition": "Greek", "note": "personified sun, charioteer" },
+        { "id": "apollo", "tradition": "Greek", "note": "by Roman period, syncretized with Sol" },
+        { "id": "sol-invictus", "tradition": "Roman", "note": "Aurelian's late-Roman state cult, Dec 25" },
+        { "id": "mithras", "tradition": "Roman / Persian", "note": "mystery cult, sol invictus aspect" },
+        { "id": "utu-shamash", "tradition": "Mesopotamian", "note": "solar judge of the cosmos" },
+        { "id": "surya", "tradition": "Vedic", "note": "the Vedic sun god, Aditya" },
+        { "id": "amaterasu", "tradition": "Japanese / Shinto", "note": "imperial ancestress, solar" },
+        { "id": "tonatiuh", "tradition": "Aztec", "note": "fifth-sun, demands sacrifice" },
+        { "id": "inti", "tradition": "Inca", "note": "ancestor of the Inca royal line" }
+      ]
+    },
+    "moon": {
+      "glyph": "☽",
+      "name": "Moon",
+      "color": "#aabac5",
+      "rulerships": "reflection · cycles · the soul · silver · the unconscious",
+      "deities": [
+        { "id": "khonsu", "tradition": "Egyptian", "note": "lunar youth, traveller of the night sky" },
+        { "id": "thoth", "tradition": "Egyptian", "note": "lunar wisdom + scribe (also Mercury — dual-rulership)" },
+        { "id": "selene", "tradition": "Greek", "note": "personified moon, charioteer" },
+        { "id": "artemis", "tradition": "Greek", "note": "huntress, by Roman period lunar" },
+        { "id": "soma", "tradition": "Vedic", "note": "moon-god AND ritual draught of immortality" },
+        { "id": "nanna-sin", "tradition": "Mesopotamian", "note": "Sumerian Nanna / Akkadian Sin, father of Utu and Inanna" },
+        { "id": "tsukuyomi", "tradition": "Japanese / Shinto", "note": "moon-brother of Amaterasu" }
+      ]
+    },
+    "mercury": {
+      "glyph": "☿",
+      "name": "Mercury",
+      "color": "#5a9a8f",
+      "rulerships": "messenger · scribe · the boundary-crosser · psychopomp · quicksilver",
+      "deities": [
+        { "id": "hermes-greek", "tradition": "Greek", "note": "messenger, herald, guide of souls" },
+        { "id": "mercury-roman", "tradition": "Roman", "note": "Roman interpretatio of Hermes" },
+        { "id": "hermes-trismegistus", "tradition": "Greco-Egyptian", "note": "Hellenistic synthesis of Hermes + Thoth" },
+        { "id": "thoth", "tradition": "Egyptian", "note": "scribe of the gods (also Moon — dual-rulership)" },
+        { "id": "nabu", "tradition": "Mesopotamian / Babylonian", "note": "scribe of destinies, son of Marduk" },
+        { "id": "anubis", "tradition": "Egyptian", "note": "psychopomp of the dead — Mercury's underworld aspect" },
+        { "id": "odin", "tradition": "Norse", "note": "Tacitus's Mercurius (Germania), boundary-crosser" },
+        { "id": "lugus", "tradition": "Celtic", "note": "Caesar's Mercurius of the Gauls" }
+      ]
+    },
+    "venus": {
+      "glyph": "♀",
+      "name": "Venus",
+      "color": "#6e8c6b",
+      "rulerships": "eros · fertility · the morning + evening star · copper · the dove",
+      "deities": [
+        { "id": "aphrodite-greek", "tradition": "Greek", "note": "born from sea-foam" },
+        { "id": "venus-roman", "tradition": "Roman", "note": "ancestress of the Julii (Aeneas → Iulus)" },
+        { "id": "hathor", "tradition": "Egyptian", "note": "love, music, the celestial cow" },
+        { "id": "inanna-sumerian", "tradition": "Sumerian", "note": "Queen of Heaven, planet Venus" },
+        { "id": "ishtar-akkadian", "tradition": "Akkadian", "note": "Babylonian Inanna, morning + evening star" },
+        { "id": "astarte-canaanite", "tradition": "Canaanite / Phoenician", "note": "warrior + erotic goddess" },
+        { "id": "freyja", "tradition": "Norse", "note": "Vanir goddess of love + war + seiðr" },
+        { "id": "lakshmi", "tradition": "Vedic", "note": "abundance, beauty, consort of Vishnu" },
+        { "id": "quetzalcoatl", "tradition": "Mesoamerican", "note": "the morning-star Quetzalcoatl-Tlahuizcalpantecuhtli" }
+      ]
+    },
+    "mars": {
+      "glyph": "♂",
+      "name": "Mars",
+      "color": "#c25450",
+      "rulerships": "war · iron · the warrior · the red planet · severity",
+      "deities": [
+        { "id": "ares", "tradition": "Greek", "note": "warlike, beloved of Aphrodite" },
+        { "id": "mars-roman", "tradition": "Roman", "note": "father of Romulus + Remus, founder-god" },
+        { "id": "nergal", "tradition": "Mesopotamian", "note": "war + plague + underworld" },
+        { "id": "seth", "tradition": "Egyptian", "note": "lord of storms + violence (Mars's warlike aspect)" },
+        { "id": "tyr", "tradition": "Norse", "note": "Roman interpretatio Mars; one-handed war-god" },
+        { "id": "skanda-karthikeya", "tradition": "Vedic", "note": "war-god, son of Shiva" },
+        { "id": "huitzilopochtli", "tradition": "Aztec", "note": "war-sun of the Mexica" },
+        { "id": "ogun", "tradition": "Yoruba", "note": "iron-smith + warrior orisha" }
+      ]
+    },
+    "jupiter": {
+      "glyph": "♃",
+      "name": "Jupiter",
+      "color": "#a87bb5",
+      "rulerships": "sovereignty · expansion · the lawgiver · tin · the king of gods",
+      "deities": [
+        { "id": "zeus", "tradition": "Greek", "note": "sky-king, sovereign of Olympus" },
+        { "id": "jupiter", "tradition": "Roman", "note": "Jupiter Optimus Maximus, state-deity" },
+        { "id": "marduk", "tradition": "Babylonian", "note": "king of the gods (Enuma Elish)" },
+        { "id": "amun", "tradition": "Egyptian", "note": "Amun-Ra, king of the gods in Theban tradition" },
+        { "id": "indra", "tradition": "Vedic", "note": "king of devas, storm-god" },
+        { "id": "brahma", "tradition": "Vedic", "note": "creator-aspect of the Trimūrti" },
+        { "id": "thor", "tradition": "Norse", "note": "Roman interpretatio sometimes Jupiter (sometimes Hercules)" }
+      ]
+    },
+    "saturn": {
+      "glyph": "♄",
+      "name": "Saturn",
+      "color": "#5a6cc4",
+      "rulerships": "time · limitation · age · lead · the old grim father",
+      "deities": [
+        { "id": "kronos", "tradition": "Greek", "note": "Titan father of Zeus, swallower of his children" },
+        { "id": "saturn-roman", "tradition": "Roman", "note": "Saturnalia, golden-age agriculture" },
+        { "id": "ninurta", "tradition": "Mesopotamian", "note": "agriculture + war + Saturn association" },
+        { "id": "geb", "tradition": "Egyptian", "note": "earth-god (Saturn's saturnine + chthonic aspect)" },
+        { "id": "el-canaanite", "tradition": "Canaanite", "note": "old grim father, displaced by Baal" },
+        { "id": "yama-vedic", "tradition": "Vedic", "note": "first-mortal, lord of death" }
+      ]
+    }
+  }
+}
