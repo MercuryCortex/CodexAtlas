@@ -22,7 +22,7 @@ Format:
 
 | Handle | Scope tag | Owns (high level) | Started | Status |
 |---|---|---|---|---|
-| `sonnet-apkallu-1` | content / Apkallu antediluvian sages | `apkallu` (NEW) — Mesopotamian upstream of Watchers/Enoch chain | 2026-05-15 | in-progress |
+| `sonnet-apkallu-1` | content / Apkallu antediluvian sages | `apkallu` (NEW) — Mesopotamian upstream of Watchers/Enoch chain | 2026-05-15 | **FINISHED** |
 | `sonnet-egypt-mysticism-1` | content / Egypt outward — mystical + symbolic web | tetramorph, axis-mundi, cosmic-egg, ma-at, pseudo-dionysius, ammonius-saccas, ma-at-logos-sophia, neoplatonic-henosis, sacred-geometry-cosmic-proportion, dying-rising-god, event-school-of-alexandria — **11 nodes** | 2026-05-15 | **FINISHED** |
 | `sonnet-khafre-symbolism-1` | content / Egyptian symbolism deep-dive | 9 symbols + 4 themes + 6 persons + 4 events + 2 documents — **25 new nodes · 194 new edges** | 2026-05-15 | **FINISHED** |
 | `sonnet-kabbalah-synthesis-1` | content / Symbol fixes + Kabbalah/Logos/Divine-Feminine synthesis | 6 symbol fixes + theme-axial-age (NEW) + 6 stub→full upgrades (logos-cosmic-reason, divine-feminine, tikkun-olam, philo-of-alexandria, tradition-kabbalah, moses-de-leon) | 2026-05-15 | **FINISHED** e8306e0+268e1da |
@@ -42,11 +42,13 @@ Format:
 
 ---
 
-## sonnet-apkallu-1 — content / Apkallu antediluvian sages — started 2026-05-15
+## sonnet-apkallu-1 — content / Apkallu antediluvian sages — started 2026-05-15 — **FINISHED 2026-05-15**
 - Owning: `apkallu` (03_deities/apkallu.md — NEW)
 - Goal: Write the Apkallu node — the Mesopotamian upstream of the Watchers/1 Enoch chain, the Utu-abzu ↔ Enoch parallel, and the Berossus/Oannes → Hellenistic transmission
-- Status: in-progress
-- Last edit: 03_deities/apkallu.md
+- Status: finished
+- Delivered: [[apkallu]] (NEW) — full metadata deity node. Seven Sages table + king pairings; Neo-Assyrian foundation deposit material evidence; Berossus/Oannes Greek transmission; Apkallu→Watchers moral inversion (Annus 2010 T1 definitive paper); Utu-abzu "taken to heaven" ↔ Enoch Gen 5:24 structural parallel; Hermes Trismegistus structural parallel. 4 T1 refs.
+- Build: **2089 nodes · 12,424 edges · 2.8% dead-link**
+- Last edit: 00_meta/STATUS.md
 
 ---
 
@@ -362,3 +364,11 @@ The things opus-foundation-1 claimed but never started are all still open:
 
 - **Status:** finished
 - **Last edit:** commit — `src/js/app.js` + `src/styles/app.css` + `00_meta/ACTIVE-AGENTS.md`.
+
+---
+
+## sonnet-persian-wiring-1 — cross-tradition wiring / Persian theological spine — started 2026-05-15
+- Owning: `06_themes/frashokereti-cosmic-renovation.md`, `06_themes/tikkun-olam.md` (read-only, already linked), `03_deities/saoshyant.md`, `03_deities/muhammad-al-mahdi.md`, `07_traditions/tradition-manichaeism.md`, `07_traditions/tradition-bogomilism.md`, `07_traditions/tradition-catharism.md`, `07_traditions/tradition-zoroastrianism.md`, `07_traditions/tradition-judaism.md`, `07_traditions/tradition-essenes.md`
+- Goal: Wire cross-tradition edges for the Persian theological spine — frashokereti↔tikkun-olam, saoshyant↔mahdi+occultation, manichaeism→bogomilism→catharism chain, persian-period-injection links to 3 tradition nodes
+- Status: in-progress
+- Last edit: 00_meta/ACTIVE-AGENTS.md
