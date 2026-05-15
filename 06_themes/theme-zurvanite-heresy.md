@@ -47,6 +47,13 @@ refs:
     type: "primary-translation"
     tier: 2
     notes: "The Greater Bundahishn preserves cosmogonical passages that have Zurvanite resonance alongside orthodox material"
+  - title: "The Co-formation of the Manichaean and Zoroastrian Religions in Third-Century Iran"
+    author: "BeDuhn, Jason"
+    year: 2020
+    publisher: "Entangled Religions 11.2 (2020). DOI: 10.13154/er.11.2020.8414"
+    type: "journal-article"
+    tier: 1
+    notes: "Northern Arizona University. Revises the standard model: Manichaeism and Zoroastrianism co-formed in 3rd-century Iran against older Iranian traditions rather than Manichaeism simply borrowing from an established Zoroastrianism. Directly relevant to the Zurvanite question: the Zurvanite milieu was part of the shared older Iranian cultural substrate both religions selectively appropriated, not yet consolidated as 'Zoroastrian orthodoxy.' Open access (Ruhr-Universität Bochum, Creative Commons Attribution 4.0)."
 tags: [theme, zoroastrian, zurvan, heterodox, cosmogony, manichaeism, time-deity, gnostic-parallel, phase-2, cross-tradition]
 ---
 
@@ -108,3 +115,7 @@ The sources for Zurvanism are almost all hostile or external (Greek, Armenian, S
 - → [[tradition-zoroastrianism]]: Zurvanism is heterodox within this tradition but arguably influential on its Parthian and Sasanian forms.
 - → [[angra-mainyu-ahriman]]: In the Zurvanite myth, Angra Mainyu is Zurvan's second son — born from doubt, not co-eternal; the origin of evil is thus explained differently from orthodox Mazdaism.
 - → [[theme-zoroastrian-jewish-exchange]]: Zurvanite ideas about bounded time and the origin of evil may have a second-order effect on Second Temple Jewish speculation about Satan and the origin of evil — mediated through Babylonian-Persian intellectual contact.
+- ↔ [[ein-sof]] (MASSIVE-WIN): Both Zurvan Akarana and Ein-Sof posit a pre-ethical absolute prior to all moral distinction. Zurvan generates both the good god (Ahura Mazda) and the evil principle (Angra Mainyu) from a position of neutral temporal infinity; Ein-Sof withdraws through tzimtzum prior to any emanation, generating the framework in which both divine goodness and the Qliphoth (husks/evil forces) can emerge. In both systems: the ultimate ground is beyond good/evil; good and evil are secondary derivatives. This is not documented transmission but a structural parallel (parallel-form) — both may reflect the general problem of how a perfect absolute can be the source of an imperfect world. Kabbalistic thought developed in areas with medieval Iranian/Jewish contact (Persia, Babylonia) that may have transmitted Zurvanite frameworks. Ref: Scholem, *Kabbalah* (1974).
+- ↔ [[the-pleroma]] (MASSIVE-WIN): The Gnostic Pleroma (the divine fullness) is the neutral pre-differentiated absolute from which both the divine Aeons and the fallen Sophia/Demiurge derive through processes of fall and emanation. Structurally parallel to Zurvan: a neutral absolute → differentiated good/evil offspring. In both systems the material world emerges from a *lapse* in the original perfect state (Zurvan's doubt / Sophia's fall into knowledge). The Gnostic systems emerging in 2nd–3rd c. CE Mesopotamia overlapped geographically with the Zurvanite milieu; BeDuhn 2020 identifies this Iranian religious pluralist context as the co-formation zone for Manichaeism, Gnosticism, and Zoroastrianism simultaneously.
+- ↔ [[tradition-manichaeism]]: Mani's Father of Greatness (Light) and Prince of Darkness (Dark) are co-eternal realms whose contact produces the cosmos — structurally closer to Zurvanite theology (twin principles from a common source or context) than to orthodox Zoroastrian dualism (two uncaused, co-eternal first principles). BeDuhn 2020 revises this: both Zoroastrianism and Manichaeism were *co-forming* in 3rd-century Iran against older shared Iranian materials; the Zurvanite framework was part of that shared older substrate.
+- → [[theme-proto-indo-iranian-religion]]: Zurvanite Time-theology may represent the absorption of Babylonian astral determinism (planets govern fate through time cycles) into Iranian theology during the Achaemenid-Hellenistic contact period, when Babylonian astronomical knowledge flowed into the Iranian sphere. The identification of Zurvan with infinite time maps onto the Babylonian conception of Time-as-fate-determinant.

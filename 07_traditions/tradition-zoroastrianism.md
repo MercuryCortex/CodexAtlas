@@ -54,6 +54,13 @@ refs:
     type: "encyclopedia"
     tier: 1
     notes: "Boyce's definitive Encyclopaedia Iranica survey article on Zoroastrianism — the single most authoritative short overview of the tradition from the premier scholarly reference work in Iranian studies."
+  - title: "Zoroastrianism i. Historical Review"
+    author: "Boyce, Mary"
+    publisher: "Encyclopaedia Iranica online"
+    url: "https://www.iranicaonline.org/articles/zoroastrianism-i-historical-review"
+    type: "encyclopedia-article"
+    tier: 1
+    notes: "The specific EIr multi-part historical review article covering Zoroastrianism from Gathic origins through the Sasanian period, diaspora, and modern communities. The EIr is a peer-reviewed reference work (originally Columbia University Press; now EIr Foundation), edited by Ehsan Yarshater and successors. URL may require institutional access."
   - title: "Persian Apocalypticism"
     author: "Hultgård, Anders"
     year: 1998

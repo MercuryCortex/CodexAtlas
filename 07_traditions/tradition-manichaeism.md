@@ -31,6 +31,20 @@ refs:
     publisher: "Brill"
     type: "monograph"
     tier: 1
+  - title: "The Co-formation of the Manichaean and Zoroastrian Religions in Third-Century Iran"
+    author: "BeDuhn, Jason"
+    year: 2020
+    publisher: "Entangled Religions 11.2 (2020). DOI: 10.13154/er.11.2020.8414"
+    type: "journal-article"
+    tier: 1
+    notes: "Argues that Zoroastrianism and Manichaeism co-formed in the 3rd century against older Iranian religious traditions — neither simply borrowed from the other. Both religions drew on earlier Iranian cultural material and fitted it into distinct systems. Revises the standard model of Manichaeism as derivative of an already-established Zoroastrianism. Published in Entangled Religions (Ruhr-Universität Bochum, open-access peer-reviewed). Building on Skjærvø 1995–1997; Mani's Šābuhragān cited as evidence of competitive parallel formation."
+  - title: "Augustine's Manichaean Dilemma, vol. I–II"
+    author: "BeDuhn, Jason"
+    year: 2010
+    publisher: "University of Pennsylvania Press"
+    type: "monograph"
+    tier: 1
+    notes: "The definitive study of Augustine's Manichaean formation and its legacy. Demonstrates that Manichaean frameworks shaped Augustine's post-conversion theology, especially original sin and anthropology."
 tags: [tradition, manichaean, mani, dualism, late-antique-world-religion]
 ---
 
@@ -56,7 +70,7 @@ Mani's canon of seven: Living Gospel, Treasure of Life, Pragmateia, Book of Myst
 - Two-tier community: Elect (strict ascetics) and Hearers (lay supporters).
 
 ## Relations to neighbors
-- vs. [[tradition-zoroastrianism]]: structurally adjacent (cosmic dualism); Mani's Šābuhragān uses Zoroastrian vocabulary; Zoroastrian priesthood (Kartir) persecuted Manichaeism.
+- vs. [[tradition-zoroastrianism]]: structurally adjacent (cosmic dualism); Mani's Šābuhragān uses Zoroastrian vocabulary; Zoroastrian priesthood (Kartir) persecuted Manichaeism. **BeDuhn 2020 (Tier 1) significantly revises the standard relationship model:** rather than Manichaeism borrowing from an already-established Zoroastrianism, both religions *co-formed* in 3rd-century Iran against older Iranian cultural traditions. Kerdīr (the Zoroastrian high priest who ordered Mani's execution) shows the same awareness of religious pluralism as Mani, and may have been *responding* to Mani's conceptual framework (Skjærvø 1997). The "Iranian elements in Manichaeism" literature (Skjærvø 1995–1997, BeDuhn 2020) recasts these elements as shared appropriation from pre-Sasanian Iranian religious culture rather than unidirectional borrowing.
 - vs. [[tradition-gnosticism]]: shared gnosis-soteriology and Light-spark anthropology; more rigorous dualism than Sethian.
 - vs. [[tradition-mandaeism]]: shared southern-Mesopotamian Jewish-Christian baptist milieu (Mani's Elchasaite origin).
 - vs. [[tradition-christianity-canonical]]: jurisdictional rival; Augustine's anti-Manichaean polemic is a major source.
@@ -77,3 +91,5 @@ Augustine's nine Manichaean years are not incidental biography — they are a th
 1. Lieu, S.N.C. (1992). *Mani and Manichaeism*. Manchester UP.
 2. Gardner, I. & Lieu, S.N.C. (2004). *Manichaean Texts from the Roman Empire*. Cambridge UP.
 3. Lieu, S.N.C. (1998). *Manichaeism in Central Asia and China*. Brill.
+4. BeDuhn, J. (2020). "The Co-formation of the Manichaean and Zoroastrian Religions in Third-Century Iran." *Entangled Religions* 11.2. DOI: 10.13154/er.11.2020.8414. [Open access — Tier 1]
+5. BeDuhn, J. (2010). *Augustine's Manichaean Dilemma*, vols. I–II. University of Pennsylvania Press.

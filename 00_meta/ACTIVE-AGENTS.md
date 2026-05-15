@@ -22,6 +22,7 @@ Format:
 
 | Handle | Scope tag | Owns (high level) | Started | Status |
 |---|---|---|---|---|
+| `sonnet-avesta-sources-2` | meta / ref-upgrade — Zoroastrian URL eval + Zurvanism enrichment | theme-zurvanite-heresy (BeDuhn 2020 + MASSIVE-WIN edges), tradition-manichaeism (BeDuhn 2020 T1 + co-formation revision), tradition-zoroastrianism (EIr specific article URL) | 2026-05-15 | **FINISHED** |
 | `sonnet-avesta-sources-1` | meta / ref-upgrade — Zoroastrian sources | phase-2-002-gathas-of-zarathustra, tradition-zoroastrianism, asura-deva-inversion, persian-period-injection — NO new nodes | 2026-05-15 | **FINISHED** |
 | `sonnet-deadlink-fix-1` | meta / dead-link verification | dove.md, alpha-omega.md, fleur-de-lis.md dead-link audit — all 10 targets already existed; no stubs needed | 2026-05-15 | **FINISHED** |
 | `sonnet-epist-fix-1` | meta / surgical epistemic corrections | phase-5-056-divine-comedy, creation-by-word, executed-divine-claimant, helena-blavatsky — **NO new nodes** | 2026-05-15 | **FINISHED** |

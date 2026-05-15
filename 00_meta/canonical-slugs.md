@@ -1981,6 +1981,8 @@ canonical-slug
 - `theme-zoroastrian-cosmogony`
 - `theme-zoroastrian-jewish-exchange`
 - `theme-zurvanite-heresy`
+  also seen as: `zurvanism`
+  notes: Full Zurvanism node at 06_themes/theme-zurvanite-heresy.md — the slug `zurvanism` is an alias for this node (added 2026-05-15 by sonnet-avesta-sources-2; no separate zurvanism.md created to avoid duplication of an existing full-status node)
 - `theurgy`
 - `tikkun-olam`
 - `torah-and-wisdom-identified`
@@ -2133,15 +2135,15 @@ canonical-slug
 
 | Refs | Dead target | Suggested canonical (existing) |
 |---:|---|---|
-| 5 | `phase-1-013-babylonian-theodicy` | `phase-1-015-sumerian-king-list` |
-| 4 | `tradition-minoan-religion` | `tradition-knights-templar` |
-| 4 | `tradition-eastern-orthodoxy` | `tradition-knights-templar` |
-| 3 | `tradition-medieval-christianity` | `tradition-knights-templar` |
-| 3 | `tradition-early-christianity` | `tradition-knights-templar` |
-| 3 | `phase-4-007-new-testament-canon` | `phase-4-004-gospel-of-philip` |
+| 5 | `phase-1-013-babylonian-theodicy` | `phase-1-012-amarna-letters` |
+| 4 | `tradition-minoan-religion` | `tradition-anthroposophy` |
+| 4 | `tradition-eastern-orthodoxy` | `tradition-anthroposophy` |
+| 3 | `tradition-medieval-christianity` | `tradition-anthroposophy` |
+| 3 | `tradition-early-christianity` | `tradition-anthroposophy` |
+| 3 | `phase-4-007-new-testament-canon` | `phase-4-005-gospel-of-mary` |
 | 3 | `phase-2-005-1-2-kings` | `phase-2-008-homeric-epics` |
 | 3 | `divine-kingship-solar` | `divine-kingship` |
 | 2 | `yam-canaanite` | `astarte-canaanite` |
-| 2 | `tradition-lingayat` | `tradition-knights-templar` |
-| 2 | `phase-2-004-1-2-chronicles` | `phase-2-006-brahmanas-aranyakas` |
+| 2 | `tradition-lingayat` | `tradition-anthroposophy` |
+| 2 | `phase-2-004-1-2-chronicles` | `phase-2-007-hebrew-bible-e-source` |
 | 2 | `asclepius` | `asclepius-greek` |
