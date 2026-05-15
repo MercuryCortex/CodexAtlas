@@ -486,7 +486,9 @@
   function showEmptyBoardContextMenu(x, y) {
     showMenu(x, y, [
       { label: 'Add card…', action: () => focusSearch() },
-      { label: 'Auto-arrange grid', action: autoArrange },
+      { label: 'Auto-arrange (layered)', action: () => autoArrangeELK('layered') },
+      { label: 'Auto-arrange (force)',   action: () => autoArrangeELK('force') },
+      { label: 'Auto-arrange (pack)',    action: () => autoArrangeELK('rectpacking') },
       { divider: true },
       { label: 'Clear board', action: () => { if (confirm('Clear all cards from the board?')) clearBoard(); } }
     ]);
@@ -624,7 +626,8 @@
       addCard(nodeId, card.x + Math.cos(ang) * r, card.y + Math.sin(ang) * r);
     });
   }
-  function autoArrange() {
+  // Legacy grid auto-arrange — kept as a guaranteed-fast fallback if ELK is unavailable.
+  function autoArrangeGrid() {
     const cols = Math.ceil(Math.sqrt(state.cards.length));
     const gx = CARD_W + 40, gy = CARD_H + 40;
     state.cards.forEach((c, i) => {
@@ -635,6 +638,60 @@
     });
     save();
     drawEdges();
+  }
+
+  // ELK-powered arrange — runs the shared layout engine over the current cards
+  // and their cross-tradition edges. Algorithm key per window._codexLayout.ALGORITHMS.
+  async function autoArrangeELK(algorithm) {
+    if (!window._codexLayout) return autoArrangeGrid();
+    if (!state.cards.length) return;
+
+    // Build the node + edge slice the layout engine consumes.
+    const nodes = state.cards.map(c => ({ id: 'card-' + c.id }));
+    const cardByNodeId = new Map(state.cards.map(c => [c.nodeId, c]));
+    const edges = [];
+    allEdges().forEach(e => {
+      const a = cardByNodeId.get(e.source);
+      const b = cardByNodeId.get(e.target);
+      if (!a || !b || a.id === b.id) return;
+      edges.push({ source: 'card-' + a.id, target: 'card-' + b.id });
+    });
+
+    const positions = await window._codexLayout.compute(nodes, edges, {
+      algorithm,
+      nodeWidth: CARD_W,
+      nodeHeight: CARD_H,
+      spacing: 60,
+      direction: 'RIGHT'
+    });
+
+    // Apply positions back to cards. Center the layout on the current viewport.
+    state.cards.forEach(c => {
+      const p = positions.get('card-' + c.id);
+      if (!p) return;
+      c.x = Math.round(p.x);
+      c.y = Math.round(p.y);
+      const el = boardEl.querySelector(`.alch-card[data-card-id="${c.id}"]`);
+      if (el) { el.style.left = c.x + 'px'; el.style.top = c.y + 'px'; }
+    });
+    save();
+    drawEdges();
+  }
+
+  // Default Auto-arrange (clicking the toolbar button) — runs the layered/timeline
+  // algorithm, which is the most useful for a research board.
+  function autoArrange() { autoArrangeELK('layered'); }
+
+  // Popup with every available ELK algorithm. Opened by the arrange-popup button.
+  function openArrangeMenu(anchorEl) {
+    const algos = (window._codexLayout && window._codexLayout.ALGORITHMS) || {};
+    const items = Object.entries(algos).map(([key, meta]) => ({
+      label: `${meta.label}`,
+      action: () => autoArrangeELK(key)
+    }));
+    if (!items.length) items.push({ label: 'Grid', action: autoArrangeGrid });
+    const r = anchorEl.getBoundingClientRect();
+    showMenu(r.left, r.bottom + 4, items);
   }
 
   // ----- search bar / add-card -----
@@ -731,7 +788,7 @@
           <div class="alch-search-results" style="display:none"></div>
         </div>
         <button class="alch-btn" id="alch-btn-fit">Zoom to fit</button>
-        <button class="alch-btn" id="alch-btn-arrange">Auto-arrange</button>
+        <button class="alch-btn" id="alch-btn-arrange" title="Auto-arrange: layered timeline layout">Auto-arrange ▾</button>
         <button class="alch-btn alch-btn-danger" id="alch-btn-clear">Clear</button>
         <div class="alch-counter" id="alch-counter"></div>
       </div>
@@ -760,7 +817,7 @@
       }
     });
     toolbarEl.querySelector('#alch-btn-fit').onclick = zoomToFit;
-    toolbarEl.querySelector('#alch-btn-arrange').onclick = autoArrange;
+    toolbarEl.querySelector('#alch-btn-arrange').onclick = (ev) => openArrangeMenu(ev.target);
     toolbarEl.querySelector('#alch-btn-clear').onclick = () => {
       if (confirm('Clear all cards from the board?')) clearBoard();
     };

@@ -1271,6 +1271,28 @@ footer select:focus, footer input:focus { border-color: var(--gold-soft); }
   background: rgba(212,165,90,0.18);
   box-shadow: inset 0 0 0 1px var(--gold-soft);
 }
+/* ELK arrange-popup trigger — wider so it fits "⌬ ELK ▾" + popup menu below it. */
+.alch-layout-btn.alch-elk-btn {
+  width: auto; padding: 0 10px;
+  font-size: 11px; letter-spacing: 0.04em;
+}
+.alch-elk-menu {
+  position: fixed;
+  background: rgba(14,16,22,0.96);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid var(--border-soft);
+  border-radius: 6px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.55);
+  min-width: 240px; padding: 5px 0;
+  z-index: 220;
+  font-family: var(--serif); font-size: 13px;
+}
+.alch-elk-menu-item {
+  padding: 7px 14px; cursor: pointer;
+  color: var(--text-1); transition: background 100ms ease;
+}
+.alch-elk-menu-item:hover { background: var(--bg-2); color: var(--gold); }
 .alch-spacing-label {
   display: inline-flex; align-items: center; gap: 8px;
   font-family: var(--mono); font-size: 10px; color: var(--text-3);

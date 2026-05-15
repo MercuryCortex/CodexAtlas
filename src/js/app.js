@@ -162,6 +162,10 @@ const STATE = {
   alchemyLayout: 'force',
   // Spacing slider 0-100 (default 50). Affects all layouts uniformly.
   alchemySpacing: 50,
+  // Cache of ELK-computed positions per mode key ('elk-layered' / 'elk-force' / etc).
+  // Map<mode, Map<id, {x,y}>>. Populated async by computeElkPositions, read by
+  // alchemyLayoutPositions when mode starts with 'elk-'.
+  alchemyElkPositions: new Map(),
   // Pantheon mode toggle — 'deities' (default), 'authors' (persons with authorship/originator
   // edges), or 'symbols' (09_symbols/ nodes clustered by origin family with cross-family
   // symbol edges drawn prominently — the user's "MASSIVE wins" view).
@@ -5034,6 +5038,19 @@ function alchemyLoadPreset(presetId, mode) {
 function alchemyLayoutPositions(nodes, picks, mode, spacing, W, H) {
   const cx = W / 2, cy = H / 2;
   const positions = new Map();
+  // ELK-driven modes: if positions were pre-computed and cached in
+  // STATE.alchemyElkPositions, use them (centred on the canvas).
+  // Otherwise fall through to D3-based modes; the async pre-compute fires
+  // separately when the user clicks an ELK button and triggers a re-render.
+  if (typeof mode === 'string' && mode.indexOf('elk-') === 0) {
+    const cached = STATE.alchemyElkPositions && STATE.alchemyElkPositions.get(mode);
+    if (cached && cached.size) {
+      cached.forEach((p, id) => positions.set(id, { x: cx + p.x, y: cy + p.y }));
+      return positions;
+    }
+    // Fall through to force as a transient while ELK computes.
+    return positions;
+  }
   if (mode === 'force' || nodes.length === 0) return positions;
 
   // Spacing factor: 0 → 0.5 (tight); 50 → 1.0 (default); 100 → 1.7 (loose).
@@ -5249,6 +5266,11 @@ VIEWS.transmission = {
     const links = bridgeEdges
       .filter(e => nodeById.has(e.source) && nodeById.has(e.target))
       .map(e => ({ source: e.source, target: e.target, type: e.type }));
+    // Stash the current node+edge slice so the ELK arrange button (defined
+    // later in this same render() call) can run the layout engine over the
+    // exact set the user is looking at.
+    window._lastTransmissionNodes = nodes;
+    window._lastTransmissionEdges = links;
 
     // ---- View-controls (top-right): Presets dropdown trigger + save tree + count + clear ----
     const activePreset = STATE.alchemyActivePreset
@@ -5554,6 +5576,7 @@ VIEWS.transmission = {
     const toolbox = document.createElement('div');
     toolbox.className = 'alch-toolbox';
     const L = STATE.alchemyLayout;
+    const isElk = typeof L === 'string' && L.indexOf('elk-') === 0;
     toolbox.innerHTML = `
       <button class="alch-add-btn" id="alch-add" title="Add a node">＋ add node</button>
       <span class="alch-tools-divider"></span>
@@ -5562,6 +5585,7 @@ VIEWS.transmission = {
         <button class="alch-layout-btn ${L === 'linear' ? 'active' : ''}" data-layout="linear" title="Linear (chronological timeline, type-banded)">─</button>
         <button class="alch-layout-btn ${L === 'circular' ? 'active' : ''}" data-layout="circular" title="Circular (single ring, type-sorted)">○</button>
         <button class="alch-layout-btn ${L === 'radial' ? 'active' : ''}" data-layout="radial" title="Radial (picks center, bridges outer)">◎</button>
+        <button class="alch-layout-btn alch-elk-btn ${isElk ? 'active' : ''}" id="alch-elk-trigger" title="Stellar arrange (ELK.js — pro graph layouts)">⌬ ELK ▾</button>
       </div>
       <span class="alch-tools-divider"></span>
       <label class="alch-spacing-label" title="Adjust spacing for the active layout">
@@ -5572,14 +5596,69 @@ VIEWS.transmission = {
     `;
     canvas.appendChild(toolbox);
 
-    // Wire layout buttons.
-    toolbox.querySelectorAll('.alch-layout-btn').forEach(btn => {
+    // Wire layout buttons (excluding the ELK popup trigger, handled below).
+    toolbox.querySelectorAll('.alch-layout-btn:not(.alch-elk-btn)').forEach(btn => {
       btn.addEventListener('click', (ev) => {
         ev.stopPropagation();
         STATE.alchemyLayout = btn.dataset.layout;
         try { localStorage.setItem('alch-layout', STATE.alchemyLayout); } catch (e) {}
         setView('transmission');
       });
+    });
+    // ELK trigger: popup menu of ELK algorithms. Each runs the shared layout
+    // engine over the current Transmission graph (picks + bridges + edges),
+    // caches the resulting Map<id, {x,y}> in STATE.alchemyElkPositions[mode],
+    // sets alchemyLayout to the mode key, and re-renders Transmission so the
+    // existing render code consumes the cached positions as node anchors.
+    const _elkBtn = document.getElementById('alch-elk-trigger');
+    if (_elkBtn) _elkBtn.addEventListener('click', (ev) => {
+      ev.stopPropagation();
+      if (!window._codexLayout) {
+        alert('ELK layout engine not loaded — falling back to existing layouts.');
+        return;
+      }
+      const algos = window._codexLayout.ALGORITHMS || {};
+      const existing = document.getElementById('alch-elk-menu');
+      if (existing) { existing.remove(); return; }
+      const menu = document.createElement('div');
+      menu.id = 'alch-elk-menu';
+      menu.className = 'alch-elk-menu';
+      const r = _elkBtn.getBoundingClientRect();
+      menu.style.left = r.left + 'px';
+      menu.style.top = (r.bottom + 4) + 'px';
+      menu.innerHTML = Object.entries(algos).map(([key, meta]) =>
+        `<div class="alch-elk-menu-item" data-algo="${key}" title="${meta.description || ''}">${meta.label}</div>`
+      ).join('');
+      document.body.appendChild(menu);
+      const dismiss = () => menu.remove();
+      menu.querySelectorAll('.alch-elk-menu-item').forEach(it => {
+        it.onclick = async (e) => {
+          e.stopPropagation();
+          dismiss();
+          const algo = it.dataset.algo;
+          const modeKey = 'elk-' + algo;
+          // Build node + edge slice for ELK from the Transmission's current
+          // rendered set (rawNodesList). We rebuild from the picks + bridges
+          // already computed during render rather than recomputing the graph.
+          const elkNodes = (window._lastTransmissionNodes || []).map(n => ({ id: String(n.id) }));
+          const elkEdges = (window._lastTransmissionEdges || []).map(e => ({ source: String(e.source.id || e.source), target: String(e.target.id || e.target) }));
+          try {
+            const pos = await window._codexLayout.compute(elkNodes, elkEdges, {
+              algorithm: algo,
+              nodeWidth: 80, nodeHeight: 80,
+              spacing: 50 + STATE.alchemySpacing,
+              direction: algo === 'mrtree' ? 'DOWN' : 'RIGHT'
+            });
+            STATE.alchemyElkPositions.set(modeKey, pos);
+            STATE.alchemyLayout = modeKey;
+            try { localStorage.setItem('alch-layout', modeKey); } catch (er) {}
+            setView('transmission');
+          } catch (err) {
+            console.error('[elk] layout failed:', err);
+          }
+        };
+      });
+      setTimeout(() => document.addEventListener('pointerdown', dismiss, { once: true }), 50);
     });
     // Wire spacing slider with debounce so re-render doesn't fire on every pixel of drag.
     const _spacingSlider = document.getElementById('alch-spacing-slider');
