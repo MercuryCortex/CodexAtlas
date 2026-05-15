@@ -90,6 +90,8 @@
         { "id": "mars-roman", "tradition": "Roman", "note": "father of Romulus + Remus, founder-god" },
         { "id": "nergal", "tradition": "Mesopotamian", "note": "war + plague + underworld" },
         { "id": "seth", "tradition": "Egyptian", "note": "lord of storms + violence (Mars's warlike aspect)" },
+        { "id": "selket", "tradition": "Egyptian", "note": "scorpion-goddess; sits in Mars-ruled Scorpio decans; protects the dead via venom-magic" },
+        { "id": "ishara", "tradition": "Mesopotamian", "note": "Mesopotamian / Hurrian / Hittite scorpion-goddess; oath-binder; parallels Selket independently" },
         { "id": "tyr", "tradition": "Norse", "note": "Roman interpretatio Mars; one-handed war-god" },
         { "id": "skanda-karthikeya", "tradition": "Vedic", "note": "war-god, son of Shiva" },
         { "id": "huitzilopochtli", "tradition": "Aztec", "note": "war-sun of the Mexica" },

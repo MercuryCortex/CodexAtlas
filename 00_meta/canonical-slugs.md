@@ -17,7 +17,7 @@ canonical-slug
 ## Currently resolved slugs (auto-seeded — every existing file)
 
 
-### deity (481 nodes)
+### deity (482 nodes)
 
 - `abathur`
 - `adamastor`
@@ -208,6 +208,7 @@ canonical-slug
 - `inti`
 - `inyan`
 - `io-matua-kore`
+- `ishara`
 - `ishtar-akkadian`
 - `isis`
 - `isis-hellenistic`
@@ -888,7 +889,7 @@ canonical-slug
 - `phase-8-023-gayanashagowa`
 - `tummal-chronicle`
 
-### event (182 nodes)
+### event (184 nodes)
 
 - `bent-pyramid-sneferu-dahshur`
 - `el-castillo-chichen-itza`
@@ -1055,8 +1056,10 @@ canonical-slug
 - `event-third-crusade-1189-1192`
 - `event-toledo-translations-1085-1150`
 - `event-trial-of-templars-1307-1314`
+- `event-tutankhamun-tomb-discovery-1922`
 - `event-vasco-da-gama-india-voyage-1497`
 - `event-vatican-ii-aftermath-1965-present`
+- `event-visigothic-kingdom-hispania-418-711`
 - `event-wilhelmsbad-convent-1782`
 - `event-zagwe-lalibela-churches-c1200`
 - `grand-gallery-great-pyramid`
@@ -1073,7 +1076,7 @@ canonical-slug
 - `subterranean-chamber-great-pyramid`
 - `temple-of-inscriptions-palenque`
 
-### person (648 nodes)
+### person (649 nodes)
 
 - `aaron`
 - `abba-garima`
@@ -1682,6 +1685,7 @@ canonical-slug
 - `triptolemus-legendary`
 - `tsongkhapa`
 - `tulsidas`
+- `tutankhamun`
 - `tycho-brahe`
 - `umar-ibn-al-khattab`
 - `unas`
@@ -1724,7 +1728,7 @@ canonical-slug
 - `ziusudra`
 - `zosimos-of-panopolis`
 
-### symbol (73 nodes)
+### symbol (74 nodes)
 
 - `alpha-omega`
 - `ankh`
@@ -1780,6 +1784,7 @@ canonical-slug
 - `sacred-fire-atash`
 - `sacred-heart`
 - `scarab-khepri`
+- `scorpion`
 - `sefirot-tree-of-life`
 - `serpent-cosmic-enemy`
 - `serpent-wisdom-chthonic`
@@ -1800,7 +1805,7 @@ canonical-slug
 - `wheat-grain`
 - `yin-yang`
 
-### theme (321 nodes)
+### theme (324 nodes)
 
 - `364-day-solar-calendar`
 - `adam-kadmon`
@@ -1843,6 +1848,7 @@ canonical-slug
 - `brahman-impersonal`
 - `bridal-mysticism`
 - `bronze-age-substrate-of-greek-religion`
+- `cattle-raid-myth`
 - `celtic-otherworld`
 - `ceremonial-magick`
 - `chain-of-being`
@@ -1879,6 +1885,7 @@ canonical-slug
 - `divine-twins`
 - `dualism-cosmic`
 - `dualism-spirit-matter`
+- `dumezil-trifunctional`
 - `dying-rising-god`
 - `ecclesial-authority`
 - `ecclesiology`
@@ -2020,6 +2027,7 @@ canonical-slug
 - `root-races`
 - `royal-hymn`
 - `sacred-and-profane`
+- `sacred-defeat`
 - `sacred-geometry-cosmic-proportion`
 - `sacred-king`
 - `sacred-marriage`
@@ -2124,7 +2132,7 @@ canonical-slug
 - `zep-tepi`
 - `zeus-pantokrator-transmission`
 
-### tradition (134 nodes)
+### tradition (135 nodes)
 
 - `tradition-advaita-vedanta`
 - `tradition-african-traditional`
@@ -2222,6 +2230,7 @@ canonical-slug
 - `tradition-portuguese-hermeticism`
 - `tradition-pre-islamic-arabian`
 - `tradition-protestantism`
+- `tradition-proto-indo-european-religion`
 - `tradition-pure-land-buddhism`
 - `tradition-pythagorean`
 - `tradition-rastafari`
@@ -2267,17 +2276,18 @@ canonical-slug
 
 | Refs | Dead target | Suggested canonical (existing) |
 |---:|---|---|
-| 3 | `tradition-hinduism` | `tradition-daoism` |
+| 3 | `tradition-hinduism` | `tradition-kabbalah` |
+| 3 | `tradition-andean` | `tradition-kabbalah` |
 | 3 | `guru-arjan-dev-ji` | `guru-arjan` |
 | 2 | `yam-canaanite` | `astarte-canaanite` |
-| 2 | `tradition-lingayat` | `tradition-daoism` |
-| 2 | `tradition-judaism-sephardic` | `tradition-canaanite-ugaritic` |
-| 2 | `tradition-islam-shia` | `tradition-daoism` |
-| 2 | `tradition-islam-mughal` | `tradition-canaanite-ugaritic` |
-| 2 | `tradition-hussitism` | `tradition-daoism` |
-| 2 | `tradition-christianity-catholic` | `tradition-canaanite-ugaritic` |
-| 2 | `tradition-bahai` | `tradition-daoism` |
-| 2 | `phase-3-006-homeric-hymns` | `phase-3-009-jubilees` |
+| 2 | `tradition-lingayat` | `tradition-kabbalah` |
+| 2 | `tradition-judaism-sephardic` | `tradition-scottish-rite-freemasonry` |
+| 2 | `tradition-islam-shia` | `tradition-kabbalah` |
+| 2 | `tradition-islam-mughal` | `tradition-kabbalah` |
+| 2 | `tradition-hussitism` | `tradition-kabbalah` |
+| 2 | `tradition-christianity-catholic` | `tradition-scottish-rite-freemasonry` |
+| 2 | `tradition-bahai` | `tradition-kabbalah` |
+| 2 | `phase-3-006-homeric-hymns` | `phase-3-004-1-enoch` |
 | 2 | `guru-gobind-singh-ji` | `guru-gobind-singh` |
 | 2 | `aurangzeb-emperor` | `zara-yaqob-emperor` |
 | 2 | `asclepius` | `asclepius-greek` |

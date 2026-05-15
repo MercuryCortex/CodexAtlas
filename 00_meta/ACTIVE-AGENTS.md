@@ -4,11 +4,21 @@ _Hand-maintained. Each agent currently working in the vault appends a claim bloc
 
 ---
 
-## sonnet-scorpion-1 — content / Selket + scorpion-symbol + Mars-wedge mapping — started 2026-05-15 — **IN-FLIGHT**
-- Owning: `03_deities/selket.md` (NEW), `09_symbols/scorpion.md` (NEW), `03_deities/ishara.md` (NEW stub — Wiring Law), `04_persons/tutankhamun.md` (NEW stub — Wiring Law), `05_events/event-tutankhamun-tomb-discovery-1922.md` (NEW), `_assets/data/astrology-planet-deities.json` (Mars block update)
-- Goal: Close the scorpion-archetype gap in the Astrology→Pantheon Mars wedge. Build Selket (Egyptian scorpion-goddess, fourth canopic protectress) as full Tier-1 deity node + scorpion symbol node with cross-tradition MASSIVE WIN convergences (Selket / Ishara / Scorpius / Antares-Al-Qalb-Xīn / Jyeṣṭhā nakshatra); wire to Pyramid Texts + Book of the Dead; add Tutankhamun + Howard Carter discovery via tomb-shrine guardian iconography; update astrology-planet-deities.json Mars block.
-- Status: in-flight
-- Last edit: `00_meta/ACTIVE-AGENTS.md`
+## sonnet-scorpion-1 — content / Selket + scorpion-symbol + Mars-wedge mapping — started 2026-05-15 — **FINISHED 2026-05-15**
+- Owned: `03_deities/selket.md` (NEW metadata), `09_symbols/scorpion.md` (NEW metadata, MASSIVE WIN), `03_deities/ishara.md` (NEW stub — Wiring Law), `04_persons/tutankhamun.md` (NEW stub — Wiring Law), `05_events/event-tutankhamun-tomb-discovery-1922.md` (NEW metadata), `_assets/data/astrology-planet-deities.json` (Mars block update — `selket` + `ishara` added)
+- Goal: Close the scorpion-archetype gap in the Astrology→Pantheon Mars wedge (John: "we don't have any association with scorpion on the pantheon graph"). Build Selket as Tier-1 sourced anchor; scorpion symbol with six-tradition convergence cluster; wire to existing decanic infrastructure.
+- Status: finished
+- Delivered:
+  - **`selket.md`** — full Tier-1 Egyptian scorpion-goddess node (Wilkinson 2003, Pinch 2002, Eaton-Krauss & Graefe 1985, Hornung 1982, Allen 2005 *Pyramid Texts* + Metternich Stela, Quaegebeur 1998, Frankfurter 1998, Neugebauer & Parker 1960–69 *EAT* I–III). Decanic placement: Senenmut decan 22 (Scorpio decan 1, Mars-ruled face) — Mars-of-Mars iconographic anchor.
+  - **`scorpion.md`** — six-tradition symbol node, MASSIVE WIN cross-tradition cluster (Egyptian Selket / Mesopotamian Ishara / Greek Scorpius / Vedic Jyeṣṭhā / Arabic Al-Qalb / Chinese Xīn) + Roman Mithraic tauroctony scorpion. Antares triple-convergence documented (Greek `Antarēs` colour-rivalry / Arabic `Al-Qalb` "heart" / Chinese `Xīn` "heart") with Tier-1 verification (Kunitzsch 1961, Sun & Kistemaker 1997, Rogers 1998, Black & Green 1992).
+  - **`ishara.md`** — stub for Wiring Law (Black & Green 1992, Haas 1994 *Hethitische Religion*, Lambert 1975).
+  - **`tutankhamun.md`** — stub for Wiring Law (Reeves 1990, Eaton-Krauss & Graefe 1985, Carter & Mace 1923).
+  - **`event-tutankhamun-tomb-discovery-1922.md`** — metadata event node; Howard Carter's KV62 discovery as the iconographic-stability moment for Selket via the golden canopic-shrine statues. Griffith Institute digital archive cited.
+  - **`astrology-planet-deities.json`** — Mars block: `selket` + `ishara` inserted after `seth` so the Astro-Pantheon renderer surfaces them.
+- Build: **482 deities · 74 symbols · 184 events · 12,988 edges · 0 YAML errors · 0 new dead links introduced**.
+- MASSIVE WIN edges: Antares triple-convergence (Greek / Arabic / Chinese — independent semantic convergence on "heart of scorpion"); Selket ↔ Ishara `parallel-form` (NOT ancestor-of — both arose independently from same ecological reality, per Codex Atlas symbol-research discipline rule). Vedic Jyeṣṭhā nakshatra's physical-sky-anchor on α Scorpii documented as positional rather than theological convergence.
+- Open gaps for follow-up agents: Ishara upgrade (Mari / Ebla attestations, kudurru iconographic catalogue, Hurrian-Hittite oath-treaty corpus); Tutankhamun upgrade (full biography, Amarna restoration analysis, KV62 catalogue); a Sons-of-Horus quartet node-set (`duamutef`, `hapi-canopic`, `imsety`, `qebehsenuef`) would deepen the canopic-shrine cluster.
+- Last edit: `00_meta/STATUS.md`
 
 ---
 
