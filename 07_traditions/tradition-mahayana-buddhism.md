@@ -11,7 +11,11 @@ key-deities: ["[[avalokitesvara]]", "[[manjushri]]", "[[amitabha]]", "[[prajnapa
 key-persons: ["[[nagarjuna]]", "[[asanga]]", "[[vasubandhu]]", "[[atisa]]", "[[xuanzang]]", "[[huineng]]", "[[dogen]]", "[[tsongkhapa]]"]
 key-documents: ["[[phase-5-002-heart-sutra]]", "[[phase-5-004-platform-sutra-huineng]]", "Lotus Sutra", "Diamond Sutra", "Avatamsaka Sutra", "Pure Land sutras", "Lankavatara Sutra"]
 sister-traditions: ["[[tradition-buddhism]] (Theravada / Hinayana sister)", "[[tradition-vajrayana-buddhism]] (Tantric continuation)", "[[tradition-zen]] (East Asian sub-tradition)"]
-status: "stub"
+key-themes:
+  - "[[dying-rising-god]]"
+  - "[[theme-apophatic-theology]]"
+  - "[[apotheosis]]"
+status: "metadata"
 refs:
   - title: "Mahāyāna Buddhism: The Doctrinal Foundations (2nd ed.)"
     author: "Williams, Paul"
@@ -67,12 +71,22 @@ Mahāyāna ("Great Vehicle") is the major branch of Buddhism that emerged in Ind
 - **Three Bodies of the Buddha** (*trikāya*) — *dharmakāya* (truth-body), *saṃbhogakāya* (enjoyment-body), *nirmāṇakāya* (manifestation-body).
 - **Skillful means** (*upāya*) — the Buddha teaches differently to different audiences for their good.
 
+## MASSIVE wins — cross-tradition edges
+- **Bodhisattva ideal ↔ Christian *agape* / Confucian *rén* (other-centered ethics of enlightened beings)**: The Mahāyāna bodhisattva's vow — "I will not enter final nirvāṇa until all beings are liberated" — is structurally identical to Christian *agape* (unconditional self-giving love for the other, 1 Cor 13) and Confucian *rén* (benevolence / humaneness as the root of all virtue in the Analects). All three traditions posit that the highest ethical development involves the radical subordination of self-interest to the welfare of all others, and all three connect this ethical ideal to the nature of ultimate reality (Buddha-nature / *Deus caritas est* / Heaven's mandate). Whether this convergence reflects a shared human moral intuition or independent philosophical development is an open question; the structural identity is complete.
+- **Śūnyatā (emptiness) ↔ apophatic theology ([[theme-apophatic-theology]])**: Nāgārjuna's *Mūlamadhyamakakārikā* (~200 CE) demonstrates that no phenomenon has inherent self-existence — including the Buddha, nirvāṇa, and śūnyatā itself. The method is systematic negation of all positive predication about ultimate reality. This is structurally identical to the apophatic theological tradition (Pseudo-Dionysius, Meister Eckhart, Ibn Arabi): the ultimate is beyond all positive description; all positive statements are accommodations to convention, not accurate predications. Both traditions arrive at a "negation of negation" — Nāgārjuna negates śūnyatā itself; Eckhart negates even the negation of God. Both claim this is not nihilism but the deepest possible positive insight.
+- **Avalokiteśvara → Guanyin gender transformation (cultural transmission + gender inversion)**: Avalokiteśvara enters China as a male bodhisattva (the Indian sources are consistently masculine); by ~1000 CE the Chinese Guanyin is consistently female; the transformation is fully documented across Tang and Song dynasty iconography. This is the vault's most precisely documented case of a trans-cultural divine gender transformation: the same figure, across ~500 years of transmission, reverses gender through cultural contact. The mechanism was probably assimilation to indigenous Chinese goddess-forms (Lady of Taishan, the White Snake Lady). The transformation then retransmits back to Korean Gwan-eum and Japanese Kannon in female form.
+- **Pure Land Buddhism (*tariki*, "other-power") ↔ Protestant grace-theology**: Pure Land Buddhism (Amitābha's Original Vow — any being who sincerely calls Amitābha's name will be reborn in Sukhāvatī pure land) is structurally identical to Protestant salvation-by-grace-through-faith. Both reject the efficacy of accumulated merit/works; both posit an external divine act (Amitābha's Vow / Christ's atonement) as the sole basis of liberation; both generate internal controversy about whether any human action is required (Shinran's *tariki*-exclusive position / Lutheran controversy over "works"). Both generate at the same structural moment the *antinomian temptation* (if salvation is guaranteed by faith/Other Power, is any ethical behavior required?). Both resolve it similarly (faith/entrusting transforms the practitioner's nature, producing ethics as consequence, not precondition).
+- **Mahāyāna *trikāya* doctrine ↔ Christian Trinity (structural parallel — not historical connection)**: The Three Bodies of the Buddha — *dharmakāya* (the unconditioned truth-body, identical with dharmadhātu / reality-as-such), *saṃbhogakāya* (the celestial enjoyment-body, visible to advanced bodhisattvas), *nirmāṇakāya* (the physical manifestation-body, e.g. the historical Śākyamuni) — is structurally parallel to the Nicene Trinity: Father (unconditioned divine essence), Holy Spirit (present to the receptive soul), Son (the historical Incarnation). The parallel was noticed by early Jesuit missionaries in China and Japan. Scholars document the parallel while cautioning against claiming historical influence (the two doctrines were elaborated simultaneously in the 3rd–4th centuries CE with no documented contact).
+
 ## Relations to neighbors
 - vs. [[tradition-buddhism]] (Theravāda / early): Mahāyāna polemics characterize Theravāda as "*Hīnayāna*" (Lesser Vehicle); modern relations are more ecumenical.
 - vs. [[tradition-vajrayana-buddhism]]: continuous in doctrinal substrate (Mahāyāna emptiness, bodhisattva ideal); diverges in ritual-tantric method.
 - vs. [[tradition-zen]]: Zen is a Mahāyāna sub-tradition (Chan in China, Seon in Korea, Thiền in Vietnam, Zen in Japan).
+- vs. [[tradition-neoplatonism]]: possible structural contact via Central Asian channels; both develop apophatic-emanationist metaphysics in the 2nd–4th centuries CE; see [[third-century-collision-zone]].
 
 ## Refs
 1. Williams, P. (2008). *Mahāyāna Buddhism* (2nd ed.). Routledge.
 2. Williams, P. (ed.) (2005). *The Origins of Mahāyāna Buddhism*. Routledge.
 3. Harvey, P. (2013). *An Introduction to Buddhism*. CUP.
+4. Nattier, Jan (2003). *A Few Good Men: The Bodhisattva Path According to the Inquiry of Ugra*. University of Hawaii Press.
+5. Schopen, Gregory (2005). *Figments and Fragments of Mahāyāna Buddhism in India*. University of Hawaii Press.
