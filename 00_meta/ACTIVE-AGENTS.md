@@ -22,6 +22,7 @@ Format:
 
 | Handle | Scope tag | Owns (high level) | Started | Status |
 |---|---|---|---|---|
+| `sonnet-hermetic-renaissance-1` | content / Hermetic Renaissance spine | `gemistos-plethon` (NEW), `event-council-of-florence-1439` (NEW), `prisca-theologia` (upgrade), `perennial-philosophy` (upgrade), `hermetic-transmission-chain` (NEW theme) | 2026-05-15 | **in-flight** |
 | `sonnet-comedy-deep-1` | content / Divine Comedy deep-layer investigation | `beatrice-portinari` (NEW person), `theme-graduated-afterlife` (NEW theme), `theme-guide-through-underworld` (NEW theme) | 2026-05-15 | **in-flight** |
 | `sonnet-paradise-lost-1` | content / Paradise Lost cross-tradition investigation | `john-milton` (NEW person), `phase-6-042-paradise-lost` (NEW document), `theme-rebel-against-the-divine` (NEW theme) | 2026-05-15 | **in-flight** |
 | `sonnet-avesta-sources-2` | meta / ref-upgrade — Zoroastrian URL eval + Zurvanism enrichment | theme-zurvanite-heresy (BeDuhn 2020 + MASSIVE-WIN edges), tradition-manichaeism (BeDuhn 2020 T1 + co-formation revision), tradition-zoroastrianism (EIr specific article URL) | 2026-05-15 | **FINISHED** |

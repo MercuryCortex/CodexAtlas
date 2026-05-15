@@ -468,7 +468,7 @@ canonical-slug
 - `zemyna`
 - `zeus`
 
-### document (372 nodes)
+### document (373 nodes)
 
 - `document-kuntillet-ajrud-inscriptions`
 - `phase-1-001-kesh-temple-hymn`
@@ -782,6 +782,7 @@ canonical-slug
 - `phase-6-039-dark-night-of-the-soul`
 - `phase-6-040-bandarra-trovas`
 - `phase-6-041-camoes-os-lusiadas`
+- `phase-6-042-paradise-lost`
 - `phase-7-001-book-of-mormon`
 - `phase-7-002-kitab-i-iqan`
 - `phase-7-003-kitab-i-aqdas`
@@ -1007,7 +1008,7 @@ canonical-slug
 - `subterranean-chamber-great-pyramid`
 - `temple-of-inscriptions-palenque`
 
-### person (630 nodes)
+### person (631 nodes)
 
 - `aaron`
 - `abba-garima`
@@ -1088,6 +1089,7 @@ canonical-slug
 - `basavanna`
 - `basil-of-caesarea`
 - `basilides`
+- `beatrice-portinari`
 - `bede`
 - `ben-sira`
 - `benedict-of-nursia`
@@ -1716,7 +1718,7 @@ canonical-slug
 - `wheat-grain`
 - `yin-yang`
 
-### theme (301 nodes)
+### theme (304 nodes)
 
 - `364-day-solar-calendar`
 - `adam-kadmon`
@@ -1971,6 +1973,8 @@ canonical-slug
 - `theme-el-yahweh-merger`
 - `theme-exodus-hyksos-thesis`
 - `theme-gandharan-buddhism`
+- `theme-graduated-afterlife`
+- `theme-guide-through-underworld`
 - `theme-habiru-hebrew-origins`
 - `theme-hall-of-records-hypothesis`
 - `theme-heroes-paradise-island`
@@ -1982,6 +1986,7 @@ canonical-slug
 - `theme-paradise-etymology`
 - `theme-proto-indo-iranian-religion`
 - `theme-pyramid-as-resurrection-machine`
+- `theme-rebel-against-the-divine`
 - `theme-sacred-bloodline-claim`
 - `theme-sacred-geometry-giza`
 - `theme-satan-angra-mainyu-transfer`
@@ -2146,15 +2151,15 @@ canonical-slug
 
 | Refs | Dead target | Suggested canonical (existing) |
 |---:|---|---|
-| 5 | `phase-1-013-babylonian-theodicy` | `phase-1-011-great-hymn-to-aten` |
-| 4 | `tradition-minoan-religion` | `tradition-mystery-cults` |
-| 4 | `tradition-eastern-orthodoxy` | `tradition-mystery-cults` |
-| 3 | `tradition-medieval-christianity` | `tradition-kashmir-shaivism` |
-| 3 | `tradition-early-christianity` | `tradition-mystery-cults` |
-| 3 | `phase-4-007-new-testament-canon` | `phase-4-001-gospel-of-thomas` |
-| 3 | `phase-2-005-1-2-kings` | `phase-2-003-atharva-veda` |
+| 5 | `phase-1-013-babylonian-theodicy` | `phase-1-017-descent-of-inanna` |
+| 4 | `tradition-minoan-religion` | `tradition-anthroposophy` |
+| 4 | `tradition-eastern-orthodoxy` | `tradition-jyotisha-indian-astrology` |
+| 3 | `tradition-medieval-christianity` | `tradition-jyotisha-indian-astrology` |
+| 3 | `tradition-early-christianity` | `tradition-jyotisha-indian-astrology` |
+| 3 | `phase-4-007-new-testament-canon` | `phase-4-003-gospel-of-truth` |
+| 3 | `phase-2-005-1-2-kings` | `phase-2-008-homeric-epics` |
 | 3 | `divine-kingship-solar` | `divine-kingship` |
 | 2 | `yam-canaanite` | `astarte-canaanite` |
-| 2 | `tradition-lingayat` | `tradition-mystery-cults` |
-| 2 | `phase-2-004-1-2-chronicles` | `phase-2-005-hebrew-bible-j-source` |
+| 2 | `tradition-lingayat` | `tradition-anthroposophy` |
+| 2 | `phase-2-004-1-2-chronicles` | `phase-2-008-homeric-epics` |
 | 2 | `asclepius` | `asclepius-greek` |
