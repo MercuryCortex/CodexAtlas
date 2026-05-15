@@ -17,10 +17,11 @@ canonical-slug
 ## Currently resolved slugs (auto-seeded — every existing file)
 
 
-### deity (453 nodes)
+### deity (454 nodes)
 
 - `abathur`
 - `adamastor`
+- `adonis`
 - `adonis-hellenistic`
 - `aengus-og`
 - `aeshma`
@@ -1751,7 +1752,7 @@ canonical-slug
 - `wheat-grain`
 - `yin-yang`
 
-### theme (309 nodes)
+### theme (310 nodes)
 
 - `364-day-solar-calendar`
 - `adam-kadmon`
@@ -1951,6 +1952,7 @@ canonical-slug
 - `pseudoarchaeology`
 - `pseudonymity-as-strategy`
 - `psychopomp`
+- `psychostasia-soul-weighing`
 - `ragnarok-apocalyptic`
 - `realized-eschatology`
 - `reason-over-passion`
@@ -2191,23 +2193,23 @@ canonical-slug
 
 | Refs | Dead target | Suggested canonical (existing) |
 |---:|---|---|
-| 5 | `phase-1-013-babylonian-theodicy` | `phase-1-019-enuma-anu-enlil` |
-| 4 | `tradition-minoan-religion` | `tradition-samkhya-yoga` |
-| 4 | `tradition-eastern-orthodoxy` | `tradition-samkhya-yoga` |
-| 4 | `tradition-early-christianity` | `tradition-samkhya-yoga` |
-| 3 | `tradition-second-temple-judaism` | `tradition-spiritualism` |
-| 3 | `tradition-medieval-christianity` | `tradition-greco-buddhism` |
-| 3 | `tradition-hinduism` | `tradition-bon` |
-| 3 | `phase-4-007-new-testament-canon` | `phase-4-009-pistis-sophia` |
-| 3 | `phase-2-005-1-2-kings` | `phase-2-003-atharva-veda` |
+| 5 | `phase-1-013-babylonian-theodicy` | `phase-1-014-ugaritic-ritual-texts` |
+| 4 | `tradition-minoan-religion` | `tradition-egyptian` |
+| 4 | `tradition-eastern-orthodoxy` | `tradition-bhakti-vaishnavism` |
+| 4 | `tradition-early-christianity` | `tradition-bhakti-vaishnavism` |
+| 3 | `tradition-second-temple-judaism` | `tradition-bhakti-vaishnavism` |
+| 3 | `tradition-medieval-christianity` | `tradition-bhakti-vaishnavism` |
+| 3 | `tradition-hinduism` | `tradition-druze` |
+| 3 | `phase-4-007-new-testament-canon` | `phase-4-005-gospel-of-mary` |
+| 3 | `phase-2-005-1-2-kings` | `phase-2-008-homeric-epics` |
 | 3 | `divine-kingship-solar` | `divine-kingship` |
 | 2 | `yam-canaanite` | `astarte-canaanite` |
-| 2 | `tradition-judaism-sephardic` | `tradition-samkhya-yoga` |
-| 2 | `tradition-islam-shia` | `tradition-bon` |
-| 2 | `tradition-islam-mughal` | `tradition-samkhya-yoga` |
-| 2 | `tradition-hussitism` | `tradition-bon` |
-| 2 | `tradition-christianity-catholic` | `tradition-greco-buddhism` |
-| 2 | `tradition-cheondogyo` | `tradition-bon` |
-| 2 | `tradition-bahai` | `tradition-bon` |
+| 2 | `tradition-judaism-sephardic` | `tradition-bhakti-vaishnavism` |
+| 2 | `tradition-islam-shia` | `tradition-druze` |
+| 2 | `tradition-islam-mughal` | `tradition-druze` |
+| 2 | `tradition-hussitism` | `tradition-druze` |
+| 2 | `tradition-christianity-catholic` | `tradition-bhakti-vaishnavism` |
+| 2 | `tradition-cheondogyo` | `tradition-druze` |
+| 2 | `tradition-bahai` | `tradition-druze` |
 | 2 | `guru-arjan-dev-ji` | `guru-arjan` |
 | 2 | `asclepius` | `asclepius-greek` |
