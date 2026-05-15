@@ -4775,21 +4775,9 @@ VIEWS.atlas = {
 
     // --- view-controls toolbar (always — even when empty) ---
     document.getElementById('view-controls').innerHTML = `
-      <select class="btn btn-mini atlas-era-select" id="atlas-era-select" title="Filter by historical era window">
-        <option value="all"        ${eraVal(era) === 'all'        ? 'selected' : ''}>all eras</option>
-        <option value="prehistory" ${eraVal(era) === 'prehistory' ? 'selected' : ''}>−3500 to −1000 · prehistory + ANE</option>
-        <option value="axial"      ${eraVal(era) === 'axial'      ? 'selected' : ''}>−1000 to +100 · Axial + early</option>
-        <option value="late-ant"   ${eraVal(era) === 'late-ant'   ? 'selected' : ''}>+100 to +800 · Late Antiquity</option>
-        <option value="medieval"   ${eraVal(era) === 'medieval'   ? 'selected' : ''}>+800 to +1500 · Medieval</option>
-        <option value="modern"     ${eraVal(era) === 'modern'     ? 'selected' : ''}>+1500 to today · Early-modern + modern</option>
-      </select>
       <button class="btn btn-mini" id="btn-atlas-labels">labels: ${labelMode}</button>
       <button class="btn btn-mini" id="btn-atlas-recenter">recenter</button>
     `;
-    document.getElementById('atlas-era-select').onchange = (ev) => {
-      STATE.atlasEra = eraFromVal(ev.target.value);
-      setView('atlas');
-    };
     document.getElementById('btn-atlas-labels').onclick = () => {
       const order = ['off', 'hub', 'all'];
       STATE.atlasLabelMode = order[(order.indexOf(labelMode) + 1) % order.length];
@@ -4798,6 +4786,12 @@ VIEWS.atlas = {
     document.getElementById('btn-atlas-recenter').onclick = () => {
       if (_atlasMap) _atlasMap.easeTo({ center: [40, 28], zoom: 2.2, duration: 600 });
     };
+
+    // --- era-range slider (bottom of atlas pane, user 2026-05-15) ---
+    // Replaces the 6-preset <select> with a dual-handle range slider that lets
+    // the user freely trim the era window left/right. Phase-band gradient under
+    // the track shows BCE/CE/Axial/Late-Antique/Medieval/Modern at a glance.
+    _renderAtlasEraSlider(paneEl, era);
 
     // --- empty state ---
     const oldEmpty = paneEl.querySelector('.atlas-empty-card');
@@ -5512,6 +5506,136 @@ function _atlasHideSpider() {
   if (pointsSrc) pointsSrc.setData({ type: 'FeatureCollection', features: [] });
   if (linesSrc)  linesSrc.setData({ type: 'FeatureCollection', features: [] });
   _atlasSpiderActive = null;
+}
+
+// ============================================================
+// ERA-RANGE SLIDER (opus-map-era, 2026-05-15)
+// Dual-handle horizontal slider docked at the bottom of the atlas pane. Drag
+// either end to trim the era window; release commits the new STATE.atlasEra
+// and triggers a re-render (which re-filters the GeoJSON node source). Phase
+// bands under the track give visual context for ANE / Axial / Late-Antique /
+// Medieval / Modern.
+// ============================================================
+const _ERA_MIN = -3500;
+const _ERA_MAX =  2050;
+const _ERA_PHASES = [
+  // [from, to, color-token, label]
+  [-3500, -1000, '--era-phase-anc',   'ANE'],
+  [-1000,   100, '--era-phase-axial', 'Axial'],
+  [  100,   800, '--era-phase-late',  'Late Ant.'],
+  [  800,  1500, '--era-phase-med',   'Medieval'],
+  [ 1500,  2050, '--era-phase-mod',   'Modern'],
+];
+
+function _eraFmt(year) {
+  return year < 0 ? `${-year} BCE` : year < 100 ? `+${year} CE` : `${year} CE`;
+}
+
+function _renderAtlasEraSlider(paneEl, era) {
+  // Clear any prior slider (each setView('atlas') re-creates it).
+  const existing = paneEl.querySelector('.atlas-era-bar');
+  if (existing) existing.remove();
+
+  // Phase-band gradient stops (computed as % of the full range).
+  const span = _ERA_MAX - _ERA_MIN;
+  const pct  = (y) => `${((y - _ERA_MIN) / span * 100).toFixed(2)}%`;
+  const bandStops = _ERA_PHASES.map(([a, b, tok]) =>
+    `var(${tok}) ${pct(a)}, var(${tok}) ${pct(b)}`
+  ).join(', ');
+
+  const bar = document.createElement('div');
+  bar.className = 'atlas-era-bar';
+  bar.innerHTML = `
+    <div class="atlas-era-readout"><span id="atlas-era-lo">${_eraFmt(era.lo)}</span></div>
+    <div class="atlas-era-track" id="atlas-era-track">
+      <div class="atlas-era-bands" style="background: linear-gradient(to right, ${bandStops});"></div>
+      <div class="atlas-era-fill" id="atlas-era-fill"></div>
+      <div class="atlas-era-tick atlas-era-tick-zero" style="left: ${pct(0)};" title="0 / Common Era"></div>
+      <button class="atlas-era-handle atlas-era-handle-lo" id="atlas-era-handle-lo" data-handle="lo" title="Drag to trim the left edge"></button>
+      <button class="atlas-era-handle atlas-era-handle-hi" id="atlas-era-handle-hi" data-handle="hi" title="Drag to trim the right edge"></button>
+    </div>
+    <div class="atlas-era-readout"><span id="atlas-era-hi">${_eraFmt(era.hi)}</span></div>
+    <button class="atlas-era-reset btn btn-mini" id="atlas-era-reset" title="Reset to all eras">↺</button>
+  `;
+  paneEl.appendChild(bar);
+
+  const track   = bar.querySelector('#atlas-era-track');
+  const fillEl  = bar.querySelector('#atlas-era-fill');
+  const loHand  = bar.querySelector('#atlas-era-handle-lo');
+  const hiHand  = bar.querySelector('#atlas-era-handle-hi');
+  const loRead  = bar.querySelector('#atlas-era-lo');
+  const hiRead  = bar.querySelector('#atlas-era-hi');
+
+  function yearToPct(y) { return ((y - _ERA_MIN) / span) * 100; }
+  function pxToYear(px, trackRect) {
+    const x = Math.max(0, Math.min(trackRect.width, px));
+    return Math.round(_ERA_MIN + (x / trackRect.width) * span);
+  }
+  function paintFromState() {
+    const lo = era.lo, hi = era.hi;
+    loHand.style.left = `${yearToPct(lo)}%`;
+    hiHand.style.left = `${yearToPct(hi)}%`;
+    fillEl.style.left  = `${yearToPct(lo)}%`;
+    fillEl.style.right = `${100 - yearToPct(hi)}%`;
+    loRead.textContent = _eraFmt(lo);
+    hiRead.textContent = _eraFmt(hi);
+  }
+  paintFromState();
+
+  // Drag logic — pointer events so it works on touch too.
+  let dragging = null;   // 'lo' or 'hi' or null
+  let dragRect = null;
+
+  function startDrag(which, ev) {
+    dragging = which;
+    dragRect = track.getBoundingClientRect();
+    document.body.style.cursor = 'grabbing';
+    (which === 'lo' ? loHand : hiHand).setPointerCapture?.(ev.pointerId);
+    ev.preventDefault();
+  }
+  function moveDrag(ev) {
+    if (!dragging) return;
+    const px = ev.clientX - dragRect.left;
+    let y = pxToYear(px, dragRect);
+    // Clamp so handles don't cross (min 50-year gap).
+    if (dragging === 'lo') y = Math.min(y, era.hi - 50);
+    else                   y = Math.max(y, era.lo + 50);
+    era[dragging] = y;
+    paintFromState();
+  }
+  function endDrag() {
+    if (!dragging) return;
+    dragging = null;
+    document.body.style.cursor = '';
+    STATE.atlasEra = { lo: era.lo, hi: era.hi };
+    // Re-filter map without a full setView re-render (cheaper). The atlas-nodes
+    // source needs a fresh FeatureCollection because the era-filter runs in
+    // the geoNodes computation upstream; easiest is just setView('atlas').
+    setView('atlas');
+  }
+
+  loHand.addEventListener('pointerdown', (ev) => startDrag('lo', ev));
+  hiHand.addEventListener('pointerdown', (ev) => startDrag('hi', ev));
+  window.addEventListener('pointermove', moveDrag);
+  window.addEventListener('pointerup',   endDrag);
+  window.addEventListener('pointercancel', endDrag);
+
+  // Click anywhere on the track jumps the nearest handle.
+  track.addEventListener('pointerdown', (ev) => {
+    if (ev.target.classList.contains('atlas-era-handle')) return;
+    const rect = track.getBoundingClientRect();
+    const y    = pxToYear(ev.clientX - rect.left, rect);
+    const which = (Math.abs(y - era.lo) < Math.abs(y - era.hi)) ? 'lo' : 'hi';
+    era[which] = y;
+    paintFromState();
+    startDrag(which, ev);
+  });
+
+  // Reset button restores all-eras.
+  bar.querySelector('#atlas-era-reset').addEventListener('click', () => {
+    STATE.atlasEra = { lo: _ERA_MIN, hi: _ERA_MAX };
+    setView('atlas');
+  });
 }
 
 // Helpers for the era-window dropdown (kept local to Atlas).
