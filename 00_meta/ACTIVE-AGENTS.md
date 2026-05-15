@@ -4,10 +4,22 @@ _Hand-maintained. Each agent currently working in the vault appends a claim bloc
 
 ---
 
-## sonnet-arabic-aristotle-1 — content / Arabic-Aristotle-Scholasticism transmission chain — started 2026-05-15 — **IN-FLIGHT**
-- Owning: `05_events/event-toledo-translations-1085-1150.md` (NEW), `02_documents/_phase-5-medieval/phase-5-057-ibn-rushd-aristotle-commentaries.md` (NEW)
-- Goal: Toledo School of Translators event node + Ibn Rushd Aristotle commentaries document node; the four Islamic philosopher person nodes (al-kindi, al-farabi, ibn-sina, ibn-rushd) already have full body text covering the transmission chain
+## opus-native-pacific-1 — content / Native American + Pacific tradition nodes — started 2026-05-15 — **IN-FLIGHT**
+- Owning: `07_traditions/tradition-lakota.md` (NEW), `07_traditions/tradition-haudenosaunee.md` (NEW), `07_traditions/tradition-navajo.md` (NEW), `07_traditions/tradition-maori.md` (UPGRADE), `07_traditions/tradition-hawaiian.md` (UPGRADE), `03_deities/changing-woman.md` (NEW stub), `03_deities/white-buffalo-calf-woman.md` (NEW stub), `03_deities/papatuanuku.md` (UPGRADE)
+- Goal: Create foundational Native American (Lakota/Haudenosaunee/Navajo) + upgrade Pacific (Maori/Hawaiian) nodes with full MASSIVE WIN cross-tradition grids; Great Plains immanent-sacred parallel; Haudenosaunee → Founding Fathers political theology; Hózhó ↔ Maat/Asha cosmic-order; Ranginui/Papatūānuku sky-earth separation myth; Kumulipo evolutionary sequence
 - Status: in-flight
+- Last edit: `00_meta/ACTIVE-AGENTS.md`
+
+---
+
+## sonnet-arabic-aristotle-1 — content / Arabic-Aristotle-Scholasticism transmission chain — started 2026-05-15 — **FINISHED 2026-05-15**
+- Owning: `05_events/event-toledo-translations-1085-1150.md` (NEW), `02_documents/_phase-5-medieval/phase-5-057-ibn-rushd-aristotle-commentaries.md` (NEW)
+- Goal: Toledo School of Translators event node + Ibn Rushd Aristotle commentaries document node; the four Islamic philosopher person nodes (al-kindi, al-farabi, ibn-sina, ibn-rushd) already had full body text covering the transmission chain
+- Status: finished
+- Delivered:
+  - **`event-toledo-translations-1085-1150.md`** (NEW, metadata) — 1085–1150 CE; Alfonso VI reconquest of Toledo → Arabic-to-Latin translation enterprise; Gerard of Cremona (~87 works incl. Avicenna *Canon* + Aristotle corpus), Dominicus Gundissalinus + John of Spain (Avicenna *Shifāʾ* + al-Farabi), Michael Scot (Averroes Long Commentaries), Herman the German. Full chain: Greek → Baghdad Bayt al-Ḥikma → Toledo → Paris/Bologna → Aquinas → 1277 Condemnations. MASSIVE WIN: Scholasticism is Arabic-mediated Aristotelianism; Aquinas couldn't have written the Summa without Averroes and Avicenna; "clash of civilizations" framing collapses. Counter-intuitive finding: Averroes's books burned in Córdoba 1195 = same decade Latin translations began at Paris. Wired to all four Islamic philosophers, thomas-aquinas, aristotle, tradition-islam, tradition-neoplatonism, phase-5-044, phase-5-046, phase-5-048, event-arabic-harranian-hermetica, event-closure-platonic-academy-529. 4 Tier-1 refs (Burnett 1992, Lindberg 2007, Gutas 1998, Haskins 1924).
+  - **`phase-5-057-ibn-rushd-aristotle-commentaries.md`** (NEW, metadata) — c. 1169–1195 CE; three-tier commentary system (Short *talkhīṣ* / Middle *tafsīr* / Long *sharḥ kabīr*); five Long Commentaries on *Posterior Analytics*, *Physics*, *De Caelo*, *De Anima*, *Metaphysics* translated into Latin by Michael Scot and Herman the German; became the standard European Aristotelian commentary tradition for 100+ years; unicity of intellect doctrine → Latin Averroism → Condemnations of 1277; Aquinas "the Commentator" = Averroes (503 citations); Aquinas *De Unitate Intellectus* (1270) direct refutation; Hebrew survival pathway (Moses ibn Tibbon, Samuel ben Judah). 5 Tier-1 refs (Leaman 1988, Davidson 1992, Hasse 2016, Taylor 2009, Butterworth 2001).
+- Build: **2175 nodes · 12,775 edges · 0 YAML errors**
 - Last edit: `00_meta/ACTIVE-AGENTS.md`
 
 ---
