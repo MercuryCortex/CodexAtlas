@@ -18,18 +18,18 @@ Format:
 
 ---
 
-## 🚦 In-flight claims at a glance (current as of 2026-05-15 — sonnet-zoroastrian-deepen-1 in-flight)
+## 🚦 In-flight claims at a glance (current as of 2026-05-15 — sonnet-zoroastrian-deepen-1 FINISHED)
 
 | Handle | Scope tag | Owns (high level) | Started |
 |---|---|---|---|
 | `sonnet-zoroastrian-1` | content / Zoroastrian-Jewish transmission deep research | 3 MASSIVE-WIN nodes: theme-zoroastrian-jewish-exchange + theme-paradise-etymology + theme-satan-angra-mainyu-transfer; edge sweeps on 6 existing nodes — **FINISHED 2026-05-15** | 2026-05-15 |
-| `sonnet-zoroastrian-deepen-1` | content / Zoroastrian stub deepening | zarathustra.md (full upgrade), tradition-zoroastrianism.md (full body), phase-2-002-gathas-of-zarathustra.md (cosmological-questions + Nietzsche sections), NEW: theme-asha-druj-cosmic-opposition.md — **IN-FLIGHT 2026-05-15** | 2026-05-15 |
+| `sonnet-zoroastrian-deepen-1` | content / Zoroastrian stub deepening | zarathustra.md (full upgrade), tradition-zoroastrianism.md (full body), phase-2-002-gathas-of-zarathustra.md (cosmological-questions + Nietzsche sections), NEW: theme-asha-druj-cosmic-opposition.md — **FINISHED 2026-05-15** | 2026-05-15 |
 
-## sonnet-zoroastrian-deepen-1 — content / Zoroastrian stub deepening — started 2026-05-15
+## sonnet-zoroastrian-deepen-1 — content / Zoroastrian stub deepening — started 2026-05-15 — **FINISHED 2026-05-15**
 - Owning: 04_persons/zarathustra.md, 07_traditions/tradition-zoroastrianism.md, 02_documents/_phase-2-axial-age/phase-2-002-gathas-of-zarathustra.md, 06_themes/theme-asha-druj-cosmic-opposition.md (NEW)
 - Goal: Deep scholarly upgrade of all 4 Zoroastrian stub nodes; dates dispute, Nietzsche misappropriation, Asha/Druj cosmic opposition, full historical phases
-- Status: in-flight
-- Last edit: 00_meta/ACTIVE-AGENTS.md
+- Status: finished
+- Last edit: 00_meta/STATUS.md
 | `sonnet-abraham-moses-1` | content / Abraham-Moses gap deep research | 3 new nodes (theme-lex-talionis-covenant-code, event-mitanni-kingdom-c1500-1340-bce, theme-habiru-hebrew-origins) + Amarna Letters edge upgrades — **FINISHED 2026-05-15** | 2026-05-15 |
 | `sonnet-abraham-moses-2` | content / Abraham-Moses gap full expansion | 10 new nodes: event-hyksos-period, event-hyksos-expulsion-1550-bce, event-amarna-period-1353-1336, theme-akhenaten-moses-monotheism-thesis, theme-exodus-hyksos-thesis, theme-el-yahweh-merger, theme-baal-set-syncretism, el-shaddai (deity), document-kuntillet-ajrud-inscriptions, ahmose-i (person) — **FINISHED 2026-05-15** | 2026-05-15 |
 
