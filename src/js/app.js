@@ -4668,11 +4668,8 @@ let _atlasMap = null;
 let _atlasMarkers = new Map();       // (legacy, kept for back-compat; unused by circle-layer path)
 let _atlasNodesById = new Map();     // node-id → vault node (for hover-trail neighbor lookup)
 let _atlasHoveredId = null;          // currently-hovered node id (debounce trail rebuild)
-let _atlasClusterPopup = null;       // (legacy) cluster-list popup — replaced by spiderfy
-let _atlasSpiderActive = null;       // cluster center [lng,lat] when a spider is open, else null
-let _atlasSpiderRecentering = false; // true while map is auto-easing to center a cluster for spider
+let _atlasClusterPopup = null;       // (legacy, unused — kept var to avoid breaking late references)
 let _atlasLockedId = null;           // node id whose trails/highlight stay visible across hover (sticky-select via click)
-let _atlasPreSpiderState = null;     // (legacy, spider system removed 2026-05-15)
 let _atlasNodeJitter = new Map();    // id → { angle, ring, perRing, groupSize, latRad } — stable per-node jitter info
 let _atlasNodesData  = new Map();    // id → vault node ref (replaces _atlasNodesById, broader use)
 let _atlasZoomFcHandler = null;      // throttled zoomend handler that re-computes the jittered FC
@@ -4916,12 +4913,11 @@ VIEWS.atlas = {
       // should zoom to 100%".
       _atlasMap.on('dblclick', (ev) => {
         const onFeature = _atlasMap.queryRenderedFeatures(ev.point, {
-          layers: ['atlas-nodes-circles', 'atlas-clusters', 'atlas-spider-circles']
+          layers: ['atlas-nodes-circles', 'atlas-clusters']
         });
         if (onFeature && onFeature.length) return;  // let default dbl-click-zoom run
         ev.preventDefault();
-        if (_atlasSpiderActive) _atlasHideSpider();
-        _atlasPreSpiderState = null;
+        if (_atlasLockedId) { _atlasLockedId = null; _atlasHideHoverTrails(); }
         _atlasMap.easeTo({ center: [40, 28], zoom: 2.2, duration: 600 });
       });
 
@@ -5223,198 +5219,41 @@ VIEWS.atlas = {
           const features = _atlasMap.queryRenderedFeatures(ev.point, { layers: ['atlas-clusters'] });
           if (!features.length) return;
           const clusterId    = features[0].properties.cluster_id;
-          const pointCount   = features[0].properties.point_count;
           const clusterCoord = features[0].geometry.coordinates;
           const source       = _atlasMap.getSource('atlas-nodes');
           const currentZoom  = _atlasMap.getZoom();
-          // Strategy: try to zoom in until the cluster expands. If the points share
-          // identical coords (which our vault has — many docs at the same city),
-          // expansion zoom returns current+epsilon and zooming forever wouldn't help.
-          // In that case: SPIDERFY — fan the points out around the click center as
-          // offset markers connected by leader lines back to the center. (User's
-          // explicit ask 2026-05-15: "the nodes expand, even if you need to spread
-          // them from the same position by X position".)
-          // SPIDER-ON-CLICK with simultaneous zoom-IN to near-max (user
-          // 2026-05-15: "the zoom needs to go BIG like almost full zoom").
-          // Target maxZoom − 0.5 (~34× readout).
-          //
-          // BUG GUARD (2026-05-15): MapLibre v5 fires BOTH the legacy callback
-          // AND the new Promise for getClusterLeaves. Without leavesHandled,
-          // the second fire overwrites _atlasPreSpiderState with a mid-animation
-          // center → empty-click then eases "back" to the wrong place.
-          //
-          // CRITICAL ORDERING: snapshot the pre-spider state SYNCHRONOUSLY
-          // before any leaves callback can run, so empty-click always lands at
-          // the user's true starting vantage.
-          _atlasPreSpiderState = { center: _atlasMap.getCenter(), zoom: currentZoom };
-          let leavesHandled = false;
-          const TARGET_SPIDER_ZOOM = _atlasMap.getMaxZoom() - 0.5;
-          const onLeaves = (leaves) => {
-            if (leavesHandled || !leaves || !leaves.length) return;
-            leavesHandled = true;
-            const targetZ = Math.max(currentZoom, TARGET_SPIDER_ZOOM);
-            const willMove = Math.abs(targetZ - currentZoom) > 0.1
-                          || _atlasMap.getCenter().distanceTo(new maplibregl.LngLat(clusterCoord[0], clusterCoord[1])) > 100;
-            if (willMove) {
-              _atlasSpiderRecentering = true;
-              _atlasMap.easeTo({ center: clusterCoord, zoom: targetZ, duration: 420 });
-              _atlasMap.once('moveend', () => {
-                _atlasSpiderRecentering = false;
-                _atlasShowSpider(clusterCoord, leaves);
-              });
-            } else {
-              _atlasShowSpider(clusterCoord, leaves);
-            }
+          // NEW FLOW 2026-05-15: spider system removed. Cluster click just eases
+          // the map to the zoom level where this cluster naturally expands. As
+          // the map zooms, zoomend re-fires _atlasZoomFcHandler which re-runs
+          // _atlasComputeFC at the new zoom → co-located members spread further
+          // → cluster splits visually. ONE flow, ONE visual style, no glitches.
+          const handleExpZoom = (targetZoom) => {
+            const want = (typeof targetZoom === 'number' && isFinite(targetZoom))
+              ? Math.min(_atlasMap.getMaxZoom(), Math.max(currentZoom + 1.5, targetZoom + 0.4))
+              : Math.min(_atlasMap.getMaxZoom(), currentZoom + 2.5);
+            _atlasMap.easeTo({ center: clusterCoord, zoom: want, duration: 520 });
           };
-          const result = source.getClusterLeaves(clusterId, pointCount, 0, (err, leaves) => {
-            // v4-style callback (still supported by MapLibre v5 for back-compat)
-            if (err) { console.warn('[atlas] getClusterLeaves cb err:', err); return; }
-            onLeaves(leaves);
+          const result = source.getClusterExpansionZoom(clusterId, (err, z) => {
+            if (err) { console.warn('[atlas] cluster expansion zoom err:', err); handleExpZoom(); return; }
+            handleExpZoom(z);
           });
-          // v5-style Promise (preferred). If both fire we just call onLeaves twice;
-          // it's idempotent because _atlasShowSpider re-sets the spider source data.
           if (result && typeof result.then === 'function') {
-            result.then(onLeaves).catch(err => console.warn('[atlas] getClusterLeaves promise err:', err));
+            result.then(handleExpZoom).catch(() => handleExpZoom());
           }
         });
 
-        // ---- SPIDER (expanded-cluster) source + layers ----
-        // Created once, kept empty until a cluster is spider-expanded.
-        _atlasMap.addSource('atlas-spider-lines', {
-          type: 'geojson',
-          data: { type: 'FeatureCollection', features: [] }
-        });
-        _atlasMap.addSource('atlas-spider-points', {
-          type: 'geojson',
-          data: { type: 'FeatureCollection', features: [] }
-        });
-        // Leader lines (rendered UNDER spider points). Gold-soft, slim.
-        _atlasMap.addLayer({
-          id: 'atlas-spider-leaders',
-          source: 'atlas-spider-lines',
-          type: 'line',
-          layout: { 'line-cap': 'round' },
-          paint: {
-            'line-color': _atlasToken('--gold-soft', '#a87f3e'),
-            'line-width': 1.1,
-            'line-opacity': 0.6,
-            'line-blur': 0.3
-          }
-        });
-        // Spider points — small dots, generous gold ring so they read as
-        // "expanded cluster member". Kept compact so the labels can breathe.
-        _atlasMap.addLayer({
-          id: 'atlas-spider-circles',
-          source: 'atlas-spider-points',
-          type: 'circle',
-          paint: {
-            'circle-radius': ['+', 4, ['*', 0.6, ['sqrt', ['coalesce', ['get', 'deg'], 0]]]],
-            'circle-color': ['get', 'family_color'],
-            'circle-stroke-width': 1.5,
-            'circle-stroke-color': _atlasToken('--gold', '#d4a55a'),
-            'circle-opacity': 0.95
-          }
-        });
-        // Spider TEXT LABELS — every spider point shows its title (user 2026-05-15:
-        // "displaying text — so we can select pick and zoom out easily"). Hub-tier
-        // labels render first via symbol-sort-key so they win declutter.
-        try {
-          _atlasMap.addLayer({
-            id: 'atlas-spider-labels',
-            source: 'atlas-spider-points',
-            type: 'symbol',
-            layout: {
-              'text-field': ['get', 'title'],
-              'text-font': ['Noto Sans Regular'],
-              'text-size': 11,
-              'text-anchor': 'left',
-              'text-offset': [0.9, 0],
-              'text-allow-overlap': true,        // spider items are spaced; we WANT all labels visible
-              'text-ignore-placement': true,
-              'symbol-sort-key': ['+', ['coalesce', ['get', 'tier'], 3], ['*', -0.001, ['get', 'deg']]]
-            },
-            paint: {
-              'text-color': _atlasToken('--text-0', '#f1ede2'),
-              'text-halo-color': _atlasToken('--bg-0', '#07090f'),
-              'text-halo-width': 1.6
-            }
-          });
-        } catch (e) {
-          console.warn('[atlas] spider labels skipped:', e.message);
-        }
-
-        // Spider hover/click — same UX as the underlying circles.
-        _atlasMap.on('mousemove', 'atlas-spider-circles', (ev) => {
-          if (!ev.features || !ev.features.length) return;
-          const f  = ev.features[0];
-          const id = f.properties.id;
-          const n  = _atlasNodesById.get(id);
-          if (!n) return;
-          _atlasMap.getCanvas().style.cursor = 'pointer';
-          if (_atlasHoveredId !== id) {
-            _atlasHoveredId = id;
-            _atlasShowHoverTrails(id);  // also dims/highlights underneath circle + spider layers
-          }
-          showTooltip(
-            `${tooltipThumb(n)}<div class="ttitle">${n.title}</div>
-             <div class="tmeta">${n.type}${n.family ? ' · ' + n.family : ''}${n.geo.label ? ' · ' + n.geo.label : ''}</div>
-             <div class="tmeta">${fmtDateRange(n.date_earliest, n.date_latest) || '—'}</div>`, ev.originalEvent);
-        });
-        _atlasMap.on('mouseleave', 'atlas-spider-circles', () => {
-          _atlasMap.getCanvas().style.cursor = '';
-          _atlasHoveredId = null;
-          hideTooltip();
-          // Same sticky-selection logic as on the main circle layer.
-          if (_atlasLockedId) _atlasShowHoverTrails(_atlasLockedId);
-          else _atlasHideHoverTrails();
-        });
-        _atlasMap.on('click', 'atlas-spider-circles', (ev) => {
-          if (!ev.features || !ev.features.length) return;
-          const id = ev.features[0].properties.id;
-          selectNode(id, true);
-          _atlasLockedId = id;          // lock through the spider too
-          _atlasHideSpider();           // close the spider; locked trails stay on main layer
-          _atlasShowHoverTrails(id);
-        });
-
-        // Background click (anywhere off a feature) clears EVERYTHING and eases
-        // back to the natural state the user was viewing BEFORE they opened the
-        // spider (user 2026-05-15: "if after zoom once we click empty the
-        // bubbles zoom back to their natural state").
+        // Background click (anywhere off a feature) just clears any sticky
+        // selection. No spider state to manage anymore (removed 2026-05-15).
         _atlasMap.on('click', (ev) => {
           const onFeature = _atlasMap.queryRenderedFeatures(ev.point, {
-            layers: ['atlas-nodes-circles', 'atlas-spider-circles', 'atlas-clusters']
+            layers: ['atlas-nodes-circles', 'atlas-clusters']
           });
           if (onFeature.length) return;
-          const hadSpider = !!_atlasSpiderActive;
-          if (_atlasSpiderActive) _atlasHideSpider();
           if (_atlasLockedId) {
             _atlasLockedId = null;
             _atlasHideHoverTrails();
           }
-          // Ease back to the pre-spider vantage so the user resumes scanning
-          // the overview without manually zooming out.
-          if (hadSpider && _atlasPreSpiderState) {
-            const { center, zoom } = _atlasPreSpiderState;
-            _atlasSpiderRecentering = true;   // suppress hide-on-zoomstart
-            _atlasMap.easeTo({ center, zoom, duration: 500 });
-            _atlasMap.once('moveend', () => { _atlasSpiderRecentering = false; });
-            _atlasPreSpiderState = null;
-          }
         });
-        // Ignore the synthetic zoom/move events that fire while we're auto-recentering
-        // a cluster to make room for the spider expansion (item 3 polish, 2026-05-15).
-        // User manually pans / wheel-zooms while a spider is open: collapse the
-        // spider AND drop the pre-spider snapshot (user took control of the
-        // view — they don't want empty-click to override their new vantage).
-        const _atlasManualMoveCloseSpider = () => {
-          if (_atlasSpiderActive && !_atlasSpiderRecentering) {
-            _atlasHideSpider();
-            _atlasPreSpiderState = null;
-          }
-        };
-        _atlasMap.on('zoomstart', _atlasManualMoveCloseSpider);
-        _atlasMap.on('dragstart', _atlasManualMoveCloseSpider);
       }
     };
 
@@ -5437,10 +5276,21 @@ VIEWS.atlas = {
       _atlasMap.off('zoomend', _atlasEndHandler);
       _atlasMap.off('moveend', _atlasEndHandler);
     }
+    if (_atlasZoomFcHandler) _atlasMap.off('zoomend', _atlasZoomFcHandler);
     _atlasZoomHandler = () => { _atlasUpdateLOD(); _atlasUpdateZoomMeter(); };
     _atlasEndHandler  = () => _atlasDeclutter();
+    // Re-build the jittered FeatureCollection on every zoomend so co-located
+    // docs spread apart smoothly as the user zooms in (one-system flow, no
+    // separate spider). The recompute is O(N) over ~1300 features — ~5 ms.
+    _atlasZoomFcHandler = () => {
+      const src = _atlasMap.getSource('atlas-nodes');
+      if (src && _atlasNodeJitter.size) {
+        src.setData(_atlasComputeFC(_atlasMap.getZoom(), geoNodes, tierById));
+      }
+    };
     _atlasMap.on('zoom', _atlasZoomHandler);
     _atlasMap.on('zoomend', _atlasEndHandler);
+    _atlasMap.on('zoomend', _atlasZoomFcHandler);
     _atlasMap.on('moveend', _atlasEndHandler);
 
     // Wire zoom-meter buttons to MapLibre
@@ -5544,11 +5394,6 @@ function _atlasShowHoverTrails(id) {
     _atlasMap.setPaintProperty('atlas-nodes-circles', 'circle-opacity', opacityExpr);
     _atlasMap.setPaintProperty('atlas-nodes-circles', 'circle-stroke-color', strokeExpr);
   }
-  if (_atlasMap.getLayer && _atlasMap.getLayer('atlas-spider-circles')) {
-    _atlasMap.setPaintProperty('atlas-spider-circles', 'circle-opacity', opacityExpr);
-    // Spider layer already uses --gold as default stroke; brighten further on hover.
-    _atlasMap.setPaintProperty('atlas-spider-circles', 'circle-stroke-color', strokeExpr);
-  }
 }
 function _atlasHideHoverTrails() {
   if (!_atlasMap) return;
@@ -5558,112 +5403,10 @@ function _atlasHideHoverTrails() {
     _atlasMap.setPaintProperty('atlas-nodes-circles', 'circle-opacity', 0.95);
     _atlasMap.setPaintProperty('atlas-nodes-circles', 'circle-stroke-color', 'rgba(255,255,255,0.20)');
   }
-  if (_atlasMap.getLayer && _atlasMap.getLayer('atlas-spider-circles')) {
-    _atlasMap.setPaintProperty('atlas-spider-circles', 'circle-opacity', 0.95);
-    _atlasMap.setPaintProperty('atlas-spider-circles', 'circle-stroke-color', _atlasToken('--gold', '#d4a55a'));
-  }
 }
 
-// ---- SPIDERFY: fan a cluster's leaves around the click center as offset markers.
-// Replaces the prior cluster-list popup; gives spatial separation that lets the
-// user click individual nodes even when their geocoded coords are identical.
-// Layout: ring(s) of N items around centerLngLat. Pixel-radius constant per zoom
-// (computed via map.project / map.unproject) so the spread feels right at any
-// zoom. Multi-ring spiral when N > 8 to avoid overlap. ----
-function _atlasShowSpider(centerLngLat, leaves) {
-  if (!_atlasMap) return;
-  const pointsSrc = _atlasMap.getSource('atlas-spider-points');
-  const linesSrc  = _atlasMap.getSource('atlas-spider-lines');
-  if (!pointsSrc || !linesSrc) return;
-
-  const N = leaves.length;
-  // Compute layout constants up-front so we know the outer-ring pixel-radius
-  // (used both for layout below AND for the viewport-edge check at the top).
-  const baseRadius   = N <= 6 ? 46 : 56;
-  const radiusStep   = 38;
-  const itemsPerRing = N <= 8 ? N : 10;
-  const ringCount    = Math.ceil(N / itemsPerRing);
-  const outerRadius  = baseRadius + (ringCount - 1) * radiusStep;
-
-  // Item 3 polish: if the cluster sits within `outerRadius + margin` pixels of any
-  // viewport edge, smoothly recenter the map on it first — otherwise the spider
-  // ring would overflow off-screen. The recenter is gated by _atlasSpiderRecentering
-  // so the zoomstart/dragstart hide-handlers don't fire during the animation.
-  const margin   = 24;
-  const centerPx = _atlasMap.project(centerLngLat);
-  const rect     = _atlasMap.getContainer().getBoundingClientRect();
-  const needsRecenter =
-    centerPx.x < outerRadius + margin ||
-    centerPx.x > rect.width  - outerRadius - margin ||
-    centerPx.y < outerRadius + margin ||
-    centerPx.y > rect.height - outerRadius - margin;
-  if (needsRecenter && !_atlasSpiderRecentering) {
-    _atlasSpiderRecentering = true;
-    _atlasMap.once('moveend', () => {
-      _atlasSpiderRecentering = false;
-      // Recompute after the move (the projected center is now the viewport center).
-      _atlasShowSpider(centerLngLat, leaves);
-    });
-    _atlasMap.easeTo({ center: centerLngLat, duration: 380 });
-    return;
-  }
-
-  const pointFeatures = [];
-  const lineFeatures  = [];
-
-  leaves.forEach((leaf, i) => {
-    const ringIdx  = Math.floor(i / itemsPerRing);
-    const inRing   = i % itemsPerRing;
-    const perRing  = (ringIdx === 0 && N < itemsPerRing) ? N : itemsPerRing;
-    const ringR    = baseRadius + ringIdx * radiusStep;
-    // Stagger alternating rings by half-step so the second ring sits between gaps.
-    const angleOff = (ringIdx % 2) ? (Math.PI / perRing) : 0;
-    const angle    = (inRing / perRing) * 2 * Math.PI - Math.PI / 2 + angleOff;
-    const px = centerPx.x + ringR * Math.cos(angle);
-    const py = centerPx.y + ringR * Math.sin(angle);
-    const ll = _atlasMap.unproject([px, py]);
-    const coord = [ll.lng, ll.lat];
-
-    pointFeatures.push({
-      type: 'Feature',
-      geometry: { type: 'Point', coordinates: coord },
-      properties: { ...leaf.properties }
-    });
-    lineFeatures.push({
-      type: 'Feature',
-      geometry: { type: 'LineString', coordinates: [centerLngLat, coord] }
-    });
-  });
-
-  pointsSrc.setData({ type: 'FeatureCollection', features: pointFeatures });
-  linesSrc.setData({ type: 'FeatureCollection', features: lineFeatures });
-  _atlasSpiderActive = centerLngLat;
-  // Hide the underlying cluster + node layers so they don't visually clash
-  // with the spider on top (user 2026-05-15: "respective nodes need to hide
-  // during that time behind them").
-  _atlasToggleUnderlyingLayers('none');
-}
-function _atlasHideSpider() {
-  if (!_atlasMap) return;
-  const pointsSrc = _atlasMap.getSource('atlas-spider-points');
-  const linesSrc  = _atlasMap.getSource('atlas-spider-lines');
-  if (pointsSrc) pointsSrc.setData({ type: 'FeatureCollection', features: [] });
-  if (linesSrc)  linesSrc.setData({ type: 'FeatureCollection', features: [] });
-  _atlasSpiderActive = null;
-  // Restore the underlying cluster + node layers.
-  _atlasToggleUnderlyingLayers('visible');
-}
-
-// Show/hide the underlying cluster + node layers when the spider opens/closes.
-function _atlasToggleUnderlyingLayers(visibility) {
-  if (!_atlasMap || !_atlasMap.getLayer) return;
-  const layers = ['atlas-clusters', 'atlas-cluster-counts', 'atlas-nodes-circles', 'atlas-node-labels'];
-  for (const id of layers) {
-    if (_atlasMap.getLayer(id)) {
-      try { _atlasMap.setLayoutProperty(id, 'visibility', visibility); } catch (e) { /* ignore */ }
-    }
-  }
-}
+// Spider system removed 2026-05-15 — replaced by zoom-aware jitter on the
+// single atlas-nodes layer. See _atlasComputeFC + _atlasZoomFcHandler above.
 
 // ============================================================
 // ERA-RANGE SLIDER (opus-map-era, 2026-05-15)
