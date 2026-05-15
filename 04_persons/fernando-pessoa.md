@@ -9,7 +9,7 @@ region: "Portugal (Lisbon) and South Africa (Durban, schooling 1896–1905)"
 date-born: 1888
 date-died: 1935
 historicity: "documented"
-texts-authored: ["[[phase-7-037-pessoa-mensagem]]", "*Livro do Desassossego* (The Book of Disquiet) — posthumous, first integral publication 1982", "*Poemas de Fernando Pessoa* (lifetime: occasional periodical publications)", "the entire posthumous *Espólio Pessoa* (~25,000 pages, Biblioteca Nacional de Portugal)", "horoscope-corpus (extensive astrological notebooks)", "Pessoa's translation of [[helena-blavatsky|Helena Blavatsky]]'s *The Voice of the Silence* into Portuguese (early 1910s)"]
+texts-authored: ["[[phase-7-037-pessoa-mensagem]]", "*Livro do Desassossego* (The Book of Disquiet) — posthumous, first integral publication 1982", "*Poemas de Fernando Pessoa* (lifetime: occasional periodical publications)", "the entire posthumous *Espólio Pessoa* (~25,000 pages, Biblioteca Nacional de Portugal)", "horoscope-corpus (extensive astrological notebooks)", "Pessoa's translation of Helena Blavatsky's *The Voice of the Silence* into Portuguese (early 1910s)"]
 originator-of: ["the heteronymic literary-method (the systematic creation of multiple fictive author-personalities with distinct biographies, aesthetic programmes, and metaphysics)"]
 events-participated: ["[[event-aleister-crowley-boca-do-inferno-1930]] (September 1930 staged faked-disappearance of Aleister Crowley at the Boca do Inferno, Cascais — Pessoa participated as collaborator) — not yet stubbed", "[[event-quinta-da-regaleira-construction-1904-1910]] (contemporaneous Sintra esoteric ferment; Pessoa visited Sintra often)"]
 mentioned-in: []
