@@ -4347,25 +4347,77 @@ VIEWS.atlas = {
       if (_atlasMap.getSource('atlas-nodes')) {
         _atlasMap.getSource('atlas-nodes').setData(featureCollection);
       } else {
-        _atlasMap.addSource('atlas-nodes', { type: 'geojson', data: featureCollection });
+        // CLUSTERED source — at low zoom, co-located points group into a single
+        // "stack" circle. Click a cluster to zoom in and expand. Pattern from
+        // https://maplibre.org/maplibre-gl-js/docs/examples/create-and-style-clusters/
+        _atlasMap.addSource('atlas-nodes', {
+          type: 'geojson',
+          data: featureCollection,
+          cluster: true,
+          clusterRadius: 36,
+          clusterMaxZoom: 5
+        });
+
+        // Cluster layer — gold ringed circles sized by # of points inside.
+        _atlasMap.addLayer({
+          id: 'atlas-clusters',
+          type: 'circle',
+          source: 'atlas-nodes',
+          filter: ['has', 'point_count'],
+          paint: {
+            'circle-color': _atlasToken('--gold-soft', '#a87f3e'),
+            'circle-radius': [
+              'step', ['get', 'point_count'],
+              12,
+              5, 16,
+              10, 22,
+              25, 28
+            ],
+            'circle-stroke-width': 2,
+            'circle-stroke-color': _atlasToken('--gold', '#d4a55a'),
+            'circle-opacity': 0.85
+          }
+        });
+
+        // Cluster-count labels (numeric). Symbol layer needs PBF glyphs; if the
+        // style has none configured this layer is added but produces a console
+        // warning at render time — harmless, the cluster circle alone reads.
+        try {
+          _atlasMap.addLayer({
+            id: 'atlas-cluster-counts',
+            type: 'symbol',
+            source: 'atlas-nodes',
+            filter: ['has', 'point_count'],
+            layout: {
+              'text-field': ['get', 'point_count_abbreviated'],
+              'text-size': 11,
+              'text-allow-overlap': true,
+              'text-ignore-placement': true
+            },
+            paint: { 'text-color': _atlasToken('--bg-0', '#07090f') }
+          });
+        } catch (e) {
+          console.warn('[atlas] cluster-count labels unavailable (no glyphs):', e.message);
+        }
+
+        // Individual (unclustered) point layer.
         _atlasMap.addLayer({
           id: 'atlas-nodes-circles',
           type: 'circle',
           source: 'atlas-nodes',
+          filter: ['!', ['has', 'point_count']],
           paint: {
             'circle-radius': ['get', 'dotSize'],
             'circle-color': ['get', 'family_color'],
             'circle-stroke-width': 1,
             'circle-stroke-color': 'rgba(255,255,255,0.20)',
             'circle-opacity': 0.95,
-            // Hover state: hovered + neighbors stay bright, others dim.
-            // Driven by setPaintProperty calls from the hover handlers below.
             'circle-stroke-color-transition': { duration: 140 },
             'circle-opacity-transition': { duration: 140 }
           }
         });
 
-        // Hover — cursor + tooltip + trails (matches the MapLibre hover-popup example).
+        // --- Hover/click on individual circles ---
         _atlasMap.on('mousemove', 'atlas-nodes-circles', (ev) => {
           if (!ev.features || !ev.features.length) return;
           const f  = ev.features[0];
@@ -4388,12 +4440,31 @@ VIEWS.atlas = {
           hideTooltip();
           _atlasHideHoverTrails();
         });
-
-        // Click — open the detail panel.
         _atlasMap.on('click', 'atlas-nodes-circles', (ev) => {
           if (!ev.features || !ev.features.length) return;
           const id = ev.features[0].properties.id;
           selectNode(id, true);
+        });
+
+        // --- Hover/click on clusters: cursor pointer, click zooms in ---
+        _atlasMap.on('mouseenter', 'atlas-clusters', () => {
+          _atlasMap.getCanvas().style.cursor = 'pointer';
+        });
+        _atlasMap.on('mouseleave', 'atlas-clusters', () => {
+          _atlasMap.getCanvas().style.cursor = '';
+        });
+        _atlasMap.on('click', 'atlas-clusters', (ev) => {
+          const features = _atlasMap.queryRenderedFeatures(ev.point, { layers: ['atlas-clusters'] });
+          if (!features.length) return;
+          const clusterId = features[0].properties.cluster_id;
+          const source = _atlasMap.getSource('atlas-nodes');
+          source.getClusterExpansionZoom(clusterId).then(zoom => {
+            _atlasMap.easeTo({
+              center: features[0].geometry.coordinates,
+              zoom: zoom + 0.2,
+              duration: 500
+            });
+          }).catch(() => { /* MapLibre versions vary; silent fallback */ });
         });
       }
     };
