@@ -5162,24 +5162,32 @@ VIEWS.atlas = {
           // offset markers connected by leader lines back to the center. (User's
           // explicit ask 2026-05-15: "the nodes expand, even if you need to spread
           // them from the same position by X position".)
-          // SPIDER-ON-CLICK (user 2026-05-15: "we click and it just zooms to
-          // 30% — but expands all nodes small-sized and with generous spaces
-          // between them and displaying text"). Open the spider directly with
-          // labels visible; no deep zoom-in. Spider auto-recenters to fit the
-          // ring in the viewport. Empty-click collapses and easeTo's back.
-          source.getClusterLeaves(clusterId, pointCount, 0, (err, leaves) => {
-            if (err || !leaves || !leaves.length) return;
-            // Remember the zoom we were at so empty-click can ease back to it.
+          // SPIDER-ON-CLICK. MapLibre v5 changed getClusterLeaves from callback
+          // to Promise; wrap both styles defensively so we work either way.
+          const onLeaves = (leaves) => {
+            if (!leaves || !leaves.length) return;
             _atlasPreSpiderState = { center: _atlasMap.getCenter(), zoom: currentZoom };
-            // Gentle zoom-out so the spider has room (only if we're zoomed past
-            // overview level — at low zoom, stay put and let auto-recenter handle it).
             if (currentZoom > 3.5) {
+              _atlasSpiderRecentering = true;
               _atlasMap.easeTo({ center: clusterCoord, zoom: 3.0, duration: 450 });
-              _atlasMap.once('moveend', () => _atlasShowSpider(clusterCoord, leaves));
+              _atlasMap.once('moveend', () => {
+                _atlasSpiderRecentering = false;
+                _atlasShowSpider(clusterCoord, leaves);
+              });
             } else {
               _atlasShowSpider(clusterCoord, leaves);
             }
+          };
+          const result = source.getClusterLeaves(clusterId, pointCount, 0, (err, leaves) => {
+            // v4-style callback (still supported by MapLibre v5 for back-compat)
+            if (err) { console.warn('[atlas] getClusterLeaves cb err:', err); return; }
+            onLeaves(leaves);
           });
+          // v5-style Promise (preferred). If both fire we just call onLeaves twice;
+          // it's idempotent because _atlasShowSpider re-sets the spider source data.
+          if (result && typeof result.then === 'function') {
+            result.then(onLeaves).catch(err => console.warn('[atlas] getClusterLeaves promise err:', err));
+          }
         });
 
         // ---- SPIDER (expanded-cluster) source + layers ----
