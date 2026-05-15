@@ -681,9 +681,18 @@
         </div>
         <button class="alch-btn" id="alch-btn-fit">Zoom to fit</button>
         <button class="alch-btn" id="alch-btn-arrange">Auto-arrange</button>
-        <button class="alch-btn alch-btn-bridge" id="alch-btn-bridge" title="Open the current board as a Transmission graph">→ Transmission</button>
         <button class="alch-btn alch-btn-danger" id="alch-btn-clear">Clear</button>
         <div class="alch-counter" id="alch-counter"></div>
+      </div>
+      <div class="alch-toolbar-row alch-toolbar-actions">
+        <span class="alch-action-label">SELECTED:</span>
+        <button class="alch-btn alch-btn-action" id="alch-btn-highlight" title="Highlight only the edges between selected cards (or this card's edges)">Highlight subgraph</button>
+        <button class="alch-btn alch-btn-action" id="alch-btn-neighbors" title="Add cards for every node connected to any selected card">Spawn neighbors</button>
+        <button class="alch-btn alch-btn-action" id="alch-btn-common" title="Add cards for nodes connected to ALL selected cards (intersection)">Common neighbors</button>
+        <button class="alch-btn alch-btn-action" id="alch-btn-path" title="Add ghost cards for intermediate nodes on shortest paths between selected">Shortest path</button>
+        <button class="alch-btn alch-btn-action" id="alch-btn-clear-selection" title="Clear current selection + edge highlight">Clear selection</button>
+        <span class="alch-spacer"></span>
+        <button class="alch-btn alch-btn-bridge" id="alch-btn-bridge" title="Open the current board as a Transmission graph">→ Transmission</button>
       </div>
     `;
     rootEl.appendChild(toolbarEl);
@@ -711,6 +720,44 @@
         return;
       }
       sendToTransmission(all);
+    };
+    // Action buttons (debug-visible — same actions as right-click context menu).
+    // They operate on currently-selected cards; with no selection, fall back to
+    // "all cards on board" so the user can experiment without having to select first.
+    function selectedOrAll() {
+      const sel = [...state.selected];
+      if (sel.length) return sel;
+      return state.cards.map(c => c.id);
+    }
+    toolbarEl.querySelector('#alch-btn-highlight').onclick = () => {
+      const ids = selectedOrAll();
+      if (!ids.length) { alert('Add or select some cards first.'); return; }
+      setEdgeHighlight(ids);
+    };
+    toolbarEl.querySelector('#alch-btn-neighbors').onclick = () => {
+      const ids = selectedOrAll();
+      if (!ids.length) { alert('Add or select some cards first.'); return; }
+      if (ids.length === 1) {
+        const card = state.cards.find(c => c.id === ids[0]);
+        if (card) spawnNeighbors(card);
+      } else {
+        spawnUnionNeighbors(ids);
+      }
+    };
+    toolbarEl.querySelector('#alch-btn-common').onclick = () => {
+      const ids = selectedOrAll();
+      if (ids.length < 2) { alert('Select 2 or more cards first (shift-click) to find common neighbors.'); return; }
+      spawnCommonNeighbors(ids);
+    };
+    toolbarEl.querySelector('#alch-btn-path').onclick = () => {
+      const ids = selectedOrAll();
+      if (ids.length < 2) { alert('Select 2 or more cards first (shift-click) to spawn shortest-path bridges.'); return; }
+      spawnShortestPaths(ids);
+    };
+    toolbarEl.querySelector('#alch-btn-clear-selection').onclick = () => {
+      state.selected.clear();
+      refreshSelection();
+      setEdgeHighlight(null);
     };
     updateCounter();
   }

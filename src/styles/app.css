@@ -1710,6 +1710,29 @@ body.view-atlas main.canvas { background: var(--bg-0); }
   color: #d4b3df;
   background: rgba(168,123,181,0.16);
 }
+/* Second toolbar row — action buttons (debug-visible operations on selection). */
+.alch-toolbar-actions {
+  margin-top: 6px;
+  border-top: 1px solid var(--border-soft);
+  padding-top: 8px;
+  font-size: 10px;
+}
+.alch-action-label {
+  font-family: var(--mono); font-size: 9.5px;
+  color: var(--text-3); letter-spacing: 0.12em;
+  margin-right: 4px;
+}
+.alch-spacer { flex: 1; }
+.alch-btn-action {
+  border-color: rgba(212,165,90,0.18);
+  color: var(--text-2);
+  background: rgba(212,165,90,0.04);
+}
+.alch-btn-action:hover {
+  border-color: var(--gold-soft);
+  color: var(--gold);
+  background: rgba(212,165,90,0.12);
+}
 .alch-counter {
   margin-left: auto;
   color: var(--text-3); font-family: var(--mono); font-size: 10.5px;
