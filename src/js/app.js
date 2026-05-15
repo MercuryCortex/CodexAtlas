@@ -141,6 +141,12 @@ const STATE = {
   // Active preset ID (or null). Persists across renders so the preset card stays highlighted
   // and the headline keeps showing while the user is exploring the loaded preset.
   alchemyActivePreset: null,
+  // Layout mode for the Alchemy canvas: 'force' (default organic clustering),
+  // 'linear' (chronological left→right, type-banded), 'circular' (single ring),
+  // 'radial' (picks center cluster, bridges in outer ring).
+  alchemyLayout: 'force',
+  // Spacing slider 0-100 (default 50). Affects all layouts uniformly.
+  alchemySpacing: 50,
   // Pantheon mode toggle — 'deities' (default), 'authors' (persons with authorship/originator
   // edges), or 'symbols' (09_symbols/ nodes clustered by origin family with cross-family
   // symbol edges drawn prominently — the user's "MASSIVE wins" view).
@@ -3984,6 +3990,108 @@ function alchemyLoadPreset(presetId, mode) {
   setView('alchemy');
 }
 
+// ALCHEMY LAYOUT POSITIONS — compute (x,y) for each node based on the active layout.
+// Returns a Map<id, {x, y, fx, fy}>. For 'force' returns an empty Map (the d3 force
+// simulation handles positioning organically). For non-force modes, returns positions
+// to be pinned via fx/fy so the simulation respects the layout while still allowing
+// link force and user drag interactions.
+//
+// `spacing` is 0-100; controls how spread out the layout is. The TYPE_BANDS table
+// stratifies nodes vertically by type in linear mode so the timeline reads as
+// multi-track (deities on top, traditions on bottom).
+function alchemyLayoutPositions(nodes, picks, mode, spacing, W, H) {
+  const cx = W / 2, cy = H / 2;
+  const positions = new Map();
+  if (mode === 'force' || nodes.length === 0) return positions;
+
+  // Spacing factor: 0 → 0.5 (tight); 50 → 1.0 (default); 100 → 1.7 (loose).
+  const sf = 0.5 + (spacing / 100) * 1.2;
+
+  if (mode === 'linear') {
+    // Sort by date_earliest. Nodes without a date go to the right edge.
+    const TYPE_BANDS = {
+      symbol:    0.18, deity:     0.30, theme:     0.40,
+      person:    0.52, event:     0.62, document:  0.74,
+      tradition: 0.86,
+    };
+    const withDate = nodes.filter(n => n.d && typeof n.d.date_earliest === 'number');
+    const undated  = nodes.filter(n => !n.d || typeof n.d.date_earliest !== 'number');
+    let dateMin = Infinity, dateMax = -Infinity;
+    withDate.forEach(n => {
+      if (n.d.date_earliest < dateMin) dateMin = n.d.date_earliest;
+      if (n.d.date_earliest > dateMax) dateMax = n.d.date_earliest;
+    });
+    const dateRange = Math.max(1, dateMax - dateMin);
+    const leftPad = 60, rightPad = 60;
+    const usable = (W - leftPad - rightPad) * Math.min(1, sf);
+    const offsetX = (W - usable) / 2 - (W - usable) / 2;   // center
+    withDate.forEach(n => {
+      const x = leftPad + ((n.d.date_earliest - dateMin) / dateRange) * usable + offsetX;
+      const band = TYPE_BANDS[n.d.type] ?? 0.5;
+      const y = H * band;
+      positions.set(n.id, { x, y, fx: x, fy: y });
+    });
+    // Undated nodes: stack on the far right by type-band.
+    const farRightX = W - 30;
+    undated.forEach((n, i) => {
+      const band = TYPE_BANDS[n.d?.type] ?? 0.5;
+      const y = H * band + (i % 3 - 1) * 16;
+      positions.set(n.id, { x: farRightX, y, fx: farRightX, fy: y });
+    });
+    return positions;
+  }
+
+  if (mode === 'circular') {
+    // All nodes on one ring, sorted by type then title for predictable order.
+    const typeOrder = { deity: 0, person: 1, document: 2, event: 3, theme: 4, tradition: 5, symbol: 6 };
+    const sorted = nodes.slice().sort((a, b) => {
+      const ta = typeOrder[a.d?.type] ?? 9, tb = typeOrder[b.d?.type] ?? 9;
+      if (ta !== tb) return ta - tb;
+      return (a.d?.title || '').localeCompare(b.d?.title || '');
+    });
+    const maxR = Math.min(W, H) / 2 - 80;
+    const r = maxR * Math.max(0.3, sf * 0.7);
+    sorted.forEach((n, i) => {
+      const angle = (i / sorted.length) * Math.PI * 2 - Math.PI / 2;
+      const x = cx + r * Math.cos(angle);
+      const y = cy + r * Math.sin(angle);
+      positions.set(n.id, { x, y, fx: x, fy: y });
+    });
+    return positions;
+  }
+
+  if (mode === 'radial') {
+    // Picks cluster on inner ring (or center if only one); bridges on outer ring(s).
+    const pickSet = new Set(picks);
+    const pickNodes = nodes.filter(n => pickSet.has(n.id));
+    const bridgeNodes = nodes.filter(n => !pickSet.has(n.id));
+    const maxR = Math.min(W, H) / 2 - 80;
+    const innerR = maxR * 0.18 * sf;
+    const outerR = maxR * Math.max(0.5, 0.55 * sf);
+
+    if (pickNodes.length === 1) {
+      // Single pick: place at center.
+      positions.set(pickNodes[0].id, { x: cx, y: cy, fx: cx, fy: cy });
+    } else {
+      pickNodes.forEach((n, i) => {
+        const angle = (i / pickNodes.length) * Math.PI * 2 - Math.PI / 2;
+        const x = cx + innerR * Math.cos(angle);
+        const y = cy + innerR * Math.sin(angle);
+        positions.set(n.id, { x, y, fx: x, fy: y });
+      });
+    }
+    bridgeNodes.forEach((n, i) => {
+      const angle = (i / Math.max(1, bridgeNodes.length)) * Math.PI * 2 - Math.PI / 2;
+      const x = cx + outerR * Math.cos(angle);
+      const y = cy + outerR * Math.sin(angle);
+      positions.set(n.id, { x, y, fx: x, fy: y });
+    });
+    return positions;
+  }
+
+  return positions;   // unknown mode → force fallback
+}
+
 // BFS shortest path between two node IDs using the NEIGHBORS adjacency map.
 // Caps at maxHops to keep paths readable. Returns null if no path within the cap.
 function alchemyShortestPath(srcId, dstId, maxHops) {
@@ -4019,6 +4127,15 @@ VIEWS.alchemy = {
   title: 'Alchemy',
   subtitle: 'pick deities, persons, or themes · the shortest path between them appears as bridges',
   render() {
+    // Restore layout + spacing prefs from localStorage on first render (idempotent).
+    try {
+      const storedLayout = localStorage.getItem('alch-layout');
+      if (storedLayout && ['force', 'linear', 'circular', 'radial'].includes(storedLayout)) {
+        STATE.alchemyLayout = storedLayout;
+      }
+      const storedSpacing = parseInt(localStorage.getItem('alch-spacing'), 10);
+      if (!isNaN(storedSpacing)) STATE.alchemySpacing = Math.max(0, Math.min(100, storedSpacing));
+    } catch (e) {}
     const W = svg.node().clientWidth, H = svg.node().clientHeight;
     const cx = W / 2, cy = H / 2;
 
@@ -4052,10 +4169,22 @@ VIEWS.alchemy = {
       }
     }
 
-    const nodes = Array.from(displayed.values()).map(({ node, isPick }) => ({
-      id: node.id, d: node, isPick,
-      x: cx + (Math.random() - 0.5) * 40, y: cy + (Math.random() - 0.5) * 40,
-    }));
+    // Compute layout positions before instantiating nodes. For 'force' this returns an
+    // empty Map and nodes get random-jittered initial positions (then the sim settles
+    // them). For other layouts, positions include fx/fy to pin nodes in their slots.
+    // W/H already in scope from the top of render().
+    const rawNodesList = Array.from(displayed.values()).map(({ node, isPick }) => ({ id: node.id, d: node, isPick }));
+    const layoutPositions = alchemyLayoutPositions(rawNodesList, picks, STATE.alchemyLayout, STATE.alchemySpacing, W, H);
+    const nodes = rawNodesList.map(n => {
+      const pos = layoutPositions.get(n.id);
+      return {
+        ...n,
+        x: pos ? pos.x : cx + (Math.random() - 0.5) * 40,
+        y: pos ? pos.y : cy + (Math.random() - 0.5) * 40,
+        fx: pos ? pos.fx : null,
+        fy: pos ? pos.fy : null,
+      };
+    });
     const nodeById = new Map(nodes.map(n => [n.id, n]));
     const links = bridgeEdges
       .filter(e => nodeById.has(e.source) && nodeById.has(e.target))
@@ -4243,11 +4372,45 @@ VIEWS.alchemy = {
 
     const toolbox = document.createElement('div');
     toolbox.className = 'alch-toolbox';
+    const L = STATE.alchemyLayout;
     toolbox.innerHTML = `
       <button class="alch-add-btn" id="alch-add" title="Add a node">＋ add node</button>
-      ${picks.length === 0 ? '<span class="alch-hint">pick any deity, person, or theme to start — or load a preset</span>' : ''}
+      <span class="alch-tools-divider"></span>
+      <div class="alch-layout-group" role="group" aria-label="Layout">
+        <button class="alch-layout-btn ${L === 'force' ? 'active' : ''}" data-layout="force" title="Force-directed (organic clustering)">∿</button>
+        <button class="alch-layout-btn ${L === 'linear' ? 'active' : ''}" data-layout="linear" title="Linear (chronological timeline, type-banded)">─</button>
+        <button class="alch-layout-btn ${L === 'circular' ? 'active' : ''}" data-layout="circular" title="Circular (single ring, type-sorted)">○</button>
+        <button class="alch-layout-btn ${L === 'radial' ? 'active' : ''}" data-layout="radial" title="Radial (picks center, bridges outer)">◎</button>
+      </div>
+      <span class="alch-tools-divider"></span>
+      <label class="alch-spacing-label" title="Adjust spacing for the active layout">
+        <span class="alch-spacing-icon" aria-hidden="true">⇿</span>
+        <input type="range" id="alch-spacing-slider" min="0" max="100" value="${STATE.alchemySpacing}" />
+      </label>
+      ${picks.length === 0 ? '<span class="alch-hint">pick any node to start — or load a preset</span>' : ''}
     `;
     canvas.appendChild(toolbox);
+
+    // Wire layout buttons.
+    toolbox.querySelectorAll('.alch-layout-btn').forEach(btn => {
+      btn.addEventListener('click', (ev) => {
+        ev.stopPropagation();
+        STATE.alchemyLayout = btn.dataset.layout;
+        try { localStorage.setItem('alch-layout', STATE.alchemyLayout); } catch (e) {}
+        setView('alchemy');
+      });
+    });
+    // Wire spacing slider with debounce so re-render doesn't fire on every pixel of drag.
+    const _spacingSlider = document.getElementById('alch-spacing-slider');
+    if (_spacingSlider) {
+      let _spacingDebounce;
+      _spacingSlider.addEventListener('input', (ev) => {
+        STATE.alchemySpacing = parseInt(ev.target.value, 10) || 50;
+        try { localStorage.setItem('alch-spacing', String(STATE.alchemySpacing)); } catch (e) {}
+        clearTimeout(_spacingDebounce);
+        _spacingDebounce = setTimeout(() => setView('alchemy'), 140);
+      });
+    }
 
     const palette = document.createElement('div');
     palette.className = 'alch-palette';
@@ -4430,11 +4593,17 @@ VIEWS.alchemy = {
       .text(n => n.d.title);
 
     // ---- Force simulation ----
+    // Spacing factor (0.5 → 1.7) tunes link distance / repulsion / collide radius.
+    // When layout is non-force, nodes carry fx/fy pins so the sim respects the layout
+    // while still adjusting link positions naturally. We drop forceCenter for pinned
+    // layouts since nodes are already positioned away from center.
+    const _sf = 0.5 + (STATE.alchemySpacing / 100) * 1.2;
+    const _isForce = STATE.alchemyLayout === 'force';
     const sim = d3.forceSimulation(nodes)
-      .force('link', d3.forceLink(links).id(d => d.id).distance(120).strength(0.4))
-      .force('charge', d3.forceManyBody().strength(-340))
-      .force('center', d3.forceCenter(cx, cy))
-      .force('collide', d3.forceCollide().radius(n => n.isPick ? 36 : 24).iterations(2))
+      .force('link', d3.forceLink(links).id(d => d.id).distance(120 * _sf).strength(_isForce ? 0.4 : 0.05))
+      .force('charge', d3.forceManyBody().strength(_isForce ? -340 * _sf : -60))
+      .force('center', _isForce ? d3.forceCenter(cx, cy) : null)
+      .force('collide', d3.forceCollide().radius(n => (n.isPick ? 36 : 24) * (_isForce ? _sf : 1)).iterations(2))
       .on('tick', () => {
         linkSel
           .attr('x1', d => d.source.x).attr('y1', d => d.source.y)
