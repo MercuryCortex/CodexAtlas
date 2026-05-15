@@ -17,7 +17,7 @@ canonical-slug
 ## Currently resolved slugs (auto-seeded — every existing file)
 
 
-### deity (412 nodes)
+### deity (416 nodes)
 
 - `abathur`
 - `adonis-hellenistic`
@@ -193,6 +193,7 @@ canonical-slug
 - `jupiter`
 - `kalachakra`
 - `kali`
+- `kalki`
 - `kane-hawaiian`
 - `kasdeja`
 - `khnum`
@@ -248,6 +249,7 @@ canonical-slug
 - `mnemosyne`
 - `mokosh`
 - `mot`
+- `muhammad-al-mahdi`
 - `mullissu-akkadian`
 - `mut`
 - `nabu`
@@ -325,6 +327,7 @@ canonical-slug
 - `ratnasambhava`
 - `remiel-archangel`
 - `rhea`
+- `romulus`
 - `rudra-shiva-early`
 - `ruha`
 - `sabazios`
@@ -370,6 +373,7 @@ canonical-slug
 - `tezcatlipoca`
 - `the-amesha-spentas`
 - `the-ashvins`
+- `the-dioskouroi`
 - `the-elect-one-enochic`
 - `the-erinyes`
 - `the-evil-god-cathar`
@@ -1565,7 +1569,7 @@ canonical-slug
 - `wheat-grain`
 - `yin-yang`
 
-### theme (228 nodes)
+### theme (234 nodes)
 
 - `364-day-solar-calendar`
 - `adam-kadmon`
@@ -1584,6 +1588,7 @@ canonical-slug
 - `apatheia-and-virtue`
 - `apocalyptic-cosmic-warfare`
 - `apocalyptic-revelation`
+- `apocalyptic-thunderer-vs-serpent`
 - `apokatastasis`
 - `apologetic-historiography`
 - `apophatic-mysticism`
@@ -1611,6 +1616,7 @@ canonical-slug
 - `commentary-as-genre`
 - `comparative-religion-method`
 - `coniunctio`
+- `cosmic-body-cosmogony`
 - `cosmic-cataclysm`
 - `cosmic-cycles`
 - `cosmopolitanism`
@@ -1630,6 +1636,7 @@ canonical-slug
 - `divine-immanence`
 - `divine-kingship`
 - `divine-name`
+- `divine-twins`
 - `dualism-cosmic`
 - `dualism-spirit-matter`
 - `dying-rising-god`
@@ -1649,6 +1656,7 @@ canonical-slug
 - `ethiopic-canon-broad`
 - `fall-of-humanity`
 - `falsafa`
+- `feminine-solar`
 - `fifth-empire-quinto-imperio`
 - `final-judgment`
 - `five-ways`
@@ -1699,6 +1707,7 @@ canonical-slug
 - `marcionite-canon`
 - `martyrdom-theology`
 - `mesoamerican-cosmogony`
+- `messianic-future-savior`
 - `messianic-secret`
 - `messianism`
 - `miaphysite-christology`
@@ -1706,6 +1715,7 @@ canonical-slug
 - `mixture-cosmology`
 - `monastic-asceticism`
 - `monotheism-strict`
+- `mother-and-child-iconography`
 - `mystery-initiation`
 - `name-of-god`
 - `new-moses-typology`
@@ -1911,13 +1921,13 @@ canonical-slug
 | Refs | Dead target | Suggested canonical (existing) |
 |---:|---|---|
 | 4 | `ragnarok-apocalyptic` | `apocalyptic-revelation` |
-| 4 | `primordial-darkness` | `eros-primordial` |
+| 4 | `primordial-darkness` | `primordial-waters` |
 | 4 | `messianic-revelation` | `messianic-secret` |
 | 4 | `genealogical-cosmogony` | `mesoamerican-cosmogony` |
 | 4 | `evolutionary-cosmogony` | `mesoamerican-cosmogony` |
 | 3 | `phase-2-005-1-2-kings` | `phase-2-003-atharva-veda` |
-| 3 | `messianic-genealogy` | `solomonic-genealogy` |
+| 3 | `messianic-genealogy` | `messianic-secret` |
 | 2 | `yam-canaanite` | `astarte-canaanite` |
-| 2 | `tradition-minoan-religion` | `02_coverage_gaps_by_tradition` |
-| 2 | `tradition-eastern-orthodoxy` | `02_coverage_gaps_by_tradition` |
+| 2 | `tradition-minoan-religion` | `tradition-protestantism` |
+| 2 | `tradition-eastern-orthodoxy` | `tradition-protestantism` |
 | 2 | `phase-1-013-babylonian-theodicy` | `phase-1-014-ugaritic-ritual-texts` |
