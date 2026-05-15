@@ -17,11 +17,12 @@ canonical-slug
 ## Currently resolved slugs (auto-seeded — every existing file)
 
 
-### deity (416 nodes)
+### deity (426 nodes)
 
 - `abathur`
 - `adonis-hellenistic`
 - `aeshma`
+- `aganju`
 - `agni`
 - `ahura-mazda`
 - `akshobhya`
@@ -32,6 +33,7 @@ canonical-slug
 - `allatu-akkadian`
 - `almaqah`
 - `amaterasu`
+- `ame-no-uzume`
 - `amitabha`
 - `amoghasiddhi`
 - `amun`
@@ -69,6 +71,7 @@ canonical-slug
 - `avalokitesvara`
 - `azazel`
 - `baal-hadad`
+- `babalu-aye`
 - `bacchus`
 - `baiame`
 - `baldr`
@@ -84,6 +87,7 @@ canonical-slug
 - `bergelmir`
 - `bes`
 - `bhairava`
+- `bhaisajyaguru`
 - `bragi`
 - `brahma`
 - `brigid`
@@ -168,6 +172,8 @@ canonical-slug
 - `horus`
 - `hubal`
 - `huitzilopochtli`
+- `hwanin`
+- `hwanung`
 - `iacchus`
 - `iapetus`
 - `idunn`
@@ -191,6 +197,7 @@ canonical-slug
 - `jormungandr`
 - `juno`
 - `jupiter`
+- `kagutsuchi`
 - `kalachakra`
 - `kali`
 - `kalki`
@@ -287,9 +294,11 @@ canonical-slug
 - `nyx-primordial`
 - `obatala`
 - `odin`
+- `oduduwa`
 - `ogun`
 - `ohyah-nephilim`
 - `olodumare`
+- `olokun`
 - `orunmila`
 - `oshun`
 - `osiris`
@@ -366,6 +375,7 @@ canonical-slug
 - `svarog`
 - `tane`
 - `tangaroa`
+- `tangun`
 - `tara`
 - `tefnut`
 - `telipinu`
@@ -1569,7 +1579,7 @@ canonical-slug
 - `wheat-grain`
 - `yin-yang`
 
-### theme (234 nodes)
+### theme (235 nodes)
 
 - `364-day-solar-calendar`
 - `adam-kadmon`
@@ -1762,6 +1772,7 @@ canonical-slug
 - `satisfaction-atonement`
 - `secular-spirituality`
 - `sefirot`
+- `serpent-dual-nature`
 - `shamanism-hypothesis`
 - `shevirat-hakelim`
 - `signatures-of-things`
@@ -1921,13 +1932,14 @@ canonical-slug
 | Refs | Dead target | Suggested canonical (existing) |
 |---:|---|---|
 | 4 | `ragnarok-apocalyptic` | `apocalyptic-revelation` |
-| 4 | `primordial-darkness` | `primordial-waters` |
+| 4 | `primordial-darkness` | `eros-primordial` |
 | 4 | `messianic-revelation` | `messianic-secret` |
-| 4 | `genealogical-cosmogony` | `mesoamerican-cosmogony` |
-| 4 | `evolutionary-cosmogony` | `mesoamerican-cosmogony` |
-| 3 | `phase-2-005-1-2-kings` | `phase-2-003-atharva-veda` |
-| 3 | `messianic-genealogy` | `messianic-secret` |
+| 4 | `genealogical-cosmogony` | `hermetic-cosmogony` |
+| 4 | `evolutionary-cosmogony` | `hermetic-cosmogony` |
+| 3 | `phase-4-007-new-testament-canon` | `phase-4-004-gospel-of-philip` |
+| 3 | `phase-2-005-1-2-kings` | `phase-2-008-homeric-epics` |
+| 3 | `messianic-genealogy` | `solomonic-genealogy` |
 | 2 | `yam-canaanite` | `astarte-canaanite` |
-| 2 | `tradition-minoan-religion` | `tradition-protestantism` |
-| 2 | `tradition-eastern-orthodoxy` | `tradition-protestantism` |
-| 2 | `phase-1-013-babylonian-theodicy` | `phase-1-014-ugaritic-ritual-texts` |
+| 2 | `tradition-minoan-religion` | `tradition-vajrayana-buddhism` |
+| 2 | `tradition-eastern-orthodoxy` | `tradition-vajrayana-buddhism` |
+| 2 | `phase-1-013-babylonian-theodicy` | `phase-1-004-gilgamesh-old-babylonian` |
