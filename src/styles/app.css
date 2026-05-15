@@ -646,22 +646,22 @@ body.nav-collapsed nav.side { width: var(--nav-w-collapsed); }
    eye finds it without it ever dominating the canvas. */
 .side-tab {
   position: fixed;
-  left: calc(var(--nav-w) - 22px);
-  top: 18px;
-  width: 16px; height: 16px;
+  left: calc(var(--nav-w) - 26px);
+  top: 14px;
+  width: 22px; height: 22px;
   margin: 0;
-  background: transparent;
-  border: 0; border-radius: 2px;
-  cursor: pointer; z-index: 101;
+  background: rgba(212,165,90,0.08);
+  border: 1px solid var(--border-soft); border-radius: 3px;
+  cursor: pointer; z-index: 200;
   display: flex; align-items: center; justify-content: center;
-  color: var(--text-3); font-family: var(--mono); font-size: 11px; line-height: 1;
-  opacity: 0.45;
-  transition: left 240ms cubic-bezier(0.2, 0.8, 0.2, 1), opacity 160ms, color 160ms, background 160ms;
+  color: var(--gold-soft); font-family: var(--mono); font-size: 14px; line-height: 1; font-weight: 600;
+  opacity: 0.9;
+  transition: left 240ms cubic-bezier(0.2, 0.8, 0.2, 1), opacity 160ms, color 160ms, background 160ms, border-color 160ms;
 }
-.side-tab:hover { opacity: 1; color: var(--gold); background: rgba(212,165,90,0.10); }
+.side-tab:hover { opacity: 1; color: var(--gold); background: rgba(212,165,90,0.18); border-color: var(--gold-soft); }
 /* When the nav is collapsed (icon strip), the chevron sits centered in the strip's top. */
 body.nav-collapsed .side-tab {
-  left: calc((var(--nav-w-collapsed) - 16px) / 2);
+  left: calc((var(--nav-w-collapsed) - 22px) / 2);
 }
 .nav-toggle {
   position: absolute; top: 8px; right: 8px; z-index: 2;
@@ -1520,6 +1520,73 @@ footer select:focus, footer input:focus { border-color: var(--gold-soft); }
 .alch-preset-tag.cross    { background: rgba(40,105,175,.16); color: #6090cc; border: 1px solid rgba(40,105,175,.26); }
 .alch-preset-tag.flood    { background: rgba(30,115,145,.16); color: #50a0c2; border: 1px solid rgba(30,115,145,.26); }
 .alch-preset-tag.astrology{ background: rgba(105,65,30,.16);  color: #b07850; border: 1px solid rgba(105,65,30,.26); }
+
+/* ---- Investigation dropdown (sits next to Presets in Alchemy nav) ---- */
+.alch-invest-trigger { position: relative; }
+.alch-invest-trigger.has-alert { border-color: rgba(255,140,30,0.5); color: #ff9a40; }
+.invest-trigger-badge {
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 14px; height: 14px; border-radius: 50%;
+  background: rgba(255,130,30,0.85); color: #fff;
+  font-size: 8px; font-weight: 700; font-family: var(--mono);
+  margin-left: 4px; vertical-align: middle; line-height: 1;
+}
+.alch-invest-dropdown {
+  position: absolute; z-index: 999;
+  width: 420px; max-height: 72vh; overflow-y: auto;
+  background: var(--panel-bg); backdrop-filter: var(--panel-blur);
+  border: 1px solid var(--panel-edge); border-radius: 6px;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.58); padding: 10px 0;
+}
+.alch-invest-intro {
+  font-family: var(--mono); font-size: 9.5px; color: var(--text-3);
+  letter-spacing: 0.04em; padding: 2px 14px 9px; line-height: 1.5;
+  border-bottom: 1px solid var(--border);
+}
+.alch-invest-list { padding: 4px 0; }
+.alch-invest-card { padding: 11px 14px 9px; border-bottom: 1px solid var(--border); }
+.alch-invest-card:last-child { border-bottom: none; }
+.alch-invest-card.alert { border-left: 2px solid rgba(255,130,30,0.65); }
+.alch-invest-header { display: flex; align-items: center; gap: 7px; margin-bottom: 6px; }
+.alch-invest-flag {
+  font-family: var(--mono); font-size: 8px; font-weight: 700; color: #ff8a1e;
+  letter-spacing: 0.08em; background: rgba(255,130,30,0.12);
+  border: 1px solid rgba(255,130,30,0.3); border-radius: 2px; padding: 1px 5px; white-space: nowrap;
+}
+.alch-invest-name { font-family: var(--serif); font-size: 11.5px; font-weight: 600; color: var(--text-0); }
+.alch-invest-status { font-family: var(--mono); font-size: 8px; color: var(--text-3); letter-spacing: 0.07em; text-transform: uppercase; margin-left: auto; }
+.alch-invest-headline { font-family: var(--sans); font-size: 9.5px; color: var(--text-2); line-height: 1.55; margin-bottom: 9px; }
+.alch-invest-threads { margin-bottom: 9px; }
+.alch-invest-thread {
+  display: grid; grid-template-columns: 76px 1fr; gap: 3px 8px;
+  padding: 4px 0; border-top: 1px solid rgba(255,255,255,0.04); align-items: start;
+}
+.alch-invest-thread:first-child { border-top: none; }
+.alch-invest-thread-tier { font-family: var(--mono); font-size: 8px; letter-spacing: 0.05em; text-align: right; padding-top: 1px; white-space: nowrap; }
+.tier-1       { color: var(--gold); }
+.tier-2       { color: rgba(212,165,90,0.65); }
+.tier-3       { color: var(--text-3); }
+.tier-parallel{ color: #7ab4d0; }
+.alch-invest-thread-label { font-family: var(--sans); font-size: 9.5px; color: var(--text-1); font-weight: 500; }
+.alch-invest-thread-note  { grid-column: 2; font-family: var(--mono); font-size: 8.5px; color: var(--text-3); line-height: 1.45; letter-spacing: 0.02em; }
+.alch-invest-action-row { display: flex; align-items: center; gap: 7px; padding-top: 5px; }
+.alch-invest-load {
+  background: var(--bg-2); border: 1px solid var(--border); border-radius: 2px;
+  color: var(--text-1); font-family: var(--mono); font-size: 9.5px;
+  padding: 3px 10px; letter-spacing: 0.05em; cursor: pointer; transition: all 130ms ease;
+}
+.alch-invest-load:hover { border-color: var(--gold-soft); color: var(--gold); }
+.alch-invest-confirm-row { display: flex; align-items: center; gap: 5px; flex-wrap: wrap; padding-top: 5px; }
+.alch-invest-confirm-q { font-family: var(--mono); font-size: 9.5px; color: var(--text-2); letter-spacing: 0.04em; flex: 1 1 100%; margin-bottom: 4px; }
+.alch-invest-confirm {
+  background: var(--bg-2); border: 1px solid var(--border); border-radius: 2px;
+  color: var(--text-1); font-family: var(--mono); font-size: 9.5px;
+  padding: 3px 9px; letter-spacing: 0.06em; cursor: pointer; transition: all 130ms ease;
+}
+.alch-invest-confirm:hover { border-color: var(--gold-soft); color: var(--text-0); }
+.alch-invest-append  { color: var(--gold); border-color: var(--gold-soft); }
+.alch-invest-replace { color: #d4a04a; border-color: rgba(212,165,90,0.45); }
+.alch-invest-cancel  { color: var(--text-3); }
 
 /* ============================================================
    ATLAS view (opus-map-1, 2026-05-15) — MapLibre GL world map.
