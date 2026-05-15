@@ -47,7 +47,7 @@ refs:
     publisher: "Continuum"
     type: "monograph"
     tier: 1
-tags: [person, patristic, christian, neoplatonism, pseudo-dionysius, apophatic-theology]
+tags: [person, patristic, christian, neoplatonism, pseudo-dionysius, apophatic-theology, MASSIVE-WIN]
 ---
 
 # Pseudo-Dionysius the Areopagite
@@ -79,6 +79,7 @@ The single most important Christian transmitter of Neoplatonism. Translated into
 - **Identity of the author.** Proposed candidates: Peter the Iberian (Honigmann 1952), a circle around Severus of Antioch, a disciple of Proclus's at Athens (Mazzucchi 2006 has argued for Damascius — controversial), an anonymous Monophysite Syrian (mainstream consensus). The geographical location (Syria) is most secure.
 - **Date.** Earliest possible date: post-Proclus (d. 485). Latest: pre-533 colloquy. Most scholars settle on c. 500.
 - **Theological orientation.** Whether crypto-Monophysite, crypto-Origenist, or "neutral" Chalcedonian is disputed.
+- **Isaac Casaubon's 1614 dating.** The same scholar who dated the Corpus Hermeticum to late antiquity in 1614 — demolishing the Renaissance belief in an ancient Egyptian prisca theologia — also subjected the Pseudo-Dionysian corpus to philological scrutiny. The double blow of 1614 (Hermes Trismegistus and Dionysius the Areopagite both exposed as pseudonymous) was a catastrophic moment for Renaissance religious epistemology: two of the most authoritative non-Biblical sources for the perennial philosophy were simultaneously revealed as medieval-era forgeries. See [[hermetic-transmission-chain]], [[prisca-theologia]].
 
 ## Cross-tradition position — the apophatic hub
 
@@ -93,6 +94,10 @@ Pseudo-Dionysius is the vault's primary hub for the apophatic tradition — the 
 **↔ Kashmir Shaivism (Trika)**: The *via negativa* / divine darkness and Trika's description of Śiva as *niṣkala* (without parts, beyond all predication) are structural parallels. Both posit: (1) the ultimate is beyond all name and category; (2) the path toward it involves negating all limited designations; (3) there is a positive experiential breakthrough at the culmination (Dionysian theosis / Trika recognition). The difference: Dionysius arrives at union with the apophatic God; Trika recognizes that one already *is* that ground. See [[tradition-kashmir-shaivism]], [[pratyabhijna]].
 
 **↔ Nāgārjuna**: The most contested parallel. Nāgārjuna's śūnyatā (no inherent existence anywhere) and Dionysian apophasis (God beyond all predication) both systematically negate. But Dionysius ultimately arrives at union with the God who *is* ("hyper-being" is still being-positive), while Nāgārjuna's śūnyatā denies even a hyper-being ground. The apophatic tradition's "God beyond being" oscillates between these poles. See [[emptiness-sunyata]].
+
+**→ Dante / [[dante-alighieri]]**: The nine celestial spheres of *Paradiso* map directly onto the nine orders of the *Celestial Hierarchy*. [[beatrice-portinari]] explains each sphere by reference to angelic mediators from the Pseudo-Dionysian scheme. [[boethius]] is the immediate literary-form predecessor (Lady Philosophy → Beatrice as guide), but Pseudo-Dionysius supplies the cosmological architecture. See [[phase-5-divine-comedy]].
+
+**→ [[boethius]] — contemporaneous Neoplatonic milieu**: Boethius (~480–524) was exact contemporary of Pseudo-Dionysius (~490–520). Both drew from the same late Athenian Neoplatonism (Proclus, Syrianus); both were working in the generation immediately after Proclus's death in 485. Boethius transmitted Neoplatonism as philosophy (*Consolation of Philosophy*); Pseudo-Dionysius transmitted it as Christian mystical theology. Together they are the two channels by which 5th-century Athenian Neoplatonism entered medieval European thought.
 
 ## Refs
 1. Rorem, P. (1993). *Pseudo-Dionysius: A Commentary*. Oxford UP.

@@ -79,7 +79,7 @@ Format:
 | `sonnet-khafre-symbolism-1` | content / Egyptian symbolism deep-dive | 9 symbols + 4 themes + 6 persons + 4 events + 2 documents — **25 new nodes · 194 new edges** | 2026-05-15 | **FINISHED** |
 | `sonnet-kabbalah-synthesis-1` | content / Symbol fixes + Kabbalah/Logos/Divine-Feminine synthesis | 6 symbol fixes + theme-axial-age (NEW) + 6 stub→full upgrades (logos-cosmic-reason, divine-feminine, tikkun-olam, philo-of-alexandria, tradition-kabbalah, moses-de-leon) | 2026-05-15 | **FINISHED** e8306e0+268e1da |
 | `sonnet-infra-1` | data-integrity / YAML refs sync + Lotus Sutra dedup + orphan wiring | 10 persons refs-synced, phase-4-091 deleted (merged into phase-4-061), 8 orphan nodes wired (stribog/simeon/priscillian/cassiodorus/alcuin/dove/alpha-omega/fleur-de-lis) | 2026-05-15 | **FINISHED** b0f768a+8b2b7f2 |
-| `sonnet-neoplatonics-1` | content / late-antique Neoplatonic spine | `proclus` (upgrade stub→full), `pseudo-dionysius-areopagite` (upgrade), `boethius` (upgrade), `phase-4-100-celestial-hierarchy` (NEW doc) | 2026-05-15 | **IN FLIGHT** |
+| `sonnet-neoplatonics-1` | content / late-antique Neoplatonic spine | `proclus` (upgrade stub→full), `pseudo-dionysius-areopagite` (upgrade), `boethius` (upgrade), `phase-4-100-celestial-hierarchy` (NEW doc) | 2026-05-15 | **FINISHED** |
 
 ---
 

@@ -17,7 +17,7 @@ canonical-slug
 ## Currently resolved slugs (auto-seeded — every existing file)
 
 
-### deity (450 nodes)
+### deity (453 nodes)
 
 - `abathur`
 - `adamastor`
@@ -30,6 +30,7 @@ canonical-slug
 - `akshobhya`
 - `al-haqq`
 - `al-uzza`
+- `albion`
 - `allah`
 - `allat`
 - `allatu-akkadian`
@@ -46,6 +47,7 @@ canonical-slug
 - `angel-of-the-presence`
 - `angra-mainyu-ahriman`
 - `anshar-kishar`
+- `anthropos-gnostic`
 - `anubis`
 - `aphrodite-greek`
 - `apis-bull`
@@ -337,6 +339,7 @@ canonical-slug
 - `poseidon`
 - `prajapati`
 - `prajnaparamita-goddess`
+- `primal-man-manichaean`
 - `prince-of-darkness-manichaean`
 - `prometheus`
 - `ptah`
@@ -470,7 +473,7 @@ canonical-slug
 - `zemyna`
 - `zeus`
 
-### document (379 nodes)
+### document (380 nodes)
 
 - `document-kuntillet-ajrud-inscriptions`
 - `phase-1-001-kesh-temple-hymn`
@@ -685,6 +688,7 @@ canonical-slug
 - `phase-4-097-baopuzi-ge-hong`
 - `phase-4-098-liezi`
 - `phase-4-099-shangqing-corpus`
+- `phase-4-100-celestial-hierarchy`
 - `phase-5-001-devi-mahatmya`
 - `phase-5-002-heart-sutra`
 - `phase-5-002b-diamond-sutra`
@@ -852,7 +856,7 @@ canonical-slug
 - `phase-8-019-kojiki`
 - `phase-8-020-nihon-shoki`
 
-### event (170 nodes)
+### event (173 nodes)
 
 - `bent-pyramid-sneferu-dahshur`
 - `el-castillo-chichen-itza`
@@ -906,6 +910,8 @@ canonical-slug
 - `event-cucuteni-trypillia-c-5500-3000-bce`
 - `event-cyrus-conquest-of-babylon-539-bce`
 - `event-dead-sea-scrolls-discovery`
+- `event-death-of-guru-arjan-1606`
+- `event-death-of-guru-tegh-bahadur-1675`
 - `event-death-of-hypatia-415`
 - `event-death-of-jan-hus-1415`
 - `event-death-of-muhammad-632`
@@ -999,6 +1005,7 @@ canonical-slug
 - `event-solar-temple-mass-suicides-1994-1997`
 - `event-solomonic-restoration-1270`
 - `event-spanish-conquest-of-tenochtitlan-1521`
+- `event-spanish-inquisition-1478`
 - `event-stobaeus-anthology-c500`
 - `event-stonehenge-construction-c-3000-1600-bce`
 - `event-stoning-of-stephen-c35ce`
@@ -1025,7 +1032,7 @@ canonical-slug
 - `subterranean-chamber-great-pyramid`
 - `temple-of-inscriptions-palenque`
 
-### person (636 nodes)
+### person (638 nodes)
 
 - `aaron`
 - `abba-garima`
@@ -1371,6 +1378,7 @@ canonical-slug
 - `khadija-bint-khuwaylid`
 - `khafre`
 - `khufu`
+- `knorr-von-rosenroth`
 - `krishnadasa-kaviraja`
 - `kumarajiva-person`
 - `l-ron-hubbard`
@@ -1616,6 +1624,7 @@ canonical-slug
 - `thich-nhat-hanh`
 - `thomas-apostle`
 - `thomas-aquinas`
+- `thomas-taylor-neoplatonist`
 - `thutmose-iv`
 - `timothy`
 - `titus`
@@ -2179,23 +2188,22 @@ canonical-slug
 
 | Refs | Dead target | Suggested canonical (existing) |
 |---:|---|---|
-| 5 | `phase-1-013-babylonian-theodicy` | `phase-1-032-babylonian-theodicy` |
-| 4 | `tradition-minoan-religion` | `tradition-scientology` |
-| 4 | `tradition-eastern-orthodoxy` | `tradition-scientology` |
-| 4 | `tradition-early-christianity` | `tradition-scientology` |
-| 4 | `event-death-of-guru-tegh-bahadur-1675` | `event-dead-sea-scrolls-discovery` |
-| 4 | `event-death-of-guru-arjan-1606` | `event-death-of-jan-hus-1415` |
-| 3 | `tradition-zen-chan-buddhism` | `tradition-scientology` |
-| 3 | `tradition-second-temple-judaism` | `tradition-sebastianism` |
-| 3 | `tradition-medieval-christianity` | `tradition-vedic-hinduism` |
-| 3 | `phase-4-007-new-testament-canon` | `phase-4-006-hypostasis-of-the-archons` |
+| 5 | `phase-1-013-babylonian-theodicy` | `phase-1-011-great-hymn-to-aten` |
+| 4 | `tradition-minoan-religion` | `tradition-portuguese-hermeticism` |
+| 4 | `tradition-eastern-orthodoxy` | `tradition-portuguese-hermeticism` |
+| 4 | `tradition-early-christianity` | `tradition-portuguese-hermeticism` |
+| 3 | `tradition-zen-chan-buddhism` | `tradition-portuguese-hermeticism` |
+| 3 | `tradition-second-temple-judaism` | `tradition-portuguese-hermeticism` |
+| 3 | `tradition-medieval-christianity` | `tradition-portuguese-hermeticism` |
+| 3 | `phase-4-007-new-testament-canon` | `phase-4-007-on-the-origin-of-the-world` |
 | 3 | `phase-2-005-1-2-kings` | `phase-2-003-atharva-veda` |
 | 3 | `divine-kingship-solar` | `divine-kingship` |
 | 2 | `yam-canaanite` | `astarte-canaanite` |
-| 2 | `tradition-lingayat` | `tradition-scientology` |
-| 2 | `tradition-islam-shia` | `tradition-scientology` |
-| 2 | `tradition-hussitism` | `tradition-scientology` |
-| 2 | `tradition-cheondogyo` | `tradition-scientology` |
-| 2 | `tradition-bahai` | `tradition-scientology` |
-| 2 | `event-spanish-inquisition-1478` | `event-ahmad-gragn-invasion-1529` |
+| 2 | `tradition-islam-shia` | `tradition-asatru` |
+| 2 | `tradition-islam-mughal` | `tradition-asatru` |
+| 2 | `tradition-hussitism` | `tradition-asatru` |
+| 2 | `tradition-christianity-catholic` | `tradition-portuguese-hermeticism` |
+| 2 | `tradition-cheondogyo` | `tradition-asatru` |
+| 2 | `tradition-bahai` | `tradition-asatru` |
+| 2 | `guru-arjan-dev-ji` | `guru-arjan` |
 | 2 | `asclepius` | `asclepius-greek` |

@@ -15,7 +15,7 @@ region: "Ostrogothic Italy"
 city-of-origin: "Ticinum (Pavia) — written in prison awaiting execution"
 authorship: "known (Boethius)"
 key-figures: ["[[boethius]]"]
-themes: ["[[chain-of-being]]", "[[apatheia-and-virtue]]", "[[free-will-vs-determinism]]"]
+themes: ["[[chain-of-being]]", "[[apatheia-and-virtue]]", "[[free-will-vs-determinism]]", "[[sophia-pleroma]]", "[[executed-divine-claimant]]", "[[divine-feminine]]"]
 parallels: ["[[phase-4-019-plotinus-enneads]]", "[[phase-4-021-proclus-elements-of-theology]]", "[[phase-3-002-plato-dialogues]]", "[[phase-3-005-stoic-foundational-texts]]"]
 influenced-by: ["[[phase-4-019-plotinus-enneads]]", "[[phase-4-021-proclus-elements-of-theology]]", "[[phase-3-002-plato-dialogues]] (especially *Timaeus*, *Republic* IX, *Phaedo*)", "[[phase-3-003-aristotle-metaphysics]]", "Stoic ethics (Seneca, Cicero)", "Menippean satire (form: prosimetric)"]
 influences: ["Alfred the Great (Old English translation, 890s)", "Chaucer (Middle English translation, 1380s)", "Queen Elizabeth I (translation, 1593)", "all medieval Latin Christian Platonism", "Dante (the *Consolation* underlies the *Vita Nuova* and the *Convivio*)"]
@@ -74,6 +74,9 @@ Five books of alternating Latin prose and verse (*prosimetrum*), composed by Boe
 - → Stoic ethics (Seneca, Cicero) — *direct-influence*: Lady Philosophy's therapy is heavily Stoic.
 - → **Late-Antique Neoplatonist substrate** — *substrate-influence*: the *Consolation* is fundamentally a Latin Christian-compatible Neoplatonist work. It is the **principal channel by which late-antique Platonism reaches the medieval West in literary-philosophical form** (alongside the *Timaeus* in Calcidius's translation). Marenbon 2009. Without the *Consolation*, the medieval Western Platonist substrate is unintelligible.
 - → Menippean satire / prosimetric form — *literary-form*: the alternation of prose and verse derives from the Hellenistic-Roman Menippean satire tradition (Varro, Petronius, Seneca's *Apocolocyntosis*).
+- → [[sophia-pleroma]] — *structural-parallel*: Lady Philosophy as the divine-feminine wisdom figure who descends to the suffering prisoner is the same theological grammar as Valentinian Sophia descending to recover the wandering soul. Boethius did not know Gnostic texts; the parallel is structural convergence — the same theological need finding the same solution. The chain: Proverbs 8 *hokhmah* → Sirach 24 Sophia → Wisdom of Solomon → [[philo-of-alexandria]]'s Sophia-Logos → **Lady Philosophy** here.
+- → [[beatrice-portinari]] — *direct-ancestor*: Dante knew the *Consolation* intimately (cited explicitly in *Convivio* II.xii as the book he turned to after Beatrice's death). Lady Philosophy's structure — divine feminine figure descending to the suffering sage, dialogue form, alternating prose and verse, ascent from grief through philosophical understanding to cosmic perspective — is the direct literary model for Beatrice as guide in the *Commedia*. This is not convergence but documented genealogy.
+- → [[executed-divine-claimant]] — *instance-of*: written in prison awaiting unjust execution; the highest-ranking official of his civilization condemned without adequate due process; venerated as martyr; his death produces the most-transmitted philosophical text of the medieval West.
 - → [[phase-5-024-aquinas-summa-theologiae]] and earlier Latin Christian Platonism — *direct-influence*: Boethius is everywhere in medieval Western theology and philosophy. Dante puts him in the Heaven of the Sun, *Paradiso* X.124–9.
 
 ## Disputes
