@@ -27,6 +27,13 @@
 
 ## ⚡ Mandatory coordination protocol
 
+### 🚫 BEFORE you do anything — git rules (added 2026-05-15)
+
+- **Work directly on `main`. Never create a worktree branch.** John has confirmed this twice now after losing work to abandoned worktrees: agents got spawned into `.claude/worktrees/<random-name>/`, made unfinished changes, then the session ended without commit + the worktree was cleaned. **9 worktrees accumulated** across sessions before being audited and removed 2026-05-15.
+- **The vault is solo + local-only.** No remote. No PR workflow. Branching only causes friction. Edit on main, commit on main, push nowhere.
+- **Exception:** if John explicitly says "try this as an experiment" or "I might not want to keep this," THEN you may use a feature branch (so it's easy to discard). Otherwise: `main`.
+- **Commit discipline (added 2026-05-15):** if you make app-code changes, COMMIT before stopping your turn. Uncommitted state has bitten the site twice (`opus-foundation-1`). Half-applied edits accumulating across agents is a forensics nightmare. Commit small + often is better than one big lost commit.
+
 ### BEFORE you start (or at the latest, while working)
 
 1. **Pick a handle** in the existing convention: `opus-<wedge>-<n>`. Examples in flight: `opus-hellenic-3`, `opus-ethiopian-4`, `opus-design-1`, `opus-gaps-1`, `opus-housekeeper-1`. Pick the next number for your wedge.
