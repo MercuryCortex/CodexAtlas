@@ -10,6 +10,8 @@ date-born: 340
 date-died: 385
 historicity: "documented"
 texts-authored: ["*Tractates* (eleven, recovered 1885 by Schepss in the Würzburg manuscript M.p.th.q.3)", "*Canons on the Pauline Epistles* (preserved)"]
+related-themes: ["[[executed-divine-claimant]]", "[[orthodoxy-vs-heresy]]", "[[monastic-asceticism]]"]
+contemporary-persons: ["[[augustine-of-hippo]]", "[[ambrose-of-milan]]"]
 status: "metadata"
 refs:
   - title: "Priscillian of Avila: The Occult and the Charismatic in the Early Church"
@@ -63,7 +65,7 @@ Priscillian's movement survived his execution; *Priscillianism* persisted in Gal
   - Strong **dualist asceticism** of body / spirit — the *Tractates* defend against the Manichaean accusation but display an ascetic intensity that lay on the spectrum where the charge had purchase.
   - Possibly **astrological** and esoteric materials — the synods accuse him of teaching the influence of the stars on the body; the *Tractates* deny it but do not entirely refute the charge.
 - The Manichaean accusation against him is part of the broader **late-antique pattern of catholic Christianity defining itself against Manichaean and Gnostic ascetic alternatives** (Augustine vs. the Manichaeans is the parallel case from this same generation). Whether Priscillian was actually a crypto-Manichaean (Chadwick 1976 is cautious; modern scholarship leans toward "no, but his asceticism made the charge plausible") remains the central historical question.
-- **The first execution of a Christian by Christians for heresy** is itself a historical pivot — Augustine's later cautious endorsement of state coercion against Donatists (and his uneasy reading of Priscillian's case) marks the transition to the Christian-imperial repression model that will characterize medieval Christendom.
+- **The first execution of a Christian by Christians for heresy** is itself a historical pivot — making Priscillian a clear instance of the [[executed-divine-claimant]] pattern (authority transgression → execution by the dominant power → subsequent memorial cult). [[augustine-of-hippo]]'s later cautious endorsement of state coercion against Donatists (and his uneasy reading of Priscillian's case) marks the transition to the Christian-imperial repression model that will characterize medieval Christendom. Both [[ambrose-of-milan]] and Martin of Tours objected at the time to using secular execution for doctrinal matters — a rare early Christian dissent on the [[orthodoxy-vs-heresy]] coercion question.
 
 ## Disputes
 - **Was Priscillian a Manichaean / Gnostic?** Chadwick 1976 inclines to "no, an ascetic with apocryphal interests." Some Spanish scholarship has read the surviving texts as more compromised.

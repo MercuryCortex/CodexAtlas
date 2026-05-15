@@ -8,6 +8,8 @@ sub-tradition: "Lotus / Tiantai / Nichiren textual family"
 label: "mahayana-sutra"
 date-composed-earliest: -100
 date-composed-latest: 200
+date-translated-earliest: 255
+date-translated-latest: 406
 date-redacted: 406
 date-physical-mss-earliest: 200
 language: ["Sanskrit (probably with Prakrit underlay)", "Chinese (Kumārajīva's 406 CE translation as standard for East Asia)"]
@@ -16,12 +18,12 @@ region: "Composed in northwest India / Gandhāra and Kashmir region; reception p
 city-of-origin: ""
 authorship: "anonymous (Mahāyāna sūtra; presented as a discourse of the historical Buddha to the assembly on Vulture Peak; layered composition by anonymous Mahāyāna devotional communities, ~-100 to +200)"
 key-figures: ["[[siddhartha-gautama-buddha]]", "[[kumarajiva-person]] (the 406 CE Chinese translator whose recension dominates East Asian reception)", "the bodhisattvas Mañjuśrī, Avalokiteśvara, Samantabhadra (all of whom have chapters or major roles)"]
-themes: ["[[bhakti-devotion]]", "[[emptiness-sunyata]]", "[[non-duality]]", "[[avatar-doctrine]]"]
+themes: ["[[bhakti-devotion]]", "[[emptiness-sunyata]]", "[[non-duality]]", "[[avatar-doctrine]]", "[[progressive-revelation]]", "[[bodhisattva-vow]]", "[[allegorical-exegesis]]"]
 parallels: ["[[phase-5-002-heart-sutra]]", "[[phase-4-062-avatamsaka-sutra]]", "[[phase-4-063-lankavatara-sutra]]", "[[phase-4-064-sukhavativyuha-larger]]"]
-influenced-by: ["earlier Prajñāpāramitā literature (~-100 onward, sharing the early Mahāyāna milieu)", "Buddhist *Jātaka* and *Avadāna* narrative traditions"]
-influences: ["Tiantai school of Zhiyi (~538-597 CE)", "Tendai school of Japan (Saichō, 767-822)", "Nichiren Buddhism (Nichiren, 1222-1282; the entire Lotus-centered Japanese tradition)", "[[guanyin]] devotion (Lotus ch. 25 is the textual foundation of the Avalokiteśvara/Guanyin cult)", "[[phase-5-004-platform-sutra-huineng]] (Chan)", "all East Asian Mahāyāna liturgy and iconography"]
-deities-mentioned: ["[[avalokitesvara]]", "[[guanyin]]", "[[manjushri]]", "[[samantabhadra-buddha]]"]
-events-context: []
+influenced-by: ["earlier Prajñāpāramitā literature (~-100 onward, sharing the early Mahāyāna milieu)", "Buddhist *Jātaka* and *Avadāna* narrative traditions", "[[phase-2-016-early-buddhist-suttas]] (Pali Canon — the Nikāyas which the Lotus claims to transcend via upāya)", "[[phase-3-031-asthasahasrika-prajnaparamita]] (earliest Prajñāpāramitā corpus — shared Mahāyāna milieu)"]
+influences: ["Tiantai school of Zhiyi (~538-597 CE)", "Tendai school of Japan (Saichō, 767-822)", "Nichiren Buddhism (Nichiren, 1222-1282; the entire Lotus-centered Japanese tradition)", "[[guanyin]] devotion (Lotus ch. 25 is the textual foundation of the Avalokiteśvara/Guanyin cult)", "[[phase-5-004-platform-sutra-huineng]] (Chan)", "all East Asian Mahāyāna liturgy and iconography", "[[tradition-mahayana-buddhism]] (foundational document — ekayāna doctrine sets the Mahāyāna project)", "[[tradition-pure-land-buddhism]] (Ch. 25 Guanyin / the eternal cosmic Buddha logic of Ch. 16)", "[[tradition-zen]] (Lotus recited daily in most Zen monasteries despite anti-textual stance)"]
+deities-mentioned: ["[[avalokitesvara]]", "[[guanyin]]", "[[manjushri]]", "[[samantabhadra-buddha]]", "[[maitreya]]", "[[vairocana]]"]
+events-context: ["[[event-fourth-buddhist-council-kanishka-c-100]]"]
 status: "metadata"
 preservation: "Sanskrit manuscripts: substantial Gilgit, Nepalese, and Central Asian witnesses (the Gilgit Lotus from Kashmir, 5th-6th c. CE, is the most important early manuscript; the Nepalese paper-manuscript tradition preserves the standard Sanskrit recension). The text exists in three main Chinese translations: Dharmarakṣa (286 CE), Kumārajīva (406 CE, the standard East Asian text), and a 601 CE translation by Jñānagupta and Dharmagupta. Tibetan translation by Surendrabodhi and Yeshes-sde (~9th c.). The standard East Asian recension has 28 chapters in Kumārajīva (the Sanskrit has 27 — the 'Devadatta' chapter is a Chinese insertion). Continuous chanted-recitation tradition across East Asia."
 refs:
@@ -65,6 +67,13 @@ refs:
     publisher: "Numen series, various"
     type: "monograph"
     tier: 2
+  - title: "Scripture of the Lotus Blossom of the Fine Dharma"
+    author: "Hurvitz, Leon"
+    year: 1976
+    publisher: "Columbia University Press"
+    type: "primary-translation"
+    tier: 1
+    notes: "Earlier scholarly translation; detailed annotation; remains essential reference alongside Watson."
 tags: [phase-4, mahayana, lotus-sutra, kumarajiva, tiantai, nichiren, upaya, devotion, guanyin]
 ---
 
@@ -96,6 +105,7 @@ The most influential single Mahāyāna text in East Asia — and arguably the mo
 - → **Nichiren Buddhism (1222-1282)** — *direct-influence*: Nichiren took the Lotus as the *one* essential text of the Dharma age and the daimoku ("Namu Myōhō Renge Kyō" — "Devotion to the Lotus Sutra of the Wonderful Law") as the sole sufficient practice. The most Lotus-centered tradition in Buddhist history.
 
 ## Cross-tradition substrate
+- **MASSIVE-WIN — Upāya supersessionism parallels Christian typology and Islamic *naskh*.** The Lotus Sūtra's *upāya* doctrine — that all prior Buddhist teachings were provisional adaptations now superseded by the fuller Lotus revelation — is structurally identical to: (1) **Christian typological reading of the Hebrew Bible** (earlier revelation is "fulfilled" and superseded by Christ — [[progressive-revelation]], fulfillment-of-prophecy); (2) **Islamic *naskh* / abrogation** (later Quranic verses abrogate earlier ones; the Quran is the *final* complete revelation superseding prior scriptures — [[phase-4-034-quran]]). Three major traditions independently develop the identical "supersessionist" logic that claims to contain and transcend prior revelation. No documented historical connection; structural parallel appears independent. (Lopez 2016; Stone 1999.)
 - **Upāya / skillful means and Hellenistic accommodation.** The Lotus Sūtra's doctrine of *upāya* — that the teacher adapts teaching to the capacity of the hearer, that earlier teachings were provisional rather than wrong — is structurally parallel to the Hellenistic-philosophical doctrine of pedagogical accommodation (Plato's *Phaedrus* on the soul-suitability of teachings; Stoic doctrines of staged instruction) and to the Christian Patristic doctrine of *synkatabasis* / *accommodatio* / "accommodation" (Origen, *Contra Celsum* 4.71; later widely developed in Christian biblical interpretation as the doctrine that God "speaks to humans according to their capacity"). Three traditions — Indian Mahāyāna, Greek philosophical, Christian Patristic — independently develop the same pedagogical-theological doctrine. *Parallel-motif* substrate; no transmissional claim, though the Indian-Hellenistic contact zone (Gandhāra) leaves some scholars open to weak diffusion arguments. Lopez 2016 ch. 1 notes the parallel.
 - **Cult of the sacred book.** The Lotus Sūtra's self-referential sacralization (the merit of writing out a copy, of preserving the text, of the place where the text is recited becoming a stūpa) belongs to a cross-tradition substrate of book-cult phenomena: Hebrew Bible Torah-scroll veneration; Quranic *muṣḥaf* veneration and the prohibition on touching it in impurity; Sikh Guru Granth Sahib as a living Guru; Christian liturgical Gospel-book veneration. Substrate of *book-as-sacred-presence*; some shared structural features and several independent inventions. (For the Indic Buddhist side: Schopen 1975.)
 - **Bhakti / devotional Mahāyāna.** Pure Land devotion (Sukhāvatīvyūha), Lotus devotion, and the cult of Avalokiteśvara/Guanyin constitute East Asian Buddhism's *bhakti* equivalent — the devotional turn that runs parallel to South Asian Hindu bhakti and to Christian devotional traditions (Pietism, the Sacred Heart, popular Marian devotion). The Pure Land tradition is the most explicitly devotional. Williams 2009 *Mahayana Buddhism* ch. 10 develops the parallel.
@@ -109,8 +119,9 @@ The most influential single Mahāyāna text in East Asia — and arguably the mo
 
 ## Refs
 1. Watson, B. (1993). *The Lotus Sutra*. Columbia UP.
-2. Lopez, D.S. (2016). *The Lotus Sūtra: A Biography*. Princeton UP.
-3. Kato, B. et al. (1975). *The Threefold Lotus Sutra*. Weatherhill / Kosei.
-4. Stone, J.I. (1999). *Original Enlightenment and the Transformation of Medieval Japanese Buddhism*. Kuroda / U Hawaii.
-5. Williams, P. (2009). *Mahayana Buddhism: The Doctrinal Foundations*, 2nd ed. Routledge.
-6. Schopen, G. (1975). "The Phrase 'sa pṛthivīpradeśaś caityabhūto bhavet' in the *Vajracchedikā*." *Indo-Iranian Journal* 17.
+2. Hurvitz, L. (1976). *Scripture of the Lotus Blossom of the Fine Dharma*. Columbia UP.
+3. Lopez, D.S. (2016). *The Lotus Sūtra: A Biography*. Princeton UP.
+4. Kato, B. et al. (1975). *The Threefold Lotus Sutra*. Weatherhill / Kosei.
+5. Stone, J.I. (1999). *Original Enlightenment and the Transformation of Medieval Japanese Buddhism*. Kuroda / U Hawaii.
+6. Williams, P. (2009). *Mahayana Buddhism: The Doctrinal Foundations*, 2nd ed. Routledge.
+7. Schopen, G. (1975). "The Phrase 'sa pṛthivīpradeśaś caityabhūto bhavet' in the *Vajracchedikā*." *Indo-Iranian Journal* 17.

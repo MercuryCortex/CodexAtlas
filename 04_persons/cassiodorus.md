@@ -10,6 +10,8 @@ date-born: 485
 date-died: 585
 historicity: "documented"
 texts-authored: ["*Variae* (12 books of state letters)", "*Institutiones divinarum et saecularium litterarum*", "*Expositio Psalmorum*", "*De anima*", "*Historia Ecclesiastica Tripartita*", "*De orthographia*"]
+contemporary-persons: ["[[boethius]]", "[[benedict-of-nursia]]", "[[isidore-of-seville]]"]
+related-themes: ["[[monastic-asceticism]]"]
 status: "metadata"
 refs:
   - title: "Cassiodorus: A Tribute to His Aim and Achievement"
@@ -58,10 +60,11 @@ The *Variae* are themselves a primary archive of Ostrogothic-Italian administrat
 Pivotal figure of late-antique-to-medieval cultural transmission. The Vivarium project preserves Latin classical and patristic learning by integrating manuscript copying into monastic discipline — a model that Benedictine monasticism (without Cassiodorus's specific institution, which did not long survive) eventually generalized across Europe. Most of what the early Middle Ages read of classical Latin (and translated Greek) literature reaches them through Vivarium-pattern monastic scriptoria.
 
 ## Connections — substrate and influence
-- The *Institutiones* book II is the bridge by which the late-antique liberal-arts curriculum (*trivium* and *quadrivium*) is handed forward to the medieval Latin West — preserving substantial chunks of pagan classical learning (rhetoric, dialectic, arithmetic, music, geometry, astronomy) inside a Christian monastic syllabus.
+- The *Institutiones* book II is the bridge by which the late-antique liberal-arts curriculum (*trivium* and *quadrivium*) is handed forward to the medieval Latin West — preserving substantial chunks of pagan classical learning (rhetoric, dialectic, arithmetic, music, geometry, astronomy) inside a Christian monastic syllabus. [[alcuin-of-york]] later drew directly on Cassiodorus and [[isidore-of-seville]] when building the Carolingian educational program.
 - His *Expositio Psalmorum* is methodologically Augustinian — Christian Platonist reading of scripture.
 - The *Historia Ecclesiastica Tripartita* transmits Eusebian church-historical method (an event-by-event documentary history of the church-imperial alliance) into the medieval West.
 - Vivarium is one of the major channels through which **Greek philosophical and patristic literature reaches Latin Christendom** in translation — Cassiodorus commissioned Latin translations of Josephus, the Greek church historians, and various Greek scientific works.
+- A crucial link in the chain that connects classical Platonic-scholastic learning to medieval Christian [[monastic-asceticism]]: Cassiodorus was contemporary with [[boethius]] (both served the Ostrogothic court under Theodoric) and with [[benedict-of-nursia]] (whose *Rule* — contemporaneous — generalized the monastic scriptoria model that Vivarium pioneered). These three — Boethius (philosophy), Benedict (rule), Cassiodorus (curriculum) — together constitute the founding generation of medieval Latin Christian intellectual culture.
 
 ## Disputes
 - **Date of birth.** 485 or slightly later; 490 is also defensible.

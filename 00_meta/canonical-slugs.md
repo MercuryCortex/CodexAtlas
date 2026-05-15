@@ -17,7 +17,7 @@ canonical-slug
 ## Currently resolved slugs (auto-seeded — every existing file)
 
 
-### deity (446 nodes)
+### deity (447 nodes)
 
 - `abathur`
 - `adamastor`
@@ -238,6 +238,7 @@ canonical-slug
 - `lugalbanda`
 - `lugh`
 - `lugus`
+- `ma-at`
 - `maat`
 - `macha`
 - `mahakala`
@@ -837,7 +838,7 @@ canonical-slug
 - `phase-8-017-santeria-lucumi`
 - `phase-8-018-kalevala`
 
-### event (159 nodes)
+### event (160 nodes)
 
 - `bent-pyramid-sneferu-dahshur`
 - `el-castillo-chichen-itza`
@@ -968,6 +969,7 @@ canonical-slug
 - `event-rosslyn-chapel-construction-1446`
 - `event-sabbatean-apostasy-1666`
 - `event-sack-of-rome-410`
+- `event-school-of-alexandria-300bce-415ce`
 - `event-second-crusade-1147-1149`
 - `event-second-vatican-council-1962-1965`
 - `event-shanidar-neanderthal-burials-c-60000-bce`
@@ -999,7 +1001,7 @@ canonical-slug
 - `subterranean-chamber-great-pyramid`
 - `temple-of-inscriptions-palenque`
 
-### person (624 nodes)
+### person (627 nodes)
 
 - `aaron`
 - `abba-garima`
@@ -1029,6 +1031,7 @@ canonical-slug
 - `ali-ibn-abi-talib`
 - `ali-zayn-al-abidin`
 - `ambrose-of-milan`
+- `ammonius-saccas`
 - `amos-prophet`
 - `ananda-disciple`
 - `anaximander`
@@ -1419,6 +1422,7 @@ canonical-slug
 - `mulla-sadra`
 - `musa-al-kazim`
 - `n-t-wright`
+- `nachmanides`
 - `nagarjuna`
 - `nagasena`
 - `nammalvar`
@@ -1480,6 +1484,7 @@ canonical-slug
 - `priscilla-and-maximilla`
 - `priscillian`
 - `proclus`
+- `pseudo-dionysius`
 - `pseudo-dionysius-the-areopagite`
 - `ptolemaeus`
 - `ptolemaeus-valentinian`
@@ -1626,18 +1631,20 @@ canonical-slug
 - `ziusudra`
 - `zosimos-of-panopolis`
 
-### symbol (70 nodes)
+### symbol (73 nodes)
 
 - `alpha-omega`
 - `ankh`
 - `asclepian-rod`
 - `aum-om`
+- `axis-mundi`
 - `beauseant`
 - `bull`
 - `caduceus`
 - `celtic-cross`
 - `chi-rho-labarum`
 - `coptic-cross`
+- `cosmic-egg`
 - `crescent-moon-star`
 - `cross-order-of-christ`
 - `cross-pattee-templar`
@@ -1690,6 +1697,7 @@ canonical-slug
 - `tau-cross`
 - `tauroctony`
 - `tetragrammaton`
+- `tetramorph`
 - `thyrsus`
 - `tree-of-life`
 - `triskelion`
@@ -1699,7 +1707,7 @@ canonical-slug
 - `wheat-grain`
 - `yin-yang`
 
-### theme (290 nodes)
+### theme (296 nodes)
 
 - `364-day-solar-calendar`
 - `adam-kadmon`
@@ -1729,10 +1737,12 @@ canonical-slug
 - `ark-of-the-covenant`
 - `as-above-so-below`
 - `ascent-of-the-soul`
+- `asura-deva-inversion`
 - `atonement-reinterpreted`
 - `avatar-doctrine`
 - `baphomet-controversy`
 - `bhakti-devotion`
+- `bmac-proto-zoroastrian`
 - `bodhisattva-vow`
 - `brahman-impersonal`
 - `bridal-mysticism`
@@ -1843,6 +1853,7 @@ canonical-slug
 - `logos-johannine`
 - `logos-philonic`
 - `lost-continent`
+- `ma-at-logos-sophia`
 - `marcionite-canon`
 - `martyrdom-theology`
 - `mesoamerican-cosmogony`
@@ -1859,12 +1870,14 @@ canonical-slug
 - `mother-and-child-iconography`
 - `mystery-initiation`
 - `name-of-god`
+- `neoplatonic-henosis`
 - `new-moses-typology`
 - `noble-eightfold-path`
 - `non-duality`
 - `norse-cosmogony`
 - `numinous`
 - `occasionalism`
+- `occultation-hidden-imam`
 - `oral-tradition-transmission`
 - `origin-of-evil`
 - `original-sin`
@@ -1904,6 +1917,7 @@ canonical-slug
 - `root-races`
 - `royal-hymn`
 - `sacred-and-profane`
+- `sacred-geometry-cosmic-proportion`
 - `sacred-king`
 - `sacred-marriage`
 - `sacrifice-as-cosmic-renewal`
@@ -2118,13 +2132,15 @@ canonical-slug
 
 | Refs | Dead target | Suggested canonical (existing) |
 |---:|---|---|
-| 5 | `phase-1-013-babylonian-theodicy` | `phase-1-032-babylonian-theodicy` |
-| 4 | `tradition-minoan-religion` | `tradition-spiritualism` |
-| 3 | `tradition-medieval-christianity` | `tradition-egyptian-religion` |
+| 5 | `phase-1-013-babylonian-theodicy` | `phase-1-012-amarna-letters` |
+| 4 | `tradition-minoan-religion` | `tradition-mahayana-buddhism` |
+| 4 | `tradition-eastern-orthodoxy` | `tradition-mahayana-buddhism` |
+| 3 | `tradition-medieval-christianity` | `tradition-mahayana-buddhism` |
+| 3 | `tradition-early-christianity` | `tradition-mahayana-buddhism` |
 | 3 | `phase-4-007-new-testament-canon` | `phase-4-003-gospel-of-truth` |
 | 3 | `phase-2-005-1-2-kings` | `phase-2-003-atharva-veda` |
+| 3 | `divine-kingship-solar` | `divine-kingship` |
 | 2 | `yam-canaanite` | `astarte-canaanite` |
-| 2 | `tradition-lingayat` | `tradition-spiritualism` |
-| 2 | `tradition-eastern-orthodoxy` | `tradition-spiritualism` |
-| 2 | `phase-2-004-1-2-chronicles` | `phase-2-001-rig-veda-family-books` |
+| 2 | `tradition-lingayat` | `tradition-jainism` |
+| 2 | `phase-2-004-1-2-chronicles` | `phase-2-002-gathas-of-zarathustra` |
 | 2 | `asclepius` | `asclepius-greek` |

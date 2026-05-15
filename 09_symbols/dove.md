@@ -27,6 +27,8 @@ syncretic-edges:
   - target: "wheat-grain"
     type: "structural"
     notes: "Dove and grain appear together in ancient Near Eastern temples as paired abundance symbols — dove = peace/divine messenger, grain = life/sustenance; the pairing persists in Christian iconography of peace and plenty"
+related-documents: ["[[phase-1-004-gilgamesh-old-babylonian]]", "[[phase-1-016-eridu-genesis-flood]]", "[[phase-3-016-gospel-of-mark]]", "[[phase-3-017-gospel-of-matthew]]", "[[phase-3-020-gospel-of-john]]"]
+related-themes: ["[[flood-motif]]"]
 status: "metadata"
 refs:
   - title: "The Symbolism of the Biblical World: Ancient Near Eastern Iconography and the Book of Psalms"
@@ -52,7 +54,7 @@ The dove as divine messenger, peace herald, and carrier of the Holy Spirit — a
 
 The dove was the sacred bird of Inanna/Ishtar, goddess of love and war. Temple doves were kept at major Ishtar sanctuaries at Nineveh, Assur, and Uruk. Cylinder seals from the 3rd millennium BCE depict doves perched on cult stands associated with the goddess.
 
-**Gilgamesh XI:** In the Babylonian flood narrative (c. 1750 BCE), Utnapishtim releases three birds from the ark in succession to test whether the waters have receded: first a dove (returns — no resting place), then a swallow (returns), then a raven (does not return — waters have dried). The dove as the first bird released, returning without news, appears in Genesis approximately 500 years later in a closely parallel scene.
+**Gilgamesh XI ([[phase-1-004-gilgamesh-old-babylonian]]):** In the Babylonian flood narrative (c. 1750 BCE), Utnapishtim releases three birds from the ark in succession to test whether the waters have receded: first a dove (returns — no resting place), then a swallow (returns), then a raven (does not return — waters have dried). The dove as the first bird released, returning without news, appears in Genesis approximately 500 years later in a closely parallel scene — preserved in [[phase-1-016-eridu-genesis-flood]] and its Sumerian antecedents. The [[flood-motif]] theme tracks this transmission.
 
 ## The Noah-Dove and New Creation
 
@@ -62,7 +64,7 @@ Genesis 8:11: After forty days, Noah releases the dove; it returns with a fresh 
 
 ## The Baptism of Jesus: All Four Gospels
 
-Mark 1:10 (the earliest Gospel): "And just as he was coming up out of the water, he saw the heavens torn apart and the Spirit descending like a dove on him." All four Gospels record this event identically — the only event with full four-Gospel attestation. The Spirit-as-dove descends over the Jordan at the moment Jesus emerges from the water: Spirit hovering over primordial waters (Genesis 1:2) = dove returning over flood waters (Genesis 8) = Spirit descending at the new creation moment. Jesus's baptism IS the new creation event for all four Evangelists.
+[[phase-3-016-gospel-of-mark]] 1:10 (the earliest Gospel): "And just as he was coming up out of the water, he saw the heavens torn apart and the Spirit descending like a dove on him." All four Gospels ([[phase-3-016-gospel-of-mark]], [[phase-3-017-gospel-of-matthew]], [[phase-3-020-gospel-of-john]]) record this event identically — the only event with full four-Gospel attestation. The Spirit-as-dove descends over the Jordan at the moment Jesus emerges from the water: Spirit hovering over primordial waters (Genesis 1:2) = dove returning over flood waters (Genesis 8) = Spirit descending at the new creation moment. Jesus's baptism IS the new creation event for all four Evangelists.
 
 ## Islamic Dove Tradition
 

@@ -25,6 +25,8 @@ syncretic-edges:
   - target: "sefirot-tree-of-life"
     type: "structural"
     notes: "MASSIVE WIN: The 22 Hebrew letters = 22 paths on the Kabbalistic Tree of Life; aleph-tav = the two poles of the 22-letter sequence structuring all creation. Sefer Yetzirah: God created His universe with letter, number, and communication — the alphabet IS the universe's operating code"
+related-symbols: ["[[aum-om]]", "[[sefirot-tree-of-life]]"]
+related-themes: ["[[divine-name]]", "[[creation-by-word]]", "[[logos-cosmic-reason]]"]
 status: "metadata"
 refs:
   - title: "The Book of Revelation"
@@ -60,8 +62,8 @@ The Hebrew analogue — *aleph-tav*, first and last letters of the Hebrew alphab
 
 ## Cross-Tradition Parallel: AUM
 
-The Mandukya Upanishad opens: "All this is, indeed, Brahman. This Atman is Brahman." AUM is then analyzed as encompassing all states of consciousness and all of reality. Like alpha-omega, AUM is simultaneously a sound, a divine name, and a claim that this specific phoneme IS the totality of what exists. The structural logic is identical; the traditions are fully independent.
+The Mandukya Upanishad opens: "All this is, indeed, Brahman. This Atman is Brahman." [[aum-om]] is then analyzed as encompassing all states of consciousness and all of reality. Like alpha-omega, AUM is simultaneously a sound, a [[divine-name]], and a claim that this specific phoneme IS the totality of what exists. The structural logic is identical; the traditions are fully independent. Both belong to the deeper [[creation-by-word]] theme — the cross-tradition claim that divine speech/sound is ontologically constitutive of reality (also: Genesis "Let there be light," [[logos-cosmic-reason]] in Stoicism and the Gospel of John).
 
 ## Hermetic Qabalah
 
-In the Hermetic Qabalah (Sefer Yetzirah; systematized by Isaac Luria in Safed, 1570s), the 22 Hebrew letters are the building blocks of creation — the 22 paths on the Kabbalistic Tree of Life linking the ten sefirot. The aleph-tav totality maps directly onto the structural claim that the alphabet IS the universe's architecture.
+In the Hermetic Qabalah (Sefer Yetzirah; systematized by Isaac Luria in Safed, 1570s), the 22 Hebrew letters are the building blocks of creation — the 22 paths on the [[sefirot-tree-of-life]] linking the ten sefirot. The aleph-tav totality maps directly onto the structural claim that the alphabet IS the universe's architecture.

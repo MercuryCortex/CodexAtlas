@@ -28,6 +28,9 @@ syncretic-edges:
   - target: "star-of-ishtar"
     type: "typological"
     notes: "Both the fleur-de-lis and the Star of Ishtar trace to Mesopotamian feminine divine iconography — the lily/iris was sacred to Inanna/Ishtar; the eight-pointed star was her primary astral symbol; both belong to the pre-Abrahamic Semitic-Mediterranean feminine deity substrate that was absorbed into Marian symbolism"
+related-deities: ["[[ishtar-akkadian]]", "[[inanna-sumerian]]", "[[mary-theotokos]]"]
+related-symbols: ["[[lotus]]"]
+related-events: ["[[event-clovis-baptism-c-496]]"]
 status: "metadata"
 refs:
   - title: "Heraldry: Its Origins and Meaning"
@@ -59,12 +62,12 @@ The lily (white, often the Madonna lily *Lilium candidum*) was associated with t
 
 ## Pre-Christian Substrate
 
-**Mesopotamian:** The iris/lily was sacred to Inanna/Ishtar. Cylinder seals from the 2nd millennium BCE depict stylized irises on altars and votive objects associated with her cult. The flower appears in Mesopotamian palace decoration as a marker of royal sanctity.
+**Mesopotamian:** The iris/lily was sacred to [[inanna-sumerian]] / [[ishtar-akkadian]]. Cylinder seals from the 2nd millennium BCE depict stylized irises on altars and votive objects associated with her cult. The flower appears in Mesopotamian palace decoration as a marker of royal sanctity.
 
 **Greek:** The iris was Hera's flower and the symbol of the rainbow goddess Iris, divine messenger. The stylized three-petaled iris form appears on Greek vase painting and architectural ornament.
 
-**The Lily of Clovis legend:** Medieval tradition held that Clovis I (r. 481–511), the first Frankish Christian king, received the fleur-de-lis from God at his baptism — superseding the toads on his original arms. This founding legend encodes the symbol's theological meaning: the lily = Christian conversion = divine appointment = Marian protection. It made the symbol pre-heraldic, directly divine, and Marian simultaneously.
+**The Lily of Clovis legend:** Medieval tradition held that Clovis I (r. 481–511), the first Frankish Christian king, received the fleur-de-lis from God at his baptism ([[event-clovis-baptism-c-496]]) — superseding the toads on his original arms. This founding legend encodes the symbol's theological meaning: the lily = Christian conversion = divine appointment = Marian protection. It made the symbol pre-heraldic, directly divine, and Marian simultaneously.
 
 ## MASSIVE WIN: Lily and Lotus
 
-The Western lily (fleur-de-lis) and the Eastern lotus are structurally cognate sacred flowers that arrived independently at the same symbolic position: divine purity emerging from water or muddy ground, associated with feminine divinity, used as the throne or attribute of the highest goddess. The West chose the lily as the flower of Mary and of queens; India and East Asia chose the lotus as the flower of Lakshmi, Guan Yin, and the Buddha. Two flowers, one theological function, zero historical connection.
+The Western lily (fleur-de-lis) and the Eastern [[lotus]] are structurally cognate sacred flowers that arrived independently at the same symbolic position: divine purity emerging from water or muddy ground, associated with feminine divinity, used as the throne or attribute of the highest goddess. The West chose the lily as the flower of [[mary-theotokos]] and of queens; India and East Asia chose the lotus as the flower of Lakshmi, Guan Yin, and the Buddha. Two flowers, one theological function, zero historical connection.

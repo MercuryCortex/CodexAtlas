@@ -11,6 +11,7 @@ date-died: 804
 historicity: "documented"
 texts-authored: ["*Vita Willibrordi*", "*Vita Vedasti*", "*De fide sanctae Trinitatis*", "*Adversus Felicem* and *Adversus Elipandum* (anti-Adoptionist)", "~310 letters", "many *quaestiones* and didactic dialogues (*De grammatica*, *De rhetorica et virtutibus*, *De dialectica*)", "liturgical compositions (votive masses, the *Supplementum* to the Gregorian Sacramentary)", "biblical revisions (overseeing the Touronian Vulgate)"]
 events-participated: []
+contemporary-persons: ["[[charlemagne]]", "[[bede]]", "[[cassiodorus]]", "[[isidore-of-seville]]", "[[boethius]]"]
 status: "metadata"
 refs:
   - title: "Alcuin: His Life and Letters"
@@ -60,8 +61,8 @@ Approximately 310 of his letters survive, addressed to Charlemagne, members of t
 The intellectual architect of the Carolingian Renaissance. The standardization of script (Carolingian minuscule), of biblical text, of liturgical books, and of educational curriculum that issues from the Aachen-Tours axis owes more to Alcuin than to any other single figure. His pupils (Rabanus Maurus, Hatto of Fulda, Hildebald of Cologne) staffed the next generation of Frankish bishoprics and abbeys.
 
 ## Connections — substrate and influence
-- Alcuin transmits the **Anglo-Saxon learning of York** — which was itself an inheritance from Bede and ultimately from the Wearmouth-Jarrow library — to the Frankish empire. He represents a clean documentable line: Roman / patristic library → Benedict Biscop and Ceolfrith's book purchases → Wearmouth-Jarrow → Bede → Egbert → Alcuin → Aachen and Tours.
-- His curriculum codifies the late-antique liberal arts (*trivium* + *quadrivium*) inherited from Cassiodorus, Isidore, and ultimately Martianus Capella and Boethius. The Carolingian school is the late-antique school, restored.
+- Alcuin transmits the **Anglo-Saxon learning of York** — which was itself an inheritance from [[bede]] and ultimately from the Wearmouth-Jarrow library — to the Frankish empire. He represents a clean documentable transmission line: Roman / patristic library → Benedict Biscop and Ceolfrith's book purchases → Wearmouth-Jarrow → [[bede]] → Egbert → Alcuin → Aachen and Tours.
+- His curriculum codifies the late-antique liberal arts (*trivium* + *quadrivium*) inherited from [[cassiodorus]], [[isidore-of-seville]], and ultimately Martianus Capella and [[boethius]]. The Carolingian school is the late-antique school, restored — a direct connection between [[cassiodorus]]'s Vivarium curriculum and Alcuin's palace school at Aachen under [[charlemagne]].
 - Alcuin reads Augustine extensively; the Trinitarian theology of his *De fide* is essentially Augustinian.
 - The Carolingian-era promotion of *filioque* (the addition to the Nicene Creed of "and from the Son" in the procession of the Spirit) in which Alcuin was active foreshadows the great East-West dispute culminating in 1054.
 

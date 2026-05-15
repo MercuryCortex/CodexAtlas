@@ -10,6 +10,8 @@ date-born: 390
 date-died: 459
 historicity: "documented"
 texts-authored: []
+traditions: ["[[tradition-syriac-orthodox]]", "[[tradition-oriental-orthodox]]"]
+related-themes: ["[[monastic-asceticism]]"]
 status: "metadata"
 refs:
   - title: "Three Christian Saints' Lives: The Life of Simeon Stylites"
@@ -60,7 +62,7 @@ Foundational figure of **stylite** asceticism — pillar-sainthood — which bec
 ## Connections — substrate and influence
 - **The pillar-sainthood phenomenon is geographically Syrian** and emerges on the same landscape as much older Semitic high-place / pillar / *bama* cultic traditions and Stelae-cult (the Mesopotamian and Canaanite sacred pillar / *massebah* / Astarte-pillar traditions). Doran 1992: 28–47 surveys the substrate question; the genetic continuity is not provable and is contested, but the **regional substrate of pillar / column cult** is real — Lucian's *De Dea Syria* describes giant cult-pillars at Hierapolis (climbed by priests for divination) within living cultural memory of Simeon's lifetime. Brown 1971 is more cautious about the substrate-continuity claim than the popular literature.
 - Brown's 1971 *Rise and Function of the Holy Man* is the canonical treatment: Simeon and the stylites function as **mediators** between the rural-monastic world and the urban-imperial-clerical world, a role with structural parallels to older Mediterranean priest-mediator figures (Phoenician temple priests, Anatolian *galloi* of Cybele, Egyptian temple-bound priests).
-- His extreme asceticism — chains, exposure, ascending pillar — represents the maximal extension of the **logic of bodily mortification** that runs through Egyptian and Syrian Christian monasticism, in turn a Christian reworking of older Near-Eastern ascetic-priestly bodily discipline.
+- His extreme asceticism — chains, exposure, ascending pillar — represents the maximal extension of the **logic of bodily mortification** that runs through Egyptian and Syrian Christian [[monastic-asceticism]], in turn a Christian reworking of older Near-Eastern ascetic-priestly bodily discipline. His tradition belongs primarily to [[tradition-syriac-orthodox]] Christianity and the broader [[tradition-oriental-orthodox]] world of the eastern Mediterranean Church.
 
 ## Disputes
 - **Precise height of the final pillar.** Sources give different numbers (40 cubits in Theodoret); archaeology of the pillar-base helps but is not definitive.
