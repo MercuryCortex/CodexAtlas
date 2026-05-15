@@ -3,8 +3,8 @@ type: symbol
 id: "sefirot-tree-of-life"
 name: "Sefirot / Tree of Life (Kabbalistic)"
 aka: ["the Tree", "Etz Chaim", "Ten Sefirot", "Otz Chiim", "Kabbalistic Tree"]
-domains: ["cosmology", "mystical theology", "Hermetic philosophy", "theurgy", "Western esotericism"]
-traditions: ["tradition-kabbalah-jewish", "tradition-hermetic-qabalah", "tradition-judaism", "tradition-freemasonry"]
+families: ["Rabbinic", "Hermetic", "Modern-Esoteric"]
+category: "geometric"
 appearances:
   - source: "Sefer Yetzirah (Book of Formation), ~3rd–6th century CE"
     description: "The earliest systematic enumeration of ten primordial numbers (sefirot) and twenty-two Hebrew letters as the tools of creation; the diagram is implicit rather than explicit but all subsequent Tree imagery is latent here"

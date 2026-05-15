@@ -3,8 +3,8 @@ type: symbol
 id: "alpha-omega"
 name: "Alpha and Omega"
 aka: ["Aleph-Tav", "first and last letters", "divine linguistic totality"]
-domains: ["divine titles", "cosmology", "language", "Christian theology"]
-traditions: ["tradition-christianity", "tradition-judaism", "tradition-hermetic-qabalah"]
+families: ["Christian", "Rabbinic", "Hermetic"]
+category: "geometric"
 appearances:
   - source: "Revelation 1:8"
     description: "\"I am the Alpha and the Omega, the First and the Last\" — Christ as the totality of all language = all creation"

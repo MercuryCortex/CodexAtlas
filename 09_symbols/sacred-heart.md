@@ -4,6 +4,8 @@ id: "sacred-heart"
 name: "Sacred Heart of Jesus"
 aka: ["Cor Iesu Sacratissimum", "the Flaming Heart", "the Heart Crowned with Thorns"]
 visual-form: "A human heart — realistically depicted, red, anatomical — crowned with a circle of thorns (echoing the Crown of Thorns), surmounted by a small cross, pierced by a wound on one side (sometimes with blood and/or flames), and emitting rays of light. Often depicted held in Christ's hand or at the center of his chest as he points to it. In some images, the heart stands alone as the devotional focus without the full figure of Christ."
+families: ["Christian"]
+category: "anthropomorphic"
 tradition: "Roman Catholic Christianity; devotion formalized in the Jesuit order after Margaret Mary Alacoque's visions (1673–1675)"
 region: "France (Paray-le-Monial, Burgundy); later worldwide"
 period-earliest: 1673
@@ -12,22 +14,22 @@ function: "devotional focus; symbol of Christ's love, suffering, and redemptive 
 status: "full"
 tags: [symbol, sacred-heart, catholic, christ, devotion, sufi, heart, qalb, MASSIVE-WIN, cross-tradition, jesuit, mysticism]
 cross-symbol-edges:
-  - symbol: "[[latin-cross]]"
+  - target: "[[latin-cross]]"
     relation: "surmounts-the-heart"
     note: "A small cross tops the Sacred Heart — the cross of Christ's redemptive death marks the heart as the seat of that sacrifice"
-  - symbol: "[[sun-disk]]"
+  - target: "[[sun-disk]]"
     relation: "radiance-parallel"
     note: "The Sacred Heart emits light-rays in virtually all depictions; the radiating heart = the solar heart, the divine center that illuminates all things. Compare the sun-disk / sol invictus / solar imagery across traditions"
-  - symbol: "[[vine-grape]]"
+  - target: "[[vine-grape]]"
     relation: "sacrifice-parallel"
     note: "The heart as the center of Christ's self-offering parallels the vine sacrifice — the blood pressed from the vine / the blood flowing from the heart; both are Eucharistic symbols of divine self-giving"
-  - symbol: "[[halo-nimbus]]"
+  - target: "[[halo-nimbus]]"
     relation: "light-emission"
     note: "The rays emanating from the Sacred Heart are the halo/nimbus relocated from the head to the heart — divine radiance emanating from the seat of mystical union rather than the intellectual center"
-  - symbol: "[[wheat-grain]]"
+  - target: "[[wheat-grain]]"
     relation: "Eucharistic-companion"
     note: "Sacred Heart devotion is deeply Eucharistic; the heart and the Eucharistic bread (wheat) are co-centers of Catholic devotional life"
-  - symbol: "[[rose-cross-rosicrucian]]"
+  - target: "[[rose-cross-rosicrucian]]"
     relation: "parallel-heart-cross"
     note: "The Rosicrucian rose on the cross is structurally parallel to the Sacred Heart: the rose = the blooming/sacrificed heart; the cross = the redemptive death. Both center the cross on a living organic heart-symbol."
 refs:

@@ -3,8 +3,8 @@ type: symbol
 id: "dove"
 name: "Dove"
 aka: ["holy dove", "dove of peace", "Yonah", "Hand of Fatima bird"]
-domains: ["peace", "divine messenger", "Holy Spirit", "flood narrative", "baptism"]
-traditions: ["tradition-christianity", "tradition-judaism", "tradition-mesopotamian", "tradition-islam"]
+families: ["Christian", "Mesopotamian", "Israelite", "Islamic"]
+category: "theriomorphic"
 appearances:
   - source: "Epic of Gilgamesh, Tablet XI"
     description: "Third bird released from the ark after the flood — the dove returns because it found no resting place, prefiguring Noah's dove by at least 500 years"

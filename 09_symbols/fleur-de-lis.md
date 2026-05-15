@@ -3,8 +3,8 @@ type: symbol
 id: "fleur-de-lis"
 name: "Fleur-de-lis"
 aka: ["lily of France", "fleur de lys", "stylized iris", "Marian lily"]
-domains: ["heraldry", "royalty", "Marian symbolism", "apotropaic", "Freemasonry"]
-traditions: ["tradition-roman-catholicism", "tradition-freemasonry", "tradition-mesopotamian"]
+families: ["Christian", "Mesopotamian", "Hermetic"]
+category: "phytomorphic"
 appearances:
   - source: "Oriflamme of France (12th century)"
     description: "The fleur-de-lis appears on the Oriflamme battle standard of the French royal house by the reign of Louis VII; the 'Lily of France' becomes the defining heraldic mark of Capetian and later Valois and Bourbon dynasties"
