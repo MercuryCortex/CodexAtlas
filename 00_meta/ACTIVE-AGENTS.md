@@ -18,11 +18,15 @@ Format:
 
 ---
 
-## sonnet-investigations-1 — content / cross-tradition investigation theme nodes — started 2026-05-15
+## sonnet-investigations-1 — content / cross-tradition investigation theme nodes — started 2026-05-15 — **FINISHED 2026-05-15**
 - Owning: `06_themes/persian-period-injection.md` (NEW), `06_themes/executed-divine-claimant.md` (NEW)
 - Goal: 2 high-value cross-tradition investigation theme nodes — Persian Period Injection (Zoroastrian doctrines into Second Temple Judaism) + Executed Divine Claimant (Socrates/Jesus/al-Hallaj/Suhrawardi martyrdom pattern)
-- Status: in-flight
-- Last edit: 00_meta/ACTIVE-AGENTS.md
+- Status: finished
+- Delivered:
+  - [[persian-period-injection]] (NEW) — full metadata theme; 5 documented channels (dualism/resurrection/messiah/angelology/judgment); Cyrus as mashiach (Isaiah 45:1) as the instantiation-point; Boyce/Collins/Alexander/Cohn T1 refs; companion + extension to theme-zoroastrian-jewish-exchange
+  - [[executed-divine-claimant]] (NEW) — full metadata theme; 4-instance structural pattern (Socrates/Jesus/al-Hallaj/Suhrawardi); Justin Martyr conscious relay documented; al-Hallaj ↔ Jesus crucifixion imagery; pattern mechanics table (transgression/execution/inversion/relay); Massignon/Plato/Corbin/Justin T1 refs; Bruno + Hus extension
+- Build: **2063 nodes · 12,283 edges · 2.7% dead-link**
+- Last edit: 00_meta/STATUS.md
 
 ---
 
