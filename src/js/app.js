@@ -745,7 +745,7 @@ VIEWS.pantheon = {
       }
       if (f.search) {
         const q = f.search.toLowerCase();
-        const hay = (n.title + ' ' + n.id + ' ' + (n.aka||[]).join(' ') + ' ' + (n.tags||[]).join(' ') + ' ' + (n.themes||[]).join(' ') + ' ' + (n.tradition||'') + ' ' + (n.body||'')).toLowerCase();
+        const hay = (n.title + ' ' + n.id + ' ' + tagsOf({tags:n.aka}).join(' ') + ' ' + tagsOf(n).join(' ') + ' ' + tagsOf({tags:n.themes}).join(' ') + ' ' + (n.tradition||'') + ' ' + (n.body||'')).toLowerCase();
         if (!hay.includes(q)) return false;
       }
       return true;
@@ -4683,7 +4683,7 @@ VIEWS.themes = {
   subtitle: 'recurring motifs across traditions',
   render() {
     const pane = document.createElement('div'); pane.className = 'list-pane';
-    const themes = DATA.nodes.filter(n => n.type === 'theme');
+    const themes = DATA.nodes.filter(n => n.type === 'theme' && matchesFilter(n));
     themes.sort((a, b) => a.title.localeCompare(b.title));
     pane.innerHTML = themes.map(t => {
       const inLinks = EDGES.filter(e => e.target === t.id).length;
