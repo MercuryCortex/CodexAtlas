@@ -17,7 +17,7 @@ canonical-slug
 ## Currently resolved slugs (auto-seeded — every existing file)
 
 
-### deity (447 nodes)
+### deity (448 nodes)
 
 - `abathur`
 - `adamastor`
@@ -49,6 +49,7 @@ canonical-slug
 - `anubis`
 - `aphrodite-greek`
 - `apis-bull`
+- `apkallu`
 - `apollo`
 - `apophis`
 - `apsu`
@@ -2132,15 +2133,15 @@ canonical-slug
 
 | Refs | Dead target | Suggested canonical (existing) |
 |---:|---|---|
-| 5 | `phase-1-013-babylonian-theodicy` | `phase-1-012-amarna-letters` |
-| 4 | `tradition-minoan-religion` | `tradition-mahayana-buddhism` |
-| 4 | `tradition-eastern-orthodoxy` | `tradition-mahayana-buddhism` |
-| 3 | `tradition-medieval-christianity` | `tradition-mahayana-buddhism` |
-| 3 | `tradition-early-christianity` | `tradition-mahayana-buddhism` |
-| 3 | `phase-4-007-new-testament-canon` | `phase-4-003-gospel-of-truth` |
+| 5 | `phase-1-013-babylonian-theodicy` | `phase-1-032-babylonian-theodicy` |
+| 4 | `tradition-minoan-religion` | `tradition-christianity-canonical` |
+| 4 | `tradition-eastern-orthodoxy` | `tradition-christianity-canonical` |
+| 3 | `tradition-medieval-christianity` | `tradition-christianity-canonical` |
+| 3 | `tradition-early-christianity` | `tradition-christianity-canonical` |
+| 3 | `phase-4-007-new-testament-canon` | `phase-4-009-pistis-sophia` |
 | 3 | `phase-2-005-1-2-kings` | `phase-2-003-atharva-veda` |
 | 3 | `divine-kingship-solar` | `divine-kingship` |
 | 2 | `yam-canaanite` | `astarte-canaanite` |
-| 2 | `tradition-lingayat` | `tradition-jainism` |
-| 2 | `phase-2-004-1-2-chronicles` | `phase-2-002-gathas-of-zarathustra` |
+| 2 | `tradition-lingayat` | `tradition-hawaiian` |
+| 2 | `phase-2-004-1-2-chronicles` | `phase-2-005-hebrew-bible-j-source` |
 | 2 | `asclepius` | `asclepius-greek` |

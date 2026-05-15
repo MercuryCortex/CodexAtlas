@@ -22,8 +22,17 @@ Format:
 
 | Handle | Scope tag | Owns (high level) | Started | Status |
 |---|---|---|---|---|
+| `sonnet-apkallu-1` | content / Apkallu antediluvian sages | `apkallu` (NEW) — Mesopotamian upstream of Watchers/Enoch chain | 2026-05-15 | in-progress |
 | `sonnet-egypt-mysticism-1` | content / Egypt outward — mystical + symbolic web | tetramorph, axis-mundi, cosmic-egg, ma-at, pseudo-dionysius, ammonius-saccas, ma-at-logos-sophia, neoplatonic-henosis, sacred-geometry-cosmic-proportion, dying-rising-god, event-school-of-alexandria — **11 nodes** | 2026-05-15 | **FINISHED** |
 | `sonnet-khafre-symbolism-1` | content / Egyptian symbolism deep-dive | 9 symbols + 4 themes + 6 persons + 4 events + 2 documents — **25 new nodes · 194 new edges** | 2026-05-15 | **FINISHED** |
+
+---
+
+## sonnet-apkallu-1 — content / Apkallu antediluvian sages — started 2026-05-15
+- Owning: `apkallu` (03_deities/apkallu.md — NEW)
+- Goal: Write the Apkallu node — the Mesopotamian upstream of the Watchers/1 Enoch chain, the Utu-abzu ↔ Enoch parallel, and the Berossus/Oannes → Hellenistic transmission
+- Status: in-progress
+- Last edit: 03_deities/apkallu.md
 
 ---
 
