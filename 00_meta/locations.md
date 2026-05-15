@@ -237,3 +237,15 @@ Hattin                       | 32.80 |  35.50 | Hattin (Galilee — Battle of Ha
 Goa                          | 15.49 |  73.82 | Goa (Portuguese Estado da India)
 Bavaria                      | 48.79 |  11.50 | Bavaria
 ```
+
+## Additions 2026-05-15 (sonnet-mani-soma-gandha-1 — Gandhāra geo entries)
+
+```
+Taxila                       | 33.74 |  72.84 | Taxila (ancient Gandhāran capital, Pakistan)
+Peshawar                     | 34.01 |  71.57 | Peshawar (Gandhāra heartland, Pakistan)
+Gandhara                     | 34.01 |  71.57 | Gandhāra (northwest Pakistan / eastern Afghanistan)
+Balkh                        | 36.76 |  66.90 | Balkh (Bactria, northern Afghanistan)
+Seleucia-Ctesiphon           | 33.09 |  44.58 | Seleucia-Ctesiphon (Sasanian capital, Iraq)
+Gundeshapur                  | 32.28 |  48.52 | Gundeshapur (Sasanian academy city; Mani executed here)
+Paray-le-Monial              | 46.45 |   4.12 | Paray-le-Monial (Sacred Heart visions of Margaret Mary Alacoque)
+```
