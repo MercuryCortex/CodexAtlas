@@ -138,6 +138,9 @@ const STATE = {
   crossViewFilter: null,
   // Alchemy view state — user-picked node IDs. Bridge nodes are computed from these.
   alchemyPicks: [],
+  // Active preset ID (or null). Persists across renders so the preset card stays highlighted
+  // and the headline keeps showing while the user is exploring the loaded preset.
+  alchemyActivePreset: null,
   // Pantheon mode toggle — 'deities' (default), 'authors' (persons with authorship/originator
   // edges), or 'symbols' (09_symbols/ nodes clustered by origin family with cross-family
   // symbol edges drawn prominently — the user's "MASSIVE wins" view).
@@ -960,19 +963,25 @@ VIEWS.pantheon = {
     };
 
     const legendStartCollapsed = (() => { try { return localStorage.getItem('legend-collapsed') === '1'; } catch (e) { return false; } })();
+    // Sticky-head pattern: legend-head doesn't scroll (toggle always reachable);
+    // legend-body scrolls independently. Fixes the prior scroll-hides-burger bug.
     legend.style('display', 'block')
       .classed('collapsed', legendStartCollapsed)
       .html(
-        '<button class="legend-burger" id="legend-burger" title="Collapse families">≡</button>' +
-        '<div class="ltitle">Families · click to filter</div>' +
-        ringOrder.map(name => {
-          const f = famByName[name];
-          return `<div class="lrow${STATE.filter.family === name ? ' active' : ''}" data-family="${name}">
-            <span class="lswatch" style="background:${f.color}"></span>
-            <span>${name}</span>
-            <span class="lcount">${f.members.length}</span>
-          </div>`;
-        }).join('')
+        '<div class="legend-head">' +
+          '<div class="ltitle">Families · click to filter</div>' +
+          '<button class="legend-burger" id="legend-burger" title="Collapse families">≡</button>' +
+        '</div>' +
+        '<div class="legend-body">' +
+          ringOrder.map(name => {
+            const f = famByName[name];
+            return `<div class="lrow${STATE.filter.family === name ? ' active' : ''}" data-family="${name}">
+              <span class="lswatch" style="background:${f.color}"></span>
+              <span>${name}</span>
+              <span class="lcount">${f.members.length}</span>
+            </div>`;
+          }).join('') +
+        '</div>'
       );
     legend.selectAll('.lrow').on('click', function (ev) {
       const name = this.dataset.family;
@@ -3790,6 +3799,144 @@ VIEWS.scripture = {
 // User-picked nodes are draggable + deletable; bridge nodes are clickable but ephemeral.
 // ============================================================
 
+// ALCHEMY PRESETS — curated cross-tradition starting constellations. Each preset is a list
+// of endpoint+waypoint node IDs that get pushed into STATE.alchemyPicks; the existing
+// shortest-path renderer auto-discovers the bridge nodes between them via the vault's
+// edge graph. So a 12-pick preset typically surfaces ~20-30 nodes on canvas with the
+// connective transmission edges drawn between them. This is the visual mechanism that
+// realizes the "MASSIVE-win cross-tradition transmission spine" demos.
+//
+// All 78 node IDs verified against vault canonical-slugs. See AUDIT/14 for design rationale.
+const ALCHEMY_PRESETS = [
+  {
+    id: 'astrology-3500-year-spine',
+    name: '3,500-Year Astrology Spine',
+    headline: 'The longest continuously-attested intellectual tradition in the vault — longer than Judaism, Christianity, or Islam. Documented institutional and textual transmission step-by-step across Mesopotamia, Egypt, Greece, Rome, Persia, Islam, Latin Renaissance, and modern occult revival.',
+    picks: [
+      'phase-1-019-enuma-anu-enlil', 'berossus',
+      'hermes-trismegistus-pseudepigraphic-author', 'firmicus-maternus',
+      'al-kindi', 'event-arabic-harranian-hermetica-c800-1000',
+      'cornelius-agrippa', 'john-dee',
+      'helena-blavatsky', 'aleister-crowley',
+      'fernando-pessoa', 'manuel-j-gandra',
+    ],
+  },
+  {
+    id: 'cross-tradition-flood',
+    name: 'Cross-Tradition Flood',
+    headline: 'The flood narrative across nine Old- and New-World traditions, with the 1872 George Smith decipherment as the modern reception node that triggered the entire comparative-religion field.',
+    picks: [
+      'atrahasis-flood-hero', 'utnapishtim', 'noah', 'deucalion',
+      'matsya-avatar', 'yu-the-great', 'bergelmir', 'gonggong',
+      'george-smith-cuneiformist',
+      'phase-1-006-atrahasis', 'phase-1-016-eridu-genesis-flood',
+    ],
+  },
+  {
+    id: 'hermetic-corpus-reception',
+    name: 'Hermetic Corpus Reception',
+    headline: 'The pseudonymous Hermetic Corpus from its Hellenistic-Egyptian origin (c. 100-300 CE) through Ficino\'s 1463 translation that launched the Renaissance, Casaubon\'s 1614 redating that demolished it, and the modern theosophical reception that resurrected it.',
+    picks: [
+      'hermes-trismegistus-pseudepigraphic-author',
+      'phase-4-011-corpus-hermeticum-i', 'phase-4-073-tabula-smaragdina',
+      'marsilio-ficino', 'event-ficino-corpus-hermeticum-translation-1463',
+      'event-casaubon-redates-hermetica-1614', 'isaac-casaubon',
+      'helena-blavatsky', 'fernando-pessoa',
+    ],
+  },
+  {
+    id: 'isis-mary-theotokos',
+    name: 'Isis → Mary Theotokos',
+    headline: 'The Hellenistic Isis cult\'s iconographic transmission into early-Christian Marian devotion, formalized at the Council of Ephesus 431 — one of the most-cited Christianity-from-older-tradition transmission edges.',
+    picks: [
+      'isis', 'isis-hellenistic',
+      'event-council-of-ephesus-431',
+      'mary-theotokos', 'mary-mother-of-jesus', 'cyril-of-alexandria',
+    ],
+  },
+  {
+    id: 'templar-survival-portuguese',
+    name: 'Templar Survival → Portuguese Caravels',
+    headline: 'The 200-year documented institutional Templar-survival via the Portuguese Order of Christ (1319). The cross of Christ on Vasco da Gama\'s caravel sails is the iconographic endpoint — distinct from speculative Templar-survival fabrications.',
+    picks: [
+      'hugues-de-payens', 'event-council-of-troyes-1129',
+      'jacques-de-molay', 'event-trial-of-templars-1307-1314',
+      'phase-5-038-chinon-parchment-1308',
+      'event-order-of-christ-foundation-1319',
+      'tradition-order-of-christ', 'cross-order-of-christ',
+    ],
+  },
+  {
+    id: 'pessoa-esoteric-network',
+    name: 'Pessoa\'s Esoteric Network',
+    headline: 'Fernando Pessoa as the modernist-literary endpoint of multiple esoteric traditions: Sebastianismo (Bandarra), Thelema (Crowley + the 1930 Boca do Inferno hoax), Theosophy (Blavatsky, whom he translated), and Portuguese hermeticism (Carvalho Monteiro\'s Regaleira → Gandra\'s contemporary scholarship).',
+    picks: [
+      'fernando-pessoa', 'phase-7-037-pessoa-mensagem',
+      'goncalo-annes-bandarra', 'phase-6-040-bandarra-trovas',
+      'aleister-crowley', 'helena-blavatsky',
+      'antonio-carvalho-monteiro', 'manuel-j-gandra',
+    ],
+  },
+  {
+    id: 'watchers-forbidden-knowledge',
+    name: 'Watchers — Forbidden Knowledge',
+    headline: 'The Enochic narrative of fallen-angel teaching — astrology, metallurgy, and magic as transgressive forbidden knowledge. The principal pre-Christian Jewish anti-astrology framing, and the doctrinal counter-pole to the integration-tradition.',
+    picks: [
+      'phase-3-004-1-enoch', 'phase-4-081-mashafa-henok-geez-1-enoch',
+      'kokabiel', 'baraqel', 'kasdeja', 'penemue', 'semyaza',
+      'watchers-and-fallen-angels',
+    ],
+  },
+  {
+    id: 'demiurge-cross-tradition',
+    name: 'Demiurge Cross-Tradition',
+    headline: 'The demiurge concept from Plato\'s Timaeus through Gnostic appropriation (Valentinus, the Apocryphon of John) to Marcion\'s anti-cosmic canon — the principal Platonic philosophy → 2nd-century Christianity transmission edge.',
+    picks: [
+      'plato', 'phase-3-022-plato-timaeus-critias-atlantis',
+      'valentinus', 'phase-4-002-apocryphon-of-john', 'marcion-of-sinope',
+      'demiurge-gnostic', 'demiurge-platonic', 'demiurge',
+    ],
+  },
+  {
+    id: 'greco-buddhist',
+    name: 'Greco-Buddhist Wedge',
+    headline: 'The Hellenistic encounter with Buddhism: Alexander\'s campaigns, Aśoka\'s 3rd-c.-BCE Dhamma missions, Menander I, the Milindapañha, and the Kanishka-era iconographic synthesis that gave us the first images of the Buddha.',
+    picks: [
+      'asoka-maurya', 'menander-i-soter', 'kanishka',
+      'phase-3-029-milindapanha', 'phase-3-030-asokan-edicts',
+      'event-asokan-dhamma-missions-c-250-bce', 'tradition-greco-buddhism',
+    ],
+  },
+  {
+    id: 'aristotle-avicenna-aquinas',
+    name: 'Aristotle → Avicenna → Aquinas',
+    headline: 'The 600-year Aristotelian transmission through the Islamic Golden Age (al-Farabi, Avicenna, Averroes) into 13th-century Latin scholastic synthesis under Aquinas — the philosophical spine of medieval Christian and Islamic intellectual life.',
+    picks: [
+      'aristotle', 'phase-3-003-aristotle-metaphysics',
+      'al-farabi', 'ibn-sina', 'phase-5-044-ibn-sina-kitab-al-shifa',
+      'ibn-rushd', 'thomas-aquinas', 'phase-5-024-aquinas-summa-theologiae',
+    ],
+  },
+];
+
+// Load a preset into the Alchemy canvas. `mode` is 'replace' (default) or 'append'.
+// Filters out IDs that don't exist in the current vault data, dedupes, sets the active
+// preset, and triggers a re-render.
+function alchemyLoadPreset(presetId, mode) {
+  const preset = ALCHEMY_PRESETS.find(p => p.id === presetId);
+  if (!preset) return;
+  const valid = preset.picks.filter(id => NODES_BY_ID[id]);
+  if (mode === 'append') {
+    const existing = new Set(STATE.alchemyPicks || []);
+    valid.forEach(id => existing.add(id));
+    STATE.alchemyPicks = Array.from(existing);
+  } else {
+    STATE.alchemyPicks = valid;
+  }
+  STATE.alchemyActivePreset = presetId;
+  setView('alchemy');
+}
+
 // BFS shortest path between two node IDs using the NEIGHBORS adjacency map.
 // Caps at maxHops to keep paths readable. Returns null if no path within the cap.
 function alchemyShortestPath(srcId, dstId, maxHops) {
@@ -3867,24 +4014,111 @@ VIEWS.alchemy = {
       .filter(e => nodeById.has(e.source) && nodeById.has(e.target))
       .map(e => ({ source: e.source, target: e.target, type: e.type }));
 
-    // ---- View-controls + toolbox + search palette ----
+    // ---- View-controls + toolbox + search palette + presets pane ----
+    const activePreset = STATE.alchemyActivePreset
+      ? ALCHEMY_PRESETS.find(p => p.id === STATE.alchemyActivePreset)
+      : null;
     document.getElementById('view-controls').innerHTML = `
       <span class="alch-count">${picks.length} picked · ${nodes.length - picks.length} bridge${nodes.length - picks.length === 1 ? '' : 's'}</span>
       <button class="btn btn-mini" id="btn-alch-clear">clear</button>
     `;
     document.getElementById('btn-alch-clear').onclick = () => {
       STATE.alchemyPicks = [];
+      STATE.alchemyActivePreset = null;
       setView('alchemy');
     };
 
-    // Toolbox + palette injected into canvas as siblings of the SVG.
-    document.querySelectorAll('.alch-toolbox, .alch-palette').forEach(el => el.remove());
+    // Toolbox + palette + presets pane injected into canvas as siblings of the SVG.
+    document.querySelectorAll('.alch-toolbox, .alch-palette, .alch-presets-pane').forEach(el => el.remove());
     const canvas = document.getElementById('canvas');
+
+    // Presets sidebar pane — sticky-head pattern (head doesn't scroll, body scrolls).
+    const presetsCollapsedStored = (() => {
+      try { return localStorage.getItem('alch-presets-collapsed') === '1'; } catch (e) { return false; }
+    })();
+    const pane = document.createElement('aside');
+    pane.className = 'alch-presets-pane' + (presetsCollapsedStored ? ' collapsed' : '');
+    pane.innerHTML = `
+      <div class="alch-presets-head">
+        <span class="alch-presets-title">Presets</span>
+        <button class="alch-presets-toggle" id="alch-presets-toggle" title="Collapse presets pane"></button>
+      </div>
+      <div class="alch-presets-body">
+        ${activePreset ? `
+          <div class="alch-presets-active">
+            <div class="alch-presets-active-name">${activePreset.name}</div>
+            <div class="alch-presets-active-headline">${activePreset.headline}</div>
+          </div>
+        ` : `
+          <div class="alch-presets-intro">Curated cross-tradition explorations. Click one to load — bridge nodes appear automatically between the seeded nodes. Add or remove freely after loading.</div>
+        `}
+        <div class="alch-presets-list">
+          ${ALCHEMY_PRESETS.map(p => {
+            const isActive = STATE.alchemyActivePreset === p.id;
+            return `
+              <div class="alch-preset-card${isActive ? ' active' : ''}" data-preset="${p.id}">
+                <div class="alch-preset-name">${p.name}</div>
+                <div class="alch-preset-headline">${p.headline.split('—')[0].trim()}.</div>
+                <div class="alch-preset-action-row" data-mode="initial">
+                  <button class="alch-preset-load" data-preset="${p.id}">${isActive ? 'reload' : 'load'}</button>
+                  <span class="alch-preset-meta">${p.picks.length} seeds</span>
+                </div>
+                <div class="alch-preset-confirm-row" data-mode="confirm" style="display:none">
+                  <span class="alch-preset-confirm-q">Replace your ${picks.length} pick${picks.length === 1 ? '' : 's'}?</span>
+                  <button class="alch-preset-confirm alch-preset-append" data-preset="${p.id}">append</button>
+                  <button class="alch-preset-confirm alch-preset-replace" data-preset="${p.id}">replace</button>
+                  <button class="alch-preset-confirm alch-preset-cancel">cancel</button>
+                </div>
+              </div>
+            `;
+          }).join('')}
+        </div>
+      </div>
+    `;
+    canvas.appendChild(pane);
+
+    document.getElementById('alch-presets-toggle').addEventListener('click', (ev) => {
+      ev.stopPropagation();
+      const willCollapse = !pane.classList.contains('collapsed');
+      pane.classList.toggle('collapsed', willCollapse);
+      try { localStorage.setItem('alch-presets-collapsed', willCollapse ? '1' : '0'); } catch (e) {}
+    });
+
+    pane.querySelectorAll('.alch-preset-load').forEach(btn => {
+      btn.addEventListener('click', (ev) => {
+        ev.stopPropagation();
+        const presetId = btn.dataset.preset;
+        if (picks.length === 0) {
+          alchemyLoadPreset(presetId, 'replace');
+          return;
+        }
+        pane.querySelectorAll('.alch-preset-action-row').forEach(r => r.style.display = '');
+        pane.querySelectorAll('.alch-preset-confirm-row').forEach(r => r.style.display = 'none');
+        const card = btn.closest('.alch-preset-card');
+        card.querySelector('.alch-preset-action-row').style.display = 'none';
+        card.querySelector('.alch-preset-confirm-row').style.display = '';
+      });
+    });
+    pane.querySelectorAll('.alch-preset-append').forEach(btn => {
+      btn.addEventListener('click', (ev) => { ev.stopPropagation(); alchemyLoadPreset(btn.dataset.preset, 'append'); });
+    });
+    pane.querySelectorAll('.alch-preset-replace').forEach(btn => {
+      btn.addEventListener('click', (ev) => { ev.stopPropagation(); alchemyLoadPreset(btn.dataset.preset, 'replace'); });
+    });
+    pane.querySelectorAll('.alch-preset-cancel').forEach(btn => {
+      btn.addEventListener('click', (ev) => {
+        ev.stopPropagation();
+        const card = btn.closest('.alch-preset-card');
+        card.querySelector('.alch-preset-confirm-row').style.display = 'none';
+        card.querySelector('.alch-preset-action-row').style.display = '';
+      });
+    });
+
     const toolbox = document.createElement('div');
     toolbox.className = 'alch-toolbox';
     toolbox.innerHTML = `
       <button class="alch-add-btn" id="alch-add" title="Add a node">＋ add node</button>
-      ${picks.length === 0 ? '<span class="alch-hint">pick any deity, person, or theme to start</span>' : ''}
+      ${picks.length === 0 ? '<span class="alch-hint">pick any deity, person, or theme to start — or load a preset</span>' : ''}
     `;
     canvas.appendChild(toolbox);
 
@@ -4107,6 +4341,7 @@ let _atlasMap = null;
 let _atlasMarkers = new Map();       // (legacy, kept for back-compat; unused by circle-layer path)
 let _atlasNodesById = new Map();     // node-id → vault node (for hover-trail neighbor lookup)
 let _atlasHoveredId = null;          // currently-hovered node id (debounce trail rebuild)
+let _atlasClusterPopup = null;       // active cluster-list popup, if any
 let _atlasZoomHandler = null;
 let _atlasEndHandler = null;
 let _atlasResizeObs = null;
@@ -4456,14 +4691,58 @@ VIEWS.atlas = {
         _atlasMap.on('click', 'atlas-clusters', (ev) => {
           const features = _atlasMap.queryRenderedFeatures(ev.point, { layers: ['atlas-clusters'] });
           if (!features.length) return;
-          const clusterId = features[0].properties.cluster_id;
-          const source = _atlasMap.getSource('atlas-nodes');
-          source.getClusterExpansionZoom(clusterId).then(zoom => {
-            _atlasMap.easeTo({
-              center: features[0].geometry.coordinates,
-              zoom: zoom + 0.2,
-              duration: 500
-            });
+          const clusterId    = features[0].properties.cluster_id;
+          const pointCount   = features[0].properties.point_count;
+          const clusterCoord = features[0].geometry.coordinates;
+          const source       = _atlasMap.getSource('atlas-nodes');
+          const currentZoom  = _atlasMap.getZoom();
+          // Strategy: try to zoom in until the cluster expands. If the points share
+          // identical coords (which our vault has — many docs at the same city),
+          // expansion zoom returns current+epsilon and zooming forever wouldn't help.
+          // In that case, show a popup with a clickable list of every node in the cluster.
+          source.getClusterExpansionZoom(clusterId).then(targetZoom => {
+            if (targetZoom > currentZoom + 0.3 && targetZoom <= 7.5) {
+              _atlasMap.easeTo({ center: clusterCoord, zoom: targetZoom + 0.2, duration: 500 });
+            } else {
+              // Already at expansion limit — show a list popup so the user can pick.
+              source.getClusterLeaves(clusterId, pointCount, 0, (err, leaves) => {
+                if (err || !leaves || !leaves.length) return;
+                const rows = leaves.map(f => {
+                  const id   = (f.properties.id || '').replace(/"/g, '&quot;');
+                  const ttl  = (f.properties.title || '').replace(/[<>&]/g, c => ({ '<': '&lt;', '>': '&gt;', '&': '&amp;' }[c]));
+                  const col  = (f.properties.family_color || '#7a8090');
+                  return `<div class="atlas-cluster-row" data-id="${id}">
+                    <span class="atlas-cluster-dot" style="background:${col}"></span>
+                    <span class="atlas-cluster-title">${ttl}</span>
+                  </div>`;
+                }).join('');
+                const html = `
+                  <div class="atlas-cluster-popup">
+                    <div class="atlas-cluster-header">${pointCount} nodes at this location</div>
+                    <div class="atlas-cluster-list">${rows}</div>
+                  </div>`;
+                if (_atlasClusterPopup) _atlasClusterPopup.remove();
+                _atlasClusterPopup = new maplibregl.Popup({
+                  closeButton: true,
+                  closeOnClick: true,
+                  maxWidth: '320px',
+                  className: 'atlas-cluster-popup-wrap'
+                })
+                  .setLngLat(clusterCoord)
+                  .setHTML(html)
+                  .addTo(_atlasMap);
+                // Wire each row to open the detail panel.
+                setTimeout(() => {
+                  document.querySelectorAll('.atlas-cluster-popup .atlas-cluster-row').forEach(row => {
+                    row.addEventListener('click', () => {
+                      const nid = row.dataset.id;
+                      if (nid) selectNode(nid, true);
+                      if (_atlasClusterPopup) { _atlasClusterPopup.remove(); _atlasClusterPopup = null; }
+                    });
+                  });
+                }, 0);
+              });
+            }
           }).catch(() => { /* MapLibre versions vary; silent fallback */ });
         });
       }
