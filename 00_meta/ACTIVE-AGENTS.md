@@ -34,10 +34,11 @@ The floating-panel pivot was left uncommitted and partially broken. Changes have
 |---|---|---|
 | `opus-map-1` | app-code / Atlas Map rebuild (DESIGN LEAD) | MapLibre GL + offline PMTiles vector basemap rewrite of `VIEWS.atlas`; 964 DOM markers with degree-tier LOD; hover-trail GeoJSON line layer; premium minimalist token-driven basemap style; `scripts/serve.py` HTTP Range server for local dev; `scripts/fetch-basemap.sh` reproducible setup; retires opus-design-3 SVG atlas |
 
-**Last session's finisher (full claim block below, will be archived in the next session-close housekeeper sweep):**
+**Last session's finishers (full claim blocks below, will be archived in the next session-close housekeeper sweep):**
 
 | Handle | Scope | What landed |
 |---|---|---|
+| `opus-symbols-3-serpent` | content / cross-tradition serpent expansion (2026-05-15) | **4 NEW symbol nodes** — `naga-serpent` (Hindu/Buddhist/Jain multi-headed cobra: Shesha/Mucalinda/Vasuki/Kaliya/Parshvanatha + SE-Asian Angkor), `uraeus` (Egyptian Wadjet pharaonic cobra → Faravahar transmission), `feathered-serpent` (Mesoamerican Quetzalcoatl/Kukulkan/Q'uq'umatz unified iconographic complex, Olmec→Mexica 2,700-year span), `nehushtan` (Hebrew bronze-serpent → John 3:14 Christological typology + 2 Kings 18 internal-polemic-inversion). Plus +14 reciprocal edges back onto the 5 existing serpent-cluster symbols. Serpent cluster now **9-node densely-connected** (5 → 9 nodes; many new polemic-inversion edges across traditions). Vault state: 1866 → 1870 nodes, 11,393 edges, 3.2% dead-link ratio. 3/4 new symbols have Wikipedia thumbs (nehushtan needs curated depictions follow-up). |
 | `opus-symbols-2` | content + app-code / Symbols-map next-level | Cross-symbol-edge density 140 → **324** (+130%) across all 56 symbols on 8 transmission spines (cross-family + solar/astral + serpent + tree/eucharist + Vedic-Buddhist + geometric/Hermetic + Persian/Zoroastrian + animals/Hebrew-flood); **55/56 symbol thumbnails** wired into side-tab via `fetch_thumbnails.py` OVERRIDES + curated `depictions:` schema-and-renderer hook |
 
 **Last session's finishers (full claim blocks in [`agents-archive/2026-05-14.md`](agents-archive/2026-05-14.md)):**
