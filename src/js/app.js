@@ -4150,7 +4150,7 @@ function _atlasBuildStyle() {
       { id: 'bg', type: 'background',
         paint: { 'background-color': _atlasToken('--bg-0', '#07090f') } },
       { id: 'earth', source: 'protomaps', 'source-layer': 'earth', type: 'fill',
-        paint: { 'fill-color': _atlasToken('--bg-1', '#0d1119') } },
+        paint: { 'fill-color': _atlasToken('--bg-3', '#1c2333') } },
       { id: 'landcover', source: 'protomaps', 'source-layer': 'landcover', type: 'fill',
         paint: { 'fill-color': _atlasToken('--bg-2', '#141a26'), 'fill-opacity': 0.22 } },
       { id: 'natural', source: 'protomaps', 'source-layer': 'natural', type: 'fill',
@@ -4224,7 +4224,7 @@ VIEWS.atlas = {
       setView('atlas');
     };
     document.getElementById('btn-atlas-recenter').onclick = () => {
-      if (_atlasMap) _atlasMap.easeTo({ center: [15, 25], zoom: 1.6, duration: 600 });
+      if (_atlasMap) _atlasMap.easeTo({ center: [40, 28], zoom: 2.2, duration: 600 });
     };
 
     // --- empty state ---
@@ -4265,8 +4265,8 @@ VIEWS.atlas = {
       _atlasMap = new maplibregl.Map({
         container: 'atlas-map',
         style: _atlasBuildStyle(),
-        center: [15, 25],
-        zoom: 1.6,
+        center: [40, 28],
+        zoom: 2.2,
         minZoom: 0.6,
         maxZoom: 7.5,
         renderWorldCopies: true,
@@ -4387,7 +4387,7 @@ VIEWS.atlas = {
     const zmReset = document.getElementById('zm-reset');
     if (zmIn)    zmIn.onclick    = () => _atlasMap && _atlasMap.zoomIn({ duration: 260 });
     if (zmOut)   zmOut.onclick   = () => _atlasMap && _atlasMap.zoomOut({ duration: 260 });
-    if (zmReset) zmReset.onclick = () => _atlasMap && _atlasMap.easeTo({ center: [15, 25], zoom: 1.6, duration: 600 });
+    if (zmReset) zmReset.onclick = () => _atlasMap && _atlasMap.easeTo({ center: [40, 28], zoom: 2.2, duration: 600 });
     _atlasUpdateZoomMeter();
   }
 };
@@ -4437,7 +4437,7 @@ function _atlasUpdateZoomMeter() {
   if (!_atlasMap) return;
   const readout = document.getElementById('zm-readout');
   if (!readout) return;
-  const mult = Math.pow(2, _atlasMap.getZoom() - 1.6);
+  const mult = Math.pow(2, _atlasMap.getZoom() - 2.2);
   readout.textContent = mult.toFixed(2) + '×';
 }
 
