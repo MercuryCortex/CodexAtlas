@@ -1,0 +1,215 @@
+#!/usr/bin/env python3
+"""
+review_thumbnails.py — generates 00_meta/THUMBNAILS-REVIEW.md
+
+A curation aid for the thumbnail system. Reads thumbs_cache.json and all
+node metadata, then outputs a markdown file with two sections per node type:
+
+  NULLS    — nodes with no cached thumbnail (need a manual OVERRIDE or
+              a `depictions` entry in the node YAML)
+  SUSPECT  — nodes where the Wikipedia page title returned differs from
+              what we queried (possible wrong match; human should verify)
+
+How to use the output:
+  1. Open 00_meta/THUMBNAILS-REVIEW.md
+  2. For each NULL entry: click the Wikipedia search link, find the right
+     article, then add the article title to OVERRIDES in fetch_thumbnails.py
+  3. For each SUSPECT entry: verify the thumbnail URL. If wrong, add the
+     correct Wikipedia article title to OVERRIDES. If right, no action needed.
+  4. For nodes where no Wikipedia image exists, add a `depictions` block to
+     the node YAML with a direct image URL (see thumbnail-spec.md for format).
+  5. After updating OVERRIDES/YAML: python3 fetch_thumbnails.py --refetch
+     then python3 build_data.py
+"""
+
+import difflib
+import json
+import re
+import urllib.parse
+from pathlib import Path
+
+VAULT = Path(__file__).parent
+CACHE = VAULT / "_assets" / "thumbs_cache.json"
+OUT   = VAULT / "00_meta" / "THUMBNAILS-REVIEW.md"
+
+NODE_DIRS = [
+    ("02_documents", "document"),
+    ("03_deities",   "deity"),
+    ("04_persons",   "person"),
+    ("05_events",    "event"),
+    ("06_themes",    "theme"),
+    ("07_traditions","tradition"),
+    ("09_symbols",   "symbol"),
+]
+
+SUSPECT_THRESHOLD = 0.60   # same as MIN_TITLE_SIMILARITY in fetch_thumbnails.py
+
+
+def split_frontmatter(text):
+    if not text.startswith("---"):
+        return "", text
+    m = re.match(r"^---\n(.*?)\n---\n?(.*)$", text, re.DOTALL)
+    return (m.group(1), m.group(2).strip()) if m else ("", text)
+
+
+def get_field(fm, key):
+    m = re.search(rf"^{re.escape(key)}:\s*(.*)$", fm, re.MULTILINE)
+    if not m:
+        return ""
+    v = m.group(1).strip()
+    if v in ('""', "''", "", "[]"):
+        return ""
+    if (v.startswith('"') and v.endswith('"')) or (v.startswith("'") and v.endswith("'")):
+        v = v[1:-1]
+    return v
+
+
+def title_sim(a, b):
+    a = re.sub(r"\s*\(.*?\)", "", a).lower().strip()
+    b = re.sub(r"\s*\(.*?\)", "", b).lower().strip()
+    return difflib.SequenceMatcher(None, a, b).ratio()
+
+
+def wiki_search_url(query):
+    return "https://en.wikipedia.org/w/index.php?search=" + urllib.parse.quote_plus(query)
+
+
+def gather_nodes():
+    nodes = {}
+    for folder, ntype in NODE_DIRS:
+        root = VAULT / folder
+        if not root.exists():
+            continue
+        for md in root.rglob("*.md"):
+            if md.name.startswith("_"):
+                continue
+            text = md.read_text(encoding="utf-8")
+            fm, _ = split_frontmatter(text)
+            nid       = get_field(fm, "id") or md.stem
+            title     = get_field(fm, "title") or get_field(fm, "name") or md.stem
+            tradition = get_field(fm, "tradition")
+            nodes[nid] = {"id": nid, "title": title, "type": ntype,
+                          "tradition": tradition, "file": str(md.relative_to(VAULT))}
+    return nodes
+
+
+def classify(cache_entry, node_title):
+    """Return ('ok'|'null'|'suspect', reason_str)."""
+    if cache_entry is None:
+        return "null", ""
+    wiki_title = cache_entry.get("title", "")
+    sim = title_sim(node_title, wiki_title)
+    if sim < SUSPECT_THRESHOLD:
+        return "suspect", f"query≈{sim:.2f} — returned: **{wiki_title}**"
+    return "ok", ""
+
+
+def main():
+    if not CACHE.exists():
+        print(f"Cache not found: {CACHE}")
+        return 1
+
+    cache = json.loads(CACHE.read_text(encoding="utf-8"))
+    nodes = gather_nodes()
+
+    # Build per-type buckets
+    by_type = {t: {"null": [], "suspect": []} for _, t in NODE_DIRS}
+
+    for nid, node in nodes.items():
+        ntype = node["type"]
+        entry = cache.get(nid)          # None = failed; dict = hit; missing key = never fetched
+        never_fetched = nid not in cache
+
+        if never_fetched or entry is None:
+            by_type[ntype]["null"].append(node)
+        else:
+            status, reason = classify(entry, node["title"])
+            if status == "suspect":
+                node["_suspect_reason"] = reason
+                node["_thumb_src"]      = entry.get("src", "")
+                node["_matched_query"]  = entry.get("matched_query", "")
+                by_type[ntype]["suspect"].append(node)
+
+    # Stats
+    total_null    = sum(len(v["null"])    for v in by_type.values())
+    total_suspect = sum(len(v["suspect"]) for v in by_type.values())
+    total_nodes   = len(nodes)
+    total_hits    = sum(1 for k, v in cache.items() if v and k in nodes)
+
+    lines = [
+        "# THUMBNAILS-REVIEW",
+        "",
+        f"> Auto-generated by `review_thumbnails.py` — do not edit directly.",
+        f"> Re-run after adding OVERRIDES or editing node YAML.",
+        "",
+        "## Summary",
+        "",
+        f"| Stat | Count |",
+        f"|---|---|",
+        f"| Total nodes | {total_nodes} |",
+        f"| Has thumbnail | {total_hits} ({total_hits/total_nodes*100:.1f}%) |",
+        f"| **NULL** (no image) | **{total_null}** |",
+        f"| **SUSPECT** (possible wrong match) | **{total_suspect}** |",
+        "",
+        "## How to fix",
+        "",
+        "**NULL entry:** click the Wikipedia search link → find the right article → add to `OVERRIDES` in",
+        "`fetch_thumbnails.py`, then re-run `python3 fetch_thumbnails.py --refetch`.",
+        "",
+        "**SUSPECT entry:** open the thumbnail URL to verify. If wrong, add the correct article title to",
+        "`OVERRIDES`. If correct, ignore.",
+        "",
+        "**No Wikipedia image at all:** add a `depictions` block to the node YAML (see `thumbnail-spec.md`).",
+        "",
+        "---",
+        "",
+    ]
+
+    type_order = ["person", "deity", "document", "tradition", "event", "theme", "symbol"]
+
+    for ntype in type_order:
+        bucket = by_type.get(ntype, {"null": [], "suspect": []})
+        nulls    = sorted(bucket["null"],    key=lambda n: n["title"])
+        suspects = sorted(bucket["suspect"], key=lambda n: n["title"])
+
+        if not nulls and not suspects:
+            continue
+
+        lines.append(f"## {ntype.upper()}S  ({len(nulls)} null · {len(suspects)} suspect)")
+        lines.append("")
+
+        if nulls:
+            lines.append("### Nulls — need an OVERRIDE or `depictions` YAML entry")
+            lines.append("")
+            lines.append("| Node ID | Title | Tradition | Wikipedia search |")
+            lines.append("|---|---|---|---|")
+            for n in nulls:
+                search_url = wiki_search_url(n["title"])
+                lines.append(
+                    f"| `{n['id']}` | {n['title']} | {n['tradition'] or '—'} "
+                    f"| [search →]({search_url}) |"
+                )
+            lines.append("")
+
+        if suspects:
+            lines.append("### Suspect hits — verify before trusting")
+            lines.append("")
+            lines.append("| Node ID | Title | Issue | Thumbnail |")
+            lines.append("|---|---|---|---|")
+            for n in suspects:
+                thumb_link = f"[view]({n['_thumb_src']})" if n["_thumb_src"] else "—"
+                lines.append(
+                    f"| `{n['id']}` | {n['title']} | {n['_suspect_reason']} | {thumb_link} |"
+                )
+            lines.append("")
+
+    OUT.write_text("\n".join(lines), encoding="utf-8")
+
+    print(f"Written: {OUT.relative_to(VAULT)}")
+    print(f"  {total_null} nulls  ·  {total_suspect} suspects  ·  {total_hits}/{total_nodes} have images")
+    return 0
+
+
+if __name__ == "__main__":
+    import sys
+    sys.exit(main())

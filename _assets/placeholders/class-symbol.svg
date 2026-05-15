@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="400" height="240" viewBox="0 0 400 240">
+  <rect width="400" height="240" fill="#0d1119"/>
+  <!-- outer circle -->
+  <circle cx="200" cy="112" r="76" fill="none" stroke="#1c2333" stroke-width="1"/>
+  <!-- inner circle -->
+  <circle cx="200" cy="112" r="44" fill="none" stroke="#2a3347" stroke-width="1"/>
+  <!-- 8-pointed star (two overlapping squares rotated 45°) -->
+  <polygon points="200,42 214,98 270,112 214,126 200,182 186,126 130,112 186,98"
+           fill="none" stroke="#d4a55a" stroke-width="1.5" stroke-linejoin="round" opacity="0.65"/>
+  <polygon points="200,68 227,85 244,112 227,139 200,156 173,139 156,112 173,85"
+           fill="none" stroke="#d4a55a" stroke-width="1" stroke-linejoin="round" opacity="0.35"/>
+  <!-- center vesica / eye -->
+  <ellipse cx="200" cy="112" rx="18" ry="10" fill="none" stroke="#d4a55a" stroke-width="1" opacity="0.55"/>
+  <!-- center dot -->
+  <circle cx="200" cy="112" r="3" fill="#d4a55a" opacity="0.75"/>
+  <!-- spoke lines (faint, connecting inner to outer) -->
+  <g stroke="#1c2333" stroke-width="1" opacity="0.5">
+    <line x1="200" y1="68" x2="200" y2="44"/>
+    <line x1="200" y1="156" x2="200" y2="180"/>
+    <line x1="156" y1="112" x2="132" y2="112"/>
+    <line x1="244" y1="112" x2="268" y2="112"/>
+  </g>
+  <text x="200" y="228" text-anchor="middle" font-family="monospace" font-size="9" fill="#5a5e6a" letter-spacing="3">SYMBOL</text>
+</svg>

@@ -223,11 +223,56 @@ OVERRIDES = {
 }
 
 
+import difflib
 import unicodedata
+
+# ── Conservative-fetch thresholds ─────────────────────────────────────────────
+# Title similarity: ratio between our query and Wikipedia's returned title.
+# Below this threshold → reject the hit, even if an image exists.
+# OVERRIDES entries bypass this check (they are human-vetted).
+MIN_TITLE_SIMILARITY = 0.55
+
+# Minimum image width in pixels. Images smaller than this are usually logos or
+# tiny icons, not article-quality portraits/illustrations.
+MIN_IMAGE_WIDTH = 100
+
+# Wikipedia extracts under this length usually mean a disambiguation stub or a
+# nearly-empty article — not worth using.
+MIN_EXTRACT_LEN  = 60
+
+# For deity and person nodes the Wikipedia extract MUST mention at least one of
+# these keywords, or the article is probably about a different (non-religious)
+# person/entity with the same name.
+_DEITY_KW  = frozenset({
+    'ancient', 'myth', 'mytholog', 'god', 'goddess', 'deity', 'deities',
+    'divine', 'sacred', 'ritual', 'religious', 'religion', 'worship',
+    'temple', 'pantheon', 'cult', 'solar', 'lunar', 'underworld',
+    'sumerian', 'egyptian', 'greek', 'roman', 'norse', 'hindu', 'celtic',
+    'mesopotamia', 'babylon', 'akkad', 'vedic', 'yoruba', 'orisha',
+    'canaanite', 'phoenician', 'ugaritic', 'zoroastrian', 'avestan',
+})
+_PERSON_KW = frozenset({
+    'philosopher', 'theologian', 'mystic', 'saint', 'prophet', 'bishop',
+    'ancient', 'medieval', 'gnostic', 'hermetic', 'kabbalist', 'alchemist',
+    'neoplatonist', 'stoic', 'rabbi', 'monk', 'priest', 'sufi',
+    'thinker', 'scholar', 'teacher', 'sage', 'guru', 'occultist',
+    'religious', 'spiritual', 'heretic', 'reformer', 'apostle', 'evangelist',
+    'church', 'faith', 'scripture', 'canon',
+})
+_RELEVANCE_KW = {'deity': _DEITY_KW, 'person': _PERSON_KW}
+# ── end thresholds ─────────────────────────────────────────────────────────────
+
 
 def ascii_fold(s):
     """Remove diacritics: Šābuhragān → Sabuhragan."""
     return ''.join(c for c in unicodedata.normalize('NFKD', s) if not unicodedata.combining(c))
+
+
+def _title_sim(query, returned):
+    """Case-insensitive similarity ratio between query and Wikipedia returned title."""
+    a = re.sub(r"\s*\(.*?\)", "", query).lower().strip()
+    b = re.sub(r"\s*\(.*?\)", "", returned).lower().strip()
+    return difflib.SequenceMatcher(None, a, b).ratio()
 
 
 def normalize_title(t):
@@ -366,42 +411,73 @@ def wiki_search(query, limit=3):
     return data[1] or []
 
 
-def _summary_to_thumb(data, matched):
+def _summary_to_thumb(data, matched, node=None):
     if not data:
         return None
     if data.get("type") == "disambiguation":
         return None
+
+    extract = (data.get("extract") or "")
+
+    # Gate 1: reject near-empty extracts (stubs / disambiguation pages)
+    if len(extract) < MIN_EXTRACT_LEN:
+        return None
+
+    returned_title = data.get("title", "")
+
+    # Gate 2: title similarity — skip for OVERRIDES (those are human-vetted)
+    if node and node.get("id") not in OVERRIDES:
+        if _title_sim(matched, returned_title) < MIN_TITLE_SIMILARITY:
+            return None
+
+    # Gate 3: relevance keyword check for deity / person
+    # The extract must mention at least one religion/mythology keyword or we
+    # reject the hit entirely (catches living athletes/politicians with ancient names).
+    if node:
+        kw_set = _RELEVANCE_KW.get(node.get("type"))
+        if kw_set:
+            el = extract.lower()
+            if not any(kw in el for kw in kw_set):
+                return None
+
     thumb = data.get("thumbnail") or data.get("originalimage")
     if not thumb:
         return None
+
+    # Gate 4: reject tiny images (logos, icons)
+    if (thumb.get("width") or 0) < MIN_IMAGE_WIDTH:
+        return None
+
     return {
-        "title": data.get("title"),
+        "title": returned_title,
         "src": thumb.get("source"),
         "width": thumb.get("width"),
         "height": thumb.get("height"),
         "page": (data.get("content_urls") or {}).get("desktop", {}).get("page"),
-        "extract": (data.get("extract") or "")[:280],
+        "extract": extract[:280],
         "matched_query": matched,
     }
 
 
 def find_thumbnail(node):
     cands = candidate_titles(node)
-    # Pass 1 — direct summary
+    # Pass 1 — direct summary (all types)
     for cand in cands:
-        out = _summary_to_thumb(wiki_summary(cand), cand)
+        out = _summary_to_thumb(wiki_summary(cand), cand, node)
         if out:
             return out
-    # Pass 2 — opensearch fallback (fuzzy). DELIBERATELY SKIPPED for deities AND symbols
-    # because bare-title fuzzy matches go wildly wrong (Geb → Geocaching, Tefnut →
-    # Teutonic Order, Nun → actual nuns, Cross → various nautical/electrical things).
-    # Missing image is far better than wrong image for the religion atlas.
-    if node.get('type') in ('deity', 'symbol'):
+    # Pass 2 — opensearch fuzzy fallback.
+    # Restricted to 'document' only: Phase-X-NNN-* slugs are unique enough that
+    # a fuzzy title search is safe.  For every other type (deity, symbol, person,
+    # event, theme, tradition) the fuzzy search reliably returns wrong matches
+    # (Geb → Geocaching, Nun → actual nuns, etc.).
+    # Missing image >> wrong image for a religion atlas.
+    if node.get('type') != 'document':
         return None
     for cand in cands:
         hits = wiki_search(cand, limit=3)
         for h in hits:
-            out = _summary_to_thumb(wiki_summary(h), f"{cand} → {h}")
+            out = _summary_to_thumb(wiki_summary(h), f"{cand} → {h}", node)
             if out:
                 return out
     return None

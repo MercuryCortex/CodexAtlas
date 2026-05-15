@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="400" height="240" viewBox="0 0 400 240">
+  <rect width="400" height="240" fill="#0d1119"/>
+  <!-- portrait oval frame -->
+  <ellipse cx="200" cy="112" rx="68" ry="82" fill="none" stroke="#1c2333" stroke-width="1"/>
+  <!-- head -->
+  <circle cx="200" cy="82" r="28" fill="none" stroke="#d4a55a" stroke-width="1.5" opacity="0.65"/>
+  <!-- neck + shoulders -->
+  <path d="M183,110 L183,122 Q200,134 217,122 L217,110" fill="none" stroke="#d4a55a" stroke-width="1.5" opacity="0.65"/>
+  <path d="M140,185 Q158,138 183,130 Q200,126 217,130 Q242,138 260,185" fill="none" stroke="#d4a55a" stroke-width="1.5" opacity="0.65"/>
+  <!-- corner ticks (portrait frame) -->
+  <g stroke="#2a3347" stroke-width="1" opacity="0.8">
+    <path d="M116,30 L116,44 M116,30 L130,30"/>
+    <path d="M284,30 L284,44 M284,30 L270,30"/>
+    <path d="M116,210 L116,196 M116,210 L130,210"/>
+    <path d="M284,210 L284,196 M284,210 L270,210"/>
+  </g>
+  <text x="200" y="228" text-anchor="middle" font-family="monospace" font-size="9" fill="#5a5e6a" letter-spacing="3">PERSON</text>
+</svg>

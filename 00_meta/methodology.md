@@ -12,6 +12,16 @@ Before any agent or human starts adding/editing nodes:
 
 The dashboard is the **work queue**. The canonical-slugs file is the **shared vocabulary**. The per-phase TODO is the **local scope**.
 
+## Thumbnail system
+
+See **[thumbnail-spec.md](thumbnail-spec.md)** for the full spec. Key rules for agents:
+
+- **Never write `thumbnail:` into node YAML** — it is injected by `build_data.py`.
+- **Use `depictions[]`** to override or add curated images; see spec §4.
+- **Add to `OVERRIDES`** in `fetch_thumbnails.py` when a node's Wikipedia title differs from our slug; see spec §3.
+- After OVERRIDES changes: `python3 fetch_thumbnails.py --refetch` then `python3 build_data.py`.
+- To audit missing/wrong thumbnails: `python3 review_thumbnails.py` → opens `THUMBNAILS-REVIEW.md`.
+
 ## Core principle
 **Investigation, not advocacy.** Every node states what is *attested*, *redacted*, *dated*, *connected* — never what is "true." Spiritual claims are catalogued as historical phenomena.
 

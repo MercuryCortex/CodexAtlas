@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="400" height="240" viewBox="0 0 400 240">
+  <rect width="400" height="240" fill="#0d1119"/>
+  <!-- Borromean-rings style: three interlocking circles -->
+  <!-- left circle -->
+  <circle cx="174" cy="112" r="46" fill="none" stroke="#d4a55a" stroke-width="1.5" opacity="0.55"/>
+  <!-- right circle -->
+  <circle cx="226" cy="112" r="46" fill="none" stroke="#d4a55a" stroke-width="1.5" opacity="0.55"/>
+  <!-- bottom circle -->
+  <circle cx="200" cy="152" r="46" fill="none" stroke="#d4a55a" stroke-width="1.5" opacity="0.55"/>
+  <!-- subtle inner fill at triple intersection -->
+  <ellipse cx="200" cy="126" rx="12" ry="10" fill="#d4a55a" opacity="0.07"/>
+  <!-- center dot -->
+  <circle cx="200" cy="126" r="3" fill="#d4a55a" opacity="0.6"/>
+  <!-- outer bounding circle (very faint) -->
+  <circle cx="200" cy="118" r="78" fill="none" stroke="#1c2333" stroke-width="1" opacity="0.6"/>
+  <text x="200" y="228" text-anchor="middle" font-family="monospace" font-size="9" fill="#5a5e6a" letter-spacing="3">THEME</text>
+</svg>

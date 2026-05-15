@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="400" height="240" viewBox="0 0 400 240">
+  <rect width="400" height="240" fill="#0d1119"/>
+  <!-- hourglass outline -->
+  <path d="M160,42 L240,42 L200,120 L240,198 L160,198 L200,120 Z"
+        fill="none" stroke="#d4a55a" stroke-width="1.5" stroke-linejoin="round" opacity="0.65"/>
+  <!-- top sand fill (upper half, partial) -->
+  <path d="M165,50 L235,50 L200,107 Z" fill="#d4a55a" opacity="0.08"/>
+  <!-- bottom sand fill (lower half) -->
+  <path d="M200,133 L225,188 L175,188 Z" fill="#d4a55a" opacity="0.12"/>
+  <!-- waist line -->
+  <line x1="182" y1="120" x2="218" y2="120" stroke="#d4a55a" stroke-width="1" opacity="0.4"/>
+  <!-- waist dot -->
+  <circle cx="200" cy="120" r="3" fill="#d4a55a" opacity="0.7"/>
+  <!-- outer frame ticks -->
+  <g stroke="#2a3347" stroke-width="1" opacity="0.7">
+    <line x1="134" y1="120" x2="156" y2="120"/>
+    <line x1="244" y1="120" x2="266" y2="120"/>
+  </g>
+  <!-- tick caps -->
+  <circle cx="132" cy="120" r="2" fill="#2a3347" opacity="0.8"/>
+  <circle cx="268" cy="120" r="2" fill="#2a3347" opacity="0.8"/>
+  <text x="200" y="228" text-anchor="middle" font-family="monospace" font-size="9" fill="#5a5e6a" letter-spacing="3">EVENT</text>
+</svg>

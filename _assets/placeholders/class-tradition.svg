@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="400" height="240" viewBox="0 0 400 240">
+  <rect width="400" height="240" fill="#0d1119"/>
+  <!-- portico arch: two pillars + arc -->
+  <!-- left pillar -->
+  <rect x="148" y="72" width="14" height="110" fill="none" stroke="#d4a55a" stroke-width="1.5" opacity="0.65"/>
+  <!-- right pillar -->
+  <rect x="238" y="72" width="14" height="110" fill="none" stroke="#d4a55a" stroke-width="1.5" opacity="0.65"/>
+  <!-- arch arc -->
+  <path d="M148,90 Q148,38 200,38 Q252,38 252,90" fill="none" stroke="#d4a55a" stroke-width="1.5" opacity="0.65"/>
+  <!-- pediment triangle (above arch) -->
+  <path d="M136,38 L200,12 L264,38" fill="none" stroke="#2a3347" stroke-width="1" opacity="0.7"/>
+  <!-- steps at base -->
+  <g stroke="#2a3347" stroke-width="1" opacity="0.7">
+    <line x1="138" y1="182" x2="262" y2="182"/>
+    <line x1="128" y1="192" x2="272" y2="192"/>
+  </g>
+  <!-- keystone dot -->
+  <circle cx="200" cy="38" r="4" fill="#d4a55a" opacity="0.6"/>
+  <!-- inner door frame (faint) -->
+  <rect x="176" y="118" width="48" height="64" rx="24" fill="none" stroke="#1c2333" stroke-width="1"/>
+  <text x="200" y="228" text-anchor="middle" font-family="monospace" font-size="9" fill="#5a5e6a" letter-spacing="3">TRADITION</text>
+</svg>
