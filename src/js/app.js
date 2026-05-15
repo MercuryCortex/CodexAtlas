@@ -4104,7 +4104,9 @@ VIEWS.alchemy = {
 // Module-scoped state — the MapLibre instance and DOM markers persist across
 // atlas visits to avoid reinit cost. Render() updates filtered data in place.
 let _atlasMap = null;
-let _atlasMarkers = new Map();       // node-id → { el, marker, tier, deg, node }
+let _atlasMarkers = new Map();       // (legacy, kept for back-compat; unused by circle-layer path)
+let _atlasNodesById = new Map();     // node-id → vault node (for hover-trail neighbor lookup)
+let _atlasHoveredId = null;          // currently-hovered node id (debounce trail rebuild)
 let _atlasZoomHandler = null;
 let _atlasEndHandler = null;
 let _atlasResizeObs = null;
@@ -4316,49 +4318,84 @@ VIEWS.atlas = {
         });
       }
 
-      // Rebuild markers (clear + add for the current filtered set).
-      _atlasMarkers.forEach(m => m.marker.remove());
-      _atlasMarkers.clear();
+      // ---- NATIVE CIRCLE LAYER (replaces DOM markers; opus-foundation, 2026-05-15) ----
+      // Build a GeoJSON FeatureCollection from the filtered geoNodes. Each feature
+      // carries family_color, dotSize, tier, etc. as `properties` so the circle
+      // layer's paint expressions can data-drive everything. This eliminates the
+      // DOM-marker positioning bug (markers appearing offset / drifting from their
+      // basemap location) by using MapLibre's GPU projection.
+      const featureCollection = {
+        type: 'FeatureCollection',
+        features: geoNodes.map(n => ({
+          type: 'Feature',
+          geometry: { type: 'Point', coordinates: [n.geo.lon, n.geo.lat] },
+          properties: {
+            id: n.id,
+            title: n.title || '',
+            family_color: n.family_color || n.tradition_color || '#7a8090',
+            tier: tierById.get(n.id),
+            deg: DEGREE.get(n.id) || 0,
+            dotSize: 5 + Math.sqrt(DEGREE.get(n.id) || 0) * 1.2
+          }
+        }))
+      };
 
-      geoNodes.forEach(n => {
-        const tier = tierById.get(n.id);
-        const deg  = DEGREE.get(n.id) || 0;
-        const el = document.createElement('div');
-        el.className = `atlas-marker tier-${tier}` + (tier <= 1 ? ' hub' : '');
-        el.dataset.id = n.id;
-        el.dataset.tier = String(n._tier ?? 'none');
-        const dotSize  = (5 + Math.sqrt(deg) * 1.2).toFixed(1);
-        const dotColor = n.family_color || n.tradition_color || '#7a8090';
-        const safeTitle = (n.title || '').replace(/[<>&]/g, c => ({ '<': '&lt;', '>': '&gt;', '&': '&amp;' }[c]));
-        el.innerHTML = `
-          <span class="atlas-marker-dot" style="--dot-size:${dotSize}px;--dot-color:${dotColor}"></span>
-          <span class="atlas-marker-label">${safeTitle}</span>
-        `;
-        el.addEventListener('click', (ev) => { ev.stopPropagation(); selectNode(n.id, true); });
-        el.addEventListener('mouseenter', (ev) => {
-          _atlasShowHoverTrails(n.id);
+      // Lookup map for hover-trail neighbor resolution (replaces _atlasMarkers).
+      _atlasNodesById = new Map();
+      geoNodes.forEach(n => _atlasNodesById.set(n.id, n));
+
+      if (_atlasMap.getSource('atlas-nodes')) {
+        _atlasMap.getSource('atlas-nodes').setData(featureCollection);
+      } else {
+        _atlasMap.addSource('atlas-nodes', { type: 'geojson', data: featureCollection });
+        _atlasMap.addLayer({
+          id: 'atlas-nodes-circles',
+          type: 'circle',
+          source: 'atlas-nodes',
+          paint: {
+            'circle-radius': ['get', 'dotSize'],
+            'circle-color': ['get', 'family_color'],
+            'circle-stroke-width': 1,
+            'circle-stroke-color': 'rgba(255,255,255,0.20)',
+            'circle-opacity': 0.95,
+            // Hover state: hovered + neighbors stay bright, others dim.
+            // Driven by setPaintProperty calls from the hover handlers below.
+            'circle-stroke-color-transition': { duration: 140 },
+            'circle-opacity-transition': { duration: 140 }
+          }
+        });
+
+        // Hover — cursor + tooltip + trails (matches the MapLibre hover-popup example).
+        _atlasMap.on('mousemove', 'atlas-nodes-circles', (ev) => {
+          if (!ev.features || !ev.features.length) return;
+          const f  = ev.features[0];
+          const id = f.properties.id;
+          const n  = _atlasNodesById.get(id);
+          if (!n) return;
+          _atlasMap.getCanvas().style.cursor = 'pointer';
+          if (_atlasHoveredId !== id) {
+            _atlasHoveredId = id;
+            _atlasShowHoverTrails(id);
+          }
           showTooltip(
             `${tooltipThumb(n)}<div class="ttitle">${n.title}</div>
              <div class="tmeta">${n.type}${n.family ? ' · ' + n.family : ''}${n.geo.label ? ' · ' + n.geo.label : ''}</div>
-             <div class="tmeta">${fmtDateRange(n.date_earliest, n.date_latest) || '—'}</div>`, ev);
+             <div class="tmeta">${fmtDateRange(n.date_earliest, n.date_latest) || '—'}</div>`, ev.originalEvent);
         });
-        el.addEventListener('mousemove', (ev) => {
-          tooltip.style('left', (ev.clientX + 14) + 'px').style('top', (ev.clientY + 14) + 'px');
-        });
-        el.addEventListener('mouseleave', () => {
+        _atlasMap.on('mouseleave', 'atlas-nodes-circles', () => {
+          _atlasMap.getCanvas().style.cursor = '';
+          _atlasHoveredId = null;
           hideTooltip();
           _atlasHideHoverTrails();
         });
 
-        const dotOffsetX = -(parseFloat(dotSize) / 2);
-        const marker = new maplibregl.Marker({ element: el, anchor: 'left', offset: [dotOffsetX, 0] })
-          .setLngLat([n.geo.lon, n.geo.lat])
-          .addTo(_atlasMap);
-        _atlasMarkers.set(n.id, { el, marker, tier, deg, node: n });
-      });
-
-      _atlasUpdateLOD();
-      _atlasDeclutter();
+        // Click — open the detail panel.
+        _atlasMap.on('click', 'atlas-nodes-circles', (ev) => {
+          if (!ev.features || !ev.features.length) return;
+          const id = ev.features[0].properties.id;
+          selectNode(id, true);
+        });
+      }
     };
 
     if (_atlasMap.isStyleLoaded()) {
@@ -4446,41 +4483,56 @@ function _atlasUpdateZoomMeter() {
   readout.textContent = mult.toFixed(2) + '×';
 }
 
-// ---- Hover trails: GeoJSON line source updated on the fly ----
+// ---- Hover trails: GeoJSON line source updated on the fly.
+// Also drives circle-layer dim/highlight via setPaintProperty (no DOM classes
+// — markers are native MapLibre features now, not DOM elements). ----
 function _atlasShowHoverTrails(id) {
   if (!_atlasMap) return;
   const source = _atlasMap.getSource('atlas-trails');
   if (!source) return;
+  const me = _atlasNodesById.get(id);
+  if (!me || !me.geo) return;
+  const meLngLat = [me.geo.lon, me.geo.lat];
   const nbrs = NEIGHBORS.get(id);
-  const me = _atlasMarkers.get(id);
-  if (!me) return;
-  const meLngLat = [me.node.geo.lon, me.node.geo.lat];
   const features = [];
+  const neighborIds = [];
   if (nbrs) {
     nbrs.forEach(nbId => {
-      const them = _atlasMarkers.get(nbId);
-      if (!them) return;
+      const them = _atlasNodesById.get(nbId);
+      if (!them || !them.geo) return;
+      neighborIds.push(nbId);
       features.push({
         type: 'Feature',
-        geometry: { type: 'LineString', coordinates: [meLngLat, [them.node.geo.lon, them.node.geo.lat]] },
+        geometry: { type: 'LineString', coordinates: [meLngLat, [them.geo.lon, them.geo.lat]] },
         properties: { from: id, to: nbId }
       });
     });
   }
   source.setData({ type: 'FeatureCollection', features });
-  _atlasMarkers.forEach((m, mid) => {
-    if (mid === id || (nbrs && nbrs.has(mid))) m.el.classList.add('hot');
-    else m.el.classList.add('atlas-dim');
-  });
+  // Dim non-related circles via data-driven paint expression.
+  if (_atlasMap.getLayer && _atlasMap.getLayer('atlas-nodes-circles')) {
+    const hotIds = [id, ...neighborIds];
+    _atlasMap.setPaintProperty('atlas-nodes-circles', 'circle-opacity', [
+      'case',
+      ['in', ['get', 'id'], ['literal', hotIds]], 1,
+      0.18
+    ]);
+    _atlasMap.setPaintProperty('atlas-nodes-circles', 'circle-stroke-color', [
+      'case',
+      ['==', ['get', 'id'], id], _atlasToken('--gold', '#d4a55a'),
+      ['in', ['get', 'id'], ['literal', neighborIds]], _atlasToken('--gold-soft', '#a87f3e'),
+      'rgba(255,255,255,0.20)'
+    ]);
+  }
 }
 function _atlasHideHoverTrails() {
   if (!_atlasMap) return;
   const source = _atlasMap.getSource('atlas-trails');
   if (source) source.setData({ type: 'FeatureCollection', features: [] });
-  _atlasMarkers.forEach(m => {
-    m.el.classList.remove('hot');
-    m.el.classList.remove('atlas-dim');
-  });
+  if (_atlasMap.getLayer && _atlasMap.getLayer('atlas-nodes-circles')) {
+    _atlasMap.setPaintProperty('atlas-nodes-circles', 'circle-opacity', 0.95);
+    _atlasMap.setPaintProperty('atlas-nodes-circles', 'circle-stroke-color', 'rgba(255,255,255,0.20)');
+  }
 }
 // Helpers for the era-window dropdown (kept local to Atlas).
 function eraVal(era) {
