@@ -521,10 +521,14 @@ The things opus-foundation-1 claimed but never started are all still open:
 
 ---
 
-## sonnet-bruno-1 — content / Giordano Bruno cluster + Origen-Lucifer misreading event — started 2026-05-15
+## sonnet-bruno-1 — content / Giordano Bruno cluster + Origen-Lucifer misreading event — started 2026-05-15 — **FINISHED 2026-05-15**
 - Owning: `giordano-bruno` (EXISTS — already full), `marsilio-ficino` (EXISTS — already full), `event-ficino-hermetica-1463` (EXISTS as `event-ficino-corpus-hermeticum-translation-1463`), `event-origen-lucifer-misreading-c230` (NEW)
 - Goal: Build Bruno cluster nodes; discovered all main nodes pre-exist; creating one genuinely missing node: the Origen/Isaiah 14:12 misreading event that seeded 1,800 years of Satan-as-fallen-angel cosmology
-- Status: in-flight
+- Status: finished
+- Delivered:
+  - **`event-origen-lucifer-misreading-c230.md`** (NEW, metadata) — MASSIVE WIN: single exegetical move in ~230 CE generates the entire Western Satan-as-fallen-angel tradition. Full transmission chain: Isaiah 14:12 (political taunt-poem) → Origen De Principiis 1.5.5 → Jerome "Lucifer" Vulgate → Augustine City of God → Dante Inferno 34 → Milton Paradise Lost → Romantic Prometheus-Lucifer → modern Satanism. 5 refs (4 Tier-1). Wired to [[lucifer]], [[satan-christian]], [[origen]], [[origin-of-evil]], [[watchers-and-fallen-angels]], [[executed-divine-claimant]], [[phase-5-056-divine-comedy]], [[phase-6-042-paradise-lost]].
+  - Pre-flight discovery: `giordano-bruno`, `marsilio-ficino`, `event-ficino-corpus-hermeticum-translation-1463` all pre-existed with full content (built by earlier agents). No duplication needed.
+- Build: **2135 nodes · 12640 edges · 0 lint errors** (commit 06df5c7)
 - Last edit: `00_meta/ACTIVE-AGENTS.md`
 
 ---
