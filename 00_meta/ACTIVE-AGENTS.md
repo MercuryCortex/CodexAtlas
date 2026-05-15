@@ -779,3 +779,26 @@ The things opus-foundation-1 claimed but never started are all still open:
   - `merkabah-miraj-ascent-spine` + `hermetic-full-transmission-spine` → moved to `transmission` category
 - Build: ~2152 nodes
 - Last edit: `src/js/app.js`
+
+---
+
+## ritman-1 — content / Embassy of Free Mind phase-6 gap fill — started 2026-05-15 — **FINISHED 2026-05-15**
+- Owning: `02_documents/_phase-6-early-modern/phase-6-043` through `phase-6-052`, plus `04_persons/` stubs for 6 authors
+- Goal: Identify and fill gaps in phase-6 Hermetic/alchemical collection; confirmed Ritman Library (sourcelibrary.org) digitized holdings for all targets
+- Status: finished
+- Agents used: `Ritman catalogue` (fetched sourcelibrary.org → full digitized list with IDs) + `Vault gaps` (audited phase-6 vs priority list → 10-node hit list)
+- Delivered:
+  - **`phase-6-043`** — Dee *Libri Mysteriorum* / Enochian (metadata) — Hekhalot → Enochian → Golden Dawn chain
+  - **`phase-6-044`** — Llull *Ars Magna* (metadata) — missing common ancestor of Pico/Bruno/Agrippa/Leibniz
+  - **`phase-6-045`** — Sendivogius *Novum Lumen Chymicum* (metadata) — aerial niter → Newton/Boyle/Lavoisier
+  - **`phase-6-046`** — Ripley *Compound of Alchemy* + Scroll (metadata)
+  - **`phase-6-047`** — Ashmole *Theatrum Chemicum Britannicum* (metadata) — alchemy/Masonry junction node
+  - **`phase-6-048`** — Basil Valentine *Twelve Keys* (metadata)
+  - **`phase-6-049`** — Starkey/Eirenaeus Philalethes *Secrets Reveal'd* (metadata) — Newton's most-read alchemist
+  - **`phase-6-050`** — Thomas Vaughan *Anthroposophia Theomagica* (metadata)
+  - **`phase-6-051`** — Mylius *Philosophia Reformata* (stub)
+  - **`phase-6-052`** — Kircher *Ars Magna Lucis et Umbrae* (metadata) — light-mysticism cross-tradition chain
+  - Person stubs: `ramon-llull`, `michael-sendivogius`, `george-ripley`, `thomas-vaughan`, `elias-ashmole`, `george-starkey`
+  - Ritman sourcelibrary.org confirmed all 10 texts digitized (CC-BY-SA-4.0); sourcelibrary.org IDs recorded in preservation fields
+- Build: **2249 nodes · 13117 edges · 2.8% dead-link** (down from 3.0%)
+- Last edit: `data.js`
