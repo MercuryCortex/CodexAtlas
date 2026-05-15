@@ -469,7 +469,7 @@ canonical-slug
 - `zemyna`
 - `zeus`
 
-### document (378 nodes)
+### document (379 nodes)
 
 - `document-kuntillet-ajrud-inscriptions`
 - `phase-1-001-kesh-temple-hymn`
@@ -683,6 +683,7 @@ canonical-slug
 - `phase-4-096-cantong-qi`
 - `phase-4-097-baopuzi-ge-hong`
 - `phase-4-098-liezi`
+- `phase-4-099-shangqing-corpus`
 - `phase-5-001-devi-mahatmya`
 - `phase-5-002-heart-sutra`
 - `phase-5-002b-diamond-sutra`
@@ -850,7 +851,7 @@ canonical-slug
 - `phase-8-019-kojiki`
 - `phase-8-020-nihon-shoki`
 
-### event (165 nodes)
+### event (166 nodes)
 
 - `bent-pyramid-sneferu-dahshur`
 - `el-castillo-chichen-itza`
@@ -964,6 +965,7 @@ canonical-slug
 - `event-nag-hammadi-discovery`
 - `event-natufian-burial-traditions-c-12500-9500-bce`
 - `event-nero-persecution-64`
+- `event-nestorian-stele-781`
 - `event-new-atheism-2004-2010`
 - `event-nine-saints-mission-c480`
 - `event-order-of-christ-foundation-1319`
@@ -1018,7 +1020,7 @@ canonical-slug
 - `subterranean-chamber-great-pyramid`
 - `temple-of-inscriptions-palenque`
 
-### person (635 nodes)
+### person (636 nodes)
 
 - `aaron`
 - `abba-garima`
@@ -1575,6 +1577,7 @@ canonical-slug
 - `socrates`
 - `solomon-king`
 - `solon`
+- `sotaesan`
 - `spyridon-marinatos`
 - `sri-aurobindo`
 - `sri-yukteswar`
@@ -1732,7 +1735,7 @@ canonical-slug
 - `wheat-grain`
 - `yin-yang`
 
-### theme (307 nodes)
+### theme (308 nodes)
 
 - `364-day-solar-calendar`
 - `adam-kadmon`
@@ -1985,6 +1988,7 @@ canonical-slug
 - `theme-asha-druj-cosmic-opposition`
 - `theme-axial-age`
 - `theme-baal-set-syncretism`
+- `theme-dying-founder-paradigm`
 - `theme-el-yahweh-merger`
 - `theme-exodus-hyksos-thesis`
 - `theme-gandharan-buddhism`
@@ -2042,7 +2046,7 @@ canonical-slug
 - `world-parent-cosmogony`
 - `zeus-pantokrator-transmission`
 
-### tradition (118 nodes)
+### tradition (119 nodes)
 
 - `tradition-advaita-vedanta`
 - `tradition-african-traditional`
@@ -2158,6 +2162,7 @@ canonical-slug
 - `tradition-vodou-haitian`
 - `tradition-western-astrology`
 - `tradition-wicca-modern-pagan`
+- `tradition-won-buddhism`
 - `tradition-yazidi`
 - `tradition-yoruba-ifa`
 - `tradition-zen`
@@ -2169,16 +2174,19 @@ canonical-slug
 
 | Refs | Dead target | Suggested canonical (existing) |
 |---:|---|---|
-| 5 | `phase-1-013-babylonian-theodicy` | `phase-1-017-descent-of-inanna` |
-| 4 | `tradition-minoan-religion` | `tradition-mesoamerican` |
-| 4 | `tradition-eastern-orthodoxy` | `tradition-mesoamerican` |
-| 4 | `tradition-early-christianity` | `tradition-mesoamerican` |
-| 3 | `tradition-medieval-christianity` | `tradition-knights-templar` |
-| 3 | `phase-4-007-new-testament-canon` | `phase-4-002-apocryphon-of-john` |
+| 5 | `phase-1-013-babylonian-theodicy` | `phase-1-019-enuma-anu-enlil` |
+| 4 | `tradition-minoan-religion` | `tradition-ordo-novi-templi` |
+| 4 | `tradition-eastern-orthodoxy` | `tradition-ordo-novi-templi` |
+| 4 | `tradition-early-christianity` | `tradition-ordo-novi-templi` |
+| 4 | `event-death-of-guru-tegh-bahadur-1675` | `event-dead-sea-scrolls-discovery` |
+| 4 | `event-death-of-guru-arjan-1606` | `event-death-of-hypatia-415` |
+| 3 | `tradition-zen-chan-buddhism` | `tradition-ordo-novi-templi` |
+| 3 | `tradition-medieval-christianity` | `tradition-ordo-novi-templi` |
+| 3 | `phase-4-007-new-testament-canon` | `phase-4-009-pistis-sophia` |
 | 3 | `phase-2-005-1-2-kings` | `phase-2-008-homeric-epics` |
 | 3 | `divine-kingship-solar` | `divine-kingship` |
 | 2 | `yam-canaanite` | `astarte-canaanite` |
-| 2 | `tradition-second-temple-judaism` | `tradition-mesoamerican` |
-| 2 | `tradition-lingayat` | `tradition-mesoamerican` |
-| 2 | `tradition-cheondogyo` | `tradition-mesoamerican` |
+| 2 | `tradition-second-temple-judaism` | `tradition-ordo-novi-templi` |
+| 2 | `tradition-lingayat` | `tradition-celtic` |
+| 2 | `tradition-cheondogyo` | `tradition-celtic` |
 | 2 | `asclepius` | `asclepius-greek` |

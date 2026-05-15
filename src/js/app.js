@@ -4688,7 +4688,7 @@ const INVESTIGATIONS = [
     threads: [
       { label: 'Buddhism → China via Silk Road (1st–7th c. CE)', note: 'Kushan Empire (1st–4th c. CE) as the critical relay: Buddhist merchants and monks traveled through Gandhara (Afghanistan), Bactria (BMAC region), and Sogdiana. Xuanzang\'s return journey (629–645 CE) is the best-documented single transmission event — 17 years, 657 Sanskrit texts carried back to Tang China. tradition-buddhism + xuanzang in vault.', tier: 1 },
       { label: 'Manichaeism → Uighur state religion (762–840 CE)', note: 'Mani\'s religion spread east through Sogdian merchant networks. In 762 CE the Uighur Khagan converted after a Manichaean debate — making Manichaeism the state religion of a steppe empire for 80 years. The most geographically extreme extension of Zoroastrian-derived dualism. tradition-manichaeism + mani in vault.', tier: 1 },
-      { label: 'Nestorian Christianity in Tang Dynasty China — Stele 781 CE', note: 'The Nestorian Stele (大秦景教流行中国碑, Xi\'an, 781 CE) documents a Christian presence in China beginning 635 CE. Alopen the Nestorian monk arrives at Chang\'an; Tang Emperor Taizong grants permission to build churches. Christianity in China 200 years before Marco Polo. Nestorian-stele node not yet in vault — flagged for creation.', tier: 1 },
+      { label: 'Nestorian Christianity in Tang Dynasty China — Stele 781 CE', note: 'The Nestorian Stele (大秦景教流行中国碑, Xi\'an, 781 CE) documents a Christian presence in China beginning 635 CE. Alopen the Nestorian monk arrives at Chang\'an; Tang Emperor Taizong grants permission to build churches. Christianity in China 200 years before Marco Polo. nestorian-stele node now in vault.', tier: 1 },
       { label: 'Zoroastrian diaspora → Parsis in India', note: 'After the Islamic conquest of Iran (7th–8th c. CE), Zoroastrian communities fled east to Gujarat, India — founding the Parsi community. The Silk Road\'s western end (Persia) dispersed eastward. The Parsis preserved Zoroastrian texts and practices that would otherwise have been lost. tradition-zoroastrianism in vault.', tier: 1 },
       { label: 'Sogdian merchants as transmission agents', note: 'The Sogdians (Iranian-speaking people of Samarkand/Bukhara) are the underappreciated carriers of the Silk Road. They transmitted Buddhist art, Manichaean texts, and later Islamic knowledge in both directions. Their alphabet became the ancestor of Uighur, Mongolian, and Manchu scripts. Sogdian node not yet in vault — flagged for creation.', tier: 2 },
     ],
@@ -4697,6 +4697,7 @@ const INVESTIGATIONS = [
       'tradition-zoroastrianism', 'tradition-buddhism',
       'xuanzang',
       'cyrus-the-great',
+      'nestorian-stele',
     ],
   },
 ];
@@ -5028,8 +5029,24 @@ VIEWS.transmission = {
         <button class="btn btn-mini" id="btn-alch-save" ${canSave ? '' : 'disabled'} title="${canSave ? 'Save the current exploration as a custom preset' : 'Add at least one node to enable saving'}">save tree</button>
       </span>
       <span class="alch-count">${picks.length} picked · ${nodes.length - picks.length} bridge${nodes.length - picks.length === 1 ? '' : 's'}</span>
+      <button class="btn btn-mini" id="btn-alch-to-cards" ${nodes.length ? '' : 'disabled'} title="Open these nodes as cards on the Alchemy board">→ Alchemy cards</button>
       <button class="btn btn-mini" id="btn-alch-clear">clear</button>
     `;
+    const _toCardsBtn = document.getElementById('btn-alch-to-cards');
+    if (_toCardsBtn) _toCardsBtn.onclick = () => {
+      const allNodeIds = nodes.map(n => n.id);
+      if (!allNodeIds.length || !window._alchemyBoard) return;
+      setView('alchemy');
+      queueMicrotask(() => {
+        if (!window._alchemyBoard) return;
+        window._alchemyBoard.clearBoard();
+        const R = 320, total = allNodeIds.length;
+        allNodeIds.forEach((id, i) => {
+          const ang = (i / total) * Math.PI * 2 - Math.PI / 2;
+          window._alchemyBoard.addCard(id, Math.cos(ang) * R, Math.sin(ang) * R);
+        });
+      });
+    };
     document.getElementById('btn-alch-clear').onclick = () => {
       STATE.alchemyPicks = [];
       STATE.alchemyActivePreset = null;
