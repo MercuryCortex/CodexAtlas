@@ -15,7 +15,7 @@ child-of: []
 consort: []
 attributes: ["the sky itself", "white cloth (in some lineages)"]
 attested-in: ["[[phase-8-007-ifa-divination-corpus]]"]
-equivalents: ["[[bondye-vodou (concept-equivalent in Haitian Vodou as Bondye)]]"]
+equivalents: ["[[bondye-vodou]] (concept-equivalent in Haitian Vodou as Bondye)"]
 syncretic-edges:
   - target: "Bondye (Haitian Vodou high god)"
     type: "scholarly-parallel"
