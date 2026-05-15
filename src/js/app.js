@@ -4672,6 +4672,7 @@ let _atlasClusterPopup = null;       // (legacy, unused — kept var to avoid br
 let _atlasLockedId = null;           // node id whose trails/highlight stay visible across hover (sticky-select via click)
 let _atlasNodeJitter = new Map();    // id → { angle, ring, perRing, groupSize, latRad } — stable per-node jitter info
 let _atlasNodesData  = new Map();    // id → vault node ref (replaces _atlasNodesById, broader use)
+let _atlasJitteredPos = new Map();   // id → [lng, lat] live jittered position at current zoom — refreshed each _atlasComputeFC
 let _atlasZoomFcHandler = null;      // throttled zoomend handler that re-computes the jittered FC
 let _atlasZoomHandler = null;
 let _atlasEndHandler = null;
@@ -4716,6 +4717,9 @@ function _atlasJitterScale(zoom) {
 // the precomputed tier classification.
 function _atlasComputeFC(zoom, geoNodes, tierById) {
   const STEP_R = _atlasJitterScale(zoom);
+  // Refresh the live jittered-position cache. Hover-trail lines use this so
+  // they connect actually-rendered positions, not original lat/lon centroids.
+  _atlasJitteredPos.clear();
   return {
     type: 'FeatureCollection',
     features: geoNodes.map(n => {
@@ -4727,6 +4731,7 @@ function _atlasComputeFC(zoom, geoNodes, tierById) {
         lng += r * Math.cos(j.angle) * lonFactor;
         lat += r * Math.sin(j.angle);
       }
+      _atlasJitteredPos.set(n.id, [lng, lat]);
       return {
         type: 'Feature',
         geometry: { type: 'Point', coordinates: [lng, lat] },
@@ -5235,6 +5240,12 @@ VIEWS.atlas = {
           // the new zoom → big jitter scale → individuals are spaced 40+ px
           // apart and clickable. Floor at z 6 so a click always breaks the
           // cluster, even if getClusterExpansionZoom would return a smaller value.
+          // Also: clear any sticky-locked selection so stale trail lines from
+          // a previously-clicked node don't linger over the newly-expanded view.
+          if (_atlasLockedId) {
+            _atlasLockedId = null;
+            _atlasHideHoverTrails();
+          }
           const handleExpZoom = (targetZoom) => {
             const POST_CLICK_MIN_Z = 6.2;
             const candidate = (typeof targetZoom === 'number' && isFinite(targetZoom))
@@ -5287,20 +5298,28 @@ VIEWS.atlas = {
       _atlasMap.off('moveend', _atlasEndHandler);
     }
     if (_atlasZoomFcHandler) _atlasMap.off('zoomend', _atlasZoomFcHandler);
-    _atlasZoomHandler = () => { _atlasUpdateLOD(); _atlasUpdateZoomMeter(); };
-    _atlasEndHandler  = () => _atlasDeclutter();
-    // Re-build the jittered FeatureCollection on every zoomend so co-located
-    // docs spread apart smoothly as the user zooms in (one-system flow, no
-    // separate spider). The recompute is O(N) over ~1300 features — ~5 ms.
+    // Re-build the jittered FeatureCollection during zoom animation (throttled
+    // to ~60ms) so co-located docs slide smoothly apart instead of "jumping"
+    // at zoomend. The recompute is ~5 ms over ~1300 features; setData re-clusters.
+    let _atlasZoomThrottleAt = 0;
     _atlasZoomFcHandler = () => {
       const src = _atlasMap.getSource('atlas-nodes');
       if (src && _atlasNodeJitter.size) {
         src.setData(_atlasComputeFC(_atlasMap.getZoom(), geoNodes, tierById));
+        // If a node is sticky-locked, redraw its trails at the new positions.
+        if (_atlasLockedId) _atlasShowHoverTrails(_atlasLockedId);
       }
     };
+    const _atlasZoomThrottled = () => {
+      const now = Date.now();
+      if (now - _atlasZoomThrottleAt < 60) return;
+      _atlasZoomThrottleAt = now;
+      _atlasZoomFcHandler();
+    };
+    _atlasZoomHandler = () => { _atlasUpdateLOD(); _atlasUpdateZoomMeter(); _atlasZoomThrottled(); };
+    _atlasEndHandler  = () => { _atlasDeclutter(); _atlasZoomFcHandler(); };
     _atlasMap.on('zoom', _atlasZoomHandler);
     _atlasMap.on('zoomend', _atlasEndHandler);
-    _atlasMap.on('zoomend', _atlasZoomFcHandler);
     _atlasMap.on('moveend', _atlasEndHandler);
 
     // Wire zoom-meter buttons to MapLibre
@@ -5370,20 +5389,24 @@ function _atlasShowHoverTrails(id) {
   if (!_atlasMap) return;
   const source = _atlasMap.getSource('atlas-trails');
   if (!source) return;
-  const me = _atlasNodesById.get(id);
-  if (!me || !me.geo) return;
-  const meLngLat = [me.geo.lon, me.geo.lat];
+  // Use the LIVE jittered position from _atlasJitteredPos (refreshed by
+  // _atlasComputeFC on every zoomend) instead of n.geo.lon/lat. Without this
+  // every Rome-document's trails converged at Rome's canonical centroid even
+  // though the rendered dots are spread visually — the lines drew to the
+  // "central root", not to where the user actually sees the neighbors.
+  const mePos = _atlasJitteredPos.get(id);
+  if (!mePos) return;
   const nbrs = NEIGHBORS.get(id);
   const features = [];
   const neighborIds = [];
   if (nbrs) {
     nbrs.forEach(nbId => {
-      const them = _atlasNodesById.get(nbId);
-      if (!them || !them.geo) return;
+      const themPos = _atlasJitteredPos.get(nbId);
+      if (!themPos) return;
       neighborIds.push(nbId);
       features.push({
         type: 'Feature',
-        geometry: { type: 'LineString', coordinates: [meLngLat, [them.geo.lon, them.geo.lat]] },
+        geometry: { type: 'LineString', coordinates: [mePos, themPos] },
         properties: { from: id, to: nbId }
       });
     });
