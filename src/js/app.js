@@ -550,7 +550,7 @@ function setView(name) {
   }
   document.getElementById('view-controls').innerHTML = '';
   legend.style('display', 'none').html('');
-  document.querySelectorAll('.list-pane,.about-pane,.alch-toolbox,.alch-palette,.tl-zoom-presets,.astrology-pane').forEach(el => el.remove());
+  document.querySelectorAll('.list-pane,.about-pane,.alch-toolbox,.alch-palette,.tl-zoom-presets').forEach(el => el.remove());
   hideTooltip();
   // Map thumbnail only on geo-relevant views; hide elsewhere.
   // Atlas view uses MapLibre (no SVG map-thumb); zoom meter shown separately.
@@ -1226,7 +1226,6 @@ VIEWS.pantheon = {
     // FORCE SIMULATION — strong positional anchor + hard wedge clamp keeps families separated.
     const sim = d3.forceSimulation(deities)
       .alphaDecay(0.05)
-      .alphaMin(0.015)
       .force('link', d3.forceLink(links).id(d => d.id).distance(95).strength(0.02))
       .force('charge', d3.forceManyBody().strength(-22).distanceMax(140))
       .force('x', d3.forceX(d => d._ax).strength(0.55))
@@ -1718,7 +1717,6 @@ VIEWS.documents = {
 
     const sim = d3.forceSimulation(docs)
       .alphaDecay(0.06)
-      .alphaMin(0.015)
       .force('charge', d3.forceManyBody().strength(-14).distanceMax(80))
       .force('x', d3.forceX(d => d._ax).strength(0.55))
       .force('y', d3.forceY(d => d._ay).strength(0.55))
@@ -3558,7 +3556,6 @@ VIEWS.scripture = {
     // would visually crowd. Strong anchor pull keeps entities at their cell.
     const sim = d3.forceSimulation(allInstances)
       .alphaDecay(0.06)
-      .alphaMin(0.015)
       .force('x', d3.forceX(d => d.anchorX).strength(0.55))
       .force('y', d3.forceY(d => d.anchorY).strength(0.55))
       .force('charge', d3.forceManyBody().strength(-2).distanceMax(40))
@@ -3817,11 +3814,9 @@ VIEWS.scripture = {
 const PRESET_CATEGORY_LABELS = {
   egypt: 'Egypt', hermetic: 'Hermetic', templar: 'Templar',
   gnostic: 'Gnostic', cross: 'Cross-Tradition', flood: 'Flood', astrology: 'Astrology',
-  lineage: 'Lineage & Secret Societies',
 };
 const PRESET_CATEGORY_ORDER = [
   { key: 'egypt',    label: 'Egypt — Investigation Series' },
-  { key: 'lineage',  label: 'Lineage & Secret Societies' },
   { key: 'cross',    label: 'Cross-Tradition' },
   { key: 'hermetic', label: 'Hermetic & Gnostic' },
   { key: 'gnostic',  label: 'Gnostic' },
@@ -3830,74 +3825,6 @@ const PRESET_CATEGORY_ORDER = [
   { key: 'flood',    label: 'Flood Narratives' },
 ];
 const ALCHEMY_PRESETS = [
-  // ── Lineage & Secret Societies ────────────────────────────────────
-  {
-    id: 'solomonic-five-traditions',
-    category: 'lineage',
-    name: 'Solomon → Five Living Traditions',
-    headline: 'One disputed king (~970 BCE) seeds five fully independent living traditions that never acknowledge their shared root: the Ethiopian Solomonic dynasty → Rastafari (Haile Selassie as Davidic messiah); Hiram Abiff legend → all Freemasonry (every lodge worldwide enacts Solomon\'s Temple ritual); Islamic Sulayman commanding the jinn (Quran 27, 34, 38); the Key of Solomon grimoire → Western ceremonial magic (Golden Dawn, Thelema, modern occultism); Wisdom Christology (\"greater than Solomon\", Mt 12:42). Five living traditions, zero mutual acknowledgment, one family figure.',
-    picks: [
-      'solomon-king', 'zerubbabel',
-      'makeda-queen-of-sheba', 'menelik-i-legendary', 'solomonic-genealogy', 'tradition-rastafari',
-      'tradition-freemasonry', 'tradition-scottish-rite-freemasonry',
-      'aleister-crowley', 'john-dee',
-      'theme-solomonic-transmission-spine',
-    ],
-  },
-  {
-    id: 'zadokite-priestly-chain',
-    category: 'lineage',
-    name: 'Zadokite Priestly Chain: 3,200 Years',
-    headline: 'Aaron → Zadok (Solomon\'s high priest, 970 BCE) → 818-year Zadokite monopoly over the Jerusalem Temple → Onias III (last legitimate Zadokite high priest, murdered 170 BCE) → Onias IV (flees to Egypt, builds the Temple of Leontopolis — a fully operational Jewish temple 40 km from Alexandria for 220 years) → Dead Sea Scrolls community (Zadokites who refused the Hasmonean usurpation, identified themselves as the Sons of Zadok). The same family that creates the Sadducees, Pharisees, and Essenes — every Jewish sect of Jesus\'s time is a response to the Zadokite crisis. Modern endpoint: the Cohen Modal Haplotype — genetics confirm a shared Y-chromosome ancestor ~3,000 years ago in Kohanim across all Jewish communities.',
-    picks: [
-      'zadok-priest', 'solomon-king',
-      'onias-iii', 'onias-iv',
-      'event-temple-leontopolis-foundation-c150bce',
-      'tradition-hasmonean-dynasty', 'antiochus-iv-epiphanes',
-      'herod-the-great',
-      'event-destruction-of-second-temple-70',
-      'theme-aaronide-priestly-continuity',
-    ],
-  },
-  {
-    id: 'sinclair-ramsay-scottish-rite',
-    category: 'lineage',
-    name: 'Sinclair → Ramsay → Scottish Rite',
-    headline: 'The documented family chain that created modern Freemasonry\'s most elaborate branch: Henri de Saint-Clair joins the First Crusade (1096) → William Sinclair builds Rosslyn Chapel (1446–1484) with Templar crosses, 110 Green Men, and the Apprentice Pillar — a column whose murder-legend is structurally identical to the Hiram Abiff ritual, 300 years before the Third Degree was formalized → Chevalier Ramsay\'s 1737 Oration in Paris claims Freemasonry descended from Crusader knights, encoding Jacobite (Stuart) political restoration as the \"recovery of the Lost Word\" → Scottish Rite\'s 33 degrees crystallize this Crusader-Stuart-Solomonic symbolism. The \"Scottish\" label has nothing to do with Scotland operationally — it was a French Jacobite prestige marker.',
-    picks: [
-      'william-sinclair-rosslyn', 'event-rosslyn-chapel-construction-1446',
-      'chevalier-ramsay', 'event-ramsay-oration-1737',
-      'tradition-knights-templar', 'tradition-scottish-rite-freemasonry',
-      'tradition-freemasonry', 'theme-sacred-bloodline-claim',
-    ],
-  },
-  {
-    id: 'prague-occult-court',
-    category: 'lineage',
-    name: 'Prague 1583–1612: Three Traditions, One Court',
-    headline: 'Rudolf II Habsburg moves his court to Prague and creates the densest occult-scientific nexus in European history. Simultaneously in one city: John Dee + Edward Kelley working Enochian angel-communication; the Maharal of Prague (Rabbi Judah Loew) developing Kabbalistic philosophy and the Golem legend; Tycho Brahe as Imperial Mathematician, whose 20 years of naked-eye observation data → Kepler\'s laws → Newtonian physics. Three independent traditions all probing the hidden structure of reality — angelic language, Hebrew letter-animation, empirical astronomy — none in dialogue with each other. The Rosicrucian manifestos (1614–1616) are published immediately after Rudolf\'s fall, as if the dream needed a myth now that the patron was gone.',
-    picks: [
-      'rudolf-ii-habsburg', 'event-prague-occult-court-1576-1612',
-      'john-dee', 'edward-kelley',
-      'rabbi-judah-loew', 'tycho-brahe',
-      'tradition-rosicrucianism', 'giordano-bruno',
-      'tradition-hermeticism',
-    ],
-  },
-  {
-    id: 'sacred-bloodline-cross-tradition',
-    category: 'lineage',
-    name: 'Sacred Bloodline: The Cross-Tradition Pattern',
-    headline: 'From the Sumerian King List (~2100 BCE: \"kingship descended from heaven\") through Egyptian pharaonic divinity to the Davidic covenant, the Aaronide-Zadokite priestly monopoly, the Shia Imamate (Ahl al-Bayt — ~200 million living adherents today), and the Ismaili Imamate (Aga Khan as living 49th Imam): the claim that biology transmits divine authority is the most persistent cross-tradition institutional mechanism in world religion. Endpoint: the Merovingian Holy Blood myth (1982 *Holy Blood, Holy Grail* — documented fabrication by Pierre Plantard) proves the mechanism is so powerful it can be manufactured and become culturally operative even after exposure.',
-    picks: [
-      'solomon-king', 'zadok-priest', 'zerubbabel',
-      'tradition-hasmonean-dynasty',
-      'divine-kingship',
-      'tradition-ismailism',
-      'theme-sacred-bloodline-claim', 'theme-aaronide-priestly-continuity',
-      'solomonic-genealogy',
-    ],
-  },
   // ── Egypt — Investigation Series ──────────────────────────────────
   {
     id: 'giza-theology-khafres-machine',
@@ -3981,6 +3908,30 @@ const ALCHEMY_PRESETS = [
       'mary-theotokos', 'mary-mother-of-jesus', 'cyril-of-alexandria',
     ],
   },
+  {
+    id: 'dying-rising-osiris-to-christ',
+    category: 'egypt',
+    name: 'Dying-Rising God: Osiris → Christ',
+    headline: 'The most debated comparative pattern in the history of religions — from Osiris\'s death-dismemberment-reconstitution (c. -3000) through Baal, Dumuzi/Tammuz, Adonis, and Dionysus to Christian resurrection theology. The Mettinger (2001) consensus: the category is real but narrower than Frazer claimed; Alexandria is the transmission crucible.',
+    picks: [
+      'osiris', 'dumuzi-tammuz', 'baal', 'adonis', 'attis', 'dionysus',
+      'dying-rising-god',
+      'philo-of-alexandria', 'clement-of-alexandria',
+      'event-school-of-alexandria-300bce-415ce',
+    ],
+  },
+  {
+    id: 'school-of-alexandria-crucible',
+    category: 'egypt',
+    name: 'School of Alexandria: The Crucible',
+    headline: 'The 715-year intellectual experiment (300 BCE–415 CE) in which Egyptian priestly theology, Greek Platonism, Jewish scripture, and nascent Christianity fused in one city — producing Neoplatonism, Christian Platonism, Gnosticism, and the Hermetic Corpus. Ammonius Saccas taught both Plotinus and Origen from the same Alexandrian synthesis.',
+    picks: [
+      'event-school-of-alexandria-300bce-415ce',
+      'philo-of-alexandria', 'ammonius-saccas',
+      'plotinus', 'origen', 'clement-of-alexandria', 'hypatia',
+      'ma-at-logos-sophia',
+    ],
+  },
   // ── Cross-Tradition ───────────────────────────────────────────────
   {
     id: 'greco-buddhist',
@@ -4002,6 +3953,32 @@ const ALCHEMY_PRESETS = [
       'aristotle', 'phase-3-003-aristotle-metaphysics',
       'al-farabi', 'ibn-sina', 'phase-5-044-ibn-sina-kitab-al-shifa',
       'ibn-rushd', 'thomas-aquinas', 'phase-5-024-aquinas-summa-theologiae',
+    ],
+  },
+  {
+    id: 'mystical-union-henosis-chain',
+    category: 'cross',
+    name: 'Mystical Union: Henosis Across Traditions',
+    headline: 'The cross-tradition chain of mystical union from Egyptian priestly identification with the god through Plotinus\'s henosis (Enneads VI.9), pseudo-Dionysius\'s Divine Darkness, Meister Eckhart, Sufi fana (al-Hallaj\'s "Ana\'l-Haqq"), Kabbalistic devekut, and Hindu samadhi. Same phenomenological structure documented across 5 traditions.',
+    picks: [
+      'plotinus', 'ammonius-saccas', 'pseudo-dionysius',
+      'neoplatonic-henosis',
+      'rumi', 'ibn-arabi',
+      'meister-eckhart',
+      'tradition-sufism', 'tradition-kabbalah',
+    ],
+  },
+  {
+    id: 'sacred-geometry-giza-to-gothic',
+    category: 'cross',
+    name: 'Sacred Geometry: Giza to Gothic',
+    headline: 'The 4,000-year chain of mathematical-theological construction: Egyptian pyramid proportions (pi/phi ratios, seked triangles) → Pythagorean "All is number" → Plato\'s Timaeus (Demiurge geometrizes the cosmos) → Proclus on Euclid as theology → Gothic cathedral as built Timaeus (Chartres proportioned on musical ratios) → Masonic compasses & square.',
+    picks: [
+      'sacred-geometry-cosmic-proportion',
+      'pythagoras', 'plato',
+      'phase-3-022-plato-timaeus-critias-atlantis',
+      'iamblichus', 'proclus',
+      'tradition-neoplatonism', 'tradition-freemasonry',
     ],
   },
   // ── Hermetic & Gnostic ────────────────────────────────────────────
@@ -4145,166 +4122,6 @@ const ALCHEMY_PRESETS = [
   },
 ];
 
-// Active research investigations — high-value cross-tradition threads being tracked.
-// CONVENTION (2026-05-15): flag:'alert' = direct documented transmission OR structural
-// parallel strong enough to anchor new vault nodes. Alert items badge the trigger button.
-// threads[]: { label, note, tier } — tier is 1|2|3|'parallel'
-const INVESTIGATIONS = [
-  {
-    id: 'solomonic-spine-five-traditions',
-    name: 'Solomonic Spine — Five Living Traditions',
-    flag: 'alert',
-    status: 'active',
-    opened: '2026-05-15',
-    headline: 'Solomon (~970 BCE) is the vault\'s highest cross-tradition multiplier: one family figure seeds five fully independent living traditions with no mutual acknowledgment. The Hiram Abiff legend makes Solomon\'s Temple the structural core of ALL Freemasonry worldwide. The Ethiopian Solomonic dynasty runs unbroken to Haile Selassie (1974) → Rastafari theology (living, global). Islamic Sulayman commands the jinn (Quran 27, 34, 38) → the grimoire tradition (Key of Solomon, Goetia) → Golden Dawn → Thelema → modern occultism. Wisdom Christology (Mt 12:42) makes Solomon the foil that defines Jesus. The Zerubbabel figure also appears in the Royal Arch Masonic degree — the same post-exile Davidic prince who carries the biblical genealogy through the Babylonian exile appears in Masonic ritual as the excavator of the lost Temple foundation.',
-    threads: [
-      { label: 'Hiram Abiff → ALL Freemasonry', note: 'Every Masonic lodge worldwide (regardless of rite) enacts the Third Degree death-and-raising of Hiram Abiff — Solomon\'s Temple builder murdered for his secret. The Apprentice Pillar at Rosslyn Chapel (1446–1484) tells the same story in stone, 300 years before the Third Degree was formalized. Documented in Stevenson (1988).', tier: 1 },
-      { label: 'Ethiopian Solomonic → Rastafari', note: 'Kebra Nagast (1314 CE): Solomon + Queen of Sheba → Menelik I → Ethiopian imperial line → Haile Selassie (1930–1974, constitutionally encoded Davidic descent) → Rastafari theology. A 3,000-year genealogical claim still alive in a global religious movement. Fully documented.', tier: 1 },
-      { label: 'Sulayman → Key of Solomon → Western magic', note: 'Quranic Sulayman commanding jinn (7th c. CE) → Arabic grimoire tradition → Clavicula Salomonis (compiled c. 14th–17th c.) → Golden Dawn, Thelema, modern Wicca. The Key of Solomon is the operating manual for all Western ceremonial magic. Torijano (2002) Tier-1.', tier: 1 },
-      { label: 'Zerubbabel in the Royal Arch', note: 'Zerubbabel (post-exile Davidic governor, ~538 BCE) appears in two independent traditions: (1) Matt 1 + Luke 3 genealogies as the link carrying Davidic lineage through the Babylonian exile, (2) the Masonic Royal Arch degree where he leads the excavation of the Temple foundation and recovery of the lost word. Same figure, zero acknowledged connection.', tier: 2 },
-      { label: 'Wisdom Christology (Mt 12:42)', note: '"Something greater than Solomon is here" — the New Testament uses Solomon as the paradigmatic Wisdom-bearer whose texts (Proverbs, Ecclesiastes, Wisdom of Solomon) become the raw material for identifying Jesus as personified Sophia. The Solomonic attribution is the mechanism. Documented in Hahn (2008).', tier: 1 },
-      { label: 'Cohen Modal Haplotype — genetic endpoint', note: 'The priestly chain (Aaron → Zadok → Kohanim) running parallel to the kingly chain (David → Solomon → Zerubbabel) has a modern genetic endpoint: 45–56% of self-identified Kohanim share a Y-chromosome ancestor ~3,000 years ago (Skorecki 1997, Thomas 1998, Nature). The only case in world religion where a hereditary religious claim has independent genetic corroboration.', tier: 1 },
-    ],
-    seeds: [
-      'solomon-king', 'zerubbabel', 'zadok-priest',
-      'makeda-queen-of-sheba', 'menelik-i-legendary', 'tradition-rastafari',
-      'tradition-freemasonry', 'tradition-scottish-rite-freemasonry',
-      'william-sinclair-rosslyn', 'event-rosslyn-chapel-construction-1446',
-      'aleister-crowley', 'john-dee',
-      'theme-solomonic-transmission-spine', 'solomonic-genealogy',
-    ],
-  },
-  {
-    id: 'zadokite-rupture',
-    name: 'The Zadokite Rupture — Priesthood That Creates Christianity\'s Context',
-    flag: 'alert',
-    status: 'active',
-    opened: '2026-05-15',
-    headline: 'The 152 BCE Hasmonean seizure of the Jerusalem high priesthood — by a family that was neither Davidic nor Zadokite — is the single most consequential institutional rupture in Second Temple Judaism. It directly generates every major Jewish sect of Jesus\'s time: Essenes (Zadokite remnant who fled to the desert → Dead Sea Scrolls), Sadducees (priestly aristocracy who accommodated the usurpers — named after Zadok), Pharisees (non-priestly scholars who relocated authority from Temple to Torah, bypassing the Zadokite monopoly). Jesus operates in the rubble of this crisis. The Oniad priestly line, expelled from Jerusalem, builds a rival Jewish Temple at Leontopolis in Egypt — 40 km from Alexandria, operating for 220 years alongside the Alexandrian milieu that produces the Septuagint, Philo, and the proto-Hermetic synthesis.',
-    threads: [
-      { label: 'Hasmonean seizure → three-way sectarian split', note: 'Jonathan Maccabee takes the high priesthood (152 BCE) despite being non-Zadokite. This single act produces: Essenes (Zadokite protest → Qumran), Sadducees (accommodation → Temple establishment), Pharisees (Torah-alternative to priestly monopoly). All three are direct institutional responses. Jesus encounters all three. Documented in Sanders (1992), Davies & Finkelstein (1989).', tier: 1 },
-      { label: 'Onias IV → Temple of Leontopolis near Alexandria', note: 'Son of the last legitimate Zadokite high priest (murdered 170 BCE) flees to Egypt, builds a Jewish temple at Leontopolis (~150 BCE). Operates 220 years until Roman closure (73 CE) — same generation as Jerusalem\'s destruction (70 CE). Both Zadokite-Temple institutions ended by Rome within 3 years. The temple\'s proximity to Alexandria raises the question of Oniad-Alexandrian intellectual contact. Josephus primary source; Hayward (1982) Tier-1.', tier: 1 },
-      { label: 'Dead Sea Scrolls community as Zadokite remnant', note: 'Community Rule (1QS) and Damascus Document (CD) open with appeals to the Sons of Zadok as legitimate priestly authorities. The community understands itself as the true Israel maintaining Zadokite purity until the final battle and Temple restoration. Cross, Vermes, VanderKam support the Zadokite-remnant identification. The scrolls are therefore not just Jewish literature — they\'re the institutional residue of the Hasmonean rupture.', tier: 1 },
-      { label: 'Sadducees named after Zadok', note: 'The Sadducees (Tsadduqim) take their name from Zadok — the priestly aristocracy who accommodated the Hasmonean usurpers. They are Zadokites who chose institutional survival over purity. Their disappearance after 70 CE (Temple-dependent) leaves the field to the Pharisees, whose successors become Rabbinic Judaism. The entire shape of post-Temple Judaism is an outcome of the 152 BCE crisis.', tier: 1 },
-      { label: 'Leontopolis-Alexandria proximity — open investigation', note: 'The Temple of Leontopolis sat ~40 km from Alexandria during the 220 years when Alexandria produced: the Septuagint, Philo\'s Jewish-Platonic synthesis, proto-Hermetic texts, early Christian Gnosticism. Whether Oniad Zadokite priests and Alexandrian Jewish intellectuals exchanged ideas is not documented — but the physical and temporal overlap makes contact nearly certain at the community level. This is an open investigative thread.', tier: 2 },
-    ],
-    seeds: [
-      'zadok-priest', 'onias-iii', 'onias-iv',
-      'event-temple-leontopolis-foundation-c150bce',
-      'tradition-hasmonean-dynasty', 'antiochus-iv-epiphanes',
-      'herod-the-great',
-      'event-destruction-of-second-temple-70',
-      'cleopatra-vii', 'ptolemy-i-soter',
-      'theme-aaronide-priestly-continuity',
-    ],
-  },
-  {
-    id: 'prague-convergence',
-    name: 'Prague Convergence: Three Traditions, One Court',
-    flag: 'alert',
-    status: 'active',
-    opened: '2026-05-15',
-    headline: 'Rudolf II Habsburg\'s Prague court (1576–1612) is the most concentrated occult-scientific nexus in European history. Simultaneously in one city: John Dee + Edward Kelley developing the Enochian angelic language system (presented to Rudolf in private audience, 1583); the Maharal of Prague (Rabbi Judah Loew ben Bezalel) developing Kabbalistic philosophy and animating the legendary Golem; Tycho Brahe as Imperial Mathematician, whose 20 years of naked-eye data at Uraniborg → Kepler\'s elliptical orbit laws → Newtonian mechanics → modern physics. Three independent traditions all probing the hidden structure of reality (angelic language, Hebrew letter-power, empirical measurement), none in dialogue. The scientific revolution runs through an occult patronage court. The Rosicrucian manifestos (1614–1616) are published in the years immediately after Rudolf\'s fall — as if the Rudolfine dream needed a myth once the patron was gone.',
-    threads: [
-      { label: 'Dee\'s Enochian + Maharal\'s Golem — parallel traditions', note: 'Dee and Kelley receive the Enochian system (divine angelic language) in sessions partly conducted in Prague (1583–84). The Maharal animates clay through Hebrew letter inscription (emet = truth on the forehead). Both are traditions of activating non-human intelligence through sacred language. Neither knew of the other. The symbolic density — Christian angel-magician and Jewish Kabbalist in the same city under the same patron — is unmatched in Western esoteric history.', tier: 2 },
-      { label: 'Brahe\'s data → Kepler\'s laws → the scientific revolution', note: 'Tycho Brahe (Imperial Mathematician, 1599–1601) brings his 20 years of Uraniborg naked-eye observations to Prague. Kepler, his assistant, inherits the data after Brahe\'s death (1601) and derives the three laws of planetary motion. The chain: Rudolf\'s occult court → empirical astronomy → modern physics. The scientific revolution\'s most important data set was gathered under an alchemist-emperor\'s patronage.', tier: 1 },
-      { label: 'Rudolf\'s court → Rosicrucianism', note: 'Frances Yates (*The Rosicrucian Enlightenment*, 1972) argues the Rosicrucian manifestos (1614–1616) are a response to the Rudolfine collapse: the hope that magic, science, and religion could coexist under an enlightened patron is expressed, after that patron\'s fall, as a secret fraternity. Michael Maier (Rudolf\'s court physician, ~1608–1611) became the most prolific Rosicrucian emblem-book author. The Prague court IS the Rosicrucian incubator.', tier: 1 },
-      { label: 'Kelley\'s imprisonment — occult patronage\'s dark side', note: 'Rudolf ennobled Kelley as a knight for his alchemical claims, then imprisoned him at Krivoklát Castle (1591) when no gold materialized. Kelley died in 1597, possibly from injuries in an escape attempt. The arc — noble enoblement → imprisonment → death — encapsulates the lethal potential of occult court patronage. Rudolf\'s investment in alchemy was not metaphorical; he expected actual gold.', tier: 1 },
-      { label: 'Giordano Bruno parallel — execution 1600', note: 'Bruno was burned in Rome on 17 February 1600 — while Brahe was arriving in Prague and Kelley was dead in Rudolf\'s dungeon. Bruno\'s pan-psychic infinite universe and memory-magic were circulating in Rudolf\'s intellectual circles during his lifetime. The contrast: Rudolf\'s Prague as (relative) shelter vs. Rome as execution site.', tier: 2 },
-    ],
-    seeds: [
-      'rudolf-ii-habsburg', 'event-prague-occult-court-1576-1612',
-      'john-dee', 'edward-kelley',
-      'rabbi-judah-loew', 'tycho-brahe',
-      'tradition-rosicrucianism', 'giordano-bruno',
-      'tradition-hermeticism', 'marsilio-ficino',
-    ],
-  },
-  {
-    id: 'consciousness-temple',
-    name: 'Consciousness Temple',
-    flag: 'alert',
-    status: 'active',
-    opened: '2026-05-15',
-    headline: 'Kashmir Shaivism (Trika) is the most complete non-dual consciousness framework in the vault. It directly shaped Vajrayana Buddhism (Sanderson 2009 — Tier-1), has a documented Sufi bridge via Lal Ded → Nund Rishi in Kashmir itself, and runs parallel to Neoplatonism, Valentinian gnosis, and Meister Eckhart. Suhrawardi (already in vault) is the best candidate for a Persian transmission route to Ibn Arabi.',
-    threads: [
-      { label: 'Shaivism → Vajrayana', note: 'Sanderson 2009 — skull cups, wrathful deities, mandala geometry borrowed directly from Śaiva Tantric sources. Strongest documented case in vault.', tier: 1 },
-      { label: 'Lal Ded → Nund Rishi', note: 'Lalleshwari (~1320 CE) → Shaikh Nuruddin Wali (Kashmiri Sufi). Scholars describe their verses as "almost identical." Documented Kashmir-internal Shaivism → Sufism transmission. Neither node yet in vault.', tier: 1 },
-      { label: 'Suhrawardi bridge', note: 'al-Biruni translated Shaiva metaphysics into Arabic (1017 CE). Suhrawardi (1154–1191) built Illuminationist philosophy on that corpus. Best candidate for Pratyabhijñā → Ibn Arabi route. Both in vault.', tier: 2 },
-      { label: 'Trika ↔ Neoplatonism', note: 'Both emanationist hierarchies from single absolute. Michal Just (Comparative Philosophy): Kashmir Shaivism more monistic than Plotinus — world is real, not Maya.', tier: 2 },
-      { label: 'Pratyabhijñā ↔ Valentinian gnosis', note: 'Recognition of pre-existing divine nature = liberation. Structural parallel, no transmission. Valentinian "pneumatics already saved by nature" mirrors the Trika recognition move exactly.', tier: 'parallel' },
-      { label: 'Eckhart Seelenfünklein ↔ Trika', note: 'Eckhart\'s spark IS already the Godhead — closest Western parallel to Pratyabhijñā. Better match than Shankara (Eckhart\'s world is real, not illusory). Rudolf Otto compared Eckhart/Shankara (1926); Trika is the tighter fit. Both in vault.', tier: 'parallel' },
-      { label: 'Rinchen Zangpo corridor', note: 'Tibetan translator in Kashmir (~958–1055) contemporaneous with Abhinavagupta. No smoking gun, but the Kashmir intellectual environment makes Trika → Dzogchen indirect transmission plausible (Sanderson + van Schaik).', tier: 2 },
-      { label: 'Kailasa + Borobudur + Angkor cosmograms', note: 'All three are physical Mt. Meru cosmograms. Shared Indic architectural grammar (Manasara / Vastushastra) transmitted via priestly networks, not direct copying. Borobudur now in vault.', tier: 1 },
-      { label: 'Basavanna ↔ Eckhart — literature gap', note: 'Both ~12th c., vernacular language, body-as-temple, reject ritual hierarchy, condemned by institution. No scholar has published this comparison. Both in vault.', tier: 'parallel' },
-      { label: 'Spanda ↔ quantum pulsation', note: 'Fritjof Capra, The Tao of Physics (1975); Nataraja statue gifted to CERN (2004). Structural parallel only.', tier: 'parallel' },
-    ],
-    seeds: [
-      'shiva', 'rudra-shiva-early', 'abhinavagupta',
-      'phase-5-006-vijnana-bhairava-tantra',
-      'phase-5-014-abhinavagupta-tantraloka',
-      'phase-5-033-shiva-sutras',
-      'suhrawardi', 'phase-5-018-suhrawardi-hikmat-al-ishraq',
-      'plotinus', 'tradition-neoplatonism',
-      'world-axis', 'bhairava',
-      'ibn-arabi', 'meister-eckhart', 'the-godhead-eckhart',
-      'valentinus',
-      'event-angkor-wat-construction-c-1113-1150',
-      'event-borobudur-construction-c-750-825',
-    ],
-  },
-  {
-    id: 'self-limiting-absolute',
-    name: 'The Self-Limiting Absolute',
-    flag: 'alert',
-    status: 'active',
-    opened: '2026-05-15',
-    headline: 'Across 6 traditions, the absolute voluntarily contracts or conceals itself to make contingent reality possible. The structural precision of this move — Śiva\'s āṇava-mala, Luria\'s tzimtzum, Palamas\'s essence/energy distinction, Eriugena\'s divine darkness — across traditions with no confirmed contact is the deepest cross-tradition pattern in the vault. The Palamas / Trika parallel (essence = Śiva, energy = Śakti) is an alert-grade structural isomorphism.',
-    threads: [
-      { label: 'Palamas ↔ Trika — ALERT', note: 'Gregory Palamas (1296–1359): God\'s essence unknowable, only "energies" accessible. Structurally identical to Śiva (pure consciousness) / Śakti (dynamic manifestation). Same move, same precision, no confirmed contact. Palamas is in vault.', tier: 'parallel' },
-      { label: 'Tzimtzum ↔ Āṇava-mala', note: 'Luria\'s tzimtzum (~1570): God withdraws to create space for world. Trika\'s āṇava-mala: Śiva contracts infinite consciousness into individual limited self. Both posit self-limiting as the generative act. Tzimtzum is in vault.', tier: 'parallel' },
-      { label: 'Eriugena ↔ Vasugupta (~825 CE)', note: 'John Scotus Eriugena (810–877 CE, Ireland): God does not know himself through categories — divine darkness is the highest knowledge. Vasugupta (~825 CE, Kashmir): Śiva-consciousness is self-luminous but self-concealing in individual minds. Same decade, opposite ends of Eurasia, no known contact.', tier: 2 },
-      { label: 'Mulla Sadra culmination', note: 'al-Biruni (1017) → Suhrawardi → Ibn Arabi → Mulla Sadra (1571–1636): "wujūd" (being) as self-differentiating light — all four nodes now in vault. Completable chain: Shaiva non-dualism arriving at Shia philosophy.', tier: 2 },
-      { label: 'Pseudo-Dionysius → apophatic spine', note: 'Ps-Dionysius (5th–6th c.) → Eriugena → Eckhart: a documented chain of divine-darkness theology through the Latin West. Sanderson\'s documented Śaiva → Buddhist tantra transmission means this apophatic chain runs parallel to a Kashmir-influenced Buddhist stream.', tier: 1 },
-      { label: 'Boehme Ungrund ↔ Ein-Sof', note: 'Jakob Boehme\'s "Ungrund" (groundless ground, 1612) and Kabbalistic Ein-Sof (infinite without limit) are structural twins: the absolute as self-concealing non-ground prior to all determination. Boehme was almost certainly influenced by Lurianic Kabbalah circulating in his milieu.', tier: 2 },
-      { label: 'Nagarjuna śūnyatā — the counterpoint', note: 'Nagarjuna\'s Mādhyamaka (~150 CE): śūnyatā (emptiness) — no ground at all, including no "self-luminous consciousness" ground. This is the rival to Trika\'s consciousness-as-ground. The debate between these two non-dual frameworks never ended and runs through Tibetan Buddhism to this day.', tier: 'parallel' },
-    ],
-    seeds: [
-      'gregory-palamas', 'john-scotus-eriugena', 'pseudo-dionysius-the-areopagite',
-      'jakob-boehme', 'mulla-sadra',
-      'nagarjuna', 'naropa-tilopa',
-      'tradition-kabbalah', 'ein-sof', 'tzimtzum',
-      'apophatic-mysticism',
-      'tradition-kashmir-shaivism', 'vasugupta', 'lal-ded', 'al-biruni',
-      'ibn-arabi', 'meister-eckhart',
-      'essence-energies-distinction',
-    ],
-  },
-  {
-    id: 'non-ground-debate',
-    name: 'The Non-Ground Debate',
-    flag: 'alert',
-    status: 'active',
-    opened: '2026-05-15',
-    headline: 'The deepest unresolved split in non-dual thought: is there a positive luminous ground (Trika: Śiva-consciousness; Dzogchen: rigpa; shentong: Buddha-nature-light) or no ground at all (Madhyamaka: śūnyatā, even consciousness has no fixed nature)? This debate was never settled. It runs from Nāgārjuna (~150 CE) through the Tibetan rangtong/shentong controversy to the present, and maps onto Eckhart\'s own unresolved tension between the divine nothingness (Gottheit) and the soul\'s spark (Seelenfünklein).',
-    threads: [
-      { label: 'Nagarjuna vs Trika — the founding split', note: 'Two rival non-dual frameworks: consciousness-as-ground (Trika: Śiva is self-luminous awareness) vs no-ground (Madhyamaka: even "consciousness" cannot be asserted as ground without positing svabhāva). Mutually exclusive. Both in vault.', tier: 'parallel' },
-      { label: 'Rangtong / Shentong — Tibet', note: 'Gelugpa (rangtong): all is self-empty, including Buddha-nature. Kagyu/Jonang (shentong): Buddha-nature is other-empty — empty of defiled qualities but retaining luminous positive attributes. The split exactly replays the Trika/Madhyamaka debate in Tibetan form. Tsongkhapa in vault.', tier: 1 },
-      { label: 'Rinchen Zangpo corridor', note: 'Tibetan Great Translator (~958–1055) spent 21 years in Kashmir while Abhinavagupta was active there (~975–1025). The intellectual environment makes indirect Trika → Dzogchen transmission plausible. No direct citation found. New vault node.', tier: 2 },
-      { label: 'Eckhart\'s unresolved tension', note: 'Gottheit as nichts (divine nothingness prior to all determination) = Madhyamaka-flavored. Seelenfünklein (spark already IS the Godhead) = Trika pratyabhijñā move. These two doctrines coexist in Eckhart without resolution. Both in vault.', tier: 'parallel' },
-      { label: 'Dzogchen rigpa as attempted synthesis', note: 'Rigpa (pure awareness) is primordially present but not a reified consciousness-substance — an attempt to hold Trika (positive luminous ground) and Madhyamaka (no fixed nature) simultaneously. The Tibetan masters who attempted this synthesis (Longchenpa, Mipham) did so knowing the contradiction. Naropa/Tilopa in vault.', tier: 2 },
-      { label: 'Ungrund — Boehme\'s version', note: 'Jakob Boehme\'s Ungrund (groundless ground prior to divinity) = the abyss before any positive nature, including consciousness. Structurally this sides with Madhyamaka against Trika: the primal is prior to mind. Yet Boehme also asserts divine self-luminosity. The same tension as Eckhart. Both in vault.', tier: 'parallel' },
-    ],
-    seeds: [
-      'nagarjuna', 'emptiness-sunyata', 'tradition-madhyamaka',
-      'naropa-tilopa', 'milarepa', 'tsongkhapa',
-      'rinchen-zangpo', 'tradition-kashmir-shaivism', 'vasugupta',
-      'pratyabhijna', 'the-godhead-eckhart', 'meister-eckhart',
-      'ungrund', 'jakob-boehme',
-    ],
-  },
-];
-
 // Custom user-saved trees live in localStorage under this key. Shape: an array of
 // {id, name, picks, created} — same structure as ALCHEMY_PRESETS minus the headline
 // (custom trees don't have rhetorical payload, just the user's name for them).
@@ -4367,23 +4184,6 @@ function alchemyLoadPreset(presetId, mode) {
     STATE.alchemyPicks = valid;
   }
   STATE.alchemyActivePreset = presetId;
-  setView('alchemy');
-}
-
-// Load seeds from an INVESTIGATIONS entry into the Alchemy canvas.
-// `mode` is 'replace' (default) or 'append'.
-function investLoadSeeds(investId, mode) {
-  const inv = INVESTIGATIONS.find(i => i.id === investId);
-  if (!inv) return;
-  const valid = inv.seeds.filter(id => NODES_BY_ID[id]);
-  if (mode === 'append') {
-    const existing = new Set(STATE.alchemyPicks || []);
-    valid.forEach(id => existing.add(id));
-    STATE.alchemyPicks = Array.from(existing);
-  } else {
-    STATE.alchemyPicks = valid;
-  }
-  STATE.alchemyActivePreset = null;
   setView('alchemy');
 }
 
@@ -4593,14 +4393,10 @@ VIEWS.alchemy = {
       ? findPresetOrTree(STATE.alchemyActivePreset)
       : null;
     const canSave = picks.length > 0;
-    const hasAlerts = INVESTIGATIONS.some(i => i.flag === 'alert');
     document.getElementById('view-controls').innerHTML = `
       <button class="btn btn-mini alch-presets-trigger" id="alch-presets-trigger" title="Load a curated cross-tradition exploration">
         <span class="alch-presets-trigger-label">${activePreset ? activePreset.name : 'Presets'}</span>
         <span class="caret">▾</span>
-      </button>
-      <button class="btn btn-mini alch-invest-trigger${hasAlerts ? ' has-alert' : ''}" id="alch-invest-trigger" title="Active research investigations — live cross-tradition threads">
-        <span>Investigations</span>${hasAlerts ? '<span class="invest-trigger-badge">!</span>' : ''}<span class="caret">▾</span>
       </button>
       <span class="alch-save-wrap" id="alch-save-wrap">
         <button class="btn btn-mini" id="btn-alch-save" ${canSave ? '' : 'disabled'} title="${canSave ? 'Save the current exploration as a custom preset' : 'Add at least one node to enable saving'}">save tree</button>
@@ -4615,7 +4411,7 @@ VIEWS.alchemy = {
     };
 
     // Toolbox + palette + dropdown injected into canvas as siblings of the SVG.
-    document.querySelectorAll('.alch-toolbox, .alch-palette, .alch-presets-dropdown, .alch-presets-pane, .alch-invest-dropdown').forEach(el => el.remove());
+    document.querySelectorAll('.alch-toolbox, .alch-palette, .alch-presets-dropdown, .alch-presets-pane').forEach(el => el.remove());
     const canvas = document.getElementById('canvas');
 
     // ---- Presets dropdown — absolutely positioned, anchored to top-right under the trigger.
@@ -4780,102 +4576,6 @@ VIEWS.alchemy = {
         deleteCustomTree(id);
         if (STATE.alchemyActivePreset === id) STATE.alchemyActivePreset = null;
         setView('alchemy');
-      });
-    });
-
-    // ---- Investigation dropdown — live research threads with alert flags.
-    const investDropdown = document.createElement('div');
-    investDropdown.className = 'alch-invest-dropdown';
-    investDropdown.style.display = 'none';
-    const tierLabel = t => t === 'parallel' ? 'parallel-form' : `tier-${t}`;
-    investDropdown.innerHTML = `
-      <div class="alch-invest-intro">Active research threads — cross-tradition connections being investigated. Seeds load into Alchemy canvas.</div>
-      <div class="alch-invest-list">
-        ${INVESTIGATIONS.map(inv => `
-          <div class="alch-invest-card${inv.flag === 'alert' ? ' alert' : ''}">
-            <div class="alch-invest-header">
-              ${inv.flag === 'alert' ? '<span class="alch-invest-flag">⚠ ALERT</span>' : ''}
-              <span class="alch-invest-name">${inv.name}</span>
-              <span class="alch-invest-status">${inv.status}</span>
-            </div>
-            <div class="alch-invest-headline">${inv.headline}</div>
-            <div class="alch-invest-threads">
-              ${inv.threads.map(th => `
-                <div class="alch-invest-thread">
-                  <span class="alch-invest-thread-tier tier-${th.tier}">${tierLabel(th.tier)}</span>
-                  <span class="alch-invest-thread-label">${th.label}</span>
-                  <span class="alch-invest-thread-note">${th.note}</span>
-                </div>
-              `).join('')}
-            </div>
-            <div class="alch-invest-action-row" data-mode="initial">
-              <button class="alch-invest-load" data-invest="${inv.id}">load seeds (${inv.seeds.length})</button>
-            </div>
-            <div class="alch-invest-confirm-row" data-mode="confirm" style="display:none">
-              <span class="alch-invest-confirm-q">Replace your ${picks.length} pick${picks.length === 1 ? '' : 's'}?</span>
-              <button class="alch-invest-confirm alch-invest-append" data-invest="${inv.id}">append</button>
-              <button class="alch-invest-confirm alch-invest-replace" data-invest="${inv.id}">replace</button>
-              <button class="alch-invest-confirm alch-invest-cancel">cancel</button>
-            </div>
-          </div>
-        `).join('')}
-      </div>
-    `;
-    canvas.appendChild(investDropdown);
-
-    function positionInvestDropdown() {
-      const trigger = document.getElementById('alch-invest-trigger');
-      if (!trigger) return;
-      const rect = trigger.getBoundingClientRect();
-      const canvasRect = canvas.getBoundingClientRect();
-      investDropdown.style.top = (rect.bottom - canvasRect.top + 6) + 'px';
-      investDropdown.style.right = (canvasRect.right - rect.right) + 'px';
-      investDropdown.style.left = 'auto';
-    }
-    function openInvestDropdown() {
-      positionInvestDropdown();
-      investDropdown.style.display = '';
-      setTimeout(() => document.addEventListener('click', closeInvestOnOutside), 0);
-    }
-    function closeInvestDropdown() {
-      investDropdown.style.display = 'none';
-      document.removeEventListener('click', closeInvestOnOutside);
-    }
-    function closeInvestOnOutside(ev) {
-      if (investDropdown.contains(ev.target)) return;
-      const trigger = document.getElementById('alch-invest-trigger');
-      if (trigger && trigger.contains(ev.target)) return;
-      closeInvestDropdown();
-    }
-    const investTrigger = document.getElementById('alch-invest-trigger');
-    if (investTrigger) investTrigger.onclick = (ev) => {
-      ev.stopPropagation();
-      if (investDropdown.style.display === 'none') openInvestDropdown(); else closeInvestDropdown();
-    };
-    investDropdown.querySelectorAll('.alch-invest-load').forEach(btn => {
-      btn.addEventListener('click', (ev) => {
-        ev.stopPropagation();
-        const investId = btn.dataset.invest;
-        if (picks.length === 0) { investLoadSeeds(investId, 'replace'); closeInvestDropdown(); return; }
-        investDropdown.querySelectorAll('.alch-invest-action-row').forEach(r => r.style.display = '');
-        investDropdown.querySelectorAll('.alch-invest-confirm-row').forEach(r => r.style.display = 'none');
-        const card = btn.closest('.alch-invest-card');
-        card.querySelector('.alch-invest-action-row').style.display = 'none';
-        card.querySelector('.alch-invest-confirm-row').style.display = '';
-      });
-    });
-    investDropdown.querySelectorAll('.alch-invest-append').forEach(btn => {
-      btn.addEventListener('click', (ev) => { ev.stopPropagation(); investLoadSeeds(btn.dataset.invest, 'append'); closeInvestDropdown(); });
-    });
-    investDropdown.querySelectorAll('.alch-invest-replace').forEach(btn => {
-      btn.addEventListener('click', (ev) => { ev.stopPropagation(); investLoadSeeds(btn.dataset.invest, 'replace'); closeInvestDropdown(); });
-    });
-    investDropdown.querySelectorAll('.alch-invest-cancel').forEach(btn => {
-      btn.addEventListener('click', (ev) => {
-        ev.stopPropagation();
-        const card = btn.closest('.alch-invest-card');
-        card.querySelector('.alch-invest-confirm-row').style.display = 'none';
-        card.querySelector('.alch-invest-action-row').style.display = '';
       });
     });
 
@@ -6384,72 +6084,6 @@ VIEWS.all = {
     document.getElementById('canvas').appendChild(pane);
   }
 };
-
-// ============================================================
-// ASTROLOGY — cross-tradition sky-investigation surface.
-// Four modes share one canvas (toggled by toolbar pills):
-//   spine    — 3500 BCE → 2026 CE horizontal spine of astrology-tagged nodes
-//   wheel    — natal/event chart (tropical ↔ sidereal toggle), drop in any vault event date
-//   now      — live planetary positions + time-scrubber (drag through history)
-//   decanic  — 36 decans × 28 lunar mansions concentric wheel, cross-mapped traditions
-// STUB STATE (opus-cleanup-1): nav entry + canvas pane + pill toolbar wired.
-// Each mode body is a placeholder describing its planned role. Math (ephemeris,
-// chart geometry, decan tables) lands in subsequent batches.
-// ============================================================
-const _astrologyState = { mode: 'spine' };
-
-VIEWS.astrology = {
-  title: 'Astrology',
-  subtitle: 'cross-tradition sky investigation · spine · wheel · now · decanic',
-  render() {
-    document.getElementById('view-controls').innerHTML = `
-      <button class="btn btn-mini astrology-mode" data-mode="spine">spine</button>
-      <button class="btn btn-mini astrology-mode" data-mode="wheel">wheel</button>
-      <button class="btn btn-mini astrology-mode" data-mode="now">now</button>
-      <button class="btn btn-mini astrology-mode" data-mode="decanic">decanic</button>
-    `;
-    document.querySelectorAll('.astrology-mode').forEach(btn => {
-      if (btn.dataset.mode === _astrologyState.mode) btn.classList.add('active');
-      btn.onclick = () => { _astrologyState.mode = btn.dataset.mode; setView('astrology'); };
-    });
-
-    const pane = document.createElement('div');
-    pane.className = 'astrology-pane';
-    const astroNodes = DATA.nodes.filter(n => Array.isArray(n.tags) && n.tags.some(t => /^astrology/.test(t)));
-    const W = astroNodes.length;
-    // Live renderers (src/js/astrology/*.js). Other modes still show the stub card.
-    const liveRenderers = { spine: '_astroSpine', decanic: '_astroDecanic', wheel: '_astroWheel', now: '_astroNow' };
-    const rendererKey = liveRenderers[_astrologyState.mode];
-    if (rendererKey) {
-      pane.classList.add('astrology-pane-live');
-      document.getElementById('canvas').appendChild(pane);
-      queueMicrotask(() => { if (window[rendererKey]) window[rendererKey].render(pane); });
-      return;
-    }
-    pane.innerHTML = renderAstrologyMode(_astrologyState.mode, W);
-    document.getElementById('canvas').appendChild(pane);
-  }
-};
-
-function renderAstrologyMode(mode, count) {
-  const shell = (title, body) => `
-    <div class="astrology-stub">
-      <div class="as-mode-title">${title}</div>
-      <div class="as-mode-body">${body}</div>
-      <div class="as-mode-meta">${count} astrology-tagged vault nodes available · stub mode — math lands in next batch</div>
-    </div>`;
-  switch (mode) {
-    case 'spine':   return shell('Spine — 3,500-year horizontal transmission map',
-      'Plots every astrology-tagged node on a time axis, color-coded by tradition family. Cross-tradition transmission edges drawn as arcs. The MASSIVE-win view: Babylonian 36-star → Egyptian decans → Greek decans visible as left-to-right arrows.');
-    case 'wheel':   return shell('Wheel — natal / event chart',
-      'Tropical ↔ sidereal toggle, decans + lunar-mansions overlays. Drop in any vault event date (e.g. Jesus −4 CE) to see the sky as it stood. Click a planet → jump to its mythological node.');
-    case 'now':     return shell('Now — live planetary positions + history scrubber',
-      'World-strip map of current planetary longitudes with mythological/symbolic overlay. Time-scrubber 3000 BCE ↔ 2100 CE; watch precession of equinoxes move. Click a planet → its deity node.');
-    case 'decanic': return shell('Decanic — 36 × 28 cross-tradition wheel',
-      'Concentric wheels: 36 Egyptian decans / 28 Vedic Nakshatras / 28 Arabic Manazil / 28 Chinese Xiu. Click any cell → list of vault nodes anchored to it. Pure cross-tradition view.');
-    default: return shell('Astrology', 'Pick a mode above.');
-  }
-}
 
 VIEWS.about = {
   title: 'About this atlas',
