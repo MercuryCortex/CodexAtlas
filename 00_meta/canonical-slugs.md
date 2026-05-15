@@ -474,7 +474,7 @@ canonical-slug
 - `zemyna`
 - `zeus`
 
-### document (382 nodes)
+### document (383 nodes)
 
 - `document-kuntillet-ajrud-inscriptions`
 - `phase-1-001-kesh-temple-hymn`
@@ -509,6 +509,8 @@ canonical-slug
 - `phase-1-030-illuyanka-myth`
 - `phase-1-031-rigveda`
 - `phase-1-032-babylonian-theodicy`
+- `phase-1-033-anzu-myth`
+- `phase-1-034-adapa-myth`
 - `phase-1-035-wadi-el-jarf-papyri`
 - `phase-2-001-rig-veda-family-books`
 - `phase-2-002-gathas-of-zarathustra`
@@ -549,7 +551,7 @@ canonical-slug
 - `phase-2-037-song-of-songs`
 - `phase-2-038-acharanga-sutra`
 - `phase-2-039-sutrakritanga`
-- `phase-2-040-yi-jing-i-ching`
+- `phase-2-040-orphic-gold-tablets`
 - `phase-3-001-second-third-isaiah`
 - `phase-3-002-plato-dialogues`
 - `phase-3-003-aristotle-metaphysics`
@@ -584,7 +586,6 @@ canonical-slug
 - `phase-3-032-4-ezra-ethiopic-recension`
 - `phase-3-033-book-of-giants-qumran-manichaean`
 - `phase-3-034-huainanzi`
-- `phase-3-035-bhagavad-gita`
 - `phase-4-001-gospel-of-thomas`
 - `phase-4-002-apocryphon-of-john`
 - `phase-4-003-gospel-of-truth`
@@ -859,10 +860,11 @@ canonical-slug
 - `phase-8-019-kojiki`
 - `phase-8-020-nihon-shoki`
 
-### event (173 nodes)
+### event (177 nodes)
 
 - `bent-pyramid-sneferu-dahshur`
 - `el-castillo-chichen-itza`
+- `eridu`
 - `event-aboriginal-stolen-generations-1905-1969`
 - `event-ahmad-gragn-invasion-1529`
 - `event-aksumite-christianization-c330`
@@ -974,6 +976,7 @@ canonical-slug
 - `event-mani-execution-274-or-277`
 - `event-mitanni-kingdom-c1500-1340-bce`
 - `event-mongol-sack-of-baghdad-1258`
+- `event-muhammads-miraj-619`
 - `event-nag-hammadi-discovery`
 - `event-natufian-burial-traditions-c-12500-9500-bce`
 - `event-nero-persecution-64`
@@ -988,6 +991,7 @@ canonical-slug
 - `event-pike-2018-neanderthal-cave-art-c-64800-bce`
 - `event-pittsburgh-platform-1885`
 - `event-pizarro-conquest-of-inca-1533`
+- `event-portuguese-forced-conversion-1496`
 - `event-prague-occult-court-1576-1612`
 - `event-priory-of-sion-fabrication`
 - `event-quinta-da-regaleira-construction-1904-1910`
@@ -1018,6 +1022,7 @@ canonical-slug
 - `event-third-buddhist-council-c-250-bce`
 - `event-third-crusade-1189-1192`
 - `event-trial-of-templars-1307-1314`
+- `event-vasco-da-gama-india-voyage-1497`
 - `event-vatican-ii-aftermath-1965-present`
 - `event-wilhelmsbad-convent-1782`
 - `event-zagwe-lalibela-churches-c1200`
@@ -1752,7 +1757,7 @@ canonical-slug
 - `wheat-grain`
 - `yin-yang`
 
-### theme (310 nodes)
+### theme (312 nodes)
 
 - `364-day-solar-calendar`
 - `adam-kadmon`
@@ -1904,6 +1909,7 @@ canonical-slug
 - `ma-at-logos-sophia`
 - `marcionite-canon`
 - `martyrdom-theology`
+- `merkabah-miraj-ascent-chain`
 - `mesoamerican-cosmogony`
 - `messianic-future-savior`
 - `messianic-genealogy`
@@ -1974,6 +1980,7 @@ canonical-slug
 - `satanic-verses-incident`
 - `satisfaction-atonement`
 - `scapegoat-mechanism`
+- `sebastianism-quinto-imperio`
 - `secular-spirituality`
 - `sefirot`
 - `serpent-dual-nature`
@@ -2193,23 +2200,22 @@ canonical-slug
 
 | Refs | Dead target | Suggested canonical (existing) |
 |---:|---|---|
-| 5 | `phase-1-013-babylonian-theodicy` | `phase-1-014-ugaritic-ritual-texts` |
-| 4 | `tradition-minoan-religion` | `tradition-egyptian` |
-| 4 | `tradition-eastern-orthodoxy` | `tradition-bhakti-vaishnavism` |
-| 4 | `tradition-early-christianity` | `tradition-bhakti-vaishnavism` |
-| 3 | `tradition-second-temple-judaism` | `tradition-bhakti-vaishnavism` |
-| 3 | `tradition-medieval-christianity` | `tradition-bhakti-vaishnavism` |
-| 3 | `tradition-hinduism` | `tradition-druze` |
-| 3 | `phase-4-007-new-testament-canon` | `phase-4-005-gospel-of-mary` |
-| 3 | `phase-2-005-1-2-kings` | `phase-2-008-homeric-epics` |
-| 3 | `divine-kingship-solar` | `divine-kingship` |
+| 5 | `tradition-eastern-orthodoxy` | `tradition-ordo-novi-templi` |
+| 5 | `tradition-early-christianity` | `tradition-ordo-novi-templi` |
+| 5 | `phase-1-013-babylonian-theodicy` | `phase-1-018-gudea-cylinders` |
+| 4 | `tradition-minoan-religion` | `tradition-ordo-novi-templi` |
+| 4 | `divine-kingship-solar` | `divine-kingship` |
+| 3 | `tradition-second-temple-judaism` | `tradition-ordo-novi-templi` |
+| 3 | `tradition-medieval-christianity` | `tradition-ordo-novi-templi` |
+| 3 | `tradition-candomble` | `tradition-ordo-novi-templi` |
+| 3 | `phase-4-007-new-testament-canon` | `phase-4-008-trimorphic-protennoia` |
+| 3 | `phase-2-005-1-2-kings` | `phase-2-003-atharva-veda` |
 | 2 | `yam-canaanite` | `astarte-canaanite` |
-| 2 | `tradition-judaism-sephardic` | `tradition-bhakti-vaishnavism` |
-| 2 | `tradition-islam-shia` | `tradition-druze` |
-| 2 | `tradition-islam-mughal` | `tradition-druze` |
-| 2 | `tradition-hussitism` | `tradition-druze` |
-| 2 | `tradition-christianity-catholic` | `tradition-bhakti-vaishnavism` |
-| 2 | `tradition-cheondogyo` | `tradition-druze` |
-| 2 | `tradition-bahai` | `tradition-druze` |
+| 2 | `tradition-islam-shia` | `tradition-ordo-novi-templi` |
+| 2 | `tradition-islam-mughal` | `tradition-ordo-novi-templi` |
+| 2 | `tradition-hussitism` | `tradition-ordo-novi-templi` |
+| 2 | `tradition-christianity-catholic` | `tradition-ordo-novi-templi` |
+| 2 | `tradition-cheondogyo` | `tradition-ordo-novi-templi` |
+| 2 | `tradition-bahai` | `tradition-new-age` |
 | 2 | `guru-arjan-dev-ji` | `guru-arjan` |
 | 2 | `asclepius` | `asclepius-greek` |

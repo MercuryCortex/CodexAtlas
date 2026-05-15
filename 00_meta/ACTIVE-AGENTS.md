@@ -2,6 +2,34 @@
 
 _Hand-maintained. Each agent currently working in the vault appends a claim block before they start, and edits/strikes it when they finish. Read this BEFORE picking a batch so you don't collide._
 
+---
+
+## sonnet-yoruba-1 — content / Yoruba tradition + deity MASSIVE WIN upgrades — started 2026-05-15 — **IN FLIGHT**
+- Owning: `07_traditions/tradition-yoruba-ifa.md` (upgrade), `03_deities/ogun.md` (upgrade), `03_deities/shango.md` (upgrade), `03_deities/yemoja.md` (upgrade), `03_deities/oshun.md` (upgrade), `03_deities/obatala.md` (upgrade), `03_deities/eshu.md` (upgrade), `03_deities/orunmila.md` (upgrade)
+- Goal: All 8 nodes already exist; upgrading each with MASSIVE WIN cross-tradition sections, additional Tier-1 refs (Idowu 1962, Bascom 1969, Drewal/Pemberton 1989), and complete wikilink wiring across traditions
+- Status: in-flight
+- Last edit: ACTIVE-AGENTS.md registration
+
+---
+
+## sonnet-orphic-bardo-1 — content / Orphic Gold Tablets (NEW) + Bardo Thodol MASSIVE WIN upgrade — started 2026-05-15 — **FINISHED 2026-05-15**
+- Owning: `02_documents/_phase-2-axial-age/phase-2-040-orphic-gold-tablets.md` (NEW), `02_documents/_phase-5-medieval/phase-5-029-bardo-thodol.md` (UPGRADE — MASSIVE WIN cross-tradition section added)
+- Goal: Create Orphic Gold Tablets node (missing textual link in graduated-afterlife chain); add cross-tradition MASSIVE WIN investigation section to Bardo Thodol
+- Status: finished
+- Delivered:
+  - **`phase-2-040-orphic-gold-tablets.md`** (NEW, metadata) — ~400–100 BCE gold-leaf funerary instruction texts; Hipponion/Thurii/Crete/Thessaly corpus; Lethe/Mnemosyne binary; "I am a child of Earth and starry Heaven" formula; Persephone password. MASSIVE WIN: three-tradition genre convergence (Egyptian BoD / Orphic Tablets / Bardo Thodol — same genre, independent development); Plato's Myth of Er and Forms-as-Mnemosyne documented (Graf 2007); Pythagorean-Orphic synthesis (Herodotus 2.81). Wired to phase-1-010-book-of-the-dead, phase-5-029-bardo-thodol, plato, pythagoras, orpheus, persephone-greek, dionysus, tradition-eleusinian-mysteries, theme-graduated-afterlife, theme-guide-through-underworld, reincarnation. 4 Tier-1 refs (Graf 2007, Bernabé 2008, Edmonds 2004, West 1983).
+  - **`phase-5-029-bardo-thodol.md`** (UPGRADE) — added MASSIVE WIN cross-tradition section: three-tradition genre table (Egyptian/Orphic/Tibetan structural comparison); 49-day bardo mechanics; Jung's 1935 Psychological Commentary documented as Tier-2 reception event; Leary-Alpert 1964 documented as Tier-3 cultural downstream; lama-as-guide as most interiorized form of guide tradition; parallels field updated with [[phase-1-010-book-of-the-dead]] and [[phase-2-040-orphic-gold-tablets]]; Cuevas 2003 added as Tier-1 ref; MASSIVE-WIN tags added.
+- Build: **2155 nodes · 12,801 edges · 3.0% dead-link · 0 YAML errors**
+- Last edit: `00_meta/ACTIVE-AGENTS.md`
+
+---
+
+## sonnet-anzu-adapa-1 — content / Mesopotamian precursor documents — started 2026-05-15 — **IN FLIGHT**
+- Owning: `02_documents/_phase-1-ancient-near-east/phase-1-033-anzu-myth.md` (NEW), `02_documents/_phase-1-ancient-near-east/phase-1-034-adapa-myth.md` (NEW)
+- Goal: Earliest rebel-divine-court archetype (Anzu ~2000 BCE) and earliest forbidden-divine-food archetype (Adapa ~1400 BCE) — direct structural precursors to War in Heaven and Eden chains
+- Status: in-flight
+- Last edit: ACTIVE-AGENTS.md registration
+
 Format:
 
 ```
