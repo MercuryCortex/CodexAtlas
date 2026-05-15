@@ -42,11 +42,12 @@ Format:
 - Open gaps: no geo entries needed (pre-urban compositions); phase-1-024/025 shijing/shujing already exist as full nodes in phase-1 — no conflict (different slugs/IDs; new nodes extend with Axial Age framing and MASSIVE-win cross-tradition edges)
 - Last edit: 00_meta/STATUS.md
 
-## sonnet-deadlink-closures-1 — content / high-ref dead-link closures — started 2026-05-15
+## sonnet-deadlink-closures-1 — content / high-ref dead-link closures — started 2026-05-15 — **FINISHED 2026-05-15**
 - Owning: 06_themes/norse-cosmogony.md (NEW), 06_themes/ragnarok-apocalyptic.md (NEW), 06_themes/afro-diasporic-syncretism.md (NEW), 06_themes/possession-ritual.md (NEW), 06_themes/orisha-pantheon.md (NEW), 03_deities/baal.md (NEW alias stub)
 - Goal: Close 6 highest-ref dead-links (norse-cosmogony x4, ragnarok-apocalyptic x4, afro-diasporic-syncretism x4, possession-ritual x4, orisha-pantheon x4, baal x5); khufu + theme-pyramid-as-resurrection-machine already exist from sonnet-pyramids-1
-- Status: in-flight
-- Last edit: 00_meta/ACTIVE-AGENTS.md
+- Status: finished
+- Delivered: [[norse-cosmogony]] (NEW) · [[ragnarok-apocalyptic]] (NEW) · [[afro-diasporic-syncretism]] (NEW) · [[possession-ritual]] (NEW) · [[orisha-pantheon]] (NEW) · [[baal]] alias stub (NEW). Build: 1,979 nodes · 3.0% dead-link · 11,957 edges.
+- Last edit: 00_meta/STATUS.md
 
 ## 🚦 In-flight claims at a glance (current as of 2026-05-15 evening — opus-atlas-v3-evening FINISHED, vault app-code at rest)
 
@@ -54,7 +55,7 @@ Format:
 |---|---|---|---|
 | `opus-atlas-v3-evening` | app-code / Atlas Map V3 + class-icons + persistent trails | Atlas tab full rebuild — zoom-aware jitter replaces spider; persistent Pantheon-style hover-trails; class-icons on every marker; geo coverage 67%→~85%; era-range slider; 3 git tags for safe revert (atlas-map-v3-icons, map-v3-jitter-flow, checkpoint-map-v2-working). Pickup: `00_meta/HANDOFF-2026-05-15-evening.md`. — **FINISHED 2026-05-15 evening** | 2026-05-15 |
 | `sonnet-vedic-chinese-docs-1` | content / Vedic-Chinese document nodes | phase-1-031-rigveda (NEW), phase-2-032-shijing-book-of-songs (NEW), phase-2-033-shujing-book-of-documents (NEW) | 2026-05-15 |
-| `sonnet-mahayana-sutras-1` | content / East Asian Mahayana sutra nodes | phase-4-091-lotus-sutra (NEW), phase-4-092-avatamsaka-sutra (NEW), phase-4-093-lankavat-sutra (NEW), phase-4-094-larger-sukhavativyuha-sutra (NEW) | 2026-05-15 |
+| `sonnet-mahayana-sutras-1` | content / East Asian Mahayana sutra nodes | phase-4-091-lotus-sutra (NEW), phase-4-092-avatamsaka-sutra (NEW), phase-4-093-lankavat-sutra (NEW), phase-4-094-larger-sukhavativyuha-sutra (NEW) — **FINISHED 2026-05-15** | 2026-05-15 |
 | `sonnet-zoroastrian-1` | content / Zoroastrian-Jewish transmission deep research | 3 MASSIVE-WIN nodes: theme-zoroastrian-jewish-exchange + theme-paradise-etymology + theme-satan-angra-mainyu-transfer; edge sweeps on 6 existing nodes — **FINISHED 2026-05-15** | 2026-05-15 |
 | `sonnet-zoroastrian-deepen-1` | content / Zoroastrian stub deepening | zarathustra.md (full upgrade), tradition-zoroastrianism.md (full body), phase-2-002-gathas-of-zarathustra.md (cosmological-questions + Nietzsche sections), NEW: theme-asha-druj-cosmic-opposition.md — **FINISHED 2026-05-15** | 2026-05-15 |
 | `sonnet-deadlink-closures-1` | content / dead-link closures (Norse + Afro-diasporic + baal) | norse-cosmogony (NEW), ragnarok-apocalyptic (NEW), afro-diasporic-syncretism (NEW), possession-ritual (NEW), orisha-pantheon (NEW), baal alias stub (NEW) | 2026-05-15 |
@@ -357,9 +358,21 @@ The things opus-foundation-1 claimed but never started are all still open:
 
 ---
 
-## sonnet-mahayana-sutras-1 — content / East Asian Mahayana sutra nodes — started 2026-05-15
+## sonnet-mahayana-sutras-1 — content / East Asian Mahayana sutra nodes — started 2026-05-15 — **FINISHED 2026-05-15**
 
 - Owning: `02_documents/_phase-4-late-antiquity/phase-4-091-lotus-sutra.md` (NEW), `02_documents/_phase-4-late-antiquity/phase-4-092-avatamsaka-sutra.md` (NEW), `02_documents/_phase-4-late-antiquity/phase-4-093-lankavat-sutra.md` (NEW), `02_documents/_phase-4-late-antiquity/phase-4-094-larger-sukhavativyuha-sutra.md` (NEW)
 - Goal: Create 4 metadata-tier document nodes for the most influential East Asian Mahayana sutras, with full MASSIVE-win cross-tradition edges (Buddhist supersessionism ↔ Christian typology / Islamic naskh; Indra's Net holism; vijñānavāda idealism ↔ Berkeley / Kant / Advaita; Pure Land tariki ↔ sola fide)
-- Status: in-flight
-- Last edit: 00_meta/ACTIVE-AGENTS.md
+- Status: finished
+- Delivered:
+  - **[[phase-4-091-lotus-sutra]]** (*Saddharmapuṇḍarīka-sūtra*) — 1st c. BCE – 1st c. CE Sanskrit; Kumārajīva 406 CE Chinese canonical version. Most influential East Asian Mahayana text. MASSIVE-win: upāya / supersessionism parallels Christian typology + Islamic naskh (three independent traditions develop "fuller revelation supersedes earlier" logic).
+  - **[[phase-4-092-avatamsaka-sutra]]** (*Huāyán Jīng*) — 2nd–4th c. CE; Buddhabhadra 421 CE + Śikṣānanda 699 CE translations. Indra's Net metaphysics. MASSIVE-win: shishi wuai (phenomena-phenomena unobstructed interpenetration) as the most sophisticated ancient holism — parallels Leibniz monads + Whitehead process philosophy; no Western parallel before Leibniz.
+  - **[[phase-4-093-lankavat-sutra]]** (*Léngqié Jīng*) — ~4th c. CE; Gunabhadra 443 CE (Chan transmission version). Vijñānavāda consciousness-only + ālayavijñāna. MASSIVE-win: cittamātra idealism parallels Berkeley's subjective idealism, Kant's transcendental idealism, and Advaita Vedanta's māyā — three independent formulations of mind-constructed phenomenal reality.
+  - **[[phase-4-094-larger-sukhavativyuha-sutra]]** (*Wuliang Shou Jing*) — 1st–3rd c. CE; 5 Chinese translations. Amitabha's 48 vows; tariki soteriology. MASSIVE-win: Pure Land tariki / Jōdo Shinshū (~1200 CE) is the closest Buddhist structural parallel to Lutheran sola fide — both assert liberation impossible by human effort alone, require faith/reliance on transcendent power, produce populist mass devotional movements. Temporal coincidence: both ~1200 CE, no historical connection.
+- MASSIVE-win edges added: 4 (upāya-supersessionism; Indra's Net holism; vijñānavāda idealism; tariki-sola fide)
+- Open gaps for follow-up agents:
+  - Bodhidharma person node (`bodhidharma`) exists but may need deepening with the Lankavatara transmission story
+  - `tradition-pure-land-buddhism` tradition node may need expansion to reference these new sutra nodes
+  - `tradition-zen` tradition node may need Lankavatara and Lotus Sutra edges added
+  - A `theme-tariki-other-power` theme node would be a natural follow-up connecting Pure Land / bhakti / sola fide
+  - The canonical-slugs now list P4-091–094 at their proper numbers; the previously-registered old collision slugs (phase-4-061-lotus-sutra etc.) should be audited
+- Last edit: 00_meta/STATUS.md
