@@ -586,6 +586,7 @@ def main():
     THUMBS = load_thumbnail_cache()
     LOCATIONS = load_locations()
     nodes_by_id = {}
+    id_sources = {}  # node_id → first filepath that claimed it (for dup detection)
     counts = {k: 0 for k in NODE_DIRS}
     type_for_dir = {}
     for ntype, dirs in NODE_DIRS.items():
@@ -679,8 +680,12 @@ def main():
                 g = geo_for_node(fm, LOCATIONS)
                 if g:
                     node["geo"] = g
+                if node_id in nodes_by_id:
+                    print(f"  ⚠ DUPLICATE ID  {node_id!r}  — {md.relative_to(VAULT)} overwrites {id_sources[node_id]}")
+                else:
+                    id_sources[node_id] = str(md.relative_to(VAULT))
+                    counts[ntype] += 1
                 nodes_by_id[node_id] = node
-                counts[ntype] += 1
 
     edges = collect_node_edges(nodes_by_id)
     edges.extend(parse_influences_md(VAULT / "_graph" / "influences.md"))
