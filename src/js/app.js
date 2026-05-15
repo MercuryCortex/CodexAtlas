@@ -4668,6 +4668,12 @@ function _atlasToken(name, fallback) {
 function _atlasBuildStyle() {
   return {
     version: 8,
+    // Glyphs for symbol-layer text rendering (cluster counts, future place labels).
+    // Vendored offline at _assets/vendor/glyphs/<fontstack>/<range>.pbf — Noto Sans
+    // Regular range 0-255 covers digits + Latin (76 KB, fetched once via curl).
+    // MapLibre URL-encodes spaces in {fontstack} → '%20' so the path resolves to the
+    // real on-disk file. Add more ranges later if non-Latin labels are needed.
+    glyphs: '_assets/vendor/glyphs/{fontstack}/{range}.pbf',
     sources: {
       protomaps: {
         type: 'vector',
@@ -4922,11 +4928,18 @@ VIEWS.atlas = {
             filter: ['has', 'point_count'],
             layout: {
               'text-field': ['get', 'point_count_abbreviated'],
-              'text-size': 11,
+              // Font name must match a vendored glyph stack — Noto Sans Regular is
+              // the one we have under _assets/vendor/glyphs/. Add to that dir to expand.
+              'text-font': ['Noto Sans Regular'],
+              'text-size': 12,
               'text-allow-overlap': true,
               'text-ignore-placement': true
             },
-            paint: { 'text-color': _atlasToken('--bg-0', '#07090f') }
+            paint: {
+              'text-color': _atlasToken('--bg-0', '#07090f'),
+              'text-halo-color': _atlasToken('--gold', '#d4a55a'),
+              'text-halo-width': 0.5
+            }
           });
         } catch (e) {
           console.warn('[atlas] cluster-count labels unavailable (no glyphs):', e.message);
