@@ -18,6 +18,20 @@ Format:
 
 ---
 
+## sonnet-sufi-themes-1 — content / Sufi + liturgical dead-link closures — started 2026-05-15
+- Owning: `tawḥīd`, `fanaa-annihilation`, `liturgical-calendar`
+- Goal: Close 3 high-count dead-links (5–6 refs each) — tawḥīd divine unity, fanāʾ annihilation, liturgical calendar sacred time
+- Status: in-flight
+- Last edit: 00_meta/ACTIVE-AGENTS.md
+
+## sonnet-second-temple-1 — content / Second Temple dead-link closures — started 2026-05-15
+- Owning: `tradition-essenes`, `messianic-revelation`, `messianic-genealogy`
+- Goal: Close 3 high-count (4-ref) dead-links connecting Second Temple Judaism to Christianity and Islam
+- Status: in-flight
+- Last edit: 00_meta/ACTIVE-AGENTS.md
+
+---
+
 ## sonnet-persian-sufi-1 — content / Persian Sufi literary corpus — started 2026-05-15 — **FINISHED 2026-05-15**
 - Owning: `phase-5-051-attar-conference-of-birds`, `phase-5-052-sadi-gulistan`, `phase-5-053-hafez-divan`, `phase-5-054-rumi-masnavi`, `farid-ud-din-attar`, `hafez`, `sadi-of-shiraz`
 - Goal: 4 document nodes (Attar, Sa'di, Hafez, Rumi Masnavi) + 3 person nodes — fill the biggest Sufism gap in the vault

@@ -466,7 +466,7 @@ canonical-slug
 - `zemyna`
 - `zeus`
 
-### document (361 nodes)
+### document (364 nodes)
 
 - `document-kuntillet-ajrud-inscriptions`
 - `phase-1-001-kesh-temple-hymn`
@@ -500,6 +500,7 @@ canonical-slug
 - `phase-1-029-telipinu-myth`
 - `phase-1-030-illuyanka-myth`
 - `phase-1-031-rigveda`
+- `phase-1-032-babylonian-theodicy`
 - `phase-1-035-wadi-el-jarf-papyri`
 - `phase-2-001-rig-veda-family-books`
 - `phase-2-002-gathas-of-zarathustra`
@@ -534,6 +535,7 @@ canonical-slug
 - `phase-2-031-aeschylus-oresteia`
 - `phase-2-032-shijing-book-of-songs`
 - `phase-2-033-shujing-book-of-documents`
+- `phase-2-034-books-of-kings`
 - `phase-3-001-second-third-isaiah`
 - `phase-3-002-plato-dialogues`
 - `phase-3-003-aristotle-metaphysics`
@@ -669,6 +671,7 @@ canonical-slug
 - `phase-4-092-avatamsaka-sutra`
 - `phase-4-093-lankavat-sutra`
 - `phase-4-094-larger-sukhavativyuha-sutra`
+- `phase-4-095-new-testament-canon`
 - `phase-5-001-devi-mahatmya`
 - `phase-5-002-heart-sutra`
 - `phase-5-002b-diamond-sutra`
@@ -992,7 +995,7 @@ canonical-slug
 - `subterranean-chamber-great-pyramid`
 - `temple-of-inscriptions-palenque`
 
-### person (613 nodes)
+### person (618 nodes)
 
 - `aaron`
 - `abba-garima`
@@ -1007,6 +1010,7 @@ canonical-slug
 - `aisha-bint-abi-bakr`
 - `akhenaten`
 - `akiva-ben-yosef`
+- `al-biruni`
 - `al-farabi`
 - `al-ghazali`
 - `al-hallaj`
@@ -1333,6 +1337,7 @@ canonical-slug
 - `kumarajiva-person`
 - `l-ron-hubbard`
 - `lactantius`
+- `lal-ded`
 - `lalibela-king`
 - `lanz-von-liebenfels`
 - `laozi`
@@ -1422,6 +1427,7 @@ canonical-slug
 - `noah`
 - `noetus-of-smyrna`
 - `numenius-of-apamea`
+- `nund-rishi`
 - `onesimus`
 - `onias-iii`
 - `onias-iv`
@@ -1442,6 +1448,7 @@ canonical-slug
 - `peter-apostle`
 - `peter-j-carroll`
 - `pherecydes-of-syros`
+- `phidias`
 - `philip-apostle`
 - `philip-iv-of-france`
 - `philip-the-evangelist`
@@ -1531,6 +1538,7 @@ canonical-slug
 - `socrates`
 - `solomon-king`
 - `solon`
+- `spyridon-marinatos`
 - `sri-aurobindo`
 - `sri-yukteswar`
 - `stephen-mcnallen`
@@ -1672,7 +1680,7 @@ canonical-slug
 - `wheat-grain`
 - `yin-yang`
 
-### theme (270 nodes)
+### theme (274 nodes)
 
 - `364-day-solar-calendar`
 - `adam-kadmon`
@@ -1762,6 +1770,7 @@ canonical-slug
 - `evolutionary-cosmogony`
 - `fall-of-humanity`
 - `falsafa`
+- `fanaa-annihilation`
 - `feminine-solar`
 - `fifth-empire-quinto-imperio`
 - `final-judgment`
@@ -1807,6 +1816,7 @@ canonical-slug
 - `kingdom-within`
 - `lamentation-genre`
 - `light-and-darkness-dualism`
+- `liturgical-calendar`
 - `logos-cosmic-reason`
 - `logos-johannine`
 - `logos-philonic`
@@ -1815,6 +1825,7 @@ canonical-slug
 - `martyrdom-theology`
 - `mesoamerican-cosmogony`
 - `messianic-future-savior`
+- `messianic-revelation`
 - `messianic-secret`
 - `messianism`
 - `miaphysite-christology`
@@ -1893,6 +1904,7 @@ canonical-slug
 - `tabot-ark-replica`
 - `tahafut-controversy`
 - `tauroctony-as-cosmic-icon`
+- `tawḥīd`
 - `templar-gnostic-transmission-hypothesis`
 - `temple-economy`
 - `tewahedo-christology`
@@ -1945,7 +1957,7 @@ canonical-slug
 - `wisdom-personified`
 - `world-axis`
 
-### tradition (113 nodes)
+### tradition (115 nodes)
 
 - `tradition-advaita-vedanta`
 - `tradition-african-traditional`
@@ -1975,6 +1987,7 @@ canonical-slug
 - `tradition-egyptian`
 - `tradition-egyptian-religion`
 - `tradition-eleusinian-mysteries`
+- `tradition-essenes`
 - `tradition-ethiopian-orthodox-tewahedo`
 - `tradition-etruscan-religion`
 - `tradition-finno-karelian`
@@ -2001,6 +2014,7 @@ canonical-slug
 - `tradition-jungian-depth-psychology`
 - `tradition-jyotisha-indian-astrology`
 - `tradition-kabbalah`
+- `tradition-kashmir-shaivism`
 - `tradition-knights-templar`
 - `tradition-lusitanian-religion`
 - `tradition-mahayana-buddhism`
@@ -2067,14 +2081,12 @@ canonical-slug
 
 | Refs | Dead target | Suggested canonical (existing) |
 |---:|---|---|
-| 4 | `tradition-essenes` | `tradition-egyptian` |
-| 4 | `messianic-revelation` | `messianic-future-savior` |
-| 4 | `messianic-genealogy` | `messianic-future-savior` |
-| 3 | `phase-4-007-new-testament-canon` | `phase-4-005-gospel-of-mary` |
-| 3 | `phase-2-005-1-2-kings` | `phase-2-003-atharva-veda` |
+| 4 | `tradition-minoan-religion` | `tradition-hellenistic-philosophy` |
+| 4 | `messianic-genealogy` | `messianic-secret` |
+| 3 | `phase-4-007-new-testament-canon` | `phase-4-001-gospel-of-thomas` |
+| 3 | `phase-2-005-1-2-kings` | `phase-2-008-homeric-epics` |
 | 2 | `yam-canaanite` | `astarte-canaanite` |
-| 2 | `tradition-minoan-religion` | `tradition-egyptian` |
-| 2 | `tradition-eastern-orthodoxy` | `tradition-sumerian-mesopotamian` |
-| 2 | `phase-2-004-1-2-chronicles` | `phase-2-007-hebrew-bible-e-source` |
-| 2 | `phase-1-013-babylonian-theodicy` | `phase-1-012-amarna-letters` |
+| 2 | `tradition-eastern-orthodoxy` | `tradition-hellenistic-philosophy` |
+| 2 | `phase-2-004-1-2-chronicles` | `phase-2-004-yasna-younger-avesta` |
+| 2 | `phase-1-013-babylonian-theodicy` | `phase-1-019-enuma-anu-enlil` |
 | 2 | `asclepius` | `asclepius-greek` |
