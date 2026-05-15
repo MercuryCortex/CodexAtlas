@@ -556,7 +556,7 @@ function setView(name) {
   }
   document.getElementById('view-controls').innerHTML = '';
   legend.style('display', 'none').html('');
-  document.querySelectorAll('.list-pane,.about-pane,.alch-toolbox,.alch-palette,.tl-zoom-presets').forEach(el => el.remove());
+  document.querySelectorAll('.list-pane,.about-pane,.alch-toolbox,.alch-palette,.tl-zoom-presets,.alch-board-root,.alch-menu').forEach(el => el.remove());
   hideTooltip();
   // Map thumbnail only on geo-relevant views; hide elsewhere.
   // Atlas view uses MapLibre (no SVG map-thumb); zoom meter shown separately.
@@ -4420,6 +4420,31 @@ const INVESTIGATIONS = [
     ],
   },
   {
+    id: 'third-century-collision',
+    name: 'The 3rd-Century Collision Zone',
+    flag: 'alert',
+    status: 'active',
+    opened: '2026-05-15',
+    headline: 'In a single 80-year window (200–280 CE), Plotinus writes the Enneads in Rome, Mani launches his universal religion in Persia, Kerdīr consolidates Zoroastrian orthodoxy and has Mani executed, Origen synthesizes Platonic Christianity in Alexandria, and the Gnostic schools reach peak. All five traditions share the same technical vocabulary (pneuma, logos, nous) and are in direct documented conflict. BeDuhn 2020: Zoroastrianism and Manichaeism co-formed against each other in this window — the collision was generative.',
+    threads: [
+      { label: 'Plotinus vs Gnostics — Ennead II.9', note: 'Plotinus explicitly refutes "certain people" (Gnostics) who attended his school — documented direct intellectual combat. Ennead II.9 "Against Those who Claim the Creator of the World is Evil" is the primary source. Both in vault.', tier: 1 },
+      { label: 'Plotinus + Origen → Ammonius Saccas', note: 'Both Plotinus and Origen may have studied under Ammonius Saccas in Alexandria. If confirmed (Porphyry, Life of Plotinus §3 + Eusebius, HE 6.19): Neoplatonism and Patristic theology share a genealogical root. The most remarkable underdiscussed convergence in late antique intellectual history.', tier: 2 },
+      { label: 'Mani as deliberate synthesist', note: 'Mani explicitly claimed to complete Moses, Zoroaster, Buddha, and Jesus. His religion is the 3rd century\'s self-conscious attempt to unify all prior revelation under one framework — making him the most documented cross-tradition synthesizer in the vault.', tier: 1 },
+      { label: 'Kerdīr\'s persecution list — religious census', note: 'Rock inscriptions at Naqsh-e Rajab (~280 CE): explicitly names Jews, Buddhists, Hindus, Nazarenes, Christians, Baptists, Manichaeans as targets for suppression. A historical census of simultaneous religious plurality in the Sasanian Empire.', tier: 1 },
+      { label: 'BeDuhn co-formation — Zoroastrianism + Manichaeism', note: 'Neither was simply source for the other. Both Mani and Kerdīr were innovating against a shared pre-existing "Zurvanite milieu." The collision was generative. BeDuhn 2020, Entangled Religions 11.2 — Tier 1.', tier: 1 },
+      { label: 'Origen\'s apokatastasis — universal salvation condemned', note: 'All souls including the devil eventually return to God (*De Principiis* I.6.3). Condemned as heresy 553 CE (Second Council of Constantinople). The most radical implication of Neoplatonic return-theology in Christian dress — and it was in the running as orthodoxy for 300 years.', tier: 1 },
+    ],
+    seeds: [
+      'plotinus', 'phase-4-019-plotinus-enneads',
+      'mani', 'event-mani-execution-274-or-277',
+      'tradition-manichaeism', 'tradition-neoplatonism',
+      'origen', 'tradition-gnosticism',
+      'third-century-collision-zone',
+      'zurvanism',
+      'augustine-of-hippo',
+    ],
+  },
+  {
     id: 'consciousness-temple',
     name: 'Consciousness Temple',
     flag: 'alert',
@@ -4809,6 +4834,30 @@ function alchemyShortestPath(srcId, dstId, maxHops) {
   }
   return null;
 }
+
+// ============================================================
+// VIEWS.alchemy — card pinboard (new 2026-05-15). A free-form research
+// workbench: drop nodes as cards, drag them around, right-click to expand
+// connections / neighbors / shortest-path bridges. Implementation lives
+// in src/js/alchemy/board.js (window._alchemyBoard.mount).
+// ============================================================
+VIEWS.alchemy = {
+  title: 'Alchemy',
+  subtitle: 'free-form card board · drop nodes · drag · right-click to expand connections',
+  render() {
+    document.getElementById('view-controls').innerHTML = '';
+    legend.style('display', 'none').html('');
+    // Tear down any previous mount + create a fresh host div appended to #canvas
+    document.querySelectorAll('.alch-board-root').forEach(el => el.remove());
+    const host = document.createElement('div');
+    host.className = 'alch-board-root';
+    document.getElementById('canvas').appendChild(host);
+    // Defer to next tick so the host has a measured size before the renderer reads it
+    queueMicrotask(() => {
+      if (window._alchemyBoard) window._alchemyBoard.mount(host);
+    });
+  }
+};
 
 // VIEWS.transmission — the former Alchemy view (renamed 2026-05-15). Internal
 // state still uses `STATE.alchemyPicks` etc. for backwards compatibility with

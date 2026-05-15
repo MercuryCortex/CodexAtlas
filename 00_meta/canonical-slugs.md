@@ -844,7 +844,7 @@ canonical-slug
 - `phase-8-019-kojiki`
 - `phase-8-020-nihon-shoki`
 
-### event (161 nodes)
+### event (162 nodes)
 
 - `bent-pyramid-sneferu-dahshur`
 - `el-castillo-chichen-itza`
@@ -886,6 +886,7 @@ canonical-slug
 - `event-council-of-constantinople-553`
 - `event-council-of-constantinople-680-681`
 - `event-council-of-ephesus-431`
+- `event-council-of-florence-1439`
 - `event-council-of-jerusalem-49`
 - `event-council-of-nicaea-325`
 - `event-council-of-nicaea-787`
@@ -1008,7 +1009,7 @@ canonical-slug
 - `subterranean-chamber-great-pyramid`
 - `temple-of-inscriptions-palenque`
 
-### person (631 nodes)
+### person (632 nodes)
 
 - `aaron`
 - `abba-garima`
@@ -1204,6 +1205,7 @@ canonical-slug
 - `gamaliel-ii`
 - `gamaliel-the-elder`
 - `garth-fowden`
+- `gemistos-plethon`
 - `george-smith-cuneiformist`
 - `gerald-gardner`
 - `gershom-scholem`
@@ -1718,7 +1720,7 @@ canonical-slug
 - `wheat-grain`
 - `yin-yang`
 
-### theme (304 nodes)
+### theme (305 nodes)
 
 - `364-day-solar-calendar`
 - `adam-kadmon`
@@ -1999,6 +2001,7 @@ canonical-slug
 - `theme-zoroastrian-jewish-exchange`
 - `theme-zurvanite-heresy`
 - `theurgy`
+- `third-century-collision-zone`
 - `tikkun-olam`
 - `torah-and-wisdom-identified`
 - `torah-as-pre-existent`
@@ -2151,15 +2154,15 @@ canonical-slug
 
 | Refs | Dead target | Suggested canonical (existing) |
 |---:|---|---|
-| 5 | `phase-1-013-babylonian-theodicy` | `phase-1-017-descent-of-inanna` |
-| 4 | `tradition-minoan-religion` | `tradition-anthroposophy` |
-| 4 | `tradition-eastern-orthodoxy` | `tradition-jyotisha-indian-astrology` |
-| 3 | `tradition-medieval-christianity` | `tradition-jyotisha-indian-astrology` |
-| 3 | `tradition-early-christianity` | `tradition-jyotisha-indian-astrology` |
-| 3 | `phase-4-007-new-testament-canon` | `phase-4-003-gospel-of-truth` |
-| 3 | `phase-2-005-1-2-kings` | `phase-2-008-homeric-epics` |
+| 5 | `phase-1-013-babylonian-theodicy` | `phase-1-015-sumerian-king-list` |
+| 4 | `tradition-minoan-religion` | `tradition-catharism` |
+| 4 | `tradition-eastern-orthodoxy` | `tradition-catharism` |
+| 4 | `tradition-early-christianity` | `tradition-eglise-johannite` |
+| 3 | `tradition-medieval-christianity` | `tradition-eglise-johannite` |
+| 3 | `phase-4-007-new-testament-canon` | `phase-4-006-hypostasis-of-the-archons` |
+| 3 | `phase-2-005-1-2-kings` | `phase-2-003-atharva-veda` |
 | 3 | `divine-kingship-solar` | `divine-kingship` |
 | 2 | `yam-canaanite` | `astarte-canaanite` |
-| 2 | `tradition-lingayat` | `tradition-anthroposophy` |
-| 2 | `phase-2-004-1-2-chronicles` | `phase-2-008-homeric-epics` |
+| 2 | `tradition-lingayat` | `tradition-catharism` |
+| 2 | `phase-2-004-1-2-chronicles` | `phase-2-006-brahmanas-aranyakas` |
 | 2 | `asclepius` | `asclepius-greek` |

@@ -22,6 +22,7 @@ Format:
 
 | Handle | Scope tag | Owns (high level) | Started | Status |
 |---|---|---|---|---|
+| `sonnet-3rd-century-1` | content / 3rd-Century Collision Zone node + Investigation preset | `third-century-collision-zone` (NEW theme) + Investigation preset `third-century-collision` | 2026-05-15 | **FINISHED** |
 | `sonnet-korean-1` | content / Korean religious wedge | `tradition-donghak` (NEW), `event-donghak-peasant-revolution-1894` (NEW), `choe-je-u` (NEW), `tangun` (upgrade) | 2026-05-15 | **in-flight** |
 | `sonnet-hermetic-renaissance-1` | content / Hermetic Renaissance spine | `gemistos-plethon` (NEW), `event-council-of-florence-1439` (NEW), `prisca-theologia` (upgrade), `perennial-philosophy` (upgrade), `hermetic-transmission-chain` (NEW theme) | 2026-05-15 | **in-flight** |
 | `sonnet-comedy-deep-1` | content / Divine Comedy deep-layer investigation | `beatrice-portinari` (NEW person), `theme-graduated-afterlife` (NEW theme), `theme-guide-through-underworld` (NEW theme) | 2026-05-15 | **FINISHED** 3cd2899 |
@@ -35,6 +36,18 @@ Format:
 | `sonnet-khafre-symbolism-1` | content / Egyptian symbolism deep-dive | 9 symbols + 4 themes + 6 persons + 4 events + 2 documents — **25 new nodes · 194 new edges** | 2026-05-15 | **FINISHED** |
 | `sonnet-kabbalah-synthesis-1` | content / Symbol fixes + Kabbalah/Logos/Divine-Feminine synthesis | 6 symbol fixes + theme-axial-age (NEW) + 6 stub→full upgrades (logos-cosmic-reason, divine-feminine, tikkun-olam, philo-of-alexandria, tradition-kabbalah, moses-de-leon) | 2026-05-15 | **FINISHED** e8306e0+268e1da |
 | `sonnet-infra-1` | data-integrity / YAML refs sync + Lotus Sutra dedup + orphan wiring | 10 persons refs-synced, phase-4-091 deleted (merged into phase-4-061), 8 orphan nodes wired (stribog/simeon/priscillian/cassiodorus/alcuin/dove/alpha-omega/fleur-de-lis) | 2026-05-15 | **FINISHED** b0f768a+8b2b7f2 |
+
+---
+
+## sonnet-3rd-century-1 — content / 3rd-Century Collision Zone node + Investigation preset — started 2026-05-15 — **FINISHED 2026-05-15**
+- Owning: `06_themes/third-century-collision-zone.md` (NEW), `src/js/app.js` (Investigation preset insert)
+- Goal: Create the third-century-collision-zone theme node and wire it as the second Investigation preset in app.js
+- Status: finished
+- Delivered:
+  - **`third-century-collision-zone`** (NEW, metadata) — 80-year window (200–280 CE) in which Plotinus, Mani, Kerdīr, Origen, and the Gnostic schools all collided in the same intellectual space, sharing vocabulary (*pneuma/logos/nous*). MASSIVE-WIN edges: shared-teacher Ammonius Saccas (Neoplatonism + Patristic theology common root); Mani as vault's most explicit cross-tradition synthesist; Kerdīr's persecution inscriptions as historical census of simultaneous religious plurality; BeDuhn 2020 co-formation thesis; Origen's *apokatastasis* condemned 553 CE. 4 Tier-1 refs (Porphyry, BeDuhn 2020, Peter Brown, Chadwick).
+  - **Investigation preset `third-century-collision`** — inserted as second entry in `INVESTIGATIONS` array (after `persian-theological-spine`, before `consciousness-temple`); 6 threads; 11 seed nodes; `node --check` clean.
+- Build: **2110 nodes · 12,510 edges · 2.8% dead-link**
+- Last edit: `00_meta/STATUS.md` + `00_meta/ACTIVE-AGENTS.md`
 
 ---
 
