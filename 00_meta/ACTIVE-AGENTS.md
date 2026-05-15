@@ -18,11 +18,16 @@ Format:
 
 ---
 
-## sonnet-bruno-silk-1 — content / Bruno upgrade + Silk Road Investigation — started 2026-05-15 — IN-FLIGHT
+## sonnet-bruno-silk-1 — content / Bruno upgrade + Silk Road Investigation — started 2026-05-15 — **FINISHED 2026-05-15**
 - Owning: `04_persons/giordano-bruno.md` (upgrade), `06_themes/executed-divine-claimant.md` (Bruno section expansion), `src/js/app.js` (Silk Road preset + investigation)
-- Goal: Expand Bruno to full Yates-angle + executed-divine-claimant chain closure into modernity; add Silk Road as 3rd Investigation and preset
-- Status: in-flight
-- Last edit: `src/js/app.js`
+- Goal: Expand Bruno to full Yates-angle + executed-divine-claimant chain closure into modernity; add Silk Road as Investigation and preset
+- Status: finished
+- Delivered:
+  - **`giordano-bruno.md`** — Frances Yates thesis section (Hermetic magus vs. proto-scientist; Yates 1964 Tier 2 vs. Gatti 1999 Tier 2 dual-position; Casaubon problem; Nicholas of Cusa cosmological precursor). MASSIVE-WIN connections: executed-divine-claimant chain, prisca-theologia most aggressive Hermetic claim, universal-reformation Rosicrucian relay, tradition-hermeticism. Tags upgraded with MASSIVE-WIN. 5 refs (Yates, Rowland, Gatti, Mercati, Firpo).
+  - **`executed-divine-claimant.md`** — Bruno expanded from one-line extension to full §5 with al-Hallaj structural parallel, eight-year refusal to recant, Schoppe eyewitness quote, 1889 monument community-inversion analysis. Chain closes into modernity across 2 millennia.
+  - **`src/js/app.js`** — silk-road-transmission-corridor alchemy preset (category: cross; confirmed slugs: tradition-manichaeism, mani, tradition-zoroastrianism, tradition-buddhism, xuanzang, cyrus-the-great). silk-road-corridor Investigation with 5 threads. node --check passes.
+- Build: **2118 nodes · 12,561 edges · 2.8% dead-link** (commit 13b4795)
+- Last edit: `00_meta/STATUS.md`
 
 ---
 
