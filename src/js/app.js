@@ -4695,15 +4695,19 @@ function _atlasToken(name, fallback) {
   return v || fallback;
 }
 
-// Zoom-aware jitter scale (2026-05-15). Returns degrees of per-ring spacing
-// for the current zoom level. Tight at low zoom (co-located docs naturally
-// cluster), wide at high zoom (individual docs comfortably separated).
-// Curve hand-tuned so MapLibre's 36px clusterRadius naturally splits the
-// inner ring of an 8-doc group somewhere around z 5-6.
+// Zoom-aware jitter scale (2026-05-15, piecewise rev 2).
+// Returns per-ring step in degrees. Piecewise curve hand-tuned so:
+//   z 1-3 → tiny (≈0°), 99 co-located docs cluster as a single point on overview
+//   z 4   → rapid spread starts
+//   z 6+  → inner ring members are ≥ 40 px apart on screen (well past
+//           clusterRadius of 25 px → MapLibre stops grouping them visually)
+//   z 10  → maximal spread for inspection mode
+// Trade-off accepted: at deep zoom co-located docs are geographically
+// "wrong" by up to ~200 km, but the data layer (locations.md) is untouched.
 function _atlasJitterScale(zoom) {
-  // base ring step, in degrees, per zoom level
-  // z 1 → 0.015°, z 5 → 0.06°, z 10 → 0.22°
-  return 0.010 * Math.pow(1.45, Math.max(0, zoom));
+  if (zoom < 4)  return 0.003 + 0.005 * Math.max(0, zoom - 1);   // 0.003 → 0.018
+  if (zoom < 6)  return 0.018 + 0.5   * (zoom - 4);              // 0.018 → 1.02
+  return         1.02   + 0.3   * (zoom - 6);                    // 1.02 → 2.22 (z 10)
 }
 
 // Build (or re-build) the GeoJSON FeatureCollection for the atlas-nodes source.
@@ -5045,10 +5049,13 @@ VIEWS.atlas = {
           type: 'geojson',
           data: featureCollection,
           cluster: true,
-          clusterRadius: 36,
-          // Clusters persist later (zoom 7) so co-located docs stay grouped
-          // visually further into the zoom range, then natural jitter takes over.
-          clusterMaxZoom: 7
+          // Tighter clusterRadius (was 36) so members of an 8-doc inner ring
+          // un-cluster as soon as the jitter spreads them past 25 px on screen.
+          clusterRadius: 25,
+          // Clusters only exist up to z 5 (was 7). Past z 5 the jitter curve
+          // hands off to individual circles — no more "cluster ring blocks the
+          // click hit-test for the individuals behind it" bug.
+          clusterMaxZoom: 5
         });
 
         // Cluster layer — gold ringed circles sized by # of points inside.
@@ -5222,15 +5229,18 @@ VIEWS.atlas = {
           const clusterCoord = features[0].geometry.coordinates;
           const source       = _atlasMap.getSource('atlas-nodes');
           const currentZoom  = _atlasMap.getZoom();
-          // NEW FLOW 2026-05-15: spider system removed. Cluster click just eases
-          // the map to the zoom level where this cluster naturally expands. As
-          // the map zooms, zoomend re-fires _atlasZoomFcHandler which re-runs
-          // _atlasComputeFC at the new zoom → co-located members spread further
-          // → cluster splits visually. ONE flow, ONE visual style, no glitches.
+          // NEW FLOW 2026-05-15: spider system removed. Cluster click eases the
+          // map to a zoom PAST clusterMaxZoom (5) so MapLibre stops grouping
+          // these members. The zoomend handler then re-runs _atlasComputeFC at
+          // the new zoom → big jitter scale → individuals are spaced 40+ px
+          // apart and clickable. Floor at z 6 so a click always breaks the
+          // cluster, even if getClusterExpansionZoom would return a smaller value.
           const handleExpZoom = (targetZoom) => {
-            const want = (typeof targetZoom === 'number' && isFinite(targetZoom))
-              ? Math.min(_atlasMap.getMaxZoom(), Math.max(currentZoom + 1.5, targetZoom + 0.4))
-              : Math.min(_atlasMap.getMaxZoom(), currentZoom + 2.5);
+            const POST_CLICK_MIN_Z = 6.2;
+            const candidate = (typeof targetZoom === 'number' && isFinite(targetZoom))
+              ? Math.max(targetZoom + 0.6, POST_CLICK_MIN_Z)
+              : Math.max(currentZoom + 2.5, POST_CLICK_MIN_Z);
+            const want = Math.min(_atlasMap.getMaxZoom(), candidate);
             _atlasMap.easeTo({ center: clusterCoord, zoom: want, duration: 520 });
           };
           const result = source.getClusterExpansionZoom(clusterId, (err, z) => {
