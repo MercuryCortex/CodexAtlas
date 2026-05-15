@@ -526,3 +526,11 @@ The things opus-foundation-1 claimed but never started are all still open:
 - Goal: Build Bruno cluster nodes; discovered all main nodes pre-exist; creating one genuinely missing node: the Origen/Isaiah 14:12 misreading event that seeded 1,800 years of Satan-as-fallen-angel cosmology
 - Status: in-flight
 - Last edit: `00_meta/ACTIVE-AGENTS.md`
+
+---
+
+## sonnet-mystics-1 — content / Attar + Eckhart + apophatic-theology — started 2026-05-15
+- Owning: `farid-ud-din-attar` (UPGRADE metadata→full), `phase-5-051-attar-conference-of-birds` (EXISTS metadata — checking for gaps), `meister-eckhart` (UPGRADE stub→full), `theme-apophatic-theology` (NEW)
+- Goal: Two of the vault's most important missing mystics: Attar closes the Sufi non-dual poetry gap; Eckhart closes the radical Christian non-dualism gap; apophatic-theology theme unifies the via-negativa convergence across all traditions
+- Status: in-flight
+- Last edit: `00_meta/ACTIVE-AGENTS.md`

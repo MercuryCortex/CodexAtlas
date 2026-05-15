@@ -17,7 +17,7 @@ canonical-slug
 ## Currently resolved slugs (auto-seeded — every existing file)
 
 
-### deity (449 nodes)
+### deity (450 nodes)
 
 - `abathur`
 - `adamastor`
@@ -234,6 +234,7 @@ canonical-slug
 - `logos-stoic`
 - `loki`
 - `lono`
+- `los`
 - `lotan`
 - `lucifer`
 - `lugalbanda`
@@ -851,7 +852,7 @@ canonical-slug
 - `phase-8-019-kojiki`
 - `phase-8-020-nihon-shoki`
 
-### event (166 nodes)
+### event (170 nodes)
 
 - `bent-pyramid-sneferu-dahshur`
 - `el-castillo-chichen-itza`
@@ -866,6 +867,7 @@ canonical-slug
 - `event-asokan-dhamma-missions-c-250-bce`
 - `event-augustine-of-canterbury-mission-597`
 - `event-azusa-street-revival-1906`
+- `event-bab-execution-1850`
 - `event-bacchanalia-suppression-186-bce`
 - `event-bar-kokhba-revolt-132-136`
 - `event-battle-of-actium-31-bce`
@@ -905,6 +907,7 @@ canonical-slug
 - `event-cyrus-conquest-of-babylon-539-bce`
 - `event-dead-sea-scrolls-discovery`
 - `event-death-of-hypatia-415`
+- `event-death-of-jan-hus-1415`
 - `event-death-of-muhammad-632`
 - `event-decian-persecution-250`
 - `event-decipherment-of-cuneiform-1857`
@@ -969,6 +972,7 @@ canonical-slug
 - `event-new-atheism-2004-2010`
 - `event-nine-saints-mission-c480`
 - `event-order-of-christ-foundation-1319`
+- `event-origen-lucifer-misreading-c230`
 - `event-parliament-of-world-religions-1893`
 - `event-parthenon-construction-447-432-bce`
 - `event-perpetua-felicity-203`
@@ -997,6 +1001,7 @@ canonical-slug
 - `event-spanish-conquest-of-tenochtitlan-1521`
 - `event-stobaeus-anthology-c500`
 - `event-stonehenge-construction-c-3000-1600-bce`
+- `event-stoning-of-stephen-c35ce`
 - `event-sulawesi-cave-art-c-45500-bce`
 - `event-temple-leontopolis-foundation-c150bce`
 - `event-thera-eruption-c-1600-bce`
@@ -2174,19 +2179,23 @@ canonical-slug
 
 | Refs | Dead target | Suggested canonical (existing) |
 |---:|---|---|
-| 5 | `phase-1-013-babylonian-theodicy` | `phase-1-019-enuma-anu-enlil` |
-| 4 | `tradition-minoan-religion` | `tradition-ordo-novi-templi` |
-| 4 | `tradition-eastern-orthodoxy` | `tradition-ordo-novi-templi` |
-| 4 | `tradition-early-christianity` | `tradition-ordo-novi-templi` |
+| 5 | `phase-1-013-babylonian-theodicy` | `phase-1-032-babylonian-theodicy` |
+| 4 | `tradition-minoan-religion` | `tradition-scientology` |
+| 4 | `tradition-eastern-orthodoxy` | `tradition-scientology` |
+| 4 | `tradition-early-christianity` | `tradition-scientology` |
 | 4 | `event-death-of-guru-tegh-bahadur-1675` | `event-dead-sea-scrolls-discovery` |
-| 4 | `event-death-of-guru-arjan-1606` | `event-death-of-hypatia-415` |
-| 3 | `tradition-zen-chan-buddhism` | `tradition-ordo-novi-templi` |
-| 3 | `tradition-medieval-christianity` | `tradition-ordo-novi-templi` |
-| 3 | `phase-4-007-new-testament-canon` | `phase-4-009-pistis-sophia` |
-| 3 | `phase-2-005-1-2-kings` | `phase-2-008-homeric-epics` |
+| 4 | `event-death-of-guru-arjan-1606` | `event-death-of-jan-hus-1415` |
+| 3 | `tradition-zen-chan-buddhism` | `tradition-scientology` |
+| 3 | `tradition-second-temple-judaism` | `tradition-sebastianism` |
+| 3 | `tradition-medieval-christianity` | `tradition-vedic-hinduism` |
+| 3 | `phase-4-007-new-testament-canon` | `phase-4-006-hypostasis-of-the-archons` |
+| 3 | `phase-2-005-1-2-kings` | `phase-2-003-atharva-veda` |
 | 3 | `divine-kingship-solar` | `divine-kingship` |
 | 2 | `yam-canaanite` | `astarte-canaanite` |
-| 2 | `tradition-second-temple-judaism` | `tradition-ordo-novi-templi` |
-| 2 | `tradition-lingayat` | `tradition-celtic` |
-| 2 | `tradition-cheondogyo` | `tradition-celtic` |
+| 2 | `tradition-lingayat` | `tradition-scientology` |
+| 2 | `tradition-islam-shia` | `tradition-scientology` |
+| 2 | `tradition-hussitism` | `tradition-scientology` |
+| 2 | `tradition-cheondogyo` | `tradition-scientology` |
+| 2 | `tradition-bahai` | `tradition-scientology` |
+| 2 | `event-spanish-inquisition-1478` | `event-ahmad-gragn-invasion-1529` |
 | 2 | `asclepius` | `asclepius-greek` |
