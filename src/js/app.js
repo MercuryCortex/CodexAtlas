@@ -381,9 +381,9 @@ function matchesFilter(n) {
     // hits body content (was: only metadata fields, which missed e.g. "nomad").
     const hay = (
       n.title + ' ' + n.id + ' ' +
-      (n.aka || []).join(' ') + ' ' +
-      (n.tags || []).join(' ') + ' ' +
-      (n.themes || []).join(' ') + ' ' +
+      tagsOf({ tags: n.aka }).join(' ') + ' ' +
+      tagsOf(n).join(' ') + ' ' +
+      tagsOf({ tags: n.themes }).join(' ') + ' ' +
       (n.tradition || '') + ' ' +
       (n.body || '')
     ).toLowerCase();
@@ -4564,7 +4564,7 @@ VIEWS.authors = {
       const rows = [];
       src.forEach((items, pid) => {
         const p = NODES_BY_ID[pid];
-        if (!p) return;
+        if (!p || !matchesFilter(p)) return;
         const dateKey = (typeof p.date_earliest === 'number') ? p.date_earliest : 99999;
         rows.push({ p, items, dateKey, degree: DEGREE.get(p.id) || 0 });
       });

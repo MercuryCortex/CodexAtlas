@@ -20,6 +20,7 @@ python3 build_data.py
 #    downloads the new data.js instead of serving a stale cached copy.
 V=$(date +%Y%m%d-%H%M%S)
 sed -i '' "s|data\.js?v=[^\"]*|data.js?v=${V}|" index.html
+sed -i '' "s|app\.js?v=[^\"]*|app.js?v=${V}|" index.html
 echo "Cache token → ${V}"
 
 # 3. Start the server if it isn't already running.
