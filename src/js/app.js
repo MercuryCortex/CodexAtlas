@@ -4639,6 +4639,7 @@ let _atlasNodesById = new Map();     // node-id → vault node (for hover-trail 
 let _atlasHoveredId = null;          // currently-hovered node id (debounce trail rebuild)
 let _atlasClusterPopup = null;       // (legacy) cluster-list popup — replaced by spiderfy
 let _atlasSpiderActive = null;       // cluster center [lng,lat] when a spider is open, else null
+let _atlasSpiderRecentering = false; // true while map is auto-easing to center a cluster for spider
 let _atlasZoomHandler = null;
 let _atlasEndHandler = null;
 let _atlasResizeObs = null;
@@ -5105,8 +5106,10 @@ VIEWS.atlas = {
           if (onSpider.length) return;
           _atlasHideSpider();
         });
-        _atlasMap.on('zoomstart', () => { if (_atlasSpiderActive) _atlasHideSpider(); });
-        _atlasMap.on('dragstart', () => { if (_atlasSpiderActive) _atlasHideSpider(); });
+        // Ignore the synthetic zoom/move events that fire while we're auto-recentering
+        // a cluster to make room for the spider expansion (item 3 polish, 2026-05-15).
+        _atlasMap.on('zoomstart', () => { if (_atlasSpiderActive && !_atlasSpiderRecentering) _atlasHideSpider(); });
+        _atlasMap.on('dragstart', () => { if (_atlasSpiderActive && !_atlasSpiderRecentering) _atlasHideSpider(); });
       }
     };
 
@@ -5269,11 +5272,36 @@ function _atlasShowSpider(centerLngLat, leaves) {
   if (!pointsSrc || !linesSrc) return;
 
   const N = leaves.length;
-  const centerPx = _atlasMap.project(centerLngLat);
-  // Ring layout. Single ring for ≤ 8 items, expand to multiple rings beyond.
+  // Compute layout constants up-front so we know the outer-ring pixel-radius
+  // (used both for layout below AND for the viewport-edge check at the top).
   const baseRadius   = N <= 6 ? 46 : 56;
   const radiusStep   = 38;
   const itemsPerRing = N <= 8 ? N : 10;
+  const ringCount    = Math.ceil(N / itemsPerRing);
+  const outerRadius  = baseRadius + (ringCount - 1) * radiusStep;
+
+  // Item 3 polish: if the cluster sits within `outerRadius + margin` pixels of any
+  // viewport edge, smoothly recenter the map on it first — otherwise the spider
+  // ring would overflow off-screen. The recenter is gated by _atlasSpiderRecentering
+  // so the zoomstart/dragstart hide-handlers don't fire during the animation.
+  const margin   = 24;
+  const centerPx = _atlasMap.project(centerLngLat);
+  const rect     = _atlasMap.getContainer().getBoundingClientRect();
+  const needsRecenter =
+    centerPx.x < outerRadius + margin ||
+    centerPx.x > rect.width  - outerRadius - margin ||
+    centerPx.y < outerRadius + margin ||
+    centerPx.y > rect.height - outerRadius - margin;
+  if (needsRecenter && !_atlasSpiderRecentering) {
+    _atlasSpiderRecentering = true;
+    _atlasMap.once('moveend', () => {
+      _atlasSpiderRecentering = false;
+      // Recompute after the move (the projected center is now the viewport center).
+      _atlasShowSpider(centerLngLat, leaves);
+    });
+    _atlasMap.easeTo({ center: centerLngLat, duration: 380 });
+    return;
+  }
 
   const pointFeatures = [];
   const lineFeatures  = [];
