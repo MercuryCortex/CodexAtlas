@@ -17,7 +17,14 @@ attributes: ["thousand heads, thousand eyes, thousand feet (RV 10.90)", "the sou
 attested-in: ["[[phase-2-001-rig-veda-family-books]]"]
 equivalents: []
 syncretic-edges: []
-status: "stub"
+status: "full"
+syncretic-edges:
+  - target: "adam-kadmon"
+    type: "MASSIVE-WIN"
+    notes: "Both are pre-existent Cosmic Humans whose 'body' constitutes or generates the universe. RV 10.90 Puruṣa-sūkta (~1200 BCE) and Lurianic Adam Kadmon (~1570 CE) are independent articulations of the same cosmogonic insight: the cosmos is anthropomorphic at its origin. No transmission channel has been established; the convergence is structural."
+  - target: "anthropos-myth"
+    type: "primary-instance"
+    notes: "The Puruṣa-sūkta is the oldest surviving Anthropos Myth text — the locus classicus of cosmogonic dismemberment of the Cosmic Person. Lincoln (1986) argues it shares an Indo-European cosmogonic heritage with Norse Ymir, Iranian Gayōmart, and Roman Romulus."
 refs:
   - title: "The Rig Veda: An Anthology"
     author: "O'Flaherty, Wendy Doniger (trans.)"
@@ -31,7 +38,7 @@ refs:
     publisher: "University of California Press"
     type: "monograph"
     tier: 1
-tags: [deity, vedic, samkhya, anthropos, cosmogonic]
+tags: [deity, vedic, samkhya, anthropos, cosmogonic, MASSIVE-WIN, cross-tradition, adam-kadmon, cosmic-human, dismemberment]
 ---
 
 # Puruṣa (the Cosmic Person)
@@ -46,6 +53,14 @@ A multivalent term across Indian religious and philosophical traditions. The ear
 ## Mythological role
 - Cosmogonic: from his sacrificed body, the moon from his mind, sun from his eye, the gods from his mouth, the four *varṇa* social classes from his mouth, arms, thighs, and feet.
 - In Sāṃkhya: pure-consciousness-principle, witness, soul.
+
+## Edge Connections
+
+| Edge | Type | Description |
+|---|---|---|
+| → [[anthropos-myth]] | primary-instance | Puruṣa-sūkta (RV 10.90) is the oldest surviving Anthropos Myth text — the locus classicus of cosmogonic dismemberment |
+| → [[adam-kadmon]] | MASSIVE-WIN | Independent parallel: both are Cosmic Humans whose body constitutes/generates the universe; 2,700 years apart, no transmission |
+| → [[albion]] | structural-parallel | Blake's Albion = Cosmic Human = independent modern instance of the same archetype |
 
 ## Refs
 1. O'Flaherty (trans.), *The Rig Veda*, 1981.

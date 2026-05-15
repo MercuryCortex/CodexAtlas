@@ -7,7 +7,14 @@ category: "theological"
 appearances: ["[[phase-3-020-gospel-of-john]]", "[[phase-4-003-gospel-of-truth]]", "[[phase-4-025-clement-stromata]]"]
 deity-instances: []
 parent-theme: "[[logos-cosmic-reason]]"
-status: "stub"
+status: "full"
+related-themes:
+  - "[[logos-cosmic-reason]]"
+  - "[[logos-philonic]]"
+  - "[[wisdom-personified]]"
+  - "[[theme-two-powers-in-heaven]]"
+  - "[[metatron]]"
+  - "[[theme-holy-spirit-sophia]]"
 refs:
   - title: "Christology in the Making"
     author: "Dunn, James D.G."
@@ -27,7 +34,7 @@ refs:
     publisher: "Doubleday (Anchor Bible 29)"
     type: "commentary"
     tier: 1
-tags: [theme, christology, logos, johannine, wisdom, incarnation]
+tags: [theme, christology, logos, johannine, wisdom, incarnation, MASSIVE-WIN, cross-tradition, philo, metatron, sophia, wisdom-personified]
 ---
 
 # Johannine Logos
@@ -56,6 +63,33 @@ The use of *logos* (Word) in [[phase-3-020-gospel-of-john]] 1:1–18 to designat
 ## Disputes
 - **Hymnic source theory.** Whether John 1:1–18 (or 1:1–5, 9–14, 16) is a pre-Johannine hymn the author incorporated, or original Johannine composition. Bultmann posited a non-Christian Gnostic-style hymn rewritten; current scholarship is split.
 - **Logos in the rest of John.** The Logos title appears only in the prologue; the rest of the Gospel uses Son, Son of Man, "I am" formulas. Whether this is significant (prologue prepended later) or coincidental.
+
+## MASSIVE WIN: Three Traditions, One Slot
+
+The Johannine Logos is the apex of a three-tradition convergence in the late 1st century CE:
+
+| Source tradition | What it contributes | Philonic bridge |
+|---|---|---|
+| **Stoic Logos** | Cosmic rational principle pervading all things | Philo absorbed Stoic logos into his system |
+| **Platonic Forms** | The intelligible blueprint of creation in the divine mind | Philo: the Logos IS the Forms (the divine mind containing all archetypes) |
+| **Hebrew *dabar* YHWH** | The word of the LORD as creative-revelatory act (Gen 1, Ps 33:6) | Philo: the Logos is the divine dabar — God's creative speech |
+| **Wisdom (Hokmah / Sophia)** | Pre-existent feminine divine who plays before God and descends to humanity | Philo: Logos = Sophia; John: Logos inherits Sophia's predicates |
+| **Metatron tradition** | The "Lesser YHWH," enthroned divine vicegerent, celestial scribe | John identifies the Logos-Christ with the being who holds the divine-regent slot |
+
+**The step John takes that none of the sources take**: "the Logos became flesh and dwelt among us" (1:14). The cosmic creative principle incarnates in a specific historical individual. This is the distinctively Christian theological move — and it required the synthesis of all five traditions to have a concept rich enough to bear the claim.
+
+## Edge Connections
+
+| Edge | Type | Description |
+|---|---|---|
+| → [[logos-cosmic-reason]] | parent-theme | Johannine Logos is the Christological culmination of the cross-tradition Logos |
+| → [[logos-philonic]] | direct-upstream | Philo's "Second God" / Logos predicates are the most proximate conceptual source |
+| → [[wisdom-personified]] | MASSIVE-WIN | The prologue's Logos inherits Wisdom's predicates (Prov 8 / Sir 24 / Wis 7): pre-existence, agent of creation, descent to dwell with humans |
+| → [[metatron]] | MASSIVE-WIN | Metatron = the "Lesser YHWH" enthroned beside God; John identifies Jesus with the being who holds that slot |
+| → [[theme-two-powers-in-heaven]] | instance | John's Logos-Christ = the second divine power; the binitarian theology that early rabbinic Judaism was simultaneously suppressing |
+| → [[theme-holy-spirit-sophia]] | parallel | The displaced Sophia / Holy Spirit tradition is what the Johannine Logos absorbed and masculinized; feminist theology recovers the Sophia-Christ identification |
+| → [[tradition-gnosticism]] | downstream | Valentinian Gnosticism absorbed the Johannine Logos concept and radicalized it into its own Aeon-system |
+| → [[phase-3-020-gospel-of-john]] | primary-source | The text; John 1:1–18 the prologue |
 
 ## Refs
 1. Dunn, *Christology in the Making*, 1980/1989.
