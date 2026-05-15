@@ -4641,6 +4641,7 @@ let _atlasClusterPopup = null;       // (legacy) cluster-list popup — replaced
 let _atlasSpiderActive = null;       // cluster center [lng,lat] when a spider is open, else null
 let _atlasSpiderRecentering = false; // true while map is auto-easing to center a cluster for spider
 let _atlasLockedId = null;           // node id whose trails/highlight stay visible across hover (sticky-select via click)
+let _atlasPreSpiderState = null;     // {center, zoom} snapshot when a spider was opened — used by empty-click "ease back to natural state"
 let _atlasZoomHandler = null;
 let _atlasEndHandler = null;
 let _atlasResizeObs = null;
@@ -4807,11 +4808,11 @@ VIEWS.atlas = {
         center: [40, 28],
         zoom: 2.2,
         minZoom: 0.6,
-        // maxZoom 12 — PMTiles basemap only has z0-z7 tiles so the basemap pixelates
-        // past z7, but we want the user to keep zooming so the natural co-location
-        // spiral (~0.3° radius for a 99-doc cluster) has room to spread. Marker
-        // circles + cluster rings stay crisp (GPU-rendered vector). 2026-05-15.
-        maxZoom: 12,
+        // maxZoom 7 — matches PMTiles native max (no basemap blur past z7).
+        // User 2026-05-15: "we don't have to zoom so much, limit at the current
+        // ~200%". Cluster-click now opens a spider with labels instead of
+        // zooming deep, so we don't need extreme zoom levels anymore.
+        maxZoom: 7,
         // Single-world view (no horizontal wrap). The previous `true` value
         // caused the user-reported "infinite scrolling repeating tile" — markers
         // render only in the canonical world copy, so panning into duplicates
@@ -4851,10 +4852,13 @@ VIEWS.atlas = {
           type: 'line',
           layout: { 'line-cap': 'round', 'line-join': 'round' },
           paint: {
+            // Brighter, thicker trails (user 2026-05-15: "can we bring back the
+            // connections?"). Was line-opacity 0.6 + width 0.9-1.9 — too faint
+            // on the dark basemap. Now opacity 0.85 + width 1.6-3.2.
             'line-color': _atlasToken('--gold', '#d4a55a'),
-            'line-width': ['interpolate', ['linear'], ['zoom'], 1, 0.9, 4, 1.3, 7, 1.9],
-            'line-opacity': 0.6,
-            'line-blur': 0.35
+            'line-width': ['interpolate', ['linear'], ['zoom'], 1, 1.6, 4, 2.4, 7, 3.2],
+            'line-opacity': 0.85,
+            'line-blur': 0.2
           }
         });
       }
@@ -4880,10 +4884,11 @@ VIEWS.atlas = {
         if (!coordGroups.has(key)) coordGroups.set(key, []);
         coordGroups.get(key).push(n.id);
       });
-      // Jitter spiral parameters. 0.025° ≈ 2.8 km at the equator, ≈ 2 km at lat 40.
-      // Items per ring grows so the spiral stays roughly circular as N increases.
-      const JITTER_R0  = 0.025;
-      const JITTER_STEP = 0.030;
+      // Jitter spiral parameters — bumped 2026-05-15 ("they need to grow apart
+      // more and maintain this size"). 0.040° ≈ 4.4 km at lat 40, ≈ 4 km along
+      // the meridian. Big enough to be visibly separated by ~z 4-5.
+      const JITTER_R0  = 0.040;
+      const JITTER_STEP = 0.045;
       const ITEMS_PER_RING = 8;
 
       const featureCollection = {
@@ -5034,13 +5039,16 @@ VIEWS.atlas = {
           source: 'atlas-nodes',
           filter: ['!', ['has', 'point_count']],
           paint: {
-            // Bubbles grow faster on zoom (user 2026-05-15: "we got plenty space").
-            // Curve: 1.4× base at z 1, 2.5× at z 6, 4× at z 10.
+            // Bubbles tuned for the new maxZoom 7 — they reach their full size
+            // earlier (around z 4-5) and HOLD it past that, since we don't want
+            // them to keep growing into giant balloons when we already have
+            // plenty of space (user 2026-05-15: "redo the bubbles now to fit
+            // here, they need to grow apart more and maintain this size").
             'circle-radius': [
-              'interpolate', ['exponential', 1.5], ['zoom'],
-              1,  ['*', ['get', 'dotSize'], 1.4],
-              6,  ['*', ['get', 'dotSize'], 2.5],
-              10, ['*', ['get', 'dotSize'], 4]
+              'interpolate', ['exponential', 1.4], ['zoom'],
+              1, ['*', ['get', 'dotSize'], 1.5],
+              4, ['*', ['get', 'dotSize'], 2.2],
+              7, ['*', ['get', 'dotSize'], 2.8]
             ],
             'circle-color': ['get', 'family_color'],
             'circle-stroke-width': 1,
@@ -5154,34 +5162,24 @@ VIEWS.atlas = {
           // offset markers connected by leader lines back to the center. (User's
           // explicit ask 2026-05-15: "the nodes expand, even if you need to spread
           // them from the same position by X position".)
-          // Zoom-to-fill (user's 2026-05-15 ask: "when click on the big number in
-          // gold make the zoom closer so it expands as close as possible to fill
-          // screen the nodes area"). Compute a target zoom where the natural co-
-          // location spiral (precomputed at GeoJSON-build time) for this cluster
-          // fills ~60% of the shorter viewport dimension. Spider is only invoked
-          // as a fallback if we'd hit maxZoom and still need to spread.
-          const ringCount  = Math.ceil(pointCount / 8);
-          const spiralRDeg = 0.025 + Math.max(0, ringCount - 1) * 0.030;
-          const rect       = _atlasMap.getContainer().getBoundingClientRect();
-          const targetPx   = Math.min(rect.width, rect.height) * 0.6;
-          // Mercator: pixels-per-degree at zoom z (lat axis) = 256 * 2^z / 360.
-          // 2 * R * pxPerDeg = targetPx → z = log2(targetPx * 360 / (2*R*256))
-          const naiveZ     = Math.log2((targetPx * 360) / Math.max(0.001, 2 * spiralRDeg * 256));
-          const maxZ       = _atlasMap.getMaxZoom();
-          const finalZ     = Math.min(maxZ, Math.max(currentZoom + 1, naiveZ));
-          _atlasHideSpider();
-          _atlasMap.easeTo({ center: clusterCoord, zoom: finalZ, duration: 700 });
-          // Spider fallback: if we capped at maxZoom and the spiral STILL won't
-          // separate visually (only possible for an unusually large all-coincident
-          // cluster), open the spider after the move ends.
-          if (finalZ >= maxZ - 0.01 && spiralRDeg < 0.01) {
-            _atlasMap.once('moveend', () => {
-              source.getClusterLeaves(clusterId, pointCount, 0, (err, leaves) => {
-                if (err || !leaves || !leaves.length) return;
-                _atlasShowSpider(clusterCoord, leaves);
-              });
-            });
-          }
+          // SPIDER-ON-CLICK (user 2026-05-15: "we click and it just zooms to
+          // 30% — but expands all nodes small-sized and with generous spaces
+          // between them and displaying text"). Open the spider directly with
+          // labels visible; no deep zoom-in. Spider auto-recenters to fit the
+          // ring in the viewport. Empty-click collapses and easeTo's back.
+          source.getClusterLeaves(clusterId, pointCount, 0, (err, leaves) => {
+            if (err || !leaves || !leaves.length) return;
+            // Remember the zoom we were at so empty-click can ease back to it.
+            _atlasPreSpiderState = { center: _atlasMap.getCenter(), zoom: currentZoom };
+            // Gentle zoom-out so the spider has room (only if we're zoomed past
+            // overview level — at low zoom, stay put and let auto-recenter handle it).
+            if (currentZoom > 3.5) {
+              _atlasMap.easeTo({ center: clusterCoord, zoom: 3.0, duration: 450 });
+              _atlasMap.once('moveend', () => _atlasShowSpider(clusterCoord, leaves));
+            } else {
+              _atlasShowSpider(clusterCoord, leaves);
+            }
+          });
         });
 
         // ---- SPIDER (expanded-cluster) source + layers ----
@@ -5207,27 +5205,47 @@ VIEWS.atlas = {
             'line-blur': 0.3
           }
         });
-        // Spider points — same styling DNA as atlas-nodes-circles so they read as
-        // "this is one of the cluster's children", just spatially fanned.
+        // Spider points — small dots, generous gold ring so they read as
+        // "expanded cluster member". Kept compact so the labels can breathe.
         _atlasMap.addLayer({
           id: 'atlas-spider-circles',
           source: 'atlas-spider-points',
           type: 'circle',
           paint: {
-            // Bubbles grow faster on zoom (user 2026-05-15: "we got plenty space").
-            // Curve: 1.4× base at z 1, 2.5× at z 6, 4× at z 10.
-            'circle-radius': [
-              'interpolate', ['exponential', 1.5], ['zoom'],
-              1,  ['*', ['get', 'dotSize'], 1.4],
-              6,  ['*', ['get', 'dotSize'], 2.5],
-              10, ['*', ['get', 'dotSize'], 4]
-            ],
+            'circle-radius': ['+', 4, ['*', 0.6, ['sqrt', ['coalesce', ['get', 'deg'], 0]]]],
             'circle-color': ['get', 'family_color'],
             'circle-stroke-width': 1.5,
             'circle-stroke-color': _atlasToken('--gold', '#d4a55a'),
             'circle-opacity': 0.95
           }
         });
+        // Spider TEXT LABELS — every spider point shows its title (user 2026-05-15:
+        // "displaying text — so we can select pick and zoom out easily"). Hub-tier
+        // labels render first via symbol-sort-key so they win declutter.
+        try {
+          _atlasMap.addLayer({
+            id: 'atlas-spider-labels',
+            source: 'atlas-spider-points',
+            type: 'symbol',
+            layout: {
+              'text-field': ['get', 'title'],
+              'text-font': ['Noto Sans Regular'],
+              'text-size': 11,
+              'text-anchor': 'left',
+              'text-offset': [0.9, 0],
+              'text-allow-overlap': true,        // spider items are spaced; we WANT all labels visible
+              'text-ignore-placement': true,
+              'symbol-sort-key': ['+', ['coalesce', ['get', 'tier'], 3], ['*', -0.001, ['get', 'deg']]]
+            },
+            paint: {
+              'text-color': _atlasToken('--text-0', '#f1ede2'),
+              'text-halo-color': _atlasToken('--bg-0', '#07090f'),
+              'text-halo-width': 1.6
+            }
+          });
+        } catch (e) {
+          console.warn('[atlas] spider labels skipped:', e.message);
+        }
 
         // Spider hover/click — same UX as the underlying circles.
         _atlasMap.on('mousemove', 'atlas-spider-circles', (ev) => {
@@ -5263,18 +5281,29 @@ VIEWS.atlas = {
           _atlasShowHoverTrails(id);
         });
 
-        // Background click (anywhere off a feature) clears EVERYTHING:
-        //   • the spider (if open)
-        //   • the sticky-selected node (clears _atlasLockedId + restores opacity)
+        // Background click (anywhere off a feature) clears EVERYTHING and eases
+        // back to the natural state the user was viewing BEFORE they opened the
+        // spider (user 2026-05-15: "if after zoom once we click empty the
+        // bubbles zoom back to their natural state").
         _atlasMap.on('click', (ev) => {
           const onFeature = _atlasMap.queryRenderedFeatures(ev.point, {
             layers: ['atlas-nodes-circles', 'atlas-spider-circles', 'atlas-clusters']
           });
           if (onFeature.length) return;
+          const hadSpider = !!_atlasSpiderActive;
           if (_atlasSpiderActive) _atlasHideSpider();
           if (_atlasLockedId) {
             _atlasLockedId = null;
             _atlasHideHoverTrails();
+          }
+          // Ease back to the pre-spider vantage so the user resumes scanning
+          // the overview without manually zooming out.
+          if (hadSpider && _atlasPreSpiderState) {
+            const { center, zoom } = _atlasPreSpiderState;
+            _atlasSpiderRecentering = true;   // suppress hide-on-zoomstart
+            _atlasMap.easeTo({ center, zoom, duration: 500 });
+            _atlasMap.once('moveend', () => { _atlasSpiderRecentering = false; });
+            _atlasPreSpiderState = null;
           }
         });
         // Ignore the synthetic zoom/move events that fire while we're auto-recentering
