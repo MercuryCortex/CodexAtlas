@@ -1,5 +1,5 @@
 ---
-id: phase-6-divine-comedy
+id: phase-5-divine-comedy
 type: document
 title: Divina Commedia (Divine Comedy)
 date-composed: 1308
@@ -56,14 +56,14 @@ This is one of the most important cross-tradition transmission chains in the vau
 
 **Step 2 — Islamic Mi'rāj elaboration**: The Quranic Night Journey (*Isrā' wa-Mi'rāj*, Quran 17:1, 53:1–18) generated an extensive body of elaborative *hadith* and visionary literature. The most developed form is the *Kitāb al-Mi'rāj* (Book of the Ascent/Ladder), which describes Muhammad's guided ascent through seven heavens, encounter with prophets at each sphere, and vision of paradise and hell with graduated punishments by sin category. The Sirat bridge (narrow path over hell) parallels the Zoroastrian Chinvat bridge. The Iranian-Islamic transmission of afterlife imagery is demonstrated by vocabulary (*firdaws*/paradise from Avestan *pairidaēza*; Sirat bridge topology) and by the Persianate background of the scholars who elaborated the *Mi'rāj* tradition.
 
-**Step 3 — Latin translation in Dante's orbit**: Enrico Cerulli (1949) published a critical edition of the *Liber Scalae Machometi* (Book of Muhammad's Ladder), a Latin translation of a Spanish/Arabic *Mi'rāj* text commissioned by Alfonso X of Castile and completed in 1264 CE — 44 years before Dante began the *Commedia*. Cerulli documented that Brunetto Latini, Dante's own teacher and intellectual mentor, had worked in Alfonso's court and had direct access to this textual milieu. The *Liber Scalae* circulated in northern Italy in Dante's lifetime.
+**Step 3 — Latin translation in Dante's orbit**: Enrico Cerulli (1949) published a critical edition of the *Liber Scalae Machometi* (Book of Muhammad's Ladder), a Latin translation of a Spanish/Arabic *Mi'rāj* text commissioned by Alfonso X of Castile and completed in 1264 CE — 44 years before Dante began the *Commedia*. Cerulli hypothesizes transmission through Brunetto Latini, Dante's teacher and intellectual mentor, who had worked in Alfonso's court and had direct access to this textual milieu — but Dante's direct contact with the *Liber Scalae* cannot be established from surviving records. The text demonstrably circulated in northern Italy in Dante's lifetime; whether it reached Dante personally remains Cerulli's inference, not proved.
 
-**Step 4 — Dante's *Commedia***: The structural parallels between the *Commedia* and the *Mi'rāj*/Arda Viraf tradition — seven-heaven ascent with guide figures, graduated hell with sin-matched punishments, intercessor figure at the apex of the journey, beatific vision as final destination — are too systematic to be coincidental. The scholarly consensus, following Cerulli, is that the *Mi'rāj* tradition was one major source (alongside Virgil's *Aeneid*, Cicero's *Somnium Scipionis*, and the Latin Christian apocalyptic tradition) for Dante's afterlife architecture.
+**Step 4 — Dante's *Commedia***: The structural parallels between the *Commedia* and the *Mi'rāj*/Arda Viraf tradition — seven-heaven ascent with guide figures, graduated hell with sin-matched punishments, intercessor figure at the apex of the journey, beatific vision as final destination — are too systematic to be coincidental. The scholarly consensus, following Cerulli, is that the *Mi'rāj* tradition was plausibly one major source (alongside Virgil's *Aeneid*, Cicero's *Somnium Scipionis*, and the Latin Christian apocalyptic tradition) for Dante's afterlife architecture — though direct textual access cannot be proved from surviving records.
 
 **The complete chain:**
 Avestan afterlife doctrine (~600 BCE?) → [[phase-4-086-arda-viraf-namag]] (3rd–5th c. CE) → Islamic *Mi'rāj* literature (7th–12th c. CE) → *Liber Scalae Machometi* (Latin, 1264 CE) → *Divina Commedia* (1308–1321 CE) → entire Western literary tradition of the afterlife
 
-This is a **MASSIVE WIN** for the vault: the text that most educated Westerners associate with the Christian imagination of hell and heaven descends demonstrably from a Zoroastrian prototype via Islamic transmission. Three traditions across fifteen centuries converge in this single poem.
+This is a **MASSIVE WIN** for the vault: the text that most educated Westerners associate with the Christian imagination of hell and heaven descends *plausibly* — with strong circumstantial evidence — from a Zoroastrian prototype via Islamic transmission. The Zoroastrian → Islamic leg is demonstrated; the Islamic → Dante leg rests on Cerulli's well-supported but unproved hypothesis of transmission through Brunetto Latini. Three traditions across fifteen centuries converge in this single poem.
 
 ## Edge connections
 

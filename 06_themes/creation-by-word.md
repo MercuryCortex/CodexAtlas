@@ -55,6 +55,8 @@ The formula also appears in classical Islamic theology (*kalām*) as evidence fo
 
 ## The complete chain — three millennia, four traditions, one formula
 
+> **Transmission vs. parallel note:** The Hebrew → Christian → Islamic leg of this chain is historically documented: Philo of Alexandria's Logos bridges Hebrew and Greek thought; the Johannine prologue inherits directly from Philo; and the Quran engages directly with the "People of the Book," making the Islamic *kun fa-yakun* a conscious participant in the same theological conversation. The Egyptian (Memphite) → Hebrew leg is a **structural parallel** — the same theological logic appears in both traditions, but direct textual transmission from Memphite Theology to P-source Genesis 1 has not been established in the scholarly literature (Allen 1988 notes the parallel without claiming dependence). The chain should be read as: *one proved transmission sequence* (Hebrew → Hellenistic-Christian → Islamic) *with a probable but unproven ancient precedent* (Egyptian). The MASSIVE WIN label refers to the depth and breadth of the convergence, not to a claim that all four links are equally documented.
+
 | Tradition | Formula | Source | Date |
 |---|---|---|---|
 | Egyptian (Memphite) | Ptah creates by "thought of heart" + "utterance of tongue" | [[phase-1-027-memphite-theology-shabaka-stone]] | ~8th c. BCE inscription; claimed 3rd-millennium origin |

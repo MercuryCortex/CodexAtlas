@@ -98,7 +98,7 @@ This is not a diffusionist claim (the pattern is not transmitted from one tradit
 
 Socrates accepts the death sentence philosophically. His execution becomes the founding martyrdom of the Western intellectual tradition. See [[personal-daimon]].
 
-**The conscious relay**: [[justin-martyr]] in his *First Apology* ch. 46 (~155 CE) explicitly calls Socrates "a Christian before Christ": *"Those who lived reasonably are Christians, even though they have been thought atheists; as, among the Greeks, Socrates and Heraclitus, and men like them."* Justin consciously appropriates Socrates for the Christian tradition, creating the philosophical-martyrdom lineage: Socrates → Christ → Christian apologist martyrdom. This is the vault's clearest documented **cross-tradition conscious relay** — an early Christian author explicitly claiming a pagan philosopher as a pre-Christian practitioner of the pattern.
+**The conscious relay**: [[justin-martyr]] in his *First Apology* ch. 46 (~155 CE) writes: *"Those who lived reasonably [meta logou] are Christians, even though they have been thought atheists; as, among the Greeks, Socrates and Heraclitus, and men like them."* This is the earliest extant Christian claim that a pagan philosopher falls within the pattern — not Justin's phrase "a Christian before Christ" (a later paraphrase that overstates his actual wording), but the functional equivalent: inclusion in the class of those who "lived according to reason/Logos." Justin consciously appropriates Socrates for the Christian tradition, creating the philosophical-martyrdom lineage: Socrates → Christ → Christian apologist martyrdom. This is the vault's clearest documented **cross-tradition conscious relay** — an early Christian author explicitly claiming a pagan philosopher as a pre-Christian practitioner of the pattern.
 
 ### 2. Jesus of Nazareth (~4 BCE–~33 CE)
 
@@ -120,9 +120,9 @@ The execution becomes the paradigmatic Sufi martyr-saint story. Within the tradi
 
 [[suhrawardi]] (Shihāb al-Dīn Yaḥyā Suhrawardī, called *al-Maqtūl* — "the Murdered") was the founder of the Illuminationist (*Ishrāqī*) school of Islamic philosophy. His synthesis of Zoroastrian light-metaphysics, Neoplatonism, and Islam was judged theologically dangerous by the *fuqahāʾ* (jurists) of Aleppo. He was executed in 1191 CE on Saladin's order, at approximately age 36.
 
-Henry Corbin (1971) treats Suhrawardī as the archetypal *murdered sage* (*shaykh al-maqtūl*) in the Islamic mystical tradition — a figure whose very execution validates the gnosis he transmitted. The *Ishrāqiyya* school that followed him made his martyrdom central to its identity: Suhrawardī is the Illuminationist whose death illuminated the tradition. See [[phase-5-018-suhrawardi-hikmat-al-ishraq]].
+Suhrawardī was executed in 1191 CE on formal charges of heresy and corrupting the faith of the young prince al-Zahir Ghazi (Saladin's son). Henry Corbin (1971) interprets his synthesis of Neoplatonic, Iranian, and Islamic elements as the underlying target of the orthodox *fuqahāʾ*'s hostility — though the formal charge was broad heterodoxy, not "Zoroastrian synthesis" per se. Corbin treats Suhrawardī as the archetypal *murdered sage* (*shaykh al-maqtūl*) in the Islamic mystical tradition — a figure whose very execution validates the gnosis he transmitted. The *Ishrāqiyya* school that followed him made his martyrdom central to its identity: Suhrawardī is the Illuminationist whose death illuminated the tradition. See [[phase-5-018-suhrawardi-hikmat-al-ishraq]].
 
-The Zoroastrian connection is itself significant: Suhrawardī was executed partly because his synthesis included explicitly pre-Islamic Iranian (Zoroastrian) light-theology — the execution targets the cross-tradition synthesis, not only the mystical union claim.
+The Zoroastrian connection is itself significant: scholars (Corbin 1971) interpret the cross-tradition synthesis — his inclusion of pre-Islamic Iranian light-theology — as a central provocation for the orthodox ulama, even if the surviving formal charges do not name it explicitly.
 
 ## The Pattern Mechanics
 
@@ -140,11 +140,11 @@ Across all four instances, the structure is identical:
 
 ## MASSIVE-WIN Connections
 
-- **Justin Martyr's "Socrates was a Christian"** (1st Apology ch. 46) is the vault's clearest documented cross-tradition conscious relay: an early Christian author (~155 CE) explicitly appropriating a pagan philosopher from ~399 BCE for his tradition — not as a parallel motif but as an actual member of the same class
+- **Justin Martyr's claim that Socrates "lived according to Logos"** (*First Apology* ch. 46, ~155 CE) is the vault's clearest documented cross-tradition conscious relay: an early Christian author explicitly appropriating a pagan philosopher from ~399 BCE for his tradition — not as a parallel motif but as an actual member of the same class. (The common paraphrase "Socrates was a Christian before Christ" overstates Justin's actual wording; his text includes Socrates in the category of those who "lived reasonably," which in Justin's Logos theology amounts to the same inclusion.)
 - **Al-Ḥallāj ↔ [[jesus-of-nazareth]]**: both described as "dying of love" in their respective traditions; the Sufi tradition deliberately uses crucifixion imagery for al-Ḥallāj, making this the clearest non-Christian appropriation of the Christian martyrdom figure
 - **Socrates's *daimonion* ↔ prophetic possession**: both are "divine voice" claims that attract charges of bypassing the established mediation of the sacred; both are executed for structurally the same claim regardless of cultural context
 - **The structural finding**: monotheistic religious institutions require unauthorized divine-claim cases to define their own mediation monopoly. Every heresy trial is a boundary-marking event. The executed divine claimant is not incidental to religious history but constitutive of it: the heresy trial is how orthodoxy knows what it is
-- **Suhrawardī's execution as cross-tradition boundary enforcement**: he was killed partly for his Zoroastrian light-synthesis — the execution targets cross-tradition contamination specifically, making this node connect back to [[persian-period-injection]] as an ironic coda: the Persian theological input that entered Judaism in the Achaemenid period was still dangerous enough to execute a philosopher for in 12th-century Islamic Aleppo
+- **Suhrawardī's execution as cross-tradition boundary enforcement**: scholars (Corbin 1971) interpret the Zoroastrian light-synthesis as the underlying provocation — even though the formal charges were general heresy and corruption of the prince — making this node connect back to [[persian-period-injection]] as an ironic coda: the Persian theological input that entered Judaism in the Achaemenid period was still dangerous enough to execute a philosopher for in 12th-century Islamic Aleppo
 
 ## Refs
 
