@@ -155,6 +155,30 @@ OVERRIDES = {
     "phase-4-033-babylonian-talmud": "Talmud",
     "phase-4-034-quran": "Quran",
 
+    # ---- Gnostic audit fixes (thumbnail-system-1 review pass) ----
+    # Correct slug/title mismatches discovered during the Gnostic image audit.
+    # Most prior entries used phase-4-XXX slugs; actual node ids use P4-XXX.
+    "P4-009-pistis-sophia":   "Nag Hammadi library",   # "Pistis Sophia" article has no thumbnail; NHC article does
+    "P4-016-shabuhragan":     "Mani (prophet)",         # Šābuhragān article has no thumbnail; Mani portrait does
+    "P4-028-augustine-confessions": "Confessions (Augustine)",  # was: Madonna album
+    "P4-060-letter-to-flora": "Letter to Flora",        # was: Loretta Young Show
+    "P5-030-palamas-triads":  "Gregory Palamas",        # was: Trial of the Chicago 7
+    "P7-015-beyond-belief":   "The Gnostic Gospels",    # was: Beyond Belief: Fact or Fiction TV show
+    "P7-018-aion":            "Carl Jung",               # Aion article has no thumbnail; Jung portrait does
+    "P7-019-mysterium-coniunctionis": "Carl Jung",      # same — direct to Jung portrait
+    "P1-021-shumma-izbu":     "Enuma Anu Enlil",        # was: Tamil movie; closest reliable Wikipedia article
+    "carpocrates":            "Carpocrates",
+    "cerdo":                  "Cerdo",
+    "cerinthus":              "Cerinthus",
+    "eve":                    "Adam and Eve",            # "Eve" Wikipedia article has no thumbnail
+    "fall-of-humanity":       "Fall of man",            # was: asteroid impact / global catastrophe
+    "event-mani-execution-274-or-277": "Mani (prophet)", # was: Execution of Mary Queen of Scots
+    "priscillian":            "Priscillian",             # Wikipedia article exists but has no thumbnail — placeholder
+    "tradition-catharism":    "Albigensian Crusade",     # "Catharism" article has no thumbnail; Crusade article does
+    "tradition-gnosticism":   "Apocryphon of John",      # "Gnosticism" article has no thumbnail; ApoJohn codex does
+    # Themes with no specific Wikipedia image — leave null (placeholder is correct)
+    # alien-god, anticosmic, personal-daimon: intentionally NOT in OVERRIDES
+
     # ---- 09_symbols/ overrides (opus-symbols-2, 2026-05-15) ----
     # Symbols often need explicit Wikipedia-article-title mapping because the slug
     # is descriptive ("eye", "bull", "lion") and bare-title search collides with
@@ -256,8 +280,9 @@ _PERSON_KW = frozenset({
     'ancient', 'medieval', 'gnostic', 'hermetic', 'kabbalist', 'alchemist',
     'neoplatonist', 'stoic', 'rabbi', 'monk', 'priest', 'sufi',
     'thinker', 'scholar', 'teacher', 'sage', 'guru', 'occultist',
-    'religious', 'spiritual', 'heretic', 'reformer', 'apostle', 'evangelist',
-    'church', 'faith', 'scripture', 'canon',
+    'religious', 'religion', 'spiritual', 'heretic', 'reformer', 'apostle', 'evangelist',
+    'church', 'faith', 'scripture', 'canon', 'biblical', 'bible', 'torah',
+    'genesis', 'abrahamic', 'christian', 'islamic', 'jewish',
 })
 _RELEVANCE_KW = {'deity': _DEITY_KW, 'person': _PERSON_KW}
 # ── end thresholds ─────────────────────────────────────────────────────────────
@@ -471,8 +496,12 @@ def find_thumbnail(node):
     # a fuzzy title search is safe.  For every other type (deity, symbol, person,
     # event, theme, tradition) the fuzzy search reliably returns wrong matches
     # (Geb → Geocaching, Nun → actual nuns, etc.).
+    # Also skip for OVERRIDE entries: if the human-vetted direct title has no
+    # image, fall back to the placeholder — not to opensearch garbage.
     # Missing image >> wrong image for a religion atlas.
     if node.get('type') != 'document':
+        return None
+    if node.get('id') in OVERRIDES:
         return None
     for cand in cands:
         hits = wiki_search(cand, limit=3)
