@@ -88,3 +88,32 @@ Tangun became the central symbol of **Korean national identity** in the 19th–2
 
 ## Historicity debates
 The *Samguk Yusa* (1281 CE) is the earliest text to record the Tangun myth in a coherent form; it was compiled by the Buddhist monk Iryeon during the Mongol occupation, possibly as a Korean nationalist assertion of independent cultural identity. Whether elements of the myth reflect pre-Buddhist Korean oral traditions from the Bronze Age or were substantially shaped by medieval Buddhist and Confucian frameworks is actively debated in Korean archaeology and historiography. The political stakes of the debate (national origin mythology as national identity) make it particularly sensitive.
+
+## MASSIVE-win connections
+
+**Tan'gun ↔ Romulus (Rome) — divine-origin founding myth:**
+Both are civilizational founders born of a divine-mortal union: Tan'gun (son of the heavenly [[hwanung]] + the bear-woman Ungnyeo, who passed a 100-day cave ordeal to become human) ↔ [[romulus]] (son of the god Mars + the vestal Rhea Silvia). Both: divine paternity + human/transformed-mortal mother → civilizational founder → deified at death (Tan'gun becomes the mountain deity of Asadal; Romulus is taken up to heaven as Quirinus). The key structural *difference*: Romulus kills his twin Remus (fratricidal founding violence), whereas Tan'gun is a unifying, non-violent founder — making the parallel precise enough to be analytically useful and different enough to be informative. This is a typological parallel with no transmission claim. Grayson (2002) notes the structural correspondence. See [[romulus]] and the [[divine-twins]] theme.
+
+**Bear-woman transformation ↔ shamanic initiation archetype:**
+The bear (*Ungnyeo*) eating garlic and mugwort and enduring a 100-day cave ordeal to become human is structurally identical to the shamanic initiation pattern: withdrawal from the ordinary world → ordeal (physical endurance, darkness, isolation) → transformation → emergence with new identity/power. The bear is not simply "becoming human" — she is undergoing the same transformative ordeal that a *mudang* (Korean shaman) undergoes during *naerims* (spirit-descent initiation). This is the founding myth encoding the shamanic initiation structure in cosmogonic form. The theme [[initiation]] and [[shamanism-hypothesis]] map this cross-cultural pattern. The northern Eurasian bear-cult complex (Siberian, Korean, Ainu, Sámi) shares this substrate; the cave-ordeal-transformation is its mythic crystallization.
+
+**Tan'gun as culture-hero ↔ Manu (Hindu) / Yima (Zoroastrian) / Nu Wa (Chinese) / Deucalion (Greek):**
+Tan'gun belongs to the cross-cultural civilizational first-ancestor / culture-hero family: the figure who establishes civilization, law, or the human race after a primordial boundary event (divine descent, flood, cosmic catastrophe). [[manu]] in Vedic tradition (first human, flood survivor, establishes dharma-law); [[yima-iranian]] / [[yima-jamshid]] in Zoroastrianism (first mortal king, establishes the golden age, builds the *vara* enclosure); [[nuwa]] in Chinese tradition (fashions humans from clay, repairs the sky); [[deucalion]] in Greek tradition (flood survivor who repopulates the earth). All are at the axis-point between divine origin and human civilization — the culture-hero who bridges the two orders. This parallel-form cluster is typological (independent invention of a shared narrative function) rather than transmission-based; see [[flood-motif]] and [[cosmic-cycles]] for the comparative frame.
+
+**Tan'gun ↔ [[tradition-donghak]] — the democratized founder-ancestor:**
+The *innaecheon* doctrine of [[choe-je-u]]'s Donghak — "Humans are Heaven," every person contains the divine — is the universalized form of the Tan'gun founding myth. Where Tan'gun's divine origin is singular (son of the heaven-god's son), Donghak democratizes it: every Korean (every human) carries the divine principle. Cheondogyo (the Donghak successor movement) explicitly invoked Tan'gun as Korea's independent divine foundation against both Confucian hierarchy and Western/Japanese religious encroachment. Daejonggyo (est. 1909 by Na Cheol), the Tangun-worship religion, completed this move: Tangun as explicit god, the patron of Korean national resistance to Japanese colonialism. The founding ancestor becomes the spiritual infrastructure of the anti-colonial movement.
+
+**Tan'gun ↔ the [[sacred-king]] / [[divine-kingship]] themes:**
+Tan'gun's dual title (*Dangun Wanggeom* — both shaman-title and king-title) encodes the same fusion of priestly and royal authority found across the [[divine-kingship]] theme: the Egyptian pharaoh as *Son of Ra* + chief priest; the Mesopotamian *en* priest-king; the Vedic *rajan*-soma-drinker; the Celtic sacred-king. The shaman-king who stands at the boundary of the human and divine worlds and mediates between them is a global archetype — Tan'gun is its Korean instantiation. The *sanshin* (mountain spirit) transformation at death — he does not die but becomes the presiding spirit of Asadal Mountain — parallels the pharaoh's transformation into Osiris: the sacred king's death is a cosmogonic event, not a termination.
+
+## Relations
+- child-of: [[hwanung]]
+- parallel: [[romulus]] (divine-origin founding hero; parallel-form, no transmission)
+- parallel: [[manu]] (civilizational first-ancestor culture-hero; parallel-form)
+- parallel: [[yima-jamshid]] (culture-hero establishes the golden age; parallel-form)
+- parallel: [[nuwa]] (cosmogonic culture-hero; parallel-form)
+- theme: [[divine-kingship]] (shaman-king as priestly-royal fusion)
+- theme: [[initiation]] (bear-ordeal as encoded shamanic initiation)
+- theme: [[sacred-king]] (transformation at death rather than death)
+- invoked-by: [[tradition-donghak]] (Donghak democratizes Tangun's divine origin into innaecheon)
+- invoked-by: Daejonggyo (est. 1909, explicit Tangun-worship religion, anti-Japanese resistance)

@@ -48,6 +48,20 @@ Format:
 
 ---
 
+## sonnet-korean-1 — content / Korean religious wedge — started 2026-05-15 — **FINISHED 2026-05-15**
+- Owning: `07_traditions/tradition-donghak.md` (NEW), `05_events/event-donghak-peasant-revolution-1894.md` (NEW), `04_persons/choe-je-u.md` (NEW), `03_deities/tangun.md` (upgrade)
+- Goal: Korean religious wedge — tradition-donghak, Donghak Peasant Revolution event, Choe Je-u founder, Tangun MASSIVE-WIN upgrade
+- Status: finished
+- Delivered:
+  - **`tradition-donghak`** (NEW) — full metadata tradition node; 1860 foundation, *innaecheon*/*gaebyeok* doctrines, 4 phases through Cheondogyo (~1M adherents today); MASSIVE-WIN: Donghak ↔ Catharism (suppressed syncretic response to dominant-religion pressure); Innaecheon ↔ al-Hallaj ↔ Advaita (human-divine identity claims generating persecution); Donghak ↔ Pentecostalism (colonial-margin syncretic eruptions, 1860/1906); founding-vision archetype; 4 refs (T1 Kallander + 3 T2).
+  - **`event-donghak-peasant-revolution-1894`** (NEW) — metadata event; 1894 uprising → Joseon appeals to Qing → Japan invokes Tientsin Convention → First Sino-Japanese War; full geopolitical cascade documented; parallel-motif: Albigensian Crusade + Ghost Dance.
+  - **`choe-je-u`** (NEW) — metadata person; 1860 founding vision, *innaecheon* radical egalitarianism, executed 1864; [[executed-divine-claimant]] pattern fully documented; MASSIVE-WIN: founding-vision archetype (Muhammad/Joseph Smith) + Innaecheon ↔ al-Hallaj persecution triad.
+  - **`tangun`** (UPGRADE) — 5-cluster MASSIVE-WIN section added: Tan'gun ↔ Romulus parallel-form; bear-ordeal ↔ shamanic initiation archetype; Tan'gun ↔ Manu/Yima/Nu Wa/Deucalion culture-hero cluster; Tan'gun ↔ tradition-donghak (democratized founder-ancestor myth); Tan'gun ↔ sacred-king/divine-kingship (shaman-king dual-title; mountain-deity transformation at death).
+- Build: **2118 nodes · 12,561 edges · 2.8% dead-link**
+- Last edit: `00_meta/STATUS.md`
+
+---
+
 ## sonnet-3rd-century-1 — content / 3rd-Century Collision Zone node + Investigation preset — started 2026-05-15 — **FINISHED 2026-05-15**
 - Owning: `06_themes/third-century-collision-zone.md` (NEW), `src/js/app.js` (Investigation preset insert)
 - Goal: Create the third-century-collision-zone theme node and wire it as the second Investigation preset in app.js
