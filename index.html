@@ -104,7 +104,7 @@
     </div>
     <div class="view-controls" id="view-controls"></div>
   </div>
-  <svg id="svg"></svg>
+  <div id="svg-wrap"><svg id="svg"></svg></div>
   <!-- Atlas Map (MapLibre GL) — outer pane owns positioning; inner div is the MapLibre target.
        Nesting is required because MapLibre sets `position: relative` inline on its container,
        which would otherwise defeat our `position: absolute; inset: 0` fill rule. -->

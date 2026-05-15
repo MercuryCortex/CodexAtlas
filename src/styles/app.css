@@ -21,6 +21,10 @@
   --detail-w: 400px;
   --nav-w-collapsed: 48px;
   --detail-w-collapsed: 36px;
+  /* Effective panel widths — override on body.nav/detail-collapsed so
+     svg#svg can compute an explicit width that Safari reads correctly. */
+  --eff-nav-w:    var(--nav-w);
+  --eff-detail-w: var(--detail-w);
 
   --serif: "Cormorant Garamond", "Iowan Old Style", Palatino, Georgia, serif;
   --sans: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
@@ -322,7 +326,9 @@ body {
   --footer-h: 44px;
   overflow: hidden;
 }
-body.footer-collapsed { --footer-h: 0px; }
+body.footer-collapsed  { --footer-h: 0px; }
+body.nav-collapsed     { --eff-nav-w:    var(--nav-w-collapsed); }
+body.detail-collapsed  { --eff-detail-w: var(--detail-w-collapsed); }
 
 /* BRAND-SECTION (lives at top of left nav) */
 .brand-section {
@@ -697,18 +703,23 @@ main.canvas {
 body.view-timeline main.canvas { background: var(--bg-0); }
 body.view-atlas    main.canvas { background: var(--bg-0); }
 
-/* Main viz SVG — occupies the space between the two floating panels */
-main.canvas > svg#svg {
+/* SVG wrapper — a plain div handles the panel-clearing geometry. vw/% units and
+   calc() work correctly on divs; SVG elements have browser quirks with these.
+   The --eff-* vars cascade from body.nav/detail-collapsed automatically. */
+#svg-wrap {
   position: absolute;
-  top: 0; bottom: 0;
-  left: var(--nav-w);
-  right: var(--detail-w);
-  display: block;
+  top: 0; height: 100%;
+  left: var(--eff-nav-w);
+  width: calc(100% - var(--eff-nav-w) - var(--eff-detail-w));
   overflow: visible;
-  transition: left var(--t-layout) var(--ease), right var(--t-layout) var(--ease);
+  transition: left var(--t-layout) var(--ease), width var(--t-layout) var(--ease);
 }
-body.nav-collapsed    main.canvas > svg#svg { left: var(--nav-w-collapsed); }
-body.detail-collapsed main.canvas > svg#svg { right: var(--detail-w-collapsed); }
+/* SVG fills the wrapper reliably — width:100% on a sized block parent works everywhere */
+main.canvas > div#svg-wrap > svg#svg {
+  display: block;
+  width: 100%; height: 100%;
+  overflow: visible;
+}
 /* Map-thumb SVG keeps its own 100% rule */
 .map-thumb svg { display: block; width: 100%; height: 100%; }
 .view-header {
