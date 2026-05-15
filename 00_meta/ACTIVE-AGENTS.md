@@ -18,6 +18,14 @@ Format:
 
 ---
 
+## sonnet-persian-spine-2 — content / BMAC + asura-deva-inversion + occultation-hidden-imam — started 2026-05-15
+- Owning: `06_themes/bmac-proto-zoroastrian.md`, `06_themes/asura-deva-inversion.md`, `06_themes/occultation-hidden-imam.md`
+- Goal: 3 new theme nodes deepening the Persian/Zoroastrian spine — BMAC archaeological substrate, the Indo-Iranian theological schism, and the Shi'a Hidden Imam as Saoshyant parallel
+- Status: in-progress
+- Last edit: 00_meta/ACTIVE-AGENTS.md
+
+---
+
 ## sonnet-girard-1 — content / René Girard scapegoat framework — started 2026-05-15 — **FINISHED 2026-05-15**
 - Owning: `rene-girard`, `scapegoat-mechanism`, `pharmakos`
 - Goal: Build the Girard / scapegoat-mechanism cluster that unifies Greek pharmakos + Levitical scapegoat + Romulus founding violence + Dionysus sparagmos + Christ crucifixion under one investigative frame
@@ -228,10 +236,18 @@ Format:
 - Delivered: [[norse-cosmogony]] (NEW) · [[ragnarok-apocalyptic]] (NEW) · [[afro-diasporic-syncretism]] (NEW) · [[possession-ritual]] (NEW) · [[orisha-pantheon]] (NEW) · [[baal]] alias stub (NEW). Build: 1,979 nodes · 3.0% dead-link · 11,957 edges.
 - Last edit: 00_meta/STATUS.md
 
-## sonnet-dante-wisdom-1 — content / Dante chain + Logos circuit + Hebrew wisdom books — started 2026-05-15 — **IN PROGRESS**
+## sonnet-dante-wisdom-1 — content / Dante chain + Logos circuit + Hebrew wisdom books — started 2026-05-15 — **FINISHED 2026-05-15**
 - Owning: `dante-alighieri`, `phase-6-divine-comedy`, `creation-by-word` (edit only), `phase-2-job`, `phase-2-ecclesiastes`, `phase-2-song-of-songs`
 - Goal: Create Dante person + Divine Comedy document (completing Ardā Wirāz → Dante chain); wire Quranic kun fa-yakun into creation-by-word theme; create Job, Ecclesiastes, Song of Songs document nodes
-- Status: in-progress
+- Status: finished
+- Delivered:
+  - [[dante-alighieri]] (NEW person) — metadata tier; Florentine poet, exile 1302, Commedia 1308–1321; Cerulli/Asín Palacios transmission thesis documented; links [[phase-4-086-arda-viraf-namag]] + [[tradition-medieval-christianity]]
+  - [[phase-6-divine-comedy]] (NEW document, file: phase-5-056-divine-comedy.md) — metadata tier; full Inferno/Purgatorio/Paradiso structure; contrapasso table; MASSIVE-WIN transmission chain: Arda Viraf → Islamic Mi'rāj → Liber Scalae Machometi (1264) → Dante (1308–1321) → entire Western literary afterlife tradition; Zoroastrian prototype via Islamic transmission demonstrated
+  - [[creation-by-word]] (EDITED stub→metadata) — added Quranic *kun fa-yakun* (8 Quran loci); Izutsu + Gimaret T1 refs; 4-tradition table (Egyptian Ptah / Hebrew P-source / Johannine Logos / Quranic *kun fa-yakun*); MASSIVE-WIN: three millennia, four traditions, one formula; allah added to deity-instances
+  - [[phase-2-job]] (NEW document, file: phase-2-035-job.md) — metadata tier; prose frame + poetic dialogues + God's whirlwind speeches; MASSIVE-WIN: [[phase-1-013-babylonian-theodicy]] as 200–400-year Akkadian antecedent; [[P7-020-answer-to-job]] Jung 1952 reception wired; Habel/Pope/Clines T1 refs
+  - [[phase-2-ecclesiastes]] (NEW document, file: phase-2-036-ecclesiastes.md) — metadata tier; *hebel* theology; Hellenistic influence markers; MASSIVE-WIN: *pardes* at 2:5 = Persian loanword (*pairi-daēza*); wired to [[persian-period-injection]] + [[theme-paradise-etymology]]
+  - [[phase-2-song-of-songs]] (NEW document, file: phase-2-037-song-of-songs.md) — metadata tier; erotic love poetry + allegorization trajectory; MASSIVE-WIN: *pardes* at 4:13; allegorization chain Origen → Bernard of Clairvaux (86 sermons) → [[bridal-mysticism]]; MASSIVE-WIN: Sufi love-poetry (Rumi/Hafez/Attar) uses identical allegorical grammar — three Abrahamic traditions, one poetic grammar for soul-God union; Pope/Exum T1 refs
+- Build: **2074 nodes · 12299 edges · 2.7% dead-link · 0 lint errors**
 - Last edit: 00_meta/ACTIVE-AGENTS.md
 
 ---
