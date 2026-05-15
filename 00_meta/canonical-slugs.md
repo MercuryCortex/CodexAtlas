@@ -463,7 +463,7 @@ canonical-slug
 - `zemyna`
 - `zeus`
 
-### document (347 nodes)
+### document (352 nodes)
 
 - `document-kuntillet-ajrud-inscriptions`
 - `phase-1-001-kesh-temple-hymn`
@@ -496,6 +496,7 @@ canonical-slug
 - `phase-1-028-kumarbi-cycle`
 - `phase-1-029-telipinu-myth`
 - `phase-1-030-illuyanka-myth`
+- `phase-1-031-rigveda`
 - `phase-2-001-rig-veda-family-books`
 - `phase-2-002-gathas-of-zarathustra`
 - `phase-2-003-atharva-veda`
@@ -527,6 +528,8 @@ canonical-slug
 - `phase-2-029-dhammapada`
 - `phase-2-030-euripides-bacchae`
 - `phase-2-031-aeschylus-oresteia`
+- `phase-2-032-shijing-book-of-songs`
+- `phase-2-033-shujing-book-of-documents`
 - `phase-3-001-second-third-isaiah`
 - `phase-3-002-plato-dialogues`
 - `phase-3-003-aristotle-metaphysics`
@@ -657,6 +660,8 @@ canonical-slug
 - `phase-4-084-ethiopian-sinodos`
 - `phase-4-085-ovid-metamorphoses-book-1`
 - `phase-4-090-apuleius-metamorphoses-bk-11`
+- `phase-4-091-lotus-sutra`
+- `phase-4-092-avatamsaka-sutra`
 - `phase-5-001-devi-mahatmya`
 - `phase-5-002-heart-sutra`
 - `phase-5-002b-diamond-sutra`
@@ -1634,7 +1639,7 @@ canonical-slug
 - `wheat-grain`
 - `yin-yang`
 
-### theme (251 nodes)
+### theme (257 nodes)
 
 - `364-day-solar-calendar`
 - `adam-kadmon`
@@ -1786,6 +1791,7 @@ canonical-slug
 - `new-moses-typology`
 - `noble-eightfold-path`
 - `non-duality`
+- `norse-cosmogony`
 - `numinous`
 - `occasionalism`
 - `oral-tradition-transmission`
@@ -1808,6 +1814,7 @@ canonical-slug
 - `pseudoarchaeology`
 - `pseudonymity-as-strategy`
 - `psychopomp`
+- `ragnarok-apocalyptic`
 - `realized-eschatology`
 - `reason-over-passion`
 - `reign-of-god`
@@ -1862,10 +1869,14 @@ canonical-slug
 - `theme-lex-talionis-covenant-code`
 - `theme-orion-correlation-theory`
 - `theme-paradise-etymology`
+- `theme-proto-indo-iranian-religion`
 - `theme-pyramid-as-resurrection-machine`
 - `theme-sacred-geometry-giza`
 - `theme-satan-angra-mainyu-transfer`
+- `theme-vedic-avestan-split`
+- `theme-zoroastrian-cosmogony`
 - `theme-zoroastrian-jewish-exchange`
+- `theme-zurvanite-heresy`
 - `theurgy`
 - `tikkun-olam`
 - `torah-and-wisdom-identified`
@@ -2004,16 +2015,16 @@ canonical-slug
 
 | Refs | Dead target | Suggested canonical (existing) |
 |---:|---|---|
-| 7 | `tradition-egyptian-religion` | `tradition-gnosticism` |
-| 4 | `ragnarok-apocalyptic` | `apocalyptic-cosmic-warfare` |
+| 7 | `tradition-egyptian-religion` | `tradition-shia-islam` |
 | 4 | `primordial-darkness` | `eros-primordial` |
 | 4 | `messianic-revelation` | `messianic-secret` |
-| 4 | `genealogical-cosmogony` | `mesoamerican-cosmogony` |
-| 4 | `evolutionary-cosmogony` | `mesoamerican-cosmogony` |
+| 4 | `genealogical-cosmogony` | `hermetic-cosmogony` |
+| 4 | `evolutionary-cosmogony` | `hermetic-cosmogony` |
 | 3 | `phase-4-007-new-testament-canon` | `phase-4-003-gospel-of-truth` |
 | 3 | `phase-2-005-1-2-kings` | `phase-2-008-homeric-epics` |
-| 3 | `messianic-genealogy` | `solomonic-genealogy` |
+| 3 | `messianic-genealogy` | `messianic-secret` |
 | 2 | `yam-canaanite` | `astarte-canaanite` |
-| 2 | `tradition-minoan-religion` | `tradition-gnosticism` |
-| 2 | `phase-1-013-babylonian-theodicy` | `phase-4-033-babylonian-talmud` |
+| 2 | `tradition-minoan-religion` | `tradition-shia-islam` |
+| 2 | `tradition-eastern-orthodoxy` | `tradition-shia-islam` |
+| 2 | `phase-1-013-babylonian-theodicy` | `phase-1-017-descent-of-inanna` |
 | 2 | `asclepius` | `asclepius-greek` |

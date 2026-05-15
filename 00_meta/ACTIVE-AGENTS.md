@@ -31,9 +31,20 @@ Format:
 - Status: finished
 - Last edit: 00_meta/STATUS.md
 
-## sonnet-vedic-chinese-docs-1 — content / Rigveda + Shijing + Shujing document nodes — started 2026-05-15
+## sonnet-vedic-chinese-docs-1 — content / Rigveda + Shijing + Shujing document nodes — started 2026-05-15 — **FINISHED 2026-05-15**
 - Owning: 02_documents/_phase-1-ancient-near-east/phase-1-031-rigveda.md (NEW), 02_documents/_phase-2-axial-age/phase-2-032-shijing-book-of-songs.md (NEW), 02_documents/_phase-2-axial-age/phase-2-033-shujing-book-of-documents.md (NEW)
 - Goal: Create 3 document nodes — full Rigveda (all 10 mandalas incl. Purusha Sukta), Shijing, Shujing — with MASSIVE-win cross-tradition edges
+- Status: finished
+- Delivered:
+  - [[phase-1-031-rigveda]] — full Rigveda (all 10 maṇḍalas), metadata tier, Jamison-Brereton T1 + Elizarenkova T1 + Witzel T2 + O'Flaherty T1; MASSIVE-WIN edges: Purusha Sūkta (10.90) → [[cosmic-body-cosmogony]] parallels [[phase-1-008-enuma-elish]] Tiamat dismemberment + Norse Ymir; ṛta/aša cognate pair (RV → Gathas → Zoroastrianism → Judaism → Christianity via [[theme-satan-angra-mainyu-transfer]])
+  - [[phase-2-032-shijing-book-of-songs]] — metadata tier, Karlgren T1 + Nylan T1 + Waley T2; MASSIVE-WIN edges: Shijing *Song* section parallels Hebrew Psalms as liturgical canon; *Da Ya* dynastic hymns parallel [[phase-1-031-rigveda]] Bronze-Age royal-hymn genre
+  - [[phase-2-033-shujing-book-of-documents]] — metadata tier, Legge T1 + Nylan T1 + Shaughnessy T2; MASSIVE-WIN edges: Tian Ming (Mandate of Heaven) parallels Deuteronomistic History's conditional covenant theology — both traditions develop "sacred history" as political theology; [[heavenly-tablets]] theme connection
+- Open gaps: no geo entries needed (pre-urban compositions); phase-1-024/025 shijing/shujing already exist as full nodes in phase-1 — no conflict (different slugs/IDs; new nodes extend with Axial Age framing and MASSIVE-win cross-tradition edges)
+- Last edit: 00_meta/STATUS.md
+
+## sonnet-deadlink-closures-1 — content / high-ref dead-link closures — started 2026-05-15
+- Owning: 06_themes/norse-cosmogony.md (NEW), 06_themes/ragnarok-apocalyptic.md (NEW), 06_themes/afro-diasporic-syncretism.md (NEW), 06_themes/possession-ritual.md (NEW), 06_themes/orisha-pantheon.md (NEW), 03_deities/baal.md (NEW alias stub)
+- Goal: Close 6 highest-ref dead-links (norse-cosmogony x4, ragnarok-apocalyptic x4, afro-diasporic-syncretism x4, possession-ritual x4, orisha-pantheon x4, baal x5); khufu + theme-pyramid-as-resurrection-machine already exist from sonnet-pyramids-1
 - Status: in-flight
 - Last edit: 00_meta/ACTIVE-AGENTS.md
 
@@ -46,6 +57,7 @@ Format:
 | `sonnet-mahayana-sutras-1` | content / East Asian Mahayana sutra nodes | phase-4-091-lotus-sutra (NEW), phase-4-092-avatamsaka-sutra (NEW), phase-4-093-lankavat-sutra (NEW), phase-4-094-larger-sukhavativyuha-sutra (NEW) | 2026-05-15 |
 | `sonnet-zoroastrian-1` | content / Zoroastrian-Jewish transmission deep research | 3 MASSIVE-WIN nodes: theme-zoroastrian-jewish-exchange + theme-paradise-etymology + theme-satan-angra-mainyu-transfer; edge sweeps on 6 existing nodes — **FINISHED 2026-05-15** | 2026-05-15 |
 | `sonnet-zoroastrian-deepen-1` | content / Zoroastrian stub deepening | zarathustra.md (full upgrade), tradition-zoroastrianism.md (full body), phase-2-002-gathas-of-zarathustra.md (cosmological-questions + Nietzsche sections), NEW: theme-asha-druj-cosmic-opposition.md — **FINISHED 2026-05-15** | 2026-05-15 |
+| `sonnet-deadlink-closures-1` | content / dead-link closures (Norse + Afro-diasporic + baal) | norse-cosmogony (NEW), ragnarok-apocalyptic (NEW), afro-diasporic-syncretism (NEW), possession-ritual (NEW), orisha-pantheon (NEW), baal alias stub (NEW) | 2026-05-15 |
 
 ## sonnet-zoroastrian-deepen-1 — content / Zoroastrian stub deepening — started 2026-05-15 — **FINISHED 2026-05-15**
 - Owning: 04_persons/zarathustra.md, 07_traditions/tradition-zoroastrianism.md, 02_documents/_phase-2-axial-age/phase-2-002-gathas-of-zarathustra.md, 06_themes/theme-asha-druj-cosmic-opposition.md (NEW)
