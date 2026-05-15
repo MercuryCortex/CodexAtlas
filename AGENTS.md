@@ -47,6 +47,22 @@
 - Hunt explicitly for the cross-tradition tracing edges that root later traditions in older ones — these are the **MASSIVE wins** John framed as the prize.
 - Cite sources at the tier the methodology requires (≥3 refs for `metadata` status, ≥1 T1 primary).
 
+### ⚠️ THE WIRING LAW — NON-NEGOTIABLE (added 2026-05-15)
+
+> **The objective of this vault is to CONNECT. A wikilink that points to nothing is a broken promise. You may not finish a session having created dead links.**
+
+**Every `[[wikilink]]` you write must point to an existing node by the time you commit.** If the target doesn't exist, you create it — minimum a `stub` with the correct YAML skeleton — before you close. No exceptions.
+
+**Procedure:**
+1. After writing each node, scan every `[[wikilink]]` in its body.
+2. For each target: `find . -name "<slug>.md"`. If missing → create it now (stub at minimum).
+3. For high-value targets (MASSIVE WIN edges, primary cross-tradition figures): create `metadata`-tier nodes, not just stubs. A stub says the concept exists. A metadata node carries the connection.
+4. Before running `build_data.py` for your final commit, run `python3 linkcheck.py` or scan the build output for dead-link warnings. Zero dead links introduced = a clean close.
+
+**The test:** "Could another agent follow every `[[wikilink]]` I wrote and land on a real node?" If no → you're not done.
+
+**Why this matters:** agents have repeatedly written 5–10 rich nodes with 50+ wikilinks, committed, and walked away leaving 15–20 dead links. The graph is only as strong as its weakest connection. Connection IS the product.
+
 ### WHEN you finish
 
 1. **Update your claim block** with `Status: finished`, the full delivery list (node-by-node with wikilinks), the MASSIVE-win edges added, and an "Open gaps for follow-up agents" section.
