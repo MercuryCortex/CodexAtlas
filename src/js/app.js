@@ -6418,7 +6418,7 @@ VIEWS.astrology = {
     const astroNodes = DATA.nodes.filter(n => Array.isArray(n.tags) && n.tags.some(t => /^astrology/.test(t)));
     const W = astroNodes.length;
     // Live renderers (src/js/astrology/*.js). Other modes still show the stub card.
-    const liveRenderers = { spine: '_astroSpine', decanic: '_astroDecanic', wheel: '_astroWheel' };
+    const liveRenderers = { spine: '_astroSpine', decanic: '_astroDecanic', wheel: '_astroWheel', now: '_astroNow' };
     const rendererKey = liveRenderers[_astrologyState.mode];
     if (rendererKey) {
       pane.classList.add('astrology-pane-live');

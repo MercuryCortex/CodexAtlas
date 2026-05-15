@@ -1757,6 +1757,52 @@ body.view-atlas main.canvas { background: var(--bg-0); }
   color: var(--text-3); letter-spacing: 0.1em;
 }
 
+/* ASTROLOGY · NOW mode — unrolled zodiac strip + time-scrubber. */
+.astro-now-layout {
+  position: absolute; inset: 0;
+  display: grid; grid-template-rows: 1fr auto; gap: 0;
+}
+.astro-now-strip-wrap { position: relative; overflow: hidden; }
+.astro-now-error {
+  position: absolute; inset: 0; display: flex; align-items: center; justify-content: center;
+  color: var(--red, #c25450); font-family: var(--serif);
+}
+.astro-now-scrub-wrap {
+  border-top: 1px solid var(--border-soft); padding: 14px 22px 18px;
+  background: rgba(8,8,12,0.25);
+}
+.anw-scrub-row { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
+.anw-scrub-row .btn-mini { font-size: 10px; padding: 3px 8px; }
+.anw-scrub-row .anw-now { color: var(--gold); border-color: var(--gold-soft); }
+.anw-scrubber {
+  flex: 1; min-width: 240px;
+  accent-color: var(--gold);
+}
+.anw-year {
+  font-family: var(--mono); font-size: 11px; color: var(--gold-soft);
+  letter-spacing: 0.08em; min-width: 80px; text-align: right;
+}
+.anw-positions {
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+  gap: 4px 18px; margin-top: 12px;
+  font-family: var(--mono); font-size: 11px;
+}
+.anw-row {
+  display: grid; grid-template-columns: 20px 60px 60px 1fr;
+  gap: 6px; align-items: center;
+  padding: 3px 4px; cursor: pointer; border-bottom: 1px solid var(--border-soft);
+  transition: background 120ms ease;
+}
+.anw-row:hover { background: var(--bg-2); }
+.anw-glyph { font-family: var(--serif); font-size: 14px; text-align: center; }
+.anw-name { color: var(--text-1); }
+.anw-loc { color: var(--text-2); }
+.anw-decan { color: var(--text-3); font-size: 10px; }
+.anw-footer {
+  margin-top: 12px; font-family: var(--mono); font-size: 9.5px;
+  color: var(--text-3); letter-spacing: 0.08em;
+}
+
 /* Atlas pane — the outer positioning wrapper for the map. Owns position:absolute
    and the empty-state centering. MapLibre lives in the inner .atlas-map div. */
 .atlas-pane {
