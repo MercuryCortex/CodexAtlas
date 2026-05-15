@@ -3919,11 +3919,58 @@ const ALCHEMY_PRESETS = [
   },
 ];
 
-// Load a preset into the Alchemy canvas. `mode` is 'replace' (default) or 'append'.
-// Filters out IDs that don't exist in the current vault data, dedupes, sets the active
-// preset, and triggers a re-render.
+// Custom user-saved trees live in localStorage under this key. Shape: an array of
+// {id, name, picks, created} — same structure as ALCHEMY_PRESETS minus the headline
+// (custom trees don't have rhetorical payload, just the user's name for them).
+const ALCHEMY_CUSTOM_KEY = 'alch-custom-trees-v1';
+
+function loadCustomTrees() {
+  try {
+    const raw = localStorage.getItem(ALCHEMY_CUSTOM_KEY);
+    if (!raw) return [];
+    const parsed = JSON.parse(raw);
+    return Array.isArray(parsed) ? parsed : [];
+  } catch (e) { return []; }
+}
+
+function saveCustomTrees(trees) {
+  try { localStorage.setItem(ALCHEMY_CUSTOM_KEY, JSON.stringify(trees)); } catch (e) {}
+}
+
+// Save the current STATE.alchemyPicks as a new custom tree under `name`.
+// Returns the new tree's id, or null if the name is empty or no picks exist.
+function saveCustomTree(name) {
+  const trimmed = (name || '').trim();
+  if (!trimmed) return null;
+  if (!STATE.alchemyPicks || STATE.alchemyPicks.length === 0) return null;
+  const trees = loadCustomTrees();
+  const id = 'user-' + Date.now();
+  trees.push({
+    id, name: trimmed,
+    picks: STATE.alchemyPicks.slice(),
+    created: Date.now(),
+  });
+  saveCustomTrees(trees);
+  return id;
+}
+
+function deleteCustomTree(id) {
+  const trees = loadCustomTrees().filter(t => t.id !== id);
+  saveCustomTrees(trees);
+}
+
+// Resolve a preset id to its definition. Works for canonical presets and for
+// custom user-saved trees (which start with "user-").
+function findPresetOrTree(presetId) {
+  return ALCHEMY_PRESETS.find(p => p.id === presetId)
+    || loadCustomTrees().find(t => t.id === presetId)
+    || null;
+}
+
+// Load a preset (canonical) or custom tree into the Alchemy canvas.
+// `mode` is 'replace' (default) or 'append'.
 function alchemyLoadPreset(presetId, mode) {
-  const preset = ALCHEMY_PRESETS.find(p => p.id === presetId);
+  const preset = findPresetOrTree(presetId);
   if (!preset) return;
   const valid = preset.picks.filter(id => NODES_BY_ID[id]);
   if (mode === 'append') {
@@ -4014,11 +4061,19 @@ VIEWS.alchemy = {
       .filter(e => nodeById.has(e.source) && nodeById.has(e.target))
       .map(e => ({ source: e.source, target: e.target, type: e.type }));
 
-    // ---- View-controls + toolbox + search palette + presets pane ----
+    // ---- View-controls (top-right): Presets dropdown trigger + save tree + count + clear ----
     const activePreset = STATE.alchemyActivePreset
-      ? ALCHEMY_PRESETS.find(p => p.id === STATE.alchemyActivePreset)
+      ? findPresetOrTree(STATE.alchemyActivePreset)
       : null;
+    const canSave = picks.length > 0;
     document.getElementById('view-controls').innerHTML = `
+      <button class="btn btn-mini alch-presets-trigger" id="alch-presets-trigger" title="Load a curated cross-tradition exploration">
+        <span class="alch-presets-trigger-label">${activePreset ? activePreset.name : 'Presets'}</span>
+        <span class="caret">▾</span>
+      </button>
+      <span class="alch-save-wrap" id="alch-save-wrap">
+        <button class="btn btn-mini" id="btn-alch-save" ${canSave ? '' : 'disabled'} title="${canSave ? 'Save the current exploration as a custom preset' : 'Add at least one node to enable saving'}">save tree</button>
+      </span>
       <span class="alch-count">${picks.length} picked · ${nodes.length - picks.length} bridge${nodes.length - picks.length === 1 ? '' : 's'}</span>
       <button class="btn btn-mini" id="btn-alch-clear">clear</button>
     `;
@@ -4028,89 +4083,161 @@ VIEWS.alchemy = {
       setView('alchemy');
     };
 
-    // Toolbox + palette + presets pane injected into canvas as siblings of the SVG.
-    document.querySelectorAll('.alch-toolbox, .alch-palette, .alch-presets-pane').forEach(el => el.remove());
+    // Toolbox + palette + dropdown injected into canvas as siblings of the SVG.
+    document.querySelectorAll('.alch-toolbox, .alch-palette, .alch-presets-dropdown, .alch-presets-pane').forEach(el => el.remove());
     const canvas = document.getElementById('canvas');
 
-    // Presets sidebar pane — sticky-head pattern (head doesn't scroll, body scrolls).
-    const presetsCollapsedStored = (() => {
-      try { return localStorage.getItem('alch-presets-collapsed') === '1'; } catch (e) { return false; }
-    })();
-    const pane = document.createElement('aside');
-    pane.className = 'alch-presets-pane' + (presetsCollapsedStored ? ' collapsed' : '');
-    pane.innerHTML = `
-      <div class="alch-presets-head">
-        <span class="alch-presets-title">Presets</span>
-        <button class="alch-presets-toggle" id="alch-presets-toggle" title="Collapse presets pane"></button>
-      </div>
-      <div class="alch-presets-body">
-        ${activePreset ? `
-          <div class="alch-presets-active">
-            <div class="alch-presets-active-name">${activePreset.name}</div>
-            <div class="alch-presets-active-headline">${activePreset.headline}</div>
+    // ---- Presets dropdown — absolutely positioned, anchored to top-right under the trigger.
+    // Lives in the canvas so it's clipped only by the viewport, not the nav.
+    const customTrees = loadCustomTrees();
+    const dropdown = document.createElement('div');
+    dropdown.className = 'alch-presets-dropdown';
+    dropdown.style.display = 'none';
+    const renderPresetCard = (p, isCustom) => {
+      const isActive = STATE.alchemyActivePreset === p.id;
+      const blurb = isCustom
+        ? `${p.picks.length} node${p.picks.length === 1 ? '' : 's'}`
+        : (p.headline ? p.headline.split('—')[0].trim() + '.' : '');
+      return `
+        <div class="alch-preset-card${isActive ? ' active' : ''}${isCustom ? ' custom' : ''}" data-preset="${p.id}">
+          <div class="alch-preset-name">${p.name}${isCustom ? `<button class="alch-preset-delete" data-preset="${p.id}" title="Delete this saved tree">×</button>` : ''}</div>
+          ${blurb ? `<div class="alch-preset-headline">${blurb}</div>` : ''}
+          <div class="alch-preset-action-row" data-mode="initial">
+            <button class="alch-preset-load" data-preset="${p.id}">${isActive ? 'reload' : 'load'}</button>
+            <span class="alch-preset-meta">${p.picks.length} seeds</span>
           </div>
-        ` : `
-          <div class="alch-presets-intro">Curated cross-tradition explorations. Click one to load — bridge nodes appear automatically between the seeded nodes. Add or remove freely after loading.</div>
-        `}
-        <div class="alch-presets-list">
-          ${ALCHEMY_PRESETS.map(p => {
-            const isActive = STATE.alchemyActivePreset === p.id;
-            return `
-              <div class="alch-preset-card${isActive ? ' active' : ''}" data-preset="${p.id}">
-                <div class="alch-preset-name">${p.name}</div>
-                <div class="alch-preset-headline">${p.headline.split('—')[0].trim()}.</div>
-                <div class="alch-preset-action-row" data-mode="initial">
-                  <button class="alch-preset-load" data-preset="${p.id}">${isActive ? 'reload' : 'load'}</button>
-                  <span class="alch-preset-meta">${p.picks.length} seeds</span>
-                </div>
-                <div class="alch-preset-confirm-row" data-mode="confirm" style="display:none">
-                  <span class="alch-preset-confirm-q">Replace your ${picks.length} pick${picks.length === 1 ? '' : 's'}?</span>
-                  <button class="alch-preset-confirm alch-preset-append" data-preset="${p.id}">append</button>
-                  <button class="alch-preset-confirm alch-preset-replace" data-preset="${p.id}">replace</button>
-                  <button class="alch-preset-confirm alch-preset-cancel">cancel</button>
-                </div>
-              </div>
-            `;
-          }).join('')}
+          <div class="alch-preset-confirm-row" data-mode="confirm" style="display:none">
+            <span class="alch-preset-confirm-q">Replace your ${picks.length} pick${picks.length === 1 ? '' : 's'}?</span>
+            <button class="alch-preset-confirm alch-preset-append" data-preset="${p.id}">append</button>
+            <button class="alch-preset-confirm alch-preset-replace" data-preset="${p.id}">replace</button>
+            <button class="alch-preset-confirm alch-preset-cancel">cancel</button>
+          </div>
         </div>
+      `;
+    };
+    dropdown.innerHTML = `
+      ${activePreset ? `
+        <div class="alch-presets-active">
+          <div class="alch-presets-active-name">${activePreset.name}</div>
+          ${activePreset.headline ? `<div class="alch-presets-active-headline">${activePreset.headline}</div>` : ''}
+        </div>
+      ` : `
+        <div class="alch-presets-intro">Curated cross-tradition explorations. Click one to load — bridge nodes appear automatically between the seeded nodes via the shortest-path BFS through the vault's edges.</div>
+      `}
+      <div class="alch-presets-section-label">Curated</div>
+      <div class="alch-presets-list">
+        ${ALCHEMY_PRESETS.map(p => renderPresetCard(p, false)).join('')}
       </div>
+      ${customTrees.length > 0 ? `
+        <div class="alch-presets-section-label">Your saved trees</div>
+        <div class="alch-presets-list">
+          ${customTrees.slice().reverse().map(t => renderPresetCard(t, true)).join('')}
+        </div>
+      ` : `
+        <div class="alch-presets-empty-custom">Save the current exploration as a custom tree from the toolbar →</div>
+      `}
     `;
-    canvas.appendChild(pane);
+    canvas.appendChild(dropdown);
 
-    document.getElementById('alch-presets-toggle').addEventListener('click', (ev) => {
+    // Position the dropdown under the trigger button each time it opens (so resize/scroll-safe).
+    function positionDropdown() {
+      const trigger = document.getElementById('alch-presets-trigger');
+      if (!trigger) return;
+      const rect = trigger.getBoundingClientRect();
+      const canvasRect = canvas.getBoundingClientRect();
+      // Right-align the dropdown with the trigger so it doesn't overflow off-canvas.
+      dropdown.style.top = (rect.bottom - canvasRect.top + 6) + 'px';
+      dropdown.style.right = (canvasRect.right - rect.right) + 'px';
+      dropdown.style.left = 'auto';
+    }
+    function openDropdown() {
+      positionDropdown();
+      dropdown.style.display = '';
+      setTimeout(() => document.addEventListener('click', closeOnOutside), 0);
+    }
+    function closeDropdown() {
+      dropdown.style.display = 'none';
+      document.removeEventListener('click', closeOnOutside);
+    }
+    function closeOnOutside(ev) {
+      if (dropdown.contains(ev.target)) return;
+      const trigger = document.getElementById('alch-presets-trigger');
+      if (trigger && trigger.contains(ev.target)) return;
+      closeDropdown();
+    }
+    document.getElementById('alch-presets-trigger').onclick = (ev) => {
       ev.stopPropagation();
-      const willCollapse = !pane.classList.contains('collapsed');
-      pane.classList.toggle('collapsed', willCollapse);
-      try { localStorage.setItem('alch-presets-collapsed', willCollapse ? '1' : '0'); } catch (e) {}
-    });
+      if (dropdown.style.display === 'none') openDropdown(); else closeDropdown();
+    };
 
-    pane.querySelectorAll('.alch-preset-load').forEach(btn => {
+    // Save tree button → reveal inline name input + confirm/cancel. Press Enter to save.
+    function showSaveInput() {
+      if (picks.length === 0) return;
+      const wrap = document.getElementById('alch-save-wrap');
+      wrap.innerHTML = `
+        <input type="text" class="alch-save-input" id="alch-save-input" placeholder="name your tree…" autocomplete="off" maxlength="60" />
+        <button class="btn btn-mini alch-save-confirm" id="alch-save-confirm" title="Save">✓</button>
+        <button class="btn btn-mini alch-save-cancel" id="alch-save-cancel" title="Cancel">×</button>
+      `;
+      const input = document.getElementById('alch-save-input');
+      input.focus();
+      const commit = () => {
+        const name = input.value.trim();
+        if (!name) { input.classList.add('invalid'); input.focus(); return; }
+        saveCustomTree(name);
+        setView('alchemy');   // re-render so the new tree appears in the dropdown
+      };
+      const cancel = () => { setView('alchemy'); };
+      document.getElementById('alch-save-confirm').onclick = (e) => { e.stopPropagation(); commit(); };
+      document.getElementById('alch-save-cancel').onclick = (e) => { e.stopPropagation(); cancel(); };
+      input.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter') { e.preventDefault(); commit(); }
+        else if (e.key === 'Escape') { e.preventDefault(); cancel(); }
+        else input.classList.remove('invalid');
+      });
+    }
+    const saveBtn = document.getElementById('btn-alch-save');
+    if (saveBtn) saveBtn.onclick = (ev) => { ev.stopPropagation(); showSaveInput(); };
+
+    // Load buttons — same append/replace inline pattern as before, scoped to dropdown.
+    dropdown.querySelectorAll('.alch-preset-load').forEach(btn => {
       btn.addEventListener('click', (ev) => {
         ev.stopPropagation();
         const presetId = btn.dataset.preset;
         if (picks.length === 0) {
           alchemyLoadPreset(presetId, 'replace');
+          closeDropdown();
           return;
         }
-        pane.querySelectorAll('.alch-preset-action-row').forEach(r => r.style.display = '');
-        pane.querySelectorAll('.alch-preset-confirm-row').forEach(r => r.style.display = 'none');
+        dropdown.querySelectorAll('.alch-preset-action-row').forEach(r => r.style.display = '');
+        dropdown.querySelectorAll('.alch-preset-confirm-row').forEach(r => r.style.display = 'none');
         const card = btn.closest('.alch-preset-card');
         card.querySelector('.alch-preset-action-row').style.display = 'none';
         card.querySelector('.alch-preset-confirm-row').style.display = '';
       });
     });
-    pane.querySelectorAll('.alch-preset-append').forEach(btn => {
-      btn.addEventListener('click', (ev) => { ev.stopPropagation(); alchemyLoadPreset(btn.dataset.preset, 'append'); });
+    dropdown.querySelectorAll('.alch-preset-append').forEach(btn => {
+      btn.addEventListener('click', (ev) => { ev.stopPropagation(); alchemyLoadPreset(btn.dataset.preset, 'append'); closeDropdown(); });
     });
-    pane.querySelectorAll('.alch-preset-replace').forEach(btn => {
-      btn.addEventListener('click', (ev) => { ev.stopPropagation(); alchemyLoadPreset(btn.dataset.preset, 'replace'); });
+    dropdown.querySelectorAll('.alch-preset-replace').forEach(btn => {
+      btn.addEventListener('click', (ev) => { ev.stopPropagation(); alchemyLoadPreset(btn.dataset.preset, 'replace'); closeDropdown(); });
     });
-    pane.querySelectorAll('.alch-preset-cancel').forEach(btn => {
+    dropdown.querySelectorAll('.alch-preset-cancel').forEach(btn => {
       btn.addEventListener('click', (ev) => {
         ev.stopPropagation();
         const card = btn.closest('.alch-preset-card');
         card.querySelector('.alch-preset-confirm-row').style.display = 'none';
         card.querySelector('.alch-preset-action-row').style.display = '';
+      });
+    });
+    // Custom tree delete buttons.
+    dropdown.querySelectorAll('.alch-preset-delete').forEach(btn => {
+      btn.addEventListener('click', (ev) => {
+        ev.stopPropagation();
+        const id = btn.dataset.preset;
+        deleteCustomTree(id);
+        if (STATE.alchemyActivePreset === id) STATE.alchemyActivePreset = null;
+        setView('alchemy');
       });
     });
 

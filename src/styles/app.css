@@ -639,23 +639,30 @@ body.nav-collapsed nav.side { width: var(--nav-w-collapsed); }
 
 /* SIDE-TAB — the visible toggle. Sits at the right edge of the sidebar when expanded,
    slides to the viewport's left edge when collapsed, so it's always reachable. */
+/* SIDE-TAB — discreet nav toggle. Previous version was an 18×64 attached tab
+   with chrome; the user wanted something less intrusive. This version: a tiny
+   16×16 chevron with no background, semi-transparent until hover. Positioned
+   at the top of the nav strip (consistent location in both states), so the
+   eye finds it without it ever dominating the canvas. */
 .side-tab {
   position: fixed;
-  left: var(--nav-w); top: 50%;
-  width: 18px; height: 64px;
-  margin-top: -32px;
-  background: rgba(13, 17, 25, 0.92);
-  backdrop-filter: blur(6px);
-  border: 1px solid var(--border); border-left: 0;
-  border-radius: 0 4px 4px 0;
+  left: calc(var(--nav-w) - 22px);
+  top: 18px;
+  width: 16px; height: 16px;
+  margin: 0;
+  background: transparent;
+  border: 0; border-radius: 2px;
   cursor: pointer; z-index: 101;
   display: flex; align-items: center; justify-content: center;
-  color: var(--text-2); font-family: var(--mono); font-size: 12px;
-  transition: left 240ms cubic-bezier(0.2, 0.8, 0.2, 1), color 120ms, border-color 120ms;
+  color: var(--text-3); font-family: var(--mono); font-size: 11px; line-height: 1;
+  opacity: 0.45;
+  transition: left 240ms cubic-bezier(0.2, 0.8, 0.2, 1), opacity 160ms, color 160ms, background 160ms;
 }
-.side-tab:hover { color: var(--gold); border-color: var(--gold-soft); }
-/* When the nav collapses to a 48px strip, the side-tab sits flush against its right edge. */
-body.nav-collapsed .side-tab { left: var(--nav-w-collapsed); }
+.side-tab:hover { opacity: 1; color: var(--gold); background: rgba(212,165,90,0.10); }
+/* When the nav is collapsed (icon strip), the chevron sits centered in the strip's top. */
+body.nav-collapsed .side-tab {
+  left: calc((var(--nav-w-collapsed) - 16px) / 2);
+}
 .nav-toggle {
   position: absolute; top: 8px; right: 8px; z-index: 2;
   width: 28px; height: 28px;
@@ -1286,52 +1293,77 @@ footer select:focus, footer input:focus { border-color: var(--gold-soft); }
 .alch-remove-wrap:hover .alch-remove { fill: var(--gold); }
 .alch-remove-wrap:hover circle.alch-remove { fill: var(--bg-3); stroke: var(--gold); }
 
-/* ALCHEMY PRESETS PANE — curated cross-tradition starting constellations.
-   Sticky-head pattern: head never scrolls (toggle + title always reachable);
-   body scrolls independently. Same pattern back-fitted to .legend below. */
-.alch-presets-pane {
-  position: absolute; top: 60px; left: 18px; z-index: 30;
-  width: 280px; max-height: calc(100vh - 60px - var(--footer-h) - 100px);
+/* ALCHEMY PRESETS — upper-right dropdown (replaces the prior left-side .alch-presets-pane
+   which hid behind the main nav when it expanded). Trigger button lives in view-controls;
+   dropdown panel below it (positioned by JS, anchored to trigger). */
+.alch-presets-trigger {
+  display: inline-flex; align-items: center; gap: 6px;
+}
+.alch-presets-trigger .caret {
+  font-size: 9px; color: var(--text-3); margin-left: 2px;
+}
+.alch-presets-trigger-label {
+  max-width: 200px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+}
+.alch-save-wrap { display: inline-flex; align-items: center; gap: 4px; }
+.alch-save-input {
+  background: var(--bg-2); border: 1px solid var(--border);
+  color: var(--text-0); font-family: var(--sans); font-size: 11px;
+  padding: 4px 8px; border-radius: 3px; outline: none;
+  width: 160px;
+  transition: border-color 140ms;
+}
+.alch-save-input:focus { border-color: var(--gold-soft); }
+.alch-save-input.invalid { border-color: #b04848; }
+.alch-save-input::placeholder { color: var(--text-3); font-style: italic; }
+.alch-save-confirm, .alch-save-cancel {
+  width: 22px; padding: 4px 0; text-align: center;
+}
+.alch-save-confirm { color: var(--gold); border-color: var(--gold-soft); }
+.alch-save-confirm:hover { background: rgba(212,165,90,0.10); }
+.alch-save-cancel { color: var(--text-3); }
+.alch-presets-dropdown {
+  position: absolute; z-index: 50;
+  width: 320px; max-height: 70vh;
   display: flex; flex-direction: column;
   background: var(--panel-bg);
   backdrop-filter: var(--panel-blur);
   -webkit-backdrop-filter: var(--panel-blur);
   border: var(--panel-edge); border-radius: 4px;
   font-family: var(--sans); color: var(--text-1);
-  box-shadow: 0 6px 24px rgba(0,0,0,0.40);
+  box-shadow: 0 8px 32px rgba(0,0,0,0.50);
   overflow: hidden;
-  transition: width var(--t-layout) var(--ease), max-height var(--t-layout) var(--ease);
 }
-body.nav-collapsed .alch-presets-pane { left: calc(var(--nav-w-collapsed) - 30px + 18px); }
-.alch-presets-pane.collapsed { width: 44px; max-height: 44px; }
-.alch-presets-head {
+.alch-presets-dropdown > * { padding: 0 12px; }
+.alch-presets-dropdown > .alch-presets-intro,
+.alch-presets-dropdown > .alch-presets-active {
   flex: 0 0 auto;
-  display: flex; align-items: center; justify-content: space-between;
-  padding: 10px 12px 10px 14px;
-  border-bottom: 1px solid var(--border);
+  margin: 12px 12px 8px;
+  padding: 0;
+}
+.alch-presets-section-label {
+  flex: 0 0 auto;
+  font-family: var(--mono); font-size: 9.5px; color: var(--text-3);
+  letter-spacing: 0.14em; text-transform: uppercase;
+  padding: 6px 14px 4px; border-top: 1px solid var(--border);
   background: rgba(7,9,15,0.40);
 }
-.alch-presets-pane.collapsed .alch-presets-head { border-bottom: 0; padding: 8px; justify-content: center; }
-.alch-presets-pane.collapsed .alch-presets-title { display: none; }
-.alch-presets-title {
-  font-family: var(--serif); font-size: 12px; color: var(--text-0);
-  letter-spacing: 0.14em; text-transform: uppercase; font-weight: 500;
-}
-.alch-presets-toggle {
-  width: 22px; height: 22px;
-  background: transparent; border: 1px solid var(--border); border-radius: 3px;
-  color: var(--text-2); font-family: var(--mono); font-size: 12px; line-height: 1;
-  cursor: pointer; display: flex; align-items: center; justify-content: center;
-  transition: color 140ms, border-color 140ms, background 140ms;
-}
-.alch-presets-toggle:hover { color: var(--gold); border-color: var(--gold-soft); background: var(--bg-2); }
-.alch-presets-pane.collapsed .alch-presets-toggle::before { content: '›'; font-size: 12px; }
-.alch-presets-pane:not(.collapsed) .alch-presets-toggle::before { content: '‹'; font-size: 12px; }
-.alch-presets-body {
+.alch-presets-dropdown > .alch-presets-list {
   flex: 1 1 auto; overflow-y: auto;
-  padding: 10px 10px 14px;
+  padding: 8px 12px;
 }
-.alch-presets-pane.collapsed .alch-presets-body { display: none; }
+.alch-presets-empty-custom {
+  font-family: var(--serif); font-style: italic; font-size: 10.5px;
+  color: var(--text-3); padding: 6px 14px 10px; line-height: 1.4;
+}
+.alch-preset-delete {
+  float: right;
+  background: transparent; border: 0;
+  color: var(--text-3); cursor: pointer;
+  font-family: var(--mono); font-size: 13px; line-height: 1;
+  padding: 0 4px; transition: color 130ms;
+}
+.alch-preset-delete:hover { color: #d46060; }
 .alch-presets-intro {
   font-family: var(--serif); font-style: italic; font-size: 11.5px;
   color: var(--text-2); padding: 4px 6px 10px; line-height: 1.45;

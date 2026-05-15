@@ -32,6 +32,8 @@ The floating-panel pivot was left uncommitted and partially broken. Changes have
 
 | Handle | Scope | What landed |
 |---|---|---|
+| `opus-design-5` | app-code / Alchemy presets dropdown + save trees + discreet side-tab | Presets moved from left pane (which hid behind expanded nav) to upper-right dropdown; save/load/delete custom user trees via `localStorage` (key `alch-custom-trees-v1`); inline name-input pattern with ↩/esc; new `findPresetOrTree()` resolver unifies canonical + custom code paths. Side-tab redesigned from 18×64 chunky tab to 16×16 chevron at top-of-nav, 45% opacity until hover. Cache-bust `?v=20260515-design-5-dropdown`. |
+| `opus-design-4` | app-code / Alchemy Presets pane v1 (superseded by opus-design-5) | First version: left-side `.alch-presets-pane` with sticky-head pattern + 10 canonical cross-tradition presets + Pantheon legend back-fit + `<body class="nav-collapsed">` default. UI was correct in mechanics but hid behind nav when expanded — opus-design-5 reworks the surface. The 10 presets data structure carries over. |
 | `opus-map-1` | app-code / Atlas Map rebuild (DESIGN LEAD) | MapLibre GL + offline PMTiles vector basemap rewrite of `VIEWS.atlas`; 964 DOM markers with degree-tier LOD; hover-trail GeoJSON line layer; premium minimalist token-driven basemap style; `scripts/serve.py` HTTP Range server for local dev; `scripts/fetch-basemap.sh` reproducible setup; retires opus-design-3 SVG atlas |
 
 **Last session's finishers (full claim blocks below, will be archived in the next session-close housekeeper sweep):**
