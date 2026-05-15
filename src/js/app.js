@@ -5162,14 +5162,23 @@ VIEWS.atlas = {
           // offset markers connected by leader lines back to the center. (User's
           // explicit ask 2026-05-15: "the nodes expand, even if you need to spread
           // them from the same position by X position".)
-          // SPIDER-ON-CLICK. MapLibre v5 changed getClusterLeaves from callback
-          // to Promise; wrap both styles defensively so we work either way.
+          // SPIDER-ON-CLICK with simultaneous zoom-IN (user 2026-05-15: "needs
+          // to zoom simultaneous to like 20×"). On the zoom-meter readout,
+          // 20× ≈ MapLibre zoom 5.6 (mult = 2^(k-1.6)). Target z 5.5 so the
+          // basemap detail is high, the spider has room to spread, and labels
+          // are big enough to read. If user already past z 5.5, stay put.
+          // MapLibre v5 changed getClusterLeaves from callback to Promise;
+          // wrap both styles defensively so we work either way.
+          const TARGET_SPIDER_ZOOM = 5.5;
           const onLeaves = (leaves) => {
             if (!leaves || !leaves.length) return;
             _atlasPreSpiderState = { center: _atlasMap.getCenter(), zoom: currentZoom };
-            if (currentZoom > 3.5) {
+            const targetZ = Math.max(currentZoom, TARGET_SPIDER_ZOOM);
+            const willMove = Math.abs(targetZ - currentZoom) > 0.1
+                          || _atlasMap.getCenter().distanceTo(new maplibregl.LngLat(clusterCoord[0], clusterCoord[1])) > 100;
+            if (willMove) {
               _atlasSpiderRecentering = true;
-              _atlasMap.easeTo({ center: clusterCoord, zoom: 3.0, duration: 450 });
+              _atlasMap.easeTo({ center: clusterCoord, zoom: targetZ, duration: 420 });
               _atlasMap.once('moveend', () => {
                 _atlasSpiderRecentering = false;
                 _atlasShowSpider(clusterCoord, leaves);
