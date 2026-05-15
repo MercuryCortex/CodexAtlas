@@ -22,7 +22,7 @@ influenced-by: ["Proto-Indo-Iranian poetic and ritual tradition"]
 influences: ["[[phase-2-004-yasna-younger-avesta]]", "Second Temple Jewish angelology and eschatology (via Persian period)", "Christian eschatology (via Jewish intermediaries)"]
 deities-mentioned: ["[[ahura-mazda]]", "[[angra-mainyu-ahriman]]", "[[spenta-mainyu]]", "[[the-amesha-spentas]]"]
 events-context: []
-status: "partial"
+status: "full"
 preservation: "17 hymns embedded within the Yasna liturgy (Y.28–34, 43–46, 47–50, 51, 53). Composed orally in Old Avestan, transmitted in priestly memorization for ~1500 years before being written down. The first surviving manuscript is the Pahlavi Yasna codex K5 (Copenhagen, 1323 CE) and J2 (Oxford); the oldest dated Avestan manuscript is from 1288 CE (Yasna sade)."
 refs:
   - title: "The Hymns of Zarathustra"
@@ -140,10 +140,56 @@ Citation: Yasna 44.3–4, trans. Mills 1887; cf. Insler 1975, pp. 64–69, and H
 - **Whether Zarathustra is a single historical individual.** Mainstream view: yes, a single visionary author of the Gathas. Some (Molé) have argued for a more diffuse milieu. Kellens has problematized the strict historical-author view but the personal voice of the hymns remains decisive for most.
 - **Mechanism and degree of influence on Judaism.** Consensus that Persian period was the matrix; *whether* features like resurrection, Satan, and angelology are direct loans or post-exilic Jewish developments stimulated by the Persian context is debated (Barr 1985 vs. Hultgård vs. Shaked).
 
+## The Gathas as proto-philosophical inquiry — Yasna 44 in depth
+
+Yasna 44 — "the question hymn" — is the most philosophically distinctive text in the Gathas and arguably in all of Old Iranian literature. Every strophe opens with the formula *"This I ask Thee, O Ahura, tell me aright"* — and proceeds with a cosmological question. The hymn thus **inverts the genre expectation of prayer**: instead of praise or petition, Zarathustra interrogates the nature of reality.
+
+The cosmological questions of Yasna 44.3–7 are among the earliest examples of systematic philosophical cosmological inquiry in world literature — genuinely comparable to the earliest Greek pre-Socratics in their structure:
+
+- "Who was the father of Righteousness (*aša*) at the first creation?" (Y.44.3)
+- "Who established the course of the sun and stars?" (Y.44.3)
+- "Who from beneath hath sustained the earth and the clouds above from falling?" (Y.44.4)
+- "Who made the waters and the plants?" (Y.44.4)
+- "Who yoked swiftness to wind and the clouds?" (Y.44.4)
+- "Who is the inspirer of good thoughts within souls?" (Y.44.4)
+- "Who created light and darkness? Who created sleep and waking?" (Y.44.5)
+
+These questions are not rhetorical in the modern sense — they are genuine interrogative-hymnic inquiry, expecting Ahura Mazda to answer through the vision-event the hymn itself constitutes. The format structures a philosophical posture: **truth is to be sought by question and answer, not merely received by tradition**. Skjærvø (*The Spirit of Zoroastrianism*, 2011) notes this as constitutive of the "axial" quality of Zarathustra's theology — a reflexive turn toward questioning the grounds of reality.
+
+The questions then pivot from cosmological to social and biographical: Zarathustra asks for patronage (Y.44.7, 44.9), for revelation about the fate of the *druj*-followers (Y.44.13), and for confirmation of his prophetic mission (Y.44.16). The hymn thus moves from cosmic foundations through social ethics to personal commissioning in a single text — the only instance in world literature where a philosopher-prophet's cosmological inquiry and prophetic self-understanding are woven into a single hymn-sequence.
+
+## The Nietzsche reception — a sustained philosophical misappropriation
+
+Friedrich Nietzsche's *Also Sprach Zarathustra* (1883–85) is the most famous text bearing Zarathustra's name in Western literature. Its relationship to the actual Gathas is one of deliberate inversion rather than ignorance.
+
+In *Ecce Homo* (1888, "Why I Am a Destiny"), Nietzsche explains that he chose Zarathustra precisely because the historical figure was the **inventor of morality** — the first to frame the struggle between good and evil as a cosmic metaphysical principle, to translate ethics into ontology:
+
+> "Zarathustra created this most portentous of all errors — morality; therefore he must also be the first to recognize it." — Nietzsche, *Ecce Homo*
+
+And: "The self-overcoming of morality through truthfulness, the self-overcoming of the moralist into his opposite — into me — that is what the name Zarathustra means in my mouth."
+
+The logic is inverted: precisely because the historical Zarathustra established cosmic moral dualism most clearly, Nietzsche's fictional Zarathustra is uniquely suited to *overcome* it. Nietzsche's Zarathustra is the anti-Zarathustra — a herald of moral nihilism, the Übermensch, the eternal recurrence, and the will to power.
+
+**The actual Zarathustra is Nietzsche's theological opposite in every major respect:**
+
+| Dimension | Historical Zarathustra (Gathas) | Nietzsche's Zarathustra |
+|---|---|---|
+| Cosmic structure | Truth vs. Lie is irreducibly real and structuring | Good/evil distinction is a human illusion to be overcome |
+| Ethics | *Humata, hūkhta, hvarshta* (good thought, word, deed) as cosmic obligation | Beyond good and evil; will to power |
+| Eschatology | Cosmic renovation (*frashokereti*) and universal judgment | Eternal recurrence — no linear endpoint |
+| Humanity | Every soul accountable to Ahura Mazda | The Übermensch as self-creator beyond accountability |
+| God | Ahura Mazda as supreme lord and source of Truth | God is dead; the divine is a human projection |
+
+**Scholarly reception:** Stausberg (*Zarathustra and Zoroastrianism*, 2008) provides the fullest treatment of the Western reception history. The misappropriation is mentioned by Boyce (1975, vol. I, p. 3 n. 1) with characteristic terseness. The philosophical irony is that Nietzsche's text has now shaped the Western cultural idea of "Zarathustra" far more thoroughly than the actual Gathas — making it nearly impossible for a Western-educated reader to encounter the word "Zarathustra" without the Nietzsche association as a primary interference.
+
+**For the vault:** The Nietzsche reception functions as a major **cross-tradition distortion event** — the replacement of a historical figure's identity by a Western philosophical projection. It belongs in the same analytical category as the Western reception of "Buddha" through Schopenhauer's lens, or the 18th-century construction of "Hinduism" as a philosophical monism.
+
 ## Refs
 1. Insler, S. (1975). *The Hymns of Zarathustra*. Acta Iranica 8, Brill. — definitive critical edition.
 2. Humbach, H. with Ichaporia, P. (1991). *The Gāthās of Zarathustra*. Heidelberg. — alternative critical translation.
 3. Boyce, M. (1975). *A History of Zoroastrianism*, vol. I. Brill. — the influential reconstruction of early Zoroastrianism.
-4. Skjærvø, P.O. (2011). *The Spirit of Zoroastrianism*. Yale UP. — accessible scholarly survey.
+4. Skjærvø, P.O. (2011). *The Spirit of Zoroastrianism*. Yale UP. — accessible scholarly survey; covers Yasna 44's philosophical significance.
 5. Kellens, J. "GĀTHĀS" in *Encyclopaedia Iranica*. https://iranicaonline.org/articles/gathas. — overview.
 6. Barr, J. (1985). "The Question of Religious Influence: The Case of Zoroastrianism, Judaism, and Christianity". *JAAR* 53:201–235. — the foundational article on the transmission question.
+7. Nietzsche, F. (1888). *Ecce Homo*, "Why I Am a Destiny." — primary source for the Nietzsche misappropriation.
+8. Stausberg, M. (2008). *Zarathustra and Zoroastrianism*. Equinox. — comprehensive Western reception history.
