@@ -466,7 +466,7 @@ canonical-slug
 - `zemyna`
 - `zeus`
 
-### document (360 nodes)
+### document (361 nodes)
 
 - `document-kuntillet-ajrud-inscriptions`
 - `phase-1-001-kesh-temple-hymn`
@@ -729,6 +729,7 @@ canonical-slug
 - `phase-5-051-attar-conference-of-birds`
 - `phase-5-052-sadi-gulistan`
 - `phase-5-053-hafez-divan`
+- `phase-5-054-rumi-masnavi`
 - `phase-6-001-ficino-pimander`
 - `phase-6-002-ficino-theologia-platonica`
 - `phase-6-003-pico-oration-900-conclusions`
@@ -829,7 +830,7 @@ canonical-slug
 - `phase-8-017-santeria-lucumi`
 - `phase-8-018-kalevala`
 
-### event (155 nodes)
+### event (156 nodes)
 
 - `bent-pyramid-sneferu-dahshur`
 - `el-castillo-chichen-itza`
@@ -966,6 +967,7 @@ canonical-slug
 - `event-stobaeus-anthology-c500`
 - `event-stonehenge-construction-c-3000-1600-bce`
 - `event-sulawesi-cave-art-c-45500-bce`
+- `event-temple-leontopolis-foundation-c150bce`
 - `event-thera-eruption-c-1600-bce`
 - `event-third-buddhist-council-c-250-bce`
 - `event-third-crusade-1189-1192`
@@ -987,7 +989,7 @@ canonical-slug
 - `subterranean-chamber-great-pyramid`
 - `temple-of-inscriptions-palenque`
 
-### person (608 nodes)
+### person (613 nodes)
 
 - `aaron`
 - `abba-garima`
@@ -1161,6 +1163,7 @@ canonical-slug
 - `ewostatewos`
 - `ezana-of-aksum`
 - `ezekiel`
+- `farid-ud-din-attar`
 - `fazlur-rahman`
 - `fentos-meqabyan`
 - `fernando-pessoa`
@@ -1198,6 +1201,7 @@ canonical-slug
 - `guru-nanak`
 - `hadewijch-of-antwerp`
 - `hadrian-emperor`
+- `hafez`
 - `hagar-matriarch`
 - `hakuin`
 - `hammurabi`
@@ -1470,6 +1474,7 @@ canonical-slug
 - `quadratus-the-apologist`
 - `quetzalcoatl-historical`
 - `rabbi-akiva`
+- `rabbi-judah-loew`
 - `rabbi-shimon-bar-yochai`
 - `rabia-of-basra`
 - `ram-mohan-roy`
@@ -1491,6 +1496,7 @@ canonical-slug
 - `rumi`
 - `saadia-gaon`
 - `sabellius`
+- `sadi-of-shiraz`
 - `saladin`
 - `samuel-ajayi-crowther`
 - `samuel-prophet`
@@ -1561,6 +1567,7 @@ canonical-slug
 - `triptolemus-legendary`
 - `tsongkhapa`
 - `tulsidas`
+- `tycho-brahe`
 - `umar-ibn-al-khattab`
 - `unas`
 - `ur-bau`
@@ -1935,7 +1942,7 @@ canonical-slug
 - `wisdom-personified`
 - `world-axis`
 
-### tradition (109 nodes)
+### tradition (111 nodes)
 
 - `tradition-african-traditional`
 - `tradition-anthroposophy`
@@ -1973,6 +1980,7 @@ canonical-slug
 - `tradition-greek-religion`
 - `tradition-hashshashin`
 - `tradition-hasidism`
+- `tradition-hasmonean-dynasty`
 - `tradition-hawaiian`
 - `tradition-hellenistic-philosophy`
 - `tradition-hermeticism`
@@ -2022,6 +2030,7 @@ canonical-slug
 - `tradition-rosicrucianism`
 - `tradition-santeria-lucumi`
 - `tradition-scientology`
+- `tradition-scottish-rite-freemasonry`
 - `tradition-sebastianism`
 - `tradition-shia-islam`
 - `tradition-shinto`
@@ -2053,18 +2062,15 @@ canonical-slug
 
 | Refs | Dead target | Suggested canonical (existing) |
 |---:|---|---|
-| 7 | `tradition-scottish-rite-freemasonry` | `tradition-egyptian-religion` |
-| 5 | `tradition-hasmonean-dynasty` | `tradition-zoroastrianism` |
-| 5 | `event-temple-leontopolis-foundation-c150bce` | `event-destruction-of-second-temple-70` |
+| 7 | `event-prague-occult-court-1576-1612` | `event-council-of-nicaea-325` |
+| 4 | `tradition-essenes` | `tradition-freemasonry` |
 | 4 | `messianic-revelation` | `messianic-future-savior` |
 | 4 | `messianic-genealogy` | `messianic-future-savior` |
-| 3 | `tradition-essenes` | `tradition-zoroastrianism` |
-| 3 | `phase-4-007-new-testament-canon` | `phase-4-003-gospel-of-truth` |
+| 3 | `phase-4-007-new-testament-canon` | `phase-4-005-gospel-of-mary` |
 | 3 | `phase-2-005-1-2-kings` | `phase-2-008-homeric-epics` |
-| 3 | `event-rosslyn-chapel-construction-1446` | `event-mafra-monument-construction-1717-1755` |
-| 3 | `event-prague-occult-court-1576-1612` | `event-council-of-jerusalem-49` |
+| 3 | `event-rosslyn-chapel-construction-1446` | `event-borobudur-construction-c-750-825` |
 | 2 | `yam-canaanite` | `astarte-canaanite` |
-| 2 | `tradition-minoan-religion` | `tradition-zoroastrianism` |
-| 2 | `tradition-eastern-orthodoxy` | `tradition-zoroastrianism` |
-| 2 | `phase-1-013-babylonian-theodicy` | `phase-1-016-eridu-genesis-flood` |
+| 2 | `tradition-minoan-religion` | `tradition-freemasonry` |
+| 2 | `tradition-eastern-orthodoxy` | `tradition-freemasonry` |
+| 2 | `phase-1-013-babylonian-theodicy` | `phase-4-033-babylonian-talmud` |
 | 2 | `asclepius` | `asclepius-greek` |

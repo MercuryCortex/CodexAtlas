@@ -18,11 +18,20 @@ Format:
 
 ---
 
-## sonnet-persian-sufi-1 — content / Persian Sufi literary corpus — started 2026-05-15
+## sonnet-persian-sufi-1 — content / Persian Sufi literary corpus — started 2026-05-15 — **FINISHED 2026-05-15**
 - Owning: `phase-5-051-attar-conference-of-birds`, `phase-5-052-sadi-gulistan`, `phase-5-053-hafez-divan`, `phase-5-054-rumi-masnavi`, `farid-ud-din-attar`, `hafez`, `sadi-of-shiraz`
 - Goal: 4 document nodes (Attar, Sa'di, Hafez, Rumi Masnavi) + 3 person nodes — fill the biggest Sufism gap in the vault
-- Status: in-flight
-- Last edit: 00_meta/ACTIVE-AGENTS.md
+- Status: finished
+- Delivered:
+  - [[phase-5-051-attar-conference-of-birds]] (NEW) — *Manṭiq al-Ṭayr* (~1177), metadata tier, 4 refs; MASSIVE-WIN edges: Seven Valleys ↔ Dante *Purgatorio* 7 terraces (Asín Palacios 1919 transmission thesis); *sī murgh*/Simorgh pun ↔ Plotinus *epistrophē* ↔ Eckhart ↔ *tat tvam asi* (universal soul-identity grammar).
+  - [[phase-5-052-sadi-gulistan]] (NEW) — *Gulistān* (1258), metadata tier, 5 refs; MASSIVE-WIN edges: *Bānī Ādam* UN-inscription quatrain as Sufi *tawḥīd*-based universalism; structural parallel to Erasmus's *Adages*; Pañcatantra → Kalila wa Dimna → Gulistān transmission chain.
+  - [[phase-5-053-hafez-divan]] (NEW) — *Dīvān-e Ḥāfeẓ* (~1350–1390), metadata tier, 6 refs; MASSIVE-WIN edges: Goethe's *West-östlicher Divan* (1819) = canonical East-West literary cross-pollination → Nietzsche → Hesse; Sufi *mey* (wine) ↔ Dionysian wine ↔ Eucharist ↔ Vedic *soma*.
+  - [[phase-5-054-rumi-masnavi]] (NEW) — *Masnavī-ye Maʿnavī* (~1258–1273), metadata tier, 5 refs; MASSIVE-WIN edges: *Nay-nāmeh* reed-flute ↔ Plotinus *epistrophē* ↔ Gnostic *pneuma* longing for Pleroma ↔ Vedantic *jīva* in *māyā* (soul-in-exile theology across 4 independent traditions).
+  - [[farid-ud-din-attar]] (NEW person) — metadata tier, 3 refs.
+  - [[hafez]] (NEW person) — metadata tier, 4 refs.
+  - [[sadi-of-shiraz]] (NEW person) — metadata tier, 3 refs.
+- Build: 2018 nodes · 12,094 edges · 3.0% dead-link ratio
+- Last edit: 00_meta/STATUS.md
 
 ## sonnet-pentecostalism-1 — content / Pentecostalism tradition wedge — started 2026-05-15 — **FINISHED 2026-05-15**
 - Owning: `tradition-pentecostalism`, `event-azusa-street-revival-1906`, `william-seymour`, `charles-parham`
