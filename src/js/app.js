@@ -3873,6 +3873,21 @@ const ALCHEMY_PRESETS = [
     ],
   },
   {
+    id: 'portuguese-mythological-spine',
+    name: 'Portuguese Mythological Spine',
+    headline: '2,500 years of Portuguese sacred tradition — from pre-Roman Lusitanian oracle religion (Endovélico, 500 BCE) through Camões\'s Adamastor (a Titan whose body IS the Cape of Good Hope, 1572) to Pessoa\'s esoteric national mythology (1934). Adamastor alone connects Norse cosmogony (Ymir), Yoruba ocean theology (Olokun), and the Discoveries. Sebastianism is the Portuguese instance of the cross-tradition hidden-king pattern (Mahdi, Maitreya, Saoshyant). One of the most original mythological inventions in the Renaissance mapped against 2,500 years of sacred geography.',
+    picks: [
+      'tradition-lusitanian-religion', 'endovelicus',
+      'event-order-of-christ-foundation-1319', 'henry-the-navigator',
+      'prester-john',
+      'phase-6-041-camoes-os-lusiadas', 'adamastor', 'ines-de-castro',
+      'antonio-vieira', 'fifth-empire-quinto-imperio',
+      'event-battle-of-alcacer-quibir-1578', 'sebastian-i-portugal',
+      'tradition-sebastianism',
+      'phase-7-037-pessoa-mensagem', 'fernando-pessoa',
+    ],
+  },
+  {
     id: 'pessoa-esoteric-network',
     name: 'Pessoa\'s Esoteric Network',
     headline: 'Fernando Pessoa as the modernist-literary endpoint of multiple esoteric traditions: Sebastianismo (Bandarra), Thelema (Crowley + the 1930 Boca do Inferno hoax), Theosophy (Blavatsky, whom he translated), and Portuguese hermeticism (Carvalho Monteiro\'s Regaleira → Gandra\'s contemporary scholarship).',

@@ -947,7 +947,7 @@ canonical-slug
 - `event-wilhelmsbad-convent-1782`
 - `event-zagwe-lalibela-churches-c1200`
 
-### person (583 nodes)
+### person (586 nodes)
 
 - `aaron`
 - `abba-garima`
@@ -987,6 +987,7 @@ canonical-slug
 - `antiochus-iv-epiphanes`
 - `anton-lavey`
 - `antonio-carvalho-monteiro`
+- `antonio-vieira`
 - `antony-the-great`
 - `apelles`
 - `aphrahat`
@@ -1167,6 +1168,7 @@ canonical-slug
 - `henri-de-lubac`
 - `henry-steel-olcott`
 - `henry-suso`
+- `henry-the-navigator`
 - `heracleon-valentinian`
 - `heraclitus`
 - `hermas`
@@ -1401,6 +1403,7 @@ canonical-slug
 - `porphyry`
 - `pothinus-of-lyon`
 - `praxeas`
+- `prester-john`
 - `priscilla`
 - `priscilla-and-maximilla`
 - `priscillian`
@@ -1597,7 +1600,7 @@ canonical-slug
 - `wheat-grain`
 - `yin-yang`
 
-### theme (235 nodes)
+### theme (236 nodes)
 
 - `364-day-solar-calendar`
 - `adam-kadmon`
@@ -1813,6 +1816,7 @@ canonical-slug
 - `tewahedo-christology`
 - `the-five-buddha-families`
 - `the-godhead-eckhart`
+- `theme-heroes-paradise-island`
 - `theurgy`
 - `tikkun-olam`
 - `torah-and-wisdom-identified`
@@ -1950,16 +1954,16 @@ canonical-slug
 
 | Refs | Dead target | Suggested canonical (existing) |
 |---:|---|---|
-| 4 | `ragnarok-apocalyptic` | `apocalyptic-cosmic-warfare` |
-| 4 | `primordial-darkness` | `eros-primordial` |
-| 4 | `messianic-revelation` | `messianic-future-savior` |
-| 4 | `genealogical-cosmogony` | `mesoamerican-cosmogony` |
-| 4 | `evolutionary-cosmogony` | `mesoamerican-cosmogony` |
-| 3 | `phase-4-007-new-testament-canon` | `phase-4-001-gospel-of-thomas` |
+| 4 | `ragnarok-apocalyptic` | `apocalyptic-revelation` |
+| 4 | `primordial-darkness` | `primordial-waters` |
+| 4 | `messianic-revelation` | `messianic-secret` |
+| 4 | `genealogical-cosmogony` | `hermetic-cosmogony` |
+| 4 | `evolutionary-cosmogony` | `hermetic-cosmogony` |
+| 3 | `phase-4-007-new-testament-canon` | `phase-4-007-on-the-origin-of-the-world` |
 | 3 | `phase-2-005-1-2-kings` | `phase-2-008-homeric-epics` |
-| 3 | `messianic-genealogy` | `messianic-future-savior` |
+| 3 | `messianic-genealogy` | `messianic-secret` |
 | 2 | `yam-canaanite` | `astarte-canaanite` |
-| 2 | `tradition-minoan-religion` | `tradition-hindu-modernism` |
-| 2 | `tradition-eastern-orthodoxy` | `tradition-hindu-modernism` |
-| 2 | `phase-1-013-babylonian-theodicy` | `phase-1-004-gilgamesh-old-babylonian` |
+| 2 | `tradition-minoan-religion` | `tradition-wicca-modern-pagan` |
+| 2 | `tradition-eastern-orthodoxy` | `tradition-wicca-modern-pagan` |
+| 2 | `phase-1-013-babylonian-theodicy` | `phase-1-012-amarna-letters` |
 | 2 | `asclepius` | `asclepius-greek` |

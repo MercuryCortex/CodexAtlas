@@ -13,6 +13,15 @@ texts-authored: []
 originator-of: []
 events-participated: ["[[event-battle-of-alcacer-quibir-1578]]"]
 mentioned-in: ["[[phase-6-040-bandarra-trovas]] (retrospectively reinterpreted as predicting Sebastian's reign and return)", "[[phase-7-037-pessoa-mensagem]] (Section III, *O Encoberto*, mythologizes Sebastian's expected return)"]
+syncretic-edges:
+  - target: "muhammad-al-mahdi"
+    type: "structural-parallel"
+    source: "Valdez, Maria Ana (2010). Sebastianismo: Para Uma Genealogia. ICS Lisbon. / García-Arenal, Mercedes (2001). Messianism and Puritanical Reform: Mahdis of the Muslim West. Brill."
+    notes: "**Structural parallel between Sebastianism and Twelver Shia Mahdism.** Both traditions share the same theological architecture: (1) a legitimate ruler disappears without confirmed death (Sebastião I at Alcácer Quibir 1578; the 12th Imam who went into occultation 874 CE); (2) the body/person is never definitively confirmed gone; (3) a tradition develops expecting the hidden ruler's return to restore justice in a time of crisis; (4) false claimants appear and are suppressed. The parallel was noticed by contemporaries — Conversos (Jewish converts to Christianity) in 17th-c. Portugal, familiar with Islamic messianic traditions from their Iberian heritage, were disproportionately prominent in Sebastianist circles. No documented direct transmission between Twelver Shia doctrine and Sebastianism; the convergence is most likely independent resolution of the same political-theological problem (what does a community do with a catastrophic loss of its king?), with Iberian Converso intellectual circles possibly serving as a knowledge vector. See [[tradition-sebastianism]] and [[fifth-empire-quinto-imperio]]."
+  - target: "messianic-future-savior"
+    type: "part-of"
+    source: "Valdez (2010)"
+    notes: "Sebastianism is the Portuguese instance of the cross-tradition messianic-future-savior pattern — the hidden king (*O Encoberto*, the Shrouded One) who will return at the nation's hour of greatest need to restore glory and inaugurate a new age. The Sebastianist *Encoberto* is structurally identical to the Zoroastrian *Saoshyant*, the Islamic *al-Mahdi*, the Jewish *Mashiach*, and the Buddhist *Maitreya* — differing in theological framework and political context, converging on the same expectation structure."
 status: "metadata"
 refs:
   - title: "A History of Portugal and the Portuguese Empire (Vol. 1)"
