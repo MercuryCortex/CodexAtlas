@@ -469,7 +469,7 @@ canonical-slug
 - `zemyna`
 - `zeus`
 
-### document (374 nodes)
+### document (378 nodes)
 
 - `document-kuntillet-ajrud-inscriptions`
 - `phase-1-001-kesh-temple-hymn`
@@ -577,6 +577,7 @@ canonical-slug
 - `phase-3-031-asthasahasrika-prajnaparamita`
 - `phase-3-032-4-ezra-ethiopic-recension`
 - `phase-3-033-book-of-giants-qumran-manichaean`
+- `phase-3-034-huainanzi`
 - `phase-4-001-gospel-of-thomas`
 - `phase-4-002-apocryphon-of-john`
 - `phase-4-003-gospel-of-truth`
@@ -679,6 +680,9 @@ canonical-slug
 - `phase-4-093-lankavat-sutra`
 - `phase-4-094-larger-sukhavativyuha-sutra`
 - `phase-4-095-new-testament-canon`
+- `phase-4-096-cantong-qi`
+- `phase-4-097-baopuzi-ge-hong`
+- `phase-4-098-liezi`
 - `phase-5-001-devi-mahatmya`
 - `phase-5-002-heart-sutra`
 - `phase-5-002b-diamond-sutra`
@@ -846,7 +850,7 @@ canonical-slug
 - `phase-8-019-kojiki`
 - `phase-8-020-nihon-shoki`
 
-### event (163 nodes)
+### event (165 nodes)
 
 - `bent-pyramid-sneferu-dahshur`
 - `el-castillo-chichen-itza`
@@ -895,6 +899,7 @@ canonical-slug
 - `event-council-of-trent-1545-1563`
 - `event-council-of-troyes-1129`
 - `event-council-of-vienne-1311-1312`
+- `event-crucifixion-of-jesus-c30ce`
 - `event-cucuteni-trypillia-c-5500-3000-bce`
 - `event-cyrus-conquest-of-babylon-539-bce`
 - `event-dead-sea-scrolls-discovery`
@@ -913,6 +918,7 @@ canonical-slug
 - `event-edict-of-thessalonica-380`
 - `event-eleusinian-mysteries-c1500-bce-396-ce`
 - `event-evangelical-political-realignment-usa-1979-present`
+- `event-execution-of-al-hallaj-922`
 - `event-fall-of-acre-1291`
 - `event-fall-of-constantinople-1453`
 - `event-ficino-corpus-hermeticum-translation-1463`
@@ -1726,7 +1732,7 @@ canonical-slug
 - `wheat-grain`
 - `yin-yang`
 
-### theme (306 nodes)
+### theme (307 nodes)
 
 - `364-day-solar-calendar`
 - `adam-kadmon`
@@ -1993,6 +1999,7 @@ canonical-slug
 - `theme-manichaeism-synthesis`
 - `theme-orion-correlation-theory`
 - `theme-paradise-etymology`
+- `theme-persecution-as-legitimation`
 - `theme-proto-indo-iranian-religion`
 - `theme-pyramid-as-resurrection-machine`
 - `theme-rebel-against-the-divine`
@@ -2163,14 +2170,15 @@ canonical-slug
 | Refs | Dead target | Suggested canonical (existing) |
 |---:|---|---|
 | 5 | `phase-1-013-babylonian-theodicy` | `phase-1-017-descent-of-inanna` |
-| 4 | `tradition-minoan-religion` | `tradition-rastafari` |
-| 4 | `tradition-eastern-orthodoxy` | `tradition-rastafari` |
-| 4 | `tradition-early-christianity` | `tradition-inca-andean` |
-| 3 | `tradition-medieval-christianity` | `tradition-portuguese-hermeticism` |
-| 3 | `phase-4-007-new-testament-canon` | `phase-4-009-pistis-sophia` |
-| 3 | `phase-2-005-1-2-kings` | `phase-2-003-atharva-veda` |
+| 4 | `tradition-minoan-religion` | `tradition-mesoamerican` |
+| 4 | `tradition-eastern-orthodoxy` | `tradition-mesoamerican` |
+| 4 | `tradition-early-christianity` | `tradition-mesoamerican` |
+| 3 | `tradition-medieval-christianity` | `tradition-knights-templar` |
+| 3 | `phase-4-007-new-testament-canon` | `phase-4-002-apocryphon-of-john` |
+| 3 | `phase-2-005-1-2-kings` | `phase-2-008-homeric-epics` |
 | 3 | `divine-kingship-solar` | `divine-kingship` |
 | 2 | `yam-canaanite` | `astarte-canaanite` |
-| 2 | `tradition-lingayat` | `tradition-rastafari` |
-| 2 | `tradition-cheondogyo` | `tradition-rastafari` |
+| 2 | `tradition-second-temple-judaism` | `tradition-mesoamerican` |
+| 2 | `tradition-lingayat` | `tradition-mesoamerican` |
+| 2 | `tradition-cheondogyo` | `tradition-mesoamerican` |
 | 2 | `asclepius` | `asclepius-greek` |
