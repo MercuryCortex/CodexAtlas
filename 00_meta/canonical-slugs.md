@@ -464,7 +464,7 @@ canonical-slug
 - `zemyna`
 - `zeus`
 
-### document (355 nodes)
+### document (359 nodes)
 
 - `document-kuntillet-ajrud-inscriptions`
 - `phase-1-001-kesh-temple-hymn`
@@ -498,6 +498,7 @@ canonical-slug
 - `phase-1-029-telipinu-myth`
 - `phase-1-030-illuyanka-myth`
 - `phase-1-031-rigveda`
+- `phase-1-035-wadi-el-jarf-papyri`
 - `phase-2-001-rig-veda-family-books`
 - `phase-2-002-gathas-of-zarathustra`
 - `phase-2-003-atharva-veda`
@@ -722,6 +723,8 @@ canonical-slug
 - `phase-5-048-theology-of-aristotle-arabic`
 - `phase-5-049-bodhicaryavatara`
 - `phase-5-049-yosippon-ethiopian-recension`
+- `phase-5-050-bhagavata-purana`
+- `phase-5-051-attar-conference-of-birds`
 - `phase-6-001-ficino-pimander`
 - `phase-6-002-ficino-theologia-platonica`
 - `phase-6-003-pico-oration-900-conclusions`
@@ -821,8 +824,9 @@ canonical-slug
 - `phase-8-016-haitian-vodou-liturgical-tradition`
 - `phase-8-017-santeria-lucumi`
 - `phase-8-018-kalevala`
+- `rigveda`
 
-### event (154 nodes)
+### event (155 nodes)
 
 - `bent-pyramid-sneferu-dahshur`
 - `el-castillo-chichen-itza`
@@ -836,6 +840,7 @@ canonical-slug
 - `event-arabic-harranian-hermetica-c800-1000`
 - `event-asokan-dhamma-missions-c-250-bce`
 - `event-augustine-of-canterbury-mission-597`
+- `event-azusa-street-revival-1906`
 - `event-bacchanalia-suppression-186-bce`
 - `event-bar-kokhba-revolt-132-136`
 - `event-battle-of-actium-31-bce`
@@ -979,7 +984,7 @@ canonical-slug
 - `subterranean-chamber-great-pyramid`
 - `temple-of-inscriptions-palenque`
 
-### person (597 nodes)
+### person (605 nodes)
 
 - `aaron`
 - `abba-garima`
@@ -1088,6 +1093,7 @@ canonical-slug
 - `chaitanya-mahaprabhu`
 - `charlemagne`
 - `charles-hapgood`
+- `charles-parham`
 - `charles-taze-russell`
 - `chogyam-trungpa`
 - `christian-rosenkreutz`
@@ -1200,6 +1206,7 @@ canonical-slug
 - `heinrich-khunrath`
 - `helen-schucman`
 - `helena-blavatsky`
+- `hemiunu`
 - `henri-de-lubac`
 - `henry-steel-olcott`
 - `henry-suso`
@@ -1405,6 +1412,8 @@ canonical-slug
 - `noetus-of-smyrna`
 - `numenius-of-apamea`
 - `onesimus`
+- `onias-iii`
+- `onias-iv`
 - `origen`
 - `orpheus`
 - `p-d-ouspensky`
@@ -1505,6 +1514,7 @@ canonical-slug
 - `simon-magus`
 - `simon-the-zealot`
 - `snorri-sturluson`
+- `socrates`
 - `solomon-king`
 - `solon`
 - `sri-aurobindo`
@@ -1561,6 +1571,7 @@ canonical-slug
 - `vidyaranya`
 - `wendy-doniger`
 - `william-robertson-smith`
+- `william-seymour`
 - `wolega-tafari-makonnen-haile-selassie`
 - `wolfram-von-eschenbach`
 - `wovoka`
@@ -1572,9 +1583,11 @@ canonical-slug
 - `yohanan-ben-zakkai`
 - `yu-the-great`
 - `zacchaeus`
+- `zadok-priest`
 - `zara-yaqob-emperor`
 - `zarathustra`
 - `zeno-of-citium`
+- `zerubbabel`
 - `zhuangzi-person`
 - `ziusudra`
 - `zosimos-of-panopolis`
@@ -1643,7 +1656,7 @@ canonical-slug
 - `wheat-grain`
 - `yin-yang`
 
-### theme (261 nodes)
+### theme (268 nodes)
 
 - `364-day-solar-calendar`
 - `adam-kadmon`
@@ -1729,6 +1742,7 @@ canonical-slug
 - `ethiopian-marian-devotion`
 - `ethiopian-systematic-theology`
 - `ethiopic-canon-broad`
+- `evolutionary-cosmogony`
 - `fall-of-humanity`
 - `falsafa`
 - `feminine-solar`
@@ -1744,6 +1758,7 @@ canonical-slug
 - `frashokereti-cosmic-renovation`
 - `free-will-vs-determinism`
 - `fulfillment-of-prophecy`
+- `genealogical-cosmogony`
 - `gentile-inclusion`
 - `gentile-mission`
 - `gnosis-as-salvation`
@@ -1814,6 +1829,7 @@ canonical-slug
 - `predestination`
 - `predestination-protestant`
 - `priestly-purity`
+- `primordial-darkness`
 - `primordial-waters`
 - `prisca-theologia`
 - `progressive-revelation`
@@ -1864,6 +1880,7 @@ canonical-slug
 - `tewahedo-christology`
 - `the-five-buddha-families`
 - `the-godhead-eckhart`
+- `theme-aaronide-priestly-continuity`
 - `theme-akhenaten-moses-monotheism-thesis`
 - `theme-asha-druj-cosmic-opposition`
 - `theme-baal-set-syncretism`
@@ -1878,8 +1895,10 @@ canonical-slug
 - `theme-paradise-etymology`
 - `theme-proto-indo-iranian-religion`
 - `theme-pyramid-as-resurrection-machine`
+- `theme-sacred-bloodline-claim`
 - `theme-sacred-geometry-giza`
 - `theme-satan-angra-mainyu-transfer`
+- `theme-solomonic-transmission-spine`
 - `theme-vedic-avestan-split`
 - `theme-zoroastrian-afterlife-geography`
 - `theme-zoroastrian-cosmogony`
@@ -1896,6 +1915,7 @@ canonical-slug
 - `two-principles`
 - `two-spirits-doctrine`
 - `tzimtzum`
+- `underworld-descent`
 - `ungrund`
 - `unmoved-mover`
 - `via-negativa`
@@ -1907,7 +1927,7 @@ canonical-slug
 - `wisdom-personified`
 - `world-axis`
 
-### tradition (107 nodes)
+### tradition (109 nodes)
 
 - `tradition-african-traditional`
 - `tradition-anthroposophy`
@@ -1934,6 +1954,7 @@ canonical-slug
 - `tradition-druze`
 - `tradition-eglise-johannite`
 - `tradition-egyptian`
+- `tradition-egyptian-religion`
 - `tradition-eleusinian-mysteries`
 - `tradition-ethiopian-orthodox-tewahedo`
 - `tradition-etruscan-religion`
@@ -1980,6 +2001,7 @@ canonical-slug
 - `tradition-ordo-novi-templi`
 - `tradition-oriental-orthodox`
 - `tradition-orphic`
+- `tradition-pentecostalism`
 - `tradition-polynesian`
 - `tradition-portuguese-hermeticism`
 - `tradition-pre-islamic-arabian`
@@ -2023,16 +2045,17 @@ canonical-slug
 
 | Refs | Dead target | Suggested canonical (existing) |
 |---:|---|---|
-| 7 | `tradition-egyptian-religion` | `tradition-hermeticism` |
-| 4 | `primordial-darkness` | `eros-primordial` |
-| 4 | `messianic-revelation` | `messianic-future-savior` |
-| 4 | `genealogical-cosmogony` | `mesoamerican-cosmogony` |
-| 4 | `evolutionary-cosmogony` | `mesoamerican-cosmogony` |
-| 3 | `phase-4-007-new-testament-canon` | `phase-4-002-apocryphon-of-john` |
-| 3 | `phase-2-005-1-2-kings` | `phase-2-003-atharva-veda` |
-| 3 | `messianic-genealogy` | `messianic-future-savior` |
+| 5 | `tradition-hasmonean-dynasty` | `tradition-wicca-modern-pagan` |
+| 5 | `event-temple-leontopolis-foundation-c150bce` | `event-kaaba-pre-islamic-and-islamic-foundation` |
+| 4 | `tradition-scottish-rite-freemasonry` | `tradition-wicca-modern-pagan` |
+| 4 | `messianic-revelation` | `messianic-secret` |
+| 4 | `messianic-genealogy` | `messianic-secret` |
+| 3 | `tradition-essenes` | `tradition-roman-religion` |
+| 3 | `phase-5-053-hafez-divan` | `phase-5-050-bhagavata-purana` |
+| 3 | `phase-4-007-new-testament-canon` | `phase-4-008-trimorphic-protennoia` |
+| 3 | `phase-2-005-1-2-kings` | `phase-2-008-homeric-epics` |
 | 2 | `yam-canaanite` | `astarte-canaanite` |
-| 2 | `tradition-minoan-religion` | `tradition-hermeticism` |
-| 2 | `tradition-eastern-orthodoxy` | `tradition-hermeticism` |
-| 2 | `phase-1-013-babylonian-theodicy` | `phase-4-033-babylonian-talmud` |
+| 2 | `tradition-minoan-religion` | `tradition-wicca-modern-pagan` |
+| 2 | `tradition-eastern-orthodoxy` | `tradition-wicca-modern-pagan` |
+| 2 | `phase-1-013-babylonian-theodicy` | `phase-1-016-eridu-genesis-flood` |
 | 2 | `asclepius` | `asclepius-greek` |

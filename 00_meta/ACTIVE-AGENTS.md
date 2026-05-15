@@ -18,6 +18,35 @@ Format:
 
 ---
 
+## sonnet-persian-sufi-1 — content / Persian Sufi literary corpus — started 2026-05-15
+- Owning: `phase-5-051-attar-conference-of-birds`, `phase-5-052-sadi-gulistan`, `phase-5-053-hafez-divan`, `phase-5-054-rumi-masnavi`, `farid-ud-din-attar`, `hafez`, `sadi-of-shiraz`
+- Goal: 4 document nodes (Attar, Sa'di, Hafez, Rumi Masnavi) + 3 person nodes — fill the biggest Sufism gap in the vault
+- Status: in-flight
+- Last edit: 00_meta/ACTIVE-AGENTS.md
+
+## sonnet-pentecostalism-1 — content / Pentecostalism tradition wedge — started 2026-05-15 — **FINISHED 2026-05-15**
+- Owning: `tradition-pentecostalism`, `event-azusa-street-revival-1906`, `william-seymour`, `charles-parham`
+- Goal: 4-node Pentecostalism cluster — tradition + Azusa Street event + 2 founding figures; wire to possession-ritual MASSIVE-win edge
+- Status: finished
+- Delivered: [[tradition-pentecostalism]] (NEW) · [[event-azusa-street-revival-1906]] (NEW) · [[william-seymour]] (NEW) · [[charles-parham]] (NEW). MASSIVE-WIN edges: Azusa Street interracial Spirit-possession ↔ [[possession-ritual]] social-leveling mechanism; Pentecostal glossolalia in universal altered-states frame (Dionysian/Sufi/Vodou/mudang parallel); Prosperity Gospel as [[katabasis-and-anabasis]] soteriology inversion. Build: **2001 nodes · 12,029 edges · 3.0% dead-link**.
+- Last edit: 00_meta/STATUS.md
+
+## sonnet-bhagavata-1 — content / Bhāgavata Purāṇa document node — started 2026-05-15 — **FINISHED 2026-05-15**
+- Owning: `02_documents/_phase-5-medieval/phase-5-050-bhagavata-purana.md` (NEW)
+- Goal: Create full metadata-tier P5-050 node for the Bhāgavata Purāṇa with MASSIVE-win cross-tradition edges (Prahlāda ↔ Daniel/martyrdom theology; Rāsa-līlā ↔ bridal mysticism; Gajendra-grace ↔ tariki/sola-fide; Kapila-Devahūti ↔ Sāṃkhya theisticization)
+- Status: finished
+- Delivered: [[phase-5-050-bhagavata-purana]] (NEW) — full metadata-tier document node; 4 T1 refs (Bryant 2003, Rocher 1986, Hardy 1983, Prabhupāda T2); 5 MASSIVE-win cross-tradition edges; full 12-Skandha structure; full historical phases (Āḻvārs → Rāmānuja → Nimbārka → Mādhva → Chaitanya → ISKCON); relations to neighbors wired. Build: 1999 nodes · 12028 edges · 3.0% dead-link.
+- Last edit: 00_meta/STATUS.md
+
+## sonnet-deadlink-sweep-2 — content / dead-link closure batch 2 — started 2026-05-15
+
+- Owning: `tradition-egyptian-religion` (alias stub), `rigveda` (redirect), `primordial-darkness`, `genealogical-cosmogony`, `evolutionary-cosmogony`, `underworld-descent` (stub), `socrates`, `rama-deity-vaishnava`, `radha-deity`, `brahman-impersonal`
+- Goal: Close ~10 high-ref dead-links by creating alias stubs, redirect stubs, and full metadata nodes
+- Status: in-flight
+- Last edit: 00_meta/ACTIVE-AGENTS.md
+
+---
+
 ## opus-atlas-v3-evening — app-code / Atlas Map V3 + class-icons + persistent connections — started 2026-05-15 evening — **FINISHED 2026-05-15** (session-close)
 - Owning: src/js/app.js (~30 commits), src/styles/app.css (.atlas-era-bar + handles), index.html (vendor scripts + nested atlas-pane + sidebar nav glyph refresh), build_data.py (geo_for_node cascade), 00_meta/locations.md (+62 entries), _assets/vendor/{maplibre,pmtiles,glyphs}/, _assets/basemap/world-z7.pmtiles (gitignored, fetchable via scripts/fetch-basemap.sh), scripts/serve.py, scripts/fetch-basemap.sh, start-atlas.command, 00_meta/HANDOFF-2026-05-15-evening.md (NEW), STATUS.md v0.8 header
 - Goal: Replace V2 spider system with unified zoom-aware jitter; persistent Pantheon-style hover-trails; class-icons on every map marker; geo coverage 67%→~85%; premium-SaaS-grade interaction; tagged `atlas-map-v3-icons` + `map-v3-jitter-flow` for safe reverts. Result called "fantastic" by John.
@@ -383,3 +412,29 @@ The things opus-foundation-1 claimed but never started are all still open:
   - A `theme-tariki-other-power` theme node would be a natural follow-up connecting Pure Land / bhakti / sola fide
   - The canonical-slugs now list P4-091–094 at their proper numbers; the previously-registered old collision slugs (phase-4-061-lotus-sutra etc.) should be audited
 - Last edit: 00_meta/STATUS.md
+
+---
+
+## sonnet-families-1 — content / deep family lineage investigation — started 2026-05-15 — **IN PROGRESS**
+
+- Goal: Build the cross-tradition family-lineage investigation layer — the most under-mapped dimension of the vault. Four interlocking threads: (1) Solomonic transmission spine (Solomon → 5 living traditions), (2) Aaronide/Zadokite priestly continuity chain (~1200 BCE → present genetics), (3) Sinclair/Stuart → Scottish Rite Freemasonry institutional line, (4) Rudolf II Habsburg → Prague occult court nexus.
+- Owning:
+  - `06_themes/theme-solomonic-transmission-spine.md` (NEW)
+  - `06_themes/theme-aaronide-priestly-continuity.md` (NEW)
+  - `06_themes/theme-sacred-bloodline-claim.md` (NEW)
+  - `04_persons/zadok-priest.md` (NEW)
+  - `04_persons/onias-iii.md` (NEW)
+  - `04_persons/onias-iv.md` (NEW)
+  - `04_persons/zerubbabel.md` (NEW)
+  - `04_persons/william-sinclair-rosslyn.md` (NEW)
+  - `04_persons/chevalier-ramsay.md` (NEW)
+  - `04_persons/rudolf-ii-habsburg.md` (NEW)
+  - `04_persons/rabbi-judah-loew.md` (NEW)
+  - `04_persons/tycho-brahe.md` (NEW)
+  - `07_traditions/tradition-hasmonean-dynasty.md` (NEW)
+  - `07_traditions/tradition-scottish-rite-freemasonry.md` (NEW)
+  - `05_events/event-temple-leontopolis-foundation-c150bce.md` (NEW)
+  - `05_events/event-rosslyn-chapel-construction-1446.md` (NEW)
+  - `05_events/event-ramsay-oration-1737.md` (NEW)
+  - `05_events/event-prague-occult-court-1576-1612.md` (NEW)
+- Status: in progress
