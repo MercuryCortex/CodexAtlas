@@ -25,6 +25,7 @@ Format:
 | `sonnet-apkallu-1` | content / Apkallu antediluvian sages | `apkallu` (NEW) — Mesopotamian upstream of Watchers/Enoch chain | 2026-05-15 | in-progress |
 | `sonnet-egypt-mysticism-1` | content / Egypt outward — mystical + symbolic web | tetramorph, axis-mundi, cosmic-egg, ma-at, pseudo-dionysius, ammonius-saccas, ma-at-logos-sophia, neoplatonic-henosis, sacred-geometry-cosmic-proportion, dying-rising-god, event-school-of-alexandria — **11 nodes** | 2026-05-15 | **FINISHED** |
 | `sonnet-khafre-symbolism-1` | content / Egyptian symbolism deep-dive | 9 symbols + 4 themes + 6 persons + 4 events + 2 documents — **25 new nodes · 194 new edges** | 2026-05-15 | **FINISHED** |
+| `sonnet-kabbalah-synthesis-1` | content / Symbol fixes + Kabbalah/Logos/Divine-Feminine synthesis | 6 symbol fixes + theme-axial-age (NEW) + 6 stub→full upgrades (logos-cosmic-reason, divine-feminine, tikkun-olam, philo-of-alexandria, tradition-kabbalah, moses-de-leon) | 2026-05-15 | **FINISHED** e8306e0+268e1da |
 
 ---
 
