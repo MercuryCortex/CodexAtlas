@@ -7,7 +7,7 @@ date-emergence: -1100
 date-end: -500
 region-origin: "Southwestern Iberian Peninsula (modern Andalusia, Alentejo, Algarve) — lower Guadalquivir valley and Atlantic coastal zone"
 regions-spread: ["Huelva / Tartessian heartland", "coastal Algarve and Alentejo (southern Portugal)", "Atlantic trade contacts to Cornwall, Ireland, Brittany"]
-key-deities: []
+key-deities: ["[[melqart]] (via Gades — the Phoenician religious presence in Tartessian territory)"]
 key-persons: ["[[arganthonius]] (semi-legendary king of Tartessos, c. -630 to -550, attested in Herodotus and Strabo as a centuries-long-lived monarch who befriended the Phocaean Greeks)"]
 key-documents: []
 key-themes: []

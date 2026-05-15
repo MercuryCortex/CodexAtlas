@@ -12,7 +12,7 @@ documents: ["[[phase-1-027-memphite-theology-shabaka-stone]]", "[[phase-1-013-ba
 traditions: ["[[tradition-egyptian]]", "[[tradition-early-christianity]]", "[[tradition-mystery-cults]]"]
 parallels: ["[[ma-at-logos-sophia]]", "[[neoplatonic-henosis]]", "[[psychostasia-soul-weighing]]"]
 appearances: ["[[osiris]]", "[[dumuzi-tammuz]]", "[[baal]]", "[[adonis]]", "[[attis]]", "[[dionysus]]"]
-deity-instances: ["[[osiris]]", "[[dumuzi-tammuz]]", "[[baal]]", "[[adonis]]", "[[attis]]", "[[dionysus]]"]
+deity-instances: ["[[osiris]]", "[[dumuzi-tammuz]]", "[[baal]]", "[[adonis]]", "[[attis]]", "[[dionysus]]", "[[melqart]]"]
 status: "metadata"
 refs:
   - title: "The Riddle of Resurrection: 'Dying and Rising Gods' in the Ancient Near East"

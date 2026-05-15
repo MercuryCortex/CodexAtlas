@@ -7,7 +7,7 @@ date-emergence: -800
 date-end: 400
 region-origin: "Western Iberian Peninsula (modern Portugal and western Spain)"
 regions-spread: ["Lusitania (Roman province)", "Gallaecia (northern Portugal + Galicia)", "Carpetania and surrounding Celtic-Iberian territories"]
-key-deities: ["[[endovelicus]]", "[[nabia]]"]
+key-deities: ["[[endovelicus]]", "[[nabia]]", "[[ataecina]]", "[[bandua]]"]
 key-persons: ["[[viriato]] (legendary Lusitanian resistance leader, 147–139 BCE)"]
 key-documents: []
 sister-traditions: ["[[tradition-celtic]]", "[[tradition-roman-religion]]"]
