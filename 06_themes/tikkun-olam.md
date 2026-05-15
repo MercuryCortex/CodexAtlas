@@ -8,7 +8,11 @@ documents-attested: ["[[phase-6-015-luria-vital-etz-chayyim]]", "[[phase-6-025-n
 deities-associated: ["[[ein-sof]]", "[[the-sefirot]]"]
 parent-theme: "[[shevirat-hakelim]]"
 child-themes: []
-status: "stub"
+status: "full"
+related-themes:
+  - "[[frashokereti-cosmic-renovation]]"
+  - "[[tzimtzum]]"
+  - "[[shevirat-hakelim]]"
 refs:
   - title: "Major Trends in Jewish Mysticism"
     author: "Scholem, Gershom"
@@ -28,7 +32,7 @@ refs:
     publisher: "JTS"
     type: "anthology"
     tier: 2
-tags: [theme, kabbalah, lurianic, eschatology, ethics]
+tags: [theme, kabbalah, lurianic, eschatology, ethics, MASSIVE-WIN, cross-tradition]
 ---
 
 # Tikkun Olam — Cosmic Repair
