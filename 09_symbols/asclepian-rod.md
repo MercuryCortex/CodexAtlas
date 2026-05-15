@@ -44,6 +44,14 @@ cross-symbol-edges:
     type: "parallel-form"
     notes: "The serpent-on-staff is structurally the cosmic-axis-with-chthonic-attendant: the rod is the world-tree axis, the serpent is the chthonic-renewal force. The Mesopotamian sacred-tree-flanked-by-serpents iconography (kudurru reliefs, Assyrian winged-genii) is the broader iconographic family. The Asclepian rod is the medical-cultic specification of this older type."
     refs: ["Eliade 1956", "Joines 1974"]
+  - target: "nehushtan"
+    type: "parallel-form"
+    notes: "**The single-serpent-on-pole iconographic parallel.** Nehushtan (Hebrew, c. -1200 narrative-period) and the Asclepian rod (Greek, attested c. -500 onward) are structurally near-identical forms — single serpent twined around a staff, both functioning as healing-emblems. Whether they share a common ancient-Near-Eastern healing-serpent substrate (Mesopotamian Ningishzida) or developed independently is contested. **One of the cleanest cross-cultural healing-serpent pairs in Mediterranean religious history.**"
+    refs: ["Friedlander 1992", "Charlesworth 2010", "Joines 1974"]
+  - target: "naga-serpent"
+    type: "parallel-form"
+    notes: "South Asian nāga as healer-and-protector parallels the Greek Asclepian rod's healing function. Nāgas figure in ayurvedic + tantric healing contexts; the seven-headed Mucalinda's protective canopy over the meditating Buddha shares the iconographic register of *serpent-as-curative-power*. Independent Greek and Indic traditions; structural parallel."
+    refs: ["Vogel 1926", "Friedlander 1992"]
 mystery-status: "documented"
 status: "metadata"
 refs:

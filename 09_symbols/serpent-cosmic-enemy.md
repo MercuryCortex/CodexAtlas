@@ -85,6 +85,18 @@ cross-symbol-edges:
     type: "parallel-form"
     notes: "Both belong to the post-flood-cosmic-order vs. pre-flood-chaos iconographic-narrative cluster: the chaos-waters are home to Leviathan / Tiamat / Apophis; the rescue-mountain rises above them as restored-order anchor. Mount Ararat as flood-anchor is the iconographic counter-image to the chaos-serpent of the deep."
     refs: ["Day 1985"]
+  - target: "naga-serpent"
+    type: "polemic-inversion"
+    notes: "**Within Hinduism, the nāga occupies BOTH chaoskampf-enemy role (Vritra slain by Indra in RV 1.32; Kaliya subdued by Krishna) AND wisdom-protector role (Shesha, Mucalinda, Vasuki).** The same animal supports opposite valences depending on which deity-context. One of the densest internal-tradition polemic-inversions in any iconographic tradition, paralleling the Hebrew Eden-serpent vs. Nehushtan polarity."
+    refs: ["Doniger 1976", "Vogel 1926"]
+  - target: "feathered-serpent"
+    type: "polemic-inversion"
+    notes: "**Mesoamerican feathered-serpent INVERTS the chaoskampf pattern.** Where Mediterranean traditions place the serpent as cosmic-enemy slain by the storm-deity (Marduk-Tiamat, Indra-Vritra, Thor-Jörmungandr), the Mesoamerican tradition places the feathered-serpent (Quetzalcoatl) as the COSMIC-CREATOR who, with Tezcatlipoca, pulls the cosmos out of Cipactli the earth-monster. The polarity is reversed — the serpent is the *agent of cosmic order*, not the enemy of it."
+    refs: ["Carrasco 1982"]
+  - target: "nehushtan"
+    type: "polemic-inversion"
+    notes: "**The internal-tradition serpent-polarity within the same Hebrew text-corpus.** Numbers 21 produces a *healing* bronze-serpent-on-pole; 2 Kings 18:4 records King Hezekiah's destruction of that same object as idolatry (Israelites had been burning incense to it for ~500 years). The SAME physical object crosses from healing-instrument to apostasy."
+    refs: ["Joines 1974", "Charlesworth 2010"]
 mystery-status: "documented"
 status: "metadata"
 refs:

@@ -68,6 +68,22 @@ cross-symbol-edges:
     type: "ancestor-of"
     notes: "The single-serpent-on-staff of Asclepius is iconographically derived from this wisdom / healing serpent register. Friedlander 1992 documents."
     refs: ["Friedlander 1992", "Edelstein 1945"]
+  - target: "naga-serpent"
+    type: "parallel-form"
+    notes: "South Asian instance of the wisdom-chthonic-serpent register — nāgas as water-guardians, treasure-keepers, dharma-protectors, knowledge-bearers. Independent Indic tradition; structural parallel to the Mediterranean wisdom-serpent type. Vogel 1926 + Coomaraswamy 1928 are the foundational comparative treatments."
+    refs: ["Vogel 1926", "Coomaraswamy 1928"]
+  - target: "uraeus"
+    type: "ancestor-of"
+    notes: "The Egyptian Wadjet-uraeus is one of the principal iconographic ancestors of the broader Mediterranean apotropaic-serpent register via Greco-Egyptian magical-amulet diffusion (Bonner 1950). Coptic-Christian continuity of Egyptian cobra-iconography into late-antique apotropaic vocabulary (Frankfurter 1998)."
+    refs: ["Bonner 1950", "Frankfurter 1998"]
+  - target: "feathered-serpent"
+    type: "parallel-form"
+    notes: "Mesoamerican specialization of the civilization-bringing wisdom-serpent register — Quetzalcoatl as inventor of agriculture, calendar, writing, learning. Independent tradition across the Pacific; cross-cultural parallel-form, not transmission (Carrasco 1982)."
+    refs: ["Carrasco 1982"]
+  - target: "nehushtan"
+    type: "parallel-form"
+    notes: "Hebrew Bible instance of the healing-serpent register. The Numbers 21 bronze-serpent-on-pole stands within the same wisdom-chthonic-healing-serpent type as the Asclepian rod, Mesopotamian Ningishzida, and South Asian nāga. Joines 1974 + Charlesworth 2010 treat the comparative context."
+    refs: ["Joines 1974", "Charlesworth 2010"]
 mystery-status: "documented"
 status: "metadata"
 refs:

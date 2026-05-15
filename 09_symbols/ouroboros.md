@@ -63,6 +63,18 @@ cross-symbol-edges:
     type: "syncretic-fusion"
     notes: "Renaissance + early-modern Christian-Kabbalistic alchemy frequently inscribes the Tetragrammaton within the ouroboros (Kircher's *Oedipus Aegyptiacus* 1652; Khunrath *Amphitheatrum sapientiae aeternae* 1595). The four-letter divine Name within the cyclic-serpent figures the eternal-cyclic-divinity. Documented Renaissance-Hermetic syncretic-fusion."
     refs: ["Yates 1972", "Hanegraaff 2012"]
+  - target: "naga-serpent"
+    type: "parallel-form"
+    notes: "**Shesha-Ananta** ('the endless') is the South Asian closest-cognate of the ouroboros — the cosmic serpent enclosing eternity, supporting Vishnu's cosmic-bed between dissolution-and-re-creation. Both encode *infinite-time-as-encircling-serpent*; iconographically the Shesha-bed of Vishnu reclining on the milk-ocean is the Vaishnava cosmogonic image of the ouroboros's same theological function (cyclic eternity-of-cosmos). Independent traditions; structural parallel."
+    refs: ["Vogel 1926"]
+  - target: "feathered-serpent"
+    type: "visual-cognate"
+    notes: "The Classical Maya **Vision Serpent** (Yaxchilán Lintel 25, c. +725) and some Olmec proto-feathered-serpent monuments depict the serpent in self-encircling / coiled form. Visual cognacy with the Mediterranean ouroboros; **no documented historical transmission** between Mesoamerican and Eurasian iconographic traditions. Independent invention."
+    refs: ["Schele & Miller 1986"]
+  - target: "nehushtan"
+    type: "parallel-form"
+    notes: "Both encode the serpent in a non-hostile, cyclic-or-healing register (against the chaoskampf-cosmic-enemy reading). The Renaissance-alchemical ouroboros and the patristic Nehushtan-on-Christological-cross both function as serpent-as-life-rather-than-death emblems within their respective traditions."
+    refs: ["Charlesworth 2010"]
 mystery-status: "documented"
 status: "metadata"
 refs:

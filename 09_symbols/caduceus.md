@@ -57,6 +57,14 @@ cross-symbol-edges:
     type: "visual-cognate"
     notes: "Renaissance and modern Hermetic / esoteric iconography routinely pairs caduceus and pentagram as Hermetic-Pythagorean compound emblems (Bruno's *De magia*; the Goetic-and-ceremonial-magic tradition; Lévi 1854 *Dogme et rituel*). Post-Renaissance occult-synthetic pairing, not ancient."
     refs: ["Hanegraaff 2012", "Yates 1972"]
+  - target: "naga-serpent"
+    type: "parallel-form"
+    notes: "Multi-snake / entwined-snake iconography parallel — caduceus's two entwined serpents and the multi-headed nāga (especially seven-headed Mucalinda + kuṇḍalinī iconography) both encode *plurality of serpents as enhanced power*. Independent Greek and Indic traditions; structural parallel. Some 19th-c. Theosophical writers proposed direct transmission; no documented historical link."
+    refs: ["Vogel 1926", "Eliade 1958"]
+  - target: "nehushtan"
+    type: "visual-cognate"
+    notes: "Same broader Mediterranean serpent-on-staff iconographic family — caduceus (twin-serpent) and Nehushtan (single-serpent) are structural variants of the same vertical-pole-with-coiled-serpent type. Friedlander 1992 documents the broader vocabulary."
+    refs: ["Friedlander 1992", "Joines 1974"]
 mystery-status: "documented"
 status: "metadata"
 refs:
