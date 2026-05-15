@@ -753,3 +753,18 @@ The things opus-foundation-1 claimed but never started are all still open:
   - `python3 -c "import json; json.load(open('_assets/data/astrology-planet-deities.json'))"` → OK
   - `curl -s "http://localhost:8742/src/js/astrology/astro-pantheon.js?v=test"` → 200
 - Last edit: `00_meta/ACTIVE-AGENTS.md`
+
+---
+
+## sonnet-merkabah-miraj-1 — content + app-code / Merkabah-Mi'raj batch + Transmission category — started 2026-05-15 — **FINISHED 2026-05-15**
+- Owning: `06_themes/merkabah-miraj-ascent-chain.md` (NEW), `05_events/event-muhammads-miraj-619.md` (NEW), `04_persons/ezekiel.md` (UPGRADE stub→metadata), `src/js/app.js` (Transmission category + presets), `src/styles/app.css` (amber badge)
+- Goal: Document the most Tier-1-sourced cross-tradition mystical transmission chain; add Investigation + Transmission categories to Alchemy presets
+- Status: finished
+- Delivered:
+  - `merkabah-miraj-ascent-chain.md` — full metadata theme; 2,000-year Ezekiel→Hekhalot→Arda Viraf→Mi'raj→Ibn Arabi→Dante spine; 6 refs (Scholem 1941/1965 T1, Halperin 1988 T1, Schäfer 2009 T1, Asín Palacios 1919 T2, Eliade 1951 T2)
+  - `event-muhammads-miraj-619.md` — full event node; seven-heaven prophet table; Hekhalot parallel analysis; Dante transmission via Liber Scalae Machometi
+  - `ezekiel.md` — stub→metadata; geo-coord; cross-tradition impact table; Scholem vs Halperin debate
+  - Alchemy preset UI: `investigation` category (teal #00c8b0) + `transmission` category (amber #e09030) — both appear before all other sections; 7 presets promoted
+  - `merkabah-miraj-ascent-spine` + `hermetic-full-transmission-spine` → moved to `transmission` category
+- Build: ~2152 nodes
+- Last edit: `src/js/app.js`
