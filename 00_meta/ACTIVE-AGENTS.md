@@ -18,6 +18,21 @@ Format:
 
 ---
 
+## opus-astrology-1 (spine + decanic + wheel + now) — app-code / Astrology tab full build — started 2026-05-15 evening — **FINISHED 2026-05-15**
+- Owning: src/js/astrology/{spine.js, decanic.js, wheel.js, now.js} (4 NEW files), _assets/data/astrology-decans.json (NEW, 36×5 cross-tradition data), _assets/vendor/astronomy/{astronomy.browser.min.js, astronomy.browser.js} (NEW, vendored astronomy-engine 2.1.19 ~115 KB MIT), index.html (4 new script tags + cache-bust), src/js/app.js (VIEWS.astrology liveRenderers map), src/styles/app.css (.astro-* design tokens)
+- Goal: ship all 4 Astrology modes (spine / wheel / decanic / now) John approved. Cross-tradition investigative tool plugging into existing 57 astrology-tagged vault nodes.
+- Status: finished
+- Delivered:
+  - **Spine (1fd5599):** horizontal time-spine 3500 BCE → 2050 CE. 46 dated astrology nodes plotted, 44 cross-tradition arcs. MASSIVE-WIN view: Mesopotamian → Hermetic → Portuguese hermetic transmission visible as left-to-right arcs. Click → detail; hover → highlight neighbors; x-only zoom (0.6-12×).
+  - **Decanic (f17497b):** 36-sector wheel, color-coded by Chaldean face-ruler planet, click any sector → side panel renders all 5 cross-tradition cells (Western Picatrix / Egyptian Senenmut / Vedic Nakshatra Lahiri / Arabic Manzil al-Qamar / Chinese Xiu). 16 academic sources cited with tier markers. 71 vault_node_ids anchoring decans. 10 decans flagged uncertain (cycle-iteration caveats).
+  - **Wheel (29215c3):** tropical natal/event chart via vendored astronomy-engine. 7 classical planets at geocentric longitudes, element-tinted sign sectors, retrograde flag, cluster-aware radial offset. Date picker + 5 historical-event presets (today, 0 CE, −747 Nabonassar, 1453 Constantinople, 1582 Gregorian). Click planet → deity node.
+  - **Now (ca2e18c):** unrolled zodiac strip + time-scrubber −3000 BCE ↔ +2100 CE. Drag scrubber → planets recompute live. Position table cross-references decanic JSON to show Egyptian decan + Vedic Nakshatra per planet. Hover → 5-tradition tooltip.
+- Subagent block: I spawned 2 sonnet agents to parallelize (Spine + Decanic-data) but BOTH got blocked by subagent-sandbox write permissions on vault paths. The Decanic-data agent fully authored the JSON in memory before the block. Pivoted to self-build for all 4 modes. Worth fixing the sandbox permissions for future delegation.
+- Commits: `1fd5599` (spine), `f17497b` (decanic + data), `29215c3` (wheel + vendor), `ca2e18c` (now). All 4 modes verified in browser via Preview MCP.
+- Last edit: 00_meta/ACTIVE-AGENTS.md
+
+---
+
 ## sonnet-investigations-1 — content / cross-tradition investigation theme nodes — started 2026-05-15 — **FINISHED 2026-05-15**
 - Owning: `06_themes/persian-period-injection.md` (NEW), `06_themes/executed-divine-claimant.md` (NEW)
 - Goal: 2 high-value cross-tradition investigation theme nodes — Persian Period Injection (Zoroastrian doctrines into Second Temple Judaism) + Executed Divine Claimant (Socrates/Jesus/al-Hallaj/Suhrawardi martyrdom pattern)
