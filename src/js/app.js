@@ -4823,11 +4823,11 @@ VIEWS.atlas = {
         center: [40, 28],
         zoom: 2.2,
         minZoom: 0.6,
-        // maxZoom 7 — matches PMTiles native max (no basemap blur past z7).
-        // User 2026-05-15: "we don't have to zoom so much, limit at the current
-        // ~200%". Cluster-click now opens a spider with labels instead of
-        // zooming deep, so we don't need extreme zoom levels anymore.
-        maxZoom: 7,
+        // maxZoom 10 — allows zooming past basemap detail so the natural co-
+        // location jitter spreads further (user 2026-05-15: "want to zoom past
+        // current max so we can force nodes to expand out"). Basemap pixelates
+        // past z 7 but markers/labels stay crisp (vector GPU). Up to ~270×.
+        maxZoom: 10,
         // Single-world view (no horizontal wrap). The previous `true` value
         // caused the user-reported "infinite scrolling repeating tile" — markers
         // render only in the canonical world copy, so panning into duplicates
@@ -4843,6 +4843,21 @@ VIEWS.atlas = {
       _atlasMap.touchZoomRotate.disableRotation();
       _atlasMap.keyboard.disableRotation();
       _atlasMap.addControl(new maplibregl.AttributionControl({ compact: true }), 'bottom-left');
+
+      // Double-click on EMPTY map → reset to baseline view (1.00× = z 2.2 at
+      // center [40, 28]). Double-clicking a feature falls through to MapLibre's
+      // default zoom-in behavior. User 2026-05-15: "double click on empty
+      // should zoom to 100%".
+      _atlasMap.on('dblclick', (ev) => {
+        const onFeature = _atlasMap.queryRenderedFeatures(ev.point, {
+          layers: ['atlas-nodes-circles', 'atlas-clusters', 'atlas-spider-circles']
+        });
+        if (onFeature && onFeature.length) return;  // let default dbl-click-zoom run
+        ev.preventDefault();
+        if (_atlasSpiderActive) _atlasHideSpider();
+        _atlasPreSpiderState = null;
+        _atlasMap.easeTo({ center: [40, 28], zoom: 2.2, duration: 600 });
+      });
 
       _atlasResizeObs = new ResizeObserver(() => {
         if (paneEl.style.display !== 'none' && _atlasMap) _atlasMap.resize();
@@ -4995,7 +5010,9 @@ VIEWS.atlas = {
           data: featureCollection,
           cluster: true,
           clusterRadius: 36,
-          clusterMaxZoom: 5
+          // Clusters persist later (zoom 7) so co-located docs stay grouped
+          // visually further into the zoom range, then natural jitter takes over.
+          clusterMaxZoom: 7
         });
 
         // Cluster layer — gold ringed circles sized by # of points inside.
@@ -5581,6 +5598,10 @@ function _atlasShowSpider(centerLngLat, leaves) {
   pointsSrc.setData({ type: 'FeatureCollection', features: pointFeatures });
   linesSrc.setData({ type: 'FeatureCollection', features: lineFeatures });
   _atlasSpiderActive = centerLngLat;
+  // Hide the underlying cluster + node layers so they don't visually clash
+  // with the spider on top (user 2026-05-15: "respective nodes need to hide
+  // during that time behind them").
+  _atlasToggleUnderlyingLayers('none');
 }
 function _atlasHideSpider() {
   if (!_atlasMap) return;
@@ -5589,6 +5610,19 @@ function _atlasHideSpider() {
   if (pointsSrc) pointsSrc.setData({ type: 'FeatureCollection', features: [] });
   if (linesSrc)  linesSrc.setData({ type: 'FeatureCollection', features: [] });
   _atlasSpiderActive = null;
+  // Restore the underlying cluster + node layers.
+  _atlasToggleUnderlyingLayers('visible');
+}
+
+// Show/hide the underlying cluster + node layers when the spider opens/closes.
+function _atlasToggleUnderlyingLayers(visibility) {
+  if (!_atlasMap || !_atlasMap.getLayer) return;
+  const layers = ['atlas-clusters', 'atlas-cluster-counts', 'atlas-nodes-circles', 'atlas-node-labels'];
+  for (const id of layers) {
+    if (_atlasMap.getLayer(id)) {
+      try { _atlasMap.setLayoutProperty(id, 'visibility', visibility); } catch (e) { /* ignore */ }
+    }
+  }
 }
 
 // ============================================================
