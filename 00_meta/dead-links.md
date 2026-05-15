@@ -4,40 +4,39 @@ _Auto-generated 2026-05-15. Targets sorted by incoming reference count (descendi
 
 | Refs | Target | Sources (first 3) |
 |---:|---|---|
-| 10 | `document` | `11_opus-buddhist-1-audit`, `12_meta-audit-housekeeping`, `STATUS` … |
-| 7 | `wikilink` | `10_app-and-infrastructure-audit`, `STATUS`, `AGENTS` … |
-| 4 | `jupiter-roman` | `phase-6-041-camoes-os-lusiadas`, `zeus`, `reue-lusitanian` … |
-| 4 | `parallel-motif` | `spyridon-marinatos`, `apkallu`, `theme-sacred-bloodline-claim` … |
-| 4 | `guru-granth-sahib` | `event-bhakti-movement-c-700-1700`, `STATUS`, `ACTIVE-AGENTS` |
-| 3 | `wikilinks` | `app-usage`, `AGENTS` |
-| 3 | `tradition-hinduism` | `event-death-of-guru-tegh-bahadur-1675`, `chitragupta` |
-| 3 | `tradition-andean` | `viracocha`, `inti`, `pachamama` |
-| 3 | `vasco-da-gama` | `phase-6-041-camoes-os-lusiadas`, `event-vasco-da-gama-india-voyage-1497`, `event-al-andalus-711-1492` |
-| 3 | `muhammad` | `ACTIVE-AGENTS`, `STATUS` |
-| 3 | `guru-arjan-dev-ji` | `ACTIVE-AGENTS`, `STATUS` |
+| 10 | `document` | `STATUS`, `11_opus-buddhist-1-audit`, `2026-05-14` … |
+| 7 | `wikilink` | `STATUS`, `AGENTS`, `10_app-and-infrastructure-audit` … |
+| 5 | `tradition-latin-christianity` | `george-ripley`, `michael-sendivogius`, `thomas-vaughan` … |
+| 4 | `parallel-motif` | `theme-sacred-bloodline-claim`, `hyperdiffusionism`, `apkallu` … |
+| 4 | `guru-granth-sahib` | `STATUS`, `ACTIVE-AGENTS`, `event-bhakti-movement-c-700-1700` |
+| 3 | `wikilinks` | `AGENTS`, `app-usage` |
+| 3 | `tradition-hinduism` | `chitragupta`, `event-death-of-guru-tegh-bahadur-1675` |
+| 3 | `tradition-andean` | `pachamama`, `viracocha`, `inti` |
+| 3 | `vasco-da-gama` | `event-al-andalus-711-1492`, `phase-6-041-camoes-os-lusiadas`, `event-vasco-da-gama-india-voyage-1497` |
+| 3 | `muhammad` | `STATUS`, `ACTIVE-AGENTS` |
+| 3 | `guru-arjan-dev-ji` | `STATUS`, `ACTIVE-AGENTS` |
 | 3 | `document-slug` | `12_meta-audit-housekeeping`, `2026-05-14` |
-| 3 | `theme-divine-feminine` | `theme-axial-age`, `logos-cosmic-reason` |
+| 3 | `theme-divine-feminine` | `logos-cosmic-reason`, `theme-axial-age` |
 | 2 | `athtart` | `astar-aksumite` |
 | 2 | `tishpak` | `ninazu` |
 | 2 | `laz` | `nergal`, `erra-akkadian` |
 | 2 | `ge-greek` | `meder` |
 | 2 | `geb-egyptian` | `meder` |
 | 2 | `amurru` | `belet-seri-akkadian` |
-| 2 | `zeus-greek` | `reue-lusitanian`, `tradition-proto-indo-european-religion` |
 | 2 | `asclepius` | `endovelicus` |
 | 2 | `haya` | `nisaba`, `nin-lil-sumerian` |
-| 2 | `damu` | `gula-akkadian`, `ninisina` |
-| 2 | `phase-3-006-homeric-hymns` | `adonis`, `sacred-marriage` |
+| 2 | `damu` | `ninisina`, `gula-akkadian` |
+| 2 | `phase-3-006-homeric-hymns` | `sacred-marriage`, `adonis` |
 | 2 | `yam-canaanite` | `beher` |
 | 2 | `was-sceptre` | `ma-at`, `06_symbology_proposal` |
 | 2 | `mars` | `mahrem` |
-| 2 | `poseidon-greek` | `atlantis-myth`, `manannan-mac-lir` |
+| 2 | `jupiter-roman` | `zeus`, `phase-6-041-camoes-os-lusiadas` |
 | 2 | `echidna` | `typhon` |
 | 2 | `hercules-roman` | `heracles` |
 | 2 | `ishkur` | `nin-gal-sumerian` |
 | 2 | `manuel-i-portugal` | `event-portuguese-forced-conversion-1496`, `event-vasco-da-gama-india-voyage-1497` |
 | 2 | `order-of-christ` | `event-founding-kingdom-portugal-1139`, `event-vasco-da-gama-india-voyage-1497` |
-| 2 | `john-anthony-west` | `kings-chamber-great-pyramid`, `sphinx-of-giza` |
+| 2 | `john-anthony-west` | `sphinx-of-giza`, `kings-chamber-great-pyramid` |
 | 2 | `tradition-islam-mughal` | `event-death-of-guru-arjan-1606`, `event-death-of-guru-tegh-bahadur-1675` |
 | 2 | `tradition-bahai` | `event-bab-execution-1850` |
 | 2 | `tradition-islam-shia` | `event-bab-execution-1850` |
@@ -47,8 +46,9 @@ _Auto-generated 2026-05-15. Targets sorted by incoming reference count (descendi
 | 2 | `tradition-judaism-sephardic` | `event-spanish-inquisition-1478` |
 | 2 | `aurangzeb-emperor` | `event-death-of-guru-tegh-bahadur-1675` |
 | 2 | `guru-gobind-singh-ji` | `event-death-of-guru-tegh-bahadur-1675` |
-| 2 | `tradition-lingayat` | `tradition-kashmir-shaivism`, `basavanna` |
-| 2 | `ephrem-syrian` | `bardaisan-of-edessa`, `tatian-the-syrian` |
+| 2 | `divine-names` | `phase-6-044-llull-ars-magna`, `ramon-llull` |
+| 2 | `tradition-lingayat` | `basavanna`, `tradition-kashmir-shaivism` |
+| 2 | `ephrem-syrian` | `tatian-the-syrian`, `bardaisan-of-edessa` |
 | 2 | `hierocles` | `phase-4-039-celsus-true-word`, `apollonius-of-tyana` |
 | 2 | `fatima-bint-muhammad` | `khadija-bint-khuwaylid` |
 | 2 | `event-aleister-crowley-boca-do-inferno-1930` | `fernando-pessoa`, `tradition-portuguese-hermeticism` |
@@ -56,11 +56,12 @@ _Auto-generated 2026-05-15. Targets sorted by incoming reference count (descendi
 | 2 | `aksum` | `kaleb-of-aksum`, `ezana-of-aksum` |
 | 2 | `harun-al-rashid` | `musa-al-kazim` |
 | 2 | `hecataeus-of-abdera` | `ptolemy-i-soter`, `thales` |
+| 2 | `tradition-rosicrucian` | `elias-ashmole`, `thomas-vaughan` |
 | 2 | `ralph-waldo-emerson` | `william-james`, `thomas-taylor-neoplatonist` |
 | 2 | `plato-of-athens` | `empedocles` |
-| 2 | `solomonic-genealogical-dynasty` | `menelik-i-legendary`, `makeda-queen-of-sheba` |
+| 2 | `solomonic-genealogical-dynasty` | `makeda-queen-of-sheba`, `menelik-i-legendary` |
 | 2 | `gospel-of-judas-sethian` | `judas-iscariot` |
-| 2 | `phase-2-004-1-2-chronicles` | `phase-8-008-kebra-nagast`, `makeda-queen-of-sheba` |
+| 2 | `phase-2-004-1-2-chronicles` | `makeda-queen-of-sheba`, `phase-8-008-kebra-nagast` |
 | 2 | `ascent-and-descent` | `phase-3-002-plato-dialogues` |
 | 2 | `providence-and-fate` | `phase-3-005-stoic-foundational-texts` |
 | 2 | `onomacritus` | `tradition-orphic`, `phase-3-027-derveni-papyrus` |
@@ -72,12 +73,12 @@ _Auto-generated 2026-05-15. Targets sorted by incoming reference count (descendi
 | 2 | `poor-and-marginalized` | `phase-3-018-luke-acts` |
 | 2 | `rabbi-ishmael-ben-elisha` | `phase-5-013-hekhalot-literature`, `tradition-merkavah-mysticism` |
 | 2 | `rabbi-nehunya-ben-ha-qanah` | `phase-5-013-hekhalot-literature`, `tradition-merkavah-mysticism` |
-| 2 | `shakti` | `phase-5-006-vijnana-bhairava-tantra`, `phase-5-014-abhinavagupta-tantraloka` |
+| 2 | `shakti` | `phase-5-014-abhinavagupta-tantraloka`, `phase-5-006-vijnana-bhairava-tantra` |
 | 2 | `judas-maccabeus` | `tradition-second-temple-judaism`, `phase-5-049-yosippon-ethiopian-recension` |
 | 2 | `josephus-flavius` | `phase-5-049-yosippon-ethiopian-recension` |
 | 2 | `wisdom-literature` | `phase-5-052-sadi-gulistan` |
 | 2 | `political-ethics` | `phase-5-052-sadi-gulistan` |
-| 2 | `kshemaraja` | `phase-5-006-vijnana-bhairava-tantra`, `tradition-kashmir-shaivism` |
+| 2 | `kshemaraja` | `tradition-kashmir-shaivism`, `phase-5-006-vijnana-bhairava-tantra` |
 | 2 | `divine-intoxication` | `phase-5-053-hafez-divan` |
 | 2 | `love-mysticism` | `phase-5-053-hafez-divan` |
 | 2 | `fana-annihilation` | `phase-5-053-hafez-divan` |
@@ -92,16 +93,16 @@ _Auto-generated 2026-05-15. Targets sorted by incoming reference count (descendi
 | 2 | `jihad-offensive` | `phase-7-028-milestones` |
 | 2 | `hakimiyyah` | `phase-7-028-milestones` |
 | 2 | `prophecy-as-political-critique` | `phase-7-035-cayce-atlantis-readings` |
-| 2 | `mysterium-tremendum` | `numinous`, `phase-7-011-idea-of-the-holy` |
-| 2 | `oliver-cowdery` | `tradition-mormonism`, `phase-7-001-book-of-mormon` |
+| 2 | `mysterium-tremendum` | `phase-7-011-idea-of-the-holy`, `numinous` |
+| 2 | `oliver-cowdery` | `phase-7-001-book-of-mormon`, `tradition-mormonism` |
 | 2 | `phase-7-002-doctrine-and-covenants` | `phase-7-001-book-of-mormon` |
 | 2 | `female-monasticism` | `phase-7-040-walatta-petros-hagiography` |
 | 2 | `anti-jesuit-resistance` | `phase-7-040-walatta-petros-hagiography` |
 | 2 | `ethiopian-anti-catholic-polemic` | `phase-7-040-walatta-petros-hagiography` |
 | 2 | `apophasis` | `phase-4-050-vishnu-sahasranama` |
-| 2 | `tat` | `phase-4-013-discourse-on-the-eighth-and-ninth`, `phase-4-012-asclepius` |
-| 2 | `apostle-philip` | `phase-4-004-gospel-of-philip`, `phase-4-009-pistis-sophia` |
-| 2 | `pistis-sophia` | `phase-4-007-on-the-origin-of-the-world`, `phase-4-009-pistis-sophia` |
+| 2 | `tat` | `phase-4-012-asclepius`, `phase-4-013-discourse-on-the-eighth-and-ninth` |
+| 2 | `apostle-philip` | `phase-4-009-pistis-sophia`, `phase-4-004-gospel-of-philip` |
+| 2 | `pistis-sophia` | `phase-4-009-pistis-sophia`, `phase-4-007-on-the-origin-of-the-world` |
 | 2 | `john-the-baptist-mandaean` | `phase-4-018-mandaean-book-of-john`, `phase-4-017-ginza-rba` |
 | 2 | `phase-4-059-allogenes` | `phase-4-056-zostrianos` |
 | 2 | `the-father-valentinian` | `phase-4-004-gospel-of-philip`, `phase-4-003-gospel-of-truth` |
@@ -115,8 +116,10 @@ _Auto-generated 2026-05-15. Targets sorted by incoming reference count (descendi
 | 2 | `genesis-5-antediluvian-patriarchs` | `phase-1-015-sumerian-king-list` |
 | 2 | `shamash` | `divinatory-omen-reading`, `phase-1-020-shumma-alu` |
 | 2 | `gatumdug` | `phase-1-018-gudea-cylinders` |
+| 2 | `phase-3-014-enneads-plotinus` | `phase-6-052-kircher-ars-magna-lucis` |
 | 2 | `phase-6-017-boehme-aurora-mysterium-magmum` | `phase-6-029-boehme-aurora` |
 | 2 | `phase-6-026-jacob-frank-words-of-the-lord` | `phase-6-025-nathan-of-gaza-treatise-on-dragons` |
+| 2 | `apocalypticism` | `phase-6-043-dee-libri-mysteriorum-enochian`, `tradition-second-temple-judaism` |
 | 2 | `shiva-deity` | `bhakti-devotion`, `phase-6-019-tulsidas-ramcharitmanas` |
 | 2 | `P7-020-answer-to-job` | `phase-2-035-job` |
 | 2 | `venus-cycle` | `phase-8-003-dresden-codex-maya` |
@@ -168,10 +171,10 @@ _Auto-generated 2026-05-15. Targets sorted by incoming reference count (descendi
 | 2 | `phase-4-021-iamblichus-de-mysteriis` | `theurgy` |
 | 2 | `phase-2-005-davidic-psalms` | `royal-hymn` |
 | 2 | `phase-7-014-bellah-civil-religion-essay` | `civic-religion` |
-| 2 | `phase-1-007-book-of-the-dead` | `psychostasia-soul-weighing`, `sacred-marriage` |
+| 2 | `phase-1-007-book-of-the-dead` | `sacred-marriage`, `psychostasia-soul-weighing` |
 | 2 | `ptah-egyptian` | `creation-by-word` |
 | 2 | `event-second-council-of-nicaea-787` | `iconography-and-aniconism` |
-| 2 | `ialdabaoth` | `archon-cosmic-ruler`, `aeon-as-emanation` |
+| 2 | `ialdabaoth` | `aeon-as-emanation`, `archon-cosmic-ruler` |
 | 2 | `phase-6-006-paracelsus-archidoxes` | `signatures-of-things` |
 | 2 | `phase-4-026-apophthegmata-patrum` | `monastic-asceticism` |
 | 2 | `phase-4-025-life-of-antony` | `monastic-asceticism` |
@@ -207,8 +210,6 @@ _Auto-generated 2026-05-15. Targets sorted by incoming reference count (descendi
 | 1 | `horus-egyptian` | `isis-hellenistic` |
 | 1 | `tellus-mater` | `meder` |
 | 1 | `sarutahiko` | `ame-no-uzume` |
-| 1 | `taranis` | `reue-lusitanian` |
-| 1 | `parjanya` | `reue-lusitanian` |
 | 1 | `phase-5-032-longchenpa-dzogchen` | `padmasambhava` |
 | 1 | `divine-wisdom` | `apkallu` |
 | 1 | `inanna-sumerian\` | `ataecina` |
@@ -259,8 +260,6 @@ _Auto-generated 2026-05-15. Targets sorted by incoming reference count (descendi
 | 1 | `eros` | `phanes-protogonos` |
 | 1 | `plato-demiurge` | `urizen` |
 | 1 | `angra-mainyu` | `urizen` |
-| 1 | `njord` | `manannan-mac-lir` |
-| 1 | `charon` | `manannan-mac-lir` |
 | 1 | `japheth` | `iapetus` |
 | 1 | `yama` | `surya` |
 | 1 | `aditi` | `surya` |
@@ -569,7 +568,6 @@ _Auto-generated 2026-05-15. Targets sorted by incoming reference count (descendi
 | 1 | `carneades` | `tradition-hellenistic-philosophy` |
 | 1 | `posidonius` | `tradition-hellenistic-philosophy` |
 | 1 | `ezra` | `tradition-second-temple-judaism` |
-| 1 | `apocalypticism` | `tradition-second-temple-judaism` |
 | 1 | `mazu-daoyi` | `tradition-zen` |
 | 1 | `linji-yixuan` | `tradition-zen` |
 | 1 | `tradition-phoenician` | `tradition-tartessos` |
