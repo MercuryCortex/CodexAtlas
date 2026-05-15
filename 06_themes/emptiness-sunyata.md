@@ -41,3 +41,16 @@ The *Heart Sutra*'s famous formula *form is emptiness, emptiness is form* (*rūp
 - [[phase-5-004-platform-sutra-huineng]] — Chan/Zen application: original-mind as empty mirror
 - Yogācāra retools emptiness through the lens of *vijñapti-mātra* (mind-only); contested by Madhyamaka as crypto-substantialist
 - Nāgārjuna's emptiness is sometimes compared to Plotinian *apophasis* and Eckhartian *Gottheit* (see [[the-godhead-eckhart]]) — structural parallel, not borrowing
+
+## The Trika counterpoint — the foundational split in non-dual thought
+
+Śūnyatā and Kashmir Shaivism's *cit* (Śiva as self-luminous consciousness) are the two rival answers to the question "what is the nature of the ultimate ground?" and represent the deepest philosophical fault line in the vault:
+
+| | Madhyamaka (Nāgārjuna) | Trika Kashmir Shaivism |
+|---|---|---|
+| The ultimate ground | No ground — śūnyatā, no *svabhāva* anywhere, including "consciousness" | Śiva = pure self-luminous consciousness (*cit*, *prakāśa*) — a positive ground |
+| What "emptiness" means | Absence of inherent existence; relational dependence | Māyā-veiling; not the nature of the ground itself |
+| Liberation | Seeing through the illusion of inherent existence; no positive state to "attain" | Recognition (*pratyabhijñā*) of one's identity with Śiva — a positive recognition |
+| Buddha-nature | Contested: Yogācāra tradition reads Buddha-nature as positive luminous awareness; strict Madhyamaka resists | Trika's Śiva-consciousness is structurally identical to the Yogācāra / Dzogchen *rigpa* reading |
+
+This debate was never settled. It plays out continuously in Tibetan Buddhism as the *rangtong* (self-empty, Gelugpa/Prāsaṅgika position, close to Nāgārjuna) vs *shentong* (other-empty, Kagyu/Jonang position, closer to Trika-style positive luminous ground) debate. Dzogchen's *rigpa* (pure awareness as the ground) sides with Trika against strict Madhyamaka. See [[tradition-kashmir-shaivism]], [[nagarjuna]].

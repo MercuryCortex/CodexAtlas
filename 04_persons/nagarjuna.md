@@ -65,6 +65,18 @@ Dated c. 150–250 CE on the basis of Chinese-translation chronology and interna
 - Authentic vs. attributed corpus (the so-called "second Nāgārjuna" — the tantric/alchemical Nāgārjuna of later legend — is generally distinguished).
 - The interpretation of *śūnyatā*: nihilism (rejected by the school itself) vs. anti-foundationalist relational pluralism (Garfield) vs. apophatic realism.
 
+## Cross-tradition position — the rival to consciousness-as-ground
+
+Nāgārjuna represents the decisive philosophical counter to every "consciousness-as-ground" framework in the vault — Kashmir Shaivism, Advaita Vedanta, Yogācāra, and arguably Eckhart. His position: *nothing* has *svabhāva* (inherent existence), including consciousness. Any framework that posits "pure awareness" or "self-luminous consciousness" as the ground is, for Madhyamaka, still asserting a fixed nature — still *svabhāva*-thinking — and therefore confused.
+
+The precise fault line with Trika:
+- **Trika**: Śiva = self-luminous, self-aware consciousness. It has a positive nature (*prakāśa*, light; *vimarśa*, self-awareness). Individual beings are contracted forms of Śiva. Liberation = recognition.
+- **Madhyamaka**: Even "pure consciousness" cannot be the ground, because asserting it *is* something is asserting *svabhāva*. Śūnyatā is the absence of any ground, including the luminous ground.
+
+This split is not just academic. It generates the *rangtong / shentong* controversy in Tibetan Buddhism (see [[emptiness-sunyata]]) and the Dzogchen/Madhyamaka tension that Tibetan masters navigated for centuries. Candrakīrti's *Prāsaṅgika* interpretation (closest to Nāgārjuna's original intent) became the Gelugpa standard precisely *against* Yogācāra's positive luminous-mind ground. Dzogchen's *rigpa* sides with Trika-type thinking; the Nyingma and Kagyu traditions find ways to synthesize.
+
+The Nāgārjuna ↔ Eckhart parallel: Eckhart's *Gottheit* as *nichts* (nothing, pure negation prior to all determination) is structurally closer to Nāgārjuna's śūnyatā than to Trika's luminous ground. This makes Eckhart's position genuinely ambiguous between the two: his *Gottheit* is Madhyamaka-flavored, but his *Seelenfünklein* (the soul's spark that IS the Godhead) sounds like Trika's recognition move. The tension is real and unresolved. See [[the-godhead-eckhart]], [[pratyabhijna]].
+
 ## Refs
 1. Garfield, *The Fundamental Wisdom of the Middle Way*, 1995.
 2. Williams, *Mahayana Buddhism*, 1989.
