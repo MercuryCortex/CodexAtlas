@@ -24,6 +24,11 @@ deity-instances:
 tradition-context:
   - "[[tradition-zoroastrianism]]"
   - "[[tradition-vedic-hinduism]]"
+depictions:
+  - src: "https://upload.wikimedia.org/wikipedia/commons/thumb/7/73/Geldner_Avesta_I_page_1.png/330px-Geldner_Avesta_I_page_1.png"
+    caption: "Yasna manuscript (Geldner's critical edition of the Avesta, vol. 1) — the Zoroastrian liturgy within which the Hōm Yasht (Yasna 9-11) is recited and haoma is pressed and consumed"
+    source: "Wikimedia Commons (via Wikipedia: Yasna)"
+    license: "Public Domain (Geldner 1885-1896)"
 cross-symbol-edges:
   - target: "vine-grape"
     type: "parallel-form"

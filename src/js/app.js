@@ -586,11 +586,19 @@ function renderDetail() {
       }).join('') + '</ol>'
     : '';
 
-  const thumbHTML = n.thumbnail
-    ? `<img class="thumb" src="${n.thumbnail}" alt="${n.title}" onerror="this.style.display='none'; if (this.nextElementSibling) this.nextElementSibling.style.display='none'" />
+  // Thumbnail: curated `depictions[0]` from YAML takes precedence (lets agents
+  // override the auto-fetched Wikipedia thumb without touching the cache), then
+  // fall back to the Wikipedia thumb from fetch_thumbnails.py's cache.
+  const curatedDep = (n.depictions && n.depictions[0]) || null;
+  const thumbSrc = (curatedDep && curatedDep.src) || n.thumbnail || '';
+  const thumbCaption = curatedDep ? (curatedDep.caption || '') : (n.thumb_title || '');
+  const thumbSource = curatedDep ? (curatedDep.source || '') : '';
+  const thumbLicense = curatedDep ? (curatedDep.license || '') : '';
+  const thumbHTML = thumbSrc
+    ? `<img class="thumb" src="${thumbSrc}" alt="${n.title}" onerror="this.style.display='none'; if (this.nextElementSibling) this.nextElementSibling.style.display='none'" />
        <div class="thumb-attribution">
-         <span>${n.thumb_title || ''}</span>
-         ${n.thumb_page ? `<a href="${n.thumb_page}" target="_blank">wikipedia →</a>` : ''}
+         <span>${thumbCaption}${thumbSource ? ' — ' + thumbSource : ''}${thumbLicense ? ' (' + thumbLicense + ')' : ''}</span>
+         ${(!curatedDep && n.thumb_page) ? `<a href="${n.thumb_page}" target="_blank">wikipedia →</a>` : ''}
        </div>`
     : '';
 
