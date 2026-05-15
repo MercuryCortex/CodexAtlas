@@ -4203,6 +4203,23 @@ const ALCHEMY_PRESETS = [
   },
   // ── Cross-Tradition ───────────────────────────────────────────────
   {
+    id: 'merkabah-miraj-ascent-spine',
+    category: 'cross',
+    name: "Merkabah → Mi'raj: The Heavenly Ascent",
+    headline: "The most documented cross-tradition mystical chain: Ezekiel's chariot vision (-593 BCE) → Jewish Hekhalot mysticism → Zoroastrian Arda Viraf → Muhammad's Night Journey through seven heavens (619 CE) → Ibn Arabi's allegorized Mi'raj → Dante's Paradiso. Schäfer (2009) proves the Hekhalot → Mi'raj transmission via Jewish communities in Arabia. Same structure, seven traditions, 2,000 years.",
+    picks: [
+      'ezekiel',
+      'phase-5-013-hekhalot-literature',
+      'metatron',
+      'phase-3-004-1-enoch',
+      'phase-4-086-arda-viraf-namag',
+      'event-muhammads-miraj-619',
+      'ibn-arabi',
+      'phase-5-056-divine-comedy',
+      'merkabah-miraj-ascent-chain',
+    ],
+  },
+  {
     id: 'greco-buddhist',
     category: 'cross',
     name: 'Greco-Buddhist Wedge',
