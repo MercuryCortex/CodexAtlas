@@ -2107,12 +2107,12 @@ canonical-slug
 
 | Refs | Dead target | Suggested canonical (existing) |
 |---:|---|---|
-| 4 | `tradition-minoan-religion` | `tradition-pure-land-buddhism` |
-| 3 | `phase-4-007-new-testament-canon` | `phase-4-007-on-the-origin-of-the-world` |
+| 4 | `tradition-minoan-religion` | `tradition-inca-andean` |
+| 3 | `phase-4-007-new-testament-canon` | `phase-4-095-new-testament-canon` |
 | 3 | `phase-2-005-1-2-kings` | `phase-2-003-atharva-veda` |
 | 2 | `yam-canaanite` | `astarte-canaanite` |
 | 2 | `tradition-lingayat` | `tradition-bon` |
-| 2 | `tradition-eastern-orthodoxy` | `tradition-renaissance-hermeticism` |
+| 2 | `tradition-eastern-orthodoxy` | `tradition-inca-andean` |
 | 2 | `phase-2-004-1-2-chronicles` | `phase-2-007-hebrew-bible-e-source` |
-| 2 | `phase-1-013-babylonian-theodicy` | `phase-1-019-enuma-anu-enlil` |
+| 2 | `phase-1-013-babylonian-theodicy` | `phase-1-010-book-of-the-dead` |
 | 2 | `asclepius` | `asclepius-greek` |
