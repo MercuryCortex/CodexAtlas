@@ -14,11 +14,13 @@ _Hand-maintained. Each agent currently working in the vault appends a claim bloc
 
 ---
 
-## opus-native-pacific-1 — content / Native American + Pacific tradition nodes — started 2026-05-15 — **IN-FLIGHT**
-- Owning: `07_traditions/tradition-lakota.md` (NEW), `07_traditions/tradition-haudenosaunee.md` (NEW), `07_traditions/tradition-navajo.md` (NEW), `07_traditions/tradition-maori.md` (UPGRADE), `07_traditions/tradition-hawaiian.md` (UPGRADE), `03_deities/changing-woman.md` (NEW stub), `03_deities/white-buffalo-calf-woman.md` (NEW stub), `03_deities/papatuanuku.md` (UPGRADE)
-- Goal: Create foundational Native American (Lakota/Haudenosaunee/Navajo) + upgrade Pacific (Maori/Hawaiian) nodes with full MASSIVE WIN cross-tradition grids; Great Plains immanent-sacred parallel; Haudenosaunee → Founding Fathers political theology; Hózhó ↔ Maat/Asha cosmic-order; Ranginui/Papatūānuku sky-earth separation myth; Kumulipo evolutionary sequence
-- Status: in-flight
-- Last edit: `00_meta/ACTIVE-AGENTS.md`
+## opus-native-pacific-1 — content / Native American + Pacific tradition nodes — started 2026-05-15 — **FINISHED 2026-05-15**
+- Owning: `07_traditions/tradition-lakota.md` (NEW), `07_traditions/tradition-haudenosaunee.md` (NEW), `07_traditions/tradition-navajo.md` (NEW), `07_traditions/tradition-maori.md` (UPGRADE), `07_traditions/tradition-hawaiian.md` (UPGRADE), + 17 Wiring Law stubs/nodes
+- Goal: Create foundational Native American (Lakota/Haudenosaunee/Navajo) + upgrade Pacific (Maori/Hawaiian) nodes with full MASSIVE WIN cross-tradition grids
+- Status: finished
+- Delivered: 3 new tradition nodes + 2 upgrades + 17 Wiring Law nodes. MASSIVE WINs: Wakan Tanka ↔ Shinto kami / Daoist De / Stoic Logos / Spinoza; Gayanashagowa → Founding Fathers (Franklin 1754 / Senate Res. 76 1988); Sapling/Flint ↔ Ahura Mazda/Ahriman; Hózhó ↔ Ma'at / Asha / Confucian Lǐ / Vedic Ṛta; sand painting ↔ Tibetan mandala; sky-earth separation myth cross-tradition table; Kumulipo evolutionary sequence.
+- Build: 134 traditions · 477 deities · 12,884 edges · 0 dead-link warnings (commit a9c29d4)
+- Last edit: `00_meta/STATUS.md`
 
 ---
 
@@ -139,6 +141,22 @@ Format:
   - **`src/js/app.js`** — silk-road-transmission-corridor alchemy preset (category: cross; confirmed slugs: tradition-manichaeism, mani, tradition-zoroastrianism, tradition-buddhism, xuanzang, cyrus-the-great). silk-road-corridor Investigation with 5 threads. node --check passes.
 - Build: **2118 nodes · 12,561 edges · 2.8% dead-link** (commit 13b4795)
 - Last edit: `00_meta/STATUS.md`
+
+---
+
+## sonnet-egyptian-solar-1 — content / Egyptian solar theology cluster — started 2026-05-15 — **IN-FLIGHT**
+- Owning: `05_events/event-karnak-temple-complex-construction-c-2055-bce-100-ce.md` (UPGRADE), `03_deities/amun-ra.md` (body check), `06_themes/zep-tepi.md` (body check), `06_themes/divine-kingship-solar.md` (body check), `04_persons/jan-assmann.md` (NEW)
+- Goal: Upgrade Karnak event with Opet Festival / Zep Tepi theology / axis mundi MASSIVE WIN; check amun-ra, zep-tepi, divine-kingship-solar for gaps; create Jan Assmann person node (Mosaic distinction + cultural memory theory)
+- Status: in-flight
+- Last edit: `00_meta/ACTIVE-AGENTS.md`
+
+---
+
+## sonnet-isis-mysteries-1 — content / Isis mysteries transmission chain — started 2026-05-15 — **IN-FLIGHT**
+- Owning: `03_deities/isis-hellenistic.md` (upgrade metadata→full), `02_documents/_phase-4-late-antiquity/phase-4-072-plutarch-de-iside-et-osiride.md` (body check), `02_documents/_phase-4-late-antiquity/phase-4-105-apuleius-metamorphoses-book-11.md` (body check), `06_themes/divine-feminine.md` (check — already full)
+- Goal: Build Isis mysteries transmission chain — Isis Lactans → nursing Madonna workshop evidence (Frankfurter); mystery initiation → baptismal theology; Queen of Heaven epithet; Osiris-search grief-motif table; divine-feminine node upgrade if needed
+- Status: in-flight
+- Last edit: `00_meta/ACTIVE-AGENTS.md`
 
 ---
 
