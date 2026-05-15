@@ -10,6 +10,7 @@ key-deities: ["[[father-of-greatness]]", "[[prince-of-darkness-manichaean]]", "[
 key-persons: ["[[mani]]", "Mar Sisin", "Faustus of Mileve", "[[augustine-of-hippo]] (former adherent)"]
 key-documents: ["[[phase-4-014-cologne-mani-codex]]", "[[phase-4-015-kephalaia-of-the-teacher]]", "[[phase-4-016-shabuhragan]]", "Manichaean Psalm-Book (Coptic)"]
 sister-traditions: ["[[tradition-gnosticism]]", "[[tradition-zoroastrianism]]", "[[tradition-mandaeism]]"]
+downstream-traditions: ["[[tradition-bogomilism]]", "[[tradition-catharism]]"]
 status: "metadata"
 refs:
   - title: "Mani and Manichaeism"
@@ -59,6 +60,18 @@ Mani's canon of seven: Living Gospel, Treasure of Life, Pragmateia, Book of Myst
 - vs. [[tradition-gnosticism]]: shared gnosis-soteriology and Light-spark anthropology; more rigorous dualism than Sethian.
 - vs. [[tradition-mandaeism]]: shared southern-Mesopotamian Jewish-Christian baptist milieu (Mani's Elchasaite origin).
 - vs. [[tradition-christianity-canonical]]: jurisdictional rival; Augustine's anti-Manichaean polemic is a major source.
+
+## MASSIVE-WIN: Manichaeism as the primary transmission vehicle for Zoroastrian cosmic dualism into the medieval West
+
+Manichaeism is the **widest single-faith distribution of Zoroastrian-derived theology** in world history. Mani (~216–277 CE) explicitly synthesized Zoroastrian light/darkness cosmic dualism with Christianity and Buddhism, producing a global missionary religion that spread:
+
+- **West**: through the Roman Empire; significant North African and Egyptian communities. [[augustine-of-hippo]] was a Manichaean *Hearer* for **nine years** (~373–382 CE) before his conversion to Christianity — the single most consequential individual Manichaean adherent in Western intellectual history. Augustine's residual dualism is the probable substrate of his doctrine of **original sin** and his pessimistic anthropology, which shaped Western (especially Protestant) Christian theology more than any other single inherited framework.
+- **East**: through Sasanian Persia, Sogdiana, and Central Asia to Tang Dynasty China. The Uighur Khaganate adopted Manichaeism as state religion 762–840 CE — the only period when Manichaeism was the official religion of a major state. Chinese Manichaean communities (*Míngjiào*, the Religion of Light) survived into the Ming Dynasty.
+
+The transmission chain: **Zoroastrian cosmic dualism → Mani's synthesis (~240 CE) → Manichaean church in the Roman Empire → Paulician Christians (Armenian dualist Christianity, ~7th c.) → [[tradition-bogomilism]] (Bulgaria, ~10th c.) → [[tradition-catharism]] (Southern France, ~12th c.)**. If this chain is correct, the [[event-albigensian-crusade-1209-1229]] (the first Crusade against European Christians) was Rome destroying the Western terminus of a theological transmission that began with Zoroaster and passed through Mani.
+
+### The Augustine hinge
+Augustine's nine Manichaean years are not incidental biography — they are a theological transmission event. The Manichaean insistence on the reality and power of cosmic evil; the frame of humanity as trapped in a material world contaminated by darkness; the deep suspicion of the body and its drives — these categories persisted in Augustine's post-conversion theology under Christian vocabulary. The doctrine of **original sin** as Augustine elaborates it (inherited guilt and corrupted will from Adam, not merely mortal weakness or bad example) has no strong parallel in pre-Augustinian Christianity but closely mirrors Manichaean anthropology's view of matter-contaminated humanity. Ref: BeDuhn, Jason (2010). *Augustine's Manichaean Dilemma*. University of Pennsylvania Press (Tier 1).
 
 ## Refs
 1. Lieu, S.N.C. (1992). *Mani and Manichaeism*. Manchester UP.

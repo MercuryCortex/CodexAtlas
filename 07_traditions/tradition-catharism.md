@@ -78,9 +78,19 @@ tags: [tradition, catharism, albigensian, languedoc, dualism, heresy, medieval, 
 
 **Rejection of Catholic sacraments:** The Cathars denied transubstantiation (matter cannot become divine), the physical Incarnation (Christ could not have had a material body), the resurrection, marriage (reproduction traps more souls in matter), and the Church's institutional authority.
 
-## The Bogomil ancestry
+## The Bogomil ancestry and the full transmission chain
 
 The Cathars' theological dualism was not invented independently. The **[[tradition-bogomilism|Bogomils]]** (Bulgaria, 10th c.) developed a strikingly similar theology: material creation is the work of an evil Demiurge, the soul is a divine spark imprisoned in matter, the *consolamentum* is the only valid rite. Cathar emissaries visited a Bogomil community (Drugunthia) around 1167 — direct theological contact is documented. Lambert (1998) argues Cathar theology developed from Bogomil contact, not from ancient Gnosticism directly (the older "Manichaean heresy" label is a polemical oversimplification).
+
+### MASSIVE-WIN: The full transmission chain from Zoroaster to the Albigensian Crusade
+
+The full chain, if the scholarly consensus (Obolensky/Stoyanov/Hamilton) is accepted:
+
+**[[tradition-zoroastrianism]]** (cosmic dualism, two eternal principles: Truth vs. Lie / Light vs. Darkness, ~-1200 BCE) → **[[tradition-manichaeism]]** (Mani synthesizes Zoroastrian dualism with Christianity and Buddhism, ~240 CE; spreads through Roman Empire) → **Paulicians** (Armenian dualist Christianity, ~7th c. CE; Byzantine deportation to Thrace ~872 CE brings dualist communities to the Bulgarian frontier) → **[[tradition-bogomilism]]** (Bulgaria, ~940 CE; Bogomil bishop Nicetas ordained Cathar leaders at the Council of Saint-Félix, 1167 CE) → **[[tradition-catharism]]** (Languedoc, ~1143 CE; [[event-albigensian-crusade-1209-1229]] destroys it 1209–1321 CE).
+
+If this chain is correct, the Albigensian Crusade — the first Crusade launched by a pope against European Christians — was Rome destroying the Western terminus of a theological transmission that began with Zoroaster and traveled from Iran through the Roman Empire, Armenia, Bulgaria, and finally to the villages of southern France over 2,400 years. The Catholic charge of "Manichaeism" against the Cathars was, in this frame, accidentally more accurate than the polemicists knew — they were correct that a dualist transmission had occurred, even if they were wrong about the direct lineage from Mani.
+
+**Caveat (Lambert 1998):** Lambert argues the Cathars developed their theology primarily from Bogomil contact rather than being conscious heirs of Manichaeism. The chain Manichaeism → Paulicianism → Bogomilism → Catharism is historically plausible but each link involves transformation, not simple copying. The Cathars were not "crypto-Manicheans" but inheritors of a long-transformed dualist impulse that reached them through the Bogomil channel.
 
 ## The Albigensian Crusade (1209–1229)
 

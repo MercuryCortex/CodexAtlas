@@ -46,6 +46,25 @@ The ten *sefirot* (Hebrew *sefirah*, pl. *sefirot*) are the central conceptual a
 - **Origin of the sefirotic system.** Scholem (1941): a Provençal-Languedoc 12th-c. synthesis of *Sefer Yetzirah* + Neoplatonic emanation + earlier Jewish merkavah / Heikhalot speculation, possibly mediated by Hasidei Ashkenaz. Idel (1988): emphasizes earlier and broader Jewish mystical sources, downplays the Neoplatonic borrowing as decisive.
 - **Sefirot and *imago Dei*.** The mapping of sefirot onto the body of *Adam Kadmon* makes the human body a microcosm of the inner-divine life ([[microcosm-macrocosm]]); the structure underlies Lurianic theurgic practice in which human actions affect the cosmic sefirotic balance.
 
+## Cross-tradition parallels — MASSIVE WIN
+
+The sefirot are the vault's richest single node for cross-tradition structural comparison. The basic structure — a hidden, unknowable absolute generating a structured hierarchy of divine powers through which the cosmos is created and through which the human returns — appears across five independent traditions:
+
+**Proclus's Henads (Neoplatonism, ~450 CE)**
+The closest structural parallel. Proclus posited *henads* — divine unities that mediate between the absolutely transcendent One and the lower hypostases of Being, Life, and Intellect. Each henad is a "god" in a precise sense: a real aspect of the One's self-differentiation, neither identical with the One nor fully separate. The sefirot are the Kabbalistic version of exactly this structure. Scholem (1962) documents the Neoplatonic channel: Isaac the Blind's Provence circle was in contact with Neo-Platonic sources through Arabic philosophy (al-Farabi, ibn Gabirol's *Fons Vitae* — itself a Neoplatonic-Jewish synthesis). The move from Proclus's abstract henads to Kabbalah's personified, mythologically-charged sefirot represents the Judaization and emotionalization of the Proclean system. See [[tradition-neoplatonism]], [[plotinus]].
+
+**Pseudo-Dionysius's Celestial Hierarchy (5th–6th c.)**
+The nine orders of angels (*seraphim, cherubim, thrones, dominions, virtues, powers, principalities, archangels, angels*) are the Christian version of the same hierarchical-mediation structure: a hidden God → graded divine powers → cosmos. The Dionysian hierarchy has nine ranks; the sefirot have ten; both descend from Proclean henadic theology via different routes. In Christian Kabbalah, Pico della Mirandola and Reuchlin explicitly mapped the sefirot onto Dionysian angelology — arguing that Christian angelology was *secretly Kabbalistic*. See [[pseudo-dionysius-the-areopagite]].
+
+**Hindu Chakra system (Tantra, ~7th–12th c.)**
+Seven (or more) *cakras* (energy wheels) arranged vertically along the spine from *mūladhāra* (root) to *sahasrāra* (crown) — each associated with a deity, a color, a bīja-mantra, a physiological function, and a level of consciousness. The structural parallel to the sefirot on the Tree of Life is striking: both are hierarchical emanation maps of cosmic and bodily reality, both associate specific divine qualities with specific levels, and both function as contemplative road-maps for mystical ascent. No transmission; independent parallel structure. The comparison is strongest with the Lurianic *partzufim* (divine faces / configurations) which assign personality and emotional registers to sefirotic clusters — paralleling Tantric deities at the chakra centers.
+
+**Sufi Divine Attributes (*Sifat Allāh*)**
+Islamic theology enumerates divine attributes (*sifāt*): the 99 Beautiful Names of God in Sunni tradition; Ibn Arabi's elaborate mapping of divine self-disclosure (*tajallī*) through 28 levels of the Cosmic Human (*al-insān al-kāmil*). The parallel to sefirot: both map the unknowable divine (Ein-Sof / dhāt) onto an articulated structure of real divine qualities through which creation proceeds. Ibn Arabi's *waḥdat al-wujūd* (unity of being) and Kabbalah's sefirotic emanation from Ein-Sof share the same apophatic-emanationist architecture. A Mediterranean Jewish-Sufi intellectual exchange at Safed is documented (Scholem noted Cordovero's familiarity with Sufi sources). See [[ibn-arabi]], [[tradition-kabbalah]].
+
+**Adam Kadmon — the anthropomorphic map**
+The sefirot are also understood as the body of *Adam Kadmon* (Primordial Human) — Keter = crown of the head, Malkhut = feet. This makes the human body a microcosm of the divine life. The parallel to the *Purusha* hymn (Rigveda 10.90) — the cosmos as the body of the primordial sacrificed giant — and to the Norse *Ymir* (cosmos from the giant's body) is a genuine cross-tradition archetype. See [[adam-kadmon]], [[microcosm-macrocosm]].
+
 ## Refs
 1. Scholem, *Major Trends in Jewish Mysticism*, 1941.
 2. Idel, *Kabbalah: New Perspectives*, 1988.

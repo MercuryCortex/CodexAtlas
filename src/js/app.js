@@ -4122,6 +4122,134 @@ const ALCHEMY_PRESETS = [
   },
 ];
 
+// Active research investigations — cross-tradition threads being investigated.
+// flag:'alert' = direct documented transmission OR structural parallel precise enough to anchor new vault nodes.
+// threads[].tier: 1 = Tier-1 documented, 2 = plausible indirect, 'parallel' = structural only.
+const INVESTIGATIONS = [
+  {
+    id: 'consciousness-temple',
+    name: 'Consciousness Temple',
+    flag: 'alert',
+    status: 'active',
+    opened: '2026-05-15',
+    headline: 'Kashmir Shaivism (Trika) is the most complete non-dual consciousness framework in the vault. It directly shaped Vajrayana Buddhism (Sanderson 2009 — Tier-1), has a documented Sufi bridge via Lal Ded → Nund Rishi in Kashmir itself, and runs parallel to Neoplatonism, Valentinian gnosis, and Meister Eckhart. Suhrawardi (already in vault) is the best candidate for a Persian transmission route to Ibn Arabi.',
+    threads: [
+      { label: 'Shaivism → Vajrayana', note: 'Sanderson 2009 — skull cups, wrathful deities, mandala geometry borrowed directly from Śaiva Tantric sources. Strongest documented case in vault.', tier: 1 },
+      { label: 'Lal Ded → Nund Rishi', note: 'Lalleshwari (~1320 CE) → Shaikh Nuruddin Wali (Kashmiri Sufi). Scholars describe their verses as "almost identical." Documented Kashmir-internal Shaivism → Sufism transmission.', tier: 1 },
+      { label: 'Suhrawardi bridge', note: 'al-Biruni translated Shaiva metaphysics into Arabic (1017 CE). Suhrawardi (1154–1191) built Illuminationist philosophy on that corpus. Best candidate for Pratyabhijñā → Ibn Arabi route. Both in vault.', tier: 2 },
+      { label: 'Trika ↔ Neoplatonism', note: 'Both emanationist hierarchies from single absolute. Michal Just (Comparative Philosophy): Kashmir Shaivism more monistic than Plotinus — world is real, not Maya.', tier: 2 },
+      { label: 'Pratyabhijñā ↔ Valentinian gnosis', note: 'Recognition of pre-existing divine nature = liberation. Structural parallel, no transmission. Valentinian "pneumatics already saved by nature" mirrors the Trika recognition move exactly.', tier: 'parallel' },
+      { label: 'Eckhart Seelenfünklein ↔ Trika', note: 'Eckhart\'s spark IS already the Godhead — closest Western parallel to Pratyabhijñā. Better match than Shankara (Eckhart\'s world is real, not illusory). Rudolf Otto compared Eckhart/Shankara (1926); Trika is the tighter fit. Both in vault.', tier: 'parallel' },
+      { label: 'Rinchen Zangpo corridor', note: 'Tibetan Great Translator (~958–1055) spent 21 years in Kashmir while Abhinavagupta was active there (~975–1025). The intellectual environment makes indirect Trika → Dzogchen transmission plausible. New vault node.', tier: 2 },
+      { label: 'Kailasa + Borobudur + Angkor cosmograms', note: 'All three are physical Mt. Meru cosmograms. Shared Indic architectural grammar (Manasara / Vastushastra) transmitted via priestly networks, not direct copying. Borobudur now in vault.', tier: 1 },
+      { label: 'Basavanna ↔ Eckhart — literature gap', note: 'Both ~12th c., vernacular language, body-as-temple, reject ritual hierarchy, condemned by institution. No scholar has published this comparison. Both in vault.', tier: 'parallel' },
+      { label: 'Spanda ↔ quantum pulsation', note: 'Fritjof Capra, The Tao of Physics (1975); Nataraja statue gifted to CERN (2004). Structural parallel only.', tier: 'parallel' },
+    ],
+    seeds: [
+      'shiva', 'rudra-shiva-early', 'abhinavagupta',
+      'phase-5-006-vijnana-bhairava-tantra',
+      'phase-5-014-abhinavagupta-tantraloka',
+      'phase-5-033-shiva-sutras',
+      'suhrawardi', 'phase-5-018-suhrawardi-hikmat-al-ishraq',
+      'plotinus', 'tradition-neoplatonism',
+      'world-axis', 'bhairava',
+      'ibn-arabi', 'meister-eckhart', 'the-godhead-eckhart',
+      'valentinus',
+      'event-angkor-wat-construction-c-1113-1150',
+      'event-borobudur-construction-c-750-825',
+    ],
+  },
+  {
+    id: 'self-limiting-absolute',
+    name: 'The Self-Limiting Absolute',
+    flag: 'alert',
+    status: 'active',
+    opened: '2026-05-15',
+    headline: 'Across 6 traditions, the absolute voluntarily contracts or conceals itself to make contingent reality possible. The structural precision of this move — Śiva\'s āṇava-mala, Luria\'s tzimtzum, Palamas\'s essence/energy distinction, Eriugena\'s divine darkness — across traditions with no confirmed contact is the deepest cross-tradition pattern in the vault. The Palamas / Trika parallel (essence = Śiva, energy = Śakti) is an alert-grade structural isomorphism.',
+    threads: [
+      { label: 'Palamas ↔ Trika — ALERT', note: 'Gregory Palamas (1296–1359): God\'s essence unknowable, only "energies" accessible. Structurally identical to Śiva (pure consciousness) / Śakti (dynamic manifestation). Same move, same precision, no confirmed contact. Palamas is in vault.', tier: 'parallel' },
+      { label: 'Tzimtzum ↔ Āṇava-mala', note: 'Luria\'s tzimtzum (~1570): God withdraws to create space for world. Trika\'s āṇava-mala: Śiva contracts infinite consciousness into individual limited self. Both posit self-limiting as the generative act. Tzimtzum is in vault.', tier: 'parallel' },
+      { label: 'Eriugena ↔ Vasugupta (~825 CE)', note: 'John Scotus Eriugena (810–877 CE, Ireland): God does not know himself through categories — divine darkness is the highest knowledge. Vasugupta (~825 CE, Kashmir): Śiva-consciousness is self-luminous but self-concealing in individual minds. Same decade, opposite ends of Eurasia, no known contact.', tier: 2 },
+      { label: 'Mulla Sadra culmination', note: 'al-Biruni (1017) → Suhrawardi → Ibn Arabi → Mulla Sadra (1571–1636): "wujūd" (being) as self-differentiating light — all four nodes now in vault. Completable chain: Shaiva non-dualism arriving at Shia philosophy.', tier: 2 },
+      { label: 'Pseudo-Dionysius → apophatic spine', note: 'Ps-Dionysius (5th–6th c.) → Eriugena → Eckhart: a documented chain of divine-darkness theology through the Latin West. Sanderson\'s documented Śaiva → Buddhist tantra transmission means this apophatic chain runs parallel to a Kashmir-influenced Buddhist stream.', tier: 1 },
+      { label: 'Boehme Ungrund ↔ Ein-Sof', note: 'Jakob Boehme\'s "Ungrund" (groundless ground, 1612) and Kabbalistic Ein-Sof (infinite without limit) are structural twins: the absolute as self-concealing non-ground prior to all determination. Boehme was almost certainly influenced by Lurianic Kabbalah circulating in his milieu.', tier: 2 },
+      { label: 'Nagarjuna śūnyatā — the counterpoint', note: 'Nagarjuna\'s Mādhyamaka (~150 CE): śūnyatā (emptiness) — no ground at all, including no "self-luminous consciousness" ground. This is the rival to Trika\'s consciousness-as-ground. The debate between these two non-dual frameworks never ended and runs through Tibetan Buddhism to this day.', tier: 'parallel' },
+    ],
+    seeds: [
+      'gregory-palamas', 'john-scotus-eriugena', 'pseudo-dionysius-the-areopagite',
+      'jakob-boehme', 'mulla-sadra',
+      'nagarjuna', 'naropa-tilopa',
+      'tradition-kabbalah', 'ein-sof', 'tzimtzum',
+      'apophatic-mysticism',
+      'tradition-kashmir-shaivism', 'vasugupta', 'lal-ded', 'al-biruni',
+      'ibn-arabi', 'meister-eckhart',
+      'essence-energies-distinction',
+    ],
+  },
+  {
+    id: 'non-ground-debate',
+    name: 'The Non-Ground Debate',
+    flag: 'alert',
+    status: 'active',
+    opened: '2026-05-15',
+    headline: 'The deepest unresolved split in non-dual thought: is there a positive luminous ground (Trika: Śiva-consciousness; Dzogchen: rigpa; shentong: Buddha-nature-light) or no ground at all (Madhyamaka: śūnyatā, even consciousness has no fixed nature)? This debate was never settled. It runs from Nāgārjuna (~150 CE) through the Tibetan rangtong/shentong controversy to the present, and maps onto Eckhart\'s own unresolved tension between divine nothingness and the soul\'s spark.',
+    threads: [
+      { label: 'Nagarjuna vs Trika — the founding split', note: 'Two rival non-dual frameworks: consciousness-as-ground (Trika: Śiva is self-luminous awareness) vs no-ground (Madhyamaka: even "consciousness" cannot be asserted as ground without positing svabhāva). Mutually exclusive. Both in vault.', tier: 'parallel' },
+      { label: 'Rangtong / Shentong — Tibet', note: 'Gelugpa (rangtong): all is self-empty, including Buddha-nature. Kagyu/Jonang (shentong): Buddha-nature is other-empty — empty of defiled qualities but retaining luminous positive attributes. The split exactly replays the Trika/Madhyamaka debate in Tibetan form. Tsongkhapa in vault.', tier: 1 },
+      { label: 'Rinchen Zangpo corridor', note: 'Tibetan Great Translator (~958–1055) spent 21 years in Kashmir while Abhinavagupta was active there (~975–1025). The intellectual environment makes indirect Trika → Dzogchen transmission plausible. No direct citation found.', tier: 2 },
+      { label: 'Eckhart\'s unresolved tension', note: 'Gottheit as nichts (divine nothingness prior to all determination) = Madhyamaka-flavored. Seelenfünklein (spark already IS the Godhead) = Trika pratyabhijñā move. These two doctrines coexist in Eckhart without resolution.', tier: 'parallel' },
+      { label: 'Dzogchen rigpa as attempted synthesis', note: 'Rigpa (pure awareness) is primordially present but not a reified consciousness-substance — an attempt to hold Trika (positive luminous ground) and Madhyamaka (no fixed nature) simultaneously. The Tibetan masters who attempted this synthesis (Longchenpa, Mipham) did so knowing the contradiction.', tier: 2 },
+      { label: 'Ungrund — Boehme\'s version', note: 'Jakob Boehme\'s Ungrund (groundless ground prior to divinity) = the abyss before any positive nature, including consciousness. Structurally this sides with Madhyamaka against Trika: the primal is prior to mind. Yet Boehme also asserts divine self-luminosity. The same tension as Eckhart.', tier: 'parallel' },
+    ],
+    seeds: [
+      'nagarjuna', 'emptiness-sunyata', 'tradition-madhyamaka',
+      'naropa-tilopa', 'milarepa', 'tsongkhapa',
+      'rinchen-zangpo', 'tradition-kashmir-shaivism', 'vasugupta',
+      'pratyabhijna', 'the-godhead-eckhart', 'meister-eckhart',
+      'ungrund', 'jakob-boehme',
+    ],
+  },
+  {
+    id: 'shattering-and-repair',
+    name: 'Shattering & Repair',
+    flag: 'alert',
+    status: 'active',
+    opened: '2026-05-15',
+    headline: 'Isaac Luria\'s three-act cosmogony (tzimtzum → shevirat ha-kelim → tikkun olam) is the vault\'s richest theodicy cluster. The "shattering of the vessels" — divine light too intense for its containers — and the scatter of sparks into matter is structurally identical to the Valentinian Sophia fall. The 1492 Spanish Expulsion is Scholem\'s historical anchor: Luria\'s cosmic exile-and-repair is the metaphysical translation of a historical catastrophe.',
+    threads: [
+      { label: 'Lurianic drama — tzimtzum → shevirat → tikkun', note: 'Isaac Luria (Safed, ~1570): God contracts (tzimtzum), vessels shatter (shevirat), divine sparks scatter into matter (kelipot), human practice gathers them (tikkun). The foundational Tier-1 structure. All three theme nodes now in vault with cross-tradition sections.', tier: 1 },
+      { label: 'Shevirat ↔ Valentinian Sophia fall', note: 'Valentinian cosmogony (~150 CE): Sophia acts without her consort, ruptures the Pleroma, divine pneumatic sparks fall into matter (kenoma), the salvific task = gathering pneumatics. Structure-for-structure identical to Lurianic drama, 1,400 years earlier. Scholem argued influence; Idel disputes it.', tier: 2 },
+      { label: 'Exile as cosmic structure (1492)', note: 'Gershom Scholem: Luria\'s shevirat ha-kelim is the Spanish Expulsion (1492) read as cosmic event — historical exile becomes primordial cosmic exile. The theological move: the specific catastrophe of Jewish history is a symptom of a cosmic malfunction that predates creation. Scholem is in vault.', tier: 1 },
+      { label: 'Sefirot ↔ Neoplatonic henads', note: 'Proclus\'s ten henads (divine unities mediating between the One and lower hypostases) → Kabbalistic sefirot (ten divine attributes mediating between Ein-Sof and creation). Scholem traced the channel via Arabic Neoplatonism (ibn Gabirol\'s Fons Vitae) to Provençal Kabbalah. The sefirot are the Judaized, emotionalized, mythologized version of the Proclean system.', tier: 2 },
+      { label: 'Ibn Arabi ↔ Zohar — Mediterranean contemporaries', note: 'Ibn Arabi (1165–1240, Andalusia) and Moses de León\'s Zohar (~1280, Castile) are geographic and temporal contemporaries articulating structurally identical apophatic-emanationist systems. Ein-Sof/sefirot ≈ dhāt/asmāʾ. A Mediterranean Jewish-Sufi intellectual exchange is plausible; both operate in the same Iberian intellectual environment.', tier: 2 },
+      { label: 'Christian Kabbalah → Western esotericism', note: 'Pico della Mirandola (1486) → Reuchlin → Agrippa → Dee → Rosicrucians → Golden Dawn → modern Western magic. The documented transmission of sefirotic/Lurianic frameworks into the Latin West. Christian Kabbalah mapped sefirot onto Trinitarian theology, angelic orders (Dionysian hierarchy), and Renaissance magic.', tier: 1 },
+    ],
+    seeds: [
+      'tradition-kabbalah', 'ein-sof', 'sefirot', 'tzimtzum', 'shevirat-hakelim', 'tikkun-olam',
+      'adam-kadmon', 'isaac-luria', 'moses-de-leon', 'nachmanides', 'gershom-scholem',
+      'ibn-arabi', 'valentinus', 'tradition-gnosticism',
+      'shekhinah', 'event-jewish-expulsion-spain-1492',
+      'tradition-christian-kabbalah', 'giovanni-pico-della-mirandola',
+    ],
+  },
+];
+
+// investLoadSeeds — mirror of alchemyLoadPreset for INVESTIGATIONS entries.
+function investLoadSeeds(investId, mode) {
+  const inv = INVESTIGATIONS.find(i => i.id === investId);
+  if (!inv) return;
+  const valid = inv.seeds.filter(id => NODES_BY_ID[id]);
+  if (mode === 'append') {
+    const existing = new Set(STATE.alchemyPicks || []);
+    valid.forEach(id => existing.add(id));
+    STATE.alchemyPicks = Array.from(existing);
+  } else {
+    STATE.alchemyPicks = valid;
+  }
+  STATE.alchemyActivePreset = null;
+  setView('alchemy');
+}
+
 // Custom user-saved trees live in localStorage under this key. Shape: an array of
 // {id, name, picks, created} — same structure as ALCHEMY_PRESETS minus the headline
 // (custom trees don't have rhetorical payload, just the user's name for them).
@@ -4393,7 +4521,11 @@ VIEWS.alchemy = {
       ? findPresetOrTree(STATE.alchemyActivePreset)
       : null;
     const canSave = picks.length > 0;
+    const hasAlerts = INVESTIGATIONS.some(i => i.flag === 'alert');
     document.getElementById('view-controls').innerHTML = `
+      <button class="btn btn-mini alch-invest-trigger${hasAlerts ? ' has-alert' : ''}" id="alch-invest-trigger" title="Active research investigations — live cross-tradition threads">
+        <span>Investigations</span>${hasAlerts ? '<span class="invest-trigger-badge">!</span>' : ''}<span class="caret">▾</span>
+      </button>
       <button class="btn btn-mini alch-presets-trigger" id="alch-presets-trigger" title="Load a curated cross-tradition exploration">
         <span class="alch-presets-trigger-label">${activePreset ? activePreset.name : 'Presets'}</span>
         <span class="caret">▾</span>
@@ -4410,8 +4542,8 @@ VIEWS.alchemy = {
       setView('alchemy');
     };
 
-    // Toolbox + palette + dropdown injected into canvas as siblings of the SVG.
-    document.querySelectorAll('.alch-toolbox, .alch-palette, .alch-presets-dropdown, .alch-presets-pane').forEach(el => el.remove());
+    // Toolbox + palette + dropdowns injected into canvas as siblings of the SVG.
+    document.querySelectorAll('.alch-toolbox, .alch-palette, .alch-presets-dropdown, .alch-presets-pane, .alch-invest-dropdown').forEach(el => el.remove());
     const canvas = document.getElementById('canvas');
 
     // ---- Presets dropdown — absolutely positioned, anchored to top-right under the trigger.
@@ -4576,6 +4708,96 @@ VIEWS.alchemy = {
         deleteCustomTree(id);
         if (STATE.alchemyActivePreset === id) STATE.alchemyActivePreset = null;
         setView('alchemy');
+      });
+    });
+
+    // ---- Investigations dropdown ----
+    function tierLabel(t) { return t === 'parallel' ? '∥ parallel' : `tier ${t}`; }
+    const investDropdown = document.createElement('div');
+    investDropdown.className = 'alch-invest-dropdown';
+    investDropdown.style.display = 'none';
+    investDropdown.innerHTML = `
+      <div class="alch-invest-intro">Active research threads — cross-tradition connections being investigated. Seeds load into Alchemy canvas.</div>
+      <div class="alch-invest-list">
+        ${INVESTIGATIONS.map(inv => `
+          <div class="alch-invest-card${inv.flag === 'alert' ? ' alert' : ''}">
+            <div class="alch-invest-header">
+              ${inv.flag === 'alert' ? '<span class="alch-invest-flag">⚠ ALERT</span>' : ''}
+              <span class="alch-invest-name">${inv.name}</span>
+              <span class="alch-invest-status">${inv.status}</span>
+            </div>
+            <div class="alch-invest-headline">${inv.headline}</div>
+            <div class="alch-invest-threads">
+              ${inv.threads.map(th => `
+                <div class="alch-invest-thread">
+                  <span class="alch-invest-thread-tier tier-${th.tier}">${tierLabel(th.tier)}</span>
+                  <span class="alch-invest-thread-label">${th.label}</span>
+                  <span class="alch-invest-thread-note">${th.note}</span>
+                </div>`).join('')}
+            </div>
+            <div class="alch-invest-action-row" data-mode="initial">
+              <button class="alch-invest-load" data-invest="${inv.id}">load seeds (${inv.seeds.length})</button>
+            </div>
+            <div class="alch-invest-confirm-row" data-mode="confirm" style="display:none">
+              <span class="alch-invest-confirm-q">Replace your ${picks.length} pick${picks.length === 1 ? '' : 's'}?</span>
+              <button class="alch-invest-confirm alch-invest-append" data-invest="${inv.id}">append</button>
+              <button class="alch-invest-confirm alch-invest-replace" data-invest="${inv.id}">replace</button>
+              <button class="alch-invest-confirm alch-invest-cancel">cancel</button>
+            </div>
+          </div>`).join('')}
+      </div>
+    `;
+    canvas.appendChild(investDropdown);
+
+    function positionInvestDropdown() {
+      const trigger = document.getElementById('alch-invest-trigger');
+      if (!trigger) return;
+      const rect = trigger.getBoundingClientRect();
+      const canvasRect = canvas.getBoundingClientRect();
+      investDropdown.style.top = (rect.bottom - canvasRect.top + 4) + 'px';
+      investDropdown.style.right = (canvasRect.right - rect.right) + 'px';
+    }
+    function openInvestDropdown() {
+      positionInvestDropdown();
+      investDropdown.style.display = '';
+      closeDropdown();
+      setTimeout(() => document.addEventListener('click', closeInvestOnOutside), 0);
+    }
+    function closeInvestDropdown() {
+      investDropdown.style.display = 'none';
+      document.removeEventListener('click', closeInvestOnOutside);
+    }
+    function closeInvestOnOutside(ev) {
+      if (!investDropdown.contains(ev.target) && ev.target.id !== 'alch-invest-trigger') closeInvestDropdown();
+    }
+    document.getElementById('alch-invest-trigger').onclick = (ev) => {
+      ev.stopPropagation();
+      if (investDropdown.style.display === 'none') openInvestDropdown(); else closeInvestDropdown();
+    };
+    investDropdown.querySelectorAll('.alch-invest-load').forEach(btn => {
+      btn.addEventListener('click', (ev) => {
+        ev.stopPropagation();
+        const investId = btn.dataset.invest;
+        if (picks.length === 0) { investLoadSeeds(investId, 'replace'); closeInvestDropdown(); return; }
+        investDropdown.querySelectorAll('.alch-invest-action-row').forEach(r => r.style.display = '');
+        investDropdown.querySelectorAll('.alch-invest-confirm-row').forEach(r => r.style.display = 'none');
+        const card = btn.closest('.alch-invest-card');
+        card.querySelector('.alch-invest-action-row').style.display = 'none';
+        card.querySelector('.alch-invest-confirm-row').style.display = '';
+      });
+    });
+    investDropdown.querySelectorAll('.alch-invest-append').forEach(btn => {
+      btn.addEventListener('click', (ev) => { ev.stopPropagation(); investLoadSeeds(btn.dataset.invest, 'append'); closeInvestDropdown(); });
+    });
+    investDropdown.querySelectorAll('.alch-invest-replace').forEach(btn => {
+      btn.addEventListener('click', (ev) => { ev.stopPropagation(); investLoadSeeds(btn.dataset.invest, 'replace'); closeInvestDropdown(); });
+    });
+    investDropdown.querySelectorAll('.alch-invest-cancel').forEach(btn => {
+      btn.addEventListener('click', (ev) => {
+        ev.stopPropagation();
+        const card = btn.closest('.alch-invest-card');
+        card.querySelector('.alch-invest-confirm-row').style.display = 'none';
+        card.querySelector('.alch-invest-action-row').style.display = '';
       });
     });
 

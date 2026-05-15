@@ -64,6 +64,16 @@ Bogomilism was a medieval Christian dualist movement that emerged in Bulgaria in
 - vs. Eastern Orthodox Christianity: the principal target of anti-Bogomil polemic; the Byzantine-Bulgarian official response.
 - vs. [[event-fourth-crusade-1204|Fourth Crusade]] and Crusader-Byzantine contact: Latin Crusader presence in Constantinople (1204–1261) and the broader Crusader-era Eastern Mediterranean expanded contact between Bogomil-derived dualism and Latin Christendom — though the principal transmission channel into Western European [[tradition-catharism|Catharism]] (Bishop Nazarius's ~1190 visit to Concorezzo) predates the Fourth Crusade.
 
+## MASSIVE-WIN: Bogomilism as the transmission vector for Zoroastrian dualism into Western Europe
+
+Bogomilism is the **documented transmission link** in the chain Zoroastrian cosmic dualism → Mani → Paulicians → Bogomils → Cathars. Without Bogomilism, this chain breaks: the Cathars of Languedoc would lack their most direct dualist ancestor and the direct organizational contacts that shaped their theology. The key documented transmission event is the **Council of Saint-Félix (1167 CE)**: a Bogomil bishop named Nicetas traveled from Drugunthia (probably Bulgaria/Macedonia) to Languedoc and **ordained the bishops of the major Cathar churches** — Toulouse, Carcassonne, Val d'Aran, and possibly the Italian Cathar church of Concorezzo. This is not a hypothesis but a documented organizational event, attested in the *Acta Concilii Sancti Felicis* (though the document's authenticity is debated by Wakefield; Barber 2000 defends it as substantially genuine).
+
+The Bogomil-to-Cathar connection makes Bogomilism the most consequential node in the transmission chain:
+- **Upstream** from [[tradition-manichaeism]] via Paulician intermediaries (Byzantine emperors resettled large Paulician populations from Armenia into Thrace ~872 CE, bringing dualist communities into the Bulgarian frontier zone where Bogomilism would emerge).
+- **Downstream** to [[tradition-catharism]]: Bogomil missionaries and the documented ordination contacts are the direct channel through which Cathar dualist theology reached its Languedocian form.
+
+The Interrogatio Iohannis ([[phase-5-020-interrogatio-iohannis]]) — the principal surviving Bogomil-Cathar text — was carried by Nazarius, Cathar bishop of Concorezzo, from a Bogomil source ~1190: a documented text-transmission event within living memory of multiple Cathar sources.
+
 ## Refs
 1. Obolensky, D. (1948). *The Bogomils*. CUP.
 2. Stoyanov, Y. (2000). *The Other God*. Yale UP.

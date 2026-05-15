@@ -20,6 +20,10 @@ syncretic-edges:
   - target: "jesus-christ-deity"
     type: "scholarly-parallel"
     source: "**THE MASSIVE-WIN ZOROASTRIAN-CHRISTIAN EDGE.** The Saoshyant figure — virgin-born future-savior who raises the dead and inaugurates cosmic renovation — provides the **principal pre-Christian Near Eastern messiah-figure parallel** to Christian Christology. Boyce 1975-1991 *History of Zoroastrianism* (3 vols.) and Hultgård 1998 *Persian Apocalypticism* argue substantial influence on Second-Temple Jewish apocalyptic-messianism (1 Enoch's Son-of-Man, Daniel's eschatology, the Qumran Two-Messiahs scheme, the Pauline Second-Coming structure) via the Achaemenid-and-Parthian-period Jewish-Persian contact. **The scholarly debate is about direction and degree of influence, not about the structural parallel — that is uncontested.**"
+  - target: "muhammad-al-mahdi"
+    type: "structural-parallel"
+    source: "Boyce, Mary (1984). *Textual Sources for the Study of Zoroastrianism*. Chicago UP.; Gnoli, Gherardo (1987). 'Zoroastrianism and Islam' in *Encyclopaedia Iranica*."
+    notes: "**MASSIVE-WIN: Saoshyant ↔ Hidden Imam / Mahdi.** The Zoroastrian world-renovating savior (born of Zarathustra's preserved seed, exists in a hidden/preserved state, emerges to defeat Angra Mainyu at frashokereti) and the Shi'a Hidden Imam / Mahdi (in occultation since 874 CE, will return at history's end to fill the earth with justice) share identical structural logic: a savior who *already exists* in a hidden/preserved state, will *emerge* at history's end, and will trigger *cosmic renovation*. Iran's population was majority Zoroastrian through the same centuries that produced the Twelver occultation doctrine — the Zoroastrian template was culturally available in precisely the milieu where Shi'a eschatology crystallized. See [[muhammad-al-mahdi]] and [[occultation-hidden-imam]]."
 status: "metadata"
 refs:
   - title: "A History of Zoroastrianism (3 vols.)"
@@ -101,9 +105,23 @@ The **Achaemenid period (-550 to -330)** is the period of MAXIMUM Zoroastrian-Je
 
 The scholarly debate is real but **the structural parallels are uncontested**. The Codex Atlas's "MASSIVE-win" mission is exactly to surface these comparative-structural patterns regardless of where one stands on the direction-of-influence question.
 
+### MASSIVE-WIN: Saoshyant ↔ Hidden Imam / Mahdi
+
+The most overlooked cross-tradition parallel in the Saoshyant cluster is with the Shi'a [[muhammad-al-mahdi]] and the doctrine of [[occultation-hidden-imam]]: the Twelfth Imam is identified in Twelver theology as a specific individual (Muhammad ibn al-Hasan al-Askari) who entered *ghayba* (occultation — a hidden state in which he is present but invisible) in 874 CE and who will *emerge* at history's end to restore justice, defeat the Dajjal, and inaugurate a just world-order. The structural template is:
+
+| | Saoshyant | Hidden Imam / Mahdi |
+|---|---|---|
+| Preserved state | Seed preserved in Lake Kansaoya | Hidden in occultation since 874 CE |
+| Preserved by whom | 99,999 *fravashis* | God directly (divine protection) |
+| Emergence trigger | Cosmic nadir / end of present age | Cosmic nadir / world filled with oppression |
+| Function on arrival | Raises dead, defeats Angra Mainyu | Restores justice, defeats Dajjal |
+| Cosmic outcome | Frashokereti — universal renovation | Universal justice; then Day of Judgment |
+| Cultural context | Zoroastrian Sasanian Iran | Develops in Iran, same population, post-conquest |
+
+Iran's population was majority Zoroastrian through the 7th–10th centuries — the precise centuries when Twelver Shi'a theology crystallized the occultation doctrine into its definitive form. The Saoshyant eschatological template was culturally available in exactly the milieu where the Hidden Imam doctrine developed. Whether this constitutes direct influence or structural convergence under similar pressures (both traditions coping with a missing/absent divine leader) remains an open scholarly question. Ref: Gnoli 1987 *Encyclopaedia Iranica*; Sachedina 1981 *Islamic Messianism*.
+
 ### Other cross-tradition parallels
 - **Vedic Kalki avatar** (the future Vishnu-avatar who will end the present Kali Yuga) — *parallel-form*. Indo-Iranian shared future-savior religious-imaginative pattern.
-- **Mahdi** (Islamic eschatological savior) — *appropriated-by* / *scholarly-parallel*. Islamic Mahdi-doctrine in some streams shows substantial Zoroastrian-and-Christian influence on its eschatological structure.
 - **Maitreya** (Buddhist future-Buddha) — *parallel-form*. Convergent future-savior pattern; some scholars argue Zoroastrian influence on Mahayana Maitreya-doctrine via the Iranian-Buddhist Kushan-period contact zone.
 
 ## Iconography

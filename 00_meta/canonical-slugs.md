@@ -2133,15 +2133,15 @@ canonical-slug
 
 | Refs | Dead target | Suggested canonical (existing) |
 |---:|---|---|
-| 5 | `phase-1-013-babylonian-theodicy` | `phase-1-032-babylonian-theodicy` |
-| 4 | `tradition-minoan-religion` | `tradition-christianity-canonical` |
-| 4 | `tradition-eastern-orthodoxy` | `tradition-christianity-canonical` |
-| 3 | `tradition-medieval-christianity` | `tradition-christianity-canonical` |
-| 3 | `tradition-early-christianity` | `tradition-christianity-canonical` |
-| 3 | `phase-4-007-new-testament-canon` | `phase-4-009-pistis-sophia` |
-| 3 | `phase-2-005-1-2-kings` | `phase-2-003-atharva-veda` |
+| 5 | `phase-1-013-babylonian-theodicy` | `phase-1-004-gilgamesh-old-babylonian` |
+| 4 | `tradition-minoan-religion` | `tradition-kashmir-shaivism` |
+| 4 | `tradition-eastern-orthodoxy` | `tradition-kashmir-shaivism` |
+| 3 | `tradition-medieval-christianity` | `tradition-kashmir-shaivism` |
+| 3 | `tradition-early-christianity` | `tradition-kashmir-shaivism` |
+| 3 | `phase-4-007-new-testament-canon` | `phase-4-008-trimorphic-protennoia` |
+| 3 | `phase-2-005-1-2-kings` | `phase-2-008-homeric-epics` |
 | 3 | `divine-kingship-solar` | `divine-kingship` |
 | 2 | `yam-canaanite` | `astarte-canaanite` |
-| 2 | `tradition-lingayat` | `tradition-hawaiian` |
+| 2 | `tradition-lingayat` | `tradition-kashmir-shaivism` |
 | 2 | `phase-2-004-1-2-chronicles` | `phase-2-005-hebrew-bible-j-source` |
 | 2 | `asclepius` | `asclepius-greek` |

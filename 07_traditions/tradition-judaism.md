@@ -71,7 +71,7 @@ Israelite religion emerges in the Levantine highlands (~-1200 BCE) within a broa
 
 ## Relations to neighbors
 - vs. [[tradition-canaanite-ugaritic]]: continuity (Canaanite El becomes Israelite El, YHWH absorbs storm-warrior elements of Baal) plus polemic (prophets against Baal worship). Both relations evident in the texts.
-- vs. [[tradition-zoroastrianism]]: Persian-period contact (539–332). Strongly hypothesized influence on developing angelology, demonology, dualism, and eschatology — the central cross-phase edge.
+- vs. [[tradition-zoroastrianism]]: Persian-period contact (539–332). Strongly hypothesized influence on developing angelology, demonology, dualism, and eschatology — the central cross-phase edge. See [[persian-period-injection]] for the full five-channel analysis of the documented theological injection: cosmic dualism / resurrection-of-the-dead / messianic-savior figure / named angelology / final cosmic judgment — all absent or marginal in pre-exilic Hebrew Bible, all well-developed in Second Temple Judaism following Persian contact.
 - vs. [[tradition-egyptian]]: traditional bondage-exodus narrative (J/E/P/D); some Hellenistic philosophical contact.
 - vs. [[tradition-mesopotamian]]: shared primeval-history motifs (flood, creation, garden); whether by direct borrowing or shared Near Eastern grammar.
 

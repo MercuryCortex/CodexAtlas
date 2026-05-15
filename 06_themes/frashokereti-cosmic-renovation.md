@@ -20,6 +20,7 @@ related-themes:
   - "[[theme-zoroastrian-afterlife-geography]]"
   - "[[resurrection-of-the-dead]]"
   - "[[messianism]]"
+  - "[[tikkun-olam]]"
 status: "metadata"
 refs:
   - title: "A History of Zoroastrianism (3 vols.)"
@@ -89,6 +90,12 @@ The structural parallels with Christian eschatology are **dense and uncontested*
 ### Frashokereti → Islamic Yawm al-Qiyāmah
 
 Islamic eschatology (the Day of Resurrection, the Sirat Bridge, the universal judgment) draws on **both** Christian and Zoroastrian eschatological vocabulary, mediated through the religious-cultural environment of late-antique-Near-Eastern Arabia. The **Sirat Bridge** (the bridge across hell that all souls must cross) is structurally parallel to the **[[cinvat-bridge|Cinvat Bridge]]** of Zoroastrian eschatology.
+
+### Frashokereti ↔ Tikkun Olam (MASSIVE-WIN)
+
+**[[tikkun-olam]]** — Isaac Luria's 16th-century Kabbalistic doctrine of cosmic repair — is structurally identical to Frashokereti at the level of cosmological grammar: (1) the world was broken (*Shevirat HaKelim*, the shattering of the vessels); (2) divine sparks/elements are trapped in matter; (3) the task of the righteous is to participate actively in cosmic repair through their deeds; (4) completion of the repair triggers/coincides with the Messianic arrival and world-renovation. Zoroastrian Frashokereti runs the same schema: (1) Angra Mainyu's intrusion has mixed evil into the cosmos; (2) the cosmic drama is the recovery of light/righteousness from its entanglement with darkness/evil; (3) human righteous deeds hasten and constitute the renovation; (4) the Saoshyant's arrival and the molten-metal purification complete it.
+
+Whether this convergence is direct transmission (Persian-period Zoroastrian categories entering Second Temple Jewish thought → eventually shaping Lurianic Kabbalah) or deep structural convergence is an open question. But the template match at the level of cosmological structure is exact: broken cosmos → scattered divine elements → human participation in repair → final renovation. This is one of the strongest Zoroastrian → Jewish cross-tradition bridges in the vault.
 
 ### Frashokereti → Second-Temple Jewish apocalyptic
 
