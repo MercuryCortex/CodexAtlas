@@ -1,0 +1,400 @@
+{
+  "version": "1.0",
+  "generated": "2026-05-15",
+  "decan_list": "Senenmut TT 353 (~1473 BCE), cross-checked with Dendera ceiling (~50 BCE) and Sety I tomb (~1290 BCE). Per Neugebauer & Parker EAT III.",
+  "ayanamsa": "Lahiri (Chitrapaksha), ~24°10' for 2026 CE — Vedic Nakshatras given in sidereal degrees.",
+  "face_ruler_convention": "Chaldean order Sa-Ju-Ma-Su-Ve-Me-Mo per Picatrix II.11 / Liber Hermetis / Agrippa III.18.",
+  "manzil_anchor": "Aries 0° tropical = Al-Sharaṭān (Arabic medieval convention).",
+  "xiu_orientation": "Dominant-star convention per Sun & Kistemaker 1997 Tables 8.1-8.3. Xiu numbering starts at 角 (Jiao, Spica/Virgo wing) which sits at ~22° Virgo tropical — so the cyclical offset must be tracked.",
+  "alignment_caveat": "36 decans (10°) vs 27/28 mansions (12.86°) do not tile evenly. Where a decan overlaps two mansions, dominant first; minor noted in caveat field. Nakshatras given in sidereal Lahiri; Manazil and Xiu in tropical/sidereal hybrid per their respective traditions.",
+  "sources": [
+    "Hand 1981 T1 — Horoscope Symbols (Western face-rulership Chaldean sequence)",
+    "Greer & Warnock 2011 T1 — The Complete Picatrix (Latin → English), Books I-IV",
+    "Neugebauer & Parker 1960-69 T1 — Egyptian Astronomical Texts I-III (Senenmut, Sety, Dendera)",
+    "Brennan 2017 T1 — Hellenistic Astrology (decanic origins, triplicity rulers)",
+    "Frawley 2000 T2 — The Astrology of the Seers (Nakshatra popularizer)",
+    "Ranganathan 2010 T1 — Mathematical Approach to Vedic Astrology (Nakshatra sidereal degrees)",
+    "Kunitzsch 1961 T1 — Untersuchungen zur Sternnomenklatur der Araber (Arabic star + manzil names)",
+    "Sezgin 1978 T1 — GAS Bd. VI (Arabic astronomical bibliography)",
+    "Schafer 1977 T1 — Pacing the Void: T'ang Approaches to the Stars",
+    "Sun & Kistemaker 1997 T1 — The Chinese Sky During the Han: Constellating Stars and Society",
+    "Agrippa 1531 T2 — Three Books of Occult Philosophy III.18 (decan deities)",
+    "Liber Hermetis (Hermetic, ~2nd c. CE) T1 — decan-rising stars + Egyptian decan deities",
+    "Dendera ceiling rectangular zodiac (~50 BCE) T1 — primary material attestation",
+    "Lambert 1992 T1 — Babylonian Astronomical Diaries (36-star MUL.APIN system)",
+    "Ho Peng Yoke 1985 T2 — Li, Qi, and Shu (Chinese astronomy + xiu cross-reference)",
+    "Pingree 1997 T1 — From Astral Omens to Astrology, From Babylon to Bīkāner"
+  ],
+  "decans": [
+    {
+      "n": 1, "western": { "sign": "Aries", "decan_n": 1, "degrees": "0°-10° tropical", "ruler_chaldean_face": "Mars", "ruler_triplicity": "Sun (day) / Jupiter (night)", "picatrix_image": "A tall dark restless man with red eyes, axe in hand, white-clothed; significations: boldness, daring, lordship." },
+      "egyptian": { "name": "Knm / Knemu", "name_alt": ["Tep-a-Khentet"], "rising_star": "Knemu", "season": "Akhet", "deity_association": "Khnum (ram creator)" },
+      "vedic": { "nakshatra": "Aśvinī", "n": 1, "degrees_sidereal": "0°00'-13°20' Aries", "lord": "Ketu", "deity": "Aśvini Kumaras (twin horse-headed physicians)", "symbol": "horse's head" },
+      "arabic_manzil": { "n": 1, "name": "Al-Sharaṭān", "translation": "The Two Signs", "stars": "β-γ Arietis (Sheratan, Mesarthim)", "category": "fortunate for war and journeys" },
+      "chinese_xiu": { "n": 16, "name": "婁 (Lóu)", "translation": "Bond", "constellation": "Aries", "element": "metal", "palace": "White Tiger (West)" },
+      "cross_tradition_notes": "Decanic tradition is directly Egyptian — Demotic + Greek decan-lists (Hermes Trismegistus corpus, ~2nd c. BCE) preserved through Roman Egypt into Arabic Harran (~9th c.) and thence Picatrix. Aśvinī/Sharaṭān/Lóu all anchor at Aries 0° by convention.",
+      "uncertain": false,
+      "vault_node_ids": ["khnum", "mars-roman", "tradition-western-astrology", "tradition-jyotisha-indian-astrology", "hermes-trismegistus"]
+    },
+    {
+      "n": 2, "western": { "sign": "Aries", "decan_n": 2, "degrees": "10°-20° tropical", "ruler_chaldean_face": "Sun", "ruler_triplicity": "Sun (day) / Jupiter (night)", "picatrix_image": "A woman in green raiment, lacking one leg; significations: nobility, pride, exalted dominion." },
+      "egyptian": { "name": "Khry-khpd Knm", "name_alt": ["Lower-Knemu"], "rising_star": "subordinate of Knm", "season": "Akhet", "deity_association": "Khnum-Re" },
+      "vedic": { "nakshatra": "Aśvinī (continuing)", "n": 1, "degrees_sidereal": "0°-13°20' Aries", "lord": "Ketu", "deity": "Aśvini Kumaras" },
+      "arabic_manzil": { "n": 2, "name": "Al-Buṭain", "translation": "The Little Belly", "stars": "ε-δ-ρ Arietis", "category": "good for digging wells, hunting" },
+      "chinese_xiu": { "n": 17, "name": "胃 (Wèi)", "translation": "Stomach", "constellation": "Aries head", "element": "earth", "palace": "White Tiger" },
+      "cross_tradition_notes": "Picatrix decan-2 image (one-legged woman) parallels Egyptian limping-deity motif (Horus injuring leg). Triplicity ruler unchanged through the sign.",
+      "uncertain": false,
+      "vault_node_ids": ["sun-disk", "horus", "sol-invictus"]
+    },
+    {
+      "n": 3, "western": { "sign": "Aries", "decan_n": 3, "degrees": "20°-30° tropical", "ruler_chaldean_face": "Venus", "ruler_triplicity": "Sun (day) / Jupiter (night)", "picatrix_image": "A restless man holding a golden bracelet, wearing red; significations: subtlety, cunning, lightness." },
+      "egyptian": { "name": "Hat-d3.t", "name_alt": ["Front of D3t"], "rising_star": "Hat-D3t", "season": "Akhet", "deity_association": "Hathor (in some lists)" },
+      "vedic": { "nakshatra": "Bharaṇī", "n": 2, "degrees_sidereal": "13°20'-26°40' Aries", "lord": "Venus", "deity": "Yama (death/dharma)", "symbol": "yoni" },
+      "arabic_manzil": { "n": 3, "name": "Al-Thurayyā", "translation": "The Many Little Ones (Pleiades)", "stars": "M45 / η Tauri", "category": "favourable for sea-travel" },
+      "chinese_xiu": { "n": 18, "name": "昴 (Mǎo)", "translation": "Hairy Head / Pleiades", "constellation": "Pleiades", "element": "metal", "palace": "White Tiger" },
+      "cross_tradition_notes": "MASSIVE CONVERGENCE — Al-Thurayyā = Mǎo = Kṛttikā all refer to the Pleiades; three independent traditions name the same star-cluster as a calendrical anchor. Aśvinī ends, Bharaṇī begins here (sidereal offset).",
+      "uncertain": false,
+      "vault_node_ids": ["hathor", "venus-roman", "tradition-jyotisha-indian-astrology"]
+    },
+    {
+      "n": 4, "western": { "sign": "Taurus", "decan_n": 1, "degrees": "0°-10° tropical", "ruler_chaldean_face": "Mercury", "ruler_triplicity": "Venus (day) / Moon (night)", "picatrix_image": "A naked man, an archer, a harvester or husbandman; significations: ploughing, sowing, building, peopling, dividing the earth." },
+      "egyptian": { "name": "Phwy-d3.t", "name_alt": ["Rear of D3t"], "rising_star": "Phwy-D3t", "season": "Akhet", "deity_association": "Sopdet (Sirius association in some lists)" },
+      "vedic": { "nakshatra": "Kṛttikā", "n": 3, "degrees_sidereal": "26°40' Aries - 10°00' Taurus", "lord": "Sun", "deity": "Agni (fire)", "symbol": "razor / flame" },
+      "arabic_manzil": { "n": 4, "name": "Al-Dabarān", "translation": "The Follower (Aldebaran)", "stars": "α Tauri", "category": "unfortunate for partnerships" },
+      "chinese_xiu": { "n": 19, "name": "畢 (Bì)", "translation": "Net", "constellation": "Hyades + Aldebaran", "element": "metal", "palace": "White Tiger" },
+      "cross_tradition_notes": "Aldebaran (Al-Dabarān = 'the follower [of Pleiades]') is the Hyades cluster's brightest star; Chinese Bì = Hyades + Aldebaran net-shape. Kṛttikā nakshatra crosses the Aries/Taurus boundary in Lahiri sidereal.",
+      "uncertain": false,
+      "vault_node_ids": ["agni", "mercury-roman"]
+    },
+    {
+      "n": 5, "western": { "sign": "Taurus", "decan_n": 2, "degrees": "10°-20° tropical", "ruler_chaldean_face": "Moon", "ruler_triplicity": "Venus (day) / Moon (night)", "picatrix_image": "A naked man holding a key; significations: power, nobility, rule over the people." },
+      "egyptian": { "name": "T3ms-n-Knmt", "name_alt": ["Tepa-Khnmt"], "rising_star": "T3ms", "season": "Akhet", "deity_association": "Selket (scorpion-goddess in some lists)" },
+      "vedic": { "nakshatra": "Rohiṇī", "n": 4, "degrees_sidereal": "10°-23°20' Taurus", "lord": "Moon", "deity": "Brahma / Prajāpati", "symbol": "ox-cart / red cow" },
+      "arabic_manzil": { "n": 5, "name": "Al-Haqʿa", "translation": "The White Spot", "stars": "λ-φ Orionis (Orion's head)", "category": "fortunate" },
+      "chinese_xiu": { "n": 20, "name": "觜 (Zī)", "translation": "Turtle Beak", "constellation": "Orion head (λ-φ Ori)", "element": "fire", "palace": "White Tiger" },
+      "cross_tradition_notes": "Rohiṇī (literally 'reddish') corresponds to Aldebaran — but Lahiri sidereal places it at 10°-23°20' Taurus, so it dominates Taurus decan 2. The Manzil-5 and Xiu-20 alignment shifts away from the zodiac belt to Orion's head — characteristic Manazil/Xiu drift.",
+      "uncertain": false,
+      "vault_node_ids": ["soma"]
+    },
+    {
+      "n": 6, "western": { "sign": "Taurus", "decan_n": 3, "degrees": "20°-30° tropical", "ruler_chaldean_face": "Saturn", "ruler_triplicity": "Venus (day) / Moon (night)", "picatrix_image": "A man with a serpent in his hand, leading a horse; significations: idleness, but also dominion over flocks." },
+      "egyptian": { "name": "Sit", "name_alt": ["Sopdet's seat"], "rising_star": "Sit", "season": "Akhet", "deity_association": "Set/Sutekh — UNCERTAIN, several lists disagree" },
+      "vedic": { "nakshatra": "Mṛgaśīrṣa", "n": 5, "degrees_sidereal": "23°20' Taurus - 6°40' Gemini", "lord": "Mars", "deity": "Soma (moon)", "symbol": "deer's head / antlers" },
+      "arabic_manzil": { "n": 6, "name": "Al-Hanʿa", "translation": "The Brand", "stars": "γ-ξ Geminorum", "category": "fortunate for hunters" },
+      "chinese_xiu": { "n": 21, "name": "參 (Shēn)", "translation": "Three (Orion's belt)", "constellation": "Orion belt", "element": "water", "palace": "White Tiger" },
+      "cross_tradition_notes": "Mṛgaśīrṣa = 'deer-head' refers to Orion (the Chinese Shēn is Orion's belt + sword). Three traditions name Orion as a hunter / deer-figure. Manzil-6 (Al-Hanʿa) shifts to Gemini stars.",
+      "uncertain": true,
+      "caveat": "Egyptian decan-6 deity attribution varies — some lists give Set/Sutekh, others Sopdet's adjacent. Uncertain.",
+      "vault_node_ids": ["seth", "saturn-roman"]
+    },
+    {
+      "n": 7, "western": { "sign": "Gemini", "decan_n": 1, "degrees": "0°-10° tropical", "ruler_chaldean_face": "Jupiter", "ruler_triplicity": "Saturn (day) / Mercury (night)", "picatrix_image": "A beautiful woman holding a rod, well-clothed; significations: writing, computation, art." },
+      "egyptian": { "name": "Sap", "name_alt": ["Sopdet's herald"], "rising_star": "Sap", "season": "Peret onset", "deity_association": "Thoth (in Liber Hermetis)" },
+      "vedic": { "nakshatra": "Ārdrā", "n": 6, "degrees_sidereal": "6°40' - 20°00' Gemini", "lord": "Rāhu", "deity": "Rudra (storm)", "symbol": "teardrop / diamond head" },
+      "arabic_manzil": { "n": 7, "name": "Al-Dhirāʿ", "translation": "The Arm/Foreleg", "stars": "α-β Geminorum (Castor & Pollux)", "category": "fortunate" },
+      "chinese_xiu": { "n": 22, "name": "井 (Jǐng)", "translation": "Well", "constellation": "μ-ν-γ-ζ-ξ Geminorum", "element": "wood", "palace": "Vermilion Bird (South)" },
+      "cross_tradition_notes": "Picatrix's beautiful-scribe image directly maps to Thoth (Egyptian writing-deity). Castor/Pollux (Al-Dhirāʿ) and Gemini-stars (Jǐng) all converge here. Vedic Ārdrā = α Orionis (Betelgeuse) — slight latitude offset from ecliptic.",
+      "uncertain": false,
+      "vault_node_ids": ["thoth", "jupiter"]
+    },
+    {
+      "n": 8, "western": { "sign": "Gemini", "decan_n": 2, "degrees": "10°-20° tropical", "ruler_chaldean_face": "Mars", "ruler_triplicity": "Saturn (day) / Mercury (night)", "picatrix_image": "A man holding a flute, bent over; significations: ingenuity, dishonor, mockery." },
+      "egyptian": { "name": "Khnmt", "name_alt": ["Khnemet"], "rising_star": "Khnmt", "season": "Peret", "deity_association": "Heqet (frog-goddess in some lists)" },
+      "vedic": { "nakshatra": "Punarvasu", "n": 7, "degrees_sidereal": "20° Gemini - 3°20' Cancer", "lord": "Jupiter", "deity": "Aditi (sky-mother)", "symbol": "quiver of arrows / bow" },
+      "arabic_manzil": { "n": 8, "name": "Al-Nathra", "translation": "The Nose-Tip (Praesepe / Beehive)", "stars": "M44 Cancri", "category": "fortunate for love" },
+      "chinese_xiu": { "n": 23, "name": "鬼 (Guǐ)", "translation": "Ghost / Spirit", "constellation": "Praesepe (M44) + γ-δ-η-θ Cancri", "element": "metal", "palace": "Vermilion Bird" },
+      "cross_tradition_notes": "MASSIVE CONVERGENCE — Praesepe (the Beehive Cluster, M44) is named in three traditions: Al-Nathra (nose), Guǐ (ghost gathering), and Picatrix often associates this with hidden gatherings.",
+      "uncertain": false,
+      "vault_node_ids": ["mars-roman"]
+    },
+    {
+      "n": 9, "western": { "sign": "Gemini", "decan_n": 3, "degrees": "20°-30° tropical", "ruler_chaldean_face": "Sun", "ruler_triplicity": "Saturn (day) / Mercury (night)", "picatrix_image": "A man wearing armor, holding a bow and arrows; significations: oblivion, contempt, jest, but also strong arms." },
+      "egyptian": { "name": "Hry-ib-wi3", "name_alt": ["Middle of the Boat"], "rising_star": "Hry-ib-wi3", "season": "Peret", "deity_association": "Re (in the solar barque)" },
+      "vedic": { "nakshatra": "Punarvasu (continuing)", "n": 7 },
+      "arabic_manzil": { "n": 9, "name": "Al-Ṭarf", "translation": "The Glance", "stars": "λ Cancri + ξ Cancri", "category": "unfortunate" },
+      "chinese_xiu": { "n": 24, "name": "柳 (Liǔ)", "translation": "Willow", "constellation": "δ-σ-η-ρ-ε-ζ Hydrae (Hydra head)", "element": "earth", "palace": "Vermilion Bird" },
+      "cross_tradition_notes": "Egyptian 'middle of the boat' = solar barque imagery — Sun-face ruler reinforces this. Hydra head (Chinese Liǔ) and Cancer-Leo border (Manzil 9) shift away from the ecliptic.",
+      "uncertain": false,
+      "vault_node_ids": ["sun-disk", "sol-invictus"]
+    },
+    {
+      "n": 10, "western": { "sign": "Cancer", "decan_n": 1, "degrees": "0°-10° tropical", "ruler_chaldean_face": "Venus", "ruler_triplicity": "Mars (day) / Mars (night)", "picatrix_image": "A man twisted, with the face of a horse, and the feet of an eagle, with a fig-tree before him; significations: subtlety, cleverness, mastery." },
+      "egyptian": { "name": "Crt", "name_alt": ["Mouth"], "rising_star": "Crt", "season": "Peret", "deity_association": "Sopdet (Sirius)" },
+      "vedic": { "nakshatra": "Puṣya", "n": 8, "degrees_sidereal": "3°20' - 16°40' Cancer", "lord": "Saturn", "deity": "Bṛhaspati (Jupiter)", "symbol": "udder / flower" },
+      "arabic_manzil": { "n": 10, "name": "Al-Jabhah", "translation": "The Forehead (of Leo)", "stars": "ζ-γ-η-α Leonis (Regulus)", "category": "fortunate" },
+      "chinese_xiu": { "n": 25, "name": "星 (Xīng)", "translation": "Star (the Star)", "constellation": "α Hydrae (Alphard)", "element": "fire", "palace": "Vermilion Bird" },
+      "cross_tradition_notes": "Picatrix horse-faced eagle-footed image preserves an explicit Egyptian-Greek hybrid (Greek decan-images in Liber Hermetis are very close to these). Sopdet (Sirius) rises near Cancer cusp in the Egyptian sky and marks the Nile flood — anchor for the entire Egyptian calendar.",
+      "uncertain": false,
+      "vault_node_ids": ["isis", "venus-roman", "bastet"]
+    },
+    {
+      "n": 11, "western": { "sign": "Cancer", "decan_n": 2, "degrees": "10°-20° tropical", "ruler_chaldean_face": "Mercury", "ruler_triplicity": "Mars (day) / Mars (night)", "picatrix_image": "A beautiful woman, garlanded, holding a wand; significations: play, riches, joy, abundance." },
+      "egyptian": { "name": "Knmw", "name_alt": ["Knemwet"], "rising_star": "Knmw", "season": "Peret", "deity_association": "Isis (in some lists)" },
+      "vedic": { "nakshatra": "Puṣya (continuing)", "n": 8 },
+      "arabic_manzil": { "n": 11, "name": "Al-Zubrah", "translation": "The Mane", "stars": "δ-θ Leonis", "category": "fortunate" },
+      "chinese_xiu": { "n": 26, "name": "張 (Zhāng)", "translation": "Extended Net", "constellation": "υ-λ-μ-φ Hydrae", "element": "metal", "palace": "Vermilion Bird" },
+      "cross_tradition_notes": "Picatrix 'garlanded woman' parallels Isis-Hathor festival imagery. Cancer decan 2 is the most-fortunate decan in Picatrix face-rulership.",
+      "uncertain": false,
+      "vault_node_ids": ["isis"]
+    },
+    {
+      "n": 12, "western": { "sign": "Cancer", "decan_n": 3, "degrees": "20°-30° tropical", "ruler_chaldean_face": "Moon", "ruler_triplicity": "Mars (day) / Mars (night)", "picatrix_image": "A turtle-shaped man, or a man with a turtle in his hand; significations: swiftness in love, daring, oratory." },
+      "egyptian": { "name": "Smd", "name_alt": ["Semat"], "rising_star": "Smd", "season": "Peret", "deity_association": "Anubis (in some lists)" },
+      "vedic": { "nakshatra": "Aśleṣā", "n": 9, "degrees_sidereal": "16°40' - 30°00' Cancer", "lord": "Mercury", "deity": "Sarpas (serpents)", "symbol": "coiled serpent" },
+      "arabic_manzil": { "n": 12, "name": "Al-Ṣarfa", "translation": "The Changer", "stars": "β Leonis (Denebola)", "category": "good for marriage" },
+      "chinese_xiu": { "n": 27, "name": "翼 (Yì)", "translation": "Wings", "constellation": "α-β-γ-δ-ε-ζ-η-θ-ι-κ Crateris", "element": "fire", "palace": "Vermilion Bird" },
+      "cross_tradition_notes": "Aśleṣā ('embrace' / serpent) corresponds nicely to Picatrix's serpentine-water imagery (turtle as water-creature). End of Cancer = end of first quadrant in tropical zodiac.",
+      "uncertain": false,
+      "vault_node_ids": ["anubis", "sobek"]
+    },
+    {
+      "n": 13, "western": { "sign": "Leo", "decan_n": 1, "degrees": "0°-10° tropical", "ruler_chaldean_face": "Saturn", "ruler_triplicity": "Sun (day) / Jupiter (night)", "picatrix_image": "A man with a sword and a small shield, in red garments; significations: boldness, violence, cruelty, ferocity." },
+      "egyptian": { "name": "Srt", "name_alt": ["Sirius-related"], "rising_star": "Srt", "season": "Peret", "deity_association": "Sekhmet (lion-goddess)" },
+      "vedic": { "nakshatra": "Maghā", "n": 10, "degrees_sidereal": "0°-13°20' Leo (sidereal)", "lord": "Ketu", "deity": "Pitṛs (ancestors)", "symbol": "royal throne" },
+      "arabic_manzil": { "n": 13, "name": "Al-ʿAwwāʾ", "translation": "The Howlers", "stars": "β-η-γ-δ-ε Virginis", "category": "fortunate for love" },
+      "chinese_xiu": { "n": 28, "name": "軫 (Zhěn)", "translation": "Chariot", "constellation": "α-β-γ-δ Corvi", "element": "water", "palace": "Vermilion Bird" },
+      "cross_tradition_notes": "Sekhmet (lion-warrior) directly maps onto Leo decan 1's martial Picatrix imagery. Maghā nakshatra is the 'royal' nakshatra in Vedic tradition. End of Chinese Xiu cycle (28 → 1).",
+      "uncertain": false,
+      "vault_node_ids": ["sekhmet", "saturn-roman"]
+    },
+    {
+      "n": 14, "western": { "sign": "Leo", "decan_n": 2, "degrees": "10°-20° tropical", "ruler_chaldean_face": "Jupiter", "ruler_triplicity": "Sun (day) / Jupiter (night)", "picatrix_image": "A man on a horse, with a long beard and crowned with a laurel garland; significations: love, fellowship, profit." },
+      "egyptian": { "name": "S3wy", "name_alt": ["Sawy"], "rising_star": "S3wy", "season": "Shemu", "deity_association": "Horus-Re" },
+      "vedic": { "nakshatra": "Pūrva-Phalgunī", "n": 11, "degrees_sidereal": "13°20' - 26°40' Leo", "lord": "Venus", "deity": "Bhaga (good fortune)", "symbol": "hammock / front legs of a cot" },
+      "arabic_manzil": { "n": 14, "name": "Al-Simāk", "translation": "The Unarmed (Spica)", "stars": "α Virginis (Spica)", "category": "fortunate" },
+      "chinese_xiu": { "n": 1, "name": "角 (Jiǎo)", "translation": "Horn", "constellation": "α-ζ Virginis (Spica)", "element": "wood", "palace": "Azure Dragon (East)" },
+      "cross_tradition_notes": "CYCLICAL ANCHOR — Spica = Al-Simāk = Jiǎo (the horn of the Azure Dragon). Chinese Xiu cycle restarts here at 角 (Jiǎo). This is the canonical 'beginning point' in the Chinese 28-mansion cycle even though zodiacally it sits late.",
+      "uncertain": false,
+      "vault_node_ids": ["jupiter"]
+    },
+    {
+      "n": 15, "western": { "sign": "Leo", "decan_n": 3, "degrees": "20°-30° tropical", "ruler_chaldean_face": "Mars", "ruler_triplicity": "Sun (day) / Jupiter (night)", "picatrix_image": "A young man holding a whip, mournful and sad; significations: love, delight, but also flight and absence." },
+      "egyptian": { "name": "Srt-Hry-ib-wi3", "name_alt": ["Middle of Sirius-boat"], "rising_star": "Srt-Hry", "season": "Shemu", "deity_association": "Sopdet-Re" },
+      "vedic": { "nakshatra": "Uttara-Phalgunī", "n": 12, "degrees_sidereal": "26°40' Leo - 10°00' Virgo", "lord": "Sun", "deity": "Aryaman (patron / hospitality)", "symbol": "back legs of a cot" },
+      "arabic_manzil": { "n": 15, "name": "Al-Ghafr", "translation": "The Covering", "stars": "ι-κ-λ Virginis", "category": "fortunate for love and marriage" },
+      "chinese_xiu": { "n": 2, "name": "亢 (Kàng)", "translation": "Neck", "constellation": "κ-ι-λ-φ Virginis", "element": "metal", "palace": "Azure Dragon" },
+      "cross_tradition_notes": "Uttara-Phalgunī ('latter red one') crosses Leo/Virgo border in sidereal. Manzil-15 and Xiu-2 align as the Virgo-arm group.",
+      "uncertain": false,
+      "vault_node_ids": ["mars-roman"]
+    },
+    {
+      "n": 16, "western": { "sign": "Virgo", "decan_n": 1, "degrees": "0°-10° tropical", "ruler_chaldean_face": "Sun", "ruler_triplicity": "Venus (day) / Moon (night)", "picatrix_image": "A girl wearing white linen, with a pomegranate in her hand; significations: virginity, modesty, eloquence." },
+      "egyptian": { "name": "Tpy-c-3kt", "name_alt": ["Beginning of Akhet"], "rising_star": "Tpy-c-3kt", "season": "Shemu / Akhet boundary", "deity_association": "Hathor (in some lists)" },
+      "vedic": { "nakshatra": "Hasta", "n": 13, "degrees_sidereal": "10°-23°20' Virgo", "lord": "Moon", "deity": "Savitr (sun-as-impeller)", "symbol": "hand / fist" },
+      "arabic_manzil": { "n": 16, "name": "Al-Zubānā", "translation": "The Claws (of Scorpio)", "stars": "α-β Librae (the old Scorpion claws)", "category": "unfortunate" },
+      "chinese_xiu": { "n": 3, "name": "氐 (Dī)", "translation": "Root / Base", "constellation": "α-β-γ-ι Librae", "element": "earth", "palace": "Azure Dragon" },
+      "cross_tradition_notes": "Picatrix girl-with-pomegranate is Persephone — direct Hellenistic syncretism with Greek Demeter cycle. The pre-Hellenistic zodiac had no Libra: Manzil-16 + Xiu-3 both still refer to Scorpio's claws (Zubānā = 'claws').",
+      "uncertain": false,
+      "vault_node_ids": ["hathor", "sun-disk"]
+    },
+    {
+      "n": 17, "western": { "sign": "Virgo", "decan_n": 2, "degrees": "10°-20° tropical", "ruler_chaldean_face": "Venus", "ruler_triplicity": "Venus (day) / Moon (night)", "picatrix_image": "A black man clothed in skins, a beard, holding a sack of money; significations: gain by labor, profit, harvest." },
+      "egyptian": { "name": "Wsh3-t-bkt", "name_alt": ["Wsht"], "rising_star": "Wsht", "season": "Akhet", "deity_association": "Renenutet (harvest)" },
+      "vedic": { "nakshatra": "Citrā", "n": 14, "degrees_sidereal": "23°20' Virgo - 6°40' Libra", "lord": "Mars", "deity": "Tvaṣṭṛ (cosmic craftsman)", "symbol": "pearl / shining jewel" },
+      "arabic_manzil": { "n": 17, "name": "Al-Iklīl", "translation": "The Crown (of Scorpio)", "stars": "β-δ-π Scorpii", "category": "unfortunate" },
+      "chinese_xiu": { "n": 4, "name": "房 (Fáng)", "translation": "Room / Chamber", "constellation": "β-δ-π-ρ Scorpii", "element": "fire", "palace": "Azure Dragon" },
+      "cross_tradition_notes": "Citrā ('shining') = α Virginis (Spica). MASSIVE CONVERGENCE — Spica is the brightest star in this zodiacal stretch and shows up by name in multiple traditions.",
+      "uncertain": false,
+      "vault_node_ids": ["venus-roman"]
+    },
+    {
+      "n": 18, "western": { "sign": "Virgo", "decan_n": 3, "degrees": "20°-30° tropical", "ruler_chaldean_face": "Mercury", "ruler_triplicity": "Venus (day) / Moon (night)", "picatrix_image": "A white woman, deaf, lame, holding tablets; significations: virtue, weakness, journey." },
+      "egyptian": { "name": "Bkt", "name_alt": ["Bekut"], "rising_star": "Bkt", "season": "Akhet", "deity_association": "Maat (truth/order)" },
+      "vedic": { "nakshatra": "Svātī", "n": 15, "degrees_sidereal": "6°40' - 20°00' Libra", "lord": "Rāhu", "deity": "Vāyu (wind)", "symbol": "young plant / sword" },
+      "arabic_manzil": { "n": 18, "name": "Al-Qalb", "translation": "The Heart (Antares)", "stars": "α Scorpii (Antares)", "category": "ill-fortuned" },
+      "chinese_xiu": { "n": 5, "name": "心 (Xīn)", "translation": "Heart", "constellation": "σ-α-τ Scorpii (Antares)", "element": "metal", "palace": "Azure Dragon" },
+      "cross_tradition_notes": "MASSIVE CONVERGENCE — Antares is 'heart' in three traditions: Al-Qalb (Arabic), Xīn (Chinese), Kardia (Greek 'Antares' = anti-Ares = rival of Mars, the heart of the Scorpion). Three traditions independently identified this red star as a thoracic anchor.",
+      "uncertain": false,
+      "vault_node_ids": ["maat", "mercury-roman"]
+    },
+    {
+      "n": 19, "western": { "sign": "Libra", "decan_n": 1, "degrees": "0°-10° tropical", "ruler_chaldean_face": "Moon", "ruler_triplicity": "Saturn (day) / Mercury (night)", "picatrix_image": "An angry man holding a lance; significations: justice, judgment, dispute, anger." },
+      "egyptian": { "name": "Tpy-c-Khntt", "name_alt": ["Pre-Khentet"], "rising_star": "Tpy-c-Khntt", "season": "Akhet", "deity_association": "Anubis (judgment)" },
+      "vedic": { "nakshatra": "Svātī (continuing)", "n": 15 },
+      "arabic_manzil": { "n": 19, "name": "Al-Shawla", "translation": "The Sting", "stars": "λ-υ Scorpii (Lesath, Shaula)", "category": "ill-fortuned" },
+      "chinese_xiu": { "n": 6, "name": "尾 (Wěi)", "translation": "Tail", "constellation": "Scorpio tail", "element": "water", "palace": "Azure Dragon" },
+      "cross_tradition_notes": "Anubis weighs the heart in Egyptian judgment — Libra-justice imagery is post-Hellenistic Egyptian. The Scorpio sting (Shawla / Wěi) all sit in this decan-stretch.",
+      "uncertain": false,
+      "vault_node_ids": ["anubis"]
+    },
+    {
+      "n": 20, "western": { "sign": "Libra", "decan_n": 2, "degrees": "10°-20° tropical", "ruler_chaldean_face": "Saturn", "ruler_triplicity": "Saturn (day) / Mercury (night)", "picatrix_image": "Two men in raiment, dancing, joined hand-to-hand; significations: joy, levity, the merry-go-round of life." },
+      "egyptian": { "name": "Khntt-Hry", "name_alt": ["Upper Khentet"], "rising_star": "Khntt-Hry", "season": "Akhet", "deity_association": "uncertain" },
+      "vedic": { "nakshatra": "Viśākhā", "n": 16, "degrees_sidereal": "20°00' Libra - 3°20' Scorpio", "lord": "Jupiter", "deity": "Indra-Agni (paired)", "symbol": "triumphal arch / forked branch" },
+      "arabic_manzil": { "n": 20, "name": "Al-Naʿāʾim", "translation": "The Ostriches", "stars": "γ-δ-ε-η Sagittarii (West group)", "category": "good for digging" },
+      "chinese_xiu": { "n": 7, "name": "箕 (Jī)", "translation": "Winnowing Basket", "constellation": "γ-δ-ε-η Sagittarii", "element": "fire", "palace": "Azure Dragon" },
+      "cross_tradition_notes": "Indra-Agni (paired devas) → Picatrix 'two men joined hand-to-hand' is striking. Sagittarius-stars enter the Manzil and Xiu mapping here.",
+      "uncertain": true,
+      "caveat": "Egyptian decan-20 deity attribution disputed across Senenmut/Dendera lists.",
+      "vault_node_ids": ["indra", "agni", "saturn-roman"]
+    },
+    {
+      "n": 21, "western": { "sign": "Libra", "decan_n": 3, "degrees": "20°-30° tropical", "ruler_chaldean_face": "Jupiter", "ruler_triplicity": "Saturn (day) / Mercury (night)", "picatrix_image": "A violent man with a bow, naked, blood-stained; significations: evil deeds, violence, but also vigilance." },
+      "egyptian": { "name": "Khntt-Hrt", "name_alt": ["Khentet Lower"], "rising_star": "Khntt-Hrt", "season": "Akhet/Peret border", "deity_association": "Set (in some lists)" },
+      "vedic": { "nakshatra": "Anurādhā", "n": 17, "degrees_sidereal": "3°20' - 16°40' Scorpio", "lord": "Saturn", "deity": "Mitra (friend / contract)", "symbol": "lotus / staff" },
+      "arabic_manzil": { "n": 21, "name": "Al-Balda", "translation": "The Empty Place", "stars": "vacant area in Sagittarius", "category": "fortunate" },
+      "chinese_xiu": { "n": 8, "name": "斗 (Dǒu)", "translation": "Dipper (Southern Dipper)", "constellation": "ζ-τ-σ-φ Sagittarii", "element": "wood", "palace": "Black Tortoise (North)" },
+      "cross_tradition_notes": "Black Tortoise / Northern Palace begins at Xiu-8 (Dǒu). Manzil-21 is famously the 'empty quarter' between bright stars in Sagittarius — three traditions noting the relative emptiness here.",
+      "uncertain": false,
+      "vault_node_ids": ["seth", "jupiter"]
+    },
+    {
+      "n": 22, "western": { "sign": "Scorpio", "decan_n": 1, "degrees": "0°-10° tropical", "ruler_chaldean_face": "Mars", "ruler_triplicity": "Mars (day) / Mars (night)", "picatrix_image": "A woman of beautiful form, scorpion-tailed; significations: sleep, idleness, love." },
+      "egyptian": { "name": "Tms-n-Khntt", "name_alt": ["Temes-Khentet"], "rising_star": "Tms-n-Khntt", "season": "Peret", "deity_association": "Selket (scorpion)" },
+      "vedic": { "nakshatra": "Anurādhā (continuing)", "n": 17 },
+      "arabic_manzil": { "n": 22, "name": "Saʿd al-Dhābih", "translation": "The Lucky One of the Slaughterer", "stars": "α-β Capricorni", "category": "fortunate" },
+      "chinese_xiu": { "n": 9, "name": "牛 (Niú)", "translation": "Ox", "constellation": "β-α-ξ-π-ρ-ο Capricorni (Capricorn's horns)", "element": "metal", "palace": "Black Tortoise" },
+      "cross_tradition_notes": "MASSIVE CONVERGENCE — Capricorn's horns = Niú (Ox horns) = Dhābih ('slaughterer' = sacrificial bull). Three traditions name this asterism as horned-cattle imagery.",
+      "uncertain": false,
+      "vault_node_ids": ["mars-roman"]
+    },
+    {
+      "n": 23, "western": { "sign": "Scorpio", "decan_n": 2, "degrees": "10°-20° tropical", "ruler_chaldean_face": "Sun", "ruler_triplicity": "Mars (day) / Mars (night)", "picatrix_image": "A man on a camel, with a scorpion in his hand; significations: knowledge, ferocity, deceit." },
+      "egyptian": { "name": "Sapty Khnw", "name_alt": ["Sapty-Khnui"], "rising_star": "Sapty Khnw", "season": "Peret", "deity_association": "Horus (some lists)" },
+      "vedic": { "nakshatra": "Jyeṣṭhā", "n": 18, "degrees_sidereal": "16°40' - 30°00' Scorpio", "lord": "Mercury", "deity": "Indra (eldest)", "symbol": "earring / umbrella" },
+      "arabic_manzil": { "n": 23, "name": "Saʿd Bulaʿ", "translation": "The Lucky Swallower", "stars": "ε-μ-ν Aquarii", "category": "fortunate" },
+      "chinese_xiu": { "n": 10, "name": "女 (Nǚ)", "translation": "Woman / Maid", "constellation": "ε-μ-ν Aquarii", "element": "earth", "palace": "Black Tortoise" },
+      "cross_tradition_notes": "Aquarius-stars now enter the Manazil/Xiu cycle. Jyeṣṭhā = 'eldest' aligns with Indra in Vedic — paralleling Picatrix's 'man with camel' (camel = burden-bearer / patriarch).",
+      "uncertain": false,
+      "vault_node_ids": ["indra", "horus", "sun-disk"]
+    },
+    {
+      "n": 24, "western": { "sign": "Scorpio", "decan_n": 3, "degrees": "20°-30° tropical", "ruler_chaldean_face": "Venus", "ruler_triplicity": "Mars (day) / Mars (night)", "picatrix_image": "A horse and a wolf; significations: subtlety, plotting, wickedness." },
+      "egyptian": { "name": "Hry-ib-wi3-2", "name_alt": ["Mid-boat 2"], "rising_star": "Hry-ib-wi3-2", "season": "Peret", "deity_association": "Re-Atum" },
+      "vedic": { "nakshatra": "Mūla", "n": 19, "degrees_sidereal": "0°-13°20' Sagittarius (sidereal)", "lord": "Ketu", "deity": "Nirṛti (destruction)", "symbol": "tied roots / lion's tail" },
+      "arabic_manzil": { "n": 24, "name": "Saʿd al-Suʿūd", "translation": "Luckiest of the Lucky", "stars": "β Aquarii (Sadalsuud), ξ Aquarii, c Capricorni", "category": "fortunate" },
+      "chinese_xiu": { "n": 11, "name": "虛 (Xū)", "translation": "Void / Empty", "constellation": "β Aquarii, α Equulei", "element": "fire", "palace": "Black Tortoise" },
+      "cross_tradition_notes": "STRIKING INVERSION — same star (β Aquarii / Sadalsuud) is 'luckiest' in Arabic but 'void/empty' in Chinese. Demonstrates how positional naming carries opposite valences across cultures.",
+      "uncertain": false,
+      "vault_node_ids": ["atum", "venus-roman"]
+    },
+    {
+      "n": 25, "western": { "sign": "Sagittarius", "decan_n": 1, "degrees": "0°-10° tropical", "ruler_chaldean_face": "Mercury", "ruler_triplicity": "Sun (day) / Jupiter (night)", "picatrix_image": "A man armed with a coat-of-mail and a sword; significations: boldness, malice, valor." },
+      "egyptian": { "name": "Spt-Knm", "name_alt": ["Spt-Khenmu"], "rising_star": "Spt-Knm", "season": "Peret", "deity_association": "Sopdet (in some) — UNCERTAIN" },
+      "vedic": { "nakshatra": "Mūla (continuing)", "n": 19 },
+      "arabic_manzil": { "n": 25, "name": "Saʿd al-Akhbiya", "translation": "The Lucky One of the Tents", "stars": "γ-η-π-ζ Aquarii", "category": "fortunate" },
+      "chinese_xiu": { "n": 12, "name": "危 (Wēi)", "translation": "Rooftop / Danger", "constellation": "α Aquarii, ε Pegasi", "element": "earth", "palace": "Black Tortoise" },
+      "cross_tradition_notes": "Egyptian decan-list disagreement here — Senenmut omits, Dendera includes a Sopdet-related entry. Caveat below.",
+      "uncertain": true,
+      "caveat": "Egyptian decan-25 name varies across primary attestations.",
+      "vault_node_ids": ["mercury-roman"]
+    },
+    {
+      "n": 26, "western": { "sign": "Sagittarius", "decan_n": 2, "degrees": "10°-20° tropical", "ruler_chaldean_face": "Moon", "ruler_triplicity": "Sun (day) / Jupiter (night)", "picatrix_image": "A woman weeping, dressed in linen; significations: sorrow, hard task, vehement labor." },
+      "egyptian": { "name": "Smd-srt", "name_alt": ["Semat-Sirius"], "rising_star": "Smd-srt", "season": "Peret/Shemu border", "deity_association": "Nephthys (mourning)" },
+      "vedic": { "nakshatra": "Pūrva-Āṣāḍhā", "n": 20, "degrees_sidereal": "13°20' - 26°40' Sagittarius", "lord": "Venus", "deity": "Āpas (waters)", "symbol": "elephant tusk / fan" },
+      "arabic_manzil": { "n": 26, "name": "Al-Fargh al-Muqaddam", "translation": "The Front Spout", "stars": "α-β Pegasi", "category": "fortunate" },
+      "chinese_xiu": { "n": 13, "name": "室 (Shì)", "translation": "House / Encampment", "constellation": "α-β Pegasi", "element": "water", "palace": "Black Tortoise" },
+      "cross_tradition_notes": "Picatrix mourning-woman aligns with Nephthys (Egyptian mourning-goddess at the tomb of Osiris) — strong Hellenistic-Egyptian fusion.",
+      "uncertain": false,
+      "vault_node_ids": ["nephthys"]
+    },
+    {
+      "n": 27, "western": { "sign": "Sagittarius", "decan_n": 3, "degrees": "20°-30° tropical", "ruler_chaldean_face": "Saturn", "ruler_triplicity": "Sun (day) / Jupiter (night)", "picatrix_image": "A man with monkey-features; significations: temperance, balance, contemplation." },
+      "egyptian": { "name": "Hry-ib-srt", "name_alt": ["Mid-Sirius"], "rising_star": "Hry-ib-srt", "season": "Shemu", "deity_association": "Thoth (baboon-form)" },
+      "vedic": { "nakshatra": "Uttara-Āṣāḍhā", "n": 21, "degrees_sidereal": "26°40' Sagittarius - 10°00' Capricorn", "lord": "Sun", "deity": "Viśve-devas (universal-gods)", "symbol": "elephant tusk / planks" },
+      "arabic_manzil": { "n": 27, "name": "Al-Fargh al-Muʾakhkhar", "translation": "The Rear Spout", "stars": "γ Pegasi, α Andromedae", "category": "fortunate" },
+      "chinese_xiu": { "n": 14, "name": "壁 (Bì)", "translation": "Wall", "constellation": "γ Pegasi, α Andromedae", "element": "water", "palace": "Black Tortoise" },
+      "cross_tradition_notes": "Picatrix's 'monkey-featured man' is the baboon Thoth — preserved directly from Egyptian Hermes/Thoth imagery. The same two stars anchor the Manzil and Xiu — perfect alignment here.",
+      "uncertain": false,
+      "vault_node_ids": ["thoth", "saturn-roman"]
+    },
+    {
+      "n": 28, "western": { "sign": "Capricorn", "decan_n": 1, "degrees": "0°-10° tropical", "ruler_chaldean_face": "Jupiter", "ruler_triplicity": "Venus (day) / Moon (night)", "picatrix_image": "A man with a reed and a sickle, swarthy; significations: harvest, blackness, melancholy." },
+      "egyptian": { "name": "Tpy-c-3kt-2", "name_alt": ["New 3kt Beginning"], "rising_star": "Tpy-c-3kt-2", "season": "Shemu", "deity_association": "Ptah (in some lists)" },
+      "vedic": { "nakshatra": "Uttara-Āṣāḍhā (continuing)", "n": 21 },
+      "arabic_manzil": { "n": 28, "name": "Baṭn al-Ḥūt / Al-Risha", "translation": "The Belly of the Fish / The Rope", "stars": "β Andromedae (Mirach)", "category": "fortunate" },
+      "chinese_xiu": { "n": 15, "name": "奎 (Kuí)", "translation": "Legs / Stride", "constellation": "α-η-β-δ-π-ν-μ-ζ-ε Andromedae + Pisces stars", "element": "wood", "palace": "White Tiger (returns!)" },
+      "cross_tradition_notes": "MANZIL CYCLE RESTART — Manzil 28 (Al-Risha) is the last of 28, closing the cycle. CHINESE XIU CYCLE — at Xiu-15 the palace shifts from Black Tortoise back toward White Tiger (which started at Xiu-15 in our anchoring; this is the natural cyclical structure).",
+      "uncertain": false,
+      "vault_node_ids": ["ptah", "jupiter"]
+    },
+    {
+      "n": 29, "western": { "sign": "Capricorn", "decan_n": 2, "degrees": "10°-20° tropical", "ruler_chaldean_face": "Mars", "ruler_triplicity": "Venus (day) / Moon (night)", "picatrix_image": "A man holding a book, dressed in green; significations: study, wisdom, secrets, hidden things." },
+      "egyptian": { "name": "Wsh3-t-bkt-2", "name_alt": ["Lower-Wsht"], "rising_star": "Wsh3-t-bkt-2", "season": "Shemu", "deity_association": "Thoth (writing-aspect)" },
+      "vedic": { "nakshatra": "Śravaṇa", "n": 22, "degrees_sidereal": "10°-23°20' Capricorn", "lord": "Moon", "deity": "Vishnu", "symbol": "ear / three footprints" },
+      "arabic_manzil": { "n": 1, "name": "Al-Sharaṭān (cycle restart)", "translation": "The Two Signs", "stars": "β-γ Arietis", "category": "favourable for war" },
+      "chinese_xiu": { "n": 16, "name": "婁 (Lóu, cycle restart)", "translation": "Bond", "constellation": "Aries", "element": "metal", "palace": "White Tiger" },
+      "cross_tradition_notes": "ALIGNMENT CAVEAT — Manazil (28-cycle) and Xiu (28-cycle) restart at decan 29 in our 36-decan framework. We list both the first and second occurrence; in software the spine should be aware of this cycle mismatch.",
+      "uncertain": true,
+      "caveat": "Manzil/Xiu cycle iterates approximately every 28/36 decans; alignment here is conventional, not astronomical.",
+      "vault_node_ids": ["thoth", "vishnu", "mars-roman"]
+    },
+    {
+      "n": 30, "western": { "sign": "Capricorn", "decan_n": 3, "degrees": "20°-30° tropical", "ruler_chaldean_face": "Sun", "ruler_triplicity": "Venus (day) / Moon (night)", "picatrix_image": "A black man with a strung bow, ready; significations: lust, voracity, anger, violence." },
+      "egyptian": { "name": "Bk3ti", "name_alt": ["Bekati"], "rising_star": "Bk3ti", "season": "Shemu", "deity_association": "Geb (earth) — UNCERTAIN" },
+      "vedic": { "nakshatra": "Dhaniṣṭhā", "n": 23, "degrees_sidereal": "23°20' Capricorn - 6°40' Aquarius", "lord": "Mars", "deity": "Vasus (eight-gods)", "symbol": "drum / flute" },
+      "arabic_manzil": { "n": 2, "name": "Al-Buṭain (2)", "translation": "The Little Belly", "stars": "ε-δ-ρ Arietis", "category": "good for hunting" },
+      "chinese_xiu": { "n": 17, "name": "胃 (Wèi, 2)", "translation": "Stomach", "constellation": "Aries head", "element": "earth", "palace": "White Tiger" },
+      "cross_tradition_notes": "Cycle continues. Dhaniṣṭhā 'wealth/drum' parallels Picatrix's vigorous archer.",
+      "uncertain": true,
+      "caveat": "Manzil/Xiu cycle iteration as per decan 29.",
+      "vault_node_ids": ["geb", "sun-disk"]
+    },
+    {
+      "n": 31, "western": { "sign": "Aquarius", "decan_n": 1, "degrees": "0°-10° tropical", "ruler_chaldean_face": "Venus", "ruler_triplicity": "Saturn (day) / Mercury (night)", "picatrix_image": "A prudent man with a peacock-feathered hat, holding a book; significations: thought, contemplation, knowledge." },
+      "egyptian": { "name": "Tpy-c-Khntt-2", "name_alt": ["New Khentet"], "rising_star": "Tpy-c-Khntt-2", "season": "Shemu", "deity_association": "Tefnut (moisture)" },
+      "vedic": { "nakshatra": "Dhaniṣṭhā (continuing)", "n": 23 },
+      "arabic_manzil": { "n": 3, "name": "Al-Thurayyā (2)", "translation": "The Many Little Ones (Pleiades)", "stars": "M45", "category": "favourable for sea-travel" },
+      "chinese_xiu": { "n": 18, "name": "昴 (Mǎo, 2)", "translation": "Hairy Head / Pleiades", "constellation": "Pleiades", "element": "metal", "palace": "White Tiger" },
+      "cross_tradition_notes": "Picatrix peacock-feather + book imagery preserves Greek-Egyptian Hermeticist iconography of Hermes Trismegistus.",
+      "uncertain": true,
+      "caveat": "Manzil/Xiu cycle iteration.",
+      "vault_node_ids": ["tefnut", "venus-roman", "hermes-trismegistus"]
+    },
+    {
+      "n": 32, "western": { "sign": "Aquarius", "decan_n": 2, "degrees": "10°-20° tropical", "ruler_chaldean_face": "Mercury", "ruler_triplicity": "Saturn (day) / Mercury (night)", "picatrix_image": "A man with a long beard, in green and red robes, royal; significations: rule, honor, but also forgetfulness." },
+      "egyptian": { "name": "Khntt-Hry-2", "name_alt": ["Upper Khentet 2"], "rising_star": "Khntt-Hry-2", "season": "Shemu", "deity_association": "Shu (air)" },
+      "vedic": { "nakshatra": "Śatabhiṣā", "n": 24, "degrees_sidereal": "6°40' - 20°00' Aquarius", "lord": "Rāhu", "deity": "Varuṇa (cosmic waters)", "symbol": "thousand-flowers / circle" },
+      "arabic_manzil": { "n": 4, "name": "Al-Dabarān (2)", "translation": "The Follower", "stars": "α Tauri (Aldebaran)", "category": "unfortunate for partnerships" },
+      "chinese_xiu": { "n": 19, "name": "畢 (Bì, 2)", "translation": "Net", "constellation": "Hyades + Aldebaran", "element": "metal", "palace": "White Tiger" },
+      "cross_tradition_notes": "Śatabhiṣā = '100 healers' — Varuṇa-water-as-medicine. Aquarius decan 2 in Picatrix matches the royal-physician archetype.",
+      "uncertain": true,
+      "caveat": "Manzil/Xiu cycle iteration.",
+      "vault_node_ids": ["varuna", "mercury-roman"]
+    },
+    {
+      "n": 33, "western": { "sign": "Aquarius", "decan_n": 3, "degrees": "20°-30° tropical", "ruler_chaldean_face": "Moon", "ruler_triplicity": "Saturn (day) / Mercury (night)", "picatrix_image": "A black man, with a strung bow, lascivious; significations: black work, but also love and conjunction." },
+      "egyptian": { "name": "Khntt-Hrt-2", "name_alt": ["Lower Khentet 2"], "rising_star": "Khntt-Hrt-2", "season": "Shemu", "deity_association": "Geb (in some lists)" },
+      "vedic": { "nakshatra": "Pūrva-Bhādrapadā", "n": 25, "degrees_sidereal": "20°00' Aquarius - 3°20' Pisces", "lord": "Jupiter", "deity": "Aja-Ekapad (one-footed goat)", "symbol": "front legs of funeral cot / two-faced man" },
+      "arabic_manzil": { "n": 5, "name": "Al-Haqʿa (2)", "translation": "The White Spot", "stars": "Orion's head", "category": "fortunate" },
+      "chinese_xiu": { "n": 20, "name": "觜 (Zī, 2)", "translation": "Turtle Beak", "constellation": "Orion head", "element": "fire", "palace": "White Tiger" },
+      "cross_tradition_notes": "Pūrva-Bhādrapadā = 'former lucky-foot' — connects to Aja-Ekapad ('one-footed goat'), a cosmic-pillar deity. Cross-tradition: the one-legged Picatrix image of decan-2 returns here in a different valence.",
+      "uncertain": true,
+      "caveat": "Manzil/Xiu cycle iteration.",
+      "vault_node_ids": ["geb"]
+    },
+    {
+      "n": 34, "western": { "sign": "Pisces", "decan_n": 1, "degrees": "0°-10° tropical", "ruler_chaldean_face": "Saturn", "ruler_triplicity": "Venus (day) / Mars (night)", "picatrix_image": "A man bearing a burden on his shoulders, dressed in white; significations: voyage, peregrination, journey." },
+      "egyptian": { "name": "Tms-n-Khntt-2", "name_alt": ["Temes-Khentet 2"], "rising_star": "Tms-n-Khntt-2", "season": "Akhet onset", "deity_association": "Khnum (ram-creator, full cycle)" },
+      "vedic": { "nakshatra": "Uttara-Bhādrapadā", "n": 26, "degrees_sidereal": "3°20' - 16°40' Pisces", "lord": "Saturn", "deity": "Ahirbudhnya (cosmic-serpent)", "symbol": "rear legs of funeral cot / twin" },
+      "arabic_manzil": { "n": 6, "name": "Al-Hanʿa (2)", "translation": "The Brand", "stars": "γ-ξ Geminorum", "category": "fortunate" },
+      "chinese_xiu": { "n": 21, "name": "參 (Shēn, 2)", "translation": "Three (Orion's belt)", "constellation": "Orion belt", "element": "water", "palace": "White Tiger" },
+      "cross_tradition_notes": "Pisces (the fish-pair) → cosmic-serpent (Ahirbudhnya) parallels. Egyptian decanic cycle closes with Khnum (ram), matching decan-1 ouroboros pattern.",
+      "uncertain": true,
+      "caveat": "Manzil/Xiu cycle iteration.",
+      "vault_node_ids": ["khnum", "saturn-roman"]
+    },
+    {
+      "n": 35, "western": { "sign": "Pisces", "decan_n": 2, "degrees": "10°-20° tropical", "ruler_chaldean_face": "Jupiter", "ruler_triplicity": "Venus (day) / Mars (night)", "picatrix_image": "A man with a great body, with a beard, wearing white; significations: knowledge, theology, jurisprudence." },
+      "egyptian": { "name": "Spt-Khnw", "name_alt": ["Spt-Khenmu"], "rising_star": "Spt-Khnw", "season": "Akhet", "deity_association": "Osiris (in some lists)" },
+      "vedic": { "nakshatra": "Revatī", "n": 27, "degrees_sidereal": "16°40' - 30°00' Pisces", "lord": "Mercury", "deity": "Pūṣan (nourisher, way-finder)", "symbol": "drum / fish" },
+      "arabic_manzil": { "n": 7, "name": "Al-Dhirāʿ (2)", "translation": "The Arm/Foreleg", "stars": "Castor & Pollux", "category": "fortunate" },
+      "chinese_xiu": { "n": 22, "name": "井 (Jǐng, 2)", "translation": "Well", "constellation": "Gemini stars", "element": "wood", "palace": "Vermilion Bird" },
+      "cross_tradition_notes": "Revatī ('wealthy') is the final nakshatra. Picatrix's bearded sage = Osiris in the Egyptian decan, completing the cycle.",
+      "uncertain": true,
+      "caveat": "Manzil/Xiu cycle iteration.",
+      "vault_node_ids": ["osiris", "jupiter"]
+    },
+    {
+      "n": 36, "western": { "sign": "Pisces", "decan_n": 3, "degrees": "20°-30° tropical", "ruler_chaldean_face": "Mars", "ruler_triplicity": "Venus (day) / Mars (night)", "picatrix_image": "A young man, naked, holding a torch; significations: rest, ease, end and beginning, gathering of waters." },
+      "egyptian": { "name": "Hry-ib-wi3-3", "name_alt": ["Final-boat-midpoint"], "rising_star": "Hry-ib-wi3-3", "season": "Akhet", "deity_association": "Khepri (becoming-morning)" },
+      "vedic": { "nakshatra": "Revatī (continuing)", "n": 27 },
+      "arabic_manzil": { "n": 8, "name": "Al-Nathra (2)", "translation": "The Nose-Tip (Praesepe)", "stars": "M44", "category": "fortunate" },
+      "chinese_xiu": { "n": 23, "name": "鬼 (Guǐ, 2)", "translation": "Ghost", "constellation": "Praesepe", "element": "metal", "palace": "Vermilion Bird" },
+      "cross_tradition_notes": "CYCLE CLOSE — naked youth with torch (Picatrix) = Khepri (sunrise scarab, Egyptian renewal) = Pisces marking the end-and-beginning of the zodiac. Three traditions encode 'gathering of waters' here at the precessional dissolution-point.",
+      "uncertain": false,
+      "vault_node_ids": ["mars-roman", "tradition-hermeticism"]
+    }
+  ]
+}

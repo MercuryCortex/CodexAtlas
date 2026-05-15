@@ -6277,12 +6277,13 @@ VIEWS.astrology = {
     pane.className = 'astrology-pane';
     const astroNodes = DATA.nodes.filter(n => Array.isArray(n.tags) && n.tags.some(t => /^astrology/.test(t)));
     const W = astroNodes.length;
-    // Mode 'spine' has its own live renderer (src/js/astrology/spine.js).
-    // Other modes still show the stub card until their renderer ships.
-    if (_astrologyState.mode === 'spine') {
+    // Live renderers (src/js/astrology/*.js). Other modes still show the stub card.
+    const liveRenderers = { spine: '_astroSpine', decanic: '_astroDecanic' };
+    const rendererKey = liveRenderers[_astrologyState.mode];
+    if (rendererKey) {
       pane.classList.add('astrology-pane-live');
       document.getElementById('canvas').appendChild(pane);
-      queueMicrotask(() => { if (window._astroSpine) window._astroSpine.render(pane); });
+      queueMicrotask(() => { if (window[rendererKey]) window[rendererKey].render(pane); });
       return;
     }
     pane.innerHTML = renderAstrologyMode(_astrologyState.mode, W);

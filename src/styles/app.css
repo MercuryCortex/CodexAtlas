@@ -1636,6 +1636,76 @@ body.view-atlas main.canvas { background: var(--bg-0); }
   background: rgba(212,165,90,0.10);
 }
 
+/* ASTROLOGY · DECANIC mode — 36-decan wheel + side-panel of 5 cross-tradition cells. */
+.astrology-pane.astrology-pane-decanic { display: block; align-items: stretch; justify-content: stretch; }
+.astrology-pane.astrology-pane-live { display: block; align-items: stretch; justify-content: stretch; }
+.astro-decanic-loading, .astro-decanic-error {
+  position: absolute; inset: 0; display: flex; align-items: center; justify-content: center;
+  color: var(--text-3); font-family: var(--serif);
+}
+.astro-decanic-error { color: var(--red, #c25450); }
+.astro-decanic-layout {
+  position: absolute; inset: 0;
+  display: grid; grid-template-columns: 1fr 360px; gap: 0;
+}
+.astro-decanic-svg-wrap { position: relative; overflow: hidden; }
+.astro-decanic-side {
+  border-left: 1px solid var(--border-soft);
+  padding: 20px 22px;
+  overflow-y: auto;
+  background: rgba(8,8,12,0.2);
+}
+.astro-decanic-side .ads-title {
+  margin: 0 0 8px;
+  font-family: var(--serif); font-size: 16px; color: var(--gold);
+  letter-spacing: 0.04em;
+}
+.astro-decanic-side .ads-intro {
+  font-family: var(--mono); font-size: 10.5px; color: var(--text-3);
+  line-height: 1.55; margin-bottom: 18px;
+}
+.ads-decan-head {
+  display: flex; align-items: baseline; gap: 12px; flex-wrap: wrap;
+  border-bottom: 1px solid var(--border-soft); padding-bottom: 8px; margin-bottom: 14px;
+}
+.ads-decan-n { font-family: var(--serif); font-size: 22px; color: var(--gold); }
+.ads-decan-deg { font-family: var(--mono); font-size: 11px; color: var(--text-2); }
+.ads-uncertain { font-family: var(--mono); font-size: 10px; color: #d4a55a; background: rgba(212,165,90,0.10); padding: 2px 6px; border-radius: 3px; cursor: help; }
+.ads-cell {
+  border-left: 2px solid var(--cell-accent, var(--border-soft));
+  padding: 8px 10px; margin-bottom: 10px;
+  background: rgba(212,165,90,0.025);
+}
+.ads-cell-head {
+  font-family: var(--mono); font-size: 9.5px;
+  color: var(--text-3); letter-spacing: 0.16em; text-transform: uppercase;
+  margin-bottom: 4px;
+}
+.ads-cell-body { font-family: var(--serif); font-size: 12.5px; color: var(--text-1); line-height: 1.5; }
+.ads-cell-body b { color: var(--text-0); font-weight: 600; }
+.ads-meta { font-family: var(--mono); font-size: 10.5px; color: var(--text-3); margin-top: 2px; }
+.ads-alt { font-family: var(--mono); font-size: 10px; color: var(--text-3); margin-left: 4px; }
+.ads-image { font-style: italic; color: var(--text-2); margin-top: 4px; font-size: 12px; }
+.ads-notes {
+  font-family: var(--serif); font-size: 12px; line-height: 1.55;
+  color: var(--text-2); padding: 10px 12px;
+  background: rgba(90,108,196,0.05); border-left: 2px solid var(--gold-soft);
+  margin: 12px 0 8px;
+}
+.ads-caveat {
+  font-family: var(--mono); font-size: 10.5px; color: #d4a55a;
+  background: rgba(212,165,90,0.08); padding: 6px 10px; border-radius: 3px;
+  margin: 4px 0 12px;
+}
+.ads-vault-anchors { margin-top: 10px; }
+.ads-vault-list { font-family: var(--mono); font-size: 10.5px; color: var(--text-2); line-height: 1.7; }
+.ads-vault-link { color: var(--gold-soft); text-decoration: none; cursor: pointer; }
+.ads-vault-link:hover { color: var(--gold); text-decoration: underline; }
+.ads-empty { color: var(--text-3); font-style: italic; }
+
+.astro-decan-sector.selected { stroke: var(--gold); stroke-width: 2; }
+.astro-decanic-svg .astro-decanic-sign-label { letter-spacing: 0.04em; }
+
 /* Atlas pane — the outer positioning wrapper for the map. Owns position:absolute
    and the empty-state centering. MapLibre lives in the inner .atlas-map div. */
 .atlas-pane {
