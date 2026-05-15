@@ -4765,12 +4765,27 @@ function _atlasComputeFC(zoom, geoNodes, tierById) {
           dotSize: 5 + Math.sqrt(DEGREE.get(n.id) || 0) * 1.2,
           origLng: n.geo.lon,
           origLat: n.geo.lat,
-          coGroupSize: j ? j.groupSize : 1
+          coGroupSize: j ? j.groupSize : 1,
+          // Glyph icon by node TYPE — matches the sidebar nav vocabulary so a
+          // viewer instantly reads what each dot IS (deity vs document vs
+          // person etc.) without hovering. Rendered by atlas-node-icons layer.
+          typeIcon: _ATLAS_TYPE_ICON[n.type] || ''
         }
       };
     })
   };
 }
+
+// Per-node-type glyph (matches sidebar nav icons).
+const _ATLAS_TYPE_ICON = {
+  deity:     '☉',   // sun (radiating divine)
+  person:    '✎',   // pencil (author / scribe)
+  event:     '⧖',   // hourglass (passage of time)
+  document:  '▤',   // ruled rectangle (text)
+  theme:     '❖',   // diamond cluster (motif)
+  tradition: '∴',   // therefore mark (system of thought)
+  symbol:    '⚗'    // alembic (alchemy / iconography)
+};
 
 // Premium minimalist basemap style — no text labels, just land/water/borders
 // drawn in our token palette. Colors are resolved at style-build time; the
@@ -5211,6 +5226,42 @@ VIEWS.atlas = {
           });
         } catch (e) {
           console.warn('[atlas] node labels unavailable:', e.message);
+        }
+
+        // Class-icon glyph centered on each dot — encodes node TYPE (deity /
+        // person / event / document / theme / tradition / symbol). Renders
+        // only from z 4 onwards so the icon has space to read; below that
+        // the colored dot alone is enough. User 2026-05-15: "yes" (icons on
+        // the atlas map to match sidebar nav vocabulary).
+        try {
+          _atlasMap.addLayer({
+            id: 'atlas-node-icons',
+            type: 'symbol',
+            source: 'atlas-nodes',
+            filter: ['!', ['has', 'point_count']],
+            minzoom: 4,
+            layout: {
+              'text-field': ['get', 'typeIcon'],
+              'text-font': ['Noto Sans Regular'],
+              'text-size': [
+                'interpolate', ['linear'], ['zoom'],
+                4, 9,
+                6, 12,
+                10, 12
+              ],
+              'text-anchor': 'center',
+              'text-allow-overlap': true,
+              'text-ignore-placement': true
+            },
+            paint: {
+              'text-color': _atlasToken('--bg-0', '#07090f'),
+              'text-halo-color': _atlasToken('--text-0', '#f1ede2'),
+              'text-halo-width': 0.6,
+              'text-opacity': 0.85
+            }
+          });
+        } catch (e) {
+          console.warn('[atlas] type-icons skipped:', e.message);
         }
 
         // --- Hover/click on individual circles ---
