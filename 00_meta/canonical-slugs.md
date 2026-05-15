@@ -501,8 +501,6 @@ canonical-slug
 - `phase-1-030-illuyanka-myth`
 - `phase-1-031-rigveda`
 - `phase-1-032-babylonian-theodicy`
-  also seen as: `phase-1-013-babylonian-theodicy`
-  notes: YAML id set to phase-1-013-babylonian-theodicy (matches dead-link wikilinks); file stem is phase-1-032 (phase-1-013 was taken by baal-cycle)
 - `phase-1-035-wadi-el-jarf-papyri`
 - `phase-2-001-rig-veda-family-books`
 - `phase-2-002-gathas-of-zarathustra`
@@ -538,8 +536,6 @@ canonical-slug
 - `phase-2-032-shijing-book-of-songs`
 - `phase-2-033-shujing-book-of-documents`
 - `phase-2-034-books-of-kings`
-  also seen as: `phase-2-005-1-2-kings`
-  notes: YAML id set to phase-2-005-1-2-kings (matches dead-link wikilinks); file stem is phase-2-034 (phase-2-005 was taken by hebrew-bible-j-source)
 - `phase-3-001-second-third-isaiah`
 - `phase-3-002-plato-dialogues`
 - `phase-3-003-aristotle-metaphysics`
@@ -676,8 +672,6 @@ canonical-slug
 - `phase-4-093-lankavat-sutra`
 - `phase-4-094-larger-sukhavativyuha-sutra`
 - `phase-4-095-new-testament-canon`
-  also seen as: `phase-4-007-new-testament-canon`
-  notes: YAML id set to phase-4-007-new-testament-canon (matches dead-link wikilinks); file stem is phase-4-095 (phase-4-007 was taken by on-the-origin-of-the-world)
 - `phase-5-001-devi-mahatmya`
 - `phase-5-002-heart-sutra`
 - `phase-5-002b-diamond-sutra`
@@ -1623,7 +1617,7 @@ canonical-slug
 - `ziusudra`
 - `zosimos-of-panopolis`
 
-### symbol (61 nodes)
+### symbol (64 nodes)
 
 - `ankh`
 - `asclepian-rod`
@@ -1638,6 +1632,7 @@ canonical-slug
 - `cross-order-of-christ`
 - `cross-pattee-templar`
 - `dharmachakra`
+- `djed-pillar`
 - `eye`
 - `eye-of-horus-wedjat`
 - `faravahar`
@@ -1660,11 +1655,13 @@ canonical-slug
 - `naga-serpent`
 - `nehushtan`
 - `noahs-ark`
+- `obelisk`
 - `ouroboros`
 - `pelican-in-piety`
 - `pentagram`
 - `phoenix-bennu`
 - `pomegranate`
+- `pyramid-triangle`
 - `rainbow-covenant`
 - `rose-cross-rosicrucian`
 - `sacred-fire-atash`
@@ -2093,12 +2090,12 @@ canonical-slug
 
 | Refs | Dead target | Suggested canonical (existing) |
 |---:|---|---|
-| 4 | `tradition-minoan-religion` | `tradition-theravada-buddhism` |
-| 3 | `phase-4-007-new-testament-canon` | `phase-4-006-hypostasis-of-the-archons` |
+| 4 | `tradition-minoan-religion` | `tradition-protestantism` |
+| 3 | `phase-4-007-new-testament-canon` | `phase-4-005-gospel-of-mary` |
 | 3 | `phase-2-005-1-2-kings` | `phase-2-003-atharva-veda` |
 | 2 | `yam-canaanite` | `astarte-canaanite` |
-| 2 | `tradition-lingayat` | `tradition-islam` |
-| 2 | `tradition-eastern-orthodoxy` | `tradition-theravada-buddhism` |
-| 2 | `phase-2-004-1-2-chronicles` | `phase-2-007-hebrew-bible-e-source` |
-| 2 | `phase-1-013-babylonian-theodicy` | `phase-1-014-ugaritic-ritual-texts` |
+| 2 | `tradition-lingayat` | `tradition-protestantism` |
+| 2 | `tradition-eastern-orthodoxy` | `tradition-protestantism` |
+| 2 | `phase-2-004-1-2-chronicles` | `phase-2-003-atharva-veda` |
+| 2 | `phase-1-013-babylonian-theodicy` | `phase-1-015-sumerian-king-list` |
 | 2 | `asclepius` | `asclepius-greek` |
