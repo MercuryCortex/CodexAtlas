@@ -459,4 +459,4 @@ The things opus-foundation-1 claimed but never started are all still open:
   - `05_events/event-rosslyn-chapel-construction-1446.md` (NEW)
   - `05_events/event-ramsay-oration-1737.md` (NEW)
   - `05_events/event-prague-occult-court-1576-1612.md` (NEW)
-- Status: in progress
+- Status: FINISHED 2026-05-15

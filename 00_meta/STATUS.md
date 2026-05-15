@@ -182,3 +182,49 @@ Zero behavior change. The atlas renders identically. The split unlocks:
 - 324 distinct targets / 465 occurrences (5.0% of wikilinks)
 - Top: `mesoamerican-cosmogony` (10×), `divinatory-calendar` (8×), Phase-8-induced cosmogony themes (~30 occurrences total)
 - New from Christianity pass: `ephrem-syrian` (2×), `hierocles` (2×), `gospel-of-judas-sethian` (2×) — straightforward next-batch additions
+
+---
+
+## sonnet-families-1 — 2026-05-15 — Deep Family Lineage Investigation (18 nodes)
+
+**Total vault state:** 2,021 nodes · 12,094 edges · 2.9% dead-link ratio (down from 3.2%)
+
+### What landed
+
+Four interlocking family-lineage threads:
+
+**Thread 1 — Solomonic Transmission Spine (MASSIVE WIN)**
+- `theme-solomonic-transmission-spine` — master cross-tradition theme: Solomon → 5 living traditions (Ethiopian Solomonic/Rastafari; Hiram Abiff/Freemasonry; Islamic Sulayman; Key of Solomon grimoire; Wisdom Christology). Nobody maps all five in one place.
+- `zerubbabel` — Davidic prince, post-exile Temple rebuilder; hinge figure in Davidic genealogy + appears in Royal Arch Masonic degree
+
+**Thread 2 — Aaronide/Zadokite Priestly Chain**
+- `theme-aaronide-priestly-continuity` — 3,200-year priestly family chain from Aaron → Cohen Modal Haplotype genetics; the only case in world religion where a hereditary priestly claim has genetic corroboration
+- `zadok-priest` — Solomon's high priest, root of the 818-year Zadokite monopoly; Sadducees named after him
+- `onias-iii` — last legitimate Zadokite high priest, deposed and murdered 170 BCE
+- `onias-iv` — founded the Temple of Leontopolis in Egypt (Jewish temple near Alexandria, 220-year lifespan)
+- `event-temple-leontopolis-foundation-c150bce` — the EXTRAORDINARY fact: a second Jerusalem-style Temple ran in Egypt from ~150 BCE to 73 CE, 40 km from Alexandria
+- `tradition-hasmonean-dynasty` — the crisis dynasty (Maccabees → kings AND high priests → Sadducees/Pharisees/Essenes all as responses to Hasmonean illegitimacy; direct context of Jesus's milieu)
+
+**Thread 3 — Sinclair/Stuart → Scottish Rite Freemasonry**
+- `william-sinclair-rosslyn` — builder of Rosslyn Chapel (1446–1484); hereditary Grand Mastery; Templar cross motifs; Apprentice Pillar = Hiram Abiff legend in stone
+- `event-rosslyn-chapel-construction-1446` — the physical nexus of Templar→Masonic transmission mythology
+- `chevalier-ramsay` — Scottish Jacobite exile; 1737 Oration claims Freemasonry descended from Crusader knights; Stuart political restoration encoded as Masonic "Lost Word" recovery
+- `event-ramsay-oration-1737` — founding document of Scottish Rite's ideological self-understanding
+- `tradition-scottish-rite-freemasonry` — 33-degree system; Stuart/Jacobite encoding in degree symbolism; Albert Pike's *Morals and Dogma* synthesis
+
+**Thread 4 — Rudolf II Habsburg / Prague Occult Court**
+- `rudolf-ii-habsburg` — Holy Roman Emperor who moved court to Prague; simultaneous patron of Dee, Kelley, Tycho Brahe, Kepler, and the Maharal
+- `rabbi-judah-loew` — Maharal of Prague; Golem legend; leading Kabbalist; parallel tradition of non-human intelligence contact alongside Dee's Enochian angels
+- `tycho-brahe` — Imperial Mathematician at Rudolf's court; his observational data → Kepler's laws → Newton; the scientific revolution runs through an occult patronage court
+- `event-prague-occult-court-1576-1612` — the three-way convergence nobody maps: Enochian angel-communication + Practical Kabbalah + Empirical astronomy, simultaneously, in one city
+
+**Cross-tradition theme**
+- `theme-sacred-bloodline-claim` — structural analysis from Sumerian King List to modern Cohanim genetics; the mechanism by which genealogy does theological work
+
+### Edge sweeps
+- `solomon-king` — wired to Solomonic spine theme, Zadokite line, Zerubbabel, Scottish Rite
+- `tradition-freemasonry` — wired to Scottish Rite branch, Ramsay Oration, Sinclair, Solomonic transmission
+- `john-dee` — wired to Prague court nexus, Rudolf II, Maharal, Tycho Brahe parallel
+- `edward-kelley` — wired to Rudolf II imprisonment, Prague court event
+- `cleopatra-vii` — wired to Oniad Temple Leontopolis / Zadokite priestly tradition in Egyptian exile
+

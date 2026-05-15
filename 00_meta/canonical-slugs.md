@@ -830,7 +830,7 @@ canonical-slug
 - `phase-8-017-santeria-lucumi`
 - `phase-8-018-kalevala`
 
-### event (156 nodes)
+### event (159 nodes)
 
 - `bent-pyramid-sneferu-dahshur`
 - `el-castillo-chichen-itza`
@@ -948,14 +948,17 @@ canonical-slug
 - `event-pike-2018-neanderthal-cave-art-c-64800-bce`
 - `event-pittsburgh-platform-1885`
 - `event-pizarro-conquest-of-inca-1533`
+- `event-prague-occult-court-1576-1612`
 - `event-priory-of-sion-fabrication`
 - `event-quinta-da-regaleira-construction-1904-1910`
 - `event-quranic-manuscript-finds-2015-onward`
 - `event-ramakrishna-mission-founded-1897`
+- `event-ramsay-oration-1737`
 - `event-ras-shamra-excavation-1928`
 - `event-rise-of-nones-2007-present`
 - `event-rise-of-political-islamism-1928-present`
 - `event-rosetta-stone-decipherment-1822`
+- `event-rosslyn-chapel-construction-1446`
 - `event-sabbatean-apostasy-1666`
 - `event-sack-of-rome-410`
 - `event-second-crusade-1147-1149`
@@ -2062,15 +2065,14 @@ canonical-slug
 
 | Refs | Dead target | Suggested canonical (existing) |
 |---:|---|---|
-| 7 | `event-prague-occult-court-1576-1612` | `event-council-of-nicaea-325` |
-| 4 | `tradition-essenes` | `tradition-freemasonry` |
-| 4 | `messianic-revelation` | `messianic-future-savior` |
-| 4 | `messianic-genealogy` | `messianic-future-savior` |
-| 3 | `phase-4-007-new-testament-canon` | `phase-4-005-gospel-of-mary` |
-| 3 | `phase-2-005-1-2-kings` | `phase-2-008-homeric-epics` |
-| 3 | `event-rosslyn-chapel-construction-1446` | `event-borobudur-construction-c-750-825` |
+| 4 | `tradition-essenes` | `tradition-islam` |
+| 4 | `messianic-revelation` | `messianic-secret` |
+| 4 | `messianic-genealogy` | `messianic-secret` |
+| 3 | `phase-4-007-new-testament-canon` | `phase-4-004-gospel-of-philip` |
+| 3 | `phase-2-005-1-2-kings` | `phase-2-003-atharva-veda` |
 | 2 | `yam-canaanite` | `astarte-canaanite` |
-| 2 | `tradition-minoan-religion` | `tradition-freemasonry` |
-| 2 | `tradition-eastern-orthodoxy` | `tradition-freemasonry` |
-| 2 | `phase-1-013-babylonian-theodicy` | `phase-4-033-babylonian-talmud` |
+| 2 | `tradition-minoan-religion` | `tradition-etruscan-religion` |
+| 2 | `tradition-eastern-orthodoxy` | `tradition-etruscan-religion` |
+| 2 | `phase-2-004-1-2-chronicles` | `phase-2-003-atharva-veda` |
+| 2 | `phase-1-013-babylonian-theodicy` | `phase-1-017-descent-of-inanna` |
 | 2 | `asclepius` | `asclepius-greek` |
