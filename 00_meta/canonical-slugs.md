@@ -949,7 +949,7 @@ canonical-slug
 - `event-wilhelmsbad-convent-1782`
 - `event-zagwe-lalibela-churches-c1200`
 
-### person (588 nodes)
+### person (589 nodes)
 
 - `aaron`
 - `abba-garima`
@@ -1432,6 +1432,7 @@ canonical-slug
 - `rashid-rida`
 - `rene-guenon`
 - `reza-aslan`
+- `robert-de-boron`
 - `robert-fludd`
 - `rowan-williams`
 - `rudolf-otto`
@@ -1960,16 +1961,16 @@ canonical-slug
 
 | Refs | Dead target | Suggested canonical (existing) |
 |---:|---|---|
-| 4 | `ragnarok-apocalyptic` | `apocalyptic-cosmic-warfare` |
+| 4 | `ragnarok-apocalyptic` | `apocalyptic-revelation` |
 | 4 | `primordial-darkness` | `eros-primordial` |
 | 4 | `messianic-revelation` | `messianic-future-savior` |
 | 4 | `genealogical-cosmogony` | `hermetic-cosmogony` |
 | 4 | `evolutionary-cosmogony` | `hermetic-cosmogony` |
-| 3 | `phase-4-007-new-testament-canon` | `phase-4-005-gospel-of-mary` |
+| 3 | `phase-4-007-new-testament-canon` | `phase-4-008-trimorphic-protennoia` |
 | 3 | `phase-2-005-1-2-kings` | `phase-2-003-atharva-veda` |
-| 3 | `messianic-genealogy` | `messianic-future-savior` |
+| 3 | `messianic-genealogy` | `solomonic-genealogy` |
 | 2 | `yam-canaanite` | `astarte-canaanite` |
-| 2 | `tradition-minoan-religion` | `tradition-roman-religion` |
-| 2 | `tradition-eastern-orthodoxy` | `tradition-roman-religion` |
-| 2 | `phase-1-013-babylonian-theodicy` | `phase-4-033-babylonian-talmud` |
+| 2 | `tradition-minoan-religion` | `tradition-thelema` |
+| 2 | `tradition-eastern-orthodoxy` | `tradition-jungian-depth-psychology` |
+| 2 | `phase-1-013-babylonian-theodicy` | `phase-1-011-great-hymn-to-aten` |
 | 2 | `asclepius` | `asclepius-greek` |

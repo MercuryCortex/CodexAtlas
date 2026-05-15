@@ -12,8 +12,17 @@ historicity: "likely-historical"
 texts-authored: []
 texts-attributed-to: ["*Gospel of Nicodemus / Acts of Pilate* (apocryphal, 4th c.+) — features him as protagonist of post-resurrection material"]
 events-participated: ["Petitioned Pilate for Jesus's body and arranged the burial in his own new tomb (Mk 15:42–47; Mt 27:57–60; Lk 23:50–53; Jn 19:38–42)"]
-mentioned-in: ["[[phase-3-016-gospel-of-mark]]", "[[phase-3-017-gospel-of-matthew]]", "[[phase-3-018-luke-acts]]", "[[phase-3-020-gospel-of-john]]", "*Gospel of Peter* (apocryphal fragment, ~+150)", "*Gospel of Nicodemus* (apocryphal, 4th c.+)", "medieval British/Grail legend (Glastonbury, Holy Grail) — late legend without early attestation"]
-status: "stub"
+mentioned-in: ["[[phase-3-016-gospel-of-mark]]", "[[phase-3-017-gospel-of-matthew]]", "[[phase-3-018-luke-acts]]", "[[phase-3-020-gospel-of-john]]", "*Gospel of Peter* (apocryphal fragment, ~+150)", "*Gospel of Nicodemus* (apocryphal, 4th c.+)", "[[robert-de-boron]] (*Joseph d'Arimathie*, ~1200 — his role as Grail-bearer originates here)", "medieval British/Grail legend (Glastonbury) — late legend without early attestation"]
+syncretic-edges:
+  - target: "theme-holy-grail"
+    type: "part-of"
+    source: "Robert de Boron, *Joseph d'Arimathie* (~1200; trans. Bryant 2001, D.S. Brewer). / Barber, Richard (2004). The Holy Grail. Harvard UP."
+    notes: "Robert de Boron's *Joseph d'Arimathie* (~1200) transforms Joseph from Gospel burial-provider into the first Grail-keeper: he receives the Last Supper cup from Pilate, uses it to collect Christ's blood, is imprisoned and sustained miraculously by the Grail, and carries it westward to Britain. This role has no Gospel basis — it is Robert's invention, adopted wholesale by the Vulgate Cycle and every subsequent Grail tradition. The 'Holy Blood, Holy Grail' narrative (1982) depends entirely on Robert's vocabulary: *san gréal* → *sang réal*."
+  - target: "robert-de-boron"
+    type: "part-of"
+    source: "Barber, Richard (2004). The Holy Grail. Harvard UP. pp. 112–130."
+    notes: "Robert de Boron is the author who invented Joseph's Grail role. The relationship is a literary inversion: Robert uses the historical Gospel figure as the protagonist for a new theological narrative the historical Joseph had no connection to."
+status: "metadata"
 refs:
   - title: "Joseph of Arimathea: A Study in Reception History"
     author: "Bartlett, Robert"
