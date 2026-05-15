@@ -42,6 +42,13 @@ Format:
 - Open gaps: no geo entries needed (pre-urban compositions); phase-1-024/025 shijing/shujing already exist as full nodes in phase-1 — no conflict (different slugs/IDs; new nodes extend with Axial Age framing and MASSIVE-win cross-tradition edges)
 - Last edit: 00_meta/STATUS.md
 
+## sonnet-zoroastrian-2 — content / Zoroastrian deep expansion batch 2 — started 2026-05-15 — **FINISHED 2026-05-15**
+- Owning: 06_themes/theme-vedic-avestan-split.md (NEW), 06_themes/theme-proto-indo-iranian-religion.md (NEW), 06_themes/theme-zoroastrian-cosmogony.md (NEW), 06_themes/theme-zurvanite-heresy.md (NEW), 06_themes/theme-zoroastrian-afterlife-geography.md (NEW), 02_documents/_phase-4-late-antiquity/phase-4-086-arda-viraf-namag.md (NEW), 03_deities/mithra-zoroastrian.md (upgrade stub→full), 06_themes/frashokereti-cosmic-renovation.md (upgrade)
+- Goal: Write 7 unimplemented nodes from Agent 2+3 research (previous batch); upgrade Mithra stub and Frashokereti with cosmogony link + Arda Viraf + Gregory of Nyssa + Lake Hamun detail
+- Status: finished
+- Delivered: 5 MASSIVE-WIN theme nodes + Arda Viraf document node + Mithra full upgrade + Frashokereti upgrade. Build: **1,979 nodes · 11,958 edges · 0 lint errors**
+- Last edit: 00_meta/ACTIVE-AGENTS.md
+
 ## sonnet-deadlink-closures-1 — content / high-ref dead-link closures — started 2026-05-15 — **FINISHED 2026-05-15**
 - Owning: 06_themes/norse-cosmogony.md (NEW), 06_themes/ragnarok-apocalyptic.md (NEW), 06_themes/afro-diasporic-syncretism.md (NEW), 06_themes/possession-ritual.md (NEW), 06_themes/orisha-pantheon.md (NEW), 03_deities/baal.md (NEW alias stub)
 - Goal: Close 6 highest-ref dead-links (norse-cosmogony x4, ragnarok-apocalyptic x4, afro-diasporic-syncretism x4, possession-ritual x4, orisha-pantheon x4, baal x5); khufu + theme-pyramid-as-resurrection-machine already exist from sonnet-pyramids-1
