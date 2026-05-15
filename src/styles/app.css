@@ -1527,7 +1527,12 @@ footer select:focus, footer input:focus { border-color: var(--gold-soft); }
 .alch-preset-tag.gnostic  { background: rgba(70,60,165,.16);  color: #8878cc; border: 1px solid rgba(70,60,165,.26); }
 .alch-preset-tag.cross    { background: rgba(40,105,175,.16); color: #6090cc; border: 1px solid rgba(40,105,175,.26); }
 .alch-preset-tag.flood    { background: rgba(30,115,145,.16); color: #50a0c2; border: 1px solid rgba(30,115,145,.26); }
-.alch-preset-tag.astrology{ background: rgba(105,65,30,.16);  color: #b07850; border: 1px solid rgba(105,65,30,.26); }
+.alch-preset-tag.astrology   { background: rgba(105,65,30,.16);  color: #b07850; border: 1px solid rgba(105,65,30,.26); }
+.alch-preset-tag.investigation {
+  background: rgba(0,185,165,.18); color: #00c8b0;
+  border: 1px solid rgba(0,185,165,.38);
+  opacity: 1; letter-spacing: .11em;
+}
 
 /* ---- Investigation dropdown (sits next to Presets in Alchemy nav) ---- */
 .alch-invest-trigger { position: relative; }
@@ -1993,6 +1998,81 @@ body.view-alchemy .zoom-meter { display: none !important; }
 
 .astro-decan-sector.selected { stroke: var(--gold); stroke-width: 2.2; }
 .astro-decanic-svg .astro-decanic-sign-label { letter-spacing: 0.04em; }
+
+/* ASTROLOGY · PANTHEON mode — 7 planet wedges, cross-tradition deities inside. */
+.astrology-pane-astro-pantheon { display: block; align-items: stretch; justify-content: stretch; }
+.astro-pantheon-layout {
+  position: absolute; inset: 0;
+  display: grid; grid-template-columns: 1fr 380px; grid-template-rows: 1fr;
+  height: 100%;
+}
+.astro-pantheon-svg-wrap { position: relative; overflow: hidden; min-height: 0; }
+.astro-pantheon-side {
+  border-left: 1px solid var(--border-soft);
+  padding: 22px 22px 26px;
+  overflow-y: auto; min-height: 0;
+  background: rgba(8,8,12,0.2);
+}
+.astro-pantheon-side .aph-title {
+  margin: 0 0 10px;
+  font-family: var(--serif); font-size: 16px; color: var(--gold);
+  letter-spacing: 0.04em;
+}
+.aph-intro {
+  font-family: var(--serif); font-size: 12.5px; line-height: 1.55;
+  color: var(--text-2); margin-bottom: 14px;
+}
+.aph-intro b { color: var(--text-0); }
+.aph-howto {
+  background: rgba(212,165,90,0.04);
+  border-left: 2px solid var(--gold-soft);
+  padding: 10px 14px; margin-bottom: 18px;
+}
+.aph-howto-title {
+  font-family: var(--mono); font-size: 9.5px;
+  color: var(--gold-soft); letter-spacing: 0.16em; text-transform: uppercase;
+  margin-bottom: 6px;
+}
+.aph-howto-list {
+  margin: 0; padding-left: 18px;
+  font-family: var(--serif); font-size: 12px; line-height: 1.55; color: var(--text-2);
+}
+.aph-howto-list li { margin-bottom: 3px; }
+.aph-planet-head {
+  display: flex; align-items: baseline; gap: 12px;
+  border-bottom: 1px solid var(--border-soft);
+  padding-bottom: 8px; margin-bottom: 12px;
+}
+.aph-planet-glyph { font-family: var(--serif); font-size: 30px; }
+.aph-planet-name { font-family: var(--serif); font-size: 20px; color: var(--p-accent, var(--gold)); letter-spacing: 0.04em; }
+.aph-planet-ruler {
+  font-style: italic; font-family: var(--serif); font-size: 12px;
+  color: var(--text-3); margin-bottom: 14px;
+}
+.aph-deity-list { display: flex; flex-direction: column; gap: 2px; }
+.aph-deity-row {
+  display: grid; grid-template-columns: 12px 1fr; column-gap: 9px;
+  align-items: baseline;
+  padding: 7px 6px;
+  border-bottom: 1px solid var(--border-soft);
+  cursor: pointer; transition: background 120ms ease;
+}
+.aph-deity-row:hover { background: var(--bg-2); }
+.aph-deity-swatch { width: 10px; height: 10px; border-radius: 50%; margin-top: 4px; }
+.aph-deity-title { font-family: var(--serif); font-size: 13px; color: var(--text-0); grid-column: 2; }
+.aph-deity-trad { grid-column: 2; font-family: var(--mono); font-size: 10px; color: var(--gold-soft); letter-spacing: 0.04em; }
+.aph-deity-note { grid-column: 2; font-family: var(--serif); font-size: 11.5px; color: var(--text-2); font-style: italic; }
+.aph-missing {
+  margin-top: 12px; padding: 8px 12px;
+  font-family: var(--mono); font-size: 10px; color: var(--text-3);
+  background: rgba(255,255,255,0.03); border-radius: 3px;
+}
+.aph-foot {
+  margin-top: 18px;
+  font-family: var(--mono); font-size: 9.5px;
+  color: var(--text-3); letter-spacing: 0.06em; line-height: 1.5;
+}
+.aph-deity:hover circle { stroke-width: 2.5; }
 
 /* === DECANIC CLARITY LAYER (sonnet-decanic-clarity, 2026-05-15) === */
 

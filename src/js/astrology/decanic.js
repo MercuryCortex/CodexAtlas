@@ -3,14 +3,16 @@
 // 36-decan wheel (10° each) with click-to-inspect all 5 cross-tradition cells.
 // Reads _assets/data/astrology-decans.json (fetched once, cached).
 //
-// Visual: a single ring divided into 36 sectors. Outer ring labels = Western
-// sign-decan (e.g. "Ari 1"). Sectors colored by face-ruler planet (Mars red,
-// Sun gold, Venus green, Mercury cyan, Moon silver, Saturn navy, Jupiter purple
-// per the Chaldean order). Hover → highlight. Click → open the cross-tradition
-// panel showing Egyptian + Vedic + Arabic + Chinese cells plus vault anchors.
+// Visual: a single ring divided into 36 sectors. Each sector carries the
+// Chaldean face-ruler planet glyph (☉ ☽ ☿ ♀ ♂ ♃ ♄) plus a small decan
+// number 1–36 at the inner radius. A thin sign-name ribbon sits between
+// the wheel and the outer sign-glyphs, and sectors emit a hover tooltip
+// summarising decan number + sign + degree range + ruler. The side panel
+// renders the full 5-tradition detail on click + a generated "what is
+// this decan?" lead.
 // ============================================================
 (function () {
-  const DATA_URL = '_assets/data/astrology-decans.json?v=20260515-astro-decanic-1';
+  const DATA_URL = '_assets/data/astrology-decans.json?v=20260515-decanic-clarity';
   let _cached = null;
 
   // Chaldean face-ruler color palette — matches Codex Atlas tradition tokens.
@@ -23,6 +25,33 @@
     Saturn:  '#5a6cc4',
     Jupiter: '#a87bb5'
   };
+
+  // Unicode planet glyphs (classical seven). Used inside each sector.
+  const PLANET_GLYPHS = {
+    Sun:     '☉',
+    Moon:    '☽',
+    Mercury: '☿',
+    Venus:   '♀',
+    Mars:    '♂',
+    Jupiter: '♃',
+    Saturn:  '♄'
+  };
+
+  // Sign metadata for the ribbon and tooltip.
+  const SIGNS = [
+    { name: 'Aries',       glyph: '♈' },
+    { name: 'Taurus',      glyph: '♉' },
+    { name: 'Gemini',      glyph: '♊' },
+    { name: 'Cancer',      glyph: '♋' },
+    { name: 'Leo',         glyph: '♌' },
+    { name: 'Virgo',       glyph: '♍' },
+    { name: 'Libra',       glyph: '♎' },
+    { name: 'Scorpio',     glyph: '♏' },
+    { name: 'Sagittarius', glyph: '♐' },
+    { name: 'Capricorn',   glyph: '♑' },
+    { name: 'Aquarius',    glyph: '♒' },
+    { name: 'Pisces',      glyph: '♓' }
+  ];
 
   function fetchDecans() {
     if (_cached) return Promise.resolve(_cached);
@@ -47,14 +76,32 @@
     });
   }
 
+  // Build a one-line "what is this decan?" lead from the data fields.
+  function buildDecanLead(d) {
+    const sign = d.western.sign;
+    const decanN = d.western.decan_n;
+    const ruler = d.western.ruler_chaldean_face;
+    const eg = d.egyptian || {};
+    const egName = eg.name || '';
+    const egDeity = eg.deity_association || '';
+    const ord = (decanN === 1) ? 'first' : decanN === 2 ? 'second' : 'third';
+    const degRange = d.western.degrees || '';
+    let lead = `The ${ord} 10° of ${sign} (${degRange}): ${ruler}-ruled`;
+    if (egName) {
+      lead += `, anchored by the Egyptian decan <b>${egName}</b>`;
+      if (eg.rising_star && eg.rising_star !== egName) {
+        lead += ` (rising star ${eg.rising_star})`;
+      }
+    }
+    if (egDeity) {
+      lead += `, associated with ${egDeity}`;
+    }
+    lead += '.';
+    return lead;
+  }
+
   function drawWheel(rootEl, payload) {
     const decans = payload.decans;
-    const W = rootEl.clientWidth, H = rootEl.clientHeight;
-    if (!W || !H) return;
-    const cx = W / 2, cy = H / 2;
-    const Router = Math.min(W, H) * 0.40;
-    const Rinner = Router * 0.55;
-    const Rlabel = Router * 1.06;
 
     // SVG canvas (left two-thirds) + detail side-panel (right third)
     const layout = document.createElement('div');
@@ -65,13 +112,45 @@
     svgWrap.className = 'astro-decanic-svg-wrap';
     layout.appendChild(svgWrap);
 
+    // Hover tooltip (positioned absolutely inside svgWrap).
+    const tooltip = document.createElement('div');
+    tooltip.className = 'astro-decanic-tooltip';
+    tooltip.style.display = 'none';
+    svgWrap.appendChild(tooltip);
+
     const sidePanel = document.createElement('div');
     sidePanel.className = 'astro-decanic-side';
     sidePanel.innerHTML = `
-      <h3 class="ads-title">Decanic Atlas</h3>
-      <div class="ads-intro">
-        ${decans.length} decans · ${payload.sources.length} sources · ayanamsa ${payload.ayanamsa.split(',')[0]}.
-        Click any decan sector to inspect its Egyptian / Western / Vedic / Arabic / Chinese cells.
+      <h3 class="ads-title">Decanic Wheel</h3>
+      <div class="ads-intro-body">
+        A <b>decan</b> is a 10° slice of the zodiac — 36 of them tile the full 360° circle of the sky.
+        The system began in Egypt c. 2100 BCE as 36 ten-day "weeks" (each marked by a rising star),
+        was absorbed by Hellenistic astrology, and is now a <b>cross-tradition Rosetta Stone</b>: the
+        same 10° patch of sky carries a different name in Western, Egyptian, Vedic, Arabic, and Chinese
+        star-lore. This view lets you click any decan and see all five names side-by-side.
+      </div>
+      <div class="ads-howto">
+        <div class="ads-howto-title">How to read this view</div>
+        <ol class="ads-howto-list">
+          <li><b>Click any sector</b> → the side panel shows that decan's 5 cross-tradition cells.</li>
+          <li><b>Sector colour = Chaldean face-ruler planet</b> (see legend below).</li>
+          <li><b>Decan 1 = Aries 0°</b> sits at the 9 o'clock position; the wheel runs clockwise.</li>
+        </ol>
+      </div>
+      <div class="ads-legend">
+        <div class="ads-legend-title">Face-ruler planets</div>
+        <div class="ads-legend-grid">
+          <span class="ads-legend-swatch" style="background:${PLANET_COLORS.Mars}"></span><span class="ads-legend-label">${PLANET_GLYPHS.Mars} Mars</span>
+          <span class="ads-legend-swatch" style="background:${PLANET_COLORS.Sun}"></span><span class="ads-legend-label">${PLANET_GLYPHS.Sun} Sun</span>
+          <span class="ads-legend-swatch" style="background:${PLANET_COLORS.Venus}"></span><span class="ads-legend-label">${PLANET_GLYPHS.Venus} Venus</span>
+          <span class="ads-legend-swatch" style="background:${PLANET_COLORS.Mercury}"></span><span class="ads-legend-label">${PLANET_GLYPHS.Mercury} Mercury</span>
+          <span class="ads-legend-swatch" style="background:${PLANET_COLORS.Moon}"></span><span class="ads-legend-label">${PLANET_GLYPHS.Moon} Moon</span>
+          <span class="ads-legend-swatch" style="background:${PLANET_COLORS.Saturn}"></span><span class="ads-legend-label">${PLANET_GLYPHS.Saturn} Saturn</span>
+          <span class="ads-legend-swatch" style="background:${PLANET_COLORS.Jupiter}"></span><span class="ads-legend-label">${PLANET_GLYPHS.Jupiter} Jupiter</span>
+        </div>
+        <div class="ads-legend-foot">
+          ${decans.length} decans · ${payload.sources.length} sources · ayanamsa ${payload.ayanamsa.split(',')[0]}
+        </div>
       </div>
       <div class="ads-detail" id="ads-detail"></div>
     `;
@@ -81,26 +160,88 @@
     const svgcx = svgW / 2, svgcy = svgH / 2;
     const svgR = Math.min(svgW, svgH) * 0.40;
     const svgRi = svgR * 0.55;
-    const svgRl = svgR * 1.08;
-    const svgRsign = svgR * 1.20;
+    // Ribbon (sign names) sits just outside the wheel; sign-glyphs further out.
+    const svgRribbonInner = svgR * 1.015;
+    const svgRribbonOuter = svgR * 1.11;
+    const svgRribbonMid = (svgRribbonInner + svgRribbonOuter) / 2;
+    const svgRsign = svgR * 1.22;
 
     const svg = d3.select(svgWrap).append('svg')
       .attr('class', 'astro-decanic-svg')
       .attr('width', '100%').attr('height', '100%')
       .style('display', 'block');
 
-    // 12-sign labels at the outermost ring
-    const signs = ['Aries','Taurus','Gemini','Cancer','Leo','Virgo','Libra','Scorpio','Sagittarius','Capricorn','Aquarius','Pisces'];
-    signs.forEach((sg, i) => {
-      // Each sign covers 30°; we orient 0° = Aries at the left (9 o'clock) and go clockwise (astrological convention).
+    // Sign-name ribbon: a thin annular band between wheel and sign-glyphs,
+    // divided into 12 wedges, each carrying the sign NAME and degree range.
+    // Aries 0° anchored at 9 o'clock; wheel runs clockwise (matches sectors).
+    const ribbonArc = d3.arc()
+      .innerRadius(svgRribbonInner)
+      .outerRadius(svgRribbonOuter)
+      .padAngle(0.002);
+
+    const ribbonG = svg.append('g')
+      .attr('class', 'astro-decanic-ribbon')
+      .attr('transform', `translate(${svgcx}, ${svgcy}) rotate(-90)`);
+
+    SIGNS.forEach((sg, i) => {
+      const startDeg = i * 30 - 180;
+      const endDeg = (i + 1) * 30 - 180;
+      const startAng = (startDeg + 90) * Math.PI / 180;
+      const endAng = (endDeg + 90) * Math.PI / 180;
+      ribbonG.append('path')
+        .attr('class', 'astro-decanic-ribbon-seg')
+        .attr('d', ribbonArc({ startAngle: startAng, endAngle: endAng }));
+    });
+
+    // Curved-text labels along the ribbon midline. Use a dedicated path per
+    // sign so SVG textPath can flow the name along the arc.
+    SIGNS.forEach((sg, i) => {
+      // Each sign's centre angle (in our wheel where 0° Aries = 9 o'clock,
+      // clockwise). Convert to SVG XY space (no rotation applied here).
+      const centerDeg = i * 30 + 15 - 180;
+      const centerRad = centerDeg * Math.PI / 180;
+
+      // Build a path that runs along the ribbon midline through this sign's
+      // 30° span. To make the text read upright on both halves of the wheel,
+      // we flip the path direction when the sign sits on the bottom half.
+      const half1Deg = i * 30 - 180;
+      const half2Deg = (i + 1) * 30 - 180;
+      const onTopHalf = Math.sin(centerRad) < 0; // y<0 in SVG = top
+
+      const a0 = (onTopHalf ? half1Deg : half2Deg) * Math.PI / 180;
+      const a1 = (onTopHalf ? half2Deg : half1Deg) * Math.PI / 180;
+
+      const x0 = svgcx + svgRribbonMid * Math.cos(a0);
+      const y0 = svgcy + svgRribbonMid * Math.sin(a0);
+      const x1 = svgcx + svgRribbonMid * Math.cos(a1);
+      const y1 = svgcy + svgRribbonMid * Math.sin(a1);
+      const sweep = onTopHalf ? 1 : 0;
+
+      const pathId = `astro-decanic-ribbon-path-${i}`;
+      svg.append('defs').append('path')
+        .attr('id', pathId)
+        .attr('d', `M ${x0} ${y0} A ${svgRribbonMid} ${svgRribbonMid} 0 0 ${sweep} ${x1} ${y1}`)
+        .attr('fill', 'none');
+
+      svg.append('text')
+        .attr('class', 'astro-decanic-ribbon-text')
+        .append('textPath')
+        .attr('href', `#${pathId}`)
+        .attr('startOffset', '50%')
+        .attr('text-anchor', 'middle')
+        .text(`${sg.name} · ${i * 30}°–${(i + 1) * 30}°`);
+    });
+
+    // 12-sign glyphs at the outermost ring
+    SIGNS.forEach((sg, i) => {
       const angCenter = (i * 30 + 15 - 180) * Math.PI / 180;
       const lx = svgcx + svgRsign * Math.cos(angCenter);
       const ly = svgcy + svgRsign * Math.sin(angCenter);
       svg.append('text').attr('class', 'astro-decanic-sign-label')
         .attr('x', lx).attr('y', ly)
         .attr('text-anchor', 'middle').attr('dominant-baseline', 'middle')
-        .attr('fill', 'var(--text-1)').attr('font-family', 'var(--serif)').attr('font-size', '13px')
-        .text(sg);
+        .attr('fill', 'var(--text-1)').attr('font-family', 'var(--serif)').attr('font-size', '15px')
+        .text(sg.glyph);
     });
 
     // 36 decan sectors
@@ -118,6 +259,7 @@
       const endDeg = (i + 1) * 10 - 180;
       d._startAng = (startDeg + 90) * Math.PI / 180; // +90 because we rotated -90
       d._endAng   = (endDeg + 90) * Math.PI / 180;
+      d._midDeg   = (i * 10 + 5) - 180; // for label positioning in untransformed SVG space
     });
 
     const sectors = sectorG.selectAll('path.astro-decan-sector')
@@ -125,32 +267,64 @@
       .attr('class', 'astro-decan-sector')
       .attr('d', d => arc({ startAngle: d._startAng, endAngle: d._endAng }))
       .attr('fill', d => PLANET_COLORS[d.western.ruler_chaldean_face] || '#7a8090')
-      .attr('fill-opacity', 0.7)
-      .attr('stroke', 'var(--bg-0)').attr('stroke-width', 1)
+      .attr('fill-opacity', 0.78)
+      .attr('stroke', 'var(--bg-0)').attr('stroke-width', 1.2)
       .style('cursor', 'pointer')
       .on('mouseenter', function (ev, d) {
         d3.select(this).attr('fill-opacity', 1);
+        const ruler = d.western.ruler_chaldean_face;
+        const glyph = PLANET_GLYPHS[ruler] || '';
+        tooltip.innerHTML = `
+          <div class="adt-row1">Decan ${d.n} · ${d.western.sign} ${d.western.decan_n}</div>
+          <div class="adt-row2">${d.western.degrees}</div>
+          <div class="adt-row3"><span class="adt-glyph" style="color:${PLANET_COLORS[ruler] || '#fff'}">${glyph}</span> ${ruler}</div>
+        `;
+        tooltip.style.display = 'block';
+      })
+      .on('mousemove', function (ev) {
+        const rect = svgWrap.getBoundingClientRect();
+        const x = ev.clientX - rect.left;
+        const y = ev.clientY - rect.top;
+        // Offset so tooltip doesn't sit under cursor; flip side near right edge.
+        const tw = tooltip.offsetWidth || 160;
+        const px = (x + tw + 18 > rect.width) ? (x - tw - 14) : (x + 14);
+        const py = Math.max(6, y - 18);
+        tooltip.style.left = px + 'px';
+        tooltip.style.top  = py + 'px';
       })
       .on('mouseleave', function () {
-        d3.select(this).attr('fill-opacity', 0.7);
+        d3.select(this).attr('fill-opacity', 0.78);
+        tooltip.style.display = 'none';
       })
       .on('click', function (ev, d) {
         sectors.classed('selected', s => s.n === d.n);
         renderDetail(d);
       });
 
-    // Decan-number labels (1-36) inside each sector
+    // Per-sector glyph + number labels.
+    //   - Outer ring (closer to wheel rim): the planet glyph (high-contrast white).
+    //   - Inner ring (closer to centre): the small decan number 1–36.
     const labelG = svg.append('g').attr('class', 'astro-decanic-labels');
+    const rMid = (svgRi + svgR) / 2;
+    const rGlyph = rMid + (svgR - rMid) * 0.40;   // outer-ish
+    const rNum   = rMid - (rMid - svgRi) * 0.55;  // inner-ish
     decans.forEach(d => {
-      const midDeg = ((d.n - 1) * 10 + 5) - 180;
-      const mid = midDeg * Math.PI / 180;
-      const lx = svgcx + (svgRi + (svgR - svgRi) / 2) * Math.cos(mid);
-      const ly = svgcy + (svgRi + (svgR - svgRi) / 2) * Math.sin(mid);
-      labelG.append('text').attr('class', 'astro-decan-num')
-        .attr('x', lx).attr('y', ly)
+      const mid = d._midDeg * Math.PI / 180;
+      const gx = svgcx + rGlyph * Math.cos(mid);
+      const gy = svgcy + rGlyph * Math.sin(mid);
+      const nx = svgcx + rNum   * Math.cos(mid);
+      const ny = svgcy + rNum   * Math.sin(mid);
+      const ruler = d.western.ruler_chaldean_face;
+      const glyph = PLANET_GLYPHS[ruler] || '';
+
+      labelG.append('text').attr('class', 'astro-decan-glyph')
+        .attr('x', gx).attr('y', gy)
         .attr('text-anchor', 'middle').attr('dominant-baseline', 'middle')
-        .attr('fill', '#fff').attr('font-family', 'var(--mono)').attr('font-size', '10px')
-        .attr('opacity', 0.85)
+        .text(glyph);
+
+      labelG.append('text').attr('class', 'astro-decan-num')
+        .attr('x', nx).attr('y', ny)
+        .attr('text-anchor', 'middle').attr('dominant-baseline', 'middle')
         .text(d.n);
     });
 
@@ -183,10 +357,16 @@
       const slot = document.getElementById('ads-detail');
       if (!slot) return;
       const vaultLinks = (d.vault_node_ids || []).map(id => `<a href="#" data-node-id="${id}" class="ads-vault-link">${id}</a>`).join(' · ') || '<span class="ads-empty">— no vault anchors yet —</span>';
+      const lead = buildDecanLead(d);
+      const ruler = d.western.ruler_chaldean_face;
+      const rulerGlyph = PLANET_GLYPHS[ruler] || '';
       slot.innerHTML = `
+        <div class="ads-decan-lead">${lead}</div>
+
         <div class="ads-decan-head">
           <span class="ads-decan-n">Decan ${d.n}</span>
           <span class="ads-decan-deg">${d.western.sign} ${d.western.decan_n} · ${d.western.degrees}</span>
+          <span class="ads-decan-ruler" style="color:${PLANET_COLORS[ruler] || 'var(--text-1)'}">${rulerGlyph} ${ruler}</span>
           ${d.uncertain ? '<span class="ads-uncertain" title="' + (d.caveat || 'flagged uncertain') + '">⚠ uncertain</span>' : ''}
         </div>
 

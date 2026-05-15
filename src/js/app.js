@@ -664,13 +664,15 @@ function renderDetail() {
   const thumbCaption = curatedDep ? (curatedDep.caption || '') : (n.thumb_title || '');
   const thumbSource = curatedDep ? (curatedDep.source || '') : '';
   const thumbLicense = curatedDep ? (curatedDep.license || '') : '';
+  const _placeholderSrc = `_assets/placeholders/class-${n.type}.svg`;
   const thumbHTML = thumbSrc
-    ? `<img class="thumb" src="${thumbSrc}" alt="${n.title}" onerror="this.style.display='none'; if (this.nextElementSibling) this.nextElementSibling.style.display='none'" />
+    ? `<img class="thumb" src="${thumbSrc}" alt="${n.title}"
+         onerror="this.src='${_placeholderSrc}';this.classList.add('thumb-placeholder');this.onerror=null;var a=this.nextElementSibling;if(a&&a.classList.contains('thumb-attribution'))a.style.display='none'" />
        <div class="thumb-attribution">
          <span>${thumbCaption}${thumbSource ? ' — ' + thumbSource : ''}${thumbLicense ? ' (' + thumbLicense + ')' : ''}</span>
          ${(!curatedDep && n.thumb_page) ? `<a href="${n.thumb_page}" target="_blank">wikipedia →</a>` : ''}
        </div>`
-    : '';
+    : `<img class="thumb thumb-placeholder" src="${_placeholderSrc}" alt="${n.type}" />`;
 
   el.innerHTML = `
     ${thumbHTML}
@@ -4075,6 +4077,7 @@ VIEWS.scripture = {
 // connective transmission edges drawn between them. This is the visual mechanism that
 // realizes the "MASSIVE-win cross-tradition transmission spine" demos.
 const PRESET_CATEGORY_LABELS = {
+  investigation: 'Investigation',
   egypt: 'Egypt', hermetic: 'Hermetic', templar: 'Templar',
   gnostic: 'Gnostic', cross: 'Cross-Tradition', flood: 'Flood', astrology: 'Astrology',
   persian: 'Persian Theological Spine',
@@ -4082,6 +4085,7 @@ const PRESET_CATEGORY_LABELS = {
   persecution: 'Persecution & Martyrdom',
 };
 const PRESET_CATEGORY_ORDER = [
+  { key: 'investigation', label: '⬡ Investigation Chains — Tier-1 Documented' },
   { key: 'egypt',       label: 'Egypt — Investigation Series' },
   { key: 'lineage',     label: 'Lineage & Secret Societies' },
   { key: 'persecution', label: 'Persecution & Martyrdom' },
@@ -4109,7 +4113,7 @@ const ALCHEMY_PRESETS = [
   },
   {
     id: 'psychostasia-last-judgment-chain',
-    category: 'egypt',
+    category: 'investigation',
     name: 'Soul-Weighing → Christian Last Judgment',
     headline: 'Book of the Dead Ch. 125 (c. -1550): 42 Assessors, Anubis\'s scales, Thoth recording, Ammit the Devourer — the original courtroom of the soul. Transmitted via Coptic Egypt into Byzantine psychostasia (St. Michael with scales), Gothic cathedral Last Judgment tympana, and Lady Justice. One of the most documented Egypt→Christianity iconographic transmissions.',
     picks: [
@@ -4132,7 +4136,7 @@ const ALCHEMY_PRESETS = [
   },
   {
     id: 'divine-pharaoh-to-son-of-god',
-    category: 'egypt',
+    category: 'investigation',
     name: 'Divine Pharaoh → Son of God',
     headline: 'The royal-divinity transmission chain: Pharaoh as Son of Ra (Fifth Dynasty, c. -2494) → Akhenaten\'s monotheistic intensification → Alexander at Siwa oracle (331 BCE, "son of Ammon") → Ptolemaic divine king → Roman Divi filius → Christian "Son of God" formalized at Nicaea (325 CE). Each step documented with primary sources; Jan Assmann\'s cultural-memory thesis as interpretive framework.',
     picks: [
@@ -4204,7 +4208,7 @@ const ALCHEMY_PRESETS = [
   // ── Cross-Tradition ───────────────────────────────────────────────
   {
     id: 'merkabah-miraj-ascent-spine',
-    category: 'cross',
+    category: 'investigation',
     name: "Merkabah → Mi'raj: The Heavenly Ascent",
     headline: "The most documented cross-tradition mystical chain: Ezekiel's chariot vision (-593 BCE) → Jewish Hekhalot mysticism → Zoroastrian Arda Viraf → Muhammad's Night Journey through seven heavens (619 CE) → Ibn Arabi's allegorized Mi'raj → Dante's Paradiso. Schäfer (2009) proves the Hekhalot → Mi'raj transmission via Jewish communities in Arabia. Same structure, seven traditions, 2,000 years.",
     picks: [
@@ -4243,7 +4247,7 @@ const ALCHEMY_PRESETS = [
   },
   {
     id: 'mystical-union-henosis-chain',
-    category: 'cross',
+    category: 'investigation',
     name: 'Mystical Union: Henosis Across Traditions',
     headline: 'The cross-tradition chain of mystical union from Egyptian priestly identification with the god through Plotinus\'s henosis (Enneads VI.9), pseudo-Dionysius\'s Divine Darkness, Meister Eckhart, Sufi fana (al-Hallaj\'s "Ana\'l-Haqq"), Kabbalistic devekut, and Hindu samadhi. Same phenomenological structure documented across 5 traditions.',
     picks: [
@@ -4283,7 +4287,7 @@ const ALCHEMY_PRESETS = [
   },
   {
     id: 'hermetic-full-transmission-spine',
-    category: 'hermetic',
+    category: 'investigation',
     name: 'Hermetic Spine: Alexandria → Florence → Modern',
     headline: 'The complete 2,300-year Hermetic transmission chain: Alexandrian synthesis (Ammonius/Plotinus/Corpus Hermeticum) → Byzantine preservation → Plethon\'s 1439 Florence lectures → Ficino\'s 1463 translation → Pico/Agrippa/Bruno → Casaubon\'s 1614 rupture → Rosicrucian manifestos → Masonic ritual → Yates\'s 1964 rediscovery.',
     picks: [
@@ -7069,6 +7073,7 @@ VIEWS.astrology = {
       <button class="btn btn-mini astrology-mode" data-mode="wheel">wheel</button>
       <button class="btn btn-mini astrology-mode" data-mode="now">now</button>
       <button class="btn btn-mini astrology-mode" data-mode="decanic">decanic</button>
+      <button class="btn btn-mini astrology-mode" data-mode="pantheon">pantheon</button>
     `;
     document.querySelectorAll('.astrology-mode').forEach(btn => {
       if (btn.dataset.mode === _astrologyState.mode) btn.classList.add('active');
@@ -7080,7 +7085,7 @@ VIEWS.astrology = {
     const astroNodes = DATA.nodes.filter(n => Array.isArray(n.tags) && n.tags.some(t => /^astrology/.test(t)));
     const W = astroNodes.length;
     // Live renderers (src/js/astrology/*.js). Other modes fall through to a stub card.
-    const liveRenderers = { spine: '_astroSpine', decanic: '_astroDecanic', wheel: '_astroWheel', now: '_astroNow' };
+    const liveRenderers = { spine: '_astroSpine', decanic: '_astroDecanic', wheel: '_astroWheel', now: '_astroNow', pantheon: '_astroPantheon' };
     const rendererKey = liveRenderers[_astrologyState.mode];
     if (rendererKey) {
       pane.classList.add('astrology-pane-live');
