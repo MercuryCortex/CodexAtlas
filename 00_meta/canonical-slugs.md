@@ -1945,8 +1945,9 @@ canonical-slug
 - `wisdom-personified`
 - `world-axis`
 
-### tradition (111 nodes)
+### tradition (113 nodes)
 
+- `tradition-advaita-vedanta`
 - `tradition-african-traditional`
 - `tradition-anthroposophy`
 - `tradition-armenian-apostolic`
@@ -2031,6 +2032,7 @@ canonical-slug
 - `tradition-renaissance-hermeticism`
 - `tradition-roman-religion`
 - `tradition-rosicrucianism`
+- `tradition-samkhya-yoga`
 - `tradition-santeria-lucumi`
 - `tradition-scientology`
 - `tradition-scottish-rite-freemasonry`
@@ -2065,14 +2067,14 @@ canonical-slug
 
 | Refs | Dead target | Suggested canonical (existing) |
 |---:|---|---|
-| 4 | `tradition-essenes` | `tradition-islam` |
-| 4 | `messianic-revelation` | `messianic-secret` |
-| 4 | `messianic-genealogy` | `messianic-secret` |
-| 3 | `phase-4-007-new-testament-canon` | `phase-4-004-gospel-of-philip` |
+| 4 | `tradition-essenes` | `tradition-egyptian` |
+| 4 | `messianic-revelation` | `messianic-future-savior` |
+| 4 | `messianic-genealogy` | `messianic-future-savior` |
+| 3 | `phase-4-007-new-testament-canon` | `phase-4-005-gospel-of-mary` |
 | 3 | `phase-2-005-1-2-kings` | `phase-2-003-atharva-veda` |
 | 2 | `yam-canaanite` | `astarte-canaanite` |
-| 2 | `tradition-minoan-religion` | `tradition-etruscan-religion` |
-| 2 | `tradition-eastern-orthodoxy` | `tradition-etruscan-religion` |
-| 2 | `phase-2-004-1-2-chronicles` | `phase-2-003-atharva-veda` |
-| 2 | `phase-1-013-babylonian-theodicy` | `phase-1-017-descent-of-inanna` |
+| 2 | `tradition-minoan-religion` | `tradition-egyptian` |
+| 2 | `tradition-eastern-orthodoxy` | `tradition-sumerian-mesopotamian` |
+| 2 | `phase-2-004-1-2-chronicles` | `phase-2-007-hebrew-bible-e-source` |
+| 2 | `phase-1-013-babylonian-theodicy` | `phase-1-012-amarna-letters` |
 | 2 | `asclepius` | `asclepius-greek` |

@@ -8,10 +8,11 @@ date-end:
 region-origin: "Warring States China (especially southern Chu cultural sphere)"
 regions-spread: ["pan-Chinese", "Korea, Japan, Vietnam (via cultural transmission)", "global modern diaspora"]
 key-deities: []
-key-persons: ["[[laozi]]"]
+key-persons: ["[[laozi]]", "[[zhuangzi-person]]"]
 key-documents: ["[[phase-2-014-daodejing]]"]
-sister-traditions: ["[[tradition-confucianism]]"]
-status: "stub"
+key-themes: ["[[alchemy-as-spiritual-discipline]]", "[[soul-immortality]]", "[[ascent-of-the-soul]]"]
+sister-traditions: ["[[tradition-confucianism]]", "[[tradition-buddhism]]"]
+status: "metadata"
 refs:
   - title: "The Taoist Experience: An Anthology"
     author: "Kohn, Livia (ed.)"
@@ -51,8 +52,9 @@ Daoism (Taoism) is the Chinese tradition centered on the *dào* (道, "way") —
 - (Phase 3+: Zhuangzi, Liezi, Huainanzi, the Daozang canon.)
 
 ## Key persons
-- [[laozi]] — traditional founder.
-- (Phase 3+: Zhuangzi, Zhang Daoling, Ge Hong, Tao Hongjing, Wang Zhe.)
+- [[laozi]] — traditional founder (legendary; textual tradition ~4th–3rd c. BCE).
+- [[zhuangzi-person]] — author of the Zhuangzi (~4th c. BCE); the literary and philosophical heart of classical Daoism.
+- (Phase 3+: Zhang Daoling, Ge Hong, Tao Hongjing, Wang Zhe.)
 
 ## Defining doctrines
 - **Dao** as ineffable cosmic principle.
@@ -63,8 +65,10 @@ Daoism (Taoism) is the Chinese tradition centered on the *dào* (道, "way") —
 - (Religious Daoism: pantheon, immortality cultivation, alchemy, talismanic ritual.)
 
 ## Relations to neighbors
-- vs. [[tradition-confucianism]]: the canonical Chinese pairing. Daoist critique of Confucian ritualism and active virtue; Confucian critique of Daoist quietism. Both traditions historically interpenetrate and complement.
-- vs. [[tradition-buddhism]]: Buddhism enters China ~+1st c. CE and is initially translated via Daoist vocabulary (*geyi*, "matching concepts"). Chinese Buddhism (especially Chan/Zen) is deeply shaped by Daoist sensibility. Polemical relations also occur (Buddho-Daoist *Huahujing* debate).
+- vs. [[tradition-confucianism]]: the canonical Chinese pairing. Daoist critique of Confucian ritualism and active virtue as artificial impositions on natural spontaneity; Confucian critique of Daoist quietism as an abdication of social responsibility. Both traditions historically interpenetrate — the educated Chinese gentleman characteristically held Confucian outward, Daoist inward. [[laozi]] vs. [[confucius]] encounters are a celebrated motif.
+- vs. [[tradition-buddhism]]: Buddhism enters China ~+1st c. CE and is initially translated via Daoist vocabulary (*geyi* / "matching concepts"), with the Dao standing in for *dharma* and *nirvāṇa*. Chinese Buddhism (especially Chan/Zen) is deeply shaped by Daoist sensibility (spontaneity, no-mind, anti-verbal directness). Polemical relations also occur (the *Huahujing* claimed Laozi traveled west and became the Buddha — a fabrication designed to subordinate Buddhism to Daoism).
+- vs. Hermeticism / Western [[alchemy-as-spiritual-discipline|alchemy]]: both share a tradition of internal / spiritual alchemy — the Daoist neidan ("inner alchemy") tradition transforms inner energies (jing/qi/shen) via meditation in a way structurally analogous to the Western alchemical *opus*. These parallel transmutation metaphysics make Daoism a crucial node in the vault's cross-tradition pattern mapping.
+- vs. [[tradition-vedic-hinduism]]: indirect structural parallels between the Dao, Brahman (impersonal), and the Vedantic concept of *tao*-like *ṛta*; no direct historical contact, but frequently compared in perennialist syntheses.
 
 ## Refs
 1. Kohn, L. (ed.) (2000). *Daoism Handbook*. Brill.

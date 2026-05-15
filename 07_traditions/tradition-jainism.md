@@ -10,8 +10,9 @@ regions-spread: ["pan-Indian subcontinent (concentrated in Gujarat, Rajasthan, K
 key-deities: []
 key-persons: ["[[mahavira]]"]
 key-documents: []
-sister-traditions: ["[[tradition-buddhism]]", "[[tradition-vedic-hinduism]]"]
-status: "stub"
+key-themes: ["[[reincarnation]]", "[[dualism-spirit-matter]]", "[[soul-immortality]]", "[[priestly-purity]]"]
+sister-traditions: ["[[tradition-buddhism]]", "[[tradition-vedic-hinduism]]", "[[tradition-sikhism]]"]
+status: "metadata"
 refs:
   - title: "The Jains"
     author: "Dundas, Paul"
@@ -66,8 +67,10 @@ Jainism is the religious tradition founded — or, in tradition's own account, *
 - **Non-theism (regarding a creator)** — no supreme creator god; the universe is eternal and uncreated.
 
 ## Relations to neighbors
-- vs. [[tradition-buddhism]]: closest sister tradition, same milieu and period. Buddhist Pali canon names Mahāvīra as Nigaṇṭha Nātaputta (independent attestation). Differ on metaphysics (Jain *jīva* permanence vs. Buddhist *anātman*) and ascetic radicalism (Jainism stricter).
-- vs. [[tradition-vedic-hinduism]]: rejects Vedic authority; rejects ritual sacrifice as violent; karma framework shared with critical reinterpretation.
+- vs. [[tradition-buddhism]]: closest sister tradition — same milieu (eastern Gangetic plain, ~-5th c.), same social class of wandering renouncers (*śramaṇa*). The Buddhist Pali canon names [[mahavira]] as "Nigaṇṭha Nātaputta" (independent cross-attestation). Key metaphysical divergence: Jainism posits a permanent, distinct *jīva* (soul) that accumulates literal karmic matter; Buddhism denies any permanent self (*anātman*). Asceticism: Jainism far stricter (Digambara monks own nothing, including clothing).
+- vs. [[tradition-vedic-hinduism]]: rejects Vedic authority and śruti revelation; rejects animal sacrifice as fatally violent (*ahiṃsā* absolute). Karma and [[reincarnation|rebirth]] frameworks overlap but are reinterpreted — karma as literal subtle *matter* accreting to the soul rather than a moral accounting mechanism.
+- vs. [[tradition-sikhism]]: shared Gujarati-Rajasthani merchant milieu in the medieval period; Jain merchants were among the wealthiest patrons of Sikh *langars*. Both traditions share non-violence and egalitarian ethics at their cores.
+- vs. Greco-Roman world: Alexander's army encountered Jain monks ("gymnosophists" / "naked philosophers") in India, and several classical authors noted them. The *anekāntavāda* (non-absolutism of viewpoints) doctrine is the most sophisticated ancient multi-perspectival epistemology — structurally comparable to Academic skepticism.
 
 ## Refs
 1. Dundas, P. (2002). *The Jains*. Routledge.

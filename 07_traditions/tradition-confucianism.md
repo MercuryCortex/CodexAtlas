@@ -10,8 +10,9 @@ regions-spread: ["pan-Chinese", "Korea (state ideology of Joseon)", "Japan", "Vi
 key-deities: ["[[tian-heaven]]"]
 key-persons: ["[[confucius]]"]
 key-documents: ["[[phase-2-015-analects-of-confucius]]"]
-sister-traditions: ["[[tradition-daoism]]"]
-status: "stub"
+key-themes: ["[[priestly-purity]]", "[[heavenly-tablets]]"]
+sister-traditions: ["[[tradition-daoism]]", "[[tradition-buddhism]]"]
+status: "metadata"
 refs:
   - title: "Confucianism: A Very Short Introduction"
     author: "Gardner, Daniel K."
@@ -48,8 +49,9 @@ Confucianism is the Chinese tradition stemming from the teaching of Confucius (~
 6. **Modern (~+1900 onward)** — Attacked by reformers and revolutionaries; persecuted under Maoism; partial revival in contemporary China and global "New Confucianism".
 
 ## Core texts
-- [[phase-2-015-analects-of-confucius]] — Analects (Lunyu).
-- (Phase 3+: Mencius, Xunzi, Doctrine of the Mean, Great Learning [the Four Books]; Five Classics — Book of Songs, Book of Documents, Book of Changes, Book of Rites, Spring and Autumn Annals.)
+- [[phase-2-015-analects-of-confucius]] — Analects (*Lunyu*).
+- The Four Books (*Sìshū*, canonized by Zhu Xi ~1190): Analects, Mencius, *Great Learning* (*Dàxué*), *Doctrine of the Mean* (*Zhōngyōng*).
+- The Five Classics (*Wǔjīng*): Book of Songs (*Shījīng*), Book of Documents (*Shūjīng*), Book of Changes (*Yìjīng* / *I Ching*), Book of Rites (*Lǐjì*), Spring and Autumn Annals (*Chūnqiū*). These became the basis of the imperial examination system.
 
 ## Key persons
 - [[confucius]] — founder.
