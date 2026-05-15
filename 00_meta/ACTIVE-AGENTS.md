@@ -533,8 +533,13 @@ The things opus-foundation-1 claimed but never started are all still open:
 
 ---
 
-## sonnet-mystics-1 — content / Attar + Eckhart + apophatic-theology — started 2026-05-15
-- Owning: `farid-ud-din-attar` (UPGRADE metadata→full), `phase-5-051-attar-conference-of-birds` (EXISTS metadata — checking for gaps), `meister-eckhart` (UPGRADE stub→full), `theme-apophatic-theology` (NEW)
+## sonnet-mystics-1 — content / Attar + Eckhart + apophatic-theology — started 2026-05-15 — **FINISHED 2026-05-15**
+- Owning: `farid-ud-din-attar` (UPGRADE metadata→full), `meister-eckhart` (UPGRADE stub→full), `theme-apophatic-theology` (NEW)
 - Goal: Two of the vault's most important missing mystics: Attar closes the Sufi non-dual poetry gap; Eckhart closes the radical Christian non-dualism gap; apophatic-theology theme unifies the via-negativa convergence across all traditions
-- Status: in-flight
-- Last edit: `00_meta/ACTIVE-AGENTS.md`
+- Status: finished
+- Delivered:
+  - **`farid-ud-din-attar.md`** (metadata→full) — biography; full works list; 7-valley Conference of the Birds structure + sī murgh/Simorgh non-dual disclosure; 7 cross-tradition MASSIVE WIN convergences (Plotinus / Upanishads / Eckhart / katabasis / Quranic hoopoe / Buddhist fana parallel / Dante-seven-stages dispute). 5 refs T1/T2.
+  - **`meister-eckhart.md`** (stub→full) — biography (twice Paris Magister; posthumous condemnation); 4 condemned propositions; Neoplatonic framework (Gottheit/Grunt/Fünklein/Abgeschiedenheit); Suzuki Zen-Eckhart 5-row MASSIVE WIN table; Attar/Simorgh structural parallel; Upanishadic convergence; Beguine antecedents; posthumous condemnation as executed-divine-claimant variant. 6 refs T1/T2.
+  - **`theme-apophatic-theology.md`** (NEW, full) — 5-tradition convergence grid (Plotinus/Christian/Jewish/Islamic/Daoist-Buddhist); transmission vs. independent convergence map; convergence finding. 5 refs all T1.
+- Build: **2147 nodes · 12,738 edges · 3.0% dead-link**
+- Last edit: `00_meta/STATUS.md`

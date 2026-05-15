@@ -473,7 +473,7 @@ canonical-slug
 - `zemyna`
 - `zeus`
 
-### document (380 nodes)
+### document (382 nodes)
 
 - `document-kuntillet-ajrud-inscriptions`
 - `phase-1-001-kesh-temple-hymn`
@@ -548,6 +548,7 @@ canonical-slug
 - `phase-2-037-song-of-songs`
 - `phase-2-038-acharanga-sutra`
 - `phase-2-039-sutrakritanga`
+- `phase-2-040-yi-jing-i-ching`
 - `phase-3-001-second-third-isaiah`
 - `phase-3-002-plato-dialogues`
 - `phase-3-003-aristotle-metaphysics`
@@ -582,6 +583,7 @@ canonical-slug
 - `phase-3-032-4-ezra-ethiopic-recension`
 - `phase-3-033-book-of-giants-qumran-manichaean`
 - `phase-3-034-huainanzi`
+- `phase-3-035-bhagavad-gita`
 - `phase-4-001-gospel-of-thomas`
 - `phase-4-002-apocryphon-of-john`
 - `phase-4-003-gospel-of-truth`
@@ -1749,7 +1751,7 @@ canonical-slug
 - `wheat-grain`
 - `yin-yang`
 
-### theme (308 nodes)
+### theme (309 nodes)
 
 - `364-day-solar-calendar`
 - `adam-kadmon`
@@ -1999,6 +2001,7 @@ canonical-slug
 - `the-godhead-eckhart`
 - `theme-aaronide-priestly-continuity`
 - `theme-akhenaten-moses-monotheism-thesis`
+- `theme-apophatic-theology`
 - `theme-asha-druj-cosmic-opposition`
 - `theme-axial-age`
 - `theme-baal-set-syncretism`
@@ -2188,22 +2191,23 @@ canonical-slug
 
 | Refs | Dead target | Suggested canonical (existing) |
 |---:|---|---|
-| 5 | `phase-1-013-babylonian-theodicy` | `phase-1-011-great-hymn-to-aten` |
-| 4 | `tradition-minoan-religion` | `tradition-ordo-novi-templi` |
-| 4 | `tradition-eastern-orthodoxy` | `tradition-ordo-novi-templi` |
-| 4 | `tradition-early-christianity` | `tradition-ordo-novi-templi` |
-| 3 | `tradition-second-temple-judaism` | `tradition-ordo-novi-templi` |
-| 3 | `tradition-medieval-christianity` | `tradition-ordo-novi-templi` |
-| 3 | `phase-4-007-new-testament-canon` | `phase-4-008-trimorphic-protennoia` |
+| 5 | `phase-1-013-babylonian-theodicy` | `phase-1-019-enuma-anu-enlil` |
+| 4 | `tradition-minoan-religion` | `tradition-samkhya-yoga` |
+| 4 | `tradition-eastern-orthodoxy` | `tradition-samkhya-yoga` |
+| 4 | `tradition-early-christianity` | `tradition-samkhya-yoga` |
+| 3 | `tradition-second-temple-judaism` | `tradition-spiritualism` |
+| 3 | `tradition-medieval-christianity` | `tradition-greco-buddhism` |
+| 3 | `tradition-hinduism` | `tradition-bon` |
+| 3 | `phase-4-007-new-testament-canon` | `phase-4-009-pistis-sophia` |
 | 3 | `phase-2-005-1-2-kings` | `phase-2-003-atharva-veda` |
 | 3 | `divine-kingship-solar` | `divine-kingship` |
 | 2 | `yam-canaanite` | `astarte-canaanite` |
-| 2 | `tradition-judaism-sephardic` | `tradition-ordo-novi-templi` |
-| 2 | `tradition-islam-shia` | `tradition-ordo-novi-templi` |
-| 2 | `tradition-islam-mughal` | `tradition-ordo-novi-templi` |
-| 2 | `tradition-hussitism` | `tradition-ordo-novi-templi` |
-| 2 | `tradition-christianity-catholic` | `tradition-ordo-novi-templi` |
-| 2 | `tradition-cheondogyo` | `tradition-ordo-novi-templi` |
-| 2 | `tradition-bahai` | `tradition-buddhism` |
+| 2 | `tradition-judaism-sephardic` | `tradition-samkhya-yoga` |
+| 2 | `tradition-islam-shia` | `tradition-bon` |
+| 2 | `tradition-islam-mughal` | `tradition-samkhya-yoga` |
+| 2 | `tradition-hussitism` | `tradition-bon` |
+| 2 | `tradition-christianity-catholic` | `tradition-greco-buddhism` |
+| 2 | `tradition-cheondogyo` | `tradition-bon` |
+| 2 | `tradition-bahai` | `tradition-bon` |
 | 2 | `guru-arjan-dev-ji` | `guru-arjan` |
 | 2 | `asclepius` | `asclepius-greek` |
