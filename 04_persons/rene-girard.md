@@ -84,9 +84,20 @@ Girard's theory has had substantial interdisciplinary impact. Walter Burkert (*H
 
 Major critiques: (a) **Over-totalizing** — Girard's claim that *all* culture originates in founding violence is unfalsifiable and omits non-sacrificial traditions (Jain, Buddhist, Quaker) that are explicitly anti-sacrifice from the outset; (b) **Christocentric teleology** — the theory's arc culminates in Christianity as uniquely demythologizing, which critics read as question-begging; (c) **Historical evidence** — the founding murder is a hypothetical reconstruction, not an archaeological finding; (d) **Ivan Strenski** (*Theology and the First Theory of Sacrifice*, 2003) argues Girard confuses metaphorical with literal sacrifice and that his reading of Hebrew sacrifice as scapegoating misreads the texts.
 
+## MASSIVE-wins: cross-tradition convergences
+
+**Girard's scapegoat mechanism ↔ the executed-divine-claimant chain:** Girard argues the scapegoat is structurally *constitutive* of community — the community's violence against a single victim creates temporary unity. The [[executed-divine-claimant]] theme in this vault (Socrates, Jesus, al-Hallaj, Suhrawardi) is Girard's thesis played out across independent traditions: in each case, a figure who makes a transgressive claim to divine proximity is executed by the community's consensus, then retrospectively sacralized. al-Hallaj's *Anā 'l-Ḥaqq* ("I am the Truth"), Socrates's *daimōn*, and Jesus's "I and the Father are one" each trigger the same structural response: unanimous condemnation followed by sanctification of the victim.
+
+**Girard on the Gospels as scapegoat revelation:** Girard's most distinctive claim is that the Gospel Passion narrative *exposes* the scapegoat mechanism rather than concealing it as myth does. Every founding myth *justifies* the collective violence — Romulus was right, Remus broke the boundary; Oedipus *was* guilty of pollution. The Gospels insist on the innocent victim's innocence (Pilate three times: "I find no guilt in this man") and tell the story from the victim's perspective. This makes Christianity, in Girard's reading, uniquely **anti-sacrificial** — the tradition that de-mystifies what every other tradition's sacrifice conceals. Note: this conclusion is also the most contested aspect of Girard's project, with critics (including [[walter-burkert]] and Ivan Strenski) questioning whether it constitutes anthropological argument or Christian apologetics dressed in structural terms.
+
+**Girard ↔ Walter Burkert (*Homo Necans*, 1972): independent convergence:** Burkert's analysis of Greek sacrifice and Greek tragedy arrives at structurally identical conclusions — sacrificial violence as community-constituting, the pharmakos as the scapegoat mechanism's clearest institutional form — from a completely different methodological angle (classical philology + ethology of hunter-gatherer killing anxiety). Both *Violence and the Sacred* and *Homo Necans* appeared in their original languages in 1972; neither initially knew the other's work. Two scholars, two disciplines, same structural discovery — a cross-methodological MASSIVE-win that Girard himself regarded as the strongest external confirmation of his theory. They later co-authored a discussion in *Violent Origins* (ed. Hamerton-Kelly, Stanford UP, 1987).
+
+**Girard's mimetic desire ↔ Buddhist *taṇhā* (craving):** Both Girard's mimetic desire theory and the Buddha's Second Noble Truth identify **imitative/excessive craving** as the root mechanism that drives conflict and suffering. Girard: mimetic desire (we desire what others desire) → rivalry → mimetic crisis → scapegoating → violence. Buddhism: *taṇhā* (craving, thirst) → *upādāna* (clinging) → *bhava* (becoming) → *dukkha* (suffering, conflict). Buddhism provides a **contemplative solution** (the Noble Eightfold Path leading to cessation of craving); Girard provides a **social-structural analysis** (scapegoating as the violent pseudo-resolution that temporarily ends the crisis without curing it). Different registers — one therapeutic, one anthropological — same root diagnosis: imitative/excessive desire is the generative mechanism of human suffering and social breakdown. See [[four-noble-truths]], [[tradition-buddhism]].
+
 ## Key wikilinks in the vault
 
 - [[scapegoat-mechanism]] — the central theoretical construct; Greek pharmakos + Levitical scapegoat + Romulus/Remus + Dionysus sparagmos + Christ crucifixion unified here
+- [[executed-divine-claimant]] — the vault's most concrete instantiation of the scapegoat-pattern across traditions
 - [[pharmakos]] — the Greek ritual scapegoat, Girard's primary anthropological case
 - [[romulus]] — Romulus kills Remus as founding violence; Girard's Cain/Abel parallel
 - [[divine-twins]] — fratricidal inversion of the twin pattern; Cain/Abel, Romulus/Remus
@@ -94,3 +105,6 @@ Major critiques: (a) **Over-totalizing** — Girard's claim that *all* culture o
 - [[jesus-of-nazareth]] — the Passion narrative as the site of the mechanism's exposure
 - [[jesus-christ-deity]] — the theological framing of Christ-as-innocent-victim
 - [[azazel]] — the Levitical scapegoat recipient; Yom Kippur mechanism
+- [[al-hallaj]] — the Islamic executed-divine-claimant instance; *Anā 'l-Ḥaqq* as scapegoat trigger
+- [[four-noble-truths]] — Buddhist diagnosis of *taṇhā* as root of conflict; parallel to mimetic desire
+- [[tradition-judaism]] — Yom Kippur *azazel* goat (Leviticus 16) as canonical textual instance

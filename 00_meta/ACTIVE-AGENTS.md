@@ -22,6 +22,7 @@ Format:
 
 | Handle | Scope tag | Owns (high level) | Started | Status |
 |---|---|---|---|---|
+| `sonnet-james-girard-1` | content / William James + Girard/scapegoat upgrades | `william-james` (NEW), `phase-7-041-varieties-of-religious-experience` (NEW), `rene-girard` (upgrade), `scapegoat-mechanism` (upgrade) | 2026-05-15 | **FINISHED** |
 | `sonnet-3rd-century-1` | content / 3rd-Century Collision Zone node + Investigation preset | `third-century-collision-zone` (NEW theme) + Investigation preset `third-century-collision` | 2026-05-15 | **FINISHED** |
 | `sonnet-korean-1` | content / Korean religious wedge | `tradition-donghak` (NEW), `event-donghak-peasant-revolution-1894` (NEW), `choe-je-u` (NEW), `tangun` (upgrade) | 2026-05-15 | **in-flight** |
 | `sonnet-hermetic-renaissance-1` | content / Hermetic Renaissance spine | `gemistos-plethon` (NEW), `event-council-of-florence-1439` (NEW), `prisca-theologia` (upgrade), `perennial-philosophy` (upgrade), `hermetic-transmission-chain` (NEW theme) | 2026-05-15 | **FINISHED** |

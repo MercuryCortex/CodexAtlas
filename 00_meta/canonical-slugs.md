@@ -17,7 +17,7 @@ canonical-slug
 ## Currently resolved slugs (auto-seeded — every existing file)
 
 
-### deity (448 nodes)
+### deity (449 nodes)
 
 - `abathur`
 - `adamastor`
@@ -432,6 +432,7 @@ canonical-slug
 - `ukko`
 - `uranus-greek`
 - `uriel-archangel`
+- `urizen`
 - `usha`
 - `utu-shamash`
 - `vainamoinen`
@@ -468,7 +469,7 @@ canonical-slug
 - `zemyna`
 - `zeus`
 
-### document (373 nodes)
+### document (374 nodes)
 
 - `document-kuntillet-ajrud-inscriptions`
 - `phase-1-001-kesh-temple-hymn`
@@ -823,6 +824,7 @@ canonical-slug
 - `phase-7-038-guenon-symbols-sacred-science`
 - `phase-7-039-gandra-da-face-oculta-2009`
 - `phase-7-040-walatta-petros-hagiography`
+- `phase-7-041-varieties-of-religious-experience`
 - `phase-8-001-popol-vuh`
 - `phase-8-002-codex-borgia`
 - `phase-8-003-dresden-codex-maya`
@@ -844,7 +846,7 @@ canonical-slug
 - `phase-8-019-kojiki`
 - `phase-8-020-nihon-shoki`
 
-### event (162 nodes)
+### event (163 nodes)
 
 - `bent-pyramid-sneferu-dahshur`
 - `el-castillo-chichen-itza`
@@ -905,6 +907,7 @@ canonical-slug
 - `event-destruction-of-serapeum-391`
 - `event-diocletian-great-persecution-303`
 - `event-discovery-of-thera-akrotiri-1967`
+- `event-donghak-peasant-revolution-1894`
 - `event-ebla-tablets-1974-1976`
 - `event-edict-of-milan-313`
 - `event-edict-of-thessalonica-380`
@@ -1009,7 +1012,7 @@ canonical-slug
 - `subterranean-chamber-great-pyramid`
 - `temple-of-inscriptions-palenque`
 
-### person (632 nodes)
+### person (635 nodes)
 
 - `aaron`
 - `abba-garima`
@@ -1125,6 +1128,7 @@ canonical-slug
 - `charles-parham`
 - `charles-taze-russell`
 - `chevalier-ramsay`
+- `choe-je-u`
 - `chogyam-trungpa`
 - `christian-rosenkreutz`
 - `chrysippus`
@@ -1621,6 +1625,8 @@ canonical-slug
 - `vasugupta`
 - `vidyaranya`
 - `wendy-doniger`
+- `william-blake`
+- `william-james`
 - `william-robertson-smith`
 - `william-seymour`
 - `william-sinclair-rosslyn`
@@ -1720,7 +1726,7 @@ canonical-slug
 - `wheat-grain`
 - `yin-yang`
 
-### theme (305 nodes)
+### theme (306 nodes)
 
 - `364-day-solar-calendar`
 - `adam-kadmon`
@@ -1844,6 +1850,7 @@ canonical-slug
 - `hermetic-cosmogony`
 - `hermetic-piety`
 - `hermetic-rebirth`
+- `hermetic-transmission-chain`
 - `hidden-god`
 - `hierophany`
 - `holy-spirit-empowered-witness`
@@ -2028,7 +2035,7 @@ canonical-slug
 - `world-parent-cosmogony`
 - `zeus-pantokrator-transmission`
 
-### tradition (117 nodes)
+### tradition (118 nodes)
 
 - `tradition-advaita-vedanta`
 - `tradition-african-traditional`
@@ -2054,6 +2061,7 @@ canonical-slug
 - `tradition-cybele-attis-mysteries`
 - `tradition-daoism`
 - `tradition-dionysian-mysteries`
+- `tradition-donghak`
 - `tradition-druze`
 - `tradition-eglise-johannite`
 - `tradition-egyptian`
@@ -2155,14 +2163,14 @@ canonical-slug
 | Refs | Dead target | Suggested canonical (existing) |
 |---:|---|---|
 | 5 | `phase-1-013-babylonian-theodicy` | `phase-1-015-sumerian-king-list` |
-| 4 | `tradition-minoan-religion` | `tradition-catharism` |
-| 4 | `tradition-eastern-orthodoxy` | `tradition-catharism` |
-| 4 | `tradition-early-christianity` | `tradition-eglise-johannite` |
-| 3 | `tradition-medieval-christianity` | `tradition-eglise-johannite` |
-| 3 | `phase-4-007-new-testament-canon` | `phase-4-006-hypostasis-of-the-archons` |
+| 4 | `tradition-minoan-religion` | `tradition-theosophy` |
+| 4 | `tradition-eastern-orthodoxy` | `tradition-theosophy` |
+| 4 | `tradition-early-christianity` | `tradition-hasmonean-dynasty` |
+| 3 | `tradition-medieval-christianity` | `tradition-hasmonean-dynasty` |
+| 3 | `phase-4-007-new-testament-canon` | `phase-4-001-gospel-of-thomas` |
 | 3 | `phase-2-005-1-2-kings` | `phase-2-003-atharva-veda` |
 | 3 | `divine-kingship-solar` | `divine-kingship` |
 | 2 | `yam-canaanite` | `astarte-canaanite` |
-| 2 | `tradition-lingayat` | `tradition-catharism` |
-| 2 | `phase-2-004-1-2-chronicles` | `phase-2-006-brahmanas-aranyakas` |
+| 2 | `tradition-lingayat` | `tradition-theosophy` |
+| 2 | `tradition-cheondogyo` | `tradition-theosophy` |
 | 2 | `asclepius` | `asclepius-greek` |

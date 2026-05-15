@@ -170,14 +170,17 @@ Use Girard's framework as a **cross-tradition investigative lens**, not a total 
 
 ## Wikilinks
 
-- [[rene-girard]] — theorist; biography + full works
+- [[rene-girard]] — theorist; biography, full works, and MASSIVE-wins cross-tradition convergences
+- [[executed-divine-claimant]] — the vault's most concrete multi-tradition instantiation of the pattern: Socrates / Jesus / al-Hallaj / Suhrawardi; each execution follows the same structural logic — transgressive claim to divine proximity → unanimous community condemnation → posthumous sacralization
 - [[pharmakos]] — the Greek institutional case (Thargelia, Athenian Thargelia)
 - [[romulus]] — Romulus/Remus as founding-violence instance; syncretic-edge to Cain/Abel already in vault
 - [[divine-twins]] — the fratricidal-inversion structural pattern
 - [[azazel]] — the Levitical scapegoat's supernatural recipient
+- [[tradition-judaism]] — Yom Kippur *azazel* goat (Leviticus 16:8–26) is the canonical textual instance of the mechanism: the High Priest Aaron confesses all Israel's sins onto a live goat, which is driven into the wilderness "for Azazel"; the English word "scapegoat" was coined by William Tyndale (1530) as a translation of the Hebrew *'ez 'ozel*
 - [[dionysus]] — [[dionysus-mystery]] — [[zagreus]] — sparagmos / Orphic dismemberment cluster
 - [[sacrifice-as-cosmic-renewal]] — adjacent sacrifice-theory cluster; disputes Girard's universalism
 - [[totemism]] — already links here; Durkheim vs. Girard on the origin of the sacred
 - [[jesus-of-nazareth]] — the historical figure whose execution Girard reads as the mechanism's exposure
 - [[jesus-christ-deity]] — the theological framing of the innocent victim
-- [[executed-divine-claimant]] — adjacent investigation theme: Socrates/Jesus/al-Hallaj/Suhrawardi martyrdom pattern
+- [[al-hallaj]] — Sufi executed-divine-claimant; *Anā 'l-Ḥaqq* ("I am the Truth") triggers the same scapegoat-structural response as the Passion narrative
+- [[four-noble-truths]] — Buddhist *taṇhā* (craving) as root of conflict: parallel diagnostic to mimetic desire, contemplative solution vs. Girard's social-structural analysis
