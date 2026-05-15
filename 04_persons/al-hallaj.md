@@ -11,7 +11,7 @@ date-died: 922
 historicity: "documented"
 texts-authored: ["*Kitāb al-Ṭawāsīn* (Book of the Tāʾ-Sīn-s, ecstatic prose-poetic treatise)", "*Dīwān* (poetry collection — much of it disputed authentication)"]
 mentioned-in: ["[[phase-5-015-al-ghazali-ihya]]", "[[phase-5-021-ibn-arabi-fusus-al-hikam]]", "[[phase-5-025-rumi-masnavi]] (cited repeatedly)"]
-status: "stub"
+status: "metadata"
 refs:
   - title: "The Passion of al-Hallaj (4 vols)"
     author: "Massignon, Louis"
@@ -42,6 +42,30 @@ Substantially documented through contemporary Abbasid court records (al-Ṭabar�
 
 ## Role in the tradition
 The paradigmatic Sufi martyr. The *Anā al-Ḥaqq* utterance is the locus classicus of ecstatic-utterance (*shaṭḥ*) — Sufi-orthodox reception understands it as God speaking through the annihilated self; Sunni orthodoxy generally regards it as heretical. Al-Ghazālī defended al-Ḥallāj cautiously; Ibn ʿArabī integrated his theology fully; Rūmī cites him repeatedly. Modern Iranian and Pakistani Sufi reception treats him as the foundational martyr of ecstatic Sufism.
+
+## The Jesus Structural Parallel — ALERT
+Massignon devoted 50 years to naming this explicitly in the title of his study: **"The Passion of al-Hallaj."** The parallel is structurally precise:
+
+| | Jesus (~30 CE) | Al-Hallaj (922 CE) |
+|---|---|---|
+| **Claim** | Divine identity ("I and the Father are one," Jn 10:30) | "Ana al-Haqq" — "I am the Truth/God" |
+| **Charged** | Blasphemy + sedition | Blasphemy |
+| **Tried by** | Jewish establishment + Roman governor | Islamic establishment + Abbasid court |
+| **Execution** | Crucifixion | Crucifixion + beheading + burning |
+| **Last words** | "Father, forgive them" | "Kill me — in my death is my life" |
+| **Post-death** | Resurrection claim; founds Christianity | No resurrection; founds Sufi martyrdom mysticism |
+
+The parallel is **not a claim of historical borrowing** — it is a structural isomorphism: the same logic (divine-identity claim → religious establishment trial → execution → founding martyrdom) operating independently 900 years apart.
+
+## Connections
+- → [[event-execution-of-al-hallaj-922]] — *his-execution*: the full execution sequence and parallel analysis
+- → [[event-crucifixion-of-jesus-c30ce]] — *structural-parallel*: the vault's most precisely calibrated cross-tradition isomorphism
+- → [[tradition-sufism]] — *founding-martyrdom-figure*: Sufi tradition's supreme martyr
+- → [[theme-dying-founder-paradigm]] — *instance*: executed mystic whose death founds the mystical tradition
+- → [[theme-persecution-as-legitimation]] — *instance*: execution amplifies rather than silences Sufism
+- → [[martyrdom-theology]] — *Islamic-Sufi-instance*
+- → [[ibn-arabi]] — *later-reception*: Ibn Arabi's mystical metaphysics inherits the Hallajian framework
+- → [[rumi]] — *later-reception*: cites al-Hallaj dozens of times in the Masnavi
 
 ## Refs
 1. Massignon, L. (1982). *The Passion of al-Hallaj*, 4 vols. Princeton.

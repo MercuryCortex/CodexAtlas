@@ -6,7 +6,7 @@ aka: ["theology of martyrdom", "noble death", "witness-by-suffering", "shahāda 
 category: "soteriological"
 appearances: ["[[phase-3-019-4-maccabees]]", "[[phase-3-015-pauline-epistles]]", "[[phase-3-016-gospel-of-mark]]", "[[phase-4-023-irenaeus-against-heresies]]", "[[phase-4-024-tertullian-apology]]", "[[phase-4-034-quran]]", "[[phase-4-063-ignatius-letters]]", "[[phase-4-066-polycarp-philippians]]", "[[phase-4-067-martyrdom-of-polycarp]]"]
 deity-instances: []
-status: "stub"
+status: "metadata"
 refs:
   - title: "Martyrdom and Rome"
     author: "Bowersock, G.W."
@@ -26,7 +26,7 @@ refs:
     publisher: "HarperOne"
     type: "monograph"
     tier: 2
-tags: [theme, martyrdom, christian, jewish, islamic, shahada, persecution]
+tags: [theme, martyrdom, christian, jewish, islamic, shahada, persecution, sikhism, bahai, sufism, cross-tradition, girard]
 ---
 
 # Martyrdom Theology
@@ -46,6 +46,24 @@ The theological category that interprets the violent death of an individual for 
 - **Bowersock's argument.** Bowersock 1995 controversially argues Christian martyrdom-theology was a distinctively *Greco-Roman* phenomenon emerging in confrontation with the Roman urban courtroom-spectacle, not a primarily Jewish-derived development; the Maccabean strand is one tributary but the genre is Hellenistic-Christian in form. Critics (van Henten, Boyarin) emphasize Jewish continuity.
 - **Moss's revisionism.** Moss 2013 argues many early Christian persecution-narratives are 4th-century-and-later constructions; sustained, empire-wide Christian persecution is itself a partial myth. Conservative Christian responses defend the historical reality of specific persecution episodes (Diocletianic etc.) while granting that *systemic* persecution is exaggerated.
 - **Comparative continuity into modernity.** From early-modern Sikh and Anabaptist martyrologies, through 19th-c. missionary-martyr narratives, to 20th-c. political-religious "martyrdom" (Bonhoeffer, Romero, Šukla, *istishhād* in jihadism, Tibetan self-immolation), martyrology remains a live theological-political category. Whether suicide-bombing fits within or breaks the classical martyrdom-theology framework is intensely debated within Islamic theology and outside it.
+
+## Sikh and Bahá'í Extensions
+The martyrdom-theology framework extends into modernity in two traditions with unusually concentrated founding-persecution sequences:
+
+- **Sikh martyrdom**: The two martyred Gurus — [[event-death-of-guru-arjan-1606|Guru Arjan Dev Ji]] (tortured by Jahangir, 1606) and [[event-death-of-guru-tegh-bahadur-1675|Guru Tegh Bahadur]] (beheaded by Aurangzeb for defending Hindu religious freedom, 1675) — are the paradigmatic *shahids* of the Sikh tradition. Their martyrdoms are not peripheral; they transform the tradition's fundamental character from pacifist bhakti movement to the Khalsa warrior community.
+
+- **Bahá'í martyrdom**: [[event-bab-execution-1850|The Bab's execution]] (1850) is the hinge of Bahá'í history — a founding martyrdom that directly enables Bahá'u'lláh's emergence. The ~20,000 Bábís killed in the founding persecution constitute the most intense per-capita founding-persecution in modern religious history. Bahá'u'lláh composed his foundational texts in prison — making the tradition's scriptures literally products of the persecution that martyrdom-theology narrates.
+
+## Connections
+- → [[event-crucifixion-of-jesus-c30ce]] — *founding-event*: Jesus as the paradigmatic martyr whose death the theology explicates
+- → [[event-stoning-of-stephen-c35ce]] — *first-instance*: the first martyr-death generates the *martys* semantic shift from "witness" to "dying witness"
+- → [[event-execution-of-al-hallaj-922]] — *Islamic-Sufi-instance*: al-Hallaj as the supreme martyr of divine love; Massignon's "Passion of al-Hallaj"
+- → [[event-death-of-guru-arjan-1606]] · [[event-death-of-guru-tegh-bahadur-1675]] — *Sikh-instances*: the martyred Gurus who transform Sikhism
+- → [[event-bab-execution-1850]] — *Bahá'í-founding-instance*
+- → [[theme-persecution-as-legitimation]] — *structural-companion*: martyrdom-theology is the theological framework that makes persecution generative
+- → [[theme-dying-founder-paradigm]] — *founding-theology*: the theology organizing itself around the executed founder's death
+- → [[scapegoat-mechanism]] — *theoretical-framework*: Girard's account of why executed victims generate traditions
+- → [[rene-girard]] — *theorist*
 
 ## Refs
 1. Bowersock, *Martyrdom and Rome*, 1995.

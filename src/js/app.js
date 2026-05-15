@@ -556,7 +556,7 @@ function setView(name) {
   }
   document.getElementById('view-controls').innerHTML = '';
   legend.style('display', 'none').html('');
-  document.querySelectorAll('.list-pane,.about-pane,.alch-toolbox,.alch-palette,.tl-zoom-presets,.alch-board-root,.alch-menu').forEach(el => el.remove());
+  document.querySelectorAll('.list-pane,.about-pane,.alch-toolbox,.alch-palette,.tl-zoom-presets,.alch-board-root,.alch-menu,.astrology-pane').forEach(el => el.remove());
   hideTooltip();
   // Map thumbnail only on geo-relevant views; hide elsewhere.
   // Atlas view uses MapLibre (no SVG map-thumb); zoom meter shown separately.
@@ -1289,6 +1289,7 @@ VIEWS.pantheon = {
     // FORCE SIMULATION — strong positional anchor + hard wedge clamp keeps families separated.
     const sim = d3.forceSimulation(deities)
       .alphaDecay(0.05)
+      .alphaMin(0.015)
       .force('link', d3.forceLink(links).id(d => d.id).distance(95).strength(0.02))
       .force('charge', d3.forceManyBody().strength(-22).distanceMax(140))
       .force('x', d3.forceX(d => d._ax).strength(0.55))
@@ -1780,6 +1781,7 @@ VIEWS.documents = {
 
     const sim = d3.forceSimulation(docs)
       .alphaDecay(0.06)
+      .alphaMin(0.015)
       .force('charge', d3.forceManyBody().strength(-14).distanceMax(80))
       .force('x', d3.forceX(d => d._ax).strength(0.55))
       .force('y', d3.forceY(d => d._ay).strength(0.55))
@@ -3800,6 +3802,7 @@ VIEWS.scripture = {
     // would visually crowd. Strong anchor pull keeps entities at their cell.
     const sim = d3.forceSimulation(allInstances)
       .alphaDecay(0.06)
+      .alphaMin(0.015)
       .force('x', d3.forceX(d => d.anchorX).strength(0.55))
       .force('y', d3.forceY(d => d.anchorY).strength(0.55))
       .force('charge', d3.forceManyBody().strength(-2).distanceMax(40))
@@ -4059,16 +4062,20 @@ const PRESET_CATEGORY_LABELS = {
   egypt: 'Egypt', hermetic: 'Hermetic', templar: 'Templar',
   gnostic: 'Gnostic', cross: 'Cross-Tradition', flood: 'Flood', astrology: 'Astrology',
   persian: 'Persian Theological Spine',
+  lineage: 'Lineage & Secret Societies',
+  persecution: 'Persecution & Martyrdom',
 };
 const PRESET_CATEGORY_ORDER = [
-  { key: 'egypt',    label: 'Egypt — Investigation Series' },
-  { key: 'persian',  label: 'Persian Theological Spine' },
-  { key: 'cross',    label: 'Cross-Tradition' },
-  { key: 'hermetic', label: 'Hermetic & Gnostic' },
-  { key: 'gnostic',  label: 'Gnostic' },
-  { key: 'templar',  label: 'Templar & Portuguese' },
-  { key: 'astrology',label: 'Astrology' },
-  { key: 'flood',    label: 'Flood Narratives' },
+  { key: 'egypt',       label: 'Egypt — Investigation Series' },
+  { key: 'lineage',     label: 'Lineage & Secret Societies' },
+  { key: 'persecution', label: 'Persecution & Martyrdom' },
+  { key: 'persian',     label: 'Persian Theological Spine' },
+  { key: 'cross',       label: 'Cross-Tradition' },
+  { key: 'hermetic',    label: 'Hermetic & Gnostic' },
+  { key: 'gnostic',     label: 'Gnostic' },
+  { key: 'templar',     label: 'Templar & Portuguese' },
+  { key: 'astrology',   label: 'Astrology' },
+  { key: 'flood',       label: 'Flood Narratives' },
 ];
 const ALCHEMY_PRESETS = [
   // ── Egypt — Investigation Series ──────────────────────────────────
@@ -4440,6 +4447,108 @@ const ALCHEMY_PRESETS = [
       'nestorian-stele',
     ],
   },
+  // ── Lineage & Secret Societies ───────────────────────────────────────
+  {
+    id: 'solomonic-five-traditions',
+    category: 'lineage',
+    name: 'Solomon → Five Living Traditions',
+    headline: 'One historical figure — Solomon ben David (~970–930 BCE) — seeds five completely independent living traditions simultaneously: Ethiopian Solomonic dynasty and Rastafari (Ark of the Covenant in Axum); Hiram Abiff and Freemasonry (the third-degree murder at the Temple); Islamic Sulayman (prophet with mastery over jinn and wind); the Key of Solomon grimoire lineage (Western ritual magic); and Wisdom Christology (Christ as the new Solomon). The vault\'s highest cross-tradition multiplier for a single person.',
+    picks: [
+      'solomon-king', 'zerubbabel', 'makeda-queen-of-sheba', 'menelik-i-legendary',
+      'solomonic-genealogy', 'tradition-rastafari', 'tradition-freemasonry',
+      'tradition-scottish-rite-freemasonry', 'aleister-crowley', 'john-dee',
+      'theme-solomonic-transmission-spine',
+    ],
+  },
+  {
+    id: 'zadokite-priestly-chain',
+    category: 'lineage',
+    name: 'Zadokite Priestly Chain — 3,200 Years',
+    headline: 'The Aaronide-Zadokite priestly chain runs from Aaron (13th c. BCE) → Zadok (Solomon\'s high priest, ~970 BCE) → 818-year Zadokite monopoly → Onias III (last legitimate Zadokite, deposed 175 BCE) → Onias IV (Temple of Leontopolis, Egypt, 220 years) → Dead Sea Scrolls community (Zadokite self-identification) → modern Cohanim Y-chromosome genetics (Cohen Modal Haplotype). The only major religious lineage claim in the vault with genetic corroboration.',
+    picks: [
+      'zadok-priest', 'solomon-king', 'onias-iii', 'onias-iv',
+      'event-temple-leontopolis-foundation-c150bce', 'tradition-hasmonean-dynasty',
+      'antiochus-iv-epiphanes', 'herod-the-great',
+      'event-destruction-of-second-temple-70', 'theme-aaronide-priestly-continuity',
+    ],
+  },
+  {
+    id: 'sinclair-ramsay-scottish-rite',
+    category: 'lineage',
+    name: 'Sinclair → Ramsay → Scottish Rite',
+    headline: 'William Sinclair builds Rosslyn Chapel (1446–1484) with Apprentice Pillar legend structurally identical to Hiram Abiff\'s murder, 110 Green Man carvings, and Templar cross iconography. Chevalier Ramsay\'s 1737 Oration invents the Crusader-knight genealogy for Freemasonry in Jacobite-coded Paris. The 33-degree Scottish Rite system encodes the Stuart restoration cause in its highest degrees. "Scottish" Freemasonry is largely a French Jacobite prestige-fiction.',
+    picks: [
+      'william-sinclair-rosslyn', 'event-rosslyn-chapel-construction-1446',
+      'chevalier-ramsay', 'event-ramsay-oration-1737',
+      'tradition-knights-templar', 'tradition-scottish-rite-freemasonry',
+      'tradition-freemasonry', 'theme-sacred-bloodline-claim',
+    ],
+  },
+  {
+    id: 'prague-occult-court',
+    category: 'lineage',
+    name: 'Rudolf II\'s Prague — Three Occult Traditions Collide',
+    headline: 'Holy Roman Emperor Rudolf II moves his court to Prague (~1583) and simultaneously attracts Dee and Kelley (Enochian angel-communication), the Maharal (Golem/Practical Kabbalah), and Tycho Brahe and Kepler (empirical astronomy that would become Newton\'s physics). Three traditions operating in the same city at the same time — none in documented dialogue with each other. The Rosicrucian manifestos appear immediately after Rudolf\'s death.',
+    picks: [
+      'rudolf-ii-habsburg', 'event-prague-occult-court-1576-1612',
+      'john-dee', 'edward-kelley', 'rabbi-judah-loew',
+      'tycho-brahe', 'tradition-rosicrucianism',
+      'giordano-bruno', 'tradition-hermeticism',
+    ],
+  },
+  {
+    id: 'sacred-bloodline-cross-tradition',
+    category: 'lineage',
+    name: 'Sacred Bloodline — Cross-Tradition Comparative',
+    headline: 'The claim that sacred or divine authority transmits through biological descent appears in every major civilization: Sumerian King List, Egyptian pharaonic divinity, Davidic covenant, Aaronide priesthood, Shia Imamate (Ali\'s bloodline), Ismaili living Imam, Solomonic Ethiopian dynasty, the Merovingian Holy Blood myth (documented modern fabrication by Pierre Plantard). The structural logic is identical; the legitimacy claims collapse at different points.',
+    picks: [
+      'solomon-king', 'zadok-priest', 'zerubbabel', 'tradition-hasmonean-dynasty',
+      'divine-kingship', 'tradition-ismailism',
+      'theme-sacred-bloodline-claim', 'theme-aaronide-priestly-continuity',
+      'solomonic-genealogy',
+    ],
+  },
+  // ── Persecution & Martyrdom ───────────────────────────────────────────
+  {
+    id: 'persecution-as-legitimation-cross-tradition',
+    category: 'persecution',
+    name: 'Persecution → Legitimation — The Cross-Tradition Pattern',
+    headline: 'The most consistent structural pattern in the vault across all world religions: violent persecution of a religious minority systematically strengthens rather than eliminates it. Judaism (6 persecution events, 6 creative outputs — Babylonian exile → Talmud; Spanish expulsion → Safed Kabbalistic renaissance); Christianity (Roman persecution → faster growth; Tertullian: "the blood of martyrs is the seed of the church"); Islam (Meccan persecution → Hijra → Conquest); Sikhism (Mughal executions → Khalsa); Bahá\'í (Bab execution → global faith). No major world religion achieved global reach without a constitutive persecution event.',
+    picks: [
+      'theme-persecution-as-legitimation', 'theme-dying-founder-paradigm',
+      'event-crucifixion-of-jesus-c30ce', 'event-execution-of-al-hallaj-922',
+      'event-stoning-of-stephen-c35ce',
+      'event-death-of-guru-arjan-1606', 'event-death-of-guru-tegh-bahadur-1675',
+      'event-bab-execution-1850', 'event-destruction-of-nalanda-1193',
+      'martyrdom-theology', 'rene-girard',
+    ],
+  },
+  {
+    id: 'crucifixion-hallaj-parallel',
+    category: 'persecution',
+    name: 'Crucifixion / Al-Hallaj — Precision Structural Parallel',
+    headline: 'The vault\'s most precisely calibrated cross-tradition structural isomorphism: Jesus executed by Roman crucifixion for claiming divine identity (~30 CE); al-Hallaj literally crucified in Baghdad for "Ana al-Haqq" ("I am the Truth/God") 922 CE. Both tried by their tradition\'s religious establishment for blasphemy. Both execution sequences included crucifixion. Both became the paradigmatic martyrs of mystical sub-traditions. Louis Massignon titled his definitive 4-volume study "The Passion of al-Hallaj" — naming the structural parallel explicitly. Not historical borrowing: independent structural isomorphism 900 years apart.',
+    picks: [
+      'event-crucifixion-of-jesus-c30ce', 'event-execution-of-al-hallaj-922',
+      'al-hallaj', 'jesus-christ-deity',
+      'tradition-sufism', 'tradition-christianity-canonical',
+      'crucifixion-theology', 'martyrdom-theology',
+      'theme-dying-founder-paradigm', 'rene-girard',
+    ],
+  },
+  {
+    id: 'dying-founder-paradigm',
+    category: 'persecution',
+    name: 'The Dying Founder Paradigm — Executed Originators',
+    headline: 'The violent death of a tradition\'s originator or central figure tends to be constitutive of the tradition that follows — not incidental to it. Jesus (crucifixion → Christianity); al-Hallaj (crucifixion → Sufi martyrdom mysticism); Hussein at Karbala (massacre → Shia Islam); the Bab (firing squad → Bahá\'í Faith); Guru Arjan and Guru Tegh Bahadur (Mughal executions → Khalsa warrior community); Mani (executed → first global religion). The founder\'s death does not merely precede the tradition — it generates, shapes, and defines it.',
+    picks: [
+      'theme-dying-founder-paradigm', 'event-crucifixion-of-jesus-c30ce',
+      'event-execution-of-al-hallaj-922', 'event-bab-execution-1850',
+      'event-death-of-guru-arjan-1606', 'event-death-of-guru-tegh-bahadur-1675',
+      'event-mani-execution-274-or-277', 'martyrdom-theology',
+      'theme-persecution-as-legitimation', 'rene-girard',
+    ],
+  },
 ];
 
 // Active research investigations — cross-tradition threads being investigated.
@@ -4698,6 +4807,97 @@ const INVESTIGATIONS = [
       'xuanzang',
       'cyrus-the-great',
       'nestorian-stele',
+    ],
+  },
+  {
+    id: 'solomonic-spine-five-traditions',
+    name: 'The Solomonic Spine — Five Independent Traditions',
+    flag: 'alert',
+    status: 'active',
+    opened: '2026-05-15',
+    headline: 'Solomon ben David (~970–930 BCE) is the vault\'s highest cross-tradition multiplier: one historical figure seeds five independent living traditions. The Ethiopian Solomonic dynasty (Kebra Nagast; Ark of the Covenant in Axum) is still the constitutional basis of modern Ethiopia\'s imperial legitimacy. Freemasonry\'s entire foundational mythology (Solomon\'s Temple, Hiram Abiff, the Lost Word) organizes itself around his building project. Islamic Sulayman commands jinn and wind. The Key of Solomon grimoire tradition (Western ceremonial magic from John Dee to Aleister Crowley) traces directly to Solomonic material. Wisdom Christology (Proverbs 8 → John 1 → the Logos) frames Jesus as the New Solomon. None of these traditions are in significant dialogue with each other.',
+    threads: [
+      { label: 'Kebra Nagast — Ark in Axum (Tier-1 tradition claim)', note: 'The Kebra Nagast (~14th c. CE, preserving much older oral tradition) claims Menelik I brought the Ark of the Covenant from Jerusalem to Ethiopia after Solomon\'s son by the Queen of Sheba. The Ethiopian Orthodox Church maintains this claim. The Ark of the Covenant is not in Jerusalem — where is it? The only tradition in the vault with a specific geographic answer.', tier: 2 },
+      { label: 'Hiram Abiff — the murdered master builder', note: 'The Third Degree of Freemasonry dramatizes the murder and resurrection of Hiram Abiff, Solomon\'s master architect. Not in the Hebrew Bible (Kings knows only "Hiram of Tyre" briefly). The Hiram legend is a Masonic elaboration that encodes the dying-and-rising mystery tradition onto Solomon\'s building project. Where did the legend come from? Medieval guild legend? Rosicrucian input?', tier: 2 },
+      { label: 'The Key of Solomon → Ars Goetia → Crowley chain', note: 'The Key of Solomon (Clavicula Salomonis) — circulating in Latin from at least the 14th century, with roots traceable to late-antique Jewish magical papyri — anchors the Western ceremonial magic tradition. Its demon-binding framework (72 spirits, Solomonic seal, brass vessel) becomes the Ars Goetia; becomes Crowley\'s Goetia; persists in modern occultism. The chain from ~1000 BCE Solomonic legend to 2025 is unbroken.', tier: 1 },
+      { label: 'Zerubbabel in Royal Arch Masonry — Davidic lineage in the degrees', note: 'Zerubbabel (Davidic prince, grandson of Jehoiachin, governor of Yehud post-exile, supervisor of Second Temple foundation) appears in the Royal Arch degree as the key figure of the Temple\'s restoration. Haggai and Zechariah use proto-messianic language about him. Masonry preserves a Davidic-lineage consciousness in its highest degrees. Zerubbabel node in vault.', tier: 1 },
+      { label: 'Islamic Sulayman — prophet with power over jinn and wind', note: 'Sulayman in the Quran (27:15–44; 34:12–14) commands the wind, speaks with birds and ants, and commands jinn in his building projects. The Quranic Sulayman is a prophet of cosmic authority — the magical-kingship tradition grafted onto Islamic prophetology. The template that generates "Solomonic" Islamic magic traditions.', tier: 1 },
+      { label: 'Wisdom Christology — Jesus as New Solomon', note: 'Proverbs 8\'s personified Wisdom ("I was beside him, like a master workman" — Prov 8:30) → John 1\'s Logos → Paul\'s "Christ, in whom are hidden all the treasures of wisdom and knowledge" (Col 2:3). The chain from Solomon\'s wisdom-ideology to Christ-as-Logos is one of the most documented Old Testament → New Testament typological chains in biblical scholarship.', tier: 1 },
+    ],
+    seeds: [
+      'solomon-king', 'zerubbabel', 'makeda-queen-of-sheba',
+      'menelik-i-legendary', 'solomonic-genealogy',
+      'tradition-rastafari', 'tradition-freemasonry',
+      'tradition-scottish-rite-freemasonry', 'tradition-ethiopian-orthodox',
+      'aleister-crowley', 'john-dee', 'theme-solomonic-transmission-spine',
+    ],
+  },
+  {
+    id: 'zadokite-rupture',
+    name: 'The Zadokite Rupture — Priestly Legitimacy and the Birth of Sects',
+    flag: 'alert',
+    status: 'active',
+    opened: '2026-05-15',
+    headline: 'The 818-year Zadokite monopoly on the Jerusalem high priesthood is the single most underappreciated structural event in the formation of Second Temple Judaism. When the Hasmoneans take the high priesthood (152 BCE), they create every major Jewish sect simultaneously: Essenes (refusing the non-Zadokite priest), Sadducees (adapting), Pharisees (replacing priestly with popular authority). Christianity and Rabbinic Judaism are both post-rupture movements. The Cohen Modal Haplotype (Y-chromosome genetics) is the only case in the vault of genetic corroboration of a hereditary religious claim.',
+    threads: [
+      { label: 'Aaron → Zadok → 818-year monopoly — the chain', note: 'Aaron is the original priestly lineage; Zadok is Solomon\'s high priest, founder of the Zadokite sub-lineage. From Zadok\'s appointment (~970 BCE) to Onias III\'s deposition (175 BCE) = 795 years of unbroken Zadokite high priesthood. The Sadducees (Tsaddukim) are probably named after Zadok. Zadok and Onias III nodes now in vault.', tier: 1 },
+      { label: 'Jonathan Maccabee takes high priesthood (152 BCE) — the rupture event', note: 'When Seleucid king Alexander Balas offers Jonathan Maccabee the high priesthood in 152 BCE, Jonathan accepts — becoming the first non-Zadokite high priest. This single act fractures Second Temple Judaism: Essenes leave for Qumran; Sadducees adapt; Pharisees arise as a counter-priestly popular movement. All three major sects at Jesus\'s time emerge from this rupture. tradition-hasmonean-dynasty in vault.', tier: 1 },
+      { label: 'Onias IV — Temple of Leontopolis (150–73 BCE)', note: 'Onias IV fled to Ptolemaic Egypt and built a rival Temple at Leontopolis (~150 BCE), citing Isaiah 19:19. Operated 220 years — closed by Romans 73 CE, 3 years after Jerusalem Temple\'s destruction (70 CE). Both Zadokite institutional branches ended by Rome within one generation. Event + onias-iv node in vault.', tier: 1 },
+      { label: 'Dead Sea Scrolls — Qumran as Zadokite exile community', note: '1QS 5:2, 9 and the Rule of the Congregation identify the community\'s priests as "the sons of Zadok." The Teacher of Righteousness is probably the last legitimate Zadokite high priest or his close associate, expelled when the Hasmoneans took over. The Dead Sea Scrolls are the Zadokite tradition\'s self-documentation from exile.', tier: 1 },
+      { label: 'Cohen Modal Haplotype — genetic corroboration', note: 'Skorecki et al. (1997, Nature): Kohanim across Ashkenazi and Sephardic communities share a distinctive Y-chromosome haplotype at far higher rates than non-Kohen Jews — implying a common paternal ancestor ~3,000 years ago. The only case in the vault of a hereditary religious claim receiving molecular genetic corroboration. The vault\'s smoking gun for the Aaronide transmission being historically real.', tier: 1 },
+    ],
+    seeds: [
+      'zadok-priest', 'onias-iii', 'onias-iv',
+      'event-temple-leontopolis-foundation-c150bce',
+      'tradition-hasmonean-dynasty', 'antiochus-iv-epiphanes',
+      'tradition-essenes', 'herod-the-great',
+      'event-destruction-of-second-temple-70',
+      'theme-aaronide-priestly-continuity',
+    ],
+  },
+  {
+    id: 'prague-convergence',
+    name: 'Rudolf II\'s Prague — Three Occult Traditions, One City',
+    flag: 'alert',
+    status: 'active',
+    opened: '2026-05-15',
+    headline: 'Between ~1583 and 1612, Rudolf II\'s Prague court hosts three major esoteric traditions simultaneously and apparently without dialogue: John Dee and Edward Kelley\'s Enochian angel-communication; the Maharal of Prague\'s Golem tradition and Kabbalistic neo-Platonism; Tycho Brahe and Johannes Kepler\'s empirical astronomy that would become Newton\'s physics. The Rosicrucian manifestos (1614–1616) appear immediately after Rudolf\'s death, seemingly synthesizing the Prague convergence.',
+    threads: [
+      { label: 'John Dee and Edward Kelley — Enochian in Prague (1584–1587)', note: 'Dee and Kelley arrived in Prague in 1584 and had an audience with Rudolf II. The Enochian sessions (Kelley scrying; Dee transcribing angelic communication in the Enochian alphabet) continued in Prague and Třeboň. Dee\'s Liber Mysteriorum is the primary source. Dee and Kelley nodes upgraded in vault.', tier: 1 },
+      { label: 'The Maharal\'s Golem — Practical Kabbalah in Rudolf\'s Prague', note: 'Rabbi Judah Loew ben Bezalel (1520–1609) served as Chief Rabbi of Prague. Rudolf II allegedly met the Maharal in 1592. Moshe Idel (The Golem, SUNY 1990) demonstrates the Golem legend crystallized after the Maharal\'s death — but the Maharal\'s Kabbalistic neo-Platonism is historically documented. Rabbi-judah-loew node in vault.', tier: 2 },
+      { label: 'Tycho Brahe + Kepler — empirical astronomy as occult practice', note: 'Tycho Brahe (Imperial Mathematician from 1599) combined meticulous naked-eye astronomical observation with alchemy and astrology. His 20 years of planetary data, inherited by Kepler after Tycho\'s death (1601), enabled Kepler\'s three laws → Newton\'s physics. The same man who contributed to the Scientific Revolution also cast horoscopes. Tycho-brahe node in vault.', tier: 1 },
+      { label: 'The Rosicrucian manifestos (1614–1616) as Prague synthesis', note: 'The Fama Fraternitatis (1614), Confessio Fraternitatis (1615), and Chemical Wedding (1616) appear within four years of Rudolf\'s death. They describe a secret brotherhood combining Hermetic, Kabbalistic, and scientific knowledge — precisely the Prague court\'s profile. Frances Yates (Rosicrucian Enlightenment, 1972): the manifestos describe a program for a Hermetic-Protestant reform using Rudolf\'s court as the model that failed.', tier: 2 },
+      { label: 'Giordano Bruno — burned (1600), the year before Tycho dies', note: 'Bruno was burned in Rome in 1600 — one year before Tycho Brahe died in Prague. Both held heliocentrism and animistic cosmology simultaneously; only one was burned. The difference: Bruno was Italian and in Rome\'s jurisdiction; Tycho was Imperial Mathematician. The same cosmological ideas had radically different institutional fates depending on geography.', tier: 1 },
+    ],
+    seeds: [
+      'rudolf-ii-habsburg', 'event-prague-occult-court-1576-1612',
+      'john-dee', 'edward-kelley', 'rabbi-judah-loew',
+      'tycho-brahe', 'tradition-rosicrucianism',
+      'giordano-bruno', 'tradition-hermeticism',
+      'event-bruno-execution-1600',
+    ],
+  },
+  {
+    id: 'dying-founder-cross-tradition',
+    name: 'The Dying Founder Paradigm — Executed Originators Across Traditions',
+    flag: 'alert',
+    status: 'active',
+    opened: '2026-05-15',
+    headline: 'The most structurally consistent finding in comparative religion that nobody systematically maps: the violent death of a tradition\'s originator or central figure is constitutive of the tradition that follows — not incidental to it. Jesus crucified → Christianity. Al-Hallaj crucified in Baghdad 900 years later for the same structural reason → Sufi martyrdom mysticism. Hussein massacred at Karbala → Shia Islam. The Bab executed by firing squad → Bahá\'í Faith. Guru Tegh Bahadur beheaded for defending Hindu religious freedom → Khalsa. Mani executed → first global religion. René Girard\'s scapegoat mechanism explains the structural logic.',
+    threads: [
+      { label: 'Jesus / Al-Hallaj — the vault\'s precision parallel (ALERT)', note: 'Both claimed divine identity. Both tried by their tradition\'s religious establishment for blasphemy. Both executed by crucifixion. Both became the paradigmatic martyrs of mystical sub-traditions (Christ-mysticism; Hallajian Sufism). Louis Massignon titled his definitive 4-volume study "The Passion of al-Hallaj" — explicitly naming the parallel. The vault\'s tightest cross-tradition structural isomorphism. Both event nodes now in vault.', tier: 1 },
+      { label: 'Triple Islamic martyrdom structure', note: 'Within Islamic-adjacent traditions, three foundational violent deaths: Jesus crucified (~30 CE) → Christianity; Hussein massacred at Karbala (680 CE) → Shia Islam; al-Hallaj crucified in Baghdad (922 CE) → Sufi martyrdom mysticism. Three traditions. Three paradigmatic holy deaths. Three movements organized around the meaning of that death.', tier: 1 },
+      { label: 'Guru Tegh Bahadur — the interfaith martyrdom', note: 'The vault\'s only example of a martyrdom explicitly for the religious freedom of another tradition: the 9th Sikh Guru was beheaded by Aurangzeb in 1675 specifically for defending Kashmiri Hindu Brahmins\' right to practice their faith. Direct response: Guru Gobind Singh creates the Khalsa (1699). Title: "Hind di Chaddar" — Shield of India. Event node in vault.', tier: 1 },
+      { label: 'The Bab — dying forerunner', note: 'The Bab\'s execution (1850) is the dying-founder paradigm\'s most unusual variant: a dying *forerunner* rather than the tradition\'s center. The Bab explicitly claimed to be the herald of Bahá\'u\'lláh. His martyrdom enables his successor\'s emergence — making the tradition\'s actual center the second-generation figure whose authority the forerunner\'s death prepares. Bab execution event in vault.', tier: 1 },
+      { label: 'Girard\'s scapegoat mechanism — why executed founders generate traditions', note: 'René Girard (Violence and the Sacred, 1977): communities channel collective violence onto a sacrificial victim; the victim\'s death restores communal order; the victim is subsequently divinized. Christianity is, for Girard, the religion that exposes the mechanism from the inside — the passion narratives insist on Jesus\'s innocence, making the scapegoating transparent. This is why the Christian founding martyrdom has unusual world-historical generative power.', tier: 1 },
+    ],
+    seeds: [
+      'theme-dying-founder-paradigm', 'event-crucifixion-of-jesus-c30ce',
+      'event-execution-of-al-hallaj-922', 'al-hallaj',
+      'event-death-of-guru-arjan-1606', 'event-death-of-guru-tegh-bahadur-1675',
+      'event-bab-execution-1850', 'event-mani-execution-274-or-277',
+      'martyrdom-theology', 'theme-persecution-as-legitimation',
+      'rene-girard', 'scapegoat-mechanism',
     ],
   },
 ];
@@ -6817,6 +7017,68 @@ VIEWS.all = {
     document.getElementById('canvas').appendChild(pane);
   }
 };
+
+// ============================================================
+// VIEWS.astrology — Cross-tradition sky investigation. 4 modes share one
+// canvas (toggled by toolbar pills): spine / wheel / now / decanic.
+// Mode renderers live in src/js/astrology/*.js and register window._astro*.
+// (Restored 2026-05-15 after sonnet-egypt-mysticism-1 commit e194d9b
+//  accidentally deleted this block in an app.js sweep.)
+// ============================================================
+const _astrologyState = { mode: 'spine' };
+
+VIEWS.astrology = {
+  title: 'Astrology',
+  subtitle: 'cross-tradition sky investigation · spine · wheel · now · decanic',
+  render() {
+    document.getElementById('view-controls').innerHTML = `
+      <button class="btn btn-mini astrology-mode" data-mode="spine">spine</button>
+      <button class="btn btn-mini astrology-mode" data-mode="wheel">wheel</button>
+      <button class="btn btn-mini astrology-mode" data-mode="now">now</button>
+      <button class="btn btn-mini astrology-mode" data-mode="decanic">decanic</button>
+    `;
+    document.querySelectorAll('.astrology-mode').forEach(btn => {
+      if (btn.dataset.mode === _astrologyState.mode) btn.classList.add('active');
+      btn.onclick = () => { _astrologyState.mode = btn.dataset.mode; setView('astrology'); };
+    });
+
+    const pane = document.createElement('div');
+    pane.className = 'astrology-pane';
+    const astroNodes = DATA.nodes.filter(n => Array.isArray(n.tags) && n.tags.some(t => /^astrology/.test(t)));
+    const W = astroNodes.length;
+    // Live renderers (src/js/astrology/*.js). Other modes fall through to a stub card.
+    const liveRenderers = { spine: '_astroSpine', decanic: '_astroDecanic', wheel: '_astroWheel', now: '_astroNow' };
+    const rendererKey = liveRenderers[_astrologyState.mode];
+    if (rendererKey) {
+      pane.classList.add('astrology-pane-live');
+      document.getElementById('canvas').appendChild(pane);
+      queueMicrotask(() => { if (window[rendererKey]) window[rendererKey].render(pane); });
+      return;
+    }
+    pane.innerHTML = renderAstrologyMode(_astrologyState.mode, W);
+    document.getElementById('canvas').appendChild(pane);
+  }
+};
+
+function renderAstrologyMode(mode, count) {
+  const shell = (title, body) => `
+    <div class="astrology-stub">
+      <div class="as-mode-title">${title}</div>
+      <div class="as-mode-body">${body}</div>
+      <div class="as-mode-meta">${count} astrology-tagged vault nodes available</div>
+    </div>`;
+  switch (mode) {
+    case 'spine':   return shell('Spine — 3,500-year horizontal transmission map',
+      'Plots every astrology-tagged node on a time axis, color-coded by tradition family. Cross-tradition transmission edges drawn as arcs.');
+    case 'wheel':   return shell('Wheel — natal / event chart',
+      'Tropical zodiac wheel, 7 classical planets at their geocentric longitudes for the chosen date. Pick a historical event date and see the sky.');
+    case 'now':     return shell('Now — live planetary positions + history scrubber',
+      'Unrolled zodiac strip with 7 planets; time-scrubber −3000 BCE ↔ +2100 CE.');
+    case 'decanic': return shell('Decanic — 36 × cross-tradition wheel',
+      '36 Egyptian decans cross-mapped to Western face-rulers, Vedic Nakshatras, Arabic Manazil, Chinese Xiu.');
+    default: return shell('Astrology', 'Pick a mode above.');
+  }
+}
 
 VIEWS.about = {
   title: 'About this atlas',
