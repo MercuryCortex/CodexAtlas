@@ -44,6 +44,7 @@ refs:
     type: "monograph"
     tier: 1
     notes: "Treats the Indo-Iranian shared concept *Ṛta / Aṣ̌a* extensively as one of the most-load-bearing Proto-Indo-Iranian religious-cosmic concepts"
+related-themes: ["[[theme-asha-druj-cosmic-opposition]]", "[[dualism-cosmic]]", "[[ethical-dualism]]"]
 tags: [deity, zoroastrian, amesha-spenta, asha, truth, cosmic-order, druj-counterpart, rta-cognate, indo-iranian, MASSIVE-WIN]
 ---
 

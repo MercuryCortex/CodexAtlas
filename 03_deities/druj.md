@@ -40,6 +40,7 @@ refs:
     publisher: "in *Encyclopedia of Apocalypticism* Vol. 1"
     type: "scholarly-essay"
     tier: 1
+related-themes: ["[[theme-asha-druj-cosmic-opposition]]", "[[dualism-cosmic]]", "[[light-and-darkness-dualism]]", "[[theme-satan-angra-mainyu-transfer]]"]
 tags: [deity, zoroastrian, daevic, cosmic-evil, lie, druj, asha-counterpart, cosmic-dualism, satan-parallel]
 ---
 

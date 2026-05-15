@@ -1619,6 +1619,7 @@ canonical-slug
 - `aeon-as-emanation`
 - `afterlife-judgment`
 - `alchemical-marriage`
+- `theme-asha-druj-cosmic-opposition`
 - `alchemy-as-spiritual-discipline`
 - `alien-god`
 - `allegorical-exegesis`
