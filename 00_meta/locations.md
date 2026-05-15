@@ -114,6 +114,12 @@ Hattusa                      | 40.0  | 34.6  | Hattusa
 Memphis (Egypt)              | 29.85 | 31.25 | Memphis (Egypt)
 Heliopolis                   | 30.13 | 31.30 | Heliopolis (Egypt)
 Thebes (Egypt)               | 25.7  | 32.65 | Thebes (Egypt)
+Giza                         | 29.979| 31.134| Giza Plateau (Egypt)
+Saqqara                      | 29.871| 31.216| Saqqara (Egypt)
+Dahshur                      | 29.793| 31.209| Dahshur (Egypt)
+Teotihuacan                  | 19.692| -98.844| Teotihuacan (Mexico)
+Palenque                     | 17.483| -92.046| Palenque (Chiapas, Mexico)
+Chichen Itza                 | 20.682| -88.568| Chichen Itza (Yucatán, Mexico)
 Amarna                       | 27.65 | 30.9  | Amarna
 Saïs                         | 30.97 | 30.77 | Saïs
 Alexandria                   | 31.2  | 29.9  | Alexandria

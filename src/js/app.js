@@ -3968,6 +3968,21 @@ const ALCHEMY_PRESETS = [
       'ibn-rushd', 'thomas-aquinas', 'phase-5-024-aquinas-summa-theologiae',
     ],
   },
+  {
+    id: 'pyramid-investigation',
+    name: 'Pyramid Investigation — Open Questions',
+    headline: 'Every genuinely unsolved mystery inside the Great Pyramid and Giza — the 2017 Big Void above the Grand Gallery (muon tomography), the sealed Queen\'s Chamber shaft doors (behind which nothing has ever been directly observed), the Sphinx water-erosion hypothesis (Schoch 1992 — a credentialed geological challenge never fully answered), and the Orion shaft alignments (accepted by mainstream Egyptology; their theological meaning still contested). Cross-tradition comparison: Egyptian resurrection-machine theology and the independent Maya death-cosmogram at Palenque. Scholarly anchors: Petrie (measurement), Bauval (stellar theology), Schoch (geology).',
+    picks: [
+      'great-pyramid-of-khufu',
+      'kings-chamber-great-pyramid', 'queens-chamber-great-pyramid',
+      'subterranean-chamber-great-pyramid', 'sphinx-of-giza',
+      'theme-hall-of-records-hypothesis', 'theme-orion-correlation-theory',
+      'theme-pyramid-as-resurrection-machine',
+      'flinders-petrie', 'robert-bauval', 'robert-schoch',
+      'temple-of-inscriptions-palenque',
+      'step-pyramid-djoser-saqqara',
+    ],
+  },
 ];
 
 // Active research investigations — high-value cross-tradition threads being tracked.

@@ -106,6 +106,7 @@ _Auto-generated 2026-05-15. Status claims not meeting the bar in methodology.md.
 | `frances-yates` | person | status:metadata but only 1 refs |
 | `emile-durkheim` | person | status:metadata but only 1 refs |
 | `paul-tillich` | person | status:metadata but only 1 refs |
+| `khafre` | person | status:metadata but only 1 refs |
 | `charles-taze-russell` | person | status:metadata but only 1 refs |
 | `phase-7-014-gnostic-gospels` | document | status:partial but only 3 refs (need 4+) |
 | `phase-7-018-aion` | document | status:partial but only 3 refs (need 4+) |

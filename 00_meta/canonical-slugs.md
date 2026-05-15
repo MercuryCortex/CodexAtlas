@@ -813,8 +813,10 @@ canonical-slug
 - `phase-8-017-santeria-lucumi`
 - `phase-8-018-kalevala`
 
-### event (139 nodes)
+### event (154 nodes)
 
+- `bent-pyramid-sneferu-dahshur`
+- `el-castillo-chichen-itza`
 - `event-aboriginal-stolen-generations-1905-1969`
 - `event-ahmad-gragn-invasion-1529`
 - `event-aksumite-christianization-c330`
@@ -954,8 +956,21 @@ canonical-slug
 - `event-vatican-ii-aftermath-1965-present`
 - `event-wilhelmsbad-convent-1782`
 - `event-zagwe-lalibela-churches-c1200`
+- `grand-gallery-great-pyramid`
+- `great-pyramid-of-khufu`
+- `kings-chamber-great-pyramid`
+- `pyramid-of-khafre-giza`
+- `pyramid-of-menkaure-giza`
+- `pyramid-of-the-sun-teotihuacan`
+- `queens-chamber-great-pyramid`
+- `red-pyramid-sneferu-dahshur`
+- `relieving-chambers-great-pyramid`
+- `sphinx-of-giza`
+- `step-pyramid-djoser-saqqara`
+- `subterranean-chamber-great-pyramid`
+- `temple-of-inscriptions-palenque`
 
-### person (590 nodes)
+### person (597 nodes)
 
 - `aaron`
 - `abba-garima`
@@ -1131,6 +1146,7 @@ canonical-slug
 - `fentos-meqabyan`
 - `fernando-pessoa`
 - `firmicus-maternus`
+- `flinders-petrie`
 - `frances-yates`
 - `francisco-clavigero`
 - `frumentius`
@@ -1194,6 +1210,7 @@ canonical-slug
 - `hippolytus-of-rome`
 - `homer`
 - `hosea-prophet`
+- `howard-vyse`
 - `hugues-de-payens`
 - `huineng`
 - `huldrych-zwingli`
@@ -1283,6 +1300,8 @@ canonical-slug
 - `keshub-chandra-sen`
 - `kevin-van-bladel`
 - `khadija-bint-khuwaylid`
+- `khafre`
+- `khufu`
 - `krishnadasa-kaviraja`
 - `kumarajiva-person`
 - `l-ron-hubbard`
@@ -1439,8 +1458,10 @@ canonical-slug
 - `rashid-rida`
 - `rene-guenon`
 - `reza-aslan`
+- `robert-bauval`
 - `robert-de-boron`
 - `robert-fludd`
+- `robert-schoch`
 - `rowan-williams`
 - `rudolf-otto`
 - `rudolf-steiner`
@@ -1509,6 +1530,7 @@ canonical-slug
 - `thich-nhat-hanh`
 - `thomas-apostle`
 - `thomas-aquinas`
+- `thutmose-iv`
 - `timothy`
 - `titus`
 - `trajan-emperor`
@@ -1612,14 +1634,13 @@ canonical-slug
 - `wheat-grain`
 - `yin-yang`
 
-### theme (246 nodes)
+### theme (251 nodes)
 
 - `364-day-solar-calendar`
 - `adam-kadmon`
 - `aeon-as-emanation`
 - `afterlife-judgment`
 - `alchemical-marriage`
-- `theme-asha-druj-cosmic-opposition`
 - `alchemy-as-spiritual-discipline`
 - `alien-god`
 - `allegorical-exegesis`
@@ -1830,14 +1851,19 @@ canonical-slug
 - `the-five-buddha-families`
 - `the-godhead-eckhart`
 - `theme-akhenaten-moses-monotheism-thesis`
+- `theme-asha-druj-cosmic-opposition`
 - `theme-baal-set-syncretism`
 - `theme-el-yahweh-merger`
 - `theme-exodus-hyksos-thesis`
 - `theme-habiru-hebrew-origins`
+- `theme-hall-of-records-hypothesis`
 - `theme-heroes-paradise-island`
 - `theme-holy-grail`
 - `theme-lex-talionis-covenant-code`
+- `theme-orion-correlation-theory`
 - `theme-paradise-etymology`
+- `theme-pyramid-as-resurrection-machine`
+- `theme-sacred-geometry-giza`
 - `theme-satan-angra-mainyu-transfer`
 - `theme-zoroastrian-jewish-exchange`
 - `theurgy`
@@ -1978,16 +2004,16 @@ canonical-slug
 
 | Refs | Dead target | Suggested canonical (existing) |
 |---:|---|---|
+| 7 | `tradition-egyptian-religion` | `tradition-gnosticism` |
 | 4 | `ragnarok-apocalyptic` | `apocalyptic-cosmic-warfare` |
-| 4 | `primordial-darkness` | `primordial-waters` |
+| 4 | `primordial-darkness` | `eros-primordial` |
 | 4 | `messianic-revelation` | `messianic-secret` |
 | 4 | `genealogical-cosmogony` | `mesoamerican-cosmogony` |
 | 4 | `evolutionary-cosmogony` | `mesoamerican-cosmogony` |
-| 3 | `phase-4-007-new-testament-canon` | `phase-4-008-trimorphic-protennoia` |
+| 3 | `phase-4-007-new-testament-canon` | `phase-4-003-gospel-of-truth` |
 | 3 | `phase-2-005-1-2-kings` | `phase-2-008-homeric-epics` |
-| 3 | `messianic-genealogy` | `messianic-secret` |
+| 3 | `messianic-genealogy` | `solomonic-genealogy` |
 | 2 | `yam-canaanite` | `astarte-canaanite` |
-| 2 | `tradition-minoan-religion` | `tradition-portuguese-hermeticism` |
-| 2 | `tradition-eastern-orthodoxy` | `tradition-portuguese-hermeticism` |
-| 2 | `phase-1-013-babylonian-theodicy` | `phase-1-019-enuma-anu-enlil` |
+| 2 | `tradition-minoan-religion` | `tradition-gnosticism` |
+| 2 | `phase-1-013-babylonian-theodicy` | `phase-4-033-babylonian-talmud` |
 | 2 | `asclepius` | `asclepius-greek` |
