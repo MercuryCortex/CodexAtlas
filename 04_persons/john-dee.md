@@ -51,6 +51,9 @@ Densely documented: his own substantial publications and manuscripts (diaries, l
 ## Role in the tradition
 Dee is the principal English figure of Renaissance Hermetic-Kabbalist magic, a serious mathematician-natural philosopher (Clulee 1988 argues against the older art-vs.-science split), and via the Yates thesis the proximate source of the German Rosicrucian impulse. The Enochian angelic system has had a continuous esoteric afterlife in the Golden Dawn and modern occultism. His Mortlake library is one of the most-studied private libraries of the period.
 
+## Prague and the Rudolfine nexus
+Dee's 1583–84 visit to Prague places him within the [[event-prague-occult-court-1576-1612]] — [[rudolf-ii-habsburg]]'s court that simultaneously housed [[edward-kelley]] (alchemically patronized by Rudolf), [[tycho-brahe]] (Imperial Mathematician from 1599), and [[rabbi-judah-loew]] (Maharal of Prague, leading Kabbalist). The Enochian angelic system Dee developed shares the Prague milieu's broader interest in accessing non-human intelligence — alongside Kelley's alchemy, Brahe's empirical astronomy, and the Maharal's practical Kabbalah.
+
 ## Refs
 1. Clulee (1988). *John Dee's Natural Philosophy*. Routledge.
 2. French (1972). *John Dee*. RKP.

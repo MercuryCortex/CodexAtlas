@@ -38,6 +38,9 @@ The Dee diaries are the primary source; Rudolfine court records document the Pra
 ## Works
 The Enochian materials are jointly Dee-and-Kelley productions; Kelley's role is as the scryer who reported the angelic visions and the Enochian language. Whether the Enochian language is Kelley's invention, a glossolalic production, or (as Dee believed) a genuine angelic transmission is variously debated.
 
+## Prague and Rudolf II
+Kelley's imprisonment by [[rudolf-ii-habsburg]] (1591) at Krivoklát Castle is the most dramatic episode in the [[event-prague-occult-court-1576-1612]]: an emperor so invested in alchemical gold-production that he imprisoned his court alchemist when the gold failed to materialize. Kelley's fate — noble enoblement, then imprisonment, then death in an escape attempt — encapsulates the danger of occult patronage under Rudolf.
+
 ## Refs
 1. Harkness (1999). *John Dee's Conversations with Angels*. Cambridge UP.
 2. Whitby, C. (1988). *John Dee's Actions with Spirits*. Garland.

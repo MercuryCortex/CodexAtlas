@@ -57,6 +57,8 @@ The Solomonic kingdom as biblically described — international wealth, an exten
 ## Role in the tradition
 Solomon's reign is the climax of the Deuteronomistic Historian's united-monarchy theology; his late-life apostasy (1 Kgs 11) is the etiology of the kingdom's division. The Solomonic temple becomes the architectural model for the Second Temple and an iconographic template for every later Christian and Jewish sacred-space tradition. In Christian tradition, Jesus's "greater than Solomon" (Mt 12:42, Lk 11:31) deploys him as a wisdom-foil. In Islamic tradition Sulayman is a prophet-king with control over the jinn (Quran 27, 34, 38). In Ethiopian tradition Solomon's union with Makeda the Queen of Sheba produces Menelik I — the foundational myth of the Solomonic dynasty preserved in the [[phase-8-008-kebra-nagast|*Kebra Nagast*]].
 
+Solomon's figure also seeds at least five independent living traditions simultaneously — the most cross-tradition reach of any single figure in the vault. See [[theme-solomonic-transmission-spine]] for the full mapping: Ethiopian Solomonic dynasty → Rastafari; Hiram Abiff legend → Freemasonry / [[tradition-scottish-rite-freemasonry]]; Sulayman-and-jinn → Islamic tradition; *Key of Solomon* grimoire → Western ceremonial magic; Wisdom Christology → Christianity. His priestly counterpart [[zadok-priest]] founded the institutional lineage that ran in parallel to the Davidic-kingly claim; [[zerubbabel]] carries the Davidic line through the Babylonian exile.
+
 ## Refs
 1. Halpern, B. (1988). *Solomon: A Distant Mirror*. Eerdmans.
 2. Cogan, M. (2001). *1 Kings* (Anchor Yale Bible). Yale UP.

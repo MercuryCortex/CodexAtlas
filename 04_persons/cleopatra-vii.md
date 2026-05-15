@@ -92,9 +92,12 @@ For the Codex Atlas mission Cleopatra's role unfolds in four registers:
 - **Cleopatra and Alexandrian intellectual culture.** Whether Cleopatra was actively engaged with Library scholars (Manetho-era institutional patronage being mostly her ancestors' work) or was a passive inheritor of the institutions is debated. Recent scholarship leans toward more active engagement.
 - **The Caesarion question.** Cleopatra's son by Julius Caesar (Ptolemy XV Caesarion, "Little Caesar") was the legitimate Ptolemaic heir; Octavian's execution of Caesarion in -30 (after Cleopatra's death) was politically necessary to eliminate the dynastic rival but morally embarrassing — Augustan sources are evasive about it.
 
+## The Oniad Temple connection
+During Cleopatra VII's reign (and throughout the broader Ptolemaic period), the **Temple of Onias at Leontopolis** — a Jewish Zadokite temple ~40 km from Alexandria — was operating simultaneously with the Alexandrian intellectual milieu Cleopatra inherited. The [[event-temple-leontopolis-foundation-c150bce]] was founded by [[onias-iv]] (~150 BCE) under Ptolemy VI Philometor; it operated until 73 CE. The Oniad priestly community and the Alexandrian Jewish intellectual culture (Philo, the Septuagint translators) occupied the same geographic and social space during much of Cleopatra's lifetime. The Ptolemaic dynasty is thus the political framework within which the Zadokite priestly tradition preserved itself in Egyptian exile — see [[theme-aaronide-priestly-continuity]].
+
 ## Refs
 1. Roller, D.W. (2010). *Cleopatra: A Biography*. OUP.
 2. Plutarch *Life of Antony*, Pelling ed. (1988). Cambridge UP.
 3. Kleiner, D.E.E. (2005). *Cleopatra and Rome*. Belknap/Harvard.
 4. Frankfurter, D. (1998). *Religion in Roman Egypt*. Princeton UP.
-5. Cassius Dio *Roman History* 51, Loeb 83 (Cary 1917).
+5. Cassius Dio *Roman History* 51, Loeb 83 (Cary 1017).
