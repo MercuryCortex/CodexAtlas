@@ -66,5 +66,18 @@ Roman colonizers engaged in *interpretatio Romana* with Lusitanian deities: Endo
 ## The continuity problem
 The tradition ends documentarily around the 4th century CE with Christianization. However, several scholars (Bermejo Barrera 1986) have traced Lusitanian cult-site continuities into Christian saints' feast days and sacred-spring cults in modern rural Portugal and Galicia. The cult center of Endovélico at São Miguel da Mota became a church dedicated to the Archangel Michael — the single most common Christian-over-pagan-oracle-deity substitution in Western Europe (cf. Mont-Saint-Michel, San Michele al Gargano, Skellig Michael).
 
+## Portus Cale: the etymology of Portugal
+The name "Portugal" preserves a pre-Roman Celtic layer in the nation's very name. The evolution is *Portus Cale* → *Portucale* → *Portugal*.
+
+**"Portus"** (harbor, Latin) is transparent. **"Cale"** is the question the user's investigation is asking:
+
+The dominant scholarly position: "Cale" preserves the tribal name of the **Gallaeci** (also *Callaici*, *Callaeci*) — the dominant Celtic confederation of the northwest Iberian Peninsula, who gave their name both to modern **Galicia** (Spain) and to the settlement at the Douro mouth. Roman sources document "Portus Callaicorum" or similar; "Cale" is the abbreviated Latinization of the tribal-territory name. By this reading **"Portugal" = "Port of the Gallaeci"** — Celtic people → Celtic name → nation name.
+
+**The deity possibility**: The root *cal-* appears across Atlantic Celtic place-names in contexts suggesting "rock / height / fortified place" (Welsh *caled* = hard; Scottish Gaelic *caol* = narrow strait; Irish *cill* = sacred enclosure → church). Several researchers have proposed a sacred pre-Roman cult site at the Douro mouth — the river mouth as a liminal sacred space is consistent with Lusitanian-Gallaecian religion generally ([[nabia]] presides over rivers and river-mouths). No specific deity name "Cale" is epigraphically attested, but the structure of a sacred/tribal toponym is consistent.
+
+The alternative Greek etymology (*kalos* = beautiful) is a minority and probably folk-etymological view.
+
+**Practical conclusion**: The nation of Portugal is named after its pre-Christian Celtic inhabitants. The layer beneath Christianity, beneath the Reconquista, beneath the Lusitanian tradition, is the Gallaeci — and their presence is encoded in the name of the country every time it is spoken.
+
 ## Connection to Celtic tradition
 Lusitanian religion belongs to the broader western Celtic or para-Celtic IE religious family — the same family as Gaulish, Brythonic, and Gaelic tradition. The PIE comparanda for Lusitanian deity-names (Reue/thunder, Nabia/river, Bandua/protection) connect westernmost Iberia to the same reconstructed PIE substrate as Irish, Welsh, and Continental Celtic religion. The vault's [[boann]] (Irish river goddess) and [[zemyna]] (Baltic earth goddess) are cognate in function with Nabia; Reue is a cognate-type of [[velinas]] and the entire PIE thunderer tradition.
