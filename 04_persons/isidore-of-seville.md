@@ -67,6 +67,18 @@ For the early Middle Ages, "what Isidore says" is what is known of the classical
 - **Authorship of the *Etymologiae*.** The work was unfinished at Isidore's death and edited / arranged by Braulio of Zaragoza; how much editorial intervention shaped the final form is debated.
 - **Isidore's role at Toledo IV and the Visigothic-church relationship.** Wood 2012 reads Isidore as more politically engaged with the Visigothic monarchy than the older historiography.
 
+## MASSIVE WIN — The Dual Iberian Knowledge-Transmission Pipeline
+
+The chain of classical knowledge back into medieval Europe has **two major nodes, both in Iberia**:
+
+1. **Isidore of Seville** (636 CE): Latin transmission — *Etymologiae* preserves Pliny, Cicero, Virgil, the grammatical tradition, the full liberal arts curriculum, and the pagan mythological vocabulary, wrapped in a Christian frame that makes it accessible and non-threatening. Available in every major library from the Carolingian era onward.
+
+2. **Toledo Translation Movement** (~1085–1150+): Arabic-to-Latin transmission — after the reconquest of Toledo, the Arabic translations of Aristotle's complete physical and philosophical works (transmitted via Averroes's commentaries) enter Latin Europe through the same Iberian channel. See [[event-toledo-translations-1085-1150]].
+
+Both routes are Iberian. **Aquinas's scholastic synthesis** used BOTH: Aristotelian philosophy via Averroes (Toledo route) + the Latin classical tradition that Isidore had preserved (western survival route). Without Iberia — its western position that kept it partially outside the most destructive phases of the barbarian migrations, and its subsequent Islamic cultural flowering — the *Summa Theologiae* has no Aristotelian foundation and the subsequent Renaissance has no recovered classical base. The peninsula that marked the end of the ancient world (Tartessos at the western edge) was also the re-entry point of that world's knowledge into the medieval and modern West.
+
+See [[event-visigothic-kingdom-hispania-418-711]], [[event-toledo-translations-1085-1150]], [[ibn-rushd]], [[tradition-proto-indo-european-religion]] (Isidore's mythological vocabulary preserves the classical gods as "historical false deities").
+
 ## Refs
 1. Barney, S.A. et al. (2006). *The Etymologies of Isidore of Seville*. Cambridge UP.
 2. Henderson, J. (2007). *The Medieval World of Isidore of Seville*. Cambridge UP.
