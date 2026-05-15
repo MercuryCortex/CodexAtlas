@@ -1599,6 +1599,238 @@ footer select:focus, footer input:focus { border-color: var(--gold-soft); }
 /* Suppress the canvas radial gradient on Atlas so the map fills cleanly. */
 body.view-atlas main.canvas { background: var(--bg-0); }
 
+/* ============================================================
+   ALCHEMY (card pinboard) — research workbench. Cards are HTML
+   for accessibility + text-selection; pan/zoom via CSS transform
+   on the inner board; connection lines on an SVG overlay above.
+   ============================================================ */
+.alch-board-root {
+  position: absolute;
+  left: var(--eff-nav-w);
+  right: var(--eff-detail-w);
+  top: 0; bottom: 0;
+  z-index: 3;
+  overflow: hidden;
+  background: radial-gradient(ellipse at center, rgba(212,165,90,0.025) 0%, var(--bg-0) 80%);
+  transition: left var(--t-layout) var(--ease), right var(--t-layout) var(--ease);
+  touch-action: none;
+}
+.alch-board-inner {
+  position: absolute;
+  inset: 0;
+  transform-origin: 0 0;
+  pointer-events: none; /* events bubble through to .alch-board-root for pan */
+}
+.alch-board-inner > * { pointer-events: auto; }
+
+/* SVG overlay sits ABOVE the cards (z-index higher) so edge labels read.
+   Below interactivity though — pointer-events: none — clicks pass to cards. */
+.alch-edges-svg {
+  position: absolute; inset: 0;
+  pointer-events: none;
+  z-index: 4;
+}
+
+/* ----- toolbar (fixed top) ----- */
+.alch-toolbar {
+  position: absolute; top: 14px; left: 24px; right: 24px;
+  z-index: 6;
+  pointer-events: auto;
+}
+.alch-toolbar-row {
+  display: flex; align-items: center; gap: 12px; flex-wrap: wrap;
+  background: rgba(14,16,22,0.85);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid var(--border-soft);
+  border-radius: 8px;
+  padding: 10px 14px;
+  box-shadow: 0 6px 24px rgba(0,0,0,0.35);
+}
+.alch-search { position: relative; flex: 1; min-width: 280px; max-width: 480px; }
+.alch-search-input {
+  width: 100%;
+  background: var(--bg-2);
+  border: 1px solid var(--border-soft);
+  border-radius: 4px;
+  padding: 7px 12px;
+  color: var(--text-0);
+  font-family: var(--mono); font-size: 12px;
+  outline: none;
+  transition: border-color 150ms ease;
+}
+.alch-search-input:focus { border-color: var(--gold-soft); }
+.alch-search-results {
+  position: absolute; left: 0; right: 0; top: calc(100% + 4px);
+  background: rgba(14,16,22,0.96);
+  backdrop-filter: blur(10px);
+  border: 1px solid var(--border-soft);
+  border-radius: 4px;
+  max-height: 360px; overflow-y: auto;
+  box-shadow: 0 8px 28px rgba(0,0,0,0.5);
+  z-index: 10;
+}
+.alch-search-row {
+  display: grid;
+  grid-template-columns: 24px 1fr auto;
+  align-items: center; gap: 10px;
+  padding: 7px 12px;
+  cursor: pointer;
+  border-bottom: 1px solid var(--border-soft);
+  font-family: var(--serif); font-size: 12.5px;
+  color: var(--text-1);
+}
+.alch-search-row:hover { background: var(--bg-2); }
+.alch-search-row .alch-search-type { color: var(--gold-soft); text-align: center; font-size: 13px; }
+.alch-search-row .alch-search-meta { color: var(--text-3); font-family: var(--mono); font-size: 10px; }
+.alch-search-empty {
+  padding: 10px 12px; color: var(--text-3); font-style: italic; font-family: var(--serif); font-size: 12px;
+}
+
+.alch-btn {
+  background: var(--bg-2);
+  border: 1px solid var(--border-soft);
+  color: var(--text-1);
+  padding: 6px 12px;
+  border-radius: 4px;
+  font-family: var(--mono); font-size: 10.5px;
+  letter-spacing: 0.06em;
+  cursor: pointer;
+  transition: all 120ms ease;
+}
+.alch-btn:hover { border-color: var(--gold-soft); color: var(--gold); }
+.alch-btn-danger:hover { border-color: rgba(194,84,80,0.7); color: #d27575; }
+.alch-counter {
+  margin-left: auto;
+  color: var(--text-3); font-family: var(--mono); font-size: 10.5px;
+  letter-spacing: 0.08em; text-transform: uppercase;
+}
+
+/* ----- cards ----- */
+.alch-card {
+  position: absolute;
+  background: rgba(20,22,28,0.96);
+  border: 1px solid var(--border-soft);
+  border-radius: 10px;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.45);
+  overflow: hidden;
+  cursor: grab;
+  user-select: none;
+  transition: border-color 140ms ease, box-shadow 140ms ease, transform 140ms ease;
+  will-change: transform, left, top;
+}
+.alch-card:hover {
+  border-color: var(--gold-soft);
+  box-shadow: 0 8px 24px rgba(212,165,90,0.18), 0 4px 14px rgba(0,0,0,0.45);
+}
+.alch-card-selected {
+  border-color: var(--gold);
+  box-shadow: 0 0 0 2px rgba(212,165,90,0.32), 0 8px 24px rgba(212,165,90,0.25), 0 4px 14px rgba(0,0,0,0.45);
+}
+.alch-card-ghost { opacity: 0.62; }
+.alch-card:active { cursor: grabbing; }
+
+.alch-card-thumb {
+  width: 100%; aspect-ratio: 16/10;
+  background-position: center; background-size: cover; background-repeat: no-repeat;
+  background-color: rgba(212,165,90,0.04);
+  border-bottom: 1px solid var(--border-soft);
+  display: flex; align-items: center; justify-content: center;
+}
+.alch-card-thumb[data-empty="1"] {
+  background: linear-gradient(135deg, rgba(212,165,90,0.05), rgba(90,108,196,0.05));
+}
+.alch-card-thumb-fallback {
+  font-family: var(--serif); font-size: 56px; color: var(--gold-soft);
+  opacity: 0.55;
+}
+.alch-card-body {
+  padding: 12px 14px 14px;
+}
+.alch-card-title-row {
+  display: flex; align-items: baseline; gap: 8px; margin-bottom: 4px;
+}
+.alch-card-title {
+  flex: 1;
+  font-family: var(--serif); font-size: 17px; line-height: 1.2;
+  color: var(--text-0); font-weight: 500;
+  letter-spacing: 0.01em;
+  /* trim overflow */
+  overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+}
+.alch-card-type {
+  font-family: var(--mono); font-size: 8.5px;
+  color: var(--gold-soft);
+  background: rgba(212,165,90,0.10);
+  border: 1px solid rgba(212,165,90,0.25);
+  padding: 2px 6px; border-radius: 3px;
+  text-transform: uppercase; letter-spacing: 0.1em;
+  white-space: nowrap;
+}
+.alch-card-sub {
+  font-family: var(--mono); font-size: 10px;
+  color: var(--text-3); letter-spacing: 0.06em;
+  margin-bottom: 8px;
+}
+.alch-card-summary {
+  font-family: var(--serif); font-size: 12px; line-height: 1.45;
+  color: var(--text-1);
+  margin-bottom: 10px;
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+.alch-card-tags {
+  display: flex; flex-wrap: wrap; gap: 4px;
+  margin-top: 8px;
+}
+.alch-pill {
+  font-family: var(--mono); font-size: 9px;
+  color: var(--text-2);
+  background: rgba(212,165,90,0.05);
+  border: 1px solid var(--border-soft);
+  padding: 2px 6px; border-radius: 9px;
+  letter-spacing: 0.04em;
+  white-space: nowrap;
+}
+.alch-pill[data-pill="era"] { color: var(--gold-soft); border-color: rgba(212,165,90,0.25); }
+.alch-pill[data-pill="theme"] { color: #e0a850; border-color: rgba(224,168,80,0.25); background: rgba(224,168,80,0.05); }
+.alch-pill[data-pill="status"] { color: #6e8c6b; border-color: rgba(110,140,107,0.25); background: rgba(110,140,107,0.05); }
+
+/* ----- context menu ----- */
+.alch-menu {
+  position: fixed;
+  background: rgba(14,16,22,0.96);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--border-soft);
+  border-radius: 6px;
+  box-shadow: 0 10px 32px rgba(0,0,0,0.6);
+  min-width: 220px;
+  padding: 4px 0;
+  z-index: 200;
+  font-family: var(--serif); font-size: 13px;
+  color: var(--text-1);
+}
+.alch-menu hr {
+  border: 0; border-top: 1px solid var(--border-soft); margin: 4px 0;
+}
+.alch-menu-item {
+  padding: 7px 14px;
+  cursor: pointer;
+  transition: background 100ms ease;
+}
+.alch-menu-item:hover { background: var(--bg-2); color: var(--gold); }
+.alch-menu-item-disabled { color: var(--text-3); cursor: default; }
+.alch-menu-item-disabled:hover { background: transparent; color: var(--text-3); }
+
+/* Hide view-controls + map-thumb + zoom-meter on the new Alchemy view —
+   it has its own toolbar and doesn't need them. */
+body.view-alchemy .view-header .view-controls { display: none; }
+body.view-alchemy .map-thumb { display: none !important; }
+body.view-alchemy .zoom-meter { display: none !important; }
+
 /* ASTROLOGY pane — stub state. Same layout idiom as .atlas-pane: full canvas
    minus sidebar/detail widths via --eff-nav-w / --eff-detail-w. The mode-switch
    pill row is rendered into #view-controls (top bar) and shares .btn.btn-mini styling. */
