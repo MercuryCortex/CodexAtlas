@@ -1,6 +1,6 @@
 ---
 type: document
-id: "P4-064-sukhavativyuha-larger"
+id: "phase-4-104-sukhavativyuha-larger"
 title: "Larger Sukhāvatīvyūha Sūtra (Larger Pure Land Sūtra)"
 aka: ["Sukhāvatīvyūha-sūtra (longer)", "無量壽經 (Wúliángshòu Jīng)", "Larger Sutra on Amitāyus", "Sutra of Infinite Life", "Daimuryōju-kyō"]
 tradition: "Mahāyāna Buddhism"
@@ -17,7 +17,7 @@ city-of-origin: ""
 authorship: "anonymous (Mahāyāna sūtra; presented as a discourse of the historical Buddha to the disciple Ānanda)"
 key-figures: ["[[siddhartha-gautama-buddha]]", "[[amitabha]] (the cosmic Buddha of the Western Pure Land, formerly the bodhisattva Dharmākara)", "Ānanda (the interlocutor)", "Mahāsthāmaprāpta and [[avalokitesvara]] (the two great bodhisattvas attending Amitābha)"]
 themes: ["[[bhakti-devotion]]", "[[divine-emanation]]", "[[afterlife-judgment]]"]
-parallels: ["[[phase-4-061-lotus-sutra]]", "[[phase-4-062-avatamsaka-sutra]]", "[[phase-4-063-lankavatara-sutra]]", "[[phase-5-002-heart-sutra]]"]
+parallels: ["[[phase-4-101-lotus-sutra]]", "[[phase-4-102-avatamsaka-sutra]]", "[[phase-4-103-lankavatara-sutra]]", "[[phase-5-002-heart-sutra]]"]
 influenced-by: ["earlier Mahāyāna bodhisattva-vow literature", "possibly Zoroastrian and Central-Asian paradisiacal imagery (contested — see Disputes)"]
 influences: ["Chinese Pure Land school (Tanluan ~476-542; Daochuo 562-645; Shandao 613-681)", "Japanese Pure Land (Hōnen 1133-1212; Shinran 1173-1263; Jōdo-shū and Jōdo Shinshū)", "Korean and Vietnamese Pure Land traditions", "[[amitabha]] / [[avalokitesvara]] / [[guanyin]] devotion across East Asia", "Tibetan Sukhāvatī devotion (within Vajrayāna)"]
 deities-mentioned: ["[[amitabha]]", "[[avalokitesvara]]"]
@@ -88,7 +88,7 @@ The foundational text of the East Asian Pure Land tradition — the most demogra
 - [[divine-emanation]] (Mahāyāna form) — Amitābha as the cosmic reward-body Buddha, emanating saving power across vast distance.
 
 ## Connections (provisional)
-- → [[phase-4-061-lotus-sutra]] / [[phase-4-062-avatamsaka-sutra]] / [[phase-4-063-lankavatara-sutra]] — *parallel-motif* / *shared-milieu*: the four foundational East Asian Mahāyāna sūtra-corpora. The Pure Land tradition (this text) is the *bhakti* wing; the Lotus is the *upāya* / universalist wing; the Avataṃsaka is the cosmological wing; the Laṅkāvatāra is the philosophical Mind-Only wing.
+- → [[phase-4-101-lotus-sutra]] / [[phase-4-102-avatamsaka-sutra]] / [[phase-4-103-lankavatara-sutra]] — *parallel-motif* / *shared-milieu*: the four foundational East Asian Mahāyāna sūtra-corpora. The Pure Land tradition (this text) is the *bhakti* wing; the Lotus is the *upāya* / universalist wing; the Avataṃsaka is the cosmological wing; the Laṅkāvatāra is the philosophical Mind-Only wing.
 - → [[amitabha]] — *deity-source*: this is *the* foundational textual source for the Amitābha cult. The Sūtra constitutes the buddha and his Pure Land as objects of devotion.
 - → [[avalokitesvara]] / [[guanyin]] — *shared-figure*: Avalokiteśvara is one of the two attending bodhisattvas of Amitābha; Pure Land and Avalokiteśvara/Guanyin devotion are deeply intertwined in East Asian practice.
 - → **Chinese Pure Land masters** (Tanluan, Daochuo, Shandao) — *direct-influence*: Shandao's commentaries (7th c.) systematize the Sūtra into the foundation of a self-conscious Pure Land school.

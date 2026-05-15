@@ -1,6 +1,6 @@
 ---
 type: document
-id: "phase-2-005-1-2-kings"
+id: "phase-2-034-books-of-kings"
 title: "Books of Kings (1 Kings & 2 Kings)"
 aka: ["1 Kings", "2 Kings", "Books of Kingdoms (LXX)", "Sefer Melakhim", "Third and Fourth Kingdoms (LXX numbering)"]
 tradition: "Hebrew Bible / Old Testament"

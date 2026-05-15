@@ -27,9 +27,9 @@ appearances:
   - "[[phase-1-010-book-of-the-dead]]"
   - "[[phase-2-001-rig-veda-family-books]]"
   - "[[phase-2-027-bhagavad-gita]]"
-  - "[[phase-4-061-lotus-sutra]]"
-  - "[[phase-4-062-avatamsaka-sutra]]"
-  - "[[phase-4-064-sukhavativyuha-larger]]"
+  - "[[phase-4-101-lotus-sutra]]"
+  - "[[phase-4-102-avatamsaka-sutra]]"
+  - "[[phase-4-104-sukhavativyuha-larger]]"
 deity-instances:
   - "[[lakshmi]]"
   - "[[saraswati]]"
@@ -140,7 +140,7 @@ The lotus is one of the most-attested cross-tradition phytomorphic symbols in th
 
 - **Egyptian (c. -2700 onward)** — *Pyramid Texts* (c. -2400) PT 249 invokes the lotus-rising-from-the-primal-waters cosmogony; *Coffin Texts* and *Book of the Dead* continue. Iconographic attestation on temple decoration, votive objects, and royal funerary contexts from Old Kingdom forward. Tutankhamun's tomb (c. -1325): a famous painted-wood head of the young king emerging from a lotus. ([[phase-1-002-pyramid-texts]], [[phase-1-009-coffin-texts]], [[phase-1-010-book-of-the-dead]])
 - **Vedic (c. -1500 onward textual)** — the *Sri Sukta* (Rig Veda *Khila* supplement) hymn to Lakshmi as the Lotus-One. Hindu cosmogonic iconography of Vishnu's navel-lotus generating Brahma is canonical from late-Vedic textual record onward. ([[phase-2-001-rig-veda-family-books]])
-- **Buddhist (c. -500 onward textual; c. -100 onward iconographic)** — Buddha-on-lotus iconography from Mathura and Gandhara art (c. -100 to 300 CE). The Buddha's first seven steps after birth produce lotuses; lotus-throne is standard. *Lotus Sutra* (Mahayana) is named for the lotus as cosmic-revealed-dharma emblem. ([[phase-4-061-lotus-sutra]])
+- **Buddhist (c. -500 onward textual; c. -100 onward iconographic)** — Buddha-on-lotus iconography from Mathura and Gandhara art (c. -100 to 300 CE). The Buddha's first seven steps after birth produce lotuses; lotus-throne is standard. *Lotus Sutra* (Mahayana) is named for the lotus as cosmic-revealed-dharma emblem. ([[phase-4-101-lotus-sutra]])
 - **Coptic Christian (c. 300 CE onward)** — Egyptian Christian textile and manuscript decoration retains lotus-iconography on borders and ornamental contexts. (Bagnall 1993.)
 - **Vajrayana Buddhist mandalas (c. 700 CE onward)** — Garbhadhātu and other "lotus-realm" mandalas fully integrate lotus and mandala iconography. (Snellgrove 1987.)
 - **Renaissance European (c. 1485 onward, parallel-form)** — Botticelli's *Birth of Venus*; iconographic rhyme with Lakshmi-on-lotus, no documented borrowing.

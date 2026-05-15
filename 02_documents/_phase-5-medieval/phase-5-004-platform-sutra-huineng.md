@@ -18,7 +18,7 @@ authorship: "attributed (to Huineng, the Sixth Patriarch, ~638–713); actual co
 key-figures: ["[[huineng]]", "[[shenhui]]", "[[fahai]]"]
 themes: ["[[non-duality]]", "[[emptiness-sunyata]]", "[[gnosis-as-salvation]]"]
 parallels: ["[[phase-5-002-heart-sutra]]", "Diamond Sutra"]
-influenced-by: ["[[phase-5-002-heart-sutra]]", "[[phase-4-063-lankavatara-sutra]] (the early-Chan 'Laṅkāvatāra Masters' tradition)", "Daoist non-action / wu-wei substrate", "[[phase-2-014-daodejing]]", "[[phase-2-022-zhuangzi]] (skill-stories and anti-conceptual rhetoric)"]
+influenced-by: ["[[phase-5-002-heart-sutra]]", "[[phase-4-103-lankavatara-sutra]] (the early-Chan 'Laṅkāvatāra Masters' tradition)", "Daoist non-action / wu-wei substrate", "[[phase-2-014-daodejing]]", "[[phase-2-022-zhuangzi]] (skill-stories and anti-conceptual rhetoric)"]
 influences: ["all later Chan / Zen / Seon lineages", "[[phase-5-029-dogen-shobogenzo]]?"]
 deities-mentioned: []
 events-context: []

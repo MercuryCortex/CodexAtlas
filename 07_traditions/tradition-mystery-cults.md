@@ -93,7 +93,7 @@ tags: [tradition, mystery-cults, eleusis, dionysus, isis, mithras, cybele, helle
 - [[tradition-eleusinian-mysteries]] (Demeter-Persephone, Eleusis, ~1500 BCE – 392 CE)
 - [[tradition-dionysian-mysteries]] (Bacchic-Orphic, ~700 BCE – 400 CE)
 - [[tradition-mithraic-mysteries]] (Roman, ~50–400 CE; Beck-Ulansey-tauroctony reading)
-- [[tradition-isis-mysteries]] (Hellenistic-Roman; principal first-person witness [[phase-4-083-apuleius-metamorphoses-book-11]])
+- [[tradition-isis-mysteries]] (Hellenistic-Roman; principal first-person witness [[phase-4-105-apuleius-metamorphoses-book-11]])
 - [[tradition-cybele-attis-mysteries]] (Phrygian / Magna Mater)
 
 ## Suppression-and-closure events

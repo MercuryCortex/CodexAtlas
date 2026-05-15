@@ -17,7 +17,7 @@ canonical-slug
 ## Currently resolved slugs (auto-seeded — every existing file)
 
 
-### deity (454 nodes)
+### deity (456 nodes)
 
 - `abathur`
 - `adamastor`
@@ -68,6 +68,7 @@ canonical-slug
 - `asmodeus`
 - `astar-aksumite`
 - `astarte-canaanite`
+- `ataecina`
 - `atar`
 - `aten`
 - `athena`
@@ -262,6 +263,7 @@ canonical-slug
 - `matsya-avatar`
 - `mazu`
 - `meder`
+- `melqart`
 - `meness`
 - `mercury-roman`
 - `metatron`
@@ -474,7 +476,7 @@ canonical-slug
 - `zemyna`
 - `zeus`
 
-### document (383 nodes)
+### document (384 nodes)
 
 - `document-kuntillet-ajrud-inscriptions`
 - `phase-1-001-kesh-temple-hymn`
@@ -649,13 +651,9 @@ canonical-slug
 - `phase-4-059-tripartite-tractate`
 - `phase-4-060-letter-to-flora`
 - `phase-4-061-didache`
-- `phase-4-061-lotus-sutra`
 - `phase-4-062-1-clement`
-- `phase-4-062-avatamsaka-sutra`
 - `phase-4-063-ignatius-letters`
-- `phase-4-063-lankavatara-sutra`
 - `phase-4-064-epistle-of-barnabas`
-- `phase-4-064-sukhavativyuha-larger`
 - `phase-4-065-bhagavata-purana`
 - `phase-4-065-shepherd-of-hermas`
 - `phase-4-066-polycarp-philippians`
@@ -678,7 +676,6 @@ canonical-slug
 - `phase-4-080-garima-gospels`
 - `phase-4-081-mashafa-henok-geez-1-enoch`
 - `phase-4-082-ethiopic-biblical-canon`
-- `phase-4-083-apuleius-metamorphoses-book-11`
 - `phase-4-083-mashafa-kidan-testament-of-our-lord`
 - `phase-4-084-ethiopian-sinodos`
 - `phase-4-085-ovid-metamorphoses-book-1`
@@ -693,6 +690,11 @@ canonical-slug
 - `phase-4-098-liezi`
 - `phase-4-099-shangqing-corpus`
 - `phase-4-100-celestial-hierarchy`
+- `phase-4-101-lotus-sutra`
+- `phase-4-102-avatamsaka-sutra`
+- `phase-4-103-lankavatara-sutra`
+- `phase-4-104-sukhavativyuha-larger`
+- `phase-4-105-apuleius-metamorphoses-book-11`
 - `phase-5-001-devi-mahatmya`
 - `phase-5-002-heart-sutra`
 - `phase-5-002b-diamond-sutra`
@@ -859,8 +861,9 @@ canonical-slug
 - `phase-8-018-kalevala`
 - `phase-8-019-kojiki`
 - `phase-8-020-nihon-shoki`
+- `tummal-chronicle`
 
-### event (177 nodes)
+### event (178 nodes)
 
 - `bent-pyramid-sneferu-dahshur`
 - `el-castillo-chichen-itza`
@@ -940,6 +943,7 @@ canonical-slug
 - `event-first-crusade-1095-1099`
 - `event-first-fitna-656-661`
 - `event-formation-of-arya-samaj-1875`
+- `event-founding-kingdom-portugal-1139`
 - `event-founding-of-alexandria-331-bce`
 - `event-fourth-buddhist-council-kanishka-c-100`
 - `event-fourth-crusade-1204`
@@ -1040,7 +1044,7 @@ canonical-slug
 - `subterranean-chamber-great-pyramid`
 - `temple-of-inscriptions-palenque`
 
-### person (638 nodes)
+### person (639 nodes)
 
 - `aaron`
 - `abba-garima`
@@ -1655,6 +1659,7 @@ canonical-slug
 - `vasubandhu`
 - `vasugupta`
 - `vidyaranya`
+- `viriato`
 - `wendy-doniger`
 - `william-blake`
 - `william-james`
@@ -1757,7 +1762,7 @@ canonical-slug
 - `wheat-grain`
 - `yin-yang`
 
-### theme (312 nodes)
+### theme (313 nodes)
 
 - `364-day-solar-calendar`
 - `adam-kadmon`
@@ -1856,6 +1861,7 @@ canonical-slug
 - `feminine-solar`
 - `fifth-empire-quinto-imperio`
 - `final-judgment`
+- `finisterre-end-of-world`
 - `five-ways`
 - `flood-motif`
 - `forgiveness`
@@ -2072,7 +2078,7 @@ canonical-slug
 - `world-parent-cosmogony`
 - `zeus-pantokrator-transmission`
 
-### tradition (120 nodes)
+### tradition (124 nodes)
 
 - `tradition-advaita-vedanta`
 - `tradition-african-traditional`
@@ -2101,6 +2107,8 @@ canonical-slug
 - `tradition-dionysian-mysteries`
 - `tradition-donghak`
 - `tradition-druze`
+- `tradition-early-christianity`
+- `tradition-eastern-orthodoxy`
 - `tradition-eglise-johannite`
 - `tradition-egyptian`
 - `tradition-egyptian-religion`
@@ -2144,6 +2152,7 @@ canonical-slug
 - `tradition-merkavah-mysticism`
 - `tradition-mesoamerican`
 - `tradition-mesopotamian`
+- `tradition-minoan-religion`
 - `tradition-mithraic-mysteries`
 - `tradition-mormonism`
 - `tradition-mystery-cults`
@@ -2179,6 +2188,7 @@ canonical-slug
 - `tradition-sufism`
 - `tradition-sumerian-mesopotamian`
 - `tradition-syriac-orthodox`
+- `tradition-tartessos`
 - `tradition-teutonic-knights`
 - `tradition-thelema`
 - `tradition-theosophy`
@@ -2201,22 +2211,19 @@ canonical-slug
 
 | Refs | Dead target | Suggested canonical (existing) |
 |---:|---|---|
-| 5 | `tradition-eastern-orthodoxy` | `tradition-coptic-orthodox` |
-| 5 | `tradition-early-christianity` | `tradition-coptic-orthodox` |
-| 5 | `phase-1-013-babylonian-theodicy` | `phase-1-019-enuma-anu-enlil` |
-| 4 | `tradition-minoan-religion` | `tradition-coptic-orthodox` |
+| 5 | `phase-4-061-lotus-sutra` | `phase-4-063-ignatius-letters` |
 | 4 | `divine-kingship-solar` | `divine-kingship` |
-| 3 | `tradition-second-temple-judaism` | `tradition-coptic-orthodox` |
-| 3 | `tradition-medieval-christianity` | `tradition-coptic-orthodox` |
-| 3 | `phase-4-007-new-testament-canon` | `phase-4-007-on-the-origin-of-the-world` |
-| 3 | `phase-2-005-1-2-kings` | `phase-2-008-homeric-epics` |
+| 3 | `tradition-second-temple-judaism` | `tradition-sebastianism` |
+| 3 | `tradition-medieval-christianity` | `tradition-pentecostalism` |
 | 2 | `yam-canaanite` | `astarte-canaanite` |
-| 2 | `tradition-judaism-sephardic` | `tradition-coptic-orthodox` |
-| 2 | `tradition-islam-shia` | `tradition-maori` |
-| 2 | `tradition-islam-mughal` | `tradition-maori` |
-| 2 | `tradition-hussitism` | `tradition-maori` |
-| 2 | `tradition-christianity-catholic` | `tradition-coptic-orthodox` |
-| 2 | `tradition-cheondogyo` | `tradition-maori` |
-| 2 | `tradition-bahai` | `tradition-maori` |
+| 2 | `tradition-judaism-sephardic` | `tradition-sebastianism` |
+| 2 | `tradition-islam-shia` | `tradition-islam` |
+| 2 | `tradition-islam-mughal` | `tradition-islam` |
+| 2 | `tradition-hussitism` | `tradition-islam` |
+| 2 | `tradition-hinduism` | `tradition-islam` |
+| 2 | `tradition-christianity-catholic` | `tradition-pentecostalism` |
+| 2 | `tradition-cheondogyo` | `tradition-islam` |
+| 2 | `tradition-bahai` | `tradition-islam` |
 | 2 | `guru-arjan-dev-ji` | `guru-arjan` |
+| 2 | `aurangzeb-emperor` | `zara-yaqob-emperor` |
 | 2 | `asclepius` | `asclepius-greek` |

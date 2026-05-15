@@ -91,8 +91,8 @@ The Aṣṭasāhasrikā Prajñāpāramitā ("Perfection of Wisdom in 8,000 Lines
 - → [[phase-5-002-heart-sutra]] — *redaction-of* (per Nattier 1992): the Chinese Heart Sūtra is a compression assembled from passages of the Chinese Pañcaviṃśatisāhasrikā, which is in turn an expansion of the Aṣṭasāhasrikā.
 - → [[phase-5-002b-diamond-sutra]] — *parallel-form*: the Vajracchedikā is the second great compressed Prajñāpāramitā text; it presents the emptiness-doctrine through a different rhetorical strategy (paradox-form rather than systematic negation).
 - → [[nagarjuna]]'s *Mūlamadhyamakakārikā* — *commentary-on*: Nāgārjuna's MMK is the philosophical systematization of the Aṣṭasāhasrikā's doctrinal position.
-- → [[phase-4-061-lotus-sutra]] — *parallel-form*: same Mahāyāna sūtra-genre; Lotus emphasizes Buddhology and skilful means, Aṣṭasāhasrikā emphasizes wisdom-and-emptiness.
-- → [[phase-4-062-avatamsaka-sutra]] — *parallel-form*: same Mahāyāna sūtra-genre; Avatamsaka emphasizes cosmic interpenetration and the bodhisattva path.
+- → [[phase-4-101-lotus-sutra]] — *parallel-form*: same Mahāyāna sūtra-genre; Lotus emphasizes Buddhology and skilful means, Aṣṭasāhasrikā emphasizes wisdom-and-emptiness.
+- → [[phase-4-102-avatamsaka-sutra]] — *parallel-form*: same Mahāyāna sūtra-genre; Avatamsaka emphasizes cosmic interpenetration and the bodhisattva path.
 - → **Lokakṣema's Chinese translation 179 CE** — *manuscript-transmission*: the Aṣṭasāhasrikā is one of the earliest texts in the Chinese Buddhist canon; Lokakṣema's translation establishes the Chinese terminology of Mahāyāna emptiness for centuries to come.
 
 ## Disputes

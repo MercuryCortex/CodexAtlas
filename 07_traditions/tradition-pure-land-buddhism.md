@@ -9,7 +9,7 @@ region-origin: "Indian Mahāyāna (Gandhāra / northwest India); flourished in C
 regions-spread: ["China (Jìngtǔ 淨土) ~4th c. CE", "Korea (Chŏngt'o) ~6th c.", "Japan (Jōdo / Jōdo-shin) ~9th c. then ~12th-13th c. as independent school", "Vietnam (Tịnh Độ)", "modern global diaspora"]
 key-deities: ["[[amitabha]]", "[[avalokitesvara]]"]
 key-persons: ["Huiyuan (慧遠, 334-416 — White Lotus Society)", "Tanluan (曇鸞, 476-542)", "Daochuo (道綽, 562-645)", "Shandao (善導, 613-681) — Chinese systematizer", "Hōnen (法然, 1133-1212) — Japanese Jōdo-shū founder", "Shinran (親鸞, 1173-1263) — Japanese Jōdo-shinshū founder", "Rennyo (蓮如, 1415-1499) — Jōdo-shinshū restorer"]
-key-documents: ["[[phase-4-064-sukhavativyuha-larger]]", "Smaller Sukhāvatī-vyūha Sūtra (Amitābha Sūtra)", "Amitāyurdhyāna Sūtra (Contemplation Sūtra)", "Tannishō (歎異抄, Shinran-school text c.1290)"]
+key-documents: ["[[phase-4-104-sukhavativyuha-larger]]", "Smaller Sukhāvatī-vyūha Sūtra (Amitābha Sūtra)", "Amitāyurdhyāna Sūtra (Contemplation Sūtra)", "Tannishō (歎異抄, Shinran-school text c.1290)"]
 sister-traditions: ["[[tradition-mahayana-buddhism]]", "[[tradition-zen]]"]
 status: "metadata"
 refs:
@@ -61,7 +61,7 @@ Pure Land Buddhism is the devotional Mahāyāna tradition centered on rebirth in
 7. **Modern (~1850 onward)** — global diaspora; first Buddhist institution in North America = Buddhist Churches of America (BCA), Jōdo-shinshū, 1899; modern intellectual reception via D.T. Suzuki and Buddhist-Christian dialogue (Pure Land's *tariki* / "other-power" → Lutheran *sola gratia* comparative-theology, especially Karl Barth's "Yodo School" footnote in *Church Dogmatics* I/2).
 
 ## Core texts
-- [[phase-4-064-sukhavativyuha-larger]] — Larger Sukhāvatī-vyūha Sūtra (Aparimitāyus-sūtra; the 48 vows of Dharmākara → Amitābha).
+- [[phase-4-104-sukhavativyuha-larger]] — Larger Sukhāvatī-vyūha Sūtra (Aparimitāyus-sūtra; the 48 vows of Dharmākara → Amitābha).
 - *Smaller Sukhāvatī-vyūha Sūtra* (Amitābha Sūtra) — the most-chanted Pure Land liturgical text in East Asia.
 - *Amitāyurdhyāna Sūtra* (Contemplation Sūtra) — the 16 visualization meditations on Amitābha and Sukhāvatī; possibly a Chinese composition (Pas 1995).
 - *Wangsheng lun* (Tanluan's commentary).

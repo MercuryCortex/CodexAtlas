@@ -14,7 +14,7 @@ parent-of: []
 child-of: []
 consort: ["[[radha]]", "Rukmini", "Satyabhama"]
 attributes: ["flute", "peacock feather", "blue/dark complexion", "yellow garment (pitambara)", "cowherd staff"]
-attested-in: ["[[phase-2-017-mahabharata-ramayana-oral-layers]]", "[[phase-2-027-bhagavad-gita]]", "[[phase-4-065-bhagavata-purana]]", "[[phase-6-019-tulsidas-ramcharitmanas]]", "[[phase-6-020-chaitanya-charitamrita]]"]
+attested-in: ["[[phase-2-017-mahabharata-ramayana-oral-layers]]", "[[phase-2-027-bhagavad-gita]]", "[[phase-5-050-bhagavata-purana]]", "[[phase-6-019-tulsidas-ramcharitmanas]]", "[[phase-6-020-chaitanya-charitamrita]]"]
 equivalents: []
 syncretic-edges:
   - target: "[[vishnu]]"

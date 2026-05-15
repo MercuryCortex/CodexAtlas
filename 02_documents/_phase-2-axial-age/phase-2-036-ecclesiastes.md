@@ -56,5 +56,5 @@ One of the book's most significant cross-tradition data points appears at 2:5: Q
 - → [[persian-period-injection]]: *attested-in*; *pardes* at 2:5 is a Persian loanword, direct evidence of Persian-period Hellenistic contact in the text's vocabulary
 - → [[theme-paradise-etymology]]: *attested-in*; *pardes* at 2:5 is one of only three Hebrew Bible occurrences; the term travels from Avestan *pairidaēza* through Hebrew into Greek *paradeisos* and eventually "paradise"
 - → [[phase-2-035-job]]: *shared-milieu*; both texts are Hebrew wisdom literature questioning the deuteronomistic equation between righteousness and prosperity
-- → [[phase-1-013-babylonian-theodicy]]: *parallel-motif*; Qoheleth's empirical skepticism about divine reward parallels the Babylonian tradition of "skeptical wisdom"
+- → [[phase-1-032-babylonian-theodicy]]: *parallel-motif*; Qoheleth's empirical skepticism about divine reward parallels the Babylonian tradition of "skeptical wisdom"
 - → [[phase-2-018-hebrew-bible-p-source]]: *shared-milieu*; post-exilic Hebrew composition reworking earlier traditions

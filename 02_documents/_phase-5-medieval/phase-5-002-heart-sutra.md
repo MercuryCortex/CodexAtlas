@@ -17,7 +17,7 @@ city-of-origin: "Chang'an (Tang capital) — for the standard Chinese text"
 authorship: "anonymous; traditionally a sermon by Avalokiteśvara to Śāriputra"
 key-figures: ["[[xuanzang]]", "[[avalokitesvara]]", "[[shariputra]]"]
 themes: ["[[emptiness-sunyata]]", "[[anatman-no-self]]", "[[bodhisattva-vow]]", "[[non-duality]]", "[[wisdom-personified]]"]
-parallels: ["[[phase-5-002b-diamond-sutra]]", "[[phase-3-031-asthasahasrika-prajnaparamita]]", "[[phase-4-075-mulamadhyamakakarika]]", "[[phase-4-061-lotus-sutra]]", "[[phase-4-062-avatamsaka-sutra]]", "[[phase-4-063-lankavatara-sutra]]", "[[phase-4-064-sukhavativyuha-larger]]"]
+parallels: ["[[phase-5-002b-diamond-sutra]]", "[[phase-3-031-asthasahasrika-prajnaparamita]]", "[[phase-4-075-mulamadhyamakakarika]]", "[[phase-4-101-lotus-sutra]]", "[[phase-4-102-avatamsaka-sutra]]", "[[phase-4-103-lankavatara-sutra]]", "[[phase-4-104-sukhavativyuha-larger]]"]
 influenced-by: ["Aṣṭasāhasrikā Prajñāpāramitā (~-100 to +100)", "Madhyamaka philosophy (Nāgārjuna, ~200 CE)"]
 influences: ["[[phase-5-004-platform-sutra-huineng]]", "all later Mahāyāna and Vajrayāna liturgy", "Zen / Chan koan and chanting practice"]
 deities-mentioned: ["[[avalokitesvara]]", "[[prajnaparamita-goddess]]"]

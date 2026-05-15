@@ -11,7 +11,7 @@ domains: ["cosmic Buddha", "dharmakāya (truth-body)", "central position of the 
 gender: "non-gendered / masculine (iconographic default)"
 role: "cosmic Buddha / dharmakāya"
 attributes: ["solar disk halo", "*dharmacakra mudrā* (turning the wheel of Dharma) or *bodhyagri mudrā*", "white body", "lion mount", "the cosmos as his body"]
-attested-in: ["[[phase-4-062-avatamsaka-sutra|Avataṃsaka Sūtra]]", "Mahāvairocana Tantra (~7th c.)", "Vajraśekhara Tantra"]
+attested-in: ["[[phase-4-102-avatamsaka-sutra|Avataṃsaka Sūtra]]", "Mahāvairocana Tantra (~7th c.)", "Vajraśekhara Tantra"]
 equivalents: ["[[amaterasu]] (Shinto-Buddhist honji-suijaku)", "[[amitabha]] (co-Dhyani-Buddha)", "[[shangdi]] (Daoist-Buddhist syncretic East-Asian Cosmic-Buddha-as-Sky-Father)"]
 syncretic-edges:
   - target: "[[amaterasu]]"
@@ -46,7 +46,7 @@ tags: [deity, buddhism, mahayana, cosmic-buddha, dhyani-buddha, dharmakaya, shin
 The **Cosmic Buddha** — Vairocana ("the Illuminator") is the dharmakāya (truth-body) Buddha at the center of the Five Dhyani Buddha (*Pañcatathāgata*) mandala, the metaphysical principle from whom the other four directional Buddhas emanate. In the *Avataṃsaka Sūtra* his body **is the cosmos** — every atom of every Buddha-land an emanation of his enlightenment, with all Buddhas, bodhisattvas, beings, and worlds interpenetrating each other "as in Indra's net" (the famous Huayan metaphor).
 
 ## Earliest attestation
-- **[[phase-4-062-avatamsaka-sutra|Avataṃsaka Sūtra]]** (~3rd–4th c. CE compilation of older strata) — the foundational Vairocana-cosmology text.
+- **[[phase-4-102-avatamsaka-sutra|Avataṃsaka Sūtra]]** (~3rd–4th c. CE compilation of older strata) — the foundational Vairocana-cosmology text.
 - **Mahāvairocana Tantra** (Skt. *Mahāvairocana-abhisaṃbodhi Sūtra*, ~7th c., translated into Chinese 724 by Śubhakarasiṃha) — the doctrinal foundation of East Asian and Tibetan esoteric (tantric) Buddhism.
 
 ## Mythological role

@@ -11,7 +11,7 @@ date-died: 180
 floruit-earliest: 150
 floruit-latest: 180
 historicity: "documented"
-texts-authored: ["***Metamorphoses* (*The Golden Ass*)** — the 11-book Latin novel; **Book 11 ([[phase-4-083-apuleius-metamorphoses-book-11]]) is the principal extant first-person Latin mystery-initiation account in any tradition**", "***Apologia* (*Pro se de magia*)** — the magic-trial defense (c. 158–159 CE; Apuleius was prosecuted at Sabratha for sorcery after marrying the wealthy widow Aemilia Pudentilla; he successfully defended himself)", "***Florida*** — anthology of Apuleius's rhetorical-declamatory speeches", "***De deo Socratis*** (*On the God of Socrates*) — Middle-Platonist philosophical treatise on daimonology", "***De Platone et eius dogmate*** (*On Plato and his Doctrine*) — Middle-Platonist philosophical handbook", "***De mundo*** (Latin adaptation of pseudo-Aristotelian *De mundo*)"]
+texts-authored: ["***Metamorphoses* (*The Golden Ass*)** — the 11-book Latin novel; **Book 11 ([[phase-4-105-apuleius-metamorphoses-book-11]]) is the principal extant first-person Latin mystery-initiation account in any tradition**", "***Apologia* (*Pro se de magia*)** — the magic-trial defense (c. 158–159 CE; Apuleius was prosecuted at Sabratha for sorcery after marrying the wealthy widow Aemilia Pudentilla; he successfully defended himself)", "***Florida*** — anthology of Apuleius's rhetorical-declamatory speeches", "***De deo Socratis*** (*On the God of Socrates*) — Middle-Platonist philosophical treatise on daimonology", "***De Platone et eius dogmate*** (*On Plato and his Doctrine*) — Middle-Platonist philosophical handbook", "***De mundo*** (Latin adaptation of pseudo-Aristotelian *De mundo*)"]
 texts-attributed-to: ["the Latin Hermetic *Asclepius* dialogue is traditionally attributed to Apuleius; **modern scholarship disputes the attribution** (Hijmans 1987 et al.) but the Apuleian-context attribution-tradition is documented in Augustine"]
 originator-of: ["the **Latin novel** as a sustained literary form (alongside Petronius's *Satyricon* — the two principal extant Latin novels)", "the **first-person mystery-initiation narrative** as a literary form (Met. Bk 11)", "**Latin Middle Platonism** — Apuleius's Latin philosophical handbooks are the principal vehicle for Greek Middle-Platonist doctrines into the Latin philosophical tradition"]
 events-participated: ["**Isis-Osiris initiation at Cenchreae** (the harbor of Corinth, fictionally described in Met. Bk 11; the autobiographical-vs-fictional status is debated but the cultic detail is held to be authentic)", "**Magic trial at Sabratha** (~158–159 CE)", "**Carthage rhetorical career** (sacerdos provinciae — provincial priest of the Roman imperial cult)"]
@@ -56,7 +56,7 @@ tags: [person, latin-literature, middle-platonism, mystery-initiate, apuleius-ma
 # Apuleius of Madaura
 
 ## Identity
-2nd-century North African Latin-language author, Middle-Platonist philosopher, traveling rhetor, and (probably) Isis-initiate. Born c. 124 CE at **Madauros** in Roman Numidia (modern M'daourouch, Algeria — also Augustine's home town two centuries later). Studied at Carthage, Athens, and Rome. Traveled through Asia Minor, Egypt, and the Greek world. Famously prosecuted at Sabratha (~158–159 CE) for sorcery after marrying the wealthy widow Aemilia Pudentilla; his successful defense ***Apologia*** survives. Settled at Carthage as a major rhetorical-and-public figure; held provincial priesthood. **Author of ***Metamorphoses*** (***The Golden Ass***)** — the 11-book Latin novel whose final book ([[phase-4-083-apuleius-metamorphoses-book-11]]) is **the principal extant first-person mystery-initiation account in any tradition** — describing Lucius's deliverance from his ass-form by Isis at Cenchreae harbor and his subsequent three-stage initiation into the Isis mysteries.
+2nd-century North African Latin-language author, Middle-Platonist philosopher, traveling rhetor, and (probably) Isis-initiate. Born c. 124 CE at **Madauros** in Roman Numidia (modern M'daourouch, Algeria — also Augustine's home town two centuries later). Studied at Carthage, Athens, and Rome. Traveled through Asia Minor, Egypt, and the Greek world. Famously prosecuted at Sabratha (~158–159 CE) for sorcery after marrying the wealthy widow Aemilia Pudentilla; his successful defense ***Apologia*** survives. Settled at Carthage as a major rhetorical-and-public figure; held provincial priesthood. **Author of ***Metamorphoses*** (***The Golden Ass***)** — the 11-book Latin novel whose final book ([[phase-4-105-apuleius-metamorphoses-book-11]]) is **the principal extant first-person mystery-initiation account in any tradition** — describing Lucius's deliverance from his ass-form by Isis at Cenchreae harbor and his subsequent three-stage initiation into the Isis mysteries.
 
 Apuleius is **one of the load-bearing witnesses for the Codex Atlas wedge** for three reasons:
 1. **First-person mystery-initiation witness** (Met. Bk 11) — the *only* major surviving extant account of a Roman-era mystery initiation by a (possibly-historical) initiate.
@@ -67,7 +67,7 @@ Apuleius is **one of the load-bearing witnesses for the Codex Atlas wedge** for 
 Strong: his own surviving works (~6 substantial extant texts); the magic-trial *Apologia* gives biographical detail; Augustine engages him at length; Late-Antique grammarians cite him; epigraphic evidence at Madauros confirms his historical presence.
 
 ## Works (extant)
-- ***Metamorphoses*** / ***The Golden Ass*** — 11-book Latin novel; **Book 11 ([[phase-4-083-apuleius-metamorphoses-book-11]]) is the load-bearing mystery-initiation chapter**.
+- ***Metamorphoses*** / ***The Golden Ass*** — 11-book Latin novel; **Book 11 ([[phase-4-105-apuleius-metamorphoses-book-11]]) is the load-bearing mystery-initiation chapter**.
 - ***Apologia*** — the magic-trial defense; a unique Latin-language first-person legal-defense speech.
 - ***Florida*** — rhetorical-declamatory anthology.
 - ***De deo Socratis*** — Middle-Platonist daimonology.
@@ -83,7 +83,7 @@ Strong: his own surviving works (~6 substantial extant texts); the magic-trial *
 
 ## Connections — Apuleius at the Isis-mystery + Latin-Platonism + Hermetic nexus
 
-- → [[phase-4-083-apuleius-metamorphoses-book-11]] *direct-author*.
+- → [[phase-4-105-apuleius-metamorphoses-book-11]] *direct-author*.
 - → [[tradition-isis-mysteries]] *first-person-witness*.
 - → [[phase-4-012-asclepius]] *traditional-attribution* (disputed).
 - → [[tradition-mystery-cults]] *participant-witness*.

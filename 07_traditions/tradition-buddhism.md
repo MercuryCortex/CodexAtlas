@@ -57,7 +57,7 @@ Buddhism is the religious tradition stemming from the teaching of Siddhārtha Ga
 - [[phase-3-031-asthasahasrika-prajnaparamita]] — earliest Mahāyāna sūtra.
 - [[phase-4-075-mulamadhyamakakarika]] — Nāgārjuna's MMK.
 - [[phase-4-076-visuddhimagga]] — Buddhaghosa's *Path of Purification*; the great Theravāda synthesis.
-- [[phase-5-002-heart-sutra]], [[phase-5-002b-diamond-sutra]], [[phase-4-061-lotus-sutra]], [[phase-4-062-avatamsaka-sutra]], [[phase-4-063-lankavatara-sutra]], [[phase-4-064-sukhavativyuha-larger]] — major Mahāyāna sūtras.
+- [[phase-5-002-heart-sutra]], [[phase-5-002b-diamond-sutra]], [[phase-4-101-lotus-sutra]], [[phase-4-102-avatamsaka-sutra]], [[phase-4-103-lankavatara-sutra]], [[phase-4-104-sukhavativyuha-larger]] — major Mahāyāna sūtras.
 
 ## Key persons
 - [[siddhartha-gautama-buddha]] — founder.

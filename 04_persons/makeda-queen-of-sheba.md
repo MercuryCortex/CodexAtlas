@@ -15,7 +15,7 @@ texts-authored: []
 texts-attributed-to: []
 originator-of: ["[[solomonic-genealogical-dynasty]]"]
 events-participated: []
-mentioned-in: ["[[phase-2-005-1-2-kings]] (1 Kings 10:1–13)", "[[phase-2-004-1-2-chronicles]] (2 Chr 9:1–12)", "[[phase-8-008-kebra-nagast]]", "Quran 27 (Surah an-Naml; as *Bilqis* in tafsir tradition)", "Josephus *Antiquities* 8.165–175 (as *Nikaule*)", "Targum Sheni to Esther", "Origen *Commentary on the Song of Songs*", "Matthew 12:42 / Luke 11:31 ('Queen of the South')"]
+mentioned-in: ["[[phase-2-034-books-of-kings]] (1 Kings 10:1–13)", "[[phase-2-004-1-2-chronicles]] (2 Chr 9:1–12)", "[[phase-8-008-kebra-nagast]]", "Quran 27 (Surah an-Naml; as *Bilqis* in tafsir tradition)", "Josephus *Antiquities* 8.165–175 (as *Nikaule*)", "Targum Sheni to Esther", "Origen *Commentary on the Song of Songs*", "Matthew 12:42 / Luke 11:31 ('Queen of the South')"]
 status: "metadata"
 refs:
   - title: "Solomon and Sheba"

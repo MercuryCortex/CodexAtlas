@@ -10,7 +10,7 @@ event-type: "founding"
 participants: ["Sailendra dynasty (royal patrons of Mahayana Buddhism in 8th–9th c. central Java)", "Samaratungga (king of Sailendra, traditionally credited with completion c. 825)", "Gunadharma (legendary architect; not historically attested in inscriptions)", "Theodoor van Erp (1907–1911 Dutch colonial restoration)", "Soekmono (lead Indonesian archaeologist of the 1973–1983 UNESCO/Indonesian restoration)"]
 traditions-affected: ["[[tradition-mahayana-buddhism]]"]
 documents-produced: []
-documents-affected: ["[[phase-4-061-lotus-sutra]]", "[[phase-4-062-avatamsaka-sutra]]", "[[phase-3-031-asthasahasrika-prajnaparamita]]"]
+documents-affected: ["[[phase-4-101-lotus-sutra]]", "[[phase-4-102-avatamsaka-sutra]]", "[[phase-3-031-asthasahasrika-prajnaparamita]]"]
 status: "metadata"
 refs:
   - title: "Borobudur: Golden Tales of the Buddhas"
@@ -83,8 +83,8 @@ The legendary architect "Gunadharma" is named only in much later Javanese chroni
 - **Date and patronage.** The Karangtengah inscription (824 CE) attributes the monument to a Sailendra ruler whose name is variously read as Samaratungga, but the inscription is fragmentary and the attribution is the best reading rather than certain.
 
 ## Connections
-- [[phase-4-061-lotus-sutra]], [[phase-4-062-avatamsaka-sutra]], [[phase-4-063-lankavatara-sutra]] — *iconographic-sources*; the Gandavyuha section of the Avatamsaka Sutra is the direct textual basis for the upper-gallery reliefs.
-- [[phase-3-031-asthasahasrika-prajnaparamita]], [[phase-4-064-sukhavativyuha-larger]] — *associated Mahayana scriptural milieu*.
+- [[phase-4-101-lotus-sutra]], [[phase-4-102-avatamsaka-sutra]], [[phase-4-103-lankavatara-sutra]] — *iconographic-sources*; the Gandavyuha section of the Avatamsaka Sutra is the direct textual basis for the upper-gallery reliefs.
+- [[phase-3-031-asthasahasrika-prajnaparamita]], [[phase-4-104-sukhavativyuha-larger]] — *associated Mahayana scriptural milieu*.
 - [[tradition-mahayana-buddhism]] — *tradition-affected*.
 - [[siddhartha-gautama-buddha]] — *deity-figure-represented*.
 - [[avalokitesvara]], [[manjushri]], [[samantabhadra-buddha]] — *bodhisattvas-represented* in the upper reliefs and statuary.

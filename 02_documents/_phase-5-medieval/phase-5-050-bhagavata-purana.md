@@ -31,7 +31,7 @@ themes:
   - "[[soul-immortality]]"
   - "[[soul-as-bride]]"
 parallels:
-  - "[[phase-4-065-bhagavata-purana]]"
+  - "[[phase-5-050-bhagavata-purana]]"
   - "[[phase-2-027-bhagavad-gita]]"
 influenced-by:
   - "[[phase-2-027-bhagavad-gita]] (avatāra-and-bhakti theology)"
@@ -177,7 +177,7 @@ This is the most important philosophical operation in the *Bhāgavata* — and i
 ## Relations to neighbors
 
 - → [[tradition-bhakti-vaishnavism]]: the *Bhāgavata* is the canonical scriptural foundation of all bhakti Vaishnavism; no other text is more cited.
-- → [[phase-4-065-bhagavata-purana]]: this is the companion node in the vault (earlier slug assignment); the two nodes together cover the full scholarly apparatus.
+- → [[phase-5-050-bhagavata-purana]]: this is the companion node in the vault (earlier slug assignment); the two nodes together cover the full scholarly apparatus.
 - → [[phase-2-027-bhagavad-gita]]: *ancestor-of* — the *Bhāgavata* continues and amplifies the Gītā's avatāra-and-bhakti theology into a full narrative world.
 - → [[soul-as-bride]]: the Rāsa-līlā is the Hindu instance of the erotic-mystical god-soul substrate shared with Christian bridal mysticism and Sufi *firāq*.
 - → [[phase-4-094-larger-sukhavativyuha-sutra]]: structural parallel on grace soteriology (*prapatti* / Gajendra Moksha ↔ *tariki* / Eighteenth Vow).

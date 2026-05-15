@@ -4,6 +4,14 @@ _Hand-maintained. Each agent currently working in the vault appends a claim bloc
 
 ---
 
+## sonnet-p4-fix-1 — integrity / Phase 4 numbering collision fix — started 2026-05-15 — **IN-FLIGHT**
+- Owning: `02_documents/_phase-4-late-antiquity/phase-4-061-lotus-sutra.md` (rename → 101), `phase-4-062-avatamsaka-sutra.md` (rename → 102), `phase-4-063-lankavatara-sutra.md` (rename → 103), `phase-4-064-sukhavativyuha-larger.md` (rename → 104), `phase-4-065-bhagavata-purana.md` (DELETE — misplaced; correct node is phase-5-050), `phase-4-083-apuleius-metamorphoses-book-11.md` (move to 105), `phase-4-090-apuleius-metamorphoses-bk-11.md` (DELETE — duplicate), `phase-4-092-avatamsaka-sutra.md` (DELETE — duplicate), `phase-4-093-lankavat-sutra.md` (DELETE — duplicate), `phase-4-094-larger-sukhavativyuha-sutra.md` (DELETE — duplicate)
+- Goal: Fix Phase 4 sequence-number collisions: Mahayana sutras (061–064) collide with Apostolic Fathers; 083 collides Apuleius with Mashafa-Kidan; delete 5 genuine orphaned duplicates
+- Status: in-flight
+- Last edit: `00_meta/ACTIVE-AGENTS.md`
+
+---
+
 ## sonnet-yoruba-1 — content / Yoruba tradition + deity MASSIVE WIN upgrades — started 2026-05-15 — **FINISHED 2026-05-15**
 - Owning: `07_traditions/tradition-yoruba-ifa.md` (upgrade), `03_deities/ogun.md` (upgrade), `03_deities/shango.md` (upgrade), `03_deities/yemoja.md` (upgrade), `03_deities/oshun.md` (upgrade), `03_deities/obatala.md` (upgrade), `03_deities/eshu.md` (upgrade), `03_deities/orunmila.md` (upgrade), `07_traditions/tradition-candomble.md` (NEW stub — Wiring Law)
 - Goal: All 8 nodes already existed; upgraded each with MASSIVE WIN cross-tradition sections + Tier-1 refs; created tradition-candomble stub per Wiring Law
@@ -137,6 +145,14 @@ Format:
 ## sonnet-now-events-1 — app-code / Astrology Now mode — parallel events timeline — started 2026-05-15
 - Owning: `src/js/astrology/now.js` (events strip below zodiac strip), `src/styles/app.css` (events-strip classes, appended to Now section), `index.html` (cache-bust → `20260515-now-events`)
 - Goal: When the user scrubs in Now mode, plot vault events with `type === 'event'` and numeric `date_earliest` on a SECOND strip directly below the zodiac strip, with year axis ±N years around the scrubber date. Per John's quote: "another timeline in parallel appears WITH EVENTS from the timeline so we can check the parallel between astros and events." Range buttons ±50/±100/±200/±500y, default ±200y. Dots clickable → `selectNode`; hover → `#tooltip`.
+- Status: in-flight
+- Last edit: `00_meta/ACTIVE-AGENTS.md`
+
+---
+
+## sonnet-missing-nodes-1 — content / missing tradition nodes + person stubs + slug fix — started 2026-05-15
+- Owning: `07_traditions/tradition-second-temple-judaism.md` (NEW), `07_traditions/tradition-medieval-christianity.md` (NEW), `04_persons/guru-arjan-dev-ji.md` (NEW alias stub), `04_persons/jan-hus.md` (NEW), `04_persons/tomas-de-torquemada.md` (NEW), `04_persons/guru-tegh-bahadur-ji.md` (NEW), muhammad slug drift fix
+- Goal: Create 4 missing tradition nodes + 4 missing person stubs causing dead-links; fix [[muhammad]] → [[muhammad-ibn-abdullah]] drift
 - Status: in-flight
 - Last edit: `00_meta/ACTIVE-AGENTS.md`
 

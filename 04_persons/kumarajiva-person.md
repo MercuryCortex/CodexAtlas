@@ -12,7 +12,7 @@ floruit-earliest: 401
 floruit-latest: 413
 historicity: "documented"
 texts-authored: []
-texts-attributed-to: ["[[phase-4-061-lotus-sutra]] (Chinese translation, 406 CE — the standard East Asian recension)", "Diamond Sūtra (402 CE Chinese translation, standard recension)", "Vimalakīrti Sūtra (Chinese translation, 406 CE)", "Smaller Sukhāvatīvyūha (Amitābha Sūtra, 402 CE Chinese translation, standard recension)", "Nāgārjuna's *Mūlamadhyamakakārikā* (Chinese translation, c. 409)", "Pañcaviṃśatisāhasrikā Prajñāpāramitā (Chinese translation)", "Aṣṭasāhasrikā Prajñāpāramitā (Chinese translation)"]
+texts-attributed-to: ["[[phase-4-101-lotus-sutra]] (Chinese translation, 406 CE — the standard East Asian recension)", "Diamond Sūtra (402 CE Chinese translation, standard recension)", "Vimalakīrti Sūtra (Chinese translation, 406 CE)", "Smaller Sukhāvatīvyūha (Amitābha Sūtra, 402 CE Chinese translation, standard recension)", "Nāgārjuna's *Mūlamadhyamakakārikā* (Chinese translation, c. 409)", "Pañcaviṃśatisāhasrikā Prajñāpāramitā (Chinese translation)", "Aṣṭasāhasrikā Prajñāpāramitā (Chinese translation)"]
 originator-of: []
 events-participated: []
 mentioned-in: ["Huijiao's *Gaoseng Zhuan* (Biographies of Eminent Monks, 519) ch. 2 — extensive biography", "the Northern Liang and Later Qin imperial records"]

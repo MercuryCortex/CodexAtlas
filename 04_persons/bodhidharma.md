@@ -12,7 +12,7 @@ floruit-earliest: 470
 floruit-latest: 540
 historicity: "disputed"
 texts-authored: ["the *Two Entrances and Four Practices* (二入四行論, *Erru Sixing Lun*) is the only treatise plausibly by Bodhidharma himself; the attribution is contested but holds in mainstream scholarship"]
-texts-attributed-to: ["[[phase-4-063-lankavatara-sutra]] (Bodhidharma is traditionally said to have transmitted the Laṅkāvatāra to his disciple Huike; the historicity of this transmission story is contested)", "various later Chan compositions"]
+texts-attributed-to: ["[[phase-4-103-lankavatara-sutra]] (Bodhidharma is traditionally said to have transmitted the Laṅkāvatāra to his disciple Huike; the historicity of this transmission story is contested)", "various later Chan compositions"]
 originator-of: ["the founding legend of Chinese Chan / Zen Buddhism", "the *biguan* 壁觀 ('wall-gazing' meditation) tradition"]
 events-participated: []
 mentioned-in: ["Yang Xuanzhi's *Luoyang Qielanji* (Record of the Buddhist Monasteries of Luoyang, ~547 CE) — the earliest reference, a single passing mention", "Daoxuan's *Xu Gaoseng Zhuan* (Continued Biographies of Eminent Monks, ~645) — short biography", "Daoyuan's *Jingde Chuandeng Lu* (Record of the Transmission of the Lamp, 1004) — the developed legendary biography"]

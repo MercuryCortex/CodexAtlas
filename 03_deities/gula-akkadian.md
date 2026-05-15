@@ -14,7 +14,7 @@ parent-of: ["[[damu]]", "[[ninazu]]?", "[[gunura]]"]
 child-of: ["[[an-sumerian]]"]
 consort: ["[[ninurta]] (in the Isin/Babylonian theological system, after Ninurta absorbs Pabilsag)"]
 attributes: ["dog (her sacred animal — votive dogs deposited at her sanctuaries)", "scalpel and bandage", "seated goddess in horned crown", "stars and surgical implements on kudurrus"]
-attested-in: ["[[phase-1-018-gudea-cylinders]]?", "[[phase-1-013-babylonian-theodicy]]?"]
+attested-in: ["[[phase-1-018-gudea-cylinders]]?", "[[phase-1-032-babylonian-theodicy]]?"]
 equivalents: ["[[bau-sumerian]]", "[[ninisina]]", "[[ninkarrak]]"]
 syncretic-edges:
   - target: "[[bau-sumerian]]"
@@ -83,7 +83,7 @@ Gula is the supreme healing goddess of the Akkadian/Babylonian pantheon and the 
 Unlike Inanna/Ishtar or Nergal, Gula is not the protagonist of major narrative myths. Her role is **cultic, medical, and intercessory**:
 - She is invoked in incantations (the *Maqlu* and *Surpu* series) as the divine source of healing power; the *asipu* (exorcist) addresses her in opening formulae.
 - Babylonian medical texts (the *Diagnostic Handbook* attributed to Esagil-kin-apli, ~-1100) place her at the head of the divine-medical hierarchy.
-- In wisdom literature (the [[phase-1-013-babylonian-theodicy]] and *Ludlul bel nemeqi*), the sufferer appeals to Gula for restoration; the *Ludlul* speaker is healed by her intervention.
+- In wisdom literature (the [[phase-1-032-babylonian-theodicy]] and *Ludlul bel nemeqi*), the sufferer appeals to Gula for restoration; the *Ludlul* speaker is healed by her intervention.
 - Royal inscriptions of Neo-Babylonian and Neo-Assyrian kings record dedications to Gula for personal health and dynastic continuance.
 
 ## Cross-tradition identifications

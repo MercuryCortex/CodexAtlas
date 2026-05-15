@@ -14,7 +14,7 @@ parent-of: []
 child-of: []
 consort: []
 attributes: ["fish-form (large horned fish in earlier Vedic recension; half-fish-half-Vishnu anthropomorphic in later Puranic recension)", "horn (to which Manu tethers his ship)", "the Vedas held safely in his mouth (Puranic addition)"]
-attested-in: ["Shatapatha Brahmana 1.8.1.1–10 (~-700 — earliest Vedic flood-narrative with the fish savior)", "Mahabharata Vana Parva 187", "[[phase-4-065-bhagavata-purana]] 8.24", "Matsya Purana (one of the eighteen Mahapuranas, named for him)", "Garuda Purana"]
+attested-in: ["Shatapatha Brahmana 1.8.1.1–10 (~-700 — earliest Vedic flood-narrative with the fish savior)", "Mahabharata Vana Parva 187", "[[phase-5-050-bhagavata-purana]] 8.24", "Matsya Purana (one of the eighteen Mahapuranas, named for him)", "Garuda Purana"]
 equivalents: ["[[enki-ea]] (the Mesopotamian flood-warner — parallel-form, not direct cognate)", "[[vishnu]] (Matsya is Vishnu's first avatar — direct-identity within Vaishnavism)"]
 syncretic-edges:
   - target: "vishnu"
@@ -59,13 +59,13 @@ tags: [deity, vedic, hindu, avatar, vishnu, matsya, fish, flood-savior, dashavat
 
 > Manu, washing his hands in the river, catches a small fish in the water. The fish asks Manu to protect him from larger fish in exchange for a future rescue. Manu rears the fish in a pot, then a tank, then a pond, then the sea — the fish growing progressively. When the fish is large enough to face the sea alone, he warns Manu of the impending flood, instructs him to build a great ship, and tells him to tether the ship to the fish's horn. The flood comes; the fish (Matsya, a manifestation of [[vishnu]]) tows Manu's ship to a northern mountain. Manu survives, sacrifices, and from his sacrifice his daughter Iḍā emerges, and from their union humanity descends.
 
-In the later Puranic elaboration ([[phase-4-065-bhagavata-purana]] 8.24, ~9th–10th c. CE), the narrative adds that during the flood, Matsya also rescues the **Vedas** themselves from the demon Hayagriva who had stolen them — making Matsya the savior not only of Manu (humanity's ancestor) but of the sacred scriptural knowledge itself.
+In the later Puranic elaboration ([[phase-5-050-bhagavata-purana]] 8.24, ~9th–10th c. CE), the narrative adds that during the flood, Matsya also rescues the **Vedas** themselves from the demon Hayagriva who had stolen them — making Matsya the savior not only of Manu (humanity's ancestor) but of the sacred scriptural knowledge itself.
 
 ## Earliest attestation
 
 - **Shatapatha Brahmana 1.8.1.1–10** (~-700 BCE) — the foundational Vedic narrative.
 - **Mahabharata Vana Parva 187** (~-300 BCE to +400 CE) — elaborated recension with explicit Matsya-Vishnu identification.
-- **[[phase-4-065-bhagavata-purana]] 8.24** (~9th–10th c. CE) — full *dashavatara*-integrated form with the Vedas-rescue addition.
+- **[[phase-5-050-bhagavata-purana]] 8.24** (~9th–10th c. CE) — full *dashavatara*-integrated form with the Vedas-rescue addition.
 - **Matsya Purana** — one of the eighteen *Mahapuranas*, named for and largely focused on Matsya.
 
 ## Mythological role

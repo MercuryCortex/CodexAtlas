@@ -31,7 +31,7 @@ appearances:
   - "[[phase-2-019-deuteronomistic-history]]"
   - "[[phase-4-006-hypostasis-of-the-archons]]"
   - "[[phase-4-007-on-the-origin-of-the-world]]"
-  - "[[phase-4-061-lotus-sutra]]"
+  - "[[phase-4-101-lotus-sutra]]"
   - "[[phase-8-002-codex-borgia]]"
   - "[[phase-8-003-dresden-codex-maya]]"
 deity-instances:

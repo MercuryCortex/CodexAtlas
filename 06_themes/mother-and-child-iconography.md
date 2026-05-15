@@ -3,7 +3,7 @@ type: theme
 id: "mother-and-child-iconography"
 name: "Mother and Child Iconography"
 category: "iconographic-transmission"
-appearances: ["[[phase-4-007-new-testament-canon]]"]
+appearances: ["[[phase-4-095-new-testament-canon]]"]
 deity-instances: ["[[isis]]", "[[horus]]", "[[hariti]]", "[[mary-theotokos]]"]
 status: "metadata"
 refs:

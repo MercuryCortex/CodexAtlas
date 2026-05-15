@@ -3,7 +3,7 @@ type: theme
 id: "serpent-dual-nature"
 name: "Serpent Dual Nature (Enemy and Wisdom)"
 category: "symbolic-paradox"
-appearances: ["[[phase-2-017-hebrew-bible-j-source]]", "[[phase-1-008-enuma-elish]]", "[[rigveda]]", "[[phase-4-007-new-testament-canon]]"]
+appearances: ["[[phase-2-017-hebrew-bible-j-source]]", "[[phase-1-008-enuma-elish]]", "[[rigveda]]", "[[phase-4-095-new-testament-canon]]"]
 deity-instances: ["[[apophis]]", "[[leviathan]]", "[[vritra]]", "[[tiamat]]", "[[illuyanka]]", "[[jormungandr]]", "[[satan-christian]]"]
 status: "metadata"
 refs:

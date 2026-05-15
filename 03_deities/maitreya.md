@@ -11,7 +11,7 @@ domains: ["future Buddhahood", "Tuṣita heaven (current residence)", "loving-ki
 gender: "masculine"
 role: "future Buddha / messianic bodhisattva"
 attributes: ["Tuṣita heaven", "nāga-mūla tree (under which he will attain enlightenment)", "*dharmacakra mudrā*", "kalaśa (water-vase)", "stūpa-headdress (esoteric form)"]
-attested-in: ["Pāli Canon — Cakkavatti-sīhanāda Sutta (DN 26)", "Maitreyavyākaraṇa", "Mahāvastu", "[[phase-4-061-lotus-sutra|Lotus Sūtra]]"]
+attested-in: ["Pāli Canon — Cakkavatti-sīhanāda Sutta (DN 26)", "Maitreyavyākaraṇa", "Mahāvastu", "[[phase-4-101-lotus-sutra|Lotus Sūtra]]"]
 equivalents: ["[[jesus-christ-deity]] (Second Coming)", "[[muhammad-al-mahdi|the Mahdi]]", "Saoshyant", "Kalki"]
 syncretic-edges:
   - target: "[[jesus-christ-deity]]"

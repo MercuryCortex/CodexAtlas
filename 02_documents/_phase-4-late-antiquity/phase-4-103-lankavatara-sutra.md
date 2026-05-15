@@ -1,6 +1,6 @@
 ---
 type: document
-id: "P4-063-lankavatara-sutra"
+id: "phase-4-103-lankavatara-sutra"
 title: "Laṅkāvatāra Sūtra"
 aka: ["Laṅkāvatāra", "楞伽經 (Léngqié Jīng)", "Ryōga-kyō", "Sutra of the Descent into Laṅkā"]
 tradition: "Mahāyāna Buddhism"
@@ -17,7 +17,7 @@ city-of-origin: ""
 authorship: "anonymous (Mahāyāna sūtra; presented as a discourse of the Buddha to the rākṣasa-king Rāvaṇa on Mount Malaya in Laṅkā; layered composition)"
 key-figures: ["[[siddhartha-gautama-buddha]]", "Mahāmati (the bodhisattva-interlocutor)", "[[asanga]] (Yogācāra systematizer, indirectly downstream)", "[[vasubandhu]] (Yogācāra systematizer, indirectly downstream)", "Bodhidharma (~5th-6th c., traditional Chan founder said to have transmitted the Laṅkāvatāra to Huike)"]
 themes: ["[[emptiness-sunyata]]", "[[non-duality]]", "[[idealism-metaphysical]]", "[[gnosis-as-salvation]]"]
-parallels: ["[[phase-4-061-lotus-sutra]]", "[[phase-4-062-avatamsaka-sutra]]", "[[phase-4-064-sukhavativyuha-larger]]", "[[phase-5-002-heart-sutra]]", "[[phase-5-004-platform-sutra-huineng]]"]
+parallels: ["[[phase-4-101-lotus-sutra]]", "[[phase-4-102-avatamsaka-sutra]]", "[[phase-4-104-sukhavativyuha-larger]]", "[[phase-5-002-heart-sutra]]", "[[phase-5-004-platform-sutra-huineng]]"]
 influenced-by: ["earlier Yogācāra philosophy (Maitreya texts, Asaṅga's *Mahāyānasaṃgraha*)", "Tathāgatagarbha sūtras (*Tathāgatagarbha Sūtra*, *Śrīmālādevī Siṃhanāda Sūtra*)"]
 influences: ["Chinese Faxiang school (Yogācāra)", "Chan/Zen lineage (the 'Laṅkāvatāra masters' as the early Chan tradition's self-designation)", "[[phase-5-004-platform-sutra-huineng]]", "Tibetan Madhyamaka-Yogācāra synthesis (Shentong school)"]
 deities-mentioned: []
@@ -90,7 +90,7 @@ A foundational Mahāyāna sūtra synthesizing the Yogācāra ("Mind-Only" / *Cit
 - [[non-duality]] — the dissolution of subject-object duality is the operative liberatory move; the Laṅkāvatāra's negation of "external object" and "internal subject" alike.
 
 ## Connections (provisional)
-- → [[phase-4-061-lotus-sutra]] / [[phase-4-062-avatamsaka-sutra]] / [[phase-4-064-sukhavativyuha-larger]] — *parallel-motif* / *shared-milieu*: the four East Asian Mahāyāna sūtra-corpora.
+- → [[phase-4-101-lotus-sutra]] / [[phase-4-102-avatamsaka-sutra]] / [[phase-4-104-sukhavativyuha-larger]] — *parallel-motif* / *shared-milieu*: the four East Asian Mahāyāna sūtra-corpora.
 - → [[phase-5-002-heart-sutra]] — *parallel-motif*: shared Mahāyāna substrate, but Heart Sūtra is Madhyamaka-emptiness; Laṅkāvatāra is Yogācāra-Tathāgatagarbha. The two are doctrinally distinct emphases within a shared Mahāyāna world.
 - → [[phase-5-004-platform-sutra-huineng]] — *direct-influence*: the early Chan tradition called itself "Laṅkāvatāra masters" (*Lengqie-shi*); the Sūtra's doctrine of self-realized wisdom is the textual basis of Chan's "separate transmission." The Platform Sutra's own narrative anchors enlightenment in the Diamond Sūtra rather than the Laṅkāvatāra — a substitution that reflects the Southern Chan's strategic shift from the Laṅkāvatāra-anchored Northern School to a more accessible Prajñāpāramitā framing. (McRae 1986 on the Northern School.)
 - → **Asaṅga and Vasubandhu's Yogācāra treatises** — *shared-milieu*: the Laṅkāvatāra synthesizes the Yogācāra philosophical apparatus into a sūtra-format. Asaṅga's *Mahāyānasaṃgraha* and Vasubandhu's *Trimśikā* and *Viṃśatikā* are the scholastic-philosophical counterparts.

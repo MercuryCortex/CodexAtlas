@@ -3,7 +3,7 @@ type: theme
 id: "bodhisattva-vow"
 name: "Bodhisattva-vow"
 category: "soteriological"
-appearances: ["[[phase-3-031-asthasahasrika-prajnaparamita]]", "[[phase-4-061-lotus-sutra]]", "[[phase-4-062-avatamsaka-sutra]]", "[[phase-4-063-lankavatara-sutra]]", "[[phase-4-064-sukhavativyuha-larger]]", "[[phase-5-002-heart-sutra]]", "[[phase-5-002b-diamond-sutra]]", "[[phase-5-004-platform-sutra-huineng]]"]
+appearances: ["[[phase-3-031-asthasahasrika-prajnaparamita]]", "[[phase-4-101-lotus-sutra]]", "[[phase-4-102-avatamsaka-sutra]]", "[[phase-4-103-lankavatara-sutra]]", "[[phase-4-104-sukhavativyuha-larger]]", "[[phase-5-002-heart-sutra]]", "[[phase-5-002b-diamond-sutra]]", "[[phase-5-004-platform-sutra-huineng]]"]
 deity-instances: ["[[avalokitesvara]]", "[[manjushri]]", "[[tara]]", "[[samantabhadra-buddha]]", "[[amitabha]]"]
 status: "metadata"
 refs:
@@ -60,7 +60,7 @@ The most-cited single-sūtra articulation is in the [[phase-5-002b-diamond-sutra
 
 The paradox-form is essential: the bodhisattva-vow holds together the **commitment to liberate all beings** AND the **recognition that there are no beings (no inherent self-existing beings) to be liberated**. The vow is *bodhicitta* operating within [[emptiness-sunyata|śūnyatā]] understanding.
 
-A passage "has" the bodhisattva-vow theme if it explicitly articulates the four-vows formula, the *bodhicitta* aspiration, or the all-beings liberation commitment, or if it describes a specific bodhisattva's vow (e.g., Dharmākara's 48 vows in the [[phase-4-064-sukhavativyuha-larger|Larger Sukhāvatī-vyūha]]; Avalokiteśvara's vow of universal compassion).
+A passage "has" the bodhisattva-vow theme if it explicitly articulates the four-vows formula, the *bodhicitta* aspiration, or the all-beings liberation commitment, or if it describes a specific bodhisattva's vow (e.g., Dharmākara's 48 vows in the [[phase-4-104-sukhavativyuha-larger|Larger Sukhāvatī-vyūha]]; Avalokiteśvara's vow of universal compassion).
 
 ## Earliest attestations
 - **Earliest Mahāyāna sūtras**: the [[phase-3-031-asthasahasrika-prajnaparamita|Aṣṭasāhasrikā Prajñāpāramitā]] (~-100 to +100) is the earliest extant Mahāyāna sūtra and articulates the bodhisattva-ideal as differentiator from earlier-Buddhist arahant-ideal. The bodhisattva-vow is foundational throughout the Prajñāpāramitā, Lotus, Avatamsaka, Sukhāvatī-vyūha, and other Mahāyāna sūtra corpora of the 1st-4th c. CE.
@@ -70,7 +70,7 @@ A passage "has" the bodhisattva-vow theme if it explicitly articulates the four-
 
 ## Variants
 - **Six pāramitās** (Mahāyāna mainstream): the bodhisattva-path comprises six perfections — *dāna* (generosity), *śīla* (ethics), *kṣānti* (patience), *vīrya* (effort), *dhyāna* (meditation), *prajñā* (wisdom). Sometimes expanded to ten with the addition of *upāya* (skillful means), *praṇidhāna* (aspiration), *bala* (powers), *jñāna* (knowledge).
-- **Ten bhūmis**: the bodhisattva-path is articulated as ten progressive stages (*daśa-bhūmi*), as systematized in the *Daśabhūmika Sūtra* (later incorporated into the [[phase-4-062-avatamsaka-sutra|Avataṃsaka Sūtra]]).
+- **Ten bhūmis**: the bodhisattva-path is articulated as ten progressive stages (*daśa-bhūmi*), as systematized in the *Daśabhūmika Sūtra* (later incorporated into the [[phase-4-102-avatamsaka-sutra|Avataṃsaka Sūtra]]).
 - **Vajrayāna integration**: the bodhisattva-vow is integrated with deity yoga, generation-and-completion stage practice, and tantric initiation. The Tibetan *lamrim* tradition ([[atisa|Atiśa's]] *Bodhipathapradīpa* → [[tsongkhapa|Tsongkhapa's]] *Lamrim Chenmo*) structures the entire Buddhist path around stages culminating in the bodhisattva-vow as the operative commitment.
 - **Pure Land integration**: [[tradition-pure-land-buddhism|Pure Land Buddhism]]'s Dharmākara → Amitābha story is itself a *bodhisattva-vow* narrative — Dharmākara's 48 vows are the founding charter of Pure Land soteriology, and the eighteenth vow (rebirth in Sukhāvatī through nembutsu) is the operative Mahāyāna other-power soteriological structure.
 - **Zen / Chan reception**: the bodhisattva-vow is the daily liturgical commitment of all Zen/Chan practitioners; the *Four Great Vows* are recited at the conclusion of every dharma session. Zen tradition reads the vow's paradox-form (vow to save all beings / no beings to save) as the koan-like cognitive structure of the path itself.

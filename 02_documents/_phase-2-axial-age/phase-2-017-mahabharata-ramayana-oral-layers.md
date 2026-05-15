@@ -19,7 +19,7 @@ key-figures: []
 themes: ["[[divine-kingship]]", "[[afterlife-judgment]]"]
 parallels: ["[[phase-2-001-rig-veda-family-books]]", "[[phase-2-008-homeric-epics]]"]
 influenced-by: ["[[phase-2-001-rig-veda-family-books]]", "[[phase-2-006-brahmanas-aranyakas]]"]
-influences: ["all subsequent Hindu literature", "[[phase-2-027-bhagavad-gita]] (embedded in Mbh book 6)", "[[phase-4-065-bhagavata-purana]] (continues Krishna theology)", "Southeast Asian Hindu/Buddhist culture (Indonesia, Cambodia)"]
+influences: ["all subsequent Hindu literature", "[[phase-2-027-bhagavad-gita]] (embedded in Mbh book 6)", "[[phase-5-050-bhagavata-purana]] (continues Krishna theology)", "Southeast Asian Hindu/Buddhist culture (Indonesia, Cambodia)"]
 deities-mentioned: ["[[indra]]", "[[agni]]", "[[varuna]]", "[[rudra-shiva-early]]"]
 events-context: []
 status: "metadata"
@@ -87,7 +87,7 @@ The two great Sanskrit epics of India. The **Mahābhārata** narrates the dynast
 ## Connections (provisional)
 - → [[phase-2-001-rig-veda-family-books]] / [[phase-2-006-brahmanas-aranyakas]] — *influences*: the deities, ritual vocabulary, and narrative kernels (e.g., dynastic genealogies) of the epics derive from the Vedic-Brāhmaṇa stratum.
 - → [[phase-2-027-bhagavad-gita]] — *redaction-of* / *embedded-in*: the Gītā is embedded in Mahābhārata book 6 (Bhīṣmaparvan, chs. 23–40); since it is widely treated as a separable scripture and has its own enormous downstream reception (Wilkins 1785, Schopenhauer, Emerson, Gandhi, Aurobindo), it has its own document node.
-- → [[phase-4-065-bhagavata-purana]] — *direct-influence*: the Bhāgavata Purāṇa (~9th-10th c. CE) continues and amplifies the Mahābhārata's Krishna material (drawing especially on the Harivaṃśa, the supplementary book on Krishna's youth) into its Book-10 lila-cycle.
+- → [[phase-5-050-bhagavata-purana]] — *direct-influence*: the Bhāgavata Purāṇa (~9th-10th c. CE) continues and amplifies the Mahābhārata's Krishna material (drawing especially on the Harivaṃśa, the supplementary book on Krishna's youth) into its Book-10 lila-cycle.
 - → [[phase-2-008-homeric-epics]] — *parallel-motif*: cross-cultural epic genre with structural parallels (heroic warriors, divine intervention, battle and homecoming). No claim of direct contact (despite scattered fringe arguments). Ref: Allen 2009, *The Indo-European Comparative Epic*.
 - → Southeast Asian Hindu/Buddhist culture (Cambodian Angkor, Indonesian Ramayana, Thai Ramakien) — *manuscript-transmission* / *direct-influence*: the Rāmāyaṇa especially traveled with Indianized culture into Southeast Asia and was extensively localized.
 

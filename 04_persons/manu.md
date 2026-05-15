@@ -15,7 +15,7 @@ texts-authored: ["Manusmriti (the *Laws of Manu* — traditionally attributed to
 texts-attributed-to: ["Manusmriti", "the founding of varna-dharma social order"]
 originator-of: ["Hindu social-legal order (varna-dharma)", "the Manvantara cosmic-time periodization (each cosmic age is governed by a Manu)"]
 events-participated: ["the Vedic flood (Shatapatha Brahmana 1.8.1)"]
-mentioned-in: ["Shatapatha Brahmana 1.8.1.1–10 (~-700 — earliest Vedic flood-narrative attestation)", "Mahabharata Vana Parva 187 (Mahabharata recension of the Matsya-Manu flood)", "[[phase-4-065-bhagavata-purana]] 8.24 (the elaborated Bhagavata recension)", "Manusmriti 1.62 (Manu naming himself as Vaivasvata)"]
+mentioned-in: ["Shatapatha Brahmana 1.8.1.1–10 (~-700 — earliest Vedic flood-narrative attestation)", "Mahabharata Vana Parva 187 (Mahabharata recension of the Matsya-Manu flood)", "[[phase-5-050-bhagavata-purana]] 8.24 (the elaborated Bhagavata recension)", "Manusmriti 1.62 (Manu naming himself as Vaivasvata)"]
 status: "metadata"
 refs:
   - title: "On Hinduism"
@@ -62,7 +62,7 @@ The Vedic narrative is **structurally cognate** with the Mesopotamian / Hebrew /
 
 - **Shatapatha Brahmana 1.8.1** (~-700 BCE) — the earliest surviving Vedic narrative.
 - **Mahabharata *Vana Parva* 187** (~-300 BCE to +400 CE composition) — elaborated recension where the fish-Matsya identification is more explicit.
-- **[[phase-4-065-bhagavata-purana]] 8.24** (~-9th–10th c. CE) — the most-elaborated Vaishnava-Puranic recension.
+- **[[phase-5-050-bhagavata-purana]] 8.24** (~-9th–10th c. CE) — the most-elaborated Vaishnava-Puranic recension.
 - **Manusmriti / *Laws of Manu*** (~-200 BCE to +200 CE) — the legal-codification text attributed to Manu; opens with Manu naming himself as Vaivasvata.
 
 Manu is **legendary / mythological** — no contemporary attestation; the Vedic-Hindu flood-tradition is mythological-canonical.

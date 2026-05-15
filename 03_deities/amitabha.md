@@ -14,7 +14,7 @@ parent-of: []
 child-of: []
 consort: ["Pandaravasini (Vajrayana)"]
 attributes: ["red color", "lotus throne", "mudra of meditation", "the Western Paradise"]
-attested-in: ["[[phase-4-064-sukhavativyuha-larger]]", "[[phase-5-002-heart-sutra]]"]
+attested-in: ["[[phase-4-104-sukhavativyuha-larger]]", "[[phase-5-002-heart-sutra]]"]
 equivalents: []
 syncretic-edges:
   - target: "[[avalokitesvara]]"

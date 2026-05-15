@@ -1,6 +1,6 @@
 ---
 type: document
-id: "P4-083-mashafa-kidan-testament-of-our-lord"
+id: "phase-4-083-mashafa-kidan-testament-of-our-lord"
 title: "Mashafa Kidan (Testament of Our Lord)"
 aka: ["*Testamentum Domini Nostri Iesu Christi*", "Mashafa Kidan", "Testament of Our Lord and Saviour Jesus Christ", "መጽሐፈ ኪዳን"]
 tradition: "[[tradition-ethiopian-orthodox-tewahedo]] (canonical NT-adjacent scripture) / [[tradition-syriac-orthodox]] (canonical-liturgical)"

@@ -14,7 +14,7 @@ parent-of: ["[[saraswati]] (consort and daughter in some traditions)", "the Praj
 child-of: ["[[vishnu]] (Puranic cosmogony — Brahmā is born from the lotus rising from Vishnu's navel as Vishnu reclines on the cosmic serpent Shesha)"]
 consort: ["[[saraswati]]"]
 attributes: ["four heads / four faces (originally five before Shiva severed one; one head facing each cardinal direction)", "four arms holding: the Vedas (a book / palm-leaf manuscript), a *kamandalu* (water-pot), a *mala* (rosary), and sometimes a sacrificial ladle or lotus", "white beard (elder god / Grandfather)", "lotus-throne (born from Vishnu's navel-lotus)", "hamsa (swan / goose) as his *vahana* (mount)", "red / golden complexion"]
-attested-in: ["[[phase-2-006-brahmanas-aranyakas]]", "[[phase-2-017-mahabharata-ramayana-oral-layers]]", "[[phase-4-050-vishnu-sahasranama]]", "[[phase-4-065-bhagavata-purana]]"]
+attested-in: ["[[phase-2-006-brahmanas-aranyakas]]", "[[phase-2-017-mahabharata-ramayana-oral-layers]]", "[[phase-4-050-vishnu-sahasranama]]", "[[phase-5-050-bhagavata-purana]]"]
 equivalents: ["[[prajapati]] (Vedic-Brahmanic; Prajapati is the proto-Brahmā creator-figure in the Brahmanas, absorbed into Brahmā as the Puranic tradition crystallizes)"]
 syncretic-edges:
   - target: "prajapati"
@@ -65,7 +65,7 @@ Brahmā is the Hindu creator-deity with **strikingly limited surviving active cu
 - **Brahmanas / Aranyakas** (~-800 to -500): the proto-Brahmā creator-figure is **Prajapati** (Shatapatha Brahmana cosmogonies; Aitareya Aranyaka). The figure-name Brahmā as a personified creator is post-Vedic. ([[phase-2-006-brahmanas-aranyakas]])
 - **Upanishadic period** (~-600 onward): Brahmā as personified creator emerges out of *Brahman* (the impersonal absolute) and Prajapati; the distinction between *Brahman* (neuter, absolute) and *Brahmā* (masculine, personified creator) becomes canonical.
 - **Epic / Puranic period** (~-200 to 500 CE): Brahmā is fully crystallized as the four-faced creator in the Trimurti structure. *Mahabharata* and *Ramayana* attestations are extensive. ([[phase-2-017-mahabharata-ramayana-oral-layers]])
-- **Bhagavata Purana** (c. 9th-10th c. CE) and other major Puranas: canonical Brahmā cosmogonies. ([[phase-4-065-bhagavata-purana]])
+- **Bhagavata Purana** (c. 9th-10th c. CE) and other major Puranas: canonical Brahmā cosmogonies. ([[phase-5-050-bhagavata-purana]])
 - **Pushkar temple** (Rajasthan): the principal surviving Brahmā temple; the canonical center of his (limited) active cult. Continuous attestation from at least the medieval period.
 
 ## Mythological role

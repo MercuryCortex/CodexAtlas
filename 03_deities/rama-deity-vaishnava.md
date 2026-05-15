@@ -14,7 +14,7 @@ parent-of: ["Lava", "Kusha"]
 child-of: ["Dasharatha", "Kaushalya"]
 consort: ["[[sita]]"]
 attributes: ["bow (Kodanda)", "blue-dark complexion", "monkey allies (Hanuman, Sugriva)"]
-attested-in: ["[[phase-2-017-mahabharata-ramayana-oral-layers]]", "[[phase-6-019-tulsidas-ramcharitmanas]]", "[[phase-4-065-bhagavata-purana]]"]
+attested-in: ["[[phase-2-017-mahabharata-ramayana-oral-layers]]", "[[phase-6-019-tulsidas-ramcharitmanas]]", "[[phase-5-050-bhagavata-purana]]"]
 equivalents: []
 syncretic-edges:
   - target: "[[vishnu-deity]]"

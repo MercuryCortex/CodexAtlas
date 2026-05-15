@@ -1,6 +1,6 @@
 ---
 type: document
-id: "P4-062-avatamsaka-sutra"
+id: "phase-4-102-avatamsaka-sutra"
 title: "Avataṃsaka Sūtra (Flower Ornament Sūtra)"
 aka: ["Buddhāvataṃsaka Sūtra", "華嚴經 (Huāyán Jīng)", "Kegon-kyō", "Flower Garland Sūtra", "Flower Ornament Scripture"]
 tradition: "Mahāyāna Buddhism"
@@ -17,7 +17,7 @@ city-of-origin: ""
 authorship: "anonymous (Mahāyāna sūtra; presented as a discourse of the cosmic Buddha Vairocana; layered composition compiling multiple independently circulating sūtras into a single mega-sūtra)"
 key-figures: ["[[siddhartha-gautama-buddha]] (in his cosmic Vairocana form)", "the bodhisattvas Mañjuśrī, Samantabhadra, Maitreya", "Sudhana (the pilgrim of the Gaṇḍavyūha section)", "Fazang (643-712, Huayan systematizer)"]
 themes: ["[[divine-emanation]]", "[[non-duality]]", "[[microcosm-macrocosm]]", "[[as-above-so-below]]"]
-parallels: ["[[phase-4-061-lotus-sutra]]", "[[phase-4-063-lankavatara-sutra]]", "[[phase-4-064-sukhavativyuha-larger]]", "[[phase-5-002-heart-sutra]]"]
+parallels: ["[[phase-4-101-lotus-sutra]]", "[[phase-4-103-lankavatara-sutra]]", "[[phase-4-104-sukhavativyuha-larger]]", "[[phase-5-002-heart-sutra]]"]
 influenced-by: ["earlier Prajñāpāramitā literature", "Mahāyāna devotional and cosmological imagination of the Kuṣāṇa-Gupta period"]
 influences: ["Huayan school (Fazang, 643-712; Chengguan, 738-839; Zongmi, 780-841)", "Kegon school of Japan (Tōdai-ji and Nara Buddhism, 8th c. onward)", "Tibetan Buddhist cosmology", "Chinese Chan/Zen (which absorbs Huayan philosophy)", "Western Buddhist philosophy (Tanaka, Cobb, the process-theology dialogue with Huayan)"]
 deities-mentioned: ["[[manjushri]]", "[[samantabhadra-buddha]]", "Vairocana (cosmic Buddha)"]
@@ -90,7 +90,7 @@ The largest Mahāyāna sūtra — the East Asian recension runs ~1,600 pages in 
 - [[non-duality]] — the Mahāyāna mode of non-duality: not the dissolution of distinctions (Heart Sūtra), but their mutual containment (Avataṃsaka).
 
 ## Connections (provisional)
-- → [[phase-4-061-lotus-sutra]] / [[phase-4-063-lankavatara-sutra]] / [[phase-4-064-sukhavativyuha-larger]] — *parallel-motif* / *shared-milieu*: the four East Asian Mahāyāna sūtra-corpora; each foundational to a different East Asian tradition.
+- → [[phase-4-101-lotus-sutra]] / [[phase-4-103-lankavatara-sutra]] / [[phase-4-104-sukhavativyuha-larger]] — *parallel-motif* / *shared-milieu*: the four East Asian Mahāyāna sūtra-corpora; each foundational to a different East Asian tradition.
 - → [[phase-5-002-heart-sutra]] — *parallel-motif*: shared Mahāyāna emptiness substrate, but different rhetorical mode (Heart Sūtra negates; Avataṃsaka multiplies).
 - → [[phase-5-004-platform-sutra-huineng]] — *direct-influence*: Chan philosophy absorbs Huayan's interpenetration doctrine; Zen koan-collections (especially the Linji line) freely deploy Huayan-style cosmological imagery.
 - → **Huayan school (Fazang, 643-712)** — *direct-influence*: Fazang's *Treatise on the Golden Lion* (composed for Empress Wu) and *Reflections on the Hwa-yen Dharmadhātu* are the foundational philosophical systematization.

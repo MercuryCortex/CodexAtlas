@@ -1,6 +1,6 @@
 ---
 type: document
-id: "P4-061-lotus-sutra"
+id: "phase-4-101-lotus-sutra"
 title: "Lotus Sūtra"
 aka: ["Saddharma Puṇḍarīka Sūtra", "妙法蓮華經 (Miàofǎ Liánhuá Jīng)", "Sutra of the Lotus of the Wonderful Law", "Hokekyō"]
 tradition: "Mahāyāna Buddhism"
@@ -19,7 +19,7 @@ city-of-origin: ""
 authorship: "anonymous (Mahāyāna sūtra; presented as a discourse of the historical Buddha to the assembly on Vulture Peak; layered composition by anonymous Mahāyāna devotional communities, ~-100 to +200)"
 key-figures: ["[[siddhartha-gautama-buddha]]", "[[kumarajiva-person]] (the 406 CE Chinese translator whose recension dominates East Asian reception)", "the bodhisattvas Mañjuśrī, Avalokiteśvara, Samantabhadra (all of whom have chapters or major roles)"]
 themes: ["[[bhakti-devotion]]", "[[emptiness-sunyata]]", "[[non-duality]]", "[[avatar-doctrine]]", "[[progressive-revelation]]", "[[bodhisattva-vow]]", "[[allegorical-exegesis]]"]
-parallels: ["[[phase-5-002-heart-sutra]]", "[[phase-4-062-avatamsaka-sutra]]", "[[phase-4-063-lankavatara-sutra]]", "[[phase-4-064-sukhavativyuha-larger]]"]
+parallels: ["[[phase-5-002-heart-sutra]]", "[[phase-4-102-avatamsaka-sutra]]", "[[phase-4-103-lankavatara-sutra]]", "[[phase-4-104-sukhavativyuha-larger]]"]
 influenced-by: ["earlier Prajñāpāramitā literature (~-100 onward, sharing the early Mahāyāna milieu)", "Buddhist *Jātaka* and *Avadāna* narrative traditions", "[[phase-2-016-early-buddhist-suttas]] (Pali Canon — the Nikāyas which the Lotus claims to transcend via upāya)", "[[phase-3-031-asthasahasrika-prajnaparamita]] (earliest Prajñāpāramitā corpus — shared Mahāyāna milieu)"]
 influences: ["Tiantai school of Zhiyi (~538-597 CE)", "Tendai school of Japan (Saichō, 767-822)", "Nichiren Buddhism (Nichiren, 1222-1282; the entire Lotus-centered Japanese tradition)", "[[guanyin]] devotion (Lotus ch. 25 is the textual foundation of the Avalokiteśvara/Guanyin cult)", "[[phase-5-004-platform-sutra-huineng]] (Chan)", "all East Asian Mahāyāna liturgy and iconography", "[[tradition-mahayana-buddhism]] (foundational document — ekayāna doctrine sets the Mahāyāna project)", "[[tradition-pure-land-buddhism]] (Ch. 25 Guanyin / the eternal cosmic Buddha logic of Ch. 16)", "[[tradition-zen]] (Lotus recited daily in most Zen monasteries despite anti-textual stance)"]
 deities-mentioned: ["[[avalokitesvara]]", "[[guanyin]]", "[[manjushri]]", "[[samantabhadra-buddha]]", "[[maitreya]]", "[[vairocana]]"]
@@ -97,7 +97,7 @@ The most influential single Mahāyāna text in East Asia — and arguably the mo
 - **The cult of the book.** The Lotus uniquely sacralizes its own physical existence: the merit of writing out a copy, of carrying it, of preserving its text. Schopen 1975 ("The Phrase 'sa pṛthivīpradeśaś caityabhūto bhavet' in the Vajracchedikā") and subsequent scholarship reconstruct the cult-of-the-book in early Mahāyāna.
 
 ## Connections (provisional)
-- → [[phase-4-062-avatamsaka-sutra]] / [[phase-4-063-lankavatara-sutra]] / [[phase-4-064-sukhavativyuha-larger]] — *parallel-motif* / *shared-milieu*: the four great East Asian Mahāyāna sūtra-corpora; each foundational to a different East Asian tradition. The Lotus founds Tiantai/Tendai/Nichiren; the Avataṃsaka founds Huayan; the Laṅkāvatāra founds Chan/Zen; the Sukhāvatīvyūha-Pure Land sūtras found Pure Land.
+- → [[phase-4-102-avatamsaka-sutra]] / [[phase-4-103-lankavatara-sutra]] / [[phase-4-104-sukhavativyuha-larger]] — *parallel-motif* / *shared-milieu*: the four great East Asian Mahāyāna sūtra-corpora; each foundational to a different East Asian tradition. The Lotus founds Tiantai/Tendai/Nichiren; the Avataṃsaka founds Huayan; the Laṅkāvatāra founds Chan/Zen; the Sukhāvatīvyūha-Pure Land sūtras found Pure Land.
 - → [[phase-5-002-heart-sutra]] — *parallel-motif*: Mahāyāna sūtra-genre fellows, deeply different in style (the Heart is condensed; the Lotus is rhapsodic), but sharing the Mahāyāna doctrinal substrate (emptiness, bodhisattva path, universal buddhahood).
 - → [[phase-5-004-platform-sutra-huineng]] — *parallel-motif*: both treat enlightenment as suddenly available to the simplest practitioner; both develop a Mahāyāna devotional populism.
 - → [[guanyin]] / [[avalokitesvara]] — *direct-influence*: the Avalokiteśvara chapter (ch. 25) is the textual foundation of East Asian Guanyin devotion. The female-form Guanyin emerges partly from a Lotus-Sūtra-anchored devotional history.
