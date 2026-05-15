@@ -25,7 +25,7 @@ key-themes:
 sister-traditions:
   - "[[tradition-donghak]]"
   - "[[tradition-buddhism]]"
-  - "[[tradition-zen-chan-buddhism]]"
+  - "[[tradition-zen]]"
   - "[[tradition-confucianism]]"
   - "[[tradition-daoism]]"
 status: "metadata"
@@ -97,7 +97,7 @@ This fourfold debt-of-gratitude ethic replaces the Confucian five relationships 
 ## MASSIVE wins — cross-tradition edges
 
 ### Irwon-sang ↔ Zen ensō ↔ Plotinus' One
-The circle as symbol of ultimate reality appears independently in three traditions without direct historical linkage: Won Buddhism's Irwon-sang (~1916), Zen/Chan's ensō (ink circle, ~8th c. CE Japan, earlier Tang China), and Plotinus' "the One" as ineffable source beyond Being (*Enneads*, 3rd c. CE). All three use a circle-or-sphere as the only adequate figure for the absolute — not because it has properties, but because it is the simplest closed form, the limit of form before becoming formless. The structural convergence maps onto Neoplatonic → Islamic → Buddhist chains but also supports an independent cognitive-symbol hypothesis: the circle is the natural human symbol for totality. See [[tradition-neoplatonism]], [[tradition-zen-chan-buddhism]].
+The circle as symbol of ultimate reality appears independently in three traditions without direct historical linkage: Won Buddhism's Irwon-sang (~1916), Zen/Chan's ensō (ink circle, ~8th c. CE Japan, earlier Tang China), and Plotinus' "the One" as ineffable source beyond Being (*Enneads*, 3rd c. CE). All three use a circle-or-sphere as the only adequate figure for the absolute — not because it has properties, but because it is the simplest closed form, the limit of form before becoming formless. The structural convergence maps onto Neoplatonic → Islamic → Buddhist chains but also supports an independent cognitive-symbol hypothesis: the circle is the natural human symbol for totality. See [[tradition-neoplatonism]], [[tradition-zen]].
 
 ### Sotaesan's enlightenment (1916) ↔ William James' four marks of mystical experience
 [[william-james]] (*Varieties of Religious Experience*, 1902) identifies four marks of the mystical state: (1) ineffability, (2) noetic quality (the sense of having learned something true), (3) transiency, (4) passivity (the sense of being "held by" a higher power). Sotaesan's 1916 account — recorded by his disciples — matches all four. Won Buddhism thus illustrates James' claim that mystical experience is cross-culturally invariant at the phenomenological level, even where doctrinal frameworks differ radically. This is the most precise Buddhist data-point for the James-mysticism thesis because the Won tradition preserves Sotaesan's account with relative historical clarity compared to ancient founders.
@@ -122,7 +122,7 @@ All four emerge ~1880–1950 in response to the crisis of Western colonialism, b
 
 ## Relations to neighbors
 - vs. [[tradition-buddhism]]: Won is explicitly a *reform* of Korean Buddhism, not a new tradition. Its central metaphysics (dharmakāya, śūnyatā, karma, rebirth) is standard Mahayana. The innovations are sociological (householder-centered) and symbolic (Irwon replaces Buddha-image as primary focal object).
-- vs. [[tradition-zen-chan-buddhism]]: Won incorporates Seon (Korean Zen) sitting meditation as *jeongsin suyang* but rejects the koan-encounter format and retreat-centered monastic structure. The Irwon is Won's equivalent of the ensō's function in Zen iconography.
+- vs. [[tradition-zen]]: Won incorporates Seon (Korean Zen) sitting meditation as *jeongsin suyang* but rejects the koan-encounter format and retreat-centered monastic structure. The Irwon is Won's equivalent of the ensō's function in Zen iconography.
 - vs. [[tradition-donghak]]: same milieu, overlapping themes (synthesis, Korean modernity, founder crisis), but Donghak is explicitly political and theistic-immanent (Hanullim = God-within) while Won is apophatic-Buddhist (Irwon as beyond-personal).
 - vs. [[tradition-confucianism]]: Won's *eunhye* fourfold debt structure is a deliberate reframing of Confucian reciprocity. Chŏngsan's systematization made Confucian ethics explicit in the scripture.
 

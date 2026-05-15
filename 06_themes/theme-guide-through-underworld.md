@@ -9,7 +9,7 @@ appearances:
   - "[[phase-2-008-homeric-epics]] (Hermes as psychopomp, Odyssey 24; the Nekyia of Odyssey 11)"
   - "[[phase-4-086-arda-viraf-namag]] (Sraosha and Adar guide Wiraz through heaven and hell)"
   - "[[phase-5-029-bardo-thodol]] (the lama's voice guides the dying through the bardo states)"
-  - "[[phase-5-divine-comedy]] (Virgil + Beatrice + St. Bernard as three successive guides)"
+  - "[[phase-5-056-divine-comedy]] (Virgil + Beatrice + St. Bernard as three successive guides)"
 deity-instances:
   - "[[anubis]] (Egyptian: leads the dead to the Weighing of the Heart)"
   - "[[hermes-greek]] (Greek: *psychopompos*, guide of souls to Hades)"
@@ -54,7 +54,7 @@ The guide figure appears across traditions that have no documented contact (Egyp
 - → [[psychopomp]]: *related* (the guide-through-underworld is the extended form of the psychopomp — the full-journey escort rather than the threshold-conductor)
 - → [[katabasis-and-anabasis]]: *related* (the guide is the enabling figure of the katabasis journey)
 - → [[theme-graduated-afterlife]]: *related* (guide and graduated terrain are structurally paired — the guide interprets the moral geography)
-- → [[phase-5-divine-comedy]]: *instance-of* (Virgil + Beatrice + Bernard — the most elaborated guide structure in any literary tradition)
+- → [[phase-5-056-divine-comedy]]: *instance-of* (Virgil + Beatrice + Bernard — the most elaborated guide structure in any literary tradition)
 - → [[phase-4-086-arda-viraf-namag]]: *instance-of* (Sraosha + Adar — the direct structural precursor to Dante's guide pair)
 - → [[beatrice-portinari]]: *instance-of* (Beatrice as guide through Paradise)
 - → [[anubis]]: *instance-of* (Anubis as guide to judgment)

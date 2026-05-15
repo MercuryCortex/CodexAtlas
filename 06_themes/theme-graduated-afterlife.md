@@ -9,7 +9,7 @@ appearances:
   - "[[phase-4-086-arda-viraf-namag]] (Zoroastrian graduated punishments matched sin-for-sin)"
   - "[[phase-4-077-abhidharmakosa]] (Buddhist 8 hot + 8 cold hells with escalating karmic punishments)"
   - "[[phase-5-029-bardo-thodol]] (Tibetan graduated afterlife states in the bardo)"
-  - "[[phase-5-divine-comedy]] (Dante's *contrapasso* — the most philosophically rigorous literary expression)"
+  - "[[phase-5-056-divine-comedy]] (Dante's *contrapasso* — the most philosophically rigorous literary expression)"
 status: metadata
 refs:
   - "Bernstein, Alan E. *The Formation of Hell: Death and Retribution in the Ancient and Early Christian Worlds*. Cornell UP, 1993. — Tier 1"
@@ -41,11 +41,11 @@ The Buddhist cosmology of the *[[phase-4-077-abhidharmakosa]]* (Vasubandhu, 5th 
 
 ## Islamic
 
-The Quran describes Paradise (*janna*) in graduated terms — Surah 56 (al-Wāqi'a) distinguishes the *Muqarrabūn* (the Foremost, those drawn near to God), the *Aṣhāb al-Yamīn* (the Companions of the Right), and the *Aṣhāb al-Shimāl* (the Companions of the Left, who go to hell). Hell (*jahannam*) is described with multiple levels in Islamic theology: seven layers corresponding to different categories of unbelievers and their offenses. The *Mi'rāj* literature (Muhammad's Ascent and Night Journey) elaborates the graduated hell in vivid detail: the visionary journey depicts specific punishments matched to specific earthly sins, in a scheme structurally continuous with the Zoroastrian Ardā Wirāz tradition through which much of the Iranian afterlife imagination was transmitted into the Arabic-Islamic sphere. The *Liber Scalae Machometi* (Latin translation of a Mi'rāj text, 1264 CE) — demonstrably in circulation in Dante's Italy — presents this graduated-punishment scheme in full, within a generation of the *Commedia*'s composition. Wire to [[phase-5-divine-comedy]].
+The Quran describes Paradise (*janna*) in graduated terms — Surah 56 (al-Wāqi'a) distinguishes the *Muqarrabūn* (the Foremost, those drawn near to God), the *Aṣhāb al-Yamīn* (the Companions of the Right), and the *Aṣhāb al-Shimāl* (the Companions of the Left, who go to hell). Hell (*jahannam*) is described with multiple levels in Islamic theology: seven layers corresponding to different categories of unbelievers and their offenses. The *Mi'rāj* literature (Muhammad's Ascent and Night Journey) elaborates the graduated hell in vivid detail: the visionary journey depicts specific punishments matched to specific earthly sins, in a scheme structurally continuous with the Zoroastrian Ardā Wirāz tradition through which much of the Iranian afterlife imagination was transmitted into the Arabic-Islamic sphere. The *Liber Scalae Machometi* (Latin translation of a Mi'rāj text, 1264 CE) — demonstrably in circulation in Dante's Italy — presents this graduated-punishment scheme in full, within a generation of the *Commedia*'s composition. Wire to [[phase-5-056-divine-comedy]].
 
 ## Dante's *Commedia* as synthesis and culmination
 
-The *contrapasso* principle — the governing logic of Dante's Inferno — is the most philosophically rigorous literary expression of the graduated-afterlife pattern across all traditions. Derived from Aquinas (drawing on Aristotle): the punishment must correspond to the sin, either by formal resemblance (the punishment mirrors the sin in its structure) or by opposition (the punishment inverts or parodies what the sin enjoyed). The glutton lies in filthy rain that parodies the rich feasts they overindulged; the lustful are blown eternally by winds that mirror the passions that blew them about in life; the wrathful are submerged in the swamp of the River Styx; the sowers of discord are themselves cloven. The *Commedia*'s nine circles of Inferno, seven terraces of Purgatorio, and nine celestial spheres of Paradiso constitute the fullest moral geography of the afterlife in any literary tradition. See [[phase-5-divine-comedy]] for the full transmission chain.
+The *contrapasso* principle — the governing logic of Dante's Inferno — is the most philosophically rigorous literary expression of the graduated-afterlife pattern across all traditions. Derived from Aquinas (drawing on Aristotle): the punishment must correspond to the sin, either by formal resemblance (the punishment mirrors the sin in its structure) or by opposition (the punishment inverts or parodies what the sin enjoyed). The glutton lies in filthy rain that parodies the rich feasts they overindulged; the lustful are blown eternally by winds that mirror the passions that blew them about in life; the wrathful are submerged in the swamp of the River Styx; the sowers of discord are themselves cloven. The *Commedia*'s nine circles of Inferno, seven terraces of Purgatorio, and nine celestial spheres of Paradiso constitute the fullest moral geography of the afterlife in any literary tradition. See [[phase-5-056-divine-comedy]] for the full transmission chain.
 
 ## Investigative note: transmission vs. convergence
 
@@ -53,7 +53,7 @@ The pattern of graduated, sin-matched afterlife judgment is too specific and too
 
 ## Connections claimed
 
-- → [[phase-5-divine-comedy]]: *instance-of* (the *contrapasso* is the most systematic literary expression of this theme)
+- → [[phase-5-056-divine-comedy]]: *instance-of* (the *contrapasso* is the most systematic literary expression of this theme)
 - → [[phase-4-086-arda-viraf-namag]]: *instance-of* (the Zoroastrian template for the graduated punishment taxonomy)
 - → [[phase-1-010-book-of-the-dead]]: *instance-of* (the Weighing of the Heart + 42 judges — earliest documented layer)
 - → [[phase-4-077-abhidharmakosa]]: *instance-of* (Buddhist 8 hot + 8 cold hells)

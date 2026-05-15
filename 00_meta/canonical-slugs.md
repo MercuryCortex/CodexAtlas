@@ -2189,21 +2189,21 @@ canonical-slug
 | Refs | Dead target | Suggested canonical (existing) |
 |---:|---|---|
 | 5 | `phase-1-013-babylonian-theodicy` | `phase-1-011-great-hymn-to-aten` |
-| 4 | `tradition-minoan-religion` | `tradition-portuguese-hermeticism` |
-| 4 | `tradition-eastern-orthodoxy` | `tradition-portuguese-hermeticism` |
-| 4 | `tradition-early-christianity` | `tradition-portuguese-hermeticism` |
-| 3 | `tradition-zen-chan-buddhism` | `tradition-portuguese-hermeticism` |
-| 3 | `tradition-second-temple-judaism` | `tradition-portuguese-hermeticism` |
-| 3 | `tradition-medieval-christianity` | `tradition-portuguese-hermeticism` |
-| 3 | `phase-4-007-new-testament-canon` | `phase-4-007-on-the-origin-of-the-world` |
+| 4 | `tradition-minoan-religion` | `tradition-ordo-novi-templi` |
+| 4 | `tradition-eastern-orthodoxy` | `tradition-ordo-novi-templi` |
+| 4 | `tradition-early-christianity` | `tradition-ordo-novi-templi` |
+| 3 | `tradition-second-temple-judaism` | `tradition-ordo-novi-templi` |
+| 3 | `tradition-medieval-christianity` | `tradition-ordo-novi-templi` |
+| 3 | `phase-4-007-new-testament-canon` | `phase-4-008-trimorphic-protennoia` |
 | 3 | `phase-2-005-1-2-kings` | `phase-2-003-atharva-veda` |
 | 3 | `divine-kingship-solar` | `divine-kingship` |
 | 2 | `yam-canaanite` | `astarte-canaanite` |
-| 2 | `tradition-islam-shia` | `tradition-asatru` |
-| 2 | `tradition-islam-mughal` | `tradition-asatru` |
-| 2 | `tradition-hussitism` | `tradition-asatru` |
-| 2 | `tradition-christianity-catholic` | `tradition-portuguese-hermeticism` |
-| 2 | `tradition-cheondogyo` | `tradition-asatru` |
-| 2 | `tradition-bahai` | `tradition-asatru` |
+| 2 | `tradition-judaism-sephardic` | `tradition-ordo-novi-templi` |
+| 2 | `tradition-islam-shia` | `tradition-ordo-novi-templi` |
+| 2 | `tradition-islam-mughal` | `tradition-ordo-novi-templi` |
+| 2 | `tradition-hussitism` | `tradition-ordo-novi-templi` |
+| 2 | `tradition-christianity-catholic` | `tradition-ordo-novi-templi` |
+| 2 | `tradition-cheondogyo` | `tradition-ordo-novi-templi` |
+| 2 | `tradition-bahai` | `tradition-buddhism` |
 | 2 | `guru-arjan-dev-ji` | `guru-arjan` |
 | 2 | `asclepius` | `asclepius-greek` |

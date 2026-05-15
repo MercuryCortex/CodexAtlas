@@ -28,7 +28,7 @@ A fourth resonance, structurally parallel, is the Jewish *Shekinah*. In rabbinic
 ## Edge connections
 
 - → [[dante-alighieri]]: *beloved-of*, *commissioned-guide-in-commedia*; Beatrice is the theological center of Dante's life-work
-- → [[phase-5-divine-comedy]]: *guide-figure-in*; she guides Dante through Paradise (Paradiso) and commissions the entire journey
+- → [[phase-5-056-divine-comedy]]: *guide-figure-in*; she guides Dante through Paradise (Paradiso) and commissions the entire journey
 - → [[sophia-pleroma]]: *parallel-figure*; structural convergence — the feminine divine principle mediating between the soul and the Pleroma
 - → [[wisdom-personified]]: *instance-of*; Beatrice occupies the theological role of Sophia/Hokmah in the *Commedia*
 - → [[soul-as-bride]]: *related*; the *Vita Nuova*'s love-theology and the soul-drawn-upward-by-love pattern
