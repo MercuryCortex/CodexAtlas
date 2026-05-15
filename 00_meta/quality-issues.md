@@ -34,6 +34,7 @@ _Auto-generated 2026-05-15. Status claims not meeting the bar in methodology.md.
 | `baron-samedi` | deity | status:metadata but only 1 refs |
 | `kane-hawaiian` | deity | status:metadata but only 1 refs |
 | `odin` | deity | status:metadata but only 1 refs |
+| `baal` | deity | status:metadata but only 1 refs |
 | `mictlantecuhtli` | deity | status:metadata but only 1 refs |
 | `the-world-soul` | deity | status:metadata but only 1 refs |
 | `tonatiuh` | deity | status:metadata but only 1 refs |

@@ -38,11 +38,24 @@ Format:
 - Delivered: [[phase-5-050-bhagavata-purana]] (NEW) — full metadata-tier document node; 4 T1 refs (Bryant 2003, Rocher 1986, Hardy 1983, Prabhupāda T2); 5 MASSIVE-win cross-tradition edges; full 12-Skandha structure; full historical phases (Āḻvārs → Rāmānuja → Nimbārka → Mādhva → Chaitanya → ISKCON); relations to neighbors wired. Build: 1999 nodes · 12028 edges · 3.0% dead-link.
 - Last edit: 00_meta/STATUS.md
 
-## sonnet-deadlink-sweep-2 — content / dead-link closure batch 2 — started 2026-05-15
+## sonnet-deadlink-sweep-2 — content / dead-link closure batch 2 — started 2026-05-15 — **FINISHED 2026-05-15**
 
 - Owning: `tradition-egyptian-religion` (alias stub), `rigveda` (redirect), `primordial-darkness`, `genealogical-cosmogony`, `evolutionary-cosmogony`, `underworld-descent` (stub), `socrates`, `rama-deity-vaishnava`, `radha-deity`, `brahman-impersonal`
 - Goal: Close ~10 high-ref dead-links by creating alias stubs, redirect stubs, and full metadata nodes
-- Status: in-flight
+- Status: finished
+- Delivered:
+  - [[tradition-egyptian-religion]] — alias stub → [[tradition-egyptian]] (closes 7-ref drift)
+  - [[rigveda]] — redirect stub → [[phase-1-031-rigveda]] (closes 4-ref bare-link drift)
+  - [[primordial-darkness]] — full metadata node; Hawaiian pō, Maori Te Kore/Te Pō, Egyptian Nun, Mesopotamian, Hebrew tōhū wābōhū, Vedic tamas, Greek Chaos; MASSIVE-win: Darkness→Light sequence universal across all inhabited continents
+  - [[genealogical-cosmogony]] — full metadata node; Hawaiian Kumulipo, Maori whakapapa, Greek Theogony, Vedic Purusha; ontology-as-genealogy convergence
+  - [[evolutionary-cosmogony]] — full metadata node; Hawaiian Kumulipo 16 wā pre-Darwinian staging; Maori staged void
+  - [[underworld-descent]] — redirect stub → [[katabasis-and-anabasis]]; Popol Vuh + Codex Borgia context
+  - [[socrates]] — full metadata node; MASSIVE-win: Justin Martyr (Apologia 1.46) calling Socrates "Christian before Christ"
+  - [[rama-deity-vaishnava]] — full metadata node; MASSIVE-win: Rama avatar ↔ Christ incarnation theology (voluntary divine descent, Docetism parallel, Chalcedonian formula parallel)
+  - [[radha-deity]] — full metadata node; MASSIVE-win: Radha viraha-bhakti ↔ Bernard of Clairvaux/Teresa of Ávila/John of the Cross bridal mysticism ↔ Kabbalistic Shekhinah-in-exile — three independent traditions, erotic theology of the soul's longing for God
+  - [[brahman-impersonal]] — full metadata node; MASSIVE-win: 5-tradition table "apophatic absolute beyond personal God" (Advaita/Neoplatonism/Eckhart/Ein Sof/Ibn Arabi — all accused of heresy)
+- Build: **2009 nodes · 12,072 edges · 3.0% dead-link**
+- Last edit: 00_meta/STATUS.md
 - Last edit: 00_meta/ACTIVE-AGENTS.md
 
 ---
