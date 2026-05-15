@@ -46,12 +46,35 @@ refs:
     type: "monograph"
     tier: 1
     notes: "Foundational modern treatment; defends the ~1200 BCE date on linguistic grounds."
+  - title: "The Heritage of Zarathushtra: A New Translation of His Gathas"
+    author: "Humbach, Helmut; Ichaporia, Pallan R."
+    year: 1994
+    publisher: "Universitätsverlag Carl Winter, Heidelberg"
+    type: "critical-edition"
+    tier: 1
+    notes: "Revised single-volume edition of the 1991 two-volume critical edition; standard Heidelberg philological treatment of all 17 Gathas with Avestan text, transliteration, translation, and commentary."
+  - title: "The Gāthās of Zarathustra (online edition)"
+    author: "Skjærvø, Prods Oktor"
+    year: 2003
+    publisher: "Harvard University, Department of Near Eastern Languages and Civilizations (online)"
+    url: "https://www.fas.harvard.edu/~iranian/Zoroastrianism/index.html"
+    type: "critical-edition"
+    tier: 1
+    notes: "Freely available Harvard online edition; Skjærvø's critical translation with full Avestan text and philological notes. Standard reference for Gathic scholarship alongside Insler 1975 and Humbach 1991."
   - title: "The Spirit of Zoroastrianism"
     author: "Skjærvø, Prods Oktor"
     year: 2011
     publisher: "Yale University Press"
     type: "monograph"
     tier: 2
+  - title: "The Gathas of Zarathustra"
+    author: "Irani, Dinshaw J."
+    year: 1924
+    publisher: "Ilm-e-Khshnoom Publication (repr. avesta.org)"
+    url: "https://www.avesta.org/dastur/Dinshaw_J_Irani_The_Gathas.pdf"
+    type: "translation"
+    tier: 3
+    notes: "Parsi community-facing translation by D.J. Irani (1881–1938), a Bombay-based Zoroastrian educator and intellectual. Readable and historically significant within the Parsi diaspora, but not a critical philological edition. Superseded for scholarly purposes by Insler 1975, Humbach 1991, and Skjærvø 2003. Hosted on avesta.org (a community-maintained digital archive, not an institutional repository)."
   - title: "Encyclopaedia Iranica: GĀTHĀS"
     author: "Kellens, Jean"
     year: 2000
@@ -59,6 +82,12 @@ refs:
     url: "https://iranicaonline.org/articles/gathas"
     type: "encyclopedia"
     tier: 3
+  - title: "Avestan Digital Archive (ADA)"
+    publisher: "Freie Universität Berlin, Institut für Iranistik"
+    url: "https://ada.geschkult.fu-berlin.de/"
+    type: "digital-archive"
+    tier: 1
+    notes: "Institutional digital archive of Avestan manuscript tradition maintained by FU Berlin's Iranistik faculty. A scholarly tool for Avestan textual criticism and manuscript studies rather than a primary translation resource; relevant for researchers working on manuscript variants and the textual history of the Avesta."
 tags: [phase-2, zoroastrian, avestan, ahura-mazda, dualism, eschatology]
 ---
 
@@ -185,11 +214,15 @@ The logic is inverted: precisely because the historical Zarathustra established 
 **For the vault:** The Nietzsche reception functions as a major **cross-tradition distortion event** — the replacement of a historical figure's identity by a Western philosophical projection. It belongs in the same analytical category as the Western reception of "Buddha" through Schopenhauer's lens, or the 18th-century construction of "Hinduism" as a philosophical monism.
 
 ## Refs
-1. Insler, S. (1975). *The Hymns of Zarathustra*. Acta Iranica 8, Brill. — definitive critical edition.
-2. Humbach, H. with Ichaporia, P. (1991). *The Gāthās of Zarathustra*. Heidelberg. — alternative critical translation.
-3. Boyce, M. (1975). *A History of Zoroastrianism*, vol. I. Brill. — the influential reconstruction of early Zoroastrianism.
-4. Skjærvø, P.O. (2011). *The Spirit of Zoroastrianism*. Yale UP. — accessible scholarly survey; covers Yasna 44's philosophical significance.
-5. Kellens, J. "GĀTHĀS" in *Encyclopaedia Iranica*. https://iranicaonline.org/articles/gathas. — overview.
-6. Barr, J. (1985). "The Question of Religious Influence: The Case of Zoroastrianism, Judaism, and Christianity". *JAAR* 53:201–235. — the foundational article on the transmission question.
-7. Nietzsche, F. (1888). *Ecce Homo*, "Why I Am a Destiny." — primary source for the Nietzsche misappropriation.
-8. Stausberg, M. (2008). *Zarathustra and Zoroastrianism*. Equinox. — comprehensive Western reception history.
+1. Insler, S. (1975). *The Hymns of Zarathustra*. Acta Iranica 8, Brill. — definitive critical edition. Tier 1.
+2. Humbach, H. with Ichaporia, P. (1991). *The Gāthās of Zarathustra and the Other Old Avestan Texts*. 2 vols. Carl Winter, Heidelberg. — standard critical-philological edition. Tier 1.
+3. Humbach, H. & Ichaporia, P.R. (1994). *The Heritage of Zarathushtra*. Universitätsverlag Carl Winter, Heidelberg. — revised single-volume edition. Tier 1.
+4. Skjærvø, P.O. (2003). *The Gāthās of Zarathustra*. Harvard University (online critical edition). — full Avestan text + philological notes. Tier 1.
+5. Boyce, M. (1975). *A History of Zoroastrianism*, vol. I. Brill. — the influential reconstruction of early Zoroastrianism. Tier 1.
+6. Skjærvø, P.O. (2011). *The Spirit of Zoroastrianism*. Yale UP. — accessible scholarly survey; covers Yasna 44's philosophical significance. Tier 2.
+7. Irani, D.J. (1924). *The Gathas of Zarathustra*. avesta.org PDF. — Parsi community translation; useful but not a critical edition. Tier 3.
+8. Kellens, J. "GĀTHĀS" in *Encyclopaedia Iranica*. https://iranicaonline.org/articles/gathas. — overview. Tier 3.
+9. *Avestan Digital Archive (ADA)*. Freie Universität Berlin, Institut für Iranistik. https://ada.geschkult.fu-berlin.de/. — institutional archive of Avestan manuscript tradition. Tier 1 (research tool).
+10. Barr, J. (1985). "The Question of Religious Influence: The Case of Zoroastrianism, Judaism, and Christianity". *JAAR* 53:201–235. — the foundational article on the transmission question.
+11. Nietzsche, F. (1888). *Ecce Homo*, "Why I Am a Destiny." — primary source for the Nietzsche misappropriation.
+12. Stausberg, M. (2008). *Zarathustra and Zoroastrianism*. Equinox. — comprehensive Western reception history.

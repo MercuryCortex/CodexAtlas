@@ -75,6 +75,22 @@ refs:
     type: "monograph"
     tier: 1
     notes: "Specifically chapter 4 on Zoroastrian influence on Jewish eschatology. Cohn argues — controversially but with substantive documentation — that Zoroastrianism inaugurated a new type of eschatological thinking that Judaism then adapted."
+  - title: "Encyclopaedia Iranica: ESCHATOLOGY i. In Zoroastrianism"
+    author: "Skjærvø, P. Oktor"
+    year: 2012
+    publisher: "Encyclopaedia Iranica online"
+    url: "https://iranicaonline.org/articles/eschatology-i"
+    type: "encyclopedia"
+    tier: 1
+    notes: "Skjærvø's EIr article on Zoroastrian eschatology — the Chinvat Bridge judgment, frashokereti, and the Saoshyant. The primary Encyclopaedia Iranica reference for the eschatological doctrines that are the core of the Persian period injection argument."
+  - title: "Encyclopaedia Iranica: AHURA MAZDĀ"
+    author: "Skjærvø, P. Oktor"
+    year: 2011
+    publisher: "Encyclopaedia Iranica online"
+    url: "https://iranicaonline.org/articles/ahura-mazda"
+    type: "encyclopedia"
+    tier: 1
+    notes: "Skjærvø's EIr article on Ahura Mazda — the supreme deity whose doctrinal profile (uncreated, maximally good, cosmic Truth vs Lie) is the source doctrine for the Persian period injection into Jewish monotheism."
 tags:
   - theme
   - zoroastrian
@@ -151,7 +167,9 @@ The field divides between a substantial-influence majority (Boyce 1982, Collins 
 
 ## Refs
 
-1. Boyce, M. (1982). *A History of Zoroastrianism, Vol. II: Under the Achaemenians*. Brill.
-2. Collins, J.J. (1998). *The Apocalyptic Imagination*. Eerdmans (2nd ed.).
-3. Alexander, P.S. (2010). "The Dualism of the Two Spirits in the Community Rule." In Xeravits (ed.), *Dualism in Qumran*. T&T Clark, pp. 1–32.
-4. Cohn, N. (1993). *Cosmos, Chaos, and the World to Come*. Yale UP.
+1. Boyce, M. (1982). *A History of Zoroastrianism, Vol. II: Under the Achaemenians*. Brill. Tier 1.
+2. Collins, J.J. (1998). *The Apocalyptic Imagination*. Eerdmans (2nd ed.). Tier 1.
+3. Alexander, P.S. (2010). "The Dualism of the Two Spirits in the Community Rule." In Xeravits (ed.), *Dualism in Qumran*. T&T Clark, pp. 1–32. Tier 1.
+4. Cohn, N. (1993). *Cosmos, Chaos, and the World to Come*. Yale UP. Tier 1.
+5. Skjærvø, P.O. (2012). "Eschatology i. In Zoroastrianism." *Encyclopaedia Iranica*. https://iranicaonline.org/articles/eschatology-i. Tier 1.
+6. Skjærvø, P.O. (2011). "Ahura Mazdā." *Encyclopaedia Iranica*. https://iranicaonline.org/articles/ahura-mazda. Tier 1.

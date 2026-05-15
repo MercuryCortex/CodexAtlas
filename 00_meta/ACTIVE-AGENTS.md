@@ -22,6 +22,7 @@ Format:
 
 | Handle | Scope tag | Owns (high level) | Started | Status |
 |---|---|---|---|---|
+| `sonnet-avesta-sources-1` | meta / ref-upgrade — Zoroastrian sources | phase-2-002-gathas-of-zarathustra, tradition-zoroastrianism, asura-deva-inversion, persian-period-injection — NO new nodes | 2026-05-15 | **FINISHED** |
 | `sonnet-deadlink-fix-1` | meta / dead-link verification | dove.md, alpha-omega.md, fleur-de-lis.md dead-link audit — all 10 targets already existed; no stubs needed | 2026-05-15 | **FINISHED** |
 | `sonnet-epist-fix-1` | meta / surgical epistemic corrections | phase-5-056-divine-comedy, creation-by-word, executed-divine-claimant, helena-blavatsky — **NO new nodes** | 2026-05-15 | **FINISHED** |
 | `sonnet-apkallu-1` | content / Apkallu antediluvian sages | `apkallu` (NEW) — Mesopotamian upstream of Watchers/Enoch chain | 2026-05-15 | **FINISHED** |
@@ -29,6 +30,25 @@ Format:
 | `sonnet-khafre-symbolism-1` | content / Egyptian symbolism deep-dive | 9 symbols + 4 themes + 6 persons + 4 events + 2 documents — **25 new nodes · 194 new edges** | 2026-05-15 | **FINISHED** |
 | `sonnet-kabbalah-synthesis-1` | content / Symbol fixes + Kabbalah/Logos/Divine-Feminine synthesis | 6 symbol fixes + theme-axial-age (NEW) + 6 stub→full upgrades (logos-cosmic-reason, divine-feminine, tikkun-olam, philo-of-alexandria, tradition-kabbalah, moses-de-leon) | 2026-05-15 | **FINISHED** e8306e0+268e1da |
 | `sonnet-infra-1` | data-integrity / YAML refs sync + Lotus Sutra dedup + orphan wiring | 10 persons refs-synced, phase-4-091 deleted (merged into phase-4-061), 8 orphan nodes wired (stribog/simeon/priscillian/cassiodorus/alcuin/dove/alpha-omega/fleur-de-lis) | 2026-05-15 | **FINISHED** b0f768a+8b2b7f2 |
+
+---
+
+## sonnet-avesta-sources-1 — meta / ref-upgrade Zoroastrian sources — started 2026-05-15 — **FINISHED 2026-05-15**
+- Owning: `02_documents/_phase-2-axial-age/phase-2-002-gathas-of-zarathustra.md`, `07_traditions/tradition-zoroastrianism.md`, `06_themes/asura-deva-inversion.md`, `06_themes/persian-period-injection.md`
+- Goal: Evaluate 4 Zoroastrian web resources, tier them, and upgrade vault nodes with confirmed scholarly citations. NO new nodes.
+- Status: finished
+- URL evaluations:
+  - **avesta.org** — Tier 3. Community-maintained digital archive (associated with FEZANA); no institutional affiliation; hosts rare texts + community translations but lacks a formal editorial board or peer-review process. Useful reference; not citable as scholarly authority.
+  - **D.J. Irani Gathas PDF** — Tier 3. Dinshaw J. Irani (1881–1938) was a Parsi educator and community intellectual in Bombay, not an academic philologist. His 1924 translation is historically significant within the Parsi diaspora and reads well, but lacks the critical apparatus (Avestan text, philological notes, manuscript variants) of Insler 1975, Humbach 1991, and Skjærvø 2003. Added to phase-2-002 as Tier 3 with appropriate caveat.
+  - **Pablo Vazquez / mazdayasni.com** — Tier 4. Self-described "Zoroastrian scholar and convert" with no stated academic credentials or institutional affiliation. The page describes the translation as "accessible to a modern audience" — a popular/devotional framing. No philological apparatus evident. Not added to vault.
+  - **Avestan Digital Archive (ADA), FU Berlin** — Tier 1. Institutional digital archive maintained by Freie Universität Berlin's Institut für Iranistik — a leading European center for Iranian studies. FU Berlin Iranistik faculty (including Almut Hintze) produce Tier 1 Avestan scholarship. The site was JS-rendered and the /about 404'd, but the institutional provenance is unambiguous. Added as Tier 1 research-tool ref to phase-2-002.
+- Delivered (4 nodes upgraded, no new nodes):
+  - **`phase-2-002-gathas-of-zarathustra`** — added Humbach & Ichaporia 1994 (T1 single-vol revised Heidelberg edition), Skjærvø 2003 Harvard online critical edition (T1), D.J. Irani 1924 avesta.org PDF (T3 with caveat), ADA FU Berlin (T1 research-tool). Updated bottom Refs section to match.
+  - **`tradition-zoroastrianism`** — added Boyce, Mary. "Zoroastrianism." *Encyclopaedia Iranica* (T1) as a distinct article-level ref alongside the general EIr ref already present. Updated bottom Refs.
+  - **`asura-deva-inversion`** — added Skjærvø EIr articles: "Avesta" (2011, T1) and "Daēva" (1993, T1). Updated bottom Refs.
+  - **`persian-period-injection`** — added Skjærvø EIr articles: "Eschatology i. In Zoroastrianism" (2012, T1) and "Ahura Mazdā" (2011, T1). Updated bottom Refs.
+- Build: 2089 nodes · 12,424 edges · no change (ref-only upgrades, no structural edits)
+- Last edit: STATUS.md + git commit
 
 ---
 

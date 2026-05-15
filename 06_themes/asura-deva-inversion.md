@@ -54,6 +54,22 @@ refs:
     type: "scholarly-essay"
     tier: 1
     notes: "Political and theological context of the Zoroastrian daeva reform in the Achaemenid period"
+  - title: "Encyclopaedia Iranica: AVESTA"
+    author: "Skjærvø, P. Oktor"
+    year: 2011
+    publisher: "Encyclopaedia Iranica online"
+    url: "https://iranicaonline.org/articles/avesta-the-holy-book-of-the-zoroastrians"
+    type: "encyclopedia"
+    tier: 1
+    notes: "Skjærvø's comprehensive EIr survey of the Avestan corpus — covers Old Avestan vs Young Avestan, the daeva/ahura vocabulary, textual strata, and the reform context. The standard Encyclopaedia Iranica reference for Avestan philology."
+  - title: "Encyclopaedia Iranica: DAĒVA"
+    author: "Skjærvø, P. Oktor"
+    year: 1993
+    publisher: "Encyclopaedia Iranica online"
+    url: "https://iranicaonline.org/articles/daeva-demon"
+    type: "encyclopedia"
+    tier: 1
+    notes: "Skjærvø's dedicated EIr article on daēva — the demotion of the daeva-class, the Gathic evidence for the reform, and the Indo-Iranian comparative etymology. The essential EIr source specifically for the asura/deva inversion."
   - title: "The Bliss of Aša"
     author: "Kuiper, F.B.J."
     year: 1964
@@ -144,4 +160,6 @@ Sanskrit *Varuna* and Avestan *Ahura Mazda* are cognate — both belong to the *
 1. West, M.L. (2007). *Indo-European Poetry and Myth*, ch. 7. Oxford University Press. — Tier 1
 2. Gonda, J. (1963). *The Vision of the Vedic Poets*. Mouton. — Tier 1
 3. Skjærvø, P.O. (2005). "The Achaemenids and the Avesta," in *Birth of the Persian Empire*. I.B. Tauris. — Tier 1
-4. Kuiper, F.B.J. (1964). "The Bliss of Aša." *Indo-Iranian Journal* 8. — Tier 1
+4. Skjærvø, P.O. (2011). "Avesta." *Encyclopaedia Iranica*. https://iranicaonline.org/articles/avesta-the-holy-book-of-the-zoroastrians. — Tier 1
+5. Skjærvø, P.O. (1993). "Daēva." *Encyclopaedia Iranica*. https://iranicaonline.org/articles/daeva-demon. — Tier 1
+6. Kuiper, F.B.J. (1964). "The Bliss of Aša." *Indo-Iranian Journal* 8. — Tier 1

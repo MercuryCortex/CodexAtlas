@@ -47,6 +47,13 @@ refs:
     url: "https://iranicaonline.org"
     type: "encyclopedia"
     tier: 1
+  - title: "Zoroastrianism"
+    author: "Boyce, Mary"
+    publisher: "Encyclopaedia Iranica online"
+    url: "https://iranicaonline.org/articles/zoroastrianism"
+    type: "encyclopedia"
+    tier: 1
+    notes: "Boyce's definitive Encyclopaedia Iranica survey article on Zoroastrianism — the single most authoritative short overview of the tradition from the premier scholarly reference work in Iranian studies."
   - title: "Persian Apocalypticism"
     author: "Hultgård, Anders"
     year: 1998
@@ -170,10 +177,11 @@ Mani (3rd c. CE, Sasanian Persia) built directly on Zoroastrian frameworks — t
 Hegel (*Lectures on the Philosophy of History*, ~1830) positioned Achaemenid Persia as "the strict beginning of world history" and Zoroastrianism's light/darkness dualism as the first abstract universal principle of Spirit. Nietzsche (*Also Sprach Zarathustra*, 1883–85) inverted the historical Zarathustra into a herald of the Übermensch and the overcoming of morality — the most famous and most systematically misleading Western appropriation of a non-Western religious figure in modern philosophy. The actual Zarathustra is Nietzsche's theological opposite in every major respect. See [[zarathustra]] for the full treatment of the Nietzsche misappropriation and the Hegel reception.
 
 ## Refs
-1. Boyce, M. (1975–1991). *A History of Zoroastrianism*, vols. I–III (with F. Grenet). Brill.
-2. Boyce, M. (1979). *Zoroastrians: Their Religious Beliefs and Practices*. Routledge.
-3. Skjærvø, P.O. (2011). *The Spirit of Zoroastrianism*. Yale UP.
-4. Stausberg, M. & Vevaina, Y.S.-D. (eds.) (2015). *The Wiley Blackwell Companion to Zoroastrianism*. Wiley Blackwell.
-5. *Encyclopaedia Iranica*. https://iranicaonline.org.
-6. Hultgård, A. (1998). "Persian Apocalypticism," in *Encyclopedia of Apocalypticism* Vol. 1.
-7. Barr, J. (1985). "The Question of Religious Influence: The Case of Zoroastrianism, Judaism, and Christianity." *JAAR* 53:201–235.
+1. Boyce, M. (1975–1991). *A History of Zoroastrianism*, vols. I–III (with F. Grenet). Brill. Tier 1.
+2. Boyce, M. (1979). *Zoroastrians: Their Religious Beliefs and Practices*. Routledge. Tier 1.
+3. Boyce, M. "Zoroastrianism." *Encyclopaedia Iranica*. https://iranicaonline.org/articles/zoroastrianism. Tier 1.
+4. Skjærvø, P.O. (2011). *The Spirit of Zoroastrianism*. Yale UP. Tier 1.
+5. Stausberg, M. & Vevaina, Y.S.-D. (eds.) (2015). *The Wiley Blackwell Companion to Zoroastrianism*. Wiley Blackwell. Tier 1.
+6. *Encyclopaedia Iranica*. https://iranicaonline.org. Tier 1.
+7. Hultgård, A. (1998). "Persian Apocalypticism," in *Encyclopedia of Apocalypticism* Vol. 1. Tier 1.
+8. Barr, J. (1985). "The Question of Religious Influence: The Case of Zoroastrianism, Judaism, and Christianity." *JAAR* 53:201–235. Tier 1.
