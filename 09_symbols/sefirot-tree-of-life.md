@@ -16,7 +16,7 @@ appearances:
     description: "Lurianic Kabbalah: Tzimtzum (divine contraction), shevirat ha-kelim (breaking of the vessels), tikkun (repair) — the most influential post-Zoharic systematization; gives the Tree cosmogonic and eschatological narrative"
   - source: "Hermetic Order of the Golden Dawn (1888, London)"
     description: "The sefirot-Tree adopted as the central organizing schema of Western ceremonial magic; every Tarot card, astrological correspondence, element and planet mapped onto the Tree; Aleister Crowley's 777 as the exhaustive correspondence table"
-syncretic-edges:
+cross-symbol-edges:
   - target: "hexagram"
     type: "visual-parallel"
     notes: "The Star of David (hexagram) is placed at Tiferet, the sixth sefirah and the heart of the Tree — the balance-point of the entire structure, the sefirah of the Sun, of Christ in the Hermetic reading, of beauty and harmony. The hexagram within the Tree makes the Star of David the emblem of cosmic balance"

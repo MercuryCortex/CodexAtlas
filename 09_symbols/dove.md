@@ -14,7 +14,7 @@ appearances:
     description: "At Jesus's baptism in the Jordan, the Spirit descends 'like a dove' — the only event in the Gospels attested identically in all four; the dove explicitly links to the Spirit hovering over the primordial waters"
   - source: "Leviticus 12:8"
     description: "Doves or pigeons as the sacrifice of the poor — two turtledoves as Mary and Joseph's offering at the Temple presentation (Luke 2:24)"
-syncretic-edges:
+cross-symbol-edges:
   - target: "noahs-ark"
     type: "typological"
     notes: "MASSIVE WIN: The dove at Jesus's baptism is explicitly the Noah-dove in the New Testament theological logic — Spirit hovering over Jordan waters = Spirit hovering over Genesis 1:2 primordial waters = Spirit hovering over receding flood waters. Jesus's baptism = new creation event. One symbolic chain spans Mesopotamian flood narrative → Genesis flood → New Testament baptism across 2,000 years"

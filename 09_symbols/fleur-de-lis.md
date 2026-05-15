@@ -12,7 +12,7 @@ appearances:
     description: "The fleur-de-lis prominently features on Joan of Arc's battle standard alongside the image of the Virgin Mary — uniting the royal symbol with explicit Marian iconography in a single war-banner"
   - source: "Scottish Rite Freemasonry"
     description: "The fleur-de-lis represents threefold light (intellectual, moral, spiritual) in Scottish Rite symbolism, appearing in lodge regalia and aprons"
-syncretic-edges:
+cross-symbol-edges:
   - target: "lotus"
     type: "structural"
     notes: "MASSIVE WIN: The Western fleur-de-lis (lily/iris) and the Eastern lotus are cognate sacred flowers from the same structural position — both three-petaled, both born from water or marshy ground, both associated with divine purity and feminine divinity (Ishtar/Hera for the lily; Lakshmi/the Buddha for the lotus). The West chose the lily; the East chose the lotus; both arrived independently at the same symbolic solution to the same theological problem: purity emerging from the mundane world"

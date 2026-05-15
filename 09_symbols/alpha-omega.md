@@ -12,7 +12,7 @@ appearances:
     description: "Repeated divine self-identification; alpha-omega flanking Chi-Rho on early Christian sarcophagi and mosaics from 4th century onward"
   - source: "Babylonian Talmud (Shabbat 55a)"
     description: "\"God's seal is truth (*emet*).\" The word emet = aleph-mem-tav (first/middle/last letter of Hebrew alphabet) = linguistic totality as divine seal"
-syncretic-edges:
+cross-symbol-edges:
   - target: "chi-rho-labarum"
     type: "visual-parallel"
     notes: "Alpha-omega always flanks the Chi-Rho in early Christian art from Constantine onward — the two symbols form a single compositional unit: Christ as cosmic ruler + linguistic totality"
