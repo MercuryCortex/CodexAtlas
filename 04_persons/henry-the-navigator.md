@@ -4,7 +4,7 @@ id: "henry-the-navigator"
 name: "Henry the Navigator"
 aka: ["Infante Dom Henrique", "Henrique o Navegador", "Prince Henry of Portugal", "the Navigator (posthumous epithet — not contemporary)"]
 tradition: "[[tradition-order-of-christ]] / [[tradition-portuguese-hermeticism]]"
-region: "Portugal (Lagos, Sagres, Tomar); North Africa (Ceuta campaign 1415)"
+region: "Portugal (Tomar; Sagres; Lagos); Morocco (Ceuta campaign 1415)"
 date-born: 1394
 date-died: 1460
 role: "Portuguese prince (third son of King João I); Grand Master of the Order of Christ from 1420; organizer and financier of the systematic Portuguese exploration of the African coast (1415–1460); the institutional architect of the Age of Discoveries — without him, there are no Vasco da Gama, no Os Lusíadas, no Adamastor"

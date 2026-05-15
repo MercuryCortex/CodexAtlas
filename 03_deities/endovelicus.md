@@ -4,7 +4,7 @@ id: "endovelicus"
 name: "Endovélico"
 aka: ["Endovellicus", "Endovelicus", "Endouelikos (Greek dedicatory inscriptions)", "the Good God (etymology: *endo-* 'great/good' + *vello-* 'good' — one interpretation)"]
 tradition: "Lusitanian Religion (pre-Roman Iberian)"
-region: "Western Iberian Peninsula; primary cult center at São Miguel da Mota, Alandroal (Alto Alentejo, Portugal)"
+region: "Portugal (Alentejo; cult center at São Miguel da Mota, Alandroal)"
 period-active-earliest: -500
 period-active-latest: 400
 domains: ["oracular prophecy", "healing", "the underworld and afterlife", "incubation dreams", "protection of the living and the dead"]

@@ -17,7 +17,7 @@ canonical-slug
 ## Currently resolved slugs (auto-seeded — every existing file)
 
 
-### deity (441 nodes)
+### deity (442 nodes)
 
 - `abathur`
 - `adamastor`
@@ -77,6 +77,7 @@ canonical-slug
 - `bacchus`
 - `baiame`
 - `baldr`
+- `baphomet`
 - `baraqel`
 - `barbelo`
 - `baron-samedi`
@@ -810,7 +811,7 @@ canonical-slug
 - `phase-8-017-santeria-lucumi`
 - `phase-8-018-kalevala`
 
-### event (134 nodes)
+### event (135 nodes)
 
 - `event-aboriginal-stolen-generations-1905-1969`
 - `event-ahmad-gragn-invasion-1529`
@@ -825,6 +826,7 @@ canonical-slug
 - `event-bar-kokhba-revolt-132-136`
 - `event-battle-of-actium-31-bce`
 - `event-battle-of-alcacer-quibir-1578`
+- `event-battle-of-hattin-1187`
 - `event-bhakti-movement-c-700-1700`
 - `event-black-sea-deluge-hypothesis-1997`
 - `event-borobudur-construction-c-750-825`
@@ -947,7 +949,7 @@ canonical-slug
 - `event-wilhelmsbad-convent-1782`
 - `event-zagwe-lalibela-churches-c1200`
 
-### person (586 nodes)
+### person (588 nodes)
 
 - `aaron`
 - `abba-garima`
@@ -1082,6 +1084,7 @@ canonical-slug
 - `decius-emperor`
 - `deucalion`
 - `dietrich-bonhoeffer`
+- `dinis-i-portugal`
 - `diocletian-emperor`
 - `diodore-of-tarsus`
 - `diodorus-siculus`
@@ -1520,6 +1523,7 @@ canonical-slug
 - `wendy-doniger`
 - `william-robertson-smith`
 - `wolega-tafari-makonnen-haile-selassie`
+- `wolfram-von-eschenbach`
 - `wovoka`
 - `xenophanes`
 - `xuanzang`
@@ -1600,7 +1604,7 @@ canonical-slug
 - `wheat-grain`
 - `yin-yang`
 
-### theme (236 nodes)
+### theme (237 nodes)
 
 - `364-day-solar-calendar`
 - `adam-kadmon`
@@ -1817,6 +1821,7 @@ canonical-slug
 - `the-five-buddha-families`
 - `the-godhead-eckhart`
 - `theme-heroes-paradise-island`
+- `theme-holy-grail`
 - `theurgy`
 - `tikkun-olam`
 - `torah-and-wisdom-identified`
@@ -1839,7 +1844,7 @@ canonical-slug
 - `wisdom-personified`
 - `world-axis`
 
-### tradition (106 nodes)
+### tradition (107 nodes)
 
 - `tradition-african-traditional`
 - `tradition-anthroposophy`
@@ -1874,6 +1879,7 @@ canonical-slug
 - `tradition-gnosticism`
 - `tradition-greco-buddhism`
 - `tradition-greek-religion`
+- `tradition-hashshashin`
 - `tradition-hasidism`
 - `tradition-hawaiian`
 - `tradition-hellenistic-philosophy`
@@ -1954,16 +1960,16 @@ canonical-slug
 
 | Refs | Dead target | Suggested canonical (existing) |
 |---:|---|---|
-| 4 | `ragnarok-apocalyptic` | `apocalyptic-revelation` |
-| 4 | `primordial-darkness` | `primordial-waters` |
-| 4 | `messianic-revelation` | `messianic-secret` |
+| 4 | `ragnarok-apocalyptic` | `apocalyptic-cosmic-warfare` |
+| 4 | `primordial-darkness` | `eros-primordial` |
+| 4 | `messianic-revelation` | `messianic-future-savior` |
 | 4 | `genealogical-cosmogony` | `hermetic-cosmogony` |
 | 4 | `evolutionary-cosmogony` | `hermetic-cosmogony` |
-| 3 | `phase-4-007-new-testament-canon` | `phase-4-007-on-the-origin-of-the-world` |
-| 3 | `phase-2-005-1-2-kings` | `phase-2-008-homeric-epics` |
-| 3 | `messianic-genealogy` | `messianic-secret` |
+| 3 | `phase-4-007-new-testament-canon` | `phase-4-005-gospel-of-mary` |
+| 3 | `phase-2-005-1-2-kings` | `phase-2-003-atharva-veda` |
+| 3 | `messianic-genealogy` | `messianic-future-savior` |
 | 2 | `yam-canaanite` | `astarte-canaanite` |
-| 2 | `tradition-minoan-religion` | `tradition-wicca-modern-pagan` |
-| 2 | `tradition-eastern-orthodoxy` | `tradition-wicca-modern-pagan` |
-| 2 | `phase-1-013-babylonian-theodicy` | `phase-1-012-amarna-letters` |
+| 2 | `tradition-minoan-religion` | `tradition-roman-religion` |
+| 2 | `tradition-eastern-orthodoxy` | `tradition-roman-religion` |
+| 2 | `phase-1-013-babylonian-theodicy` | `phase-4-033-babylonian-talmud` |
 | 2 | `asclepius` | `asclepius-greek` |

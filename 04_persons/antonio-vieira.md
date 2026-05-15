@@ -4,7 +4,7 @@ id: "antonio-vieira"
 name: "António Vieira"
 aka: ["Padre António Vieira", "Father Antonio Vieira", "the Emperor of the Portuguese Language (Fernando Pessoa's epithet)", "the Apostle of Brazil"]
 tradition: "[[tradition-portuguese-hermeticism]] / [[tradition-christianity-canonical]] (Jesuit)"
-region: "Portugal (Lisbon, Évora); Brazil (Bahia, Maranhão, Amazon basin); Rome"
+region: "Portugal (Lisbon, Évora); Brazil (Bahia); Rome"
 date-born: 1608
 date-died: 1697
 role: "Portuguese Jesuit priest, missionary in Brazil, court preacher to João IV, Sebastianist theologian, diplomat, and author of the most important systematic articulation of the Fifth Empire (Quinto Império) theology; prosecuted by the Portuguese Inquisition (1663–1667) for his prophetic writings; rehabilitated; continued writing *Clavis Prophetarum* until his death"

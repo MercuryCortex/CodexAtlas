@@ -215,4 +215,19 @@ Empire-wide                  | 41.90 |  12.50 | Empire-wide (Roman)
 North India                  | 28.00 |  78.00 | North India
 Northwest India              | 30.00 |  75.00 | Northwest India
 Heavenly courts              | 31.78 |  35.22 | Heavenly courts (Jerusalem proxy)
+Portugal                     | 39.55 |  -7.86 | Portugal
+Lisbon                       | 38.72 |  -9.14 | Lisbon
+Tomar                        | 39.60 |  -8.41 | Tomar (Order of Christ headquarters)
+Coimbra                      | 40.21 |  -8.43 | Coimbra
+Sintra                       | 38.80 |  -9.39 | Sintra
+Alentejo                     | 38.00 |  -7.90 | Alentejo (Portugal)
+Galicia                      | 42.80 |  -7.80 | Galicia (northwestern Iberia)
+Morocco                      | 32.00 |  -5.00 | Morocco
+Cape of Good Hope            | -34.36|  18.47 | Cape of Good Hope
+Brazil                       | -14.24| -51.93 | Brazil
+Outremer                     | 32.50 |  35.50 | Outremer (Crusader states, Holy Land)
+Acre                         | 32.93 |  35.07 | Acre (Crusader port)
+Hattin                       | 32.80 |  35.50 | Hattin (Galilee — Battle of Hattin 1187)
+Goa                          | 15.49 |  73.82 | Goa (Portuguese Estado da India)
+Bavaria                      | 48.79 |  11.50 | Bavaria
 ```

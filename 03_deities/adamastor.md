@@ -4,7 +4,7 @@ id: "adamastor"
 name: "Adamastor"
 aka: ["the Spirit of the Cape", "the Cape of Storms", "the Giant of the Cape of Good Hope", "the Titan of the Southern Sea"]
 tradition: "Portuguese Renaissance literature (literary mythology)"
-region: "Cape of Good Hope (Cabo da Boa Esperança); Southern Atlantic Ocean"
+region: "Cape of Good Hope; Southern Atlantic Ocean"
 period-active-earliest: 1572
 period-active-latest: null
 domains: ["the terror of the unknown ocean", "the Cape of Good Hope as divine body", "unrequited love and its transformation into landscape", "the hubris of exploration", "prophecy of disaster for navigators"]

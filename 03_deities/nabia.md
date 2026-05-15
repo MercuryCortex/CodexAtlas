@@ -4,7 +4,7 @@ id: "nabia"
 name: "Nabia"
 aka: ["Navia", "Nabia Corona", "Nabia Elaesurraega", "Nabia with Vittoria (compound dedications)"]
 tradition: "Lusitanian Religion / Gallaecian (pre-Roman Iberian)"
-region: "Northwestern Iberian Peninsula; attested primarily in northern Portugal (Minho, Trás-os-Montes) and Galicia (Spain)"
+region: "Portugal; Galicia (northwestern Iberian Peninsula)"
 period-active-earliest: -600
 period-active-latest: 400
 domains: ["rivers and water", "springs and sacred sources", "fertility", "the land", "possible sovereignty or protective function"]

@@ -4,7 +4,7 @@ id: "ines-de-castro"
 name: "Inês de Castro"
 aka: ["Dona Inês", "Ignes de Castro", "the Dead Queen", "the Swan-necked (a Cegonha — a later epithet)", "Rainha Inês (Queen Inês — posthumous coronation)"]
 tradition: "Portuguese medieval history / Portuguese national mythology"
-region: "Portugal; Galicia (birthplace, ~1325); Coimbra (death)"
+region: "Portugal (Coimbra); Galicia (birthplace)"
 date-born: 1325
 date-died: 1355
 role: "Galician noblewoman, secret wife of Prince Pedro of Portugal, murdered by order of King Afonso IV; subsequently one of the central mythologized figures in Portuguese and Spanish literary and national consciousness; treated by Camões in *Os Lusíadas* as a tragic sacrifice at the altar of power"

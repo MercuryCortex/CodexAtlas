@@ -3888,6 +3888,22 @@ const ALCHEMY_PRESETS = [
     ],
   },
   {
+    id: 'templar-hardcore-roots',
+    name: 'Templar Hardcore Roots → Portuguese Empire',
+    headline: 'The full institutional arc of the Knights Templar: founded at Troyes (1129) under Bernard of Clairvaux\'s theology of the warrior-monk → near-annihilated at Hattin (1187) → in documented contact with the Nizari Assassins (tribute + 1173 diplomatic murder) → accused of Baphomet worship under torture (1307) → dissolved (1314) → reconstituted by Dinis I as the Order of Christ (1319) → that same institution funds Vasco da Gama\'s caravel to India. Wolfram von Eschenbach\'s *Parzival* (the Grail-as-Templar-mystery text) and the Holy Grail\'s cross-tradition sacred-vessel lineage provide the mythological frame.',
+    picks: [
+      'hugues-de-payens', 'bernard-of-clairvaux',
+      'event-council-of-troyes-1129', 'tradition-knights-templar',
+      'event-battle-of-hattin-1187',
+      'tradition-hashshashin',
+      'wolfram-von-eschenbach', 'theme-holy-grail',
+      'baphomet',
+      'event-trial-of-templars-1307-1314',
+      'dinis-i-portugal', 'event-order-of-christ-foundation-1319',
+      'henry-the-navigator',
+    ],
+  },
+  {
     id: 'pessoa-esoteric-network',
     name: 'Pessoa\'s Esoteric Network',
     headline: 'Fernando Pessoa as the modernist-literary endpoint of multiple esoteric traditions: Sebastianismo (Bandarra), Thelema (Crowley + the 1930 Boca do Inferno hoax), Theosophy (Blavatsky, whom he translated), and Portuguese hermeticism (Carvalho Monteiro\'s Regaleira → Gandra\'s contemporary scholarship).',
@@ -4656,7 +4672,10 @@ let _atlasClusterPopup = null;       // (legacy) cluster-list popup — replaced
 let _atlasSpiderActive = null;       // cluster center [lng,lat] when a spider is open, else null
 let _atlasSpiderRecentering = false; // true while map is auto-easing to center a cluster for spider
 let _atlasLockedId = null;           // node id whose trails/highlight stay visible across hover (sticky-select via click)
-let _atlasPreSpiderState = null;     // {center, zoom} snapshot when a spider was opened — used by empty-click "ease back to natural state"
+let _atlasPreSpiderState = null;     // (legacy, spider system removed 2026-05-15)
+let _atlasNodeJitter = new Map();    // id → { angle, ring, perRing, groupSize, latRad } — stable per-node jitter info
+let _atlasNodesData  = new Map();    // id → vault node ref (replaces _atlasNodesById, broader use)
+let _atlasZoomFcHandler = null;      // throttled zoomend handler that re-computes the jittered FC
 let _atlasZoomHandler = null;
 let _atlasEndHandler = null;
 let _atlasResizeObs = null;
@@ -4677,6 +4696,53 @@ function _atlasRegisterProtocol() {
 function _atlasToken(name, fallback) {
   const v = getComputedStyle(document.documentElement).getPropertyValue(name).trim();
   return v || fallback;
+}
+
+// Zoom-aware jitter scale (2026-05-15). Returns degrees of per-ring spacing
+// for the current zoom level. Tight at low zoom (co-located docs naturally
+// cluster), wide at high zoom (individual docs comfortably separated).
+// Curve hand-tuned so MapLibre's 36px clusterRadius naturally splits the
+// inner ring of an 8-doc group somewhere around z 5-6.
+function _atlasJitterScale(zoom) {
+  // base ring step, in degrees, per zoom level
+  // z 1 → 0.015°, z 5 → 0.06°, z 10 → 0.22°
+  return 0.010 * Math.pow(1.45, Math.max(0, zoom));
+}
+
+// Build (or re-build) the GeoJSON FeatureCollection for the atlas-nodes source.
+// Called on initial render AND on every zoomend so co-located nodes spread out
+// smoothly as the user zooms in. `geoNodes` is the filtered set; `tierById` is
+// the precomputed tier classification.
+function _atlasComputeFC(zoom, geoNodes, tierById) {
+  const STEP_R = _atlasJitterScale(zoom);
+  return {
+    type: 'FeatureCollection',
+    features: geoNodes.map(n => {
+      const j = _atlasNodeJitter.get(n.id);
+      let lng = n.geo.lon, lat = n.geo.lat;
+      if (j && j.groupSize > 1) {
+        const r = STEP_R * (1 + j.ring);
+        const lonFactor = 1 / Math.max(0.2, Math.cos(j.latRad));
+        lng += r * Math.cos(j.angle) * lonFactor;
+        lat += r * Math.sin(j.angle);
+      }
+      return {
+        type: 'Feature',
+        geometry: { type: 'Point', coordinates: [lng, lat] },
+        properties: {
+          id: n.id,
+          title: n.title || '',
+          family_color: n.family_color || n.tradition_color || '#7a8090',
+          tier: tierById.get(n.id),
+          deg: DEGREE.get(n.id) || 0,
+          dotSize: 5 + Math.sqrt(DEGREE.get(n.id) || 0) * 1.2,
+          origLng: n.geo.lon,
+          origLat: n.geo.lat,
+          coGroupSize: j ? j.groupSize : 1
+        }
+      };
+    })
+  };
 }
 
 // Premium minimalist basemap style — no text labels, just land/water/borders
@@ -4893,74 +4959,48 @@ VIEWS.atlas = {
         });
       }
 
-      // ---- NATIVE CIRCLE LAYER (replaces DOM markers; opus-foundation, 2026-05-15) ----
-      // Build a GeoJSON FeatureCollection from the filtered geoNodes. Each feature
-      // carries family_color, dotSize, tier, etc. as `properties` so the circle
-      // layer's paint expressions can data-drive everything. This eliminates the
-      // DOM-marker positioning bug (markers appearing offset / drifting from their
-      // basemap location) by using MapLibre's GPU projection.
+      // ---- NATIVE CIRCLE LAYER with ZOOM-AWARE CO-LOCATION JITTER ----
+      // Architecture rethink 2026-05-15 (user: "expansion should always be on the
+      // nodes itself not having 2 to avoid glitches"). The spider is GONE. The
+      // same atlas-nodes-circles layer handles both clustered AND exploded views:
+      // jitter radius scales with current zoom, so co-located docs cluster at
+      // low zoom and visibly spread at high zoom — one system, one visual style.
       //
-      // CO-LOCATION JITTER (2026-05-15 fix): the vault has many docs sharing the
-      // EXACT same geocoded coord (e.g. ~99 texts all at Rome's 41.9°N 12.5°E).
-      // Without jitter, even at max zoom these stack into a single visible dot and
-      // the user can't reach the individual nodes. We group features by their exact
-      // coord and spread each group on a small spiral around the centroid. The
-      // spiral radius is in DEGREES so it scales naturally with zoom: invisible at
-      // z 1-3 (still clusters together), clearly visible at z 5+ (individual dots).
-      // Original coord preserved in properties.origLng / origLat for reference.
+      // Per-node {angle, ring, perRing} is computed ONCE and cached on
+      // _atlasNodeJitter, then `_atlasComputeFC(zoom)` produces a new feature
+      // collection each zoomend with positions at the right scale for that zoom.
+      // ---------------------------------------------------------------
       const coordGroups = new Map();
       geoNodes.forEach(n => {
         const key = `${n.geo.lon.toFixed(4)},${n.geo.lat.toFixed(4)}`;
         if (!coordGroups.has(key)) coordGroups.set(key, []);
         coordGroups.get(key).push(n.id);
       });
-      // Jitter spiral parameters — bumped 2026-05-15 ("they need to grow apart
-      // more and maintain this size"). 0.040° ≈ 4.4 km at lat 40, ≈ 4 km along
-      // the meridian. Big enough to be visibly separated by ~z 4-5.
-      const JITTER_R0  = 0.040;
-      const JITTER_STEP = 0.045;
       const ITEMS_PER_RING = 8;
+      // Per-node, stable jitter info: {angle, ring, perRing, groupSize, latRad}.
+      // Same node always gets the SAME angle so its position is predictable across
+      // zoom changes (no jumping around when zoomend recomputes).
+      _atlasNodeJitter = new Map();
+      _atlasNodesData  = new Map();   // id → vault node ref, used by _atlasComputeFC
+      geoNodes.forEach(n => {
+        const key   = `${n.geo.lon.toFixed(4)},${n.geo.lat.toFixed(4)}`;
+        const group = coordGroups.get(key);
+        const pos   = group.indexOf(n.id);
+        const ring  = Math.floor(pos / ITEMS_PER_RING);
+        const inRing = pos % ITEMS_PER_RING;
+        const perRing = (ring === 0 && group.length < ITEMS_PER_RING)
+          ? group.length : ITEMS_PER_RING;
+        const angleOff = (ring % 2) ? (Math.PI / perRing) : 0;
+        const angle = (inRing / perRing) * 2 * Math.PI - Math.PI / 2 + angleOff;
+        _atlasNodeJitter.set(n.id, {
+          angle, ring, perRing,
+          groupSize: group.length,
+          latRad: (n.geo.lat * Math.PI) / 180
+        });
+        _atlasNodesData.set(n.id, n);
+      });
 
-      const featureCollection = {
-        type: 'FeatureCollection',
-        features: geoNodes.map(n => {
-          const key = `${n.geo.lon.toFixed(4)},${n.geo.lat.toFixed(4)}`;
-          const group = coordGroups.get(key);
-          let lng = n.geo.lon;
-          let lat = n.geo.lat;
-          if (group.length > 1) {
-            const pos    = group.indexOf(n.id);
-            const ring   = Math.floor(pos / ITEMS_PER_RING);
-            const inRing = pos % ITEMS_PER_RING;
-            const perRing = (ring === 0 && group.length < ITEMS_PER_RING)
-              ? group.length : ITEMS_PER_RING;
-            // Stagger alternating rings by half-step so outer ring sits in inner gaps.
-            const angleOff = (ring % 2) ? (Math.PI / perRing) : 0;
-            const angle = (inRing / perRing) * 2 * Math.PI - Math.PI / 2 + angleOff;
-            const r = JITTER_R0 + ring * JITTER_STEP;
-            // Adjust lon for latitude (degrees of longitude shrink toward poles).
-            const latRad = (n.geo.lat * Math.PI) / 180;
-            const lonFactor = 1 / Math.max(0.2, Math.cos(latRad));
-            lng += r * Math.cos(angle) * lonFactor;
-            lat += r * Math.sin(angle);
-          }
-          return {
-            type: 'Feature',
-            geometry: { type: 'Point', coordinates: [lng, lat] },
-            properties: {
-              id: n.id,
-              title: n.title || '',
-              family_color: n.family_color || n.tradition_color || '#7a8090',
-              tier: tierById.get(n.id),
-              deg: DEGREE.get(n.id) || 0,
-              dotSize: 5 + Math.sqrt(DEGREE.get(n.id) || 0) * 1.2,
-              origLng: n.geo.lon,
-              origLat: n.geo.lat,
-              coGroupSize: group.length
-            }
-          };
-        })
-      };
+      const featureCollection = _atlasComputeFC(_atlasMap ? _atlasMap.getZoom() : 2.2, geoNodes, tierById);
 
       // Lookup map for hover-trail neighbor resolution (replaces _atlasMarkers).
       _atlasNodesById = new Map();
