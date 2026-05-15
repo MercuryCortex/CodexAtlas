@@ -995,7 +995,7 @@ canonical-slug
 - `subterranean-chamber-great-pyramid`
 - `temple-of-inscriptions-palenque`
 
-### person (619 nodes)
+### person (621 nodes)
 
 - `aaron`
 - `abba-garima`
@@ -1496,6 +1496,7 @@ canonical-slug
 - `rashid-rida`
 - `rene-guenon`
 - `reza-aslan`
+- `rinchen-zangpo`
 - `robert-bauval`
 - `robert-de-boron`
 - `robert-fludd`
@@ -1592,6 +1593,7 @@ canonical-slug
 - `valerian-emperor`
 - `vallabhacharya`
 - `vasubandhu`
+- `vasugupta`
 - `vidyaranya`
 - `wendy-doniger`
 - `william-robertson-smith`
@@ -1617,8 +1619,9 @@ canonical-slug
 - `ziusudra`
 - `zosimos-of-panopolis`
 
-### symbol (64 nodes)
+### symbol (70 nodes)
 
+- `alpha-omega`
 - `ankh`
 - `asclepian-rod`
 - `aum-om`
@@ -1633,13 +1636,16 @@ canonical-slug
 - `cross-pattee-templar`
 - `dharmachakra`
 - `djed-pillar`
+- `dove`
 - `eye`
 - `eye-of-horus-wedjat`
 - `faravahar`
 - `feathered-serpent`
 - `fish-ichthys`
+- `fleur-de-lis`
 - `greek-cross`
 - `halo-nimbus`
+- `hamsa-khamsa`
 - `haoma`
 - `hexagram`
 - `indus-valley-script`
@@ -1665,7 +1671,9 @@ canonical-slug
 - `rainbow-covenant`
 - `rose-cross-rosicrucian`
 - `sacred-fire-atash`
+- `sacred-heart`
 - `scarab-khepri`
+- `sefirot-tree-of-life`
 - `serpent-cosmic-enemy`
 - `serpent-wisdom-chthonic`
 - `spiral`
@@ -1684,7 +1692,7 @@ canonical-slug
 - `wheat-grain`
 - `yin-yang`
 
-### theme (279 nodes)
+### theme (287 nodes)
 
 - `364-day-solar-calendar`
 - `adam-kadmon`
@@ -1765,6 +1773,7 @@ canonical-slug
 - `eros-as-philosophical-motive`
 - `eschatological-imminence`
 - `eschatological-war`
+- `essence-energies-distinction`
 - `eternal-return`
 - `ethical-dualism`
 - `ethical-monotheism`
@@ -1772,6 +1781,7 @@ canonical-slug
 - `ethiopian-systematic-theology`
 - `ethiopic-canon-broad`
 - `evolutionary-cosmogony`
+- `executed-divine-claimant`
 - `fall-of-humanity`
 - `falsafa`
 - `fanaa-annihilation`
@@ -1857,6 +1867,7 @@ canonical-slug
 - `paraclete-spirit`
 - `passion-narrative`
 - `perennial-philosophy`
+- `persian-period-injection`
 - `personal-daimon`
 - `possession-ritual`
 - `pratitya-samutpada`
@@ -1903,6 +1914,7 @@ canonical-slug
 - `sophia-pleroma`
 - `soul-as-bride`
 - `soul-as-spark`
+- `soul-exile-longing`
 - `soul-immortality`
 - `stoic-virtue`
 - `suffering-servant`
@@ -1923,11 +1935,13 @@ canonical-slug
 - `theme-baal-set-syncretism`
 - `theme-el-yahweh-merger`
 - `theme-exodus-hyksos-thesis`
+- `theme-gandharan-buddhism`
 - `theme-habiru-hebrew-origins`
 - `theme-hall-of-records-hypothesis`
 - `theme-heroes-paradise-island`
 - `theme-holy-grail`
 - `theme-lex-talionis-covenant-code`
+- `theme-manichaeism-synthesis`
 - `theme-orion-correlation-theory`
 - `theme-paradise-etymology`
 - `theme-proto-indo-iranian-religion`
@@ -1936,6 +1950,7 @@ canonical-slug
 - `theme-sacred-geometry-giza`
 - `theme-satan-angra-mainyu-transfer`
 - `theme-solomonic-transmission-spine`
+- `theme-soma-haoma-eucharist`
 - `theme-vedic-avestan-split`
 - `theme-zoroastrian-afterlife-geography`
 - `theme-zoroastrian-cosmogony`
@@ -1965,8 +1980,9 @@ canonical-slug
 - `wisdom-as-cosmic-order`
 - `wisdom-personified`
 - `world-axis`
+- `zeus-pantokrator-transmission`
 
-### tradition (115 nodes)
+### tradition (116 nodes)
 
 - `tradition-advaita-vedanta`
 - `tradition-african-traditional`
@@ -2026,6 +2042,7 @@ canonical-slug
 - `tradition-kashmir-shaivism`
 - `tradition-knights-templar`
 - `tradition-lusitanian-religion`
+- `tradition-madhyamaka`
 - `tradition-mahayana-buddhism`
 - `tradition-mandaeism`
 - `tradition-manichaeism`
@@ -2090,12 +2107,12 @@ canonical-slug
 
 | Refs | Dead target | Suggested canonical (existing) |
 |---:|---|---|
-| 4 | `tradition-minoan-religion` | `tradition-protestantism` |
-| 3 | `phase-4-007-new-testament-canon` | `phase-4-005-gospel-of-mary` |
+| 4 | `tradition-minoan-religion` | `tradition-pure-land-buddhism` |
+| 3 | `phase-4-007-new-testament-canon` | `phase-4-007-on-the-origin-of-the-world` |
 | 3 | `phase-2-005-1-2-kings` | `phase-2-003-atharva-veda` |
 | 2 | `yam-canaanite` | `astarte-canaanite` |
-| 2 | `tradition-lingayat` | `tradition-protestantism` |
-| 2 | `tradition-eastern-orthodoxy` | `tradition-protestantism` |
-| 2 | `phase-2-004-1-2-chronicles` | `phase-2-003-atharva-veda` |
-| 2 | `phase-1-013-babylonian-theodicy` | `phase-1-015-sumerian-king-list` |
+| 2 | `tradition-lingayat` | `tradition-bon` |
+| 2 | `tradition-eastern-orthodoxy` | `tradition-renaissance-hermeticism` |
+| 2 | `phase-2-004-1-2-chronicles` | `phase-2-007-hebrew-bible-e-source` |
+| 2 | `phase-1-013-babylonian-theodicy` | `phase-1-019-enuma-anu-enlil` |
 | 2 | `asclepius` | `asclepius-greek` |

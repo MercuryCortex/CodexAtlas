@@ -18,6 +18,26 @@ Format:
 
 ---
 
+## sonnet-investigations-1 — content / cross-tradition investigation theme nodes — started 2026-05-15
+- Owning: `06_themes/persian-period-injection.md` (NEW), `06_themes/executed-divine-claimant.md` (NEW)
+- Goal: 2 high-value cross-tradition investigation theme nodes — Persian Period Injection (Zoroastrian doctrines into Second Temple Judaism) + Executed Divine Claimant (Socrates/Jesus/al-Hallaj/Suhrawardi martyrdom pattern)
+- Status: in-flight
+- Last edit: 00_meta/ACTIVE-AGENTS.md
+
+---
+
+## sonnet-investigations-2 — content / cross-tradition investigation theme nodes — started 2026-05-15 — **FINISHED 2026-05-15**
+- Owning: `soul-exile-longing`, `zeus-pantokrator-transmission`
+- Goal: 2 new investigation-grade theme nodes — soul-exile-longing (Rumi/Plotinus/Gnostic/Vedanta/Buddhist/Sufi structural comparison) + zeus-pantokrator-transmission (Phidias → Constantinople → Christ Pantokrator iconographic hypothesis)
+- Status: finished
+- Delivered:
+  - [[soul-exile-longing]] (NEW) — full metadata theme; 6-tradition structural comparison (Rumi nay-nameh / Plotinus epistrophē / Gnostic pneuma-in-hyle / Advaita jiva-in-maya / Buddhist dukkha / Sufi ghurba); 5-tradition comparison table; MASSIVE-WINs: Buddhist dukkha as structural outlier (exile phenomenology without exile metaphysics) sharpens the entire cluster; Suhrawardi's Occidental Exile as the conscious synthesis node; soul-as-bride bridge to bridal-mysticism cluster; fanaa-annihilation ↔ Buddhist cessation convergence
+  - [[zeus-pantokrator-transmission]] (NEW) — full metadata investigation-hypothesis theme; 4-step transmission chain (Phidias ~435 BCE → Lauseion Constantinople ~391–426 CE → Pantokrator crystallization 5th–6th c. CE); Tier 1–3 sourcing honestly tiered (Grabar/Mathews Tier 2 supportive; Jensen Tier 1 skeptical); chryselephantine gold-ground parallel theology; MASSIVE-WINs: possible longest transmission chain in vault if confirmed (~2,400 years); gold+ivory → gold-ground icon as parallel material theology; Lauseion as pagan divine gallery in Christian capital as independent finding
+- Build: **2063 nodes · 12,265 edges · 2.7% dead-link**
+- Last edit: 00_meta/STATUS.md
+
+---
+
 ## opus-cleanup-1 + opus-astrology-stub-1 — app-code / UI cleanup + Astrology shell — started 2026-05-15 — **FINISHED 2026-05-15**
 - Owning: src/styles/app.css (.side-tab, .list-pane, .astrology-pane stack), src/js/app.js (D3 alphaMin on Pantheon/Documents/Scripture sims, VIEWS.astrology + renderAstrologyMode + setView cleanup line), index.html (nav entry ♄ Astrology + cache-bust), build_data.py (dup-ID detector, landed via sonnet sweep 67d2d5e)
 - Goal: Fix 3 UI bugs John flagged (invisible sidebar toggle, lists cropped behind collapsed nav, slow Documents/Deities tabs) + stub the Astrology investigative tab with 4-mode pill toolbar (spine / wheel / now / decanic) + add ingestion validator that surfaces silent agent-overwrite losses.

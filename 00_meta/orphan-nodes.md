@@ -9,4 +9,6 @@ _Auto-generated 2026-05-15. Nodes with zero edges in either direction._
 | `priscillian` | person | metadata |
 | `cassiodorus` | person | metadata |
 | `alcuin-of-york` | person | metadata |
-| `al-biruni` | person | stub |
+| `dove` | symbol | metadata |
+| `alpha-omega` | symbol | metadata |
+| `fleur-de-lis` | symbol | metadata |

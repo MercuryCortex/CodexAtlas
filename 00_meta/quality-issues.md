@@ -116,3 +116,7 @@ _Auto-generated 2026-05-15. Status claims not meeting the bar in methodology.md.
 | `tradition-maya-religion` | tradition | status:metadata but only 1 refs |
 | `tradition-finno-karelian` | tradition | status:metadata but only 1 refs |
 | `tradition-inca-andean` | tradition | status:metadata but only 1 refs |
+| `dove` | symbol | symbol status:metadata but only 2 refs (need 3+) |
+| `alpha-omega` | symbol | symbol status:metadata but only 2 refs (need 3+) |
+| `hamsa-khamsa` | symbol | symbol status:full but only 2 refs (need 3+) |
+| `fleur-de-lis` | symbol | symbol status:metadata but only 2 refs (need 3+) |
