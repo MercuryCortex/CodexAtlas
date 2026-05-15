@@ -18,6 +18,12 @@ Format:
 
 ---
 
+## sonnet-pyramids-1 — content / pyramid investigation library — started 2026-05-15 — **FINISHED 2026-05-15**
+- Owning: 05_events/great-pyramid-of-khufu.md + 14 more pyramid/sphinx/mesoamerican events; 04_persons/khufu.md + 6 persons; 06_themes/theme-orion-correlation-theory.md + 3 themes; 00_meta/locations.md (6 geo entries); src/js/app.js (pyramid-investigation preset); data.js
+- Goal: Complete pyramid investigation library — every known pyramid chamber, Egyptian + Mesoamerican, with all cross-tradition connections wired + investigation Alchemy preset
+- Status: finished
+- Last edit: 00_meta/STATUS.md
+
 ## 🚦 In-flight claims at a glance (current as of 2026-05-15 — sonnet-zoroastrian-deepen-1 FINISHED)
 
 | Handle | Scope tag | Owns (high level) | Started |
