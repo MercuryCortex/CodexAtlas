@@ -17,9 +17,10 @@ canonical-slug
 ## Currently resolved slugs (auto-seeded — every existing file)
 
 
-### deity (438 nodes)
+### deity (441 nodes)
 
 - `abathur`
+- `adamastor`
 - `adonis-hellenistic`
 - `aengus-og`
 - `aeshma`
@@ -123,6 +124,7 @@ canonical-slug
 - `el-canaanite`
 - `el-elohim-hebrew`
 - `el-hebrew`
+- `endovelicus`
 - `enki-ea`
 - `enlil`
 - `ereshkigal`
@@ -266,6 +268,7 @@ canonical-slug
 - `muhammad-al-mahdi`
 - `mullissu-akkadian`
 - `mut`
+- `nabia`
 - `nabu`
 - `nandi`
 - `nanna-sin`
@@ -458,7 +461,7 @@ canonical-slug
 - `zemyna`
 - `zeus`
 
-### document (345 nodes)
+### document (346 nodes)
 
 - `phase-1-001-kesh-temple-hymn`
 - `phase-1-002-pyramid-texts`
@@ -747,6 +750,7 @@ canonical-slug
 - `phase-6-038-teresa-interior-castle`
 - `phase-6-039-dark-night-of-the-soul`
 - `phase-6-040-bandarra-trovas`
+- `phase-6-041-camoes-os-lusiadas`
 - `phase-7-001-book-of-mormon`
 - `phase-7-002-kitab-i-iqan`
 - `phase-7-003-kitab-i-aqdas`
@@ -943,7 +947,7 @@ canonical-slug
 - `event-wilhelmsbad-convent-1782`
 - `event-zagwe-lalibela-churches-c1200`
 
-### person (581 nodes)
+### person (583 nodes)
 
 - `aaron`
 - `abba-garima`
@@ -1193,6 +1197,7 @@ canonical-slug
 - `ibn-tufayl`
 - `ignatius-of-antioch`
 - `imhotep`
+- `ines-de-castro`
 - `irenaeus-of-lyon`
 - `isaac-casaubon`
 - `isaac-luria`
@@ -1279,6 +1284,7 @@ canonical-slug
 - `louis-komjathy`
 - `lucian-of-antioch`
 - `lucian-of-samosata`
+- `luis-de-camoes`
 - `luke-evangelist`
 - `lydia-of-thyatira`
 - `macrina-the-younger`
@@ -1829,7 +1835,7 @@ canonical-slug
 - `wisdom-personified`
 - `world-axis`
 
-### tradition (105 nodes)
+### tradition (106 nodes)
 
 - `tradition-african-traditional`
 - `tradition-anthroposophy`
@@ -1882,6 +1888,7 @@ canonical-slug
 - `tradition-jyotisha-indian-astrology`
 - `tradition-kabbalah`
 - `tradition-knights-templar`
+- `tradition-lusitanian-religion`
 - `tradition-mahayana-buddhism`
 - `tradition-mandaeism`
 - `tradition-manichaeism`
@@ -1943,15 +1950,16 @@ canonical-slug
 
 | Refs | Dead target | Suggested canonical (existing) |
 |---:|---|---|
-| 4 | `ragnarok-apocalyptic` | `apocalyptic-revelation` |
+| 4 | `ragnarok-apocalyptic` | `apocalyptic-cosmic-warfare` |
 | 4 | `primordial-darkness` | `eros-primordial` |
-| 4 | `messianic-revelation` | `messianic-secret` |
+| 4 | `messianic-revelation` | `messianic-future-savior` |
 | 4 | `genealogical-cosmogony` | `mesoamerican-cosmogony` |
 | 4 | `evolutionary-cosmogony` | `mesoamerican-cosmogony` |
-| 3 | `phase-4-007-new-testament-canon` | `phase-4-003-gospel-of-truth` |
-| 3 | `phase-2-005-1-2-kings` | `phase-2-003-atharva-veda` |
-| 3 | `messianic-genealogy` | `solomonic-genealogy` |
+| 3 | `phase-4-007-new-testament-canon` | `phase-4-001-gospel-of-thomas` |
+| 3 | `phase-2-005-1-2-kings` | `phase-2-008-homeric-epics` |
+| 3 | `messianic-genealogy` | `messianic-future-savior` |
 | 2 | `yam-canaanite` | `astarte-canaanite` |
-| 2 | `tradition-minoan-religion` | `tradition-inca-andean` |
-| 2 | `tradition-eastern-orthodoxy` | `tradition-inca-andean` |
-| 2 | `phase-1-013-babylonian-theodicy` | `phase-1-012-amarna-letters` |
+| 2 | `tradition-minoan-religion` | `tradition-hindu-modernism` |
+| 2 | `tradition-eastern-orthodoxy` | `tradition-hindu-modernism` |
+| 2 | `phase-1-013-babylonian-theodicy` | `phase-1-004-gilgamesh-old-babylonian` |
+| 2 | `asclepius` | `asclepius-greek` |
