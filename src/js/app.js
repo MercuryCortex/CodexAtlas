@@ -3970,6 +3970,42 @@ const ALCHEMY_PRESETS = [
   },
 ];
 
+// Active research investigations — high-value cross-tradition threads being tracked.
+// Each entry has: id, name, flag ('alert'|null), status, opened, headline, threads[], seeds[].
+// threads[]: { label, note, tier } where tier is 1|2|3|'parallel'.
+// CONVENTION (2026-05-15): any cross-tradition connection that encodes a direct
+// documented transmission OR a structural parallel strong enough to anchor new vault
+// nodes should be flagged 'alert'. Alert items surface a badge on the trigger button.
+const INVESTIGATIONS = [
+  {
+    id: 'consciousness-temple',
+    name: 'Consciousness Temple',
+    flag: 'alert',
+    status: 'active',
+    opened: '2026-05-15',
+    headline: 'Kashmir Shaivism (Trika) encodes the most complete non-dual consciousness framework in the vault — directly shaped Vajrayana Buddhism (Sanderson 2009), runs structurally parallel to Neoplatonism, and has a documented transmission bridge into Sufism via Lal Ded (~1320 CE). Kailasa Temple at Ellora is the physical cosmogram of the entire system. Pratyabhijñā ("recognition") is structurally identical to Valentinian gnosis.',
+    threads: [
+      { label: 'Shaivism → Vajrayana (directional)', note: 'Sanderson 2009 — skull cups, wrathful deities, mandala geometry borrowed directly from Śaiva Tantric sources', tier: 1 },
+      { label: 'Trika ↔ Neoplatonism', note: 'Both emanationist hierarchies from a single absolute; Kashmir Shaivism more monistic — Michal Just, Comparative Philosophy (San José State)', tier: 2 },
+      { label: 'Pratyabhijñā ↔ Valentinian gnosis', note: 'Recognition of inner divine nature = gnosis; parallel-form, no documented transmission', tier: 'parallel' },
+      { label: 'Lal Ded — Shaivism + Sufism', note: '~1320 CE, first Kashmiri literary corpus; simultaneously Hindu saint + Sufi mystic; launched Rishi Order (bridge node)', tier: 1 },
+      { label: 'Spanda ↔ quantum pulsation', note: 'Fritjof Capra, The Tao of Physics (1975); Nataraja statue gifted to CERN (2004)', tier: 'parallel' },
+      { label: 'Kailasa Temple ↔ Angkor Wat', note: 'Both physical Mt. Meru cosmograms; Angkor early Shaiva phase had lingam-king identification', tier: 1 },
+      { label: 'Karahan Tepe columns ↔ Shivalinga', note: '~10,000 BC Turkey — 11 upright phallus columns + masculine face above; visual cognate to lingam iconography', tier: 'parallel' },
+    ],
+    seeds: [
+      'shiva', 'rudra-shiva-early',
+      'phase-5-006-vijnana-bhairava-tantra',
+      'phase-5-014-abhinavagupta-tantraloka',
+      'phase-5-033-shiva-sutras',
+      'plotinus', 'tradition-neoplatonism',
+      'world-axis', 'bhairava',
+      'event-angkor-wat-construction-c-1113-1150',
+      'valentinus',
+    ],
+  },
+];
+
 // Custom user-saved trees live in localStorage under this key. Shape: an array of
 // {id, name, picks, created} — same structure as ALCHEMY_PRESETS minus the headline
 // (custom trees don't have rhetorical payload, just the user's name for them).
@@ -4032,6 +4068,23 @@ function alchemyLoadPreset(presetId, mode) {
     STATE.alchemyPicks = valid;
   }
   STATE.alchemyActivePreset = presetId;
+  setView('alchemy');
+}
+
+// Load seeds from an investigation entry into the Alchemy canvas.
+// `mode` is 'replace' (default) or 'append'.
+function investLoadSeeds(investId, mode) {
+  const inv = INVESTIGATIONS.find(i => i.id === investId);
+  if (!inv) return;
+  const valid = inv.seeds.filter(id => NODES_BY_ID[id]);
+  if (mode === 'append') {
+    const existing = new Set(STATE.alchemyPicks || []);
+    valid.forEach(id => existing.add(id));
+    STATE.alchemyPicks = Array.from(existing);
+  } else {
+    STATE.alchemyPicks = valid;
+  }
+  STATE.alchemyActivePreset = null;
   setView('alchemy');
 }
 
@@ -4241,10 +4294,14 @@ VIEWS.alchemy = {
       ? findPresetOrTree(STATE.alchemyActivePreset)
       : null;
     const canSave = picks.length > 0;
+    const hasAlerts = INVESTIGATIONS.some(i => i.flag === 'alert');
     document.getElementById('view-controls').innerHTML = `
       <button class="btn btn-mini alch-presets-trigger" id="alch-presets-trigger" title="Load a curated cross-tradition exploration">
         <span class="alch-presets-trigger-label">${activePreset ? activePreset.name : 'Presets'}</span>
         <span class="caret">▾</span>
+      </button>
+      <button class="btn btn-mini alch-invest-trigger${hasAlerts ? ' has-alert' : ''}" id="alch-invest-trigger" title="Active research investigations — live cross-tradition threads being tracked">
+        <span>Investigations</span>${hasAlerts ? '<span class="invest-trigger-badge">!</span>' : ''}<span class="caret">▾</span>
       </button>
       <span class="alch-save-wrap" id="alch-save-wrap">
         <button class="btn btn-mini" id="btn-alch-save" ${canSave ? '' : 'disabled'} title="${canSave ? 'Save the current exploration as a custom preset' : 'Add at least one node to enable saving'}">save tree</button>
@@ -4259,7 +4316,7 @@ VIEWS.alchemy = {
     };
 
     // Toolbox + palette + dropdown injected into canvas as siblings of the SVG.
-    document.querySelectorAll('.alch-toolbox, .alch-palette, .alch-presets-dropdown, .alch-presets-pane').forEach(el => el.remove());
+    document.querySelectorAll('.alch-toolbox, .alch-palette, .alch-presets-dropdown, .alch-presets-pane, .alch-invest-dropdown').forEach(el => el.remove());
     const canvas = document.getElementById('canvas');
 
     // ---- Presets dropdown — absolutely positioned, anchored to top-right under the trigger.
@@ -4413,6 +4470,107 @@ VIEWS.alchemy = {
         deleteCustomTree(id);
         if (STATE.alchemyActivePreset === id) STATE.alchemyActivePreset = null;
         setView('alchemy');
+      });
+    });
+
+    // ---- Investigation dropdown — research threads with alert flags.
+    const investDropdown = document.createElement('div');
+    investDropdown.className = 'alch-invest-dropdown';
+    investDropdown.style.display = 'none';
+    const tierLabel = t => t === 'parallel' ? 'parallel-form' : `tier-${t}`;
+    investDropdown.innerHTML = `
+      <div class="alch-invest-intro">Active research threads — cross-tradition connections being actively investigated. Seeds load into Alchemy canvas.</div>
+      <div class="alch-invest-list">
+        ${INVESTIGATIONS.map(inv => `
+          <div class="alch-invest-card${inv.flag === 'alert' ? ' alert' : ''}">
+            <div class="alch-invest-header">
+              ${inv.flag === 'alert' ? '<span class="alch-invest-flag">⚠ ALERT</span>' : ''}
+              <span class="alch-invest-name">${inv.name}</span>
+              <span class="alch-invest-status">${inv.status}</span>
+            </div>
+            <div class="alch-invest-headline">${inv.headline}</div>
+            <div class="alch-invest-threads">
+              ${inv.threads.map(th => `
+                <div class="alch-invest-thread">
+                  <span class="alch-invest-thread-tier tier-${th.tier}">${tierLabel(th.tier)}</span>
+                  <span class="alch-invest-thread-label">${th.label}</span>
+                  <span class="alch-invest-thread-note">${th.note}</span>
+                </div>
+              `).join('')}
+            </div>
+            <div class="alch-invest-action-row" data-mode="initial">
+              <button class="alch-invest-load" data-invest="${inv.id}">load seeds (${inv.seeds.length})</button>
+            </div>
+            <div class="alch-invest-confirm-row" data-mode="confirm" style="display:none">
+              <span class="alch-invest-confirm-q">Replace your ${picks.length} pick${picks.length === 1 ? '' : 's'}?</span>
+              <button class="alch-invest-confirm alch-invest-append" data-invest="${inv.id}">append</button>
+              <button class="alch-invest-confirm alch-invest-replace" data-invest="${inv.id}">replace</button>
+              <button class="alch-invest-confirm alch-invest-cancel">cancel</button>
+            </div>
+          </div>
+        `).join('')}
+      </div>
+    `;
+    canvas.appendChild(investDropdown);
+
+    function positionInvestDropdown() {
+      const trigger = document.getElementById('alch-invest-trigger');
+      if (!trigger) return;
+      const rect = trigger.getBoundingClientRect();
+      const canvasRect = canvas.getBoundingClientRect();
+      investDropdown.style.top = (rect.bottom - canvasRect.top + 6) + 'px';
+      investDropdown.style.right = (canvasRect.right - rect.right) + 'px';
+      investDropdown.style.left = 'auto';
+    }
+    function openInvestDropdown() {
+      positionInvestDropdown();
+      investDropdown.style.display = '';
+      setTimeout(() => document.addEventListener('click', closeInvestOnOutside), 0);
+    }
+    function closeInvestDropdown() {
+      investDropdown.style.display = 'none';
+      document.removeEventListener('click', closeInvestOnOutside);
+    }
+    function closeInvestOnOutside(ev) {
+      if (investDropdown.contains(ev.target)) return;
+      const trigger = document.getElementById('alch-invest-trigger');
+      if (trigger && trigger.contains(ev.target)) return;
+      closeInvestDropdown();
+    }
+    const investTrigger = document.getElementById('alch-invest-trigger');
+    if (investTrigger) investTrigger.onclick = (ev) => {
+      ev.stopPropagation();
+      if (investDropdown.style.display === 'none') openInvestDropdown(); else closeInvestDropdown();
+    };
+
+    investDropdown.querySelectorAll('.alch-invest-load').forEach(btn => {
+      btn.addEventListener('click', (ev) => {
+        ev.stopPropagation();
+        const investId = btn.dataset.invest;
+        if (picks.length === 0) {
+          investLoadSeeds(investId, 'replace');
+          closeInvestDropdown();
+          return;
+        }
+        investDropdown.querySelectorAll('.alch-invest-action-row').forEach(r => r.style.display = '');
+        investDropdown.querySelectorAll('.alch-invest-confirm-row').forEach(r => r.style.display = 'none');
+        const card = btn.closest('.alch-invest-card');
+        card.querySelector('.alch-invest-action-row').style.display = 'none';
+        card.querySelector('.alch-invest-confirm-row').style.display = '';
+      });
+    });
+    investDropdown.querySelectorAll('.alch-invest-append').forEach(btn => {
+      btn.addEventListener('click', (ev) => { ev.stopPropagation(); investLoadSeeds(btn.dataset.invest, 'append'); closeInvestDropdown(); });
+    });
+    investDropdown.querySelectorAll('.alch-invest-replace').forEach(btn => {
+      btn.addEventListener('click', (ev) => { ev.stopPropagation(); investLoadSeeds(btn.dataset.invest, 'replace'); closeInvestDropdown(); });
+    });
+    investDropdown.querySelectorAll('.alch-invest-cancel').forEach(btn => {
+      btn.addEventListener('click', (ev) => {
+        ev.stopPropagation();
+        const card = btn.closest('.alch-invest-card');
+        card.querySelector('.alch-invest-confirm-row').style.display = 'none';
+        card.querySelector('.alch-invest-action-row').style.display = '';
       });
     });
 
