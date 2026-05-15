@@ -380,6 +380,22 @@ The things opus-foundation-1 claimed but never started are all still open:
 
 ---
 
+## sonnet-epist-fix-1 — surgical epistemic corrections — started 2026-05-15 — **FINISHED 2026-05-15**
+- Owning: `02_documents/_phase-5-medieval/phase-5-056-divine-comedy.md`, `06_themes/creation-by-word.md`, `06_themes/executed-divine-claimant.md`, `04_persons/helena-blavatsky.md`
+- Goal: Surgical epistemic corrections — no new nodes; ID fix + sourcing caveats + accurate quotation + Nazi-appropriation warning
+- Status: finished
+- Delivered:
+  - **FIX 1**: `phase-5-056-divine-comedy.md` — YAML `id:` corrected from `phase-6-divine-comedy` to `phase-5-divine-comedy` (no other nodes linked to the wrong ID)
+  - **FIX 2**: Same file — Step 3 transmission claim softened: "Cerulli hypothesizes transmission through Brunetto Latini… but Dante's direct contact cannot be established from surviving records." Step 4 + concluding paragraph changed "demonstrably" to "plausibly — with strong circumstantial evidence."
+  - **FIX 3**: `creation-by-word.md` — Added blockquote "Transmission vs. parallel note" above the chain table: Hebrew→Christian→Islamic leg documented; Egyptian→Hebrew leg a structural parallel (Allen 1988 notes parallel without claiming dependence); MASSIVE WIN label preserved.
+  - **FIX 4**: `executed-divine-claimant.md` — Removed paraphrase "explicitly calls Socrates 'a Christian before Christ'"; replaced with Justin's actual *First Apology* ch. 46 wording ("Those who lived reasonably [meta logou] are Christians…"); MASSIVE-WIN section updated to match.
+  - **FIX 5**: Same file — Suhrawardi section: formal charges (heresy + corrupting the prince) stated first; Corbin's interpretation framed as scholarly inference not historical fact. Pattern-mechanics section and MASSIVE-WIN section updated to match.
+  - **FIX 6**: `helena-blavatsky.md` — Added "Nazi downstream appropriation" dispute paragraph (Guido von List / Lanz von Liebenfels / Goodrick-Clarke 1985); Blavatsky's universalist intent noted alongside the racialized mutation. Added Goodrick-Clarke *Occult Roots of Nazism* (1992) as Tier-1 YAML ref.
+- Build: **2089 nodes · 12,424 edges · 2.8% dead-link · 0 lint errors**
+- Last edit: `00_meta/ACTIVE-AGENTS.md`
+
+---
+
 ## sonnet-persian-wiring-1 — cross-tradition wiring / Persian theological spine — started 2026-05-15 — **FINISHED 2026-05-15**
 - Owning: `06_themes/frashokereti-cosmic-renovation.md`, `03_deities/saoshyant.md`, `03_deities/muhammad-al-mahdi.md`, `07_traditions/tradition-manichaeism.md`, `07_traditions/tradition-bogomilism.md`, `07_traditions/tradition-catharism.md`, `07_traditions/tradition-zoroastrianism.md`, `07_traditions/tradition-judaism.md`, `07_traditions/tradition-essenes.md`
 - Goal: Wire cross-tradition edges for the Persian theological spine — frashokereti↔tikkun-olam, saoshyant↔mahdi+occultation, manichaeism→bogomilism→catharism chain, persian-period-injection links to 3 tradition nodes
