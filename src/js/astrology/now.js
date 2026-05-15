@@ -211,7 +211,9 @@
     // Layout: single SVG spanning the full wrap. Top region = zodiac strip,
     // bottom region (~110 px) = events strip. Divider line in between.
     const padL = 40, padR = 40, padT = 36, padB = 24;
-    const eventsRegionH = Math.min(120, Math.max(96, H * 0.32));
+    // Grow the events strip — user feedback "make the events timeline larger so we can read".
+    // Was: Math.min(120, Math.max(96, H * 0.32)). Now: ~45% of available height, min 180.
+    const eventsRegionH = Math.max(180, H * 0.45);
     const zodiacBottomY = H - padB - eventsRegionH - 12; // 12 px gap for divider
     const plotH = zodiacBottomY - padT;
     const stripY = padT + plotH / 2;

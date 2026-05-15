@@ -755,10 +755,9 @@ body.zoom-visible.detail-collapsed .view-header { right: calc(var(--detail-w-col
 .view-header > div:first-child { min-width: 0; flex: 1 1 auto; }   /* title block can shrink */
 .view-controls { pointer-events: auto; display: flex; gap: 8px; align-items: center; flex-shrink: 0; }
 .view-header h2 { margin: 0; font-family: var(--serif); font-size: var(--h2-size); color: var(--text-0); font-weight: 500; letter-spacing: 0.06em; text-transform: uppercase; white-space: nowrap; }
-.view-header .subtitle {
-  font-size: var(--lbl-md); color: var(--text-2); font-style: italic; margin-left: 12px;
-  white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
-}
+/* Subtitles removed site-wide 2026-05-15 per user feedback ("super low quality and not useful").
+   The subtitle SPAN stays in the DOM (renderers still set its text) but it's hidden. */
+.view-header .subtitle { display: none; }
 .btn {
   background: var(--bg-2); border: 1px solid var(--border);
   color: var(--text-1); font: inherit; font-size: 11px;
@@ -909,6 +908,19 @@ footer {
 body.nav-collapsed footer    { left: var(--nav-w-collapsed); }
 body.detail-collapsed footer { right: var(--detail-w-collapsed); }
 body.footer-collapsed footer { transform: translateY(100%); }
+/* Footer + its toggle hidden entirely on views with their own toolbars (the search
+   bar adds nothing on these views and was reported as "very annoying"). The user
+   can still reach filters by switching to a list view. */
+body.view-alchemy footer,
+body.view-alchemy .footer-toggle,
+body.view-atlas footer,
+body.view-atlas .footer-toggle,
+body.view-astrology footer,
+body.view-astrology .footer-toggle,
+body.view-transmission footer,
+body.view-transmission .footer-toggle,
+body.view-about footer,
+body.view-about .footer-toggle { display: none !important; }
 /* Footer toggle is a body-level fixed element (sibling of <footer>) so it stays
    clickable when the footer collapses. Previously the toggle lived INSIDE <footer>;
    body.footer-collapsed applies `transform: translateY(100%)` to the footer, and
@@ -1888,7 +1900,10 @@ body.view-atlas main.canvas { background: var(--bg-0); }
 
 /* Hide view-controls + map-thumb + zoom-meter on the new Alchemy view —
    it has its own toolbar and doesn't need them. */
-body.view-alchemy .view-header .view-controls { display: none; }
+/* Alchemy has its own toolbar — hide the view-header entirely so the
+   "Alchemy" title doesn't sit on top of the search input. The board's
+   floating toolbar IS the title bar. */
+body.view-alchemy .view-header { display: none; }
 body.view-alchemy .map-thumb { display: none !important; }
 body.view-alchemy .zoom-meter { display: none !important; }
 
@@ -2290,10 +2305,12 @@ body.view-alchemy .zoom-meter { display: none !important; }
   color: var(--red, #c25450); font-family: var(--serif);
 }
 .astro-now-scrub-wrap {
-  border-top: 1px solid var(--border-soft); padding: 14px 22px 18px;
+  border-top: 1px solid var(--border-soft); padding: 10px 22px 12px;
   background: rgba(8,8,12,0.25);
+  /* Tightened 2026-05-15 — the controls were jumping during scrubbing because
+     auto-fit grid columns + variable decan-name lengths reflowed. Fixed below. */
 }
-.anw-scrub-row { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
+.anw-scrub-row { display: flex; align-items: center; gap: 8px; flex-wrap: nowrap; min-height: 26px; }
 .anw-scrub-row .btn-mini { font-size: 10px; padding: 3px 8px; }
 .anw-scrub-row .anw-now { color: var(--gold); border-color: var(--gold-soft); }
 .anw-scrubber {
@@ -2304,17 +2321,26 @@ body.view-alchemy .zoom-meter { display: none !important; }
   font-family: var(--mono); font-size: 11px; color: var(--gold-soft);
   letter-spacing: 0.08em; min-width: 80px; text-align: right;
 }
+/* Stable 7-column grid: one cell per planet, no reflow regardless of decan-name length.
+   Each cell has fixed min-height so vertical jitter is eliminated. */
 .anw-positions {
-  display: grid; grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
-  gap: 4px 18px; margin-top: 12px;
+  display: grid; grid-template-columns: repeat(7, minmax(0, 1fr));
+  gap: 2px 14px; margin-top: 6px;
   font-family: var(--mono); font-size: 11px;
 }
 .anw-row {
-  display: grid; grid-template-columns: 20px 60px 60px 1fr;
-  gap: 6px; align-items: center;
-  padding: 3px 4px; cursor: pointer; border-bottom: 1px solid var(--border-soft);
+  display: grid; grid-template-columns: 18px 1fr; row-gap: 0; column-gap: 6px;
+  align-items: baseline;
+  padding: 4px 4px; cursor: pointer; border-bottom: 1px solid var(--border-soft);
   transition: background 120ms ease;
+  min-height: 44px;       /* fixed — prevents jumping when decan-text varies */
+  overflow: hidden;
 }
+/* Stacked layout inside each cell — glyph + (name on top line, loc below, decan below) */
+.anw-row .anw-glyph { grid-row: 1 / span 3; align-self: start; padding-top: 2px; }
+.anw-row .anw-name  { grid-column: 2; }
+.anw-row .anw-loc   { grid-column: 2; }
+.anw-row .anw-decan { grid-column: 2; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
 .anw-row:hover { background: var(--bg-2); }
 .anw-glyph { font-family: var(--serif); font-size: 14px; text-align: center; }
 .anw-name { color: var(--text-1); }
