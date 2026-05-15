@@ -1678,7 +1678,8 @@ body.view-atlas main.canvas { background: var(--bg-0); }
 .atlas-era-bar {
   position: absolute;
   left: 50%;
-  bottom: 22px;
+  /* Track --footer-h so the era-bar floats just above the footer, never under it. */
+  bottom: calc(var(--footer-h) + 14px);
   transform: translateX(-50%);
   width: min(900px, calc(100% - 96px));
   z-index: 35;

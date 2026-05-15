@@ -4714,37 +4714,10 @@ function _atlasBuildStyle() {
           'line-width': ['interpolate', ['linear'], ['zoom'], 3, 0.25, 7, 0.55],
           'line-opacity': 0.55
         }
-      },
-      // Basemap place-name labels (countries → regions → cities). The places
-      // source-layer carries a per-feature `min_zoom` field telling us when each
-      // place is meant to appear. We respect that by setting text-opacity to 0
-      // until the current zoom catches up to that feature's min_zoom, then fade.
-      // (User 2026-05-15: "the map needs areas of names".)
-      { id: 'basemap-place-labels', source: 'protomaps', 'source-layer': 'places', type: 'symbol',
-        layout: {
-          'text-field': ['get', 'name'],
-          'text-font': ['Noto Sans Regular'],
-          'text-size': [
-            'interpolate', ['linear'], ['zoom'],
-            2, 9, 6, 11, 10, 13, 12, 15
-          ],
-          'text-allow-overlap': false,
-          'text-letter-spacing': 0.05,
-          'text-transform': 'uppercase',
-          // Major cities (low min_zoom) render first and claim placement
-          'symbol-sort-key': ['coalesce', ['get', 'min_zoom'], 12]
-        },
-        paint: {
-          'text-color': _atlasToken('--text-2', '#8b8e98'),
-          'text-halo-color': _atlasToken('--bg-0', '#07090f'),
-          'text-halo-width': 1.5,
-          'text-opacity': [
-            'case',
-            ['<=', ['coalesce', ['get', 'min_zoom'], 12], ['zoom']], 0.7,
-            0
-          ]
-        }
       }
+      // Note: basemap place-name labels are added DYNAMICALLY in setup() (wrapped
+      // in try/catch), not here — putting them in the style spec means any glyph
+      // or filter validation error blocks the whole basemap from loading.
     ]
   };
 }
@@ -4961,6 +4934,39 @@ VIEWS.atlas = {
       if (_atlasMap.getSource('atlas-nodes')) {
         _atlasMap.getSource('atlas-nodes').setData(featureCollection);
       } else {
+        // Basemap place-name labels (added here, not in the style spec, so a
+        // glyph/filter validation error can't block the whole basemap from
+        // rendering). Reads from the PMTiles `places` source-layer.
+        try {
+          _atlasMap.addLayer({
+            id: 'basemap-place-labels',
+            source: 'protomaps',
+            'source-layer': 'places',
+            type: 'symbol',
+            layout: {
+              'text-field': ['coalesce', ['get', 'name'], ''],
+              'text-font': ['Noto Sans Regular'],
+              'text-size': ['interpolate', ['linear'], ['zoom'], 2, 9, 6, 11, 10, 13, 12, 15],
+              'text-allow-overlap': false,
+              'text-letter-spacing': 0.05,
+              'text-transform': 'uppercase',
+              'symbol-sort-key': ['coalesce', ['get', 'min_zoom'], 12]
+            },
+            paint: {
+              'text-color': _atlasToken('--text-2', '#8b8e98'),
+              'text-halo-color': _atlasToken('--bg-0', '#07090f'),
+              'text-halo-width': 1.5,
+              'text-opacity': [
+                'case',
+                ['<=', ['coalesce', ['get', 'min_zoom'], 12], ['zoom']], 0.7,
+                0
+              ]
+            }
+          });
+        } catch (e) {
+          console.warn('[atlas] basemap place labels skipped:', e.message);
+        }
+
         // CLUSTERED source — at low zoom, co-located points group into a single
         // "stack" circle. Click a cluster to zoom in and expand. Pattern from
         // https://maplibre.org/maplibre-gl-js/docs/examples/create-and-style-clusters/
@@ -5616,6 +5622,13 @@ function _renderAtlasEraSlider(paneEl, era) {
 
   loHand.addEventListener('pointerdown', (ev) => startDrag('lo', ev));
   hiHand.addEventListener('pointerdown', (ev) => startDrag('hi', ev));
+  // Remove any prior window-level listeners (each setView('atlas') re-creates
+  // them; without removal they accumulate and slow drags after many renders).
+  if (window._atlasEraMove) window.removeEventListener('pointermove', window._atlasEraMove);
+  if (window._atlasEraUp)   window.removeEventListener('pointerup',   window._atlasEraUp);
+  if (window._atlasEraUp)   window.removeEventListener('pointercancel', window._atlasEraUp);
+  window._atlasEraMove = moveDrag;
+  window._atlasEraUp   = endDrag;
   window.addEventListener('pointermove', moveDrag);
   window.addEventListener('pointerup',   endDrag);
   window.addEventListener('pointercancel', endDrag);
