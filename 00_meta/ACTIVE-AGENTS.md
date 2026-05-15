@@ -18,16 +18,32 @@ Format:
 
 ---
 
+## opus-atlas-v3-evening — app-code / Atlas Map V3 + class-icons + persistent connections — started 2026-05-15 evening — **FINISHED 2026-05-15** (session-close)
+- Owning: src/js/app.js (~30 commits), src/styles/app.css (.atlas-era-bar + handles), index.html (vendor scripts + nested atlas-pane + sidebar nav glyph refresh), build_data.py (geo_for_node cascade), 00_meta/locations.md (+62 entries), _assets/vendor/{maplibre,pmtiles,glyphs}/, _assets/basemap/world-z7.pmtiles (gitignored, fetchable via scripts/fetch-basemap.sh), scripts/serve.py, scripts/fetch-basemap.sh, start-atlas.command, 00_meta/HANDOFF-2026-05-15-evening.md (NEW), STATUS.md v0.8 header
+- Goal: Replace V2 spider system with unified zoom-aware jitter; persistent Pantheon-style hover-trails; class-icons on every map marker; geo coverage 67%→~85%; premium-SaaS-grade interaction; tagged `atlas-map-v3-icons` + `map-v3-jitter-flow` for safe reverts. Result called "fantastic" by John.
+- Status: finished
+- Last edit: 00_meta/ACTIVE-AGENTS.md
+- Pickup: `00_meta/HANDOFF-2026-05-15-evening.md` (full handoff brief) + `~/.claude/.../memory/project_atlas_map_v3.md` (architecture doc)
+
 ## sonnet-pyramids-1 — content / pyramid investigation library — started 2026-05-15 — **FINISHED 2026-05-15**
 - Owning: 05_events/great-pyramid-of-khufu.md + 14 more pyramid/sphinx/mesoamerican events; 04_persons/khufu.md + 6 persons; 06_themes/theme-orion-correlation-theory.md + 3 themes; 00_meta/locations.md (6 geo entries); src/js/app.js (pyramid-investigation preset); data.js
 - Goal: Complete pyramid investigation library — every known pyramid chamber, Egyptian + Mesoamerican, with all cross-tradition connections wired + investigation Alchemy preset
 - Status: finished
 - Last edit: 00_meta/STATUS.md
 
-## 🚦 In-flight claims at a glance (current as of 2026-05-15 — sonnet-zoroastrian-deepen-1 FINISHED)
+## sonnet-vedic-chinese-docs-1 — content / Rigveda + Shijing + Shujing document nodes — started 2026-05-15
+- Owning: 02_documents/_phase-1-ancient-near-east/phase-1-031-rigveda.md (NEW), 02_documents/_phase-2-axial-age/phase-2-032-shijing-book-of-songs.md (NEW), 02_documents/_phase-2-axial-age/phase-2-033-shujing-book-of-documents.md (NEW)
+- Goal: Create 3 document nodes — full Rigveda (all 10 mandalas incl. Purusha Sukta), Shijing, Shujing — with MASSIVE-win cross-tradition edges
+- Status: in-flight
+- Last edit: 00_meta/ACTIVE-AGENTS.md
+
+## 🚦 In-flight claims at a glance (current as of 2026-05-15 evening — opus-atlas-v3-evening FINISHED, vault app-code at rest)
 
 | Handle | Scope tag | Owns (high level) | Started |
 |---|---|---|---|
+| `opus-atlas-v3-evening` | app-code / Atlas Map V3 + class-icons + persistent trails | Atlas tab full rebuild — zoom-aware jitter replaces spider; persistent Pantheon-style hover-trails; class-icons on every marker; geo coverage 67%→~85%; era-range slider; 3 git tags for safe revert (atlas-map-v3-icons, map-v3-jitter-flow, checkpoint-map-v2-working). Pickup: `00_meta/HANDOFF-2026-05-15-evening.md`. — **FINISHED 2026-05-15 evening** | 2026-05-15 |
+| `sonnet-vedic-chinese-docs-1` | content / Vedic-Chinese document nodes | phase-1-031-rigveda (NEW), phase-2-032-shijing-book-of-songs (NEW), phase-2-033-shujing-book-of-documents (NEW) | 2026-05-15 |
+| `sonnet-mahayana-sutras-1` | content / East Asian Mahayana sutra nodes | phase-4-091-lotus-sutra (NEW), phase-4-092-avatamsaka-sutra (NEW), phase-4-093-lankavat-sutra (NEW), phase-4-094-larger-sukhavativyuha-sutra (NEW) | 2026-05-15 |
 | `sonnet-zoroastrian-1` | content / Zoroastrian-Jewish transmission deep research | 3 MASSIVE-WIN nodes: theme-zoroastrian-jewish-exchange + theme-paradise-etymology + theme-satan-angra-mainyu-transfer; edge sweeps on 6 existing nodes — **FINISHED 2026-05-15** | 2026-05-15 |
 | `sonnet-zoroastrian-deepen-1` | content / Zoroastrian stub deepening | zarathustra.md (full upgrade), tradition-zoroastrianism.md (full body), phase-2-002-gathas-of-zarathustra.md (cosmological-questions + Nietzsche sections), NEW: theme-asha-druj-cosmic-opposition.md — **FINISHED 2026-05-15** | 2026-05-15 |
 
@@ -326,3 +342,12 @@ The things opus-foundation-1 claimed but never started are all still open:
 
 - **Status:** finished
 - **Last edit:** commit — `src/js/app.js` + `src/styles/app.css` + `00_meta/ACTIVE-AGENTS.md`.
+
+---
+
+## sonnet-mahayana-sutras-1 — content / East Asian Mahayana sutra nodes — started 2026-05-15
+
+- Owning: `02_documents/_phase-4-late-antiquity/phase-4-091-lotus-sutra.md` (NEW), `02_documents/_phase-4-late-antiquity/phase-4-092-avatamsaka-sutra.md` (NEW), `02_documents/_phase-4-late-antiquity/phase-4-093-lankavat-sutra.md` (NEW), `02_documents/_phase-4-late-antiquity/phase-4-094-larger-sukhavativyuha-sutra.md` (NEW)
+- Goal: Create 4 metadata-tier document nodes for the most influential East Asian Mahayana sutras, with full MASSIVE-win cross-tradition edges (Buddhist supersessionism ↔ Christian typology / Islamic naskh; Indra's Net holism; vijñānavāda idealism ↔ Berkeley / Kant / Advaita; Pure Land tariki ↔ sola fide)
+- Status: in-flight
+- Last edit: 00_meta/ACTIVE-AGENTS.md
