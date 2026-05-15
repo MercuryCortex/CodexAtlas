@@ -542,22 +542,17 @@ function setView(name) {
   // container element, so the outer wrapper owns positioning + display.
   const _atlasPaneEl = document.getElementById('atlas-pane');
   const _graphPaneEl = document.getElementById('codex-graph-pane');
-  // Shared WebGL graph pane (Phase 1 = pantheon-deities only; later phases add documents/scripture/alchemy)
-  const _usesGraphPane = (name === 'pantheon' && (STATE.pantheonMode || 'deities') === 'deities');
+  // Phase 1 WebGL Pantheon REVERTED — the codex-graph-pane stays hidden and any
+  // mounted sigma instance is torn down on every view change. The pane element
+  // is kept in the DOM for the next (better) attempt at the migration.
+  if (window._codexGraph) window._codexGraph.unmount();
+  if (_graphPaneEl) _graphPaneEl.style.display = 'none';
   if (name === 'atlas' && FEATURES.atlasMapV2) {
     svg.node().style.display = 'none';
     if (_atlasPaneEl) _atlasPaneEl.style.display = 'block';
-    if (_graphPaneEl) _graphPaneEl.style.display = 'none';
-    if (window._codexGraph) window._codexGraph.unmount();
-  } else if (_usesGraphPane) {
-    svg.node().style.display = 'none';
-    if (_atlasPaneEl) _atlasPaneEl.style.display = 'none';
-    if (_graphPaneEl) _graphPaneEl.style.display = 'block';
   } else {
     svg.node().style.display = '';
     if (_atlasPaneEl) _atlasPaneEl.style.display = 'none';
-    if (_graphPaneEl) _graphPaneEl.style.display = 'none';
-    if (window._codexGraph) window._codexGraph.unmount();
   }
   document.getElementById('view-controls').innerHTML = '';
   legend.style('display', 'none').html('');
@@ -753,10 +748,13 @@ VIEWS.pantheon = {
   title: 'Pantheon',
   subtitle: '',
   render() {
-    // Phase 1: deities mode → shared WebGL renderer. Other modes fall through to legacy SVG.
-    if ((STATE.pantheonMode || 'deities') === 'deities') {
-      return _renderPantheonWebGL();
-    }
+    // Phase 1 WebGL Pantheon REVERTED 2026-05-15 — the stripped-down sigma.js render
+    // lost the design language (mode tabs, family hulls/labels, colored bezier edges,
+    // hover trails). Routing all modes through the legacy SVG path until the visual
+    // parity work is done. _renderPantheonWebGL() kept in-file for next attempt.
+    // if ((STATE.pantheonMode || 'deities') === 'deities') {
+    //   return _renderPantheonWebGL();
+    // }
     // Mode: 'deities' (gods clustered by family) | 'authors' (persons who authored, were
     // attributed-to, originated a concept, or are listed as a doc's key-figure) | 'symbols'
     // (iconographic units clustered by origin family with cross-family edges loud) |
