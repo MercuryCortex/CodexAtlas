@@ -40,6 +40,14 @@ cross-symbol-edges:
     type: "visual-cognate"
     notes: "Some Mithraic mosaic iconography includes swastika-form decoration, but this is part of the general Roman ornamental vocabulary, not Mithraic-specific. Visual cognate only — no Mithraic-specific transmission claim."
     refs: ["Beck 2006"]
+  - target: "sun-disk"
+    type: "parallel-form"
+    notes: "The Sol Invictus radiate crown in the canonical tauroctony's upper-left is the same solar-disk iconography that pervades 3rd-c. Roman state cult; Mithraism participates in (does not invent) the Sol Invictus visual vocabulary, which Constantine subsequently fuses with Chi-Rho Christology. This is the SHARED Roman solar-cult substrate that both Mithraism and Constantinian Christianity drew on independently."
+    refs: ["Beck 2006", "Bardill 2012"]
+  - target: "chi-rho-labarum"
+    type: "parallel-form"
+    notes: "Mithraism and 4th-c. Constantinian Chi-Rho coexist in the same urban Roman environments and share the Sol Invictus iconographic substrate. The Cumontian thesis that Constantine borrowed cross-iconography from Mithraism is REJECTED in current scholarship (Beck 2006); the relationship is parallel competition for the same Roman religious-symbolic space, not transmission."
+    refs: ["Beck 2006", "Bardill 2012"]
 mystery-status: "documented"
 status: "metadata"
 refs:
@@ -70,6 +78,13 @@ refs:
     publisher: "Harvard University Press"
     type: "monograph"
     tier: 1
+  - title: "Constantine and the Christian Empire"
+    author: "Jonathan Bardill"
+    year: 2012
+    publisher: "Cambridge University Press"
+    type: "monograph"
+    tier: 1
+    notes: "Decisive on the shared Sol Invictus visual vocabulary of 3rd–4th-c. Roman state religion."
 tags: [symbol, mithraic, mystery-cult, geometric, cross, tauroctony, roman]
 ---
 

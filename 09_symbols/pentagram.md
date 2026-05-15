@@ -40,6 +40,26 @@ cross-symbol-edges:
     type: "parallel-form"
     notes: "Both feature in Renaissance Hermetic geometric-cosmology diagrams (Agrippa, Dee). Independent geometric forms; alchemical and Hermetic reception treats them as sibling 'sacred geometries.'"
     refs: ["Thorndike 1923-1958 vols. 5-6"]
+  - target: "monas-hieroglyphica"
+    type: "ancestor-of"
+    notes: "Dee's *Monas Hieroglyphica* (1564) treats the pentagram as a key Hermetic-Pythagorean component element; the broader Hermetic-magical synthesis Dee assembles incorporates pentagram-and-pentacle iconography. Renaissance Hermetic visual vocabulary in which pentagram, ouroboros, and monas function in concert."
+    refs: ["Yates 1964", "Hakansson 2001"]
+  - target: "rose-cross-rosicrucian"
+    type: "parallel-form"
+    notes: "Rose-cross + pentagram + monas are core post-Renaissance Hermetic-Rosicrucian iconographic vocabulary; pentagram appears as a key constructing element of the Rosicrucian-revival magical geometry from Eliphas Levi 1854 through Hermetic Order of the Golden Dawn (1888-)."
+    refs: ["Yates 1972", "Hanegraaff 2012"]
+  - target: "caduceus"
+    type: "visual-cognate"
+    notes: "Renaissance + modern Hermetic / esoteric iconography routinely pairs caduceus and pentagram as Hermetic-Pythagorean compound emblems (Bruno's *De magia*; Lévi 1854 *Dogme et rituel*; Crowley *Magick in Theory and Practice*). Post-Renaissance occult-synthetic pairing, not ancient."
+    refs: ["Hanegraaff 2012"]
+  - target: "eye"
+    type: "parallel-form"
+    notes: "Renaissance and modern occult iconography routinely pairs Eye and Pentagram as twin cognition-and-power emblems (Lévi 1854; Crowley 1929 *Magick in Theory and Practice*; Hermetic Order of the Golden Dawn ritual diagrams). Post-Renaissance occult-synthetic pairing."
+    refs: ["Hanegraaff 2012"]
+  - target: "star-of-ishtar"
+    type: "parallel-form"
+    notes: "Both are astral-geometric star-emblems with cosmic-witness function. The eight-pointed Ishtar-star (Mesopotamian astronomy) and the five-pointed pentagram (Pythagorean number-mysticism) develop independently but parallel each other as 'star-as-cosmic-emblem' iconographic strategies in adjacent ancient Mediterranean traditions."
+    refs: ["Burkert 1972", "Brown 2000"]
 mystery-status: "documented"
 status: "metadata"
 refs:
@@ -71,6 +91,42 @@ refs:
     type: "critical-edition"
     tier: 1
     notes: "Primary source for the medieval Christian Five-Wounds reading of the pentangle on Gawain's shield (lines 619-665). Tier 1 primary text."
+  - title: "Giordano Bruno and the Hermetic Tradition"
+    author: "Frances A. Yates"
+    year: 1964
+    publisher: "Routledge"
+    type: "monograph"
+    tier: 1
+  - title: "Seeing the Word: John Dee and Renaissance Occultism"
+    author: "Hakan Hakansson"
+    year: 2001
+    publisher: "Lund University Press"
+    type: "monograph"
+    tier: 1
+  - title: "The Rosicrucian Enlightenment"
+    author: "Frances A. Yates"
+    year: 1972
+    publisher: "Routledge"
+    type: "monograph"
+    tier: 1
+  - title: "Esotericism and the Academy"
+    author: "Wouter J. Hanegraaff"
+    year: 2012
+    publisher: "Cambridge University Press"
+    type: "monograph"
+    tier: 1
+  - title: "Lore and Science in Ancient Pythagoreanism"
+    author: "Walter Burkert"
+    year: 1972
+    publisher: "Harvard University Press"
+    type: "monograph"
+    tier: 1
+  - title: "Mesopotamian Planetary Astronomy-Astrology"
+    author: "David Brown"
+    year: 2000
+    publisher: "Styx / Cuneiform Monographs 18"
+    type: "monograph"
+    tier: 1
 tags: [symbol, geometric, greek, pythagorean, christian-medieval, hermetic, wiccan, occult, pentagram, methodology-discipline]
 ---
 

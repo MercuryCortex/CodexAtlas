@@ -62,6 +62,34 @@ cross-symbol-edges:
     type: "parallel-form"
     notes: "Both axis-mundi / cosmogonic emblems in some traditions; the Newgrange entrance-stone triple-spiral has been read as a stylized cosmic-tree by some scholars (Eogan 1986 is more cautious)."
     refs: ["Eogan 1986"]
+  - target: "menorah"
+    type: "parallel-form"
+    notes: "Goodenough 1953 (*Jewish Symbols in the Greco-Roman Period* vol. 4) reads the seven-branch menorah as a stylized cosmic-tree-of-life — the seven planets/heavens flowering from the central axis. The Mesopotamian sacred-tree iconographic substrate is shared with both, and the Hellenistic-Jewish menorah-on-temple-coins development sits within this broader cosmic-tree visual vocabulary."
+    refs: ["Goodenough 1953", "Smith 2001"]
+  - target: "serpent-cosmic-enemy"
+    type: "syncretic-fusion"
+    notes: "**Load-bearing Eden image:** the serpent at the base of the Tree of Knowledge / Tree of Life (Gen 2-3) Hebraizes the broader Mesopotamian + Canaanite cosmic-tree-with-serpent iconographic type (Joines 1974; Charlesworth 2010). Norse Yggdrasil with Níðhöggr gnawing at its root is the same iconographic pattern in independent Indo-European context."
+    refs: ["Joines 1974", "Charlesworth 2010", "Day 1985"]
+  - target: "ouroboros"
+    type: "parallel-form"
+    notes: "Norse Yggdrasil-with-Jörmungandr-at-the-base is the cosmic-tree + world-encircling-serpent paired image. Renaissance alchemical emblems routinely draw the ouroboros around a philosophical-tree (Maier *Atalanta Fugiens* 1617)."
+    refs: ["Eliade 1956", "Jung CW 14"]
+  - target: "caduceus"
+    type: "parallel-form"
+    notes: "The caduceus's two-serpents-around-staff has been read (Bachofen 1861, Jung CW 14) as a stylized cosmic-tree-with-twin-serpents — paralleling the Mesopotamian sacred-tree-flanked-by-serpents and Norse Yggdrasil iconographic types. Structural parallel, not documented transmission."
+    refs: ["Eliade 1956", "Jung CW 14"]
+  - target: "asclepian-rod"
+    type: "parallel-form"
+    notes: "The serpent-on-staff (Asclepian, Nehushtan, Mesopotamian winged-genii) is structurally the cosmic-axis with chthonic-serpent attendant — the world-tree axis specialized as the healer's emblem (Friedlander 1992)."
+    refs: ["Friedlander 1992", "Joines 1974"]
+  - target: "rose-cross-rosicrucian"
+    type: "syncretic-fusion"
+    notes: "The Rosicrucian rose-on-cross synthesis incorporates Christian-Kabbalistic Tree-of-Life sefirot iconography; Robert Fludd's *Utriusque Cosmi Historia* (1617-1621) places the sefirot-tree at the cosmographic core of the Rosicrucian visual system."
+    refs: ["Yates 1972", "Hanegraaff 2012"]
+  - target: "tetragrammaton"
+    type: "syncretic-fusion"
+    notes: "Kabbalistic sefirot-Tree iconography routinely inscribes the Tetragrammaton at the top (Keter) or distributes the four letters across the four worlds of the tree (Atziluth, Beriah, Yetzirah, Asiyah). The Christian Kabbalah of Reuchlin, Pico, and Fludd treats the Tree-of-Life as the visual cipher of the unutterable Name."
+    refs: ["Scholem 1974", "Yates 1972"]
 mystery-status: "documented"
 status: "metadata"
 refs:
@@ -100,6 +128,73 @@ refs:
     type: "monograph"
     tier: 1
     notes: "Tier 1 for the broader ancient-Near-Eastern context of Hebrew Bible cosmological iconography including sacred-tree symbolism."
+  - title: "Jewish Symbols in the Greco-Roman Period (13 vols.)"
+    author: "Erwin R. Goodenough"
+    year: 1953
+    publisher: "Pantheon Books / Bollingen"
+    type: "monograph"
+    tier: 1
+    notes: "Vol. 4 treats the menorah-as-cosmic-tree iconography; foundational for the Jewish-symbol-as-Hellenistic-cosmic-emblem reading."
+  - title: "The Origins of Biblical Monotheism"
+    author: "Mark S. Smith"
+    year: 2001
+    publisher: "Oxford University Press"
+    type: "monograph"
+    tier: 1
+  - title: "The Serpent and the Tree of Life"
+    author: "Karen Joines"
+    year: 1974
+    publisher: "Scholars Press"
+    type: "monograph"
+    tier: 1
+  - title: "The Good and Evil Serpent"
+    author: "James H. Charlesworth"
+    year: 2010
+    publisher: "Yale University Press"
+    type: "monograph"
+    tier: 1
+  - title: "God's Conflict with the Dragon and the Sea"
+    author: "John Day"
+    year: 1985
+    publisher: "Cambridge University Press"
+    type: "monograph"
+    tier: 1
+  - title: "The Forge and the Crucible"
+    author: "Mircea Eliade"
+    year: 1956
+    publisher: "University of Chicago Press"
+    type: "monograph"
+    tier: 2
+  - title: "Mysterium Coniunctionis (CW 14)"
+    author: "C.G. Jung"
+    year: 1956
+    publisher: "Princeton University Press / Bollingen"
+    type: "monograph"
+    tier: 2
+  - title: "The Golden Wand of Medicine"
+    author: "Walter J. Friedlander"
+    year: 1992
+    publisher: "Greenwood Press"
+    type: "monograph"
+    tier: 1
+  - title: "The Rosicrucian Enlightenment"
+    author: "Frances A. Yates"
+    year: 1972
+    publisher: "Routledge"
+    type: "monograph"
+    tier: 1
+  - title: "Esotericism and the Academy"
+    author: "Wouter J. Hanegraaff"
+    year: 2012
+    publisher: "Cambridge University Press"
+    type: "monograph"
+    tier: 1
+  - title: "Kabbalah"
+    author: "Gershom Scholem"
+    year: 1974
+    publisher: "Quadrangle"
+    type: "monograph"
+    tier: 1
 tags: [symbol, phytomorphic, mesopotamian, norse, mayan, kabbalistic, buddhist, christian, zoroastrian, tree-of-life, axis-mundi, methodology-discipline]
 ---
 

@@ -38,6 +38,18 @@ cross-symbol-edges:
     type: "parallel-form"
     notes: "The two principal Zoroastrian cult-substances: fire (Atar) and haoma (the ritual plant-drink). Both are central to the yasna-liturgy; both are paired in cosmic-and-ritual theology. The fire is masculine-igneous; haoma is plant-watery — structural complementarity"
     refs: ["Boyce 1975"]
+  - target: "faravahar"
+    type: "parallel-form"
+    notes: "Faravahar (figural divine-presence emblem) and the sacred fire (non-figural ritual-presence emblem) are the two principal visual-religious emblems of Zoroastrianism. Together they cover the figural-and-non-figural Zoroastrian iconographic vocabulary."
+    refs: ["Boyce 1982", "Stausberg 2002"]
+  - target: "tauroctony"
+    type: "parallel-form"
+    notes: "Mithras has Iranian etymological-religious origin (Avestan *Miθra*); Roman Mithraism's tauroctony develops the Mithra-name into a fresh Greco-Roman mystery within the broader Iranian religious-iconographic context that produces the sacred-fire cult. Beck 2006 rejects the older Cumontian thesis of direct Iranian iconographic transmission to Roman Mithraism while accepting the shared Iranian *name* / theological landscape."
+    refs: ["Beck 2006", "Boyce 1982"]
+  - target: "halo-nimbus"
+    type: "parallel-form"
+    notes: "Both are visual encodings of divine-luminous-presence — fire as actually-luminous-ritual-presence, halo as iconographic-representation-of-luminous-presence. The Iranian Atar tradition and the Hellenistic-Christian halo are independent developments from broader Near-Eastern divine-radiance iconographic vocabulary."
+    refs: ["Mathews 1993", "Boyce 1982"]
 mystery-status: "documented"
 status: "metadata"
 refs:
@@ -70,6 +82,30 @@ refs:
     year: 2004
     publisher: "in *Zoroastrian Rituals in Context* (Brill)"
     type: "scholarly-essay"
+    tier: 1
+  - title: "Zarathustra and His Religion (3 vols.)"
+    author: "Stausberg, Michael"
+    year: 2002
+    publisher: "Brill"
+    type: "monograph"
+    tier: 1
+  - title: "Zoroastrians: Their Religious Beliefs and Practices"
+    author: "Boyce, Mary"
+    year: 1982
+    publisher: "Routledge"
+    type: "monograph"
+    tier: 1
+  - title: "The Religion of the Mithras Cult in the Roman Empire"
+    author: "Beck, Roger"
+    year: 2006
+    publisher: "Oxford University Press"
+    type: "monograph"
+    tier: 1
+  - title: "The Clash of Gods"
+    author: "Mathews, Thomas F."
+    year: 1993
+    publisher: "Princeton University Press"
+    type: "monograph"
     tier: 1
 tags: [symbol, cosmological, zoroastrian, fire, atar, atash, temple-fire, sacred-fire, agni-cognate, indo-iranian]
 ---

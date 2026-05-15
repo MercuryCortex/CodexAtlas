@@ -37,16 +37,16 @@ _Auto-generated 2026-05-15. Targets sorted by incoming reference count (descendi
 | 3 | `mokosh` | `tradition-slavic` |
 | 3 | `svarog` | `tradition-slavic` |
 | 3 | `dazhbog` | `tradition-slavic` |
-| 3 | `baal` | `dying-rising-god`, `chaoskampf` |
+| 3 | `baal` | `chaoskampf`, `dying-rising-god` |
 | 2 | `athtart` | `astar-aksumite` |
 | 2 | `tishpak` | `ninazu` |
 | 2 | `laz` | `erra-akkadian`, `nergal` |
 | 2 | `ge-greek` | `meder` |
 | 2 | `geb-egyptian` | `meder` |
 | 2 | `amurru` | `belet-seri-akkadian` |
-| 2 | `haya` | `nisaba`, `nin-lil-sumerian` |
+| 2 | `haya` | `nin-lil-sumerian`, `nisaba` |
 | 2 | `rhea-greek` | `cybele` |
-| 2 | `damu` | `ninisina`, `gula-akkadian` |
+| 2 | `damu` | `gula-akkadian`, `ninisina` |
 | 2 | `phase-1-013-babylonian-theodicy` | `gula-akkadian` |
 | 2 | `yam-canaanite` | `beher` |
 | 2 | `mars` | `mahrem` |
@@ -63,7 +63,7 @@ _Auto-generated 2026-05-15. Targets sorted by incoming reference count (descendi
 | 2 | `harun-al-rashid` | `musa-al-kazim` |
 | 2 | `hecataeus-of-abdera` | `thales`, `ptolemy-i-soter` |
 | 2 | `plato-of-athens` | `empedocles` |
-| 2 | `solomonic-genealogical-dynasty` | `makeda-queen-of-sheba`, `menelik-i-legendary` |
+| 2 | `solomonic-genealogical-dynasty` | `menelik-i-legendary`, `makeda-queen-of-sheba` |
 | 2 | `gospel-of-judas-sethian` | `judas-iscariot` |
 | 2 | `phase-2-004-1-2-chronicles` | `phase-8-008-kebra-nagast`, `makeda-queen-of-sheba` |
 | 2 | `ascent-and-descent` | `phase-3-002-plato-dialogues` |
@@ -114,7 +114,7 @@ _Auto-generated 2026-05-15. Targets sorted by incoming reference count (descendi
 | 2 | `gatumdug` | `phase-1-018-gudea-cylinders` |
 | 2 | `phase-6-017-boehme-aurora-mysterium-magmum` | `phase-6-029-boehme-aurora` |
 | 2 | `phase-6-026-jacob-frank-words-of-the-lord` | `phase-6-025-nathan-of-gaza-treatise-on-dragons` |
-| 2 | `shiva-deity` | `phase-6-019-tulsidas-ramcharitmanas`, `bhakti-devotion` |
+| 2 | `shiva-deity` | `bhakti-devotion`, `phase-6-019-tulsidas-ramcharitmanas` |
 | 2 | `venus-cycle` | `phase-8-003-dresden-codex-maya` |
 | 2 | `eclipse-prediction` | `phase-8-003-dresden-codex-maya` |
 | 2 | `hozho-balance` | `phase-8-013-navajo-blessingway` |

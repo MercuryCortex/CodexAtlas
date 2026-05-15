@@ -45,6 +45,18 @@ cross-symbol-edges:
     type: "ancestor-of"
     notes: "Mesopotamian Ningishzida's libation-vase entwined-serpent-staff (c. -2100, Gudea) is one of the iconographic candidate-ancestors of the Hermetic caduceus per Friedlander 1992 (case-for-Mesopotamian-origin)."
     refs: ["Friedlander 1992"]
+  - target: "monas-hieroglyphica"
+    type: "ancestor-of"
+    notes: "John Dee's 1564 *Monas Hieroglyphica* deliberately integrates Hermes-Trismegistus iconography including caduceus elements into the composite glyph; the Renaissance Hermetic revival (Ficino, Pico, Bruno, Dee) treats the caduceus as the central Hermetic ritual-attribute. Yates 1964 documents the transmission from late-antique Hermetica to Renaissance occultism."
+    refs: ["Yates 1964", "Hakansson 2001"]
+  - target: "tree-of-life"
+    type: "parallel-form"
+    notes: "The caduceus's central staff with two entwined serpents has been read by 19th–20th-c. comparative-religion scholarship (notably Bachofen, Jung CW 14) as a stylized cosmic-axis / world-tree with twin chthonic-serpents — paralleling the Mesopotamian sacred-tree-flanked-by-serpents and Norse Yggdrasil-with-Jörmungandr iconographic types. Caution: parallel-form (structural / typological), not documented historical transmission from cosmic-tree iconography to Greek caduceus."
+    refs: ["Eliade 1956", "Jung CW 14"]
+  - target: "pentagram"
+    type: "visual-cognate"
+    notes: "Renaissance and modern Hermetic / esoteric iconography routinely pairs caduceus and pentagram as Hermetic-Pythagorean compound emblems (Bruno's *De magia*; the Goetic-and-ceremonial-magic tradition; Lévi 1854 *Dogme et rituel*). Post-Renaissance occult-synthetic pairing, not ancient."
+    refs: ["Hanegraaff 2012", "Yates 1972"]
 mystery-status: "documented"
 status: "metadata"
 refs:
@@ -76,6 +88,44 @@ refs:
     type: "monograph"
     tier: 1
     notes: "Standard reference for Greek religion; documents Hermes's cult-functions and the caduceus iconographic context. Translation from German 1977."
+  - title: "Giordano Bruno and the Hermetic Tradition"
+    author: "Frances A. Yates"
+    year: 1964
+    publisher: "Routledge"
+    type: "monograph"
+    tier: 1
+  - title: "Seeing the Word: John Dee and Renaissance Occultism"
+    author: "Hakan Hakansson"
+    year: 2001
+    publisher: "Lund University Press"
+    type: "monograph"
+    tier: 1
+  - title: "The Forge and the Crucible: The Origins and Structure of Alchemy"
+    author: "Mircea Eliade"
+    year: 1956
+    publisher: "University of Chicago Press (Eng. tr. 1962)"
+    type: "monograph"
+    tier: 2
+    notes: "Tier 2 with Eliade-specific discipline note: cite for alchemical-Hermetic phenomenology, not for cross-cultural transmission claims."
+  - title: "Alchemical Studies (Collected Works 13)"
+    author: "C.G. Jung"
+    year: 1967
+    publisher: "Princeton University Press / Bollingen"
+    type: "monograph"
+    tier: 2
+    notes: "Tier 2. Jungian archetypal reading of alchemical caduceus/Mercurius; cite for the alchemical reception, not for historical transmission."
+  - title: "The Rosicrucian Enlightenment"
+    author: "Frances A. Yates"
+    year: 1972
+    publisher: "Routledge"
+    type: "monograph"
+    tier: 1
+  - title: "Esotericism and the Academy"
+    author: "Wouter J. Hanegraaff"
+    year: 2012
+    publisher: "Cambridge University Press"
+    type: "monograph"
+    tier: 1
 tags: [symbol, theriomorphic, greek, roman, hermetic, caduceus, hermes, medical-conflation, methodology-discipline]
 ---
 

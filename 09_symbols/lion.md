@@ -51,6 +51,22 @@ cross-symbol-edges:
     type: "parallel-form"
     notes: "The lion and bull are paired throughout ancient Near Eastern iconography (Mesopotamian king-killing-lion-as-bull-equivalent royal-power emblem; both flank palace gates in lamassu and apotropaic guardian-figure form; both serve as cult-mounts: Durga's lion / Shiva's Nandi-bull). Both are royal-power emblems with cult attestations."
     refs: ["Bleibtreu 1991"]
+  - target: "sun-disk"
+    type: "parallel-form"
+    notes: "Sekhmet (the Egyptian solar-lioness) is the destructive aspect of the Eye of Ra — solar-feminine wrath. The lion-as-solar-emblem also appears in Cybele's lion-drawn-chariot (parallel to Helios's solar chariot) and in the Buddha's *siṃhanāda* (lion's roar) as a solar-victory metaphor. The royal-lion-as-sun-emblem iconographic theme recurs from Pharaonic Egypt through medieval Christian heraldry (Lion of Judah's solar associations)."
+    refs: ["Wilkinson 1994", "Pinch 2002"]
+  - target: "halo-nimbus"
+    type: "syncretic-fusion"
+    notes: "St Mark's winged-lion (Tetramorph evangelist-emblem, after Ezekiel 1:10 / Revelation 4:6-7) appears in Christian iconography from the 4th c. onward (Santa Pudenziana mosaic, Rome) carrying a halo. The lion-with-halo is a standard Christian iconographic compound: the royal/solar lion's apotropaic vigour fused with Christian sanctity. The Lion of Judah → Christ → St Mark transmission within Christian iconography is the load-bearing typological chain."
+    refs: ["Mathews 1993", "Belting 1994"]
+  - target: "tauroctony"
+    type: "parallel-form"
+    notes: "**Mithraic Aion** (the leontocephaline lion-headed god of Mithraic cosmology — Cumont's *deus arimanius*; in current scholarship Beck 2006 treats him as the Mithraic figure of cosmic time / Saturn-Kronos). The lion-headed-god is iconographically the most striking Mithraic non-tauroctony emblem; he stands serpent-encircled flanking the tauroctony as the cosmic-cycle frame within which Mithras's bull-killing occurs."
+    refs: ["Beck 2006", "Ulansey 1989"]
+  - target: "tree-of-life"
+    type: "parallel-form"
+    notes: "Throne of Solomon (1 Kings 10:18-20) with 12 lions flanking it, and lion-flanked-tree iconography (Assyrian and Phoenician sacred-tree-flanked-by-guardian-lions kudurru reliefs and ivory panels) form the broader royal-cosmic-axis-with-feline-guardians visual vocabulary. The lion at the base of the cosmic axis is a recurrent Near Eastern royal-iconographic motif."
+    refs: ["Bleibtreu 1991", "Smith 2001"]
 mystery-status: "documented"
 status: "metadata"
 refs:
@@ -82,6 +98,48 @@ refs:
     type: "monograph"
     tier: 1
     notes: "Standard reference for Indo-Tibetan Buddhist iconography including the *siṃhāsana* (lion-throne) motif fundamental to all Buddhist traditions."
+  - title: "Symbol and Magic in Egyptian Art"
+    author: "Richard H. Wilkinson"
+    year: 1994
+    publisher: "Thames & Hudson"
+    type: "monograph"
+    tier: 1
+  - title: "Egyptian Mythology"
+    author: "Geraldine Pinch"
+    year: 2002
+    publisher: "Oxford University Press"
+    type: "monograph"
+    tier: 1
+  - title: "The Clash of Gods: A Reinterpretation of Early Christian Art"
+    author: "Mathews, Thomas F."
+    year: 1993
+    publisher: "Princeton University Press"
+    type: "monograph"
+    tier: 1
+  - title: "Likeness and Presence"
+    author: "Hans Belting"
+    year: 1994
+    publisher: "University of Chicago Press"
+    type: "monograph"
+    tier: 1
+  - title: "The Religion of the Mithras Cult in the Roman Empire"
+    author: "Roger Beck"
+    year: 2006
+    publisher: "Oxford University Press"
+    type: "monograph"
+    tier: 1
+  - title: "The Origins of the Mithraic Mysteries"
+    author: "David Ulansey"
+    year: 1989
+    publisher: "Oxford University Press"
+    type: "monograph"
+    tier: 1
+  - title: "The Origins of Biblical Monotheism"
+    author: "Mark S. Smith"
+    year: 2001
+    publisher: "Oxford University Press"
+    type: "monograph"
+    tier: 1
 tags: [symbol, theriomorphic, mesopotamian, egyptian, hebrew, christian, buddhist, rastafari, lion, sphinx, royal-power]
 ---
 

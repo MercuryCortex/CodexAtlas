@@ -51,6 +51,18 @@ cross-symbol-edges:
     type: "parallel-form"
     notes: "Both are pagan-mystery-cult iconographic elements (radiate-cross / radiate-crown) that fed into late-antique Christian-imperial iconography."
     refs: ["Beck 2006"]
+  - target: "chi-rho-labarum"
+    type: "parallel-form"
+    notes: "The Constantinian Chi-Rho coinage works within the same Sol-Invictus radiate-iconographic vocabulary that produces the Christian halo; some Constantinian medallions (RIC VII Ticinum 36 c. 315) show Constantine with Sol's radiate crown alongside the Chi-Rho. The halo and the Christogram emerge from the SAME 4th-c. solar-imperial iconographic moment (Bardill 2012)."
+    refs: ["Bardill 2012", "Mathews 1993"]
+  - target: "faravahar"
+    type: "parallel-form"
+    notes: "The Achaemenid Faravahar's winged-disc-with-figure depicts divine-radiance-as-emanation in a structurally analogous way to the later Hellenistic-Roman halo, with the radiance solar in both cases. Iconographically independent developments from broader Near Eastern divine-radiance vocabulary — no documented transmission, but useful cross-reference for the 'how cultures depict divine luminosity' question."
+    refs: ["Boyce 1982", "Mathews 1993"]
+  - target: "phoenix-bennu"
+    type: "syncretic-fusion"
+    notes: "The Christian-era reception of the Bennu/phoenix as Resurrection-symbol travels alongside the halo iconographic development — the radiant-resurrection-bird and the solar-radiance halo both feed the visual vocabulary of Christ's risen body in Late-Antique mosaic and sarcophagus iconography (Van den Broek 1972 ch. 5)."
+    refs: ["Van den Broek 1972", "Jensen 2017"]
 mystery-status: "documented"
 status: "metadata"
 refs:
@@ -72,6 +84,24 @@ refs:
     author: "Hijmans, Steven E."
     year: 2009
     publisher: "PhD dissertation, Groningen (published as articles in Brill)"
+    type: "monograph"
+    tier: 1
+  - title: "Constantine and the Christian Empire"
+    author: "Bardill, Jonathan"
+    year: 2012
+    publisher: "Cambridge University Press"
+    type: "monograph"
+    tier: 1
+  - title: "Zoroastrians: Their Religious Beliefs and Practices"
+    author: "Boyce, Mary"
+    year: 1982
+    publisher: "Routledge"
+    type: "monograph"
+    tier: 1
+  - title: "The Myth of the Phoenix according to Classical and Early Christian Traditions"
+    author: "Van den Broek, R."
+    year: 1972
+    publisher: "Brill"
     type: "monograph"
     tier: 1
   - title: "Understanding Early Christian Art"

@@ -38,6 +38,22 @@ cross-symbol-edges:
     type: "parallel-form"
     notes: "Both are principal Jewish religious-iconographic forms; both anchor Jewish Temple-and-liturgical tradition. The Menorah is iconographic-architectural; the Tetragrammaton is linguistic-theological."
     refs: ["Levine 2005"]
+  - target: "tree-of-life"
+    type: "parallel-form"
+    notes: "**Goodenough 1953 *Jewish Symbols* vol. 4** reads the seven-branch menorah as a stylized cosmic-tree-of-life: the seven branches as the seven planetary spheres / heavens flowering from the central axis. Hellenistic-Jewish reading; the Mesopotamian sacred-tree iconographic substrate is shared with both. The menorah-as-cosmic-tree is one of the load-bearing Goodenough readings."
+    refs: ["Goodenough 1953", "Smith 2001"]
+  - target: "sun-disk"
+    type: "parallel-form"
+    notes: "Hellenistic-Jewish iconography occasionally reads the 7 branches as the 7 visible heavenly bodies (Sun, Moon, Mercury, Venus, Mars, Jupiter, Saturn — the *seven planets* of ancient astronomy), with the central shaft as the sun. Philo *Quis rerum* 221 makes the explicit connection; Josephus *Antiquities* 3.182 echoes."
+    refs: ["Goodenough 1953", "Fine 2016"]
+  - target: "wheat-grain"
+    type: "parallel-form"
+    notes: "Temple-cult plant-symbols: Menorah, Temple showbread (*lechem ha-panim*), and wheat-grain harvest-offerings (Shavuot/firstfruits) form the Tabernacle-and-Temple ritual-iconographic vocabulary. Levine 2005 documents the broader synagogue-iconographic vocabulary that pairs these elements."
+    refs: ["Levine 2005", "Fine 2016"]
+  - target: "latin-cross"
+    type: "parallel-form"
+    notes: "Roman Arch of Titus (81 CE) relief depicts Roman soldiers carrying the Jerusalem Temple Menorah in the triumph after the destruction of the Temple — the principal early Roman-imperial visual document of the Menorah. The Arch of Titus relief and Christian cross-emblems function in adjacent (but theologically opposed) 1st-c. Roman iconographic vocabularies for which religious-tradition wins."
+    refs: ["Fine 2016", "Levine 2005"]
 mystery-status: "documented"
 status: "metadata"
 refs:
@@ -68,6 +84,13 @@ refs:
     publisher: "Oxford University Press"
     type: "monograph"
     tier: 1
+  - title: "Jewish Symbols in the Greco-Roman Period (13 vols.)"
+    author: "Erwin R. Goodenough"
+    year: 1953
+    publisher: "Pantheon / Bollingen"
+    type: "monograph"
+    tier: 1
+    notes: "Vol. 4 treats the menorah-as-cosmic-tree iconography."
 tags: [symbol, geometric, jewish, menorah, seven-branched-lampstand, tabernacle, second-temple, arch-of-titus, state-of-israel, hanukkiah]
 ---
 

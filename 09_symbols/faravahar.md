@@ -35,6 +35,18 @@ cross-symbol-edges:
     type: "parallel-form"
     notes: "The Faravahar-figure typically holds a **ring** in one hand (sometimes interpreted as a symbol of kingship / covenant; sometimes interpreted as a representation of eternity). The ring-as-life-and-power emblem has structural parallels with Egyptian ankh-iconography but no documented direct transmission — both are likely independent developments from broader Near Eastern ring-and-circle royal-religious iconography."
     refs: ["Boyce 1982"]
+  - target: "sacred-fire-atash"
+    type: "parallel-form"
+    notes: "Faravahar and the Zoroastrian sacred fire are the two principal visual-religious emblems of Zoroastrianism. The Faravahar is the **figural** divine-presence emblem (winged-disc with emerging crowned figure), the sacred fire is the **non-figural** ritual-presence emblem (Ahura Mazda's purity manifested in the *atash bahram*). Both function as identifying Zoroastrian iconographic markers in fire-temples and modern Parsi devotional contexts."
+    refs: ["Boyce 1982", "Stausberg 2002"]
+  - target: "eye-of-horus-wedjat"
+    type: "parallel-form"
+    notes: "Both are royal-religious gaze/witness emblems within ancient Near Eastern visual vocabularies. The Wedjat-Eye of Horus and the Faravahar's emerging-figure-from-disc both function as divine-watching iconographic forms, though developed in independent Egyptian and Iranian iconographic traditions."
+    refs: ["Boyce 1982", "Pinch 2002"]
+  - target: "chi-rho-labarum"
+    type: "visual-cognate"
+    notes: "Both function as imperial-religious identifying-emblems carried on royal/military standards. The Achaemenid Faravahar appears above royal-titulary reliefs at Persepolis and Naqsh-e Rustam; the Constantinian Chi-Rho appears on the *labarum*. The 'sacred standard borne over the king' iconographic vocabulary has structural parallels across the Near East — independent developments, parallel iconographic strategy."
+    refs: ["Frye 1962", "Mathews 1993"]
 mystery-status: "partially-deciphered"
 status: "metadata"
 refs:
@@ -65,6 +77,25 @@ refs:
     type: "monograph"
     tier: 1
     notes: "Standard scholarly history of Achaemenid Persia; treats the Faravahar in royal iconographic context"
+  - title: "Zarathustra and His Religion"
+    author: "Stausberg, Michael"
+    year: 2002
+    publisher: "Brill (3 vols., 2002–2004)"
+    type: "monograph"
+    tier: 1
+    notes: "Comprehensive contemporary treatment of Zoroastrianism including ritual fire and iconographic vocabulary."
+  - title: "Egyptian Mythology"
+    author: "Pinch, Geraldine"
+    year: 2002
+    publisher: "Oxford University Press"
+    type: "monograph"
+    tier: 1
+  - title: "The Clash of Gods: A Reinterpretation of Early Christian Art"
+    author: "Mathews, Thomas F."
+    year: 1993
+    publisher: "Princeton University Press"
+    type: "monograph"
+    tier: 1
 tags: [symbol, anthropomorphic, zoroastrian, persian, achaemenid, faravahar, fravashi, winged-disc, iranian-national-symbol]
 ---
 

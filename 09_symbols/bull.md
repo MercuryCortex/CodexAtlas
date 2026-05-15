@@ -67,6 +67,22 @@ cross-symbol-edges:
     type: "parallel-form"
     notes: "The lion and bull share a deep iconographic-mythological pairing in the ancient Near East — Mesopotamian king-killing-lion-as-bull-equivalent motif; Mithraic lion-headed Aion; Cybele's lion-throne (parallel to Apis's bull). Both are royal-power emblems with cult-attestations."
     refs: ["Bickel 1994"]
+  - target: "tree-of-life"
+    type: "parallel-form"
+    notes: "Assyrian and Phoenician sacred-tree-flanked-by-bulls (kudurru reliefs, ivory panels from Nimrud + Arslan Tash) form the broader royal-cosmic-axis-with-bovine-guardians visual vocabulary. The bull at the base of the cosmic axis is a recurrent Near Eastern royal-iconographic motif paralleling the lion-guardian variant."
+    refs: ["Bleibtreu 1991", "Smith 2001"]
+  - target: "crescent-moon-star"
+    type: "parallel-form"
+    notes: "Mesopotamian Sin (moon-god) has a sacred bull-cult; the *Bull-of-Heaven* iconography in Gilgamesh tablet VI pairs bovine + lunar imagery. Sin's crescent ↔ bull's-horns: the crescent's two-prongs visually echo bull-horns, and the lapis-lazuli crescent + bull-of-heaven attest the iconographic pair."
+    refs: ["Black & Green 1992", "Smith 2001"]
+  - target: "serpent-cosmic-enemy"
+    type: "parallel-form"
+    notes: "Both function as cosmic-chaos vs. cosmic-order antagonists in chaoskampf narratives. Marduk-vs-Tiamat (dragon/serpent) and Mithras-vs-bull (tauroctony) deploy the same hero-killing-cosmic-monster structure with different beast-types. Beck 2006 frames the tauroctony as Mithraic chaoskampf with the bull in the serpent's structural role."
+    refs: ["Beck 2006", "Day 1985"]
+  - target: "indus-valley-script"
+    type: "parallel-form"
+    notes: "The IVC unicorn-bull seal-motif (c. -2600 to -1900) is the canonical Bronze-Age South Asian bovine-iconographic emblem; whether it iconographically continues into Vedic Indra-bull and Hindu Nandi-bull is contested (Parpola 1994 affirmative; Witzel skeptical). The bull-iconography is the bridge in any IVC → Vedic continuity hypothesis."
+    refs: ["Parpola 1994", "Possehl 2002"]
 mystery-status: "documented"
 status: "metadata"
 refs:
@@ -98,6 +114,42 @@ refs:
     type: "primary-translation"
     tier: 1
     notes: "Standard translation anthology including the *Bull of Heaven* episode in Gilgamesh and other Mesopotamian bull-iconography texts."
+  - title: "Grisly Assyrian Record of Torture and Death"
+    author: "Erika Bleibtreu"
+    year: 1991
+    publisher: "Biblical Archaeology Review 17(1)"
+    type: "journal-article"
+    tier: 2
+  - title: "The Origins of Biblical Monotheism"
+    author: "Mark S. Smith"
+    year: 2001
+    publisher: "Oxford University Press"
+    type: "monograph"
+    tier: 1
+  - title: "Gods, Demons and Symbols of Ancient Mesopotamia"
+    author: "Jeremy Black and Anthony Green"
+    year: 1992
+    publisher: "British Museum Press"
+    type: "monograph"
+    tier: 1
+  - title: "God's Conflict with the Dragon and the Sea"
+    author: "John Day"
+    year: 1985
+    publisher: "Cambridge University Press"
+    type: "monograph"
+    tier: 1
+  - title: "Deciphering the Indus Script"
+    author: "Asko Parpola"
+    year: 1994
+    publisher: "Cambridge University Press"
+    type: "monograph"
+    tier: 1
+  - title: "The Indus Civilization"
+    author: "Gregory L. Possehl"
+    year: 2002
+    publisher: "AltaMira"
+    type: "monograph"
+    tier: 1
 tags: [symbol, theriomorphic, egyptian, mesopotamian, mithraic, minoan, vedic, hebrew, bull, tauroctony]
 ---
 

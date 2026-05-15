@@ -35,6 +35,18 @@ cross-symbol-edges:
     type: "parallel-form"
     notes: "Both are early-Christian apotropaic-symbolic adoptions of pre-Christian iconographic vocabulary as Resurrection-and-life signs. Independent traditions; structurally parallel role."
     refs: ["Jensen 2017"]
+  - target: "scarab-khepri"
+    type: "parallel-form"
+    notes: "**Twin Egyptian solar-rebirth emblems.** Khepri (scarab — the self-generating sun emerging at dawn) and Bennu (phoenix — the cyclical solar-bird perching on the benben) are the two principal Heliopolitan self-renewal iconographic forms. Both became Christian appropriations: scarab less so (filtered through Coptic apotropaic amulets), Bennu/phoenix dramatically so (the Christian-Resurrection emblem)."
+    refs: ["Van den Broek 1972", "Hornung 1982"]
+  - target: "halo-nimbus"
+    type: "syncretic-fusion"
+    notes: "The Christian appropriation of the phoenix as Resurrection-emblem develops alongside halo-iconography in the same 3rd–5th c. Mediterranean iconographic moment; the radiant-resurrection-bird and the solar-radiance halo both feed the visual vocabulary of Christ's risen body in Late-Antique sarcophagus + mosaic iconography. Van den Broek 1972 ch. 5 traces the parallel Christian developments."
+    refs: ["Van den Broek 1972", "Jensen 2017"]
+  - target: "eye-of-horus-wedjat"
+    type: "parallel-form"
+    notes: "Both Heliopolitan iconographic forms — phoenix-Bennu and Eye of Ra (paired with Eye of Horus) operate within the Heliopolitan solar-cosmogonic vocabulary of Old Kingdom Egypt; the Bennu sits on the *benben*, the Eye is the sun's emanation, both circulate around the Heliopolitan ennead's cosmogony."
+    refs: ["Hornung 1982", "Wilkinson 2003"]
 mystery-status: "documented"
 status: "metadata"
 refs:
@@ -77,6 +89,24 @@ refs:
     publisher: "Various scholarly compilations"
     type: "monograph"
     tier: 2
+  - title: "Conceptions of God in Ancient Egypt"
+    author: "Hornung, Erik"
+    year: 1982
+    publisher: "Cornell University Press"
+    type: "monograph"
+    tier: 1
+  - title: "The Complete Gods and Goddesses of Ancient Egypt"
+    author: "Wilkinson, Richard H."
+    year: 2003
+    publisher: "Thames & Hudson"
+    type: "monograph"
+    tier: 1
+  - title: "The Cross: History, Art, and Controversy"
+    author: "Jensen, Robin M."
+    year: 2017
+    publisher: "Harvard University Press"
+    type: "monograph"
+    tier: 1
 tags: [symbol, theriomorphic, egyptian, greek, christian, phoenix, bennu, heliopolis, resurrection, 1-clement, rebirth]
 ---
 

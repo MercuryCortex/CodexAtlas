@@ -18,7 +18,19 @@ variants:
 appearances: []
 deity-instances: []
 tradition-context: []
-cross-symbol-edges: []
+cross-symbol-edges:
+  - target: "swastika"
+    type: "parallel-form"
+    notes: "Indus Valley seals (Mohenjo-daro, Harappa, c. -2600 to -1900) include swastika motifs alongside the script-signs; among the earliest dated attestations of the swastika in South Asia. Whether the swastika is a *script-sign* or a *separate iconographic emblem* on these seals is itself a question — relevant to the broader IVC-symbol-as-script question."
+    refs: ["Parpola 1994", "Possehl 2002"]
+  - target: "bull"
+    type: "parallel-form"
+    notes: "**The unicorn-bull seal.** The most common IVC seal-motif is a bull-like animal (often called 'unicorn' for its single-horn-in-profile depiction, though zebu and other forms also occur) paired with the script-signs. Whether the bull is theological-iconographic (proto-Shiva-Nandi? cattle-economy emblem?) or pure clan-mark is contested. The bull-and-script combination is THE canonical IVC seal-format (Possehl 2002 catalogs 1,755 unicorn seals out of c. 4,000 inscribed seals)."
+    refs: ["Possehl 2002", "Parpola 1994"]
+  - target: "tree-of-life"
+    type: "parallel-form"
+    notes: "Some IVC seals depict a *pipal-tree-with-figures* (Mohenjo-daro 'proto-Shiva seal' MD-431; the 'Fig Deity' seal). The pipal-tree (*Ficus religiosa*) becomes the Buddhist Bodhi-tree of enlightenment — if the IVC iconographic identification continues into Vedic-Hindu tradition (Parpola hypothesizes), this would be a 4,500-year-old continuity. Speculative; flagged as parallel-form."
+    refs: ["Parpola 1994", "Possehl 2002"]
 mystery-status: "mystery"
 status: "metadata"
 refs:
@@ -50,6 +62,13 @@ refs:
     type: "monograph"
     tier: 1
     notes: "Foundational excavation report; documents the original discoveries from Marshall's 1920s excavations including the first attestations of the script."
+  - title: "The Indus Civilization: A Contemporary Perspective"
+    author: "Gregory L. Possehl"
+    year: 2002
+    publisher: "AltaMira / Rowman & Littlefield"
+    type: "monograph"
+    tier: 1
+    notes: "Standard contemporary synthesis of IVC archaeology including seal-iconography catalog."
 tags: [symbol, mystery, indus-valley, harappan, undeciphered, methodology-discipline]
 ---
 

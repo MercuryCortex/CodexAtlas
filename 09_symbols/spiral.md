@@ -41,6 +41,18 @@ cross-symbol-edges:
     type: "visual-cognate"
     notes: "Spiral forms appear in some sand-mandala and yantra-mandala traditions; the geometric inward-turning structure is cognate. NO documented transmission between Atlantic megalithic / Aboriginal / Pueblo spirals and South Asian mandala traditions."
     refs: []
+  - target: "swastika"
+    type: "visual-cognate"
+    notes: "Both are rotational geometric motifs in Atlantic Bronze-and-Iron Age decorative vocabulary; some scholars read the swastika as a stylized double-spiral. Visual cognate; distinct iconographic traditions."
+    refs: ["Aldhouse-Green 1986", "Eogan 1986"]
+  - target: "sun-disk"
+    type: "visual-cognate"
+    notes: "Atlantic European Bronze Age megalithic art routinely pairs spiral motifs with solar-disk and solar-wheel iconography (Newgrange winter-solstice alignment connects spiral entrance-stone with solar event). Cognate rotational-cosmographic iconography."
+    refs: ["Eogan 1986"]
+  - target: "yin-yang"
+    type: "visual-cognate"
+    notes: "The taijitu's two-comma division is structurally a closed double-spiral with bilateral rotation. Independent Chinese-philosophical development; iconographically continuous with the spiral family at the level of bilateral-rotational form."
+    refs: ["Kohn 2000"]
 mystery-status: "documented"
 status: "metadata"
 refs:
@@ -79,6 +91,18 @@ refs:
     type: "monograph"
     tier: 1
     notes: "Foundational 20th-c. ethnographic record of Aranda (Arrernte) Central Australian cosmological iconography; documents spiral and concentric-circle conventions."
+  - title: "The Gods of the Celts"
+    author: "Miranda Aldhouse-Green"
+    year: 1986
+    publisher: "Sutton"
+    type: "monograph"
+    tier: 1
+  - title: "Daoism Handbook"
+    author: "Livia Kohn (ed.)"
+    year: 2000
+    publisher: "Brill"
+    type: "monograph"
+    tier: 1
 tags: [symbol, geometric, neolithic, celtic, aboriginal, pueblo, megalithic, spiral, methodology-discipline]
 ---
 

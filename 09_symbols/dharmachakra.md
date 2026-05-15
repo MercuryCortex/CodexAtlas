@@ -39,6 +39,22 @@ cross-symbol-edges:
     type: "parallel-form"
     notes: "Both are principal Buddhist symbols, often appearing together on Buddhist iconography. The lotus emblem-element commonly appears at the hub of the Dharmachakra in some elaborated forms."
     refs: ["Snellgrove 1987"]
+  - target: "sun-disk"
+    type: "parallel-form"
+    notes: "Both are radial wheel/disc emblems; some scholarship (Coomaraswamy 1928) reads the Dharma-wheel as a deliberate Buddhist adoption of the older Vedic Surya-solar-chariot iconography, recast theologically. Cognate Vedic-Buddhist solar-radial vocabulary."
+    refs: ["Coomaraswamy 1928", "Snellgrove 1987"]
+  - target: "swastika"
+    type: "parallel-form"
+    notes: "Both are *ashtamangala* (Buddhist auspicious-symbol) members and co-occurring Vedic-Hindu-Buddhist-Jain auspicious-mark emblems. The four-spoke + four-arm rotation-symmetry parallel is structural; both signify cosmic-cycle and dharma-and-cosmos integration."
+    refs: ["Williams 2009", "Snellgrove 1987"]
+  - target: "aum-om"
+    type: "parallel-form"
+    notes: "AUM and the Dharma-wheel are paired in Buddhist domestic-and-temple iconographic vocabulary; both function as principal Buddhist emblems of cosmic-teaching and meditative-resonance."
+    refs: ["Williams 2009"]
+  - target: "celtic-cross"
+    type: "visual-cognate"
+    notes: "Both are eight-spoke / four-spoke wheel-on-circle emblems; the visual cognacy is striking enough that 19th-c. Theosophical writers explicitly read them as variants, but **no documented historical transmission** between Asian Buddhist Dharma-wheel and Insular Christian Celtic cross. Catalog as visual-cognate only."
+    refs: ["Richardson 1990"]
 mystery-status: "documented"
 status: "metadata"
 refs:
@@ -68,6 +84,24 @@ refs:
     type: "monograph"
     tier: 1
     notes: "Standard work on Ashoka and the Mauryan context of the earliest Dharmachakra-iconography"
+  - title: "Yakṣas: Essays in the Water Cosmology"
+    author: "Ananda K. Coomaraswamy"
+    year: 1928
+    publisher: "Smithsonian Institution"
+    type: "monograph"
+    tier: 1
+  - title: "Mahāyāna Buddhism: The Doctrinal Foundations (2nd ed.)"
+    author: "Paul Williams"
+    year: 2009
+    publisher: "Routledge"
+    type: "monograph"
+    tier: 1
+  - title: "Celtic Cross: Symbol of Christianity in Ireland"
+    author: "Hilary Richardson"
+    year: 1990
+    publisher: "Mercier Press"
+    type: "monograph"
+    tier: 2
 tags: [symbol, geometric, buddhist, hindu, jain, dharmachakra, wheel-of-dharma, ashoka, sarnath, eightfold-path, flag-of-india, ashoka-chakra]
 ---
 

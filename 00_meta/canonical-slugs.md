@@ -1814,10 +1814,10 @@ canonical-slug
 | 4 | `ragnarok-apocalyptic` | `apocalyptic-revelation` |
 | 4 | `primordial-darkness` | `primordial-waters` |
 | 4 | `messianic-revelation` | `messianic-secret` |
-| 4 | `genealogical-cosmogony` | `mesoamerican-cosmogony` |
-| 4 | `evolutionary-cosmogony` | `mesoamerican-cosmogony` |
+| 4 | `genealogical-cosmogony` | `hermetic-cosmogony` |
+| 4 | `evolutionary-cosmogony` | `hermetic-cosmogony` |
 | 3 | `the-evil-god-cathar` | `the-good-god-cathar` |
 | 3 | `phase-2-005-1-2-kings` | `phase-2-008-homeric-epics` |
-| 3 | `messianic-genealogy` | `solomonic-genealogy` |
+| 3 | `messianic-genealogy` | `messianic-secret` |
 | 2 | `yam-canaanite` | `astarte-canaanite` |
 | 2 | `phase-1-013-babylonian-theodicy` | `phase-1-018-gudea-cylinders` |

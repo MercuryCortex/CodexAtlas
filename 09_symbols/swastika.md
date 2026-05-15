@@ -53,6 +53,22 @@ cross-symbol-edges:
     type: "visual-cognate"
     notes: "The right-angle-armed swastika is geometrically a Greek-cross with bent arms; some 19th-c. and Theosophical writers (Blavatsky) explicitly read them as variants. **No documented historical transmission** between the two symbol-traditions — flagging this strictly as visual-cognate, not as ancestor-of or parallel-form. The Christian Greek-cross tradition and the Vedic-Buddhist-Jain swastika tradition developed entirely independently."
     refs: ["Heller 2000"]
+  - target: "sun-disk"
+    type: "parallel-form"
+    notes: "The swastika is functionally a solar-wheel motif across multiple independent traditions (Bronze-Age Aegean, Norse, Vedic, Buddhist) — the rotating four-armed cross figures cosmic motion + the sun's wheel-like passage. The continuity with the Bronze-Age sun-disk iconographic vocabulary (Trundholm sun-chariot c. 1400 BCE; Greek Helios-on-chariot pottery) is structural-and-thematic; NOT a single transmission lineage but a recurrent solar-wheel iconographic pattern. **Load-bearing for the 'swastika is 4000 years older than its modern reception' demo.**"
+    refs: ["Quinn 1994", "Green 1991"]
+  - target: "dharmachakra"
+    type: "parallel-form"
+    notes: "Both are eight-spoke/four-spoke wheel-motif Vedic-Buddhist solar/dharma emblems. The Buddhist swastika (on the Buddha's chest in many traditions) and the Dharma-wheel are co-occurring auspicious-marks within Buddhist iconographic vocabulary; both function as dharma-and-cosmos signs. Independent forms, parallel theological role within Buddhism."
+    refs: ["Snellgrove 1987", "Williams 2009"]
+  - target: "spiral"
+    type: "visual-cognate"
+    notes: "Both are rotational geometric motifs; some scholarly literature reads the swastika as a stylized spiral (the bent arms suggesting rotation). The two appear together in Bronze-Age Aegean and La Tène European decorative vocabulary. Visual-cognate only — distinct iconographic traditions."
+    refs: ["Green 1991", "Quinn 1994"]
+  - target: "aum-om"
+    type: "parallel-form"
+    notes: "Both are core Vedic-Hindu sacred-mark and mantric-emblem traditions; they co-occur on yantras, doorway-thresholds, festival-rangoli, and Jain/Buddhist altars. The svastika and aum function in parallel as auspicious-presence-marks in domestic and ritual Hindu space."
+    refs: ["Flood 1996"]
 mystery-status: "documented"
 status: "metadata"
 refs:
@@ -84,6 +100,38 @@ refs:
     type: "journal-article"
     tier: 2
     notes: "Useful for the contemporary inter-traditional negotiation of the symbol."
+  - title: "The Swastika: The Earliest Known Symbol and Its Migrations"
+    author: "Thomas Wilson / Malcolm Quinn"
+    year: 1994
+    publisher: "Routledge (Quinn) / Smithsonian (Wilson 1896 reprint)"
+    type: "monograph"
+    tier: 2
+    notes: "Quinn 1994 *The Swastika: Constructing the Symbol* is the standard academic genealogy of the symbol's Western-archaeological documentation through its modern reception."
+  - title: "The Gods of the Celts"
+    author: "Miranda Aldhouse-Green"
+    year: 1991
+    publisher: "Sutton"
+    type: "monograph"
+    tier: 1
+    notes: "For the solar-wheel and rotational-motif vocabulary of Bronze and Iron Age Atlantic Europe."
+  - title: "Indo-Tibetan Buddhism: Indian Buddhists and Their Tibetan Successors"
+    author: "David Snellgrove"
+    year: 1987
+    publisher: "Shambhala"
+    type: "monograph"
+    tier: 1
+  - title: "Mahāyāna Buddhism: The Doctrinal Foundations (2nd ed.)"
+    author: "Paul Williams"
+    year: 2009
+    publisher: "Routledge"
+    type: "monograph"
+    tier: 1
+  - title: "An Introduction to Hinduism"
+    author: "Gavin Flood"
+    year: 1996
+    publisher: "Cambridge University Press"
+    type: "monograph"
+    tier: 1
 tags: [symbol, geometric, vedic, hindu, buddhist, jainism, norse, native-american, greek, polemic-inversion, swastika, appropriation, methodology-discipline]
 ---
 

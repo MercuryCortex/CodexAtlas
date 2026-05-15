@@ -44,6 +44,22 @@ cross-symbol-edges:
     type: "parallel-form"
     notes: "In some Golden-Dawn-tradition elaborations of the Rose Cross, the rose's petal-count and planetary-correspondences are mapped to pentagram and hexagram correspondences."
     refs: ["Hanegraaff 2012"]
+  - target: "monas-hieroglyphica"
+    type: "parallel-form"
+    notes: "**Dee's 1564 *Monas Hieroglyphica*** is the principal Renaissance-Hermetic precedent for the 1614-1615 Rose-Cross composite-emblem synthesis. The reciprocal of the ancestor-of edge at [[monas-hieroglyphica]]; Yates 1972 traces the Dee → Rosicrucian-manifestos transmission."
+    refs: ["Yates 1972", "Hakansson 2001"]
+  - target: "tree-of-life"
+    type: "syncretic-fusion"
+    notes: "The Rosicrucian project incorporates Christian-Kabbalistic Tree-of-Life sefirot iconography; Robert Fludd's *Utriusque Cosmi Historia* (1617–21) places the sefirot-tree at the cosmographic core of the Rosicrucian visual system."
+    refs: ["Yates 1972", "Hanegraaff 2012"]
+  - target: "ouroboros"
+    type: "parallel-form"
+    notes: "Both Renaissance-Hermetic emblems with cyclic-eternity content; the Rose-Cross + ouroboros pair recurs in alchemical-Rosicrucian iconography (Maier's *Atalanta Fugiens* 1617 frequently pairs them)."
+    refs: ["Yates 1972"]
+  - target: "tetragrammaton"
+    type: "syncretic-fusion"
+    notes: "Christian-Kabbalistic Rosicrucian iconography routinely inscribes the Tetragrammaton at the center of the Rose-Cross or in the rays above (Fludd's frontispieces; the Golden Dawn ritual frame). The Tetragrammaton-in-Rose-Cross emblem is canonical Christian-Kabbalist Rosicrucian visual vocabulary."
+    refs: ["Yates 1972", "Hanegraaff 2012"]
 mystery-status: "documented"
 status: "metadata"
 refs:
@@ -70,6 +86,12 @@ refs:
     author: "David Stevenson"
     year: 1988
     publisher: "Cambridge UP"
+    type: "monograph"
+    tier: 1
+  - title: "Seeing the Word: John Dee and Renaissance Occultism"
+    author: "Håkan Håkansson"
+    year: 2001
+    publisher: "Lund University Press"
     type: "monograph"
     tier: 1
 tags: [symbol, geometric, christian, hermetic, rosicrucian, rose-cross, fludd, maier, golden-dawn, scottish-rite-18th-degree, ritman-library-flagship]

@@ -37,6 +37,14 @@ cross-symbol-edges:
     type: "visual-cognate"
     notes: "Both forms preserve a T-shape base; Coptic cross adds the looped Egyptian element. No documented transmission between tau and the Coptic line specifically."
     refs: ["Bagnall 1993"]
+  - target: "chi-rho-labarum"
+    type: "parallel-form"
+    notes: "The tau and Chi-Rho are the two principal pre-Constantinian Christian sign-words for cross/Christ; Tertullian (*De Corona* 3; *Against Marcion* 3.22) names the tau, and Chi-Rho funerary inscriptions from c. 280 CE precede the public-imperial Chi-Rho by ~30 years. Both function as recognition-marks in the persecution period."
+    refs: ["Jensen 2017", "Snyder 1985"]
+  - target: "thyrsus"
+    type: "visual-cognate"
+    notes: "Both are T-/staff-shaped sacred attribute-objects within Mediterranean religious vocabulary: the tau as Christian / pre-Christian Greek glyph, the thyrsus as Dionysiac fennel-stalk wand. Visual-cognate at the level of the T-form-with-superstructure; no transmission claim."
+    refs: ["Burkert 1985"]
 mystery-status: "documented"
 status: "metadata"
 refs:
@@ -58,6 +66,19 @@ refs:
     publisher: "Paraclete Press"
     type: "monograph"
     tier: 2
+  - title: "Ante Pacem: Archaeological Evidence of Church Life before Constantine"
+    author: "Graydon F. Snyder"
+    year: 1985
+    publisher: "Mercer University Press"
+    type: "monograph"
+    tier: 1
+  - title: "Greek Religion"
+    author: "Walter Burkert"
+    year: 1985
+    publisher: "Harvard University Press"
+    type: "monograph"
+    tier: 1
+    notes: "Translation from German 1977. Standard reference on Greek religion including Dionysian iconography."
 tags: [symbol, geometric, cross, tau, franciscan, antonian, phoenician, greek]
 ---
 

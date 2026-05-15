@@ -625,6 +625,13 @@ def main():
                     node["symbol_families"] = symbol_families
                     node["mystery_status"] = fm.get("mystery-status", "documented")
                     node["aka"] = fm.get("aka", [])
+                    # Curated depictions (Wikimedia URLs + license + caption + source). When
+                    # present, the side-tab renderer prefers depictions[0] over the Wikipedia-
+                    # cache thumbnail — lets agents/users override the auto-fetched image
+                    # without touching the cache file.
+                    depictions = fm.get("depictions") or []
+                    if depictions:
+                        node["depictions"] = depictions
                 t = THUMBS.get(node_id)
                 if t:
                     node["thumbnail"] = t.get("src")

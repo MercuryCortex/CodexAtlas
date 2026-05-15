@@ -29,6 +29,14 @@ cross-symbol-edges:
     type: "parallel-form"
     notes: "Both are principal Templar visual-identity symbols; the cross-pattée is the personal-mantle identifier, the beauseant is the field-army battle-banner. In some surviving witnesses the beauseant carries the cross-pattée centered on the white field."
     refs: ["Barber 1994", "Nicholson 2001"]
+  - target: "maltese-cross"
+    type: "parallel-form"
+    notes: "The Beauseant and the Hospitaller Maltese cross function in parallel as military-recognition emblems of the two leading 12th-13th c. Crusader orders in Outremer. Both are deliberately distinct visual identities (black/white piebald banner vs. white eight-pointed cross on red habit) used in the same theaters of combat."
+    refs: ["Riley-Smith 1999", "Barber 1994"]
+  - target: "yin-yang"
+    type: "visual-cognate"
+    notes: "Both are bicolor (black-and-white) symbolic divisions; the Beauseant's heraldic *per fess sable and argent* is iconographically parallel to the Daoist *taijitu* polarity division. No transmission claim — the Beauseant's binary is the medieval Christian *bellum justum* contrast (war vs. peace, sinner vs. saved), not a cosmological polarity. Visual cognate only; useful as a teaching-pair when discussing how black-and-white-divided emblems can carry radically different semiotic content."
+    refs: ["Barber 1994"]
 mystery-status: "documented"
 status: "metadata"
 refs:

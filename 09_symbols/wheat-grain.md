@@ -56,7 +56,19 @@ cross-symbol-edges:
   - target: "tree-of-life"
     type: "parallel-form"
     notes: "Both the cultivated grain-plant and the cosmic-tree function as plant-as-divine-presence emblems; the Osiris-bed grain-sprouting is iconographically related to the resurrected-Osiris-as-tree (the *djed* pillar)."
-    refs: []
+    refs: ["Burkert 1985"]
+  - target: "latin-cross"
+    type: "syncretic-fusion"
+    notes: "**The Christian eucharistic transmission spine.** The wheat-grain → bread → eucharistic Host iconographic chain absorbs Greco-Egyptian (Demeter, Osiris, Tammuz / Dumuzi) dying-and-rising vegetation-deity vocabulary into Christian Mass iconography. Christian iconography from c. 4th c. onward routinely figures Christ-as-grain-of-wheat (John 12:24 'unless a grain of wheat falls into the earth and dies'); the host-stamp tradition develops from this. McGowan 2014 traces the iconographic-ritual development."
+    refs: ["McGowan 2014", "Burkert 1985"]
+  - target: "halo-nimbus"
+    type: "parallel-form"
+    notes: "Christian iconography routinely pairs wheat-bundles + haloed-Christ in resurrection-mosaic and altar-frontal images; the eucharistic stalk-and-host iconographic compound. Demeter-figures are also routinely depicted with radiating-crown / wreathed-hair (Burkert 1985), preserving the goddess-of-grain radiance vocabulary that Christian iconography inherits."
+    refs: ["McGowan 2014", "Burkert 1985"]
+  - target: "menorah"
+    type: "parallel-form"
+    notes: "Temple-cult plant-symbols: Menorah, Temple showbread (*lechem ha-panim*), and wheat-grain harvest-offerings (Shavuot/firstfruits) form the Tabernacle-and-Temple ritual-iconographic vocabulary."
+    refs: ["Levine 2005"]
 mystery-status: "documented"
 status: "metadata"
 refs:
@@ -88,6 +100,18 @@ refs:
     type: "monograph"
     tier: 2
     notes: "Tier 2-3 with awareness that Frazer's broader 'dying-and-rising god' / vegetation-deity comparative-religion program is now widely scaled back (Smith 1987, Mettinger 2001). Cite for reception-history; do NOT cite as primary evidence for Mesopotamian or Egyptian theology. Methodology-discipline flag."
+  - title: "Greek Religion"
+    author: "Walter Burkert"
+    year: 1985
+    publisher: "Harvard University Press"
+    type: "monograph"
+    tier: 1
+  - title: "The Ancient Synagogue: The First Thousand Years"
+    author: "Lee I. Levine"
+    year: 2005
+    publisher: "Yale University Press"
+    type: "monograph"
+    tier: 1
 tags: [symbol, phytomorphic, greek, roman, mesopotamian, christian, egyptian, wheat, grain, eucharist, eleusis, dumuzi-tammuz, methodology-discipline]
 ---
 

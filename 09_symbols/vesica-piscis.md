@@ -39,6 +39,18 @@ cross-symbol-edges:
     type: "parallel-form"
     notes: "Both feature in Renaissance Hermetic geometric-cosmology diagrams (Agrippa, Dee, Fludd)."
     refs: ["Davies 2009"]
+  - target: "latin-cross"
+    type: "syncretic-fusion"
+    notes: "**Christic mandorla.** The vesica-piscis is the geometric basis of the *mandorla* — the almond-shaped frame around Christ-in-Majesty / Theotokos in Late Antique and medieval Christian iconography (Ravenna apse mosaics; Cluniac sculpture). The vesica-piscis fuses Christological + geometric sacred-form vocabulary. The Latin cross frequently appears inside or around the mandorla in 11th-12th c. Byzantine and Romanesque iconography."
+    refs: ["Schiller 1971", "Belting 1994"]
+  - target: "halo-nimbus"
+    type: "parallel-form"
+    notes: "Both function as iconographic frames of divine radiance: vesica-piscis as the body-mandorla around the Christ-figure, halo-nimbus as the head-radiance. The pair (vesica-mandorla around the body + halo around the head) is the standard medieval Christian iconographic compound for Christ-in-Majesty."
+    refs: ["Schiller 1971", "Belting 1994"]
+  - target: "mandala-circle"
+    type: "visual-cognate"
+    notes: "Both are circle-derived cosmological geometric forms central to their traditions: the Buddhist mandala as cosmographic-meditational diagram; the vesica-piscis as Christian-Hermetic sacred-geometric construction-form. Visual cognacy at the level of bounded-circular cosmological diagrams; independent traditions."
+    refs: ["Snellgrove 1987"]
 mystery-status: "documented"
 status: "metadata"
 refs:

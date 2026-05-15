@@ -60,6 +60,22 @@ cross-symbol-edges:
     type: "syncretic-fusion"
     notes: "Many Buddhist mandalas have lotus-petal arrangements as their canonical structure (Garbhadhātu = 'Womb-Lotus Realm'); the lotus and the mandala fuse iconographically in Vajrayana iconography."
     refs: ["Beer 1999", "Snellgrove 1987"]
+  - target: "tree-of-life"
+    type: "parallel-form"
+    notes: "Both are cosmographic diagrams of cosmic-order: the Buddhist mandala (cosmographic-meditational) and the Kabbalistic sefirot-tree (cosmographic-emanative). Jung CW 12 + CW 14 famously reads both as expressions of the *Self*-archetype; the formal parallel (bounded cosmographic diagram organizing divine emanation) is real. Historical transmission between South Asian and Kabbalistic traditions is implausible at this date."
+    refs: ["Jung CW 12", "Scholem 1974"]
+  - target: "aum-om"
+    type: "syncretic-fusion"
+    notes: "AUM is routinely inscribed at the center of Hindu yantras and Buddhist mandalas (Sri Yantra, Avalokiteshvara mandalas); the syllable functions as the seed-mantra (bīja) at the cosmographic center of the diagram."
+    refs: ["Olivelle 1996", "Snellgrove 1987"]
+  - target: "dharmachakra"
+    type: "parallel-form"
+    notes: "Both are radial-cosmographic Buddhist emblems with central organization. The Dharmachakra is teaching-and-doctrine emblem; the mandala is meditational-cosmological emblem. Distinct functions within Buddhist iconography; both core to Buddhist ritual visual vocabulary."
+    refs: ["Snellgrove 1987"]
+  - target: "sun-disk"
+    type: "parallel-form"
+    notes: "Both are radial-circular cosmological emblems with divine-centre + radiating-light visual content. Solar-disk-as-cosmos (Egyptian + Roman Sol Invictus) and mandala-as-cosmos (Buddhist) function as radial-cosmographic emblems in their respective traditions."
+    refs: ["Snellgrove 1987"]
 mystery-status: "documented"
 status: "metadata"
 refs:
@@ -98,6 +114,18 @@ refs:
     type: "monograph"
     tier: 2
     notes: "Tier 2 — popular-academic reference; well-illustrated catalog of Vajrayana iconographic motifs including mandala-types."
+  - title: "Kabbalah"
+    author: "Gershom Scholem"
+    year: 1974
+    publisher: "Quadrangle"
+    type: "monograph"
+    tier: 1
+  - title: "The Upanishads"
+    author: "Patrick Olivelle (trans.)"
+    year: 1996
+    publisher: "Oxford University Press"
+    type: "primary-translation"
+    tier: 1
 tags: [symbol, cosmological, hindu, buddhist, christian-medieval, navajo, jungian, mandala, yantra, methodology-discipline]
 ---
 

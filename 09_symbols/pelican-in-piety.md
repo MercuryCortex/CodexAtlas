@@ -40,6 +40,18 @@ cross-symbol-edges:
     type: "parallel-form"
     notes: "Both are early-Christian zoomorphic identifying-and-Eucharistic symbols — the fish is Christ-recognized in baptism-and-Eucharist; the pelican is Christ-feeding-faithful in the Eucharist. Distinct iconographic-formal motifs."
     refs: ["Jensen 2000"]
+  - target: "rose-cross-rosicrucian"
+    type: "parallel-form"
+    notes: "Paired in the **18th degree of the Scottish Rite of Freemasonry** — *Knight of the Pelican and Eagle, Sovereign Prince Rose Croix*. Reciprocal of the edge at [[rose-cross-rosicrucian]]; the pelican-and-rose-cross are the principal 18th-19th-c. institutional vehicle for both symbols."
+    refs: ["Yates 1972", "Hanegraaff 2012"]
+  - target: "latin-cross"
+    type: "syncretic-fusion"
+    notes: "**Christ-on-cross typological pair.** Pelican-piercing-breast-for-young is iconographically paralleled with Christ-on-cross-blood-feeding-faithful in late-medieval and Counter-Reformation altar-frontal iconography. Aquinas's *Adoro te devote* hymn ('Pie pelicane, Iesu Domine'): pelican-Christ liturgical fusion."
+    refs: ["Schiller 1971", "Ferguson 1961"]
+  - target: "wheat-grain"
+    type: "parallel-form"
+    notes: "Both are eucharistic substrate emblems: pelican as Christ-the-Sacrifice, wheat-grain as Christ-the-Bread. Co-occurring on Christian altar-frontals + ciborium decoration from medieval and early-modern periods."
+    refs: ["McGowan 2014", "Ferguson 1961"]
 mystery-status: "documented"
 status: "metadata"
 refs:
@@ -73,6 +85,30 @@ refs:
     author: "Frances A. Yates"
     year: 1972
     publisher: "Routledge & Kegan Paul"
+    type: "monograph"
+    tier: 1
+  - title: "Esotericism and the Academy"
+    author: "Wouter J. Hanegraaff"
+    year: 2012
+    publisher: "Cambridge University Press"
+    type: "monograph"
+    tier: 1
+  - title: "Iconography of Christian Art"
+    author: "Schiller, Gertrud"
+    year: 1971
+    publisher: "Lund Humphries"
+    type: "monograph"
+    tier: 1
+  - title: "Signs and Symbols in Christian Art"
+    author: "Ferguson, George"
+    year: 1961
+    publisher: "Oxford University Press"
+    type: "monograph"
+    tier: 2
+  - title: "Ancient Christian Worship"
+    author: "McGowan, Andrew B."
+    year: 2014
+    publisher: "Baker Academic"
     type: "monograph"
     tier: 1
 tags: [symbol, theriomorphic, christian, eucharistic, hermetic, alchemical, rosicrucian, masonic-18th-degree, pelican-in-piety, pelican-vulning, louisiana-state-symbol]

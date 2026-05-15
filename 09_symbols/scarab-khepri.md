@@ -38,6 +38,14 @@ cross-symbol-edges:
     type: "parallel-form"
     notes: "Co-occurring Egyptian apotropaic-amuletic hieroglyphs; the scarab and ankh are the two most-produced Egyptian amulet-types in the entire pharaonic record."
     refs: ["Pinch 1994"]
+  - target: "eye-of-horus-wedjat"
+    type: "parallel-form"
+    notes: "Scarab and wedjat are the two most-produced Egyptian amulet types. Often paired in mummy-wrappings: scarab placed over the heart as self-generating-rebirth emblem, wedjat as the seeing/protective eye. Heliopolitan-solar iconographic complementarity (Pinch 1994)."
+    refs: ["Pinch 1994", "Hornung 1982"]
+  - target: "halo-nimbus"
+    type: "parallel-form"
+    notes: "The Khepri-Ra solar-emergence iconography prefigures the Christian dawn-of-Resurrection visual rhetoric that later halo-iconography supports; the structural parallel (sun-emerging-from-darkness as cosmic self-generation) feeds into both Christian Easter dawn-imagery and the broader visual vocabulary of haloed-Christ-as-Sol-Iustitiae."
+    refs: ["Mathews 1993", "Hornung 1982"]
 mystery-status: "documented"
 status: "metadata"
 refs:

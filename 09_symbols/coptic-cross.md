@@ -38,6 +38,14 @@ cross-symbol-edges:
     type: "parallel-form"
     notes: "Coptic Christianity is a parallel Eastern line to Western Latin Christianity; both descend from shared early-Christian iconographic vocabulary but the Coptic line uniquely retains the ankh-loop derivation."
     refs: ["Jensen 2017", "Bagnall 1993"]
+  - target: "chi-rho-labarum"
+    type: "parallel-form"
+    notes: "Coptic iconography preserves the Chi-Rho monogram alongside the looped-ankh cross-form; Coptic stelae and 4th–6th c. ornament attest both as parallel Christian sign-marks. Coptic Christianity carried both Greek Christogram and Egyptian-ankh iconographic streams in parallel through Late Antiquity."
+    refs: ["Bagnall 1993", "Frankfurter 1998"]
+  - target: "tau-cross"
+    type: "visual-cognate"
+    notes: "Both preserve a T-shape base; the Coptic line adds the Egyptian ankh-loop above. The visual continuity reflects the shared T-form substrate of pharaonic-and-Mediterranean script + iconography rather than direct tau-to-Coptic transmission."
+    refs: ["Bagnall 1993", "Gardiner 1957"]
 mystery-status: "documented"
 status: "metadata"
 refs:
@@ -66,6 +74,12 @@ refs:
     year: 1994
     publisher: "University of Chicago Press"
     type: "monograph"
+    tier: 1
+  - title: "Egyptian Grammar (3rd ed.)"
+    author: "Alan H. Gardiner"
+    year: 1957
+    publisher: "Griffith Institute, Oxford"
+    type: "critical-edition"
     tier: 1
 tags: [symbol, christian, egyptian, geometric, cross, coptic, crux-ansata, ankh-derivation]
 ---

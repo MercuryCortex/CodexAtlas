@@ -31,6 +31,14 @@ cross-symbol-edges:
     type: "visual-cognate"
     notes: "The ringed-cross form has been read (e.g., in 19th-c. Theosophical and Celtic-revival sources) as an ankh-derivative — explicitly NOT supported by scholarly evidence. The ring is Insular Christian, not Egyptian. Treat as visual-cognate only; flag as a popular-claim, not a scholarly one."
     refs: ["Richardson 1990"]
+  - target: "sun-disk"
+    type: "visual-cognate"
+    notes: "The proposed pre-Christian Celtic solar-wheel substrate (popular in 19th-c. Celtic-revival literature; treated cautiously by Richardson 1990) is iconographically plausible — solar-wheel and four-spoked-disk motifs are well-attested in Bronze and Iron Age Atlantic Europe (Trundholm sun chariot c. 1400 BCE; La Tène solar-wheel iconography) — but documented Insular Christian transmission is NOT established. The relationship is best modeled as `visual-cognate` rather than `appropriated-by`: Insular Christians built the form within Latin Christianity without explicit Insular pagan source-citation. The hypothesis remains live in art-historical literature."
+    refs: ["Richardson 1990", "Green 1991", "Cunliffe 1997"]
+  - target: "chi-rho-labarum"
+    type: "parallel-form"
+    notes: "Insular Christianity preserved a strong Chi-Rho-page tradition in the illuminated gospel-books (Book of Kells f. 34r, Lindisfarne Gospels f. 29) parallel to the high-cross stone tradition. Both function as principal Christ-signs within Insular Christian iconographic vocabulary."
+    refs: ["Mayr-Harting 1991", "O Croinin 1995"]
 mystery-status: "documented"
 status: "metadata"
 refs:
@@ -106,6 +114,8 @@ None substantive at the symbol level. `mystery-status: documented`.
 
 - ← [[latin-cross]] — *ancestor-of* (descendant-of in reverse direction). The Celtic cross is an Insular adaptation of the Latin cross with the addition of the ring (Mayr-Harting 1991, Richardson 1990).
 - ≈ [[ankh]] — *visual-cognate*. Popular (Theosophical, Celtic-revival) claims of derivation are NOT scholarly; the ring is Insular Christian, not Egyptian.
+- ≈ [[sun-disk]] — *visual-cognate*. The pre-Christian Bronze/Iron Age Atlantic-European solar-wheel substrate (Trundholm sun chariot; La Tène iconography) is iconographically plausible but not documentably transmitted. The Insular ring functions iconographically as a halo/sun even if not provably derived from a pagan model.
+- ↔ [[chi-rho-labarum]] — *parallel-form*. Insular Christianity preserved both the high-cross-stone tradition and the Chi-Rho-page tradition (Book of Kells f. 34r, Lindisfarne Gospels f. 29) as parallel Christ-signs.
 
 ## Refs
 
