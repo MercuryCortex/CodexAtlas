@@ -17,7 +17,7 @@ canonical-slug
 ## Currently resolved slugs (auto-seeded — every existing file)
 
 
-### deity (477 nodes)
+### deity (481 nodes)
 
 - `abathur`
 - `adamastor`
@@ -45,6 +45,7 @@ canonical-slug
 - `amun-ra`
 - `an-sumerian`
 - `anahita`
+- `anansi`
 - `anat`
 - `angel-of-the-presence`
 - `angra-mainyu-ahriman`
@@ -372,6 +373,7 @@ canonical-slug
 - `raphael-archangel`
 - `ratnasambhava`
 - `remiel-archangel`
+- `reue-lusitanian`
 - `rhea`
 - `rhea-greek`
 - `romulus`
@@ -389,6 +391,7 @@ canonical-slug
 - `saule`
 - `sekhmet`
 - `selene`
+- `selket`
 - `semyaza`
 - `serapis`
 - `set`
@@ -450,6 +453,7 @@ canonical-slug
 - `tian-heaven`
 - `tlaloc`
 - `tonatiuh`
+- `trebaruna`
 - `tsukuyomi`
 - `tu-maori`
 - `typhon`
@@ -1069,7 +1073,7 @@ canonical-slug
 - `subterranean-chamber-great-pyramid`
 - `temple-of-inscriptions-palenque`
 
-### person (646 nodes)
+### person (648 nodes)
 
 - `aaron`
 - `abba-garima`
@@ -1367,6 +1371,7 @@ canonical-slug
 - `james-hollis`
 - `james-son-of-alphaeus`
 - `james-son-of-zebedee`
+- `jan-assmann`
 - `jan-hus`
 - `jan-van-ruusbroec`
 - `jean-pierre-mahe`
@@ -1639,6 +1644,7 @@ canonical-slug
 - `sri-yukteswar`
 - `stephen-mcnallen`
 - `stephen-protomartyr`
+- `strabo`
 - `suetonius`
 - `suhrawardi`
 - `sun-myung-moon`
@@ -1794,7 +1800,7 @@ canonical-slug
 - `wheat-grain`
 - `yin-yang`
 
-### theme (318 nodes)
+### theme (321 nodes)
 
 - `364-day-solar-calendar`
 - `adam-kadmon`
@@ -1826,6 +1832,7 @@ canonical-slug
 - `as-above-so-below`
 - `ascent-of-the-soul`
 - `asura-deva-inversion`
+- `atlantic-bronze-age-network`
 - `atlantis-myth`
 - `atonement-reinterpreted`
 - `avatar-doctrine`
@@ -2020,6 +2027,7 @@ canonical-slug
 - `salvation-history`
 - `satanic-verses-incident`
 - `satisfaction-atonement`
+- `saudade`
 - `scapegoat-mechanism`
 - `sebastianism-quinto-imperio`
 - `secular-spirituality`
@@ -2093,6 +2101,7 @@ canonical-slug
 - `torah-as-pre-existent`
 - `totemism`
 - `translation-as-theology`
+- `trickster-archetype`
 - `trinitarian-formula`
 - `true-will`
 - `two-principles`
@@ -2258,16 +2267,17 @@ canonical-slug
 
 | Refs | Dead target | Suggested canonical (existing) |
 |---:|---|---|
-| 3 | `tradition-hinduism` | `tradition-greco-buddhism` |
+| 3 | `tradition-hinduism` | `tradition-daoism` |
 | 3 | `guru-arjan-dev-ji` | `guru-arjan` |
 | 2 | `yam-canaanite` | `astarte-canaanite` |
-| 2 | `tradition-lingayat` | `tradition-greco-buddhism` |
-| 2 | `tradition-judaism-sephardic` | `tradition-greco-buddhism` |
-| 2 | `tradition-islam-shia` | `tradition-greco-buddhism` |
-| 2 | `tradition-islam-mughal` | `tradition-greco-buddhism` |
-| 2 | `tradition-hussitism` | `tradition-greco-buddhism` |
-| 2 | `tradition-christianity-catholic` | `tradition-greco-buddhism` |
-| 2 | `tradition-bahai` | `tradition-mesopotamian` |
+| 2 | `tradition-lingayat` | `tradition-daoism` |
+| 2 | `tradition-judaism-sephardic` | `tradition-canaanite-ugaritic` |
+| 2 | `tradition-islam-shia` | `tradition-daoism` |
+| 2 | `tradition-islam-mughal` | `tradition-canaanite-ugaritic` |
+| 2 | `tradition-hussitism` | `tradition-daoism` |
+| 2 | `tradition-christianity-catholic` | `tradition-canaanite-ugaritic` |
+| 2 | `tradition-bahai` | `tradition-daoism` |
+| 2 | `phase-3-006-homeric-hymns` | `phase-3-009-jubilees` |
 | 2 | `guru-gobind-singh-ji` | `guru-gobind-singh` |
 | 2 | `aurangzeb-emperor` | `zara-yaqob-emperor` |
 | 2 | `asclepius` | `asclepius-greek` |
