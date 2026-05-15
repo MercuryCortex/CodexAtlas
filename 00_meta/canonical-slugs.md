@@ -1910,14 +1910,14 @@ canonical-slug
 
 | Refs | Dead target | Suggested canonical (existing) |
 |---:|---|---|
-| 4 | `ragnarok-apocalyptic` | `apocalyptic-cosmic-warfare` |
-| 4 | `primordial-darkness` | `primordial-waters` |
+| 4 | `ragnarok-apocalyptic` | `apocalyptic-revelation` |
+| 4 | `primordial-darkness` | `eros-primordial` |
 | 4 | `messianic-revelation` | `messianic-secret` |
 | 4 | `genealogical-cosmogony` | `mesoamerican-cosmogony` |
 | 4 | `evolutionary-cosmogony` | `mesoamerican-cosmogony` |
 | 3 | `phase-2-005-1-2-kings` | `phase-2-003-atharva-veda` |
-| 3 | `messianic-genealogy` | `messianic-secret` |
+| 3 | `messianic-genealogy` | `solomonic-genealogy` |
 | 2 | `yam-canaanite` | `astarte-canaanite` |
-| 2 | `tradition-minoan-religion` | `tradition-isis-mysteries` |
-| 2 | `tradition-eastern-orthodoxy` | `tradition-isis-mysteries` |
-| 2 | `phase-1-013-babylonian-theodicy` | `phase-1-012-amarna-letters` |
+| 2 | `tradition-minoan-religion` | `02_coverage_gaps_by_tradition` |
+| 2 | `tradition-eastern-orthodoxy` | `02_coverage_gaps_by_tradition` |
+| 2 | `phase-1-013-babylonian-theodicy` | `phase-1-014-ugaritic-ritual-texts` |

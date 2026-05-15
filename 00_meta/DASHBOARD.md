@@ -40,9 +40,9 @@ Standing audit documents in [`AUDIT/`](../AUDIT/). These are large structural pr
 | [11_opus-buddhist-1-audit.md](../AUDIT/11_opus-buddhist-1-audit.md) | Codex Atlas — post-hoc audit (opus-buddhist-1, 2026-05-14) | 2026-05-14 |
 | [12_meta-audit-housekeeping.md](../AUDIT/12_meta-audit-housekeeping.md) | Codex Atlas — Meta-audit & Housekeeping pass (`opus-housekeeper-1`, 2026-05-14) | 2026-05-14 |
 | [13_session-handoff-2026-05-14-evening.md](../AUDIT/13_session-handoff-2026-05-14-evening.md) | Session handoff — opus-buddhist-1 + opus-gaps-1 (2026-05-14, evening) | 2026-05-14 |
-| [13_session-handoff-frontend-2026-05-14.md](../AUDIT/13_session-handoff-frontend-2026-05-14.md) | Session Handoff — Frontend (2026-05-14) | 2026-05-14 |
 | [14_lenses-and-astrology-spine-visualization.md](../AUDIT/14_lenses-and-astrology-spine-visualization.md) | Visualizing transmission spines — the "Lenses" pattern, anchored on the 3,500-year astrology spine | 2026-05-15 |
 | [15_pantheon-eyeball-handoff.md](../AUDIT/15_pantheon-eyeball-handoff.md) | AUDIT 12 — Pantheon Eyeball Batch + Handoff | 2026-05-15 |
+| [16_session-handoff-frontend-2026-05-14.md](../AUDIT/16_session-handoff-frontend-2026-05-14.md) | Session Handoff — Frontend (2026-05-14) | 2026-05-14 |
 
 ## Top 30 unresolved wikilink targets (priority queue)
 
