@@ -349,9 +349,14 @@
       .attr('fill', 'var(--text-3)').attr('font-family', 'var(--mono)').attr('font-size', '10px')
       .text('36 × 5 cross-tradition');
 
-    // Default: render decan 1 in side panel
-    renderDetail(decans[0]);
-    sectors.classed('selected', d => d.n === 1);
+    // Default: render decan 1 in side panel UNLESS another mode (Now / Wheel)
+    // jumped here with a specific decan focused via window._astroJumpToDecanic.
+    const focusedN = (window._astrologyState && window._astrologyState.focusedDecan) || 1;
+    const initialDecan = decans.find(d => d.n === focusedN) || decans[0];
+    renderDetail(initialDecan);
+    sectors.classed('selected', d => d.n === initialDecan.n);
+    // Consume the one-shot focus so a subsequent return to Decanic falls back to decan 1.
+    if (window._astrologyState) window._astrologyState.focusedDecan = null;
 
     function renderDetail(d) {
       const slot = document.getElementById('ads-detail');

@@ -2425,6 +2425,25 @@ body.view-alchemy .zoom-meter { display: none !important; }
 .anw-row .anw-name  { grid-column: 2; }
 .anw-row .anw-loc   { grid-column: 2; }
 .anw-row .anw-decan { grid-column: 2; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+
+/* "→ decanic" affordance — small gold link on each planet row (Now + Wheel
+   side panels) that jumps to Decanic mode with that planet's current decan
+   pre-focused. Click the row itself = open mythological detail; click this
+   inner link = see the position's cross-tradition cross-reference. */
+.anw-decanic-link, .aws-decanic-link {
+  color: var(--gold-soft);
+  text-decoration: none;
+  font-family: var(--mono); font-size: 9.5px;
+  letter-spacing: 0.04em;
+  margin-left: 6px;
+  white-space: nowrap;
+  opacity: 0.65;
+  transition: opacity 120ms ease, color 120ms ease;
+}
+.anw-decanic-link:hover, .aws-decanic-link:hover {
+  color: var(--gold); opacity: 1; text-decoration: underline;
+}
+
 .anw-row:hover { background: var(--bg-2); }
 .anw-glyph { font-family: var(--serif); font-size: 14px; text-align: center; }
 .anw-name { color: var(--text-1); }

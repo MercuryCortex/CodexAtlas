@@ -327,15 +327,27 @@
         const decan = (_decans && _decans.decans && _decans.decans[di]) ? _decans.decans[di] : null;
         const signIdx = Math.floor(p.lon / 30);
         const within = p.lon - signIdx * 30;
-        return `<div class="anw-row" data-deity="${p.deity}">
+        // Decan number (1-36) for the jump-to-decanic affordance
+        const decanN = di + 1;
+        return `<div class="anw-row" data-deity="${p.deity}" data-decan-n="${decanN}">
           <span class="anw-glyph" style="color:${p.color}">${p.glyph}</span>
           <span class="anw-name">${p.key}</span>
           <span class="anw-loc">${SIGNS[signIdx].glyph} ${within.toFixed(1)}°</span>
-          <span class="anw-decan">${decan ? `D${decan.n} · ${decan.vedic.nakshatra}` : ''}</span>
+          <span class="anw-decan">${decan ? `D${decan.n} · ${decan.vedic.nakshatra}` : ''} <a href="#" class="anw-decanic-link" data-decan-n="${decanN}" title="See this position in the Decanic cross-tradition view">→ decanic</a></span>
         </div>`;
       }).join('');
       slot.querySelectorAll('.anw-row').forEach(row => {
-        row.onclick = () => { if (window.selectNode && row.dataset.deity) window.selectNode(row.dataset.deity, true); };
+        row.onclick = (ev) => {
+          // Inner "→ decanic" link wins
+          if (ev.target.classList && ev.target.classList.contains('anw-decanic-link')) {
+            ev.preventDefault();
+            ev.stopPropagation();
+            const n = parseInt(ev.target.dataset.decanN, 10);
+            if (window._astroJumpToDecanic) window._astroJumpToDecanic(n);
+            return;
+          }
+          if (window.selectNode && row.dataset.deity) window.selectNode(row.dataset.deity, true);
+        };
       });
     }
     // Year label

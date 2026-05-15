@@ -276,17 +276,29 @@
     // SIDE PANEL — position table
     const slot = sideEl.querySelector('#aws-positions');
     if (slot) {
-      slot.innerHTML = positions.map(p => `
-        <div class="aws-row" data-deity="${p.deity}">
+      slot.innerHTML = positions.map(p => {
+        const decanN = Math.floor(p.lon / 10) + 1; // 1-36
+        return `
+        <div class="aws-row" data-deity="${p.deity}" data-decan-n="${decanN}">
           <span class="aws-glyph" style="color:${p.color}">${p.glyph}</span>
           <span class="aws-name">${p.key}</span>
           <span class="aws-sign">${p.signGlyph} ${p.sign}</span>
           <span class="aws-deg">${fmtDeg(p.deg)}</span>
           ${p.retro ? '<span class="aws-retro" title="retrograde">℞</span>' : '<span class="aws-retro"></span>'}
-        </div>
-      `).join('');
+          <a href="#" class="aws-decanic-link" data-decan-n="${decanN}" title="See this position in the Decanic cross-tradition view">→ D${decanN}</a>
+        </div>`;
+      }).join('');
       slot.querySelectorAll('.aws-row').forEach(row => {
-        row.onclick = () => { if (window.selectNode && row.dataset.deity) window.selectNode(row.dataset.deity, true); };
+        row.onclick = (ev) => {
+          if (ev.target.classList && ev.target.classList.contains('aws-decanic-link')) {
+            ev.preventDefault();
+            ev.stopPropagation();
+            const n = parseInt(ev.target.dataset.decanN, 10);
+            if (window._astroJumpToDecanic) window._astroJumpToDecanic(n);
+            return;
+          }
+          if (window.selectNode && row.dataset.deity) window.selectNode(row.dataset.deity, true);
+        };
       });
     }
   }

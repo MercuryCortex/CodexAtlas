@@ -7062,7 +7062,18 @@ VIEWS.all = {
 // (Restored 2026-05-15 after sonnet-egypt-mysticism-1 commit e194d9b
 //  accidentally deleted this block in an app.js sweep.)
 // ============================================================
-const _astrologyState = { mode: 'spine' };
+const _astrologyState = { mode: 'spine', focusedDecan: null };
+// Expose so cross-mode renderers (decanic / now / wheel) can read the focused
+// decan that a sibling mode set before calling setView('astrology').
+window._astrologyState = _astrologyState;
+// Cross-mode bridge: Now / Wheel modes call this to jump to Decanic with a
+// specific decan pre-selected. decanN is 1-36.
+window._astroJumpToDecanic = function (decanN) {
+  if (typeof decanN !== 'number' || decanN < 1 || decanN > 36) return;
+  _astrologyState.mode = 'decanic';
+  _astrologyState.focusedDecan = decanN;
+  setView('astrology');
+};
 
 VIEWS.astrology = {
   title: 'Astrology',
