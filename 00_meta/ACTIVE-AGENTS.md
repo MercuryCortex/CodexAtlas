@@ -18,11 +18,16 @@ Format:
 
 ---
 
-## sonnet-sufi-themes-1 — content / Sufi + liturgical dead-link closures — started 2026-05-15
+## sonnet-sufi-themes-1 — content / Sufi + liturgical dead-link closures — started 2026-05-15 — **FINISHED 2026-05-15**
 - Owning: `tawḥīd`, `fanaa-annihilation`, `liturgical-calendar`
 - Goal: Close 3 high-count dead-links (5–6 refs each) — tawḥīd divine unity, fanāʾ annihilation, liturgical calendar sacred time
-- Status: in-flight
-- Last edit: 00_meta/ACTIVE-AGENTS.md
+- Status: finished
+- Delivered:
+  - [[tawḥīd]] (NEW) — full metadata theme; 3-aspect schema; Muʿtazilite/Ashʿarite kalām; Ibn ʿArabī waḥdat al-wujūd; MASSIVE-WINs: ↔ Shema Yisrael; ↔ Ahura Mazda; ↔ nirguṇa Brahman; ↔ Plotinus' The One; ↔ Pseudo-Dionysius/Eckhart negative theology
+  - [[fanaa-annihilation]] (NEW) — full metadata theme; al-Junayd/al-Ḥallāj/al-Ghazālī/Ibn ʿArabī; MASSIVE-WINs: ↔ Buddhist nibbāna; ↔ Hindu mokṣa; ↔ Christian theōsis; ↔ Plotinus ekstasis; divine-madman archetype
+  - [[liturgical-calendar]] (NEW) — full metadata theme; Jewish/Christian/Ethiopian/Islamic/Hindu sacred time; MASSIVE-WINs: šabattu→Sabbath ancestor-of; Quartodeciman controversy; solar/lunar theology encoded in calendar structure
+- Build: 2037 nodes · 12,171 edges · 2.8% dead-link
+- Last edit: 00_meta/STATUS.md
 
 ## sonnet-second-temple-1 — content / Second Temple dead-link closures — started 2026-05-15 — **FINISHED 2026-05-15**
 - Owning: `tradition-essenes`, `messianic-revelation`, `messianic-genealogy`
