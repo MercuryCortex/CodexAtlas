@@ -4468,7 +4468,8 @@ let _atlasMap = null;
 let _atlasMarkers = new Map();       // (legacy, kept for back-compat; unused by circle-layer path)
 let _atlasNodesById = new Map();     // node-id → vault node (for hover-trail neighbor lookup)
 let _atlasHoveredId = null;          // currently-hovered node id (debounce trail rebuild)
-let _atlasClusterPopup = null;       // active cluster-list popup, if any
+let _atlasClusterPopup = null;       // (legacy) cluster-list popup — replaced by spiderfy
+let _atlasSpiderActive = null;       // cluster center [lng,lat] when a spider is open, else null
 let _atlasZoomHandler = null;
 let _atlasEndHandler = null;
 let _atlasResizeObs = null;
@@ -4826,52 +4827,98 @@ VIEWS.atlas = {
           // Strategy: try to zoom in until the cluster expands. If the points share
           // identical coords (which our vault has — many docs at the same city),
           // expansion zoom returns current+epsilon and zooming forever wouldn't help.
-          // In that case, show a popup with a clickable list of every node in the cluster.
+          // In that case: SPIDERFY — fan the points out around the click center as
+          // offset markers connected by leader lines back to the center. (User's
+          // explicit ask 2026-05-15: "the nodes expand, even if you need to spread
+          // them from the same position by X position".)
           source.getClusterExpansionZoom(clusterId).then(targetZoom => {
             if (targetZoom > currentZoom + 0.3 && targetZoom <= 7.5) {
+              _atlasHideSpider();
               _atlasMap.easeTo({ center: clusterCoord, zoom: targetZoom + 0.2, duration: 500 });
             } else {
-              // Already at expansion limit — show a list popup so the user can pick.
               source.getClusterLeaves(clusterId, pointCount, 0, (err, leaves) => {
                 if (err || !leaves || !leaves.length) return;
-                const rows = leaves.map(f => {
-                  const id   = (f.properties.id || '').replace(/"/g, '&quot;');
-                  const ttl  = (f.properties.title || '').replace(/[<>&]/g, c => ({ '<': '&lt;', '>': '&gt;', '&': '&amp;' }[c]));
-                  const col  = (f.properties.family_color || '#7a8090');
-                  return `<div class="atlas-cluster-row" data-id="${id}">
-                    <span class="atlas-cluster-dot" style="background:${col}"></span>
-                    <span class="atlas-cluster-title">${ttl}</span>
-                  </div>`;
-                }).join('');
-                const html = `
-                  <div class="atlas-cluster-popup">
-                    <div class="atlas-cluster-header">${pointCount} nodes at this location</div>
-                    <div class="atlas-cluster-list">${rows}</div>
-                  </div>`;
-                if (_atlasClusterPopup) _atlasClusterPopup.remove();
-                _atlasClusterPopup = new maplibregl.Popup({
-                  closeButton: true,
-                  closeOnClick: true,
-                  maxWidth: '320px',
-                  className: 'atlas-cluster-popup-wrap'
-                })
-                  .setLngLat(clusterCoord)
-                  .setHTML(html)
-                  .addTo(_atlasMap);
-                // Wire each row to open the detail panel.
-                setTimeout(() => {
-                  document.querySelectorAll('.atlas-cluster-popup .atlas-cluster-row').forEach(row => {
-                    row.addEventListener('click', () => {
-                      const nid = row.dataset.id;
-                      if (nid) selectNode(nid, true);
-                      if (_atlasClusterPopup) { _atlasClusterPopup.remove(); _atlasClusterPopup = null; }
-                    });
-                  });
-                }, 0);
+                _atlasShowSpider(clusterCoord, leaves);
               });
             }
           }).catch(() => { /* MapLibre versions vary; silent fallback */ });
         });
+
+        // ---- SPIDER (expanded-cluster) source + layers ----
+        // Created once, kept empty until a cluster is spider-expanded.
+        _atlasMap.addSource('atlas-spider-lines', {
+          type: 'geojson',
+          data: { type: 'FeatureCollection', features: [] }
+        });
+        _atlasMap.addSource('atlas-spider-points', {
+          type: 'geojson',
+          data: { type: 'FeatureCollection', features: [] }
+        });
+        // Leader lines (rendered UNDER spider points). Gold-soft, slim.
+        _atlasMap.addLayer({
+          id: 'atlas-spider-leaders',
+          source: 'atlas-spider-lines',
+          type: 'line',
+          layout: { 'line-cap': 'round' },
+          paint: {
+            'line-color': _atlasToken('--gold-soft', '#a87f3e'),
+            'line-width': 1.1,
+            'line-opacity': 0.6,
+            'line-blur': 0.3
+          }
+        });
+        // Spider points — same styling DNA as atlas-nodes-circles so they read as
+        // "this is one of the cluster's children", just spatially fanned.
+        _atlasMap.addLayer({
+          id: 'atlas-spider-circles',
+          source: 'atlas-spider-points',
+          type: 'circle',
+          paint: {
+            'circle-radius': ['get', 'dotSize'],
+            'circle-color': ['get', 'family_color'],
+            'circle-stroke-width': 1.5,
+            'circle-stroke-color': _atlasToken('--gold', '#d4a55a'),
+            'circle-opacity': 0.95
+          }
+        });
+
+        // Spider hover/click — same UX as the underlying circles.
+        _atlasMap.on('mousemove', 'atlas-spider-circles', (ev) => {
+          if (!ev.features || !ev.features.length) return;
+          const f  = ev.features[0];
+          const id = f.properties.id;
+          const n  = _atlasNodesById.get(id);
+          if (!n) return;
+          _atlasMap.getCanvas().style.cursor = 'pointer';
+          showTooltip(
+            `${tooltipThumb(n)}<div class="ttitle">${n.title}</div>
+             <div class="tmeta">${n.type}${n.family ? ' · ' + n.family : ''}${n.geo.label ? ' · ' + n.geo.label : ''}</div>
+             <div class="tmeta">${fmtDateRange(n.date_earliest, n.date_latest) || '—'}</div>`, ev.originalEvent);
+        });
+        _atlasMap.on('mouseleave', 'atlas-spider-circles', () => {
+          _atlasMap.getCanvas().style.cursor = '';
+          hideTooltip();
+        });
+        _atlasMap.on('click', 'atlas-spider-circles', (ev) => {
+          if (!ev.features || !ev.features.length) return;
+          const id = ev.features[0].properties.id;
+          selectNode(id, true);
+          _atlasHideSpider();
+        });
+
+        // Background click / zoom / drag collapses the spider.
+        _atlasMap.on('click', (ev) => {
+          if (!_atlasSpiderActive) return;
+          // Ignore clicks that landed on a cluster or spider feature (those have
+          // their own handlers that fire first).
+          const onSpider = _atlasMap.queryRenderedFeatures(ev.point, {
+            layers: ['atlas-spider-circles', 'atlas-clusters']
+          });
+          if (onSpider.length) return;
+          _atlasHideSpider();
+        });
+        _atlasMap.on('zoomstart', () => { if (_atlasSpiderActive) _atlasHideSpider(); });
+        _atlasMap.on('dragstart', () => { if (_atlasSpiderActive) _atlasHideSpider(); });
       }
     };
 
@@ -5011,6 +5058,66 @@ function _atlasHideHoverTrails() {
     _atlasMap.setPaintProperty('atlas-nodes-circles', 'circle-stroke-color', 'rgba(255,255,255,0.20)');
   }
 }
+
+// ---- SPIDERFY: fan a cluster's leaves around the click center as offset markers.
+// Replaces the prior cluster-list popup; gives spatial separation that lets the
+// user click individual nodes even when their geocoded coords are identical.
+// Layout: ring(s) of N items around centerLngLat. Pixel-radius constant per zoom
+// (computed via map.project / map.unproject) so the spread feels right at any
+// zoom. Multi-ring spiral when N > 8 to avoid overlap. ----
+function _atlasShowSpider(centerLngLat, leaves) {
+  if (!_atlasMap) return;
+  const pointsSrc = _atlasMap.getSource('atlas-spider-points');
+  const linesSrc  = _atlasMap.getSource('atlas-spider-lines');
+  if (!pointsSrc || !linesSrc) return;
+
+  const N = leaves.length;
+  const centerPx = _atlasMap.project(centerLngLat);
+  // Ring layout. Single ring for ≤ 8 items, expand to multiple rings beyond.
+  const baseRadius   = N <= 6 ? 46 : 56;
+  const radiusStep   = 38;
+  const itemsPerRing = N <= 8 ? N : 10;
+
+  const pointFeatures = [];
+  const lineFeatures  = [];
+
+  leaves.forEach((leaf, i) => {
+    const ringIdx  = Math.floor(i / itemsPerRing);
+    const inRing   = i % itemsPerRing;
+    const perRing  = (ringIdx === 0 && N < itemsPerRing) ? N : itemsPerRing;
+    const ringR    = baseRadius + ringIdx * radiusStep;
+    // Stagger alternating rings by half-step so the second ring sits between gaps.
+    const angleOff = (ringIdx % 2) ? (Math.PI / perRing) : 0;
+    const angle    = (inRing / perRing) * 2 * Math.PI - Math.PI / 2 + angleOff;
+    const px = centerPx.x + ringR * Math.cos(angle);
+    const py = centerPx.y + ringR * Math.sin(angle);
+    const ll = _atlasMap.unproject([px, py]);
+    const coord = [ll.lng, ll.lat];
+
+    pointFeatures.push({
+      type: 'Feature',
+      geometry: { type: 'Point', coordinates: coord },
+      properties: { ...leaf.properties }
+    });
+    lineFeatures.push({
+      type: 'Feature',
+      geometry: { type: 'LineString', coordinates: [centerLngLat, coord] }
+    });
+  });
+
+  pointsSrc.setData({ type: 'FeatureCollection', features: pointFeatures });
+  linesSrc.setData({ type: 'FeatureCollection', features: lineFeatures });
+  _atlasSpiderActive = centerLngLat;
+}
+function _atlasHideSpider() {
+  if (!_atlasMap) return;
+  const pointsSrc = _atlasMap.getSource('atlas-spider-points');
+  const linesSrc  = _atlasMap.getSource('atlas-spider-lines');
+  if (pointsSrc) pointsSrc.setData({ type: 'FeatureCollection', features: [] });
+  if (linesSrc)  linesSrc.setData({ type: 'FeatureCollection', features: [] });
+  _atlasSpiderActive = null;
+}
+
 // Helpers for the era-window dropdown (kept local to Atlas).
 function eraVal(era) {
   if (!era) return 'all';
