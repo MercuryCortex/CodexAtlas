@@ -517,7 +517,9 @@ The things opus-foundation-1 claimed but never started are all still open:
   - `06_themes/theme-dying-founder-paradigm.md` (NEW)
   - `06_themes/crucifixion-theology.md` (UPGRADE stub → metadata)
   - `06_themes/martyrdom-theology.md` (UPGRADE stub → metadata)
-- Status: in progress
+- Status: **FINISHED 2026-05-15**
+- Delivered: 10 new/upgraded nodes (see STATUS.md); 5 lineage + 3 persecution presets; 4 ALERT-grade investigations. Build: 2149 nodes · 12,753 edges · 3.0% dead-link.
+- Last edit: `00_meta/STATUS.md`
 
 ---
 
