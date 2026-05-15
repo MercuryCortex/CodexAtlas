@@ -18,6 +18,15 @@ Format:
 
 ---
 
+## sonnet-deadlink-sweep-3 — content / dead-link closure batch 3 — started 2026-05-15 — **FINISHED 2026-05-15**
+- Owning: `phase-2-005-1-2-kings`, `phase-4-007-new-testament-canon`, `phase-1-013-babylonian-theodicy`, `phidias`, `spyridon-marinatos`, `hyperdiffusionism`, `universal-reformation`, `visionary-alchemical-allegory`
+- Goal: Close 8 dead-links — 3 document redirect stubs + 2 person nodes + 3 theme nodes
+- Status: finished
+- Delivered: [[phase-1-032-babylonian-theodicy]] (id: phase-1-013-babylonian-theodicy) · [[phase-2-034-books-of-kings]] (id: phase-2-005-1-2-kings) · [[phase-4-095-new-testament-canon]] (id: phase-4-007-new-testament-canon) · [[phidias]] (NEW person) · [[spyridon-marinatos]] (NEW person) · [[hyperdiffusionism]] (NEW theme, discredited-flagged) · [[universal-reformation]] (NEW theme) · [[visionary-alchemical-allegory]] (NEW theme). Build: **2043 nodes · 12,193 edges · 2.7% dead-link**.
+- Last edit: 00_meta/STATUS.md
+
+---
+
 ## sonnet-sufi-themes-1 — content / Sufi + liturgical dead-link closures — started 2026-05-15 — **FINISHED 2026-05-15**
 - Owning: `tawḥīd`, `fanaa-annihilation`, `liturgical-calendar`
 - Goal: Close 3 high-count dead-links (5–6 refs each) — tawḥīd divine unity, fanāʾ annihilation, liturgical calendar sacred time
