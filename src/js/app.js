@@ -5162,14 +5162,16 @@ VIEWS.atlas = {
           // offset markers connected by leader lines back to the center. (User's
           // explicit ask 2026-05-15: "the nodes expand, even if you need to spread
           // them from the same position by X position".)
-          // SPIDER-ON-CLICK with simultaneous zoom-IN (user 2026-05-15: "needs
-          // to zoom simultaneous to like 20×"). On the zoom-meter readout,
-          // 20× ≈ MapLibre zoom 5.6 (mult = 2^(k-1.6)). Target z 5.5 so the
-          // basemap detail is high, the spider has room to spread, and labels
-          // are big enough to read. If user already past z 5.5, stay put.
+          // SPIDER-ON-CLICK with simultaneous zoom-IN (user 2026-05-15: "the
+          // zoom needs to go BIG like almost full zoom"). Target maxZoom − 0.5
+          // so we're nearly fully zoomed in: basemap shows city-level detail,
+          // the spider's pixel-fixed radius has the most room to spread, and
+          // labels are big enough to read from a comfortable distance. On the
+          // readout this is ~34× (mult = 2^(k − 1.6)).
+          //
           // MapLibre v5 changed getClusterLeaves from callback to Promise;
           // wrap both styles defensively so we work either way.
-          const TARGET_SPIDER_ZOOM = 5.5;
+          const TARGET_SPIDER_ZOOM = _atlasMap.getMaxZoom() - 0.5;
           const onLeaves = (leaves) => {
             if (!leaves || !leaves.length) return;
             _atlasPreSpiderState = { center: _atlasMap.getCenter(), zoom: currentZoom };
