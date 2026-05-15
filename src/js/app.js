@@ -5004,7 +5004,14 @@ VIEWS.atlas = {
           source: 'atlas-nodes',
           filter: ['!', ['has', 'point_count']],
           paint: {
-            'circle-radius': ['get', 'dotSize'],
+            // Bubbles grow faster on zoom (user 2026-05-15: "we got plenty space").
+            // Curve: 1.4× base at z 1, 2.5× at z 6, 4× at z 10.
+            'circle-radius': [
+              'interpolate', ['exponential', 1.5], ['zoom'],
+              1,  ['*', ['get', 'dotSize'], 1.4],
+              6,  ['*', ['get', 'dotSize'], 2.5],
+              10, ['*', ['get', 'dotSize'], 4]
+            ],
             'circle-color': ['get', 'family_color'],
             'circle-stroke-width': 1,
             'circle-stroke-color': 'rgba(255,255,255,0.20)',
@@ -5013,6 +5020,53 @@ VIEWS.atlas = {
             'circle-opacity-transition': { duration: 140 }
           }
         });
+
+        // Node labels (user 2026-05-15: "name label to appear as soon as it's
+        // spacious, and if not display always the main ones most important").
+        // - Hub-tier (tier 0-1, top ~5%): ALWAYS visible (opacity 1 from z 1).
+        // - Tier 2: fades in around z 5.
+        // - Tier 3: fades in around z 7.
+        // Declutter via text-allow-overlap:false + symbol-sort-key=−deg (high-
+        // degree nodes render first, claim placement, lower-degree drop if they
+        // would overlap). Halo on bg-0 for contrast over any basemap tone.
+        try {
+          _atlasMap.addLayer({
+            id: 'atlas-node-labels',
+            type: 'symbol',
+            source: 'atlas-nodes',
+            filter: ['!', ['has', 'point_count']],
+            layout: {
+              'text-field': ['get', 'title'],
+              'text-font': ['Noto Sans Regular'],
+              'text-size': [
+                'interpolate', ['linear'], ['zoom'],
+                3, 10, 7, 12, 11, 14
+              ],
+              'text-anchor': 'left',
+              'text-offset': [0.8, 0],
+              'text-allow-overlap': false,
+              'text-ignore-placement': false,
+              'text-optional': true,
+              // Lower sort-key renders first → claims space first. We want HIGH-
+              // degree (hub) and HIGH-tier (lower number) to win the declutter race.
+              'symbol-sort-key': ['+', ['get', 'tier'], ['*', -0.001, ['get', 'deg']]]
+            },
+            paint: {
+              'text-color': _atlasToken('--text-1', '#c8c4b8'),
+              'text-halo-color': _atlasToken('--bg-0', '#07090f'),
+              'text-halo-width': 1.2,
+              'text-opacity': [
+                'interpolate', ['linear'], ['zoom'],
+                1, ['case', ['<=', ['get', 'tier'], 1], 1, 0],
+                4, ['case', ['<=', ['get', 'tier'], 1], 1, 0],
+                5, ['case', ['<=', ['get', 'tier'], 2], 1, 0],
+                7, 1
+              ]
+            }
+          });
+        } catch (e) {
+          console.warn('[atlas] node labels unavailable:', e.message);
+        }
 
         // --- Hover/click on individual circles ---
         _atlasMap.on('mousemove', 'atlas-nodes-circles', (ev) => {
@@ -5130,7 +5184,14 @@ VIEWS.atlas = {
           source: 'atlas-spider-points',
           type: 'circle',
           paint: {
-            'circle-radius': ['get', 'dotSize'],
+            // Bubbles grow faster on zoom (user 2026-05-15: "we got plenty space").
+            // Curve: 1.4× base at z 1, 2.5× at z 6, 4× at z 10.
+            'circle-radius': [
+              'interpolate', ['exponential', 1.5], ['zoom'],
+              1,  ['*', ['get', 'dotSize'], 1.4],
+              6,  ['*', ['get', 'dotSize'], 2.5],
+              10, ['*', ['get', 'dotSize'], 4]
+            ],
             'circle-color': ['get', 'family_color'],
             'circle-stroke-width': 1.5,
             'circle-stroke-color': _atlasToken('--gold', '#d4a55a'),
