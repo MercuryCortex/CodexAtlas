@@ -2864,7 +2864,176 @@ const SCRIPTURE_CORPORA = {
       ]},
     ],
   },
-  'kojiki-nihongi': { label: 'Kojiki / Nihon Shoki (Shintō)',                available: false },
+  // ----- Shintō canon — Japan's two foundational chronicles. Kojiki (712 CE)
+  // compiled by Ō no Yasumaro from the oral memory of Hieda no Are; Nihon Shoki
+  // (720 CE) compiled in Chinese kanbun as the official state history. Together
+  // they encode the Izanagi/Izanami creation cosmology, the solar-goddess
+  // Amaterasu, Susanoo, Tsukuyomi, the descent to Yomi (underworld), the Three
+  // Imperial Treasures, and the divine genealogy of the imperial line. -----
+  'kojiki-nihongi': {
+    label: 'Kojiki / Nihon Shoki · Shintō sacred chronicles',
+    available: true,
+    sections: [
+      { id: 'shinto-oldest-chronicle', label: 'Kojiki · Record of Ancient Matters (712 CE)', color: '#c88a3a', books: [
+        { id: 'P8-019-kojiki', label: 'Kojiki (712 CE)' },
+      ]},
+      { id: 'shinto-official-chronicle', label: 'Nihon Shoki · Chronicles of Japan (720 CE)', color: '#a87030', books: [
+        { id: 'P8-020-nihon-shoki', label: 'Nihon Shoki (720 CE)' },
+      ]},
+    ],
+  },
+  // ----- Persian Sufi literary corpus — the four canonical texts of the
+  // Persian mystical-literary tradition. Rumi's Masnavi (the "Persian Quran"),
+  // Attar's Conference of the Birds (sīmorgh soul-identity theorem), Hafez's
+  // Divan (simultaneous erotic-mystical-satirical register; used for bibliomancy
+  // 600 years), Saʿdi's Gulistan (the most widely-read Persian prose; UN
+  // inscription). Cross-tradition MASSIVE WINs: soul-in-exile (Nay-nāmeh ↔
+  // Plotinus epistrophē ↔ Gnostic pneuma longing ↔ Vedantic jīva in māyā);
+  // Simorgh = soul; wine = soma/Eucharist/Dionysian wine universal cluster. -----
+  'sufi-persian': {
+    label: 'Persian Sufi literary corpus (Rumi · Attar · Hafez · Saʿdi)',
+    available: true,
+    sections: [
+      { id: 'sufi-persian-rumi', label: 'Rumi · Masnavī-ye Maʿnavī (~1258–1273)', color: '#5a7a8f', books: [
+        { id: 'P5-054-rumi-masnavi', label: 'Rumi · Masnavī (Spiritual Verses)' },
+      ]},
+      { id: 'sufi-persian-attar', label: 'Attar · Conference of the Birds (~1177)', color: '#4a6a7a', books: [
+        { id: 'P5-051-attar-conference-of-birds', label: 'Attar · Manṭiq al-Ṭayr' },
+      ]},
+      { id: 'sufi-persian-hafez-sadi', label: 'Hafez · Divan + Saʿdi · Gulistan (14th–13th c.)', color: '#3a5a6a', books: [
+        { id: 'P5-053-hafez-divan', label: 'Hafez · Dīvān-e Ḥāfeẓ' },
+        { id: 'P5-052-sadi-gulistan', label: 'Saʿdi · Gulistān (The Rose Garden)' },
+      ]},
+    ],
+  },
+  // ----- Norse Eddic corpus — the two medieval Icelandic sources for Norse
+  // mythology. Poetic Edda (~13th c. manuscript of older material): Völuspá
+  // (creation-to-Ragnarök prophesy), Hávamál (Odin's wisdom + self-sacrifice
+  // on Yggdrasil), Eddic heroic lays. Prose Edda (Snorri Sturluson ~1220):
+  // Gylfaginning (mythological encyclopedia), Skáldskaparmál (poetic diction).
+  // MASSIVE WINs: Odin's self-sacrifice (hanged on Yggdrasil, pierced by spear,
+  // 9 days) ↔ Christ's crucifixion; Ragnarök world-destruction-and-renewal ↔
+  // Zoroastrian Frashokereti; Yggdrasil world-tree ↔ axis mundi cluster. -----
+  'norse-eddic': {
+    label: 'Norse Eddic corpus (Poetic Edda · Prose Edda)',
+    available: true,
+    sections: [
+      { id: 'norse-poetic', label: 'Poetic Edda · Völuspá / Hávamál / heroic lays (~13th c. MS)', color: '#6a7a9a', books: [
+        { id: 'P8-014-poetic-edda', label: 'Poetic Edda' },
+      ]},
+      { id: 'norse-prose', label: 'Prose Edda · Snorri Sturluson (~1220 CE)', color: '#5a6a8a', books: [
+        { id: 'P8-015-prose-edda-snorri', label: 'Prose Edda (Snorra Edda)' },
+      ]},
+    ],
+  },
+  // ----- Kabbalistic corpus — the three foundational texts of Jewish mysticism.
+  // Sefer Yetzirah (3rd–6th c. CE): 32 paths of wisdom, 10 sefirot + 22 Hebrew
+  // letters as cosmogonic instruments. Sefer ha-Bahir (~12th c.): first text
+  // to systematize the sefirot, introduces the divine feminine / Shekhinah.
+  // Sefer ha-Zohar (Moses de León, ~1280 CE): the Kabbalistic Bible.
+  // MASSIVE WINs: sefirot ↔ Neoplatonic henads/hypostases; Ein Sof ↔ Plotinus'
+  // The One; tikkun olam ↔ Zoroastrian frashokereti; Shekhinah-in-exile ↔
+  // Gnostic Sophia fallen; tzimtzum ↔ Valentinian kenosis. -----
+  'kabbalistic-corpus': {
+    label: 'Kabbalistic corpus (Sefer Yetzirah · Bahir · Zohar)',
+    available: true,
+    sections: [
+      { id: 'kabbalah-sefer-yetzirah', label: 'Sefer Yetzirah · Book of Formation (3rd–6th c.)', color: '#6a5a9a', books: [
+        { id: 'P5-012-sefer-yetzirah', label: 'Sefer Yetzirah (Book of Formation)' },
+      ]},
+      { id: 'kabbalah-bahir', label: 'Sefer ha-Bahir · Book of Brightness (~12th c.)', color: '#7a6aaa', books: [
+        { id: 'P5-026-sefer-ha-bahir', label: 'Sefer ha-Bahir' },
+      ]},
+      { id: 'kabbalah-zohar', label: 'Sefer ha-Zohar · Book of Splendor (Moses de León, ~1280)', color: '#8a7aba', books: [
+        { id: 'P5-027-sefer-ha-zohar', label: 'Sefer ha-Zohar (Zohar)' },
+      ]},
+    ],
+  },
+  // ----- Mesoamerican sacred corpus — three foundational pre-Columbian texts.
+  // Popol Vuh (K'iche' Maya creation epic, written down ~1550 from oral
+  // tradition): 4 creation attempts, Hero Twins in Xibalba (underworld), human
+  // creation from maize. Codex Borgia (~1400): pre-Columbian divinatory
+  // manuscript encoding the Aztec ritual calendar, cosmology, and deities.
+  // Dresden Codex (~11th–12th c.): Maya astronomical tables (Venus cycle,
+  // lunar tables, eclipse prediction). MASSIVE WINs: Popol Vuh underworld
+  // trials ↔ Egyptian Duat journey; maize-creation ↔ world-body cosmogony;
+  // Venus/Quetzalcoatl ↔ dying-rising star deity across traditions. -----
+  'mesoamerican-sacred': {
+    label: 'Mesoamerican sacred corpus (Popol Vuh · Codex Borgia · Dresden Codex)',
+    available: true,
+    sections: [
+      { id: 'mesoamerican-popol-vuh', label: 'Popol Vuh · K\'iche\' Maya creation epic (~1550 written)', color: '#7a8a5a', books: [
+        { id: 'P8-001-popol-vuh', label: 'Popol Vuh' },
+      ]},
+      { id: 'mesoamerican-codices', label: 'Pre-Columbian divinatory codices', color: '#6a7a4a', books: [
+        { id: 'P8-002-codex-borgia', label: 'Codex Borgia (~1400 CE)' },
+        { id: 'P8-003-dresden-codex-maya', label: 'Dresden Codex (~11th–12th c.)' },
+      ]},
+    ],
+  },
+  // ----- Islamic mystical-theological corpus — three towering texts of Islamic
+  // philosophical theology and mysticism. Ibn ʿArabī's Fuṣūṣ al-Ḥikam (~1229):
+  // the most systematic formulation of waḥdat al-wujūd (unity of being).
+  // Al-Ghazālī's Iḥyāʾ (1095–1099): the greatest synthesis of Islamic law,
+  // theology, and Sufi practice. Al-Ghazālī's Tahāfut al-Falāsifa (1095):
+  // the critique of Aristotelian philosophy that defined Islamic theology's
+  // relationship to Greek rationalism. MASSIVE WINs: waḥdat al-wujūd ↔ Advaita
+  // Vedanta / Plotinus' The One; Ghazali occasionalism ↔ Descartes/Malebranche;
+  // Ihyaʾ integration of law+mysticism ↔ Maimonides' Mishneh Torah. -----
+  'islamic-theological': {
+    label: 'Islamic mystical-theological corpus (Ibn ʿArabī · al-Ghazālī)',
+    available: true,
+    sections: [
+      { id: 'ibn-arabi-corpus', label: 'Ibn ʿArabī · Unity of Being (~1165–1240)', color: '#5a7a5a', books: [
+        { id: 'P5-021-ibn-arabi-fusus-al-hikam', label: 'Ibn ʿArabī · Fuṣūṣ al-Ḥikam' },
+      ]},
+      { id: 'ghazali-corpus', label: 'Al-Ghazālī · Integration of reason + mysticism (~1058–1111)', color: '#4a6a4a', books: [
+        { id: 'P5-015-al-ghazali-ihya', label: 'Al-Ghazālī · Iḥyāʾ ʿUlūm al-Dīn' },
+        { id: 'P5-045-al-ghazali-tahafut-al-falasifa', label: 'Al-Ghazālī · Tahāfut al-Falāsifa' },
+      ]},
+    ],
+  },
+  // ----- Hadith corpus — the two most authoritative Sunni hadith collections.
+  // Sahih al-Bukhari (~846 CE): 7,275 hadiths selected from 600,000; the most
+  // trusted single source for the Prophet's words and practices after the Quran.
+  // Sahih Muslim (~875 CE): 7,563 hadiths; second-most authoritative.
+  // Together they define Sunni Islamic orthopraxis. MASSIVE WINs: hadith isnāds
+  // are the most elaborately documented oral-to-writing transmission system in
+  // world religious history — structural parallel to Gospel sayings-collections
+  // (Q source) and to Buddhist vinaya transmission chains. -----
+  'hadith-corpus': {
+    label: 'Hadith corpus · Sahīḥayn (al-Bukhārī + Muslim)',
+    available: true,
+    sections: [
+      { id: 'hadith-sahihayn', label: 'The Two Sahīḥs · Sunni canonical hadith (~846–875 CE)', color: '#5a7a6a', books: [
+        { id: 'P5-007-sahih-al-bukhari', label: 'Ṣaḥīḥ al-Bukhārī (~846 CE)' },
+        { id: 'P5-042-sahih-muslim', label: 'Ṣaḥīḥ Muslim (~875 CE)' },
+      ]},
+    ],
+  },
+  // ----- Mandaean + Manichaean sacred corpus — the two major Gnostic-dualist
+  // textual traditions outside the Nag Hammadi find. Mandaean: Ginza Rba
+  // (Great Treasure, the Mandaean Bible), Mandaean Book of John. Manichaean:
+  // Cologne Mani Codex (biography of Mani, Greek, 5th c. CE), Kephalaia of
+  // the Teacher (Coptic compilation of Mani's teachings). MASSIVE WINs:
+  // Mandaeanism is the only surviving Gnostic tradition with unbroken liturgical
+  // continuity; Mani synthesized Zoroastrianism + Buddhism + Christianity —
+  // the most deliberate syncretist in world history; Manichaeism reached from
+  // Spain to China; Augustine was a Manichaean for 9 years. -----
+  'mandaean-manichaean': {
+    label: 'Mandaean + Manichaean sacred corpus',
+    available: true,
+    sections: [
+      { id: 'mandaean-texts', label: 'Mandaean canon · Ginza Rba + Book of John', color: '#6a7a8a', books: [
+        { id: 'P4-017-ginza-rba', label: 'Ginza Rba (Great Treasure)' },
+        { id: 'P4-018-mandaean-book-of-john', label: 'Mandaean Book of John' },
+      ]},
+      { id: 'manichaean-texts', label: 'Manichaean corpus · Cologne Codex + Kephalaia', color: '#5a6a7a', books: [
+        { id: 'P4-014-cologne-mani-codex', label: 'Cologne Mani Codex (~5th c. Greek)' },
+        { id: 'P4-015-kephalaia-of-the-teacher', label: 'Kephalaia of the Teacher (Coptic)' },
+      ]},
+    ],
+  },
   // ----- Sikh canonical scripture. The Ādi Granth (compiled 1604 by Guru
   // Arjan, expanded 1678 into the Gurū Granth Sāhib by Guru Gobind Singh)
   // is the eleventh and eternal Guru of Sikhism — uniquely a SCRIPTURE
