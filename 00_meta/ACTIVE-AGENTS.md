@@ -4,6 +4,16 @@ _Hand-maintained. Each agent currently working in the vault appends a claim bloc
 
 ---
 
+## opus-deadlink-fix-1 — integrity / highest-traffic dead wikilink closure — started 2026-05-15 — **FINISHED 2026-05-15**
+- Owned: `06_themes/divine-kingship-solar.md` (NEW), `06_themes/zep-tepi.md` (NEW), `06_themes/shamanism.md` (NEW), `07_traditions/tradition-cheondogyo.md` (NEW), `03_deities/tammuz-dumuzi.md` (NEW stub/alias), `03_deities/inanna.md` (NEW stub/alias), `03_deities/rhea-greek.md` (NEW stub/alias)
+- Confirmed already present from prior agents: `tradition-second-temple-judaism.md`, `tradition-medieval-christianity.md`
+- Goal: Resolve 611-node dead-link backlog, targeting highest-traffic missing slugs (2–4 refs each)
+- Status: finished
+- Build: **2183 nodes · 12,804 edges · 0 new dead links introduced**
+- Last edit: `00_meta/ACTIVE-AGENTS.md`
+
+---
+
 ## opus-native-pacific-1 — content / Native American + Pacific tradition nodes — started 2026-05-15 — **IN-FLIGHT**
 - Owning: `07_traditions/tradition-lakota.md` (NEW), `07_traditions/tradition-haudenosaunee.md` (NEW), `07_traditions/tradition-navajo.md` (NEW), `07_traditions/tradition-maori.md` (UPGRADE), `07_traditions/tradition-hawaiian.md` (UPGRADE), `03_deities/changing-woman.md` (NEW stub), `03_deities/white-buffalo-calf-woman.md` (NEW stub), `03_deities/papatuanuku.md` (UPGRADE)
 - Goal: Create foundational Native American (Lakota/Haudenosaunee/Navajo) + upgrade Pacific (Maori/Hawaiian) nodes with full MASSIVE WIN cross-tradition grids; Great Plains immanent-sacred parallel; Haudenosaunee → Founding Fathers political theology; Hózhó ↔ Maat/Asha cosmic-order; Ranginui/Papatūānuku sky-earth separation myth; Kumulipo evolutionary sequence
