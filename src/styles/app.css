@@ -1803,6 +1803,25 @@ body.view-atlas main.canvas { background: var(--bg-0); }
   color: var(--text-3); letter-spacing: 0.08em;
 }
 
+/* Codex graph pane — shared WebGL graph canvas (sigma.js). Same positioning
+   posture as .atlas-pane: full-bleed within the canvas area, behind the
+   detail panel. Sigma renders its own <canvas> elements as children. */
+.codex-graph-pane {
+  position: absolute;
+  left: var(--eff-nav-w);
+  right: var(--eff-detail-w);
+  top: 0; bottom: 0;
+  z-index: 2;
+  background: var(--bg-0);
+  transition: left var(--t-layout) var(--ease), right var(--t-layout) var(--ease);
+  /* prevent overscroll bounce on mobile during pinch-zoom */
+  overscroll-behavior: contain;
+  touch-action: none;
+}
+.codex-graph-pane canvas {
+  display: block;
+}
+
 /* Atlas pane — the outer positioning wrapper for the map. Owns position:absolute
    and the empty-state centering. MapLibre lives in the inner .atlas-map div. */
 .atlas-pane {
