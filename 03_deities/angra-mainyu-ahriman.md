@@ -20,8 +20,16 @@ equivalents: []
 syncretic-edges:
   - target: "satan-second-temple-jewish"
     type: "scholarly-parallel"
-    source: "Boyce & Grenet 1991; Russell 1977, The Devil"
-    notes: "The Hebrew Bible's pre-exilic *śāṭān* is YHWH's adversary-functionary, not an independent evil principle. The Second Temple Satan as cosmic adversary develops in the Persian and Hellenistic periods, plausibly under Zoroastrian dualistic influence."
+    source: "Boyce & Grenet 1991; Russell 1977, The Devil; Shaked 1984, Cambridge History of Judaism vol. 1"
+    notes: "The Hebrew Bible's pre-exilic *śāṭān* is YHWH's adversary-functionary, not an independent evil principle. The Second Temple Satan as cosmic adversary develops in the Persian and Hellenistic periods, plausibly under Zoroastrian dualistic influence. See [[theme-satan-angra-mainyu-transfer]] for the full transmission analysis."
+  - target: "theme-satan-angra-mainyu-transfer"
+    type: "ancestor-of"
+    source: "Russell 1977; Forsyth 1987; Shaked 1984"
+    notes: "Angra Mainyu's structural role as independent cosmic adversary commanding a demonic army is the primary comparative model for the Second Temple transformation of ha-satan into Satan. See the dedicated theme node for the full scholarly analysis."
+related-themes:
+  - "[[theme-zoroastrian-jewish-exchange]]"
+  - "[[theme-satan-angra-mainyu-transfer]]"
+  - "[[dualism-cosmic]]"
 status: "stub"
 refs:
   - title: "A History of Zoroastrianism, vol. I-III"

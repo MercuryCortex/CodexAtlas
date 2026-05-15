@@ -17,7 +17,7 @@ canonical-slug
 ## Currently resolved slugs (auto-seeded — every existing file)
 
 
-### deity (442 nodes)
+### deity (443 nodes)
 
 - `abathur`
 - `adamastor`
@@ -125,6 +125,7 @@ canonical-slug
 - `el-canaanite`
 - `el-elohim-hebrew`
 - `el-hebrew`
+- `el-shaddai`
 - `endovelicus`
 - `enki-ea`
 - `enlil`
@@ -462,8 +463,9 @@ canonical-slug
 - `zemyna`
 - `zeus`
 
-### document (346 nodes)
+### document (347 nodes)
 
+- `document-kuntillet-ajrud-inscriptions`
 - `phase-1-001-kesh-temple-hymn`
 - `phase-1-002-pyramid-texts`
 - `phase-1-003-enheduanna-hymns`
@@ -811,13 +813,14 @@ canonical-slug
 - `phase-8-017-santeria-lucumi`
 - `phase-8-018-kalevala`
 
-### event (136 nodes)
+### event (139 nodes)
 
 - `event-aboriginal-stolen-generations-1905-1969`
 - `event-ahmad-gragn-invasion-1529`
 - `event-aksumite-christianization-c330`
 - `event-albigensian-crusade-1209-1229`
 - `event-altamira-cave-paintings-c-22000-bce`
+- `event-amarna-period-1353-1336`
 - `event-angkor-wat-construction-c-1113-1150`
 - `event-arabic-harranian-hermetica-c800-1000`
 - `event-asokan-dhamma-missions-c-250-bce`
@@ -889,6 +892,8 @@ canonical-slug
 - `event-haitian-revolution-1791-1804`
 - `event-hegira-622`
 - `event-hohle-fels-figurines-c-35000-bce`
+- `event-hyksos-expulsion-1550-bce`
+- `event-hyksos-period`
 - `event-iconoclast-controversy-726-843`
 - `event-iranian-revolution-1979`
 - `event-jamnia-yavneh-90`
@@ -950,7 +955,7 @@ canonical-slug
 - `event-wilhelmsbad-convent-1782`
 - `event-zagwe-lalibela-churches-c1200`
 
-### person (589 nodes)
+### person (590 nodes)
 
 - `aaron`
 - `abba-garima`
@@ -961,6 +966,7 @@ canonical-slug
 - `abya-meqabyan`
 - `adam`
 - `aeschylus`
+- `ahmose-i`
 - `aisha-bint-abi-bakr`
 - `akhenaten`
 - `akiva-ben-yosef`
@@ -1606,7 +1612,7 @@ canonical-slug
 - `wheat-grain`
 - `yin-yang`
 
-### theme (239 nodes)
+### theme (246 nodes)
 
 - `364-day-solar-calendar`
 - `adam-kadmon`
@@ -1822,10 +1828,17 @@ canonical-slug
 - `tewahedo-christology`
 - `the-five-buddha-families`
 - `the-godhead-eckhart`
+- `theme-akhenaten-moses-monotheism-thesis`
+- `theme-baal-set-syncretism`
+- `theme-el-yahweh-merger`
+- `theme-exodus-hyksos-thesis`
 - `theme-habiru-hebrew-origins`
 - `theme-heroes-paradise-island`
 - `theme-holy-grail`
 - `theme-lex-talionis-covenant-code`
+- `theme-paradise-etymology`
+- `theme-satan-angra-mainyu-transfer`
+- `theme-zoroastrian-jewish-exchange`
 - `theurgy`
 - `tikkun-olam`
 - `torah-and-wisdom-identified`
@@ -1966,14 +1979,14 @@ canonical-slug
 |---:|---|---|
 | 4 | `ragnarok-apocalyptic` | `apocalyptic-cosmic-warfare` |
 | 4 | `primordial-darkness` | `primordial-waters` |
-| 4 | `messianic-revelation` | `messianic-future-savior` |
-| 4 | `genealogical-cosmogony` | `hermetic-cosmogony` |
-| 4 | `evolutionary-cosmogony` | `hermetic-cosmogony` |
-| 3 | `phase-4-007-new-testament-canon` | `phase-4-009-pistis-sophia` |
-| 3 | `phase-2-005-1-2-kings` | `phase-2-003-atharva-veda` |
-| 3 | `messianic-genealogy` | `messianic-future-savior` |
+| 4 | `messianic-revelation` | `messianic-secret` |
+| 4 | `genealogical-cosmogony` | `mesoamerican-cosmogony` |
+| 4 | `evolutionary-cosmogony` | `mesoamerican-cosmogony` |
+| 3 | `phase-4-007-new-testament-canon` | `phase-4-008-trimorphic-protennoia` |
+| 3 | `phase-2-005-1-2-kings` | `phase-2-008-homeric-epics` |
+| 3 | `messianic-genealogy` | `messianic-secret` |
 | 2 | `yam-canaanite` | `astarte-canaanite` |
-| 2 | `tradition-minoan-religion` | `tradition-greco-buddhism` |
-| 2 | `tradition-eastern-orthodoxy` | `tradition-greco-buddhism` |
-| 2 | `phase-1-013-babylonian-theodicy` | `phase-1-018-gudea-cylinders` |
+| 2 | `tradition-minoan-religion` | `tradition-portuguese-hermeticism` |
+| 2 | `tradition-eastern-orthodoxy` | `tradition-portuguese-hermeticism` |
+| 2 | `phase-1-013-babylonian-theodicy` | `phase-1-019-enuma-anu-enlil` |
 | 2 | `asclepius` | `asclepius-greek` |

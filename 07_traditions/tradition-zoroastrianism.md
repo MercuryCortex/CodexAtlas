@@ -11,7 +11,7 @@ key-deities: ["[[ahura-mazda]]", "[[angra-mainyu-ahriman]]", "[[spenta-mainyu]]"
 key-persons: ["[[zarathustra]]", "[[cyrus-the-great]]", "[[darius-i-the-great]]", "[[the-magi]]"]
 key-documents: ["[[phase-2-002-gathas-of-zarathustra]]", "[[phase-2-004-yasna-younger-avesta]]"]
 key-symbols: ["[[faravahar]]", "[[sacred-fire-atash]]", "[[haoma]]"]
-key-themes: ["[[frashokereti-cosmic-renovation]]", "[[cinvat-bridge-judgment]]", "[[dualism-cosmic]]"]
+key-themes: ["[[frashokereti-cosmic-renovation]]", "[[cinvat-bridge-judgment]]", "[[dualism-cosmic]]", "[[theme-zoroastrian-jewish-exchange]]", "[[theme-paradise-etymology]]", "[[theme-satan-angra-mainyu-transfer]]"]
 key-events: ["[[event-cyrus-conquest-of-babylon-539-bce]]"]
 sister-traditions: ["[[tradition-vedic-hinduism]]", "[[tradition-judaism]]"]
 status: "stub"

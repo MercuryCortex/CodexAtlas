@@ -25,6 +25,12 @@ documents-produced:
 documents-affected:
   - "[[phase-3-008-book-of-daniel]]"
   - "[[phase-3-004-1-enoch]]"
+themes-initiated:
+  - "[[theme-zoroastrian-jewish-exchange]]"
+  - "[[theme-paradise-etymology]]"
+  - "[[theme-satan-angra-mainyu-transfer]]"
+  - "[[dualism-cosmic]]"
+  - "[[resurrection-of-the-dead]]"
 status: "metadata"
 refs:
   - title: "A History of Zoroastrianism, Vol. 2"

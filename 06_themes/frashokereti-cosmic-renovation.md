@@ -12,6 +12,11 @@ deity-instances:
   - "[[saoshyant]]"
   - "[[angra-mainyu-ahriman]]"
   - "[[atar]]"
+related-themes:
+  - "[[theme-zoroastrian-jewish-exchange]]"
+  - "[[theme-paradise-etymology]]"
+  - "[[resurrection-of-the-dead]]"
+  - "[[messianism]]"
 status: "metadata"
 refs:
   - title: "A History of Zoroastrianism (3 vols.)"

@@ -6,6 +6,10 @@ aka: ["bodily resurrection", "general resurrection", "tehiyyat ha-metim", "qiyā
 category: "eschatological"
 appearances: ["[[phase-2-002-gathas-of-zarathustra]]", "[[phase-2-004-yasna-younger-avesta]]", "[[phase-3-008-book-of-daniel]]", "[[phase-3-015-pauline-epistles]]", "[[phase-3-016-gospel-of-mark]]", "[[phase-3-017-gospel-of-matthew]]", "[[phase-3-018-luke-acts]]", "[[phase-3-020-gospel-of-john]]", "[[phase-4-031-mishnah]]", "[[phase-4-034-quran]]"]
 deity-instances: []
+related-themes:
+  - "[[theme-zoroastrian-jewish-exchange]]"
+  - "[[frashokereti-cosmic-renovation]]"
+  - "[[messianism]]"
 status: "stub"
 refs:
   - title: "The Resurrection of the Son of God"
