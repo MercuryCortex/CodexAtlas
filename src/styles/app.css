@@ -2089,6 +2089,90 @@ body.view-alchemy .zoom-meter { display: none !important; }
 }
 .aph-deity:hover circle { stroke-width: 2.5; }
 
+/* === ASTRO-PANTHEON visual idiom v2 (sonnet-astro-pantheon-style-1, 2026-05-15) ===
+   Ports the main Pantheon's grammar onto the 7-planet wheel: tangential planet
+   labels, family-colour outer rim + leader-tick, sqrt-sized deity dots, hover
+   trails. Layered ABOVE the v1 .aph-deity rule above so the dot-stroke override
+   only fires for un-classed hovers (we use explicit .aph-deity-lit for the
+   active hover-trail state). */
+.aph-wedge {
+  transition: fill-opacity 220ms ease, stroke-opacity 220ms ease;
+}
+.aph-wedge.aph-wedge-dim {
+  fill-opacity: 0.025 !important; stroke-opacity: 0.12 !important;
+}
+.aph-wedge-rim {
+  transition: fill-opacity 220ms ease;
+}
+.aph-family-tick {
+  pointer-events: none;
+}
+.aph-planet-label-text {
+  font-family: var(--serif);
+  font-size: 13px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  paint-order: stroke;
+  stroke: var(--bg-0);
+  stroke-width: 0.22em;
+  font-weight: 500;
+}
+.aph-planet-label-count {
+  font-family: var(--mono);
+  font-size: 9.5px;
+  letter-spacing: 0.10em;
+  fill: var(--text-3);
+  text-transform: uppercase;
+  paint-order: stroke;
+  stroke: var(--bg-0);
+  stroke-width: 0.22em;
+}
+.aph-planet-label:hover .aph-planet-label-text { filter: brightness(1.25); }
+.aph-inner-glyph {
+  font-family: var(--serif);
+  font-size: 19px;
+  opacity: 0.55;
+  pointer-events: none;
+  text-shadow: 0 0 4px rgba(0,0,0,0.55);
+  paint-order: stroke;
+  stroke: rgba(0,0,0,0.5);
+  stroke-width: 0.6px;
+}
+.aph-deity-dot {
+  transition: stroke-width 130ms ease, opacity 200ms ease, fill-opacity 200ms ease;
+  stroke: var(--bg-0);
+}
+.aph-deity-label {
+  font-family: var(--serif);
+  font-size: 10.5px;
+  fill: var(--text-1);
+  pointer-events: none;
+  paint-order: stroke;
+  stroke: var(--bg-0);
+  stroke-width: 0.22em;
+  transition: opacity 200ms ease, fill 200ms ease;
+}
+.aph-deity:hover .aph-deity-dot {
+  stroke: var(--gold);
+  stroke-width: 2.4;
+}
+.aph-deity:hover .aph-deity-label {
+  fill: var(--text-0);
+}
+/* Hover-trail dim/lit states — mirror Pantheon's .filter-dim + .hover-reveal pair. */
+.aph-deity.aph-deity-dim .aph-deity-dot { opacity: 0.16; }
+.aph-deity.aph-deity-dim .aph-deity-label { opacity: 0; }
+.aph-deity.aph-deity-lit .aph-deity-dot { opacity: 1; fill-opacity: 1; }
+.aph-deity.aph-deity-lit .aph-deity-label { opacity: 1; fill: var(--text-0); font-weight: 500; }
+.aph-trail-line {
+  stroke: var(--gold, #d4a55a);
+  stroke-opacity: 0.78;
+  stroke-width: 1.4;
+  fill: none;
+  pointer-events: none;
+  filter: drop-shadow(0 0 1.5px rgba(212,165,90,0.55));
+}
+
 /* === DECANIC CLARITY LAYER (sonnet-decanic-clarity, 2026-05-15) === */
 
 /* Planet glyph (sun moon mercury venus mars jupiter saturn) inside each sector — high-contrast white. */

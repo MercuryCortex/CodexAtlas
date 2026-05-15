@@ -4,6 +4,14 @@ _Hand-maintained. Each agent currently working in the vault appends a claim bloc
 
 ---
 
+## sonnet-scorpion-1 — content / Selket + scorpion-symbol + Mars-wedge mapping — started 2026-05-15 — **IN-FLIGHT**
+- Owning: `03_deities/selket.md` (NEW), `09_symbols/scorpion.md` (NEW), `03_deities/ishara.md` (NEW stub — Wiring Law), `04_persons/tutankhamun.md` (NEW stub — Wiring Law), `05_events/event-tutankhamun-tomb-discovery-1922.md` (NEW), `_assets/data/astrology-planet-deities.json` (Mars block update)
+- Goal: Close the scorpion-archetype gap in the Astrology→Pantheon Mars wedge. Build Selket (Egyptian scorpion-goddess, fourth canopic protectress) as full Tier-1 deity node + scorpion symbol node with cross-tradition MASSIVE WIN convergences (Selket / Ishara / Scorpius / Antares-Al-Qalb-Xīn / Jyeṣṭhā nakshatra); wire to Pyramid Texts + Book of the Dead; add Tutankhamun + Howard Carter discovery via tomb-shrine guardian iconography; update astrology-planet-deities.json Mars block.
+- Status: in-flight
+- Last edit: `00_meta/ACTIVE-AGENTS.md`
+
+---
+
 ## opus-deadlink-fix-1 — integrity / highest-traffic dead wikilink closure — started 2026-05-15 — **FINISHED 2026-05-15**
 - Owned: `06_themes/divine-kingship-solar.md` (NEW), `06_themes/zep-tepi.md` (NEW), `06_themes/shamanism.md` (NEW), `07_traditions/tradition-cheondogyo.md` (NEW), `03_deities/tammuz-dumuzi.md` (NEW stub/alias), `03_deities/inanna.md` (NEW stub/alias), `03_deities/rhea-greek.md` (NEW stub/alias)
 - Confirmed already present from prior agents: `tradition-second-temple-judaism.md`, `tradition-medieval-christianity.md`
@@ -77,6 +85,14 @@ _Hand-maintained. Each agent currently working in the vault appends a claim bloc
   - **`eridu.md`** (NEW stub, events) — Wiring Law compliance for [[eridu]] wikilink; Sumerian primordial city and Ea cult center.
 - Build: **2156 nodes · 12,801 edges · 3.0% dead-link** (commit 5f54567)
 - Last edit: `00_meta/STATUS.md`
+
+## sonnet-egypt-symbols-hermetic-1 — content / Egyptian symbol upgrades + Hermetic corpus wiring — started 2026-05-15 — **IN-FLIGHT**
+- Owning: `09_symbols/djed-pillar.md` (upgrade), `09_symbols/obelisk.md` (upgrade), `09_symbols/pyramid-triangle.md` (upgrade), `09_symbols/ankh.md` (upgrade), `09_symbols/scarab-khepri.md` (upgrade), `03_deities/hermes-trismegistus.md` (enhance), `02_documents/_phase-3-hellenistic-second-temple/phase-3-021-hermetic-corpus-earliest.md` (wire-check)
+- Goal: Upgrade Egyptian symbol nodes with cross-tradition investigation; enhance Hermes Trismegistus with full Ficino transmission chain + Casaubon analysis; wire Thoth→Hermes Trismegistus→Renaissance pipeline
+- Status: in-flight
+- Last edit: `00_meta/ACTIVE-AGENTS.md`
+
+---
 
 ## sonnet-egyptian-deities-1 — content / Egyptian big-five deity MASSIVE WIN upgrades — started 2026-05-15 — **IN-FLIGHT**
 - Owning: `03_deities/osiris.md` (upgrade stub→full), `03_deities/isis.md` (upgrade stub→full), `03_deities/thoth.md` (upgrade stub→full), `03_deities/horus.md` (upgrade stub→full), `03_deities/ma-at.md` (upgrade metadata→full)
@@ -703,3 +719,19 @@ The things opus-foundation-1 claimed but never started are all still open:
   - **`theme-apophatic-theology.md`** (NEW, full) — 5-tradition convergence grid (Plotinus/Christian/Jewish/Islamic/Daoist-Buddhist); transmission vs. independent convergence map; convergence finding. 5 refs all T1.
 - Build: **2147 nodes · 12,738 edges · 3.0% dead-link**
 - Last edit: `00_meta/STATUS.md`
+
+---
+
+## sonnet-astro-pantheon-style-1 — app-code / Astro-Pantheon visual idiom upgrade — started 2026-05-15 — **FINISHED 2026-05-15**
+- Owning: `src/js/astrology/astro-pantheon.js`, `src/styles/app.css` (additions only — new `.aph-*` v2 classes appended after the v1 block), `index.html` (cache-bust to `20260515-astro-pantheon-v2`)
+- Goal: Match the main Pantheon's visual grammar inside the Astrology → Pantheon pill. Tangential planet labels around the outside rim, family-colour outer arc, leader-tick, sqrt-degree-sized deity dots, gold hover-trails on cross-tradition edges, dim/lit affordance on hover.
+- Status: finished
+- Delivered:
+  - Ported five Pantheon idioms onto the 7-planet wheel: (1) tangential rotated planet labels with serif uppercase + letter-spacing matching `.family-label`; (2) thin family-colour outer rim arc (mirrors `.sector-hull` outer edge); (3) radial leader-tick (mirrors `.family-tick`); (4) deity-dot radius `4 + sqrt(deg)*1.2` with floor 4 / ceiling 11 — Ra/Zeus/Hermes loom larger; (5) gold hover-trail beziers on cross-tradition edges, with non-related deities + non-related wedges dimming. Mouseleave + click-empty clear the hover state.
+  - Compromise vs. variable-wedge Pantheon: the 7-planet wheel has FIXED equal sectors, so sqrt-weighted wedge sizing doesn't apply (Saturn 6 deities looks the same width as Sun 13). The trade-off is the wheel's astronomical legibility (each planet gets its own equal sky-share) wins over relative-population legibility — which is what John's data layer is asserting anyway (the 7-fold structure IS the point of the view).
+  - Pre-built per-deity edge index `deityEdgeIndex[id] → [{other, type}]` filtered to in-wheel deities, so hover stays O(N_conn) not O(|EDGES|=12k).
+- Verify:
+  - `node --check src/js/astrology/astro-pantheon.js` → OK
+  - `python3 -c "import json; json.load(open('_assets/data/astrology-planet-deities.json'))"` → OK
+  - `curl -s "http://localhost:8742/src/js/astrology/astro-pantheon.js?v=test"` → 200
+- Last edit: `00_meta/ACTIVE-AGENTS.md`
