@@ -4078,6 +4078,7 @@ VIEWS.scripture = {
 // realizes the "MASSIVE-win cross-tradition transmission spine" demos.
 const PRESET_CATEGORY_LABELS = {
   investigation: 'Investigation',
+  transmission: 'Transmission',
   egypt: 'Egypt', hermetic: 'Hermetic', templar: 'Templar',
   gnostic: 'Gnostic', cross: 'Cross-Tradition', flood: 'Flood', astrology: 'Astrology',
   persian: 'Persian Theological Spine',
@@ -4086,6 +4087,7 @@ const PRESET_CATEGORY_LABELS = {
 };
 const PRESET_CATEGORY_ORDER = [
   { key: 'investigation', label: '⬡ Investigation Chains — Tier-1 Documented' },
+  { key: 'transmission', label: '⟶ Documented Transmission Chains' },
   { key: 'egypt',       label: 'Egypt — Investigation Series' },
   { key: 'lineage',     label: 'Lineage & Secret Societies' },
   { key: 'persecution', label: 'Persecution & Martyrdom' },
@@ -4208,7 +4210,7 @@ const ALCHEMY_PRESETS = [
   // ── Cross-Tradition ───────────────────────────────────────────────
   {
     id: 'merkabah-miraj-ascent-spine',
-    category: 'investigation',
+    category: 'transmission',
     name: "Merkabah → Mi'raj: The Heavenly Ascent",
     headline: "The most documented cross-tradition mystical chain: Ezekiel's chariot vision (-593 BCE) → Jewish Hekhalot mysticism → Zoroastrian Arda Viraf → Muhammad's Night Journey through seven heavens (619 CE) → Ibn Arabi's allegorized Mi'raj → Dante's Paradiso. Schäfer (2009) proves the Hekhalot → Mi'raj transmission via Jewish communities in Arabia. Same structure, seven traditions, 2,000 years.",
     picks: [
@@ -4287,7 +4289,7 @@ const ALCHEMY_PRESETS = [
   },
   {
     id: 'hermetic-full-transmission-spine',
-    category: 'investigation',
+    category: 'transmission',
     name: 'Hermetic Spine: Alexandria → Florence → Modern',
     headline: 'The complete 2,300-year Hermetic transmission chain: Alexandrian synthesis (Ammonius/Plotinus/Corpus Hermeticum) → Byzantine preservation → Plethon\'s 1439 Florence lectures → Ficino\'s 1463 translation → Pico/Agrippa/Bruno → Casaubon\'s 1614 rupture → Rosicrucian manifestos → Masonic ritual → Yates\'s 1964 rediscovery.',
     picks: [

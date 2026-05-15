@@ -16,6 +16,7 @@ variants:
 mentioned-in:
   - "[[theme-pyramid-as-resurrection-machine]]"
   - "[[tradition-egyptian]]"
+  - "[[axis-mundi]]"
 status: "metadata"
 cross-symbol-edges:
   - target: "ankh"
@@ -29,7 +30,10 @@ cross-symbol-edges:
     notes: "Some Egyptologists interpret the djed as a stylized tree trunk — specifically the Abydos tree (a tamarisk or conifer) inside whose trunk the body of Osiris was enclosed. If so, the djed is an abstracted tree-of-life, connecting Egyptian resurrection theology to the Near Eastern tree-of-life / axis-mundi cluster"
   - target: "latin-cross"
     type: "structural-parallel"
-    notes: "Structurally: both the djed and the Latin cross are vertical elements with horizontal bands. Both appear in resurrection/death-conquest contexts. No transmission documented — typological parallel between the world's most widely reproduced Egyptian funerary symbol and the world's most widely reproduced Christian funerary symbol"
+    notes: "Structurally: both the djed and the Latin cross are vertical elements with horizontal bands. Both appear in resurrection/death-conquest contexts. No transmission documented — typological parallel between the world's most widely reproduced Egyptian funerary symbol and the world's most widely reproduced Christian funerary symbol. The 'Raising of the Djed' ceremony (pharaoh and priests raising the pillar from horizontal to vertical — from death to life) is the most direct Egyptian parallel to a resurrection enacted-in-ritual; the structural convergence with Easter liturgy (the proclamation 'He is risen') is documented as parallel-form, not transmission."
+  - target: "axis-mundi"
+    type: "structural-parallel"
+    notes: "The djed is one of Egypt's clearest axis-mundi instantiations — a vertical cosmic pillar connecting the underworld (Osiris's burial, the horizontal-death state), the human world, and the sky. Parallels: Vedic skambha (cosmic pillar of Atharva Veda 10.7–8, which asks 'What one thing holds the sky and earth together?' and answers: the skambha, the cosmic pillar); Norse Yggdrasil (the world-tree as universal spine); Hindu sushumna nadi (the spinal channel of yogic-kundalini energy — notably also an inner body-axis). The djed's specificity: it is simultaneously a cosmic pillar AND a spinal anatomy symbol — the same axis that holds up the universe runs through the human body. This identification is the deepest node in the djed's cross-tradition resonance."
   - target: "ouroboros"
     type: "structural-parallel"
     notes: "The djed's stability-pillar role in sustaining the divine order relates to the ouroboros as cosmic boundary-keeper; both appear in Duat (underworld) contexts as guarantors that the dead king's cosmos will not collapse"
@@ -98,6 +102,30 @@ The raised djed connects to the universal axis-mundi cluster: a **vertical cosmi
 - Masonic **pillar** (the twin pillars Jachin and Boaz of Solomon's Temple)
 
 The djed's specificity is its **spinal** nature: the axis is the human body's own vertical axis, made cosmic. When the pharaoh stands upright, his spine *is* the djed — the world axis passes through the human body. This is the same logic as the Vedic yogic **spine = cosmic axis** identification, though there is no documented transmission.
+
+## The Vedic skambha: parallel cosmic-pillar theology
+
+One of the strongest cross-tradition parallels to the djed is the Vedic **skambha** ("support," "pillar," "prop") of the **Atharva Veda**, hymns 10.7 and 10.8. These hymns ask, repeatedly: *"What one thing holds sky and earth together? What is the pillar that supports the cosmos?"* — and answer: the skambha, the cosmic support-pillar, which the hymns identify with Brahman itself (the universal ground of existence). Key parallels:
+
+- **Both are vertical stabilizing structures** — the djed is "stability" (*dd*), the skambha is "support" (*skambha* from *skambh*, "to prop up").
+- **Both are identified with a cosmic being's body** — the djed is Osiris's backbone; Atharva Veda 10.8.9 explicitly identifies the skambha's "members" with the cosmic Purusha / divine Being's anatomical parts.
+- **Both appear in rituals of raising/establishing cosmic order** — the Raising of the Djed enacts world-stability; the skambha-hymns address the moment of cosmic stabilization at Zep Tepi (for Egypt) or creation (for the Vedic context).
+- **Both have a human-spine reading** — the djed's identification with Osiris's vertebral column parallels the later Indian identification of the body's spine with the cosmic axis (*sushumna nadi* in tantric yoga).
+
+**Transmission status**: no documented contact between Egypt and Vedic India in the period these symbols crystallized (djed: pre-dynastic/Old Kingdom; Atharva Veda skambha hymns: ~1000–800 BCE). Edge type: **parallel-form** — a structural convergence between two traditions both working out the same problem (how does the cosmos hold together? what is the divine anatomy of stability?) through the same instinctive architectural image: a vertical pillar.
+
+Source: Griffith, Ralph T.H. (trans.). *The Hymns of the Atharvaveda*. 1895 (Atharva Veda 10.7–8). Tier 1 (primary source).
+
+## Cross-tradition summary table
+
+| Tradition | Vertical-pillar / spine-of-cosmos | Parallel-type |
+|---|---|---|
+| Egyptian (~3000–300 BCE) | Djed pillar = Osiris's backbone; raised annually in Raising ceremony | Source node |
+| Vedic India (~1000 BCE) | Skambha of Atharva Veda 10.7–8 = cosmic support, identified with Brahman | parallel-form |
+| Hindu tantric yoga | Sushumna nadi (central spinal channel) = axis of consciousness | parallel-form |
+| Norse (c. 8th–13th c. CE) | Yggdrasil = cosmic spine / world-tree connecting nine realms | parallel-form |
+| Christian (~1st c. CE) | Latin cross as axis of salvation in death-and-resurrection theology | parallel-form |
+| Masonic (18th c.) | Pillars Jachin and Boaz of Solomon's Temple as cosmic vertical supports | appropriated-by |
 
 ## Modern significance for the Atlas
 

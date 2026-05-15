@@ -1545,6 +1545,11 @@ footer select:focus, footer input:focus { border-color: var(--gold-soft); }
   border: 1px solid rgba(0,185,165,.38);
   opacity: 1; letter-spacing: .11em;
 }
+.alch-preset-tag.transmission {
+  background: rgba(220,140,40,.16); color: #e09030;
+  border: 1px solid rgba(220,140,40,.34);
+  opacity: 1; letter-spacing: .09em;
+}
 
 /* ---- Investigation dropdown (sits next to Presets in Alchemy nav) ---- */
 .alch-invest-trigger { position: relative; }

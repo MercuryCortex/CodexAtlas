@@ -151,6 +151,18 @@ The ankh's *origin* as a glyph is disputed:
 
 The *function* of the held ankh — as opposed to the written glyph — is less contested: it is the iconographic donation of life-force from deity to recipient.
 
+## Western alternative spirituality adoption
+
+The ankh has become one of the most common symbols in Western alternative and New Age spirituality — typically found in:
+- **Goth / alternative subculture** (1980s onward) — the ankh became a fashion symbol associated with immortality, mysticism, and pre-Christian spiritual identity.
+- **New Age and Neo-Pagan practice** — the ankh is frequently used as a symbol of "eternal life," "divine feminine," "life force," or generic Egyptian wisdom. Most of these usages are reasonable extensions of the Egyptian original (the symbol *does* mean life; it *is* associated with feminine deities like Isis and Hathor).
+- **Black Power and African heritage movements** — the ankh became a marker of African identity and pre-colonial Egyptian civilization, used to claim African intellectual heritage against European cultural hegemony.
+- **Vampire mythology and fiction** — the ankh appears in vampire iconography (most famously Anne Rice's *Interview with the Vampire*; the Vampire: The Masquerade RPG uses it as a clan symbol) — here the "life" symbol is used in a sinister-ironic register, worn by those who have transcended life.
+
+**Analytical note**: The New Age adoption of the ankh is an interesting case of *symbol migration through legibility* — the symbol retained enough semantic legibility ("life" was always its meaning; its Egyptian origin was always known even in popular culture) that its popular reception tracked its actual ancient meaning more closely than many other adopted symbols. Compare the swastika (whose sacred ancient meaning has become nearly irretrievable in Western contexts) — the ankh represents the opposite trajectory: a symbol that migrated into popular culture without losing its referent.
+
+Source: MacGregor, Neil. *A History of the World in 100 Objects*. British Museum / BBC, 2010. (Tier 3 — popular; useful for reception documentation)
+
 ## Mystery / unknown variants
 
 None — the ankh is a well-documented and decipherable hieroglyph. `mystery-status: documented`.

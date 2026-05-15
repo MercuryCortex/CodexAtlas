@@ -20,6 +20,7 @@ mentioned-in:
   - "[[sphinx-of-giza]]"
   - "[[tradition-freemasonry]]"
   - "[[tradition-hermeticism]]"
+  - "[[axis-mundi]]"
 status: "metadata"
 cross-symbol-edges:
   - target: "sun-disk"

@@ -73,10 +73,10 @@ Hermes Trismegistus ("thrice-greatest Hermes") is the syncretic Greco-Egyptian f
 Hermes Trismegistus is the **revealer-teacher**: in the Hermetic dialogues, he transmits cosmic-philosophical wisdom to his disciples Tat (= Thoth himself, in a self-doubling), Asclepius (= Imhotep), and Ammon. His teachings concern (a) cosmogony (the structure of the cosmos, the descent and ascent of the soul); (b) the path to *gnōsis*; (c) magic, astrology, alchemy as legitimate operations of cosmic correspondences. He does not have a developed narrative myth as the Egyptian Thoth and the Greek Hermes do; instead his myth is *literary* — he is the author behind a corpus.
 
 ## Cross-tradition identifications
-- **[[thoth]]** — *direct continuity* / *ancient-identification*: Hermes Trismegistus is Thoth in Greek dress.
+- **[[thoth]]** — *direct continuity* / *ancient-identification*: Hermes Trismegistus is Thoth in Greek dress. The Thoth-Hermes equation runs from Herodotus (5th c. BCE) through Plato (*Phaedrus* 274c, where "Theuth" the Egyptian god invented writing) to Plutarch and Diodorus.
 - **[[hermes-greek]]** — *ancient-identification*: foundational from Herodotus on; the Greeks identified all "scribe-and-messenger" deities of foreign nations with Hermes.
-- **[[mercury-roman]]** — *ancient-identification*: Latin Hermetica use Mercurius.
-- **[[nabu]]** — *scholarly-parallel*: the Babylonian scribe-god Nabu shares structural attributes; some Hellenistic syncretism connected the three (Thoth, Hermes, Nabu).
+- **[[mercury-roman]]** — *ancient-identification*: Latin Hermetica use Mercurius Ter Maximus; Cicero *De Natura Deorum* 3.56 mentions multiple Hermeses.
+- **[[nabu]]** — *scholarly-parallel*: the Babylonian scribe-god Nabu shares structural attributes (divine scribe, lord of writing and wisdom, tablet-keeper); some Hellenistic syncretism connected the three (Thoth, Hermes, Nabu).
 
 ## Iconography
 - Bearded Egyptian-style sage or Greek-style philosopher
@@ -85,13 +85,40 @@ Hermes Trismegistus is the **revealer-teacher**: in the Hermetic dialogues, he t
 - Often shown holding or pointing to a tablet or scroll (the revealed wisdom)
 - Ibis (Thoth's sacred bird) sometimes present
 
+## The Ficino transmission chain: vault's most important pipeline
+
+The vault's Egyptian→Western-esotericism transmission chain runs directly through Hermes Trismegistus:
+
+**Thoth** (~2600 BCE, Hermopolis Magna, Egypt)
+→ **Thoth = Hermes** equation (Herodotus ~440 BCE, Plato ~380 BCE)
+→ **Hermes Trismegistus** figure crystallizes (Ptolemaic Egypt ~300–100 BCE)
+→ **Corpus Hermeticum written** (Alexandria, ~100–300 CE) — [[phase-3-021-hermetic-corpus-earliest]]
+→ **Byzantine manuscript preservation** (500–1000 CE) — Latin Europe loses the Greek texts; only the *Asclepius* (Latin) survives in the West
+→ **1460**: a monk brings a manuscript of 14 Hermetic treatises to Cosimo de' Medici in Florence
+→ **1463**: [[marsilio-ficino]], on Cosimo's urgent order, interrupts his Plato translation to translate the Corpus Hermeticum into Latin first — because Cosimo believed he was receiving pre-Mosaic wisdom older than Plato, and dying men cannot wait. **This urgency is the measure of how seriously they took the supposed antiquity.**
+→ **[[event-ficino-corpus-hermeticum-translation-1463]]**: Ficino's *Pimander* (Latin translation) circulates in manuscript, then printed edition (1471). This is the founding document of **[[tradition-renaissance-hermeticism]]**.
+→ Pico della Mirandola, [[giordano-bruno]], John Dee, Paracelsus, Heinrich Cornelius Agrippa — all operating within the Hermetic-Renaissance worldview, all treating Hermes Trismegistus as the most ancient human sage.
+→ Rosicrucian movement (17th c.) — Hermeticism goes underground after Bruno's burning
+→ Freemasonry (18th c.) — Hermetic-Egyptian symbolism enters Masonic ritual vocabulary
+→ Theosophy, Golden Dawn, modern Western esotericism — direct descendants
+
+**The [[isaac-casaubon]] intervention (1614)**:
+In *De Rebus Sacris et Ecclesiasticis Exercitationes XVI* (1614), Casaubon used philological dating methods (vocabulary, syntax, historical allusions) to demonstrate that the Greek of the *Corpus Hermeticum* could not be pre-Mosaic: it was Hellenistic-Roman Greek, full of Platonic and Stoic technical vocabulary that did not exist before the 4th century BCE. The texts were 1st–3rd century CE compositions — contemporary with the New Testament, not older than it. **See [[event-casaubon-redates-hermetica-1614]].**
+
+**The paradox**: Casaubon's dating was accepted by scholars — but *Hermeticism did not die*. The reasons:
+1. Even without the false antiquity claim, the texts contained genuine philosophical value.
+2. The Hermetic tradition continued as an avowedly modern synthesis, not an ancient one.
+3. Scholarly consensus that the texts were *Hellenistic*, not ancient-Egyptian, still left open the question of how much *genuine Egyptian* material was encoded in Hellenistic dress — Fowden (1986) argues: *a lot*.
+
 ## Disputes
-- **Antiquity of the figure.** Renaissance Hermeticists believed Hermes Trismegistus was a pre-Mosaic Egyptian sage; **Isaac Casaubon's 1614 philological analysis** demonstrated the *Corpus Hermeticum* is Hellenistic-Roman, not pre-Mosaic. This was one of the great early-modern moments of textual criticism unsettling religious history.
+- **Antiquity of the figure.** Renaissance Hermeticists believed Hermes Trismegistus was a pre-Mosaic Egyptian sage older than Moses and Plato. **Isaac Casaubon's 1614 philological analysis** (see [[event-casaubon-redates-hermetica-1614]]) demonstrated the *Corpus Hermeticum* was composed in the 1st–3rd century CE, not pre-Mosaic antiquity. This is one of the great early-modern moments of philological criticism — applying the same methods Bentley would later use on the Epistles of Phalaris.
 - **One figure or several?** Some Hermetic sources distinguish multiple Hermeses (the original Egyptian god, an antediluvian sage, a post-flood teacher); these stratifications are themselves products of Hellenistic and later esoteric speculation.
-- **Pagan-Egyptian vs. Greek-philosophical character.** Reitzenstein and earlier scholarship emphasized the Greek-philosophical; Fowden (1986) and subsequent work establish the genuinely Egyptian-priestly roots.
+- **Pagan-Egyptian vs. Greek-philosophical character.** 19th-century scholarship: purely Greek Neoplatonism in Egyptian costume. Reitzenstein: Babylonian-Iranian elements. Modern consensus (Fowden 1986, Mahé 1978): genuinely Egyptian-priestly culture articulated in Greek philosophical categories.
+- **How much genuine Egyptian?** The fabricated antiquity claim is false; but the underlying Egyptian substrate — Thoth mythology, Egyptian concept of divine knowledge (*heka*), the Book of Thoth tradition — is real. The texts are Hellenistic Greek compositions by Egyptian priestly intellectuals who genuinely knew Egyptian religious ideas. The fabrication was the *antiquity claim*, not the Egyptian content.
 
 ## Refs
 1. Fowden, G. (1986). *The Egyptian Hermes*. Cambridge UP.
 2. Copenhaver, B.P. (1992). *Hermetica*. Cambridge UP.
 3. Yates, F.A. (1964). *Giordano Bruno and the Hermetic Tradition*. Chicago UP.
 4. Ebeling, F. (2007). *The Secret History of Hermes Trismegistus*. Cornell UP.
+5. Casaubon, Isaac. (1614). *De Rebus Sacris et Ecclesiasticis Exercitationes XVI*. London. (primary source for the redating)

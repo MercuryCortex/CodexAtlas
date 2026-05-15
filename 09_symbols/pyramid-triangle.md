@@ -46,6 +46,9 @@ cross-symbol-edges:
   - target: "latin-cross"
     type: "structural-parallel"
     notes: "Both the pyramid and the Latin cross are vertical cosmological symbols: the cross maps the horizontal world of the living against the vertical axis of the divine; the pyramid maps the same axis in three dimensions. Both appear in funerary/resurrection contexts"
+  - target: "vesica-piscis"
+    type: "structural-parallel"
+    notes: "The vesica piscis (intersection of two equal circles) generates the equilateral triangle through its geometry — the two radii and the connecting chord form a perfect equilateral triangle. This is a foundational sacred-geometry relation: the vesica is the 'womb' from which the triangle (and subsequently all regular polygons) are derived. Documented in Gothic cathedral geometry and Masonic lodge design (the 47th Proposition of Euclid in Masonic ritual)."
 refs:
   - title: "The Egyptian Pyramids: A Comprehensive Illustrated Reference"
     author: "Lehner, Mark"
@@ -121,14 +124,32 @@ The **unfinished state** is theologically significant: the pyramid without its c
 
 Whether the Founding Fathers who approved the design intended Masonic symbolism is debated — but the iconographic chain (Egyptian pyramid form + Christian Providence eye + Masonic unfinished-work theology) is real regardless of individual intent.
 
+## The pyramid form across cultures: independent development
+
+The most important historiographic caution in pyramid-symbolism studies: **the pyramidal form appeared independently in multiple civilizations with no documented Egyptian transmission**:
+
+- **Maya and Aztec pyramids** (250–900 CE Mesoamerican; pre-Columbian context) — stepped temples (Tikal, Teotihuacan, Chichen Itza) functioning as sacred mountains (*teocalli* = "house of god"), astronomical observatories, and sacrificial platforms. These are independently-developed sacred-mountain theologies, not Egyptian-influenced.
+- **Nubian pyramids** (700 BCE–350 CE, Meroitic) — ARE Egyptian-influenced (the Kushite pharaohs of the 25th Dynasty deliberately adopted Egyptian pyramid form), but are narrower and steeper than Egyptian models. This is the **one genuine non-Egyptian pyramid tradition with documented Egyptian transmission**.
+- **Cambodian temple mountains** (Angkor Wat, 12th c. CE) — stepped pyramid-form as Mount Meru (the cosmic mountain of Hindu cosmology). Independent of Egypt; developed from Indian-Hindu architectural theology transmitted via sea routes to Southeast Asia.
+- **Borobudur, Java** (8th–9th c. CE) — a massive stepped pyramid-form Buddhist stupa. Independent of Egypt; the pyramid-shape as cosmic mountain (Buddhist *cakravala* model) developed within Indian Buddhist architectural tradition.
+
+The pyramid form as "sacred mountain" is a near-universal architectural intuition — the shape of a mountain IS a triangle/pyramid, so any tradition that wants to build a sacred mountain will build a pyramid. This does not indicate Egyptian influence; it indicates that the pyramid is the natural architectural form of the mountain-as-cosmos concept.
+
+**MASSIVE WIN finding**: The one thing that IS specifically Egyptian is the **solar-ascent theology** encoded in the angle and the pyramidion — the specific religious reading of the pyramid as "petrified sunbeam allowing the dead pharaoh to ascend to Re's barque" (documented in Pyramid Texts). Every other tradition with pyramidal architecture has a *different* theology (mountain, platform for sacrifice, stupa/dharma-body, etc.). The pyramid form converges; the theology diverges. The Egyptian pyramid is theologically unique even as it shares its geometric form with the rest of the world.
+
+Source: Lehner, Mark. *The Complete Pyramids*. Thames & Hudson, 1997. (Tier 1)
+
 ## Cross-tradition summary
 
-| Tradition | Triangle/Pyramid meaning |
-|---|---|
-| Egyptian Old Kingdom | Petrified sunbeam; pharaoh's ascent to Re/Osiris |
-| Pythagorean / Neoplatonist | First perfect polygon; emblem of the cosmic triad |
-| Hermetic | Geometric map of the soul's ascent from matter to spirit |
-| Christian | Trinity emblem; Eye of God within a triangle |
-| Alchemical | Upward triangle = Fire/Spirit; key to the hexagram |
-| Masonic | Unfinished pyramid = human work awaiting divine completion |
-| US civic / modern | Great Seal; dollar bill; "New Order of the Ages" |
+| Tradition | Triangle/Pyramid meaning | Status |
+|---|---|---|
+| Egyptian Old Kingdom | Petrified sunbeam; pharaoh's ascent to Re/Osiris | Source |
+| Nubian/Meroitic | Egyptian pyramid form adopted by Kushite pharaohs | documented transmission |
+| Maya/Aztec | Sacred mountain (*teocalli*); astronomical platform | independent convergence |
+| Hindu/Cambodian | Mount Meru architectural embodiment | independent convergence |
+| Pythagorean / Neoplatonist | First perfect polygon; emblem of the cosmic triad | Greek reception |
+| Hermetic | Geometric map of the soul's ascent from matter to spirit | Greco-Egyptian synthesis |
+| Christian | Trinity emblem; Eye of God within a triangle | independent development |
+| Alchemical | Upward triangle = Fire/Spirit; key to the hexagram | medieval synthesis |
+| Masonic | Unfinished pyramid = human work awaiting divine completion | 18th-c. Egyptophilia |
+| US civic / modern | Great Seal; dollar bill; "New Order of the Ages" | Masonic-Christian synthesis |

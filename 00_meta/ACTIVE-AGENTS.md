@@ -86,19 +86,29 @@ _Hand-maintained. Each agent currently working in the vault appends a claim bloc
 - Build: **2156 nodes · 12,801 edges · 3.0% dead-link** (commit 5f54567)
 - Last edit: `00_meta/STATUS.md`
 
-## sonnet-egypt-symbols-hermetic-1 — content / Egyptian symbol upgrades + Hermetic corpus wiring — started 2026-05-15 — **IN-FLIGHT**
+## sonnet-egypt-symbols-hermetic-1 — content / Egyptian symbol upgrades + Hermetic corpus wiring — started 2026-05-15 — **FINISHED 2026-05-15**
 - Owning: `09_symbols/djed-pillar.md` (upgrade), `09_symbols/obelisk.md` (upgrade), `09_symbols/pyramid-triangle.md` (upgrade), `09_symbols/ankh.md` (upgrade), `09_symbols/scarab-khepri.md` (upgrade), `03_deities/hermes-trismegistus.md` (enhance), `02_documents/_phase-3-hellenistic-second-temple/phase-3-021-hermetic-corpus-earliest.md` (wire-check)
 - Goal: Upgrade Egyptian symbol nodes with cross-tradition investigation; enhance Hermes Trismegistus with full Ficino transmission chain + Casaubon analysis; wire Thoth→Hermes Trismegistus→Renaissance pipeline
-- Status: in-flight
+- Status: finished
+- Delivered:
+  - **`djed-pillar.md`** — added [[axis-mundi]] cross-symbol-edge + Vedic skambha parallel (Atharva Veda 10.7–8); cross-tradition summary table; Raising of Djed → resurrection-enacted structural parallel documented
+  - **`obelisk.md`** — added [[axis-mundi]] to mentioned-in wiring (body already comprehensive)
+  - **`pyramid-triangle.md`** — added [[vesica-piscis]] cross-symbol-edge; full independent-development section (Maya/Aztec/Nubian/Cambodian/Borobudur) with MASSIVE WIN: Egyptian solar-ascent theology is unique even as pyramid form is universal; expanded cross-tradition table with transmission-status column
+  - **`ankh.md`** — added Western alternative spirituality adoption section (Goth/New Age/Black Power/vampire fiction); trajectory analysis: ankh vs. swastika migration comparison
+  - **`scarab-khepri.md`** — added 5-step theological logic section documenting the entomological observation → cosmic theology chain; one of the most elegant examples of analogical theology in any tradition
+  - **`hermes-trismegistus.md`** — added full Ficino transmission chain (Thoth ~2600 BCE → 1463 Ficino → Bruno/Dee/Paracelsus → Rosicrucianism → Freemasonry → modern esotericism); Casaubon 1614 paradox (dating accepted, Hermeticism survived); Casaubon 1614 primary source ref added
+  - **`phase-3-021-hermetic-corpus-earliest.md`** — wired [[tradition-renaissance-hermeticism]], [[tradition-hermeticism]], [[marsilio-ficino]], [[giordano-bruno]], [[isaac-casaubon]], [[event-ficino-corpus-hermeticum-translation-1463]], [[event-casaubon-redates-hermetica-1614]] into influences field
+- Build: **2224 nodes · 12,942 edges · 0 YAML errors**
 - Last edit: `00_meta/ACTIVE-AGENTS.md`
 
 ---
 
-## sonnet-egyptian-deities-1 — content / Egyptian big-five deity MASSIVE WIN upgrades — started 2026-05-15 — **IN-FLIGHT**
+## sonnet-egyptian-deities-1 — content / Egyptian big-five deity MASSIVE WIN upgrades — started 2026-05-15 — **FINISHED 2026-05-15**
 - Owning: `03_deities/osiris.md` (upgrade stub→full), `03_deities/isis.md` (upgrade stub→full), `03_deities/thoth.md` (upgrade stub→full), `03_deities/horus.md` (upgrade stub→full), `03_deities/ma-at.md` (upgrade metadata→full)
 - Goal: Append full investigation body text to all five root Egyptian deity nodes; document cross-tradition MASSIVE WIN chains (Osiris→Dionysus/Christ; Isis→Demeter/Madonna; Thoth→Hermes→Hermes Trismegistus→Renaissance; Horus→Chaoskampf/divine-kingship; Ma'at→Logos/Sophia/Rita/Dharma/Tao); upgrade all five to status: full
-- Status: in-flight
-- Last edit: `00_meta/ACTIVE-AGENTS.md`
+- Status: finished
+- Delivered: All 5 nodes upgraded to `status: full`. **Osiris** (4 MASSIVE WIN): Osiris→Dionysus ancient equation [Herodotus 2.42 + Plutarch DIO 35 Tier-1]; Frazer dying-rising thesis + Smith 1978 critique both documented; Osiris/Christ as parallel-not-transmission; Judgment Hall as world's earliest graduated moral afterlife (~2400 BCE, 42 assessors, Negative Confession). **Isis** (4 MASSIVE WIN): Isis→Demeter [Herodotus 2.59]; Isis Mysteries→Roman Empire via Apuleius Book 11 initiation account; Isis Lactans→Nursing Madonna iconographic transmission [Frankfurter 1998 workshop evidence]; Isis Myrionymos universalist theology→Philo→John 1. **Thoth** (4 MASSIVE WIN): Thoth→Hermes equation + Hermopolis renaming; Hermes Trismegistus + Casaubon 1614 dating documented; Ficino 1463→Renaissance chain; divine-scribe archetype 6-tradition table (Thoth/Nabu/Chitragupta/Orunmila/Suriel/Recording Angels). **Horus** (4 MASSIVE WIN): Horus-as-pharaoh = oldest royal incarnation theology (~3200 BCE); Horus/Set→Chaoskampf 8-tradition table; Eye of Horus wedjat lunar connection; Massey/Higgins Horus-Christ fabrication documented as Tier-4 pseudoscholarship [Ehrman 2012 + Hurtado 2003]. **Ma'at** (3 MASSIVE WIN): Ma'at→Philo Logos→John 1 transmission chain; four-tradition cosmic-order convergence (Ma'at/Rita/Asha/Tao); Weighing of the Heart = world's first detailed 42-category moral judgment (~2400 BCE, ~800 years before Ten Commandments). Build: 2222 nodes · 12,935 edges · 0 YAML errors (committed in sonnet-egyptian-solar-1 sweep d3bdd33).
+- Last edit: `00_meta/STATUS.md`
 
 ---
 

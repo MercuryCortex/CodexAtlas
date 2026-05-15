@@ -120,6 +120,18 @@ Augustine deploys the scarab — **specifically the dung-beetle rolling itself i
 
 The passage is **astonishing on multiple levels**: a North African Christian Father (himself only a few generations removed from the African pagan tradition that still venerated Khepri-Ra in Egyptian-Christian-syncretic religion at this exact period — Frankfurter 1998 documents extensive Late-Antique Egyptian Christianity-Egyptian-religion syncretism) **deploying the central Egyptian self-generating-solar deity-symbol as a Christological metaphor in the highest patristic-Latin theological register**.
 
+## The theological logic: why a dung beetle is the sun
+
+The Egyptian theological selection of *Scarabaeus sacer* as the emblem of the rising sun is one of the most elegant examples of **analogical theology** in any tradition — theology built by watching nature and reading cosmic meaning into natural behavior:
+
+1. **Observable fact**: The dung beetle rolls a ball of dung along the ground, steering it in a consistent direction (often solar-oriented, as ethological studies have confirmed — scarab beetles use the sun and stars to navigate their path in a straight line; Dacke et al. 2013 *Current Biology*).
+2. **Egyptian analogical reading**: The sun rolls across the sky. A beetle rolls a ball across the ground. Therefore: the beetle is the agent that rolls the sun.
+3. **Second observable fact**: New beetles emerge from the dung ball with no visible parentage (they hatch from eggs laid within the ball, but this was not visible to the naked eye). The scarab appears to generate itself from nothing.
+4. **Theological reading**: The sun appears each morning self-generated, emerging from the darkness of the underworld. Therefore: the self-generating beetle = the self-generating sun.
+5. **Name theology**: Egyptian scribes named the scarab-god *Khepri*, from the verb *ḫpr* — "to come into being," "to become," "to exist." This is the Egyptian ontological verb — the same verb used in the Heliopolitan cosmogony for the self-creation of Atum from the primordial waters. The scarab's name IS the statement of his theology: he is "the one who comes into being," self-generated.
+
+The result is a complete theological argument built from entomology: **self-generation observed in nature = self-generation as cosmic principle = the divine attribute of the sun at dawn**. This is analogical theology at its most rigorous and elegant — comparable in structural precision to the Vedic Agni theology (fire on earth = fire in the sky; the priest's fire IS the sun's fire) and the Stoic pneuma theology (breath in the body = pneuma in the cosmos).
+
 ## Cross-family appearance
 
 ### MASSIVE-win: the Augustinian appropriation as cross-field-boundary edge
