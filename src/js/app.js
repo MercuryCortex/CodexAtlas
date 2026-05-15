@@ -4714,6 +4714,36 @@ function _atlasBuildStyle() {
           'line-width': ['interpolate', ['linear'], ['zoom'], 3, 0.25, 7, 0.55],
           'line-opacity': 0.55
         }
+      },
+      // Basemap place-name labels (countries → regions → cities). The places
+      // source-layer carries a per-feature `min_zoom` field telling us when each
+      // place is meant to appear. We respect that by setting text-opacity to 0
+      // until the current zoom catches up to that feature's min_zoom, then fade.
+      // (User 2026-05-15: "the map needs areas of names".)
+      { id: 'basemap-place-labels', source: 'protomaps', 'source-layer': 'places', type: 'symbol',
+        layout: {
+          'text-field': ['get', 'name'],
+          'text-font': ['Noto Sans Regular'],
+          'text-size': [
+            'interpolate', ['linear'], ['zoom'],
+            2, 9, 6, 11, 10, 13, 12, 15
+          ],
+          'text-allow-overlap': false,
+          'text-letter-spacing': 0.05,
+          'text-transform': 'uppercase',
+          // Major cities (low min_zoom) render first and claim placement
+          'symbol-sort-key': ['coalesce', ['get', 'min_zoom'], 12]
+        },
+        paint: {
+          'text-color': _atlasToken('--text-2', '#8b8e98'),
+          'text-halo-color': _atlasToken('--bg-0', '#07090f'),
+          'text-halo-width': 1.5,
+          'text-opacity': [
+            'case',
+            ['<=', ['coalesce', ['get', 'min_zoom'], 12], ['zoom']], 0.7,
+            0
+          ]
+        }
       }
     ]
   };
