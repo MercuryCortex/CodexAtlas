@@ -2,11 +2,39 @@
 type: theme
 id: "prisca-theologia"
 name: "Prisca Theologia (Ancient Theology)"
-aka: ["philosophia perennis (Renaissance sense)", "ancient theology", "primordial revelation"]
+aka: ["philosophia perennis (Renaissance sense)", "ancient theology", "primordial revelation", "primordial theology", "ancient wisdom"]
 category: "theological"
+period-earliest: -300
+period-latest: 1700
+region: "Alexandria; Florence; Rome; Paris; Amsterdam"
+key-figures:
+  - "[[marsilio-ficino]]"
+  - "[[giovanni-pico-della-mirandola]]"
+  - "[[gemistos-plethon]]"
+  - "[[giordano-bruno]]"
+  - "[[cornelius-agrippa]]"
+  - "[[athanasius-kircher]]"
+  - "[[hermes-trismegistus-pseudepigraphic-author]]"
+documents:
+  - "[[phase-6-001-ficino-pimander]]"
+  - "[[phase-6-002-ficino-theologia-platonica]]"
+  - "[[phase-6-003-pico-oration-900-conclusions]]"
+  - "[[phase-6-004-pico-heptaplus-conclusiones-cabalisticae]]"
+  - "[[phase-6-006-reuchlin-de-arte-cabalistica]]"
+  - "[[phase-6-009-agrippa-de-occulta-philosophia]]"
+  - "[[phase-6-014-bruno-de-la-causa-eroici-furori]]"
+  - "[[phase-6-024-kircher-oedipus-aegyptiacus]]"
+traditions:
+  - "[[tradition-neoplatonism]]"
+  - "[[tradition-freemasonry]]"
+parallels:
+  - "[[hermetic-transmission-chain]]"
+  - "[[neoplatonic-henosis]]"
+  - "[[ma-at-logos-sophia]]"
+  - "[[perennial-philosophy]]"
 appearances: ["[[phase-6-001-ficino-pimander]]", "[[phase-6-002-ficino-theologia-platonica]]", "[[phase-6-003-pico-oration-900-conclusions]]", "[[phase-6-004-pico-heptaplus-conclusiones-cabalisticae]]", "[[phase-6-006-reuchlin-de-arte-cabalistica]]", "[[phase-6-009-agrippa-de-occulta-philosophia]]", "[[phase-6-014-bruno-de-la-causa-eroici-furori]]", "[[phase-6-024-kircher-oedipus-aegyptiacus]]"]
-deity-instances: ["[[hermes-trismegistus]]"]
-status: "stub"
+deity-instances: ["[[hermes-trismegistus-pseudepigraphic-author]]"]
+status: "metadata"
 refs:
   - title: "The Ancient Theology: Studies in Christian Platonism from the Fifteenth to the Eighteenth Century"
     author: "Walker, D.P."

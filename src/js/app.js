@@ -602,6 +602,8 @@ function selectNode(id, opensDetail) {
   d3.selectAll('.node-circle').classed('selected', d => d && d.id === id);
 }
 window.selectNode = selectNode;
+// Expose lookup map for the card-Alchemy board (read-only consumer).
+window.NODES_BY_ID = NODES_BY_ID;
 
 // ============================================================
 // DETAIL
@@ -4223,6 +4225,34 @@ const ALCHEMY_PRESETS = [
       'marsilio-ficino', 'event-ficino-corpus-hermeticum-translation-1463',
       'event-casaubon-redates-hermetica-1614', 'isaac-casaubon',
       'helena-blavatsky', 'fernando-pessoa',
+    ],
+  },
+  {
+    id: 'hermetic-full-transmission-spine',
+    category: 'hermetic',
+    name: 'Hermetic Spine: Alexandria → Florence → Modern',
+    headline: 'The complete 2,300-year Hermetic transmission chain: Alexandrian synthesis (Ammonius/Plotinus/Corpus Hermeticum) → Byzantine preservation → Plethon\'s 1439 Florence lectures → Ficino\'s 1463 translation → Pico/Agrippa/Bruno → Casaubon\'s 1614 rupture → Rosicrucian manifestos → Masonic ritual → Yates\'s 1964 rediscovery.',
+    picks: [
+      'event-school-of-alexandria-300bce-415ce',
+      'gemistos-plethon', 'event-council-of-florence-1439',
+      'marsilio-ficino', 'event-ficino-corpus-hermeticum-translation-1463',
+      'giovanni-pico-della-mirandola', 'giordano-bruno',
+      'event-bruno-execution-1600', 'event-casaubon-redates-hermetica-1614',
+      'phase-6-018-rosicrucian-manifestos',
+      'hermetic-transmission-chain', 'prisca-theologia',
+    ],
+  },
+  {
+    id: 'council-of-florence-platonic-spark',
+    category: 'hermetic',
+    name: 'Council of Florence: The Platonic Spark (1439)',
+    headline: 'The 1438–1439 Council of Ferrara-Florence as the ignition point of the Hermetic Renaissance: Gemistos Plethon\'s lectures on Plato convince Cosimo de\' Medici to found the Platonic Academy — triggering Ficino\'s translation of the Corpus Hermeticum 24 years later. Byzantine Neoplatonism transplanted to Italian soil.',
+    picks: [
+      'gemistos-plethon', 'event-council-of-florence-1439',
+      'cosimo-de-medici', 'marsilio-ficino',
+      'event-ficino-corpus-hermeticum-translation-1463',
+      'giovanni-pico-della-mirandola',
+      'prisca-theologia',
     ],
   },
   {

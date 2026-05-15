@@ -2,11 +2,21 @@
 type: theme
 id: "perennial-philosophy"
 name: "Perennial Philosophy"
-aka: ["philosophia perennis", "perennialism", "Traditionalism"]
+aka: ["philosophia perennis", "perennialism", "Traditionalism", "Sophia Perennis", "Ancient Wisdom", "Ageless Wisdom"]
 category: "theological"
+period-earliest: 1540
+period-latest: 2000
+region: "Global"
+key-figures:
+  - "[[marsilio-ficino]]"
+  - "[[frances-yates]]"
+parallels:
+  - "[[prisca-theologia]]"
+  - "[[neoplatonic-henosis]]"
+  - "[[hermetic-transmission-chain]]"
 appearances: ["[[phase-6-001-ficino-pimander]]", "[[phase-6-002-ficino-theologia-platonica]]", "[[phase-7-005-isis-unveiled]]", "[[phase-7-006-secret-doctrine]]", "[[phase-7-009-outline-of-esoteric-science]]", "[[phase-7-026-autobiography-of-a-yogi]]"]
 deity-instances: []
-status: "stub"
+status: "metadata"
 refs:
   - title: "Against the Modern World: Traditionalism and the Secret Intellectual History of the Twentieth Century"
     author: "Sedgwick, Mark"
