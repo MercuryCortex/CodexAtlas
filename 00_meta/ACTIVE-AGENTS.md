@@ -76,6 +76,14 @@ _Hand-maintained. Each agent currently working in the vault appends a claim bloc
 - Build: **2156 nodes · 12,801 edges · 3.0% dead-link** (commit 5f54567)
 - Last edit: `00_meta/STATUS.md`
 
+## sonnet-egyptian-deities-1 — content / Egyptian big-five deity MASSIVE WIN upgrades — started 2026-05-15 — **IN-FLIGHT**
+- Owning: `03_deities/osiris.md` (upgrade stub→full), `03_deities/isis.md` (upgrade stub→full), `03_deities/thoth.md` (upgrade stub→full), `03_deities/horus.md` (upgrade stub→full), `03_deities/ma-at.md` (upgrade metadata→full)
+- Goal: Append full investigation body text to all five root Egyptian deity nodes; document cross-tradition MASSIVE WIN chains (Osiris→Dionysus/Christ; Isis→Demeter/Madonna; Thoth→Hermes→Hermes Trismegistus→Renaissance; Horus→Chaoskampf/divine-kingship; Ma'at→Logos/Sophia/Rita/Dharma/Tao); upgrade all five to status: full
+- Status: in-flight
+- Last edit: `00_meta/ACTIVE-AGENTS.md`
+
+---
+
 Format:
 
 ```
