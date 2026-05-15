@@ -5234,10 +5234,11 @@ VIEWS.atlas = {
           _atlasMap.getCanvas().style.cursor = '';
           _atlasHoveredId = null;
           hideTooltip();
-          // Sticky-select: if a node was click-locked, restore its trails on
-          // mouseleave instead of clearing. Empty-click on the map clears the lock.
-          if (_atlasLockedId) _atlasShowHoverTrails(_atlasLockedId);
-          else _atlasHideHoverTrails();
+          // Persistent connections (user 2026-05-15: "don't cut the connection,
+          // add connections like the Pantheon — only when we REALLY click
+          // outside we break the connection"). DO NOT clear trails here. The
+          // last-shown trails stay visible until either (a) the user hovers a
+          // different node (which replaces them) or (b) empty-click clears.
         });
         _atlasMap.on('click', 'atlas-nodes-circles', (ev) => {
           if (!ev.features || !ev.features.length) return;
