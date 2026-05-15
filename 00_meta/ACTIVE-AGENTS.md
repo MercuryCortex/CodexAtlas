@@ -18,11 +18,14 @@ Format:
 
 ---
 
-## 🚦 In-flight claims at a glance (current as of 2026-05-15 ~02:00 — empty after `opus-map-1` finish)
+## 🚦 In-flight claims at a glance (current as of 2026-05-15 ~02:45)
 
 | Handle | Scope tag | Owns (high level) | Started |
 |---|---|---|---|
-| _no agents in flight — vault at rest_ | | | |
+| `sonnet-triage-1` | meta / triage + coordination (TEMPORARY — read-only session) | Diagnosed opus-foundation-1 failure; reverted broken app.js + app.css; tagged checkpoint; wrote HOW-TO-OPEN.md; updated ACTIVE-AGENTS | 2026-05-15 02:45 |
+
+**⚠️ opus-foundation-1 — ABANDONED (reverted 2026-05-15 ~02:45)**
+The floating-panel pivot was left uncommitted and partially broken. Changes have been **discarded** via `git restore src/js/app.js src/styles/app.css`. The working tree is clean at `checkpoint-map-v2-working` (git tag). See audit below before any new agent picks this up.
 
 **Last session's finishers (full claim blocks in [`agents-archive/2026-05-14.md`](agents-archive/2026-05-14.md) for prior batches; this session's claim block below):**
 
@@ -173,3 +176,60 @@ Format:
 
 - **Status:** finished
 - **Last edit:** this claim block close-out + cleanup of stale `FEATURES.atlasMap` flag.
+
+---
+
+## sonnet-triage-1 — Session triage + coordination — started 2026-05-15 ~02:45 — **FINISHED**
+
+- **Model:** Claude Sonnet 4.6 (not Opus — cheaper triage model, read-mostly session)
+- **Role:** TEMPORARY. This is not a content or feature agent. John asked for a status check after opus-foundation-1 got stuck and left the site broken. I am a one-session diagnostic and stabilization agent.
+
+### What I found
+
+**opus-foundation-1 was in-flight and uncommitted.** Its changes to `src/js/app.js` and `src/styles/app.css` implemented a floating-panel layout pivot (grid → position:fixed panels with backdrop-blur) but were never committed. The working tree had these changes sitting loose, breaking:
+- Pantheon SVG sizing (old `width:100%; height:100%` rule removed; replacement `position:absolute; width:auto` has edge cases on SVG elements in some browsers)
+- ResizeObserver no longer fires on panel toggle (canvas is now always full-bleed; panel collapse doesn't resize it)
+
+**opus-foundation-1's scope was also incomplete.** It claimed: era-range slider, STATE.atlasEra→STATE.eraWindow rename, per-view geometry tuning. None of those were done. Only the layout pivot was partially applied.
+
+### What I did
+
+1. **Tagged git checkpoint** — `checkpoint-map-v2-working` on commit `00a2630`. This is the safe revert point: all views working, MapLibre atlas working, Pantheon working. **Future agents: if anything breaks, `git checkout checkpoint-map-v2-working -- src/js/app.js src/styles/app.css` restores the last known-good app code.**
+2. **Reverted broken uncommitted changes** — `git restore src/js/app.js src/styles/app.css`. App is now back to the checkpoint state.
+3. **Fixed `.claude/launch.json` paths** — the launch.json in the worktree had a stale path to a deleted worktree. Fixed both copies.
+4. **Updated ACTIVE-AGENTS.md** (this file) — marked opus-foundation-1 as abandoned, registered myself.
+5. **Created `HOW-TO-OPEN.md`** at the vault root — plain-English, no terminal knowledge required. John is non-technical and needed a step-by-step to open the app.
+
+### Key findings for future agents (READ THIS)
+
+**Workflow constraint — John cannot run dev servers himself.** He needs a double-clickable launcher (`start-atlas.command` exists for this) and a plain-English guide. Any changes to the server port, start command, or URL must be reflected in `HOW-TO-OPEN.md` at the vault root.
+
+**Chrome extension is NOT required for app development.** `Claude in Chrome` is only for agent-internal visual verification. The app itself is browser-agnostic (HTML/CSS/JS, no Node runtime). John opens it in any browser at `http://localhost:8742`. Agents can develop without Chrome extension; they just need to test via code analysis or ask John to verify in his browser.
+
+**The floating-panel layout pivot (opus-foundation-1) is a valid direction but needs to be done properly.** If a future `opus-foundation-2` picks this up, the key bugs to fix before committing are:
+  1. Give `svg#svg` explicit `width: 100%; height: 100%` within its absolutely-positioned container (not `width:auto; height:auto`) so `clientWidth`/`clientHeight` are reliable for d3.
+  2. Switch `_canvasResizeObs` to observe `svg#svg` instead of `#canvas` (canvas never resizes in full-bleed layout).
+  3. Remove stale `body.footer-collapsed { grid-template-rows: 1fr 0px; }` rule.
+  4. Test ALL five SVG views (Pantheon, Timeline, Documents, Alchemy, Scripture) before committing — not just Atlas.
+
+**Git versioning is now in place** (since opus-housekeeper-2 on 2026-05-14). Use `git tag -a <name> -m "<reason>"` to mark checkpoints after each major batch. There is NO remote; git is local-only.
+
+**The serve.py server must be running for the app to work.** It provides HTTP Range support for the PMTiles basemap. Python's built-in server (`python -m http.server`) will NOT work — the Atlas map will be blank.
+
+### Current vault state (at triage close)
+
+- **1767 nodes** · **10,561 edges** · **3.5% dead-link ratio**
+- Git tag `checkpoint-map-v2-working` = last known-good state
+- `app.js` + `app.css` reverted to that checkpoint
+- All views functional: Pantheon ✓, Atlas (MapLibre) ✓, Timeline ✓, Scripture ✓, Documents ✓, Alchemy ✓
+
+### What is NOT done (open for next agents)
+
+The things opus-foundation-1 claimed but never started are all still open:
+- Hash-based URL router (`opus-router-1`) — #1 priority per prior sessions
+- Era-range slider replacing era `<select>` dropdowns
+- Timeline retypography (`opus-timeline-1`)
+- Floating-panel layout pivot (if still desired — `opus-foundation-2`)
+
+- **Status:** finished
+- **Last edit:** this claim block + `HOW-TO-OPEN.md` creation + git tag + revert.
