@@ -18,11 +18,12 @@ Format:
 
 ---
 
-## 🚦 In-flight claims at a glance (current as of 2026-05-15 — sonnet-abraham-moses-1 finished)
+## 🚦 In-flight claims at a glance (current as of 2026-05-15 — sonnet-abraham-moses-2 finished)
 
 | Handle | Scope tag | Owns (high level) | Started |
 |---|---|---|---|
 | `sonnet-abraham-moses-1` | content / Abraham-Moses gap deep research | 3 new nodes (theme-lex-talionis-covenant-code, event-mitanni-kingdom-c1500-1340-bce, theme-habiru-hebrew-origins) + Amarna Letters edge upgrades — **FINISHED 2026-05-15** | 2026-05-15 |
+| `sonnet-abraham-moses-2` | content / Abraham-Moses gap full expansion | 10 new nodes: event-hyksos-period, event-hyksos-expulsion-1550-bce, event-amarna-period-1353-1336, theme-akhenaten-moses-monotheism-thesis, theme-exodus-hyksos-thesis, theme-el-yahweh-merger, theme-baal-set-syncretism, el-shaddai (deity), document-kuntillet-ajrud-inscriptions, ahmose-i (person) — **FINISHED 2026-05-15** | 2026-05-15 |
 
 ---
 
