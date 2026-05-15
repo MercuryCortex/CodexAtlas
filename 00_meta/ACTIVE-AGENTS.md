@@ -368,8 +368,9 @@ The things opus-foundation-1 claimed but never started are all still open:
 
 ---
 
-## sonnet-persian-wiring-1 — cross-tradition wiring / Persian theological spine — started 2026-05-15
-- Owning: `06_themes/frashokereti-cosmic-renovation.md`, `06_themes/tikkun-olam.md` (read-only, already linked), `03_deities/saoshyant.md`, `03_deities/muhammad-al-mahdi.md`, `07_traditions/tradition-manichaeism.md`, `07_traditions/tradition-bogomilism.md`, `07_traditions/tradition-catharism.md`, `07_traditions/tradition-zoroastrianism.md`, `07_traditions/tradition-judaism.md`, `07_traditions/tradition-essenes.md`
+## sonnet-persian-wiring-1 — cross-tradition wiring / Persian theological spine — started 2026-05-15 — **FINISHED 2026-05-15**
+- Owning: `06_themes/frashokereti-cosmic-renovation.md`, `03_deities/saoshyant.md`, `03_deities/muhammad-al-mahdi.md`, `07_traditions/tradition-manichaeism.md`, `07_traditions/tradition-bogomilism.md`, `07_traditions/tradition-catharism.md`, `07_traditions/tradition-zoroastrianism.md`, `07_traditions/tradition-judaism.md`, `07_traditions/tradition-essenes.md`
 - Goal: Wire cross-tradition edges for the Persian theological spine — frashokereti↔tikkun-olam, saoshyant↔mahdi+occultation, manichaeism→bogomilism→catharism chain, persian-period-injection links to 3 tradition nodes
-- Status: in-progress
-- Last edit: 00_meta/ACTIVE-AGENTS.md
+- Status: finished
+- Delivered: 9 existing nodes upgraded with MASSIVE-WIN cross-tradition sections; no new nodes; frashokereti↔tikkun-olam structural identity documented; Saoshyant↔Hidden Imam 6-row parallel table; Manichaeism downstream chain YAML + Augustine hinge documented; Bogomil Council of Saint-Félix transmission event; Cathar 2,400-year Zoroaster→Albigensian-Crusade chain; persian-period-injection wired to zoroastrianism/judaism/essenes. Build: **2089 nodes · 12,424 edges · 2.8% dead-link** (committed in acc2ea7 sweep).
+- Last edit: 00_meta/STATUS.md
