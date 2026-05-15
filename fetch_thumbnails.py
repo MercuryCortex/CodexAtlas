@@ -215,6 +215,11 @@ OVERRIDES = {
     "vine-grape": "Grape",
     "wheat-grain": "Wheat",
     "yin-yang": "Taijitu",
+    # opus-symbols-3-serpent additions (2026-05-15) — 4 new cross-tradition serpent symbols
+    "naga-serpent": "Nāga",
+    "uraeus": "Uraeus",
+    "feathered-serpent": "Feathered Serpent",
+    "nehushtan": "Nehushtan",
 }
 
 

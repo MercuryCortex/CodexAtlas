@@ -29,6 +29,7 @@ _Auto-generated 2026-05-15. Status claims not meeting the bar in methodology.md.
 | `ptahil` | deity | status:metadata but only 1 refs |
 | `ixchel` | deity | status:metadata but only 1 refs |
 | `freyja` | deity | status:metadata but only 1 refs |
+| `minerva-roman` | deity | status:metadata but only 1 refs |
 | `hel` | deity | status:metadata but only 1 refs |
 | `baron-samedi` | deity | status:metadata but only 1 refs |
 | `kane-hawaiian` | deity | status:metadata but only 1 refs |

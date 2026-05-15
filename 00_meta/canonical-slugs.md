@@ -17,20 +17,23 @@ canonical-slug
 ## Currently resolved slugs (auto-seeded — every existing file)
 
 
-### deity (341 nodes)
+### deity (412 nodes)
 
 - `abathur`
 - `adonis-hellenistic`
 - `aeshma`
 - `agni`
 - `ahura-mazda`
+- `akshobhya`
 - `al-haqq`
 - `al-uzza`
 - `allah`
 - `allat`
 - `allatu-akkadian`
 - `almaqah`
+- `amaterasu`
 - `amitabha`
+- `amoghasiddhi`
 - `amun`
 - `amun-ra`
 - `an-sumerian`
@@ -54,11 +57,13 @@ canonical-slug
 - `asha-vahishta`
 - `asherah`
 - `ashur`
+- `asmodeus`
 - `astar-aksumite`
 - `astarte-canaanite`
 - `atar`
 - `aten`
 - `athena`
+- `atlas-titan`
 - `attis`
 - `atum`
 - `avalokitesvara`
@@ -72,25 +77,34 @@ canonical-slug
 - `baron-samedi`
 - `bastet`
 - `bau-sumerian`
+- `beelzebub`
 - `beher`
 - `belet-seri-akkadian`
 - `belial`
 - `bergelmir`
 - `bes`
 - `bhairava`
+- `bragi`
 - `brahma`
+- `brigid`
+- `ceres-roman`
+- `cernunnos`
 - `chac`
 - `chaos-primordial`
 - `christ-pantokrator`
 - `coatlicue`
 - `cybele`
+- `dagda`
 - `dagon`
 - `damballa`
 - `damkina`
 - `dattatreya`
+- `dazhbog`
 - `demeter`
 - `demiurge-gnostic`
 - `demiurge-platonic`
+- `diana-roman`
+- `dievas-baltic`
 - `dionysus`
 - `dionysus-mystery`
 - `druj`
@@ -109,13 +123,17 @@ canonical-slug
 - `erzulie`
 - `eshu`
 - `father-of-greatness`
+- `fenrir`
+- `fortuna`
 - `freyja`
 - `freyr`
 - `frigg`
+- `fuxi`
 - `gabriel-archangel`
 - `gadreel`
 - `gaia`
 - `ganesha`
+- `garuda`
 - `geb`
 - `geshtinanna`
 - `gilgamesh-nephilim`
@@ -124,14 +142,17 @@ canonical-slug
 - `gonggong`
 - `guanyin`
 - `gula-akkadian`
+- `hachiman`
 - `hades`
 - `hahyah-nephilim`
 - `hanuman`
 - `harihara`
+- `hariti`
 - `hathor`
 - `hayyi-rabbi`
 - `head-of-days`
 - `hebat`
+- `heimdall`
 - `hekate`
 - `hel`
 - `helios`
@@ -148,8 +169,11 @@ canonical-slug
 - `hubal`
 - `huitzilopochtli`
 - `iacchus`
+- `iapetus`
+- `idunn`
 - `illuyanka`
 - `inanna-sumerian`
+- `inari`
 - `indra`
 - `inti`
 - `io-matua-kore`
@@ -158,6 +182,10 @@ canonical-slug
 - `isis-hellenistic`
 - `itzamna`
 - `ixchel`
+- `izanagi`
+- `izanami`
+- `jade-emperor`
+- `janus`
 - `jesus-christ-deity`
 - `jesus-the-splendor`
 - `jormungandr`
@@ -176,6 +204,7 @@ canonical-slug
 - `krishna-deity-vaishnava`
 - `kronos`
 - `ku`
+- `kubera`
 - `kukulkan`
 - `kumarbi`
 - `lahmu-lahamu`
@@ -187,12 +216,16 @@ canonical-slug
 - `loki`
 - `lono`
 - `lotan`
+- `lucifer`
 - `lugalbanda`
+- `lugh`
 - `lugus`
 - `maat`
 - `mahakala`
 - `mahaway-nephilim`
 - `mahrem`
+- `maitreya`
+- `manannan-mac-lir`
 - `manat`
 - `manda-d-hayyi`
 - `manjushri`
@@ -202,13 +235,18 @@ canonical-slug
 - `mary-theotokos`
 - `mastema`
 - `matsya-avatar`
+- `mazu`
 - `meder`
 - `mercury-roman`
 - `metatron`
+- `michael-archangel`
 - `mictlantecuhtli`
+- `minerva-roman`
 - `mithra-zoroastrian`
 - `mithras-roman`
 - `mitra-vedic`
+- `mnemosyne`
+- `mokosh`
 - `mot`
 - `mullissu-akkadian`
 - `mut`
@@ -221,6 +259,7 @@ canonical-slug
 - `nefertem`
 - `neith`
 - `nephthys`
+- `neptune-roman`
 - `nergal`
 - `nikkal-akkadian`
 - `nin-gal-sumerian`
@@ -237,33 +276,41 @@ canonical-slug
 - `norea`
 - `nous-hermetic`
 - `nous-plotinus`
+- `nuada`
 - `nun`
 - `nungal`
 - `nur-muhammadi`
 - `nut`
+- `nuwa`
 - `nyx-primordial`
 - `obatala`
 - `odin`
 - `ogun`
 - `ohyah-nephilim`
 - `olodumare`
+- `orunmila`
 - `oshun`
 - `osiris`
 - `oya`
 - `pachamama`
 - `padmasambhava`
 - `pan-greek`
+- `pangu`
 - `papa-legba`
 - `papatuanuku`
+- `parvati`
 - `pele`
 - `penemue`
+- `perkunas`
 - `persephone-greek`
+- `perun`
 - `phanes-protogonos`
 - `poimandres`
 - `poseidon`
 - `prajapati`
 - `prajnaparamita-goddess`
 - `prince-of-darkness-manichaean`
+- `prometheus`
 - `ptah`
 - `ptahil`
 - `purusha`
@@ -275,7 +322,9 @@ canonical-slug
 - `rama`
 - `ranginui`
 - `raphael-archangel`
+- `ratnasambhava`
 - `remiel-archangel`
+- `rhea`
 - `rudra-shiva-early`
 - `ruha`
 - `sabazios`
@@ -286,6 +335,7 @@ canonical-slug
 - `satan-christian`
 - `satanael`
 - `saturn-roman`
+- `saule`
 - `sekhmet`
 - `selene`
 - `semyaza`
@@ -296,7 +346,10 @@ canonical-slug
 - `shekhinah`
 - `shiva`
 - `shu`
+- `sif`
 - `siris-akkadian`
+- `sita`
+- `skadi`
 - `skanda-karthikeya`
 - `sobek`
 - `sol-invictus`
@@ -306,6 +359,8 @@ canonical-slug
 - `sraosha`
 - `sun-goddess-of-arinna`
 - `surya`
+- `susanoo`
+- `svarog`
 - `tane`
 - `tangaroa`
 - `tara`
@@ -314,22 +369,30 @@ canonical-slug
 - `teshub`
 - `tezcatlipoca`
 - `the-amesha-spentas`
+- `the-ashvins`
 - `the-elect-one-enochic`
+- `the-erinyes`
+- `the-evil-god-cathar`
 - `the-good-god-cathar`
 - `the-lady-ecclesia-hermas`
+- `the-moirai`
 - `the-monad-gnostic`
+- `the-morrigan`
 - `the-one-plotinus`
 - `the-pleroma`
 - `the-sefirot`
 - `the-shepherd-angel-of-repentance`
 - `the-trinity`
 - `the-world-soul`
+- `themis`
 - `thor`
 - `thoth`
+- `three-pure-ones`
 - `tiamat`
 - `tian-heaven`
 - `tlaloc`
 - `tonatiuh`
+- `tsukuyomi`
 - `tu-maori`
 - `typhon`
 - `tyr`
@@ -339,9 +402,11 @@ canonical-slug
 - `usha`
 - `utu-shamash`
 - `vainamoinen`
+- `vairocana`
 - `vajradhara`
 - `vajrasattva`
 - `varuna`
+- `veles`
 - `venus-roman`
 - `verethragna`
 - `vesta`
@@ -350,18 +415,24 @@ canonical-slug
 - `vishnu-deity`
 - `vohu-manah`
 - `vritra`
+- `vulcan-roman`
 - `wadd`
 - `wakan-tanka`
+- `xi-wangmu`
 - `yahweh`
 - `yaldabaoth`
 - `yam`
+- `yama-vedic`
+- `yamantaka`
 - `yashoda`
 - `yemoja`
+- `yima-iranian`
 - `yima-jamshid`
+- `ymir`
 - `zagreus`
 - `zeus`
 
-### document (341 nodes)
+### document (345 nodes)
 
 - `phase-1-001-kesh-temple-hymn`
 - `phase-1-002-pyramid-texts`
@@ -649,6 +720,7 @@ canonical-slug
 - `phase-6-037-voynich-manuscript`
 - `phase-6-038-teresa-interior-castle`
 - `phase-6-039-dark-night-of-the-soul`
+- `phase-6-040-bandarra-trovas`
 - `phase-7-001-book-of-mormon`
 - `phase-7-002-kitab-i-iqan`
 - `phase-7-003-kitab-i-aqdas`
@@ -685,6 +757,9 @@ canonical-slug
 - `phase-7-034-blavatsky-atlantis-root-race`
 - `phase-7-035-cayce-atlantis-readings`
 - `phase-7-036-hancock-fingerprints-of-the-gods`
+- `phase-7-037-pessoa-mensagem`
+- `phase-7-038-guenon-symbols-sacred-science`
+- `phase-7-039-gandra-da-face-oculta-2009`
 - `phase-7-040-walatta-petros-hagiography`
 - `phase-8-001-popol-vuh`
 - `phase-8-002-codex-borgia`
@@ -705,7 +780,7 @@ canonical-slug
 - `phase-8-017-santeria-lucumi`
 - `phase-8-018-kalevala`
 
-### event (130 nodes)
+### event (134 nodes)
 
 - `event-aboriginal-stolen-generations-1905-1969`
 - `event-ahmad-gragn-invasion-1529`
@@ -719,6 +794,7 @@ canonical-slug
 - `event-bacchanalia-suppression-186-bce`
 - `event-bar-kokhba-revolt-132-136`
 - `event-battle-of-actium-31-bce`
+- `event-battle-of-alcacer-quibir-1578`
 - `event-bhakti-movement-c-700-1700`
 - `event-black-sea-deluge-hypothesis-1997`
 - `event-borobudur-construction-c-750-825`
@@ -796,6 +872,7 @@ canonical-slug
 - `event-linear-b-decipherment-1952`
 - `event-luther-95-theses-1517`
 - `event-lyon-martyrs-177`
+- `event-mafra-monument-construction-1717-1755`
 - `event-magdala-expedition-1868`
 - `event-mahabodhi-temple-construction-c-260-bce-onwards`
 - `event-malta-temples-c-3600-2500-bce`
@@ -806,6 +883,7 @@ canonical-slug
 - `event-nero-persecution-64`
 - `event-new-atheism-2004-2010`
 - `event-nine-saints-mission-c480`
+- `event-order-of-christ-foundation-1319`
 - `event-parliament-of-world-religions-1893`
 - `event-parthenon-construction-447-432-bce`
 - `event-perpetua-felicity-203`
@@ -813,6 +891,7 @@ canonical-slug
 - `event-pittsburgh-platform-1885`
 - `event-pizarro-conquest-of-inca-1533`
 - `event-priory-of-sion-fabrication`
+- `event-quinta-da-regaleira-construction-1904-1910`
 - `event-quranic-manuscript-finds-2015-onward`
 - `event-ramakrishna-mission-founded-1897`
 - `event-ras-shamra-excavation-1928`
@@ -838,7 +917,7 @@ canonical-slug
 - `event-wilhelmsbad-convent-1782`
 - `event-zagwe-lalibela-churches-c1200`
 
-### person (573 nodes)
+### person (581 nodes)
 
 - `aaron`
 - `abba-garima`
@@ -877,6 +956,7 @@ canonical-slug
 - `anselm-of-canterbury`
 - `antiochus-iv-epiphanes`
 - `anton-lavey`
+- `antonio-carvalho-monteiro`
 - `antony-the-great`
 - `apelles`
 - `aphrahat`
@@ -893,6 +973,7 @@ canonical-slug
 - `arius`
 - `arthur-darby-nock`
 - `asanga`
+- `ashurbanipal`
 - `asoka-maurya`
 - `athanasius`
 - `athanasius-kircher`
@@ -1007,10 +1088,12 @@ canonical-slug
 - `ezekiel`
 - `fazlur-rahman`
 - `fentos-meqabyan`
+- `fernando-pessoa`
 - `firmicus-maternus`
 - `frances-yates`
 - `francisco-clavigero`
 - `frumentius`
+- `fulcanelli`
 - `g-i-gurdjieff`
 - `gabriel-archangel`
 - `galawdewos-emperor`
@@ -1026,6 +1109,7 @@ canonical-slug
 - `giordano-bruno`
 - `giovanni-pico-della-mirandola`
 - `giyorgis-of-sagla`
+- `goncalo-annes-bandarra`
 - `gorakhnath`
 - `graham-hancock`
 - `gregory-of-nazianzus`
@@ -1181,6 +1265,7 @@ canonical-slug
 - `mani`
 - `manikkavacakar`
 - `manu`
+- `manuel-j-gandra`
 - `marcion-of-sinope`
 - `marcus-aurelius-emperor`
 - `marcus-the-magician`
@@ -1307,6 +1392,7 @@ canonical-slug
 - `ramanuja`
 - `ramprasad-sen`
 - `rashid-rida`
+- `rene-guenon`
 - `reza-aslan`
 - `robert-fludd`
 - `rowan-williams`
@@ -1324,6 +1410,7 @@ canonical-slug
 - `sargon-of-akkad`
 - `saturninus`
 - `sayyid-qutb`
+- `sebastian-i-portugal`
 - `seela-meqabyan`
 - `seneca`
 - `septimius-severus`
@@ -1414,7 +1501,7 @@ canonical-slug
 - `ziusudra`
 - `zosimos-of-panopolis`
 
-### symbol (56 nodes)
+### symbol (61 nodes)
 
 - `ankh`
 - `asclepian-rod`
@@ -1426,11 +1513,13 @@ canonical-slug
 - `chi-rho-labarum`
 - `coptic-cross`
 - `crescent-moon-star`
+- `cross-order-of-christ`
 - `cross-pattee-templar`
 - `dharmachakra`
 - `eye`
 - `eye-of-horus-wedjat`
 - `faravahar`
+- `feathered-serpent`
 - `fish-ichthys`
 - `greek-cross`
 - `halo-nimbus`
@@ -1446,6 +1535,8 @@ canonical-slug
 - `mithraic-cross`
 - `monas-hieroglyphica`
 - `mount-ararat`
+- `naga-serpent`
+- `nehushtan`
 - `noahs-ark`
 - `ouroboros`
 - `pelican-in-piety`
@@ -1468,12 +1559,13 @@ canonical-slug
 - `thyrsus`
 - `tree-of-life`
 - `triskelion`
+- `uraeus`
 - `vesica-piscis`
 - `vine-grape`
 - `wheat-grain`
 - `yin-yang`
 
-### theme (227 nodes)
+### theme (228 nodes)
 
 - `364-day-solar-calendar`
 - `adam-kadmon`
@@ -1557,6 +1649,7 @@ canonical-slug
 - `ethiopic-canon-broad`
 - `fall-of-humanity`
 - `falsafa`
+- `fifth-empire-quinto-imperio`
 - `final-judgment`
 - `five-ways`
 - `flood-motif`
@@ -1703,7 +1796,7 @@ canonical-slug
 - `wisdom-personified`
 - `world-axis`
 
-### tradition (99 nodes)
+### tradition (105 nodes)
 
 - `tradition-african-traditional`
 - `tradition-anthroposophy`
@@ -1753,6 +1846,7 @@ canonical-slug
 - `tradition-jainism`
 - `tradition-judaism`
 - `tradition-jungian-depth-psychology`
+- `tradition-jyotisha-indian-astrology`
 - `tradition-kabbalah`
 - `tradition-knights-templar`
 - `tradition-mahayana-buddhism`
@@ -1769,10 +1863,12 @@ canonical-slug
 - `tradition-neoplatonism`
 - `tradition-new-age`
 - `tradition-norse`
+- `tradition-order-of-christ`
 - `tradition-ordo-novi-templi`
 - `tradition-oriental-orthodox`
 - `tradition-orphic`
 - `tradition-polynesian`
+- `tradition-portuguese-hermeticism`
 - `tradition-pre-islamic-arabian`
 - `tradition-protestantism`
 - `tradition-pure-land-buddhism`
@@ -1783,6 +1879,7 @@ canonical-slug
 - `tradition-rosicrucianism`
 - `tradition-santeria-lucumi`
 - `tradition-scientology`
+- `tradition-sebastianism`
 - `tradition-shia-islam`
 - `tradition-shinto`
 - `tradition-sikhism`
@@ -1796,9 +1893,11 @@ canonical-slug
 - `tradition-thelema`
 - `tradition-theosophy`
 - `tradition-theravada-buddhism`
+- `tradition-traditionalism-perennialist`
 - `tradition-vajrayana-buddhism`
 - `tradition-vedic-hinduism`
 - `tradition-vodou-haitian`
+- `tradition-western-astrology`
 - `tradition-wicca-modern-pagan`
 - `tradition-yazidi`
 - `tradition-yoruba-ifa`
@@ -1811,13 +1910,14 @@ canonical-slug
 
 | Refs | Dead target | Suggested canonical (existing) |
 |---:|---|---|
-| 4 | `ragnarok-apocalyptic` | `apocalyptic-revelation` |
-| 4 | `primordial-darkness` | `primordial-waters` |
+| 4 | `ragnarok-apocalyptic` | `apocalyptic-cosmic-warfare` |
+| 4 | `primordial-darkness` | `eros-primordial` |
 | 4 | `messianic-revelation` | `messianic-secret` |
-| 4 | `genealogical-cosmogony` | `hermetic-cosmogony` |
-| 4 | `evolutionary-cosmogony` | `hermetic-cosmogony` |
-| 3 | `the-evil-god-cathar` | `the-good-god-cathar` |
-| 3 | `phase-2-005-1-2-kings` | `phase-2-008-homeric-epics` |
-| 3 | `messianic-genealogy` | `messianic-secret` |
+| 4 | `genealogical-cosmogony` | `mesoamerican-cosmogony` |
+| 4 | `evolutionary-cosmogony` | `mesoamerican-cosmogony` |
+| 3 | `phase-2-005-1-2-kings` | `phase-2-003-atharva-veda` |
+| 3 | `messianic-genealogy` | `solomonic-genealogy` |
 | 2 | `yam-canaanite` | `astarte-canaanite` |
+| 2 | `tradition-minoan-religion` | `tradition-ordo-novi-templi` |
+| 2 | `tradition-eastern-orthodoxy` | `tradition-ordo-novi-templi` |
 | 2 | `phase-1-013-babylonian-theodicy` | `phase-1-018-gudea-cylinders` |
