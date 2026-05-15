@@ -12,7 +12,7 @@ gender: "masculine"
 role: "sea-god / lord of the otherworld islands; gatekeeper of Tír na nÓg; gives heroes magical equipment and otherworld access; king of the Isle of Man"
 attributes: ["the wave-horse Enbarr (rides land and sea)", "cloak of invisibility/storm", "the sword Fragarach ('the Answerer')", "boat Sguabuisce ('Wave-Sweeper')", "the silver branch (otherworld-passport — music from it causes sleep and otherworld access)", "apples of immortality", "the three cranes of denial and churlishness (gatekeeping symbols)"]
 attested-in: ["Voyage of Bran (Immram Brain)", "Voyage of Máel Dúin", "Echtra Cormaic (Adventure of Cormac)", "Mabinogion (as Manawydan fab Llŷr)", "Lebor Gabála Érenn"]
-equivalents: ["[[poseidon-greek]] (sea-god function)", "[[neptune-roman]] (sea-god function)", "[[njord]] (Norse sea-god parallel)", "[[charon]] (psychopomp / ferryman function — structural parallel)"]
+equivalents: ["[[poseidon]] (sea-god function)", "[[neptune-roman]] (sea-god function)", "Njörðr/Njord (Norse sea-god parallel)", "Charon (psychopomp / ferryman function — structural parallel)"]
 key-themes: ["[[celtic-otherworld]]", "[[finisterre-end-of-world]]"]
 syncretic-edges:
   - target: "poseidon-greek"

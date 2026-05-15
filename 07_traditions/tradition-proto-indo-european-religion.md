@@ -134,7 +134,7 @@ Applied to the Lusitanian vault cluster: Reue (sky-sovereignty, function 1) + Ba
 - [[tradition-celtic]] — the Atlantic Celtic manifestation
 - [[tradition-norse]] — the Northern Germanic manifestation
 - [[tradition-vedic-hinduism]] — the oldest surviving IE religious system
-- [[zeus-greek]] / [[jupiter-roman]] — the *Dyeus Pḥtḗr* reflexes
+- [[zeus]] / [[jupiter]] — the *Dyeus Pḥtḗr* reflexes
 - [[world-axis]] — the PIE cosmic axis (*axis mundi*) theology
 - [[nabia]] — PIE river goddess spine
 

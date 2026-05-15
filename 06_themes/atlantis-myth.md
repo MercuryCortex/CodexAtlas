@@ -5,7 +5,7 @@ name: "The Atlantis Myth — From Tartessos to the Western Esoteric Tradition"
 aka: ["Atlantis", "Plato's Atlantis", "Insula Atlantis", "the Sunken Continent", "Thule", "Lemuria (later variant)"]
 traditions-where-attested: ["Greek religion (Plato, Timaeus/Critias)", "Neoplatonism (Proclus's commentary on Timaeus)", "Hermeticism", "Rosicrucianism", "Theosophy (Blavatsky)", "Anthroposophy (Steiner)", "Nazi occultism (Ariosophists)", "New Age spirituality", "Tartessian archaeology (Schulten's hypothesis)"]
 documents-attested: ["[[phase-2-001-plato-timaeus]]", "[[phase-2-002-plato-critias]]"]
-deities-associated: ["[[poseidon-greek]] (Plato: Poseidon founded Atlantis)", "[[melqart]] (indirect — Gades as the template for the western ocean civilization)"]
+deities-associated: ["[[poseidon]] (Plato: Poseidon founded Atlantis)", "[[melqart]] (indirect — Gades as the template for the western ocean civilization)"]
 parent-theme: "[[world-axis]]"
 child-themes: []
 status: "stub"

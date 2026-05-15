@@ -15,7 +15,7 @@ child-of: []
 consort: []
 attributes: ["thunder", "the hilltop and high places (consistent with atmospheric domain)", "the eagle (conventional attribute of IE sky-gods)"]
 attested-in: ["Latin votive inscriptions from Beira Alta region: CIL II 738 (Reue Marandigui), CIL II 435 (Reue Vakaleo), and others", "Approximately 10 inscriptions with various epithets"]
-equivalents: ["[[taranis]] (Gaulish thunder deity — cognate tradition)", "[[thor]] (Norse — parallel IE thunderer)", "[[zeus-greek]] / [[jupiter-roman]] (sky-king-thunderer type)", "[[parjanya]] (Vedic rain god — possible etymological cognate)", "[[perun]] (Slavic thunderer)"]
+equivalents: ["Taranis (Gaulish thunder deity — cognate tradition)", "[[thor]] (Norse — parallel IE thunderer)", "[[zeus]] / [[jupiter]] (sky-king-thunderer type)", "Parjanya (Vedic rain god — possible etymological cognate)", "[[perun]] (Slavic thunderer)"]
 syncretic-edges:
   - target: "taranis"
     type: "structural-parallel"
