@@ -4113,6 +4113,32 @@ const INVESTIGATIONS = [
       'event-borobudur-construction-c-750-825',
     ],
   },
+  {
+    id: 'self-limiting-absolute',
+    name: 'The Self-Limiting Absolute',
+    flag: 'alert',
+    status: 'active',
+    opened: '2026-05-15',
+    headline: 'Across 6 traditions, the absolute voluntarily contracts or conceals itself to make contingent reality possible. The structural precision of this move — Śiva\'s āṇava-mala, Luria\'s tzimtzum, Palamas\'s essence/energy distinction, Eriugena\'s divine darkness — across traditions with no confirmed contact is the deepest cross-tradition pattern in the vault. The Palamas / Trika parallel (essence = Śiva, energy = Śakti) is an alert-grade structural isomorphism.',
+    threads: [
+      { label: 'Palamas ↔ Trika — ALERT', note: 'Gregory Palamas (1296–1359): God\'s essence unknowable, only "energies" accessible. Structurally identical to Śiva (pure consciousness) / Śakti (dynamic manifestation). Same move, same precision, no confirmed contact. Palamas is in vault.', tier: 'parallel' },
+      { label: 'Tzimtzum ↔ Āṇava-mala', note: 'Luria\'s tzimtzum (~1570): God withdraws to create space for world. Trika\'s āṇava-mala: Śiva contracts infinite consciousness into individual limited self. Both posit self-limiting as the generative act. Tzimtzum is in vault.', tier: 'parallel' },
+      { label: 'Eriugena ↔ Vasugupta (~825 CE)', note: 'John Scotus Eriugena (810–877 CE, Ireland): God does not know himself through categories — divine darkness is the highest knowledge. Vasugupta (~825 CE, Kashmir): Śiva-consciousness is self-luminous but self-concealing in individual minds. Same decade, opposite ends of Eurasia, no known contact.', tier: 2 },
+      { label: 'Mulla Sadra culmination', note: 'al-Biruni (1017) → Suhrawardi → Ibn Arabi → Mulla Sadra (1571–1636): "wujūd" (being) as self-differentiating light — all four nodes now in vault. Completable chain: Shaiva non-dualism arriving at Shia philosophy.', tier: 2 },
+      { label: 'Pseudo-Dionysius → apophatic spine', note: 'Ps-Dionysius (5th–6th c.) → Eriugena → Eckhart: a documented chain of divine-darkness theology through the Latin West. Sanderson\'s documented Śaiva → Buddhist tantra transmission means this apophatic chain runs parallel to a Kashmir-influenced Buddhist stream.', tier: 1 },
+      { label: 'Boehme Ungrund ↔ Ein-Sof', note: 'Jakob Boehme\'s "Ungrund" (groundless ground, 1612) and Kabbalistic Ein-Sof (infinite without limit) are structural twins: the absolute as self-concealing non-ground prior to all determination. Boehme was almost certainly influenced by Lurianic Kabbalah circulating in his milieu.', tier: 2 },
+      { label: 'Nagarjuna śūnyatā — the counterpoint', note: 'Nagarjuna\'s Mādhyamaka (~150 CE): śūnyatā (emptiness) — no ground at all, including no "self-luminous consciousness" ground. This is the rival to Trika\'s consciousness-as-ground. The debate between these two non-dual frameworks never ended and runs through Tibetan Buddhism to this day.', tier: 'parallel' },
+    ],
+    seeds: [
+      'gregory-palamas', 'john-scotus-eriugena', 'pseudo-dionysius-the-areopagite',
+      'jakob-boehme', 'mulla-sadra',
+      'nagarjuna', 'naropa-tilopa',
+      'tradition-kabbalah', 'ein-sof', 'tzimtzum',
+      'apophatic-mysticism',
+      'tradition-kashmir-shaivism', 'lal-ded', 'al-biruni',
+      'ibn-arabi', 'meister-eckhart',
+    ],
+  },
 ];
 
 // Custom user-saved trees live in localStorage under this key. Shape: an array of
