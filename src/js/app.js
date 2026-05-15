@@ -5072,6 +5072,10 @@ VIEWS.atlas = {
           const n  = _atlasNodesById.get(id);
           if (!n) return;
           _atlasMap.getCanvas().style.cursor = 'pointer';
+          if (_atlasHoveredId !== id) {
+            _atlasHoveredId = id;
+            _atlasShowHoverTrails(id);  // also dims/highlights underneath circle + spider layers
+          }
           showTooltip(
             `${tooltipThumb(n)}<div class="ttitle">${n.title}</div>
              <div class="tmeta">${n.type}${n.family ? ' · ' + n.family : ''}${n.geo.label ? ' · ' + n.geo.label : ''}</div>
@@ -5079,7 +5083,9 @@ VIEWS.atlas = {
         });
         _atlasMap.on('mouseleave', 'atlas-spider-circles', () => {
           _atlasMap.getCanvas().style.cursor = '';
+          _atlasHoveredId = null;
           hideTooltip();
+          _atlasHideHoverTrails();
         });
         _atlasMap.on('click', 'atlas-spider-circles', (ev) => {
           if (!ev.features || !ev.features.length) return;
@@ -5215,20 +5221,25 @@ function _atlasShowHoverTrails(id) {
     });
   }
   source.setData({ type: 'FeatureCollection', features });
-  // Dim non-related circles via data-driven paint expression.
+  // Dim non-related circles on BOTH the main node layer AND the spider layer (when
+  // the spider is open) via data-driven paint expressions. This makes the hover
+  // behave consistently whether you're hovering a regular dot or a spider point.
+  const hotIds = [id, ...neighborIds];
+  const opacityExpr = ['case', ['in', ['get', 'id'], ['literal', hotIds]], 1, 0.18];
+  const strokeExpr  = [
+    'case',
+    ['==', ['get', 'id'], id], _atlasToken('--gold', '#d4a55a'),
+    ['in', ['get', 'id'], ['literal', neighborIds]], _atlasToken('--gold-soft', '#a87f3e'),
+    'rgba(255,255,255,0.20)'
+  ];
   if (_atlasMap.getLayer && _atlasMap.getLayer('atlas-nodes-circles')) {
-    const hotIds = [id, ...neighborIds];
-    _atlasMap.setPaintProperty('atlas-nodes-circles', 'circle-opacity', [
-      'case',
-      ['in', ['get', 'id'], ['literal', hotIds]], 1,
-      0.18
-    ]);
-    _atlasMap.setPaintProperty('atlas-nodes-circles', 'circle-stroke-color', [
-      'case',
-      ['==', ['get', 'id'], id], _atlasToken('--gold', '#d4a55a'),
-      ['in', ['get', 'id'], ['literal', neighborIds]], _atlasToken('--gold-soft', '#a87f3e'),
-      'rgba(255,255,255,0.20)'
-    ]);
+    _atlasMap.setPaintProperty('atlas-nodes-circles', 'circle-opacity', opacityExpr);
+    _atlasMap.setPaintProperty('atlas-nodes-circles', 'circle-stroke-color', strokeExpr);
+  }
+  if (_atlasMap.getLayer && _atlasMap.getLayer('atlas-spider-circles')) {
+    _atlasMap.setPaintProperty('atlas-spider-circles', 'circle-opacity', opacityExpr);
+    // Spider layer already uses --gold as default stroke; brighten further on hover.
+    _atlasMap.setPaintProperty('atlas-spider-circles', 'circle-stroke-color', strokeExpr);
   }
 }
 function _atlasHideHoverTrails() {
@@ -5238,6 +5249,10 @@ function _atlasHideHoverTrails() {
   if (_atlasMap.getLayer && _atlasMap.getLayer('atlas-nodes-circles')) {
     _atlasMap.setPaintProperty('atlas-nodes-circles', 'circle-opacity', 0.95);
     _atlasMap.setPaintProperty('atlas-nodes-circles', 'circle-stroke-color', 'rgba(255,255,255,0.20)');
+  }
+  if (_atlasMap.getLayer && _atlasMap.getLayer('atlas-spider-circles')) {
+    _atlasMap.setPaintProperty('atlas-spider-circles', 'circle-opacity', 0.95);
+    _atlasMap.setPaintProperty('atlas-spider-circles', 'circle-stroke-color', _atlasToken('--gold', '#d4a55a'));
   }
 }
 
