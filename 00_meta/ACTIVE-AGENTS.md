@@ -4,11 +4,20 @@ _Hand-maintained. Each agent currently working in the vault appends a claim bloc
 
 ---
 
-## sonnet-p4-fix-1 — integrity / Phase 4 numbering collision fix — started 2026-05-15 — **IN-FLIGHT**
-- Owning: `02_documents/_phase-4-late-antiquity/phase-4-061-lotus-sutra.md` (rename → 101), `phase-4-062-avatamsaka-sutra.md` (rename → 102), `phase-4-063-lankavatara-sutra.md` (rename → 103), `phase-4-064-sukhavativyuha-larger.md` (rename → 104), `phase-4-065-bhagavata-purana.md` (DELETE — misplaced; correct node is phase-5-050), `phase-4-083-apuleius-metamorphoses-book-11.md` (move to 105), `phase-4-090-apuleius-metamorphoses-bk-11.md` (DELETE — duplicate), `phase-4-092-avatamsaka-sutra.md` (DELETE — duplicate), `phase-4-093-lankavat-sutra.md` (DELETE — duplicate), `phase-4-094-larger-sukhavativyuha-sutra.md` (DELETE — duplicate)
-- Goal: Fix Phase 4 sequence-number collisions: Mahayana sutras (061–064) collide with Apostolic Fathers; 083 collides Apuleius with Mashafa-Kidan; delete 5 genuine orphaned duplicates
+## sonnet-arabic-aristotle-1 — content / Arabic-Aristotle-Scholasticism transmission chain — started 2026-05-15 — **IN-FLIGHT**
+- Owning: `05_events/event-toledo-translations-1085-1150.md` (NEW), `02_documents/_phase-5-medieval/phase-5-057-ibn-rushd-aristotle-commentaries.md` (NEW)
+- Goal: Toledo School of Translators event node + Ibn Rushd Aristotle commentaries document node; the four Islamic philosopher person nodes (al-kindi, al-farabi, ibn-sina, ibn-rushd) already have full body text covering the transmission chain
 - Status: in-flight
 - Last edit: `00_meta/ACTIVE-AGENTS.md`
+
+---
+
+## sonnet-p4-fix-1 — integrity / Phase 4 numbering collision fix — started 2026-05-15 — **FINISHED 2026-05-15**
+- Owning: `02_documents/_phase-4-late-antiquity/phase-4-061-lotus-sutra.md` (rename → 101), `phase-4-062-avatamsaka-sutra.md` (rename → 102), `phase-4-063-lankavatara-sutra.md` (rename → 103), `phase-4-064-sukhavativyuha-larger.md` (rename → 104), `phase-4-065-bhagavata-purana.md` (DELETE — misplaced; correct node is phase-5-050), `phase-4-083-apuleius-metamorphoses-book-11.md` (move to 105), `phase-4-090-apuleius-metamorphoses-bk-11.md` (DELETE — duplicate), `phase-4-092-avatamsaka-sutra.md` (DELETE — duplicate), `phase-4-093-lankavat-sutra.md` (DELETE — duplicate), `phase-4-094-larger-sukhavativyuha-sutra.md` (DELETE — duplicate)
+- Goal: Fix Phase 4 sequence-number collisions: Mahayana sutras (061–064) collide with Apostolic Fathers; 083 collides Apuleius with Mashafa-Kidan; delete 5 genuine orphaned duplicates
+- Status: finished
+- Delivered: 5 file renames (→ 101/102/103/104/105), 5 file deletions, YAML id: field updates on all renamed files, wikilink updates across 32 files. Build: 0 YAML errors · 12,709 edges. Also fixed P4-08x mashafa-kidan id: prefix to correct phase-4- format.
+- Last edit: `00_meta/STATUS.md`
 
 ---
 
