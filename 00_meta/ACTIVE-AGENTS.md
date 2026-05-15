@@ -18,6 +18,23 @@ Format:
 
 ---
 
+## opus-cleanup-1 + opus-astrology-stub-1 — app-code / UI cleanup + Astrology shell — started 2026-05-15 — **FINISHED 2026-05-15**
+- Owning: src/styles/app.css (.side-tab, .list-pane, .astrology-pane stack), src/js/app.js (D3 alphaMin on Pantheon/Documents/Scripture sims, VIEWS.astrology + renderAstrologyMode + setView cleanup line), index.html (nav entry ♄ Astrology + cache-bust), build_data.py (dup-ID detector, landed via sonnet sweep 67d2d5e)
+- Goal: Fix 3 UI bugs John flagged (invisible sidebar toggle, lists cropped behind collapsed nav, slow Documents/Deities tabs) + stub the Astrology investigative tab with 4-mode pill toolbar (spine / wheel / now / decanic) + add ingestion validator that surfaces silent agent-overwrite losses.
+- Status: finished
+- Delivered:
+  - **#1 fix:** `.side-tab` z-index 101→200, 16×16→22×22, gold-tinted border. Toggle chevron now visible in the collapsed 48-px icon strip (was buried behind nav at z 150).
+  - **#2 fix:** `.list-pane` switched from `inset: 56px 24px 24px` to `calc(var(--eff-nav-w) + 24px)` / `calc(var(--eff-detail-w) + 24px)`. Connections/Themes/Authors/Traditions/All-nodes lists no longer hide their first 24 px behind the sidebar.
+  - **#3 fix:** `.alphaMin(0.015)` added to Pantheon, Documents, Scripture force sims — D3 stops ticking once layout settles instead of running forever. Alchemy untouched (interactive drag depends on hot sim).
+  - **Ingestion validator** in build_data.py:585-700: prints `⚠ DUPLICATE ID ... overwrites ...` per collision; counts now reflect unique nodes, not files scanned. Caught the 4 real silent losses: gabriel-archangel / michael-archangel / muhammad-al-mahdi / padmasambhava (deity ↔ person slug dups). data.js counts: deity 446→442 (now accurate).
+  - **Astrology tab stub (opus-astrology-stub-1):** new nav glyph ♄, VIEWS.astrology with 4-mode pill toolbar; each pill renders a placeholder card describing its planned role. Surfaces 57 astrology-tagged vault nodes already in the data. Ephemeris/chart-geometry math lands in next batches.
+  - Verified in browser at http://localhost:8742 with preview screenshots — sidebar toggle visible in icon strip, Connections list clears the strip with 24-px gap, Astrology pills switch modes correctly.
+- Commits: `fc597f3` (cache-bust), `3d2dce1` (astrology stub), `67d2d5e` (validator, swept by sonnet)
+- Last edit: 00_meta/ACTIVE-AGENTS.md
+- Open gaps: 4 deity-person dup pairs need content decision (which side wins?); Astrology mode bodies are stubs only — pick a build order (recommended: spine → wheel → decanic → now).
+
+---
+
 ## sonnet-deadlink-sweep-3 — content / dead-link closure batch 3 — started 2026-05-15 — **FINISHED 2026-05-15**
 - Owning: `phase-2-005-1-2-kings`, `phase-4-007-new-testament-canon`, `phase-1-013-babylonian-theodicy`, `phidias`, `spyridon-marinatos`, `hyperdiffusionism`, `universal-reformation`, `visionary-alchemical-allegory`
 - Goal: Close 8 dead-links — 3 document redirect stubs + 2 person nodes + 3 theme nodes
