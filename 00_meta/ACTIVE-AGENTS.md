@@ -2068,6 +2068,17 @@ Files: sacred-cauldron.md (NEW) · cerridwen.md (STUB, deity) · bran-the-blesse
 
 ---
 
+## ~~alphabets-complete-1 — completeness audit close — 2026-05-17 — FINISHED~~
+- ~~Owned: `11_alphabets/alphabet-arabic-quran.md` (NEW full), `11_alphabets/alphabet-quran-sacred-language.md` (NEW full)~~
+- ~~Fixed: dead relatedNodes in glyph-data.js (`huruf-muqattaat` → `alphabet-huruf-muqattaat`, `alphabet-proto-sinaitic` → `proto-sinaitic`)~~
+- ~~Added: scriptOnly filter in glyph-viewer.js, hieroglyph block guard, section dividers for 89-sign navigation~~
+- ~~arabic-quran: script as sacred vessel, oral primacy, 28-letter expansion, Dad as theological argument, Ibn Arabi letter-cosmology~~
+- ~~quran-sacred-language: untranslatability doctrine, Dad uniqueness, uncreated Quran theology (Ash'arism), Ptah/Logos/apaurusheya chain~~
+- ~~data.js rebuilt — 41 alphabet entries, 16,900 edges~~
+- ~~Status: FINISHED — commit affd98c~~
+
+---
+
 ## alchemy-concepts-1 — 7 alchemy concept nodes + cross-tradition wiring — IN PROGRESS (2026-05-17)
 - Owns: `12_alchemy/alchemy-ouroboros.md` (NEW), `alchemy-calcination-stages.md` (NEW), `alchemy-vitriol-descent.md` (NEW), `alchemy-conjunction-hieros-gamos.md` (NEW), `alchemy-homunculus.md` (NEW), `alchemy-sulfur-mercury-theory.md` (NEW), `alchemy-kabbalah-alchemy-synthesis.md` (NEW)
 - Also enriches: `alchemy-prima-materia.md`, `alchemy-opus-magnum.md`, `alchemy-nigredo-albedo-rubedo.md` (cross-tradition links only)
