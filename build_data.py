@@ -249,6 +249,7 @@ TRADITION_FAMILY_ORDER = [
     "Roman",
     "Celtic",
     "Norse",
+    "Baltic",
     "Slavic-Finnic",
     # Late-antique sectarian cluster
     "Christian",
