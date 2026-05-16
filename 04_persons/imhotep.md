@@ -19,7 +19,7 @@ events-participated: []
 mentioned-in:
   - "[[phase-3-025-manetho-aegyptiaca]]"
   - "[[phase-4-072-plutarch-de-iside-et-osiride]]"
-status: "metadata"
+status: "full"
 syncretic-edges:
   - target: "step-pyramid-djoser-saqqara"
     type: "built-by"
