@@ -13,10 +13,10 @@
 //   [✓] Hover trail — dim non-neighbors, highlight edges (sigma reducer)
 //   [✓] Colored bezier edges per type (theme.js palette)
 //   [✓] Tangential family rim labels (DOM overlay synced to sigma camera)
-//   [ ] Mode dropdown (deities/authors/symbols/events/monuments)
-//   [ ] labels: hub/all/off toggle
-//   [ ] Ego-focus button
-//   [ ] Family-legend click-to-filter
+//   [✓] Mode dropdown (deities/authors/symbols/events/monuments)
+//   [✓] labels: hub/all/off toggle
+//   [✓] Ego-focus button
+//   [✓] Family-legend click-to-filter
 //   [ ] Family-filter + tier-overlay parity
 //
 // REUSES from existing modules:
@@ -26,6 +26,10 @@
 //   window.selectNode / showTooltip / hideTooltip
 // ============================================================
 (function () {
+  // Module-level state: persists across render calls so mode/label choices
+  // survive filter changes (legend clicks, mode dropdown changes).
+  let _currentMode  = 'deities'; // 'deities'|'authors'|'symbols'|'events'|'monuments'
+
   // FAMILY-WEDGE polar layout — same math as the main D3 Pantheon
   // (app.js around line 975), so the angular allocation is identical.
   function computeWedgePositions(deities, families) {
@@ -90,21 +94,40 @@
       });
     });
 
-    return { positions, wedges, familyOrder };
+    return { positions, wedges, familyOrder, famByName };
   }
 
-  // Edge-type color palette — mirrors theme.js + main Pantheon's edge styling.
+  // Edge-type color palette — based on real types in data.js (audit caught
+  // that ~69% of deity↔deity edges fell through to grey because the map was
+  // built from theme.js convention rather than vault reality. Frequency-counts
+  // from data.js (deity-relevant subset):
+  //   syncretic (586) parallel-motif (1018) parallel-form (329)
+  //   influenced-by (506) influences (463) consort (~128)
+  //   child-of / parent-of  attests / attested-in / mentioned-in
   const EDGE_COLOR = {
-    'attested-in':       '#d4a55a',  'authored':          '#a87bb5',
-    'attributed-author': '#a87bb5',  'originated':        '#a87bb5',
-    'syncretized-with':  '#6e8c6b',  'parallels':         '#5a9a8f',
-    'cognate-of':        '#5a9a8f',  'cited-in':          '#aabac5',
-    'mentioned-in':      '#aabac5',  'influenced':        '#c25450',
-    'influenced-by':     '#c25450',  'descends-from':     '#c25450',
-    'documents-affected':'#5a6cc4',  'preserved-by':      '#5a6cc4',
-    'theme':             '#e0a850',  'child-of':          '#a87bb5',
-    'consort-of':        '#a87bb5',  'parent-of':         '#a87bb5',
-    'attests':           '#d4a55a'
+    // SYNCRETIC / PARALLEL family — green to teal
+    'syncretic':         '#6e8c6b', 'syncretized-with':  '#6e8c6b',
+    'parallel-motif':    '#5a9a8f', 'parallels':         '#5a9a8f',
+    'parallel-form':     '#5a9a8f', 'cognate-of':        '#5a9a8f',
+    // INFLUENCE family — red
+    'influenced':        '#c25450', 'influenced-by':     '#c25450',
+    'influences':        '#c25450', 'descends-from':     '#c25450',
+    // ATTESTATION family — gold
+    'attested-in':       '#d4a55a', 'attests':           '#d4a55a',
+    'mentioned-in':      '#aabac5', 'cited-in':          '#aabac5',
+    'key-figure':        '#d4a55a',
+    // AUTHORSHIP family — purple
+    'authored':          '#a87bb5', 'attributed-author': '#a87bb5',
+    'originated':        '#a87bb5',
+    // KINSHIP family — purple-lighter
+    'consort':           '#c9a5d4', 'consort-of':        '#c9a5d4',
+    'child-of':          '#c9a5d4', 'parent-of':         '#c9a5d4',
+    'sibling-of':        '#c9a5d4',
+    // DOCUMENT-AFFECT family — blue
+    'documents-affected':'#5a6cc4', 'preserved-by':      '#5a6cc4',
+    'affects-tradition': '#5a6cc4',
+    // THEME — amber
+    'theme':             '#e0a850', 'has-theme':         '#e0a850'
   };
   const DEFAULT_EDGE_COLOR = '#7a8090';
 
@@ -121,9 +144,10 @@
   // DOM overlay for tangential family rim labels — sigma doesn't natively
   // do curved/rotated SVG text, so we place absolutely-positioned divs
   // and sync them to sigma's camera on each render.
-  function buildRimLabels(rootEl, wedges, sigmaRenderer) {
+  function buildRimLabels(rootEl, wedges, sigmaRenderer, familyFilter) {
     const overlay = document.createElement('div');
     overlay.className = 'ph2-rim-overlay';
+    overlay.setAttribute('aria-hidden', 'true');
     rootEl.appendChild(overlay);
 
     const Router = 540;
@@ -131,8 +155,10 @@
     labelEntries.forEach(w => {
       const el = document.createElement('div');
       el.className = 'ph2-rim-label';
+      el.dataset.family = w.name;
       el.textContent = w.name;
       el.style.color = w.color;
+      if (familyFilter && w.name !== familyFilter) el.style.opacity = '0.18';
       // Stash world-space anchor + angle so the sync function can re-position
       const ang = w.center;
       el._wx = (Router + 50) * Math.cos(ang);
@@ -159,7 +185,37 @@
     }
     sync();
     sigmaRenderer.on('afterRender', sync);
-    return { overlay, sync };
+    return overlay;
+  }
+
+  // ----- node filter by mode -----
+  function filterNodesByMode(mode) {
+    const DATA     = window.VAULT_DATA || { nodes: [], edges: [] };
+    const EDGES    = DATA.edges || [];
+    const NODES_BY_ID = window.NODES_BY_ID || {};
+    let authorSet = null;
+    if (mode === 'authors') {
+      authorSet = new Set();
+      const authorEdgeTypes = new Set(['authored', 'attributed-author', 'originated', 'key-figure']);
+      EDGES.forEach(e => {
+        if (!authorEdgeTypes.has(e.type)) return;
+        const candidateId = (e.type === 'key-figure') ? e.target : e.source;
+        const cand = NODES_BY_ID[candidateId];
+        if (cand && cand.type === 'person') authorSet.add(candidateId);
+      });
+    }
+    return (DATA.nodes || []).filter(n => {
+      if (mode === 'deities')   return n.type === 'deity';
+      if (mode === 'authors')   return n.type === 'person' && authorSet && authorSet.has(n.id);
+      if (mode === 'symbols')   return n.type === 'symbol';
+      if (mode === 'events')    return n.type === 'event';
+      if (mode === 'monuments') {
+        const tags = Array.isArray(n.tags) ? n.tags
+          : (typeof n.tags === 'string' ? n.tags.split(/[,\s]+/) : []);
+        return tags.includes('monument') || (n.category || '').toLowerCase() === 'monument';
+      }
+      return false;
+    });
   }
 
   // ----- main render -----
@@ -228,6 +284,17 @@
     let _hoverId = null;
     let _selectedId = null;
 
+    // INTERACTIVITY STATE — drives the reducers below.
+    //   _labelsMode:  'hub' (top-N by degree, default) | 'all' | 'off'
+    //   _egoFocus:    when true + a node is selected, ONLY its 1-hop neighbourhood renders
+    //   _familyFilter: family name string (null = no filter) — set by family-legend clicks
+    let _labelsMode = 'hub';
+    let _egoFocus = false;
+    let _familyFilter = null;
+    // Pre-compute hub set — top-12 by degree, same posture as main Pantheon's hub labels.
+    const _sortedByDeg = [...degree.entries()].sort((a, b) => b[1] - a[1]);
+    const _hubIdSet = new Set(_sortedByDeg.slice(0, 12).map(e => e[0]));
+
     const settings = {
       renderEdgeLabels: false,
       defaultEdgeColor: DEFAULT_EDGE_COLOR,
@@ -246,6 +313,21 @@
       maxCameraRatio: 8,
       nodeReducer: (id, attrs) => {
         const out = { ...attrs };
+        const nodeData = attrs._node || {};
+
+        // EGO FOCUS — when active + a node is selected, hide everything outside the 1-hop neighbourhood.
+        if (_egoFocus && _selectedId) {
+          const inNeighbourhood = (id === _selectedId) ||
+            graph.hasEdge(id, _selectedId) || graph.hasEdge(_selectedId, id) ||
+            graph.areNeighbors(id, _selectedId);
+          if (!inNeighbourhood) { out.hidden = true; return out; }
+        }
+        // FAMILY FILTER — when set, dim every node not in that family.
+        if (_familyFilter && nodeData.family !== _familyFilter) {
+          out.color = '#3a3d44';
+          out.label = '';
+        }
+        // HOVER / SELECT highlighting (existing).
         if (_hoverId === id || _selectedId === id) {
           out.highlighted = true;
           out.zIndex = 2;
@@ -259,10 +341,20 @@
             out.label = '';
           }
         }
+        // LABEL MODE — 'off' kills all labels, 'hub' keeps only top-12, 'all' shows them all.
+        if (_labelsMode === 'off') {
+          out.label = '';
+        } else if (_labelsMode === 'hub' && !_hubIdSet.has(id)) {
+          out.label = '';
+        }
         return out;
       },
       edgeReducer: (id, attrs) => {
         const out = { ...attrs };
+        if (_egoFocus && _selectedId) {
+          const ext = graph.extremities(id);
+          if (ext[0] !== _selectedId && ext[1] !== _selectedId) { out.hidden = true; return out; }
+        }
         if (_hoverId) {
           const ext = graph.extremities(id);
           if (ext[0] !== _hoverId && ext[1] !== _hoverId) {
@@ -302,9 +394,67 @@
     // Tangential family rim labels — DOM overlay synced to sigma camera.
     buildRimLabels(rootEl, wedges, sigma);
 
+    // ----- TOOLBAR (top-left) — labels-mode toggle + ego-focus button -----
+    const toolbar = document.createElement('div');
+    toolbar.className = 'ph2-toolbar';
+    toolbar.innerHTML = `
+      <button class="ph2-btn" id="ph2-labels" title="Toggle label density">labels: hub</button>
+      <button class="ph2-btn" id="ph2-ego" title="Show only the selected node's 1-hop neighbourhood">ego focus</button>
+      <button class="ph2-btn" id="ph2-recenter" title="Re-fit the camera to all nodes">recenter</button>
+    `;
+    rootEl.appendChild(toolbar);
+    toolbar.querySelector('#ph2-labels').onclick = (ev) => {
+      _labelsMode = _labelsMode === 'hub' ? 'all' : _labelsMode === 'all' ? 'off' : 'hub';
+      ev.target.textContent = 'labels: ' + _labelsMode;
+      sigma.refresh({ skipIndexation: true });
+    };
+    toolbar.querySelector('#ph2-ego').onclick = (ev) => {
+      _egoFocus = !_egoFocus;
+      ev.target.classList.toggle('ph2-btn-on', _egoFocus);
+      sigma.refresh({ skipIndexation: true });
+    };
+    toolbar.querySelector('#ph2-recenter').onclick = () => {
+      try { sigma.getCamera().animatedReset({ duration: 400 }); } catch (e) { /* ignore */ }
+    };
+
+    // ----- FAMILY LEGEND (bottom-left) — click any row to filter the wheel to that family -----
+    const legend = document.createElement('div');
+    legend.className = 'ph2-legend';
+    const familyOrderForLegend = Object.values(wedges)
+      .sort((a, b) => b.members.length - a.members.length)
+      .filter(w => w.members.length > 0);
+    legend.innerHTML = `
+      <div class="ph2-legend-title">FAMILIES · click to filter</div>
+      <div class="ph2-legend-rows">
+        ${familyOrderForLegend.map(w => `
+          <div class="ph2-legend-row" data-family="${escapeAttr(w.name)}">
+            <span class="ph2-legend-swatch" style="background:${w.color}"></span>
+            <span class="ph2-legend-name">${escapeHtml(w.name)}</span>
+            <span class="ph2-legend-count">${w.members.length}</span>
+          </div>`).join('')}
+      </div>
+    `;
+    rootEl.appendChild(legend);
+    legend.querySelectorAll('.ph2-legend-row').forEach(row => {
+      row.onclick = () => {
+        const fam = row.dataset.family;
+        _familyFilter = (_familyFilter === fam) ? null : fam;
+        legend.querySelectorAll('.ph2-legend-row').forEach(r => r.classList.toggle('ph2-legend-active', r.dataset.family === _familyFilter));
+        sigma.refresh({ skipIndexation: true });
+      };
+    });
+
     // Stash for diagnostics + potential teardown
     rootEl._sigma = sigma;
     rootEl._graph = graph;
+  }
+
+  // --- escape helpers (kept private to this module) ---
+  function escapeHtml(s) {
+    return String(s == null ? '' : s).replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'})[c]);
+  }
+  function escapeAttr(s) {
+    return String(s == null ? '' : s).replace(/["'&<>]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'})[c]);
   }
 
   window._pantheonV2 = { render };

@@ -1757,6 +1757,61 @@ body.view-atlas main.canvas { background: var(--bg-0); }
   display: flex; align-items: center; justify-content: center;
   color: var(--red, #c25450); font-family: var(--serif);
 }
+
+/* Pantheon v2 toolbar — labels-mode toggle + ego-focus + recenter. Top-right
+   above the wheel so it doesn't collide with the family-legend on the left. */
+.ph2-toolbar {
+  position: absolute; top: 18px; right: 22px; z-index: 10;
+  display: flex; gap: 6px;
+  pointer-events: auto;
+}
+.ph2-btn {
+  background: rgba(14,16,22,0.85);
+  backdrop-filter: blur(6px);
+  border: 1px solid var(--border-soft);
+  color: var(--text-2);
+  font-family: var(--mono); font-size: 10.5px;
+  letter-spacing: 0.06em;
+  padding: 5px 11px; border-radius: 3px;
+  cursor: pointer;
+  transition: all 120ms ease;
+}
+.ph2-btn:hover { color: var(--gold); border-color: var(--gold-soft); }
+.ph2-btn-on { color: var(--gold); background: rgba(212,165,90,0.16); border-color: var(--gold-soft); }
+
+/* Family legend — bottom-left, click-to-filter rows.
+   Same idiom as the main Pantheon's family legend so the user's eye-training transfers. */
+.ph2-legend {
+  position: absolute; bottom: 18px; left: 22px; z-index: 10;
+  background: rgba(14,16,22,0.85);
+  backdrop-filter: blur(6px);
+  border: 1px solid var(--border-soft);
+  border-radius: 4px;
+  padding: 10px 14px 12px;
+  max-height: 60vh; overflow-y: auto;
+  min-width: 200px;
+}
+.ph2-legend-title {
+  font-family: var(--mono); font-size: 9.5px;
+  color: var(--text-3); letter-spacing: 0.14em;
+  margin-bottom: 8px;
+}
+.ph2-legend-rows {
+  display: flex; flex-direction: column; gap: 2px;
+  font-family: var(--serif); font-size: 11.5px;
+}
+.ph2-legend-row {
+  display: grid; grid-template-columns: 14px 1fr auto;
+  gap: 8px; align-items: center;
+  padding: 4px 4px;
+  cursor: pointer; border-radius: 2px;
+  transition: background 120ms ease;
+}
+.ph2-legend-row:hover { background: var(--bg-2); }
+.ph2-legend-row.ph2-legend-active { background: rgba(212,165,90,0.18); color: var(--gold); }
+.ph2-legend-swatch { width: 10px; height: 10px; border-radius: 50%; }
+.ph2-legend-name { color: var(--text-1); }
+.ph2-legend-count { color: var(--text-3); font-family: var(--mono); font-size: 10px; }
 .pantheon-v2-placeholder {
   max-width: 620px; padding: 36px 44px;
   border: 1px solid var(--border-soft); border-radius: 6px;
