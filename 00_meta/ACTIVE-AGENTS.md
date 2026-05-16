@@ -4,6 +4,20 @@ _Hand-maintained. Each agent currently working in the vault appends a claim bloc
 
 ---
 
+## sonnet-indigenous-americas-1 — content / Indigenous North American + Mesoamerican depth layer — started 2026-05-16 — **IN PROGRESS**
+- Owning: `03_deities/sky-woman-haudenosaunee.md` (NEW — replaces stub `sky-woman.md` with full upgrade), `03_deities/spider-grandmother-hopi.md` (NEW), `05_events/event-great-law-of-peace-haudenosaunee-c1450.md` (NEW), `06_themes/earth-diver-creation.md` (NEW), `07_traditions/tradition-hopi.md` (NEW — Wiring Law for spider-grandmother), `03_deities/huitzilopochtli.md` (UPGRADE — cosmic-maintenance MASSIVE WIN), `03_deities/tlaloc.md` (UPGRADE — Teotihuacan depth), `03_deities/quetzalcoatl.md` (UPGRADE — Venus/astro + nada brahman wire)
+- Goal: Build Indigenous North American and Mesoamerican depth layers; Sky Woman earth-diver MASSIVE WIN; Spider Grandmother creation-by-thought MASSIVE WIN; Great Law of Peace political theology; Aztec cosmic-maintenance sacrifice theology
+- Status: in-progress
+
+---
+
+## sonnet-content-gap-1 — content / eliade-upgrade + PGM + saadi-check + hafez-check — started 2026-05-16 — **IN PROGRESS**
+- Owning: `04_persons/mircea-eliade.md` (UPGRADE), `02_documents/_phase-4-late-antiquity/phase-4-106-greek-magical-papyri.md` (NEW), `04_persons/sadi-of-shiraz.md` (ALREADY FULL — no changes needed), `04_persons/hafez.md` (ALREADY FULL — no changes needed)
+- Goal: Fill three content gaps identified in audit: (1) Eliade node depth — add hierophany, eternal return, shamanism, Smith critique, Romania problem; (2) Greek Magical Papyri missing document node; (3) check/upgrade Hafez and Saadi (both already have full body text)
+- Status: in-progress
+
+---
+
 ## sonnet-scorpion-1 — content / Selket + scorpion-symbol + Mars-wedge mapping — started 2026-05-15 — **FINISHED 2026-05-15**
 - Owned: `03_deities/selket.md` (NEW metadata), `09_symbols/scorpion.md` (NEW metadata, MASSIVE WIN), `03_deities/ishara.md` (NEW stub — Wiring Law), `04_persons/tutankhamun.md` (NEW stub — Wiring Law), `05_events/event-tutankhamun-tomb-discovery-1922.md` (NEW metadata), `_assets/data/astrology-planet-deities.json` (Mars block update — `selket` + `ishara` added)
 - Goal: Close the scorpion-archetype gap in the Astrology→Pantheon Mars wedge (John: "we don't have any association with scorpion on the pantheon graph"). Build Selket as Tier-1 sourced anchor; scorpion symbol with six-tradition convergence cluster; wire to existing decanic infrastructure.
