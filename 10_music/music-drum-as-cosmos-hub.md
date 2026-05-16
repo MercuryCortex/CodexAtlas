@@ -19,6 +19,10 @@ tags:
   - synthesis
 geo: Pan-Eurasian / Americas / West Africa
 
+themes:
+  - [[world-axis]]
+  - [[shamanism]]
+
 cross-music-edges:
   - target: music-siberian-shaman-drum
     type: parent-of

@@ -4,6 +4,21 @@ _Hand-maintained. Each agent currently working in the vault appends a claim bloc
 
 ---
 
+## ~~music-theme-wiring-1 — Theme+deity edge pass on 16 music nodes — 2026-05-16 — FINISHED~~
+- ~~Added themes: fields to 16 music nodes; 4 deity connections added (sophia-gnostic, inanna-sumerian, yahweh x2)~~
+- ~~Status: FINISHED — 35 music has-theme edges added~~
+
+---
+
+## opus-three-tabs-1 — Alchemy · Morals · Rituals tabs — IN PROGRESS 2026-05-16
+- Owns app code: `src/js/app.js` (VIEWS.alchemy expand + NEW VIEWS.morals + NEW VIEWS.rituals), `index.html` (nav items)
+- Owns content: `12_alchemy/` folder (NEW — 12 alchemy nodes), `13_morals/` folder (NEW — 10 moral-philosophy nodes), `14_rituals/` folder (NEW — 14 ritual-behavior nodes)
+- Sub-agents in flight: `alchemy-content-1`, `morals-content-1`, `rituals-content-1`
+- DO NOT TOUCH: src/js/app.js (I own it), 12_alchemy/, 13_morals/, 14_rituals/ (sub-agents own)
+- Status: IN PROGRESS
+
+---
+
 ## ~~music-wiring-fix + raga-specific-1 + lyre-cosmos-1 — 2026-05-16 — FINISHED~~
 - ~~build_data.py _strip_inline wikilink fix; tradition-siberian-shamanism stub; music-greek-musical-ethos dead-link fix~~
 - ~~7 new nodes: music-raga-bhairav-dawn, music-raga-yaman-sunset, music-natya-shastra-rasa-system, music-7-string-lyre-cosmos, music-apollo-lyre-sun, music-orphic-lyre-cosmic, music-planetary-modes-medieval~~

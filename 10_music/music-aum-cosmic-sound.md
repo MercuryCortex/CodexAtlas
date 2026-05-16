@@ -18,6 +18,10 @@ tags:
   - vedic
 geo: Indian subcontinent
 
+themes:
+  - [[creation-by-word]]
+  - [[non-duality]]
+
 cross-music-edges:
   - target: music-sacred-drone
     type: child-of

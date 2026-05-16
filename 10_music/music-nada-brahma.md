@@ -16,6 +16,11 @@ tags:
   - nada
 geo: Indian subcontinent
 
+themes:
+  - [[creation-by-word]]
+  - [[logos-cosmic-reason]]
+  - [[non-duality]]
+
 cross-music-edges:
   - target: music-music-of-spheres
     type: parallel-form

@@ -16,6 +16,10 @@ tags:
   - sound
 geo: worldwide
 
+themes:
+  - [[creation-by-word]]
+  - [[logos-cosmic-reason]]
+
 cross-music-edges:
   - target: music-nada-brahma
     type: child-of

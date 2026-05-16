@@ -20,6 +20,10 @@ tags:
   - pneuma
 geo: Panopolis (Egypt) / Alexandria
 
+themes:
+  - [[alchemy-as-spiritual-discipline]]
+  - [[hermetic-correspondences]]
+
 cross-music-edges:
   - target: music-hermetic-logos-sound
     type: child-of

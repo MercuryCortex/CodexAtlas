@@ -19,6 +19,10 @@ tags:
   - acoustic-physics
 geo: universal
 
+themes:
+  - [[microcosm-macrocosm]]
+  - [[sacred-geometry-cosmic-proportion]]
+
 cross-music-edges:
   - target: music-pythagorean-harmony
     type: child-of

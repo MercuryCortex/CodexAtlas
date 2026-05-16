@@ -23,6 +23,10 @@ tags:
   - sonic-theology
 geo: Tibet / Himalayas / Central Asia
 
+themes:
+  - [[ascent-of-the-soul]]
+  - [[non-duality]]
+
 cross-music-edges:
   - target: music-nada-brahma
     type: parallel-form

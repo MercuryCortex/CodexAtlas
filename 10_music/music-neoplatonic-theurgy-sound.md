@@ -19,6 +19,11 @@ tags:
   - voces-magicae
 geo: Rome / Apamea / Athens
 
+themes:
+  - [[ascent-of-the-soul]]
+  - [[theurgy]]
+  - [[mystery-initiation]]
+
 cross-music-edges:
   - target: music-pythagorean-harmony
     type: child-of

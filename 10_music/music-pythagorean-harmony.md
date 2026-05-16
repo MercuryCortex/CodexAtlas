@@ -17,6 +17,11 @@ tags:
   - transmission
 geo: Samos / Croton / Alexandria
 
+themes:
+  - [[microcosm-macrocosm]]
+  - [[logos-cosmic-reason]]
+  - [[sacred-geometry-cosmic-proportion]]
+
 cross-music-edges:
   - target: music-music-of-spheres
     type: ancestor-of

@@ -20,6 +20,10 @@ tags:
   - world-ordering
 geo: Thrace / Greece / Alexandria
 
+themes:
+  - [[mystery-initiation]]
+  - [[ascent-of-the-soul]]
+
 cross-music-edges:
   - target: music-orphic-hymns
     type: child-of

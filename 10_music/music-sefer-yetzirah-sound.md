@@ -18,6 +18,9 @@ tags:
   - jewish
 geo: Palestine / Babylon
 
+themes:
+  - [[creation-by-word]]
+
 cross-music-edges:
   - target: music-creation-by-sound
     type: child-of

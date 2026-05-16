@@ -38,7 +38,8 @@ music-tradition-context:
 music-appearances:
   - [[phase-2-020-lamentations]]
 
-music-deity-connections: []
+music-deity-connections:
+  - [[yahweh]]
 
 refs:
   - "I Chronicles 25 (primary source — the organizational roster of Levitical musicians)"

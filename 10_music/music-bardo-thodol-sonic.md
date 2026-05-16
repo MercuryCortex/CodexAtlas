@@ -23,6 +23,9 @@ tags:
   - dzogchen
 geo: Tibet / Himalayas
 
+themes:
+  - [[ascent-of-the-soul]]
+
 cross-music-edges:
   - target: music-tibetan-sound-cosmology
     type: child-of

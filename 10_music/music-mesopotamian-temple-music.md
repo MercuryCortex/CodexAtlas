@@ -31,6 +31,9 @@ cross-music-edges:
 music-tradition-context:
   - [[tradition-sumerian-mesopotamian]]
 
+music-deity-connections:
+  - [[inanna-sumerian]]
+
 music-appearances:
   - [[phase-1-022-lament-for-ur]]
   - [[phase-1-001-kesh-temple-hymn]]

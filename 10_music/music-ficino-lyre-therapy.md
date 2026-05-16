@@ -22,6 +22,10 @@ tags:
   - de-vita
 geo: Florence
 
+themes:
+  - [[prisca-theologia]]
+  - [[hermetic-correspondences]]
+
 cross-music-edges:
   - target: music-hermetic-logos-sound
     type: transmission-to

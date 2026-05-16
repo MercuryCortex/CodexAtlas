@@ -41,6 +41,9 @@ music-tradition-context:
   - [[tradition-judaism]]
   - [[tradition-second-temple-judaism]]
 
+music-deity-connections:
+  - [[yahweh]]
+
 music-appearances:
   - [[phase-5-012-sefer-yetzirah]]
   - [[phase-5-027-sefer-ha-zohar]]

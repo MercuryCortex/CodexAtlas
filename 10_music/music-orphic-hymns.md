@@ -19,6 +19,11 @@ tags:
   - late-antiquity
 geo: Greece / Asia Minor
 
+themes:
+  - [[mystery-initiation]]
+  - [[ascent-of-the-soul]]
+  - [[initiation]]
+
 cross-music-edges:
   - target: music-sama-veda
     type: parallel-form

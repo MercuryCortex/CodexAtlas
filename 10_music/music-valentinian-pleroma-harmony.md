@@ -17,6 +17,10 @@ tags:
   - vowel-chanting
 geo: Alexandria / Rome
 
+themes:
+  - [[gnosis-as-salvation]]
+  - [[sophia-pleroma]]
+
 cross-music-edges:
   - target: music-music-of-spheres
     type: child-of
@@ -39,7 +43,8 @@ music-tradition-context:
   - [[tradition-neoplatonism]]
   - [[tradition-hermeticism]]
 
-music-deity-connections: []
+music-deity-connections:
+  - [[sophia-gnostic]]
 
 music-appearances:
   - [[phase-4-023-irenaeus-against-heresies]]

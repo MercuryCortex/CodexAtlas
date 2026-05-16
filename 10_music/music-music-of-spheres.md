@@ -16,6 +16,11 @@ tags:
   - pythagorean
 geo: Samos / Croton
 
+themes:
+  - [[microcosm-macrocosm]]
+  - [[logos-cosmic-reason]]
+  - [[sacred-geometry-cosmic-proportion]]
+
 cross-music-edges:
   - target: music-nada-brahma
     type: parallel-form
