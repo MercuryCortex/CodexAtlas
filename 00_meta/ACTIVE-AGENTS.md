@@ -4,6 +4,20 @@ _Hand-maintained. Each agent currently working in the vault appends a claim bloc
 
 ---
 
+## opus-pantheon-v2-1 — Pantheon WebGL v2 build — started 2026-05-16 — IN PROGRESS
+- Owning: `src/js/views/pantheon-v2.js`, `src/js/app.js` (VIEWS wiring), `index.html`, `src/styles/app.css`
+- Goal: Implement full Pantheon v2 sigma.js WebGL view behind ?webgl=1; pass parity gate (mode dropdown, label toggle, ego-focus, family legend click-to-filter)
+- Status: in-progress
+
+---
+
+## opus-app-bugs-1 — Alchemy↔Transmission bugs + marquee — started 2026-05-16 — IN PROGRESS
+- Owning: `src/js/app.js`, `src/js/alchemy/board.js`, `src/styles/app.css`
+- Goal: Fix Bug 1 (Alchemy→Transmission force-sim explosion due to stale ELK position cache); Fix Bug 2 (Transmission→Alchemy cards silently no-ops when _alchemyBoard not mounted + cards land off-screen); verify marquee select is implemented
+- Status: in-progress
+
+---
+
 ## opus-mahayana-sutras-1 — Lotus/Laṅkāvatāra/Avataṃsaka/Sukhāvatīvyūha upgrades — started 2026-05-16 — IN PROGRESS
 - Owning: `02_documents/_phase-4-late-antiquity/phase-4-101-lotus-sutra.md`, `02_documents/_phase-4-late-antiquity/phase-4-102-avatamsaka-sutra.md`, `02_documents/_phase-4-late-antiquity/phase-4-103-lankavatara-sutra.md`, `02_documents/_phase-4-late-antiquity/phase-4-104-sukhavativyuha-larger.md`
 - Goal: Upgrade all four nodes from metadata to full; MASSIVE WIN cross-tradition edges (Ekayāna/supersessionism, Guanyin/Marian, Indra's Net/Leibniz/Bohm, ālayavijñāna/Freud-Jung, tathāgatagarbha/Eckhart, Shinran/Luther tariki/sola fide)
