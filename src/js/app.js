@@ -579,6 +579,13 @@ function setView(name) {
   }
   document.getElementById('view-controls').innerHTML = '';
   legend.style('display', 'none').html('');
+  // Cleanup pass — kill any view-specific panes from the previous view. The pantheon-v2
+  // pane needs its sigma instance killed BEFORE the DOM node is removed (otherwise sigma
+  // leaks listeners), so handle it explicitly first.
+  document.querySelectorAll('.pantheon-v2-pane').forEach(el => {
+    if (el._sigma) { try { el._sigma.kill(); } catch (e) { /* ignore */ } el._sigma = null; }
+    el.remove();
+  });
   document.querySelectorAll('.list-pane,.about-pane,.alch-toolbox,.alch-palette,.tl-zoom-presets,.alch-board-root,.alch-menu,.astrology-pane').forEach(el => el.remove());
   hideTooltip();
   // Map thumbnail only on geo-relevant views; hide elsewhere.
@@ -5618,14 +5625,16 @@ VIEWS.transmission = {
     const _toCardsBtn = document.getElementById('btn-alch-to-cards');
     if (_toCardsBtn) _toCardsBtn.onclick = () => {
       const allNodeIds = nodes.map(n => n.id);
-      if (!allNodeIds.length || !window._alchemyBoard) return;
+      if (!allNodeIds.length) return;
       setView('alchemy');
-      // FIX (next-session-queue bug #2): VIEWS.alchemy.render() itself queueMicrotasks
-      // the _alchemyBoard.mount() call, so an inner queueMicrotask runs BEFORE the
-      // mount and addCard() lands on a board with no rootEl. Wait two rAFs (≈32ms)
-      // so the mount has run + the board has measured its container before we
-      // clearBoard + add. Cards land at world coords; the board's mount() centres
-      // the world origin so they appear around screen-centre.
+      // FIX (bug #2 — Transmission→Alchemy cards):
+      // VIEWS.alchemy.render() uses queueMicrotask() to mount _alchemyBoard on
+      // the host div. If the user has never visited Alchemy, _alchemyBoard.mount()
+      // has never run and rootEl is null → addCard() silently no-ops.
+      // Two rAFs (≈32 ms) let: (1) the microtask run, (2) the host get a measured
+      // size so mount() can centre the pan correctly.
+      // After adding all cards, call zoomToFit() so they land on-screen regardless
+      // of where the board pan/zoom was left.
       requestAnimationFrame(() => requestAnimationFrame(() => {
         if (!window._alchemyBoard) return;
         window._alchemyBoard.clearBoard();
@@ -5634,6 +5643,11 @@ VIEWS.transmission = {
           const ang = (i / total) * Math.PI * 2 - Math.PI / 2;
           window._alchemyBoard.addCard(id, Math.cos(ang) * R, Math.sin(ang) * R);
         });
+        // Bring the newly-placed cards into view — without this, cards land at
+        // world coords that may be outside the current viewport if pan differs.
+        if (typeof window._alchemyBoard.zoomToFit === 'function') {
+          window._alchemyBoard.zoomToFit();
+        }
       }));
     };
     document.getElementById('btn-alch-clear').onclick = () => {
@@ -7748,19 +7762,48 @@ setView = function patchedSetView(...args) {
   try {
     const params = new URLSearchParams(window.location.search);
     if (params.get('webgl') === '1' && window._pantheonV2) {
+      // Ensure a dedicated pane element exists for sigma to mount into.
+      // Using a separate element (not #codex-graph-pane) keeps v2 fully isolated.
+      let v2Pane = document.getElementById('pantheon-v2-pane');
+      if (!v2Pane) {
+        v2Pane = document.createElement('div');
+        v2Pane.id = 'pantheon-v2-pane';
+        v2Pane.className = 'pantheon-v2-pane';
+        v2Pane.style.display = 'none';
+        document.getElementById('canvas').appendChild(v2Pane);
+      }
+
       VIEWS['pantheon-v2'] = {
         title: 'Pantheon v2',
-        subtitle: '',
-        render() { window._pantheonV2.render(document.getElementById('canvas')); }
+        subtitle: 'WebGL · sigma.js · polar family wedges',
+        render() {
+          // Hide SVG + other panes; show our dedicated pane.
+          const svgEl = document.getElementById('svg');
+          if (svgEl) svgEl.style.display = 'none';
+          const graphPane = document.getElementById('codex-graph-pane');
+          if (graphPane) graphPane.style.display = 'none';
+          v2Pane.style.display = 'block';
+          window._pantheonV2.render(v2Pane);
+        },
+        destroy() {
+          if (window._pantheonV2 && window._pantheonV2.destroy) {
+            window._pantheonV2.destroy();
+          }
+          v2Pane.style.display = 'none';
+        }
       };
+
       // Insert nav item right after the production Pantheon.
       const pantheonNav = document.querySelector('nav.side .item[data-view="pantheon"]');
       if (pantheonNav && !document.querySelector('nav.side .item[data-view="pantheon-v2"]')) {
-        const v2 = document.createElement('div');
-        v2.className = 'item';
-        v2.setAttribute('data-view', 'pantheon-v2');
-        v2.innerHTML = '<span class="sym">◐</span><span class="lbl">Pantheon v2</span>';
-        pantheonNav.parentNode.insertBefore(v2, pantheonNav.nextSibling);
+        const v2NavEl = document.createElement('div');
+        v2NavEl.className = 'item';
+        v2NavEl.setAttribute('data-view', 'pantheon-v2');
+        v2NavEl.setAttribute('data-tooltip', 'Pantheon v2');
+        v2NavEl.innerHTML = '<span class="sym">◐</span><span class="lbl">Pantheon v2</span>';
+        // Wire the click listener manually (the querySelectorAll below runs before this).
+        v2NavEl.addEventListener('click', () => setView('pantheon-v2'));
+        pantheonNav.parentNode.insertBefore(v2NavEl, pantheonNav.nextSibling);
       }
     }
   } catch (e) { /* ignore — flag is best-effort */ }
