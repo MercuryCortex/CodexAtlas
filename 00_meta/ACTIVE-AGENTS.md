@@ -1854,3 +1854,10 @@ Files: sacred-cauldron.md (NEW) · cerridwen.md (STUB, deity) · bran-the-blesse
 - ~~Build: 33 alphabets · 166 traditions · 16149 edges · 0 dead links introduced · 0 YAML errors~~
 - ~~Status: FINISHED — commit `4fe0fec`~~
 - ~~MASSIVE WIN edges: (1) Aramaic Memra → Philo Logos → Johannine Logos = best-documented transmission chain in early Christianity (Chilton, McNamara T2); (2) Xi'an Nestorian Stone (781 CE) = world's longest documented single graphic transmission chain: Egyptian hieroglyphs → Proto-Sinaitic → Phoenician → Aramaic → Syriac → bilingual stele in Tang Dynasty China, 3,400 years; (3) Syriac → Sogdian → Old Uyghur → Mongolian vertical script = Genghis Khan's proclamations graphically descended from Egyptian hieroglyphs; (4) Galilean Aramaic words preserved untranslated in Greek NT (Abba, Talitha koum, Maranatha) = most intimate layer of the Christian tradition is Aramaic~~
+
+---
+
+## alphabet-greek-vowel-1 — Greek alphabet + vowel invention as cognitive revolution — 2026-05-16 — IN FLIGHT
+- Owned: `11_alphabets/alphabet-greek-vowel-revolution.md` (NEW)
+- Stubs: `07_traditions/tradition-ancient-greek.md` (NEW), `11_alphabets/alphabet-latin.md` (NEW)
+- Do NOT touch: any existing node, app code, src/js/, src/styles/, index.html
