@@ -1724,3 +1724,13 @@ Files: sacred-cauldron.md (NEW) · cerridwen.md (STUB, deity) · bran-the-blesse
 - ~~Wiring Law stub: 03_deities/narada.md (NEW stub)~~
 - ~~MASSIVE WIN edges: raga-time 5-tradition convergence; musician-deity archetype 7-tradition table (Saraswati/Apollo/Narada/Krishna/David/Orpheus/Odin); oud etymology as historical document (al-oud>lute, Arabic article survived 1000 years); 6-tradition non-verbal sound convergence (niggun/sama/AUM/overtone/ison); Sefer Yetzirah sonic-cosmogony vs. 5 traditions; Torah cantillation notation development convergence; Jewish-Islamic maqam co-development in al-Andalus~~
 - ~~Build: 26 music nodes · 15651 edges · 0 dead links introduced · 0 YAML errors · see STATUS.md~~
+
+---
+
+## music-hermetic-1 — Hermetic sound cosmology + Orphic Hymns + Chaldean Oracles — 2026-05-16 — FINISHED
+- Owned: `10_music/music-hermetic-logos-sound.md` (NEW full), `10_music/music-orphic-hymns.md` (NEW full), `10_music/music-chaldean-oracles-sound.md` (NEW full)
+- Status: FINISHED — 51 music nodes · 15824 edges · 0 YAML errors · 0 dead links introduced
+- MASSIVE WIN edges:
+  - Hermetic Logos-Sound: CH I "darkness groaning + Logos descending" = ancient prose statement of creation-by-sound; seven-sphere soul-ascent IS de-tuning/re-tuning the cosmic scale (Pythagorean soteriology); Hermes Trismegistus = only ancient figure combining instrument-invention + psychopomp + creator-by-sound (Thoth+Hermes synthesis); Discourse on the Eighth and Ninth = only ancient text framing transcendence as going beyond the musical scale
+  - Orphic Hymns: Structural convergence with Sama Veda — both corpora use precise metered divine-name invocation as presence-summoning technology, zero contact, independent development; direct feed-in to Hermetic/Neoplatonic "true-name" theology (Iamblichus cites explicitly); Orphic cosmogonic roar at origin moment = creation-by-sound pattern
+  - Chaldean Oracles: Iynx concept = divine vibrational force whose physical-scale instrument analog is operationally identical — the clearest ancient statement of music-cosmos homology as operative rather than metaphorical; textual bridge from Pythagorean music-of-spheres theory to Neoplatonic theurgic sound practice (before Oracles: theory; after: ritual technology)
