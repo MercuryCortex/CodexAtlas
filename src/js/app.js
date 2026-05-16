@@ -3356,6 +3356,60 @@ const SCRIPTURE_CORPORA = {
       ]},
     ],
   },
+  // ----- Cathar + Bogomil sacred corpus — the two surviving texts from
+  // the medieval Gnostic-dualist movements. Interrogatio Iohannis (the only
+  // text shared by both Bogomil and Cathar traditions; preserved in two Latin
+  // Cathar versions from southern France / Italy). Liber de Duobus Principiis
+  // (John of Lugio, ~1240 CE; the most sophisticated Cathar theological treatise).
+  // MASSIVE WINs: both texts carry a direct Gnostic cosmology (evil Demiurge /
+  // good transcendent God) structurally identical to Sethian Gnostic texts —
+  // a 1000-year thread from Nag Hammadi to medieval Languedoc.
+  'cathar-bogomil': {
+    label: 'Cathar + Bogomil sacred corpus',
+    available: true,
+    sections: [
+      { id: 'bogomil-cathar-texts', label: 'Bogomil–Cathar canonical texts (~10th–13th c.)', color: '#7a5a8a', books: [
+        { id: 'P5-020-interrogatio-iohannis',      label: 'Interrogatio Iohannis · sole surviving Bogomil–Cathar shared text' },
+        { id: 'P5-023-liber-de-duobus-principiis', label: 'Liber de Duobus Principiis · Cathar theological treatise' },
+      ]},
+    ],
+  },
+  // ----- Baháʼí sacred writings — the canonical writings of Baháʼu'lláh
+  // (1817–1892), the founder of the Baháʼí Faith. Kitāb-i-Aqdas (1873): the
+  // Most Holy Book, the central charter of Baháʼí law + ethics.
+  // Kitāb-i-Īqān (1861): Book of Certitude, the main doctrinal text, written
+  // before Baháʼu'lláh's public declaration, interpreting prophetic scripture.
+  // MASSIVE WINs: Baháʼí is the youngest of the Abrahamic family; the Īqān
+  // synthesizes Islamic, Jewish, and Christian prophetic traditions into a
+  // progressive-revelation theology — a modern node linking all three.
+  'bahai-corpus': {
+    label: "Baháʼí sacred writings (Báb + Baháʼu'lláh)",
+    available: true,
+    sections: [
+      { id: 'bahai-canonical', label: "Canonical writings of Baháʼu'lláh (~1853–1892)", color: '#6a9a8a', books: [
+        { id: 'P7-003-kitab-i-aqdas', label: 'Kitāb-i-Aqdas · Most Holy Book (1873)' },
+        { id: 'P7-002-kitab-i-iqan',  label: 'Kitāb-i-Īqān · Book of Certitude (1861)' },
+      ]},
+    ],
+  },
+  // ----- Spanish mystical canon — the two greatest Carmelite mystics of
+  // 16th-century Spain. Teresa of Ávila's Interior Castle (1577): the seven
+  // Mansions as a map of contemplative ascent. John of the Cross's Dark Night
+  // of the Soul (~1578–1585): the via negativa and spiritual desolation as
+  // the path to union. MASSIVE WINs: Interior Castle ↔ Neoplatonic ascent
+  // (Plotinus, Proclus); Dark Night ↔ Pseudo-Dionysius apophatic theology;
+  // both texts canonized within Catholic mystical tradition yet structurally
+  // parallel to Sufi fana / Buddhist śūnyatā / Kabbalistic ayin.
+  'spanish-mystical': {
+    label: 'Spanish mystical canon (Teresa · John of the Cross)',
+    available: true,
+    sections: [
+      { id: 'carmelite-mystical', label: 'Carmelite mystical tradition (16th c.)', color: '#9a6a7a', books: [
+        { id: 'phase-6-038-teresa-interior-castle',  label: 'Teresa of Ávila · Interior Castle (1577)' },
+        { id: 'phase-6-039-dark-night-of-the-soul',  label: 'John of the Cross · Dark Night of the Soul (~1578–1585)' },
+      ]},
+    ],
+  },
 };
 
 // Edge types that bind a person/deity/event to a document for the Scripture view.
@@ -3470,6 +3524,10 @@ VIEWS.scripture = {
       'mesopotamian': 'Mesopotamian',
       'rabbinic-corpus': 'Rabbinic',
       'jain-agamas': 'Jain',
+      'norse-eddic': 'Norse Edda',
+      'cathar-bogomil': 'Cathar',
+      'bahai-corpus': 'Baháʼí',
+      'spanish-mystical': 'Spanish Mystics',
     };
     const shortLabelFor = (k, c) => SCRIPTURE_CORPUS_SHORT[k]
       || (c && c.label ? c.label.split(/[(·—/]|\s—\s/)[0].trim().slice(0, 14) : k);
