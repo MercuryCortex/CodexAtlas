@@ -3121,3 +3121,364 @@ SCRIPTURE_TEXTS['revelation-12'] = {
     },
   ]
 };
+
+// ── 31. HEART SUTRA ──────────────────────────────────────────────────────────
+SCRIPTURE_TEXTS['heart-sutra'] = {
+  title: 'The Heart Sutra (Prajñāpāramitā Hṛdaya)',
+  shortTitle: 'Heart Sutra',
+  tradition: 'Mahayana Buddhism',
+  date: 'c. 1st–2nd CE (Sanskrit; Chinese translation by Xuanzang 649 CE)',
+  intro: 'The most recited text in East Asian Buddhism — 260 Chinese characters that contain the entire Prajnaparamita (Perfection of Wisdom) teaching compressed to its heart. The central equation "form is emptiness; emptiness is form" (rūpaṃ śūnyatā, śūnyatā rūpaṃ) is the most radical non-dual statement in all religious literature: the apparent world (form) and the void (emptiness) are identical. This is not nihilism but the recognition that phenomena have no fixed, independent existence — they arise dependently, and their "emptiness" of inherent existence IS their ability to appear. The parallel to the Tao Te Ching\'s "being and non-being produce each other" and the Hermetic apophatic tradition is structurally exact.',
+  crossTradition: [
+    { label: 'Tao Te Ching — being and non-being produce each other',      textId: 'tao-te-ching-1',   note: 'Tao 1: "Being and non-being produce each other." The Heart Sutra\'s form=emptiness equation and the Tao Te Ching\'s being/non-being interdependence are the same non-dual insight in different philosophical vocabularies. Both deny that existence and absence are separate categories.' },
+    { label: 'CH XI — God as the container of all things and their negation', textId: 'corpus-hermeticum-11', note: 'CH XI\'s "God cannot be named — or all names are names of God" is the Hermetic apophatic parallel to the Heart Sutra\'s śūnyatā: the Hermetic divine transcends all categories just as śūnyatā transcends the category of "emptiness" itself ("emptiness is also empty").' },
+    { label: 'Chandogya 6.2 — the subtle essence pervading all',            textId: 'chandogya-621',    note: 'Chandogya\'s tat tvam asi ("that thou art") and the Heart Sutra\'s form=emptiness are cognate non-dual statements: the individual = the universal. In Advaita, Atman = Brahman; in Madhyamaka, form = emptiness. Both dissolve the apparent boundary between the particular and the infinite.' },
+    { label: 'Nasadiya Sukta — neither existence nor non-existence',        textId: 'nasadiya-sukta',   note: 'The Vedic "nāsad āsīn no sad āsīt" (neither non-existence existed nor existence) is the cosmogonic form of the same insight: the Heart Sutra\'s śūnyatā is what the Nasadiya Sukta points to when it refuses to affirm either existence or non-existence at the origin.' },
+  ],
+  translations: [
+    { id: 'conze',    label: 'Conze 1958 (T1, classic scholarly)' },
+    { id: 'red-pine', label: 'Red Pine 2004 (T2)' },
+    { id: 'sanskrit', label: 'Sanskrit (original)' },
+  ],
+  sections: [
+    {
+      heading: 'I. The Bodhisattva\'s Insight',
+      verses: [
+        {
+          ref: 'Heart Sutra §1–3',
+          text: 'The Bodhisattva Avalokiteśvara, while practicing the deep Perfection of Wisdom, clearly perceived that all five skandhas are empty — and thus crossed beyond all suffering and affliction.\n\nHere, Śāriputra, form is emptiness; emptiness is form. Emptiness is not different from form; form is not different from emptiness. Whatever is form, that is emptiness; whatever is emptiness, that is form.',
+          textVersions: {
+            conze:    'The holy Lord and Bodhisattva Avalokita, while moving in the deep course of the Wisdom which has gone beyond, looked down from on high: he beheld but five heaps, and he saw that in their own-being they were empty... form is emptiness and the very emptiness is form.',
+            'red-pine': 'When the Bodhisattva of Compassion practiced the deep Prajnaparamita, he saw that the five skandhas are empty of self-existence and thus liberated himself from all suffering... form is emptiness, emptiness is form.',
+            sanskrit: 'iha Śāriputra rūpaṃ śūnyatā śūnyataiva rūpaṃ· rūpān na pṛthak śūnyatā śūnyatāyā na pṛthag rūpaṃ· yad rūpaṃ sā śūnyatā yā śūnyatā tad rūpam',
+          },
+          entities: [
+            { word: 'form is emptiness; emptiness is form', node: 'tradition-mahayana-buddhism', type: 'concept',
+              note: 'The equation rūpaṃ śūnyatā / śūnyataiva rūpaṃ is the most compressed non-dual statement in the Buddhist canon. "Form" (rūpa) = the five skandhas, the apparent material world, all phenomena. "Emptiness" (śūnyatā) = the absence of inherent, independent, fixed existence. They are not two things — form IS empty of fixed self, and that very emptiness IS the mode in which form appears. This is not nihilism (form doesn\'t exist) but the Madhyamaka middle way: form arises dependently, and dependent arising IS emptiness.',
+              parallels: [
+                { label: 'Tao Te Ching — being and non-being produce each other', textId: 'tao-te-ching-1', note: 'Tao 2: "Being and non-being produce each other; difficult and easy complement each other." The Tao\'s mutual production of being and non-being is the Chinese cosmological form of the same insight as form=emptiness: existence and absence are not opposites but aspects of one process.' },
+                { label: 'Chandogya 6.2 — the subtle essence underlying all forms', textId: 'chandogya-621', note: 'The Chandogya salt-in-water: the subtle essence (Atman/Brahman) pervades all forms as their ground. The Heart Sutra\'s emptiness is the Mahayana equivalent: forms are empty of inherent existence because they are fully dependent on conditions — their "emptiness" is their openness to being what they are.' },
+              ]
+            },
+            { word: 'five skandhas are empty', node: 'apophatic-mysticism', type: 'concept',
+              note: 'The five skandhas (aggregates) — form, feeling, perception, mental formations, and consciousness — are the Buddhist analysis of what a "person" is. The Heart Sutra\'s declaration that all five are empty (śūnya) dissolves the concept of a fixed self: the "person" is a process, not an entity. This is the Buddhist form of the apophatic move that the Hermetic tradition makes about God: just as God transcends all names and categories, the self transcends the skandhas that compose it.',
+              parallels: [
+                { label: 'Sefer Yetzirah — the letters before the self', textId: 'sefer-yetzirah', note: 'The Kabbalistic analysis of the self as constituted by the 22 letters and 10 sefirot — constituent elements through which consciousness is organized — parallels the Buddhist five-skandha analysis. Both traditions dissolve the naive concept of a fixed self into its generative components.' },
+              ]
+            },
+          ]
+        },
+        {
+          ref: 'Heart Sutra §4–5',
+          text: 'Likewise, Śāriputra, all dharmas are marked with emptiness — they do not appear nor disappear, are not tainted nor pure, do not increase nor decrease. Therefore in emptiness there is no form, no feeling, no perception, no mental formations, no consciousness; no eye, no ear, no nose, no tongue, no body, no mind; no color, no sound, no smell, no taste, no touch, no object of mind.',
+          textVersions: {
+            conze:    'Here in this emptiness there is no form, nor feeling, nor perception, nor impulse, nor consciousness; no eye, ear, nose, tongue, body, mind; no forms, sounds, smells, tastes, touchables or objects of mind.',
+            'red-pine': 'Therefore in emptiness there is no form, sensation, perception, memory, or consciousness; no eye, ear, nose, tongue, body, or mind; no shape, sound, smell, taste, feeling, or thought.',
+            sanskrit: 'tasmāc Chāriputra śūnyatāyāṃ na rūpaṃ na vedanā na saṃjñā na saṃskārā na vijñānam· na cakṣur na śrotraṃ na ghrāṇaṃ na jihvā na kāyo na manaḥ',
+          },
+          entities: [
+            { word: 'no eye, no ear, no nose', node: 'apophatic-mysticism', type: 'concept',
+              note: 'The systematic negation — "no eye, no ear, no nose, no tongue, no body, no mind" — is the Buddhist apophatic method applied to sense experience. Just as the Hermetic tradition says "God cannot be named" and the Tao says "the Tao that can be told is not the eternal Tao," the Heart Sutra negates every sensory and cognitive category to point toward the emptiness that underlies them. The via negativa (negative way) runs identically through Christian mysticism (Pseudo-Dionysius, Meister Eckhart), Kabbalistic Ein Sof, and Buddhist śūnyatā.',
+              parallels: [
+                { label: 'CH XI — God cannot be named; all names are names of God', textId: 'corpus-hermeticum-11', note: 'The Hermetic "God cannot be named" and the Heart Sutra\'s "no eye, no ear... no form, no feeling" are parallel apophatic moves: both systematically negate every positive category to point toward a reality that transcends categorization.' },
+                { label: 'Job 38 — YHWH negating Job\'s knowledge with cosmic questions', textId: 'job-38', note: 'YHWH\'s "Where were you when I laid the foundations of the earth?" — the systematic negation of Job\'s understanding through impossible questions — is the prophetic-dramatic form of the same apophatic move: stripping away the certainties of ordinary consciousness.' },
+              ]
+            },
+          ]
+        },
+      ]
+    },
+    {
+      heading: 'II. The Mantra Beyond Understanding',
+      verses: [
+        {
+          ref: 'Heart Sutra §8–9',
+          text: 'Therefore know that the Prajnaparamita is the great mantra, the mantra of great knowledge, the unsurpassed mantra, the unequalled mantra, the allayer of all suffering — true, not false. The Prajnaparamita mantra is proclaimed: Gate gate pāragate pārasaṃgate bodhi svāhā. Gone, gone, gone beyond, gone completely beyond — awakening! So be it.',
+          textVersions: {
+            conze:    '"Gone, Gone, Gone beyond, Gone completely beyond — Enlightenment, Svaha!" This is the Prajnaparamita mantra, the mantra of great knowledge, the supreme mantra, the unequalled mantra, the allayer of all suffering, in truth.',
+            'red-pine': 'Gate gate pāragate pārasaṃgate bodhi svāhā. Gone, gone, gone beyond, gone completely beyond — awakened, so be it.',
+            sanskrit: 'gate gate pāragate pārasaṃgate bodhi svāhā',
+          },
+          entities: [
+            { word: 'Gate gate pāragate', node: 'tradition-mahayana-buddhism', type: 'symbol',
+              note: 'The closing mantra — "gate gate pāragate pārasaṃgate bodhi svāhā" — operates on multiple levels simultaneously: (1) as a description of the bodhisattva\'s path (gone = ordinary being; gone beyond = stream-entrant; gone completely beyond = fully awakened); (2) as a direct invocation of the Perfection of Wisdom; (3) as a sound-form of the śūnyatā teaching itself — the mantra "works" not by conveying meaning but by being beyond meaning, just as emptiness is beyond the category "emptiness." The Sanskrit gate (gone) puns on the Greek agathon (the Good) — a pun Neoplatonists occasionally exploited.',
+              parallels: [
+                { label: 'CH XIII — "You have been reborn. Sing now"', textId: 'corpus-hermeticum-13', note: 'The Hermetic closing hymn (CH XIII.16-17) and the Heart Sutra\'s closing mantra are both performances of the transformation they describe: CH XIII\'s hymn IS the rebirth; the Heart Sutra\'s mantra IS the going-beyond. Both texts culminate in a utterance that enacts rather than describes.' },
+                { label: 'Sefer Yetzirah — the letters as operative reality, not description', textId: 'sefer-yetzirah', note: 'The Kabbalistic letters of the Sefer Yetzirah are not signs pointing to a separate reality — they are the operative structure of reality. The Heart Sutra\'s mantra and the Kabbalistic letter-theory both claim that certain linguistic forms are not about reality but are reality.' },
+              ]
+            },
+          ]
+        },
+      ]
+    },
+  ]
+};
+
+// ── 32. DHAMMAPADA — CHAPTER 1 ────────────────────────────────────────────────
+SCRIPTURE_TEXTS['dhammapada-1'] = {
+  title: 'Dhammapada — Chapter 1: The Twin Verses (Yamakavagga)',
+  shortTitle: 'Dhammapada 1',
+  tradition: 'Theravada Buddhism / Pali Canon',
+  date: 'c. 3rd BCE (Pali; attributed to the Buddha, c. 5th BCE)',
+  intro: 'The opening chapter of the Dhammapada — the most widely read text in Theravada Buddhism. The Twin Verses state the foundational Buddhist insight: mind (mano) is the forerunner of all actions. An impure mind creates suffering as the wheel follows the ox; a pure mind creates happiness as a shadow that never leaves. This is not idealism (mind creates matter) but something more precise: the quality of consciousness with which we act determines the quality of experience that follows. The parallel to the Hermetic Nous as creative principle, and to the Yogic citta (mind-stuff) as the medium of karma, is direct.',
+  crossTradition: [
+    { label: 'Poimandres — Nous as the creative principle preceding all',   textId: 'poimandres',       note: 'The Hermetic Nous (divine Mind) as the first principle, preceding and generating all reality, is the cosmological version of what the Dhammapada states personally: mind is the forerunner of all actions. Hermetic macrocosm (Nous creates the universe) = Buddhist microcosm (mano creates personal experience).' },
+    { label: 'Bhagavad Gita — the quality of action determines the fruit',  textId: 'bhagavad-gita-4',  note: 'The Gita\'s karma-yoga teaching — act without attachment to fruit, and the quality of consciousness in action determines its karmic result — parallels the Dhammapada\'s teaching exactly. Both: purity of mind/intention is the determining factor in whether action creates suffering or liberation.' },
+    { label: 'Tao Te Ching — wu-wei as the pure mind that creates cleanly',  textId: 'tao-te-ching-1',   note: 'Lao-zi\'s wu-wei (non-action/effortless action) is the Taoist equivalent of the Dhammapada\'s "pure mind" — action that arises from the uncontaminated source without ego-driven motivation, and therefore creates without accumulating karma/reactivity.' },
+    { label: 'Gospel of Thomas — the quality of what is within',            textId: 'gospel-of-thomas', note: 'Thomas L.45: "A good person brings forth good from the storehouse; a bad person brings forth evil from the evil storehouse in the heart." The Thomasine storehouse-metaphor for the mind is structurally identical to the Dhammapada\'s ox-wheel image: the quality of the mind IS the quality of what it produces.' },
+  ],
+  translations: [
+    { id: 'buddharakkhita', label: 'Buddharakkhita 1985 (T1)' },
+    { id: 'thanissaro',     label: 'Thanissaro Bhikkhu 1997 (T2)' },
+    { id: 'pali',           label: 'Pali (original)' },
+  ],
+  sections: [
+    {
+      heading: 'I. Mind as the Forerunner',
+      verses: [
+        {
+          ref: 'Dhp 1:1–2',
+          text: 'Mind is the forerunner of all actions. All deeds are led by mind, created by mind. If one speaks or acts with a corrupt mind, suffering follows as the wheel follows the hoof of an ox.\n\nMind is the forerunner of all actions. All deeds are led by mind, created by mind. If one speaks or acts with a serene mind, happiness follows like a shadow that never departs.',
+          textVersions: {
+            buddharakkhita: 'Mind is the forerunner of all actions. All deeds are led by mind, created by mind. If one speaks or acts with a corrupt mind, suffering follows, as the wheel follows the hoof of an ox... If one speaks or acts with a serene mind, happiness follows, as a shadow that never departs.',
+            thanissaro:     'Phenomena are preceded by the heart, ruled by the heart, made of the heart. If you speak or act with a corrupted heart, then suffering follows you — as the wheel of the cart, the track of the ox that pulls it... If you speak or act with a calm, bright heart, then happiness follows you, like a shadow that never leaves.',
+            pali:           'Manopubbañgamā dhammā manoseṭṭhā manomayā· manasā ce paduṭṭhena bhāsati vā karoti vā tato naṃ dukkhaṃ anveti cakkaṃ va vahato padaṃ',
+          },
+          entities: [
+            { word: 'Mind is the forerunner', node: 'nous-hermetic', type: 'concept',
+              note: 'The Pali word mano (mind/heart/intention) as the "forerunner" (pubbaṅgama) of all actions is the Buddhist psychological claim that corresponds to the Hermetic cosmological claim about Nous. In the Hermetic system, Nous precedes and generates the cosmos; in the Dhammapada, mano precedes and generates all personal experience. The Hermetic macrocosm-microcosm principle (as above, so below) connects both claims: the same Mind that creates the universe creates personal reality when it operates through individual consciousness.',
+              parallels: [
+                { label: 'Poimandres — Nous as the first creative principle', textId: 'poimandres', note: 'CH I opens with Nous appearing to Hermes and declaring itself the first principle of all things. The Dhammapada\'s "mano is the forerunner of all actions" and Poimandres\' "I am Nous, the first God" are the same claim at different scales: the Mind that generates the cosmos also generates personal experience.' },
+                { label: 'Bhagavad Gita — consciousness before action', textId: 'bhagavad-gita-4', note: 'The Gita\'s teaching on the quality of consciousness in action (nishkama karma — desireless action) and the Dhammapada\'s teaching on the quality of mind (pure/corrupt) as determining the quality of consequence are the same teaching from adjacent Indian traditions.' },
+              ]
+            },
+            { word: 'shadow that never departs', node: 'tradition-theravada-buddhism', type: 'concept',
+              note: 'The shadow-image for happiness following a pure mind is one of the most precise similes in the Pali canon: a shadow cannot be separated from what casts it; it goes where you go; it is always the same shape as you. Happiness arising from a pure mind is not a reward that follows later — it is the immediate, inseparable quality of that very mind. This parallels the Hermetic teaching that gnosis IS the good, not a path TO the good.',
+              parallels: [
+                { label: 'Gospel of Thomas — the Kingdom is already here', textId: 'gospel-of-thomas', note: 'Thomas L.3: "The Kingdom is inside you and outside you." The Heart Sutra\'s śūnyatā, the Dhammapada\'s happiness-as-shadow, and the Thomasine Kingdom-already-present are all the same claim: the goal is not reached by going somewhere but by being what you already are.' },
+              ]
+            },
+          ]
+        },
+        {
+          ref: 'Dhp 1:21 (Appamāda — heedfulness)',
+          text: 'Heedfulness is the path to the deathless. Heedlessness is the path to death. The heedful do not die; the heedless are as if already dead.',
+          textVersions: {
+            buddharakkhita: 'Heedfulness is the path to the Deathless. Heedlessness is the path to death. The heedful do not die; the heedless are as if already dead.',
+            thanissaro:     'Heedfulness: the path to the deathless. Heedlessness: the path to death. The heedful do not die. The heedless are as if already dead.',
+            pali:           'Appamādo amatapadaṃ pamādo maccuno padaṃ· appamattā na māyanti ye pamattā yathā matā',
+          },
+          entities: [
+            { word: 'path to the deathless', node: 'apophatic-mysticism', type: 'concept',
+              note: 'The "deathless" (amata, from a-mṛta = not-dead, the same root as Sanskrit amṛta and Greek ambrosía/ambrosia — the food of immortality) is the Buddhist name for nirvāṇa: the unconditioned state beyond birth and death. The parallel to the Hermetic "you have not gone dead, you have gone alive" (Pyramid Texts) and the Johannine "whoever believes in me will never die" (John 11:26) is the same claim made in Buddhist philosophical vocabulary: there exists a mode of being untouched by death.',
+              parallels: [
+                { label: 'Pyramid Texts — "you have not gone dead, you have gone alive"', textId: 'pyramid-texts', note: 'The Pyramid Texts\' royal resurrection proclamation "n mwt.k N, n ʿnḫ.k N" (you have not gone dead, you have gone alive) and the Dhammapada\'s "the heedful do not die" are the same theological claim at different scales: the deathless is available to those who properly orient their consciousness.' },
+                { label: 'Gospel of Thomas — whoever finds the meaning will not taste death', textId: 'gospel-of-thomas', note: 'Thomas L.1: "Whoever finds the interpretation of these sayings will not experience death." The Thomasine and Buddhist deathless are the same claim: there is a mode of understanding/heedfulness that is beyond death, available in this life.' },
+              ]
+            },
+          ]
+        },
+      ]
+    },
+  ]
+};
+
+// ── 33. PLATO'S TIMAEUS — THE DEMIURGE ───────────────────────────────────────
+SCRIPTURE_TEXTS['plato-timaeus'] = {
+  title: 'Plato\'s Timaeus — The Demiurge and the World-Soul',
+  shortTitle: 'Plato — Timaeus',
+  tradition: 'Ancient Greek Philosophy / Platonic',
+  date: 'c. 360 BCE',
+  intro: 'The most theologically influential philosophical text in Western history — more cited by early Christian theologians than any other pagan text except perhaps Plato\'s Republic. The Timaeus describes the Demiurge (craftsman-god) creating the world by imposing the eternal Forms onto disordered matter, creating the World-Soul, and making time as "a moving image of eternity." The Demiurge then addresses the lesser gods — "Gods of gods, of whom I am the creator..." — in a divine-council scene that directly parallels Psalm 82. The Hermetic Demiurge, the Gnostic Demiurge, and the Kabbalistic Demiurge are all children of this text.',
+  crossTradition: [
+    { label: 'Poimandres — the Hermetic Demiurge creating through Nous',     textId: 'poimandres',       note: 'The Hermetic Demiurge (CH I: the Craftsman who forms the seven planetary spheres) is a direct elaboration of Plato\'s Timaeus Demiurge. The Hermetic Nous-as-Demiurge, the Gnostic Demiurge-as-fallen-being, and the Neoplatonic Demiurge-as-Nous are all variants of the Platonic original.' },
+    { label: 'Genesis 1 — God as craftsman/architect of the cosmos',         textId: 'genesis-1',        note: 'The Platonic Demiurge who "desired all things to be good and nothing to be evil" and imposed order on chaos directly parallels Genesis 1\'s creation-by-decree. Early Christian theologians (Justin Martyr, Origen, Clement) read the Timaeus and Genesis as describing the same event from different perspectives — the Logos of John 1 as the Platonic Logos by which the Demiurge creates.' },
+    { label: 'Sefer Yetzirah — 32 paths as the blueprint of creation',       textId: 'sefer-yetzirah',   note: 'The Kabbalistic "32 paths of wisdom" through which God creates the world parallel the Platonic Forms: both are the intelligible blueprint (paradigm) that precedes and determines the structure of the material world.' },
+    { label: 'Psalm 82 — the Creator addressing the divine council',        textId: 'psalm-82',         note: 'The Demiurge\'s address to the lesser gods — "Gods of gods, of whom I am the creator and father, those works are indissoluble by my will alone" — is structurally identical to Psalm 82\'s YHWH addressing the divine council. Both scenes: supreme deity + assembly of lesser divine beings + declaration of supreme authority.' },
+  ],
+  translations: [
+    { id: 'jowett',  label: 'Jowett 1892 (T1, public domain)' },
+    { id: 'bury',    label: 'Bury 1929 (Loeb, T2)' },
+    { id: 'greek',   label: 'Greek (original)' },
+  ],
+  sections: [
+    {
+      heading: 'I. Being and Becoming — The Eternal Pattern',
+      verses: [
+        {
+          ref: 'Timaeus 27d–28b',
+          text: '"What is that which always is and has no becoming? And what is that which is always becoming and never is? The former is grasped by understanding, which involves a reasoned account. The latter is grasped by opinion, which involves unreasoning sensation. Everything that becomes must of necessity become owing to some cause; for without a cause nothing can come to be."',
+          textVersions: {
+            jowett:  '"What is that which always is and has no becoming? and what is that which is always becoming and never is? That which is apprehended by intelligence and reason is always in the same state; but that which is conceived by opinion with the help of sensation and without reason, is always in a process of becoming and perishing and never really is."',
+            bury:    '"What is that which always IS, having no becoming? And what is that which is always BECOMING but never is? The one is apprehensible by thought with the aid of reasoning, since it is ever uniformly existent; the other is the object of opinion aided by unreasoning sensation."',
+            greek:   'τί τὸ ὂν ἀεί, γένεσιν δὲ οὐκ ἔχον, καὶ τί τὸ γιγνόμενον μὲν ἀεί, ὂν δὲ οὐδέποτε;',
+          },
+          entities: [
+            { word: 'always is and has no becoming', node: 'tradition-neoplatonism', type: 'concept',
+              note: 'The Platonic distinction between Being (to on aei — that which always is) and Becoming (to gignomenon — that which is always becoming) is the foundational ontological distinction of Greek philosophy and its descendants. Being = the eternal Forms, apprehended by reason; Becoming = the material world, apprehended by sense-opinion. This distinction structures all of Western theology: the Hermetic Nous vs matter, the Augustinian eternal City of God vs temporal City of Man, the Buddhist nirvāṇa (unconditioned) vs saṃsāra (conditioned becoming). All are variants of Timaeus 27d.',
+              parallels: [
+                { label: 'Heart Sutra — emptiness does not arise or cease', textId: 'heart-sutra', note: 'The Heart Sutra: "In emptiness there is no appearance or disappearance, no increase or decrease." The Platonic eternal Forms that "always are and never become" and the Buddhist śūnyatā that "does not appear nor disappear" are analogous: both designate an unconditioned reality beyond the cycles of arising and ceasing.' },
+                { label: 'Tao Te Ching — the eternal Tao vs its changing manifestations', textId: 'tao-te-ching-1', note: 'Tao 1: "The Tao that can be told is not the eternal Tao." The eternal Tao (the unnameable ground) vs its named manifestations (mother of all things) is the Chinese form of the Platonic Being/Becoming distinction.' },
+              ]
+            },
+          ]
+        },
+      ]
+    },
+    {
+      heading: 'II. The Demiurge and the Good',
+      verses: [
+        {
+          ref: 'Timaeus 29d–30a',
+          text: '"Let me tell you then why the Creator made this world of generation. He was good, and the good can never have any jealousy of anything. And being free from jealousy, he desired that all things should be as like himself as they could be. This is the true beginning of creation and of the world, as we shall do well to believe on the testimony of wise men: God desired that all things should be good and nothing bad, so far as this was attainable."',
+          textVersions: {
+            jowett:  '"Let me tell you then why the creator made this world of generation. He was good, and the good can never have any jealousy of anything. And being free from jealousy, he desired that all things should be as like himself as they could be."',
+            bury:    '"He was good, and in one that is good no envy arises ever concerning anything; and being devoid of envy He desired that all should be, so far as possible, like unto Himself."',
+            greek:   'ἀγαθὸς ἦν, ἀγαθῷ δὲ οὐδεὶς περὶ οὐδενὸς οὐδέποτε ἐγγίγνεται φθόνος· τούτου δ\' ἐκτὸς ὢν πάντα ὅτι μάλιστα ἐβουλήθη γενέσθαι παραπλήσια ἑαυτῷ.',
+          },
+          entities: [
+            { word: 'God desired that all things should be good', node: 'demiurge-platonic', type: 'deity',
+              note: 'The Platonic Demiurge\'s motivation — he is good, and the good cannot be jealous, therefore he desired all things to be good — is one of the most influential theological ideas in history. It solves the problem of evil before it\'s asked: evil exists not because the Creator willed it but because matter resisted the imposition of Form. The Gnostic tradition inverts this exactly: the Demiurge IS the source of evil because he created the imperfect material world in ignorance. Both the Platonic positive Demiurge and the Gnostic negative Demiurge derive from this passage.',
+              parallels: [
+                { label: 'Isaiah 45 — "I create well-being AND calamity"', textId: 'isaiah-45', note: 'Isaiah 45:7\'s claim that YHWH creates BOTH good and evil is a direct counter to the Platonic Demiurge\'s motivation (he only wanted good). The Isaianic monotheism refuses the Platonic escape clause: there is no uncreated matter to blame for evil; YHWH created everything including calamity.' },
+                { label: 'Coffin Text 1130 — "I did not command evil; their hearts transgressed"', textId: 'coffin-text-1130', note: 'The Egyptian Creator\'s exculpation ("I did not command evil") and the Platonic Demiurge\'s good nature both protect the Creator from responsibility for evil by pointing to created free agents (matter / human hearts) as the source. Both are the same theodicy from different cosmological frameworks.' },
+              ]
+            },
+          ]
+        },
+        {
+          ref: 'Timaeus 37c–d',
+          text: '"When the father and creator saw the creature which he had made moving and living, the created image of the eternal gods, he rejoiced, and in his joy determined to make the copy still more like the original; and as this was eternal, he sought to make the universe eternal, so far as might be. Now the nature of the ideal being was everlasting, but to bestow this attribute in its fullness upon a creature was impossible. Wherefore he resolved to have a moving image of eternity, and when he set in order the heaven, he made this image eternal but moving according to number, while eternity itself rests in unity; and this image we call time."',
+          textVersions: {
+            jowett:  '"When the father creator saw the creature which he had made moving and living, the created image of the eternal gods, he rejoiced... he sought to make the universe eternal, so far as might be... he resolved to have a moving image of eternity, and when he set in order the heaven, he made this image eternal but moving according to number, while eternity itself rests in unity; and this image we call Time."',
+            bury:    '"When the Father that engendered it perceived it in motion and alive, a thing of joy to the eternal gods, He too rejoiced; and being well-pleased He designed to make it resemble its Model still more closely. Accordingly, seeing that the Model is an eternal Living Creature, He set about making this All likewise eternal, so far as was possible."',
+            greek:   'εἰκὼ δ\' ἐπενόει κινητόν τινα αἰῶνος ποιῆσαι, καὶ διακοσμῶν ἅμα οὐρανὸν ποιεῖ μένοντος αἰῶνος ἐν ἑνὶ κατ\' ἀριθμὸν ἰοῦσαν αἰώνιον εἰκόνα, τοῦτον ὃν δὴ χρόνον ὠνομάκαμεν.',
+          },
+          entities: [
+            { word: 'moving image of eternity', node: 'tradition-neoplatonism', type: 'concept',
+              note: '"Time is the moving image of eternity" (χρόνος εἰκὼν αἰῶνος) is perhaps the single most influential phrase in the Timaeus — cited by Plotinus, Augustine, Aquinas, Kant, and countless others. Time is not the opposite of eternity but its image: the temporal world is what eternity looks like when projected through the mirror of material existence. The Neoplatonic doctrine of emanation develops this: reality cascades from the eternal One through Nous, through Soul, into Time and Matter — each level a dimmer image of the level above.',
+              parallels: [
+                { label: 'CH XI — "become eternity; then you will understand God"', textId: 'corpus-hermeticum-11', note: 'CH XI\'s instruction to "rise above all time, become eternity" is the Hermetic practice for reversing the Timaeus\'s movement: if time is eternity\'s image, to transcend time is to recover direct access to eternity. CH XI\'s mystical practice IS the reversal of Timaeus\'s cosmological process.' },
+                { label: 'Pyramid Texts — the king joining the imperishable stars', textId: 'pyramid-texts', note: 'The Pyramid Texts\' king ascending to the "imperishable stars" (the circumpolar stars that never set = eternal, not subject to time) is the Egyptian theological form of the same aspiration: to escape the moving image (time/temporal stars) and join the eternal (the imperishable).' },
+              ]
+            },
+          ]
+        },
+      ]
+    },
+    {
+      heading: 'III. The Address to the Lesser Gods',
+      verses: [
+        {
+          ref: 'Timaeus 41a–b',
+          text: '"Gods of gods, of whom I am the creator and father, those works are indissoluble which I have made, though they might be dissolved by my will. But it is not my will that what is well-joined should be dissolved. Hear then my word: since you are creatures of time, you are not altogether immortal and indissoluble, but you shall certainly not be dissolved, nor shall any fate of death destroy you or prevail over you, since you have in my will a greater and mightier bond than those with which you were bound at your birth."',
+          textVersions: {
+            jowett:  '"Gods of gods, whose creator and father I am, whatever has been created by me is indissoluble, for my will is greater than the bond of union. Yet, although you are not immortal and indissoluble, you shall certainly not be dissolved, nor shall any fate of death prevail over you."',
+            bury:    '"O Gods, of Gods whereof I am the Craftsman and Father, those works that are created by me are indissoluble save with my consent. For though all that is bound may be loosed, yet to will to loose that which is fairly joined and in good case were the deed of a wicked one."',
+            greek:   'Θεοὶ θεῶν, ὧν ἐγὼ δημιουργὸς πατήρ τε ἔργων, ἃ δι\' ἐμοῦ γενόμενα ἄλυτα ἐμοῦ γε ἐθέλοντος.',
+          },
+          entities: [
+            { word: 'Gods of gods, of whom I am the creator and father', node: 'demiurge-platonic', type: 'concept',
+              note: 'The Demiurge\'s address "Theoi theon" (Gods of gods) opening a divine-council speech to the lesser created gods is structurally identical to Psalm 82\'s "God stands in the divine assembly; among the gods he pronounces judgment." Both scenes: supreme deity addresses a council of lesser divine beings, asserting supreme creative authority over them. The Platonic and Hebrew divine-council scenes are cognate mythological structures, almost certainly sharing a common Canaanite-Mesopotamian template.',
+              parallels: [
+                { label: 'Psalm 82 — "God stands in the divine assembly"', textId: 'psalm-82', note: 'Psalm 82:1-2: "God stands in the divine assembly; among the gods he pronounces judgment." The Timaeus\'s Demiurge addressing the council of created gods ("Gods of gods, of whom I am the creator") and Psalm 82\'s YHWH addressing the divine council are structurally identical scenes — the supreme deity asserting authority over lesser divine beings.' },
+                { label: 'Enuma Elish — Marduk addresses the assembly of gods', textId: 'enuma-elish-1', note: 'The Babylonian divine assembly that grants Marduk kingship, and the Demiurge\'s assertion "those works which I have made are indissoluble by my will," are the same divine-council authority structure from Greek philosophical and Babylonian mythological perspectives.' },
+              ]
+            },
+          ]
+        },
+      ]
+    },
+  ]
+};
+
+// ── 34. EPIC OF GILGAMESH ─────────────────────────────────────────────────────
+SCRIPTURE_TEXTS['gilgamesh'] = {
+  title: 'Epic of Gilgamesh — The Flood and the Search for Immortality',
+  shortTitle: 'Gilgamesh',
+  tradition: 'Ancient Mesopotamian',
+  date: 'c. 2100 BCE (Sumerian sources); Standard Version c. 1300–1000 BCE (Old Babylonian)',
+  intro: 'The oldest surviving epic in human literature — and the oldest sustained investigation of the questions that define all later religious thought: What does it mean to be mortal? Can immortality be achieved? What is the right response to death? The Standard Babylonian version on twelve clay tablets contains: the civilizing of the wild man Enkidu; Gilgamesh\'s terror at death after Enkidu dies; the flood narrative (Tablet XI) that is the direct source for Genesis 6-9; Siduri the tavern-keeper\'s Epicurean advice; and Utnapishtim\'s story of surviving the flood and receiving immortality. The flood narrative is the most documented cross-tradition parallel in all of comparative religion.',
+  crossTradition: [
+    { label: 'Genesis 6–9 — Noah\'s Flood as the direct literary parallel',  textId: 'genesis-1',        note: 'The structural parallels between Gilgamesh Tablet XI and Genesis 6-9 are so close (divine decision to flood; one man warned by a god; boat with dimensions specified; sending birds to test receding waters; sacrifice after landing; divine promise) that literary dependence is certain. The Gilgamesh flood narrative predates Genesis by at least 600 years. The Atrahasis Epic (c. 1700 BCE) is the probable common source for both.' },
+    { label: 'Descent of Inanna — the underworld and what lies beyond death', textId: 'descent-inanna',   note: 'Inanna\'s descent into the Great Below and Gilgamesh\'s quest to escape death are the two poles of the same Mesopotamian death-theology: one enters death willingly and returns transformed; the other flees death and eventually accepts it. Both texts emerge from the same Sumerian theological context.' },
+    { label: 'Poimandres — the quest to escape mortality through divine knowledge', textId: 'poimandres', note: 'Gilgamesh\'s quest for the plant of immortality at the bottom of the ocean parallels the Hermetic quest to escape mortality through Nous. Both fail at the literal level (Gilgamesh loses the plant; the soul must re-enter the cycle without Nous) and succeed at the symbolic level: the real immortality is the gnosis/understanding, not the object.' },
+    { label: 'Tao Te Ching — acceptance of mortality as the gate to the eternal', textId: 'tao-te-ching-1', note: 'Siduri the tavern-keeper\'s advice — "when the gods created mankind, they allotted death to mankind; enjoy your life, cherish your wife, hold your child" — is the Epicurean-Taoist position: acceptance of natural limits as the condition for a fully human life. The Tao Te Ching\'s return to the root (returning to the uncarved block, accepting the way of things) is the Chinese philosophical version of Siduri\'s wisdom.' },
+  ],
+  translations: [
+    { id: 'george',    label: 'George 2003 (T1, Penguin Classics)' },
+    { id: 'sandars',   label: 'Sandars 1960 (T2, Penguin Classics)' },
+    { id: 'akkadian',  label: 'Akkadian (cuneiform original)' },
+  ],
+  sections: [
+    {
+      heading: 'I. Siduri\'s Advice — Accept Mortality',
+      verses: [
+        {
+          ref: 'Tablet X, Col. iii (Old Babylonian Meissner fragment)',
+          text: '"When the gods created mankind, they allotted death to mankind, but life they retained in their own keeping. As for you, Gilgamesh, let your belly be full, make merry day and night; of each day make a feast of rejoicing. Day and night dance and play. Let your garments be sparkling fresh, your head be washed, bathe in water. Pay heed to the little one who holds your hand; let your spouse delight in your embrace — these alone are the concern of mankind."',
+          textVersions: {
+            george:  '"When the gods created mankind, they allotted death to mankind, but life they retained in their keeping. As for you, Gilgamesh, let your belly be full, make merry day and night! Of each day make a feast of rejoicing, dance and play day and night! Let your garments be sparkling fresh, your head be washed, bathe in water, pay heed to the child who holds your hand, let your wife delight in your embrace — these things alone are the concern of mankind!"',
+            sandars: '"When the gods created man they allotted death to man, but life they retained in their keeping. As for you, Gilgamesh, fill your belly with good things; day and night, night and day, dance and be merry, feast and rejoice. Let your clothes be fresh, bathe yourself in water, cherish the little child that holds your hand, let your wife delight in your embrace; for this too is the lot of man."',
+            akkadian: 'inūma ilū ibnū awīlam / nīšam īpušū ana awīlim / balāṭam ina qātīšunu iṣṣabtū',
+          },
+          entities: [
+            { word: 'gods created mankind, they allotted death', node: 'dying-rising-god', type: 'concept',
+              note: 'Siduri\'s speech is the oldest surviving statement of the Epicurean position — and remarkably, it is addressed to a king fleeing death in terror. The tavern-keeper at the edge of the waters of death tells the greatest king in the world: "the gods kept life for themselves; accept mortality and live fully." This is the most honest confrontation with human mortality in ancient literature, written at least 1,200 years before Epicurus. The parallel to Qohelet (Ecclesiastes) is exact: "Go, eat your food with gladness, and drink your wine with a joyful heart... Enjoy life with your wife, whom you love" (Eccl 9:7-9) — almost certainly influenced by this passage through the Wisdom tradition.',
+              parallels: [
+                { label: 'Ecclesiastes 9:7-9 — eat, drink, enjoy your wife', note: 'The structural and verbal parallel between Siduri\'s speech and Ecclesiastes 9:7-9 ("Go, eat your food with gladness... enjoy life with your wife") is one of the most documented examples of Mesopotamian Wisdom tradition influencing the Hebrew Bible. Qohelet is Siduri\'s philosophy reframed in Hebrew theological vocabulary.' },
+                { label: 'Tao Te Ching — accepting the way of things', textId: 'tao-te-ching-1', note: 'Siduri\'s acceptance of mortality as the proper human condition and the Tao Te Ching\'s return-to-the-root (accepting natural process) are the same philosophical position: resistance to the Way (death, change, limitation) produces suffering; acceptance produces peace.' },
+              ]
+            },
+          ]
+        },
+      ]
+    },
+    {
+      heading: 'II. The Flood — Tablet XI',
+      verses: [
+        {
+          ref: 'Tablet XI, ll. 11–31 (Utnapishtim\'s Flood Story)',
+          text: '"Utnapishtim spoke to me, saying: I will reveal to you, Gilgamesh, a secret matter, and a mystery of the gods I will tell you. The city of Shuruppak, a city which you yourself know, situated on the banks of the Euphrates — that city was old, and the gods within it decided to send the Flood. Their father Anu, valiant Enlil, their chamberlain Ninurta, and their canal-officer Ennugi — Ea swore with them to secrecy. But Ea repeated their words to a reed fence: \'Reed fence, reed fence! Brick wall, brick wall! Hear, O reed fence! Understand, O brick wall! The man of Shuruppak, son of Ubar-Tutu — tear down your house, build a boat!\'",',
+          textVersions: {
+            george:  '"Utnapishtim spoke to Gilgamesh, saying: I will disclose to you a thing that is hidden, Gilgamesh, a secret of the gods I will tell you. Shuruppak, a city which you surely know, situated on the banks of the Euphrates — that city was old and its gods within it... Enlil their hero decided the Flood should be sent. Ea their prince swore to silence. But Ea repeated their words to a reed hut: \'Reed hut, reed hut! Brick wall, brick wall! Reed hut, listen! Brick wall, pay attention!...\'"',
+            sandars: '"Utnapishtim said, \'Gilgamesh, I will reveal a mystery, I will tell you a secret of the gods. Shuruppak... the gods decided to send the Flood... through the wall of a reed hut I heard Ea say: \'Man of Shuruppak, son of Ubara-Tutu; tear down your house and build a boat.\'"',
+            akkadian: 'attī Gilgāmeš niṣirta lūpuš / pirišti ilī lūqbika / Šuruppak ālu ša tīdū / ša ina aḫ Puratti šakin',
+          },
+          entities: [
+            { word: 'decided to send the Flood', node: 'utnapishtim', type: 'person',
+              note: 'The divine council\'s decision to send the Flood — and Ea\'s whispered warning through a reed wall — is the Mesopotamian original of Genesis 6-9\'s flood narrative. The structural parallels are exact: (1) divine decision to destroy humanity; (2) one man warned by a sympathetic deity (Ea/Enki = YHWH as mediated by the angel, or YHWH directly); (3) boat with specific dimensions; (4) all creatures brought aboard; (5) flood lasts specific days; (6) birds sent to test the waters (dove and raven both in both versions); (7) landing on a mountain; (8) sacrifice offered; (9) divine covenant / divine promise not to flood again. The Gilgamesh flood narrative predates Genesis by 600+ years.',
+              parallels: [
+                { label: 'Genesis 6-9 — Noah\'s Flood as the Hebrew version', textId: 'genesis-1', note: 'Every structural element of the Genesis flood narrative (divine decision, righteous man warned, boat, animals, birds sent out, mountain landing, sacrifice, covenant) appears first in the Gilgamesh flood narrative. The Atrahasis Epic (c. 1700 BCE) is the probable common ancestor of both. The Biblical flood is the Mesopotamian flood retold in a monotheistic theological frame.' },
+                { label: 'Descent of Inanna — the divine sending death/chaos into the world', textId: 'descent-inanna', note: 'Both the Gilgamesh Flood and the Descent of Inanna feature the divine assembly making a cosmic decision that sends death into the world. In both texts, the divine decision is not fully explained — the gods act with partial wisdom, creating suffering. This is the Mesopotamian theology of divine-human tragedy.' },
+              ]
+            },
+            { word: 'reed fence, reed fence', node: 'inanna', type: 'concept',
+              note: 'Ea\'s whispered warning through a reed wall — not directly to Utnapishtim but to the wall he can overhear — is one of the oldest documented examples of divine revelation operating through indirection: the god cannot violate his oath of silence to his fellow gods, so he speaks "to the wall." This is the Mesopotamian version of the same indirection that appears in oracular religion, dreams, prophecy, and the Hermetic tradition\'s claim that gnosis is "not taught but called to mind" — the divine communicates obliquely, maintaining the structure of secrecy while making the message available.',
+              parallels: [
+                { label: 'CH XIII — the secret doctrine whispered to Tat on the mountain', textId: 'corpus-hermeticum-13', note: 'The Hermetic "secret sermon on the mountain of silence" (CH XIII) — a private teaching that cannot be taught publicly — and Ea\'s whispered warning through a reed wall are both the same structure: divine knowledge transmitted secretly, maintaining the form of secrecy while making the content available to the one who can hear.' },
+              ]
+            },
+          ]
+        },
+        {
+          ref: 'Tablet XI, ll. 140–158 (The Birds)',
+          text: '"When the seventh day arrived, I sent out a dove and released it. The dove went off, but came back to me; no perch was visible to it, and it turned around. Then I sent out a swallow and released it. The swallow went off, but came back to me; no perch was visible to it, and it turned around. Then I sent out a raven and released it. The raven went off, and saw the waters receding, and ate, and preened, and did not turn around. Then I let out all to the four winds; I offered a sacrifice, I poured out a libation on the peak of the mountain."',
+          textVersions: {
+            george:  '"When the seventh day arrived, I sent out a dove to reconnoitre. The dove went, then came back, no landing-place was visible to it, and it turned back. I sent out a swallow to reconnoitre. The swallow went, then came back, no landing-place was visible to it, and it turned back. I sent out a raven to reconnoitre. The raven went, and saw the receding of the waters; it ate, it preened, it did not turn back."',
+            sandars: '"On the seventh day I sent out a dove, it flew away but finding no resting-place it returned. Then I sent a swallow, it flew away but finding no resting-place it returned. I sent a raven, it saw that the waters had retreated, it ate, it flew about, it cawed and it did not come back."',
+            akkadian: 'ina ûm šebî ašpuram summatam / summu illik ittallak / lā iṣṣa / itūr / ašpuram sisinnam',
+          },
+          entities: [
+            { word: 'dove went off, but came back', node: 'noah', type: 'symbol',
+              note: 'The sequence dove → swallow → raven, with the raven finally not returning, appears in both Gilgamesh Tablet XI and Genesis 8. In Genesis, the order is raven first (8:7), then dove twice (8:8-12), with the olive branch in the second dove mission. The variation in order between the two accounts suggests both are drawing on a common Mesopotamian flood-narrative tradition rather than one directly copying the other. The dove with olive branch that does not appear in Gilgamesh but does in Genesis may be a Hebrew theological addition (olive = peace, covenant with God).',
+              parallels: [
+                { label: 'Genesis 8:7-12 — the raven and the dove after Noah\'s flood', textId: 'genesis-1', note: 'Genesis 8:7: "Then he sent out a raven; it kept flying back and forth until the water dried up." Genesis 8:8: "Then he sent out a dove... the dove could find no place to set its feet... and returned." The bird-sending sequence in both Gilgamesh and Genesis is the most structurally specific parallel — it identifies a single ancestral flood narrative from which both derive.' },
+              ]
+            },
+          ]
+        },
+      ]
+    },
+  ]
+};
