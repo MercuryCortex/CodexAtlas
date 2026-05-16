@@ -11,10 +11,10 @@ _Hand-maintained. Each agent currently working in the vault appends a claim bloc
 
 ---
 
-## goblin-alchemic-script-1 — symbols / alchemy + writing systems thread — started 2026-05-16 — IN PROGRESS
-- Owning: `09_symbols/azoth.md` (NEW), `09_symbols/athanor.md` (NEW), `09_symbols/proto-sinaitic.md` (NEW), `09_symbols/rongorongo.md` (NEW)
-- Goal: Alchemical universal solvent + inner furnace as soul-transformation parallels (Paracelsus/Tummo/Theosis/divine smith); Proto-Sinaitic as ancestor of all alphabets (MASSIVE WIN); Rongorongo as mystery undeciphered script
-- Status: in-progress
+## ~~goblin-alchemic-script-1 — symbols / alchemy + writing systems thread — started 2026-05-16 — FINISHED 2026-05-16~~
+- ~~Owning: `09_symbols/azoth.md` (NEW), `09_symbols/athanor.md` (NEW), `09_symbols/proto-sinaitic.md` (NEW), `09_symbols/rongorongo.md` (NEW)~~
+- ~~Goal: Alchemical universal solvent + inner furnace as soul-transformation parallels (Paracelsus/Tummo/Theosis/divine smith); Proto-Sinaitic as ancestor of all alphabets (MASSIVE WIN); Rongorongo as mystery undeciphered script~~
+- ~~Status: finished — 4 new symbol nodes · 143 symbols · 14216 edges · 0 dead links introduced · see STATUS.md~~
 
 ---
 
