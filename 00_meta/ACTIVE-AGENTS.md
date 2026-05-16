@@ -25,10 +25,10 @@ _Hand-maintained. Each agent currently working in the vault appends a claim bloc
 
 ---
 
-## opus-shinto-jain-sikh-1 — Shinto + Jainism + Sikhism upgrades — started 2026-05-16 — IN PROGRESS
-- Owning: `07_traditions/tradition-shinto.md`, `07_traditions/tradition-jainism.md`, `07_traditions/tradition-sikhism.md`
-- Goal: All three metadata→full; Shinto kami theology + solar parallel + shinbutsu-shūgō; Jain anekāntavāda + ahimsa Gandhi chain + atheistic cosmology; Sikh intentional syncretism + langar egalitarianism + sant-sipāhī MASSIVE WIN
-- Status: in-progress
+## ~~opus-shinto-jain-sikh-1 — Shinto + Jainism + Sikhism upgrades — finished 2026-05-16 — DONE~~
+- ~~Owned: `07_traditions/tradition-shinto.md`, `07_traditions/tradition-jainism.md`, `07_traditions/tradition-sikhism.md`~~
+- ~~Result: all three metadata→full · 13836 edges · 2.6% dead-link ratio · 0 new dead links~~
+- ~~Commits: a7cf759, e840987, d2758ce, c5989d1~~
 
 ---
 
