@@ -4,6 +4,12 @@ _Hand-maintained. Each agent currently working in the vault appends a claim bloc
 
 ---
 
+## ~~opus-pantheon-v2-harmony-1 — harmonious node spread + drag + hull fill parity + edge coverage — started 2026-05-17 — DONE~~
+- ~~Owned: `src/js/views/pantheon-v2.js`, `src/styles/app.css`, `index.html`~~
+- ~~Status: done — commit `614454f`. See STATUS.md.~~
+
+---
+
 ## ~~opus-pantheon-v2-fluidity-1 — six wishlist items: floating panel + additive select + zoom labels + hover ring — started 2026-05-17 — DONE~~
 - ~~Owned: `src/js/views/pantheon-v2.js`, `src/js/dev-panel.js`, `src/js/app.js`, `src/styles/app.css`, `index.html`~~
 - ~~Status: done — commit `f5faf0b`. See STATUS.md.~~
