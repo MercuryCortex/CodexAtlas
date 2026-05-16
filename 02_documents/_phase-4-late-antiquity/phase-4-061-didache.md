@@ -22,7 +22,7 @@ influenced-by: ["Jewish *Two Ways* catechetical tradition (independent of, paral
 influences: ["[[phase-4-064-epistle-of-barnabas]] (parallel Two Ways)", "*Apostolic Constitutions* Book 7 (which absorbs the Didache)", "*Doctrina Apostolorum* (Latin Two Ways recension)", "later Christian church orders (*Apostolic Tradition* of Hippolytus; *Didascalia*)"]
 deities-mentioned: ["the [[yahweh|Father]] (in the eucharistic and baptismal formulae)", "[[jesus-christ-deity]] (as 'your servant/child Jesus' — *pais sou Iēsous*)"]
 events-context: []
-status: "metadata"
+status: "full"
 preservation: "Lost from Western view between the 9th and 19th c.; rediscovered in **Codex Hierosolymitanus 54** (the *Bryennios* manuscript) at the Constantinople Holy Sepulchre library in 1873 by Philotheos Bryennios, who published it in 1883. A Coptic fragment (P. Lond. Or. 9271, ~+4th c.) and a Greek papyrus fragment (P. Oxy. 1782, +4th c.) confirm the text. Latin *Doctrina Apostolorum* preserves the *Two Ways* section independently. Coptic, Georgian, and Ethiopic versions exist."
 refs:
   - title: "The Apostolic Fathers, vol. 1 (Loeb)"
@@ -85,6 +85,51 @@ Short Greek church manual in 16 chapters, the **earliest extant Christian commun
 - → [[phase-4-063-ignatius-letters]] — *parallel-development*: Ignatius's monepiscopal vision contrasts with the *Didache*'s still-fluid prophet/apostle/bishop economy, marking the trajectory toward consolidated episcopate.
 - → [[phase-2-002-gathas-of-zarathustra]] — *deep-substrate*: the moral-dualistic choice-of-paths schema has been argued (Boyce, Hultgård, Shaked) to descend ultimately from Iranian *asha* / *druj* via Second-Temple Jewish mediation. Contested; the *Two Ways* per se is securely Jewish but the deeper question is open.
 
+## MASSIVE WIN: The Two Ways and the Binary Moral Cosmos
+
+The Didache's opening line — "There are two ways: one of life and one of death" — is not a Christian innovation. It is the earliest *Christian* attestation of a **binary moral framework** whose roots run far older and wider than the church.
+
+**The Jewish substrate.** The Qumran Community Rule (1QS 3:13–4:26), composed roughly two centuries before the Didache, organizes all human reality under two angelic figures: the Prince of Light and the Angel of Darkness. The Epistle of Barnabas (chs. 18–20, another Apostolic Father) uses two angels rather than two ways. The Didache, Barnabas, and Qumran are all drawing on the same Second-Temple Jewish moral catechesis — not borrowing from one another. The shared source is Jewish; the Three-forms debate is about *which* Jewish form each text used (van de Sandt & Flusser 2002).
+
+**The Iranian question.** Mary Boyce, Anders Hultgård, and Shaul Shaked have argued that the binary-dualist moral framework descends ultimately from **Zoroastrian** *asha* (truth/righteousness) vs. *druj* (lie/falsehood) — the primal metaphysical opposition in the Gathas of Zarathustra (→ [[phase-2-002-gathas-of-zarathustra]]). Under this hypothesis the sequence is: Zoroastrian binary cosmos → Iranian-influenced Jewish apocalyptic (Second Temple period) → Qumran Two Spirits → Jewish-Christian Two Ways. The chain is contested but the Zoroastrian structural parallel is real: the Didache's moral binary and the Gathic *asha/druj* binary perform the same function in their respective systems.
+
+**The Manichaean extension.** The same binary moral cosmology — now fully metaphysical — organizes [[tradition-manichaeism]]: the Realm of Light and the Realm of Darkness, locked in cosmic combat. Mani (~3rd c. CE) drew explicitly on Iranian-Zoroastrian, Jewish-Christian, and Buddhist frameworks. The Didache's Two Ways is thus one node in a transmission chain: Zoroastrian ethics → Second Temple Jewish apocalyptic → early Christian catechesis → Manichaean metaphysics.
+
+**The finding:** The binary-moral-cosmos structure is not Christian. It is a **pan-Eurasian pattern** appearing independently (or via transmission) in Zoroastrian *asha/druj*, Qumran *Two Spirits*, Manichaean *Light/Darkness*, and Gnostic *Pleroma/Kenoma*. The Didache sits at a critical junction in the Christian branch of this pattern. It demonstrates that Christianity absorbed its foundational moral structure from Jewish Second-Temple tradition — which had itself absorbed or independently paralleled Iranian dualism.
+
+## MASSIVE WIN: The Eucharist Before the Words of Institution
+
+The Didache's eucharistic prayers (chs. 9–10) are the earliest extant Christian eucharistic texts — and they look nothing like what later Christianity standardized.
+
+**What is absent.** There are no "words of institution" — no "this is my body, this is my blood." No sacrificial-memorial interpretation. No explicit connection to the Last Supper. The Didache Eucharist is a **thanksgiving meal** for spiritual nourishment, with Jewish *berakah*-blessing structure: blessing over the cup (ch. 9), blessing over the broken bread (ch. 9), thanksgiving after the meal (ch. 10). The order is cup-then-bread (reversed from Paul's 1 Cor 11 sequence).
+
+**What this proves.** The Pauline-Synoptic Eucharist — "do this in memory of me," the body-and-blood narrative, the sacrificial-memorial interpretation — is **not** the oldest Christian eucharistic form. The Didache attests a form that predates or is independent of the Pauline narrative. This is the vault's clearest internal evidence that the Eucharist began as a **Jewish thanksgiving meal** (*todah*-form or *Passover haburah*-form) that only gradually acquired sacrificial-memorial interpretation, likely under Pauline influence and after the destruction of the Temple eliminated the actual sacrificial cult.
+
+**The progression:** Didache eucharistic *berakah* (Jewish thanksgiving form) → [[theme-soma-haoma-eucharist]] → Pauline "words of institution" (1 Cor 11:23–26, ~54 CE) → Synoptic Last Supper narratives (Mark 14, Matt 26, Luke 22) → Ignatian "medicine of immortality" / real-presence theology (→ [[phase-4-063-ignatius-letters]]) → full sacramental theology (Irenaeus, Justin Martyr). Each step adds interpretive layers; the Didache preserves the pre-layered form.
+
+**Connection to [[tradition-second-temple-judaism]]**: The *berakah* (blessing) form — praising God *for* something rather than asking God *for* something — is the structural backbone of Jewish liturgy (*Amidah*, *Birkat ha-Mazon*, Passover *Haggadah*). The Didache's eucharistic prayers are Jewish blessing-prayers with Christian content substituted. This is not adaptation; it is direct structural inheritance.
+
+## The Governance Transition: Prophets vs. Bishops
+
+The Didache's rules for traveling prophets and apostles (chs. 11–13) versus settled bishops and deacons (ch. 15.1–2) preserve Christianity at an **ecclesiological inflection point** that no other document captures this clearly.
+
+**The old order:** Itinerant charismatic figures — called "apostles" (itinerant missionaries, not the Twelve) and "prophets" — hold authority in the *Didache*'s community. They can stay two days; a third day marks them as false. They cannot ask for money "in the spirit." A true prophet may settle in a community and receive firstfruits, like a high priest (ch. 13). The authority is **charismatic and mobile**.
+
+**The new order emerging:** Chapter 15 instructs the community to "appoint for yourselves bishops and deacons worthy of the Lord" — the same resident settled-clergy system that will triumph. But the Didache hedges: "for they also render to you the service of prophets and teachers." The old charismatic offices are acknowledged as equivalent in function.
+
+**The transition documented:** By Ignatius (~108 CE, → [[phase-4-063-ignatius-letters]]), the single monarchical bishop has become the non-negotiable center of church authority — "do nothing without the bishop." The Didache shows the world *before* Ignatius fixed it. By the time of the Pastoral Epistles (1–2 Tim, Titus) and Irenaeus (→ [[phase-4-023-irenaeus-against-heresies]]), the bishop is uncontested. The Didache documents the window when both systems coexisted and the community itself had to manage the friction.
+
+## Connections (expanded)
+- → [[tradition-early-christianity]] | key-document | The oldest Christian community-rule
+- → [[tradition-second-temple-judaism]] | dependent-on | Two Ways catechesis and eucharistic *berakah* both directly derived from Jewish tradition
+- → [[tradition-zoroastrianism]] | deep-substrate | The binary moral framework (*asha/druj*) is the probable deep root of the Two Ways via Second Temple Jewish mediation
+- → [[tradition-manichaeism]] | structural-parallel | Manichaean Light/Darkness cosmology is the fullest metaphysical development of the same binary moral pattern
+- → [[phase-3-011-dead-sea-scrolls]] | shared-substrate | Two Spirits doctrine (1QS 3:13–4:26) and Didache Two Ways share a common Jewish catechetical source
+- → [[phase-4-064-epistle-of-barnabas]] | parallel-recension | Two Angels variant of same Two Ways source
+- → [[phase-4-063-ignatius-letters]] | contrast | Ignatius's monepiscopacy vs. Didache's prophet/bishop plurality documents the governance transition
+- → [[phase-4-062-1-clement]] | shared-milieu | Contemporary community-rule documents from overlapping period
+- → [[theme-soma-haoma-eucharist]] | primary-source | Oldest eucharistic prayer form, pre-sacrificial-memorial
+
 ## Disputes
 - **Date.** Range +50 to +110 is broad and load-bearing. **Early-date camp** (Audet 1958, Milavec 2003, van de Sandt 2002): mid-1st c., contemporary with or earlier than the Synoptics. **Late-date camp** (Niederwimmer 1998, Tuilier): early 2nd c., post-Matthean. Mainstream Hermeneia position: *final redaction* ~+100/+110, with substantially older Jewish-Christian source-material.
 - **Unity.** Is this a redacted single work or a loose compilation? Consensus: stratified compilation with at least three redactional layers, but a single late-stage editor.
@@ -97,3 +142,4 @@ Short Greek church manual in 16 chapters, the **earliest extant Christian commun
 3. Draper, J. (ed.) (1996). *The Didache in Modern Research*. Brill.
 4. van de Sandt, H., & Flusser, D. (2002). *The Didache: Its Jewish Sources*. Royal Van Gorcum / Fortress.
 5. Audet, J.-P. (1958). *La Didachè*. Gabalda.
+6. Milavec, A. (2003). *The Didache: Faith, Hope, and Life of the Earliest Christian Communities, 50–70 C.E.* Newman Press.
