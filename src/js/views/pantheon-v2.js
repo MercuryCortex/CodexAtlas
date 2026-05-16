@@ -683,6 +683,17 @@
     const ticksG = document.createElementNS(SVG_NS, 'g');
     ticksG.setAttribute('class', 'ph2-ticks-g');
     overlay.appendChild(ticksG);
+    // Phase H — <defs> for per-edge linear gradients (directional buckets only).
+    // Pre-built once per render; activated by JS setting inline `stroke: url(#id)`
+    // on the hot path. Sits inside the same overlay so coords are world-space.
+    const defsEl = document.createElementNS(SVG_NS, 'defs');
+    overlay.appendChild(defsEl);
+    // Types whose data direction is semantically REVERSED (the data source is
+    // the *recipient* of the relation, not the origin). Gradient must swap
+    // endpoints so the bright stop sits on the semantic origin.
+    const REVERSE_DIRECTION = new Set([
+      'influenced-by', 'attested-in', 'child-of', 'documents-affected', 'preserved-by'
+    ]);
 
     // ----- HULLS (priority 1) -----
     // For each family, draw a rounded annular wedge at the same geometry as
