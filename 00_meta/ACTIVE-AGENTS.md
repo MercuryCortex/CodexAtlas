@@ -46,11 +46,10 @@ _Hand-maintained. Each agent currently working in the vault appends a claim bloc
 
 ---
 
-## opus-chan-founders-1 — Bodhidharma + Huineng stub→full — started 2026-05-16 — IN PROGRESS
-- Owning: `04_persons/bodhidharma.md`, `04_persons/huineng.md`
-- Also creating stubs: `04_persons/shenxiu.md`, `04_persons/hongren.md`
-- Goal: Both founders stub→full; Emperor Wu koan; "transmission outside scriptures"↔Sufi silsila↔apostolic succession MASSIVE WIN; biguan↔hesychia; sudden awakening↔Luther tower↔Damascus Road; democratization↔priesthood of all believers↔Wang Yangming liangzhi
-- Status: in progress
+## ~~opus-chan-founders-1 — Bodhidharma + Huineng stub→full — finished 2026-05-16 — DONE~~
+- ~~Owned: `04_persons/bodhidharma.md`, `04_persons/huineng.md`~~
+- ~~Created stubs: `04_persons/shenxiu.md`, `04_persons/hongren.md`~~
+- ~~Status: done — all 4 files committed in 6bd2c4f + 9786d78 (parallel agent sweeps); 13856 edges · 0 new dead links~~
 
 ---
 
