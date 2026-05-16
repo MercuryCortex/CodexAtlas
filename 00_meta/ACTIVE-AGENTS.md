@@ -1430,7 +1430,13 @@ The things opus-foundation-1 claimed but never started are all still open:
 
 ---
 
-## goblin-veiled-mystery-1 — symbols / veil-of-isis + enneagram — started 2026-05-16 — IN PROGRESS
-- Owning: `09_symbols/veil-of-isis.md` (NEW), `09_symbols/enneagram.md` (NEW)
-- Goal: Veil of Isis — Plutarch Sais inscription + Hermetic/Rosicrucian unveiling tradition + Schiller/Novalis Romantic reception + Blavatsky title + MASSIVE WIN cross-veil-pattern (Temple Veil/hijab/maya/Eleusinian Mysteries); Enneagram — Gurdjieff symbol (Laws of Three + Seven) + Ichazo/Naranjo personality application + claimed-but-undocumented ancient Sufi origin + MASSIVE WIN: only personality system with esoteric mystical roots, parallels Sefirot/planetary character types/Navagraha
-- Status: in progress
+## goblin-cosmic-journey-1 — symbols / sacred-horse + jacobs-ladder + wheel-of-fortune — started 2026-05-16 — IN PROGRESS
+- Owning: `09_symbols/sacred-horse.md` (NEW), `09_symbols/jacobs-ladder.md` (NEW), `09_symbols/wheel-of-fortune.md` (NEW)
+- Goal: Sacred Horse — PIE solar-horse engine + Pegasus/Sleipnir/Epona/Ashvamedha/Hayagriva/Apocalypse-White-Horse + Buraq winged-horse MASSIVE WIN (cross-tradition divine-ascent vehicle); Jacob's Ladder — Genesis axis mundi + John Climacus Scala Perfectionis + Mi'raj MASSIVE WIN (three Abrahamic ascent-narratives same cosmological schema); Wheel of Fortune — Fortuna Rota + Boethius Consolatio + Carmina Burana + Bhavacakra MASSIVE WIN (Western/Buddhist independent parallel cyclic-existence encoding)
+
+---
+
+## ~~goblin-veiled-mystery-1 — symbols / veil-of-isis + enneagram — started 2026-05-16 — FINISHED 2026-05-16~~
+- ~~Owning: `09_symbols/veil-of-isis.md` (NEW), `09_symbols/enneagram.md` (NEW)~~
+- ~~Goal: Veil of Isis — Plutarch Sais inscription + Hermetic/Rosicrucian unveiling tradition + Schiller/Novalis Romantic reception + Blavatsky title + MASSIVE WIN cross-veil-pattern (Temple Veil/hijab/maya/Eleusinian Mysteries); Enneagram — Gurdjieff symbol (Laws of Three + Seven) + Ichazo/Naranjo personality application + claimed-but-undocumented ancient Sufi origin + MASSIVE WIN: only personality system with esoteric mystical roots, parallels Sefirot/planetary character types/Navagraha~~
+- ~~Status: finished — 223 symbols · 14755 edges · 0 dead links introduced · commit a94c3c0~~
