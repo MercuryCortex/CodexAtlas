@@ -307,9 +307,22 @@ FAMILY_COLORS = {
 def tradition_family(t: str) -> str:
     if not t:
         return "Other"
-    s = t.lower()
-    # ORDER matters here — most specific tests first.
-    if "gnostic" in s or "sethian" in s or "valentinian" in s or "thomasine" in s or "cathar" in s:
+    import re as _re
+    # 1. Remove "canonical in [[...]]" and similar context-only annotations first so slugs
+    #    like [[tradition-ethiopian-orthodox-tewahedo]] don't leak "ethiopian" into
+    #    unrelated family checks (e.g. Enochic archangels mapping to African).
+    cleaned = _re.sub(
+        r'[/|]?\s*(?:canonical|liturgically retained|scripture|attested)\s+in\s+\[\[[^\]]*\]\]',
+        '', t, flags=_re.IGNORECASE
+    )
+    # 2. Expand remaining wikilinks to just their slug text ([[tradition-donghak]] → tradition-donghak)
+    #    so primary-tradition wikilink nodes (e.g. tradition: "[[tradition-donghak]]") still classify.
+    cleaned = _re.sub(r'\[\[([^|\]]+)(?:\|[^\]]+)?\]\]', r'\1', cleaned)
+    s = cleaned.lower()
+    # ORDER matters — most-origin-specific first so that cross-traditional strings
+    # ("Pre-Christian Slavic", "Zoroastrian → Christian demonology", etc.) land in
+    # their ORIGIN family, not the latest tradition mentioned.
+    if "gnostic" in s or "sethian" in s or "valentinian" in s or "thomasine" in s or "cathar" in s or "bogomil" in s:
         return "Gnostic"
     if "mandae" in s:
         return "Mandaean"
@@ -321,7 +334,40 @@ def tradition_family(t: str) -> str:
         return "Hermetic"
     if "mystery" in s or "mithra" in s or "orphic" in s or "eleusin" in s or "phrygian" in s or "bacchic" in s:
         return "Mystery"
-    if "christian" in s or "christianity" in s or "patristic" in s or "coptic" in s or "byzantine" in s or "lutheran" in s or "calvinist" in s or "reformed" in s or "protestant" in s or "catholic" in s or "anglican" in s or "rosicrucian" in s or "freemason" in s or "mormon" in s or "baha" in s or "scientology" in s or "spiritualist" in s or "new age" in s or "wicca" in s or "rastafari" in s:
+    # --- Ancient origin traditions checked BEFORE Christian so that strings like
+    #     "Pre-Christian Slavic", "Zoroastrian → Christian demonology", "Celtic
+    #     paganism → Irish Christianity", or "Hebrew Bible → medieval Christian"
+    #     all land in their origin family, not in Christian. ---
+    if "zoroastr" in s or "avesta" in s or "mazdean" in s:
+        return "Zoroastrian"
+    if "canaan" in s or "ugarit" in s or "philistine" in s or "phoenic" in s or "northwest semitic" in s:
+        return "Canaanite"
+    if "israel" in s or "hebrew" in s or "jewish" in s or "judaism" in s or "second temple" in s or "qumran" in s or "essene" in s:
+        return "Israelite"
+    if "sumerian" in s or "akkadian" in s or "babylonian" in s or "assyrian" in s or "mesopotam" in s or "elamite" in s or "hittite" in s:
+        return "Mesopotamian"
+    if "egyptian" in s or "amarna" in s or "ptolema" in s or "kemetic" in s:
+        return "Egyptian"
+    if "yoruba" in s or "ifa" in s or "vodun" in s or "vodou" in s or "santeria" in s or "candomble" in s or "akan" in s or "bantu" in s or "ethiopian" in s or "aksumite" in s or "sabaean" in s or "kebra" in s or "african" in s or "san " in s or "maasai" in s or "dahomey" in s:
+        return "African"
+    if "celtic" in s or "druid" in s or "gaelic" in s or "irish" in s or "welsh" in s or "gaulish" in s or "breton" in s:
+        return "Celtic"
+    if "norse" in s or "germanic" in s or "icelandic" in s or "viking" in s or "asatru" in s or "anglo-saxon" in s:
+        return "Norse"
+    if "baltic pagan" in s or "latvian" in s or "lithuanian" in s or "prussian pagan" in s:
+        return "Baltic"
+    if "slavic" in s or "finnic" in s or "finnish" in s or "karelian" in s or "sami" in s or "kalevala" in s or "finno-karelian" in s:
+        return "Slavic-Finnic"
+    if "greek" in s or "hellenistic" in s or "platonist" in s or "stoic" in s or "aristot" in s or "pythagor" in s or "epicurean" in s or "cynic" in s or "skeptic" in s:
+        return "Greek"
+    # Christian checked AFTER ancient origin traditions — also excludes "pre-christian" strings
+    if "pre-christian" not in s and (
+        "christian" in s or "patristic" in s or "coptic" in s or "byzantine" in s
+        or "lutheran" in s or "calvinist" in s or "reformed" in s or "protestant" in s
+        or "catholic" in s or "anglican" in s or "rosicrucian" in s or "freemason" in s
+        or "mormon" in s or "baha" in s or "scientology" in s or "spiritualist" in s
+        or "new age" in s or "wicca" in s or "rastafari" in s
+    ):
         return "Christian"
     if "rabbinic" in s or "mishnah" in s or "talmud" in s or "midrash" in s or "kabbal" in s or "hasidic" in s or "hasidism" in s or "merkavah" in s or "hekhalot" in s or "sabbatean" in s or "frankist" in s:
         return "Rabbinic"
@@ -333,26 +379,6 @@ def tradition_family(t: str) -> str:
         return "Vedic"
     if "zoroastr" in s or "avesta" in s or "iranian" in s or "ahura" in s:
         return "Zoroastrian"
-    if "canaan" in s or "ugarit" in s or "philistine" in s or "phoenic" in s or "northwest semitic" in s:
-        return "Canaanite"
-    if "israel" in s or "hebrew" in s or "jewish" in s or "judaism" in s or "second temple" in s or "qumran" in s or "essene" in s:
-        return "Israelite"
-    if "sumerian" in s or "akkadian" in s or "babylonian" in s or "assyrian" in s or "mesopotam" in s or "elamite" in s or "hittite" in s:
-        return "Mesopotamian"
-    if "egyptian" in s or "amarna" in s or "ptolema" in s or "kemetic" in s:
-        return "Egyptian"
-    if "yoruba" in s or "ifa" in s or "vodun" in s or "vodou" in s or "santeria" in s or "candomble" in s or "akan" in s or "bantu" in s or "ethiopian" in s or "kebra" in s or "african" in s or "san" in s or "maasai" in s or "dahomey" in s:
-        return "African"
-    if "celtic" in s or "druid" in s or "gaelic" in s or "irish" in s or "welsh" in s or "gaulish" in s:
-        return "Celtic"
-    if "norse" in s or "germanic" in s or "icelandic" in s or "viking" in s or "asatru" in s or "anglo-saxon" in s:
-        return "Norse"
-    if "baltic pagan" in s or "latvian" in s or "lithuanian" in s or "prussian pagan" in s:
-        return "Baltic"
-    if "slavic" in s or "finnic" in s or "finnish" in s or "karelian" in s or "sami" in s or "kalevala" in s:
-        return "Slavic-Finnic"
-    if "greek" in s or "hellenistic" in s or "platonist" in s or "stoic" in s or "aristot" in s or "pythagor" in s or "epicurean" in s or "cynic" in s or "skeptic" in s:
-        return "Greek"
     if "roman" in s:
         return "Roman"
     if "chinese" in s or "confucian" in s or "daoist" in s or "daoism" in s or "taoist" in s or "taoism" in s or "shang" in s or "zhou" in s or "shinto" in s or "japanese" in s or "korean" in s:
@@ -365,7 +391,7 @@ def tradition_family(t: str) -> str:
         return "Native-American"
     if "polynesian" in s or "maori" in s or "māori" in s or "hawaiian" in s or "samoan" in s or "tongan" in s or "aboriginal" in s or "australian" in s or "torres" in s or "papuan" in s or "melanesian" in s or "pacific" in s:
         return "Pacific"
-    if "theosoph" in s or "anthroposoph" in s or "thelem" in s or "rosic" in s or "occult" in s or "gurdj" in s or "esoteric" in s or "blakean" in s or "blake" in s or "tenrikyo" in s or "donghak" in s or "cao dai" in s or "cao-dai" in s:
+    if "theosoph" in s or "anthroposoph" in s or "thelem" in s or "rosic" in s or "occult" in s or "gurdj" in s or "esoteric" in s or "blakean" in s or "blake" in s or "tenrikyo" in s or "donghak" in s or "cao dai" in s or "cao-dai" in s or "literary mythology" in s or "literary fiction" in s:
         return "Modern-Esoteric"
     if "academic" in s or "comparative religion" in s or "jungian" in s or "religionsgeschichtl" in s or "phenomenology of religion" in s:
         return "Academic"
