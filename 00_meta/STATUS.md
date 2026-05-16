@@ -374,3 +374,12 @@ Zero behavior change. The atlas renders identically. The split unlocks:
 - 324 distinct targets / 465 occurrences (5.0% of wikilinks)
 - Top: `mesoamerican-cosmogony` (10×), `divinatory-calendar` (8×), Phase-8-induced cosmogony themes (~30 occurrences total)
 - New from Christianity pass: `ephrem-syrian` (2×), `hierocles` (2×), `gospel-of-judas-sethian` (2×) — straightforward next-batch additions
+
+## goblin-death-sacrifice-1 — FINISHED 2026-05-16
+
+**4 new symbol nodes** · 185 total symbols · 14544 edges · 0 YAML errors · 0 new dead links · commits 3c1e55d (danse-macabre.md swept by parallel agent) + 24f29d5
+
+- `09_symbols/danse-macabre.md` — Dance of Death; Black Death origin (Paris 1424-25); Holbein series; democratic-leveling theology; MASSIVE WINs: Nataraja (cremation-ground dance parallel) / Tibetan Cham Citipati skeleton-dance / Mexican Día de los Muertos / Santa Muerte
+- `09_symbols/memento-mori-skull.md` — Skull as cross-tradition contemplation; Theravāda sīvathikā / Stoic practice / Vanitas genre / Yorick; MASSIVE WIN: Kapāla (Vajrayāna skull-cup) ↔ Masonic Chamber of Reflection — identical initiatory function; Celtic sacred head; Golgotha/Adam's skull
+- `09_symbols/cauldron-of-rebirth.md` — 4 Celtic cauldrons (Dagda/Pair Dadeni/Cerridwen/Dyrnwch); MASSIVE WINs: Cauldron → Holy Grail (Loomis 1927 T1) / Cauldron = Alchemical vessel (athanor) / Ocean of Milk (Vedic cosmic cauldron) / Norse Mead of Poetry
+- `09_symbols/sacrifice-substitution.md` — Universal substitution; Akedah / Azazel-scapegoat / Greek pharmakos / Eucharist / Vedic yajamāna / Bodhisattva merit-transfer; Girard mimetic theory (T1, tier-disciplined); 7-tradition comparison table

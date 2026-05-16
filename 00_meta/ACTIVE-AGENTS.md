@@ -1322,10 +1322,10 @@ The things opus-foundation-1 claimed but never started are all still open:
 
 ---
 
-## goblin-death-sacrifice-1 — symbols / death + sacrifice thread — started 2026-05-16 — IN PROGRESS
-- Owning: `09_symbols/danse-macabre.md` (NEW), `09_symbols/memento-mori-skull.md` (NEW), `09_symbols/cauldron-of-rebirth.md` (NEW), `09_symbols/sacrifice-substitution.md` (NEW)
-- Goal: Danse Macabre as death-as-leveler MASSIVE WIN (Nataraja/Cham dance/Día de Muertos); Memento Mori skull as Kapala/Masonic Chamber of Reflection/Celtic sacred head cross-tradition; Cauldron of Rebirth Celtic→Holy Grail→Alchemical vessel transmission; Sacrifice Substitution as cross-tradition universal mechanism (Girard/Akedah/Pharmakos/Eucharist/Bodhisattva)
-- Status: in-progress
+## ~~goblin-death-sacrifice-1 — symbols / death + sacrifice thread — started 2026-05-16 — FINISHED 2026-05-16~~
+- ~~Owning: `09_symbols/danse-macabre.md` (NEW), `09_symbols/memento-mori-skull.md` (NEW), `09_symbols/cauldron-of-rebirth.md` (NEW), `09_symbols/sacrifice-substitution.md` (NEW)~~
+- ~~Goal: Danse Macabre as death-as-leveler MASSIVE WIN (Nataraja/Cham dance/Día de Muertos); Memento Mori skull as Kapala/Masonic Chamber of Reflection/Celtic sacred head cross-tradition; Cauldron of Rebirth Celtic→Holy Grail→Alchemical vessel transmission; Sacrifice Substitution as cross-tradition universal mechanism (Girard/Akedah/Pharmakos/Eucharist/Bodhisattva)~~
+- ~~Status: finished — 185 total symbols · 14544 edges · 0 YAML errors · 0 new dead links · STATUS.md logged~~
 
 ---
 
