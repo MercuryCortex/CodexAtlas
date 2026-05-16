@@ -1652,6 +1652,37 @@ Files: sacred-cauldron.md (NEW) · cerridwen.md (STUB, deity) · bran-the-blesse
 - ~~MASSIVE WIN edges: Plato Republic modal censorship→Augustine→Church Fathers liturgical mode regulation; Boethius transmission bottleneck (mode-name mistranslation acknowledged); Pythagorean ratios→world-soul→Gregorian modes→equal temperament; Kepler empirical orbital-interval confirmation; Lyre of Ur→kinnor→kithara cross-civilizational sacred object; Orpheus shamanic descent archetype cross-tradition; monophonic sacred chant = universal sacred-sound technology~~
 - ~~Build: 21 music nodes · 15597 edges · 0 dead links introduced · 0 YAML errors · see STATUS.md~~
 
+## ~~music-africa-1 — African music cosmology strand — 2026-05-16 — FINISHED cd6f41d~~
+- ~~Owns: music-west-african-polyrhythm.md · music-griot-tradition.md · music-talking-drums.md · music-mbira-spirit-music.md · music-ancient-egyptian-music.md (all NEW in 10_music/)~~
+- ~~Nodes: 5 full-status, all wikilinks verified. 35 music nodes total, 15696 edges.~~
+
+---
+
+## music-eastasia-1 — East Asian music cosmology strand — 2026-05-16 — IN FLIGHT
+- Owns: music-chinese-pentatonic-cosmology.md · music-yayue-ritual-music.md · music-confucian-ritual-music.md · music-gagaku-japanese.md · music-korean-aak.md (all NEW in 10_music/)
+- Do NOT touch: any existing music node, any app code, patterns.js, observations.js
+
+---
+
+## music-raga-singularity-1 — Raga-as-cosmic-clock comparative investigation — 2026-05-16 — IN FLIGHT
+- Owns: music-liturgy-of-hours.md · music-greek-musical-ethos.md · music-islamic-adhan-maqam.md (NEW in 10_music/)
+- Also owns: new entries appended to src/data/patterns.js + src/data/observations.js
+- Investigation focus: what structural conditions enabled India to build music-cosmos homology into performance, while every other tradition stopped short — trace the comparative gradient
+
+---
+
+## music-americas-oceania-1 — Americas + Oceania music strand — 2026-05-16 — IN FLIGHT
+- Owns: music-aboriginal-songlines.md · music-inca-music-cosmology.md · music-native-american-ceremonial.md · music-mayan-music.md · music-aztec-music.md (all NEW in 10_music/)
+- Do NOT touch: any existing music node, any app code, patterns.js, observations.js
+
+---
+
+## music-ancient-near-east-1 — Ancient Near East music strand — 2026-05-16 — IN FLIGHT
+- Owns: music-mesopotamian-temple-music.md · music-levitical-temple-music.md · music-zoroastrian-sacred-sound.md (all NEW in 10_music/)
+- Do NOT touch: any existing music node, any app code, patterns.js, observations.js
+
+---
+
 ## ~~music-eastern-1 — Indian/Islamic/Jewish music strand — 2026-05-16 — FINISHED~~
 - ~~Owned: music-raga-cosmology (NEW full) · music-natya-shastra (NEW full) · music-sama-veda (NEW full) · music-saraswati-vina (NEW full) · music-arabic-maqam (NEW full) · music-oud-lute-transmission (NEW full) · music-sufi-sama (NEW full) · music-sefer-yetzirah-sound (NEW full) · music-torah-cantillation (NEW full) · music-niggun-hasidic (NEW full)~~
 - ~~Wiring Law stub: 03_deities/narada.md (NEW stub)~~
