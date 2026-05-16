@@ -22,7 +22,7 @@ influenced-by: ["Genesis 6:1–4 (the bĕnê hāʾĕlōhîm episode)", "Babyloni
 influences: ["Book of Jubilees (direct quotation)", "Qumran sectarian literature (4Q201–212 contain Aramaic Enoch fragments)", "New Testament — Jude 14–15 explicitly cites 1 Enoch", "Christian demonology and angelology", "Manichaean Book of Giants (via Aramaic Enoch's Book of Giants)", "[[phase-4-081-mashafa-henok-geez-1-enoch]] (Ge'ez recension — the only complete textual witness, preserved canonically only in [[tradition-ethiopian-orthodox-tewahedo]])", "[[event-bruce-recovers-enoch-1773]] (recovery of Ge'ez mss to European scholarship)"]
 deities-mentioned: ["[[yahweh]]", "[[head-of-days]]", "[[the-elect-one-enochic]]", "[[azazel]]", "[[semyaza]]", "[[penemue]]", "[[kokabiel]]", "[[gadreel]]", "[[baraqel]]", "[[michael-archangel]]", "[[gabriel-archangel]]", "[[uriel-archangel]]", "[[raphael-archangel]]", "[[raguel-archangel]]", "[[saraqael-archangel]]", "[[remiel-archangel]]"]
 events-context: ["Hellenistic crisis (Antiochus IV, Maccabean revolt) — driving apocalyptic crystallization", "Persian-Hellenistic transition"]
-status: "metadata"
+status: "full"
 preservation: "Complete text only in Ge'ez (classical Ethiopic) within the Ethiopian Orthodox biblical canon — uniquely preserved there. See [[phase-4-081-mashafa-henok-geez-1-enoch]] for the Ge'ez-recension textual-witness node. Greek translation partially extant (Codex Panopolitanus, Akhmim, 8th c.). Original Aramaic in Qumran fragments (4Q201–212; ~11 copies of various sections). [[james-bruce-of-kinnaird]] brought three Ge'ez manuscripts from Ethiopia to Europe in 1773 — see [[event-bruce-recovers-enoch-1773]]; full English translation by R.H. Charles (1893, 1912)."
 refs:
   - title: "1 Enoch: A New Translation"
@@ -79,6 +79,53 @@ A composite of at least five originally separate Aramaic compositions, redacted 
 4. **Book of Dream Visions** (chs. 83–90; ~-165) — the "Animal Apocalypse" allegorizing Israelite history with animal characters; ends with the Maccabean revolt.
 5. **Epistle of Enoch** (chs. 91–108; ~-150/-100) — the "Apocalypse of Weeks" dividing history into ten weeks of judgment.
 
+## Primary text — selected passages
+
+### 1 Enoch 6:1–6 — The Watchers' descent (Book of Watchers)
+*Trans. Nickelsburg, G.W.E. & VanderKam, J.C. (2004). 1 Enoch: A New Translation. Fortress.*
+> And it came to pass, when the children of men had multiplied, that in those days were born unto them beautiful daughters.
+> And the angels, the children of heaven, saw and lusted after them,
+> and said to one another: "Come, let us choose wives from the children of men
+> and beget children for ourselves."
+> And Semyaza, who was their chief, said to them:
+> "I fear you will not agree to do this deed,
+> and I alone shall pay for this great sin."
+> But they all answered him: "Let us all swear an oath,
+> and bind ourselves by mutual imprecations not to abandon this plan
+> but to do this thing."
+> They were in all two hundred; who descended in the days of Jared onto the peak of Mount Hermon.
+
+*The expansion of Genesis 6:1–4's cryptic "sons of God" into a 200-angel conspiracy with named leaders, collective oath, and the forbidden-knowledge motive is 1 Enoch's central theological move — and the origin of the entire "fallen angel" tradition in Western religion.*
+
+### 1 Enoch 46:1–3 — The Son of Man beside the Head of Days (Similitudes)
+*Trans. Nickelsburg & VanderKam 2004*
+> There I saw One who had a head of days,
+> and his head was white like wool,
+> and with him was another, whose face had the appearance of a man —
+> his face was full of graciousness, like one of the holy angels.
+> And I asked the angel who went with me about that Son of Man —
+> who he was, and whence he was, and why he went with the Head of Days.
+> He answered me and said:
+> "This is the Son of Man who has righteousness,
+> and with whom righteousness dwells...
+> who will reveal all the treasures of that which is hidden,
+> because the Lord of Spirits has chosen him."
+
+*This passage is the direct background for Jesus's "Son of Man" self-designation. The "Head of Days" mirrors Daniel 7:9's "Ancient of Days"; the pre-existent heavenly Son of Man is a figure of judgment and revelation — not a humble self-title.*
+
+### 1 Enoch 1:9 — The judgment verse (the only passage quoted by name in the New Testament)
+*Trans. Charles, R.H. (1917 / public domain); cf. Nickelsburg & VanderKam 2004*
+> Behold, he comes with ten thousand of his holy ones
+> to execute judgment upon all,
+> and to destroy all the ungodly,
+> and to convict all flesh of all the works of their ungodliness
+> which they have ungodly committed,
+> and of all the hard things which ungodly sinners have spoken against him.
+
+*Jude 14–15 quotes this verse explicitly: "Enoch, the seventh from Adam, prophesied saying..." — the only NT text that names a non-canonical source as authoritative prophecy.*
+
+*Citation: Nickelsburg, G.W.E. & VanderKam, J.C. (2004). 1 Enoch: A New Translation. Fortress Press. Charles, R.H. (1917). https://www.sacred-texts.com/bib/boe/*
+
 ## Context
 - **Political milieu.** Composition straddles the post-Alexander Hellenistic settlement (Ptolemies then Seleucids in Judea), Antiochus IV's persecution (-167), the Maccabean revolt, and the Hasmonean state. The Animal Apocalypse explicitly references this crisis.
 - **Religious milieu.** Apocalyptic Judaism — a sectarian, often anti-establishment current that reframed Israel's troubles as cosmic conflict between God's elect and oppressive earthly + angelic powers. Enochic Judaism developed an alternative *priestly* theology centered on the antediluvian Enoch (rather than Sinai-Moses), with its own 364-day solar calendar opposed to the Jerusalem Temple's lunisolar calendar.
@@ -104,6 +151,16 @@ A composite of at least five originally separate Aramaic compositions, redacted 
 - **Date of Similitudes (chs. 37–71).** Absent from Qumran. Milik proposed a Christian origin (~+270); Nickelsburg, Collins, Stuckenbruck now place it ~-50 to +50, pre-Christian Jewish, on internal grounds.
 - **Canonical status.** Quoted as scripture by Jude; cited by patristic writers (Justin, Athenagoras, Tertullian); rejected by Jerome and Augustine; survived only in Ethiopia. The Ethiopian Orthodox include it; no other Christian or Jewish body does.
 - **"Enochic Judaism".** Boccaccini's model of Enochic Judaism as a distinct, anti-Zadokite stream is influential but not unanimous.
+
+## MASSIVE WIN — cross-tradition edges
+
+- **1 Enoch 46's Son of Man = pre-existent heavenly judge — the direct source-tradition for Jesus's "Son of Man" self-designation**: The Similitudes (chs. 37–71) present the Son of Man as a named, pre-existent heavenly figure who will execute judgment beside the "Head of Days." Jesus uses "Son of Man" more than any other self-designation in the Gospels (~80 occurrences); scholarship has debated for a century whether it is apocalyptic title, Aramaic idiom, or humble self-reference. Nickelsburg (2001, Hermeneia, pp. 65–78) and Collins (2016, *The Apocalyptic Imagination*, Eerdmans, pp. 177–193) argue 1 Enoch's Similitudes are the source-tradition Jesus draws on — that "Son of Man" was already a specific apocalyptic title when Jesus used it. If correct, this collapses the gap between Jesus's teaching and post-Easter Christology: the eschatological claim was already encoded in the title (Nickelsburg & VanderKam 2004; → [[phase-3-008-book-of-daniel]], → [[phase-3-016-gospel-of-mark]]).
+
+- **The Watchers myth — origin of the entire Western fallen-angel and demonology tradition**: 1 Enoch 6–11's expansion of Genesis 6:1–4 into a narrative of 200 angels, collective oath, descent, forbidden knowledge, Giants, and binding by archangels is the single most generative demonological text in Western religion. From it flow: Tertullian's De Spectaculis (Watchers = source of pagan culture); Origen's *Peri Archon* (angelic fall as origin of cosmic evil); Justin Martyr's argument that demons are fallen-angel offspring; medieval Christian demonology in its entirety (including the Azazel → Satan identification); and finally Milton's *Paradise Lost* where Satan is essentially a named Watcher-archangel. Islam's Hārūt and Mārūt (Quran 2:102, two angels who teach magic in Babylon) directly parallels the Watcher-teaching-forbidden-arts motif (Nickelsburg 2001; Collins 2016; → [[phase-3-011-dead-sea-scrolls]]).
+
+- **James Bruce's Ethiopia → 1773 → R.H. Charles 1893 — the most dramatic text-recovery event in religious history**: 1 Enoch is quoted as scripture in Jude (NT), cited by Tertullian, Origen, Irenaeus, and Clement of Alexandria, then vanishes from European scholarship for ~1,400 years because it was excluded from the Hebrew and Greek biblical canons. The Ethiopian Orthodox Church preserved it as scripture (uniquely). James Bruce of Kinnaird — Scottish explorer, traveler in Ethiopia 1769–72 — brought three Ge'ez manuscripts to Europe in 1773. Richard Laurence's 1821 translation and R.H. Charles's definitive 1893/1912 edition recovered the text for modern scholarship. The text that shaped the demonology of the entire Western-Christian world was unknown to that world for fourteen centuries because it was preserved only in an African church's canon (see [[event-bruce-recovers-enoch-1773]]; → [[tradition-ethiopian-orthodox-tewahedo]]).
+
+- **1 Enoch's 364-day solar calendar — a different religious calendar that may change the date of the Last Supper**: The Astronomical Book (chs. 72–82) polemicizes for a 364-day solar calendar as the divinely correct calendar, against the Jerusalem Temple's lunisolar calendar. The Qumran community used this Enochic 364-day calendar. Annie Jaubert (1957, *La date de la Cène*, Gabalda) proposed that Jesus celebrated the Last Supper on a 364-day calendar Tuesday/Wednesday (not the lunisolar Thursday), which would resolve the Synoptic vs. Johannine contradiction about the Last Supper's date relative to Passover. The calendar-conflict embedded in 1 Enoch may encode the actual institutional background of the arrest-and-crucifixion timeline — a live debate in NT chronology that begins with an obscure Enochic polemic about calendar reckoning (VanderKam, J.C. 1998, *Calendars in the Dead Sea Scrolls*, Routledge; → [[phase-3-011-dead-sea-scrolls]]).
 
 ## Refs
 1. Nickelsburg, G.W.E. & VanderKam, J.C. (2004). *1 Enoch: A New Translation*. Fortress. — current standard English.
