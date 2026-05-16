@@ -550,3 +550,12 @@ Script: `add_depictions.py` (new helper for direct Commons depictions[] injectio
 - 3 nodes: mesopotamian-temple-music · levitical-temple-music · zoroastrian-sacred-sound
 - KEY FIND: Zoroastrian Gathas + Sama Veda = same type of ancient metered sacred oral composition, opposite conclusions on instruments; Psalm 137 = first documented music strike; possible Zoroastrian → Islamic anti-instrument transmission vector
 - Build: 47 music nodes · 15,779 edges · commit 252a346
+
+
+---
+
+## music-egypt-investigation-1 — Egypt priestly musician caste origin — FINISHED 2026-05-16
+- Files: observations.js (CONCLUSION: egypt-priestly-musician-origin) + patterns.js (TRANSMISSION entry) + music-ancient-egyptian-music.md (transmission-to edge added) + music-levitical-temple-music.md (updated)
+- FINDING: Egypt→Israel = documented transmission (1,550-year head start, Moses/Egyptian court, kinnor/kinniru, Temple design); Egypt/Mesopotamia = Fertile Crescent shared-origin zone (unresolvable direction); India = genuine independent convergence (Sama Veda predates Ophir trade corridor)
+- META-FINDING: priestly-musician-caste is first confirmed case of a form that is simultaneously transmissible AND independently reinventable — the vault's first form in this class
+- Commit: 7ee8473
