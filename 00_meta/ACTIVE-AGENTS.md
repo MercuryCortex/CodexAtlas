@@ -165,10 +165,17 @@ _Hand-maintained. Each agent currently working in the vault appends a claim bloc
 
 ---
 
-## goblin-pattern-mystery-1 — symbols / sacred pattern + mystery thread — started 2026-05-16 — IN PROGRESS
-- Owning: `09_symbols/arabesque-girih.md` (NEW), `09_symbols/philosophers-stone.md` (NEW), `09_symbols/labyrinth.md` (NEW), `09_symbols/gorgoneion.md` (NEW)
-- Goal: Islamic sacred geometry quasicrystal win; Philosopher's Stone→Holy Grail; labyrinth universal maze; Gorgoneion apotropaic face
-- Status: in-progress
+## ~~goblin-pattern-mystery-1 — symbols / sacred pattern + mystery thread — started 2026-05-16 — IN PROGRESS~~
+- ~~Owning: `09_symbols/arabesque-girih.md` (NEW), `09_symbols/philosophers-stone.md` (NEW), `09_symbols/labyrinth.md` (NEW), `09_symbols/gorgoneion.md` (NEW)~~
+- ~~Goal: Islamic sacred geometry quasicrystal win; Philosopher's Stone→Holy Grail; labyrinth universal maze; Gorgoneion apotropaic face~~
+- ~~Status: in-progress~~
+
+---
+
+## ~~goblin-esoteric-bodies-1 — symbols / esoteric bodies thread — started 2026-05-16 — FINISHED~~
+- ~~Owning: `09_symbols/merkaba.md` (NEW), `09_symbols/kundalini.md` (NEW), `09_symbols/evil-eye.md` (NEW)~~
+- ~~Goal: Merkaba — Ezekiel chariot + Hekhalot mysticism + hayyot→Tetramorph→zodiac MASSIVE WIN; Kundalini — iḍā/piṅgalā/suṣumṇā = caduceus MASSIVE WIN; Evil Eye — most-widely-distributed folk belief in human history (-3000 BCE Sumerian to present, 36 cultures)~~
+- ~~Status: finished — 3 new symbol nodes · 0 dead links introduced~~
 
 ---
 
@@ -1389,4 +1396,11 @@ The things opus-foundation-1 claimed but never started are all still open:
 ## goblin-sacred-animals-1 [ACTIVE]
 - Targets: `09_symbols/cow-sacred.md` · `09_symbols/minotaur.md` · `09_symbols/garuda.md`
 - Hands-off: everything else
+- Status: in-progress
+
+---
+
+## goblin-esoteric-bodies-1 — symbols / esoteric bodies + energy systems thread — started 2026-05-16 — IN PROGRESS
+- Owning: `09_symbols/merkaba.md` (NEW), `09_symbols/kundalini.md` (NEW), `09_symbols/evil-eye.md` (NEW)
+- Goal: Merkavah chariot-throne → Tetramorph MASSIVE WIN (Ezekiel's four hayyot = Christian Tetramorph = four fixed zodiac signs); Kundalini iḍā/piṅgalā/suṣumṇā = caduceus MASSIVE WIN (structurally identical independent traditions); Evil Eye as most widely distributed specific folk belief in history (Mesopotamia → global, continuous -3000 → present)
 - Status: in-progress
