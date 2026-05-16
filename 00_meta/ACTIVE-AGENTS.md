@@ -1632,3 +1632,21 @@ Files: sacred-cauldron.md (NEW) · cerridwen.md (STUB, deity) · bran-the-blesse
 - 10 seed observations · CONCLUSION / HYPOTHESIS / ANOMALY / META badge types
 - Working intelligence layer: interpretive conclusions and hypotheses derived from vault data
 - Agents: grow `src/data/observations.js` when the vault produces new analytical conclusions
+
+---
+
+## music-seed-1 — Music investigation sector seed — 2026-05-16 — FINISHED
+- Opened: 10_music/ folder + build_data.py music type registration
+- 9 seed nodes: music-of-spheres · nada-brahma · pentatonic-scale · sacred-drone · creation-by-sound · aum-cosmic-sound · pythagorean-harmony · hurrian-hymns · scale-transmission-chain
+- Schema doc: 00_meta/MUSIC-INVESTIGATION.md — READ THIS before writing any music node
+- Commit: 002f95e
+
+## ~~music-greek-western-1 — Greek/Western music strand — 2026-05-16 — FINISHED~~
+- ~~Owned: music-greek-modes · music-orpheus-tradition · music-lyre-kithara · music-boethius-de-musica · music-plato-timaeus-worldsoul · music-gregorian-modes · music-western-sacred-chant (all NEW, all full status)~~
+- ~~MASSIVE WIN edges: Plato Republic modal censorship→Augustine→Church Fathers liturgical mode regulation; Boethius transmission bottleneck (mode-name mistranslation acknowledged); Pythagorean ratios→world-soul→Gregorian modes→equal temperament; Kepler empirical orbital-interval confirmation; Lyre of Ur→kinnor→kithara cross-civilizational sacred object; Orpheus shamanic descent archetype cross-tradition; monophonic sacred chant = universal sacred-sound technology~~
+- ~~Build: 21 music nodes · 15597 edges · 0 dead links introduced · 0 YAML errors · see STATUS.md~~
+
+## music-eastern-1 — Indian/Islamic/Jewish music strand — 2026-05-16 — IN PROGRESS
+- Owning: all 10_music/ nodes for Indian classical, Arabic maqam, Sufi sama, Hebrew cantillation, Jewish niggun
+- DO NOT create: nodes already in music-seed-1 (music-nada-brahma, music-aum-cosmic-sound, music-sacred-drone)
+- Target new nodes: music-raga-cosmology, music-natya-shastra, music-sama-veda, music-saraswati-vina, music-arabic-maqam, music-oud-lute-transmission, music-sufi-sama, music-sefer-yetzirah-sound, music-torah-cantillation, music-niggun-hasidic
