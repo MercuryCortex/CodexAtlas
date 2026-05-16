@@ -12,6 +12,13 @@ _Hand-maintained. Each agent currently working in the vault appends a claim bloc
 
 ---
 
+## ~~music-renaissance-arabic-1 — 3 Hermetic music nodes — 2026-05-16 — FINISHED~~
+- ~~Owned: `10_music/music-ficino-lyre-therapy.md` (NEW full), `10_music/music-fludd-world-monochord.md` (NEW full), `10_music/music-alkindi-music-therapy.md` (NEW full)~~
+- ~~Status: FINISHED — commit `3d26a71`. Build: 56 music nodes · 15,877 edges · 0 YAML errors · 0 dead links introduced~~
+- ~~MASSIVE WIN: al-Kindi (Baghdad c. 850) independently derived the same Pythagorean music-therapy system as Ficino (Florence 1489) from the same Greek sources, 600 years apart — both are translation-movement bottlenecks; Fludd's world-monochord (1617) is the apex AND terminus of the music-of-spheres tradition as physics: the Kepler-Fludd debate (1619–1622) is the moment music-of-spheres ceases to be a scientific claim and becomes metaphor; Ficino is the Renaissance bottleneck through whom both the Corpus Hermeticum (1463) and Plato (1484) re-enter the West simultaneously~~
+
+---
+
 ## alphabet-cosmos-architecture-1 — 3 HYPER WIN synthesis nodes — IN PROGRESS
 - Owns: 11_alphabets/alphabet-creation-by-word.md (NEW), 11_alphabets/alphabet-sacred-language-convergence.md (NEW), 11_alphabets/alphabet-letter-as-cosmos.md (NEW)
 - Also touches: src/data/patterns.js (2 new entries), src/data/observations.js (2 new entries)
