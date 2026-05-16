@@ -45,6 +45,10 @@ Multiple agents have uncommitted concurrent work staged at session-close (the fi
 3. **`AUDIT/04_methodology_proposals.md` items** — material-witness `09_material/` layer, geographic Map view, scholar role-class — all still untouched. The DASHBOARD now surfaces these so any pre-flight will see them.
 4. **Lint warnings to chip away at** — 34 schema/date warnings (mostly the `id: foo` vs file stem `event-foo` / `tradition-foo` drift documented in scripture-1 v2's open-gap list). Mechanical fix; a one-shot script could correct them.
 
+### Wins-log convention (added this block)
+
+`00_meta/INVESTIGATION-LEADS.md` is the **standing growing log** of MASSIVE-WIN cross-tradition transmission-edge findings, unexpected connections, textual shocks, and structural framework discoveries. Items numbered continuously across all batches (currently 1–37); items 26–37 were appended in this block. **When your batch surfaces a cross-tradition transmission edge or unexpected connection, append a numbered entry to this file** — it is the source-of-truth for any future "highlights" / "discoveries" section of the public-facing atlas. See the file footer for the format convention.
+
 ---
 
 ---
