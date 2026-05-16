@@ -123,10 +123,10 @@ _Hand-maintained. Each agent currently working in the vault appends a claim bloc
 
 ---
 
-## goblin-threshold-guardian-1 — symbols / threshold guardian thread — started 2026-05-16 — IN PROGRESS
-- Owning: `09_symbols/lamassu.md` (NEW), `09_symbols/sphinx.md` (NEW), `09_symbols/janus.md` (NEW), `09_symbols/mezuzah.md` (NEW)
-- Goal: Threshold guardian cross-tradition MASSIVE WIN; lamassu→cherubim transmission (best-documented cross-tradition link in Near Eastern religion); sphinx Egyptian-vs-Greek transformation; Janus two-faced threshold deity = Eshu/Hermes/Ganesha convergence; mezuzah as universal threshold-inscription pattern
-- Status: in-progress
+## ~~goblin-threshold-guardian-1 — symbols / threshold guardian thread — started 2026-05-16 — FINISHED~~
+- ~~Owning: `09_symbols/lamassu.md` (NEW), `09_symbols/sphinx.md` (NEW), `09_symbols/janus.md` (NEW), `09_symbols/mezuzah.md` (NEW)~~
+- ~~Goal: Threshold guardian cross-tradition MASSIVE WIN; lamassu→cherubim transmission (best-documented cross-tradition link in Near Eastern religion); sphinx Egyptian-vs-Greek transformation; Janus two-faced threshold deity = Eshu/Hermes/Ganesha convergence; mezuzah as universal threshold-inscription pattern~~
+- ~~Status: finished — 4 new full symbol nodes · 167 total symbols · 14447 edges · 0 YAML errors · 0 new dead links introduced~~
 
 ---
 
