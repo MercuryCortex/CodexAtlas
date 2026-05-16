@@ -25,10 +25,10 @@ variants:
     description: "**Gnostic Kenoma (κένωμα)**: In Valentinian and Sethian Gnosticism, the *kenoma* (κένωμα — 'void, emptiness') is the realm OUTSIDE the Pleroma (πλήρωμα — 'fullness'). The kenoma is the fallen world — the void produced by the error or deficiency (*hysterēma*) of Sophia's unauthorized emanation. Matter and the material cosmos are kenoma — the absence of the Pleroma's fullness. Salvation is the soul's restoration from kenoma to Pleroma: the void filled. The kenoma/Pleroma pair is the Gnostic structural encoding of the Void as the problem that gnosis solves. See [[the-pleroma]]."
 appearances:
   - "[[phase-2-016-early-buddhist-suttas]]"
-  - "[[phase-3-002-prajnaparamita-texts]]"
+  - "[[phase-3-031-asthasahasrika-prajnaparamita]]"
   - "[[phase-4-059-tripartite-tractate]]"
   - "[[phase-4-006-hypostasis-of-the-archons]]"
-  - "[[phase-6-003-zohar]]"
+  - "[[phase-5-027-sefer-ha-zohar]]"
 deity-instances:
   - "[[ein-sof]]"
 tradition-context:
@@ -36,11 +36,10 @@ tradition-context:
   - "[[tradition-theravada-buddhism]]"
   - "[[tradition-vajrayana-buddhism]]"
   - "[[tradition-kabbalah]]"
-  - "[[tradition-christian-mysticism]]"
-  - "[[tradition-taoism]]"
+  - "[[tradition-medieval-christianity]]"
+  - "[[tradition-daoism]]"
   - "[[tradition-egyptian-religion]]"
-  - "[[tradition-sethian-gnosticism]]"
-  - "[[tradition-valentinian-gnosticism]]"
+  - "[[tradition-gnosticism]]"
 cross-symbol-edges:
   - target: "bindu"
     type: "parallel-form"

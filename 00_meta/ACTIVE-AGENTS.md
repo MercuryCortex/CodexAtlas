@@ -1562,3 +1562,10 @@ Files: sacred-cauldron.md (NEW) · cerridwen.md (STUB, deity) · bran-the-blesse
 - Final: 2052/2540 (80.8%) — +434 thumbnails this session
 - SUSPECTS.md created at 00_meta/SUSPECTS.md (553 suspects for manual review)
 - commits: 5f5558c, 705a2c8
+
+---
+
+## goblin-21c — symbols / Sacred Void + Sacred Eclipse + Dying-Rising God — 2026-05-16 — FINISHED
+- Owning: `09_symbols/sacred-void.md` (NEW), `09_symbols/sacred-eclipse.md` (NEW), `09_symbols/dying-rising-god.md` (NEW)
+- Goal: Sacred Void (śūnyatā/Ayin/kenosis/wu — cross-tradition MASSIVE WIN); Sacred Eclipse (Rahu-Ketu/Mesopotamian šar pūhi/Dresden Codex/Fenrir — celestial devouring universal pattern); Dying and Rising God (Osiris/Dumuzi/Dionysus/Adonis/Baldr/Christ — Frazer + Mettinger methodology-discipline)
+- Status: finished — 3 new symbol nodes · 0 dead links introduced · 0 YAML errors · STATUS.md logged
