@@ -4594,6 +4594,22 @@ const ALCHEMY_PRESETS = [
     ],
   },
   {
+    id: 'peshitta-silk-road-christianity',
+    category: 'transmission',
+    name: 'The Peshitta Road: Bible from Edessa to China',
+    headline: "The Syriac Peshitta — the oldest Bible translation in continuous use — carried Christianity further east than the Roman Empire ever reached. While Rome was still debating the Nicene creed, Syriac missionaries had planted churches in Persia (Ctesiphon), India (the Thomas Christians of Kerala), and Central Asia. By 635 CE the first Christian mission reached Tang-dynasty China, planting the faith documented by the Xi'an Nestorian Stele of 781 CE — a Chinese-language account of Christian theology carved in stone in Chang'an. The Church of the East was at its height the most geographically extensive Christian denomination in the world. Tamerlane's campaigns (1380–1405) destroyed it almost entirely — one of the most consequential and under-documented religious catastrophes in world history. The Thomas Christians of Kerala survived, still using the Peshitta today.",
+    picks: [
+      'phase-4-108-peshitta',
+      'ephrem-the-syrian',
+      'nestorius',
+      'tradition-syriac-orthodox',
+      'event-nestorian-stele-781',
+      'event-timur-destruction-church-of-east-1380-1405',
+      'event-mongol-sack-of-baghdad-1258',
+      'phase-3-006-septuagint',
+    ],
+  },
+  {
     id: 'llull-combinatorial-chain',
     category: 'transmission',
     name: 'Llull → Bruno → Leibniz: The Combinatorial Chain',

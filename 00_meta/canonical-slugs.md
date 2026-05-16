@@ -923,7 +923,7 @@ canonical-slug
 - `phase-8-023-gayanashagowa`
 - `tummal-chronicle`
 
-### event (185 nodes)
+### event (186 nodes)
 
 - `bent-pyramid-sneferu-dahshur`
 - `el-castillo-chichen-itza`
@@ -1089,6 +1089,7 @@ canonical-slug
 - `event-thera-eruption-c-1600-bce`
 - `event-third-buddhist-council-c-250-bce`
 - `event-third-crusade-1189-1192`
+- `event-timur-destruction-church-of-east-1380-1405`
 - `event-toledo-translations-1085-1150`
 - `event-trial-of-templars-1307-1314`
 - `event-tutankhamun-tomb-discovery-1922`
@@ -1798,7 +1799,7 @@ canonical-slug
 - `ziusudra`
 - `zosimos-of-panopolis`
 
-### symbol (150 nodes)
+### symbol (157 nodes)
 
 - `acacia`
 - `adinkra`
@@ -1808,6 +1809,8 @@ canonical-slug
 - `ankh`
 - `arabesque-girih`
 - `asclepian-rod`
+- `asherah-pole`
+- `ashtamangala`
 - `athanor`
 - `aum-om`
 - `axis-mundi`
@@ -1825,6 +1828,7 @@ canonical-slug
 - `chaos-primordial`
 - `chi-rho-labarum`
 - `coptic-cross`
+- `corn-mother`
 - `cosmic-egg`
 - `crescent-moon-star`
 - `cross-order-of-christ`
@@ -1857,6 +1861,7 @@ canonical-slug
 - `haoma`
 - `hexagram`
 - `indus-valley-script`
+- `kaaba-black-stone`
 - `kalachakra`
 - `labrys`
 - `labyrinth`
@@ -1874,6 +1879,7 @@ canonical-slug
 - `monas-hieroglyphica`
 - `mosaic-pavement`
 - `mount-ararat`
+- `mudra`
 - `naga-serpent`
 - `nataraja`
 - `nehushtan`
@@ -1924,6 +1930,7 @@ canonical-slug
 - `sri-yantra`
 - `star-of-ishtar`
 - `stupa`
+- `sudarshana-chakra`
 - `sulphur-mercury-salt`
 - `sun-disk`
 - `swastika`
@@ -1931,6 +1938,7 @@ canonical-slug
 - `tauroctony`
 - `tetragrammaton`
 - `tetramorph`
+- `thunderbird`
 - `thunderbolt-keraunos`
 - `thyrsus`
 - `tree-of-life`
@@ -2435,20 +2443,21 @@ canonical-slug
 
 | Refs | Dead target | Suggested canonical (existing) |
 |---:|---|---|
-| 3 | `tradition-sunni-islam` | `tradition-islam` |
+| 4 | `tradition-hinduism` | `tradition-greco-buddhism` |
+| 3 | `tradition-sunni-islam` | `oral-tradition-transmission` |
 | 3 | `guru-arjan-dev-ji` | `guru-arjan` |
 | 2 | `yam-canaanite` | `astarte-canaanite` |
 | 2 | `was-sceptre` | `was-scepter` |
-| 2 | `tradition-lingayat` | `tradition-islam` |
-| 2 | `tradition-judaism-sephardic` | `tradition-freemasonry` |
-| 2 | `tradition-islam-shia` | `tradition-islam` |
-| 2 | `tradition-islam-mughal` | `tradition-islam` |
-| 2 | `tradition-hussitism` | `tradition-islam` |
-| 2 | `tradition-christianity-catholic` | `tradition-early-christianity` |
-| 2 | `tradition-bahai` | `tradition-islam` |
-| 2 | `phase-4-045-vishnu-purana` | `phase-4-047-cassian-conferences` |
-| 2 | `phase-3-006-homeric-hymns` | `phase-3-008-book-of-daniel` |
-| 2 | `phase-1-005-descent-of-inanna` | `phase-1-003-enheduanna-hymns` |
+| 2 | `tradition-lingayat` | `tradition-greco-buddhism` |
+| 2 | `tradition-judaism-sephardic` | `oral-tradition-transmission` |
+| 2 | `tradition-islam-shia` | `oral-tradition-transmission` |
+| 2 | `tradition-islam-mughal` | `oral-tradition-transmission` |
+| 2 | `tradition-hussitism` | `oral-tradition-transmission` |
+| 2 | `tradition-christianity-catholic` | `oral-tradition-transmission` |
+| 2 | `tradition-bahai` | `tradition-shinto` |
+| 2 | `phase-4-045-vishnu-purana` | `phase-4-043-apophthegmata-patrum` |
+| 2 | `phase-3-006-homeric-hymns` | `phase-3-007-samaritan-pentateuch` |
+| 2 | `phase-1-005-descent-of-inanna` | `phase-1-002-pyramid-texts` |
 | 2 | `guru-gobind-singh-ji` | `guru-gobind-singh` |
 | 2 | `divine-names` | `divine-name` |
 | 2 | `aurangzeb-emperor` | `zara-yaqob-emperor` |
