@@ -26,6 +26,11 @@ refs:
     type: "monograph"
     tier: 1
 tags: [deity, gnostic, pleroma, aeons, concept-entity, divine-fullness]
+depictions:
+  - src: "https://upload.wikimedia.org/wikipedia/commons/thumb/b/bb/Nag_Hammadi_Codex_II.jpg/500px-Nag_Hammadi_Codex_II.jpg"
+    caption: "Nag Hammadi Codex II — the manuscript collection that contains the fullest Valentinian Pleroma cosmology"
+    source: "Wikimedia Commons / Claremont Colleges Digital Library"
+    license: "Public domain"
 ---
 
 # The Pleroma

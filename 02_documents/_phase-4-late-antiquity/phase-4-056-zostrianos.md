@@ -70,6 +70,11 @@ refs:
     type: "edited-volume"
     tier: 1
 tags: [phase-4, gnostic, sethian, nag-hammadi, zostrianos, platonizing, plotinus, porphyry, apocalypse, iranian-pseudepigraphy]
+depictions:
+  - src: "https://upload.wikimedia.org/wikipedia/commons/thumb/b/bb/Nag_Hammadi_Codex_II.jpg/500px-Nag_Hammadi_Codex_II.jpg"
+    caption: "Nag Hammadi Codex II — the manuscript collection preserving Zostrianos (NHC VIII,1)"
+    source: "Wikimedia Commons / Claremont Colleges Digital Library"
+    license: "Public domain"
 ---
 
 # Zostrianos

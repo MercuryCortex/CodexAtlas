@@ -29,6 +29,11 @@ refs:
     type: "monograph"
     tier: 1
 tags: [tradition, christian-heresy, dualism, bogomil, bulgaria, byzantine, balkans]
+depictions:
+  - src: "https://upload.wikimedia.org/wikipedia/commons/thumb/4/46/Radimlja_necropolis.jpg/500px-Radimlja_necropolis.jpg"
+    caption: "Radimlja stećci necropolis, Bosnia — medieval Bogomil/Christian funerary monuments"
+    source: "Wikimedia Commons"
+    license: "CC BY-SA 3.0"
 ---
 
 # Bogomilism

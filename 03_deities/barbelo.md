@@ -29,6 +29,11 @@ refs:
     type: "monograph"
     tier: 1
 tags: [deity, sethian, gnostic, barbelo, divine-feminine, first-emanation]
+depictions:
+  - src: "https://upload.wikimedia.org/wikipedia/commons/thumb/b/bb/Nag_Hammadi_Codex_II.jpg/500px-Nag_Hammadi_Codex_II.jpg"
+    caption: "Nag Hammadi Codex II — primary manuscript source for Sethian texts naming Barbelo"
+    source: "Wikimedia Commons / Claremont Colleges Digital Library"
+    license: "Public domain"
 ---
 
 # Barbelo

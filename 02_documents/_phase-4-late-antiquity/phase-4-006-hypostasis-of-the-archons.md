@@ -51,6 +51,11 @@ refs:
     tier: 1
     notes: "Treats Norea/Hypostasis specifically in the context of Jewish-Gnostic relations"
 tags: [phase-4, gnostic, sethian, nag-hammadi, archons, norea, genesis-rewrite]
+depictions:
+  - src: "https://upload.wikimedia.org/wikipedia/commons/thumb/b/bb/Nag_Hammadi_Codex_II.jpg/500px-Nag_Hammadi_Codex_II.jpg"
+    caption: "Nag Hammadi Codex II — manuscript containing Hypostasis of the Archons (NHC II,4)"
+    source: "Wikimedia Commons / Claremont Colleges Digital Library"
+    license: "Public domain"
 ---
 
 # Hypostasis of the Archons

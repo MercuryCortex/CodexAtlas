@@ -32,6 +32,11 @@ refs:
     type: "monograph"
     tier: 1
 tags: [tradition, christian-kabbalah, renaissance, hebraism, pico, reuchlin, esoteric-christianity]
+depictions:
+  - src: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/14/Pico_della_Mirandola.jpg/500px-Pico_della_Mirandola.jpg"
+    caption: "Giovanni Pico della Mirandola (1463–1494), founder of Christian Kabbalah"
+    source: "Wikimedia Commons"
+    license: "Public domain"
 ---
 
 # Christian Kabbalah

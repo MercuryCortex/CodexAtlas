@@ -179,6 +179,19 @@ OVERRIDES = {
     # Themes with no specific Wikipedia image — leave null (placeholder is correct)
     # alien-god, anticosmic, personal-daimon: intentionally NOT in OVERRIDES
 
+    # ---- Gnostic audit pass 2 (thumbnail-system-1, session 2026-05-16) ----
+    # 10 Gnostic aeon/deity/tradition/person nodes confirmed to have thumbnails
+    "sophia-gnostic":                    "Sophia (Gnosticism)",
+    "demiurge-gnostic":                  "Yaldabaoth",
+    "the-monad-gnostic":                 "Monad (philosophy)",
+    "primal-man-manichaean":             "Manichaeism",
+    "anthropos-gnostic":                 "Manichaeism",
+    "prince-of-darkness-manichaean":     "Manichaeism",
+    "urizen":                            "Urizen",
+    "sefirot":                           "Sefirot",
+    "william-blake":                     "William Blake",
+    "tradition-renaissance-hermeticism": "Hermeticism",
+
     # ---- 09_symbols/ overrides (opus-symbols-2, 2026-05-15) ----
     # Symbols often need explicit Wikipedia-article-title mapping because the slug
     # is descriptive ("eye", "bull", "lion") and bare-title search collides with

@@ -38,6 +38,11 @@ refs:
     type: "edited-volume"
     tier: 1
 tags: [deity, gnosticism, sethian, feminine, nag-hammadi]
+depictions:
+  - src: "https://upload.wikimedia.org/wikipedia/commons/thumb/b/bb/Nag_Hammadi_Codex_II.jpg/500px-Nag_Hammadi_Codex_II.jpg"
+    caption: "Nag Hammadi Codex II — preserves Hypostasis of the Archons where Norea's story is told"
+    source: "Wikimedia Commons / Claremont Colleges Digital Library"
+    license: "Public domain"
 ---
 
 # Norea

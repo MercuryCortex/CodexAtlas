@@ -63,6 +63,11 @@ refs:
     tier: 1
     notes: "Irenaeus's exposition of the Ptolemaic Valentinian system (I.1–8) is the principal external comparandum for the Tripartite Tractate's theology."
 tags: [phase-4, gnostic, valentinian, nag-hammadi, tripartite-tractate, jung-codex, pleroma, sophia, logos, three-classes]
+depictions:
+  - src: "https://upload.wikimedia.org/wikipedia/commons/thumb/b/bb/Nag_Hammadi_Codex_II.jpg/500px-Nag_Hammadi_Codex_II.jpg"
+    caption: "Nag Hammadi Codex II — same manuscript collection as Tripartite Tractate (NHC I,5, Jung Codex)"
+    source: "Wikimedia Commons / Claremont Colleges Digital Library"
+    license: "Public domain"
 ---
 
 # The Tripartite Tractate

@@ -27,6 +27,11 @@ refs:
     type: "monograph"
     tier: 1
 tags: [theme, cosmogony, demiurge, platonic, gnostic, craftsman]
+depictions:
+  - src: "https://upload.wikimedia.org/wikipedia/commons/e/e1/The_Ancient_of_Days.jpg"
+    caption: "William Blake — The Ancient of Days (1794), Urizen as demiurge/creator"
+    source: "Wikimedia Commons / British Museum"
+    license: "Public domain"
 ---
 
 # Demiurge

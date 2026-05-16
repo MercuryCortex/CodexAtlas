@@ -64,6 +64,11 @@ refs:
     type: "monograph"
     tier: 1
 tags: [phase-4, gnostic, nag-hammadi, thunder, perfect-mind, divine-feminine, sophia, isis-aretalogy, self-predication]
+depictions:
+  - src: "https://upload.wikimedia.org/wikipedia/commons/thumb/b/bb/Nag_Hammadi_Codex_II.jpg/500px-Nag_Hammadi_Codex_II.jpg"
+    caption: "Nag Hammadi Codex II — the codex family preserving Thunder, Perfect Mind (NHC VI,2)"
+    source: "Wikimedia Commons / Claremont Colleges Digital Library"
+    license: "Public domain"
 ---
 
 # The Thunder, Perfect Mind
