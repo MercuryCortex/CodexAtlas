@@ -47,17 +47,23 @@ _Hand-maintained. Each agent currently working in the vault appends a claim bloc
 
 ---
 
-## goblin-sacred-geometry-1 — symbols / sacred geometry thread — started 2026-05-16 — IN PROGRESS
-- Owning: `09_symbols/sri-yantra.md` (NEW), `09_symbols/flower-of-life.md` (NEW), `09_symbols/metatrons-cube.md` (NEW), `09_symbols/sol-niger.md` (NEW)
+## goblin-sacred-geometry-1 — symbols / sacred geometry thread — started 2026-05-16 — **FINISHED 2026-05-16**
+- Owned: `09_symbols/sri-yantra.md` (NEW), `09_symbols/flower-of-life.md` (NEW), `09_symbols/metatrons-cube.md` (NEW), `09_symbols/sol-niger.md` (NEW)
 - Goal: Sacred geometry + solar darkness symbols; Hindu-Islamic-Gothic-Hermetic cross-tradition wins
-- Status: in-progress
+- Status: finished
+- Delivered:
+  - **`sri-yantra.md`** — Shakta Tantric supreme yantra (Saundarya Laharī c. 820 CE); MASSIVE WINs: hexagram parallel-form (interlocked triangle male/female union, independent origins); sefirot-tree-of-life parallel (both cosmological emanation maps doubling as deity-body diagrams); aum-om syncretic-fusion (mantra-yantra identity doctrine); vesica-piscis visual-cognate (shared φ encoding independent of transmission); flower-of-life and metatrons-cube parallel-forms. 5 refs (Zimmer T1, Khanna T1, Brooks T1, Flood T1, Lawlor T2).
+  - **`flower-of-life.md`** — hexagonal circle tessellation; Abydos attestation (Seti I c. 1290 BCE — contested, fully tier-disciplined); Islamic girih tile independent parallel (Critchlow T1); Chinese bīng wén independent parallel; natural honeycomb/graphene geometry; ancestor-of edges to metatrons-cube and vesica-piscis. 5 refs (Critchlow T1, Burkert T1, Ghyka T1, Lawlor T2, Melchizedek T3-documented-reception).
+  - **`metatrons-cube.md`** — all-five-Platonic-solids diagram; CRITICAL: modern name (1985–1990 Melchizedek) clearly documented — no classical text calls this "Metatron's Cube"; MASSIVE WINs: Kepler *Mysterium Cosmographicum* 1596 historical precedent (all 5 Platonic solids as single cosmic system); C60 Buckminsterfullerene = truncated icosahedron (molecular geometry encodes Platonic forms); monas-hieroglyphica parallel-form. 5 refs (Cornford T1, Scholem T1, Kepler T1, Yates T1, Lawlor T2).
+  - **`sol-niger.md`** — alchemical nigredo / Black Sun; MANDATORY Appropriation section: Wewelsburg SS mosaic (Himmler 1933–35), Landig 1971 as naming source, modern neo-Nazi hate-symbol (SPLC/ADL/Verfassungsschutz); MASSIVE WINs: Kali parallel (Hindu Tantric destruction-enabling-creation, independent); John of the Cross *Dark Night of the Soul* (Christian mystical nigredo vocabulary); Egyptian Ra-as-Osiris in the Duat (nocturnal dead sun; Piankoff T1); Ficino Saturnian-melancholy connection. 5 refs (Jung T1, Principe T1, Goodrick-Clarke T1, Piankoff T1, Ficino T1).
+- 0 dead links introduced. All wikilinks verified against live nodes.
 
 ---
 
-## opus-yijing-1 — Yi Jing + Four Books sub-docs — started 2026-05-16 — IN PROGRESS
-- Owned: `02_documents/_phase-2-axial-age/phase-2-042-yi-jing-i-ching.md` (NEW), `phase-2-043-great-learning-daxue.md` (NEW), `phase-2-044-doctrine-of-the-mean-zhongyong.md` (NEW)
+## opus-yijing-1 — Yi Jing + Four Books sub-docs — started 2026-05-16 — **FINISHED 2026-05-16**
+- Owned: `02_documents/_phase-2-axial-age/phase-2-042-yi-jing-i-ching.md` (NEW full), `phase-2-043-great-learning-daxue.md` (NEW metadata), `phase-2-044-doctrine-of-the-mean-zhongyong.md` (NEW metadata)
 - Goal: Create Yi Jing full node + Great Learning + Doctrine of the Mean metadata; wire Leibniz/Jung/binary cross-tradition edges
-- Status: in-progress
+- Status: FINISHED — 3 nodes, 0 dead links, data.js rebuilt (400 docs · 2299 nodes · 13590 edges)
 
 ---
 
