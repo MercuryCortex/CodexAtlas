@@ -622,6 +622,21 @@ Format:
 
 ---
 
+## ~~goblin-sacred-animals-1 — symbols / sacred animals thread (minotaur + garuda + cow-sacred) — started 2026-05-16 — FINISHED 2026-05-16~~
+- ~~Owning: `09_symbols/minotaur.md` (NEW), `09_symbols/garuda.md` (NEW, id: garuda-symbol), `09_symbols/cow-sacred.md` (NEW)~~
+- ~~Note: `09_symbols/labyrinth.md` already existed — skipped (goblin-pattern-mystery-1 completed it)~~
+- ~~Status: finished — 3 new symbol nodes · 203 total symbols · 14606 edges · 0 YAML errors · 0 new dead links · commit a2261b5~~
+
+---
+
+## goblin-esoteric-fire-1 — symbols / esoteric fire thread — started 2026-05-16 — IN PROGRESS
+- Owning: `09_symbols/hamsa.md` (NEW), `09_symbols/winged-disk.md` (NEW), `09_symbols/royal-arch.md` (NEW), `09_symbols/sacred-fire.md` (NEW)
+- Note: `hamsa-khamsa.md` already exists (full); `sacred-fire-atash.md` already exists (metadata Zoroastrian focus); `faravahar.md` already exists. New files use distinct IDs: hamsa, sacred-fire, winged-disk, royal-arch — all verified unique.
+- Goal: Hamsa — cross-Abrahamic apotropaic amulet MASSIVE WIN (Jewish/Muslim/Christian shared object); Winged Disk — Egyptian Behdety → Assyrian → Achaemenid Faravahar iconographic transmission; Royal Arch — Masonic capstone degree (JABULON + Triple Tau + vault narrative); Sacred Fire — universal eternal-flame cluster (Zoroastrian/Vedic/Roman/Greek/Celtic/Jewish multi-tradition table)
+- Status: in-progress
+
+---
+
 ## sonnet-won-nestorian-1 — content / Won Buddhism + Nestorian Stele — started 2026-05-15 — **FINISHED 2026-05-15**
 - Owning: `07_traditions/tradition-won-buddhism.md` (NEW), `04_persons/sotaesan.md` (NEW), `05_events/event-nestorian-stele-781.md` (NEW), `src/js/app.js` (silk-road preset + investigation update)
 - Goal: Create Won Buddhism tradition + Sotaesan founder + Nestorian Stele event; wire nestorian-stele into silk-road preset/investigation; commit 7 orphaned nodes
@@ -633,6 +648,13 @@ Format:
   - **`src/js/app.js`** — `nestorian-stele` added to silk-road-transmission-corridor preset picks + silk-road-corridor Investigation seeds; thread note updated
   - **Orphaned commit:** 7 nodes (huainanzi, cantong-qi, baopuzi-ge-hong, liezi, event-crucifixion, event-al-hallaj-execution, theme-persecution-as-legitimation)
 - Build: 2130 nodes
+
+---
+
+## goblin-indigenous-mystery-1 — symbols / indigenous recording systems + mystery emblems thread — started 2026-05-16 — IN PROGRESS
+- Owning: `09_symbols/wampum.md` (NEW), `09_symbols/pakal-sarcophagus-lid.md` (NEW), `09_symbols/black-sun.md` (NEW), `09_symbols/cornucopia.md` (NEW)
+- Goal: Wampum as sacred diplomatic recording system (Hiawatha Belt + Condolence Ceremony + quipu parallel-form); Pakal Sarcophagus Lid as Maya World Tree axis mundi (von Däniken Tier-4 MANDATORY); Black Sun Wewelsburg appropriation (MANDATORY Appropriation section like swastika); Cornucopia as inexhaustible-vessel cross-tradition (pūrṇa-kalasha + Dagda's Cauldron parallel-form)
+- Status: in-progress
 
 ---
 
@@ -1351,7 +1373,19 @@ The things opus-foundation-1 claimed but never started are all still open:
 
 ---
 
+## goblin-emerald-recovery — symbols / emerald-tablet — started 2026-05-16 — IN PROGRESS
+- Owning: `09_symbols/emerald-tablet.md` (NEW)
+- Hands-off: everything else
+
+---
+
 ## goblin-world-wisdom-1 — symbols / ifa-divination + sankofa + quipu + eagle-symbol — started 2026-05-16 — IN PROGRESS
 - Owning: `09_symbols/ifa-divination.md` (NEW), `09_symbols/sankofa.md` (NEW), `09_symbols/quipu.md` (NEW), `09_symbols/eagle-symbol.md` (NEW)
 - Goal: Ifá binary divination system (256 Odu = 2^8 MASSIVE WIN vs. I Ching 64 hexagrams = 2^6 — independent parallel binary computing); Sankofa as Akan memory-return symbol + Pan-African diaspora reception MASSIVE WIN; Quipu as Andean knotted-cord recording system (numerical decoded; narrative contested) with cross-tradition cord-wisdom; Eagle as most cross-tradition attested sacred bird — solar messenger + eagle↔serpent cosmic duality MASSIVE WIN
+
+---
+
+## goblin-sacred-animals-1 [ACTIVE]
+- Targets: `09_symbols/cow-sacred.md` · `09_symbols/minotaur.md` · `09_symbols/garuda.md`
+- Hands-off: everything else
 - Status: in-progress
