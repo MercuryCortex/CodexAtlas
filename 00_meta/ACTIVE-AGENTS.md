@@ -2086,7 +2086,10 @@ Files: sacred-cauldron.md (NEW) · cerridwen.md (STUB, deity) · bran-the-blesse
 
 ---
 
-## alchemy-concepts-1 — 7 alchemy concept nodes + cross-tradition wiring — IN PROGRESS (2026-05-17)
-- Owns: `12_alchemy/alchemy-ouroboros.md` (NEW), `alchemy-calcination-stages.md` (NEW), `alchemy-vitriol-descent.md` (NEW), `alchemy-conjunction-hieros-gamos.md` (NEW), `alchemy-homunculus.md` (NEW), `alchemy-sulfur-mercury-theory.md` (NEW), `alchemy-kabbalah-alchemy-synthesis.md` (NEW)
-- Also enriches: `alchemy-prima-materia.md`, `alchemy-opus-magnum.md`, `alchemy-nigredo-albedo-rubedo.md` (cross-tradition links only)
-- Status: IN PROGRESS
+## ~~alchemy-concepts-1 — 7 alchemy concept nodes + cross-tradition wiring — FINISHED (2026-05-17)~~
+- ~~Owned: `12_alchemy/alchemy-ouroboros.md` (NEW full), `alchemy-calcination-stages.md` (NEW full), `alchemy-vitriol-descent.md` (NEW full), `alchemy-conjunction-hieros-gamos.md` (NEW full), `alchemy-homunculus.md` (NEW full), `alchemy-sulfur-mercury-theory.md` (NEW full), `alchemy-kabbalah-alchemy-synthesis.md` (NEW full)~~
+- ~~Enriched: `alchemy-prima-materia.md` + `alchemy-opus-magnum.md` + `alchemy-nigredo-albedo-rubedo.md` (Cross-Tradition Connections sections added; all IDs verified)~~
+- ~~Build: 27 alchemy nodes · 16913 edges · 0 YAML errors · 0 dead links introduced~~
+- ~~Commits: 86fba25 (Part A) · 5943aeb (Part B)~~
+- ~~MASSIVE WIN edges: (1) ouroboros cross-cultural archetype — Egyptian/Gnostic/Norse/Aztec/Hindu independent attestations with zero contact; (2) conjunction 4,000-year continuity — Inanna-Dumuzi → Isis-Osiris → Shiva-Shakti → Tiferet-Shekhinah → Christ-Church; (3) VITRIOL = universal descent pattern — Inanna/katabasis/harrowing/shamanic/Dante structural identity; (4) sulfur-mercury theory as alchemy's atomic theory — 800 years of legitimate science from Jabir to Boyle; (5) Kabbalah-Alchemy synthesis as the convergence point where Neoplatonism + Kabbalah + Hermeticism + alchemy produce both modern science and ceremonial magic from the same root~~
+- ~~Status: FINISHED~~
