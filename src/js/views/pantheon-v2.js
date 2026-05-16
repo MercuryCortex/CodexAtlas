@@ -770,12 +770,11 @@
     }
     function applyInitialFit() {
       try {
-        // Dev-panel override only wins if user explicitly moved the slider
-        // off its default. Otherwise always recompute the aspect-aware fit so
-        // reload-load looks identical to the 100% button.
-        const override = window.CODEX_DEV?.settings?.cameraRatio;
-        const isCustom = typeof override === 'number' && Math.abs(override - 1.32) > 0.001;
-        const ratio = isCustom ? override : computeFitRatio();
+        // ALWAYS use computeFitRatio() for initial render. The dev-panel
+        // cameraRatio slider is for live-tweaking AFTER the diagram lands —
+        // it must not poison the reload-fit. The 100% button uses the same
+        // path so reload and 100% click are guaranteed to match.
+        const ratio = computeFitRatio();
         sigma.getCamera().setState({ ratio, x: 0.5, y: 0.5, angle: 0 });
         sigma.refresh();
       } catch (e) {}
