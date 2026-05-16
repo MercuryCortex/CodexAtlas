@@ -8298,7 +8298,7 @@ function renderAstrologyMode(mode, count) {
   }
 }
 
-// VIEWS.alphabets — Script origins, glyph evolution, letter mysticism. 4 modes.
+// VIEWS.alphabets — Script origins, glyph evolution, letter mysticism. 5 modes.
 // Mode renderers: src/js/alphabets/glyph-viewer.js, origin-chain.js, mysticism.js
 // Registered by alphabet-tab-1, 2026-05-16.
 const _alphabetsState = { mode: 'glyphs' };
@@ -8312,6 +8312,7 @@ VIEWS.alphabets = {
       <button class="btn btn-mini alpha-mode" data-mode="origin">origin chain</button>
       <button class="btn btn-mini alpha-mode" data-mode="mysticism">mysticism</button>
       <button class="btn btn-mini alpha-mode" data-mode="scripts">scripts</button>
+      <button class="btn btn-mini alpha-mode" data-mode="findings">findings</button>
     `;
     document.querySelectorAll('.alpha-mode').forEach(btn => {
       if (btn.dataset.mode === _alphabetsState.mode) btn.classList.add('active');
@@ -8331,6 +8332,12 @@ VIEWS.alphabets = {
     }
     if (_alphabetsState.mode === 'scripts') {
       renderAlphaScripts(pane);
+      document.getElementById('canvas').appendChild(pane);
+      return;
+    }
+    if (_alphabetsState.mode === 'findings') {
+      pane.classList.add('alpha-pane-live');
+      renderAlphaFindings(pane);
       document.getElementById('canvas').appendChild(pane);
       return;
     }
@@ -8361,6 +8368,109 @@ function renderAlphaScripts(pane) {
       const node = DATA.nodes.find(n => n.id === card.dataset.id);
       if (node) showDetail(node);
     };
+  });
+}
+
+// ── Alpha Findings mode ────────────────────────────────────────────────────
+// Surfaces observations and patterns specific to the alphabet/script domain
+// without leaving the Alphabets tab.
+function renderAlphaFindings(pane) {
+  const ALPHA_SECTIONS = ['Alphabet Layer Discoveries', 'Script and Alphabet Mysteries'];
+  const ALPHA_OBS_IDS = [
+    'letter-is-the-thing-universal',
+    'creation-by-word-six-traditions',
+    'aramaic-hidden-backbone',
+    'greek-vowel-cognitive-threshold',
+    'vowel-solution-triple-convergence',
+    'caucasian-alphabet-burst',
+  ];
+
+  const allObs = window.OBSERVATIONS_DATA || [];
+  const allPat = window.PATTERNS_DATA || [];
+
+  const obs  = ALPHA_OBS_IDS.map(id => allObs.find(o => o.id === id)).filter(Boolean);
+  const pats = allPat.filter(p => ALPHA_SECTIONS.includes(p.section));
+
+  const OBS_BADGE = {
+    'CONCLUSION':  { bg: 'rgba(90,172,168,0.14)',  border: 'rgba(90,172,168,0.5)',  text: '#5aaca8' },
+    'CONVERGENCE': { bg: 'rgba(212,165,90,0.14)',  border: 'rgba(212,165,90,0.5)',  text: '#d4a55a' },
+    'ANOMALY':     { bg: 'rgba(196,74,90,0.14)',   border: 'rgba(196,74,90,0.5)',   text: '#c44a5a' },
+  };
+  const PAT_BADGE = {
+    'CONVERGENCE':  { bg: 'rgba(212,165,90,0.14)',  border: 'rgba(212,165,90,0.5)',  text: '#d4a55a' },
+    'TRANSMISSION': { bg: 'rgba(90,172,168,0.14)',  border: 'rgba(90,172,168,0.5)',  text: '#5aaca8' },
+    'CONCLUSION':   { bg: 'rgba(90,172,168,0.14)',  border: 'rgba(90,172,168,0.5)',  text: '#5aaca8' },
+    'ANOMALY':      { bg: 'rgba(196,74,90,0.14)',   border: 'rgba(196,74,90,0.5)',   text: '#c44a5a' },
+  };
+
+  function badge(cat, map) {
+    const bc = map[cat] || map['CONVERGENCE'];
+    return `<span class="af-badge" style="background:${bc.bg};border-color:${bc.border};color:${bc.text}">${cat}</span>`;
+  }
+
+  function obsCard(o) {
+    const bc = OBS_BADGE[o.category] || OBS_BADGE['CONVERGENCE'];
+    const nodeChips = (o.nodes || o.evidence || []).map(id => {
+      const n = NODES_BY_ID[id];
+      return n ? `<span class="af-chip" data-id="${id}">${n.title}</span>`
+               : `<span class="af-chip af-chip--miss">${id}</span>`;
+    }).join('');
+    return `
+      <div class="af-card af-card--obs" data-id="${(o.nodes || o.evidence || [])[0] || ''}">
+        <div class="af-card-head">
+          ${badge(o.category, OBS_BADGE)}
+          <div class="af-title">${o.title}</div>
+        </div>
+        <div class="af-summary">${o.summary}</div>
+        ${o.body ? `<details class="af-body-wrap"><summary>full argument →</summary><div class="af-body">${o.body.replace(/\n/g,'<br>')}</div></details>` : ''}
+        ${nodeChips ? `<div class="af-chips">${nodeChips}</div>` : ''}
+      </div>`;
+  }
+
+  function patCard(p) {
+    const nodeChips = (p.sources || []).map(id => {
+      const n = NODES_BY_ID[id];
+      return n ? `<span class="af-chip" data-id="${id}">${n.title}</span>`
+               : `<span class="af-chip af-chip--miss">${id}</span>`;
+    }).join('');
+    return `
+      <div class="af-card af-card--pat" data-id="${(p.sources || [])[0] || ''}">
+        <div class="af-card-head">
+          ${badge(p.category, PAT_BADGE)}
+          <div class="af-title">${p.title}</div>
+        </div>
+        <div class="af-summary">${p.summary}</div>
+        ${nodeChips ? `<div class="af-chips">${nodeChips}</div>` : ''}
+      </div>`;
+  }
+
+  pane.innerHTML = `
+    <div class="af-header">
+      <h2>What the alphabet investigation found</h2>
+      <p>5,000 years of writing systems. 39 scripts mapped. These are the cross-tradition patterns that fell out of the investigation — things nobody draws on the same map.</p>
+    </div>
+
+    <div class="af-section-label">Conclusions &amp; observations</div>
+    <div class="af-cards">
+      ${obs.map(obsCard).join('')}
+    </div>
+
+    <div class="af-section-label">Cross-tradition patterns</div>
+    <div class="af-cards">
+      ${pats.map(patCard).join('')}
+    </div>
+  `;
+
+  pane.addEventListener('click', ev => {
+    const chip = ev.target.closest('.af-chip[data-id]');
+    if (chip && chip.dataset.id && NODES_BY_ID[chip.dataset.id]) {
+      selectNode(chip.dataset.id, true);
+      return;
+    }
+    const card = ev.target.closest('.af-card[data-id]');
+    if (card && card.dataset.id && NODES_BY_ID[card.dataset.id]) {
+      selectNode(card.dataset.id, true);
+    }
   });
 }
 
