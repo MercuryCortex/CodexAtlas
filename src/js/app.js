@@ -6103,27 +6103,15 @@ function alchemyLoadPresetToCards(presetId) {
   }));
 }
 
-// VIEWS.alchemy — soul alchemy · physical alchemy · cross-tradition investigation.
-// Three modes: nodes (browse 12_alchemy/ content), findings (MASSIVE WIN edges),
-// board (free-form card pinboard via src/js/alchemy/board.js).
+// VIEWS.transmutation — free-form card pinboard via src/js/alchemy/board.js.
+// The investigation modes (nodes + findings) live in VIEWS.alchemy below.
 // ============================================================
-const _alchInvMode = { mode: 'board' };
-
-VIEWS.alchemy = {
-  title: 'Alchemy',
-  subtitle: 'soul · matter · transmutation — cross-tradition investigation',
+VIEWS.transmutation = {
+  title: 'Transmutation',
+  subtitle: 'free-form alchemy board — load presets · pin cards · trace paths',
   render() {
-    document.getElementById('view-controls').innerHTML = `
-      <button class="btn btn-mini alch-inv-m${_alchInvMode.mode==='nodes'?' active':''}" data-m="nodes">nodes</button>
-      <button class="btn btn-mini alch-inv-m${_alchInvMode.mode==='findings'?' active':''}" data-m="findings">findings</button>
-      <button class="btn btn-mini alch-inv-m${_alchInvMode.mode==='board'?' active':''}" data-m="board">board ⚗</button>
-    `;
-    document.querySelectorAll('.alch-inv-m').forEach(b => {
-      b.onclick = () => { _alchInvMode.mode = b.dataset.m; setView('alchemy'); };
-    });
+    document.getElementById('view-controls').innerHTML = '';
     legend.style('display', 'none').html('');
-    if (_alchInvMode.mode === 'nodes') return renderAlchNodes();
-    if (_alchInvMode.mode === 'findings') return renderAlchFindings();
     document.querySelectorAll('.alch-presets-dropdown').forEach(el => el.remove());
     // Tear down any previous mount + create a fresh host div appended to #canvas
     document.querySelectorAll('.alch-board-root').forEach(el => el.remove());
@@ -6221,6 +6209,29 @@ VIEWS.alchemy = {
         });
       });
     });
+  }
+};
+
+// VIEWS.alchemy — soul alchemy · physical alchemy · cross-tradition investigation.
+// Two modes: nodes (browse 12_alchemy/ vault content) and findings (MASSIVE WIN edges).
+// The interactive board lives in VIEWS.transmutation above.
+// ============================================================
+const _alchState = { mode: 'nodes' };
+
+VIEWS.alchemy = {
+  title: 'Alchemy',
+  subtitle: 'soul · matter · transmutation — cross-tradition investigation',
+  render() {
+    document.getElementById('view-controls').innerHTML = `
+      <button class="btn btn-mini alch-m${_alchState.mode==='nodes'?' active':''}" data-m="nodes">nodes</button>
+      <button class="btn btn-mini alch-m${_alchState.mode==='findings'?' active':''}" data-m="findings">findings</button>
+    `;
+    document.querySelectorAll('.alch-m').forEach(b => {
+      b.onclick = () => { _alchState.mode = b.dataset.m; setView('alchemy'); };
+    });
+    legend.style('display', 'none').html('');
+    if (_alchState.mode === 'findings') return renderAlchFindings();
+    return renderAlchNodes();
   }
 };
 
@@ -6433,9 +6444,9 @@ VIEWS.transmission = {
     if (_toCardsBtn) _toCardsBtn.onclick = () => {
       const allNodeIds = nodes.map(n => n.id);
       if (!allNodeIds.length) return;
-      setView('alchemy');
-      // FIX (bug #2 — Transmission→Alchemy cards):
-      // VIEWS.alchemy.render() uses queueMicrotask() to mount _alchemyBoard on
+      setView('transmutation');
+      // FIX (bug #2 — Transmission→Transmutation cards):
+      // VIEWS.transmutation.render() uses queueMicrotask() to mount _alchemyBoard on
       // the host div. If the user has never visited Alchemy, _alchemyBoard.mount()
       // has never run and rootEl is null → addCard() silently no-ops.
       // Two rAFs (≈32 ms) let: (1) the microtask run, (2) the host get a measured
