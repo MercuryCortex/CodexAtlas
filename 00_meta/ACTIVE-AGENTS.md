@@ -670,10 +670,11 @@ Format:
 
 ---
 
-## quran-wiring-1 — Quran corpus wiring (SCRIPTURE_CORPORA + figure stubs) — started 2026-05-16 — IN PROGRESS
-- Owning: `src/js/app.js` (SCRIPTURE_CORPORA.quran only), `03_deities/iblis-shaytan.md` (NEW), `04_persons/hud-prophet.md` (NEW), `04_persons/salih-prophet.md` (NEW), `04_persons/shuayb-prophet.md` (NEW), `04_persons/luqman-sage.md` (NEW), `04_persons/dhu-al-qarnayn.md` (NEW), `04_persons/al-khidr.md` (NEW), `04_persons/uzayr.md` (NEW), `04_persons/zechariah-priest.md` (NEW), `04_persons/pharaoh-exodus.md` (NEW), `04_persons/lut.md` (NEW)
-- Goal: Wire Quran as a fully-structured corpus in SCRIPTURE_CORPORA (Meccan-Medinan default + 7-Manzil toggle); create 11 missing Quranic figure stubs
-- Status: in-flight
+## quran-wiring-1 — Quran corpus wiring (SCRIPTURE_CORPORA + figure stubs) — started 2026-05-16 — **FINISHED 2026-05-16**
+- Owned: `src/js/app.js` (SCRIPTURE_CORPORA.quran + quran-manzil), `03_deities/iblis-shaytan.md` (NEW), `04_persons/hud-prophet.md` (NEW), `04_persons/salih-prophet.md` (NEW), `04_persons/shuayb-prophet.md` (NEW), `04_persons/luqman-sage.md` (NEW), `04_persons/dhu-al-qarnayn.md` (NEW), `04_persons/al-khidr.md` (NEW), `04_persons/uzayr.md` (NEW), `04_persons/zechariah-priest.md` (NEW), `04_persons/pharaoh-exodus.md` (NEW), `04_persons/lut.md` (NEW)
+- Goal: Wire Quran as a fully-structured corpus in SCRIPTURE_CORPORA (Meccan-Medinan default + 7-Manzil as separate corpus key); create 11 missing Quranic figure stubs
+- Status: finished — 11 new nodes · 2 corpus keys (quran Meccan-Medinan, quran-manzil 7-Manzil) · 0 YAML errors · 0 dead links introduced
+- Commits: 84a291d (stubs), fe74c3b (app.js corpus structure)
 
 ---
 
