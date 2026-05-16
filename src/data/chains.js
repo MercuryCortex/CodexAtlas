@@ -345,6 +345,52 @@ window.CHAINS_DATA = [
   },
 
   {
+    id: 'music-leads-to-silence',
+    title: 'Music Leads to Silence — The Convergent Destination of Every Sonic Mystical Tradition',
+    category: 'CONVERGENCE',
+    span: 'c. -800 BCE – 1952 CE · 2,750 years',
+    summary: 'Every major musical mystical tradition arrives at the same destination: silence. The Pythagorean "unheard music" of the spheres (inaudible precisely because it is continuous). Vedic AUM dissolving into its fourth element, the anāhata (unstruck sound, the sound before sound). Sufi sama ending in fana (annihilation) — the state where the music stops and the listener has dissolved. The Maltese Hypogeum\'s absolute acoustic isolation. And John Cage\'s 4\'33" (1952): four minutes and thirty-three seconds of silence in a concert hall, in which the audience discovers that silence is full of sound — and that the distinction between music and world was always a construction. Every sophisticated sonic system, pursued far enough, concludes that the sound points at something sound cannot contain.',
+    links: [
+      {
+        date: 'c. -800 BCE',
+        label: 'Pythagoras — The Inaudible Music of the Spheres',
+        node: 'music-pythagorean-harmony',
+        note: 'The Pythagorean music-of-spheres has a paradox at its center: the celestial music is inaudible. Aristotle\'s report of the Pythagorean argument: the planets must make sound by their motion, but we do not hear it because we have heard it from birth and cannot distinguish it from silence. The most cosmic music is the one we cannot hear. Silence is not the absence of music — it is music so continuous that we mistake it for nothing.'
+      },
+      {
+        date: 'c. -600 BCE',
+        label: 'Vedic AUM — The Fourth Element Is Silence',
+        node: 'music-aum-cosmic-sound',
+        note: 'The Mandukya Upanishad (c. -600 to -300 BCE) describes AUM as having four elements: A (waking), U (dreaming), M (deep sleep), and a fourth that is soundless — the silence after the M, the transcendent state beyond the three worlds. The complete sound of AUM is A-U-M-silence. The silence is not the ending of the mantra; it IS the mantra\'s destination. Every AUM practice culminates in the wordless state that the sound was preparing.'
+      },
+      {
+        date: 'c. 300 CE',
+        label: 'Iamblichus — Beyond the Musical Scale',
+        node: 'music-neoplatonic-theurgy-sound',
+        note: 'The Corpus Hermeticum\'s Discourse on the Eighth and Ninth: the soul ascending through the seven planetary spheres (seven musical tones) arrives at the Eighth and Ninth — the octave and the realm beyond the octave — which are described as silence and light. The musical system points at something above music. The soul uses the scale to climb to the place where scales are no longer relevant. The sonic ladder is climbed and then abandoned — the same movement as every mystical tradition\'s scaffold.'
+      },
+      {
+        date: 'c. 1200 CE',
+        label: 'Rumi and Sufi Sama — Music as the Vehicle for Dissolution',
+        node: 'music-sufi-sama',
+        note: 'The Masnavi\'s opening: the reed flute "tells of the pain of separation." Sama (sacred listening) leads not to musical ecstasy but to fana — annihilation of the individual self in the divine presence. The music is not the destination; it is the vehicle. The state sama aims at is the state in which listening has dissolved into being, where the boundary between listener and music has vanished. The music stops in fana — not because the ceremony ends but because the self that was listening is no longer there to hear it.'
+      },
+      {
+        date: 'c. 1270-1291 CE',
+        label: 'Abulafia — Silence After Letter-Permutation',
+        node: 'music-abulafia-prophetic-kabbalah',
+        note: 'Abulafia\'s prophetic Kabbalah ends in silence too: the letter-permutation sequence, correctly performed, leads to a state of expanded consciousness in which the permutations are no longer being produced — the practitioner is in the state the permutations were designed to reach. The sonic practice is a bridge to its own dissolution. Abulafia explicitly distinguishes the technique from its goal: the sounds are a ladder, not a dwelling place.'
+      },
+      {
+        date: '1952',
+        label: 'John Cage — 4\'33": Silence IS the Concert',
+        node: 'music-creation-by-sound',
+        note: '4\'33" (premiered at Woodstock, New York, August 29, 1952): pianist David Tudor sits at a piano for four minutes and thirty-three seconds without playing. The audience discovers that the concert hall is full of sound — coughing, rustling, rain on the roof, traffic, their own breathing. Cage\'s Zen-informed claim: there is no silence; there is only sound we have not consented to listen to. The piece does not demonstrate that music can be silent — it demonstrates that the world is always already musical. The boundary between music and world is a construction that can be dissolved by attending to what is already present. 2,750 years after Pythagoras argued the cosmic music is inaudible because it is always playing, Cage demonstrates the same conclusion in a concert hall.'
+      },
+    ],
+  },
+
+  {
     id: 'maqam-raga-parallel-evolution',
     title: 'Maqam vs. Raga — Parallel Modal Systems, 1,200 Years Apart, No Contact at Origin',
     category: 'CONVERGENCE',
