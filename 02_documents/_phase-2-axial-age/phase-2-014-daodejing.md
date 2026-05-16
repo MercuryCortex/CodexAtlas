@@ -22,7 +22,7 @@ influenced-by: ["earlier Chinese cosmological speculation", "shamanic / wisdom t
 influences: ["[[phase-2-022-zhuangzi]]", "[[phase-2-026-han-feizi]] (earliest political commentary on the DDJ, the *Jie Lao* and *Yu Lao* chapters)", "all later Daoism (Religious Daoism, Daozang)", "Chinese Buddhism (Chan/Zen)", "Neo-Confucianism"]
 deities-mentioned: []
 events-context: ["Warring States period (-475 to -221), the philosophical Hundred Schools"]
-status: "partial"
+status: "full"
 preservation: "Multiple recensions: (1) the received text (the Wang Bi recension ~250 CE), 81 chapters in two parts (Dao chs. 1–37, De chs. 38–81); (2) the Mawangdui silk manuscripts (Hunan, excavated 1973), two copies dated ~-200 BCE, with De before Dao; (3) the Guodian bamboo slips (Hubei, excavated 1993), ~-300 BCE, a partial earlier version (~2,000 characters vs. the full ~5,000) that may represent the oldest recoverable layer."
 refs:
   - title: "Tao Te Ching: A New Translation Based on the Recently Discovered Ma-wang-tui Texts"
@@ -167,6 +167,12 @@ Citation: DDJ ch. 48, trans. Legge 1891.
 - **Authorship.** Whether any historical "Laozi" existed is doubted by most. The text is best treated as a school composition.
 - **Order Dao→De vs. De→Dao.** Mawangdui has *De* (chs. 38–81) before *Dao* (chs. 1–37), reversing the received order. Some scholars regard this as the older arrangement.
 - **Mystical vs. political reading.** Whether the DDJ is primarily a manual of personal cultivation/mysticism or a manual of statecraft for rulers is debated; both readings have long pedigree (Hanfeizi gave a Legalist political reading already in -3rd c.).
+
+## MASSIVE WIN — cross-tradition edges
+- **"The Dao that can be spoken is not the eternal Dao" (ch. 1) — the vault's apophatic apex, eastern axis:** structurally identical to Plotinus' "the One is beyond thought and speech" (Enn. VI.9.4), the Zohar's *Ein Sof* ("without end, beyond all predication"), Ibn ʿArabī's *Ḥaqq* (the Real that language cannot fix), and Eckhart's *Gottheit*. Each arrives at the unspeakable absolute by philosophically independent routes; the DDJ is the earliest dateable statement of the cross-tradition "ineffability of the ultimate" cluster, attested at Guodian ~-300 BCE.
+- ***Geyi* (格義, "matching concepts") — Buddhism bootstrapped through Daoist vocabulary:** when Indian Buddhism entered China (~2nd–5th c. CE), translators rendered *śūnyatā* (emptiness) as *wu* (無, non-being), *nirvāṇa* as *wu-wei*, and meditative absorption as *zuòwàng* (sitting-forgetting). The DDJ was not a passive recipient; it was the conceptual vocabulary through which China absorbed Madhyamaka and Yogācāra — the deepest documented case of one mystical tradition providing the hermeneutic lens for another.
+- ***Wu-wei* ↔ Buddhist *anābhogacaryā* ↔ Stoic *ataraxia* ↔ Yogic *naiṣkarmya*:** four philosophical traditions (Chinese, Indian, Greek, Sanskrit Hindu) converge on "action without ego-driven striving" as the contemplative ideal, each deploying near-identical water-and-flow metaphors. The Bhagavad Gītā's "do your duty without attachment to fruits" (3.19–20) and the DDJ's wu-wei are structurally isomorphic despite zero demonstrated contact; this is the vault's strongest case for convergent ethical discovery.
+- **"Something undefined and complete before Heaven and Earth" (ch. 25) ↔ *tōhû wābōhû* ↔ *Apsu/Tiamat* ↔ Hesiod's *Chaos*:** the primordial formless void before creation is the vault's most widely-distributed cosmogonic motif. The DDJ's *wu* is the east-Asian member of a globe-spanning cluster that includes Genesis 1:2, Enuma Elish, Hesiod's *Theogony*, and the Rig Veda's Nāsadīya hymn (10.129); the DDJ pushes the written attestation of this motif to ~-300 BCE at Guodian.
 
 ## Refs
 1. Henricks, R.G. (1989). *Tao Te Ching* (Mawangdui version). Ballantine.

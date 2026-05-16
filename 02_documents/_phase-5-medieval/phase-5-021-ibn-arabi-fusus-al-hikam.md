@@ -22,7 +22,7 @@ influenced-by: ["[[phase-4-034-quran]]", "[[phase-5-007-sahih-al-bukhari]]", "Ib
 influences: ["the entire Akbarī school: Ṣadr al-Dīn al-Qūnawī (Ibn ʿArabī's stepson, ~1273), Muʾayyad al-Dīn al-Jandī, ʿAbd al-Razzāq al-Kāshānī, Dāʾūd al-Qayṣarī", "[[phase-5-025-rumi-masnavi]] (parallel rather than influence, but the same intellectual moment)", "Persian Sufi poetry tradition (ʿIrāqī, Jāmī)", "Mullā Ṣadrā (Phase 6); modern Sufi theology globally"]
 deities-mentioned: ["[[allah]]", "[[al-haqq]]", "[[nur-muhammadi]]"]
 events-context: []
-status: "partial"
+status: "full"
 preservation: "Continuous Islamic transmission; one of the most-commented-on books in Islamic intellectual history (~150 medieval and early-modern commentaries documented). Standard Arabic edition: ʿAfīfī (Cairo 1946). The *Fuṣūṣ* is short (27 chapters, ~150 pages); the *Futūḥāt al-Makkiyya* is by contrast a 560-chapter, 37-volume work."
 refs:
   - title: "The Bezels of Wisdom"
@@ -133,6 +133,12 @@ Citation: *Fuṣūṣ*, Chapter 10 (Wisdom of Unity in the Word of Hūd), paraph
 - **Pantheism vs. panentheism.** Sunni traditionalist critique (Ibn Taymiyya, modern Salafism) reads *waḥdat al-wujūd* as pantheist heresy denying the Creator-creature distinction. Ibn ʿArabī's defenders argue for panentheism (creation is in God; God exceeds creation; the *aḥadiyya* / *wāḥidiyya* distinction preserves transcendence). The interpretive question shapes contemporary Islamic theology.
 - **Authenticity of *Fuṣūṣ*.** A small minority position has questioned the work's authenticity on theological grounds; standard scholarship accepts it as Ibn ʿArabī's.
 - **Reading of the chapter on Aaron** (containing material that traditionalists found offensive on the Israelite worship of the Golden Calf) and on Noah (where Ibn ʿArabī's exegesis of Noah's polytheist contemporaries is famously controversial) — these are perennial flashpoints.
+
+## MASSIVE WIN — cross-tradition edges
+- ***Waḥdat al-wujūd* ↔ Advaita Vedānta ↔ Dzogchen ↔ Eckhart's "being is God" — the vault's non-dual summit:** four traditions assert radical metaphysical non-dualism — that multiplicity is the self-disclosure of a single Being, not a second ontological principle — using structurally identical arguments. Ibn ʿArabī's formulation is the Islamic member within the vault's most tightly cross-referenced convergence cluster; the comparison is not vague "mystical unity" but specific logical claims (the One cannot be other-than-itself; multiplicity is *tajallī* / *vivartavāda* / *lhun grub* / *istigkeit*) made with no demonstrated contact.
+- **The Perfect Man (*al-Insān al-Kāmil*) ↔ Gnostic Anthropos ↔ Philo's Logos ↔ Kabbalistic Adam Kadmon:** four traditions posit a primordial cosmic human as the ontological mediator between the absolute and creation — the blueprint from which the universe is formed, and the ideal through which the mystic returns to the source. Ibn ʿArabī's *al-Insān al-Kāmil* is the Islamic member of the vault's most widely-distributed cosmic-mediator-figure cluster, completing a chain that runs from Philo's second-God Logos (~30 CE) through John's incarnate Word to the Kabbalistic first Adam.
+- **"Every belief is a face of the Real" — the medieval source of religious pluralism:** Ibn ʿArabī's argument that the divine reality exceeds every religious formulation — and that the Kabbalistic knower recognizes God even in Israelite calf-worship (the Aaron chapter), because God overflows all doctrinal containers — is the intellectual ancestor of 20th-century religious pluralism (John Hick's "Real-as-such"; Raimundo Panikkar's "cosmotheandric"). This is the vault's clearest bridge between medieval Sufi metaphysics and modern Western philosophy of religion.
+- ***Nūr Muḥammadī* ↔ Philo's Logos ↔ John's Logos ↔ Proverbs' Wisdom/*Ḥokhmah*:** four traditions posit a pre-cosmic luminous mediator principle — the light of Muhammad, Philo's Word-as-second-God, John's incarnate *Logos*, Proverbs' *Ḥokhmah* "with God before creation" — identified as the primordial blueprint of creation. The vault's primary cosmic-Word cluster is now fully traceable from ~-900 BCE (Proverbs) through Philo (~30 CE), John (~90 CE), and Ibn ʿArabī (1230 CE) with T1 sources at every node.
 
 ## Refs
 1. Austin, R.W.J. (1980). *The Bezels of Wisdom*. Paulist Press.

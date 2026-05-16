@@ -22,7 +22,7 @@ influenced-by: ["[[phase-3-002-plato-dialogues]]", "Middle Platonism (Numenius)"
 influences: ["[[phase-4-020-iamblichus-on-the-mysteries]]", "[[phase-4-021-proclus-elements-of-theology]]", "Augustine (Confessions 7)", "Pseudo-Dionysius (apophatic theology)", "Renaissance Platonism (Ficino's translation 1492)"]
 deities-mentioned: ["[[the-one-plotinus]]", "[[nous-plotinus]]", "[[the-world-soul]]"]
 events-context: []
-status: "partial"
+status: "full"
 preservation: "Continuous Byzantine transmission. Porphyry arranged Plotinus' 54 treatises into six sets of nine (*enneads*) and published them ~301 CE, prefaced by his *Life of Plotinus*. Greek manuscripts begin in the 10th century. Marsilio Ficino's Latin translation (1492) launched the Renaissance Platonist revival."
 refs:
   - title: "Plotinus: Enneads (7 vols., Loeb Classical Library)"
@@ -151,6 +151,12 @@ Citation: Ennead II.9.4, 9 (selection from the treatise *Against the Gnostics*),
 ## Disputes
 - **Plotinus and Gnosticism.** Whether Plotinus' polemic was directed at specific known Sethian Gnostic communities in Rome (Turner, Tardieu, Narbonne) or at a broader Gnostic-philosophical posture. The Nag Hammadi parallels with Allogenes and Zostrianos make the specific-community reading strongly favored.
 - **Plotinus and Mysticism.** Whether Plotinus' *henōsis* is properly "mystical" in the modern sense (Hadot, Bussanich for; Rist with qualifications).
+
+## MASSIVE WIN — cross-tradition edges
+- **"Flight of the alone to the Alone" (*phygē monou pros monon*, VI.9.11) ↔ Sufi *fanāʾ* ↔ Hindu *samādhi* ↔ Dzogchen *rigpa*:** four traditions articulate the same phenomenological claim — subject/object collapse in unitive contemplation — arriving independently within a 1,000-year window. Plotinus' Rome (~270 CE) is the first Western philosophical statement of what comparative religion calls "mystical union"; the Islamic, Hindu, and Tibetan parallels are vault-crossable with sourced T1 citations at each node.
+- **Plotinus names Allogenes and Zostrianos — both texts are in this vault (NHC XI,3; VIII,1):** Ennead II.9 attacks "apocalypses of Zoroaster, Zostrianos, Nicotheus, Allogenes" circulating in Plotinus' own Roman circle; Nag Hammadi recovered the attacked texts. We hold both sides of one of antiquity's sharpest metaphysical debates. Plotinus' charge — Gnostics despise the good cosmos and plagiarize Plato without credit — is now answerable from vault-resident documents (cf. [[phase-4-002-apocryphon-of-john]]).
+- **Augustine, *Confessions* 7 → Latin Christianity:** "certain Platonist books" in Marius Victorinus' Latin translation (almost certainly Plotinus, *Enneads* I–V) freed Augustine from Manichaean matter-is-evil dualism. The *Enneads* are the direct intellectual bridge from pagan Neoplatonism into Nicene theology; Augustine's anti-Manichaean and anti-sceptical arguments both depend on Plotinian immateriality.
+- **Enneads → Proclus → Pseudo-Dionysius → Eckhart — the Western apophatic descent:** Proclus axiomatized Plotinus; Pseudo-Dionysius Christianized Proclus (and was mistaken for Paul's Athenian convert for 900 years, granting apostolic authority); Eckhart's *Gottheit* ("Godhead beyond God, beyond being") is the One in Christian dress. Every Western mystic who says "God is beyond all names and predication" is downstream of Ennead VI.9.4 — the single most important transmission line in Western apophatic theology.
 
 ## Refs
 1. Armstrong, A.H. (1966–88). *Plotinus: Enneads*. Loeb Classical Library, 7 vols.
