@@ -379,5 +379,21 @@ window.PATTERNS_DATA = [
     sources: ['music-scale-transmission-chain', 'music-hurrian-hymns', 'music-arabic-maqam'],
     summary: 'One theoretical framework — heptatonic scale organized around consonant intervals — in documented continuous use from Babylonian tuning theory (c. 1800 BCE) through Greek modes, Arabic maqam (via Baghdad translation movement), European church modes (via Boethius), to the Western tonal system. The longest documented music-theory transmission chain in history: 3,800 years, three major civilizations, one underlying structure.',
   },
+  {
+    id: 'time-music-gradient-six-traditions',
+    title: 'Six Traditions Had Time-Structured Music — One Went All the Way',
+    category: 'CONVERGENCE',
+    section: 'Music Layer Discoveries',
+    sources: ['music-raga-cosmology', 'music-liturgy-of-hours', 'music-greek-musical-ethos', 'music-islamic-adhan-maqam', 'music-yayue-ritual-music'],
+    summary: 'Every major civilization independently developed the intuition that different times of day require different music. Only India turned this intuition into a full cosmological system embedded in live performance. The gradient: Greek ethos theory (philosophical prescription) → Confucian yayue (political regulation) → Islamic adhan conventions (living practice, no theory) → Catholic Liturgy of Hours (time-structured, no cosmological theory) → Indian raga (full cosmological clock, cosmological theory, performance obligation).',
+  },
+  {
+    id: 'preservation-by-periphery',
+    title: 'Peripheral Cultures Preserve What Centers Abandon',
+    category: 'TRANSMISSION',
+    section: 'Music Layer Discoveries',
+    sources: ['music-yayue-ritual-music', 'music-boethius-de-musica', 'music-scale-transmission-chain', 'music-western-sacred-chant'],
+    summary: 'Japan and Korea preserved Tang-dynasty Chinese court music that China itself lost. Boethius preserved Greek music theory that no Greek institution maintained after the 6th century. Ethiopia preserved early Christian liturgical forms that Rome reformed away. The pattern: when an empire falls or reforms, its cultural periphery — which adopted the forms but was not subject to the center\'s internal pressures — becomes the archive. The most authentic versions of ancient traditions are often found at their geographic margins.',
+  },
 
 ];
