@@ -960,4 +960,93 @@ window.CHAINS_DATA = [
     ],
   },
 
+
+  // ─── VI. CONVERGENCE CHAINS (INDEPENDENT PARALLEL DISCOVERY) ──────────────
+
+  {
+    id: 'healing-through-sustained-sound',
+    title: 'Healing Through Sustained Sound — Six Independent Traditions',
+    category: 'CONVERGENCE',
+    span: 'c. 35,000 BCE – present · global independent convergence',
+    summary: 'Six independent traditions, spread across six continents and 35,000 years, arrive at the same practical protocol: sustained communal acoustic stimulus induces altered consciousness, and the altered state enables healing. The oldest documented instance (San Bushmen) predates the next-oldest by at least 30,000 years. The structural identity — not just "music heals" but the specific five-element protocol — is not explained by diffusion.',
+    links: [
+      {
+        date: 'c. 35,000 BCE',
+        label: 'San Bushmen — N/um-Kxao Trance Dance',
+        node: 'music-khoisan-trance-healing',
+        note: 'Southern Africa. Rock art evidence places the healing trance dance at least 35,000 years old. Protocol: communal singing + rhythmic clapping → healer\'s n/um rises → kia (trance) → laying on of hands. No instruments. The oldest documented music-medicine protocol on Earth.'
+      },
+      {
+        date: 'c. 40,000 BCE',
+        label: 'Siberian Shamanic Drum Tradition',
+        node: 'music-siberian-shaman-drum',
+        note: 'Northern Eurasia. Sustained rhythmic drumming transports the shaman\'s consciousness to spirit realms for healing of the sick. The drum is the "horse" that carries the shaman. Independent of San tradition — the two are roughly contemporaneous, both preceding the next documented instance by 35,000+ years.'
+      },
+      {
+        date: 'c. 1200–900 CE',
+        label: 'Navajo Chant — Hózhó Restoration',
+        node: 'music-navajo-chant-hozho',
+        note: 'American Southwest. Hataalii (ceremonial singer) performs precise chant sequences over the sick person. The correct sounds ARE hózhó (cosmic balance) — they do not invoke it. Most precisely theorized version: highest precision-requirement of any tradition in this chain.'
+      },
+      {
+        date: '9th–13th c. CE',
+        label: 'Sufi Sama — Music as Path to Divine Union',
+        node: 'music-sufi-sama',
+        note: 'Persia / Anatolia. Ney flute drone + communal movement + poetic recitation → fanāʾ (ego-annihilation in divine presence). Structural identity with San protocol: sustained communal acoustic stimulus → altered state → healing/spiritual transformation. ~34,000 years after San practice begins.'
+      },
+      {
+        date: 'post-8th c. CE',
+        label: 'Tibetan Singing Bowls — Healing Frequency',
+        node: 'music-tibetan-singing-bowls',
+        note: 'Tibet / Himalayas. Multi-partial standing waves in 110–220 Hz range applied to body. Healing protocol: sustained frequency + altered state + therapeutic application. The 110 Hz convergence: Maltese Hypogeum (c. −3600 BCE), Chartres Cathedral, and Hindu temple shikhara all architecturally tuned to 110–120 Hz independently.'
+      },
+      {
+        date: '16th c. CE – present',
+        label: 'Vodou Rada Ceremony — Spirit-Possession Healing',
+        node: 'music-vodou-lwa-drumming',
+        note: 'Haiti / Caribbean. Specific drum rhythms (rythme particulier) summon specific lwa (spirits). Community member is "mounted" (possessed) by the lwa, who heals the sick through the host body. Survived Middle Passage and 200 years of colonial prohibition because the rhythms were portable. The most socially resilient version of this protocol.'
+      },
+    ],
+  },
+
+  {
+    id: 'oral-custodians-of-cosmic-memory',
+    title: 'Oral Custodians of Cosmic Memory — Bardic and Griot Parallels',
+    category: 'CONVERGENCE',
+    span: 'c. 600 BCE – present · independent parallel institutions',
+    summary: 'On five continents, independent cultures developed a specialized hereditary class whose function is to preserve cosmological, genealogical, and legal knowledge in musical-verse form. The custodians of this knowledge are simultaneously musicians, historians, legal authorities, and cosmic memory keepers. The class is dangerous to offend, essential to the culture\'s self-knowledge, and the first target of colonizing powers — because destroying the bardic class destroys the culture\'s cognitive backbone.',
+    links: [
+      {
+        date: 'c. 600–1700 CE',
+        label: 'Celtic Filid and Bards — Verse as Reality',
+        node: 'music-celtic-bardic-tradition',
+        note: 'Ireland / Wales / Scotland. The highest grade (ollam) required 12 years of training and knowledge of 350 stories. Cainte (satirical verse) had legal standing to cause physical harm. Brehon Laws treated the poet\'s verse as causally operative — the same reality-claim as heka, Sanskrit mantra, and Navajo chant. Roman policy in Gaul specifically targeted druids/bards because they recognized them as the cognitive backbone.'
+      },
+      {
+        date: 'c. 400 BCE – present',
+        label: 'West African Griot Tradition',
+        node: 'music-griot-tradition',
+        note: 'West Africa. Hereditary jeli/jali class preserves genealogy, history, and law in musical form. The griot is simultaneously musician, oral historian, diplomatic envoy, and memory-keeper. Dangerous to offend; indispensable to the noble household. The closest documented structural parallel to the Celtic filid.'
+      },
+      {
+        date: 'c. 300 BCE – present',
+        label: 'Hawaiian Kahuna and the Kumulipo',
+        node: 'music-polynesian-mana-chant',
+        note: 'Hawaii / Polynesia. The Kumulipo (2,102-line creation chant) is simultaneously cosmology, genealogy, and royal political authority claim. Chanting the Kumulipo publicly and accurately asserts the chief\'s descent from the cosmic origin. Song IS the legitimacy claim; the mana transmitted through correct chant IS the political authority.'
+      },
+      {
+        date: 'c. 1200–2000 CE',
+        label: 'Māori Tohunga — Whakapapa Chanting',
+        node: 'music-polynesian-mana-chant',
+        note: 'Aotearoa/New Zealand. The tohunga (specialist knowledge-keeper) maintains genealogical chants (whakapapa) that must be letter-perfect. An error in public genealogical chanting invalidates the speaker\'s tribal standing. The song preserves the culture\'s political and cosmological map simultaneously.'
+      },
+      {
+        date: 'c. 40,000 BCE – present',
+        label: 'Aboriginal Songlines — Song as Geographic Map',
+        node: 'music-aboriginal-songlines',
+        note: 'Australia. The songlines are not songs about the landscape — they ARE the landscape in sonic form. To know a songline is to be able to navigate the land. The specialist knowledge-keepers (elders) who maintain the songlines maintain the culture\'s knowledge of its territory, law, and cosmological origin.'
+      },
+    ],
+  },
+
 ];
