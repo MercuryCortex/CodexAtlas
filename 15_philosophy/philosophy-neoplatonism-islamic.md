@@ -5,7 +5,7 @@ type: philosophy
 philosophy-type: movement
 status: full
 tier: 1
-tradition: tradition-islamic-philosophy
+tradition: tradition-islam
 also-in-traditions:
   - tradition-neoplatonism
   - tradition-islam
