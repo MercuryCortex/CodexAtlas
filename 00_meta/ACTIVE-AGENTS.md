@@ -4,6 +4,12 @@ _Hand-maintained. Each agent currently working in the vault appends a claim bloc
 
 ---
 
+## ~~alphabet-tab-1 — Alphabets tab (4 modes, glyph viewer) — FINISHED~~
+- ~~Owns: `src/js/alphabets/` (NEW folder: glyph-data.js + glyph-viewer.js + origin-chain.js + mysticism.js), `src/js/app.js` (VIEWS.alphabets + renderAlphaScripts), `index.html` (nav item + 4 script tags + Noto Egyptian Hieroglyphs font), `src/styles/app.css` (full block appended)~~
+- ~~Status: FINISHED — commits fbed8d7, 106b1d9, 7ec91d8, 2facbd2~~
+
+---
+
 ## ~~alphabet-ancient-scripts-1 — 4 ancient-scripts nodes — 2026-05-17 — FINISHED~~
 - ~~Owned: `11_alphabets/alphabet-cuneiform-sacred.md` (NEW full), `11_alphabets/alphabet-medu-netjer.md` (NEW full), `11_alphabets/alphabet-ugaritic.md` (NEW full), `11_alphabets/alphabet-phoenician.md` (NEW full)~~
 - ~~Also touched: `src/data/patterns.js` (2 new entries: scribal-deity-triad + script-starts-sacred), `09_symbols/proto-sinaitic.md` (2 new cross-edges), `03_deities/thoth.md` (Alphabet Layer section), `03_deities/nabu.md` (Alphabet Layer section)~~
@@ -1797,3 +1803,9 @@ Files: sacred-cauldron.md (NEW) · cerridwen.md (STUB, deity) · bran-the-blesse
   - Hermetic Logos-Sound: CH I "darkness groaning + Logos descending" = ancient prose statement of creation-by-sound; seven-sphere soul-ascent IS de-tuning/re-tuning the cosmic scale (Pythagorean soteriology); Hermes Trismegistus = only ancient figure combining instrument-invention + psychopomp + creator-by-sound (Thoth+Hermes synthesis); Discourse on the Eighth and Ninth = only ancient text framing transcendence as going beyond the musical scale
   - Orphic Hymns: Structural convergence with Sama Veda — both corpora use precise metered divine-name invocation as presence-summoning technology, zero contact, independent development; direct feed-in to Hermetic/Neoplatonic "true-name" theology (Iamblichus cites explicitly); Orphic cosmogonic roar at origin moment = creation-by-sound pattern
   - Chaldean Oracles: Iynx concept = divine vibrational force whose physical-scale instrument analog is operationally identical — the clearest ancient statement of music-cosmos homology as operative rather than metaphorical; textual bridge from Pythagorean music-of-spheres theory to Neoplatonic theurgic sound practice (before Oracles: theory; after: ritual technology)
+
+---
+
+## alphabet-independent-scripts-1 — 3 independent-tradition script nodes — IN PROGRESS
+- Owns: 11_alphabets/alphabet-mayan-glyphs.md (NEW), 11_alphabets/alphabet-chinese-oracle-bones.md (NEW), 11_alphabets/alphabet-indus-valley-script.md (NEW, enriches 09_symbols/indus-valley-script.md)
+- Status: IN PROGRESS
