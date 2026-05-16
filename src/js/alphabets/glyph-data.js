@@ -6,7 +6,7 @@
 window.ALPHA_GLYPH_DATA = [
   {
     letter: 'A', name: 'Aleph', meaning: 'ox', gardiner: 'E1',
-    unicode: 0x130F8, phoneme: 'ʾ (glottal stop)', greek: 'Α alpha', latin: 'A',
+    unicode: 0x130D2, phoneme: 'ʾ (glottal stop)', greek: 'Α alpha', latin: 'A',
     hebrew: 'א', arabic: 'ا', phoenician: '\u{10900}',
     note: 'You are reading a rotated ox-skull. The letter A is an upside-down ox-head — tip it forward and you see the snout and two horns. "Aleph" means ox. The very first letter of every Western alphabet is a cow.',
     investigationHighlight: 'Aleph is the first letter of every Western alphabet — but it makes no sound. A glottal stop: silence before speech. In Sefer Yetzirah, Aleph = Air, the first of 3 Mother Letters (Air / Water / Fire). In Islamic mysticism, the Alif supports all vowels but has no independent voice. In Hebrew mysticism, God\'s first act of creation was through Aleph — the inaudible beginning. Every alphabet in the Western tradition starts with silence.',
@@ -22,7 +22,7 @@ window.ALPHA_GLYPH_DATA = [
   },
   {
     letter: 'G', name: 'Gimel', meaning: 'camel / throw-stick', gardiner: 'T14',
-    unicode: 0x13246, phoneme: 'g', greek: 'Γ gamma', latin: 'C / G',
+    unicode: 0x13319, phoneme: 'g', greek: 'Γ gamma', latin: 'C / G',
     hebrew: 'ג', arabic: 'ج', phoenician: '\u{10902}',
     note: 'The hump of a camel. The L-shape of Gamma (Γ) traces the neck and single hump. In Egyptian the throw-stick hieroglyph was used for the "g" sound — a common scribal pun (the word for throw-stick sounded like a Semitic word for camel-hump).',
     investigationHighlight: 'One Phoenician Gimel became two Latin letters: C and G. Early Latin used C for both sounds; Romans added the diagonal leg to create G specifically to distinguish them. Gematria value: 3. The letter-number systems (Hebrew Gematria, Greek Isopsephy, Arabic Abjad) all share the same Phoenician number-scaffold: Gimel = 3, across all three traditions, because they all inherited the same letter-order from Phoenician c. 1050 BCE.',
@@ -30,7 +30,7 @@ window.ALPHA_GLYPH_DATA = [
   },
   {
     letter: 'D', name: 'Daleth', meaning: 'door', gardiner: 'O31',
-    unicode: 0x13267, phoneme: 'd', greek: 'Δ delta', latin: 'D',
+    unicode: 0x1327F, phoneme: 'd', greek: 'Δ delta', latin: 'D',
     hebrew: 'ד', arabic: 'د', phoenician: '\u{10903}',
     note: 'A door or tent-flap. The triangular Delta (Δ) is the peaked shape of a leather door-hanging seen from the front. D in Latin rotated the triangle onto a vertical post: the upright post of the doorframe + the leather flap arching out = D.',
     investigationHighlight: 'Delta (Δ) names every river mouth in the world — because the Nile delta is triangular, because the triangle looks like the Greek letter Δ, because Δ looks like a door, because Daleth means "door." The word "delta" in modern geography is a 3,800-year transmission chain: Egyptian tent-flap hieroglyph → Phoenician letter → Greek alphabet → Latin geography. Every river delta on earth carries this name.',
@@ -38,7 +38,7 @@ window.ALPHA_GLYPH_DATA = [
   },
   {
     letter: 'E', name: 'He', meaning: 'window / arms raised in jubilation', gardiner: 'A28',
-    unicode: 0x1302D, phoneme: 'h', greek: 'Ε epsilon', latin: 'E',
+    unicode: 0x13020, phoneme: 'h', greek: 'Ε epsilon', latin: 'E',
     hebrew: 'ה', arabic: 'ه', phoenician: '\u{10904}',
     note: 'A figure with arms raised — the Egyptian hieroglyph for jubilation or "hail!" Greeks had no H-sound equivalent so they repurposed this as the vowel E (epsilon = "bare E"). The three prongs of E still echo the raised arms and head.',
     investigationHighlight: 'He is the first of the five Greek vowels repurposed from Semitic consonants. Greeks had no H-sound — so they took this letter and reassigned it as E. This was the cognitive threshold: by adding vowels, the Greek alphabet became the first writing system capable of representing any human utterance exactly. The consequence was not just linguistic — stable written abstract nouns made Greek philosophy structurally possible. He → Epsilon → Plato.',
@@ -46,7 +46,7 @@ window.ALPHA_GLYPH_DATA = [
   },
   {
     letter: 'F', name: 'Waw', meaning: 'hook / peg / mace', gardiner: 'T3',
-    unicode: 0x1307B, phoneme: 'w', greek: 'Υ upsilon / Ϝ digamma', latin: 'F / U / V / W / Y',
+    unicode: 0x13309, phoneme: 'w', greek: 'Υ upsilon / Ϝ digamma', latin: 'F / U / V / W / Y',
     hebrew: 'ו', arabic: 'و', phoenician: '\u{10905}',
     note: 'One letter spawned six modern letters: F, U, V, W, Y, and the Greek upsilon (Υ). The hook-peg hieroglyph made the "w" sound. Greeks used it first as the digamma Ϝ (F-sound), then as upsilon (U-sound). Latin split it further into U, V, W, and eventually Y. The most productive letter in history.',
     investigationHighlight: 'The most productive letter in history. One Phoenician hook-peg generated six modern letters: F, U, V, W, Y, and Greek Υ. "W" is literally "double U" — its name records the historical moment when scribes wrote UU to represent a sound Latin had no letter for. Every time you type U, V, W, Y, or F, you are typing a variant of a 3,800-year-old Phoenician hook. Waw also demonstrates the Greek vowel invention: it was repurposed as Upsilon, the vowel U.',
@@ -54,7 +54,7 @@ window.ALPHA_GLYPH_DATA = [
   },
   {
     letter: 'Z', name: 'Zayin', meaning: 'weapon (sword or axe)', gardiner: 'T7',
-    unicode: 0x1307E, phoneme: 'z', greek: 'Ζ zeta', latin: 'Z',
+    unicode: 0x1330E, phoneme: 'z', greek: 'Ζ zeta', latin: 'Z',
     hebrew: 'ז', arabic: 'ز', phoenician: '\u{10906}',
     note: 'A sword or double-headed axe. Zeta (Ζ) retains the blade shape. Latin borrowed it late (from Greek) specifically to transliterate Greek words — Z appears almost nowhere in native Latin vocabulary.',
     investigationHighlight: 'Z enters Latin at the very end of the alphabet, after Y, because Julius Caesar added both Y and Z to the Roman alphabet specifically to transliterate Greek loanwords. Z barely exists in native Latin; its position at the end records the moment of borrowing. Gematria value: 7 — the number of Shabbat, the week, completion. The weapon-letter lands on the number of rest.',
@@ -62,7 +62,7 @@ window.ALPHA_GLYPH_DATA = [
   },
   {
     letter: 'H', name: 'Heth', meaning: 'fence / courtyard wall', gardiner: 'O4',
-    unicode: 0x13253, phoneme: 'ḥ (emphatic h)', greek: 'Η eta', latin: 'H',
+    unicode: 0x13254, phoneme: 'ḥ (emphatic h)', greek: 'Η eta', latin: 'H',
     hebrew: 'ח', arabic: 'ح', phoenician: '\u{10907}',
     note: 'A fence or courtyard enclosure seen from above — the double horizontal bars are the fence posts. Greeks had no emphatic-H consonant so they turned it into the long-E vowel eta (Η). Latin kept the consonant as H but thinned the fence to two uprights and a crossbar.',
     investigationHighlight: 'The Masoretes (c. 500–1000 CE) invented their entire vowel-pointing system partly to preserve distinctions like He/Heth — two aspirated h-sounds that merged in later Hebrew pronunciation. After Hebrew ceased to be a vernacular, nobody could read Torah correctly without the pointing system. The Masoretes also accidentally created "Jehovah": the divine name YHWH was written with the vowels of Adonai as a reading-prohibition signal, and 16th-century Christian scholars misread it as a pronounceable hybrid.',
@@ -70,7 +70,7 @@ window.ALPHA_GLYPH_DATA = [
   },
   {
     letter: '', name: 'Teth', meaning: 'basket / coiled rope', gardiner: 'V28',
-    unicode: 0x130CB, phoneme: 'ṭ (emphatic t)', greek: 'Θ theta', latin: '(none — dropped)',
+    unicode: 0x1339B, phoneme: 'ṭ (emphatic t)', greek: 'Θ theta', latin: '(none — dropped)',
     hebrew: 'ט', arabic: 'ط', phoenician: '\u{10908}',
     note: 'A wickerwork basket or coiled rope seen from above — the circle with an interior mark. Greek theta (Θ) kept the shape almost exactly. Latin had no emphatic consonant for this, so Teth was dropped entirely — the first letter lost in the Latin transition.',
     investigationHighlight: 'The first casualty. Every script adaptation involves losses: letters for sounds the receiving language cannot make get dropped. Teth is the clearest case — an emphatic dental that Greek kept as Θ (theta) but Latin simply deleted. Wherever the Latin alphabet passes through a Semitic sound it has no equivalent for, that sound disappears. The knowledge-destroyed-by-conquest pattern applies to phonemes as well as scripts.',
@@ -78,7 +78,7 @@ window.ALPHA_GLYPH_DATA = [
   },
   {
     letter: 'I', name: 'Yod', meaning: 'hand / arm', gardiner: 'D36',
-    unicode: 0x1307C, phoneme: 'y', greek: 'Ι iota', latin: 'I / J',
+    unicode: 0x1309D, phoneme: 'y', greek: 'Ι iota', latin: 'I / J',
     hebrew: 'י', arabic: 'ي', phoenician: '\u{10909}',
     note: 'The hand and forearm. Yod is the smallest letter in the Hebrew alphabet — a single bent stroke. Jesus references this in Matthew 5:18: "not one jot (yod) or tittle will pass from the Law." The word "jot" in English is literally the Hebrew letter-name Yod, via Greek iota.',
     investigationHighlight: 'The smallest letter carries the most mystical weight. In Sefer Yetzirah, Yod is the subtlest element. In Islamic mysticism, the dot under Yaa (ي) is the primordial point from which all creation flows — the entire universe compressed to a single geometric point before expanding. Jesus says "not one Yod shall pass from the law" (Matthew 5:18) — the English word "jot" IS the letter-name, via Greek iota. The Aramaic transmission: Jesus spoke this in Aramaic; it was recorded in Greek; it entered English via the Hebrew letter-name.',
@@ -86,7 +86,7 @@ window.ALPHA_GLYPH_DATA = [
   },
   {
     letter: 'K', name: 'Kaph', meaning: 'open palm of hand', gardiner: 'D46',
-    unicode: 0x1307D, phoneme: 'k', greek: 'Κ kappa', latin: 'K',
+    unicode: 0x130A7, phoneme: 'k', greek: 'Κ kappa', latin: 'K',
     hebrew: 'כ', arabic: 'ك', phoenician: '\u{1090A}',
     note: 'The open palm of the hand, seen from the front — the vertical stroke is the arm, the angled strokes are the fingers. Kappa (Κ) and K both reproduce this shape. Used rarely in Latin (which preferred C for the k-sound) but preserved in words borrowed from Greek.',
     investigationHighlight: 'Hebrew Kaph has two forms: כ (open, mid-word) and ך (closed, final position) — one of 5 Hebrew "sofit" (final-form) letters. The distinction between open and closed, mid-word and final, is a scribal tradition over 2,500 years old preserved exactly by the Masoretes. The open palm / closed fist duality encodes a philosophical reading: the same letter is open when giving, closed when finishing.',
@@ -94,7 +94,7 @@ window.ALPHA_GLYPH_DATA = [
   },
   {
     letter: 'L', name: 'Lamedh', meaning: 'oxgoad / shepherd\'s crook', gardiner: 'S38',
-    unicode: 0x130B8, phoneme: 'l', greek: 'Λ lambda', latin: 'L',
+    unicode: 0x132FE, phoneme: 'l', greek: 'Λ lambda', latin: 'L',
     hebrew: 'ל', arabic: 'ل', phoenician: '\u{1090B}',
     note: 'The shepherd\'s crook used to goad cattle — the hooked staff. Lambda (Λ) is the inverted crook-hook. The tall reaching shape of ל in Hebrew (the only letter that reaches above the headline) still suggests the upward hook of the goad.',
     investigationHighlight: 'Lamedh is the only Hebrew letter that rises above the top baseline — ל reaches upward where all other letters occupy the middle or lower zones. In kabbalistic tradition this vertical distinction is cosmological: the letter that teaches (Lamed comes from the root "to learn/teach") must reach higher than the others. Lamedh begins the word לֵב (lev, heart). The tallest letter, in a tradition where letter-height is not aesthetic but cosmic.',
@@ -102,7 +102,7 @@ window.ALPHA_GLYPH_DATA = [
   },
   {
     letter: 'M', name: 'Mem', meaning: 'water', gardiner: 'N35',
-    unicode: 0x130C8, phoneme: 'm', greek: 'Μ mu', latin: 'M',
+    unicode: 0x13216, phoneme: 'm', greek: 'Μ mu', latin: 'M',
     hebrew: 'מ', arabic: 'م', phoenician: '\u{1090C}',
     note: 'This wavy line has meant water for 3,800 years. Mem = water. The W-wave pattern of M directly descends from the Egyptian water hieroglyph — a horizontal wavy line. In virtually every script that descends from Phoenician, M sounds like "m" and looks like waves. The most visually obvious pictogram survival in the modern alphabet.',
     investigationHighlight: 'Mem is one of Sefer Yetzirah\'s 3 Mother Letters — Aleph/Mem/Shin = Air/Water/Fire. The primordial triad from which the universe was constructed. Water comes first in Genesis 1:2 — before light, before land, before life. The word for mother in Hebrew is אֵם (em) — Aleph-Mem, Air-Water. Every creation cosmology that uses water as the primordial element (Babylonian Tiamat, Greek chaos-sea, Hindu primordial ocean) is echoing the cosmic status encoded in this letter.',
@@ -110,7 +110,7 @@ window.ALPHA_GLYPH_DATA = [
   },
   {
     letter: 'N', name: 'Nun', meaning: 'snake / fish', gardiner: 'I10',
-    unicode: 0x130F0, phoneme: 'n', greek: 'Ν nu', latin: 'N',
+    unicode: 0x13193, phoneme: 'n', greek: 'Ν nu', latin: 'N',
     hebrew: 'נ', arabic: 'ن', phoenician: '\u{1090D}',
     note: 'A snake (Egyptian cobra) in profile — the S-curve body. The undulating N letterform descends from a snake\'s silhouette. In some traditions Nun means "fish" — the serpentine profile works for both.',
     investigationHighlight: 'Nun has two Hebrew forms: נ (mid-word) and ן (final, a long descending stroke). In the Talmud, Nun is the letter of נְפֶשׁ (nefesh, soul) — the snake/fish in the water is the soul moving through the body. The serpent-letter is the soul-letter. In gematria, Nun = 50 — the number of the Jubilee, the fiftieth year of liberation. The soul-snake-fish letter lands on the liberation number.',
@@ -118,7 +118,7 @@ window.ALPHA_GLYPH_DATA = [
   },
   {
     letter: 'S', name: 'Samekh', meaning: 'fish / pillar / spine', gardiner: 'K1',
-    unicode: 0x130D5, phoneme: 's', greek: 'Ξ xi (archaic) / unclear', latin: 'S (via sigma)',
+    unicode: 0x1319B, phoneme: 's', greek: 'Ξ xi (archaic) / unclear', latin: 'S (via sigma)',
     hebrew: 'ס', arabic: 'س', phoenician: '\u{1090E}',
     note: 'A fish, tent-peg, or supporting pillar — scholars disagree. Samekh fed into S in Hebrew but its Greek path is debated; sigma (Σ) may derive from a different letter. The letter\'s shape — a closed circle or fish-bone — supports the fish reading.',
     investigationHighlight: 'The most disputed origin of the 22. Samekh\'s hieroglyphic source is genuinely contested — fish, tent-peg, or pillar — and its path into Greek is unclear. This is one of the few cases where the Proto-Sinaitic acrophonic principle (letter = picture of the thing whose name begins with that sound) breaks down. Samekh shows the limit of how far back we can trace the chain with certainty.',
@@ -126,7 +126,7 @@ window.ALPHA_GLYPH_DATA = [
   },
   {
     letter: 'O', name: 'Ayin', meaning: 'eye', gardiner: 'D4',
-    unicode: 0x130CB, phoneme: 'ʿ (pharyngeal consonant)', greek: 'Ο omicron', latin: 'O',
+    unicode: 0x13079, phoneme: 'ʿ (pharyngeal consonant)', greek: 'Ο omicron', latin: 'O',
     hebrew: 'ע', arabic: 'ع', phoenician: '\u{1090F}',
     note: 'This was an eye. Ayin (עַיִן) literally means "eye" in Hebrew, and the hieroglyph is an eye in outline. Greeks had no pharyngeal consonant for "ʿ" — the sound doesn\'t exist in Greek — so they repurposed the eye-sign as the vowel O. This is why O is shaped like an eye: because it IS an eye, 3,000 years old.',
     investigationHighlight: 'O is an eye. The pharyngeal consonant ʿ (the sound in the name ʿAli) does not exist in Greek or Latin. So Greeks took the eye-shaped letter and made it the circle vowel O (omicron = "small O"). The Arabic letter ع still visually echoes an eye with a descending tail. The Aramaic dialect of Jesus preserves this sound in ʿAramaya (Aramaic itself). Every O you read is a 3,800-year-old Semitic eye that Greek philosophy repurposed as a vowel.',
@@ -134,7 +134,7 @@ window.ALPHA_GLYPH_DATA = [
   },
   {
     letter: 'P', name: 'Pe', meaning: 'mouth', gardiner: 'D21',
-    unicode: 0x130D7, phoneme: 'p', greek: 'Π pi', latin: 'P',
+    unicode: 0x1308B, phoneme: 'p', greek: 'Π pi', latin: 'P',
     hebrew: 'פ', arabic: 'ف', phoenician: '\u{10910}',
     note: 'The mouth. Pe (פֶּה) means "mouth" in Hebrew. Pi (Π) and P both trace to the lips and jaw of an open mouth seen in profile. The "p" sound is a labial — made with the lips. The lips that make the sound are also the picture that became the letter.',
     investigationHighlight: 'In Sefer Yetzirah, Pe is one of the 7 "double letters" — letters that carry two sounds depending on whether they carry a dot (פ = P / ף = F). The mouth as creation-instrument is central: in Jewish mysticism, God speaks the world into existence; the mouth-letter is a creation-tool. The Logos / Memra / Vāc convergence: Hebrew, Aramaic, Greek, Sanskrit — four traditions locating the creative power in speech, in the mouth, in this letter.',
@@ -142,7 +142,7 @@ window.ALPHA_GLYPH_DATA = [
   },
   {
     letter: '', name: 'Tsade', meaning: 'plant / fish-hook / man on side', gardiner: 'M17',
-    unicode: 0x130BD, phoneme: 'ṣ (emphatic s)', greek: 'Ϻ san (archaic) / Ϡ sampi', latin: '(none)',
+    unicode: 0x131CB, phoneme: 'ṣ (emphatic s)', greek: 'Ϻ san (archaic) / Ϡ sampi', latin: '(none)',
     hebrew: 'צ', arabic: 'ص', phoenician: '\u{10911}',
     note: 'A papyrus plant, fish-hook, or a man lying on his side — the most disputed origin. Became Coptic Ϣ. Dropped from Latin. Survives in Hebrew as Tsade (צ) and in Arabic abjad numerals. A letter that fell through the cracks of the European tradition.',
     investigationHighlight: 'Tsade is what the European tradition dropped and the Semitic tradition kept. The emphatic sibilant ṣ has no equivalent in Greek or Latin — it appears in Arabic, Hebrew, and Aramaic but disappeared from every European language. It is also the letter of the Righteous: Tzaddik (צַדִּיק) means righteous person. In Sefer Yetzirah, Tsade governs the month and virtue of righteousness. The letter the West lost is the one that names the just.',
@@ -150,7 +150,7 @@ window.ALPHA_GLYPH_DATA = [
   },
   {
     letter: 'Q', name: 'Qoph', meaning: 'needle eye / thread / monkey', gardiner: 'Aa28',
-    unicode: 0x13032, phoneme: 'q (back-of-throat k)', greek: 'Ϙ qoppa (archaic)', latin: 'Q',
+    unicode: 0x1342A, phoneme: 'q (back-of-throat k)', greek: 'Ϙ qoppa (archaic)', latin: 'Q',
     hebrew: 'ק', arabic: 'ق', phoenician: '\u{10912}',
     note: 'A needle with thread, or possibly a monkey\'s head. Greek qoppa (Ϙ) survived briefly as an archaic letter for the qu-cluster, then was dropped from the standard Greek alphabet but kept in numeric use (= 90). Latin kept Q exclusively for the "qu" combination. In modern English, Q almost never appears without U — a 3,000-year phonological rule persisting as spelling convention.',
     investigationHighlight: 'The Q-U rule in English spelling is a fossilized Semitic phonological habit. The uvular q-sound in Semitic languages was always followed by a vowel; this became a Latin scribal convention (Q only before U) which became an English spelling rule your teachers enforced. Every English spelling lesson about QU is transmitting a convention from Phoenician phonology, 3,000 years later, without anyone involved knowing it.',
@@ -158,7 +158,7 @@ window.ALPHA_GLYPH_DATA = [
   },
   {
     letter: 'R', name: 'Resh', meaning: 'head', gardiner: 'D1',
-    unicode: 0x13100, phoneme: 'r', greek: 'Ρ rho', latin: 'R',
+    unicode: 0x13076, phoneme: 'r', greek: 'Ρ rho', latin: 'R',
     hebrew: 'ר', arabic: 'ر', phoenician: '\u{10913}',
     note: 'A human head in profile. Resh (רֹאשׁ) means "head" in Hebrew. The circle-with-a-descender shape of Rho (Ρ) and R is the skull seen from the side. P and R were once identical in early alphabets — the diagonal leg was added to R to distinguish them, a leg the human profile head did not have.',
     investigationHighlight: 'Resh begins the Hebrew word רוּחַ (ruach — spirit, wind, breath) which appears in Genesis 1:2: "the spirit/wind of God moved over the waters." Ruach is also the word for the human spirit. In kabbalistic astrology, Resh corresponds to the sun. The head-letter governs spirit and the sun — the same correspondence that appears in Egyptian Ra (the solar head), in Pythagorean music theory (sun = center), and in Vedic cosmology.',
@@ -166,7 +166,7 @@ window.ALPHA_GLYPH_DATA = [
   },
   {
     letter: 'S', name: 'Shin', meaning: 'tooth', gardiner: 'F18',
-    unicode: 0x13110, phoneme: 'š (sh-sound)', greek: 'Σ sigma', latin: 'S',
+    unicode: 0x13111, phoneme: 'š (sh-sound)', greek: 'Σ sigma', latin: 'S',
     hebrew: 'ש', arabic: 'ش', phoenician: '\u{10914}',
     note: 'Three teeth. Shin (שִׁן) means "tooth" in Hebrew. The three-pronged W-shape of ש is three teeth in a jaw. Sigma (Σ) flattened the three prongs to a zigzag. The English letter S still traces those three dental ridges — you are looking at a row of teeth every time you read the letter S.',
     investigationHighlight: 'The Priestly Blessing (Birkat Kohanim) forms the letter Shin with the fingers — splitting them into two groups of two around the thumb. Leonard Nimoy, a Jewish actor who saw this blessing as a child in synagogue, gave this hand gesture to Mr. Spock as the Vulcan salute. Shin = fire, the third of Sefer Yetzirah\'s 3 Mother Letters (Air/Water/Fire). Every time someone flashes "live long and prosper," they are making a 3,000-year-old Hebrew fire-letter from a Priestly Blessing.',
@@ -174,7 +174,7 @@ window.ALPHA_GLYPH_DATA = [
   },
   {
     letter: 'T', name: 'Taw', meaning: 'mark / cross / sign', gardiner: 'Z9',
-    unicode: 0x13390, phoneme: 't', greek: 'Τ tau', latin: 'T',
+    unicode: 0x133F4, phoneme: 't', greek: 'Τ tau', latin: 'T',
     hebrew: 'ת', arabic: 'ت', phoenician: '\u{10915}',
     note: 'The last letter was a cross or X mark. In ancient Phoenician and early Hebrew script, Taw was written as an X or a + cross. Ezekiel 9:4 — God tells the angel to place a Taw on the foreheads of the righteous before the judgment of Jerusalem. The original mark of salvation was a cross-shaped letter. Tau was the last letter, the mark, the end.',
     investigationHighlight: 'The original Taw was a cross. In Paleo-Hebrew and early Phoenician, Taw was written as X or +. Ezekiel 9:4 — God commands the angel to mark the foreheads of the righteous with a Taw before judgment. Tertullian (c. 200 CE) pointed this out: the saving mark in Ezekiel is the tau/cross. The connection between Taw and the cross predates Christianity by at least 1,000 years — it was built into the letter\'s shape. The last letter of the Hebrew alphabet was already a cross before the crucifixion.',
@@ -186,7 +186,7 @@ window.ALPHA_GLYPH_DATA = [
   // Only shown when _script === 'latin'.
   {
     letter: 'C', name: 'C (from Gimel)', meaning: 'same root as G', gardiner: 'T14',
-    unicode: 0x13246, phoneme: 'k / s', greek: 'Γ gamma', latin: 'C',
+    unicode: 0x13319, phoneme: 'k / s', greek: 'Γ gamma', latin: 'C',
     hebrew: 'ג', arabic: 'ج', phoenician: '\u{10902}', scriptOnly: ['latin'],
     note: 'C and G are the same Phoenician letter. Early Latin used C for both k and g sounds — "Caesar" was pronounced "Kaiser." Romans added the leg to create G when they needed to distinguish them, keeping C for the k-sound.',
     investigationHighlight: 'C is G\'s twin. One Phoenician Gimel became two Latin letters: C (for the k-sound) and G (retrofitted by adding a leg). The soft C (as in "city") came later in Romance languages. Every time English spelling uses C and G inconsistently — "cat" vs "city," "get" vs "gem" — it is displaying the scar left by this 2,300-year-old split.',
@@ -194,7 +194,7 @@ window.ALPHA_GLYPH_DATA = [
   },
   {
     letter: 'J', name: 'J (from Yod)', meaning: 'consonantal I — medieval addition', gardiner: 'D36',
-    unicode: 0x1307C, phoneme: 'dʒ / j / y', greek: 'Ι iota', latin: 'J',
+    unicode: 0x1309D, phoneme: 'dʒ / j / y', greek: 'Ι iota', latin: 'J',
     hebrew: 'י', arabic: 'ي', phoenician: '\u{10909}', scriptOnly: ['latin'],
     note: 'J is a variant I. In medieval manuscripts, scribes began drawing I with a tail (J) at the start of words to distinguish the consonantal Y-sound from the vowel I. J became a separate letter around the 17th century — making it one of the youngest letters in the alphabet.',
     investigationHighlight: 'J is only ~400 years old as a distinct letter. It is a variant form of I (Yod), used when I was consonantal (y-sound in Latin, dʒ-sound in English after Norman influence). "Jehovah" itself is a late invention: the J in "Jehovah" did not exist when the Masoretes wrote the vowel-prohibition code that 16th-century scholars misread. The most common divine name in English begins with a letter invented in the 1600s.',
@@ -202,7 +202,7 @@ window.ALPHA_GLYPH_DATA = [
   },
   {
     letter: 'U', name: 'U (from Waw/V)', meaning: 'vowel split from V — medieval', gardiner: 'T3',
-    unicode: 0x1307B, phoneme: 'uː', greek: 'Υ upsilon', latin: 'U',
+    unicode: 0x13309, phoneme: 'uː', greek: 'Υ upsilon', latin: 'U',
     hebrew: 'ו', arabic: 'و', phoenician: '\u{10905}', scriptOnly: ['latin'],
     note: 'U and V were the same letter in classical Latin. V was used at the start of words; U in the middle. The distinction was formalized in the Middle Ages — making both U and V (and W and Y) descendants of the single Phoenician Waw hook-peg.',
     investigationHighlight: 'U V W Y F — five modern letters from one Phoenician hook. Waw (ו) is the most productive letter in history. U and V separated gradually in medieval manuscripts. W was invented by Anglo-Saxon scribes writing UU or VV for a sound Latin had no letter for — its name "double-U" is literally a description of its creation. Every time you write U, V, W, or Y you are writing variants of the same 3,800-year-old Phoenician peg.',
@@ -210,7 +210,7 @@ window.ALPHA_GLYPH_DATA = [
   },
   {
     letter: 'V', name: 'V (from Waw)', meaning: 'consonantal form of U', gardiner: 'T3',
-    unicode: 0x1307B, phoneme: 'v / w', greek: 'Υ upsilon / Ϝ digamma', latin: 'V',
+    unicode: 0x13309, phoneme: 'v / w', greek: 'Υ upsilon / Ϝ digamma', latin: 'V',
     hebrew: 'ו', arabic: 'و', phoenician: '\u{10905}', scriptOnly: ['latin'],
     note: 'In classical Latin, V was the only form — it represented both the vowel U and the consonant W/V sounds. The distinction between U and V is medieval. The name "Julius" in Latin was pronounced "Yulius" — the consonant V/I was a Y-sound, not a V-sound.',
     investigationHighlight: '"Julius Caesar" = "Yulius Kaesar." Classical Latin had no V-sound (as in English "vine") — what is now written V was pronounced as W. The V-sound entered Latin through late loanwords from Greek and Etruscan. The angular V shape descends directly from the Phoenician Waw hook, which became Upsilon (Υ) in Greek and then rotated into the V form in Etruscan and Latin.',
@@ -218,7 +218,7 @@ window.ALPHA_GLYPH_DATA = [
   },
   {
     letter: 'W', name: 'W (double-U)', meaning: 'Anglo-Saxon invention — no ancient root', gardiner: 'T3',
-    unicode: 0x1307B, phoneme: 'w', greek: '(none)', latin: 'W',
+    unicode: 0x13309, phoneme: 'w', greek: '(none)', latin: 'W',
     hebrew: 'ו', arabic: 'و', phoenician: '\u{10905}', scriptOnly: ['latin'],
     note: '"W" is literally "double U." Anglo-Saxon scribes in the 7th–8th century began writing UU or VV to represent a sound (the English W) that Latin had no letter for. By the 11th century it was treated as a single letter. Its name in English still records the moment of invention.',
     investigationHighlight: 'W is the only letter in the English alphabet whose name is a description of how it was built: "double U." It was invented by Germanic scribes, not inherited from Rome or Greece or Phoenicia. Yet its ancestry is Phoenician Waw — all five letters F U V W Y trace to the same hook-peg hieroglyph. The most modern-looking letter has the oldest possible ancestor.',
@@ -226,7 +226,7 @@ window.ALPHA_GLYPH_DATA = [
   },
   {
     letter: 'X', name: 'X (from Greek Chi)', meaning: 'ks sound — Greek import', gardiner: 'Aa28',
-    unicode: 0x13032, phoneme: 'ks', greek: 'Χ chi / Ξ xi', latin: 'X',
+    unicode: 0x1342A, phoneme: 'ks', greek: 'Χ chi / Ξ xi', latin: 'X',
     hebrew: '(none)', arabic: '(none)', phoenician: '(none)', scriptOnly: ['latin'],
     note: 'Latin X represents the "ks" cluster. It may derive from the Greek letter Chi (Χ) or possibly Samekh (ס) via an Etruscan route. Julius Caesar added both X (already present) and the letters Y and Z to formalize Greek loanword transliteration.',
     investigationHighlight: 'X marks a transmission puzzle. Its "ks" sound could come from Greek Chi (Χ, the kh-sound) or from Samekh (ס, the fish/pillar letter) via Etruscan. Different scholars argue different routes. X is also the letter the ancient Taw (cross-mark) resembled — raising the possibility that the Christian use of X for Christ (Chi-Rho monogram, XP) preserved an ancient cross-letter tradition older than the crucifixion.',
@@ -234,7 +234,7 @@ window.ALPHA_GLYPH_DATA = [
   },
   {
     letter: 'Y', name: 'Y (from Upsilon)', meaning: 'Greek loanword letter — Julius Caesar addition', gardiner: 'T3',
-    unicode: 0x1307B, phoneme: 'y / iː', greek: 'Υ upsilon', latin: 'Y',
+    unicode: 0x13309, phoneme: 'y / iː', greek: 'Υ upsilon', latin: 'Y',
     hebrew: 'ו', arabic: 'و', phoenician: '\u{10905}', scriptOnly: ['latin'],
     note: 'Julius Caesar added Y (along with Z) to the Latin alphabet specifically to transliterate Greek words. Y represents the Greek Upsilon (Υ) sound. Like Z, Y sits at the end of the alphabet because it was added late.',
     investigationHighlight: 'Y is a direct Greek import. Julius Caesar ordered Y and Z added to the end of the Latin alphabet (after X) to handle Greek loanwords — which is why the English alphabet ends X Y Z, with the last two letters in the positions of late arrivals. Y traces back through Upsilon to Waw — the same Phoenician hook that gave Latin F, U, V, and W. One ancient letter, six modern shapes.',
@@ -245,7 +245,7 @@ window.ALPHA_GLYPH_DATA = [
   // Φ Χ Ψ Ω — four letters Greeks invented with no Phoenician source.
   {
     letter: 'Φ', name: 'Phi', meaning: 'Greek invention — light / manifestation', gardiner: '',
-    unicode: 0x130F8, phoneme: 'pʰ (aspirated p → f)', greek: 'Φ phi', latin: 'F / Ph',
+    unicode: 0x00000, phoneme: 'pʰ (aspirated p → f)', greek: 'Φ phi', latin: 'F / Ph',
     hebrew: 'פ', arabic: 'ف', phoenician: '\u{10910}', scriptOnly: ['greek'],
     note: 'Phi (Φ) was invented by the Greeks to represent an aspirated P-sound that Semitic alphabets did not distinguish. Together with Chi (Χ) and Psi (Ψ), it was added to the end of the Western Greek alphabet as a cluster of "supplemental" letters the Phoenician system had no room for.',
     investigationHighlight: 'Phi is one of four letters that prove the Greek adaptation was creative, not just borrowing. Greeks took the Phoenician 22 and ADDED four more for sounds their language needed. Phi → Latin Ph → English "philosophy," "physics," "phone" — all the Ph-words in English are Greek-via-Phi. The aspirated P that Phoenician never wrote is the letter that gave Western civilization its vocabulary for ideas.',
@@ -253,7 +253,7 @@ window.ALPHA_GLYPH_DATA = [
   },
   {
     letter: 'Χ', name: 'Chi', meaning: 'Greek invention — ch / kh sound', gardiner: '',
-    unicode: 0x130F8, phoneme: 'kʰ (aspirated k)', greek: 'Χ chi', latin: 'Ch / X',
+    unicode: 0x00000, phoneme: 'kʰ (aspirated k)', greek: 'Χ chi', latin: 'Ch / X',
     hebrew: '(none)', arabic: 'خ', phoenician: '(none)', scriptOnly: ['greek'],
     note: 'Chi (Χ) was invented by the Greeks for the aspirated K sound. The Chi-Rho monogram (☧), the earliest Christian symbol, combines Χ and Ρ — the first two letters of ΧΡΙΣΤΟΣ (Christos). Emperor Constantine adopted it for his military standard in 312 CE.',
     investigationHighlight: 'Chi is the letter that became a symbol. The Chi-Rho ☧ — the earliest Christian monogram, Constantine\'s battle standard — is simply the first two letters of the Greek word for Christ. Chi looks like an X, which is why "Xmas" preserves the original Greek initial. The cross shape of Chi also echoes the ancient Taw (T/X), the last Hebrew letter and original mark of salvation — giving the Chi-Rho an unintended resonance 1,500 years deep.',
@@ -261,7 +261,7 @@ window.ALPHA_GLYPH_DATA = [
   },
   {
     letter: 'Ψ', name: 'Psi', meaning: 'Greek invention — ps sound', gardiner: '',
-    unicode: 0x130F8, phoneme: 'ps', greek: 'Ψ psi', latin: 'Ps',
+    unicode: 0x00000, phoneme: 'ps', greek: 'Ψ psi', latin: 'Ps',
     hebrew: '(none)', arabic: '(none)', phoenician: '(none)', scriptOnly: ['greek'],
     note: 'Psi (Ψ) was invented for the "ps" cluster — a sound combination Greek needed but Phoenician had no dedicated sign for. Its trident shape suggests a Semitic influence but no direct Phoenician ancestor has been confirmed.',
     investigationHighlight: 'Psi is the symbol modern psychology chose for itself (the ψ icon in every psychology department). The choice is ironic: psi is the Greek letter for the sound-cluster "ps," but in the 19th century it was chosen as the initial of "psyche" (ψυχή, soul/mind). A letter invented for a phonological technicality became the emblem of the science of the mind — because the Greeks used the same word for soul and mind.',
@@ -269,7 +269,7 @@ window.ALPHA_GLYPH_DATA = [
   },
   {
     letter: 'Ω', name: 'Omega', meaning: 'great O — long vowel distinction', gardiner: 'D4',
-    unicode: 0x130CB, phoneme: 'ɔː (long o)', greek: 'Ω omega', latin: 'O',
+    unicode: 0x13079, phoneme: 'ɔː (long o)', greek: 'Ω omega', latin: 'O',
     hebrew: 'ע', arabic: 'ع', phoenician: '\u{1090F}', scriptOnly: ['greek'],
     note: 'Omega (Ω) was invented by splitting the Omicron (O) into two letters: omicron ("small O," short vowel) and omega ("great O," long vowel). Greek distinguished vowel length where Phoenician did not. Omega is the last letter of the Greek alphabet — giving the "alpha and omega" formula its meaning.',
     investigationHighlight: '"I am the Alpha and the Omega" (Revelation 1:8) — the first and last letters of the Greek alphabet, meaning the beginning and the end. Omega was invented to distinguish short and long O sounds. Without the invention of Omega, the "alpha and omega" phrase — one of Christianity\'s foundational images of God — could not exist. A phonological distinction created a theological metaphor.',
@@ -289,7 +289,7 @@ window.ALPHA_GLYPH_DATA = [
   },
   {
     letter: '𓋔', name: 'Djed', meaning: 'stability / the spine of Osiris', gardiner: 'R11',
-    unicode: 0x132D4, phoneme: 'ḏd', greek: '(none)', latin: '(none)',
+    unicode: 0x132BD, phoneme: 'ḏd', greek: '(none)', latin: '(none)',
     hebrew: '(none)', arabic: '(none)', phoenician: '(none)', scriptOnly: ['hieroglyph'],
     note: 'The Djed pillar represents stability and the backbone of Osiris. The "raising of the Djed" ceremony on the last day of the month of Khoiak symbolized the resurrection of Osiris — the spine rising upright = the dead god returning to life. The Djed is one of the oldest Egyptian symbols, predating the Pharaonic period.',
     investigationHighlight: 'The Djed raising ceremony is one of the best-documented Egyptian rituals for the dying-and-rising god pattern. Osiris dies, his body is scattered, Isis reassembles it, and the raising of the Djed (his spine) marks his resurrection. This 5,000-year-old ritual is the Egyptian root of the dying-and-rising-god tradition that runs through Tammuz, Adonis, Dionysus, and Christ. The spine of a dead god becomes the pillar of the world.',
@@ -297,7 +297,7 @@ window.ALPHA_GLYPH_DATA = [
   },
   {
     letter: '𓂀', name: 'Eye of Ra / Horus', meaning: 'divine sight / protection / royal power', gardiner: 'D4',
-    unicode: 0x13080, phoneme: 'ir.t', greek: '(none)', latin: '(none)',
+    unicode: 0x13079, phoneme: 'ir.t', greek: '(none)', latin: '(none)',
     hebrew: '(none)', arabic: '(none)', phoenician: '(none)', scriptOnly: ['hieroglyph'],
     note: 'The Udjat — the Eye of Horus (or Ra) — is the most protective amulet in Egyptian tradition. The left eye of Horus was torn out by Set and restored by Thoth; the restored eye became the symbol of healing, protection, and royal authority. The eye fractions were used as a system of mathematical notation.',
     investigationHighlight: 'The Eye of Ra and Eye of Horus are the same symbol used in two contexts: Ra\'s eye is the sun itself (and the goddess Sekhmet/Hathor in her destructive aspect); Horus\'s restored eye is the moon. The eye fractions (½ + ¼ + ⅛ + 1/16 + 1/32 + 1/64 = 63/64) were used in medical prescriptions. Egyptian sacred geometry, medicine, and cosmology all ran through the same symbol. The Eye is also the origin of the Ayin (ע) → Omicron (O) transmission — the eye that became the letter O.',
@@ -321,7 +321,7 @@ window.ALPHA_GLYPH_DATA = [
   },
   {
     letter: '𓇯', name: 'Solar Barque', meaning: 'the sun\'s journey through the underworld', gardiner: 'P3',
-    unicode: 0x131EF, phoneme: '(determinative)', greek: '(none)', latin: '(none)',
+    unicode: 0x1329E, phoneme: '(determinative)', greek: '(none)', latin: '(none)',
     hebrew: '(none)', arabic: '(none)', phoenician: '(none)', scriptOnly: ['hieroglyph'],
     note: 'Ra crosses the sky in his solar barque by day and descends into the Duat (underworld) by night, battling Apep (the chaos serpent) in the 12 hours of darkness before rising again at dawn. The barque is the vehicle of cosmic continuity — the sun does not merely set; it fights for survival every night.',
     investigationHighlight: 'The solar barque cosmology is the Egyptian origin of the daily-battle-against-chaos narrative that underlies every dying-and-rising sun myth. Apep threatens Ra every night; Apep\'s defeat is why the sun rises. This nightly cosmic battle is one of the deepest layers of Western religious imagination — and one of the oldest, documented from c. 2400 BCE. The Psalms\' "pit" and "darkness"; the Harrowing of Hell; the Night Journey of Muhammad — all carry distant structural echoes of Ra\'s nightly passage.',
@@ -329,7 +329,7 @@ window.ALPHA_GLYPH_DATA = [
   },
   {
     letter: '𓇸', name: 'Lotus', meaning: 'creation from the primordial waters', gardiner: 'M12',
-    unicode: 0x131F8, phoneme: 'sfṯ / nḥb', greek: '(none)', latin: '(none)',
+    unicode: 0x131BC, phoneme: 'sfṯ / nḥb', greek: '(none)', latin: '(none)',
     hebrew: '(none)', arabic: '(none)', phoenician: '(none)', scriptOnly: ['hieroglyph'],
     note: 'The lotus rises from the mud of the Nile and opens at dawn — Egyptians saw this as the primordial act of creation repeated daily. The first morning was a lotus opening on the surface of the primordial waters (Nun). The child sun god Nefertem emerges from the lotus. The lotus is the first thing to emerge from the chaos-water.',
     investigationHighlight: 'The lotus as symbol of enlightenment and spiritual emergence appears in Egyptian theology (c. 3000 BCE), Indian Buddhism (the Buddha on a lotus throne, c. 500 BCE), and Hindu cosmology (Brahma emerges from a lotus growing from Vishnu\'s navel). Three independent traditions, same image: the lotus rising from dark water as the emblem of consciousness emerging from matter. The Egyptian origin is documented; the transmission routes to India are debated but the structural parallel holds.',
