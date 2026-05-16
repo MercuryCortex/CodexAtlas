@@ -473,5 +473,21 @@ window.PATTERNS_DATA = [
     sources: ['alphabet-sacred-language-convergence', 'alphabet-devanagari-sacred', 'alphabet-sefer-yetzirah'],
     summary: 'Sanskrit / Latin / Biblical Hebrew / Classical Arabic / Ge\'ez / Old Avestan: every major world religion preserves a dead language as the exclusive medium of divine communication, frozen at the moment of canonical text-formation. Sanskrit: 2,400 years. Biblical Hebrew: 2,100 years. Old Avestan: 2,400 years (dead before the script was even created). Theological reason: the specific phonemes or letter-forms of the revelation-language ARE the revelation — translation changes the cosmic address, not just the packaging. The single exception: Modern Hebrew (1880–1950, Zionist revival) — the only case in human history where a sacred dead language was secularized and revived as a vernacular, creating ongoing theological tension that continues today.',
   },
+  {
+    id: 'acrophonic-principle-double',
+    title: 'Proto-Sinaitic and Ogham Independently Solve the Same Alphabet Design Problem',
+    category: 'CONVERGENCE',
+    section: 'Script and Alphabet Mysteries',
+    sources: ['proto-sinaitic', 'alphabet-ogham'],
+    summary: 'Both Proto-Sinaitic (c. 1850 BCE, Sinai — Semitic miners at an Egyptian mine) and Ogham (c. 350–600 CE, Ireland — Celtic druids under Roman pressure) independently chose the same organizing principle for their alphabets: each letter is named after a concrete thing in the world, and the letter\'s sound-value is the first consonant of that thing\'s name. Proto-Sinaitic: aleph = ox, beth = house, gimel = camel. Ogham: beith = birch, luis = rowan, fearn = alder. Two script-systems, zero contact, same cognitive solution — and both scripts served marginalized communities preserving knowledge outside a dominant imperial script (Egyptian hieroglyphs / Latin).',
+  },
+  {
+    id: 'operative-writing-pattern',
+    title: 'Every Pre-Modern Tradition Treats Letters as Magical Tools — The Arbitrary Sign is 20th-Century',
+    category: 'CONVERGENCE',
+    section: 'Script and Alphabet Mysteries',
+    sources: ['alphabet-elder-futhark', 'alphabet-gematria-hebrew', 'alphabet-devanagari-sacred'],
+    summary: 'Every major pre-modern script tradition treats letters as operative instruments — things that do things in the world, not merely record them. Germanic Elder Futhark runes were used primarily as amulets, weapon-inscriptions, and protective charms. Hebrew letters in mezuzot and tefillin provide household protection. Arabic talismanic letters (Ahmad al-Buni\'s \'ilm al-huruf) produce specific cosmic effects. Sanskrit mantra phonemes are eternal cosmic substances (akshara = letter AND imperishable). Ferdinand de Saussure\'s "arbitrary sign" theory (1916) — which claims the relationship between signifier and signified is purely conventional — is the first formal theory of language that strips letters of operative power. The 20th-century scientific consensus on language is the historical outlier; every pre-modern literate tradition is on the other side.',
+  },
 
 ];

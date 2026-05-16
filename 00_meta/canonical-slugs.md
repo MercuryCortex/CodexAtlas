@@ -1155,7 +1155,7 @@ canonical-slug
 
 - `MASSIVE-WINS-AND-INVESTIGATION-LEADS-session-2026-05-15`
 
-### music (57 nodes)
+### music (58 nodes)
 
 - `music-aboriginal-songlines`
 - `music-abulafia-prophetic-kabbalah`
@@ -1214,6 +1214,7 @@ canonical-slug
 - `music-yayue-ritual-music`
 - `music-zohar-sound-mysticism`
 - `music-zoroastrian-sacred-sound`
+- `music-zosimos-alchemical-sound`
 
 ### person (706 nodes)
 
@@ -2715,8 +2716,8 @@ canonical-slug
 | 3 | `guru-arjan-dev-ji` | `guru-arjan` |
 | 2 | `yam-canaanite` | `astarte-canaanite` |
 | 2 | `was-sceptre` | `was-scepter` |
-| 2 | `tradition-rosicrucian` | `tradition-dionysian-mysteries` |
-| 2 | `tradition-lingayat` | `tradition-buddhism` |
-| 2 | `tradition-islamic-philosophy` | `tradition-dionysian-mysteries` |
-| 2 | `phase-2-004-1-2-chronicles` | `phase-2-004-yasna-younger-avesta` |
+| 2 | `tradition-rosicrucian` | `tradition-tantra` |
+| 2 | `tradition-lingayat` | `tradition-tantra` |
+| 2 | `tradition-islamic-philosophy` | `tradition-bhakti-vaishnavism` |
+| 2 | `phase-2-004-1-2-chronicles` | `phase-2-002-gathas-of-zarathustra` |
 | 2 | `divine-names` | `divine-name` |
