@@ -238,8 +238,24 @@
         <span class="age-desc-item"><span class="age-desc-script">Sound</span> ${g.phoneme}</span>
       </div>
       <div class="age-note">${g.note}</div>
+      ${g.investigationHighlight ? `
+      <div class="age-investigation">
+        <div class="age-inv-label">what the investigation found</div>
+        <div class="age-inv-text">${g.investigationHighlight}</div>
+        ${(g.relatedNodes || []).length ? `
+        <div class="age-inv-nodes">
+          ${(g.relatedNodes || []).map(id => `<span class="age-inv-node" data-id="${id}">${id.replace(/^alphabet-/,'').replace(/-/g,' ')}</span>`).join('')}
+        </div>` : ''}
+      </div>` : ''}
       <button class="age-close-btn">close ✕</button>
     `;
+
+    expanded.querySelectorAll('.age-inv-node[data-id]').forEach(chip => {
+      chip.addEventListener('click', (e) => {
+        e.stopPropagation();
+        if (window.selectNode) window.selectNode(chip.dataset.id, true);
+      });
+    });
 
     expanded.querySelector('.age-close-btn').addEventListener('click', (e) => {
       e.stopPropagation();
