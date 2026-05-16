@@ -41,6 +41,11 @@ refs:
     publisher: "Heinemann"
     tier: 1
 tags: [deity, akan, ghana, west-african, supreme-being, high-god, africa, sky-deity]
+depictions:
+  - src: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/ca/Gye_nyame_symbol.jpg/330px-Gye_nyame_symbol.jpg"
+    caption: "Gye Nyame — Akan symbol of God's supremacy (Ghana)"
+    source: "Wikimedia Commons"
+    license: "CC BY-SA 4.0"
 ---
 
 # Nyame

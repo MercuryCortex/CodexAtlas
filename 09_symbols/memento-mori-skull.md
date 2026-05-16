@@ -76,6 +76,11 @@ refs:
     Beer, R. (1999). *The Handbook of Tibetan Buddhist Symbols*. Serindia Publications. Tier 1.
     [Chapter 7 documents the kapāla (skull-cup) as ritual implement of wrathful deities;
     iconographic variants; human-skull vs. symbolic-substitute use.]
+depictions:
+  - src: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cb/Philips_Gjsels_-_Memento_Mori_with_a_skull_and_crossbones.jpg/500px-Philips_Gjsels_-_Memento_Mori_with_a_skull_and_crossbones.jpg"
+    caption: "Philips Gjsels - Memento Mori with a skull and crossbones"
+    source: "Wikimedia Commons"
+    license: "Public domain"
 ---
 
 # Memento Mori Skull

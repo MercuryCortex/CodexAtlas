@@ -39,6 +39,11 @@ refs:
     type: "monograph"
     tier: 1
 tags: [deity, vedic, samkhya, anthropos, cosmogonic, MASSIVE-WIN, cross-tradition, adam-kadmon, cosmic-human, dismemberment]
+depictions:
+  - src: "https://upload.wikimedia.org/wikipedia/commons/thumb/0/02/Rigveda_MS2097.jpg/330px-Rigveda_MS2097.jpg"
+    caption: "Rigveda manuscript — oldest text containing the Purusha Sukta hymn"
+    source: "Wikimedia Commons"
+    license: "Public Domain"
 ---
 
 # Puruṣa (the Cosmic Person)

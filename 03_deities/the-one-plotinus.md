@@ -32,6 +32,11 @@ refs:
     type: "monograph"
     tier: 1
 tags: [deity, neoplatonist, the-one, apophatic, hidden-god, concept-entity]
+depictions:
+  - src: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c5/Plotinus.jpg/330px-Plotinus.jpg"
+    caption: "Plotinus — Roman marble bust of the Neoplatonist philosopher"
+    source: "Wikimedia Commons"
+    license: "Public Domain"
 ---
 
 # The One (Plotinus)

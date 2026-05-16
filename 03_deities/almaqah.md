@@ -56,6 +56,11 @@ refs:
     type: "encyclopedia"
     tier: 1
 tags: [deity, sabaean, south-arabian, pre-christian, aksumite, moon-god, ethiopian-pre-christian]
+depictions:
+  - src: "https://upload.wikimedia.org/wikipedia/commons/thumb/7/71/Panel_Almaqah_Louvre_DAO18.jpg/500px-Panel_Almaqah_Louvre_DAO18.jpg"
+    caption: "Votive stele with Sabaean inscription adressed to the moon-god Almaqah, mentioning five South Arabian gods, two reigning"
+    source: "Wikimedia Commons"
+    license: "Public domain"
 ---
 
 # Almaqah (Almouqah)

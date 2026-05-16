@@ -541,4 +541,190 @@ Confirmed wins in this zone: Martyrdom of Polycarp (foundation of saint-feast sy
 
 ---
 
+## SESSION 2026-05-16 — opus-hellenic-1/2/3 + opus-symbols-1 + opus-zoroastrian-1 (single thread)
+*Greek + Egypt deep-dive → mystery-cult capstone → symbols-map gold-zone → Zoroastrian wedge. 76 new nodes + 30+ wirings + 36 mapped cross-tradition transmission edges.*
+
+---
+
+### ★★★ "HOLY BRIMO HAS BORNE THE HOLY CHILD BRIMOS!" — A CHRISTMAS-FORMULA SPOKEN IN PAGAN MYSTERY CULT CENTURIES BEFORE CHRIST
+**Source:** opus-hellenic-3 · `05_events/event-eleusinian-mysteries-c1500-bce-396-ce.md` · `06_themes/eleusinian-mystery-revelation.md`
+**Chain:** Eleusinian Mystery hierophant beats gong + shouts at climactic moment of Greater Mysteries: **ἱερὸν ἔτεκε πότνια κοῦρον — Βριμὼ Βριμόν** ("Holy Brimo has borne the Holy Child Brimos!") → reported by Hippolytus *Refutation of All Heresies* 5.8.39-40 (~+230) polemically against the Naassene Gnostics → the formula's grammatical structure is identical to Luke 2:11 Christmas Nativity announcement
+**Why it matters:** **A Christmas-narrative formula** ("a holy woman has borne a holy child") **spoken in pagan Eleusinian mystery cult centuries before Christianity.** Hippolytus deploys it polemically against Naassene Gnostics — but the mystery-cult priority is uncontested. The Eleusinian formula predates the Christian Nativity narrative by 800+ years. **Single most-unexpected single quotation in this session.** T1 primary source.
+**Tags:** eleusinian-mysteries, hierophant, christmas-formula, brimo-brimos, hippolytus-naassene, pre-christian-pagan-priority
+
+### ★★★ PAUL AT THE AREOPAGUS (ACTS 17) PREACHES AT THE EXACT SITE WHERE ATHENA FOUNDED THE COURT IN AESCHYLUS'S *EUMENIDES*
+**Source:** opus-hellenic-3 · `02_documents/_phase-2-axial-age/phase-2-031-aeschylus-oresteia.md` · `04_persons/aeschylus.md`
+**Chain:** Aeschylus *Eumenides* (-458, Athenian City Dionysia premiere) — Athena establishes the Areopagus court of justice on the Areopagus rocky outcrop → Paul preaches the gospel at the same physical Areopagus to the Athenian philosophers (Acts 17:22-34, ~+50) → Christian-eschatological reframing of Aeschylean Areopagus-justice-founding
+**Why it matters:** **The single most-unmapped edge of the session.** Mainstream Acts-commentary almost never connects this geographic-religious-juridical continuity. The two foundational texts — Greek tragic religious-juridical founding + Christian apostolic preaching — share an exact physical site and a related theme (divine-justice-establishment) but the fields (NT-studies vs. Greek-tragedy-studies) don't talk. T1 geographical fact + T2 thematic continuity.
+**Tags:** acts-17, paul-athens, areopagus, aeschylus-eumenides, geographical-religious-continuity, cross-field-boundary
+
+### ★★★ AESHMA → ASHMEDAI → ASMODEUS — THE 1,500-YEAR DEMON-NAME ETYMOLOGICAL CHAIN
+**Source:** opus-zoroastrian-1 · `03_deities/aeshma.md`
+**Chain:** Avestan ***Aēšma*** (Zoroastrian daeva of wrath, ~-1200) → Pahlavi *Khashm* → Hebrew-Aramaic ***Ashmedai / Asmedai*** (Tobit 3:8, 6:14-17, 8:1-3, ~-200) → Greek ***Asmodaios*** (LXX Tobit) → Latin ***Asmodeus*** (Vulgate; Babylonian Talmud Gittin 68a-b; *Testament of Solomon*) → medieval Christian demonology: Asmodeus is one of the seven princes of Hell (Wierus *Pseudomonarchia Daemonum* 1577; *Lemegeton / Lesser Key of Solomon* 17th c.)
+**Why it matters:** **The single cleanest documented Zoroastrian-into-Abrahamic demonological transmission in the entire religious-historical record** — direct phonetic-etymological chain of the demon-name across 1,500 years and four languages. Hutter 1988 + Encyclopaedia Iranica trace step by step. Mainstream Christian demonology textbooks rarely cite the Zoroastrian origin. T1 documented etymological-genealogical chain.
+**Tags:** aeshma, asmodeus, tobit, ashmedai, zoroastrian-to-christian-demonology, 1500-year-etymological-chain
+
+### ★★★ WEDJAT → CHRISTIAN EYE OF PROVIDENCE → MASONIC ALL-SEEING EYE → US DOLLAR BILL
+**Source:** opus-symbols-1 · `09_symbols/eye-of-horus-wedjat.md`
+**Chain:** Egyptian Wedjat (Eye of Horus, ~-3000 onward — millions of surviving amulets) → Greco-Egyptian magical-amulet diffusion (Hellenistic-Roman period, Bonner 1950) → Coptic-Christian eye-of-God iconography (~+200-400, Frankfurter 1998) → medieval Christian Eye of Providence (eye-in-triangle, Trinity-theological-reading) → Masonic All-Seeing Eye (18th c.; from Christian Eye of Providence + Renaissance Hermetic Egyptophilia via Kircher *Oedipus Aegyptiacus* 1652) → **US Great Seal 1782 / US dollar bill 1935**
+**Why it matters:** **The most-recognizable transmuted Egyptian symbol in modern Western iconography.** Every dollar bill carries a 5,000-year-old Egyptian protective-amulet's lineage; virtually nobody walking past one knows it. Documented at every transmission step. T1.
+**Tags:** wedjat, eye-of-providence, masonic, dollar-bill, egypt-to-modern-west, 5000-year-chain
+
+### ★★★ BENNU → 1 CLEMENT 25 (~+95 CE) — EARLIEST CHRISTIAN APPROPRIATION OF A PAGAN SYMBOL ON RECORD
+**Source:** opus-symbols-1 · `09_symbols/phoenix-bennu.md`
+**Chain:** Egyptian Bennu (Heliopolitan solar-bird ~-2400 onward) → Herodotus 2.73 (~-440) → Hellenistic-Roman phoenix literary elaboration (Ovid *Met.* 15, Tacitus *Annals* 6.28, Pliny *NH* 10.2) → **1 Clement 25 (~+95 CE)** — Clement of Rome deploys the phoenix as Resurrection-proof → Tertullian *De Resurrectione* 13, Origen *Contra Celsum* 4.98, Lactantius *De Ave Phoenice* (full Christian-Christ-figure poem) → medieval Christian heraldry + bestiary tradition → modern Western symbol-genealogy
+**Why it matters:** **1 Clement 25 is the EARLIEST extant Christian text to consciously appropriate a pagan symbol as theological warrant.** Predates by 230+ years the Christian appropriation of solar iconography (Constantinian); predates even the Christian iconography of Christ-as-Good-Shepherd. The standard narrative "early Christianity was resistant to pagan iconography until Constantine" is **wrong on the textual record** — 1 Clement 25 documents conscious appropriation in the apostolic-father generation. T1.
+**Tags:** bennu, phoenix, 1-clement-25, earliest-christian-pagan-appropriation, resurrection-symbol
+
+### ★★★ KHEPRI → AUGUSTINE'S *BONUS SCARABAEUS MEUS* — CHRIST AS DUNG-BEETLE
+**Source:** opus-symbols-1 · `09_symbols/scarab-khepri.md`
+**Chain:** Egyptian Khepri (scarab = morning-aspect of Ra; self-generating-rebirth solar symbol; tens of thousands of amulets ~-2400 onward) → millennia of Egyptian heart-scarab amuletic-funerary tradition → **Augustine *Sermons* 119.4 (~+410):** *"Christus in cruce ut leo, in sepulchro ut formica. **Bonus scarabaeus meus**, non eo tantum, quod unigenitus, quod ipse sui auctor mortalium speciem induerit, sed quod in hac nostra faece sese volutaverit et ex hac ipsa nasci voluerit."* ("Christ on the cross is like a lion, in the tomb like an ant. **My good scarab** — not only because as the only-begotten he took on a mortal form by his own will, but because he rolled himself in this our filth and was willing to be born from it.")
+**Why it matters:** **Augustine of Hippo literally calls Christ a good scarab beetle**, deploying the Egyptian self-generating-rebirth-from-filth symbolism as Christological metaphor. The passage is essentially unknown to mainstream Christian-theology surveys (which compartmentalize Augustinian theology) AND to mainstream Egyptology surveys (which compartmentalize patristic reception). Cross-field-boundary gold-zone. T1 primary text.
+**Tags:** scarab, khepri, augustine-bonus-scarabaeus, christ-symbolism, cross-field-boundary-edge
+
+### ★★★ CINVAT BRIDGE → ISLAMIC SIRĀT — THE CLEANEST ZOROASTRIAN-INTO-ISLAMIC ESCHATOLOGICAL TRANSMISSION
+**Source:** opus-zoroastrian-1-extension · `06_themes/cinvat-bridge-judgment.md`
+**Chain:** Avestan Cinvat Bridge (Bridge of the Separator, ~-1200 Gathic onward) → Pahlavi systematization (bridge narrows to razor-edge for wicked; three judge-yazatas — Mithra + Sraosha + Rashnu) → **Islamic Sirāt** (الصراط — bridge sharper than a sword + thinner than a hair spanning Hellfire; all souls cross on Day of Resurrection) emerges in late-7th-and-8th-c. Arab-Islamic religious culture in direct contact with conquered Zoroastrian Persia after +651 conquest → al-Ghazālī *Iḥyā*ʾ + Mishkat al-Anwar elaborate
+**Why it matters:** **The cleanest single Zoroastrian-into-Islamic eschatological transmission** documented in the entire religious-historical record. Boyce 1991 + Encyclopaedia Iranica treat the transmission as substantially-genealogical, not coincidental. Mainstream Islamic-studies often does not credit the Zoroastrian source explicitly. T1.
+**Tags:** cinvat-bridge, islamic-sirat, zoroastrian-to-islamic-transmission, eschatological-bridge
+
+### ★★ MANETHO → PLUTARCH *DE ISIDE* → CLEMENT *STROMATA* → RENAISSANCE HERMETICISM
+**Source:** opus-hellenic-1 · `04_persons/plutarch.md` · `04_persons/manetho.md` · `02_documents/_phase-4-late-antiquity/phase-4-072-plutarch-de-iside-et-osiride.md`
+**Chain:** Manetho (Egyptian-priest writing Greek for Ptolemy II, ~-280) → Plutarch *De Iside et Osiride* (~+115 CE) → Clement of Alexandria *Stromata* engages Plutarch → Ficino *Pimander* (1463) + Kircher *Oedipus Aegyptiacus* (1652) Renaissance Hermetic-Platonist reception
+**Why it matters:** **Direct documentary chain from Egyptian-priestly theology → Greek Middle Platonist allegoresis → Alexandrian Christian apologetic template → Renaissance Hermetic recovery.** Four-document transmission spine sits between Egyptology and Christianity-studies departmentally; mainstream scholarship rarely connects all four ends. T1.
+**Tags:** egyptian-greek-syncretism, plutarch, manetho, clement, ficino, kircher, 1500-year-chain
+
+### ★★ IMHOTEP → ASKLEPIOS → HERMETIC *ASCLEPIUS* DIALOGUE
+**Source:** opus-hellenic-1 · `04_persons/imhotep.md` · `03_deities/asclepius-greek.md`
+**Chain:** Imhotep (3rd-Dynasty Egyptian architect, ~-2650) → deified by Late Period → Ptolemaic-period syncretic equation with Greek Asclepius → cult of Asklepios-Imhotep at Saqqara/Karnak/Deir el-Bahari → Hermetic *Asclepius* dialogue features Asclepius (= Imhotep) as Hermes Trismegistus's interlocutor
+**Why it matters:** **The single most consequential individual Greek-Egyptian theological syncretism.** A specific deified historical Egyptian becomes the namesake of the principal Hermetic Latin dialogue. T1.
+**Tags:** imhotep, asklepios, hermetic-tradition, deification, syncretism
+
+### ★★ NEITH = ATHENA — THE FOUNDATIONAL ATLANTIS-DIALOGUE IDENTIFICATION
+**Source:** opus-hellenic-1 · `03_deities/neith.md`
+**Chain:** Saite Egyptian Neith (Predynastic; politically central -664 to -525) → Saite priest Sonchis tells Solon at Saïs that Neith = Athena (Plato *Timaeus* 21E) → Plato's Atlantis dialogue frame depends on this identification
+**Why it matters:** **The entire Atlantis dialogue rests on a Greek-Egyptian theological identification.** Plato's most-famous philosophical-religious narrative is anchored in a real Saite Egyptian cult-identification. Modern Atlantis-mythology never traces this back. T1.
+**Tags:** neith, athena, plato-timaeus, atlantis, saite-egypt
+
+### ★★ SOL-INVICTUS RADIATE CROWN → CHRIST-PANTOKRATOR HALO (MAUSOLEUM OF THE JULII)
+**Source:** opus-symbols-1 · `09_symbols/halo-nimbus.md`
+**Chain:** Hellenistic-Roman Helios radiate-crown (~-300 onward) → Caracalla's radiate crown on coinage (+200) → Aurelian institutes Sol Invictus (+274) → **Mausoleum of the Julii Christ-Helios mosaic** (~+250-325, Vatican necropolis) — **Christ literally depicted as Sol Invictus driving the solar chariot with radiate-crown halo** → 4th-c. Christian art systematizes the halo → cruciform Christ-halo 5th-6th c. → universal Christian saint-and-Christ iconography
+**Why it matters:** **The most-direct surviving pagan-to-Christian iconographic appropriation in the visual record.** Mathews 1993 *Clash of Gods* makes the decisive case. The Mausoleum of the Julii mosaic is **the primary visual document**. Also institutionally linked to December 25 / Christmas Christianization of Sol Invictus festival. T1.
+**Tags:** sol-invictus, christ-halo, mausoleum-of-julii, mathews-clash-of-gods, december-25, pagan-to-christian-iconography
+
+### ★★ ANAXIMENES *AĒR* → STOIC *PNEUMA* → PAULINE *PNEUMA HAGION* → CHRISTIAN HOLY SPIRIT (1,000-YEAR PNEUMATIC LINEAGE)
+**Source:** opus-hellenic-2 · `04_persons/anaximenes.md`
+**Chain:** Anaximenes of Miletus (~-550) — *aēr* as cosmic *archê* with condensation-rarefaction → Diogenes of Apollonia (~-440) identifies *aēr* with intelligence → Derveni Papyrus commentator (~-340) deploys Anaximenean-Diogenes *aēr* to allegorize Orphic theogony → Stoic *pneuma* (~-300 onward) — cosmic living-intelligent-divine principle → Pauline *pneuma hagion* (Holy Spirit; same Greek word, theologically reframed) → Basil of Caesarea *On the Holy Spirit* (~+375) explicitly engages Greek philosophical *pneuma*
+**Why it matters:** **One of the cleanest pre-Socratic-to-Christian theological lineages running through 1,000 years**, with documented transmission at every step. Christian "Holy Spirit" terminology has a direct genealogy traceable back to pre-Socratic Milesian *aēr* cosmology. T1.
+**Tags:** anaximenes, aer, pneuma, stoic, pauline-holy-spirit, christian-trinity, 1000-year-pneumatic-lineage
+
+### ★★ KYKEON → EUCHARIST (VIA JUSTIN MARTYR'S POLEMICAL-PRIORITY)
+**Source:** opus-hellenic-3 · `06_themes/eleusinian-mystery-revelation.md`
+**Chain:** Eleusinian *kykeon* (barley-and-mint ritual drink at breaking of initiatic fast, ~-1500 to +396) → Christian Eucharistic cup → Justin Martyr *1 Apology* 66 explicitly polemicizes against pagan-mystery-cult Eucharistic-imitation (target Mithras-cult but pattern is generic)
+**Why it matters:** **The patristic polemical-anxiety presupposes the priority of the pagan ritual.** Justin wouldn't argue "these similar rites are demonic imitations of Christianity" if the pagan rituals didn't visibly resemble Christian sacramental practice. Eleusinian kykeon predates Christian Eucharist by 1500+ years. T1.
+**Tags:** eleusinian-kykeon, eucharist, justin-martyr, polemical-priority
+
+### ★★ PENTHEUS'S SPARAGMOS → CHRISTIAN BROKEN-DIVINE-FLESH EUCHARIST
+**Source:** opus-hellenic-3 · `02_documents/_phase-2-axial-age/phase-2-030-euripides-bacchae.md`
+**Chain:** Euripides *Bacchae* 1118-1143 (-405): Pentheus dismembered by his mother Agave in Bacchic frenzy → Orphic-Zagreus child-Dionysus dismembered by Titans → Christian Eucharistic "this is my body, broken for you" (1 Cor 11:24) → patristic Eucharistic theology of broken-divine-flesh
+**Why it matters:** Dionysian-Orphic-Zagreus dismemberment-and-restoration pattern is **the principal pre-Christian Mediterranean structural template for Eucharistic broken-divine-flesh theology**. Whether direct genealogical influence or shared cultural pattern is debated; structural parallel uncontested. T1 + T2.
+**Tags:** bacchae, pentheus-sparagmos, dionysus-zagreus, eucharist, dismemberment
+
+### ★★ THE MAGI → MATTHEW 2 NATIVITY + ETYMOLOGICAL SOURCE OF "MAGIC"
+**Source:** opus-zoroastrian-1 · `04_persons/the-magi.md`
+**Chain:** Median priestly tribe (Herodotus 1.101, ~-440) → Achaemenid imperial priesthood → Hellenistic-Roman "Magi" stock figure of priestly-wisdom → **Matthew 2:1-12 (~+85)** — *Magoi apo anatolon* with gold/frankincense/myrrh → patristic three-named-kings tradition (Caspar/Melchior/Balthasar by 6th c.) → **Greek *magoi* → Latin *magus / magicus* → English *magic / magician***
+**Why it matters:** **The single most direct Zoroastrian-Christian textual transmission in the New Testament.** Matthew deploys Zoroastrian priest-astrologers as canonical-Christian witnesses to Christ's universal kingship. English word "magic" preserves Zoroastrian priestly-title across 2,500 years. T1.
+**Tags:** magi, matthew-2, zoroastrian-priesthood, nativity, etymology-of-magic
+
+### ★★ SAOSHYANT → CHRISTIAN MESSIAH (VIRGIN-BORN FUTURE-SAVIOR)
+**Source:** opus-zoroastrian-1 · `03_deities/saoshyant.md`
+**Chain:** Avestan Saoshyant (Gathic ~-1200; elaborated Younger Avesta ~-700; Pahlavi virgin-birth narrative) — future savior born of virgin impregnated by Zarathustra's preserved seed; raises the dead; defeats Angra Mainyu; inaugurates Frashokereti → Second-Temple Jewish messianic theology (Daniel, 1 Enoch, Qumran, Sibylline Oracles) emerges in Persian-period contact → Christian Christology (virgin-birth + future Parousia + raising of dead + final cosmic combat + new heavens-and-earth)
+**Why it matters:** **The principal pre-Christian Near Eastern future-savior figure** with virgin-birth + raises-dead + final-cosmic-combat structural features. Boyce 1991 + Hultgård 1998 substantial-influence-on-Second-Temple is the dominant scholarly position. T1 + T2.
+**Tags:** saoshyant, christian-messiah, virgin-birth, future-savior, persian-jewish-contact
+
+### ★★ FRASHOKERETI → REVELATION 21:1 NEW HEAVENS-AND-EARTH
+**Source:** opus-zoroastrian-1 · `06_themes/frashokereti-cosmic-renovation.md`
+**Chain:** Avestan + Pahlavi Frashokereti (universal-resurrection + molten-metal river of purification + final cosmic combat + cosmic renovation) → Second-Temple Jewish apocalyptic (Daniel 12 bodily resurrection; 1 Enoch; Qumran) → **Revelation 21:1** *καινὸν οὐρανὸν καὶ γῆν καινήν* ("new heavens and a new earth") + 2 Peter 3:13
+**Why it matters:** **The principal pre-Christian Near Eastern model for Christian Resurrection-and-New-Creation eschatology.** Universal bodily resurrection + purification-through-fire + new creation pattern is structurally Frashokereti. T1 + T2.
+**Tags:** frashokereti, revelation-21, new-heavens-new-earth, universal-resurrection, persian-influence
+
+### ★★ ISAIAH 45:1 "CYRUS MY ANOINTED" — THE ONLY NON-ISRAELITE *MĀŠÎAḤ* IN THE HEBREW BIBLE
+**Source:** opus-zoroastrian-1 · `05_events/event-cyrus-conquest-of-babylon-539-bce.md`
+**Chain:** Cyrus conquers Babylon (-539) → Edict of Return + Second Temple rebuilding under Persian-imperial patronage → Second Isaiah (~-540) has YHWH explicitly call Cyrus *māšîḥî* ("my anointed," Isa 45:1) — **the only place in the entire Hebrew Bible where a non-Israelite figure is called *māšîaḥ***
+**Why it matters:** **The structural-and-historical roots of cross-tradition Messianic theology run through this passage.** YHWH explicitly anoints a Persian-Zoroastrian king as Messiah. T1.
+**Tags:** cyrus, isaiah-45, messiah-non-israelite, persian-jewish-contact
+
+### ★ APULEIUS'S "SUN AT MIDNIGHT" → CHRISTIAN MYSTICAL ILLUMINATION (1,500-YEAR CHAIN)
+**Source:** opus-hellenic-3 · `02_documents/_phase-4-late-antiquity/phase-4-090-apuleius-metamorphoses-bk-11.md`
+**Chain:** Apuleius *Met.* 11.23 (~+165): *"nocte media vidi solem candido coruscantem lumine"* → Pseudo-Dionysian *theia gnophos* → Gregory of Nyssa → Meister Eckhart → *Cloud of Unknowing* → Renaissance Hermetic-Platonist illumination metaphysics → Romantic-Symbolist poetic-mystical imagery
+**Why it matters:** **The only complete first-person ancient mystery-cult initiation narrative** provides a phrase + image that runs into 1,500 years of Christian mystical-illumination tradition. T1 + T2.
+**Tags:** apuleius, isiac-initiation, pseudo-dionysius, christian-mysticism, divine-darkness, eckhart
+
+### ★ APULEIUS → AUGUSTINE NORTH AFRICAN LATIN-PHILOSOPHICAL → LATIN CHRISTIAN-THEOLOGICAL LINEAGE
+**Source:** opus-hellenic-3 · `04_persons/apuleius.md`
+**Chain:** Apuleius (Madauros, North Africa, ~+165) writes *De Deo Socratis* Middle Platonist daimonology → Augustine (Tagaste/Hippo, North Africa, ~+413) targets Apuleius extensively in *City of God* 8-9 as principal pagan-philosophical opponent to refute (and selectively absorb)
+**Why it matters:** **One of the cleanest single documented edges between Latin pagan Middle Platonism and Latin Christian theology**, both running through the same North African cultural-intellectual corridor. T1.
+**Tags:** apuleius, augustine, north-african-latin, middle-platonism, daimonology, demonology-genealogy
+
+### ★ PHERECYDES CHRONOS-OPHIONEUS COSMIC-SERPENT BATTLE ↔ MESOPOTAMIAN MARDUK-TIAMAT
+**Source:** opus-hellenic-2 · `04_persons/pherecydes-of-syros.md`
+**Chain:** Pherecydes of Syros (~-550) *Heptamychos* — Chronos battles cosmic-serpent Ophioneus and casts him into Tartarus ↔ Mesopotamian *Enuma Elish* (Marduk-Tiamat) ↔ Hittite Storm-god-Illuyanka → Hesiodic Greek-cosmogonic background → Pythagorean transmigration via Pherecydes-as-Pythagoras's-traditional-teacher
+**Why it matters:** **The clearest single piece of Mesopotamian-Hittite cosmogonic transmission into pre-Socratic Greek thought.** T1.
+**Tags:** pherecydes, chronos-ophioneus, marduk-tiamat, illuyanka, near-eastern-to-greek
+
+### ★ AMUN → ZEUS-AMMON (ALEXANDER'S SIWA ORACLE)
+**Source:** opus-hellenic-1 · `03_deities/amun.md`
+**Chain:** Egyptian Amun → Herodotus 2.42 identifies as Zeus → Siwa Oasis oracle (-332) proclaims Alexander son of Zeus-Ammon → Hellenistic-Roman ram-horned Zeus coinage → Jupiter-Ammon in Roman religion. T1.
+
+### ★ PERSEPHONE-POMEGRANATE → BOTTICELLI / MANTEGNA MADONNA-WITH-POMEGRANATE
+**Source:** opus-symbols-1 · `09_symbols/pomegranate.md`
+**Chain:** Persephone (Homeric Hymn to Demeter ~7th c. BCE) → Eleusinian mystery-cult prohibition → Hebrew Temple-pomegranate decoration → late-medieval Italian Madonna-with-Pomegranate iconographic tradition (Botticelli ~1487). Cross-field-boundary chain documented at every step. T1 reception-history.
+
+### ★ THYRSUS = DOCUMENTED NON-BORROWING (THE CASE CHRISTIANITY REFUSED TO ABSORB)
+**Source:** opus-symbols-1 · `09_symbols/thyrsus.md`
+**Chain:** Dionysian-Bacchic thyrsus → Christian *non-borrowing*; Clement of Alexandria *Protrepticus* 2 explicitly attacks Bacchic mysteries by name; Christianity systematically refused to absorb the Bacchic ritual-staff (in contrast to phoenix/halo/scarab). T1.
+**Why it matters:** **The cleanest case of documented non-borrowing in the Christian-pagan iconographic record** — the negative case is theologically informative.
+
+### ★ ASHA ↔ VEDIC ṚTA — PROTO-INDO-IRANIAN COSMIC-TRUTH CONCEPT
+**Source:** opus-zoroastrian-1-extension · `03_deities/asha-vahishta.md`
+**Chain:** Proto-Indo-Iranian \**Hr̥tó-* → Avestan *Aṣ̌a* ↔ Vedic *Ṛta*; both have fire-as-material-manifestation; both opposed to a Lie-principle (Druj / Anṛta) → Persian-period Jewish expansion of *tzedek* → Pauline *dikaiosynē theou*. T1 + T2.
+
+### INDO-IRANIAN COGNATE DEITY CLUSTER — Proto-Indo-Iranian shared pantheon (T1 throughout):
+- **Atar ↔ Agni** (divine fire) — `03_deities/atar.md`
+- **Haoma ↔ Soma** (ritual plant-drink) — `09_symbols/haoma.md`
+- **Verethragna ↔ Indra-Vṛtrahán** (warrior-dragon-slayer) — `03_deities/verethragna.md`
+- **Yima ↔ Yama** (first-mortal / first-king; divergent into king-of-living vs. king-of-dead) — `03_deities/yima-jamshid.md`
+- **Sraosha ↔ Gabriel** (angelic-messenger, T2 structural parallel) — `03_deities/sraosha.md`
+
+---
+
+### META-PATTERN: "DIMINISHING-RETURNS INVERSION" METHODOLOGY VALIDATED
+
+**Finding:** When the cataloging agent describes a remaining batch as "diminishing-return polish" compared to the load-bearing core, this is **often a wrong framing**. The cross-tradition transmission edges that genuinely matter live precisely in the items mainstream single-tradition scholarship dismisses, because they sit between fields that don't talk to each other.
+
+**Concrete validation:** opus-hellenic-3 batch (Eleusinian Mysteries + Apuleius + Athenian tragedians) was triaged as "diminishing-return polish" → user flipped framing → delivered the **single highest cross-tradition-edge density of any batch this session**, including the Brimo-Brimos Christmas-formula, Paul-at-the-Areopagus-as-Eumenides-site, and Apuleius-Augustine-North-African-lineage edges — none of which mainstream commentary connects.
+
+**Memorialized in:** `~/.claude/projects/-Users-user-Desktop-Codex-Atlas/memory/feedback_diminishing_returns_inversion.md`
+
+---
+
+### INVESTIGATIONS WORTH PURSUING — OPEN GAPS FLAGGED THIS SESSION
+
+Not yet executed; high cross-tradition-ROI candidates:
+
+1. **Hand of Fatima / Hamsa genealogy** — Phoenician transmission of Wedjat-amulet → Levantine evil-eye-amulet → modern Islamic-Mediterranean Hamsa.
+2. **Persian Simurgh ↔ Egyptian Bennu** — the Iranian phoenix tradition: Avestan *Saēna* / Pahlavi *Sēnmurv* / Persian *Sīmurġ* → Attar *Conference of the Birds*. Likely substantial Egyptian-Iranian phoenix-tradition contact via Achaemenid period.
+3. **Christian altar-light / Jewish *ner tamid* / Zoroastrian Atar continuity** — *ner tamid* institutionalizes in the Persian period; possible direct Atar-cult influence on emerging Second-Temple eternal-lamp practice.
+4. **Eleusinian kykeon ↔ Vedic Soma ↔ Zoroastrian Haoma** — three Indo-European ritual-substances; possible deep-Indo-European shared substrate.
+5. **Onomacritus of Athens (~-520)** — Orphic compiler/forger central to Orphic tradition into Athenian-Pythagorean-Platonic philosophy. Not yet stubbed.
+6. **Damascius + Simplicius** — last Athenian Academy head + Aristotle-commentator; fled to Sasanian Persia after Justinian's closure of Academy in 529. **Direct documented Greek-philosophical-into-Sasanian-Iranian intellectual transmission.** Not yet stubbed.
+7. **Individual remaining Amesha Spentas** — Khshathra Vairya, Spenta Armaiti, Haurvatat, Ameretat (currently only Asha Vahishta + Vohu Manah stubbed individually).
+8. **Kartir (Sasanian high priest persecutor of Mani + Christians, ~+240-293)** — Sasanian-period institutional-religious-political consolidation figure.
+
+---
+
+*Session 2026-05-16 entries by opus-hellenic-1/2/3 + opus-symbols-1 + opus-zoroastrian-1 single-thread. Star ratings: ★★★ = highest-impact unmapped edge; ★★ = major MASSIVE-win; ★ = solid cross-tradition discovery.*
+
+---
+
 *File created 2026-05-16. All agents: read before claiming a discovery. Update rather than duplicate.*

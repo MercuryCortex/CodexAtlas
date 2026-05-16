@@ -54,6 +54,11 @@ refs:
   - >
     Abiodun, R. (2014). *Yoruba Art and Language: Seeking the African in African Art*.
     Cambridge University Press. Tier 1.
+depictions:
+  - src: "https://upload.wikimedia.org/wikipedia/commons/thumb/4/47/Brooklyn_Museum_79.27_Dance_Wand_Oshe_Shango_%282%29.jpg/500px-Brooklyn_Museum_79.27_Dance_Wand_Oshe_Shango_%282%29.jpg"
+    caption: "An oshe shango, or dance wand, is carried by devotees at the annual festival for Shango, the god of thunder and lightnin"
+    source: "Wikimedia Commons"
+    license: "CC BY 3.0"
 ---
 
 # Oshé Shangó (Double Axe of Shango)

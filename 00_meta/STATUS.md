@@ -442,3 +442,21 @@ Note: omphalos.md already existed → wrote sacred-pearl.md as fourth node
 - `09_symbols/sacred-void.md` — śūnyatā (Nagarjuna T1) / Kabbalistic Ayin-Ein Sof-Tzimtzum (Scholem T1) / Christian via negativa-kenosis (Pseudo-Dionysius T1) / Taoist wu-Wuji / Egyptian Nun / Greek Chaos / Gnostic kenoma; MASSIVE WIN: 3 most rigorous mystical theologies (Madhyamaka/Lurianic Kabbalah/Rhineland mysticism) converge independently on void-as-highest-reality; cross-edges to bindu/pleroma/axis-mundi/ouroboros/yin-yang/black-sun
 - `09_symbols/sacred-eclipse.md` — Rahu-Ketu (severed asura head; lunar nodes; grāhaṇa dāna ritual); Mesopotamian *Enuma Anu Enlil* eclipse omens + šar pūhi substitute-king ritual; Dresden Codex 405-lunar-month eclipse warning table (Aveni T1); Chinese celestial dragon; Norse Fenrir/Sköll; Crucifixion darkness; MASSIVE WIN: eclipse = celestial devouring by chaos-monster is structurally universal — 6 independent traditions; ritual noise response also universal
 - `09_symbols/dying-rising-god.md` — Osiris/Dumuzi-Tammuz/Adonis/Attis/Dionysus-Zagreus/Baldr/Christ; Frazer (T1 for pattern, methodology-disciplined for synthesis); Mettinger (T1, *The Riddle of Resurrection* 2001 — definitive modern reappraisal); Girard mimetic theory (T1); MASSIVE WIN: death→void-passage→resurrection→cosmic-renewal in Egypt/Mesopotamia/Greece/Phrygia/Norse/Christian; Baldr-Christian contamination debate noted
+
+---
+
+## thumbnail-system-3 — 2026-05-16 — sonnet
+
+**+236 thumbnails** — 2052/2540 (80.8%) → **2288/2546 (89.9%)**
+
+Added 185+ new OVERRIDES in `fetch_thumbnails.py` in 4 passes, covering:
+- Symbols: all-seeing-eye, feather-of-maat, lamassu, cauldron-of-rebirth, sator-square, sacred-fire, sacred-eclipse, sacred-cat, kaaba-black-stone, bindu, chaos-star, zodiac-wheel, 100+ more
+- Themes: archetype, individuation, tzimtzum, apocalypse, flood-myth, world-axis, 100+ more  
+- Traditions: theravada-buddhism, shia-islam, early-christianity, essenes, hinduism, jainism, freemasonry, rosicrucianism, 20+ more
+- Events: dead-sea-scrolls, council-of-troyes, sulawesi-cave-art, stoning-of-stephen, 15+ more
+- Deities: nyame, chernobog, dagda, tangaroa, ein-sof, shekhinah, wakan-tanka, 20+ more
+- Persons: basilides, valentinus, hypatia, hildegard-von-bingen, meister-eckhart, 15+ more
+
+Remaining nulls: ~258 (abstract themes without Wikipedia images, obscure figures)  
+Suspects: 731 (up from 553 — new OVERRIDES added redirect thumbnails to suspect pool)  
+Script: `add_depictions.py` (new helper for direct Commons depictions[] injection)

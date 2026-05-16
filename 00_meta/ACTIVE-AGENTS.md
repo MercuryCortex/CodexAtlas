@@ -1569,3 +1569,13 @@ Files: sacred-cauldron.md (NEW) · cerridwen.md (STUB, deity) · bran-the-blesse
 - Owning: `09_symbols/sacred-void.md` (NEW), `09_symbols/sacred-eclipse.md` (NEW), `09_symbols/dying-rising-god.md` (NEW)
 - Goal: Sacred Void (śūnyatā/Ayin/kenosis/wu — cross-tradition MASSIVE WIN); Sacred Eclipse (Rahu-Ketu/Mesopotamian šar pūhi/Dresden Codex/Fenrir — celestial devouring universal pattern); Dying and Rising God (Osiris/Dumuzi/Dionysus/Adonis/Baldr/Christ — Frazer + Mettinger methodology-discipline)
 - Status: finished — 3 new symbol nodes · 0 dead links introduced · 0 YAML errors · STATUS.md logged
+
+## thumbnail-system-3 — targeted OVERRIDES + depictions pass (session 2026-05-16) — FINISHED
+**Status: FINISHED**
+- Picked up from 2052/2540 (80.8%) at session start
+- Added 185+ new OVERRIDES in 4 batches covering: symbols, themes, traditions, events, persons, deities
+- Added `add_depictions.py` helper script for direct Commons URL injection
+- Final: 2288/2546 (89.9%) — +236 thumbnails this session
+- Suspects: 731 total (up from 553 — new OVERRIDES with redirects added to suspect pool)
+- Remaining: ~258 nulls (mostly abstract themes without Wikipedia images, obscure persons)
+- commit: pending

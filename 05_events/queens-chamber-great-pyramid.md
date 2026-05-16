@@ -34,8 +34,8 @@ refs:
     notes: "Documents the 2002 drilling-through of Gantenbrink's door. Found a second sealed door behind the first."
 tags: [event, monument-chamber, egypt, giza, pyramid, khufu, queen-chamber, shafts, gantenbrink, door, upuaut, robot, investigation, sealed-chamber, mystery]
 depictions:
-  - src: "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e3/Kheops-Pyramid.jpg/400px-Kheops-Pyramid.jpg"
-    caption: "Great Pyramid of Khufu — containing the Queen's Chamber with its sealed shaft doors"
+  - src: "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e3/Kheops-Pyramid.jpg/330px-Kheops-Pyramid.jpg"
+    caption: "Great Pyramid of Khufu, Giza — the Queen's Chamber shaft doors are within this structure"
     source: "Wikimedia Commons"
     license: "CC BY-SA 3.0"
 ---

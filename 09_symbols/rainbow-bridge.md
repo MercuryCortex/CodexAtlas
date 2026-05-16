@@ -91,6 +91,11 @@ refs:
     type: "critical-edition"
     tier: 1
 tags: [symbol, astral, rainbow, bridge, cosmic-connector, norse, greek, japanese, polynesian, indigenous-american, axis-mundi, afterlife, threshold]
+depictions:
+  - src: "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2d/Rainbow_Bridge_3.jpg/500px-Rainbow_Bridge_3.jpg"
+    caption: "Vue du Rainbow Bridge, pont naturel sacré pour les Indiens, accessible depuis le lac Powell."
+    source: "Wikimedia Commons"
+    license: "CC BY-SA 4.0"
 ---
 
 # Rainbow Bridge

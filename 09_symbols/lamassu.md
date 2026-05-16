@@ -77,6 +77,11 @@ refs:
     tier: 1
     notes: "Covers early Sumerian lamma/alad figurines and their development; excellent documentation of the threshold-guardian concept in its earliest forms"
 tags: [symbol, lamassu, lamassu-guardian, shedu, alad, lamma, threshold-guardian, apotropaic, theriomorphic, mesopotamian, assyrian, babylonian, sumerian, composite-guardian, cherubim, nineveh, khorsabad, five-legged, palace-gate, ancient-near-east]
+depictions:
+  - src: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c1/Ancient_Assyria_Lamassu_%28Winged_Bull%29_from_Nimrud%2C_9th_C._BC.jpg/500px-Ancient_Assyria_Lamassu_%28Winged_Bull%29_from_Nimrud%2C_9th_C._BC.jpg"
+    caption: "Pergamon Museum, Berlin, Germany. Complete indexed photo collection at WorldHistoryPics.com."
+    source: "Wikimedia Commons"
+    license: "CC0"
 ---
 
 # Lamassu (Winged Bull Guardian of the Threshold)
