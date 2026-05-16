@@ -8384,6 +8384,79 @@ VIEWS.observations = {
   }
 };
 
+VIEWS.chains = {
+  title: 'Chains',
+  subtitle: 'curated transmission chains · how ideas traveled across time and civilizations',
+  render() {
+    const pane = document.createElement('div');
+    pane.className = 'list-pane chains-pane';
+
+    const chains = window.CHAINS_DATA || [];
+
+    const BADGE = {
+      'INSTITUTIONAL': { bg: '#2a4a5a', color: '#7ab8cc', label: 'INSTITUTIONAL' },
+      'ESOTERIC':      { bg: '#3a2a4a', color: '#b07acc', label: 'ESOTERIC' },
+      'GEOGRAPHIC':    { bg: '#2a4a3a', color: '#7acc9a', label: 'GEOGRAPHIC' },
+      'CONVERGENCE':   { bg: '#4a3a20', color: '#ccaa55', label: 'CONVERGENCE' },
+    };
+
+    const header = document.createElement('div');
+    header.className = 'list-pane-header';
+    header.innerHTML = `<span class="lph-title">Transmission Chains</span><span class="lph-rule"></span><span class="lph-count">${chains.length} chains</span>`;
+    pane.appendChild(header);
+
+    chains.forEach(chain => {
+      const b = BADGE[chain.category] || BADGE['INSTITUTIONAL'];
+      const card = document.createElement('div');
+      card.className = 'chain-card';
+      card.innerHTML = `
+        <div class="chain-head">
+          <div class="chain-head-top">
+            <span class="chain-badge" style="background:${b.bg};color:${b.color}">${b.label}</span>
+            <span class="chain-span">${chain.span || ''}</span>
+          </div>
+          <h3 class="chain-title">${chain.title}</h3>
+          <p class="chain-summary">${chain.summary}</p>
+        </div>
+        <div class="chain-links">
+          ${(chain.links || []).map((lk, i) => `
+            <div class="chain-link">
+              <div class="chain-link-left">
+                <div class="chain-date">${lk.date}</div>
+                <div class="chain-dot-col">
+                  <div class="chain-dot"></div>
+                  ${i < (chain.links.length - 1) ? '<div class="chain-line"></div>' : ''}
+                </div>
+              </div>
+              <div class="chain-link-right">
+                <span class="chain-node-label" data-node="${lk.node || ''}">${lk.label}</span>
+                <p class="chain-note">${lk.note}</p>
+              </div>
+            </div>
+          `).join('')}
+        </div>
+      `;
+      // wire node-label clicks → selectNode
+      card.querySelectorAll('.chain-node-label[data-node]').forEach(el => {
+        const nid = el.dataset.node;
+        if (!nid) return;
+        el.style.cursor = 'pointer';
+        el.addEventListener('click', e => { e.stopPropagation(); selectNode(nid); });
+      });
+      pane.appendChild(card);
+    });
+
+    if (!chains.length) {
+      const empty = document.createElement('div');
+      empty.className = 'list-pane-empty';
+      empty.textContent = 'No chains yet — add entries to src/data/chains.js';
+      pane.appendChild(empty);
+    }
+
+    document.getElementById('canvas').appendChild(pane);
+  }
+};
+
 VIEWS.about = {
   title: 'About this atlas',
   subtitle: 'posture, schema, sources',
