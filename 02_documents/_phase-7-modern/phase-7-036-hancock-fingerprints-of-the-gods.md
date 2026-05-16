@@ -1,6 +1,6 @@
 ---
 type: document
-id: "P7-036-hancock-fingerprints-of-the-gods"
+id: "phase-7-036-hancock-fingerprints-of-the-gods"
 title: "Fingerprints of the Gods (and the Hancock Corpus)"
 aka: ["Hancock's Atlantis chain", "Fingerprints of the Gods: The Evidence of Earth's Lost Civilization"]
 tradition: "Late-20th / early-21st-century popular pseudoarchaeology"

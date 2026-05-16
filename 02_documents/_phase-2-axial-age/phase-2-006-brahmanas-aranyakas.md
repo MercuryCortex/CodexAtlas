@@ -1,6 +1,6 @@
 ---
 type: document
-id: "P2-006-brahmanas-aranyakas"
+id: "phase-2-006-brahmanas-aranyakas"
 title: "Brāhmaṇas and Āraṇyakas"
 aka: ["the Brāhmaṇa literature", "the forest books"]
 tradition: "Vedic / early Brahmanical"

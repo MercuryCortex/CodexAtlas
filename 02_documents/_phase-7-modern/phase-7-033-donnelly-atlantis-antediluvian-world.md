@@ -1,6 +1,6 @@
 ---
 type: document
-id: "P7-033-donnelly-atlantis-antediluvian-world"
+id: "phase-7-033-donnelly-atlantis-antediluvian-world"
 title: "Atlantis: The Antediluvian World"
 aka: ["Donnelly's Atlantis"]
 tradition: "19th-century American popular pseudoarchaeology"

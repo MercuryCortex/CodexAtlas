@@ -1,6 +1,6 @@
 ---
 type: document
-id: "P4-054-bede-ecclesiastical-history"
+id: "phase-4-054-bede-ecclesiastical-history"
 title: "Ecclesiastical History of the English People"
 aka: ["Historia ecclesiastica gentis Anglorum", "HE"]
 tradition: "Anglo-Latin Christianity (Northumbrian)"

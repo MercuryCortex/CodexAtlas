@@ -1,6 +1,6 @@
 ---
 type: document
-id: "P6-003-pico-oration-900-conclusions"
+id: "phase-6-003-pico-oration-900-conclusions"
 title: "Oration on the Dignity of Man + 900 Conclusions"
 aka: ["Oratio de hominis dignitate", "Conclusiones nongentae", "900 Theses"]
 tradition: "Renaissance Hermetic-Kabbalist Platonism"

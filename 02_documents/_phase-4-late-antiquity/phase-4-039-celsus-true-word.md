@@ -1,6 +1,6 @@
 ---
 type: document
-id: "P4-039-celsus-true-word"
+id: "phase-4-039-celsus-true-word"
 title: "Alēthēs Logos / True Word (Celsus)"
 aka: ["True Doctrine", "Logos Alēthēs", "Celsus's Against the Christians"]
 tradition: "Middle Platonism (pagan); anti-Christian polemic"

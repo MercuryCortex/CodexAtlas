@@ -1,6 +1,6 @@
 ---
 type: document
-id: "P5-033-shiva-sutras"
+id: "phase-5-033-shiva-sutras"
 title: "Śiva Sūtras"
 aka: ["Shiva Sutras of Vasugupta", "Śivasūtra"]
 tradition: "Hindu — Kashmir Shaivism"

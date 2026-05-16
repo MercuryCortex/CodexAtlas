@@ -1,6 +1,6 @@
 ---
 type: document
-id: "P6-002-ficino-theologia-platonica"
+id: "phase-6-002-ficino-theologia-platonica"
 title: "Theologia Platonica de immortalitate animorum"
 aka: ["Platonic Theology", "Theologia Platonica"]
 tradition: "Renaissance Platonism / Hermeticism"

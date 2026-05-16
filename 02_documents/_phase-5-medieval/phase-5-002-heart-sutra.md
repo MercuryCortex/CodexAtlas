@@ -1,6 +1,6 @@
 ---
 type: document
-id: "P5-002-heart-sutra"
+id: "phase-5-002-heart-sutra"
 title: "Heart Sutra"
 aka: ["Prajñāpāramitā-hṛdaya-sūtra", "Bore Boluomiduo Xinjing 般若波羅蜜多心經", "The Heart of Perfect Wisdom"]
 tradition: "Mahāyāna Buddhism"

@@ -1,6 +1,6 @@
 ---
 type: document
-id: "P4-099-shangqing-corpus"
+id: "phase-4-099-shangqing-corpus"
 title: "Shangqing Corpus (Supreme Clarity Revelations)"
 aka: ["上清", "Shàng Qīng", "Maoshan Daoism", "Supreme Clarity scriptures", "Highest Clarity texts"]
 tradition: "Chinese / Daoist"

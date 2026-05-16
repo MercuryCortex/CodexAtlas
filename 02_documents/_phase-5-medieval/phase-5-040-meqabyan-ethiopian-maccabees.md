@@ -1,6 +1,6 @@
 ---
 type: document
-id: "P5-040-meqabyan-ethiopian-maccabees"
+id: "phase-5-040-meqabyan-ethiopian-maccabees"
 title: "Meqabyan I–III (Ethiopian Maccabees)"
 aka: ["Mäqabəyan", "Ethiopic Maccabees", "Pseudo-Maccabees", "መቃብያን"]
 tradition: "[[tradition-ethiopian-orthodox-tewahedo]]"

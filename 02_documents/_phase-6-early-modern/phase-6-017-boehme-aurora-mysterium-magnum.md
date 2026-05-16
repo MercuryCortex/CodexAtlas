@@ -1,6 +1,6 @@
 ---
 type: document
-id: "P6-017-boehme-aurora-mysterium-magnum"
+id: "phase-6-017-boehme-aurora-mysterium-magnum"
 title: "Aurora + Mysterium Magnum"
 aka: ["Morgenröte im Aufgang (Aurora)", "Mysterium Magnum (Genesis commentary)"]
 tradition: "Christian theosophy / Lutheran esoteric mysticism"

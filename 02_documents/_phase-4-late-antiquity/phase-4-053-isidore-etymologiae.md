@@ -1,6 +1,6 @@
 ---
 type: document
-id: "P4-053-isidore-etymologiae"
+id: "phase-4-053-isidore-etymologiae"
 title: "Etymologiae (Etymologies / Origines)"
 aka: ["Etymologiarum sive originum libri XX", "Origines", "Isidori Etymologiae"]
 tradition: "Western (Latin) Patristic Christianity / Visigothic"

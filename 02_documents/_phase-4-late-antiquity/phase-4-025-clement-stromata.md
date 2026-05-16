@@ -1,6 +1,6 @@
 ---
 type: document
-id: "P4-025-clement-stromata"
+id: "phase-4-025-clement-stromata"
 title: "Stromata"
 aka: ["Stromateis", "Miscellanies", "Carpets"]
 tradition: "Christian (Alexandrian)"

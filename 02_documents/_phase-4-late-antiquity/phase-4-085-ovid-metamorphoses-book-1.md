@@ -1,6 +1,6 @@
 ---
 type: document
-id: "P4-085-ovid-metamorphoses-book-1"
+id: "phase-4-085-ovid-metamorphoses-book-1"
 title: "Ovid, Metamorphoses Book 1 (the Deucalion-Pyrrha flood)"
 aka: ["Metamorphoses Liber I", "Ovid Met. 1", "Metamorphōseōn libri (Latin)"]
 tradition: "Roman / Augustan-Latin literary; principal Latin reception-channel of Greek mythology for medieval-and-Renaissance Europe"
@@ -52,6 +52,11 @@ refs:
     type: "critical-edition"
     tier: 1
 tags: [phase-4, latin, augustan, epic, ovid, metamorphoses, deucalion-pyrrha, greek-flood, mediterranean-flood-reception]
+depictions:
+  - src: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/ca/Ovid_by_an_anonymous_sculptor.jpg/500px-Ovid_by_an_anonymous_sculptor.jpg"
+    caption: "Ovid, marble bust by an anonymous sculptor (Musée des Antiquités, Rouen)"
+    source: "Wikimedia Commons"
+    license: "Public domain"
 ---
 
 # Ovid, Metamorphoses Book 1

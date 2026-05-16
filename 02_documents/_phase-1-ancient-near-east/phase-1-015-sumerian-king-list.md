@@ -1,6 +1,6 @@
 ---
 type: document
-id: "P1-015-sumerian-king-list"
+id: "phase-1-015-sumerian-king-list"
 title: "The Sumerian King List"
 aka: ["SKL", "Sumerian Kinglist", "Weld-Blundell Prism Text (principal manuscript)", "WB 444"]
 tradition: "Sumerian / Mesopotamian"

@@ -1,6 +1,6 @@
 ---
 type: document
-id: "P1-022-lament-for-ur"
+id: "phase-1-022-lament-for-ur"
 title: "The Lamentation over the Destruction of Ur"
 aka: ["Lament for Ur", "Ur Lament", "LU", "Lamentation over the Destruction of Ur", "ETCSL 2.2.2"]
 tradition: "Sumerian"

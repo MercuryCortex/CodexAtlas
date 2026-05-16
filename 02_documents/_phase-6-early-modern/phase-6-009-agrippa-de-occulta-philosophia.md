@@ -1,6 +1,6 @@
 ---
 type: document
-id: "P6-009-agrippa-de-occulta-philosophia"
+id: "phase-6-009-agrippa-de-occulta-philosophia"
 title: "De Occulta Philosophia Libri Tres"
 aka: ["Three Books of Occult Philosophy", "De Occulta Philosophia"]
 tradition: "Renaissance magic / Hermetic-Kabbalist syncretism"

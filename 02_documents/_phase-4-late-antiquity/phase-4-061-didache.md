@@ -1,6 +1,6 @@
 ---
 type: document
-id: "P4-061-didache"
+id: "phase-4-061-didache"
 title: "Didache"
 aka: ["The Teaching of the Twelve Apostles", "Didachē tōn Dōdeka Apostolōn", "Doctrina Apostolorum (in part)"]
 tradition: "Patristic Christian (proto-orthodox)"

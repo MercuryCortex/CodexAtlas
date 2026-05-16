@@ -1,6 +1,6 @@
 ---
 type: document
-id: "P6-013-mirabai-bhajans"
+id: "phase-6-013-mirabai-bhajans"
 title: "Mirabai's Bhajans (devotional songs to Krishna)"
 aka: ["Mira Bai padas", "Mirabai bhajans"]
 tradition: "Hindu Bhakti (Vaishnava)"

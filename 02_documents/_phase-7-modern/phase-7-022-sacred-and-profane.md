@@ -1,6 +1,6 @@
 ---
 type: document
-id: "P7-022-sacred-and-profane"
+id: "phase-7-022-sacred-and-profane"
 title: "The Sacred and the Profane"
 aka: ["Das Heilige und das Profane", "Le sacré et le profane"]
 tradition: "Comparative religion (academic) / history of religions"

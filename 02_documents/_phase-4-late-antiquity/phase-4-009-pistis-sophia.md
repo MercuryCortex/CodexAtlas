@@ -1,6 +1,6 @@
 ---
 type: document
-id: "P4-009-pistis-sophia"
+id: "phase-4-009-pistis-sophia"
 title: "Pistis Sophia"
 aka: ["Askew Codex"]
 tradition: "Gnostic Christian"

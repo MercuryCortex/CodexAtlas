@@ -1,6 +1,6 @@
 ---
 type: document
-id: "P8-010-kumulipo"
+id: "phase-8-010-kumulipo"
 title: "Kumulipo"
 aka: ["The Kumulipo", "He Kumulipo", "Hawaiian creation chant"]
 tradition: "Hawaiian (Native Hawaiian / Kanaka Maoli)"

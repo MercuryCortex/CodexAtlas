@@ -1,6 +1,6 @@
 ---
 type: document
-id: "P3-020-gospel-of-john"
+id: "phase-3-020-gospel-of-john"
 title: "Gospel of John"
 aka: ["Euangelion kata Iōannēn", "Fourth Gospel", "Secundum Iohannem"]
 tradition: "Early Christianity (Johannine community)"

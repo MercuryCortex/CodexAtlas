@@ -1,6 +1,6 @@
 ---
 type: document
-id: "P2-002-gathas-of-zarathustra"
+id: "phase-2-002-gathas-of-zarathustra"
 title: "Gathas of Zarathustra"
 aka: ["Gāθās", "Gathas", "the Old Avestan hymns"]
 tradition: "Zoroastrian"

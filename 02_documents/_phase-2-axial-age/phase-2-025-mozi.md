@@ -1,6 +1,6 @@
 ---
 type: document
-id: "P2-025-mozi"
+id: "phase-2-025-mozi"
 title: "Mozi"
 aka: ["Mòzǐ", "墨子", "Mo Tzu", "Mo Di 墨翟", "Master Mo"]
 tradition: "Chinese / Mohist"

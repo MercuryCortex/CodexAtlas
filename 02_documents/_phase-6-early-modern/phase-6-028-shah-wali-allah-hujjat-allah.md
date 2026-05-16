@@ -1,6 +1,6 @@
 ---
 type: document
-id: "P6-028-shah-wali-allah-hujjat-allah"
+id: "phase-6-028-shah-wali-allah-hujjat-allah"
 title: "Hujjat Allah al-Baligha"
 aka: ["The Conclusive Argument from God", "Hujjatullah al-Balighah"]
 tradition: "Islamic theology / Sufi-philosophical / Hadith reform"

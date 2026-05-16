@@ -1,6 +1,6 @@
 ---
 type: document
-id: "P4-050-leo-tome-to-flavian"
+id: "phase-4-050-leo-tome-to-flavian"
 title: "Tome of Leo (Letter 28 to Flavian of Constantinople)"
 aka: ["Tomus Leonis", "Tome", "Epistula 28 ad Flavianum", "Tome to Flavian"]
 tradition: "Western (Latin) Patristic Christianity"

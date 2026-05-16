@@ -1,6 +1,6 @@
 ---
 type: document
-id: "P5-020-interrogatio-iohannis"
+id: "phase-5-020-interrogatio-iohannis"
 title: "Interrogatio Iohannis (The Secret Book of John of the Bogomils)"
 aka: ["Interrogatio Johannis", "Secret Supper", "Liber Sancti Iohannis", "Faux Évangile (Concorezzan)", "Le Livre Secret"]
 tradition: "Bogomilism / Catharism — medieval Christian dualism"

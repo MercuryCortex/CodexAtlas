@@ -1,6 +1,6 @@
 ---
 type: document
-id: "P4-014-cologne-mani-codex"
+id: "phase-4-014-cologne-mani-codex"
 title: "Cologne Mani Codex"
 aka: ["CMC", "On the Origin of His Body (Peri tēs gennēs tou sōmatos autou)"]
 tradition: "Manichaean"

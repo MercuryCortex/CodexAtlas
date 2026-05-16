@@ -1,6 +1,6 @@
 ---
 type: document
-id: "P5-044-ibn-sina-kitab-al-shifa"
+id: "phase-5-044-ibn-sina-kitab-al-shifa"
 title: "Kitāb al-Shifāʾ (The Book of Healing — Avicenna's encyclopedic philosophical *summa*)"
 aka: ["Kitāb al-Shifāʾ", "The Cure", "The Healing", "*Liber Sufficientiae* (Latin medieval, partial translation)", "*Liber de Philosophia Prima sive Scientia Divina* (Latin medieval, Metaphysics section)", "كتاب الشفاء"]
 tradition: "Islam (Falsafa — Greek-Arabic philosophical tradition; broadly Sunnī-Persian intellectual milieu)"

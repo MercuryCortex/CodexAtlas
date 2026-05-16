@@ -1,6 +1,6 @@
 ---
 type: document
-id: "P7-032-kybalion"
+id: "phase-7-032-kybalion"
 title: "The Kybalion"
 aka: ["The Kybalion: A Study of the Hermetic Philosophy of Ancient Egypt and Greece"]
 tradition: "New Thought / pseudo-Hermetic"

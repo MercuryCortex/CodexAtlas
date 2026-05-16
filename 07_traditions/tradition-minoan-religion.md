@@ -47,6 +47,11 @@ refs:
     type: "monograph"
     tier: 2
 tags: [tradition, minoan, crete, bronze-age, aegean, goddess, bull, labyrinth, mystery, pre-greek]
+depictions:
+  - src: "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4a/Snake_Goddess_Crete_1600BC.jpg/500px-Snake_Goddess_Crete_1600BC.jpg"
+    caption: "Minoan Snake Goddess figurine, Knossos (~1600 BCE, Herakleion Archaeological Museum)"
+    source: "Wikimedia Commons"
+    license: "Public domain"
 ---
 
 # Minoan Religion

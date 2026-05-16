@@ -1,6 +1,6 @@
 ---
 type: document
-id: "P1-009-coffin-texts"
+id: "phase-1-009-coffin-texts"
 title: "Coffin Texts"
 aka: ["CT", "Spells of the Coffin Texts", "Middle Kingdom Egyptian Funerary Texts"]
 tradition: "Egyptian"

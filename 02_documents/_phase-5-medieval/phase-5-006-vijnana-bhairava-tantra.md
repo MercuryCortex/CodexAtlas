@@ -1,6 +1,6 @@
 ---
 type: document
-id: "P5-006-vijnana-bhairava-tantra"
+id: "phase-5-006-vijnana-bhairava-tantra"
 title: "Vijnana Bhairava Tantra"
 aka: ["Vijñāna Bhairava", "VBT"]
 tradition: "Hindu — Kashmir Shaivism / Trika"

@@ -1,6 +1,6 @@
 ---
 type: document
-id: "P5-005-shankara-brahma-sutra-bhasya"
+id: "phase-5-005-shankara-brahma-sutra-bhasya"
 title: "Brahma-Sutra-Bhasya (Śaṅkara)"
 aka: ["Brahmasūtrabhāṣya", "Śārīrakabhāṣya", "Commentary on the Vedānta Sūtras"]
 tradition: "Hindu — Advaita Vedānta"

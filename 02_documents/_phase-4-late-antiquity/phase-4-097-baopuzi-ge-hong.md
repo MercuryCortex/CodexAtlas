@@ -1,6 +1,6 @@
 ---
 type: document
-id: "P4-097-baopuzi-ge-hong"
+id: "phase-4-097-baopuzi-ge-hong"
 title: "Baopuzi (The Master Who Embraces Simplicity)"
 aka: ["抱朴子", "Bào Pǔ Zǐ", "Pao-p'u-tzu", "Nei Pian (Inner Chapters)", "Wai Pian (Outer Chapters)"]
 tradition: "Chinese / Daoist"

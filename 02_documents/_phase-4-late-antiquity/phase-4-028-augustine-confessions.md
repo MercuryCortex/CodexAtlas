@@ -1,6 +1,6 @@
 ---
 type: document
-id: "P4-028-augustine-confessions"
+id: "phase-4-028-augustine-confessions"
 title: "Confessions"
 aka: ["Confessiones"]
 tradition: "Christian (Latin)"

@@ -40,6 +40,11 @@ refs:
     tier: 4
     notes: "Marinatos' own late speculation connecting Thera to the Atlantis legend — cited as a primary source for this hypothesis, not as verified history. Tier 4 (speculative)."
 tags: [person, archaeologist, greek, thera, santorini, akrotiri, minoan, bronze-age, phase-3, metadata]
+depictions:
+  - src: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c5/Santorini_caldera.jpg/500px-Santorini_caldera.jpg"
+    caption: "Santorini (Thera) caldera — site of Marinatos's excavations at Akrotiri"
+    source: "Wikimedia Commons"
+    license: "CC BY-SA 3.0"
 ---
 
 # Spyridon Marinatos

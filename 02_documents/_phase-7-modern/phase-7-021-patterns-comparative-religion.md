@@ -1,6 +1,6 @@
 ---
 type: document
-id: "P7-021-patterns-comparative-religion"
+id: "phase-7-021-patterns-comparative-religion"
 title: "Patterns in Comparative Religion"
 aka: ["Traité d'histoire des religions"]
 tradition: "Comparative religion (academic) / history of religions"

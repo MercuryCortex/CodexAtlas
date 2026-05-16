@@ -1,6 +1,6 @@
 ---
 type: document
-id: "P7-025-dianetics"
+id: "phase-7-025-dianetics"
 title: "Dianetics: The Modern Science of Mental Health"
 aka: ["Dianetics"]
 tradition: "Scientology"

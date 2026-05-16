@@ -1,6 +1,6 @@
 ---
 type: document
-id: "P6-011-cordovero-pardes-rimmonim"
+id: "phase-6-011-cordovero-pardes-rimmonim"
 title: "Pardes Rimmonim (Orchard of Pomegranates)"
 aka: ["Pardes Rimonim"]
 tradition: "Jewish Kabbalah"

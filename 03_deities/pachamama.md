@@ -29,7 +29,7 @@ syncretic-edges:
     type: "structural-parallel"
     notes: "Both are mountain-rooted earth-mother figures whose cult involves the physical landscape as divine body. Cybele as 'Great Mother' of Mt. Ida / Pachamama as 'Mama Pacha' of the Andean mountain-spine. Both are Magna Mater instantiations."
 mentioned-in:
-  - "[[tradition-andean]]"
+  - "[[tradition-inca-andean]]"
 status: "metadata"
 refs:
   - title: "Pilgrims of the Andes: Regional Cults in Cusco"

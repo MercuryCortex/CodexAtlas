@@ -1,6 +1,6 @@
 ---
 type: document
-id: "P2-011-hebrew-bible-d-source"
+id: "phase-2-011-hebrew-bible-d-source"
 title: "Hebrew Bible — D (Deuteronomic Core) Source"
 aka: ["D-source", "Ur-Deuteronomium", "Deuteronomy 12–26 core", "the Josianic law-book"]
 tradition: "Israelite / Judahite"

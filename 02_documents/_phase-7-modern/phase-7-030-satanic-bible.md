@@ -1,6 +1,6 @@
 ---
 type: document
-id: "P7-030-satanic-bible"
+id: "phase-7-030-satanic-bible"
 title: "The Satanic Bible"
 aka: []
 tradition: "LaVeyan Satanism / Modern Pagan"

@@ -1,6 +1,6 @@
 ---
 type: document
-id: "P5-026-sefer-ha-bahir"
+id: "phase-5-026-sefer-ha-bahir"
 title: "Sefer ha-Bahir (The Book of Brightness)"
 aka: ["Bahir", "Midrash Rabbi Nehunya ben Hakanah"]
 tradition: "Rabbinic Judaism — early Kabbalah"

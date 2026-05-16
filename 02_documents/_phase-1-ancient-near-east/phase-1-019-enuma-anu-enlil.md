@@ -1,6 +1,6 @@
 ---
 type: document
-id: "P1-019-enuma-anu-enlil"
+id: "phase-1-019-enuma-anu-enlil"
 title: "Enūma Anu Enlil"
 aka: ["Enuma Anu Enlil", "EAE", "When (the gods) Anu (and) Enlil...", "the canonical astrological omen series"]
 tradition: "Akkadian / Mesopotamian"

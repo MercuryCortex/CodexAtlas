@@ -1,6 +1,6 @@
 ---
 type: document
-id: "P4-035-acts-of-paul-and-thecla"
+id: "phase-4-035-acts-of-paul-and-thecla"
 title: "Acts of Paul and Thecla"
 aka: ["Acta Pauli et Theclae", "Praxeis Paulou kai Theklas"]
 tradition: "early Christian (apocryphal Acts; encratite)"

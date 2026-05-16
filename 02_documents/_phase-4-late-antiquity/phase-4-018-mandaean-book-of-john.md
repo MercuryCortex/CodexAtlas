@@ -1,6 +1,6 @@
 ---
 type: document
-id: "P4-018-mandaean-book-of-john"
+id: "phase-4-018-mandaean-book-of-john"
 title: "Mandaean Book of John"
 aka: ["Drasha d-Yahya", "Sidra d-Yahya", "Book of John the Baptizer"]
 tradition: "Mandaean"

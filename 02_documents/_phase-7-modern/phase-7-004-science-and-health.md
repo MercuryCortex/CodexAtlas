@@ -1,6 +1,6 @@
 ---
 type: document
-id: "P7-004-science-and-health"
+id: "phase-7-004-science-and-health"
 title: "Science and Health with Key to the Scriptures"
 aka: ["Science and Health"]
 tradition: "Christian Science"

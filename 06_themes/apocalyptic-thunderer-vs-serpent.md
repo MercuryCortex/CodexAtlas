@@ -48,6 +48,11 @@ refs:
     tier: 1
     notes: "Pages on Perun-Veles and the PIE *Perkʷunos* complex."
 tags: [theme, cosmogony, combat-myth, storm-god, dragon-slayer, indo-european, semitic, slavic, norse, vedic, greek, japanese, comparative-mythology]
+depictions:
+  - src: "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d9/Zeus_Typhon_Staatliche_Antikensammlungen_596.jpg/500px-Zeus_Typhon_Staatliche_Antikensammlungen_596.jpg"
+    caption: "Zeus fighting Typhon, Apulian red-figure plate, c. 550 BCE (Staatliche Antikensammlungen, Munich)"
+    source: "Wikimedia Commons"
+    license: "Public domain"
 ---
 
 # Thunderer vs. Serpent (Storm-God Combat)

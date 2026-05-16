@@ -1,6 +1,6 @@
 ---
 type: document
-id: "P3-015-pauline-epistles"
+id: "phase-3-015-pauline-epistles"
 title: "Undisputed Pauline Epistles (Romans, 1–2 Corinthians, Galatians, Philippians, 1 Thessalonians, Philemon)"
 aka: ["Hauptbriefe", "the seven authentic letters of Paul", "Proto-Pauline corpus"]
 tradition: "Earliest Christianity"

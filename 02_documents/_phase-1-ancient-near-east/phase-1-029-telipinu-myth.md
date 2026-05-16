@@ -1,6 +1,6 @@
 ---
 type: document
-id: "P1-029-telipinu-myth"
+id: "phase-1-029-telipinu-myth"
 title: "The Telipinu Myth"
 aka: ["Disappearance of Telipinu", "Vanishing-God Myth (Hittite)", "CTH 324"]
 tradition: "Hittite (with Hattic substrate)"

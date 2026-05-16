@@ -1,6 +1,6 @@
 ---
 type: document
-id: "P5-015-al-ghazali-ihya"
+id: "phase-5-015-al-ghazali-ihya"
 title: "Iḥyāʾ ʿUlūm al-Dīn (The Revival of the Religious Sciences)"
 aka: ["The Revival of the Religious Sciences", "Iḥyāʾ", "Ihya Ulum al-Din"]
 tradition: "Sunni Islam — Sufi-Ash'arite synthesis"

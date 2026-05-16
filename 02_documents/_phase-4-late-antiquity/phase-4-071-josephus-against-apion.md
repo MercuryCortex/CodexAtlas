@@ -1,6 +1,6 @@
 ---
 type: document
-id: "P4-071-josephus-against-apion"
+id: "phase-4-071-josephus-against-apion"
 title: "Against Apion"
 aka: ["Contra Apionem", "Peri archaiotētos Ioudaiōn (On the Antiquity of the Jews)", "CA"]
 tradition: "Hellenistic Judaism / Flavian-Domitianic Roman context"

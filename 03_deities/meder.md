@@ -15,7 +15,7 @@ child-of: []
 consort: []
 attributes: ["earth", "land"]
 attested-in: ["Pre-Christian Ezana stelae (RIE 185, 270, 271 — alongside [[almaqah]], [[mahrem]], [[astar-aksumite]], [[beher]])"]
-equivalents: ["[[ge-greek]] / Gaia (parallel-form — Greek earth-personification)", "[[geb-egyptian]] (parallel-form — Egyptian earth-god)", "[[ki-sumerian]] (parallel-form)"]
+equivalents: ["[[gaia]] / Gaia (parallel-form — Greek earth-personification)", "[[geb]] (parallel-form — Egyptian earth-god)", "[[ki-sumerian]] (parallel-form)"]
 syncretic-edges:
   - target: "ge-greek"
     type: "scholarly-parallel"
@@ -71,8 +71,8 @@ Meder's role is the **earth / territorial-cosmic** dimension of the pantheon. Th
 The agricultural and territorial dimensions of Meder were likely emphasized — Aksum was a substantially agricultural state (the highland Tigray cereal-agriculture supported the urban population and the royal court). No surviving Aksumite-pre-Christian narrative texts elaborate Meder's mythology specifically.
 
 ## Cross-tradition identifications
-- **[[ge-greek]] / Gaia** — *parallel-form*: Greek primordial earth-personification (Hesiod *Theogony* 116ff); structurally cognate.
-- **[[geb-egyptian]]** — *parallel-form*: Egyptian earth-god (here gendered masculine like Meder; the gender-variation between male and female earth-deities across Mediterranean and ANE cultures is a recurring pattern).
+- **[[gaia]] / Gaia** — *parallel-form*: Greek primordial earth-personification (Hesiod *Theogony* 116ff); structurally cognate.
+- **[[geb]]** — *parallel-form*: Egyptian earth-god (here gendered masculine like Meder; the gender-variation between male and female earth-deities across Mediterranean and ANE cultures is a recurring pattern).
 - **[[ki-sumerian]]** — *parallel-form*: Sumerian earth-personification.
 - **[[tellus-mater]] / Terra Mater (Roman)** — *parallel-form*: Roman earth-mother.
 

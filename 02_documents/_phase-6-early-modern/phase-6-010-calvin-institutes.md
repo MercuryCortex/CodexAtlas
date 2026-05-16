@@ -1,6 +1,6 @@
 ---
 type: document
-id: "P6-010-calvin-institutes"
+id: "phase-6-010-calvin-institutes"
 title: "Institutes of the Christian Religion"
 aka: ["Institutio Christianae Religionis", "Institution de la religion chrétienne"]
 tradition: "Reformed Protestant Christianity"

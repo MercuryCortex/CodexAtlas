@@ -1,6 +1,6 @@
 ---
 type: document
-id: "P8-006-huarochiri-manuscript"
+id: "phase-8-006-huarochiri-manuscript"
 title: "Huarochirí Manuscript"
 aka: ["Manuscrito de Huarochirí", "Tratado y relación de los errores, falsos dioses, y otras supersticiones..."]
 tradition: "Quechua / Andean (pre-Inca and Inca-period Yauyo)"

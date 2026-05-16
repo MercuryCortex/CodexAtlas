@@ -1,6 +1,6 @@
 ---
 type: document
-id: "P4-079-coptic-asclepius-nhc-vi-8"
+id: "phase-4-079-coptic-asclepius-nhc-vi-8"
 title: "Coptic Asclepius (NHC VI,8) — including the Hermetic 'Egyptian Apocalypse'"
 aka: ["NHC VI,8", "Coptic Asclepius excerpt", "Asclepius §§21–29 (Coptic)", "Hermetic Apocalypse"]
 tradition: "Hermetic"

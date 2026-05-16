@@ -1,6 +1,6 @@
 ---
 type: document
-id: "P3-016-gospel-of-mark"
+id: "phase-3-016-gospel-of-mark"
 title: "Gospel of Mark"
 aka: ["Euangelion kata Markon", "Secundum Marcum"]
 tradition: "Earliest Christianity"

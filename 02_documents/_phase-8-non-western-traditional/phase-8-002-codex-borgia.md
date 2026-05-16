@@ -1,6 +1,6 @@
 ---
 type: document
-id: "P8-002-codex-borgia"
+id: "phase-8-002-codex-borgia"
 title: "Codex Borgia"
 aka: ["Códice Borgia", "Codex Borgianus Messicanus 1"]
 tradition: "Central Mexican (Nahua / Mixtec-Puebla stylistic sphere)"

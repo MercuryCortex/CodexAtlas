@@ -1,6 +1,6 @@
 ---
 type: document
-id: "P8-020-nihon-shoki"
+id: "phase-8-020-nihon-shoki"
 title: "Nihon Shoki (Chronicles of Japan)"
 tradition: "Shinto"
 family: "Japanese"

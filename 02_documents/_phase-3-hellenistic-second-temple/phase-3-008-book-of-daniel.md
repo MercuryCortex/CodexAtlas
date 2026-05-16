@@ -1,6 +1,6 @@
 ---
 type: document
-id: "P3-008-book-of-daniel"
+id: "phase-3-008-book-of-daniel"
 title: "Book of Daniel (apocalyptic chapters 7–12, with court-tale chapters 1–6)"
 aka: ["Sefer Daniyyel"]
 tradition: "Second Temple Judaism"

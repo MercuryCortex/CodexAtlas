@@ -1,6 +1,6 @@
 ---
 type: document
-id: "P1-004-gilgamesh-old-babylonian"
+id: "phase-1-004-gilgamesh-old-babylonian"
 title: "Gilgamesh — Old Babylonian Version"
 aka: ["Surpassing All Other Kings", "Šūtur eli šarrī", "Pennsylvania Tablet", "Yale Tablet", "Old Babylonian Gilgamesh"]
 tradition: "Akkadian / Mesopotamian"

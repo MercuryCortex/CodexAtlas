@@ -1,6 +1,6 @@
 ---
 type: document
-id: "P4-013-discourse-on-the-eighth-and-ninth"
+id: "phase-4-013-discourse-on-the-eighth-and-ninth"
 title: "Discourse on the Eighth and Ninth"
 aka: ["NHC VI,6"]
 tradition: "Hermetic"

@@ -1,6 +1,6 @@
 ---
 type: document
-id: "P2-007-hebrew-bible-e-source"
+id: "phase-2-007-hebrew-bible-e-source"
 title: "Hebrew Bible — E (Elohist) Source"
 aka: ["Elohist", "E-source", "the E document"]
 tradition: "Israelite / pre-exilic Hebrew"

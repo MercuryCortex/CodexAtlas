@@ -1,6 +1,6 @@
 ---
 type: document
-id: "P5-027-sefer-ha-zohar"
+id: "phase-5-027-sefer-ha-zohar"
 title: "Sefer ha-Zohar (The Book of Splendor)"
 aka: ["Zohar", "Midrash de-Rabbi Shimon ben Yochai"]
 tradition: "Rabbinic Judaism — classical Kabbalah"

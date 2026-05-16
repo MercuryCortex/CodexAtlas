@@ -76,6 +76,11 @@ refs:
     type: "monograph"
     tier: 2
     note: "On viewer response to divine images in the Roman and late-antique world; relevant to the reception-context of the Zeus at Olympia and Constantinople"
+depictions:
+  - src: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a2/Christ_Pantocrator_Deesis_mosaic_Hagia_Sophia.jpg/500px-Christ_Pantocrator_Deesis_mosaic_Hagia_Sophia.jpg"
+    caption: "Christ Pantokrator, Byzantine mosaic, Hagia Sophia Deesis (c. 1261 CE) — the terminus of the Zeus-ruler transmission"
+    source: "Wikimedia Commons"
+    license: "Public domain"
 ---
 
 # The Phidian Zeus → Christ Pantokrator — Iconographic Transmission Hypothesis

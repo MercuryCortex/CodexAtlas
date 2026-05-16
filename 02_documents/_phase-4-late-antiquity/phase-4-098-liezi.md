@@ -1,6 +1,6 @@
 ---
 type: document
-id: "P4-098-liezi"
+id: "phase-4-098-liezi"
 title: "Liezi (The Book of Master Lie)"
 aka: ["列子", "Liè Zǐ", "Lieh-tzu", "Chongxu zhide zhenjing 沖虛至德真經 ('True Classic of Perfect Emptiness')"]
 tradition: "Chinese / Daoist"

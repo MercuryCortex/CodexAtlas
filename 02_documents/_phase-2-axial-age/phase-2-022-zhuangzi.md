@@ -1,6 +1,6 @@
 ---
 type: document
-id: "P2-022-zhuangzi"
+id: "phase-2-022-zhuangzi"
 title: "Zhuangzi"
 aka: ["Zhuāngzǐ", "莊子", "Chuang Tzu", "Nanhua Zhenjing 南華真經 ('True Classic of Southern Florescence')"]
 tradition: "Chinese / Daoist"

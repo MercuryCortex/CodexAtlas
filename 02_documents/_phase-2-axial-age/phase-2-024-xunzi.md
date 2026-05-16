@@ -1,6 +1,6 @@
 ---
 type: document
-id: "P2-024-xunzi"
+id: "phase-2-024-xunzi"
 title: "Xunzi"
 aka: ["Xúnzǐ", "荀子", "Hsün-tzu", "Master Xun", "Xun Kuang 荀況"]
 tradition: "Chinese / Confucian"

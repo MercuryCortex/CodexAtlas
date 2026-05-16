@@ -1,6 +1,6 @@
 ---
 type: document
-id: "P1-026-yijing"
+id: "phase-1-026-yijing"
 title: "Yijing (Book of Changes)"
 aka: ["Yì Jīng", "易經", "I Ching", "Zhou Yi 周易", "Book of Changes"]
 tradition: "Chinese / Zhou-classical (Zhou Yi core); Han-period commentary (Ten Wings)"

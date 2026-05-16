@@ -1,6 +1,6 @@
 ---
 type: document
-id: "P8-022-the-sacred-pipe"
+id: "phase-8-022-the-sacred-pipe"
 title: "The Sacred Pipe: Black Elk's Account of the Seven Rites of the Oglala Sioux"
 aka: ["The Sacred Pipe", "Black Elk's Seven Rites"]
 tradition: "Lakota"

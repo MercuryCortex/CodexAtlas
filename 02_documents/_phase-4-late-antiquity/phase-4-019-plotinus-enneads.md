@@ -1,6 +1,6 @@
 ---
 type: document
-id: "P4-019-plotinus-enneads"
+id: "phase-4-019-plotinus-enneads"
 title: "Enneads"
 aka: ["Plotinus' Enneads (six sets of nine treatises)"]
 tradition: "Neoplatonism"

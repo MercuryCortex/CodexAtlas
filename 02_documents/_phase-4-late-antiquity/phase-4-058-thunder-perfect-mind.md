@@ -1,6 +1,6 @@
 ---
 type: document
-id: "P4-058-thunder-perfect-mind"
+id: "phase-4-058-thunder-perfect-mind"
 title: "The Thunder, Perfect Mind"
 aka: ["Thunder", "Bronte: Teleios Nous", "NHC VI,2"]
 tradition: "Gnostic (uncertain school)"

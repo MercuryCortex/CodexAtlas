@@ -1,6 +1,6 @@
 ---
 type: document
-id: "P4-060-letter-to-flora"
+id: "phase-4-060-letter-to-flora"
 title: "Letter to Flora (Ptolemy's Letter to Flora)"
 aka: ["Epistula ad Floram", "Ptolemaeus ad Floram"]
 tradition: "Gnostic Christian (Valentinian)"

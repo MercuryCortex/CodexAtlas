@@ -1,6 +1,6 @@
 ---
 type: document
-id: "P5-034-vivekachudamani"
+id: "phase-5-034-vivekachudamani"
 title: "Vivekacūḍāmaṇi (Crest-Jewel of Discrimination)"
 aka: ["Vivekachudamani", "Crest-Jewel of Discrimination"]
 tradition: "Hindu — Advaita Vedanta"

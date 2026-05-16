@@ -1,6 +1,6 @@
 ---
 type: document
-id: "P5-053-hafez-divan"
+id: "phase-5-053-hafez-divan"
 title: "Dīvān-e Ḥāfeẓ (The Collected Poems of Hafez)"
 aka: ["Divan-e Hafez", "Divān-e Khwāja", "The Collected Poems of Hafez", "ديوان حافظ"]
 tradition: "Islam (Sufism — Persian lyric poetry)"

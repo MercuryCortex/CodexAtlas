@@ -1,6 +1,6 @@
 ---
 type: document
-id: "P1-005-instructions-of-shuruppak"
+id: "phase-1-005-instructions-of-shuruppak"
 title: "Instructions of Shuruppak"
 aka: ["Instructions of Šuruppak", "Counsels of Shuruppak", "The Father's Instructions to His Son"]
 tradition: "Sumerian"

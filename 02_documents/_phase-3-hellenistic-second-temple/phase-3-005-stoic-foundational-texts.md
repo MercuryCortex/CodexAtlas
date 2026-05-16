@@ -1,6 +1,6 @@
 ---
 type: document
-id: "P3-005-stoic-foundational-texts"
+id: "phase-3-005-stoic-foundational-texts"
 title: "Stoic Foundational Texts (Chrysippus fragments through Seneca and Epictetus)"
 aka: ["Stoa corpus", "Hellenistic and Roman Stoicism"]
 tradition: "Greek and Roman philosophy"
@@ -66,6 +66,11 @@ refs:
     type: "monograph"
     tier: 2
 tags: [phase-3, greek, roman, philosophy, stoicism, logos, providence]
+depictions:
+  - src: "https://upload.wikimedia.org/wikipedia/commons/1/1a/Zeno_of_Citium.jpg"
+    caption: "Zeno of Citium, founder of Stoicism — his foundational texts are the core of this corpus"
+    source: "Wikimedia Commons"
+    license: "Public domain"
 ---
 
 # Stoic Foundational Texts

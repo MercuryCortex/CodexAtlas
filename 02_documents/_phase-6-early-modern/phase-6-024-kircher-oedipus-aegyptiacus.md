@@ -1,6 +1,6 @@
 ---
 type: document
-id: "P6-024-kircher-oedipus-aegyptiacus"
+id: "phase-6-024-kircher-oedipus-aegyptiacus"
 title: "Oedipus Aegyptiacus"
 aka: ["The Egyptian Oedipus"]
 tradition: "Jesuit Hermetic-Kabbalist universal-history scholarship"

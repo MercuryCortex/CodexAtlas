@@ -1,6 +1,6 @@
 ---
 type: document
-id: "P4-084-ethiopian-sinodos"
+id: "phase-4-084-ethiopian-sinodos"
 title: "Ethiopian Sinodos (the Ethiopian Synodicon)"
 aka: ["Sinodos", "Sənodos", "Ethiopian Apostolic Constitutions", "Mäṣḥafa Sinodos", "መጽሐፈ ሲኖዶስ"]
 tradition: "[[tradition-ethiopian-orthodox-tewahedo]] (canonical-NT-adjacent scripture)"

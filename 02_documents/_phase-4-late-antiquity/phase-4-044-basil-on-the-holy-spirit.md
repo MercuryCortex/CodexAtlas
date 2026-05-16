@@ -1,6 +1,6 @@
 ---
 type: document
-id: "P4-044-basil-on-the-holy-spirit"
+id: "phase-4-044-basil-on-the-holy-spirit"
 title: "On the Holy Spirit"
 aka: ["De Spiritu Sancto", "Peri tou Hagiou Pneumatos"]
 tradition: "Patristic Christian (Cappadocian)"

@@ -1,6 +1,6 @@
 ---
 type: document
-id: "P6-001-ficino-pimander"
+id: "phase-6-001-ficino-pimander"
 title: "Pimander (Ficino's Latin translation of the Corpus Hermeticum)"
 aka: ["Mercurii Trismegisti Pimander", "Pimander seu De potestate et sapientia Dei"]
 tradition: "Renaissance Hermeticism"

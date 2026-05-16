@@ -1,6 +1,6 @@
 ---
 type: document
-id: "P8-014-poetic-edda"
+id: "phase-8-014-poetic-edda"
 title: "Poetic Edda"
 aka: ["Elder Edda", "Sæmundar Edda", "Eddukvæði"]
 tradition: "Norse / Old Icelandic"

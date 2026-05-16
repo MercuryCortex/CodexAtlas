@@ -1,6 +1,6 @@
 ---
 type: document
-id: "P5-047-ibn-tufayl-hayy-ibn-yaqdhan"
+id: "phase-5-047-ibn-tufayl-hayy-ibn-yaqdhan"
 title: "Risālat Ḥayy ibn Yaqẓān (The Epistle of Ḥayy ibn Yaqẓān — 'Alive, son of Awake')"
 aka: ["Ḥayy ibn Yaqẓān", "Hayy ibn Yaqzan", "*Philosophus Autodidactus* (Pococke 1671 Latin)", "*The Improvement of Human Reason, Exhibited in the Life of Hai Ebn Yokdhan* (Ockley 1708 English)", "*The Self-Taught Philosopher*", "رسالة حي بن يقظان"]
 tradition: "Islam (Falsafa — Andalusi peripatetic; with Sufi-mystical-union elements)"

@@ -33,6 +33,11 @@ refs:
     type: "monograph"
     tier: 1
 tags: [theme, islamic, kalam, falsafa, ghazali, averroes, avicenna, eternity-of-world, divine-knowledge-of-particulars, bodily-resurrection, occasionalism, latin-scholastic-reception, tahafut-controversy]
+depictions:
+  - src: "https://upload.wikimedia.org/wikipedia/commons/9/9d/Averroes.jpg"
+    caption: "Averroes (Ibn Rushd), detail from Raphael's School of Athens — protagonist of the Tahāfut al-Tahāfut"
+    source: "Wikimedia Commons"
+    license: "Public domain"
 ---
 
 # The Tahafut Controversy (kalām vs. falsafa on the compatibility of revealed religion and Greek philosophy)

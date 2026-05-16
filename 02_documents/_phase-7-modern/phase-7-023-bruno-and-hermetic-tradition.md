@@ -1,6 +1,6 @@
 ---
 type: document
-id: "P7-023-bruno-and-hermetic-tradition"
+id: "phase-7-023-bruno-and-hermetic-tradition"
 title: "Giordano Bruno and the Hermetic Tradition"
 aka: []
 tradition: "Comparative religion (academic) / history of ideas"

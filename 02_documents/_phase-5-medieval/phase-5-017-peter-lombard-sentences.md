@@ -1,6 +1,6 @@
 ---
 type: document
-id: "P5-017-peter-lombard-sentences"
+id: "phase-5-017-peter-lombard-sentences"
 title: "Sententiae (The Four Books of Sentences)"
 aka: ["Libri Quattuor Sententiarum", "Sentences", "Liber Sententiarum"]
 tradition: "Latin Christian — Scholastic"

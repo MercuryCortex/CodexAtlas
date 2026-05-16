@@ -1,6 +1,6 @@
 ---
 type: document
-id: "P6-031-bijak-kabir"
+id: "phase-6-031-bijak-kabir"
 title: "Bījak (Kabir's Bijak)"
 aka: ["Bijak", "Kabir Bijak", "Kabir-Panth Bijak recension"]
 tradition: "Hindu Bhakti (Sant tradition) / Kabir Panth"

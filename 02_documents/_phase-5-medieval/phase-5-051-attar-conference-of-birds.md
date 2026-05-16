@@ -1,6 +1,6 @@
 ---
 type: document
-id: "P5-051-attar-conference-of-birds"
+id: "phase-5-051-attar-conference-of-birds"
 title: "Manṭiq al-Ṭayr (The Conference of the Birds / The Speech of Birds)"
 aka: ["Manteq ol-Teyr", "The Conference of the Birds", "The Speech of Birds", "منطق الطير"]
 tradition: "Islam (Sufism — Persian Sufi poetic tradition)"

@@ -1,6 +1,6 @@
 ---
 type: document
-id: "P1-028-kumarbi-cycle"
+id: "phase-1-028-kumarbi-cycle"
 title: "The Kumarbi Cycle (Song of Going Forth / Song of Hedammu / Song of Ullikummi)"
 aka: ["Song of Kumarbi", "Song of Emergence", "Song of Heavenly Kingship", "Hurro-Hittite Succession Myth"]
 tradition: "Hurrian–Hittite"

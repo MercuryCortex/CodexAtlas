@@ -1,6 +1,6 @@
 ---
 type: document
-id: "P1-027-memphite-theology-shabaka-stone"
+id: "phase-1-027-memphite-theology-shabaka-stone"
 title: "The Memphite Theology (Shabaka Stone)"
 aka: ["Shabaka Stone", "Shabako Stone", "Denkmal memphitischer Theologie", "British Museum EA 498"]
 tradition: "Egyptian"

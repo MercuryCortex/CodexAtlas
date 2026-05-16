@@ -1,6 +1,6 @@
 ---
 type: document
-id: "P3-022-plato-timaeus-critias-atlantis"
+id: "phase-3-022-plato-timaeus-critias-atlantis"
 title: "Plato's Atlantis Narrative (Timaeus 17a–27b, 24a–25d; Critias)"
 aka: ["The Atlantis Story", "Atlantikos logos", "Solon's Egyptian Tale"]
 tradition: "Greek philosophy"
@@ -80,6 +80,11 @@ refs:
     type: "university-repository"
     tier: 1
 tags: [phase-3, greek, philosophy, plato, atlantis, allegory, lost-continent, antediluvian, ideal-state]
+depictions:
+  - src: "https://upload.wikimedia.org/wikipedia/commons/thumb/2/21/Plato_Silanion_Musei_Capitolini_MC1377.png/500px-Plato_Silanion_Musei_Capitolini_MC1377.png"
+    caption: "Plato, marble portrait bust (Musei Capitolini, Rome) — author of the Timaeus and Critias"
+    source: "Wikimedia Commons"
+    license: "CC BY-SA 2.5"
 ---
 
 # Plato's Atlantis Narrative (Timaeus and Critias)

@@ -1,6 +1,6 @@
 ---
 type: document
-id: "P8-005-chilam-balam"
+id: "phase-8-005-chilam-balam"
 title: "Books of Chilam Balam"
 aka: ["Libros de Chilam Balam", "Books of the Jaguar Priest"]
 tradition: "Yucatec Maya"

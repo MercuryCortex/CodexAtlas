@@ -1,6 +1,6 @@
 ---
 type: document
-id: "P3-032-4-ezra-ethiopic-recension"
+id: "phase-3-032-4-ezra-ethiopic-recension"
 title: "4 Ezra (Mashafa Ezra Sutu'el, the Apocalypse of Ezra)"
 aka: ["2 Esdras (in Latin Vulgate and KJV Apocrypha)", "Apocalypse of Ezra", "Mashafa Ezra Sutuʾel (Geʼez)", "IV Ezrae"]
 tradition: "Second-Temple Jewish apocalyptic (post-70 CE) / canonical in [[tradition-ethiopian-orthodox-tewahedo]]; deuterocanonical in some Eastern Orthodox and Roman Catholic recensions"

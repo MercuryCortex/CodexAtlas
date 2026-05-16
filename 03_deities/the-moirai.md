@@ -37,6 +37,11 @@ refs:
     publisher: "Johns Hopkins UP"
     tier: 1
 tags: [deity, greek, fates, destiny, triadic-feminine, spinning, indo-european]
+depictions:
+  - src: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/57/Paphos_Haus_des_Theseus_-_Mosaik_Achilles_3_Moiren.jpg/500px-Paphos_Haus_des_Theseus_-_Mosaik_Achilles_3_Moiren.jpg"
+    caption: "The Three Fates (Moirai), Roman floor mosaic, House of Theseus, Paphos (Cyprus)"
+    source: "Wikimedia Commons"
+    license: "CC BY-SA 3.0"
 ---
 
 # The Moirai (the Fates)

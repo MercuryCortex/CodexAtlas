@@ -1,6 +1,6 @@
 ---
 type: document
-id: "P7-040-walatta-petros-hagiography"
+id: "phase-7-040-walatta-petros-hagiography"
 title: "Gadla Walatta Petros (Life of Walatta Petros)"
 aka: ["Gädlä Wälättä Peṭros", "Acts of Walatta Petros", "ገድለ ወለተ ጴጥሮስ"]
 tradition: "[[tradition-ethiopian-orthodox-tewahedo]]"

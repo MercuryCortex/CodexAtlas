@@ -1,6 +1,6 @@
 ---
 type: document
-id: "P6-018-rosicrucian-manifestos"
+id: "phase-6-018-rosicrucian-manifestos"
 title: "Fama Fraternitatis + Confessio Fraternitatis"
 aka: ["Rosicrucian Manifestos", "Fama Fraternitatis Rosae Crucis", "Confessio Fraternitatis Rosae Crucis"]
 tradition: "Rosicrucianism"

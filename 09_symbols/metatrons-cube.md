@@ -91,6 +91,11 @@ refs:
     tier: 1
     notes: "For the Dee / Monas Hieroglyphica parallel-form connection — Yates documents the 'all-in-one synthetic glyph' tradition in Renaissance Hermeticism that contextualizes the Metatron's Cube synthesis claim."
 tags: [symbol, cosmological, kabbalistic, hermetic, new-age, platonic-solids, metatron, kepler, flower-of-life, sacred-geometry, cross-tradition-win]
+depictions:
+  - src: "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ee/Metatrons_cube.svg/500px-Metatrons_cube.svg.png"
+    caption: "Metatron's Cube, showing the 13-circle Fruit of Life pattern containing all five Platonic solids"
+    source: "Wikimedia Commons"
+    license: "CC BY-SA 4.0"
 ---
 
 # Metatron's Cube

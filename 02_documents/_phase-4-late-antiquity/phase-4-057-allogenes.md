@@ -1,6 +1,6 @@
 ---
 type: document
-id: "P4-057-allogenes"
+id: "phase-4-057-allogenes"
 title: "Allogenes the Stranger"
 aka: ["Allogenes", "*The Foreigner*", "NHC XI,3"]
 tradition: "Gnostic Christian (Sethian)"

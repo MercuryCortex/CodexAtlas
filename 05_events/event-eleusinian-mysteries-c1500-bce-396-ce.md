@@ -80,6 +80,11 @@ refs:
     tier: 1
     notes: "Hippolytus reports — as anti-Naassene polemic — that the climactic moment of the Eleusinian Greater Mysteries was the hierophant's nighttime cry: **'Holy Brimo has borne the Holy Child Brimos!'** This is the single most consequential ancient testimony to the Eleusinian sacred-formula and the chief Christianity-mystery-cult overlap text"
 tags: [event, greek, eleusinian, mystery-cult, demeter, persephone, kykeon, hierophant, theodosian-closure, christianity-overlap]
+depictions:
+  - src: "https://upload.wikimedia.org/wikipedia/commons/thumb/8/85/NAMA_Myst%C3%A8res_d%27Eleusis.jpg/500px-NAMA_Myst%C3%A8res_d%27Eleusis.jpg"
+    caption: "Initiation scene, Eleusinian Mysteries, marble relief (National Archaeological Museum, Athens)"
+    source: "Wikimedia Commons"
+    license: "CC BY-SA 3.0"
 ---
 
 # The Eleusinian Mysteries (~1500 BCE – 396 CE)

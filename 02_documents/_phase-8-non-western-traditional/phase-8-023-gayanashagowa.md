@@ -1,6 +1,6 @@
 ---
 type: document
-id: "P8-023-gayanashagowa"
+id: "phase-8-023-gayanashagowa"
 title: "Gayanashagowa (The Great Law of Peace)"
 aka: ["Great Law of Peace", "Gayanashagowa", "Constitution of the Haudenosaunee", "The Great Binding Law", "Iroquois Constitution"]
 tradition: "Haudenosaunee (Iroquois Confederacy)"

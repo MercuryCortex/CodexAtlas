@@ -1,6 +1,6 @@
 ---
 type: document
-id: "P3-033-book-of-giants-qumran-manichaean"
+id: "phase-3-033-book-of-giants-qumran-manichaean"
 title: "The Book of Giants (Qumran Aramaic + Manichaean reception)"
 aka: ["Sefer ha-Gibborim", "Kitāb al-Jabābira (Manichaean Arabic-Persian title)", "Kawan (Sogdian/Iranian)", "the Watchers' Sons compendium"]
 tradition: "Second-Temple Jewish apocalyptic (Watchers-tradition parallel to 1 Enoch); preserved canonically in [[tradition-manichaeism]] (one of the seven Manichaean canonical scriptures); fragmentary Qumran-sectarian preservation"

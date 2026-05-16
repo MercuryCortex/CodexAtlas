@@ -70,6 +70,11 @@ refs:
     tier: 1
     notes: "Lambert's cautious framing of the dependence question — parallel motif likely; direct textual borrowing less certain"
 tags: [theme, antediluvian, pre-flood, mesopotamian, hebrew, greek, atlantis, sumerian-king-list, parallel-motif, cross-tradition]
+depictions:
+  - src: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c7/Tissot_The_Creation.jpg/500px-Tissot_The_Creation.jpg"
+    caption: "James Tissot, 'The Creation' (1896–1902) — representing the antediluvian world before the Flood"
+    source: "Wikimedia Commons"
+    license: "Public domain"
 ---
 
 # Antediluvian Civilization

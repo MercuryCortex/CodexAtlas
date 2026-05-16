@@ -1,6 +1,6 @@
 ---
 type: document
-id: "P3-024-natyashastra"
+id: "phase-3-024-natyashastra"
 title: "Nāṭyaśāstra"
 aka: ["Natya Shastra", "Treatise on Drama"]
 tradition: "Hindu — classical Sanskrit aesthetics; closely tied to Brahmanical-Śaiva ritual context"

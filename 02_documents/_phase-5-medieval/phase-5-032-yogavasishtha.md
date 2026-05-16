@@ -1,6 +1,6 @@
 ---
 type: document
-id: "P5-032-yogavasishtha"
+id: "phase-5-032-yogavasishtha"
 title: "Yoga-Vāsiṣṭha (Yoga Vasistha)"
 aka: ["Yogavāsiṣṭha", "Mahā-rāmāyaṇa", "Vāsiṣṭha-Mahā-rāmāyaṇa", "Ārṣa-rāmāyaṇa"]
 tradition: "Hindu — Advaita Vedanta narrative-philosophical literature"

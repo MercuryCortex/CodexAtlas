@@ -1,6 +1,6 @@
 ---
 type: document
-id: "P4-056-zostrianos"
+id: "phase-4-056-zostrianos"
 title: "Zostrianos"
 aka: ["Zostrianus", "NHC VIII,1", "*Zōstrianos: oracles of truth of Zostrianos, god of truth*"]
 tradition: "Gnostic Christian (Sethian)"

@@ -1,6 +1,6 @@
 ---
 type: document
-id: "P3-004-1-enoch"
+id: "phase-3-004-1-enoch"
 title: "1 Enoch (Ethiopic Enoch)"
 aka: ["First Enoch", "Mashafa Henok", "Book of Enoch"]
 tradition: "Second Temple Judaism (apocalyptic)"

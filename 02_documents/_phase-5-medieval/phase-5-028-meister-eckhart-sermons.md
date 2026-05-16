@@ -1,6 +1,6 @@
 ---
 type: document
-id: "P5-028-meister-eckhart-sermons"
+id: "phase-5-028-meister-eckhart-sermons"
 title: "German Sermons (Meister Eckhart)"
 aka: ["Deutsche Predigten", "Eckhart's Vernacular Sermons"]
 tradition: "Latin Christian — Rhineland mysticism"

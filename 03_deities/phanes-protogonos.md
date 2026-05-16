@@ -60,6 +60,11 @@ refs:
     tier: 1
     notes: "Beck argues the Mithraic lion-headed time-god is iconographically continuous with Orphic Phanes"
 tags: [deity, greek, orphic, primordial, hermaphroditic, cosmic-egg, first-born, mystery-cult, phanes]
+depictions:
+  - src: "https://upload.wikimedia.org/wikipedia/commons/1/16/Phanes.jpg"
+    caption: "Phanes-Protogonos emerging from the cosmic egg, Roman marble relief (Modena Museum)"
+    source: "Wikimedia Commons"
+    license: "Public domain"
 ---
 
 # Phanes-Protogonos

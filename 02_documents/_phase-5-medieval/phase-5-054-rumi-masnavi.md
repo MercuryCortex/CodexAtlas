@@ -1,6 +1,6 @@
 ---
 type: document
-id: "P5-054-rumi-masnavi"
+id: "phase-5-054-rumi-masnavi"
 title: "Masnavī-ye Maʿnavī (Spiritual Verses / The Masnavi)"
 aka: ["Masnavi", "Mathnawi", "Mesnevi", "The Masnavi of Rumi", "مثنوی معنوی", "Masnavī-ye Maʿnavī"]
 tradition: "Islam (Sufism — Persian Sufi theological poetry)"

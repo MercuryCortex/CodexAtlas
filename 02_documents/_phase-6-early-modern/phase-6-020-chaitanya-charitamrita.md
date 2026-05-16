@@ -1,6 +1,6 @@
 ---
 type: document
-id: "P6-020-chaitanya-charitamrita"
+id: "phase-6-020-chaitanya-charitamrita"
 title: "Chaitanya Charitamrita + Shikshashtakam"
 aka: ["Caitanya Caritāmṛta", "Shri Caitanya Caritāmrta", "Eight Verses of Instruction"]
 tradition: "Hindu Bhakti (Gaudiya Vaishnava)"

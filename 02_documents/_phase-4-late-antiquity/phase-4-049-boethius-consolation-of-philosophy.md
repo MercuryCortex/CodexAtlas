@@ -1,6 +1,6 @@
 ---
 type: document
-id: "P4-049-boethius-consolation-of-philosophy"
+id: "phase-4-049-boethius-consolation-of-philosophy"
 title: "Consolation of Philosophy"
 aka: ["De consolatione philosophiae", "Consolatio Philosophiae"]
 tradition: "Latin Christian / Late-Antique Neoplatonism"

@@ -1,6 +1,6 @@
 ---
 type: document
-id: "P7-028-milestones"
+id: "phase-7-028-milestones"
 title: "Milestones"
 aka: ["Ma'alim fi'l-Tariq", "Signposts on the Road"]
 tradition: "Islamism / Political Islam"

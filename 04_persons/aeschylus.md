@@ -51,6 +51,11 @@ refs:
     type: "monograph"
     tier: 1
 tags: [person, greek, athenian, tragedian, eleusinian, marathon-veteran, salamis-veteran, oresteia, foundational]
+depictions:
+  - src: "https://upload.wikimedia.org/wikipedia/commons/thumb/b/ba/Herma_of_Aeschylus%2C_Klas08.jpg/500px-Herma_of_Aeschylus%2C_Klas08.jpg"
+    caption: "Herma of Aeschylus, Roman copy of Greek original"
+    source: "Wikimedia Commons"
+    license: "Public domain"
 ---
 
 # Aeschylus of Eleusis

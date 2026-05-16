@@ -1,6 +1,6 @@
 ---
 type: document
-id: "P4-032-jerusalem-talmud"
+id: "phase-4-032-jerusalem-talmud"
 title: "Jerusalem Talmud"
 aka: ["Yerushalmi", "Talmud Yerushalmi", "Palestinian Talmud"]
 tradition: "Rabbinic Judaism"

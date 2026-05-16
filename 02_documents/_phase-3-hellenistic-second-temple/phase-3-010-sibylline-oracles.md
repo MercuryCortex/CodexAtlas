@@ -1,6 +1,6 @@
 ---
 type: document
-id: "P3-010-sibylline-oracles"
+id: "phase-3-010-sibylline-oracles"
 title: "Sibylline Oracles (Jewish strata, books 3, 4, 5)"
 aka: ["Oracula Sibyllina", "Jewish Sibyllines"]
 tradition: "Hellenistic Judaism (with later Christian editing)"

@@ -1,6 +1,6 @@
 ---
 type: document
-id: "P7-029-hindutva"
+id: "phase-7-029-hindutva"
 title: "Hindutva: Who Is a Hindu?"
 aka: ["Essentials of Hindutva"]
 tradition: "Hindutva / Hindu nationalism"

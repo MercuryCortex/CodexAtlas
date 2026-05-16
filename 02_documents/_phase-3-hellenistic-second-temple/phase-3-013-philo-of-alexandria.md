@@ -1,6 +1,6 @@
 ---
 type: document
-id: "P3-013-philo-of-alexandria"
+id: "phase-3-013-philo-of-alexandria"
 title: "Philo of Alexandria — On the Creation, Allegorical Interpretation, and the Allegorical Commentary"
 aka: ["Philonic corpus", "Philonis Iudaei Opera"]
 tradition: "Hellenistic Judaism (philosophical)"

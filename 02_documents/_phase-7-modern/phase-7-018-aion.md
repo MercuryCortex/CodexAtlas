@@ -1,6 +1,6 @@
 ---
 type: document
-id: "P7-018-aion"
+id: "phase-7-018-aion"
 title: "Aion: Researches into the Phenomenology of the Self"
 aka: ["Aion: Untersuchungen zur Symbolgeschichte", "CW vol. 9 part 2"]
 tradition: "Jungian depth psychology"

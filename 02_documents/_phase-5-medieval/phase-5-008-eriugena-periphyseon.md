@@ -1,6 +1,6 @@
 ---
 type: document
-id: "P5-008-eriugena-periphyseon"
+id: "phase-5-008-eriugena-periphyseon"
 title: "Periphyseon (On the Division of Nature)"
 aka: ["De Divisione Naturae", "Periphyseon"]
 tradition: "Latin Christian Neoplatonism"

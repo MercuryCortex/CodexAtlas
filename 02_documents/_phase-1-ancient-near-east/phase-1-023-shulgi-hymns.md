@@ -1,6 +1,6 @@
 ---
 type: document
-id: "P1-023-shulgi-hymns"
+id: "phase-1-023-shulgi-hymns"
 title: "The Shulgi Royal Hymns"
 aka: ["Shulgi Hymns", "Šulgi A–X", "Šulgi royal hymns", "the Ur III royal hymn cycle"]
 tradition: "Sumerian"

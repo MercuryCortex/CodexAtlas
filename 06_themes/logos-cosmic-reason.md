@@ -11,7 +11,7 @@ related-themes:
   - "[[theme-axial-age]]"
   - "[[logos-philonic]]"
   - "[[logos-johannine]]"
-  - "[[theme-divine-feminine]]"
+  - "[[divine-feminine]]"
   - "[[tradition-neoplatonism]]"
 refs:
   - title: "The Cambridge Companion to the Stoics"

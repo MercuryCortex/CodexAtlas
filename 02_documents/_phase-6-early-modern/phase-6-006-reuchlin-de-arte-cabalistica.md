@@ -1,6 +1,6 @@
 ---
 type: document
-id: "P6-006-reuchlin-de-arte-cabalistica"
+id: "phase-6-006-reuchlin-de-arte-cabalistica"
 title: "De Arte Cabalistica"
 aka: ["On the Art of Kabbalah"]
 tradition: "Christian Kabbalah"

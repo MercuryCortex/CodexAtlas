@@ -1,6 +1,6 @@
 ---
 type: document
-id: "P5-036-mashafa-mistir-giyorgis"
+id: "phase-5-036-mashafa-mistir-giyorgis"
 title: "Mashafa Mistir (Book of the Mystery) — Giyorgis of Sagla"
 aka: ["Maṣḥafa Mesṭir", "Book of the Mystery", "መጽሐፈ ምሥጢር"]
 tradition: "[[tradition-ethiopian-orthodox-tewahedo]]"

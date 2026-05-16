@@ -1,6 +1,6 @@
 ---
 type: document
-id: "P4-077-definitions-hermes-asclepius-armenian"
+id: "phase-4-077-definitions-hermes-asclepius-armenian"
 title: "Definitions of Hermes Trismegistus to Asclepius (Armenian recension)"
 aka: ["Armenian Definitions", "Definitiones Hermetis", "Sahmank' i Hermesē Erits-Mecē Asklēpio'i", "DH"]
 tradition: "Hermetic"

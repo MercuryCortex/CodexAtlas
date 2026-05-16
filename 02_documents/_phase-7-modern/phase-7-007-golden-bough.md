@@ -1,6 +1,6 @@
 ---
 type: document
-id: "P7-007-golden-bough"
+id: "phase-7-007-golden-bough"
 title: "The Golden Bough"
 aka: ["The Golden Bough: A Study in Magic and Religion"]
 tradition: "Comparative religion (academic) / Victorian anthropology"

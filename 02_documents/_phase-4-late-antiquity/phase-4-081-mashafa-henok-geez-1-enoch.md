@@ -1,6 +1,6 @@
 ---
 type: document
-id: "P4-081-mashafa-henok-geez-1-enoch"
+id: "phase-4-081-mashafa-henok-geez-1-enoch"
 title: "Mashafa Henok (Ge'ez 1 Enoch — the Ethiopic recension)"
 aka: ["Maṣḥafa Hēnok", "Ethiopic Enoch", "the Ethiopian Book of Enoch", "መጽሐፈ ሄኖክ"]
 tradition: "[[tradition-ethiopian-orthodox-tewahedo]] (canonical scripture); originally Second-Temple Jewish (composed in Aramaic, [[phase-3-004-1-enoch]])"

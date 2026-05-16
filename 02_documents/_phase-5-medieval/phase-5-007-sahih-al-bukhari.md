@@ -1,6 +1,6 @@
 ---
 type: document
-id: "P5-007-sahih-al-bukhari"
+id: "phase-5-007-sahih-al-bukhari"
 title: "Sahih al-Bukhari"
 aka: ["al-Jāmiʿ al-Ṣaḥīḥ", "Sahih Bukhari"]
 tradition: "Sunni Islam"

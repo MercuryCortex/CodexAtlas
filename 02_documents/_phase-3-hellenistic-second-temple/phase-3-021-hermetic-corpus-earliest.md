@@ -1,6 +1,6 @@
 ---
 type: document
-id: "P3-021-hermetic-corpus-earliest"
+id: "phase-3-021-hermetic-corpus-earliest"
 title: "Hermetic Corpus — Earliest Stratum (Poimandres and earliest treatises)"
 aka: ["Corpus Hermeticum (earliest layer)", "Hermetica I"]
 tradition: "Greco-Egyptian syncretism"

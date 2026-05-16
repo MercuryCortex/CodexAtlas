@@ -1,6 +1,6 @@
 ---
 type: document
-id: "P4-020-iamblichus-on-the-mysteries"
+id: "phase-4-020-iamblichus-on-the-mysteries"
 title: "On the Mysteries"
 aka: ["De Mysteriis", "Reply of the Master Abammon to Porphyry's Letter to Anebo", "Peri tōn Aigyptiōn mystēriōn"]
 tradition: "Neoplatonism"

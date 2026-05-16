@@ -1,6 +1,6 @@
 ---
 type: document
-id: "P1-003-enheduanna-hymns"
+id: "phase-1-003-enheduanna-hymns"
 title: "Hymns of Enheduanna"
 aka: ["Temple Hymns", "Nin-me-šara", "Exaltation of Inanna", "In-nin ša-gur-ra", "In-nin me-huš-a"]
 tradition: "Sumerian / Akkadian"

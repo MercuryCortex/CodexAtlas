@@ -1,6 +1,6 @@
 ---
 type: document
-id: "P2-029-dhammapada"
+id: "phase-2-029-dhammapada"
 title: "Dhammapada"
 aka: ["Dhammapada (Pali)", "Dharmapada (Sanskrit)", "Pātavagga (Gandhari recension)", "Udānavarga (Sarvāstivāda Sanskrit / Tibetan recension)", "*The Path of Dhamma* / *Verses on Truth*"]
 tradition: "Buddhist"

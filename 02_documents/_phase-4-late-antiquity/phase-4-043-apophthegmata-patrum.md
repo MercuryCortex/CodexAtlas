@@ -1,6 +1,6 @@
 ---
 type: document
-id: "P4-043-apophthegmata-patrum"
+id: "phase-4-043-apophthegmata-patrum"
 title: "Apophthegmata Patrum (Sayings of the Desert Fathers)"
 aka: ["Sayings of the Desert Fathers", "Verba Seniorum", "Gerontikon"]
 tradition: "Patristic Christian (Egyptian monastic)"

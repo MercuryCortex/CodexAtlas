@@ -1,6 +1,6 @@
 ---
 type: document
-id: "P2-021-shvetashvatara-upanishad"
+id: "phase-2-021-shvetashvatara-upanishad"
 title: "Śvetāśvatara Upaniṣad"
 aka: ["Shvetashvatara Upanishad", "ŚU"]
 tradition: "Vedic Hindu"

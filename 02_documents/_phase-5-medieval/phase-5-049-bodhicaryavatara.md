@@ -1,6 +1,6 @@
 ---
 type: document
-id: "P5-049-bodhicaryavatara"
+id: "phase-5-049-bodhicaryavatara"
 title: "Bodhicaryāvatāra (Way of the Bodhisattva)"
 aka: ["Bodhicaryāvatāra", "*Way of the Bodhisattva*", "*Guide to the Bodhisattva's Way of Life*", "*Entering the Conduct of the Bodhisattva*", "Tibetan: spyod 'jug"]
 tradition: "Mahāyāna Buddhist"

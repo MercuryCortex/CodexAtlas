@@ -1,6 +1,6 @@
 ---
 type: document
-id: "P4-042-athanasius-on-the-incarnation"
+id: "phase-4-042-athanasius-on-the-incarnation"
 title: "On the Incarnation"
 aka: ["De Incarnatione Verbi", "De Incarnatione", "Peri tēs enanthrōpēseōs tou Logou"]
 tradition: "Patristic Christian (Alexandrian)"

@@ -1,6 +1,6 @@
 ---
 type: document
-id: "P3-002-plato-dialogues"
+id: "phase-3-002-plato-dialogues"
 title: "Plato's Theological and Cosmological Dialogues (Timaeus, Republic Book X, Phaedrus, Symposium, Phaedo)"
 aka: ["Platonic corpus — theological core"]
 tradition: "Greek philosophy"

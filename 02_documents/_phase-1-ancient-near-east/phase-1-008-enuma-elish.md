@@ -1,6 +1,6 @@
 ---
 type: document
-id: "P1-008-enuma-elish"
+id: "phase-1-008-enuma-elish"
 title: "Enuma Elish"
 aka: ["Enūma Eliš", "Epic of Creation", "The Seven Tablets of Creation"]
 tradition: "Babylonian"

@@ -1,6 +1,6 @@
 ---
 type: document
-id: "P3-006-septuagint"
+id: "phase-3-006-septuagint"
 title: "Septuagint (LXX)"
 aka: ["Old Greek (OG)", "Translation of the Seventy", "LXX"]
 tradition: "Hellenistic Judaism → early Christianity"

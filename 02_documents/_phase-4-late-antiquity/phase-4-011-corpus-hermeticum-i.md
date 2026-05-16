@@ -1,6 +1,6 @@
 ---
 type: document
-id: "P4-011-corpus-hermeticum-i"
+id: "phase-4-011-corpus-hermeticum-i"
 title: "Corpus Hermeticum I (Poimandres)"
 aka: ["Poimandres", "Pœmander", "CH I"]
 tradition: "Hermetic"

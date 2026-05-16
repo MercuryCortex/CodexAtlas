@@ -1,6 +1,6 @@
 ---
 type: document
-id: "P5-042-sahih-muslim"
+id: "phase-5-042-sahih-muslim"
 title: "Ṣaḥīḥ Muslim (al-Musnad al-Ṣaḥīḥ)"
 aka: ["Sahih Muslim", "*al-Musnad al-Ṣaḥīḥ al-Mukhtaṣar bi-Naql al-ʿAdl ʿan al-ʿAdl ilā Rasūl Allāh*", "Muslim's Authentic Collection", "صحيح مسلم"]
 tradition: "Islam — Sunnī"

@@ -1,6 +1,6 @@
 ---
 type: document
-id: "P1-002-pyramid-texts"
+id: "phase-1-002-pyramid-texts"
 title: "Pyramid Texts"
 aka: ["PT", "Utterances of the Pyramid Texts", "Spells of Going Forth"]
 tradition: "Egyptian"

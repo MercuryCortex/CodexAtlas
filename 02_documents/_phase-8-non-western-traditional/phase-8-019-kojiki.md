@@ -1,6 +1,6 @@
 ---
 type: document
-id: "P8-019-kojiki"
+id: "phase-8-019-kojiki"
 title: "Kojiki (Record of Ancient Matters)"
 tradition: "Shinto"
 family: "Japanese"

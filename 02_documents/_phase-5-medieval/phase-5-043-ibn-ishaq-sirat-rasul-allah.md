@@ -1,6 +1,6 @@
 ---
 type: document
-id: "P5-043-ibn-ishaq-sirat-rasul-allah"
+id: "phase-5-043-ibn-ishaq-sirat-rasul-allah"
 title: "Sirat Rasul Allah (Life of the Messenger of God — Ibn Isḥāq, recension by Ibn Hisham)"
 aka: ["Sirat Rasul Allah", "Sirat al-Nabi", "Sira", "The Life of Muhammad", "Ibn Hisham's Sira", "Ibn Ishaq's Sira (original lost; surviving in the Ibn Hisham recension and Ṭabarī's independent preservation)", "سيرة رسول الله"]
 tradition: "Islam — Sunnī"

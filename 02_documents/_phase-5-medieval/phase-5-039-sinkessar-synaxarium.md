@@ -1,6 +1,6 @@
 ---
 type: document
-id: "P5-039-sinkessar-synaxarium"
+id: "phase-5-039-sinkessar-synaxarium"
 title: "Sinkessar (Ethiopian Synaxarium)"
 aka: ["Sänkəsar", "Senkessar", "Ethiopian Synaxarium", "ስንክሳር"]
 tradition: "[[tradition-ethiopian-orthodox-tewahedo]]"

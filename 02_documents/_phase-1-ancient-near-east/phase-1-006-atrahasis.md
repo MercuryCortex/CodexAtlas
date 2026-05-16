@@ -1,6 +1,6 @@
 ---
 type: document
-id: "P1-006-atrahasis"
+id: "phase-1-006-atrahasis"
 title: "Atrahasis"
 aka: ["Atra-ḫasīs", "Atra-Hasis", "When the Gods Like Men Bore the Work", "Inūma ilū awīlum"]
 tradition: "Akkadian / Babylonian"

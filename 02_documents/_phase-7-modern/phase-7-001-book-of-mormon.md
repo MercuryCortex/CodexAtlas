@@ -1,6 +1,6 @@
 ---
 type: document
-id: "P7-001-book-of-mormon"
+id: "phase-7-001-book-of-mormon"
 title: "The Book of Mormon"
 aka: ["Book of Mormon: Another Testament of Jesus Christ"]
 tradition: "Mormonism / Latter-day Saint"

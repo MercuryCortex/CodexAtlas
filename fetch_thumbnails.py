@@ -289,6 +289,43 @@ OVERRIDES = {
     "uraeus": "Uraeus",
     "feathered-serpent": "Feathered Serpent",
     "nehushtan": "Nehushtan",
+
+    # ---- Greece pass (thumbnail-system-1, session 2026-05-16) ----
+    # Person nodes where slug doesn't map cleanly to Wikipedia article title
+    "aeschylus":                          "Aeschylus",
+    "euripides":                          "Euripides",
+    "strabo":                             "Strabo",
+    "zeno-of-citium":                     "Zeno of Citium",
+    "berossus":                           "Berossus",
+    "critias-younger":                    "Plato",
+    "thomas-taylor-neoplatonist":         "Thomas Taylor (neoplatonist)",
+    "spyridon-marinatos":                 "Spyridon Marinatos",
+    "menander-i-soter":                   "Menander I",
+    # Deity/concept nodes
+    "rhea-greek":                         "Rhea (mythology)",
+    "the-moirai":                         "Moirai",
+    "the-dioskouroi":                     "Castor and Pollux",
+    "phanes-protogonos":                  "Phanes (mythology)",
+    "demiurge-platonic":                  "Demiurge",
+    "hermes-trismegistus":                "Hermes Trismegistus",
+    "iapetus":                            "Iapetus (mythology)",
+    # Documents
+    "P3-002-plato-dialogues":             "Plato",
+    "P3-022-plato-timaeus-critias-atlantis": "Timaeus (dialogue)",
+    "P3-005-stoic-foundational-texts":    "Stoicism",
+    "phase-2-040-orphic-gold-tablets":    "Orphic gold tablets",
+    "P4-085-ovid-metamorphoses-book-1":   "Ovid",
+    # Traditions / themes
+    "tradition-minoan-religion":          "Minoan religion",
+    "apocalyptic-thunderer-vs-serpent":   "Chaoskampf",
+    "tahafut-controversy":                "Tahafut al-Falasifa",
+    "theme-heroes-paradise-island":       "Elysium",
+    "zeus-pantokrator-transmission":      "Zeus",
+    "antediluvian-civilization":          "Antediluvian",
+    # Events
+    "event-eleusinian-mysteries-c1500-bce-396-ce": "Eleusinian Mysteries",
+    "event-thera-eruption-c-1600-bce":    "Minoan eruption",
+    "event-closure-platonic-academy-529": "Platonic Academy",
 }
 
 

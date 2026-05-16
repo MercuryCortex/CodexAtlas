@@ -1,6 +1,6 @@
 ---
 type: document
-id: "P1-012-amarna-letters"
+id: "phase-1-012-amarna-letters"
 title: "Amarna Letters"
 aka: ["EA letters", "Tell el-Amarna tablets", "Amarna correspondence"]
 tradition: "Egyptian / Akkadian (international diplomatic)"

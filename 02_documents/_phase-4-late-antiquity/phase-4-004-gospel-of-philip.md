@@ -1,6 +1,6 @@
 ---
 type: document
-id: "P4-004-gospel-of-philip"
+id: "phase-4-004-gospel-of-philip"
 title: "Gospel of Philip"
 aka: ["NHC II,3"]
 tradition: "Gnostic Christian"

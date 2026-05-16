@@ -1,6 +1,6 @@
 ---
 type: document
-id: "P4-075-mulamadhyamakakarika"
+id: "phase-4-075-mulamadhyamakakarika"
 title: "Mūlamadhyamakakārikā (Root Verses on the Middle Way)"
 aka: ["MMK", "Madhyamaka-kārikā", "Root Verses on the Middle Way", "*Zhonglun* 中論 (Chinese, via Kumārajīva)", "*dBu ma rtsa ba shes rab* (Tibetan)"]
 tradition: "Mahāyāna Buddhist"

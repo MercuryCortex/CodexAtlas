@@ -1,6 +1,6 @@
 ---
 type: document
-id: "P2-005-hebrew-bible-j-source"
+id: "phase-2-005-hebrew-bible-j-source"
 title: "Hebrew Bible — J (Yahwist) Source"
 aka: ["Yahwist", "J-source", "the J document"]
 tradition: "Israelite / pre-exilic Hebrew"

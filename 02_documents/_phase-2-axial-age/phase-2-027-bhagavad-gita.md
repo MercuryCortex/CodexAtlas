@@ -1,6 +1,6 @@
 ---
 type: document
-id: "P2-027-bhagavad-gita"
+id: "phase-2-027-bhagavad-gita"
 title: "Bhagavad Gītā"
 aka: ["Bhagavadgītā", "श्रीमद्भगवद्गीता", "Śrīmad Bhagavadgītā", "Song of the Lord", "the Gītā"]
 tradition: "Vedic / Hindu"

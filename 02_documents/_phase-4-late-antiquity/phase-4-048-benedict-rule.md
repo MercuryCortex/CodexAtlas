@@ -1,6 +1,6 @@
 ---
 type: document
-id: "P4-048-benedict-rule"
+id: "phase-4-048-benedict-rule"
 title: "Rule of St Benedict"
 aka: ["Regula Benedicti", "Rule of the Master (predecessor text)", "RB"]
 tradition: "Latin Christian (monastic)"

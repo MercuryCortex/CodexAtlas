@@ -1,6 +1,6 @@
 ---
 type: document
-id: "P3-003-aristotle-metaphysics"
+id: "phase-3-003-aristotle-metaphysics"
 title: "Aristotle — Metaphysics and De Anima"
 aka: ["Tà metà tà physiká", "Perí psychēs"]
 tradition: "Greek philosophy"

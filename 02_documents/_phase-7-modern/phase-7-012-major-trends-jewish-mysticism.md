@@ -1,6 +1,6 @@
 ---
 type: document
-id: "P7-012-major-trends-jewish-mysticism"
+id: "phase-7-012-major-trends-jewish-mysticism"
 title: "Major Trends in Jewish Mysticism"
 aka: []
 tradition: "Comparative religion (academic) / Judaic studies"

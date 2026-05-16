@@ -1,6 +1,6 @@
 ---
 type: document
-id: "P3-017-gospel-of-matthew"
+id: "phase-3-017-gospel-of-matthew"
 title: "Gospel of Matthew"
 aka: ["Euangelion kata Matthaion", "Secundum Matthaeum"]
 tradition: "Earliest Christianity (Jewish-Christian)"

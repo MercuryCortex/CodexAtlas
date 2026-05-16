@@ -1,6 +1,6 @@
 ---
 type: document
-id: "P8-013-navajo-blessingway"
+id: "phase-8-013-navajo-blessingway"
 title: "Navajo Blessingway (Hózhǫǫjí)"
 aka: ["Hózhǫǫjí", "Blessingway", "the Diné central ceremony"]
 tradition: "Diné (Navajo)"

@@ -1,6 +1,6 @@
 ---
 type: document
-id: "P7-014-gnostic-gospels"
+id: "phase-7-014-gnostic-gospels"
 title: "The Gnostic Gospels"
 aka: []
 tradition: "Comparative religion (academic) / history of religions"

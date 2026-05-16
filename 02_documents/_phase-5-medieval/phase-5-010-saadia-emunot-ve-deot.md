@@ -1,6 +1,6 @@
 ---
 type: document
-id: "P5-010-saadia-emunot-ve-deot"
+id: "phase-5-010-saadia-emunot-ve-deot"
 title: "Emunot ve-Deot (The Book of Beliefs and Opinions)"
 aka: ["Kitāb al-Amānāt wa-l-Iʿtiqādāt", "Sefer ha-Emunot ve-ha-Deot"]
 tradition: "Rabbinic Judaism — medieval Jewish philosophy"

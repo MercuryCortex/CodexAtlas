@@ -1,6 +1,6 @@
 ---
 type: document
-id: "P2-001-rig-veda-family-books"
+id: "phase-2-001-rig-veda-family-books"
 title: "Rig Veda — Family Books (Mandalas 2–7)"
 aka: ["Ṛgveda", "Rigveda Saṃhitā", "the family maṇḍalas"]
 tradition: "Vedic"

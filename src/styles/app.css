@@ -1749,8 +1749,8 @@ body.view-atlas main.canvas { background: var(--bg-0); }
    production's .sector-hull (Rinner-22 → Router+22, padAngle 0.014,
    cornerRadius 8). Quiet by default; hot when family-filter is locked. */
 .ph2-hull {
-  fill-opacity: 0.12;
-  stroke-opacity: 0.30;
+  fill-opacity: var(--ph2-hull-opacity, 0.12);
+  stroke-opacity: var(--ph2-hull-stroke-opacity, 0.30);
   stroke-width: 0.8;
   transition: fill-opacity 250ms ease, stroke-opacity 250ms ease;
   vector-effect: non-scaling-stroke;
@@ -1764,7 +1764,7 @@ body.view-atlas main.canvas { background: var(--bg-0); }
   fill: none;
   stroke: rgba(120, 140, 182, 0.45);
   stroke-width: 0.6;
-  stroke-opacity: 0.55;
+  stroke-opacity: var(--ph2-edge-opacity, 0.55);
   vector-effect: non-scaling-stroke;
   transition: stroke-opacity 180ms ease, stroke-width 180ms ease;
 }

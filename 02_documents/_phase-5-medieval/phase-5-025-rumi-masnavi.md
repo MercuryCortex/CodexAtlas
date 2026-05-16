@@ -1,6 +1,6 @@
 ---
 type: document
-id: "P5-025-rumi-masnavi"
+id: "phase-5-025-rumi-masnavi"
 title: "Masnavi-i Maʿnavi (The Spiritual Couplets)"
 aka: ["Mathnawi", "Masnavi", "The Masnavi of Rumi"]
 tradition: "Sufi Islam — Mevlevi (Mawlawiyya) tradition"

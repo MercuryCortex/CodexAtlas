@@ -15,7 +15,7 @@ child-of: []
 consort: []
 attributes: ["the boar (sacrificial animal at the cult center)", "incubation (the ritual sleep in the sanctuary to receive prophetic dreams)", "votive anatomical offerings (eyes, legs, feet — the standard healing-deity deposit)", "the mountain/hill sanctuary", "the serpent (chthonic associations)"]
 attested-in: ["80+ Latin and Greek votive inscriptions from the São Miguel da Mota sanctuary (EDCS database; Encarnação 1975 corpus)", "Roman-period dedications from across Lusitania"]
-equivalents: ["[[apollo]] (Roman interpretatio — oracle and healing function)", "[[asclepius]] (healing through incubation dreams — the most precise functional parallel)"]
+equivalents: ["[[apollo]] (Roman interpretatio — oracle and healing function)", "[[asclepius-greek]] (healing through incubation dreams — the most precise functional parallel)"]
 syncretic-edges:
   - target: "apollo"
     type: "ancient-identification"
@@ -66,7 +66,7 @@ The cult center sat on a granite hilltop in the Alentejo interior — a type of 
 After Christianization, the site became the **church of São Miguel (the Archangel)** — the same substitution that occurred at Mont-Saint-Michel, San Michele al Gargano, Skellig Michael, and dozens of oracle-healing sites across Western Europe. The archangel Michael, guardian of the threshold between living and dead, was the preferred Christian replacement for chthonic oracle deities.
 
 ## The healing-oracle parallel: Asclepius
-The closest functional parallel to Endovélico in the Mediterranean world is **[[asclepius]]** (Greek healing deity, incubation oracle, votive anatomical deposits, serpent iconography). Both operate through the same ritual mechanism: the sick or questioning pilgrim comes to the sanctuary, performs purification rites, sleeps in the sacred precinct, and receives the deity's communication through a dream. The sanctuary deposits at São Miguel da Mota include votive anatomical sculptures — stone and terracotta body parts representing healed or besought conditions — identical to those found at Epidaurus, Cos, and Pergamon.
+The closest functional parallel to Endovélico in the Mediterranean world is **[[asclepius-greek]]** (Greek healing deity, incubation oracle, votive anatomical deposits, serpent iconography). Both operate through the same ritual mechanism: the sick or questioning pilgrim comes to the sanctuary, performs purification rites, sleeps in the sacred precinct, and receives the deity's communication through a dream. The sanctuary deposits at São Miguel da Mota include votive anatomical sculptures — stone and terracotta body parts representing healed or besought conditions — identical to those found at Epidaurus, Cos, and Pergamon.
 
 Whether this convergence reflects Mediterranean-wide diffusion of the incubation-healing cult (from the eastern Mediterranean westward, through Phoenician-Greek trading contacts) or independent invention of the same ritual logic in response to the same human needs is archaeologically unresolved.
 

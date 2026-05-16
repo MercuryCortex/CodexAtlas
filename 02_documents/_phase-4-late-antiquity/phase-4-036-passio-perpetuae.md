@@ -1,6 +1,6 @@
 ---
 type: document
-id: "P4-036-passio-perpetuae"
+id: "phase-4-036-passio-perpetuae"
 title: "Passio Perpetuae et Felicitatis"
 aka: ["The Passion of Perpetua and Felicity", "Passio Sanctarum Perpetuae et Felicitatis"]
 tradition: "early Christian; North African; possibly Montanist-leaning"

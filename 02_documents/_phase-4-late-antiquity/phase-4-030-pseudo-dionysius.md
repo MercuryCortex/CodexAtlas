@@ -1,6 +1,6 @@
 ---
 type: document
-id: "P4-030-pseudo-dionysius"
+id: "phase-4-030-pseudo-dionysius"
 title: "Corpus Areopagiticum"
 aka: ["Dionysian Corpus", "Pseudo-Dionysius the Areopagite", "Corpus Dionysiacum"]
 tradition: "Christian (Eastern)"

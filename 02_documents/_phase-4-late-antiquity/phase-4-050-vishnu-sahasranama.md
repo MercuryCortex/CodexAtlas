@@ -1,6 +1,6 @@
 ---
 type: document
-id: "P4-050-vishnu-sahasranama"
+id: "phase-4-050-vishnu-sahasranama"
 title: "Viṣṇu Sahasranāma (The Thousand Names of Viṣṇu)"
 aka: ["Vishnu Sahasranama", "VS"]
 tradition: "Hindu — Vaishnavism"

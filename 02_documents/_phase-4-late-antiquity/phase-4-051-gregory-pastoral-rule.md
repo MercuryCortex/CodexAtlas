@@ -1,6 +1,6 @@
 ---
 type: document
-id: "P4-051-gregory-pastoral-rule"
+id: "phase-4-051-gregory-pastoral-rule"
 title: "Pastoral Rule (Liber Regulae Pastoralis)"
 aka: ["Pastoral Care", "Regula Pastoralis", "Cura Pastoralis", "Liber Regulae Pastoralis"]
 tradition: "Western (Latin) Patristic Christianity"

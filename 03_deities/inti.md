@@ -32,7 +32,7 @@ syncretic-edges:
     type: "structural-parallel"
     notes: "Cross-cultural solar deity instantiation — both preside over ordered cosmic cycles; Inti Raymi as June solstice festival parallels Helios's role in Greek solar theology. No transmission."
 mentioned-in:
-  - "[[tradition-andean]]"
+  - "[[tradition-inca-andean]]"
   - "[[viracocha]]"
 status: "metadata"
 refs:

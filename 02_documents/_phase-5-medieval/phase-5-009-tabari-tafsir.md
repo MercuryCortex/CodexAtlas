@@ -1,6 +1,6 @@
 ---
 type: document
-id: "P5-009-tabari-tafsir"
+id: "phase-5-009-tabari-tafsir"
 title: "Jāmiʿ al-Bayān (al-Ṭabarī's Tafsīr)"
 aka: ["Tafsir al-Tabari", "Jami al-bayan an ta'wil ay al-Qur'an", "The Comprehensive Exposition"]
 tradition: "Sunni Islam"

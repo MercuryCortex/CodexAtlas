@@ -1,6 +1,6 @@
 ---
 type: document
-id: "P6-007-luther-bondage-of-will"
+id: "phase-6-007-luther-bondage-of-will"
 title: "De Servo Arbitrio (On the Bondage of the Will)"
 aka: ["On the Enslaved Will", "Reply to Erasmus' Diatribe"]
 tradition: "Protestant Christianity"

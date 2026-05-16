@@ -1,6 +1,6 @@
 ---
 type: document
-id: "P5-021-ibn-arabi-fusus-al-hikam"
+id: "phase-5-021-ibn-arabi-fusus-al-hikam"
 title: "Fuṣūṣ al-Ḥikam (The Bezels of Wisdom)"
 aka: ["Fusus al-Hikam", "The Bezels of Wisdom", "Fusus"]
 tradition: "Sufi Islam — Akbarī school"

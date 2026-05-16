@@ -1,6 +1,6 @@
 ---
 type: document
-id: "P4-041-athanasius-life-of-antony"
+id: "phase-4-041-athanasius-life-of-antony"
 title: "Life of Antony"
 aka: ["Vita Antonii", "Vita Antoni", "Bios Antoniou"]
 tradition: "Patristic Christian (Alexandrian / monastic)"

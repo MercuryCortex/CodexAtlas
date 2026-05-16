@@ -1,6 +1,6 @@
 ---
 type: document
-id: "P2-014-daodejing"
+id: "phase-2-014-daodejing"
 title: "Daodejing (Tao Te Ching)"
 aka: ["Dào Dé Jīng", "道德經", "Laozi (老子)"]
 tradition: "Chinese / Daoist"

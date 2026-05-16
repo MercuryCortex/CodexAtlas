@@ -1,6 +1,6 @@
 ---
 type: document
-id: "P5-019-maimonides-guide-for-the-perplexed"
+id: "phase-5-019-maimonides-guide-for-the-perplexed"
 title: "The Guide for the Perplexed"
 aka: ["Dalālat al-Ḥāʾirīn", "Moreh Nevukhim", "Moreh ha-Nevukhim"]
 tradition: "Rabbinic Judaism — medieval Jewish philosophy"

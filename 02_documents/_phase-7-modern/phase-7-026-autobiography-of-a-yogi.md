@@ -1,6 +1,6 @@
 ---
 type: document
-id: "P7-026-autobiography-of-a-yogi"
+id: "phase-7-026-autobiography-of-a-yogi"
 title: "Autobiography of a Yogi"
 aka: []
 tradition: "Hindu modernism / Kriya Yoga"

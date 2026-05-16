@@ -1,6 +1,6 @@
 ---
 type: document
-id: "P6-022-fludd-utriusque-cosmi-historia"
+id: "phase-6-022-fludd-utriusque-cosmi-historia"
 title: "Utriusque Cosmi Historia"
 aka: ["History of the Two Worlds (Macrocosm and Microcosm)"]
 tradition: "Renaissance Hermetic-Kabbalist / Christian Paracelsian"

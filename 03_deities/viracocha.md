@@ -26,7 +26,7 @@ syncretic-edges:
     type: "structural-parallel"
     notes: "Both are trickster-creator figures who shape humanity from existing material (Enki from clay/blood; Viracocha from clay/stone), move through the world solving cosmological problems, and are associated with fresh water and cosmic ordering. Viracocha's tears = rain; Enki's domain = the abzu (fresh water). No transmission."
 mentioned-in:
-  - "[[tradition-andean]]"
+  - "[[tradition-inca-andean]]"
   - "[[inti]]"
 status: "metadata"
 refs:

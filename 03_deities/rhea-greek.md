@@ -21,6 +21,11 @@ refs:
     type: "primary-source"
     tier: 1
 tags: [deity, greek, titaness, mother-goddess, olympian-mother]
+depictions:
+  - src: "https://upload.wikimedia.org/wikipedia/commons/0/08/Rhea_MKL1888.png"
+    caption: "Rhea, engraving from Meyers Konversations-Lexikon (1888)"
+    source: "Wikimedia Commons"
+    license: "Public domain"
 ---
 
 # Rhea (Greek Titaness)

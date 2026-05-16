@@ -1,6 +1,6 @@
 ---
 type: document
-id: "P7-006-secret-doctrine"
+id: "phase-7-006-secret-doctrine"
 title: "The Secret Doctrine"
 aka: ["The Secret Doctrine: The Synthesis of Science, Religion, and Philosophy"]
 tradition: "Theosophy"

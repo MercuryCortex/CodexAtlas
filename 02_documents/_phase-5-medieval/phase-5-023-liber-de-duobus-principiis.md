@@ -1,6 +1,6 @@
 ---
 type: document
-id: "P5-023-liber-de-duobus-principiis"
+id: "phase-5-023-liber-de-duobus-principiis"
 title: "Liber de Duobus Principiis (The Book of the Two Principles)"
 aka: ["Book of the Two Principles", "Liber"]
 tradition: "Catharism — absolute dualism"

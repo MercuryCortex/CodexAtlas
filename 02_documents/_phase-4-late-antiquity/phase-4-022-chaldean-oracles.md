@@ -1,6 +1,6 @@
 ---
 type: document
-id: "P4-022-chaldean-oracles"
+id: "phase-4-022-chaldean-oracles"
 title: "Chaldean Oracles"
 aka: ["Logia Chaldaika"]
 tradition: "Late-antique theurgy / philosophical revelation"

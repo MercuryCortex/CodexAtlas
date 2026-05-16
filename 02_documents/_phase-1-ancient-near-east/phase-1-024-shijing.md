@@ -1,6 +1,6 @@
 ---
 type: document
-id: "P1-024-shijing"
+id: "phase-1-024-shijing"
 title: "Shijing (Book of Songs / Classic of Poetry)"
 aka: ["Shī Jīng", "詩經", "Book of Odes", "Book of Songs", "Mao Shi", "the 305 Poems"]
 tradition: "Chinese / Zhou-classical"

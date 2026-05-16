@@ -1,6 +1,6 @@
 ---
 type: document
-id: "P2-004-yasna-younger-avesta"
+id: "phase-2-004-yasna-younger-avesta"
 title: "Yasna and Younger Avesta"
 aka: ["Younger Avesta", "Yasna liturgy", "Yashts", "Visperad", "Vendidad / Videvdat"]
 tradition: "Zoroastrian"

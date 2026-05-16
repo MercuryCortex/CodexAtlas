@@ -25,6 +25,11 @@ refs:
     type: "translation"
     tier: 1
 tags: [person, greek, roman-period, geographer, historian, iberia, lusitania, tartessos, gades, primary-source]
+depictions:
+  - src: "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ed/Strabo.jpg/500px-Strabo.jpg"
+    caption: "Strabo, engraving (Wellcome Collection)"
+    source: "Wikimedia Commons"
+    license: "Public domain"
 ---
 
 # Strabo of Amaseia

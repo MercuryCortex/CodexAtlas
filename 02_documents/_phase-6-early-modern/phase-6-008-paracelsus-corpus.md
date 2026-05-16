@@ -1,6 +1,6 @@
 ---
 type: document
-id: "P6-008-paracelsus-corpus"
+id: "phase-6-008-paracelsus-corpus"
 title: "Paracelsus' Theological-Medical-Alchemical Corpus"
 aka: ["Paracelsica", "Astronomia Magna (Philosophia Sagax)", "Volumen Paramirum", "Opus Paramirum", "De Natura Rerum"]
 tradition: "Christian alchemy / Renaissance magic"

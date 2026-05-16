@@ -1,6 +1,6 @@
 ---
 type: document
-id: "P4-075-corpus-hermeticum-xiii-rebirth"
+id: "phase-4-075-corpus-hermeticum-xiii-rebirth"
 title: "Corpus Hermeticum XIII (Secret Discourse on the Mountain — the Rebirth Dialogue)"
 aka: ["CH XIII", "Secret Discourse of Hermes on the Mountain to His Son Tat", "On Being Born Again", "Treatise on Rebirth", "Logos Apokryphos epi tou Orous"]
 tradition: "Hermetic"

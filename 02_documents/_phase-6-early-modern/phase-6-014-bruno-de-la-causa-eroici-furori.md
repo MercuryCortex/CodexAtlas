@@ -1,6 +1,6 @@
 ---
 type: document
-id: "P6-014-bruno-de-la-causa-eroici-furori"
+id: "phase-6-014-bruno-de-la-causa-eroici-furori"
 title: "De la Causa, Principio et Uno + De gli Eroici Furori"
 aka: ["Cause, Principle, and Unity", "The Heroic Frenzies"]
 tradition: "Renaissance Hermeticism / philosophical pantheism"

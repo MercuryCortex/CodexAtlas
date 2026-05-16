@@ -1,6 +1,6 @@
 ---
 type: document
-id: "P5-002b-diamond-sutra"
+id: "phase-5-002b-diamond-sutra"
 title: "Diamond Sutra (Vajracchedikā Prajñāpāramitā)"
 aka: ["Vajracchedikā Prajñāpāramitā", "*Jingang jing* 金剛經 (Chinese)", "*Kongō kyō* 金剛經 (Japanese)", "*The Diamond Cutter Sutra*", "*Perfection of Wisdom that Cuts Like a Diamond*"]
 tradition: "Mahāyāna Buddhist"

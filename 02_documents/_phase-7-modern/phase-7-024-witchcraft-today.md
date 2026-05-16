@@ -1,6 +1,6 @@
 ---
 type: document
-id: "P7-024-witchcraft-today"
+id: "phase-7-024-witchcraft-today"
 title: "Witchcraft Today"
 aka: []
 tradition: "Modern Paganism / Wicca"

@@ -1,6 +1,6 @@
 ---
 type: document
-id: "P4-012-asclepius"
+id: "phase-4-012-asclepius"
 title: "Asclepius"
 aka: ["Logos Teleios", "Perfect Discourse"]
 tradition: "Hermetic"

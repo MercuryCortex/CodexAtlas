@@ -39,6 +39,11 @@ refs:
     tier: 1
     notes: "Major recent conference volume on Berossus's reception and significance"
 tags: [person, babylonian, hellenistic, historian, berossus, babyloniaca, flood-preserver, priest-of-bel-marduk, astrology, mesopotamian-astrology, astrology-transmission-greek]
+depictions:
+  - src: "https://upload.wikimedia.org/wikipedia/commons/5/55/Beroso.png"
+    caption: "Berossus (Beroso), early modern engraving"
+    source: "Wikimedia Commons"
+    license: "Public domain"
 ---
 
 # Berossus of Babylon

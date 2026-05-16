@@ -34,6 +34,11 @@ refs:
     type: "critical-edition"
     tier: 1
 tags: [person, philosopher, greek, stoicism, founder, phoenician, athens]
+depictions:
+  - src: "https://upload.wikimedia.org/wikipedia/commons/1/1a/Zeno_of_Citium.jpg"
+    caption: "Zeno of Citium, marble portrait bust"
+    source: "Wikimedia Commons"
+    license: "Public domain"
 ---
 
 # Zeno of Citium

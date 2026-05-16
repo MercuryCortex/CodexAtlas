@@ -1,6 +1,6 @@
 ---
 type: document
-id: "P7-005-isis-unveiled"
+id: "phase-7-005-isis-unveiled"
 title: "Isis Unveiled"
 aka: ["Isis Unveiled: A Master-Key to the Mysteries of Ancient and Modern Science and Theology"]
 tradition: "Theosophy"

@@ -51,6 +51,11 @@ refs:
     type: "monograph"
     tier: 1
 tags: [person, dialogue-figure, plato, atlantis, athens, prosopography]
+depictions:
+  - src: "https://upload.wikimedia.org/wikipedia/commons/4/4a/Plato-raphael.jpg"
+    caption: "Plato (detail from Raphael's School of Athens) — the likely representation of Critias's circle"
+    source: "Wikimedia Commons"
+    license: "Public domain"
 ---
 
 # Critias (the speaker in Plato's *Timaeus* and *Critias*)

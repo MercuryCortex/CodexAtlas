@@ -1,6 +1,6 @@
 ---
 type: document
-id: "P7-016-magick-in-theory-and-practice"
+id: "phase-7-016-magick-in-theory-and-practice"
 title: "Magick in Theory and Practice"
 aka: ["Book 4 Part III", "Liber ABA Part III"]
 tradition: "Thelema"

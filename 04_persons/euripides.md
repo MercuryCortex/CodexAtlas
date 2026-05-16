@@ -54,6 +54,11 @@ refs:
     tier: 1
     notes: "The standard scholarly treatment of *Bacchae* and Dionysian religious-mystery theology in dramatic form"
 tags: [person, greek, athenian, tragedian, dionysian, mystery-cult, sophistic-rationalism, bacchae, nietzsche-key-source]
+depictions:
+  - src: "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4a/Euripides_Pio-Clementino_Inv302.jpg/500px-Euripides_Pio-Clementino_Inv302.jpg"
+    caption: "Euripides, marble bust, Pio-Clementino Museum, Rome"
+    source: "Wikimedia Commons"
+    license: "Public domain"
 ---
 
 # Euripides of Salamis

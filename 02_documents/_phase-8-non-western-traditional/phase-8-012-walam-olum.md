@@ -1,6 +1,6 @@
 ---
 type: document
-id: "P8-012-walam-olum"
+id: "phase-8-012-walam-olum"
 title: "Walam Olum"
 aka: ["Red Score", "Wallam Olum", "the Lenape historical chronicle"]
 tradition: "claimed: Lenape (Delaware) — Eastern Algonquian; almost certainly: Constantine Samuel Rafinesque fabrication"

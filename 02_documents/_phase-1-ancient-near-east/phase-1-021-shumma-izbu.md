@@ -1,6 +1,6 @@
 ---
 type: document
-id: "P1-021-shumma-izbu"
+id: "phase-1-021-shumma-izbu"
 title: "Šumma Izbu (Teratological-Omen Series)"
 aka: ["Šumma Izbu", "Shumma Izbu", "the malformed-birth omen series", "izbu", "anomalous-birth omens"]
 tradition: "Akkadian / Mesopotamian"

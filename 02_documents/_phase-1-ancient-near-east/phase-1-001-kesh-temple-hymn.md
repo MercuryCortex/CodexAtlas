@@ -1,6 +1,6 @@
 ---
 type: document
-id: "P1-001-kesh-temple-hymn"
+id: "phase-1-001-kesh-temple-hymn"
 title: "Kesh Temple Hymn"
 aka: ["Liturgy to Nintud", "Hymn to the Keš Temple", "Keš Temple Hymn"]
 tradition: "Sumerian / Mesopotamian"

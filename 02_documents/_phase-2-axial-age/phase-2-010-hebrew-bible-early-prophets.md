@@ -1,6 +1,6 @@
 ---
 type: document
-id: "P2-010-hebrew-bible-early-prophets"
+id: "phase-2-010-hebrew-bible-early-prophets"
 title: "Hebrew Bible — Early Prophets (Amos, Hosea, First Isaiah, Micah)"
 aka: ["the 8th-century prophets", "the writing prophets", "pre-exilic Latter Prophets"]
 tradition: "Israelite / pre-exilic Hebrew"

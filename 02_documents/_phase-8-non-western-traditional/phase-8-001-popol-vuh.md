@@ -1,6 +1,6 @@
 ---
 type: document
-id: "P8-001-popol-vuh"
+id: "phase-8-001-popol-vuh"
 title: "Popol Vuh"
 aka: ["Popol Wuj", "Pop Wuj", "Book of Council", "Book of the Community", "Book of the People"]
 tradition: "K'iche' Maya"

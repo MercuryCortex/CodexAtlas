@@ -1,6 +1,6 @@
 ---
 type: document
-id: "P4-062-1-clement"
+id: "phase-4-062-1-clement"
 title: "1 Clement"
 aka: ["First Epistle of Clement to the Corinthians", "Letter of the Romans to the Corinthians", "Clementis ad Corinthios Epistula I", "Prōtē Klēmentos pros Korinthious"]
 tradition: "Patristic Christian (proto-orthodox)"

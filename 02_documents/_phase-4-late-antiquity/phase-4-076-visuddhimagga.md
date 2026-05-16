@@ -1,6 +1,6 @@
 ---
 type: document
-id: "P4-076-visuddhimagga"
+id: "phase-4-076-visuddhimagga"
 title: "Visuddhimagga (Path of Purification)"
 aka: ["Visuddhimagga", "*The Path of Purification*", "the great Theravāda manual"]
 tradition: "Theravāda Buddhist"

@@ -1,6 +1,6 @@
 ---
 type: document
-id: "P6-004-pico-heptaplus-conclusiones-cabalisticae"
+id: "phase-6-004-pico-heptaplus-conclusiones-cabalisticae"
 title: "Heptaplus + Conclusiones Cabalisticae"
 aka: ["Heptaplus de septiformi sex dierum Geneseos enarratione", "Cabalistic Conclusions (subset of the 900)"]
 tradition: "Christian Kabbalah"

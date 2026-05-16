@@ -1,6 +1,6 @@
 ---
 type: document
-id: "P7-002-kitab-i-iqan"
+id: "phase-7-002-kitab-i-iqan"
 title: "Kitáb-i-Íqán"
 aka: ["The Book of Certitude"]
 tradition: "Bahá'í Faith"

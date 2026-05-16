@@ -1,6 +1,6 @@
 ---
 type: document
-id: "P4-078-prayer-of-thanksgiving-nhc-vi-7"
+id: "phase-4-078-prayer-of-thanksgiving-nhc-vi-7"
 title: "Hermetic Prayer of Thanksgiving (NHC VI,7)"
 aka: ["NHC VI,7", "Prayer of Thanksgiving", "Hermetic Eucharistic Prayer", "Asclepius §41 Prayer"]
 tradition: "Hermetic"

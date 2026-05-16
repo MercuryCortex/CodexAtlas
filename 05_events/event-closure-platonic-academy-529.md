@@ -26,6 +26,11 @@ refs:
     type: "monograph"
     tier: 1
 tags: [event, justinian, neoplatonism, athens, 529, academy]
+depictions:
+  - src: "https://upload.wikimedia.org/wikipedia/commons/thumb/2/21/Plato_Silanion_Musei_Capitolini_MC1377.png/500px-Plato_Silanion_Musei_Capitolini_MC1377.png"
+    caption: "Plato, marble portrait bust (Musei Capitolini, Rome) — the Academy he founded closed 529 CE"
+    source: "Wikimedia Commons"
+    license: "CC BY-SA 2.5"
 ---
 
 # Justinian's Closure of the Athenian Schools (529)

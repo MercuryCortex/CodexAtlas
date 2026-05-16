@@ -1,6 +1,6 @@
 ---
 type: document
-id: "P4-059-tripartite-tractate"
+id: "phase-4-059-tripartite-tractate"
 title: "The Tripartite Tractate"
 aka: ["Tractatus Tripartitus", "NHC I,5"]
 tradition: "Gnostic Christian (Valentinian)"

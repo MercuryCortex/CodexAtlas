@@ -44,6 +44,11 @@ refs:
     type: "monograph"
     tier: 1
 tags: [deity, platonic, demiurge, craftsman, neoplatonism, timaeus]
+depictions:
+  - src: "https://upload.wikimedia.org/wikipedia/commons/e/e1/The_Ancient_of_Days.jpg"
+    caption: "William Blake, 'The Ancient of Days' (1794) — the demiurgic craftsman-god measuring creation"
+    source: "Wikimedia Commons"
+    license: "Public domain"
 ---
 
 # The Demiurge (Platonic)

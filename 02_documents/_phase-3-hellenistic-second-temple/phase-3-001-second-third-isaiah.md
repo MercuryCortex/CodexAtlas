@@ -1,6 +1,6 @@
 ---
 type: document
-id: "P3-001-second-third-isaiah"
+id: "phase-3-001-second-third-isaiah"
 title: "Second Isaiah and Third Isaiah (Isaiah 40–66)"
 aka: ["Deutero-Isaiah (chs. 40–55)", "Trito-Isaiah (chs. 56–66)", "Exilic and Post-exilic Isaiah"]
 tradition: "Judaism (Second Temple proto-stratum)"

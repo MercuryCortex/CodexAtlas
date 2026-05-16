@@ -1,6 +1,6 @@
 ---
 type: document
-id: "P2-023-mengzi"
+id: "phase-2-023-mengzi"
 title: "Mengzi (Mencius)"
 aka: ["Mèngzǐ", "孟子", "Mencius", "Master Meng"]
 tradition: "Chinese / Confucian"

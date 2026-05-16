@@ -1,6 +1,6 @@
 ---
 type: document
-id: "P3-012-wisdom-of-solomon"
+id: "phase-3-012-wisdom-of-solomon"
 title: "Wisdom of Solomon"
 aka: ["Sophia Salomonos", "Sapientia Salomonis", "Liber Sapientiae"]
 tradition: "Hellenistic Judaism"

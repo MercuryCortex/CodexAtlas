@@ -1,6 +1,6 @@
 ---
 type: document
-id: "P5-045-al-ghazali-tahafut-al-falasifa"
+id: "phase-5-045-al-ghazali-tahafut-al-falasifa"
 title: "Tahāfut al-Falāsifa (The Incoherence of the Philosophers)"
 aka: ["Tahāfut al-Falāsifa", "The Incoherence of the Philosophers", "*Destructio Philosophorum* (Latin medieval — the 16th-c. Calo Calonymos Latin translation)", "تهافت الفلاسفة"]
 tradition: "Islam (Sunnī — Ashʿarī kalām)"

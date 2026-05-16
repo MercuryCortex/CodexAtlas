@@ -1,6 +1,6 @@
 ---
 type: document
-id: "P5-024-aquinas-summa-theologiae"
+id: "phase-5-024-aquinas-summa-theologiae"
 title: "Summa Theologiae"
 aka: ["Summa Theologica", "ST"]
 tradition: "Latin Christian — Scholastic"

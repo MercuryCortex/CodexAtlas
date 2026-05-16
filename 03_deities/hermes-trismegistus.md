@@ -56,6 +56,11 @@ refs:
     type: "monograph"
     tier: 2
 tags: [deity, hermetic, syncretism, hermes, thoth, alexandria, wisdom-revelator, renaissance-revival, astrology, hellenistic-astrology-patron]
+depictions:
+  - src: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cf/Hermes_mercurius_trismegistus_siena_cathedral.jpg/500px-Hermes_mercurius_trismegistus_siena_cathedral.jpg"
+    caption: "Hermes Trismegistus, floor mosaic, Siena Cathedral (Giovanni di Stefano, 1488)"
+    source: "Wikimedia Commons"
+    license: "Public domain"
 ---
 
 # Hermes Trismegistus

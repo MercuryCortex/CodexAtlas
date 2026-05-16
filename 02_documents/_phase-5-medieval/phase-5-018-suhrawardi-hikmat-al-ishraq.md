@@ -1,6 +1,6 @@
 ---
 type: document
-id: "P5-018-suhrawardi-hikmat-al-ishraq"
+id: "phase-5-018-suhrawardi-hikmat-al-ishraq"
 title: "Ḥikmat al-Ishrāq (The Philosophy of Illumination)"
 aka: ["Hikmat al-Ishraq", "The Philosophy of Illumination", "Wisdom of Illumination"]
 tradition: "Islamic philosophy — Illuminationism (Ishrāqiyya)"

@@ -1,6 +1,6 @@
 ---
 type: document
-id: "P1-031-rigveda"
+id: "phase-1-031-rigveda"
 title: "Rigveda"
 aka: ["Ṛgveda", "Ṛgveda Saṃhitā", "Rig-Veda", "the Ten Books", "the Oldest Veda"]
 tradition: "Vedic / Indo-Iranian"

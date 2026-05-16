@@ -1,6 +1,6 @@
 ---
 type: document
-id: "P7-015-beyond-belief"
+id: "phase-7-015-beyond-belief"
 title: "Beyond Belief: The Secret Gospel of Thomas"
 aka: []
 tradition: "Comparative religion (academic) / history of religions"

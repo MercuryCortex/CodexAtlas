@@ -1,6 +1,6 @@
 ---
 type: document
-id: "P2-017-mahabharata-ramayana-oral-layers"
+id: "phase-2-017-mahabharata-ramayana-oral-layers"
 title: "Mahābhārata and Rāmāyaṇa — Earliest Oral Layers"
 aka: ["Mahābhārata", "Rāmāyaṇa", "the Indian epics", "Itihāsa"]
 tradition: "Vedic / Hindu"

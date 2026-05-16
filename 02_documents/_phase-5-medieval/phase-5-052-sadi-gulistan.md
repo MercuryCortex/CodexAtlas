@@ -1,6 +1,6 @@
 ---
 type: document
-id: "P5-052-sadi-gulistan"
+id: "phase-5-052-sadi-gulistan"
 title: "Gulistān (The Rose Garden)"
 aka: ["Gulistan", "Golestan", "The Rose Garden", "گلستان"]
 tradition: "Islam (Sufism — Persian ethical-literary tradition)"

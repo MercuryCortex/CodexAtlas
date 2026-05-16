@@ -1,6 +1,6 @@
 ---
 type: document
-id: "P7-031-course-in-miracles"
+id: "phase-7-031-course-in-miracles"
 title: "A Course in Miracles"
 aka: ["ACIM"]
 tradition: "New Age / Christian-vocabulary metaphysical idealism"

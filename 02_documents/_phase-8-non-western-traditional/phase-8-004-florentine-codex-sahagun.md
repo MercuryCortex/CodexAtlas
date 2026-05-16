@@ -1,6 +1,6 @@
 ---
 type: document
-id: "P8-004-florentine-codex-sahagun"
+id: "phase-8-004-florentine-codex-sahagun"
 title: "Florentine Codex (Historia general de las cosas de Nueva España)"
 aka: ["Códice Florentino", "Historia General", "General History of the Things of New Spain"]
 tradition: "Nahua / Aztec (Mexica) — recorded by Spanish Franciscan ethnography"

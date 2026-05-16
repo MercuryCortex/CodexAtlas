@@ -1,6 +1,6 @@
 ---
 type: document
-id: "P5-013-hekhalot-literature"
+id: "phase-5-013-hekhalot-literature"
 title: "Hekhalot Literature"
 aka: ["Heikhalot Rabbati", "Heikhalot Zutarti", "3 Enoch / Sefer Hekhalot", "Maaseh Merkavah", "Shi'ur Qomah"]
 tradition: "Rabbinic Judaism — early mysticism"

@@ -1,6 +1,6 @@
 ---
 type: document
-id: "P5-003-maximus-confessor-ambigua"
+id: "phase-5-003-maximus-confessor-ambigua"
 title: "Ambigua and Mystagogia (Maximus the Confessor)"
 aka: ["Ambigua ad Iohannem", "Ambigua ad Thomam", "Mystagogia"]
 tradition: "Eastern Christian (Byzantine)"

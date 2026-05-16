@@ -1,6 +1,6 @@
 ---
 type: document
-id: "P6-029-boehme-aurora"
+id: "phase-6-029-boehme-aurora"
 title: "Aurora (Morgen-Röte im Auffgang)"
 aka: ["Aurora", "Morgenröte im Aufgang", "Morning Redness in the Ascent", "The Aurora", "Boehme's first book"]
 tradition: "Christian theosophy / Lutheran esoteric mysticism"

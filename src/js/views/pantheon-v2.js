@@ -366,6 +366,10 @@
       nodeReducer: (id, attrs) => {
         const out = { ...attrs };
 
+        // DEV PANEL — live node-size multiplier
+        const _devMult = window.CODEX_DEV?.settings?.nodeSizeMult;
+        if (_devMult && _devMult !== 1) out.size = (attrs.size || 4) * _devMult;
+
         // EGO FOCUS — when active + a node is selected, hide everything outside the 1-hop neighbourhood.
         if (_egoFocus && _selectedId) {
           const inNeighbourhood = (id === _selectedId) ||
@@ -394,10 +398,15 @@
           }
         }
         // LABEL MODE — 'off' kills all labels, 'hub' keeps only degree≥threshold, 'all' shows them all.
+        // Dev panel can override the threshold live without a full re-render.
         if (_labelsMode === 'off') {
           out.label = '';
-        } else if (_labelsMode === 'hub' && !attrs._isHub) {
-          out.label = '';
+        } else if (_labelsMode === 'hub') {
+          const _devThresh = window.CODEX_DEV?.settings?.hubThreshold;
+          const _isHub = _devThresh != null
+            ? (degree.get(id) || 0) >= _devThresh
+            : attrs._isHub;
+          if (!_isHub) out.label = '';
         }
         return out;
       },
@@ -489,6 +498,13 @@
       edgesG.appendChild(path);
       edgeEls.push({ el: path, s: e.source, t: e.target });
     });
+
+    // Dev panel hook — expose sigma + overlay data for live-tweaking.
+    if (window.CODEX_DEV) {
+      window.CODEX_DEV._sigma     = sigma;
+      window.CODEX_DEV._edgeEls   = edgeEls;
+      window.CODEX_DEV._positions = positions;
+    }
 
     // Build neighbour index for fast hover dim/highlight on the edge overlay.
     const neighborIdx = new Map();

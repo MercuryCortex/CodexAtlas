@@ -1,6 +1,6 @@
 ---
 type: document
-id: "P8-008-kebra-nagast"
+id: "phase-8-008-kebra-nagast"
 title: "Kebra Nagast"
 aka: ["The Glory of the Kings", "Kebra Negast", "ክብረ ነገሥት"]
 tradition: "Ethiopian Orthodox Christianity / Ethiopian national-religious tradition"

@@ -1,6 +1,6 @@
 ---
 type: document
-id: "P4-045-gregory-of-nyssa-life-of-moses"
+id: "phase-4-045-gregory-of-nyssa-life-of-moses"
 title: "Life of Moses"
 aka: ["De Vita Moysis", "Peri tou Biou Mōuseōs"]
 tradition: "Patristic Christian (Cappadocian)"

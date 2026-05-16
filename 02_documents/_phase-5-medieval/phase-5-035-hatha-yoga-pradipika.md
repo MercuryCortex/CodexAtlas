@@ -1,6 +1,6 @@
 ---
 type: document
-id: "P5-035-hatha-yoga-pradipika"
+id: "phase-5-035-hatha-yoga-pradipika"
 title: "Haṭhayoga-Pradīpikā (Light on Hatha Yoga)"
 aka: ["Hathayoga Pradipika", "HYP"]
 tradition: "Hindu — Hatha Yoga / Nath sampradaya tradition"

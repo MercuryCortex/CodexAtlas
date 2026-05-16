@@ -55,6 +55,11 @@ refs:
     tier: 1
     notes: "Rejects all historical-kernel readings of the Atlantis story, including the Thera-cultural-memory hypothesis"
 tags: [event, destruction, bronze-age, thera, santorini, minoan, atlantis-kernel-hypothesis, late-bronze-age]
+depictions:
+  - src: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c5/Santorini_caldera.jpg/500px-Santorini_caldera.jpg"
+    caption: "Santorini caldera — the remnant of the Thera volcanic eruption (~1600 BCE)"
+    source: "Wikimedia Commons"
+    license: "CC BY-SA 3.0"
 ---
 
 # Thera (Santorini) Eruption (Late Bronze Age)

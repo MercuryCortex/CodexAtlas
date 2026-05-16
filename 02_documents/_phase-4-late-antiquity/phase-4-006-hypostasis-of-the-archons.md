@@ -1,6 +1,6 @@
 ---
 type: document
-id: "P4-006-hypostasis-of-the-archons"
+id: "phase-4-006-hypostasis-of-the-archons"
 title: "Hypostasis of the Archons"
 aka: ["Reality of the Rulers", "NHC II,4"]
 tradition: "Gnostic Christian"

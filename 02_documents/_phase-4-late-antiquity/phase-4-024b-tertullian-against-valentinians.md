@@ -1,6 +1,6 @@
 ---
 type: document
-id: "P4-024b-tertullian-against-valentinians"
+id: "phase-4-024b-tertullian-against-valentinians"
 title: "Against the Valentinians"
 aka: ["Adversus Valentinianos", "Adv. Val."]
 tradition: "Christian (proto-orthodox / pre-Montanist transition)"

@@ -1,6 +1,6 @@
 ---
 type: document
-id: "P5-029-bardo-thodol"
+id: "phase-5-029-bardo-thodol"
 title: "Bardo Thödöl (Tibetan Book of the Dead)"
 aka: ["Bar do thos grol", "Liberation Through Hearing in the Intermediate State", "Tibetan Book of the Dead"]
 tradition: "Vajrayāna Buddhism — Nyingma school"

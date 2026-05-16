@@ -1,6 +1,6 @@
 ---
 type: document
-id: "P5-030-palamas-triads"
+id: "phase-5-030-palamas-triads"
 title: "The Triads (In Defense of the Holy Hesychasts)"
 aka: ["Triads in Defense of the Holy Hesychasts", "Hyper tōn hiērōs hēsychazontōn"]
 tradition: "Eastern Orthodox Christianity"

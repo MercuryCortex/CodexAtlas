@@ -1,6 +1,6 @@
 ---
 type: document
-id: "P2-003-atharva-veda"
+id: "phase-2-003-atharva-veda"
 title: "Atharva Veda"
 aka: ["Atharvaveda Saṃhitā", "Atharvāṅgirasaḥ", "AV"]
 tradition: "Vedic"

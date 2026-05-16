@@ -57,6 +57,11 @@ refs:
     type: "monograph"
     tier: 2
 tags: [deity, greek, roman, twins, divine-twins, indo-european, horsemen, sailors, panhellenic, gemini]
+depictions:
+  - src: "https://upload.wikimedia.org/wikipedia/commons/thumb/8/84/Castor_Pollux_anagoria.JPG/500px-Castor_Pollux_anagoria.JPG"
+    caption: "Castor and Pollux (the Dioskouroi), marble statues (Prado Museum, Madrid)"
+    source: "Wikimedia Commons"
+    license: "CC BY-SA 3.0"
 ---
 
 # The Dioskouroi

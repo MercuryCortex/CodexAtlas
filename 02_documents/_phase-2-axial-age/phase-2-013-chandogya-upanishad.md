@@ -1,6 +1,6 @@
 ---
 type: document
-id: "P2-013-chandogya-upanishad"
+id: "phase-2-013-chandogya-upanishad"
 title: "Chāndogya Upaniṣad"
 aka: ["Chandogya", "ChU"]
 tradition: "Vedic / Brahmanical"

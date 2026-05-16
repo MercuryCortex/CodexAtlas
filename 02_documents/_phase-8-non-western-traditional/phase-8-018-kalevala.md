@@ -1,6 +1,6 @@
 ---
 type: document
-id: "P8-018-kalevala"
+id: "phase-8-018-kalevala"
 title: "Kalevala"
 aka: ["Kalevala", "Karelian-Finnish national epic"]
 tradition: "Finnish / Karelian"

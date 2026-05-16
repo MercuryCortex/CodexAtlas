@@ -1,6 +1,6 @@
 ---
 type: document
-id: "P5-050-bhagavata-purana"
+id: "phase-5-050-bhagavata-purana"
 title: "Bhāgavata Purāṇa"
 aka: ["Śrīmad Bhāgavatam", "Śrīmad Bhāgavata", "Bhagavata", "The Beautiful Story of God", "श्रीमद्भागवतम्"]
 tradition: "Hindu — Vaishnava / Bhakti"

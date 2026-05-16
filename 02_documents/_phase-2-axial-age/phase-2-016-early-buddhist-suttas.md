@@ -1,6 +1,6 @@
 ---
 type: document
-id: "P2-016-early-buddhist-suttas"
+id: "phase-2-016-early-buddhist-suttas"
 title: "Early Buddhist Suttas — Sutta Nipāta (Aṭṭhakavagga, Pārāyanavagga)"
 aka: ["Sutta-Nipāta", "Aṭṭhaka-vagga", "Pārāyana-vagga", "the earliest Pali poetry"]
 tradition: "Buddhist"

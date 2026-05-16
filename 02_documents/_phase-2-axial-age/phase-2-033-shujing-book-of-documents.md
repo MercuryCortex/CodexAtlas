@@ -1,6 +1,6 @@
 ---
 type: document
-id: "P2-033-shujing"
+id: "phase-2-033-shujing"
 title: "Shujing (Book of Documents)"
 aka: ["Shū Jīng", "書經", "Shàng Shū 尚書", "Classic of History", "Book of Historical Documents"]
 tradition: "Chinese / Zhou-classical"

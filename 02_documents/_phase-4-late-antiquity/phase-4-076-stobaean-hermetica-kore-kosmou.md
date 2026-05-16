@@ -1,6 +1,6 @@
 ---
 type: document
-id: "P4-076-stobaean-hermetica-kore-kosmou"
+id: "phase-4-076-stobaean-hermetica-kore-kosmou"
 title: "Stobaean Hermetica (including Kore Kosmou — 'Daughter of the Cosmos')"
 aka: ["Stobaean Excerpts", "Hermetic Fragments", "Excerpta Stobaei", "Kore Kosmou", "The Virgin of the World"]
 tradition: "Hermetic"

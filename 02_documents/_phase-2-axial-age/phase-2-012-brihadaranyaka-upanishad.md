@@ -1,6 +1,6 @@
 ---
 type: document
-id: "P2-012-brihadaranyaka-upanishad"
+id: "phase-2-012-brihadaranyaka-upanishad"
 title: "Bṛhadāraṇyaka Upaniṣad"
 aka: ["Brihadaranyaka", "BṛhUp", "Great Forest Upanishad"]
 tradition: "Vedic / Brahmanical"

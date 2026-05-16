@@ -1,6 +1,6 @@
 ---
 type: document
-id: "P1-013-baal-cycle"
+id: "phase-1-013-baal-cycle"
 title: "Baal Cycle"
 aka: ["Ba'lu Cycle", "Baal Myth", "KTU 1.1–1.6", "CTA 1–6"]
 tradition: "Ugaritic / Canaanite"

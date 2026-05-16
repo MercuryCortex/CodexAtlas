@@ -1,6 +1,6 @@
 ---
 type: document
-id: "P4-024-tertullian-apology"
+id: "phase-4-024-tertullian-apology"
 title: "Apology"
 aka: ["Apologeticus", "Apologeticum", "Apologeticus pro Christianis"]
 tradition: "Christian (proto-orthodox)"

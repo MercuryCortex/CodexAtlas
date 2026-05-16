@@ -1,6 +1,6 @@
 ---
 type: document
-id: "P4-066-polycarp-philippians"
+id: "phase-4-066-polycarp-philippians"
 title: "Polycarp's Letter to the Philippians"
 aka: ["Polycarpi ad Philippenses Epistula", "Pros Philippēsious Epistolē Polykarpou", "Pol. Phil."]
 tradition: "Patristic Christian (proto-orthodox)"

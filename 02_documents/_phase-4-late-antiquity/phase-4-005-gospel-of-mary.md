@@ -1,6 +1,6 @@
 ---
 type: document
-id: "P4-005-gospel-of-mary"
+id: "phase-4-005-gospel-of-mary"
 title: "Gospel of Mary"
 aka: ["Gospel of Mary Magdalene", "BG 8502,1"]
 tradition: "Early Christian"

@@ -1,6 +1,6 @@
 ---
 type: document
-id: "P6-030-vinaya-patrika"
+id: "phase-6-030-vinaya-patrika"
 title: "Vinaya Patrikā (The Petition of Humility)"
 aka: ["Vinaya-Patrika", "Tulsidas's Vinaya Patrika"]
 tradition: "Hindu Bhakti (Vaishnava — Rama-bhakti)"

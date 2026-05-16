@@ -1,6 +1,6 @@
 ---
 type: document
-id: "P7-017-psychology-and-alchemy"
+id: "phase-7-017-psychology-and-alchemy"
 title: "Psychology and Alchemy"
 aka: ["Psychologie und Alchemie", "CW vol. 12"]
 tradition: "Jungian depth psychology"

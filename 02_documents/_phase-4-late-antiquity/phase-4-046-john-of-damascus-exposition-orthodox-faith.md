@@ -1,6 +1,6 @@
 ---
 type: document
-id: "P4-046-john-of-damascus-exposition-orthodox-faith"
+id: "phase-4-046-john-of-damascus-exposition-orthodox-faith"
 title: "Exposition of the Orthodox Faith"
 aka: ["Ekdosis akribes tes orthodoxou pisteos", "De Fide Orthodoxa", "Book III of the Fount of Knowledge"]
 tradition: "Eastern Christian (Chalcedonian)"

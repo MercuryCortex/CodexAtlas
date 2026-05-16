@@ -1,6 +1,6 @@
 ---
 type: document
-id: "P7-035-cayce-atlantis-readings"
+id: "phase-7-035-cayce-atlantis-readings"
 title: "The Edgar Cayce Atlantis Readings"
 aka: ["A.R.E. Atlantis Readings", "Cayce Atlantis Material"]
 tradition: "American esoteric / trance prophecy"

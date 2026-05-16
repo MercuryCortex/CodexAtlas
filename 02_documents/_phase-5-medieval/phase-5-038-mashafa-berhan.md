@@ -1,6 +1,6 @@
 ---
 type: document
-id: "P5-038-mashafa-berhan"
+id: "phase-5-038-mashafa-berhan"
 title: "Mashafa Berhan (Book of Light) — Zar'a Ya'qob"
 aka: ["Maṣḥafa Bǝrhan", "Book of Light", "መጽሐፈ ብርሃን"]
 tradition: "[[tradition-ethiopian-orthodox-tewahedo]]"

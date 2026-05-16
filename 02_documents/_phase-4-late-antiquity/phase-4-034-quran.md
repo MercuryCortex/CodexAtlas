@@ -1,6 +1,6 @@
 ---
 type: document
-id: "P4-034-quran"
+id: "phase-4-034-quran"
 title: "Quran"
 aka: ["al-Qur'ān", "the Recitation", "al-Furqān (the Criterion)", "al-Kitāb (the Book)"]
 tradition: "Islam"

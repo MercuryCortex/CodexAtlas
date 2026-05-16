@@ -1,6 +1,6 @@
 ---
 type: document
-id: "P7-013-gnostic-religion"
+id: "phase-7-013-gnostic-religion"
 title: "The Gnostic Religion"
 aka: ["The Gnostic Religion: The Message of the Alien God and the Beginnings of Christianity"]
 tradition: "Comparative religion (academic) / history of religions"

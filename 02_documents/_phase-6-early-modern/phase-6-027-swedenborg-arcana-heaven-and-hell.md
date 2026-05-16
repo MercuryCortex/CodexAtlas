@@ -1,6 +1,6 @@
 ---
 type: document
-id: "P6-027-swedenborg-arcana-heaven-and-hell"
+id: "phase-6-027-swedenborg-arcana-heaven-and-hell"
 title: "Arcana Coelestia + Heaven and Hell"
 aka: ["Heavenly Secrets (Arcana Caelestia)", "De Coelo et Eius Mirabilibus et de Inferno (Heaven and Hell)"]
 tradition: "Christian esoteric / Lutheran spiritualist"

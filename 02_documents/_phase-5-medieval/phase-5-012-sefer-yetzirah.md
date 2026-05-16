@@ -1,6 +1,6 @@
 ---
 type: document
-id: "P5-012-sefer-yetzirah"
+id: "phase-5-012-sefer-yetzirah"
 title: "Sefer Yetzirah (Book of Formation)"
 aka: ["Book of Creation", "Sefer Yeẓirah", "סֵפֶר יְצִירָה"]
 tradition: "Rabbinic Judaism — proto-Kabbalistic"

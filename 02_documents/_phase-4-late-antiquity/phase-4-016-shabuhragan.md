@@ -1,6 +1,6 @@
 ---
 type: document
-id: "P4-016-shabuhragan"
+id: "phase-4-016-shabuhragan"
 title: "Šābuhragān"
 aka: ["Šāhbuhragān", "Šāpurakān", "Book of Shapur"]
 tradition: "Manichaean"

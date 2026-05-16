@@ -1,6 +1,6 @@
 ---
 type: document
-id: "P1-016-eridu-genesis-flood"
+id: "phase-1-016-eridu-genesis-flood"
 title: "The Eridu Genesis (Sumerian Flood Story)"
 aka: ["The Eridu Genesis", "Sumerian Flood Story", "The Ziusudra Story", "Flood Tablet from Nippur (CBS 10673)"]
 tradition: "Sumerian / Mesopotamian"

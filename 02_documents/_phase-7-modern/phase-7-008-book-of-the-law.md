@@ -1,6 +1,6 @@
 ---
 type: document
-id: "P7-008-book-of-the-law"
+id: "phase-7-008-book-of-the-law"
 title: "Liber AL vel Legis (The Book of the Law)"
 aka: ["Liber AL", "Liber Legis", "The Book of the Law", "CCXX"]
 tradition: "Thelema"

@@ -1,6 +1,6 @@
 ---
 type: document
-id: "P6-019-tulsidas-ramcharitmanas"
+id: "phase-6-019-tulsidas-ramcharitmanas"
 title: "Ramcharitmanas"
 aka: ["Ram Charit Manas", "Tulsi-Ramayana", "Manas"]
 tradition: "Hindu Bhakti (Vaishnava)"

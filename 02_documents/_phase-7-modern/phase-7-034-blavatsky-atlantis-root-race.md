@@ -1,6 +1,6 @@
 ---
 type: document
-id: "P7-034-blavatsky-atlantis-root-race"
+id: "phase-7-034-blavatsky-atlantis-root-race"
 title: "The Atlantean (Fourth) Root-Race Doctrine in The Secret Doctrine, Vol. II"
 aka: ["Secret Doctrine, Anthropogenesis, Fourth Root-Race", "Atlantean Round"]
 tradition: "Theosophy"

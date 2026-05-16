@@ -1,6 +1,6 @@
 ---
 type: document
-id: "P5-022-madhva-brahma-sutra-bhasya"
+id: "phase-5-022-madhva-brahma-sutra-bhasya"
 title: "Brahma-Sūtra-Bhāṣya (Madhva)"
 aka: ["Sūtra Bhāṣya", "Madhvabhāṣya"]
 tradition: "Hindu — Dvaita Vedānta"

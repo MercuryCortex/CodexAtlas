@@ -1,6 +1,6 @@
 ---
 type: document
-id: "P4-010-sophia-of-jesus-christ"
+id: "phase-4-010-sophia-of-jesus-christ"
 title: "Sophia of Jesus Christ"
 aka: ["NHC III,4 / BG 8502,3"]
 tradition: "Gnostic Christian"

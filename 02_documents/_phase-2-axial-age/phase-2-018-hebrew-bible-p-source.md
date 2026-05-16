@@ -1,6 +1,6 @@
 ---
 type: document
-id: "P2-018-hebrew-bible-p-source"
+id: "phase-2-018-hebrew-bible-p-source"
 title: "Hebrew Bible — P (Priestly) Source"
 aka: ["P", "Priestly Source", "Priestencodex", "PG (Priesterliche Grundschrift)", "the Priestly material"]
 tradition: "Israelite / Judahite"

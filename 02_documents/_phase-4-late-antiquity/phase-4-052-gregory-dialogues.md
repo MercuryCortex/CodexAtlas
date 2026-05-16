@@ -1,6 +1,6 @@
 ---
 type: document
-id: "P4-052-gregory-dialogues"
+id: "phase-4-052-gregory-dialogues"
 title: "Dialogues on the Miracles of the Italian Fathers"
 aka: ["Dialogi", "Dialogues", "Dialogi de Vita et Miraculis Patrum Italicorum"]
 tradition: "Western (Latin) Patristic Christianity"

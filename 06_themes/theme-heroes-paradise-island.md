@@ -33,6 +33,11 @@ refs:
     type: "monograph-chapter"
     tier: 1
 tags: [theme, eschatological, paradise, heroes, island, elysium, tir-na-nog, sukhavati, jannah, svarga, ilha-dos-amores, divine-reward, camoes, celtic, buddhist, hindu, islamic, greek]
+depictions:
+  - src: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5b/Elysian_Fields.jpg/500px-Elysian_Fields.jpg"
+    caption: "The Elysian Fields, 19th-century painting (after Hesiod's Works and Days)"
+    source: "Wikimedia Commons"
+    license: "Public domain"
 ---
 
 # Heroes' Paradise Island (Divine Reward as Sacred Realm)

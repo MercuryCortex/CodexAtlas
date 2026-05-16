@@ -1,6 +1,6 @@
 ---
 type: document
-id: "P4-027-eusebius-ecclesiastical-history"
+id: "phase-4-027-eusebius-ecclesiastical-history"
 title: "Ecclesiastical History"
 aka: ["Historia Ecclesiastica", "Ekklēsiastikē Historia"]
 tradition: "Christian (proto-orthodox / Constantinian)"

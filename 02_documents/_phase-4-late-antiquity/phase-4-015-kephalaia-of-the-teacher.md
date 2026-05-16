@@ -1,6 +1,6 @@
 ---
 type: document
-id: "P4-015-kephalaia-of-the-teacher"
+id: "phase-4-015-kephalaia-of-the-teacher"
 title: "Kephalaia of the Teacher"
 aka: ["Kephalaia tou Sophou (Greek title)", "Chapters of the Teacher (Coptic)"]
 tradition: "Manichaean"

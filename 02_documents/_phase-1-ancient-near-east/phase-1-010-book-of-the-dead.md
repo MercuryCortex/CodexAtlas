@@ -1,6 +1,6 @@
 ---
 type: document
-id: "P1-010-book-of-the-dead"
+id: "phase-1-010-book-of-the-dead"
 title: "Book of the Dead"
 aka: ["Book of Going Forth by Day", "Pert em Hru", "Reu nu Pert em Hru", "BD"]
 tradition: "Egyptian"

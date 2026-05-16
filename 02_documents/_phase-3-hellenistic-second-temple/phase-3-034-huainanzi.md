@@ -1,6 +1,6 @@
 ---
 type: document
-id: "P3-034-huainanzi"
+id: "phase-3-034-huainanzi"
 title: "Huainanzi (Masters of Huainan)"
 aka: ["淮南子", "Huái Nán Zǐ", "Huai Nan Tzu", "The Book of the Masters of Huainan"]
 tradition: "Chinese / Daoist"

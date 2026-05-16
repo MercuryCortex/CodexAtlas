@@ -1,6 +1,6 @@
 ---
 type: document
-id: "P2-009-hesiod-theogony-works-and-days"
+id: "phase-2-009-hesiod-theogony-works-and-days"
 title: "Hesiod — Theogony and Works and Days"
 aka: ["Θεογονία", "Ἔργα καὶ Ἡμέραι"]
 tradition: "Greek"

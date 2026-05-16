@@ -1,6 +1,6 @@
 ---
 type: document
-id: "P4-007-on-the-origin-of-the-world"
+id: "phase-4-007-on-the-origin-of-the-world"
 title: "On the Origin of the World"
 aka: ["NHC II,5 / XIII,2; BG fragment"]
 tradition: "Gnostic Christian"

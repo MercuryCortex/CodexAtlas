@@ -1,6 +1,6 @@
 ---
 type: document
-id: "P2-026-han-feizi"
+id: "phase-2-026-han-feizi"
 title: "Han Feizi"
 aka: ["Hán Fēizǐ", "韓非子", "Han Fei Tzu", "Master Han Fei"]
 tradition: "Chinese / Legalist"

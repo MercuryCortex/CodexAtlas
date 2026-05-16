@@ -12,7 +12,7 @@ status: "full"
 related-themes:
   - "[[theme-proto-indo-iranian-religion]]"
   - "[[theme-logos-theology]]"
-  - "[[theme-divine-feminine]]"
+  - "[[divine-feminine]]"
   - "[[logos-cosmic-reason]]"
   - "[[frashokereti-cosmic-renovation]]"
   - "[[tikkun-olam]]"
@@ -136,4 +136,4 @@ Specific MASSIVE WINs that the Axial Age framework explains:
 - → [[frashokereti-cosmic-renovation]]: Zoroastrian eschatology as the Axial elaboration of cosmic history
 - → [[tradition-buddhism]]: Indian Axial contribution — the Dharma as the universal path independent of caste or ritual
 - → [[tikkun-olam]]: The Jewish Axial contribution elaborated in medieval Kabbalah — human action as cosmic repair
-- → [[theme-divine-feminine]]: The pre-Axial and Axial-era transformation of goddess traditions — the Axial Age generally suppressed female divine power in favor of abstract universal principles; the later recovery (Shekinah, Sophia, Mary, Shakti) is partly a re-emergence of pre-Axial traditions through Axial-era theological frameworks
+- → [[divine-feminine]]: The pre-Axial and Axial-era transformation of goddess traditions — the Axial Age generally suppressed female divine power in favor of abstract universal principles; the later recovery (Shekinah, Sophia, Mary, Shakti) is partly a re-emergence of pre-Axial traditions through Axial-era theological frameworks

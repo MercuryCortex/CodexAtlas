@@ -1,6 +1,6 @@
 ---
 type: document
-id: "P8-007-ifa-divination-corpus"
+id: "phase-8-007-ifa-divination-corpus"
 title: "Ifá Divination Corpus (Odu Ifá)"
 aka: ["Odu Ifá", "Ifa literary corpus", "the 256 odu"]
 tradition: "Yoruba"

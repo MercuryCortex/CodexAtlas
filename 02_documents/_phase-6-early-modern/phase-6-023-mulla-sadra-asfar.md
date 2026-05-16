@@ -1,6 +1,6 @@
 ---
 type: document
-id: "P6-023-mulla-sadra-asfar"
+id: "phase-6-023-mulla-sadra-asfar"
 title: "Al-Asfar al-Arba'a (The Four Journeys)"
 aka: ["al-Hikma al-muta'aliya fi al-asfar al-aqliyya al-arba'a", "The Transcendent Philosophy of the Four Intellectual Journeys"]
 tradition: "Islamic philosophy / Sufi mysticism"

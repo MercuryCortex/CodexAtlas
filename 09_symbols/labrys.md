@@ -74,6 +74,11 @@ refs:
     tier: 1
     notes: "Mayor's work on the material basis of Greek monster myths is relevant to the historical grounding of the Amazon myths. Her later *The Amazons: Lives and Legends of Warrior Women Across the Ancient World* (Princeton UP, 2014) is the most comprehensive modern treatment of the Scythian-Amazon archaeological evidence."
 tags: [symbol, geometric, minoan, greek, bronze-age, labrys, double-axe, labyrinth, amazons, goddess-religion, feminist-symbol, mystery, sky-weapon-thread]
+depictions:
+  - src: "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b5/Minoan_Labrys1.jpg/500px-Minoan_Labrys1.jpg"
+    caption: "Minoan double axe (labrys), bronze, Herakleion Archaeological Museum"
+    source: "Wikimedia Commons"
+    license: "Public domain"
 ---
 
 # Labrys

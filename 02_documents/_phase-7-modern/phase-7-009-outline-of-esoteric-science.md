@@ -1,6 +1,6 @@
 ---
 type: document
-id: "P7-009-outline-of-esoteric-science"
+id: "phase-7-009-outline-of-esoteric-science"
 title: "An Outline of Esoteric Science"
 aka: ["Die Geheimwissenschaft im Umriss", "An Outline of Occult Science"]
 tradition: "Anthroposophy"

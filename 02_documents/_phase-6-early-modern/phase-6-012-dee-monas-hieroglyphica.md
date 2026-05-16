@@ -1,6 +1,6 @@
 ---
 type: document
-id: "P6-012-dee-monas-hieroglyphica"
+id: "phase-6-012-dee-monas-hieroglyphica"
 title: "Monas Hieroglyphica"
 aka: ["The Hieroglyphic Monad"]
 tradition: "Renaissance esoteric mathematics / Hermetic-Kabbalist magic"

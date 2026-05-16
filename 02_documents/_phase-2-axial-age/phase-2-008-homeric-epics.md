@@ -1,6 +1,6 @@
 ---
 type: document
-id: "P2-008-homeric-epics"
+id: "phase-2-008-homeric-epics"
 title: "Iliad and Odyssey (Homeric Epics)"
 aka: ["Ἰλιάς", "Ὀδύσσεια", "the Homeric poems"]
 tradition: "Greek"

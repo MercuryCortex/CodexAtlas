@@ -1,6 +1,6 @@
 ---
 type: document
-id: "P5-037-fetha-nagast"
+id: "phase-5-037-fetha-nagast"
 title: "Fetha Nagast (Law of the Kings)"
 aka: ["Fəth Nägäśt", "Law of the Kings", "ፍትሐ ነገሥት"]
 tradition: "[[tradition-ethiopian-orthodox-tewahedo]]"

@@ -1,6 +1,6 @@
 ---
 type: document
-id: "P5-016-ramanuja-sribhasya"
+id: "phase-5-016-ramanuja-sribhasya"
 title: "Śrībhāṣya (Ramanuja's Brahma-Sūtra Commentary)"
 aka: ["Sri Bhashya", "Śrī Bhāṣya"]
 tradition: "Hindu — Viśiṣṭādvaita Vedānta (Śrī Vaiṣṇavism)"

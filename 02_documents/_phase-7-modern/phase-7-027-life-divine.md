@@ -1,6 +1,6 @@
 ---
 type: document
-id: "P7-027-life-divine"
+id: "phase-7-027-life-divine"
 title: "The Life Divine"
 aka: []
 tradition: "Hindu modernism / Integral Yoga"

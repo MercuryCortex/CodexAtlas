@@ -1,6 +1,6 @@
 ---
 type: document
-id: "P4-001-gospel-of-thomas"
+id: "phase-4-001-gospel-of-thomas"
 title: "Gospel of Thomas"
 aka: ["The Gospel According to Thomas", "Coptic Gospel of Thomas", "NHC II,2"]
 tradition: "Early Christian"

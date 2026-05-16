@@ -1,6 +1,6 @@
 ---
 type: document
-id: "P1-007-code-of-hammurabi"
+id: "phase-1-007-code-of-hammurabi"
 title: "Code of Hammurabi"
 aka: ["Laws of Hammurabi", "Codex Hammurabi", "CH", "Stele of Hammurabi"]
 tradition: "Babylonian"

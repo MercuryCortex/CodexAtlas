@@ -1,6 +1,6 @@
 ---
 type: document
-id: "P1-017-descent-of-inanna"
+id: "phase-1-017-descent-of-inanna"
 title: "Inanna's Descent to the Netherworld"
 aka: ["Inana's Descent to the Nether World", "Inanna's Descent", "Inanna-Dumuzi cycle (closing composition)", "ETCSL 1.4.1"]
 tradition: "Sumerian / Mesopotamian"

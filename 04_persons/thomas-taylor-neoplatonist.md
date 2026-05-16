@@ -35,6 +35,11 @@ refs:
     tier: 1
     notes: "Demonstrates Taylor as the conduit of Neoplatonism and the Hermetic Anthropos concept to Blake"
 tags: [person, neoplatonism, translation, blake, romantic, greek, english, plato, plotinus]
+depictions:
+  - src: "https://upload.wikimedia.org/wikipedia/commons/e/ec/Thomas_Taylor.jpg"
+    caption: "Thomas Taylor, portrait engraving (c. 1800)"
+    source: "Wikimedia Commons"
+    license: "Public domain"
 ---
 
 # Thomas Taylor

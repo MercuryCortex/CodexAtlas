@@ -1,6 +1,6 @@
 ---
 type: document
-id: "P3-018-luke-acts"
+id: "phase-3-018-luke-acts"
 title: "Luke–Acts (Gospel of Luke and Acts of the Apostles)"
 aka: ["Two-volume Lukan work", "Euangelion kata Loukan + Praxeis ton Apostolon"]
 tradition: "Earliest Christianity (Pauline-aligned, Gentile-friendly)"

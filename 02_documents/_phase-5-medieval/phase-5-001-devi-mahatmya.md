@@ -1,6 +1,6 @@
 ---
 type: document
-id: "P5-001-devi-mahatmya"
+id: "phase-5-001-devi-mahatmya"
 title: "Devi Mahatmya"
 aka: ["Durgā Saptaśatī", "Caṇḍī", "Caṇḍī Pāṭha", "Saptaśatī", "Glory of the Goddess"]
 tradition: "Hindu — Shakta"

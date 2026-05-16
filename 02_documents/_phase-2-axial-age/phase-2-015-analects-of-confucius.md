@@ -1,6 +1,6 @@
 ---
 type: document
-id: "P2-015-analects-of-confucius"
+id: "phase-2-015-analects-of-confucius"
 title: "Analects of Confucius"
 aka: ["Lúnyǔ", "論語", "Lunyu", "Sayings of Confucius"]
 tradition: "Chinese / Confucian"

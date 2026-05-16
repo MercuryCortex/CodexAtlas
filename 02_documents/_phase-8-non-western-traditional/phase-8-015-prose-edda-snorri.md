@@ -1,6 +1,6 @@
 ---
 type: document
-id: "P8-015-prose-edda-snorri"
+id: "phase-8-015-prose-edda-snorri"
 title: "Prose Edda (Snorra Edda)"
 aka: ["Snorri's Edda", "Younger Edda", "Snorra Edda", "Edda Snorra Sturlusonar"]
 tradition: "Norse / Old Icelandic"

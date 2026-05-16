@@ -1,6 +1,6 @@
 ---
 type: document
-id: "P5-014-abhinavagupta-tantraloka"
+id: "phase-5-014-abhinavagupta-tantraloka"
 title: "Tantrāloka (Light on the Tantras)"
 aka: ["Tantrāloka", "TĀ"]
 tradition: "Hindu — Kashmir Shaivism (Trika)"

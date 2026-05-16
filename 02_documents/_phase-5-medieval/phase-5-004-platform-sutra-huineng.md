@@ -1,6 +1,6 @@
 ---
 type: document
-id: "P5-004-platform-sutra-huineng"
+id: "phase-5-004-platform-sutra-huineng"
 title: "Platform Sutra of the Sixth Patriarch"
 aka: ["Liuzu Tan Jing 六祖壇經", "Platform Sutra"]
 tradition: "Chan / Zen Buddhism"

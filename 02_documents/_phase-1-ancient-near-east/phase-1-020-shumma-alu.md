@@ -1,6 +1,6 @@
 ---
 type: document
-id: "P1-020-shumma-alu"
+id: "phase-1-020-shumma-alu"
 title: "Šumma Ālu (If a City is Set on a Height)"
 aka: ["Šumma ālu ina mēlê šakin", "Shumma Alu", "the terrestrial-omen series", "if-a-city-omens"]
 tradition: "Akkadian / Mesopotamian"

@@ -1,6 +1,6 @@
 ---
 type: document
-id: "P3-019-4-maccabees"
+id: "phase-3-019-4-maccabees"
 title: "4 Maccabees"
 aka: ["Fourth Maccabees", "On the Sovereignty of Reason", "Peri Autokratoros Logismou"]
 tradition: "Hellenistic Judaism"

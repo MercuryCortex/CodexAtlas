@@ -1,6 +1,6 @@
 ---
 type: document
-id: "P4-017-ginza-rba"
+id: "phase-4-017-ginza-rba"
 title: "Ginza Rba"
 aka: ["Ginza Rabba", "Great Treasure", "Sidra Rabba (Great Book)", "Right Ginza & Left Ginza"]
 tradition: "Mandaean"

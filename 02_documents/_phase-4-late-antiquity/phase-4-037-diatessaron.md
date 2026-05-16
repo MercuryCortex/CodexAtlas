@@ -1,6 +1,6 @@
 ---
 type: document
-id: "P4-037-diatessaron"
+id: "phase-4-037-diatessaron"
 title: "Diatessaron"
 aka: ["Diatessarōn ('through four [Gospels]')", "Evangelion da-Mehallete (Syriac: 'Gospel of the Mixed')", "Tatian's Gospel Harmony"]
 tradition: "Syriac Christianity; early Christian"

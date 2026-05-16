@@ -1,6 +1,6 @@
 ---
 type: document
-id: "P4-021-proclus-elements-of-theology"
+id: "phase-4-021-proclus-elements-of-theology"
 title: "Elements of Theology"
 aka: ["Stoicheiōsis Theologikē", "Institutio Theologica"]
 tradition: "Neoplatonism"

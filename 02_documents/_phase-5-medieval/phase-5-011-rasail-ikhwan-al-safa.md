@@ -1,6 +1,6 @@
 ---
 type: document
-id: "P5-011-rasail-ikhwan-al-safa"
+id: "phase-5-011-rasail-ikhwan-al-safa"
 title: "Rasāʾil Ikhwān al-Ṣafāʾ (Epistles of the Brethren of Purity)"
 aka: ["Epistles of the Brethren of Purity", "Rasāʾil Ikhwān al-Ṣafāʾ wa-Khillān al-Wafāʾ"]
 tradition: "Ismā'īlī Shi'ism / Islamic Neoplatonism (contested affiliation)"

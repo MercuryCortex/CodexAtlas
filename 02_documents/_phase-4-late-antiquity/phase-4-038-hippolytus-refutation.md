@@ -1,6 +1,6 @@
 ---
 type: document
-id: "P4-038-hippolytus-refutation"
+id: "phase-4-038-hippolytus-refutation"
 title: "Refutation of All Heresies"
 aka: ["Philosophoumena", "Kata pasōn haireseōn elenchos", "Elenchos"]
 tradition: "Patristic Christian (proto-orthodox)"

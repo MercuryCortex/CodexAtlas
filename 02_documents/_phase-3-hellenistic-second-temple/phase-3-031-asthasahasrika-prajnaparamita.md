@@ -1,6 +1,6 @@
 ---
 type: document
-id: "P3-031-asthasahasrika-prajnaparamita"
+id: "phase-3-031-asthasahasrika-prajnaparamita"
 title: "Aṣṭasāhasrikā Prajñāpāramitā (Perfection of Wisdom in 8,000 Lines)"
 aka: ["Aṣṭasāhasrikā", "Perfection of Wisdom in 8,000 Lines", "*Bajie boluomi jing* 八千頌般若經 (Chinese)", "the seed-text of the Prajñāpāramitā corpus"]
 tradition: "Mahāyāna Buddhist"

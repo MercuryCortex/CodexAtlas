@@ -1,6 +1,6 @@
 ---
 type: document
-id: "P2-020-lamentations"
+id: "phase-2-020-lamentations"
 title: "Lamentations"
 aka: ["Eikhah", "אֵיכָה", "Threni", "Book of Lamentations", "Megillat Eikhah"]
 tradition: "Israelite / Judahite"

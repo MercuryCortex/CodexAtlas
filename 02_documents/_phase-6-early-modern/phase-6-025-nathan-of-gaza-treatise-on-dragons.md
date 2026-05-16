@@ -1,6 +1,6 @@
 ---
 type: document
-id: "P6-025-nathan-of-gaza-treatise-on-dragons"
+id: "phase-6-025-nathan-of-gaza-treatise-on-dragons"
 title: "Drush ha-Tanninim (Treatise on the Dragons) + Sabbatean writings"
 aka: ["Treatise on the Tannin (Cosmic Sea-Beast)", "Drush ha-Menorah", "Iggeret Magen Avraham"]
 tradition: "Jewish messianism — Sabbatean"

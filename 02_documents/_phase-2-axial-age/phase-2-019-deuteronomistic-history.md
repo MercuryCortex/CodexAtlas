@@ -1,6 +1,6 @@
 ---
 type: document
-id: "P2-019-deuteronomistic-history"
+id: "phase-2-019-deuteronomistic-history"
 title: "The Deuteronomistic History (Joshua–Judges–Samuel–Kings)"
 aka: ["DtrH", "Deuteronomistic History", "Noth's *Deuteronomistisches Geschichtswerk*", "the Former Prophets (Hebrew canon)", "Joshua–2 Kings"]
 tradition: "Israelite / Judahite"

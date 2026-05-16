@@ -1,6 +1,6 @@
 ---
 type: document
-id: "P6-005-luther-95-theses"
+id: "phase-6-005-luther-95-theses"
 title: "95 Theses (Disputatio pro declaratione virtutis indulgentiarum)"
 aka: ["Ninety-five Theses", "Disputatio"]
 tradition: "Protestant Christianity (founding)"

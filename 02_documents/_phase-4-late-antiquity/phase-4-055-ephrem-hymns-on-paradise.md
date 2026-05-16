@@ -1,6 +1,6 @@
 ---
 type: document
-id: "P4-055-ephrem-hymns-on-paradise"
+id: "phase-4-055-ephrem-hymns-on-paradise"
 title: "Hymns on Paradise (Madrāšē dᵉ-Pardayšā)"
 aka: ["Madrashe on Paradise", "*De paradiso*"]
 tradition: "Syriac Christianity"

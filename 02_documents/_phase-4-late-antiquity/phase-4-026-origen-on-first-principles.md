@@ -1,6 +1,6 @@
 ---
 type: document
-id: "P4-026-origen-on-first-principles"
+id: "phase-4-026-origen-on-first-principles"
 title: "On First Principles"
 aka: ["De Principiis", "Peri Archōn"]
 tradition: "Christian (Alexandrian)"

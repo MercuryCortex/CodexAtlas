@@ -1,6 +1,6 @@
 ---
 type: document
-id: "P4-031-mishnah"
+id: "phase-4-031-mishnah"
 title: "Mishnah"
 aka: ["Mishna", "Mishnah of Rabbi Judah ha-Nasi"]
 tradition: "Rabbinic Judaism"

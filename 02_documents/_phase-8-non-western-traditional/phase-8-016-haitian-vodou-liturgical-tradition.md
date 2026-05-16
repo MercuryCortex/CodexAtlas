@@ -1,6 +1,6 @@
 ---
 type: document
-id: "P8-016-haitian-vodou-liturgical-tradition"
+id: "phase-8-016-haitian-vodou-liturgical-tradition"
 title: "Haitian Vodou Liturgical Tradition"
 aka: ["Vodou", "Vodun", "Voodoo (anglophone, often pejorative)", "Sèvis Lwa"]
 tradition: "Haitian Vodou"

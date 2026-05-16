@@ -1,6 +1,6 @@
 ---
 type: document
-id: "P6-026-anderson-constitutions-free-masons"
+id: "phase-6-026-anderson-constitutions-free-masons"
 title: "The Constitutions of the Free-Masons"
 aka: ["Anderson's Constitutions", "Constitutions of 1723"]
 tradition: "Freemasonry"

@@ -1,6 +1,6 @@
 ---
 type: document
-id: "P3-014-q-source"
+id: "phase-3-014-q-source"
 title: "Q Source (hypothetical Synoptic Sayings Source)"
 aka: ["Q (Quelle)", "Sayings Gospel Q", "the Double Tradition source"]
 tradition: "Earliest Christianity (Galilean Jesus-movement)"

@@ -1,6 +1,6 @@
 ---
 type: document
-id: "P7-010-elementary-forms-religious-life"
+id: "phase-7-010-elementary-forms-religious-life"
 title: "The Elementary Forms of Religious Life"
 aka: ["Les formes élémentaires de la vie religieuse"]
 tradition: "Comparative religion (academic) / sociology of religion"

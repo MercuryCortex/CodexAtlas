@@ -1,6 +1,6 @@
 ---
 type: document
-id: "P7-003-kitab-i-aqdas"
+id: "phase-7-003-kitab-i-aqdas"
 title: "Kitáb-i-Aqdas"
 aka: ["The Most Holy Book", "al-Kitāb al-Aqdas"]
 tradition: "Bahá'í Faith"
