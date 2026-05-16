@@ -1,7 +1,7 @@
 # Session handoff — 2026-05-16 evening
 
 **Last opus commit:** `2ce4e70` (Pantheon-v2 Phase C + audit fixes)
-**Sub-agent in flight:** `sonnet-pantheon-v2-parity-2` (visual parity push — hulls, labels, edge curves, thumbnail cards). May or may not have landed by the time you read this; check `git log` for the commit.
+**Sub-agent in flight:** `sonnet-pantheon-v2-parity-2` — **LANDED CLEAN at commit `c09ea2b`** before session close. Pre-commit hook passed. Hulls + curved edges + label density + thumbnail card all shipped. Verify visually on resume — should be near-parity with production now. See agent's own summary in the git log message for technique notes (SVG overlay for both hulls and edges, used production's exact `Q mx+(0-mx)*0.35` curve formula).
 
 This is the briefing for the next agent who picks up the Codex Atlas work. Read this top-to-bottom, then `STATUS.md`, then dive in.
 
