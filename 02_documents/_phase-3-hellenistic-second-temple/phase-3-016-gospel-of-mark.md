@@ -22,7 +22,7 @@ influenced-by: ["Hebrew Bible / LXX (esp. Isaiah, Psalms, Daniel)", "Oral Jesus-
 influences: ["Gospel of Matthew (used as source — Markan Priority)", "Gospel of Luke (used as source)", "All subsequent Christian Gospel-genre literature", "All subsequent Christology"]
 deities-mentioned: ["[[yahweh]]", "[[jesus-of-nazareth]]"]
 events-context: ["Jesus's ministry, passion, and resurrection (~+30/+33)", "First Jewish Revolt and destruction of the Second Temple (~+66/+70)", "Neronian persecution of Roman Christians (~+64/+65) — possible backdrop"]
-status: "metadata"
+status: "full"
 preservation: "Earliest fragmentary witness: P45 (Chester Beatty, ~+250). Earliest complete: Codex Vaticanus (B, ~+325) and Codex Sinaiticus (ℵ, ~+350). **The ending of Mark is textually unstable**: the earliest manuscripts end at 16:8 ('they were afraid'); the 'long ending' (16:9–20) and the 'short ending' are later additions, varying across manuscripts."
 refs:
   - title: "The Gospel of Mark (NIGTC)"
@@ -72,6 +72,39 @@ tags: [phase-3, early-christianity, synoptic-gospels, mark, markan-priority, pas
 ## What it is
 The shortest and (by majority scholarly consensus) the **earliest** of the four canonical Gospels, composed in plain, rapid Koine Greek around the time of the First Jewish Revolt (~+66/+72). Sixteen chapters narrating Jesus's ministry from his baptism by John (Mk 1) through Galilean miracles, conflict with religious authorities, the Caesarea Philippi turning-point (Peter's confession, 8:29), the Passion in Jerusalem, and the empty tomb (16:1–8). The original ending leaves the women fleeing in fear and saying nothing — a literarily startling termination. Hallmarks of Markan style: paratactic *kai... kai... kai* ("and... and... and"), the urgent adverb *euthys* ("immediately") 42 times, intercalated "sandwich" narratives (story A interrupted by story B and resumed), and a dark portrayal of the disciples' failure to understand.
 
+## Primary text — selected passages
+
+### Mark 1:1–4, 14–15 — Opening verse, the Isaianic herald, and the Markan kerygma
+*Trans. NRSV; Marcus, J. (2000). Mark. Anchor Yale Bible / Hermeneia. Doubleday / Fortress.*
+> The beginning of the good news [*euangelion*] of Jesus Christ, the Son of God.
+> As it is written in the prophet Isaiah, "See, I am sending my messenger ahead of you, who will prepare your way; the voice of one crying out in the wilderness: 'Prepare the way of the Lord, make his paths straight,'"
+> John the baptizer appeared in the wilderness, proclaiming a baptism of repentance for the forgiveness of sins...
+> Jesus came to Galilee, proclaiming the good news of God, and saying, "The time is fulfilled, and the kingdom of God has come near; repent, and believe in the good news."
+
+*Mark 1:1's *euangelion* (gospel / good news) is the first use of this word as a literary genre-name for a narrative account. Mark invented the genre. Jesus's 1:15 proclamation — the kingdom is near, repent, believe — is the Markan kerygma in 12 Greek words.*
+
+### Mark 8:29, 31 — Caesarea Philippi: the confession and first Passion prediction
+*Trans. NRSV*
+> Peter answered him, "You are the Messiah [*ho Christos*]."
+> Then he began to teach them that the Son of Man must undergo great suffering, and be rejected by the elders, the chief priests, and the scribes, and be killed, and after three days rise again.
+
+*Mark 8 is the structural hinge of the entire Gospel — after Peter's confession, Jesus immediately redefines Messiahship through the Passion prediction. The first Passion prediction (8:31) is the first of three, each immediately followed by a disciple failure (8:32–33, 9:33–37, 10:35–40). The suffering-Messiah definition is Mark's central theological move.*
+
+### Mark 14:61–62 — Before the high priest: the *ego eimi* claim
+*Trans. NRSV*
+> "Are you the Messiah, the Son of the Blessed One?"
+> Jesus said, "I am; and 'you will see the Son of Man seated at the right hand of the Power,' and 'coming with the clouds of heaven.'"
+
+*Mark 14:62 is the most dense intertextual moment in the Gospel: "I am" (Exod 3:14 echo?), Psalm 110:1 (right hand of the Power), and Daniel 7:13 (coming with clouds) combined in one response. It triggers the blasphemy charge. This scene is the literary and Christological climax of the entire narrative.*
+
+### Mark 16:1–8 — The original ending: the empty tomb and the women's silence
+*Trans. NRSV*
+> And they went out and fled from the tomb, for terror and amazement had seized them; and they said nothing to anyone, for they were afraid.
+
+*This is where the earliest manuscripts end. No resurrection appearances, no commissioning — only fear, flight, and silence. So destabilizing that scribes added at least two supplementary endings (the "short ending" and the "long ending" 16:9–20) to resolve it.*
+
+*Citations: NRSV; Marcus 2000, 2009, AYB 27/27A.*
+
 ## Context
 - **Political milieu.** Composed during or shortly after the **First Jewish Revolt** (+66/+73) and most likely *after* the destruction of the Second Temple (+70). Mark 13 (the "Little Apocalypse") references the desolation of the Temple in ways that are easier to read as composed knowing it has occurred. The community appears to have suffered persecution (4:17 "tribulation or persecution arises on account of the word") and to anticipate parousia within a generation (13:30 "this generation will not pass away").
 - **Religious milieu.** Mixed Jewish-Gentile Christian community. Mark explains Jewish customs (7:3–4 hand-washing; 14:12 Passover preparation) — implying the audience includes Gentiles who need this background. The community confesses Jesus as Messiah, Son of God, Son of Man, and Lord.
@@ -99,6 +132,16 @@ The shortest and (by majority scholarly consensus) the **earliest** of the four 
 - **Place of composition.** Rome (Papias tradition; Marcus, Hengel, Bauckham) vs. Syria-Palestine (Marxsen, Theissen, Roskam). Mark's Latinisms (*kēnson* "census", *spekoulatōr* "executioner") favor Rome; his accurate Palestinian geography in some places and odd geography in others ambiguous.
 - **Ending.** Original ending at 16:8 (consensus); long ending (16:9–20) is 2nd-century addition (consensus). What 16:8 *means* theologically — incomplete, deliberately open, originally followed by lost ending — remains debated.
 - **Authorship.** Papian Petrine connection vs. anonymous later composition: Bauckham (2006) argues the Papias tradition is largely accurate; others see late attribution.
+
+## MASSIVE WIN — cross-tradition edges
+
+- **Markan Priority — the most consequential text-critical result in New Testament scholarship, overturning 1,800 years of Matthew-first assumption and restructuring every historical-Jesus inquiry**: The demonstration that Mark is the earliest Gospel and that Matthew and Luke each used it as a primary source (Lachmann 1835; Holtzmann 1863; Streeter 1924, *The Four Gospels*) is the foundational result of modern NT source-criticism. Its consequences: (1) Mark, not Matthew, is our closest written narrative to the historical Jesus; (2) whatever Mark preserves that Matthew and Luke smooth over — the harsh Greek, the disciples' repeated failure, the strange open ending at 16:8, Jesus's startling emotions (anger: 3:5, grief: 3:5, limitation: 6:5) — is more likely to be historical precisely because it is harder; (3) the literary relationship is demonstrable (Matthew incorporates ~90% of Mark's verses, Luke ~50%), proving these texts have a *textual* history subject to editorial shaping. Every modern reconstruction of the historical Jesus — Bultmann, Jeremias, Sanders, Meier, Crossan, Wright — depends on this priority claim. The discovery reversed Augustine's ancient verdict (Matthew first) and rewrote the entire field (Streeter 1924, Macmillan; Kloppenborg 2008, *Q: The Earliest Gospel*, WJK pp.1–24; Marcus 2000, AYB 27 pp.48–56).
+
+- **Mark 1:1 coined "euangelion" as a literary genre — the most consequential genre invention in Western literary history**: Mark 1:1 ("The beginning of the good news [*euangelion*] of Jesus Christ") is the first use of *euangelion* not as a proclamation but as the *name of a written narrative form*. Before Mark there were Jesus-sayings collections (Q, Gospel of Thomas), confessional formulae (1 Cor 15:3–5), and letters (Paul) — but no *Gospel as narrative*. Mark invented the form: a rapid third-person narrative of Jesus's public career, miracles, controversies, and Passion, structured around a fatal climax, ending abruptly. Matthew, Luke, John, and hundreds of subsequent gospels (canonical and apocryphal) are all writing within Mark's genre. The genre then shaped: weekly Gospel reading in Christian liturgy; the Passion play tradition; story-shaped theology (narrative theology as a 20th-c. movement); and Western literary narrative structure (the Passion arc as the template for tragedy-and-reversal in Western fiction). No other ~7,000-word text has generated as much derivative literature (Burridge 2004, *What Are the Gospels?*, Eerdmans 2nd ed. pp.xi–xxiii; France 2002, NIGTC pp.1–25; Hengel 1985, *Studies in the Gospel of Mark*, SCM pp.1–30).
+
+- **Mark 16:8 — the most debated literary ending in antiquity, proving the canonical NT is a product of scribal editorial anxiety and demonstrating that transmission has seams**: The original ending of Mark at 16:8 ("they said nothing to anyone, for they were afraid") was so disturbing to early Christians that scribes produced at least two supplementary endings: the "short ending" and the "long ending" (16:9–20), absent from Codex Vaticanus and Codex Sinaiticus (the two oldest complete manuscripts) and flagged by Eusebius and Jerome as not in the best manuscripts. The "long ending" explicitly adds post-resurrection appearances, the Great Commission, and the Ascension — all absent from Mark's original. This is the single most clearly documented case of scribal editorial shaping in the NT: a text too shocking was extended. The proof-of-transmission-history argument first advanced here has been applied to every textual tradition (Homer's *doloneia*, Hesiod's *Theogony* openings, the Gilgamesh tablet XI). Mark 16:8 is the text that proves the canonical Gospel is not a verbatim divine transcript but a product of literary transmission with editorial seams (Metzger 1994, *A Textual Commentary on the Greek NT*, UBS pp.102–106; Kelhoffer 2000, *Miracle and Mission*, WUNT 112; Hurtado 2003, *Lord Jesus Christ*, Eerdmans pp.313–316).
+
+- **Mark 14:62 — the trial scene climax, combining Daniel 7 + Psalm 110 into the first public unambiguous Christological claim, triggering the crucifixion**: At Mark 14:61–62, before the high priest, Jesus responds to "Are you the Messiah, the Son of the Blessed?" with "I am; and you will see the Son of Man seated at the right hand of the Power, and coming with the clouds of heaven" — simultaneously echoing the divine *ego eimi* (possibly Exod 3:14 and Isa 43:10), quoting Psalm 110:1 (enthronement of the Lord's anointed at the right hand of God), and quoting Daniel 7:13 (the Son of Man coming on clouds). This response is the convergence of every Christological thread in the Gospel — Messiah, Son of God, Son of Man, divine self-identification — in a single moment. It triggers the charge of blasphemy and the death sentence. Mark 14:62 is thus the literary climax of the Gospel's argument and the historical pivot on which the crucifixion turns — the moment that made the cross *this particular cross* (Marcus 2009, AYB 27A pp.1003–1022; Brown 1994, *The Death of the Messiah*, Anchor Bible vol. 1 pp.454–461; Collins 1993, Hermeneia *Daniel* pp.304–310 on the Dan 7 background).
 
 ## Refs
 1. Marcus, J. (2000, 2009). *Mark*. Anchor Yale Bible / Hermeneia (2 vols).

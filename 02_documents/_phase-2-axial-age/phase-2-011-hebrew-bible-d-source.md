@@ -22,7 +22,7 @@ influenced-by: ["northern E tradition (carried south after 722 BCE)", "Hoseanic 
 influences: ["the Deuteronomistic History (Joshua–2 Kings)", "Jeremiah", "all subsequent Jewish covenantal theology", "Christian covenantal theology"]
 deities-mentioned: ["[[yahweh]]"]
 events-context: ["Josianic reform (~-622 BCE) — 'finding' of the Book of the Law in the Temple (2 Kings 22)"]
-status: "metadata"
+status: "full"
 preservation: "The reconstructed Ur-Deuteronomium corresponds approximately to Deuteronomy 12–26 (the legal core), surrounded by later Deuteronomistic framing (chs. 1–11, 27–34). Continuous Jewish manuscript tradition. Dead Sea Scrolls preserve substantial Deuteronomy material (4QDeut^n, etc.)."
 refs:
   - title: "Deuteronomy 1–11 / Deuteronomy 12–36"
@@ -70,6 +70,30 @@ tags: [phase-2, hebrew-bible, deuteronomy, josiah, centralization, documentary-h
 ## What it is
 D, the "Deuteronomic" source, is the third of the four classical reconstructed Pentateuchal sources. Unlike J and E (interwoven throughout Genesis–Numbers), D is essentially confined to the book of Deuteronomy, framed as Moses's farewell speech in the plains of Moab. The core of Deuteronomy — most agree on chapters 12–26 — is widely identified with the "Book of the Law" (*sēfer hattôrāh*) "found" in the Jerusalem Temple in the 18th year of King Josiah (~622 BCE), as narrated in 2 Kings 22–23 and 2 Chronicles 34. Its hallmarks: cult centralization ("the place which YHWH your God shall choose to make his name dwell there"), strict monolatry, covenantal theology framed in vassal-treaty form, the *Shema* (Deut 6:4), the law of the king (17:14–20), the prophet like Moses (18:15–22), and a humanistic ethical revision of earlier law codes.
 
+## Primary text — selected passages
+
+### Deuteronomy 6:4–9 — The Shema: Israel's core loyalty oath
+*Trans. NRSV; source: Weinfeld, M. (1991). Deuteronomy 1–11. Anchor Bible. Yale UP.*
+> Hear, O Israel: The LORD is our God, the LORD alone. You shall love the LORD your God with all your heart, and with all your soul, and with all your might. Keep these words that I am commanding you today in your heart. Recite them to your children and talk about them when you are at home and when you are away, when you lie down and when you rise. Bind them as a sign on your hand, fix them as an emblem on your forehead, and write them on the doorposts of your house and on your gates.
+
+*The *Shema* (from the first Hebrew word: "hear!") is the foundational liturgical text of Jewish worship, recited morning and evening, written on mezuzot and tefillin. Jesus cites 6:4–5 as the first and greatest commandment (Mark 12:29–30). The Shema's "YHWH alone" (or "YHWH is one") is the monolatry / monotheism hinge — whether it denies other gods' existence or merely commands exclusive loyalty has been debated for 2,700 years.*
+
+### Deuteronomy 17:14–17 — The law of the king: constitutional limitation
+*Trans. NRSV*
+> When you have come into the land that the LORD your God is giving you... and you say, "I will set a king over me, like all the nations that are around me," you may indeed set over you a king whom the LORD your God will choose... Even so, he must not acquire many horses for himself... And he must not acquire many wives for himself, or else his heart will turn away; also silver and gold he must not acquire in great quantity for himself.
+
+*This passage limits the king's military capacity (no horse-army), harem size, and personal wealth, and requires him to read the Torah daily — the oldest text in any tradition explicitly subordinating a ruler to a written law. Protestant Reformers, particularly the Scottish Covenanters, read Deut 17 as biblical authority for constitutional monarchy and resistance to tyranny.*
+
+### Deuteronomy 28:1–3, 15 — Blessings and curses: the vassal-treaty sanction structure
+*Trans. NRSV*
+> If you will only obey the LORD your God, by diligently observing all his commandments that I am commanding you today, the LORD your God will set you high above all the nations of the earth; all these blessings shall come upon you and overtake you...
+> [...]
+> But if you will not obey the LORD your God by diligently observing all his commandments and decrees, which I am commanding you today, then all these curses shall come upon you and overtake you...
+
+*Deuteronomy 28's blessings-and-curses section reproduces the formal sanction structure of Neo-Assyrian vassal treaties (Esarhaddon's Succession Treaty, 672 BCE) sentence-by-sentence in places, confirming that D's covenant theology uses imperial treaty-form as its structural template — a deliberate polemical inversion: Israel's lord is Yahweh, not the Assyrian king.*
+
+*Citations: NRSV; Weinfeld 1991, Anchor Bible; Weinfeld 1972, Oxford UP.*
+
 ## Context
 - **Political milieu.** The Assyrian empire's collapse (Ashurbanipal dies ~627 BCE; Nineveh falls 612 BCE) opens space for Judahite religious-political assertion. King Josiah (r. ~640–609 BCE) launches a major reform centralizing worship at Jerusalem, destroying outlying sanctuaries (the "high places"), and instituting national Passover (2 Kings 23). The discovery of the law-book in the Temple is integral to this reform; many scholars view this as either the rediscovery of an existing northern legal tradition or a Josianic-period composition presented as ancient.
 - **Religious milieu.** The reform represents the institutional victory of strict monolatry — Yahweh-only worship at a single legitimate sanctuary (Jerusalem) — over the popular polytheism and decentralized local cult that the prophets and the Deuteronomic school had been attacking for a century.
@@ -96,6 +120,16 @@ D, the "Deuteronomic" source, is the third of the four classical reconstructed P
 - **Northern vs. southern origin.** Older view: composed in Judah after the fall of the north, incorporating northern traditions (Alt, von Rad). Some argue more thoroughly southern.
 - **Mechanism of "discovery".** Pious fraud (a Josianic composition presented as ancient — late 19th c. consensus); recovered text (substantially existing, recovered during repairs); reform program written *and* presented contemporaneously. All three positions retain advocates.
 - **DtrH layers.** Cross's two-edition theory (Dtr1 Josianic, Dtr2 exilic) vs. Smend's three-layer theory (DtrH, DtrP, DtrN) vs. Noth's single-author view. Unresolved.
+
+## MASSIVE WIN — cross-tradition edges
+
+- **The Shema (Deut 6:4) — the most continuously recited text in Jewish history and the direct source of Jesus's "first and greatest commandment"**: Deut 6:4 ("Hear, O Israel: YHWH our God, YHWH is one / alone") has been recited by Jews morning and evening, inscribed in mezuzot and tefillin, and said at the moment of death for at least 2,700 years — a liturgical frequency matched only by the Islamic *shahāda* and the Lord's Prayer. Jesus cites Deut 6:4–5 explicitly as the first and greatest commandment (Mark 12:29–30; Matt 22:37) — making the Shema the single Hebrew Bible text most directly attributed to Jesus's teaching. Paul's monotheist formula in 1 Cor 8:6 ("there is one God, the Father") is a Shema restatement in Greek philosophical dress. The Islamic *shahāda* ("There is no god but God; Muhammad is the messenger of God") is the same declaration's Quranic form, completing the Abrahamic chain. Three world religions trace their monotheist core formula to this single Deuteronomic verse (Weinfeld 1991, Anchor Bible pp.337–346; Wright 2002, *The New Testament and the People of God*, Fortress pp.248–252; Moberly 1990, "Toward an Interpretation of the Shema," *JTS* 41).
+
+- **Deuteronomy's vassal-treaty structure → Neo-Assyrian parallels → the oldest constitutional theory in world history**: Weinfeld (1972) documented that Deuteronomy's overall structure — historical prologue, stipulations, blessings, curses, witnesses — reproduces the form of Neo-Assyrian vassal treaties, especially Esarhaddon's Succession Treaty (672 BCE). The parallel is not generic: Deuteronomy 28's curse-list parallels the Esarhaddon treaty's curse-list sentence-by-sentence in a dozen places (disease, blindness, cannibalism, exile). D's theological inversion: Israel's covenant-lord is not the Assyrian king but Yahweh — the same treaty structure, but the suzerain has changed. This makes D the oldest surviving constitutionalist political theory: a ruler-people relationship governed by a binding covenant with specified consequences for violation. The Calvinist covenant theology that generates Scottish Covenantism (1638), the Puritan covenant framework of the Massachusetts Bay Colony, and thus American constitutional theory all trace to this Deuteronomic covenant structure (Weinfeld 1972, Oxford UP pp.116–146; Steymans 1995, *Deuteronomium 28 und die adê*, OBO; McCarthy 1981, *Treaty and Covenant*, Analecta Biblica 21).
+
+- **The law of the king (Deut 17:14–20) — the oldest surviving text explicitly limiting monarchical power, ancestral to constitutional limits on executive authority**: Deut 17:14–20 constrains the king in three areas: no multiplication of horses (military build-up), no multiplication of wives (harem politics), no amassing of gold and silver (extraction economy). More importantly, he "must read [the Torah] all the days of his life, so that he may learn to fear the LORD his God, diligently observing all the words of this law... not exalting himself above other members of the community." The king is explicitly subject to the written law — not its source. This is the oldest surviving constitutional text placing a written law above the ruler. Protestant Reformers read Deut 17 as the biblical charter for limiting monarchs: John Knox used it against Mary Queen of Scots; Samuel Rutherford's *Lex Rex* (1644) argues from it that sovereignty resides in law, not the king; the Massachusetts Bay Puritans treated it as the blueprint for godly governance (Miller 1956, *Errand into the Wilderness*, Harvard UP; Skinner 1978, *Foundations of Modern Political Thought*, Cambridge UP vol. 2 pp.220–225; Weinfeld 1991, pp.404–415).
+
+- **The Josiah "discovery" event (2 Kings 22) — the template for every subsequent canonical textual discovery in Western religion**: The narrative of Hilkiah "finding" the Book of the Law in the Temple during repairs, presenting it to Josiah, consulting the prophetess Huldah for authentication, and then using it to authorize a national reform program is the founding event of Hebrew canon-formation. It established a template that recurs in Western religious history: (1) a text is found in unexpected circumstances; (2) authenticated by recognized authority; (3) declared binding on the community; (4) used to justify a reform program. This template governs: the Qumran scrolls' discovery and their role in 20th-century canon debates; Luther's "discovery" of Romans/Galatians and the Reformation; the Nag Hammadi find and Gnostic "recovery." Josiah's 622 BCE event is the archetype for what it means to "find a text that changes everything" (Friedman 1987, HarperOne pp.100–121; Schniedewind 2004, *How the Bible Became a Book*, Cambridge UP pp.115–132; Nissinen 2010, *Prophecy in Its Ancient Near Eastern Context*, SBL).
 
 ## Refs
 1. Weinfeld, M. (1991, 2008). *Deuteronomy 1–11* and *Deuteronomy 12–36*. Anchor Bible.
