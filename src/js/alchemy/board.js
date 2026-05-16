@@ -30,6 +30,7 @@
   let menuEl = null;
   let panState = null;      // mid-pan info
   let dragState = null;     // mid-card-drag info
+  let marqueeState = null;  // mid-marquee-select info
   let nextCardId = 1;
   let searchResults = [];
 
@@ -582,6 +583,15 @@
     nodeIds.forEach(id => { if (id && !seen.has(id)) { seen.add(id); picks.push(id); } });
     window.STATE.alchemyPicks = picks;
     window.STATE.alchemyActivePreset = null;
+    // FIX (next-session-queue bug #1): the user curated this set on the Alchemy
+    // board — don't auto-inflate it with shortest-path bridges. The previous
+    // behaviour ran O(N²) BFS expansions and dumped 50-200+ cold-positioned
+    // bridge nodes into the force-sim, which then violently rearranged. Skip
+    // bridge expansion in Transmission and pre-layout via ELK so the graph
+    // lands stable.
+    window.STATE.alchemySkipBridges = true;
+    window.STATE.alchemyLayout = 'elk-layered';
+    try { localStorage.setItem('alch-layout', 'elk-layered'); } catch (e) { /* ignore */ }
     if (typeof window.setView === 'function') window.setView('transmission');
     else {
       // Fallback: click the nav item
@@ -734,25 +744,89 @@
   }
 
   // ----- pan/zoom handlers on the board background -----
+  // ----- marquee (rectangle / click-drag) selection -----
+  // Shift+drag from empty board → translucent gold rect → on release, every
+  // card whose screen-space bounding box intersects the rect is added to
+  // state.selected. Always ADDITIVE: shift-drag is how you grow a selection.
+  function ensureMarqueeEl() {
+    if (marqueeState.el) return marqueeState.el;
+    const el = document.createElement('div');
+    el.className = 'alch-marquee';
+    rootEl.appendChild(el);
+    marqueeState.el = el;
+    return el;
+  }
+  function updateMarquee(clientX, clientY) {
+    const el = ensureMarqueeEl();
+    const rootRect = rootEl.getBoundingClientRect();
+    const x0 = Math.min(marqueeState.startX, clientX) - rootRect.left;
+    const y0 = Math.min(marqueeState.startY, clientY) - rootRect.top;
+    const x1 = Math.max(marqueeState.startX, clientX) - rootRect.left;
+    const y1 = Math.max(marqueeState.startY, clientY) - rootRect.top;
+    el.style.left = x0 + 'px';
+    el.style.top = y0 + 'px';
+    el.style.width = (x1 - x0) + 'px';
+    el.style.height = (y1 - y0) + 'px';
+  }
+  function finishMarquee() {
+    if (!marqueeState) return;
+    const el = marqueeState.el;
+    if (el) {
+      // Compute selection: every card whose screen-bbox intersects the marquee rect.
+      const marqueeRect = el.getBoundingClientRect();
+      // Empty/zero-area marquee → treat as click-empty: deselect
+      if (marqueeRect.width < 4 && marqueeRect.height < 4) {
+        if (!marqueeState.additive) {
+          state.selected.clear();
+          refreshSelection();
+        }
+      } else {
+        boardEl.querySelectorAll('.alch-card').forEach(cardEl => {
+          const r = cardEl.getBoundingClientRect();
+          const intersects = !(r.right < marqueeRect.left || r.left > marqueeRect.right ||
+                               r.bottom < marqueeRect.top || r.top > marqueeRect.bottom);
+          if (intersects) state.selected.add(+cardEl.dataset.cardId);
+        });
+        refreshSelection();
+      }
+      el.remove();
+    }
+    marqueeState = null;
+  }
+
   function attachPanZoom() {
     rootEl.addEventListener('pointerdown', (ev) => {
       if (ev.target.closest('.alch-card') || ev.target.closest('.alch-toolbar') || ev.target.closest('.alch-menu')) return;
-      // Click empty board → deselect + clear edge highlight + start pan
+      // Shift+drag → MARQUEE select (additive to existing selection)
+      // Plain-drag → PAN (and deselect on no-move)
+      if (ev.button !== 0) return;
+      rootEl.setPointerCapture(ev.pointerId);
+      dismissMenu();
+      if (ev.shiftKey) {
+        // Start marquee — additive to current selection
+        marqueeState = {
+          startX: ev.clientX, startY: ev.clientY,
+          el: null, additive: true
+        };
+        return;
+      }
+      // Plain click on empty: deselect + clear edge highlight + start pan
       state.selected.clear();
       refreshSelection();
       if (highlightCardIds) { highlightCardIds = null; drawEdges(); }
-      dismissMenu();
-      if (ev.button !== 0) return;
-      rootEl.setPointerCapture(ev.pointerId);
       panState = { startX: ev.clientX, startY: ev.clientY, origX: state.pan.x, origY: state.pan.y };
     });
     rootEl.addEventListener('pointermove', (ev) => {
+      if (marqueeState) { updateMarquee(ev.clientX, ev.clientY); return; }
       if (!panState) return;
       state.pan.x = panState.origX + (ev.clientX - panState.startX);
       state.pan.y = panState.origY + (ev.clientY - panState.startY);
       applyTransform();
     });
-    const endPan = () => { if (panState) { panState = null; save(); } };
+    const endPan = () => {
+      if (marqueeState) { finishMarquee(); return; }
+      if (panState) { panState = null; save(); }
+    };
     rootEl.addEventListener('pointerup', endPan);
     rootEl.addEventListener('pointercancel', endPan);
 

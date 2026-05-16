@@ -2658,6 +2658,11 @@ const SCRIPTURE_CORPORA = {
         { id: 'phase-2-020-lamentations',        label: 'Lamentations' },
       ]},
       { id: 'wisdom-writings', label: 'Wisdom & later writings', color: '#c4a05a', books: [
+        { id: 'phase-2-034-books-of-kings',    label: 'Books of Kings' },
+        { id: 'phase-2-job',                   label: 'Job' },
+        { id: 'phase-2-041-book-of-proverbs',  label: 'Proverbs' },
+        { id: 'phase-2-ecclesiastes',          label: 'Ecclesiastes' },
+        { id: 'phase-2-song-of-songs',         label: 'Song of Songs' },
         { id: 'phase-3-007-sirach',            label: 'Sirach (Ben Sira)' },
         { id: 'phase-3-008-book-of-daniel',    label: 'Daniel' },
         { id: 'phase-3-012-wisdom-of-solomon', label: 'Wisdom of Solomon' },
@@ -2770,8 +2775,13 @@ const SCRIPTURE_CORPORA = {
         { id: 'phase-3-001-second-third-isaiah', label: 'Second & Third Isaiah' },
       ]},
       { id: 'tanakh-ketuvim', label: 'Ketuvim · Writings', color: '#a09a78', books: [
-        { id: 'phase-3-008-book-of-daniel', label: 'Daniel' },
-        { id: 'phase-2-020-lamentations',   label: 'Lamentations' },
+        { id: 'phase-2-034-books-of-kings',  label: 'Books of Kings' },
+        { id: 'phase-2-job',                 label: 'Job' },
+        { id: 'phase-2-041-book-of-proverbs', label: 'Proverbs' },
+        { id: 'phase-2-ecclesiastes',        label: 'Ecclesiastes' },
+        { id: 'phase-2-song-of-songs',       label: 'Song of Songs' },
+        { id: 'phase-3-008-book-of-daniel',  label: 'Daniel' },
+        { id: 'phase-2-020-lamentations',    label: 'Lamentations' },
       ]},
       { id: 'tanakh-qumran-matrix', label: 'Qumran textual matrix', color: '#a8a3b8', books: [
         { id: 'phase-3-011-dead-sea-scrolls', label: 'Dead Sea Scrolls' },
@@ -2896,6 +2906,9 @@ const SCRIPTURE_CORPORA = {
       { id: 'avesta-younger', label: 'Younger Avesta · Yasna corpus', color: '#4a5aa0', books: [
         { id: 'phase-2-004-yasna-younger-avesta', label: 'Yasna · Younger Avesta' },
       ]},
+      { id: 'avesta-pahlavi-visionary', label: 'Pahlavi visionary literature · Sasanian era (4th–9th c.)', color: '#3a4a8a', books: [
+        { id: 'phase-4-086-arda-viraf-namag', label: 'Ardā Wirāz Nāmag · Zoroastrian heaven + hell journey (~4th–9th c.)' },
+      ]},
     ],
   },
   // ----- Shintō canon — Japan's two foundational chronicles. Kojiki (712 CE)
@@ -2957,6 +2970,9 @@ const SCRIPTURE_CORPORA = {
       ]},
       { id: 'norse-prose', label: 'Prose Edda · Snorri Sturluson (~1220 CE)', color: '#5a6a8a', books: [
         { id: 'P8-015-prose-edda-snorri', label: 'Prose Edda (Snorra Edda)' },
+      ]},
+      { id: 'nordic-finnish', label: 'Finnish national epic', color: '#7a8a9a', books: [
+        { id: 'P8-018-kalevala', label: 'Kalevala (1835/1849) · Finnish national epic' },
       ]},
     ],
   },
@@ -3024,6 +3040,9 @@ const SCRIPTURE_CORPORA = {
       { id: 'ghazali-corpus', label: 'Al-Ghazālī · Integration of reason + mysticism (~1058–1111)', color: '#4a6a4a', books: [
         { id: 'P5-015-al-ghazali-ihya', label: 'Al-Ghazālī · Iḥyāʾ ʿUlūm al-Dīn' },
         { id: 'P5-045-al-ghazali-tahafut-al-falasifa', label: 'Al-Ghazālī · Tahāfut al-Falāsifa' },
+      ]},
+      { id: 'islamic-sira-biography', label: 'Sīra literature · prophetic biography (~768 CE)', color: '#3a5a3a', books: [
+        { id: 'P5-043-ibn-ishaq-sirat-rasul-allah', label: 'Ibn Isḥāq · Sīrat Rasūl Allāh (~768 CE) · first Muhammad biography' },
       ]},
     ],
   },
@@ -3165,6 +3184,10 @@ const SCRIPTURE_CORPORA = {
       ]},
       { id: 'ethiopic-jesuit-period', label: 'Post-Jesuit hagiography (17th c.)', color: '#8a5a4a', books: [
         { id: 'phase-7-040-walatta-petros-hagiography',  label: 'Gadla Walatta Petros (Galawdewos, 1672)' },
+      ]},
+      { id: 'ethiopic-church-order', label: 'Ethiopian church-order texts (late antique)', color: '#7a6080', books: [
+        { id: 'phase-4-083-mashafa-kidan-testament-of-our-lord', label: 'Mashafa Kidān · Testament of Our Lord (Ethiopian church order)' },
+        { id: 'P4-084-ethiopian-sinodos', label: 'Ethiopian Sinodos · apostolic canon collection' },
       ]},
     ],
   },
@@ -5504,6 +5527,9 @@ VIEWS.transmission = {
         STATE.alchemyElkPositions.set(STATE.alchemyLayout, pos);
         // Only re-render if we're still on this view + same layout key.
         if (STATE.view === 'transmission' && STATE.alchemyLayout.indexOf('elk-') === 0) {
+          // Preserve skipBridges across the auto-ELK re-render so the bridge
+          // expansion doesn't fire on the second pass and re-inflate the graph.
+          if (_skipBridges) STATE.alchemySkipBridges = true;
           setView('transmission');
         }
       }).catch(err => console.warn('[transmission] auto-ELK failed:', err));

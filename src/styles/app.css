@@ -1713,6 +1713,53 @@ body.view-atlas main.canvas { background: var(--bg-0); }
   z-index: 1;
 }
 
+/* Marquee (click-drag) rectangle selection — shift+drag from empty board.
+   Sits above cards (z-index 5) so the user sees what they're enclosing.
+   pointer-events: none so the drag passes through to the underlying capture. */
+.alch-marquee {
+  position: absolute;
+  border: 1px dashed var(--gold);
+  background: rgba(212,165,90,0.08);
+  pointer-events: none;
+  z-index: 5;
+  border-radius: 2px;
+}
+
+/* Pantheon v2 (WebGL R&D) — placeholder card shown while parity checklist
+   is being filled in. Hidden behind ?webgl=1 URL flag in production. */
+.pantheon-v2-pane {
+  position: absolute; inset: 56px 24px 24px;
+  left: calc(var(--eff-nav-w) + 24px);
+  right: calc(var(--eff-detail-w) + 24px);
+  display: flex; align-items: center; justify-content: center;
+  transition: left var(--t-layout) var(--ease), right var(--t-layout) var(--ease);
+}
+.pantheon-v2-placeholder {
+  max-width: 620px; padding: 36px 44px;
+  border: 1px solid var(--border-soft); border-radius: 6px;
+  background: rgba(168,123,181,0.04);
+  font-family: var(--serif);
+}
+.pantheon-v2-placeholder .ph2-title {
+  margin: 0 0 14px; font-size: 20px; color: var(--gold);
+  letter-spacing: 0.04em;
+}
+.pantheon-v2-placeholder .ph2-desc {
+  font-size: 13px; color: var(--text-2); line-height: 1.6; margin-bottom: 16px;
+}
+.pantheon-v2-placeholder .ph2-desc code {
+  background: rgba(212,165,90,0.10); padding: 1px 5px; border-radius: 2px;
+  font-family: var(--mono); font-size: 11px;
+}
+.pantheon-v2-placeholder .ph2-checklist {
+  list-style: none; padding: 0; margin: 0 0 16px;
+  font-family: var(--mono); font-size: 11px; color: var(--text-3);
+  letter-spacing: 0.04em; line-height: 1.9;
+}
+.pantheon-v2-placeholder .ph2-footer {
+  font-size: 11px; color: var(--text-3); font-style: italic; margin: 0;
+}
+
 /* ----- toolbar (fixed top) ----- */
 .alch-toolbar {
   position: absolute; top: 14px; left: 24px; right: 24px;
