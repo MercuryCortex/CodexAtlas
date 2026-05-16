@@ -27,6 +27,7 @@ NODE_DIRS = {
     "tradition":["07_traditions"],
     "symbol":   ["09_symbols"],
     "music":    ["10_music"],
+    "alphabet": ["11_alphabets"],
 }
 
 # ---------- minimal YAML parser tailored to our schema ----------
@@ -483,6 +484,25 @@ def collect_node_edges(nodes_by_id):
                         "type": etype,
                         "field": "cross-symbol-edges",
                     })
+        # cross-alphabet-edges — same structured form for 11_alphabets/ nodes.
+        xalph = fm.get("cross-alphabet-edges")
+        if isinstance(xalph, list):
+            for s in xalph:
+                if not isinstance(s, dict) or not s.get("target"):
+                    continue
+                etype = (s.get("type") or "parallel-form").strip()
+                target_raw = str(s["target"]).strip()
+                targets = list(wikilinks(target_raw)) or [target_raw.lstrip("[").rstrip("]")]
+                for target in targets:
+                    target = target.strip()
+                    if not target or target == node_id:
+                        continue
+                    edges.append({
+                        "source": node_id,
+                        "target": target,
+                        "type": etype,
+                        "field": "cross-alphabet-edges",
+                    })
         # cross-music-edges — same structured form for 10_music/ nodes.
         xmus = fm.get("cross-music-edges")
         if isinstance(xmus, list):
@@ -769,6 +789,7 @@ def main():
     print(f"  traditions: {counts['tradition']}")
     print(f"  symbols   : {counts.get('symbol', 0)}")
     print(f"  music     : {counts.get('music', 0)}")
+    print(f"  alphabets : {counts.get('alphabet', 0)}")
     print(f"  edges     : {len(deduped)}")
 
 if __name__ == "__main__":
