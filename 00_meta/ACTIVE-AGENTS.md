@@ -4,10 +4,18 @@ _Hand-maintained. Each agent currently working in the vault appends a claim bloc
 
 ---
 
-## sonnet-egyptian-persons-1 — Nefertiti + Sekhmet/Nephthys/Neith upgrades — started 2026-05-16 — IN PROGRESS
-- Owning: `04_persons/nefertiti.md` (NEW), `03_deities/sekhmet.md`, `03_deities/nephthys.md`, `03_deities/neith.md`
-- Goal: Create Nefertiti person node; upgrade Sekhmet/Nephthys/Neith with cross-tradition MASSIVE WIN sections
+## sonnet-serapis-ennead-1 — Serapis full upgrade + heliopolis-ennead theme — started 2026-05-16 — IN PROGRESS
+- Owning: `03_deities/serapis.md` (upgrade metadata → full), `06_themes/heliopolis-ennead.md` (NEW partial)
+- NOT touching: `03_deities/apis-bull.md` (already metadata, no conflict with sonnet-egyptian-persons-1)
+- Goal: Upgrade Serapis with MASSIVE WIN Christ-iconography edge + healing-shrines + Isis mystery-cult spread; create Heliopolitan Ennead theme with Neoplatonism + Trinity structural-ancestor edge
 - Status: in-progress
+
+---
+
+## ~~sonnet-egyptian-persons-1 — Nefertiti + Sekhmet/Nephthys/Neith upgrades — finished 2026-05-16 — DONE~~
+- ~~Owning: `04_persons/nefertiti.md` (NEW), `03_deities/sekhmet.md`, `03_deities/nephthys.md`, `03_deities/neith.md`~~
+- ~~Goal: Create Nefertiti person node; upgrade Sekhmet/Nephthys/Neith with cross-tradition MASSIVE WIN sections~~
+- ~~Status: done — commits d15622d, 49d43ef~~
 
 ---
 
@@ -40,10 +48,18 @@ _Hand-maintained. Each agent currently working in the vault appends a claim bloc
 
 ---
 
-## goblin-sky-weapon-1 — symbols / sky-weapon Indo-European thread — started 2026-05-16 — IN PROGRESS
-- Owning: `09_symbols/vajra-dorje.md` (NEW), `09_symbols/mjolnir.md` (NEW), `09_symbols/thunderbolt-keraunos.md` (NEW), `09_symbols/labrys.md` (NEW), `09_symbols/trishula.md` (NEW)
+## goblin-sky-weapon-1 — symbols / sky-weapon Indo-European thread — started 2026-05-16 — **FINISHED 2026-05-16**
+- Owned: `09_symbols/vajra-dorje.md` (NEW metadata), `09_symbols/mjolnir.md` (NEW metadata), `09_symbols/thunderbolt-keraunos.md` (NEW metadata), `09_symbols/labrys.md` (NEW metadata), `09_symbols/trishula.md` (NEW metadata)
 - Goal: Indo-European sky-weapon pattern; Indra-Thor-Zeus-YHWH dragon-slaying myth; Buddhist vajra transformation
-- Status: in-progress
+- Status: finished
+- Delivered:
+  - **`vajra-dorje.md`** — MASSIVE WIN: Vedic weapon (Indra + vajra → Vritra, Rigveda -1200) → Tantric Buddhist ritual implement (Vajrayana) semantic inversion documented; 4-variant table (Vedic/Tantric/Tibetan dorje/Japanese kongōsho); cross-symbol edges to aum-om, dharmachakra, serpent-cosmic-enemy, axis-mundi; 5 Tier-1 refs.
+  - **`mjolnir.md`** — MASSIVE WIN: Trendgården mold casts BOTH Mjolnir AND Christian cross = direct material evidence of amulet-tradition competition; Mjolnir-vajra-keraunos IE triple parallel (Watkins 1995); Nazi appropriation documented carefully; modern Ásatrú legal status; cross-symbol edges to serpent-cosmic-enemy, triskelion, double-headed-eagle, latin-cross; 5 Tier-1 refs.
+  - **`thunderbolt-keraunos.md`** — Zeus/Typhon Typhonomachy as Greek Chaoskampf (Watkins 1995 + Hesiod primary); Roman fulmen/Aquila → US Great Seal arrows as documented civilizational transmission; West borrowing-from-Near-East hypothesis documented; cross-symbol edges to serpent-cosmic-enemy, sun-disk, double-headed-eagle, axis-mundi; 5 Tier-1 refs.
+  - **`labrys.md`** — Mystery node: Linear A undeciphered; labyrinth etymology contested; Gimbutas thesis documented as Tier-2/controversial; Amazon-Scythian warrior women (Mayor 2014); 1970s lesbian feminist adoption; mystery-status: partially-deciphered; 5 refs (2 Tier-1, 2 Tier-2, 1 Tier-1).
+  - **`trishula.md`** — MASSIVE WIN: Poseidon trident ↔ Shiva Trishula = same PIE *\*trei-* root (West 2007); Trimurti encoding in three prongs; Tripura Vadha = Indian Chaoskampf; Devil's pitchfork as polemic-inversion of Neptune trident; cross-symbol edges to caduceus, serpent-cosmic-enemy, naga-serpent, fleur-de-lis, axis-mundi; 5 Tier-1 refs.
+- Build: 5 new symbol nodes · all wikilinks verified against live filesystem · 0 dead links introduced
+- Last edit: `00_meta/STATUS.md`
 
 ---
 
