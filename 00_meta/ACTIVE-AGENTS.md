@@ -4,6 +4,12 @@ _Hand-maintained. Each agent currently working in the vault appends a claim bloc
 
 ---
 
+## ~~sonnet-tibetan-music-1 — 4 Tibetan Sonic/Bardo music nodes — 2026-05-16 — FINISHED~~
+- ~~Owned: `10_music/music-tibetan-sound-cosmology.md` (NEW full hub), `10_music/music-gyuto-monks-multiphonic.md` (NEW full), `10_music/music-bardo-thodol-sonic.md` (NEW full), `10_music/music-tibetan-singing-bowls.md` (NEW full)~~
+- ~~Status: FINISHED — build: 91 music nodes · 16246 edges · 0 dead links introduced~~
+
+---
+
 ## ~~alphabet-tab-1 — Alphabets tab (4 modes, glyph viewer) — FINISHED~~
 - ~~Owns: `src/js/alphabets/` (NEW folder: glyph-data.js + glyph-viewer.js + origin-chain.js + mysticism.js), `src/js/app.js` (VIEWS.alphabets + renderAlphaScripts), `index.html` (nav item + 4 script tags + Noto Egyptian Hieroglyphs font), `src/styles/app.css` (full block appended)~~
 - ~~Status: FINISHED — commits fbed8d7, 106b1d9, 7ec91d8, 2facbd2~~
