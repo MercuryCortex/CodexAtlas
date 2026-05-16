@@ -17,7 +17,7 @@ canonical-slug
 ## Currently resolved slugs (auto-seeded — every existing file)
 
 
-### alphabet (17 nodes)
+### alphabet (18 nodes)
 
 - `alphabet-avestan`
 - `alphabet-brahmi-origin`
@@ -29,6 +29,7 @@ canonical-slug
 - `alphabet-huruf-muqattaat`
 - `alphabet-ilm-al-huruf`
 - `alphabet-isopsephy-greek`
+- `alphabet-letter-as-cosmos`
 - `alphabet-medu-netjer`
 - `alphabet-ogham`
 - `alphabet-phoenician`
@@ -37,7 +38,7 @@ canonical-slug
 - `alphabet-tibetan-tantric`
 - `alphabet-ugaritic`
 
-### deity (500 nodes)
+### deity (501 nodes)
 
 - `abathur`
 - `adamastor`
@@ -502,6 +503,7 @@ canonical-slug
 - `urizen`
 - `usha`
 - `utu-shamash`
+- `vac-goddess`
 - `vainamoinen`
 - `vairocana`
 - `vajradhara`
@@ -540,8 +542,9 @@ canonical-slug
 - `zemyna`
 - `zeus`
 
-### document (414 nodes)
+### document (415 nodes)
 
+- `avesta`
 - `document-kuntillet-ajrud-inscriptions`
 - `phase-1-001-kesh-temple-hymn`
 - `phase-1-002-pyramid-texts`
@@ -957,7 +960,7 @@ canonical-slug
 - `phase-8-023-gayanashagowa`
 - `tummal-chronicle`
 
-### event (187 nodes)
+### event (188 nodes)
 
 - `bent-pyramid-sneferu-dahshur`
 - `el-castillo-chichen-itza`
@@ -1142,6 +1145,7 @@ canonical-slug
 - `queens-chamber-great-pyramid`
 - `red-pyramid-sneferu-dahshur`
 - `relieving-chambers-great-pyramid`
+- `solomons-temple`
 - `sphinx-of-giza`
 - `step-pyramid-djoser-saqqara`
 - `subterranean-chamber-great-pyramid`
@@ -1151,9 +1155,11 @@ canonical-slug
 
 - `MASSIVE-WINS-AND-INVESTIGATION-LEADS-session-2026-05-15`
 
-### music (52 nodes)
+### music (57 nodes)
 
 - `music-aboriginal-songlines`
+- `music-abulafia-prophetic-kabbalah`
+- `music-alkindi-music-therapy`
 - `music-ancient-egyptian-music`
 - `music-arabic-maqam`
 - `music-aum-cosmic-sound`
@@ -1163,6 +1169,8 @@ canonical-slug
 - `music-chinese-court-instruments`
 - `music-chinese-pentatonic-cosmology`
 - `music-creation-by-sound`
+- `music-ficino-lyre-therapy`
+- `music-fludd-world-monochord`
 - `music-gagaku-japanese`
 - `music-greek-modes`
 - `music-greek-musical-ethos`
@@ -1204,9 +1212,10 @@ canonical-slug
 - `music-west-african-polyrhythm`
 - `music-western-sacred-chant`
 - `music-yayue-ritual-music`
+- `music-zohar-sound-mysticism`
 - `music-zoroastrian-sacred-sound`
 
-### person (705 nodes)
+### person (706 nodes)
 
 - `aaron`
 - `abba-garima`
@@ -1272,6 +1281,7 @@ canonical-slug
 - `arius`
 - `arthur-darby-nock`
 - `asanga`
+- `ashoka`
 - `ashurbanipal`
 - `asoka-maurya`
 - `athanasius`
@@ -2530,7 +2540,7 @@ canonical-slug
 - `zep-tepi`
 - `zeus-pantokrator-transmission`
 
-### tradition (155 nodes)
+### tradition (163 nodes)
 
 - `tradition-advaita-vedanta`
 - `tradition-african-traditional`
@@ -2564,6 +2574,7 @@ canonical-slug
 - `tradition-daoism`
 - `tradition-dionysian-mysteries`
 - `tradition-donghak`
+- `tradition-druidism`
 - `tradition-druze`
 - `tradition-early-christianity`
 - `tradition-eastern-orthodoxy`
@@ -2576,6 +2587,7 @@ canonical-slug
 - `tradition-etruscan-religion`
 - `tradition-finno-karelian`
 - `tradition-freemasonry`
+- `tradition-germanic-paganism`
 - `tradition-gnosticism`
 - `tradition-greco-buddhism`
 - `tradition-greek-mystery-religion`
@@ -2594,6 +2606,7 @@ canonical-slug
 - `tradition-hospitallers`
 - `tradition-hussitism`
 - `tradition-inca-andean`
+- `tradition-irish-celtic`
 - `tradition-isis-mysteries`
 - `tradition-islam`
 - `tradition-islam-mughal`
@@ -2632,12 +2645,14 @@ canonical-slug
 - `tradition-neoplatonism`
 - `tradition-new-age`
 - `tradition-norse`
+- `tradition-norse-germanic`
 - `tradition-ojibwe`
 - `tradition-order-of-christ`
 - `tradition-ordo-novi-templi`
 - `tradition-oriental-orthodox`
 - `tradition-orphic`
 - `tradition-pentecostalism`
+- `tradition-persian-zoroastrian`
 - `tradition-polynesian`
 - `tradition-portuguese-hermeticism`
 - `tradition-pre-islamic-arabian`
@@ -2668,13 +2683,16 @@ canonical-slug
 - `tradition-sumerian-mesopotamian`
 - `tradition-sunni-islam`
 - `tradition-syriac-orthodox`
+- `tradition-tantra`
 - `tradition-tartessos`
 - `tradition-tenrikyo`
 - `tradition-teutonic-knights`
 - `tradition-thelema`
 - `tradition-theosophy`
 - `tradition-theravada-buddhism`
+- `tradition-tibetan-buddhism`
 - `tradition-traditionalism-perennialist`
+- `tradition-vajrayana`
 - `tradition-vajrayana-buddhism`
 - `tradition-vedic`
 - `tradition-vedic-hinduism`
@@ -2694,14 +2712,11 @@ canonical-slug
 
 | Refs | Dead target | Suggested canonical (existing) |
 |---:|---|---|
-| 6 | `tradition-tantra` | `tradition-shia-islam` |
-| 4 | `tradition-tibetan-buddhism` | `tradition-portuguese-hermeticism` |
-| 4 | `tradition-persian-zoroastrian` | `tradition-portuguese-hermeticism` |
-| 3 | `tradition-vajrayana` | `tradition-shia-islam` |
 | 3 | `guru-arjan-dev-ji` | `guru-arjan` |
-| 3 | `alphabet-letter-as-cosmos` | `alphabet-medu-netjer` |
 | 2 | `yam-canaanite` | `astarte-canaanite` |
 | 2 | `was-sceptre` | `was-scepter` |
-| 2 | `tradition-rosicrucian` | `tradition-armenian-apostolic` |
-| 2 | `tradition-lingayat` | `tradition-shia-islam` |
+| 2 | `tradition-rosicrucian` | `tradition-dionysian-mysteries` |
+| 2 | `tradition-lingayat` | `tradition-buddhism` |
+| 2 | `tradition-islamic-philosophy` | `tradition-dionysian-mysteries` |
+| 2 | `phase-2-004-1-2-chronicles` | `phase-2-004-yasna-younger-avesta` |
 | 2 | `divine-names` | `divine-name` |

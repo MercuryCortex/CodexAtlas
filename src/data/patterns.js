@@ -457,5 +457,21 @@ window.PATTERNS_DATA = [
     sources: ['alphabet-sefer-yetzirah', 'music-valentinian-pleroma-harmony', 'alphabet-ilm-al-huruf'],
     summary: 'Three separate mystical traditions claim that letters — not words, not ideas, but individual letters — are the material of divine creation: (1) Sefer Yetzirah (Jewish, c. 3rd–6th c. CE): 22 Hebrew letters are the creation-materials God used to make the universe; (2) Marcus the Magician (Valentinian Gnostic, c. 2nd c. CE): Truth uttered the 24 Greek letters as the structure of the divine Pleroma; (3) Ibn Arabi\'s \'Ilm al-Huruf (Islamic, c. 13th c. CE): the 28 Arabic letters are the "breath of the Merciful" — God\'s exhalation that creates all Being. Three traditions, three language-sets, zero documented contact, structurally identical claim: the alphabet is a cosmological blueprint.',
   },
+  {
+    id: 'alphabet-as-cosmos-blueprint',
+    title: 'The Alphabet IS the Architectural Blueprint of Reality',
+    category: 'CONVERGENCE',
+    section: 'Script and Alphabet Mysteries',
+    sources: ['proto-sinaitic', 'alphabet-sefer-yetzirah', 'alphabet-devanagari-sacred', 'alphabet-letter-as-cosmos'],
+    summary: 'Three separate traditions converge on the same discovery: Beth (ב, 2nd letter of the Phoenician/Hebrew alphabet) is literally a floor plan — the Phoenician/Proto-Sinaitic form of the letter is a three-sided enclosure open at one front, an architectural diagram; Sefer Yetzirah describes God using stonemason\'s verbs (engrave, carve, weigh) to create with letters, organizing the 22 letters as a building program (foundations / framework / details); Devanagari = "city of the gods" — the Sanskrit script IS a divine city, each letter a divine dwelling. In three traditions (Jewish, Sanskrit, Islamic geometric), the letter-form IS an architectural element. Creation begins with a floor plan (Beth = house, the letter that opens Genesis). The universe is a building. The alphabet is the blueprint.',
+  },
+  {
+    id: 'sacred-dead-language-six',
+    title: 'Six Traditions Froze Their Sacred Language — One Tradition Reversed It',
+    category: 'CONVERGENCE',
+    section: 'Script and Alphabet Mysteries',
+    sources: ['alphabet-sacred-language-convergence', 'alphabet-devanagari-sacred', 'alphabet-sefer-yetzirah'],
+    summary: 'Sanskrit / Latin / Biblical Hebrew / Classical Arabic / Ge\'ez / Old Avestan: every major world religion preserves a dead language as the exclusive medium of divine communication, frozen at the moment of canonical text-formation. Sanskrit: 2,400 years. Biblical Hebrew: 2,100 years. Old Avestan: 2,400 years (dead before the script was even created). Theological reason: the specific phonemes or letter-forms of the revelation-language ARE the revelation — translation changes the cosmic address, not just the packaging. The single exception: Modern Hebrew (1880–1950, Zionist revival) — the only case in human history where a sacred dead language was secularized and revived as a vernacular, creating ongoing theological tension that continues today.',
+  },
 
 ];
