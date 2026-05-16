@@ -4,6 +4,16 @@ _Hand-maintained. Each agent currently working in the vault appends a claim bloc
 
 ---
 
+## sonnet-scripture-gaps-1 — Brill/Britannica gap check + scripture corpus fills — 2026-05-16 — FINISHED
+- Added 5 new Scripture corpora: shia-corpus, druze-corpus, bon-corpus, yazidi-corpus, reformation
+- New primary text nodes: phase-5-058 (Nahj al-Balagha), phase-5-059 (Rasail al-Hikma), phase-5-060 (Bon Kanjur), phase-5-061 (Kiteba Cilwe)
+- New stubs: melek-taus (deity), al-hakim-bi-amr-allah, hamza-ibn-ali (persons)
+- Vedas corpus: +Devi Mahatmya, Vivekachudamani, Yoga Vasishtha, Shiva Sutras, Hatha Yoga Pradipika
+- Tipitaka: +Abhidharmakosa, +Bodhicaryavatara; wired tradition files with [[wikilinks]] to new doc nodes
+- Build: 2354 nodes · 13929 edges · 2.6% dead-link · commit 7183b8b
+
+---
+
 ## latin-sikh-1 — Latin Christianity tradition + Vasco da Gama + Polycarp upgrades — started 2026-05-16 — IN FLIGHT
 - Owning: `07_traditions/tradition-latin-christianity.md` (NEW), `04_persons/vasco-da-gama.md` (NEW), `02_documents/_phase-4-late-antiquity/phase-4-066-polycarp-philippians.md` (metadata → partial), `02_documents/_phase-4-late-antiquity/phase-4-067-martyrdom-of-polycarp.md` (metadata → partial)
 - Goal: Resolve 5+ dead wikilinks; Filioque/Scholasticism/Aristotle-via-Islam chain; martyrology genre origin; cult-of-saints transmission
