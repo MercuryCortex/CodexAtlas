@@ -4,6 +4,17 @@ _Hand-maintained. Each agent currently working in the vault appends a claim bloc
 
 ---
 
+## pantheon-deity-sweep-1 — IN FLIGHT (2026-05-16 goblin audit)
+- **build_data.py fixes COMMITTED** (c535e12): Baltic family, Māori macron, Daoism, Haudenosaunee, Cathar, Blakean → 0 nodes in Other
+- 4 sub-agents in flight writing 29 new deity nodes:
+  - pacific-andean: maui-polynesian, haumia-tiketike, rongo-maori, tawhirimatea, mama-quilla, supay, illapa, mama-cocha
+  - meso-slavic-norse: xipe-totec, xochiquetzal, ehecatl, hunahpu, marzanna, dazbog, njord
+  - chinese-buddhist-celtic-norse: sun-wukong, erlang-shen, mara-demon, epona, danu, aine, hod
+  - egypt-mesopo-vedic: khepri, amaunet, kek-egyptian, ningal, pazuzu, murugan, manasa-devi
+- DO NOT touch 03_deities/ while these agents are running
+
+---
+
 ## ~~morals-content-1 — 12 moral philosophy nodes in 13_morals/ — 2026-05-16 — FINISHED~~
 - ~~NEW: `13_morals/` folder (12 full-tier nodes with type: moral)~~
 - ~~Nodes: moral-divine-command-theory, moral-euthyphro-dilemma, moral-karma-as-moral-law, moral-buddhist-five-precepts, moral-confucian-ren, moral-zoroastrian-asha, moral-natural-law, moral-golden-rule-cross-tradition, moral-ten-commandments, moral-islamic-sharia, moral-stoic-virtue-ethics, moral-ahimsa-nonviolence~~
@@ -73,6 +84,17 @@ _Hand-maintained. Each agent currently working in the vault appends a claim bloc
 - ~~build_data.py _strip_inline wikilink fix; tradition-siberian-shamanism stub; music-greek-musical-ethos dead-link fix~~
 - ~~7 new nodes: music-raga-bhairav-dawn, music-raga-yaman-sunset, music-natya-shastra-rasa-system, music-7-string-lyre-cosmos, music-apollo-lyre-sun, music-orphic-lyre-cosmic, music-planetary-modes-medieval~~
 - ~~Status: FINISHED — 94 music nodes · 16273 edges · 320 cross-layer music edges · 0 dead~~
+
+---
+
+## ~~music-investigation-layer-1 — Fix dead links + expand observations/patterns — 2026-05-16 — FINISHED~~
+- ~~FIXED: 4 occurrences of dead slug `music-raga-time-cosmology` → `music-raga-cosmology` (observations.js ×3, patterns.js ×1)~~
+- ~~FIXED: `mantra-convergence-non-semantic-sound` — added `music-sufi-sama` to evidence (Sufi dhikr was 4th case but missing)~~
+- ~~FIXED: `wordless-sound-convergence` — expanded sources from 3 → 6 (added music-gyuto-monks-multiphonic, music-byzantine-chant-ison, music-sama-veda)~~
+- ~~NEW observations: san-bushmen-trance-baseline (CONCLUSION), acoustic-death-convergence (ANOMALY), seven-string-lyre-triple-convergence (CONCLUSION), equal-temperament-cosmological-severance (INVERSION), trance-drone-older-than-cosmology (HYPOTHESIS)~~
+- ~~NEW patterns: acoustic-death-independent-invention (CONVERGENCE), tuning-cosmology-refusal (INVERSION)~~
+- ~~All 22 evidence nodes verified OK in vault~~
+- ~~Status: FINISHED — 0 dead links · 5 new observations · 2 new patterns~~
 
 ---
 

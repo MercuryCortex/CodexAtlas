@@ -344,7 +344,7 @@ window.PATTERNS_DATA = [
     title: 'Wordless Sacred Sound — Three Traditions Bypass Language to Reach God',
     category: 'CONVERGENCE',
     section: 'Music Layer Discoveries',
-    sources: ['music-niggun-hasidic', 'music-sufi-sama', 'music-aum-cosmic-sound'],
+    sources: ['music-niggun-hasidic', 'music-sufi-sama', 'music-aum-cosmic-sound', 'music-gyuto-monks-multiphonic', 'music-byzantine-chant-ison', 'music-sama-veda'],
     summary: 'Hasidic niggun (wordless melody), Sufi sama (listening ceremony), and Hindu AUM all make the same theological claim: language is inadequate for the divine, and wordless sound reaches higher. The Baal Shem Tov, Rumi, and the Mandukya Upanishad each arrived at this independently. The silence after the sound is where the encounter happens.',
   },
   {
@@ -529,7 +529,7 @@ window.PATTERNS_DATA = [
     title: 'Four Structural Conditions That Let India Preserve the Raga Obligation When All Others Retreated',
     category: 'CONCLUSION',
     section: 'Music Layer Discoveries',
-    sources: ['music-raga-time-cosmology', 'music-nada-brahma', 'music-raga-cosmology'],
+    sources: ['music-raga-cosmology', 'music-nada-brahma'],
     summary: 'Every civilization developed time-structured music. Only India maintained the cosmic-performance obligation for 2,000+ years. Four structural factors explain the difference: (1) The hereditary musician-caste system (Gandharvas, temple musicians) created an institutional carrier with no parallel in Western or East Asian traditions. (2) Mughal patronage preserved rather than destroyed — Islamic rulers who loved music became the raga system\'s wealthiest sponsors. (3) The cosmological theory (Nada Brahma) is embedded in the performance practice itself, not in a separate text that could be lost — you cannot perform raga correctly without implicitly affirming the theory. (4) The tradition survived colonialism because British administrators categorized it as "art" rather than "religion" — it was not suppressed as idolatry. None of these factors applied to Greek music theory (no caste carrier, Rome\'s Christians suppressed it), Chinese yayue (Confucian rationalization stripped the cosmology), or Fludd\'s tradition (Kepler\'s physics refutation).',
   },
   {
@@ -540,6 +540,24 @@ window.PATTERNS_DATA = [
     sources: ['music-pythagorean-harmony', 'music-tuvan-overtone-singing', 'music-raga-cosmology'],
     summary: 'Every vibrating string, column of air, or resonating body naturally produces the harmonic series: a fundamental tone plus overtones at 2x, 3x, 4x, 5x its frequency (octave, fifth, fourth, major third). These ratios (2:1, 3:2, 4:3, 5:4) also appear in planetary orbital resonances: Jupiter and Saturn are near 5:2; Neptune and Uranus near 2:1; Pluto and Neptune exactly 3:2. Pythagoras theorized this as evidence that music and cosmos share the same mathematical structure. The question the vault cannot answer: is this a cognitive imposition of a human perceptual structure onto nature, or is the harmonic series genuinely the mathematical framework that physical vibration expresses at every scale? Tuvan throat singers demonstrate the harmonic series in the human voice. Kepler measured planetary velocity ratios and found intervals. The Pythagorean claim remains neither confirmed nor refuted — merely reformulated.',
   },
+  {
+    id: 'acoustic-death-independent-invention',
+    title: 'Acoustic Death Navigation — Independent Invention in Egypt and Tibet',
+    category: 'CONVERGENCE',
+    section: 'Music Layer Discoveries',
+    sources: ['music-bardo-thodol-sonic', 'music-ancient-egyptian-music-cosmology', 'music-tibetan-sound-cosmology'],
+    summary: 'Two uncontacted civilizations (Egypt c. 2400 BCE, Tibet c. 800 CE) independently produced dedicated manuals for post-mortem acoustic navigation. Same structure: death = acoustic journey, deceased needs sonic competence, text = preparation manual. Mechanism differs (utterance vs. recognition) but structural identity is anomalous without contact.',
+  },
+
+  {
+    id: 'tuning-cosmology-refusal',
+    title: 'The Two Cosmological Tuning Refusals',
+    category: 'INVERSION',
+    section: 'Music Layer Discoveries',
+    sources: ['music-harry-partch-43-tone', 'music-raga-cosmology', 'music-equal-temperament-compromise', 'music-just-intonation-system'],
+    summary: 'Indian raga (unbroken since c. 500 BCE) and Harry Partch (1901-1974) are the only major musical systems that refused equal temperament\'s cosmological severance — one by never adopting it, one by deliberately rejecting it. Both cite the same reason: pure integer ratios are cosmological requirement, not aesthetic preference. Independent conclusion, 2,000 years apart.',
+  },
+
   {
     id: 'alphabet-as-identity-weapon',
     title: 'The Invented Alphabet as Identity and Power',
