@@ -26,6 +26,18 @@ _Hand-maintained. Each agent currently working in the vault appends a claim bloc
 
 ---
 
+## ~~music-batch-6 — 6 new music nodes + dead-link fix — 2026-05-16 — FINISHED~~
+- ~~Fixed: `04_persons/yared-the-deacon.md` — dead links `[[zema-ethiopian-chant]]` + `[[ethiopian-liturgical-music]]` → `[[music-zema-ethiopian-chant]]`~~
+- ~~NEW: `10_music/music-zema-ethiopian-chant.md` (full tier-1 — Ethiopian Zema, 3 modes, divine-bird transmission, 10-yr debtera apprenticeship)~~
+- ~~NEW: `10_music/music-cymatics-chladni-jenny.md` (full tier-1 — sound creates visible form; bridge between harmonic-series-physics and sacred-geometry-cosmic-proportion)~~
+- ~~NEW: `10_music/music-galdr-norse-rune-chant.md` (full tier-1 — Norse galdr, rune as operative sound-symbol = Sanskrit mantra; wires alphabet-elder-futhark to music layer)~~
+- ~~NEW: `10_music/music-khoisan-trance-healing.md` (full tier-1 — San !Kung n/um-kxao, oldest music-medicine protocol ~50kya; structural identity with Sufi sama/Siberian drum/Tibetan bowls)~~
+- ~~NEW: `10_music/music-kantele-kalevala.md` (full tier-1 — Väinämöinen's kantele, Finnish Orpheus zero-contact twin; bridges vainamoinen deity + phase-8-018-kalevala document nodes)~~
+- ~~NEW: `10_music/music-byzantine-chant-ison.md` (full tier-1 — ison drone as Pythagorean eternal note; echoi as living Greek modal transmission; Byzantine neumes as ancestor of Western notation)~~
+- ~~Build: 101 music nodes · 16383 edges · 0 dead links introduced — commit 6f2d6d1~~
+
+---
+
 ## opus-three-tabs-1 — Alchemy · Morals · Rituals tabs — IN PROGRESS 2026-05-16
 - Owns app code: `src/js/app.js` (VIEWS.alchemy expand + NEW VIEWS.morals + NEW VIEWS.rituals), `index.html` (nav items)
 - Owns content: `12_alchemy/` folder (NEW — 12 alchemy nodes), `13_morals/` folder (NEW — 10 moral-philosophy nodes), `14_rituals/` folder (NEW — 14 ritual-behavior nodes)
