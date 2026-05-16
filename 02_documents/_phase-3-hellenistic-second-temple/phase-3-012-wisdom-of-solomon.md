@@ -22,7 +22,7 @@ influenced-by: ["Proverbs 8 (Wisdom personified)", "Sirach 24 (Wisdom as Torah)"
 influences: ["Philo of Alexandria (direct continuity)", "Pauline epistles (Wisdom of Solomon 13–15 underlies Romans 1:18–32 idolatry argument)", "Gospel of John (logos and pre-existent Sophia traditions)", "Patristic Christology (Athanasius, Augustine treat Sophia-Christology via Wisdom)"]
 deities-mentioned: ["[[yahweh]]", "[[wisdom-personified]]"]
 events-context: ["Roman annexation of Egypt (-30)", "Tensions between Alexandrian Jewish community and Greek/Roman authorities", "Possibly: Caligula-era persecution (~+38) or earlier"]
-status: "metadata"
+status: "full"
 preservation: "Surviving Greek text in the LXX manuscript tradition (Vaticanus, Sinaiticus, Alexandrinus). Latin Vulgate as *Sapientia* (Catholic and Orthodox deuterocanon). Excluded from rabbinic Hebrew canon; Hebrew translations are all medieval back-translations."
 refs:
   - title: "The Book of Wisdom: A New Translation with Introduction and Commentary"
@@ -71,6 +71,52 @@ A 19-chapter book composed in elegant Koine Greek by an anonymous Alexandrian Je
 - **Chs. 7–9** — Solomon's praise of Wisdom (Sophia): she is "a breath of the power of God... a pure emanation of the glory of the Almighty... a reflection of eternal light, a spotless mirror of the working of God" (7:25–26). She *was* with God in creation and is sent to humans.
 - **Chs. 10–19** — Wisdom in salvation history: Sophia guides Adam, Noah, Abraham, Jacob, Joseph, Moses; the Exodus is retold; Egyptian idolatry is critiqued at length (chs. 13–15).
 
+## Primary text — selected passages
+
+### Wisdom 7:22–26 — Sophia as "breath of the power of God" (closest pre-Christian parallel to John 1)
+*Trans. NETS (Pietersma & Wright 2007)*
+> For in her is a spirit that is intelligent, holy,
+> unique, manifold, subtle, mobile, clear, undefiled, distinct,
+> invulnerable, loving the good, keen, unhindered, beneficent,
+> philanthropic, steadfast, infallible, undisturbed,
+> all-powerful, all-surveying,
+> and penetrating through all spirits that are intelligent, pure, and most subtle.
+> For wisdom is more mobile than any motion;
+> because of her pureness she pervades and penetrates all things.
+> For she is a breath of the power of God,
+> and a pure emanation of the glory of the Almighty;
+> therefore nothing defiled gains entrance into her.
+> For she is a reflection of eternal light,
+> a spotless mirror of the working of God,
+> and an image of his goodness.
+
+*The 21-attribute inventory of Sophia draws directly on Stoic pneuma vocabulary while making Sophia a semi-personal hypostasis — the conceptual bridge from Proverbs 8 to John 1.*
+
+### Wisdom 2:12–20 — the righteous one plotted against (pre-Christian martyr template)
+*Trans. NETS 2007*
+> Let us lie in wait for the righteous man,
+> because he is inconvenient to us and opposes our actions;
+> he reproaches us for sins against the law...
+> He professes to have knowledge of God,
+> and calls himself a child of the Lord...
+> Let us test him with insult and torture,
+> so that we may find out how gentle he is,
+> and make trial of his forbearance.
+> Let us condemn him to a shameful death,
+> for, according to what he says, he will be protected.
+
+*Matthew 27:39–43 echoes this passage so precisely that most NT scholars treat it as intentional intertextual citation — a pre-Christian righteous-martyr template written ~50 years before the Passion.*
+
+### Wisdom 18:14–16 — the all-powerful logos leaping from heaven
+*Trans. NETS 2007*
+> For while gentle silence enveloped all things,
+> and night in its swift course was now half gone,
+> your all-powerful word leaped from heaven, from the royal throne,
+> into the midst of the land that was doomed,
+> a stern warrior carrying the sharp sword of your authentic command.
+
+*Citation: Pietersma, A.; Wright, B.G. (eds.) (2007). New English Translation of the Septuagint. Oxford UP. Winston, D. (1979). The Book of Wisdom. Anchor Yale Bible 43, Yale UP.*
+
 ## Context
 - **Political milieu.** Egypt now under Roman administration after -30; the Alexandrian Jewish community is large, prosperous, culturally bilingual, and politically vulnerable (the Caligula-era pogrom of +38 looms or has just occurred, depending on dating).
 - **Religious milieu.** Hellenistic Judaism at full flourish. The author writes Greek as a native, knows Plato and Stoicism, but is committed to Mosaic Torah and Israelite covenant. Hellenistic Jewish synthesis is *the* defining cultural project of Alexandrian Judaism, and this book is one of its highest literary expressions.
@@ -96,6 +142,16 @@ A 19-chapter book composed in elegant Koine Greek by an anonymous Alexandrian Je
 - **Date.** Winston: Roman period, ~+30/+50; some scholars push back into the late 1st c. BCE. Caligula-era (~+38) tensions in Alexandria attractively explain the polemical tone.
 - **Unity of authorship.** Most scholars now accept single authorship despite the three rather different sections; older scholarship (Grimm) posited multiple authors.
 - **Dependence vs. shared milieu in NT echoes.** Hays (1989) and Watson argue Pauline dependence on Wisdom 13–15 is real and intentional; others (Sanday-Headlam) settled for shared topoi.
+
+## MASSIVE WIN — cross-tradition edges
+
+- **Sophia (Wis 7:25–26) → John 1:1–14 — the single closest structural antecedent to the Johannine Prologue**: Wisdom 7's Sophia is "a breath of the power of God... a reflection of eternal light... a spotless mirror of the working of God... present at creation... sent to humans." John 1's Logos is "the light of all people... through him all things were made... the Word became flesh." These share vocabulary, sequence, and the theological structure of a pre-existent divine hypostasis mediating between God and creation. Whether John knew Wisdom directly or both drew on Alexandrian synagogue discourse is debated; the structural parallel is unambiguous and widely acknowledged (Brown, R.E. 1966, *The Gospel According to John I–XII*, Anchor Bible 29, pp. cxxii–cxxv; Runia, D.T. 1986, *Philo of Alexandria and the Timaeus of Plato*, Brill, pp. 446–450; → [[phase-3-013-philo-of-alexandria]], → [[phase-3-020-gospel-of-john]]).
+
+- **Wisdom 2:12–20 → Passion narratives — pre-Christian righteous-martyr template**: The "righteous one" of Wis 2 is plotted against, called "child of the Lord," condemned to "a shameful death," and expected to be rescued by God — the complete template for the Passion narrative. Matthew 27:39–43 echoes Wis 2:17–20 so precisely that Hays (1989) treats it as intentional intertextual citation. A text outside the Hebrew Bible provided the theological grammar through which early Christians interpreted the crucifixion (Hays, R.B. 1989, *Echoes of Scripture in the Letters of Paul*, Yale UP, pp. 45–52; Collins, J.J. 1997, *Jewish Wisdom in the Hellenistic Age*, WJK; → [[phase-3-017-gospel-of-matthew]]).
+
+- **Romans 1:18–32 ← Wisdom 13–15 — most documentable intellectual borrowing in the Pauline corpus**: Paul's argument in Romans 1 — Gentiles ought to know God from creation, turned to idolatry, moral collapse followed — follows Wisdom 13–15 in structure, vocabulary, and sequence so closely that most NT scholars now treat it as direct literary dependence, not merely shared topoi. Hays (1989, pp. 42–43) calls it the strongest case for Pauline intertextuality with the Apocrypha. A deuterocanonical text excluded from Protestant Bibles directly shaped the theological cornerstone of Protestant justification theology (Watson, F. 2004, *Paul and the Hermeneutics of Faith*, T&T Clark, pp. 404–410; → [[phase-3-015-pauline-epistles]]).
+
+- **Wisdom 8:19–20 — Platonic soul pre-existence inside a "biblical" text**: "Being good, I entered an undefiled body" (Wis 8:20) explicitly states soul pre-existence — a Platonic doctrine with no parallel in the Hebrew Bible. Its presence in a text that became Catholic and Orthodox canon introduced soul pre-existence into scripture, influencing Origen's *de Principiis* and patristic debates on the soul, and (via distinct channels) Joseph Smith's LDS teaching of pre-mortal spirit existence — a 2,000-year arc from Plato through a deuterocanonical Jewish text into living theology (Winston 1979, AYB 43, pp. 189–202; → [[phase-3-002-plato-dialogues]], → [[phase-3-013-philo-of-alexandria]]).
 
 ## Refs
 1. Winston, D. (1979). *The Book of Wisdom*. Anchor Yale Bible 43. — standard.

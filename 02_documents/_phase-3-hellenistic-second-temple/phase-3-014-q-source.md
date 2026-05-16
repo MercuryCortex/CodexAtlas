@@ -22,7 +22,7 @@ influenced-by: ["Jesus tradition (oral)", "Israelite prophetic tradition", "Jewi
 influences: ["Gospel of Matthew (used as source)", "Gospel of Luke (used as source)", "Gospel of Thomas (parallel sayings tradition — debated relationship)"]
 deities-mentioned: ["[[yahweh]]"]
 events-context: ["Jesus's Galilean ministry (~+30)", "Earliest oral and written transmission (~+30/+60)"]
-status: "metadata"
+status: "full"
 preservation: "**No physical manuscript exists.** Q is a hypothetical document **reconstructed** by extracting from Matthew and Luke the ~235 verses of material they share that does *not* come from Mark. Reconstructed text published in: Robinson-Hoffmann-Kloppenborg *Critical Edition of Q* (2000). [claim: contested] — Q's existence is the majority scholarly hypothesis but not universally accepted (Farrer/Goodacre hypothesis dispenses with Q)."
 refs:
   - title: "The Critical Edition of Q"
@@ -76,6 +76,45 @@ A **hypothetical** lost sayings collection, postulated to explain the ~235 verse
 
 **[claim: contested]** — Q's *existence* is the majority position (Two-Source Hypothesis: Mark + Q as the two sources of Matthew and Luke), held by Streeter, Kloppenborg, Robinson, the International Q Project. The minority **Farrer-Goulder-Goodacre hypothesis** dispenses with Q, arguing Luke directly used Matthew. We carry the Q hypothesis as the working scholarly default while flagging the live dispute.
 
+## Primary text — selected passages
+
+**Note on manuscript status:** Q has no surviving manuscript. All passages below are from the critical reconstruction of the International Q Project: Robinson, J.M., Hoffmann, P., Kloppenborg, J.S. (eds.), *The Critical Edition of Q* (Hermeneia/Fortress, 2000). Passages are cited by Lukan chapter:verse (IQP convention). The Greek reconstruction uses Matthew/Luke verbal agreements to approximate Q's original wording.
+
+### Q 6:20–23 — the Beatitudes (oldest recoverable layer of Jesus's teaching)
+*Reconstructed from Matt 5:3–12 and Luke 6:20–23; Robinson–Hoffmann–Kloppenborg 2000*
+> Blessed are the poor, for theirs is the kingdom of God.
+> Blessed are those who hunger, for they will be satisfied.
+> Blessed are those who mourn, for they will be consoled.
+> Blessed are you when they insult you and persecute you and say every kind of evil
+> against you because of the Son of man.
+> Rejoice and be glad, for your reward is great in heaven;
+> for in the same way did their fathers treat the prophets.
+
+*Per Kloppenborg (2000), these Beatitudes belong to Q1 — the oldest compositional stratum, a wisdom-instruction core likely written 40–60 CE. They represent the earliest plausibly recoverable layer of Jesus tradition, predating the written Gospels by decades.*
+
+### Q 10:21–22 — the "Johannine thunderbolt" (Sophia-Christology in the earliest Gospel source)
+*Reconstructed from Matt 11:25–27 and Luke 10:21–22; Robinson–Hoffmann–Kloppenborg 2000*
+> I thank you, Father, Lord of heaven and earth,
+> that you have hidden these things from the wise and intelligent
+> and revealed them to infants.
+> Yes, Father, for such was your gracious will.
+> All things have been handed over to me by my Father,
+> and no one knows the Son except the Father,
+> and no one knows the Father except the Son
+> and anyone to whom the Son chooses to reveal him.
+
+*Named the "Johannine thunderbolt in the Synoptics" (Käsemann 1964): this Father-Son mutual-knowledge claim sounds indistinguishable from John 10:14–15 or John 17. Its presence in Q — dated before the Gospel of John — proves the high Sophia/Son Christology predates the Johannine community.*
+
+### Q 11:49–51 — Sophia speaks (Wisdom-Christology's clearest self-declaration)
+*Reconstructed from Luke 11:49–51 and Matt 23:34–36; Robinson–Hoffmann–Kloppenborg 2000*
+> Therefore the Wisdom of God said:
+> "I will send them prophets and apostles,
+> some of whom they will kill and persecute,
+> so that from this generation the blood of all the prophets
+> shed from the foundation of the world may be required."
+
+*Citation: Robinson, J.M., Hoffmann, P., Kloppenborg, J.S. (eds.) (2000). The Critical Edition of Q. Hermeneia/Fortress Press.*
+
 ## Context
 - **Political milieu.** Roman Palestine in the period following Jesus's death (~+30/+33), under Roman procurators with client-king fragments. The Galilean villages and the southern Syrian / Decapolis region are the most-argued composition zone.
 - **Religious milieu.** A Jewish-Christian movement carrying Jesus's teachings orally, then in initial written collections. Q presupposes an itinerant prophetic-charismatic group practicing radical discipleship (Q 9:57–62, Q 10:2–16 mission discourse). The community is still within Judaism and views Jesus through prophetic and Wisdom categories — not yet the high Christology of the later epistles and Gospels.
@@ -101,6 +140,16 @@ A **hypothetical** lost sayings collection, postulated to explain the ~235 verse
 - **Stratification.** Kloppenborg's Q1/Q2/Q3 model is influential but not universally accepted; Goodacre argues stratification adds layers of hypothesis to an already hypothetical document.
 - **Galilean vs. Syrian provenance.** Kloppenborg favors Galilee; some prefer the Syrian-Antiochene region.
 - **Relationship to historical Jesus.** Whether Q preserves the *earliest* and *most authentic* Jesus tradition (Robinson, Mack) or is an early Christian theological construction less than 30 years from Jesus (Kloppenborg) is contested.
+
+## MASSIVE WIN — cross-tradition edges
+
+- **Q 10:21–22 — "Johannine thunderbolt" proves high Sophia-Christology predates John by decades**: Käsemann (1964, *Essays on New Testament Themes*, SCM, p. 40) named Q 10:21–22 "a Johannine thunderbolt fallen into the Synoptics": the Father-Son mutual-knowledge claim is indistinguishable from John 10:14–15 and John 17. Since Q is dated 40–70 CE — before the Gospel of John — this proves the high Sophia/Son Christology of John did not originate in the Johannine community but was already present in the earliest Jesus-movement tradition. This collapses the "early low Christology → late high Christology" developmental model that dominated 20th-century NT scholarship (Kloppenborg 2000, *Excavating Q*, Fortress, pp. 243–252; Robinson 2000, *Critical Edition of Q*; → [[phase-3-020-gospel-of-john]]).
+
+- **Gospel of Thomas (1945) vindicated Q's form-class — sayings-gospel genre confirmed as real**: Before 1945, Q was purely inferential: a lost document reconstructed from overlaps. The Nag Hammadi discovery of the Coptic *Gospel of Thomas* — a sayings-only collection with no passion narrative — proved this genre actually existed in early Christianity. Thomas and Q are two independent instances of the same form-class, increasing confidence that Q is not a modern scholarly fiction but a plausible document of a documented type (Kloppenborg 2008, *Q: The Earliest Gospel*, WJK, pp. 1–18; Robinson 1995, *The Gospel of Jesus*, Harper San Francisco).
+
+- **Q's Beatitudes = most-analyzed ~100 words in NT scholarship — the historical Jesus fork**: Q 6:20–23 ("Blessed are the *poor*") differs from Matthew's redaction ("Blessed are the poor *in spirit*"). This difference has generated a century of debate: was Jesus a political-economic prophet of peasant liberation (Theissen 1978, *Sociology of Early Palestinian Christianity*, Fortress) or a teacher of spiritual posture (Strecker 1988, *The Sermon on the Mount*, Abingdon)? The entire question of the historical Jesus — prophet, wisdom teacher, Cynic philosopher, or social reformer — is indexed to Q's Beatitudes and their differences from Matthew (Kloppenborg 2000, pp. 65–80; → [[phase-3-017-gospel-of-matthew]]).
+
+- **Q's Cynic-discipleship parallels — most contested cross-tradition connection in Jesus research**: Kloppenborg (2000) and Downing (1992, *Cynics and Christian Origins*, T&T Clark) argue Q's itinerant discipleship ethic (no staff, no purse, no sandals; Q 10:4) is structurally identical to Cynic beggar-philosopher practice, placing Jesus within Hellenistic popular philosophy penetrating Galilean village culture. If correct, this dissolves the boundary between Jewish apocalypticism and Greek philosophy in the Jesus movement's origins. Horsley (1989, *Sociology and the Jesus Movement*, Crossroad) forcefully disputes this, insisting parallels are superficial. The debate remains the most consequential open cross-tradition question in NT studies (→ [[phase-3-005-stoic-foundational-texts]]).
 
 ## Refs
 1. Robinson, J.M., Hoffmann, P., Kloppenborg, J.S. (2000). *The Critical Edition of Q*. Hermeneia.
