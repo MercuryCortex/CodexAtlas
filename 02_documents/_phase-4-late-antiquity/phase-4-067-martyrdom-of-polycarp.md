@@ -16,13 +16,13 @@ region: "Asia Minor → Phrygia"
 city-of-origin: "Smyrna (composition); addressed from Smyrna to the church of Philomelium in Phrygia"
 authorship: "anonymous (composed by the Smyrnaean church community; framing names Marcion as scribe, Evarestus as compiler, transmitted by Gaius and Sokrates)"
 key-figures: ["[[polycarp-of-smyrna]]", "Quintus the Phrygian (negative-example martyr who volunteered and apostatized)", "Statius Quadratus (proconsul presiding at execution; historically attested in inscriptions)", "Herod (the *eirenarch* — sheriff — who arrested Polycarp)"]
-themes: ["[[martyrdom-theology]]", "[[orthodoxy-vs-heresy]]", "[[apocalyptic-revelation]]"]
+themes: ["[[martyrdom-theology]]", "[[orthodoxy-vs-heresy]]", "[[apocalyptic-revelation]]", "[[ecclesial-authority]]"]
 parallels: ["[[phase-4-036-passio-perpetuae]]", "[[phase-3-019-4-maccabees]]", "[[phase-3-016-gospel-of-mark]]", "[[phase-4-063-ignatius-letters]]"]
 influenced-by: ["[[phase-4-063-ignatius-letters]] (Ignatian theology of martyrdom-as-eucharist)", "[[phase-3-019-4-maccabees]] (Maccabean noble-death model)", "[[phase-3-016-gospel-of-mark]] / passion narratives (Polycarp's death deliberately patterned on Christ's)", "Greco-Roman *noble death* / Stoic *exitus illustrium* literary tradition (Socrates, Cato, Seneca, Pliny on Arria)"]
-influences: ["[[phase-4-036-passio-perpetuae]] (~+203 — *the* next-developed martyrology)", "all subsequent Christian hagiography (Martyrdom of Polycarp is the **founding text of Christian martyrology as a literary genre**)", "Christian liturgical commemoration of martyr-death-days (the *natalis* — 'birthday into eternal life'; Mart. Pol. 18.3 introduces the practice)", "[[phase-4-041-athanasius-life-of-antony]] (hagiographical genre lineage)", "Eusebius (HE 4.15 reproduces the text)"]
+influences: ["[[phase-4-036-passio-perpetuae]] (~+203 — *the* next-developed martyrology)", "all subsequent Christian hagiography (Martyrdom of Polycarp is the **founding text of Christian martyrology as a literary genre**)", "Christian liturgical commemoration of martyr-death-days (the *natalis* — 'birthday into eternal life'; Mart. Pol. 18.3 introduces the practice)", "[[phase-4-041-athanasius-life-of-antony]] (hagiographical genre lineage)", "Eusebius (HE 4.15 reproduces the text)", "[[husayn-ibn-ali]] / [[event-karbala-680]] — structural martyrology parallel in Shi'a Islam; *shahīd* concept inherits the Greek *martyros* framework", "[[tradition-shia-islam]] — Karbala paradigm shares natalis-anniversary / willing-acceptance / intercessory-martyr theology", "[[phase-4-066-polycarp-philippians]] — biographical and theological companion document from the same community"]
 deities-mentioned: ["[[yahweh|the Father]]", "[[jesus-christ-deity]]"]
 events-context: ["The martyrdom of Polycarp at Smyrna under proconsul Statius Quadratus (~+155 traditional; ~+167 alternative dating)"]
-status: "metadata"
+status: "partial"
 preservation: "Multiple Greek manuscripts (the Mosquensis family; the Hierosolymitanus family), plus Eusebius's verbatim reproduction at *HE* 4.15, plus a Latin version and other ancient versions. Some debate over post-event redactional additions (esp. the closing chapters' transmission-chain notice, plausibly 4th-c.)."
 refs:
   - title: "The Apostolic Fathers, vol. 1 (Loeb)"
@@ -54,6 +54,19 @@ refs:
     year: 1995
     publisher: "Cambridge UP"
     type: "monograph"
+    tier: 1
+  - title: "The Myth of Persecution: How Early Christians Invented a Story of Martyrdom"
+    author: "Moss, Candida R."
+    year: 2013
+    publisher: "HarperOne"
+    type: "monograph"
+    tier: 2
+    notes: "Critical popular-scholarly account; argues the martyrdom narratives are largely literary constructions; useful for genre-criticism perspective but treated with caution in specialist circles"
+  - title: "The Apostolic Fathers in English"
+    author: "Holmes, Michael W."
+    year: 2006
+    publisher: "Baker Academic (3rd ed.)"
+    type: "primary-translation"
     tier: 1
 tags: [phase-4, apostolic-fathers, christian, martyrdom, polycarp, smyrna, hagiography, noble-death, exitus-illustrium, founding-genre, eucharist]
 ---
@@ -93,9 +106,38 @@ A circular letter from the church of Smyrna to the church of Philomelium (in Phr
 - **Historicity of "Jews demanding Polycarp's death."** Whether reflective of actual Jewish-Christian tension at Smyrna or a literary trope (continuing the gospel-passion's "Jews demanding Jesus's crucifixion" narrative). Both readings are defended; the historicity-and-rhetoric question is unresolved.
 - **The miraculous elements** (the pyre refusing to harm Polycarp; the dove flying from his pierced body). Universally regarded as theological-narrative embellishment, regardless of one's views on the underlying event.
 
+## MASSIVE wins — cross-tradition edges
+
+### The cult of saints — founding document
+*Mart. Pol.* 18.3 is the **founding articulation of the Christian saint's feast-day system**. The Smyrnaean community announces it will gather annually at Polycarp's tomb on the anniversary of his death — his *natalis* (birthday into eternal life). This single sentence launches:
+- The annual Christian liturgical calendar of saints' feast days (still observed in Catholic, Orthodox, and Anglican calendars)
+- The pilgrimage system to martyrs' tombs (Rome's catacombs, the shrines of Peter and Paul, later the entire medieval pilgrimage network: Canterbury, Compostela, Rome, Jerusalem)
+- The theological concept that the martyr's remains (*relics*) have sanctifying power — the community in *Mart. Pol.* 17–18 explicitly argues for recovering Polycarp's bones against pagan claims that they are worshipping him instead of Christ
+
+The pilgrimage industry of medieval Europe — Chaucer's Canterbury Tales, the Camino de Santiago, the *Via Dolorosa* in Jerusalem, the relic trade that funded cathedral construction — all trace institutionally to this one passage in a Smyrnaean community circular of ~+155 CE.
+
+### First use of "catholic church" (katholikē ekklēsia)
+*Mart. Pol.* inscriptio (opening address): "The church of God sojourning at Smyrna, to the church of God sojourning in Philomelium, and to all the parishes (*paroikiai*) of the **holy and universal church** (*katholikē ekklēsia*) everywhere." This is the **earliest attested use of *katholikē ekklēsia* in its full ecclesiological sense** — the church as the single universal body transcending local communities. The term becomes the self-description of Western Christianity (Catholic) and is retained in the Nicene Creed ("one holy, **catholic**, and apostolic church"). The word carries this Smyrnaean-martyrological origin.
+
+### MASSIVE WIN: Martyrdom transmission chain — Christian → Islamic
+The *shahīd* (martyr, witness) in Islamic theology directly borrows the Greek *martys/martyros* (witness) — the same word that is the title of this document. The conceptual transmission runs:
+- Greek *martys* (witness in a legal sense) → applied to those who died testifying to Christ → becomes *martyrdom* as a theological category in texts like *Mart. Pol.*
+- Arabic *shahīd* inherits the same conceptual structure: one who witnesses (to God) by dying; the highest rank of death in Islamic theology
+- **The Karbala narrative (680 CE)** — the martyrdom of **[[husayn-ibn-ali]]** at Karbala — uses parallel dramaturgical elements to the *Martyrdom of Polycarp*:
+  - Divine predestination: both Polycarp and Husayn are shown foreknowing their deaths (Polycarp dreams his pillow is on fire; Husayn's trajectory is presented as willed acceptance)
+  - Willing acceptance: both refuse the escape routes available to them
+  - Covenant framing: death as fulfillment of a divine covenant
+  - Post-mortem intercession: the martyr's ongoing mediating presence before God
+  - Annual commemoration: the Shi'a *ʿĀshūrāʾ* commemoration of Husayn's death is precisely the same structural institution as the *natalis* of the Christian martyrology — an annual communal memorial at or oriented toward the death-site, with the martyr's ongoing intercessory power as the theological rationale
+- [[tradition-shia-islam]] develops the most elaborate martyrology theology in Islam; the *Karbala paradigm* (Hamid Dabashi's term) shapes all subsequent Shi'a piety, politics, and artistic production
+
+The structural parallel between Christian martyrology and Shi'a Karbala theology is one of the most significant and under-documented cross-tradition convergences in the Codex Atlas. See [[event-karbala-680]], [[husayn-ibn-ali]], [[tradition-shia-islam]], [[tradition-islam]].
+
 ## Refs
 1. Ehrman, B. (2003). *The Apostolic Fathers, vol. 1* (Loeb). Harvard UP.
 2. Hartog, P. (2013). *Polycarp's Epistle / Martyrdom of Polycarp* (Oxford Apostolic Fathers). Oxford UP.
 3. Moss, C. (2010). *The Other Christs*. Oxford UP.
 4. van Henten, J.W., & Avemarie, F. (2002). *Martyrdom and Noble Death*. Routledge.
 5. Bowersock, G.W. (1995). *Martyrdom and Rome*. Cambridge UP.
+6. Moss, C. (2013). *The Myth of Persecution*. HarperOne.
+7. Holmes, M.W. (2006). *The Apostolic Fathers in English* (3rd ed.). Baker Academic.
