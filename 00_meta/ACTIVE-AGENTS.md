@@ -26,10 +26,13 @@ _Hand-maintained. Each agent currently working in the vault appends a claim bloc
 
 ---
 
-## alphabet-semitic-mysticism-1 — 5 letter-mysticism nodes — IN PROGRESS
-- Owns: `11_alphabets/alphabet-sefer-yetzirah.md` (NEW), `11_alphabets/alphabet-gematria-hebrew.md` (NEW), `11_alphabets/alphabet-isopsephy-greek.md` (NEW), `11_alphabets/alphabet-ilm-al-huruf.md` (NEW), `11_alphabets/alphabet-huruf-muqattaat.md` (NEW)
-- Also touches: `src/data/patterns.js` (2 new entries)
-- Status: IN PROGRESS
+## ~~alphabet-semitic-mysticism-1 — 5 letter-mysticism nodes — 2026-05-17 — FINISHED~~
+- ~~Owned: `11_alphabets/alphabet-sefer-yetzirah.md` (NEW full), `11_alphabets/alphabet-gematria-hebrew.md` (NEW full), `11_alphabets/alphabet-isopsephy-greek.md` (NEW full), `11_alphabets/alphabet-ilm-al-huruf.md` (NEW full), `11_alphabets/alphabet-huruf-muqattaat.md` (NEW full)~~
+- ~~Wiring stub: `07_traditions/tradition-greek-mystery-religion.md` (NEW stub)~~
+- ~~Patterns added: `letter-number-triad` (TRANSMISSION), `letters-as-creation-tools` (CONVERGENCE)~~
+- ~~Status: FINISHED — commit `cd757b4`. Build: 2639 nodes · 15836 edges · 0 YAML errors · 0 dead links introduced~~
+- ~~MASSIVE WIN edges: (1) letters-as-creation-tools CONVERGENCE — Sefer Yetzirah (22 Hebrew letters as creation-materials, 3rd–6th c. CE) + Marcus the Magician (24 Greek letters as Pleroma structure, 2nd c. CE) + Ibn Arabi (28 Arabic letters as breath-of-the-Merciful, 13th c. CE): three traditions, three language-sets, zero contact, structurally identical claim; (2) letter-number-triad TRANSMISSION — Gematria/Isopsephy/Abjad all activate the same Phoenician letter-order (c. 1050 BCE), independently discovered by three civilizations across 1,700 years; (3) Revelation 666 = Nero Caesar in Hebrew Gematria — Jewish interpretive technology operating as political cipher in New Testament; (4) 28 Arabic letters = 28 lunar mansions — deliberate alphabetic intervention reshaping a script to match a cosmic number; (5) Huruf al-Muqatta'at as the most public letter-mysticism claim in history: 29 Quranic suras opening with undecoded individual letters, still unresolved after 1,400 years of scholarship~~
+- ~~Open gaps: Quran full node (no `quran.md` exists); Marcus the Magician deserves own person node; Ahmad al-Buni deserves person node; Sefer Yetzirah deserves document node in `02_documents/` at `full-text` tier~~
 
 ---
 
