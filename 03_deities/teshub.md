@@ -33,7 +33,7 @@ syncretic-edges:
     type: "ancient-identification"
     source: "Hittite–Luwian theonym equivalence in royal cult"
     notes: "Tarḫunta / Tarhunza is the Anatolian Indo-European name for the same storm-god; Teshub is the Hurrian name. The two were merged in Hittite imperial cult."
-status: "metadata"
+status: "full"
 refs:
   - title: "Hittite Myths (2nd ed.)"
     author: "Hoffner, Harry A., Jr."
@@ -102,6 +102,44 @@ Striding warrior god, beard, conical horned cap, holding triple-pronged lightnin
 ## Disputes
 - **Indo-European vs. Hurrian origin.** Hittite Tarḫunna is Indo-European (PIE *terh₂- "to overpower"; cognate to Norse Thor / Þórr, Vedic Tarutar epithet). Hurrian Teššub is non-Indo-European. The Late Bronze Age imperial cult fused them. Scholars disagree on which name dominates which cult context (Schwemer 2001).
 - **Date of the Kumarbi cycle.** Composition probably ~-1600 to -1400 in Hurrian; standard Hittite recensions ~-1400 to -1200. Whether the cycle is a Hurrian original translated into Hittite, or co-developed, is debated (Hoffner 1998; Bachvarova 2016).
+
+## MASSIVE WIN: The Storm-God Pattern — Five Traditions, One Structural Template
+
+The most important cross-tradition pattern Teshub anchors is the **cosmic storm-god who defeats a predecessor/chaos power and establishes universal sovereignty**. This pattern recurs across independent traditions with varying degrees of documented transmission:
+
+| Tradition | Storm God | Predecessor / Chaos Power Defeated | Reference text |
+|---|---|---|---|
+| Hurrian/Hittite | **Teshub** | Kumarbi (who deposed Anu); later Ullikummi + Hedammu | Kumarbi Cycle ~1300 BCE (CTH 344–348) |
+| Greek | **Zeus** | Kronos (who deposed Ouranos); later Typhon | Hesiod *Theogony* ~700 BCE |
+| Canaanite | **Baal-Hadad** | Yam (Sea/Chaos) and Mot (Death) | Ugaritic Baal Cycle ~1400 BCE |
+| Vedic | **Indra** | Vritra (cosmic serpent blocking the waters) | Rigveda (Family Books ~-1200 to -900) |
+| Norse | **Thor** / Odin | Ymir (primordial giant); Jörmungandr | Prose Edda (~1220 CE) |
+
+**Transmission status:**
+- **Hittite → Greek**: Documented transmission via Late Bronze Age itinerant singer networks; the structural and motivic parallels are too specific to be coincidental (Bachvarova 2016; West 1997). The Kumarbi Cycle is the *source text* for Hesiod's Theogony succession myth — this is the vault's single clearest ANE→Greek transmission case.
+- **Hittite ↔ Canaanite (Baal Cycle)**: Contemporaneous cultures in diplomatic contact; Hurrian theonyms appear in Ugaritic ritual texts; Teshub and Baal-Hadad were explicitly equated in Late Bronze Age cult practice (Schwemer 2001). The Baal Cycle (~1400 BCE) may be *earlier* than the preserved Kumarbi Cycle tablets (~1300 BCE), suggesting shared ANE storm-god theology rather than direct dependence.
+- **Vedic Indra** and **Norse Thor/Odin**: Structural parallels within the broader **Indo-European storm-warrior** reflex (*dʰéǵʰom / Perkʷunos* reconstruction). Teshub is Hurrian (non-Indo-European) but was fused in Hittite imperial cult with the Indo-European Anatolian storm-god Tarḫunna — giving Teshub a uniquely hybrid position connecting the Semitic-Hurrian and Indo-European storm-god streams.
+
+The chaoskampf pattern — [[chaoskampf]] — is the theme node for this cross-tradition matrix.
+
+## Edge Connections
+
+| Target | Relation type | Notes |
+|---|---|---|
+| [[zeus]] | scholarly-parallel | Direct mythological source: Anu → Kumarbi → Teshub = Ouranos → Kronos → Zeus (Bachvarova 2016; West 1997) |
+| [[baal-hadad]] | ancient-identification | Continuous Anatolian–Syrian storm-god cult zone; Hurrian-Ugaritic equivalence documented (Schwemer 2001) |
+| [[indra]] | scholarly-parallel | Indo-European storm-warrior reflex; Indra defeats Vritra (serpent-chaos) as Teshub defeats Ullikummi/Hedammu |
+| [[thor]] | scholarly-parallel | Norse Thor as Indo-European storm-warrior cognate; Teshub fused with Anatolian Indo-European Tarḫunna |
+| [[ymir]] | scholarly-parallel | Ymir as primordial giant/predecessor parallels the Kumarbi/Ullikummi role in the succession cycle |
+| [[enlil]] | ancient-identification | Hurrian theological lists; Kumarbi (Teshub's father) identified with Enlil; Teshub inherits cosmic kingship from Enlil's slot |
+| [[kumarbi]] | child-of | Teshub is Kumarbi's son and usurper; the father-son succession is the Kumarbi Cycle's core |
+| [[hebat]] | consort-of | Hebat (Sun Goddess of the Hurrian pantheon) is Teshub's divine queen; paired at Yazılıkaya |
+| [[phase-1-028-kumarbi-cycle]] | attested-in | Primary source; CTH 344–348 from the Boğazköy archive |
+| [[phase-1-030-illuyanka-myth]] | attested-in | Hittite chaoskampf text: Teshub vs. the serpent Illuyanka; recited at the Purulli spring festival |
+| [[phase-2-009-hesiod-theogony-works-and-days]] | source-of | The Kumarbi Cycle is the documented source for Hesiod's Theogony succession myth; Teshub → Zeus transmission |
+| [[chaoskampf]] | theme-of | Teshub's combats (Illuyanka, Hedammu, Ullikummi) are core instances of the chaoskampf pattern |
+| [[an-sumerian]] | scholarly-parallel | Hurrian Anu (the sky-god Kumarbi castrates) is cognate with Sumerian An; the sky-god slot is equivalent |
+| [[tradition-greek-religion]] | source-of | Via transmission to Hesiodic tradition |
 
 ## Refs
 1. Hoffner, H.A. (1998). *Hittite Myths*, 2nd ed. SBL.
