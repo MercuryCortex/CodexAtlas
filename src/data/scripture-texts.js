@@ -1216,3 +1216,683 @@ SCRIPTURE_TEXTS['chandogya-621'] = {
     },
   ]
 };
+
+// ── 12. YASNA 30 — THE GATHAS OF ZOROASTER ────────────────────────────────
+SCRIPTURE_TEXTS['yasna-30'] = {
+  title      : 'Yasna 30 — The Two Spirits',
+  shortTitle : 'Yasna 30',
+  tradition  : 'Zoroastrianism',
+  date       : 'c. 1200–1000 BCE (Gathic Avestan)',
+  intro      : 'The most theologically dense of the Gathas — the oldest hymns attributed directly to Zarathustra. Yasna 30 announces the primordial choice between Truth (Asha) and the Lie (Druj), incarnated as twin Spirits whose antagonism structures all reality. This is the historical origin of binary moral-cosmos theology that flows into Qumran\'s Community Rule, the Didache\'s Two Ways, Manichaean Light/Darkness, and Augustine\'s City of God. Zarathustra is the world\'s first historically named prophet.',
+  crossTradition : [
+    { label: 'Qumran — Two Spirits Treatise (1QS 3)', note: 'The Community Rule\'s Two Spirits (Spirit of Truth / Spirit of Deceit) is Yasna 30 in Hebrew sectarian theology. Transmission route: Persian period (539–333 BCE) Jewish exile in Babylon.' },
+    { label: 'John 1:5 — Light and Darkness', textId: 'john-1', note: '"The light shines in the darkness." The Johannine Light/Darkness dualism is the New Testament\'s version of the Two Spirits.' },
+    { label: 'Poimandres — Light vs. Darkness', textId: 'poimandres', note: 'The Hermetic cosmos splits at creation into Light and Darkness — the same binary structure as the Two Spirits, now cosmological rather than moral.' },
+    { label: 'Manichaean Light / Darkness', note: 'Mani explicitly claimed Zoroastrian descent. The Zoroastrian binary is the direct ancestor of Manichaean cosmological dualism.' },
+  ],
+  translations : [
+    { id: 'insler',  label: 'Insler 1975 (T1)' },
+    { id: 'humbach', label: 'Humbach 1991 (T1)' },
+    { id: 'avestan', label: 'Avestan (original)' },
+  ],
+  sections : [
+    {
+      heading : 'Stanzas 1–2 — The Summons',
+      verses  : [
+        { ref: 'Y 30.1',
+          text: 'Now I shall proclaim to those who will listen the hymns of the Wise One to be pondered by the man of understanding. Praises of the Lord and of Good Thought — and the truth, which uplifts those who see aright, and is joy to them.',
+          textVersions: {
+            humbach: 'Now I shall proclaim to those who wish to hear the hymns of the Wise One which should be kept in mind by the one having understanding. Praises of the lord and of good thinking, and Truth, which leads aright those who see clearly, and blessings.',
+            avestan: 'AT tā vaxšyā aŋhūš mazdā\niyāi drəgvantō drujəm\nyauuat vīspā ā kāmā\nnōit dahmā āiiamā\n[Now I shall speak the words of the Wise Lord\nto those who wish to hear\nfor as long as that wish lasts\nmay the righteous not miss the way]',
+          },
+          entities: [
+            { word: 'Wise One', node: 'ahura-mazda', type: 'deity',
+              note: 'Ahura Mazda — "Wise Lord" (ahura = lord, mazdā = wisdom/mind). Zarathustra\'s supreme deity is defined by wisdom, not power. This is the world\'s first theologically explicit ethical monotheism — the divine is not a storm-god or a king-god but a mind-god.',
+              parallels: [
+                { label: 'Nous (Poimandres)', textId: 'poimandres', note: 'The Hermetic supreme principle is also identified with Mind/Wisdom — Nous rather than power.' },
+                { label: 'Brahman (Chandogya)', textId: 'chandogya-621', note: 'The Upanishadic absolute creates by thinking — same identification of the divine with intelligence.' },
+              ]
+            },
+          ]
+        },
+        { ref: 'Y 30.2',
+          text: 'Hear with your ears the best things; look upon them with clear-seeing thought, for decision between the two Beliefs, each man for himself before the Great Consummation, bethinking you that it be accomplished to our pleasure.',
+          textVersions: {
+            humbach: 'Hear the best with your ears. Consider with clear-thinking mind — man by man for his own self — the two choices, before the great transformation; being aware that it should come to pass to our pleasure.',
+            avestan: 'sraotā gēušāiš vahišta sūraiiā\nava xratu mazdā\nyaēšąm aiiārəm paiti\nhačaitē armaiti\n[Hear with the ears the best things\nconsider with clear-thinking mind\nman for himself the teachings\nbefore the great transformation]',
+          },
+          entities: [
+            { word: 'two Beliefs', node: 'spenta-mainyu', type: 'theme',
+              note: 'The Two Spirits (Spenta Mainyu / Angra Mainyu). At the beginning, two equal and opposite principles chose their natures. Human moral life mirrors this primordial choice — every individual must choose their alignment before the "Great Consummation" (frashokereti, the final renovation of the world).',
+              parallels: [
+                { label: 'Qumran Two Spirits (1QS 3:18–4:26)', note: 'The Community Rule\'s "Prince of Light" and "Angel of Darkness" are direct theological descendants of Spenta Mainyu and Angra Mainyu.' },
+              ]
+            },
+          ]
+        },
+      ]
+    },
+    {
+      heading : 'Stanzas 3–4 — The Primordial Choice',
+      verses  : [
+        { ref: 'Y 30.3',
+          text: 'Now the two primal Spirits, who revealed themselves in vision as twins, are the Better and the Bad in thought, word, and deed. And between these two, the Beneficent chose aright, but not so the Maleficent.',
+          textVersions: {
+            humbach: 'Now those two Spirits at the beginning announced themselves, one the Better and the other the Bad, in thought, word, and action. Between the two, the Beneficent one made the right choice, not the evil one.',
+            avestan: 'AT tā mainiiū paouruiiē\nyā yəmā xvafiia sruuātəm\nmanahī vacahī šiiaoθanōi\nhi vahiiō akəmcā\n[At the beginning the two Spirits who are twins\nrevealed themselves in thought, word, and action\nas the Better and the Bad]',
+          },
+          entities: [
+            { word: 'two primal Spirits', node: 'spenta-mainyu', type: 'deity',
+              note: 'Spenta Mainyu (Holy Spirit) and Angra Mainyu (Destructive Spirit) — twin principles who chose their natures at the beginning. The theology is radical: evil is not God\'s creation but the result of a free cosmic choice.',
+            },
+            { word: 'Better and the Bad', node: 'ahriman', type: 'theme',
+              note: 'Ahriman (Angra Mainyu) chose evil freely — making Zoroastrianism the world\'s first systematic theodicy by principle rather than by narrative. The daēvas (cognate with Sanskrit deva = gods) become demons in Zoroastrianism — the same word inverted in valence across the Indo-Iranian split.',
+              parallels: [
+                { label: 'Isaiah 45:5 / Yaldabaoth Inversion', note: 'The Gnostic inversion of the Hebrew God into an ignorant Demiurge is structurally parallel: the "god" of one tradition becomes the "demon" of another.' },
+              ]
+            },
+            { word: 'thought, word, and deed', node: 'tradition-zoroastrianism', type: 'tradition',
+              note: 'Humata, Hukhta, Hvarshta — "Good Thought, Good Word, Good Deed." The Zoroastrian ethical triple. This triadic formula predates Christian thought/word/deed moral theology by over 1,000 years.',
+            },
+          ]
+        },
+        { ref: 'Y 30.4',
+          text: 'And when these two Spirits came together in the beginning, they established Life and Not-Life, and that at the last the Worst Existence shall be for the followers of the Lie, but the Best Thought for those of Truth.',
+          entities: [
+            { word: 'Life and Not-Life', node: 'primordial-darkness', type: 'theme',
+              note: 'The Two Spirits\' first act is the establishment of Life (ahu) and Non-Life — a creation-by-division structure. The cosmos exists because it has been split into two. Parallel to the separation of Light from Darkness in Genesis 1 and to the Poimandres\'s primordial division.',
+              parallels: [
+                { label: 'Genesis 1 — Light separated from Darkness', textId: 'genesis-1', note: 'God separates light from darkness on Day 1 — the same primordial binary as Yasna 30\'s Life/Non-Life.' },
+                { label: 'Poimandres — Light into Darkness', textId: 'poimandres', note: 'The Hermetic light descends into the groaning darkness — same primordial binary structure.' },
+              ]
+            },
+            { word: 'Truth', node: 'druj', type: 'theme',
+              note: 'Asha ("Truth/Right Order") — cognate with Sanskrit ṛta (cosmic order). Both describe the same principle: the pattern by which the universe ought to work, which is simultaneously physical law, moral law, and religious truth. Druj (the Lie) is its cosmic opposite.',
+            },
+          ]
+        },
+      ]
+    },
+    {
+      heading : 'Stanzas 5–7 — The Consequence',
+      verses  : [
+        { ref: 'Y 30.5',
+          text: 'Of these two Spirits, the Evil one chose to do the worst things. But the Most Holy Spirit, who is clad in the hardest stones, chose right — and so do those who, with true acts, please Ahura Mazda.',
+          entities: [
+            { word: 'Holy Spirit', node: 'spenta-mainyu', type: 'deity',
+              note: 'Spenta Mainyu — "Holy/Bounteous Spirit." The New Testament\'s Pneuma Hagion (Holy Spirit) may be a conceptual descendant via the Jewish apocalyptic tradition shaped by the Persian period. The Iranian word mazdā (wisdom/mind) is cognate with Sanskrit medhā (mental power) — the supreme deity is defined by cognitive excellence.',
+            },
+            { word: 'sacred fire', node: 'sacred-fire', type: 'theme',
+              note: 'Fire (Atar) is the most sacred Zoroastrian symbol — the visible manifestation of Ahura Mazda\'s divine energy and truth. Zoroastrian temples maintain perpetual sacred fires. The fire is not worshipped as a deity but honored as the medium of divine presence — comparable to the Burning Bush (Exodus 3), Elijah\'s altar fire (1 Kings 18), and Pentecost (Acts 2:3).',
+              parallels: [
+                { label: 'Sacred Fire — Five Traditions', note: 'Zoroastrian Atar / Hebrew divine fire / Hindu Agni / Roman Vestal flame / Mandaean living water-fire — five traditions independently maintain perpetual sacred fire as divine presence.' },
+              ]
+            },
+          ]
+        },
+        { ref: 'Y 30.6',
+          text: 'Between them the daêvas did not choose aright, for as they deliberated, delusion overcame them, so that they chose the most Evil Mind. Then they rushed together to Violence, that they might enfeeble the world of men.',
+          entities: [
+            { word: 'daêvas', node: 'ahriman', type: 'theme',
+              note: 'Daēvas — Zoroastrian demons. Cognate with Sanskrit deva (gods) and Latin deus (god). The most striking cross-traditional inversion in comparative religion: in Vedic religion deva are good divine beings; in Zoroastrianism the same word means demons. The same linguistic family split into opposite valences. The Aēshma Daēva (demon of wrath) survives in Hebrew as Asmodeus (Book of Tobit) — one of the clearest documented Zoroastrian→Jewish transmissions.',
+            },
+          ]
+        },
+        { ref: 'Y 30.7',
+          text: 'And to this world came Devotion together with Dominion, Good Mind, and Truth: and to the deeds of salvation, Endurance gave body, strength; and Piety, as the first did for the Lie, so now for Truth.',
+          entities: [
+            { word: 'Good Mind', node: 'ahura-mazda', type: 'theme',
+              note: 'Vohu Manah — Good Mind/Good Thought — one of the Amesha Spentas (Holy Immortals), the divine aspects of Ahura Mazda. The divine cognitive principle: right understanding, beneficial intelligence. In later Zoroastrianism Vohu Manah is the angel who leads the soul to paradise.',
+            },
+          ]
+        },
+      ]
+    },
+  ]
+};
+
+// ── 13. GOSPEL OF THOMAS — SELECTED LOGIA ─────────────────────────────────
+SCRIPTURE_TEXTS['gospel-of-thomas'] = {
+  title      : 'Gospel of Thomas — Selected Logia',
+  shortTitle : 'Gospel of Thomas',
+  tradition  : 'Gnostic / Early Christianity',
+  date       : 'c. 50–140 CE (Greek original lost; Coptic Nag Hammadi ms. c. 340 CE)',
+  intro      : 'The Gospel of Thomas is 114 sayings attributed to Jesus, discovered at Nag Hammadi in 1945. Unlike the canonical gospels, it has no narrative, no passion story, no resurrection — only sayings. Logion 1 frames everything: "Whoever discovers the meaning of these sayings will not taste death." Salvation is understanding, not faith. Thomas is the key text for the self-knowledge (gnosis) tradition: the divine is not remote but the very ground of the seeker\'s identity. Logion 77 is the vault\'s sharpest single-sentence statement of divine immanence, shared structurally by Advaita Vedanta, Rhineland mysticism, Sufi waḥdat al-wujūd, and Huayan Buddhism.',
+  crossTradition : [
+    { label: 'John 1 — Logos theology', textId: 'john-1', note: '"I am the light that is above them all" (L.77) is Thomas\'s compressed version of the Logos prologue — same claim, aphoristic form.' },
+    { label: 'Chandogya 6.8 — Tat Tvam Asi', textId: 'chandogya-621', note: '"The kingdom is inside you and outside you" (L.3) is the closest New Testament parallel to tat tvam asi.' },
+    { label: 'Poimandres — Self-Knowledge as Salvation', textId: 'poimandres', note: '"Know thyself and know the Father" maps precisely onto Thomas\'s gnosis-as-salvation structure.' },
+    { label: 'Tao Te Ching — The Unspoken', textId: 'tao-te-ching-1', note: 'L.1 ("secret sayings") shares the Daoist structure: the truth that saves cannot be fully transmitted in language.' },
+  ],
+  translations : [
+    { id: 'patterson', label: 'Patterson-Meyer 1992 (T1)' },
+    { id: 'lambdin',   label: 'Lambdin 1988 (T1)' },
+    { id: 'coptic',    label: 'Coptic (original)' },
+  ],
+  sections : [
+    {
+      heading : 'The Frame and the Kingdom',
+      verses  : [
+        { ref: 'L. 1',
+          text: 'And he said: Whoever discovers the interpretation of these sayings will not taste death.',
+          textVersions: {
+            lambdin: 'And he said, "Whoever finds the interpretation of these sayings will not experience death."',
+            coptic:  'auw peJaF Je petahe ermhneian nneiSaJe naJi Jipe mmou an\n[And he said: Whoever finds the interpretation of these words will not taste death]',
+          },
+          entities: [
+            { word: 'interpretation', node: 'tradition-gnosticism', type: 'theme',
+              note: 'Hermēneia — interpretation, discernment, gnosis. The gospel frames itself as a riddle-collection requiring decoding — salvation is understanding, not belief. This is the structural difference between Gnostic and Catholic Christian soteriology. Irenaeus attacked Thomas\'s emphasis on individual interpretation as anarchic; Thomas vindicates the Gnostic position from the first word.',
+              parallels: [
+                { label: 'Zen kōan tradition', note: 'The kōan — an unresolvable riddle triggering enlightenment — is structurally identical to Thomas\'s "hidden sayings requiring interpretation."' },
+              ]
+            },
+          ]
+        },
+        { ref: 'L. 3',
+          text: 'Jesus said: If your leaders say to you, "Look, the kingdom is in the sky," then the birds of the sky will precede you. If they say to you, "It is in the sea," then the fish will precede you. Rather, the kingdom is inside you and it is outside you.',
+          entities: [
+            { word: 'kingdom', node: 'logos-johannine', type: 'theme',
+              note: 'The kingdom (Coptic: tmntrro) is Thomas\'s term for the state of realized divine self-knowledge — not a future political event or post-mortem reward but a present condition. "Inside you and outside you" = the divine ground is both the seeker\'s own depth AND the structure of all things. This is the precise claim of Chandogya\'s tat tvam asi and Huayan\'s mutual interpenetration.',
+              parallels: [
+                { label: 'Tat Tvam Asi — Chandogya 6.8', textId: 'chandogya-621', note: '"That art thou" — the Brahman you seek is identical with the self that seeks. Thomas\'s "inside you" is the New Testament\'s nearest statement of this.' },
+              ]
+            },
+          ]
+        },
+        { ref: 'L. 22',
+          text: 'Jesus said to them: When you make the two into one, and when you make the inner like the outer and the outer like the inner, and the upper like the lower, and when you make male and female into a single one, so that the male will not be male nor the female be female — then you will enter the kingdom.',
+          entities: [
+            { word: 'make the two into one', node: 'anthropos-gnostic', type: 'theme',
+              note: 'The restoration of the androgynous Anthropos — the primal Human who existed before the division into male and female. In Gnostic cosmology the Fall is the sundering of primal unity into multiplicity; salvation is the reversal. Paul\'s "neither male nor female" (Gal 3:28) is the same move in a different register.',
+              parallels: [
+                { label: 'Poimandres — Androgynous Anthropos', textId: 'poimandres', note: 'Poimandres CH I.14–15: the primal Anthropos descends into matter, becomes divided. Gnostic salvation = the undoing of this division.' },
+              ]
+            },
+          ]
+        },
+      ]
+    },
+    {
+      heading : 'Light Sayings',
+      verses  : [
+        { ref: 'L. 50',
+          text: 'Jesus said: If they say to you, "Where did you come from?" say to them, "We came from the light, from the place where the light came into being by itself, established itself, and appeared in their image." If they say to you, "Is it you?" say, "We are its children, and we are the chosen of the living Father."',
+          entities: [
+            { word: 'light', node: 'primordial-darkness', type: 'theme',
+              note: 'Thomas\'s light theology: the divine ground IS light (L.77), the Gnostic soul COMES FROM light (L.50), and the light is self-generating ("came into being by itself"). This is the Coptic equivalent of the Greek autogenes (self-begotten) — the Sethian Gnostic designation for Christ as the third principle of the divine triad.',
+              parallels: [
+                { label: 'John 1:4–5 — Life was the light', textId: 'john-1', note: '"In him was life, and the life was the light of men." The Johannine Light-Life equation parallels Thomas\'s light theology.' },
+                { label: 'Poimandres — Nous as pure light', textId: 'poimandres', note: 'CH I.4: "I beheld a boundless light." The Hermetic Nous is pure undifferentiated light — same as Thomas\'s generative light.' },
+              ]
+            },
+          ]
+        },
+        { ref: 'L. 77',
+          text: 'Jesus said: I am the light that is above them all. I am the All; the All came forth from me, and the All attained to me. Split a piece of wood — I am there. Lift up the stone, and you will find me there.',
+          textVersions: {
+            coptic: 'JeJ pe pouoein eteHiJn Pthr\nanoJ pe pthr\naf ei ebol nHht auw pthrf aJn eHrai eroJ\nBoq nnoue JeanoJ eimmaau\nTwwbe eHrai mpwne tetnaHe eroJ eHrai mmaau\n[I am the light that is above all things\nI am everything\nfrom me everything came and to me everything returns\nSplit wood: I am there\nlift the stone and you will find me there]',
+          },
+          entities: [
+            { word: 'I am the light', node: 'logos-johannine', type: 'theme',
+              note: '"I am the light that is above them all" — the most explicit statement of divine omnipresence in Thomas. "I am the All; the All came forth from me" is simultaneously the Johannine Logos theology, the Hermetic Nous-as-source doctrine, and the Vedantic tat tvam asi.',
+              parallels: [
+                { label: 'John 8:12 — "I am the light of the world"', textId: 'john-1', note: 'The canonical parallel — same "I am" + light claim, without Thomas\'s immanence extension into wood and stone.' },
+                { label: 'Tat Tvam Asi — Chandogya', textId: 'chandogya-621', note: '"I am the All" = "I am Brahman." The divine ground is not merely present in all things but IS all things.' },
+              ]
+            },
+            { word: 'Split a piece of wood', node: 'tradition-gnosticism', type: 'theme',
+              note: 'The radical immanence of L.77b: "Split wood — I am there. Lift up the stone — you will find me." The most concrete statement of panentheism in the gospel tradition. Parallels Meister Eckhart: "God is in a stone or a log, though they do not know it" — and Zen\'s "Buddha-nature is in a dried dung-stick" (Yunmen). 1,200 years and 8,000 km separate these three statements; same structure.',
+              parallels: [
+                { label: 'Eckhart — God in a Stone', note: 'Meister Eckhart: "God is equally in all things: in a stone, in a log of wood." Structurally identical to L.77b.' },
+              ]
+            },
+          ]
+        },
+        { ref: 'L. 108',
+          text: 'Jesus said: Whoever drinks from my mouth will become like me; I myself shall become that person, and the hidden things will be revealed to that person.',
+          entities: [
+            { word: 'become like me', node: 'anthropos-gnostic', type: 'theme',
+              note: 'The Thomas soteriology at its most explicit: the goal is not union into the divine but mutual identification — "I myself shall become that person." This is the theosis doctrine (Athanasius: "God became man so that man might become God") taken to its radical conclusion. Parallels Sufi fanāʾ — complete dissolution into the divine — and Vedantic "I am Brahman."',
+              parallels: [
+                { label: 'Sufi Fanāʾ — al-Hallaj', note: 'Ana al-Haqq ("I am the Truth") — al-Hallaj\'s claim of complete divine identification. Thomas\'s logion is the same claim from the mouth of Jesus.' },
+              ]
+            },
+          ]
+        },
+      ]
+    },
+  ]
+};
+
+// ── 14. SEFER YETZIRAH — CHAPTERS 1–2 ─────────────────────────────────────
+SCRIPTURE_TEXTS['sefer-yetzirah'] = {
+  title      : 'Sefer Yetzirah — Book of Formation (Chs. 1–2)',
+  shortTitle : 'Sefer Yetzirah',
+  tradition  : 'Kabbalistic / Jewish',
+  date       : 'c. 3rd–6th century CE (attributed to Abraham; oldest surviving Kabbalistic text)',
+  intro      : 'The Sefer Yetzirah (Book of Formation) is the oldest surviving Kabbalistic text. In under 2,000 words, it presents the universe as created through 32 paths of wisdom: 10 sefirot (divine dimensions) and 22 letters of the Hebrew alphabet. God does not create from nothing by fiat alone — God creates by manipulating the building-blocks of language itself. The central claim is among the most radical in world literature: letters are not signs pointing to things; letters ARE the things. This is the inverse of Saussure\'s "arbitrary sign" (1916) — in Sefer Yetzirah the relationship between signifier and signified is necessary, cosmological, and operative. Medieval Kabbalists used the letter-permutation methods described here as a full contemplative technology — structurally identical to Vedic mantra science and Iamblichean theurgy.',
+  crossTradition : [
+    { label: 'Memphite Theology — Ptah Creates by Letters', textId: 'memphite-theology', note: 'The Shabaka Stone\'s "heart thinks, tongue commands" is the Egyptian version of Sefer Yetzirah\'s letter-as-creation-tool doctrine.' },
+    { label: 'John 1:1 — In the Beginning was the Word', textId: 'john-1', note: 'The Johannine Logos as divine creative speech — the closest New Testament parallel to creation-by-letter.' },
+    { label: 'Tantric Sanskrit — Mātṛkā Doctrine', note: 'The Tantric teaching that Sanskrit phonemes are the building-blocks of reality (mātṛkā = "little mothers" of the cosmos) is structurally identical to Sefer Yetzirah\'s 22 letters as creation-tools. Independent development, same metaphysical structure.' },
+    { label: 'Nāsadīya Sūkta — Pre-Creation One', textId: 'nasadiya-sukta', note: 'Sefer Yetzirah\'s pre-formation state (before the letters are deployed) parallels the Vedic pre-creation "One" before differentiation.' },
+  ],
+  translations : [
+    { id: 'kaplan', label: 'Kaplan 1990 (T1)' },
+    { id: 'hayman', label: 'Hayman 2004 (critical edition, T1)' },
+    { id: 'hebrew', label: 'Hebrew (original)' },
+  ],
+  sections : [
+    {
+      heading : 'Chapter 1 — The Ten Sefirot',
+      verses  : [
+        { ref: '1:1',
+          text: 'With thirty-two mystical paths of Wisdom, God engraved and created His universe. These are: ten Sefirot of Nothingness, and twenty-two foundation letters.',
+          textVersions: {
+            hayman: 'In thirty-two wondrous paths of wisdom, Yah, Lord of hosts, God of Israel, Living God, Almighty God — He engraved and created his world with three sefarim: with text (sefer), with number (sippur), and with communication (sipur).',
+            hebrew: 'בְּשְׁלֹשִׁים וּשְׁתַּיִם נְתִיבוֹת פְּלִיאוֹת חָכְמָה\nחָקַק יָהּ יְהוָה צְבָאוֹת\nוּבָרָא אֶת עוֹלָמוֹ בִּשְׁלֹשָׁה סְפָרִים\nבְּסֵפֶר וְסֵפֶר וְסִפּוּר\n[In thirty-two wondrous paths of Wisdom\nGod engraved and created His universe\nwith three books: text, number, communication]',
+          },
+          entities: [
+            { word: 'thirty-two', node: 'alphabet-sefer-yetzirah', type: 'document',
+              note: '32 = 10 sefirot + 22 Hebrew letters. The number is not arbitrary: 32 is the numerical value of the Hebrew word לב (lev, "heart") — the universe is created "from the heart of God." Sefer Yetzirah is the foundational document of the entire Kabbalistic tradition: Bahir, Zohar, Lurianic Kabbalah all build on its 32-path framework.',
+            },
+            { word: 'engraved', node: 'creation-by-word', type: 'theme',
+              note: 'Chakak — "engraved." God\'s creative act is not speaking alone (as in Genesis 1) but engraving — making permanent marks in the substance of reality. Three verbs: chakak (engrave), chatzav (hew/cut), tzaraf (combine). Creation is a lapidary art: the universe is a text inscribed in the fabric of being.',
+              parallels: [
+                { label: 'Ptah as Craftsman-Creator', textId: 'memphite-theology', note: 'Ptah is the divine craftsman who creates by designing (heart) and executing (tongue). Sefer Yetzirah\'s engraving God is the Hebrew craftsman-creator equivalent.' },
+              ]
+            },
+          ]
+        },
+        { ref: '1:2',
+          text: 'Ten Sefirot of Nothingness: ten and not nine, ten and not eleven. Understand with Wisdom; be wise with Understanding. Examine with them, probe from them, know, think, and form. Set the thing clearly, and restore the Creator to His place.',
+          textVersions: {
+            hebrew: 'עֶשֶׂר סְפִירוֹת בְּלִימָה\nעֶשֶׂר וְלֹא תֵשַׁע\nעֶשֶׂר וְלֹא אַחַד עָשָׂר\nהָבֵן בְּחָכְמָה וַחֲכַם בְּבִינָה\n[Ten sefirot of nothingness\nten and not nine, ten and not eleven\nUnderstand with Wisdom, be wise with Understanding]',
+          },
+          entities: [
+            { word: 'Sefirot of Nothingness', node: 'ein-sof', type: 'theme',
+              note: 'Sefirot belimah — "sefirot of the void/nothingness." The sefirot are the ten primordial dimensions through which the Infinite (Ein Sof) limits and channels itself into creation. "Ten and not nine, ten and not eleven" — the number is exact and non-negotiable. "Nothingness" here means they have no independent existence — they are modes of the divine, not separate entities.',
+              parallels: [
+                { label: 'Plotinus — The One Beyond Being', textId: 'poimandres', note: 'The Neoplatonic One is "beyond being" — the source of all hypostases but not itself a hypostasis. Same structure: the infinite source manifests through numbered principles.' },
+              ]
+            },
+            { word: 'no end', node: 'apophatic-mysticism', type: 'theme',
+              note: 'Sefer Yetzirah describes the sefirot as extending infinitely in all six directions — the divine is absolutely unlimited. Same apophatic structure as the Tao ("the Tao that can be named is not the eternal Tao") and Plotinus\'s One.',
+              parallels: [
+                { label: 'Tao Te Ching — Limitless Tao', textId: 'tao-te-ching-1', note: '"The Tao that can be told is not the eternal Tao" — same apophatic structure: the absolute cannot be bounded.' },
+              ]
+            },
+          ]
+        },
+      ]
+    },
+    {
+      heading : 'Chapter 2 — The Twenty-Two Letters',
+      verses  : [
+        { ref: '2:1',
+          text: 'Twenty-two foundation letters: He engraved them, He carved them, He permuted them, He weighed them, He transformed them, and with them He depicted all that was formed and all that would be formed.',
+          textVersions: {
+            hayman: 'Twenty-two foundation letters: he engraved them, he hewed them, he weighed them, he combined them, he formed with them the soul of all created and the soul of all that would be created.',
+            hebrew: 'עֶשְׂרִים וּשְׁתַּיִם אוֹתִיּוֹת יְסוֹד\nחֲקָקָן חֲצָבָן שְׁקָלָן הֵמִיר בָּהֶן\nצָרַף אוֹתָן יָצַר בָּהֶן נֶפֶשׁ כָּל הַיָּצוּר\n[Twenty-two foundation letters\nengraved, hewed, weighed, combined\nformed the soul of all created]',
+          },
+          entities: [
+            { word: 'Twenty-two foundation letters', node: 'alphabet-sefer-yetzirah', type: 'document',
+              note: 'The 22 letters of the Hebrew alphabet as the 22 building-blocks of creation. Not symbols but substances: each letter is a primordial form-principle whose combination generates every created thing. The medieval Kabbalist Abraham Abulafia (c. 1240–1291) developed this into a full contemplative technology: rapid permutation of divine names, synchronized with breathing, produces prophetic consciousness — structurally identical to Vedic mantra science and Iamblichean theurgy with vowel sequences.',
+              parallels: [
+                { label: 'Sanskrit Phonemes as Mātṛkā', note: 'The 50 Sanskrit letters as the 50 mothers of all creation — each phoneme is a divine feminine power (śakti). No documented contact; identical structural claim.' },
+                { label: 'Jorge Luis Borges — Library of Babel', note: 'Borges\'s Library (1941) is a direct literary descendant of Sefer Yetzirah\'s combinatorial creation: the universe as the complete library of all letter-combinations.' },
+              ]
+            },
+            { word: 'permuted', node: 'creation-by-word', type: 'theme',
+              note: 'Tziruf — permutation, combination. God creates by taking the 22 letters and permuting them into all possible sequences. Chapter 2 calculates the number of permutations: 22! possibilities. The universe is the complete library of all letter-combinations.',
+            },
+          ]
+        },
+        { ref: '2:2',
+          text: 'Twenty-two foundation letters: He placed them in a wheel with 231 gates. The wheel rotates forward and backward. And this is the sign: nothing in good is higher than delight (OnG — ענג), nothing in evil is lower than plague (NGO — נגע).',
+          entities: [
+            { word: '231 gates', node: 'alphabet-sefer-yetzirah', type: 'document',
+              note: '231 = the number of two-letter combinations from 22 letters (22×21/2). The "231 gates" are all two-letter root combinations of Hebrew — the lexical building-blocks from which all Hebrew words are formed.',
+            },
+            { word: 'delight', node: 'tradition-kabbalah', type: 'theme',
+              note: 'OnG (ענג, delight) reversed is NeGA (נגע, plague/affliction). Same three letters — aleph, nun, gimel — in opposite order. The difference between delight and plague is letter-order. Creation\'s moral axis is encoded in the alphabet\'s combinatorial structure.',
+            },
+          ]
+        },
+      ]
+    },
+  ]
+};
+
+// ── 15. QURAN — AL-FATIHA + AYAT AL-KURSI + NUR VERSE ─────────────────────
+SCRIPTURE_TEXTS['quran-fatiha-nur'] = {
+  title      : 'Quran — Al-Fatiha · Ayat al-Kursi · Nur Verse',
+  shortTitle : 'Quran — Key Verses',
+  tradition  : 'Islam',
+  date       : 'c. 610–632 CE (recited); compiled c. 650 CE',
+  intro      : 'Three passages constituting the theological core of the Quran. Al-Fatiha (The Opening, Sura 1) is recited 17 times daily in Muslim prayer. Ayat al-Kursi (2:255, the Throne Verse) is widely considered the most powerful single verse in the Quran. The Nur Verse (24:35, the Light Verse) is the gateway into Islamic mystical theology — Al-Ghazālī wrote an entire treatise on it, Ibn Arabi\'s waḥdat al-wujūd is grounded in it. Together they form a theological triple: divine character (Fatiha), divine sovereignty (Throne Verse), divine presence (Light Verse).',
+  crossTradition : [
+    { label: 'John 1 — Logos and Light', textId: 'john-1', note: 'The Nur Verse\'s "light upon light" and John\'s "true light that gives light to everyone" are the same mystical claim — divine light as the medium of divine self-disclosure.' },
+    { label: 'Tao Te Ching — The Unnameable', textId: 'tao-te-ching-1', note: 'Al-Fatiha\'s "Lord of the Worlds" and the Tao as source of all worlds share the apophatic structure: the source exceeds any single name.' },
+    { label: 'Poimandres — Divine Light', textId: 'poimandres', note: 'CH I.4 "a boundless Light" — the Hermetic Nous as pure light is the closest structural parallel to the Nur Verse.' },
+    { label: 'Gospel of Thomas L.77', textId: 'gospel-of-thomas', note: '"I am the light that is above them all" — Thomas\'s compressed statement of the same divine-as-light theology.' },
+  ],
+  translations : [
+    { id: 'abdel-haleem', label: 'Abdel Haleem 2004 (T1)' },
+    { id: 'arberry',      label: 'Arberry 1955 (T1)' },
+    { id: 'arabic',       label: 'Arabic (original)' },
+  ],
+  sections : [
+    {
+      heading : 'Sura 1 — Al-Fatiha (The Opening)',
+      verses  : [
+        { ref: '1:1–7',
+          text: 'In the name of God, the Lord of Mercy, the Giver of Mercy. Praise belongs to God, Lord of the Worlds, the Lord of Mercy, the Giver of Mercy, Master of the Day of Judgement. It is You we worship; it is You we ask for help. Guide us to the straight path: the path of those You have blessed, those who incur no anger and who have not gone astray.',
+          textVersions: {
+            arberry: 'In the Name of God, the Merciful, the Compassionate. Praise belongs to God, the Lord of all Being, the All-merciful, the All-compassionate, the Master of the Day of Doom. Thee only we serve; to Thee alone we pray for succour. Guide us in the straight path, the path of those whom Thou hast blessed, not of those against whom Thou art wrathful, nor of those who are astray.',
+            arabic:  'بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ\nالْحَمْدُ لِلَّهِ رَبِّ الْعَالَمِينَ\nالرَّحْمَٰنِ الرَّحِيمِ\nمَالِكِ يَوْمِ الدِّينِ\nإِيَّاكَ نَعْبُدُ وَإِيَّاكَ نَسْتَعِينُ\nاهْدِنَا الصِّرَاطَ الْمُسْتَقِيمَ',
+          },
+          entities: [
+            { word: 'Lord of Mercy', node: 'tradition-islam', type: 'tradition',
+              note: 'Al-Rahman al-Rahim — "the Compassionate, the Merciful." Both names derive from r-ḥ-m (womb, compassion) — same root as Hebrew raḥum (merciful) and reḥem (womb). The divine mercy is linguistically a womb-quality: enveloping, life-giving. Rahman appears 57 times in the Quran; rahim 95 times. The Bismillah formula begins every action in Muslim life by invoking divine mercy.',
+              parallels: [
+                { label: 'Hebrew Raḥamim — Divine Womb-Compassion', note: 'The Hebrew divine attribute raḥamim shares the r-ḥ-m root. Both traditions define God primarily by womb-compassion.' },
+              ]
+            },
+            { word: 'Lord of the Worlds', node: 'creation-by-word', type: 'theme',
+              note: 'Rabb al-ʿālamīn — "Lord of the Worlds" (plural, ʿālamīn). The Quran uses the plural: God is lord not of this world alone but of all possible realms of existence — the most cosmologically expansive divine title in world scripture.',
+            },
+            { word: 'straight path', node: 'tradition-islam', type: 'tradition',
+              note: 'Al-ṣirāṭ al-mustaqīm. The same moral-path metaphor appears in Zoroastrian Asha (right path of truth), the Buddhist Eightfold Path, and Confucian "right way" (zhengdao) — independently in four major traditions as the dominant spatial metaphor for ethics.',
+              parallels: [
+                { label: 'Zoroastrian Asha — Path of Truth', textId: 'yasna-30', note: 'The Avestan asha (Truth/Right Order) is the cosmic path — same moral-path metaphor as the Islamic ṣirāṭ.' },
+              ]
+            },
+          ]
+        },
+      ]
+    },
+    {
+      heading : 'Sura 2:255 — Ayat al-Kursi (The Throne Verse)',
+      verses  : [
+        { ref: '2:255',
+          text: 'God: there is no god but Him, the Ever Living, the Ever Watchful. Neither slumber nor sleep overtakes Him. All that is in the heavens and in the earth belongs to Him. Who is there that can intercede with Him except by His leave? He knows what is before them and what is behind them, but they do not comprehend any of His knowledge except what He wills. His throne extends over the heavens and the earth; it does not weary Him to preserve them both. He is the Most High, the Tremendous.',
+          textVersions: {
+            arberry: 'God, there is no god but He, the Living, the Everlasting. Slumber seizes Him not, neither sleep; to Him belongs all that is in the heavens and the earth. Who is there that shall intercede with Him save by His leave? He knows what lies before them and what is after them, and they comprehend not anything of His knowledge save such as He wills. His Throne comprises the heavens and earth; the preserving of them oppresses Him not; He is the All-high, the All-glorious.',
+            arabic:  'اللَّهُ لَا إِلَٰهَ إِلَّا هُوَ الْحَيُّ الْقَيُّومُ\nلَا تَأْخُذُهُ سِنَةٌ وَلَا نَوْمٌ\nوَسِعَ كُرْسِيُّهُ السَّمَاوَاتِ وَالْأَرْضَ\nوَهُوَ الْعَلِيُّ الْعَظِيمُ',
+          },
+          entities: [
+            { word: 'no god but Him', node: 'apophatic-mysticism', type: 'theme',
+              note: 'Lā ilāha illā Allāh. The shahāda is structurally apophatic: it begins with negation (lā ilāha = no god) before the affirmation. Islamic theologians note the negation is the more important move — denying all divinization of the created before designating what remains.',
+              parallels: [
+                { label: 'Neti Neti — Advaita Vedanta', note: '"Not this, not this" — the Upanishadic via negativa strips away all predications to arrive at pure Brahman. Same apophatic logic as the shahāda.' },
+              ]
+            },
+            { word: 'throne extends over the heavens and the earth', node: 'tradition-islam', type: 'theme',
+              note: 'Al-kursī — the divine throne. The image is shared across Abrahamic traditions: Merkabah (divine chariot/throne) mysticism in Judaism (based on Ezekiel 1), the Christian "throne of grace" (Hebrews 4:16), and Islamic al-kursī. The Merkabah tradition (c. 200–700 CE) almost certainly influenced Quranic imagery through Jewish converts and cultural contact.',
+            },
+          ]
+        },
+      ]
+    },
+    {
+      heading : 'Sura 24:35 — Ayat an-Nur (The Light Verse)',
+      verses  : [
+        { ref: '24:35',
+          text: 'God is the Light of the heavens and earth. His Light is like this: there is a niche, and in it a lamp, the lamp inside a glass, a glass like a glittering star, fuelled from a blessed olive tree from neither east nor west, whose oil almost gives light even when no fire touches it — light upon light. God guides whoever He will to His Light.',
+          textVersions: {
+            arberry: 'God is the Light of the heavens and the earth; the likeness of His Light is as a niche wherein is a lamp (the lamp in a glass, the glass as it were a glittering star) kindled from a Blessed Tree, an olive that is neither of the East nor of the West whose oil wellnigh would shine, even if no fire touched it; Light upon Light; God guides to His Light whom He will.',
+            arabic:  'اللَّهُ نُورُ السَّمَاوَاتِ وَالْأَرْضِ\nمَثَلُ نُورِهِ كَمِشْكَاةٍ فِيهَا مِصْبَاحٌ\nالْمِصْبَاحُ فِي زُجَاجَةٍ الزُّجَاجَةُ كَأَنَّهَا كَوْكَبٌ دُرِّيٌّ\nيُوقَدُ مِنْ شَجَرَةٍ مُبَارَكَةٍ زَيْتُونَةٍ\nلَا شَرْقِيَّةٍ وَلَا غَرْبِيَّةٍ\nيَكَادُ زَيْتُهَا يُضِيءُ وَلَوْ لَمْ تَمْسَسْهُ نَارٌ\nنُورٌ عَلَىٰ نُورٍ',
+          },
+          entities: [
+            { word: 'Light of the heavens and earth', node: 'primordial-darkness', type: 'theme',
+              note: 'Allāhu nūr al-samāwāti wa\'l-arḍ — "God IS the Light." This verse is the gateway to Islamic mystical theology. Al-Ghazālī wrote a full treatise on it (Mishkāt al-Anwār). The Sufi tradition reads it as the most direct Quranic statement of tawhid-as-mystical-unity: if God is the light, and light is the medium through which all things are seen, then God is the condition of all perception and existence. Ibn Arabi\'s waḥdat al-wujūd (Unity of Being) is grounded in this verse.',
+              parallels: [
+                { label: 'John 1:9 — The True Light', textId: 'john-1', note: '"The true light that gives light to everyone" — the Johannine claim that the Logos IS the light parallels the Quranic "God IS the light."' },
+                { label: 'Poimandres — Boundless Light', textId: 'poimandres', note: 'The Hermetic Nous appears as boundless light — structural parallel to the Nur Verse\'s divine-as-light theology.' },
+              ]
+            },
+            { word: 'light upon light', node: 'logos-johannine', type: 'theme',
+              note: 'Nūr ʿalā nūr — the climactic phrase. The oil-lamp metaphor amplifies progressively: niche → lamp → glass → star → blessed oil that "almost gives light without fire." Each layer intensifies and clarifies the previous one. Al-Ghazālī identifies five levels of light in the verse, each corresponding to a stage of mystical illumination. Almost certainly in dialogue with the Nicene Creed\'s "Light from Light, true God from true God" (325 CE) — whether influence or contrast, both use the same amplifying-light formula.',
+              parallels: [
+                { label: 'Nicene Creed — Light from Light', note: '"Light from Light, true God from true God" (325 CE). The Trinitarian light-upon-light formula precedes the Quranic one by ~285 years.' },
+                { label: 'Gospel of Thomas L.77', textId: 'gospel-of-thomas', note: '"I am the light that is above them all" — Thomas\'s compressed version of the same divine-as-light claim.' },
+              ]
+            },
+          ]
+        },
+      ]
+    },
+  ]
+};
+
+// ── 16. JOB 38 — GOD FROM THE WHIRLWIND ──────────────────────────────────
+SCRIPTURE_TEXTS['job-38'] = {
+  title      : 'Job 38–42 — The Voice from the Whirlwind',
+  shortTitle : 'Job 38 — Whirlwind',
+  tradition  : 'Hebrew Bible / Wisdom Literature',
+  date       : 'c. 6th–4th century BCE (text); the story may be pre-Israelite',
+  intro      : 'After 37 chapters of complaints and failed theodicies, God answers — not with an explanation, but with a counter-question. "Where were you when I laid the foundation of the earth?" The whirlwind speech is one of the most sustained meditations on cosmic incomprehensibility in world literature. It is simultaneously the Bible\'s most powerful statement of the limits of human knowledge and the most aesthetically overwhelming passage in the Hebrew canon. The Book of Job\'s theodicy is ultimately the refusal of theodicy: the demand for an explanation is itself questioned. The same structural move as the Nāsadīya Sūkta\'s "who knows?" and the Tao Te Ching\'s Tao-that-cannot-be-named.',
+  crossTradition : [
+    { label: 'Nāsadīya Sūkta — Who Knows?', textId: 'nasadiya-sukta', note: '"Who really knows? Who will here proclaim it?" — the Vedic creation hymn ends with the same unanswerable question as God\'s speech to Job.' },
+    { label: 'Tao Te Ching — Beyond Knowledge', textId: 'tao-te-ching-1', note: 'The Tao that exceeds all human comprehension is the Daoist structural parallel to God\'s whirlwind speech.' },
+    { label: 'Poimandres — Cosmic Vision', textId: 'poimandres', note: 'The Hermetic vision of the cosmic hierarchy is the Hermetic equivalent of God\'s tour through cosmic order in Job 38–39.' },
+  ],
+  translations : [
+    { id: 'nrsv',   label: 'NRSV 1989 (T1)' },
+    { id: 'njps',   label: 'NJPS 1985 (T1)' },
+    { id: 'hebrew', label: 'Hebrew (Masoretic)' },
+  ],
+  sections : [
+    {
+      heading : 'Job 38:1–7 — The Foundation of the Earth',
+      verses  : [
+        { ref: '38:1–3',
+          text: 'Then the LORD spoke to Job out of the whirlwind. He said: Who is this that obscures my plans with words without knowledge? Brace yourself like a man; I will question you, and you shall answer me.',
+          textVersions: {
+            njps:   'Then the LORD replied to Job out of the tempest and said: Who is this who darkens counsel, speaking without knowledge? Gird your loins like a man; I will ask and you will inform Me.',
+            hebrew: 'וַיַּעַן יְהוָה אֶת-אִיּוֹב מִן הַסְּעָרָה\nמִי זֶה מַחְשִׁיךְ עֵצָה בְמִלִּים בְּלִי-דָעַת\nאֱזָר-נָא כְגֶבֶר חֲלָצֶיךָ\nוְאֶשְׁאָלְךָ וְהוֹדִיעֵנִי\n[Then YHWH answered Job from the whirlwind:\nWho is this darkening counsel with words without knowledge?\nGird your loins like a man — I will question you]',
+          },
+          entities: [
+            { word: 'whirlwind', node: 'tradition-judaism', type: 'tradition',
+              note: 'The sĕʿārāh (whirlwind/storm) as vehicle of divine theophany is one of the most persistent images in the Hebrew Bible. Elijah\'s ascent (2 Kings 2:11); Ezekiel\'s vision (1:4, "a great cloud with fire flashing"); and here. The storm is not chaos but the approach of overwhelming order — the divine that exceeds human containment, approaching in the form that most forcibly demonstrates its incomprehensibility.',
+            },
+          ]
+        },
+        { ref: '38:4–7',
+          text: 'Where were you when I laid the earth\'s foundation? Tell me, if you understand. Who marked off its dimensions? Surely you know! Who stretched a measuring line across it? On what were its footings set, or who laid its cornerstone — while the morning stars sang together and all the angels shouted for joy?',
+          textVersions: {
+            njps:   'Where were you when I laid the earth\'s foundations? Speak if you have understanding. Do you know who fixed its dimensions, or who measured it with a line? Onto what were its bases sunk? Who set its cornerstone when the morning stars sang together and all the divine beings shouted for joy?',
+            hebrew: 'אֵיפֹה הָיִיתָ בְּיָסְדִי-אָרֶץ\nהַגֵּד אִם-יָדַעְתָּ בִינָה\nמִי-שָׂם מְמַדֶּיהָ כִּי תֵדָע\nבְּרָן יַחַד כּוֹכְבֵי בֹקֶר\nוַיָּרִיעוּ כָּל-בְּנֵי אֱלֹהִים',
+          },
+          entities: [
+            { word: 'Where were you', node: 'wisdom-personified', type: 'theme',
+              note: 'The theological pivot of the entire book. Job demanded an explanation of his suffering; God responds not with an explanation but with a counter-demand for Job\'s CV of creation. The implication: to understand suffering, you would have to understand the whole — and you were not there for the whole. The theodicy of Job is the refusal of theodicy: the demand for an explanation is itself questioned.',
+              parallels: [
+                { label: 'Nāsadīya Sūkta — Who Knows?', textId: 'nasadiya-sukta', note: '"Whence this creation — only He knows — or perhaps He does not know." The Vedic poem ends by questioning whether even God knows — a more radical move than Job.' },
+              ]
+            },
+            { word: 'morning stars sang together', node: 'tradition-judaism', type: 'theme',
+              note: 'Bĕnê ʾĕlōhîm (divine beings) shouting for joy at creation. The cosmic choir at creation is a Near Eastern topos: the Anunnaki gods shouting acclamation in Enuma Elish; the Psalms\' "sons of God" ascribing glory (Psalm 29). "Morning stars sang" also connects to the Pythagorean Music of the Spheres — the heavenly bodies as sounds in the cosmic harmony.',
+              parallels: [
+                { label: 'Enuma Elish — Divine Acclamation', textId: 'enuma-elish-1', note: 'The Anunnaki gods shout acclamation when Marduk defeats Tiamat — same motif of the divine assembly celebrating the creative act.' },
+              ]
+            },
+          ]
+        },
+      ]
+    },
+    {
+      heading : 'Job 40–41 — Behemoth and Leviathan',
+      verses  : [
+        { ref: '40:15–19',
+          text: 'Look at Behemoth, which I made along with you and which feeds on grass like an ox. What strength it has in its loins, what power in the muscles of its belly! Its tail sways like a cedar; the sinews of its thighs are close-knit. Its bones are tubes of bronze, its limbs like rods of iron. It ranks first among the works of God.',
+          entities: [
+            { word: 'Behemoth', node: 'leviathan', type: 'theme',
+              note: 'Behemoth and Leviathan appear together as the two great primordial creatures — one land, one sea — made by God at creation. In Enuma Elish, Marduk defeats the sea-chaos (Tiamat); in Ugaritic myth, Baal defeats Yam and Lotan (= Leviathan). But God\'s move here is more radical: these chaos-creatures were not defeated but created, and God is proud of them. Chaos is not opposed to the divine but owned by it.',
+              parallels: [
+                { label: 'Tiamat — Enuma Elish', textId: 'enuma-elish-1', note: 'Tiamat is the primordial sea-dragon defeated by Marduk — the same cosmic-chaos figure as Leviathan. Job\'s God didn\'t defeat Leviathan; he created it.' },
+              ]
+            },
+          ]
+        },
+        { ref: '41:1–5',
+          text: 'Can you pull in Leviathan with a fishhook or tie down its tongue with a rope? Can you put a cord through its nose or pierce its jaw with a hook? Will it keep begging you for mercy? Will it speak to you with gentle words? Will it make an agreement with you for you to take it as your slave for life?',
+          entities: [
+            { word: 'Leviathan', node: 'leviathan', type: 'deity',
+              note: 'Leviathan (לִוְיָתָן) — the coiling sea-dragon. In Isaiah 27:1, YHWH will slay Leviathan at the end of days. But in Job 41, Leviathan is God\'s creature and the most terrifying demonstration of divine power. The theological move: the most terrifying thing in the cosmos is not chaos opposed to God but God\'s own power in cosmic form. God\'s questions to Job culminate here: if you can\'t understand or control Leviathan, how could you understand the creator of Leviathan?',
+            },
+          ]
+        },
+      ]
+    },
+    {
+      heading : 'Job 42:1–6 — Job\'s Response',
+      verses  : [
+        { ref: '42:5',
+          text: 'My ears had heard of you, but now my eyes have seen you.',
+          textVersions: {
+            njps:   'I had heard You with my ears, but now I see You with my eyes.',
+            hebrew: 'לְשֵׁמַע-אֹזֶן שְׁמַעְתִּיךָ\nוְעַתָּה עֵינִי רָאָתְךָ\n[For the hearing of the ear I had heard you\nbut now my eye sees you]',
+          },
+          entities: [
+            { word: 'my eyes have seen you', node: 'wisdom-personified', type: 'theme',
+              note: 'The climactic insight of Job — the transition from "heard" to "seen" is the transition from secondhand knowledge to direct experience: from theology to theophany, from pistis (faith) to gnosis, from Wissen (knowledge) to Erfahrung (experience). The same distinction drives the entire mystical tradition: Ibn Arabi\'s "taste" (dhawq) vs. intellectual knowledge; Buddhist direct perception (pratyakṣa) vs. inference; Eckhart\'s lived experience vs. learned doctrine.',
+              parallels: [
+                { label: 'Gospel of Thomas L.1 — Direct Interpretation', textId: 'gospel-of-thomas', note: '"Whoever discovers the interpretation" — Thomas\'s salvation-through-direct-understanding is the New Testament version of Job\'s transition from hearing to seeing.' },
+                { label: 'Poimandres — "I Saw a Vision"', textId: 'poimandres', note: 'CH I.1: the Hermetic revelation begins as a direct vision, not a report.' },
+              ]
+            },
+          ]
+        },
+      ]
+    },
+    {
+      heading : 'Job 3:3–5 — The Curse on the Day of Birth',
+      verses  : [
+        { ref: '3:3–5',
+          text: 'May the day of my birth perish, and the night that said, "A boy is conceived!" That day — may it turn to darkness; may God above not care about it; may no light shine on it. May gloom and utter darkness claim it once more; may a cloud settle over it; may blackness overwhelm it.',
+          entities: [
+            { word: 'darkness', node: 'primordial-darkness', type: 'theme',
+              note: 'Job\'s curse invokes a return to pre-creation darkness — the primordial tohu wa-bohu ("formless and empty") of Genesis 1:2. By wishing the day of his birth to "turn to darkness," Job is wishing his personal existence back into the pre-existence of the void. The Book of Job\'s darkest moment is its closest approach to the cosmic nihilism of Ecclesiastes — and its closest resonance with the Vedic Nāsadīya Sūkta\'s primordial darkness.',
+              parallels: [
+                { label: 'Nasadiya Sukta — Pre-Creation Darkness', textId: 'nasadiya-sukta', note: '"Darkness was hidden by darkness in the beginning" — the Vedic pre-creation darkness is the same abyss Job wants to return to.' },
+              ]
+            },
+          ]
+        },
+      ]
+    },
+  ]
+};
+
+// ── 17. ORPHIC THEOGONY — NIGHT, THE EGG, AND PHANES ──────────────────────
+SCRIPTURE_TEXTS['orphic-theogony'] = {
+  title      : 'Orphic Theogony — Night, the Cosmic Egg, Phanes',
+  shortTitle : 'Orphic Theogony',
+  tradition  : 'Orphic / Greek Mystery Religion',
+  date       : 'c. 6th–4th century BCE (Derveni Papyrus c. 330 BCE; Orphic Hymns c. 2nd–4th CE for text, doctrine older)',
+  intro      : 'The Orphic theogony is the Greek mystery religion\'s creation story, preserved in fragments, in the Derveni Papyrus (the oldest surviving European "book," c. 330 BCE), and in 87 Orphic Hymns. Where Hesiod\'s Theogony begins with Chaos, the Orphic tradition begins with Night — the primordial goddess from whom all things emerge. Night lays the Cosmic Egg, from which Phanes/Eros hatches as the first deity and lights the universe. The Derveni Papyrus preserves the oldest philosophical commentary on a sacred text in the Western tradition, and explicitly identifies Phanes with the Nous of Anaxagoras — making the Orphic→Platonic→Hermetic→Gnostic Nous trajectory visible in a single text. The Orphic tradition is the deepest root of the Western esoteric line: it feeds Pythagoreanism, Platonism, Neoplatonism, Gnosticism, and Renaissance Hermeticism.',
+  crossTradition : [
+    { label: 'Poimandres — Nous Emerges from Primordial Light', textId: 'poimandres', note: 'The Hermetic Nous emerging from boundless light is the Hermetic re-telling of Phanes hatching from the Cosmic Egg — both are the primordial divine self-disclosure from pre-creation void.' },
+    { label: 'Nāsadīya Sūkta — Pre-Creation Void', textId: 'nasadiya-sukta', note: '"One thing breathed by its own power in the darkness" — the Vedic parallel to Night breathing in the void before the Egg.' },
+    { label: 'John 1 — "In the beginning"', textId: 'john-1', note: 'The Johannine "In the beginning was the Logos" is the Christianized version of the Orphic "In the beginning was Night/Phanes/the One."' },
+    { label: 'Popol Vuh — Void Before Creation', textId: 'popol-vuh', note: '"All was in suspense, all calm, in silence" — the Maya pre-creation void is the Mesoamerican structural parallel to Orphic Night.' },
+  ],
+  translations : [
+    { id: 'west',   label: 'West 1983 (Orphic Fragments, T1)' },
+    { id: 'taylor', label: 'Thomas Taylor 1792 (Orphic Hymns)' },
+    { id: 'greek',  label: 'Greek (original)' },
+  ],
+  sections : [
+    {
+      heading : 'Orphic Hymn 3 — To Night',
+      verses  : [
+        { ref: 'Hymn 3.1–8',
+          text: 'Night, mother of gods and men, hear me, O Night, origin of all; I call upon thee, Night, thou who didst bring forth first the blessed gods and mortal men; all things that be in the great cosmos sprang from thee, O Night, who didst envelop the boundless cosmos in thy dark wings.',
+          textVersions: {
+            taylor: 'Night, parent goddess, source of sweet repose, from whom at first both Gods and men arose, hear, blessed Venus, deck\'d with starry light, in sleep\'s deep silence dwelling Jet-black Night!',
+            greek:  'Νύκτα θεῶν γενέτειραν ἀείσομαι ἠδὲ καὶ ἀνδρῶν\nΝὺξ γένεσις πάντων\nκλῦθι μάκαιρα θεά, κυανόπτερε\nσέ τοι ἀστεροφεγγέα κόσμον ἑλίσσουσαν\n[Night, mother of gods and men, I will sing\nNight, origin of all things\nhear me, blessed goddess, dark-winged\nyou who spin the star-shining cosmos]',
+          },
+          entities: [
+            { word: 'Night', node: 'primordial-darkness', type: 'deity',
+              note: 'Nyx (Night) — the primordial goddess in the Orphic tradition, older than Chaos in Hesiod. In the Orphic theogony, Night precedes even Time (Chronos). Zeus himself fears to offend Night (Iliad 14.259). The Orphic Night is not the absence of light but the ground from which both light and darkness emerge — same structural role as Genesis 1:2\'s pre-creation darkness, the Vedic tamas, and the Hermetic primordial groaning void.',
+              parallels: [
+                { label: 'Genesis 1:2 — Darkness over the Deep', textId: 'genesis-1', note: '"Darkness was over the surface of the deep" — the pre-creation darkness is the Hebrew structural equivalent of Orphic Night.' },
+                { label: 'Poimandres — Primordial Darkness', textId: 'poimandres', note: 'CH I.4: "I saw a boundless darkness, deep, groaning" — the Hermetic pre-creation state is Night with voice.' },
+              ]
+            },
+            { word: 'mother of gods and men', node: 'tradition-greek-mystery-religion', type: 'tradition',
+              note: 'The Orphic tradition reverses the standard Greek theogony: in Hesiod, Night is born from Chaos. In the Orphic version, Night is the source of everything including Chaos. The Orphics deliberately deepen the Hesiodic system: standard civic religion gives narrative mythology; the Orphic tradition gives cosmogony — the pre-divine origin of the divine.',
+            },
+          ]
+        },
+      ]
+    },
+    {
+      heading : 'The Cosmic Egg (Orphic Theogony Fragments)',
+      verses  : [
+        { ref: 'OF 70 (Kern)',
+          text: 'Night, wrapped in the silver wings of Chronos Time, lay a great silver egg in the womb of the boundless darkness. And from this egg Eros sprang forth — radiant Phanes, the double-natured, the golden-winged First-Born, who carried in himself the seed of the gods.',
+          textVersions: {
+            west: '[Reconstruction from multiple testimonia] Night, wrapped in the darkness of Chronos, bore an egg. From this egg broke forth brilliant Eros/Phanes, the first-born, with golden wings, carrying in himself the seed of the gods, begetter of the blessed ones.',
+            greek: 'Νὺξ ὠιὸν ἀργύφεον ἔτεκεν\nτοῦδ᾽ ἐρικυδέα Φάνητα ἐξεγένοντο\nχρυσόπτερον, ὃς κόσμου κράτος ἔσχε πρῶτος\n[Night bore a silver egg\nfrom it shining Phanes was born\ngolden-winged, who held the power of the cosmos first]',
+          },
+          entities: [
+            { word: 'silver egg', node: 'cosmic-egg', type: 'theme',
+              note: 'The Cosmic Egg from which Phanes hatches is one of the most widespread creation images in world religion. Orphic (Greek), Hiranyagarbha (Sanskrit, "golden womb/egg," Rig Veda 10.121), Brahmanda ("Brahma\'s egg," Puranas), Panhú (Chinese cosmic egg), Finnish Kalevala (egg laid on the water-mother\'s knee). Strong candidate for independent invention: it is the intuitive image for a finite universe with a definite beginning inside a larger "outside."',
+              parallels: [
+                { label: 'Hiranyagarbha — Golden Womb (Rig Veda 10.121)', textId: 'nasadiya-sukta', note: '"In the beginning was the Golden Germ / the one seed of all creation" — the Vedic cosmic egg is the Indian structural parallel to the Orphic silver egg.' },
+              ]
+            },
+            { word: 'Phanes', node: 'orpheus', type: 'deity',
+              note: 'Phanes (Φάνης, "the Shining One") — also called Protogonos (First-Born), Eros, and Metis. The first deity to emerge from the Cosmic Egg, double-natured (male and female), carrying within himself the seed of all future gods. Phanes is the Orphic Logos-equivalent: the first self-disclosure of the divine ground into determinate being. The Derveni Papyrus Commentary (col. XIII) explicitly identifies Phanes with the "Nous" of Anaxagoras — making the Orphic-to-Platonic-to-Hermetic Nous trajectory visible.',
+              parallels: [
+                { label: 'Hermetic Nous — First Principle of Light', textId: 'poimandres', note: 'The Hermetic Nous as boundless light is the Hermetic re-writing of Phanes: the first principle of the divine is light and mind simultaneously.' },
+                { label: 'Johannine Logos — "In the beginning"', textId: 'john-1', note: 'The Logos as the first self-disclosure of the divine ground — same theological structure as Phanes emerging from Night\'s egg.' },
+              ]
+            },
+          ]
+        },
+        { ref: 'OF 167 (Kern)',
+          text: 'Phanes first appeared carrying a golden sceptre. But when Zeus had taken power, he swallowed Phanes, first king of the gods, so that all things should be within himself. And Zeus reformed all from himself, rejoining all things into one.',
+          entities: [
+            { word: 'swallowed Phanes', node: 'tradition-greek-mystery-religion', type: 'tradition',
+              note: 'Zeus\'s swallowing of Phanes is the Orphic tradition\'s most radical theological move. Zeus internalizes all of creation: "all things should be within himself." After the swallowing, Zeus is the Orphic equivalent of the Chandogya\'s Brahman that "thinks: may I be many" — the single ground from which all differentiation re-emerges. This is the Orphic path to Platonic henology: through the succession Night → Phanes → Zeus, all multiplicity is gathered back into unity.',
+              parallels: [
+                { label: 'Chandogya 6.2 — One Becomes Many', textId: 'chandogya-621', note: 'Brahman "thinks: may I be many; may I grow forth" — same move: the single divine ground differentiates into multiplicity. Zeus re-differentiating after swallowing Phanes is the Greek narrative version.' },
+              ]
+            },
+          ]
+        },
+      ]
+    },
+    {
+      heading : 'The Orphic Anthropogony — Divine Sparks in Human Clay',
+      verses  : [
+        { ref: 'OF 209–210 (Bernabé)',
+          text: 'The Titans, whitened with chalk, lured Zagreus, the child of Zeus and Persephone, with toys and a mirror. They tore him apart and ate him. But Zeus blasted the Titans with his lightning, and from their ash — which contained the flesh of the divine child — mankind was formed. Thus humans carry within themselves a spark of the divine Dionysus, buried in the Titanic clay.',
+          textVersions: {
+            west: '[Synthesis from Olympiodorus, In Phaed. 1.3 and other testimonia] The Titans tore apart Dionysus/Zagreus and consumed him. Zeus blasted the Titans. From their smoke humanity was made. We are Titanic in body, but carry the divine Bacchic spark within.',
+          },
+          entities: [
+            { word: 'spark of the divine', node: 'zagreus', type: 'deity',
+              note: 'The Orphic anthropogony places a divine spark (the flesh of Zagreus/Dionysus) inside every human being, surrounded by Titanic matter. Humans are ontologically dual: divine in essence, Titanic in body. The Orphic life is the process of liberating the divine spark through ritual purity and initiatory practice. This is the original "divine spark within humanity" theology — it feeds directly into Platonic soul-theory, Gnostic pneuma-in-matter theology, and through Gnosticism into the entire Western esoteric tradition.',
+              parallels: [
+                { label: 'Gnostic Pneuma in Matter', note: 'The Gnostic pneumatic spark of divine light trapped in material existence is the direct descendant of the Orphic Dionysian spark in Titanic clay.' },
+                { label: 'Lurianic Nitzotzot — Divine Sparks', note: 'The Lurianic "sparks" (nitzotzot) scattered into matter by the Breaking of the Vessels (Shevirat ha-kelim) — the Kabbalistic version of the same scattered-divine-fragments theology.' },
+              ]
+            },
+            { word: 'Zagreus', node: 'zagreus', type: 'deity',
+              note: 'Zagreus is the Orphic name for the first Dionysus — born of Zeus and Persephone, destined to rule the gods, torn apart by the Titans and reconstituted by Zeus (in some versions his heart is saved by Athena and he is reborn as Dionysus). His dismemberment and reconstitution is the Orphic dying-and-rising-god myth. Compare: Osiris dismembered and reassembled by Isis; Purusha dismembered to form the cosmos (Rig Veda 10.90).',
+              parallels: [
+                { label: 'Osiris — Dismembered and Reassembled', note: 'Osiris killed and dismembered by Set; Isis reassembles him. The structural parallel to Zagreus\'s dismemberment and reconstitution is exact.' },
+                { label: 'Dionysus — Dying and Rising God', node: 'dying-rising-god', note: 'Zagreus is the Orphic form of Dionysus. The dying-rising pattern is shared across Osiris, Zagreus/Dionysus, Adonis, Attis, and ultimately Christ.' },
+              ]
+            },
+          ]
+        },
+      ]
+    },
+  ]
+};
