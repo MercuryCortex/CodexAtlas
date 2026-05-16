@@ -434,14 +434,20 @@ window.CHAINS_DATA = [
     id: 'post-fludd-esoteric-revival',
     title: 'After Kepler Wins — The Esoteric Sonic Chain Continues Underground',
     category: 'ESOTERIC',
-    span: '1875–2007 CE · the living tradition',
-    summary: 'When Kepler ended music-of-spheres as a physics claim in 1622, Fludd\'s tradition did not die — it migrated underground and re-emerged three centuries later through Theosophy. The chain runs: Fludd → Blavatsky (1875) → Steiner (1912) → Scriabin (1910) → Messiaen (1941) → Stockhausen (1968–2007). Each link is explicit: each figure knew the previous tradition and identified with it. This is not independent reinvention — it is continuous esoteric transmission.',
+    span: '1619–2007 CE · the living tradition',
+    summary: 'When Kepler ended music-of-spheres as a physics claim in 1622, Fludd\'s tradition did not die — it was transmitted through Athanasius Kircher\'s Jesuit network (1650) and re-emerged institutionally through Theosophy in 1875. The chain runs: Fludd (1619) → Kircher (1650) → Blavatsky (1875) → Steiner (1912) → Scriabin (1910) → Messiaen (1941) → Stockhausen (1968–2007). Each link is explicit: each figure knew the previous tradition and identified with it. This is not independent reinvention — it is continuous esoteric transmission with a documented Jesuit carrier for the 1622–1875 gap.',
     links: [
       {
         date: '1619',
         label: 'Fludd — World-Monochord as Apex and Terminus',
         node: 'music-fludd-world-monochord',
         note: 'Fludd\'s world-monochord is simultaneously the high-water mark and the last defensible claim of music-of-spheres as physics. After Kepler\'s 1622 refutation, the tradition continues — but only outside the scientific mainstream. Fludd becomes the last point where the cosmic-music claim was taken seriously as natural philosophy.'
+      },
+      {
+        date: '1650',
+        label: 'Kircher — Musurgia Universalis: The Jesuit Bridge',
+        node: 'music-kircher-musurgia-universalis',
+        note: 'Athanasius Kircher\'s *Musurgia Universalis* (Rome, 1650) is the documented transmission link that closes the 253-year gap between Fludd (1622) and Blavatsky (1875). Kircher accepts Kepler\'s orbital data but rejects his anti-Hermetic conclusion — using the same planetary ratios to argue FOR divine harmonic design. His Jesuit network (700+ colleges across Europe, Asia, and the Americas) distributes this framework more widely than any prior music-cosmos text. Kircher\'s Egyptological work is also the documented source Blavatsky drew on for Theosophical sound cosmology. This is not revival — it is continuous transmission.'
       },
       {
         date: '1875',
@@ -512,6 +518,12 @@ window.CHAINS_DATA = [
         label: 'Aftermath — The Concept Survives as Metaphor',
         node: 'music-fludd-world-monochord',
         note: 'The music-of-spheres concept does not die — it migrates. Kepler wins the physics debate; Fludd wins the aesthetic legacy. "Music of the spheres" becomes a poetic phrase (Shakespeare uses it in Pericles); it drives Romantic nature-philosophy (Schelling\'s Naturphilosophie); it feeds Theosophical sound-cosmology; it reaches John Cage via the Yi Jing. But after 1622, nobody claims the planets actually produce tones that can be measured. The 3,500-year physics claim is over.'
+      },
+      {
+        date: '1650',
+        label: 'Kircher — Musurgia Universalis Continues the Chain',
+        node: 'music-kircher-musurgia-universalis',
+        note: 'Athanasius Kircher (SJ) picks up the Fludd tradition 28 years after the terminus and carries it through the Jesuit intellectual network. His *Musurgia Universalis* (1650) accepts Kepler\'s data while rejecting his anti-Hermetic conclusion — the music-of-spheres claim is saved by reframing it as theology rather than physics. The Jesuit network (700+ colleges worldwide) becomes the transmission mechanism that carries the tradition to Blavatsky\'s 1875 revival.'
       },
     ],
   },
@@ -896,6 +908,54 @@ window.CHAINS_DATA = [
         label : 'Karbala — Husayn ibn Ali and the Shia Martyrology',
         note  : 'Husayn ibn Ali is killed at Karbala. The Shia community memorializes him with: annual ʿĀshūrāʾ commemoration, pilgrimage to the tomb, doctrine of post-mortem intercession, his death framed as foreknown and redemptive. Every structural element is present in the Martyrdom of Polycarp. The Christian martyr template has arrived in Iraq 524 years later.',
         node  : 'tradition-sufism',
+      },
+    ],
+  },
+
+  // ─── V. CONVERGENCE CHAINS ────────────────────────────────────────────────
+
+  {
+    id      : 'axial-age-five-traditions',
+    title   : 'The Axial Age: Five Traditions, One Window (800–200 BCE)',
+    category: 'CONVERGENCE',
+    span    : 'c. 800–200 BCE · 600 years',
+    summary : 'The vault\'s strongest convergence case with no documented contact mechanism. Five independent civilizations — Persia, Israel, India, China, Greece — each produced an ethical-philosophical reformer who criticized inherited transactional religion and moved toward universal ethical engagement and individual spiritual responsibility. The structural identity of the moves across all five, without documented contact, remains the most striking underdetermined pattern in the vault.',
+    links   : [
+      {
+        date : 'c. 628–551 BCE (dates disputed)',
+        label: 'Zoroaster — Ethical Dualism',
+        node : 'zarathustra',
+        note : 'Ahura Mazda vs. Angra Mainyu: cosmic dualism in which human moral choice (asha = truth vs. druj = lie) has cosmological weight. Individual ethical decision participates in the cosmic struggle between order and chaos. The first fully articulated ethical religion in the Indo-Iranian world.',
+      },
+      {
+        date : 'c. 800–520 BCE',
+        label: 'Hebrew Prophets — Ethical Monotheism',
+        node : 'isaiah-first',
+        note : 'Amos, First Isaiah, Jeremiah, Ezekiel: systematic critique of sacrificial religion in favor of justice (mishpat) and righteousness (tzedek). "I desire steadfast love and not sacrifice" (Hosea 6:6). The universal God of all nations who demands ethical behavior, not ritual performance. Deutero-Isaiah: creation theology and radical monotheism during the Babylonian exile.',
+      },
+      {
+        date : 'c. 563–483 BCE',
+        label: 'Siddhartha Gautama — Dharma Over Ritual',
+        node : 'siddhartha-gautama-buddha',
+        note : 'Abandons Brahminical fire-sacrifice tradition. The Four Noble Truths: liberation through the cessation of craving, not through ritual propitiation. The Dharma is a universal path independent of caste, ethnicity, or Vedic ritual knowledge. Individual ethical practice (the Noble Eightfold Path) is the sole route to liberation.',
+      },
+      {
+        date : 'c. 551–479 BCE',
+        label: 'Confucius — Self-Cultivation as Cosmic Order',
+        node : 'confucius',
+        note : 'Strips ritual (li) down to its ethical core (rén — benevolence/humaneness). The cultivation of the self through ethical practice is the foundation of social order and political legitimacy. The junzi (exemplary person) is defined by ethical character, not hereditary status. Same structural move as the prophets: external performance is hollow without interior transformation.',
+      },
+      {
+        date : 'c. 470–399 BCE',
+        label: 'Socrates — Soul-Care as Religious Obligation',
+        node : 'socrates',
+        note : '"The unexamined life is not worth living." Socrates frames philosophical ethics as a religious obligation — care of the soul (epimeleia tēs psychēs) is the highest human activity, superior to wealth, reputation, or ritual piety. He is executed for impiety toward the gods: the Axial critic facing the same institutional backlash visible in Jeremiah and the Buddha\'s debates with Brahminical orthodoxy.',
+      },
+      {
+        date : 'c. 800–200 BCE',
+        label: 'The Axial Age Event Node',
+        node : 'event-axial-age-800-200bce',
+        note : 'Karl Jaspers (1949) named and framed the pattern. The five simultaneous revolutions share four structural features: (1) criticism of inherited sacrifice/ritual religion; (2) ethics over transaction; (3) universal scope over tribal loyalty; (4) individual spiritual responsibility as the primary religious locus. No adequate contact mechanism exists for all five. The simultaneity remains the vault\'s most important unresolved convergence.',
       },
     ],
   },

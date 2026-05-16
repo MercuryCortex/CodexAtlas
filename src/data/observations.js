@@ -71,7 +71,7 @@ window.OBSERVATIONS_DATA = [
     category: 'ANOMALY',
     summary: 'Between ~800 and ~200 BCE, on four continents with no documented contact, the major traditions simultaneously reformulated inherited religion into ethical-philosophical frameworks. Coincidence is not an explanation.',
     body: 'Karl Jaspers named this the Axial Age (1949). In the same 600-year window: Confucius and Laozi in China reformulate ancestor religion into ethical philosophy and cosmological principle. The Hebrew prophets (Amos, Isaiah, Jeremiah) reformulate sacrificial religion into ethical monotheism. The Buddha in India reformulates Vedic ritual religion into a psychology of liberation. Socrates and Plato in Greece reformulate Olympian polytheism into philosophical inquiry. Zoroaster (if the dating holds) reformulates Iranian polytheism into ethical dualism. None of these figures were in documented contact. All of them made structurally similar moves: internalize the external ritual, universalize the local god, ground ethics in cosmic principle rather than tribal loyalty. The proposed explanations (iron technology → new economic class → leisure for abstract thought; trade routes → idea diffusion; climate stress → existential urgency) are all partial. The simultaneity remains the most striking underdetermined fact in the vault\'s data.',
-    evidence: ['sacred-number-zero', 'the-pleroma'],
+    evidence: ['event-axial-age-800-200bce', 'theme-axial-age', 'tradition-confucianism', 'tradition-buddhism', 'tradition-zoroastrianism', 'tradition-ancient-greek', 'tradition-judaism'],
   },
 
   {
