@@ -4,6 +4,13 @@ _Hand-maintained. Each agent currently working in the vault appends a claim bloc
 
 ---
 
+## goblin-mystery-symbols-1 — symbols / undeciphered mysteries thread — started 2026-05-16 — IN PROGRESS
+- Owning: phaistos-disc.md (NEW), gobekli-tepe-pillars.md (NEW), voynich-glyphs.md (NEW), eye-of-the-heart.md (NEW)
+- Goal: Genuine mystery symbols documented as mysteries; Sufi Eye of the Heart as cross-tradition inner-vision symbol
+- Status: in-progress
+
+---
+
 ## sonnet-scripture-gaps-1 — Brill/Britannica gap check + scripture corpus fills — 2026-05-16 — FINISHED
 - Added 5 new Scripture corpora: shia-corpus, druze-corpus, bon-corpus, yazidi-corpus, reformation
 - New primary text nodes: phase-5-058 (Nahj al-Balagha), phase-5-059 (Rasail al-Hikma), phase-5-060 (Bon Kanjur), phase-5-061 (Kiteba Cilwe)
@@ -21,10 +28,9 @@ _Hand-maintained. Each agent currently working in the vault appends a claim bloc
 
 ---
 
-## latin-sikh-1 — Latin Christianity tradition + Vasco da Gama + Polycarp upgrades — started 2026-05-16 — IN FLIGHT
-- Owning: `07_traditions/tradition-latin-christianity.md` (NEW), `04_persons/vasco-da-gama.md` (NEW), `02_documents/_phase-4-late-antiquity/phase-4-066-polycarp-philippians.md` (metadata → partial), `02_documents/_phase-4-late-antiquity/phase-4-067-martyrdom-of-polycarp.md` (metadata → partial)
-- Goal: Resolve 5+ dead wikilinks; Filioque/Scholasticism/Aristotle-via-Islam chain; martyrology genre origin; cult-of-saints transmission
-- Status: in-flight
+## ~~latin-sikh-1 — Latin Christianity tradition + Vasco da Gama + Polycarp upgrades — started 2026-05-16 — FINISHED 2026-05-16~~
+- ~~Owned: `07_traditions/tradition-latin-christianity.md` (NEW), `04_persons/vasco-da-gama.md` (NEW), `02_documents/_phase-4-late-antiquity/phase-4-066-polycarp-philippians.md` (metadata → partial), `02_documents/_phase-4-late-antiquity/phase-4-067-martyrdom-of-polycarp.md` (metadata → partial)~~
+- ~~Status: done — see STATUS.md — commits 9a13d34, 21f6b45, d46902c, e28e926~~
 
 ---
 
