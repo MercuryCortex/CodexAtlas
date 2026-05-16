@@ -180,6 +180,169 @@ window.ALPHA_GLYPH_DATA = [
     investigationHighlight: 'The original Taw was a cross. In Paleo-Hebrew and early Phoenician, Taw was written as X or +. Ezekiel 9:4 — God commands the angel to mark the foreheads of the righteous with a Taw before judgment. Tertullian (c. 200 CE) pointed this out: the saving mark in Ezekiel is the tau/cross. The connection between Taw and the cross predates Christianity by at least 1,000 years — it was built into the letter\'s shape. The last letter of the Hebrew alphabet was already a cross before the crucifixion.',
     relatedNodes: ['alphabet-hebrew-aleph-bet', 'alphabet-sefer-yetzirah', 'alphabet-aramaic', 'alphabet-letter-as-cosmos'],
   },
+
+  // ── Latin-only additions (scriptOnly: ['latin']) ─────────────────────────
+  // Letters that exist in the Latin/modern alphabet but have no Phoenician root entry above.
+  // Only shown when _script === 'latin'.
+  {
+    letter: 'C', name: 'C (from Gimel)', meaning: 'same root as G', gardiner: 'T14',
+    unicode: 0x13246, phoneme: 'k / s', greek: 'Γ gamma', latin: 'C',
+    hebrew: 'ג', arabic: 'ج', phoenician: '\u{10902}', scriptOnly: ['latin'],
+    note: 'C and G are the same Phoenician letter. Early Latin used C for both k and g sounds — "Caesar" was pronounced "Kaiser." Romans added the leg to create G when they needed to distinguish them, keeping C for the k-sound.',
+    investigationHighlight: 'C is G\'s twin. One Phoenician Gimel became two Latin letters: C (for the k-sound) and G (retrofitted by adding a leg). The soft C (as in "city") came later in Romance languages. Every time English spelling uses C and G inconsistently — "cat" vs "city," "get" vs "gem" — it is displaying the scar left by this 2,300-year-old split.',
+    relatedNodes: ['alphabet-phoenician', 'alphabet-latin', 'alphabet-greek-vowel-revolution'],
+  },
+  {
+    letter: 'J', name: 'J (from Yod)', meaning: 'consonantal I — medieval addition', gardiner: 'D36',
+    unicode: 0x1307C, phoneme: 'dʒ / j / y', greek: 'Ι iota', latin: 'J',
+    hebrew: 'י', arabic: 'ي', phoenician: '\u{10909}', scriptOnly: ['latin'],
+    note: 'J is a variant I. In medieval manuscripts, scribes began drawing I with a tail (J) at the start of words to distinguish the consonantal Y-sound from the vowel I. J became a separate letter around the 17th century — making it one of the youngest letters in the alphabet.',
+    investigationHighlight: 'J is only ~400 years old as a distinct letter. It is a variant form of I (Yod), used when I was consonantal (y-sound in Latin, dʒ-sound in English after Norman influence). "Jehovah" itself is a late invention: the J in "Jehovah" did not exist when the Masoretes wrote the vowel-prohibition code that 16th-century scholars misread. The most common divine name in English begins with a letter invented in the 1600s.',
+    relatedNodes: ['alphabet-masoretes', 'alphabet-hebrew-aleph-bet', 'alphabet-latin'],
+  },
+  {
+    letter: 'U', name: 'U (from Waw/V)', meaning: 'vowel split from V — medieval', gardiner: 'T3',
+    unicode: 0x1307B, phoneme: 'uː', greek: 'Υ upsilon', latin: 'U',
+    hebrew: 'ו', arabic: 'و', phoenician: '\u{10905}', scriptOnly: ['latin'],
+    note: 'U and V were the same letter in classical Latin. V was used at the start of words; U in the middle. The distinction was formalized in the Middle Ages — making both U and V (and W and Y) descendants of the single Phoenician Waw hook-peg.',
+    investigationHighlight: 'U V W Y F — five modern letters from one Phoenician hook. Waw (ו) is the most productive letter in history. U and V separated gradually in medieval manuscripts. W was invented by Anglo-Saxon scribes writing UU or VV for a sound Latin had no letter for — its name "double-U" is literally a description of its creation. Every time you write U, V, W, or Y you are writing variants of the same 3,800-year-old Phoenician peg.',
+    relatedNodes: ['alphabet-latin', 'alphabet-greek-vowel-revolution', 'alphabet-phoenician'],
+  },
+  {
+    letter: 'V', name: 'V (from Waw)', meaning: 'consonantal form of U', gardiner: 'T3',
+    unicode: 0x1307B, phoneme: 'v / w', greek: 'Υ upsilon / Ϝ digamma', latin: 'V',
+    hebrew: 'ו', arabic: 'و', phoenician: '\u{10905}', scriptOnly: ['latin'],
+    note: 'In classical Latin, V was the only form — it represented both the vowel U and the consonant W/V sounds. The distinction between U and V is medieval. The name "Julius" in Latin was pronounced "Yulius" — the consonant V/I was a Y-sound, not a V-sound.',
+    investigationHighlight: '"Julius Caesar" = "Yulius Kaesar." Classical Latin had no V-sound (as in English "vine") — what is now written V was pronounced as W. The V-sound entered Latin through late loanwords from Greek and Etruscan. The angular V shape descends directly from the Phoenician Waw hook, which became Upsilon (Υ) in Greek and then rotated into the V form in Etruscan and Latin.',
+    relatedNodes: ['alphabet-latin', 'alphabet-phoenician', 'alphabet-greek-vowel-revolution'],
+  },
+  {
+    letter: 'W', name: 'W (double-U)', meaning: 'Anglo-Saxon invention — no ancient root', gardiner: 'T3',
+    unicode: 0x1307B, phoneme: 'w', greek: '(none)', latin: 'W',
+    hebrew: 'ו', arabic: 'و', phoenician: '\u{10905}', scriptOnly: ['latin'],
+    note: '"W" is literally "double U." Anglo-Saxon scribes in the 7th–8th century began writing UU or VV to represent a sound (the English W) that Latin had no letter for. By the 11th century it was treated as a single letter. Its name in English still records the moment of invention.',
+    investigationHighlight: 'W is the only letter in the English alphabet whose name is a description of how it was built: "double U." It was invented by Germanic scribes, not inherited from Rome or Greece or Phoenicia. Yet its ancestry is Phoenician Waw — all five letters F U V W Y trace to the same hook-peg hieroglyph. The most modern-looking letter has the oldest possible ancestor.',
+    relatedNodes: ['alphabet-latin', 'alphabet-elder-futhark'],
+  },
+  {
+    letter: 'X', name: 'X (from Greek Chi)', meaning: 'ks sound — Greek import', gardiner: 'Aa28',
+    unicode: 0x13032, phoneme: 'ks', greek: 'Χ chi / Ξ xi', latin: 'X',
+    hebrew: '(none)', arabic: '(none)', phoenician: '(none)', scriptOnly: ['latin'],
+    note: 'Latin X represents the "ks" cluster. It may derive from the Greek letter Chi (Χ) or possibly Samekh (ס) via an Etruscan route. Julius Caesar added both X (already present) and the letters Y and Z to formalize Greek loanword transliteration.',
+    investigationHighlight: 'X marks a transmission puzzle. Its "ks" sound could come from Greek Chi (Χ, the kh-sound) or from Samekh (ס, the fish/pillar letter) via Etruscan. Different scholars argue different routes. X is also the letter the ancient Taw (cross-mark) resembled — raising the possibility that the Christian use of X for Christ (Chi-Rho monogram, XP) preserved an ancient cross-letter tradition older than the crucifixion.',
+    relatedNodes: ['alphabet-greek-vowel-revolution', 'alphabet-phoenician', 'alphabet-latin'],
+  },
+  {
+    letter: 'Y', name: 'Y (from Upsilon)', meaning: 'Greek loanword letter — Julius Caesar addition', gardiner: 'T3',
+    unicode: 0x1307B, phoneme: 'y / iː', greek: 'Υ upsilon', latin: 'Y',
+    hebrew: 'ו', arabic: 'و', phoenician: '\u{10905}', scriptOnly: ['latin'],
+    note: 'Julius Caesar added Y (along with Z) to the Latin alphabet specifically to transliterate Greek words. Y represents the Greek Upsilon (Υ) sound. Like Z, Y sits at the end of the alphabet because it was added late.',
+    investigationHighlight: 'Y is a direct Greek import. Julius Caesar ordered Y and Z added to the end of the Latin alphabet (after X) to handle Greek loanwords — which is why the English alphabet ends X Y Z, with the last two letters in the positions of late arrivals. Y traces back through Upsilon to Waw — the same Phoenician hook that gave Latin F, U, V, and W. One ancient letter, six modern shapes.',
+    relatedNodes: ['alphabet-greek-vowel-revolution', 'alphabet-latin', 'alphabet-phoenician'],
+  },
+
+  // ── Greek-only additions (scriptOnly: ['greek']) ──────────────────────────
+  // Φ Χ Ψ Ω — four letters Greeks invented with no Phoenician source.
+  {
+    letter: 'Φ', name: 'Phi', meaning: 'Greek invention — light / manifestation', gardiner: '',
+    unicode: 0x130F8, phoneme: 'pʰ (aspirated p → f)', greek: 'Φ phi', latin: 'F / Ph',
+    hebrew: 'פ', arabic: 'ف', phoenician: '\u{10910}', scriptOnly: ['greek'],
+    note: 'Phi (Φ) was invented by the Greeks to represent an aspirated P-sound that Semitic alphabets did not distinguish. Together with Chi (Χ) and Psi (Ψ), it was added to the end of the Western Greek alphabet as a cluster of "supplemental" letters the Phoenician system had no room for.',
+    investigationHighlight: 'Phi is one of four letters that prove the Greek adaptation was creative, not just borrowing. Greeks took the Phoenician 22 and ADDED four more for sounds their language needed. Phi → Latin Ph → English "philosophy," "physics," "phone" — all the Ph-words in English are Greek-via-Phi. The aspirated P that Phoenician never wrote is the letter that gave Western civilization its vocabulary for ideas.',
+    relatedNodes: ['alphabet-greek-vowel-revolution', 'alphabet-phoenician'],
+  },
+  {
+    letter: 'Χ', name: 'Chi', meaning: 'Greek invention — ch / kh sound', gardiner: '',
+    unicode: 0x130F8, phoneme: 'kʰ (aspirated k)', greek: 'Χ chi', latin: 'Ch / X',
+    hebrew: '(none)', arabic: 'خ', phoenician: '(none)', scriptOnly: ['greek'],
+    note: 'Chi (Χ) was invented by the Greeks for the aspirated K sound. The Chi-Rho monogram (☧), the earliest Christian symbol, combines Χ and Ρ — the first two letters of ΧΡΙΣΤΟΣ (Christos). Emperor Constantine adopted it for his military standard in 312 CE.',
+    investigationHighlight: 'Chi is the letter that became a symbol. The Chi-Rho ☧ — the earliest Christian monogram, Constantine\'s battle standard — is simply the first two letters of the Greek word for Christ. Chi looks like an X, which is why "Xmas" preserves the original Greek initial. The cross shape of Chi also echoes the ancient Taw (T/X), the last Hebrew letter and original mark of salvation — giving the Chi-Rho an unintended resonance 1,500 years deep.',
+    relatedNodes: ['alphabet-greek-vowel-revolution', 'alphabet-coptic'],
+  },
+  {
+    letter: 'Ψ', name: 'Psi', meaning: 'Greek invention — ps sound', gardiner: '',
+    unicode: 0x130F8, phoneme: 'ps', greek: 'Ψ psi', latin: 'Ps',
+    hebrew: '(none)', arabic: '(none)', phoenician: '(none)', scriptOnly: ['greek'],
+    note: 'Psi (Ψ) was invented for the "ps" cluster — a sound combination Greek needed but Phoenician had no dedicated sign for. Its trident shape suggests a Semitic influence but no direct Phoenician ancestor has been confirmed.',
+    investigationHighlight: 'Psi is the symbol modern psychology chose for itself (the ψ icon in every psychology department). The choice is ironic: psi is the Greek letter for the sound-cluster "ps," but in the 19th century it was chosen as the initial of "psyche" (ψυχή, soul/mind). A letter invented for a phonological technicality became the emblem of the science of the mind — because the Greeks used the same word for soul and mind.',
+    relatedNodes: ['alphabet-greek-vowel-revolution'],
+  },
+  {
+    letter: 'Ω', name: 'Omega', meaning: 'great O — long vowel distinction', gardiner: 'D4',
+    unicode: 0x130CB, phoneme: 'ɔː (long o)', greek: 'Ω omega', latin: 'O',
+    hebrew: 'ע', arabic: 'ع', phoenician: '\u{1090F}', scriptOnly: ['greek'],
+    note: 'Omega (Ω) was invented by splitting the Omicron (O) into two letters: omicron ("small O," short vowel) and omega ("great O," long vowel). Greek distinguished vowel length where Phoenician did not. Omega is the last letter of the Greek alphabet — giving the "alpha and omega" formula its meaning.',
+    investigationHighlight: '"I am the Alpha and the Omega" (Revelation 1:8) — the first and last letters of the Greek alphabet, meaning the beginning and the end. Omega was invented to distinguish short and long O sounds. Without the invention of Omega, the "alpha and omega" phrase — one of Christianity\'s foundational images of God — could not exist. A phonological distinction created a theological metaphor.',
+    relatedNodes: ['alphabet-greek-vowel-revolution', 'alphabet-sefer-yetzirah'],
+  },
+
+  // ── Egyptian sacred signs (scriptOnly: ['hieroglyph']) ────────────────────
+  // Major cosmological hieroglyphs beyond the 22 that became Phoenician letters.
+  // These are the signs that make Egyptian hieroglyphs a sacred cosmological system.
+  {
+    letter: '𓋹', name: 'Ankh', meaning: 'life / immortality', gardiner: 'S34',
+    unicode: 0x132F9, phoneme: 'ʿnḫ', greek: '(none)', latin: '(none)',
+    hebrew: '(none)', arabic: '(none)', phoenician: '(none)', scriptOnly: ['hieroglyph'],
+    note: 'The Ankh — the looped cross — is the Egyptian sign for life and immortality. It appears in the hands of every deity. The crux ansata (Coptic cross) descends from the Ankh. The form may represent a sandal strap, a knot, or the union of male and female principles.',
+    investigationHighlight: 'The Ankh is the most widely recognized Egyptian symbol in the modern world — worn, tattooed, and mass-produced globally. Early Christians in Egypt (the Coptic Church) adopted a modified Ankh as their cross form. This makes the Ankh one of the few pre-Christian symbols explicitly absorbed into Christian iconography with full awareness. The Coptic cross still carries the Ankh loop at its head in some traditions — a 5,000-year sacred sign surviving in a living church.',
+    relatedNodes: ['alphabet-medu-netjer', 'alphabet-coptic', 'alphabet-creation-by-word'],
+  },
+  {
+    letter: '𓋔', name: 'Djed', meaning: 'stability / the spine of Osiris', gardiner: 'R11',
+    unicode: 0x132D4, phoneme: 'ḏd', greek: '(none)', latin: '(none)',
+    hebrew: '(none)', arabic: '(none)', phoenician: '(none)', scriptOnly: ['hieroglyph'],
+    note: 'The Djed pillar represents stability and the backbone of Osiris. The "raising of the Djed" ceremony on the last day of the month of Khoiak symbolized the resurrection of Osiris — the spine rising upright = the dead god returning to life. The Djed is one of the oldest Egyptian symbols, predating the Pharaonic period.',
+    investigationHighlight: 'The Djed raising ceremony is one of the best-documented Egyptian rituals for the dying-and-rising god pattern. Osiris dies, his body is scattered, Isis reassembles it, and the raising of the Djed (his spine) marks his resurrection. This 5,000-year-old ritual is the Egyptian root of the dying-and-rising-god tradition that runs through Tammuz, Adonis, Dionysus, and Christ. The spine of a dead god becomes the pillar of the world.',
+    relatedNodes: ['alphabet-medu-netjer', 'alphabet-creation-by-word'],
+  },
+  {
+    letter: '𓂀', name: 'Eye of Ra / Horus', meaning: 'divine sight / protection / royal power', gardiner: 'D4',
+    unicode: 0x13080, phoneme: 'ir.t', greek: '(none)', latin: '(none)',
+    hebrew: '(none)', arabic: '(none)', phoenician: '(none)', scriptOnly: ['hieroglyph'],
+    note: 'The Udjat — the Eye of Horus (or Ra) — is the most protective amulet in Egyptian tradition. The left eye of Horus was torn out by Set and restored by Thoth; the restored eye became the symbol of healing, protection, and royal authority. The eye fractions were used as a system of mathematical notation.',
+    investigationHighlight: 'The Eye of Ra and Eye of Horus are the same symbol used in two contexts: Ra\'s eye is the sun itself (and the goddess Sekhmet/Hathor in her destructive aspect); Horus\'s restored eye is the moon. The eye fractions (½ + ¼ + ⅛ + 1/16 + 1/32 + 1/64 = 63/64) were used in medical prescriptions. Egyptian sacred geometry, medicine, and cosmology all ran through the same symbol. The Eye is also the origin of the Ayin (ע) → Omicron (O) transmission — the eye that became the letter O.',
+    relatedNodes: ['alphabet-medu-netjer', 'alphabet-isopsephy-greek'],
+  },
+  {
+    letter: '𓆣', name: 'Scarab / Khepri', meaning: 'transformation / the rising sun / becoming', gardiner: 'L1',
+    unicode: 0x131A3, phoneme: 'ḫpr', greek: '(none)', latin: '(none)',
+    hebrew: '(none)', arabic: '(none)', phoenician: '(none)', scriptOnly: ['hieroglyph'],
+    note: 'The scarab beetle rolls its dung ball across the ground — and the Egyptians saw in this the sun god Khepri rolling the solar disk across the sky. The word ḫpr means "to become / to transform / to come into being." The scarab is the hieroglyph for becoming itself.',
+    investigationHighlight: 'The scarab amulet is one of the most abundant archaeological artifacts from ancient Egypt and the ancient Mediterranean — found from Egypt to Britain to Afghanistan. Its meaning: transformation, rebirth, the sun rising again after the night of death. The dung beetle that lays its eggs in dead matter and from which new life emerges — Egyptians saw resurrection in an insect. Khepri the scarab is the dawn sun; Ra is the noon sun; Atum is the evening sun. One god, three scarab-transformation forms.',
+    relatedNodes: ['alphabet-medu-netjer', 'alphabet-creation-by-word'],
+  },
+  {
+    letter: '𓆄', name: 'Feather of Maat', meaning: 'truth / justice / cosmic order', gardiner: 'H6',
+    unicode: 0x13184, phoneme: 'mꜢʿt', greek: '(none)', latin: '(none)',
+    hebrew: '(none)', arabic: '(none)', phoenician: '(none)', scriptOnly: ['hieroglyph'],
+    note: 'The single ostrich feather is Maat — the goddess of truth, justice, and cosmic order (maʿat). In the Hall of Two Truths, the dead person\'s heart was weighed against the feather of Maat on Anubis\'s scales. A heart heavier than the feather was devoured by Ammit. A heart light as a feather passed into eternity.',
+    investigationHighlight: 'The Weighing of the Heart against the Feather of Maat — depicted in the Book of the Dead — is the oldest documented concept of divine judgment based on ethical conduct (c. 2400 BCE). The idea that the dead face a moral reckoning before a divine tribunal predates the Hebrew Bible\'s Judgment themes by 1,500–2,000 years. Egyptian Maat → Jewish Day of Judgment → Christian Last Judgment → Islamic Yawm al-Dīn: the cross-tradition pattern of weighing souls at death may originate with this single ostrich feather.',
+    relatedNodes: ['alphabet-medu-netjer', 'alphabet-creation-by-word'],
+  },
+  {
+    letter: '𓇯', name: 'Solar Barque', meaning: 'the sun\'s journey through the underworld', gardiner: 'P3',
+    unicode: 0x131EF, phoneme: '(determinative)', greek: '(none)', latin: '(none)',
+    hebrew: '(none)', arabic: '(none)', phoenician: '(none)', scriptOnly: ['hieroglyph'],
+    note: 'Ra crosses the sky in his solar barque by day and descends into the Duat (underworld) by night, battling Apep (the chaos serpent) in the 12 hours of darkness before rising again at dawn. The barque is the vehicle of cosmic continuity — the sun does not merely set; it fights for survival every night.',
+    investigationHighlight: 'The solar barque cosmology is the Egyptian origin of the daily-battle-against-chaos narrative that underlies every dying-and-rising sun myth. Apep threatens Ra every night; Apep\'s defeat is why the sun rises. This nightly cosmic battle is one of the deepest layers of Western religious imagination — and one of the oldest, documented from c. 2400 BCE. The Psalms\' "pit" and "darkness"; the Harrowing of Hell; the Night Journey of Muhammad — all carry distant structural echoes of Ra\'s nightly passage.',
+    relatedNodes: ['alphabet-medu-netjer', 'alphabet-creation-by-word'],
+  },
+  {
+    letter: '𓇸', name: 'Lotus', meaning: 'creation from the primordial waters', gardiner: 'M12',
+    unicode: 0x131F8, phoneme: 'sfṯ / nḥb', greek: '(none)', latin: '(none)',
+    hebrew: '(none)', arabic: '(none)', phoenician: '(none)', scriptOnly: ['hieroglyph'],
+    note: 'The lotus rises from the mud of the Nile and opens at dawn — Egyptians saw this as the primordial act of creation repeated daily. The first morning was a lotus opening on the surface of the primordial waters (Nun). The child sun god Nefertem emerges from the lotus. The lotus is the first thing to emerge from the chaos-water.',
+    investigationHighlight: 'The lotus as symbol of enlightenment and spiritual emergence appears in Egyptian theology (c. 3000 BCE), Indian Buddhism (the Buddha on a lotus throne, c. 500 BCE), and Hindu cosmology (Brahma emerges from a lotus growing from Vishnu\'s navel). Three independent traditions, same image: the lotus rising from dark water as the emblem of consciousness emerging from matter. The Egyptian origin is documented; the transmission routes to India are debated but the structural parallel holds.',
+    relatedNodes: ['alphabet-medu-netjer', 'alphabet-brahmi-origin', 'alphabet-devanagari-sacred'],
+  },
+  {
+    letter: '𓇳', name: 'Solar Disk (Ra)', meaning: 'the sun god — the supreme divine power', gardiner: 'N5',
+    unicode: 0x131F3, phoneme: 'rꜤ', greek: '(none)', latin: '(none)',
+    hebrew: '(none)', arabic: '(none)', phoenician: '(none)', scriptOnly: ['hieroglyph'],
+    note: 'The simple circle with a dot — or circle alone — is Ra, the sun, the supreme deity of much of Egyptian history. Akhenaten\'s religious revolution (c. 1353–1336 BCE) reduced all of Egyptian religion to this single disk: the Aten, the solar disk itself, with rays ending in hands.',
+    investigationHighlight: 'Akhenaten\'s Aten theology is the most discussed candidate for proto-monotheism in the ancient world. Freud argued (Moses and Monotheism, 1939) that Moses was an Atenist priest whose theology survived Akhenaten\'s suppression and became the foundation of Israelite monotheism. The scholarly consensus rejects Freud\'s specific claim — but the structural parallel between Aten (one god, universal, no images) and early Yahwism (one god, universal, no images) remains one of the most contested questions in religious history. The solar disk is the center of the argument.',
+    relatedNodes: ['alphabet-medu-netjer', 'alphabet-sefer-yetzirah', 'alphabet-creation-by-word'],
+  },
 ];
 
 // Gematria / Isopsephy / Abjad comparative data

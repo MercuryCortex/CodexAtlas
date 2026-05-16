@@ -54,7 +54,7 @@
     if (scriptId !== 'arabic')     parts.push({ ch: g.arabic || '',                label: 'ar',     font: "'Segoe UI', sans-serif" });
     if (scriptId !== 'greek')      parts.push({ ch: (g.greek || '').split(' ')[0], label: 'gk',     font: 'serif' });
     if (scriptId !== 'latin')      parts.push({ ch: g.letter || '',                label: 'lat',    font: 'serif' });
-    return parts;
+    return parts.filter(p => p.ch && p.ch !== '(none)' && p.ch.trim() !== '');
   }
 
   function render(pane) {
@@ -134,8 +134,13 @@
 
     const scriptMeta = SCRIPTS.find(s => s.id === _script) || SCRIPTS[0];
 
-    // Latin mode: sort A-Z, skip entries with no Latin equivalent
-    let displayData = data.map((g, idx) => ({ ...g, _origIdx: idx }));
+    // Filter by scriptOnly: include if no restriction, or if restriction includes current script
+    // Exclude entries whose scriptOnly list exists but does NOT include the current script
+    let displayData = data.map((g, idx) => ({ ...g, _origIdx: idx })).filter(g => {
+      if (!g.scriptOnly) return true;           // no restriction — show in all scripts
+      return g.scriptOnly.includes(_script);    // only show in listed scripts
+    });
+
     if (_script === 'latin') {
       displayData = displayData
         .filter(g => g.letter && g.letter.trim() !== '')
