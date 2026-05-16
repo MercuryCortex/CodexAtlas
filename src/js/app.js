@@ -8403,6 +8403,7 @@ VIEWS.alphabets = {
       <button class="btn btn-mini alpha-mode" data-mode="glyphs">glyphs</button>
       <button class="btn btn-mini alpha-mode" data-mode="origin">origin chain</button>
       <button class="btn btn-mini alpha-mode" data-mode="mysticism">mysticism</button>
+      <button class="btn btn-mini alpha-mode" data-mode="cuneiform">cuneiform</button>
       <button class="btn btn-mini alpha-mode" data-mode="scripts">scripts</button>
       <button class="btn btn-mini alpha-mode" data-mode="findings">findings</button>
     `;
@@ -8414,7 +8415,7 @@ VIEWS.alphabets = {
     const pane = document.createElement('div');
     pane.className = 'alpha-pane';
 
-    const liveRenderers = { glyphs: '_alphaGlyphs', origin: '_alphaOrigin', mysticism: '_alphaMysticism' };
+    const liveRenderers = { glyphs: '_alphaGlyphs', origin: '_alphaOrigin', mysticism: '_alphaMysticism', cuneiform: '_alphaCuneiform' };
     const rendererKey = liveRenderers[_alphabetsState.mode];
     if (rendererKey && window[rendererKey]) {
       pane.classList.add('alpha-pane-live');
@@ -8919,7 +8920,7 @@ function renderRitualsReligion(pane) {
   html += `<div style="padding:0 24px 16px;display:flex;flex-wrap:wrap;gap:8px">`;
   religions.forEach(rel => {
     const active = rel.id === _ritualsState.religion;
-    html += `<button class="btn btn-mini rituals-rel-btn${active?' active':''}" data-rel="${rel.id}" style="border-left:3px solid ${rel.color};${active?'background:rgba(255,255,255,.1);':''}">${rel.label}</button>`;
+    html += `<button class="btn btn-mini rituals-rel-btn${active?' active':''}" data-rel="${rel.id}" style="border-left:3px solid ${rel.color}">${rel.label}</button>`;
   });
   html += `</div>`;
 
