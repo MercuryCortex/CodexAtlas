@@ -62,7 +62,7 @@
       id: 'hulls',
       title: 'Hulls',
       items: [
-        { id: 'hullOpacity',  label: 'Fill opacity',     min: 0,    max: 0.40, step: 0.01, default: 0.07,  target: 'cssVar', cssVar: '--ph2-hull-opacity',         fmt: v => v.toFixed(2) },
+        { id: 'hullOpacity',  label: 'Fill opacity',     min: 0,    max: 0.40, step: 0.01, default: 0.04,  target: 'cssVar', cssVar: '--ph2-hull-opacity',         fmt: v => v.toFixed(2) },
         { id: 'hullStrokeW',  label: 'Stroke width',     min: 0.2,  max: 2.0,  step: 0.1,  default: 0.8,   target: 'cssVar', cssVar: '--ph2-hull-stroke-width',    fmt: v => v.toFixed(1) + 'px' },
         { id: 'hullHotFill',  label: 'Hot fill',         min: 0.10, max: 0.50, step: 0.02, default: 0.20,  target: 'cssVar', cssVar: '--ph2-hull-hot-fill',        fmt: v => v.toFixed(2) },
         { id: 'hullDimFill',  label: 'Dim fill',         min: 0.005,max: 0.08, step: 0.005,default: 0.025, target: 'cssVar', cssVar: '--ph2-hull-dim-fill',        fmt: v => v.toFixed(3) },

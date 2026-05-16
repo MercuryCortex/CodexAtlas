@@ -720,7 +720,11 @@ body.nav-collapsed nav.side .item .lbl { opacity: 0; display: none; }
 /* Hover-tooltip when nav is collapsed — pops to the right of the icon strip
    showing the full label. Pulled from the .lbl text via JS (sets data-tooltip
    on every .item on first render). */
-body.nav-collapsed nav.side .item:hover::after {
+/* Tooltip on the side-nav icons — pops to the right when hovered. Works in
+   BOTH collapsed and expanded states so the user always gets a confirmation
+   of what each icon means. (When expanded the .lbl is also visible, but the
+   tooltip is the canonical "what does this icon mean" affordance.) */
+nav.side .item:hover::after {
   content: attr(data-tooltip);
   position: absolute;
   left: calc(100% + 12px); top: 50%; transform: translateY(-50%);
@@ -735,6 +739,7 @@ body.nav-collapsed nav.side .item:hover::after {
   box-shadow: 0 4px 14px rgba(0,0,0,0.45);
   z-index: 210;
 }
+nav.side .item { position: relative; }
 body.nav-collapsed nav.side .item:hover::before {
   content: '';
   position: absolute;
@@ -1876,10 +1881,9 @@ body.view-atlas main.canvas { background: var(--bg-0); }
    production's .sector-hull (Rinner-22 → Router+22, padAngle 0.014,
    cornerRadius 8). Quiet by default; hot when family-filter is locked. */
 .ph2-hull {
-  /* P1 parity (`.sector-hull` in app.css line 1008): fill 0.07 / stroke 0.30.
-     Quiet fills let the deity dots sit on the hull instead of being washed
-     into it; the stroke alone reads the family boundary. */
-  fill-opacity: var(--ph2-hull-opacity, 0.07);
+  /* Quiet fill — stroke alone reads the family boundary. The dots should
+     dominate the wedge, not the colour bar behind them. */
+  fill-opacity: var(--ph2-hull-opacity, 0.04);
   stroke-opacity: var(--ph2-hull-stroke-opacity, 0.30);
   stroke-width: var(--ph2-hull-stroke-width, 0.8);
   transition: fill-opacity 250ms ease, stroke-opacity 250ms ease;
@@ -2065,8 +2069,11 @@ body.view-atlas main.canvas { background: var(--bg-0); }
   pointer-events: auto;
 }
 .ph2-btn {
-  background: rgba(14,16,22,0.85);
-  backdrop-filter: blur(6px);
+  /* Quiet button background — buttons read at a glance but the diagram
+     stays visible underneath the toolbar strip. */
+  background: rgba(14,16,22,0.35);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
   border: 1px solid var(--border-soft);
   color: var(--text-2);
   font-family: var(--mono); font-size: 10.5px;
@@ -2075,6 +2082,7 @@ body.view-atlas main.canvas { background: var(--bg-0); }
   cursor: pointer;
   transition: all 120ms ease;
 }
+.ph2-btn:hover { background: rgba(14,16,22,0.70); }
 .ph2-btn:hover { color: var(--gold); border-color: var(--gold-soft); }
 .ph2-btn-on { color: var(--gold); background: rgba(212,165,90,0.16); border-color: var(--gold-soft); }
 
