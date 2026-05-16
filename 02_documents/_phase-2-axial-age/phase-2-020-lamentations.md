@@ -22,7 +22,7 @@ influenced-by: ["the Mesopotamian city-lament tradition ([[phase-1-022-lament-fo
 influences: ["the post-exilic Hebrew lament tradition; the festival of Tisha B'Av and the entire Jewish liturgical mourning tradition; the Christian Holy Week / Tenebrae liturgy (which uses Lamentations directly); the medieval Hebrew *kinot* genre; the modern poetry of catastrophe (post-Holocaust readings — see Linafelt 2000); Christian theology of suffering"]
 deities-mentioned: ["[[yahweh]]"]
 events-context: ["the Babylonian sack of Jerusalem and destruction of the First Temple (-586 BCE); the Babylonian Exile"]
-status: "metadata"
+status: "full"
 preservation: "Five poems of 22, 22, 66, 22, and 22 verses respectively. Chapters 1, 2, 3, and 4 are alphabetic acrostics (each verse, or in ch. 3 each triplet, beginning with successive Hebrew letters from *aleph* to *tav*); ch. 5 is not an acrostic but preserves the 22-verse structure of an acrostic. The acrostic form intensifies the lament's controlled formality — even apocalyptic mourning is alphabetically structured. Chapters 2–4 differ in their letter-order (*pe* before *ayin*), preserving an older Hebrew alphabetic sequence also attested in some pre-exilic abecedaries. Continuous Jewish manuscript tradition; substantial material at Qumran (3QLam, 4QLam, 5QLam). Standard text the MT; LXX preserves a partly independent Greek translation."
 refs:
   - title: "Lamentations: A Commentary"

@@ -1448,3 +1448,11 @@ The things opus-foundation-1 claimed but never started are all still open:
 - Owning: `09_symbols/sigil.md` (NEW), `09_symbols/sacred-smoke.md` (NEW), `09_symbols/sacred-spring.md` (NEW)
 - Goal: Sigil — MASSIVE WIN two completely different traditions under one name (grimoire received-seal vs Spare invented-desire-sigil); LBRP bridge form; Grant Morrison mass-sigilization. Sacred Smoke — cross-tradition universal ascent-offering logic; qetoret priestly monopoly (Korah rebellion); frankincense trade routes = ancient sacred economy. Sacred Spring — most geographically widespread sacred site type in pre-modern Europe; Bath defixiones archaeological evidence; zamzam + tirtha + Lourdes + Cassotis cross-tradition table.
 - Status: FINISHED 2026-05-16
+
+---
+
+## goblin-earth-calendar-1 — symbols / pagan-wheel-of-year + serpent-mound + sacred-feather — started 2026-05-16 — IN PROGRESS
+- Owning: `09_symbols/pagan-wheel-of-year.md` (NEW), `09_symbols/serpent-mound.md` (NEW), `09_symbols/sacred-feather.md` (NEW)
+- Goal: Pagan Wheel of the Year — 8-sabbat calendar documented as 20th-c. Gardner/Nichols synthesis (Hutton T1) + MASSIVE WIN universal sacred year-wheel parallel (Chinese 24 solar terms / Aztec 365-day / Hindu / Jewish calendar cross-tradition table); Serpent Mound — world's largest serpent effigy + astronomical alignment (summer solstice sunset) + MASSIVE WIN cosmic-serpent-encircling-cosmic-egg pattern (Egyptian Apep / Norse Jörmungandr / Hindu Ananta Shesha / Aztec / Ohio earthen form); Sacred Feather — MASSIVE WIN three independent civilizations use feathers as measurement unit of the sacred (Egyptian Maat heart-weighing / Native American eagle-feather deed-honor / Aztec quetzal-feather value-index)
+- Hands-off: sacred-cave.md, blood-sacred.md, infinity-symbol.md, sacred-horse.md, jacobs-ladder.md, wheel-of-fortune.md, sigil.md, sacred-smoke.md, sacred-spring.md, sacred-number-zero.md, chaos-star.md, inverted-cross.md
+- Status: IN PROGRESS

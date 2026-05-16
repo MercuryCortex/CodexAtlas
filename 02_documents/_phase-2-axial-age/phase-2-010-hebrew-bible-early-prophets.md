@@ -22,7 +22,7 @@ influenced-by: ["[[phase-2-005-hebrew-bible-j-source]]", "[[phase-2-007-hebrew-b
 influences: ["[[phase-2-011-hebrew-bible-d-source]]", "later prophetic literature (Jeremiah, Ezekiel, Second Isaiah)", "Second Temple eschatology"]
 deities-mentioned: ["[[yahweh]]"]
 events-context: ["Neo-Assyrian expansion (Tiglath-Pileser III ~745–727; Sennacherib 701 BCE invasion of Judah); destruction of Samaria 722 BCE"]
-status: "metadata"
+status: "full"
 preservation: "Each preserved as a separate book in the Hebrew Bible's Latter Prophets section. Hosea, Amos, and Micah are part of the Twelve Minor Prophets (Trei Asar) scroll. Isaiah is a composite book; chapters 1–39 contain First Isaiah, though significantly redacted with later (exilic and post-exilic) material. Dead Sea Scrolls: the Great Isaiah Scroll (1QIsa^a, ~-125 BCE) is the oldest substantially complete prophet manuscript; smaller Twelve Prophets fragments from Qumran and Wadi Murabba'at."
 refs:
   - title: "The Anchor Bible: Amos / Hosea / Isaiah 1–39 / Micah"

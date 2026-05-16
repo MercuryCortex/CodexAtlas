@@ -20,6 +20,7 @@ import json
 import os
 import re
 import sys
+import threading
 import time
 import urllib.parse
 import urllib.request
@@ -356,6 +357,122 @@ OVERRIDES = {
     "event-eleusinian-mysteries-c1500-bce-396-ce": "Eleusinian Mysteries",
     "event-thera-eruption-c-1600-bce":    "Minoan eruption",
     "event-closure-platonic-academy-529": "Platonic Academy",
+    # ---- Persons bulk pass (thumbnail-system-1, session 2026-05-16) ----
+    # Islamic scholars / figures
+    "ali-ibn-abi-talib":                  "Ali ibn Abi Talib",
+    "ibn-rushd":                          "Averroes",
+    "ibn-sina":                           "Avicenna",
+    "ibn-taymiyya":                       "Ibn Taymiyya",
+    "farid-ud-din-attar":                 "Attar of Nishapur",
+    "hafez":                              "Hafez",
+    "sadi-of-shiraz":                     "Saadi Shirazi",
+    "mulla-sadra":                        "Mulla Sadra",
+    "suhrawardi":                         "Yahya Suhrawardi",
+    "jafar-al-sadiq":                     "Ja'far al-Sadiq",
+    "khadija-bint-khuwaylid":             "Khadija bint Khuwaylid",
+    "shah-wali-allah":                    "Shah Wali Allah",
+    "muawiya-ibn-abi-sufyan":             "Muawiya I",
+    # Greek / Roman / Hellenistic
+    "apuleius":                           "Apuleius",
+    "herodotus":                          "Herodotus",
+    "lucian-of-samosata":                 "Lucian of Samosata",
+    "galen-of-pergamon":                  "Galen",
+    "philo-of-alexandria":                "Philo",
+    "seneca":                             "Seneca the Younger",
+    "darius-i-the-great":                 "Darius the Great",
+    # Roman emperors
+    "hadrian-emperor":                    "Hadrian",
+    "diocletian-emperor":                 "Diocletian",
+    "domitian-emperor":                   "Domitian",
+    "nero-emperor":                       "Nero",
+    "septimius-severus":                  "Septimius Severus",
+    "julian-the-apostate":                "Julian (emperor)",
+    "justinian-i":                        "Justinian I",
+    "decius-emperor":                     "Decius",
+    # Ancient Near East / Egypt
+    "hammurabi":                          "Hammurabi",
+    "sargon-of-akkad":                    "Sargon of Akkad",
+    "naram-sin":                          "Naram-Sin of Akkad",
+    "hatshepsut":                         "Hatshepsut",
+    "cleopatra-vii":                      "Cleopatra",
+    "gudea-of-lagash":                    "Gudea",
+    "ashurbanipal":                       "Ashurbanipal",
+    # Buddhist / Hindu / East Asian
+    "siddhartha-gautama-buddha":          "Gautama Buddha",
+    "asoka-maurya":                       "Ashoka",
+    "atisa":                              "Atiśa",
+    "huineng":                            "Huineng",
+    "hakuin":                             "Hakuin Ekaku",
+    "mengzi-person":                      "Mencius",
+    "han-feizi-person":                   "Han Fei",
+    "takla-haymanot":                     "Tekle Haymanot",
+    "wolega-tafari-makonnen-haile-selassie": "Haile Selassie",
+    "black-elk":                          "Black Elk",
+    "deganawidah-peacemaker":             "Deganawida",
+    "hiawatha-haudenosaunee":             "Hiawatha",
+    "dutty-boukman":                      "Dutty Boukman",
+    "marie-laveau":                       "Marie Laveau",
+    # Medieval Christian
+    "charlemagne":                        "Charlemagne",
+    "meister-eckhart":                    "Meister Eckhart",
+    "julian-of-norwich":                  "Julian of Norwich",
+    "marguerite-porete":                  "Marguerite Porete",
+    "john-of-damascus":                   "John of Damascus",
+    "john-scotus-eriugena":               "Johannes Scotus Eriugena",
+    "cyril-of-alexandria":                "Cyril of Alexandria",
+    "nestorius":                          "Nestorius",
+    "dietrich-bonhoeffer":                "Dietrich Bonhoeffer",
+    "cyprian-of-carthage":                "Cyprian",
+    "symeon-the-new-theologian":          "Symeon the New Theologian",
+    # Apostles / early Christianity
+    "paul-of-tarsus":                     "Paul the Apostle",
+    "peter-apostle":                      "Peter the Apostle",
+    "jesus-of-nazareth":                  "Jesus",
+    "mary-mother-of-jesus":               "Mary, mother of Jesus",
+    "judas-iscariot":                     "Judas Iscariot",
+    "james-son-of-zebedee":               "James, son of Zebedee",
+    "john-son-of-zebedee":                "John the Apostle",
+    "stephen-protomartyr":                "Stephen the first martyr",
+    # Renaissance / Hermetic
+    "marsilio-ficino":                    "Marsilio Ficino",
+    "cosimo-de-medici":                   "Cosimo de' Medici",
+    "robert-fludd":                       "Robert Fludd",
+    "thomas-vaughan":                     "Thomas Vaughan (philosopher)",
+    "george-ripley":                      "George Ripley (alchemist)",
+    "elias-ashmole":                      "Elias Ashmole",
+    "fulcanelli":                         "Fulcanelli",
+    "luis-de-camoes":                     "Luís de Camões",
+    "fernando-pessoa":                    "Fernando Pessoa",
+    "ines-de-castro":                     "Inês de Castro",
+    "henry-the-navigator":                "Henry the Navigator",
+    "sebastian-i-portugal":               "Sebastian I of Portugal",
+    "hugues-de-payens":                   "Hugues de Payens",
+    "jacques-de-molay":                   "Jacques de Molay",
+    "dinis-i-portugal":                   "Denis I of Portugal",
+    # Theosophists / occultists
+    "annie-besant":                       "Annie Besant",
+    "henry-steel-olcott":                 "Henry Steel Olcott",
+    "rene-guenon":                        "René Guénon",
+    "p-d-ouspensky":                      "P. D. Ouspensky",
+    # Kabbalists / Jewish
+    "baal-shem-tov":                      "Baal Shem Tov",
+    "moses-cordovero":                    "Moses Cordovero",
+    "isaac-the-blind":                    "Isaac the Blind",
+    # Modern scholars / academics
+    "mircea-eliade":                      "Mircea Eliade",
+    "sigmund-freud":                      "Sigmund Freud",
+    "james-hillman":                      "James Hillman",
+    "jordan-peterson":                    "Jordan Peterson",
+    "n-t-wright":                         "N. T. Wright",
+    "david-bentley-hart":                 "David Bentley Hart",
+    "elaine-pagels":                      "Elaine Pagels",
+    "hypatia":                            "Hypatia",
+    "mani":                               "Mani (prophet)",
+    "ptolemy-i-soter":                    "Ptolemy I Soter",
+    "ptolemy-ii-philadelphus":            "Ptolemy II Philadelphus",
+    "rudolf-ii-habsburg":                 "Rudolf II, Holy Roman Emperor",
+    "saladin":                            "Saladin",
+    "makeda-queen-of-sheba":              "Queen of Sheba",
 }
 
 
@@ -395,6 +512,17 @@ _PERSON_KW = frozenset({
     'religious', 'religion', 'spiritual', 'heretic', 'reformer', 'apostle', 'evangelist',
     'church', 'faith', 'scripture', 'canon', 'biblical', 'bible', 'torah',
     'genesis', 'abrahamic', 'christian', 'islamic', 'jewish',
+    # Extended — gaps found during thumbnail-system-1 pass
+    'theosoph', 'freemason', 'masonic',
+    'polymath', 'historian', 'poet', 'physician',
+    'caliph', 'imam', 'sunni', 'shia', 'shi\'a', 'muslim',
+    'buddhist', 'buddhism', 'zen', 'chan', 'taoist', 'daoist', 'confucian',
+    'psycholog', 'psychiatr', 'analyst',
+    'emperor', 'pharaoh', 'king', 'queen', 'ruler', 'founder',
+    'martyr', 'archbishop', 'cardinal', 'pope',
+    'shaman', 'druid', 'magician', 'astrologer', 'theurg',
+    'esoteric', 'initiat', 'perennial', 'traditionalist',
+    'nationalist', 'revolutionary', 'independence',
 })
 _RELEVANCE_KW = {'deity': _DEITY_KW, 'person': _PERSON_KW}
 # ── end thresholds ─────────────────────────────────────────────────────────────
@@ -570,7 +698,8 @@ def _summary_to_thumb(data, matched, node=None):
     # Gate 3: relevance keyword check for deity / person
     # The extract must mention at least one religion/mythology keyword or we
     # reject the hit entirely (catches living athletes/politicians with ancient names).
-    if node:
+    # OVERRIDES are human-vetted — skip this gate entirely for them.
+    if node and node.get("id") not in OVERRIDES:
         kw_set = _RELEVANCE_KW.get(node.get("type"))
         if kw_set:
             el = extract.lower()
@@ -665,21 +794,26 @@ def main():
     print(f"Fetching {len(todo)} entries with {args.workers} workers ...")
     done = [0]
     failures = [0]
+    _lock = threading.Lock()
 
     def task(n):
         result = find_thumbnail(n)
-        cache[n["id"]] = result
-        done[0] += 1
-        if result is None:
-            failures[0] += 1
-            status = "·"
-        else:
-            status = "✓"
-        if done[0] % 10 == 0 or done[0] == len(todo):
-            print(f"  {done[0]:>4}/{len(todo)}  failures: {failures[0]:<3}  last: {status} {n['title'][:60]}")
-        # periodic save so we don't lose progress
-        if done[0] % 25 == 0:
-            CACHE.write_text(json.dumps(cache, indent=2, ensure_ascii=False), encoding="utf-8")
+        with _lock:
+            cache[n["id"]] = result
+            done[0] += 1
+            if result is None:
+                failures[0] += 1
+                status = "·"
+            else:
+                status = "✓"
+            cur = done[0]
+            cur_fail = failures[0]
+        if cur % 10 == 0 or cur == len(todo):
+            print(f"  {cur:>4}/{len(todo)}  failures: {cur_fail:<3}  last: {status} {n['title'][:60]}")
+        if cur % 25 == 0:
+            with _lock:
+                snapshot = dict(cache)
+            CACHE.write_text(json.dumps(snapshot, indent=2, ensure_ascii=False), encoding="utf-8")
         return result
 
     with cf.ThreadPoolExecutor(max_workers=args.workers) as ex:

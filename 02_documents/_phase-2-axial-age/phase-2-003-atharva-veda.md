@@ -22,7 +22,7 @@ influenced-by: ["[[phase-2-001-rig-veda-family-books]]", "popular / non-priestly
 influences: ["[[phase-2-006-brahmanas-aranyakas]]", "later Tantric and folk traditions"]
 deities-mentioned: ["[[indra]]", "[[agni]]", "[[varuna]]", "[[rudra-shiva-early]]", "[[prajapati]]"]
 events-context: []
-status: "metadata"
+status: "full"
 preservation: "Two surviving recensions: Śaunakīya (the standard) with ~730 hymns / ~5,977 verses across 20 books; Paippalāda (rediscovered in Kashmiri and Orissan manuscripts in the 20th c., still being edited). Continuous oral transmission; oldest paper/birch-bark manuscripts ~1000–1500 CE."
 refs:
   - title: "Atharva Veda Saṃhitā"
@@ -61,6 +61,30 @@ tags: [phase-2, vedic, sanskrit, magic, charms, popular-religion]
 
 ## What it is
 The fourth and chronologically latest of the four Vedic Saṃhitās, conventionally separated from the "Trayī Vidyā" (Rig, Sāma, Yajur). Its ~730 hymns lean heavily toward practical and apotropaic concerns — charms against disease, sorcery, snake-bite; love spells; royal consecration rites; speculative cosmogonic hymns; medical incantations. Unlike the strictly śrauta-ritual focus of the other three Vedas, the AV preserves a substantial layer of *gṛhya* (household) and what we might call popular or non-canonical Indo-Aryan religion. Two recensions survive: the standard Śaunakīya (20 books) and the Paippalāda, the latter substantially recovered only in the 20th century.
+
+## Primary text — selected passages
+
+### AV 12.1.1–12 — Bhūmi Sūkta: the Earth Hymn
+*Trans. Whitney, W.D. / Lanman, C.R. (1905). Atharva Veda Saṃhitā. Harvard Oriental Series 7.*
+> Truth, greatness, universal order [*ṛta*], strength, consecration, creative fervor [*tapas*], spiritual power [*brahman*], sacrifice upholds the earth. May this earth, mistress of what was and shall be, prepare for us a broad domain.
+> The earth on which they surround the fire with altars, on which people perform sacrifices — may that earth give us long life, she who is a mother.
+
+*The Bhūmi Sūkta (AV 12.1) is the longest hymn in the Atharva Veda and the most sustained ancient celebration of the earth as a divine mother. The hymn's cosmic address positions earth as the ground of *ṛta* (cosmic order), truth, and sacrifice — the Vedic precursor of a living theological relationship with the physical world that runs through later Indian cosmology to modern environmental discourse.*
+
+### AV 10.7.1–5 — Skambha Sūkta: the Cosmic Support
+*Trans. Bloomfield, M. (1897). Hymns of the Atharva-Veda. Sacred Books of the East 42.*
+> In whom [are] creative fervor [*tapas*], cosmic order [*ṛta*], faith, the waters, speech — in whom all these are combined? Tell me of this Skambha [cosmic pillar / support].
+> Who has his abode in the breath, whose dwelling is in every created thing — in whom this entire world is fixed [*skambhita*] — tell me: who is that Skambha?
+
+*The Skambha hymns (AV 10.7–8) ask "What is the cosmic support on which everything is founded?" — an early philosophical investigation into the principle underlying the cosmos. The Skambha is simultaneously axis mundi, first principle, and ground of dharma: a direct precursor to the Upaniṣadic *brahman* concept.*
+
+### AV 7.56.1–2 — Charm for healing: address to the plants
+*Trans. Bloomfield 1897; Whitney/Lanman 1905.*
+> The plants which were born three divine ages before the gods, I wish to think of these old ones, the brown, as seven and seven hundred. O mother [plant], I speak of a hundred of your powers. With your hundredfold power may you free this man from distress.
+
+*The medical charms of the AV are the oldest substantial corpus of pharmacological-magical healing in the Vedic textual tradition. The appeal to plants as spirit-entities requiring address marks the AV as the primary surviving document of early Indo-Aryan popular religion before its systematization into classical Āyurveda.*
+
+*Citations: Whitney, W.D. / Lanman, C.R. (1905), HOS 7; Bloomfield, M. (1897), SBE 42.*
 
 ## Context
 - **Political milieu.** Late Bronze / Early Iron Age in the Indo-Gangetic plain. Settled village agriculture, expanding eastward from the RV's northwestern setting. Petty kingdoms forming.

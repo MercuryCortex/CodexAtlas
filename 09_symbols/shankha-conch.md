@@ -96,6 +96,11 @@ refs:
     tier: 1
     notes: "Primary Mesoamerican source for Ehecatl's conch-pectoral (*ehecailacacozcatl*) as divine attribute."
 tags: [symbol, cosmological, hindu, buddhist, greek, mesoamerican, shankha, conch, spiral, fibonacci, sound-nada, vishnu, ashtamangala, ehecatl, wind]
+depictions:
+  - src: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/16/Shankha-Nepal.jpg/400px-Shankha-Nepal.jpg"
+    caption: "Decorated shankha (sacred conch shell), Nepal"
+    source: "Wikimedia Commons"
+    license: "CC BY-SA 3.0"
 ---
 
 # Śaṅkha (Sacred Conch)

@@ -120,6 +120,11 @@ refs:
     type: "monograph"
     tier: 1
 tags: [symbol, theriomorphic, christian, eucharistic, hermetic, alchemical, rosicrucian, masonic-18th-degree, pelican-in-piety, pelican-vulning, louisiana-state-symbol]
+depictions:
+  - src: "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/Pelican_in_her_piety.jpg/400px-Pelican_in_her_piety.jpg"
+    caption: "Pelican in her Piety — medieval Christian symbol of self-sacrificial nourishment"
+    source: "Wikimedia Commons"
+    license: "Public Domain"
 ---
 
 # Pelican-in-her-Piety
