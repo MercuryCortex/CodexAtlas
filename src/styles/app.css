@@ -4203,3 +4203,394 @@ mark.sr-ent-demo {
   border-color: var(--gold);
 }
 
+/* ── Alphabets tab ──────────────────────────────────────────────── */
+/* alphabet-tab-1, 2026-05-16 */
+
+.alpha-pane {
+  position: absolute;
+  top: 56px; bottom: 24px;
+  left: calc(var(--eff-nav-w) + 24px);
+  right: calc(var(--eff-detail-w) + 24px);
+  overflow: auto;
+  transition: left var(--t-layout) var(--ease), right var(--t-layout) var(--ease);
+}
+.alpha-pane-live {
+  overflow: hidden;
+}
+
+/* Active mode pill */
+.btn-mini.alpha-mode.active {
+  border-color: var(--gold-soft); color: var(--gold);
+  background: rgba(212,165,90,0.10);
+}
+
+/* ── Glyph viewer ──────────────────────────── */
+.alpha-glyph-header {
+  padding: 2rem 2.5rem 1.5rem;
+  text-align: center;
+  border-bottom: 1px solid var(--border-soft);
+  background: rgba(212,165,90,0.03);
+}
+.alpha-glyph-header h2 {
+  font-size: 1.3rem; font-family: var(--serif);
+  color: var(--gold); margin: 0 0 0.5rem; letter-spacing: 0.02em;
+}
+.alpha-glyph-header p {
+  color: var(--text-2); max-width: 620px; margin: 0 auto;
+  font-size: 0.88rem; line-height: 1.6;
+}
+
+.alpha-glyph-grid-wrap {
+  padding: 0.75rem 1rem;
+}
+
+.alpha-glyph-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+  gap: 1px;
+  background: var(--border-soft);
+}
+
+.alpha-glyph-cell {
+  background: var(--bg-0);
+  padding: 0.85rem 0.5rem 0.65rem;
+  cursor: pointer;
+  transition: background 0.12s;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.25rem;
+  user-select: none;
+}
+.alpha-glyph-cell:hover { background: var(--bg-1); }
+.alpha-glyph-cell.expanded { background: rgba(212,165,90,0.08); }
+
+.agc-hieroglyph {
+  font-family: 'Noto Sans Egyptian Hieroglyphs', serif;
+  font-size: 2.6rem;
+  line-height: 1;
+  color: var(--gold);
+}
+.agc-letter {
+  font-size: 1.1rem; font-weight: 700; font-family: var(--mono);
+  color: var(--text-0);
+}
+.agc-name {
+  font-size: 0.72rem; font-weight: 600; color: var(--text-1);
+  text-align: center;
+}
+.agc-meaning {
+  font-size: 0.67rem; color: var(--text-3); text-align: center;
+  font-style: italic;
+}
+.agc-modern {
+  font-size: 1rem; color: var(--text-2);
+  letter-spacing: 0.1em;
+}
+
+/* Expanded card — spans full row */
+.alpha-glyph-expanded {
+  grid-column: 1 / -1;
+  background: var(--bg-1);
+  border-top: 2px solid var(--gold-soft);
+  border-bottom: 1px solid var(--border-soft);
+  padding: 1.5rem 2rem 1.25rem;
+  position: relative;
+}
+
+.age-top {
+  display: flex;
+  gap: 2rem;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  margin-bottom: 1rem;
+}
+
+.age-letter-big {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.3rem;
+  min-width: 90px;
+}
+.age-hieroglyph-big {
+  font-family: 'Noto Sans Egyptian Hieroglyphs', serif;
+  font-size: 4rem;
+  line-height: 1;
+  color: var(--gold);
+}
+.age-letter-name {
+  font-size: 0.8rem; font-weight: 600; color: var(--text-1);
+  text-align: center;
+}
+.age-gardiner {
+  font-size: 0.65rem; color: var(--text-3);
+  font-family: var(--mono); text-align: center;
+}
+
+.age-chain-wrap { flex: 1; min-width: 300px; }
+.age-chain-label-row {
+  font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.1em;
+  color: var(--text-3); margin-bottom: 0.5rem;
+}
+.age-chain {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.4rem;
+  flex-wrap: wrap;
+}
+.age-chain-step {
+  display: flex; flex-direction: column; align-items: center; gap: 0.2rem;
+  min-width: 56px;
+}
+.age-chain-glyph {
+  font-size: 1.8rem; line-height: 1;
+}
+.age-chain-hier { font-family: 'Noto Sans Egyptian Hieroglyphs', serif; color: var(--gold); }
+.age-chain-proto { font-family: 'Noto Sans Egyptian Hieroglyphs', serif; color: var(--gold-soft); }
+.age-chain-phoen { font-family: 'Noto Serif Hebrew', serif; color: var(--text-1); }
+.age-chain-greek { font-family: var(--serif); font-size: 1.6rem; color: var(--text-0); }
+.age-chain-latin { font-family: var(--sans); font-size: 1.6rem; font-weight: 700; color: var(--text-0); }
+.age-chain-step-label { font-size: 0.6rem; color: var(--text-3); text-align: center; }
+.age-chain-step-sub { font-size: 0.58rem; color: var(--text-3); text-align: center; font-family: var(--mono); }
+.age-arrow { color: var(--text-3); font-size: 1.2rem; padding-top: 0.4rem; }
+
+.age-descendants {
+  display: flex; flex-wrap: wrap; gap: 0.75rem; margin-bottom: 0.75rem;
+}
+.age-desc-item {
+  font-size: 0.82rem; color: var(--text-2);
+  display: flex; align-items: center; gap: 0.3rem;
+}
+.age-desc-script {
+  font-size: 0.65rem; text-transform: uppercase; letter-spacing: 0.08em;
+  color: var(--text-3); background: var(--bg-2);
+  padding: 0.1em 0.4em; border-radius: 2px;
+}
+.age-note {
+  font-size: 0.85rem; line-height: 1.65; color: var(--text-1);
+  font-family: var(--serif); font-style: italic;
+  border-left: 3px solid var(--gold-soft); padding-left: 0.75rem;
+}
+.age-close-btn {
+  position: absolute; top: 0.75rem; right: 0.75rem;
+  background: none; border: 1px solid var(--border-soft); border-radius: 3px;
+  color: var(--text-3); font-size: 0.7rem; cursor: pointer; padding: 0.2em 0.5em;
+}
+.age-close-btn:hover { border-color: var(--gold-soft); color: var(--gold); }
+
+/* ── Cuneiform comparison strip ──────────────────── */
+.alpha-cuneiform-strip {
+  padding: 1.5rem 2rem;
+  border-top: 1px solid var(--border-soft);
+  background: rgba(0,0,0,0.04);
+}
+.alpha-cuneiform-strip h3 {
+  margin: 0 0 0.4rem; font-size: 0.95rem;
+  color: var(--text-1); font-family: var(--serif);
+}
+.alpha-cunei-intro {
+  font-size: 0.82rem; color: var(--text-2); line-height: 1.6;
+  max-width: 700px; margin: 0 0 1rem;
+}
+.alpha-cunei-cells {
+  display: flex; gap: 1.25rem; flex-wrap: wrap;
+}
+.alpha-cunei-cell {
+  display: flex; flex-direction: column; align-items: center; gap: 0.2rem;
+  background: var(--bg-1); border: 1px solid var(--border-soft);
+  padding: 0.6rem 0.8rem; border-radius: 4px; min-width: 64px;
+}
+.acc-sign {
+  font-family: 'Noto Sans Cuneiform', 'Segoe UI Historic', monospace;
+  font-size: 2rem; line-height: 1; color: var(--text-2);
+}
+.acc-name {
+  font-size: 0.68rem; font-weight: 600; color: var(--text-1);
+  font-family: var(--mono); text-transform: uppercase;
+}
+.acc-meaning {
+  font-size: 0.62rem; color: var(--text-3); text-align: center;
+}
+
+/* ── Origin chain ─────────────────────────────────── */
+.alpha-origin-container {
+  padding: 1rem 1.5rem 2rem;
+  overflow-x: auto;
+  height: 100%;
+  box-sizing: border-box;
+  position: relative;
+}
+
+.alpha-origin-legend {
+  display: flex; flex-wrap: wrap; gap: 1rem; margin-bottom: 1rem;
+}
+.aol-item { display: flex; align-items: center; gap: 0.4rem; font-size: 0.75rem; color: var(--text-2); }
+.aol-dot { width: 10px; height: 10px; border-radius: 50%; flex-shrink: 0; }
+
+.alpha-origin-svg-wrap {
+  width: 100%;
+  min-height: 700px;
+  position: relative;
+}
+
+.alpha-origin-svg { display: block; }
+
+/* SVG elements */
+.ao-gridline { stroke: var(--border-soft); stroke-width: 1; }
+.ao-gridlabel { fill: var(--text-3); font-size: 10px; font-family: var(--mono); }
+.ao-edge {
+  fill: none; stroke: var(--gold-soft); stroke-width: 1.5;
+  stroke-dasharray: none; opacity: 0.55;
+}
+.ao-edge-source { stroke: var(--text-3); stroke-dasharray: 4 3; opacity: 0.4; }
+.ao-edge-sibling { stroke: var(--text-3); stroke-dasharray: 2 4; opacity: 0.35; }
+.ao-node-sample {
+  font-family: 'Noto Sans Egyptian Hieroglyphs', 'Noto Serif Hebrew', serif;
+  font-size: 14px; dominant-baseline: middle; fill: currentColor;
+}
+.ao-node-label { font-size: 9px; fill: var(--text-2); font-family: var(--sans); }
+
+/* Tooltip */
+.ao-tooltip {
+  position: absolute; z-index: 200;
+  background: var(--bg-1); border: 1px solid var(--gold-soft);
+  border-radius: 6px; padding: 0.75rem 1rem;
+  max-width: 260px; pointer-events: none;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+}
+.aot-sample { font-size: 2rem; line-height: 1; margin-bottom: 0.25rem; }
+.aot-name { font-size: 0.85rem; font-weight: 600; color: var(--text-0); margin-bottom: 0.2rem; }
+.aot-date { font-size: 0.72rem; color: var(--text-3); font-family: var(--mono); }
+.aot-family { font-size: 0.68rem; text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 0.5rem; }
+.aot-note { font-size: 0.78rem; color: var(--text-2); line-height: 1.5; }
+
+/* ── Mysticism ────────────────────────────────────── */
+.alpha-mysticism-container {
+  padding: 1.5rem 2rem 3rem;
+  max-width: 1100px; margin: 0 auto;
+}
+.alpha-myst-header { margin-bottom: 1.5rem; }
+.alpha-myst-header h2 {
+  font-size: 1.3rem; font-family: var(--serif); color: var(--gold);
+  margin: 0 0 0.4rem; letter-spacing: 0.02em;
+}
+.alpha-myst-header p {
+  font-size: 0.87rem; color: var(--text-2); line-height: 1.6; max-width: 680px;
+}
+.alpha-myst-cols {
+  display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 1.5rem; margin-bottom: 2rem;
+}
+@media (max-width: 800px) {
+  .alpha-myst-cols { grid-template-columns: 1fr; }
+}
+.alpha-myst-col h3 {
+  text-align: center; margin: 0 0 0.25rem; font-size: 0.95rem;
+  font-family: var(--serif); color: var(--text-0); border-bottom: 1px solid var(--border-soft);
+  padding-bottom: 0.5rem;
+}
+.alpha-myst-col-intro {
+  font-size: 0.68rem; color: var(--text-3); text-align: center;
+  margin-bottom: 0.6rem; font-family: var(--mono);
+}
+.alpha-myst-rows { font-size: 0.83rem; }
+.alpha-myst-row {
+  display: flex; align-items: center; gap: 0.5rem;
+  padding: 0.2rem 0.4rem; border-bottom: 1px solid var(--border-soft);
+  transition: background 0.1s;
+}
+.alpha-myst-row:hover { background: var(--bg-1); }
+.amr-glyph { width: 2rem; text-align: center; font-size: 1.15rem; }
+.amr-heb { font-family: 'Noto Serif Hebrew', serif; direction: rtl; }
+.amr-arabic { font-family: serif; direction: rtl; }
+.amr-name { flex: 1; color: var(--text-2); font-size: 0.78rem; }
+.amr-val { font-family: var(--mono); font-weight: 600; min-width: 3rem; text-align: right; color: var(--gold); }
+
+.alpha-myst-examples { margin-top: 1.5rem; }
+.alpha-myst-examples h3 {
+  margin: 0 0 1rem; font-size: 1rem; font-family: var(--serif); color: var(--text-0);
+}
+.ame-grid {
+  display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 1rem;
+}
+.ame-card {
+  background: var(--bg-1); border: 1px solid var(--border-soft);
+  padding: 1rem; border-radius: 4px; transition: border-color 0.15s;
+}
+.ame-card:hover { border-color: var(--gold-soft); }
+.ame-tradition {
+  font-size: 0.65rem; text-transform: uppercase; letter-spacing: 0.1em;
+  color: var(--gold); margin-bottom: 0.3rem;
+}
+.ame-equation {
+  font-size: 1.05rem; font-weight: 600; color: var(--text-0);
+  margin-bottom: 0.2rem; font-family: 'Noto Serif Hebrew', serif;
+}
+.ame-translit {
+  font-size: 0.75rem; color: var(--text-2); margin-bottom: 0.5rem;
+  font-style: italic;
+}
+.ame-note {
+  font-size: 0.78rem; color: var(--text-2); line-height: 1.55;
+}
+
+/* Calculator */
+.alpha-myst-calculator { margin-top: 2rem; padding-top: 1.5rem; border-top: 1px solid var(--border-soft); }
+.alpha-myst-calculator h3 { margin: 0 0 0.3rem; font-size: 0.95rem; font-family: var(--serif); color: var(--text-0); }
+.alpha-myst-calc-intro { font-size: 0.82rem; color: var(--text-2); margin-bottom: 0.75rem; }
+.amc-inputs { display: flex; gap: 0.75rem; flex-wrap: wrap; margin-bottom: 0.75rem; }
+.amc-input {
+  background: var(--bg-1); border: 1px solid var(--border-soft);
+  border-radius: 4px; padding: 0.4rem 0.75rem;
+  color: var(--text-0); font-size: 1rem; width: 200px;
+  font-family: 'Noto Serif Hebrew', serif;
+  transition: border-color 0.15s;
+}
+.amc-input:focus { outline: none; border-color: var(--gold-soft); }
+.amc-result {
+  font-size: 0.9rem; color: var(--text-1); padding: 0.5rem 0;
+  min-height: 2rem; font-family: var(--serif);
+}
+.amc-result-part { margin-right: 0.5rem; }
+.amc-r-trad { font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--text-3); margin-right: 0.3em; }
+.amc-r-word { color: var(--text-0); }
+.amc-result strong { color: var(--gold); font-size: 1.1em; }
+.amc-sep { color: var(--text-3); }
+
+/* ── Scripts grid ──────────────────────────────── */
+.alpha-scripts-header {
+  padding: 1.5rem 2rem 0.5rem;
+  display: flex; align-items: baseline; gap: 1rem;
+}
+.alpha-scripts-header h2 {
+  font-size: 1.1rem; font-family: var(--serif); color: var(--text-0); margin: 0;
+}
+.alpha-count { color: var(--text-3); font-size: 0.82rem; font-family: var(--mono); }
+.alpha-scripts-grid {
+  display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 1rem; padding: 1rem 2rem 2rem;
+}
+.alpha-script-card {
+  background: var(--bg-1); border: 1px solid var(--border-soft);
+  padding: 0.9rem 1rem; cursor: pointer;
+  transition: border-color 0.15s; border-radius: 3px;
+}
+.alpha-script-card:hover { border-color: var(--gold-soft); }
+.asc-type {
+  font-size: 0.65rem; text-transform: uppercase; letter-spacing: 0.1em;
+  color: var(--text-3); margin-bottom: 0.25rem;
+}
+.asc-title {
+  font-size: 0.9rem; font-weight: 600; color: var(--text-0); margin-bottom: 0.2rem;
+}
+.asc-tradition { font-size: 0.75rem; color: var(--text-2); }
+
+/* Stub state */
+.alpha-stub {
+  max-width: 520px; padding: 36px 44px;
+  border: 1px solid var(--border-soft); border-radius: 6px;
+  background: rgba(212,165,90,0.04); color: var(--text-2);
+  font-family: var(--serif); text-align: center; margin: auto;
+  position: absolute; inset: 0; display: flex; align-items: center; justify-content: center;
+}
+
