@@ -4,10 +4,10 @@ _Hand-maintained. Each agent currently working in the vault appends a claim bloc
 
 ---
 
-## goblin-mystery-symbols-1 — symbols / undeciphered mysteries thread — started 2026-05-16 — IN PROGRESS
-- Owning: phaistos-disc.md (NEW), gobekli-tepe-pillars.md (NEW), voynich-glyphs.md (NEW), eye-of-the-heart.md (NEW)
-- Goal: Genuine mystery symbols documented as mysteries; Sufi Eye of the Heart as cross-tradition inner-vision symbol
-- Status: in-progress
+## ~~goblin-mystery-symbols-1 — symbols / undeciphered mysteries thread — started 2026-05-16 — FINISHED~~
+- ~~Owning: phaistos-disc.md (NEW), gobekli-tepe-pillars.md (NEW), voynich-glyphs.md (NEW), eye-of-the-heart.md (NEW)~~
+- ~~Goal: Genuine mystery symbols documented as mysteries; Sufi Eye of the Heart as cross-tradition inner-vision symbol~~
+- ~~Status: finished — 4 new symbol nodes · mystery discipline maintained throughout · 0 dead links introduced~~
 
 ---
 
@@ -50,6 +50,13 @@ _Hand-maintained. Each agent currently working in the vault appends a claim bloc
 ## ~~opus-dev-panel-1 — Dev panel + Pantheon-v2 parity — started 2026-05-17 — DONE~~
 - ~~Owned: `src/js/dev-panel.js` (NEW), `src/js/views/pantheon-v2.js`, `src/styles/app.css`, `index.html`, `scripts/serve-node.js` (NEW), `.claude/launch.json`~~
 - ~~Status: done~~
+
+---
+
+## ~~opus-pantheon-v2-baseline-1 — V2 baseline-recovery (A+B+C) — started 2026-05-17 — DONE~~
+- ~~Owned: `src/js/views/pantheon-v2.js`, `src/styles/app.css`, `src/js/dev-panel.js`, `index.html`~~
+- ~~Status: done — edge discipline, row radial formula, node-size cap removed~~
+- ~~Next batches D/E/F queued (force-bake, DOM labels, horizontal family labels)~~
 
 ---
 

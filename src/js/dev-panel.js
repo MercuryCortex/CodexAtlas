@@ -22,7 +22,7 @@
   const LS_KEY = 'codex-atlas/dev-panel-v1';
 
   const DEFAULTS = {
-    edgeOpacity:   0.55,
+    edgeOpacity:   0.13,
     edgeCurvature: 0.35,
     nodeSizeMult:  1.0,
     hubThreshold:  6,

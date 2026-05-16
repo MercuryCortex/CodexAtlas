@@ -46,6 +46,14 @@
   // survive filter changes (legend clicks, mode dropdown changes).
   let _currentMode  = 'deities'; // 'deities'|'authors'|'symbols'|'events'|'monuments'
 
+  // Deterministic per-id hash (djb2) — used for radial jitter so the wedge
+  // grid doesn't look mechanical. Matches production's hashStr usage.
+  function hashStr(s) {
+    let h = 5381;
+    for (let i = 0; i < s.length; i++) h = ((h << 5) + h + s.charCodeAt(i)) | 0;
+    return Math.abs(h);
+  }
+
   // FAMILY-WEDGE polar layout — same math as the main D3 Pantheon
   // (app.js around line 975), so the angular allocation is identical.
   function computeWedgePositions(deities, families) {
@@ -87,8 +95,6 @@
       const wedgePad = Math.min(0.05, (w.a1 - w.a0) * 0.12);
       const aSpan = (w.a1 - w.a0) - wedgePad * 2;
       const rowCount = N <= 4 ? 1 : N <= 9 ? 2 : 3;
-      const rRange = Router - Rinner;
-      const rRowGap = rowCount > 1 ? rRange / (rowCount - 1) : 0;
       // Sort members by date_earliest (oldest first) so the wedge reads chronologically.
       const sorted = [...w.members].sort((a, b) => {
         const ad = (typeof a.date_earliest === 'number') ? a.date_earliest : 999999;
@@ -102,7 +108,15 @@
         const colsInRow = Math.ceil((N - row) / rowCount);
         const t = colsInRow > 1 ? col / (colsInRow - 1) : 0.5;
         const ang = w.a0 + wedgePad + aSpan * t;
-        const r = Rinner + row * rRowGap;
+        // Production row-radii (app.js:1023-1026): keep nodes BUFFERED inside the
+        // radial band (hull extends Rinner-22 → Router+22, so nodes must not touch
+        // Rinner or Router). 1-row: mid. 2-row: Router-14 / Rinner+14. 3-row: 8 px.
+        let r;
+        if (rowCount === 1) r = (Rinner + Router) / 2;
+        else if (rowCount === 2) r = row === 0 ? Router - 14 : Rinner + 14;
+        else r = row === 0 ? Router - 8 : row === 1 ? (Rinner + Router) / 2 : Rinner + 8;
+        // Deterministic radial jitter (±5 px) so the grid doesn't look mechanical
+        r += ((hashStr(d.id) % 10) - 5);
         positions.set(d.id, {
           x: r * Math.cos(ang),
           y: r * Math.sin(ang)
@@ -309,7 +323,9 @@
       graph.addNode(d.id, {
         x:       pos.x,
         y:       pos.y,
-        size:    Math.min(11, 4 + Math.sqrt(deg) * 1.3),
+        // Production formula (app.js:1296): radius = 5 + √degree × 1.8, no cap.
+        // Hubs get visibly bigger; low-degree nodes stay readable.
+        size:    5 + Math.sqrt(deg) * 1.8,
         color:   d.family_color || d.tradition_color || '#7a8090',
         label:   d.title || d.id,
         _isHub:  _hubIdSet.has(d.id),
@@ -491,7 +507,10 @@
       const path = document.createElementNS(SVG_NS, 'path');
       path.setAttribute('class', 'ph2-edge');
       path.setAttribute('d', `M ${sp.x},${sp.y} Q ${cxp},${cyp} ${tp.x},${tp.y}`);
-      path.setAttribute('stroke', EDGE_COLOR[e.type] || DEFAULT_EDGE_COLOR);
+      // Production discipline: default stroke is a single quiet slate-blue (CSS);
+      // the per-type color is stashed as a CSS var and only paints when .hot
+      // (hover/select). Keeps the default canvas calm — no rainbow.
+      path.style.setProperty('--edge-type-color', EDGE_COLOR[e.type] || DEFAULT_EDGE_COLOR);
       path.dataset.source = e.source;
       path.dataset.target = e.target;
       path.dataset.type   = e.type || '';

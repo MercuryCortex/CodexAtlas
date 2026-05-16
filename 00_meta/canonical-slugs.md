@@ -1108,7 +1108,7 @@ canonical-slug
 - `subterranean-chamber-great-pyramid`
 - `temple-of-inscriptions-palenque`
 
-### person (683 nodes)
+### person (684 nodes)
 
 - `aaron`
 - `abba-garima`
@@ -1757,6 +1757,7 @@ canonical-slug
 - `valentinus`
 - `valerian-emperor`
 - `vallabhacharya`
+- `vasco-da-gama`
 - `vasubandhu`
 - `vasugupta`
 - `vidyaranya`
@@ -1794,7 +1795,7 @@ canonical-slug
 - `ziusudra`
 - `zosimos-of-panopolis`
 
-### symbol (119 nodes)
+### symbol (131 nodes)
 
 - `acacia`
 - `adinkra`
@@ -1815,6 +1816,7 @@ canonical-slug
 - `bull`
 - `caduceus`
 - `celtic-cross`
+- `chaos-primordial`
 - `chi-rho-labarum`
 - `coptic-cross`
 - `cosmic-egg`
@@ -1830,11 +1832,14 @@ canonical-slug
 - `enso`
 - `eye`
 - `eye-of-horus-wedjat`
+- `eye-of-the-heart`
 - `faravahar`
+- `fasces`
 - `feathered-serpent`
 - `fish-ichthys`
 - `fleur-de-lis`
 - `flower-of-life`
+- `gobekli-tepe-pillars`
 - `gorgoneion`
 - `greek-cross`
 - `green-lion`
@@ -1852,6 +1857,7 @@ canonical-slug
 - `maltese-cross`
 - `mandala-circle`
 - `mandorla`
+- `medicine-wheel`
 - `menorah`
 - `metatrons-cube`
 - `mithraic-cross`
@@ -1863,17 +1869,20 @@ canonical-slug
 - `nataraja`
 - `nehushtan`
 - `noahs-ark`
+- `nun-primordial-waters`
 - `obelisk`
 - `ollin`
 - `omphalos`
 - `ouroboros`
 - `pelican-in-piety`
 - `pentagram`
+- `phaistos-disc`
 - `philosophers-stone`
 - `phoenix-bennu`
 - `pillars-jachin-boaz`
 - `pomegranate`
 - `pontos-riscados`
+- `prima-materia`
 - `pyramid-triangle`
 - `rainbow-covenant`
 - `rebis`
@@ -1887,6 +1896,7 @@ canonical-slug
 - `serpent-cosmic-enemy`
 - `serpent-wisdom-chthonic`
 - `shankha-conch`
+- `shofar`
 - `sol-niger`
 - `solve-et-coagula`
 - `spiral`
@@ -1906,12 +1916,15 @@ canonical-slug
 - `triquetra`
 - `trishula`
 - `triskelion`
+- `tyet-isis-knot`
 - `uraeus`
 - `vajra-dorje`
 - `valknut`
 - `vesica-piscis`
 - `veve`
 - `vine-grape`
+- `voynich-glyphs`
+- `was-scepter`
 - `wheat-grain`
 - `yggdrasil`
 - `yin-yang`
@@ -2248,7 +2261,7 @@ canonical-slug
 - `zep-tepi`
 - `zeus-pantokrator-transmission`
 
-### tradition (141 nodes)
+### tradition (142 nodes)
 
 - `tradition-advaita-vedanta`
 - `tradition-african-traditional`
@@ -2320,6 +2333,7 @@ canonical-slug
 - `tradition-kashmir-shaivism`
 - `tradition-knights-templar`
 - `tradition-lakota`
+- `tradition-latin-christianity`
 - `tradition-lusitanian-religion`
 - `tradition-madhyamaka`
 - `tradition-mahayana-buddhism`
@@ -2398,18 +2412,18 @@ canonical-slug
 
 | Refs | Dead target | Suggested canonical (existing) |
 |---:|---|---|
-| 5 | `tradition-latin-christianity` | `tradition-hospitallers` |
 | 3 | `guru-arjan-dev-ji` | `guru-arjan` |
 | 2 | `yam-canaanite` | `astarte-canaanite` |
-| 2 | `tradition-lingayat` | `tradition-hospitallers` |
-| 2 | `tradition-judaism-sephardic` | `tradition-hospitallers` |
-| 2 | `tradition-islam-shia` | `tradition-hospitallers` |
-| 2 | `tradition-islam-mughal` | `tradition-hospitallers` |
-| 2 | `tradition-hussitism` | `tradition-hospitallers` |
-| 2 | `tradition-christianity-catholic` | `tradition-neo-confucianism` |
-| 2 | `tradition-bahai` | `tradition-hospitallers` |
-| 2 | `phase-4-045-vishnu-purana` | `phase-4-043-apophthegmata-patrum` |
-| 2 | `phase-3-006-homeric-hymns` | `phase-3-001-second-third-isaiah` |
+| 2 | `was-sceptre` | `was-scepter` |
+| 2 | `tradition-lingayat` | `tradition-jainism` |
+| 2 | `tradition-judaism-sephardic` | `tradition-polynesian` |
+| 2 | `tradition-islam-shia` | `tradition-jainism` |
+| 2 | `tradition-islam-mughal` | `tradition-jainism` |
+| 2 | `tradition-hussitism` | `tradition-jainism` |
+| 2 | `tradition-christianity-catholic` | `tradition-christian-kabbalah` |
+| 2 | `tradition-bahai` | `tradition-jainism` |
+| 2 | `phase-4-045-vishnu-purana` | `phase-4-047-cassian-conferences` |
+| 2 | `phase-3-006-homeric-hymns` | `phase-3-002-plato-dialogues` |
 | 2 | `phase-1-005-descent-of-inanna` | `phase-1-001-kesh-temple-hymn` |
 | 2 | `guru-gobind-singh-ji` | `guru-gobind-singh` |
 | 2 | `divine-names` | `divine-name` |

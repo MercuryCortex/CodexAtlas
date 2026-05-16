@@ -1760,19 +1760,22 @@ body.view-atlas main.canvas { background: var(--bg-0); }
 .ph2-hull.preview-fade { fill-opacity: 0.03;  stroke-opacity: 0.10; }
 /* EDGES — Q-bezier paths drawn in the same overlay. Quiet slate-blue by
    default; per-type stroke color from JS only when .hot (hover/select). */
+/* EDGES — mirrors production .edge-line discipline (app.css:1052):
+   default is a quiet slate-blue, type-color stashed in --edge-type-color
+   and only painted when .hot. User: "I HATE BIG THICK LINES… not overwhelming." */
 .ph2-edge {
   fill: none;
-  stroke: rgba(120, 140, 182, 0.45);
-  stroke-width: 0.6;
-  stroke-opacity: var(--ph2-edge-opacity, 0.55);
+  stroke: rgba(120, 140, 182, 0.72);
+  stroke-width: 0.25;
+  stroke-opacity: var(--ph2-edge-opacity, 0.13);
   vector-effect: non-scaling-stroke;
-  transition: stroke-opacity 180ms ease, stroke-width 180ms ease;
+  transition: stroke-opacity 180ms ease, stroke-width 180ms ease, stroke 180ms ease;
 }
-.ph2-edge.dim { stroke-opacity: 0.04; }
+.ph2-edge.dim { stroke-opacity: 0.02 !important; }
 .ph2-edge.hot {
-  /* When highlighted, use the type-color we assigned inline on the element. */
-  stroke-opacity: 0.85;
-  stroke-width: 1.2;
+  stroke: var(--edge-type-color, rgba(212, 165, 90, 0.9)) !important;
+  stroke-opacity: 0.9 !important;
+  stroke-width: 1.6 !important;
 }
 
 /* THUMBNAIL HOVER CARD — modeled on production's #tooltip + .tt-thumb. */
