@@ -59,6 +59,11 @@ refs:
     type: "monograph"
     tier: 1
 tags: [symbol, egyptian, osiris, resurrection, stability, backbone, axis, funerary, amulet, ceremony, raising, underworld, djed, pillar]
+depictions:
+  - src: "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fe/Djed.svg/500px-Djed.svg.png"
+    caption: "Djed pillar — Egyptian hieroglyphic symbol representing stability; associated with Osiris's spine"
+    source: "Wikimedia Commons"
+    license: "Public domain"
 ---
 
 # Djed Pillar

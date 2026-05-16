@@ -88,6 +88,11 @@ refs:
     tier: 1
     notes: "Relevant to the Norse-Kabbalistic parallel: Scholem's account of the sefirot as a cosmic tree-structure provides the comparand for the Yggdrasil/sefirot parallel-form edge."
 tags: [symbol, phytomorphic, norse, germanic, yggdrasil, world-tree, axis-mundi, odin, shamanism, nine-worlds, norns, nidhoggr, runes, self-sacrifice, phase-8]
+depictions:
+  - src: "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b9/Yggdrasil.jpg/500px-Yggdrasil.jpg"
+    caption: "Yggdrasil, the Norse World Tree, illustration by Oluf Olufsen Bagge (1847)"
+    source: "Wikimedia Commons"
+    license: "Public domain"
 ---
 
 # Yggdrasil

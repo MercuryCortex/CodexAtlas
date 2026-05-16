@@ -9,7 +9,7 @@ region-origin: "Seoul, Korea (Korean Empire under Japanese protectorate)"
 regions-spread: ["Korean peninsula", "North Korea (~1 million adherents)", "South Korea", "Korean diaspora"]
 key-deities: []
 key-persons: ["Son Byong-hui (1861–1922) — founder of Cheondogyo; led March First Movement 1919", "Choe Je-u (1824–1864) — founder of original Donghak; Cheondogyo venerates him", "Choe Si-hyeong (1827–1898) — second Donghak patriarch"]
-key-documents: []
+key-documents: ["[[phase-7-042-donggyeong-daejeon]]"]
 key-themes:
   - "[[apotheosis]]"
   - "[[messianic-future-savior]]"

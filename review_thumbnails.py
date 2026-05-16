@@ -88,8 +88,10 @@ def gather_nodes():
             nid       = get_field(fm, "id") or md.stem
             title     = get_field(fm, "title") or get_field(fm, "name") or md.stem
             tradition = get_field(fm, "tradition")
+            has_depictions = "depictions:" in fm
             nodes[nid] = {"id": nid, "title": title, "type": ntype,
-                          "tradition": tradition, "file": str(md.relative_to(VAULT))}
+                          "tradition": tradition, "file": str(md.relative_to(VAULT)),
+                          "has_depictions": has_depictions}
     return nodes
 
 
@@ -120,7 +122,9 @@ def main():
         entry = cache.get(nid)          # None = failed; dict = hit; missing key = never fetched
         never_fetched = nid not in cache
 
-        if never_fetched or entry is None:
+        if node.get("has_depictions"):
+            pass  # depictions[] block counts as having an image — skip null/suspect
+        elif never_fetched or entry is None:
             by_type[ntype]["null"].append(node)
         else:
             status, reason = classify(entry, node["title"])
@@ -134,7 +138,8 @@ def main():
     total_null    = sum(len(v["null"])    for v in by_type.values())
     total_suspect = sum(len(v["suspect"]) for v in by_type.values())
     total_nodes   = len(nodes)
-    total_hits    = sum(1 for k, v in cache.items() if v and k in nodes)
+    total_hits    = sum(1 for k, v in cache.items() if v and k in nodes) + \
+                    sum(1 for n in nodes.values() if n.get("has_depictions") and not cache.get(n["id"]))
 
     lines = [
         "# THUMBNAILS-REVIEW",

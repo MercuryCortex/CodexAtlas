@@ -99,6 +99,11 @@ refs:
     tier: 3
     notes: "Tier-3: the primary modern popularization text; responsible for the current name and much of the esoteric reception, including the Abydos attribution claim and the Kabbalistic mapping. Document as reception history."
 tags: [symbol, geometric, egyptian, hermetic, pythagorean, islamic, new-age, sacred-geometry, hexagonal-symmetry, abydos, platonic-solids, cross-tradition-win]
+depictions:
+  - src: "https://upload.wikimedia.org/wikipedia/commons/thumb/0/08/Flower-of-Life-small.svg/500px-Flower-of-Life-small.svg.png"
+    caption: "Flower of Life — interlocking circles pattern found in ancient sacred geometry worldwide"
+    source: "Wikimedia Commons"
+    license: "CC BY-SA 3.0"
 ---
 
 # Flower of Life

@@ -3542,6 +3542,52 @@ const SCRIPTURE_CORPORA = {
       ]},
     ],
   },
+  // ----- Donghak / Cheondogyo — Korean syncretic "Eastern Learning" religion, 1861.
+  // Choe Je-u synthesized Confucian ethics, Buddhist practice, and Daoist cosmology
+  // with a new monotheistic revelation (Hanullim, Lord of Heaven) as explicit
+  // counter-program to Western Christianity. The Donghak Peasant Revolution (1894)
+  // directly triggered the First Sino-Japanese War; Cheondogyo led the 1919 Korean
+  // independence declaration. Progressive-revelation structure; radical divine immanence
+  // doctrine (innaecheon: "each person is Heaven"). -----
+  'cheondogyo-corpus': {
+    label: 'Cheondogyo / Donghak — Eastern Learning (Korea, 1861)',
+    available: true,
+    sections: [
+      { id: 'cheondogyo-canon', label: 'Donggyeong Daejeon · Great Scripture of the Eastern Learning (1861)', color: '#6a8a5a', books: [
+        { id: 'phase-7-042-donggyeong-daejeon', label: 'Donggyeong Daejeon · Eastern Classic · Choe Je-u' },
+      ]},
+    ],
+  },
+  // ----- Tenrikyo — Japanese new religion founded 1838 by Nakayama Miki.
+  // Primary scripture: Ofudesaki (1869–1882), 1,711 waka-form verses as divine dictation
+  // from Oyagami ("God the Parent"). Tenrikyo is the founding model for all Japanese
+  // shin shukyo new religions; Tenri city in Nara is entirely owned by the church.
+  // Female founder, healing theology (joyous life / dust-clearing), ~2 million adherents. -----
+  'tenrikyo-corpus': {
+    label: 'Tenrikyo — Religion of Divine Wisdom (Japan, 1838)',
+    available: true,
+    sections: [
+      { id: 'tenrikyo-scripture', label: 'Ofudesaki · Tip of the Divine Writing Brush (1869–1882)', color: '#8a6a3a', books: [
+        { id: 'phase-7-043-ofudesaki', label: 'Ofudesaki · Nakayama Miki · 1711 waka verses' },
+      ]},
+    ],
+  },
+  // ----- Cao Dai — Vietnamese syncretic religion, founded 1926.
+  // The only religion that explicitly enacts the vault's thesis (all traditions share
+  // roots) as its founding theological program. Scriptures received via cơ bút
+  // (spirit-writing) — a method derived from French Spiritism (Allan Kardec, 1857).
+  // Saint-pantheon: Buddha, Confucius, Laozi, Jesus, Victor Hugo, Sun Yat-sen.
+  // Third Divine Alliance theology: same progressive-revelation structure as Islam,
+  // Bahai, Mormonism. ~4–6 million adherents in Vietnam. -----
+  'cao-dai-corpus': {
+    label: 'Cao Dai — Third Divine Alliance (Vietnam, 1926)',
+    available: true,
+    sections: [
+      { id: 'cao-dai-scripture', label: 'Cao Dai canonical scriptures · spirit-writing (cơ bút) revelations 1925–1927', color: '#9a6a3a', books: [
+        { id: 'phase-7-044-cao-dai-canon', label: 'Cao Dai canonical scriptures (Kinh Thiên Đạo · Thánh Ngôn Hiệp Tuyển)' },
+      ]},
+    ],
+  },
 };
 
 // Edge types that bind a person/deity/event to a document for the Scripture view.
@@ -3667,6 +3713,9 @@ VIEWS.scripture = {
       'reformation': 'Reformation',
       'samaritan-corpus': 'Samaritan',
       'alevi-corpus': 'Alevi',
+      'cheondogyo-corpus': 'Cheondogyo',
+      'tenrikyo-corpus': 'Tenrikyo',
+      'cao-dai-corpus': 'Cao Dai',
     };
     const shortLabelFor = (k, c) => SCRIPTURE_CORPUS_SHORT[k]
       || (c && c.label ? c.label.split(/[(·—/]|\s—\s/)[0].trim().slice(0, 14) : k);

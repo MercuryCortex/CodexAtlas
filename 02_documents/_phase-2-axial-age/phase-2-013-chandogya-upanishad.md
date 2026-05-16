@@ -22,7 +22,7 @@ influenced-by: ["[[phase-2-006-brahmanas-aranyakas]]", "[[phase-2-001-rig-veda-f
 influences: ["all subsequent Vedānta", "Bhagavad Gītā", "Buddhist and Jain shared concepts of karma and rebirth"]
 deities-mentioned: ["[[prajapati]]", "[[indra]]", "[[agni]]"]
 events-context: []
-status: "metadata"
+status: "full"
 preservation: "Forms the closing portion of the Chāndogya Brāhmaṇa, attached to the Sāmaveda. Continuous oral and manuscript transmission."
 refs:
   - title: "The Early Upaniṣads: Annotated Text and Translation"
@@ -64,6 +64,60 @@ tags: [phase-2, vedic, upanishad, atman, brahman, tat-tvam-asi, axial-age]
 
 ## What it is
 The Chāndogya Upaniṣad is the second-oldest principal Upaniṣad (closely paired with the Bṛhadāraṇyaka). Belonging to the Sāmaveda tradition — its name derives from *chandoga*, "singer" of the Sāman melodies — it organizes ~628 verses in eight *prapāṭhakas*. Like the BṛhUp it transitions from ritual exegesis to philosophical meditation: it contains the most famous Upaniṣadic teaching, the great dialogue between Uddālaka Āruṇi and his son Śvetaketu in chapter 6, culminating in the *mahāvākya* "*tat tvam asi*" ("That you are") — the identification of the inner self with cosmic being repeated as refrain.
+
+## Primary text — selected passages
+
+### Chāndogya Upaniṣad 6.2.1–2 — "In the beginning, Being alone" (the cosmogonic premise)
+*Trans. Olivelle, P. (1998). The Early Upaniṣads. Oxford UP.*
+> "In the beginning, my dear, this was Being alone —
+> one only, without a second.
+> Some say: 'In the beginning this was Non-being alone, one only, without a second.
+> From that Non-being, Being was born.'
+> But, my dear, how could Being be born from Non-being?
+> On the contrary, my dear, in the beginning this was Being alone,
+> one only, without a second."
+
+*Uddālaka Āruṇi corrects a rival cosmogonic view and establishes that Being (sat) is primordial and irreducible. "One only, without a second" — the formula recurs throughout chapter 6 as Uddālaka's refrain.*
+
+### Chāndogya Upaniṣad 6.12–13 — The banyan seed and the salt in water: *tat tvam asi*
+*Trans. Olivelle 1998*
+> "Break one of these fruits."
+> "It is broken, sir."
+> "What do you see in it?"
+> "These fine seeds, sir."
+> "Break one of them."
+> "What do you see in it?"
+> "Nothing at all, sir."
+> "My dear, this finest essence that you cannot perceive —
+> it is from this finest essence that this great banyan tree grows.
+> Believe me, my dear: the finest essence here —
+> that constitutes the self of all this; that is the truth; that is the self.
+> And that, Śvetaketu, is what you are — *tat tvam asi*."
+
+> "Throw this salt into water and come back tomorrow morning."
+> [Next day:] "Where is the salt?"
+> "I don't know where it is, sir."
+> "Take a sip. How is it?" "Salty."
+> "Take a sip from the middle." "Salty."
+> "Take a sip from the far end." "Salty."
+> "The salt is always right there, even though you cannot see it.
+> In the same way, my dear, you cannot perceive Being here, but it is here.
+> This finest essence — that is what you are: *tat tvam asi*, Śvetaketu."
+
+*The mahāvākya is repeated nine times across chapter 6, each time after a different illustration (banyan seed, salt, dye, fire, fig, tree, man). The repetition is pedagogical ritual — the student must hear the identification of ātman with Brahman across multiple registers.*
+
+### Chāndogya Upaniṣad 5.10.3–7 — The five fires: karma and rebirth cosmology
+*Trans. Olivelle 1998*
+> Those who depart from this world — they all go to the moon.
+> By means of their vital breaths the moon becomes full in the first half of the month;
+> in the second half it causes them to pass down in birth.
+> The moon is King Soma — the food of the gods...
+> Those whose conduct has been good here will quickly attain a good birth —
+> as a brahmin, a kṣatriya, or a vaiśya.
+> But those whose conduct has been bad will quickly attain a bad birth —
+> as a dog, a pig, or an outcaste.
+
+*Citation: Olivelle, P. (1998). The Early Upaniṣads: Annotated Text and Translation. Oxford UP. Olivelle, P. (1996). Upaniṣads. Oxford World's Classics.*
 
 ## Context
 - **Political milieu.** Same Iron Age north-Indian setting as BṛhUp — Kuru-Pañcāla / Videha kingdoms, ~750–550 BCE.

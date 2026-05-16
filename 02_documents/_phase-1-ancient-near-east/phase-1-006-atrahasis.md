@@ -22,7 +22,7 @@ influenced-by: ["earlier Sumerian flood traditions (Eridu Genesis, Sumerian Floo
 influences: ["Standard Babylonian Gilgamesh Tablet XI (direct adaptation); (contested mechanism) Hebrew Bible flood narrative Genesis 6–9; broader ANE flood-motif diffusion"]
 deities-mentioned: ["[[enki-ea]]", "[[enlil]]", "[[an-sumerian]]", "[[ninhursag-nintud]]"]
 events-context: ["Old Babylonian period; reign of Ammi-ṣaduqa of Babylon (the OB principal manuscript is dated to his eleventh regnal year, ~1635 BCE)"]
-status: "metadata"
+status: "full"
 preservation: "Best preserved on three OB tablets (Tablet I: ~416 lines; Tablet II: ~380 lines; Tablet III: ~390 lines) acquired by the British Museum and Geneva from antiquities dealers, with provenance ultimately Sippar. The scribe Ku-Aya / Nūr-Aya signed colophons. Later SB recension fragments from Nineveh's Library of [[ashurbanipal]] supplement the OB. The Sumerian flood story (the so-called Eridu Genesis or Sumerian Flood Story) is a separate but related composition."
 refs:
   - title: "Atra-Ḫasīs: The Babylonian Story of the Flood"
@@ -74,6 +74,48 @@ tags: [phase-1, akkadian, atrahasis, flood, creation, old-babylonian, sippar, en
 
 ## What it is
 A three-tablet Akkadian narrative poem (~1200 lines total when complete) that integrates Mesopotamian creation, human anthropology, and flood into one continuous story. Tablet I: the gods (the Igigi) labor under Enlil's command digging irrigation channels; they rebel; in response, Enki and Ninhursag/Nintu create humanity from clay mixed with the flesh and blood of a slain god (Wê-ila) to take over the work. Tablet II: humans multiply, become noisy, disturb Enlil's rest; Enlil tries successive depopulation strategies (plague, drought, famine), each thwarted by Enki who instructs the chosen human Atrahasis ("Exceeding-Wise") on how to evade them. Tablet III: Enlil resolves to send a flood; Enki, sworn to secrecy, evades the oath by speaking to the reed wall of Atrahasis's house (and thus through the wall to Atrahasis); Atrahasis builds a boat, saves himself and animals; after the flood the gods are starving without human offerings, regret the destruction, and devise demographic controls (barrenness, infant mortality, celibate priestesses) instead of total annihilation. The titular hero's name *Atra-ḫasīs* corresponds to Sumerian Ziusudra and to the SB Gilgamesh's Ut-napishtim.
+
+## Primary text — selected passages
+
+### Tablet I, lines 1–8 — "When the gods like men" (the divine-labor opening)
+*Trans. Dalley, S. (2000). Myths from Mesopotamia. Oxford World's Classics.*
+> When the gods like men
+> bore the work and suffered the toil —
+> the toil of the gods was great,
+> the work was heavy, the distress was much —
+> the great Anunnaki, the seven of them,
+> were making the Igigi suffer the work.
+
+*The epic opens with the gods themselves performing labor (digging the Tigris and Euphrates channels) before humans were created to relieve them. The cause of human creation is labor management — the reason humans exist, in Mesopotamian theology, is to serve the gods.*
+
+### Tablet I — Human creation from divine blood and clay (lines ~220–235, reconstructed)
+*Trans. Lambert, W.G., and Millard, A.R. (1969). Atra-Ḫasīs: The Babylonian Story of the Flood. Oxford UP.*
+> "Let them slaughter one god,
+> and let the gods be purified in the immersion.
+> From his flesh and his blood
+> let Ninhursag mix clay.
+> God and man
+> shall be mixed together in clay.
+> In the flesh of the god let a spirit remain,
+> so that the living will know its sign —
+> and let it not be forgotten."
+
+*The god Wê-ila ("god with reason") is killed; his divine spirit (eṭemmu) is mixed with clay to create humanity. The divine blood in every human body is the Mesopotamian theological anthropology — and the oldest documented origin of what Genesis 1:26 reframes as the imago Dei.*
+
+### Tablet III — Enki's reed-wall oath-evasion (lines iii.9–18)
+*Trans. Lambert & Millard 1969*
+> Wall, listen to me!
+> Reed fence, attend all my words!
+> Destroy your house, build a boat;
+> abandon wealth, seek survival.
+> Reject possessions, save life!
+> Load the seed of all living creatures into the boat.
+> The boat that you shall build —
+> its dimensions shall be measured.
+
+*Bound by oath not to warn Atrahasis directly of the flood decree, Enki speaks to the wall — technically not addressing the man, while ensuring he hears everything. The verbatim device appears also in the Eridu Genesis and is adapted in Gilgamesh Tablet XI.*
+
+*Citation: Lambert, W.G., and Millard, A.R. (1969). Atra-Ḫasīs: The Babylonian Story of the Flood. Oxford UP. Dalley, S. (2000). Myths from Mesopotamia. Oxford World's Classics.*
 
 ## Context
 - **Political milieu.** Late Old Babylonian period — specifically, the principal manuscript is dated by colophon to the eleventh year of Ammi-ṣaduqa of Babylon (~1635 BCE), great-great-grandson of Hammurabi. The scribal milieu is Sippar.

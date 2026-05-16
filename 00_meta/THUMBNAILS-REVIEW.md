@@ -7,10 +7,10 @@
 
 | Stat | Count |
 |---|---|
-| Total nodes | 2346 |
-| Has thumbnail | 1617 (68.9%) |
-| **NULL** (no image) | **729** |
-| **SUSPECT** (possible wrong match) | **318** |
+| Total nodes | 2402 |
+| Has thumbnail | 1713 (71.3%) |
+| **NULL** (no image) | **689** |
+| **SUSPECT** (possible wrong match) | **315** |
 
 ## How to fix
 
@@ -24,7 +24,7 @@
 
 ---
 
-## PERSONS  (96 null · 62 suspect)
+## PERSONS  (96 null · 60 suspect)
 
 ### Nulls — need an OVERRIDE or `depictions` YAML entry
 
@@ -37,7 +37,6 @@
 | `arganthonius` | Arganthonius of Tartessos | Tartessian Civilization | [search →](https://en.wikipedia.org/w/index.php?search=Arganthonius+of+Tartessos) |
 | `bardaisan-of-edessa` | Bardaisan of Edessa | Syriac Christianity (heterodox Edessan) | [search →](https://en.wikipedia.org/w/index.php?search=Bardaisan+of+Edessa) |
 | `beatrice-portinari` | Beatrice Portinari | medieval-christianity | [search →](https://en.wikipedia.org/w/index.php?search=Beatrice+Portinari) |
-| `berossus` | Berossus of Babylon | Babylonian-Hellenistic (priest of Bel-Marduk; Greek-language Babyloniaca historiographer) | [search →](https://en.wikipedia.org/w/index.php?search=Berossus+of+Babylon) |
 | `brian-copenhaver` | Brian P. Copenhaver | Comparative-religion academic / Renaissance-philosophy historian | [search →](https://en.wikipedia.org/w/index.php?search=Brian+P.+Copenhaver) |
 | `theodore-strehlow` | Carl Friedrich Theodor Strehlow | Lutheran Christianity / German missionary linguistics | [search →](https://en.wikipedia.org/w/index.php?search=Carl+Friedrich+Theodor+Strehlow) |
 | `carpocrates` | Carpocrates | Carpocratian Gnostic | [search →](https://en.wikipedia.org/w/index.php?search=Carpocrates) |
@@ -52,7 +51,6 @@
 | `dutty-boukman` | Dutty Boukman | Haitian Vodou / Haitian Revolution | [search →](https://en.wikipedia.org/w/index.php?search=Dutty+Boukman) |
 | `elias-ashmole` | Elias Ashmole | English Hermetic / Rosicrucian-Masonic | [search →](https://en.wikipedia.org/w/index.php?search=Elias+Ashmole) |
 | `eliezer-ben-hyrcanus` | Eliezer ben Hyrcanus | early Rabbinic Judaism (Tannaitic; Shammaite tendency) | [search →](https://en.wikipedia.org/w/index.php?search=Eliezer+ben+Hyrcanus) |
-| `euripides` | Euripides of Salamis | Greek (Athenian dramatic tradition); strongly engaged with Sophistic philosophy and emergent rationalism | [search →](https://en.wikipedia.org/w/index.php?search=Euripides+of+Salamis) |
 | `ewostatewos` | Ewostatewos of Sara'e | [[tradition-ethiopian-orthodox-tewahedo]] (House of Ewostatewos) | [search →](https://en.wikipedia.org/w/index.php?search=Ewostatewos+of+Sara%27e) |
 | `farid-ud-din-attar` | Farīd ud-Dīn ʿAṭṭār | Islam (Sufism — Khorasani school) | [search →](https://en.wikipedia.org/w/index.php?search=Far%C4%ABd+ud-D%C4%ABn+%CA%BFA%E1%B9%AD%E1%B9%AD%C4%81r) |
 | `fazlur-rahman` | Fazlur Rahman Malik | Islamic modernism | [search →](https://en.wikipedia.org/w/index.php?search=Fazlur+Rahman+Malik) |
@@ -62,6 +60,7 @@
 | `george-ripley` | George Ripley | English medieval-Renaissance alchemy | [search →](https://en.wikipedia.org/w/index.php?search=George+Ripley) |
 | `george-starkey` | George Starkey | Anglo-American alchemy / Paracelsian-Sendivogian | [search →](https://en.wikipedia.org/w/index.php?search=George+Starkey) |
 | `goncalo-annes-bandarra` | Gonçalo Annes Bandarra | [[tradition-sebastianism]] | [search →](https://en.wikipedia.org/w/index.php?search=Gon%C3%A7alo+Annes+Bandarra) |
+| `hamza-ibn-ali` | Hamza ibn ʿAlī | [[tradition-druze]] | [search →](https://en.wikipedia.org/w/index.php?search=Hamza+ibn+%CA%BFAl%C4%AB) |
 | `hatshepsut` | Hatshepsut | egyptian-religion | [search →](https://en.wikipedia.org/w/index.php?search=Hatshepsut) |
 | `helen-schucman` | Helen Schucman | A Course in Miracles / New Age | [search →](https://en.wikipedia.org/w/index.php?search=Helen+Schucman) |
 | `henry-the-navigator` | Henry the Navigator | [[tradition-order-of-christ]] / [[tradition-portuguese-hermeticism]] | [search →](https://en.wikipedia.org/w/index.php?search=Henry+the+Navigator) |
@@ -111,7 +110,6 @@
 | `shenxiu` | Shenxiu | Chan Buddhism — Northern School (gradual awakening) | [search →](https://en.wikipedia.org/w/index.php?search=Shenxiu) |
 | `sigmund-freud` | Sigmund Freud | Western psychology / psychoanalysis | [search →](https://en.wikipedia.org/w/index.php?search=Sigmund+Freud) |
 | `sotaesan` | Sotaesan — 少太山 | [[tradition-won-buddhism]] | [search →](https://en.wikipedia.org/w/index.php?search=Sotaesan+%E2%80%94+%E5%B0%91%E5%A4%AA%E5%B1%B1) |
-| `spyridon-marinatos` | Spyridon Marinatos | [[tradition-comparative-religion-academic]] (archaeological method); secular Greek scholarship | [search →](https://en.wikipedia.org/w/index.php?search=Spyridon+Marinatos) |
 | `takla-haymanot` | Takla Haymanot of Debre Libanos | [[tradition-ethiopian-orthodox-tewahedo]] | [search →](https://en.wikipedia.org/w/index.php?search=Takla+Haymanot+of+Debre+Libanos) |
 | `tatian-the-syrian` | Tatian the Syrian | Patristic Christian → Encratite | [search →](https://en.wikipedia.org/w/index.php?search=Tatian+the+Syrian) |
 | `the-nine-saints` | The Nine Saints (Tisseatu Kidusan) | [[tradition-ethiopian-orthodox-tewahedo]] (the founding monastic generation); origin: [[tradition-syriac-orthodox]] / [[tradition-oriental-orthodox]] | [search →](https://en.wikipedia.org/w/index.php?search=The+Nine+Saints+%28Tisseatu+Kidusan%29) |
@@ -120,11 +118,13 @@
 | `thomas-vaughan` | Thomas Vaughan | English Hermetic / Rosicrucian-Paracelsian | [search →](https://en.wikipedia.org/w/index.php?search=Thomas+Vaughan) |
 | `thutmose-iv` | Thutmose IV | — | [search →](https://en.wikipedia.org/w/index.php?search=Thutmose+IV) |
 | `valentinus` | Valentinus | Valentinian Gnostic Christianity | [search →](https://en.wikipedia.org/w/index.php?search=Valentinus) |
+| `vasco-da-gama` | Vasco da Gama | [[tradition-order-of-christ]] / [[tradition-portuguese-hermeticism]] | [search →](https://en.wikipedia.org/w/index.php?search=Vasco+da+Gama) |
 | `vasugupta` | Vasugupta | Hindu — Kashmir Shaivism (Trika / Spanda school) | [search →](https://en.wikipedia.org/w/index.php?search=Vasugupta) |
 | `viriato` | Viriato (Viriathus) | Lusitanian (pre-Roman Iberian) | [search →](https://en.wikipedia.org/w/index.php?search=Viriato+%28Viriathus%29) |
 | `william-seymour` | William Joseph Seymour | — | [search →](https://en.wikipedia.org/w/index.php?search=William+Joseph+Seymour) |
 | `flinders-petrie` | William Matthew Flinders Petrie | — | [search →](https://en.wikipedia.org/w/index.php?search=William+Matthew+Flinders+Petrie) |
 | `william-sinclair-rosslyn` | William Sinclair, 1st Earl of Caithness | Scottish nobility / Templar-influenced architecture | [search →](https://en.wikipedia.org/w/index.php?search=William+Sinclair%2C+1st+Earl+of+Caithness) |
+| `al-hakim-bi-amr-allah` | al-Ḥākim bi-Amr Allāh | [[tradition-ismailism]] | [search →](https://en.wikipedia.org/w/index.php?search=al-%E1%B8%A4%C4%81kim+bi-Amr+All%C4%81h) |
 | `aisha-bint-abi-bakr` | ʿĀʾisha bint Abī Bakr | Islam — Sunnī (venerated; foundational hadith authority); Shīʿī (variously contested per her role at the Battle of the Camel against ʿAlī) | [search →](https://en.wikipedia.org/w/index.php?search=%CA%BF%C4%80%CA%BEisha+bint+Ab%C4%AB+Bakr) |
 
 ### Suspect hits — verify before trusting
@@ -144,7 +144,6 @@
 | `asoka-maurya` | Aśoka the Great | query≈0.38 — returned: **Ashoka** | [view](https://upload.wikimedia.org/wikipedia/commons/thumb/2/28/Ashoka%27s_visit_to_the_Ramagrama_stupa_Sanchi_Stupa_1_Southern_gateway.jpg/330px-Ashoka%27s_visit_to_the_Ramagrama_stupa_Sanchi_Stupa_1_Southern_gateway.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail) |
 | `chaim-vital` | Chaim Vital | query≈0.59 — returned: **Hayyim ben Joseph Vital** | [view](https://upload.wikimedia.org/wikipedia/commons/thumb/b/bd/%D7%9E%D7%A6%D7%91%D7%AA_%D7%A8%D7%91%D7%99_%D7%97%D7%99%D7%99%D7%9D_%D7%95%D7%99%D7%98%D7%90%D7%9C_%D7%91%D7%A7%D7%A8%D7%99%D7%AA_%D7%9E%D7%9C%D7%90%D7%9B%D7%99.jpg/330px-%D7%9E%D7%A6%D7%91%D7%AA_%D7%A8%D7%91%D7%99_%D7%97%D7%99%D7%99%D7%9D_%D7%95%D7%99%D7%98%D7%90%D7%9C_%D7%91%D7%A7%D7%A8%D7%99%D7%AA_%D7%9E%D7%9C%D7%90%D7%9B%D7%99.jpg) |
 | `cleopatra-vii` | Cleopatra VII Philopator | query≈0.55 — returned: **Cleopatra** | [view](https://upload.wikimedia.org/wikipedia/commons/thumb/3/3e/Kleopatra-VII.-Altes-Museum-Berlin1.jpg/330px-Kleopatra-VII.-Altes-Museum-Berlin1.jpg) |
-| `critias-younger` | Critias (the speaker in Plato's Timaeus and Critias) | query≈0.17 — returned: **Plato** | [view](https://upload.wikimedia.org/wikipedia/commons/thumb/2/21/Plato_Silanion_Musei_Capitolini_MC1377.png/330px-Plato_Silanion_Musei_Capitolini_MC1377.png?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail) |
 | `cyprian-of-carthage` | Cyprian of Carthage | query≈0.54 — returned: **Cyprian** | [view](https://upload.wikimedia.org/wikipedia/commons/a/ae/Cyprian_von_Karthago2.jpg) |
 | `d-t-suzuki` | Daisetsu Teitaro Suzuki | query≈0.57 — returned: **D. T. Suzuki** | [view](https://upload.wikimedia.org/wikipedia/commons/thumb/d/de/Daisetsu_Teitar%C5%8D_Suzuki_photographed_by_Shigeru_Tamura.jpg/330px-Daisetsu_Teitar%C5%8D_Suzuki_photographed_by_Shigeru_Tamura.jpg) |
 | `daniel-prophet` | Daniel | query≈0.55 — returned: **Daniel Day-Lewis** | [view](https://upload.wikimedia.org/wikipedia/commons/thumb/f/fe/Daniel_Day-Lewis_Anemone-15_%28cropped%29.jpg/330px-Daniel_Day-Lewis_Anemone-15_%28cropped%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail) |
@@ -182,7 +181,6 @@
 | `siddhartha-gautama-buddha` | Siddhārtha Gautama (the Buddha) | query≈0.29 — returned: **The Buddha** | [view](https://upload.wikimedia.org/wikipedia/commons/thumb/f/ff/Buddha_in_Sarnath_Museum_%28Dhammajak_Mutra%29.jpg/330px-Buddha_in_Sarnath_Museum_%28Dhammajak_Mutra%29.jpg) |
 | `silas-silvanus` | Silas / Silvanus | query≈0.48 — returned: **Silas** | [view](https://upload.wikimedia.org/wikipedia/commons/c/c0/Michael_V%C3%A1clav_Halbax_-_St_Paul_and_Silas_in_Prison_-_O_2303_-_National_Gallery_Prague_%28cropped%29.jpg) |
 | `stephen-protomartyr` | Stephen the Protomartyr | query≈0.39 — returned: **Saint Stephen** | [view](https://upload.wikimedia.org/wikipedia/commons/thumb/d/d3/St-stephen.jpg/330px-St-stephen.jpg) |
-| `strabo` | Strabo of Amaseia | query≈0.52 — returned: **Strabo** | [view](https://upload.wikimedia.org/wikipedia/commons/thumb/e/ed/Strabo.jpg/330px-Strabo.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail) |
 | `suhrawardi` | Suhrawardi | query≈0.39 — returned: **Shihab al-Din Yahya ibn Habash Suhrawardi** | [view](https://upload.wikimedia.org/wikipedia/commons/thumb/0/0d/Shihab_al-Din_Abu_al-Futuh_Ahmad_bin_Habbash_%28Ya%27ish%29_bin_Amirak_al-Suhrawardi_al-Maqtuli_%28d._1191-92%29%3B_Hikmat_al-Ishraq%2C_copied_by_Shams_bin_Jamal_al-Hatani%2C_post-Seljuq_Iran%2C_dated_Tuesday_13_October_1220.jpg/330px-thumbnail.jpg) |
 | `wolega-tafari-makonnen-haile-selassie` | Tafari Makonnen / Haile Selassie I | query≈0.58 — returned: **Haile Selassie** | [view](https://upload.wikimedia.org/wikipedia/commons/thumb/b/b9/Haile_Selassie_in_full_dress_%283x4_cropped%29.jpg/330px-Haile_Selassie_in_full_dress_%283x4_cropped%29.jpg) |
 | `tat-hermetic-disciple` | Tat (Hermetic disciple) | query≈0.43 — returned: **Andrew Tate** | [view](https://upload.wikimedia.org/wikipedia/commons/thumb/a/a5/Andrew_Tate_-_James_Tamim_Upload_%28Cropped_Wide_Portrait%29.png/330px-Andrew_Tate_-_James_Tamim_Upload_%28Cropped_Wide_Portrait%29.png?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail) |
@@ -194,7 +192,7 @@
 | `zarathustra` | Zarathustra | query≈0.50 — returned: **Zoroaster** | [view](https://upload.wikimedia.org/wikipedia/commons/thumb/c/cd/Yazd%2C_Templo_del_Fuego_%282000%29_02_%28cropped%29.jpg/330px-Yazd%2C_Templo_del_Fuego_%282000%29_02_%28cropped%29.jpg) |
 | `umar-ibn-al-khattab` | ʿUmar ibn al-Khaṭṭāb | query≈0.33 — returned: **Umar** | [view](https://upload.wikimedia.org/wikipedia/commons/thumb/5/55/Hagia_Sopia_6163502494_%28cropped%29.jpg/330px-Hagia_Sopia_6163502494_%28cropped%29.jpg) |
 
-## DEITYS  (134 null · 43 suspect)
+## DEITYS  (124 null · 43 suspect)
 
 ### Nulls — need an OVERRIDE or `depictions` YAML entry
 
@@ -204,19 +202,15 @@
 | `al-haqq` | Al-Haqq (The Real) | Sufi Islam — Akbarī school | [search →](https://en.wikipedia.org/w/index.php?search=Al-Haqq+%28The+Real%29) |
 | `almaqah` | Almaqah (Almouqah) | South Arabian Sabaean religion / pre-Christian Aksumite religion (via Sabaean migration to Aksum) | [search →](https://en.wikipedia.org/w/index.php?search=Almaqah+%28Almouqah%29) |
 | `amoghasiddhi` | Amoghasiddhi | Mahāyāna Buddhism (Vajrayana) | [search →](https://en.wikipedia.org/w/index.php?search=Amoghasiddhi) |
-| `amun` | Amun | Egyptian (Theban, then state-religious) | [search →](https://en.wikipedia.org/w/index.php?search=Amun) |
-| `amun-ra` | Amun-Ra | Egyptian (New Kingdom state theology) | [search →](https://en.wikipedia.org/w/index.php?search=Amun-Ra) |
 | `angel-of-the-presence` | Angel of the Presence (Angel of the Face) | Second-Temple Jewish apocalyptic (Jubilees-specific) / canonical in [[tradition-ethiopian-orthodox-tewahedo]] (where Jubilees is full scripture) | [search →](https://en.wikipedia.org/w/index.php?search=Angel+of+the+Presence+%28Angel+of+the+Face%29) |
 | `anshar-kishar` | Anshar and Kishar | Mesopotamian (Sumerian / Akkadian / Babylonian) | [search →](https://en.wikipedia.org/w/index.php?search=Anshar+and+Kishar) |
 | `apkallu` | Apkallu — The Seven Antediluvian Sages | Mesopotamian | [search →](https://en.wikipedia.org/w/index.php?search=Apkallu+%E2%80%94+The+Seven+Antediluvian+Sages) |
 | `armaros` | Armaros | Second-Temple Jewish apocalyptic (Enochic) / canonical in [[tradition-ethiopian-orthodox-tewahedo]] | [search →](https://en.wikipedia.org/w/index.php?search=Armaros) |
 | `asbeel` | Asbeel | Second-Temple Jewish apocalyptic (Enochic) / canonical in [[tradition-ethiopian-orthodox-tewahedo]] | [search →](https://en.wikipedia.org/w/index.php?search=Asbeel) |
 | `astar-aksumite` | Astar (Aksumite) | South Arabian Sabaean / pre-Christian Aksumite religion | [search →](https://en.wikipedia.org/w/index.php?search=Astar+%28Aksumite%29) |
-| `atum` | Atum | Egyptian | [search →](https://en.wikipedia.org/w/index.php?search=Atum) |
 | `ashur` | Aššur (Ashur) | Assyrian (Mesopotamian) | [search →](https://en.wikipedia.org/w/index.php?search=A%C5%A1%C5%A1ur+%28Ashur%29) |
 | `bandua` | Bandua (Bandua Veigebreaego / Bandua Roudeaeco) | Lusitanian Religion (pre-Roman Iberian) — Gallaecia, Lusitania, northwestern Iberian Peninsula | [search →](https://en.wikipedia.org/w/index.php?search=Bandua+%28Bandua+Veigebreaego+%2F+Bandua+Roudeaeco%29) |
 | `baraqel` | Baraqel | Second-Temple Jewish apocalyptic (Enochic) / canonical in [[tradition-ethiopian-orthodox-tewahedo]] | [search →](https://en.wikipedia.org/w/index.php?search=Baraqel) |
-| `barbelo` | Barbelo | Sethian Gnostic | [search →](https://en.wikipedia.org/w/index.php?search=Barbelo) |
 | `bau-sumerian` | Bau | Sumerian | [search →](https://en.wikipedia.org/w/index.php?search=Bau) |
 | `beher` | Beher (Aksumite) | Pre-Christian Aksumite religion | [search →](https://en.wikipedia.org/w/index.php?search=Beher+%28Aksumite%29) |
 | `belet-seri-akkadian` | Belet-Seri | Akkadian / Babylonian | [search →](https://en.wikipedia.org/w/index.php?search=Belet-Seri) |
@@ -233,7 +227,6 @@
 | `el-shaddai` | El Shaddai | Israelite (patriarchal / pre-Mosaic stratum) | [search →](https://en.wikipedia.org/w/index.php?search=El+Shaddai) |
 | `endovelicus` | Endovélico | Lusitanian Religion (pre-Roman Iberian) | [search →](https://en.wikipedia.org/w/index.php?search=Endov%C3%A9lico) |
 | `flint-deity` | Flint (Evil Mind Twin) | Haudenosaunee (Iroquois) | [search →](https://en.wikipedia.org/w/index.php?search=Flint+%28Evil+Mind+Twin%29) |
-| `geb` | Geb | Egyptian | [search →](https://en.wikipedia.org/w/index.php?search=Geb) |
 | `guan-yu` | Guan Yu (關羽) | Chinese folk religion / Confucian / Daoist / Buddhist | [search →](https://en.wikipedia.org/w/index.php?search=Guan+Yu+%28%E9%97%9C%E7%BE%BD%29) |
 | `gula-akkadian` | Gula | Akkadian / Babylonian | [search →](https://en.wikipedia.org/w/index.php?search=Gula) |
 | `hachiman` | Hachiman | Shinto / Buddhist syncretism | [search →](https://en.wikipedia.org/w/index.php?search=Hachiman) |
@@ -262,6 +255,7 @@
 | `mary-theotokos` | Mary (Theotokos) | Christianity | [search →](https://en.wikipedia.org/w/index.php?search=Mary+%28Theotokos%29) |
 | `mastema` | Mastema (Prince of Evil Spirits) | Second-Temple Jewish apocalyptic / Jubilees-specific demonology / canonical in [[tradition-ethiopian-orthodox-tewahedo]] (where Jubilees is full scripture) | [search →](https://en.wikipedia.org/w/index.php?search=Mastema+%28Prince+of+Evil+Spirits%29) |
 | `meder` | Meder (Aksumite earth-god) | Pre-Christian Aksumite religion | [search →](https://en.wikipedia.org/w/index.php?search=Meder+%28Aksumite+earth-god%29) |
+| `melek-taus` | Melek Taus | [[tradition-yazidi]] | [search →](https://en.wikipedia.org/w/index.php?search=Melek+Taus) |
 | `mercury-roman` | Mercury (Roman) | Roman religion | [search →](https://en.wikipedia.org/w/index.php?search=Mercury+%28Roman%29) |
 | `mitra-vedic` | Mitra (Vedic) | Vedic / Hindu | [search →](https://en.wikipedia.org/w/index.php?search=Mitra+%28Vedic%29) |
 | `mullissu-akkadian` | Mullissu | Akkadian / Babylonian / Assyrian | [search →](https://en.wikipedia.org/w/index.php?search=Mullissu) |
@@ -270,7 +264,6 @@
 | `ninazu` | Ninazu | Sumerian / Akkadian | [search →](https://en.wikipedia.org/w/index.php?search=Ninazu) |
 | `ninkasi` | Ninkasi | Sumerian | [search →](https://en.wikipedia.org/w/index.php?search=Ninkasi) |
 | `nin-lil-sumerian` | Ninlil | Sumerian | [search →](https://en.wikipedia.org/w/index.php?search=Ninlil) |
-| `norea` | Norea | Sethian Gnosticism | [search →](https://en.wikipedia.org/w/index.php?search=Norea) |
 | `nuada` | Nuada | Celtic paganism (Gaelic + Welsh + Romano-British) | [search →](https://en.wikipedia.org/w/index.php?search=Nuada) |
 | `nur-muhammadi` | Nur Muhammadi (The Muhammadan Light) | Sufi Islam — Akbarī school | [search →](https://en.wikipedia.org/w/index.php?search=Nur+Muhammadi+%28The+Muhammadan+Light%29) |
 | `nyame` | Nyame | Akan (Asante, Fante, Twi, and related Akan peoples) | [search →](https://en.wikipedia.org/w/index.php?search=Nyame) |
@@ -278,7 +271,6 @@
 | `ohyah-nephilim` | Ohyah (Nephilim, son of Shemihazah) | Second-Temple Jewish apocalyptic (Book of Giants Watchers-tradition expansion) / [[tradition-manichaeism]] (canonical Manichaean Book of Giants) | [search →](https://en.wikipedia.org/w/index.php?search=Ohyah+%28Nephilim%2C+son+of+Shemihazah%29) |
 | `olokun` | Olokun | Yoruba religion (Nigeria / Diaspora) | [search →](https://en.wikipedia.org/w/index.php?search=Olokun) |
 | `palongawhoya` | Palöngawhoya (Younger Twin War God) | hopi | [search →](https://en.wikipedia.org/w/index.php?search=Pal%C3%B6ngawhoya+%28Younger+Twin+War+God%29) |
-| `phanes-protogonos` | Phanes-Protogonos | Greek Orphic mystery-cult cosmogony | [search →](https://en.wikipedia.org/w/index.php?search=Phanes-Protogonos) |
 | `purusha` | Puruṣa (the Cosmic Person) | Vedic / Sāṃkhya / classical Hindu | [search →](https://en.wikipedia.org/w/index.php?search=Puru%E1%B9%A3a+%28the+Cosmic+Person%29) |
 | `poqanghoya` | Pöqánghoya (Elder Twin War God) | hopi | [search →](https://en.wikipedia.org/w/index.php?search=P%C3%B6q%C3%A1nghoya+%28Elder+Twin+War+God%29) |
 | `raguel-archangel` | Raguel (Archangel) | Second-Temple Jewish apocalyptic (Enochic) / canonical in [[tradition-ethiopian-orthodox-tewahedo]] / liturgically retained in [[tradition-coptic-orthodox]] | [search →](https://en.wikipedia.org/w/index.php?search=Raguel+%28Archangel%29) |
@@ -302,20 +294,16 @@
 | `tangaroa` | Tangaroa | Pan-Polynesian — Māori, Tahitian, Samoan; Hawaiian Kanaloa is the cognate | [search →](https://en.wikipedia.org/w/index.php?search=Tangaroa) |
 | `tangun` | Tangun | Korean shamanism (Muism) / Korean founding mythology / modern Korean national religion | [search →](https://en.wikipedia.org/w/index.php?search=Tangun) |
 | `tara` | Tara | Vajrayāna Buddhism — Tibetan, Mongolian, Himalayan; older Mahāyāna roots | [search →](https://en.wikipedia.org/w/index.php?search=Tara) |
-| `tefnut` | Tefnut | Egyptian | [search →](https://en.wikipedia.org/w/index.php?search=Tefnut) |
 | `telipinu` | Telipinu | Hittite (with Hattic substrate) | [search →](https://en.wikipedia.org/w/index.php?search=Telipinu) |
 | `the-amesha-spentas` | The Amesha Spentas | Zoroastrian | [search →](https://en.wikipedia.org/w/index.php?search=The+Amesha+Spentas) |
 | `the-ashvins` | The Aśvins | Vedic Hinduism | [search →](https://en.wikipedia.org/w/index.php?search=The+A%C5%9Bvins) |
 | `dagda` | The Dagda | Celtic paganism (Gaelic) | [search →](https://en.wikipedia.org/w/index.php?search=The+Dagda) |
-| `demiurge-platonic` | The Demiurge (Platonic) | Platonism / Middle Platonism / Neoplatonism (concept-figure) | [search →](https://en.wikipedia.org/w/index.php?search=The+Demiurge+%28Platonic%29) |
-| `the-dioskouroi` | The Dioskouroi | Greek (Panhellenic) | [search →](https://en.wikipedia.org/w/index.php?search=The+Dioskouroi) |
 | `the-elect-one-enochic` | The Elect One / Son of Man (Enochic) | Second-Temple Jewish apocalyptic (Enochic, Book of Parables) / canonical in [[tradition-ethiopian-orthodox-tewahedo]] | [search →](https://en.wikipedia.org/w/index.php?search=The+Elect+One+%2F+Son+of+Man+%28Enochic%29) |
 | `the-evil-god-cathar` | The Evil God (Cathar Rex Mundi) | Catharism (Languedoc, Lombardy, Bosnia, 11th–14th c.) | [search →](https://en.wikipedia.org/w/index.php?search=The+Evil+God+%28Cathar+Rex+Mundi%29) |
 | `the-good-god-cathar` | The Good God (Cathar) | Catharism — medieval Christian dualism | [search →](https://en.wikipedia.org/w/index.php?search=The+Good+God+%28Cathar%29) |
 | `the-lady-ecclesia-hermas` | The Lady / Ecclesia (Hermas) | Early Roman Christianity / canonical in [[tradition-ethiopian-orthodox-tewahedo]] | [search →](https://en.wikipedia.org/w/index.php?search=The+Lady+%2F+Ecclesia+%28Hermas%29) |
 | `the-monad-gnostic` | The Monad / The Father (Gnostic) | Sethian / Valentinian Gnostic | [search →](https://en.wikipedia.org/w/index.php?search=The+Monad+%2F+The+Father+%28Gnostic%29) |
 | `the-one-plotinus` | The One (Plotinus) | Neoplatonism | [search →](https://en.wikipedia.org/w/index.php?search=The+One+%28Plotinus%29) |
-| `the-pleroma` | The Pleroma | Gnostic (Sethian / Valentinian) | [search →](https://en.wikipedia.org/w/index.php?search=The+Pleroma) |
 | `the-sefirot` | The Sefirot (Ten Divine Emanations) | Kabbalistic Judaism | [search →](https://en.wikipedia.org/w/index.php?search=The+Sefirot+%28Ten+Divine+Emanations%29) |
 | `the-shepherd-angel-of-repentance` | The Shepherd (Angel of Repentance) | Early Roman Christianity / canonical in [[tradition-ethiopian-orthodox-tewahedo]] (where the Shepherd of Hermas remains scripture) | [search →](https://en.wikipedia.org/w/index.php?search=The+Shepherd+%28Angel+of+Repentance%29) |
 | `three-pure-ones` | The Three Pure Ones | Daoism | [search →](https://en.wikipedia.org/w/index.php?search=The+Three+Pure+Ones) |
@@ -383,7 +371,7 @@
 | `shango` | Ṣàngó | query≈0.36 — returned: **Shango** | [view](https://upload.wikimedia.org/wikipedia/commons/thumb/1/14/Representa%C3%A7%C3%A3o_de_Xang%C3%B4_MN_01.jpg/330px-Representa%C3%A7%C3%A3o_de_Xang%C3%B4_MN_01.jpg) |
 | `oshun` | Ọ̀ṣun | query≈0.27 — returned: **Osun State** | [view](https://upload.wikimedia.org/wikipedia/commons/thumb/d/d6/Erin-ijesha-water-fall.jpg/330px-Erin-ijesha-water-fall.jpg) |
 
-## DOCUMENTS  (125 null · 87 suspect)
+## DOCUMENTS  (113 null · 88 suspect)
 
 ### Nulls — need an OVERRIDE or `depictions` YAML entry
 
@@ -406,7 +394,6 @@
 | `phase-5-005-shankara-brahma-sutra-bhasya` | Brahma-Sutra-Bhasya (Śaṅkara) | Hindu — Advaita Vedānta | [search →](https://en.wikipedia.org/w/index.php?search=Brahma-Sutra-Bhasya+%28%C5%9Aa%E1%B9%85kara%29) |
 | `phase-5-022-madhva-brahma-sutra-bhasya` | Brahma-Sūtra-Bhāṣya (Madhva) | Hindu — Dvaita Vedānta | [search →](https://en.wikipedia.org/w/index.php?search=Brahma-S%C5%ABtra-Bh%C4%81%E1%B9%A3ya+%28Madhva%29) |
 | `phase-2-006-brahmanas-aranyakas` | Brāhmaṇas and Āraṇyakas | Vedic / early Brahmanical | [search →](https://en.wikipedia.org/w/index.php?search=Br%C4%81hma%E1%B9%87as+and+%C4%80ra%E1%B9%87yakas) |
-| `phase-5-060-bon-kangyur` | Bön Kanjur | [[tradition-bon]] | [search →](https://en.wikipedia.org/w/index.php?search=B%C3%B6n+Kanjur) |
 | `phase-6-020-chaitanya-charitamrita` | Chaitanya Charitamrita + Shikshashtakam | Hindu Bhakti (Gaudiya Vaishnava) | [search →](https://en.wikipedia.org/w/index.php?search=Chaitanya+Charitamrita+%2B+Shikshashtakam) |
 | `phase-7-039-gandra-da-face-oculta-2009` | Da Face Oculta do Rosto da Europa: Prolegómenos a uma História Mítica de Portugal | [[tradition-portuguese-hermeticism]] | [search →](https://en.wikipedia.org/w/index.php?search=Da+Face+Oculta+do+Rosto+da+Europa%3A+Proleg%C3%B3menos+a+uma+Hist%C3%B3ria+M%C3%ADtica+de+Portugal) |
 | `phase-6-006-reuchlin-de-arte-cabalistica` | De Arte Cabalistica | Christian Kabbalah | [search →](https://en.wikipedia.org/w/index.php?search=De+Arte+Cabalistica) |
@@ -414,7 +401,6 @@
 | `phase-6-014-bruno-de-la-causa-eroici-furori` | De la Causa, Principio et Uno + De gli Eroici Furori | Renaissance Hermeticism / philosophical pantheism | [search →](https://en.wikipedia.org/w/index.php?search=De+la+Causa%2C+Principio+et+Uno+%2B+De+gli+Eroici+Furori) |
 | `phase-4-052-gregory-dialogues` | Dialogues on the Miracles of the Italian Fathers | Western (Latin) Patristic Christianity | [search →](https://en.wikipedia.org/w/index.php?search=Dialogues+on+the+Miracles+of+the+Italian+Fathers) |
 | `phase-6-025-nathan-of-gaza-treatise-on-dragons` | Drush ha-Tanninim (Treatise on the Dragons) + Sabbatean writings | Jewish messianism — Sabbatean | [search →](https://en.wikipedia.org/w/index.php?search=Drush+ha-Tanninim+%28Treatise+on+the+Dragons%29+%2B+Sabbatean+writings) |
-| `phase-2-016-early-buddhist-suttas` | Early Buddhist Suttas — Sutta Nipāta (Aṭṭhakavagga, Pārāyanavagga) | Buddhist | [search →](https://en.wikipedia.org/w/index.php?search=Early+Buddhist+Suttas+%E2%80%94+Sutta+Nip%C4%81ta+%28A%E1%B9%AD%E1%B9%ADhakavagga%2C+P%C4%81r%C4%81yanavagga%29) |
 | `phase-5-010-saadia-emunot-ve-deot` | Emunot ve-Deot (The Book of Beliefs and Opinions) | Rabbinic Judaism — medieval Jewish philosophy | [search →](https://en.wikipedia.org/w/index.php?search=Emunot+ve-Deot+%28The+Book+of+Beliefs+and+Opinions%29) |
 | `phase-4-084-ethiopian-sinodos` | Ethiopian Sinodos (the Ethiopian Synodicon) | [[tradition-ethiopian-orthodox-tewahedo]] (canonical-NT-adjacent scripture) | [search →](https://en.wikipedia.org/w/index.php?search=Ethiopian+Sinodos+%28the+Ethiopian+Synodicon%29) |
 | `phase-6-015-luria-vital-etz-chayyim` | Etz Chayyim (Tree of Life) — Lurianic Kabbalah transmitted via Chaim Vital | Jewish Kabbalah | [search →](https://en.wikipedia.org/w/index.php?search=Etz+Chayyim+%28Tree+of+Life%29+%E2%80%94+Lurianic+Kabbalah+transmitted+via+Chaim+Vital) |
@@ -427,9 +413,7 @@
 | `phase-5-028-meister-eckhart-sermons` | German Sermons (Meister Eckhart) | Latin Christian — Rhineland mysticism | [search →](https://en.wikipedia.org/w/index.php?search=German+Sermons+%28Meister+Eckhart%29) |
 | `phase-8-016-haitian-vodou-liturgical-tradition` | Haitian Vodou Liturgical Tradition | Haitian Vodou | [search →](https://en.wikipedia.org/w/index.php?search=Haitian+Vodou+Liturgical+Tradition) |
 | `phase-6-004-pico-heptaplus-conclusiones-cabalisticae` | Heptaplus + Conclusiones Cabalisticae | Christian Kabbalah | [search →](https://en.wikipedia.org/w/index.php?search=Heptaplus+%2B+Conclusiones+Cabalisticae) |
-| `phase-1-003-enheduanna-hymns` | Hymns of Enheduanna | Sumerian / Akkadian | [search →](https://en.wikipedia.org/w/index.php?search=Hymns+of+Enheduanna) |
 | `phase-4-055-ephrem-hymns-on-paradise` | Hymns on Paradise (Madrāšē dᵉ-Pardayšā) | Syriac Christianity | [search →](https://en.wikipedia.org/w/index.php?search=Hymns+on+Paradise+%28Madr%C4%81%C5%A1%C4%93+d%E1%B5%89-Parday%C5%A1%C4%81%29) |
-| `phase-4-006-hypostasis-of-the-archons` | Hypostasis of the Archons | Gnostic Christian | [search →](https://en.wikipedia.org/w/index.php?search=Hypostasis+of+the+Archons) |
 | `phase-5-057-ibn-rushd-aristotle-commentaries` | Ibn Rushd's Aristotle Commentaries (Three-Tier System, c. 1169–1195 CE) | arabic-falsafa; latin-christendom | [search →](https://en.wikipedia.org/w/index.php?search=Ibn+Rushd%27s+Aristotle+Commentaries+%28Three-Tier+System%2C+c.+1169%E2%80%931195+CE%29) |
 | `phase-8-007-ifa-divination-corpus` | Ifá Divination Corpus (Odu Ifá) | Yoruba | [search →](https://en.wikipedia.org/w/index.php?search=If%C3%A1+Divination+Corpus+%28Odu+If%C3%A1%29) |
 | `phase-1-017-descent-of-inanna` | Inanna's Descent to the Netherworld | Sumerian / Mesopotamian | [search →](https://en.wikipedia.org/w/index.php?search=Inanna%27s+Descent+to+the+Netherworld) |
@@ -439,7 +423,6 @@
 | `phase-5-061-kiteba-cilwe` | Kitêba Cilwe and Mishefa Reş | [[tradition-yazidi]] | [search →](https://en.wikipedia.org/w/index.php?search=Kit%C3%AAba+Cilwe+and+Mishefa+Re%C5%9F) |
 | `phase-4-104-sukhavativyuha-larger` | Larger Sukhāvatīvyūha Sūtra (Larger Pure Land Sūtra) | Mahāyāna Buddhism | [search →](https://en.wikipedia.org/w/index.php?search=Larger+Sukh%C4%81vat%C4%ABvy%C5%ABha+S%C5%ABtra+%28Larger+Pure+Land+S%C5%ABtra%29) |
 | `phase-5-036-rule-of-templars-latin` | Latin Rule of the Templars | Latin Christianity (military-religious) | [search →](https://en.wikipedia.org/w/index.php?search=Latin+Rule+of+the+Templars) |
-| `phase-4-060-letter-to-flora` | Letter to Flora (Ptolemy's Letter to Flora) | Gnostic Christian (Valentinian) | [search →](https://en.wikipedia.org/w/index.php?search=Letter+to+Flora+%28Ptolemy%27s+Letter+to+Flora%29) |
 | `phase-5-023-liber-de-duobus-principiis` | Liber de Duobus Principiis (The Book of the Two Principles) | Catharism — absolute dualism | [search →](https://en.wikipedia.org/w/index.php?search=Liber+de+Duobus+Principiis+%28The+Book+of+the+Two+Principles%29) |
 | `phase-6-043-dee-libri-mysteriorum-enochian` | Libri Mysteriorum — Dee's Angelic Conversations and the Enochian System | Renaissance Hermetic-Kabbalist magical theurgy | [search →](https://en.wikipedia.org/w/index.php?search=Libri+Mysteriorum+%E2%80%94+Dee%27s+Angelic+Conversations+and+the+Enochian+System) |
 | `phase-2-017-mahabharata-ramayana-oral-layers` | Mahābhārata and Rāmāyaṇa — Earliest Oral Layers | Vedic / Hindu | [search →](https://en.wikipedia.org/w/index.php?search=Mah%C4%81bh%C4%81rata+and+R%C4%81m%C4%81ya%E1%B9%87a+%E2%80%94+Earliest+Oral+Layers) |
@@ -454,7 +437,6 @@
 | `phase-5-040-meqabyan-ethiopian-maccabees` | Meqabyan I–III (Ethiopian Maccabees) | [[tradition-ethiopian-orthodox-tewahedo]] | [search →](https://en.wikipedia.org/w/index.php?search=Meqabyan+I%E2%80%93III+%28Ethiopian+Maccabees%29) |
 | `phase-6-013-mirabai-bhajans` | Mirabai's Bhajans (devotional songs to Krishna) | Hindu Bhakti (Vaishnava) | [search →](https://en.wikipedia.org/w/index.php?search=Mirabai%27s+Bhajans+%28devotional+songs+to+Krishna%29) |
 | `phase-4-075-mulamadhyamakakarika` | Mūlamadhyamakakārikā (Root Verses on the Middle Way) | Mahāyāna Buddhist | [search →](https://en.wikipedia.org/w/index.php?search=M%C5%ABlamadhyamakak%C4%81rik%C4%81+%28Root+Verses+on+the+Middle+Way%29) |
-| `phase-5-058-nahj-al-balagha` | Nahj al-Balāgha | [[tradition-shia-islam]] | [search →](https://en.wikipedia.org/w/index.php?search=Nahj+al-Bal%C4%81gha) |
 | `phase-8-013-navajo-blessingway` | Navajo Blessingway (Hózhǫǫjí) | Diné (Navajo) | [search →](https://en.wikipedia.org/w/index.php?search=Navajo+Blessingway+%28H%C3%B3zh%C7%AB%C7%ABj%C3%AD%29) |
 | `phase-4-095-new-testament-canon` | New Testament Canon — Formation | Christianity | [search →](https://en.wikipedia.org/w/index.php?search=New+Testament+Canon+%E2%80%94+Formation) |
 | `phase-6-045-sendivogius-novum-lumen-chymicum` | Novum Lumen Chymicum (New Light of Alchemy) | Latin Christian alchemy / Paracelsian-Rosicrucian | [search →](https://en.wikipedia.org/w/index.php?search=Novum+Lumen+Chymicum+%28New+Light+of+Alchemy%29) |
@@ -465,7 +447,6 @@
 | `phase-4-036-passio-perpetuae` | Passio Perpetuae et Felicitatis | early Christian; North African; possibly Montanist-leaning | [search →](https://en.wikipedia.org/w/index.php?search=Passio+Perpetuae+et+Felicitatis) |
 | `phase-7-021-patterns-comparative-religion` | Patterns in Comparative Religion | Comparative religion (academic) / history of religions | [search →](https://en.wikipedia.org/w/index.php?search=Patterns+in+Comparative+Religion) |
 | `phase-6-051-mylius-philosophia-reformata` | Philosophia Reformata | German Renaissance alchemy / Rosicrucian-Paracelsian | [search →](https://en.wikipedia.org/w/index.php?search=Philosophia+Reformata) |
-| `phase-3-022-plato-timaeus-critias-atlantis` | Plato's Atlantis Narrative (Timaeus 17a–27b, 24a–25d; Critias) | Greek philosophy | [search →](https://en.wikipedia.org/w/index.php?search=Plato%27s+Atlantis+Narrative+%28Timaeus+17a%E2%80%9327b%2C+24a%E2%80%9325d%3B+Critias%29) |
 | `phase-4-040-pliny-trajan-correspondence` | Pliny–Trajan Correspondence on Christians (Epistulae 10.96–97) | Roman aristocratic literary (pagan) | [search →](https://en.wikipedia.org/w/index.php?search=Pliny%E2%80%93Trajan+Correspondence+on+Christians+%28Epistulae+10.96%E2%80%9397%29) |
 | `phase-7-017-psychology-and-alchemy` | Psychology and Alchemy | Jungian depth psychology | [search →](https://en.wikipedia.org/w/index.php?search=Psychology+and+Alchemy) |
 | `phase-5-059-rasail-al-hikma` | Rasāʾil al-Ḥikma | [[tradition-druze]] | [search →](https://en.wikipedia.org/w/index.php?search=Ras%C4%81%CA%BEil+al-%E1%B8%A4ikma) |
@@ -496,13 +477,9 @@
 | `phase-1-023-shulgi-hymns` | The Shulgi Royal Hymns | Sumerian | [search →](https://en.wikipedia.org/w/index.php?search=The+Shulgi+Royal+Hymns) |
 | `phase-1-015-sumerian-king-list` | The Sumerian King List | Sumerian / Mesopotamian | [search →](https://en.wikipedia.org/w/index.php?search=The+Sumerian+King+List) |
 | `phase-1-029-telipinu-myth` | The Telipinu Myth | Hittite (with Hattic substrate) | [search →](https://en.wikipedia.org/w/index.php?search=The+Telipinu+Myth) |
-| `phase-4-058-thunder-perfect-mind` | The Thunder, Perfect Mind | Gnostic (uncertain school) | [search →](https://en.wikipedia.org/w/index.php?search=The+Thunder%2C+Perfect+Mind) |
-| `phase-4-059-tripartite-tractate` | The Tripartite Tractate | Gnostic Christian (Valentinian) | [search →](https://en.wikipedia.org/w/index.php?search=The+Tripartite+Tractate) |
 | `phase-6-002-ficino-theologia-platonica` | Theologia Platonica de immortalitate animorum | Renaissance Platonism / Hermeticism | [search →](https://en.wikipedia.org/w/index.php?search=Theologia+Platonica+de+immortalitate+animorum) |
 | `phase-6-040-bandarra-trovas` | Trovas do Bandarra | [[tradition-sebastianism]] | [search →](https://en.wikipedia.org/w/index.php?search=Trovas+do+Bandarra) |
 | `tummal-chronicle` | Tummal Chronicle | Sumerian | [search →](https://en.wikipedia.org/w/index.php?search=Tummal+Chronicle) |
-| `phase-1-014-ugaritic-ritual-texts` | Ugaritic Ritual Texts | Ugaritic / Canaanite | [search →](https://en.wikipedia.org/w/index.php?search=Ugaritic+Ritual+Texts) |
-| `phase-3-015-pauline-epistles` | Undisputed Pauline Epistles (Romans, 1–2 Corinthians, Galatians, Philippians, 1 Thessalonians, Philemon) | Earliest Christianity | [search →](https://en.wikipedia.org/w/index.php?search=Undisputed+Pauline+Epistles+%28Romans%2C+1%E2%80%932+Corinthians%2C+Galatians%2C+Philippians%2C+1+Thessalonians%2C+Philemon%29) |
 | `phase-6-022-fludd-utriusque-cosmi-historia` | Utriusque Cosmi Historia | Renaissance Hermetic-Kabbalist / Christian Paracelsian | [search →](https://en.wikipedia.org/w/index.php?search=Utriusque+Cosmi+Historia) |
 | `phase-5-055-vilayetname-haci-bektas` | Vilayetname-i Hacı Bektaş Veli (The Saintly Deeds of Hacı Bektaş Veli) | [[tradition-alevi-bektashi]] | [search →](https://en.wikipedia.org/w/index.php?search=Vilayetname-i+Hac%C4%B1+Bekta%C5%9F+Veli+%28The+Saintly+Deeds+of+Hac%C4%B1+Bekta%C5%9F+Veli%29) |
 | `phase-4-076-visuddhimagga` | Visuddhimagga (Path of Purification) | Theravāda Buddhist | [search →](https://en.wikipedia.org/w/index.php?search=Visuddhimagga+%28Path+of+Purification%29) |
@@ -510,7 +487,6 @@
 | `phase-1-035-wadi-el-jarf-papyri` | Wadi el-Jarf Papyri | — | [search →](https://en.wikipedia.org/w/index.php?search=Wadi+el-Jarf+Papyri) |
 | `phase-2-004-yasna-younger-avesta` | Yasna and Younger Avesta | Zoroastrian | [search →](https://en.wikipedia.org/w/index.php?search=Yasna+and+Younger+Avesta) |
 | `phase-5-032-yogavasishtha` | Yoga-Vāsiṣṭha (Yoga Vasistha) | Hindu — Advaita Vedanta narrative-philosophical literature | [search →](https://en.wikipedia.org/w/index.php?search=Yoga-V%C4%81si%E1%B9%A3%E1%B9%ADha+%28Yoga+Vasistha%29) |
-| `phase-4-056-zostrianos` | Zostrianos | Gnostic Christian (Sethian) | [search →](https://en.wikipedia.org/w/index.php?search=Zostrianos) |
 | `phase-6-048-basil-valentine-twelve-keys` | Zwölf Schlüssel / Les Douze Clefs de Philosophie (Twelve Keys) | German Renaissance alchemy / Paracelsian | [search →](https://en.wikipedia.org/w/index.php?search=Zw%C3%B6lf+Schl%C3%BCssel+%2F+Les+Douze+Clefs+de+Philosophie+%28Twelve+Keys%29) |
 | `phase-2-038-acharanga-sutra` | Ācārāṅga Sūtra (First Āṅga of the Jain Canon) | Jainism | [search →](https://en.wikipedia.org/w/index.php?search=%C4%80c%C4%81r%C4%81%E1%B9%85ga+S%C5%ABtra+%28First+%C4%80%E1%B9%85ga+of+the+Jain+Canon%29) |
 | `phase-5-018-suhrawardi-hikmat-al-ishraq` | Ḥikmat al-Ishrāq (The Philosophy of Illumination) | Islamic philosophy — Illuminationism (Ishrāqiyya) | [search →](https://en.wikipedia.org/w/index.php?search=%E1%B8%A4ikmat+al-Ishr%C4%81q+%28The+Philosophy+of+Illumination%29) |
@@ -537,6 +513,7 @@
 | `phase-8-009-dreaming-narratives` | Australian Aboriginal Dreaming Narratives (the Dreaming / Tjukurpa / Altyerre) | query≈0.38 — returned: **The Dreaming** | [view](https://upload.wikimedia.org/wikipedia/commons/thumb/b/bf/Aboriginal_art_Carnarvon_Gorge.jpg/330px-Aboriginal_art_Carnarvon_Gorge.jpg) |
 | `phase-4-033-babylonian-talmud` | Babylonian Talmud | query≈0.52 — returned: **Talmud** | [view](https://upload.wikimedia.org/wikipedia/commons/thumb/c/ca/Talmud-Druck_von_Daniel_Bomberg_und_Ambrosius_Froben.jpg/330px-Talmud-Druck_von_Daniel_Bomberg_und_Ambrosius_Froben.jpg) |
 | `phase-7-015-beyond-belief` | Beyond Belief: The Secret Gospel of Thomas | query≈0.33 — returned: **Elaine Pagels** | [view](https://upload.wikimedia.org/wikipedia/commons/thumb/9/95/Elaine_pagels_8315812.jpg/330px-Elaine_pagels_8315812.jpg) |
+| `phase-5-060-bon-kangyur` | Bön Kanjur | query≈0.29 — returned: **Jure Bogdan** | [view](https://upload.wikimedia.org/wikipedia/commons/thumb/0/0a/Coat_of_arms_of_Jure_Bogdan.svg/330px-Coat_of_arms_of_Jure_Bogdan.svg.png?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail) |
 | `phase-4-096-cantong-qi` | Cantong Qi (The Kinship of the Three) | query≈0.54 — returned: **Canton, Michigan** | [view](https://upload.wikimedia.org/wikipedia/commons/thumb/1/11/Canton_township_municipal_complex.JPG/330px-Canton_township_municipal_complex.JPG) |
 | `phase-4-079-coptic-asclepius-nhc-vi-8` | Coptic Asclepius (NHC VI,8) — including the Hermetic 'Egyptian Apocalypse' | query≈0.25 — returned: **Hermetica** | [view](https://upload.wikimedia.org/wikipedia/commons/thumb/0/07/HermesTrismegistusCaucHighRes.jpg/330px-HermesTrismegistusCaucHighRes.jpg) |
 | `phase-4-030-pseudo-dionysius` | Corpus Areopagiticum | query≈0.51 — returned: **Pseudo-Dionysius the Areopagite** | [view](https://upload.wikimedia.org/wikipedia/commons/thumb/a/ad/Plotin.jpg/330px-Plotin.jpg) |
@@ -545,6 +522,7 @@
 | `phase-6-009-agrippa-de-occulta-philosophia` | De Occulta Philosophia Libri Tres | query≈0.55 — returned: **Three Books of Occult Philosophy** | [view](https://upload.wikimedia.org/wikipedia/commons/thumb/2/22/Phys_m_6_tb_1.jpg/330px-Phys_m_6_tb_1.jpg) |
 | `phase-6-007-luther-bondage-of-will` | De Servo Arbitrio (On the Bondage of the Will) | query≈0.28 — returned: **On the Bondage of the Will** | [view](https://upload.wikimedia.org/wikipedia/commons/thumb/5/5c/De_Servo_Arbitrio.jpg/330px-De_Servo_Arbitrio.jpg) |
 | `phase-5-053-hafez-divan` | Dīvān-e Ḥāfeẓ (The Collected Poems of Hafez) | query≈0.45 — returned: **The Divān of Hafez** | [view](https://upload.wikimedia.org/wikipedia/commons/thumb/9/92/DivanofHafez3.jpg/330px-DivanofHafez3.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail) |
+| `phase-2-016-early-buddhist-suttas` | Early Buddhist Suttas — Sutta Nipāta (Aṭṭhakavagga, Pārāyanavagga) | query≈0.22 — returned: **Pali Canon** | [view](https://upload.wikimedia.org/wikipedia/commons/thumb/8/8d/Pali_Canon_Structure.png/330px-Pali_Canon_Structure.png) |
 | `phase-2-002-gathas-of-zarathustra` | Gathas of Zarathustra | query≈0.44 — returned: **Gathas** | [view](https://upload.wikimedia.org/wikipedia/commons/thumb/f/f1/Bodleian_J2_fol_175_Y_28_1.jpg/330px-Bodleian_J2_fol_175_Y_28_1.jpg) |
 | `phase-1-004-gilgamesh-old-babylonian` | Gilgamesh — Old Babylonian Version | query≈0.42 — returned: **Gilgamesh** | [view](https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Chaos_Monster_and_Sun_God.png/330px-Chaos_Monster_and_Sun_God.png) |
 | `phase-5-052-sadi-gulistan` | Gulistān (The Rose Garden) | query≈0.58 — returned: **Gulistan-e-Johar** | [view](https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/Gulistan-e-Jauhar.jpg/330px-Gulistan-e-Jauhar.jpg) |
@@ -561,6 +539,7 @@
 | `phase-5-009-tabari-tafsir` | Jāmiʿ al-Bayān (al-Ṭabarī's Tafsīr) | query≈0.47 — returned: **Tafsir al-Tabari** | [view](https://upload.wikimedia.org/wikipedia/commons/thumb/e/ee/Qur%27an_Tabari.jpg/330px-Qur%27an_Tabari.jpg) |
 | `phase-5-044-ibn-sina-kitab-al-shifa` | Kitāb al-Shifāʾ (The Book of Healing — Avicenna's encyclopedic philosophical *summa*) | query≈0.39 — returned: **Abu Bakr bin Yahya al-Suli** | [view](https://upload.wikimedia.org/wikipedia/commons/thumb/7/77/The_Vizier_Buzurghmihr_Showing_the_Game_of_Chess_to_King_Khusraw_Anushirwan%2C_Page_from_a_Manuscript_of_the_Shahnama_%28Book_of_Kings%29_LACMA_M.73.5.586.jpg/330px-The_Vizier_Buzurghmihr_Showing_the_Game_of_Chess_to_King_Khusraw_Anushirwan%2C_Page_from_a_Manuscript_of_the_Shahnama_%28Book_of_Kings%29_LACMA_M.73.5.586.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail) |
 | `phase-8-010-kumulipo` | Kumulipo | query≈0.33 — returned: **Hami** | [view](https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/Mosque_in_Hami_-_panoramio.jpg/330px-Mosque_in_Hami_-_panoramio.jpg) |
+| `phase-4-060-letter-to-flora` | Letter to Flora (Ptolemy's Letter to Flora) | query≈0.59 — returned: **A Letter to Lord Ellenborough** | [view](https://upload.wikimedia.org/wikipedia/commons/thumb/9/96/A_Letter_to_Lord_Ellenborough_1812.jpg/330px-A_Letter_to_Lord_Ellenborough_1812.jpg) |
 | `phase-7-008-book-of-the-law` | Liber AL vel Legis (The Book of the Law) | query≈0.22 — returned: **The Book of the Law** | [view](https://upload.wikimedia.org/wikipedia/commons/thumb/7/71/Liber_AL_Vel_Legis.png/330px-Liber_AL_Vel_Legis.png) |
 | `phase-4-045-gregory-of-nyssa-life-of-moses` | Life of Moses | query≈0.47 — returned: **Life of Joseph Smith from 1827 to 1830** | [view](https://upload.wikimedia.org/wikipedia/commons/thumb/8/86/Joseph_Smith%2C_Jr._portrait_owned_by_Joseph_Smith_III.jpg/330px-Joseph_Smith%2C_Jr._portrait_owned_by_Joseph_Smith_III.jpg) |
 | `phase-7-016-magick-in-theory-and-practice` | Magick in Theory and Practice | query≈0.34 — returned: **Magick (Book 4)** | [view](https://upload.wikimedia.org/wikipedia/en/4/45/Magick_book4.gif) |
@@ -573,7 +552,6 @@
 | `phase-4-042-athanasius-on-the-incarnation` | On the Incarnation | query≈0.38 — returned: **Athanasius of Alexandria** | [view](https://upload.wikimedia.org/wikipedia/commons/thumb/b/b9/Hosios_Loukas_Crypt_%28south_east_groin-vault%29_-_Athanasios.jpg/330px-Hosios_Loukas_Crypt_%28south_east_groin-vault%29_-_Athanasios.jpg) |
 | `phase-4-020-iamblichus-on-the-mysteries` | On the Mysteries | query≈0.43 — returned: **On the Mysteries of the Egyptians, Chaldeans, and Assyrians** | [view](https://upload.wikimedia.org/wikipedia/commons/thumb/a/ad/Plotin.jpg/330px-Plotin.jpg) |
 | `phase-2-040-orphic-gold-tablets` | Orphic Gold Tablets (Lamellae Orphicae) | query≈0.29 — returned: **Totenpass** | [view](https://upload.wikimedia.org/wikipedia/commons/thumb/0/00/Fayum_Portrait_of_a_Boy_%28detail%29.jpg/330px-Fayum_Portrait_of_a_Boy_%28detail%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail) |
-| `phase-4-085-ovid-metamorphoses-book-1` | Ovid, Metamorphoses Book 1 (the Deucalion-Pyrrha flood) | query≈0.27 — returned: **Ovid** | [view](https://upload.wikimedia.org/wikipedia/commons/thumb/c/ca/Ovid_by_an_anonymous_sculptor.jpg/330px-Ovid_by_an_anonymous_sculptor.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail) |
 | `phase-5-008-eriugena-periphyseon` | Periphyseon (On the Division of Nature) | query≈0.32 — returned: **De divisione naturae** | [view](https://upload.wikimedia.org/wikipedia/commons/thumb/c/c9/Eriugena%2C_Periphyseon%2C_Reims%2C_875.jpg/330px-Eriugena%2C_Periphyseon%2C_Reims%2C_875.jpg) |
 | `phase-3-013-philo-of-alexandria` | Philo of Alexandria — On the Creation, Allegorical Interpretation, and the Allegorical Commentary | query≈0.10 — returned: **Philo** | [view](https://upload.wikimedia.org/wikipedia/commons/thumb/6/6c/PhiloThevet.jpg/330px-PhiloThevet.jpg) |
 | `phase-4-009-pistis-sophia` | Pistis Sophia | query≈0.19 — returned: **Nag Hammadi library** | [view](https://upload.wikimedia.org/wikipedia/commons/thumb/4/42/El_Evangelio_de_Tom%C3%A1s-Gospel_of_Thomas-_Codex_II_Manuscritos_de_Nag_Hammadi-The_Nag_Hammadi_manuscripts.png/330px-El_Evangelio_de_Tom%C3%A1s-Gospel_of_Thomas-_Codex_II_Manuscritos_de_Nag_Hammadi-The_Nag_Hammadi_manuscripts.png) |
@@ -589,7 +567,6 @@
 | `phase-3-007-sirach` | Sirach (Ecclesiasticus) | query≈0.57 — returned: **Setha Sirachaya** | [view](https://upload.wikimedia.org/wikipedia/commons/c/ca/Setha_Sirichaya_%E0%B9%80%E0%B8%A8%E0%B8%A3%E0%B8%A9%E0%B8%90%E0%B8%B2_%E0%B8%A8%E0%B8%B4%E0%B8%A3%E0%B8%B0%E0%B8%89%E0%B8%B2%E0%B8%A2%E0%B8%B2_%28cropped%29.jpg) |
 | `phase-5-043-ibn-ishaq-sirat-rasul-allah` | Sirat Rasul Allah (Life of the Messenger of God — Ibn Isḥāq, recension by Ibn Hisham) | query≈0.46 — returned: **Al-Sirah al-Nabawiyyah (Ibn Ishaq)** | [view](https://upload.wikimedia.org/wikipedia/en/c/ca/Cover_of_Al-Sirah_al-Nabawiyyah_%28Ibn_Ishaq%29.jpg) |
 | `phase-4-010-sophia-of-jesus-christ` | Sophia of Jesus Christ | query≈0.20 — returned: **Nag Hammadi library** | [view](https://upload.wikimedia.org/wikipedia/commons/thumb/4/42/El_Evangelio_de_Tom%C3%A1s-Gospel_of_Thomas-_Codex_II_Manuscritos_de_Nag_Hammadi-The_Nag_Hammadi_manuscripts.png/330px-El_Evangelio_de_Tom%C3%A1s-Gospel_of_Thomas-_Codex_II_Manuscritos_de_Nag_Hammadi-The_Nag_Hammadi_manuscripts.png) |
-| `phase-3-005-stoic-foundational-texts` | Stoic Foundational Texts (Chrysippus fragments through Seneca and Epictetus) | query≈0.44 — returned: **Stoicism** | [view](https://upload.wikimedia.org/wikipedia/commons/thumb/b/bc/Paolo_Monti_-_Servizio_fotografico_%28Napoli%2C_1969%29_-_BEIC_6353768.jpg/330px-Paolo_Monti_-_Servizio_fotografico_%28Napoli%2C_1969%29_-_BEIC_6353768.jpg) |
 | `phase-4-073-tabula-smaragdina` | Tabula Smaragdina (Emerald Tablet) | query≈0.26 — returned: **Emerald Tablet** | [view](https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/Leipzig_tablet_text.jpg/330px-Leipzig_tablet_text.jpg) |
 | `phase-5-046-ibn-rushd-tahafut-al-tahafut` | Tahāfut al-Tahāfut (The Incoherence of the Incoherence) | query≈0.23 — returned: **The Incoherence of the Incoherence** | [view](https://upload.wikimedia.org/wikipedia/commons/thumb/a/a2/Statue_of_Averroes_in_C%C3%B3rdoba%2C_Spain.jpg/330px-Statue_of_Averroes_in_C%C3%B3rdoba%2C_Spain.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail) |
 | `phase-7-014-gnostic-gospels` | The Gnostic Gospels | query≈0.38 — returned: **Elaine Pagels** | [view](https://upload.wikimedia.org/wikipedia/commons/thumb/9/95/Elaine_pagels_8315812.jpg/330px-Elaine_pagels_8315812.jpg) |
@@ -607,7 +584,7 @@
 | `phase-1-020-shumma-alu` | Šumma Ālu (If a City is Set on a Height) | query≈0.59 — returned: **Summilux** | [view](https://upload.wikimedia.org/wikipedia/commons/thumb/1/16/Leica_50mm_f-1.4_Summilux-M_II_%281962%29_Chrome.jpg/330px-Leica_50mm_f-1.4_Summilux-M_II_%281962%29_Chrome.jpg) |
 | `phase-4-016-shabuhragan` | Šābuhragān | query≈0.29 — returned: **Mani (prophet)** | [view](https://upload.wikimedia.org/wikipedia/commons/thumb/9/95/Seal_of_Mani_%28cleaned_up%29._Seal_with_figure_of_Mani%2C_possibly_3rd_century_CE%2C_possibly_Irak._Cabinet_des_M%C3%A9dailles%2C_Paris.jpg/330px-Seal_of_Mani_%28cleaned_up%29._Seal_with_figure_of_Mani%2C_possibly_3rd_century_CE%2C_possibly_Irak._Cabinet_des_M%C3%A9dailles%2C_Paris.jpg) |
 
-## TRADITIONS  (45 null · 20 suspect)
+## TRADITIONS  (41 null · 20 suspect)
 
 ### Nulls — need an OVERRIDE or `depictions` YAML entry
 
@@ -616,19 +593,15 @@
 | `tradition-african-traditional` | African Traditional Religions | — | [search →](https://en.wikipedia.org/w/index.php?search=African+Traditional+Religions) |
 | `tradition-akan` | Akan Religion | — | [search →](https://en.wikipedia.org/w/index.php?search=Akan+Religion) |
 | `tradition-alevi-bektashi` | Alevi-Bektashi | — | [search →](https://en.wikipedia.org/w/index.php?search=Alevi-Bektashi) |
-| `tradition-egyptian` | Ancient Egyptian Religion | — | [search →](https://en.wikipedia.org/w/index.php?search=Ancient+Egyptian+Religion) |
 | `tradition-anthroposophy` | Anthroposophy | — | [search →](https://en.wikipedia.org/w/index.php?search=Anthroposophy) |
 | `tradition-megalithic-atlantic` | Atlantic Megalithic Tradition | — | [search →](https://en.wikipedia.org/w/index.php?search=Atlantic+Megalithic+Tradition) |
 | `tradition-australian-aboriginal` | Australian Aboriginal Religious Traditions | — | [search →](https://en.wikipedia.org/w/index.php?search=Australian+Aboriginal+Religious+Traditions) |
 | `tradition-bhakti-vaishnavism` | Bhakti Vaishnavism | — | [search →](https://en.wikipedia.org/w/index.php?search=Bhakti+Vaishnavism) |
-| `tradition-bogomilism` | Bogomilism | — | [search →](https://en.wikipedia.org/w/index.php?search=Bogomilism) |
 | `tradition-christianity-canonical` | Canonical Christianity (Earliest stratum — through ~+150) | — | [search →](https://en.wikipedia.org/w/index.php?search=Canonical+Christianity+%28Earliest+stratum+%E2%80%94+through+~%2B150%29) |
 | `tradition-celtic` | Celtic Religion (pre-Christian) | — | [search →](https://en.wikipedia.org/w/index.php?search=Celtic+Religion+%28pre-Christian%29) |
-| `tradition-christian-kabbalah` | Christian Kabbalah | — | [search →](https://en.wikipedia.org/w/index.php?search=Christian+Kabbalah) |
 | `tradition-cybele-attis-mysteries` | Cybele-Attis Mysteries (Magna Mater / Metroac Mysteries) | — | [search →](https://en.wikipedia.org/w/index.php?search=Cybele-Attis+Mysteries+%28Magna+Mater+%2F+Metroac+Mysteries%29) |
 | `tradition-navajo` | Diné/Navajo Religion | — | [search →](https://en.wikipedia.org/w/index.php?search=Din%C3%A9%2FNavajo+Religion) |
 | `tradition-early-christianity` | Early Christianity | — | [search →](https://en.wikipedia.org/w/index.php?search=Early+Christianity) |
-| `tradition-egyptian-religion` | Egyptian Religion | — | [search →](https://en.wikipedia.org/w/index.php?search=Egyptian+Religion) |
 | `tradition-essenes` | Essenes | — | [search →](https://en.wikipedia.org/w/index.php?search=Essenes) |
 | `tradition-ethiopian-orthodox-tewahedo` | Ethiopian Orthodox Tewahedo Christianity | — | [search →](https://en.wikipedia.org/w/index.php?search=Ethiopian+Orthodox+Tewahedo+Christianity) |
 | `tradition-etruscan-religion` | Etruscan Religion | — | [search →](https://en.wikipedia.org/w/index.php?search=Etruscan+Religion) |
@@ -642,9 +615,9 @@
 | `tradition-jyotisha-indian-astrology` | Jyotisha (Vedic / Indian Astrology) | — | [search →](https://en.wikipedia.org/w/index.php?search=Jyotisha+%28Vedic+%2F+Indian+Astrology%29) |
 | `tradition-bantu-kongo` | Kongo/Bantu Cosmology | — | [search →](https://en.wikipedia.org/w/index.php?search=Kongo%2FBantu+Cosmology) |
 | `tradition-lakota` | Lakota Religion | — | [search →](https://en.wikipedia.org/w/index.php?search=Lakota+Religion) |
+| `tradition-latin-christianity` | Latin Christianity (Western Church) | — | [search →](https://en.wikipedia.org/w/index.php?search=Latin+Christianity+%28Western+Church%29) |
 | `tradition-lusitanian-religion` | Lusitanian Religion (Pre-Roman Iberian) | — | [search →](https://en.wikipedia.org/w/index.php?search=Lusitanian+Religion+%28Pre-Roman+Iberian%29) |
 | `tradition-medieval-christianity` | Medieval Christianity (Western, 500–1500 CE) | — | [search →](https://en.wikipedia.org/w/index.php?search=Medieval+Christianity+%28Western%2C+500%E2%80%931500+CE%29) |
-| `tradition-minoan-religion` | Minoan Religion | — | [search →](https://en.wikipedia.org/w/index.php?search=Minoan+Religion) |
 | `tradition-pentecostalism` | Pentecostalism | — | [search →](https://en.wikipedia.org/w/index.php?search=Pentecostalism) |
 | `tradition-polynesian` | Polynesian Religious Traditions | — | [search →](https://en.wikipedia.org/w/index.php?search=Polynesian+Religious+Traditions) |
 | `tradition-portuguese-hermeticism` | Portuguese Hermeticism (Hermetismo Português) | — | [search →](https://en.wikipedia.org/w/index.php?search=Portuguese+Hermeticism+%28Hermetismo+Portugu%C3%AAs%29) |
@@ -684,7 +657,7 @@
 | `tradition-theravada-buddhism` | Theravāda Buddhism | query≈0.42 — returned: **Buddhism in Malaysia** | [view](https://upload.wikimedia.org/wikipedia/commons/thumb/c/c1/Percentage_population_of_Buddhist_in_Malaysia_by_district%2C_2020.svg/330px-Percentage_population_of_Buddhist_in_Malaysia_by_district%2C_2020.svg.png) |
 | `tradition-wicca-modern-pagan` | Wicca / Modern Pagan witchcraft | query≈0.28 — returned: **Wicca** | [view](https://upload.wikimedia.org/wikipedia/commons/thumb/8/82/Wiccan_Jewellery.JPG/330px-Wiccan_Jewellery.JPG) |
 
-## EVENTS  (101 null · 32 suspect)
+## EVENTS  (96 null · 31 suspect)
 
 ### Nulls — need an OVERRIDE or `depictions` YAML entry
 
@@ -700,7 +673,6 @@
 | `event-bacchanalia-suppression-186-bce` | Bacchanalia Suppression (Senatusconsultum de Bacchanalibus) | — | [search →](https://en.wikipedia.org/w/index.php?search=Bacchanalia+Suppression+%28Senatusconsultum+de+Bacchanalibus%29) |
 | `event-clovis-baptism-c-496` | Baptism of Clovis | — | [search →](https://en.wikipedia.org/w/index.php?search=Baptism+of+Clovis) |
 | `event-death-of-guru-tegh-bahadur-1675` | Beheading of Guru Tegh Bahadur — The Interfaith Martyrdom | — | [search →](https://en.wikipedia.org/w/index.php?search=Beheading+of+Guru+Tegh+Bahadur+%E2%80%94+The+Interfaith+Martyrdom) |
-| `bent-pyramid-sneferu-dahshur` | Bent Pyramid of Sneferu (Dahshur) | — | [search →](https://en.wikipedia.org/w/index.php?search=Bent+Pyramid+of+Sneferu+%28Dahshur%29) |
 | `event-magdala-expedition-1868` | British Magdala Expedition (1868) and Ethiopian Manuscript Removal | — | [search →](https://en.wikipedia.org/w/index.php?search=British+Magdala+Expedition+%281868%29+and+Ethiopian+Manuscript+Removal) |
 | `event-death-of-jan-hus-1415` | Burning of Jan Hus at the Council of Constance | — | [search →](https://en.wikipedia.org/w/index.php?search=Burning+of+Jan+Hus+at+the+Council+of+Constance) |
 | `event-iconoclast-controversy-726-843` | Byzantine Iconoclast Controversy | — | [search →](https://en.wikipedia.org/w/index.php?search=Byzantine+Iconoclast+Controversy) |
@@ -738,7 +710,6 @@
 | `event-bruce-recovers-enoch-1773` | James Bruce recovers Ge'ez 1 Enoch manuscripts from Gondar (1773) | — | [search →](https://en.wikipedia.org/w/index.php?search=James+Bruce+recovers+Ge%27ez+1+Enoch+manuscripts+from+Gondar+%281773%29) |
 | `event-jesuit-mission-ethiopia-1557-1632` | Jesuit Mission to Ethiopia and its Expulsion (1557–1632) | — | [search →](https://en.wikipedia.org/w/index.php?search=Jesuit+Mission+to+Ethiopia+and+its+Expulsion+%281557%E2%80%931632%29) |
 | `event-jewish-expulsion-spain-1492` | Jewish Expulsion from Spain (Alhambra Decree) | — | [search →](https://en.wikipedia.org/w/index.php?search=Jewish+Expulsion+from+Spain+%28Alhambra+Decree%29) |
-| `event-closure-platonic-academy-529` | Justinian's Closure of the Athenian Schools (Platonic Academy) | — | [search →](https://en.wikipedia.org/w/index.php?search=Justinian%27s+Closure+of+the+Athenian+Schools+%28Platonic+Academy%29) |
 | `event-kaleb-aksum-himyar-invasion-525` | Kaleb's invasion of Himyar (Yemen) — 525 CE | — | [search →](https://en.wikipedia.org/w/index.php?search=Kaleb%27s+invasion+of+Himyar+%28Yemen%29+%E2%80%94+525+CE) |
 | `event-lyon-martyrs-177` | Lyon and Vienne Martyrdoms (177 CE) | — | [search →](https://en.wikipedia.org/w/index.php?search=Lyon+and+Vienne+Martyrdoms+%28177+CE%29) |
 | `event-leo-taxil-hoax-1885-1897` | Léo Taxil Anti-Masonic Hoax (1885–1897) | — | [search →](https://en.wikipedia.org/w/index.php?search=L%C3%A9o+Taxil+Anti-Masonic+Hoax+%281885%E2%80%931897%29) |
@@ -761,15 +732,12 @@
 | `event-pittsburgh-platform-1885` | Pittsburgh Platform (American Reform Judaism) | — | [search →](https://en.wikipedia.org/w/index.php?search=Pittsburgh+Platform+%28American+Reform+Judaism%29) |
 | `event-pizarro-conquest-of-inca-1533` | Pizarro's Conquest of the Inca Empire | — | [search →](https://en.wikipedia.org/w/index.php?search=Pizarro%27s+Conquest+of+the+Inca+Empire) |
 | `event-priory-of-sion-fabrication` | Priory of Sion fabrication (1956–1993) | — | [search →](https://en.wikipedia.org/w/index.php?search=Priory+of+Sion+fabrication+%281956%E2%80%931993%29) |
-| `queens-chamber-great-pyramid` | Queen's Chamber & Shaft Doors (Great Pyramid of Khufu) | — | [search →](https://en.wikipedia.org/w/index.php?search=Queen%27s+Chamber+%26+Shaft+Doors+%28Great+Pyramid+of+Khufu%29) |
 | `event-quranic-manuscript-finds-2015-onward` | Qur'anic Manuscript Finds and Studies (2015 onward) | — | [search →](https://en.wikipedia.org/w/index.php?search=Qur%27anic+Manuscript+Finds+and+Studies+%282015+onward%29) |
 | `event-ramakrishna-mission-founded-1897` | Ramakrishna Mission founded (Baranagar Math → Belur Math, 1 May 1897) | — | [search →](https://en.wikipedia.org/w/index.php?search=Ramakrishna+Mission+founded+%28Baranagar+Math+%E2%86%92+Belur+Math%2C+1+May+1897%29) |
 | `event-ramsay-oration-1737` | Ramsay's Oration — the founding myth of the Scottish Rite | — | [search →](https://en.wikipedia.org/w/index.php?search=Ramsay%27s+Oration+%E2%80%94+the+founding+myth+of+the+Scottish+Rite) |
 | `event-ras-shamra-excavation-1928` | Ras Shamra (Ugarit) Excavation | — | [search →](https://en.wikipedia.org/w/index.php?search=Ras+Shamra+%28Ugarit%29+Excavation) |
-| `relieving-chambers-great-pyramid` | Relieving Chambers (Great Pyramid of Khufu) | — | [search →](https://en.wikipedia.org/w/index.php?search=Relieving+Chambers+%28Great+Pyramid+of+Khufu%29) |
 | `event-rise-of-political-islamism-1928-present` | Rise of Political Islamism (1928–present) | — | [search →](https://en.wikipedia.org/w/index.php?search=Rise+of+Political+Islamism+%281928%E2%80%93present%29) |
 | `event-rise-of-nones-2007-present` | Rise of the 'Nones' (2007–present) | — | [search →](https://en.wikipedia.org/w/index.php?search=Rise+of+the+%27Nones%27+%282007%E2%80%93present%29) |
-| `event-rosetta-stone-decipherment-1822` | Rosetta Stone Decipherment | — | [search →](https://en.wikipedia.org/w/index.php?search=Rosetta+Stone+Decipherment) |
 | `event-prague-occult-court-1576-1612` | Rudolf II's Prague Court — the densest occult-scientific nexus in European history | — | [search →](https://en.wikipedia.org/w/index.php?search=Rudolf+II%27s+Prague+Court+%E2%80%94+the+densest+occult-scientific+nexus+in+European+history) |
 | `event-sabbatean-apostasy-1666` | Sabbatean Apostasy (Shabbatai Tzvi's conversion to Islam) | — | [search →](https://en.wikipedia.org/w/index.php?search=Sabbatean+Apostasy+%28Shabbatai+Tzvi%27s+conversion+to+Islam%29) |
 | `event-arabic-harranian-hermetica-c800-1000` | Sabian-Harranian transmission of the Hermetica into Arabic (c. 800–1000 CE) | — | [search →](https://en.wikipedia.org/w/index.php?search=Sabian-Harranian+transmission+of+the+Hermetica+into+Arabic+%28c.+800%E2%80%931000+CE%29) |
@@ -780,13 +748,13 @@
 | `event-spanish-conquest-of-tenochtitlan-1521` | Spanish Conquest of Tenochtitlan | — | [search →](https://en.wikipedia.org/w/index.php?search=Spanish+Conquest+of+Tenochtitlan) |
 | `event-stobaeus-anthology-c500` | Stobaeus compiles his Anthologion (c. 500 CE) | — | [search →](https://en.wikipedia.org/w/index.php?search=Stobaeus+compiles+his+Anthologion+%28c.+500+CE%29) |
 | `event-stoning-of-stephen-c35ce` | Stoning of Stephen — First Christian Martyr | — | [search →](https://en.wikipedia.org/w/index.php?search=Stoning+of+Stephen+%E2%80%94+First+Christian+Martyr) |
-| `subterranean-chamber-great-pyramid` | Subterranean Chamber (Great Pyramid of Khufu) | — | [search →](https://en.wikipedia.org/w/index.php?search=Subterranean+Chamber+%28Great+Pyramid+of+Khufu%29) |
 | `event-sulawesi-cave-art-c-45500-bce` | Sulawesi Cave Art — Earliest Dated Figurative and Narrative Painting | — | [search →](https://en.wikipedia.org/w/index.php?search=Sulawesi+Cave+Art+%E2%80%94+Earliest+Dated+Figurative+and+Narrative+Painting) |
 | `event-hohle-fels-figurines-c-35000-bce` | Swabian Jura Aurignacian Figurines and Flutes (Hohle Fels, Hohlenstein-Stadel, Vogelherd, Geißenklösterle) | — | [search →](https://en.wikipedia.org/w/index.php?search=Swabian+Jura+Aurignacian+Figurines+and+Flutes+%28Hohle+Fels%2C+Hohlenstein-Stadel%2C+Vogelherd%2C+Gei%C3%9Fenkl%C3%B6sterle%29) |
 | `event-council-of-florence-1439` | The Council of Florence and the Platonic Renaissance (1439) | — | [search →](https://en.wikipedia.org/w/index.php?search=The+Council+of+Florence+and+the+Platonic+Renaissance+%281439%29) |
 | `event-great-law-of-peace-haudenosaunee-c1450` | The Great Law of Peace (Gayanashagowa) — Haudenosaunee Confederacy | haudenosaunee | [search →](https://en.wikipedia.org/w/index.php?search=The+Great+Law+of+Peace+%28Gayanashagowa%29+%E2%80%94+Haudenosaunee+Confederacy) |
 | `event-magi-visit-matthew2` | The Visit of the Magi (Matthew 2) | — | [search →](https://en.wikipedia.org/w/index.php?search=The+Visit+of+the+Magi+%28Matthew+2%29) |
 | `event-third-buddhist-council-c-250-bce` | Third Buddhist Council at Pāṭaliputra (~-250 BCE) | — | [search →](https://en.wikipedia.org/w/index.php?search=Third+Buddhist+Council+at+P%C4%81%E1%B9%ADaliputra+%28~-250+BCE%29) |
+| `event-timur-destruction-church-of-east-1380-1405` | Timur's Destruction of the Church of the East (1380–1405) | — | [search →](https://en.wikipedia.org/w/index.php?search=Timur%27s+Destruction+of+the+Church+of+the+East+%281380%E2%80%931405%29) |
 | `event-vasco-da-gama-india-voyage-1497` | Vasco da Gama's First India Voyage — Opening of the Sea Route | — | [search →](https://en.wikipedia.org/w/index.php?search=Vasco+da+Gama%27s+First+India+Voyage+%E2%80%94+Opening+of+the+Sea+Route) |
 | `event-vatican-ii-aftermath-1965-present` | Vatican II Aftermath (1965–present) | — | [search →](https://en.wikipedia.org/w/index.php?search=Vatican+II+Aftermath+%281965%E2%80%93present%29) |
 | `event-visigothic-kingdom-hispania-418-711` | Visigothic Kingdom of Hispania (418–711 CE) | — | [search →](https://en.wikipedia.org/w/index.php?search=Visigothic+Kingdom+of+Hispania+%28418%E2%80%93711+CE%29) |
@@ -825,11 +793,10 @@
 | `event-parthenon-construction-447-432-bce` | The Parthenon: Periclean Temple of Athena Parthenos, Athenian Acropolis | query≈0.23 — returned: **Parthenon** | [view](https://upload.wikimedia.org/wikipedia/commons/thumb/d/da/The_Parthenon_in_Athens.jpg/330px-The_Parthenon_in_Athens.jpg) |
 | `event-school-of-alexandria-300bce-415ce` | The School of Alexandria (300 BCE – 415 CE) | query≈0.19 — returned: **Mouseion** | [view](https://upload.wikimedia.org/wikipedia/commons/thumb/5/5e/Greek_-_Leaning_Muse%2C_Probably_Polyhymnia_-_Walters_2390.jpg/330px-Greek_-_Leaning_Muse%2C_Probably_Polyhymnia_-_Walters_2390.jpg) |
 | `event-spanish-inquisition-1478` | The Spanish Inquisition — Persecution, Conversion, and the Birth of Iberian Judaism's Diaspora | query≈0.34 — returned: **Spanish Inquisition** | [view](https://upload.wikimedia.org/wikipedia/commons/thumb/9/90/Inquisici%C3%B3n_espa%C3%B1ola.svg/330px-Inquisici%C3%B3n_espa%C3%B1ola.svg.png) |
-| `event-thera-eruption-c-1600-bce` | Thera (Santorini) Eruption, Late Bronze Age | query≈0.43 — returned: **Minoan eruption** | [view](https://upload.wikimedia.org/wikipedia/commons/thumb/0/06/Santorini_ASTER.jpg/330px-Santorini_ASTER.jpg) |
 | `event-jamnia-yavneh-90` | Yavneh / Jamnia Rabbinic Consolidation (c. 70-100 CE) | query≈0.23 — returned: **Yavne** | [view](https://upload.wikimedia.org/wikipedia/commons/thumb/9/9d/Yavne_panoramic_view2.JPG/330px-Yavne_panoramic_view2.JPG) |
 | `event-catalhoyuk-c-7400-6200-bce` | Çatalhöyük: Proto-Urban Neolithic Settlement | query≈0.37 — returned: **Çatalhöyük** | [view](https://upload.wikimedia.org/wikipedia/commons/thumb/8/87/%C3%87atalh%C3%B6y%C3%BCk%2C_7400_BC%2C_Konya%2C_Turkey_-_UNESCO_World_Heritage_Site%2C_08.jpg/330px-%C3%87atalh%C3%B6y%C3%BCk%2C_7400_BC%2C_Konya%2C_Turkey_-_UNESCO_World_Heritage_Site%2C_08.jpg) |
 
-## THEMES  (198 null · 50 suspect)
+## THEMES  (187 null · 47 suspect)
 
 ### Nulls — need an OVERRIDE or `depictions` YAML entry
 
@@ -839,8 +806,6 @@
 | `theme-aaronide-priestly-continuity` | Aaronide-Zadokite Priestly Continuity — the longest institutional family chain in Western religion | — | [search →](https://en.wikipedia.org/w/index.php?search=Aaronide-Zadokite+Priestly+Continuity+%E2%80%94+the+longest+institutional+family+chain+in+Western+religion) |
 | `aeon-as-emanation` | Aeon as Emanation | — | [search →](https://en.wikipedia.org/w/index.php?search=Aeon+as+Emanation) |
 | `afro-diasporic-syncretism` | Afro-Diasporic Syncretism | — | [search →](https://en.wikipedia.org/w/index.php?search=Afro-Diasporic+Syncretism) |
-| `afterlife-judgment` | Afterlife and post-mortem judgment | — | [search →](https://en.wikipedia.org/w/index.php?search=Afterlife+and+post-mortem+judgment) |
-| `theme-akhenaten-moses-monotheism-thesis` | Akhenaten–Moses Monotheism Thesis | — | [search →](https://en.wikipedia.org/w/index.php?search=Akhenaten%E2%80%93Moses+Monotheism+Thesis) |
 | `alchemy-as-spiritual-discipline` | Alchemy as spiritual discipline | — | [search →](https://en.wikipedia.org/w/index.php?search=Alchemy+as+spiritual+discipline) |
 | `allegorical-exegesis` | Allegorical Exegesis | — | [search →](https://en.wikipedia.org/w/index.php?search=Allegorical+Exegesis) |
 | `analogia-entis` | Analogia entis (analogy of being) | — | [search →](https://en.wikipedia.org/w/index.php?search=Analogia+entis+%28analogy+of+being%29) |
@@ -875,7 +840,6 @@
 | `critique-of-idolatry` | Critique of Idolatry | — | [search →](https://en.wikipedia.org/w/index.php?search=Critique+of+Idolatry) |
 | `crucifixion-theology` | Crucifixion Theology | — | [search →](https://en.wikipedia.org/w/index.php?search=Crucifixion+Theology) |
 | `crusade-theology-of-malecide` | Crusade theology of malecide | — | [search →](https://en.wikipedia.org/w/index.php?search=Crusade+theology+of+malecide) |
-| `demiurge` | Demiurge | — | [search →](https://en.wikipedia.org/w/index.php?search=Demiurge) |
 | `diaspora-judaism` | Diaspora Judaism | — | [search →](https://en.wikipedia.org/w/index.php?search=Diaspora+Judaism) |
 | `discipleship-failure` | Discipleship Failure (Markan) | — | [search →](https://en.wikipedia.org/w/index.php?search=Discipleship+Failure+%28Markan%29) |
 | `divinatory-calendar` | Divinatory Calendar | — | [search →](https://en.wikipedia.org/w/index.php?search=Divinatory+Calendar) |
@@ -913,7 +877,6 @@
 | `gentile-inclusion` | Gentile Inclusion | — | [search →](https://en.wikipedia.org/w/index.php?search=Gentile+Inclusion) |
 | `gnosis-as-salvation` | Gnosis as salvation | — | [search →](https://en.wikipedia.org/w/index.php?search=Gnosis+as+salvation) |
 | `theme-graduated-afterlife` | Graduated Afterlife (Sin-Matched Judgment) | — | [search →](https://en.wikipedia.org/w/index.php?search=Graduated+Afterlife+%28Sin-Matched+Judgment%29) |
-| `theme-hall-of-records-hypothesis` | Hall of Records Hypothesis | — | [search →](https://en.wikipedia.org/w/index.php?search=Hall+of+Records+Hypothesis) |
 | `heavenly-tablets` | Heavenly Tablets | — | [search →](https://en.wikipedia.org/w/index.php?search=Heavenly+Tablets) |
 | `heliopolis-ennead` | Heliopolitan Ennead | egyptian-religion | [search →](https://en.wikipedia.org/w/index.php?search=Heliopolitan+Ennead) |
 | `hermetic-correspondences` | Hermetic Correspondences | — | [search →](https://en.wikipedia.org/w/index.php?search=Hermetic+Correspondences) |
@@ -933,7 +896,6 @@
 | `light-and-darkness-dualism` | Light-and-Darkness Dualism | — | [search →](https://en.wikipedia.org/w/index.php?search=Light-and-Darkness+Dualism) |
 | `liturgical-calendar` | Liturgical Calendar — Sacred Time | — | [search →](https://en.wikipedia.org/w/index.php?search=Liturgical+Calendar+%E2%80%94+Sacred+Time) |
 | `logos-cosmic-reason` | Logos as cosmic reason | — | [search →](https://en.wikipedia.org/w/index.php?search=Logos+as+cosmic+reason) |
-| `ma-at-logos-sophia` | Ma'at → Logos → Sophia: The Cosmic Order Principle | — | [search →](https://en.wikipedia.org/w/index.php?search=Ma%27at+%E2%86%92+Logos+%E2%86%92+Sophia%3A+The+Cosmic+Order+Principle) |
 | `marcionite-canon` | Marcionite canon (first New-Testament-style canon) | — | [search →](https://en.wikipedia.org/w/index.php?search=Marcionite+canon+%28first+New-Testament-style+canon%29) |
 | `martyrdom-theology` | Martyrdom Theology | — | [search →](https://en.wikipedia.org/w/index.php?search=Martyrdom+Theology) |
 | `mesoamerican-cosmogony` | Mesoamerican Cosmogony | — | [search →](https://en.wikipedia.org/w/index.php?search=Mesoamerican+Cosmogony) |
@@ -945,7 +907,6 @@
 | `miaphysite-christology` | Miaphysite Christology (Tewahedo, one united nature) | — | [search →](https://en.wikipedia.org/w/index.php?search=Miaphysite+Christology+%28Tewahedo%2C+one+united+nature%29) |
 | `mixture-cosmology` | Mixture cosmology (Manichaean) | — | [search →](https://en.wikipedia.org/w/index.php?search=Mixture+cosmology+%28Manichaean%29) |
 | `monastic-asceticism` | Monastic Asceticism | — | [search →](https://en.wikipedia.org/w/index.php?search=Monastic+Asceticism) |
-| `mother-and-child-iconography` | Mother and Child Iconography | — | [search →](https://en.wikipedia.org/w/index.php?search=Mother+and+Child+Iconography) |
 | `new-moses-typology` | New-Moses Typology | — | [search →](https://en.wikipedia.org/w/index.php?search=New-Moses+Typology) |
 | `non-duality` | Non-duality | — | [search →](https://en.wikipedia.org/w/index.php?search=Non-duality) |
 | `norse-cosmogony` | Norse Cosmogony | — | [search →](https://en.wikipedia.org/w/index.php?search=Norse+Cosmogony) |
@@ -962,14 +923,11 @@
 | `possession-ritual` | Possession Ritual | — | [search →](https://en.wikipedia.org/w/index.php?search=Possession+Ritual) |
 | `pratyabhijna` | Pratyabhijñā (Recognition-Liberation) | — | [search →](https://en.wikipedia.org/w/index.php?search=Pratyabhij%C3%B1%C4%81+%28Recognition-Liberation%29) |
 | `priestly-purity` | Priestly Purity | — | [search →](https://en.wikipedia.org/w/index.php?search=Priestly+Purity) |
-| `primordial-darkness` | Primordial Darkness | — | [search →](https://en.wikipedia.org/w/index.php?search=Primordial+Darkness) |
 | `prisca-theologia` | Prisca Theologia (Ancient Theology) | — | [search →](https://en.wikipedia.org/w/index.php?search=Prisca+Theologia+%28Ancient+Theology%29) |
 | `progressive-revelation` | Progressive Revelation | — | [search →](https://en.wikipedia.org/w/index.php?search=Progressive+Revelation) |
 | `prophet-and-king` | Prophet and King | — | [search →](https://en.wikipedia.org/w/index.php?search=Prophet+and+King) |
 | `theme-proto-indo-iranian-religion` | Proto-Indo-Iranian Religion (Reconstructed) | — | [search →](https://en.wikipedia.org/w/index.php?search=Proto-Indo-Iranian+Religion+%28Reconstructed%29) |
 | `pseudonymity-as-strategy` | Pseudonymity as Strategy | — | [search →](https://en.wikipedia.org/w/index.php?search=Pseudonymity+as+Strategy) |
-| `psychostasia-soul-weighing` | Psychostasia — Weighing of the Soul | — | [search →](https://en.wikipedia.org/w/index.php?search=Psychostasia+%E2%80%94+Weighing+of+the+Soul) |
-| `theme-pyramid-as-resurrection-machine` | Pyramid as Resurrection Machine | — | [search →](https://en.wikipedia.org/w/index.php?search=Pyramid+as+Resurrection+Machine) |
 | `realized-eschatology` | Realized Eschatology | — | [search →](https://en.wikipedia.org/w/index.php?search=Realized+Eschatology) |
 | `reason-over-passion` | Reason over Passion | — | [search →](https://en.wikipedia.org/w/index.php?search=Reason+over+Passion) |
 | `theme-rebel-against-the-divine` | Rebel Against the Divine | — | [search →](https://en.wikipedia.org/w/index.php?search=Rebel+Against+the+Divine) |
@@ -977,7 +935,6 @@
 | `resurrection-of-the-dead` | Resurrection of the Dead | — | [search →](https://en.wikipedia.org/w/index.php?search=Resurrection+of+the+Dead) |
 | `theme-sacred-bloodline-claim` | Sacred Bloodline Claim — dynastic genealogy as theological legitimacy | — | [search →](https://en.wikipedia.org/w/index.php?search=Sacred+Bloodline+Claim+%E2%80%94+dynastic+genealogy+as+theological+legitimacy) |
 | `sacred-geometry-cosmic-proportion` | Sacred Geometry & Cosmic Proportion | — | [search →](https://en.wikipedia.org/w/index.php?search=Sacred+Geometry+%26+Cosmic+Proportion) |
-| `theme-sacred-geometry-giza` | Sacred Geometry of Giza | — | [search →](https://en.wikipedia.org/w/index.php?search=Sacred+Geometry+of+Giza) |
 | `sacrifice-as-cosmic-renewal` | Sacrifice as Cosmic Renewal | — | [search →](https://en.wikipedia.org/w/index.php?search=Sacrifice+as+Cosmic+Renewal) |
 | `satisfaction-atonement` | Satisfaction Atonement (Anselm) | — | [search →](https://en.wikipedia.org/w/index.php?search=Satisfaction+Atonement+%28Anselm%29) |
 | `scapegoat-mechanism` | Scapegoat Mechanism | — | [search →](https://en.wikipedia.org/w/index.php?search=Scapegoat+Mechanism) |
@@ -1014,7 +971,6 @@
 | `messianic-secret` | The Messianic Secret | — | [search →](https://en.wikipedia.org/w/index.php?search=The+Messianic+Secret) |
 | `occultation-hidden-imam` | The Occultation — Shi'a Doctrine of the Hidden Imam | — | [search →](https://en.wikipedia.org/w/index.php?search=The+Occultation+%E2%80%94+Shi%27a+Doctrine+of+the+Hidden+Imam) |
 | `sacred-defeat` | The Sacred Defeat — Founding Trauma as National Identity | — | [search →](https://en.wikipedia.org/w/index.php?search=The+Sacred+Defeat+%E2%80%94+Founding+Trauma+as+National+Identity) |
-| `tahafut-controversy` | The Tahafut Controversy (kalām vs. falsafa on the compatibility of revealed religion and Greek philosophy) | — | [search →](https://en.wikipedia.org/w/index.php?search=The+Tahafut+Controversy+%28kal%C4%81m+vs.+falsafa+on+the+compatibility+of+revealed+religion+and+Greek+philosophy%29) |
 | `trickster-archetype` | The Trickster Archetype | — | [search →](https://en.wikipedia.org/w/index.php?search=The+Trickster+Archetype) |
 | `torah-and-wisdom-identified` | Torah and Wisdom Identified | — | [search →](https://en.wikipedia.org/w/index.php?search=Torah+and+Wisdom+Identified) |
 | `torah-as-pre-existent` | Torah as Pre-Existent | — | [search →](https://en.wikipedia.org/w/index.php?search=Torah+as+Pre-Existent) |
@@ -1058,7 +1014,6 @@
 | `theme-habiru-hebrew-origins` | Habiru / Apiru and the Social-Model of Israelite Origins | query≈0.16 — returned: **ʿApiru** | [view](https://upload.wikimedia.org/wikipedia/commons/thumb/8/8d/SA.GAZ.png/330px-SA.GAZ.png) |
 | `neoplatonic-henosis` | Henosis: The Mystical Union Across Traditions | query≈0.27 — returned: **Henosis** | [view](https://upload.wikimedia.org/wikipedia/commons/thumb/a/ad/Plotin.jpg/330px-Plotin.jpg) |
 | `henotheism-monolatry` | Henotheism / monolatry / monotheism transitions | query≈0.16 — returned: **God in Hinduism** | [view](https://upload.wikimedia.org/wikipedia/commons/thumb/1/1e/Hindu_deity_posters_shop_at_Idar%2C_Gujarat%2C_India_%28cropped%29.jpg/330px-Hindu_deity_posters_shop_at_Idar%2C_Gujarat%2C_India_%28cropped%29.jpg) |
-| `theme-heroes-paradise-island` | Heroes' Paradise Island (Divine Reward as Sacred Realm) | query≈0.20 — returned: **Elysium** | [view](https://upload.wikimedia.org/wikipedia/commons/thumb/0/06/Henryk_Siemiradzki_-_Orfeusz_w_podziemnym_kr%C3%B3lestwie.jpg/330px-Henryk_Siemiradzki_-_Orfeusz_w_podziemnym_kr%C3%B3lestwie.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail) |
 | `hidden-god` | Hidden god (deus absconditus) | query≈0.31 — returned: **Deus absconditus** | [view](https://upload.wikimedia.org/wikipedia/commons/thumb/5/5c/De_Servo_Arbitrio.jpg/330px-De_Servo_Arbitrio.jpg) |
 | `i-am-sayings` | I-Am Sayings (egō eimi) | query≈0.38 — returned: **I am (biblical term)** | [view](https://upload.wikimedia.org/wikipedia/commons/thumb/1/17/Saint-Pie_X_%28Vernier%29-18b.jpg/330px-Saint-Pie_X_%28Vernier%29-18b.jpg) |
 | `individuation` | Individuation (Jungian) | query≈0.39 — returned: **Individual involvement in the Chernobyl disaster** | [view](https://upload.wikimedia.org/wikipedia/commons/thumb/d/d6/Chernobyl_-_power_plant_-_reactor_4_02.jpg/330px-Chernobyl_-_power_plant_-_reactor_4_02.jpg) |
@@ -1079,9 +1034,7 @@
 | `dying-rising-god` | The Dying and Rising God: Osiris to Christ | query≈0.58 — returned: **Dying-and-rising god** | [view](https://upload.wikimedia.org/wikipedia/commons/thumb/e/e2/Frederic_Leighton_-_The_Return_of_Persephone_%281891%29.jpg/330px-Frederic_Leighton_-_The_Return_of_Persephone_%281891%29.jpg) |
 | `five-ways` | The Five Ways (Aquinas) | query≈0.50 — returned: **The Five Dysfunctions of a Team** | [view](https://upload.wikimedia.org/wikipedia/en/b/b6/The5dysfunctionsofateam.png) |
 | `the-godhead-eckhart` | The Godhead (Eckhart's Gottheit) | query≈0.29 — returned: **Pygmalion and the Image series** | [view](https://upload.wikimedia.org/wikipedia/commons/thumb/1/1c/The_Heart_Desires%2C_2nd_series%2C_Pygmalion_%28Burne-Jones%29.jpg/330px-The_Heart_Desires%2C_2nd_series%2C_Pygmalion_%28Burne-Jones%29.jpg) |
-| `zeus-pantokrator-transmission` | The Phidian Zeus → Christ Pantokrator — Iconographic Transmission Hypothesis | query≈0.10 — returned: **Zeus** | [view](https://upload.wikimedia.org/wikipedia/commons/thumb/2/20/Zeus_Otricoli_Pio-Clementino_Inv257.jpg/330px-Zeus_Otricoli_Pio-Clementino_Inv257.jpg) |
 | `theurgy` | Theurgy | query≈0.30 — returned: **The Royal Tenenbaums** | [view](https://upload.wikimedia.org/wikipedia/en/3/3b/The_Tenenbaums.jpg) |
-| `apocalyptic-thunderer-vs-serpent` | Thunderer vs. Serpent (Storm-God Combat) | query≈0.19 — returned: **Chaoskampf** | [view](https://upload.wikimedia.org/wikipedia/commons/thumb/9/9d/Destruction_of_Leviathan.png/330px-Destruction_of_Leviathan.png?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail) |
 | `two-principles` | Two Principles (Manichaean Light/Darkness) | query≈0.32 — returned: **Manichaeism** | [view](https://upload.wikimedia.org/wikipedia/commons/thumb/9/95/Seal_of_Mani_%28cleaned_up%29._Seal_with_figure_of_Mani%2C_possibly_3rd_century_CE%2C_possibly_Irak._Cabinet_des_M%C3%A9dailles%2C_Paris.jpg/330px-Seal_of_Mani_%28cleaned_up%29._Seal_with_figure_of_Mani%2C_possibly_3rd_century_CE%2C_possibly_Irak._Cabinet_des_M%C3%A9dailles%2C_Paris.jpg) |
 | `ungrund` | Ungrund (Boehme's Groundless) | query≈0.53 — returned: **The Unguided** | [view](https://upload.wikimedia.org/wikipedia/commons/thumb/7/71/The_Unguided_Metal_Frenzy_2017_62.jpg/330px-The_Unguided_Metal_Frenzy_2017_62.jpg) |
 | `via-negativa` | Via Negativa (Apophatic Theology) | query≈0.27 — returned: **Apophatic theology** | [view](https://upload.wikimedia.org/wikipedia/commons/thumb/d/d2/%D0%93%D1%80%D0%B8%D0%B3%D0%BE%D1%80%D0%B8%D0%B9_%D0%9F%D0%B0%D0%BB%D0%B0%D0%BC%D0%B0_14%D0%B2.jpg/330px-%D0%93%D1%80%D0%B8%D0%B3%D0%BE%D1%80%D0%B8%D0%B9_%D0%9F%D0%B0%D0%BB%D0%B0%D0%BC%D0%B0_14%D0%B2.jpg) |
@@ -1089,41 +1042,43 @@
 | `wisdom-personified` | Wisdom personified (Sophia / Hokmah) | query≈0.47 — returned: **Personification of wisdom** | [view](https://upload.wikimedia.org/wikipedia/commons/thumb/f/f1/Schnorr_von_Carolsfeld_Bibel_in_Bildern_1860_138.png/330px-Schnorr_von_Carolsfeld_Bibel_in_Bildern_1860_138.png) |
 | `world-axis` | World Axis (Axis Mundi) | query≈0.40 — returned: **Axis mundi** | [view](https://upload.wikimedia.org/wikipedia/commons/thumb/5/56/Hindukailash.JPG/330px-Hindukailash.JPG) |
 
-## SYMBOLS  (30 null · 24 suspect)
+## SYMBOLS  (32 null · 26 suspect)
 
 ### Nulls — need an OVERRIDE or `depictions` YAML entry
 
 | Node ID | Title | Tradition | Wikipedia search |
 |---|---|---|---|
-| `adinkra` | Adinkra | — | [search →](https://en.wikipedia.org/w/index.php?search=Adinkra) |
-| `ajna-third-eye` | Ajna (Third Eye) | — | [search →](https://en.wikipedia.org/w/index.php?search=Ajna+%28Third+Eye%29) |
 | `arabesque-girih` | Arabesque and Girih (Islamic Sacred Geometry) | — | [search →](https://en.wikipedia.org/w/index.php?search=Arabesque+and+Girih+%28Islamic+Sacred+Geometry%29) |
+| `asherah-pole` | Asherah Pole (Sacred Tree / Cult Object of Asherah) | — | [search →](https://en.wikipedia.org/w/index.php?search=Asherah+Pole+%28Sacred+Tree+%2F+Cult+Object+of+Asherah%29) |
+| `ashtamangala` | Ashtamangala (Eight Buddhist Auspicious Symbols) | — | [search →](https://en.wikipedia.org/w/index.php?search=Ashtamangala+%28Eight+Buddhist+Auspicious+Symbols%29) |
+| `ayahuasca` | Ayahuasca | — | [search →](https://en.wikipedia.org/w/index.php?search=Ayahuasca) |
+| `basmala` | Basmala (Bismillah as Sacred Visual Symbol) | — | [search →](https://en.wikipedia.org/w/index.php?search=Basmala+%28Bismillah+as+Sacred+Visual+Symbol%29) |
 | `bindu` | Bindu | — | [search →](https://en.wikipedia.org/w/index.php?search=Bindu) |
 | `bodhi-tree` | Bodhi Tree | — | [search →](https://en.wikipedia.org/w/index.php?search=Bodhi+Tree) |
+| `corn-mother` | Corn Mother / Corn Goddess | — | [search →](https://en.wikipedia.org/w/index.php?search=Corn+Mother+%2F+Corn+Goddess) |
 | `crossroads-symbol` | Crossroads | — | [search →](https://en.wikipedia.org/w/index.php?search=Crossroads) |
-| `djed-pillar` | Djed Pillar | — | [search →](https://en.wikipedia.org/w/index.php?search=Djed+Pillar) |
 | `dove` | Dove | — | [search →](https://en.wikipedia.org/w/index.php?search=Dove) |
-| `enso` | Ensō (Zen Circle) | — | [search →](https://en.wikipedia.org/w/index.php?search=Ens%C5%8D+%28Zen+Circle%29) |
-| `flower-of-life` | Flower of Life | — | [search →](https://en.wikipedia.org/w/index.php?search=Flower+of+Life) |
+| `eleusinian-kykeon` | Eleusinian Kykeon | — | [search →](https://en.wikipedia.org/w/index.php?search=Eleusinian+Kykeon) |
+| `eye-of-the-heart` | Eye of the Heart | — | [search →](https://en.wikipedia.org/w/index.php?search=Eye+of+the+Heart) |
+| `feather-of-maat` | Feather of Ma'at (Weighing of the Heart) | — | [search →](https://en.wikipedia.org/w/index.php?search=Feather+of+Ma%27at+%28Weighing+of+the+Heart%29) |
 | `gorgoneion` | Gorgoneion | — | [search →](https://en.wikipedia.org/w/index.php?search=Gorgoneion) |
 | `green-lion` | Green Lion (Viridis Leo) | — | [search →](https://en.wikipedia.org/w/index.php?search=Green+Lion+%28Viridis+Leo%29) |
-| `haoma` | Haoma | — | [search →](https://en.wikipedia.org/w/index.php?search=Haoma) |
-| `labrys` | Labrys | — | [search →](https://en.wikipedia.org/w/index.php?search=Labrys) |
-| `labyrinth` | Labyrinth | — | [search →](https://en.wikipedia.org/w/index.php?search=Labyrinth) |
-| `mandorla` | Mandorla | — | [search →](https://en.wikipedia.org/w/index.php?search=Mandorla) |
-| `metatrons-cube` | Metatron's Cube | — | [search →](https://en.wikipedia.org/w/index.php?search=Metatron%27s+Cube) |
+| `kaaba-black-stone` | Ka'ba and the Black Stone (Al-Ḥajar al-Aswad) | — | [search →](https://en.wikipedia.org/w/index.php?search=Ka%27ba+and+the+Black+Stone+%28Al-%E1%B8%A4ajar+al-Aswad%29) |
+| `maypole-irminsul` | Maypole and Irminsul (The European Cosmic Pillar) | — | [search →](https://en.wikipedia.org/w/index.php?search=Maypole+and+Irminsul+%28The+European+Cosmic+Pillar%29) |
+| `medicine-wheel` | Medicine Wheel | — | [search →](https://en.wikipedia.org/w/index.php?search=Medicine+Wheel) |
 | `mosaic-pavement` | Mosaic Pavement | — | [search →](https://en.wikipedia.org/w/index.php?search=Mosaic+Pavement) |
 | `nehushtan` | Nehushtan (bronze serpent on a pole) | — | [search →](https://en.wikipedia.org/w/index.php?search=Nehushtan+%28bronze+serpent+on+a+pole%29) |
-| `ollin` | Ollin (Movement / Earthquake) | — | [search →](https://en.wikipedia.org/w/index.php?search=Ollin+%28Movement+%2F+Earthquake%29) |
-| `omphalos` | Omphalos | — | [search →](https://en.wikipedia.org/w/index.php?search=Omphalos) |
+| `peyote` | Peyote | — | [search →](https://en.wikipedia.org/w/index.php?search=Peyote) |
 | `philosophers-stone` | Philosopher's Stone | — | [search →](https://en.wikipedia.org/w/index.php?search=Philosopher%27s+Stone) |
-| `pillars-jachin-boaz` | Pillars of Jachin and Boaz | — | [search →](https://en.wikipedia.org/w/index.php?search=Pillars+of+Jachin+and+Boaz) |
 | `pontos-riscados` | Pontos Riscados | — | [search →](https://en.wikipedia.org/w/index.php?search=Pontos+Riscados) |
 | `sator-square` | SATOR Square | — | [search →](https://en.wikipedia.org/w/index.php?search=SATOR+Square) |
-| `sol-niger` | Sol Niger | — | [search →](https://en.wikipedia.org/w/index.php?search=Sol+Niger) |
+| `sacred-number-seven` | Sacred Number Seven | — | [search →](https://en.wikipedia.org/w/index.php?search=Sacred+Number+Seven) |
+| `sacred-number-three` | Sacred Number Three | — | [search →](https://en.wikipedia.org/w/index.php?search=Sacred+Number+Three) |
+| `sphinx` | Sphinx (Guardian, Riddler, Time-Devourer) | — | [search →](https://en.wikipedia.org/w/index.php?search=Sphinx+%28Guardian%2C+Riddler%2C+Time-Devourer%29) |
 | `sulphur-mercury-salt` | Sulphur, Mercury, Salt (Tria Prima) | — | [search →](https://en.wikipedia.org/w/index.php?search=Sulphur%2C+Mercury%2C+Salt+%28Tria+Prima%29) |
-| `veve` | Veve | — | [search →](https://en.wikipedia.org/w/index.php?search=Veve) |
-| `yggdrasil` | Yggdrasil | — | [search →](https://en.wikipedia.org/w/index.php?search=Yggdrasil) |
+| `tyet-isis-knot` | Tyet (Knot of Isis) | — | [search →](https://en.wikipedia.org/w/index.php?search=Tyet+%28Knot+of+Isis%29) |
+| `voynich-glyphs` | Voynich Manuscript Script | — | [search →](https://en.wikipedia.org/w/index.php?search=Voynich+Manuscript+Script) |
+| `was-scepter` | Was Scepter | — | [search →](https://en.wikipedia.org/w/index.php?search=Was+Scepter) |
 | `shankha-conch` | Śaṅkha (Sacred Conch) | — | [search →](https://en.wikipedia.org/w/index.php?search=%C5%9Aa%E1%B9%85kha+%28Sacred+Conch%29) |
 
 ### Suspect hits — verify before trusting
@@ -1144,11 +1099,13 @@
 | `mandala-circle` | Mandala / Cosmological Circle | query≈0.39 — returned: **Mandala** | [view](https://upload.wikimedia.org/wikipedia/commons/thumb/9/9a/Manjuvajramandala_con_43_divinit%C3%A0_-_Unknown_-_Google_Cultural_Institute.jpg/330px-Manjuvajramandala_con_43_divinit%C3%A0_-_Unknown_-_Google_Cultural_Institute.jpg) |
 | `mithraic-cross` | Mithraic cross | query≈0.33 — returned: **Tauroctony** | [view](https://upload.wikimedia.org/wikipedia/commons/thumb/b/b5/Mithras_tauroctony_Louvre_Ma3441b.jpg/330px-Mithras_tauroctony_Louvre_Ma3441b.jpg) |
 | `pelican-in-piety` | Pelican-in-her-Piety | query≈0.52 — returned: **Pelican** | [view](https://upload.wikimedia.org/wikipedia/commons/thumb/d/d4/Pelikan_Walvis_Bay.jpg/330px-Pelikan_Walvis_Bay.jpg) |
+| `pillars-jachin-boaz` | Pillars of Jachin and Boaz | query≈0.14 — returned: **Solomon's Temple** | [view](https://upload.wikimedia.org/wikipedia/commons/thumb/8/88/Francois_Vatable%2C_reconstructie_van_de_tempel_van_Salomo_%28detail%29.jpg/330px-Francois_Vatable%2C_reconstructie_van_de_tempel_van_Salomo_%28detail%29.jpg) |
 | `pyramid-triangle` | Pyramid / Triangle | query≈0.56 — returned: **Pyramid** | [view](https://upload.wikimedia.org/wikipedia/commons/thumb/c/c2/01_khafre_north.jpg/330px-01_khafre_north.jpg) |
 | `sacred-fire-atash` | Sacred Fire (Ataš / Atar) | query≈0.27 — returned: **Atar** | [view](https://upload.wikimedia.org/wikipedia/commons/thumb/e/e3/Gold_coin_of_Ardashir_I.jpg/330px-Gold_coin_of_Ardashir_I.jpg) |
 | `sefirot-tree-of-life` | Sefirot / Tree of Life (Kabbalistic) | query≈0.48 — returned: **Sefirot** | [view](https://upload.wikimedia.org/wikipedia/commons/thumb/d/d5/Ktreewnames.png/330px-Ktreewnames.png) |
 | `serpent-wisdom-chthonic` | Serpent (Wisdom / Chthonic / Healing) | query≈0.09 — returned: **Chthonic deities** | [view](https://upload.wikimedia.org/wikipedia/commons/thumb/5/55/Relief_from_the_grave_enclosure_of_Lysimachides._Ca._320_B.C.jpg/330px-Relief_from_the_grave_enclosure_of_Lysimachides._Ca._320_B.C.jpg) |
 | `serpent-cosmic-enemy` | Serpent / Dragon (Cosmic Enemy) | query≈0.15 — returned: **Chaoskampf** | [view](https://upload.wikimedia.org/wikipedia/commons/thumb/9/9d/Destruction_of_Leviathan.png/330px-Destruction_of_Leviathan.png) |
+| `sol-niger` | Sol Niger | query≈0.35 — returned: **Splendor Solis** | [view](https://upload.wikimedia.org/wikipedia/commons/thumb/d/d6/Harley_3469%2C_f.28.jpg/330px-Harley_3469%2C_f.28.jpg) |
 | `spiral` | Spiral | query≈0.25 — returned: **Triskelion** | [view](https://upload.wikimedia.org/wikipedia/commons/thumb/6/60/Triple-Spiral-Symbol.svg/330px-Triple-Spiral-Symbol.svg.png) |
 | `sun-disk` | Sun Disk / Solar Wheel | query≈0.41 — returned: **Solar symbol** | [view](https://upload.wikimedia.org/wikipedia/commons/thumb/8/8e/Ilion---metopa.jpg/330px-Ilion---metopa.jpg) |
 | `vajra-dorje` | Vajra / Dorje | query≈0.56 — returned: **Vajra** | [view](https://upload.wikimedia.org/wikipedia/commons/thumb/c/c4/British_Museum_Tibetan_Bell_and_Vajra_B.jpg/330px-British_Museum_Tibetan_Bell_and_Vajra_B.jpg) |

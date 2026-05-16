@@ -22,7 +22,7 @@ influenced-by: ["older oral Sumerian flood traditions; the Sumerian King List fr
 influences: ["[[phase-1-006-atrahasis]] (Akkadian successor / parallel composition); Standard Babylonian Gilgamesh Tablet XI (via Atrahasis); the broader ANE flood-motif diffusion"]
 deities-mentioned: ["[[an-sumerian]]", "[[enlil]]", "[[enki-ea]]", "[[ninhursag-nintud]]", "[[utu-shamash]]"]
 events-context: ["Sumerian scribal-school transmission of Old Babylonian period (~-1900 to -1600 BCE); Nippur and Ur curriculum"]
-status: "metadata"
+status: "full"
 preservation: "The principal manuscript is **CBS 10673**, a fragmentary six-column tablet from the Nippur excavations, now in the University Museum (Penn Museum), Philadelphia. Of the original ~300 lines only ~140 are partially preserved. The tablet is dated paleographically to the late Old Babylonian period (~-1700 to -1600). Smaller fragmentary witnesses are known from Ur and other OB sites. The text is significantly less well preserved than [[phase-1-006-atrahasis]], and substantial portions of the narrative must be reconstructed by analogy. A separate Late Babylonian fragment (BM 23739) and the bilingual *Bilingual Creation of the World by Marduk* may preserve related material."
 refs:
   - title: "The Sumerian Flood Story"

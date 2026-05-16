@@ -290,6 +290,36 @@ OVERRIDES = {
     "feathered-serpent": "Feathered Serpent",
     "nehushtan": "Nehushtan",
 
+    # ---- Symbols pass (thumbnail-system-1, session 2026-05-16) ----
+    # Null symbols — Wikipedia returns thumbnails for these titles
+    "adinkra":                   "Adinkra symbols",
+    "ajna-third-eye":            "Ajna",
+    "arabesque-girih":           "Girih",
+    "athanor":                   "Athanor",
+    "bodhi-tree":                "Bodhi tree",
+    "crossroads-symbol":         "Hecate",             # Hecate = goddess of crossroads
+    "enso":                      "Ensō",
+    "gobekli-tepe-pillars":      "Göbekli Tepe",
+    "gorgoneion":                "Medusa",
+    "labyrinth":                 "Labyrinth",
+    "mandorla":                  "Mandorla",
+    "medicine-wheel":            "Medicine wheel",
+    "nun-primordial-waters":     "Nun (mythology)",
+    "philosophers-stone":        "Philosopher's stone",
+    "pillars-jachin-boaz":       "Solomon's Temple",
+    "prima-materia":             "Prima materia",
+    "shankha-conch":             "Shankha",
+    "shofar":                    "Shofar",
+    "sol-niger":                 "Splendor Solis",     # alchemical sun-nigredo manuscript
+    "tyet-isis-knot":            "Tyet",
+    "veve":                      "Veve",
+    "voynich-glyphs":            "Voynich manuscript",
+    # Suspect fixes — replace wrong/weak matches
+    "pelican-in-piety":          "Pelican (heraldry)",
+    "serpent-wisdom-chthonic":   "Rod of Asclepius",
+    "vine-grape":                "Vine (symbolism)",
+    "wheat-grain":               "Wheat (symbolism)",
+
     # ---- Greece pass (thumbnail-system-1, session 2026-05-16) ----
     # Person nodes where slug doesn't map cleanly to Wikipedia article title
     "aeschylus":                          "Aeschylus",

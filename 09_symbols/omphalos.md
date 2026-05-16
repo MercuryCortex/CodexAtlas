@@ -91,6 +91,11 @@ refs:
     tier: 1
     notes: "Translated by J.W. Harvey. Foundational phenomenology of sacred presence; world-navel sites are paradigmatic locations of *numinous* presence — the *mysterium tremendum et fascinans* at its most geographically concentrated."
 tags: [symbol, cosmological, greek, christian, jewish, islamic, hindu, roman, andean, inca, omphalos, world-navel, axis-mundi, sacred-geography, delphi, cusco, septuagint]
+depictions:
+  - src: "https://upload.wikimedia.org/wikipedia/commons/thumb/8/89/Delphi_omphalos.jpg/500px-Delphi_omphalos.jpg"
+    caption: "Omphalos stone at Delphi — the 'navel of the world' marking the centre of the Greek cosmos"
+    source: "Wikimedia Commons"
+    license: "CC BY-SA 2.0"
 ---
 
 # Omphalos

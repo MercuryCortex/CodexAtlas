@@ -70,6 +70,11 @@ refs:
     tier: 1
     notes: "Classic study of Roman republican constitutional practice including the role of lictors and fasces in magisterial authority."
 tags: [symbol, geometric, roman, republican, authority, fasces, imperium, fascism, misuse-documented, etruscan]
+depictions:
+  - src: "https://upload.wikimedia.org/wikipedia/commons/thumb/7/74/Fasces_lictoriae.svg/500px-Fasces_lictoriae.svg.png"
+    caption: "Fasces lictoriae — the Roman bundle of rods with axe, symbol of magisterial authority"
+    source: "Wikimedia Commons"
+    license: "Public domain"
 ---
 
 # Fasces

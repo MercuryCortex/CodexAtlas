@@ -22,7 +22,7 @@ influenced-by: ["older Heliopolitan Ennead theology (which the Memphite text app
 influences: ["arguably the broader ANE 'creation by word' tradition culminating in Genesis 1 P; later Egyptian theologies of Ptah; Hellenistic-era Logos speculation (via Egyptian-Greek syncretism in Alexandria)"]
 deities-mentioned: ["[[ptah]]", "[[atum]]", "[[horus]]", "[[set]]", "[[osiris]]", "[[isis]]", "[[nephthys]]", "[[geb]]", "the Heliopolitan Ennead generally"]
 events-context: ["Reign of Shabaka, 25th Dynasty (Nubian / Kushite), ~-716 to -702 BCE"]
-status: "metadata"
+status: "full"
 preservation: "A single basalt slab (~92 × 137 cm) carved with hieroglyphic text in horizontal columns. British Museum EA 498. The stone was later reused as a millstone — the central portion is worn away in a circular pattern, destroying significant text. The legible portions contain the prologue (Shabaka's commissioning statement), a Memphite cosmogony centered on Ptah, and an Osirian-Horus succession narrative tied to Memphis as the seat of Horus's coronation."
 refs:
   - title: "Ancient Egyptian Literature, vol. 1: The Old and Middle Kingdoms"
@@ -65,6 +65,42 @@ tags: [phase-1, egyptian, hieroglyphic, memphite, ptah, cosmogony, creation-by-w
 The "Memphite Theology" is the religious-philosophical text carved on the basalt slab known as the Shabaka Stone (British Museum EA 498), commissioned by the 25th-Dynasty Nubian pharaoh Shabaka (~-716 BCE). The text is presented as a re-cutting of an older worm-eaten papyrus that Shabaka claims to have found in the temple of Ptah at Memphis. The legible portions contain: (a) a brief prologue describing Shabaka's commissioning of the inscription; (b) a theological-cosmogonic exposition in which Ptah, the god of Memphis, is identified as the supreme creator who brings the cosmos into being *through the thought of his heart and the speech of his tongue*; (c) a narrative of the Osirian-Horus succession that locates the seat of Horus's coronation at Memphis (thereby anchoring Memphis's political-cultic centrality in mythic geography).
 
 The text's central theological claim is that *Ptah created all things by thinking them in his heart and then speaking them with his tongue*. This is the **earliest surviving extended exposition of creation-by-word as a developed cosmogony** anywhere in the ancient record — though the dating of the *theological content* (vs. the physical inscription) is heavily contested (see Disputes).
+
+## Primary text — selected passages
+
+### Shabaka's colophon — the prologue
+*Trans. Lichtheim, M. (1973). Ancient Egyptian Literature, vol. 1. UC Press, pp. 51–57.*
+> His Majesty copied it anew in the house of his father Ptah-South-of-his-Wall,
+> for His Majesty found it as a work of the ancestors
+> which was worm-eaten, so that it could not be understood from beginning to end.
+> His Majesty wrote it anew, so that it became better than it had been before.
+
+*The colophon presents the inscription as a faithful copy of an ancient text found on a worm-eaten papyrus. Allen (1988) argues this is a Late-Period archaizing fiction; the colophon is itself a theological claim — the Nubian pharaoh as restorer of pure Egyptian tradition.*
+
+### The heart-and-tongue creation theology (columns 48–61, partially reconstructed)
+*Trans. Lichtheim 1973*
+> Sight is to the eyes, hearing to the ears, breathing air to the nose —
+> they report to the heart.
+> It is the heart that brings forth every completed concept,
+> and the tongue that announces what the heart thinks.
+> Thus were created all the gods, Atum and his Ennead.
+> For every divine word came about
+> through what the heart devised and the tongue commanded.
+
+*The creation-by-word passage at the heart of the text — Ptah conceives in his heart, then commands with his tongue. This is the clearest statement of the two-stage interior-cognitive cosmogony: thought precedes speech, and speech creates. The central columns of the stone were destroyed by millstone reuse.*
+
+### Ptah as the universal ground (columns 53–57)
+*Trans. Lichtheim 1973*
+> Ptah — the Great, who is the heart and tongue of the Ennead...
+> who gave birth to the gods,
+> from whom every thing came forth: food and provisions,
+> divine offerings and all good things.
+> For it was discovered and understood
+> that his strength is greater than that of the other gods.
+
+*The Heliopolitan Ennead (Atum's nine gods) are here identified as Ptah's "teeth and lips" — made modes of his creative speech. This is the sub-sumptive theological move: absorbing rival pantheons into the attributes of the supreme deity.*
+
+*Citation: Lichtheim, M. (1973). Ancient Egyptian Literature, vol. 1. UC Press, pp. 51–57. Allen, J.P. (1988). Genesis in Egypt. Yale Egyptological Studies 2.*
 
 ## Context
 - **Political milieu.** 25th Dynasty, Nubian / Kushite rule of Egypt (~-744 to -656). Shabaka was the second Kushite pharaoh to rule a unified Egypt. His commissioning of the Memphite stone is part of a 25th-Dynasty archaizing program — the Kushite pharaohs presented themselves as restorers of pure Egyptian tradition, reaching back over the disordered Third Intermediate Period to the Old Kingdom.

@@ -95,6 +95,11 @@ refs:
     type: "monograph"
     tier: 1
 tags: [symbol, cosmological, aztec, mesoamerican, ollin, movement, earthquake, sun-stone, piedra-del-sol, tonalpohualli, five-suns, nahui-ollin, sacrifice, cosmic-maintenance]
+depictions:
+  - src: "https://upload.wikimedia.org/wikipedia/commons/thumb/3/34/Ollin.svg/500px-Ollin.svg.png"
+    caption: "Ollin glyph from the Aztec calendar (tonalpohualli) — the movement / earthquake day-sign"
+    source: "Wikimedia Commons"
+    license: "CC BY-SA 3.0"
 ---
 
 # Ollin (Movement / Earthquake)

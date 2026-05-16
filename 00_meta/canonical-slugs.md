@@ -17,7 +17,7 @@ canonical-slug
 ## Currently resolved slugs (auto-seeded — every existing file)
 
 
-### deity (493 nodes)
+### deity (496 nodes)
 
 - `abathur`
 - `adamastor`
@@ -107,6 +107,7 @@ canonical-slug
 - `bragi`
 - `brahma`
 - `brigid`
+- `cao-dai-god`
 - `ceres-roman`
 - `cernunnos`
 - `chac`
@@ -173,6 +174,7 @@ canonical-slug
 - `hachiman`
 - `hades`
 - `hahyah-nephilim`
+- `hanullim`
 - `hanuman`
 - `harihara`
 - `hariti`
@@ -344,6 +346,7 @@ canonical-slug
 - `oshun`
 - `osiris`
 - `oya`
+- `oyagami`
 - `pachamama`
 - `padmasambhava`
 - `palongawhoya`
@@ -513,7 +516,7 @@ canonical-slug
 - `zemyna`
 - `zeus`
 
-### document (407 nodes)
+### document (410 nodes)
 
 - `document-kuntillet-ajrud-inscriptions`
 - `phase-1-001-kesh-temple-hymn`
@@ -898,6 +901,9 @@ canonical-slug
 - `phase-7-039-gandra-da-face-oculta-2009`
 - `phase-7-040-walatta-petros-hagiography`
 - `phase-7-041-varieties-of-religious-experience`
+- `phase-7-042-donggyeong-daejeon`
+- `phase-7-043-ofudesaki`
+- `phase-7-044-cao-dai-canon`
 - `phase-8-001-popol-vuh`
 - `phase-8-002-codex-borgia`
 - `phase-8-003-dresden-codex-maya`
@@ -1112,7 +1118,7 @@ canonical-slug
 - `subterranean-chamber-great-pyramid`
 - `temple-of-inscriptions-palenque`
 
-### person (684 nodes)
+### person (688 nodes)
 
 - `aaron`
 - `abba-garima`
@@ -1568,6 +1574,7 @@ canonical-slug
 - `nachmanides`
 - `nagarjuna`
 - `nagasena`
+- `nakayama-miki`
 - `nammalvar`
 - `naram-sin`
 - `naropa-tilopa`
@@ -1576,6 +1583,7 @@ canonical-slug
 - `nefertiti`
 - `nero-emperor`
 - `nestorius`
+- `ngo-van-chieu`
 - `nichiren`
 - `nicodemus`
 - `nimbarka`
@@ -1603,6 +1611,7 @@ canonical-slug
 - `perpetua-and-felicity`
 - `peter-apostle`
 - `peter-j-carroll`
+- `pham-cong-tac`
 - `pherecydes-of-syros`
 - `phidias`
 - `philip-apostle`
@@ -1764,6 +1773,7 @@ canonical-slug
 - `vasco-da-gama`
 - `vasubandhu`
 - `vasugupta`
+- `victor-hugo`
 - `vidyaranya`
 - `viriato`
 - `voltaire`
@@ -1799,21 +1809,24 @@ canonical-slug
 - `ziusudra`
 - `zosimos-of-panopolis`
 
-### symbol (157 nodes)
+### symbol (179 nodes)
 
 - `acacia`
 - `adinkra`
 - `aegishjalmr`
 - `ajna-third-eye`
 - `alpha-omega`
+- `amanita-muscaria`
 - `ankh`
 - `arabesque-girih`
+- `ark-of-the-covenant`
 - `asclepian-rod`
 - `asherah-pole`
 - `ashtamangala`
 - `athanor`
 - `aum-om`
 - `axis-mundi`
+- `ayahuasca`
 - `azoth`
 - `ba-gua`
 - `baphomet`
@@ -1834,12 +1847,14 @@ canonical-slug
 - `cross-order-of-christ`
 - `cross-pattee-templar`
 - `crossroads-symbol`
+- `danse-macabre`
 - `dharmachakra`
 - `djed-pillar`
 - `double-headed-eagle`
 - `dove`
 - `dragon-eastern`
 - `dragon-western`
+- `eleusinian-kykeon`
 - `endless-knot`
 - `enso`
 - `eye`
@@ -1847,6 +1862,7 @@ canonical-slug
 - `eye-of-the-heart`
 - `faravahar`
 - `fasces`
+- `feather-of-maat`
 - `feathered-serpent`
 - `fish-ichthys`
 - `fleur-de-lis`
@@ -1860,20 +1876,25 @@ canonical-slug
 - `hamsa-khamsa`
 - `haoma`
 - `hexagram`
+- `hieros-gamos`
 - `indus-valley-script`
+- `janus`
 - `kaaba-black-stone`
 - `kalachakra`
 - `labrys`
 - `labyrinth`
+- `lamassu`
 - `latin-cross`
 - `lion`
 - `lotus`
 - `maltese-cross`
 - `mandala-circle`
 - `mandorla`
+- `maypole-irminsul`
 - `medicine-wheel`
 - `menorah`
 - `metatrons-cube`
+- `mezuzah`
 - `mithraic-cross`
 - `mjolnir`
 - `monas-hieroglyphica`
@@ -1892,6 +1913,7 @@ canonical-slug
 - `ouroboros`
 - `pelican-in-piety`
 - `pentagram`
+- `peyote`
 - `phaistos-disc`
 - `philosophers-stone`
 - `phoenix-bennu`
@@ -1902,15 +1924,22 @@ canonical-slug
 - `proto-sinaitic`
 - `pyramid-triangle`
 - `rainbow-covenant`
+- `rainbow-serpent-symbol`
 - `rebis`
 - `rongorongo`
 - `rose-cross-rosicrucian`
+- `ruach-pneuma`
 - `rub-el-hizb`
 - `sacred-bell`
+- `sacred-crown`
+- `sacred-dance`
 - `sacred-fire-atash`
+- `sacred-head`
 - `sacred-heart`
+- `sacred-mirror`
 - `sacred-number-seven`
 - `sacred-number-three`
+- `sacred-river`
 - `sator-square`
 - `scarab-khepri`
 - `scorpion`
@@ -1925,6 +1954,7 @@ canonical-slug
 - `sistrum`
 - `sol-niger`
 - `solve-et-coagula`
+- `sphinx`
 - `spiral`
 - `square-and-compass`
 - `sri-yantra`
@@ -1934,10 +1964,12 @@ canonical-slug
 - `sulphur-mercury-salt`
 - `sun-disk`
 - `swastika`
+- `tattoo-sacred`
 - `tau-cross`
 - `tauroctony`
 - `tetragrammaton`
 - `tetramorph`
+- `thread-of-fate`
 - `thunderbird`
 - `thunderbolt-keraunos`
 - `thyrsus`
@@ -2291,7 +2323,7 @@ canonical-slug
 - `zep-tepi`
 - `zeus-pantokrator-transmission`
 
-### tradition (143 nodes)
+### tradition (145 nodes)
 
 - `tradition-advaita-vedanta`
 - `tradition-african-traditional`
@@ -2310,6 +2342,7 @@ canonical-slug
 - `tradition-buddhism`
 - `tradition-canaanite-ugaritic`
 - `tradition-candomble`
+- `tradition-cao-dai`
 - `tradition-catharism`
 - `tradition-celtic`
 - `tradition-chan`
@@ -2420,6 +2453,7 @@ canonical-slug
 - `tradition-sumerian-mesopotamian`
 - `tradition-syriac-orthodox`
 - `tradition-tartessos`
+- `tradition-tenrikyo`
 - `tradition-teutonic-knights`
 - `tradition-thelema`
 - `tradition-theosophy`
@@ -2443,21 +2477,21 @@ canonical-slug
 
 | Refs | Dead target | Suggested canonical (existing) |
 |---:|---|---|
-| 4 | `tradition-hinduism` | `tradition-greco-buddhism` |
-| 3 | `tradition-sunni-islam` | `oral-tradition-transmission` |
+| 8 | `tradition-hinduism` | `tradition-yazidi` |
+| 3 | `tradition-sunni-islam` | `tradition-yazidi` |
 | 3 | `guru-arjan-dev-ji` | `guru-arjan` |
 | 2 | `yam-canaanite` | `astarte-canaanite` |
 | 2 | `was-sceptre` | `was-scepter` |
-| 2 | `tradition-lingayat` | `tradition-greco-buddhism` |
-| 2 | `tradition-judaism-sephardic` | `oral-tradition-transmission` |
-| 2 | `tradition-islam-shia` | `oral-tradition-transmission` |
-| 2 | `tradition-islam-mughal` | `oral-tradition-transmission` |
-| 2 | `tradition-hussitism` | `oral-tradition-transmission` |
-| 2 | `tradition-christianity-catholic` | `oral-tradition-transmission` |
-| 2 | `tradition-bahai` | `tradition-shinto` |
+| 2 | `tradition-lingayat` | `tradition-yazidi` |
+| 2 | `tradition-judaism-sephardic` | `tradition-megalithic-atlantic` |
+| 2 | `tradition-islam-shia` | `tradition-yazidi` |
+| 2 | `tradition-islam-mughal` | `tradition-yazidi` |
+| 2 | `tradition-hussitism` | `tradition-yazidi` |
+| 2 | `tradition-christianity-catholic` | `tradition-megalithic-atlantic` |
+| 2 | `tradition-bahai` | `tradition-yazidi` |
 | 2 | `phase-4-045-vishnu-purana` | `phase-4-043-apophthegmata-patrum` |
-| 2 | `phase-3-006-homeric-hymns` | `phase-3-007-samaritan-pentateuch` |
-| 2 | `phase-1-005-descent-of-inanna` | `phase-1-002-pyramid-texts` |
+| 2 | `phase-3-006-homeric-hymns` | `phase-3-001-second-third-isaiah` |
+| 2 | `phase-1-005-descent-of-inanna` | `phase-1-009-coffin-texts` |
 | 2 | `guru-gobind-singh-ji` | `guru-gobind-singh` |
 | 2 | `divine-names` | `divine-name` |
 | 2 | `aurangzeb-emperor` | `zara-yaqob-emperor` |
