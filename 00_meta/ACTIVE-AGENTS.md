@@ -1469,3 +1469,11 @@ The things opus-foundation-1 claimed but never started are all still open:
 - ~~Owning: `09_symbols/sacred-number-zero.md` (NEW), `09_symbols/chaos-star.md` (NEW), `09_symbols/inverted-cross.md` (NEW)~~
 - ~~Goal: Zero — MASSIVE WIN mathematical zero (Brahmagupta 628 CE) ↔ Buddhist śūnyatā (Nāgārjuna) ↔ Kabbalistic Ain Sof (tsimtsum) ↔ Mayan zero (shell glyph, base-20 independent invention) — four independent traditions encoding "nothing as generative"; Chaos Star — rare case: documented 1963 CE origin (Moorcock fiction) → chaos magic reception → pop misuse; Inverted Cross — irony case: Catholic Petrine Cross of humility (Acts of Peter) co-opted as anti-Christian symbol by LaVey 1966, not knowing it was the pope's own emblem~~
 - ~~Status: finished — 3 new symbol nodes · 238 total symbols · 14812 edges · 0 YAML errors · 0 new dead links · swept into commit 6a43d6f~~
+
+---
+
+## Goblin 17A — Eye of Ra / Aten Disk / Sacred Scepter
+**Status: FINISHED**
+Files: eye-of-ra.md · aten-disk.md · sacred-scepter.md
+- Note: sacred-crown.md already existed; sacred-scepter.md substituted per protocol
+- 241 total symbols · 14865 edges · 0 YAML errors · commit b34006b
