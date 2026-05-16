@@ -5,7 +5,7 @@ type: music
 music-type: practice
 status: full
 tier: 2
-tradition: tradition-candomble
+tradition: tradition-vodou-haitian
 date_earliest: 1500
 date_latest: 2000
 tags:
@@ -43,6 +43,7 @@ cross-music-edges:
     note: Both talking-drum communication and Vodou lwa-summoning rhythms treat specific rhythmic patterns as semantic content addressing specific spirit beings — rhythm as divine-name equivalent
 
 music-tradition-context:
+  - [[tradition-vodou-haitian]]
   - [[tradition-candomble]]
 
 themes:
