@@ -1,6 +1,6 @@
 # Quality issues
 
-_Auto-generated 2026-05-15. Status claims not meeting the bar in methodology.md._
+_Auto-generated 2026-05-16. Status claims not meeting the bar in methodology.md._
 
 | Node | Type | Issue |
 |---|---|---|
@@ -116,7 +116,9 @@ _Auto-generated 2026-05-15. Status claims not meeting the bar in methodology.md.
 | `tradition-aztec-mexica` | tradition | status:metadata but only 1 refs |
 | `tradition-australian-aboriginal` | tradition | status:metadata but only 1 refs |
 | `tradition-maya-religion` | tradition | status:metadata but only 1 refs |
+| `tradition-egyptian-religion` | tradition | status:metadata but only 0 refs |
 | `tradition-finno-karelian` | tradition | status:metadata but only 1 refs |
+| `tradition-chan` | tradition | status:metadata but only 0 refs |
 | `tradition-inca-andean` | tradition | status:metadata but only 1 refs |
 | `dove` | symbol | symbol status:metadata but only 2 refs (need 3+) |
 | `alpha-omega` | symbol | symbol status:metadata but only 2 refs (need 3+) |
