@@ -1685,9 +1685,11 @@ Files: sacred-cauldron.md (NEW) · cerridwen.md (STUB, deity) · bran-the-blesse
 
 ---
 
-## music-americas-oceania-1 — Americas + Oceania music strand — 2026-05-16 — IN FLIGHT
-- Owns: music-aboriginal-songlines.md · music-inca-music-cosmology.md · music-native-american-ceremonial.md · music-mayan-music.md · music-aztec-music.md (all NEW in 10_music/)
-- Do NOT touch: any existing music node, any app code, patterns.js, observations.js
+## ~~music-americas-oceania-1 — Americas + Oceania music strand — 2026-05-16 — FINISHED~~
+- ~~Owned: music-aboriginal-songlines.md · music-inca-music-cosmology.md · music-native-american-ceremonial.md · music-mayan-music.md · music-aztec-music.md (all NEW in 10_music/, all full status)~~
+- ~~Wiring: tradition-australian-aboriginal · tradition-inca-andean · tradition-lakota · tradition-navajo · tradition-haudenosaunee · tradition-hopi · tradition-maya-religion · tradition-aztec-mexica · tradition-mesoamerican; deities: rainbow-serpent · baiame · inti · pachamama · viracocha · wakan-tanka · white-buffalo-calf-woman · changing-woman · spider-grandmother-hopi · itzamna · ixchel · kukulkan · huitzilopochtli · tlaloc · quetzalcoatl · tezcatlipoca · tonatiuh~~
+- ~~MASSIVE WIN edges: Songlines = creation-by-sound made operational (all other traditions treat founding sonic act as historical; Aboriginal singers are still performing the Creation); siku interlocking-pairs as cosmological interdependence (parallel-form to West African polyrhythm); seasonal-song restriction 3-tradition convergence (India raga + Islamic adhan + Native American — music is cosmologically time-indexed, independent discovery on 3 continents); instrument-burial 3-civilization convergence (Lyre of Ur + Marquis Yi bells + Maya instruments — instrument as cosmic identity-object, not possession); Aztec New Fire Silence = most explicit statement in vault that music maintains cosmos, not describes it~~
+- ~~Build: 45 music nodes · 15766 edges · 0 dead links introduced · 0 YAML errors · commit 3b0606d~~
 
 ---
 
