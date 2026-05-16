@@ -516,6 +516,15 @@ window.PATTERNS_DATA = [
     summary: 'The oldest evidence for music-cosmos theory is not a text — it is a building. Palaeolithic cave paintings (c. -32,000 BCE) cluster at acoustic resonance nodes. The Maltese Hypogeum (c. -3600 BCE) resonates at 110 Hz, the frequency that produces altered neurological states. Stonehenge\'s bluestones ring like bells and produce standing waves. Chartres Cathedral\'s nave dimensions produce reverberation tuned to Gregorian chant. Hindu temple shikhara proportions encode Pythagorean ratios. Sacred acoustic architecture predates every surviving text about sacred music by 1,300 to 25,000 years. The connection between specific sonic frequencies and spiritual experience was not theorized first — it was built first.',
   },
   {
+    id: 'knowledge-destroyed-by-conquest',
+    title: 'Conquered Scripts: Knowledge Destruction as Historical Pattern',
+    category: 'CONVERGENCE',
+    section: 'Alphabet Layer Discoveries',
+    sources: ['alphabet-linear-a', 'alphabet-proto-elamite', 'alphabet-rongorongo', 'alphabet-indus-valley-script'],
+    summary: 'Every major undecoded writing system comes from a civilization that was conquered, catastrophically depopulated, or isolated before Western scholarship arrived. Linear A: Minoan Crete destroyed c. 1450 BCE. Proto-Elamite: Elamite civilization erased by Ashurbanipal c. 647 BCE. Rongorongo: Easter Island slave raids 1862–63 severed the reading tradition in a single decade. Indus Valley: Bronze Age collapse c. 1900 BCE. The archive survived; the human transmission chain did not. The undecoded scripts are not mysteries — they are records of destruction.',
+  },
+
+  {
     id: 'why-india-preserved-raga',
     title: 'Four Structural Conditions That Let India Preserve the Raga Obligation When All Others Retreated',
     category: 'CONCLUSION',
