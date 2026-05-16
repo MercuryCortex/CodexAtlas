@@ -344,4 +344,354 @@ window.CHAINS_DATA = [
     ],
   },
 
+  // ─── CROSS-TRADITION TRANSMISSION CHAINS ──────────────────────────────────
+
+  {
+    title    : 'The Word That Creates the World',
+    summary  : 'Four traditions across 3,000 years share a single theology: the cosmos is spoken into existence by divine speech. The chain begins on a stone in Memphis and ends in the Quran.',
+    category : 'CONVERGENCE',
+    span     : 'c. 2350 BCE – 620 CE',
+    links    : [
+      {
+        date  : 'c. 2350 BCE',
+        label : 'Ptah\'s Tongue — Memphite Theology (Egypt)',
+        note  : 'Ptah creates all things by first conceiving them in his heart and then pronouncing them. The Shabaka Stone: "The heart and the tongue rule over all the limbs… whatever exits from the mouth, he has made." The world\'s earliest documented creation-by-word theology.',
+        node  : 'phase-1-027-memphite-theology-shabaka-stone',
+      },
+      {
+        date  : 'c. 6th century BCE',
+        label : 'Genesis 1 — "God said, Let there be light" (Hebrew)',
+        note  : 'The Priestly source deploys the same structural theology without naming any Egyptian precedent. The Shabaka Stone predates this text by at least 1,700 years.',
+        node  : 'creation-by-word',
+      },
+      {
+        date  : 'c. 90 CE',
+        label : 'John 1:1 — "In the beginning was the Word" (Greek)',
+        note  : '"In the beginning was the Logos, and the Logos was with God, and the Logos was God." The Johannine prologue fuses Hebrew creation-word theology with Stoic cosmic-reason philosophy. Ptah\'s tongue, in a new language.',
+        node  : 'logos-johannine',
+      },
+      {
+        date  : 'c. 610 CE',
+        label : 'Quran — Kun fa-yakun: "Be — and it is"',
+        note  : '"When He decrees a matter, He only says to it: Be — and it is" (2:117). The most compressed formulation of creation-by-word in world scripture. Four traditions, one 3,000-year chain.',
+        node  : 'tradition-islam',
+      },
+    ],
+  },
+
+  {
+    title    : 'The Succession Myth: From Hurrian Mountains to Gnostic Cosmology',
+    summary  : 'Hesiod\'s Theogony is a retelling of a Hurrian myth from Anatolia. The chain continues into Gnostic theology, where the king of the gods becomes an ignorant tyrant — and Israel\'s greatest monotheistic declaration becomes proof of cosmic limitation.',
+    category : 'INSTITUTIONAL',
+    span     : 'c. 1400 BCE – 250 CE',
+    links    : [
+      {
+        date  : 'c. 1400 BCE',
+        label : 'Kumarbi Cycle (Hurrian / Hittite)',
+        note  : 'Kumarbi bites off the genitals of sky-god Anu, becomes pregnant with storm-god Teshub, who eventually defeats him. Preserved in the Hittite archives at Hattusa. This is the structural template for the entire Mediterranean succession-myth tradition.',
+        node  : 'phase-1-028-kumarbi-cycle',
+      },
+      {
+        date  : 'c. 700 BCE',
+        label : 'Hesiod\'s Theogony (Greek)',
+        note  : 'Ouranos castrated by Kronos; Kronos overthrown by Zeus — structurally identical to the Kumarbi Cycle. Transmission route: Hittite archive → Late Bronze Age singer networks → Phoenician intermediary → Hesiod. Documented by Bachvarova, From Hittite to Homer (Cambridge UP, 2016).',
+        node  : 'phase-2-009-hesiod-theogony-works-and-days',
+      },
+      {
+        date  : 'c. 250–350 CE',
+        label : 'Kronos / Saturn as Neoplatonic Nous',
+        note  : 'Porphyry and Iamblichus identify Saturn/Kronos with the Platonic Demiurge and cosmic Intellect. The deposed king of the gods becomes a philosophical principle: divine intellect contemplating the Forms.',
+        node  : 'demiurge-platonic',
+      },
+      {
+        date  : 'c. 150–250 CE',
+        label : 'Yaldabaoth — The Gnostic Inversion',
+        note  : 'The Sethian Gnostics invert the chain entirely. The Demiurge is not wise but ignorant and arrogant. The Apocryphon of John places Isaiah 45:5 — "I am the LORD and there is no other" — in Yaldabaoth\'s mouth as evidence of his blindness to the higher God above him. A Hurrian grain god is the traceable ancestor of this move.',
+        node  : 'yaldabaoth',
+      },
+    ],
+  },
+
+  {
+    title    : 'Confucianism Builds the Modern World\'s Bureaucracy',
+    summary  : 'The British civil service examination — model for all modern meritocratic administration — was explicitly designed on China\'s imperial examination system. The chain runs from Confucius through Jesuit missionaries and Voltaire to every government hiring system on Earth.',
+    category : 'INSTITUTIONAL',
+    span     : 'c. 500 BCE – 1855 CE',
+    links    : [
+      {
+        date  : 'c. 500 BCE',
+        label : 'Confucius — Governance by Cultivated Virtue',
+        note  : 'Confucius teaches that political authority must be grounded in self-cultivation and demonstrated moral merit, not birth alone. The junzi (exemplary person) earns authority.',
+        node  : 'confucius',
+      },
+      {
+        date  : '605 CE',
+        label : 'Sui Dynasty — Imperial Examination Institutionalized',
+        note  : 'Emperor Yang formally establishes competitive testing on Confucian classics as the method of civil service recruitment. The exam will select China\'s bureaucracy for 1,300 years.',
+        node  : 'tradition-confucianism',
+      },
+      {
+        date  : '1687',
+        label : 'Confucius Sinarum Philosophus (Jesuits)',
+        note  : 'Philippe Couplet publishes the first major Latin translation of Confucius. Leibniz writes enthusiastically about Chinese governance. The Jesuits\' China mission transmits Confucian governance theory to Europe as proof that natural reason produces ethical civilization.',
+        node  : 'tradition-neo-confucianism',
+      },
+      {
+        date  : '1762',
+        label : 'Voltaire Weaponizes Confucianism Against the Church',
+        note  : 'Voltaire holds Confucius up as proof that civilization can be rational and ethical without Christian revelation. The Physiocrat economist Quesnay is called "the European Confucius." The Jesuit China mission inadvertently arms the Enlightenment attack on Church authority.',
+        node  : 'voltaire',
+      },
+      {
+        date  : '1855',
+        label : 'British Civil Service — Explicit Modeling on China',
+        note  : 'The Northcote-Trevelyan Report replaces patronage with competitive examinations, explicitly citing China\'s imperial system as the model. The reform is adopted globally. Modern meritocratic civil service — the institutional skeleton of every contemporary state — is Confucian in origin.',
+        node  : 'tradition-neo-confucianism',
+      },
+    ],
+  },
+
+  {
+    title    : 'The Mindfulness Industry\'s Erased Origin',
+    summary  : 'A $1B+/year secular wellness industry traces directly to two Buddhist schools — Zen and Theravāda. Their contemplative techniques were stripped of religious framing and redeployed clinically. The Buddhist source is systematically obscured in marketing and clinical language.',
+    category : 'GEOGRAPHIC',
+    span     : 'c. 500 BCE – 1979 CE',
+    links    : [
+      {
+        date  : 'c. 500 BCE',
+        label : 'Theravāda Vipassanā — Attention as Practice',
+        note  : 'The Pali canon\'s satipaṭṭhāna (four foundations of mindfulness) and vipassanā (insight meditation) are the raw material. Attention to breath, body, and arising/passing phenomena — without grasping — is the core method.',
+        node  : 'tradition-theravada-buddhism',
+      },
+      {
+        date  : 'c. 700 CE',
+        label : 'Huineng — Zen\'s Sudden Awakening',
+        note  : 'Huineng\'s Platform Sutra establishes: Buddha-nature is fully present already; no gradual cultivation needed. Zen becomes the Western-facing tributary of the Buddhist contemplative tradition.',
+        node  : 'huineng',
+      },
+      {
+        date  : '1927–1957',
+        label : 'D.T. Suzuki — Zen Enters Western Culture',
+        note  : 'Suzuki\'s Essays in Zen Buddhism begin the Western transmission. His Columbia seminars (1952–57) directly influence John Cage, Alan Watts, Kerouac, Ginsberg, and Snyder. Zen becomes the contemplative framework of the American counterculture.',
+        node  : 'd-t-suzuki',
+      },
+      {
+        date  : '1975',
+        label : 'IMS Founded — Theravāda Tributary Joins',
+        note  : 'Jack Kornfield, Joseph Goldstein, and Sharon Salzberg found the Insight Meditation Society after training with Mahāsi Sayadaw and Goenka. The Theravāda lineage enters the same cultural stream as Zen.',
+        node  : 'tradition-theravada-buddhism',
+      },
+      {
+        date  : '1979',
+        label : 'MBSR — Mindfulness Becomes Medicine',
+        note  : 'Jon Kabat-Zinn launches Mindfulness-Based Stress Reduction at UMass Medical Center. Buddhist meditation stripped of its religious framing is deployed as clinical intervention. Neither origin is named in the clinical literature or the $1B+/year app and corporate wellness market that follows.',
+        node  : 'tradition-zen',
+      },
+    ],
+  },
+
+  {
+    title    : 'Solar Theology: From Ra to Christ Pantocrator',
+    summary  : 'The nimbus around Christ\'s head is a Roman sun-disk. December 25th is the Roman sun god\'s birthday. Sunday is the day of the Sun. Christianity absorbed solar imagery so thoroughly it became invisible. The chain begins in Egypt c. 2700 BCE.',
+    category : 'CONVERGENCE',
+    span     : 'c. 2700 BCE – 4th century CE',
+    links    : [
+      {
+        date  : 'c. 2700 BCE',
+        label : 'Ra — Egyptian Solar Theology',
+        note  : 'Ra\'s daily journey, descent into the underworld at night, and rebirth at dawn as Khepri is the world\'s oldest continuous solar theology. The nimbus — the ring of light around the head — originates as Ra\'s sun-disk.',
+        node  : 'ra',
+      },
+      {
+        date  : 'c. 1350 BCE',
+        label : 'Aten — The World\'s First Monotheism Is Solar',
+        note  : 'Akhenaten suppresses all other gods, declaring the Aten the sole divine source. Jan Assmann traces the "Mosaic distinction" — exclusive monotheism — to this moment. The Great Hymn to the Aten is structurally parallel to Psalm 104.',
+        node  : 'akhenaten',
+      },
+      {
+        date  : '274 CE',
+        label : 'Sol Invictus — Roman Imperial Sun Cult',
+        note  : 'Emperor Aurelian establishes Sol Invictus as the supreme deity of the Roman Empire. The sun god\'s birthday: December 25th. The weekly holy day: dies Solis (Sunday). These will survive the Christianization of the Empire intact.',
+        node  : 'sol-invictus',
+      },
+      {
+        date  : '312 CE onward',
+        label : 'Constantine — Solar Imagery Migrates to Christ',
+        note  : 'Constantine\'s conversion absorbs solar imagery rather than erasing it. Christ Pantocrator inherits the frontal posture, radiating glory, and nimbus from Sol Invictus. December 25th becomes Christmas. Sunday remains the holy day.',
+        node  : 'constantine-i',
+      },
+    ],
+  },
+
+  {
+    title    : 'Islam Preserves Aristotle — Then Builds Catholic Theology',
+    summary  : 'Thomas Aquinas\'s Summa Theologica — the intellectual skeleton of Catholic doctrine — is built on Aristotle. Aristotle was lost to Western Europe for 600 years. His works were preserved in Arabic, refined by Islamic philosophers, and translated back into Latin. The Catholic Church\'s philosophical tradition owes its existence to Islamic scholarship.',
+    category : 'INSTITUTIONAL',
+    span     : 'c. 350 BCE – 1274 CE',
+    links    : [
+      {
+        date  : 'c. 350 BCE',
+        label : 'Aristotle — The Philosophical System',
+        note  : 'Aristotle systematizes logic, physics, metaphysics, cosmology, ethics, and politics. His works will be almost entirely lost to the Latin-reading West after the fall of Rome (~500 CE).',
+        node  : '',
+      },
+      {
+        date  : 'c. 830 CE',
+        label : 'House of Wisdom, Baghdad',
+        note  : 'Al-Kindī, Al-Fārābī, and Avicenna (Ibn Sīnā) translate and extend Aristotle in Arabic. Islamic philosophy develops the most sophisticated Aristotelian commentaries in existence.',
+        node  : 'tradition-islam',
+      },
+      {
+        date  : 'c. 1180 CE',
+        label : 'Averroes (Ibn Rushd) — The Commentator',
+        note  : 'Ibn Rushd of Córdoba writes comprehensive commentaries on nearly all of Aristotle. He becomes "The Commentator" to the Latin West. Aquinas will attack Averroism — while depending on Averroes\'s Aristotle for his entire metaphysical framework.',
+        node  : 'tradition-sufism',
+      },
+      {
+        date  : 'c. 1150–1200 CE',
+        label : 'Toledo Translation School — Arabic → Latin',
+        note  : 'Gerard of Cremona and others translate Aristotle and Averroes from Arabic into Latin at Toledo. The Latin West recovers Aristotle — but only through the medium of Islamic scholarship.',
+        node  : 'tradition-medieval-christianity',
+      },
+      {
+        date  : '1265–1274 CE',
+        label : 'Summa Theologica — Aquinas Synthesizes Aristotle with Christianity',
+        note  : 'Aquinas calls Aristotle simply "The Philosopher" — and reads him through Averroes\'s commentaries. The intellectual skeleton of Catholic systematic theology is Islamic in origin. Neither tradition publicly acknowledges this.',
+        node  : 'thomas-aquinas',
+      },
+    ],
+  },
+
+  {
+    title    : 'Anubis Weighs the Heart — Lady Justice Holds the Scales',
+    summary  : 'The idea that a soul\'s moral record is weighed against a divine standard using a balance scale originated in Egypt c. 1550 BCE. The same image — psychopomp, scales, moral criterion — migrates through Byzantine iconography into the secular symbol of Western law.',
+    category : 'CONVERGENCE',
+    span     : 'c. 1550 BCE – present',
+    links    : [
+      {
+        date  : 'c. 1550 BCE',
+        label : 'Anubis Weighs the Heart (Book of the Dead)',
+        note  : 'In the Hall of Two Truths, Anubis weighs the heart against the feather of Ma\'at. If heavier, Ammit devours the soul. The balance scale as moral instrument of divine judgment begins here.',
+        node  : 'anubis',
+      },
+      {
+        date  : 'c. 500–700 CE',
+        label : 'Michael the Archangel Holds the Scales',
+        note  : 'Byzantine iconography transfers the psychopomp role to Michael. In Last Judgment scenes, he weighs souls. The Egyptian theological structure — psychopomp, balance scales, moral criterion, devouring monster — is retained wholesale in a new vocabulary.',
+        node  : 'tradition-eastern-orthodoxy',
+      },
+      {
+        date  : 'c. 1200 CE',
+        label : 'Gothic Cathedral Tympana — The Weighing Over the Door',
+        note  : 'Last Judgment reliefs above the doors of Notre Dame, Chartres, and Bourges show souls weighed by the archangel. The Egyptian sacred judgment is now carved in stone at the entrance to every major church in France.',
+        node  : 'tradition-medieval-christianity',
+      },
+      {
+        date  : '15th century CE',
+        label : 'Lady Justice — Scales Enter Secular Law',
+        note  : 'The allegorical Iustitia inherits the balance scales from Archangel Michael. The sacred psychopomp becomes the symbol of secular law. Every courthouse, every legal seal, every law firm logo traces to the Hall of Two Truths.',
+        node  : '',
+      },
+    ],
+  },
+
+  {
+    title    : 'Buddhist Metaphysics Becomes Confucian Philosophy',
+    summary  : 'Zhu Xi\'s Neo-Confucian synthesis — the official curriculum of China\'s imperial examinations for 600 years — is built around a concept (li, pattern/principle) absorbed from Buddhist Huayan metaphysics. Zhu Xi polemicizes against Buddhism while using Buddhist metaphysics as his core framework.',
+    category : 'ESOTERIC',
+    span     : 'c. 4th century CE – 12th century CE',
+    links    : [
+      {
+        date  : 'c. 4th century CE',
+        label : 'Avataṃsaka Sūtra — Indra\'s Net',
+        note  : 'At every node of an infinite net hangs a jewel reflecting all other jewels. Its doctrine of mutual interpenetration (li-shi wu\'ai) describes a cosmos where nothing exists independently. This metaphysical framework will survive translation into an entirely different tradition.',
+        node  : 'phase-4-102-avatamsaka-sutra',
+      },
+      {
+        date  : 'c. 700 CE',
+        label : 'Fazang — Huayan School Systematized',
+        note  : 'Fazang systematizes Avataṃsaka\'s metaphysics into the Huayan school. His essay on the Golden Lion uses a single object to demonstrate mutual interpenetration. His five-fold classification provides the conceptual vocabulary for the next stage.',
+        node  : 'tradition-mahayana-buddhism',
+      },
+      {
+        date  : 'c. 1175 CE',
+        label : 'Zhu Xi — Li-Qi as Neo-Confucian Metaphysics',
+        note  : 'Zhu Xi\'s synthesis: li (pattern/principle) pervades all particular qi (material stuff). Structurally parallel to Huayan\'s li-shi wu\'ai. He polemicizes vigorously against Buddhism throughout his writings — while his central metaphysical architecture comes directly from Huayan. His synthesis becomes the exam curriculum for 600 years.',
+        node  : 'zhu-xi',
+      },
+      {
+        date  : 'c. 1200 CE',
+        label : 'Wang Yangming — The Internal Critique',
+        note  : 'Wang Yangming attacks Zhu Xi from within Neo-Confucianism: li is not external but identical with the mind. His concept of liangzhi (innate moral knowing) in every person is the Neo-Confucian equivalent of Buddha-nature — a comparison Wang Yangming would reject.',
+        node  : 'wang-yangming',
+      },
+    ],
+  },
+
+  {
+    title    : 'The Yi Jing\'s Binary Code Reaches 20th-Century Music',
+    summary  : 'Leibniz discovered binary arithmetic in 1679. A Jesuit missionary in Beijing sent him the Yi Jing\'s hexagrams arranged in binary order — and Leibniz immediately recognized that China had discovered the same system 2,700 years earlier. The same oracle would give John Cage the method for a landmark piece of aleatoric music.',
+    category : 'ESOTERIC',
+    span     : 'c. 1000 BCE – 1951 CE',
+    links    : [
+      {
+        date  : 'c. 1000 BCE',
+        label : 'Yi Jing — 64 Hexagrams Formalized',
+        note  : 'The 64 hexagrams encode all possible combinations of six broken (yin) or unbroken (yang) lines — a complete binary combinatorial system. The oldest surviving binary structure in human intellectual history.',
+        node  : 'phase-2-042-yi-jing-i-ching',
+      },
+      {
+        date  : '1701',
+        label : 'Bouvet Sends Leibniz the Hexagram Diagram',
+        note  : 'Jesuit Joachim Bouvet, at the Kangxi Emperor\'s court in Beijing, sends Leibniz an arrangement of the 64 hexagrams in binary order. Leibniz, who had invented binary arithmetic in 1679, immediately recognizes that China had discovered the same system 2,700 years earlier. He publishes "Explication de l\'Arithmétique Binaire" (1703) acknowledging the parallel.',
+        node  : 'phase-2-042-yi-jing-i-ching',
+      },
+      {
+        date  : '1950',
+        label : 'Wilhelm\'s Translation — The Yi Jing Reaches Western Art',
+        note  : 'Richard Wilhelm\'s 1924 German translation with Carl Jung\'s preface (developing synchronicity theory) circulates widely. Jung demonstrates hexagram consultation as a tool for accessing the unconscious. Philip K. Dick, Herman Hesse, and a young experimental composer in New York all encounter it.',
+        node  : 'tradition-daoism',
+      },
+      {
+        date  : '1951',
+        label : 'John Cage — Music of Changes',
+        note  : 'Cage uses the Yi Jing\'s coin-toss method to make all compositional decisions in his piano piece Music of Changes. Every pitch, duration, and dynamic is determined by hexagram consultation. A 3,000-year-old divination oracle becomes the generative engine of aleatoric composition.',
+        node  : 'd-t-suzuki',
+      },
+    ],
+  },
+
+  {
+    title    : 'The Martyr Template: Christian Martyrology → Islamic Shahid → Karbala',
+    summary  : 'The word "shahid" (Islamic martyr) is the Greek word martyros transliterated via Syriac. The entire Karbala paradigm — willing death, divine predestination, annual commemoration, post-mortem intercession — is structurally identical to Christian martyrology from 156 CE Smyrna. Neither tradition acknowledges the debt.',
+    category : 'INSTITUTIONAL',
+    span     : '110 CE – 680 CE',
+    links    : [
+      {
+        date  : 'c. 110 CE',
+        label : 'Ignatius of Antioch — Martyrdom as Mystical Consummation',
+        note  : 'Ignatius writes en route to execution in Rome: "I am the wheat of God, ground by wild beasts into pure bread of Christ." He theologizes martyrdom as the completion of mystical union — not mere death but the act that makes the martyr fully real.',
+        node  : 'phase-4-063-ignatius-letters',
+      },
+      {
+        date  : '156 CE',
+        label : 'Martyrdom of Polycarp — The Template Document',
+        note  : 'The oldest surviving Christian martyrdom narrative introduces natalis (death as birthday into heaven) and calls for annual commemoration at the tomb. This founds the entire system: feast-days, pilgrimage sites, relic veneration, post-mortem intercession, the calendar of saints.',
+        node  : 'phase-4-063-ignatius-letters',
+      },
+      {
+        date  : 'c. 620 CE',
+        label : 'Shahid — The Greek Word Becomes Arabic',
+        note  : 'The Arabic shahid (شهيد, witness/martyr) is the Greek martyros transliterated via Syriac Christian channels. The semantic content — one who witnesses to truth by dying — travels with the word. Islamic martyrology inherits the Christian structural theology along with the vocabulary.',
+        node  : 'tradition-islam',
+      },
+      {
+        date  : '680 CE',
+        label : 'Karbala — Husayn ibn Ali and the Shia Martyrology',
+        note  : 'Husayn ibn Ali is killed at Karbala. The Shia community memorializes him with: annual ʿĀshūrāʾ commemoration, pilgrimage to the tomb, doctrine of post-mortem intercession, his death framed as foreknown and redemptive. Every structural element is present in the Martyrdom of Polycarp. The Christian martyr template has arrived in Iraq 524 years later.',
+        node  : 'tradition-sufism',
+      },
+    ],
+  },
+
 ];
