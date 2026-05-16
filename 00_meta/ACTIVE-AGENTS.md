@@ -1336,10 +1336,10 @@ The things opus-foundation-1 claimed but never started are all still open:
 
 ---
 
-## goblin-divine-child-1 — symbols / divine child + sacred twins + torii gate + world mountain — started 2026-05-16 — IN PROGRESS
-- Owning: `09_symbols/divine-child.md` (NEW), `09_symbols/sacred-twins.md` (NEW), `09_symbols/torii-gate.md` (NEW), `09_symbols/world-mountain.md` (NEW)
-- Goal: Divine Child as endangered-infant MASSIVE WIN cross-tradition (Horus/Krishna/Jesus/Dionysus/Moses/Baldr parallel); Sacred Twins as Indo-European *Diewo sunus* pattern (Dioscuri/Ashvins/Hero Twins/Thomas); Torii Gate as sacred-threshold cross-tradition (pylon/gopuram/mezuzah/lamassu MASSIVE WIN); World Mountain as axis mundi architectural embodiment (Meru/Olympus/Sinai/Kailash + pyramid/ziggurat/stupa MASSIVE WIN)
-- Status: in-progress
+## ~~goblin-divine-child-1 — symbols / divine child + sacred twins + torii gate + world mountain — started 2026-05-16 — FINISHED 2026-05-16~~
+- ~~Owning: `09_symbols/divine-child.md` (NEW), `09_symbols/sacred-twins.md` (NEW), `09_symbols/torii-gate.md` (NEW), `09_symbols/world-mountain.md` (NEW)~~
+- ~~Goal: Divine Child as endangered-infant MASSIVE WIN cross-tradition (Horus/Krishna/Jesus/Dionysus/Moses/Baldr parallel); Sacred Twins as Indo-European *Diewo sunus* pattern (Dioscuri/Ashvins/Hero Twins/Thomas); Torii Gate as sacred-threshold cross-tradition (pylon/gopuram/mezuzah/lamassu MASSIVE WIN); World Mountain as axis mundi architectural embodiment (Meru/Olympus/Sinai/Kailash + pyramid/ziggurat/stupa MASSIVE WIN)~~
+- ~~Status: finished — 191 total symbols · 14544 edges · 0 dead links introduced · STATUS.md logged~~
 
 ---
 
