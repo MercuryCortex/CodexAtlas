@@ -389,7 +389,7 @@ _Hand-maintained. Each agent currently working in the vault appends a claim bloc
 ## goblin-divine-center-1 — symbols / divine center + inner eye thread — started 2026-05-16 — IN PROGRESS
 - Owning: `09_symbols/ajna-third-eye.md` (NEW), `09_symbols/bindu.md` (NEW), `09_symbols/omphalos.md` (NEW), `09_symbols/mandorla.md` (NEW)
 - Goal: Divine center symbols; Hindu ajna→Masonic eye→Shiva's third eye convergence; omphalos as world-navel pan-cultural; mandorla as sacred containment geometry
-- Status: in-progress
+- Status: FINISHED 2026-05-16
 
 ---
 
@@ -647,7 +647,7 @@ Format:
 - Owning: `09_symbols/hamsa.md` (NEW), `09_symbols/winged-disk.md` (NEW), `09_symbols/royal-arch.md` (NEW), `09_symbols/sacred-fire.md` (NEW)
 - Note: `hamsa-khamsa.md` already exists (full); `sacred-fire-atash.md` already exists (metadata Zoroastrian focus); `faravahar.md` already exists. New files use distinct IDs: hamsa, sacred-fire, winged-disk, royal-arch — all verified unique.
 - Goal: Hamsa — cross-Abrahamic apotropaic amulet MASSIVE WIN (Jewish/Muslim/Christian shared object); Winged Disk — Egyptian Behdety → Assyrian → Achaemenid Faravahar iconographic transmission; Royal Arch — Masonic capstone degree (JABULON + Triple Tau + vault narrative); Sacred Fire — universal eternal-flame cluster (Zoroastrian/Vedic/Roman/Greek/Celtic/Jewish multi-tradition table)
-- Status: in-progress
+- Status: FINISHED 2026-05-16
 
 ---
 
@@ -668,7 +668,7 @@ Format:
 ## goblin-indigenous-mystery-1 — symbols / indigenous recording systems + mystery emblems thread — started 2026-05-16 — IN PROGRESS
 - Owning: `09_symbols/wampum.md` (NEW), `09_symbols/pakal-sarcophagus-lid.md` (NEW), `09_symbols/black-sun.md` (NEW), `09_symbols/cornucopia.md` (NEW)
 - Goal: Wampum as sacred diplomatic recording system (Hiawatha Belt + Condolence Ceremony + quipu parallel-form); Pakal Sarcophagus Lid as Maya World Tree axis mundi (von Däniken Tier-4 MANDATORY); Black Sun Wewelsburg appropriation (MANDATORY Appropriation section like swastika); Cornucopia as inexhaustible-vessel cross-tradition (pūrṇa-kalasha + Dagda's Cauldron parallel-form)
-- Status: in-progress
+- Status: FINISHED 2026-05-16
 
 ---
 
@@ -1403,14 +1403,14 @@ The things opus-foundation-1 claimed but never started are all still open:
 ## goblin-sacred-animals-1 [ACTIVE]
 - Targets: `09_symbols/cow-sacred.md` · `09_symbols/minotaur.md` · `09_symbols/garuda.md`
 - Hands-off: everything else
-- Status: in-progress
+- Status: FINISHED 2026-05-16
 
 ---
 
 ## goblin-esoteric-bodies-1 — symbols / esoteric bodies + energy systems thread — started 2026-05-16 — IN PROGRESS
 - Owning: `09_symbols/merkaba.md` (NEW), `09_symbols/kundalini.md` (NEW), `09_symbols/evil-eye.md` (NEW)
 - Goal: Merkavah chariot-throne → Tetramorph MASSIVE WIN (Ezekiel's four hayyot = Christian Tetramorph = four fixed zodiac signs); Kundalini iḍā/piṅgalā/suṣumṇā = caduceus MASSIVE WIN (structurally identical independent traditions); Evil Eye as most widely distributed specific folk belief in history (Mesopotamia → global, continuous -3000 → present)
-- Status: in-progress
+- Status: FINISHED 2026-05-16
 
 ---
 
@@ -1418,7 +1418,7 @@ The things opus-foundation-1 claimed but never started are all still open:
 - Owning: `09_symbols/unicorn.md` (NEW), `09_symbols/prayer-beads.md` (NEW), `09_symbols/tarot.md` (NEW)
 - Goal: Unicorn — Physiologus Christological allegory + alchemical Mercurius + Scottish heraldry + qilin MASSIVE WIN (independent parallel-form convergence 5000 km apart); Prayer beads — documented Hindu mālā → Buddhist mālā → Orthodox prayer rope → Catholic rosary transmission chain; Tarot — card-game-origin chronology corrected + Lévi Kabbalistic-tarot synthesis + Golden Dawn RWS + Western mandala MASSIVE WIN
 - Hands-off: merkaba.md, kundalini.md, evil-eye.md, shaman-drum.md, dreamcatcher.md, nazca-lines.md
-- Status: in-progress
+- Status: FINISHED 2026-05-16
 
 ---
 
@@ -1447,4 +1447,4 @@ The things opus-foundation-1 claimed but never started are all still open:
 ## goblin-sacred-substance-1 — symbols / sigil + sacred-smoke + sacred-spring — started 2026-05-16 — IN PROGRESS
 - Owning: `09_symbols/sigil.md` (NEW), `09_symbols/sacred-smoke.md` (NEW), `09_symbols/sacred-spring.md` (NEW)
 - Goal: Sigil — MASSIVE WIN two completely different traditions under one name (grimoire received-seal vs Spare invented-desire-sigil); LBRP bridge form; Grant Morrison mass-sigilization. Sacred Smoke — cross-tradition universal ascent-offering logic; qetoret priestly monopoly (Korah rebellion); frankincense trade routes = ancient sacred economy. Sacred Spring — most geographically widespread sacred site type in pre-modern Europe; Bath defixiones archaeological evidence; zamzam + tirtha + Lourdes + Cassotis cross-tradition table.
-- Status: in-progress
+- Status: FINISHED 2026-05-16
