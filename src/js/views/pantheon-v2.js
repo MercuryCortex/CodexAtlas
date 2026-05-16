@@ -714,14 +714,9 @@
       path.setAttribute('class', cls);
       path.setAttribute('d', `M ${sp.x},${sp.y} Q ${cxp},${cyp} ${tp.x},${tp.y}`);
       path.style.setProperty('--edge-type-color', st.c);
-      // V2 needs to dim P1's values uniformly. P1's live force-sim bundles
-      // edges (connected nodes pull together → shorter, less-overlapping chords).
-      // V2's static bake produces longer cross-canvas chords that pile up
-      // through the centre, making the same width/opacity feel ~2× louder.
-      // 0.6× scale brings perceived density in line with P1 while preserving
-      // P1's per-type RANKING (ambient still ambient, headlines still loud).
-      path.setAttribute('stroke-width',   (st.w  * 0.6).toFixed(3));
-      path.setAttribute('stroke-opacity', (st.op * 0.6).toFixed(3));
+      // P1 verbatim — st.w and st.op straight from EDGE_STYLE, no scaling.
+      path.setAttribute('stroke-width',   st.w);
+      path.setAttribute('stroke-opacity', st.op);
       path.setAttribute('fill', 'none');
       path.dataset.source = e.source;
       path.dataset.target = e.target;
