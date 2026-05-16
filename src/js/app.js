@@ -806,6 +806,7 @@ VIEWS.pantheon = {
       'authors':   'Authors of the Pantheon',
       'symbols':   'Symbols of the Pantheon',
       'events':    'Events of the Pantheon',
+      'music':     'Music of the Pantheon',
       'monuments': 'Monuments of the Pantheon',
     };
     document.getElementById('view-title').textContent = titleByMode[mode] || 'Pantheon';
@@ -835,6 +836,8 @@ VIEWS.pantheon = {
         if (!authorSet.has(n.id)) return false;
       } else if (mode === 'symbols') {
         if (n.type !== 'symbol') return false;
+      } else if (mode === 'music') {
+        if (n.type !== 'music') return false;
       } else if (mode === 'events') {
         if (n.type !== 'event') return false;
       } else if (mode === 'monuments') {
@@ -1047,6 +1050,7 @@ VIEWS.pantheon = {
         <option value="authors"   ${mode === 'authors'   ? 'selected' : ''}>✎ Authors</option>
         <option value="symbols"   ${mode === 'symbols'   ? 'selected' : ''}>✦ Symbols</option>
         <option value="events"    ${mode === 'events'    ? 'selected' : ''}>★ Events</option>
+        <option value="music"     ${mode === 'music'     ? 'selected' : ''}>♩ Music</option>
         <option value="scripture" ${mode === 'scripture' ? 'selected' : ''}>✠ Scripture →</option>
         ${FEATURES.pantheonMonuments ? `<option value="monuments" ${mode === 'monuments' ? 'selected' : ''}>⛬ Monuments</option>` : ''}
       </select>
@@ -8631,9 +8635,14 @@ document.querySelectorAll('nav.side .item').forEach(el => {
     }
     setView(el.dataset.view);
   });
-  // Populate data-tooltip from the label text — used by CSS when the nav is collapsed.
+  // Populate data-tooltip (CSS tooltip when nav is collapsed) AND title
+  // (browser-native fallback that works even when the nav is expanded).
   const _lbl = el.querySelector('.lbl');
-  if (_lbl) el.setAttribute('data-tooltip', _lbl.textContent.trim());
+  if (_lbl) {
+    const txt = _lbl.textContent.trim();
+    el.setAttribute('data-tooltip', txt);
+    el.setAttribute('title', txt);
+  }
 });
 
 ['family', 'type'].forEach(k => {

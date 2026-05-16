@@ -238,11 +238,10 @@
     const familyOrder = (families || []).map(f => f.name).filter(n => famByName[n]);
     Object.keys(famByName).forEach(n => { if (!familyOrder.includes(n)) familyOrder.push(n); });
 
-    // Wedge-to-wedge gap. 0.075 rad (~4.3°) gives each hull a bit more arc
-    // breathing room than P1's 0.105 — helps sparse wedges (Manichaean,
-    // Mandaean, Pacific) feel less starved while still keeping a visible gap
-    // for family separation.
-    const GAP = 0.075;
+    // Wedge-to-wedge gap. 0.045 rad (~2.6°) — narrower than P1's 0.105 so
+    // each hull gets more arc, the spiral has room to breathe, and the
+    // sparse wedges (Manichaean, Mandaean, Pacific) stop looking starved.
+    const GAP = 0.045;
     const totalGap = GAP * familyOrder.length;
     const totalArc = 2 * Math.PI - totalGap;
     const weights = familyOrder.map(n => Math.max(1.1, Math.sqrt(famByName[n].members.length)));
@@ -262,41 +261,65 @@
       cursor += arcSize + GAP;
     });
 
-    // Per-deity anchors: 1-3 concentric rows depending on family size
+    // Fermat-spiral layout — key figures gravitate to wedge center.
+    //
+    // Sort members by degree DESC. The top deity lands at the wedge's
+    // angular + radial midpoint. Subsequent members spiral outward via a
+    // golden-angle Vogel pattern in wedge-local (u, v) ∈ [-1, 1]²:
+    //   θ = i · 137.5°,   ρ = √(i / N)
+    //   u = ρ cosθ · 0.92,  v = ρ sinθ · 0.85
+    // (u, v) is then mapped to (ang, r) inside the wedge's annulus.
+    //
+    // Result: top deities (Zeus, Ra, YHWH, Jesus) sit at the centerline;
+    // minor members fan toward the edges; the hull AREA is filled, not
+    // just its centerline. Deterministic — no jitter needed.
     const Rinner = 220, Router = 540;
+    const Rmid   = (Rinner + Router) / 2;
     const positions = new Map();
+    const GOLDEN_ANGLE = Math.PI * (3 - Math.sqrt(5)); // ≈ 2.39996 rad
+
     Object.values(wedges).forEach(w => {
       const N = w.members.length;
       if (!N) return;
-      const wedgePad = Math.min(0.05, (w.a1 - w.a0) * 0.12);
-      const aSpan = (w.a1 - w.a0) - wedgePad * 2;
-      const rowCount = N <= 4 ? 1 : N <= 9 ? 2 : 3;
-      // Sort members by date_earliest (oldest first) so the wedge reads chronologically.
+      const arc = w.a1 - w.a0;
+      // Sort by degree DESC (key figures first). Tie-break alphabetic for stability.
       const sorted = [...w.members].sort((a, b) => {
-        const ad = (typeof a.date_earliest === 'number') ? a.date_earliest : 999999;
-        const bd = (typeof b.date_earliest === 'number') ? b.date_earliest : 999999;
-        if (ad !== bd) return ad - bd;
+        const da = (deities => 0)(0); // placeholder; degree map isn't available here.
+        // We use the optional `_degHint` injected by the render scope, falling back
+        // to 0 if missing. computeWedgePositions is called BEFORE degree is built,
+        // so this expects the caller to pass an updated deities array (it does at
+        // line ~470). For first-call layout we get degree from window.VAULT_DATA.
+        const degA = (window._codexDegreeHint && window._codexDegreeHint.get(a.id)) || 0;
+        const degB = (window._codexDegreeHint && window._codexDegreeHint.get(b.id)) || 0;
+        if (degA !== degB) return degB - degA;
         return (a.id || '').localeCompare(b.id || '');
       });
-      sorted.forEach((d, idx) => {
-        const row = idx % rowCount;
-        const col = Math.floor(idx / rowCount);
-        const colsInRow = Math.ceil((N - row) / rowCount);
-        const t = colsInRow > 1 ? col / (colsInRow - 1) : 0.5;
-        const ang = w.a0 + wedgePad + aSpan * t;
-        // Production row-radii (app.js:1023-1026): keep nodes BUFFERED inside the
-        // radial band (hull extends Rinner-22 → Router+22, so nodes must not touch
-        // Rinner or Router). 1-row: mid. 2-row: Router-14 / Rinner+14. 3-row: 8 px.
-        let r;
-        if (rowCount === 1) r = (Rinner + Router) / 2;
-        else if (rowCount === 2) r = row === 0 ? Router - 14 : Rinner + 14;
-        else r = row === 0 ? Router - 8 : row === 1 ? (Rinner + Router) / 2 : Rinner + 8;
-        // Deterministic radial jitter (±5 px) so the grid doesn't look mechanical
-        r += ((hashStr(d.id) % 10) - 5);
-        positions.set(d.id, {
-          x: r * Math.cos(ang),
-          y: r * Math.sin(ang)
-        });
+
+      // Spiral coefficients — tighter at center for the dense top, more spread
+      // when the wedge is small. Scale by sqrt(N) so a 50-member wedge fills the
+      // box and a 3-member wedge doesn't blow up.
+      const scale = Math.min(1, Math.sqrt(N) / Math.sqrt(Math.max(N, 8)));
+      sorted.forEach((d, i) => {
+        // Top deity lands EXACTLY at center; others spiral.
+        if (i === 0) {
+          positions.set(d.id, { x: Rmid * Math.cos(w.center), y: Rmid * Math.sin(w.center) });
+          return;
+        }
+        const theta = i * GOLDEN_ANGLE;
+        const rho   = Math.sqrt(i / N) * scale;
+        // (u, v) in wedge-local ∈ [-1, 1]². u = angular axis, v = radial axis.
+        const u = rho * Math.cos(theta) * 0.92;
+        const v = rho * Math.sin(theta) * 0.85;
+        // Map to world.
+        const halfArc = arc / 2;
+        // Angular padding so dots don't kiss the hull's angular edge.
+        const padA = Math.min(0.05, halfArc * 0.18);
+        const ang  = w.center + u * (halfArc - padA);
+        // Radial padding so dots stay inside the annulus (hull extends Rinner-22 → Router+22).
+        const radHalf = (Router - Rinner) / 2;
+        const padR    = 14;
+        const r       = Rmid + v * (radHalf - padR);
+        positions.set(d.id, { x: r * Math.cos(ang), y: r * Math.sin(ang) });
       });
     });
 
@@ -376,6 +399,10 @@
   const SYMBOL_CROSS_EDGE_TYPES = new Set([
     'ancestor-of', 'parallel-form', 'syncretic-fusion',
     'appropriated-by', 'polemic-inversion', 'visual-cognate'
+  ]);
+  const MUSIC_CROSS_EDGE_TYPES = new Set([
+    'ancestor-of', 'parallel-form', 'syncretic-fusion',
+    'transmission-to', 'appropriated-by', 'child-of'
   ]);
   function edgeStyleFor(type) { return EDGE_STYLE[type] || EDGE_DEFAULT; }
   const DEFAULT_EDGE_COLOR = EDGE_DEFAULT.c;
@@ -482,6 +509,7 @@
       if (mode === 'authors')   return n.type === 'person' && authorSet && authorSet.has(n.id);
       if (mode === 'symbols')   return n.type === 'symbol';
       if (mode === 'events')    return n.type === 'event';
+      if (mode === 'music')     return n.type === 'music';
       if (mode === 'monuments') {
         const tags = Array.isArray(n.tags) ? n.tags
           : (typeof n.tags === 'string' ? n.tags.split(/[,\s]+/) : []);
@@ -509,19 +537,23 @@
     if (!deities.length) {
       const msgs = { deities: 'No deities in data.', authors: 'No authors found.',
         symbols: 'No symbols found.', events: 'No events found.',
+        music: 'No music nodes found.',
         monuments: 'Monuments — add `tags: [monument]` to site nodes to populate this view.' };
       rootEl.innerHTML = `<div class="ph2-error">${msgs[_currentMode] || 'No nodes.'}</div>`;
       return;
     }
 
-    // Compute wedge layout + per-node positions.
-    const { positions, wedges, familyOrder, famByName, Rinner, Router } =
-      computeWedgePositions(deities, FAMILIES);
-
-    // Build edge slice — only same-type↔same-type edges.
+    // Build edge slice + degree FIRST so the wedge layout can sort by degree
+    // (key figures gravitate to wedge center in the new spiral layout).
     const idSet = new Set(deities.map(d => d.id));
     const edges = EDGES.filter(e => idSet.has(e.source) && idSet.has(e.target));
     const degree = computeDegree(edges);
+    // Expose for computeWedgePositions' sort (deg-DESC → top deity at center).
+    window._codexDegreeHint = degree;
+
+    // Compute wedge layout + per-node positions.
+    const { positions, wedges, familyOrder, famByName, Rinner, Router } =
+      computeWedgePositions(deities, FAMILIES);
 
     // Phase D — bake settled positions (force-relaxation pre-paint pass).
     // Lets siblings within a wedge nudge tangentially / radially around each
@@ -547,6 +579,22 @@
         .map(e => e[0])
     );
 
+    // ----- TIERED NODE SIZING -----
+    // Key figures (Zeus, Jesus, YHWH, Ra, Indra) should LOOM larger than
+    // minor deities. Compute degree quartiles across the visible slice and
+    // assign tier radii — bigger steps than P1's [8, 6, 4.5, 3.5] so key
+    // figures read clearly even at default zoom.
+    const _degSorted = deities.map(d => degree.get(d.id) || 0).sort((a, b) => b - a);
+    const _q = (p) => _degSorted[Math.floor(_degSorted.length * p)] || 0;
+    const TIER_CUTOFFS = [_q(0.04), _q(0.15), _q(0.40)];   // top 4%, next 11%, next 25%, rest
+    const TIER_RADIUS  = [13, 10, 7, 5];                    // px (production uses 8/6/4.5/3.5)
+    function nodeSizeForDeg(deg) {
+      if (deg >= TIER_CUTOFFS[0]) return TIER_RADIUS[0];
+      if (deg >= TIER_CUTOFFS[1]) return TIER_RADIUS[1];
+      if (deg >= TIER_CUTOFFS[2]) return TIER_RADIUS[2];
+      return TIER_RADIUS[3];
+    }
+
     deities.forEach(d => {
       const pos = positions.get(d.id);
       if (!pos) return;
@@ -554,9 +602,7 @@
       graph.addNode(d.id, {
         x:       pos.x,
         y:       pos.y,
-        // Production tier cap (app.js:1383, TIER_RADIUS = [8, 6, 4.5, 3.5]).
-        // Hard cap at 8 px so Zeus/Ra don't bulldoze siblings out of the wedge.
-        size:    Math.min(8, 4 + Math.sqrt(deg) * 1.2),
+        size:    nodeSizeForDeg(deg),
         color:   d.family_color || d.tradition_color || '#7a8090',
         label:   d.title || d.id,
         _isHub:  _hubIdSet.has(d.id),
@@ -817,6 +863,12 @@
         const tNode = window.NODES_BY_ID && window.NODES_BY_ID[e.target];
         if (sNode && tNode && (sNode.family || 'Other') !== (tNode.family || 'Other')) cls += ' xsym-xfamily';
       }
+      if (_currentMode === 'music' && MUSIC_CROSS_EDGE_TYPES.has(e.type)) {
+        cls += ' xsym';
+        const sNode = window.NODES_BY_ID && window.NODES_BY_ID[e.source];
+        const tNode = window.NODES_BY_ID && window.NODES_BY_ID[e.target];
+        if (sNode && tNode && (sNode.family || 'Other') !== (tNode.family || 'Other')) cls += ' xsym-xfamily';
+      }
       path.setAttribute('class', cls);
       path.setAttribute('d', `M ${sp.x},${sp.y} Q ${cxp},${cyp} ${tp.x},${tp.y}`);
       path.style.setProperty('--edge-type-color', st.c);
@@ -830,6 +882,28 @@
       edgesG.appendChild(path);
       edgeEls.push({ el: path, s: e.source, t: e.target, st });
     });
+
+    // Index edges by node for fast drag-time path updates.
+    const edgesByNode = new Map();   // nodeId → array of edgeEls entries
+    edgeEls.forEach(entry => {
+      if (!edgesByNode.has(entry.s)) edgesByNode.set(entry.s, []);
+      if (!edgesByNode.has(entry.t)) edgesByNode.set(entry.t, []);
+      edgesByNode.get(entry.s).push(entry);
+      edgesByNode.get(entry.t).push(entry);
+    });
+    // Rebuild path `d` for every edge incident to `nodeId`. Used by drag.
+    function rebuildEdgesForNode(nodeId) {
+      const list = edgesByNode.get(nodeId);
+      if (!list) return;
+      const EP = EDGE_PULL;
+      for (const { el, s, t } of list) {
+        const sp = positions.get(s), tp = positions.get(t);
+        if (!sp || !tp) continue;
+        const mx = (sp.x + tp.x) / 2, my = (sp.y + tp.y) / 2;
+        const cxp = mx + (0 - mx) * EP, cyp = my + (0 - my) * EP;
+        el.setAttribute('d', `M ${sp.x},${sp.y} Q ${cxp},${cyp} ${tp.x},${tp.y}`);
+      }
+    }
 
     // Dev panel hook — expose sigma + overlay data for live-tweaking.
     if (window.CODEX_DEV) {
@@ -1065,18 +1139,14 @@
     //   ADDS those neighbours (extends the investigation subgraph).
     // Subsequent click whose neighbourhood does NOT touch the lock →
     //   RESETS the lock to this node + neighbours.
+    // ALWAYS-ADD selection: every node click extends the locked set with
+    // that node + its 1-hop neighbours. The "touch / reset" heuristic was
+    // confusing — pure additive is the right mental model. Empty stage
+    // click clears the whole set.
     sigma.on('clickNode', ({ node }) => {
       _selectedId = node;
       const nbrs = neighborhoodOf(node);
-      let touchesLock = false;
-      if (_lockedSet.size > 0) {
-        for (const id of nbrs) { if (_lockedSet.has(id)) { touchesLock = true; break; } }
-      }
-      if (_lockedSet.size === 0 || !touchesLock) {
-        _lockedSet = new Set(nbrs);
-      } else {
-        nbrs.forEach(id => _lockedSet.add(id));
-      }
+      nbrs.forEach(id => _lockedSet.add(id));
       sigma.refresh({ skipIndexation: true });
       applyEdgeHoverState();
       if (typeof applyLabelHoverDim === 'function') applyLabelHoverDim();
@@ -1131,10 +1201,12 @@
       const world = sigma.viewportToGraph({ x: e.x, y: e.y });
       const fam   = graph.getNodeAttribute(_draggedId, '_family') || 'Other';
       const pos   = clampToWedge(world, fam);
-      // Update both sigma graph (paint) and our positions Map (anchor/nudge cache).
+      // Update sigma graph (paint), positions Map (anchor/nudge cache),
+      // AND rebuild every incident SVG edge so the connections track the dot.
       graph.setNodeAttribute(_draggedId, 'x', pos.x);
       graph.setNodeAttribute(_draggedId, 'y', pos.y);
       positions.set(_draggedId, { x: pos.x, y: pos.y });
+      rebuildEdgesForNode(_draggedId);
       sigma.refresh({ skipIndexation: true });
     });
     function _endDrag() {
@@ -1205,14 +1277,16 @@
     // earn their label slot. The deconfliction pass still culls overlaps, so
     // tighter rings auto-thin. At default ratio (~1.32) you see the top hubs;
     // zoom to ~0.5 to read the minor pantheon members.
+    // Aggressive tiering: by the time the user zooms past 0.65× they want
+    // to read everything. The deconfliction pass culls overlaps after,
+    // so we never paint a mess of stacked labels.
     function dynamicHubThreshold() {
       let ratio = 1.32;
       try { ratio = sigma.getCamera().getState().ratio || 1.32; } catch (e) {}
-      if (ratio >= 1.10) return 6;
-      if (ratio >= 0.80) return 4;
-      if (ratio >= 0.55) return 2;
-      if (ratio >= 0.35) return 1;
-      return 0;
+      if (ratio >= 1.20) return 6;
+      if (ratio >= 0.95) return 3;
+      if (ratio >= 0.65) return 1;
+      return 0;   // SHOW EVERYTHING — deconflict still hides overlaps
     }
     function updateNodeLabelVisibility() {
       const devThresh = window.CODEX_DEV?.settings?.hubThreshold;
@@ -1320,11 +1394,13 @@
         <option value="authors"   ${_currentMode === 'authors'   ? 'selected' : ''}>✎ Authors</option>
         <option value="symbols"   ${_currentMode === 'symbols'   ? 'selected' : ''}>✦ Symbols</option>
         <option value="events"    ${_currentMode === 'events'    ? 'selected' : ''}>★ Events</option>
+        <option value="music"     ${_currentMode === 'music'     ? 'selected' : ''}>♩ Music</option>
         <option value="monuments" ${_currentMode === 'monuments' ? 'selected' : ''}>⛬ Monuments</option>
       </select>
       <button class="ph2-btn" id="ph2-labels" title="Toggle label density">labels: ${_labelsMode}</button>
       <button class="ph2-btn${_tierOverlay ? ' ph2-btn-on' : ''}" id="ph2-tier" title="Color nodes by source-integrity tier (T1=gold T2=silver T3=grey T4=crimson)">tier: ${_tierOverlay ? 'on' : 'off'}</button>
       <button class="ph2-btn${_egoFocus ? ' ph2-btn-on' : ''}" id="ph2-ego" title="Show 1-hop neighbourhood of selected node">ego focus</button>
+      <button class="ph2-btn" id="ph2-fit-100" title="Reset zoom to 100% — fit the full diagram with margin">100%</button>
       <button class="ph2-btn" id="ph2-recenter" title="Re-fit camera to all nodes">recenter</button>
     `;
     rootEl.appendChild(toolbar);
@@ -1355,6 +1431,11 @@
       ev.target.classList.toggle('ph2-btn-on', _egoFocus);
       if (!_egoFocus) _selectedId = null;
       sigma.refresh({ skipIndexation: true });
+    };
+    toolbar.querySelector('#ph2-fit-100').onclick = () => {
+      // True 100% = the default-fit ratio (1.32) that shows the full diagram
+      // including rim labels. Animated so the user sees the snap-back motion.
+      try { sigma.getCamera().animate({ x: 0.5, y: 0.5, ratio: 1.32, angle: 0 }, { duration: 320 }); } catch (e) {}
     };
     toolbar.querySelector('#ph2-recenter').onclick = () => {
       try { sigma.getCamera().animatedReset({ duration: 400 }); } catch (e) { /* ignore */ }
