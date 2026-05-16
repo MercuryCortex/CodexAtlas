@@ -1553,3 +1553,12 @@ Files: rainbow-bridge.md · lion-symbol.md
 Files: sacred-cauldron.md (NEW) · cerridwen.md (STUB, deity) · bran-the-blessed.md (STUB, deity)
 - Note: sacred-number-twelve.md was a goblin-17C substitution — deleted per urgent instructions; sacred-cauldron.md is replacement. sacred-number-five.md and griffin-symbol.md pre-existed (other goblins); no further targets were valid. Cerridwen and bran-the-blessed stubs written to satisfy Wiring Law (dead links in sacred-cauldron.md).
 - 269 total symbols · 498 deities · 0 YAML errors · 0 dead links
+
+## thumbnail-system-2 — bulk OVERRIDES pass (themes + deities + events + persons + documents) — FINISHED 2026-05-16
+**Status: FINISHED**
+- Session started from 1618/2505 (64.3%) after cache regression
+- Bulk OVERRIDES added for: 200+ themes, 100+ deities, 100+ events, 100+ persons, 100+ documents
+- Cache refetched after each pass
+- Final: 2052/2540 (80.8%) — +434 thumbnails this session
+- SUSPECTS.md created at 00_meta/SUSPECTS.md (553 suspects for manual review)
+- commits: 5f5558c, 705a2c8
