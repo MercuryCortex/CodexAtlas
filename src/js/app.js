@@ -570,6 +570,8 @@ function setView(name) {
   // is kept in the DOM for the next (better) attempt at the migration.
   if (window._codexGraph) window._codexGraph.unmount();
   if (_graphPaneEl) _graphPaneEl.style.display = 'none';
+  const _scripturePaneEl = document.getElementById('scripture-reader-pane');
+  if (_scripturePaneEl) _scripturePaneEl.style.display = 'none';
   if (name === 'atlas' && FEATURES.atlasMapV2) {
     svg.node().style.display = 'none';
     if (_atlasPaneEl) _atlasPaneEl.style.display = 'block';
@@ -3687,6 +3689,19 @@ VIEWS.scripture = {
   title: 'Scripture',
   subtitle: 'pick a holy corpus · each book is its own island of named entities · cross-book trails on hover',
   render() {
+    // ----- Reader mode: show annotated text pane instead of the ring -----
+    if (STATE.scriptureReaderMode && window.ScriptureReader) {
+      svg.node().style.display = 'none';
+      const _srPane = document.getElementById('scripture-reader-pane');
+      if (_srPane) {
+        _srPane.style.display = 'flex';
+        ScriptureReader.render(_srPane, STATE.scriptureReaderMode);
+      }
+      document.getElementById('view-controls').innerHTML = '';
+      legend.style('display', 'none').html('');
+      return;
+    }
+
     // ----- Currently-selected corpus key (state on STATE.scriptureCorpus) -----
     if (!STATE.scriptureCorpus) STATE.scriptureCorpus = 'bible';
     let corpusKey = STATE.scriptureCorpus;
@@ -3762,11 +3777,17 @@ VIEWS.scripture = {
         </button>
         <div class="scripture-corpus-popup" id="scripture-corpus-popup">${popupRows}</div>
       </div>
+      <button class="btn btn-mini scripture-read-btn" id="btn-scripture-read" title="Open annotated text reader">✠ Read</button>
       <button class="btn btn-mini" id="btn-scripture-labels">labels: all</button>
       <button class="btn btn-mini" id="btn-scripture-trails">entity trails: on</button>
       <button class="btn btn-mini" id="btn-scripture-recenter">recenter</button>
       <button class="btn btn-mini scripture-lock-chip" id="btn-scripture-lock-clear" style="display:none">↺ clear lock <span class="lock-count" id="scripture-lock-count">0</span></button>
     `;
+
+    document.getElementById('btn-scripture-read').onclick = () => {
+      STATE.scriptureReaderMode = 'genesis-1';
+      setView('scripture');
+    };
 
     // Wire the custom dropdown — button toggles popup; row click picks corpus; outside click closes.
     const corpusBtn = document.getElementById('scripture-corpus-btn');

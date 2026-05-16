@@ -3617,3 +3617,386 @@ body.nav-collapsed .legend { left: calc(var(--nav-w-collapsed) + 24px); }
   line-height: 14px;
 }
 
+/* ============================================================
+   Scripture Reader — #scripture-reader-pane
+   Two-column: annotated text (left) + entity/parallels card (right).
+   ============================================================ */
+
+#scripture-reader-pane {
+  position: absolute;
+  inset: 0;
+  display: none;
+  flex-direction: row;
+  background: var(--bg-0);
+  overflow: hidden;
+  z-index: 1;
+}
+
+.sr-layout {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+/* ---- text column (left 62%) ---- */
+.sr-text-col {
+  flex: 0 0 62%;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  overflow: hidden;
+  border-right: 1px solid var(--border);
+}
+
+/* ---- entity panel column (right) ---- */
+.sr-entity-col {
+  flex: 1;
+  height: 100%;
+  overflow-y: auto;
+  padding: 24px 22px 48px;
+}
+
+/* ---- top bar: back button + text tabs ---- */
+.sr-bar {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 9px 20px;
+  border-bottom: 1px solid var(--border);
+  background: var(--bg-1);
+  flex-shrink: 0;
+}
+
+.sr-back {
+  background: none;
+  border: 1px solid var(--border);
+  color: var(--text-2);
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.05em;
+  padding: 4px 10px;
+  border-radius: 3px;
+  cursor: pointer;
+  transition: color 120ms, border-color 120ms;
+  white-space: nowrap;
+}
+.sr-back:hover { color: var(--gold); border-color: var(--gold-soft); }
+
+.sr-tabs { display: flex; gap: 4px; overflow-x: auto; }
+
+.sr-tab {
+  background: none;
+  border: 1px solid transparent;
+  color: var(--text-3);
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.05em;
+  padding: 4px 12px;
+  border-radius: 3px;
+  cursor: pointer;
+  transition: color 120ms, border-color 120ms, background 120ms;
+  white-space: nowrap;
+}
+.sr-tab:hover { color: var(--text-1); border-color: var(--border); }
+.sr-tab.active {
+  color: var(--gold);
+  border-color: var(--gold-soft);
+  background: rgba(212,165,90,0.07);
+}
+
+/* ---- text header ---- */
+.sr-text-header {
+  padding: 26px 34px 20px;
+  border-bottom: 1px solid var(--border);
+  flex-shrink: 0;
+}
+
+.sr-text-title {
+  font-family: var(--serif);
+  font-size: 25px;
+  font-weight: 600;
+  color: var(--text-0);
+  letter-spacing: 0.01em;
+  line-height: 1.2;
+  margin-bottom: 6px;
+}
+
+.sr-text-meta {
+  font-family: var(--mono);
+  font-size: 11px;
+  color: var(--text-3);
+  letter-spacing: 0.05em;
+  margin-bottom: 14px;
+}
+.sr-text-meta .sr-msep { margin: 0 6px; opacity: 0.4; }
+
+.sr-intro {
+  font-family: var(--serif);
+  font-size: 14.5px;
+  font-style: italic;
+  color: var(--text-2);
+  line-height: 1.72;
+  margin: 0 0 14px;
+  max-width: 66ch;
+}
+
+/* cross-tradition header block */
+.sr-xtrad-block {
+  margin-top: 10px;
+  padding: 11px 13px;
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  background: var(--bg-1);
+}
+.sr-xtrad-label {
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.10em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 7px;
+}
+.sr-xtrad-list { display: flex; flex-direction: column; gap: 6px; }
+.sr-xtrad-item { display: flex; flex-direction: column; gap: 1px; }
+.sr-xtrad-item.linked { cursor: pointer; }
+.sr-xtrad-item.linked:hover .sr-xtrad-name { color: var(--gold); }
+.sr-xtrad-name {
+  font-family: var(--serif);
+  font-size: 13.5px;
+  font-weight: 600;
+  color: var(--text-1);
+  transition: color 120ms;
+}
+.sr-xtrad-note {
+  font-size: 12px;
+  color: var(--text-3);
+  line-height: 1.5;
+}
+
+/* ---- scrollable text body ---- */
+.sr-sections {
+  flex: 1;
+  overflow-y: auto;
+  padding: 26px 34px 56px;
+}
+
+.sr-section { margin-bottom: 30px; }
+
+.sr-section-heading {
+  font-family: var(--mono);
+  font-size: 10.5px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 14px;
+  padding-bottom: 6px;
+  border-bottom: 1px solid rgba(212,165,90,0.18);
+}
+
+.sr-verse {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 10px;
+  line-height: 1.85;
+}
+
+.sr-ref {
+  font-family: var(--mono);
+  font-size: 10px;
+  color: var(--text-3);
+  letter-spacing: 0.03em;
+  padding-top: 3px;
+  flex-shrink: 0;
+  min-width: 52px;
+  text-align: right;
+  opacity: 0.65;
+}
+
+.sr-vtext {
+  font-family: var(--serif);
+  font-size: 17.5px;
+  color: var(--text-1);
+  line-height: 1.85;
+  max-width: 56ch;
+}
+
+/* entity marks */
+mark.sr-ent {
+  background: rgba(212,165,90,0.12);
+  color: var(--gold);
+  border-bottom: 1px solid rgba(212,165,90,0.42);
+  border-radius: 2px;
+  padding: 0 1px;
+  cursor: pointer;
+  font-style: inherit;
+  transition: background 120ms, color 120ms;
+}
+mark.sr-ent:hover,
+mark.sr-ent.active {
+  background: rgba(212,165,90,0.24);
+  color: var(--text-0);
+}
+mark.sr-ent.pinned {
+  background: rgba(212,165,90,0.30);
+  color: var(--text-0);
+  border-bottom-color: var(--gold);
+}
+/* demo mark in empty-state hint — no pointer */
+mark.sr-ent-demo {
+  background: rgba(212,165,90,0.12);
+  color: var(--gold);
+  border-bottom: 1px solid rgba(212,165,90,0.42);
+  border-radius: 2px;
+  padding: 0 1px;
+  font-style: inherit;
+  cursor: default;
+}
+
+/* ---- entity panel ---- */
+.sr-entity-panel { min-height: 100%; }
+
+.sr-panel-empty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 56px 16px;
+  text-align: center;
+  gap: 14px;
+}
+.sr-panel-glyph {
+  font-size: 26px;
+  color: var(--text-3);
+  opacity: 0.35;
+}
+.sr-panel-hint {
+  font-family: var(--serif);
+  font-size: 14px;
+  font-style: italic;
+  color: var(--text-3);
+  line-height: 1.6;
+  max-width: 26ch;
+}
+
+.sr-entity-card { padding: 6px 0 20px; }
+
+.sr-card-top {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  margin-bottom: 5px;
+  flex-wrap: wrap;
+}
+.sr-card-word {
+  font-family: var(--serif);
+  font-size: 22px;
+  font-weight: 600;
+  color: var(--text-0);
+  line-height: 1.2;
+}
+.sr-card-type {
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  padding: 2px 7px;
+  border-radius: 3px;
+  border: 1px solid;
+}
+.sr-type-deity     { color: #c8956a; border-color: rgba(200,149,106,0.4); background: rgba(200,149,106,0.08); }
+.sr-type-symbol    { color: var(--gold); border-color: var(--gold-soft); background: rgba(212,165,90,0.08); }
+.sr-type-theme     { color: #8ab4a0; border-color: rgba(138,180,160,0.4); background: rgba(138,180,160,0.08); }
+.sr-type-tradition { color: #9aa4c8; border-color: rgba(154,164,200,0.4); background: rgba(154,164,200,0.08); }
+.sr-type-event     { color: #b4a8c8; border-color: rgba(180,168,200,0.4); background: rgba(180,168,200,0.08); }
+.sr-type-other     { color: var(--text-2); border-color: var(--border); background: none; }
+
+.sr-card-close {
+  margin-left: auto;
+  background: none;
+  border: none;
+  color: var(--text-3);
+  font-size: 13px;
+  cursor: pointer;
+  padding: 2px 4px;
+  line-height: 1;
+  transition: color 100ms;
+}
+.sr-card-close:hover { color: var(--text-0); }
+
+.sr-card-nodeid {
+  font-family: var(--mono);
+  font-size: 10.5px;
+  color: var(--text-3);
+  letter-spacing: 0.04em;
+  margin-bottom: 12px;
+}
+.sr-card-note {
+  font-family: var(--serif);
+  font-size: 14px;
+  color: var(--text-2);
+  line-height: 1.75;
+  margin-bottom: 16px;
+}
+
+.sr-card-parallels { margin-bottom: 16px; }
+.sr-pl-heading {
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.10em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 8px;
+}
+.sr-parallel {
+  padding: 9px 11px;
+  border: 1px solid var(--border);
+  border-radius: 3px;
+  margin-bottom: 5px;
+  background: var(--bg-1);
+}
+.sr-parallel.linked { cursor: pointer; transition: border-color 120ms; }
+.sr-parallel.linked:hover { border-color: var(--gold-soft); }
+.sr-pl-label {
+  font-family: var(--serif);
+  font-size: 13.5px;
+  font-weight: 600;
+  color: var(--text-1);
+  margin-bottom: 3px;
+  transition: color 120ms;
+}
+.sr-parallel.linked:hover .sr-pl-label { color: var(--gold); }
+.sr-pl-note {
+  font-family: var(--serif);
+  font-size: 12.5px;
+  font-style: italic;
+  color: var(--text-3);
+  line-height: 1.6;
+}
+
+.sr-card-actions { margin-top: 4px; }
+.sr-atlas-btn {
+  background: none;
+  border: 1px solid var(--border);
+  color: var(--text-2);
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.05em;
+  padding: 6px 13px;
+  border-radius: 3px;
+  cursor: pointer;
+  transition: color 120ms, border-color 120ms;
+}
+.sr-atlas-btn:hover { color: var(--gold); border-color: var(--gold-soft); }
+
+/* ---- "Read" button in the scripture ring view controls ---- */
+.btn.btn-mini.scripture-read-btn {
+  border-color: var(--gold-soft);
+  color: var(--gold);
+}
+.btn.btn-mini.scripture-read-btn:hover {
+  background: rgba(212,165,90,0.10);
+  border-color: var(--gold);
+}
+

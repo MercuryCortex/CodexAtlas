@@ -117,6 +117,10 @@
   <div class="atlas-pane" id="atlas-pane" style="display:none">
     <div class="atlas-map" id="atlas-map"></div>
   </div>
+  <!-- Scripture Reader — shown when STATE.scriptureReaderMode is set.
+       Rendered by src/js/views/scripture-reader.js into this pane.
+       Hidden by setView() on every view transition. -->
+  <div id="scripture-reader-pane" style="display:none"></div>
   <div class="legend" id="legend" style="display:none"></div>
   <!-- Tier-overlay distribution legend — shown only when body.tier-overlay-on. Populated by JS on toggle. -->
   <div class="tier-legend" id="tier-legend" aria-live="polite"></div>
@@ -200,6 +204,7 @@
 <script src="src/js/graph/layout.js?v=20260517-unlit-v3"></script>
 <script src="src/js/graph/renderer.js?v=20260517-unlit-v3"></script>
 
+<script src="src/data/scripture-texts.js?v=20260516-scripture-reader"></script>
 <script src="src/js/app.js?v=20260517-unlit-v3"></script>
 <script src="src/js/alchemy/board.js?v=20260517-unlit-v3"></script>
 <script src="src/js/astrology/spine.js?v=20260517-unlit-v3"></script>
@@ -208,5 +213,6 @@
 <script src="src/js/astrology/now.js?v=20260515-now-events"></script>
 <script src="src/js/astrology/astro-pantheon.js?v=20260517-unlit-v3"></script>
 <script src="src/js/dev-panel.js?v=20260517-unlit-v3"></script>
+<script src="src/js/views/scripture-reader.js?v=20260516-scripture-reader"></script>
 </body>
 </html>
