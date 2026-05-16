@@ -4878,6 +4878,17 @@ const ALCHEMY_PRESETS = [
     ],
   },
   {
+    id: 'symbols-forged-in-persecution',
+    category: 'persecution',
+    name: 'Symbols Forged in Persecution',
+    headline: 'The principal visual emblems of five major traditions are all persecution-survival artifacts. The Latin cross: Roman execution instrument so shameful Hengel called it "the most monstrous of deaths" — now a global religion\'s emblem. The Ichthys fish: covert recognition-sign used by hunted Christians in the catacomb era, before Constantine made it safe to display a cross. The wheat grain: Ignatius of Antioch wrote "I am God\'s wheat, ground by the teeth of lions to become the bread of Christ" on his way to execution in 108 CE — the locus classicus martyrdom-theology text. The Dharmachakra: symbol of a tradition expelled from its Indian homeland by persecution, now on the flag of independent India. The Faravahar: emblem of Zoroastrianism, reduced by Arab conquest to a 200,000-person diaspora, now deployed globally as a pre-Islamic resistance symbol by Iranian exiles. The pattern is consistent: the symbol grows more powerful precisely because its tradition was threatened.',
+    picks: [
+      'latin-cross', 'fish-ichthys', 'wheat-grain', 'dharmachakra', 'faravahar',
+      'theme-persecution-as-legitimation', 'martyrdom-theology', 'theme-dying-founder-paradigm',
+      'event-crucifixion-of-jesus-c30ce', 'event-destruction-of-nalanda-1193',
+    ],
+  },
+  {
     id: 'akhenaten-mosaic-distinction',
     category: 'transmission',
     name: 'Akhenaten → The Mosaic Distinction',
