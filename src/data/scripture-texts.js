@@ -6719,3 +6719,380 @@ SCRIPTURE_TEXTS['acts-17-areopagus'] = {
     },
   ]
 };
+
+// ── BATCH 13 ────────────────────────────────────────────────────────────────
+
+SCRIPTURE_TEXTS['luke-15-prodigal'] = {
+  title: 'Luke 15 — The Prodigal Son',
+  shortTitle: 'Prodigal Son',
+  tradition: 'Christianity',
+  date: 'c. 80–90 CE',
+  intro: 'The parable of the Prodigal Son, told only in Luke, is perhaps the most universally resonant story in world literature: a son who squanders his inheritance, "comes to himself," and returns to a father who runs to meet him. It encodes three of the most fundamental spiritual principles — the freedom to fall, the moment of self-recognition as the turning point, and the unconditional love that precedes repentance. The elder brother\'s resentment is as psychologically precise as the father\'s mercy. No other single narrative has attracted such consistent parallel recognition across traditions: the Sufi return to the source, Neoplatonic epistrophe, Buddhist awakening from forgetfulness, Vedantic recognition of one\'s true nature.',
+  crossTradition: [
+    { label: 'Rumi — the Reed Flute separated from the reed bed', textId: 'rumi-masnavi', note: 'The Masnavi opens with the reed flute crying for the reed bed from which it was cut — the Sufi image of the soul\'s separation from its divine origin. The Prodigal Son "came to himself" in a far country; the reed cries because it has been separated. Both are myths of estrangement and longing for return. But where Luke\'s parable emphasizes the father\'s initiative (he sees the son "while he was still far off" and runs), Rumi emphasizes the longing itself as the mode of the divine. The son\'s return and the reed\'s cry are two accounts of the same metaphysical homesickness.' },
+    { label: 'Plotinus — the Soul\'s return (epistrophe) to the One', textId: 'plato-cave', note: 'Plotinus\'s three moments — procession (proodos), remaining (mone), return (epistrophe) — are the philosophical skeleton of Luke 15. The son\'s departure is procession; his time in the far country is remaining in the lowest state; his return is epistrophe. Plotinus insists the soul never fully loses its connection to the One (as the father never stopped loving the son). This Neoplatonic reading was not imposed by later interpreters — the parable and the Enneads were composed within roughly two centuries of each other in the same Hellenistic world and share a common anthropology of the soul\'s falling and return.' },
+    { label: 'Bhagavad Gita 4 — the avatar who descends into the world\'s forgetfulness', textId: 'bhagavad-gita-4', note: 'The Gita\'s doctrine of avatara describes divine consciousness willingly descending into the conditions of finite existence. The Prodigal Son is the inverse movement: the finite soul that has forgotten its divine origin and then remembers. "He came to himself" (v.17) is the New Testament\'s most precise description of what Hindu tradition calls atma-jnana (self-knowledge): the recognition that the self one thought oneself to be (the hungry servant in a far country) is not the true self. The father running toward the returning son mirrors the Gita\'s description of the Lord who is "the same to all beings and especially loving to the devotee."' },
+  ],
+  translations: [
+    { label: 'NRSV', lang: 'en', default: true },
+    { label: 'KJV', lang: 'en' },
+    { label: 'Greek (NA28)', lang: 'grc' },
+  ],
+  sections: [
+    {
+      heading: 'The Departure and the Far Country (15:11–19)',
+      verses: [
+        {
+          ref: '15:11–16',
+          text: 'There was a man who had two sons. The younger of them said to his father, "Father, give me the share of the property that will belong to me." So he divided his property between them. A few days later the younger son gathered all he had and traveled to a distant country, and there he squandered his property in dissolute living. When he had spent everything, a severe famine took place throughout that country, and he began to be in need. So he went and hired himself out to one of the citizens of that country, who sent him to his fields to feed the pigs. He would gladly have filled himself with the pods that the pigs were eating; and no one gave him anything.',
+          textVersions: {
+            nrsv: 'There was a man who had two sons. The younger of them said to his father, "Father, give me the share of the property that will belong to me."',
+            kjv: 'A certain man had two sons: And the younger of them said to his father, Father, give me the portion of goods that falleth to me.',
+            greek: 'Ἄνθρωπός τις εἶχεν δύο υἱούς. καὶ εἶπεν ὁ νεώτερος αὐτῶν τῷ πατρί· Πάτερ, δός μοι τὸ ἐπιβάλλον μέρος τῆς οὐσίας.',
+          },
+          entities: [
+            { word: 'a distant country', node: 'exile', type: 'concept',
+              note: 'The "far country" (chora makra) evokes not merely geographical distance but ontological distance — the condition of a soul that has mistaken the peripheral for the central. Plotinus uses precisely this language in Ennead I.6.8: "the soul\'s fall is into the distant land." The Zohar uses similar imagery for the Shekhinah\'s exile. In all three traditions the "distant country" describes the same metaphysical condition: maximum distance from the divine source.',
+              parallels: [
+                { label: 'Zohar — the Shekhinah in exile', textId: 'zohar-ein-sof', note: 'The Zohar\'s doctrine of Galut haShekhinah (exile of the Divine Presence) is the cosmic version of the prodigal\'s journey into the far country. The divine feminine aspect of God shares the condition of estrangement — accompanying Israel into exile. The prodigal\'s journey and the Shekhinah\'s exile are the same archetype at two scales: individual soul and cosmic divine. The return of the prodigal maps onto the tikkun (repair) that reunifies the exiled Shekhinah with Ein Sof.' },
+              ]
+            },
+          ]
+        },
+        {
+          ref: '15:17–19',
+          text: '"But when he came to himself he said, \'How many of my father\'s hired hands have bread enough and to spare, but here I am dying of hunger! I will get up and go to my father, and I will say to him, \'Father, I have sinned against heaven and before you; I am no longer worthy to be called your son; treat me like one of your hired hands.\'"',
+          textVersions: {
+            nrsv: '"But when he came to himself he said..."',
+            kjv: '"And when he came to himself, he said, How many hired servants of my father\'s have bread enough and to spare..."',
+            greek: 'εἰς ἑαυτὸν δὲ ἐλθὼν εἶπεν· Πόσοι μίσθιοι τοῦ πατρός μου περισσεύουσιν ἄρτων...',
+          },
+          entities: [
+            { word: 'he came to himself', node: 'awakening', type: 'concept',
+              note: '"Coming to himself" (eis heauton de elthon — returning into himself): the son had been outside himself, displaced from his true center. The return begins not with action but with recognition — anamnesis (Platonic recollection): remembering what one truly is. The spiritual journey in almost every tradition has this structure: not acquisition of something new, but recognition of what was always already present.',
+              parallels: [
+                { label: 'Katha Upanishad — the self that is not seen though it sits in the heart', textId: 'katha-upanishad', note: 'Katha 1.2.20: "The self is not born; it does not die." The prodigal "came to himself" — recognized that he was not the hungry servant in the far country. The Katha\'s description of the atman as always present but unseen is the philosophical account of what the parable enacts: the one who has "come to himself" recognizes the self he had been mistaking himself for was never his true self.' },
+                { label: 'Meister Eckhart — "the spark of the soul" that God never leaves', textId: 'meister-eckhart-godhead', note: 'Eckhart\'s Fünklein (spark of the soul) is the ground of the soul that is never separated from the divine, even in the depths of sin or estrangement. The prodigal\'s ability to "come to himself" even from the depths of the pigsty is grounded in precisely this: the soul retains an undestroyed ground that is never wholly alienated from God.' },
+              ]
+            },
+          ]
+        },
+      ]
+    },
+    {
+      heading: 'The Return and the Father\'s Welcome (15:20–24)',
+      verses: [
+        {
+          ref: '15:20–24',
+          text: 'So he set off and went to his father. But while he was still far off, his father saw him and was filled with compassion; he ran and put his arms around him and kissed him. Then the son said to him, "Father, I have sinned against heaven and before you; I am no longer worthy to be called your son." But the father said to his slaves, "Quickly, bring out a robe — the best one — and put it on him; put a ring on his finger and sandals on his feet. And get the fatted calf and kill it, and let us eat and celebrate; for this son of mine was dead and is alive again; he was lost and is found!" And they began to celebrate.',
+          textVersions: {
+            nrsv: 'But while he was still far off, his father saw him and was filled with compassion; he ran and put his arms around him and kissed him.',
+            kjv: 'But when he was yet a great way off, his father saw him, and had compassion, and ran, and fell on his neck, and kissed him.',
+            greek: 'ἔτι δὲ αὐτοῦ μακρὰν ἀπέχοντος εἶδεν αὐτὸν ὁ πατὴρ αὐτοῦ καὶ ἐσπλαγχνίσθη, καὶ δραμὼν ἐπέπεσεν ἐπὶ τὸν τράχηλον αὐτοῦ καὶ κατεφίλησεν αὐτόν.',
+          },
+          entities: [
+            { word: 'his father saw him and was filled with compassion; he ran', node: 'divine-love', type: 'concept',
+              note: 'In the ancient Mediterranean world, a dignified patriarch running was culturally scandalous — undignified, beneath status. The father\'s running is the parable\'s single most theologically explosive detail: God depicted as one who abandons dignity to rush toward the returning soul. The father saw the son "while he was still far off" — divine perception reaches further than human turning.',
+              parallels: [
+                { label: 'Ibn Arabi — the divine yearning (shawq) for self-disclosure in creation', textId: 'ibn-arabi-fusus', note: 'Ibn Arabi\'s "hidden treasure" that desired to be known and therefore created the world is the metaphysical ground of the father running. The son moves one step; the father runs. This asymmetry is precise: the divine response overwhelms the human initiative. Ibn Arabi locates this in the structure of creation — God wanted to be known long before any creature turned toward God.' },
+                { label: 'Matthew 5 — "your Father makes his sun rise on the evil and on the good"', textId: 'matthew-sermon-mount', note: 'The Sermon on the Mount\'s divine perfection — making the sun rise on evil and good alike — explains what the father\'s running means: unconditional love that precedes and overflows moral accounting. Both texts form the NT\'s fullest account of what it means to imitate God: not moral perfection, but non-discriminatory love.' },
+              ]
+            },
+            { word: 'was dead and is alive again; was lost and is found', node: 'resurrection', type: 'concept',
+              note: 'The father\'s description provides the parable\'s theological key. The journey into the far country is a kind of death; the return is resurrection. In the ancient world, exile and reduction to servitude were associated with the realm of the dead. The son who "came to himself" literally came back to life.',
+              parallels: [
+                { label: 'Ezekiel 37 — "these bones shall live"', textId: 'ezekiel-37-dry-bones', note: 'Ezekiel\'s valley of dry bones is the OT\'s most sustained treatment of the death-to-life movement that Luke 15 encapsulates in a phrase. "Was dead and is alive again" — Ezekiel\'s vision dramatizes this at national scale: bones scattered and dry come together, receive flesh, receive breath, stand up, a vast multitude. Both texts insist the restoration is initiated by something external to the dead thing itself.' },
+              ]
+            },
+          ]
+        },
+      ]
+    },
+    {
+      heading: 'The Elder Brother\'s Resentment (15:25–32)',
+      verses: [
+        {
+          ref: '15:25–32',
+          text: '"Now his elder son was in the field; and when he came and approached the house, he heard music and dancing. He called one of the slaves and asked what was going on. He replied, \'Your brother has come, and your father has killed the fatted calf, because he has got him back safe and sound.\' Then he became angry and refused to go in. His father came out and began to plead with him. But he answered his father, \'Listen! For all these years I have been working like a slave for you, and I have never disobeyed your command; yet you have never given me even a young goat so that I might celebrate with my friends. But when this son of yours came back, who has devoured your property with prostitutes, you killed the fatted calf for him!\' Then the father said to him, \'Son, you are always with me, and all that is mine is yours. But we had to celebrate and rejoice, because this brother of yours was dead and has come to life; he was lost and has been found.\'"',
+          textVersions: {
+            nrsv: '"Son, you are always with me, and all that is mine is yours."',
+            kjv: '"Son, thou art ever with me, and all that I have is thine."',
+            greek: 'τέκνον, σὺ πάντοτε μετ᾽ ἐμοῦ εἶ, καὶ πάντα τὰ ἐμὰ σά ἐστιν.',
+          },
+          entities: [
+            { word: 'you are always with me, and all that is mine is yours', node: 'divine-immanence', type: 'concept',
+              note: 'The father\'s response to the elder son\'s resentment: "You are always with me, and all that is mine is yours." The elder son had been in paradise all along without knowing it. He had been in the divine presence and experienced it as servitude because he did not recognize what he was in. This is the structure of maya in Hindu thought and avidya (ignorance) in Buddhist thought: the one who has everything does not recognize it, while the one who squandered everything recognizes, in the pigsty, what he had.',
+              parallels: [
+                { label: 'Chandogya 6.2 — "tat tvam asi": the divine is not elsewhere but here', textId: 'chandogya-621', note: '"You are always with me" has the structure of a mahavakya. The elder son performed religious duty (obedience, labor) without tasting the reality that duty was meant to serve. "Tat tvam asi" — "That art thou" — is the declaration of the same recognition the elder son lacks: the ultimate is not something to be achieved by effort, but recognized as one\'s own deepest nature.' },
+              ]
+            },
+          ]
+        },
+      ]
+    },
+  ]
+};
+
+SCRIPTURE_TEXTS['ezekiel-37-dry-bones'] = {
+  title: 'Ezekiel 37 — Valley of Dry Bones',
+  shortTitle: 'Dry Bones',
+  tradition: 'Judaism',
+  date: 'c. 593–571 BCE',
+  intro: 'Ezekiel 37 records one of the most dramatic prophetic visions in the Hebrew Bible: the prophet transported to a valley filled with dry bones, commanded to prophesy to the bones, and witnessing their gradual reconstitution — bones, sinews, flesh, skin, and finally breath. The key word is ruach — breath, wind, spirit — the same word used in Genesis 2 for the divine breath that animated Adam. Ezekiel 37 is the OT\'s most concentrated convergence of creation, death, resurrection, and divine initiative, generating more explicit cross-tradition resonance than almost any other prophetic text.',
+  crossTradition: [
+    { label: '1 Corinthians 15 — "sown in dishonor, raised in glory"', textId: '1-corinthians-15', note: 'Paul\'s resurrection chapter is in sustained dialogue with Ezekiel 37. The bones that receive flesh and breath in the valley are Paul\'s "natural body" raised as a "spiritual body." The "last Adam became a life-giving spirit" (1 Cor 15:45) echoes Ezekiel\'s climactic moment when divine breath enters the reconstituted bodies and they live.' },
+    { label: 'Surah Ya-Sin 36 — "He who created them first will give them life again"', textId: 'surah-ya-sin', note: 'Surah Ya-Sin\'s argument for resurrection — the one who first created can re-create — parallels Ezekiel\'s appeal to divine creative power: "Come from the four winds, O breath, and breathe into these slain, that they may live." Both texts make resurrection intelligible by analogy with first creation.' },
+    { label: 'Nasadiya Sukta — breath and the first movement of creation', textId: 'nasadiya-sukta', note: 'The Nasadiya\'s primal "breath that breathed without wind" before creation and Ezekiel\'s ruach that breathes life into reconstituted bones share a deep structural homology: both identify breath/wind as the medium of divine creative-restorative power. The Vedic cosmogony moves from non-existence to existence through primordial breath; Ezekiel moves from maximum desolation to restored life through commanded breath.' },
+  ],
+  translations: [
+    { label: 'NRSV', lang: 'en', default: true },
+    { label: 'KJV', lang: 'en' },
+    { label: 'Hebrew (BHS)', lang: 'heb' },
+  ],
+  sections: [
+    {
+      heading: 'The Vision: The Valley of Dry Bones (37:1–8)',
+      verses: [
+        {
+          ref: '37:1–3',
+          text: 'The hand of the Lord came upon me, and he brought me out by the spirit of the Lord and set me down in the middle of a valley; it was full of bones. He led me all around them; there were very many lying in the valley, and they were very dry. He said to me, "Mortal, can these bones live?" I answered, "O Lord God, you know."',
+          textVersions: {
+            nrsv: 'The hand of the Lord came upon me, and he brought me out by the spirit of the Lord and set me down in the middle of a valley; it was full of bones.',
+            kjv: 'The hand of the LORD was upon me, and carried me out in the spirit of the LORD, and set me down in the midst of the valley which was full of bones.',
+            hebrew: 'הָיְתָ֣ה עָלַ֗י יַד־יְהוָה֘ וַיּוֹצִאֵ֣נִי בְרוּחַ יְהוָה֒ וַיְנִיחֵ֙נִי֙ בְּת֣וֹךְ הַבִּקְעָ֔ה וְהִ֖יא מְלֵאָ֥ה עֲצָמֽוֹת׃',
+          },
+          entities: [
+            { word: 'the spirit of the Lord', node: 'holy-spirit', type: 'concept',
+              note: 'Hebrew: ruach YHWH — the same word used in Genesis 1:2 for the spirit hovering over primordial chaos, and Genesis 2:7 for the breath breathed into Adam. Ruach means breath, wind, and spirit simultaneously. The divine creative-animating power is breath at the cosmic scale (wind over the waters), prophetic scale (carrying Ezekiel), and biological scale (animating dry bones). The same word, the same power, the same event at three scales.',
+              parallels: [
+                { label: 'Nasadiya Sukta — "breath breathed windlessly" before creation', textId: 'nasadiya-sukta', note: 'RV 10.129.2: "That One breathed, windlessly, by its own impulse." Ezekiel\'s ruach YHWH and the Nasadiya\'s primordial breathing both identify breath as the cosmological force that precedes and generates. The "breathing windlessly" captures the paradox: ruach is breath and wind, but the primordial ruach breathes before there is wind, animates before there is matter.' },
+                { label: 'Poimandres — the divine Breath that moves on the face of the waters', textId: 'poimandres', note: 'The Hermetic pneuma, the Hebrew ruach, the Greek pneuma in Acts 2, the Sanskrit prana — four traditions\' names for the same recognized reality: a breath-like animating principle that is simultaneously physical and divine. Ezekiel\'s valley is the most dramatic OT enactment of what these traditions describe cosmologically: divine breath making dead matter live.' },
+              ]
+            },
+          ]
+        },
+        {
+          ref: '37:4–8',
+          text: 'Then he said to me, "Prophesy to these bones, and say to them: O dry bones, hear the word of the Lord. Thus says the Lord God to these bones: I will cause breath to enter you, and you shall live. I will lay sinews on you, and will cause flesh to come upon you, and cover you with skin, and put breath in you, and you shall live; and you shall know that I am the Lord." So I prophesied as I had been commanded; and as I prophesied, suddenly there was a noise, a rattling, and the bones came together, bone to its bone. I looked, and there were sinews on them, and flesh had come upon them, and skin had covered them; but there was no breath in them.',
+          textVersions: {
+            nrsv: '"I will cause breath to enter you, and you shall live."',
+            kjv: '"I will cause breath to enter into you, and ye shall live."',
+            hebrew: 'הִנֵּ֨ה אֲנִי֙ מֵבִ֣יא בָכֶ֣ם ר֔וּחַ וִחְיִיתֶֽם׃',
+          },
+          entities: [
+            { word: 'bone to its bone', node: 'resurrection', type: 'concept',
+              note: 'The vision\'s progression — bones, sinews, flesh, skin, then breath — is a reversal of death in exact sequence, as if time runs backward. The reconnection of "bone to its bone" suggests individual identity is preserved through death and restoration, raising the central question Paul addresses in 1 Corinthians 15: in what sense is the resurrection body the same as the body that died?',
+              parallels: [
+                { label: '1 Corinthians 15 — "sown a natural body, raised a spiritual body"', textId: '1-corinthians-15', note: 'Paul\'s extended meditation on the resurrection body in 1 Cor 15:35–49 directly addresses the question Ezekiel raises: what is the relationship between the original body and the raised body? Paul\'s seed-and-plant answer is the philosophical refinement of Ezekiel\'s imagery: the dry bones come together "bone to its bone" (identity preserved), then receive transformation (divine breath) that takes them beyond their original state. Ezekiel provides the vision; Paul provides the theology.' },
+              ]
+            },
+          ]
+        },
+      ]
+    },
+    {
+      heading: 'The Breath: "Come from the Four Winds" (37:9–14)',
+      verses: [
+        {
+          ref: '37:9–10',
+          text: 'Then he said to me, "Prophesy to the breath, prophesy, mortal, and say to the breath: Thus says the Lord God: Come from the four winds, O breath, and breathe upon these slain, that they may live." I prophesied as he commanded me, and the breath came into them, and they lived, and stood on their feet, a vast multitude.',
+          textVersions: {
+            nrsv: '"Come from the four winds, O breath, and breathe upon these slain, that they may live."',
+            kjv: '"Come from the four winds, O breath, and breathe upon these slain, that they may live."',
+            hebrew: 'כֹּה֩ אָמַ֨ר אֲדֹנָ֜י יְהוִ֗ה מֵֽאַרְבַּ֤ע רוּחוֹת֙ בֹּ֣אִי הָר֔וּחַ וּפְחִ֛י בַּהֲרוּגִ֥ים הָאֵ֖לֶּה וְיִֽחְיֽוּ׃',
+          },
+          entities: [
+            { word: 'Come from the four winds, O breath', node: 'holy-spirit', type: 'concept',
+              note: 'The four winds (arba ruachot): in Hebrew cosmology, ruach means both wind and breath, so the four winds ARE the divine breath distributed in all directions — present throughout the cosmos. To call the ruach from the four winds is to concentrate cosmic divine breath into a single act of animation. Compare Acts 2:2 — "suddenly from heaven there came a sound like the rush of a violent wind, and it filled the entire house."',
+              parallels: [
+                { label: 'Bhagavad Gita 11 — "I am the wind among purifiers"', textId: 'bhagavad-gita-11', note: 'In the Vishvarupa vision (Gita 11), Krishna reveals himself as including "the wind among purifiers." The divine identity with wind is not metaphorical — in Vedic cosmology as in Hebrew cosmology, wind/breath is the divine presence most directly experienced in the natural world. Ezekiel calls the ruach from the four winds; Arjuna sees the wind as one of Krishna\'s self-manifestations. Both texts recognize wind/breath as the contact point between the cosmic divine and the creaturely world.' },
+              ]
+            },
+          ]
+        },
+        {
+          ref: '37:11–14',
+          text: 'Then he said to me, "Mortal, these bones are the whole house of Israel. They say, \'Our bones are dried up, and our hope is lost; we are cut off completely.\' Therefore prophesy, and say to them, Thus says the Lord God: I am going to open your graves, and bring you up from your graves, O my people; and I will bring you back to the land of Israel. [...] I will put my spirit within you, and you shall live, and I will place you on your own soil; then you shall know that I, the Lord, have spoken and will act, says the Lord."',
+          textVersions: {
+            nrsv: '"I will put my spirit within you, and you shall live."',
+            kjv: '"I will put my spirit in you, and ye shall live."',
+            hebrew: 'וְנָתַתִּ֤י רוּחִי֙ בָּכֶ֔ם וִחְיִיתֶ֖ם',
+          },
+          entities: [
+            { word: 'I will put my spirit within you', node: 'holy-spirit', type: 'concept',
+              note: '"I will put my ruach within you" — the indwelling of the divine spirit as the mode of resurrection and restoration. The restored people are not merely reconstituted physically but receive the divine breath as an interior principle. This distinction — exterior reconstitution vs. interior divine indwelling — becomes central to NT pneumatology and to Paul\'s contrast between earthly and spiritual body.',
+              parallels: [
+                { label: 'Romans 8 — "the Spirit... will give life to your mortal bodies"', textId: 'romans-8', note: 'Romans 8:11: "If the Spirit of him who raised Jesus from the dead dwells in you, he who raised Christ from the dead will give life to your mortal bodies also through his Spirit that dwells in you." This is the NT\'s most explicit theological commentary on Ezekiel 37:14 "I will put my spirit within you, and you shall live." Paul\'s pneumatology is Ezekiel\'s vision applied to the individual believer through the resurrection of Christ as the paradigmatic case.' },
+                { label: 'John 3 — "you must be born of water and spirit"', textId: 'john-3', note: 'John 3:5–8: "No one can enter the kingdom of God without being born of water and Spirit... the wind blows where it chooses." The Johannine "born of the Spirit" is the individual-scale version of Ezekiel\'s national restoration through divine breath. Both texts insist the transformation required for true life is not achievable through natural means but requires a specific act of divine breath/spirit entering from outside.' },
+              ]
+            },
+          ]
+        },
+      ]
+    },
+  ]
+};
+
+SCRIPTURE_TEXTS['gospel-of-philip'] = {
+  title: 'Gospel of Philip (Nag Hammadi)',
+  shortTitle: 'Gospel of Philip',
+  tradition: 'Christianity',
+  date: 'c. 150–250 CE',
+  intro: 'The Gospel of Philip is a Valentinian Gnostic text discovered at Nag Hammadi in 1945, composed in Greek and surviving only in Coptic translation. It is not a gospel in the narrative sense but a collection of theological meditations organized loosely around seven sacraments, culminating in the "bridal chamber" as the supreme mystery. It engages Christian ritual, Platonic metaphysics, and a theology of names and light that resonates with Kabbalistic light-mysticism, Taoist language about the unnameable, and Tantric concepts of sacred union. Among the Nag Hammadi texts, Philip is the most sustained in constructive theology — not merely critiquing orthodoxy but building a coherent alternative sacramental world.',
+  crossTradition: [
+    { label: 'Zohar Ein Sof — light and darkness before form', textId: 'zohar-ein-sof', note: 'The Gospel of Philip\'s language of divine light — "the light which neither rises nor sets" associated with the bridal chamber — resonates with the Zohar\'s dark flame of Ein Sof: a light that is beyond the ordinary categories of luminosity. Both texts reach for a mode of divine presence that transcends the opposition of light and darkness. Philip: "there is the light of the father... which neither rises nor sets." Zohar: "a dark flame" — a light that cannot be seen because it is beyond all contrast.' },
+    { label: 'Tao Te Ching — the name that cannot be named', textId: 'tao-te-ching-1', note: 'Gospel of Philip: "Names given to the worldly are very deceptive, for they divert our thoughts from what is correct to what is incorrect. Thus one who hears the word \'God\' does not perceive what is correct." Tao Te Ching 1: "The Tao that can be told is not the eternal Tao; the name that can be named is not the eternal name." Both texts make the same apophatic point: language about the ultimate systematically misleads because all language is conditioned and the ultimate is unconditioned.' },
+    { label: 'Shakti-Shiva — the sacred union behind creation', textId: 'brihadaranyaka-neti-neti', note: 'Philip\'s bridal chamber theology — the supreme sacrament as sacred union that restores the primordial androgyne — has a structural parallel in Tantric theology: the universe as the play of Shiva (pure consciousness) and Shakti (creative power), whose separation generates the manifest world and whose union is the ground of liberation. Philip: "When Eve was still with Adam, death did not exist. When she was separated from him, death came into being." Different language for the same metaphysical topology as Shiva-Shakti cosmology.' },
+  ],
+  translations: [
+    { label: 'Isenberg (NHL)', lang: 'en', default: true },
+    { label: 'Coptic (NHC II,3)', lang: 'cop' },
+  ],
+  sections: [
+    {
+      heading: 'Names and the Deception of Language (§ 11–13)',
+      verses: [
+        {
+          ref: 'NHC II,3: 53.23–54.5',
+          text: 'Names given to the worldly are very deceptive, for they divert our thoughts from what is correct to what is incorrect. Thus one who hears the word "God" does not perceive what is correct, but perceives what is incorrect. So also with "the Father," "the Son," "the Holy Spirit," "life," "light," "resurrection," "the Church," and all the rest — people do not perceive what is correct but they perceive what is incorrect, unless they have come to know what is correct.',
+          textVersions: {
+            isenberg: 'Names given to the worldly are very deceptive, for they divert our thoughts from what is correct to what is incorrect.',
+            coptic: 'ⲛⲣⲁⲛ ⲉⲧⲉⲩⲧⲁⲁⲩ ⲛⲛⲕⲟⲥⲙⲓⲕⲟⲛ ⲟⲩⲙⲏⲧⲉ ⲛⲣⲟⲉⲓⲥ ⲛⲉ',
+          },
+          entities: [
+            { word: 'Names given to the worldly are very deceptive', node: 'apophatic-theology', type: 'concept',
+              note: 'The problem is not that people use the wrong names, but that naming itself is structurally misleading when applied to divine realities. The word "God" does not point to what God actually is — it points to the listener\'s preconception of God. This is Valentinian apophatic theology: not merely that God exceeds all positive description (Pseudo-Dionysius) but that the very mechanism of naming misleads by seeming to provide access while actually providing substitutes.',
+              parallels: [
+                { label: 'Tao Te Ching 1 — "the Tao that can be told is not the eternal Tao"', textId: 'tao-te-ching-1', note: 'Laozi\'s opening line and Philip\'s meditation on names are the two clearest ancient statements of what modern philosophers call the problem of religious language. Laozi: naming the Tao gives you not the Tao but a name. Philip: naming God gives you not God but a preconception. Both diagnose the same problem: the ultimate cannot be captured in conditioned language, and the illusion that it can is the primary obstacle to understanding.' },
+                { label: 'Pseudo-Dionysius — "beyond all assertion... and beyond all denial"', textId: 'pseudo-dionysius-mystical-theology', note: 'Pseudo-Dionysius\'s apophatic method is the orthodox Christian version of what Philip says in a Gnostic idiom. Dionysius: God is beyond all assertion and all denial. Philip: the name "God" does not give you what is correct. Both make the same philosophical point, though Philip\'s implication is more radical: it is not just that God exceeds names but that using the name "God" actively misleads.' },
+              ]
+            },
+          ]
+        },
+      ]
+    },
+    {
+      heading: 'God as Dyer: Theosis through Transformation (§ 67)',
+      verses: [
+        {
+          ref: 'NHC II,3: 73.1–73.19',
+          text: '"The Lord said: Blessed is he who is before he came into being. For he who is, has been and shall be." [...] God is a dyer. As the good dyes, which are called "true," dissolve with the things dyed in them, so it is with those whom God has dyed. Since his dyes are immortal, they become immortal by means of his colors. Now God dips what he dips in water.',
+          textVersions: {
+            isenberg: 'God is a dyer. As the good dyes, which are called "true," dissolve with the things dyed in them, so it is with those whom God has dyed.',
+          },
+          entities: [
+            { word: 'Blessed is he who is before he came into being', node: 'divine-nature', type: 'concept',
+              note: '"He who is, has been and shall be" echoes the divine name in Exodus 3:14 (Ehyeh asher Ehyeh). The "blessed" one who existed before coming into being is the Gnostic understanding of the pneumatic individual whose true self pre-exists temporal incarnation — the divine spark that predates the demiurgic creation.',
+              parallels: [
+                { label: 'Bhagavad Gita 4 — "I know my births in former times"', textId: 'bhagavad-gita-4', note: 'Gita 4.5: Krishna\'s knowledge of his own pre-existence and the continuity of divine consciousness through multiple incarnations parallels Philip\'s "blessed is he who is before he came into being." In both traditions, the spiritually realized being is in contact with the dimension of existence that precedes and transcends the specific embodied life.' },
+              ]
+            },
+            { word: 'God is a dyer', node: 'divine-nature', type: 'metaphor',
+              note: 'The dye dissolves into the fabric so completely that fabric and dye become one continuous reality — neither loses its identity but they become inseparable. This is Philip\'s sacramental theology: the divine does not remain external to the human but interpenetrates it, transforming it while becoming fully present within it. The "true dyes" that are "immortal" make the dyed thing immortal: theosis (divinization) described through craft metaphor.',
+              parallels: [
+                { label: 'Meister Eckhart — "God and I, we are one in the knowing"', textId: 'meister-eckhart-godhead', note: 'Eckhart\'s radical unity — "the soul becomes God by participation, receiving the same nature and life" — is the medieval German mystical version of Philip\'s dyer image. For Philip, the divine "dye" enters the fabric of the soul and cannot be removed; for Eckhart, the soul in the ground of the Godhead becomes indistinguishable from the divine. Both push divine-human union beyond what mainstream orthodoxy would permit.' },
+              ]
+            },
+          ]
+        },
+      ]
+    },
+    {
+      heading: 'The Bridal Chamber: The Supreme Mystery (§ 75–76)',
+      verses: [
+        {
+          ref: 'NHC II,3: 81.34–82.26',
+          text: 'The Lord did everything in a mystery, a baptism and a chrism and a eucharist and a redemption and a bridal chamber. [...] The bridal chamber is not for the animals, nor is it for the slaves, nor for defiled women; but it is for free men and virgins. [...] Those who are separated will unite and will be filled. Everyone who will enter the bridal chamber will kindle the light, for it burns just as in marriages which are [...] at night. That fire burns only at night and is put out. But the mysteries of this marriage are perfected rather in the day and the light. Neither that day nor its light ever sets.',
+          textVersions: {
+            isenberg: 'The bridal chamber is not for the animals, nor is it for the slaves, nor for defiled women; but it is for free men and virgins.',
+          },
+          entities: [
+            { word: 'the mysteries of this marriage are perfected rather in the day and the light', node: 'mystical-union', type: 'concept',
+              note: 'The bridal chamber\'s light "neither rises nor sets" because it is not solar (created, temporal) but the light of the divine pleroma (fullness). The marriage consummated in this light reverses the primordial division: "When Eve was still with Adam, death did not exist." The bridal chamber reunites what the separation caused.',
+              parallels: [
+                { label: 'Zohar — the sacred union of the divine masculine and feminine', textId: 'zohar-ein-sof', note: 'The Zohar\'s central erotic-mystical theme — the union of the Holy Blessed One with the Shekhinah — parallels Philip\'s bridal chamber. Both use sacred marriage as the central metaphor for divine completeness and as the model for the mystic\'s own union with the divine. The Zohar: Israel performing commandments with proper intention facilitates the divine masculine-feminine union. Philip: the bridal chamber sacrament enacts reunification of separated divine halves. Different traditions, same metaphysical topology.' },
+              ]
+            },
+          ]
+        },
+      ]
+    },
+  ]
+};
+
+SCRIPTURE_TEXTS['julian-of-norwich'] = {
+  title: 'Julian of Norwich — Revelations of Divine Love',
+  shortTitle: 'Julian of Norwich',
+  tradition: 'Christianity',
+  date: 'c. 1373–1393 CE',
+  intro: 'Julian of Norwich (c. 1343–c. 1416) received sixteen "showings" during a near-death illness in May 1373 and spent the next twenty years writing and rewriting her account of them. The resulting Revelations of Divine Love is the first book written in English by a woman, and among the most original works of Christian mysticism in any language. Its central themes are God\'s unconditional love, the re-framing of sin and suffering, the maternal love of Christ, and the paradox of "all shall be well" in the face of undeniable evil and pain. Julian does not resolve the tension between Church teaching on damnation and her visions of divine love — she holds the tension as itself a gift. Her phrase "all shall be well, and all shall be well, and all manner of thing shall be well" has become one of the most quoted lines in English religious literature.',
+  crossTradition: [
+    { label: 'Meister Eckhart — poverty of spirit and the ground of the soul', textId: 'meister-eckhart-godhead', note: 'Julian and Eckhart are exact contemporaries in fourteenth-century Christian mysticism. Both reach the same radical conclusion by different paths: the deepest ground of the soul is identical with the divine ground, sin does not fundamentally alter this relationship, and suffering serves a purpose that exceeds ordinary theodicy. Eckhart: "the ground of God and the ground of the soul are one ground." Julian: "in every soul to be saved there is a godly will that never consents to sin."' },
+    { label: 'Buddhist metta — "may all beings be happy" as universal loving-kindness', textId: 'dhammapada-1', note: '"All shall be well" — Julian\'s declaration is not naive optimism but mystical certainty arising from direct vision of divine love. The structure resembles Buddhist metta (loving-kindness) practice: extending loving-kindness to all beings without exception. Julian\'s "all manner of thing shall be well" has the same comprehensive scope: not some things, not most things, but all manner of thing.' },
+    { label: 'Isha Upanishad — "he who sees all beings in his own Self loses all fear"', textId: 'isha-upanishad', note: 'Isha 6–7: "he who sees all beings in his own Self, and his Self in all beings, loses all fear." Julian: "Love was His meaning. Who shewed it thee? Love. What shewed He thee? Love. Wherefore it was shewed? For Love." Both arrive at a vision of universal encompassing love (divine or atmic) that dissolves the ground of anxiety. The Isha\'s freedom from fear through seeing the Self everywhere and Julian\'s "all shall be well" through seeing Love everywhere are two cultural articulations of the same contemplative realization.' },
+  ],
+  translations: [
+    { label: 'Julian (Middle English modernized)', lang: 'en', default: true },
+    { label: 'Original Middle English', lang: 'enm' },
+  ],
+  sections: [
+    {
+      heading: 'The Hazelnut: Everything That Is Made (Chapter 5)',
+      verses: [
+        {
+          ref: 'Revelations, Ch. 5',
+          text: 'He shewed me a little thing, the quantity of an hazel-nut, in the palm of my hand; and it was as round as a ball. I looked thereupon with eye of my understanding, and thought: What may this be? And it was answered generally thus: It is all that is made. I marvelled how it might last, for methought it might suddenly have fallen to naught for little. And I was answered in my understanding: It lasteth, and ever shall last, for God loveth it; and so hath every thing being by the love of God.',
+          textVersions: {
+            modernized: 'He shewed me a little thing, the quantity of an hazel-nut, in the palm of my hand; and it was as round as a ball.',
+            middleEnglish: 'He shewed me a littil thing, the quantitie of an hesil nutt, lying in the pawme of my hand, and to my undirstanding that it was as rounde as a balle.',
+          },
+          entities: [
+            { word: 'It lasteth, and ever shall last, for God loveth it', node: 'divine-love', type: 'concept',
+              note: 'The hazelnut vision is Julian\'s most concentrated statement of cosmological love: the entirety of created existence is held in being solely by the fact that God loves it. Not "God sustains it" but "God loveth it" — love is the ontological ground, not power. This is the Christian mystical tradition\'s most radical re-framing of creation: existence as the ongoing result of divine love rather than divine will.',
+              parallels: [
+                { label: 'Acts 17:28 — "In him we live and move and have our being"', textId: 'acts-17-areopagus', note: 'Acts 17:28 and Julian\'s hazelnut are two expressions of the same panentheistic vision: all created existence held within the divine. Paul locates existence within God; Julian\'s hazelnut is held in the divine palm. Where Paul\'s formulation is ontological (we exist in God), Julian\'s is affective: what holds the hazelnut in existence is love. The universe exists not because it must, but because it is loved.' },
+                { label: 'Isha Upanishad — "all this is pervaded by the Lord"', textId: 'isha-upanishad', note: 'Isha 1: "All this — whatever moves in this moving world — is to be pervaded by the Lord." Julian\'s hazelnut — everything that is made, held in the divine palm, sustained by love — and the Isha\'s divine pervasion of all things share the metaphysical claim: the divine is not one entity among others but the field within which all entities exist. Isha\'s "pervaded" emphasizes divine immanence; Julian\'s "God loveth it" emphasizes divine care — a complementary double description of the divine-world relation.' },
+              ]
+            },
+          ]
+        },
+      ]
+    },
+    {
+      heading: '"All Shall Be Well" — The Great Promise (Chapter 27 & 32)',
+      verses: [
+        {
+          ref: 'Revelations, Ch. 27',
+          text: 'In this time our Lord shewed me a spiritual sight of His homely loving. I saw that He is to us everything that is good and comfortable for us: He is our clothing that for love wrappeth us and windeth us, halseth us and all becloseth us, hangeth about us for tender love, that He may never leave us.',
+          textVersions: {
+            modernized: 'He is our clothing that for love wrappeth us and windeth us.',
+            middleEnglish: 'He is our clothing, that for love wappeth us and windeth us, halseth us and all becloseth us, hangeth about us for tender love.',
+          },
+          entities: [
+            { word: 'He is our clothing that for love wrappeth us', node: 'divine-love', type: 'concept',
+              note: 'Julian\'s image of the divine as clothing — wrapping, winding, embracing, enclosing — is her most embodied image of divine immanence. We do not live beside the divine or near it; we are clothed in it. The specificity of the verbs — wrappeth, windeth, halseth (embraces), becloseth, hangeth about — conveys an intimacy that theological propositions about omnipresence cannot. Compare Eckhart\'s ground of the soul where divine and human are indistinguishable, but Julian\'s version is tactile and maternal rather than intellectual.',
+            },
+          ]
+        },
+        {
+          ref: 'Revelations, Ch. 32',
+          text: '"It behoved that there should be sin; but all shall be well, and all shall be well, and all manner of thing shall be well." [...] And thus in this time our Lord answered to all the Questions and Doubts that I could raise, saying full comfortably: I may make all things well, I can make all things well, I will make all things well, and I shall make all things well; and thou shalt see thyself that all manner of thing shall be well.',
+          textVersions: {
+            modernized: '"It behoved that there should be sin; but all shall be well, and all shall be well, and all manner of thing shall be well."',
+            middleEnglish: '"It behoved that there should be sinne; but all shall be well, and all shall be well, and all manner of thing shall be well."',
+          },
+          entities: [
+            { word: 'all shall be well, and all shall be well, and all manner of thing shall be well', node: 'divine-love', type: 'concept',
+              note: 'This triple repetition is not optimism about earthly conditions but mystical certainty about the final nature of reality: that love, which Julian has directly experienced as the ground of existence, is also its final word. The secondary formulation — "I may... I can... I will... I shall make all things well" — is even more striking: five different temporal-modal registers of the same promise, ensuring no loophole. Julian is not arguing; she is reporting direct vision.',
+              parallels: [
+                { label: 'Romans 8 — "all things work together for good for those who love God"', textId: 'romans-8', note: 'Romans 8:28 and Julian\'s "all shall be well" are the two most sweeping statements of providential optimism in the Christian tradition. Both are theologically costly: Paul faces persecution; Julian has just acknowledged sin is real and necessary. Both claim that the final movement of existence — under divine love/providence — is toward wholeness. Paul\'s is a theological claim; Julian\'s is a report of direct mystical vision.' },
+                { label: 'Buddhist apokatastasis — the Bodhisattva vow to liberate all beings', textId: 'heart-sutra', note: 'The Bodhisattva vow — "however innumerable sentient beings, I vow to save them all" — is the Buddhist structural parallel to Julian\'s "all manner of thing shall be well." Both statements refuse to make exceptions. Julian\'s "all manner of thing" and the Bodhisattva\'s "innumerable sentient beings" have the same maximally inclusive scope: not most, not many, but all. The metaphysical grounding differs (divine love vs. Buddha-nature), but the universalist impulse is identical.' },
+                { label: 'Pseudo-Dionysius — "God is the cause of all things and thus is all things"', textId: 'pseudo-dionysius-mystical-theology', note: 'The most intellectually rigorous basis for Julian\'s "all shall be well" is Pseudo-Dionysius\'s apophatic universalism: if God is the cause of all things and in a sense is all things (as cause), then the final word about any created thing is a word about its relation to the absolute Good. Evil, for Dionysius, has no ultimate ontological status — it is a privation of being. Julian\'s experiential certainty is the direct mystical apprehension of this metaphysical truth: the utter contingency of evil and the ultimate primacy of divine love.' },
+              ]
+            },
+          ]
+        },
+      ]
+    },
+  ]
+};

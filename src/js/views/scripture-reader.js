@@ -37,6 +37,7 @@ window.ScriptureReader = (function () {
     'revelation-12':      { religion:'Christianity', group:'New Testament',          canon:'All Canons',          sort:50 },
     'matthew-sermon-mount': { religion:'Christianity', group:'New Testament',        canon:'All Canons',          sort:25 },
     'acts-17-areopagus':  { religion:'Christianity', group:'New Testament',          canon:'All Canons',          sort:55 },
+    'luke-15-prodigal':   { religion:'Christianity', group:'New Testament',          canon:'All Canons',          sort:60 },
     // ── Christianity — Ethiopian Canon ──────────────────────────────
     'book-of-enoch':      { religion:'Christianity', group:'Ethiopian Canon',        canon:'Ethiopian Orthodox',  sort:10 },
     // ── Christianity — Christian Mysticism ──────────────────────────
@@ -45,7 +46,11 @@ window.ScriptureReader = (function () {
     // ── Christianity — Gnostic / Nag Hammadi ────────────────────────
     'gospel-of-thomas':   { religion:'Christianity', group:'Gnostic / Nag Hammadi', canon:'Non-canonical',       sort:10 },
     'apocryphon-of-john': { religion:'Christianity', group:'Gnostic / Nag Hammadi', canon:'Non-canonical',       sort:20 },
+    'gospel-of-philip':   { religion:'Christianity', group:'Gnostic / Nag Hammadi', canon:'Non-canonical',       sort:30 },
+    // ── Christianity — Medieval Mysticism ───────────────────────────
+    'julian-of-norwich':  { religion:'Christianity', group:'Medieval Mysticism',    canon:'Catholic Mysticism',  sort:10 },
     // ── Judaism ─────────────────────────────────────────────────────
+    'ezekiel-37-dry-bones': { religion:'Judaism',     group:'Nevi\'im (Prophets)',   canon:'Hebrew Bible',        sort:10 },
     'sefer-yetzirah':     { religion:'Judaism',       group:'Kabbalah',              canon:'Rabbinic / Kabbalistic', sort:10 },
     'zohar-ein-sof':      { religion:'Judaism',       group:'Kabbalah',              canon:'Rabbinic / Kabbalistic', sort:20 },
     // ── Islam ───────────────────────────────────────────────────────
@@ -107,12 +112,13 @@ window.ScriptureReader = (function () {
   ];
 
   const GROUP_ORDER = {
-    'Christianity':    ['Old Testament', 'New Testament', 'Ethiopian Canon', 'Christian Mysticism', 'Gnostic / Nag Hammadi'],
+    'Christianity':    ['Old Testament', 'New Testament', 'Ethiopian Canon', 'Christian Mysticism', 'Gnostic / Nag Hammadi', 'Medieval Mysticism'],
     'Hinduism':        ['Vedic Hymns', 'Upanishads', 'Epics'],
     'Buddhism':        ['Pali Canon', 'Mahayana', 'Vajrayana'],
     'Taoism':          ['Classical Taoism', 'Chinese Classics'],
     'Ancient Egyptian':['Temple Texts', 'Funerary Texts'],
     'Mesopotamian':    ['Sumerian', 'Babylonian'],
+    'Judaism':         ['Nevi\'im (Prophets)', 'Kabbalah'],
     'Islam':           ['Quran', 'Sufism'],
     'Hermeticism':     ['Corpus Hermeticum'],
     'Greek Philosophy':['Plato', 'Neoplatonism', 'Mystery Traditions'],
