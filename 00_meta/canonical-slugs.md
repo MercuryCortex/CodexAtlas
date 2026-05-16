@@ -17,11 +17,25 @@ canonical-slug
 ## Currently resolved slugs (auto-seeded — every existing file)
 
 
-### alphabet (3 nodes)
+### alphabet (17 nodes)
 
+- `alphabet-avestan`
+- `alphabet-brahmi-origin`
+- `alphabet-creation-by-word`
 - `alphabet-cuneiform-sacred`
+- `alphabet-devanagari-sacred`
+- `alphabet-elder-futhark`
+- `alphabet-gematria-hebrew`
+- `alphabet-huruf-muqattaat`
+- `alphabet-ilm-al-huruf`
+- `alphabet-isopsephy-greek`
 - `alphabet-medu-netjer`
+- `alphabet-ogham`
+- `alphabet-phoenician`
+- `alphabet-sacred-language-convergence`
 - `alphabet-sefer-yetzirah`
+- `alphabet-tibetan-tantric`
+- `alphabet-ugaritic`
 
 ### deity (500 nodes)
 
@@ -2516,7 +2530,7 @@ canonical-slug
 - `zep-tepi`
 - `zeus-pantokrator-transmission`
 
-### tradition (153 nodes)
+### tradition (155 nodes)
 
 - `tradition-advaita-vedanta`
 - `tradition-african-traditional`
@@ -2564,6 +2578,7 @@ canonical-slug
 - `tradition-freemasonry`
 - `tradition-gnosticism`
 - `tradition-greco-buddhism`
+- `tradition-greek-mystery-religion`
 - `tradition-greek-religion`
 - `tradition-hashshashin`
 - `tradition-hasidism`
@@ -2661,6 +2676,7 @@ canonical-slug
 - `tradition-theravada-buddhism`
 - `tradition-traditionalism-perennialist`
 - `tradition-vajrayana-buddhism`
+- `tradition-vedic`
 - `tradition-vedic-hinduism`
 - `tradition-vodou-haitian`
 - `tradition-western-astrology`
@@ -2678,12 +2694,14 @@ canonical-slug
 
 | Refs | Dead target | Suggested canonical (existing) |
 |---:|---|---|
+| 6 | `tradition-tantra` | `tradition-shia-islam` |
+| 4 | `tradition-tibetan-buddhism` | `tradition-portuguese-hermeticism` |
+| 4 | `tradition-persian-zoroastrian` | `tradition-portuguese-hermeticism` |
+| 3 | `tradition-vajrayana` | `tradition-shia-islam` |
 | 3 | `guru-arjan-dev-ji` | `guru-arjan` |
-| 3 | `alphabet-ugaritic` | `alphabet-cuneiform-sacred` |
+| 3 | `alphabet-letter-as-cosmos` | `alphabet-medu-netjer` |
 | 2 | `yam-canaanite` | `astarte-canaanite` |
 | 2 | `was-sceptre` | `was-scepter` |
-| 2 | `tradition-rosicrucian` | `tradition-candomble` |
-| 2 | `tradition-lingayat` | `tradition-candomble` |
-| 2 | `tradition-islamic-philosophy` | `tradition-neo-confucianism` |
-| 2 | `phase-2-004-1-2-chronicles` | `phase-2-007-hebrew-bible-e-source` |
+| 2 | `tradition-rosicrucian` | `tradition-armenian-apostolic` |
+| 2 | `tradition-lingayat` | `tradition-shia-islam` |
 | 2 | `divine-names` | `divine-name` |

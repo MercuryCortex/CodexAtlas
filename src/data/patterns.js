@@ -439,4 +439,23 @@ window.PATTERNS_DATA = [
     summary: 'Cuneiform (c. 3200 BCE): invented by Sumerian temple accountants for the redistributive economy of the goddess Inanna\'s storehouse. Egyptian hieroglyphs (c. 3100 BCE): named medu netjer ("Words of God"), used first for temple walls and divine inscriptions. Proto-Sinaitic (c. 1850 BCE): adapted from Egyptian hieroglyphs by Semitic workers at a temple to the goddess Hathor in the Sinai mines. Chinese characters (c. 1200 BCE): first known use is oracle bones — divination records of ritual questions posed to ancestors and deities. Mayan glyphs (c. 300 BCE): royal-divine inscriptions on monuments. The pattern: writing is not invented for commerce or communication but for divine accounting and sacred communication; the mercantile and administrative uses are secondary adaptations of an originally sacred technology.',
   },
 
+  // ─── Script and Alphabet Mysteries ───────────────────────────────────────
+
+  {
+    id: 'letter-number-triad',
+    title: 'Gematria / Isopsephy / Abjad — Three Traditions, One Phoenician Alphabet',
+    category: 'TRANSMISSION',
+    section: 'Script and Alphabet Mysteries',
+    sources: ['alphabet-gematria-hebrew', 'alphabet-isopsephy-greek', 'alphabet-ilm-al-huruf'],
+    summary: 'Hebrew Gematria (c. 200 BCE), Greek Isopsephy (c. 500 BCE), and Arabic Abjad numerology (c. 700 CE) are three independent mystical systems built on the same scaffold: the Phoenician letter-order (c. 1050 BCE), which is the common ancestor of all three alphabets. Three civilizations independently discovered that their inherited letter-order was also a counting system, and each built a cosmological framework on the discovery — without realizing they were activating the same ancient Phoenician inheritance. The number-mysticism was latent in the alphabet from its invention.',
+  },
+  {
+    id: 'letters-as-creation-tools',
+    title: 'Letters as Creation-Materials — Three Independent Alphabetic Cosmologies',
+    category: 'CONVERGENCE',
+    section: 'Script and Alphabet Mysteries',
+    sources: ['alphabet-sefer-yetzirah', 'music-valentinian-pleroma-harmony', 'alphabet-ilm-al-huruf'],
+    summary: 'Three separate mystical traditions claim that letters — not words, not ideas, but individual letters — are the material of divine creation: (1) Sefer Yetzirah (Jewish, c. 3rd–6th c. CE): 22 Hebrew letters are the creation-materials God used to make the universe; (2) Marcus the Magician (Valentinian Gnostic, c. 2nd c. CE): Truth uttered the 24 Greek letters as the structure of the divine Pleroma; (3) Ibn Arabi\'s \'Ilm al-Huruf (Islamic, c. 13th c. CE): the 28 Arabic letters are the "breath of the Merciful" — God\'s exhalation that creates all Being. Three traditions, three language-sets, zero documented contact, structurally identical claim: the alphabet is a cosmological blueprint.',
+  },
+
 ];

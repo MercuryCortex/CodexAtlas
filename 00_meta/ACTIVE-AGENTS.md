@@ -4,6 +4,14 @@ _Hand-maintained. Each agent currently working in the vault appends a claim bloc
 
 ---
 
+## ~~alphabet-ancient-scripts-1 — 4 ancient-scripts nodes — 2026-05-17 — FINISHED~~
+- ~~Owned: `11_alphabets/alphabet-cuneiform-sacred.md` (NEW full), `11_alphabets/alphabet-medu-netjer.md` (NEW full), `11_alphabets/alphabet-ugaritic.md` (NEW full), `11_alphabets/alphabet-phoenician.md` (NEW full)~~
+- ~~Also touched: `src/data/patterns.js` (2 new entries: scribal-deity-triad + script-starts-sacred), `09_symbols/proto-sinaitic.md` (2 new cross-edges), `03_deities/thoth.md` (Alphabet Layer section), `03_deities/nabu.md` (Alphabet Layer section)~~
+- ~~Status: FINISHED — commit `43a5ed1`. Build: 15834 edges · 0 YAML errors · 0 dead links introduced~~
+- ~~MASSIVE WIN edges: (1) scribal-deity-triad — Nabu/Thoth/Hermes Trismegistus: three independent ancient civilizations each generated the same divine messenger/scribe/wisdom figure associated with Mercury; (2) El/Yahweh continuity — Ugaritic El is Biblical El, same name/title-cluster/divine-council, Yahweh appears in early texts as member of El's council (Deut 32:8-9 DSS — T2 Cross 1973, Smith 2002); (3) full alphabet transmission chain — Egyptian hieroglyphs → acrophonic principle → Proto-Sinaitic (Sinai miners at Hathor temple) → Phoenician → Greek (vowels added) + Aramaic (Jewish mysticism + Zoroastrian transmission) + Arabic (Quran); (4) Phoenician letter names as Semitic cosmological catalogue surviving meaninglessly in Greek — every Western child learning A-B-C recites ox-house-camel, a list whose pictographic origin is Egyptian medu netjer theology~~
+
+---
+
 ## alphabet-cosmos-architecture-1 — 3 HYPER WIN synthesis nodes — IN PROGRESS
 - Owns: 11_alphabets/alphabet-creation-by-word.md (NEW), 11_alphabets/alphabet-sacred-language-convergence.md (NEW), 11_alphabets/alphabet-letter-as-cosmos.md (NEW)
 - Also touches: src/data/patterns.js (2 new entries), src/data/observations.js (2 new entries)
