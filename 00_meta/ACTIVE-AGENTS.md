@@ -4,6 +4,13 @@ _Hand-maintained. Each agent currently working in the vault appends a claim bloc
 
 ---
 
+## ~~music-eastasia-1 — 5 East Asian music cosmology nodes — 2026-05-16 — FINISHED~~
+- ~~Owned: `10_music/music-chinese-pentatonic-cosmology.md` (NEW), `10_music/music-yayue-ritual-music.md` (NEW), `10_music/music-chinese-court-instruments.md` (NEW), `10_music/music-gagaku-japanese.md` (NEW), `10_music/music-korean-aak.md` (NEW)~~
+- ~~Status: FINISHED — commit `79edeea`. Build: 38 music nodes · 15713 edges · 0 dead links introduced.~~
+- ~~Key findings: East Asian preservation-by-periphery pattern (Japan + Korea preserved Tang-era Chinese court music China itself lost) documented as parallel-form to Boethius transmission. Wǔyīn ↔ Pythagorean parallel-form (both derive cosmic theory from physical measurement of vibrating medium). Confucian yayue ↔ Platonic modes parallel-form (music censorship as governing philosophy, independent development). Bāyīn material-as-cosmological-signifier unique among all world instrument taxonomies.~~
+
+---
+
 ## ~~opus-pantheon-v2-harmony-1 — harmonious node spread + drag + hull fill parity + edge coverage — started 2026-05-17 — DONE~~
 - ~~Owned: `src/js/views/pantheon-v2.js`, `src/styles/app.css`, `index.html`~~
 - ~~Status: done — commit `614454f`. See STATUS.md.~~
