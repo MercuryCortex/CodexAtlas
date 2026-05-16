@@ -4,6 +4,13 @@ _Hand-maintained. Each agent currently working in the vault appends a claim bloc
 
 ---
 
+## ~~music-wiring-fix + raga-specific-1 + lyre-cosmos-1 — 2026-05-16 — FINISHED~~
+- ~~build_data.py _strip_inline wikilink fix; tradition-siberian-shamanism stub; music-greek-musical-ethos dead-link fix~~
+- ~~7 new nodes: music-raga-bhairav-dawn, music-raga-yaman-sunset, music-natya-shastra-rasa-system, music-7-string-lyre-cosmos, music-apollo-lyre-sun, music-orphic-lyre-cosmic, music-planetary-modes-medieval~~
+- ~~Status: FINISHED — 94 music nodes · 16273 edges · 320 cross-layer music edges · 0 dead~~
+
+---
+
 ## ~~sonnet-tibetan-music-1 — 4 Tibetan Sonic/Bardo music nodes — 2026-05-16 — FINISHED~~
 - ~~Owned: `10_music/music-tibetan-sound-cosmology.md` (NEW full hub), `10_music/music-gyuto-monks-multiphonic.md` (NEW full), `10_music/music-bardo-thodol-sonic.md` (NEW full), `10_music/music-tibetan-singing-bowls.md` (NEW full)~~
 - ~~Status: FINISHED — build: 91 music nodes · 16246 edges · 0 dead links introduced~~

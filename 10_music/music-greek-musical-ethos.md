@@ -5,7 +5,7 @@ type: music
 music-type: theory-concept
 status: full
 tier: 1
-tradition: tradition-classical-greek-religion
+tradition: tradition-greek-religion
 date_earliest: -380
 date_latest: -320
 tags:
@@ -30,11 +30,11 @@ cross-music-edges:
     note: Confucian yayue theory makes the same argument (music shapes moral character, corrupts or ennobles the state) that Plato makes in the Republic — both arrived at theory without crossing into cosmological performance obligation
 
 music-tradition-context:
-  - [[tradition-classical-greek-religion]]
-  - [[tradition-pythagoreanism]]
+  - [[tradition-greek-religion]]
+  - [[tradition-pythagorean]]
 
 music-appearances:
-  - [[phase-3-007-republic]]
+  - [[phase-3-002-plato-dialogues]]
 
 refs:
   - "Plato, Republic Books III and X (c. 380 BCE) — foundational prohibition of Lydian/Mixolydian modes; permission of Dorian and Phrygian"
@@ -103,4 +103,4 @@ The comparison reveals the specific conditions under which a theory of music-cos
 - [[music-raga-cosmology]]: The parallel that completed what ethos theory started — same intuition, different institutional outcome
 - [[music-yayue-ritual-music]]: Confucian parallel — same argument about music and moral/cosmic order, also remained regulatory rather than becoming cosmological performance law
 - [[music-music-of-spheres]]: The broader Greek music-cosmos framework within which ethos theory sits
-- [[tradition-pythagoreanism]]: Pythagorean number-music cosmology provides the theoretical background for why modes affect the soul
+- [[tradition-pythagorean]]: Pythagorean number-music cosmology provides the theoretical background for why modes affect the soul

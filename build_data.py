@@ -39,6 +39,8 @@ def _strip_inline(v: str):
         return ""
     if v == "[]":
         return []
+    if v.startswith("[[") and v.endswith("]]"):
+        return v  # wikilink — preserve as-is so wikilinks() can extract the target
     if v.startswith("[") and v.endswith("]"):
         inner = v[1:-1].strip()
         if not inner:
