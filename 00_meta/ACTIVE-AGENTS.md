@@ -167,9 +167,12 @@ _Hand-maintained. Each agent currently working in the vault appends a claim bloc
 
 ---
 
-## rituals-judaism-1 — 8 Jewish ritual deep-dive nodes — IN PROGRESS
-- Owns: `14_rituals/ritual-shabbat-havdalah.md`, `ritual-passover-haggadah.md`, `ritual-yom-kippur-atonement.md`, `ritual-bar-mitzvah-coming-of-age.md`, `ritual-mikveh-immersion.md`, `ritual-torah-reading-synagogue.md`, `ritual-kaddish-mourning.md`, `ritual-mezuzah-tefillin.md` (8 NEW nodes)
-- Status: IN PROGRESS
+## ~~rituals-judaism-1 — 8 Jewish ritual deep-dive nodes — 2026-05-16 — FINISHED~~
+- ~~Owned: `14_rituals/ritual-shabbat-havdalah.md`, `ritual-passover-haggadah.md`, `ritual-yom-kippur-atonement.md`, `ritual-bar-mitzvah-coming-of-age.md`, `ritual-mikveh-immersion.md`, `ritual-torah-reading-synagogue.md`, `ritual-kaddish-mourning.md`, `ritual-mezuzah-tefillin.md` (8 NEW nodes)~~
+- ~~Build: 37 ritual nodes · 16723 edges · 0 YAML errors · 0 dead links — commit 40df889~~
+- ~~MASSIVE WINS: (1) Shabbat = world's oldest continuous weekly ritual (2,600+ yrs unbroken); (2) Mikveh is the documented source of Christian baptism — John the Baptist transmission chain; (3) Kaddish is in Aramaic = Jesus's spoken daily language — liturgical fossil of 1st-c Galilean vernacular; (4) Mezuzah/tefillin = 6-tradition letter-as-physical-power-object convergence refuting Saussure's arbitrary sign; (5) Synagogue invented in Babylonian exile as world's first mass-literacy institution — direct ancestor of church and mosque~~
+- ~~SURPRISING FINDS: (1) Haggadah did not exist at the Last Supper — post-70 CE rabbinic composition; (2) Yom Kippur Azazel = named fallen angel, not just a place; (3) Hebrews 9–10 = Yom Kippur theology rewritten with Christ as High Priest~~
+- ~~Status: FINISHED~~
 
 ---
 
