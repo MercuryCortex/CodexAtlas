@@ -321,4 +321,63 @@ window.PATTERNS_DATA = [
     summary: 'The tarot is the closest analog to the Buddhist mandala in Western esotericism. Both are complete cosmological diagrams used as meditation and divination simultaneously, encoding initiatory knowledge, and synthesizing multiple cross-tradition layers. The Major Arcana\'s Fool\'s Journey maps onto the mandala path from outer to inner.',
   },
 
+  // ─── VI. MUSIC LAYER DISCOVERIES ─────────────────────────────────────────
+
+  {
+    id: 'pentatonic-acoustic-universal',
+    title: 'Pentatonic Scale — Same Five Notes on Every Continent',
+    category: 'CONVERGENCE',
+    section: 'Music Layer Discoveries',
+    sources: ['music-pentatonic-scale', 'music-pythagorean-harmony'],
+    summary: 'The five-note pentatonic scale was independently discovered in China, West Africa, Celtic Britain, the Andes, and Native North America with no contact. The physics reason: those five notes are the strongest overtones in the natural harmonic series — already present in every sound. It was not invented. It was discovered. Multiple times. On every continent.',
+  },
+  {
+    id: 'sacred-drone-six-traditions',
+    title: 'The Sacred Drone — Universal Altered-State Technology',
+    category: 'CONVERGENCE',
+    section: 'Music Layer Discoveries',
+    sources: ['music-sacred-drone', 'music-aum-cosmic-sound'],
+    summary: 'Six traditions independently discovered that a sustained continuous tone produces altered states of consciousness and deployed it as their primary sonic ritual technology: Hindu tanpura/AUM, Tibetan singing bowls, Orthodox ison, Sufi sama, Aboriginal didgeridoo, Celtic bagpipe drone. Same acoustic physics, same neurological effect, same theological interpretation: the drone is the sound of the cosmos.',
+  },
+  {
+    id: 'wordless-sound-convergence',
+    title: 'Wordless Sacred Sound — Three Traditions Bypass Language to Reach God',
+    category: 'CONVERGENCE',
+    section: 'Music Layer Discoveries',
+    sources: ['music-niggun-hasidic', 'music-sufi-sama', 'music-aum-cosmic-sound'],
+    summary: 'Hasidic niggun (wordless melody), Sufi sama (listening ceremony), and Hindu AUM all make the same theological claim: language is inadequate for the divine, and wordless sound reaches higher. The Baal Shem Tov, Rumi, and the Mandukya Upanishad each arrived at this independently. The silence after the sound is where the encounter happens.',
+  },
+  {
+    id: 'musician-deity-archetype',
+    title: 'The Musician-Deity — Seven Independent Sacred Musicians',
+    category: 'CONVERGENCE',
+    section: 'Music Layer Discoveries',
+    sources: ['music-lyre-kithara', 'music-saraswati-vina', 'music-orpheus-tradition'],
+    summary: 'Every major tradition assigned a specific instrument to a specific deity, making music a gift from the divine to humanity: Apollo/lyre, Saraswati/vina, Orpheus/kithara, David/kinnor, Krishna/flute, Odin/galdr (runic chant), Narada/vina. The musician-deity is the archetype through which cosmic sound becomes accessible to humans — independently constructed in seven traditions.',
+  },
+  {
+    id: 'music-cosmos-homology',
+    title: 'Music = Cosmos — Three Independent Mappings',
+    category: 'CONVERGENCE',
+    section: 'Music Layer Discoveries',
+    sources: ['music-music-of-spheres', 'music-raga-cosmology', 'music-pentatonic-scale'],
+    summary: 'Greek music of spheres (planetary intervals = musical intervals), Indian raga cosmology (each raga = specific time of day, season, deity, weather), Chinese wu yin (five tones = five elements = five planets = five directions). Three civilizations, zero contact, same conclusion: the structure of music and the structure of the cosmos are the same structure.',
+  },
+  {
+    id: 'creation-by-sound-six',
+    title: 'Creation by Sound — Six Independent Sonic Cosmogonies',
+    category: 'CONVERGENCE',
+    section: 'Music Layer Discoveries',
+    sources: ['music-creation-by-sound', 'music-nada-brahma'],
+    summary: 'Six traditions independently concluded that the universe came into existence through sound: Hindu Nada Brahma, Christian Logos (John 1:1), Egyptian Ptah (creates by speaking names, c. 3000 BCE), Sumerian divine speech, Jewish Sefer Yetzirah (22 Hebrew letters as cosmic building blocks), Gnostic Logos emanation. The oldest instance predates the Christian by 3,000 years.',
+  },
+  {
+    id: 'babylon-to-bach-transmission',
+    title: 'The Great Scale Transmission — Babylon to Bach, 3,800 Years',
+    category: 'TRANSMISSION',
+    section: 'Music Layer Discoveries',
+    sources: ['music-scale-transmission-chain', 'music-hurrian-hymns', 'music-arabic-maqam'],
+    summary: 'One theoretical framework — heptatonic scale organized around consonant intervals — in documented continuous use from Babylonian tuning theory (c. 1800 BCE) through Greek modes, Arabic maqam (via Baghdad translation movement), European church modes (via Boethius), to the Western tonal system. The longest documented music-theory transmission chain in history: 3,800 years, three major civilizations, one underlying structure.',
+  },
+
 ];
