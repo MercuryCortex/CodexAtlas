@@ -1600,6 +1600,33 @@ footer select:focus, footer input:focus { border-color: var(--gold-soft); }
   border: 1px solid rgba(220,140,40,.34);
   opacity: 1; letter-spacing: .09em;
 }
+.alch-preset-tag.cross-tradition {
+  background: rgba(40,105,175,.16); color: #6090cc;
+  border: 1px solid rgba(40,105,175,.26);
+  opacity: 1; letter-spacing: .09em;
+}
+.alch-preset-tag.wins-s {
+  background: rgba(180,50,50,.18); color: #d06868;
+  border: 1px solid rgba(180,50,50,.32); opacity: 1; letter-spacing: .10em;
+}
+.alch-preset-tag.wins-a {
+  background: rgba(195,140,40,.16); color: #c8962a;
+  border: 1px solid rgba(195,140,40,.30); opacity: 1; letter-spacing: .09em;
+}
+.alch-preset-tag.wins-b {
+  background: rgba(60,140,120,.16); color: #3d9e88;
+  border: 1px solid rgba(60,140,120,.28); opacity: 1; letter-spacing: .09em;
+}
+
+/* Collapsible preset section behavior */
+.alch-section-hidden { display: none !important; }
+.alch-section-caret {
+  display: inline-block; width: 12px;
+  font-size: 8px; opacity: 0.6;
+  margin-right: 4px; transition: none;
+}
+.alch-presets-section-label { cursor: pointer; user-select: none; }
+.alch-presets-section-label:hover { color: var(--text-1); background: rgba(255,255,255,0.03); }
 
 /* ---- Investigation dropdown (sits next to Presets in Alchemy nav) ---- */
 .alch-invest-trigger { position: relative; }

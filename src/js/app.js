@@ -4464,6 +4464,10 @@ const PRESET_CATEGORY_LABELS = {
   persian: 'Persian Theological Spine',
   lineage: 'Lineage & Secret Societies',
   persecution: 'Persecution & Martyrdom',
+  'cross-tradition': 'Cross-Tradition',
+  'wins-s': 'S · Civilization-Defining',
+  'wins-a': 'A · Institution-Founding',
+  'wins-b': 'B · Deep Parallels',
 };
 const PRESET_CATEGORY_ORDER = [
   { key: 'investigation', label: '⬡ Investigation Chains — Tier-1 Documented' },
@@ -4473,11 +4477,15 @@ const PRESET_CATEGORY_ORDER = [
   { key: 'persecution', label: 'Persecution & Martyrdom' },
   { key: 'persian',     label: 'Persian Theological Spine' },
   { key: 'cross',       label: 'Cross-Tradition' },
+  { key: 'cross-tradition', label: 'Cross-Tradition Comparisons' },
   { key: 'hermetic',    label: 'Hermetic & Gnostic' },
   { key: 'gnostic',     label: 'Gnostic' },
   { key: 'templar',     label: 'Templar & Portuguese' },
   { key: 'astrology',   label: 'Astrology' },
   { key: 'flood',       label: 'Flood Narratives' },
+  { key: 'wins-s', label: '★★★  Big Wins — Tier S · Civilization-Defining', collapsed: true },
+  { key: 'wins-a', label: '★★  Big Wins — Tier A · Institution-Founding', collapsed: true },
+  { key: 'wins-b', label: '★  Big Wins — Tier B · Deep Parallels', collapsed: true },
 ];
 const ALCHEMY_PRESETS = [
   // ── Egypt — Investigation Series ──────────────────────────────────
@@ -5163,6 +5171,204 @@ const ALCHEMY_PRESETS = [
       'tradition-islamic-modernism',
       'mahatma-gandhi',
       'tradition-hinduism', 'tradition-theravada-buddhism',
+    ],
+  },
+  // ── Big Wins · Tier S — Civilization-Defining ────────────────────
+  {
+    id: 'zoroastrian-spine-five-doctrines',
+    category: 'wins-s',
+    name: 'Zoroastrian Spine: 5 Doctrines Enter Judaism',
+    headline: 'During the Babylonian captivity (586–538 BCE) five Zoroastrian ideas entered Judaism simultaneously: cosmic dualism, resurrection of the dead, a messianic savior, named angelology, and eschatological judgment. Every downstream Abrahamic tradition — Christianity, Islam, Kabbalah — runs on Zoroastrian theological infrastructure it largely does not acknowledge. The single largest undisclosed doctrinal import in Abrahamic history.',
+    picks: [
+      'zarathustra', 'ahura-mazda', 'angra-mainyu-ahriman',
+      'phase-2-002-gathas-of-zarathustra',
+      'persian-period-injection', 'asura-deva-inversion',
+      'cyrus-the-great', 'event-cyrus-conquest-of-babylon-539-bce',
+      'tradition-zoroastrianism', 'tradition-judaism',
+    ],
+  },
+  {
+    id: 'merkabah-miraj-7-traditions',
+    category: 'wins-s',
+    name: 'Merkabah → Mi\'raj: 7 Traditions, 2,000 Years',
+    headline: 'The heavenly ascent narrative runs from Ezekiel\'s chariot vision (−593 BCE) through Jewish Hekhalot mysticism → Zoroastrian Arda Viraf → Muhammad\'s Night Journey (619 CE) → Ibn Arabi\'s allegorized Mi\'raj → Dante\'s Paradiso. Schäfer (2009) documents the Hekhalot → Mi\'raj transmission via Jewish communities in Arabia. The Mi\'raj — Islam\'s defining mystical event — is structurally Jewish in origin, with the transmission documented.',
+    picks: [
+      'merkabah-miraj-ascent-chain', 'ezekiel',
+      'phase-5-013-hekhalot-literature',
+      'event-muhammads-miraj-619',
+      'ibn-arabi', 'dante-alighieri',
+    ],
+  },
+  {
+    id: 'polycarp-natalis-karbala',
+    category: 'wins-s',
+    name: 'Martyrdom of Polycarp → Saint-Day System + Karbala',
+    headline: 'Mart. Pol. 18.3 (~155 CE) is the founding text of Christian martyrology as a genre AND the saint\'s feast-day system (natalis = annual death-day commemoration). This single sentence launches the liturgical calendar, pilgrimage systems, relic-economics, and cathedral construction. The Shi\'a Karbala paradigm (680 CE) uses parallel dramaturgy: predestination, willing acceptance, post-mortem intercession, annual commemoration. Greek martys → Arabic shahīd is direct linguistic transmission.',
+    picks: [
+      'polycarp-of-smyrna', 'phase-4-067-martyrdom-of-polycarp',
+      'martyrdom-theology',
+      'husayn-ibn-ali', 'event-karbala-680',
+      'tradition-shia-islam',
+    ],
+  },
+  {
+    id: 'sibylline-ventriloquism-chain',
+    category: 'wins-s',
+    name: 'Sibylline Oracles: Jewish Authors → Sistine Chapel',
+    headline: 'Jewish authors in 2nd c. BCE Egypt put monotheistic, Torah-loyal content in the mouth of the Sibyl. Justin Martyr, Clement, Lactantius, and Augustine all cited "the Sibyl" as a pagan witness to Christianity — not realizing the pro-Christian material had been planted by Jewish-then-Christian authors. This is documented deception. The Sistine Chapel Sibyls (1508–1512 CE) are the visual peak of this 1,700-year arc: Egyptian Jewish pseudepigrapha → Vatican ceiling.',
+    picks: [
+      'phase-3-010-sibylline-oracles',
+      'justin-martyr', 'clement-of-alexandria',
+      'lactantius', 'augustine-of-hippo',
+    ],
+  },
+  {
+    id: '4-maccabees-atonement-vocabulary',
+    category: 'wins-s',
+    name: '4 Maccabees: Pre-Christian Atonement Vocabulary',
+    headline: '4 Macc 6:29 (antipsychon = life-for-life ransom) and 17:22 (hilastērion = atoning sacrifice) are verbal and conceptual parallels to Mark 10:45 and Romans 3:25. The NT atonement theology is not a Christian innovation — it is the application of an already-existing Hellenistic Jewish martyr-theology to Jesus. The same Maccabean martyrs who died for the Torah are simultaneously venerated in the Roman Martyrology as Christian saints.',
+    picks: [
+      'phase-3-019-4-maccabees',
+      'paul-of-tarsus', 'martyrdom-theology',
+      'tradition-judaism', 'crucifixion-theology',
+    ],
+  },
+  {
+    id: 'sacred-marriage-3700-years',
+    category: 'wins-s',
+    name: 'Sacred Marriage: Inanna → Teresa of Ávila (3,700 Years)',
+    headline: 'The single most cross-civilizational continuous motif. Inanna-Dumuzi sacred marriage hymns (~2100 BCE) → Ugaritic Baal-Anat → Hebrew Song of Songs → Gnostic Bridal Chamber mystery → Alchemical coniunctio → Kabbalistic Shabbat theology → Christian bridal mysticism (Bernard of Clairvaux → Teresa of Ávila). Also: ~15 million Jews perform a sacred marriage ritual every Friday night — the Sumerian temple ceremony has become the kitchen table of every observant Jewish household.',
+    picks: [
+      'sacred-marriage', 'inanna-sumerian', 'dumuzi-tammuz',
+      'phase-4-004-gospel-of-philip', 'alchemy-as-spiritual-discipline',
+      'shekhinah', 'bernard-of-clairvaux', 'teresa-of-avila',
+    ],
+  },
+  {
+    id: 'no-original-hebrew-bible-branches',
+    category: 'wins-s',
+    name: 'No Original Hebrew Bible — Three Branches of One Tree',
+    headline: 'Before Qumran, the Masoretic Text was assumed to be essentially the original. After Qumran: Dead Sea Scrolls produced manuscripts aligning with the Septuagint\'s Hebrew Vorlage AND with the Samaritan Pentateuch — separately, against the MT. The three traditions are three independent members of a textual family that existed before any of them was standardized. The "original Bible" is a modern fiction. Every Bible translation works from one branch of a lost tree.',
+    picks: [
+      'phase-3-007-samaritan-pentateuch', 'phase-3-006-septuagint',
+      'tradition-judaism', 'tradition-samaritanism',
+    ],
+  },
+  {
+    id: 'herodotus-religion-constructed',
+    category: 'wins-s',
+    name: 'Herodotus 2.53 — Religion as Human Construction (440 BCE)',
+    headline: 'Herodotus\'s claim that Homer and Hesiod gave the Greeks their gods — i.e., the Olympian pantheon was created by named, dateable human authors — simultaneously demythologizes Greek religion and anticipates Euhemerism, Xenophanes\'s critique of anthropomorphic religion, and Hume\'s naturalist theory of religion. The entire Enlightenment critique of religion as human construction, in a single observation, 2,200 years early.',
+    picks: [
+      'herodotus', 'phase-2-028-herodotus-histories-book-2',
+      'tradition-greek-religion',
+    ],
+  },
+  // ── Big Wins · Tier A — Institution-Founding ─────────────────────
+  {
+    id: 'confucianism-to-meritocracy',
+    category: 'wins-a',
+    name: 'Confucianism → Jesuits → Global Meritocracy',
+    headline: 'Matteo Ricci\'s accommodatio → Couplet\'s Confucius Sinarum Philosophus (1687) → Leibniz (Novissima Sinica, 1697) → Voltaire weaponizes Confucianism against the Church → British civil service examination (1855, explicitly modeled on China\'s imperial examination) → global meritocratic bureaucracy. The civil service architecture structuring every modern government descends from Confucian examination culture.',
+    picks: [
+      'confucius', 'tradition-confucianism', 'tradition-neo-confucianism',
+      'zhu-xi', 'leibniz', 'voltaire',
+    ],
+  },
+  {
+    id: 'jain-ahimsa-nonviolent-resistance',
+    category: 'wins-a',
+    name: 'Jain Ahimsa → Gandhi → MLK → Global Non-Violence',
+    headline: 'Gandhi grew up in Gujarat surrounded by Jain merchant communities whose ahimsa ethic was literal and absolute — this is Gandhi\'s actual source, not primarily Buddhist or Hindu. Gandhi → Martin Luther King Jr. → global non-violent resistance doctrine. The political methodology that ended British colonialism in India and secured civil rights in the US descended from Gujarati Jain merchant piety.',
+    picks: [
+      'tradition-jainism', 'mahatma-gandhi',
+      'liberation-theology', 'tradition-navayana-buddhism',
+      'ambedkar',
+    ],
+  },
+  {
+    id: 'bhagavad-gita-global-chain',
+    category: 'wins-a',
+    name: 'Bhagavad Gita: Sanskrit → Oppenheimer at Trinity',
+    headline: 'Wilkins 1785 translation → Emerson\'s Over-Soul (1841) + Thoreau at Walden Pond → Humboldt Berlin lectures → German Idealism → Gandhi\'s satyagraha → MLK → global non-violent resistance. Peak moment: Oppenheimer at Trinity test (July 16, 1945) quotes Gita 11:32 in Sanskrit — "Now I am become Death, destroyer of worlds" — the most cited verse from any non-Western scripture in the 20th century, spoken at the creation of nuclear weapons.',
+    picks: [
+      'phase-2-027-bhagavad-gita', 'tradition-hinduism',
+      'mahatma-gandhi', 'liberation-theology',
+    ],
+  },
+  {
+    id: 'didache-eucharist-pre-pauline',
+    category: 'wins-a',
+    name: 'Didache Eucharist — Before the Words of Institution',
+    headline: 'The Didache\'s eucharistic prayers (chapters 9–10) are older than the Synoptic accounts, have no words of institution, are focused on eucharistia (thanksgiving) for "spiritual food and drink," and are clearly modeled on Jewish berakah blessings. The Pauline sacrificial-memorial interpretation ("this cup is the new covenant in my blood") represents a later theological layer. The central ritual of Christianity existed before its current theology was attached to it.',
+    picks: [
+      'phase-4-061-didache', 'paul-of-tarsus',
+      'tradition-latin-christianity', 'tradition-judaism',
+    ],
+  },
+  {
+    id: 'manetho-serapis-deity-design',
+    category: 'wins-a',
+    name: 'Manetho + Timotheus: The Deliberate Design of a God',
+    headline: 'An Egyptian priest (Manetho) and an Eleusinian ritual specialist (Timotheus of Eleusis) were commissioned by Ptolemy I to design a new god — Serapis (= Osiris + Apis + Zeus + Hades + Asclepius) — intended to be authoritative for both Greek and Egyptian populations of Alexandria. Attested in Plutarch and Tacitus. The most deliberate state-sponsored act of syncretic deity-construction in ancient history — the parallel to modern interfaith theology-design is uncomfortable.',
+    picks: [
+      'manetho', 'serapis', 'phase-3-025-manetho-aegyptiaca',
+      'osiris', 'tradition-mystery-cults',
+      'tradition-egyptian-religion',
+    ],
+  },
+  // ── Big Wins · Tier B — Deep Parallels ───────────────────────────
+  {
+    id: 'shinran-luther-sola-fide-parallel',
+    category: 'wins-b',
+    name: 'Shinran ↔ Luther: Sola Fide — Zero Contact',
+    headline: 'The vault\'s most precisely parallel doctrinal convergence. Shinran (Japan, 1173–1263) and Luther (Germany, 1483–1546) independently arrive at structurally identical soteriology: divine power alone saves; human merit is irrelevant or obstructive; the primary recipients of salvation are sinners, not the righteous; faith/trust is itself a gift from the divine. Both attracted mass followings from non-monastic populations. Zero historical connection. (Bloom 1965, Tier-1 source)',
+    picks: [
+      'shinran', 'tradition-pure-land-buddhism',
+      'phase-4-104-sukhavativyuha-larger',
+      'tradition-protestantism',
+    ],
+  },
+  {
+    id: 'isaiah-45-5-gnostic-inversion',
+    category: 'wins-b',
+    name: 'Isaiah 45:5 → Yaldabaoth: The Sharpest Edge in the Vault',
+    headline: 'Isaiah 45:5: "I am the LORD, and there is no other; besides me there is no god." — Israel\'s greatest monotheistic declaration. The Sethian Gnostics read this verse in Yaldabaoth\'s mouth — the blind, arrogant demiurge boasting of his sole divinity (Apocryphon of John) — thereby proving his ignorance of the higher God above him. The most radical theological inversion in extant ancient texts: a monotheistic declaration weaponized as evidence of divine limitation.',
+    picks: [
+      'yaldabaoth', 'tradition-gnosticism',
+      'phase-4-002-apocryphon-of-john',
+      'valentinus', 'marcion-of-sinope',
+      'tradition-judaism',
+    ],
+  },
+  {
+    id: 'nagarjuna-wittgenstein-derrida',
+    category: 'wins-b',
+    name: 'Nāgārjuna ↔ Wittgenstein ↔ Derrida: Philosophy Dissolving Itself',
+    headline: 'Three independent moments of philosophy arriving at its own dissolution. Nāgārjuna\'s prasaṅga (~150 CE): every positive doctrine self-refutes → silence. Wittgenstein\'s Tractatus: "Whereof one cannot speak, thereof one must be silent." Derrida\'s différance: meaning always deferred, no transcendental signified. Both the Nāgārjuna/Wittgenstein and Nāgārjuna/Derrida parallels are documented by Tier-1 scholars (Garfield 1995; Magliola 1984).',
+    picks: [
+      'nagarjuna', 'tradition-mahayana-buddhism',
+      'wittgenstein', 'derrida',
+    ],
+  },
+  {
+    id: 'kumarbi-hurrian-hesiod-chain',
+    category: 'wins-b',
+    name: 'Kumarbi → Kronos → Zeus: Greek Myth is Hurrian',
+    headline: 'The Mediterranean succession myth is Hurrian, not Greek. Anu → Kumarbi (bites off genitals, becomes pregnant) → Teshub = Ouranos → Kronos (castrates Ouranos) → Zeus. The narrative logic is identical. Transmission: Hurrian oral tradition (~1600 BCE) → Hittite archive at Hattusa (~1300 BCE) → Phoenician intermediary → Hesiod (~700 BCE). Extended chain: Kumarbi → Kronos → Saturn → Neoplatonist Nous → Gnostic Demiurge/Yaldabaoth. (Bachvarova 2016, Tier-1)',
+    picks: [
+      'kumarbi', 'phase-2-009-hesiod-theogony-works-and-days',
+      'yaldabaoth', 'demiurge-platonic', 'demiurge-gnostic',
+    ],
+  },
+  {
+    id: 'vinaya-benedict-monastic-parallel',
+    category: 'wins-b',
+    name: 'Vinaya ↔ Benedict\'s Rule: Monastic Architecture Invented Twice',
+    headline: 'The Pali Vinaya (~5th c. BCE, 227 rules) and Benedict\'s Rule (~530 CE) both comprehensively regulate monastic community life — sleeping, eating, clothing, property, dispute resolution, ordination — and are still actively used 1,500+ years after composition. Both independently discovered that contemplative life requires institutional structure to be sustainable. Two of the world\'s most durable institutional documents, developed on opposite ends of Eurasia with zero contact.',
+    picks: [
+      'tradition-theravada-buddhism', 'tradition-medieval-christianity',
+      'bodhidharma', 'tradition-zen',
     ],
   },
   {
@@ -6040,16 +6246,21 @@ VIEWS.transmission = {
         ${PRESET_CATEGORY_ORDER.map(cat => {
           const catPresets = ALCHEMY_PRESETS.filter(p => p.category === cat.key);
           if (!catPresets.length) return '';
+          const collapsed = !!cat.collapsed;
           return `
-            <div class="alch-presets-section-label">${cat.label}</div>
-            <div class="alch-presets-list">
+            <div class="alch-presets-section-label${collapsed ? ' alch-section-collapsed' : ''}" data-section-key="${cat.key}">
+              <span class="alch-section-caret">${collapsed ? '▶' : '▾'}</span>${cat.label}
+            </div>
+            <div class="alch-presets-list${collapsed ? ' alch-section-hidden' : ''}" data-section-body="${cat.key}">
               ${catPresets.map(p => renderPresetCard(p, false)).join('')}
             </div>
           `;
         }).join('')}
         ${customTrees.length > 0 ? `
-          <div class="alch-presets-section-label">Your saved trees</div>
-          <div class="alch-presets-list">
+          <div class="alch-presets-section-label" data-section-key="__custom">
+            <span class="alch-section-caret">▾</span>Your saved trees
+          </div>
+          <div class="alch-presets-list" data-section-body="__custom">
             ${customTrees.slice().reverse().map(t => renderPresetCard(t, true)).join('')}
           </div>
         ` : `
@@ -6158,6 +6369,21 @@ VIEWS.transmission = {
         deleteCustomTree(id);
         if (STATE.alchemyActivePreset === id) STATE.alchemyActivePreset = null;
         setView('transmission');
+      });
+    });
+    // Collapsible section labels — toggle hidden body + caret.
+    dropdown.querySelectorAll('.alch-presets-section-label[data-section-key]').forEach(label => {
+      label.style.cursor = 'pointer';
+      label.addEventListener('click', (ev) => {
+        ev.stopPropagation();
+        const key = label.dataset.sectionKey;
+        const body = dropdown.querySelector(`.alch-presets-list[data-section-body="${key}"]`);
+        if (!body) return;
+        const isNowCollapsed = !label.classList.contains('alch-section-collapsed');
+        label.classList.toggle('alch-section-collapsed', isNowCollapsed);
+        body.classList.toggle('alch-section-hidden', isNowCollapsed);
+        const caret = label.querySelector('.alch-section-caret');
+        if (caret) caret.textContent = isNowCollapsed ? '▶' : '▾';
       });
     });
 
