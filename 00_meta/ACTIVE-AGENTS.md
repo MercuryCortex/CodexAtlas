@@ -132,10 +132,13 @@ _Hand-maintained. Each agent currently working in the vault appends a claim bloc
 
 ---
 
-## rituals-christianity-1 — Christianity ritual deep-dive + by-religion mode — IN PROGRESS (2026-05-17)
-- Owns: `14_rituals/ritual-christian-liturgy-of-hours.md`, `ritual-confirmation-chrismation.md`, `ritual-confession-absolution.md`, `ritual-extreme-unction.md`, `ritual-ordination-laying-hands.md`, `ritual-advent-lent-liturgical-year.md`, `ritual-glossolalia-speaking-tongues.md`, `ritual-agape-love-feast.md` (8 NEW nodes)
-- Owns: `src/js/app.js` — adding "by religion" 5th mode to VIEWS.rituals
-- Status: IN PROGRESS
+## ~~rituals-christianity-1 — Christianity ritual deep-dive + by-religion mode — FINISHED (2026-05-17)~~
+- ~~Owns: `14_rituals/ritual-christian-liturgy-of-hours.md`, `ritual-confirmation-chrismation.md`, `ritual-confession-absolution.md`, `ritual-extreme-unction.md`, `ritual-ordination-laying-hands.md`, `ritual-advent-lent-liturgical-year.md`, `ritual-glossolalia-speaking-tongues.md`, `ritual-agape-love-feast.md` (8 NEW nodes)~~
+- ~~Owns: `src/js/app.js` — "by religion" 5th mode added to VIEWS.rituals; renderRitualsReligion() with 10-religion selector grid~~
+- ~~Build: 22 ritual nodes · 16554 edges · 0 YAML errors · 0 dead links introduced~~
+- ~~MASSIVE WINS: (1) 7 canonical hours = 7 planets; (2) "Christ" = Bronze Age royal oil rite; (3) unbroken touch-chain convergence across 3 traditions; (4) entire liturgical year = solar theology; (5) Agape = Essene communal meal structural twin~~
+- ~~Surprising Find: Paul's 1 Corinthians 14 is RESTRICTING glossolalia, not endorsing it~~
+- ~~Status: FINISHED — commits 0311c5d (app.js), bd48985 (8 nodes)~~
 
 ---
 
