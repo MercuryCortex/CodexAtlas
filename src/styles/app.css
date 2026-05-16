@@ -2486,12 +2486,12 @@ body.view-atlas main.canvas { background: var(--bg-0); }
 
 /* Hide view-controls + map-thumb + zoom-meter on the new Alchemy view —
    it has its own toolbar and doesn't need them. */
-/* Alchemy has its own toolbar — hide the view-header entirely so the
-   "Alchemy" title doesn't sit on top of the search input. The board's
-   floating toolbar IS the title bar. */
-body.view-alchemy .view-header { display: none; }
-body.view-alchemy .map-thumb { display: none !important; }
-body.view-alchemy .zoom-meter { display: none !important; }
+/* Transmutation board has its own toolbar — hide the view-header so the
+   title doesn't compete with the search/preset row. The board toolbar IS
+   the title bar. Alchemy (investigation) keeps its header. */
+body.view-transmutation .view-header { display: none; }
+body.view-transmutation .map-thumb { display: none !important; }
+body.view-transmutation .zoom-meter { display: none !important; }
 
 /* ASTROLOGY pane — stub state. Same layout idiom as .atlas-pane: full canvas
    minus sidebar/detail widths via --eff-nav-w / --eff-detail-w. The mode-switch
@@ -4343,7 +4343,7 @@ mark.sr-ent-demo {
   background: var(--bg-1);
   border-top: 2px solid var(--gold-soft);
   border-bottom: 1px solid var(--border-soft);
-  padding: 1.5rem 2rem 1.25rem;
+  padding: 2rem 3rem 2rem;
   position: relative;
 }
 
@@ -4369,11 +4369,11 @@ mark.sr-ent-demo {
   color: var(--gold);
 }
 .age-letter-name {
-  font-size: 0.8rem; font-weight: 600; color: var(--text-1);
-  text-align: center;
+  font-size: 1rem; font-weight: 600; color: var(--text-0);
+  text-align: center; font-family: var(--serif);
 }
 .age-gardiner {
-  font-size: 0.65rem; color: var(--text-3);
+  font-size: 0.68rem; color: var(--text-3);
   font-family: var(--mono); text-align: center;
 }
 
@@ -4400,15 +4400,15 @@ mark.sr-ent-demo {
 .age-chain-phoen { font-family: 'Noto Serif Hebrew', serif; color: var(--text-1); }
 .age-chain-greek { font-family: var(--serif); font-size: 1.6rem; color: var(--text-0); }
 .age-chain-latin { font-family: var(--sans); font-size: 1.6rem; font-weight: 700; color: var(--text-0); }
-.age-chain-step-label { font-size: 0.6rem; color: var(--text-3); text-align: center; }
-.age-chain-step-sub { font-size: 0.58rem; color: var(--text-3); text-align: center; font-family: var(--mono); }
+.age-chain-step-label { font-size: 0.68rem; color: var(--text-2); text-align: center; }
+.age-chain-step-sub { font-size: 0.63rem; color: var(--text-3); text-align: center; font-family: var(--mono); }
 .age-arrow { color: var(--text-3); font-size: 1.2rem; padding-top: 0.4rem; }
 
 .age-descendants {
   display: flex; flex-wrap: wrap; gap: 0.75rem; margin-bottom: 0.75rem;
 }
 .age-desc-item {
-  font-size: 0.82rem; color: var(--text-2);
+  font-size: 0.95rem; color: var(--text-1);
   display: flex; align-items: center; gap: 0.3rem;
 }
 .age-desc-script {
@@ -4417,25 +4417,26 @@ mark.sr-ent-demo {
   padding: 0.1em 0.4em; border-radius: 2px;
 }
 .age-note {
-  font-size: 0.85rem; line-height: 1.65; color: var(--text-1);
+  font-size: 0.95rem; line-height: 1.75; color: var(--text-1);
   font-family: var(--serif); font-style: italic;
-  border-left: 3px solid var(--gold-soft); padding-left: 0.75rem;
+  border-left: 3px solid var(--gold-soft); padding-left: 1rem;
+  margin-bottom: 1.25rem;
 }
 /* Investigation highlight block — inside expanded letter card */
 .age-investigation {
-  margin-top: 1.1rem;
-  padding: 0.9rem 1rem;
-  background: rgba(90,172,168,0.06);
-  border: 1px solid rgba(90,172,168,0.2);
+  margin-top: 0;
+  padding: 1.1rem 1.25rem 1rem;
+  background: rgba(90,172,168,0.07);
+  border: 1px solid rgba(90,172,168,0.25);
   border-radius: 4px;
 }
 .age-inv-label {
-  font-size: 0.62rem; letter-spacing: 0.13em; text-transform: uppercase;
-  color: #5aaca8; margin-bottom: 0.5rem;
+  font-size: 0.65rem; letter-spacing: 0.14em; text-transform: uppercase;
+  color: #5aaca8; margin-bottom: 0.65rem; font-weight: 600;
 }
 .age-inv-text {
-  font-size: 0.875rem; line-height: 1.65; color: var(--text-1);
-  margin-bottom: 0.75rem;
+  font-size: 1rem; line-height: 1.75; color: var(--text-0);
+  margin-bottom: 0.85rem;
 }
 .age-inv-nodes {
   display: flex; flex-wrap: wrap; gap: 6px;
