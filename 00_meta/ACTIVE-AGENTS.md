@@ -237,6 +237,12 @@ _Hand-maintained. Each agent currently working in the vault appends a claim bloc
 
 ---
 
+## alchemy-practitioners-1 — 8 alchemy practitioner/text nodes — IN PROGRESS (2026-05-17)
+- Owned: `12_alchemy/alchemy-isaac-newton.md`, `12_alchemy/alchemy-nicolas-flamel.md`, `12_alchemy/alchemy-albertus-magnus.md`, `12_alchemy/alchemy-john-dee.md`, `12_alchemy/alchemy-michael-maier.md`, `12_alchemy/alchemy-al-razi-rhazes.md`, `12_alchemy/alchemy-rosarium-philosophorum.md`, `12_alchemy/alchemy-rasayana-hindu.md`
+- Status: IN PROGRESS
+
+---
+
 ## ~~opus-pantheon-v2-parity-3 — V2-vs-V1 four-delta closure — started 2026-05-17 — DONE~~
 - ~~Owned: `src/js/views/pantheon-v2.js`, `src/js/dev-panel.js`, `index.html`~~
 - ~~Status: done — see STATUS.md. Code swept into `b306dd1` (sonnet-scripture-reader-4) by parallel agent.~~
@@ -2059,3 +2065,10 @@ Files: sacred-cauldron.md (NEW) · cerridwen.md (STUB, deity) · bran-the-blesse
 - ~~Objects: Tyet (V39 — red protective cord genealogy) · Menat (R17) · Red Crown (S3)~~
 - ~~Numbers: Stroke/1 (Z1) · Arch/10 (V20) · Coil/100 (V1) · Finger/10000 (D50) · Tadpole/100000 (I8)~~
 - ~~Status: FINISHED — commit 47d2103~~
+
+---
+
+## alchemy-concepts-1 — 7 alchemy concept nodes + cross-tradition wiring — IN PROGRESS (2026-05-17)
+- Owns: `12_alchemy/alchemy-ouroboros.md` (NEW), `alchemy-calcination-stages.md` (NEW), `alchemy-vitriol-descent.md` (NEW), `alchemy-conjunction-hieros-gamos.md` (NEW), `alchemy-homunculus.md` (NEW), `alchemy-sulfur-mercury-theory.md` (NEW), `alchemy-kabbalah-alchemy-synthesis.md` (NEW)
+- Also enriches: `alchemy-prima-materia.md`, `alchemy-opus-magnum.md`, `alchemy-nigredo-albedo-rubedo.md` (cross-tradition links only)
+- Status: IN PROGRESS
