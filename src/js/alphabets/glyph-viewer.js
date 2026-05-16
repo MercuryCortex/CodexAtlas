@@ -133,6 +133,15 @@
     wrap.appendChild(grid);
     wrap.appendChild(detail);
 
+    // Clicking the backdrop (not the modal card) closes the overlay
+    detail.addEventListener('click', (e) => {
+      if (e.target !== detail) return;
+      _expandedIdx = null;
+      detail.innerHTML = '';
+      detail.classList.remove('active');
+      grid.querySelectorAll('.alpha-glyph-cell').forEach(c => c.classList.remove('expanded'));
+    });
+
     const scriptMeta = SCRIPTS.find(s => s.id === _script) || SCRIPTS[0];
 
     // Filter by scriptOnly: include if no restriction, or if restriction includes current script
@@ -318,10 +327,10 @@
       if (grid) grid.querySelectorAll('.alpha-glyph-cell').forEach(c => c.classList.remove('expanded'));
     });
 
+    expanded.addEventListener('click', (e) => e.stopPropagation());
     detailEl.innerHTML = '';
     detailEl.classList.add('active');
     detailEl.appendChild(expanded);
-    setTimeout(() => expanded.scrollIntoView({ behavior: 'smooth', block: 'nearest' }), 50);
   }
 
   window._alphaGlyphs = { render };
