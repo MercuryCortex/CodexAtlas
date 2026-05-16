@@ -4746,3 +4746,389 @@ SCRIPTURE_TEXTS['bardo-thodol'] = {
     },
   ]
 };
+
+// ── BATCH 8 ─────────────────────────────────────────────────────────────────
+
+SCRIPTURE_TEXTS['atrahasis-epic'] = {
+  title: 'The Atrahasis Epic — Flood and Human Creation',
+  shortTitle: 'Atrahasis',
+  tradition: 'Babylonian',
+  date: 'c. 1700 BCE (Old Babylonian)',
+  intro: 'The Atrahasis Epic is the oldest complete flood + creation narrative in the world, predating the Gilgamesh flood by several centuries. Written in Akkadian during the Old Babylonian period (c. 1700 BCE), it answers two questions that neither Genesis nor Gilgamesh addresses fully: why were humans created, and why did the gods decide to destroy them? The answers: humans were created to do the labor the lesser gods (Igigi) had been performing (digging irrigation canals) when the Igigi went on strike. The god Enki engineered this creation by mixing divine blood and flesh (killed from one god, Geshtu-e, "the god who has intelligence") with clay. Then, when humans multiplied and made too much noise, the god Enlil tried three times to reduce their numbers — plague, famine, drought — before resorting to the flood. Enki warned his devotee Atrahasis (whose name means "exceedingly wise") and instructed him to build a boat. Atrahasis is the direct ancestor of Noah and Utnapishtim — the same story, with more theological scaffolding. The divine-blood creation (humans containing divine substance) is the Babylonian anticipation of the Gnostic divine spark, the Hermetic Anthropos, and the Purusha Sukta\'s cosmic body becoming creation.',
+  crossTradition: [
+    { label: 'Gilgamesh flood — the Utnapishtim version one generation later', textId: 'gilgamesh', note: 'The Gilgamesh flood (Tablet XI) reproduces the Atrahasis flood narrative almost verbatim — the same storm, the same bird sequence (dove, swallow, raven), the same landing on a mountain, the same sacrifice, the same divine regret. Utnapishtim IS Atrahasis under a different name. The Atrahasis Epic is the source text; Gilgamesh Tablet XI is the borrowing. Both are the source for Genesis 6-9.' },
+    { label: 'Apocryphon of John — divine substance trapped in material creation', textId: 'apocryphon-of-john', note: 'The Atrahasis creation: Enki mixes killed-god blood and flesh with clay to create humans who carry divine substance. The Apocryphon\'s creation: Yaldabaoth breathes divine power (stolen from Sophia) into Adam, trapping divine light in matter. Both texts encode divine substance in material humanity — and both explain human restlessness as the divine element straining against its material container.' },
+    { label: 'Purusha Sukta — cosmic body dismembered to create world and humans', textId: 'purusha-sukta', note: 'The Atrahasis creation uses one killed god\'s blood and flesh mixed with clay. The Purusha Sukta\'s cosmic person is dismembered and all creation emerges from the body parts. Both use the template of divine sacrifice/death generating creation — the world made from divine substance, carrying that substance within it.' },
+    { label: 'Genesis 1-2 — the downstream Hebrew parallel', textId: 'gilgamesh', note: 'Genesis 1-9 contains two creation accounts (documentary hypothesis: Priestly and Yahwist) and a flood narrative. The Atrahasis Epic has all three in sequence: creation from divine material → human multiplication → divine decision to flood → flood → survival → new covenant. The structural parallel is too close to be coincidental. The scholarly consensus: the Genesis author(s) knew the Mesopotamian flood tradition and reworked it with monotheistic theology.' },
+  ],
+  translations: [
+    { id: 'dalley', label: 'Dalley 1989 (T1)' },
+    { id: 'akkadian', label: 'Akkadian (original)' },
+  ],
+  sections: [
+    {
+      heading: 'Why Humans Were Created (Tablet I)',
+      verses: [
+        {
+          ref: 'I.i.1–8',
+          text: 'When the gods were man, they did forced labor, they bore drudgery. Great indeed was the drudgery of the gods, the forced labor was heavy, the misery too much: the seven great Anunnaki were making the Igigi suffer forced labor.',
+          textVersions: {
+            dalley: 'When the gods were man, they did forced labor, they bore drudgery. Great indeed was the drudgery of the gods, the forced labor was heavy, the misery too much: the seven great Anunnaki were making the Igigi suffer forced labor.',
+            akkadian: 'i-nu-ma i-lu a-wi-lum ub-lu du-ul-la iz-bi-lu šup-ši-ik-ka ka-ab-ta ka-ab-ta du-ul-lu ša i-li ma-ad šup-ši-ik-ka ka-bi-it',
+          },
+          entities: [
+            { word: 'When the gods were man', node: 'enki', type: 'concept',
+              note: 'The opening line — "when the gods were man" — establishes the Atrahasis premise: the boundary between gods and humans is not primordial but historical. There was a time when gods did human labor. This blurring of the divine/human boundary is the theological ground for the creation solution: if gods can do human labor, humans can be made from divine material. The Babylonian creation tradition routinely creates humans as labor-saving devices — fundamentally different from Genesis, where humans are created in the divine image for relationship and dominion.',
+              parallels: [
+                { label: 'Purusha Sukta — cosmic Person becomes creation through sacrifice', textId: 'purusha-sukta', note: 'Both the Atrahasis creation and the Purusha Sukta begin with a problem of labor or cosmic incompleteness that requires a divine sacrifice to solve. In Atrahasis, the gods\' labor is the problem; in the Purusha Sukta, the cosmic incompleteness before the sacrifice is the problem. Both resolve through a sacrificial act involving divine substance that becomes the human world.' },
+              ]
+            },
+          ]
+        },
+        {
+          ref: 'I.iv.206–230',
+          text: 'Enki made his voice heard and spoke to the great gods: "On the first, seventh and fifteenth day of the month I shall make a purifying bath. Let one god be slaughtered. Then let the gods be cleansed in the immersion. With his flesh and his blood let Nintu mix clay. God and man will be mixed together in clay."',
+          textVersions: {
+            dalley: 'Enki made his voice heard and spoke to the great gods: "On the first, seventh and fifteenth day of the month I shall make a purifying bath. Let one god be slaughtered. Then let the gods be cleansed in the immersion. With his flesh and his blood let Nintu mix clay. God and man will be mixed together in clay."',
+            akkadian: 'ilu i-na li-ʾ-i-šu liš-ša-ki-in te-em-šu da-a-a-mi-šu i-na ṭi-ṭi li-iṭ-ṭu-ur',
+          },
+          entities: [
+            { word: 'With his flesh and his blood let Nintu mix clay', node: 'enki', type: 'concept',
+              note: 'The divine blood mixed with clay is the Babylonian theological solution to why humans are simultaneously divine and mortal: we contain the blood and intelligence (Akkadian: ṭe\'um, "reason/intelligence") of the slaughtered god, mixed with the clay of earth. This is one of the most important verses in ancient theology for the cross-tradition investigation: it establishes that humans carry divine substance as a design feature, not an accident — the Babylonian origin of the Gnostic divine spark, the Hermetic divine Nous in matter, the Purusha Sukta\'s cosmic body becoming humanity.',
+              parallels: [
+                { label: 'Apocryphon of John — Yaldabaoth breathes divine power into Adam', textId: 'apocryphon-of-john', note: 'Atrahasis: divine blood mixed into clay creates humans who carry divine substance. Apocryphon of John: Yaldabaoth breathes the divine power he stole from Sophia into Adam — accidentally giving Adam more divine substance than Yaldabaoth himself possesses. Both texts explain the paradox of human existence: we are made of the lowest material (clay/matter) yet contain the highest substance (divine blood/divine light).' },
+                { label: 'Poimandres — the Anthropos descending into matter, mixing divine with material', textId: 'corpus-hermeticum-1', note: 'CH I\'s Anthropos descends through the spheres and falls in love with Nature — the divine mixing with the material to produce humanity. Atrahasis\'s god-blood-in-clay, the Apocryphon\'s divine breath in Adam, and CH I\'s Anthropos in matter are three versions of the same mythological claim: humanity is a hybrid of the divine and the material, and that hybridity is the condition for both our suffering and our possibility.' },
+              ]
+            },
+          ]
+        },
+      ]
+    },
+    {
+      heading: 'The Flood (Tablet III)',
+      verses: [
+        {
+          ref: 'III.ii.20–40',
+          text: 'Enki made his voice heard and spoke to Atrahasis: "I have to tell you: wall, listen to me! Reed hut, make sure you attend to all my words! Dismantle the house, build a boat, reject possessions, and save living things."',
+          textVersions: {
+            dalley: 'Enki made his voice heard and spoke to Atrahasis: "I have to tell you: wall, listen to me! Reed hut, make sure you attend to all my words! Dismantle the house, build a boat, reject possessions, and save living things."',
+            akkadian: 'i-ga-ra-am ša-am-ri ṭi-ṭam la-li-iš šu-up-ši-iq-ma a-wa-ti-ia',
+          },
+          entities: [
+            { word: '"wall, listen to me! Reed hut"', node: 'enki', type: 'concept',
+              note: 'Enki speaks through a wall and a reed hut — an indirect communication, because Enki had sworn an oath with Enlil not to warn humans. By speaking to the wall and reed hut rather than directly to Atrahasis, Enki technically keeps his oath while breaking its spirit. This theological detail is preserved in Gilgamesh Tablet XI and is a precise ancestor of the Gnostic Sophia\'s indirect communication in the Apocryphon of John — divine knowledge transmitted indirectly, through a medium, when direct communication is prohibited. The technology of indirect divine communication is very ancient.',
+              parallels: [
+                { label: 'Gilgamesh Tablet XI — Utnapishtim receives the same instruction', textId: 'gilgamesh', note: 'Gilgamesh Tablet XI: Ea (= Enki) "calls to the reed fence" and warns Utnapishtim (= Atrahasis) in almost identical words: "reed hut, reed hut, wall, wall, listen reed hut, attend wall." The verbal parallel is close enough to prove direct literary borrowing. The Atrahasis wall-speech is the source; Gilgamesh preserves it; Genesis strips it (Noah receives direct divine communication, no wall-speech needed).' },
+              ]
+            },
+          ]
+        },
+      ]
+    },
+  ]
+};
+
+SCRIPTURE_TEXTS['gospel-of-thomas'] = {
+  title: 'Gospel of Thomas — The Sayings of the Living Jesus',
+  shortTitle: 'Gospel of Thomas',
+  tradition: 'Gnostic / Early Christian',
+  date: 'c. 50–140 CE (sayings core possibly 1st century)',
+  intro: 'The Gospel of Thomas is a collection of 114 sayings attributed to Jesus, discovered at Nag Hammadi in 1945. It has no narrative, no crucifixion, no resurrection story — only sayings, each introduced by "Jesus said." Half the sayings have parallels in the canonical gospels; the other half are unknown. The opening line establishes the hermeneutic: "Whoever finds the interpretation of these sayings will not experience death." This is a wisdom gospel — the sayings are deliberately paradoxical, designed to provoke interpretation that itself constitutes salvation. Thomas may preserve an independent sayings tradition older than the canonical gospels; or it may be a 2nd-century Gnostic reworking; most likely both are partially true. The theological center: the divine kingdom is already here, within and outside; the human problem is not sin but non-recognition; the disciples are to find the living Jesus within themselves. Logion 77 ("I am the light that is above them all... cleave wood, I am there; lift up a stone, and you will find me there") is the closest any early Christian text comes to the Vedantic Brahman that pervades all things. Logion 28 ("I took my place in the midst of the world... I found them all drunk... I was grieved for them") is verbatim parallel to Corpus Hermeticum VII.',
+  crossTradition: [
+    { label: 'Corpus Hermeticum VII — "drunk with wine of ignorance"', textId: 'corpus-hermeticum-7', note: 'CH VII: "Men have become drunk from the ignorance poured over them." Thomas L.28: "I found them all drunk; I found none of them thirsty; and my soul grieved over the sons of men, because they are blind in their hearts." Both use drunkenness as a metaphor for unconsciousness of the divine. Both are voiced by a divine figure surveying humanity\'s ignorance with grief. The texts are almost certainly from the same Alexandrian milieu (both use Greek; both may reflect a common oral tradition).' },
+    { label: 'John 1 — the Logos as the light in every person', textId: 'corpus-hermeticum-1', note: 'Thomas L.77: "I am the light that is above them all... Split a piece of wood, I am there. Lift up a stone, and you will find me there." John 1:4: "In him was life, and the life was the light of all people." Both texts locate the divine Logos/light as immanent in all material things — not just in Jesus or in the Temple but in wood and stone. Thomas is more radical: the divine is in the most mundane materials if you know how to cleave or lift.' },
+    { label: 'Corpus Hermeticum XI — everything is full of God', textId: 'corpus-hermeticum-11', note: 'Thomas L.77\'s divine presence in wood and stone and CH XI\'s "everything is full of God" are the same theological claim: divine immanence is not selective. The light/God is in the wood and stone not as a special miracle but as the ordinary condition of all material existence — material reality is always already saturated with divine presence.' },
+    { label: 'Tao Te Ching 1 — the Tao that is present in all things without being visible', textId: 'tao-te-ching-1', note: 'Thomas L.77\'s immanent divine presence (in wood, stone, all matter) and Laozi\'s Tao that pervades all things without being visible ("ten thousand things arise from it... it does not claim credit") are parallel immanence theologies. Both insist the divine is present in the most ordinary materials; both imply that recognizing this presence is the salvific act.' },
+  ],
+  translations: [
+    { id: 'lambdin', label: 'Lambdin (T1)' },
+    { id: 'greek', label: 'Greek (original fragments)' },
+  ],
+  sections: [
+    {
+      heading: 'The Prologue and the Kingdom Within (L.1–3)',
+      verses: [
+        {
+          ref: 'L.1–2',
+          text: 'These are the secret sayings which the living Jesus spoke and which Didymos Judas Thomas wrote down. And he said, "Whoever finds the interpretation of these sayings will not experience death." Jesus said, "Let him who seeks continue seeking until he finds. When he finds, he will become troubled. When he becomes troubled, he will be astonished, and he will rule over the All."',
+          textVersions: {
+            lambdin: 'These are the secret sayings which the living Jesus spoke and which Didymos Judas Thomas wrote down. And he said, "Whoever finds the interpretation of these sayings will not experience death." Jesus said, "Let him who seeks continue seeking until he finds. When he finds, he will become troubled. When he becomes troubled, he will be astonished, and he will rule over the All."',
+            greek: 'Οὗτοί εἰσιν οἱ λόγοι οἱ ἀπόκρυφοι οὓς ἐλάλησεν Ἰησοῦς ὁ ζῶν καὶ ἐγράψατο Διδύμος Ἰούδας Θωμᾶς',
+          },
+          entities: [
+            { word: 'Whoever finds the interpretation will not experience death', node: 'tradition-gnosticism', type: 'concept',
+              note: 'The Gospel of Thomas opens by embedding its own hermeneutic: finding the interpretation IS the salvific act. This is gnosis — not belief in propositions but the interpretive act that dissolves ignorance. The phrase "will not experience death" (Coptic: mef-jtpe thanatos) parallels John 8:51 ("whoever keeps my word will never see death") and the Bardo Thodol\'s liberation through recognition. In all three traditions, the cognitive act of correct recognition/interpretation/understanding is what overcomes death.',
+              parallels: [
+                { label: 'Bardo Thodol — recognition of the Clear Light = liberation', textId: 'bardo-thodol', note: 'The Bardo\'s liberation occurs through recognizing the Clear Light as one\'s own nature — a cognitive act, not a ritual one. Thomas L.1\'s "whoever finds the interpretation" = liberation and the Bardo\'s "recognize it" = liberation are structurally identical: both locate the soteriological act in a recognition event.' },
+                { label: 'Chandogya Upanishad — tat tvam asi as the liberating recognition', textId: 'chandogya-6-2', note: '"That art thou" — the liberating insight is a recognition of identity. Thomas L.1\'s finding the interpretation, Bardo\'s recognizing the Clear Light, and Chandogya\'s tat tvam asi are the same: liberation is a shift in the cognitive/experiential frame, not an action performed.' },
+              ]
+            },
+          ]
+        },
+        {
+          ref: 'L.3',
+          text: 'Jesus said, "If those who lead you say to you, \'See, the Kingdom is in the sky,\' then the birds of the sky will precede you. If they say to you, \'It is in the sea,\' then the fish will precede you. Rather, the Kingdom is inside of you, and it is outside of you. When you come to know yourselves, then you will become known, and you will realize that it is you who are the sons of the living Father."',
+          textVersions: {
+            lambdin: 'Jesus said, "If those who lead you say to you, \'See, the Kingdom is in the sky,\' then the birds of the sky will precede you. If they say to you, \'It is in the sea,\' then the fish will precede you. Rather, the Kingdom is inside of you, and it is outside of you. When you come to know yourselves, then you will become known, and you will realize that it is you who are the sons of the living Father."',
+            greek: '',
+          },
+          entities: [
+            { word: 'the Kingdom is inside of you, and it is outside of you', node: 'logos', type: 'concept',
+              note: 'Thomas L.3 gives the fullest version of the kingdom saying — it is both within and without. This is more radical than Luke 17:21 ("the kingdom of God is among you"), which can be read as external (Jesus\'s presence). Thomas specifies: inside AND outside — not in a spatial location (sky or sea) but as the encompassing reality that the self participates in. "When you come to know yourselves" — self-knowledge is the path to recognition. This is the Thomas gospel\'s Delphic "know thyself" moment.',
+              parallels: [
+                { label: 'Corpus Hermeticum XI — God contains all things and all things contain God', textId: 'corpus-hermeticum-11', note: 'CH XI\'s "God contains all things" and Thomas L.3\'s "the Kingdom is inside of you, and it is outside of you" map the same topology: the divine is simultaneously the container of all existence and the content of each individual. Inside and outside collapse into each other when the divine is both the innermost and the outermost.' },
+                { label: 'Chandogya Upanishad — Brahman is the inner and outer ground', textId: 'chandogya-6-2', note: '"Tat tvam asi" — that (Brahman, the ground of all being) art thou (atman, the innermost self). The identification of the personal innermost with the cosmic outermost is the Chandogya\'s core teaching. Thomas L.3\'s "inside and outside" and Chandogya\'s atman=Brahman are the same non-dual topology.' },
+              ]
+            },
+          ]
+        },
+      ]
+    },
+    {
+      heading: 'The Drunk and the Light (L.28, L.77)',
+      verses: [
+        {
+          ref: 'L.28',
+          text: 'Jesus said, "I took my place in the midst of the world, and I appeared to them in flesh. I found them all drunk; I found none of them thirsty. And my soul became afflicted for the sons of men, because they are blind in their hearts and do not have sight; for empty they came into the world, and empty too they seek to leave the world."',
+          textVersions: {
+            lambdin: 'Jesus said, "I took my place in the midst of the world, and I appeared to them in flesh. I found them all drunk; I found none of them thirsty. And my soul became afflicted for the sons of men, because they are blind in their hearts and do not have sight; for empty they came into the world, and empty too they seek to leave the world."',
+            greek: '',
+          },
+          entities: [
+            { word: 'I found them all drunk', node: 'tradition-gnosticism', type: 'concept',
+              note: 'The "drunk" metaphor in Thomas L.28 and Corpus Hermeticum VII is one of the most precise cross-tradition verbal parallels in the entire scripture corpus. CH VII: "Men have become drunk from the ignorance poured over them." Thomas: "I found them all drunk; I found none of them thirsty." Both texts — both apparently from Alexandrian Greek milieu — use drunkenness (methy, drunk) as the metaphor for unconsciousness of the divine. Both voice this observation through a divine figure surveying humanity with grief. The texts are almost certainly related, possibly both drawing on a common oral or written source.',
+              parallels: [
+                { label: 'Corpus Hermeticum VII — drunk with wine of ignorance', textId: 'corpus-hermeticum-7', note: 'CH VII is the direct verbal parallel. Both texts use the drunk/thirsty binary: the problem is not lack of divine reality (there is plenty) but lack of thirst — the desire to seek. "None of them thirsty" in Thomas and "they have no thirst" in CH VII are almost identical formulations of the Gnostic diagnosis: humanity does not seek the divine because ignorance has made it satisfied with substitutes.' },
+              ]
+            },
+          ]
+        },
+        {
+          ref: 'L.77',
+          text: 'Jesus said, "It is I who am the light which is above them all. It is I who am the All. From me did the All come forth, and unto me did the All extend. Split a piece of wood, and I am there. Lift up the stone, and you will find me there."',
+          textVersions: {
+            lambdin: 'Jesus said, "It is I who am the light which is above them all. It is I who am the All. From me did the All come forth, and unto me did the All extend. Split a piece of wood, and I am there. Lift up the stone, and you will find me there."',
+            greek: '',
+          },
+          entities: [
+            { word: 'Split a piece of wood, and I am there', node: 'logos', type: 'concept',
+              note: 'Thomas L.77 is the most radical immanence statement in early Christian literature. The divine Logos is in wood and stone — not figuratively (in the sense that God created them) but literally present in the material. "Split wood, lift stone" — the most ordinary manual labor — reveals the divine. This is the complete opposite of the Gnostic tendency toward world-rejection. Thomas L.77 uses Gnostic language ("I am the All") to arrive at a profoundly immanent conclusion. The wood and stone are not prisons for the divine spark (the Gnostic view); they are vessels in which the divine is present for those who know how to find it.',
+              parallels: [
+                { label: 'Corpus Hermeticum XI — God contains all things, everything is full of God', textId: 'corpus-hermeticum-11', note: 'CH XI: "God is everything, and everything is God." Thomas L.77: "I am the All. From me did the All come forth, and unto me did the All extend." Both texts state divine immanence as an identity claim — not "God is like all things" but "the All is the divine" — and both locate that divine All in every material thing.' },
+                { label: 'Isaiah 6 — the whole earth is full of his glory', textId: 'isaiah-6', note: 'The seraphim\'s "the whole earth is full of his glory" and Thomas\'s "split wood, I am there; lift stone, find me there" both claim radical divine immanence in the material world. Isaiah\'s formulation is liturgical and declarative; Thomas\'s is practical and provocative. Both challenge any theology that restricts the divine to a holy place (Temple, throne room) rather than the ordinary material world.' },
+              ]
+            },
+          ]
+        },
+      ]
+    },
+    {
+      heading: 'The Light Within (L.24, L.50)',
+      verses: [
+        {
+          ref: 'L.24',
+          text: 'His disciples said to him, "Show us the place where you are, since it is necessary for us to seek it." He said to them, "Whoever has ears, let him hear. There is light within a man of light, and he lights up the whole world. If he does not shine, he is darkness."',
+          textVersions: {
+            lambdin: 'His disciples said to him, "Show us the place where you are, since it is necessary for us to seek it." He said to them, "Whoever has ears, let him hear. There is light within a man of light, and he lights up the whole world. If he does not shine, he is darkness."',
+            greek: '',
+          },
+          entities: [
+            { word: 'There is light within a man of light', node: 'logos', type: 'concept',
+              note: 'Thomas L.24 gives the inner-light teaching: the "man of light" (anthropos tou phōtos) contains light as an inherent possession. This is not a metaphor for moral virtue but a cosmological claim: certain humans carry divine light as their nature (the pneumatics, in Gnostic terminology). The warning "if he does not shine, he is darkness" is Thomas\'s most pressing soteriological statement: possessing the light is not enough; it must be activated. This is the Thomas gospel\'s version of the Bardo instruction "recognize it, do not flee."',
+              parallels: [
+                { label: 'Poimandres — the divine Nous in the human soul', textId: 'corpus-hermeticum-1', note: 'CH I: the Nous (divine mind) descends and becomes trapped in human form, yet remains divine in its nature. Thomas L.24\'s "man of light" who carries light within is the Hermetic pneumatic: the person in whom the divine Nous is actively operative, radiating the light that was always present.' },
+                { label: 'Bardo Thodol — your awareness is itself the Clear Light', textId: 'bardo-thodol', note: '"Your own awareness, having no birth nor death, is indeed the Immutable Light." Thomas\'s "light within a man of light" and the Bardo\'s "your awareness is the Clear Light" are the same claim: the divine luminosity is not external to be sought but internal to be recognized. The "man of light" has recognized what the Bardo calls the dharmakaya.' },
+              ]
+            },
+          ]
+        },
+      ]
+    },
+  ]
+};
+
+SCRIPTURE_TEXTS['ibn-arabi-fusus'] = {
+  title: 'Ibn Arabi — Fusus al-Hikam (Bezels of Wisdom)',
+  shortTitle: 'Fusus al-Hikam',
+  tradition: 'Islamic / Sufi',
+  date: 'c. 1229 CE',
+  intro: 'Ibn Arabi (1165–1240 CE) is the supreme philosopher-mystic of Islam — the "Greatest Sheikh" (al-Shaykh al-Akbar) — whose Fusus al-Hikam (Bezels of Wisdom) is among the most complex and controversial works in Islamic thought. Written in 1229 CE, the Fusus presents 27 chapters, each devoted to a prophet (Adam, Noah, Abraham, Moses, Jesus, Muhammad...) who embodies a particular divine name or attribute. The title image: each prophet is a bezel (the carved setting that holds a gemstone in a ring) — a particular form that holds the divine light in a specific way. The central concept is the Haqiqa Muhammadiyya (Muhammadan Reality) — the divine Logos that existed before Muhammad\'s historical birth, the pre-eternal template of all prophecy, identified with the Logos of John 1 and the Hermetic Nous. Ibn Arabi\'s wahdat al-wujud (unity of being) — the doctrine that there is only one Being and all apparent multiplicity is the self-disclosure (tajalli) of the One — is the Islamic formulation of Plotinus\' emanation, the Hermetic "everything is God," the Vedantic Brahman, and the Tao. The Fusus was condemned by some Islamic authorities as heresy; celebrated by others as the summit of Islamic mystical theology.',
+  crossTradition: [
+    { label: 'Poimandres (CH I) — the Logos / Nous as the divine template', textId: 'corpus-hermeticum-1', note: 'Ibn Arabi\'s Haqiqa Muhammadiyya — the pre-eternal Logos that is the template for all creation and all prophecy — and Poimandres\' Nous (divine mind) that is the first emanation from the divine and the template for the human soul are structurally identical: a mediating divine principle between the absolute One and created multiplicity. Both texts place this mediating principle at the beginning of all things, before any particular creation.' },
+    { label: 'Plotinus Enneads — wahdat al-wujud as Islamic Neoplatonism', textId: 'plotinus-enneads', note: 'Ibn Arabi\'s wahdat al-wujud (unity of being: there is only one Being, and all things are its self-disclosure) is the Islamic formulation of Plotinus\' emanation metaphysics. Both systems: a single infinite source → emanation/self-disclosure into multiplicity → multiplicity that is really the source manifesting in different modes. Islamic philosophy transmitted Plotinus to Ibn Arabi through al-Farabi and Ibn Sina. The Fusus is the culmination of that transmission.' },
+    { label: 'Rumi Masnavi — the Sufi love-mysticism that Ibn Arabi systematizes', textId: 'rumi-masnavi', note: 'Ibn Arabi and Rumi are contemporaries (both 13th century), both in the Persian-Arabic Sufi world, both influenced by the Andalusian and Eastern Sufi traditions. Rumi expresses in poetry what Ibn Arabi systematizes in philosophy: the soul\'s longing for and union with the divine One. The reed\'s cry for the reed bed (Rumi) and Ibn Arabi\'s tajalli (divine self-disclosure through love) are the same mystical insight in different genres.' },
+    { label: 'John 1 — the Logos as the mediating principle', textId: 'corpus-hermeticum-1', note: 'John 1:1: "In the beginning was the Logos, and the Logos was with God, and the Logos was God." Ibn Arabi\'s Haqiqa Muhammadiyya: the pre-eternal Muhammadan Light that existed "when Adam was between water and clay." Both identify a pre-eternal Logos principle that mediates between the absolute divine and created existence. Islamic tradition formally identifies the pre-eternal Muhammadan Light with the Logos — making Ibn Arabi\'s system a direct engagement with the Johannine prologue.' },
+  ],
+  translations: [
+    { id: 'austin', label: 'Austin 1980 (T1)' },
+    { id: 'arabic', label: 'Arabic (original)' },
+  ],
+  sections: [
+    {
+      heading: 'The Adam Bezel — The Divine Image (Ch.1)',
+      verses: [
+        {
+          ref: 'Ch.1 (Adam)',
+          text: 'God willed, in relation to His Beautiful Names whose number is immeasurable, to see their essences — or, if you wish, to see His Own Essence — in a comprehensive being who, having received all of the divine reality, would enable God\'s mystery to be disclosed to God Himself.',
+          textVersions: {
+            austin: 'God willed, in relation to His Beautiful Names whose number is immeasurable, to see their essences — or, if you wish, to see His Own Essence — in a comprehensive being who, having received all of the divine reality, would enable God\'s mystery to be disclosed to God Himself.',
+            arabic: 'أراد الحق سبحانه أن يرى أعيان أسمائه الحسنى أو قل أن يرى عينه في كون جامع يحصر الأمر كله',
+          },
+          entities: [
+            { word: 'to see His Own Essence in a comprehensive being', node: 'adam-primal', type: 'concept',
+              note: 'This is Ibn Arabi\'s most audacious claim: God created humanity (Adam as the comprehensive being, al-insān al-kāmil, the Perfect Human) in order to see His own essence. Creation is divine self-knowledge through a mirror. This directly parallels the Neoplatonic chain: the One overflows into Intellect because Intellect is the One reflecting itself. Ibn Arabi\'s Islamic reading of Genesis ("God created man in His image") becomes: the image is the mirror through which the divine knows itself. The creation is for the sake of the Creator\'s self-disclosure.',
+              parallels: [
+                { label: 'Plotinus Enneads — the One overflows into Intellect as self-contemplation', textId: 'plotinus-enneads', note: 'Plotinus: "This product turns towards it [the One] and is filled, and looking towards it becomes Intellect." Ibn Arabi: God wills to see His own essence in the comprehensive being (humanity). Both describe creation as proceeding from divine self-contemplation and serving as a mirror for divine self-knowledge. The direction is the same: the absolute self-discloses through a mediating principle that reflects the absolute back to itself.' },
+                { label: 'Apocryphon of John — Barbelo as the first reflection of the Monad', textId: 'apocryphon-of-john', note: 'The Apocryphon\'s Monad contemplates itself and Barbelo (First Thought) arises as the first reflection — "She became the first thought, his image." Ibn Arabi\'s Adam as the mirror through which God sees His own essence, and the Apocryphon\'s Barbelo as the Monad\'s self-reflection — are the same divine self-knowledge structure, expressed in Islamic and Gnostic vocabularies respectively.' },
+              ]
+            },
+          ]
+        },
+      ]
+    },
+    {
+      heading: 'Tajalli — Divine Self-Disclosure',
+      verses: [
+        {
+          ref: 'Ch.1 (cont.)',
+          text: 'Know that God speaks of His self-disclosure (tajalli) to His servants, and He never discloses Himself twice in the same form, nor does He veil Himself twice in the same form. For self-disclosure changes in form according to the preparedness of each recipient.',
+          textVersions: {
+            austin: 'Know that God speaks of His self-disclosure (tajalli) to His servants, and He never discloses Himself twice in the same form, nor does He veil Himself twice in the same form. For self-disclosure changes in form according to the preparedness of each recipient.',
+            arabic: 'اعلم أن الله تعالى يذكر تجلّيه لعباده وهو لا يتجلى في صورة واحدة مرتين ولا يتحجب في صورة واحدة مرتين',
+          },
+          entities: [
+            { word: 'He never discloses Himself twice in the same form', node: 'tradition-sufism', type: 'concept',
+              note: 'Tajalli — divine self-disclosure — is Ibn Arabi\'s central technical term. The infinite divine Being discloses itself in every moment and in every thing, but never in exactly the same form twice: each disclosure is unique because the recipient (each creature) is unique in its preparedness to receive. This is simultaneously: (1) an explanation of religious diversity (each prophet receives a unique tajalli), (2) an explanation of why no description of the divine is exhaustive (each divine self-disclosure is one facet of the infinite), and (3) a theology of immanence (the divine is present in everything because everything is a tajalli).',
+              parallels: [
+                { label: 'Tao Te Ching 1 — the Tao that changes form without end', textId: 'tao-te-ching-1', note: 'Laozi\'s Tao generates all things, is in all things, yet cannot be fixed in any one form — "the Tao that can be named is not the eternal Tao." Ibn Arabi\'s tajalli that never repeats the same form and Laozi\'s Tao that cannot be named or fixed are both theologies of infinite divine inexhaustibility: the divine is always disclosing itself in new forms, always more than any particular disclosure.' },
+                { label: 'Plotinus — the One that overflows without being diminished', textId: 'plotinus-enneads', note: 'Plotinus\' One that emanates without diminishing and Ibn Arabi\'s divine self-disclosure that never repeats are both models of divine generosity/overflow: the infinite can give itself endlessly without being depleted, because giving is the mode of its being.' },
+              ]
+            },
+          ]
+        },
+      ]
+    },
+    {
+      heading: 'The Jesus Bezel — The Breath of Divine Mercy (Ch.15)',
+      verses: [
+        {
+          ref: 'Ch.15 (Jesus)',
+          text: 'The reality of Jesus, as far as his elemental composition is concerned, is the reality of Adam. God breathed into him of His Spirit, just as He breathed it into Adam. Jesus spoke with people from the cradle in order that the proof might be established... The Spirit of God is Jesus because the divine breath that brought him into existence named him "Spirit of God" and "His Word."',
+          textVersions: {
+            austin: 'The reality of Jesus, as far as his elemental composition is concerned, is the reality of Adam. God breathed into him of His Spirit, just as He breathed it into Adam. Jesus spoke with people from the cradle in order that the proof might be established... The Spirit of God is Jesus because the divine breath that brought him into existence named him "Spirit of God" and "His Word."',
+            arabic: 'حقيقة عيسى من حيث تركيبه العنصري حقيقة آدم نفخ الله فيه من روحه كما نفخ في آدم',
+          },
+          entities: [
+            { word: 'The Spirit of God is Jesus because the divine breath', node: 'logos', type: 'concept',
+              note: 'Ibn Arabi synthesizes the Quranic titles for Jesus (Ruh Allah — Spirit of God; Kalima — His Word) with the Hermetic and Johannine Logos. Jesus = Word of God = the pre-eternal Logos made temporal — the same move John 1:14 makes ("the Word became flesh"). Ibn Arabi is doing Islamic Logos theology: the Haqiqa Muhammadiyya is the ultimate Logos; Jesus is one of its supreme temporal manifestations. This chapter is where Ibn Arabi comes closest to the Johannine Prologue while remaining firmly within Islamic theology.',
+              parallels: [
+                { label: 'John 1 — "In the beginning was the Logos... and the Logos became flesh"', textId: 'corpus-hermeticum-1', note: 'John 1:14\'s Logos made flesh and Ibn Arabi\'s "Spirit of God is Jesus because the divine breath that brought him into existence named him His Word" are the same theological claim in Christian and Islamic registers: Jesus is the incarnation of the pre-eternal divine Word/Logos. Ibn Arabi reads the Quranic titles for Jesus (Ruh Allah, Kalima) through a Logos theology that is explicitly parallel to John 1.' },
+                { label: 'Poimandres — the divine Nous descending through the spheres to become human', textId: 'corpus-hermeticum-1', note: 'CH I\'s Anthropos descending through the spheres, taking on the qualities of each sphere, and becoming the divine in human form — and Ibn Arabi\'s Jesus as the divine breath made flesh — are both mythological accounts of the descent of the highest divine principle into temporal, material existence. Both traditions use this descent to explain the divine potential in humanity.' },
+              ]
+            },
+          ]
+        },
+      ]
+    },
+  ]
+};
+
+SCRIPTURE_TEXTS['psalm-22'] = {
+  title: 'Psalm 22 — My God, Why Have You Forsaken Me',
+  shortTitle: 'Psalm 22',
+  tradition: 'Hebrew Bible',
+  date: 'c. 1000–500 BCE',
+  intro: 'Psalm 22 is the most theologically complex of the lament psalms — a text that moves from the abyss of abandonment to the summit of praise, without resolving the tension between them. It opens with "My God, my God, why have you forsaken me?" and closes with a vision of all nations worshipping and all generations declaring God\'s deliverance. Jesus quotes the opening verse from the cross (Matthew 27:46, Mark 15:34), making Psalm 22 the interpretive lens through which his crucifixion is understood. But the psalm\'s own logic is richer than typology: the forsaken one has not been forsaken — "He has not despised or scorned the suffering of the afflicted one; he has not hidden his face from him but has listened to his cry for help" (v.24). The Psalm is a dramatic movement through the experience of divine abandonment into the recognition that the abandonment was never real. This structure — apparent abandonment → actual presence revealed — is the deep logic of the Bardo Thodol (the Clear Light appears to be overwhelming and alien, but it is your own nature), the Rumi reed (the cry of separation is itself the expression of the love that connects), and the Apocryphon\'s Sophia (grief over separation from the divine, but the divine light is still within).',
+  crossTradition: [
+    { label: 'Rumi Masnavi — the reed\'s cry of separation contains the love that connects', textId: 'rumi-masnavi', note: 'Psalm 22\'s movement from "why have you forsaken me" to "he has not hidden his face" — the apparent abandonment revealing the actual presence — is structurally identical to Rumi\'s reed-cry: the reed cries because it is separated from the reed bed, but the cry itself is the expression of the love that was never broken. The cry IS the connection. Both texts move from apparent absence to revealed presence through the act of crying out.' },
+    { label: 'Apocryphon of John — Sophia\'s grief and the divine light still within', textId: 'apocryphon-of-john', note: 'The Gnostic Sophia, grieving after the fall, still has the light within her (Yaldabaoth stole the power but the light remains). Psalm 22\'s psalmist, apparently forsaken, is actually held (v.24). Both texts stage the same move: the experience of divine abandonment, followed by the recognition that the abandonment was not real — the divine presence never actually withdrew.' },
+    { label: 'Bardo Thodol — the terrifying divine light that is actually your own nature', textId: 'bardo-thodol', note: 'The dying person in the Bardo encounters the overwhelming Clear Light and may experience it as threatening — fleeing from what is actually their own nature. Psalm 22\'s psalmist experiences the divine as having withdrawn — and discovers that what felt like abandonment was actually presence. Both texts move from apparent divine hostility or absence to recognition of actual divine nearness.' },
+    { label: 'Isaiah 6 — the prophet undone before the divine throne', textId: 'isaiah-6', note: 'Isaiah\'s "Woe is me! I am lost" before the divine throne and Psalm 22\'s "My God, my God, why have you forsaken me?" are both moments of the self\'s dissolution before the divine. The prophetic and the lament traditions both reach the same moment of radical nakedness before God — and both are met by divine commissioning or divine presence revealed.' },
+  ],
+  translations: [
+    { id: 'nrsv', label: 'NRSV (T1)' },
+    { id: 'hebrew', label: 'Hebrew (original)' },
+  ],
+  sections: [
+    {
+      heading: 'The Cry of Abandonment (22:1–5)',
+      verses: [
+        {
+          ref: '22:1–2',
+          text: 'My God, my God, why have you forsaken me? Why are you so far from saving me, so far from my cries of anguish? My God, I cry out by day, but you do not answer, by night, but I find no rest.',
+          textVersions: {
+            nrsv: 'My God, my God, why have you forsaken me? Why are you so far from saving me, so far from my cries of anguish? My God, I cry out by day, but you do not answer, by night, but I find no rest.',
+            hebrew: 'אֵלִי אֵלִי לָמָה עֲזַבְתָּנִי רָחוֹק מִישׁוּעָתִי דִּבְרֵי שַׁאֲגָתִי',
+          },
+          entities: [
+            { word: 'My God, my God, why have you forsaken me', node: '', type: 'concept',
+              note: 'Eli eli lama azavtani — "My God, my God, why have you forsaken me?" Quoted by Jesus from the cross in both Matthew 27:46 and Mark 15:34 (in Aramaic: Eloi eloi lema sabachthani). This is the only time in the Gospels that Jesus quotes a psalm from the cross, and it is significant that he quotes the opening of a text that moves through abandonment to praise. Early Christian exegetes read the entire Psalm 22 as a prophetic script of the crucifixion (v.18: "they divide my garments among them"; v.16: "they have pierced my hands and my feet"). But the psalm itself is not about resignation — it is a lament that becomes praise. The abandonment is the doorway, not the conclusion.',
+              parallels: [
+                { label: 'Rumi Masnavi — the reed\'s cry of separation', textId: 'rumi-masnavi', note: 'Rumi\'s opening: "Listen to the reed, how it tells a tale, complaining of separations." Psalm 22\'s opening: "My God, why have you forsaken me?" Both are cries of apparent abandonment from a position of real love. In Rumi, the cry itself is the evidence of the connection; in Psalm 22, the cry is addressed to the God who has apparently withdrawn — which itself implies a relationship that cannot be abandoned.' },
+                { label: 'Bardo Thodol — consciousness experiencing the divine as overwhelming and absent', textId: 'bardo-thodol', note: 'The Bardo consciousness that flees the Clear Light and experiences it as threatening is parallel to Psalm 22\'s experience of divine absence. In both cases, what is experienced as abandonment or threat is actually the overwhelming presence of the divine. The Bardo instructs: recognize it, don\'t flee. The Psalm enacts the recognition from within the experience of abandonment.' },
+              ]
+            },
+          ]
+        },
+        {
+          ref: '22:3–5',
+          text: 'Yet you are enthroned as the Holy One; you are the one Israel praises. In you our ancestors put their trust; they trusted and you delivered them. To you they cried out and were saved; in you they trusted and were not put to shame.',
+          textVersions: {
+            nrsv: 'Yet you are enthroned as the Holy One; you are the one Israel praises. In you our ancestors put their trust; they trusted and you delivered them. To you they cried out and were saved; in you they trusted and were not put to shame.',
+            hebrew: 'וְאַתָּה קָדוֹשׁ יוֹשֵׁב תְּהִלּוֹת יִשְׂרָאֵל',
+          },
+          entities: [
+            { word: 'Yet you are enthroned as the Holy One', node: 'tradition-jewish-mysticism', type: 'concept',
+              note: 'The "yet" (v\'attah — "and you") is the psalm\'s crucial pivot. The psalmist moves without resolution from "you have forsaken me" to "you are the Holy One." The tension is not resolved; it is held. This is the theological sophistication of the lament psalm: the abandonment is real as experience; the faithfulness is real as theology. Both are asserted simultaneously. This is not cognitive dissonance but theological honesty — the mature faith that can hold apparent divine absence and divine faithfulness in the same breath.',
+              parallels: [
+                { label: 'Isaiah 6 — "yet I saw the Lord seated on a throne high and exalted"', textId: 'isaiah-6', note: 'Isaiah\'s vision opens with the LORD enthroned in majesty even as the kingdom collapses around him (King Uzziah has just died). Psalm 22\'s "yet you are enthroned" in the midst of abandonment and Isaiah\'s throne vision in the year of political crisis — both locate the divine enthronement as the stable reality behind apparent disaster.' },
+              ]
+            },
+          ]
+        },
+      ]
+    },
+    {
+      heading: 'He Has Not Hidden His Face (22:22–24)',
+      verses: [
+        {
+          ref: '22:22–24',
+          text: 'I will declare your name to my people; in the assembly I will praise you. You who fear the LORD, praise him! All you descendants of Jacob, honor him! Revere him, all you descendants of Israel! For he has not despised or scorned the suffering of the afflicted one; he has not hidden his face from him but has listened to his cry for help.',
+          textVersions: {
+            nrsv: 'I will declare your name to my people; in the assembly I will praise you. You who fear the LORD, praise him! All you descendants of Jacob, honor him! Revere him, all you descendants of Israel! For he has not despised or scorned the suffering of the afflicted one; he has not hidden his face from him but has listened to his cry for help.',
+            hebrew: 'כִּי לֹא-בָזָה וְלֹא שִׁקַּץ עֱנוּת עָנִי וְלֹא-הִסְתִּיר פָּנָיו מִמֶּנּוּ וּבְשַׁוְּעוֹ אֵלָיו שָׁמֵעַ',
+          },
+          entities: [
+            { word: 'he has not hidden his face from him but has listened', node: '', type: 'concept',
+              note: 'The theological resolution of Psalm 22: the "hiding of the face" (hester panim — a key phrase in Jewish theology for divine absence or eclipse) is revealed to have been an experience, not a reality. God did not hide; God listened. The entire journey from "why have you forsaken me" to "he has listened" is a movement from the experience of abandonment to the recognition of presence that was always there. This is the psalms\' deepest theological contribution: the language of abandonment is not a failure of faith but a form of faith — crying out to God in the midst of apparent absence is itself the proof of the relationship.',
+              parallels: [
+                { label: 'Apocryphon of John — Sophia\'s grief but the light still within', textId: 'apocryphon-of-john', note: 'Sophia grieves her separation and error — "she recognized that he lacked something when the light of her brightness diminished." But the light she imparted to Yaldabaoth is never entirely lost; it returns through the salvific process. Psalm 22\'s journey from apparent abandonment to "he has listened" and Sophia\'s journey from grief to eventual restoration both enact the same theological claim: apparent separation does not constitute real abandonment.' },
+              ]
+            },
+          ]
+        },
+      ]
+    },
+    {
+      heading: 'All the Ends of the Earth (22:27–31)',
+      verses: [
+        {
+          ref: '22:27–28',
+          text: 'All the ends of the earth will remember and turn to the LORD, and all the families of the nations will bow down before him, for dominion belongs to the LORD and he rules over the nations.',
+          textVersions: {
+            nrsv: 'All the ends of the earth will remember and turn to the LORD, and all the families of the nations will bow down before him, for dominion belongs to the LORD and he rules over the nations.',
+            hebrew: 'יִזְכְּרוּ וְיָשֻׁבוּ אֶל-יְהוָה כָּל-אַפְסֵי-אָרֶץ וְיִשְׁתַּחֲווּ לְפָנֶיךָ כָּל-מִשְׁפְּחוֹת גּוֹיִם',
+          },
+          entities: [
+            { word: 'All the ends of the earth will remember', node: '', type: 'concept',
+              note: 'The Psalm\'s conclusion is universalist and eschatological: not just Israel but all the families of the nations will turn to the LORD. The movement from the individual\'s cry of abandonment (v.1) to the universal recognition of divine sovereignty (v.27) spans the full range of theological scale — from the most intimate personal lament to the most cosmic communal praise. This universalist conclusion is the psalm\'s most cross-traditional moment: not the God of Israel only but the divine reality recognized by all peoples. The Psalm\'s structure enacts the movement from particular crisis to universal recognition that is the deep pattern of the great mystical traditions.',
+              parallels: [
+                { label: 'Bhagavad Gita 11 — all beings flowing into the Vishvarupa', textId: 'bhagavad-gita-11', note: 'BG 11\'s vision of all beings flowing into Krishna\'s cosmic form — "all the troops of gods... all the sages and divine serpents" — and Psalm 22\'s "all the ends of the earth will remember and turn to the LORD" — both move from the particular (the psalmist\'s crisis, Arjuna\'s battle) to the universal (all nations bowing, all beings in the divine form). The particular crisis is the doorway to the universal recognition.' },
+              ]
+            },
+          ]
+        },
+      ]
+    },
+  ]
+};
