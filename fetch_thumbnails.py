@@ -2427,6 +2427,13 @@ OVERRIDES = {
     "phase-4-045-gregory-of-nyssa-life-of-moses":  "Gregory of Nyssa",
     "phase-3-011-dead-sea-scrolls":                "Qumran",
     "phase-6-023-mulla-sadra-asfar":               "Mulla Sadra",
+    # ---- Quran stubs pass (quran-wiring-1) ----
+    "luqman-sage":          "Wisdom of Luqman",
+    "dhu-al-qarnayn":       "Dhul-Qarnayn",
+    "uzayr":                "Uzair",
+    "zechariah-priest":     "Zechariah in Islam",
+    "pharaoh-exodus":       "Pharaoh in the Quran",
+    "lut":                  "Lot in Islam",
     # ---- Final 18 pass (thumbnail-system-4c) ----
     "ibn-ishaq":                                   "Sirah Rasul Allah",
     "hahyah-nephilim":                             "Book of Giants",

@@ -44,6 +44,11 @@ edges:
     note: "both are Quranic wisdom-exemplars granted divine insight (*ḥikma*); Luqmān is non-prophetic wisdom, Solomon is royal-prophetic wisdom"
   - type: context
     target: "[[tradition-islam]]"
+depictions:
+  - src: "https://upload.wikimedia.org/wikipedia/commons/thumb/4/46/Sura31.pdf/page1-330px-Sura31.pdf.jpg"
+    caption: "Surah 31 (Luqmān) — the Qurʾānic chapter that gives Luqmān his name and preserves his extended wisdom instruction to his son; one of the few Meccan non-prophetic ethical discourses"
+    source: "Wikimedia Commons"
+    license: "Public Domain"
 ---
 
 # Luqmān
