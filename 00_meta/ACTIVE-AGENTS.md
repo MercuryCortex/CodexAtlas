@@ -1498,3 +1498,8 @@ Files: north-star.md · sacred-number-twelve.md · sacred-threshold.md
 **Status: FINISHED**
 Files: sacred-sword.md · world-tree.md · sacred-number-nine.md
 - 253 total symbols · 15060 edges · 0 YAML errors · 0 new dead links · commit 1d450d0
+
+## Goblin 18C — Sacred Mask / Sphinx Symbol / Great Work
+**Status: FINISHED**
+Files: sacred-mask.md · sphinx-symbol.md · great-work.md
+- 254 total symbols · 15071 edges · 0 YAML errors · 0 dead links · commit e21ce73
