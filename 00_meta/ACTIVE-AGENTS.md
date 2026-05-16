@@ -142,6 +142,19 @@ _Hand-maintained. Each agent currently working in the vault appends a claim bloc
 
 ---
 
+## ritual-greek-roman-mesopotamian-1 — 7 Greek/Roman/Mesopotamian ritual nodes in 14_rituals/ — IN PROGRESS (2026-05-17)
+- Owning: `ritual-olympic-games.md`, `ritual-roman-triumph.md`, `ritual-roman-saturnalia.md`, `ritual-vestal-virgins.md`, `ritual-akitu-new-year.md`, `ritual-sacred-marriage-hieros-gamos.md`, `ritual-divination-mesopotamian.md`
+- Status: IN PROGRESS
+
+---
+
+## ~~ritual-egyptian-1 — 6 Egyptian ritual nodes in 14_rituals/ — FINISHED (2026-05-17)~~
+- ~~Owned: `14_rituals/ritual-opening-of-the-mouth.md` (NEW), `ritual-weighing-of-the-heart.md` (NEW), `ritual-opet-festival.md` (NEW), `ritual-sed-festival.md` (NEW), `ritual-daily-temple.md` (NEW), `ritual-embalming-mummification.md` (NEW)~~
+- ~~MASSIVE WINS: (1) wepet-ra / prana-pratishtha / Christian insufflation — three independent solutions to "how does an inert object become sacred/alive" using breath/orifice-opening; (2) weighing of the heart — earliest (c. 2400 BCE) documented moral-accounting-at-death; only tradition with a physical scale; (3) Opet Festival barque procession = Rath Yatra = Corpus Christi = Buddhist relic procession: periodic deity-visits-community renews cosmic social contract; (4) Heb-Sed = Ashvamedha = Lupercalia: king's body IS land's fertility across 3 unrelated traditions; (5) daily temple service — same three-service-per-day architecture as Hindu nitya puja and Christian Liturgy of Hours, with opposite theologies; (6) mummification (preserve body for soul) vs. Zoroastrian dakhma + Buddhist sky burial (destroy body for purity): two complete opposite solutions to the same post-death body problem~~
+- ~~Status: FINISHED — 6 nodes · 0 dead links introduced~~
+
+---
+
 ## music-kabbalah-alchemy-1 — 3 Kabbalah + alchemy music nodes — FINISHED
 - Owned: `10_music/music-zohar-sound-mysticism.md` (NEW full), `10_music/music-abulafia-prophetic-kabbalah.md` (NEW full), `10_music/music-zosimos-alchemical-sound.md` (NEW full)
 - Status: FINISHED — commit `b61c59e`. Build: 58 music nodes · 15893 edges · 0 YAML errors · 0 dead links introduced
