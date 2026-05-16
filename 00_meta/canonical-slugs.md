@@ -17,7 +17,7 @@ canonical-slug
 ## Currently resolved slugs (auto-seeded — every existing file)
 
 
-### deity (492 nodes)
+### deity (493 nodes)
 
 - `abathur`
 - `adamastor`
@@ -279,6 +279,7 @@ canonical-slug
 - `matsya-avatar`
 - `mazu`
 - `meder`
+- `melek-taus`
 - `melqart`
 - `meness`
 - `mercury-roman`
@@ -512,7 +513,7 @@ canonical-slug
 - `zemyna`
 - `zeus`
 
-### document (400 nodes)
+### document (404 nodes)
 
 - `document-kuntillet-ajrud-inscriptions`
 - `phase-1-001-kesh-temple-hymn`
@@ -797,6 +798,10 @@ canonical-slug
 - `phase-5-055-vilayetname-haci-bektas`
 - `phase-5-056-divine-comedy`
 - `phase-5-057-ibn-rushd-aristotle-commentaries`
+- `phase-5-058-nahj-al-balagha`
+- `phase-5-059-rasail-al-hikma`
+- `phase-5-060-bon-kangyur`
+- `phase-5-061-kiteba-cilwe`
 - `phase-6-001-ficino-pimander`
 - `phase-6-002-ficino-theologia-platonica`
 - `phase-6-003-pico-oration-900-conclusions`
@@ -1103,7 +1108,7 @@ canonical-slug
 - `subterranean-chamber-great-pyramid`
 - `temple-of-inscriptions-palenque`
 
-### person (681 nodes)
+### person (683 nodes)
 
 - `aaron`
 - `abba-garima`
@@ -1121,6 +1126,7 @@ canonical-slug
 - `al-biruni`
 - `al-farabi`
 - `al-ghazali`
+- `al-hakim-bi-amr-allah`
 - `al-hallaj`
 - `al-kindi`
 - `al-shafii`
@@ -1339,6 +1345,7 @@ canonical-slug
 - `hagar-matriarch`
 - `hakuin`
 - `hammurabi`
+- `hamza-ibn-ali`
 - `han-feizi-person`
 - `hans-jonas`
 - `hans-urs-von-balthasar`
@@ -1787,7 +1794,7 @@ canonical-slug
 - `ziusudra`
 - `zosimos-of-panopolis`
 
-### symbol (116 nodes)
+### symbol (119 nodes)
 
 - `acacia`
 - `adinkra`
@@ -1828,6 +1835,7 @@ canonical-slug
 - `fish-ichthys`
 - `fleur-de-lis`
 - `flower-of-life`
+- `gorgoneion`
 - `greek-cross`
 - `green-lion`
 - `halo-nimbus`
@@ -1856,6 +1864,7 @@ canonical-slug
 - `nehushtan`
 - `noahs-ark`
 - `obelisk`
+- `ollin`
 - `omphalos`
 - `ouroboros`
 - `pelican-in-piety`
@@ -1877,6 +1886,7 @@ canonical-slug
 - `sefirot-tree-of-life`
 - `serpent-cosmic-enemy`
 - `serpent-wisdom-chthonic`
+- `shankha-conch`
 - `sol-niger`
 - `solve-et-coagula`
 - `spiral`
@@ -2388,22 +2398,19 @@ canonical-slug
 
 | Refs | Dead target | Suggested canonical (existing) |
 |---:|---|---|
-| 5 | `tradition-latin-christianity` | `tradition-mithraic-mysteries` |
-| 3 | `tradition-hinduism` | `tradition-haudenosaunee` |
-| 3 | `tradition-andean` | `tradition-haudenosaunee` |
+| 5 | `tradition-latin-christianity` | `tradition-hospitallers` |
 | 3 | `guru-arjan-dev-ji` | `guru-arjan` |
 | 2 | `yam-canaanite` | `astarte-canaanite` |
-| 2 | `tradition-lingayat` | `tradition-haudenosaunee` |
-| 2 | `tradition-judaism-sephardic` | `tradition-mithraic-mysteries` |
-| 2 | `tradition-islam-shia` | `tradition-etruscan-religion` |
-| 2 | `tradition-islam-mughal` | `tradition-mithraic-mysteries` |
-| 2 | `tradition-hussitism` | `tradition-etruscan-religion` |
-| 2 | `tradition-christianity-catholic` | `tradition-mithraic-mysteries` |
-| 2 | `tradition-bahai` | `tradition-buddhism` |
-| 2 | `phase-4-045-vishnu-purana` | `phase-4-047-cassian-conferences` |
-| 2 | `phase-3-006-homeric-hymns` | `phase-3-006-septuagint` |
-| 2 | `phase-1-005-descent-of-inanna` | `phase-1-006-atrahasis` |
+| 2 | `tradition-lingayat` | `tradition-hospitallers` |
+| 2 | `tradition-judaism-sephardic` | `tradition-hospitallers` |
+| 2 | `tradition-islam-shia` | `tradition-hospitallers` |
+| 2 | `tradition-islam-mughal` | `tradition-hospitallers` |
+| 2 | `tradition-hussitism` | `tradition-hospitallers` |
+| 2 | `tradition-christianity-catholic` | `tradition-neo-confucianism` |
+| 2 | `tradition-bahai` | `tradition-hospitallers` |
+| 2 | `phase-4-045-vishnu-purana` | `phase-4-043-apophthegmata-patrum` |
+| 2 | `phase-3-006-homeric-hymns` | `phase-3-001-second-third-isaiah` |
+| 2 | `phase-1-005-descent-of-inanna` | `phase-1-001-kesh-temple-hymn` |
 | 2 | `guru-gobind-singh-ji` | `guru-gobind-singh` |
 | 2 | `divine-names` | `divine-name` |
 | 2 | `aurangzeb-emperor` | `zara-yaqob-emperor` |
-| 2 | `asclepius` | `asclepius-greek` |

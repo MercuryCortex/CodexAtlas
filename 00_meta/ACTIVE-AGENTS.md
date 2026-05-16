@@ -1130,6 +1130,13 @@ The things opus-foundation-1 claimed but never started are all still open:
 
 ---
 
+## ~~thumbnail-system-1 — Greece thumbnail pass + cache migration — finished 2026-05-16 — DONE~~
+- ~~Owned: 28 YAML files (depictions[] blocks); `fetch_thumbnails.py` (Greece OVERRIDES block); `_assets/thumbs_cache.json` (P{N}→phase-{N} key migration, gitignored)~~
+- ~~Goal: Fill Greece-tradition null nodes; fix thumbnail count regression caused by slug-normalize ID drift~~
+- ~~Status: done — depictions + OVERRIDES committed in 7c0d3b8 (parallel sweep); cache migrated locally; 1617/2346 nodes have images (+28 from 1589 baseline)~~
+
+---
+
 ## ritman-1 — content / Embassy of Free Mind phase-6 gap fill — started 2026-05-15 — **FINISHED 2026-05-15**
 - Owning: `02_documents/_phase-6-early-modern/phase-6-043` through `phase-6-052`, plus `04_persons/` stubs for 6 authors
 - Goal: Identify and fill gaps in phase-6 Hermetic/alchemical collection; confirmed Ritman Library (sourcelibrary.org) digitized holdings for all targets
