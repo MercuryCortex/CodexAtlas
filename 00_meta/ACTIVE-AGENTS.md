@@ -4,6 +4,29 @@ _Hand-maintained. Each agent currently working in the vault appends a claim bloc
 
 ---
 
+## opus-nagarjuna-theravada-1 — Nagarjuna + Theravāda upgrades — started 2026-05-16 — IN PROGRESS
+- Owning: `04_persons/nagarjuna.md`, `07_traditions/tradition-theravada-buddhism.md`
+- Also creating stubs: `04_persons/wittgenstein.md`, `04_persons/derrida.md`, `04_persons/candrakirti.md`
+- Goal: Both nodes metadata→full; MMK/prasaṅga argument; MASSIVE WINS (Nāgārjuna↔Wittgenstein/Derrida/Zhuangzi/apophatic); Pali Canon/Vinaya; arhat↔bodhisattva; vipassanā→mindfulness; Vinaya↔Benedict's Rule
+- Status: in progress
+
+---
+
+## opus-chan-founders-1 — Bodhidharma + Huineng stub→full — started 2026-05-16 — IN PROGRESS
+- Owning: `04_persons/bodhidharma.md`, `04_persons/huineng.md`
+- Also creating stubs: `04_persons/shenxiu.md`, `04_persons/hongren.md`
+- Goal: Both founders stub→full; Emperor Wu koan; "transmission outside scriptures"↔Sufi silsila↔apostolic succession MASSIVE WIN; biguan↔hesychia; sudden awakening↔Luther tower↔Damascus Road; democratization↔priesthood of all believers↔Wang Yangming liangzhi
+- Status: in progress
+
+---
+
+## opus-confucius-mengzi-1 — Confucius + Mengzi stub→full — started 2026-05-16 — IN PROGRESS
+- Owning: `04_persons/confucius.md`, `04_persons/mengzi-person.md`
+- Goal: Upgrade both from stub → full; Axial Age Confucius↔Socrates MASSIVE WIN; junzi↔phronimos↔bodhisattva; four sprouts; innate goodness↔Rousseau↔Augustine; Mandate of Heaven→Locke
+- Status: in progress
+
+---
+
 ## ~~sonnet-egyptian-quartet-1 — Bastet/Sobek/Geb/Nut upgrades — finished 2026-05-16 — DONE~~
 - ~~Owning: `03_deities/bastet.md`, `03_deities/sobek.md`, `03_deities/geb.md`, `03_deities/nut.md`~~
 - ~~Goal: Upgrade all four from metadata/stub → partial; MASSIVE WIN cross-tradition edges~~
@@ -173,6 +196,13 @@ _Hand-maintained. Each agent currently working in the vault appends a claim bloc
 - Status: finished
 - Delivered: 9 nodes edited (beauseant had no gaps). hexagram: +tradition-freemasonry/christian-kabbalah + pyramid-triangle + sefirot-tree-of-life edges. eye: +pyramid-triangle edge. ouroboros: +rose-cross-rosicrucian + pelican-in-piety. caduceus: +rose-cross-rosicrucian + ouroboros. sefirot-tree-of-life: +tradition-context field + Masonic/Christian-Kabbalistic body section + fixed non-standard edge types. pelican-in-piety: +ouroboros + sun-disk. monas-hieroglyphica: +caduceus + sefirot-tree-of-life. alpha-omega: fixed non-standard edge types. pyramid-triangle: +eye syncretic-fusion edge + tradition-context field + fixed edge types.
 - Last edit: `00_meta/STATUS.md`
+
+---
+
+## goblin-divine-center-1 — symbols / divine center + inner eye thread — started 2026-05-16 — IN PROGRESS
+- Owning: `09_symbols/ajna-third-eye.md` (NEW), `09_symbols/bindu.md` (NEW), `09_symbols/omphalos.md` (NEW), `09_symbols/mandorla.md` (NEW)
+- Goal: Divine center symbols; Hindu ajna→Masonic eye→Shiva's third eye convergence; omphalos as world-navel pan-cultural; mandorla as sacred containment geometry
+- Status: in-progress
 
 ---
 
