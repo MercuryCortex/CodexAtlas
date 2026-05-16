@@ -237,9 +237,16 @@ _Hand-maintained. Each agent currently working in the vault appends a claim bloc
 
 ---
 
-## alchemy-practitioners-1 — 8 alchemy practitioner/text nodes — IN PROGRESS (2026-05-17)
-- Owned: `12_alchemy/alchemy-isaac-newton.md`, `12_alchemy/alchemy-nicolas-flamel.md`, `12_alchemy/alchemy-albertus-magnus.md`, `12_alchemy/alchemy-john-dee.md`, `12_alchemy/alchemy-michael-maier.md`, `12_alchemy/alchemy-al-razi-rhazes.md`, `12_alchemy/alchemy-rosarium-philosophorum.md`, `12_alchemy/alchemy-rasayana-hindu.md`
-- Status: IN PROGRESS
+## ~~alchemy-practitioners-1 — 8 alchemy practitioner/text nodes — FINISHED (2026-05-17)~~
+- ~~Owned: `12_alchemy/alchemy-isaac-newton.md`, `12_alchemy/alchemy-nicolas-flamel.md`, `12_alchemy/alchemy-albertus-magnus.md`, `12_alchemy/alchemy-john-dee.md`, `12_alchemy/alchemy-michael-maier.md`, `12_alchemy/alchemy-al-razi-rhazes.md`, `12_alchemy/alchemy-rosarium-philosophorum.md`, `12_alchemy/alchemy-rasayana-hindu.md`~~
+- ~~Build: 26 alchemy nodes · 16900 edges · 0 YAML errors · 0 dead links introduced~~
+- ~~MASSIVE WIN (1): Newton's gravitational force is an alchemical concept in mathematical dress — Dobbs thesis; action-at-a-distance derives from alchemical occult-sympathies framework, not mechanical philosophy~~
+- ~~MASSIVE WIN (2): Catholic theology and alchemy shared a teacher — Albertus Magnus (De Mineralibus) taught Thomas Aquinas (Summa Theologica); Aristotelian hylomorphism grounds both transubstantiation and metallic transmutation~~
+- ~~MASSIVE WIN (3): Rosicrucian moment (1614–1622) is the hinge between Renaissance Hermeticism and Scientific Revolution — Maier/Fludd/Kepler explicit contemporaries who disagreed in print~~
+- ~~MASSIVE WIN (4): Rosarium Philosophorum is the convergence node for 3,500yr hieros gamos tradition (Inanna → Osiris → Song of Songs → Tantric Shiva-Shakti → Rosarium 1550 → Jung 1946)~~
+- ~~MASSIVE WIN (5): Rasayana and Chinese waidan independently discovered mercury as the immortality key with completely different cosmologies and no documented contact, 7th–12th c.~~
+- ~~Surprising Find: Flamel's alchemical legend is self-authored retrospective mythologization; actual wealth from property speculation~~
+- ~~Status: FINISHED — commits 3337250, 2baad2d, 005c9ae~~
 
 ---
 
