@@ -31,6 +31,7 @@ NODE_DIRS = {
     "alchemy":  ["12_alchemy"],
     "moral":    ["13_morals"],
     "ritual":   ["14_rituals"],
+    "philosophy": ["15_philosophy"],
 }
 
 # ---------- minimal YAML parser tailored to our schema ----------
@@ -231,6 +232,7 @@ def tradition_color(t: str) -> str:
 TRADITION_FAMILY_ORDER = [
     # Ancient Near East cluster
     "Mesopotamian",
+    "Hittite",
     "Canaanite",
     "Israelite",
     "Rabbinic",
@@ -279,6 +281,7 @@ FAMILY_COLORS = {
     "Israelite":        "#9aa55a",
     "Rabbinic":         "#8aa07a",
     "Zoroastrian":      "#5a6cc4",
+    "Hittite":          "#7a6040",
     "Armenian":         "#8a3a5a",
     "Vedic":            "#e08a3a",
     "Buddhist":         "#c4a05a",
@@ -338,6 +341,8 @@ def tradition_family(t: str) -> str:
         return "Neoplatonist"
     if "hermetic" in s or "hermetism" in s:
         return "Hermetic"
+    if s.startswith("roman") or "italic religion" in s:
+        return "Roman"
     if "mystery" in s or "mithra" in s or "orphic" in s or "eleusin" in s or "phrygian" in s or "bacchic" in s:
         return "Mystery"
     # --- Ancient origin traditions checked BEFORE Christian so that strings like
@@ -350,13 +355,15 @@ def tradition_family(t: str) -> str:
         return "Canaanite"
     if "israel" in s or "hebrew" in s or "jewish" in s or "judaism" in s or "second temple" in s or "qumran" in s or "essene" in s:
         return "Israelite"
-    if "sumerian" in s or "akkadian" in s or "babylonian" in s or "assyrian" in s or "mesopotam" in s or "elamite" in s or "hittite" in s:
+    if "hittite" in s or "hurrian" in s or "luwian" in s or "hattic" in s:
+        return "Hittite"
+    if "sumerian" in s or "akkadian" in s or "babylonian" in s or "assyrian" in s or "mesopotam" in s or "elamite" in s:
         return "Mesopotamian"
     if "egyptian" in s or "amarna" in s or "ptolema" in s or "kemetic" in s:
         return "Egyptian"
     if "yoruba" in s or "ifa" in s or "vodun" in s or "vodou" in s or "santeria" in s or "candomble" in s or "akan" in s or "bantu" in s or "ethiopian" in s or "aksumite" in s or "sabaean" in s or "kebra" in s or "african" in s or "san " in s or "maasai" in s or "dahomey" in s:
         return "African"
-    if "celtic" in s or "druid" in s or "gaelic" in s or "irish" in s or "welsh" in s or "gaulish" in s or "breton" in s:
+    if "celtic" in s or "druid" in s or "gaelic" in s or "irish" in s or "welsh" in s or "gaulish" in s or "breton" in s or "lusitanian" in s or "iberian" in s or "gallaecian" in s:
         return "Celtic"
     if "norse" in s or "germanic" in s or "icelandic" in s or "viking" in s or "asatru" in s or "anglo-saxon" in s:
         return "Norse"
@@ -391,8 +398,6 @@ def tradition_family(t: str) -> str:
         return "Armenian"
     if "etruscan" in s and "roman" not in s:
         return "Etruscan"
-    if "roman" in s:
-        return "Roman"
     if "chinese" in s or "confucian" in s or "daoist" in s or "daoism" in s or "taoist" in s or "taoism" in s or "shang" in s or "zhou" in s or "korean" in s:
         return "Chinese"
     if "aztec" in s or "mexica" in s or "nahuatl" in s or "maya" in s or "mayan" in s or "olmec" in s or "toltec" in s or "zapotec" in s or "mixtec" in s or "mesoamerican" in s:
@@ -840,6 +845,7 @@ def main():
     print(f"  alchemy   : {counts.get('alchemy', 0)}")
     print(f"  morals    : {counts.get('moral', 0)}")
     print(f"  rituals   : {counts.get('ritual', 0)}")
+    print(f"  philosophy: {counts.get('philosophy', 0)}")
     print(f"  edges     : {len(deduped)}")
 
 if __name__ == "__main__":

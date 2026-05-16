@@ -54,3 +54,26 @@ See also: [[ritual-eucharist-communion]], [[ritual-sacrifice]], [[ritual-initiat
 Puja's 16-step upacharas and the Catholic Mass are two independent formalisations of an identical structure: the complete royal-reception protocol applied to the divine. Both emerge from Bronze Age hospitality culture — one from South Asian Vedic/Agamic tradition, one from Roman imperial court ceremony absorbed into Christian worship. Neither tradition appears to have been aware of the other's structural identity. This is not coincidence — it is the convergence of two civilizations on the same solution to the same problem: how do you receive an invisible king?
 
 The additional finding: the 16-step sequence implies a full theology of divine personhood. A king who can be seated, bathed, dressed, fed, and dismissed is a deity with *needs* — a category that monotheistic aniconism explicitly rejects. The upacharas encode anthropomorphic theology in ritual grammar.
+
+## Vault Connections
+
+**Deities worshipped in puja:**
+- [[vishnu]] — primary Vaishnava puja recipient; Lakshmi puja occurs alongside
+- [[shiva]] — primary Shaiva puja recipient; lingam abhisheka is a specialized puja form
+- [[lakshmi]] — goddess of prosperity; Diwali puja focuses on her; paired with Vishnu
+- [[ganesha]] — invoked first in any puja; remover of obstacles; no ceremony begins without him
+- [[durga]] — primary deity of Navaratri (9-night puja festival); fierce protective aspect
+- [[parvati]] — Shiva's consort; Shaiva puja tradition
+- [[agni]] — fire element present in every puja through the dipa (lamp) offering; Vedic ancestor of the ritual
+
+**Traditions:**
+- [[tradition-hinduism]] — primary tradition
+- [[tradition-vedic-hinduism]] — Vedic substrate; puja extends the yajna hospitality logic
+- [[tradition-tantra]] — Agamic texts (Shaiva/Shakta Agamas) specify puja liturgy in forensic detail
+
+**Companion rituals:**
+- [[ritual-yajna-vedic-fire]] — Vedic ancestor; puja displaces open-air fire sacrifice for domestic devotion
+- [[ritual-eucharist-communion]] — structural parallel: royal-hospitality-protocol applied to the divine (MASSIVE WIN)
+- [[ritual-sacrifice]] — puja as the domesticated, non-blood successor to Vedic sacrifice
+- [[ritual-initiation-mystery]] — prana-pratishtha (image consecration) shares initiatory logic
+- [[ritual-diwali-festival-light]] — Lakshmi puja is central to Diwali's main night

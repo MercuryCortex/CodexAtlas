@@ -55,3 +55,32 @@ See also: [[ritual-sacrifice]], [[agni]], [[rigveda]], [[tradition-vedic]], [[tr
 ## MASSIVE WIN
 
 The words "yajna" and "yasna" are the same word. Sanskrit and Avestan are daughter languages of the same parent tongue, and both preserve the same fire ritual under the same name. This means the fire sacrifice is not a parallel independent invention — it is a documented inheritance from a common ancestor civilization (Proto-Indo-Iranian, c. 2200–1800 BCE), making the Vedic fire altar and the Zoroastrian fire temple genetically related. The Greek *thysia* and Hebrew *korban* then represent either independent convergence or transmission through shared Bronze Age cultural contact. Either interpretation is explosive: fire as divine medium is either the most successful cross-cultural convergence in ritual history, or the most widely distributed ritual inheritance from a single ancestral source.
+
+## Vault Connections
+
+**Central deity:**
+- [[agni]] — the Vedic fire god; first word of the Rigveda addresses him; the priest who carries oblations to the gods; entirely inseparable from yajna
+
+**Cognate ritual (MOST IMPORTANT):**
+- [[ritual-yasna-fire-ceremony]] — yasna = yajna; same word, same ritual, same Proto-Indo-Iranian ancestor; the most documentable deep-time ritual continuity in human history
+
+**Cross-tradition fire rituals and companion nodes:**
+- [[ritual-sacrifice]] — yajna is the paradigmatic sacrifice; all other sacrifice nodes contextualize against it
+- [[ritual-puja-hindu]] — domestic puja descends from and domesticates the yajna tradition
+- [[ritual-mandala-offering]] — Buddhist ritual that explicitly inverts yajna's logic (offers then sweeps away)
+
+**Sacred substances:**
+- [[soma]] — sacred plant drink pressed and offered during yajna; haoma cognate
+- [[haoma]] — Avestan form of soma; used in the yasna as yajna's direct counterpart
+- [[theme-soma-haoma-eucharist]] — cross-tradition sacred-drink pattern
+
+**Traditions:**
+- [[tradition-vedic]] — primary tradition; yajna is the foundational Vedic ritual technology
+- [[tradition-vedic-hinduism]] — continuation into classical Hinduism
+- [[tradition-zoroastrianism]] — the yasna branch; same ancestor
+- [[tradition-persian-zoroastrian]] — Parsi community continuation of the fire tradition
+
+**Source texts:**
+- [[rigveda]] — primary hymns to Agni; oldest textual stratum of yajna
+- [[phase-1-031-rigveda]] — document node
+- [[phase-2-004-yasna-younger-avesta]] — Avestan cognate text
