@@ -345,6 +345,52 @@ window.CHAINS_DATA = [
   },
 
   {
+    id: 'post-fludd-esoteric-revival',
+    title: 'After Kepler Wins — The Esoteric Sonic Chain Continues Underground',
+    category: 'ESOTERIC',
+    span: '1875–2007 CE · the living tradition',
+    summary: 'When Kepler ended music-of-spheres as a physics claim in 1622, Fludd\'s tradition did not die — it migrated underground and re-emerged three centuries later through Theosophy. The chain runs: Fludd → Blavatsky (1875) → Steiner (1912) → Scriabin (1910) → Messiaen (1941) → Stockhausen (1968–2007). Each link is explicit: each figure knew the previous tradition and identified with it. This is not independent reinvention — it is continuous esoteric transmission.',
+    links: [
+      {
+        date: '1619',
+        label: 'Fludd — World-Monochord as Apex and Terminus',
+        node: 'music-fludd-world-monochord',
+        note: 'Fludd\'s world-monochord is simultaneously the high-water mark and the last defensible claim of music-of-spheres as physics. After Kepler\'s 1622 refutation, the tradition continues — but only outside the scientific mainstream. Fludd becomes the last point where the cosmic-music claim was taken seriously as natural philosophy.'
+      },
+      {
+        date: '1875',
+        label: 'Blavatsky — Sound as Cosmic Substance (Theosophy)',
+        node: 'music-theosophy-sound-cosmology',
+        note: 'H.P. Blavatsky\'s Theosophy revives the Hermetic-Neoplatonic tradition explicitly: "sound creates form" (anticipating cymatics), akasha as the primordial sonic substance of the cosmos, the Nada Brahma doctrine borrowed from Hinduism. Leadbeater\'s *Thought-Forms* (1901) is the first modern attempt to map colors to musical tones systematically. The esoteric sonic tradition re-emerges in institutional form.'
+      },
+      {
+        date: '1912',
+        label: 'Steiner — Eurhythmy: Sound Made Visible',
+        node: 'music-steiner-eurhythmy',
+        note: 'Rudolf Steiner diverges from Theosophy but intensifies the cosmic-music claim: the human body is a crystallized musical form; each phoneme and musical interval has a corresponding physical gesture that makes the cosmic sound visible. Eurhythmy is the first attempt since Iamblichus to give the music-cosmos theory a practical ritual form in the Western tradition.'
+      },
+      {
+        date: '1910',
+        label: 'Scriabin — Music as Instrument of Cosmic Dissolution',
+        node: 'music-scriabin-mysterium',
+        note: 'Scriabin reads Blavatsky; his *Mysterium* plans the definitive cosmic-music performance — 7 days, Himalayan foothills, a synthesis of music, light, scent, and gesture that would dissolve the current cosmic cycle and initiate the next. Prometheus Op. 60 (1910) includes the first color-keyboard in scored Western art music. The esoteric chain\'s most operationally ambitious modern statement.'
+      },
+      {
+        date: '1941',
+        label: 'Messiaen — Theological Music as Divine Presence',
+        node: 'music-messiaen-modes-color',
+        note: 'Olivier Messiaen acknowledges Scriabin as an influence while working from Catholic mysticism rather than Theosophy. His modes of limited transposition are harmonic icons of divine eternity — not metaphors but acoustic realizations of theological states. The *Quartet for the End of Time*, composed and premiered in a Nazi prison camp (Stalag VIII-A, 1941), is the 20th century\'s most rigorous theological-musical statement. Receives the Fludd tradition through a different channel.'
+      },
+      {
+        date: '1968',
+        label: 'Stockhausen — Sacred Drone and the Planetary Opera',
+        node: 'music-stockhausen-cosmic',
+        note: '*Stimmung* (1968): 70 minutes of six vocalists sustaining a B-flat chord, invoking names of gods from multiple traditions — the sacred drone as collective ritual act. *Licht* (1977–2003): a 29-hour, 7-opera planetary cycle where each day of the week is governed by a planetary archetype. Stockhausen explicitly claims extraterrestrial origin (Sirius). He is the furthest point yet reached in the esoteric sonic chain\'s modern expression.'
+      },
+    ],
+  },
+
+  {
     id: 'fludd-kepler-terminus',
     title: 'The Fludd-Kepler Debate — The Exact Death of Music-of-Spheres as Physics',
     category: 'INSTITUTIONAL',
