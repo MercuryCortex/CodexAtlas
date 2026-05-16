@@ -8111,3 +8111,342 @@ SCRIPTURE_TEXTS['3-enoch-metatron'] = {
     },
   ]
 };
+
+// ── BATCH 17 ────────────────────────────────────────────────────────────────
+
+SCRIPTURE_TEXTS['john-of-the-cross-dark-night'] = {
+  title: 'John of the Cross — Dark Night of the Soul',
+  shortTitle: 'Dark Night of the Soul',
+  tradition: 'Christianity',
+  date: 'c. 1578–1579 CE',
+  intro: 'John of the Cross (Juan de la Cruz, 1542–1591) wrote the poem "Dark Night of the Soul" (Noche Oscura del Alma) while imprisoned by his own Carmelite superiors in Toledo — a nine-month solitary confinement that became, in retrospect, the crucible of one of the most psychologically and spiritually precise accounts of mystical transformation ever written. The poem itself is only eight stanzas, but the two prose commentaries he later wrote on it (Ascent of Mount Carmel and the commentary on the Dark Night) together form the most systematic account of the apophatic mystical path in Western Christianity. The "dark night" is John\'s term for the stripping away of every spiritual consolation, concept, and image — every prop that the soul uses to approach the divine — until the soul stands in naked unknowing before the naked divine. It is simultaneously terrifying (the loss of everything familiar) and the necessary precondition for union. No text in the Western tradition has more direct parallels to Buddhist śūnyatā (emptiness), to the Upanishadic neti neti, to Pseudo-Dionysius\'s divine darkness, and to the Taoist emptying of the self.',
+  crossTradition: [
+    { label: 'Pseudo-Dionysius — the divine darkness beyond all knowing', textId: 'pseudo-dionysius-mystical-theology', note: 'Pseudo-Dionysius\'s Mystical Theology is the direct theological ancestor of John\'s dark night. Dionysius: Moses enters "the truly mysterious darkness of unknowing" where he "is supremely united to the wholly unknown by an inactivity of all knowledge." John of the Cross: the dark night is the "ray of darkness" that illumines the soul precisely by overwhelming its cognitive faculties. Both texts are describing the same movement: the ascent into the divine requires the progressive abandonment of all conceptual knowledge, culminating in an unknowing that is the highest knowing. John systematizes and psychologizes what Dionysius had described philosophically.' },
+    { label: 'Brihadaranyaka neti neti — stripping every predicate from Brahman', textId: 'brihadaranyaka-neti-neti', note: 'The Brihadaranyaka\'s neti neti ("not this, not this") is the systematic Indian philosophical parallel to John\'s dark night. Both proceed by negation: the Upanishad strips every possible predicate from Brahman; the dark night strips every spiritual image, concept, and consolation from the soul\'s approach to God. The difference is that neti neti is primarily epistemological (a method of correct thinking about Brahman), while the dark night is primarily experiential (a process of transformation endured rather than a method applied). But both arrive at the same stripped clarity: the absolute cannot be reached by any positive route, only by the systematic removal of every obstacle, including the obstacle of spiritual knowledge itself.' },
+    { label: 'Song of Songs — the night search and the beloved found', textId: 'song-of-songs', note: 'John of the Cross\'s poem is explicitly a commentary on the Song of Songs: the soul as the beloved who goes out at night seeking the divine Bridegroom, passes through the city (the senses and the spirit), and finds the beloved in union on the mountain. Song 3:1–4: "On my bed by night I sought him whom my soul loves." John\'s poem opens: "On a dark night, kindled in love with yearnings — oh, happy chance! — I went forth without being observed, my house being now at rest." Both texts use the same erotic-nocturnal imagery for the soul\'s movement toward the divine; John\'s poem is a direct reading of the Song as a map of the mystical journey.' },
+  ],
+  translations: [
+    { label: 'Allison Peers (1935)', lang: 'en', default: true },
+    { label: 'Kieran Kavanaugh OCD', lang: 'en' },
+    { label: 'Spanish original', lang: 'es' },
+  ],
+  sections: [
+    {
+      heading: 'The Poem: Dark Night (Noche Oscura)',
+      verses: [
+        {
+          ref: 'Stanzas 1–4',
+          text: 'On a dark night, kindled in love with yearnings — oh, happy chance! — I went forth without being observed, my house being now at rest. In darkness and secure, by the secret ladder, disguised — oh, happy chance! — in darkness and in concealment, my house being now at rest. In the happy night, in secret, when none saw me, nor I beheld aught, without light or guide, save that which burned in my heart. This light guided me more surely than the light of noonday to the place where he (well I knew who!) was awaiting me — a place where none appeared.',
+          textVersions: {
+            peers: 'On a dark night, kindled in love with yearnings — oh, happy chance! — I went forth without being observed, my house being now at rest.',
+            kavanaugh: 'One dark night, fired with love\'s urgent longings — ah, the sheer grace! — I went out unseen, my house being now all stilled.',
+            spanish: 'En una noche oscura, con ansias en amores inflamada, ¡oh dichosa ventura!, salí sin ser notada, estando ya mi casa sosegada.',
+          },
+          entities: [
+            { word: 'my house being now at rest', node: 'contemplation', type: 'concept',
+              note: 'The "house at rest" (mi casa sosegada) is the poem\'s key technical term: it refers to the quieting of the senses (first stanza) and later the quieting of the spirit (second stanza). Only when the house — the faculties of sense and reason, the appetites and operations of the soul — is stilled and at rest can the soul move freely in the darkness. This is the apophatic precondition: all ordinary activity must cease before the extraordinary movement into union can begin. Compare Meister Eckhart\'s "the soul must be empty and free" and Buddhist śamatha (tranquility meditation) as the prerequisite for vipaśyanā (insight): the stilling of mental activity as the necessary ground for deeper perception.',
+              parallels: [
+                { label: 'Meister Eckhart — "the soul must be empty and free of all creatures"', textId: 'meister-eckhart-godhead', note: 'Eckhart\'s poverty of spirit — the soul that possesses nothing, knows nothing, wills nothing — is the theological-scholastic account of what John of the Cross calls "my house being now at rest." Both describe the same apophatic precondition: the emptying of the soul of all creaturely content, all images, all concepts, all attachments, as the necessary condition for the divine influx. Eckhart approaches this through the concept of Abgeschiedenheit (detachment); John approaches it through the imagery of night and the absence of all light. Both are mapping the same territory.' },
+                { label: 'Mandukya Upanishad — turiya as the state beyond all activity', textId: 'mandukya-upanishad', note: 'The Mandukya\'s turiya — the fourth state beyond waking, dreaming, and deep sleep — is the Upanishadic parallel to John\'s "house at rest." In turiya, all ordinary cognitive activity ceases: the mind is not active (waking), not dreaming (dreaming state), not dissolved into unconsciousness (deep sleep), but present in a different mode that cannot be described in terms of any of the three ordinary states. John\'s dark night takes the soul into a similar state: beyond ordinary sensory experience, beyond rational reflection, beyond even spiritual consolation — into a mode of being that cannot be described in terms of ordinary experience.' },
+              ]
+            },
+            { word: 'without light or guide, save that which burned in my heart', node: 'divine-love', type: 'concept',
+              note: 'The only guide in the dark night is the love itself — not knowledge, not vision, not spiritual experience, but the bare love that drives the soul forward through the darkness without any external illumination. This is the mystical tradition\'s most radical epistemological claim: love is a form of knowing that functions precisely where all other forms of knowing have failed. The heart\'s burning is not an emotion but a spiritual orientation — the compass that points toward the divine even when all other instruments are useless. This is what Thomas Aquinas calls amor ipse notitia est — love itself is knowledge.',
+              parallels: [
+                { label: 'Song of Songs 8:6 — "love is strong as death... its flashes are flashes of fire"', textId: 'song-of-songs', note: 'Song 8:6: "love is strong as death... its flashes are flashes of fire, a raging flame." John of the Cross: "without light or guide, save that which burned in my heart." Both texts identify love as fire — not the comfortable fire of spiritual consolation but a fire that burns without consuming, that illumines without giving the usual kind of light. The Song\'s "flashes of fire" and John\'s "heart-burning" are the same image: love as the only lamp adequate to the divine darkness, because it does not require external light to function.' },
+              ]
+            },
+          ]
+        },
+        {
+          ref: 'Stanzas 5–8',
+          text: 'Oh, night that guided me, oh, night more lovely than the dawn, oh, night that joined Beloved with lover, Lover transformed in the Beloved! Upon my flowery breast, kept wholly for himself alone, there he lay sleeping, and I caressing him there, in the fanning of the cedars\' air. The breeze blew from the turret as I parted his locks; with his gentle hand he wounded my neck and caused all my senses to be suspended. I remained, lost in oblivion; my face I reclined on the Beloved. All ceased and I abandoned myself, leaving my cares forgotten among the lilies.',
+          textVersions: {
+            peers: 'Oh, night that joined Beloved with lover, Lover transformed in the Beloved!',
+            kavanaugh: 'O night that has united the Lover with his beloved, transforming the beloved in her Lover.',
+            spanish: '¡Oh noche que juntaste Amado con amada, amada en el Amado transformada!',
+          },
+          entities: [
+            { word: 'Lover transformed in the Beloved', node: 'mystical-union', type: 'concept',
+              note: 'The climactic claim of the poem: amada en el Amado transformada — the beloved transformed into the Beloved. This is theosis (divinization) described through erotic-mystical imagery: the soul does not merely encounter the divine or dwell near the divine but is transformed into the divine — as iron in a fire becomes fire. John\'s prose commentary will clarify that this is not identity (the soul does not become God in the way God is God) but transformative participation: the soul becomes divine by participation, as iron becomes fire by interpenetration with fire. This is the same distinction that Meister Eckhart, Pseudo-Dionysius, and the Greek Fathers make with the concept of theosis.',
+              parallels: [
+                { label: 'Meister Eckhart — "the soul becomes God, not by identity but by union"', textId: 'meister-eckhart-godhead', note: 'Eckhart\'s description of the soul\'s union with the Godhead — "the soul becomes God by participation" — and John\'s "lover transformed in the Beloved" are two accounts of the same mystical event. Both insist that the union is real (not merely metaphorical or relational) but preserve the distinction between Creator and creature (the soul becomes divine but does not become God simpliciter). The transformation is by participation, penetration, or what John calls the "substantial union" — the soul sharing in the divine nature without losing its created nature.' },
+                { label: 'Rumi Masnavi — the reed that yearns to return to the reed bed', textId: 'rumi-masnavi', note: 'Rumi\'s reed that cries for union with the reed bed from which it was cut and John\'s soul that goes out at night and finds transformation in union with the Beloved are the two great mystical-erotic descriptions of divine union in the Abrahamic traditions. Rumi: the separation itself is the cry of longing; the music is the lamentation of being cut off. John: the darkness is the stripping away of every false source of consolation; the union at the end is the resolution of the same longing. Both poems are about the soul\'s journey from separation through yearning to union — and both use the erotic vocabulary of human love as the only language adequate to describe it.' },
+              ]
+            },
+            { word: 'All ceased and I abandoned myself, leaving my cares forgotten among the lilies', node: 'contemplation', type: 'concept',
+              note: 'The final line of the poem: all ceased (todo lo dejé) — everything stopped, everything was left behind. The self is abandoned; the cares are forgotten; what remains is pure presence in union. This is the highest point John\'s poem reaches: not ecstasy, not vision, not intellectual illumination, but the simple cessation of the ordinary self and its replacement by a transformed presence. The "lilies" recall the Song of Songs ("his lips are lilies, distilling liquid myrrh," 5:13; "I am my beloved\'s and my beloved is mine; he pastures his flock among the lilies," 2:16) — the final image is the language of the Song, where the beloved grazes among lilies in the presence of the lover.',
+              parallels: [
+                { label: 'Brihadaranyaka neti neti — dissolution of all predicates into undifferentiated awareness', textId: 'brihadaranyaka-neti-neti', note: 'Brihadaranyaka 4.4.22: "He who knows Brahman becomes Brahman... he has passed beyond grief." John of the Cross: "all ceased and I abandoned myself." Both texts describe the same endpoint: the dissolution of the ordinary self and its cares into a transformed mode of being that is identical with (or participates in) the ultimate ground. The Upanishad describes it ontologically (the knower of Brahman becomes Brahman); John describes it phenomenologically (all ceased; the cares were forgotten). Both are pointing at the same realized state.' },
+              ]
+            },
+          ]
+        },
+      ]
+    },
+    {
+      heading: 'The Prose Commentary: Two Nights (Ascent of Mount Carmel, I.2–3)',
+      verses: [
+        {
+          ref: 'Ascent I.2–3',
+          text: 'The soul, then, to attain to union with God, must pass through this dark night. We may say that there are three reasons for which this journey made by the soul to God is called night. The first has to do with the point from which the soul goes forth, for it has gradually to deprive itself of desire for all the worldly things which it possessed, by denying them to itself; the which denial and deprivation are, as it were, night to all the senses of man. The second reason has to do with the mean, or the road along which the soul must travel to this union — that is, faith, which is likewise as dark as night to the intellect. The third has to do with the point to which it travels — namely, God, Who, equally, is dark night to the soul in this life.',
+          textVersions: {
+            peers: 'The first has to do with the point from which the soul goes forth... The second reason has to do with the mean... faith, which is likewise as dark as night to the intellect. The third has to do with the point to which it travels — namely, God, Who, equally, is dark night to the soul in this life.',
+          },
+          entities: [
+            { word: 'God, Who, equally, is dark night to the soul in this life', node: 'apophatic-theology', type: 'concept',
+              note: 'John\'s most philosophically precise claim: God himself is dark night to the soul — not because God is absent but because the divine light is so far beyond ordinary human cognition that it functions as darkness to the unprepared soul, as sunlight causes blindness in eyes adapted to a cave. This is the apophatic tradition\'s central paradox: the divine is not dark because of its deficiency but because of its excess. John is directly inheriting Pseudo-Dionysius\'s "divine darkness" and applying it to the structure of mystical experience: the highest spiritual states feel like darkness and emptiness because the divine reality they participate in exceeds every ordinary mode of knowing.',
+              parallels: [
+                { label: 'Pseudo-Dionysius — "the divine darkness which is beyond light"', textId: 'pseudo-dionysius-mystical-theology', note: 'Pseudo-Dionysius MT I: "the Divine Darkness which is beyond light." John of the Cross: "God, Who, equally, is dark night to the soul." Both texts are making the same claim: the ultimate reality appears as darkness not because it is deficient in being or light but because it is super-abundant in both — it exceeds the capacity of any faculty to perceive it directly. The philosophical framework is identical: divine transcendence experienced as cognitive darkness. John is the most psychologically precise elaboration of what Dionysius described philosophically — the lived experience of what Dionysius mapped conceptually.' },
+                { label: 'Plato\'s Cave — the pain of eyes adjusted to darkness when they face the sun', textId: 'plato-cave', note: 'Plato\'s cave allegory describes the philosopher who turns toward the sun and is initially blinded by the light — the very reality toward which the ascent is aimed becomes temporarily blinding. John of the Cross: God is "dark night to the soul" because the divine light exceeds the soul\'s cognitive capacity. Both texts are using the same optical metaphor (excess of light causes blindness) to describe the same epistemological phenomenon: the highest reality appears as darkness/blinding to eyes adapted to the shadows. Plato\'s cave is the philosophical prototype; John of the Cross is its mystical-experiential application.' },
+              ]
+            },
+          ]
+        },
+      ]
+    },
+  ]
+};
+
+SCRIPTURE_TEXTS['kebra-nagast'] = {
+  title: 'Kebra Nagast — Glory of Kings',
+  shortTitle: 'Kebra Nagast',
+  tradition: 'Christianity',
+  date: 'c. 14th century CE (core traditions much older)',
+  intro: 'The Kebra Nagast ("Glory of Kings") is the national-religious epic of Ethiopia — the text that defines Ethiopian Christian identity the way the Iliad defined Greek identity or the Aeneid defined Roman identity. Compiled in its present form in the 14th century CE but drawing on traditions that may be centuries older, it narrates the journey of Makeda (the Queen of Sheba) to Jerusalem to learn wisdom from Solomon, their union, the birth of their son Menelik, Menelik\'s journey to Jerusalem to meet his father, and — the theological heart of the text — the transfer of the Ark of the Covenant from Jerusalem to Ethiopia, where it is believed to reside in the Church of Our Lady Mary of Zion in Axum to this day. The Kebra Nagast establishes Ethiopia as the new Israel, Menelik as the first in the line of Ethiopian Solomon-descended kings (a lineage maintained until Haile Selassie I in the 20th century), and the Ark\'s presence as the guarantee of divine favor. It is the foundational text of Ethiopian Orthodox Christianity and the scriptural basis for Rastafarianism\'s theology of Africa as the promised land.',
+  crossTradition: [
+    { label: 'Book of Jubilees — the heavenly tablets and the continuity of divine law', textId: 'book-of-jubilees', note: 'The Book of Jubilees and the Kebra Nagast are the two most important texts unique to or most central to Ethiopian Christianity, and they share a theological conviction: divine law and divine presence have a history that extends beyond the canonical Hebrew account. Jubilees traces the law back to the Heavenly Tablets before Sinai; the Kebra Nagast traces the Ark\'s presence forward from Jerusalem to Ethiopia after Solomon. Both texts are expanding the geography of divine presence: not confined to one people or one place but moving through history by divine design.' },
+    { label: 'Book of Enoch — the continuous Ethiopian canon tradition', textId: 'book-of-enoch', note: 'The Book of Enoch, the Book of Jubilees, and the Kebra Nagast are the three texts that most distinguish the Ethiopian Orthodox biblical canon from all other Christian canons. All three were preserved in Ethiopia when they were lost or excluded elsewhere; all three were found or translated from Ethiopic (Ge\'ez) by Western scholars in the 18th–19th centuries. Together they represent the most distinctive theological tradition in Christianity: a tradition that preserved a broader range of Second Temple Jewish texts, maintained a more expansive angelology and cosmology, and located divine presence more emphatically in physical objects and historical lineages.' },
+    { label: 'Solomon — Proverbs 8 and the pursuit of Wisdom', textId: 'proverbs-8', note: 'The Kebra Nagast opens with Makeda\'s quest for the wisdom that Solomon embodies — she travels from the ends of the earth because she has heard that Solomon\'s wisdom is unmatched. Proverbs 8\'s Wisdom who calls from the heights, who was present at creation and delights in humanity — this is the Wisdom that Solomon personifies in the Kebra Nagast. The Queen\'s journey to wisdom-embodied is the Kebra Nagast\'s enactment of what Proverbs 8 describes theologically: Wisdom actively seeking and being sought, wisdom available to any who will make the journey.' },
+  ],
+  translations: [
+    { label: 'Budge (1922)', lang: 'en', default: true },
+    { label: 'Ethiopic (Ge\'ez)', lang: 'gez' },
+  ],
+  sections: [
+    {
+      heading: 'The Queen of Sheba Seeks Solomon\'s Wisdom (Chapters 24–25)',
+      verses: [
+        {
+          ref: 'Ch. 24–25',
+          text: 'And the Queen of the South heard of the wisdom of Solomon and marvelled thereat, and she had a desire to go to him. And she gathered together gifts of great price, of gold and silver, and costly garments... And she came to Solomon and found him seated upon his throne, and his face was like unto the sun, and his wisdom was like unto deep water. And she spake with him, and she was dazzled by his wisdom. And King Solomon answered and said unto her, "What seeketh thee, O Queen? Verily all thy desire shall be satisfied." And the Queen answered and said unto him, "I have come to hear thy wisdom, for they say that it excelleth that of all the kings of the earth." And Solomon said, "The gift of wisdom is better than gold and silver." And the Queen of the South was learned in all the wisdom of men, and she learnt the wisdom of Solomon, and she became even wiser than she had been before.',
+          textVersions: {
+            budge: 'She came to Solomon and found him seated upon his throne, and his face was like unto the sun, and his wisdom was like unto deep water.',
+          },
+          entities: [
+            { word: 'his wisdom was like unto deep water', node: 'sophia', type: 'concept',
+              note: 'The image of wisdom as deep water — inexhaustible, able to receive everything, reflecting everything, yet containing depths that cannot be plumbed — is the Kebra Nagast\'s primary image for Solomon\'s wisdom and, by extension, for divine Wisdom herself. It echoes Proverbs 20:5: "The purposes of a man\'s heart are deep waters, but a man of understanding draws them out." Wisdom in the Kebra Nagast is not merely intellectual knowledge but a quality of being — a depth of presence — that transforms those who encounter it. The Queen\'s transformation by contact with Solomon\'s wisdom is the Kebra Nagast\'s account of what Wisdom of Solomon 7:27 describes: "in every generation she passes into holy souls."',
+              parallels: [
+                { label: 'Wisdom of Solomon 7 — Sophia who "passes into holy souls in every generation"', textId: 'wisdom-of-solomon', note: 'Wisdom of Solomon 7:27: "in every generation she passes into holy souls and makes them friends of God, and prophets." Kebra Nagast: the Queen of Sheba becomes "even wiser than she had been before" through her encounter with Solomon, who embodies divine Wisdom. Both texts describe the same movement: divine Wisdom seeking and finding receptive souls, transforming them by contact. The Queen\'s journey is the Kebra Nagast\'s narrative enactment of the Wisdom of Solomon\'s theological claim: Sophia is not static but active, passing from generation to generation through those who seek her.' },
+              ]
+            },
+          ]
+        },
+      ]
+    },
+    {
+      heading: 'The Transfer of the Ark to Ethiopia (Chapters 52–54)',
+      verses: [
+        {
+          ref: 'Ch. 52–54',
+          text: 'And Azariah said unto them, "Come, and I will reveal to you something which God hath spoken to me in a dream." And he said, "The Lord wisheth that the Ark of God should be taken to the country of Ethiopia with Menelik the King, the son of Solomon. Come now, let us take the Ark, and we will not tell the King thereof until Menelik hath gone far away from Jerusalem." [...] And when the sun rose over them the wagons began to move, and the horses and the mules were raised up from the earth, and Menelik and his men rejoiced over the Ark, and they praised God singing unto Him with the music of harps and drums and pipes... And the wind carried them along on the water, and the Ark was raised up from the earth... And they flew like eagles, and all their journey was performed in the air above the earth.',
+          textVersions: {
+            budge: 'The wind carried them along on the water, and the Ark was raised up from the earth... And they flew like eagles, and all their journey was performed in the air above the earth.',
+          },
+          entities: [
+            { word: 'the Ark of God should be taken to the country of Ethiopia', node: 'divine-presence', type: 'concept',
+              note: 'The transfer of the Ark to Ethiopia is the theological center of the Kebra Nagast and the founding myth of Ethiopian Christian identity. The Ark (aron) — the container of the divine Presence (Shekinah), the footstool of the divine throne, the most sacred object in Israelite religion — is understood in Ethiopian theology not as lost or destroyed but as preserved in Axum. This is a claim about the continuity of divine presence: the divine Shekinah that left Jerusalem (Ezekiel 10–11 describes the Shekinah departing the Temple before its destruction) is not absent but relocated, dwelling in the most faithful remaining community. Ethiopia as the new Jerusalem is the Kebra Nagast\'s central theological claim.',
+              parallels: [
+                { label: 'Ezekiel 1 — the Merkabah: the divine throne that moves', textId: 'ezekiel-1', note: 'Ezekiel\'s vision of the divine throne-chariot (Merkabah) that can move — unlike the pagan idols who cannot move and must be carried — and the Kebra Nagast\'s account of the Ark being transported to Ethiopia are two expressions of the same theological conviction: divine presence is not fixed to one location but moves by divine decision. Ezekiel\'s Merkabah moves to accompany the exiles in Babylon; the Kebra Nagast\'s Ark moves to accompany the new community in Ethiopia. In both texts, the movement of divine presence signals a theological transfer of election: the divine goes where the divine chooses, not where human expectations require.' },
+                { label: 'Zohar Ein Sof — the Shekhinah in exile, accompanying Israel', textId: 'zohar-ein-sof', note: 'The Zohar\'s doctrine of Galut haShekhinah (exile of the Divine Presence) — the Shekhinah accompanying Israel into exile, sharing their condition of displacement — and the Kebra Nagast\'s transfer of the Ark (the visible symbol of the Shekhinah\'s presence) to Ethiopia are two responses to the same theological problem: what happens to divine presence when the primary sacred community is dispersed or displaced? The Zohar says the Shekhinah goes into exile with Israel; the Kebra Nagast says the Ark itself migrates to the most faithful remnant. Both preserve divine immanence and loyalty by following the community rather than remaining in an empty building.' },
+              ]
+            },
+          ]
+        },
+      ]
+    },
+  ]
+};
+
+SCRIPTURE_TEXTS['sirach'] = {
+  title: 'Sirach — Wisdom and the Fear of the Lord',
+  shortTitle: 'Sirach (Ben Sira)',
+  tradition: 'Christianity',
+  date: 'c. 180 BCE (Hebrew); c. 132 BCE (Greek translation)',
+  intro: 'The Book of Sirach (Ecclesiasticus, Ben Sira) is a deuterocanonical wisdom text — canonical in Catholic, Orthodox, and Ethiopian Christianity, included in the LXX but excluded from the Hebrew Bible canon (though the original Hebrew text was partially discovered at Masada and Qumran). Written by Joshua ben Sira in Jerusalem around 180 BCE, it is the longest and most complete of the Jewish wisdom texts and the last major wisdom composition before the common era. Its central achievement is the explicit identification of Wisdom (Hochma/Sophia) with Torah — "All this is the book of the covenant of the Most High God, the law that Moses commanded us" (24:23) — a move that synthesizes the cosmological Wisdom tradition (Proverbs 8, Wisdom of Solomon) with the legal-covenantal tradition, creating the theological framework that will shape both rabbinic Judaism (Torah as the cosmic order) and Johannine Christianity (the Logos who became Torah became flesh). Sirach 24\'s Wisdom hymn is, with Proverbs 8 and Wisdom of Solomon 7, the third panel of the pre-Christian Jewish Wisdom triptych that the Fourth Gospel transforms into Christology.',
+  crossTradition: [
+    { label: 'Proverbs 8 — Wisdom present at creation and calling to humanity', textId: 'proverbs-8', note: 'Proverbs 8\'s Wisdom who was present at creation ("I was beside him, like a master workman") and Sirach 24\'s Wisdom who "came forth from the mouth of the Most High" and sought a dwelling place among all peoples are in direct dialogue. Sirach is the post-exilic development of the Proverbs 8 tradition: where Proverbs has Wisdom calling from the heights in relatively spare terms, Sirach gives her a full self-disclosure speech (24:1–22) and then explicitly identifies her with Torah (24:23). Sirach closes the loop of the Wisdom tradition: Wisdom is not merely the cosmic principle present at creation but the specific communal practice of Jewish law.' },
+    { label: 'Wisdom of Solomon 7 — Sophia as the breath of God and cosmic mediator', textId: 'wisdom-of-solomon', note: 'The Wisdom of Solomon\'s Sophia who is "the breath of the power of God" and "a reflection of eternal light" and Sirach\'s Sophia who "came forth from the mouth of the Most High" and "covered the earth like a mist" are two stages of the same Alexandrian wisdom theology. Sirach is slightly earlier (c. 180 BCE) and more Palestine-centered (he explicitly identifies Wisdom with Torah); Wisdom of Solomon is later (c. 100–50 BCE) and more Hellenized (using Platonic vocabulary of emanation and reflection). Together with Proverbs 8 they form the three-stage development of Jewish Sophia theology that the NT inherits.' },
+    { label: 'Bhagavad Gita — dharma as the cosmic order embodied in specific practice', textId: 'bhagavad-gita-4', note: 'Sirach\'s identification of cosmic Wisdom with specific Torah practice — the universal cosmic principle becomes the particular communal law — is structurally parallel to the Bhagavad Gita\'s identification of cosmic dharma (the order of the universe) with specific svadharma (one\'s own particular duty). In both texts, the universal cosmic principle (Wisdom/dharma) becomes accessible through particular practice (Torah observance/one\'s caste duty). The universal is not abandoned for the particular; the particular is the form the universal takes in concrete human life. This is the move that both texts are making against purely abstract or speculative spirituality.' },
+  ],
+  translations: [
+    { label: 'NRSV', lang: 'en', default: true },
+    { label: 'KJV (Apocrypha)', lang: 'en' },
+    { label: 'Greek (LXX)', lang: 'grc' },
+  ],
+  sections: [
+    {
+      heading: 'Wisdom\'s Self-Disclosure (24:1–12)',
+      verses: [
+        {
+          ref: '24:1–7',
+          text: 'Wisdom praises herself, and tells of her glory in the midst of her people. In the assembly of the Most High she opens her mouth, and in the presence of his hosts she tells of her glory: "I came forth from the mouth of the Most High, and covered the earth like a mist. I dwelt in the highest heavens, and my throne was in a pillar of cloud. Alone I compassed the vault of heaven and traversed the depths of the abyss. Over waves of the sea, over all the earth, and over every people and nation I have held sway. Among all these I sought a resting place; in whose territory should I lodge?"',
+          textVersions: {
+            nrsv: '"I came forth from the mouth of the Most High, and covered the earth like a mist."',
+            kjv: '"I came out of the mouth of the most High, and covered the earth as a cloud."',
+            greek: 'ἐγὼ ἀπὸ στόματος ὑψίστου ἐξῆλθον καὶ ὡς ὁμίχλη κατεκάλυψα γῆν.',
+          },
+          entities: [
+            { word: 'I came forth from the mouth of the Most High', node: 'sophia', type: 'concept',
+              note: 'Sophia coming forth from "the mouth of the Most High" is the breath-word image: she is the divine utterance, the word-breath of God given personal form. This connects directly to Genesis 1 (God speaks the world into existence), Psalm 33:6 ("by the word of the LORD the heavens were made"), and John 1:1 ("in the beginning was the Word"). Sirach 24:3 is the most explicit pre-Christian statement of the Logos-as-divine-speech concept: Wisdom is the divine speech personified, the creative word of God given cosmic and personal dimensions. The mouth-of-the-Most-High is also the mouth from which Torah will later be said to emanate — establishing the chain: divine speech → Wisdom → Torah → Logos.',
+              parallels: [
+                { label: 'John 1 — "In the beginning was the Word... and the Word was God"', textId: 'john-1', note: 'John 1:1: "In the beginning was the Word (Logos), and the Word was with God, and the Word was God." Sirach 24:3: "I came forth from the mouth of the Most High." Both texts describe the same pre-existent divine principle — in Sirach as personified Wisdom coming from the divine mouth/speech; in John as the Logos that was with God and was God. The Johannine Logos hymn is performing a Christological identification: Jesus = the Sophia of Sirach 24, who has now found her resting place not in Torah (as Sirach concludes) but in the incarnate Christ.' },
+                { label: 'Proverbs 8 — Wisdom present at creation as the firstborn of God\'s works', textId: 'proverbs-8', note: 'Proverbs 8:22–23: "The LORD created me at the beginning of his work, the first of his acts of old. Ages ago I was set up, at the first, before the beginning of the earth." Sirach 24:3: "I came forth from the mouth of the Most High." Proverbs has Wisdom created at the beginning; Sirach has her emanating from the divine mouth. Sirach is extending and intensifying the Proverbs tradition: Wisdom is not merely the first creation but the very speech of God — not made by God but uttered by God, as close to divine as a creature can be without being the Creator.' },
+              ]
+            },
+          ]
+        },
+        {
+          ref: '24:8–12',
+          text: '"Then the Creator of all things gave me a command, and my Creator chose the place for my tent. He said, \'Make your dwelling in Jacob, and in Israel receive your inheritance.\' Before the ages, in the beginning, he created me, and for all the ages I shall not cease to be. In the holy tent I ministered before him, and so I was established in Zion. Thus in the beloved city he gave me a resting place, and in Jerusalem was my domain. I took root in an honored people, in the portion of the Lord, his heritage."',
+          textVersions: {
+            nrsv: '"Make your dwelling in Jacob, and in Israel receive your inheritance."',
+            kjv: '"Make thy dwelling in Jacob, and take up thine inheritance in Israel."',
+            greek: 'Κατασκήνωσον ἐν Ιακωβ, καὶ ἐν Ισραηλ κατακληρονόμησον.',
+          },
+          entities: [
+            { word: 'Make your dwelling in Jacob, and in Israel receive your inheritance', node: 'sophia', type: 'concept',
+              note: 'Wisdom\'s universal cosmic wandering — "over all the earth and over every people and nation I have held sway" — is resolved by divine command into a particular dwelling: Israel, Jacob, Jerusalem, the holy tent. This is Sirach\'s theological move: the cosmic becomes local, the universal becomes particular. Wisdom sought a resting place among all peoples (24:7) and was given one specific people. This particularity-within-universality is the characteristic move of covenantal theology: the universal God makes specific covenants with specific peoples. The same tension — Wisdom available to all nations vs. Wisdom given to one nation — will recur in the NT\'s controversy over the Gentile mission.',
+              parallels: [
+                { label: 'John 1 — "the Word became flesh and lived among us (eskēnōsen)"', textId: 'john-1', note: 'John 1:14: "the Word became flesh and lived (eskēnōsen — pitched his tent) among us." Sirach 24:8: God told Wisdom "Make your dwelling (skēnōson) in Jacob." The Greek verb is the same: skēnoō — to pitch a tent, to tabernacle. John 1:14 is a deliberate echo of Sirach 24:8: where Sirach has Wisdom pitching her tent in Israel, John has the Logos (= Wisdom-Christ) pitching his tent in flesh. The Christological reading is encoded in the Greek verb: Jesus is the fulfillment of Sirach\'s Sophia who "took root in an honored people" — but the honored people is now all who receive him (John 1:12).' },
+              ]
+            },
+          ]
+        },
+      ]
+    },
+    {
+      heading: 'Wisdom Identified with Torah (24:23–29)',
+      verses: [
+        {
+          ref: '24:23–29',
+          text: 'All this is the book of the covenant of the Most High God, the law that Moses commanded us as an inheritance for the congregations of Jacob. It overflows, like the Pishon, with wisdom, and like the Tigris at the time of the first fruits. It runs over, like the Euphrates, with understanding, and like the Jordan at harvest time. It pours forth instruction like the Nile, like the Gihon at the time of vintage. The first man did not know wisdom fully, nor will the last one fathom her.',
+          textVersions: {
+            nrsv: 'All this is the book of the covenant of the Most High God, the law that Moses commanded us.',
+            kjv: 'All these things are the book of the covenant of the most high God, even the law which Moses commanded.',
+            greek: 'Ταῦτα πάντα βίβλος διαθήκης θεοῦ ὑψίστου, νόμον ὃν ἐνετείλατο ἡμῖν Μωυσῆς.',
+          },
+          entities: [
+            { word: 'All this is the book of the covenant... the law that Moses commanded us', node: 'sophia', type: 'concept',
+              note: 'The climax of Sirach 24: after the entire cosmic self-disclosure of Wisdom — present at creation, traversing the cosmic deep, holding sway over all nations, finding her resting place in Israel — Sirach identifies her with Torah. The antecedent of "all this" is the entire preceding self-disclosure of Wisdom. The equation is complete: cosmic Wisdom = Torah. This is the most significant identification in pre-Christian Jewish theology, and it runs in two directions: Torah is elevated to cosmic status (it is not merely a local law but the cosmic order itself); and cosmic Wisdom is localized to specific practice (it is not a vague philosophical principle but the concrete daily practice of observance). Both elevations happen simultaneously.',
+              parallels: [
+                { label: 'Tao Te Ching — the Tao that is both the cosmic principle and the way of life', textId: 'tao-te-ching-1', note: 'Tao Te Ching\'s Tao is simultaneously the cosmic principle (the mother of the ten thousand things, the ground of all existence) and the way of life for the sage (wu wei, non-striving, following the natural course). Sirach\'s equation of cosmic Wisdom with Torah makes the same double identification: the cosmic principle (Wisdom present at creation) = the way of life (Torah observance). In both traditions, the universal cosmic reality becomes accessible through a specific practice — Tao through wu wei, Wisdom through Torah — and the practice is understood as the creaturely participation in the cosmic principle.' },
+              ]
+            },
+          ]
+        },
+      ]
+    },
+  ]
+};
+
+SCRIPTURE_TEXTS['confucius-analects'] = {
+  title: 'Confucius — The Analects',
+  shortTitle: 'Analects',
+  tradition: 'Chinese Philosophy',
+  date: 'c. 479–221 BCE (compiled after Confucius\'s death in 479 BCE)',
+  intro: 'The Analects (Lun Yu, "Selected Sayings") is the primary record of Confucius\'s (Kong Qiu, 551–479 BCE) teachings — a collection of conversations, aphorisms, and brief narratives compiled by his disciples. Together with the Tao Te Ching, it is the most influential text in East Asian intellectual and social history, shaping Chinese, Japanese, Korean, and Vietnamese civilization for over two millennia. Where the Tao Te Ching looks toward cosmic non-action and the natural, Confucius looks toward human cultivation and the social: the central virtue is ren (仁, humaneness/benevolence), the central practice is self-cultivation through ritual, music, and study, and the central ideal is the junzi (君子, the exemplary person/superior person) who embodies virtue in every role. Yet despite Confucius\'s worldly, humanistic focus, the Analects contains moments of profound resonance with other traditions\' accounts of the spiritual life: the daily self-examination of the worthy man, the identification of the moral life with one\'s deepest nature, the reciprocity principle ("do not impose on others what you yourself do not want"), and the description of the sage who has achieved such alignment with Heaven (Tian) that virtue flows effortlessly through every action. The Analects is the great Abrahamic traditions\' most illuminating conversation partner on the question of ethics as spiritual practice.',
+  crossTradition: [
+    { label: 'Matthew 5 — the Beatitudes: virtue as a disposition of the whole person', textId: 'matthew-sermon-mount', note: 'Analects 1.1: "Is it not pleasant to learn with a constant perseverance and application? Is it not delightful to have friends coming from distant quarters?" Analects 4.5: "The determined scholar and the man of virtue will not seek to live at the expense of injuring their virtue." Matthew 5:3–12: "Blessed are the pure in heart, for they will see God." Both texts describe virtue not as rule-following but as a quality of character — an orientation of the whole person that expresses itself naturally in specific behaviors. Confucius\'s junzi and Jesus\'s "pure in heart" are two accounts of the same achieved state: the person whose inner character is so aligned with the good that right action flows effortlessly.' },
+    { label: 'Bhagavad Gita — duty (dharma) and self-cultivation as the spiritual path', textId: 'bhagavad-gita-4', note: 'The Bhagavad Gita\'s teaching on svadharma (one\'s own duty) and self-purification as the means of spiritual realization and the Analects\' teaching on ren (humaneness) and self-cultivation through ritual practice are two of the ancient world\'s most developed accounts of ethics as a spiritual discipline. Both insist that the path to the highest human state runs through the perfection of specific human roles and relationships — not through escape from the social world but through its transformation from within. The Gita calls this karma yoga (the yoga of action); Confucius calls it the cultivation of ren through li (ritual propriety).' },
+    { label: 'Tao Te Ching — the sage whose virtue is effortless and natural', textId: 'tao-te-ching-1', note: 'The tension and dialogue between Confucius and Laozi is one of the great internal conversations in Chinese thought. Laozi\'s sage acts through wu wei (non-action, effortless naturalness); Confucius\'s junzi acts through self-cultivation (effort, practice, study). Yet they converge at the highest point: Analects 2.4 describes Confucius at seventy: "I could follow what my heart desired, without transgressing what was right." This is wu wei achieved through decades of cultivation — the point where effort has so transformed character that virtue flows naturally, without forcing. The Taoist sage and the Confucian sage at their highest are the same person approached from different directions.' },
+  ],
+  translations: [
+    { label: 'Legge (1861)', lang: 'en', default: true },
+    { label: 'D.C. Lau (Penguin)', lang: 'en' },
+    { label: 'Classical Chinese', lang: 'zh' },
+  ],
+  sections: [
+    {
+      heading: 'The Central Virtue: Ren (Humaneness) (4.3; 12.1; 6.30)',
+      verses: [
+        {
+          ref: '4.3; 12.1',
+          text: 'The Master said, "It is only the virtuous man who can love, or who can hate, others." [...] Yan Yuan asked about perfect virtue (ren). The Master said, "To subdue oneself and return to propriety is perfect virtue. If a man can for one day subdue himself and return to propriety, all under heaven will ascribe perfect virtue to him. Is the practice of perfect virtue from a man himself, or is it from others?"',
+          textVersions: {
+            legge: 'Yan Yuan asked about perfect virtue. The Master said, "To subdue oneself and return to propriety is perfect virtue."',
+            lau: 'Yan Hui asked about benevolence. The Master said, "To master oneself and return to the rites is to practise benevolence."',
+            chinese: '顏淵問仁。子曰：「克己復禮為仁。一日克己復禮，天下歸仁焉。為仁由己，而由人乎哉？」',
+          },
+          entities: [
+            { word: 'To subdue oneself and return to propriety is perfect virtue', node: 'self-cultivation', type: 'concept',
+              note: 'Ke ji fu li wei ren — to master oneself (ke ji: overcome, conquer the self) and return to ritual propriety (fu li) is ren (humaneness/perfect virtue). This is Confucius\'s most complete definition of the central virtue. Three movements: (1) ke ji — the overcoming of the self-centered, impulsive, unexamined self; (2) fu li — the return to the patterns of ritual and propriety that structure human community; (3) ren — the realized state of humaneness that results. The path runs through self-discipline toward the social, not through the social toward the individual. Compare the structure of the mystical path in any tradition: the way to the highest state passes through the dissolution of the small ego.',
+              parallels: [
+                { label: 'Matthew 5 — "deny yourself... take up your cross"', textId: 'matthew-sermon-mount', note: 'Confucius: "To subdue oneself and return to propriety is perfect virtue." Matthew 16:24 (parallel to the Beatitudes tradition): "If any want to become my followers, let them deny themselves and take up their cross and follow me." Both the Confucian ke ji (self-subdual) and the Christian self-denial describe the same fundamental movement: the overcoming of the self-centered, self-asserting ego as the precondition for the highest human state (ren / the kingdom of heaven). The destination differs (ritual propriety vs. the kingdom of heaven), but the movement is identical: the cultivation of the highest virtue requires the overcoming of the self that impedes it.' },
+                { label: 'Bhagavad Gita — "let a man lift himself by his own self" (6.5)', textId: 'bhagavad-gita-4', note: 'Gita 6.5: "Let a man lift himself by his own self alone, let him not lower himself; for the self alone is the friend of the self, and the self alone is the enemy of the self." Confucius: "Is the practice of perfect virtue from a man himself, or is it from others?" Both texts insist that the fundamental work of moral-spiritual cultivation is each person\'s own responsibility — not dependent on external conditions or other people. The Gita calls this the ātman as both friend and enemy; Confucius makes it a rhetorical question whose answer is obviously "from himself." Both are teaching the primacy of inner work over external circumstance.' },
+              ]
+            },
+          ]
+        },
+        {
+          ref: '6.30',
+          text: 'Zi Gong asked, saying, "Is there one word which may serve as a rule of practice for all one\'s life?" The Master said, "Is not shu (reciprocity) such a word? Do not impose on others what you yourself do not want."',
+          textVersions: {
+            legge: '"Is not shu (reciprocity) such a word? Do not impose on others what you yourself do not want."',
+            lau: '"It is perhaps the word shu. Do not impose on others what you yourself do not desire."',
+            chinese: '子貢問曰：「有一言而可以終身行之者乎？」子曰：「其恕乎！己所不欲，勿施於人。」',
+          },
+          entities: [
+            { word: 'Do not impose on others what you yourself do not want', node: 'ethics', type: 'concept',
+              note: 'Ji suo bu yu, wu shi yu ren — "What you yourself do not want, do not impose on others." This is Confucius\'s Golden Rule — the negative formulation (do not do) as opposed to Matthew 7:12\'s positive formulation ("do to others as you would have them do to you"). The negative formulation may be more practically precise: it is easier to know what you do not want than to know what others want you to do for them. Both formulations have been identified by scholars as the most widely shared ethical principle across world traditions, appearing in some form in virtually every major moral tradition. The word Confucius uses for the principle is shu — reciprocity, consideration, the imaginative extension of one\'s own experience into the experience of the other.',
+              parallels: [
+                { label: 'Matthew 7:12 — "do to others as you would have them do to you"', textId: 'matthew-sermon-mount', note: 'Matthew 7:12: "In everything do to others as you would have them do to you; for this is the law and the prophets." Analects 15.24: "Do not impose on others what you yourself do not want." The Confucian negative Golden Rule (shu/reciprocity) and Jesus\'s positive Golden Rule ("do as you would have done") are the two most influential formulations of the same principle in world history. Both are presented as summaries of the entire ethical tradition: Jesus says "this is the law and the prophets"; Confucius says it is "one word which may serve as a rule of practice for all one\'s life." The same convergence of the entire moral tradition into one principle of reciprocal consideration.' },
+                { label: 'Dhammapada — "Hurt not others with that which pains yourself" (the Buddhist Golden Rule)', textId: 'dhammapada-1', note: 'Dhammapada 10.1 (Udanavarga 5.18): "Hurt not others in ways that you yourself would find hurtful." This is the Buddhist negative formulation, parallel to Confucius\'s shu. The three great axial-age formulations — Confucian shu (c. 500 BCE), Buddhist ahimsa-reciprocity (c. 500 BCE), and Christian Golden Rule (c. 30 CE) — converge on the same principle: the imaginative extension of one\'s own experience of desire and aversion into the experience of others as the foundation of ethics. The convergence across three independent traditions in roughly the same historical period is one of the strongest arguments for a universal human moral intuition.' },
+              ]
+            },
+          ]
+        },
+      ]
+    },
+    {
+      heading: 'The Junzi (Exemplary Person) and the Sage at Seventy (2.4; 15.9)',
+      verses: [
+        {
+          ref: '2.4',
+          text: 'The Master said, "At fifteen, I had my mind bent on learning. At thirty, I stood firm. At forty, I had no doubts. At fifty, I knew the decrees of Heaven. At sixty, my ear was an obedient organ for the reception of truth. At seventy, I could follow what my heart desired, without transgressing what was right."',
+          textVersions: {
+            legge: '"At seventy, I could follow what my heart desired, without transgressing what was right."',
+            lau: '"At seventy, I followed my heart\'s desire without overstepping the mark."',
+            chinese: '子曰：「吾十有五而志于學，三十而立，四十而不惑，五十而知天命，六十而耳順，七十而從心所欲，不踰矩。」',
+          },
+          entities: [
+            { word: 'At seventy, I could follow what my heart desired, without transgressing what was right', node: 'self-cultivation', type: 'concept',
+              note: 'The culmination of Confucius\'s autobiographical spiritual account: at seventy, the distinction between what he desired and what was right had collapsed — not because he had stopped desiring but because his desires had been so thoroughly cultivated that they naturally aligned with what is right. This is the Confucian equivalent of theosis: not the abolition of the human but its perfection. The heart (xin) that formerly required discipline to align with the right now naturally produces the right without effort. This is the Confucian version of wu wei achieved through decades of cultivation — the goal that the Tao Te Ching describes as the starting point of the sage (effortless naturalness) has been achieved by Confucius through the long route of self-cultivation.',
+              parallels: [
+                { label: 'Tao Te Ching — the sage who acts without effort (wu wei)', textId: 'tao-te-ching-1', note: 'Tao 15 describes the ancient masters as "subtle, mysterious, profound, responsive" — their virtue is so deep it looks like water, like emptiness, like simplicity. They do not act from calculation but from alignment with the Tao. Confucius at seventy — "follow what my heart desired, without transgressing what was right" — has achieved this same effortless virtue through the Confucian path of self-cultivation rather than the Taoist path of returning to natural simplicity. Both traditions describe the same achieved state (effortless right action); they disagree about the path (cultivation vs. return). The destination is identical: the person for whom virtue and desire have become one.' },
+                { label: 'Meister Eckhart — "the just person desires nothing but justice itself"', textId: 'meister-eckhart-godhead', note: 'Eckhart: "The just person desires nothing but justice itself, and works not for reward, nor for God\'s sake, but for justice alone." Confucius at seventy: "I could follow what my heart desired, without transgressing what was right." Both describe the highest state of moral development as the complete alignment of desire with virtue — not the suppression of desire but its transformation. The medieval Christian mystic and the ancient Chinese sage are describing the same human possibility: the person who has been so thoroughly shaped by the good that their spontaneous desires are themselves good.' },
+              ]
+            },
+          ]
+        },
+        {
+          ref: '15.9',
+          text: 'The Master said, "The determined scholar and the man of virtue will not seek to live at the expense of injuring their virtue. They will even sacrifice their lives to preserve their virtue complete."',
+          textVersions: {
+            legge: '"They will even sacrifice their lives to preserve their virtue complete."',
+            lau: '"A man of principle never seeks to live at the expense of his principles. He will even sacrifice his life to fulfil his principles."',
+            chinese: '子曰：「志士仁人，無求生以害仁，有殺身以成仁。」',
+          },
+          entities: [
+            { word: 'They will even sacrifice their lives to preserve their virtue complete', node: 'ethics', type: 'concept',
+              note: 'Sha shen yi cheng ren — "kill the body to complete humaneness/virtue." This is Confucius\'s account of martyrdom: the willingness to die rather than compromise the central virtue of ren. The Confucian junzi does not value physical life above moral integrity — not because physical life has no value, but because ren is the highest human value, and a life lived without it is not worth living. Compare the Hebrew Bible\'s tradition of martyrdom (the Maccabean martyrs who chose death over apostasy), the Christian martyrdom tradition, and the Buddhist bodhisattva who sacrifices personal liberation for the liberation of all beings.',
+              parallels: [
+                { label: 'Hebrews 11 — the heroes of faith who preferred death to compromise', textId: 'hebrews-11', note: 'Hebrews 11:35–38: "Others were tortured, refusing to accept release, in order to obtain a better resurrection... They were stoned to death, they were sawn in two... of whom the world was not worthy." Analects 15.9: "They will even sacrifice their lives to preserve their virtue complete." Both texts identify the willingness to die for one\'s deepest commitments as the mark of the highest human character. The Confucian junzi who dies to preserve ren and the Hebrews 11 heroes who die to preserve faith are performing the same fundamental act: demonstrating that there is something more important than physical survival — and that willingness to die for it is the ultimate proof of genuine commitment.' },
+              ]
+            },
+          ]
+        },
+      ]
+    },
+  ]
+};

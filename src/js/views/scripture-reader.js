@@ -59,7 +59,12 @@ window.ScriptureReader = (function () {
     'gospel-of-philip':   { religion:'Christianity', group:'Gnostic / Nag Hammadi', canon:'Non-canonical',       sort:30 },
     'thunder-perfect-mind': { religion:'Christianity', group:'Gnostic / Nag Hammadi', canon:'Non-canonical',     sort:40 },
     // ── Christianity — Medieval Mysticism ───────────────────────────
-    'julian-of-norwich':  { religion:'Christianity', group:'Medieval Mysticism',    canon:'Catholic Mysticism',  sort:10 },
+    'julian-of-norwich':          { religion:'Christianity', group:'Medieval Mysticism',    canon:'Catholic Mysticism',              sort:10 },
+    'john-of-the-cross-dark-night': { religion:'Christianity', group:'Medieval Mysticism',  canon:'Catholic Mysticism',              sort:20 },
+    // ── Christianity — Ethiopian Canon (continued) ──────────────────
+    'kebra-nagast':               { religion:'Christianity', group:'Ethiopian Canon',        canon:'Ethiopian Orthodox',              sort:25 },
+    // ── Christianity — Deuterocanon (continued) ─────────────────────
+    'sirach':                     { religion:'Christianity', group:'Deuterocanon',           canon:'Catholic / Orthodox / Ethiopian', sort:20 },
     // ── Judaism ─────────────────────────────────────────────────────
     'ezekiel-37-dry-bones': { religion:'Judaism',     group:'Nevi\'im (Prophets)',   canon:'Hebrew Bible',        sort:10 },
     '3-enoch-metatron':   { religion:'Judaism',       group:'Merkabah / Hekhalot',  canon:'Mystical Judaism',    sort:10 },
@@ -115,11 +120,13 @@ window.ScriptureReader = (function () {
     'yasna-30':           { religion:'Zoroastrianism',group:'Gathas',                canon:'Avesta',              sort:10 },
     'popol-vuh':          { religion:'Mesoamerican',  group:"K'iche' Maya",          canon:"K'iche' Maya Canon",  sort:10 },
     'voluspa':            { religion:'Norse',         group:'Poetic Edda',           canon:'Eddic Poetry',        sort:10 },
+    // ── Chinese Philosophy ──────────────────────────────────────────
+    'confucius-analects': { religion:'Chinese Philosophy', group:'Classical Confucianism', canon:'Classical Chinese',  sort:10 },
   };
 
   const RELIGION_ORDER = [
     'Christianity', 'Judaism', 'Islam', 'Hinduism', 'Buddhism', 'Taoism',
-    'Hermeticism', 'Greek Philosophy', 'Ancient Egyptian', 'Mesopotamian',
+    'Chinese Philosophy', 'Hermeticism', 'Greek Philosophy', 'Ancient Egyptian', 'Mesopotamian',
     'Zoroastrianism', 'Mesoamerican', 'Norse',
   ];
 
@@ -128,6 +135,7 @@ window.ScriptureReader = (function () {
     'Hinduism':        ['Vedic Hymns', 'Upanishads', 'Epics'],
     'Buddhism':        ['Pali Canon', 'Mahayana', 'Vajrayana'],
     'Taoism':          ['Classical Taoism', 'Chinese Classics'],
+    'Chinese Philosophy': ['Classical Confucianism'],
     'Ancient Egyptian':['Temple Texts', 'Funerary Texts'],
     'Mesopotamian':    ['Sumerian', 'Babylonian'],
     'Judaism':         ['Nevi\'im (Prophets)', 'Merkabah / Hekhalot', 'Kabbalah'],
