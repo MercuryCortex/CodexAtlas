@@ -488,6 +488,14 @@ _Hand-maintained. Each agent currently working in the vault appends a claim bloc
 
 ---
 
+## Goblin 18B — Number Five / Griffin Symbol / Sacred Lance — **FINISHED 2026-05-16**
+- Files: `09_symbols/sacred-number-five.md` (NEW full) · `09_symbols/griffin-symbol.md` (NEW full) · `09_symbols/sacred-lance.md` (NEW full)
+- Note: `sacred-number-twelve.md` was already written by Goblin 17C; substituted `sacred-lance.md` per brief instructions
+- Build: 255 → 258 symbols · 15092 → 15145 edges · 0 YAML errors · 0 dead links introduced
+- Commits: griffin-symbol + sacred-number-five swept into 24952e9 (thumbnail-system-1 parallel sweep); sacred-lance in 4890c7f
+
+---
+
 ## sonnet-content-gap-1 — content / eliade-upgrade + PGM + saadi-check + hafez-check — started 2026-05-16 — **FINISHED 2026-05-16**
 - Owned: `04_persons/mircea-eliade.md` (UPGRADE metadata→full), `02_documents/_phase-4-late-antiquity/phase-4-106-greek-magical-papyri.md` (NEW full), `04_persons/sadi-of-shiraz.md` (ALREADY FULL — no action), `04_persons/hafez.md` (ALREADY FULL — no action)
 - Goal: Fill content gaps: (1) Eliade depth; (2) Greek Magical Papyri document node; (3) check Hafez + Saadi
