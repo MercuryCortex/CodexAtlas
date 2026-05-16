@@ -3588,6 +3588,26 @@ const SCRIPTURE_CORPORA = {
       ]},
     ],
   },
+  // ----- South Asian Religious Modernity — Ambedkar + Iqbal (1930–1956).
+  // Two thinkers in British India who simultaneously rebuilt their inherited traditions
+  // from opposite directions: Iqbal deepened and philosophically modernized Islam
+  // (Reconstruction of Religious Thought, 1930 — Bergson + Nietzsche + tawhid);
+  // Ambedkar abandoned Hinduism for a reconstructed Buddhism that strips karma as
+  // a casteist ideology (The Buddha and His Dhamma, 1956; largest single-day mass
+  // conversion in history). Both: colonized peoples using religion as anti-colonial tool.
+  // Iqbal → Pakistan; Ambedkar → Indian Constitution + Navayana Buddhism. -----
+  'south-asian-modernism': {
+    label: 'South Asian religious modernity — Ambedkar + Iqbal (1930–1956)',
+    available: true,
+    sections: [
+      { id: 'navayana-scripture', label: 'Ambedkar · The Buddha and His Dhamma (1956) — Navayana founding text', color: '#5a3a7a', books: [
+        { id: 'phase-7-045-ambedkar-buddha-and-dhamma', label: 'The Buddha and His Dhamma · B.R. Ambedkar · Navayana Buddhism' },
+      ]},
+      { id: 'islamic-modernism-scripture', label: 'Iqbal · The Reconstruction of Religious Thought in Islam (1930)', color: '#3a5a8a', books: [
+        { id: 'phase-7-046-iqbal-reconstruction-religious-thought', label: 'The Reconstruction of Religious Thought in Islam · Muhammad Iqbal' },
+      ]},
+    ],
+  },
 };
 
 // Edge types that bind a person/deity/event to a document for the Scripture view.
@@ -3716,6 +3736,7 @@ VIEWS.scripture = {
       'cheondogyo-corpus': 'Cheondogyo',
       'tenrikyo-corpus': 'Tenrikyo',
       'cao-dai-corpus': 'Cao Dai',
+      'south-asian-modernism': 'S. Asia',
     };
     const shortLabelFor = (k, c) => SCRIPTURE_CORPUS_SHORT[k]
       || (c && c.label ? c.label.split(/[(·—/]|\s—\s/)[0].trim().slice(0, 14) : k);

@@ -1893,6 +1893,7 @@ body.view-atlas main.canvas { background: var(--bg-0); }
   vector-effect: non-scaling-stroke;
   transition: stroke-opacity 200ms ease;
 }
+.ph2-rim-tick.dim { stroke-opacity: 0.06; }
 .ph2-error {
   position: absolute; inset: 0;
   display: flex; align-items: center; justify-content: center;

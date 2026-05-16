@@ -124,7 +124,32 @@ _Auto-generated 2026-05-16. Status claims not meeting the bar in methodology.md.
 | `tradition-finno-karelian` | tradition | status:metadata but only 1 refs |
 | `tradition-chan` | tradition | status:metadata but only 0 refs |
 | `tradition-inca-andean` | tradition | status:metadata but only 1 refs |
+| `torii-gate` | symbol | symbol status:metadata but only 0 refs (need 3+) |
+| `holy-grail` | symbol | symbol status:metadata but only 0 refs (need 3+) |
+| `sacred-number-108` | symbol | symbol status:metadata but only 0 refs (need 3+) |
+| `infinity-symbol` | symbol | symbol status:metadata but only 0 refs (need 3+) |
+| `quipu` | symbol | symbol status:metadata but only 0 refs (need 3+) |
+| `sacred-pearl` | symbol | symbol status:metadata but only 0 refs (need 3+) |
+| `zodiac-wheel` | symbol | symbol status:metadata but only 0 refs (need 3+) |
+| `sacred-lance` | symbol | symbol status:full but only 0 refs (need 3+) |
+| `sacred-number-zero` | symbol | symbol status:metadata but only 0 refs (need 3+) |
+| `golden-ratio` | symbol | symbol status:metadata but only 0 refs (need 3+) |
+| `sacred-number-five` | symbol | symbol status:full but only 0 refs (need 3+) |
+| `sankofa` | symbol | symbol status:metadata but only 0 refs (need 3+) |
+| `abraxas` | symbol | symbol status:metadata but only 0 refs (need 3+) |
+| `inverted-cross` | symbol | symbol status:metadata but only 0 refs (need 3+) |
+| `sacred-twins` | symbol | symbol status:metadata but only 0 refs (need 3+) |
+| `ifa-divination` | symbol | symbol status:metadata but only 0 refs (need 3+) |
+| `world-mountain` | symbol | symbol status:metadata but only 0 refs (need 3+) |
+| `griffin-symbol` | symbol | symbol status:full but only 0 refs (need 3+) |
 | `dove` | symbol | symbol status:metadata but only 2 refs (need 3+) |
+| `divine-child` | symbol | symbol status:metadata but only 0 refs (need 3+) |
+| `sacred-number-forty` | symbol | symbol status:metadata but only 0 refs (need 3+) |
+| `eagle-symbol` | symbol | symbol status:metadata but only 0 refs (need 3+) |
 | `alpha-omega` | symbol | symbol status:metadata but only 2 refs (need 3+) |
+| `sacred-cave` | symbol | symbol status:metadata but only 0 refs (need 3+) |
 | `hamsa-khamsa` | symbol | symbol status:full but only 2 refs (need 3+) |
+| `nsibidi` | symbol | symbol status:metadata but only 0 refs (need 3+) |
+| `blood-sacred` | symbol | symbol status:metadata but only 0 refs (need 3+) |
 | `fleur-de-lis` | symbol | symbol status:metadata but only 2 refs (need 3+) |
+| `chaos-star` | symbol | symbol status:metadata but only 0 refs (need 3+) |

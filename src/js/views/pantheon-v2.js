@@ -24,8 +24,8 @@
 //   [✓] labels: hub/all/off toggle
 //   [✓] Ego-focus button
 //   [✓] Family-legend click-to-filter
-//   [ ] Family-filter + tier-overlay parity
-//   [ ] Force-simulation layout (rigid grid still — see brief §5)
+//   [✓] Family-filter + tier-overlay parity
+//   [✓] Force-simulation layout (jitter + weaker anchor = organic spread)
 //
 // EDGE-CURVE NOTE: brief recommended vendoring `@sigma/edge-curve` and
 // registering an EdgeCurveProgram. That package only ships CJS/ESM
@@ -74,7 +74,7 @@
   //
   // O(Σ wedge_size²) per iter ≈ O(10k) — finishes in ~50 ms for 500 nodes.
   function relaxPositions(deities, positions, wedges, Rinner, Router, degree, iterations) {
-    iterations = iterations || 150;
+    iterations = iterations || 250;
     // Group nodes by wedge for fast per-wedge pairwise force evaluation.
     const wedgeMembers = new Map();
     const wedgeByNode  = new Map();
@@ -92,15 +92,22 @@
       radius.set(d.id, 9 + Math.sqrt(deg) * 1.5);
     });
     // Working state: { x, y, vx, vy, ax, ay } where (ax,ay) is the static anchor.
+    // Initial positions are jittered ±20 px from the slot center so the bake breaks
+    // the regular grid symmetry — without jitter the charge forces perfectly cancel
+    // between equally-spaced neighbours and nodes barely move from their grid slots.
+    // Jitter is derived from hashStr so it's deterministic across renders.
     const P = new Map();
     deities.forEach(d => {
       const p = positions.get(d.id);
       if (!p) return;
-      P.set(d.id, { x: p.x, y: p.y, vx: 0, vy: 0, ax: p.x, ay: p.y });
+      const h = hashStr(d.id + '_jit');
+      const jx = ((h % 41) - 20);
+      const jy = (((h >> 6) % 41) - 20);
+      P.set(d.id, { x: p.x + jx, y: p.y + jy, vx: 0, vy: 0, ax: p.x, ay: p.y });
     });
     // Constants (tuned for V2's 220→540 world scale; production uses 14 px radial pad).
-    const ANCHOR_K     = 0.05;   // per-iter pull toward anchor (gentle)
-    const CHARGE_K     = -380;   // repulsion coefficient (Coulomb)
+    const ANCHOR_K     = 0.018;  // was 0.05 — weaker anchor lets jitter spread organically
+    const CHARGE_K     = -550;   // was -380 — stronger repulsion for more breathing room
     const CHARGE_RANGE = 180;    // max distance for charge to act
     const COLLIDE_PAD  = 1.5;    // gap between node circles
     const DAMP         = 0.55;
@@ -278,6 +285,16 @@
   };
   const DEFAULT_EDGE_COLOR = '#7a8090';
 
+  // SOURCE-INTEGRITY TIER FILL COLORS — matches production CSS vars (app.css:59-63).
+  // Used when _tierOverlay is active; replaces family-color fill on each node.
+  const TIER_FILL = {
+    '1':    '#d4a55a',  // T1: primary sources (deep gold)
+    '2':    '#b8c3d0',  // T2: scholarly (silver)
+    '3':    '#8a8a82',  // T3: reputable secondary (warm grey)
+    '4':    '#a85a5a',  // T4: controversial-but-catalogued (muted crimson)
+    'none': '#3e424a',  // no refs yet (faint near-black)
+  };
+
   // Build a degree map from edges — used for sqrt-degree node sizing.
   function computeDegree(edges) {
     const d = new Map();
@@ -415,7 +432,7 @@
     // Lets siblings within a wedge nudge tangentially / radially around each
     // other for breathing room; hubs push minor deities sideways. Hard-clamped
     // to the wedge so nothing escapes. ~50 ms one-shot, zero ongoing perf cost.
-    relaxPositions(deities, positions, wedges, Rinner, Router, degree, 150);
+    relaxPositions(deities, positions, wedges, Rinner, Router, degree, 250);
 
     // ----- build graphology graph -----
     const Graph = window.graphology.Graph || window.graphology.default || window.graphology;
@@ -479,6 +496,7 @@
     let _labelsMode = 'hub';
     let _egoFocus = false;
     let _familyFilter = null;
+    let _tierOverlay = false;
 
     const settings = {
       renderEdgeLabels: false,
@@ -518,6 +536,14 @@
           out.label = '';
           return out;
         }
+        // TIER OVERLAY — replace family-color fill with source-integrity tier color.
+        // Only fires when _tierOverlay is true and the node has NOT been early-returned
+        // by EGO FOCUS or FAMILY FILTER (those paths already set a specific dim color).
+        if (_tierOverlay) {
+          const tierKey = String((attrs._node || {})._tier ?? 'none');
+          out.color = TIER_FILL[tierKey] || TIER_FILL.none;
+        }
+
         // HOVER / SELECT highlighting.
         if (_hoverId === id || _selectedId === id) {
           out.highlighted = true;
@@ -715,6 +741,10 @@
         const fam = el.dataset.family;
         el.classList.toggle('dim', !!(_familyFilter && fam !== _familyFilter));
         el.classList.toggle('hot', !!(_familyFilter && fam === _familyFilter));
+      });
+      tickEls.forEach(el => {
+        const fam = el.dataset.family;
+        el.classList.toggle('dim', !!(_familyFilter && fam !== _familyFilter));
       });
     }
 
@@ -957,6 +987,7 @@
         <option value="monuments" ${_currentMode === 'monuments' ? 'selected' : ''}>⛬ Monuments</option>
       </select>
       <button class="ph2-btn" id="ph2-labels" title="Toggle label density">labels: ${_labelsMode}</button>
+      <button class="ph2-btn${_tierOverlay ? ' ph2-btn-on' : ''}" id="ph2-tier" title="Color nodes by source-integrity tier (T1=gold T2=silver T3=grey T4=crimson)">tier: ${_tierOverlay ? 'on' : 'off'}</button>
       <button class="ph2-btn${_egoFocus ? ' ph2-btn-on' : ''}" id="ph2-ego" title="Show 1-hop neighbourhood of selected node">ego focus</button>
       <button class="ph2-btn" id="ph2-recenter" title="Re-fit camera to all nodes">recenter</button>
     `;
@@ -975,6 +1006,12 @@
       _labelsMode = _labelsMode === 'hub' ? 'all' : _labelsMode === 'all' ? 'off' : 'hub';
       ev.target.textContent = 'labels: ' + _labelsMode;
       updateNodeLabelVisibility();
+      sigma.refresh({ skipIndexation: true });
+    };
+    toolbar.querySelector('#ph2-tier').onclick = (ev) => {
+      _tierOverlay = !_tierOverlay;
+      ev.target.textContent = 'tier: ' + (_tierOverlay ? 'on' : 'off');
+      ev.target.classList.toggle('ph2-btn-on', _tierOverlay);
       sigma.refresh({ skipIndexation: true });
     };
     toolbar.querySelector('#ph2-ego').onclick = (ev) => {
