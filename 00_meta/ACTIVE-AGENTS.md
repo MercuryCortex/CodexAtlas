@@ -1329,10 +1329,10 @@ The things opus-foundation-1 claimed but never started are all still open:
 
 ---
 
-## goblin-sacred-architecture-1 — symbols / sacred architecture + thunder weapon thread — started 2026-05-16 — IN PROGRESS
-- Owning: `09_symbols/gothic-cathedral.md` (NEW), `09_symbols/stonehenge.md` (NEW), `09_symbols/all-seeing-eye.md` (NEW), `09_symbols/oshe-shango.md` (NEW)
-- Goal: Gothic Cathedral as total symbolic system (Suger light theology + cross-tradition cosmic house MASSIVE WIN); Stonehenge as megalithic solar calendar (global stone-circle pattern); All-Seeing Eye with rigorous Tier-1 sourcing debunking conspiracy reading; Oshé Shangó completing global thunder-weapon pattern (Yoruba double-axe parallel to Labrys MASSIVE WIN)
-- Status: in-progress
+## ~~goblin-sacred-architecture-1 — symbols / sacred architecture + thunder weapon thread — started 2026-05-16 — FINISHED 2026-05-16~~
+- ~~Owning: `09_symbols/gothic-cathedral.md` (NEW), `09_symbols/stonehenge.md` (NEW), `09_symbols/all-seeing-eye.md` (NEW), `09_symbols/oshe-shango.md` (NEW)~~
+- ~~Goal: Gothic Cathedral as total symbolic system (Suger light theology + cross-tradition cosmic house MASSIVE WIN); Stonehenge as megalithic solar calendar (global stone-circle pattern); All-Seeing Eye with rigorous Tier-1 sourcing debunking conspiracy reading; Oshé Shangó completing global thunder-weapon pattern (Yoruba double-axe parallel to Labrys MASSIVE WIN)~~
+- ~~Result: 4 new symbol nodes; 187 total symbols; 14544 edges; 0 new dead links; commit 469907b; see STATUS.md~~
 
 ---
 
@@ -1347,4 +1347,11 @@ The things opus-foundation-1 claimed but never started are all still open:
 - Owning: `09_symbols/abraxas.md` (NEW), `09_symbols/golden-ratio.md` (NEW), `09_symbols/holy-grail.md` (NEW), `09_symbols/sacred-pearl.md` (NEW)
 - Note: omphalos.md already exists → writing sacred-pearl.md as fourth node
 - Goal: Abraxas as Gnostic supreme deity (365 solar gematria) + Jung's Seven Sermons MASSIVE WIN; Golden Ratio as cross-tradition sacred proportion (Pythagorean pentagram + Islamic girih + Hindu Sri Yantra); Holy Grail as sacred vessel cross-tradition (Celtic cauldron → Christian cup → Alchemical vas); Sacred Pearl as transformation-through-suffering MASSIVE WIN (Gnostic Hymn of Pearl + Dragon pearl + Islamic lulu)
+- Status: in-progress
+
+---
+
+## goblin-world-wisdom-1 — symbols / ifa-divination + sankofa + quipu + eagle-symbol — started 2026-05-16 — IN PROGRESS
+- Owning: `09_symbols/ifa-divination.md` (NEW), `09_symbols/sankofa.md` (NEW), `09_symbols/quipu.md` (NEW), `09_symbols/eagle-symbol.md` (NEW)
+- Goal: Ifá binary divination system (256 Odu = 2^8 MASSIVE WIN vs. I Ching 64 hexagrams = 2^6 — independent parallel binary computing); Sankofa as Akan memory-return symbol + Pan-African diaspora reception MASSIVE WIN; Quipu as Andean knotted-cord recording system (numerical decoded; narrative contested) with cross-tradition cord-wisdom; Eagle as most cross-tradition attested sacred bird — solar messenger + eagle↔serpent cosmic duality MASSIVE WIN
 - Status: in-progress
