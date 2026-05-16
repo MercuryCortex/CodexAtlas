@@ -1840,9 +1840,10 @@ Files: sacred-cauldron.md (NEW) · cerridwen.md (STUB, deity) · bran-the-blesse
 
 ---
 
-## alphabet-hebrew-script-1 — Hebrew aleph-bet deep dive + transmission audit — 2026-05-16 — IN FLIGHT
-- Owned: `11_alphabets/alphabet-hebrew-aleph-bet.md` (NEW), `11_alphabets/alphabet-masoretes.md` (NEW)
-- Do NOT touch: any existing node, app code, src/js/, src/styles/, index.html
+## ~~alphabet-hebrew-script-1 — Hebrew aleph-bet deep dive + transmission audit — 2026-05-16 — FINISHED~~
+- ~~Owned: `11_alphabets/alphabet-hebrew-aleph-bet.md` (NEW), `11_alphabets/alphabet-masoretes.md` (NEW)~~
+- ~~MASSIVE WIN: ktav Ashurit ("holy" Torah script) = Aramaic imperial letters absorbed in Babylonian captivity; Talmud Sanhedrin 21b–22a records rabbinic debate over whether Moses received Aramaic letters; "Jehovah" = 500-year-old misreading of Masoretic anti-pronunciation convention; Paleo-Hebrew survives only on nationalist coins + as Dead Sea Scrolls marker for YHWH; Shin in Priestly Blessing = Vulcan salute = a Hebrew letter in the human body; Avestan parallel (identical vowel-preservation problem, zero contact, same solution)~~
+- ~~Status: FINISHED — commit 78c8577 · 32 alphabets · 0 dead links introduced · vault unchanged except 2 new nodes~~
 
 ---
 
