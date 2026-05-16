@@ -17,7 +17,7 @@ canonical-slug
 ## Currently resolved slugs (auto-seeded — every existing file)
 
 
-### deity (498 nodes)
+### deity (499 nodes)
 
 - `abathur`
 - `adamastor`
@@ -205,6 +205,7 @@ canonical-slug
 - `hwanung`
 - `iacchus`
 - `iapetus`
+- `iblis-shaytan`
 - `idunn`
 - `illuyanka`
 - `ilmatar`
@@ -1125,7 +1126,11 @@ canonical-slug
 - `subterranean-chamber-great-pyramid`
 - `temple-of-inscriptions-palenque`
 
-### person (695 nodes)
+### meta (1 nodes)
+
+- `MASSIVE-WINS-AND-INVESTIGATION-LEADS-session-2026-05-15`
+
+### person (705 nodes)
 
 - `aaron`
 - `abba-garima`
@@ -1146,6 +1151,7 @@ canonical-slug
 - `al-ghazali`
 - `al-hakim-bi-amr-allah`
 - `al-hallaj`
+- `al-khidr`
 - `al-kindi`
 - `al-shafii`
 - `al-tabari`
@@ -1279,6 +1285,7 @@ canonical-slug
 - `deganawidah-peacemaker`
 - `derrida`
 - `deucalion`
+- `dhu-al-qarnayn`
 - `dietrich-bonhoeffer`
 - `dinis-i-portugal`
 - `diocletian-emperor`
@@ -1402,6 +1409,7 @@ canonical-slug
 - `hongren`
 - `hosea-prophet`
 - `howard-vyse`
+- `hud-prophet`
 - `hugues-de-payens`
 - `huike`
 - `huineng`
@@ -1517,6 +1525,8 @@ canonical-slug
 - `lucian-of-samosata`
 - `luis-de-camoes`
 - `luke-evangelist`
+- `luqman-sage`
+- `lut`
 - `lydia-of-thyatira`
 - `macrina-the-younger`
 - `madhva`
@@ -1626,6 +1636,7 @@ canonical-slug
 - `peter-apostle`
 - `peter-j-carroll`
 - `pham-cong-tac`
+- `pharaoh-exodus`
 - `pherecydes-of-syros`
 - `phidias`
 - `philip-apostle`
@@ -1693,6 +1704,7 @@ canonical-slug
 - `sabellius`
 - `sadi-of-shiraz`
 - `saladin`
+- `salih-prophet`
 - `samuel-ajayi-crowther`
 - `samuel-prophet`
 - `santideva`
@@ -1715,6 +1727,7 @@ canonical-slug
 - `shenoute`
 - `shenxiu`
 - `shinran`
+- `shuayb-prophet`
 - `shulgi`
 - `siddhartha-gautama-buddha`
 - `sigmund-freud`
@@ -1780,6 +1793,7 @@ canonical-slug
 - `uthman`
 - `utnapishtim`
 - `utpaladeva`
+- `uzayr`
 - `v-d-savarkar`
 - `valentinus`
 - `valerian-emperor`
@@ -1814,6 +1828,7 @@ canonical-slug
 - `zadok-priest`
 - `zara-yaqob-emperor`
 - `zarathustra`
+- `zechariah-priest`
 - `zeno-of-citium`
 - `zerubbabel`
 - `zhang-zai`
@@ -2604,8 +2619,8 @@ canonical-slug
 | 3 | `guru-arjan-dev-ji` | `guru-arjan` |
 | 2 | `yam-canaanite` | `astarte-canaanite` |
 | 2 | `was-sceptre` | `was-scepter` |
-| 2 | `tradition-rosicrucian` | `tradition-druze` |
-| 2 | `tradition-lingayat` | `tradition-druze` |
-| 2 | `tradition-islamic-philosophy` | `tradition-western-astrology` |
-| 2 | `phase-2-004-1-2-chronicles` | `phase-2-003-atharva-veda` |
+| 2 | `tradition-rosicrucian` | `tradition-islam` |
+| 2 | `tradition-lingayat` | `tradition-islam` |
+| 2 | `tradition-islamic-philosophy` | `tradition-neoplatonism` |
+| 2 | `phase-2-004-1-2-chronicles` | `phase-2-002-gathas-of-zarathustra` |
 | 2 | `divine-names` | `divine-name` |

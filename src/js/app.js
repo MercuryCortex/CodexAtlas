@@ -2798,17 +2798,85 @@ const SCRIPTURE_CORPORA = {
       ]},
     ],
   },
-  // ----- Qurʾān corpus (wired by opus-scripture-2 — single-island starter) -----
-  // The entire Qurʾān as one document until split by sura into Meccan / Medinan groups
-  // by a future agent. Cross-tradition payoff (Moses / Abraham / Mary / Jesus / Joseph
-  // / Solomon trail-arcs into the Bible canvas) is real even with a single hull, since
-  // the Qurʾān document's edges into those entity nodes are already in the vault.
+  // ----- Qurʾān corpus — Meccan-Medinan chronological order (Nöldeke schema).
+  // Primary academic structuring: Early Meccan (~610–617) → Middle Meccan (~617–619) →
+  // Late Meccan (~619–622) → Medinan (~622–632). The chronological order surfaces the
+  // compositional arc: early eschatological proclamation → Biblical-narrative integration
+  // → community-formation polemic — which makes the cross-tradition trail-arcs with the
+  // Hebrew Bible and New Testament most legible. A second corpus key 'quran-manzil' below
+  // offers the traditional 7-Manzil liturgical division.
+  //
+  // Entity resolution: all Quranic figures have `mentioned-in: [[phase-4-034-quran]]`
+  // in their YAML → scriptureEntitiesForBook() picks them up automatically for every
+  // section whose book-id resolves to phase-4-034-quran. The sections are therefore
+  // single-book (all resolving to the same Quran document), but the SECTION LABELS
+  // tell the story — the ring reads as a compositional-order narrative.
+  //
+  // Cross-corpus MASSIVE WIN: Moses/Mūsā hovers light up both Bible canvas (J+E+D+P
+  // source-critical strata) and Quran canvas (Late-Meccan + Medinan surahs). Mary/Maryam
+  // → Luke+Matthew+John (Bible) + Sūrat Maryam 19 + Āl ʿImrān 3 (Quran). -----
   'quran': {
-    label: 'Qurʾān',
+    label: 'Qurʾān · Meccan–Medinan chronological order (Nöldeke)',
     available: true,
     sections: [
-      { id: 'quran-canonical', label: 'Qurʾān · canonical text', color: '#5a7a5a', books: [
-        { id: 'phase-4-034-quran',                             label: 'Qurʾān (entire codex)' },
+      // Early Meccan: eschatological proclamation, Day of Judgment, spiritual
+      // awakening. The shortest, most rhythmically intense surahs (mostly short
+      // rhymed proclamations). Muhammad's earliest revelations.
+      { id: 'quran-early-meccan', label: 'Early Meccan (~610–617 CE) · eschatological proclamation', color: '#7a5a3a', books: [
+        { id: 'phase-4-034-quran', label: 'Early Meccan surahs (96, 74, 73, 111, 81, 87, 92, 89, 93, 94, 103, 100, 108, 102, 107, 109, 105, 113, 114, 112, 53, 80, 97, 91, 85, 95, 106, 101, 75, 104, 77)' },
+      ]},
+      // Middle Meccan: Biblical narrative integration. The great prophetic
+      // punishment-stories (ʿĀd, Thamūd, Madyan) + Hebrew Bible figures (Moses,
+      // Abraham, Noah, Lot, Joseph) appear here. The Quran claims the Abrahamic
+      // prophetic heritage for the Arabian milieu.
+      { id: 'quran-middle-meccan', label: 'Middle Meccan (~617–619 CE) · Biblical narrative integration', color: '#6a7a4a', books: [
+        { id: 'phase-4-034-quran', label: 'Middle Meccan surahs (54, 37, 71, 76, 44, 50, 20, 26, 15, 19, 38, 36, 43, 72, 67, 23, 21, 25, 17, 27, 18)' },
+      ]},
+      // Late Meccan: extended prophetic narratives (Surah 11 — Hūd; Surah 12 —
+      // Yūsuf; Surah 10 — Yūnus). More elaborated theology. Transition from oral
+      // proclamation to sustained narrative discourse.
+      { id: 'quran-late-meccan', label: 'Late Meccan (~619–622 CE) · extended narrative + theology', color: '#5a6a3a', books: [
+        { id: 'phase-4-034-quran', label: 'Late Meccan surahs (32, 41, 45, 16, 30, 11, 14, 12, 40, 28, 39, 29, 31, 42, 10, 34, 35, 7, 46, 6, 13)' },
+      ]},
+      // Medinan: community law and polemic. Longer, more legalistic surahs
+      // (Surah 2 — al-Baqara — the longest surah). The Quran engages directly
+      // with the Medinan Jewish and Christian communities. Christological polemic
+      // (Quran 4:171 vs. Trinity; Quran 5:75 vs. divine sonship of ʿĪsā).
+      // Mary (Maryam) appears in Surah 3 (Āl ʿImrān — "The Family of Imran").
+      { id: 'quran-medinan', label: 'Medinan (~622–632 CE) · community law · Christological polemic', color: '#4a5a6a', books: [
+        { id: 'phase-4-034-quran', label: 'Medinan surahs (2, 98, 64, 62, 8, 47, 3, 61, 57, 4, 65, 59, 33, 63, 24, 58, 22, 48, 66, 60, 110, 49, 9, 5)' },
+      ]},
+    ],
+  },
+  // ----- Qurʾān corpus — 7 Manzil traditional liturgical division.
+  // The 7-Manzil system divides the Quran into roughly equal portions for recitation
+  // over a week. It is the traditional reader's structure (used in Ramadan khatm
+  // completion readings). Compare with the Meccan-Medinan view ('quran') which
+  // surfaces the compositional-historical order. -----
+  'quran-manzil': {
+    label: 'Qurʾān · 7 Manzil (traditional liturgical division)',
+    available: true,
+    sections: [
+      { id: 'manzil-1', label: 'Manzil 1 · Surahs 1–9 (al-Fātiḥa → al-Tawba)', color: '#7a5a3a', books: [
+        { id: 'phase-4-034-quran', label: 'Surahs 1–9 (opening + longest Medinan surahs)' },
+      ]},
+      { id: 'manzil-2', label: 'Manzil 2 · Surahs 10–18 (Yūnus → al-Kahf)', color: '#6a7a4a', books: [
+        { id: 'phase-4-034-quran', label: 'Surahs 10–18 (Yūsuf 12; Ibrāhīm 14; Dhū al-Qarnayn + al-Khiḍr in 18)' },
+      ]},
+      { id: 'manzil-3', label: 'Manzil 3 · Surahs 19–36 (Maryam → Yā Sīn)', color: '#5a6a3a', books: [
+        { id: 'phase-4-034-quran', label: 'Surahs 19–36 (Maryam 19; Ṭā Hā/Mūsā 20; Luqmān 31)' },
+      ]},
+      { id: 'manzil-4', label: 'Manzil 4 · Surahs 37–48 (al-Ṣāffāt → al-Fatḥ)', color: '#4a5a6a', books: [
+        { id: 'phase-4-034-quran', label: 'Surahs 37–48 (prophets: Ibrāhīm, Dāwūd, Sulaymān, Mūsā)' },
+      ]},
+      { id: 'manzil-5', label: 'Manzil 5 · Surahs 49–66 (al-Ḥujurāt → al-Taḥrīm)', color: '#3a5a5a', books: [
+        { id: 'phase-4-034-quran', label: 'Surahs 49–66 (ʿĪsā / Jesus in 61; Mary in 66)' },
+      ]},
+      { id: 'manzil-6', label: 'Manzil 6 · Surahs 67–77 (al-Mulk → al-Mursalāt)', color: '#5a3a5a', books: [
+        { id: 'phase-4-034-quran', label: 'Surahs 67–77 (Nūḥ 71; Jinn 72)' },
+      ]},
+      { id: 'manzil-7', label: 'Manzil 7 · Surahs 78–114 (al-Nabaʾ → al-Nās)', color: '#6a3a4a', books: [
+        { id: 'phase-4-034-quran', label: 'Surahs 78–114 (short eschatological surahs; Iblīs in 114)' },
       ]},
     ],
   },
@@ -3721,7 +3789,8 @@ VIEWS.scripture = {
       'egyptian-scripture': 'Egyptian',
       'greek-scripture': 'Greek',
       'tanakh': 'Tanakh',
-      'quran': 'Qurʾān',
+      'quran': 'Qurʾān (Nöldeke)',
+      'quran-manzil': 'Qurʾān (Manzil)',
       'vedas': 'Vedas',
       'tipitaka': 'Buddhist',
       'avesta': 'Avesta',
