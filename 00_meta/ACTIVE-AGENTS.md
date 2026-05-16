@@ -949,11 +949,11 @@ Format:
 
 ---
 
-## philosophy-1 — new class: 15_philosophy/ + 8 founding nodes — started 2026-05-17 — IN-FLIGHT
-- Owning: `15_philosophy/*.md` (8 NEW), `build_data.py` (NODE_DIRS + print line)
-- Goal: Open the `philosophy` node class; create 8 founding nodes (Neoplatonism, Stoicism, Madhyamaka, Advaita Vedanta, Philosophical Daoism, Islamic Philosophy, Confucianism, Pyrrhonian Skepticism)
-- Status: in-flight
-- Last edit: `00_meta/ACTIVE-AGENTS.md`
+## ~~philosophy-1 — new class: 15_philosophy/ + 8 founding nodes — started 2026-05-17 — FINISHED~~
+- ~~Owning: `15_philosophy/philosophy-neoplatonism.md` (NEW), `philosophy-stoicism.md` (NEW), `philosophy-madhyamaka.md` (NEW), `philosophy-advaita-vedanta.md` (NEW), `philosophy-daoism-philosophical.md` (NEW), `philosophy-neoplatonism-islamic.md` (NEW), `philosophy-confucianism.md` (NEW), `philosophy-pyrrhonian-skepticism.md` (NEW), `build_data.py`~~
+- ~~Status: finished — 8 new philosophy nodes · 17,228 edges · 0 YAML errors · commit 779fa71~~
+- ~~MASSIVE WINS: Neoplatonism as hidden grammar of Western/Islamic mysticism; Stoic Logos → Johannine Logos via Philo; Ibn Sina Floating Man → Cogito 600 yr prior; Averroes → Aquinas → Catholic doctrine; Confucian exam → modern civil service; Pyrrho India contact → Pyrrhonism → Descartes; apophatic convergence 5 traditions~~
+- ~~Last edit: `00_meta/ACTIVE-AGENTS.md`~~
 
 ---
 
