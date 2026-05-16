@@ -4,6 +4,13 @@ _Hand-maintained. Each agent currently working in the vault appends a claim bloc
 
 ---
 
+## sonnet-egyptian-persons-1 — Nefertiti + Sekhmet/Nephthys/Neith upgrades — started 2026-05-16 — IN PROGRESS
+- Owning: `04_persons/nefertiti.md` (NEW), `03_deities/sekhmet.md`, `03_deities/nephthys.md`, `03_deities/neith.md`
+- Goal: Create Nefertiti person node; upgrade Sekhmet/Nephthys/Neith with cross-tradition MASSIVE WIN sections
+- Status: in-progress
+
+---
+
 ## opus-pantheon-v2-1 — Pantheon WebGL v2 build — started 2026-05-16 — IN PROGRESS
 - Owning: `src/js/views/pantheon-v2.js`, `src/js/app.js` (VIEWS wiring), `index.html`, `src/styles/app.css`
 - Goal: Implement full Pantheon v2 sigma.js WebGL view behind ?webgl=1; pass parity gate (mode dropdown, label toggle, ego-focus, family legend click-to-filter)
@@ -77,6 +84,13 @@ _Hand-maintained. Each agent currently working in the vault appends a claim bloc
 ## sonnet-egyptian-deities-1 — deities / Anubis + Ptah + Set + Aten full upgrades — started 2026-05-16 — **IN PROGRESS**
 - Owned: `03_deities/anubis.md`, `03_deities/ptah.md`, `03_deities/set.md`, `03_deities/aten.md`
 - Goal: Upgrade four Egyptian deity stubs to `status: full` with MASSIVE WIN cross-tradition edges
+- Status: in-progress
+
+---
+
+## goblin-african-diaspora-1 — symbols / African + diaspora thread — started 2026-05-16 — IN PROGRESS
+- Owning: `09_symbols/crossroads-symbol.md` (NEW), `09_symbols/veve.md` (NEW), `09_symbols/adinkra.md` (NEW), `09_symbols/pontos-riscados.md` (NEW)
+- Goal: African and diaspora symbolic traditions; Crossroads as pan-cultural MASSIVE WIN; Veve ritual diagram cross-tradition; Adinkra wisdom symbols; Pontos riscados Afro-Brazilian sigils
 - Status: in-progress
 
 ---
