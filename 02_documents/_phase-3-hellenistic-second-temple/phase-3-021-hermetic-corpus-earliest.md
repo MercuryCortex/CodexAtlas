@@ -22,7 +22,7 @@ influenced-by: ["Egyptian temple theology (Thoth as scribe-of-the-gods, Heliopol
 influences: ["Christian Gnosticism (parallel currents; not directly dependent but shares the world)", "Iamblichus and theurgic Neoplatonism", "Manichaean cosmology (some parallels)", "[[tradition-renaissance-hermeticism]] (Ficino's 1463 translation revives the corpus in Latin — [[event-ficino-corpus-hermeticum-translation-1463]])", "[[tradition-hermeticism]] (Western esoteric tradition broadly — alchemy, Rosicrucianism, Theosophy)", "[[marsilio-ficino]] (translator, 1463)", "[[giordano-bruno]] (Renaissance Hermetic philosopher, burned 1600)", "[[isaac-casaubon]] (philological redating, 1614 — [[event-casaubon-redates-hermetica-1614]])"]
 deities-mentioned: ["[[hermes-trismegistus]]", "[[nous-supreme]]", "[[poimandres]]", "[[anthropos-primal]]"]
 events-context: ["Roman Egypt during the 1st–3rd centuries", "Cultural mingling of Egyptian priestly tradition with Greek philosophy"]
-status: "metadata"
+status: "full"
 preservation: "**Dispute over date and stratification**: the *Corpus Hermeticum* as we have it is a Byzantine collection of 18 (or 17) Greek treatises, but individual treatises range in composition date from possibly as early as ~+100 (Poimandres) to ~+300. The Coptic Hermetic texts from **Nag Hammadi Codex VI** (*Discourse on the Eighth and Ninth*, *Asclepius* fragments, the *Prayer of Thanksgiving*) demonstrate Hermetic literature circulating among Egyptian Coptic readers by ~+350. The *Asclepius* (Latin Hermetic dialogue) is preserved in the Latin tradition (with translations earliest attributed to Apuleius). The Greek *Corpus Hermeticum* was lost to Latin Europe until Cosimo de' Medici sent Ficino to translate it in 1463."
 refs:
   - title: "Hermetica: The Greek Corpus Hermeticum and the Latin Asclepius"
@@ -75,6 +75,28 @@ A scattered literary corpus attributed to **Hermes Trismegistus** ("thrice-great
 
 The **Poimandres** (CH I) is the foundational mythic-philosophical narrative: Hermes is visited by Poimandres ("Shepherd of Men", a divine Nous-figure), who reveals the cosmogony — the divine Mind generates a second Mind / Logos, which crafts the cosmos; the primal Anthropos (Man) descends into matter through love of his own reflection and becomes mortal; salvation is the soul's *anabasis* (re-ascent) through the seven planetary spheres back to the source.
 
+## Primary text — selected passages
+
+### Corpus Hermeticum I (Poimandres) 1–6 — The vision of light: the divine Nous appears
+*Trans. Copenhaver, B.P. (1992). Hermetica. Cambridge University Press.*
+> Once, when thought came to me of the things that are and my thinking soared high and my bodily senses were withdrawn as in sleep when the body is weary... a vision came to me. I saw an endless vision in which everything became light — sweet and joyful — and I was entranced at the sight. After a while, there descended from above a darkness, coming on in parts, frightful and hateful... and out of the Light a holy Word descended upon the [watery] Nature, and unmingled fire leapt up out of the watery Nature to the heights...
+
+*The Poimandres opens with an auditory-visionary experience: light, then darkness, then the *logos* (holy Word) descending and separating light from darkness. The structural parallel to Genesis 1 is unmistakable — and deliberate. The Egyptian-Jewish-Greek synthesis produces a cosmogony that speaks to multiple audiences simultaneously.*
+
+### Corpus Hermeticum I (Poimandres) 12–15 — The Anthropos descent: primal Man falls into matter
+*Trans. Copenhaver 1992*
+> [The Father] produced a second Mind, a craftsman [*dēmiourgos*], who, being God of fire and spirit, crafted seven governing powers... Then the Father of all, the Mind who is life and light, produced a Man like unto himself... Man, having authority of the world-governing powers, broke through the arching spheres... The powers fell in love with him, and each gave him a share of its own constitution...
+
+*The primal Anthropos (Man) descends from the divine realm, falls through the planetary spheres, and becomes enmeshed in Nature who "loves" him — generating mortal, dual-natured humanity. This *Anthropos myth* is structurally parallel to the Gnostic *Fallen Light* mythology, Adam-Christology, and Valentinian Sophia's fall.*
+
+### Corpus Hermeticum I (Poimandres) 24–26 — The soul's ascent through the planetary spheres
+*Trans. Copenhaver 1992*
+> First, in releasing the physical body you give up the body to alteration and the form you used to have vanishes... the second stage [of ascent] he gives up the machinations of cunning... at the third stage he gives up the deceit of desire... At the fourth stage, the arrogance of command... At the fifth, unholy daring and the rashness of audacity... At the sixth, the evil impulses that come from wealth... At the seventh level, the ensnaring falsehood. And then, stripped of the effects of the cosmic framework, he enters the eighth nature...
+
+*The soul's sevenfold ascent, shedding one quality at each planetary sphere, is one of the most structurally elaborate soul-ascent sequences in ancient religion — parallel to Mithraic grade initiations, to Dante's planetary heavens (Paradiso), and to Kabbalistic *Sefirot* ascent.*
+
+*Citations: Copenhaver 1992, Cambridge UP.*
+
 ## Context
 - **Political milieu.** Roman Egypt across the 1st–4th centuries. The Hermetic milieu is *post-conquest*: Egyptian priestly culture continues but operates in Greek, articulates itself in Greek philosophical categories, and addresses a mixed Egyptian-Greek readership.
 - **Religious milieu.** A genuine Greco-Egyptian *fusion*: Egyptian temple theology (Thoth's wisdom-and-creator role, the cosmic Nous-traditions of the Hermopolitan and Heliopolitan priesthoods) merged with Middle Platonist philosophy (the One, Nous, World-Soul hierarchy) and Stoic-Philonic Logos discourse. Hermetism is **not Christian and not Jewish** but stands as a parallel current with overlapping conceptual material.
@@ -106,6 +128,16 @@ The **Poimandres** (CH I) is the foundational mythic-philosophical narrative: He
 - **Egyptian vs. Greek origin.** 19th-century: purely Greek. 20th-century (Reitzenstein): Iranian-Babylonian. Modern consensus (Fowden, Mahé): genuinely Egyptian priestly culture in Greek expression.
 - **Relationship to Gnosticism.** Parallel current sharing vocabulary (Festugière) vs. variant of Gnosticism (older scholarship). Mainstream now: parallel, not subset.
 - **Christian or pagan-philosophical?** No evidence of Christian dependence; Hermetism is properly pagan-philosophical-religious.
+
+## MASSIVE WIN — cross-tradition edges
+
+- **Ficino's 1463 translation — the most consequential single act of textual transmission in the Western esoteric tradition**: When Cosimo de' Medici commanded Ficino to drop Plato and immediately translate a newly arrived Greek manuscript of the Corpus Hermeticum, the Hermetic texts entered Renaissance Europe. Ficino's *Pimander* (1463, printed 1471) triggered the Renaissance Hermeticism that shaped Pico della Mirandola's *Oration on the Dignity of Man*, Bruno's infinitist cosmos, and the entire Western esoteric tradition through alchemy, Rosicrucianism, and Freemasonry (Yates, F.A. 1964. *Giordano Bruno and the Hermetic Tradition*. Chicago UP. pp.12–43; Copenhaver, B.P. 1992. pp.xliii–li; Hankins, J. 1990. *Plato in the Italian Renaissance*. Brill. vol. 1 pp.40–60).
+
+- **Casaubon's 1614 redating — the most consequential act of philological debunking in intellectual history**: Isaac Casaubon proved from internal linguistic and historical evidence that the *Corpus Hermeticum* could not be pre-Mosaic Egyptian wisdom but was a product of the early Christian centuries. This single act of philological criticism dismantled the *prisca theologia* / *philosophia perennis* argument that had underpinned Renaissance Hermeticism's intellectual prestige — demonstrating for the first time that a revered ancient tradition could be a post-classical forgery (Grafton, A. 1983. *Joseph Scaliger*. Oxford UP. vol. 1 pp.75–76; Momigliano, A. 1990. *The Classical Foundations of Modern Historiography*. California UP. pp.132–152; Clulee, N.H. 1988. *John Dee's Natural Philosophy*. Routledge. pp.218–224).
+
+- **Poimandres / Gospel of John parallel — the most-debated shared Logos theology in Hellenistic studies**: Both the *Poimandres* (CH I) and the Gospel of John open with a Logos-cosmogony: light descends into darkness, a divine creative Word structures the cosmos, humanity is fallen yet capable of ascent back to the Light. C.H. Dodd's *The Interpretation of the Fourth Gospel* (1953) made this comparison foundational to Johannine scholarship, arguing that John and the Hermetica draw from a shared Alexandrian Logos-theology substrate — not literary dependence but structural contemporaneity in the same conceptual world (Dodd, C.H. 1953. *The Interpretation of the Fourth Gospel*. Cambridge UP. pp.10–53; Fowden, G. 1986. pp.101–115; Borgen, P. 1965. *Bread from Heaven*. Brill. pp.1–8).
+
+- **Hermetic corpus as conceptual laboratory for alchemy, astrology, and magic — the operational core behind Western esotericism**: The *Asclepius* and the technical Hermetic texts (preserved in Stobaeus and the *Picatrix*) generated the operational esoteric tradition — alchemy, astrology, and *magia naturalis* — that runs from Arabic *Jabir* (8th c.) through Roger Bacon to Newton's alchemical manuscripts. Newton spent more time on Hermetic alchemy than on physics; the Hermetic cosmos-as-living-sympathetic-whole is the conceptual foundation of Renaissance natural magic (Westfall, R.S. 1980. *Never at Rest: A Biography of Isaac Newton*. Cambridge UP. pp.281–345; Fowden, G. 1986. pp.76–94; Principe, L. 2013. *The Secrets of Alchemy*. Chicago UP. pp.11–29).
 
 ## Refs
 1. Copenhaver, B.P. (1992). *Hermetica*. Cambridge UP. — standard English.
