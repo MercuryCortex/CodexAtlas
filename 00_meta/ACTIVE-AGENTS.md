@@ -2096,9 +2096,16 @@ Files: sacred-cauldron.md (NEW) · cerridwen.md (STUB, deity) · bran-the-blesse
 
 ---
 
-## alchemy-mystery-cult-1 — 4 alchemy + 2 mystery cult ritual nodes — IN PROGRESS (2026-05-17)
-- Owned: `12_alchemy/alchemy-robert-boyle.md` (NEW), `12_alchemy/alchemy-rosicrucian-manifestos.md` (NEW), `12_alchemy/alchemy-hermetic-corpus.md` (NEW), `12_alchemy/alchemy-newton-principia-alchemy.md` (NEW), `14_rituals/ritual-eleusinian-mysteries.md` (NEW), `14_rituals/ritual-mithraic-mysteries.md` (NEW)
-- Status: IN PROGRESS
+## ~~alchemy-mystery-cult-1 — 4 alchemy + 2 mystery cult ritual nodes — FINISHED (2026-05-17)~~
+- ~~Owned: `12_alchemy/alchemy-robert-boyle.md` (NEW), `12_alchemy/alchemy-rosicrucian-manifestos.md` (NEW), `12_alchemy/alchemy-hermetic-corpus.md` (NEW), `12_alchemy/alchemy-newton-principia-alchemy.md` (NEW), `14_rituals/ritual-eleusinian-mysteries.md` (NEW), `14_rituals/ritual-mithraic-mysteries.md` (NEW)~~
+- ~~Build: 31 alchemy nodes · 54 ritual nodes · 17194 edges · 0 YAML errors · 0 dead links introduced~~
+- ~~MASSIVE WIN (1): Robert Boyle lobbied Parliament in 1689 to legalize alchemical transmutation and privately believed he witnessed it — the birth-of-chemistry narrative suppresses its founding figure's lifelong belief in the Philosopher's Stone~~
+- ~~MASSIVE WIN (2): Rosicrucian Manifestos — origin of modern Western esotericism was almost certainly a Tübingen student's satirical fiction that escaped its author's control (Andreä called it a "ludibrium")~~
+- ~~MASSIVE WIN (3): Corpus Hermeticum — Casaubon's 1614 debunking and the Fama Fraternitatis appeared the same year; the Corpus is actually a late-antique Alexandrian convergence node (Platonic + Egyptian + Jewish + early Christian), more interesting than the Renaissance fiction~~
+- ~~MASSIVE WIN (4): Newton's Principia — hypotheses non fingo may be a coded admission that gravity's mechanism can't be explained mechanically because Newton privately believed it was an alchemical-theological active principle~~
+- ~~MASSIVE WIN (5): Eleusinian Mysteries — if the kykeon was entheogenic (ergot-derived), the origins of Western philosophy (Plato, Aristotle, Cicero, Marcus Aurelius) may be entheogenic~~
+- ~~MASSIVE WIN (6): Mithraic Mysteries — December 25 was Mithras's birthday before Christ's; Philocalian calendar (354 CE) lists Natalis Invicti and Nativity on the same date~~
+- ~~Status: FINISHED~~
 
 ---
 
