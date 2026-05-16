@@ -1304,6 +1304,41 @@ footer select:focus, footer input:focus { border-color: var(--gold-soft); }
 .pattern-source:hover { background: rgba(212,165,90,0.18); color: var(--gold); }
 .pattern-source--missing { color: var(--text-3); border-color: var(--border-soft); background: transparent; cursor: default; }
 
+/* OBSERVATIONS view */
+.obs-pane .obs-card {
+  padding: 20px 24px 16px;
+  border-bottom: 1px solid var(--border-soft);
+  max-width: 860px;
+}
+.obs-pane .obs-head {
+  display: flex; align-items: baseline; gap: 10px; margin-bottom: 8px;
+}
+.obs-badge {
+  flex-shrink: 0;
+  font-family: var(--mono); font-size: 9px; font-weight: 500;
+  letter-spacing: 0.12em; text-transform: uppercase;
+  border: 1px solid; border-radius: 3px;
+  padding: 2px 7px; line-height: 1.6;
+}
+.obs-pane .obs-title {
+  font-family: var(--serif); font-size: 17px;
+  color: var(--text-0); font-weight: 500; line-height: 1.3;
+}
+.obs-pane .obs-summary {
+  font-size: 13px; color: var(--gold-soft);
+  font-style: italic; line-height: 1.6; margin-bottom: 10px;
+}
+.obs-pane .obs-body {
+  font-size: 12px; color: var(--text-2); line-height: 1.75;
+}
+.obs-pane .obs-evidence {
+  display: flex; flex-wrap: wrap; align-items: center; gap: 6px; margin-top: 12px;
+}
+.obs-ev-label {
+  font-family: var(--mono); font-size: 9px; letter-spacing: 0.10em;
+  text-transform: uppercase; color: var(--text-3); margin-right: 2px;
+}
+
 /* ALCHEMY view */
 .alch-toolbox {
   position: absolute; bottom: calc(var(--footer-h) + 18px); left: 50%; transform: translateX(-50%);

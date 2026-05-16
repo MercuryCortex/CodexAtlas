@@ -1618,3 +1618,11 @@ Files: sacred-cauldron.md (NEW) · cerridwen.md (STUB, deity) · bran-the-blesse
 - Owning: `src/data/patterns.js` (NEW), `index.html`, `src/js/app.js`, `src/styles/app.css`
 - 37 pattern entries · 5 sections · 5 badge types · source chips wired to vault nodes
 - Agents: add new entries to `src/data/patterns.js` — the tab auto-updates on next page load
+
+---
+
+## observations-tab — Observations sidebar tab — 2026-05-16 — FINISHED
+- Owning: `src/data/observations.js` (NEW), `index.html`, `src/js/app.js`, `src/styles/app.css`
+- 10 seed observations · CONCLUSION / HYPOTHESIS / ANOMALY / META badge types
+- Working intelligence layer: interpretive conclusions and hypotheses derived from vault data
+- Agents: grow `src/data/observations.js` when the vault produces new analytical conclusions

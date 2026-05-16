@@ -8341,6 +8341,44 @@ VIEWS.patterns = {
   }
 };
 
+VIEWS.observations = {
+  title: 'Observations',
+  subtitle: 'working hypotheses · conclusions · anomalies — the investigation\'s current thinking layer',
+  render() {
+    const pane = document.createElement('div'); pane.className = 'list-pane obs-pane';
+    const obs = (window.OBSERVATIONS_DATA || []);
+    const BADGE = {
+      'CONCLUSION': { bg: 'rgba(90,172,168,0.12)',  border: 'rgba(90,172,168,0.45)',  text: '#5aaca8' },
+      'HYPOTHESIS': { bg: 'rgba(212,165,90,0.12)',  border: 'rgba(212,165,90,0.45)',  text: '#d4a55a' },
+      'ANOMALY':    { bg: 'rgba(196,74,90,0.12)',   border: 'rgba(196,74,90,0.45)',   text: '#c44a5a' },
+      'META':       { bg: 'rgba(160,130,200,0.12)', border: 'rgba(160,130,200,0.45)', text: '#b09ad8' },
+    };
+    pane.innerHTML = obs.map(o => {
+      const bc = BADGE[o.category] || BADGE['HYPOTHESIS'];
+      const badge = `<span class="obs-badge" style="background:${bc.bg};border-color:${bc.border};color:${bc.text}">${o.category}</span>`;
+      const chips = (o.evidence || []).map(s => {
+        const n = NODES_BY_ID[s];
+        return n ? `<span class="pattern-source" data-id="${s}">${n.title}</span>`
+                 : `<span class="pattern-source pattern-source--missing">${s}</span>`;
+      }).join('');
+      return `<div class="obs-card" data-id="${o.evidence && o.evidence[0] || ''}">
+        <div class="obs-head">
+          ${badge}
+          <div class="obs-title">${o.title}</div>
+        </div>
+        <div class="obs-summary">${o.summary}</div>
+        <div class="obs-body">${o.body}</div>
+        ${chips ? `<div class="obs-evidence"><span class="obs-ev-label">evidence nodes</span>${chips}</div>` : ''}
+      </div>`;
+    }).join('') || '<div class="list-pane-empty">No observations yet — add entries to src/data/observations.js.</div>';
+    pane.addEventListener('click', ev => {
+      const chip = ev.target.closest('.pattern-source[data-id]');
+      if (chip) { selectNode(chip.dataset.id, true); return; }
+    });
+    document.getElementById('canvas').appendChild(pane);
+  }
+};
+
 VIEWS.about = {
   title: 'About this atlas',
   subtitle: 'posture, schema, sources',

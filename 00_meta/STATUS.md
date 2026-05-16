@@ -492,3 +492,15 @@ Script: `add_depictions.py` (new helper for direct Commons depictions[] injectio
 - Badge categories: CONVERGENCE (gold) · TRANSMISSION (teal) · SCIENCE (green) · INVERSION (crimson) · CONVERGENCE+TRANSMISSION (violet)
 - Source: `AUDIT/massive-wins-index.md` (35 curated wins from 67 symbol files)
 - Verified in browser: 37 cards, all 5 badge types, source chips navigate to symbol nodes
+
+---
+
+## observations-tab — OBSERVATIONS sidebar tab — FINISHED 2026-05-16
+
+- New file: `src/data/observations.js` — 10 seeded observations; agents/investigators extend this file
+- `index.html`: `<div class="item" data-view="observations">` (◉ Observations, between Patterns and All nodes) + script tag
+- `src/js/app.js`: `VIEWS.observations` — full-body analytical cards with italic summary line + body paragraph + evidence chips
+- `src/styles/app.css`: `.obs-pane`, `.obs-card`, `.obs-badge`, `.obs-title`, `.obs-summary`, `.obs-body`, `.obs-evidence`
+- Badge categories: CONCLUSION (teal) · HYPOTHESIS (gold) · ANOMALY (red/crimson) · META (violet)
+- 10 seed observations: Scaffold Paradox · Inversion Economy · Executed Founders · Transmission Amnesia · Monster at the Edge · Axial Age Simultaneity · Christianity as Museum · Sacred Geometry as Science · Universal Crisis Grammar · The Meta-Observation
+- Agents: add to `src/data/observations.js`; tab auto-updates on next page load
