@@ -235,6 +235,7 @@ TRADITION_FAMILY_ORDER = [
     "Israelite",
     "Rabbinic",
     "Zoroastrian",
+    "Armenian",
     # Indic / East Asian
     "Vedic",
     "Buddhist",
@@ -243,6 +244,7 @@ TRADITION_FAMILY_ORDER = [
     "Egyptian",
     "African",
     # Greco-Roman / Mediterranean
+    "Etruscan",
     "Hermetic",
     "Mystery",
     "Greek",
@@ -277,11 +279,13 @@ FAMILY_COLORS = {
     "Israelite":        "#9aa55a",
     "Rabbinic":         "#8aa07a",
     "Zoroastrian":      "#5a6cc4",
+    "Armenian":         "#8a3a5a",
     "Vedic":            "#e08a3a",
     "Buddhist":         "#c4a05a",
     "Chinese":          "#5a9a8f",
     "Egyptian":         "#d4a55a",
     "African":          "#b86a3a",
+    "Etruscan":         "#c47a50",
     "Hermetic":         "#a8a3b8",
     "Mystery":          "#a85a8a",
     "Greek":            "#8a5ac4",
@@ -383,6 +387,10 @@ def tradition_family(t: str) -> str:
         return "Vedic"
     if "zoroastr" in s or "avesta" in s or "iranian" in s or "ahura" in s:
         return "Zoroastrian"
+    if ("armenian" in s) and ("apostolic" not in s) and ("christian" not in s):
+        return "Armenian"
+    if "etruscan" in s:
+        return "Etruscan"
     if "roman" in s:
         return "Roman"
     if "chinese" in s or "confucian" in s or "daoist" in s or "daoism" in s or "taoist" in s or "taoism" in s or "shang" in s or "zhou" in s or "korean" in s:
