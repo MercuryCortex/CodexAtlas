@@ -658,3 +658,13 @@ Script: `add_depictions.py` (new helper for direct Commons depictions[] injectio
 - KEY FIND: Isopsephy dependency — Greek alphabetic numerology (isopsephy) only works because the vowel addition made the alphabet stable and complete; the vowels are the precondition for the number-mysticism that sits on top of the alphabet
 - KEY FIND: Vowel addition = Axial Age cognitive precondition; the Greek philosophical Axial Age (600–300 BCE) is 200 years downstream of the vowel addition (c. 800 BCE); the vowels made stable written abstract nouns possible; stable abstract nouns made philosophical argument possible
 - Build: 35 alphabets · 167 traditions · 16154 edges · 0 YAML errors · 0 dead links · commit 9d5671c
+
+---
+
+## music-tuning-trilogy-1 — Just intonation / equal temperament / Harry Partch — FINISHED 2026-05-16
+- 3 full nodes: music-just-intonation-system · music-equal-temperament-compromise · music-harry-partch-43-tone
+- KEY FIND: Equal temperament deformation is measurable — major third 14 cents sharp, minor third 16 cents sharp; these are quantifiable acoustic errors, not preferences
+- KEY FIND: Kepler's empirical orbital ratios (Harmonices Mundi, 1619) are approximately just (not equal-tempered); equal temperament moves Western music further from the ratios Kepler found governing planetary motion; the "cosmic mathematics" claim has empirical grounding
+- KEY FIND: Harry Partch (1901–1974) ↔ Indian raga: two independent traditions reach identical conclusion — pure whole-number ratios are acoustically required; raga never adopted equal temperament, Partch had to rebuild instruments to escape it (Chromelodeon, Adapted Viola, Cloud Chamber Bowls)
+- KEY FIND: Just intonation cross-tradition convergence — Greek (Pythagorean), Indian (Natyashastra shruti), Islamic (al-Farabi, Ibn Sina), medieval European (Ptolemy, Boethius) — all derive from the same physical fact: harmonic series ratios. No cross-cultural contact needed; they are independently reading the same overtone structure
+- Build: 89 music nodes · 16229 edges · 0 YAML errors · 0 dead links introduced
