@@ -1373,9 +1373,10 @@ The things opus-foundation-1 claimed but never started are all still open:
 
 ---
 
-## goblin-emerald-recovery — symbols / emerald-tablet — started 2026-05-16 — IN PROGRESS
-- Owning: `09_symbols/emerald-tablet.md` (NEW)
-- Hands-off: everything else
+## ~~goblin-emerald-recovery — symbols / emerald-tablet — started 2026-05-16 — FINISHED 2026-05-16~~
+- ~~Owning: `09_symbols/emerald-tablet.md` (NEW)~~
+- ~~Goal: Emerald Tablet full symbol node — textual history (Arabic 8th-9th c. pseudo-Apollonius → Latin 12th c. Hugo of Santalla → Newton 1680 Keynes MS 28), 13 Latin sentences, 5-tradition 'as above, so below' MASSIVE WIN (Hermetic/Kabbalistic/Vedantic/Stoic/Chinese correlative cosmology), 5 cross-symbol edges (philosophers-stone, monas-hieroglyphica, sefirot-tree-of-life, rose-cross-rosicrucian, mandala-circle), 8 Tier-1 refs~~
+- ~~Status: finished — 206 total symbols · 14637 edges · 0 YAML errors · 0 new dead links · commit b3daadc~~
 
 ---
 
