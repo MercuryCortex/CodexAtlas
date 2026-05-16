@@ -6270,7 +6270,7 @@ function renderAlchNodes() {
   }
   pane.innerHTML = html;
   pane.querySelectorAll('.alpha-script-card[data-id]').forEach(card => {
-    card.onclick = () => { const nd = DATA.nodes.find(x => x.id === card.dataset.id); if (nd) showDetail(nd); };
+    card.onclick = () => { const nd = DATA.nodes.find(x => x.id === card.dataset.id); if (nd) selectNode(nd.id, true); };
   });
   document.getElementById('canvas').appendChild(pane);
 }
@@ -8458,7 +8458,7 @@ function renderAlphaScripts(pane) {
   pane.querySelectorAll('.alpha-script-card').forEach(card => {
     card.onclick = () => {
       const node = DATA.nodes.find(n => n.id === card.dataset.id);
-      if (node) showDetail(node);
+      if (node) selectNode(node.id, true);
     };
   });
 }
@@ -8632,7 +8632,7 @@ function renderMoralsRoots(pane) {
   pane.innerHTML = html;
   pane.querySelectorAll('[data-id]').forEach(el => {
     el.style.cursor = 'pointer';
-    el.onclick = () => { const nd = DATA.nodes.find(x => x.id === el.dataset.id); if (nd) showDetail(nd); };
+    el.onclick = () => { const nd = DATA.nodes.find(x => x.id === el.dataset.id); if (nd) selectNode(nd.id, true); };
   });
 }
 
@@ -8672,7 +8672,7 @@ function renderMoralsSystems(pane) {
   pane.innerHTML = html;
   pane.querySelectorAll('[data-id]').forEach(el => {
     el.style.cursor = 'pointer';
-    el.onclick = () => { const nd = DATA.nodes.find(x => x.id === el.dataset.id); if (nd) showDetail(nd); };
+    el.onclick = () => { const nd = DATA.nodes.find(x => x.id === el.dataset.id); if (nd) selectNode(nd.id, true); };
   });
 }
 
@@ -8949,7 +8949,7 @@ function renderRitualsReligion(pane) {
   // Node cards → detail panel
   pane.querySelectorAll('.alpha-script-card[data-id]').forEach(c => {
     c.style.cursor = 'pointer';
-    c.onclick = () => { const nd = DATA.nodes.find(x => x.id === c.dataset.id); if (nd) showDetail(nd); };
+    c.onclick = () => { const nd = DATA.nodes.find(x => x.id === c.dataset.id); if (nd) selectNode(nd.id, true); };
   });
 }
 
@@ -9014,7 +9014,7 @@ function _renderMusicNodes() {
   });
   pane.innerHTML = html;
   pane.querySelectorAll('.alpha-script-card[data-id]').forEach(card => {
-    card.onclick = () => { const nd = DATA.nodes.find(x => x.id === card.dataset.id); if (nd) showDetail(nd); };
+    card.onclick = () => { const nd = DATA.nodes.find(x => x.id === card.dataset.id); if (nd) selectNode(nd.id, true); };
   });
   document.getElementById('canvas').appendChild(pane);
 }
