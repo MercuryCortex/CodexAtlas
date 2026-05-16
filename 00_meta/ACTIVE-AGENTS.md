@@ -2047,3 +2047,15 @@ Files: sacred-cauldron.md (NEW) · cerridwen.md (STUB, deity) · bran-the-blesse
 - ~~Architecture: Obelisk (O25 — Vatican center) · Pyramid (O24 — π and φ)~~
 - ~~Nature: Palm Branch/Year (M4 — Egyptian calendar origin) · Sycamore Tree (M1)~~
 - ~~Status: FINISHED — commit 1cb5d0f~~
+
+---
+
+## ~~alphabets-hieroglyph-expand-3 — 19 final signs — 2026-05-16 — FINISHED~~
+- ~~Owned: `src/js/alphabets/glyph-data.js` (19 new scriptOnly:['hieroglyph'] entries; total now 89 signs)~~
+- ~~Deities: Amun (C3 — "Amen" etymology) · Nephthys (C13) · Min (C8) · Apis Bull (E6 — Golden Calf) · Nekhbet Vulture (G14 — Virgin Birth argument)~~
+- ~~Celestial: Moon Crescent (N11 — lunar calendar origins)~~
+- ~~Phonetic: Owl (G17) · Quail Chick (G43)~~
+- ~~Emblems: Sedge (M23) · Bee (L2 — Napoleon's bee)~~
+- ~~Objects: Tyet (V39 — red protective cord genealogy) · Menat (R17) · Red Crown (S3)~~
+- ~~Numbers: Stroke/1 (Z1) · Arch/10 (V20) · Coil/100 (V1) · Finger/10000 (D50) · Tadpole/100000 (I8)~~
+- ~~Status: FINISHED — commit 47d2103~~
