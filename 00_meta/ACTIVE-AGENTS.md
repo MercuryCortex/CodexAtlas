@@ -1831,12 +1831,22 @@ Files: sacred-cauldron.md (NEW) · cerridwen.md (STUB, deity) · bran-the-blesse
 
 ---
 
-## alphabet-missionary-1 — 3 deliberately invented script nodes — 2026-05-16 — IN FLIGHT
-- Owned: `11_alphabets/alphabet-glagolitic-cyrillic.md` (NEW), `11_alphabets/alphabet-hangul.md` (NEW), `11_alphabets/alphabet-cherokee.md` (NEW)
-- Do NOT touch: any existing node, app code, src/js/, src/styles/, index.html
+## ~~alphabet-missionary-1 — 3 deliberately invented script nodes — 2026-05-16 — FINISHED~~
+- ~~Owned: `11_alphabets/alphabet-glagolitic-cyrillic.md` (NEW full), `11_alphabets/alphabet-hangul.md` (NEW full), `11_alphabets/alphabet-cherokee.md` (NEW full)~~
+- ~~Stub: `07_traditions/tradition-cherokee.md`~~
+- ~~Pattern added: `alphabet-as-identity-weapon` (CONVERGENCE, Alphabet Layer Discoveries)~~
+- ~~Build: 29 alphabets · 165 traditions · 16136 edges · 0 YAML errors · 0 dead links introduced~~
+- ~~Status: FINISHED — commit c88ba09~~
 
 ---
 
 ## alphabet-hebrew-script-1 — Hebrew aleph-bet deep dive + transmission audit — 2026-05-16 — IN FLIGHT
 - Owned: `11_alphabets/alphabet-hebrew-aleph-bet.md` (NEW), `11_alphabets/alphabet-masoretes.md` (NEW)
+- Do NOT touch: any existing node, app code, src/js/, src/styles/, index.html
+
+---
+
+## alphabet-aramaic-1 — Aramaic transmission backbone — 2026-05-16 — IN FLIGHT
+- Owned: `11_alphabets/alphabet-aramaic.md` (NEW), `11_alphabets/alphabet-syriac.md` (NEW)
+- Stub created: `07_traditions/tradition-nestorian.md` (NEW stub — tradition-nestorian not in vault)
 - Do NOT touch: any existing node, app code, src/js/, src/styles/, index.html
