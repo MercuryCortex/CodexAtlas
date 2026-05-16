@@ -1485,3 +1485,11 @@ Files: eye-of-ra.md · aten-disk.md · sacred-scepter.md
 Files: cosmic-serpent.md · sacred-ring.md · sacred-number-four.md
 - 245 total symbols · 14936 edges · 0 YAML errors · 0 dead links · commit a3d0ee2
 - Note: cosmic-serpent.md was already in vault from prior thumbnail sweep; sacred-ring + sacred-number-four newly added
+
+---
+
+## Goblin 17C — North Star / Sacred Number Twelve / Sacred Threshold
+**Status: FINISHED**
+Files: north-star.md · sacred-number-twelve.md · sacred-threshold.md
+- Note: bagua.md already existed (as ba-gua.md); sacred-mirror.md also pre-existed; substituted sacred-number-twelve.md per protocol
+- 248 total symbols · 14978 edges · 0 YAML errors · 0 dead links · commit cea4a58
