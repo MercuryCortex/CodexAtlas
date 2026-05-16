@@ -31,6 +31,7 @@ window.ScriptureReader = (function () {
     'ecclesiastes-1':     { religion:'Christianity', group:'Old Testament',          canon:'All Canons',          sort:90 },
     'wisdom-of-solomon':  { religion:'Christianity', group:'Deuterocanon',           canon:'Catholic / Orthodox / Ethiopian', sort:10 },
     'song-of-songs':      { religion:'Christianity', group:'Old Testament',          canon:'All Canons',          sort:95 },
+    'exodus-3':           { religion:'Christianity', group:'Old Testament',          canon:'All Canons',          sort:15 },
     // ── Christianity — New Testament ────────────────────────────────
     'john-1':             { religion:'Christianity', group:'New Testament',          canon:'All Canons',          sort:10 },
     'john-3':             { religion:'Christianity', group:'New Testament',          canon:'All Canons',          sort:20 },
@@ -40,6 +41,8 @@ window.ScriptureReader = (function () {
     'matthew-sermon-mount': { religion:'Christianity', group:'New Testament',        canon:'All Canons',          sort:25 },
     'philippians-2':      { religion:'Christianity', group:'New Testament',          canon:'All Canons',          sort:45 },
     'colossians-1':       { religion:'Christianity', group:'New Testament',          canon:'All Canons',          sort:46 },
+    '1-john-4':           { religion:'Christianity', group:'New Testament',          canon:'All Canons',          sort:65 },
+    'hebrews-11':         { religion:'Christianity', group:'New Testament',          canon:'All Canons',          sort:70 },
     'acts-17-areopagus':  { religion:'Christianity', group:'New Testament',          canon:'All Canons',          sort:55 },
     'luke-15-prodigal':   { religion:'Christianity', group:'New Testament',          canon:'All Canons',          sort:60 },
     // ── Christianity — Ethiopian Canon ──────────────────────────────
@@ -51,6 +54,7 @@ window.ScriptureReader = (function () {
     'gospel-of-thomas':   { religion:'Christianity', group:'Gnostic / Nag Hammadi', canon:'Non-canonical',       sort:10 },
     'apocryphon-of-john': { religion:'Christianity', group:'Gnostic / Nag Hammadi', canon:'Non-canonical',       sort:20 },
     'gospel-of-philip':   { religion:'Christianity', group:'Gnostic / Nag Hammadi', canon:'Non-canonical',       sort:30 },
+    'thunder-perfect-mind': { religion:'Christianity', group:'Gnostic / Nag Hammadi', canon:'Non-canonical',     sort:40 },
     // ── Christianity — Medieval Mysticism ───────────────────────────
     'julian-of-norwich':  { religion:'Christianity', group:'Medieval Mysticism',    canon:'Catholic Mysticism',  sort:10 },
     // ── Judaism ─────────────────────────────────────────────────────

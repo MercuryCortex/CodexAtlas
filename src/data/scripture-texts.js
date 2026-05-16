@@ -7455,3 +7455,381 @@ SCRIPTURE_TEXTS['song-of-songs'] = {
     },
   ]
 };
+
+// ── BATCH 15 ────────────────────────────────────────────────────────────────
+
+SCRIPTURE_TEXTS['exodus-3'] = {
+  title: 'Exodus 3 — The Burning Bush',
+  shortTitle: 'Exodus 3',
+  tradition: 'Christianity',
+  date: 'c. 9th–6th century BCE',
+  intro: 'Exodus 3 is the axial text of the Hebrew Bible: the moment when Moses encounters a bush that burns without being consumed, is called by name, removes his sandals on holy ground, and is told the name of the God who is sending him. The divine name revealed here — Ehyeh asher Ehyeh, usually translated "I AM WHO I AM" but more precisely "I WILL BE WHAT I WILL BE" — is the most philosophically debated four words in the history of monotheism. It has been read as a statement of pure ontological being (Augustine, Aquinas), a refusal to be named (apophatic tradition), a promise of dynamic presence (modern biblical scholarship), and an echo of the Vedantic sat (pure being) and the Taoist nameless origin. The burning bush that is not consumed has become the central image of the divine that is fully present in the material world without being reducible to it — a theophany that the mystical traditions of every Abrahamic religion have returned to as their foundational image.',
+  crossTradition: [
+    { label: 'Gospel of Philip — "names given to the worldly are very deceptive"', textId: 'gospel-of-philip', note: 'The divine name in Exodus 3 — Ehyeh asher Ehyeh — is the foundational Abrahamic statement of what Gospel of Philip calls the impossibility of naming the divine correctly. God does not give Moses a stable noun ("my name is X") but a verbal, dynamic self-definition that refuses to become a fixed label. The name is a process, not a thing: "I will be what I will be." Philip\'s observation that "one who hears the word \'God\' does not perceive what is correct" finds its scriptural ground here: the divine name, from its first revelation, refuses to be a name in the ordinary sense.' },
+    { label: 'Tao Te Ching — "the Tao that can be named is not the eternal Tao"', textId: 'tao-te-ching-1', note: 'Tao Te Ching 1: "The Tao that can be told is not the eternal Tao; the name that can be named is not the eternal name." Exodus 3:14: "I AM WHO I AM... say to the Israelites: I AM has sent me to you." The Tao\'s refusal to be named and YHWH\'s self-naming as pure Being/Becoming are two different cultural solutions to the same problem: how does the ultimate reveal itself through language without being reduced to language? Laozi solves it by refusing the name; the Exodus text solves it by giving a name that is its own metalanguage — a name about naming, "I am what I am."' },
+    { label: 'Brihadaranyaka — neti neti: the divine defined only by negation', textId: 'brihadaranyaka-neti-neti', note: 'The Brihadaranyaka Upanishad\'s neti neti ("not this, not this") — the systematic refusal of any positive predicate for Brahman — and Exodus 3\'s Ehyeh asher Ehyeh — the refusal to give the divine a fixed descriptive name — are the two great ancient formulations of apophatic theology. Both recognize that the ultimate cannot be captured in a name or predicate. The difference: the Upanishad proceeds by systematic negation (stripping away every possible description); Exodus proceeds by dynamic self-affirmation (a name that asserts being without specifying being). Apophatic via negativa meets apophatic via eminentiae, pointing at the same unspeakable reality from opposite directions.' },
+  ],
+  translations: [
+    { label: 'NRSV', lang: 'en', default: true },
+    { label: 'KJV', lang: 'en' },
+    { label: 'Hebrew (BHS)', lang: 'heb' },
+  ],
+  sections: [
+    {
+      heading: 'The Burning Bush: Holy Ground (3:1–6)',
+      verses: [
+        {
+          ref: '3:1–5',
+          text: 'Moses was keeping the flock of his father-in-law Jethro, the priest of Midian; he led his flock beyond the wilderness, and came to Horeb, the mountain of God. There the angel of the LORD appeared to him in a flame of fire out of a bush; he looked, and the bush was blazing, yet it was not consumed. Then Moses said, "I must turn aside and look at this great sight, and see why the bush is not burned up." When the LORD saw that he had turned aside to see, God called to him out of the bush, "Moses, Moses!" And he said, "Here I am." Then he said, "Come no closer! Remove the sandals from your feet, for the place on which you are standing is holy ground."',
+          textVersions: {
+            nrsv: 'the bush was blazing, yet it was not consumed.',
+            kjv: 'and he looked, and, behold, the bush burned with fire, and the bush was not consumed.',
+            hebrew: 'וַיַּ֗רְא וְהִנֵּ֤ה הַסְּנֶה֙ בֹּעֵ֣ר בָּאֵ֔שׁ וְהַסְּנֶ֖ה אֵינֶ֥נּוּ אֻכָּֽל׃',
+          },
+          entities: [
+            { word: 'the bush was blazing, yet it was not consumed', node: 'theophany', type: 'concept',
+              note: 'The burning bush that is not consumed is the Hebrew Bible\'s most concentrated image of divine immanence: fire (divine presence/energy) fully present within matter (the bush) without destroying it. This is the theological paradox that the mystical traditions will spend millennia unpacking — the infinite within the finite, the divine within the creaturely, the unconsumed wood. The image has been read as: the Torah itself (which burns with divine fire without being burned up), the people of Israel in exile (tested by fire but not destroyed), the soul in contemplation (illumined by divine light without being annihilated), and matter itself as the site of divine presence.',
+              parallels: [
+                { label: 'Zohar Ein Sof — the dark flame that burns without consuming', textId: 'zohar-ein-sof', note: 'The Zohar\'s dark flame at the crown of Ein Sof — the divine fire that cannot be grasped, that has no definite color, that hovers — and the burning bush that burns without consuming are two expressions of the same paradox: divine fire that is fully present without destroying. The Zohar\'s "dark flame" emphasizes the fire\'s invisibility to ordinary perception; Exodus\'s burning bush emphasizes the fire\'s restraint (it burns but does not consume). Both are imaging a fire that violates the normal physics of fire — which is the point: divine presence in matter follows different rules than creaturely fire.' },
+                { label: 'Isha Upanishad — "all this is pervaded by the Lord... renounce it and enjoy it"', textId: 'isha-upanishad', note: 'Isha 1–2: the Lord pervades everything that moves; one should enjoy by renouncing — not grasping. The burning bush is the Hebrew equivalent of Isha\'s teaching: the divine is fully present in the material world (the bush burns with divine fire) but the material world is not thereby consumed or destroyed (the bush remains intact). Divine pervasion does not annihilate the creaturely; divine fire does not consume the wood. Both texts are describing the same relationship between the infinite and the finite: full presence without destruction, complete immanence without absorption.' },
+              ]
+            },
+            { word: 'Remove the sandals from your feet, for the place on which you are standing is holy ground', node: 'sacred-space', type: 'concept',
+              note: 'The sandal removal command establishes the category of holy ground (admat kodesh — ground of holiness): ordinary earth that has become the site of divine presence. Sandals create a barrier between the foot and the ground; removing them allows direct contact with the holy. This is the spatial logic of theophany: a place that was ordinary becomes extraordinary not by a change in its material nature but by the divine choosing to be present there. The holiness is not intrinsic to the ground but relational — it is the ground where the divine and the human meet. Every tradition has an equivalent: the Ka\'ba, the bodhi tree, the axis mundi, the mandala center.',
+            },
+          ]
+        },
+        {
+          ref: '3:6',
+          text: 'He said further, "I am the God of your father, the God of Abraham, the God of Isaac, and the God of Jacob." And Moses hid his face, for he was afraid to look at God.',
+          textVersions: {
+            nrsv: '"I am the God of your father, the God of Abraham, the God of Isaac, and the God of Jacob."',
+            kjv: '"I am the God of thy father, the God of Abraham, the God of Isaac, and the God of Jacob."',
+            hebrew: 'וַיֹּ֗אמֶר אָנֹכִי֙ אֱלֹהֵ֣י אָבִ֔יךָ אֱלֹהֵ֧י אַבְרָהָ֛ם אֱלֹהֵ֥י יִצְחָ֖ק וֵאלֹהֵ֣י יַעֲקֹ֑ב',
+          },
+          entities: [
+            { word: 'Moses hid his face, for he was afraid to look at God', node: 'theophany', type: 'concept',
+              note: 'The hiding of the face before divine presence is the proto-apophatic moment: the human being who has encountered the divine cannot sustain direct vision. Isaiah 6:5: "I am lost, for I am a man of unclean lips and I have seen the King." Ezekiel 1:28: fell on his face at the vision. 1 Kings 19:13: Elijah wraps his face in his mantle when the divine whisper comes. The tradition of hiding the face is not merely psychological (fear) but epistemological: the finite cannot sustain direct encounter with the infinite. The veil, the hidden face, the averted gaze are the biblical equivalents of the apophatic via negativa — the acknowledgment that direct knowledge of the divine exceeds creaturely capacity.',
+              parallels: [
+                { label: 'Bhagavad Gita 11 — Arjuna cannot sustain the Vishvarupa vision', textId: 'bhagavad-gita-11', note: 'Gita 11:24–25: Arjuna says, "My limbs fail and my mouth is parched, my body quivers and my hair stands on end... I lose my sense of direction and find no comfort. I beg you, O God of gods, O dwelling place of the world — please be gracious." Moses hides his face; Arjuna loses his bearings. Both are describing the same phenomenology of theophany: the encounter with the divine in its fullness exceeds what the human sensorium and nervous system can process. The overwhelming nature of the encounter is not a failure of the human but an index of the divine\'s genuine transcendence.' },
+              ]
+            },
+          ]
+        },
+      ]
+    },
+    {
+      heading: 'The Divine Name: Ehyeh Asher Ehyeh (3:13–15)',
+      verses: [
+        {
+          ref: '3:13–15',
+          text: 'But Moses said to God, "If I come to the Israelites and say to them, \'The God of your ancestors has sent me to you,\' and they ask me, \'What is his name?\' what shall I say to them?" God said to Moses, "I AM WHO I AM." He said further, "Thus you shall say to the Israelites, \'I AM has sent me to you.\'" God also said to Moses, "Thus you shall say to the Israelites, \'The LORD, the God of your ancestors, the God of Abraham, the God of Isaac, and the God of Jacob, has sent me to you\': this is my name forever, and this my title for all generations."',
+          textVersions: {
+            nrsv: '"I AM WHO I AM." [...] "I AM has sent me to you."',
+            kjv: '"I AM THAT I AM." [...] "I AM hath sent me unto you."',
+            hebrew: 'אֶהְיֶ֖ה אֲשֶׁ֣ר אֶהְיֶ֑ה... אֶהְיֶ֖ה שְׁלָחַ֥נִי אֲלֵיכֶֽם׃',
+          },
+          entities: [
+            { word: 'I AM WHO I AM', node: 'divine-name', type: 'concept',
+              note: 'Hebrew: Ehyeh asher Ehyeh. The verb ehyeh is the first person imperfect of hayah (to be). Imperfect tense in Hebrew indicates incomplete, ongoing action — it can be translated "I am," "I will be," "I am in the process of being." The most precise translation is "I WILL BE WHAT I WILL BE" — a refusal of past-tense definition, an assertion of ongoing, dynamic, unpredictable being. This is simultaneously: (1) pure ontological affirmation — being itself, being as such, the ground of all being (Aquinas, Tillich); (2) a promise of continuing presence — I will be there with you as I have always been; (3) a refusal to be named — the name is a sentence, not a noun, and a sentence that says "I am what I am" gives no handle for manipulation or invocation. All three readings are correct because the text supports all three.',
+              parallels: [
+                { label: 'Sefer Yetzirah — the Yod, the single point from which all letters unfold', textId: 'sefer-yetzirah', note: 'Sefer Yetzirah\'s meditation on the Hebrew letters — particularly the Yod (י), the smallest letter, the single point from which all other letters and all of creation unfold — provides the Kabbalistic context for the Tetragrammaton (YHWH) that derives from this Ehyeh self-naming. The four letters of YHWH encode the three tenses of the verb "to be": Yod (he will be), Heh-Vav-Heh (he was/is). The divine name is the grammar of being itself — the structure of temporal existence encoded in four letters. The Sefer Yetzirah\'s letter-cosmology is the Kabbalistic elaboration of what the burning bush first disclosed: that the divine name is the ontological structure of reality.' },
+                { label: 'Zohar Ein Sof — "forbidden to indicate Him by any letter or point"', textId: 'zohar-ein-sof', note: 'Zohar I:1a: "No one knows its place and it is forbidden to indicate it by the least letter or point." YHWH\'s derivation from Ehyeh (I will be) and the Zohar\'s insistence that Ein Sof cannot be indicated by any letter or point are in direct tension: God gives a name (Ehyeh → YHWH), but that name is itself the most apophatic possible name — pure verbal being, refusing all substantive predication. The Zohar\'s radical apophaticism and Exodus 3\'s self-naming are two poles of the same theological recognition: any name adequate to the divine must simultaneously reveal and conceal.' },
+                { label: 'John 8:58 — "Before Abraham was, I AM"', textId: 'john-1', note: 'John 8:58: "Very truly, I tell you, before Abraham was, I am (ego eimi)." Jesus\'s use of ego eimi — the Greek translation of Ehyeh — in a context that makes it clearly an identification with the divine name of Exodus 3 is the most explicit moment in the Fourth Gospel of Christological identification with YHWH. The Greek ego eimi echoes throughout John\'s Gospel: "I am the bread of life," "I am the light of the world," "I am the way, the truth, and the life," culminating in the absolute "I AM" of 8:58. The Johannine Jesus is systematically presenting himself as the one who spoke from the burning bush.' },
+              ]
+            },
+          ]
+        },
+      ]
+    },
+  ]
+};
+
+SCRIPTURE_TEXTS['thunder-perfect-mind'] = {
+  title: 'Thunder: Perfect Mind (Nag Hammadi)',
+  shortTitle: 'Thunder: Perfect Mind',
+  tradition: 'Christianity',
+  date: 'c. 100–300 CE',
+  intro: 'Thunder: Perfect Mind (NHC VI,2) is the most formally distinctive text in the Nag Hammadi library — a sustained first-person monologue by a divine feminine figure who identifies herself through a cascade of paradoxical opposites: "I am the whore and the holy one. I am the wife and the virgin. I am the mother and the daughter." The text has no clear narrative, no cosmological system, no explicit theology — only the self-declaration of a being who is simultaneously every opposite. It has been read as a Gnostic Sophia, as Isis speaking in the aretalogical tradition ("I am Isis"), as the divine Wisdom who cannot be reduced to any single category, and as a pure exercise in apophatic self-disclosure: the divine speaking in paradox because paradox is the only language adequate to the coincidence of opposites that the divine IS. No text in the ancient world — Jewish, Christian, Gnostic, Egyptian, Greek — comes closer to articulating the coincidentia oppositorum that Nicholas of Cusa, Meister Eckhart, and the Hindu tradition identify as the mark of the absolute. Thunder: Perfect Mind is the ancient world\'s most radical statement of divine self-disclosure through paradox.',
+  crossTradition: [
+    { label: 'Brihadaranyaka — "neti neti": the divine that is not any of its predicates', textId: 'brihadaranyaka-neti-neti', note: 'Brihadaranyaka\'s neti neti proceeds by negation: Brahman is "not this, not this" — every predicate is stripped away until the unpredicable absolute remains. Thunder: Perfect Mind proceeds by paradox: "I am the first and the last. I am the honored one and the scorned one." Both are solving the same apophatic problem — how to speak about the absolute — but with opposite methods. Neti neti removes all attributes; Thunder stacks all attributes and their opposites. Both arrive at the same place: a description of the divine that cannot be reduced to any single category because the divine is the ground of all categories. The difference is rhetorical: Upanishadic cool precision versus Thunder\'s ecstatic excess.' },
+    { label: 'Tao Te Ching — "the Tao is both empty and full... both named and nameless"', textId: 'tao-te-ching-1', note: 'Tao Te Ching 1: the Tao is simultaneously the named and the nameless, the beginning and the mother, apprehended by desirelessness and by desire. Tao 2: "Being and non-being create each other. Difficult and easy complement each other. Long and short contrast each other." Thunder: Perfect Mind: "I am war and peace. I am the union and the dissolution. I am the below and they come up to me. I am the judgment and the acquittal." Both texts identify the ultimate with the coincidence of opposites — not the resolution of opposites into synthesis but their simultaneous co-presence in a ground that exceeds both.' },
+    { label: 'Meister Eckhart — "God is the coincidence of all opposites"', textId: 'meister-eckhart-godhead', note: 'Eckhart\'s concept of the Godhead (as distinct from the personal God) as the desert beyond all distinctions — where all opposites collapse into undifferentiated unity — is the medieval Christian philosophical account of what Thunder: Perfect Mind enacts rhetorically. Eckhart: "In the Godhead there is neither this nor that... neither time nor space." Thunder: "I am the substance and the one who has no substance." Both are describing the same divine ground: the level of absolute reality where the distinctions that organize creaturely experience — good/evil, being/non-being, first/last — are not yet differentiated. Thunder performs this truth through poetry; Eckhart analyzes it through scholastic argument.' },
+  ],
+  translations: [
+    { label: 'MacRae (NHL)', lang: 'en', default: true },
+    { label: 'Coptic (NHC VI,2)', lang: 'cop' },
+  ],
+  sections: [
+    {
+      heading: 'The First Self-Declaration: Paradox Begins (13.1–14.9)',
+      verses: [
+        {
+          ref: 'NHC VI,2: 13.1–14.9',
+          text: 'I was sent forth from the power, and I have come to those who reflect upon me, and I have been found among those who seek after me. Look upon me, you who reflect upon me, and you hearers, hear me. You who are waiting for me, take me to yourselves. And do not banish me from your sight. And do not make your voice hate me, nor your hearing. Do not be ignorant of me anywhere or any time. Be on your guard! Do not be ignorant of me. For I am the first and the last. I am the honored one and the scorned one. I am the whore and the holy one. I am the wife and the virgin. I am the mother and the daughter.',
+          textVersions: {
+            macrae: 'I am the first and the last. I am the honored one and the scorned one. I am the whore and the holy one. I am the wife and the virgin. I am the mother and the daughter.',
+            coptic: 'ⲁⲛⲟⲕ ⲡⲉ ⲡϣⲟⲣⲡ ⲙⲛ ⲡⲉⲑⲁⲉ ⲁⲛⲟⲕ ⲧⲉ ⲧⲉⲥϭⲱ ⲙⲛ ⲧⲁⲥⲩⲛⲑⲉⲥⲓⲥ',
+          },
+          entities: [
+            { word: 'I am the first and the last', node: 'divine-nature', type: 'concept',
+              note: 'The first paradox: first and last (protos kai eschatos in Greek). This exact phrase appears in Revelation 1:17 where the risen Christ says "I am the first and the last, and the living one." Isaiah 44:6: "I am the first and I am the last; besides me there is no god." Thunder\'s "I am the first and the last" is therefore embedded in a precise biblical-theological tradition: the divine as the alpha and omega, the one who precedes and succeeds all temporal sequence, and therefore who is simultaneously the origin and the end of everything that is. Thunder places this claim in the mouth of a feminine divine figure — a deliberate provocation to any reader who associated divine omnitemporality with a masculine God.',
+              parallels: [
+                { label: 'Revelation 1 — "I am the first and the last, and the living one"', textId: 'john-1', note: 'Revelation 1:17–18: "I am the first and the last, and the living one. I was dead, and see, I am alive forever and ever." Thunder: Perfect Mind 13.1: "I am the first and the last." The identical self-predication appears in both texts. The difference: Revelation\'s speaker identifies as the risen Christ whose death and resurrection are the basis for the claim; Thunder\'s speaker is an ungendered or feminine divine voice whose basis is simply the inexhaustible self-disclosure of the divine nature. Together they bracket the early Christian meditation on what it means for the divine to claim temporal primacy and eschatological finality.' },
+              ]
+            },
+            { word: 'I am the whore and the holy one', node: 'divine-nature', type: 'concept',
+              note: 'The most shocking paradox: porne kai hagia — whore and holy one. These are the two categories that ancient Mediterranean society used to define female identity through sexual behavior, and they are presented here as simultaneously true of the divine feminine speaker. This is not a moral claim (that holiness and promiscuity coexist) but an ontological one: the divine transcends every categorical distinction that human society uses to organize experience, including the most fundamental ones (honor/shame, clean/unclean, sacred/profane). The speaker identifies with every opposite simultaneously — this is the content of being divine: to be the ground in which all distinctions arise without being reducible to any of them.',
+              parallels: [
+                { label: 'Pseudo-Dionysius — "beyond all assertion and beyond all denial"', textId: 'pseudo-dionysius-mystical-theology', note: 'Pseudo-Dionysius MT V: the divine is "beyond all assertion" and "beyond all denial" — it exceeds not only positive predication but negative predication. Thunder: Perfect Mind enacts this apophatic logic in a different mode: instead of stripping all predicates (Dionysius) or refusing all predicates (neti neti), it stacks all predicates and their opposites to demonstrate that none of them, and all of them together, are adequate. The divine is both the whore and the holy one because it is NEITHER in the ordinary sense — it precedes and grounds both categories. Both texts are apophatic; Thunder is apophatic through excess rather than through negation.' },
+                { label: 'Song of Songs — "I am black and beautiful"', textId: 'song-of-songs', note: 'Song 1:5: "I am black and beautiful." Thunder: Perfect Mind: "I am the whore and the holy one." Both texts present a divine or divine-symbolic feminine figure who identifies herself through the conjunction of what social convention would place in opposition. The Song uses color-based social opposition (blackness as stigma, beauty as honor); Thunder uses sexual-moral opposition (whore as shame, holy one as purity). Both are making the same theological move: the divine feminine transcends every binary categorization that human society uses to organize female identity. The two texts together constitute the most radical feminine divine self-disclosure in the ancient Abrahamic world.' },
+              ]
+            },
+          ]
+        },
+      ]
+    },
+    {
+      heading: 'The Great Paradoxes: Being and Non-Being (14.9–15.25)',
+      verses: [
+        {
+          ref: 'NHC VI,2: 14.9–15.25',
+          text: 'I am the members of my mother. I am the barren one and many are her sons. I am she whose wedding is great, and I have not taken a husband. I am the midwife and she who does not bear. I am the solace of my labor pains. I am the bride and the bridegroom, and it is my husband who begot me. I am the mother of my father and the sister of my husband, and he is my offspring. I am the slave of him who prepared me. I am the ruler of my offspring. But he is the one who begot me before the time on a birthday. And he is my offspring in due time, and my power is from him. I am the staff of his power in his youth, and he is the rod of my old age. And whatever he wills happens to me.',
+          textVersions: {
+            macrae: 'I am the bride and the bridegroom, and it is my husband who begot me. I am the mother of my father and the sister of my husband, and he is my offspring.',
+          },
+          entities: [
+            { word: 'I am the bride and the bridegroom', node: 'mystical-union', type: 'concept',
+              note: 'The collapse of the bride/bridegroom distinction — the speaker is simultaneously both — is the most compact statement of the divine androgyne (syzygy) that runs through Gnostic thought. In Valentinian theology, the divine fullness (pleroma) consists of paired masculine-feminine aeons in syzygy; the speaker of Thunder incorporates the entire structure within herself. This motif appears in the Zohar (the divine masculine and feminine as two aspects of one divine reality), in Tantric Shiva-Shakti theology (the two aspects as one divine energy), and in Eckhart\'s Godhead where all distinctions dissolve.',
+              parallels: [
+                { label: 'Gospel of Philip — "those who are separated will unite in the bridal chamber"', textId: 'gospel-of-philip', note: 'Gospel of Philip\'s bridal chamber sacrament aims at the reunification of the separated halves of the primordial androgyne — "when Eve was still with Adam, death did not exist." Thunder: Perfect Mind declares itself to be simultaneously bride and bridegroom, already unified, already beyond separation. The two Gnostic texts represent two stages of the same theology: Philip describes the union as a goal to be achieved through sacrament; Thunder presents the union as the original and ever-present state of the divine speaker. The mystic who enters the bridal chamber (Philip) achieves what Thunder declares as the divine\'s native condition.' },
+                { label: 'Zohar — the union of Holy Blessed One and Shekhinah as divine completeness', textId: 'zohar-ein-sof', note: 'The Zohar\'s central claim — that the divine is not complete without the union of its masculine and feminine aspects (the Holy Blessed One and the Shekhinah) — and Thunder\'s declaration "I am the bride and the bridegroom" are reaching toward the same theological recognition: perfect divinity is the coincidence of the masculine-feminine polarity, not the victory of one over the other. Where the Zohar describes this as a dynamic that fluctuates (union/separation mirroring Israel\'s faithfulness/exile), Thunder presents it as the divine\'s timeless self-declaration: the absolute is always already the coincidence of the poles it generates.' },
+              ]
+            },
+          ]
+        },
+      ]
+    },
+    {
+      heading: 'The Summons: Do Not Ignore Me (21.1–32)',
+      verses: [
+        {
+          ref: 'NHC VI,2: 21.1–32',
+          text: 'I am the knowledge of my inquiry, and the finding of those who seek after me, and the command of those who ask of me, and the power of the powers in my knowledge of the angels, who have been sent at my word, and of gods in their seasons by my counsel, and of spirits of every man who exists with me, and of women who dwell within me. I am the one who is honored, and who is praised, and who is despised scornfully. I am peace, and war has come because of me. And I am an alien and a citizen. I am the substance and the one who has no substance.',
+          textVersions: {
+            macrae: 'I am peace, and war has come because of me. And I am an alien and a citizen. I am the substance and the one who has no substance.',
+          },
+          entities: [
+            { word: 'I am peace, and war has come because of me', node: 'divine-nature', type: 'concept',
+              note: 'The theological implication of "I am peace and war has come because of me" is extraordinary: the divine does not simply permit conflict or act despite it, but is its ground. This is not an evil claim but a metaphysical one — the divine is the ground of all that is, including the polarities that generate conflict. The speaker does not say "I am war"; she says "war has come because of me" — the divine is peace, and from peace (as its own contrary) war emerges. This is the closest thing in ancient Western literature to the Vedantic teaching that Brahman generates both auspicious (Vishnu) and destructive (Shiva) aspects without being reducible to either.',
+              parallels: [
+                { label: 'Bhagavad Gita 11 — "I am time, the destroyer of worlds"', textId: 'bhagavad-gita-11', note: 'Gita 11:32: "I am time, the great destroyer of worlds." In the Vishvarupa, Krishna reveals that he is not only the preserver but also the destroyer — not despite being divine but because he is divine. Thunder: "I am peace, and war has come because of me." Both texts are making the same claim: the divine ground is beyond the moral categories (peaceful/destructive, creative/consuming) that creaturely experience uses to evaluate its experiences. The divine is the ground of both poles, not an advocate for either. This is the most intellectually honest theology: the one who created the tiger created the lamb.' },
+              ]
+            },
+            { word: 'I am the substance and the one who has no substance', node: 'apophatic-theology', type: 'concept',
+              note: 'The final paradox of this passage collapses the most fundamental ontological distinction: substance/no substance, being/non-being. This is Thunder\'s most philosophically precise moment: the divine is both the ground of being (substance, ousia) and the one who transcends being (no substance, beyond ousia). This maps exactly onto Pseudo-Dionysius\'s claim that God is "beyond being" (hyperousia) while also being "the being of all beings." Both texts are solving the same problem: how to speak of a divine that is simultaneously the source and ground of all existence AND the one that exceeds existence as creaturely experience knows it.',
+            },
+          ]
+        },
+      ]
+    },
+  ]
+};
+
+SCRIPTURE_TEXTS['1-john-4'] = {
+  title: '1 John 4 — God Is Love',
+  shortTitle: '1 John 4',
+  tradition: 'Christianity',
+  date: 'c. 90–110 CE',
+  intro: '1 John 4:7–21 is the most concentrated statement of love-theology in the New Testament and arguably in any scripture: "God is love" (ho theos agape estin) — not "God is loving," not "God loves," but a direct ontological identification of God with agape. The claim is not about divine behavior but about divine nature: love is what God is, not merely what God does. Everything in the text follows from this equation: because God is love, love is the proof of God\'s presence; because we have received love, we are capable of love; because God loved first, love has a structure (it moves from the infinite to the finite before moving from finite to finite). The text also contains the most direct statement of perfect love as the abolition of fear ("perfect love casts out fear"), linking it to the Isha Upanishad\'s "he who sees all beings in the Self loses all fear" and the Gita\'s teaching on acting without anxiety. 1 John 4 is the New Testament text that does the most work in cross-tradition dialogue because it proposes not "God commands love" but "God = love" — and that equation is portable into every tradition that recognizes an ultimate ground of being.',
+  crossTradition: [
+    { label: 'Isha Upanishad — "he who sees all beings in his own Self loses all fear"', textId: 'isha-upanishad', note: '1 John 4:18: "Perfect love casts out fear." Isha 6–7: "he who sees all beings in his own Self, and his Self in all beings, loses all fear." Both texts arrive at the same conclusion — the vision or actualization of the ultimate (love / the Self) dissolves fear — but by different paths. For 1 John, fear is dissolved because "he who fears has not been perfected in love" — the vision of divine love makes fear\'s grip impossible. For the Isha, fear is dissolved because "how can there be delusion or grief" for one who sees unity everywhere. Both are describing the same phenomenology: the realization of the ultimate ground (love / atman) removes the existential anxiety that comes from perceiving oneself as isolated and vulnerable.' },
+    { label: 'Julian of Norwich — "all shall be well": love as the final word', textId: 'julian-of-norwich', note: 'Julian\'s summary of her revelations: "Wouldst thou learn thy Lord\'s meaning in this thing? Learn it well: Love was His meaning. Who shewed it thee? Love. What shewed He thee? Love. Wherefore it was shewed? For Love." 1 John 4:8: "God is love." Julian and the author of 1 John are making the same identification from two different angles: 1 John proposes the equation philosophically (God\'s nature is identical with love); Julian discovers it experientially through her showings. Both are saying: when you have stripped away every other description, the irreducible core of what God is is love. Love is not an attribute among others; it is the essence from which all other attributes flow.' },
+    { label: 'Bhagavad Gita 12 — "those who worship me with devotion... they are in me and I in them"', textId: 'bhagavad-gita-4', note: '1 John 4:16: "God is love, and those who abide in love abide in God, and God abides in them." Gita 9:29: "I am the same in all beings; no one is hateful to me and no one dear. But those who worship me with devotion — they are in me and I in them." Both texts describe the same mutual indwelling between the divine and the devotee/lover: the human who loves/worships is in the divine, and the divine is in the human. The Gita grounds this in the non-discriminatory nature of the divine (same in all); 1 John grounds it in the equivalence of God and love (to dwell in love is automatically to dwell in God).' },
+  ],
+  translations: [
+    { label: 'NRSV', lang: 'en', default: true },
+    { label: 'KJV', lang: 'en' },
+    { label: 'Greek (NA28)', lang: 'grc' },
+  ],
+  sections: [
+    {
+      heading: 'Love as the Proof of God\'s Presence (4:7–12)',
+      verses: [
+        {
+          ref: '4:7–10',
+          text: 'Beloved, let us love one another, because love is from God; everyone who loves is born of God and knows God. Whoever does not love does not know God, for God is love. God\'s love was revealed among us in this way: God sent his only Son into the world so that we might live through him. In this is love, not that we loved God but that he loved us and sent his Son to be the atoning sacrifice for our sins.',
+          textVersions: {
+            nrsv: 'for God is love.',
+            kjv: 'for God is love.',
+            greek: 'ὁ θεὸς ἀγάπη ἐστίν.',
+          },
+          entities: [
+            { word: 'God is love', node: 'divine-love', type: 'concept',
+              note: 'Greek: ho theos agape estin — the God [is] love. Three words in Greek. This is not "God is loving" (a predicate about behavior) nor "God loves" (a statement about action) but a direct ontological identification: the subject (God) and the predicate (love) are interchangeable. The same author writes "God is light" (1 John 1:5) and "God is spirit" (John 4:24). In each case the grammar is the same: subject = predicate, not subject has predicate. This means: to be in love is to be in God; to encounter genuine love is to encounter the divine; love is not evidence for God but the mode in which God is. This is the most portable theological claim in the NT — every tradition that has a concept of the ultimate as the ground of reality can engage it.',
+              parallels: [
+                { label: 'Isha Upanishad — the Self that is the ground of all: "what grief, what delusion?"', textId: 'isha-upanishad', note: 'Isha 7: "When a wise man sees this great Unity... what delusion, what grief can there be?" 1 John 4:18: "There is no fear in love, but perfect love casts out fear." Both texts describe the state of one who has grasped the ultimate ground — whether that ground is identified as love (1 John) or as the unified Self (Isha). The phenomenology is identical: the dissolution of fear, grief, and delusion. The theological difference — personal God who is love (1 John) vs. impersonal absolute that is the Self (Isha) — produces the same experiential result. This convergence suggests the two traditions are describing the same realization from different conceptual frameworks.' },
+                { label: 'Julian of Norwich — "Love was His meaning"', textId: 'julian-of-norwich', note: 'Julian\'s final summary — "Wouldst thou learn thy Lord\'s meaning? Love was His meaning" — is the medieval English experiential verification of 1 John 4:8\'s ontological claim. 1 John argues that God is love; Julian discovers this through direct experience of divine revelation. The fourteen centuries between them have not changed the claim: the irreducible core of the divine is love, not law, not power, not judgment. Both authors are making this claim against traditions (Jewish-Christian apocalypticism for 1 John; medieval Catholic penitential theology for Julian) that tend to emphasize divine judgment and human unworthiness. Both insist: at the bottom, it is love.' },
+              ]
+            },
+            { word: 'not that we loved God but that he loved us', node: 'divine-love', type: 'concept',
+              note: 'The structure of love: divine love precedes human love, not as chronological sequence but as ontological priority. God does not love us because we love him; we love because God loved first (v.19: "We love because he first loved us"). This reversal — divine initiative before human response — is the Johannine version of what Luke 15 dramatizes in the father running to meet the returning son. The divine is not the destination of human longing but the source of the love that makes longing possible. Human love is not the cause of divine attention; it is the effect of divine attention already given.',
+              parallels: [
+                { label: 'Luke 15 — the father who runs to meet the returning son', textId: 'luke-15-prodigal', note: '"Not that we loved God but that he loved us" — the parable of the Prodigal Son dramatizes exactly this asymmetry: the son turns homeward, but the father sees him "while he was still far off" and runs. The divine love is not activated by the human turn; it precedes it. 1 John 4:10 is the theological proposition; Luke 15:20 is the narrative enactment. Together they form the NT\'s most complete account of the structure of grace: love that is already there, already running, already given before any human movement toward the divine.' },
+              ]
+            },
+          ]
+        },
+      ]
+    },
+    {
+      heading: 'Abiding in Love: The Mutual Indwelling (4:13–16)',
+      verses: [
+        {
+          ref: '4:13–16',
+          text: 'By this we know that we abide in him and he in us, because he has given us of his Spirit. And we have seen and do testify that the Father has sent his Son as the Savior of the world. God abides in those who confess that Jesus is the Son of God, and they abide in God. So we have known and believe the love that God has for us. God is love, and those who abide in love abide in God, and God abides in them.',
+          textVersions: {
+            nrsv: 'God is love, and those who abide in love abide in God, and God abides in them.',
+            kjv: 'God is love; and he that dwelleth in love dwelleth in God, and God in him.',
+            greek: 'ὁ θεὸς ἀγάπη ἐστίν, καὶ ὁ μένων ἐν τῇ ἀγάπῃ ἐν τῷ θεῷ μένει καὶ ὁ θεὸς ἐν αὐτῷ μένει.',
+          },
+          entities: [
+            { word: 'those who abide in love abide in God, and God abides in them', node: 'mystical-union', type: 'concept',
+              note: 'Greek: meno en — to abide in, to remain in, to dwell within. The mutual indwelling — human abiding in God and God abiding in the human — is 1 John\'s preferred image for the divine-human relationship. The image is spatial but the logic is ontological: because God is love and love is God, wherever love genuinely occurs, God is present in both parties. Love is not a route to God; love is the mode of God\'s presence. This has radical implications: the divine is not confined to religious settings, sacred texts, or ritual observance — the divine is wherever love is.',
+              parallels: [
+                { label: 'Meister Eckhart — "The eye through which I see God is the same eye through which God sees me"', textId: 'meister-eckhart-godhead', note: 'Eckhart\'s famous line — "The eye through which I see God is the same eye through which God sees me; my eye and God\'s eye are one eye, one seeing, one knowing, one love" — is the German mystical elaboration of 1 John 4:16\'s mutual indwelling. 1 John says the one who abides in love abides in God and God abides in them — two abidings, two subjects, but interpenetrating. Eckhart says the two abidings are actually one abiding, one eye, one event. Eckhart is drawing out the logical conclusion of 1 John\'s claim: if God is love and you are in love, you and God are in the same place at the same time — which is to say, you are in each other.' },
+              ]
+            },
+          ]
+        },
+      ]
+    },
+    {
+      heading: 'Perfect Love Casts Out Fear (4:17–21)',
+      verses: [
+        {
+          ref: '4:17–21',
+          text: 'Love has been perfected among us in this: that we may have boldness on the day of judgment, because as he is, so are we in this world. There is no fear in love, but perfect love casts out fear; for fear has to do with punishment, and whoever fears has not reached perfection in love. We love because he first loved us. Those who say, "I love God," and hate their brothers or sisters, are liars; for those who do not love a brother or sister whom they have seen, cannot love God whom they have not seen. The commandment we have from him is this: those who love God must love their brothers and sisters also.',
+          textVersions: {
+            nrsv: 'There is no fear in love, but perfect love casts out fear.',
+            kjv: 'There is no fear in love; but perfect love casteth out fear.',
+            greek: 'φόβος οὐκ ἔστιν ἐν τῇ ἀγάπῃ, ἀλλ᾽ ἡ τελεία ἀγάπη ἔξω βάλλει τὸν φόβον.',
+          },
+          entities: [
+            { word: 'perfect love casts out fear', node: 'divine-love', type: 'concept',
+              note: 'Greek: he teleia agape exo ballei ton phobon — the perfect love throws fear outside. Fear is understood here specifically as fear of judgment/punishment — the fearful calculation of a slave who serves a master to avoid punishment rather than a child who serves a parent from love. Perfect love — love that has been completed, fulfilled, brought to its telos — eliminates this transactional fear because it has recognized that the relationship is not transactional. The divine is not a judge to be feared but the source of love in which one already abides. The "casting out" of fear is not suppression but dissolution: when love is fully understood, there is no ground left for fear to stand on.',
+              parallels: [
+                { label: 'Isha Upanishad — "he who sees all beings in his own Self... how can there be delusion or grief?"', textId: 'isha-upanishad', note: 'Isha 7: "When a wise man sees this great Unity and his Self has become all beings, what delusion, what grief can there be?" 1 John 4:18: "perfect love casts out fear." The Isha\'s dissolution of delusion and grief through the vision of unity and 1 John\'s dissolution of fear through perfect love are two accounts of the same spiritual transformation: the recognition of the ultimate ground (Self / love / God) dissolves the existential anxiety that comes from experiencing oneself as separate and vulnerable. Fear, grief, and delusion are all symptoms of the same root condition — the sense of isolated self-existence; their dissolution is the symptom of the same root realization.' },
+                { label: 'Romans 8 — "neither death nor life... can separate us from the love of God"', textId: 'romans-8', note: 'Romans 8:38–39: "For I am convinced that neither death, nor life, nor angels, nor rulers, nor things present, nor things to come, nor powers, nor height, nor depth, nor anything else in all creation, will be able to separate us from the love of God in Christ Jesus our Lord." This is Paul\'s version of "perfect love casts out fear" — the exhaustive enumeration of everything that might cause fear (death, cosmic powers, the future) and the declaration that none of them can overcome love. 1 John gives the principle; Romans 8 gives the application: the love that casts out fear is stronger than every specific thing that fear might fear.' },
+              ]
+            },
+          ]
+        },
+      ]
+    },
+  ]
+};
+
+SCRIPTURE_TEXTS['hebrews-11'] = {
+  title: 'Hebrews 11 — The Faith Chapter',
+  shortTitle: 'Hebrews 11',
+  tradition: 'Christianity',
+  date: 'c. 60–90 CE',
+  intro: 'Hebrews 11 is the New Testament\'s great anthology of faith — a rhetorical tour de force that reviews the entire arc of Israelite sacred history (Abel through the Maccabean martyrs) through the lens of a single operative concept: pistis, faith. The chapter opens with the most discussed definition in NT theology: "faith is the substance of things hoped for, the evidence of things not seen" (hypostasis vs. elenchos — two philosophical terms pressed into theological service). What makes Hebrews 11 cross-tradition significant is not its content (which is deeply Jewish) but its method: it shows that the entire Hebrew tradition was operating by a category (trust-in-the-unseen) that is structurally parallel to what other traditions call sradha (Sanskrit: faith/trust as the ground of spiritual practice), tawakkul (Arabic: trust in God as the core Sufi virtue), and the Taoist wu wei (effortless action rooted in trust rather than control). Hebrews 11 is the NT text that most clearly demonstrates that what Christianity calls "faith" is not primarily a cognitive assent to propositions but an orientation of the whole being toward what cannot be empirically verified — and that orientation is recognizable across traditions.',
+  crossTradition: [
+    { label: 'Bhagavad Gita — sradha: faith as the ground of all spiritual practice', textId: 'bhagavad-gita-4', note: 'Gita 17:3: "The faith (sradha) of each is in accordance with his nature... Man is made of faith; as his faith is, so he is." Hebrews 11:1: "faith is the substance of things hoped for, the evidence of things not seen." Both texts identify faith/sradha as the fundamental orientation that determines the entire shape of a human life — not a belief held in the mind but a basic trust that structures how one moves through the world. The Gita\'s sradha is prior to all religion and theology (it is innate to each person\'s nature); Hebrews\' pistis is the operative principle through which the entire Hebrew tradition functioned. Both are describing the same fundamental human capacity: trust in what cannot be fully seen or controlled.' },
+    { label: 'Tao Te Ching — wu wei: acting from trust rather than from control', textId: 'tao-te-ching-1', note: 'The Taoist sage who acts through wu wei (non-striving, effortlessness) is not passive — he is acting from a fundamental trust in the Tao, the way things naturally unfold. This trust-in-the-unseen-order is structurally parallel to Hebrews 11\'s faith: "by faith Abraham obeyed when he was called to go out to a place that he was to receive as an inheritance. And he went out, not knowing where he was going" (Heb 11:8). The Abrahamic pattern in Hebrews — acting without knowing the destination, trusting the invisible source — and the Taoist sage\'s non-striving action from trust in the Tao are two cultural forms of the same fundamental orientation.' },
+    { label: 'Rumi — tawakkul: the Sufi virtue of total trust in God', textId: 'rumi-masnavi', note: 'Sufi tawakkul (total reliance on God, trust without reservation) is the Islamic parallel to Hebrews 11\'s pistis. Rumi\'s Masnavi is full of stories illustrating the difference between trust (tawakkul) and recklessness: the one who trusts does not abandon practical wisdom but acts from a different center, one that does not grasp outcomes. Hebrews 11\'s heroes all act "by faith" — trusting the unseen against the evidence of appearances. By faith Moses left Egypt "not being afraid of the anger of the king; he persevered as though he saw him who is invisible" (11:27). This "seeing the invisible" is the spiritual perception that Sufi tawakkul cultivates.' },
+  ],
+  translations: [
+    { label: 'NRSV', lang: 'en', default: true },
+    { label: 'KJV', lang: 'en' },
+    { label: 'Greek (NA28)', lang: 'grc' },
+  ],
+  sections: [
+    {
+      heading: 'The Definition of Faith (11:1–3)',
+      verses: [
+        {
+          ref: '11:1–3',
+          text: 'Now faith is the assurance of things hoped for, the conviction of things not seen. Indeed, by faith our ancestors received approval. By faith we understand that the worlds were prepared by the word of God, so that what is seen was made from things that are not visible.',
+          textVersions: {
+            nrsv: 'Now faith is the assurance of things hoped for, the conviction of things not seen.',
+            kjv: 'Now faith is the substance of things hoped for, the evidence of things not seen.',
+            greek: 'Ἔστιν δὲ πίστις ἐλπιζομένων ὑπόστασις, πραγμάτων ἔλεγχος οὐ βλεπομένων.',
+          },
+          entities: [
+            { word: 'faith is the assurance of things hoped for, the conviction of things not seen', node: 'faith', type: 'concept',
+              note: 'Greek: hypostasis (assurance/substance) and elenchos (conviction/evidence). Both are philosophical-legal terms. Hypostasis is a philosophical term meaning "underlying reality," "substance," "that which stands beneath appearances" — here applied to hope: faith gives hope the same ontological status as present reality. Elenchos is a legal term meaning "proof," "evidence," "cross-examination to establish truth" — here applied to the unseen: faith functions as the evidence that makes the invisible real to the one who has it. The definition is not "faith is believing without evidence" — it is "faith IS the evidence, faith IS the substance." This is a radically different epistemology: the inner orientation of trust is itself a form of knowing.',
+              parallels: [
+                { label: 'Nasadiya Sukta — "who really knows? who will here proclaim it? — and yet creation happened"', textId: 'nasadiya-sukta', note: 'Nasadiya 6–7: "Who really knows? Who will here proclaim it? Whence was it produced? Whence is this creation? The gods came afterwards, with the creation of this universe. Who then knows whence it has arisen?" Hebrews 11:3: "By faith we understand that the worlds were prepared by the word of God, so that what is seen was made from things that are not visible." Both texts confront the fundamental epistemological problem of origins: the source of existence cannot be empirically verified because it precedes all empirical verification. The Nasadiya acknowledges the mystery and holds the question open; Hebrews 11 claims that faith is the mode of knowing that bridges the gap — not by resolving the mystery but by providing a different kind of knowing adequate to it.' },
+              ]
+            },
+          ]
+        },
+      ]
+    },
+    {
+      heading: 'The Roll Call of Faith: Abraham, Moses, and the Cloud of Witnesses (11:8–16; 11:23–27)',
+      verses: [
+        {
+          ref: '11:8–10',
+          text: 'By faith Abraham obeyed when he was called to set out for a place that he was to receive as an inheritance; and he set out, not knowing where he was going. By faith he stayed for a time in the land he had been promised, as in a foreign land, living in tents, as did Isaac and Jacob, who were heirs with him of the same promise. For he looked forward to the city that has foundations, whose architect and builder is God.',
+          textVersions: {
+            nrsv: 'By faith Abraham obeyed when he was called to set out for a place that he was to receive as an inheritance; and he set out, not knowing where he was going.',
+            kjv: 'By faith Abraham, when he was called to go out into a place which he should after receive for an inheritance, obeyed; and he went out, not knowing whither he went.',
+            greek: 'Πίστει καλούμενος Ἀβραὰμ ὑπήκουσεν ἐξελθεῖν εἰς τόπον ὃν ἤμελλεν λαμβάνειν εἰς κληρονομίαν, καὶ ἐξῆλθεν μὴ ἐπιστάμενος ποῦ ἔρχεται.',
+          },
+          entities: [
+            { word: 'he set out, not knowing where he was going', node: 'faith', type: 'concept',
+              note: 'The Abrahamic paradigm of faith: action without prior knowledge of destination, trust without evidence of outcome. This is one of the most psychologically precise descriptions of genuine faith in any literature: not the faith that acts because it has been given a roadmap, but the faith that acts from an inner certainty about the source of the calling even when the destination is unknown. The contrast with idolatry is implicit: the idol-worshipper knows exactly where his god is (the temple, the image) and what it requires; Abraham\'s God calls him away from all known locations into genuine unknowing.',
+              parallels: [
+                { label: 'Rumi — "Sell your cleverness and buy bewilderment"', textId: 'rumi-masnavi', note: 'Rumi\'s instruction to "sell your cleverness and buy bewilderment (hayra)" — to release the grasping, calculating mind that needs to know outcomes before acting — is the Sufi formulation of Abraham\'s "not knowing where he was going." Both describe the same movement: the spiritual journey requires releasing the orientation toward known, controllable destinations and accepting genuine unknowing as the condition of genuine trust. Rumi\'s hayra (bewilderment, holy confusion) and Abraham\'s not-knowing are the same spiritual state: the mind released from its compulsion to map the journey before taking it.' },
+                { label: 'Tao Te Ching — the sage who acts without knowing the destination', textId: 'tao-te-ching-1', note: 'Tao 81: "The sage does not compete, and therefore no one can compete with him." The non-competitive, non-grasping sage who follows the Tao without demanding to know its destination is the Taoist image of what Abraham demonstrates: action from trust rather than action from control. Tao 15: "The ancient masters were subtle, mysterious, profound, responsive. The depth of their knowledge is unfathomable. Because it is unfathomable, all we can do is describe their appearance." Abraham\'s departure "not knowing where he was going" is the Hebrew equivalent of the ancient master\'s unfathomable subtlety — the one who moves without needing to know the map.' },
+              ]
+            },
+          ]
+        },
+        {
+          ref: '11:23–27',
+          text: 'By faith Moses was hidden by his parents for three months after his birth, because they saw that the child was beautiful; and they were not afraid of the king\'s edict. By faith Moses, when he was grown up, refused to be called a son of Pharaoh\'s daughter, choosing rather to share ill-treatment with the people of God than to enjoy the fleeting pleasures of sin. He considered abuse suffered for the Christ to be greater wealth than the treasures of Egypt, for he was looking ahead to the reward. By faith he left Egypt, unafraid of the king\'s anger; for he persevered as though he saw him who is invisible.',
+          textVersions: {
+            nrsv: 'he persevered as though he saw him who is invisible.',
+            kjv: 'he endured, as seeing him who is invisible.',
+            greek: 'τὸν γὰρ ἀόρατον ὡς ὁρῶν ἐκαρτέρησεν.',
+          },
+          entities: [
+            { word: 'he persevered as though he saw him who is invisible', node: 'faith', type: 'concept',
+              note: 'Greek: ton aoraton hos horon — the invisible one, as seeing. This is the paradox at the heart of Hebrews\' epistemology of faith: seeing the invisible, the evidence of things not seen. Moses is able to endure the impossible (confronting Pharaoh, leading a nation through a desert) because he has a perception that is not ordinary sensory perception — a "seeing" of the invisible divine that functions as the subjective equivalent of seeing the visible. This is not hallucination or delusion; it is the activation of a mode of knowing that the author of Hebrews identifies as faith — the capacity of the human spirit to orient itself toward and be moved by what the senses cannot verify.',
+              parallels: [
+                { label: 'Bhagavad Gita 4 — "by the eye of wisdom the wise see"', textId: 'bhagavad-gita-4', note: 'Gita 4.18: "He who sees inaction in action and action in inaction — he is wise among men." Gita 13.34: "Just as the sun illumines the whole world, so does the Enjoyer of the Field, O Arjuna, illumine the whole Field." The Gita speaks of a "seeing" (darshan) that the ordinary eye cannot perform — a perception of the divine ground behind phenomena that is available only to the trained, purified consciousness. Hebrews\' "seeing the invisible" and the Gita\'s "eye of wisdom" are two descriptions of the same non-ordinary perceptual capacity: the ability to apprehend the divine ground of reality that is invisible to ordinary sense-perception but perceptible to faith/wisdom.' },
+              ]
+            },
+          ]
+        },
+      ]
+    },
+    {
+      heading: 'The Cloud of Witnesses and the Unfinished Promise (11:39–12:2)',
+      verses: [
+        {
+          ref: '11:39–12:2',
+          text: 'Yet all these, though they were commended for their faith, did not receive what was promised, since God had provided something better so that they would not, apart from us, be made perfect. Therefore, since we are surrounded by so great a cloud of witnesses, let us also lay aside every weight and the sin that clings so closely, and let us run with perseverance the race that is set before us, looking to Jesus the pioneer and perfecter of our faith, who for the sake of the joy that was set before him endured the cross, disregarding its shame, and has taken his seat at the right hand of the throne of God.',
+          textVersions: {
+            nrsv: 'since we are surrounded by so great a cloud of witnesses, let us also lay aside every weight and the sin that clings so closely, and let us run with perseverance the race that is set before us',
+            kjv: 'Wherefore seeing we also are compassed about with so great a cloud of witnesses, let us lay aside every weight, and the sin which doth so easily beset us, and let us run with patience the race that is set before us',
+            greek: 'τοιγαροῦν καὶ ἡμεῖς, τοσοῦτον ἔχοντες περικείμενον ἡμῖν νέφος μαρτύρων, ὄγκον ἀποθέμενοι πάντα καὶ τὴν εὐπερίστατον ἁμαρτίαν, δι᾽ ὑπομονῆς τρέχωμεν τὸν προκείμενον ἡμῖν ἀγῶνα.',
+          },
+          entities: [
+            { word: 'so great a cloud of witnesses', node: 'communion-of-saints', type: 'concept',
+              note: 'The "cloud of witnesses" (nephos marturon) is one of the most evocative images in the NT: the entire company of those who have lived by faith — Abel, Enoch, Noah, Abraham, Sarah, Moses, Rahab, and all those who "of whom the world was not worthy" (11:38) — are present as witnesses to the current runner\'s race. The word marturon means both "witnesses" (spectators) and "martyrs" (those who testify with their lives). Both meanings are active: these are people who testified with their deaths and who are still present as an encouragement to the living. This is the concept of the communion of saints — the living and the dead as a single community — expressed through the image of an athletic contest watched by a stadium full of those who have already finished their race.',
+              parallels: [
+                { label: 'Bardo Thodol — the lineage of teachers and the guidance of the dead', textId: 'bardo-thodol', note: 'The Tibetan Book of the Dead\'s framework — the dying person guided through the bardo by the accumulated wisdom of the teacher lineage, the lamas who have gone before — and Hebrews 12:1\'s "cloud of witnesses" are structurally parallel: in both traditions, those who have preceded us are not simply absent but actively present as guides and encouragers to those still on the path. The Tibetan tradition makes this guidance explicit through ritual (the lama reads the text aloud to guide the dying through the bardo); Hebrews makes it implicit through the image of witnesses who watch and, by their watching, sustain the living runner.' },
+              ]
+            },
+          ]
+        },
+      ]
+    },
+  ]
+};
