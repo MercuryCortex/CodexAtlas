@@ -2766,3 +2766,358 @@ SCRIPTURE_TEXTS['coffin-text-1130'] = {
     },
   ]
 };
+
+// ── 27. PROVERBS 8 — LADY WISDOM ─────────────────────────────────────────────
+SCRIPTURE_TEXTS['proverbs-8'] = {
+  title: 'Proverbs 8 — Lady Wisdom at the Beginning of Creation',
+  shortTitle: 'Proverbs 8 — Lady Wisdom',
+  tradition: 'Hebrew Bible / Wisdom Literature',
+  date: 'c. 6th–5th BCE (compiled; Wisdom poem may be older)',
+  intro: 'The great self-disclosure of Wisdom (Hokmah in Hebrew, Sophia in Greek): a divine feminine figure who was present with God at the very first moment of creation, "rejoicing before him always, playing in his inhabited world." Proverbs 8 is the theological source-text for the Logos doctrine in John 1 — the Gospel\'s "In the beginning was the Logos" directly models itself on "YHWH created me at the beginning of his work." It is also the key text for understanding how the goddess Asherah — YHWH\'s ancient consort — was absorbed into the biblical tradition as the personified Wisdom who plays at God\'s side.',
+  crossTradition: [
+    { label: 'John 1 — Logos as Wisdom\'s philosophical successor',           textId: 'john-1',           note: 'John 1:1-3 models itself directly on Proverbs 8:22-31. Where Proverbs says "Wisdom was with God at the beginning," John says "the Logos was with God in the beginning, and through the Logos all things were made." The Logos is Wisdom translated into Greek philosophical vocabulary.' },
+    { label: 'Poimandres — Nous as the divine companion at creation',         textId: 'poimandres',       note: 'The Hermetic Nous (Mind) as the first emanation of God, present at creation and the vehicle of all making — this is the Hermetic equivalent of Proverbs\' Wisdom beside God "like a master workman." The same divine-feminine-as-creative-intelligence tradition runs through Egyptian Isis, Hebrew Hokmah, and Hermetic Nous.' },
+    { label: 'Sefer Yetzirah — Wisdom as the first of the 32 paths',         textId: 'sefer-yetzirah',   note: 'The Kabbalistic Sefirot begin with Chokmah (Wisdom) — the second sefirah, the first emanation of Keter into intelligibility. The Kabbalistic Chokmah and the Proverbs Hokmah are the same figure: divine Wisdom as the first active principle in creation, the mode through which God\'s thought becomes world.' },
+    { label: 'Coffin Text 1130 — the Creator\'s intimate companion',          textId: 'coffin-text-1130', note: 'The Egyptian Creator in CT 1130 making the world with four gifts — and CT 1130\'s image of the Creator accompanied by divine intelligence — parallels Wisdom playing beside God at creation. Egyptian Maat (truth/order) as the divine principle that holds creation together is the Egyptian equivalent of Proverbs\' Wisdom.' },
+  ],
+  translations: [
+    { id: 'nrsv',   label: 'NRSV 1989 (T1)' },
+    { id: 'njps',   label: 'NJPS 1985 (T2)' },
+    { id: 'hebrew', label: 'Hebrew (Masoretic)' },
+  ],
+  sections: [
+    {
+      heading: 'I. Wisdom\'s Call from the Heights',
+      verses: [
+        {
+          ref: 'Proverbs 8:1–4',
+          text: 'Does not Wisdom call out? Does not Understanding raise her voice? On the heights beside the way, at the crossroads she takes her stand; beside the gates in front of the town, at the entrance of the portals she cries aloud: "To you, O people, I call; my cry is to all that live."',
+          textVersions: {
+            nrsv:   'Does not wisdom call out? Does not understanding raise her voice? On the heights beside the way, at the crossroads she takes her stand; beside the gates in front of the town, at the entrance of the portals she cries aloud: "To you, O people, I call out; my cry is to all that live."',
+            njps:   'It is Wisdom calling, Understanding raising her voice. She takes her stand at the topmost heights, by the road, at the crossroads, near the gate at the city entrance.',
+            hebrew: 'הֲלֹא חָכְמָה תִקְרָא וּתְבוּנָה תִּתֵּן קוֹלָהּ· בְּרֹאשׁ-מְרֹמִים עֲלֵי-דֶרֶךְ',
+          },
+          entities: [
+            { word: 'Wisdom call out', node: 'wisdom-personified', type: 'deity',
+              note: 'The figure of Wisdom (Hokmah, חָכְמָה) calling in the streets and at the crossroads is the Hebrew Bible\'s most explicit divine-feminine image — a goddess-figure standing at the threshold between the human world and the divine. She calls universally: "to all that live," not just Israel. Her position at the city gate parallels the ancient function of gates as sacred thresholds presided over by divine guardians. The Aramaic Targum of Proverbs explicitly identifies this figure with the Torah; the Wisdom of Solomon identifies her with the Shekinah (divine presence). She is at the origin of all later Sophia/divine-feminine traditions in Judaism, Christianity, and Gnosticism.',
+              parallels: [
+                { label: 'Isis — the divine feminine crying out through the cosmos', node: 'isis', note: 'Isis crying out for the dismembered Osiris across all lands, and Lady Wisdom crying out at the crossroads to all who live, are structurally parallel: the divine feminine as the cosmic voice that calls all souls toward divine knowledge. The Ptolemaic Isis-aretalogies ("I am Isis... I gave laws to men... I am she who is called goddess by women") parallel the Proverbs Wisdom speech in form and scope.' },
+                { label: 'Asherah — YHWH\'s ancient consort absorbed into Wisdom', node: 'asherah', note: 'Archaeological evidence (Kuntillet Ajrud inscriptions, c. 800 BCE: "YHWH of Samaria and his Asherah") shows that the Israelite God was worshipped alongside his consort Asherah. The Wisdom figure of Proverbs 8 — divine feminine beside YHWH at creation — preserves the memory of Asherah while sublimating her into an abstraction. The "playing beside God" of Proverbs 8:30-31 retains the erotic/intimate register of a divine consort.' },
+              ]
+            },
+          ]
+        },
+      ]
+    },
+    {
+      heading: 'II. Before the Beginning — Wisdom at Creation',
+      verses: [
+        {
+          ref: 'Proverbs 8:22–26',
+          text: '"YHWH created me at the beginning of his work, the first of his acts of long ago. Ages ago I was set up, at the first, before the beginning of the earth. When there were no depths I was brought forth, when there were no springs abounding with water. Before the mountains had been shaped, before the hills, I was brought forth."',
+          textVersions: {
+            nrsv:   '"The LORD created me at the beginning of his work, the first of his acts of long ago. Ages ago I was set up, at the first, before the beginning of the earth. When there were no depths I was brought forth, when there were no springs abounding with water."',
+            njps:   '"The LORD created me at the beginning of His course as the first of His works of old. In the distant past I was fashioned, at the beginning, at the origin of earth."',
+            hebrew: 'יְהוָה קָנָנִי רֵאשִׁית דַּרְכּוֹ קֶדֶם מִפְעָלָיו מֵאָז· מֵעוֹלָם נִסַּכְתִּי מֵרֹאשׁ מִקַּדְמֵי-אָרֶץ',
+          },
+          entities: [
+            { word: 'YHWH created me at the beginning', node: 'wisdom-personified', type: 'concept',
+              note: 'The verse "YHWH qanani reshit darko" — "YHWH created/acquired me as the beginning of his way" — is the most contested verse in all Jewish-Christian theological history. The word qanah can mean "create" (Aquila, most modern translations), "acquire/possess" (LXX, NIV), or "beget" (Tertullian\'s reading). The Arian controversy (4th CE) hinged on this verse: Arius cited it to argue Christ/Logos was the first creation, not eternal. Athanasius countered that Wisdom here refers to Christ\'s human nature, not his divine nature. The entire Nicene Creed is a response to Proverbs 8:22.',
+              parallels: [
+                { label: 'John 1:1 — "In the beginning was the Logos" (eternal, not created)', textId: 'john-1', note: 'John 1 deliberately counters Proverbs 8\'s "created me at the beginning" by stating "in the beginning WAS the Logos" — not "was created." The Johannine Logos is eternal co-existent with God; the Proverbs Wisdom was the first creature. John 1 is a theological upgrade of Proverbs 8.' },
+                { label: 'Sefer Yetzirah — Chokmah as the first emanation', textId: 'sefer-yetzirah', note: 'The Kabbalistic Chokmah (Wisdom) as the second sefirah — the first emanation from Keter, the mode through which God\'s potential becomes active — is the Kabbalistic reading of Proverbs 8:22: Wisdom is the first principle through which God acts.' },
+              ]
+            },
+            { word: 'When there were no depths I was brought forth', node: 'primordial-darkness', type: 'concept',
+              note: 'Wisdom\'s pre-existence "when there were no depths" (tehomot, the primordial waters) places her before the creation described in Genesis 1:2 ("darkness over the face of the deep / tehom"). Wisdom exists before water, before mountains, before the earth — in the same pre-creation void as the Hermetic primordial darkness. She is the first articulation of divine intelligence before matter.',
+              parallels: [
+                { label: 'Genesis 1:2 — "darkness over the face of the deep"', textId: 'genesis-1', note: 'Genesis 1:2\'s tehom (the deep) is what Wisdom predates. She is more primordial than the waters of chaos that Genesis begins with — she exists before the conditions for creation existed.' },
+              ]
+            },
+          ]
+        },
+        {
+          ref: 'Proverbs 8:27–31',
+          text: '"When he established the heavens, I was there; when he drew a circle on the face of the deep, when he made firm the skies above, when he established the fountains of the deep, when he assigned to the sea its limit — I was beside him, like a master workman; and I was daily his delight, rejoicing before him always, rejoicing in his inhabited world and delighting in the human race."',
+          textVersions: {
+            nrsv:   '"When he established the heavens, I was there; when he drew a circle on the face of the deep... I was beside him, like a master workman; and I was daily his delight, rejoicing before him always."',
+            njps:   '"I was with Him as a confidant, a source of delight every day, rejoicing before Him at all times, rejoicing in His inhabited world, finding delight with mankind."',
+            hebrew: 'בַּהֲכִינוֹ שָׁמַיִם שָׁם אָנִי בְּחוּקוֹ חוּג עַל-פְּנֵי תְהוֹם· וָאֶהְיֶה אֶצְלוֹ אָמוֹן וָאֶהְיֶה שַׁעֲשֻׁעִים',
+          },
+          entities: [
+            { word: 'like a master workman', node: 'logos-johannine', type: 'concept',
+              note: 'The Hebrew word amon — translated "master workman" (NRSV), "confidant/trusted child" (NJPS), "craftsman" — is the crux of the entire passage. If amon means "craftsman/architect," Wisdom is the co-creator of the universe beside God — the template for the Johannine Logos ("through him all things were made"). If amon means "nursling/child," Wisdom is the beloved child playing at the Father\'s feet — the template for the Gnostic Sophia as the divine child. Both readings are theologically significant.',
+              parallels: [
+                { label: 'John 1:3 — "through the Logos all things were made"', textId: 'john-1', note: 'The Logos as God\'s "master workman" through whom all things were made is the Johannine translation of Proverbs 8\'s Wisdom-as-amon. The "through him all things were made" of John 1:3 is the Greek philosophical restatement of Wisdom\'s "I was there when he made everything."' },
+                { label: 'Gnostic Sophia — the divine child who plays then falls', note: 'The Gnostic Sophia texts (Apocryphon of John, Pistis Sophia) derive from this same Proverbs 8 Wisdom-as-child image: the divine feminine who plays at the Father\'s side, then acts independently and falls — her fall producing the material world through the Demiurge.' },
+              ]
+            },
+            { word: 'rejoicing before him always', node: 'sacred-marriage', type: 'concept',
+              note: 'The intimate register of Wisdom "rejoicing/playing" (meshaheket, שַׁעֲשֻׁעִים) before God and "delighting in the human race" carries the erotic-playful tone of the sacred marriage (hieros gamos) — the divine masculine and divine feminine in joyful creative partnership. This is the Asherah theology sublimated: the goddess who was YHWH\'s consort has become the abstraction Wisdom, but the intimacy and play of the divine couple remains encoded in the verb.',
+              parallels: [
+                { label: 'Asherah as YHWH\'s consort — the historical background', node: 'asherah', note: 'The Kuntillet Ajrud inscriptions (c. 800 BCE) refer to "YHWH and his Asherah" as a divine couple. Proverbs 8\'s Wisdom who plays before God preserves this conjugal theology in abstracted form after the Deuteronomistic reform suppressed direct Asherah worship.' },
+              ]
+            },
+          ]
+        },
+      ]
+    },
+  ]
+};
+
+// ── 28. PSALM 82 — THE DIVINE COUNCIL ────────────────────────────────────────
+SCRIPTURE_TEXTS['psalm-82'] = {
+  title: 'Psalm 82 — God Judges the Divine Council',
+  shortTitle: 'Psalm 82 — Divine Council',
+  tradition: 'Hebrew Bible / Psalms',
+  date: 'c. 9th–7th BCE (possibly reflecting older Canaanite source)',
+  intro: 'The most theologically radical psalm in the Hebrew Bible: YHWH stands up in the divine assembly (ʿadat El) and pronounces judgment on the other gods (elohim), condemning them for unjust rule. The psalm preserves the clearest window in the entire Hebrew Bible onto the polytheistic substrate from which Israelite monotheism emerged: there is a divine council of multiple gods presided over by El, each assigned a nation. YHWH is one member who rises to displace the others. The verse "I said, you are gods; children of the Most High, all of you" was cited by Jesus in John 10:34 to defend his own claim to divinity.',
+  crossTradition: [
+    { label: 'Ugaritic Baal Cycle — the council of El / sons of El',         note: 'The Ugaritic texts from Ras Shamra (c. 1400–1200 BCE) describe El presiding over a divine assembly of the "sons of El" (bene ilim) — each a god assigned a domain. Psalm 82\'s ʿadat El (assembly of El) and bene elyon (sons of the Most High) are direct Hebrew equivalents of the Ugaritic divine council. The psalm preserves the older polytheistic structure while narrating YHWH\'s rise to supremacy within it.' },
+    { label: 'Enuma Elish — the divine assembly judges / Marduk rises',      textId: 'enuma-elish-1',    note: 'The Babylonian divine assembly that promotes Marduk to kingship after his victory over Tiamat is structurally identical to Psalm 82\'s assembly. In both: a council of gods; a crisis of justice/chaos; one god rises to take supreme authority. The Israelite and Babylonian traditions both encode the same narrative of divine-council politics.' },
+    { label: 'John 10:34 — Jesus cites Psalm 82 to defend his own divinity',  textId: 'john-1',           note: 'John 10:34-36: when the Judeans accuse Jesus of blasphemy for calling himself God\'s Son, Jesus responds: "Is it not written in your Law, \'I have said you are gods\'? If he called them \'gods,\' to whom the word of God came... do you say of him whom the Father consecrated, \'You are blaspheming\'?" Jesus uses Psalm 82\'s "you are gods" to legitimize the category of divine human beings.' },
+    { label: 'Orphic Theogony — divine succession and the gods who die',      textId: 'orphic-theogony',  note: 'Psalm 82\'s "you shall die like humans; you shall fall like any prince" — gods condemned to mortality — parallels the Orphic mythology of divine beings dying (Zagreus torn apart, Titans cast down). In both, the lesser divine beings are subject to death as punishment or consequence.' },
+  ],
+  translations: [
+    { id: 'nrsv',   label: 'NRSV 1989 (T1)' },
+    { id: 'njps',   label: 'NJPS 1985 (T2)' },
+    { id: 'hebrew', label: 'Hebrew (Masoretic)' },
+  ],
+  sections: [
+    {
+      heading: 'I. God Rises in the Divine Assembly',
+      verses: [
+        {
+          ref: 'Psalm 82:1–2',
+          text: 'God (Elohim) stands in the divine assembly (ʿadat El); among the gods (elohim) he pronounces judgment: "How long will you judge unjustly and show partiality to the wicked? Give justice to the weak and the orphan; maintain the right of the lowly and the destitute."',
+          textVersions: {
+            nrsv:   'God has taken his place in the divine council; in the midst of the gods he holds judgment: "How long will you judge unjustly and show partiality to the wicked? Give justice to the weak and the orphan; maintain the right of the lowly and the destitute."',
+            njps:   'God stands in the divine assembly; among the divine beings He pronounces judgment. "How long will you judge perversely, showing favor to the wicked? Give justice to the wretched and the orphan."',
+            hebrew: 'אֱלֹהִים נִצָּב בַּעֲדַת-אֵל בְּקֶרֶב אֱלֹהִים יִשְׁפֹּט· עַד-מָתַי תִּשְׁפְּטוּ-עָוֶל',
+          },
+          entities: [
+            { word: 'divine assembly (ʿadat El)', node: 'divine-council', type: 'concept',
+              note: 'The ʿadat El — "assembly/congregation of El" — is the Hebrew Bible\'s clearest reference to the Canaanite divine council: a pantheon of divine beings presided over by El (the chief Canaanite deity), each assigned governance of a nation. YHWH participates in this council as one member who then rises to supremacy. This is not monotheism; it is henotheism (one supreme god among many) on the way to becoming monotheism.',
+              parallels: [
+                { label: 'El Elyon — the Most High God above the council', node: 'el-canaanite', note: 'El (the Canaanite high god, father of the divine assembly) and El Elyon ("God Most High") of Genesis 14:18 are almost certainly the same deity. YHWH gradually merges with El in Israelite theology, absorbing El\'s title ("Most High") and his council role into a single deity.' },
+                { label: 'Enuma Elish — the assembly of gods and divine politics', textId: 'enuma-elish-1', note: 'The Babylonian divine assembly (the Igigi and Anunnaki) that promotes Marduk after his victory over Tiamat is the Mesopotamian equivalent of the Israelite ʿadat El. Both encode the same political structure: a divine assembly where divine authority is contested and reassigned.' },
+              ]
+            },
+          ]
+        },
+        {
+          ref: 'Psalm 82:5–8',
+          text: '"They have neither knowledge nor understanding; they walk about in darkness; all the foundations of the earth are shaken. I said, \'You are gods, children of the Most High, all of you; nevertheless, you shall die like mortals, and fall like any prince.\'" Rise up, O God, judge the earth; for all the nations belong to you!',
+          textVersions: {
+            nrsv:   '"They have neither knowledge nor understanding; they walk around in darkness; all the foundations of the earth are shaken. I say, \'You are gods, children of the Most High, all of you; nevertheless, you shall die like mortals, and fall like any prince.\'" Rise up, O God, judge the earth; for all the nations belong to you!',
+            njps:   '"They neither know nor understand, they go about in darkness; all the foundations of the earth totter. I had taken you for divine beings, sons of the Most High, all of you; but you shall die as men do, fall like any prince." Arise, O God, judge the earth, for all the nations are Your possession.',
+            hebrew: 'אֲנִי-אָמַרְתִּי אֱלֹהִים אַתֶּם וּבְנֵי עֶלְיוֹן כֻּלְּכֶם· אָכֵן כְּאָדָם תְּמוּתוּן',
+          },
+          entities: [
+            { word: 'You are gods, children of the Most High', node: 'divine-council', type: 'concept',
+              note: 'The declaration "You are gods (elohim), children of the Most High (bene Elyon)" is the Hebrew Bible\'s explicit acknowledgment of a divine pantheon — lesser divine beings who are genuine gods, children of the highest God. This verse has had enormous theological impact: Jesus cites it in John 10:34 to legitimize the category of divine-human beings; Origen and later theologians use it to argue for the deification (theosis) of humans; Latter-day Saints use it to argue for the eternal progression of humans toward divine status.',
+              parallels: [
+                { label: 'John 10:34-36 — Jesus cites "you are gods" to defend himself', textId: 'john-1', note: 'John 10:34: Jesus says "Is it not written in your Law, \'I have said you are gods\'?" — citing Psalm 82:6 to argue that the Hebrew tradition itself allows for human beings receiving divine designation. If the judges of Israel could be called "gods," how much more the one "whom the Father consecrated and sent into the world"?' },
+                { label: 'Orphic Theogony — divine beings that die', textId: 'orphic-theogony', note: 'The Orphic myth of Zagreus/Dionysus dying at the hands of the Titans, and the Psalm\'s gods condemned to "die like mortals," both acknowledge the possibility of divine mortality — a profound theological statement that the divine is not immune to death.' },
+              ]
+            },
+            { word: 'all the nations belong to you', node: 'tradition-judaism', type: 'concept',
+              note: 'The psalm\'s closing call "Rise up, O God, judge the earth; for all the nations belong to you!" is the triumphant assertion of YHWH\'s universal sovereignty over the entire divine council: having condemned the other gods to mortality, YHWH inherits all the nations they had been assigned. This is the theological mechanism by which Israelite henotheism (YHWH supreme among gods) becomes genuine monotheism (YHWH the only god, all nations his).',
+              parallels: [
+                { label: 'Deuteronomy 32:8-9 — nations assigned to the sons of God', note: 'Deuteronomy 32:8 (Dead Sea Scrolls and Septuagint text): "When the Most High assigned the nations, when he divided humankind, he fixed the boundaries of the peoples according to the number of the sons of God [bene elim]; but YHWH\'s own portion is his people, Jacob his allotted share." This is the older theology that Psalm 82 is overturning: YHWH was originally assigned Israel while other gods got other nations.' },
+              ]
+            },
+          ]
+        },
+      ]
+    },
+  ]
+};
+
+// ── 29. ISAIAH 45 — CYRUS THE ANOINTED ───────────────────────────────────────
+SCRIPTURE_TEXTS['isaiah-45'] = {
+  title: 'Isaiah 45 — Cyrus, YHWH\'s Anointed; the Creator of Light and Darkness',
+  shortTitle: 'Isaiah 45 — Cyrus',
+  tradition: 'Hebrew Bible / Deutero-Isaiah',
+  date: 'c. 550–540 BCE (Deutero-Isaiah, exilic period)',
+  intro: 'The most theologically explosive chapter in the Hebrew prophetic canon. Cyrus the Great — Persian king, Zoroastrian, conqueror of Babylon — is called YHWH\'s "anointed" (mashiah, the same word used for the expected king-savior). YHWH calls him by name before Cyrus was born, though "you do not know me." The chapter also contains the most radical theological statement in the Hebrew Bible: "I form light and create darkness; I make well-being and create calamity — I am YHWH, who does all these things." This directly challenges Zoroastrian dualism (good God creates light; evil principle creates darkness) by insisting that YHWH creates both.',
+  crossTradition: [
+    { label: 'Yasna 30 — Zoroastrian dualism that Isaiah directly refutes',   textId: 'yasna-30',         note: 'Yasna 30\'s two primordial spirits — one who chose truth/light, one who chose lie/darkness — is the Zoroastrian theology that Isaiah 45:7 explicitly counters: "I form light and create darkness; I make well-being and create calamity." Isaiah insists YHWH creates both good and evil, refusing the Persian dualism that Cyrus embodies. The Zoroastrian-Jewish theological dialogue is most intense in this chapter.' },
+    { label: 'Cyrus Cylinder — Cyrus as servant of Marduk',                   note: 'The Cyrus Cylinder (539 BCE) records Cyrus claiming Marduk (Babylonian god) commanded him to conquer Babylon and restore its temples. Isaiah 45 records the same king claiming YHWH commanded him. Cyrus himself was almost certainly a Zoroastrian who presented himself as the servant of whatever god was theologically useful in each territory he conquered — making him the first documented case of religious political instrumentalization.' },
+    { label: 'Quran — non-believers as instruments of divine will',            textId: 'quran-fatiha-nur', note: 'The Quranic concept of divine hiddenness acting through apparent non-believers (Quran 3:26: "You give power to whom you will") parallels Isaiah\'s "I call you by your name though you do not know me" — divine agency operating through those unaware of its source.' },
+    { label: 'Tao Te Ching — the unnamed creative principle acting through all', textId: 'tao-te-ching-1', note: 'Isaiah 45\'s insistence that YHWH acts through Cyrus who doesn\'t know him parallels the Tao\'s action through wu-wei: the Tao accomplishes through those who don\'t consciously serve it. "Though you do not know me, I call you" = the Tao acts through all things without their awareness.' },
+  ],
+  translations: [
+    { id: 'nrsv',   label: 'NRSV 1989 (T1)' },
+    { id: 'njps',   label: 'NJPS 1985 (T2)' },
+    { id: 'hebrew', label: 'Hebrew (Masoretic)' },
+  ],
+  sections: [
+    {
+      heading: 'I. Cyrus Called Before He Knew',
+      verses: [
+        {
+          ref: 'Isaiah 45:1–4',
+          text: 'Thus says YHWH to his anointed (mashiah), to Cyrus, whose right hand I have grasped to subdue nations before him: "I will go before you and level the mountains; I will break in pieces the doors of bronze and cut through the bars of iron. For the sake of my servant Jacob, and Israel my chosen, I call you by your name — I name you, though you do not know me."',
+          textVersions: {
+            nrsv:   'Thus says the LORD to his anointed, to Cyrus, whose right hand I have grasped to subdue nations before him: "I will go before you and level the mountains... I call you by your name, I surname you, though you do not know me."',
+            njps:   'Thus said the LORD to Cyrus, His anointed one — whose right hand He has grasped, treading down nations before him: "I will go before you and level the hills... I call you by name, I hail you by title, though you have not known Me."',
+            hebrew: 'כֹּה-אָמַר יְהוָה לִמְשִׁיחוֹ לְכוֹרֶשׁ אֲשֶׁר-הֶחֱזַקְתִּי בִימִינוֹ· אֶקְרָא לְךָ בְּשִׁמְךָ אֲכַנְּךָ וְלֹא יְדַעְתָּנִי',
+          },
+          entities: [
+            { word: 'his anointed (mashiah), to Cyrus', node: 'cyrus-the-great', type: 'person',
+              note: 'The word mashiah (מְשִׁיחוֹ) — "anointed one" — applied to Cyrus the Persian king is the same word that gives us "Messiah" (Hebrew) and "Christ" (Greek: christos = anointed). This is the only time in the Hebrew Bible that a non-Israelite is given the title mashiah. Cyrus is the "Messiah" of Isaiah 45 — the anointed savior who liberates God\'s people. This is a theological earthquake: the expected divine savior is not from the line of David but is a Persian Zoroastrian emperor.',
+              parallels: [
+                { label: 'Zoroastrian theology — Cyrus as Ahura Mazda\'s instrument', node: 'ahura-mazda', note: 'The Achaemenid royal inscriptions consistently attribute Persian victories to Ahura Mazda\'s blessing. Cyrus serving YHWH\'s purposes while himself serving Ahura Mazda\'s is not contradictory to him — it is the same divine will operating through different names. Isaiah 45 preserves the memory of this Zoroastrian-Jewish theological convergence.' },
+                { label: 'Cyrus Cylinder — "Marduk called Cyrus by name"', note: 'The Cyrus Cylinder (539 BCE): "Marduk... called the name of Cyrus, king of Anshan, and proclaimed him ruler of the whole world." Isaiah 45\'s "I call you by your name" and the Cyrus Cylinder\'s "Marduk called the name of Cyrus" are the same formula — two different gods claiming the same historical event.' },
+              ]
+            },
+            { word: 'though you do not know me', node: 'apophatic-mysticism', type: 'concept',
+              note: 'YHWH acting through Cyrus who does not know YHWH is one of the boldest theological claims in the Hebrew Bible: the divine does not require acknowledgment or worship to act through a person or an event. This is the prophetic form of the same universalism that the Hymn to the Aten encodes ("you made all peoples") and that the Tao Te Ching encodes through wu-wei: the ultimate principle operates through everything, including those unaware of it.',
+              parallels: [
+                { label: 'Tao Te Ching — the Tao acts through all without being known', textId: 'tao-te-ching-1', note: 'Tao 1: the Tao that cannot be named acts through all things. Isaiah\'s "I call you though you do not know me" and the Tao\'s action through wu-wei are the same theological claim: the ultimate divine principle operates through all things regardless of whether they acknowledge it.' },
+              ]
+            },
+          ]
+        },
+      ]
+    },
+    {
+      heading: 'II. The Creator of Light AND Darkness',
+      verses: [
+        {
+          ref: 'Isaiah 45:5–7',
+          text: '"I am YHWH, and there is no other; besides me there is no god. I will arm you, though you do not know me, so that they may know, from the rising of the sun and from the west, that there is no one besides me. I form light and create darkness; I make well-being and create calamity — I am YHWH, who does all these things."',
+          textVersions: {
+            nrsv:   '"I am the LORD, and there is no other; besides me there is no god... I form light and create darkness; I make well-being and create woe; I am the LORD, who do all these things."',
+            njps:   '"I am the LORD and there is none else; beside Me, there is no god... I form light and create darkness, I make peace and create evil — I the LORD do all these things."',
+            hebrew: 'אֲנִי יְהוָה וְאֵין עוֹד זוּלָתִי אֵין אֱלֹהִים· יוֹצֵר אוֹר וּבוֹרֵא חֹשֶׁךְ עֹשֶׂה שָׁלוֹם וּבוֹרֵא רָע אֲנִי יְהוָה עֹשֶׂה כָל-אֵלֶּה',
+          },
+          entities: [
+            { word: 'I form light and create darkness', node: 'primordial-darkness', type: 'concept',
+              note: 'This is the most anti-dualistic statement in the entire Hebrew Bible — and it is almost certainly a direct theological polemic against Zoroastrian dualism. In Zoroastrianism (Yasna 30), Spenta Mainyu (Holy Spirit) created light/good and Angra Mainyu (Destructive Spirit) created darkness/evil as separate divine principles. Isaiah 45:7 insists YHWH creates BOTH: light AND darkness, well-being AND calamity. The Hebrew word for "calamity/evil" here is raʿ — the same word used in Genesis 3 for the tree of knowledge of good and evil.',
+              parallels: [
+                { label: 'Yasna 30 — Spenta Mainyu vs Angra Mainyu as separate creators of light and darkness', textId: 'yasna-30', note: 'Yasna 30.3-4: the two spirits created light and darkness separately, and life and death separately. Isaiah 45:7 is a direct theological counter: YHWH creates both. The Zoroastrian dualism and the Isaianic monotheism are in direct dialogue, almost certainly conscious of each other given the Babylonian exile context.' },
+                { label: 'Job 38 — YHWH as the source of all cosmic phenomena', textId: 'job-38', note: 'Job 38\'s YHWH claiming to have made light, darkness, snow, rain, lightning, and all cosmic forces is the same theology as Isaiah 45:7: the single God creates everything, including what seems destructive or evil from a human perspective.' },
+              ]
+            },
+            { word: 'I am YHWH, and there is no other', node: 'tradition-judaism', type: 'concept',
+              note: 'The formula "Ani YHWH ve-ein od" ("I am YHWH and there is no other") appears seven times in Isaiah 40-48 (Deutero-Isaiah). It is the fullest monotheistic formula in the Hebrew Bible — not just "YHWH is greatest" (henotheism) but "there is no other god." The theological precision is aimed at both Babylonian polytheism (YHWH is not one god among many) and Zoroastrian dualism (YHWH is not one good principle alongside an evil principle). It is the Hebrew Bible\'s ultimate theological statement.',
+              parallels: [
+                { label: 'Shahada — "There is no god but Allah"', textId: 'quran-fatiha-nur', note: 'The Islamic Shahada ("Lā ilāha illā llāh") is the direct descendant of Deutero-Isaiah\'s "Ani YHWH ve-ein od." The Islamic formula is the Arabic translation of the Hebrew formula, transmitted through Jewish-Christian theological tradition.' },
+                { label: 'Shema — "YHWH is One"', note: 'Deuteronomy 6:4\'s Shema ("Hear O Israel, YHWH is our God, YHWH is One") and Isaiah 45:5-6\'s "I am YHWH and there is no other" are the two poles of Hebrew monotheism — Deuteronomy stating divine unity, Isaiah stating divine exclusivity.' },
+              ]
+            },
+          ]
+        },
+      ]
+    },
+  ]
+};
+
+// ── 30. REVELATION 12 — WOMAN CLOTHED WITH THE SUN ───────────────────────────
+SCRIPTURE_TEXTS['revelation-12'] = {
+  title: 'Revelation 12 — The Woman Clothed with the Sun',
+  shortTitle: 'Revelation 12 — The Woman',
+  tradition: 'Christian / Jewish Apocalyptic',
+  date: 'c. 90–100 CE (reign of Domitian)',
+  intro: 'The most mythologically dense passage in the New Testament — a cosmic drama of a Woman, a Dragon, and a Child that is virtually identical in structure to multiple pre-Christian myths: Isis giving birth to Horus while pursued by Set (Egyptian); Leto giving birth to Apollo while pursued by the Python (Greek); the pregnant goddess in the Canaanite Baal Cycle pursued by the sea-dragon Yam. The Woman is simultaneously the Virgin Mary, Israel, the Church, and the Gnostic Sophia. The Dragon with seven heads is simultaneously Satan, Leviathan, Tiamat, Set, and Python. The Child is Christ, Apollo, and Horus. The text is a palimpsest of four thousand years of divine-birth mythology.',
+  crossTradition: [
+    { label: 'Isis and Horus — the nearest structural parallel',               note: 'The Egyptian Isis (depicted winged, wearing a solar crown) gives birth to Horus while hunted by Set (the red chaos force). Horus will rule the gods. This is the nearest structural parallel to Revelation 12: cosmic woman + pursuing chaos-dragon + divine child who will rule all nations. The Isis-Horus myth was the dominant religious narrative of the Roman Empire at the time Revelation was written.' },
+    { label: 'Leto, Apollo, and the Python — the Greek parallel',             textId: 'orphic-theogony',  note: 'Leto gives birth to Apollo on the floating island of Delos, pursued by the Python sent by Hera. Apollo immediately slays the Python at Delphi. Revelation 12\'s Woman fleeing from the Dragon = Leto fleeing from the Python; the Child who will "rule with an iron scepter" = Apollo who slays the dragon. The Greek myth is one of Revelation 12\'s direct literary sources.' },
+    { label: 'Poimandres — Sophia\'s fall producing the material world',        textId: 'poimandres',       note: 'The Gnostic Sophia who falls from the Pleroma (divine fullness) and produces the material world through her fall — and whose child (the Demiurge/Yaldabaoth) pursues and imprisons her — is the Gnostic reading of the same cosmic drama. The Woman = Sophia; the Dragon = Yaldabaoth; the Child = the divine spark/Christ.' },
+    { label: 'Yasna 30 — cosmic dualism: divine light pursued by evil force',  textId: 'yasna-30',         note: 'The Zoroastrian cosmic dualism of Spenta Mainyu (divine light/good) vs Angra Mainyu (darkness/evil) pursuing and attacking is the Persian theological version of the same cosmic drama. Revelation 12 is saturated with Zoroastrian dualism: the Woman of light vs the red Dragon of darkness.' },
+  ],
+  translations: [
+    { id: 'nrsv',  label: 'NRSV 1989 (T1)' },
+    { id: 'niv',   label: 'NIV 2011 (T2)' },
+    { id: 'greek', label: 'Greek (Nestle-Aland 28th ed.)' },
+  ],
+  sections: [
+    {
+      heading: 'I. The Woman Clothed with the Sun',
+      verses: [
+        {
+          ref: 'Revelation 12:1–2',
+          text: 'A great sign appeared in heaven: a woman clothed with the sun, with the moon under her feet and a crown of twelve stars on her head. She was pregnant and cried out in pain as she was about to give birth.',
+          textVersions: {
+            nrsv:  'A great portent appeared in heaven: a woman clothed with the sun, with the moon under her feet, and on her head a crown of twelve stars. She was pregnant and was crying out in birth pangs, in the agony of giving birth.',
+            niv:   'A great and wondrous sign appeared in heaven: a woman clothed with the sun, with the moon under her feet and a crown of twelve stars on her head. She was pregnant and cried out in pain as she was about to give birth.',
+            greek: 'Καὶ σημεῖον μέγα ὤφθη ἐν τῷ οὐρανῷ, γυνὴ περιβεβλημένη τὸν ἥλιον, καὶ ἡ σελήνη ὑποκάτω τῶν ποδῶν αὐτῆς.',
+          },
+          entities: [
+            { word: 'woman clothed with the sun', node: 'isis', type: 'deity',
+              note: 'The Woman clothed with the sun, moon under her feet, crown of twelve stars — this is one of the most multi-layered divine feminine images in religious history. She is simultaneously: (1) the Virgin Mary (Catholic tradition); (2) Israel as the mother of the Messiah; (3) the Church; (4) the Gnostic Sophia; (5) the Egyptian Isis (depicted with solar disk and cow horns, nursing Horus); (6) the Greco-Roman goddess Virgo/Demeter/Cybele; (7) the Canaanite Asherah. The twelve stars correspond to the twelve zodiac signs, the twelve tribes of Israel, and the twelve apostles — all at once.',
+              parallels: [
+                { label: 'Isis — sun-crowned mother of Horus, pursued by Set', note: 'Isis crowned with the solar disk, nursing the infant Horus, while pursued by Set the red chaos force — this is the nearest parallel to Revelation 12\'s Woman. The Isis-Horus iconography was ubiquitous in the Roman Empire at the time Revelation was written, and early Christian images of Mary nursing the infant Jesus are iconographically identical to Isis-Horus nursing images.' },
+                { label: 'Asherah — the astral goddess with the crown of stars', node: 'asherah', note: 'The Asherah / Queen of Heaven (Jer 7:18, 44:17-19) worshipped in Jerusalem with star and moon iconography — "the host of heaven" — is the Canaanite background for the Woman\'s stellar crown and lunar base. The Deuteronomistic suppression of Asherah worship and the apocalyptic rehabilitation of the Woman clothed with stars are two poles of the same theological tension.' },
+              ]
+            },
+            { word: 'crown of twelve stars', node: 'tradition-early-christianity', type: 'symbol',
+              note: 'The twelve stars simultaneously signify: (1) the twelve zodiac constellations — the Woman as the cosmic sky-goddess whose crown is the zodiac; (2) the twelve tribes of Israel — the Woman as Mother Israel giving birth to the Messiah; (3) the twelve apostles — the Church crowned with its founders. The triple valence is deliberate: Revelation 12 consciously synthesizes Jewish, Greco-Roman astrological, and Christian symbolism into a single image.',
+              parallels: [
+                { label: 'Zodiac — the Woman as sky-goddess crowned by the stars of heaven', note: 'The twelve zodiac signs as a crown on the cosmic Woman draws on the ancient Near Eastern iconography of sky-goddesses (Nut in Egypt, Inanna/Ishtar in Mesopotamia, Astarte in Canaan) as wearers of stellar crowns. The Woman of Revelation 12 stands at the intersection of Jewish apocalyptic and Greco-Roman astral religion.' },
+              ]
+            },
+          ]
+        },
+        {
+          ref: 'Revelation 12:3–5',
+          text: 'Then another sign appeared in heaven: an enormous red dragon with seven heads and ten horns and seven crowns on its heads. Its tail swept a third of the stars out of the sky and flung them to the earth. The dragon stood in front of the woman who was about to give birth, so that it might devour her child the moment he was born. She gave birth to a son, a male child, who will rule all the nations with an iron scepter. And her child was snatched up to God and to his throne.',
+          textVersions: {
+            nrsv:  'Then another portent appeared in heaven: a great red dragon, with seven heads and ten horns, and seven diadems on his heads. His tail swept down a third of the stars of heaven and threw them to the earth. Then the dragon stood before the woman who was about to bear a child, so that he might devour her child as soon as it was born. And she gave birth to a son, a male child, who is to rule all the nations with a rod of iron. But her child was snatched away and taken to God and to his throne.',
+            niv:   'Then another sign appeared in heaven: an enormous red dragon with seven heads and ten horns and seven crowns on its heads. Its tail swept a third of the stars out of the sky and flung them to the earth. The dragon stood in front of the woman who was about to give birth, so that it might devour her child the moment he was born.',
+            greek: 'καὶ ἰδοὺ δράκων μέγας πυρρός, ἔχων κεφαλὰς ἑπτὰ καὶ κέρατα δέκα καὶ ἐπὶ τὰς κεφαλὰς αὐτοῦ ἑπτὰ διαδήματα.',
+          },
+          entities: [
+            { word: 'enormous red dragon', node: 'leviathan', type: 'deity',
+              note: 'The red dragon with seven heads is simultaneously: (1) Satan/the Devil (v.9 identifies him explicitly); (2) the Hebrew Leviathan (the seven-headed sea-dragon of Canaanite mythology, seen in Job 41, Psalm 74:14, Isaiah 27:1); (3) the Babylonian Tiamat (the sea-chaos monster with multiple heads, slain by Marduk in the Enuma Elish); (4) the Egyptian Set (the red chaos force, enemy of Osiris and Horus); (5) the Greek Typhon/Python (the dragon-serpent defeated by Zeus/Apollo). Seven-headed sea-dragons are one of the most ancient and universal mythological images in the ancient Near East.',
+              parallels: [
+                { label: 'Leviathan — seven-headed sea-dragon of Canaanite/Hebrew mythology', node: 'leviathan', note: 'The Ugaritic texts describe Lotan (= Hebrew Leviathan) as a seven-headed dragon defeated by Baal. Isaiah 27:1 calls Leviathan "the twisting serpent" and "the dragon in the sea." Revelation 12\'s seven-headed dragon is the Christianized form of this ancient near-Eastern chaos-monster.' },
+                { label: 'Tiamat — the chaos-sea defeated at creation', textId: 'enuma-elish-1', note: 'The Enuma Elish\'s Tiamat (the primordial salt-water chaos-dragon defeated by Marduk) is the Babylonian equivalent of Revelation 12\'s Dragon. Both represent the primordial chaos force that divine order must continuously defeat.' },
+                { label: 'Set — the red chaos force pursuing Osiris/Horus', note: 'Set is explicitly the red animal in Egyptian iconography (the "red beast"), associated with desert, chaos, and violence — the pursuer of Osiris and Horus. Revelation 12\'s "great red dragon" pursuing the Woman and her Child is structurally Set pursuing Isis and Horus.' },
+              ]
+            },
+            { word: 'rule all the nations with an iron scepter', node: 'tradition-early-christianity', type: 'concept',
+              note: 'The Child who "will rule all the nations with an iron scepter" echoes Psalm 2:9 ("you shall break them with a rod of iron"), a royal enthronement psalm that early Christianity applied to Jesus. But it also echoes the Apollonian parallel: Apollo, born of Leto while pursued by the Python, becomes the god of divine order, prophecy, and civilization — ruling through the Oracle at Delphi. The Child-who-rules in Revelation 12 synthesizes the Messianic king (Psalm 2), the cosmic Christ (Colossians 1:16), and the victorious Apollo.',
+              parallels: [
+                { label: 'Horus — born of Isis while pursued by Set, destined to rule', note: 'Horus born of Isis while Set pursued her, and destined to rule as king of Egypt after defeating Set — the structural parallel to Revelation 12\'s Child born of the Woman while the Dragon pursued, and destined to "rule all nations," is nearly exact.' },
+                { label: 'Apollo — born of Leto while Python pursued, defeats chaos and rules', textId: 'orphic-theogony', note: 'Apollo born on Delos while the Python pursued his mother Leto, immediately defeats the Python at Delphi and establishes his oracle of divine order. Revelation 12\'s Child snatched to God\'s throne and the Dragon cast down = Apollo defeating the Python.' },
+              ]
+            },
+          ]
+        },
+      ]
+    },
+    {
+      heading: 'II. War in Heaven',
+      verses: [
+        {
+          ref: 'Revelation 12:7–9',
+          text: 'Then war broke out in heaven. Michael and his angels fought against the dragon, and the dragon and his angels fought back. But he was not strong enough, and they lost their place in heaven. The great dragon was hurled down — that ancient serpent called the Devil and Satan, who leads the whole world astray. He was hurled to the earth, and his angels with him.',
+          textVersions: {
+            nrsv:  'And war broke out in heaven; Michael and his angels fought against the dragon. The dragon and his angels fought back, but they were defeated, and there was no longer any place for them in heaven. The great dragon was thrown down, that ancient serpent, who is called the Devil and Satan, the deceiver of the whole world.',
+            niv:   'Then war broke out in heaven. Michael and his angels fought against the dragon, and the dragon and his angels fought back. But he was not strong enough, and they lost their place in heaven. The great dragon was hurled down — that ancient serpent called the devil, or Satan, who leads the whole world astray.',
+            greek: 'Καὶ ἐγένετο πόλεμος ἐν τῷ οὐρανῷ· ὁ Μιχαὴλ καὶ οἱ ἄγγελοι αὐτοῦ τοῦ πολεμῆσαι μετὰ τοῦ δράκοντος.',
+          },
+          entities: [
+            { word: 'war broke out in heaven', node: 'divine-council', type: 'concept',
+              note: 'Celestial war as a structural feature of cosmic history appears across traditions: the War in Heaven (Revelation 12) where Michael defeats the Dragon; the Enuma Elish where Marduk defeats Tiamat; the Titanomarchy (Olympians vs Titans) in Hesiod; Indra defeating Vritra in the Rig Veda; the Norse Ragnarok. All encode the same cosmological claim: the present order was established through a primordial combat between divine forces, and that combat continues or will recur.',
+              parallels: [
+                { label: 'Enuma Elish — Marduk defeats Tiamat to create the cosmos', textId: 'enuma-elish-1', note: 'The Babylonian combat myth (Marduk vs Tiamat) is the same structural event as Revelation 12\'s War in Heaven (Michael vs Dragon). Both establish divine order through the defeat of chaos. The Dragon being "hurled down" to earth = Tiamat\'s body becoming the cosmos.' },
+                { label: 'Psalm 82 — the divine council and its warfare', textId: 'psalm-82', note: 'Psalm 82\'s divine assembly where YHWH judges and condemns the other gods to mortality is the juridical version of the same cosmic power-struggle that Revelation 12 narrates as combat. Both texts describe the demotion of lesser divine beings from heavenly status.' },
+              ]
+            },
+            { word: 'that ancient serpent called the Devil and Satan', node: 'leviathan', type: 'concept',
+              note: 'The identification of the Dragon with "that ancient serpent" (ho ophis ho archaios) ties Revelation 12 explicitly to Genesis 3\'s serpent in the Garden. The interpretive move — the Garden serpent = the Devil = Satan = the Dragon = Leviathan — is the full Christian cosmological synthesis: the primordial chaos-dragon, the Garden tempter, the cosmic adversary, and the apocalyptic Dragon are all one entity. This identification does not exist in Genesis itself; it is a 2nd-temple Jewish interpretive tradition (Wisdom of Solomon 2:24) that Revelation crystallizes.',
+              parallels: [
+                { label: 'Genesis 3 — the ancient serpent in the Garden', textId: 'genesis-1', note: 'Genesis 3\'s serpent (nahash) is not identified as Satan in the original text. The identification serpent = Satan = Dragon is a Hellenistic-Jewish interpretive development (Wisdom 2:24: "through the devil\'s envy death entered the world") that Revelation 12 definitively establishes.' },
+                { label: 'Yasna 30 — Angra Mainyu as the original adversarial principle', textId: 'yasna-30', note: 'The Zoroastrian Angra Mainyu (the Destructive Spirit who chose the Lie at the beginning) is the direct theological ancestor of Revelation 12\'s Satan — the cosmic adversarial force that opposes divine light. The Zoroastrian dualism, filtered through Second Temple Judaism, produces the New Testament Satan.' },
+              ]
+            },
+          ]
+        },
+      ]
+    },
+  ]
+};
