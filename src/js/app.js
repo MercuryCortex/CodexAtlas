@@ -4888,6 +4888,17 @@ const ALCHEMY_PRESETS = [
       'theme-graduated-afterlife', 'theme-guide-through-underworld',
     ],
   },
+  {
+    id: 'serapis-christ-iconography',
+    category: 'transmission',
+    name: 'Serapis → The Face of Christ',
+    headline: 'The standard iconographic image of Jesus Christ — bearded, full curly hair, dignified and serene — does not derive from any historical portrait of Jesus. It derives from Serapis, the syncretic deity invented by Ptolemy I (~305 BCE) by fusing Osiris-Apis (the sacred bull of Memphis who became Osiris in death) with Greek divine aesthetics. Serapis and Isis spread across the Roman Empire as the dominant mystery cult. The Serapeum of Alexandria was destroyed by Bishop Theophilus in 391 CE — as Serapis worship collapsed, Christ absorbed the iconographic type. Earliest Christ images (Catacomb of Callistus, ~200 CE) are beardless; the full bearded Serapis-type becomes canonical ~4th–5th century.',
+    picks: [
+      'serapis', 'apis-bull', 'osiris',
+      'isis-hellenistic', 'tradition-mystery-cults',
+      'amun-ra', 'ra',
+    ],
+  },
 ];
 
 // Active research investigations — cross-tradition threads being investigated.
