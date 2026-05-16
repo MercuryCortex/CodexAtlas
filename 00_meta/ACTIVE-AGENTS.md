@@ -18,10 +18,16 @@ _Hand-maintained. Each agent currently working in the vault appends a claim bloc
 
 ---
 
-## goblin-alchemical-1 — symbols / alchemical depths — started 2026-05-16 — IN PROGRESS
-- Owning: sulphur-mercury-salt.md (NEW), solve-et-coagula.md (NEW), rebis.md (NEW), green-lion.md (NEW)
+## goblin-alchemical-1 — symbols / alchemical depths — started 2026-05-16 — **FINISHED 2026-05-16**
+- Owned: `09_symbols/sulphur-mercury-salt.md` (NEW metadata), `09_symbols/solve-et-coagula.md` (NEW metadata), `09_symbols/rebis.md` (NEW metadata), `09_symbols/green-lion.md` (NEW metadata)
 - Goal: Missing alchemical symbols with MASSIVE cross-tradition Hindu/Taoist/Gnostic wins
-- Status: in-progress
+- Status: finished
+- Delivered:
+  - **`sulphur-mercury-salt.md`** — Paracelsian Tria Prima (Sulphur/Mercury/Salt); MASSIVE WIN: Hindu Three Gunas (Sattva/Rajas/Tamas, Bhagavad Gita c. 200 BCE — independent parallel 1700 years before Paracelsus); Chinese Three Treasures (Jing/Qi/Shen, neidan); Neoplatonic Nous/Psyche/Hyle (documented transmission via Ficino/Agrippa); Valentinian Gnostic Pneuma/Psyche/Hyle. 5 Tier-1 refs.
+  - **`solve-et-coagula.md`** — The fundamental alchemical maxim (Jabir corpus origin c. 9th c.; Lévi's SOLVE/COAGULA Baphomet inscription 1861); MASSIVE WIN: Shiva pralaya-srishti cycle = Solve et Coagula at cosmic scale; Osiris dismemberment-and-reassembly by Isis (documented historical transmission to Hellenistic alchemy via Zosimos); Pauline baptismal death-resurrection (Romans 6:4); Daoist return to pu. 4 Tier-1 refs.
+  - **`rebis.md`** — The alchemical hermaphrodite / coniunctio oppositorum (Rosarium Philosophorum + Maier *Atalanta Fugiens*); MASSIVE WIN: Ardhanāriśvara (Shiva/Parvati half-body icon — O'Flaherty 1980 Tier-1); Plato's original androgyne (*Symposium* 189c — documented transmission to Renaissance alchemy); Valentinian Gnostic syzygy; Tibetan yab-yum; Daoist Dragon-Tiger conjunction. 5 Tier-1 refs.
+  - **`green-lion.md`** — Viridis Leo (Maier *Atalanta Fugiens* Emblem XXIV — corrosive solvent devouring the sun); MASSIVE WIN: Sekhmet / Eye of Ra (lion-force = solar energy in self-destructive manifestation); Mithraic Leontocephalus (lion-headed Time-god); Dionysiac theriomorphic lion-force; Masonic Lion's Paw (3rd-degree Hiram resurrection). 4 Tier-1 refs.
+- Commit: 0c92286
 
 ---
 
