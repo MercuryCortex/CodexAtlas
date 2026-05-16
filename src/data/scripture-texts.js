@@ -5538,3 +5538,308 @@ SCRIPTURE_TEXTS['ecclesiastes-1'] = {
     },
   ]
 };
+
+// ── BATCH 10 ────────────────────────────────────────────────────────────────
+
+SCRIPTURE_TEXTS['mandukya-upanishad'] = {
+  title: 'Mandukya Upanishad — The Four States and OM',
+  shortTitle: 'Mandukya',
+  tradition: 'Hindu',
+  date: 'c. 500–200 BCE',
+  intro: 'The Mandukya Upanishad is the shortest of the major Upanishads — only 12 verses — but it is considered by the Advaita Vedanta tradition to be the most important: Gaudapada (c. 6th CE) wrote a commentary on it (the Mandukya Karika) that became the foundation of all subsequent Indian non-dual philosophy, and Shankara (c. 8th CE) built his entire Advaita system on it. The text does two things simultaneously: it analyzes the sacred syllable OM (AUM) into four elements (A, U, M, and the silence after), and maps these four elements onto four states of consciousness (waking, dreaming, deep sleep, and turiya — pure awareness). The fourth state, turiya, is not really a "state" at all — it is the witness-consciousness that underlies and illuminates all three ordinary states, never itself an object of experience, always the subject. Turiya is to the three states as the screen is to the movies projected on it: it makes them possible without participating in their content. This is the most precise Sanskrit formulation of what Plotinus calls the One (the source of all experience that cannot itself be experienced as an object), what the Bardo Thodol calls the Clear Light (the naked awareness underlying all mental formations), and what the Apocryphon calls the Monad (surrounded by silence, not an object among objects).',
+  crossTradition: [
+    { label: 'Bardo Thodol — the Clear Light as the ground of all states of consciousness', textId: 'bardo-thodol', note: 'The Mandukya\'s turiya — pure awareness that underlies and illuminates waking, dreaming, and deep sleep — and the Bardo\'s Clear Light (dharmakaya = one\'s own awareness, "vacant, naked, empty") are the closest philosophical parallels in the Eastern traditions. Both describe a fourth state or ground-state of consciousness that is not itself a state but the condition for all states. Both appear most clearly at death (Bardo) or in the deepest meditation (Mandukya).' },
+    { label: 'Plotinus Enneads — the One as the ground of all intellection', textId: 'plotinus-enneads', note: 'Plotinus\' One, which cannot be thought (because thinking requires subject-object duality) but underlies all thought, and the Mandukya\'s turiya, which cannot be known as an object but underlies all knowing, are the most precise Greek-Sanskrit parallel for the ground of consciousness beyond experience. Both are characterized by the same absence of qualities and the same necessary presence: everything happens in them; they are not something that happens.' },
+    { label: 'Apocryphon of John — the Monad surrounded by silence', textId: 'apocryphon-of-john', note: '"Silence is what surrounds him... He is not knowable to any of them." The Apocryphon\'s apophatic Monad and the Mandukya\'s turiya — described only as "not this, not this" (neti neti), not waking, not dreaming, not deep sleep, but their silent witness — are both attempts to describe the pre-predicate ground from which all experience and all language arise.' },
+    { label: 'Gospel of Thomas L.77 — the light within all things', textId: 'gospel-of-thomas', note: 'Thomas L.77: "I am the light that is above them all." The Mandukya\'s turiya as the light-like awareness that illuminates all three states (as the sun illuminates all things without being a thing among things) and Thomas\'s divine light that is "above all" yet present in wood and stone — both describe a ground-awareness that is the condition for all experience while not being a particular experience itself.' },
+  ],
+  translations: [
+    { id: 'gambhirananda', label: 'Gambhirananda 1958 (T1)' },
+    { id: 'sanskrit', label: 'Sanskrit (original)' },
+  ],
+  sections: [
+    {
+      heading: 'OM and the Four States (1–7)',
+      verses: [
+        {
+          ref: '1–2',
+          text: 'OM — all this is the syllable OM. All that has been, all that is, all that will be — all this is OM. And that which is beyond the three times — that too is OM. All this is, in truth, Brahman. This Self is Brahman. This Self has four quarters.',
+          textVersions: {
+            gambhirananda: 'OM — all this is the syllable OM. All that has been, all that is, all that will be — all this is OM. And that which is beyond the three times — that too is OM. All this is, in truth, Brahman. This Self is Brahman. This Self has four quarters.',
+            sanskrit: 'oṃ ity etad akṣaram idaṃ sarvam | tasyopavyākhyānam | bhūtaṃ bhavad bhaviṣyad iti sarvam oṃkāra eva | yac cānyat trikālātītaṃ tad apy oṃkāra eva',
+          },
+          entities: [
+            { word: 'OM — all this is the syllable OM', node: 'brahman', type: 'concept',
+              note: 'The Mandukya\'s opening claim is maximalist: OM is all time (past, present, future) and what is beyond time. OM is not a symbol for Brahman — it IS Brahman, in sound-form. This is the most precise formulation of the sacred-sound-as-cosmic-reality claim found across traditions: the Hermetic Logos (divine word that is reality, not just represents it), the Johannine Logos ("in the beginning was the Word, and the Word was God"), and the Quranic word of God. All these traditions insist that the divine Word/Sound is not a representation of reality but reality itself in linguistic form.',
+              parallels: [
+                { label: 'John 1 — "In the beginning was the Logos, and the Logos was God"', textId: 'corpus-hermeticum-1', note: 'John 1:1\'s Logos that was "with God" and "was God" from the beginning and the Mandukya\'s OM that IS all things across all time — both identify a sonic/linguistic principle as the ultimate reality, not merely as a symbol for it. In both traditions, the sacred sound/word is not instrumental (a tool for approaching God) but ontological (identical with God).' },
+                { label: 'Tao Te Ching 1 — the Tao that cannot be named (yet is named)', textId: 'tao-te-ching-1', note: 'Laozi: "The Tao that can be named is not the eternal Tao." The Mandukya: OM is all things, including what is beyond the three times. The paradox: OM is the name that encompasses all naming (including the un-nameable). Laozi and the Mandukya both point toward the same insight from opposite directions: Laozi says the ultimate cannot be named; the Mandukya says the name OM encompasses the un-nameable.' },
+              ]
+            },
+          ]
+        },
+        {
+          ref: '3–5',
+          text: 'The first quarter is the waking state, outwardly cognitive, having seven limbs and nineteen faculties, experiencing the gross. The second quarter is the dreaming state, inwardly cognitive, experiencing the subtle. The third is the state of deep sleep: a unified mass of consciousness, consisting of bliss, experiencing bliss — this is the lord of all, the knower of all, the inner controller, the source of all.',
+          textVersions: {
+            gambhirananda: 'The first quarter is the waking state, outwardly cognitive, having seven limbs and nineteen faculties, experiencing the gross. The second quarter is the dreaming state, inwardly cognitive, experiencing the subtle. The third is the state of deep sleep: a unified mass of consciousness, consisting of bliss, experiencing bliss.',
+            sanskrit: 'jāgarita-sthāno bahiṣ-prajñaḥ saptāṅga ekonaviṃśati-mukhaḥ sthūla-bhug vaiśvānaro prathamaḥ pādaḥ',
+          },
+          entities: [
+            { word: 'the state of deep sleep: a unified mass of consciousness', node: 'brahman', type: 'concept',
+              note: 'The third state — deep dreamless sleep (sushupti) — is described as a "unified mass of consciousness" (prajñana-ghana) — pure undifferentiated awareness without content. This state is the closest ordinary human experience gets to the fourth state (turiya) and to Brahman. In deep sleep, the mind\'s activity ceases; there is no subject-object distinction; just pure being. The Mandukya treats this as the closest approximation to liberation available in ordinary life. The Bardo Thodol specifically instructs: recognize the Clear Light that appears in the moment between death and the first hallucinations — this moment corresponds to deep sleep\'s undifferentiated awareness.',
+              parallels: [
+                { label: 'Bardo Thodol — the Clear Light at death as pure undifferentiated awareness', textId: 'bardo-thodol', note: 'The Bardo\'s Clear Light and the Mandukya\'s deep sleep state are the same territory: undifferentiated awareness without content, before the projections of dream or waking reassert themselves. At death, this state arises more powerfully and more clearly than in deep sleep. The Bardo\'s instruction to "recognize it" is the Tibetan parallel to the Mandukya\'s analysis of what deep sleep already contains.' },
+              ]
+            },
+          ]
+        },
+      ]
+    },
+    {
+      heading: 'The Fourth State: Turiya (7)',
+      verses: [
+        {
+          ref: '7',
+          text: 'The fourth is not that which is conscious of the internal, not that which is conscious of the external, nor that which is conscious of both, nor that which is a mass of consciousness, nor that which is conscious, nor that which is not conscious. It is unseen, not relatable, ungraspable, without characteristics, unthinkable, unnameable, the essence of the one self, the negation of all phenomena, peaceful, auspicious, non-dual — this they consider to be the fourth. This is the Self; this should be known.',
+          textVersions: {
+            gambhirananda: 'The fourth is not that which is conscious of the internal, not that which is conscious of the external, nor that which is conscious of both, nor that which is a mass of consciousness, nor that which is conscious, nor that which is not conscious. It is unseen, not relatable, ungraspable, without characteristics, unthinkable, unnameable, the essence of the one self, the negation of all phenomena, peaceful, auspicious, non-dual.',
+            sanskrit: 'nāntaḥ-prajñaṃ na bahiṣ-prajñaṃ nobhayataḥ-prajñaṃ na prajñana-ghanaṃ na prajñaṃ nāprajñam | adṛṣṭam avyavahāryam agrāhyam alakṣaṇam acintyam avyapadeśyam ekātma-pratyaya-sāram prapañcopaśamaṃ śāntam śivam advaitam caturthaṃ manyante sa ātmā sa vijñeyaḥ',
+          },
+          entities: [
+            { word: 'unseen, not relatable, ungraspable, without characteristics, unthinkable, unnameable', node: 'brahman', type: 'concept',
+              note: 'Verse 7 is the most sustained apophatic description in Indian philosophy: turiya is defined entirely by what it is NOT — not internal consciousness, not external, not the unity of both, not a mass, not conscious, not unconscious. Then a sequence of negative attributes: unseen (adrishta), not relatable (avyavaharya), ungraspable (agrahya), characterless (alakshana), unthinkable (acintya), unnameable (avyapadesha). This is the Sanskrit apophatic method applied to the ground of consciousness. The verse ends: "advaitam" — non-dual. Turiya is not a fourth thing alongside the three states; it is the non-dual ground of all three.',
+              parallels: [
+                { label: 'Apocryphon of John — the Monad described entirely through negations', textId: 'apocryphon-of-john', note: '"He is not a being among beings... He does not exist in eternity... He is not knowable... He has no name because no one named him before him." The Apocryphon\'s apophatic Monad and the Mandukya\'s turiya are described through the same method: systematic negation of all positive predications. Both texts use the apophatic method to point toward a reality that precedes and exceeds all categories, including the categories we use to negate.' },
+                { label: 'Plotinus — the One that cannot be thought or named', textId: 'plotinus-enneads', note: '"We must not speak of it but remain silent... We cannot predicate even being of it." Plotinus\' One and the Mandukya\'s turiya are the most precise Greek-Sanskrit parallel: both are the ground of all consciousness and all being, describable only through negation, not a thing among things, yet the condition for all things. Plotinus likely reached this insight through his own philosophical development; the parallel to the Mandukya is structural, not genetic.' },
+              ]
+            },
+          ]
+        },
+      ]
+    },
+    {
+      heading: 'OM as the Four States (8–12)',
+      verses: [
+        {
+          ref: '12',
+          text: 'The fourth state, the turiya, is without parts, without relation, peaceful, auspicious, non-dual. OM is indeed the Self. He who knows this enters the Self through the Self.',
+          textVersions: {
+            gambhirananda: 'The fourth state, the turiya, is without parts, without relation, peaceful, auspicious, non-dual. OM is indeed the Self. He who knows this enters the Self through the Self.',
+            sanskrit: 'amātras caturtho \'vyavahāryaḥ prapañcopaśamaḥ śivo \'dvaita evaṃ oṃkāra ātmaiva | saṃviśaty ātmanātmānaṃ ya evaṃ veda',
+          },
+          entities: [
+            { word: 'enters the Self through the Self', node: 'atman', type: 'concept',
+              note: 'Samvishaty atmanatmanam — "he enters the Self through the Self." This is the Mandukya\'s final formulation of the liberation process: the instrument of liberation (the self that meditates, the self that chants OM) and the destination (the turiya, the ultimate Self) are the same. Liberation is not a journey from here to there but a recognition of identity: the meditating self and the absolute Self are not two. This is tat tvam asi (that art thou) in its most concentrated form — and it is structurally identical to Plotinus\' "the flight of the alone to the Alone," where the soul that returns to the One is not separate from the One it returns to.',
+              parallels: [
+                { label: 'Plotinus — the flight of the alone to the Alone', textId: 'plotinus-enneads', note: '"The flight of the alone to the Alone" — the soul (monos, alone) returns to the One (monon, the Alone). The Mandukya\'s "enters the Self through the Self" (atmanatmanam) and Plotinus\' monos-to-monon are structurally identical: the instrument of the return is the same as the destination. The self that seeks is already what it seeks.' },
+                { label: 'Chandogya Upanishad — tat tvam asi: the seeker is the sought', textId: 'chandogya-6-2', note: '"That art thou" — the atman the student is looking for is already the Brahman. The Mandukya\'s "enters the Self through the Self" is tat tvam asi in its most concentrated form. Both texts insist that the liberation is a recognition, not an acquisition: the seeker is already the sought.' },
+              ]
+            },
+          ]
+        },
+      ]
+    },
+  ]
+};
+
+SCRIPTURE_TEXTS['plato-cave'] = {
+  title: 'Plato — The Allegory of the Cave (Republic VII)',
+  shortTitle: 'Allegory of the Cave',
+  tradition: 'Greek Philosophy',
+  date: 'c. 380 BCE',
+  intro: 'The Allegory of the Cave appears in Plato\'s Republic, Book VII (514a–521b), and is the most famous philosophical parable in Western civilization. Prisoners have been chained in a cave since birth, facing a wall. Behind them a fire burns; between the fire and the prisoners, objects are carried whose shadows are projected on the wall. The prisoners take the shadows for reality — they have never seen anything else. One prisoner is freed, turned around, and led up through the cave into the sunlight. At first blinded and disoriented, he gradually adjusts — first seeing reflections in water, then actual objects, then the sun itself. The freed prisoner returns to the cave to liberate the others; the cave-prisoners resist, and if they could, would kill him. The allegory maps the philosopher\'s educational ascent (paideia) from images (shadows), through mathematical objects, to the Form of the Good (the sun). It is simultaneously an epistemology (levels of knowing), an ontology (levels of being), a psychology (the soul\'s ascent), and a political philosophy (the philosopher-king\'s duty to return). The structural parallels with Gnostic texts are so precise that scholars debate direct influence: Plato\'s cave → Gnostic material world; the shadow-reality → Gnostic illusion created by the Demiurge; the freed philosopher → the Gnostic pneumatic who has received gnosis; the killing of the philosopher = the crucifixion of the Logos.',
+  crossTradition: [
+    { label: 'Apocryphon of John — material world as shadow, gnosis as liberation', textId: 'apocryphon-of-john', note: 'The most precise parallel in the entire corpus. Plato\'s cave prisoners taking shadows for reality and the Apocryphon\'s souls imprisoned in Yaldabaoth\'s material world taking it for ultimate reality — both describe a situation where the normal human condition is one of mistaking a lower-order appearance for ultimate reality, and where liberation (gnosis / emerging from the cave) involves a painful re-orientation toward a higher reality. The Gnostics almost certainly knew the Republic and used its cave imagery in constructing their cosmology.' },
+    { label: 'Gospel of Thomas L.28 — "I found them all drunk, none thirsty"', textId: 'gospel-of-thomas', note: 'Thomas\'s divine observer finding humanity "drunk" and "blind in their hearts" and Plato\'s freed prisoner returning to cave-dwellers who cannot see the truth — both stage the same scene: the one who has seen the higher reality returns to those who are satisfied with the lower, and cannot communicate what they have seen. Both describe the reception as hostile (Thomas\'s "none of them thirsty"; Plato\'s threat to kill the returning philosopher).' },
+    { label: 'Corpus Hermeticum VII — drunk with wine of ignorance', textId: 'corpus-hermeticum-7', note: 'CH VII\'s diagnosis of humanity as "drunk with ignorance, not having tasted immortality" and Plato\'s cave-prisoners content with shadows — both describe the same epistemic situation: a population comfortably habituated to a degraded form of reality, resistant to the higher reality that would disturb their comfort. The Hermetic tradition may be directly developed from Platonic sources here.' },
+    { label: 'Bardo Thodol — the smoky dim light chosen over the blazing Clear Light', textId: 'bardo-thodol', note: 'The Bardo\'s dying consciousness that flees the overwhelming Clear Light and chooses the comfortable dim light of the lower realms, and Plato\'s prisoner who prefers the familiar shadows to the blinding sunlight — both describe the same psychological mechanism: the habituated consciousness finds the familiar more attractive than the true, even when the true is present and accessible.' },
+  ],
+  translations: [
+    { id: 'grube', label: 'Grube/Reeve 1992 (T1)' },
+    { id: 'greek', label: 'Greek (original)' },
+  ],
+  sections: [
+    {
+      heading: 'The Cave and the Prisoners (514a–515c)',
+      verses: [
+        {
+          ref: '514a–515a',
+          text: '"Picture men dwelling in a sort of underground den. From childhood upward they have had their legs and necks chained so that they cannot move, and can only see before them, being prevented by the chains from turning round their heads. Above and behind them a fire is blazing at a distance, and between the fire and the prisoners there is a raised way; and you will see, if you look, a low wall built along the way, like the screen which marionette players have in front of them."',
+          textVersions: {
+            grube: '"Picture men dwelling in a sort of underground den. From childhood upward they have had their legs and necks chained so that they cannot move, and can only see before them, being prevented by the chains from turning round their heads. Above and behind them a fire is blazing at a distance, and between the fire and the prisoners there is a raised way."',
+            greek: 'Ἰδὲ γὰρ ἀνθρώπους οἷον ἐν καταγείῳ οἰκήσει δεσμώτας ἐκ παίδων, ἔχοντας τά τε σκέλη καὶ τοὺς αὐχένας δεδεμένους',
+          },
+          entities: [
+            { word: 'chained so that they cannot move', node: 'tradition-gnosticism', type: 'concept',
+              note: 'The chains that prevent the prisoners from turning around — from seeing the source of the light they experience only as shadows — are Plato\'s image for the epistemic situation of the unphilosophical person. The chains are not physical but psychological: habituation, false belief, social conformity, the comfortable satisfactions of the sense-world. The Gnostic tradition translated this directly: the chains are the Demiurge\'s material creation, and they prevent the divine spark from recognizing the true light above. The cave\'s wall, the fire, and the shadows map onto the Gnostic levels: material world (cave wall), Demiurge\'s creative fire, phenomenal appearances (shadows).',
+              parallels: [
+                { label: 'Apocryphon of John — divine sparks imprisoned in Yaldabaoth\'s material world', textId: 'apocryphon-of-john', note: 'The Gnostic divine spark in matter, prevented from recognizing its true nature by the Demiurge\'s creation, and Plato\'s prisoner chained in the cave, seeing only shadows — are the same metaphysical situation mapped onto different cosmological frameworks. The structural parallel is so precise that Gnostic texts almost certainly adapted Plato\'s cave as their cosmological map.' },
+              ]
+            },
+          ]
+        },
+      ]
+    },
+    {
+      heading: 'The Ascent to the Sun (516a–516e)',
+      verses: [
+        {
+          ref: '516a–516b',
+          text: '"When he approaches the light his eyes will be dazzled and he will not be able to see anything at all of what are now called realities... He will require to grow accustomed to the sight of the upper world. And first he will see the shadows best, next the reflections of men and other objects in the water, and then the objects themselves; then he will gaze upon the light of the moon and the stars and the spangled heaven... Last of all he will be able to see the sun."',
+          textVersions: {
+            grube: '"When he approaches the light his eyes will be dazzled and he will not be able to see anything at all of what are now called realities... He will require to grow accustomed to the sight of the upper world. And first he will see the shadows best, next the reflections of men and other objects in the water, and then the objects themselves; then he will gaze upon the light of the moon and the stars and the spangled heaven."',
+            greek: 'ὁρῶν δὲ ἂν τὸ φῶς ἀχθοῖτο τὰς ὄψεις καὶ φεύγοι ἀποστρεφόμενος πρὸς ἐκεῖνα ἃ δύναται καθορᾶν',
+          },
+          entities: [
+            { word: 'his eyes will be dazzled and he will not be able to see', node: 'tradition-neoplatonism', type: 'concept',
+              note: 'The initial blinding of the freed prisoner is one of the most psychologically precise observations in all philosophy: exposure to a higher level of reality initially disorients and disables the person habituated to a lower level. The sun (the Form of the Good) cannot be looked at directly at first — it requires gradual adaptation through intermediate objects (water reflections, then objects, then moon and stars, then finally the sun). This is the Platonic parallel to the Bardo Thodol\'s instruction: "do not be afraid" of the Clear Light. Both texts acknowledge that the initial encounter with the highest reality is overwhelming — and both insist that the appropriate response is to stay, not flee.',
+              parallels: [
+                { label: 'Bardo Thodol — "do not be afraid" of the overwhelming Clear Light', textId: 'bardo-thodol', note: 'The Bardo\'s instruction to the dying: "do not be afraid" of the blazing Clear Light — do not flee to the comfortable dim lights of the lower realms. The freed prisoner initially flees the sunlight for the comfortable familiar shadows. Both texts identify the fear-and-flight response to the highest reality as the mechanism of continued bondage, and both counsel: endure the initial disorientation; the highest light is your home.' },
+                { label: 'Isaiah 6 — "I am undone!" before the divine throne', textId: 'isaiah-6', note: 'Isaiah\'s "Woe is me! I am lost!" before the divine throne and the freed prisoner\'s blindness upon emerging from the cave — both describe the initial overwhelming of the human consciousness by a higher-order reality. In both cases, the response is not flight but a purification/adaptation that makes sustained engagement possible.' },
+              ]
+            },
+          ]
+        },
+        {
+          ref: '516c',
+          text: '"Last of all he will be able to see the sun, and not mere reflections of it in the water, but he will see it in its own proper place, and not in another; and he will contemplate it as it is. He will then proceed to infer and conclude that this is the element which gives season and years, and is the guardian of all that is in the visible world, and in a certain way the cause of all things which he and his fellows have been accustomed to behold."',
+          textVersions: {
+            grube: '"Last of all he will be able to see the sun, and not mere reflections of it in the water, but he will see it in its own proper place, and not in another; and he will contemplate it as it is. He will then proceed to infer and conclude that this is the guardian of all that is in the visible world, and in a certain way the cause of all things."',
+            greek: 'τελευταῖον δὴ οἴμαι τὸν ἥλιον, οὐκ ἐν ὕδασιν οὐδ᾽ ἐν ἀλλοτρίᾳ ἕδρᾳ φαντάσματα αὐτοῦ, ἀλλ᾽ αὐτὸν καθ᾽ αὑτὸν ἐν τῇ αὑτοῦ χώρᾳ δύναιτ᾽ ἂν κατιδεῖν καὶ θεάσασθαι οἷός ἐστιν',
+          },
+          entities: [
+            { word: 'the sun... the cause of all things', node: 'tradition-neoplatonism', type: 'concept',
+              note: 'The sun as the Form of the Good — the highest principle that is simultaneously the source of all being (it generates all things) and the source of all knowing (it illuminates all things) — is Plato\'s most compact theological statement. The Form of the Good is beyond being (epekeina tès ousias, Republic 509b), beyond thought, the condition for all other Forms. This becomes Plotinus\' One (which is beyond being and knowing), which becomes the Apocryphon\'s Monad (not a being among beings), which becomes the Mandukya\'s turiya (not conscious, not unconscious, not any of the states it illuminates). The sun-as-Good is the source of the entire Western apophatic tradition.',
+              parallels: [
+                { label: 'Plotinus Enneads — the One as the sun of all being and knowing', textId: 'plotinus-enneads', note: 'Plotinus built his entire system on Plato\'s sun analogy: the One is to Intellect and Being as the sun is to visible things — their cause and illuminator without being one of them. The One "overflows" into Intellect as the sun "overflows" light. Plato\'s cave allegory is the seed; Plotinus\' Enneads is the full growth.' },
+                { label: 'Hymn to Aten — the sun as the sole source of all life', textId: 'hymn-to-aten', note: 'Akhenaten\'s solar monotheism and Plato\'s Form of the Good as the "sun" of the intelligible world are cross-cultural independent developments of the same solar theology: the sun as the most appropriate image for the highest divine principle because it is simultaneously the source of life, the condition for visibility, and the one thing that illuminates everything without itself being visible to the unaided eye.' },
+              ]
+            },
+          ]
+        },
+      ]
+    },
+    {
+      heading: 'The Return to the Cave (516e–517a)',
+      verses: [
+        {
+          ref: '516e–517a',
+          text: '"And now, consider this: if this man were to go down again and take his seat in his old place, would not his eyes be filled with darkness coming so suddenly out of the sun? And if he should have to compete in making out those shadows with the prisoners who had never moved out of the den, while his sight was still weak... would he not be ridiculous? And they would say that he had come back from his journey above with his eyes ruined; and that it was better not even to think of ascending."',
+          textVersions: {
+            grube: '"And now, consider this: if this man were to go down again and take his seat in his old place, would not his eyes be filled with darkness coming so suddenly out of the sun? And if he should have to compete in making out those shadows with the prisoners who had never moved out of the den... would he not be ridiculous? And they would say that it was better not even to think of ascending."',
+            greek: 'εἰ δέ τις αὐτὸν βιάζοιτο εἰς τὸ φῶς ἀνάγειν, ἆρα οὐκ ἀλγεῖν τε ἂν καὶ ἀγανακτεῖν ἑλκόμενον',
+          },
+          entities: [
+            { word: 'they would say it was better not even to think of ascending', node: 'tradition-neoplatonism', type: 'concept',
+              note: 'The cave-dwellers\' verdict on the returning philosopher — "it was better not even to think of ascending" — is Plato\'s precise description of the social-religious establishment\'s response to the philosopher, and it is the direct anticipation of Socrates\' trial and execution (Republic was written after Socrates\' death). The returning philosopher is killed because his presence challenges the social order built on the shared delusion of the shadows. This maps to: Jesus returning to the world (John\'s Logos in darkness that does not receive it), the Gnostic pneumatic returning to teach those who prefer ignorance (Thomas L.28: "none of them thirsty"), and the Hermetic Hermes commissioned to teach those who are drunk with ignorance.',
+              parallels: [
+                { label: 'Gospel of Thomas L.28 — "I found them all drunk; none thirsty"', textId: 'gospel-of-thomas', note: 'Thomas\'s divine figure finding humanity "blind in their hearts" and offering knowledge they do not want, and Plato\'s returning philosopher offering liberation to cave-dwellers who resist and would kill him — both describe the same reception: the one who has seen the higher reality returns, and the habituated prisoners prefer their familiar darkness. The structure is identical; the traditions are independent.' },
+              ]
+            },
+          ]
+        },
+      ]
+    },
+  ]
+};
+
+SCRIPTURE_TEXTS['surah-ya-sin'] = {
+  title: 'Surah Ya-Sin (36) — The Heart of the Quran',
+  shortTitle: 'Surah Ya-Sin',
+  tradition: 'Islamic',
+  date: 'c. 615–620 CE (Meccan)',
+  intro: 'Surah Ya-Sin is the 36th chapter of the Quran and is called by the Prophet Muhammad (according to hadith) "the heart of the Quran." It is recited at death-beds, funerals, and moments of crisis across the Islamic world. The surah begins with the mysterious Arabic letters "Ya Sin" — two of the fourteen ḥurūf muqaṭṭaʿāt (disconnected letters) whose meaning is known only to God — establishing immediately that the Quran contains divine speech that exceeds human comprehension. The surah then establishes the prophetic mission (the messenger is on the straight path), tells the parable of the city that rejected three messengers, reflects on cosmic signs (the alternation of day and night, the phases of the moon, ships that sail the sea), addresses the resurrection (the dried bones revived, the fire struck from green wood), and closes with the declaration of divine creative power: "His command, when He wills a thing, is only that He says to it: \'Be!\' and it is." This "Be!" (Kun) is the Quranic Logos-equivalent — the creative divine word through which all things come into being, directly parallel to John 1:3 ("through him all things were made"), the Hermetic Logos, and the Memphite Theology\'s Ptah who speaks creation into existence.',
+  crossTradition: [
+    { label: 'John 1 — the Logos through which all things were made', textId: 'corpus-hermeticum-1', note: 'Quran 36:82: "His command, when He wills a thing, is only that He says to it: \'Be!\' and it is." John 1:3: "Through him [the Logos] all things were made." Memphite Theology: Ptah "created through that which his heart thought and his tongue commanded." All three traditions identify a divine creative Word/Command as the mechanism of creation. The Quranic Kun fa-yakun (Be! and it is) is the most economical formulation: divine will expressed as speech = existence.' },
+    { label: 'Memphite Theology — Ptah creates through heart and tongue', textId: 'memphite-theology', note: 'The Memphite Theology\'s Ptah who creates through the heart (Atum/conception) and tongue (Thoth/speech) and the Quran\'s God who creates through the single command "Kun" (Be!) are parallel theologies of creative speech. Both locate the creative act in a divine word-utterance; both insist that the word is not separate from the thing created — when God/Ptah speaks, the thing immediately is.' },
+    { label: 'Ibn Arabi Fusus — the Logos as the divine self-disclosure', textId: 'ibn-arabi-fusus', note: 'Ibn Arabi\'s Haqiqa Muhammadiyya (the pre-eternal Logos through which all things are created) and Surah Ya-Sin\'s Kun (the divine creative word) are the systematic theological and the scriptural versions of the same Islamic Logos theology. Ibn Arabi built his entire system on the Quranic creative command, reading it as the expression of the divine self-disclosure (tajalli) through the medium of the divine names.' },
+    { label: 'Sefer Yetzirah — letters and words as creative instruments', textId: 'sefer-yetzirah', note: 'The Sefer Yetzirah\'s thirty-two paths of wisdom (ten sefirot + twenty-two letters) through which God created the world and the Quran\'s single creative command "Kun" (Be!) represent the most concentrated and the most expanded versions of the same linguistic theology of creation. Both traditions hold that divine language is not a description of reality but its creator.' },
+  ],
+  translations: [
+    { id: 'abdel-haleem', label: 'Abdel Haleem 2004 (T1)' },
+    { id: 'arabic', label: 'Arabic (original)' },
+  ],
+  sections: [
+    {
+      heading: 'The Disconnected Letters and the Oath (36:1–6)',
+      verses: [
+        {
+          ref: '36:1–4',
+          text: 'Ya Sin. By the wise Quran, you [Muhammad] are truly one of the messengers, on a straight path, with a revelation from the Almighty, the Lord of Mercy.',
+          textVersions: {
+            abdel_haleem: 'Ya Sin. By the wise Quran, you [Muhammad] are truly one of the messengers, on a straight path, with a revelation from the Almighty, the Lord of Mercy.',
+            arabic: 'يٰسٓ  وَٱلۡقُرۡءَانِ ٱلۡحَكِيمِ  إِنَّكَ لَمِنَ ٱلۡمُرۡسَلِينَ  عَلَىٰ صِرَٰطٖ مُّسۡتَقِيمٖ',
+          },
+          entities: [
+            { word: 'Ya Sin', node: 'quran', type: 'symbol',
+              note: 'The ḥurūf muqaṭṭaʿāt — the disconnected letters at the beginning of 29 Quranic surahs — are one of the most discussed mysteries in Islamic theology. They are spelled out as letters (Ya, Sin) but their meaning is unknown. Classical interpretations range from abbreviations for divine names, to symbolic numbers, to the claim that they are divinely spoken sounds whose meaning is beyond human comprehension. The disconnected letters establish an apophatic dimension at the very beginning of these surahs: the divine speech contains elements that exceed the comprehension of those who receive it.',
+              parallels: [
+                { label: 'Tao Te Ching 1 — the Tao that cannot be named, yet is named', textId: 'tao-te-ching-1', note: 'The Quran\'s disconnected letters that carry divine meaning beyond human comprehension and the Tao Te Ching\'s "the Tao that can be named is not the eternal Tao" are both strategies for marking the limit of human language before the divine: both insist that the divine communication exceeds what the human recipient can fully decode. The mystery is built into the medium.' },
+              ]
+            },
+          ]
+        },
+      ]
+    },
+    {
+      heading: 'Signs in Creation (36:37–44)',
+      verses: [
+        {
+          ref: '36:37–40',
+          text: 'Another sign for them is the night: We strip the day from it and there they are in darkness. The sun, too, runs its course to a fixed resting place; that is the decree of the Almighty, the All Knowing. We have ordained phases for the moon until it becomes like an old curved date-stalk. The sun is not permitted to catch up the moon, nor can the night outrun the day: each floats in its own orbit.',
+          textVersions: {
+            abdel_haleem: 'Another sign for them is the night: We strip the day from it and there they are in darkness. The sun, too, runs its course to a fixed resting place; that is the decree of the Almighty, the All Knowing. We have ordained phases for the moon until it becomes like an old curved date-stalk. The sun is not permitted to catch up the moon, nor can the night outrun the day: each floats in its own orbit.',
+            arabic: 'وَءَايَةٞ لَّهُمُ ٱلَّيۡلُ نَسۡلَخُ مِنۡهُ ٱلنَّهَارَ فَإِذَا هُم مُّظۡلِمُونَ  وَٱلشَّمۡسُ تَجۡرِي لِمُسۡتَقَرّٖ لَّهَاۚ ذَٰلِكَ تَقۡدِيرُ ٱلۡعَزِيزِ ٱلۡعَلِيمِ',
+          },
+          entities: [
+            { word: 'each floats in its own orbit', node: 'tradition-islam', type: 'concept',
+              note: 'Kullun fi falak yasbaḥun — "each floats/swims in its own orbit." The Arabic yasbaḥun (to swim) applied to celestial bodies is one of the Quran\'s most beautiful astronomical images: sun and moon "swimming" through their orbits with the fluid grace of swimmers. This is both poetic and theologically precise: the celestial order reflects divine decree (taqdir). The Quran consistently uses natural phenomena as "signs" (ayat) of the divine — the Arabic word for verses of the Quran (ayat) and for natural signs is the same. The cosmos and the text are parallel divine communications.',
+              parallels: [
+                { label: 'Ecclesiastes 1 — the sun rises and sets; the wind circuits; rivers run to the sea', textId: 'ecclesiastes-1', note: 'Ecclesiastes observes the same celestial and natural cycles — sun rising and setting, wind circling, rivers flowing — as evidence of the impermanence and repetitiveness of all earthly things. The Quran observes the same phenomena as evidence of divine order and creative decree. Same observations, opposite theological valuations: for Qohelet, the cycles demonstrate futility; for the Quran, they demonstrate divine wisdom and power.' },
+              ]
+            },
+          ]
+        },
+      ]
+    },
+    {
+      heading: 'The Resurrection Argument (36:77–83)',
+      verses: [
+        {
+          ref: '36:77–79',
+          text: 'Does man not consider that We created him from a drop of fluid? Yet he stands there arguing openly against Us, producing arguments against Us, forgetting his own creation. He asks, "Who can give life back to bones after they have decayed?" Say, "He who created them in the first place will give them life again: He has full knowledge of every act of creation."',
+          textVersions: {
+            abdel_haleem: 'Does man not consider that We created him from a drop of fluid? Yet he stands there arguing openly against Us, producing arguments against Us, forgetting his own creation. He asks, "Who can give life back to bones after they have decayed?" Say, "He who created them in the first place will give them life again: He has full knowledge of every act of creation."',
+            arabic: 'أَوَلَمۡ يَرَ ٱلۡإِنسَٰنُ أَنَّا خَلَقۡنَٰهُ مِن نُّطۡفَةٖ فَإِذَا هُوَ خَصِيمٞ مُّبِينٞ',
+          },
+          entities: [
+            { word: 'Who can give life back to bones after they have decayed?', node: 'tradition-islam', type: 'concept',
+              note: 'The resurrection skeptic\'s challenge — "who can give life back to decayed bones?" — and the Quran\'s response — "He who created them in the first place" — is the most compact statement of the resurrection argument: the same power that created from nothing can recreate from ruins. This is the Islamic version of the argument Paul makes in 1 Corinthians 15 (God who created the seed can transform the seed into a plant), and of the argument Ezekiel makes in his Valley of Dry Bones vision (37): the God who first spoke life into clay can speak it again into dry bones.',
+              parallels: [
+                { label: '1 Corinthians 15 — "what you sow does not come to life unless it dies"', textId: '1-corinthians-15', note: 'Paul\'s resurrection argument (the seed must die to become the plant; God transforms the same matter into a higher form) and the Quran\'s (He who created from a drop of fluid can recreate from dry bones) are parallel arguments from the same theological premise: creative power that produced existence from nothing can reproduce existence from apparent nothingness.' },
+              ]
+            },
+          ]
+        },
+        {
+          ref: '36:82–83',
+          text: 'When He wills something to be, His way is only to say, "Be!" — and it is! Glory be to Him who controls all things! You will all be returned to Him.',
+          textVersions: {
+            abdel_haleem: 'When He wills something to be, His way is only to say, "Be!" — and it is! Glory be to Him who controls all things! You will all be returned to Him.',
+            arabic: 'إِنَّمَآ أَمۡرُهُۥٓ إِذَآ أَرَادَ شَيۡـًٔا أَن يَقُولَ لَهُۥ كُن فَيَكُونُ',
+          },
+          entities: [
+            { word: '"Be!" — and it is', node: 'logos', type: 'concept',
+              note: 'Kun fa-yakun — "Be! and it is." This is the Quranic Logos formulation: the divine creative act is a speech act, and the gap between command and fulfillment is zero. The Arabic subjunctive (yakun — "it becomes/is") immediately follows the imperative (kun — "be!") — the becoming is simultaneous with the willing. This is the Islamic formulation of the Johannine Logos ("through him all things were made"), the Memphite Ptah\'s creative speech, the Hebrew divine word that does not return empty, and the Sefer Yetzirah\'s letters that create. All these traditions converge: the divine creates through language, and divine language is not a representation of what is but the cause of what is.',
+              parallels: [
+                { label: 'Memphite Theology — Ptah creates through the tongue speaking what the heart conceived', textId: 'memphite-theology', note: 'Memphite Theology: "And so Ptah was satisfied, after he had made all things and all divine words." The Quran\'s "Kun fa-yakun" and the Memphite Theology\'s creative tongue of Ptah are both theologies of creation through divine speech, separated by 2,000 years and a continent. The Memphite theology is the oldest; the Quranic formulation is the most economical. Both establish: divine speech = existence.' },
+                { label: 'John 1 — "the Logos... all things came into being through him"', textId: 'corpus-hermeticum-1', note: 'John 1:3: "All things came into being through him [the Logos], and without him not one thing came into being." Quran 36:82: "Kun fa-yakun" — "Be! and it is." Both locate the creative act in a divine Word/Logos, and both declare that nothing exists except through that Word. The theological parallel was recognized by Islamic philosophers from al-Kindi onward, and was the basis for Ibn Arabi\'s synthesis of Quranic and Neoplatonic Logos theology.' },
+              ]
+            },
+          ]
+        },
+      ]
+    },
+  ]
+};
