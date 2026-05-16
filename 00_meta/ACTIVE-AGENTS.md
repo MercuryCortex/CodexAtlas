@@ -1516,3 +1516,9 @@ Files: sacred-mask.md · sphinx-symbol.md · great-work.md
 **Status: FINISHED**
 Files: divine-twins.md · sacred-bull.md · sacred-number-eight.md
 - 258 total symbols · 15145 edges · 0 YAML errors · 0 dead links · commit 3a519d5
+
+## Goblin 19B — Dying-Rising God / Primordial Waters / Sacred Oak
+**Status: FINISHED**
+Files: sacred-harvest.md · cosmic-ocean.md · sacred-oak.md
+- Note: dying-rising-god substituted → sacred-harvest (06_themes/dying-rising-god.md pre-existed); primordial-waters substituted → cosmic-ocean (09_symbols/nun-primordial-waters.md pre-existed)
+- 261 total symbols · 15200 edges · 0 YAML errors · 0 dead links · commit a63cecd
