@@ -110,4 +110,13 @@ window.OBSERVATIONS_DATA = [
     evidence: ['dying-rising-god', 'world-mountain', 'sacred-void', 'serpent-cosmic-enemy'],
   },
 
+  {
+    id: 'boethius-modal-mistranslation',
+    title: 'Western Sacred Music Was Built on a Known Transmission Error',
+    category: 'ANOMALY',
+    summary: 'Boethius (c. 510 CE) mistranslated the Greek modal names in De Institutione Musica. The entire Western church modal tradition — 900 years of Gregorian chant and medieval polyphony — is built on modes that bear Greek names but are not the Greek modes those names described.',
+    body: 'When Boethius transmitted Greek music theory to the Latin West, he assigned the Greek modal names (Dorian, Phrygian, Lydian, Mixolydian) to scales in the wrong order — offset by one step from what Greek theorists meant by those names. The Western "Dorian" mode is not the Greek Dorian mode. This is not a recently discovered error: it is documented and acknowledged in medieval music theory and modern musicology. Boethius likely matched modes to their Greek emotional associations rather than their precise scale structures, producing a plausible but structurally incorrect mapping.\n\nThe consequences are enormous. Gregory I\'s Gregorian chant codification (c. 590–604 CE) used the Boethian-not-Greek modal framework. Every medieval composer, theorist, and liturgical musician for 900 years operated within a system built on this mistranslation. The Byzantine church, which had direct continuity with Greek practice, used the Greek modes correctly in its Octoechos system — producing a situation where the Eastern and Western churches were both calling their modes "Dorian" and "Phrygian" but meaning entirely different things.\n\nThe anomaly this creates for the vault: the most studied and preserved music tradition in Western history — Gregorian chant, the direct ancestor of all Western classical music — is simultaneously a 900-year living tradition AND a 900-year misreading of its own claimed source. It did not produce inferior music by being wrong. It produced a coherent new modal system with its own internal logic, emotional associations, and theological function. The transmission error was generative.\n\nThis is the musical equivalent of the Sator Square traveling from Roman paganism into Ethiopian Orthodox Christianity over 2,000 years — meaning migrates intact while origin dissolves. Transmission amnesia applies not just to what is transmitted but to whether it was transmitted correctly.',
+    evidence: ['music-boethius-de-musica', 'music-gregorian-modes', 'music-scale-transmission-chain'],
+  },
+
 ];
