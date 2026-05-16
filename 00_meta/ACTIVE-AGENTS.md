@@ -4,6 +4,18 @@ _Hand-maintained. Each agent currently working in the vault appends a claim bloc
 
 ---
 
+## ~~goblin-pattern-mystery-1 — symbols / sacred pattern + mystery thread — started 2026-05-16 — FINISHED 2026-05-16~~
+- ~~Owning: `09_symbols/arabesque-girih.md` (NEW), `09_symbols/philosophers-stone.md` (NEW), `09_symbols/labyrinth.md` (NEW), `09_symbols/gorgoneion.md` (NEW)~~
+- ~~Status: finished — files swept into commit 7c0d3b8 by slug-normalize sweep; STATUS.md logged~~
+
+---
+
+## ~~opus-dev-panel-1 — Dev panel + Pantheon-v2 parity — started 2026-05-17 — DONE~~
+- ~~Owned: `src/js/dev-panel.js` (NEW), `src/js/views/pantheon-v2.js`, `src/styles/app.css`, `index.html`, `scripts/serve-node.js` (NEW), `.claude/launch.json`~~
+- ~~Status: done~~
+
+---
+
 ## ~~sonnet-sacred-center-1 — omphalos + labyrinth + mandorla symbol upgrades — finished 2026-05-16 — DONE~~
 - ~~Owned: `09_symbols/omphalos.md` (augmented), `09_symbols/labyrinth.md` (augmented), `09_symbols/mandorla.md` (augmented)~~
 - ~~Goal: Research briefing incorporated — Cusco/ceque omphalos + Septuagint bridge + Egyptian labyrinth + Santa Maria Maggiore mandorla earliest attestation~~
@@ -11,10 +23,10 @@ _Hand-maintained. Each agent currently working in the vault appends a claim bloc
 
 ---
 
-## goblin-divine-motion-1 — symbols / divine motion + cosmic dance thread — started 2026-05-16 — IN PROGRESS
-- Owning: `09_symbols/nataraja.md` (NEW), `09_symbols/bodhi-tree.md` (NEW), `09_symbols/shankha-conch.md` (NEW), `09_symbols/ollin.md` (NEW)
-- Goal: Shiva's cosmic dance→physics win (CERN Nataraja); Bodhi Tree as World Tree / Buddhist axis mundi; conch shell cross-tradition (Triton/shofar/Gjallarhorn); Ollin movement glyph as cosmic maintenance
-- Status: in-progress
+## ~~goblin-divine-motion-1 — symbols / divine motion + cosmic dance thread — started 2026-05-16 — DONE~~
+- ~~Owning: `09_symbols/nataraja.md` (NEW), `09_symbols/bodhi-tree.md` (NEW), `09_symbols/shankha-conch.md` (NEW), `09_symbols/ollin.md` (NEW)~~
+- ~~Goal: Shiva's cosmic dance→physics win (CERN Nataraja); Bodhi Tree as World Tree / Buddhist axis mundi; conch shell cross-tradition (Triton/shofar/Gjallarhorn); Ollin movement glyph as cosmic maintenance~~
+- ~~Status: done — commit goblin-divine-motion-1~~
 
 ---
 
