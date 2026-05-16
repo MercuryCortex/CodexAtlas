@@ -14,6 +14,13 @@ _Hand-maintained. Each agent currently working in the vault appends a claim bloc
 
 ---
 
+## goblin-primordial-matter-1 — symbols / primordial matter thread — started 2026-05-16 — IN PROGRESS
+- Owning: `09_symbols/prima-materia.md` (NEW), `09_symbols/nun-primordial-waters.md` (NEW), `09_symbols/chaos-primordial.md` (NEW), `09_symbols/tyet-isis-knot.md` (NEW)
+- Goal: Pre-creation void symbols across traditions; Nun+Chaos+Tohu+Tiamat+Prima Materia MASSIVE WIN; Tyet protective knot cross-tradition
+- Status: in-progress
+
+---
+
 ## latin-sikh-1 — Latin Christianity tradition + Vasco da Gama + Polycarp upgrades — started 2026-05-16 — IN FLIGHT
 - Owning: `07_traditions/tradition-latin-christianity.md` (NEW), `04_persons/vasco-da-gama.md` (NEW), `02_documents/_phase-4-late-antiquity/phase-4-066-polycarp-philippians.md` (metadata → partial), `02_documents/_phase-4-late-antiquity/phase-4-067-martyrdom-of-polycarp.md` (metadata → partial)
 - Goal: Resolve 5+ dead wikilinks; Filioque/Scholasticism/Aristotle-via-Islam chain; martyrology genre origin; cult-of-saints transmission
