@@ -153,9 +153,11 @@ _Hand-maintained. Each agent currently working in the vault appends a claim bloc
 
 ---
 
-## ritual-greek-roman-mesopotamian-1 — 7 Greek/Roman/Mesopotamian ritual nodes in 14_rituals/ — IN PROGRESS (2026-05-17)
-- Owning: `ritual-olympic-games.md`, `ritual-roman-triumph.md`, `ritual-roman-saturnalia.md`, `ritual-vestal-virgins.md`, `ritual-akitu-new-year.md`, `ritual-sacred-marriage-hieros-gamos.md`, `ritual-divination-mesopotamian.md`
-- Status: IN PROGRESS
+## ~~ritual-greek-roman-mesopotamian-1 — 7 Greek/Roman/Mesopotamian ritual nodes in 14_rituals/ — FINISHED (2026-05-17)~~
+- ~~Owned: `ritual-olympic-games.md`, `ritual-roman-triumph.md`, `ritual-roman-saturnalia.md`, `ritual-vestal-virgins.md`, `ritual-akitu-new-year.md`, `ritual-sacred-marriage-hieros-gamos.md`, `ritual-divination-mesopotamian.md`~~
+- ~~Build: 69 ritual nodes · 17,253 edges · 0 YAML errors · 0 dead links introduced — commit b1ab96e~~
+- ~~MASSIVE WINS: (1) Saturnalia 5-tradition inversion convergence — Roman/Jewish Purim/Hindu Holi/Feast of Fools/Carnival: five independent proofs of scheduled inversion as hierarchy-maintenance technology; (2) Vestal Virgins 4-tradition eternal-flame convergence — Roman/Zoroastrian/Jewish menorah/Hindu akhand jyoti: divine fire = community survival across four civilizations; (3) Hieros Gamos 4,000-year transmission chain — Inanna+Shulgi (2100 BCE) → Zosimos alchemy (3rd c. CE) → Rosarium Philosophorum (1550) → Jung Mysterium Coniunctionis (1955); (4) Divination as world's first political institution — Mesopotamian/Chinese oracle bones/Roman augury/Greek Delphi/Yoruba Ifa: five independent mandatory-state-consultation systems; (5) Roman Triumph temporary divine-impersonation — slave whispering "you are mortal" to a man dressed as Jupiter is the Roman Republic in miniature~~
+- ~~Status: FINISHED~~
 
 ---
 
