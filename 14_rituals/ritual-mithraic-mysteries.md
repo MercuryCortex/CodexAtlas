@@ -149,6 +149,34 @@ The Mithraic pattern shows multiple structural convergences:
 - **Zoroastrianism**: Mithra/Mithras is a Zoroastrian figure; the Roman cult is the western end of an Iranian theological tradition that extends east through Persia to India (Mitra in the Rig Veda)
 - **Dionysian mysteries** ([[dionysus-mystery]]): shared sacred meal + initiatory death-rebirth + ecstatic community within Roman mystery religion framework
 
+## Vault Connections
+
+**Structural ritual parallels**
+- [[ritual-eucharist-communion]] — the Mithraic sacred meal (bread and water/wine shared by initiates) is structurally identical to the Christian Eucharist; Justin Martyr and Tertullian both address the parallel directly
+- [[ritual-eleusinian-mysteries]] — companion ancient mystery cult node; both offer initiatory death-rebirth transformation within Roman-era mystery religion; Mithraism differs by being exclusively male with a graded progression
+- [[ritual-initiation-mystery]] — the generic cross-tradition initiation node; Mithraism's seven planetary grades are the most precisely documented ancient initiatory grade system, and the structural model for Freemasonry
+- [[ritual-christmas-nativity]] — December 25 was the Natalis Solis Invicti (Mithras's solar birthday) before it was Christmas; the Philocalian calendar of 354 CE lists both on the same date
+
+**Solar theology nodes**
+- [[sol-invictus]] — Mithras was identified with Sol Invictus in Roman religion; the *Heliodromus* (Sun-runner) grade and solar iconography make this explicit; December 25 is Sol Invictus's birthday
+- [[mithras-roman]] — the deity node for the Roman Mithras figure
+- [[mithraic-cross]] — the Mithraic cross symbol node
+
+**Zoroastrian/Iranian origin**
+- [[mithra-zoroastrian]] — the Iranian Mithra is a deity of contracts, light, and cosmic order; the Roman cult transformed this figure substantially (the bull-slaying tauroctony has no Iranian parallel)
+- [[tradition-persian-zoroastrian]] — the Persian Zoroastrian tradition is the eastern origin of the Mithras figure
+- [[tradition-zoroastrianism]] — the broader Zoroastrian tradition node
+- [[bmac-proto-zoroastrian]] — the Bronze Age Central Asian cultural complex (Bactria-Margiana) that is the proto-Zoroastrian origin of the Mithra figure; the same region where Vedic Mitra originates
+
+**Hermetic cosmic architecture parallel**
+- [[alchemy-hermetic-corpus]] — the Mithraic seven planetary grades map onto the soul's ascent through the same seven planetary spheres described in the Poimandres; both are products of the same Hellenistic astronomical-theological synthesis
+
+**Freemasonry structural descendant**
+- [[tradition-freemasonry]] — the Mithraic seven-grade planetary system directly prefigures Masonic degree structure; underground temple, shared sacred meal, astronomical symbolism, and ancient-wisdom claims are all structurally present in both
+
+**Dionysian parallel**
+- [[dionysus-mystery]] — shared sacred meal + initiatory death-rebirth + ecstatic community within Roman mystery religion framework
+
 ## MASSIVE WIN
 
 **December 25 was Mithras's birthday before it was Christ's birthday, and Christmas is a documented solar feast date adoption.** The Philocalian calendar of 354 CE lists both on the same date, and no earlier Christian source establishes December 25 as the Nativity. The Christian Christmas celebration inherits its date, its solar symbolism (Light of the World born at the darkest point), and its winter festival character from the Mithraic and broader solar cult tradition that it displaced. This is not a conspiracy — it is documented cultural continuity. The solar theology encoded in Christmas (the Light comes into the world at the solstice; the Unconquered Sun is born) is not metaphor borrowed from paganism; it is the pagan solar feast, retained with a new theological referent.

@@ -274,6 +274,13 @@ _Hand-maintained. Each agent currently working in the vault appends a claim bloc
 
 ---
 
+## alchemy-wiring-2 — cross-tradition wikilinks in 6 alchemy/ritual nodes — IN PROGRESS (2026-05-17)
+- Owned: `12_alchemy/alchemy-hermetic-corpus.md`, `12_alchemy/alchemy-rosicrucian-manifestos.md`, `12_alchemy/alchemy-robert-boyle.md`, `12_alchemy/alchemy-newton-principia-alchemy.md`, `14_rituals/ritual-eleusinian-mysteries.md`, `14_rituals/ritual-mithraic-mysteries.md`
+- Task: Add `## Vault Connections` sections with confirmed cross-tradition [[wikilinks]]
+- Status: IN PROGRESS
+
+---
+
 ## ~~goblin-suppressed-sacred-1 — symbols / suppressed sacred symbols thread — started 2026-05-16 — FINISHED 2026-05-16~~
 - ~~Owning: `09_symbols/asherah-pole.md` (NEW), `09_symbols/kaaba-black-stone.md` (NEW), `09_symbols/maypole-irminsul.md` (NEW), `09_symbols/feather-of-maat.md` (NEW)~~
 - ~~Goal: Asherah pole / Yahweh consort MASSIVE WIN (Kuntillet Ajrud Tier-1 epigraphy); Ka'ba sacred-site continuity pre-Islamic→Islamic + tawaf circumambulation cross-tradition; Irminsul destruction as axis-mundi conquest (Charlemagne 772 CE); Feather of Ma'at 5-tradition cosmic-scales-of-judgment pattern~~
@@ -937,6 +944,14 @@ Format:
 - ~~Owning: `09_symbols/minotaur.md` (NEW), `09_symbols/garuda.md` (NEW, id: garuda-symbol), `09_symbols/cow-sacred.md` (NEW)~~
 - ~~Note: `09_symbols/labyrinth.md` already existed — skipped (goblin-pattern-mystery-1 completed it)~~
 - ~~Status: finished — 3 new symbol nodes · 203 total symbols · 14606 edges · 0 YAML errors · 0 new dead links · commit a2261b5~~
+
+---
+
+## philosophy-1 — new class: 15_philosophy/ + 8 founding nodes — started 2026-05-17 — IN-FLIGHT
+- Owning: `15_philosophy/*.md` (8 NEW), `build_data.py` (NODE_DIRS + print line)
+- Goal: Open the `philosophy` node class; create 8 founding nodes (Neoplatonism, Stoicism, Madhyamaka, Advaita Vedanta, Philosophical Daoism, Islamic Philosophy, Confucianism, Pyrrhonian Skepticism)
+- Status: in-flight
+- Last edit: `00_meta/ACTIVE-AGENTS.md`
 
 ---
 
@@ -2114,6 +2129,13 @@ Files: sacred-cauldron.md (NEW) · cerridwen.md (STUB, deity) · bran-the-blesse
 - ~~Build: 56 ritual nodes · 17205 edges · 0 YAML errors · 0 dead links introduced~~
 - ~~MASSIVE WINs: (1) Yasna=Yajna — same word, same ritual, 3500-year separation — most documentable deep-time ritual continuity in human history; (2) Jhator=Dakhma — identical physical technology (elevated vulture-exposure) from opposite theologies (dana vs. purity code) with zero documented contact; (3) Uposatha predates the Buddha — the Buddhist Sabbath is a Vedic borrowing, making all four Abrahamic weekly-sacred-cessation institutions derivable from the same Bronze Age root; (4) Mandala offering inverts all sacrifice logic — the only tradition-record ritual that offers everything then sweeps it away as the theological point~~
 - ~~Status: FINISHED — commits 4953228, b98d8a0, 33619c5, fe67003~~
+
+---
+
+## ritual-wiring-hindu-buddhist-zoroastrian-1 — Vault Connections pass on 16 ritual nodes — IN PROGRESS (2026-05-17)
+- Owned: all 8 Hindu ritual nodes + all 8 Buddhist/Zoroastrian ritual nodes in `14_rituals/`
+- Task: add `## Vault Connections` sections with confirmed wikilinks to deity, tradition, alchemy, and cross-tradition ritual nodes
+- Status: IN PROGRESS
 
 ---
 

@@ -94,6 +94,31 @@ The pattern of alchemy and emerging science as inseparable programs appears acro
 - **The Hermetic Corpus**: Boyle's belief that transmutation was divinely sanctioned knowledge encoded in ancient sources is the Hermetic tradition's claim about all natural knowledge. See [[alchemy-hermetic-corpus]].
 - **Jabir ibn Hayyan**: the sulfur-mercury theory that Boyle's corpuscular chemistry partially replaced was transmitted directly from the Arabic Jabirian corpus through Latin medieval translations. See [[alchemy-jabir-ibn-hayyan]].
 
+## Vault Connections
+
+**Scientific Revolution correspondents**
+- [[alchemy-isaac-newton]] — Boyle and Newton were direct correspondents; their 1679 letter exchange is the primary document linking Newton's gravitational physics to his alchemical framework
+- [[alchemy-newton-principia-alchemy]] — the node documenting how Newton's *Principia* gravitational force concept emerged from this Boyle-Newton alchemical exchange
+
+**Paracelsian transmission chain**
+- [[alchemy-paracelsus]] — Boyle's *Sceptical Chymist* (1661) explicitly targets the Paracelsian Tria Prima; Boyle rejected Paracelsian theory while retaining alchemical goals
+- [[alchemy-tria-prima]] — the Tria Prima (sulfur-mercury-salt) is the specific Paracelsian system Boyle critiques; the corpuscular philosophy partially replaces it
+- [[paracelsus]] — the person node for Paracelsus
+
+**Arabic alchemy transmission**
+- [[alchemy-jabir-ibn-hayyan]] — the sulfur-mercury theory Boyle critiqued was transmitted from Jabir's Arabic corpus through Latin medieval translations; the intellectual chain runs Jabir → Paracelsus → Boyle
+- [[alchemy-al-razi-rhazes]] — Al-Razi's empirical laboratory methods are an early parallel to Boyle's experimental rigor; both demanded experimental evidence while retaining transmutation as a goal
+- [[jabir-ibn-hayyan]] — the person node
+
+**Hermetic root tradition**
+- [[alchemy-hermetic-corpus]] — Boyle's belief that transmutation was divinely sanctioned knowledge encoded in ancient sources derives from the Hermetic tradition's claim about natural knowledge
+- [[alchemy-rosicrucian-manifestos]] — the Rosicrucian synthesis of Hermetic-scientific-Christian thought is the direct intellectual context for Boyle's alchemical theology
+
+**Alchemical concepts in play**
+- [[alchemy-prima-materia]] — Boyle's corpuscular philosophy (all substances = same particles arranged differently) is philosophically grounded in the prima materia concept; transmutation = rearranging corpuscles
+- [[alchemy-philosophers-stone]] — Boyle actively believed in and lobbied Parliament to protect the Philosopher's Stone as a legitimate research goal
+- [[alchemy-sulfur-mercury-theory]] — Boyle's corpuscular chemistry partially descends from the Arabic sulfur-mercury framework via Helmontian chemistry
+
 ## MASSIVE WIN
 
 **The birth-of-chemistry narrative suppresses the fact that its founding figure believed in the Philosopher's Stone, lobbied Parliament for the right to pursue transmutation, and died believing he may have witnessed it.** Robert Boyle is simultaneously the father of modern chemistry and a practicing alchemist — because in 1661, those categories had not yet separated. The Scientific Revolution did not defeat alchemy. It emerged from within alchemy, using alchemical frameworks while demanding stricter experimental accountability. The categories "chemistry" and "alchemy" are a retrospective imposition. Boyle himself did not inhabit them.

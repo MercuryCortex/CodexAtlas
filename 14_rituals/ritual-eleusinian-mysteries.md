@@ -140,6 +140,35 @@ The Eleusinian pattern — initiatory descent → vision → transformed re-emer
 - **Vedic Soma ritual**: the *Rigveda*'s soma was a ritual psychoactive drink (identity debated: Amanita muscaria, Peganum harmala, ephedra) producing divine vision. Both the kykeon and soma are sacred drinks whose identity was deliberately obscured and whose effects were transformative visions. Independent development, 1,000+ years apart.
 - **Christian Eucharist**: the consumption of a sacred substance that transforms the participant and enacts a death-and-resurrection — structural parallel to the kykeon as sacramental entheogen within a death-rebirth initiatory frame. See [[ritual-eucharist-communion]].
 
+## Vault Connections
+
+**Structural ritual parallels**
+- [[ritual-initiation-mystery]] — the generic cross-tradition initiation node; the Eleusinian Mysteries are the primary documented instance of the death-rebirth-revelation initiatory structure that all mystery cult analysis is built on
+- [[ritual-mithraic-mysteries]] — companion mystery cult node; both are ancient Mediterranean mystery cults offering initiatory transformation; Mithraism differs by being exclusively male and offering a graded progression rather than single revelation
+- [[ritual-eucharist-communion]] — the kykeon (sacred drink producing vision and revelation) is structurally parallel to the Eucharist; Church Fathers noted the parallel and attributed it to diabolical imitation
+
+**Deity nodes**
+- [[persephone-greek]] — Persephone's descent and return from the underworld is the theological core of the Eleusinian myth; her reappearance was apparently central to the Night of Revelation
+- [[demeter]] — Demeter's grief and withdrawal of fertility is the ritual's founding myth and the cosmological backdrop for the initiation
+- [[dionysus]] — Iacchus (the torchbearer in the Eleusinian procession) was identified with Dionysus; the Dionysian tradition is explicitly associated with Eleusis
+- [[dionysus-mystery]] — the Dionysian mystery tradition parallel; ecstatic community + initiatory death-rebirth within the same Greek mystery religion framework
+- [[iacchus]] — the Eleusinian torchbearer identified with Dionysus; appears in the Great Procession from Athens to Eleusis
+
+**Orphic tradition**
+- [[orpheus]] — Orphic mysteries are the closest structural parallel to the Eleusinian initiation; both center on navigating the underworld-death-rebirth landscape
+- [[phase-2-040-orphic-gold-tablets]] — the Orphic gold tablets give burial instructions for souls navigating the underworld — a parallel initiation tradition centered on the same death-rebirth cosmology
+- [[music-orpheus-tradition]] — the Orphic musical tradition within which the katabasis (descent) myth operates
+- [[tradition-orphic]] — the Orphic tradition node
+
+**Platonic philosophy**
+- [[plato]] — Plato was almost certainly initiated at Eleusis; his discussion of the soul's fate after death (*Phaedo*, *Phaedrus*) uses Eleusinian initiatory language; if the kykeon was entheogenic, the Theory of Forms was shaped by a chemically-induced mystical state
+- [[phase-3-002-plato-dialogues]] — Plato's dialogues document layer; multiple dialogues use *epopteia* (the vision) and *teletai* (the rites) as key philosophical concepts
+
+**Tradition nodes**
+- [[tradition-eleusinian-mysteries]] — the home tradition node
+- [[tradition-greek-mystery-religion]] — the broader Greek mystery religion tradition
+- [[tradition-neoplatonism]] — Plotinus possibly initiated; Neoplatonic philosophy uses Eleusinian imagery throughout; *henosis* (union with the One) maps onto the Eleusinian Night of Revelation structure
+
 ## MASSIVE WIN
 
 **If the kykeon was entheogenic — and the evidence is substantial — then the Eleusinian Mysteries were the chemically-induced mystical experience that shaped the minds of Plato, Aristotle, Cicero, Marcus Aurelius, Plotinus, and virtually every major figure of classical antiquity.** The Theory of Forms, *eudaimonia*, Stoic cosmology, and Neoplatonic emanation were not developed purely through discursive reasoning. They were developed by men who had encountered, in a Telesterion at Eleusis, something that convinced them the soul survives death and that a higher reality underlies the visible world. Western philosophy's founding intuitions about the immortal soul and the realm of eternal Forms may have first appeared to their discoverers as visions induced by ergot-derived compounds in a barley drink.

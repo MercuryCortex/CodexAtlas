@@ -117,6 +117,34 @@ The integrated knowledge framework Newton embodied — physics, theology, alchem
 - **Neoplatonic theurgy**: Iamblichus's claim that mathematical ratios and musical consonances were means of contact with divine principles — not metaphors but operative forces — is the conceptual ancestor of Newton's belief that physical laws were encoded ancient theological truths. See [[alchemy-hermetic-corpus]].
 - **Kabbalistic gematria**: the practice of finding numerical correspondences between scripture, mathematics, and cosmology — treating number as the meeting point of divine mind and physical world — is structurally identical to Newton's practice of finding the same law in scriptural chronology, musical harmony, and planetary motion.
 
+## Vault Connections
+
+**Companion nodes (Newton's integrated program)**
+- [[alchemy-isaac-newton]] — the primary Newton alchemy node covering his laboratory practice, alchemical manuscripts, and the full scope of his alchemical corpus; this node focuses specifically on the *Principia*-alchemy interface
+- [[alchemy-robert-boyle]] — Newton's 1679 letter to Boyle is the primary document linking his gravitational framework to his alchemical active-principles ontology; Boyle-Newton exchange is the Scientific Revolution's alchemical hinge
+
+**The Emerald Tablet connection**
+- [[alchemy-emerald-tablet]] — Newton copied the Emerald Tablet by hand in multiple versions; its "as above, so below" axiom is a philosophical statement of the inverse-square law applied to celestial mechanics, in Newton's own reading
+- [[emerald-tablet]] — the symbol/document node for the Emerald Tablet
+
+**Rosicrucian and Hermetic context**
+- [[alchemy-rosicrucian-manifestos]] — Newton read Rosicrucian literature extensively; his prisca sapientia thesis — that ancient sages encoded mathematical truths — is the Rosicrucian recovery-of-ancient-wisdom narrative operationalized with mathematical tools
+- [[alchemy-hermetic-corpus]] — Newton's prisca sapientia derives from the Hermetic tradition's authority; he referenced Hermes Trismegistus as one of the ancient sages who knew the heliocentric system and the inverse-square law
+
+**Prisca sapientia concept**
+- [[prisca-theologia]] — Newton's belief that Pythagoras, Hermes, and ancient astronomers had already encoded the inverse-square law in music and myth is the Renaissance *prisca theologia* claim, executed with 17th-century mathematics
+
+**Neoplatonic theurgy parallel**
+- [[neoplatonic-henosis]] — Iamblichus's claim that mathematical ratios were operative forces capable of contacting divine principles is the conceptual ancestor of Newton's belief that physical laws were encoded ancient theological truths
+- [[tradition-neoplatonism]] — the Neoplatonic tradition that informs Newton's "sensorium of God" framework for gravitational force
+
+**Kabbalistic parallel**
+- [[alchemy-kabbalah-alchemy-synthesis]] — Newton's practice of finding the same law in scriptural chronology, musical harmony, and planetary motion is structurally identical to Kabbalistic gematria: number as meeting point of divine mind and physical world
+
+**Islamic natural philosophy parallel**
+- [[alchemy-jabir-ibn-hayyan]] — Jabir's integration of number theory, cosmology, and practical chemistry as one investigation is a structural parallel to Newton's unified knowledge system
+- [[alchemy-al-razi-rhazes]] — Al-Razi's empirical rigor within an alchemical framework is the earlier instance of the same integrated-knowledge pattern Newton exemplifies
+
 ## MASSIVE WIN
 
 **Newton's famous refusal to explain gravity's mechanism ("I feign no hypotheses") may be a coded admission that he could not explain it mechanically because he privately believed gravitational attraction was an alchemical-theological principle — the active force of divine mind in matter — not a mechanical one.** The inverse-square law of universal gravitation, the foundational equation of classical physics, was derived by a man who simultaneously believed it was encoded in ancient Hermetic and Pythagorean sources, who was actively pursuing the Philosopher's Stone in his laboratory, and who treated astronomy, alchemy, scripture, and mythology as one integrated recovery project. The founding equation of the Scientific Revolution was, in its author's own understanding, a piece of recovered ancient alchemical wisdom.

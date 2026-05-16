@@ -131,3 +131,52 @@ The Corpus Hermeticum participates in three major convergence patterns:
 ## MASSIVE WIN
 
 **The Corpus Hermeticum is the convergence node of late-antique Alexandrian synthesis — Platonic philosophy + Egyptian religious sensibility + Jewish monotheism + early Christian Logos theology, all in one collection, written between 100–300 CE.** The Renaissance rediscovered not an ancient Egyptian original but a late-antique synthesis, which is actually more historically significant. The Corpus is not the source of these traditions — it is the first documented moment when all of them fully interpenetrated each other in a single intellectual project. Casaubon proved the texts are not ancient, but in doing so revealed something more interesting: the late-antique Mediterranean was so thoroughly philosophically synthesized that all four major traditions were producing the same cosmological architecture simultaneously and combining them in Alexandria. The Corpus Hermeticum is the document that proves this.
+
+## Vault Connections
+
+**Poimandres and the Scripture layer**
+- [[poimandres]] — the Poimandres (Corpus Hermeticum I) is the vault's primary scripture node for the text; this alchemy node covers the transmission and dating history
+- [[phase-4-011-corpus-hermeticum-i]] — document layer: the full Corpus Hermeticum I text node
+- [[phase-4-075-corpus-hermeticum-xiii-rebirth]] — Corpus Hermeticum XIII (Rebirth) — the companion initiatory text in the same collection
+
+**Logos theology convergence**
+- [[logos-johannine]] — John 1:1's "In the beginning was the Logos" is the same Alexandrian Logos theology as Poimandres Nous → Logos sequence; same milieu, ~50–100 years apart
+- [[logos-stoic]] — Stoic *Logos Spermatikos* (creative rational principle pervading matter) is one of the Corpus's three source traditions alongside Platonism and Egyptian religion
+- [[logos-cosmic-reason]] — the cross-tradition Logos-as-cosmic-reason hub node connecting all Logos theologies
+
+**Platonic philosophy**
+- [[plato]] — the Platonic tradition is the dominant philosophical framework in the Corpus; Ficino interrupted his Plato translation to produce the Corpus first
+- [[phase-3-002-plato-dialogues]] — Plato's dialogues: source layer for the Demiurge, the World-Soul, and the ascent cosmology the Corpus inherits
+- [[phase-3-022-plato-timaeus-critias-atlantis]] — the *Timaeus* specifically: Demiurge creating the world through Logos/pattern is structurally identical to Poimandres cosmogony
+- [[demiurge-platonic]] — the Platonic Demiurge and the Hermetic Nous/Logos are functionally equivalent creative mediators
+
+**Neoplatonism**
+- [[plotinus]] — Plotinus's Enneads (c. 254–270 CE) are contemporaneous with the later Corpus texts; both emerge from the same Alexandrian philosophical synthesis
+- [[phase-4-019-plotinus-enneads]] — the Enneads document node
+- [[nous-plotinus]] — Plotinus's Nous (Intellect) maps directly onto the Poimandres Nous-as-first-principle
+- [[the-one-plotinus]] — the One in Plotinus is the ineffable unity from which Nous emanates, parallel to the primal Nous in the Hermetic sequence
+- [[neoplatonic-henosis]] — the goal of Neoplatonic practice (union with the One) = the Hermetic soul's return to the primal Nous
+- [[tradition-neoplatonism]] — the tradition node for Neoplatonism
+- [[music-neoplatonic-theurgy-sound]] — Neoplatonic theurgy (Iamblichus) used sound as a vehicle for the same ascent the Corpus describes verbally
+
+**Egyptian transmission**
+- [[thoth]] — Hermes Trismegistus is the syncretic merger of Greek Hermes and Egyptian Thoth; the Corpus claims Egyptian origin through this figure
+- [[hermes-trismegistus]] — the person/figure node for the Corpus's pseudepigraphic author
+
+**Gnostic cosmology**
+- [[sophia-gnostic]] — the Valentinian Sophia's descent into matter and rescue by Christ is the same drama as the Hermetic soul's entrapment in matter and return to Nous; both are Alexandrian gnostic traditions
+- [[the-pleroma]] — the Valentinian divine fullness from which Sophia falls is parallel to the Hermetic primal Nous from which souls descend
+- [[sophia-pleroma]] — the Sophia-within-Pleroma concept node
+- [[anthropos-gnostic]] — the Gnostic Anthropos (heavenly Human) parallels the Hermetic vision of divine humanity
+
+**Renaissance transmission**
+- [[marsilio-ficino]] — Ficino's 1463 translation of the Corpus is the critical transmission event; he is the Renaissance bottleneck
+- [[event-ficino-corpus-hermeticum-translation-1463]] — the event node for the 1463 translation
+- [[phase-6-002-ficino-theologia-platonica]] — Ficino's synthesis of Platonic and Hermetic philosophy
+- [[isaac-casaubon]] — Casaubon's 1614 dating is the watershed event; proved the Corpus is Hellenistic Greek, not ancient Egyptian
+- [[event-casaubon-redates-hermetica-1614]] — the event node for the 1614 debunking
+- [[prisca-theologia]] — the Renaissance concept that Hermes, Orpheus, Pythagoras, Plato, and Moses all received the same primal wisdom; the Corpus is its documentary center
+
+**Tradition nodes**
+- [[tradition-hermeticism]] — the home tradition of the Corpus
+- [[tradition-renaissance-hermeticism]] — the Renaissance Hermetic revival sparked by Ficino's translation

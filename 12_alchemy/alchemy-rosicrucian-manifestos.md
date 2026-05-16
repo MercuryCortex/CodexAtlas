@@ -103,6 +103,31 @@ The recovery-of-ancient-wisdom narrative that structures the Rosicrucian manifes
 - **Kabbalistic**: the Zohar (published 1280) was presented as a 2nd-century text rediscovered in the 13th century — same structure of lost-then-found ancient wisdom. The Rosicrucian legend is a Christianized version of this Kabbalistic publication strategy.
 - **Hindu**: the concept that the Vedas are eternal but their understanding declines in each age (Kali Yuga), requiring renewal by teachers who recover their meaning — structural parallel to the Rosicrucian reformation narrative.
 
+## Vault Connections
+
+**Freemasonry downstream**
+- [[tradition-freemasonry]] — the primary documented institutional descendant of the Rosicrucian moment; Masonic lodges incorporated Rosicrucian symbolism (Rose Cross degree) and the same ancient-wisdom recovery narrative
+- [[tradition-scottish-rite-freemasonry]] — the Scottish Rite's higher degrees are explicitly Rosicrucian in structure and symbolism
+
+**Key figures confirmed in vault**
+- [[alchemy-john-dee]] — John Dee's Monas Hieroglyphica (1564) and Enochian project are the direct intellectual precursor; the Rosicrucian vision scales Dee's universal-science project to a European brotherhood
+- [[alchemy-michael-maier]] — Maier defended the Brotherhood in print (Atalanta Fugiens, 1617); likely an insider of the Kassel publishing circle
+- [[robert-fludd]] — Robert Fludd was Maier's English counterpart; his Utriusque Cosmi Historia (1617–1621) represents the Rosicrucian-Hermetic synthesis in visual form
+- [[phase-6-022-fludd-utriusque-cosmi-historia]] — the Fludd document node
+
+**Hermetic root**
+- [[alchemy-hermetic-corpus]] — the Corpus Hermeticum is the root tradition the manifestos claim to recover; the Rosicrucian legend mirrors the Hermetic "ancient wisdom" recovery narrative
+- [[hermes-trismegistus]] — the Hermetic authority figure whose recovered wisdom the Brotherhood claims to possess
+- [[tradition-rosicrucianism]] — the tradition node for the Rosicrucian movement the manifestos spawned
+- [[rose-cross-rosicrucian]] — the symbol node for the Rose Cross, the Brotherhood's central emblem
+
+**Isaac Casaubon synchronicity**
+- [[isaac-casaubon]] — Casaubon's 1614 dating of the Corpus appeared the same year as the Fama; the manifestos filled the ancient-wisdom vacuum Casaubon opened
+- [[event-casaubon-redates-hermetica-1614]] — the 1614 debunking event node
+
+**Kabbalistic structural parallel**
+- [[alchemy-kabbalah-alchemy-synthesis]] — the Kabbalah-alchemy synthesis node; the Zohar's recovery-of-lost-wisdom publication strategy (13th c.) is a structural precedent for the Rosicrucian legend
+
 ## MASSIVE WIN
 
 **The Rosicrucian manifestos are the documented origin point of the modern Western esoteric tradition — and they were almost certainly a Tübingen theology student's satirical fiction that escaped its author's control.** The Brotherhood never existed; Christian Rosenkreutz never lived; the Rose Cross was a literary device. Yet the texts generated 400 years of real organizations, real initiations, real magical orders, and real social movements. The gap between the actual origin (student prank, possibly 1610–1612) and the perceived origin (ancient Egyptian wisdom, 1378) is the foundational gap of the entire Western occult tradition. Every Golden Dawn initiate, every Rosicrucian lodge member, every Freemason operating under the "ancient origins" narrative is participating in a fiction that began as a possibly accidental publication of a university exercise.
