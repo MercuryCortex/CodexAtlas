@@ -4,6 +4,13 @@ _Hand-maintained. Each agent currently working in the vault appends a claim bloc
 
 ---
 
+## ~~music-raga-singularity-1 — comparative time-music investigation — 2026-05-16 — FINISHED~~
+- ~~Owned: `10_music/music-greek-musical-ethos.md` (NEW), `10_music/music-liturgy-of-hours.md` (NEW), `10_music/music-islamic-adhan-maqam.md` (NEW), `src/data/patterns.js` (2 new entries), `src/data/observations.js` (1 new entry)~~
+- ~~Status: FINISHED — commit `4110670`. Build: 44 music nodes · 15756 edges · 0 dead links introduced.~~
+- ~~Key findings: Documented the six-tradition convergence gradient (Greek ethos → Confucian yayue → Islamic adhan → Catholic Liturgy of Hours → Indian raga) showing each tradition had one or two of the required structural conditions. India alone had all four: Nada Brahma ontology + rasa taxonomy + unbroken guru-shishya transmission + dual temple/court patronage. Added observation `why-india-completed-the-clock` (CONCLUSION) and patterns `time-music-gradient-six-traditions` + `preservation-by-periphery`.~~
+
+---
+
 ## ~~music-eastasia-1 — 5 East Asian music cosmology nodes — 2026-05-16 — FINISHED~~
 - ~~Owned: `10_music/music-chinese-pentatonic-cosmology.md` (NEW), `10_music/music-yayue-ritual-music.md` (NEW), `10_music/music-chinese-court-instruments.md` (NEW), `10_music/music-gagaku-japanese.md` (NEW), `10_music/music-korean-aak.md` (NEW)~~
 - ~~Status: FINISHED — commit `79edeea`. Build: 38 music nodes · 15713 edges · 0 dead links introduced.~~
