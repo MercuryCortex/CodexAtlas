@@ -8298,6 +8298,72 @@ function renderAstrologyMode(mode, count) {
   }
 }
 
+// VIEWS.alphabets — Script origins, glyph evolution, letter mysticism. 4 modes.
+// Mode renderers: src/js/alphabets/glyph-viewer.js, origin-chain.js, mysticism.js
+// Registered by alphabet-tab-1, 2026-05-16.
+const _alphabetsState = { mode: 'glyphs' };
+
+VIEWS.alphabets = {
+  title: 'Alphabets',
+  subtitle: 'writing systems · glyph origins · letter mysticism · script evolution',
+  render() {
+    document.getElementById('view-controls').innerHTML = `
+      <button class="btn btn-mini alpha-mode" data-mode="glyphs">glyphs</button>
+      <button class="btn btn-mini alpha-mode" data-mode="origin">origin chain</button>
+      <button class="btn btn-mini alpha-mode" data-mode="mysticism">mysticism</button>
+      <button class="btn btn-mini alpha-mode" data-mode="scripts">scripts</button>
+    `;
+    document.querySelectorAll('.alpha-mode').forEach(btn => {
+      if (btn.dataset.mode === _alphabetsState.mode) btn.classList.add('active');
+      btn.onclick = () => { _alphabetsState.mode = btn.dataset.mode; setView('alphabets'); };
+    });
+
+    const pane = document.createElement('div');
+    pane.className = 'alpha-pane';
+
+    const liveRenderers = { glyphs: '_alphaGlyphs', origin: '_alphaOrigin', mysticism: '_alphaMysticism' };
+    const rendererKey = liveRenderers[_alphabetsState.mode];
+    if (rendererKey && window[rendererKey]) {
+      pane.classList.add('alpha-pane-live');
+      document.getElementById('canvas').appendChild(pane);
+      queueMicrotask(() => window[rendererKey].render(pane));
+      return;
+    }
+    if (_alphabetsState.mode === 'scripts') {
+      renderAlphaScripts(pane);
+      document.getElementById('canvas').appendChild(pane);
+      return;
+    }
+    pane.innerHTML = '<div class="alpha-stub">Loading...</div>';
+    document.getElementById('canvas').appendChild(pane);
+  }
+};
+
+function renderAlphaScripts(pane) {
+  const nodes = DATA.nodes.filter(n => n.type === 'alphabet');
+  pane.innerHTML = `
+    <div class="alpha-scripts-header">
+      <h2>Alphabet &amp; Script Nodes</h2>
+      <span class="alpha-count">${nodes.length} nodes in vault</span>
+    </div>
+    <div class="alpha-scripts-grid">
+      ${nodes.map(n => `
+        <div class="alpha-script-card" data-id="${n.id}">
+          <div class="asc-type">${(n['alphabet-type'] || n.type || '')}</div>
+          <div class="asc-title">${n.title || n.id}</div>
+          <div class="asc-tradition">${n.tradition || ''}</div>
+        </div>
+      `).join('')}
+    </div>
+  `;
+  pane.querySelectorAll('.alpha-script-card').forEach(card => {
+    card.onclick = () => {
+      const node = DATA.nodes.find(n => n.id === card.dataset.id);
+      if (node) showDetail(node);
+    };
+  });
+}
+
 VIEWS.patterns = {
   title: 'Patterns',
   subtitle: 'cross-tradition discoveries — convergences · transmissions · science · inversions',
