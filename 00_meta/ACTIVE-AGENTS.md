@@ -4,6 +4,20 @@ _Hand-maintained. Each agent currently working in the vault appends a claim bloc
 
 ---
 
+## opus-apostolic-fathers-1 — Apostolic Fathers + Josephus upgrades — started 2026-05-16 — IN PROGRESS
+- Owning: `phase-4-061-didache.md`, `phase-4-062-1-clement.md`, `phase-4-063-ignatius-letters.md`, `phase-4-065-shepherd-of-hermas.md`, `phase-4-069-josephus-jewish-war.md`, `phase-4-070-josephus-antiquities-of-the-jews.md`
+- Goal: All six metadata→full; Two Ways / binary cosmology MASSIVE WIN; Eucharist pre-Pauline Jewish form; monepiscopacy invention; "catholic church" first use; martyrdom↔fana MASSIVE WIN; Testimonium Flavianum; Josephus as sole source for Second Temple world
+- Status: in-progress
+
+---
+
+## opus-shinto-jain-sikh-1 — Shinto + Jainism + Sikhism upgrades — started 2026-05-16 — IN PROGRESS
+- Owning: `07_traditions/tradition-shinto.md`, `07_traditions/tradition-jainism.md`, `07_traditions/tradition-sikhism.md`
+- Goal: All three metadata→full; Shinto kami theology + solar parallel + shinbutsu-shūgō; Jain anekāntavāda + ahimsa Gandhi chain + atheistic cosmology; Sikh intentional syncretism + langar egalitarianism + sant-sipāhī MASSIVE WIN
+- Status: in-progress
+
+---
+
 ## goblin-pattern-mystery-1 — symbols / sacred pattern + mystery thread — started 2026-05-16 — IN PROGRESS
 - Owning: `09_symbols/arabesque-girih.md` (NEW), `09_symbols/philosophers-stone.md` (NEW), `09_symbols/labyrinth.md` (NEW), `09_symbols/gorgoneion.md` (NEW)
 - Goal: Islamic sacred geometry quasicrystal win; Philosopher's Stone→Holy Grail; labyrinth universal maze; Gorgoneion apotropaic face
@@ -27,10 +41,10 @@ _Hand-maintained. Each agent currently working in the vault appends a claim bloc
 
 ---
 
-## opus-confucius-mengzi-1 — Confucius + Mengzi stub→full — started 2026-05-16 — IN PROGRESS
-- Owning: `04_persons/confucius.md`, `04_persons/mengzi-person.md`
-- Goal: Upgrade both from stub → full; Axial Age Confucius↔Socrates MASSIVE WIN; junzi↔phronimos↔bodhisattva; four sprouts; innate goodness↔Rousseau↔Augustine; Mandate of Heaven→Locke
-- Status: in progress
+## ~~opus-confucius-mengzi-1 — Confucius + Mengzi stub→full — finished 2026-05-16 — DONE~~
+- ~~Owned: `04_persons/confucius.md`, `04_persons/mengzi-person.md`~~
+- ~~Goal: Upgrade both from stub → full~~
+- ~~Status: done — commits 4f8261f, 6bd2c4f; 13761 edges · 0 dead links introduced; 4 new stubs (matteo-ricci, voltaire, jean-jacques-rousseau, john-locke)~~
 
 ---
 
