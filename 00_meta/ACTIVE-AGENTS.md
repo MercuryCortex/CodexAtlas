@@ -51,10 +51,11 @@ _Hand-maintained. Each agent currently working in the vault appends a claim bloc
 
 ---
 
-## goblin-asian-systems-1 — symbols / East-South Asian systems thread — started 2026-05-16 — IN PROGRESS
-- Owning: `09_symbols/ba-gua.md` (NEW), `09_symbols/enso.md` (NEW), `09_symbols/endless-knot.md` (NEW), `09_symbols/kalachakra.md` (NEW)
+## goblin-asian-systems-1 — symbols / East-South Asian systems thread — started 2026-05-16 — **FINISHED 2026-05-16**
+- Owning: `09_symbols/ba-gua.md` (NEW), `09_symbols/enso.md` (NEW), `09_symbols/endless-knot.md` (NEW), `09_symbols/kalachakra.md` (NEW, id: kalachakra-mandala)
 - Goal: Chinese I Ching system, Zen circle, Buddhist endless knot, Tibetan Wheel of Time; binary-Leibniz-Ifa MASSIVE WIN
-- Status: in-progress
+- Status: finished
+- Delivered: 4 new metadata symbol nodes; MASSIVE WINS: Leibniz 1703 primary source (I Ching = binary code); Yoruba Ifá independent parallel (Bascom 1969 + Eglash 1999 T1); Niels Bohr yin-yang coat of arms; Giotto's O Zen parallel; Celtic/Islamic/Buddhist endless knot triple independent convergence; Kalachakra Time-deity pan-Eurasian (Zurvan/Kronos/Mithraic Aion); Shambhala/Prester John/Avalon hidden-kingdom cluster; sand-mandala = solve et coagula. Build: 106 symbols · 13749 edges · 0 YAML errors · 0 dead links. Last edit: STATUS.md.
 
 ---
 
