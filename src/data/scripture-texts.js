@@ -3482,3 +3482,401 @@ SCRIPTURE_TEXTS['gilgamesh'] = {
     },
   ]
 };
+
+// ── 35. RIG VEDA 10.90 — PURUSHA SUKTA ───────────────────────────────────────
+SCRIPTURE_TEXTS['purusha-sukta'] = {
+  title: 'Rig Veda 10.90 — The Purusha Sukta (Hymn of the Cosmic Person)',
+  shortTitle: 'Purusha Sukta',
+  tradition: 'Vedic / Hindu',
+  date: 'c. 1200–900 BCE (late Rig Veda)',
+  intro: 'The hymn of the Cosmic Person (Purusha) whose voluntary sacrifice by the gods creates the entire universe. His mind becomes the moon, his eye the sun, his mouth Indra and fire, his breath the wind, his navel the atmosphere, his head the sky, his feet the earth. The four social orders emerge from his body. Three-quarters of Purusha is immortal in heaven; one-quarter became this entire world. The Purusha Sukta is the theological origin of the sacrifice-as-cosmic-maintenance doctrine that structures all later Vedic and Hindu religion — and it shares its deep structure with the Egyptian Osiris dismemberment, the Norse Ymir, the Orphic Zagreus, and the Kabbalistic Adam Kadmon: the cosmos is made from the body of a primordial divine being.',
+  crossTradition: [
+    { label: 'Völuspá — Ymir\'s body becomes the world',               textId: 'voluspa',          note: 'The Norse Ymir whose flesh becomes earth, blood becomes sea, bones become mountains, skull becomes the dome of heaven is structurally identical to the Purusha Sukta\'s Purusha whose body becomes all elements of the cosmos. Independent parallel from Norse and Vedic traditions — probably both preserving an even older Proto-Indo-European cosmogonic myth of the divine body as world-material.' },
+    { label: 'Orphic Theogony — Zagreus dismembered, body scattered',  textId: 'orphic-theogony',  note: 'The Orphic Zagreus torn apart by the Titans, his divine substance scattered through matter — and the Purusha Sukta\'s cosmic Person dismembered by the gods to create the world — are the same deep myth: the cosmos is made from the body of a sacrificed divine being. The Orphic and Vedic traditions are both descended from Proto-Indo-European mythology.' },
+    { label: 'Poimandres — the Anthropos descending and dispersing',   textId: 'poimandres',       note: 'The Hermetic divine Anthropos descending into matter and becoming dispersed through the seven planetary spheres echoes the Purusha Sukta\'s Purusha: in both, the cosmic divine Person\'s "body" is distributed through the structure of the world. The Hermetic myth may preserve Vedic influence through the Persian-Mesopotamian-Alexandrian transmission chain.' },
+    { label: 'Sefer Yetzirah — Adam Kadmon, the cosmic primordial human', textId: 'sefer-yetzirah', note: 'The Kabbalistic Adam Kadmon (Primordial Adam) — the cosmic divine human whose body is the template for the created world, whose eyes are the sun and moon — is the Jewish mystical equivalent of the Purusha Sukta\'s Purusha. Both describe a primordial divine human figure whose body IS the cosmos.' },
+  ],
+  translations: [
+    { id: 'doniger',  label: 'Doniger 1981 (T1, The Rig Veda, Penguin)' },
+    { id: 'griffith', label: 'Griffith 1896 (T2, public domain)' },
+    { id: 'sanskrit', label: 'Sanskrit (original)' },
+  ],
+  sections: [
+    {
+      heading: 'I. The Cosmic Person',
+      verses: [
+        {
+          ref: 'RV 10.90.1–4',
+          text: 'The Purusha has a thousand heads, a thousand eyes, a thousand feet. He pervades the earth on all sides and extends beyond it by ten fingers. The Purusha alone is all this — whatever has been and whatever is to be. He is the lord of immortality, and also of whatever grows by food. Such is his greatness, and the Purusha is beyond this. All creatures are one-quarter of him; three-quarters are what is immortal in heaven.',
+          textVersions: {
+            doniger:  'The Man has a thousand heads, a thousand eyes, a thousand feet. He pervaded the earth on all sides and extended beyond it as far as ten fingers... The Man is this all, what has been and what is to be, the lord of the immortal sphere that grows beyond food.',
+            griffith: 'A thousand heads hath Purusha, a thousand eyes, a thousand feet. On every side pervading earth he fills a space ten fingers wide. This Purusha is all that yet hath been and all that is to be; the Lord of Immortality which waxes greater still by food.',
+            sanskrit: 'sahasraśīrṣā puruṣaḥ sahasrākṣaḥ sahasrapāt· sa bhūmiṃ viśvato vṛtvā atyatiṣṭhad daśāṅgulam',
+          },
+          entities: [
+            { word: 'thousand heads, a thousand eyes, a thousand feet', node: 'purusha', type: 'deity',
+              note: 'The Purusha\'s thousand-fold multiplicity — "a thousand heads, a thousand eyes, a thousand feet" — describes not a literal being but the cosmic scope of the divine Person: he is simultaneously present at every point of perception, every place of standing. This is the Vedic form of the Hermetic "Nous containing all space" (CH XI) and the Buddhist "mind is the forerunner of all" (Dhammapada) — the same claim that the cosmic principle of consciousness pervades all reality.',
+              parallels: [
+                { label: 'CH XI — "expand to immeasurable size... you are everywhere at once"', textId: 'corpus-hermeticum-11', note: 'CH XI\'s instruction to expand consciousness to the scale of the cosmos until "you are everywhere at once" is a practice for achieving what the Purusha Sukta describes as the cosmic condition of the Purusha: omnipresence, awareness at every point of the universe simultaneously.' },
+                { label: 'Coffin Text 1130 — the Creator pervading all creation', textId: 'coffin-text-1130', note: 'The Egyptian Creator of CT 1130 who made the four winds, the flood, and every man — present through all creation — is the Egyptian equivalent of the Purusha who "pervades the earth on all sides." Both are descriptions of divine omnipresence as the ground of creation.' },
+              ]
+            },
+            { word: 'three-quarters are what is immortal in heaven', node: 'tradition-hinduism', type: 'concept',
+              note: 'The three-quarters/one-quarter division — "all creatures are one-quarter of him; three-quarters are immortal in heaven" — establishes the fundamental Vedic ontology: the material world is not the whole of reality but only a fraction (one-quarter) of the divine. Three-quarters of Being is transcendent, invisible, and immortal. This is the Vedic form of Plato\'s Being/Becoming distinction (Timaeus 27d): the eternal (three-quarters) vs the temporal material world (one-quarter).',
+              parallels: [
+                { label: 'Plato Timaeus — Being vs Becoming', textId: 'plato-timaeus', note: 'Timaeus 27d\'s eternal Being vs temporal Becoming and the Purusha Sukta\'s three-quarters immortal vs one-quarter material are the same ontological claim: what truly exists (the eternal divine) vastly exceeds what appears in the material world.' },
+              ]
+            },
+          ]
+        },
+      ]
+    },
+    {
+      heading: 'II. The Cosmic Sacrifice',
+      verses: [
+        {
+          ref: 'RV 10.90.6–8',
+          text: 'When the gods spread the sacrifice with the Purusha as the offering, spring was the clarified butter, summer the fuel, and autumn the oblation. They anointed the Purusha, the sacrifice born at the beginning, on the sacred grass. With him the gods sacrificed, and the Sādhyas and the sages. From that sacrifice in which everything was offered, the melted fat was collected, and he made it into those beasts who live in the air, in the forest, and in villages.',
+          textVersions: {
+            doniger:  'When the gods spread the sacrifice with the Man as the offering, spring was the melted butter, summer the fuel, autumn the oblation... When they divided the Man, into how many parts did they apportion him? What do they call his mouth, his two arms and thighs and feet?',
+            griffith: 'When Gods prepared the sacrifice with Purusha as their offering, its oil was spring, the holy gift was autumn; summer was the wood. From that great general sacrifice the dripping fat was gathered up. He formed the creatures of the air, and animals both wild and tame.',
+            sanskrit: 'tam yajñaṃ barhiṣi praukṣan puruṣaṃ jātam agratah· tena devā ayajanta sādhyā ṛṣayaś ca ye',
+          },
+          entities: [
+            { word: 'the gods spread the sacrifice with the Purusha as the offering', node: 'dying-rising-god', type: 'concept',
+              note: 'The sacrifice of the Cosmic Person as the first and paradigmatic sacrifice is the Vedic theological origin of the sacrifice-as-world-maintenance doctrine. By sacrificing Purusha, the gods created the world; by repeating the sacrifice in the yajna (fire sacrifice), humans maintain and renew the world. The sacrificed divine body that becomes the world is the deepest structural parallel between: the Purusha Sukta (Vedic), the Osiris dismemberment (Egyptian), the Zagreus-Titans myth (Orphic), the Norse Ymir, and ultimately the Christian Eucharist (the body of Christ as the sacrificial food that sustains the community). All are the same myth.',
+              parallels: [
+                { label: 'Orphic Theogony — Zagreus torn apart by Titans, body in matter', textId: 'orphic-theogony', note: 'The Orphic Zagreus torn apart by the Titans and his divine substance scattered through Titanic clay — and the Purusha Sukta\'s Purusha sacrificed by the gods to create all beings — are structurally identical. Both: divine cosmic being + sacrificial dismemberment + body becoming the material of the world. Proto-Indo-European shared origin.' },
+                { label: 'Christian Eucharist — "this is my body, given for you"', note: 'The Christian Eucharist theology — Christ\'s body broken and blood poured out as the sacrifice that creates/sustains the community of believers — preserves the same mythological structure as the Purusha Sukta: a divine cosmic Person voluntarily sacrificed, whose body becomes the nourishing substance of creation. The Purusha Sukta may be the oldest surviving version of this myth.' },
+              ]
+            },
+          ]
+        },
+        {
+          ref: 'RV 10.90.13–16',
+          text: 'His mouth became the Brahmin; his two arms were made into the Warrior-Noble; his two thighs were the People; from his two feet the Servant was born. The moon was born from his mind; from his eye the sun was born. Indra and Agni came from his mouth; from his vital breath the Wind was born. From his navel the middle atmosphere sprang; the sky sprouted from his head; the earth from his feet, the four quarters from his ear. Thus they fashioned the worlds.',
+          textVersions: {
+            doniger:  'His mouth became the Brahmin; his arms were made into the Warrior-Prince, his thighs the People, and from his feet the Servants were born. The moon was born from his mind; from his eye the sun was born; Indra and Agni came from his mouth, and from his vital breath the Wind was born.',
+            griffith: 'The Brahmin was his mouth, of both his arms was the Rajanya made. His thighs became the Vaishya, from his feet the Sudra was produced. The Moon was gendered from his mind, and from his eye the Sun had birth; Indra and Agni from his mouth were born, and Vayu from his breath.',
+            sanskrit: 'brāhmaṇo\'sya mukham āsīd bāhū rājanyaḥ kṛtaḥ· ūrū tad asya yad vaiśyaḥ padbhyāṃ śūdro ajāyata',
+          },
+          entities: [
+            { word: 'moon was born from his mind; from his eye the sun was born', node: 'purusha', type: 'concept',
+              note: 'The correspondence between body parts of the cosmic Person and elements of the cosmos — mind/moon, eye/sun, mouth/fire, breath/wind, navel/atmosphere, head/sky, feet/earth — is the Vedic form of the macrocosm-microcosm principle that runs through all Western esoteric tradition. As above, so below: the human body is a microcosm of the cosmic body. This doctrine appears explicitly in: the Stoics (the human body mirrors the cosmic body), the Hermetic "as above, so below" (Tabula Smaragdina), the Kabbalistic Adam Kadmon, and the Chinese five-element correspondence system.',
+              parallels: [
+                { label: 'Coffin Text 1130 — the Creator\'s tears as humanity', textId: 'coffin-text-1130', note: 'The CT 1130 Creator\'s tears becoming men and sweat becoming gods, and the Purusha\'s body-parts becoming cosmic elements — both articulate the same insight: the elements of creation are extensions of the divine body/self, not separate creations.' },
+                { label: 'Sefer Yetzirah — Adam Kadmon\'s body as cosmic map', textId: 'sefer-yetzirah', note: 'The Kabbalistic Adam Kadmon (Primordial Adam) whose body maps onto the sefirot — crown/head, wisdom/right arm, understanding/left arm, and so on — is the Jewish mystical equivalent of the Purusha Sukta\'s body-cosmos correspondence. Both describe the cosmos as a divine body in which each part corresponds to a cosmic element or principle.' },
+              ]
+            },
+          ]
+        },
+      ]
+    },
+  ]
+};
+
+// ── 36. VÖLUSPÁ — THE SEERESS'S PROPHECY ─────────────────────────────────────
+SCRIPTURE_TEXTS['voluspa'] = {
+  title: 'Völuspá — The Seeress\'s Prophecy',
+  shortTitle: 'Völuspá',
+  tradition: 'Norse / Old Norse Eddic Poetry',
+  date: 'c. 900–1000 CE (written down c. 1270 CE; oral tradition much older)',
+  intro: 'The opening poem of the Poetic Edda — a völva (female seeress) summoned by Odin recounts the entire history of the cosmos from creation through Ragnarök to renewal. The poem opens with the primordial void (Ginnungagap), traces the formation of the worlds through Ymir\'s body, the creation of humanity from trees, the corruption of the golden age, the prophecy of Ragnarök, and the final renewal of the world after the destruction. The Völuspá is the most comprehensive mythological creation-to-apocalypse narrative in Norse religion and one of the most structurally complete cosmological texts in any tradition — directly comparable to the Enuma Elish, Popol Vuh, and the Book of Revelation as full-arc cosmic history.',
+  crossTradition: [
+    { label: 'Purusha Sukta — Ymir\'s body creating the world',             textId: 'purusha-sukta',    note: 'The Norse Ymir (whose flesh = earth, blood = sea, bones = mountains, skull = sky-dome) and the Vedic Purusha (whose body parts become all cosmic elements) are structurally identical. Both almost certainly preserve a Proto-Indo-European cosmogonic myth: the cosmos is created from the sacrificed/dismembered body of a primordial giant-being.' },
+    { label: 'Revelation 12–22 — the apocalypse and renewal',               textId: 'revelation-12',    note: 'Ragnarök (the destruction of the gods) followed by the rising of a new earth and the survivor\'s renewal in Gimlé parallels Revelation\'s destruction of the old world followed by the New Jerusalem. Both texts describe an eschatological arc: corruption → catastrophic destruction → divine renewal. Both show possible cross-influence through the Viking Age contact with Christian culture.' },
+    { label: 'Enuma Elish — chaos overcome to create order',                textId: 'enuma-elish-1',    note: 'The Babylonian Marduk defeating Tiamat to create the world from her body parallels Odin and the Aesir killing Ymir and creating the world from his body. Both: divine beings defeat/kill a primordial giant, create the cosmos from the body. The Norse and Babylonian versions both reflect the widespread ancient near-Eastern and Indo-European combat-cosmogony pattern.' },
+    { label: 'Nasadiya Sukta — void before creation',                       textId: 'nasadiya-sukta',   note: 'The Völuspá\'s Ginnungagap ("the yawning void," "no sand, no sea, no cool waves, no earth, no heaven") and the Nasadiya Sukta\'s "neither non-being nor being existed" are the same cosmogonic starting point: the absolute absence of existence before the first creative act.' },
+  ],
+  translations: [
+    { id: 'larrington', label: 'Larrington 1996 (T1, Oxford World\'s Classics)' },
+    { id: 'bellows',    label: 'Bellows 1923 (T2, public domain)' },
+    { id: 'norse',      label: 'Old Norse (original)' },
+  ],
+  sections: [
+    {
+      heading: 'I. The Beginning — Before the World Was',
+      verses: [
+        {
+          ref: 'Völuspá 1–3',
+          text: 'Hearing I ask from the holy races, from Heimdall\'s children, both high and low; thou wilt, Valfather, that I well set forth the fates of the world which I farthest remember — the earliest I recall was when Ymir lived; there was no sand nor sea nor cool waves, no earth below, no heaven above, a yawning void, but grass there was nowhere.',
+          textVersions: {
+            larrington: 'I ask for a hearing from all the holy races, greater and lesser, children of Heimdall... I recall those first worlds: I remember the giants, born at the beginning of time, those who brought me up long ago. Nine worlds I know, the nine abodes of the glorious world-tree, the tree of fate down below the earth.',
+            bellows:    'Of Heimdall\'s sons both high and low, thou wilt, Valfather! that I well recount... Then was the age when nothing was: nor sand nor sea, nor cool waves; earth did not exist, nor heaven above, a yawning void, and grass was nowhere.',
+            norse:      'Hlýðask vil ek· hljóðs biðk allar helgar kindir· meiri ok minni mǫgr Heimdallar· viltu at ek Valfǫðr vel fram telja forn spjǫll fíra þau er fremst um man',
+          },
+          entities: [
+            { word: 'no sand nor sea nor cool waves, no earth below, no heaven above', node: 'primordial-darkness', type: 'concept',
+              note: 'The Völuspá\'s pre-creation void — Ginnungagap ("yawning void/gap") — names an absolute emptiness before all existence: no earth, no sky, no sea, no grass. This is the Norse form of the same universal cosmogonic starting point found in Genesis 1:2 (darkness over the deep), Nasadiya Sukta ("neither being nor non-being existed"), the Hermetic primordial darkness and water (CH III), and the Popol Vuh ("all was in suspense, all calm, in silence... the sky alone, and the vast sea"). All creation narratives begin by naming what was absent before the first creative act.',
+              parallels: [
+                { label: 'Nasadiya Sukta — "neither non-being nor being existed"', textId: 'nasadiya-sukta', note: 'The Vedic "nāsad āsīn no sad āsīt" (neither non-existence nor existence) and the Völuspá\'s list of absences (no sand, no sea, no earth, no sky) are both naming the absolute pre-creation void by negation. The cosmogonic strategy of defining the origin by what was not yet there appears across all traditions.' },
+                { label: 'Genesis 1:2 — "darkness over the face of the deep"', textId: 'genesis-1', note: 'Genesis 1:2: "Now the earth was formless and empty, darkness was over the surface of the deep." The Völuspá\'s Ginnungagap and Genesis\'s formless void are the same primordial emptiness — both describing the condition before God\'s/the gods\' creative intervention.' },
+              ]
+            },
+          ]
+        },
+        {
+          ref: 'Völuspá 4–6 (Ymir and the First Giants)',
+          text: 'Then was the age of Bur\'s sons, when they raised the vault of heaven; they created Miðgarðr, the magnificent earth; the sun shone from the south on the stones of the hall; then the ground grew over with green plants. The sun, the moon\'s companion, threw her right arm around the rim of heaven; the sun knew not what hall she had, the stars knew not what stations they had, the moon knew not what power she had.',
+          textVersions: {
+            larrington: 'Then Bur\'s sons raised the land, they who made the magnificent Midgard; the sun shone from the south on the hall\'s stones, the ground was grown over with green leeks. The sun, the moon\'s companion, lifted her right hand around heaven\'s rim; the sun knew not where her halls were, the stars knew not where their places were, the moon knew not its power.',
+            bellows:    'Then Burr\'s sons lifted the levels of earth, Midgard the mighty there they made; the sun from the south warmed the stones of earth, and green was the ground with growing leeks.',
+            norse:      'Unz Burs synir bǫlverk of gerðu þeir er miðgarð mæran skópu· sól skein sunnan á salar steina þá var grund gróin grœnum lauki',
+          },
+          entities: [
+            { word: 'raised the vault of heaven', node: 'odin', type: 'deity',
+              note: 'In the Norse cosmogony, Odin and his brothers Vili and Vé kill Ymir, the primordial frost-giant, and use his body to make the world: flesh → earth, blood → sea and rivers, bones → mountains, skull → the dome of the sky, brains → clouds. The Völuspá alludes to this act without describing it directly (the full account is in the Prose Edda\'s Gylfaginning). This is the Norse version of the Purusha Sukta: the cosmos created from the body of a primordial being.',
+              parallels: [
+                { label: 'Purusha Sukta — Purusha\'s body becomes all cosmic elements', textId: 'purusha-sukta', note: 'Ymir\'s flesh/blood/bones/skull becoming earth/sea/mountains/sky, and Purusha\'s body parts becoming cosmic elements (navel/atmosphere, head/sky, feet/earth), are structurally identical. Both Norse and Vedic traditions preserve the same Proto-Indo-European body-cosmos homology.' },
+                { label: 'Enuma Elish — Tiamat\'s body split to make earth and sky', textId: 'enuma-elish-1', note: 'Marduk splitting Tiamat\'s body to form earth (below) and sky (above) is the Babylonian combat-cosmogony version of the same pattern: a primordial being\'s body becomes the cosmos. Norse + Vedic + Babylonian = three independent branches of the same ancient cosmogonic myth-type.' },
+              ]
+            },
+          ]
+        },
+      ]
+    },
+    {
+      heading: 'II. The World-Tree and the Norns',
+      verses: [
+        {
+          ref: 'Völuspá 19–20',
+          text: 'An ash I know that stands, Yggdrasil is its name, a tall tree, drenched with shining loam; from there come the dews that fall in the valleys, it stands always green above the well of Urðr. From there come three maidens, knowing much, from the lake that stands beneath the tree; Urðr is one called, Verðandi another — they carved on tablets — Skuld the third. They laid down laws, they chose lives for the children of men, they set out the fates.',
+          textVersions: {
+            larrington: 'I know an ash-tree, called Yggdrasil, a tall tree, soaked with shining loam; from there come the dews which fall in the dales, it stands always green over the well of Urd. From there come three girls, knowing a great deal, from the lake which stands under the tree; one is called Urd, another Verdandi — they carved on a wooden slip — Skuld the third; they laid down laws, they chose lives, for the children of men they set out fates.',
+            bellows:    'An ash I know, Yggdrasil its name, with water white is the great tree wet; thence come the dews that fall in the dales, green by Urth\'s well does it ever grow.',
+            norse:      'Ask veit ek standa heitir Yggdrasill hár baðmr ausinn hvíta auri· þaðan koma dǫggvar þærs í dala falla stendr æ yfir grœnn Urðarbrunni',
+          },
+          entities: [
+            { word: 'Yggdrasil', node: 'yggdrasil', type: 'symbol',
+              note: 'Yggdrasil (the World-Tree, "Yggr\'s horse" — Odin\'s steed, referencing Odin\'s self-hanging on the tree to gain the runes) connects all nine worlds of Norse cosmology: its roots reach Ásgarðr (gods), Jötunheimr (giants), and Niflheimr (the realm of death); its branches touch heaven; at its base are three wells (Urðr\'s well of fate, Mímisbrunnr of wisdom, Hvergelmir of primal waters). The World-Tree as the axis mundi (world-axis) connecting all levels of reality appears across traditions: the Kabbalistic Tree of Life (sefirot as tree), the shamanic world-tree of Siberia, the Buddhist Mount Meru, the Hindu Mount Meru as axis.',
+              parallels: [
+                { label: 'Sefer Yetzirah — Tree of Life as the structural map of reality', textId: 'sefer-yetzirah', note: 'The Kabbalistic Tree of Life (the sefirot arranged as a tree with roots above and branches below, or roots below and branches above in different traditions) is the Jewish mystical equivalent of Yggdrasil: a cosmic tree connecting all levels of reality whose structure IS the structure of creation.' },
+                { label: 'Plato Timaeus — the World-Soul as the structural axis of the cosmos', textId: 'plato-timaeus', note: 'The Platonic World-Soul as the animating principle connecting the divine Forms (above) to material creation (below) and extending through all levels parallels Yggdrasil connecting all nine worlds. Both are the central structural principle of a multi-level cosmos.' },
+              ]
+            },
+            { word: 'Urðr, Verðandi, Skuld', node: 'odin', type: 'deity',
+              note: 'The three Norns (Urðr = "what has become/was," Verðandi = "what is becoming/present," Skuld = "what should be/future") carving the fates of all beings on wooden slips under Yggdrasil are the Norse equivalent of the Greek Moirai (Clotho who spins the thread of life, Lachesis who measures it, Atropos who cuts it). The triplication of fate-goddesses — three women controlling time: past/present/future — appears across Indo-European traditions: Norse Norns, Greek Moirai, Roman Parcae, Celtic Morrigan (sometimes tripled). In the Platonic Timaeus (37c-d), time itself is structured as the moving image of eternity through numerical periodicity — the three temporal modes (past/present/future) as a single moving reality.',
+              parallels: [
+                { label: 'Greek Moirai — the three Fates spinning, measuring, cutting', note: 'The Greek Moirai (Clotho, Lachesis, Atropos) and the Norse Norns (Urðr, Verðandi, Skuld) are cognate Indo-European fate-goddess triads, structurally identical: three women who control the span of human life through a textile/writing metaphor. The Norns carve on wood; the Moirai spin and cut thread.' },
+              ]
+            },
+          ]
+        },
+      ]
+    },
+    {
+      heading: 'III. Ragnarök and the Renewal',
+      verses: [
+        {
+          ref: 'Völuspá 44–46 (The Age of Swords)',
+          text: 'Brothers will fight and kill each other, sisters\' children will defile kinship. It is harsh in the world, whoredom rife — an axe age, a sword age — shields are riven — a wind age, a wolf age, before the world goes headlong. No man will have mercy on another.',
+          textVersions: {
+            larrington: 'Brothers will fight and kill each other, cousins will break the peace with each other; it will be hard in the world, great whoredom, axe-age, sword-age, shields will be cloven, wind-age, wolf-age, before the world-falls-ruin; no man will spare another.',
+            bellows:    'Brothers shall fight and fell each other, and sisters\' sons shall kinship stain; hard is it on earth, with mighty whoredom; axe-time, sword-time, shields are sundered, wind-time, wolf-time, ere the world falls; nor ever shall men each other spare.',
+            norse:      'Bræðr munu berjask ok at bǫnum verðask munu systrungar sifjum spilla· hart er í heimi hórdómr mikill skeggjǫld skalmǫld skildir ro klofnir vindǫld vargǫld áðr verǫld steypisk',
+          },
+          entities: [
+            { word: 'axe age, sword age, shields are riven', node: 'loki', type: 'concept',
+              note: 'The "axe age, sword age, shield-riven, wind age, wolf age" is the Norse description of the moral and cosmic collapse before Ragnarök — a sequence of intensifying violence and social disintegration. The parallel to the Hindu doctrine of the Kali Yuga (the final age of darkness, violence, and moral decay before the cosmic renewal and return of the golden age) is structural: both traditions describe a cyclical pattern of creation → golden age → degradation → catastrophic destruction → renewal. The Zoroastrian Frashegird (renovation of the world after the final battle) is the same eschatological arc.',
+              parallels: [
+                { label: 'Revelation 12 — the Dragon\'s war and the tribulation', textId: 'revelation-12', note: 'Revelation\'s tribulation period (the Dragon\'s seven-year persecution before the final judgment) and the Völuspá\'s "axe age, sword age" before Ragnarök are structurally identical: a period of maximal violence and moral collapse immediately preceding the final cosmic battle and renewal.' },
+                { label: 'Yasna 30 — the final battle between Truth and the Lie', textId: 'yasna-30', note: 'The Zoroastrian final battle between Ahura Mazda\'s forces and Angra Mainyu ending in the Frashegird (renovation) is the probable influence on both the Völuspá\'s Ragnarök and the Book of Revelation\'s Armageddon. All three: cosmic dualism → final battle → divine victory → world renewal.' },
+              ]
+            },
+          ]
+        },
+        {
+          ref: 'Völuspá 59–66 (The Renewal)',
+          text: 'She sees a hall standing more beautiful than the sun, thatched with gold, at Gimlé; there the trustworthy people shall live and for all ages enjoy happiness. Then the powerful one comes from above — he who rules all — to the judgment-place of the gods. From above there comes the mighty one to the judgment of powers, and he who rules from above.',
+          textVersions: {
+            larrington: 'She sees, coming up a second time, earth from the ocean, eternally green; the waterfalls plunge, the eagle soars above them, catching fish from the mountains. The gods meet on the Idavoll plain... She sees halls standing, more beautiful than the sun, thatched with gold, at Gimlé; there trustworthy peoples shall live and for ever and a day enjoy happiness.',
+            bellows:    'More fair than the sun, a hall I see, roofed with gold, on Gimle it stands; there shall the righteous rulers dwell, and happiness ever there shall they have.',
+            norse:      'Sal sér hon standa sólu fegra golli þaktan á Gimléi· þar skulu dyggvar dróttir byggja ok um aldr daga yndis njóta',
+          },
+          entities: [
+            { word: 'hall standing more beautiful than the sun, thatched with gold', node: 'odin', type: 'concept',
+              note: 'The golden hall of Gimlé where the righteous will live in eternal happiness after Ragnarök is the Norse eschatological paradise — structurally equivalent to the New Jerusalem in Revelation 21 ("the city of pure gold, like pure glass... the city does not need the sun"), the Zoroastrian Frashegird where the renovated world is perfected, and the Buddhist Pure Land. All describe a post-eschatological state of perfected reality as the outcome of the cosmic drama.',
+              parallels: [
+                { label: 'Revelation 21 — New Jerusalem, the city of gold', textId: 'revelation-12', note: 'Revelation 21\'s New Jerusalem — the holy city descending from heaven, made of pure gold, the dwelling of God with humanity — is structurally identical to the Völuspá\'s Gimlé: the renewed world after the apocalyptic destruction, where the righteous dwell in perfect happiness. Both texts are full-arc cosmic narratives ending in the same image.' },
+              ]
+            },
+          ]
+        },
+      ]
+    },
+  ]
+};
+
+// ── 37. RUMI — MASNAVI BOOK I PROLOGUE ───────────────────────────────────────
+SCRIPTURE_TEXTS['rumi-masnavi'] = {
+  title: 'Rumi — Masnavi Book I: The Reed\'s Lament',
+  shortTitle: 'Rumi — The Reed',
+  tradition: 'Sufism / Islamic Mysticism',
+  date: 'c. 1258–1273 CE (Konya; Jalāl al-Dīn Muḥammad Rūmī)',
+  intro: 'The opening 18 verses of the Masnavi — the greatest work of Persian mystical poetry, described by Jami as "the Quran in the Persian tongue." A reed flute (nay) cut from the reed bed cries with longing for its origin. Every person who has been separated from their source grieves and seeks reunion. The fire of love, not mere breath, is what cries through the reed. This is the concentrated statement of the Sufi doctrine of divine longing (shawq): the soul was cut from the divine, and its entire life is a cry of love and longing for return. The parallel to the Poimandres Anthropos descending from the divine, the Orphic divine spark in Titanic matter, and the Gnostic pneuma imprisoned in the material world is direct — same diagnosis, different prescription.',
+  crossTradition: [
+    { label: 'Poimandres — the soul descended from its divine origin',      textId: 'poimandres',       note: 'The Hermetic Anthropos who descended into matter through love of his own reflection and now lives in exile from his divine origin — and Rumi\'s reed cut from the reed bed crying for return — are the same metaphysical situation: a divine essence separated from its source and longing to return. The Hermetic solution is gnosis (recognize your origin); the Sufi solution is love (mahabbah) and longing (shawq).' },
+    { label: 'Orphic Theogony — the divine spark crying in Titanic clay',  textId: 'orphic-theogony',  note: 'The Orphic divine fragment of Dionysus/Zagreus trapped in Titanic matter and the Sufi soul cut from the divine reed bed are the same image: a particle of the divine imprisoned in matter, crying for its origin. The Orphic and Sufi traditions approach the same existential diagnosis from different theological frameworks.' },
+    { label: 'Gospel of Thomas — the pearl lost in the world',              textId: 'gospel-of-thomas', note: 'Thomas L.8 (the great fish parable) and the apocryphal Hymn of the Pearl (Acts of Thomas) describe the soul as a precious thing lost in the world, forgotten, but crying out. Rumi\'s reed crying for the reed bed and the Gnostic pearl at the bottom of the sea are the same image: the separated divine longing for return.' },
+    { label: 'Quran 2:156 — "We belong to God and to God we return"',       textId: 'quran-fatiha-nur', note: 'The Quranic inna lillāhi wa innā ilayhi rājiʿūn ("We belong to God and indeed to God we return," 2:156) is the Quranic statement of the same theology Rumi\'s reed embodies: the soul\'s origin in God and its return to God. Rumi deepens this from a statement about death into a universal description of the soul\'s longing throughout life.' },
+  ],
+  translations: [
+    { id: 'nicholson', label: 'Nicholson 1926 (T1, classic scholarly)' },
+    { id: 'davis',     label: 'Davis 2008 (T2, Penguin Classics)' },
+    { id: 'persian',   label: 'Persian (original)' },
+  ],
+  sections: [
+    {
+      heading: 'I. The Reed\'s Cry',
+      verses: [
+        {
+          ref: 'Masnavi I:1–6',
+          text: 'Listen to the reed, how it tells a tale, complaining of separations: "Since I was cut from the reed bed, men and women have mourned with me. I want a breast torn open by separation, so I can describe the pain of longing. Everyone who stayed far from their origin seeks again the time of their union. In every company I uttered my lament; I associated with those in bad and good condition."',
+          textVersions: {
+            nicholson: 'Hearken to this reed how it tells a tale, complaining of separations. Since I was cut from the reed-bed, my lament hath caused man and woman to moan. I want a bosom torn by severance, that I may give expression to the pain of love-longing. Whoever is parted from his origin seeks again the time of his union.',
+            davis:     'Listen to the reed flute, how it tells its tale, lamenting separations. It says: "Since I was cut from the reed bed, men and women have mourned with me. I need a heart that is torn open with longing so I can explain what longing is."',
+            persian:   'بشنو این نی چون شکایت می‌کند / از جدایی‌ها حکایت می‌کند / کز نیستان تا مرا ببریده‌اند / در نفیرم مرد و زن نالیده‌اند',
+          },
+          entities: [
+            { word: 'Since I was cut from the reed bed', node: 'tradition-sufism', type: 'concept',
+              note: 'The reed (nay) cut from the reed bed (neystan) is Rumi\'s central image for the soul\'s separation from God. The ney is the physical Persian flute made from reed; its music is literally the sound of a hollow reed crying — and Rumi says: that cry IS the soul\'s cry for its origin. The reed cannot make music without being cut (separated, wounded by loss); its music IS its wound. This is one of the most profound insights in mystical literature: the beauty of the soul\'s longing (shawq) is made possible only by the separation that causes it. Without the cut, no music; without exile, no longing; without longing, no love; without love, no return.',
+              parallels: [
+                { label: 'Poimandres — Anthropos exiled in matter, longing for return', textId: 'poimandres', note: 'The Hermetic Anthropos fallen into matter through love of his reflection — and now trapped in the body, longing for the divine — and Rumi\'s reed cut from the reed bed and crying — are the same metaphysical situation. The Hermetic solution is gnostic knowledge (CH IV\'s krater of Nous); the Sufi solution is love itself as the vehicle of return.' },
+                { label: 'Orphic Theogony — the divine spark longing for its origin', textId: 'orphic-theogony', note: 'The Orphic divine fragment (the Dionysian spark in Titanic clay) and the Sufi reed cut from the divine reed bed both describe the human soul as a piece of the divine in exile, whose entire life is a longing for reunion. Both are Pre-Plotinian forms of the emanation-and-return cosmological structure.' },
+              ]
+            },
+            { word: 'Everyone who stayed far from their origin', node: 'anthropos-gnostic', type: 'concept',
+              note: 'The universality of the reed\'s situation — "everyone who stayed far from their origin seeks the time of their union" — makes the personal longing of the reed into a universal theological claim: every soul is in exile from its divine origin and every soul seeks return. This is the Sufi statement of the cosmological doctrine that appears as: the Gnostic pneuma imprisoned in matter; the Hermetic Anthropos fallen into the body; the Buddhist samsara as the cycle of exile from nirvana; the Platonic soul\'s descent into the body and its aspiration to return.',
+              parallels: [
+                { label: 'Gospel of Thomas L.3 — the Kingdom is within and without', textId: 'gospel-of-thomas', note: 'Thomas L.3: "The Kingdom is inside you and outside you." The reed\'s origin (the reed bed) is both where it came from and where it longs to return. The Thomasine Kingdom-as-origin and the Sufi reed bed-as-origin are the same theological image: the divine from which the soul came and to which it returns.' },
+              ]
+            },
+          ]
+        },
+        {
+          ref: 'Masnavi I:7–12',
+          text: '"My secret is not far from my lament, but eye and ear lack that light. Body is not veiled from soul, nor soul from body; yet to no one is the soul permitted to be seen. This music of the reed is fire — it is not breath. May he who has not this fire be nothing! The fire of Love has fallen into the reed; the ferment of Love has fallen into the wine. The reed is the companion of every lonely one; its veil has been torn away from our secrets."',
+          textVersions: {
+            nicholson: 'The secret of my lamentation is not far from my plaint, but eye and ear want that light... This music of the reed is fire, not breath: let him who lacketh fire be naught! \'Tis the fire of Love that fell into the reed, \'tis the ferment of Love that fell into the wine.',
+            davis:     '"My secret is not far from my lament but eye and ear have no light for it. Body is not separate from soul, nor is soul separate from body, and yet nobody is given sight of the soul. This music of the reed is fire — it is not wind — let him who has no fire become nothing! It is fire of love that has fallen into the reed."',
+            persian:   'سر من از نالهٔ من دور نیست / لیک چشم و گوش را آن نور نیست / آتش عشق است کاندر نی فتاد / جوشش عشق است کاندر می فتاد',
+          },
+          entities: [
+            { word: 'fire of Love that fell into the reed', node: 'al-hallaj', type: 'concept',
+              note: 'The fire (ātash) of Love (ʿishq) that fell into the reed is Rumi\'s central Sufi-theological claim: the source of the soul\'s longing is not merely emotion but divine fire — the same fire that is in God, placed into the created being by the act of creation. Al-Hallaj (martyred 922 CE) made the same claim in "Ana\'l-Haqq" ("I am the Truth/I am God"): the divine fire has so thoroughly entered the mystic that the two cannot be distinguished. Rumi encodes this without the scandal: the fire in the reed is divine fire, and the reed\'s music is that fire crying.',
+              parallels: [
+                { label: 'Al-Hallaj — "Ana\'l-Haqq" (I am the Truth/God)', node: 'al-hallaj', note: 'Al-Hallaj\'s declaration "Ana\'l-Haqq" (I am the Real/God) and Rumi\'s image of divine fire in the reed are the same theological claim at different temperatures: al-Hallaj states identity; Rumi states intimate presence. Both are the Sufi form of the non-dual identity found in Chandogya\'s tat tvam asi and CH XI\'s "become eternity."' },
+                { label: 'Yasna 30 — the sacred fire as divine presence', textId: 'yasna-30', node: 'sacred-fire', note: 'The Zoroastrian sacred fire (ātash) as the visible manifestation of Ahura Mazda\'s divine presence and Rumi\'s "fire of Love" in the reed are cognate images: fire as the mode of divine immanence in matter. The Persian mystical tradition (Zoroastrianism → Sufism) preserves fire as the image of the divine throughout.' },
+              ]
+            },
+          ]
+        },
+      ]
+    },
+  ]
+};
+
+// ── 38. APOCRYPHON OF JOHN ────────────────────────────────────────────────────
+SCRIPTURE_TEXTS['apocryphon-of-john'] = {
+  title: 'Apocryphon of John — The Monad, Sophia\'s Fall, and the Demiurge',
+  shortTitle: 'Apocryphon of John',
+  tradition: 'Sethian Gnosticism / Early Christianity',
+  date: 'c. 2nd–3rd CE (Coptic; extant in Nag Hammadi Codices II, III, IV)',
+  intro: 'The most important Gnostic cosmogonic text — a secret revelation given by the risen Christ to John, describing the structure of divine reality and the origin of the material world. It contains: the apophatic description of the Monad (the unknowable highest God); the emergence of Barbelo (the divine feminine, First Thought); the fall of Sophia (divine Wisdom) who acts without her consort and produces Yaldabaoth the Demiurge; and the Demiurge\'s creation of the material world and the human being. Most strikingly: Yaldabaoth declares "I am God and there is no other God beside me" — directly quoting Isaiah 45:5-6 — revealing that the Gnostic reading of Isaiah is that this declaration proves the Demiurge\'s ignorance: he says this precisely because he does not know his divine mother, Sophia, above him.',
+  crossTradition: [
+    { label: 'Isaiah 45 — "I am God and there is no other" = the Demiurge\'s ignorance', textId: 'isaiah-45', note: 'The Apocryphon\'s Yaldabaoth declaring "I am a jealous God and there is no God beside me" (citing Isaiah 45:5 and Exodus 20:5) is the Gnostic inversion of Isaiah\'s monotheism: the Gnostics read this declaration as the Demiurge\'s self-revelation of ignorance — he says there is no other God because he doesn\'t know his divine mother Sophia above him. This is one of the most audacious theological moves in the history of religion.' },
+    { label: 'Poimandres — the Anthropos fallen into matter through the powers', textId: 'poimandres', note: 'The Hermetic Anthropos descending through the planetary spheres into matter, and the Apocryphon\'s pneumatic Adam trapped in the material body created by Yaldabaoth, are cognate: in both, a divine human essence is imprisoned in material creation. The Hermetic solution is gnosis (CH IV\'s krater); the Gnostic solution is anamnesis (remembering divine origin through the secret teaching).' },
+    { label: 'Sefer Yetzirah — the Monad and Ein Sof above all names',          textId: 'sefer-yetzirah', note: 'The Apocryphon\'s opening apophatic description of the Monad — "He is not a being among beings... He is immeasurable... He is inexpressible... He does not exist in time" — is the Gnostic equivalent of the Kabbalistic Ein Sof (the infinite without limit or definition above all the sefirot). Both articulate the same apophatic theology: the highest divine reality transcends all categories.' },
+    { label: 'Proverbs 8 — Sophia beside the Father at creation, then falling', textId: 'proverbs-8', note: 'Proverbs 8\'s Wisdom (Sophia) who was with God at creation "rejoicing before him always" is the positive image; the Apocryphon of John\'s Sophia who acts without her consort and falls is the negative theological development: what happens when Wisdom acts without the Father\'s will. The Apocryphon is Proverbs 8 gone wrong — the full account of what happens when Sophia forgets her place beside the Father.' },
+  ],
+  translations: [
+    { id: 'waldstein',  label: 'Waldstein-Wisse 1995 (T1, Nag Hammadi)' },
+    { id: 'robinson',   label: 'Robinson 1988 (T2, Nag Hammadi Library)' },
+    { id: 'coptic',     label: 'Coptic (Nag Hammadi original)' },
+  ],
+  sections: [
+    {
+      heading: 'I. The Monad — The Unknowable Father',
+      verses: [
+        {
+          ref: 'ApJohn II.2.26–3.17',
+          text: '"The Monad is a monarchy with nothing above it. It is he who exists as God and Father of everything, the invisible One who is above everything, who exists as incorruption, which is in the pure light into which no eye can look. He is the invisible Spirit. It is not right to think of him as a god or something similar... He is not a being among beings. Rather, he is superior to all. He does not exist in something inferior to him... Silence is what surrounds him."',
+          textVersions: {
+            waldstein: '"The Monad is a monarchy with nothing above it. It is the God and Father of everything... the invisible One who is above everything... He is ineffable. No principle knew him, no authority, no subjection, nor any creature from the foundation of the world, except he alone... And I do not say that he is perfect, but rather that he is greater than perfect."',
+            robinson:  '"The Invisible One exists as pure light, being immeasurable... He is not a god, nor is he similar to anything. He does not exist among things that exist... He is not a being among being... He is immeasurable light, which is pure, holy, and immaculate. He is inexpressible."',
+            coptic:    'ⲡⲙⲟⲛⲁⲥ ⲟⲩⲙⲛⲧⲣ̄ⲣⲟ ⲧⲉ ⲙⲛ ⲗⲁⲁⲩ ϩⲓϫⲱⲥ ⲛⲧⲟϥ ⲡⲉⲧϣⲟⲟⲡ ⲛ̄ⲛⲟⲩⲧⲉ ⲁⲩⲱ ⲉⲓⲱⲧ ⲛ̄ⲧⲉ ⲡⲧⲏⲣϥ̄',
+          },
+          entities: [
+            { word: 'the invisible One who is above everything', node: 'barbelo', type: 'deity',
+              note: 'The Apocryphon\'s opening apophatic description of the Monad — the unknowable Father above all — is the Gnostic apex of the apophatic tradition that runs through the Hermetic "God cannot be named" (CH XI), the Kabbalistic Ein Sof, the Taoist unnamed ground (Tao 1), and the Buddhist śūnyatā. The Gnostic version is unusual in its explicit negation of divine ontology itself: "He is not a being among beings" — God does not exist in the way that things exist. This is apophatic theology at its most radical.',
+              parallels: [
+                { label: 'CH XI — "God cannot be named; all names are names of God"', textId: 'corpus-hermeticum-11', note: 'The Hermetic "God cannot be named" (CH XI.22) and the Apocryphon\'s "He does not exist in something inferior to him / He is not a being among beings" are the same apophatic claim: the highest divine reality transcends all categories, including the category of "existence" or "being."' },
+                { label: 'Sefer Yetzirah — Ein Sof above the sefirot, beyond all definition', textId: 'sefer-yetzirah', note: 'The Kabbalistic Ein Sof (literally "without end/without definition") above all the sefirot, before the first emanation, is the Jewish mystical equivalent of the Apocryphon\'s Monad. Both: the highest divine reality is infinite, undefined, beyond all positive description, and only approached by negation.' },
+              ]
+            },
+            { word: 'Silence is what surrounds him', node: 'apophatic-mysticism', type: 'concept',
+              note: 'The Monad surrounded by Silence (sige) is the Gnostic theological expression of apophatic silence as the proper response to the divine: since the Monad transcends all speech, Silence is simultaneously his dwelling place and the correct human posture before him. This parallels the Quran\'s "Allah is beyond all description" (Quran 42:11), the Zen "original face before your parents were born" (beyond concepts), and the Sufi fana (annihilation of the self in the divine silence). In the Valentinian Gnostic system, Sige (Silence) is actually named as the Monad\'s consort — the divine pair: Depth and Silence.',
+              parallels: [
+                { label: 'Tao Te Ching — "Those who know do not speak; those who speak do not know"', textId: 'tao-te-ching-1', note: 'Tao 56: "Those who know do not speak; those who speak do not know." The Taoist teaching on the silence of the sage before the Tao and the Gnostic Silence surrounding the Monad are the same apophatic insight: the ultimate reality is best approached through silence.' },
+              ]
+            },
+          ]
+        },
+      ]
+    },
+    {
+      heading: 'II. Sophia\'s Fall and Yaldabaoth\'s Ignorance',
+      verses: [
+        {
+          ref: 'ApJohn II.9.25–10.19 (Sophia\'s Fall)',
+          text: '"Now our fellow sister Sophia, who is a divine essence, thought a thought from herself, and in the reflection of the invisible Spirit and foreknowledge she wished to reveal an image from herself without the consent of the Spirit — she had not found her consort — and without the foreknowledge of her partner, and without the will of the Spirit. She brought forth from herself what was ignorant and confused. And because of the invincible power which is in her, her thought did not remain idle, and something came out of her which was imperfect."',
+          textVersions: {
+            waldstein: '"Sophia, who is the last of the Aeons, the partner of the unknown Father, wished to reveal an image from herself, the power which is in her. And the thought of her became a work which was like the mist of ignorance. She had not found her consort, and she brought forth something out of herself which was imperfect."',
+            robinson:  '"Now our sister Sophia — she who is an aeon — perceived a reflection in the invisible Spirit. She wished to bring forth a likeness out of herself without the consent of the Spirit... without her consort. And though the person of her maleness had not approved, she brought it forth... imperfect."',
+            coptic:    'ⲙⲡⲉⲥϩⲟⲩⲛⲉ ⲇⲉ ⲛⲧⲉ ⲧⲁϥⲧⲉ ⲧⲛⲁⲧϩⲩⲡⲟⲥⲧⲁⲥⲓⲥ ⲛ̄ϩⲣⲁϥⲛⲧⲉ ⲧⲁⲩⲧⲏⲥ',
+          },
+          entities: [
+            { word: 'Sophia wished to reveal an image from herself without the consent of the Spirit', node: 'sophia-gnostic', type: 'deity',
+              note: 'Sophia\'s fall — she acts from her own desire without her consort\'s will, producing an imperfect emanation — is the Gnostic explanation for the existence of the imperfect material world. The cosmos is not the direct creation of the highest God but the accidental product of Sophia\'s autonomous act. This is the Gnostic inversion of Proverbs 8\'s Wisdom "rejoicing beside the Father always" — Sophia stops rejoicing and acts alone, and the result is Yaldabaoth and the material world. The pattern: wisdom/divine-feminine acts without the divine-masculine consent → imperfect creation — also appears in Hindu mythology (Shakti acting without Shiva produces chaos) and in the Kabbalistic Shevirat ha-Kelim (the Breaking of the Vessels).',
+              parallels: [
+                { label: 'Proverbs 8 — Wisdom beside the Father, "rejoicing always"', textId: 'proverbs-8', note: 'Proverbs 8:30: "I was beside him, like a master workman; and I was daily his delight, rejoicing before him always." The Apocryphon\'s Sophia who stops rejoicing and acts without the Father\'s consent is exactly what Proverbs 8 warns against by showing the positive: Wisdom\'s right relationship is to remain beside the Father, not to act independently.' },
+                { label: 'Poimandres — the Anthropos falling through desire for his own reflection', textId: 'poimandres', note: 'The Poimandres Anthropos falls through desire for matter (love of his own reflection). The Apocryphon\'s Sophia falls through desire for autonomous creation (love of her own reflection of the Father). Both: a divine being acts from isolated desire rather than proper divine relationship, and the result is the entrapped material world.' },
+              ]
+            },
+            { word: 'brought forth something which was imperfect', node: 'yaldabaoth', type: 'deity',
+              note: 'Sophia\'s imperfect emanation becomes Yaldabaoth (also called Saklas "the fool" and Samael "the blind god") — a lion-faced serpent, the ignorant creator-god who believes himself to be the only God. His primary characteristic is ignorance (agnoia) — he does not know his divine mother Sophia above him, does not know the higher divine realm, and therefore creates the material world as a prison rather than a temple. The Gnostic Yaldabaoth is Plato\'s Demiurge gone wrong: where Plato\'s Demiurge is good and wants all things to be good, the Gnostic Demiurge is ignorant and creates suffering through his blindness.',
+              parallels: [
+                { label: 'Plato Timaeus — the good Demiurge vs the Gnostic ignorant Demiurge', textId: 'plato-timaeus', note: 'Plato\'s Timaeus Demiurge who "desired all things to be good" and created as well as possible, and the Apocryphon\'s Yaldabaoth who creates in ignorance — these are two readings of the same Platonic Demiurge figure, one optimistic and one pessimistic. The Gnostics read Plato\'s myth through Egyptian and Jewish apocalyptic lenses and found the Demiurge\'s goodness inadequate to explain the world\'s suffering.' },
+              ]
+            },
+          ]
+        },
+        {
+          ref: 'ApJohn II.11.15–22 (The Demiurge\'s Declaration)',
+          text: '"Yaldabaoth said to the authorities who attended him: \'I am a jealous God, and there is no other God beside me.\' But by announcing this he indicated to the angels who attended him that another God does exist; for if there were no other one, of whom would he be jealous? Then the mother began to move to and fro — she recognized that he lacked something when the light of her brightness diminished."',
+          textVersions: {
+            waldstein: '"And Yaldabaoth said to the angels which were with him: \'Come, let us create a man according to the image of God and according to our likeness, that his image may become a light for us.\' ... I am a jealous God and there is no God beside me — but by saying this, he indicated that another God does exist."',
+            robinson:  '"And he said to the authorities which attend him: \'I am a jealous God, and there is no other God beside me.\' Already, by saying this, he indicated that another God exists; for if there were no other, of whom would he be jealous?"',
+            coptic:    'ⲁⲛⲟⲕ ⲟⲩⲛⲟⲩⲧⲉ ⲛ̄ϣⲁⲣⲉϩ ⲛ̄ⲧⲉⲟⲩⲛ ⲕⲉⲛⲟⲩⲧⲉ ⲙ̄ⲙⲟⲥ ⲛⲁⲁⲩ ϩⲓⲧⲟⲟⲧ',
+          },
+          entities: [
+            { word: '"I am a jealous God, and there is no other God beside me"', node: 'yaldabaoth', type: 'concept',
+              note: 'Yaldabaoth\'s self-declaration — "I am a jealous God, and there is no God beside me" — is a direct quotation combining Isaiah 45:5-6 ("I am YHWH and there is no other") and Exodus 20:5 ("I am a jealous God"). The Apocryphon\'s brilliant interpretive move: the Gnostic writer uses the Hebrew Bible\'s strongest monotheistic declarations as evidence for Yaldabaoth\'s ignorance. If there were truly no other God, why would he say "I am jealous"? Jealousy implies a rival. He says "no other God" because he doesn\'t know his mother Sophia above him. This is the most radical theological inversion in Gnostic literature — and perhaps in all of religious history.',
+              parallels: [
+                { label: 'Isaiah 45:5-6 — "I am YHWH and there is no other"', textId: 'isaiah-45', note: 'Isaiah 45:5-6: "I am the LORD and there is no other; besides me there is no god." The Apocryphon of John takes Isaiah\'s strongest monotheistic declaration and reads it as the Demiurge\'s confession of ignorance. The text that Isaiah wrote to assert YHWH\'s absolute sovereignty becomes, in the Gnostic reading, evidence that the biblical God is not the highest divine reality but an ignorant creator.' },
+                { label: 'Psalm 82 — the divine council and the gods above YHWH', textId: 'psalm-82', note: 'Psalm 82\'s divine council where YHWH is one among many gods (before rising to supremacy) and the Apocryphon\'s Yaldabaoth who doesn\'t know the divine realm above him are convergent: both texts imply a divine realm above the biblical God. The Gnostics read Psalm 82 and Isaiah 45 together as a theological map — the divine council above Yaldabaoth is Sophia, Barbelo, and the Monad.' },
+              ]
+            },
+            { word: 'the mother began to move to and fro', node: 'sophia-gnostic', type: 'concept',
+              note: 'After Yaldabaoth\'s self-declaration, Sophia recognizes her error — "she recognized that he lacked something when the light of her brightness diminished." The Gnostic Sophia\'s grief and repentance after the fall is one of the most moving elements of Gnostic cosmology: the divine feminine mourning the consequences of her autonomous act. This parallels the Coffin Text 1130\'s Creator weeping humanity into existence (tears as grief/compassion) and the Rumi reed\'s cry of separation — all encode divine grief as the origin of the world\'s imperfection.',
+              parallels: [
+                { label: 'Coffin Text 1130 — "men are the tears of my eye"', textId: 'coffin-text-1130', note: 'The Egyptian Creator\'s tears becoming humanity and the Gnostic Sophia\'s grief at seeing Yaldabaoth\'s ignorance — both locate the origin of human existence in divine grief or compassion. Humanity is born from divine sorrow.' },
+                { label: 'Rumi Masnavi — the divine origin crying through the reed', textId: 'rumi-masnavi', note: 'Rumi\'s reed crying for the reed bed and Sophia moving to and fro in grief — both are images of the divine in a state of longing and mourning over the separation that creation has caused. In Rumi, the longing is beautiful; in the Apocryphon, it is the recognition of tragedy. Same emotion, different theological evaluation.' },
+              ]
+            },
+          ]
+        },
+      ]
+    },
+  ]
+};
