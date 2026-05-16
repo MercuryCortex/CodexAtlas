@@ -5132,3 +5132,409 @@ SCRIPTURE_TEXTS['psalm-22'] = {
     },
   ]
 };
+
+// ── BATCH 9 ─────────────────────────────────────────────────────────────────
+
+SCRIPTURE_TEXTS['i-ching-1'] = {
+  title: 'I Ching — Hexagram 1: Qian (The Creative)',
+  shortTitle: 'I Ching Hex. 1',
+  tradition: 'Chinese Classical',
+  date: 'c. 1000–500 BCE (core); commentaries c. 200 BCE–200 CE',
+  intro: 'The I Ching (Book of Changes / Yi Jing) is the oldest continuous intellectual tradition in the world — its divination symbols (the eight trigrams) may date to c. 3000 BCE, its 64 hexagrams to c. 1000 BCE, and the Ten Wings commentaries to c. 200 BCE. It is the only text in any civilization that is simultaneously a divination manual, a philosophical system, a cosmological map, and a practical ethics guide. The First Hexagram — Qian (☰☰, six unbroken yang lines) — represents pure creative power, the undifferentiated generative force from which all things emerge. The commentaries (Tuan Zhuan, Xiang Zhuan, and Wenyan) build an entire cosmology from this single symbol: heaven and earth arose from it; the sage follows its pattern; the dragon (long) that emerges from water and ascends to heaven is the symbol of the creative force at every scale. Leibniz discovered the hexagrams in 1701 and immediately recognized them as binary arithmetic (6 broken/unbroken lines = 64 combinations = his own binary number system). The I Ching is also the conceptual foundation of Chinese medicine (yin/yang balance), martial arts (wu-wei), and political philosophy. Hexagram 1\'s core teaching: creative power is inexhaustible and self-renewing; the sage does not force but aligns with its natural rhythm.',
+  crossTradition: [
+    { label: 'Tao Te Ching 1 — the Tao that generates all things', textId: 'tao-te-ching-1', note: 'Hexagram 1\'s pure creative yang and the Tao Te Ching\'s "the Tao generated the One; the One generated the Two; the Two generated the Three; the Three generated all things" (Ch.42) are the same cosmological claim: there is a single generative source from which all differentiation flows. The I Ching maps this source as the first hexagram; Laozi maps it as the Tao before naming. Both traditions locate the creative principle in an undifferentiated unity.' },
+    { label: 'Zhuangzi — the dragon and effortless action', textId: 'zhuangzi', note: 'Hexagram 1\'s dragon imagery — "the hidden dragon" in the depths, the "leaping dragon," the "flying dragon in the heavens" — and Zhuangzi\'s Cook Ding following the natural joints (wu-wei) both express the Taoist ideal of action that flows with the natural order rather than forcing against it. The I Ching\'s hidden dragon who waits for the right moment and Zhuangzi\'s cook who never dulls his knife are the same ideal of effortless creative power.' },
+    { label: 'Genesis 1 — "In the beginning God created" — pure creative act', textId: 'genesis-1', note: 'Genesis 1\'s divine creation through word and I Ching Hexagram 1\'s pure creative yang are structurally parallel: both describe the moment of pure creative emanation before differentiation. Genesis moves from tohu vavohu (formless void) to ordered creation through divine speech; the I Ching Hexagram 1 comments: "Great indeed is the primal power of Qian — all things owe their beginning to it."' },
+    { label: 'Poimandres (CH I) — the primordial light before differentiation', textId: 'corpus-hermeticum-1', note: 'CH I\'s primordial light that appears before creation and then differentiates into fire and water corresponds to the I Ching\'s Hexagram 1 (pure undifferentiated creative yang) before the differentiation into yin and yang (Hexagram 2). Both texts use the pre-differentiation state as the positive characterization of the creative source.' },
+  ],
+  translations: [
+    { id: 'wilhelm', label: 'Wilhelm/Baynes 1950 (T1)' },
+    { id: 'chinese', label: 'Classical Chinese (original)' },
+  ],
+  sections: [
+    {
+      heading: 'The Hexagram and Judgment',
+      verses: [
+        {
+          ref: 'Hexagram 1',
+          text: '乾 — QIAN. The Creative. Supreme success. Further: perseverance furthers. [The Judgment] The Creative works sublime success, furthering through perseverance.',
+          textVersions: {
+            wilhelm: '乾 — QIAN. The Creative. Supreme success. Further: perseverance furthers. [The Judgment] The Creative works sublime success, furthering through perseverance.',
+            chinese: '乾：元，亨，利，貞。',
+          },
+          entities: [
+            { word: 'QIAN — The Creative', node: 'tao', type: 'concept',
+              note: 'Qian (乾) is composed of six unbroken yang lines — the maximum possible yang. The four qualities of the Judgment — yuan (originative power), heng (penetrating success), li (furthering), zhen (correct perseverance) — are the four attributes of the Creative force as it manifests through time. The Wenyan commentary identifies these with the four virtues of the sage and the four seasons: spring/summer/autumn/winter, beginning/growth/harvesting/storing. The first hexagram maps the entire temporal cycle in its four qualities. This is China\'s equivalent of the Platonic Forms or the divine attributes in Sufi theology: the original pattern from which all temporal manifestation flows.',
+              parallels: [
+                { label: 'Genesis 1 — the four-phase creation over four triads of days', textId: 'genesis-1', note: 'Genesis 1\'s six-day creation structure (day 1-3: domains; day 4-6: inhabitants) and the I Ching\'s four-quality cycle (yuan-heng-li-zhen) both impose a quadratic or hexadic structure on the creative process. Both texts map the inexhaustible creative power of the divine source as proceeding through ordered phases.' },
+              ]
+            },
+          ]
+        },
+      ]
+    },
+    {
+      heading: 'The Line Statements — The Dragon\'s Journey',
+      verses: [
+        {
+          ref: 'Line 1 (bottom)',
+          text: 'Nine at the beginning: Hidden dragon. Do not act.',
+          textVersions: {
+            wilhelm: 'Nine at the beginning: Hidden dragon. Do not act.',
+            chinese: '初九：潛龍，勿用。',
+          },
+          entities: [
+            { word: 'Hidden dragon. Do not act.', node: 'tao', type: 'concept',
+              note: 'Qian long wu yong — hidden dragon, do not use. The first line of the first hexagram introduces the I Ching\'s central image: the dragon (long) as the symbol of the creative force. Unlike Western dragons (malevolent, guarding treasure), the Chinese long is the embodiment of beneficent power, auspicious change, and heaven\'s creativity. The "hidden dragon" in the first line is the creative force before it has manifested — potential, latent, not yet appropriate for action. This is the I Ching\'s deepest teaching: the greatest power knows when not to act. Wu-wei (non-action / not forcing) is the proper response to the hidden state.',
+              parallels: [
+                { label: 'Tao Te Ching 1 — the Tao before naming, before action', textId: 'tao-te-ching-1', note: 'Laozi\'s Tao before naming and the I Ching\'s hidden dragon before manifestation are the same pre-action state. Both texts identify the stage before manifestation as the most powerful: the Tao that cannot be named contains all names; the hidden dragon that does not act contains all actions. The wisdom of knowing when not to act is the bridge between the I Ching and Taoism.' },
+              ]
+            },
+          ]
+        },
+        {
+          ref: 'Line 5 (penultimate)',
+          text: 'Nine in the fifth place: Flying dragon in the heavens. It furthers one to see the great man.',
+          textVersions: {
+            wilhelm: 'Nine in the fifth place: Flying dragon in the heavens. It furthers one to see the great man.',
+            chinese: '九五：飛龍在天，利見大人。',
+          },
+          entities: [
+            { word: 'Flying dragon in the heavens', node: 'tao', type: 'concept',
+              note: 'The fifth line is the ruler position in the hexagram — the line of greatest effectiveness and appropriate authority. "Flying dragon in the heavens" is the apex of the Creative\'s manifestation: the creative force operating freely in its proper element, at the height of its power and aligned with its nature. The Wenyan commentary: "A man who possesses virtue of heaven and heaven-sent gifts appears; he is honored by all people, and he brings peace to all under heaven." This is the I Ching\'s ideal of the sage-ruler: the person whose inner alignment with the creative force is so complete that their external action brings universal benefit without forcing.',
+              parallels: [
+                { label: 'Bhagavad Gita 11 — Krishna as the creative force in its fullness', textId: 'bhagavad-gita-11', note: 'BG 11\'s Vishvarupa — the divine creative force manifested in its totality — and the I Ching\'s "flying dragon in the heavens" — the Creative at its apex — are both images of the generative force fully deployed. In BG 11, the manifestation is overwhelming; in the I Ching, it is auspicious. Different emotional registers for the same cosmic reality.' },
+              ]
+            },
+          ]
+        },
+      ]
+    },
+    {
+      heading: 'The Wenyan Commentary — Heaven and the Sage',
+      verses: [
+        {
+          ref: 'Wenyan',
+          text: 'The Creative is the source of all things. It is the most divine and most sublime of all. The ten thousand things receive their beginning from it. It permeates heaven. The clouds move and the rain falls; all things flow forth into their forms.',
+          textVersions: {
+            wilhelm: 'The Creative is the source of all things. It is the most divine and most sublime of all. The ten thousand things receive their beginning from it. It permeates heaven. The clouds move and the rain falls; all things flow forth into their forms.',
+            chinese: '大哉乾元，萬物資始，乃統天。雲行雨施，品物流形。',
+          },
+          entities: [
+            { word: 'The ten thousand things receive their beginning from it', node: 'tao', type: 'concept',
+              note: 'Wan wu zi shi — "the ten thousand things receive their beginning from it." This is the Wenyan\'s most important philosophical claim: the Creative (Qian) is the source of all differentiated existence (the ten thousand things = all phenomena). This parallels Laozi\'s Tao Te Ching Ch.42 precisely: "Tao generated the One; One generated the Two; Two generated Three; Three generated the ten thousand things." Both use "ten thousand things" (wan wu) as the technical term for the totality of differentiated phenomena, and both locate a single undifferentiated creative source as their origin.',
+              parallels: [
+                { label: 'Tao Te Ching 1 — the Tao generates the ten thousand things', textId: 'tao-te-ching-1', note: '"The named is the mother of ten thousand things." I Ching\'s "ten thousand things receive their beginning from [the Creative]" and Laozi\'s "ten thousand things" generated from the Tao are the same cosmological claim: the undifferentiated creative source generates all particular, named, differentiated existence. The I Ching maps this in hexagram structure; Laozi maps it in aphoristic paradox.' },
+                { label: 'Corpus Hermeticum XI — God as the source of all things', textId: 'corpus-hermeticum-11', note: 'CH XI: "God contains all things — worlds, gods, all the rest of creation." The I Ching\'s Creative that is "the source of all things" and CH XI\'s God that "contains all things" are parallel theologies of creative immanence: the source is also the sustainer; the creative force that generated the ten thousand things also pervades them.' },
+              ]
+            },
+          ]
+        },
+      ]
+    },
+  ]
+};
+
+SCRIPTURE_TEXTS['katha-upanishad'] = {
+  title: 'Katha Upanishad — Nachiketa and the Teaching of Death',
+  shortTitle: 'Katha Upanishad',
+  tradition: 'Hindu',
+  date: 'c. 600–400 BCE',
+  intro: 'The Katha Upanishad is the most dramatic of the ancient Indian texts: a boy named Nachiketa is sent (perhaps accidentally, perhaps as a curse) to the house of Yama, the god of Death. He waits three days without food or drink. When Yama returns, he grants Nachiketa three boons in compensation for the discourtesy. For his third boon, Nachiketa asks: "When a person dies, there is this doubt — some say the self still exists, others say it does not. I want to know this." Yama tries everything to dissuade Nachiketa — wealth, beautiful women, kingdoms, anything — and Nachiketa refuses them all. Yama then acknowledges Nachiketa\'s seriousness and teaches him the deepest knowledge of the self (atman) and its identity with Brahman. The Katha\'s teaching is summarized in the most important single verse in all Upanishadic literature: "The self is not born, nor does it die. It has not come from anywhere, nor is it anything. Unborn, eternal, everlasting, this ancient one is not slain when the body is slain" (2:18). The Katha is the Vedic bridge between the cosmic Brahman of the Chandogya and the personal devotion of the Bhagavad Gita — both texts quote or echo it directly. It is also the closest Sanskrit parallel to the Bardo Thodol: both are teachings about the nature of consciousness at and after death, delivered by or at the threshold of the death realm.',
+  crossTradition: [
+    { label: 'Bardo Thodol — instruction at the threshold of death', textId: 'bardo-thodol', note: 'The Katha Upanishad is a teaching delivered AT Death\'s house. The Bardo Thodol is a teaching delivered TO the dying. Both texts recognize that the proximity to death is the optimal moment for the deepest teaching about the self\'s true nature. Both teach the same core claim: consciousness is not destroyed by death but transformed; the unborn, undying nature of the self is revealed most clearly when the mortal body\'s claims are stripped away.' },
+    { label: 'Bhagavad Gita 4 — the eternal atman that cannot be killed', textId: 'bhagavad-gita-4', note: 'BG 2:20 is a direct quotation of Katha 2:19: "This is not born, nor does it die at any time. It has not come into being and will not come into being again. It is unborn, eternal, ever-existing, and primeval." The BG carries the Katha\'s atman teaching directly into the battle context. Nachiketa receives this teaching from Death himself; Arjuna receives the same teaching from Krishna in the face of battle. Both contexts are: a moment of apparent death forcing the confrontation with the deathless.' },
+    { label: '1 Corinthians 15 — the spiritual body that transcends death', textId: '1-corinthians-15', note: 'The Katha\'s "not born, nor does it die" and Paul\'s "what is sown perishable is raised imperishable" both address the question: what survives death? The Katha answers: the atman (which was never born and never dies — not a survivor but a non-participant in birth and death). Paul answers: the soma pneumatikon (spiritual body — a transformed form of the individual). Different metaphysical frameworks, same question, same ultimate insistence that the deepest self transcends physical death.' },
+    { label: 'Plotinus Enneads — the soul returning to the One, prior to birth and death', textId: 'plotinus-enneads', note: 'The Katha\'s atman as "unborn, eternal, everlasting, primeval" and Plotinus\' soul as originating in the One and returning to the One — both establish the soul\'s non-temporal nature as its deepest truth. Neither the Katha\'s atman nor Plotinus\' soul is subject to birth and death as the body is; both are prior to and beyond the temporal order.' },
+  ],
+  translations: [
+    { id: 'olivelle', label: 'Olivelle 1996 (T1)' },
+    { id: 'sanskrit', label: 'Sanskrit (original)' },
+  ],
+  sections: [
+    {
+      heading: 'Nachiketa\'s Third Boon (1:20–29)',
+      verses: [
+        {
+          ref: '1:20–21',
+          text: 'Nachiketa said: "When a person dies, there is this doubt — some say \'it exists,\' others say \'it does not.\' I want to know this, taught by you. This is the third of my boons." Death said: "Even the gods of old doubted this; it is not easy to understand. Choose another boon, Nachiketa. Do not press me on this."',
+          textVersions: {
+            olivelle: 'Nachiketa said: "When a person dies, there is this doubt — some say \'it exists,\' others say \'it does not.\' I want to know this, taught by you. This is the third of my boons." Death said: "Even the gods of old doubted this; it is not easy to understand. Choose another boon, Nachiketa. Do not press me on this."',
+            sanskrit: 'yeyaṃ prete vicikitsā manuṣye astīty eke nāyam astīti caike | etad vidyām anuśiṣṭas tvayāham | varaṇāṃ eṣa varas tṛtīyaḥ',
+          },
+          entities: [
+            { word: 'Even the gods of old doubted this', node: 'tradition-hinduism', type: 'concept',
+              note: 'Yama\'s resistance to answering Nachiketa\'s question is itself theologically significant: even the god of Death acknowledges that this knowledge is not easy, not certain, contested even among the gods. This admission establishes the epistemological situation for the entire teaching: what follows is not routine divine revelation but the deepest and most contested knowledge that exists. Nachiketa\'s insistence on pursuing the hardest question — refusing wealth, kingdoms, beautiful women — is the text\'s model of philosophical courage.',
+              parallels: [
+                { label: 'Bardo Thodol — the threshold of death as the moment of deepest teaching', textId: 'bardo-thodol', note: 'The Bardo instructs that the most important teaching comes at the threshold of death — the Clear Light appears then, never so clearly. The Katha takes the same position: the deepest teaching about the self\'s nature is given by Death himself. Both texts locate the death-threshold as the privileged moment for self-knowledge.' },
+              ]
+            },
+          ]
+        },
+        {
+          ref: '1:23–25',
+          text: 'Nachiketa said: "Wealth and enjoyment, honor and long life — I do not want these. Only this: tell me what happens to a man after death." Death said: "Here are cattle and gold and elephants and horses and sons. Choose a kingdom. Choose whatever pleasures you wish. Here are beautiful women... Do not ask about death." Nachiketa said: "All these pleasures pass away. Life is short. Keep your horses, your singing and dancing. Man is not to be satisfied with wealth."',
+          textVersions: {
+            olivelle: 'Nachiketa said: "Wealth and enjoyment, honor and long life — I do not want these. Only this: tell me what happens to a man after death." Death said: "Here are cattle and gold and elephants and horses and sons. Choose a kingdom. Choose whatever pleasures you wish. Here are beautiful women... Do not ask about death." Nachiketa said: "All these pleasures pass away. Life is short. Keep your horses, your singing and dancing. Man is not to be satisfied with wealth."',
+            sanskrit: 'śvobhāvā martyasya yad antakaitat | sarvendriyāṇāṃ jarayanti tejaḥ',
+          },
+          entities: [
+            { word: 'All these pleasures pass away. Life is short.', node: 'tradition-hinduism', type: 'concept',
+              note: 'Nachiketa\'s refusal of Yama\'s temptations is the classic Upanishadic critique of the "lower knowledge" (apara vidya) — all empirical goods, however pleasant, are impermanent. This is the exact argument of Dhammapada 1 (anicca, impermanence), Ecclesiastes ("vanity of vanities, all is vanity"), and the Gnostic critique of the material world in the Apocryphon of John. All four traditions converge on the same diagnosis: temporal goods cannot satisfy, because the deepest human desire is for the permanent.',
+              parallels: [
+                { label: 'Dhammapada 1 — the mind creates suffering through attachment to impermanent things', textId: 'dhammapada-1', note: 'The Dhammapada\'s "mind is the forerunner of all actions; all suffering follows from a mind that is attached" and the Katha\'s "all pleasures pass, life is short" — both diagnose attachment to temporal goods as the root of spiritual failure. Both traditions demand renunciation of the lesser pleasure for the sake of the greater knowledge.' },
+              ]
+            },
+          ]
+        },
+      ]
+    },
+    {
+      heading: 'The Eternal Self (2:18–23)',
+      verses: [
+        {
+          ref: '2:18–20',
+          text: 'The knowing Self is not born, nor does it die. It has not come from anywhere, nor has it become anyone. Unborn, eternal, everlasting, and primeval, it is not slain when the body is slain. If the killer thinks he kills, and if the killed thinks he is killed, both fail to perceive the truth: this one neither kills nor is killed.',
+          textVersions: {
+            olivelle: 'The knowing Self is not born, nor does it die. It has not come from anywhere, nor has it become anyone. Unborn, eternal, everlasting, and primeval, it is not slain when the body is slain. If the killer thinks he kills, and if the killed thinks he is killed, both fail to perceive the truth: this one neither kills nor is killed.',
+            sanskrit: 'na jāyate mriyate vā kadācin | nāyaṃ bhūtvā bhavitā vā na bhūyaḥ | ajo nityaḥ śāśvato \'yaṃ purāṇo | na hanyate hanyamāne śarīre',
+          },
+          entities: [
+            { word: 'not born, nor does it die', node: 'atman', type: 'concept',
+              note: 'Na jāyate mriyate vā — "It is not born, nor does it die." This is the most important single verse in the Upanishadic tradition, and it is quoted nearly verbatim in Bhagavad Gita 2:20. Death himself is telling Nachiketa that the deepest self cannot die — a supreme irony, and the Katha\'s central philosophical joke. The atman is not a thing that survives death (like a ghost); it is a reality that was never subject to birth or death in the first place. This is the difference between immortality (surviving death) and the atman (being prior to and beyond the birth-death cycle).',
+              parallels: [
+                { label: 'Bhagavad Gita 4 — "This is not born, nor does it die at any time"', textId: 'bhagavad-gita-4', note: 'BG 2:20 is a direct quotation of this verse. The Bhagavad Gita places Katha\'s deepest teaching in Krishna\'s mouth on the battlefield of Kurukshetra: the warriors Arjuna is about to kill cannot truly be killed, because the atman is unborn and undying. The ethical argument of the BG (do not grieve for the killed) depends on the metaphysical argument of the Katha (the deepest self cannot be killed).' },
+                { label: 'Bardo Thodol — "your present awareness, having no birth nor death"', textId: 'bardo-thodol', note: '"Your own awareness, having no birth nor death, is indeed the Immutable Light." Katha\'s atman "not born, nor does it die" and the Bardo\'s "awareness having no birth nor death" are the same insight from the Hindu and Tibetan Buddhist traditions. Both locate the deathless nature of consciousness as the key teaching, and both deliver it in or near the death context.' },
+                { label: '1 Corinthians 15 — "sown perishable, raised imperishable"', textId: '1-corinthians-15', note: 'Paul\'s resurrection body (imperishable) and the Katha\'s atman (never subject to birth and death) represent two different answers to the same question: what is the deepest self, and what happens to it at death? Paul\'s answer is transformation; the Katha\'s answer is that there is nothing to transform — the deepest self was never born and never dies. Both insist that physical death is not the ultimate defeat.' },
+              ]
+            },
+          ]
+        },
+        {
+          ref: '2:20',
+          text: 'Subtler than the subtle, greater than the great, the Self is set in the heart of every creature. Without acting, the man free from desire sees the glory of the Self through the calm of the senses and the mind — and becomes free from sorrow.',
+          textVersions: {
+            olivelle: 'Subtler than the subtle, greater than the great, the Self is set in the heart of every creature. Without acting, the man free from desire sees the glory of the Self through the calm of the senses and the mind — and becomes free from sorrow.',
+            sanskrit: 'aṇor aṇīyān mahato mahīyān | ātmāsya jantor nihito guhāyām | tam akratuḥ paśyati vītaśoko | dhātuprasādān mahimānam ātmanaḥ',
+          },
+          entities: [
+            { word: 'Subtler than the subtle, greater than the great', node: 'atman', type: 'concept',
+              note: 'Aṇor aṇīyān mahato mahīyān — "smaller than the smallest, greater than the greatest." This is the Upanishadic formula for the atman\'s paradoxical scale: it is simultaneously infinitesimally small (smaller than an atom) and cosmically vast (greater than all creation). The atman cannot be measured by spatial categories because it is the ground of all spatial experience. This is the Sanskrit formulation of what Plotinus says about the One (beyond all size and extension), what Thomas L.3 says about the Kingdom (inside and outside simultaneously), and what the Apocryphon says about the Monad (no beginning, no middle, no end).',
+              parallels: [
+                { label: 'Apocryphon of John — the Monad beyond all spatial and temporal categories', textId: 'apocryphon-of-john', note: '"He is not a being among beings... He has no existence among existences... He does not exist in eternity but eternity exists in him." The Apocryphon\'s apophatic Monad and the Katha\'s atman that is smaller than the smallest and greater than the greatest are both attempts to describe a reality that exceeds spatial and quantitative categories.' },
+                { label: 'Gospel of Thomas L.3 — the Kingdom is inside and outside', textId: 'gospel-of-thomas', note: 'Thomas L.3: "The Kingdom is inside of you, and it is outside of you." Katha\'s atman "set in the heart of every creature" yet "greater than the great" — both describe a reality that is simultaneously the innermost (within every creature) and the outermost (greater than all). Both texts use this inside-outside or micro-macro paradox to indicate a reality that exceeds ordinary spatial categories.' },
+              ]
+            },
+          ]
+        },
+      ]
+    },
+  ]
+};
+
+SCRIPTURE_TEXTS['romans-8'] = {
+  title: 'Romans 8 — The Spirit and the Groaning of Creation',
+  shortTitle: 'Romans 8',
+  tradition: 'New Testament',
+  date: 'c. 57 CE',
+  intro: 'Romans 8 is widely regarded as the theological summit of Paul\'s letters and one of the greatest chapters in all of religious literature. Written around 57 CE, it moves from the liberation from sin through the Spirit (8:1-17), through the groaning of creation in labor pains awaiting redemption (8:18-25), to the Spirit interceding "with sighs too deep for words" (8:26-27), and concludes with the most absolute statement of divine love in the New Testament: "nothing will be able to separate us from the love of God in Christ Jesus our Lord" (8:38-39). The chapter\'s most extraordinary passage is 8:19-22: the entire creation is described as "groaning in labor pains" and awaiting its liberation — not just individual humans but the cosmos itself is caught in a teleological movement toward redemption. This cosmic groaning is the New Testament\'s most direct engagement with the question of why creation suffers, and its answer — the creation was subjected to futility not by its own choice but by the one who subjected it, in hope — has been read as both an indictment of the Gnostic Demiurge and as the cosmic analog of Psalm 22\'s individual lament. Paul\'s Spirit that "intercedes with sighs too deep for words" is the closest Paul comes to the kind of mystical apophatic language found in Plotinus and the Upanishads.',
+  crossTradition: [
+    { label: 'John 3 — born of Spirit, children of God', textId: 'john-3', note: 'John 3\'s "born of the Spirit" and Romans 8\'s "led by the Spirit of God are children of God" (8:14) are the same pneumatology: the Spirit as the agent of divine adoption and transformation. Both texts establish the Spirit as the non-material, non-controllable principle by which ordinary human beings become related to the divine. Romans 8 develops what John 3 stated: the Spirit\'s intercession is the guarantee of what the new birth initiated.' },
+    { label: 'Katha Upanishad — the groaning creation awaiting liberation', textId: 'katha-upanishad', note: 'The Katha\'s atman "not born, nor does it die" and Romans 8\'s creation "groaning in labor pains" awaiting liberation map opposite ends of the same question: is the created world in a state of bondage or freedom? The Katha\'s answer is that the deepest self was never bound; Romans 8\'s answer is that the creation IS bound but the bondage is teleological — it moves toward liberation. Both texts insist that the current state of suffering is not the final word.' },
+    { label: 'Apocryphon of John — creation subjected to the Demiurge, awaiting redemption', textId: 'apocryphon-of-john', note: 'Romans 8:20: "the creation was subjected to futility, not of its own will but by the will of the one who subjected it." The Gnostic reading: the "one who subjected it" is Yaldabaoth the Demiurge. The Apocryphon\'s creation under Yaldabaoth\'s ignorant rule and Paul\'s creation "subjected to futility" are almost certainly addressing the same theological tradition — Paul may be arguing against an incipient Gnostic reading of creation as inherently defective, insisting instead that the subjection is temporary and teleological.' },
+    { label: 'Psalm 22 — individual lament becomes universal restoration', textId: 'psalm-22', note: 'Psalm 22 moves from individual abandonment to universal praise of all nations. Romans 8 moves from individual Spirit-adoption to cosmic liberation of all creation. Both texts perform the same scalar movement: from the particular (individual\'s lament / individual\'s adoption) to the universal (all nations / all creation). Both insist that the current state of suffering is the precondition for a redemption that will be universally inclusive.' },
+  ],
+  translations: [
+    { id: 'nrsv', label: 'NRSV (T1)' },
+    { id: 'greek', label: 'Greek (original)' },
+  ],
+  sections: [
+    {
+      heading: 'Children of God and Co-heirs (8:14–17)',
+      verses: [
+        {
+          ref: '8:14–16',
+          text: 'For all who are led by the Spirit of God are children of God. For you did not receive a spirit of slavery to fall back into fear, but you have received a spirit of adoption. When we cry, "Abba! Father!" it is that very Spirit bearing witness with our spirit that we are children of God.',
+          textVersions: {
+            nrsv: 'For all who are led by the Spirit of God are children of God. For you did not receive a spirit of slavery to fall back into fear, but you have received a spirit of adoption. When we cry, "Abba! Father!" it is that very Spirit bearing witness with our spirit that we are children of God.',
+            greek: 'ὅσοι γὰρ πνεύματι θεοῦ ἄγονται, οὗτοι υἱοί εἰσιν θεοῦ. οὐ γὰρ ἐλάβετε πνεῦμα δουλείας πάλιν εἰς φόβον, ἀλλ᾽ ἐλάβετε πνεῦμα υἱοθεσίας',
+          },
+          entities: [
+            { word: '"Abba! Father!"', node: '', type: 'concept',
+              note: 'The Aramaic "Abba" (father/daddy — the intimate familial address) preserved inside the Greek text of Romans marks this as a cry that comes from the earliest Aramaic-speaking Jesus movement. Paul, writing in Greek to Romans who may have known no Aramaic, preserves this cry because it carries something irreducible: the intimacy of the Spirit\'s witness. The Spirit itself cries "Abba" in or through the believer — the divine is praying to the divine through the human as medium. This is the Pauline version of what Ibn Arabi calls tajalli: the divine self-disclosure through the creature.',
+              parallels: [
+                { label: 'Ibn Arabi Fusus — God seeing His own essence through the human mirror', textId: 'ibn-arabi-fusus', note: 'Ibn Arabi: "God willed to see His own essence in a comprehensive being." Romans 8\'s "the Spirit bearing witness with our spirit" — the divine Spirit crying "Abba" through the human — is structurally the same: the divine is using the human as the medium through which it knows and addresses itself. Both texts locate the divine self-knowledge in the human act of addressing the divine.' },
+              ]
+            },
+          ]
+        },
+      ]
+    },
+    {
+      heading: 'Creation Groaning in Labor Pains (8:18–22)',
+      verses: [
+        {
+          ref: '8:19–22',
+          text: 'For the creation waits with eager longing for the revealing of the children of God; for the creation was subjected to futility, not of its own will but by the will of the one who subjected it, in hope that the creation itself will be set free from its bondage to decay and will obtain the freedom of the glory of the children of God. We know that the whole creation has been groaning in labor pains until now.',
+          textVersions: {
+            nrsv: 'For the creation waits with eager longing for the revealing of the children of God; for the creation was subjected to futility, not of its own will but by the will of the one who subjected it, in hope that the creation itself will be set free from its bondage to decay and will obtain the freedom of the glory of the children of God.',
+            greek: 'ἡ γὰρ ἀποκαραδοκία τῆς κτίσεως τὴν ἀποκάλυψιν τῶν υἱῶν τοῦ θεοῦ ἀπεκδέχεται· τῇ γὰρ ματαιότητι ἡ κτίσις ὑπετάγη',
+          },
+          entities: [
+            { word: 'the creation was subjected to futility', node: '', type: 'concept',
+              note: 'Mataioteti — "futility" or "vanity" — the same word (in the LXX Greek translation) used in Ecclesiastes: "Vanity of vanities, all is vanity." Paul is almost certainly quoting or echoing Ecclesiastes here. The creation subjected to mataiotes is creation under Qoheleth\'s curse: everything passes, nothing lasts, the sun rises and sets and the wind circles and the rivers run to the sea but nothing is achieved. But Paul transforms Ecclesiastes\' resigned observation into an eschatological hope: the subjection is temporary and purposeful.',
+              parallels: [
+                { label: 'Apocryphon of John — creation under Yaldabaoth\'s rule awaiting liberation', textId: 'apocryphon-of-john', note: 'Romans 8:20 ("the creation was subjected to futility not of its own will but by the will of the one who subjected it") and the Apocryphon\'s creation under Yaldabaoth\'s ignorant rule are the same theological situation: creation is in bondage not because of its own nature but because of an external constraining power. Paul\'s "the one who subjected it" is ambiguous in Romans; the Gnostic tradition fills in the blank: the Demiurge.' },
+              ]
+            },
+          ]
+        },
+      ]
+    },
+    {
+      heading: 'Sighs Too Deep for Words (8:26–27)',
+      verses: [
+        {
+          ref: '8:26–27',
+          text: 'Likewise the Spirit helps us in our weakness; for we do not know how to pray as we ought, but that very Spirit intercedes with sighs too deep for words. And God, who searches the heart, knows what is the mind of the Spirit, because the Spirit intercedes for the saints according to the will of God.',
+          textVersions: {
+            nrsv: 'Likewise the Spirit helps us in our weakness; for we do not know how to pray as we ought, but that very Spirit intercedes with sighs too deep for words. And God, who searches the heart, knows what is the mind of the Spirit, because the Spirit intercedes for the saints according to the will of God.',
+            greek: 'ὡσαύτως δὲ καὶ τὸ πνεῦμα συναντιλαμβάνεται τῇ ἀσθενείᾳ ἡμῶν· τὸ γὰρ τί προσευξώμεθα καθὸ δεῖ οὐκ οἴδαμεν, ἀλλὰ αὐτὸ τὸ πνεῦμα ὑπερεντυγχάνει στεναγμοῖς ἀλαλήτοις',
+          },
+          entities: [
+            { word: 'sighs too deep for words', node: 'pneuma', type: 'concept',
+              note: 'Stenagmois alalètois — "inexpressible groanings" or "sighs too deep for words." This is Paul\'s most apophatic moment: the deepest prayer is not speech but pre-linguistic groaning. The Spirit itself does not use words in this intercession — it works through a mode of communication that exceeds language. This is the Pauline equivalent of the apophatic tradition: the deepest divine communication transcends ordinary linguistic categories. It also links to the Bardo Thodol\'s pre-linguistic state of the dying consciousness encountering the Clear Light, and to the Rumi reed\'s wordless cry of longing.',
+              parallels: [
+                { label: 'Rumi Masnavi — the reed\'s fire is not made of breath or words', textId: 'rumi-masnavi', note: 'Rumi: "the fire of Love is not made of breath" — the reed\'s cry transcends ordinary speech. Paul\'s Spirit interceding with "sighs too deep for words" and Rumi\'s love that operates beyond verbal expression are both accounts of the divine communication that exceeds language. Both texts locate the deepest spiritual reality in the pre-linguistic or trans-linguistic register.' },
+                { label: 'Plotinus Enneads — the soul\'s union with the One in silence', textId: 'plotinus-enneads', note: 'Plotinus\' description of mystical union as occurring in silence, beyond thought and language — "we must not speak of it but remain silent" — and Paul\'s Spirit interceding through "sighs too deep for words" both locate the deepest divine-human communication in a register that ordinary language cannot reach. Both texts identify the trans-linguistic as the sign of genuine depth.' },
+              ]
+            },
+          ]
+        },
+      ]
+    },
+    {
+      heading: 'Nothing Can Separate Us (8:35–39)',
+      verses: [
+        {
+          ref: '8:38–39',
+          text: 'For I am convinced that neither death, nor life, nor angels, nor rulers, nor things present, nor things to come, nor powers, nor height, nor depth, nor anything else in all creation, will be able to separate us from the love of God in Christ Jesus our Lord.',
+          textVersions: {
+            nrsv: 'For I am convinced that neither death, nor life, nor angels, nor rulers, nor things present, nor things to come, nor powers, nor height, nor depth, nor anything else in all creation, will be able to separate us from the love of God in Christ Jesus our Lord.',
+            greek: 'πέπεισμαι γὰρ ὅτι οὔτε θάνατος οὔτε ζωὴ οὔτε ἄγγελοι οὔτε ἀρχαὶ οὔτε ἐνεστῶτα οὔτε μέλλοντα οὔτε δυνάμεις οὔτε ὕψωμα οὔτε βάθος',
+          },
+          entities: [
+            { word: 'nothing will be able to separate us', node: '', type: 'concept',
+              note: 'The closing declaration of Romans 8 is the New Testament\'s most absolute statement of divine love as ontological guarantee. Paul lists every conceivable category of separation — cosmic powers (angels, rulers), temporal categories (present, future), spatial categories (height, depth), existential categories (life, death) — and declares all of them powerless against the love of God. This is a precise negation of every Gnostic power that claims to stand between the divine and the human. The "rulers" (archai) and "powers" (dynameis) that Paul lists are the same cosmic forces that the Apocryphon\'s Yaldabaoth deploys to prevent divine sparks from returning to the Pleroma. Paul declares: they fail.',
+              parallels: [
+                { label: 'Plotinus — the flight of the alone to the Alone that nothing can block', textId: 'plotinus-enneads', note: 'Plotinus\' soul ascending through the hylic, psychic, and noetic realms to union with the One — the universe cannot prevent this ascent because the One is always already within the soul. Paul\'s "nothing can separate" and Plotinus\' "the alone to the Alone" are the same claim: the bond between the soul and the divine source is ontological, not conditional. It cannot be severed by any created power.' },
+                { label: 'Psalm 22 — "he has not hidden his face from him but has listened"', textId: 'psalm-22', note: 'Psalm 22\'s discovery that the apparent abandonment was never real (v.24: "he has listened") and Romans 8\'s declaration that nothing can separate us from divine love are the same theological claim at different scales — individual and cosmic. Both texts arrive at the same conclusion through different routes: the divine love is not conditional, not interrupted, not contingent on the human\'s ability to maintain it.' },
+              ]
+            },
+          ]
+        },
+      ]
+    },
+  ]
+};
+
+SCRIPTURE_TEXTS['ecclesiastes-1'] = {
+  title: 'Ecclesiastes — Vanity of Vanities',
+  shortTitle: 'Ecclesiastes',
+  tradition: 'Hebrew Bible',
+  date: 'c. 450–200 BCE',
+  intro: 'Ecclesiastes (Hebrew: Qohelet — the Gatherer, the Preacher) is the most philosophically radical book in the Hebrew Bible — so radical that the rabbis debated whether it should be included in the canon. Probably written between 450 and 200 BCE by an author who had read Greek philosophy (particularly Stoic and Epicurean thought) and who was deeply skeptical of the religious optimism of Proverbs and Psalms. The opening declaration — "Vanity of vanities! All is vanity" — uses the Hebrew hevel (breath/vapor/vanity) 38 times. Everything is hevel: wisdom, pleasure, labor, righteousness, wealth, fame — all is vapor, passing, insubstantial. The sun rises and sets; rivers run to the sea; what has been is what will be; there is nothing new under the sun; the living know they will die; the dead know nothing. Yet within this relentless exposure of impermanence, Qohelet repeatedly counsels: eat your bread with joy, drink your wine with a merry heart, enjoy life with the wife you love — because this is your portion. The book is often read as pessimism; it is better read as a radical phenomenology of impermanence that refuses consolation except in the present moment. The word hevel (vapor) connects Ecclesiastes to the Buddhist anicca (impermanence), the Taoist notion of flux, and the Vedantic maya (illusion) — but Qohelet\'s response to impermanence is neither Buddhist renunciation nor Vedantic transcendence. It is a kind of carpe diem within the recognition of impermanence.',
+  crossTradition: [
+    { label: 'Dhammapada 1 — impermanence and suffering', textId: 'dhammapada-1', note: '"All is impermanent" (sabbe sankhara anicca) in Buddhism and "all is hevel (vanity/vapor)" in Ecclesiastes are the most precise cross-traditional parallel in the entire scripture corpus on the theme of impermanence. Both Qohelet and the Buddha have observed the same basic fact about existence: nothing lasts, everything passes. The difference is the response: the Buddha prescribes the Eightfold Path; Qohelet prescribes eating, drinking, and enjoying your work. Same diagnosis, different prescription.' },
+    { label: 'Tao Te Ching 1 — the named things that pass', textId: 'tao-te-ching-1', note: 'Laozi\'s "the named is the mother of ten thousand things" — all named, differentiated things flow out from the Tao and return to it. Ecclesiastes\' "one generation passes away and another generation comes, but the earth remains forever" — all differentiated temporal things (generations) pass, while the underlying ground (the earth, or the Tao) remains. Both texts observe the impermanence of all particular things against the permanence of the underlying ground.' },
+    { label: 'Zhuangzi — the transformation of things, the return to origin', textId: 'zhuangzi', note: 'Zhuangzi traces his wife\'s being backward to the original flux and sings at her death. Qohelet observes: "the dust returns to the earth as it was, and the breath returns to God who gave it" (12:7). Both texts trace particular existence backward to the undifferentiated origin, and both arrive at a kind of equanimity — Zhuangzi through philosophical acceptance, Qohelet through weary wisdom.' },
+    { label: 'Romans 8 — the creation subjected to futility (mataiotes)', textId: 'romans-8', note: 'Romans 8:20 uses the Greek mataiotes — "futility" or "vanity" — which is the LXX\'s translation of Hebrew hevel in Ecclesiastes. Paul\'s "the creation was subjected to futility" and Ecclesiastes\' "vanity of vanities, all is vanity" share the same word. Paul may be consciously quoting the Septuagint Ecclesiastes to say: the condition Qohelet described is real — but it is temporary and purposeful.' },
+  ],
+  translations: [
+    { id: 'nrsv', label: 'NRSV (T1)' },
+    { id: 'hebrew', label: 'Hebrew (original)' },
+  ],
+  sections: [
+    {
+      heading: 'The Thesis: All Is Vanity (1:1–11)',
+      verses: [
+        {
+          ref: '1:2–4',
+          text: 'Vanity of vanities, says the Teacher, vanity of vanities! All is vanity. What do people gain from all the toil at which they toil under the sun? A generation goes, and a generation comes, but the earth remains forever.',
+          textVersions: {
+            nrsv: 'Vanity of vanities, says the Teacher, vanity of vanities! All is vanity. What do people gain from all the toil at which they toil under the sun? A generation goes, and a generation comes, but the earth remains forever.',
+            hebrew: 'הֲבֵל הֲבָלִים אָמַר קֹהֶלֶת הֲבֵל הֲבָלִים הַכֹּל הָבֶל',
+          },
+          entities: [
+            { word: 'Vanity of vanities! All is vanity.', node: 'maya', type: 'concept',
+              note: 'Hevel havalim — "vapor of vapors." Hevel (rendered "vanity" in most translations) literally means breath or vapor — something real but fleeting, impossible to hold. The superlative hevel havalim intensifies this to the maximum: the most utterly vapor-like of vapors. This is the Hebrew equivalent of the Sanskrit maya (illusion) and the Buddhist anicca (impermanence). But Qohelet\'s hevel is more concrete than maya — not an illusion (like a false perception) but a real thing that passes. The world is real AND vapor: both. This double insistence is Qohelet\'s philosophical signature.',
+              parallels: [
+                { label: 'Dhammapada 1 — "sabbe sankhara anicca" — all conditioned things are impermanent', textId: 'dhammapada-1', note: 'Dhammapada 1\'s "all conditioned things are impermanent" and Ecclesiastes\' "all is hevel (vapor/passing)" are the most direct cross-traditional parallels in the entire corpus for the theme of impermanence. Both diagnose the same condition; both refuse to sentimentalize it.' },
+                { label: 'Nasadiya Sukta — the question of what was before being and non-being', textId: 'nasadiya-sukta', note: 'The Nasadiya asks what was before creation — what is more fundamental than both being and non-being. Ecclesiastes asks what remains when all temporal things have passed — "the earth remains forever." Both texts probe the permanent through the impermanent; both find something that the vapor does not reach.' },
+              ]
+            },
+          ]
+        },
+        {
+          ref: '1:5–7',
+          text: 'The sun also rises and goes down, hurrying to its place and rising there again. The wind blows south, and goes around to the north; round and round goes the wind, and on its circuits the wind returns. All streams run to the sea, yet the sea is not full; to the place where the streams flow, there they will flow again.',
+          textVersions: {
+            nrsv: 'The sun also rises and goes down, hurrying to its place and rising there again. The wind blows south, and goes around to the north; round and round goes the wind, and on its circuits the wind returns. All streams run to the sea, yet the sea is not full; to the place where the streams flow, there they will flow again.',
+            hebrew: 'וְזָרַח הַשֶּׁמֶשׁ וּבָא הַשָּׁמֶשׁ וְאֶל-מְקוֹמוֹ שׁוֹאֵף זוֹרֵחַ הוּא שָׁם',
+          },
+          entities: [
+            { word: 'All streams run to the sea, yet the sea is not full', node: '', type: 'concept',
+              note: 'The images of sun, wind, and rivers all trace the same circular pattern: motion that returns to its origin, effort that produces no net change. "The sea is not full" despite all rivers flowing into it — this is Qohelet\'s image for the futility of accumulation. Nothing accumulates to permanence; everything circulates and returns. This cosmological observation grounds the existential point: human toil produces the same circular non-result. Yet the circularity is also the condition for continued existence: if the rivers didn\'t return to their source through evaporation, the water cycle would stop. The circularity that is futility is also the circularity that sustains life.',
+              parallels: [
+                { label: 'Tao Te Ching 1 — the Tao as the return of all things to their source', textId: 'tao-te-ching-1', note: 'Laozi\'s Tao as the great reversal (fu — return/reversal is the movement of the Tao, Ch.40) and Ecclesiastes\' rivers returning to their source — both observe the same fundamental pattern in natural phenomena: the endless cycle of departure and return, emission and return to origin. Laozi celebrates this as the Tao\'s nature; Qohelet sees it as the image of futility. Same pattern, different evaluation.' },
+              ]
+            },
+          ]
+        },
+      ]
+    },
+    {
+      heading: 'The Experiments in Meaning (1:12–2:26)',
+      verses: [
+        {
+          ref: '1:18',
+          text: 'For in much wisdom is much vexation, and those who increase knowledge increase sorrow.',
+          textVersions: {
+            nrsv: 'For in much wisdom is much vexation, and those who increase knowledge increase sorrow.',
+            hebrew: 'כִּי בְּרֹב חָכְמָה רָב-כַּעַס וְיוֹסִיף דַּעַת יוֹסִיף מַכְאוֹב',
+          },
+          entities: [
+            { word: 'those who increase knowledge increase sorrow', node: '', type: 'concept',
+              note: 'Ki b\'rov hokhma rav ka\'as — "in much wisdom is much vexation." This is Qohelet\'s most anti-wisdom wisdom statement: the pursuit of wisdom has brought him more grief, not less. The more he understands, the more he sees the gap between what is and what should be, between the promise and the reality. This is not anti-intellectualism but the honest report of a serious thinker: knowledge of the full scope of human suffering and impermanence is itself a burden. The statement resonates with Job\'s complaint, with the Buddha\'s First Noble Truth (the acknowledgment of suffering as the starting point of wisdom), and with Ecclesiastes\' recognition that the tree of knowledge in Genesis brought what it promised — knowledge — and that the knowledge was indeed painful.',
+              parallels: [
+                { label: 'Dhammapada 1 — the mind creates suffering through awareness of impermanence', textId: 'dhammapada-1', note: 'The Dhammapada\'s "suffering follows a mind that is attached" and Ecclesiastes\' "those who increase knowledge increase sorrow" both identify the aware, active mind as the locus of suffering — not the external world but the mind that perceives it clearly. Both traditions respond: not by returning to ignorance but by transforming the mind\'s relationship to what it perceives.' },
+              ]
+            },
+          ]
+        },
+      ]
+    },
+    {
+      heading: 'Carpe Diem: The Counter-Thesis (9:7–10)',
+      verses: [
+        {
+          ref: '9:7–10',
+          text: 'Go, eat your bread with joy, and drink your wine with a merry heart; for God has long ago approved what you do. Let your garments always be white; do not let oil be lacking on your head. Enjoy life with the wife whom you love, all the days of your vain life that are given you under the sun, because that is your portion in life and in your toil at which you toil under the sun. Whatever your hand finds to do, do with your might.',
+          textVersions: {
+            nrsv: 'Go, eat your bread with joy, and drink your wine with a merry heart; for God has long ago approved what you do. Let your garments always be white; do not let oil be lacking on your head. Enjoy life with the wife whom you love, all the days of your vain life that are given you under the sun.',
+            hebrew: 'לֵךְ אֱכֹל בְּשִׂמְחָה לַחְמֶךָ וּשְׁתֵה בְלֶב-טוֹב יֵינֶךָ כִּי כְבָר רָצָה הָאֱלֹהִים אֶת-מַעֲשֶׂיךָ',
+          },
+          entities: [
+            { word: 'Enjoy life with the wife whom you love', node: '', type: 'concept',
+              note: 'Qohelet\'s carpe diem counsel is the book\'s most surprising element: after establishing that all is vapor, he recommends not renunciation but enjoyment. This is the response to impermanence that neither Buddhism nor Vedanta offers — not the transcendence of the temporal but the full embrace of the temporal in its temporality. The white garments and oil on the head are festival imagery: Qohelet is saying, live every day as a feast. This is theologically grounded: "God has long ago approved what you do" — the enjoyment is not in defiance of the divine but in accordance with it. The daily life that Buddhism calls samsara (the wheel of suffering), Qohelet calls your "portion" — your lot, your share, what has been given to you.',
+              parallels: [
+                { label: 'Zhuangzi — acceptance of the transformation of things', textId: 'zhuangzi', note: 'Zhuangzi sings at his wife\'s death; Qohelet says "enjoy life with the wife whom you love." Both accept the impermanence of things without fleeing into either grief or transcendence. Zhuangzi\'s equanimity and Qohelet\'s carpe diem are different expressions of the same mature stance toward impermanence: full presence in the moment without grasping.' },
+                { label: 'Rumi Masnavi — the fire of love burning the present moment', textId: 'rumi-masnavi', note: 'Rumi\'s fire of Love that burns in the present (the reed playing NOW, for the friends NOW) and Qohelet\'s "eat your bread with joy NOW" both counsel full presence in the present moment as the only appropriate response to temporal existence. Both texts reach their carpe diem conclusion through a prior reckoning with loss and impermanence.' },
+              ]
+            },
+          ]
+        },
+      ]
+    },
+  ]
+};
