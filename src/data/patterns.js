@@ -540,5 +540,13 @@ window.PATTERNS_DATA = [
     sources: ['music-pythagorean-harmony', 'music-tuvan-overtone-singing', 'music-raga-cosmology'],
     summary: 'Every vibrating string, column of air, or resonating body naturally produces the harmonic series: a fundamental tone plus overtones at 2x, 3x, 4x, 5x its frequency (octave, fifth, fourth, major third). These ratios (2:1, 3:2, 4:3, 5:4) also appear in planetary orbital resonances: Jupiter and Saturn are near 5:2; Neptune and Uranus near 2:1; Pluto and Neptune exactly 3:2. Pythagoras theorized this as evidence that music and cosmos share the same mathematical structure. The question the vault cannot answer: is this a cognitive imposition of a human perceptual structure onto nature, or is the harmonic series genuinely the mathematical framework that physical vibration expresses at every scale? Tuvan throat singers demonstrate the harmonic series in the human voice. Kepler measured planetary velocity ratios and found intervals. The Pythagorean claim remains neither confirmed nor refuted — merely reformulated.',
   },
+  {
+    id: 'alphabet-as-identity-weapon',
+    title: 'The Invented Alphabet as Identity and Power',
+    category: 'CONVERGENCE',
+    section: 'Alphabet Layer Discoveries',
+    sources: ['alphabet-glagolitic-cyrillic', 'alphabet-hangul', 'alphabet-cherokee'],
+    summary: 'When individuals or communities deliberately invent writing systems, the act is always political and theological simultaneously. Cyril invents Glagolitic to win the Slavic soul for Byzantium against Rome; King Sejong invents Hangul to break the scholarly class monopoly on literacy; Sequoyah invents Cherokee syllabary to give his people the power of the "talking leaf." In all three cases: the alphabet = the ideology; the script = the territory. And in all three cases, colonial or imperial forces immediately recognized the threat and moved to suppress or destroy the script. The Frankish church accused the Brothers of heresy (868 CE); the yangban scholars suppressed Hangul for four centuries; the Indian Removal Act followed Cherokee mass literacy by five years (1830). The pattern holds across three continents, three centuries, and three completely different cultural contexts: a people that can write is harder to erase, and dominant powers act accordingly.',
+  },
 
 ];
