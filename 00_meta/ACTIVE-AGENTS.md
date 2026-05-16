@@ -4,10 +4,10 @@ _Hand-maintained. Each agent currently working in the vault appends a claim bloc
 
 ---
 
-## goblin-dragon-1 — symbols / dragons + stupa + thunderbird thread — started 2026-05-16 — IN PROGRESS
-- Owning: `09_symbols/dragon-eastern.md` (NEW), `09_symbols/dragon-western.md` (NEW), `09_symbols/stupa.md` (NEW), `09_symbols/thunderbird.md` (NEW)
-- Goal: Eastern/Western dragon polarity MASSIVE WIN; dragon-slaying PIE pattern (Indra/Marduk/Zeus/Thor/George); stupa as man-made sacred mountain cross-tradition; Thunderbird as universal storm-bird pattern
-- Status: in-progress
+## ~~goblin-dragon-1 — symbols / dragons + stupa + thunderbird thread — started 2026-05-16 — FINISHED~~
+- ~~Owning: `09_symbols/dragon-eastern.md` (NEW), `09_symbols/dragon-western.md` (NEW), `09_symbols/stupa.md` (NEW), `09_symbols/thunderbird.md` (NEW)~~
+- ~~Goal: Eastern/Western dragon polarity MASSIVE WIN; dragon-slaying PIE pattern (Indra/Marduk/Zeus/Thor/George); stupa as man-made sacred mountain cross-tradition; Thunderbird as universal storm-bird pattern~~
+- ~~Status: finished — 4 new symbol nodes · 151 total symbols · 14307 edges · 0 YAML errors · 0 new dead links introduced~~
 
 ---
 
