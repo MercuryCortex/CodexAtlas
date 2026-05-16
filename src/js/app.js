@@ -2682,7 +2682,8 @@ const SCRIPTURE_CORPORA = {
         { id: 'phase-3-011-dead-sea-scrolls',  label: 'Dead Sea Scrolls' },
       ]},
       { id: 'canonical-translations', label: 'Canonical translations & recensions', color: '#a8a3b8', books: [
-        { id: 'phase-3-006-septuagint',                 label: 'Septuagint (LXX)' },
+        { id: 'phase-3-006-septuagint',                 label: 'Septuagint (LXX) · Greek OT' },
+        { id: 'phase-4-108-peshitta',                   label: 'Peshitta · Syriac Bible (oldest continuous Bible translation)' },
         { id: 'phase-4-080-garima-gospels',             label: 'Garima Gospels (Geʿez)' },
         { id: 'phase-4-081-mashafa-henok-geez-1-enoch', label: 'Mashafa Henok (Geʿez 1 Enoch)' },
         { id: 'phase-4-082-ethiopic-biblical-canon',    label: 'Ethiopic 81-book canon' },
@@ -2924,6 +2925,9 @@ const SCRIPTURE_CORPORA = {
         { id: 'phase-4-086-arda-viraf-namag',  label: 'Ardā Wirāz Nāmag · Zoroastrian heaven + hell journey (~4th–9th c.)' },
         { id: 'phase-4-107-bundahishn',         label: 'Bundahishn · Zoroastrian cosmogony and cosmic geography' },
       ]},
+      { id: 'avesta-denkard', label: 'Dēnkard · Zoroastrian theological encyclopedia (~850 CE)', color: '#2a3a7a', books: [
+        { id: 'phase-5-062-denkard', label: 'Dēnkard · archive of the lost Avesta (9 books)' },
+      ]},
     ],
   },
   // ----- Shintō canon — Japan's two foundational chronicles. Kojiki (712 CE)
@@ -3053,8 +3057,13 @@ const SCRIPTURE_CORPORA = {
         { id: 'P5-021-ibn-arabi-fusus-al-hikam', label: 'Ibn ʿArabī · Fuṣūṣ al-Ḥikam' },
       ]},
       { id: 'ghazali-corpus', label: 'Al-Ghazālī · Integration of reason + mysticism (~1058–1111)', color: '#4a6a4a', books: [
-        { id: 'P5-015-al-ghazali-ihya', label: 'Al-Ghazālī · Iḥyāʾ ʿUlūm al-Dīn' },
+        { id: 'P5-015-al-ghazali-ihya',               label: 'Al-Ghazālī · Iḥyāʾ ʿUlūm al-Dīn' },
         { id: 'P5-045-al-ghazali-tahafut-al-falasifa', label: 'Al-Ghazālī · Tahāfut al-Falāsifa' },
+      ]},
+      { id: 'islamic-falsafa', label: 'Islamic Falsafa · Aristotle into Scholasticism (~980–1198)', color: '#3a5a7a', books: [
+        { id: 'phase-5-044-ibn-sina-kitab-al-shifa',          label: 'Avicenna · Kitāb al-Shifāʾ (Book of Healing)' },
+        { id: 'phase-5-046-ibn-rushd-tahafut-al-tahafut',     label: 'Averroes · Tahāfut al-Tahāfut' },
+        { id: 'phase-5-057-ibn-rushd-aristotle-commentaries', label: 'Averroes · Aristotle Commentaries' },
       ]},
       { id: 'islamic-sira-biography', label: 'Sīra literature · prophetic biography (~768 CE)', color: '#3a5a3a', books: [
         { id: 'P5-043-ibn-ishaq-sirat-rasul-allah', label: 'Ibn Isḥāq · Sīrat Rasūl Allāh (~768 CE) · first Muhammad biography' },
@@ -3501,6 +3510,38 @@ const SCRIPTURE_CORPORA = {
       ]},
     ],
   },
+  // ----- Samaritan canon — the oldest continuously-practiced Israelite religion
+  // alongside Rabbinic Judaism, diverging ~4th c. BCE. The Samaritan Pentateuch
+  // (Torah Qedosha) is an independent pre-Masoretic Hebrew textual tradition,
+  // confirmed by Qumran manuscripts as a genuine ancient variant — not a sectarian
+  // revision. Together with the LXX, the SP proves the Masoretic Text is one member
+  // of a family of ancient Hebrew Bibles. The community survives today (~800 persons)
+  // on Mount Gerizim near Nablus and in Holon, Israel. -----
+  'samaritan-corpus': {
+    label: 'Samaritan canon · Torah Qedosha (pre-Masoretic Hebrew tradition)',
+    available: true,
+    sections: [
+      { id: 'samaritan-torah', label: 'Samaritan Pentateuch · third independent Hebrew Bible witness', color: '#8a9a5a', books: [
+        { id: 'phase-3-007-samaritan-pentateuch', label: 'Samaritan Pentateuch (Torah Qedosha)' },
+      ]},
+    ],
+  },
+  // ----- Alevi-Bektashi corpus. The Alevi-Bektashi tradition (~5–20 million in Turkey,
+  // plus Bektashi Order of Albania) has a distinct body of spiritual literature: the
+  // Vilayetname (hagiography of Hacı Bektaş Veli, 13th c.), the Buyruk (doctrinal
+  // compendium attributed to Imam Jafar Sadiq), and the nefes — devotional poetry of
+  // the Alevi saints (Pir Sultan Abdal, Kaygusuz Abdal, Yunus Emre adjacent).
+  // Cross-tradition: synthesis of Shia imamate theology, Sufi maqamat structure,
+  // and pre-Islamic Anatolian and Iranian shamanic elements. -----
+  'alevi-corpus': {
+    label: 'Alevi-Bektashi sacred literature (Vilayetname · nefes poetry)',
+    available: true,
+    sections: [
+      { id: 'alevi-hagiographic', label: 'Vilayetname · Hacı Bektaş Veli hagiography (~13th c.)', color: '#7a5a6a', books: [
+        { id: 'phase-5-055-vilayetname-haci-bektas', label: 'Vilayetname · Life and Miracles of Hacı Bektaş Veli' },
+      ]},
+    ],
+  },
 };
 
 // Edge types that bind a person/deity/event to a document for the Scripture view.
@@ -3624,6 +3665,8 @@ VIEWS.scripture = {
       'bon-corpus': 'Bön',
       'yazidi-corpus': 'Yazidi',
       'reformation': 'Reformation',
+      'samaritan-corpus': 'Samaritan',
+      'alevi-corpus': 'Alevi',
     };
     const shortLabelFor = (k, c) => SCRIPTURE_CORPUS_SHORT[k]
       || (c && c.label ? c.label.split(/[(·—/]|\s—\s/)[0].trim().slice(0, 14) : k);
