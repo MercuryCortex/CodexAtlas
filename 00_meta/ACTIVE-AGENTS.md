@@ -18,10 +18,10 @@ _Hand-maintained. Each agent currently working in the vault appends a claim bloc
 
 ---
 
-## goblin-nature-fertility-1 — symbols / nature + fertility thread — started 2026-05-16 — IN PROGRESS
-- Owning: `09_symbols/green-man.md` (NEW), `09_symbols/sheela-na-gig.md` (NEW), `09_symbols/shiva-lingam.md` (NEW), `09_symbols/yoni.md` (NEW)
-- Goal: Foliate-face cross-tradition (Roman acanthus mask → medieval Christian green man); Sheela-na-gig apotropaic paired with green man; Shiva lingam as axis mundi/cosmic phallus; yoni as cosmic womb (Venus figurines → Kamakhya → Gothic mandorla)
-- Status: in-progress
+## ~~goblin-nature-fertility-1 — symbols / nature + fertility thread — started 2026-05-16 — FINISHED~~
+- ~~Owning: `09_symbols/green-man.md` (NEW), `09_symbols/sheela-na-gig.md` (NEW), `09_symbols/shiva-lingam.md` (NEW), `09_symbols/yoni.md` (NEW)~~
+- ~~Goal: Foliate-face cross-tradition (Roman acanthus mask → medieval Christian green man); Sheela-na-gig apotropaic paired with green man; Shiva lingam as axis mundi/cosmic phallus; yoni as cosmic womb (Venus figurines → Kamakhya → Gothic mandorla)~~
+- ~~Status: finished — 4 new symbol nodes · 141 total symbols · 14193 edges · 0 dead links introduced · STATUS.md logged~~
 
 ---
 
