@@ -1204,7 +1204,7 @@ The things opus-foundation-1 claimed but never started are all still open:
 
 ---
 
-## bhakti-1 — Phase-6 bhakti corpus upgrades — started 2026-05-16 — IN PROGRESS
-- Owning: `02_documents/_phase-6-early-modern/phase-6-016-guru-granth-sahib.md`, `phase-6-031-bijak-kabir.md`, `phase-6-013-mirabai-bhajans.md`, `phase-6-020-chaitanya-charitamrita.md`
-- Goal: metadata → full/partial with MASSIVE WIN cross-tradition content (Sheikh Farid synthesis, living-Guru theology, Kabir Sant transcendence, bridal mysticism table, achintya-bhedabheda)
-- Status: in-progress
+## ~~bhakti-1 — Phase-6 bhakti corpus upgrades — started 2026-05-16 — DONE~~
+- ~~Owning: `02_documents/_phase-6-early-modern/phase-6-016-guru-granth-sahib.md`, `phase-6-031-bijak-kabir.md`, `phase-6-013-mirabai-bhajans.md`, `phase-6-020-chaitanya-charitamrita.md`~~
+- ~~Result: 2 files metadata→full, 2 files metadata→partial; 13979 edges; 0 new dead links; see STATUS.md~~
+- ~~Commits: 78bf8b2, 5b78de0, 234c5fe, b1112e2~~
