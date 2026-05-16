@@ -8954,6 +8954,129 @@ function renderRitualsReligion(pane) {
 }
 
 // ============================================================
+// VIEWS.philosophy — major philosophical schools, cross-tradition parallels.
+// Three modes: nodes (15_philosophy/ vault content), schools (cross-trad grid),
+// findings (MASSIVE WIN convergences).
+// ============================================================
+const _philoState = { mode: 'nodes' };
+VIEWS.philosophy = {
+  title: 'Philosophy',
+  subtitle: 'schools of mind · cross-tradition thought — how traditions answer the hardest questions',
+  render() {
+    document.getElementById('view-controls').innerHTML = `
+      <button class="btn btn-mini philo-mode${_philoState.mode==='nodes'?' active':''}" data-mode="nodes">nodes</button>
+      <button class="btn btn-mini philo-mode${_philoState.mode==='schools'?' active':''}" data-mode="schools">schools</button>
+      <button class="btn btn-mini philo-mode${_philoState.mode==='findings'?' active':''}" data-mode="findings">findings</button>
+    `;
+    document.querySelectorAll('.philo-mode').forEach(b => {
+      b.onclick = () => { _philoState.mode = b.dataset.mode; setView('philosophy'); };
+    });
+    legend.style('display','none').html('');
+    const pane = document.createElement('div');
+    pane.className = 'alpha-pane alpha-pane-live';
+    if (_philoState.mode === 'nodes') renderPhiloNodes(pane);
+    else if (_philoState.mode === 'schools') renderPhiloSchools(pane);
+    else renderPhiloFindings(pane);
+    document.getElementById('canvas').appendChild(pane);
+  }
+};
+
+function renderPhiloNodes(pane) {
+  const nodes = DATA.nodes.filter(n => n.type === 'philosophy');
+  const typeColors = { system:'#9a7ad4', method:'#5aaca8', school:'#d4a55a', tradition:'#6e8c6b' };
+  const typeOrder = ['system','school','method','tradition'];
+  const byType = {};
+  nodes.forEach(n => { const t=n['philosophy-type']||'system'; (byType[t]=byType[t]||[]).push(n); });
+  const ordered = typeOrder.filter(t=>byType[t]).concat(Object.keys(byType).filter(t=>!typeOrder.includes(t)));
+  let html = `<div class="alpha-scripts-header"><h2>Philosophy Nodes</h2><span class="alpha-count">${nodes.length} nodes in vault</span></div>`;
+  if (!nodes.length) {
+    html += '<div style="padding:48px;color:var(--text-3)">No philosophy nodes yet — content agent is populating 15_philosophy/ now.</div>';
+  } else {
+    ordered.forEach(t => {
+      if (!byType[t]) return;
+      const c = typeColors[t]||'#9a7ad4';
+      html += `<div style="color:${c};padding:12px 24px 4px;font-size:11px;text-transform:uppercase;letter-spacing:.08em">${t}</div><div class="alpha-scripts-grid">`;
+      byType[t].forEach(n => {
+        html += `<div class="alpha-script-card" data-id="${n.id}" style="border-left:3px solid ${c}">
+          <div class="asc-type">${n.tradition||''}</div>
+          <div class="asc-title">${n.title||n.id}</div>
+          <div class="asc-tradition">${n.date_earliest?n.date_earliest+' CE':''}</div>
+        </div>`;
+      });
+      html += '</div>';
+    });
+  }
+  pane.innerHTML = html;
+  pane.querySelectorAll('[data-id]').forEach(el => {
+    el.style.cursor = 'pointer';
+    el.onclick = () => { const nd = DATA.nodes.find(x => x.id === el.dataset.id); if (nd) selectNode(nd.id, true); };
+  });
+}
+
+function renderPhiloSchools(pane) {
+  const schools = [
+    { name:'The Apophatic Convergence', color:'#9a7ad4',
+      traditions:'Neoplatonism · Kabbalah · Advaita Vedanta · Daoism · Madhyamaka',
+      desc:'Five traditions reach the same conclusion about ultimate reality: it cannot be described in positive terms. Plotinus\'s The One, Kabbalah\'s Ein Sof, Vedanta\'s Nirguna Brahman, Laozi\'s unnameable Dao, Nagarjuna\'s sunyata — all place the absolute beyond predication. Different languages, identical philosophical move.' },
+    { name:'Virtue Ethics', color:'#d4a55a',
+      traditions:'Aristotle · Confucius · Buddhism · Stoicism',
+      desc:'The agent, not the act, is the moral unit. Aristotelian eudaimonia (flourishing through developed character), Confucian Ren (humaneness as cultivated virtue), Buddhist Sila (ethical conduct as foundation of the Path), Stoic sage (virtue as the only good). All four center moral philosophy on the formation of character rather than compliance with rules.' },
+    { name:'Emanation vs. Creation', color:'#5aaca8',
+      traditions:'Neoplatonism · Kabbalah · Gnosticism · Islam (Kalam)',
+      desc:'Did the universe overflow from God like light from the sun (Neoplatonic emanation — necessary, not chosen)? Or was it freely created ex nihilo (Christian/Islamic orthodox creation — chosen act of will)? Kabbalah\'s tzimtzum (God\'s self-contraction to make space for creation) is a hybrid: voluntary emanation. Gnostic Demiurge is the Neoplatonic degraded emanation mythologized. The question structures medieval theology in all three Abrahamic traditions.' },
+    { name:'Non-Dualism — Five Routes', color:'#6e8c6b',
+      traditions:'Advaita Vedanta · Madhyamaka · Daoism · Neoplatonism · Sufism',
+      desc:'Shankara: Brahman alone exists; individual soul and world-appearance are maya (illusion). Nagarjuna: no inherent self-existence anywhere; the self/world boundary has no ultimate grounding. Zhuangzi: the divisions between things are conventional; the Dao flows through all without separating. Plotinus: the soul\'s deepest nature IS The One; separation is the soul\'s forgetting. Ibn Arabi: wahdat al-wujud — Being is One; all apparent multiplicity is its self-disclosure. Five systems, one target: the hardness of the self/world boundary.' },
+    { name:'Reason vs. Revelation', color:'#c44a5a',
+      traditions:'Islamic Kalam · Christian Scholasticism · Jewish Rationalism · Greek Philosophy',
+      desc:'Al-Ghazali (1058–1111): "The Incoherence of the Philosophers" — pure reason cannot reach God; revelation is necessary. Averroes: reason and revelation are two routes to the same truth; apparent conflicts favor reason\'s re-interpretation. Maimonides: same as Averroes — where scripture conflicts with demonstrated reason, read scripture allegorically. Aquinas: reason and faith are complementary; natural theology can demonstrate God\'s existence, revelation provides the rest. The same argument runs in all three traditions simultaneously, often with cross-tradition awareness.' },
+    { name:'Skepticism as Liberation', color:'#c47453',
+      traditions:'Pyrrhonism · Madhyamaka · Daoism · Academic Skepticism',
+      desc:'Pyrrho: suspend judgment on all matters (epoché) → achieve tranquility (ataraxia). Nagarjuna: demonstrating that all conceptual positions are empty → freedom from attachment to views. Zhuangzi: "Forget distinctions" → spontaneous flow with the Dao. Three traditions use doubt and the suspension of conceptual fixation not as an epistemic failure but as the route to peace. Pyrrho reportedly encountered Indian philosophers during Alexander\'s campaign — the first documented East-West philosophical contact.' },
+  ];
+  let html = `<div class="alpha-scripts-header"><h2>Philosophical Schools</h2><span class="alpha-count">cross-tradition comparison</span></div><div style="padding:0 24px 24px">`;
+  schools.forEach(s => {
+    html += `<div style="border-left:3px solid ${s.color};margin:10px 0;padding:14px 16px;background:rgba(0,0,0,.18);border-radius:4px">
+      <div style="font-weight:600;color:var(--text-1);margin-bottom:4px">${s.name}</div>
+      <div style="font-size:11px;color:${s.color};margin-bottom:8px">${s.traditions}</div>
+      <div style="font-size:13px;color:var(--text-2);line-height:1.5">${s.desc}</div>
+    </div>`;
+  });
+  html += '</div>';
+  pane.innerHTML = html;
+}
+
+function renderPhiloFindings(pane) {
+  const findings = [
+    { label:'MASSIVE WIN', color:'#9a7ad4',
+      title:'Neoplatonism is the hidden grammar of Western and Islamic mysticism (200–1200 CE)',
+      body:'Christian mysticism (Pseudo-Dionysius → Eckhart → Cloud of Unknowing), Islamic Sufi metaphysics (al-Hallaj → Ibn Arabi\'s wahdat al-wujud), and Jewish Kabbalah (Ein Sof → sefirot) all think in Neoplatonic categories — often without knowing it. The One, emanation, apophasis, henosis: these are Plotinus\'s vocabulary, absorbed through the late-antique atmosphere and rebranded in each tradition. You cannot read any of these mystical traditions without Neoplatonism as the decoder ring.' },
+    { label:'MASSIVE WIN', color:'#5aaca8',
+      title:'Pyrrho\'s epoché = Nagarjuna\'s emptiness = Zhuangzi\'s forgetting distinctions',
+      body:'Three independent skeptical traditions reach the same practical conclusion: suspending conceptual fixation produces peace. Pyrrho (360–270 BCE) reportedly met Indian sages during Alexander\'s Indian campaign — possibly the first documented cross-tradition philosophical encounter. Whether the parallel is genetic (Pyrrho imported Indian ideas) or structural (three minds hitting the same wall) remains live. The three methods differ: Pyrrho via argument suspension, Nagarjuna via dialectical deconstruction, Zhuangzi via humor and parable — but the destination is identical.' },
+    { label:'CONVERGENCE', color:'#d4a55a',
+      title:'The Axial Age (800–200 BCE) — simultaneous philosophical revolution across four civilizations',
+      body:'Karl Jaspers identified a historical anomaly: in the same two-century window, without documented contact, four civilizations independently produced their foundational philosophers. Greece: Socrates, Plato, Aristotle, Pyrrho. India: the Buddha, Mahavira, the Upanishad authors. China: Confucius, Laozi, Zhuangzi, Mencius. Israel: the major prophets (Isaiah, Jeremiah, Ezekiel). All four movements emphasized: individual moral responsibility over collective ritual, the power of reason to discover truth, and the interior life as the site of transformation. The Axial Age is the biggest unsolved puzzle in the history of ideas.' },
+    { label:'CONVERGENCE', color:'#6e8c6b',
+      title:'Four traditions place non-attachment at the center of ethics',
+      body:'Stoic detachment (Epictetus: distinguish what is and is not in your control), Buddhist non-attachment (tanha, craving, as the root of suffering), Daoist wu wei (non-forcing action aligned with natural flow), and Confucian rectification of the self before acting on the world: all four philosophical ethics center on the problem of attachment — desire, craving, excessive will — as the source of moral failure. Four different metaphysics, same diagnosis.' },
+    { label:'TRANSMISSION', color:'#c44a5a',
+      title:'Islamic philosophy saved Aristotle for Europe — and added Neoplatonism to him',
+      body:'When the Western Roman Empire collapsed, Aristotle\'s logical and scientific works were largely lost to Latin Europe. Islamic scholars (al-Kindi, al-Farabi, Avicenna, Averroes) not only preserved and translated the corpus but extended it — and fused it with Neoplatonism. Avicenna\'s "floating man" argument prefigures Descartes\' cogito by 600 years. When Latin translations of Arabic Aristotle entered Europe (12th c.), they triggered the Scholastic revolution (Aquinas, Albertus Magnus, Duns Scotus). Western philosophy from 1200–1600 CE is largely a conversation with Arabic-mediated Aristotle.' },
+  ];
+  let html = `<div class="alpha-scripts-header"><h2>Philosophy Findings</h2><span class="alpha-count">cross-tradition convergences in thought</span></div><div style="padding:0 24px 24px">`;
+  findings.forEach(f => {
+    html += `<div style="border-left:3px solid ${f.color};margin:12px 0;padding:14px 16px;background:rgba(0,0,0,.18);border-radius:4px">
+      <div style="font-size:10px;letter-spacing:.1em;color:${f.color};text-transform:uppercase;margin-bottom:6px">${f.label}</div>
+      <div style="font-weight:600;margin-bottom:8px;color:var(--text-1)">${f.title}</div>
+      <div style="font-size:13px;color:var(--text-2);line-height:1.5">${f.body}</div>
+    </div>`;
+  });
+  html += '</div>';
+  pane.innerHTML = html;
+}
+
+// ============================================================
 // VIEWS.music — sound cosmology · music-cosmos investigation.
 // Two modes: nodes (browse 10_music/ vault content) and findings (MASSIVE WIN).
 // ============================================================
