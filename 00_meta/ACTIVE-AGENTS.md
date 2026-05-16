@@ -1808,15 +1808,19 @@ Files: sacred-cauldron.md (NEW) · cerridwen.md (STUB, deity) · bran-the-blesse
 
 ---
 
-## alphabet-undecoded-1 — 3 great undecoded scripts — 2026-05-16 — IN FLIGHT
-- Owned: `11_alphabets/alphabet-linear-a.md` (NEW), `11_alphabets/alphabet-proto-elamite.md` (NEW), `11_alphabets/alphabet-rongorongo.md` (NEW)
-- Do NOT touch: any existing node, app code, src/js/, src/styles/, index.html
+## ~~alphabet-undecoded-1 — 3 great undecoded scripts — 2026-05-16 — FINISHED~~
+- ~~Owned: `11_alphabets/alphabet-linear-a.md` (NEW full), `11_alphabets/alphabet-proto-elamite.md` (NEW full), `11_alphabets/alphabet-rongorongo.md` (NEW full)~~
+- ~~Stub: `07_traditions/tradition-elamite.md` (NEW stub)~~
+- ~~Pattern added: `knowledge-destroyed-by-conquest` (CONVERGENCE) in src/data/patterns.js~~
+- ~~Status: FINISHED — commit `be21387`. Build: 28 alphabets · 164 traditions · 16136 edges · 0 YAML errors · 0 dead links introduced~~
+- ~~MASSIVE WIN edges: (1) Rongorongo = only writing system in Oceania, destroyed not by ancient conquest but by the 1862 Peruvian slave raids — the gap between "actively read" and "permanently undecoded" is 160 years and one colonial event; (2) Proto-Elamite = oldest undecoded writing on earth, possibly independently invented from Sumerian cuneiform within the same century — if confirmed, writing is a predictable emergent technology not a single invention; (3) Linear A decipherment would reveal Minoan theology and document the direct transmission path between Minoan bull cult / snake goddess and Greek mythology (Minotaur/Ariadne/Athena's snake); (4) knowledge-destroyed-by-conquest CONVERGENCE: ALL four major undecoded scripts belong to civilizations that were militarily or epidemiologically destroyed before their reading tradition could be documented — the archive survived, the human chain did not~~
 
 ---
 
-## alphabet-calligraphy-1 — Arabic calligraphy as sacred architecture + Coptic — 2026-05-16 — IN FLIGHT
-- Owned: `11_alphabets/alphabet-arabic-calligraphy.md` (NEW), `11_alphabets/alphabet-coptic.md` (NEW)
-- Do NOT touch: any existing node, app code, src/js/, src/styles/, index.html
+## ~~alphabet-calligraphy-1 — Arabic calligraphy as sacred architecture + Coptic — 2026-05-16 — FINISHED~~
+- ~~Owned: `11_alphabets/alphabet-arabic-calligraphy.md` (NEW full), `11_alphabets/alphabet-coptic.md` (NEW full)~~
+- ~~Status: FINISHED — commit `dbcf399`. Build: 28 alphabets · 16,134 edges · 0 YAML errors · 0 dead links introduced~~
+- ~~MASSIVE WIN edges: (1) Ibn Muqla rhombic-dot/alif/circle system — only pre-modern tradition treating letterform as mathematical proof; letter as geometric theorem; (2) Dome of the Rock (691 CE) as mosque-as-text — 240 meters of Quranic polemic against Trinitarian Christianity inscribed in stone at the center of contested sacred geography; (3) structural inversion — Islam is the only major world tradition where text IS the visual icon (vs image-first in Christianity/Hinduism/Buddhism); (4) Coptic as 7th sacred-language-preservation case — the only liturgical preservation whose consequence was unlocking a separate dead script (hieroglyphs decoded via Coptic by Champollion 1822); (5) 5,000-year Egyptian sacred-writing continuity: Pyramid Texts (c. 2400 BCE) → hieratic → demotic → Coptic → Nag Hammadi Gnostic library (c. 367 CE burial) → Coptic Orthodox liturgy today~~
 
 ---
 

@@ -617,3 +617,14 @@ Script: `add_depictions.py` (new helper for direct Commons depictions[] injectio
 - KEY FIND: Abulafia's letter-permutation method = Iamblichean vowel-sequence theurgy = Indian mantra = Orphic divine-name invocation — 4-tradition convergence on same sonic technology, no contact
 - KEY FIND: Zosimos bridges music→alchemy: alchemical transformation = "forced modulation" in Pythagorean-Hermetic framework; Logos/sound ontologically prior to matter
 - Build: 58 music nodes · 15,893 edges · commits b61c59e + 7b422be
+
+---
+
+## alphabet-calligraphy-1 — Arabic calligraphy + Coptic — FINISHED 2026-05-16
+- 2 nodes: alphabet-arabic-calligraphy · alphabet-coptic
+- KEY FIND: Islam as structural inversion — only major tradition where text IS the visual icon; letter replaces image due to hadith-level figural-art restriction; calligrapher is the theologian
+- KEY FIND: Ibn Muqla (885–940 CE) — only pre-modern system treating letterform as mathematical proof; rhombic-dot/alif/circle derivation makes every Arabic letter a geometric theorem; Euclid of calligraphy
+- KEY FIND: Dome of the Rock (691 CE) — 240 meters of Quranic polemic against Trinitarian Christianity inscribed in stone at the center of contested sacred geography; mosque as theological argument in architecture
+- KEY FIND: Coptic as 7th sacred-language-preservation case; the only liturgical preservation whose consequence was unlocking a separate dead script (hieroglyphs decoded via Coptic phonology, Champollion 1822)
+- KEY FIND: 5,000-year Egyptian sacred-writing continuity — Pyramid Texts (c. 2400 BCE) → demotic → Coptic → Nag Hammadi Gnostic library (buried c. 367 CE) → Coptic Orthodox liturgy today
+- Build: 28 alphabets · 16,134 edges · commit dbcf399
