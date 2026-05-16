@@ -3,6 +3,7 @@ type: deity
 id: "inanna"
 name: "Inanna"
 aka: ["Inanna", "Inana", "Innin", "Lady of Heaven", "Queen of Heaven"]
+tradition: "Sumerian"
 redirect: "[[inanna-sumerian]]"
 status: "stub"
 refs:

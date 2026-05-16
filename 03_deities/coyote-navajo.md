@@ -3,7 +3,7 @@ type: deity
 id: "coyote-navajo"
 name: "Coyote (Mąʼii)"
 aka: ["Mąʼii", "First Angry", "First Scolder", "Trickster", "Coyote", "the Roamer", "First Coyote"]
-family: "Native-American"
+tradition: "Diné (Navajo)"
 sub-tradition: "Diné (Navajo) / Athabaskan; also widespread across Ute, Shoshone, Paiute, Plateau, Great Basin, California traditions"
 gender: "male (fluid — shapeshifts)"
 domain: ["trickery", "necessary disorder", "death (origin of)", "sexuality", "fire (in some traditions)", "the unexpected", "chaos as creativity"]

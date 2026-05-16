@@ -3,7 +3,7 @@ type: deity
 id: "zao-jun"
 name: "Zao Jun"
 aka: ["灶君", "Zào Jūn", "Kitchen God", "God of the Stove", "Zao Shen (灶神)", "Lord of the Hearth", "Stove Master", "Füdejheng (Hokkien)"]
-family: "Chinese"
+tradition: "Chinese"
 sub-tradition: "Chinese folk religion / Daoist domestic cult / Chinese popular religion"
 gender: "male"
 domain: ["hearth", "household", "family morality", "annual divine census", "domestic life", "food", "fire"]

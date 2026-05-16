@@ -3,7 +3,7 @@ type: deity
 id: "anansi"
 name: "Anansi"
 aka: ["Ananse", "Kwaku Anansi", "Aunt Nancy (Caribbean/American diaspora)", "Anansy", "Compère Lapin (partial cognate)", "the Spider"]
-family: "African"
+tradition: "Akan (Ashanti) / African"
 sub-tradition: "Akan (Ashanti) religion / West African oral tradition / African diaspora"
 gender: "male (usually; shapeshifts)"
 domain: ["stories", "wisdom", "cunning", "spiders", "weaving", "knowledge", "trickery", "communication between heaven and earth"]

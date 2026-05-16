@@ -3,6 +3,7 @@ type: deity
 id: "tammuz-dumuzi"
 name: "Tammuz / Dumuzi"
 aka: ["Tammuz", "Dumuzi", "Dumuzid", "Dumuzi the Shepherd"]
+tradition: "Sumerian / Akkadian"
 redirect: "[[dumuzi-tammuz]]"
 status: "stub"
 refs:

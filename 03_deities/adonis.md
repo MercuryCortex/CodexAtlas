@@ -3,7 +3,7 @@ type: deity
 id: "adonis"
 name: "Adonis"
 aka: ["Adon", "Tammuz", "Dumuzi", "the Beautiful Youth", "the Dying God"]
-family: "Greek"
+tradition: "Greek"
 sub-tradition: "Greco-Phoenician mystery religion; dying-and-rising deity cluster"
 gender: "male"
 domain: ["beauty", "vegetation", "death and rebirth", "hunting", "desire"]

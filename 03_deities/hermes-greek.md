@@ -3,7 +3,7 @@ type: deity
 id: "hermes-greek"
 name: "Hermes"
 aka: ["Ἑρμῆς", "Argeiphontes (Argus-slayer)", "Psychopompos (soul-conductor)", "Eriounios (luck-bringer)", "Mercury (Roman)"]
-family: "Greek"
+tradition: "Greek"
 sub-tradition: "Olympian religion; mystery cults (as psychopomp); Hermetism (as Hermes Trismegistus)"
 gender: "male"
 domain: ["messenger", "travel", "commerce", "theft", "boundaries", "souls of the dead", "interpretation", "luck", "crossroads", "language", "cunning"]

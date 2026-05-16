@@ -3,6 +3,7 @@ type: deity
 id: "baal"
 name: "Baal"
 aka: ["Ba'al", "Baal", "lord", "Baal Hadad"]
+tradition: "Canaanite / Ugaritic"
 equivalents: ["[[baal-hadad]]"]
 status: "metadata"
 refs:
