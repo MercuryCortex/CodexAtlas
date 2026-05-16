@@ -744,16 +744,48 @@
     };
 
     const sigma = new window.Sigma(graph, rootEl, settings);
-    // Ratio 1.32 = zoom OUT past sigma's autofit so rim labels (at world
-    // R = Router + 56 = 596, outside the node bbox) clear, with room around
-    // the diagram for breathing. Mirrors P1's reset feel — diagram floats
-    // comfortably inside the pane instead of crowding the rim.
-    // Dev panel can still override.
+    // Adaptive initial fit. Sigma's autofit places node bbox edge (Router=540)
+    // at the smaller viewport dimension's edge — but rim labels sit at
+    // Router+56=596 and need ~10% extra margin to read cleanly. Compute the
+    // ratio dynamically from the pane size so the diagram fits whatever
+    // window the user opens, instead of hardcoding for one resolution.
+    function computeFitRatio() {
+      try {
+        const rect = rootEl.getBoundingClientRect();
+        const minDim = Math.min(rect.width || 1, rect.height || 1);
+        // World-space target: rim labels at radius 596 must fit with ~12% margin.
+        // At ratio R, world radius 540 maps to (minDim/2) screen px. Solve for R
+        // so that 596 / 540 × (minDim/2) × (1 - 0.12) ≤ (minDim/2).
+        // → R = 596 / (540 × 0.88) ≈ 1.254. Add a small extra so the pane has
+        //   breathing room on most desktop viewports.
+        const aspect = (rect.width || 1) / (rect.height || 1);
+        // Wider viewports (browser dominant) — give a touch more margin so
+        // the diagram doesn't kiss the legend / detail rail. Square-ish
+        // viewports get tighter fit.
+        const margin = aspect > 1.6 ? 0.18 : aspect > 1.2 ? 0.15 : 0.12;
+        const r = 596 / (540 * (1 - margin));
+        return Math.max(1.20, Math.min(1.80, r));
+      } catch (e) { return 1.32; }
+    }
+    function applyInitialFit() {
+      try {
+        const override = window.CODEX_DEV?.settings?.cameraRatio;
+        const ratio = (typeof override === 'number' && override !== 1.32) ? override : computeFitRatio();
+        sigma.getCamera().setState({ ratio, x: 0.5, y: 0.5, angle: 0 });
+        sigma.refresh();
+      } catch (e) {}
+    }
+    // Two-pass fit: once on render (before sigma's first paint), again after
+    // a resize so the diagram never lands cropped on first show.
+    applyInitialFit();
+    requestAnimationFrame(applyInitialFit);
+    // ResizeObserver — re-fit if the pane size changes (window resize, nav toggle, etc.)
     try {
-      const r = window.CODEX_DEV?.settings?.cameraRatio;
-      sigma.getCamera().setState({ ratio: typeof r === 'number' ? r : 1.32 });
-      sigma.refresh();
-    } catch (e) {}
+      const ro = new ResizeObserver(() => applyInitialFit());
+      ro.observe(rootEl);
+      // Stash so the parent can disconnect on teardown.
+      rootEl._ph2Resize = ro;
+    } catch (e) { /* ResizeObserver not available */ }
 
     // ============================================================
     // SVG OVERLAY — hulls (under canvas) + curved edges (under canvas).

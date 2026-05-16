@@ -1855,7 +1855,10 @@ body.view-atlas main.canvas { background: var(--bg-0); }
    only right-edge inset we honour. */
 .pantheon-v2-pane {
   position: absolute;
-  top: 56px; bottom: 24px;
+  /* Top=12, bottom=0 — the diagram fills the entire pane vertically; the
+     view-header title floats OVER the top of the diagram with a transparent
+     backdrop. Maximises viewing area, kills the "opaque title bar" effect. */
+  top: 12px; bottom: 0;
   left: calc(var(--eff-nav-w) + 24px);
   right: calc(var(--detail-w-collapsed) + 24px);
   overflow: hidden;
