@@ -22,7 +22,7 @@ influenced-by: ["Pythagoreanism (number, soul-transmigration)", "Parmenides (bei
 influences: ["Middle Platonism", "Philo of Alexandria", "Plotinus and Neoplatonism", "Christian theology via Justin, Clement, Origen, Augustine", "Gnostic demiurge cosmologies (with valuation inverted)", "Hermetic corpus", "all subsequent Western metaphysics"]
 deities-mentioned: ["[[demiurge-platonic]]", "[[zeus]]", "[[eros-greek]]"]
 events-context: ["Founding of the Academy (~-387)", "Trial and execution of Socrates (-399) — narrative backdrop of Phaedo and Apology"]
-status: "partial"
+status: "full"
 preservation: "Continuous manuscript tradition through Byzantine scriptoria; oldest substantial Plato witness is P.Oxy. fragments from ~+200 CE; complete medieval mss from the 9th c. (Clarkianus 39, Bodleian). The standard edition is Stephanus (1578), whose pagination is still cited (e.g., *Timaeus* 27d)."
 refs:
   - title: "Plato: Complete Works"
@@ -168,6 +168,12 @@ Citation: *Phaedrus* 246a–246c, trans. Jowett 1892.
 - **Date of Timaeus.** Long held to be late Plato; recent stylometry (Brandwood, Ledger) confirms post-*Republic* but pre-*Laws*.
 - **Status of the demiurge.** Is the demiurge literal (Vlastos, Cornford) or a "likely story" (eikōs mythos) Plato distances himself from (Owen, Burnyeat)? Bears on whether Plato is a "theist".
 - **Plato's mysticism.** Whether the *Symposium* ascent and *Phaedrus* myth are religious mysticism or rhetorical structure — contested between "religious" readings (Pierre Hadot, Annas) and rationalist readings (Vlastos).
+
+## MASSIVE WIN — cross-tradition edges
+- **Platonic *dēmiourgos* → Gnostic Yaldabaoth — the single move that generates Gnosticism:** Plato's *Timaeus* gives a *good* craftsman god who makes the best possible cosmos. Sethian Gnostics ask: what if the demiurge is *not* good? — and Yaldabaoth (Apocryphon of John) is born: ignorant, arrogant, declaring "There is no god but me" (quoting Isaiah 45:5 against itself). Both the source (*Timaeus* 28a–30c) and the inversion (*Apocryphon of John*, NHC II,1) are vault-resident documents; this is the most traceable single conceptual transformation in the vault — one philosophical move generates an entirely new religion.
+- **Symposium ladder → the Western mystical ascent template:** Diotima's ascent from single beautiful body → all bodies → beautiful souls → beautiful practices → sciences → "suddenly perceiving the nature of beauty itself" (Symp. 210a–212a) is the structural template for Plotinus' ascent to the One (Enn. I.6), Augustine's *Confessions* Book VII, Bernard of Clairvaux's *On the Love of God*, and the Sufi *maqāmāt* (stations of the soul). The *Symposium* passage is the founding document of Western contemplative ascent-structure; no other ancient text has a comparable institutional-theological afterlife in the West.
+- **Plato → Philo → John → Nicaea — the four-step transmission that produced Christian theology:** Plato's *Timaeus* gives the world a rational demiurge working from Forms; Philo fuses Platonic Forms with the Jewish *Logos*-as-God's-plan; John's prologue identifies this Logos with Jesus; Nicaea (325 CE) declares the Logos co-eternal with the Father. No other philosophical text has been so consequentially misread as revealed theology — the entire structure of Christian Trinitarian doctrine is Platonic cosmology in scriptural dress. Turner 2001 is the definitive treatment of the Platonic → Gnostic → orthodox trajectory.
+- **Myth of Er (Rep. X) — the Western post-mortem judgment template:** Er's vision of cosmic geography, soul-weighing, a spindle of Necessity, and choice of new lives (~-380 BCE) is the philosophical consolidation of underworld-geography motifs that run from Homer's Nekyia (Odyssey XI) through Zoroastrian *frashokereti* and pre-dates Dante's *Commedia* by 1,600 years. West 1997 argues for possible Near Eastern input via Iran; the structural parallel with the Tibetan *Bardo Thodol*'s post-mortem judgment and realm-choice is the vault's most striking unconnected structural parallel.
 
 ## Refs
 1. Cooper, J.M. (ed.) (1997). *Plato: Complete Works*. Hackett. — standard English.

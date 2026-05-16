@@ -22,7 +22,7 @@ influenced-by: ["earlier Sumerian creation/combat traditions (e.g., Ninurta-Anzu
 influences: ["Hebrew Bible Genesis 1 cosmogony (contested mechanism — common-stock vs. literary dependence)", "later Near Eastern combat-creation imagery"]
 deities-mentioned: ["[[marduk]]", "[[tiamat]]", "[[apsu]]", "[[an-sumerian]]", "[[enlil]]", "[[enki-ea]]", "[[kingu]]", "[[damkina]]"]
 events-context: ["Read aloud during the Babylonian Akitu (New Year) festival, days 4–5 of Nisanu"]
-status: "partial"
+status: "full"
 preservation: "Seven cuneiform tablets per copy; ~1100 lines total. Best-preserved exemplars from the Library of [[ashurbanipal]] at Nineveh (excavated 1849–1854 by Layard, Rassam, and George Smith). Additional copies from Aššur, Kish, Sippar, Sultantepe, and Babylon itself."
 refs:
   - title: "Babylonian Creation Myths"
@@ -156,6 +156,12 @@ Citation: King, *Enuma Elish* VI.1–8, 31–34 (1902); cf. Lambert 2013, pp. 11
 - **Date of final composition.** Lambert (2013) and most current scholarship favor Nebuchadnezzar I (~1125–1104 BCE) as the *terminus ad quem* for the standard text. Older proposals (Heidel) suggested Old Babylonian (~1700 BCE) composition. Most likely an Old Babylonian core was elaborated into its standard seven-tablet form in the late second millennium.
 - **Influence on Genesis 1.** Strongly contested. Positions: (a) direct literary dependence (older Wellhausen-school view, partly revived by some); (b) shared Near Eastern cosmological grammar without direct dependence (Smith 2010); (c) Genesis 1 is polemically *demythologizing* a known Babylonian cosmogony as part of exilic-period Yahwistic reform (Hartman, Levenson). All three retain advocates.
 - **Tehom/Tiamat etymology.** Cognate (proto-Semitic *tihām-*) is uncontested; whether the Hebrew word's use in Gen 1:2 carries personified-chaos residue is debated.
+
+## MASSIVE WIN — cross-tradition edges
+- ***Tĕhôm* / *Tiamat* linguistic cognate — the vault's strongest Near Eastern → Hebrew Bible transmission case:** Genesis 1:2's primordial "deep" (*tĕhôm*) is cognate with Akkadian *Tiāmat* (proto-Semitic *tihām-*); both are the salt-water cosmic ocean before creation. Smith 2010 and Heidel 1951 debate direct literary dependence vs. shared cosmological grammar — but either way the Genesis author is in *conversation* with the Babylonian creation tradition, and the *Enuma Elish* is the primary text establishing what that tradition was. This is the most securely documented Near Eastern → Hebrew Bible transmission node in the vault.
+- **Chaoskampf — six-tradition convergence table:** Marduk vs. Tiamat (Babylon) / Baal vs. Yam (Ugarit) / Yahweh vs. Leviathan/Rahab (Job 26:12, Ps 74:13–14, Isa 51:9) / Indra vs. Vritra (Rig Veda 1.32) / Zeus vs. Typhon (Hesiod *Theogony* 820–880) / Thor vs. Jormungandr. Day 1985 documents the Ugaritic → Hebrew Bible transmission; West 1997 establishes the Mesopotamian–Greek connection via Anatolian intermediaries. The *Enuma Elish* is the founding document of the vault's most widely-distributed mythological cluster.
+- **Creation-from-divine-body — three-tradition convergence:** Tiamat's split body becomes the heavens and earth (Tablet IV); Purusha's dismembered body becomes the caste-structured cosmos (Rig Veda 10.90); Ymir's body becomes the Norse world (Prose Edda, *Gylfaginning* 8). Three independently-attested Bronze–Iron Age traditions share the same mythological grammar: the cosmos is constituted *from* a primordial being's body rather than being made *by* a transcendent creator.
+- **Akitu New Year performance = Eliade's "eternal return" documented:** Tablets IV–V were recited (probably chanted by the *kalû* priest) during the Akitu New Year festival in Nisanu, with the king ritually re-enacting Marduk's victory. This is the most comprehensively documented ancient instance of Mircea Eliade's "myth of the eternal return" — the annual ritual re-creation of cosmogony to renew the world; the *Enuma Elish* is the primary evidence for the whole *mythico-ritual* model that shaped 20th-century comparative religion.
 
 ## Refs
 1. Lambert, W.G. (2013). *Babylonian Creation Myths*. Mesopotamian Civilizations 16. Eisenbrauns. — definitive critical edition.

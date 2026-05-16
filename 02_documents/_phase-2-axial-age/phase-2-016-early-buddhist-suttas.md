@@ -22,7 +22,7 @@ influenced-by: ["śramaṇa ascetic milieu of Greater Magadha", "Upaniṣadic-er
 influences: ["all subsequent Buddhist literature", "Jain parallels", "later Mahāyāna sūtras (foundational doctrines)"]
 deities-mentioned: ["[[indra]]", "[[brahma-vedic]]"]
 events-context: ["Lifetime of the Buddha (~-563 to -483 traditional, or ~-480 to -400 by current corrected dating)"]
-status: "partial"
+status: "full"
 preservation: "Preserved in the Pali Khuddaka Nikāya as the Sutta Nipāta, of which the Aṭṭhaka-vagga (book 4) and Pārāyana-vagga (book 5) are widely regarded as the oldest stratum on linguistic, metrical, and citation grounds (cited as a separate work in other early texts and in early commentary). Gandhāran Buddhist manuscripts (Kharosthi script, ~-100 to ~+200 CE, found from Afghanistan/Pakistan) include parallel material. Oral transmission through the *bhāṇaka* reciter-tradition; first written down in Sri Lanka (Aluvihare, ~-29 BCE under King Vaṭṭagāminī)."
 refs:
   - title: "The Group of Discourses (Sutta-Nipāta)"
@@ -158,6 +158,12 @@ Citation: Sn 5, verses 1136–1137 (closing of the Pārāyanavagga, Piṅgiya's 
 - **Stratification of the Pali canon.** General consensus that the Aṭṭhakavagga and Pārāyanavagga are oldest (Jayawickrama, Norman, Gombrich, Bronkhorst). Debates over relative dating of other early material.
 - **Buddhist-Greek contact.** Beckwith's Pyrrho thesis is controversial but cannot be dismissed; the Indo-Greek contact zone (Bactria, Gandhāra) is real.
 - **What the Buddha "really taught".** Schmithausen, Gombrich, Wynne, and Bronkhorst have all attempted reconstructions, with varying degrees of confidence.
+
+## MASSIVE WIN — cross-tradition edges
+- ***Anattā* vs. *Ātman* — the most important philosophical debate in Asian thought:** the Buddha's "no-self" doctrine is a direct philosophical response to the Bṛhadāraṇyaka Upaniṣad's "*Aham Brahmāsmi*"; where the Upaniṣad claims the permanent inner Self is identical with the cosmic ultimate, the early suttas systematically deny any such permanent self can be found. These two vault documents are in implicit direct dialogue — the most consequential doctrinal dispute in the history of Indian religion, generating two millennia of subsequent argument between Hindu Vedānta and Buddhist Abhidharma/Madhyamaka.
+- **Aṭṭhakavagga view-skepticism → Pyrrho of Elis → Western skepticism:** Beckwith (2015) argues that Pyrrho of Elis, who accompanied Alexander's army to India (~-326), encountered Buddhist philosophers and that Pyrrhonist skepticism (suspension of judgment about all views) derives from the Aṭṭhakavagga-style non-clinging to views. If correct, this is the earliest dated direct Indian → Greek philosophical transmission in any text now in the vault. Disputed but not dismissible; the geographical and temporal circumstance is documented (Diogenes Laërtius, *Life of Pyrrho*).
+- **Four Noble Truths as therapeutic diagnosis → Stoic cure-of-passions → Sufi psychology:** the First Sermon's structure (suffering → craving as cause → cessation as possibility → eightfold path as treatment) is a medical-diagnostic framework that parallels Stoic *therapeia* of the passions (Chrysippus, Cicero *Tusculan Disputations* III–IV) and later Sufi psychological manuals (al-Ghazālī, *Iḥyāʾ ʿUlūm al-Dīn*, book on the diseases of the heart). Three Axial-Age traditions use the same medical-diagnosis structure for spiritual soteriological purpose — without documented contact.
+- **The Buddha and Mahāvīra as simultaneous reformers — the vault's densest Axial-Age religious-emergence cluster:** within one or two generations, the same Gangetic-plain region produced the Buddha (early Buddhism), Mahāvīra (Jain reform), and Yājñavalkya (Upaniṣadic philosophy). All three share karma/rebirth/liberation vocabulary but contest the soul-doctrine, the role of ritual, and the possibility of omniscience. No other region-and-period in the vault shows this density of simultaneous doctrinal innovation; Bronkhorst 2007 proposes "Greater Magadha" as the underlying cultural matrix.
 
 ## Refs
 1. Norman, K.R. (1992). *The Group of Discourses (Sutta-Nipāta)*. PTS.

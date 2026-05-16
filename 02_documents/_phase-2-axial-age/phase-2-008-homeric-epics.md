@@ -22,7 +22,7 @@ influenced-by: ["Mycenaean Bronze Age oral tradition", "Near Eastern epic models
 influences: ["all subsequent Greek literature; Roman epic (Vergil's Aeneid); Western literary canon"]
 deities-mentioned: ["[[zeus]]", "[[hera]]", "[[athena]]", "[[apollo]]", "[[ares]]", "[[aphrodite-greek]]", "[[hermes-greek]]", "[[poseidon]]", "[[hades]]", "[[hephaestus]]", "[[artemis]]"]
 events-context: ["Trojan War (legendary, ~-1200 BCE setting)"]
-status: "partial"
+status: "full"
 preservation: "Continuous transmission via rhapsodic recitation, then text. Pisistratus of Athens (~-550) is credited with the first authoritative written redaction (the 'Pisistratean recension'). Aristarchus of Samothrace (Alexandria, ~-200) produced the Hellenistic critical text. The medieval manuscript tradition descends through Byzantine copying. Oldest physical witnesses: papyrus fragments from ~-300 BCE (Ptolemaic Egypt); the famous Venetus A manuscript (10th c. CE) preserves Aristarchan scholia."
 refs:
   - title: "The Iliad / The Odyssey (Greek text)"
@@ -142,6 +142,12 @@ Citation: *Odyssey* XXII.1–6, trans. Butler 1900.
 - **Date.** The Iliad is usually placed ~750–700 BCE (slightly earlier than the Odyssey, ~720–650 BCE); some place it later (Janko's linguistic dating ~735 BCE; West argues ~670–660 BCE).
 - **Historicity of Troy.** Schliemann's excavation (1870 ff.) identified Hisarlık as Troy; current archaeology (Korfmann) supports a Late Bronze Age city plausibly destroyed by warfare ~-1200 BCE. Whether this corresponds to any "Trojan War" in the Homeric sense is much disputed.
 - **Near Eastern influence.** Once dismissed, now firmly established via West (1997) and Burkert. Mechanism: probably Anatolian intermediaries plus Phoenician contact.
+
+## MASSIVE WIN — cross-tradition edges
+- **Homer + Hesiod = the Greek theological constitution (Herodotus 2.53):** Herodotus explicitly states that "Homer and Hesiod gave the Greeks their gods, giving them their epithets, dividing their honors and skills, and indicating their forms." This makes the *Iliad* and *Odyssey* functionally equivalent to revealed scripture for Greek polytheism — the primary source-nodes for the entire Olympian tradition in the vault. Every subsequent document that cites Zeus, Hera, Athena, or Apollo draws on this established divine-character canon.
+- **Iliad/Odyssey ↔ Gilgamesh — Bronze Age literary transmission:** Achilles/Patroclus ↔ Gilgamesh/Enkidu (the hero-companion bond, identical function and grief-structure); Odyssey XI Nekyia ↔ Gilgamesh XI (living hero descends to consult the dead); the wandering hero's tavern-keeper speech (Odyssey V's Calypso ↔ *Gilgamesh* Tablet X's Siduri). West 1997 (*The East Face of Helicon*) and Burkert 1992 (*The Orientalizing Revolution*) establish probable Bronze Age Near Eastern transmission via Anatolian intermediaries — the vault's strongest case for Mesopotamian → Greek literary contact.
+- **The Nekyia (Odyssey XI) — the Western underworld template:** Odysseus' journey to the land of the dead pre-forms every subsequent Western katabasis: Aeneas in Aeneid VI; Dante's *Commedia*; Paul's "third heaven" (2 Cor 12); the Tibetan Bardo Thodol's post-mortem geography; the Zoroastrian Ardā Wīrāz Nāmag. The Nekyia establishes the canonical features: the crossing of water, sacrificial blood awakening the dead, encounters with specific named individuals, glimpses of cosmic geography. This is the vault's foundational underworld-visit document in the Western literary sequence.
+- **The *Iliad* as the source-text for the problem of theodicy in Greek religion:** Achilles' rage against divine injustice (Iliad I, XXIV) — why do the gods permit the death of the best man? — opens the question that Aeschylus (*Oresteia*), Plato (*Republic*), and later Christian theology will each try to answer. The *Iliad* is the earliest Greek document where the gap between divine governance and just outcome is directly dramatized, seeding the Western theodicy tradition.
 
 ## Refs
 1. Monro and Allen (1920). *Iliad / Odyssey* (Oxford Classical Texts). Greek critical text.

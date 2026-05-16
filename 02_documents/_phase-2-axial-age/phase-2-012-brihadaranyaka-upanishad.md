@@ -22,7 +22,7 @@ influenced-by: ["[[phase-2-006-brahmanas-aranyakas]]", "[[phase-2-001-rig-veda-f
 influences: ["all subsequent Vedānta", "Buddhist and Jain ascetic traditions (shared milieu / proximate dialogue)", "later Hindu philosophy and Bhagavad Gītā"]
 deities-mentioned: ["[[prajapati]]", "[[indra]]", "[[agni]]", "[[varuna]]"]
 events-context: []
-status: "partial"
+status: "full"
 preservation: "Forms the closing portion (final six chapters) of the Śatapatha Brāhmaṇa (Mādhyandina recension); the Kāṇva recension preserves it as a standalone text. Continuous oral transmission; medieval manuscripts."
 refs:
   - title: "The Early Upaniṣads: Annotated Text and Translation"
@@ -142,6 +142,12 @@ Citation: BṛhUp 4.4.5–6, trans. Müller 1884; cf. Olivelle 1998, pp. 120–1
 - **Date.** Olivelle (1998) places the prose Upaniṣads (BṛhUp, ChU) at ~700–500 BCE, before the rise of Buddhism (~-500). Witzel argues for a slightly earlier window; some Indian scholars push earlier. The Buddha's known awareness of Upaniṣadic-style doctrine (in the Brahmajāla Sutta etc.) is a key terminus ad quem.
 - **Yājñavalkya's historicity.** Most accept a historical kernel; some treat him as a literary persona.
 - **Direction of influence with proto-Buddhism/Jainism.** Bronkhorst (2007) controversially argues that the karma-rebirth complex originates in a non-Vedic "Greater Magadha" culture and enters Brahmanism, rather than the other way around. Disputed.
+
+## MASSIVE WIN — cross-tradition edges
+- ***Aham Brahmāsmi* (1.4.10) — the vault's oldest first-person divine-identity claim:** "I am Brahman" is structurally identical to John 8:58's "Before Abraham was, I AM" (divine-identity assertion causing immediate theological controversy), Hallāj's "Anā'l-Ḥaqq" ("I am the Real", executed 922 CE), and Eckhart's "I and the Father are one" (tried for heresy 1329). Four traditions, in four independent institutional contexts, produce the same dangerous first-person claim of identity with the ultimate — with the same institutional rejection in three of the four cases. The BṛhUp statement is the oldest dateable instance in the vault, attested by ~-700 BCE.
+- ***Neti, neti* — the oldest apophatic formula in the vault:** "Not this, not this" (BṛhUp 2.3.6, 4.5.15) — Yājñavalkya's refusal of all predicates for the Self — pre-dates Plotinus' "the One is none of the things we name" (Enn. VI.9.4) by ~700 years and is structurally identical to the Daodejing's "the Dao that can be spoken is not the eternal Dao." This is the eastern anchor of the vault's apophatic cluster, and it is also the source from which all later Vedānta schools (Advaita, Viśiṣṭādvaita, Dvaita) derive their metaphysical vocabulary.
+- **Karma-rebirth first explicit statement → shared doctrinal substrate:** BṛhUp 3.2.13 is among the oldest explicit karma-rebirth formulations in any surviving text; the same doctrine appears contemporaneously in early Jain Āgamas and in the later Buddhist canon, and in Orphic-Pythagorean metempsychosis in Greece (~6th c. BCE). Whether the Greek reincarnation doctrine was independently generated or reflects Axial-Age contact via Persia is unresolved; the chronological coincidence remains the sharpest puzzle in the comparative study of Axial-Age religion.
+- **Anquetil-Duperron → Schopenhauer → 19th-century European philosophy:** The Upaniṣads entered Western modernity via Dārā Shikōh's Persian *Oupnekhat* (1656) → Anquetil-Duperron's Latin translation (1801) → Schopenhauer's *Die Welt als Wille und Vorstellung* (1818, heavily annotated with Upaniṣadic parallels to his "Will"). This is the single most consequential transmission route for Indian philosophy into Western intellectual culture — Schopenhauer's Upaniṣad-influenced pessimism fed Nietzsche, Wagner, Freud, and 20th-century comparative religion. Olivelle 1998 is the scholarly entry point; the transmission history is in Halbfass 1988, *India and Europe*.
 
 ## Refs
 1. Olivelle, P. (1998). *The Early Upaniṣads*. Oxford UP. — definitive critical edition.
