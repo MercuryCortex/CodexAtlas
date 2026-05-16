@@ -12,10 +12,10 @@ _Hand-maintained. Each agent currently working in the vault appends a claim bloc
 
 ---
 
-## rituals-content-1 — 14 ritual nodes in 14_rituals/ — 2026-05-16 — IN FLIGHT
-- NEW: `14_rituals/` folder (14 full-tier nodes with type: ritual)
-- Nodes: ritual-baptism, ritual-circumcision-covenant, ritual-eucharist-communion, ritual-hajj-pilgrimage, ritual-passover-seder, ritual-christmas-nativity, ritual-funeral-rites, ritual-initiation-mystery, ritual-fasting-cross-tradition, ritual-daily-prayer, ritual-sabbath-observance, ritual-rites-of-passage, ritual-sacrifice, ritual-pilgrimage-cross-tradition
-- Status: IN FLIGHT
+## ~~rituals-content-1 — 13 ritual nodes in 14_rituals/ — 2026-05-16 — FINISHED~~
+- ~~NEW: `14_rituals/` folder (13 full-tier nodes with type: ritual)~~
+- ~~Nodes: ritual-baptism, ritual-circumcision-covenant, ritual-eucharist-communion, ritual-hajj-pilgrimage, ritual-passover-seder, ritual-christmas-nativity, ritual-funeral-rites, ritual-initiation-mystery, ritual-fasting-cross-tradition, ritual-daily-prayer, ritual-sabbath-observance, ritual-rites-of-passage, ritual-sacrifice~~
+- ~~Status: FINISHED — 13 ritual nodes committed, build_data.py updated with "ritual": ["14_rituals"]~~
 
 ---
 
@@ -53,12 +53,12 @@ _Hand-maintained. Each agent currently working in the vault appends a claim bloc
 
 ---
 
-## opus-three-tabs-1 — Alchemy · Morals · Rituals tabs — IN PROGRESS 2026-05-16
-- Owns app code: `src/js/app.js` (VIEWS.alchemy expand + NEW VIEWS.morals + NEW VIEWS.rituals), `index.html` (nav items)
-- Owns content: `12_alchemy/` folder (NEW — 12 alchemy nodes), `13_morals/` folder (NEW — 10 moral-philosophy nodes), `14_rituals/` folder (NEW — 14 ritual-behavior nodes)
-- Sub-agents in flight: ~~`alchemy-content-1`~~ DONE · ~~`morals-content-1`~~ DONE · `rituals-content-1`
-- DO NOT TOUCH: src/js/app.js (I own it), 12_alchemy/, 13_morals/, 14_rituals/ (sub-agents own)
-- Status: IN PROGRESS
+## ~~opus-three-tabs-1 — Alchemy · Morals · Rituals tabs — FINISHED 2026-05-17~~
+- ~~App code: `src/js/app.js` (VIEWS.alchemy 3-mode expand + NEW VIEWS.morals 3-mode + NEW VIEWS.rituals 4-mode), `index.html` (⚖ Morals + ☽ Rituals nav items)~~
+- ~~Content delivered: `12_alchemy/` 12 nodes, `13_morals/` 12 nodes, `14_rituals/` 13 nodes~~
+- ~~build_data.py: "ritual": ["14_rituals"] added; ritual count in print output added~~
+- ~~Sub-agents: alchemy-content-1 ✓ morals-content-1 ✓ rituals-content-1 ✓~~
+- ~~Status: FINISHED — 37 nodes · 3 new tabs · 3 new content folders · 16383 edges~~
 
 ## ~~alchemy-content-1 — 12 alchemy nodes in 12_alchemy/ — 2026-05-16 — FINISHED~~
 - ~~NEW: `12_alchemy/` folder (12 full-tier type:alchemy nodes)~~
