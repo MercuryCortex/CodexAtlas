@@ -6006,6 +6006,24 @@ function alchemyShortestPath(srcId, dstId, maxHops) {
 }
 
 // ============================================================
+// Load a preset directly onto the Alchemy card board (bypasses Transmission graph).
+function alchemyLoadPresetToCards(presetId) {
+  const preset = findPresetOrTree(presetId);
+  if (!preset) return;
+  const valid = preset.picks.filter(id => NODES_BY_ID[id]);
+  STATE.alchemyActivePreset = presetId;
+  requestAnimationFrame(() => requestAnimationFrame(() => {
+    if (!window._alchemyBoard) return;
+    window._alchemyBoard.clearBoard();
+    const R = 320, total = valid.length;
+    valid.forEach((id, i) => {
+      const ang = (i / total) * Math.PI * 2 - Math.PI / 2;
+      window._alchemyBoard.addCard(id, Math.cos(ang) * R, Math.sin(ang) * R);
+    });
+    if (typeof window._alchemyBoard.zoomToFit === 'function') window._alchemyBoard.zoomToFit();
+  }));
+}
+
 // VIEWS.alchemy — card pinboard (new 2026-05-15). A free-form research
 // workbench: drop nodes as cards, drag them around, right-click to expand
 // connections / neighbors / shortest-path bridges. Implementation lives
@@ -6017,14 +6035,102 @@ VIEWS.alchemy = {
   render() {
     document.getElementById('view-controls').innerHTML = '';
     legend.style('display', 'none').html('');
+    document.querySelectorAll('.alch-presets-dropdown').forEach(el => el.remove());
     // Tear down any previous mount + create a fresh host div appended to #canvas
     document.querySelectorAll('.alch-board-root').forEach(el => el.remove());
     const host = document.createElement('div');
     host.className = 'alch-board-root';
-    document.getElementById('canvas').appendChild(host);
-    // Defer to next tick so the host has a measured size before the renderer reads it
+    const canvas = document.getElementById('canvas');
+    canvas.appendChild(host);
+
+    // Defer to next tick so the host has a measured size before the renderer reads it.
+    // After the board mounts, wire the Presets button (injected by board.js) to the dropdown.
     queueMicrotask(() => {
       if (window._alchemyBoard) window._alchemyBoard.mount(host);
+
+      // --- Presets dropdown (same collapsible structure; load → cards directly) ---
+      requestAnimationFrame(() => {
+        const trigger = document.getElementById('alch-btn-presets');
+        if (!trigger) return;
+        const customTrees = loadCustomTrees();
+        const dropdown = document.createElement('div');
+        dropdown.className = 'alch-presets-dropdown';
+        dropdown.style.display = 'none';
+        const _renderCard = (p) => {
+          const isActive = STATE.alchemyActivePreset === p.id;
+          const blurb = p.headline ? p.headline.split('—')[0].trim() + '.' : '';
+          const tag = p.category
+            ? `<span class="alch-preset-tag ${p.category}">${PRESET_CATEGORY_LABELS[p.category] || p.category}</span>`
+            : '';
+          return `
+            <div class="alch-preset-card${isActive ? ' active' : ''}" data-preset="${p.id}">
+              <div class="alch-preset-name">${tag}${p.name}</div>
+              ${blurb ? `<div class="alch-preset-headline">${blurb}</div>` : ''}
+              <div class="alch-preset-action-row">
+                <button class="alch-preset-load" data-preset="${p.id}">${isActive ? 'reload' : 'load'}</button>
+                <span class="alch-preset-meta">${p.picks.length} seeds</span>
+              </div>
+            </div>`;
+        };
+        dropdown.innerHTML = `
+          <div class="alch-presets-intro">Load a curated exploration — nodes land instantly as cards on the board.</div>
+          <div class="alch-presets-body">
+            ${PRESET_CATEGORY_ORDER.map(cat => {
+              const catPresets = ALCHEMY_PRESETS.filter(p => p.category === cat.key);
+              if (!catPresets.length) return '';
+              const collapsed = !!cat.collapsed;
+              return `
+                <div class="alch-presets-section-label${collapsed ? ' alch-section-collapsed' : ''}" data-section-key="${cat.key}">
+                  <span class="alch-section-caret">${collapsed ? '▶' : '▾'}</span>${cat.label}
+                </div>
+                <div class="alch-presets-list${collapsed ? ' alch-section-hidden' : ''}" data-section-body="${cat.key}">
+                  ${catPresets.map(p => _renderCard(p)).join('')}
+                </div>`;
+            }).join('')}
+            ${customTrees.length > 0 ? `
+              <div class="alch-presets-section-label" data-section-key="__custom">
+                <span class="alch-section-caret">▾</span>Your saved trees
+              </div>
+              <div class="alch-presets-list" data-section-body="__custom">
+                ${customTrees.slice().reverse().map(t => _renderCard(t)).join('')}
+              </div>` : ''}
+          </div>`;
+        canvas.appendChild(dropdown);
+
+        function _posDropdown() {
+          const rect = trigger.getBoundingClientRect();
+          const cr = canvas.getBoundingClientRect();
+          dropdown.style.top = (rect.bottom - cr.top + 6) + 'px';
+          dropdown.style.left = (rect.left - cr.left) + 'px';
+          dropdown.style.right = 'auto';
+        }
+        function _closeDropdown() { dropdown.style.display = 'none'; document.removeEventListener('click', _closeOnOutside); }
+        function _closeOnOutside(ev) {
+          if (dropdown.contains(ev.target) || trigger.contains(ev.target)) return;
+          _closeDropdown();
+        }
+        trigger.onclick = (ev) => {
+          ev.stopPropagation();
+          if (dropdown.style.display === 'none') { _posDropdown(); dropdown.style.display = ''; setTimeout(() => document.addEventListener('click', _closeOnOutside), 0); }
+          else _closeDropdown();
+        };
+        dropdown.querySelectorAll('.alch-preset-load').forEach(btn => {
+          btn.addEventListener('click', (ev) => { ev.stopPropagation(); alchemyLoadPresetToCards(btn.dataset.preset); _closeDropdown(); });
+        });
+        dropdown.querySelectorAll('.alch-presets-section-label[data-section-key]').forEach(label => {
+          label.style.cursor = 'pointer';
+          label.addEventListener('click', (ev) => {
+            ev.stopPropagation();
+            const body = dropdown.querySelector(`.alch-presets-list[data-section-body="${label.dataset.sectionKey}"]`);
+            if (!body) return;
+            const nowCollapsed = !label.classList.contains('alch-section-collapsed');
+            label.classList.toggle('alch-section-collapsed', nowCollapsed);
+            body.classList.toggle('alch-section-hidden', nowCollapsed);
+            const caret = label.querySelector('.alch-section-caret');
+            if (caret) caret.textContent = nowCollapsed ? '▶' : '▾';
+          });
+        });
+      });
     });
   }
 };

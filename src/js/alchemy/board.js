@@ -864,6 +864,7 @@
           <input class="alch-search-input" type="text" placeholder="Add a card — search nodes…" />
           <div class="alch-search-results" style="display:none"></div>
         </div>
+        <button class="alch-btn" id="alch-btn-presets">Presets ▾</button>
         <button class="alch-btn" id="alch-btn-fit">Zoom to fit</button>
         <button class="alch-btn" id="alch-btn-arrange" title="Auto-arrange: layered timeline layout">Auto-arrange ▾</button>
         <button class="alch-btn alch-btn-danger" id="alch-btn-clear">Clear</button>
