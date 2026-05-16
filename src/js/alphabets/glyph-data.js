@@ -42,7 +42,7 @@ window.ALPHA_GLYPH_DATA = [
     hebrew: 'ה', arabic: 'ه', phoenician: '\u{10904}',
     note: 'A figure with arms raised — the Egyptian hieroglyph for jubilation or "hail!" Greeks had no H-sound equivalent so they repurposed this as the vowel E (epsilon = "bare E"). The three prongs of E still echo the raised arms and head.',
     investigationHighlight: 'He is the first of the five Greek vowels repurposed from Semitic consonants. Greeks had no H-sound — so they took this letter and reassigned it as E. This was the cognitive threshold: by adding vowels, the Greek alphabet became the first writing system capable of representing any human utterance exactly. The consequence was not just linguistic — stable written abstract nouns made Greek philosophy structurally possible. He → Epsilon → Plato.',
-    relatedNodes: ['alphabet-greek-vowel-revolution', 'alphabet-phoenician', 'alphabet-hebrew-aleph-bet', 'huruf-muqattaat'],
+    relatedNodes: ['alphabet-greek-vowel-revolution', 'alphabet-phoenician', 'alphabet-hebrew-aleph-bet', 'alphabet-huruf-muqattaat'],
   },
   {
     letter: 'F', name: 'Waw', meaning: 'hook / peg / mace', gardiner: 'T3',
@@ -625,7 +625,7 @@ window.ALPHA_GLYPH_DATA = [
     section: 'The Gods',
     note: 'Hathor is the goddess of love, music, fertility, and beauty — depicted with cow horns holding a sun disk, or as a cow herself. Her name means "House of Horus" — she is the sky that contains the sun. She is the goddess of joy and the mistress of the West (the land of the dead). She gives the sistrum; she is associated with mirrors, gold, and turquoise.',
     investigationHighlight: 'Hathor is the most syncretic deity in the ancient world. The Greeks identified her with Aphrodite; the Romans with Venus. She absorbed attributes from Isis, Nut, and Sekhmet. Her cult reached deep into Nubia, the Sinai, and the Levant. The Sinai copper mines where the Proto-Sinaitic alphabet was invented (c. 1850 BCE) were under the patronage of Hathor — the first tentative letters that became A B C were scratched by miners who worked in the goddess\'s domain. The alphabet itself may have been born in Hathor\'s temple. The letter that became aleph (the ox/bull head) could be read as Hathor\'s own symbol.',
-    relatedNodes: ['alphabet-medu-netjer', 'alphabet-proto-sinaitic', 'alphabet-phoenician'],
+    relatedNodes: ['alphabet-medu-netjer', 'proto-sinaitic', 'alphabet-phoenician'],
   },
   {
     letter: '𓁢', name: 'Sekhmet', meaning: 'the lion goddess — destruction, plague, and healing', gardiner: 'C6',
