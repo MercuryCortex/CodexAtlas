@@ -95,10 +95,10 @@ _Hand-maintained. Each agent currently working in the vault appends a claim bloc
 
 ---
 
-## goblin-islamic-sacred-1 — symbols / Islamic sacred symbols + Sudarshana + Ashtamangala thread — started 2026-05-16 — IN PROGRESS
-- Owning: `09_symbols/rub-el-hizb.md` (NEW), `09_symbols/basmala.md` (NEW), `09_symbols/sudarshana-chakra.md` (NEW), `09_symbols/ashtamangala.md` (NEW)
-- Goal: Rub el Hizb 8-pointed star cross-tradition (Ishtar/crescent/Islamic heraldry); Basmala as sacred-word-as-image (parallels Tetragrammaton/Aum/IHS); Sudarshana Chakra as spinning divine weapon + Wheel of Ezekiel parallel; Ashtamangala as complete 8-symbol auspiciousness set
-- Status: in-progress
+## ~~goblin-islamic-sacred-1 — symbols / Islamic sacred symbols + Sudarshana + Ashtamangala thread — started 2026-05-16 — FINISHED~~
+- ~~Owning: `09_symbols/rub-el-hizb.md` (NEW), `09_symbols/basmala.md` (NEW), `09_symbols/sudarshana-chakra.md` (NEW), `09_symbols/ashtamangala.md` (NEW)~~
+- ~~Goal: Rub el Hizb 8-pointed star cross-tradition (Ishtar/crescent/Islamic heraldry); Basmala as sacred-word-as-image (parallels Tetragrammaton/Aum/IHS); Sudarshana Chakra as spinning divine weapon + Wheel of Ezekiel parallel; Ashtamangala as complete 8-symbol auspiciousness set~~
+- ~~Status: finished — 4 new full symbol nodes · 153 symbols · 14326 edges · 0 new dead links introduced~~
 
 ---
 
@@ -1263,4 +1263,11 @@ The things opus-foundation-1 claimed but never started are all still open:
 ## ~~bhakti-1 — Phase-6 bhakti corpus upgrades — started 2026-05-16 — DONE~~
 - ~~Owning: `02_documents/_phase-6-early-modern/phase-6-016-guru-granth-sahib.md`, `phase-6-031-bijak-kabir.md`, `phase-6-013-mirabai-bhajans.md`, `phase-6-020-chaitanya-charitamrita.md`~~
 - ~~Result: 2 files metadata→full, 2 files metadata→partial; 13979 edges; 0 new dead links; see STATUS.md~~
+
+---
+
+## goblin-spirit-mirror-1 — symbols / breath-spirit + sacred-mirror + rainbow-serpent + severed-head thread — started 2026-05-16 — IN PROGRESS
+- Owning: `09_symbols/ruach-pneuma.md` (NEW), `09_symbols/sacred-mirror.md` (NEW), `09_symbols/rainbow-serpent.md` (NEW), `09_symbols/sacred-head.md` (NEW)
+- Goal: Ruach/Pneuma MASSIVE WIN cross-linguistic wind-breath-spirit convergence; Sacred Mirror as divine self-reflection (Amaterasu/Ibn Arabi/Tezcatlipoca/Dee); Rainbow Serpent oldest continuous deity + independent serpent-creator parallel; Severed Head as oracle/wisdom across Celtic/Greek/Islamic/Christian traditions
+- Status: in-progress
 - ~~Commits: 78bf8b2, 5b78de0, 234c5fe, b1112e2~~
