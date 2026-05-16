@@ -18,10 +18,11 @@ _Hand-maintained. Each agent currently working in the vault appends a claim bloc
 
 ---
 
-## opus-app-bugs-1 — Alchemy↔Transmission bugs + marquee — started 2026-05-16 — IN PROGRESS
-- Owning: `src/js/app.js`, `src/js/alchemy/board.js`, `src/styles/app.css`
-- Goal: Fix Bug 1 (Alchemy→Transmission force-sim explosion due to stale ELK position cache); Fix Bug 2 (Transmission→Alchemy cards silently no-ops when _alchemyBoard not mounted + cards land off-screen); verify marquee select is implemented
-- Status: in-progress
+## opus-app-bugs-1 — Alchemy↔Transmission bugs + marquee — started 2026-05-16 — **FINISHED 2026-05-16**
+- Owning: `src/js/app.js`, `src/js/alchemy/board.js`
+- Goal: Fix Bug 1 (Alchemy→Transmission force-sim explosion); Fix Bug 2 (Transmission→Alchemy cards no-op + off-screen); verify marquee
+- Status: finished
+- Delivered: Bug 1 — reset `STATE.alchemyElkPositions` in `sendToTransmission()` so stale ELK cache doesn't corrupt new picks. Bug 2 — removed null guard that silently exited, added `zoomToFit()` call after addCard loop, exported `zoomToFit` from `_alchemyBoard`. Marquee — already fully implemented. Commits: efba64e + 0c115a4.
 
 ---
 
@@ -83,10 +84,17 @@ _Hand-maintained. Each agent currently working in the vault appends a claim bloc
 
 ---
 
-## sonnet-egyptian-deities-1 — deities / Anubis + Ptah + Set + Aten full upgrades — started 2026-05-16 — **IN PROGRESS**
-- Owned: `03_deities/anubis.md`, `03_deities/ptah.md`, `03_deities/set.md`, `03_deities/aten.md`
+## sonnet-egyptian-deities-1 — deities / Anubis + Ptah + Set + Aten full upgrades — started 2026-05-16 — **FINISHED 2026-05-16**
+- Owned: `03_deities/anubis.md`, `03_deities/ptah.md`, `03_deities/set.md`, `03_deities/aten.md`, `03_deities/anput.md` (NEW stub, Wiring Law)
 - Goal: Upgrade four Egyptian deity stubs to `status: full` with MASSIVE WIN cross-tradition edges
-- Status: in-progress
+- Status: finished
+- Delivered:
+  - **`anubis.md`** (stub→full): Anubis→Hermanubis→Hermes psychopomp (Plutarch §61 Tier-1); weighing-of-heart cross-tradition table (Mithra/Michael/Yama/Islamic angels); embalming-as-resurrection-theology (body-matters chain into Christian theology); jackal-as-apotropaic-protector logic. 6 Tier-1/2 refs.
+  - **`ptah.md`** (stub→full): Memphite Theology heart-tongue formula (~2350 BCE) as oldest creation-by-word → Genesis 1 → Johannine Logos → Quranic kun fa-yakun chain (Allen 1988 Tier-1). Ptah→Demiurge (Plato Timaeus). Ptah-Sokar-Osiris fusion. Ptah→Imhotep→Asclepius chain. 5 Tier-1 refs.
+  - **`set.md`** (stub→full): Set→Typhon (Plutarch §49 Tier-1); Chaoskampf 7-tradition table (Set unique as INTEGRATED chaos not destroyed); Set as Ra's solar defender paradox; Set-Baal Hyksos channel. 4 Tier-1/2 refs.
+  - **`aten.md`** (stub→full): Assmann Mosaic Distinction thesis (Atenism = first exclusive monotheism; 3-position debate table); Great Hymn / Psalm 104 parallel table; de-mythologized theology structural parallel to Islam/Reformed Protestantism; Amarna art as theological statement. 5 Tier-1 refs.
+  - **`anput.md`** (NEW stub) — Wiring Law.
+- Build: 2297 nodes · 13516 edges · 0 YAML errors · 0 new dead links introduced
 
 ---
 
