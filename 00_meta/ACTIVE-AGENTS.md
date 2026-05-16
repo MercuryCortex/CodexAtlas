@@ -19,10 +19,24 @@ _Hand-maintained. Each agent currently working in the vault appends a claim bloc
 
 ---
 
-## sonnet-indigenous-americas-1 — content / Indigenous North American + Mesoamerican depth layer — started 2026-05-16 — **IN PROGRESS**
-- Owning: `03_deities/sky-woman-haudenosaunee.md` (NEW — replaces stub `sky-woman.md` with full upgrade), `03_deities/spider-grandmother-hopi.md` (NEW), `05_events/event-great-law-of-peace-haudenosaunee-c1450.md` (NEW), `06_themes/earth-diver-creation.md` (NEW), `07_traditions/tradition-hopi.md` (NEW — Wiring Law for spider-grandmother), `03_deities/huitzilopochtli.md` (UPGRADE — cosmic-maintenance MASSIVE WIN), `03_deities/tlaloc.md` (UPGRADE — Teotihuacan depth), `03_deities/quetzalcoatl.md` (UPGRADE — Venus/astro + nada brahman wire)
-- Goal: Build Indigenous North American and Mesoamerican depth layers; Sky Woman earth-diver MASSIVE WIN; Spider Grandmother creation-by-thought MASSIVE WIN; Great Law of Peace political theology; Aztec cosmic-maintenance sacrifice theology
-- Status: in-progress
+## sonnet-indigenous-americas-1 — content / Indigenous North American + Mesoamerican depth layer — started 2026-05-16 — **FINISHED 2026-05-16**
+- Owned: `03_deities/sky-woman-haudenosaunee.md` (NEW full), `03_deities/spider-grandmother-hopi.md` (NEW full), `05_events/event-great-law-of-peace-haudenosaunee-c1450.md` (NEW full), `06_themes/earth-diver-creation.md` (NEW full), `07_traditions/tradition-hopi.md` (NEW metadata), `07_traditions/tradition-ojibwe.md` (NEW stub), `03_deities/ilmatar.md` (NEW stub), `03_deities/varaha-avatar.md` (NEW stub), `03_deities/kurma-avatar.md` (NEW stub), `03_deities/poqanghoya.md` (NEW stub), `03_deities/palongawhoya.md` (NEW stub), `03_deities/huitzilopochtli.md` (UPGRADE), `03_deities/tlaloc.md` (UPGRADE), `03_deities/quetzalcoatl.md` (UPGRADE), `03_deities/sky-woman.md` (alias update), `06_themes/creation-by-word.md` (UPGRADE)
+- Goal: Build Indigenous North American and Mesoamerican depth layers
+- Status: finished
+- Delivered:
+  - **`sky-woman-haudenosaunee.md`** — full metadata; earth-diver cosmogony narrative (fall, catch, muskrat, Turtle Island); 7-tradition cross-tradition table (Haudenosaunee/Ojibwe/Lakota/Cherokee/Finnish/Vedic/Siberian); kurma-avatar Turtle Island parallel; Three Sisters agriculture theology; women's political authority chain; 6 Tier-1/2 refs
+  - **`spider-grandmother-hopi.md`** — full metadata; creation-by-thought-and-song MASSIVE WIN; 5-tradition table (Hopi/Memphite/Hebrew/Christian-Logos/Vedic nada brahman); Palöngawhoya vibration ↔ nada brahman; weaving as cosmological act; Thought Woman / Laguna Pueblo cognates; 5 refs
+  - **`event-great-law-of-peace-haudenosaunee-c1450.md`** — Great Law founding narrative + governance structure; Founders-Haudenosaunee influence debate table (Franklin Albany Plan 1754 / US Senate Res. 76 1988 / Tooker 1988 dissent / Johansen-Grinde 1991); cross-tradition political theology table; 6 refs
+  - **`earth-diver-creation.md`** — cross-tradition theme; 7-tradition table; Beringia vs. independent-invention debate; cosmic-egg bridge; 5 refs
+  - **`huitzilopochtli.md`** UPGRADE — MASSIVE WIN: Aztec sacrifice-as-cosmic-engineering distinction (vs. gift/appeasement/scapegoat); Five-Suns theology; 6-row cross-tradition sacrifice comparison table; León-Portilla + Carrasco 1999 added
+  - **`tlaloc.md`** UPGRADE — Teotihuacan temporal-depth (1500+ year attestation); cosmic-maintenance role; 7-row cross-tradition rain-god table; child-sacrifice tear-rain mechanism documented; Nicholson 1971 + Carrasco 1999 added
+  - **`quetzalcoatl.md`** UPGRADE — Venus/Morning Star MASSIVE WIN; death-resurrection encodes inferior conjunction; 4-tradition Venus-deity table (Quetzalcoatl/Inanna/Aphrodite/Lucifer); Milbrath 1999 + Taube 1992 added
+  - Wiring Law stubs: ilmatar, varaha-avatar, kurma-avatar, poqanghoya, palongawhoya, tradition-hopi, tradition-ojibwe
+  - creation-by-word.md upgraded to include Spider Grandmother + Palöngawhoya as Hopi instances
+- Build: 491 deities · 141 traditions · 327 themes · 185 events · 13215 edges · 0 YAML errors · 0 new dead links introduced
+- Attribution note: all files swept into commit 772babb by parallel agent before explicit commit landed; work fully present; this log corrects the record
+- MASSIVE WIN edges: earth-diver 7-tradition table (Haudenosaunee/Ojibwe/Lakota/Cherokee/Finnish Ilmatar/Vedic Varaha/Siberian); Spider Grandmother ↔ Memphite/Hebrew/Islamic/Vedic creation-by-thought table; Quetzalcoatl-Venus inferior-conjunction ↔ Inanna's Descent; Aztec sacrifice-as-engineering (mechanistic cosmology vs. gift/appeasement); Great Law Gayanashagowa → US Constitution (Franklin 1754 primary document)
+- Last edit: `00_meta/STATUS.md`
 
 ---
 
