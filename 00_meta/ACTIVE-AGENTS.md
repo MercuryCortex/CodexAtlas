@@ -4,6 +4,22 @@ _Hand-maintained. Each agent currently working in the vault appends a claim bloc
 
 ---
 
+## ~~axial-age-1 — Axial Age investigation cluster — 2026-05-16 — FINISHED~~
+- ~~NEW: `05_events/event-axial-age-800-200bce.md` (full event node: table of all 5 traditions, 4 structural moves, proposed mechanisms, cross-tradition wiring)~~
+- ~~UPDATED: `src/data/chains.js` — new CONVERGENCE chain `axial-age-five-traditions` (6 links: Zoroaster → Hebrew Prophets → Gautama → Confucius → Socrates → event node)~~
+- ~~UPDATED: `src/data/observations.js` — `axial-age-simultaneity` evidence array upgraded from [sacred-number-zero, the-pleroma] to 7 proper vault node IDs~~
+- ~~Note: files picked up by kircher-bridge-1 commit (75e65f0); attribution shared~~
+- ~~Status: FINISHED — vault's most underdeveloped ANOMALY now has proper event node + chain~~
+
+---
+
+## ~~kircher-bridge-1 — Athanasius Kircher closes 1622–1875 gap — 2026-05-16 — FINISHED~~
+- ~~Owned: `10_music/music-kircher-musurgia-universalis.md` (NEW full tier-1); `04_persons/athanasius-kircher.md` (upgraded metadata→full; wikilink added); `src/data/chains.js` (Kircher entry in `post-fludd-esoteric-revival` + `fludd-kepler-terminus`; span updated 1619–2007)~~
+- ~~Build result: 99 music nodes · 16369 edges · 0 dead links introduced~~
+- ~~MASSIVE WIN: Kircher (1650) is the documented Jesuit-network transmission bridge between Fludd's terminus (1622) and Blavatsky's revival (1875). *Musurgia Universalis* accepted Kepler's orbital data while rejecting his anti-Hermetic conclusion; distributed through 700+ Jesuit colleges worldwide. Also contained the first comparative music-cosmology database (Chinese/Japanese/Syrian/Ethiopian/Indian). The 253-year gap is closed.~~
+
+---
+
 ## ~~music-theme-wiring-1 — Theme+deity edge pass on 16 music nodes — 2026-05-16 — FINISHED~~
 - ~~Added themes: fields to 16 music nodes; 4 deity connections added (sophia-gnostic, inanna-sumerian, yahweh x2)~~
 - ~~Status: FINISHED — 35 music has-theme edges added~~
