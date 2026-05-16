@@ -22,7 +22,7 @@ influenced-by: ["[[phase-2-015-analects-of-confucius]] (negatively — as polemi
 influences: ["[[phase-2-026-han-feizi]] (some structural elements of Legalist consequentialism)", "Han-period yin-yang-five-phases synthesis (Mohist logic absorbed into broader systematizations)", "modern Chinese rediscovery of Mohism as proto-utilitarian / proto-scientific (Hu Shih 1919; Graham 1978)"]
 deities-mentioned: ["[[tian-heaven]]", "[[shangdi]]"]
 events-context: ["Warring States period (-475 to -221)"]
-status: "metadata"
+status: "full"
 preservation: "Received text: 53 chapters (originally 71). The text divides into three layers: (1) the 'Core Doctrines' — ten triads of essays on the ten characteristic Mohist topics (Promoting the Worthy, Conforming with Superiors, Universal Love, Condemning Aggression, Moderation in Use, Moderation in Burial, Heaven's Will, Explaining Ghosts, Condemning Music, Condemning Fatalism); each triad presents a 'shang/zhong/xia' (upper/middle/lower) version, reflecting three Later Mohist branches; (2) the 'Mohist Canons' — 6 chapters of dense logical and proto-scientific writing on epistemology, optics, mechanics, and geometry (~-300 BCE); (3) the 'Dialogues' — narrative anecdotes about Mozi. The Han redaction stabilized the text; Mohism collapsed as a tradition by mid-Han, after which the Mozi was essentially preserved but not actively read until its modern rediscovery."
 refs:
   - title: "The Mozi: A Complete Translation"
@@ -102,6 +102,64 @@ The foundational text of Mohism, China's first articulated rival to Confucianism
 - **Universal love.** Mozi's *jiān ài* parallels the Christian doctrine of *agapē* (universal love including the enemy), the Stoic *philanthrōpia* (love of humanity as such), and the Buddhist *karuṇā* (universal compassion, ungraded). Four traditions independently develop versions of ungraded universal benevolence. The Mohist version is the *most* radical in directly opposing the natural family-graded concern that Confucianism, Christianity, and most lived traditions actually practice. Substrate; no claim of transmission.
 - **Ethical theism with active moral deity.** Mohist Tian as moral enforcer parallels the Hebrew prophetic YHWH and Zoroastrian Ahura Mazda — three independent traditions developing the doctrine that the supreme cosmic principle is *morally* engaged with human affairs and rewards/punishes accordingly. Substrate; no transmissional claim. The cross-tradition theme of [[ethical-monotheism]] connects.
 - **The disciplined ethical community.** The Mohist *jù zǐ* fraternity — disciplined, ascetic, distinctive dress, organized for ethical action — parallels (in structure, not content) the early Christian community, the Jain *saṅgha*, the Buddhist *saṅgha*, the early Pythagorean brotherhood, and the early Sufi *ṭarīqāt*. Substrate: the genre of the *ethical brotherhood* as a global phenomenon, with characteristic features (distinctive practice, discipline, communal property, anti-elite stance).
+
+## MASSIVE WIN: Jian Ai and the Global Convergence on Universal Love
+
+*Jiān ài* 兼愛 — "inclusive love" or "universal love" — is Mozi's single most important doctrine and one of the most startling independent convergences in world intellectual history. Mozi (~470–391 BCE) argued that every moral evil — war, theft, oppression — flows from "partial love" (*bié ài* 別愛): loving one's own family, state, and ruler more than others. His cure is radical: treat every other person's parents, siblings, and state exactly as you treat your own. "If everyone would love others as they love themselves, would there then be any unfilial sons?" (Mozi ch. 15, Johnston trans.).
+
+This is emphatically NOT the Confucian *rén* (humaneness) — Confucian benevolence is graded outward from the family; Mozi demands *flat, relationship-blind* concern. Mengzi, who understood the threat, attacked Mozi directly: "Mozi's universal love is to be without a father" (3A:5), meaning that undifferentiated love destroys the natural hierarchy that makes civilization possible. The Mengzi-Mozi exchange is the first recorded philosophical debate about whether love should be graduated or universal — a debate that continued in Christian, Stoic, Buddhist, and Islamic forms for two and a half millennia.
+
+The cross-tradition convergence is historically independent but structurally exact:
+
+| Tradition | Universal Love concept | Date | Key source |
+|---|---|---|---|
+| Mozi | *Jiān ài* — treat others' parents exactly as your own | ~430 BCE | *Mozi* chs. 14–16 (Johnston 2010) |
+| Buddhist | *Mettā* — loving-kindness equal to all sentient beings | ~500 BCE | *Mettā Sutta* (Sn 1.8) |
+| Stoic | *Oikeiôsis* / *philanthrōpia* — cosmic kinship of all rational beings | ~300 BCE | Cicero *De Finibus* 3; Epictetus *Discourses* I.3 |
+| Christian | *Agapē* — love of neighbor without preference, including the enemy | ~30 CE | Matthew 5:43–48; 1 Corinthians 13 |
+| Islamic | *Rahmah* — divine mercy extended to all creation; Prophet sent as mercy | ~620 CE | Quran 21:107; hadith on compassion |
+
+The Buddhist *mettā* is the closest structural parallel: the *Mettā Sutta* instructs meditators to radiate goodwill to all beings as a mother loves her only child. Mozi's jian ai and Buddhist mettā are near-contemporaneous, geographically proximate (the silk-road transmission corridor between India and China was already active), and structurally isomorphic — yet no scholarly consensus exists on whether there was contact. The parallel-motif connection here runs from [[phase-2-023-mengzi]] (the opponent) through to the Christian agape tradition and should be traced as a substrate wire, not a transmission claim. → [[ethical-monotheism]], [[tradition-confucianism]].
+
+## MASSIVE WIN: Proto-Utilitarian Ethics — 2,200 Years Before Bentham
+
+Jeremy Bentham published *An Introduction to the Principles of Morals and Legislation* in 1789, establishing the greatest-good-for-the-greatest-number as the criterion of all moral evaluation. Mozi articulated the same criterion in ~430 BCE: every institution, ritual, musical practice, and military action must be judged by whether it increases *lì* 利 (benefit/profit) for the people and the state and reduces *hài* 害 (harm). His rejection of elaborate funerals, aristocratic music, and offensive warfare all follow from this single metric.
+
+Chris Fraser's 2016 monograph (*The Philosophy of the Mòzǐ: The First Consequentialists*, Columbia UP, Tier 1) argues that Mohism is the world's first *articulated* consequentialism — not just a loose preference for good outcomes, but a systematic criterion of evaluation applied consistently across ethics, ritual, statecraft, and military doctrine. The Mohist evaluation procedure: (1) does this practice enrich the state and increase population? (2) does it reduce suffering and increase welfare? If no, the practice is condemned regardless of its traditional prestige.
+
+The disanalogy with Bentham is also instructive: Bentham constructs his utilitarianism against a background of Hobbesian individual self-interest; Mozi constructs his against a background of Confucian ritual deference. Both attack the entrenched authority structure of their time (aristocratic tradition in China; ecclesiastical natural law in Britain) by appealing to a simple empirical criterion — welfare — that anyone can assess. → [[logos-cosmic-reason]] (rationalist ethics as global cross-tradition theme), [[confucius]], [[laozi]].
+
+## MASSIVE WIN: Heaven (Tian) as Moral Enforcer — Chinese Ethical Theism
+
+Mozi's theology is a systematic anomaly in classical Chinese thought. Where Confucius was famously silent about the spirit-world ("The Master did not talk about strange phenomena, physical feats, disorders, or spiritual beings" — Analects 7:21), and where Laozi and Zhuangzi dissolved the divine into an impersonal cosmic pattern, Mozi insisted on a *personal* Heaven (*Tiān* 天) with a determinate moral will: Heaven loves all people (*jiān ài* — note the exact same phrase), rewards the good, and punishes the wicked, using floods, droughts, famine, and political catastrophe as instruments.
+
+The argument is explicit in the "Heaven's Will" chapters (Mozi chs. 26–28, Johnston): Mozi demonstrates Heaven's preference for universal love by the same consequentialist criterion he applies to human institutions — states that practice universal love and condemn aggression flourish; states that practice partial love and pursue aggression suffer disaster. Heaven's will is *legible* in political outcomes.
+
+This makes Mohism the closest classical Chinese approach to the ethical theism of the Hebrew prophets. The three independent convergences on active moral deity:
+
+| Tradition | Active deity who punishes injustice | ~Date | Key text |
+|---|---|---|---|
+| Hebrew prophets | YHWH punishes Israel for covenant violation; sends drought, defeat, exile | ~800–500 BCE | Amos, Isaiah, Jeremiah |
+| Mozi | Tian punishes states that practice partial love with disaster | ~430 BCE | *Mozi* chs. 26–28 |
+| Zoroastrian | Ahura Mazda rewards asha (truth/order); punishes druj (lie/chaos) | ~1000–600 BCE | Gathas |
+
+None of these traditions influenced each other at this stage; the parallel is substrate. But the theological structure — *impersonal cosmic principle given moral will and punitive agency* — is the same. The Mohist Tian is explicitly described as loving (Heaven loves *all* people equally), which makes Mozi's Heaven structurally closer to the New Testament God of John 3:16 than to any other classical Chinese deity. → [[tian-heaven]], [[shangdi]], [[ethical-monotheism]], [[tradition-confucianism]].
+
+## MASSIVE WIN: The Mohist Military Brotherhood — Organized Ethics in Action
+
+The Mozi's "Chapters on Fortification" (Part V, chs. 52–71 in the Johnston enumeration) constitute the world's first documented systematic *defense engineering manual combined with an anti-war doctrine*. The Mohist *jù zǐ* (Grand Master) led a disciplined quasi-military fraternity that traveled to cities under unjust attack to defend them — personally. When the state of Chu threatened to attack the state of Song, Mozi reportedly walked ten days and ten nights to reach the Chu king and demonstrate, using wooden models, that his disciples could counter every offensive tactic Chu had planned, until the Chu king abandoned the attack (the story is in *Mozi* ch. 50).
+
+This makes Mozi simultaneously: (1) a theorist of nonviolent *principled resistance* (the intellectual precursor to Gandhi's satyagraha — resistance that costs the resister personally but blocks the aggressor without attacking); and (2) a practical military engineer willing to use force defensively. The combination is unusual: most anti-war traditions (Quaker pacifism, Tolstoyan nonresistance) refuse defensive force; most military traditions abandon anti-war principles. Mozi's position — defend the attacked, but never attack — finds a rare parallel in the Just War tradition of Augustine and Aquinas, which also permits only defensive war, though from entirely different theological premises.
+
+The *organized ethical fraternity* form also deserves note as a global parallel:
+
+- Mohist fraternity (disciplined, ascetic, black garb, trans-state, under the *jù zǐ*)
+- Pythagorean brotherhood (communal property, vegetarianism, mathematical/religious discipline, Croton to broader Magna Graecia)
+- Early Buddhist *saṅgha* (monastic community, discipline code, trans-state)
+- Early Christian community (Acts 2:44–45: "all things in common")
+- Early Sufi *ṭarīqāt* (organized spiritual community under a master, trans-regional)
+
+The convergence on *organized ethical community* as a global phenomenon — appearing at nearly the same time in China, India, Greece, and later in Christendom and Islam — is one of the most significant structural parallels in world intellectual history.
 
 ## Disputes
 - **Date and historicity of Mozi.** Conventional ~-470 to -390. Sima Qian's biography (*Shiji* 74) is brief and uncertain (Sima Qian was uncertain whether Mozi was a contemporary of Confucius or much later); modern scholars accept early Warring States but the precise dates are not perfectly secure.

@@ -4,6 +4,20 @@ _Hand-maintained. Each agent currently working in the vault appends a claim bloc
 
 ---
 
+## latin-sikh-1 — Latin Christianity tradition + Vasco da Gama + Polycarp upgrades — started 2026-05-16 — IN FLIGHT
+- Owning: `07_traditions/tradition-latin-christianity.md` (NEW), `04_persons/vasco-da-gama.md` (NEW), `02_documents/_phase-4-late-antiquity/phase-4-066-polycarp-philippians.md` (metadata → partial), `02_documents/_phase-4-late-antiquity/phase-4-067-martyrdom-of-polycarp.md` (metadata → partial)
+- Goal: Resolve 5+ dead wikilinks; Filioque/Scholasticism/Aristotle-via-Islam chain; martyrology genre origin; cult-of-saints transmission
+- Status: in-flight
+
+---
+
+## chinese-axial-1 — Chinese Axial Age philosophy upgrades — started 2026-05-16 — IN FLIGHT
+- Owning: `02_documents/_phase-2-axial-age/phase-2-025-mozi.md` (metadata → full), `02_documents/_phase-2-axial-age/phase-2-023-mengzi.md` (metadata → full), `02_documents/_phase-2-axial-age/phase-2-026-han-feizi.md` (metadata → full)
+- Goal: Deep MASSIVE WIN cross-tradition upgrades — jian ai / agape parallels; Mengzi vs Xunzi = Rousseau vs Hobbes; Han Fei as Machiavelli 1800 years earlier
+- Status: in-flight
+
+---
+
 ## ~~goblin-pattern-mystery-1 — symbols / sacred pattern + mystery thread — started 2026-05-16 — FINISHED 2026-05-16~~
 - ~~Owning: `09_symbols/arabesque-girih.md` (NEW), `09_symbols/philosophers-stone.md` (NEW), `09_symbols/labyrinth.md` (NEW), `09_symbols/gorgoneion.md` (NEW)~~
 - ~~Status: finished — files swept into commit 7c0d3b8 by slug-normalize sweep; STATUS.md logged~~
@@ -1157,3 +1171,10 @@ The things opus-foundation-1 claimed but never started are all still open:
   - Ritman sourcelibrary.org confirmed all 10 texts digitized (CC-BY-SA-4.0); sourcelibrary.org IDs recorded in preservation fields
 - Build: **2249 nodes · 13117 edges · 2.8% dead-link** (down from 3.0%)
 - Last edit: `data.js`
+
+---
+
+## bhakti-1 — Phase-6 bhakti corpus upgrades — started 2026-05-16 — IN PROGRESS
+- Owning: `02_documents/_phase-6-early-modern/phase-6-016-guru-granth-sahib.md`, `phase-6-031-bijak-kabir.md`, `phase-6-013-mirabai-bhajans.md`, `phase-6-020-chaitanya-charitamrita.md`
+- Goal: metadata → full/partial with MASSIVE WIN cross-tradition content (Sheikh Farid synthesis, living-Guru theology, Kabir Sant transcendence, bridal mysticism table, achintya-bhedabheda)
+- Status: in-progress
