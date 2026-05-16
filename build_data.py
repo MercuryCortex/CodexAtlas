@@ -353,7 +353,7 @@ def tradition_family(t: str) -> str:
         return "Zoroastrian"
     if "canaan" in s or "ugarit" in s or "philistine" in s or "phoenic" in s or "northwest semitic" in s:
         return "Canaanite"
-    if "israel" in s or "hebrew" in s or "jewish" in s or "judaism" in s or "second temple" in s or "qumran" in s or "essene" in s:
+    if not s.startswith("christianit") and ("israel" in s or "hebrew" in s or "jewish" in s or "judaism" in s or "second temple" in s or "qumran" in s or "essene" in s):
         return "Israelite"
     if "hittite" in s or "hurrian" in s or "luwian" in s or "hattic" in s:
         return "Hittite"
@@ -374,8 +374,9 @@ def tradition_family(t: str) -> str:
     if "greek" in s or "hellenistic" in s or "platonist" in s or "stoic" in s or "aristot" in s or "pythagor" in s or "epicurean" in s or "cynic" in s or "skeptic" in s:
         return "Greek"
     # Christian checked AFTER ancient origin traditions — also excludes "pre-christian" strings
+    # s.startswith("christianit") catches "Christianity (from Second Temple Jewish substrate)" before "jewish" fires
     if "pre-christian" not in s and (
-        "christian" in s or "patristic" in s or "coptic" in s or "byzantine" in s
+        s.startswith("christianit") or "christian" in s or "patristic" in s or "coptic" in s or "byzantine" in s
         or "lutheran" in s or "calvinist" in s or "reformed" in s or "protestant" in s
         or "catholic" in s or "anglican" in s or "rosicrucian" in s or "freemason" in s
         or "mormon" in s or "baha" in s or "scientology" in s or "spiritualist" in s
