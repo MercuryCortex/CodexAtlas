@@ -4,6 +4,40 @@ _Hand-maintained. Each agent currently working in the vault appends a claim bloc
 
 ---
 
+## goblin-wiring-audit-1 — symbols / cross-symbol wiring audit — started 2026-05-16 — IN PROGRESS
+- Owning: monas-hieroglyphica.md (AUDIT), eye.md (AUDIT), pelican-in-piety.md (AUDIT), alpha-omega.md (AUDIT), hexagram.md (AUDIT), pyramid-triangle.md (AUDIT), beauseant.md (AUDIT)
+- Goal: Add missing cross-symbol edges between existing Masonic/occult symbols; wire to traditions not yet linked
+- Status: in-progress
+
+---
+
+## goblin-grimoire-1 — symbols / grimoire + ceremonial magic — started 2026-05-16 — IN PROGRESS
+- Owning: baphomet.md (NEW symbol node), sator-square.md (NEW), double-headed-eagle.md (NEW), acacia.md (NEW)
+- Goal: Grimoire/ceremonial/pan-civilizational symbols; strict Tier sourcing; Templar fabrications documented as fabrications
+- Status: in-progress
+
+---
+
+## goblin-alchemical-1 — symbols / alchemical depths — started 2026-05-16 — IN PROGRESS
+- Owning: sulphur-mercury-salt.md (NEW), solve-et-coagula.md (NEW), rebis.md (NEW), green-lion.md (NEW)
+- Goal: Missing alchemical symbols with MASSIVE cross-tradition Hindu/Taoist/Gnostic wins
+- Status: in-progress
+
+---
+
+## goblin-masonic-core-1 — symbols / Masonic core emblems — started 2026-05-16 — **FINISHED 2026-05-16**
+- Owned: `09_symbols/square-and-compass.md` (NEW), `09_symbols/pillars-jachin-boaz.md` (NEW), `09_symbols/blazing-star.md` (NEW), `09_symbols/mosaic-pavement.md` (NEW)
+- Goal: Core Masonic symbols missing from vault; massive cross-tradition wins in each
+- Status: finished
+- Delivered:
+  - **`square-and-compass.md`** — 6 Tier-1 refs; Han Nüwa/Fuxi paired cosmological square+compass predates Freemasonry by ~1,900 years; Pythagorean 3-4-5 substrate; G=Gimel=Keter sefirotic mapping; Blake *Ancient of Days* use+critique; 5 cross-symbol edges.
+  - **`pillars-jachin-boaz.md`** — 7 Tier-1 refs; MASSIVE WIN: Masonic lodge = Kabbalistic sefirotic diagram (Jachin=Pillar of Mercy, Boaz=Pillar of Severity); Phoenician Melqart temple precedent (Herodotus II.44); Egyptian obelisk parallel; 5 cross-symbol edges.
+  - **`blazing-star.md`** — 6 Tier-1 refs; MASSIVE WIN: Masonic Blazing Star = Sirius (Pike 1871 primary source) → Egyptian Sopdet/Isis → Egyptian New Year + Nile flood; Great Pyramid Sirius alignment; five-pointed = Pythagorean pentalpha; Polaris/axis-mundi reading; 5 cross-symbol edges.
+  - **`mosaic-pavement.md`** — 6 Tier-1 refs; MASSIVE WIN: Pike explicitly connects the pavement to Zoroastrian Ahura Mazda/Angra Mainyu dualism; full chain -600 BCE→Mani→Bogomil→Cathar→Masonic lodge; Kabbalistic Malkuth reading; yin-yang visual cognate; 4 cross-symbol edges.
+- Build: **4 new nodes · 0 dead links introduced · all wikilinks verified**
+
+---
+
 ## sonnet-blake-james-1 — content / william-blake + william-james upgrades + eliade cross-wiring — started 2026-05-16 — **FINISHED 2026-05-16**
 - Owned: `04_persons/william-blake.md` (already full — no changes needed), `04_persons/william-james.md` (metadata→full upgrade), `04_persons/aldous-huxley.md` (NEW stub — Wiring Law), `06_themes/zep-tepi.md` (Eliade wikilink added), `09_symbols/axis-mundi.md` (Eliade wikilink added)
 - Goal: Upgrade william-blake and william-james to full status; add Eliade cross-wiring to zep-tepi and axis-mundi per task instructions
