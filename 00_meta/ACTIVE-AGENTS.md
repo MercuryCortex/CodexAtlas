@@ -88,10 +88,10 @@ _Hand-maintained. Each agent currently working in the vault appends a claim bloc
 
 ---
 
-## goblin-authority-emblems-1 — symbols / divine authority emblems thread — started 2026-05-16 — IN PROGRESS
-- Owning: `09_symbols/fasces.md` (NEW), `09_symbols/was-scepter.md` (NEW), `09_symbols/medicine-wheel.md` (NEW), `09_symbols/shofar.md` (NEW)
-- Goal: Authority bundle cross-tradition; Was scepter Egypt→divine power; Medicine Wheel as indigenous mandala; Shofar as sacred horn completing the conch/mjolnir/gjallarhorn pattern
-- Status: in-progress
+## ~~goblin-authority-emblems-1 — symbols / divine authority emblems thread — started 2026-05-16 — DONE~~
+- ~~Owning: `09_symbols/fasces.md` (NEW), `09_symbols/was-scepter.md` (NEW), `09_symbols/medicine-wheel.md` (NEW), `09_symbols/shofar.md` (NEW)~~
+- ~~Goal: Authority bundle cross-tradition; Was scepter Egypt→divine power; Medicine Wheel as indigenous mandala; Shofar as sacred horn completing the conch/mjolnir/gjallarhorn pattern~~
+- ~~Status: done — 4 new symbol nodes · 46 wikilinks verified · fasces has full Appropriation and Misuse section~~
 
 ---
 

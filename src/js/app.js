@@ -7942,7 +7942,14 @@ setView = function patchedSetView(...args) {
   } catch (e) { /* ignore — flag is best-effort */ }
 })();
 document.querySelectorAll('nav.side .item').forEach(el => {
-  el.addEventListener('click', () => setView(el.dataset.view));
+  el.addEventListener('click', () => {
+    // Alchemy board → Transmission: skip bridge expansion so the user's curated
+    // card set isn't auto-inflated into a 50-200 node bridge graph.
+    if (STATE.view === 'alchemy' && el.dataset.view === 'transmission') {
+      STATE.alchemySkipBridges = true;
+    }
+    setView(el.dataset.view);
+  });
   // Populate data-tooltip from the label text — used by CSS when the nav is collapsed.
   const _lbl = el.querySelector('.lbl');
   if (_lbl) el.setAttribute('data-tooltip', _lbl.textContent.trim());
