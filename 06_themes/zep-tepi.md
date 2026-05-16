@@ -47,7 +47,7 @@ The phrase appears in the Pyramid Texts (c. 2350 BCE), some of the oldest religi
 
 ## Cross-tradition resonances
 
-**Mircea Eliade's "eternal return":** Eliade's influential theory (in *Cosmos and History*, 1954) holds that archaic religious consciousness universally orients itself through the repetition of primordial archetypes — "in illo tempore" ("at that time"), the mythic time of origins that ritual re-enacts. *Zep tepi* is Eliade's Egyptian exemplar. Whether or not Eliade's universalization holds (it has been significantly criticized by Kehoe, Smith, and others for projecting a single pattern across radically different cultures), the Egyptian concept is extraordinarily well-documented and functions exactly as he describes.
+**[[mircea-eliade]]'s "eternal return":** Eliade's influential theory (in *Cosmos and History*, 1954) holds that archaic religious consciousness universally orients itself through the repetition of primordial archetypes — "in illo tempore" ("at that time"), the mythic time of origins that ritual re-enacts. *Zep tepi* is Eliade's Egyptian exemplar. Whether or not Eliade's universalization holds (it has been significantly criticized by Kehoe, Smith, and others for projecting a single pattern across radically different cultures), the Egyptian concept is extraordinarily well-documented and functions exactly as he describes.
 
 **Genesis 1 ("In the beginning"):** The Hebrew *bereshit* ("in the beginning") inaugurates a cosmological narrative with the same structural function as *zep tepi*: a primordial moment when divine order (light, separation, naming) was imposed on watery chaos (*tehom* ~ *Nun*). The structural parallels are extensive; direct influence through Egyptian-Canaanite transmission routes is debated but the shared grammar is evident.
 
@@ -78,3 +78,4 @@ Egyptian *zep tepi* is the **earliest datable** formulation of this pattern by ~
 - instantiated-at: [[event-karnak-temple-complex-construction-c-2055-bce-100-ce]]
 - cross-tradition-parallels: [[frashokereti-cosmic-renovation]], [[cosmic-cycles]], [[tradition-zoroastrianism]], [[tradition-judaism]], [[tradition-islam]]
 - key-scholar: [[jan-assmann]]
+- key-scholar: [[mircea-eliade]] (*Cosmos and History* 1954; zep tepi is Eliade's primary Egyptian case for the myth of the eternal return)

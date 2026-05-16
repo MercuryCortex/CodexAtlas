@@ -35,7 +35,7 @@ variants:
     description: "The Ka'aba in Mecca as the axis mundi: the qibla (prayer direction) of all Muslims converges on it; Islamic cosmology places it directly below the divine throne. The Sufi concept of the *qutb* ('pole', 'axis') — the spiritual master as the living axis mundi of each age."
   - name: "Siberian Shamanic World Pole"
     tradition: "Siberian-shamanic"
-    description: "The shaman's pole, tent-pole, or drum as the axis mundi enabling ascent and descent between worlds. The most archaic form of the axis mundi concept — documented in Siberian, Korean, and Native American shamanic traditions (Eliade's foundational analysis)."
+    description: "The shaman's pole, tent-pole, or drum as the axis mundi enabling ascent and descent between worlds. The most archaic form of the axis mundi concept — documented in Siberian, Korean, and Native American shamanic traditions ([[mircea-eliade]]'s foundational analysis in *Shamanism: Archaic Techniques of Ecstasy*, 1964)."
 appearances:
   - "Egyptian Djed pillar reliefs (Old Kingdom onward)"
   - "Babylonian Etemenanki ziggurat (c. -600)"
@@ -142,6 +142,8 @@ The axis mundi is important for the vault not as a single transmission chain but
 - The Christian cross as axis mundi is documented explicitly in medieval theology (Pseudo-Dionysius, Bonaventure)
 - The Sufi *qutb* ("pole," "axis") — the living saint as the spiritual axis of each age — is the personalized axis mundi
 - The Kabbalistic Tree of Life (*Etz Chayyim*) maps the sefirot on a vertical axis, making it an axis mundi theological diagram
+
+**Key scholar**: [[mircea-eliade]] is the foundational modern theorist of the axis mundi concept. His *The Sacred and the Profane* (1959) provides the cross-tradition phenomenological framework; *Shamanism: Archaic Techniques of Ecstasy* (1964) documents the shamanic world-pole as the earliest attested axis mundi form. Eliade's theoretical categories — *hierophany*, sacred center, *axis mundi* — are Tier 2 (academic canon); see [[sacred-and-profane]] and [[hierophany]].
 
 ## Refs
 

@@ -4,6 +4,21 @@ _Hand-maintained. Each agent currently working in the vault appends a claim bloc
 
 ---
 
+## sonnet-blake-james-1 — content / william-blake + william-james upgrades + eliade cross-wiring — started 2026-05-16 — **FINISHED 2026-05-16**
+- Owned: `04_persons/william-blake.md` (already full — no changes needed), `04_persons/william-james.md` (metadata→full upgrade), `04_persons/aldous-huxley.md` (NEW stub — Wiring Law), `06_themes/zep-tepi.md` (Eliade wikilink added), `09_symbols/axis-mundi.md` (Eliade wikilink added)
+- Goal: Upgrade william-blake and william-james to full status; add Eliade cross-wiring to zep-tepi and axis-mundi per task instructions
+- Status: finished
+- Delivered:
+  - **`william-blake.md`** — already `status: full` with rich content including Urizen/Albion/Los/Jerusalem mythological system, Gnostic convergence MASSIVE WIN, Blake↔Swedenborg, Blake↔Boehme, Blake↔Milton, reception history (Yeats/Frye/Raine/Ginsberg). No changes needed.
+  - **`william-james.md`** (metadata→full): Added Vivekananda MASSIVE WIN section (James-Vivekananda 1893 meeting as East-West mystical equivalence moment; Advaita Vedanta as primary non-Christian case study); "will to believe" and religious pluralism section; apophatic connection to [[theme-apophatic-theology]], [[meister-eckhart]], [[ibn-arabi]]; [[aldous-huxley]] wikilink (Perennial Philosophy + Doors of Perception); 2 new Tier-1 refs (Barnard 1997, Stace 1960); updated influences YAML + tags.
+  - **`aldous-huxley.md`** (NEW stub) — Wiring Law: aldous-huxley target created before wikilink written; biography + *Perennial Philosophy* + *Doors of Perception* + influenced-by James/Vivekananda/Vedanta; 2 Tier-1 refs.
+  - **`zep-tepi.md`** — [[mircea-eliade]] wikilink added in body (eternal-return section) + Relations block (key-scholar entry).
+  - **`axis-mundi.md`** — [[mircea-eliade]] wikilink added in Siberian-shamanic variant + new "Key scholar" paragraph in Significance section wiring [[sacred-and-profane]] and [[hierophany]].
+- Build: **2262 nodes · 13,179 edges · 0 YAML errors · 0 new dead links introduced**
+- Last edit: `00_meta/STATUS.md`
+
+---
+
 ## sonnet-indigenous-americas-1 — content / Indigenous North American + Mesoamerican depth layer — started 2026-05-16 — **IN PROGRESS**
 - Owning: `03_deities/sky-woman-haudenosaunee.md` (NEW — replaces stub `sky-woman.md` with full upgrade), `03_deities/spider-grandmother-hopi.md` (NEW), `05_events/event-great-law-of-peace-haudenosaunee-c1450.md` (NEW), `06_themes/earth-diver-creation.md` (NEW), `07_traditions/tradition-hopi.md` (NEW — Wiring Law for spider-grandmother), `03_deities/huitzilopochtli.md` (UPGRADE — cosmic-maintenance MASSIVE WIN), `03_deities/tlaloc.md` (UPGRADE — Teotihuacan depth), `03_deities/quetzalcoatl.md` (UPGRADE — Venus/astro + nada brahman wire)
 - Goal: Build Indigenous North American and Mesoamerican depth layers; Sky Woman earth-diver MASSIVE WIN; Spider Grandmother creation-by-thought MASSIVE WIN; Great Law of Peace political theology; Aztec cosmic-maintenance sacrifice theology
