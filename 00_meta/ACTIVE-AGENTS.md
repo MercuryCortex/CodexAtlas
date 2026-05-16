@@ -467,10 +467,10 @@ _Hand-maintained. Each agent currently working in the vault appends a claim bloc
 
 ---
 
-## goblin-divine-union-1 — symbols / divine union + sacred objects thread — started 2026-05-16 — IN PROGRESS
-- Owning: `09_symbols/hieros-gamos.md` (NEW), `09_symbols/ark-of-the-covenant.md` (NEW), `09_symbols/sacred-crown.md` (NEW)
-- Goal: Hieros Gamos — sacred marriage cross-tradition (Inanna-Dumuzi/alchemical Coniunctio/Kabbalistic Shabbat/Tantric Maithuna/Christian Bride of Christ); Ark of the Covenant — portable divine throne with Ethiopian living tradition + Cherubim-throne theology + palladium pattern; Sacred Crown — divine authority marker pan-civilizational (Egyptian Double Crown/Mesopotamian horned tiara/Hindu mukuta/Buddhist Vairocana/Yoruba ade/Inca mascapaycha) + Crown Chakra external materialization
-- Status: in-progress
+## ~~goblin-divine-union-1 — symbols / divine union + sacred objects thread — started 2026-05-16 — FINISHED 2026-05-16~~
+- ~~Owning: `09_symbols/hieros-gamos.md` (NEW full), `09_symbols/ark-of-the-covenant.md` (NEW full), `09_symbols/sacred-crown.md` (NEW full)~~
+- ~~Goal: Hieros Gamos — sacred marriage cross-tradition (Inanna-Dumuzi/alchemical Coniunctio/Kabbalistic Shabbat/Tantric Maithuna/Christian Bride of Christ); Ark of the Covenant — portable divine throne with Ethiopian living tradition + Cherubim-throne theology + palladium pattern; Sacred Crown — divine authority marker pan-civilizational (Egyptian Double Crown/Mesopotamian horned tiara/Hindu mukuta/Buddhist Vairocana/Yoruba ade/Inca mascapaycha) + Crown Chakra external materialization~~
+- ~~Status: finished — 171 total symbols · 14518 edges · 0 dead links introduced · STATUS.md logged~~
 
 ---
 
