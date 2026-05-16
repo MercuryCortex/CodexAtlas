@@ -3970,6 +3970,59 @@ body.view-scripture-reader .zoom-meter  { display: none; }
 .sr-pop-row:hover { background: var(--bg-2); color: var(--text-1); }
 .sr-pop-row.active { color: var(--gold); }
 
+/* ---- grouped text dropdown ---- */
+.sr-text-menu-grouped { min-width: 280px; max-height: 420px; overflow-y: auto; right: 0; left: auto; }
+.sr-pop-group-header {
+  font-family: var(--sans);
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-3);
+  padding: 10px 14px 4px;
+  border-top: 1px solid var(--border);
+  margin-top: 4px;
+}
+.sr-pop-group-header:first-child { border-top: none; margin-top: 0; padding-top: 6px; }
+.sr-pop-text-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  padding: 6px 14px 6px 20px;
+}
+.sr-pop-text-title { flex: 1; min-width: 0; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.sr-pop-canon-tag {
+  flex-shrink: 0;
+  font-size: 9.5px;
+  color: var(--text-3);
+  background: var(--bg-2);
+  border: 1px solid var(--border);
+  border-radius: 3px;
+  padding: 1px 5px;
+  white-space: nowrap;
+}
+.sr-pop-text-row:hover .sr-pop-canon-tag { color: var(--text-2); }
+.sr-pop-text-row.active .sr-pop-canon-tag { color: var(--gold); border-color: var(--gold-soft); }
+
+/* ---- canon badge in topbar ---- */
+.sr-canon-badge {
+  display: inline-block;
+  font-family: var(--sans);
+  font-size: 9.5px;
+  font-weight: 500;
+  color: var(--text-3);
+  background: var(--bg-2);
+  border: 1px solid var(--border);
+  border-radius: 3px;
+  padding: 1px 6px;
+  margin-left: 8px;
+  vertical-align: middle;
+  position: relative;
+  top: -1px;
+  letter-spacing: 0.04em;
+}
+
 /* ---- context toggle button ---- */
 .sr-vc-ctx {
   color: var(--text-3) !important;

@@ -1,37 +1,193 @@
 // ============================================================
 // CODEX ATLAS — Scripture Reader
 //
-// Layout:
-//   sr-topbar  → ← Ring  |  title  |  [text ▾]  [language ▾]  [✦ parallels]
-//   sr-body    → optional ctx panel (toggle) + scrollable text
-//
-// Entity clicks → populate the app's collapsible right detail panel
-// Body class view-scripture-reader → hides global view-header
+// Topbar:  ← Ring  |  title  [canon]  |  [Religion ▾]  [Text ▾]  [lang ▾]  [✦ parallels]
+// Two-level selector: religion → text (grouped by canon within religion)
 // ============================================================
 
 window.ScriptureReader = (function () {
 
   let _pane             = null;
   let _textKey          = null;
+  let _religion         = 'Christianity';
   let _kdHandler        = null;
   let _paneClickHandler = null;
   let _ctxOpen          = false;
 
-  // ── public ───────────────────────────────────────────────────
-  function render(pane, textKey) {
+  // ── Catalog: religion / group / canon for every text key ──────────────
+  // group   = section header inside the text dropdown
+  // canon   = small badge shown on each row + in the topbar
+  // sort    = order within group (lower = higher)
+  const CATALOG = {
+    // ── Christianity — Old Testament ────────────────────────────────
+    'genesis-1':          { religion:'Christianity', group:'Old Testament',          canon:'All Canons',          sort:10 },
+    'job-38':             { religion:'Christianity', group:'Old Testament',          canon:'All Canons',          sort:20 },
+    'proverbs-8':         { religion:'Christianity', group:'Old Testament',          canon:'All Canons',          sort:30 },
+    'psalm-22':           { religion:'Christianity', group:'Old Testament',          canon:'All Canons',          sort:40 },
+    'psalm-82':           { religion:'Christianity', group:'Old Testament',          canon:'All Canons',          sort:50 },
+    'isaiah-6':           { religion:'Christianity', group:'Old Testament',          canon:'All Canons',          sort:60 },
+    'isaiah-45':          { religion:'Christianity', group:'Old Testament',          canon:'All Canons',          sort:70 },
+    'ezekiel-1':          { religion:'Christianity', group:'Old Testament',          canon:'All Canons',          sort:80 },
+    'ecclesiastes-1':     { religion:'Christianity', group:'Old Testament',          canon:'All Canons',          sort:90 },
+    // ── Christianity — New Testament ────────────────────────────────
+    'john-1':             { religion:'Christianity', group:'New Testament',          canon:'All Canons',          sort:10 },
+    'john-3':             { religion:'Christianity', group:'New Testament',          canon:'All Canons',          sort:20 },
+    'romans-8':           { religion:'Christianity', group:'New Testament',          canon:'All Canons',          sort:30 },
+    '1-corinthians-15':   { religion:'Christianity', group:'New Testament',          canon:'All Canons',          sort:40 },
+    'revelation-12':      { religion:'Christianity', group:'New Testament',          canon:'All Canons',          sort:50 },
+    // ── Christianity — Ethiopian Canon ──────────────────────────────
+    'book-of-enoch':      { religion:'Christianity', group:'Ethiopian Canon',        canon:'Ethiopian Orthodox',  sort:10 },
+    // ── Christianity — Christian Mysticism ──────────────────────────
+    'pseudo-dionysius-mystical-theology': { religion:'Christianity', group:'Christian Mysticism', canon:'Neoplatonic Christianity', sort:10 },
+    'meister-eckhart-godhead':            { religion:'Christianity', group:'Christian Mysticism', canon:'Rhineland Mysticism',      sort:20 },
+    // ── Christianity — Gnostic / Nag Hammadi ────────────────────────
+    'gospel-of-thomas':   { religion:'Christianity', group:'Gnostic / Nag Hammadi', canon:'Non-canonical',       sort:10 },
+    'apocryphon-of-john': { religion:'Christianity', group:'Gnostic / Nag Hammadi', canon:'Non-canonical',       sort:20 },
+    // ── Judaism ─────────────────────────────────────────────────────
+    'sefer-yetzirah':     { religion:'Judaism',       group:'Kabbalah',              canon:'Rabbinic / Kabbalistic', sort:10 },
+    // ── Islam ───────────────────────────────────────────────────────
+    'quran-fatiha-nur':   { religion:'Islam',         group:'Quran',                 canon:'All Canons',          sort:10 },
+    'surah-ya-sin':       { religion:'Islam',         group:'Quran',                 canon:'All Canons',          sort:20 },
+    'rumi-masnavi':       { religion:'Islam',         group:'Sufism',                canon:'Sufi Literature',     sort:10 },
+    'ibn-arabi-fusus':    { religion:'Islam',         group:'Sufism',                canon:'Sufi Literature',     sort:20 },
+    // ── Hinduism ────────────────────────────────────────────────────
+    'nasadiya-sukta':     { religion:'Hinduism',      group:'Vedic Hymns',           canon:'Rig Veda',            sort:10 },
+    'purusha-sukta':      { religion:'Hinduism',      group:'Vedic Hymns',           canon:'Rig Veda',            sort:20 },
+    'chandogya-621':      { religion:'Hinduism',      group:'Upanishads',            canon:'Sama Veda',           sort:10 },
+    'katha-upanishad':    { religion:'Hinduism',      group:'Upanishads',            canon:'Upanishads',          sort:20 },
+    'mandukya-upanishad': { religion:'Hinduism',      group:'Upanishads',            canon:'Upanishads',          sort:30 },
+    'brihadaranyaka-neti-neti': { religion:'Hinduism', group:'Upanishads',           canon:'Upanishads',          sort:40 },
+    'bhagavad-gita-4':    { religion:'Hinduism',      group:'Epics',                 canon:'Mahabharata',         sort:10 },
+    'bhagavad-gita-11':   { religion:'Hinduism',      group:'Epics',                 canon:'Mahabharata',         sort:20 },
+    // ── Buddhism ────────────────────────────────────────────────────
+    'dhammapada-1':       { religion:'Buddhism',      group:'Pali Canon',            canon:'Theravada',           sort:10 },
+    'heart-sutra':        { religion:'Buddhism',      group:'Mahayana',              canon:'Mahayana',            sort:10 },
+    'bardo-thodol':       { religion:'Buddhism',      group:'Vajrayana',             canon:'Tibetan Canon',       sort:10 },
+    // ── Taoism ──────────────────────────────────────────────────────
+    'tao-te-ching-1':     { religion:'Taoism',        group:'Classical Taoism',      canon:'Classical',           sort:10 },
+    'zhuangzi':           { religion:'Taoism',        group:'Classical Taoism',      canon:'Classical',           sort:20 },
+    'i-ching-1':          { religion:'Taoism',        group:'Chinese Classics',      canon:'Chinese Canon',       sort:10 },
+    // ── Hermeticism ─────────────────────────────────────────────────
+    'poimandres':          { religion:'Hermeticism',  group:'Corpus Hermeticum',     canon:'Hermetic',            sort:10 },
+    'corpus-hermeticum-3': { religion:'Hermeticism',  group:'Corpus Hermeticum',     canon:'Hermetic',            sort:20 },
+    'corpus-hermeticum-4': { religion:'Hermeticism',  group:'Corpus Hermeticum',     canon:'Hermetic',            sort:30 },
+    'corpus-hermeticum-7': { religion:'Hermeticism',  group:'Corpus Hermeticum',     canon:'Hermetic',            sort:40 },
+    'corpus-hermeticum-11':{ religion:'Hermeticism',  group:'Corpus Hermeticum',     canon:'Hermetic',            sort:50 },
+    'corpus-hermeticum-13':{ religion:'Hermeticism',  group:'Corpus Hermeticum',     canon:'Hermetic',            sort:60 },
+    // ── Greek Philosophy / Neoplatonism ─────────────────────────────
+    'plato-timaeus':      { religion:'Greek Philosophy', group:'Plato',              canon:'Platonic',            sort:10 },
+    'plato-cave':         { religion:'Greek Philosophy', group:'Plato',              canon:'Platonic',            sort:20 },
+    'plotinus-enneads':   { religion:'Greek Philosophy', group:'Neoplatonism',       canon:'Neoplatonic',         sort:10 },
+    'orphic-theogony':    { religion:'Greek Philosophy', group:'Mystery Traditions', canon:'Orphic',              sort:10 },
+    // ── Ancient Egyptian ────────────────────────────────────────────
+    'memphite-theology':  { religion:'Ancient Egyptian', group:'Temple Texts',       canon:'Old Kingdom',         sort:10 },
+    'hymn-to-aten':       { religion:'Ancient Egyptian', group:'Temple Texts',       canon:'Amarna Period',       sort:20 },
+    'pyramid-texts':      { religion:'Ancient Egyptian', group:'Funerary Texts',     canon:'Old Kingdom',         sort:10 },
+    'coffin-text-1130':   { religion:'Ancient Egyptian', group:'Funerary Texts',     canon:'Middle Kingdom',      sort:20 },
+    'book-of-dead-125':   { religion:'Ancient Egyptian', group:'Funerary Texts',     canon:'New Kingdom',         sort:30 },
+    // ── Ancient Mesopotamian ────────────────────────────────────────
+    'enuma-elish-1':      { religion:'Mesopotamian',  group:'Babylonian',            canon:'Babylonian',          sort:10 },
+    'descent-inanna':     { religion:'Mesopotamian',  group:'Sumerian',              canon:'Sumerian',            sort:10 },
+    'atrahasis-epic':     { religion:'Mesopotamian',  group:'Babylonian',            canon:'Babylonian',          sort:20 },
+    'gilgamesh':          { religion:'Mesopotamian',  group:'Babylonian',            canon:'Babylonian',          sort:30 },
+    // ── Other traditions ────────────────────────────────────────────
+    'yasna-30':           { religion:'Zoroastrianism',group:'Gathas',                canon:'Avesta',              sort:10 },
+    'popol-vuh':          { religion:'Mesoamerican',  group:"K'iche' Maya",          canon:"K'iche' Maya Canon",  sort:10 },
+    'voluspa':            { religion:'Norse',         group:'Poetic Edda',           canon:'Eddic Poetry',        sort:10 },
+  };
+
+  const RELIGION_ORDER = [
+    'Christianity', 'Judaism', 'Islam', 'Hinduism', 'Buddhism', 'Taoism',
+    'Hermeticism', 'Greek Philosophy', 'Ancient Egyptian', 'Mesopotamian',
+    'Zoroastrianism', 'Mesoamerican', 'Norse',
+  ];
+
+  const GROUP_ORDER = {
+    'Christianity':    ['Old Testament', 'New Testament', 'Ethiopian Canon', 'Christian Mysticism', 'Gnostic / Nag Hammadi'],
+    'Hinduism':        ['Vedic Hymns', 'Upanishads', 'Epics'],
+    'Buddhism':        ['Pali Canon', 'Mahayana', 'Vajrayana'],
+    'Taoism':          ['Classical Taoism', 'Chinese Classics'],
+    'Ancient Egyptian':['Temple Texts', 'Funerary Texts'],
+    'Mesopotamian':    ['Sumerian', 'Babylonian'],
+    'Islam':           ['Quran', 'Sufism'],
+    'Hermeticism':     ['Corpus Hermeticum'],
+    'Greek Philosophy':['Plato', 'Neoplatonism', 'Mystery Traditions'],
+  };
+
+  // ── helpers ───────────────────────────────────────────────────
+  function _availableReligions(texts) {
+    const seen = new Set();
+    Object.keys(texts).forEach(k => { const c = CATALOG[k]; if (c) seen.add(c.religion); });
+    const found = RELIGION_ORDER.filter(r => seen.has(r));
+    // uncataloged texts get a catch-all
+    const uncataloged = Object.keys(texts).filter(k => !CATALOG[k]);
+    if (uncataloged.length) found.push('Other');
+    return found;
+  }
+
+  function _textsForReligion(texts, religion) {
+    const groups = {};
+    Object.keys(texts).forEach(k => {
+      const c = CATALOG[k];
+      const rel = c ? c.religion : 'Other';
+      if (rel !== religion) return;
+      const grp = c ? c.group : 'Uncategorized';
+      if (!groups[grp]) groups[grp] = [];
+      groups[grp].push({ key: k, text: texts[k], catalog: c || { canon: '', sort: 99 } });
+    });
+    Object.values(groups).forEach(arr => arr.sort((a, b) => a.catalog.sort - b.catalog.sort));
+    return groups;
+  }
+
+  function _orderedGroups(groups, religion) {
+    const order = GROUP_ORDER[religion] || [];
+    const all   = [...new Set([...order, ...Object.keys(groups)])];
+    return all.filter(g => groups[g] && groups[g].length);
+  }
+
+  function _firstKeyInReligion(texts, religion) {
+    const groups = _textsForReligion(texts, religion);
+    const grps   = _orderedGroups(groups, religion);
+    return grps.length ? (groups[grps[0]][0] || {}).key : null;
+  }
+
+  // ── public render ─────────────────────────────────────────────
+  function render(pane, textKey, religionOverride) {
     _pane    = pane;
     _ctxOpen = false;
 
-    // Remove stale listeners from previous render (pane element persists across re-renders)
     if (_kdHandler)        { document.removeEventListener('keydown', _kdHandler); _kdHandler = null; }
     if (_paneClickHandler) { pane.removeEventListener('click', _paneClickHandler); _paneClickHandler = null; }
 
     const texts = window.SCRIPTURE_TEXTS || {};
     const keys  = Object.keys(texts);
     if (!keys.length) { pane.innerHTML = '<div class="sr-empty-state">No texts loaded.</div>'; return; }
-    if (!textKey || !texts[textKey]) textKey = keys[0];
+
+    // Resolve active religion
+    if (religionOverride) _religion = religionOverride;
+    else if (window.STATE && STATE.scriptureReligion) _religion = STATE.scriptureReligion;
+    if (!_religion) _religion = 'Christianity';
+    if (window.STATE) STATE.scriptureReligion = _religion;
+
+    const groups      = _textsForReligion(texts, _religion);
+    const relKeys     = _orderedGroups(groups, _religion).flatMap(g => groups[g].map(x => x.key));
+
+    // Resolve active text key
+    if (!textKey || !texts[textKey]) textKey = _firstKeyInReligion(texts, _religion) || keys[0];
+    // If textKey belongs to a different religion, switch religion automatically
+    const textCatalog = CATALOG[textKey];
+    if (textCatalog && textCatalog.religion !== _religion) {
+      _religion = textCatalog.religion;
+      if (window.STATE) STATE.scriptureReligion = _religion;
+    }
+    // Recompute after possible religion switch
+    const groups2  = _textsForReligion(texts, _religion);
+    const relKeys2 = _orderedGroups(groups2, _religion).flatMap(g => groups2[g].map(x => x.key));
+    if (!relKeys2.includes(textKey)) textKey = relKeys2[0] || keys[0];
+
     _textKey = textKey;
     const t  = texts[textKey];
+    if (!t) { pane.innerHTML = '<div class="sr-empty-state">Text not found.</div>'; return; }
 
     const trList   = t.translations || [{ id: 'default', label: 'Translation' }];
     if (!window.STATE) window.STATE = {};
@@ -39,25 +195,26 @@ window.ScriptureReader = (function () {
       STATE.scriptureTranslation = trList[0].id;
     const activeTr = STATE.scriptureTranslation;
 
-    // Signal: hide global view-header + zoom meter while reader is active
     document.body.classList.add('view-scripture-reader');
     document.querySelectorAll('.zoom-meter').forEach(zm => { zm.style.display = 'none'; });
-
-    // Clear global view-controls (topbar lives inside the pane)
     const vc = document.getElementById('view-controls');
     if (vc) vc.innerHTML = '';
 
-    // ── dropdown rows ─────────────────────────────────────────
-    const textRows = keys.map(k =>
-      `<div class="sr-pop-row${k === textKey ? ' active' : ''}" data-action="text" data-key="${k}">${esc(texts[k].shortTitle)}</div>`
+    const religions    = _availableReligions(texts);
+    const hasParallels = !!(t.crossTradition && t.crossTradition.length) || !!t.intro;
+    const catalogEntry = CATALOG[textKey];
+    const canonLabel   = catalogEntry ? catalogEntry.canon : '';
+
+    const religionRows = religions.map(r =>
+      `<div class="sr-pop-row${r === _religion ? ' active' : ''}" data-action="religion" data-rel="${esc(r)}">${esc(r)}</div>`
     ).join('');
+
+    const textMenuHtml = _buildTextMenu(groups2, textKey, _religion);
+
     const langRows = trList.map(tr =>
       `<div class="sr-pop-row${tr.id === activeTr ? ' active' : ''}" data-action="lang" data-tr="${tr.id}">${esc(tr.label)}</div>`
     ).join('');
 
-    const hasParallels = !!(t.crossTradition && t.crossTradition.length) || !!t.intro;
-
-    // ── build pane ────────────────────────────────────────────
     const sectionsHtml = _buildSections(t, activeTr, trList);
 
     pane.innerHTML = `
@@ -66,11 +223,16 @@ window.ScriptureReader = (function () {
           <div class="sr-topbar-left">
             <button class="btn btn-mini sr-vc-back" id="sr-vc-back">← Ring</button>
             <span class="sr-topbar-title">${esc(t.title)}</span>
+            ${canonLabel ? `<span class="sr-canon-badge">${esc(canonLabel)}</span>` : ''}
           </div>
           <div class="sr-topbar-right">
+            <div class="sr-pop-wrap" id="sr-rel-wrap">
+              <button class="btn btn-mini sr-pop-btn" id="sr-rel-btn">${esc(_religion)}<span class="sr-pop-caret">▾</span></button>
+              <div class="sr-pop-menu" id="sr-rel-menu">${religionRows}</div>
+            </div>
             <div class="sr-pop-wrap" id="sr-text-wrap">
               <button class="btn btn-mini sr-pop-btn" id="sr-text-btn">${esc(t.shortTitle)}<span class="sr-pop-caret">▾</span></button>
-              <div class="sr-pop-menu" id="sr-text-menu">${textRows}</div>
+              <div class="sr-pop-menu sr-text-menu-grouped" id="sr-text-menu">${textMenuHtml}</div>
             </div>
             <div class="sr-pop-wrap" id="sr-lang-wrap">
               <button class="btn btn-mini sr-pop-btn" id="sr-lang-btn">${esc(_activeTrLabel(trList, activeTr))}<span class="sr-pop-caret">▾</span></button>
@@ -85,28 +247,35 @@ window.ScriptureReader = (function () {
         </div>
       </div>`;
 
-    // back
+    // back button
     document.getElementById('sr-vc-back').onclick = () => {
       _cleanup();
-      if (window.STATE) STATE.scriptureReaderMode = null;
+      if (window.STATE) { STATE.scriptureReaderMode = null; }
       if (window.setView) setView('scripture');
     };
 
-    // text + lang dropdowns
+    // wire dropdowns
+    _wirePopup('sr-rel-btn',  'sr-rel-menu');
     _wirePopup('sr-text-btn', 'sr-text-menu');
     _wirePopup('sr-lang-btn', 'sr-lang-menu');
 
-    // dropdown row clicks
+    // row clicks
     pane.querySelectorAll('.sr-pop-row').forEach(row => {
       row.onclick = ev => {
         ev.stopPropagation();
         _closeAllPopups();
-        if (row.dataset.action === 'text') {
+        if (row.dataset.action === 'religion') {
+          const newRel = row.dataset.rel;
+          _religion = newRel;
+          if (window.STATE) STATE.scriptureReligion = newRel;
           _cleanup();
-          STATE.scriptureReaderMode = row.dataset.key;
+          render(pane, null, newRel);
+        } else if (row.dataset.action === 'text') {
+          _cleanup();
+          if (window.STATE) STATE.scriptureReaderMode = row.dataset.key;
           render(pane, row.dataset.key);
-        } else {
-          STATE.scriptureTranslation = row.dataset.tr;
+        } else if (row.dataset.action === 'lang') {
+          if (window.STATE) STATE.scriptureTranslation = row.dataset.tr;
           render(pane, textKey);
         }
       };
@@ -116,11 +285,11 @@ window.ScriptureReader = (function () {
     const ctxBtn = document.getElementById('sr-ctx-btn');
     if (ctxBtn) ctxBtn.onclick = () => _toggleCtx(t);
 
-    // entity mark events on body
+    // entity clicks on body
     const body = document.getElementById('sr-body');
     body.addEventListener('click', _onClick);
 
-    // click outside entity / topbar → unpin + close popups
+    // click outside → close
     _paneClickHandler = ev => {
       if (!ev.target.closest('.sr-ent') && !ev.target.closest('#sr-topbar')) {
         _closeAllPopups();
@@ -135,7 +304,26 @@ window.ScriptureReader = (function () {
     document.addEventListener('keydown', _kdHandler);
   }
 
-  // ── context drawer toggle ─────────────────────────────────────
+  // ── text dropdown builder ─────────────────────────────────────
+  function _buildTextMenu(groups, activeKey, religion) {
+    const orderedGrps = _orderedGroups(groups, religion);
+    let html = '';
+    orderedGrps.forEach(grp => {
+      const items = groups[grp];
+      if (!items || !items.length) return;
+      html += `<div class="sr-pop-group-header">${esc(grp)}</div>`;
+      items.forEach(item => {
+        const isActive = item.key === activeKey;
+        html += `<div class="sr-pop-row sr-pop-text-row${isActive ? ' active' : ''}" data-action="text" data-key="${esc(item.key)}">
+          <span class="sr-pop-text-title">${esc(item.text.shortTitle)}</span>
+          <span class="sr-pop-canon-tag">${esc(item.catalog.canon)}</span>
+        </div>`;
+      });
+    });
+    return html;
+  }
+
+  // ── context drawer ────────────────────────────────────────────
   function _toggleCtx(t) {
     const panel = document.getElementById('sr-ctx-panel');
     const btn   = document.getElementById('sr-ctx-btn');
@@ -150,7 +338,7 @@ window.ScriptureReader = (function () {
           const key = el.dataset.textid;
           if (key && window.SCRIPTURE_TEXTS && SCRIPTURE_TEXTS[key]) {
             _cleanup();
-            STATE.scriptureReaderMode = key;
+            if (window.STATE) STATE.scriptureReaderMode = key;
             render(_pane, key);
           }
         };
@@ -181,7 +369,7 @@ window.ScriptureReader = (function () {
       <div class="sr-section">
         ${sec.heading ? `<div class="sr-section-heading">${esc(sec.heading)}</div>` : ''}
         ${sec.verses.map(v => {
-          const vtext     = _verseText(v, activeTr);
+          const vtext      = _verseText(v, activeTr);
           const isOriginal = activeTr !== (trList[0] && trList[0].id) && !!(v.textVersions && v.textVersions[activeTr]);
           return `<div class="sr-verse" data-ref="${esc(v.ref)}">
             <span class="sr-ref">${esc(v.ref)}</span>
@@ -201,13 +389,11 @@ window.ScriptureReader = (function () {
     if (ent) _showCard(ent, mark);
   }
 
-  // ── entity card → right detail panel (uses real vault selectNode) ────────
   function _showCard(ent, markEl) {
     document.querySelectorAll('.sr-ent.active, .sr-ent.pinned').forEach(e => e.classList.remove('active', 'pinned'));
     markEl.classList.add('active', 'pinned');
 
     if (ent.node && window.NODES_BY_ID && NODES_BY_ID[ent.node]) {
-      // Render the real vault node in the detail panel (edges, body, connections)
       if (window.STATE) STATE.selected = ent.node;
       document.body.classList.remove('detail-collapsed');
       const dt = document.getElementById('detail-toggle');
@@ -216,7 +402,6 @@ window.ScriptureReader = (function () {
       return;
     }
 
-    // Fallback: node not in vault — show a minimal inline note
     const el = document.getElementById('detail-inner');
     if (!el) return;
     el.innerHTML = `<div class="sr-detail-card">
@@ -250,7 +435,7 @@ window.ScriptureReader = (function () {
     document.querySelectorAll('.sr-pop-btn.open').forEach(b => b.classList.remove('open'));
   }
 
-  // ── helpers ───────────────────────────────────────────────────
+  // ── text helpers ──────────────────────────────────────────────
   function _verseText(v, trId) {
     return (v.textVersions && v.textVersions[trId]) ? v.textVersions[trId] : (v.text || '');
   }
@@ -285,7 +470,6 @@ window.ScriptureReader = (function () {
     if (_paneClickHandler && _pane) { _pane.removeEventListener('click', _paneClickHandler); _paneClickHandler = null; }
     document.body.classList.remove('view-scripture-reader');
     document.querySelectorAll('.zoom-meter').forEach(zm => { zm.style.display = ''; });
-    // Collapse detail panel and clear entity card
     const el = document.getElementById('detail-inner');
     if (el) el.innerHTML = '<div class="empty">Select a node to inspect.</div>';
     document.body.classList.add('detail-collapsed');
