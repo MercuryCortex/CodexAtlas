@@ -22,7 +22,7 @@ influenced-by: ["Hans Jonas *Gnostic Religion* (1958)", "James M. Robinson *Nag 
 influences: ["public reception of Gnosticism in the late-20th-century West", "feminist theology (Pagels's treatment of divine-feminine themes in Sethian texts)", "[[phase-7-015-beyond-belief]] (Pagels's own follow-up)"]
 deities-mentioned: ["[[sophia-gnostic]]", "[[yaldabaoth]]", "[[the-monad-gnostic]]"]
 events-context: ["[[event-nag-hammadi-discovery]]"]
-status: "partial"
+status: "full"
 preservation: "Continuous in print since 1979; received the National Book Award (1980) and National Book Critics Circle Award; widely translated."
 refs:
   - title: "The Gnostic Gospels"
@@ -122,6 +122,12 @@ Citation: Pagels, *The Gnostic Gospels*, conclusion, pp. 150–151; short fair-u
 ## Disputes
 - **Politicization framing.** Whether Pagels overstates the *political* element of orthodoxy-formation at the expense of theological coherence considerations (cf. Markus Bockmuehl, *Seeing the Word*).
 - **Divine-feminine reading.** Whether Sethian Barbelo and Valentinian Sophia function as feminine *liberators* in the way late-20th-century feminist reception used them, or whether their feminine status is theologically subordinate to a masculine Father (King 2003, Brakke 2010 raise the question).
+
+## MASSIVE WIN — cross-tradition edges
+- **The delayed-recovery model — the vault's paradigm case:** 1945 Nag Hammadi discovery → 1977 Robinson's English edition → 1979 Pagels = 34-year gap between physical recovery and mass cultural impact. This two-stage recovery (archaeological find → scholarly translation → popular transformation) is the vault's canonical case for how ancient suppressed materials re-enter a living tradition and change it; the pattern recurs at Qumran (Dead Sea Scrolls: discovered 1947, full scholarly access 1991), Mawangdui (discovered 1973, transformed DDJ studies by the 1980s), and Guodian (discovered 1993, still being absorbed). The delay is institutional, not accidental.
+- **Three vault documents on one controversy:** the vault holds the *Apocryphon of John* (NHC II,1 — the primary Sethian text), Plotinus *Enneads* II.9 (the Platonist attack on texts like ApocJohn by name), Irenaeus *Adv. Haer.* 1.29 (the proto-orthodox refutation), and Pagels' *Gnostic Gospels* (the 20th-century recovery that made these texts publicly legible). Four documents from three different centuries are in documented conversation about the same textual community — the richest single controversy in the vault.
+- **Divine-feminine chapter and 2nd-wave feminist theology — the vault's most direct ancient → modern intellectual-movement transmission:** Pagels' chapter on "God the Father/God the Mother" (drawing on Sethian Barbelo, Sophia, and Valentinian *Trimorphic Protennoia*) became a primary reference for Schüssler Fiorenza, Mary Daly, and Carter Heyward in the same 1979–1985 period. The claim that feminine-divine traditions were deliberately suppressed in early Christianity is a historical argument with T1 backing that had direct institutional consequences for women's ordination debates in the 1980s–90s — probably the clearest case in the vault of ancient documents changing modern religious policy.
+- **"Orthodoxy as political achievement" — the thesis that restructured early Christian studies:** Pagels' master argument (Gnostic variety was suppressed by episcopal-political consolidation, not theological refutation) challenged the previous consensus (Harnack's "development of doctrine" as progressive theological clarification). It generated Brakke 2010 (*The Gnostics*), King 2003 (*What Is Gnosticism?*), and a 40-year scholarly debate still active. Whether or not Pagels overstates the political element, she permanently shifted the burden of proof — scholars must now *explain* why orthodoxy "won" rather than assuming it won on merit.
 
 ## Refs
 1. Pagels, E. (1979). *The Gnostic Gospels*. Random House.

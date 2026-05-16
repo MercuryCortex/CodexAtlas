@@ -22,7 +22,7 @@ influenced-by: ["[[phase-2-005-hebrew-bible-j-source]]", "[[phase-3-002-plato-di
 influences: ["[[phase-4-023-irenaeus-against-heresies]] (polemicized against)", "later Sethian liturgical corpus"]
 deities-mentioned: ["[[the-monad-gnostic]]", "[[barbelo]]", "[[sophia-gnostic]]", "[[yaldabaoth]]", "[[the-pleroma]]"]
 events-context: ["[[event-nag-hammadi-discovery]]"]
-status: "partial"
+status: "full"
 preservation: "Four Coptic copies — three from Nag Hammadi (NHC II, III, IV) and one from the Berlin Codex (BG 8502,2) acquired 1896. Survives in a 'short recension' (BG, NHC III) and 'long recension' (NHC II, IV) — the long version is roughly one-third longer and includes the Melothesia (a treatise on the demonic origin of body parts) and a long monologue of Pronoia at the end. Comparison gives an exceptionally clear window onto Gnostic textual transmission."
 refs:
   - title: "The Apocryphon of John: Synopsis of Nag Hammadi Codices II,1; III,1; and IV,1 with BG 8502,2"
@@ -143,6 +143,12 @@ Citation: *Apocryphon of John*, NHC II,1 31.11–25 (long recension only); rende
 - **Origin.** Jewish-then-Christianized (Pearson, MacRae) vs. Christian-from-the-start (King, Williams). Hinges on whether the Christian frame (John + risen Jesus) is original or a later baptism of a Jewish revelation.
 - **The Yaldabaoth–Yahweh identification.** Unambiguous in the text; whether the polemic is *anti-Jewish* or *anti-imperial-orthodox* in intent is contested. Williams (1996, *Rethinking "Gnosticism"*) argues against reading these texts as anti-Semitism.
 - **Sethian as a coherent category.** Schenke proposed it in 1974; Williams (1996) and King (2003) have challenged "Gnosticism" itself as a useful category. Most still find Sethian useful for the ApocJohn cluster specifically.
+
+## MASSIVE WIN — cross-tradition edges
+- **Three vault documents in direct documented debate:** Plotinus *Enneads* II.9 attacks "Zostrianos, Allogenes, and others" — texts circulating in Plotinus' Roman circle; Irenaeus *Adv. Haer.* 1.29 (~180 CE) paraphrases the Barbeloite myth precisely in order to refute it; and the *Apocryphon of John* itself (NHC II,1) is the primary Sethian text both are attacking. The vault holds all three: the attacked document, the proto-orthodox refutation, and the philosophical-Platonist refutation. This three-way debate (~180–270 CE) is the most internally documentable theological controversy in the vault.
+- **Yaldabaoth as the sharpest ancient critique of monotheism:** the ApocJohn's core move — quoting Isaiah 45:5 ("I am God and there is no other") *in Yaldabaoth's voice* as evidence of the creator's *ignorance* — turns the monotheist's proof-text into a confession of delusion. This is philosophically precise: the problem-of-evil is solved by relocating it to the creative act itself. Plato's *Timaeus* provides the demiurge; the ApocJohn provides the inversion; Plotinus provides the defense of the original; three texts, three positions, fully triangulated in the vault.
+- **Barbelo/Pronoia ↔ Shekhinah ↔ Sophia ↔ Isis — the divine-feminine descent cluster:** Pronoia descends three times into the world of darkness to awaken the divine spark, is sealed in the water of five seals. Structurally: Isis gathering Osiris' scattered body; Shekhinah in Zoharic exile separated from Tiferet; Sophia's fall and recovery in Valentinian Pleroma. Four traditions (Egyptian, Jewish Kabbalist, Sethian Gnostic, Valentinian Gnostic) articulate the salvific drama as a *feminine divine figure's descent and recovery operation*. This is the vault's richest divine-feminine narrative cluster.
+- **Post-mortem archon-navigation ↔ Tibetan Bardo ↔ Mithraic planetary ladder ↔ Hermetic seven spheres:** the soul's post-death journey through hostile archon-spheres in ApocJohn maps onto the Tibetan *Bardo Thodol*'s navigation through wrathful deities, the Mithraic seven-gate ladder (*Celsus in Origen, CC* 6.22), and CH I's seven-sphere ascent. This cross-tradition post-mortem-navigation cluster is one of the vault's most geographically and chronologically dispersed structural parallels — spanning Egypt, Syria, Babylon, and Tibet within 1,000 years.
 
 ## Refs
 1. Waldstein, M. & Wisse, F. (1995). *The Apocryphon of John: Synopsis*. Brill. — definitive critical edition.

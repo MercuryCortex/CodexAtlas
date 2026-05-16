@@ -22,7 +22,7 @@ influenced-by: ["Q-source-sayings-tradition?", "Synoptic-sayings-stream", "Jewis
 influences: ["[[phase-4-004-gospel-of-philip]]", "later Manichaean sayings collections"]
 deities-mentioned: ["[[the-monad-gnostic]]", "[[the-father-thomasine]]"]
 events-context: ["[[event-nag-hammadi-discovery]]"]
-status: "partial"
+status: "full"
 preservation: "Single complete Coptic codex (Nag Hammadi Codex II, tractate 2; discovered 1945, published 1956–59). Three Greek fragments from Oxyrhynchus (P.Oxy. 1, 654, 655; published 1897–1904) preserve ~20% of the sayings and were unidentified as Thomas until the Coptic codex surfaced."
 refs:
   - title: "The Nag Hammadi Scriptures: The Revised and Updated Translation of Sacred Gnostic Texts"
@@ -150,6 +150,12 @@ Citation: *Gospel of Thomas* 114, rendered with reference to Lambdin and Meyer 2
 - **Date.** Crossan, Koester, Patterson argue for a ~50–60 CE kernel, making Thomas potentially as early as the earliest Synoptic strata. DeConick supports a rolling corpus 50–140. Goodacre, Gathercole argue mid-second-century, post-Synoptic. The range -50 / -140 here brackets the live debate.
 - **Genre.** Sayings-gospel sui generis vs. Gnostic gospel vs. wisdom collection. Most current Anglophone scholarship: not "Gnostic" in the developed mythological sense.
 - **Saying 114.** Whether the "Mary must become male" logion is original, a later addition, or ironic. Castelli, King have published extensively.
+
+## MASSIVE WIN — cross-tradition edges
+- **Saying 113 + Saying 77 — the vault's most cross-tradition-cited divine-immanence cluster:** "The kingdom is spread out upon the earth and people don't see it" (113) and "Split a piece of wood; I am there. Lift up a stone, you will find me there" (77) are structurally identical to Eckhart's "God is in the lowest ground of all things," Zen's "buddha-nature is everywhere, in the dog, in the stone," and Daodejing ch. 4 (the Dao filling every crevice). Four traditions — Syriac-Christian, German mystical, Japanese Buddhist, Classical Chinese — converge on radical divine immanence in ordinary matter; Thomas may be the earliest written statement (~50 CE kernel if Crossan is right).
+- **Thomas vs. John — the earliest documentable intra-Christian theological debate:** Pagels (*Beyond Belief*, 2003) argues that John 20's "doubting Thomas" pericope is a direct polemic against the Thomas tradition — insisting on physical resurrection precisely *against* Thomas-community resurrection-as-visionary-experience. If correct, the *Gospel of John* and the *Gospel of Thomas* are two competing 1st-century Christianities arguing *in the text* about what resurrection means. Both vault-resident documents frame this debate; it is the earliest the vault can document.
+- **Thomas as the Q-problem's sister text:** Crossan and Patterson argue Thomas preserves an independent ~50 CE sayings layer; if correct, the Q source and Thomas are parallel branches of a pre-narrative sayings-Jesus tradition, both preceding all four canonical Gospels. DeConick's rolling-corpus model (50–140 CE) provides a test case for stratified-composition analysis. The vault has the primary text and the competing scholarly frameworks to position it.
+- **Saying 70 "bring forth what is within you" ↔ Jungian individuation ↔ Sufi *kashf*:** Thomas's salvation-by-self-knowledge formula has no death-and-resurrection requirement — it is interior, gnostic in the root-sense (salvation by *knowing oneself*). Jung explicitly cites this saying; the Sufi *kashf* (unveiling of the heart) is the Islamic parallel. This is the vault's cleanest ancient → modern depth-psychology bridge: the primary Gnostic text, the Jungian interpretation, and the Islamic parallel are all vault-resident.
 
 ## Refs
 1. Meyer, M. (2007). *The Nag Hammadi Scriptures*. HarperOne. — standard translation.

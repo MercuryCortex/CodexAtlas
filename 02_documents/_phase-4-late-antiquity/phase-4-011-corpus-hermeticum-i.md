@@ -22,7 +22,7 @@ influenced-by: ["Middle Platonism", "Egyptian theological tradition (Memphite, H
 influences: ["Renaissance Hermeticism (Ficino, Pico)", "Western esotericism broadly"]
 deities-mentioned: ["[[poimandres]]", "[[nous-hermetic]]", "[[hermes-trismegistus]]"]
 events-context: []
-status: "partial"
+status: "full"
 preservation: "Survives in ~Byzantine Greek manuscripts (oldest ~14th c.). The Corpus of seventeen treatises was rediscovered in 1460 when Cosimo de' Medici's agent Leonardo da Pistoia brought a Greek manuscript from Macedonia to Florence; Ficino's Latin translation (1471) launched Renaissance Hermeticism. Isaac Casaubon's 1614 demonstration that the texts are Hellenistic-Egyptian, not pre-Mosaic, ended their authority as primordial revelation but began their study as late-antique evidence."
 refs:
   - title: "Hermetica: The Greek Corpus Hermeticum and the Latin Asclepius"
@@ -163,6 +163,12 @@ Citation: CH I.31–32 (closing hymn), trans. Mead 1906; cf. Copenhaver 1992, pp
 - **Egyptian vs. Greek substratum.** Festugière weighted Greek-philosophical; Fowden 1986 restored the Egyptian-priestly substratum; current scholarship sees both. Mahé's *Hermès en Haute-Égypte* documents Egyptian-Coptic Hermetic material (incl. NHC VI,6, our Discourse on the Eighth and Ninth — see [[phase-4-013-discourse-on-the-eighth-and-ninth]]).
 - **Date.** Most place CH I at 100–200 CE; some treatises in the Corpus are later, into the 3rd century.
 - **Christian or non-Christian.** CH I uses no Christian theological vocabulary; it is contemporary with Christianity, not derivative of it.
+
+## MASSIVE WIN — cross-tradition edges
+- **Poimandres cosmogonic vision ↔ John prologue ↔ ApocJohn ↔ Brihadaranyaka — the four-tradition opening-vision cluster:** CH I opens with a light-vision followed by cosmogony delivered by a divine being; John 1:1–14 opens with Logos-as-light descending into darkness; ApocJohn opens with a theophany followed by Barbelo's emanation; BṛhUp 1.1 opens with cosmic-horse meditation on correspondences. Four traditions (Egyptian-Greek syncretist, Syriac-Christian, Sethian Gnostic, Vedic Brahmanical), across four continents and one millennium, begin their foundational documents with the same revelation-of-cosmogony-through-vision structure.
+- **Casaubon 1614 — the most productive debunking in Western intellectual history:** Isaac Casaubon's *De rebus sacris et ecclesiasticis exercitationes* (1614) demonstrated from internal linguistic evidence that the Corpus Hermeticum was Greek-Roman-era, not pre-Mosaic. This single philological act destroyed Renaissance *prisca theologia* claims but inaugurated the critical-historical study of religious texts — the same method later used on the Donation of Constantine, the Johannine Comma, the Pentateuchal Documentary Hypothesis, and the Zohar (Scholem 1941). The *Pimander* is the vault's canonical case study in both the construction and critical demolition of claimed ancient transmission.
+- **Seven-sphere ascent ↔ Mithraic ladder ↔ Tibetan Bardo seven-day cycles ↔ Kabbalistic *tzimtzum*-levels:** the soul sheds a specific vice at each of seven planetary zones during ascent (CH I.24–26); the Mithraic grade-sequence (Celsus reports it in Origen, *Contra Celsum* 6.22) uses the same planetary-gate structure; the Tibetan Bardo counts seven cycles of peaceful and wrathful deity encounters. Three traditions articulate a post-mortem or initiatory journey through seven graduated zones with specific content at each level — same spatial architecture, different cosmological vocabulary.
+- **Ficino 1463 → Pico 1486 → Bruno 1584 → Dee 1582 → Rosicrucianism 1614 → Freemasonry 1717:** the CH I is the launch document of the Western esoteric transmission chain. Ficino's Latin translation circulates; Pico builds a Christian-Kabbalistic-Hermetic synthesis; Bruno radicalizes Hermetic infinite-universe cosmology (and is burned 1600); John Dee's Hermetic-mathematical angelic communication system; Rosicrucian manifestos (1614) cite Hermetic philosophy; Speculative Freemasonry's symbolism inherits it. This is the vault's longest documented esoteric transmission chain, fully traceable from a 2nd-century Alexandrian text to 18th-century institutional esotericism.
 
 ## Refs
 1. Copenhaver, B.P. (1992). *Hermetica*. Cambridge UP. — standard English.

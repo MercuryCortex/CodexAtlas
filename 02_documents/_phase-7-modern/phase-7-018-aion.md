@@ -22,7 +22,7 @@ influenced-by: ["[[phase-7-017-psychology-and-alchemy]]", "Gnostic sources (Jung
 influences: ["[[phase-7-019-mysterium-coniunctionis]]", "Jungian Christology (Edinger *The Christian Archetype*)", "Process theology"]
 deities-mentioned: ["Christ (read as Self-symbol)", "Antichrist (the shadow of the Christ-symbol)", "[[yaldabaoth]] (Jung discusses Gnostic Christology)"]
 events-context: ["[[event-nag-hammadi-discovery]] (Jung-relevant: Jung Codex 1952 purchase)"]
-status: "partial"
+status: "full"
 preservation: "Continuous since 1951; CW vol. 9 part 2 (Princeton/Bollingen 1968, R.F.C. Hull trans.)."
 refs:
   - title: "Aion (CW 9.2)"
@@ -118,6 +118,12 @@ Citation: *Aion*, CW 9.2, §347 (paraphrase of the closing argument); trans. Hul
 ## Disputes
 - **Christology as psychology.** Whether Jung's reading reduces Christology to psychology (most Christian theological readers' worry) or whether it offers a *parallel* psychological description compatible with Christian theology (Jungian-friendly Christian readers, e.g., Edinger).
 - **Antichrist symbolism.** Whether Jung's structural-symmetry argument (Christ requires Antichrist as shadow) projects a 20th-century psychological framework onto early Christian eschatology.
+
+## MASSIVE WIN — cross-tradition edges
+- **Christ as Self-symbol = the vault's key bridge between Gnostic cosmology and depth psychology:** Jung's identification of Christ with the archetype of the Self (the psyche's totality, including its shadow) provides the interpretive frame that made Gnostic texts legible to 20th-century secular readers. *Aion* reads the vault's Phase-3 through Phase-4 Christological documents (John, Paul, Thomas, Apocryphon of John) not as theological truth-claims but as symbolic-psychological systems — a reading method that enabled the Nag Hammadi texts' mass reception. Pagels acknowledges the debt; the Jungian reception community was among the earliest non-specialist audiences for Gnostic scholarship.
+- **Antichrist as shadow of Christ ↔ Zoroastrian Angra Mainyu ↔ Manichean Light-Dark dualism ↔ DDJ Yin-Yang:** Jung argues structurally that every light-symbol generates its dark twin; a fully good Christ *requires* an Antichrist as its compensating shadow. This is a cross-tradition structural claim the vault can test: Ahura Mazda / Angra Mainyu (Zoroastrian absolute dualism); Mani's Light-Dark (Manichean); DDJ's "being and non-being produce each other" (ch. 2, cosmic duality as generative). Four traditions share the "light requires its opposite" structure; Jung's Aion is the modern psychological formulation of what is a consistently recurring ancient cosmological insight.
+- **Jung purchases Nag Hammadi Codex I (1952) — primary sources arrive after the system is built:** *Aion* (1951) is written using heresiological reports (Irenaeus, Hippolytus) because the Nag Hammadi Coptic texts are not yet translated; the C.G. Jung Institute purchases Codex I in 1952, *after* the book is published. The primary Sethian and Valentinian texts Jung was interpreting through secondary sources then arrived at his own institute — and confirmed the secondary reports almost exactly. This is a dramatic case of a major 20th-century intellectual system being constructed from refracted evidence, then having its primary sources validate it posthumously.
+- **Precession of equinoxes → the vault's astrological-age framework:** Jung's treatment of the Piscean aeon (0–2000 CE) as the historical matrix of Christianity, and the Aquarian shift as pending transformation, connects the vault's Astrology documents (tradition-western-astrology, the Astrology tab's spine node) with Christological and Gnostic symbolism. *Aion* is the modern document-level node where the vault's astrological-age structure meets its Christological content — the rare Phase-7 document that explicitly draws both strands together with T1 scholarly rigor.
 
 ## Refs
 1. Jung, C.G. (1951 / 1968). *Aion* (CW 9.2). Princeton UP.
