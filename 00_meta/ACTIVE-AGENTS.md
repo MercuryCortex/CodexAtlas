@@ -167,6 +167,12 @@ _Hand-maintained. Each agent currently working in the vault appends a claim bloc
 
 ---
 
+## rituals-judaism-1 — 8 Jewish ritual deep-dive nodes — IN PROGRESS
+- Owns: `14_rituals/ritual-shabbat-havdalah.md`, `ritual-passover-haggadah.md`, `ritual-yom-kippur-atonement.md`, `ritual-bar-mitzvah-coming-of-age.md`, `ritual-mikveh-immersion.md`, `ritual-torah-reading-synagogue.md`, `ritual-kaddish-mourning.md`, `ritual-mezuzah-tefillin.md` (8 NEW nodes)
+- Status: IN PROGRESS
+
+---
+
 ## alphabet-ancient-scripts-1 — 4 ancient-scripts nodes — IN PROGRESS
 - Owns: `11_alphabets/alphabet-cuneiform-sacred.md` (NEW), `11_alphabets/alphabet-medu-netjer.md` (NEW), `11_alphabets/alphabet-phoenician.md` (NEW), `11_alphabets/alphabet-ugaritic.md` (NEW)
 - Also touches: `src/data/patterns.js` (2 new entries), `09_symbols/proto-sinaitic.md` (edge update), `03_deities/thoth.md` (edge update), `03_deities/nabu.md` (edge update)
@@ -231,6 +237,12 @@ _Hand-maintained. Each agent currently working in the vault appends a claim bloc
 ## ~~opus-pantheon-v2-parity-3 — V2-vs-V1 four-delta closure — started 2026-05-17 — DONE~~
 - ~~Owned: `src/js/views/pantheon-v2.js`, `src/js/dev-panel.js`, `index.html`~~
 - ~~Status: done — see STATUS.md. Code swept into `b306dd1` (sonnet-scripture-reader-4) by parallel agent.~~
+
+---
+
+## rituals-islam-1 — 8 Islamic ritual deep-dive nodes — IN PROGRESS
+- Owning: `14_rituals/ritual-salat-five-prayers.md` (NEW), `ritual-hajj-kaaba-origins.md` (NEW), `ritual-wudu-ritual-purity.md` (NEW), `ritual-dhikr-remembrance.md` (NEW), `ritual-ramadan-sawm.md` (NEW), `ritual-adhan-call-to-prayer.md` (NEW), `ritual-zakat-charity.md` (NEW), `ritual-eid-sacrifice-qurban.md` (NEW)
+- Status: IN PROGRESS
 
 ---
 
@@ -2004,3 +2016,16 @@ Files: sacred-cauldron.md (NEW) · cerridwen.md (STUB, deity) · bran-the-blesse
 - ~~Greek mode: 22 Phoenician-descended letters + Φ Χ Ψ Ω (the 4 Greek inventions with no Phoenician source)~~
 - ~~Hieroglyph mode: 22 Phoenician letters + Ankh Djed Eye-of-Ra Scarab Feather-of-Maat Solar-Barque Lotus Solar-Disk — cosmological signs beyond the alphabetic chain~~
 - ~~Status: FINISHED — commit 7d0cf4f~~
+
+---
+
+## ~~alphabets-hieroglyph-expand-1 — 22 new Egyptian signs — 2026-05-16 — FINISHED~~
+- ~~Owned: `src/js/alphabets/glyph-data.js` (22 new scriptOnly:['hieroglyph'] entries)~~
+- ~~Soul trilogy: Ba (G29) · Ka (D28) · Akh (G25) — nefesh/prana/pneuma parallels~~
+- ~~Divine authority: Neter (R8) · Was Scepter (S40) · Flail (S45)~~
+- ~~Celestial: Akhet (N27) · Duat Star (N14) · Bennu-Phoenix (G31) · Primordial Mound (N16)~~
+- ~~Deity forms: Horus Falcon (G5) · Thoth Ibis (G26) · Anubis Jackal (E16) · Shu (C4)~~
+- ~~Royal/protective: Uraeus (I12) · Cartouche (V10) · Shen Ring (V9) · Double Crown (S5)~~
+- ~~Scribal/objects: Scribal Palette (Y3) · Papyrus Scroll (Y1) · Flame (Q7) · Sistrum (Y8)~~
+- ~~Also fixed in same session: all 36 wrong unicode codepoints (Nun was elephant E026, now cobra I010)~~
+- ~~Status: FINISHED — commit d45a9f5~~
