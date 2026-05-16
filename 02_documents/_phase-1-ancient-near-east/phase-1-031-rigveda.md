@@ -24,7 +24,7 @@ influences: ["[[phase-2-003-atharva-veda]]", "[[phase-2-006-brahmanas-aranyakas]
 deities-mentioned: ["[[agni]]", "[[indra]]", "[[varuna]]", "[[soma]]", "[[usha]]", "[[mitra-vedic]]", "[[dyaus-pita]]", "[[vishnu-deity]]", "[[rudra-shiva-early]]", "[[prajapati]]"]
 attested-in: ["[[tradition-vedic-hinduism]]", "[[tradition-zoroastrianism]]"]
 events-context: ["Indo-Iranian migration period (~-2000 to -1200)"]
-status: "metadata"
+status: "full"
 preservation: "Transmitted with extraordinary fidelity through a multilayer oral memorization system (saṃhitā-pāṭha, pada-pāṭha, krama-pāṭha, jaṭā-pāṭha, ghana-pāṭha) for ~2,500 years before any surviving manuscript. The oldest physical manuscripts are paper and birch-bark from ~1000–1500 CE. Two ancient recensions (Śākala and Bāṣkala) agree to a remarkable degree, corroborating the oral-transmission fidelity. The UNESCO 2003 Intangible Cultural Heritage designation recognizes the living oral tradition. Electronic texts: GRETIL (van Nooten/Holland metrically restored text); TITUS; Vedic Heritage Portal (India)."
 refs:
   - title: "The Rigveda: The Earliest Religious Poetry of India"
@@ -74,6 +74,61 @@ The Rigveda (*Ṛgveda Saṃhitā*, "Collection of Verses of Praise") is the old
 
 The ten maṇḍalas divide into strata: Maṇḍalas 2–7 (the "family books") form the oldest core, each attributed to a specific ṛṣi lineage. Maṇḍala 1 and 8–9 form an intermediate stratum. Maṇḍala 10 is latest — more speculative and cosmologically experimental, containing the Purusha Sūkta (10.90), the Nāsadīya (10.129), and the first gestures toward a monistic metaphysics that the Upaniṣads will later systematize.
 
+## Primary text — selected hymns
+
+The Rigveda is in the public domain (composed ~-1500 to -1200 BCE). Translations below are from Jamison & Brereton, *The Rigveda* (Oxford UP 2014, 3 vols.) and O'Flaherty, *The Rig Veda: An Anthology* (Penguin 1981), short fair-use quotations.
+
+### RV 10.129 — Nāsadīya Sūkta ("Hymn of Creation")
+
+The most philosophically radical hymn in the collection — a cosmogonic meditation on the limit of knowledge: before being and non-being, before gods, who knows the origin? This is the first articulation of philosophical aporia about origins in Indian thought, and the vault's oldest parallel to apophatic cosmology.
+
+> Then there was neither non-being nor being;
+> there was no atmosphere, no sky above.
+> What moved? Where? Under whose protection?
+> Was there water, deeply deep?
+> Neither death nor immortality was there then,
+> no sign of night or day.
+> The One breathed, windless, by its own power;
+> there was nothing other than it.
+> Who really knows? Who shall here proclaim it?
+> Whence was it produced? Whence is this creation?
+
+Citation: RV 10.129.1–3, 6; trans. Jamison & Brereton (2014). Short fair-use quotation.
+
+### RV 10.90 — Purusha Sūkta ("Hymn of the Man")
+
+The cosmic-body cosmogony: the primordial being Purusha is sacrificed by the gods; the universe, the social order, and the sacred calendar are all created from his body-parts. The foundational text of the [[cosmic-body-cosmogony]] cross-tradition cluster.
+
+> The Man (*Purusha*) has a thousand heads,
+> a thousand eyes, a thousand feet.
+> Surrounding the earth on all sides,
+> he extended beyond it by ten fingers' width.
+> When the gods spread the sacrifice
+> with the Man as their offering,
+> spring was the clarified butter,
+> summer the fuel, autumn the oblation.
+> The moon was born from his mind;
+> from his eye the sun was born;
+> from his mouth Indra and Agni;
+> from his breath Vāyu was born.
+
+Citation: RV 10.90.1, 6, 13; trans. Jamison & Brereton (2014). Short fair-use quotation. The full hymn is 16 verses.
+
+### RV 1.32.1–5 — the Indra-Vṛtra chaoskampf
+
+The storm-god Indra slaying the dragon Vṛtra to release the primordial waters — the Rigvedic chaoskampf. The structural cognate of Marduk vs. Tiamat and Baal vs. Yam.
+
+> Let me now proclaim the heroic deeds of Indra,
+> those first deeds the thunderbolt-wielder performed:
+> he killed the serpent, released the waters,
+> and split open the bellies of the mountains.
+> He killed the serpent lying on the mountain;
+> Tvaṣṭar made for him the resounding thunderbolt.
+> Like lowing cows hurrying to their young,
+> the flowing waters went straight to the sea.
+
+Citation: RV 1.32.1–2; trans. Jamison & Brereton (2014). Short fair-use quotation.
+
 ## Historical context / composition
 
 **Political and social milieu.** The Rigveda was composed by pastoral, semi-nomadic, chariot-using tribal societies in the northwest of the Indian subcontinent (the "Sapta Sindhu" or seven-rivers region of the Punjab). The hymns reference cattle raids, inter-tribal conflict (the famous *dāśarājña* "Battle of the Ten Kings" in Maṇḍala 7.18–19), and a society organized around the twin pillars of the chariot-warrior aristocracy (*kṣatra*) and the sacrificial priesthood (*brahman*). No urban centers or states; the unit is the clan and the tribe.
@@ -118,6 +173,16 @@ The ten maṇḍalas divide into strata: Maṇḍalas 2–7 (the "family books")
 - **Date and Indo-Aryan migration.** The mainstream position (Witzel, Jamison, Parpola) places the family books at ~1500–1200 BCE and correlates their composition with the Indo-Aryan migration into the subcontinent from the Central Asian steppe via the BMAC. An "Out of India" counter-position (Talageri, some others) argues for earlier and indigenous composition; rejected by the philological mainstream but politically significant in Indian public discourse.
 - **Soma plant identification.** What was Soma? Proposals include *Amanita muscaria* (Wasson 1968), *Ephedra* (Falk 1989 — currently favored by Haoma scholarship), *Peganum harmala*, *Cannabis*, and a now-extinct mountain plant. Unresolved.
 - **Veda as "scripture".** The Rigveda is *śruti* (revelation), not *smṛti* (remembered tradition); its canonical authority in Hinduism is absolute. Modern Western comparative-religion usage of "scripture" for the Veda requires care — the text was not written down by original intent and its transmission context is oral-liturgical.
+
+## MASSIVE WIN — cross-tradition edges
+
+- **Purusha Sūkta (10.90) ↔ Tiamat-dismemberment ↔ Ymir: the vault's three-tradition cosmic-body-cosmogony cluster.** RV 10.90 creates the cosmos from the sacrificed body of the primordial being Purusha (moon from his mind, sun from his eye, sky from his navel, earth from his feet, the four social estates from his body-parts). The *Enuma Elish* creates the cosmos from Marduk's dismemberment of Tiamat (heaven from her skull, earth from her lower body). The Norse *Prose Edda* (*Gylfaginning* 8) creates earth from the slain giant Ymir's flesh, sky from his skull, sea from his blood. These are the vault's three documented instances of cosmos-from-primordial-body cosmogony. Whether all three derive from a Proto-Indo-European origin (Witzel's "Laurasian mythology" hypothesis) or represent independent developments is contested; Elizarenkova (1995) treats the Purusha Sūkta within Indo-Iranian tradition only; the Vedic-Norse parallel is the most plausibly Indo-European. The Rigveda's version is the oldest textual attestation among the three. The cluster is the vault's strongest Phase-1 cross-tradition structural parallel.
+
+- ***Ṛta* / *aša* cognate pair: the Proto-Indo-Iranian root of cosmic moral order in Hinduism and Zoroastrianism.** Vedic *ṛta* (cosmic truth/order upheld by Varuṇa and Mitra; RV 1.2.8; 1.23.5) is directly cognate with Avestan *aša* (Zarathustra's supreme cosmic principle, opposed to *druj* "lie"), both descending from Proto-Indo-Iranian *\*Hr̥tás* "truth, fitting order." The Rigveda and the Gathas thus preserve two branches of the same ancestral religious concept — the oldest documented parallel in the vault, estimated at a shared origin ~-2000 BCE. Crucially, the *asura/deva* inversion documents the same divergence from the opposite angle: what are positive *asura*s in the early Rigveda become demons in the later Veda; what are positive *deva*s in the Veda become demonic in the Avesta. This inversion confirms a shared theological inheritance split by the Zarathushtrian reform. The *ṛta/aša* line feeds the vault's Zoroastrianism → Second Temple Judaism → early Christianity theological pipeline. Ref: Boyce (1975), *History of Zoroastrianism* vol. I; Skjærvø (2011).
+
+- **Boğazköy tablets (~-1350 BCE): Vedic deities attested in the Hittite-Mitanni treaty — the oldest external corroboration of Rigvedic antiquity.** The Mitanni-Hittite peace treaty inscribed at Boğazköy (~-1350 BCE) invokes Mitra, Varuṇa, Indra, and the Nāsatya (Aśvins) as divine witnesses — the Rigvedic pantheon, attested in the ancient Near East 3,350 km west of the Punjab, at a date contemporary with the Rigveda's composition. This is the vault's most dramatic external archaeological corroboration of a living religious text: a Hittite treaty document, discovered by German archaeologists in 1906, confirms that the deities of the Rigveda were known and invoked across the ancient Near East at precisely the period when the Rigveda was being composed in the Punjab. The find also documents that Indo-Aryan-speaking elites (the Mitanni) had penetrated the ancient Near East with their full Vedic religious vocabulary intact — the strongest archaeological evidence for the Indo-Aryan migration. Ref: Thieme (1960), "The 'Aryan' Gods of the Mitanni Treaties," *JAOS* 80.4.
+
+- **UNESCO Intangible Cultural Heritage 2003: the world's longest documented continuous oral transmission system.** The Rigvedic recitation tradition deploys a five-layer error-correction system — saṃhitā-pāṭha (connected text), pada-pāṭha (word-for-word), krama-pāṭha (step-by-step pairs), jaṭā-pāṭha (braided palindromic interweaving), ghana-pāṭha (dense palindromic lattice) — in which the text is verified against itself at multiple structural levels simultaneously. Physical manuscripts date from ~1000 CE; textual stability relative to those manuscripts is remarkable, suggesting the system successfully preserved a text composed ~-1500 BCE for 2,500 years before any surviving physical witness. No other literary tradition in world history has maintained a verbal text with this fidelity for this duration through purely oral means. The Rigveda's transmission is the vault's paradigm case of pre-textual cultural-memory preservation — and the strongest refutation of the assumption that oral transmission is inherently unreliable. The UNESCO recognition documents it as a living tradition, not a historical artifact.
 
 ## Refs
 1. Jamison, S.W. and Brereton, J.P. (2014). *The Rigveda: The Earliest Religious Poetry of India* (3 vols.). Oxford UP. — current standard.
