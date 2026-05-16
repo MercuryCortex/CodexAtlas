@@ -4,6 +4,13 @@ _Hand-maintained. Each agent currently working in the vault appends a claim bloc
 
 ---
 
+## ~~music-ancient-near-east-1 — 3 ANE music nodes — 2026-05-16 — FINISHED~~
+- ~~Owned: `10_music/music-mesopotamian-temple-music.md` (NEW), `10_music/music-levitical-temple-music.md` (NEW), `10_music/music-zoroastrian-sacred-sound.md` (NEW)~~
+- ~~Status: FINISHED — commit `252a346`. Build: 47 music nodes · 15779 edges · 0 YAML errors · 0 dead links introduced.~~
+- ~~Key findings: Mesopotamian gala priests = world's first documented professional musician payroll (Ur III, c. -2100 BCE); Babylonian tuning tablets predate Greek music theory by 1,200 years; gender-liminal emesal performance requirement is the earliest institutionalized gender-liminality in sacred performance. Levitical ha-shir tradition = most completely documented ancient music institution (named families, 24-course rotation, instrument assignments); Psalm 137 = first documented music strike in history. Zoroastrian Avesta/Vedic parallel-divergence: both metered sacred oral compositions of same antiquity, but Zoroastrianism moved to anti-instrument theology vs Vedic instrumental elaboration; Ahuna Vairya prayer = creation-by-sound; possible vector for later Islamic music prohibitions.~~
+
+---
+
 ## ~~music-raga-singularity-1 — comparative time-music investigation — 2026-05-16 — FINISHED~~
 - ~~Owned: `10_music/music-greek-musical-ethos.md` (NEW), `10_music/music-liturgy-of-hours.md` (NEW), `10_music/music-islamic-adhan-maqam.md` (NEW), `src/data/patterns.js` (2 new entries), `src/data/observations.js` (1 new entry)~~
 - ~~Status: FINISHED — commit `4110670`. Build: 44 music nodes · 15756 edges · 0 dead links introduced.~~
