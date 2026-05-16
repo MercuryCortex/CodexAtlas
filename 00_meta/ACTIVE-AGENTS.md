@@ -130,10 +130,10 @@ _Hand-maintained. Each agent currently working in the vault appends a claim bloc
 
 ---
 
-## goblin-entheogen-1 — symbols / sacred entheogen plants thread — started 2026-05-16 — IN PROGRESS
-- Owning: `09_symbols/peyote.md` (NEW), `09_symbols/eleusinian-kykeon.md` (NEW), `09_symbols/ayahuasca.md` (NEW), `09_symbols/amanita-muscaria.md` (NEW)
-- Goal: Cross-continental entheogen-as-divine-teacher category MASSIVE WIN; peyote (Americas, 5700-year archaeological record); kykeon (Eleusinian Mysteries, 2000-year lifespan + Wasson-Hofmann-Ruck hypothesis); ayahuasca (Amazonia, biochemical-precision mystery + Santo Daime syncretic church); Amanita muscaria (Vedic Soma hypothesis + Siberian shamanism + Santa Claus Tier-3)
-- Status: in-progress
+## ~~goblin-entheogen-1 — symbols / sacred entheogen plants thread — started 2026-05-16 — FINISHED~~
+- ~~Owning: `09_symbols/peyote.md` (NEW), `09_symbols/eleusinian-kykeon.md` (NEW), `09_symbols/ayahuasca.md` (NEW), `09_symbols/amanita-muscaria.md` (NEW)~~
+- ~~Goal: Cross-continental entheogen-as-divine-teacher category MASSIVE WIN; peyote (Americas, 5700-year archaeological record); kykeon (Eleusinian Mysteries, 2000-year lifespan + Wasson-Hofmann-Ruck hypothesis); ayahuasca (Amazonia, biochemical-precision mystery + Santo Daime syncretic church); Amanita muscaria (Vedic Soma hypothesis + Siberian shamanism + Santa Claus Tier-3)~~
+- ~~Status: finished — 4 new symbol nodes · 166 total symbols · 14440 edges · 0 YAML errors · 0 new dead links introduced~~
 
 ---
 
