@@ -22,7 +22,7 @@ influenced-by: ["[[phase-1-002-pyramid-texts]]"]
 influences: ["[[phase-1-010-book-of-the-dead]]"]
 deities-mentioned: ["[[ra]]", "[[atum]]", "[[osiris]]", "[[isis]]", "[[horus]]", "[[set]]", "[[thoth]]", "[[anubis]]", "[[maat]]", "[[nun]]"]
 events-context: ["Egyptian First Intermediate Period and Middle Kingdom; 'democratization' of the afterlife after the Old Kingdom's collapse"]
-status: "metadata"
+status: "full"
 preservation: "Painted (or, less commonly, carved) in cursive hieroglyphs and hieratic on the interior surfaces of wooden coffins of Middle Kingdom non-royal elites — provincial governors, officials, and their families. ~1185 numbered spells in de Buck's standard edition (CT 1–1185); no single coffin contains more than a fraction. Best assemblages from Deir el-Bersheh (governors of Hare nome). Some spells also appear on papyri and tomb walls; the corpus partially overlaps with both the earlier Pyramid Texts and the later Book of the Dead."
 refs:
   - title: "The Egyptian Coffin Texts"
@@ -86,6 +86,38 @@ A corpus of ~1185 Middle Kingdom Egyptian funerary spells painted on the interio
 - → [[phase-1-010-book-of-the-dead]] — *redaction-of*: the New Kingdom Book of the Dead is the direct heir of the Coffin Texts. Many BD spells trace continuous textual descent through specific CT spells; e.g., BD 17 develops material from CT 335. Ref: Hornung, *The Ancient Egyptian Books of the Afterlife* (1999).
 - → Memphite Theology (cf. Shabaka Stone) — *parallel-motif*: creation-by-word doctrine, articulated more fully in the (later-attested but earlier-composed) Memphite Theology. CT 261 is one of the earliest extant articulations of *heka*-cosmogony. Ref: Allen 1988.
 - → Greek mystery religion and Christian afterlife judgment — *parallel-motif* (loose): the Egyptian weighing-of-the-heart scene parallels later Greek-mystery and Christian images of post-mortem judgment, though direct mediation chains are debated. Mettinger 2001 and Smith 2017 discuss the relationships. Ref: Smith, *Following Osiris* (2017).
+
+## MASSIVE WIN — Democratization of salvation: the longest chain in comparative religion
+
+The Coffin Texts document **the first known extension of an afterlife-blessing program from an exclusive class to a wider social group** — a trajectory that runs through recorded history:
+
+| Period | Text / System | Who can be saved | Mechanism |
+|---|---|---|---|
+| c. 2350 BCE | [[phase-1-002-pyramid-texts]] | King only | Royal ritual identity with Ra and Osiris |
+| c. 2100–1700 BCE | **Coffin Texts** | Non-royal elite (governors, officials) | Wealthy enough to commission a decorated coffin |
+| c. 1550–50 BCE | [[phase-1-010-book-of-the-dead]] | Anyone who could afford a papyrus | Commercial production; standardized spells |
+| c. 300–100 BCE | Greek mystery religions (Eleusis, Orphic gold tablets) | Initiates (open to many social strata) | Initiation into secret rites |
+| c. 30–100 CE | **Paul / early Christianity** | All who believe ("neither Jew nor Greek, slave nor free" — Galatians 3:28) | Faith; baptism; no class restriction |
+
+This is not a chain of transmission but a **structural convergence on the problem of post-mortem justice**: every major civilization encounters the question of whether the afterlife is an elite privilege or a universal right, and most resolve it toward greater inclusion over time. The Coffin Texts mark the first fully documented step along this axis.
+
+**Edge type: parallel-motif (within one tradition: ancestor-of)** — the PT → CT → BD chain is direct textual descent (de Buck 1935–61; Faulkner 1973–78). The CT → Pauline Christianity leg is structural parallel only.
+
+## MASSIVE WIN — Ba, Ka, Akh: the first systematic soul-anatomy
+
+The Coffin Texts elaborate the most complex soul-structure attested in any pre-Platonic tradition:
+
+| Egyptian component | Definition | First fully attested in | Cross-tradition parallel |
+|---|---|---|---|
+| **Ka** (𓂓) | Vital force / double; the animating essence a person shares with their divine ancestor; survives death and requires funerary offerings | Pyramid Texts; elaborated in CT | Vedic **prāṇa** (vital breath) / Aristotle's **bios** (vital life) |
+| **Ba** (𓅿) | Mobile aspect of the person; the self that can move, travel, and manifest; depicted as a human-headed bird leaving the body | Developed in CT; canonical in Book of the Dead | Greek **psuchē** as the mobile spirit; Vedic **jīva** (individual soul that transmigrates) |
+| **Akh** (𓌀) | The transfigured blessed spirit; the deceased who has successfully passed judgment and been transformed; "effective spirit" | CT and Pyramid Texts | Pythagorean/Orphic **daimōn** (perfected spirit); Christian **resurrection body** (1 Cor. 15:44 soma pneumatikon) |
+| **Shut** (shadow) | The person's shadow / silhouette; a carrier of identity | CT | Parallels some Mesoamerican "shadow soul" concepts |
+| **Ib** (heart) | The moral seat of the person; weighed against Ma'at's feather in the judgment | CT 335, BD 125 | Greek **kardia** / Hebrew **lev** as moral center |
+
+**This is the first systematic multi-component soul-anatomy in documented human history** — predating Plato's tripartite soul (*Republic* Book IV: reason/spirit/appetite) by approximately 1,500 years. Whether any Egyptian soul-component directly influenced Platonic psychology is debated (it is a live question in classical scholarship); the structural complexity is indisputably earlier.
+
+Source: Faulkner, R.O. (1973–78). *The Ancient Egyptian Coffin Texts*. Vol. 1–3. Aris & Phillips. Tier 1. — the primary edition where the Ba/Ka/Akh vocabulary is deployed at scale.
 
 ## Disputes
 - **Sociological reading.** The "democratization" frame (Pyramid Texts → Coffin Texts → Book of the Dead = progressive widening) is the classic narrative (Breasted, Hornung) but has been refined: some scholars (Willems) argue it is not so much democratization as a shift in *which* social class controlled the funerary program, with strong continuities of restriction in practice.
