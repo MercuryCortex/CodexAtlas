@@ -13,11 +13,10 @@ _Hand-maintained. Each agent currently working in the vault appends a claim bloc
 
 ---
 
-## sonnet-serapis-ennead-1 — Serapis full upgrade + heliopolis-ennead theme — started 2026-05-16 — IN PROGRESS
-- Owning: `03_deities/serapis.md` (upgrade metadata → full), `06_themes/heliopolis-ennead.md` (NEW partial)
-- NOT touching: `03_deities/apis-bull.md` (already metadata, no conflict with sonnet-egyptian-persons-1)
-- Goal: Upgrade Serapis with MASSIVE WIN Christ-iconography edge + healing-shrines + Isis mystery-cult spread; create Heliopolitan Ennead theme with Neoplatonism + Trinity structural-ancestor edge
-- Status: in-progress
+## ~~sonnet-serapis-ennead-1 — Serapis full upgrade + heliopolis-ennead theme — finished 2026-05-16 — DONE~~
+- ~~Owned: `03_deities/serapis.md` (metadata → full), `06_themes/heliopolis-ennead.md` (NEW partial)~~
+- ~~Goal: Serapis MASSIVE WIN Christ-iconography + healing-shrines + Isis mystery-cult; Ennead → Neoplatonism → Trinity + Three Egyptian cosmological schools~~
+- ~~Status: done — commit 3d069a6; 13749 edges · 0 dead links~~
 
 ---
 
