@@ -119,13 +119,45 @@
     const CHARGE_RANGE = D.chargeRange != null ? D.chargeRange : 180;
     const DAMP         = D.damp        != null ? D.damp        : 0.55;
     const COLLIDE_PAD  = 1.5;
-    const RADIAL_PAD   = 14;
-    const ANG_PAD_MAX  = 0.045;
+    // Clamps are now SOFT: a node can bleed up to BLEED px past the radial wall
+    // before being pushed back. Avoids the "glued to the rim" look on sparse
+    // wedges, where the rigid clamp would force every dot to the boundary line.
+    const RADIAL_PAD   = 8;   // smaller hard pad so nodes don't all stack on the edge
+    const RADIAL_BLEED = 6;   // px allowed past the wall before reflection
+    const ANG_PAD_MAX  = 0.030; // slightly tighter — was 0.045
+
+    // INWARD GRAVITY — sparse wedges get a soft pull toward the annulus
+    // centerline so members don't all camp on the outer rim. Density is
+    // members.length / arcLength; when below a threshold, gravity activates.
+    const Rmid = (Rinner + Router) / 2;
+    const gravityPerWedge = new Map();
+    wedgeMembers.forEach((ids, name) => {
+      const w = Array.from(wedgeByNode.values()).find(ww => ww.name === name);
+      if (!w) { gravityPerWedge.set(name, 0); return; }
+      const arc = w.a1 - w.a0;
+      const density = ids.length / Math.max(0.01, arc);   // members per radian
+      // Below ~12 members/rad (e.g. 2 deities in a 0.18-rad wedge) we pull
+      // gently toward the annulus mid-line. Linear fall-off above that.
+      const SPARSE_THRESH = 12;
+      const t = Math.max(0, Math.min(1, (SPARSE_THRESH - density) / SPARSE_THRESH));
+      gravityPerWedge.set(name, t * 0.018);  // max-strength gravity coefficient
+    });
     for (let iter = 0; iter < iterations; iter++) {
-      // 1) anchor force
-      P.forEach(p => {
+      // 1) anchor force + inward gravity for sparse wedges
+      P.forEach((p, id) => {
         p.vx += (p.ax - p.x) * ANCHOR_K;
         p.vy += (p.ay - p.y) * ANCHOR_K;
+        // Inward gravity — pull toward Rmid along the radial axis only.
+        const w = wedgeByNode.get(id);
+        if (!w) return;
+        const g = gravityPerWedge.get(w.name) || 0;
+        if (g === 0) return;
+        const r = Math.hypot(p.x, p.y) || 0.0001;
+        const targetR = Rmid;
+        const radialErr = targetR - r;
+        // Project the radial error back into world-space dx,dy
+        p.vx += (p.x / r) * radialErr * g;
+        p.vy += (p.y / r) * radialErr * g;
       });
       // 2) per-wedge pairwise charge + collide
       wedgeMembers.forEach(ids => {
@@ -171,9 +203,21 @@
         const maxDelta = Math.max(0, halfArc - padA);
         if (delta >  maxDelta) ang = w.center + maxDelta;
         if (delta < -maxDelta) ang = w.center - maxDelta;
-        // radial clamp
-        if (r < Rinner + RADIAL_PAD) r = Rinner + RADIAL_PAD;
-        if (r > Router - RADIAL_PAD) r = Router - RADIAL_PAD;
+        // SOFT radial clamp — allow up to RADIAL_BLEED px past the wall but
+        // damp the overshoot so nodes naturally settle near (but not glued to)
+        // the rim. Past BLEED, hard-clamp as a safety net.
+        const minR = Rinner + RADIAL_PAD - RADIAL_BLEED;
+        const maxR = Router - RADIAL_PAD + RADIAL_BLEED;
+        if (r < Rinner + RADIAL_PAD) {
+          // soft pull back into the annulus
+          const overshoot = (Rinner + RADIAL_PAD) - r;
+          r += overshoot * 0.55;
+          if (r < minR) r = minR;
+        } else if (r > Router - RADIAL_PAD) {
+          const overshoot = r - (Router - RADIAL_PAD);
+          r -= overshoot * 0.55;
+          if (r > maxR) r = maxR;
+        }
         p.x = r * Math.cos(ang);
         p.y = r * Math.sin(ang);
       });
@@ -194,7 +238,11 @@
     const familyOrder = (families || []).map(f => f.name).filter(n => famByName[n]);
     Object.keys(famByName).forEach(n => { if (!familyOrder.includes(n)) familyOrder.push(n); });
 
-    const GAP = 0.105; // ~6° gap between wedges (matches main Pantheon)
+    // Wedge-to-wedge gap. 0.075 rad (~4.3°) gives each hull a bit more arc
+    // breathing room than P1's 0.105 — helps sparse wedges (Manichaean,
+    // Mandaean, Pacific) feel less starved while still keeping a visible gap
+    // for family separation.
+    const GAP = 0.075;
     const totalGap = GAP * familyOrder.length;
     const totalArc = 2 * Math.PI - totalGap;
     const weights = familyOrder.map(n => Math.max(1.1, Math.sqrt(famByName[n].members.length)));
@@ -268,6 +316,26 @@
     'syncretic-scholarly-parallel':     { c: '#947030', w: 0.34, op: 0.24 },
     'syncretic-folk-syncretism':        { c: '#7d5e28', w: 0.30, op: 0.20 },
     'syncretic':                        { c: '#b08840', w: 0.36, op: 0.28 },
+    // syncretic-* variants — all forms of cross-tradition identification. Mirror
+    // the parent `syncretic` styling so the 250 deity-deity edges in these
+    // sub-types stop falling to the slate-blue default. Headline-equivalent
+    // variants (polemic, fusion, ancestor-of) inherit the headline colors.
+    'syncretic-scholarly-parallel':     { c: '#b08840', w: 0.34, op: 0.24 },
+    'syncretic-ancient-identification': { c: '#b08840', w: 0.34, op: 0.28 },
+    'syncretic-structural-parallel':    { c: '#b08840', w: 0.32, op: 0.22 },
+    'syncretic-syncretic-identification':{ c: '#b08840', w: 0.32, op: 0.22 },
+    'syncretic-folk-syncretism':        { c: '#b08840', w: 0.30, op: 0.20 },
+    'syncretic-manuscript-transmission':{ c: '#6a5a40', w: 0.30, op: 0.22 },
+    'syncretic-aspect-of':              { c: '#b08840', w: 0.30, op: 0.22 },
+    'syncretic-parallel-motif':         { c: '#5a6a82', w: 0.28, op: 0.22 },
+    'syncretic-parallel-form':          { c: '#a08a5a', w: 0.34, op: 0.32 },
+    'syncretic-polemic-against':        { c: '#a83e4a', w: 0.38, op: 0.32 },
+    'syncretic-polemic-inversion':      { c: '#a83e4a', w: 0.46, op: 0.50 },
+    'syncretic-syncretic-fusion':       { c: '#c47a3a', w: 0.42, op: 0.48 },
+    'syncretic-ancestor-of':            { c: '#d4a55a', w: 0.40, op: 0.45 },
+    'syncretic-sacred-marriage':        { c: '#a85e44', w: 0.36, op: 0.32 },
+    'syncretic-identification':         { c: '#b08840', w: 0.32, op: 0.24 },
+    'syncretic-continuous-development': { c: '#b08840', w: 0.32, op: 0.22 },
     'parent-of':                        { c: '#5a7458', w: 0.34, op: 0.30 },
     'child-of':                         { c: '#5a7458', w: 0.34, op: 0.24 },
     'consort':                          { c: '#a85e44', w: 0.36, op: 0.30 },
@@ -1022,6 +1090,65 @@
       applyEdgeHoverState();
       hideThumbCard();
     });
+
+    // ----- NODE DRAG (P1 parity) -----
+    // Grab a deity dot and slide it inside its family wedge. The wedge clamp
+    // mirrors the bake's soft-radial-clamp + angular clamp, so a dragged node
+    // can bleed slightly past the rim but never escapes the family arc — the
+    // hull boundary always reads. Camera pan is suppressed while dragging via
+    // event.preventSigmaDefault().
+    const _wedgeByFam = wedges; // family-name → wedge entry
+    let _draggedId  = null;
+    let _dragMoved  = false;    // track real movement to skip click suppression on noise
+    function clampToWedge(world, fam) {
+      const w = _wedgeByFam[fam];
+      let r   = Math.hypot(world.x, world.y) || 0.0001;
+      let ang = Math.atan2(world.y, world.x);
+      if (w) {
+        let delta = ((ang - w.center + Math.PI * 3) % (Math.PI * 2)) - Math.PI;
+        const halfArc = (w.a1 - w.a0) / 2;
+        const padA    = Math.min(0.030, halfArc * 0.22);
+        const maxDelta = Math.max(0, halfArc - padA);
+        if (delta >  maxDelta) ang = w.center + maxDelta;
+        if (delta < -maxDelta) ang = w.center - maxDelta;
+      }
+      // Soft radial clamp matching the bake (Rinner=220, Router=540, PAD=8, BLEED=6)
+      const Rin = 220, Rout = 540, PAD = 8, BLEED = 6;
+      if (r < Rin + PAD - BLEED)  r = Rin + PAD - BLEED;
+      if (r > Rout - PAD + BLEED) r = Rout - PAD + BLEED;
+      return { x: r * Math.cos(ang), y: r * Math.sin(ang) };
+    }
+    sigma.on('downNode', ({ node, event }) => {
+      _draggedId = node;
+      _dragMoved = false;
+      if (event && event.preventSigmaDefault) event.preventSigmaDefault();
+    });
+    sigma.getMouseCaptor().on('mousemovebody', (e) => {
+      if (!_draggedId) return;
+      if (e.preventSigmaDefault) e.preventSigmaDefault();
+      if (e.original && e.original.preventDefault) e.original.preventDefault();
+      _dragMoved = true;
+      const world = sigma.viewportToGraph({ x: e.x, y: e.y });
+      const fam   = graph.getNodeAttribute(_draggedId, '_family') || 'Other';
+      const pos   = clampToWedge(world, fam);
+      // Update both sigma graph (paint) and our positions Map (anchor/nudge cache).
+      graph.setNodeAttribute(_draggedId, 'x', pos.x);
+      graph.setNodeAttribute(_draggedId, 'y', pos.y);
+      positions.set(_draggedId, { x: pos.x, y: pos.y });
+      sigma.refresh({ skipIndexation: true });
+    });
+    function _endDrag() {
+      if (!_draggedId) return;
+      _draggedId = null;
+      // Swallow the synthetic click that follows a real drag so we don't
+      // accidentally reset the locked set when releasing the dot.
+      if (_dragMoved) {
+        const swallow = (e) => { e.stopPropagation(); e.preventDefault(); window.removeEventListener('click', swallow, true); };
+        window.addEventListener('click', swallow, true);
+        setTimeout(() => window.removeEventListener('click', swallow, true), 30);
+      }
+    }
+    sigma.getMouseCaptor().on('mouseup', _endDrag);
 
     // Tangential family rim labels — DOM overlay synced to sigma camera.
     const rimOverlay = buildRimLabels(rootEl, wedges, sigma, _familyFilter);
