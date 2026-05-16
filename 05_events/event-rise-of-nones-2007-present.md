@@ -38,6 +38,11 @@ refs:
     type: "survey report"
     tier: 2
 tags: [event, secularization, nones, 2007-present, sociology-of-religion, pew, american-religion]
+depictions:
+  - src: "https://upload.wikimedia.org/wikipedia/commons/thumb/2/23/%C3%89mile_Durkheim.jpg/330px-%C3%89mile_Durkheim.jpg"
+    caption: "Émile Durkheim (1858–1917) — founder of the sociology of religion; his theories of secularization and collective effervescence form the intellectual framework for analyzing the rise of the religious 'nones'"
+    source: "Wikimedia Commons"
+    license: "Public Domain"
 ---
 
 # Rise of the "Nones" (2007–present)

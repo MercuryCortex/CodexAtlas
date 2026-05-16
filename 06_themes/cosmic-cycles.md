@@ -21,6 +21,11 @@ refs:
     type: "primary-translation"
     tier: 1
 tags: [theme, time, cosmology, hindu, stoic, eliade]
+depictions:
+  - src: "https://upload.wikimedia.org/wikipedia/commons/thumb/0/02/Rigveda_MS2097.jpg/330px-Rigveda_MS2097.jpg"
+    caption: "Rigveda manuscript (Devanagari, 19th c.) — the Vedic hymns are a primary source for the yuga cosmic-cycle doctrine, one of the oldest expressions of cyclical time"
+    source: "Wikimedia Commons"
+    license: "Public Domain"
 ---
 
 # Cosmic Cycles
