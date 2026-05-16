@@ -8779,3 +8779,339 @@ SCRIPTURE_TEXTS['yasna-44'] = {
     },
   ]
 };
+
+// ── Batch 19 ──────────────────────────────────────────────────────────────
+
+SCRIPTURE_TEXTS['jeremiah-31'] = {
+  title: 'Jeremiah 31 — The New Covenant',
+  shortTitle: 'Jeremiah 31',
+  tradition: 'Hebrew Bible / Old Testament',
+  date: 'c. 627–587 BCE',
+  intro: 'Jeremiah 31:31–34 is the single most-quoted Old Testament passage in the New Testament. The prophet announces a "new covenant" — not like the Sinai covenant written on stone tablets, but written on the hearts of the people. The externalized law of Deuteronomy becomes an internalized orientation: no longer a teacher will need to say "know the Lord," because the knowing will be immediate, direct, universal. This passage is quoted almost in its entirety in Hebrews 8, Paul\'s theology of Spirit vs. letter in 2 Corinthians 3 is its sustained commentary, and Romans 8\'s Spirit-indwelling echoes it throughout. The surrounding verses (31:35–37) ground this promise in cosmic permanence: the new covenant is as durable as the sun, moon, and stars.',
+  crossTradition: [
+    { textId: 'deuteronomy-6', label: 'Deuteronomy 6 — the old covenant written on the hand; Jeremiah as its internalization', note: 'Deuteronomy 6\'s Shema commands: "bind these words as a sign on your hand... write them on the doorposts of your house." Jeremiah 31 answers: "I will put my law within them, and I will write it on their hearts." The trajectory from Deuteronomy to Jeremiah is from external inscription to interior transformation — from sign on the body to orientation of the heart. Paul\'s contrast of "letter" vs. "Spirit" (2 Corinthians 3) is the New Testament articulation of the same movement from Deuteronomy to Jeremiah.' },
+    { textId: 'ezekiel-37-dry-bones', label: 'Ezekiel 36–37 — new heart and spirit as the parallel promise', note: 'Ezekiel 36:26 gives the parallel promise to Jeremiah 31: "I will give you a new heart, and a new spirit I will put within you; and I will remove the heart of stone from your flesh and give you a heart of flesh." Where Jeremiah 31 speaks of the law written on the heart (internalized ethics), Ezekiel 36 speaks of the heart itself replaced (transformation of the moral subject). Both prophets, writing in the same exilic crisis (the Babylonian exile, 597–539 BCE), are articulating the same theological conviction: the failure of the Sinai covenant requires not better obedience but a transformation of the person who obeys.' },
+    { textId: 'romans-8', label: 'Romans 8 — Paul\'s theological fulfillment of Jeremiah 31', note: 'Romans 8 is the New Testament\'s most sustained commentary on Jeremiah 31\'s promise. "The Spirit itself beareth witness with our spirit" (8:16) = the direct, unmediated knowing that Jeremiah 31:34 promises ("they shall all know me"). "The law of the Spirit of life in Christ Jesus hath made me free from the law of sin and death" (8:2) = the new covenant that supersedes the old. "God sending his own Son... condemned sin in the flesh, that the righteousness of the law might be fulfilled in us who walk not after the flesh, but after the Spirit" (8:3–4) = the writing of the law on the heart rather than on stone.' },
+  ],
+  translations: [
+    { lang: 'en', label: 'NRSV' },
+    { lang: 'en-kjv', label: 'King James (1611)' },
+    { lang: 'he', label: 'Hebrew (Masoretic Text)' },
+  ],
+  sections: [
+    {
+      heading: 'The New Covenant — Law Written on Hearts (31:31–34)',
+      verses: [
+        {
+          ref: '31:31–33',
+          text: 'The days are surely coming, says the Lord, when I will make a new covenant with the house of Israel and the house of Judah. It will not be like the covenant that I made with their ancestors when I took them by the hand to bring them out of the land of Egypt — a covenant that they broke, though I was their husband, says the Lord. But this is the covenant that I will make with the house of Israel after those days, says the Lord: I will put my law within them, and I will write it on their hearts; and I will be their God, and they shall be my people.',
+          entities: [
+            { word: 'I will put my law within them, and I will write it on their hearts', node: 'covenant', type: 'concept',
+              note: 'The shift from external to internal is the theological hinge of the entire Hebrew prophetic tradition. The Sinai covenant was inscribed on stone tablets; the new covenant will be inscribed on hearts. This is not merely a metaphor — it is a claim about the transformation of the moral subject: instead of a law that the person must remember, obey, and potentially break, there will be a disposition that is constitutive of who the person is. The Confucian equivalent: Confucius at seventy "could follow what my heart desired, without transgressing what was right" — not because he had stopped desiring but because his desires had been so thoroughly shaped by virtue that they naturally aligned with the good. Jeremiah\'s new covenant describes this same state of moral integration, but as divine gift rather than human achievement.',
+              parallels: [
+                { label: 'Deuteronomy 6 — from external inscription to interior orientation', textId: 'deuteronomy-6', note: 'Deuteronomy 6 commands binding the commandments on the hand and writing them on doorposts. Jeremiah 31 supersedes this: "I will write it on their hearts." The movement is from the body\'s exterior (hand, doorpost) to the person\'s interior (heart). The Deuteronomic model requires constant effort to remember and obey; the Jeremianic model describes a transformation in which the law becomes identical with who you are.' },
+                { label: 'Cloud of Unknowing — the law of love written on the heart', textId: 'cloud-of-unknowing', note: 'The Cloud\'s "humble impulse of love" that lifts the heart to God without effort or deliberation is the contemplative actualization of Jeremiah\'s promise: a disposition so thoroughly internalized that it operates without calculation. Where Jeremiah describes the promise ("I will write my law on their hearts"), the Cloud describes the practice by which that writing becomes felt reality in contemplative prayer. The dart of longing love is what it looks like to have the law written on the heart.' },
+              ]
+            },
+          ]
+        },
+        {
+          ref: '31:34',
+          text: 'No longer shall they teach one another, or say to each other, "Know the Lord," for they shall all know me, from the least of them to the greatest, says the Lord; for I will forgive their iniquity, and remember their sin no more.',
+          entities: [
+            { word: 'they shall all know me, from the least of them to the greatest', node: 'direct-knowledge', type: 'concept',
+              note: 'The most radical clause in the new covenant: universal, unmediated, direct knowledge of God. No teacher needed; no mediating institution; no priesthood required. "They shall all know me" — not "know about me" but know directly. This is the prophetic equivalent of the mystics\' vision of unmediated divine encounter. It is also the implicit critique of all institutional religion: the prophet imagines a state in which the religious institution (temple, priest, teacher) is superseded by the immediate relationship. Hebrews 8:11 quotes this verse to argue that the new covenant in Christ has inaugurated exactly this state.',
+              parallels: [
+                { label: 'John 1 — "No one has ever seen God; the only Son has made him known"', textId: 'john-1', note: 'John 1:18\'s claim that the Logos/Son "makes the Father known" is the Johannine fulfillment of Jeremiah 31:34\'s promise of universal direct knowledge. The Logos as the medium of universal divine knowing: "the light enlightens every person who comes into the world" (1:9) — not just Israel, not just the learned, but every person (Jeremiah: "from the least to the greatest"). The universalism of John 1\'s Logos theology and Jeremiah 31\'s new covenant are making the same claim from different directions.' },
+                { label: 'Bhagavad Gita 4 — the fire of knowledge that burns all karma', textId: 'bhagavad-gita-4', note: 'BG 4:19 describes the liberated sage as one "whose every act is free from the motive of desire... all his works are burned up by the fire of wisdom." Both BG 4 and Jeremiah 31 describe a state in which the gap between the moral subject and the moral law has been closed — not by greater effort but by transformation. In the BG, the fire of knowledge (jnana) burns the karma that creates the gap; in Jeremiah, divine forgiveness removes sin and divine writing installs the law within. The mechanism differs; the destination is the same.' },
+              ]
+            },
+          ]
+        },
+      ]
+    },
+    {
+      heading: 'The Cosmic Guarantee (31:35–37)',
+      verses: [
+        {
+          ref: '31:35–37',
+          text: 'Thus says the Lord, who gives the sun for light by day and the fixed order of the moon and the stars for light by night, who stirs up the sea so that its waves roar — the Lord of hosts is his name: If this fixed order were ever to cease from my presence, says the Lord, then also the offspring of Israel would cease to be a nation before me forever. Thus says the Lord: If the heavens above can be measured, and the foundations of the earth below can be explored, then I will reject all the offspring of Israel because of all they have done, says the Lord.',
+          entities: [
+            { word: 'If this fixed order were ever to cease from my presence', node: 'covenant', type: 'concept',
+              note: 'The promise of the new covenant is grounded in cosmic permanence: as permanent as the sun, moon, and stars. This is a rhetorical move that appears across world scripture: the reliability of the divine promise is measured by the reliability of the cosmic order. The same logic appears in Yasna 44 (Zarathustra asks who maintains the cosmic order) and in the Confucian tradition (Heaven\'s mandate is as reliable as the cycles of nature). The cosmological grounding of ethical/covenantal promises is a cross-traditional pattern: the reliable cosmos witnesses to the reliable divine will.',
+              parallels: [
+                { label: 'Yasna 44 — "Who made the path of the sun and stars?"', textId: 'yasna-44', note: 'Yasna 44 asks who maintains the cosmic order (sun\'s path, moon\'s phases, the sky\'s stability); Jeremiah 31 invokes that same cosmic order as the guarantee of the new covenant\'s permanence. Both texts use the regularity of celestial phenomena as the measure of divine reliability. The difference: Zarathustra asks the question (who made this?); Jeremiah uses the answer (God who made this) as the ground of covenantal confidence.' },
+              ]
+            },
+          ]
+        },
+      ]
+    },
+  ]
+};
+
+SCRIPTURE_TEXTS['gospel-of-truth'] = {
+  title: 'Gospel of Truth (Valentinus)',
+  shortTitle: 'Gospel of Truth',
+  tradition: 'Gnostic / Valentinian',
+  date: 'c. 140–180 CE',
+  intro: 'The Gospel of Truth, attributed to the Alexandrian theologian Valentinus (the most intellectually sophisticated of the Gnostic teachers), opens with one of the most beautiful sentences in early Christian literature: "The gospel of truth is joy for those who have received from the Father of Truth the gift of knowing him." Unlike the narrative gospels, it is a meditative homily on the themes of Error, Forgetfulness, Gnosis, and the Name of the Father. Its central metaphor is sleep and waking: ignorance is a nightmare from which gnosis is the awakening. The figure of Error (not Satan, not a personal devil, but a cosmic existential state) builds the material world as a counterfeit of reality. The Father\'s response is to send his Son, not as an external redeemer but as the interior Name — the self-recognition that dissolves the nightmare. Found in the Nag Hammadi library (Codex I), it is the most philosophically rich of the Valentinian texts.',
+  crossTradition: [
+    { textId: 'gospel-of-thomas', label: 'Gospel of Thomas — shared Gnostic interiority', note: 'Both the Gospel of Thomas and the Gospel of Truth locate the saving reality in the interior: Thomas\'s Kingdom spread on the earth that people cannot see; Truth\'s gnosis that wakes the sleeper from the nightmare of ignorance. Both reject the external, institutional religious forms that mediate between the human and the divine. Both demand direct recognition — gnosis, not pistis (faith as intellectual assent). But where Thomas is aphoristic and provocative, the Gospel of Truth is sustained theological meditation; different literary forms, shared theological conviction.' },
+    { textId: 'poimandres', label: 'Poimandres — the divine Nous that wakes the sleeping soul', note: 'In Poimandres, the divine Nous appears to the narrator and asks "What do you want to hear and see, and what do you want to learn and know?" — a direct invitation to gnosis. In the Gospel of Truth, the Father sends the Son as the awakener who dissolves the nightmare of ignorance. Both texts use the sleep-and-waking metaphor for the transition from ignorance to gnosis, and both identify the awakening agent as a divine mental/spiritual principle (Nous / the Son-as-Name) rather than an external historical event.' },
+    { textId: 'john-1', label: 'John 1 — Logos as the revealer of the Father\'s Name', note: 'John 1:18: "No one has ever seen God; the only Son, who is in the bosom of the Father, he has made him known." Gospel of Truth: "The Son is his Name... No one could see the Father except his Son... the Father\'s name is not spoken outright, but it is revealed through a Son." Both texts are working with the same theological problem: how does the unknowable Father become known? Both answer: through the Son/Logos as the Name or Word that mediates the Father\'s self-disclosure. The Gospel of Truth is the Valentinian reading of the same theology that John 1 inaugurates.' },
+  ],
+  translations: [
+    { lang: 'en', label: 'Harold Attridge & George MacRae (NHL)' },
+    { lang: 'en-gaffney', label: 'Mark Gaffney (1995)' },
+  ],
+  sections: [
+    {
+      heading: 'Error and the Void (pp. 17:1–18:38)',
+      verses: [
+        {
+          ref: 'p. 17:1–18',
+          text: 'The gospel of truth is joy for those who have received from the Father of Truth the gift of knowing him, through the power of the Word that came forth from the Pleroma — the one who is in the thought and the mind of the Father, that is, the one who is called the Savior, that being the name of the work he is to perform for the redemption of those who were ignorant of the Father, while the name of the gospel is the proclamation of hope, being discovery for those who search for him.',
+          entities: [
+            { word: 'the gift of knowing him', node: 'gnosis', type: 'concept',
+              note: 'The Gospel of Truth opens by defining its subject: gnosis — the direct knowing of the Father — is a gift, not an achievement. This immediately distinguishes Valentinian theology from both orthodox Christianity (where salvation is by faith) and from the Platonic tradition (where the ascent to the Good is by philosophical effort). Gnosis as gift: the Father freely gives self-knowledge to those who receive it. This is structurally identical to the Upanishadic teaching that Brahman cannot be known by intellectual effort alone ("the Self chooses whom it will" — Katha 2.23) and to the Cloud of Unknowing\'s insistence that God gives himself to love, not to thought.',
+              parallels: [
+                { label: 'Katha Upanishad — "This Self cannot be attained by instruction"', textId: 'katha-upanishad', note: 'Katha 2.23: "This Self cannot be attained by instruction, nor by intellect, nor by much learning. He whom this Self chooses, by him alone is it attained; to him this Self reveals its own form." Gospel of Truth: the gnosis is "the gift" of the Father, received by "those who have received" it. Both texts describe the highest knowing as a gift or election rather than an achievement — the divine takes the initiative; the human receives. The parallel cuts across Gnostic Christianity and Vedantic Hinduism.' },
+              ]
+            },
+          ]
+        },
+        {
+          ref: 'p. 17:18–18:11',
+          text: 'Since the totality sought after him from whom they had come forth, and the totality was inside of him, the incomprehensible, inconceivable one who is superior to every thought — ignorance of the Father brought about anguish and terror; and anguish grew solid like a fog, so that no one was able to see. For this reason, error became powerful; it worked on its own matter in the void, without knowing the truth. It prepared with power, in beauty, a substitute for truth.',
+          entities: [
+            { word: 'error became powerful; it worked on its own matter in the void', node: 'creation', type: 'concept',
+              note: 'The Valentinian cosmogony: the material world is not created by the true Father but by Error — the cosmic principle of ignorance and estrangement from the Father. Error is not a personal devil (Valentinus is not a dualist in the Manichaean sense) but an existential condition that becomes creative: out of the fog of ignorance and the anguish of separation, Error fashions "in beauty a substitute for truth." The material world is beautiful — this is why it is mistaken for reality. Error\'s creative power is aesthetic: it produces the convincing simulacrum. This is the most sophisticated cosmological account in Gnostic literature.',
+              parallels: [
+                { label: 'Bardo Thodol — the intermediate state as the projection of the mind\'s own contents', textId: 'bardo-thodol', note: 'The Tibetan Book of the Dead teaches that the bardo visions — both terrifying and peaceful — are projections of the consciousness\'s own karmic deposits. The practitioner must recognize them as such and not mistake them for external realities. The Gospel of Truth\'s Error works in the same way: the material world is Error\'s projection, a "substitute for truth," and gnosis consists precisely in recognizing the projection as projection. Both texts are describing the same epistemological structure: what seems real is a construction of ignorance; liberation is recognition.' },
+              ]
+            },
+          ]
+        },
+      ]
+    },
+    {
+      heading: 'Waking From the Nightmare — Gnosis as Recognition (pp. 28:24–30:14)',
+      verses: [
+        {
+          ref: 'pp. 28:24–29:32',
+          text: 'As with the case of someone asleep who sees troubling dreams — for instance, that he is being pursued, or that he is being struck, or that he is falling from a high place, or that he is flying through the air without wings — now, when those who are going through all these things wake up, they see nothing; those who were in the midst of all these disturbances — for they are nothing. Thus it is with those who cast ignorance from themselves as sleep — they do not consider it to be anything, nor do its works do they consider to be solid things, but they leave them behind like a dream in the night and they acknowledge the gnosis of the Father as the dawn.',
+          entities: [
+            { word: 'they acknowledge the gnosis of the Father as the dawn', node: 'gnosis', type: 'concept',
+              note: 'The sleep-and-waking metaphor is the Gospel of Truth\'s central image for the transition from ignorance to gnosis. Waking from a nightmare: the terrifying events (pursuit, falling, flying) that seemed real while dreaming are recognized as nothing on waking. Gnosis does not destroy the world; it reveals that the world-as-experienced-from-ignorance was always already insubstantial. The dawn of gnosis does not replace the nightmare with something else — it simply exposes the nightmare as nightmare. This is structurally identical to the Upanishadic teaching that maya (cosmic illusion) is not destroyed but seen through: the rope that seemed to be a snake is still a rope; the snake was never there.',
+              parallels: [
+                { label: 'Mandukya Upanishad — the waking state and the states of consciousness', textId: 'mandukya-upanishad', note: 'The Mandukya Upanishad analyzes the four states of consciousness (waking, dreaming, deep sleep, turiya) and uses the analogy of dreaming to illustrate maya: in the dream state, the dreamed objects seem real; on waking, they are recognized as mental creations. The Gospel of Truth uses exactly the same structure: the world of ignorance (Error\'s creation) is the "dream"; gnosis is the "waking." Both texts use the phenomenology of ordinary dreaming to illuminate the structure of cosmic ignorance and liberation.' },
+                { label: 'Plato\'s Cave — the prisoner who mistakes shadows for reality', textId: 'plato-cave', note: 'Plato\'s allegory of the cave and the Gospel of Truth\'s nightmare metaphor are structural parallels: both describe people mistaking a deficient image (shadows / nightmare) for reality, and both describe liberation as a painful process of recognition and reorientation. But they differ on the mechanism: for Plato, liberation is achieved by philosophical education (turning toward the sun); for Valentinus, liberation is the gift of gnosis from the Father (the dawn comes to the sleeper). The epistemological structure is identical; the theology of agency is reversed.' },
+              ]
+            },
+          ]
+        },
+      ]
+    },
+    {
+      heading: 'The Name of the Father (pp. 38:6–40:23)',
+      verses: [
+        {
+          ref: 'pp. 38:6–39:13',
+          text: 'Now the name of the Father is the Son. It is he who, in the beginning, gave a name to the one who came forth from him — he was the same one, and he begot him for a son. He gave him his name which belonged to him — for the Father possesses everything which exists within him. He possesses the name; he has the Son. It is possible for them to see him. But the name is invisible, for it alone is the mystery of the invisible about to come to ears completely filled with it through the Father\'s agency.',
+          entities: [
+            { word: 'the name of the Father is the Son', node: 'logos', type: 'concept',
+              note: 'The most theologically dense claim in the Gospel of Truth: the Son IS the Father\'s Name. In ancient Near Eastern thought (Hebrew, Egyptian, and Mesopotamian), the name is not a label but the being itself — to know the name is to know the thing. The Father\'s Name is his innermost self-disclosure. To say "the Son is the Father\'s Name" is to say: the Son is the Father\'s self-expression, his self-revelation, his innermost reality made available to others. This is the Valentinian equivalent of John 1\'s "the Word was with God and the Word was God" — the Son/Logos/Name is not separate from the Father but is the Father\'s own act of self-expression.',
+              parallels: [
+                { label: 'John 1 — "In the beginning was the Word; and the Word was with God"', textId: 'john-1', note: 'John 1:1 and Gospel of Truth p. 38: both identify the Son/Word/Name with the Father\'s primordial self-expression. For John, the Logos is "with God" in the beginning and "is God" — participating fully in the divine nature while being the medium of divine self-expression. For Valentinus, the Name is the Father\'s "mystery" made accessible — invisible but transmitted through the Son. Both texts are theorizing the same theological problem: how does the absolutely transcendent God make himself known? Through his own self-expression: Logos / Name.' },
+                { label: 'Exodus 3 — "I AM WHO I AM"; the divine Name as the divine being', textId: 'exodus-3', note: 'In Exodus 3, when Moses asks God\'s name, God answers "ehyeh asher ehyeh" — "I AM WHO I AM" — and then instructs Moses to use "I AM" as the name before Israel. The divine Name in Exodus is not a label but a disclosure of divine being itself: the Name expresses the nature. The Gospel of Truth\'s "the name of the Father is the Son" is the Valentinian interpretation of the same theology: the Name is not arbitrary but constitutive of who the Father is. The Son, as the Father\'s Name, makes the Father\'s being accessible.' },
+              ]
+            },
+          ]
+        },
+      ]
+    },
+  ]
+};
+
+SCRIPTURE_TEXTS['mundaka-upanishad'] = {
+  title: 'Mundaka Upanishad',
+  shortTitle: 'Mundaka Upanishad',
+  tradition: 'Hindu — Atharva Veda',
+  date: 'c. 800–400 BCE',
+  intro: 'The Mundaka (from mundaka, "shaved" — associated with renunciant monks who shave their heads) opens with the most important question in the Upanishadic tradition: "What is that, O revered sir, by which, when it is known, everything else becomes known?" The Upanishad\'s answer is the knowledge of Brahman — but it distinguishes sharply between "lower knowledge" (the sacred sciences, rituals, grammar, astronomy, all conventional learning) and "higher knowledge" (para vidya: direct knowledge of the imperishable Brahman). The Mundaka\'s most famous image — two birds of beautiful plumage sitting on the same tree, one eating the fruits and one simply watching — became one of the most influential metaphors in all of Indian philosophy for the distinction between the bound, active self and the witnessing, transcendent Self. Upanishadic tradition holds it as one of the three prasthana (canonical foundations), alongside the Bhagavad Gita and the Brahma Sutras.',
+  crossTradition: [
+    { textId: 'katha-upanishad', label: 'Katha Upanishad — the immortal Self vs. the mortal self', note: 'The Katha Upanishad\'s teaching on the immortal Self (atman) and its concealment by the mortal self maps directly onto the Mundaka\'s two-birds image: one bird (the lower self, the katha\'s "horses" pulling the chariot) eats the fruits of experience; the other bird (the higher Self, the witness) observes without involvement. Both Upanishads are working with the same structural dualism between the bounded self (the experiential subject) and the unbounded Self (pure consciousness), and both teach that liberation consists in recognizing one\'s identity with the latter.' },
+    { textId: 'gospel-of-thomas', label: 'Gospel of Thomas — the "light within" as the witness Self', note: 'Gospel of Thomas logion 77: "I am the light that is over all things. I am all. From me all came forth, and to me all attained. Split a piece of wood; I am there. Lift up the stone, and you will find me there." The omnipresent Christ of Thomas and the omnipresent Brahman of the Mundaka (3.2.8: "Brahman is below, Brahman is above, Brahman is to the east and west, Brahman is to the south and north") are structurally identical: a witness-consciousness that pervades all phenomena and is present wherever the knower looks, including within the looking.' },
+    { textId: 'meister-eckhart-godhead', label: 'Meister Eckhart — the spark of the soul as the witness Self', note: 'Eckhart\'s "spark of the soul" (Fünklein) is the uncreated element of the human soul that is never fully absorbed into the world and always retains its orientation toward the Godhead. This is the Christian equivalent of the Mundaka\'s witnessing bird: the element of the person that observes experience without being consumed by it, that remains at the level of the Godhead even when the person is fully engaged in the world. Both Eckhart and the Mundaka are articulating the same human possibility: the simultaneous full engagement with the world (eating the fruits) and full identification with the witnessing absolute (the other bird).' },
+  ],
+  translations: [
+    { lang: 'en', label: 'Patrick Olivelle (1996) — Oxford World\'s Classics' },
+    { lang: 'en-radhakrishnan', label: 'S. Radhakrishnan (1953)' },
+    { lang: 'sa', label: 'Sanskrit (Devanagari)' },
+  ],
+  sections: [
+    {
+      heading: 'Higher and Lower Knowledge (1.1.3–7)',
+      verses: [
+        {
+          ref: '1.1.3–5',
+          text: 'To him [Shaunaka] he [Angiras] said: "There are two kinds of knowledge to be known — this is what those who know Brahman tell us. They are the higher knowledge and the lower knowledge. The lower knowledge is the Rig Veda, the Yajur Veda, the Sama Veda, the Atharva Veda, phonetics, the ritual procedure, grammar, etymology, meter, and astronomy. And the higher knowledge is that by which the imperishable Brahman is directly known."',
+          entities: [
+            { word: 'the higher knowledge is that by which the imperishable Brahman is directly known', node: 'gnosis', type: 'concept',
+              note: 'The distinction between lower knowledge (apara vidya — the sacred sciences, the Vedas, all conventional learning) and higher knowledge (para vidya — direct knowledge of Brahman) is the Upanishadic equivalent of the Cloud of Unknowing\'s distinction between all the things the intellect can know and the one thing it cannot: God himself. The Mundaka lists the entire curriculum of the Vedic educational system (all four Vedas, grammar, astronomy, ritual) as "lower knowledge" — not false but insufficient. This is a radical move: the most sacred texts of Hinduism are "lower" than direct experience. The mystic in every tradition must eventually make this distinction.',
+              parallels: [
+                { label: 'Gospel of Truth — gnosis vs. conventional religious knowledge', textId: 'gospel-of-truth', note: 'Valentinus\'s Gospel of Truth distinguishes between those who receive the "gift of knowing" the Father directly and those who remain in ignorance despite (perhaps because of) their conventional religious practice. Both the Mundaka and the Gospel of Truth are critiquing the religious establishment from within: the established religious curriculum (Vedic sciences / orthodox Christian teaching) is not the highest knowledge. The highest knowledge is direct, transformative, and cannot be transmitted through texts or institutions alone.' },
+                { label: 'Cloud of Unknowing — all that intellect can know belongs to the cloud of forgetting', textId: 'cloud-of-unknowing', note: 'The Cloud instructs the contemplative to place even good theological thoughts under the "cloud of forgetting" — including devotional meditations on God\'s kindness. This is identical to the Mundaka\'s hierarchy: all intellectual knowledge (even sacred knowledge) belongs to "lower" vidya. The "higher knowledge" (para vidya / the cloud of unknowing) consists not in more or better concepts but in direct encounter that transcends the conceptual altogether.' },
+              ]
+            },
+          ]
+        },
+        {
+          ref: '1.1.6–7',
+          text: '"As by knowing one lump of clay, dear one, all that is made of clay becomes known — the modification is only a name, based on words, and the clay alone is real — so, dear one, is that instruction by which the imperishable becomes known, everything else becomes known. The imperishable, my dear, is the unseen seer, the unheard hearer, the unthought thinker, the unknown knower."',
+          entities: [
+            { word: 'the unseen seer, the unheard hearer, the unthought thinker, the unknown knower', node: 'atman-brahman', type: 'concept',
+              note: 'This series of paradoxes — the unseen seer, the unheard hearer — describes the structure of pure consciousness: consciousness is that by which all seeing happens, but it cannot be seen by itself in the ordinary way because it is always the subject, never the object. To make consciousness the object of consciousness requires a different kind of knowing: not the knowledge of objects but the recognition of the knowing itself. This is the Upanishadic insight that Descartes partially rediscovered in the cogito ("I think, therefore I am" — but Descartes stopped at the thinking rather than recognizing the witness of the thinking). The Mandukya Upanishad (turiya state) describes the same witness consciousness under the name of the "fourth."',
+              parallels: [
+                { label: 'Brihadaranyaka neti neti — "not this, not this" as the method for the unseen seer', textId: 'brihadaranyaka-neti-neti', note: 'Yajnavalkya\'s "not this, not this" in the Brihadaranyaka is the method for approaching exactly what the Mundaka describes: the unseen seer cannot be grasped by any positive description, only by negating all inadequate identifications. The Mundaka describes the goal (the unseen seer, the unknown knower); the Brihadaranyaka provides the method for approaching it (neti neti — stripping away all that the seer is not). Together they form the core of Upanishadic apophatic epistemology.' },
+              ]
+            },
+          ]
+        },
+      ]
+    },
+    {
+      heading: 'Two Birds on One Tree (3.1.1–4)',
+      verses: [
+        {
+          ref: '3.1.1–3',
+          text: 'Two birds, beautiful of wing, close companions, cling to the self-same tree. Of these two, the one eats the sweet fruit; the other looks on without eating. On the self-same tree a person, sunken, grieves for his impotence, deluded; but when he sees the other, the Lord, contented, and his greatness, his grief disappears.',
+          entities: [
+            { word: 'one eats the sweet fruit; the other looks on without eating', node: 'self-knowledge', type: 'concept',
+              note: 'The two-birds image is one of the most powerful and versatile metaphors in world philosophy. The tree = the body (or the world); the fruit = the experiences of pleasure and pain; the eating bird = the ordinary self (jiva), who is involved in and affected by experience; the watching bird = the witness Self (atman / Brahman), who observes experience without involvement or judgment. The person "sunken in grief" is identified with the eating bird — with the jiva as the whole of who they are. Liberation (the grief disappearing) is the recognition of one\'s identity with the watching bird, the witness, the Lord. One does not stop eating (life continues); one recognizes that one is also always the witness.',
+              parallels: [
+                { label: 'Gospel of Thomas — "the Kingdom of the Father is spread out but people do not see it"', textId: 'gospel-of-thomas', note: 'The watching bird has always been present on the tree; the eating bird has always had access to the witness. Thomas\'s Kingdom is "spread out upon the earth and men do not see it." In both cases, liberation is not a journey to somewhere else but a recognition of what is always already present. The witness Self is always on the tree; the Kingdom is always spread on the earth. The question is not how to get there but how to see what was never absent.' },
+                { label: 'Meister Eckhart — the "spark of the soul" that is never fully in the world', textId: 'meister-eckhart-godhead', note: 'Eckhart\'s spark of the soul (Fünklein) is the uncreated element of the human that remains at the level of the Godhead even when the person is fully engaged in the world. This is the watching bird: the element of the self that observes the feast of experience without partaking, that maintains its divine orientation even in the midst of creaturely activity. Both Eckhart and the Mundaka are describing the same human possibility — the simultaneous full engagement with the world and full identification with the witnessing absolute.' },
+              ]
+            },
+          ]
+        },
+      ]
+    },
+    {
+      heading: 'Knowing Brahman — Like Knows Like (3.2.3–9)',
+      verses: [
+        {
+          ref: '3.2.3–4',
+          text: 'Not by the eye is he grasped, not by speech, not by the other senses; not by asceticism, not by ritual action. When one\'s being is cleansed by the light of knowledge, then one sees him — the indivisible — by meditating.',
+          entities: [
+            { word: 'Not by the eye is he grasped, not by speech, not by the other senses', node: 'apophatic-theology', type: 'concept',
+              note: 'The Mundaka\'s apophatic list — not by eye, speech, or the other senses, not by asceticism or ritual — is structurally identical to the Cloud of Unknowing\'s "by thought, never." Both texts negate all the ordinary means of knowing and point toward a different mode: in the Mundaka, "the light of knowledge" (jnana-prasada, literally "the grace of knowledge"); in the Cloud, "love." Both converge on the same conclusion: the absolute cannot be reached by instrumental means — not even the most refined instrumental means (asceticism, ritual, theological thought). Something of a different order is required.',
+              parallels: [
+                { label: 'Pseudo-Dionysius — the divine darkness beyond all affirmations and negations', textId: 'pseudo-dionysius-mystical-theology', note: 'Pseudo-Dionysius\'s Mystical Theology systematically negates all predications of God, even the positive ones: God is not being, not life, not mind. The Mundaka negates all means of knowing Brahman: not eye, not speech, not senses, not asceticism, not ritual. Both texts perform apophasis not as agnosticism but as a way of pointing to a mode of knowing that transcends the subject-object structure of ordinary cognition. The negations are the path.' },
+              ]
+            },
+          ]
+        },
+        {
+          ref: '3.2.8–9',
+          text: 'As rivers flow into the sea and lose themselves in the sea with their name and form, so the wise, freed from name and form, attains the divine Person who is higher than the high. He who knows Brahman becomes Brahman.',
+          entities: [
+            { word: 'He who knows Brahman becomes Brahman', node: 'mystical-union', type: 'concept',
+              note: 'The Mundaka\'s culminating claim: brahma-vid brahmaiva bhavati — "the knower of Brahman becomes Brahman." This is not a metaphor; it is a claim about the ontological structure of the highest knowing. In ordinary knowing, the knower and the known remain distinct: the eye sees the object and is not transformed into it. In Brahman-knowing, the distinction between knower and known collapses: to know Brahman is to realize one\'s identity with Brahman. "Become what you know" is the logic — identical to the Christian mystical tradition\'s claim about theosis (deification). Gregory of Nyssa: "the soul participates in the divine nature"; John of the Cross: "the Lover transformed in the Beloved."',
+              parallels: [
+                { label: 'Meister Eckhart — "I am what God is"', textId: 'meister-eckhart-godhead', note: 'Eckhart\'s most controversial claim: "The eye through which I see God is the same eye through which God sees me; my eye and God\'s eye are one eye, one seeing, one knowing, one love." The Mundaka: "He who knows Brahman becomes Brahman." Both describe the same ontological event: the collapse of the subject-object distinction in the highest knowledge. The knower becomes the known because the knower was always already identical with the known, and the apparent separation was always the source of the suffering.' },
+                { label: 'John of the Cross — "Lover transformed in the Beloved"', textId: 'john-of-the-cross-dark-night', note: 'John of the Cross in the Spiritual Canticle: "the soul seems to be God rather than a soul, and is indeed God by participation." The Mundaka: "He who knows Brahman becomes Brahman." Both the Spanish mystic and the Upanishadic sage are describing the same terminal state of mystical union — not annihilation (the soul does not cease to exist) but transformation (the soul becomes what it knows). The rivers flow into the sea: they lose their name and form, but the sea is more than it was.' },
+              ]
+            },
+          ]
+        },
+      ]
+    },
+  ]
+};
+
+SCRIPTURE_TEXTS['thomas-a-kempis'] = {
+  title: 'The Imitation of Christ (Thomas à Kempis)',
+  shortTitle: 'Imitation of Christ',
+  tradition: 'Christian Devotional',
+  date: 'c. 1418–1427 CE',
+  intro: 'The Imitation of Christ, attributed to the Dutch Augustinian canon Thomas à Kempis (c. 1380–1471), is the most widely read Christian devotional text after the Bible — outselling all other Christian books for five centuries. It opens with one of the most provocative lines in Christian literature: "What doth it profit thee to enter into deep discussion concerning the Holy Trinity, if thou lack humility?" The Imitation is the systematic counterweight to the mystical tradition: where the Cloud of Unknowing seeks God through apophatic contemplation, the Imitation seeks God through practical self-denial, humility, and imitation of Christ\'s life. It belongs to the Devotio Moderna movement (Modern Devotion) of the Rhineland and Low Countries — the same spiritual milieu that produced Eckhart, Ruysbroeck, and the Brethren of the Common Life. Its theology is simple, its psychology is acute, and its critique of vain learning has been confirmed by every generation of readers since.',
+  crossTradition: [
+    { textId: 'cloud-of-unknowing', label: 'Cloud of Unknowing — contemplative vs. active path to the same destination', note: 'The Cloud of Unknowing and the Imitation of Christ are the two great 14th-15th century English and Dutch devotional texts, and they represent complementary paths. The Cloud prioritizes apophatic contemplation — the dart of longing love that pierces the cloud of unknowing. The Imitation prioritizes active self-denial, humility, and the practical imitation of Christ\'s life. Both paths lead to union with God; they differ on the route. The Cloud is for the solitary contemplative; the Imitation is for anyone. Together they describe the full spectrum of late medieval Christian spiritual practice.' },
+    { textId: 'confucius-analects', label: 'Confucius Analects — learning for virtue vs. learning for its own sake', note: 'Confucius: "Learning without thought is labor lost; thought without learning is perilous." Thomas à Kempis: "What doth it profit thee to enter into deep discussion concerning the Holy Trinity, if thou lack humility?" Both the ancient Chinese sage and the 15th-century Dutch canon are critiquing the same failure mode: knowledge pursued for its own sake rather than for the transformation of the person. Both privilege practical wisdom and virtuous character over intellectual achievement. The Confucian junzi and the Kempisian imitator of Christ are both defined by character rather than learning.' },
+    { textId: 'bhagavad-gita-4', label: 'Bhagavad Gita 4 — action without attachment as the parallel discipline', note: 'The Bhagavad Gita\'s teaching on karma yoga (action without attachment to fruits) and the Imitation\'s teaching on self-denial and surrender to God\'s will are structurally parallel: both describe a mode of action that has been freed from self-interest and ego-involvement. Arjuna must fight without attachment to victory; Thomas\'s disciple must work without attachment to honor or recognition. Both texts describe the spiritual path as the purification of action rather than its cessation — the active life as the arena of liberation.' },
+  ],
+  translations: [
+    { lang: 'en', label: 'William Benham (1874)' },
+    { lang: 'en-modern', label: 'William Creasy (1989)' },
+    { lang: 'la', label: 'Latin (original)' },
+  ],
+  sections: [
+    {
+      heading: 'Against Vain Learning — Humility over Theology (Book I, Chapters 1–3)',
+      verses: [
+        {
+          ref: 'I:1',
+          text: '"He that followeth Me, walketh not in darkness," saith the Lord. These are the words of Christ, and they teach us how far we must imitate His life and character, if we seek true illumination, and freedom from all blindness of heart. Let it be our most earnest study therefore, to dwell upon the life of Jesus Christ. His teaching surpasseth all teaching of holy men, and such as have His Spirit find therein the hidden manna. But it happeneth that many who hear the Gospel of Christ feel little longing for it, because they have not the mind of Christ. He, therefore, that will fully and with true wisdom understand the words of Christ, let him strive to conform his whole life to that mind of Christ.',
+          entities: [
+            { word: 'feel little longing for it, because they have not the mind of Christ', node: 'spiritual-formation', type: 'concept',
+              note: 'The Imitation\'s opening diagnosis: knowledge of the Gospel without the mind of Christ produces no longing, no transformation. The problem is not intellectual (they hear the Gospel correctly) but dispositional (they lack the interior formation that would allow the words to land). This is Thomas à Kempis\'s version of the Mundaka\'s distinction between lower and higher knowledge: you can know all the words of Christ (lower knowledge) without having the mind of Christ (higher knowledge). The Imitation\'s entire program is the cultivation of the mind of Christ — the interior formation that makes the words come alive.',
+              parallels: [
+                { label: 'Mundaka Upanishad — lower knowledge vs. higher knowledge', textId: 'mundaka-upanishad', note: 'The Mundaka distinguishes between apara vidya (all the Vedic sciences — the equivalent of theological knowledge) and para vidya (direct knowledge of Brahman — the equivalent of the mind of Christ). Both texts insist that the lower knowledge is not false but insufficient: knowing the words of Christ / knowing the Vedas does not transform the person. Only the higher knowledge — direct encounter with the reality the words point toward — produces transformation. The Imitation and the Mundaka agree: information is not formation.' },
+              ]
+            },
+          ]
+        },
+        {
+          ref: 'I:2–3',
+          text: 'What doth it profit thee to enter into deep discussion concerning the Holy Trinity, if thou lack humility, and be thus displeasing to the Trinity? For of a truth, lofty words make thee not holy and just; but a virtuous life maketh thee dear to God. Better of a surety is a lowly peasant who serveth God, than a proud philosopher who watcheth the stars and neglecteth the knowledge of himself.',
+          entities: [
+            { word: 'Better a lowly peasant who serveth God than a proud philosopher who watcheth the stars', node: 'humility', type: 'concept',
+              note: 'The most quoted passage from the Imitation — and perhaps the sharpest critique of theological intellectualism in the Christian tradition. The "proud philosopher who watcheth the stars" is not condemned for watching stars (astronomy is not the problem) but for "neglecting the knowledge of himself." Self-knowledge (Socrates\'s "know thyself") is more valuable than celestial knowledge — and far more rare. The humble peasant has achieved the harder thing: knowing his own smallness before God. This is Augustine\'s restless heart that finds no rest until it rests in God: the peasant has found rest; the philosopher has not.',
+              parallels: [
+                { label: 'Confucius Analects — virtue over learning; the junzi over the scholar', textId: 'confucius-analects', note: 'Confucius: "Learning without thought is labor lost." Thomas: "lofty words make thee not holy and just; but a virtuous life maketh thee dear to God." Both are making the same distinction between intellectual acquisition (learning, theological discussion) and practical wisdom (thought, virtue, life). The Confucian junzi is defined by character (ren), not by knowledge; the Kempisian disciple is defined by virtue (humilitas), not by theology. Both traditions place the formation of character above the acquisition of information.' },
+                { label: 'Gospel of Truth — gnosis that transforms vs. knowledge that puffs up', textId: 'gospel-of-truth', note: 'The Gospel of Truth condemns those who remain in the "fog of ignorance" despite their religious knowledge. Thomas à Kempis condemns those who discuss the Trinity without humility. Both are critiquing the same failure: knowledge that does not transform the knower. But they differ on the remedy: Valentinus prescribes gnosis (direct knowing of the Father); Thomas prescribes imitation (conforming the life to Christ\'s). The Gnostic and the Devotio Moderna brother diagnose the same disease; they prescribe different cures.' },
+              ]
+            },
+          ]
+        },
+      ]
+    },
+    {
+      heading: 'The Kingdom Within — Turning Inward (Book II, Chapter 1)',
+      verses: [
+        {
+          ref: 'II:1',
+          text: 'The kingdom of God is within you, saith the Lord. Turn thee with thy whole heart unto the Lord, and forsake this miserable world, and thy soul shall find rest. Learn to despise external things and to give thyself to things internal, and thou shalt see the Kingdom of God come within thee. For the Kingdom of God is peace and joy in the Holy Ghost, and it is not given to the wicked. Christ will come to thee, and will show thee His consolation, if thou prepare within thee a worthy mansion for Him.',
+          entities: [
+            { word: 'Turn thee with thy whole heart unto the Lord, and thy soul shall find rest', node: 'contemplative-prayer', type: 'concept',
+              note: 'The Imitation quotes Luke 17:21 ("the kingdom of God is within you") and reads it as a practical directive: turn inward. This is the same move as the Cloud of Unknowing (lift your heart; place everything in the cloud of forgetting) and the Mundaka (the witness Self is always already present). The difference is that the Imitation frames the inward turn not as apophatic contemplation but as moral preparation ("prepare within thee a worthy mansion") — the Kingdom is found through the purification of the interior life through practical virtue, not primarily through contemplative technique.',
+              parallels: [
+                { label: 'Gospel of Thomas — "the Kingdom of the Father is spread upon the earth"', textId: 'gospel-of-thomas', note: 'Thomas logion 3: "the Kingdom is inside of you, and it is outside of you." Kempis: "The kingdom of God is within you." Both quote or allude to the same tradition (Luke 17:21 / the Q source) and draw the same conclusion: the Kingdom is not an external future event but an interior present reality. But where the Gospel of Thomas locates the Kingdom in gnosis (recognizing the light within), the Imitation locates it in moral preparation (purifying the interior life). Interior, yes; but achieved through different means.' },
+              ]
+            },
+          ]
+        },
+      ]
+    },
+    {
+      heading: 'The Voice of Christ Within — Rest in Me (Book III, Chapter 1)',
+      verses: [
+        {
+          ref: 'III:1–2',
+          text: 'I will hearken what the Lord God will speak within me. Blessed is the soul which heareth the Lord speaking within it, and receiveth the word of consolation from His mouth. Blessed are the ears which receive the echoes of the soft whisper of God, and turn not aside to the many whisperings of this world. Blessed verily are those ears which listen not after the voice which is sounding without, but for the Truth teaching inwardly. Blessed are the eyes which are shut to outward things, but intent on things inward. Blessed are they who penetrate inwardly, and endeavour to make themselves ready for the receiving of heavenly secrets.',
+          entities: [
+            { word: 'the Truth teaching inwardly', node: 'inner-kingdom', type: 'concept',
+              note: 'The Imitation\'s highest form of learning: the interior Word, the Truth that teaches within. This is Augustine\'s "inner teacher" (De Magistro: the true teacher is Christ within, who illumines the mind to recognize truth when it is taught externally). The outer word (scripture, teaching, theology) is the occasion; the inner Word is the teacher. This brings the Imitation into convergence with the Gnostic tradition (the inner Christ of the Gospel of Truth), the Quaker tradition (the inner light), and the Hindu tradition (the guru within). All these traditions converge on the same claim: the ultimate teaching is interior.',
+              parallels: [
+                { label: 'Gospel of Truth — the Name/Son as the interior revealer', textId: 'gospel-of-truth', note: 'Gospel of Truth: the Son/Name of the Father is the interior revelation that wakes the sleeper from the nightmare of ignorance. Imitation III:1: "the Truth teaching inwardly." Both texts describe the same structure: the external religious forms (scripture, teaching, Valentinian homily, Gospel text) are pointers to an interior reality that must be directly encountered. The Kempisian "soft whisper of God" within and the Valentinian "Name revealed through a Son" within are different vocabularies for the same claim: the ultimate religious knowledge is interior and direct.' },
+              ]
+            },
+          ]
+        },
+      ]
+    },
+  ]
+};

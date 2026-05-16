@@ -33,6 +33,7 @@ window.ScriptureReader = (function () {
     'song-of-songs':      { religion:'Christianity', group:'Old Testament',          canon:'All Canons',          sort:95 },
     'exodus-3':           { religion:'Christianity', group:'Old Testament',          canon:'All Canons',          sort:15 },
     'deuteronomy-6':      { religion:'Christianity', group:'Old Testament',          canon:'All Canons',          sort:55 },
+    'jeremiah-31':        { religion:'Christianity', group:'Old Testament',          canon:'All Canons',          sort:58 },
     'daniel-7':           { religion:'Christianity', group:'Old Testament',          canon:'All Canons',          sort:75 },
     // ── Christianity — New Testament ────────────────────────────────
     'john-1':             { religion:'Christianity', group:'New Testament',          canon:'All Canons',          sort:10 },
@@ -55,6 +56,7 @@ window.ScriptureReader = (function () {
     'meister-eckhart-godhead':            { religion:'Christianity', group:'Christian Mysticism', canon:'Rhineland Mysticism',      sort:20 },
     // ── Christianity — Gnostic / Nag Hammadi ────────────────────────
     'gospel-of-thomas':   { religion:'Christianity', group:'Gnostic / Nag Hammadi', canon:'Non-canonical',       sort:10 },
+    'gospel-of-truth':    { religion:'Christianity', group:'Gnostic / Nag Hammadi', canon:'Non-canonical',       sort:15 },
     'apocryphon-of-john': { religion:'Christianity', group:'Gnostic / Nag Hammadi', canon:'Non-canonical',       sort:20 },
     'gospel-of-philip':   { religion:'Christianity', group:'Gnostic / Nag Hammadi', canon:'Non-canonical',       sort:30 },
     'thunder-perfect-mind': { religion:'Christianity', group:'Gnostic / Nag Hammadi', canon:'Non-canonical',     sort:40 },
@@ -63,6 +65,7 @@ window.ScriptureReader = (function () {
     'julian-of-norwich':          { religion:'Christianity', group:'Medieval Mysticism',    canon:'Catholic Mysticism',              sort:10 },
     'john-of-the-cross-dark-night': { religion:'Christianity', group:'Medieval Mysticism',  canon:'Catholic Mysticism',              sort:20 },
     'cloud-of-unknowing':         { religion:'Christianity', group:'Medieval Mysticism',    canon:'Catholic Mysticism',              sort:30 },
+    'thomas-a-kempis':            { religion:'Christianity', group:'Medieval Mysticism',    canon:'Catholic Mysticism',              sort:40 },
     // ── Christianity — Deuterocanon (continued) ─────────────────────
     '4-ezra':                     { religion:'Christianity', group:'Deuterocanon',           canon:'Ethiopian / Slavonic',            sort:30 },
     // ── Christianity — Ethiopian Canon (continued) ──────────────────
@@ -84,6 +87,7 @@ window.ScriptureReader = (function () {
     'purusha-sukta':      { religion:'Hinduism',      group:'Vedic Hymns',           canon:'Rig Veda',            sort:20 },
     'chandogya-621':      { religion:'Hinduism',      group:'Upanishads',            canon:'Sama Veda',           sort:10 },
     'katha-upanishad':    { religion:'Hinduism',      group:'Upanishads',            canon:'Upanishads',          sort:20 },
+    'mundaka-upanishad':  { religion:'Hinduism',      group:'Upanishads',            canon:'Upanishads',          sort:25 },
     'mandukya-upanishad': { religion:'Hinduism',      group:'Upanishads',            canon:'Upanishads',          sort:30 },
     'brihadaranyaka-neti-neti': { religion:'Hinduism', group:'Upanishads',           canon:'Upanishads',          sort:40 },
     'isha-upanishad':     { religion:'Hinduism',      group:'Upanishads',            canon:'Upanishads',          sort:50 },
