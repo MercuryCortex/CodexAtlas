@@ -22,7 +22,7 @@ influenced-by: ["[[phase-2-001-rig-veda-family-books]]", "[[phase-2-012-brihadar
 influences: ["all subsequent Hindu philosophy and devotional theology", "[[phase-5-005-shankara-brahma-sutra-bhasya]] (Śaṅkara's Gītā Bhāṣya, the foundational Advaita commentary)", "[[phase-5-016-ramanuja-sribhasya]] (Rāmānuja's Gītā Bhāṣya, the foundational Viśiṣṭādvaita commentary)", "[[phase-5-022-madhva-brahma-sutra-bhasya]] (Madhva's Gītā Bhāṣya, the foundational Dvaita commentary)", "[[phase-5-050-bhagavata-purana]] (continues and amplifies Gītā Krishna-theology)", "[[mirabai]] / [[surdas]] / [[tulsidas]] (medieval bhakti poets)", "[[ram-mohan-roy]] (1785 first English translation by Wilkins shaped Brahmo Samaj)", "[[swami-vivekananda]] / [[sri-aurobindo]] (modern Hindu reception)", "Western reception: Schopenhauer's enthusiasm, Emerson and Thoreau's Transcendentalism, Gandhi's allegorical reading (Gandhi 1929), Aldous Huxley's *The Perennial Philosophy* (1945)"]
 deities-mentioned: ["[[krishna]]", "[[vishnu]]", "[[krishna-deity-vaishnava]]"]
 events-context: ["[[event-bhakti-movement-c-700-1700]] (the Gītā is the textual root of the entire bhakti tradition that flowers from ~700 CE onward)"]
-status: "metadata"
+status: "full"
 preservation: "700 verses (śloka) in 18 chapters, embedded in Mahābhārata Book 6 (*Bhīṣmaparvan*), chapters 23-40 (BORI critical-edition numbering) or 25-42 (in some recensions). Standard text via the BORI Mahābhārata critical edition (Belvalkar 1947 for Book 6). Earliest substantial commentary tradition: Śaṅkara's *Gītā Bhāṣya* (~8th c.). Continuous Indian transmission as both an embedded Mahābhārata text and a freestanding scripture; from the medieval period onward routinely circulated independently. Earliest physical manuscripts of the freestanding Gītā: ~8th-10th c. on palm-leaf."
 refs:
   - title: "The Bhagavad Gita"
@@ -152,6 +152,74 @@ The human tendency to analyze fundamental reality through three categories is it
 - **Karma-yoga and the Stoic *amor fati*.** The Gītā's doctrine of action performed without attachment to fruits — "Your authority is in action alone, never in its fruits" (2:47) — is structurally parallel to the Stoic doctrine of *amor fati* / acceptance of cosmic order, the doctrine that one should align with the *Logos*'s providential pattern and do one's *kathēkon* (proper function) without attachment to outcome (Marcus Aurelius's *Meditations*, especially Books IV and VIII; Epictetus's *Enchiridion*). McEvilley 2002 *The Shape of Ancient Thought* surfaces this as a contested-but-suggestive parallel (Pyrrho's exposure to Indian thought during Alexander's campaign; later Stoic possible diffusion). Standard view: structural parallel, not transmission; the Gandhāran contact zone makes weak diffusion arguments possible but unprovable. Substrate.
 - **The disciplined warrior facing death.** The Arjuna-on-the-battlefield scene, the warrior asked to perform his violent duty while interiorly composed, has cross-tradition parallels in (a) the Iliadic Achilles vs. Hector confrontation, (b) the Stoic exemplar of the philosopher-general (Marcus Aurelius), (c) the Bhagavadgita's reception in samurai bushidō (via the early-modern Japanese translations of Hindu scripture), (d) the Christian just-war tradition's treatment of the conscience of the warrior. Substrate of the warrior-disciple type-scene.
 - **The Sanskritic-Greek philosophical encounter.** The Gītā's reception by Schopenhauer (who explicitly recognized the affinity with his own metaphysics of Will) and by Emerson/Thoreau (who absorbed Gītā quietism into American Transcendentalism) is the founding event of the modern Western reception of Hindu scripture. Halbfass 1988 *India and Europe* reconstructs.
+
+## MASSIVE WIN: The Gita's Global Career — Six East→West Transmission Events
+
+The Bhagavad Gita (~-200 BCE to +200 CE) is the most-translated and most-read Hindu text globally. Its cross-cultural transmission career is itself one of the vault's richest edge chains: a single Indian philosophical poem that entered American literature, German Idealism, the physics of nuclear weapons, global non-violent resistance doctrine, and the Western counterculture — all via documented, dateable transmission events.
+
+### 1. Wilkins 1785 → American Transcendentalism
+**Charles Wilkins** (British East India Company, Calcutta) produced the first major English translation of the Gita in 1785 — the first significant Sanskrit-to-English translation of any Hindu text, produced under the patronage of Governor-General Warren Hastings. This single translation opened the floodgates of Hindu philosophical transmission to the Anglophone world.
+
+**Ralph Waldo Emerson** read Wilkins's translation in the 1820s–30s. The Gita's *ātman*-Brahman identification — the individual self as identical with the cosmic Self — became the bedrock of Emerson's *Over-Soul* doctrine (essay "The Over-Soul," 1841: "Within man is the soul of the whole; the wise silence; the universal beauty"). Emerson's poem *Brahma* (1856) is a direct Gita paraphrase: "They reckon ill who leave me out; / When me they fly, I am the wings" — echoing Gita 10:20 ("I am the Self seated in the heart of all creatures"). This is the first major East→West Hindu philosophical transmission in American literature.
+
+**Henry David Thoreau** read the Gita at Walden Pond and recorded it in *Walden* (1854): "In the morning I bathe my intellect in the stupendous and cosmogonal philosophy of the Bhagavat Geeta, since whose composition years of the gods have elapsed, and in comparison with which our modern world and its literature seem puny and trivial." The Gita shaped Thoreau's program of deliberate life outside consumer civilization.
+
+**Chain effect**: Emerson and Thoreau's Transcendentalism shaped William James's *Varieties of Religious Experience* (1902) and, through James, the entire American tradition of philosophical pragmatism and comparative religion.
+
+### 2. German Idealism and Indology
+**Wilhelm von Humboldt** lectured on the Gita at the Berlin Academy of Sciences (1825–1826), calling it "the most beautiful and perhaps the only true philosophical song existing in any known tongue." His enthusiastic reception introduced the Gita to German-language intellectual culture.
+
+**Friedrich Schlegel**'s *Über die Sprache und Weisheit der Indier* (1808) and subsequent German Indological scholarship (Schlegel, Bopp, Lassen) created the academic infrastructure through which Sanskrit texts entered European philosophy. **Schopenhauer** read the Gita through this channel and explicitly recognized its affinity with his own doctrine of the Will: he called the Upaniṣads (including Gita-adjacent texts) "the greatest gift of this century" (*Parerga und Paralipomena*).
+
+**Hegel**'s dismissive response to Humboldt's Gita lectures (Hegel argued Indian philosophy lacked the Concept's self-movement) is itself historically significant: the Gita forced Hegel to articulate the limits of his system. The German Idealist encounter with Indian philosophy is the founding moment of comparative philosophy as a discipline.
+
+### 3. Oppenheimer at Trinity — July 16, 1945
+J. Robert Oppenheimer, watching the first atomic bomb test (Trinity, New Mexico, July 16, 1945), quoted Gita 11:32 in Sanskrit:
+> **"Now I am become Death, the destroyer of worlds"** (*kālo'smi lokakṣayakṛtpravṛddho* — "I am Time, grown monstrous, the destroyer of worlds")
+
+Oppenheimer had read the Gita in Sanskrit with Arthur Ryder at Berkeley; he later said the Gita had profoundly shaped his inner life. The Krishna cosmic theophany of Chapter 11 — the overwhelming vision of the Lord as Time devouring all — became the interpretive frame through which the most consequential scientific event of the 20th century was understood by its own creator.
+
+This is the vault's most-cited cross-tradition moment in modern physics: the weapon of mass destruction interpreted through a Hindu scripture of cosmic theophany. The Gita's second life as the text that gave language to nuclear terror is one of the strangest and most documented examples of religious imagery structuring scientific self-understanding.
+
+### 4. Gandhi → King → Global Non-Violent Resistance
+**Mohandas Gandhi** called the Gita his "eternal mother" and "spiritual dictionary." His reading was allegorical (following a long medieval commentary tradition): the Kurukṣetra battle is the inner moral struggle; Arjuna's crisis is every person's crisis of conscience; Krishna's teaching of *karma yoga* (action without attachment to fruits) is the foundation of non-violent *satyagraha* ("truth-force").
+
+Gandhi's Gita-derived doctrine of *ahimsa* (non-violence) as a positive force of moral courage — not passive submission — became the operational philosophy of the Indian independence movement. Gandhi's *Anasaktiyoga* (1929) is his Gita commentary laying out this reading.
+
+**Martin Luther King Jr.** met Gandhi's disciples (including the Reverend James Lawson, who had studied Gandhi's methods in India) and adopted the Gita-Gandhi *ahimsa* framework as the theological basis of the American Civil Rights Movement's non-violent resistance strategy. King explicitly acknowledged Gandhi's influence; Gandhi's influence was explicitly Gita-derived.
+
+**Chain**: Gita (~-200 to +200 CE) → Gandhi's *ahimsa* doctrine (1906-1948) → American Civil Rights non-violent resistance (1955-1968) → global non-violent resistance movements (South Africa, Eastern Europe, Arab Spring). The Gita's karma-yoga chapter is a traceable ancestor of 20th-century political non-violence.
+
+### 5. Hare Krishna Movement (ISKCON) and Western Counterculture
+**A.C. Bhaktivedanta Swami Prabhupada** arrived in New York in 1965 with one suitcase and a box of Gita translations. His *Bhagavad-gita As It Is* (first complete edition 1972, preceded by an abridged 1968 edition) became the most widely distributed Gita translation in history, with millions of copies distributed by ISKCON members in airports, train stations, and on street corners worldwide. The Hare Krishna movement transformed the Gita from an Orientalist scholarly curiosity into a street-level text of the Western counterculture.
+
+The 1960s–70s reception context: the Gita arrived in Western counterculture simultaneously through the Beatles' engagement with Maharishi Mahesh Yogi (Transcendental Meditation, derived from Vedanta/Gita tradition), Prabhupada's ISKCON distribution of *Bhagavad-gita As It Is*, and Aldous Huxley's *The Perennial Philosophy* (1945) which had already introduced Gita passages to educated Western readers as evidence of the universal mystical core.
+
+### Edge Connections
+
+| Target | Relation type | Notes |
+|---|---|---|
+| [[krishna]] | deity-source | Krishna is the Gita's revealer and cosmic protagonist; the Gita is the primary textual foundation of mature Krishna theology |
+| [[krishna-deity-vaishnava]] | deity-source | Vaishnava devotional Krishna; the Gita is the prasthāna-traya text for all Vedānta including Vaishnavism |
+| [[vishnu]] | deity-source | Krishna identifies as Vishnu's avatāra in Gita 10:21; the avatāra doctrine receives its textual foundation here |
+| [[shankara]] | commentary-basis | Śaṅkara's *Gītā Bhāṣya* (~8th c.) is the foundational Advaita Vedānta commentary; defines the Gita for centuries |
+| [[ramanuja]] | commentary-basis | Rāmānuja's *Gītā Bhāṣya* (11th–12th c.) is the foundational Viśiṣṭādvaita commentary |
+| [[ram-mohan-roy]] | direct-influence | Brahmo Samaj reformist reading; shaped early Western reception via colonial Bengal |
+| [[swami-vivekananda]] | direct-influence | Chicago Parliament 1893 presentations drew heavily on Gita karma-yoga; Vivekananda made the Gita the operational text of modern global Hinduism |
+| [[sri-aurobindo]] | direct-influence | *Essays on the Gita* (1922-28); Integral Yoga founded on Gita synthesis of karma/jñāna/bhakti paths |
+| [[carl-gustav-jung]] | scholarly-parallel | Jung's encounter with Indian philosophy (via Richard Wilhelm and Heinrich Zimmer); the Gita's concept of the *ātman* as the transpersonal Self is structurally parallel to Jung's Self archetype |
+| [[tradition-vedic-hinduism]] | root-tradition | The Gita's karma and yajña vocabulary is Vedic; the text re-interprets Vedic ritual sacrifice as inner discipline |
+| [[tradition-bhakti-vaishnavism]] | foundational-text | The Gita's Chapter 12 ("Yoga of Devotion") is the textual root of all subsequent bhakti theology |
+| [[tradition-advaita-vedanta]] | foundational-text | Śaṅkara's Gita commentary is one of the three prasthāna-traya texts; the Gita is constitutive of Advaita |
+| [[phase-2-017-mahabharata-ramayana-oral-layers]] | embedded-in | The Gita is embedded in Mahābhārata Book 6, chapters 23-40 (BORI critical edition) |
+| [[phase-5-005-shankara-brahma-sutra-bhasya]] | commentary-on | Śaṅkara's Gita Bhāṣya is the Advaita reading that defined the Gita for subsequent Vedānta |
+| [[phase-5-016-ramanuja-sribhasya]] | commentary-on | Rāmānuja's Gita Bhāṣya defines the Viśiṣṭādvaita reading |
+| [[phase-5-022-madhva-brahma-sutra-bhasya]] | commentary-on | Madhva's Gita Bhāṣya defines the Dvaita reading |
+| [[phase-5-050-bhagavata-purana]] | direct-influence | The Bhāgavata Purāṇa amplifies Gita Krishna-theology; the *lila* narratives of Book 10 are the devotional payoff of the avatāra doctrine here established |
+| [[avatar-doctrine]] | theme-of | Gita 4:7-8 is the locus classicus of the avatāra doctrine in mature Hindu form |
+| [[bhakti-devotion]] | theme-of | Gita Ch. 12 is the textual root of all subsequent bhakti theology |
+| [[non-duality]] | theme-of | The Gita's ātman-Brahman identification is the Upaniṣadic non-dual doctrine in its most-read formulation |
+| [[divine-immanence]] | theme-of | "I am the Self seated in the heart of all creatures" (10:20) — the divine as inner reality |
 
 ## Disputes
 - **Date.** Standard range -200 BCE to +200 CE; some scholars push earlier or later within this window. The Gītā's relation to the Mahābhārata's compositional layers is part of the broader Mahābhārata dating problem.
