@@ -8450,3 +8450,332 @@ SCRIPTURE_TEXTS['confucius-analects'] = {
     },
   ]
 };
+
+// ── Batch 18 ──────────────────────────────────────────────────────────────
+
+SCRIPTURE_TEXTS['4-ezra'] = {
+  title: '4 Ezra (2 Esdras 3–14)',
+  shortTitle: '4 Ezra',
+  tradition: 'Jewish-Christian Apocrypha',
+  date: 'c. 100 CE',
+  intro: 'Written in the wake of Rome\'s destruction of the Second Temple (70 CE), 4 Ezra is the most philosophically rigorous apocalypse in the Jewish-Christian tradition. The scribe Ezra demands answers: why are the righteous destroyed while the wicked prosper? Why are so few saved if God created all? The angel Uriel responds not with answers but with counter-questions: can you weigh fire? Measure wind? Call back the day that is past? The confrontation between Ezra\'s grief and transcendent mystery drives the text toward its culminating vision — a mourning woman transformed into the heavenly Jerusalem. Preserved in full only in Latin as 2 Esdras 3–14 (originally Hebrew or Aramaic), it is canonical in the Ethiopian Orthodox and Slavonic traditions.',
+  crossTradition: [
+    { textId: 'daniel-7', label: 'Daniel 7 — the two great Jewish apocalypses', note: '4 Ezra and Daniel 7 use symbolic imagery to assert the same conviction: history\'s apparent chaos is under divine governance. Both resolve catastrophe (foreign dominion, Temple destruction) by revealing a transcendent order that will supersede it. The mourning-woman-as-city in 4 Ezra and the Son of Man on clouds in Daniel 7 are part of the same symbolic vocabulary of Second Temple apocalypticism, almost certainly written in mutual awareness.' },
+    { textId: 'julian-of-norwich', label: 'Julian of Norwich — "all shall be well" vs. few saved', note: '4 Ezra 8:1 states plainly that the world to come was made for only a few. Julian receives the opposite revelation: "All shall be well." She knows the Church teaches damnation for some; she cannot reconcile it with her showing. These two texts are the poles of Christian theodicy — predestinarian tradition vs. universal love — a tension unresolved in systematic theology to this day.' },
+    { textId: 'job-38', label: 'Job 38 — divine counter-questions as theodicy\'s answer', note: 'God\'s answer to Job\'s demand for justice is a series of cosmological counter-questions: "Where were you when I laid the foundations of the earth?" Uriel\'s answer to Ezra\'s demand is the same move: "Go, weigh for me the weight of fire." Both texts use the immeasurability of natural phenomena as evidence that divine governance transcends human judgment. Job and Ezra are brought to silence not by an answer but by recognition of epistemic limits.' },
+  ],
+  translations: [
+    { lang: 'en', label: 'NRSV Apocrypha' },
+    { lang: 'en-kjv', label: 'KJV Apocrypha (1611)' },
+  ],
+  sections: [
+    {
+      heading: 'The Angel\'s Riddles — When Theodicy Reaches Its Limit (4:1–11)',
+      verses: [
+        {
+          ref: '4:1–5',
+          text: 'Then the angel that had been sent to me, whose name was Uriel, answered and said to me, "Your understanding has utterly failed regarding this world, and do you think you can comprehend the way of the Most High?" Then I said, "Yes, my lord." And he said to me, "I have been sent to show you three ways, and to put three problems before you. If you can solve one of them for me, then I will show you the way you desire to see, and will teach you why the heart is evil."',
+          entities: [
+            { word: 'Your understanding has utterly failed regarding this world', node: 'apophatic-theology', type: 'concept',
+              note: 'Before Ezra can receive any answer, the angel challenges him with the fundamental epistemic problem: do you understand even this world? The human mind cannot comprehend the created order — how then can it judge whether divine governance is just? This is not evasion but the Joban move: the divine counter-question that reframes the human question. Job demands justice; God asks "Where were you when I laid the foundation of the earth?" Ezra demands explanation; Uriel asks "Can you weigh fire?" The apophatic tradition begins precisely here: knowing the limits of knowing.',
+              parallels: [
+                { label: 'Cloud of Unknowing — knowing through not-knowing', textId: 'cloud-of-unknowing', note: '4 Ezra\'s confrontation with the limits of intellectual knowledge ("your understanding has utterly failed") prepares the ground for the medieval mystical tradition that made not-knowing its method. The Cloud: "By love may He be gotten and holden; but by thought, never." Both texts begin from the same recognition — intellect cannot reach ultimate reality — and then diverge: 4 Ezra responds with apocalyptic vision (what intellect cannot grasp, revelation supplies), the Cloud with contemplative practice (love touches what thought cannot).' },
+              ]
+            },
+          ]
+        },
+        {
+          ref: '4:5–11',
+          text: 'He said to me, "Go, weigh for me the weight of fire, or measure for me a measure of wind, or call back for me the day that is past." I answered and said, "No one born has ever done these things." He said to me, "If I had asked you how many dwellings are in the heart of the sea, or how many springs are above the firmament — perhaps you would have said, \'I never went down into the deep.\' But now I have asked you only about fire and wind and the day that you have experienced, and you have given me no answer about them! You cannot understand the things with which you have grown up; how then can your mind comprehend the way of the Most High?"',
+          entities: [
+            { word: 'weigh for me the weight of fire, or measure for me a measure of wind', node: 'divine-mystery', type: 'concept',
+              note: 'Uriel\'s counter-questions are epistemological, not merely rhetorical. Fire and wind are things humans live with constantly, yet cannot measure or weigh. The familiar is as mysterious as the transcendent. This demolishes the assumption that divine ways should be transparent while natural ways remain opaque. Mystery is not localized in the supernatural — it pervades the natural. If you cannot understand fire, which you cook with, how can you judge divine governance?',
+              parallels: [
+                { label: 'Nasadiya Sukta — "Who really knows? Who can declare it?"', textId: 'nasadiya-sukta', note: 'The Rig Veda\'s creation hymn ends with radical epistemic humility: "Who really knows? Who will here proclaim it? The gods came afterwards, with the creation of this universe. Who then knows whence it has arisen?" Both 4 Ezra and the Nasadiya Sukta use the question form to install unknowing as the appropriate relationship to ultimate origins. Neither closes the question; both leave it open as the honest intellectual position.' },
+              ]
+            },
+          ]
+        },
+      ]
+    },
+    {
+      heading: 'The Many and the Few (7:45–48; 8:1)',
+      verses: [
+        {
+          ref: '7:45–48',
+          text: 'I answered and said, "O earth, what have you brought forth, if the mind is made out of the dust! For it would have been better if the dust itself had not been born, so that the mind might not have been made from it. But now the mind grows with us, and therefore we are tormented, because we perish and we know it. Let the human race lament, but let the beasts of the field be glad; for they do not look for a judgment, nor do they know of any torment or salvation promised to them after death."',
+          entities: [
+            { word: 'it would have been better if the dust itself had not been born', node: 'theodicy', type: 'concept',
+              note: 'This is the darkest verse in 4 Ezra: grief at mass damnation leads Ezra to wish human consciousness had never been created. The animals are better off because they do not anticipate judgment. This is the anti-Psalm-8 moment — where Psalm 8 celebrates human consciousness as glory, 4 Ezra discovers it as torment. The same capacity that makes humans capable of knowing God is also what makes condemnation possible. This is the existential weight of the doctrine of judgment.',
+              parallels: [
+                { label: 'Ecclesiastes 1 — "in much wisdom is much grief"', textId: 'ecclesiastes-1', note: 'Ecclesiastes also reaches the conclusion that human consciousness may be burden rather than gift: "He that increases knowledge increases sorrow" (1:18). The Preacher observes that unlike animals, humans know they will die (3:18-21) and this consciousness makes life painful. 4 Ezra takes the Ecclesiastes insight further: not just that consciousness brings grief in life, but that the consciousness enabling moral judgment also means the possibility of eternal condemnation.' },
+              ]
+            },
+          ]
+        },
+        {
+          ref: '8:1',
+          text: 'He answered me and said, "The Most High made this world for the sake of many, but the world to come for the sake of only a few. But I tell you a parable, Ezra: When you ask the earth, it will tell you that it provides a large amount of clay from which earthenware is made, but only a little dust from which gold comes. So also is the course of the present world."',
+          entities: [
+            { word: 'The Most High made this world for the sake of many, but the world to come for the sake of only a few', node: 'salvation', type: 'concept',
+              note: 'One of the most provocative statements in Second Temple literature: the world to come was made for only a few. The clay-and-gold parable frames this not as failure but as intentional structure — analogous to the ratio of gold to clay in the earth. This doctrine stands in tension with traditions emphasizing God\'s desire that all be saved. 4 Ezra represents the predestinarian strand that later appears in Augustine and Calvin.',
+              parallels: [
+                { label: 'Matthew 7:14 — "narrow is the gate; few there be that find it"', textId: 'matthew-sermon-mount', note: 'Matthew 7:14 is the New Testament\'s closest parallel to 4 Ezra 8:1 — both state plainly that few will reach the life of the age to come. The Sermon on the Mount\'s narrow-gate teaching was almost certainly written in conversation with the same stream of Second Temple thought that produced 4 Ezra. Jesus and the author of 4 Ezra are responding to the same question and giving the same uncomfortable answer.' },
+                { label: 'Julian of Norwich — "All shall be well" contra the few saved', textId: 'julian-of-norwich', note: 'Julian receives the revelation "all shall be well" and simultaneously knows the Church teaches that some are damned. She refuses to resolve the contradiction. 4 Ezra 8:1 is the pole Julian is struggling against: the explicit doctrine of few saved. The two texts are the extremes of a tension Christian theology has never resolved.' },
+              ]
+            },
+          ]
+        },
+      ]
+    },
+    {
+      heading: 'The Heavenly City — Vision Beyond Grief (10:25–28)',
+      verses: [
+        {
+          ref: '10:25–28',
+          text: 'While I was talking to her, behold, her face suddenly shone exceedingly, and her countenance flashed like lightning, so that I was too frightened to approach her. While I was wondering what this meant, behold, she suddenly uttered a loud and fearful cry, so that the earth shook at the sound. And I looked, and behold, the woman was no longer visible to me, but there was an established city, and a place of huge foundations showed itself.',
+          entities: [
+            { word: 'the woman was no longer visible to me, but there was an established city', node: 'apocalyptic-vision', type: 'concept',
+              note: 'The mourning woman — Zion, the destroyed earthly city — is suddenly transformed into the heavenly Jerusalem. This is 4 Ezra\'s interpretive hinge: the catastrophe (Rome\'s destruction of Jerusalem in 70 CE) becomes the occasion for a revelation of the indestructible heavenly archetype that the earthly city was always pointing toward. The angel interprets: "This woman whom you saw is Zion." Grief at the earthly loss opens a vision of the transcendent original.',
+              parallels: [
+                { label: 'Revelation 12 — the woman clothed with the sun; the heavenly city', textId: 'revelation-12', note: 'Revelation 12 uses almost exactly the same symbolic vocabulary as 4 Ezra 10: a woman in cosmic crisis representing the heavenly community under assault. Both texts were written in the aftermath of the Roman-Jewish war of 66–73 CE and both respond by revealing the heavenly archetype behind earthly destruction. John of Patmos and the author of 4 Ezra are contemporaries drawing on shared apocalyptic symbolic traditions.' },
+                { label: 'Exodus 3 — the sacred space emptied of human construction', textId: 'exodus-3', note: 'When Moses encounters the burning bush, the first command is "Remove your sandals — the place on which you stand is holy ground." The sandals — the human-constructed interface — must be removed. In 4 Ezra, the field must be empty of buildings for the heavenly city to appear. Both texts describe the same logic: divine encounter requires the removal of human constructions. The sacred space is defined by what is absent.' },
+              ]
+            },
+          ]
+        },
+      ]
+    },
+  ]
+};
+
+SCRIPTURE_TEXTS['cloud-of-unknowing'] = {
+  title: 'The Cloud of Unknowing',
+  shortTitle: 'Cloud of Unknowing',
+  tradition: 'English Christian Mysticism',
+  date: 'c. 1375 CE',
+  intro: 'Written by an anonymous English author in the late 14th century — the same generation as Chaucer and Julian of Norwich — The Cloud of Unknowing proposes a path to God through love rather than intellect. Against the tradition of intellectual ascent (scholasticism, Aquinas), it instructs the contemplative to place between herself and everything she knows a "cloud of forgetting," then "beat upon that thick cloud of unknowing with a sharp dart of longing love." God cannot be known by thought; only love can pierce what reason cannot traverse. The author draws on Pseudo-Dionysius\'s apophatic theology but translates it into vernacular practical instruction for an educated solitary.',
+  crossTradition: [
+    { textId: 'pseudo-dionysius-mystical-theology', label: 'Pseudo-Dionysius — the divine darkness that grounds the Cloud', note: 'The Cloud is the most direct English heir of Pseudo-Dionysius\'s Mystical Theology. The author explicitly cites "Denis" and borrows the central image: Moses enters divine darkness on Sinai; the contemplative enters the cloud of unknowing. Both teach that God transcends all human concepts and images, and that the highest theological knowledge is a form of not-knowing. But where Pseudo-Dionysius writes for theologians, the Cloud writes for a solitary contemplative — democratizing the apophatic path.' },
+    { textId: 'john-of-the-cross-dark-night', label: 'John of the Cross — dark night and cloud as the same threshold', note: 'John of the Cross\'s "dark night of the soul" and the Cloud\'s "cloud of unknowing" describe the same threshold from different angles. Both involve stripping away consolations, images, and concepts. Both insist this darkness is not absence but presence: God is in the dark night, God is in the cloud, precisely because God cannot be contained in any illuminated concept. The English author wrote two centuries before John, but they are drawing from the same apophatic spring.' },
+    { textId: 'brihadaranyaka-neti-neti', label: 'Neti neti — the Hindu apophatic parallel', note: 'Yajnavalkya\'s "not this, not this" performs the same move as the Cloud\'s cloud of unknowing: ultimate reality cannot be grasped by any positive description, only approached through negation. The Upanishad negates conceptual predications; the Cloud negates even the soul\'s self-concept ("a naked blind feeling of your own being"). Both converge on the same apophatic destination: all representations stripped until naked self meets naked absolute.' },
+  ],
+  translations: [
+    { lang: 'en-modern', label: 'Carmen Acevedo Butcher (2009)' },
+    { lang: 'en-middle', label: 'Original Middle English (c. 1375)' },
+  ],
+  sections: [
+    {
+      heading: 'The Method of Love — Lift Your Heart (Chapter 3)',
+      verses: [
+        {
+          ref: 'Ch. 3',
+          text: 'Lift up your heart to God with a humble impulse of love, and have Himself as your aim, not any of His goods. Take care that you refuse to think of anything but Him, so that nothing shall work in your mind or in your will but only Himself. Do what in you lies to forget all the creatures that God ever made and their works, so that your thought and your longing be not directed or stretched to any of them, neither in general nor in particular. Let them be, and take no heed of them.',
+          entities: [
+            { word: 'Lift up your heart to God with a humble impulse of love', node: 'contemplative-prayer', type: 'concept',
+              note: 'The Cloud\'s opening method is disarmingly simple: lift your heart. Not intellect, not imagination, not theological knowledge — the heart. The word "impulse" (Middle English: stering) suggests something non-rational, an arising rather than a construction. The intellect\'s proper domain is the created world, where it grasps things by their natures. God transcends all natures and therefore transcends the intellect\'s grasp. Love, which reaches toward the beloved without needing to comprehend them, is the more appropriate mode of encounter.',
+              parallels: [
+                { label: 'Meister Eckhart — the will emptied of all images', textId: 'meister-eckhart-godhead', note: 'Eckhart\'s detachment (Abgeschiedenheit) and the Cloud\'s "humble impulse of love" approach the same contemplative state from different angles. Eckhart empties the will of all particular desires, leaving it open to God alone. The Cloud empties the heart of all created things and directs it to God alone. Both are working with the same Neoplatonic-Christian framework: the soul must be emptied of everything created before it can be filled with the uncreated.' },
+              ]
+            },
+          ]
+        },
+      ]
+    },
+    {
+      heading: 'By Love May He Be Gotten (Chapter 4)',
+      verses: [
+        {
+          ref: 'Ch. 4',
+          text: 'For of all other creatures and their works — yes, and of the works of God Himself — may a man through grace have full knowing, and well can he think of them; but of God Himself can no man think. And therefore I would leave all that thing that I can think, and choose to my love that thing that I cannot think. For why; He may well be loved, but not thought. By love may He be gotten and holden; but by thought, never.',
+          entities: [
+            { word: 'By love may He be gotten and holden; but by thought, never', node: 'apophatic-theology', type: 'concept',
+              note: 'This is the Cloud\'s theological crux: the complete inadequacy of thought for divine encounter, and the complete adequacy of love. This is not irrationalism but a claim about the structure of knowing: thought grasps objects by reducing them to concepts, categories, definitions. God, who has no genus, no species, no essence that can be described, cannot be grasped this way. Love, which reaches toward the beloved without needing to comprehend them, can reach God. This is the practical application of Pseudo-Dionysius: if God transcends all being, love is more appropriate than thought.',
+              parallels: [
+                { label: 'Bhagavad Gita — devotion over knowledge (bhakti vs. jnana)', textId: 'bhagavad-gita-4', note: 'The Bhagavad Gita\'s tension between the paths of knowledge (jnana yoga) and devotion (bhakti yoga) maps onto the Cloud\'s choice of love over thought. Krishna teaches that devotion — the direct offering of the heart to the divine — is the most excellent way for those who cannot sustain pure philosophical abstraction. The Cloud would agree: "By love may He be gotten and holden; but by thought, never." Both place the direct heart-movement over the indirect intellectual route.' },
+                { label: 'Ibn Arabi — the heart as the site of divine self-disclosure', textId: 'ibn-arabi-fusus', note: 'Ibn Arabi\'s Fusus al-Hikam: the heart (qalb) is the only vessel capable of containing divine self-disclosure, because unlike the intellect it can turn in every direction and is not fixed on any one form. The Cloud\'s "humble impulse of love" directed at God beyond all forms is the Christian equivalent of Ibn Arabi\'s theophany-receptive heart. Both traditions locate the highest divine encounter in the heart\'s unlimited openness rather than the intellect\'s categorical grasp.' },
+              ]
+            },
+          ]
+        },
+      ]
+    },
+    {
+      heading: 'The Sharp Dart of Longing Love (Chapter 6)',
+      verses: [
+        {
+          ref: 'Ch. 6',
+          text: 'And therefore, although it be good sometime to think of the kindness and the worthiness of God in special, and although it be a light and a part of contemplation, nevertheless in this work it shall be cast down and covered with a cloud of forgetting. And thou shalt step above it stoutly, but listily, with a devout and a pleasing stirring of love, and try to pierce that darkness above thee. And smite upon that thick cloud of unknowing with a sharp dart of longing love; and go not thence for anything that befalleth.',
+          entities: [
+            { word: 'smite upon that thick cloud of unknowing with a sharp dart of longing love', node: 'mystical-union', type: 'concept',
+              note: 'The "sharp dart of longing love" is the Cloud\'s most distinctive image — perhaps the most kinetically vivid in all of English mysticism. The contemplative does not climb to God by intellectual rungs but shoots a dart: a single point of concentrated desire, not a systematic ascent. The cloud cannot be crossed by analysis but can be pierced by love, just as an arrow cannot be deflected by darkness. This image encapsulates the entire apophatic mystical tradition in one kinetic gesture: the singular act of love piercing what reason cannot traverse.',
+              parallels: [
+                { label: 'Rumi — the reed\'s longing for the reed-bed', textId: 'rumi-masnavi', note: 'Rumi\'s Masnavi opens with the reed flute crying out of longing for its origin. The Cloud\'s "sharp dart of longing love" and Rumi\'s reed-cry are both images of the soul\'s concentrated desire driving it toward its divine source. Both locate the engine of spiritual movement in longing (Arabic: shawq; Middle English: "longing love") rather than in knowledge or virtue. The Sufi mystic and the anonymous English contemplative are pointing at the same thing: the aching desire that is itself the path.' },
+                { label: 'John of the Cross — the wound of love that opens the dark night', textId: 'john-of-the-cross-dark-night', note: 'John of the Cross describes the soul\'s movement toward God as a wound: the beloved wounds the soul with love, and this wound initiates the dark night\'s transformation. The Cloud\'s "sharp dart of longing love" and John\'s "wound of love" are mirror images: in the Cloud, the soul shoots the dart toward God; in John, God wounds the soul first. Both describe the same apophatic breakthrough through concentrated desire that bypasses the intellect.' },
+              ]
+            },
+          ]
+        },
+      ]
+    },
+  ]
+};
+
+SCRIPTURE_TEXTS['gospel-of-mary'] = {
+  title: 'Gospel of Mary Magdalene',
+  shortTitle: 'Gospel of Mary',
+  tradition: 'Gnostic / Nag Hammadi',
+  date: 'c. 2nd–3rd century CE',
+  intro: 'The only known early Christian gospel attributed to a woman, the Gospel of Mary presents Mary Magdalene as the apostle who receives post-resurrection teaching directly from Jesus in visions — teaching she then transmits to the frightened male disciples. When Peter challenges whether a woman could receive superior teaching, Levi defends her: the Savior loved her more than the others. The text\'s cosmological section describes the soul\'s ascent through four cosmic powers, declaring its liberation: "What had seized me has been slain, and what had bound me has been struck down." Preserved in the Berlin Gnostic Codex (BG 8502, discovered 1896) and two Greek papyri, it was not part of the Nag Hammadi library proper but shares its theological world completely.',
+  crossTradition: [
+    { textId: 'gospel-of-thomas', label: 'Gospel of Thomas — the inner Kingdom across Gnostic texts', note: 'Both the Gospel of Thomas and the Gospel of Mary locate the Kingdom as an interior reality. Thomas: "the Kingdom of the Father is spread out upon the earth, and people do not see it." Mary\'s Jesus: "where the mind is, there is the treasure." Both challenge external religious authority by relocating the site of the sacred to the interior — and both use Mary Magdalene in their narrative politics, though in opposite ways (Thomas\'s logion 114; Mary\'s elevation as primary revealer).' },
+    { textId: 'thunder-perfect-mind', label: 'Thunder: Perfect Mind — two strategies for feminine divine authority', note: 'Thunder is a revelatory monologue in the voice of a divine feminine figure ("I am the whore and the holy one"). The Gospel of Mary is a narrative in which a historical woman mediates divine teaching to the male disciples. Both challenge the masculinist hierarchy of proto-orthodox Christianity, but through different strategies: mythological inversion (Thunder) and historical claim (Mary). Together they represent Gnostic Christianity\'s two primary modes of asserting feminine spiritual authority.' },
+    { textId: 'poimandres', label: 'Poimandres — Nous as the divine faculty in both texts', note: 'Mary asks Jesus whether vision comes through soul or spirit; he answers: through the mind (nous), which mediates between them. In Poimandres, Nous is both the divine principle that creates and the faculty within humans by which they know God. The Gospel of Mary\'s technical use of nous places it in the Hermetic-Neoplatonic tradition: prophetic vision is possible because the divine mind is present within the human, and Mary has cultivated this faculty.' },
+  ],
+  translations: [
+    { lang: 'en', label: 'Karen King (2003)' },
+    { lang: 'en-pasquier', label: 'Anne Pasquier (1983)' },
+  ],
+  sections: [
+    {
+      heading: 'Mary\'s Vision — The Nature of Prophetic Sight (BG 10:1–16)',
+      verses: [
+        {
+          ref: 'BG 10:1–8',
+          text: 'Peter said to Mary, "Sister, we know that the Savior loved you more than the rest of the women. Tell us the words of the Savior which you remember — which you know but we do not, nor have we heard them." Mary answered and said, "What is hidden from you I will proclaim to you." And she began to speak to them these words: "I saw the Lord in a vision and I said to Him, \'Lord, I saw you today in a vision.\' He answered and said to me, \'Blessed are you, since you did not waver at the sight of me.\'"',
+          entities: [
+            { word: 'I saw the Lord in a vision', node: 'prophetic-vision', type: 'concept',
+              note: 'Mary\'s authority rests on direct visionary experience — not on physical presence at a historical event but on interior vision. When she tells the disciples "what is hidden from you I will proclaim to you," she positions herself as a revealer in the same role that Paul claims in Galatians 1:12 ("I received it through a revelation of Jesus Christ"). The Gospel of Mary makes a claim about the source of apostolic authority: visionary experience, not institutional appointment, qualifies one to transmit teaching.',
+              parallels: [
+                { label: 'Julian of Norwich — "I saw" as the basis of theological authority', textId: 'julian-of-norwich', note: 'Julian\'s Revelations begin and return constantly to "I saw" — she saw the crucifix, the Trinity, that "all shall be well." Both Julian and Mary Magdalene are women whose theological authority rests entirely on visionary experience, not institutional ordination. Both faced male gatekeepers who questioned whether women could be valid recipients of revelation. Julian responds by writing; Mary by speaking; both insist on the "showing" as the credential that overrides gender convention.' },
+                { label: 'Ezekiel 1 — vision as the prophetic commission', textId: 'ezekiel-1', note: 'Both Ezekiel and Mary receive prophetic authority from a direct vision — Ezekiel of the divine throne-chariot, Mary of the risen Christ. In both cases, the vision is the credential: the interior experience of the divine authorizes the proclamation that follows. Both the merkabah tradition and the Gnostic tradition locate authority in the interior encounter rather than the external institution.' },
+              ]
+            },
+          ]
+        },
+        {
+          ref: 'BG 10:9–16',
+          text: '"He answered and said to me, \'Blessed are you, since you did not waver at the sight of me. For where the mind is, there is the treasure.\' I said to Him, \'Lord, how does he who sees the vision see it — through the soul or through the spirit?\' The Savior answered and said, \'He does not see through the soul nor through the spirit, but the mind, which is between the two — that is what sees the vision.\'"',
+          entities: [
+            { word: 'where the mind is, there is the treasure', node: 'inner-kingdom', type: 'concept',
+              note: 'Mary\'s equivalent of "the Kingdom of God is within you" (Luke 17:21): the treasure is interior, located specifically in the nous (mind) — the faculty that sees visions. Mary\'s technical question — does vision come through soul or spirit? — receives a precise answer: neither, but mind (nous), the Hermetic-Neoplatonic intellective faculty that mediates between them. The Gospel of Mary is deliberately locating prophetic vision within the philosophical tradition that Poimandres and the Corpus Hermeticum inhabit.',
+              parallels: [
+                { label: 'Poimandres — Nous as the divine faculty, the father within', textId: 'poimandres', note: 'In Poimandres, the Nous (Mind) is both the divine principle and the faculty within humans by which they can know God: "the Nous, the Father of all, who is Life and Light, gave birth to a Man like himself." The Gospel of Mary\'s locating of prophetic vision in the nous places it in the same tradition: it is the divine mind within the human that sees the divine. Mary\'s visionary capacity is not magical but cosmological.' },
+              ]
+            },
+          ]
+        },
+      ]
+    },
+    {
+      heading: 'The Soul\'s Liberation — Ascending Through the Powers (BG 15–17)',
+      verses: [
+        {
+          ref: 'BG 15:1–16:4',
+          text: '"When the soul had overcome the third power, it went upward and saw the fourth power, which took seven forms. The first form is darkness; the second desire; the third ignorance; the fourth is the excitement of death; the fifth is the kingdom of the flesh; the sixth is the foolish wisdom of flesh; the seventh is the wrathful wisdom. They asked the soul, \'Where are you coming from, you human-slayer, and where are you going, you space-conqueror?\' The soul answered and said, \'What had seized me has been slain, and what had bound me has been struck down, and my desire has been ended, and ignorance has died.\'"',
+          entities: [
+            { word: 'What had seized me has been slain, and what had bound me has been struck down', node: 'liberation', type: 'concept',
+              note: 'The soul\'s declaration to the fourth power is one of the great liberation statements in Gnostic literature. The past tense is crucial: not "I will be freed" but "what bound me has already been struck down." Liberation is retrospective — the soul on its ascent discovers that the things it thought were binding it have already been undone. This is the Gnostic equivalent of the Buddhist recognition that the self needing liberation was always already empty: the binding was real but the bound self was not.',
+              parallels: [
+                { label: 'Heart Sutra — "no hindrance and therefore no fear"', textId: 'heart-sutra', note: 'The Heart Sutra: the bodhisattva who penetrates emptiness dwells "with no hindrance in the mind. No hindrance, and therefore no fear." The Gospel of Mary\'s soul: "What had seized me has been slain." Both describe liberation as the recognition that what seemed to bind was always already powerless once seen clearly. The Gnostic soul and the Mahayana bodhisattva discover that bondage was a misrecognition, and that the discovery itself constitutes freedom.' },
+                { label: 'Bardo Thodol — the soul navigating powers in the intermediate state', textId: 'bardo-thodol', note: 'The Tibetan Book of the Dead describes consciousness navigating the bardo through encounters with wrathful and peaceful deities — the same structure as Mary\'s soul ascending through the seven powers. Both texts are maps for liberation-state navigation, telling the soul what it will encounter and how to respond correctly. The Gospel of Mary\'s soul answers the powers\' challenge with a declaration of liberation; the Bardo practitioner recognizes the deities as projections of their own mind. Different maps, same territory.' },
+              ]
+            },
+          ]
+        },
+        {
+          ref: 'BG 17:1–22:3',
+          text: 'But Andrew answered and said, "Say what you wish to say about what she has said. I at least do not believe that the Savior said this. For certainly these teachings are strange ideas." Peter answered and spoke: "Did He really speak with a woman without our knowledge? Are we to turn about and all listen to her? Did He prefer her to us?" Then Mary wept and said to Peter, "My brother Peter, what do you think? Do you think that I am lying about the Savior?" Levi answered and said to Peter, "Peter, you have always been hot-tempered. Now I see you contending against the woman like the adversaries. But if the Savior made her worthy, who are you to reject her? Surely the Savior knows her very well. That is why He loved her more than us."',
+          entities: [
+            { word: 'Did He prefer her to us?', node: 'spiritual-authority', type: 'concept',
+              note: 'Peter\'s challenge is the text\'s ecclesiological flashpoint. Behind it lies the 2nd-century conflict between communities tracing authority to Peter (proto-orthodox Christianity, eventually Rome) and communities tracing authority to Mary Magdalene and other witnesses. Levi\'s defense articulates the principle that visionary experience and spiritual merit — not gender or institutional position — determine authority. "If the Savior made her worthy, who are you to reject her?" This 2nd-century argument about the basis of ecclesiastical authority has not been settled.',
+              parallels: [
+                { label: 'Thunder: Perfect Mind — the rejected-and-chosen paradox', textId: 'thunder-perfect-mind', note: 'Thunder\'s divine feminine voice: "I am the one who is dishonored and the great one." Mary is dishonored by Peter and honored by the Savior. Both texts work the same inversion: the one dismissed by the male institutional structure is the one the divine has chosen. The rejected stone becomes the cornerstone; the rejected woman becomes the apostle to the apostles.' },
+              ]
+            },
+          ]
+        },
+      ]
+    },
+  ]
+};
+
+SCRIPTURE_TEXTS['yasna-44'] = {
+  title: 'Yasna 44 — The Questions of Zarathustra',
+  shortTitle: 'Yasna 44',
+  tradition: 'Zoroastrian — Gathas of Zarathustra',
+  date: 'c. 1500–1000 BCE (oral); written c. 6th century BCE',
+  intro: 'Yasna 44 is the most famous of Zarathustra\'s Gathas — the seventeen hymns in Old Avestan that form the oldest and most theologically dense layer of the Zoroastrian scriptures. Known as the "Questions Hymn," each stanza opens with the refrain "This I ask you, O Lord — answer me well" (Tat θβā peresā, ərəš mōi vaocā, Ahurā). Zarathustra interrogates Ahura Mazda on the origins of existence, the structure of the cosmos, the nature of righteousness (asha) and the lie (druj), and the path of the righteous human. The hymn is simultaneously cosmological (who made the planets? who put light in darkness?) and ethical (through which actions shall I drive the druj away from myself?). It represents one of the earliest sustained philosophical-theological interrogations of a personal creator God in world literature.',
+  crossTradition: [
+    { textId: 'yasna-30', label: 'Yasna 30 — the twin spirits and the cosmic choice', note: 'Yasna 30 presents the two primordial spirits (spenta mainyu / angra mainyu) and the cosmic choice between asha (truth/righteousness) and druj (the lie/disorder). Yasna 44 asks who created and sustains the cosmic order that Yasna 30 presupposes. Together they form the Zoroastrian cosmological-ethical system: there is a creator of order (Ahura Mazda), an opposing principle (Angra Mainyu), and the human is the pivot between them, with a choice that has cosmic consequences.' },
+    { textId: 'job-38', label: 'Job 38 — the creator interrogated and interrogating', note: 'Both Job 38 and Yasna 44 are structured around questions about the origins of cosmic order. But where Job 38 has God interrogating Job (do you know where the foundations of the earth are?), Yasna 44 has the prophet interrogating God (who put light in darkness? who made the sun\'s path?). The two texts represent the two poles of theistic questioning: divine interrogation of the human (Job) and human interrogation of the divine (Zarathustra). Both are sincere; neither is rhetorical dismissal.' },
+    { textId: 'nasadiya-sukta', label: 'Nasadiya Sukta — cosmological question as highest piety', note: 'The Nasadiya Sukta asks cosmological questions as meditation on what cannot be known: "Who really knows? Who can declare it?" Yasna 44 asks cosmological questions as devotion to the one who does know and who created. Both hymns use the interrogative mode, but with opposite theological presuppositions: the Rig Veda hymn maintains unknowing; Yasna 44 presupposes a personal creator who can answer. The form (question) is identical; the implied theology (unknowing vs. address to a knowing God) is the sharpest contrast in world scripture.' },
+  ],
+  translations: [
+    { lang: 'en', label: 'Insler (1975) — Monumenta Iranica' },
+    { lang: 'en-darmesteter', label: 'Darmesteter (1883) — Sacred Books of the East' },
+    { lang: 'avestan', label: 'Old Avestan (original)' },
+  ],
+  sections: [
+    {
+      heading: 'The Cosmological Questions — Who Made All This? (44:3–7)',
+      verses: [
+        {
+          ref: '44:3–5',
+          text: 'This I ask you, O Lord — answer me well: Who in the beginning was father and creator of Asha? Who made the path of the sun and stars? Who is it through whom the moon waxes and wanes? These things, O Wise One, and others I wish to know. This I ask you, O Lord — answer me well: Who established the earth below and the sky of clouds above so that it does not fall? Who the waters and the plants? Who harnessed the swift horses to wind and clouds? Who, O Wise One, is the creator of the good mind?',
+          entities: [
+            { word: 'Who in the beginning was father and creator of Asha?', node: 'cosmic-order', type: 'concept',
+              note: 'Asha (Old Avestan) means simultaneously truth, righteousness, right order, and the cosmic principle that sustains reality. To ask "who is the creator of Asha?" is to ask who is the source of moral order itself — a more radical question than "who created the world?" because it asks for the ground of the distinction between good and evil. This is the Zoroastrian equivalent of asking "who is the Good itself?" (Plato\'s Form of the Good) or "who is Truth itself?" (John 14:6). The question is cosmological and ethical simultaneously.',
+              parallels: [
+                { label: 'Genesis 1 — the creator who institutes cosmic order', textId: 'genesis-1', note: 'Genesis 1\'s creator separates light from darkness, waters from land — the act of creation is the act of instituting order (Hebrew: tov, "good"). Zarathustra asks who made the sun\'s path, the moon\'s phases, the sky\'s stability — the same cosmological order Genesis 1 attributes to Elohim. Both texts presuppose that cosmic order (asha / tov) had to be instituted by a personal agent, not merely "arise" from primordial chaos. Zoroastrian and Hebrew theologies of creation are structurally identical at this level.' },
+                { label: 'Plato Timaeus — the Demiurge who creates order from chaos', textId: 'plato-timaeus', note: 'Plato\'s Timaeus asks who instituted mathematical order in the cosmos — the Demiurge, looking at eternal Forms, impressed rational structure on chaotic matter. Zarathustra asks who made the paths of sun and stars, who harnessed wind and clouds. Both describe the same cosmological act: the imposition of rational, ordered, good structure on what would otherwise be chaotic. The Avestan asha and the Platonic kosmos are both names for this divinely-instituted rational order.' },
+              ]
+            },
+          ]
+        },
+        {
+          ref: '44:6–7',
+          text: 'This I ask you, O Lord — answer me well: Who fashioned honored Devotion together with Power? Who made the son devoted to honoring the father? This I ask you, O Lord — answer me well: What craftsman made light and darkness? What craftsman made both sleep and wakefulness? Who made morning, noon, and night, reminders to the understanding man of his task?',
+          entities: [
+            { word: 'What craftsman made light and darkness? What craftsman made both sleep and wakefulness?', node: 'divine-creator', type: 'concept',
+              note: 'The repeated "craftsman" (mąθrō — the one who fashions through sacred word/wisdom) frames Ahura Mazda as an artisan who works through craft and word, not arbitrary power. This is the same theological move as Genesis 1 (God speaks; light appears) and the Hermetic tradition (the divine craftsman/Demiurge). The pairing of opposites — light/darkness, sleep/wakefulness, morning/night — suggests Ahura Mazda created not just the goods (light, wakefulness) but the entire rhythmic structure of contrasts within which human life unfolds.',
+              parallels: [
+                { label: 'Isaiah 45 — "I form light and create darkness; I make peace and create evil"', textId: 'isaiah-45', note: 'Isaiah 45:7 is the Hebrew Bible\'s most provocative monotheistic claim: Yahweh is the creator of both light and darkness, peace and evil. Yasna 44 asks "What craftsman made light and darkness?" — not yet asserting a single answer. Isaiah has reached the conclusion that Zarathustra\'s question is driving toward: if there is one God, that God must be the source of both poles. But Zoroastrian theology rejects this, maintaining that Angra Mainyu (not Ahura Mazda) is the creator of darkness and evil. The two monotheisms diverge precisely here.' },
+              ]
+            },
+          ]
+        },
+      ]
+    },
+    {
+      heading: 'The Ethical Question — How Shall I Drive Away the Druj? (44:9–11; 14–16)',
+      verses: [
+        {
+          ref: '44:9–11',
+          text: 'This I ask you, O Lord — answer me well: Shall I be able to carry out the holy word fully and well? And shall Devotion grant fortune through Asha? This I ask you, O Lord — answer me well: Who is the righteous one who will protect me? Whom will you appoint as protector for me so that I may be on the side of your truth, not of deceit?',
+          entities: [
+            { word: 'Whom will you appoint as protector for me so that I may be on the side of your truth, not of deceit?', node: 'ethics', type: 'concept',
+              note: 'Zarathustra\'s ethical question reveals the Zoroastrian anthropology: the human being is always already oriented toward one side or the other — asha (truth/righteousness) or druj (the lie/deceit). The question is not whether one must choose but how to remain on the right side. This is structurally identical to Paul\'s "who will deliver me from this body of death?" (Romans 7:24) — the recognition that human will alone is insufficient, and that divine protection/grace is required. Both the Iranian prophet and the Pharisee apostle experience the same gap between moral knowledge and moral performance.',
+              parallels: [
+                { label: 'Romans 8 — "who shall separate us from the love of God?"', textId: 'romans-8', note: 'Zarathustra asks: "Who will be my protector so that I may remain on the side of truth?" Romans 8 answers (from within a different tradition): nothing in all creation can separate us from the love of God. The Spirit intercedes. Both presuppose that humans need divine protection to maintain righteous orientation; they differ on how confident one can be of receiving it — Zarathustra\'s desperate question vs. Paul\'s confident answer.' },
+                { label: 'Yasna 30 — the choice between the two spirits', textId: 'yasna-30', note: 'Yasna 30 presents the two spirits and declares that humans must choose ("between these two, choose aright, you mortals"). Yasna 44 reveals the existential anxiety behind that choice: Zarathustra himself feels the precariousness of remaining on the side of asha and begs for divine protection. The abstract cosmological dualism of Yasna 30 becomes the personal ethical struggle of Yasna 44. The prophet is not exempt from the universal human predicament he has just described.' },
+              ]
+            },
+          ]
+        },
+        {
+          ref: '44:14–16',
+          text: 'This I ask you, O Lord — answer me well: How shall I deliver the lie into the hands of truth? How is the lie to be banished to those where none of the blessed exists? This I ask you, O Lord — answer me well: Through which actions shall I drive the druj away from myself? Reveal this to me, O Wise One, through thy holy word.',
+          entities: [
+            { word: 'Through which actions shall I drive the druj away from myself?', node: 'spiritual-warfare', type: 'concept',
+              note: 'The druj (the Lie, deceit, chaos principle) is not an abstract concept in Zoroastrianism but an active cosmic force that can inhabit human beings and communities. Zarathustra\'s practical question — what actions protect against the druj? — is identical in structure to New Testament spiritual warfare language (Ephesians 6:10–17, "put on the whole armor of God") and Buddhist practice questions about guarding the mind against unwholesome states. All three traditions share the conviction that the human being is a contested site in a larger cosmic conflict, and that specific practices sustain right orientation.',
+              parallels: [
+                { label: 'Deuteronomy 6 — hear O Israel; love and guard the commandments', textId: 'deuteronomy-6', note: 'Deuteronomy 6\'s Shema is the answer to the question Yasna 44 is asking: how does one remain on the side of truth rather than the lie? Hear (shema); love with all your heart; bind these words on your hand, between your eyes, on your doorposts. The Shema is a comprehensive answer to Zarathustra\'s question: total orientation of the person toward the one God, with the commandments as the specific practices that sustain that orientation against the forces of disorder.' },
+              ]
+            },
+          ]
+        },
+      ]
+    },
+  ]
+};

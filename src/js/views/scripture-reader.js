@@ -58,9 +58,13 @@ window.ScriptureReader = (function () {
     'apocryphon-of-john': { religion:'Christianity', group:'Gnostic / Nag Hammadi', canon:'Non-canonical',       sort:20 },
     'gospel-of-philip':   { religion:'Christianity', group:'Gnostic / Nag Hammadi', canon:'Non-canonical',       sort:30 },
     'thunder-perfect-mind': { religion:'Christianity', group:'Gnostic / Nag Hammadi', canon:'Non-canonical',     sort:40 },
+    'gospel-of-mary':     { religion:'Christianity', group:'Gnostic / Nag Hammadi', canon:'Non-canonical',       sort:50 },
     // ── Christianity — Medieval Mysticism ───────────────────────────
     'julian-of-norwich':          { religion:'Christianity', group:'Medieval Mysticism',    canon:'Catholic Mysticism',              sort:10 },
     'john-of-the-cross-dark-night': { religion:'Christianity', group:'Medieval Mysticism',  canon:'Catholic Mysticism',              sort:20 },
+    'cloud-of-unknowing':         { religion:'Christianity', group:'Medieval Mysticism',    canon:'Catholic Mysticism',              sort:30 },
+    // ── Christianity — Deuterocanon (continued) ─────────────────────
+    '4-ezra':                     { religion:'Christianity', group:'Deuterocanon',           canon:'Ethiopian / Slavonic',            sort:30 },
     // ── Christianity — Ethiopian Canon (continued) ──────────────────
     'kebra-nagast':               { religion:'Christianity', group:'Ethiopian Canon',        canon:'Ethiopian Orthodox',              sort:25 },
     // ── Christianity — Deuterocanon (continued) ─────────────────────
@@ -118,6 +122,7 @@ window.ScriptureReader = (function () {
     'gilgamesh':          { religion:'Mesopotamian',  group:'Babylonian',            canon:'Babylonian',          sort:30 },
     // ── Other traditions ────────────────────────────────────────────
     'yasna-30':           { religion:'Zoroastrianism',group:'Gathas',                canon:'Avesta',              sort:10 },
+    'yasna-44':           { religion:'Zoroastrianism',group:'Gathas',                canon:'Avesta',              sort:20 },
     'popol-vuh':          { religion:'Mesoamerican',  group:"K'iche' Maya",          canon:"K'iche' Maya Canon",  sort:10 },
     'voluspa':            { religion:'Norse',         group:'Poetic Edda',           canon:'Eddic Poetry',        sort:10 },
     // ── Chinese Philosophy ──────────────────────────────────────────
