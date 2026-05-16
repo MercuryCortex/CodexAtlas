@@ -97,6 +97,26 @@ Together they structure the major transitions of a Zoroastrian life. All three i
 
 See also: [[ritual-zoroastrian-tower-of-silence]], [[ritual-yasna-fire-ceremony]], [[ritual-initiation-mystery]], [[ritual-rites-of-passage]], [[ritual-circumcision-covenant]], [[ritual-mezuzah-tefillin]], [[ritual-wudu-ritual-purity]], [[tradition-zoroastrianism]], [[tradition-judaism]], [[tradition-sikhism]], [[tradition-hinduism]], [[zarathustra]], [[ahura-mazda]].
 
+## Vault Connections
+
+**Cross-tradition parallel initiations:**
+- [[ritual-bar-mitzvah-coming-of-age]] — puberty rite parallel; adult religious responsibility threshold; sacred-garment parallel (tallit/tzitzit)
+- [[ritual-upanayana-sacred-thread]] — sacred garment parallel (yajnopavita thread = kusti cord); both worn permanently as covenant-body markers
+- [[ritual-confirmation-chrismation]] — Christian adult faith commitment parallel; reception of the Holy Spirit = conferral of adhikara
+- [[ritual-rites-of-passage]] — Van Gennep framework; navjote is the paradigmatic Zoroastrian lifecycle separation ritual
+
+**Companion Zoroastrian rituals:**
+- [[ritual-yasna-fire-ceremony]] — the priestly liturgy the navjote authorizes the initiate to participate in; Avestan kusti prayers connect the layperson to the yasna tradition
+- [[ritual-zoroastrian-tower-of-silence]] — the next major lifecycle ritual after navjote and marriage
+
+**Central deities:**
+- [[ahura-mazda]] — the Wise Lord; the navjote is a personal covenant with Ahura Mazda expressed through the sudreh and kusti
+- [[zarathustra]] — the prophet whose Good Religion the initiate formally joins
+
+**Traditions:**
+- [[tradition-zoroastrianism]] — primary tradition
+- [[tradition-persian-zoroastrian]] — Parsi community practice; strict endogamy controversy is a Parsi phenomenon
+
 ### Refs
 - "Boyce, Mary. *Zoroastrians: Their Religious Beliefs and Practices*. Routledge & Kegan Paul, 1979 — Tier-1"
 - "Hinnells, John R. *Zoroastrianism and the Parsis*. Ward Lock Educational, 1981 — Tier-1"

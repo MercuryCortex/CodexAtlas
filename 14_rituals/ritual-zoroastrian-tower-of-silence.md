@@ -97,6 +97,29 @@ The dakhma joins this list — a practical method of hygienic corpse disposal pr
 
 See also: [[ritual-tibetan-sky-burial]], [[ritual-navjote-zoroastrian-initiation]], [[ritual-yasna-fire-ceremony]], [[ritual-funeral-rites]], [[tradition-zoroastrianism]], [[tradition-tibetan-buddhism]], [[ahura-mazda]], [[anahita]], [[atar]], [[angra-mainyu-ahriman]], [[zarathustra]].
 
+## Vault Connections
+
+**Identical practice, opposite theology (MOST IMPORTANT):**
+- [[ritual-tibetan-sky-burial]] — jhator; the Buddhist dana-theology practice using the same physical technology; theologically reversed from the dakhma but structurally identical; MAJOR cross-tradition convergence
+
+**Death ritual framework:**
+- [[ritual-funeral-rites]] — cross-tradition funeral framework
+- [[ritual-navjote-zoroastrian-initiation]] — the first lifecycle ritual; dakhma is the final one
+
+**Central deities:**
+- [[ahura-mazda]] — the Wise Lord; the three sacred elements (fire, earth, water) are under his order; the dakhma protects them from nasu-pollution
+- [[anahita]] — goddess of water; the sacred element most requiring protection from corpse-pollution
+- [[atar]] — sacred fire; cannot receive a corpse without defilement; cremation is forbidden
+- [[angra-mainyu-ahriman]] — the Nasu (corpse-pollution daeva) is in Angra Mainyu's domain; the dakhma is an anti-Druj technology
+- [[zarathustra]] — the prophet whose purity code (elaborated in the Vendidad) mandates the dakhma
+
+**Traditions:**
+- [[tradition-zoroastrianism]] — primary tradition
+- [[tradition-persian-zoroastrian]] — Parsi community in Mumbai; the Doongerwadi crisis documents what happens when a ritual's ecological technology fails
+
+**Companion ritual:**
+- [[ritual-yasna-fire-ceremony]] — the yasna's sacred fire must never be defiled; the dakhma's no-cremation rule protects that fire
+
 ### Refs
 - "Boyce, Mary. *A History of Zoroastrianism*, Vol. 1. Brill, 1975 — Tier-1 (primary scholarly source on dakhma origins)"
 - "Stausberg, Michael. *Die Religion Zarathushtras*, 3 vols. Kohlhammer, 2002–2004 — Tier-1"

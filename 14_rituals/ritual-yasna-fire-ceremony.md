@@ -96,6 +96,35 @@ The Avestan language of the Yasna is so archaic that many Zoroastrian priests to
 
 See also: [[ritual-sacrifice]], [[haoma]], [[soma]], [[ahura-mazda]], [[zarathustra]], [[atar]], [[asha-vahishta]], [[angra-mainyu-ahriman]], [[tradition-zoroastrianism]], [[tradition-vedic-hinduism]], [[phase-2-002-gathas-of-zarathustra]], [[phase-2-004-yasna-younger-avesta]], [[theme-soma-haoma-eucharist]].
 
+## Vault Connections
+
+**Cognate ritual (MOST IMPORTANT):**
+- [[ritual-yajna-vedic-fire]] — yasna = yajna; same word, same ritual, same Proto-Indo-Iranian ancestor c. 2200–1800 BCE; the most documentable deep-time ritual continuity in human history
+
+**Cross-tradition fire and sacrifice parallels:**
+- [[ritual-sacrifice]] — yasna as the paradigmatic ancient fire sacrifice alongside yajna
+
+**Central deities:**
+- [[ahura-mazda]] — the Wise Lord; all yasna liturgy is directed to him; the sacred fire is his son [[atar]]
+- [[zarathustra]] — the prophet whose Gathas (17 of the 72 yasna chapters) are the oldest surviving element of the ceremony
+- [[atar]] — the sacred fire itself, understood as the son of Ahura Mazda and the divine witness of the liturgy
+- [[asha-vahishta]] — Best Truth; the cosmic principle the yasna upholds and enacts
+- [[angra-mainyu-ahriman]] — the principle of Druj (deceit) that the yasna explicitly rejects in the Nirang prayer
+
+**Sacred substances:**
+- [[haoma]] — the sacred plant drink central to the yasna; etymological and ritual cognate of Vedic soma
+- [[soma]] — Vedic counterpart
+- [[theme-soma-haoma-eucharist]] — cross-tradition sacred-drink pattern
+
+**Traditions:**
+- [[tradition-zoroastrianism]] — primary tradition
+- [[tradition-persian-zoroastrian]] — Parsi community continuation; Iranshah Atash Behram at Udvada (721 CE) still burning
+- [[tradition-vedic-hinduism]] — the cognate branch from the same Indo-Iranian ancestor
+
+**Source texts:**
+- [[phase-2-002-gathas-of-zarathustra]] — the 17 Gathas embedded in the 72-chapter yasna; oldest surviving Zoroastrian texts
+- [[phase-2-004-yasna-younger-avesta]] — the full yasna liturgy document
+
 ### Refs
 - "Boyce, Mary. *A History of Zoroastrianism*, Vol. 1–2. Brill, 1975–1982 — Tier-1 (definitive scholarly treatment)"
 - "Malandra, William W. *An Introduction to Ancient Iranian Religion*. University of Minnesota Press, 1983 — Tier-1"

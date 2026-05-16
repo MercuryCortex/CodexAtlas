@@ -70,6 +70,29 @@ The Buddhist logic says: *the body is nothing, so give it away.* The Zoroastrian
 
 See also: [[ritual-zoroastrian-tower-of-silence]], [[ritual-funeral-rites]], [[tradition-tibetan-buddhism]], [[tradition-bon]], [[tradition-zoroastrianism]], [[phase-5-029-bardo-thodol]], [[music-tibetan-sound-cosmology]], [[music-bardo-thodol-sonic]].
 
+## Vault Connections
+
+**Identical practice, opposite theology (MOST IMPORTANT):**
+- [[ritual-zoroastrian-tower-of-silence]] — the dakhma; same physical technology (elevated vulture-exposure) from completely reversed theological logic (Zoroastrian: purity code; Buddhist: dana/generosity); no documented contact; MAJOR cross-tradition convergence
+
+**Death ritual framework:**
+- [[ritual-funeral-rites]] — cross-tradition funeral framework; jhator is the Buddhist-Tibetan variant
+
+**Bardo context:**
+- [[phase-5-029-bardo-thodol]] — the Tibetan Book of the Dead; the lama reads this to guide the consciousness through the intermediate state while the body awaits sky burial; jhator is the physical conclusion of the bardo process
+
+**Music of the context:**
+- [[music-tibetan-sound-cosmology]] — the sonic cosmology of which the kangling thigh-bone trumpet and damaru drum at sky burials are a part
+- [[music-bardo-thodol-sonic]] — the specific sonic tradition of the bardo/death ritual context
+
+**Traditions:**
+- [[tradition-tibetan-buddhism]] — primary tradition; jhator rests on dana and anicca
+- [[tradition-bon]] — pre-Buddhist Tibetan substrate; jhator likely predates Buddhism in Tibet
+- [[tradition-zoroastrianism]] — the dakhma comparison tradition
+
+**Moral framework:**
+- [[moral-ahimsa-nonviolence]] — the dana theology (giving the body to sentient beings) is the ultimate expression of generosity; the opposite of the purity-harm logic
+
 ### The Steppe Connection Hypothesis
 
 Some historians have proposed that both Tibetan sky burial and Zoroastrian dakhma descend from a common ancient Eurasian steppe practice. Herodotus (*Histories* IV.26) describes the Issedones (a Central Asian people) consuming the bodies of their dead — mixing the flesh of the deceased with animal flesh for a communal feast while stripping the skull for use as a sacred cup. Scythian and Saka burial practices documented in frozen tombs (*kurgans*) in the Altai show evidence of defleshing before burial. The Zoroastrians' geographic origin (the eastern Iranian or Central Asian steppe) and the Tibetans' cultural connections to the same steppe zone suggests the possibility of a common ancestor practice, later re-theologized differently in each tradition.
