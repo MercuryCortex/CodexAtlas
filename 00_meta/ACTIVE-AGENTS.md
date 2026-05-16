@@ -4,6 +4,20 @@ _Hand-maintained. Each agent currently working in the vault appends a claim bloc
 
 ---
 
+## goblin-nature-fertility-1 — symbols / nature + fertility thread — started 2026-05-16 — IN PROGRESS
+- Owning: `09_symbols/green-man.md` (NEW), `09_symbols/sheela-na-gig.md` (NEW), `09_symbols/shiva-lingam.md` (NEW), `09_symbols/yoni.md` (NEW)
+- Goal: Foliate-face cross-tradition (Roman acanthus mask → medieval Christian green man); Sheela-na-gig apotropaic paired with green man; Shiva lingam as axis mundi/cosmic phallus; yoni as cosmic womb (Venus figurines → Kamakhya → Gothic mandorla)
+- Status: in-progress
+
+---
+
+## goblin-sacred-sound-1 — symbols / sacred sound instruments thread — started 2026-05-16 — IN PROGRESS
+- Owning: `09_symbols/sistrum.md` (NEW), `09_symbols/sacred-bell.md` (NEW), `09_symbols/shamanic-drum.md` (NEW), `09_symbols/ogham.md` (NEW)
+- Goal: Sacred-sound objects across traditions; sistrum→Roman Isis reception; bell cross-tradition divine summons; shamanic drum as axis mundi; Ogham as sylvan cosmic alphabet
+- Status: in-progress
+
+---
+
 ## ~~goblin-mystery-symbols-1 — symbols / undeciphered mysteries thread — started 2026-05-16 — FINISHED~~
 - ~~Owning: phaistos-disc.md (NEW), gobekli-tepe-pillars.md (NEW), voynich-glyphs.md (NEW), eye-of-the-heart.md (NEW)~~
 - ~~Goal: Genuine mystery symbols documented as mysteries; Sufi Eye of the Heart as cross-tradition inner-vision symbol~~
