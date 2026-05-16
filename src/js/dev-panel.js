@@ -288,6 +288,25 @@
       cursor: pointer; transition: background 150ms, color 150ms;
     }
     .dp-btn:hover { background: rgba(212,163,90,0.15); color: var(--gold, #d4a35a); }
+    .dp-btn-reset {
+      width: 100%;
+      padding: 8px 0;
+      background: rgba(168, 62, 74, 0.15);
+      border-color: rgba(168, 62, 74, 0.45);
+      color: rgba(212, 130, 138, 0.95);
+      font-weight: 600;
+      letter-spacing: 0.08em;
+    }
+    .dp-btn-reset:hover {
+      background: rgba(168, 62, 74, 0.30);
+      color: #ffd8dc;
+      border-color: rgba(168, 62, 74, 0.75);
+    }
+    .dp-btn-reset.dp-btn-confirming {
+      background: rgba(168, 62, 74, 0.50);
+      color: #fff;
+      border-color: rgba(255, 255, 255, 0.50);
+    }
     .dp-hint {
       text-align: center; color: var(--text-3, #4a5060);
       font-size: 9.5px; letter-spacing: 0.05em;
@@ -340,8 +359,8 @@
         <div class="dp-actions">
           <button class="dp-btn" id="dp-copy">Copy JSON</button>
           <button class="dp-btn" id="dp-rebake">Re-bake</button>
-          <button class="dp-btn" id="dp-reset">Reset</button>
         </div>
+        <button class="dp-btn dp-btn-reset" id="dp-reset" title="Reset all sliders to defaults + clear stored values + refit camera">↺ Reset to defaults</button>
         <div class="dp-hint">D key toggles &nbsp;·&nbsp; ?dev=1 to activate</div>
       </div>
     `;
@@ -398,21 +417,61 @@
       if (window._pantheonV2 && window._pantheonV2.rerender) window._pantheonV2.rerender();
     });
 
-    document.getElementById('dp-reset').addEventListener('click', () => {
+    // RESET — two-click confirm so an accidental click can't wipe a tuning
+    // session. First click arms the button (red flash + "click again");
+    // second click within 3 s does the full reset. Click anywhere else cancels.
+    const resetBtn = document.getElementById('dp-reset');
+    let _resetArmed = false;
+    let _resetTimer = null;
+    const RESET_LABEL = '↺ Reset to defaults';
+    function disarmReset() {
+      _resetArmed = false;
+      resetBtn.classList.remove('dp-btn-confirming');
+      resetBtn.textContent = RESET_LABEL;
+      clearTimeout(_resetTimer);
+    }
+    function doFullReset() {
+      // 1. Wipe localStorage so a page reload starts from defaults too.
+      try { localStorage.removeItem(LS_KEY); } catch (e) {}
+      // 2. Copy defaults into the live S object (window.CODEX_DEV.settings).
       Object.assign(S, DEFAULTS);
-      save();
+      // 3. Roll every CSS var + sigma state back.
       applyCssVars();
       sigmaRefresh();
-      applyCamera();
       rebuildEdges();
+      // 4. Update every slider's DOM (value + thumb position + display).
       ALL_CONTROLS.forEach(c => {
         const input = document.getElementById('dp-' + c.id);
+        if (!input) return;
         input.value = S[c.id];
         input.style.setProperty('--pct', pct(S[c.id], c.min, c.max));
-        document.getElementById('dpv-' + c.id).textContent = c.fmt(S[c.id]);
+        const valEl = document.getElementById('dpv-' + c.id);
+        if (valEl) valEl.textContent = c.fmt(S[c.id]);
       });
-      // After a reset, also need a full re-render in case force constants changed
-      scheduleRerender();
+      // 5. Refit the camera via the SAME path as a fresh page load — bypasses
+      // the dev-panel cameraRatio slider so the diagram lands at computeFitRatio.
+      const v2 = window._pantheonV2;
+      if (v2 && typeof v2._refreshFit === 'function') v2._refreshFit();
+      // 6. Force re-render so force-bake constants apply too.
+      if (v2 && typeof v2.rerender === 'function') v2.rerender();
+      // 7. Confirmation flash.
+      resetBtn.textContent = '✓ Reset';
+      setTimeout(() => { resetBtn.textContent = RESET_LABEL; }, 1200);
+    }
+    resetBtn.addEventListener('click', () => {
+      if (!_resetArmed) {
+        _resetArmed = true;
+        resetBtn.classList.add('dp-btn-confirming');
+        resetBtn.textContent = '⚠ Click again to confirm';
+        _resetTimer = setTimeout(disarmReset, 3000);
+        return;
+      }
+      disarmReset();
+      doFullReset();
+    });
+    // Cancel arming if user clicks anywhere else inside the panel.
+    document.getElementById(PANEL_ID).addEventListener('click', (e) => {
+      if (_resetArmed && e.target !== resetBtn && !resetBtn.contains(e.target)) disarmReset();
     });
   }
 
