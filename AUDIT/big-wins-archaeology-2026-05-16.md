@@ -1,730 +1,1066 @@
 # BIG WINS ARCHAEOLOGY — Codex Atlas Cross-Tradition Discoveries
-**Excavated:** 2026-05-16 | **Source:** All sessions, handoffs, STATUS logs, git history, alchemy presets, AUDIT files
-**Purpose:** Master list of every flagged "unexpected connection" for future section-building. All agents read this before claiming a "new" discovery — it may already be here.
+**Excavated:** 2026-05-16 (live update — agents still reporting)
+**Source:** All sessions · handoffs · STATUS logs · git history · ACTIVE-AGENTS.md · ALCHEMY_PRESETS · INVESTIGATIONS array · all goblin/sonnet/opus batch reports
+**Purpose:** Master ranked catalog of every flagged unexpected connection. All agents read this before claiming a "new" discovery. Add new entries at the bottom of the relevant tier.
 
 ---
 
-## HOW TO USE THIS FILE
-- Each entry = one flagged discovery from a past session
-- **Tier** markers inherited from vault methodology (T1 = primary source, T2 = scholarly debate, T3 = hypothesis, T4 = modern reception)
-- Star `★` = flagged by agent as MASSIVE WIN or used in preset
-- Add new entries at bottom of the relevant section
+## RANKING SYSTEM
+
+| Rank | Meaning |
+|---|---|
+| **S** | Civilization-defining — structural consequences for how entire religions or civilizations formed |
+| **A** | Institution-founding — specific transmission with documentary evidence at primary-source level |
+| **B** | Deep parallel — strong cross-tradition structural match with T1 scholarly backing |
+| **C** | Under-explored — vault may be among few places this is systematically mapped |
+| **D** | Pattern — meta-level convergence; needs more node-building to fully realize |
+
+**★★★** = little-explored by scholars, potentially original framing in this form
+**★★** = under-mapped in popular discourse
+**★** = documented in scholarship, under-represented in public knowledge
 
 ---
 
-## I. LONGEST DOCUMENTED TRANSMISSION SPINES
+## TIER S — CIVILIZATION-DEFINING TRANSMISSIONS
 
-### ★ THE 3,500-YEAR ASTROLOGY SPINE
-**Source:** opus-astrology-retro-1 · AUDIT/14_lenses-and-astrology-spine-visualization.md
-**Chain:** Mesopotamian celestial omens (c. -1800 BCE) → Babylonian Berossus (-290) → Ptolemy/Vettius Valens (Hellenistic) → Sasanian Pahlavi translation → Islamic Golden Age al-Kindi/Abu Mashar → Toledo School Gerard of Cremona translations (~1140) → Ficino 1463 Corpus Hermeticum recovery → Dee/Agrippa/Fludd → Lévi/Blavatsky/Crowley/Pessoa
-**Why it matters:** Single best 60-second demo of the Atlas thesis — longest continuous documented transmission in the vault, longer than Judaism/Christianity/Islam as institutions. Every node is a named text or translator. **Anti-pole documented:** Enochic tradition frames astrology as *forbidden* knowledge of the fallen Watchers (inverse of the same chain).
-**Tags:** astrology, mesopotamian, hellenistic, islamic, renaissance-hermetic, 3500-years
+### S-01 ★★ DIVINE PHARAOH → SON OF GOD (5-step chain to Nicaea)
+**Preset:** `divine-pharaoh-to-son-of-god` · **Source:** opus session + STATUS
+**Chain:** Pharaoh as Son of Ra (Fifth Dynasty ~2494 BCE) → Akhenaten's monotheistic intensification → Alexander at Siwa oracle (331 BCE, "son of Ammon") → Ptolemaic divine king → Roman *Divi filius* → Christian "Son of God" formalized at Nicaea (325 CE)
+**Why it matters:** The single most consequential theological formula in Western civilization — "Son of God" — derives from a continuous royal-divinity chain, not an original Christian revelation. Jan Assmann's cultural-memory thesis as interpretive framework. Every node has a primary source.
+**Tags:** divine-kingship, pharaoh, akhenaten, alexander, nicaea, christology, son-of-god, 0-400-CE
 
 ---
 
-### ★ PTAH HEART-TONGUE → JOHANNINE LOGOS → QUR'ANIC KUN FA-YAKUN
+### S-02 ★★★ ZOROASTRIAN THEOLOGICAL SPINE: 5 DOCTRINES ENTER JUDAISM DURING CAPTIVITY
+**Investigation preset:** `persian-theological-spine` · **Source:** STATUS + INVESTIGATIONS
+**Finding:** During the Babylonian captivity (586–538 BCE), **five Zoroastrian ideas entered Judaism simultaneously**: cosmic dualism, resurrection of the dead, a messianic savior figure, named angelology, and eschatological judgment. Every downstream Abrahamic tradition — Christianity, Islam, Kabbalah — runs on Zoroastrian theological infrastructure it largely does not acknowledge.
+**Why it matters:** This is the single largest undisclosed doctrinal import in Abrahamic history. Heaven/Hell, angels, Satan, resurrection, the Messiah — all Zoroastrian exports. BMAC origin (~2100 BCE) makes this the oldest-to-latest chain in the vault.
+**Tags:** zoroastrianism, babylon-captivity, judaism, christianity, islam, resurrection, angelology, messianism, dualism
+
+---
+
+### S-03 ★ PTAH HEART-TONGUE → JOHANNINE LOGOS → QUR'ANIC KUN FA-YAKUN (3,000-year chain)
 **Source:** sonnet-egyptian-deities-1 · 03_deities/ptah.md
-**Chain:**
-1. Memphite Theology — Ptah creates through heart-thought + tongue-utterance (~2350 BCE, oldest creation-by-word theology documented, Allen 1988 T1)
-2. Genesis 1 — creation-by-divine-speech (Priestly source, ~9th c. BCE)
-3. Gospel of John 1:1–3 — "In the beginning was the Word…" (~90–100 CE)
-4. Qur'an kun fa-yakun — "Be, and it is" (Surah 2:117, 7th c. CE)
-**Sub-chain:** Ptah → Demiurge (Plato Timaeus) → Gnostic Demiurge (inverted as false god in Valentinus)
-**Sub-chain:** Ptah → Imhotep → Asclepius (wisdom-medicine chain)
-**Why it matters:** The creation-by-utterance template is oldest in Egypt, 3,000+ years before Islam. Transmits through all three Abrahamic faiths without explicit attribution.
+**Chain:** Memphite Theology — Ptah creates through heart-thought + tongue-utterance (~2350 BCE, oldest creation-by-word theology, Allen 1988 T1) → Genesis 1 creation-by-speech (~9th c. BCE) → John 1:1–3 "In the beginning was the Word…" (~90–100 CE) → Qur'an kun fa-yakun "Be, and it is" (7th c. CE)
+**Sub-chain:** Ptah → Demiurge (Plato Timaeus) → Gnostic Demiurge (inverted as false god by Valentinus)
+**Why it matters:** The Logos doctrine at the center of Christianity derives from Egyptian priestly theology 2,000 years earlier. All three Abrahamic faiths use a creation-by-utterance template whose oldest recorded form is in Ptah's temple.
 **Tags:** ptah, memphite-theology, logos, johannine, quranic, genesis, creation-by-word, 3000-year-chain
 
 ---
 
-### ★ PESHITTA SILK ROAD: CHURCH OF THE EAST 1ST–14TH C.
-**Source:** opus session · 05_events/event-timur-destruction-church-of-east-1380-1405.md
-**Chain:** Edessa Syriac Christianity (1st c.) → Ctesiphon Catholicosate → Persia → Nisibis theological schools → Arabia → Central Asia → India (Thomas Christians, Malabar coast) → China (Tang-dynasty Xi'an Stele, 781 CE)
-**Destruction event:** Timur's 1380–1405 campaigns systematically eliminated this entire civilizational network. Jenkins 2008 (T1): "the most under-documented religious catastrophe in world history." After Timur: reduced from Silk Road civilization to isolated highland communities.
-**Structural parallel:** Same pattern as Albigensian Crusade (1209–1229), Ottoman campaigns against Yazidis (72 firmans), ISIS Yazidi genocide at Sinjar 2014 — dominant power labels community heretical, executes organized elimination.
-**Why it matters:** The geographically most extensive Christian distribution in history was erased and then erased from Western history curricula. Institutional amnesia as a documented pattern.
-**Tags:** church-of-the-east, nestorian, peshitta, silk-road, thomas-christians, timur-destruction, transmission-erasure
+### S-04 ★★ SERAPIS → THE FACE OF CHRIST (iconographic takeover, 0–400 CE)
+**Preset:** `serapis-christ-iconography` · **Source:** sonnet-serapis-ennead-1 + STATUS
+**Finding:** The standard image of Jesus (bearded, full curly hair, serene) does not derive from any historical portrait. It derives from Serapis (invented by Ptolemy I ~305 BCE). Earliest Christ images (Catacomb of Callistus, ~200 CE) are beardless. The full bearded Serapis-type becomes canonical ~4th–5th century — exactly as the Serapeum of Alexandria is destroyed by Bishop Theophilus (391 CE) and Serapis worship collapses.
+**Why it matters:** The most-reproduced religious image in Western civilization is a transferred pagan iconographic type. Material evidence of seamless visual appropriation.
+**Tags:** serapis, christ-iconography, face-of-christ, visual-appropriation, ptolemaic, 0-400-CE
 
 ---
 
-### ★ GILGAMESH → BOOK OF GIANTS → NEPHILIM (MESOPOTAMIA INTO JEWISH APOCALYPTIC)
-**Source:** sonnet + opus sessions · 03_deities/gilgamesh-nephilim.md · commit fc66b13
-**Chain:** Gilgamesh (hero king of Uruk, ~2100 BCE oral / ~1300 BCE Standard Babylonian written) → appears as named Nephilim giant in Aramaic Qumran **Book of Giants** (4Q530, 2nd–1st c. BCE) — Aramaic *glgmš*, consensus identification (Milik 1976, Stuckenbruck 1997, Reeves 1992 T1) → Manichaean canonical Book of Giants (3rd c. CE, Mani's canon includes it)
-**Monster Humbaba** also appears in both the epic and the Book of Giants as a Nephilim.
-**Why it matters:** One of the most concrete cross-tradition documentary tracing edges in the vault — a Bronze Age Mesopotamian hero, appropriated and reframed as a named giant in Jewish apocalyptic, then carried into Manichaean canon. Direct documentary linkage spanning ~2,400 years.
-**Tags:** gilgamesh, book-of-giants, nephilim, aramaic-qumran, manichaean, watchers, mesopotamian-appropriation
+### S-05 ★ 3RD-CENTURY COLLISION ZONE: PLOTINUS + MANI + ORIGEN IN ONE WINDOW (200–280 CE)
+**Investigation preset:** `third-century-collision` · **Source:** sonnet-3rd-century-1
+**Finding:** In a single 80-year window, Plotinus writes the Enneads in Rome, Mani launches his universal religion in Persia, Kerdīr consolidates Zoroastrian orthodoxy and executes Mani, Origen synthesizes Platonic Christianity in Alexandria, and the Gnostic schools reach peak. All five traditions share the same technical vocabulary (pneuma, logos, nous) and are in direct documented conflict. BeDuhn 2020: Zoroastrianism and Manichaeism co-formed against each other — the collision was generative.
+**Why it matters:** The 3rd century is where Christianity, Platonism, Zoroastrianism, Manichaeism, and Gnosticism are simultaneously at peak intensity in documented contact and conflict. Everything after is downstream.
+**Tags:** plotinus, mani, origen, gnosticism, zoroastrianism, third-century, collision-zone, 0-400-CE
 
 ---
 
-## II. EPOCH: 0–400 CE (BIRTH OF CHRIST TO CANON SOLIDIFICATION)
-*The user's priority zone — all wins in this era get starred automatically.*
-
-### ★ MARTYRDOM OF POLYCARP: FOUNDING DOCUMENT OF SAINT-DAY SYSTEM + ISLAMIC SHAHĪD
-**Source:** latin-sikh-1 · 02_documents/phase-4-067-martyrdom-of-polycarp.md · commits e28e926, d46902c
-**Finding:** Mart. Pol. 18.3 (~155/167 CE) is **the founding text of** (a) Christian martyrology as literary genre AND (b) the saint's feast-day system (annual *natalis* = birthday into eternal life = death-day commemoration). This single sentence launches:
-- Annual liturgical calendar of saints' feast days (Catholic, Orthodox, Anglican)
-- Pilgrimage to martyrs' tombs (Rome catacombs, Canterbury, Compostela, Jerusalem)
-- Relic-sanctifying-power theology
-**Cross-tradition MASSIVE WIN:** The Shi'a *Karbala paradigm* (680 CE martyrdom of Husayn) uses **parallel dramaturgical elements** to Mart. Pol. — divine predestination, willing acceptance of death, covenant framing, post-mortem intercession, **annual commemoration** (ʿĀshūrāʾ = structural equivalent of the Christian *natalis*).
-The Greek *martys/martyros* (witness) → Arabic *shahīd* (martyr, witness) is direct linguistic transmission.
-**Why it matters:** Medieval cathedral construction (relic economics), the Camino de Santiago pilgrimage network, and Shi'a theological identity all trace to one sentence in a 2nd-century Smyrnaean community circular. Catholic saint-day calendar and Shi'a mourning theology are structural descendants of the same institutional moment.
-**Tags:** martyrdom, polycarp, apostolic-fathers, karbala, shahid, shi-a-islam, natalis, pilgrimage, relic-cult, founding-document, 0-400-CE
+### S-06 ★ MARTYRDOM OF POLYCARP → SAINT-DAY SYSTEM + SHI'A ʿĀSHŪRĀʾ (ONE SENTENCE, TWO CIVILIZATIONS)
+**Source:** latin-sikh-1 · commits e28e926, d46902c
+**Finding:** Mart. Pol. 18.3 (~155/167 CE) is the founding text of (a) Christian martyrology as literary genre AND (b) the saint's feast-day system (*natalis* = annual death-day commemoration). This launches: the liturgical calendar of saints' feast days, pilgrimage systems, relic-economics, cathedral-construction. The Shi'a Karbala paradigm (680 CE) uses parallel dramaturgical elements — divine predestination, willing acceptance, post-mortem intercession, annual commemoration. Greek *martys* → Arabic *shahīd* is direct linguistic transmission.
+**Why it matters:** Medieval cathedral economics, the Camino, and Shi'a theological identity all trace institutionally to one sentence in a 2nd-century Smyrnaean community circular.
+**Tags:** martyrdom, polycarp, karbala, shahid, shi-a-islam, natalis, pilgrimage, relic-cult, 0-400-CE
 
 ---
 
-### ★ ISIS LACTANS → NURSING MADONNA: WORKSHOP-LEVEL TRANSMISSION
-**Source:** sonnet-egyptian + opus sessions · 03_deities/isis-hellenistic.md
-**Finding:** Frankfurter (*Religion in Roman Egypt*, 1998, T1) documents that the **same Coptic-era artisan workshops** producing *Isis Lactans* (Isis enthroned, nursing Harpocrates) **began producing nursing-Madonna images in identical compositions** as Egypt Christianized (3rd–5th centuries). This is not parallel development — **same artisan workshops, same iconographic formula, shifted religious patronage**. The *galaktotrophousa* (nursing-Madonna icon type) propagates into Byzantine, Coptic, Ethiopian Orthodox painting in direct material lineage from Isis Lactans.
-**Why it matters:** Documentary evidence at the **workshop level** — not theological parallel but artisan continuity. The most prominent Marian icon type in Coptic and Ethiopian Orthodox churches descends in an unbroken material line from pagan-era production.
-**Tags:** isis, isis-lactans, nursing-madonna, galaktotrophousa, coptic, ethiopian-orthodox, iconography, workshop-transmission, 0-400-CE
+### S-07 ★★ PESHITTA SILK ROAD: CHURCH OF THE EAST 1ST–14TH C. (ERASED CIVILIZATION)
+**Preset:** `peshitta-silk-road-christianity` · **Source:** opus session
+**Chain:** Edessa Syriac Christianity (1st c.) → Ctesiphon → Persia → Arabia → Central Asia → India (Thomas Christians, Malabar coast) → China (Xi'an Stele, 781 CE)
+**Destruction:** Timur's 1380–1405 campaigns eliminated this network. Jenkins 2008: "the most under-documented religious catastrophe in world history." 750-year Silk Road civilization reduced to isolated highland communities.
+**Structural parallel:** Albigensian Crusade / Ottoman campaigns against Yazidis / 2014 ISIS Yazidi genocide — same structural pattern repeated across history.
+**Tags:** church-of-the-east, peshitta, silk-road, thomas-christians, timur-destruction, transmission-erasure
 
 ---
 
-### ★ SERAPIS HEALING-SHRINE → CHRISTIAN SAINT-SHRINE (INSTITUTIONAL TAKEOVER)
-**Source:** sonnet-serapis-ennead-1 · 03_deities/serapis.md
-**Finding:** Serapis (Ptolemaic synthesis of Apis-Osiris) becomes the iconic healing-god (Sarapeia shrines across Mediterranean). His shrine infrastructure, iconography (bearded patriarchal healer), and votive-offering systems become the **template for Christian saint-shrines**. Same buildings, same ritual structure (leave a votive, pray at the sacred site, expect healing), different divine name.
-**Tags:** serapis, healing-shrine, sarapeia, saint-shrine, institutional-takeover, votive, 0-400-CE
+### S-08 ★★ MERKABAH → MI'RAJ: THE HEAVENLY ASCENT (7 traditions, 2,000 years, Tier-1 proof)
+**Preset:** `merkabah-miraj-ascent-spine` · **Source:** STATUS + merkabah-miraj-ascent-chain.md
+**Chain:** Ezekiel's chariot vision (-593 BCE) → Jewish Hekhalot mysticism → Zoroastrian Arda Viraf → Muhammad's Night Journey (619 CE) → Ibn Arabi's allegorized Mi'raj → Dante's Paradiso
+**Tier-1 proof:** Schäfer (2009) proves the Hekhalot → Mi'raj transmission via Jewish communities in Arabia.
+**Why it matters:** The Mi'raj — Islam's defining mystical event — is structurally Jewish in origin, with the transmission documented. Dante's heaven-journey is a Christian continuation of the same chain.
+**Tags:** merkabah, miraj, hekhalot, ezekiel, ibn-arabi, dante, 7-traditions, 2000-years, 0-400-CE
 
 ---
 
-### ★ STOIC LOGOS → PHILO ALLEGORISM → JOHANNINE LOGOS → CHRISTIAN ORTHODOXY
-**Source:** Multiple sessions · STATUS.md cross-tradition edges
-**Chain (500-year intellectual transmission):**
-- Stoic Logos (rational principle pervading cosmos)
-- Philo of Alexandria's allegorical interpretation (Logos as divine intermediary, 1st c. BCE–CE)
-- Gospel of John's Logos ("In the beginning was the Word…" ~90–100 CE)
-- Early Christian orthodoxy: Logos as Second Person of the Trinity (2nd–4th c. CE councils)
-**Why it matters:** Christian Trinitarianism is **philosophically continuous with Stoicism via Hellenistic Judaism**. The central dogma of Christianity is not autonomous revelation but inherited Greek philosophical vocabulary.
+### S-09 ★★★ ZADOKITE RUPTURE: ONE PRIESTLY APPOINTMENT CREATES EVERY JEWISH SECT
+**Investigation preset:** `zadokite-rupture` · **Source:** INVESTIGATIONS
+**Finding:** The 818-year Zadokite monopoly on the Jerusalem high priesthood ends when Hasmoneans take the position (152 BCE). This single event creates every major Jewish sect simultaneously: Essenes (refusing the non-Zadokite priest), Sadducees (adapting), Pharisees (replacing priestly with popular authority). Christianity and Rabbinic Judaism are both post-rupture movements. Bonus: Cohen Modal Haplotype (Y-chromosome genetics) = the only case in the vault of genetic corroboration of a hereditary religious claim.
+**Tags:** zadokite, hasmonean, essenes, sadducees, pharisees, priesthood, second-temple, sect-formation, 0-400-CE
+
+---
+
+### S-10 ★★ DYING FOUNDER PARADIGM: VIOLENT DEATH IS CONSTITUTIVE OF THE TRADITION
+**Investigation preset:** `dying-founder-cross-tradition` · **Source:** INVESTIGATIONS
+**Finding:** The violent death of a tradition's originator is constitutive of the tradition that follows, not incidental. Jesus (crucified) → Christianity. Al-Hallaj (crucified in Baghdad, 900 years later, same structural reason) → Sufi martyrdom mysticism. Hussein (Karbala) → Shia Islam. The Bab (firing squad) → Bahá'í. Guru Tegh Bahadur (beheaded for defending Hindu religious freedom) → Khalsa. Mani (executed) → first global religion. René Girard's scapegoat mechanism explains the structural logic.
+**Why it matters:** The most structurally consistent finding in comparative religion that nobody systematically maps.
+**Tags:** dying-founder, martyrdom, scapegoat, girard, cross-tradition, constitutive-death
+
+---
+
+---
+
+## TIER A — INSTITUTION-FOUNDING, PRIMARY-SOURCE DOCUMENTED
+
+### A-01 ★ ISIS LACTANS → NURSING MADONNA: WORKSHOP-LEVEL TRANSMISSION (0–400 CE)
+**Source:** sonnet-egyptian sessions · 03_deities/isis-hellenistic.md
+**Finding:** Frankfurter (*Religion in Roman Egypt*, 1998, T1): the same Coptic-era artisan workshops producing *Isis Lactans* began producing nursing-Madonna images in identical compositions as Egypt Christianized (3rd–5th centuries). Not parallel development — same workshops, same formula, shifted religious patronage. The *galaktotrophousa* propagates into Byzantine, Coptic, Ethiopian Orthodox painting in direct material lineage.
+**Tags:** isis-lactans, nursing-madonna, galaktotrophousa, coptic, ethiopian-orthodox, workshop-transmission, 0-400-CE
+
+---
+
+### A-02 ★ STOIC LOGOS → PHILO → JOHN 1:1 → TRINITARIAN ORTHODOXY (500-year chain)
+**Source:** Multiple sessions · STATUS cross-tradition edges
+**Chain:** Stoic Logos (rational cosmic principle) → Philo of Alexandria (Logos as divine intermediary, 1st c. BCE–CE) → Gospel of John 1:1–3 (~90–100 CE) → Early Christian Trinitarian orthodoxy (2nd–4th c. councils)
+**Why it matters:** Christian Trinitarianism is philosophically continuous with Stoicism via Hellenistic Judaism. The central dogma of Christianity is inherited Greek philosophical vocabulary.
 **Tags:** stoic-logos, philo, johannine-logos, trinity-doctrine, hellenistic-judaism, 0-400-CE
 
 ---
 
-### ★ NEOPLATONISM: PLOTINUS → CHRISTIAN THEOLOGY + ISLAMIC FALSAFA
+### A-03 ★ SERAPIS HEALING-SHRINE → CHRISTIAN SAINT-SHRINE (INSTITUTIONAL CONTINUITY)
+**Source:** sonnet-serapis-ennead-1 · 03_deities/serapis.md
+**Finding:** Serapis healing-shrine infrastructure, votive-offering systems, and iconography (bearded healer) directly become the Christian saint-shrine template. Same buildings, same ritual structure (leave a votive, pray at the sacred site, expect healing), different divine name.
+**Tags:** serapis, healing-shrine, saint-shrine, institutional-takeover, votive, 0-400-CE
+
+---
+
+### A-04 ★ GILGAMESH → NAMED NEPHILIM IN BOOK OF GIANTS → MANICHAEAN CANON (2,400-year documentary chain)
+**Source:** commit fc66b13 · 03_deities/gilgamesh-nephilim.md
+**Chain:** Gilgamesh (~2100 BCE oral / ~1300 BCE written) → named Nephilim giant in Aramaic Book of Giants (4Q530, 2nd–1st c. BCE) — Aramaic *glgmš*, consensus identification (Milik 1976, Stuckenbruck 1997, Reeves 1992 T1) → Mani includes it in his canonical Book of Giants (3rd c. CE). Monster Humbaba also appears in both.
+**Why it matters:** A Bronze Age Mesopotamian hero appropriated as a named Jewish Nephilim, then canonized in the world's first global religion. One of the most concrete cross-tradition documentary edges in the vault.
+**Tags:** gilgamesh, book-of-giants, nephilim, aramaic-qumran, manichaean, watchers, 2400-year-chain
+
+---
+
+### A-05 ★ ANUBIS → MICHAEL — THE JUDGMENT SCALES CHAIN (AND AMMIT IS THE HELLMOUTH)
+**Preset:** `anubis-judgment-transmission` · **Source:** sonnet-egyptian-deities-1 + STATUS
+**Chain:** Anubis weighing souls (~2400 BCE, Pyramid Texts) → psychostasia scene in Hellenistic-Egyptian contact → Byzantine Michael with scales (~5th c. CE, Frankfurter 1998 T1) → Gothic cathedral tympana (Chartres, Notre-Dame, Bourges: Michael + scales + beast consuming the damned)
+**MASSIVE WIN:** Ammit (crocodile-hippo-lion devourer beneath the scales) is the ancestor of the Hellmouth beast in medieval Christian art.
+**Tags:** anubis, michael-archangel, scales, last-judgment, gothic-cathedral, hellmouth-beast, ammit, 0-400-CE
+
+---
+
+### A-06 ★★ ARISTOTLE → AVICENNA → AQUINAS: WESTERN CHRISTIAN THEOLOGY RUNS THROUGH BAGHDAD
+**Preset:** `aristotle-avicenna-aquinas` · **Source:** latin-sikh-1
+**Finding:** Latin Scholasticism is impossible without Islamic philosophy's recovery and advancement of Aristotle. Averroes, Avicenna translated and commented on Aristotle; the Toledo School translations brought this into Latin Christendom. Western Christianity is an inheritor of Islamic philosophy, not an autonomous intellectual tradition.
+**Tags:** aristotle, avicenna, aquinas, latin-christianity, scholasticism, islamic-golden-age, toledo-school
+
+---
+
+### A-07 ★ PLATO DEMIURGE → GNOSTIC INVERSION → MARCION'S FIRST CANON (THE FIRST NT IS A HERETIC'S WEAPON)
 **Source:** Multiple sessions
-**Finding:** Plotinus (3rd c. CE) — One → Intellect → Soul → Matter emanation hierarchy — becomes the philosophical substrate for:
-- Christian theology (Gregory of Nyssa, Pseudo-Dionysius, Augustine via Porphyry)
-- Islamic falsafa (al-Kindi, Avicenna, al-Ghazali — Plotinian emanationism in Islamic clothing)
-**Why it matters:** Plotinus provides the **common philosophical language** that allows Christian and Islamic theology to communicate across the confessional divide. Both traditions use Neoplatonic vocabulary even when disputing monotheism's implications.
-**Tags:** plotinus, neoplatonism, christian-theology, islamic-falsafa, emanationism, 0-400-CE
+**Chain:** Plato's Demiurge (Timaeus, good craftsman-god) → Gnostic appropriation: Demiurge becomes Yaldabaoth, evil imprisoner → Marcion radicalizes: OT God morally inferior to NT God → Marcion assembles the first Christian New Testament canon as an anti-Jewish weapon
+**Why it matters:** The first person to assemble a New Testament canon is a heretic using Greek philosophy to attack the Hebrew God. Christian orthodoxy had to define its own canon in reaction to him.
+**Tags:** plato, demiurge, gnostic, valentinus, marcion, anti-cosmic, canon-formation, 0-400-CE
 
 ---
 
-### ★ LATIN CHRISTIANITY: ARISTOTLE RECOVERED VIA ISLAMIC PHILOSOPHY
-**Source:** latin-sikh-1 · 07_traditions/tradition-latin-christianity.md · commit 9a13d34
-**Finding:** Latin Scholasticism (Aquinas's synthesis) is **impossible without Islamic philosophy's recovery and advancement of Aristotle** — Averroes (Ibn Rushd), Avicenna (Ibn Sina) translated and commented on Aristotle, which via the Toledo School translations became the intellectual bedrock of Western Christian theology.
-**Why it matters:** Western Christianity is an **inheritor of Islamic philosophy**, not an autonomous intellectual tradition. The most characteristic Western theological achievement (Scholasticism) runs through Baghdad and Córdoba.
-**Tags:** latin-christianity, scholasticism, aristotle, aquinas, averroes, avicenna, islamic-golden-age, toledo-school
+### A-08 ★★ ACACIA TRIPLE CONVERGENCE: OSIRIS / ARK OF THE COVENANT / MASONIC HIRAM ABIFF
+**Source:** goblin-grimoire-1 · 09_symbols/acacia.md
+**Finding:** The same tree — acacia (shittim) — in: Egyptian Osiris mythology (resurrection symbol); Hebrew Bible Ark of the Covenant (shittim wood, Exodus 25:10); Masonic Hiram Abiff grave (central resurrection symbol of Freemasonry). Bonus T3: acacia contains DMT (Shanon 2002).
+**Tags:** acacia, osiris, ark-of-the-covenant, hiram-abiff, freemasonry, shittim, resurrection-symbol
 
 ---
 
-### ★ PLATO TIMAEUS DEMIURGE → GNOSTIC INVERSION → MARCION'S ANTI-COSMIC CANON
-**Source:** Multiple sessions
-**Chain:**
-- Plato's Demiurge (Timaeus): good craftsman-god, secondary creator, not evil
-- Gnostic appropriation (Valentinus, Apocryphon of John): Demiurge becomes **Yaldabaoth**, false/evil imprisoning creator
-- Marcion radicalizes: OT God (creator) is morally inferior to NT God (redeemer) → produces **the first Christian canon** (intentionally anti-Jewish)
-**Why it matters:** **A philosophical inversion** — Platonism's cosmic architect becomes Gnostic theology's cosmic prison-keeper. Christian heresy **inherits pagan philosophy and reverses its valence**. The first person to assemble a New Testament canon is a heretic using Greek philosophy to attack the Hebrew God.
-**Tags:** plato, demiurge, gnostic-theology, valentinus, marcion, anti-cosmic, inversion, canon-formation, 0-400-CE
+### A-09 ★★★ MASONIC BLAZING STAR = SIRIUS → EGYPTIAN SOPDET → NILE FLOOD (PIKE PRIMARY SOURCE)
+**Source:** goblin-masonic-core-1 · 09_symbols/blazing-star.md
+**Finding:** Albert Pike (*Morals and Dogma*, 1871, T1) explicitly identifies the Masonic Blazing Star with Sirius. Sirius = Egyptian Sopdet/Isis → triggered the Nile flood → Egyptian New Year → cycle of agricultural abundance. The Great Pyramid is astronomically aligned to Sirius. The symbol at the center of every Masonic lodge floor traces to Egyptian stellar theology.
+**Tags:** blazing-star, sirius, sopdet, isis, nile-flood, great-pyramid, masonic, egyptian-transmission
 
 ---
 
-### ★ EGYPTIAN MUMMIFICATION THEOLOGY → CHRISTIAN BODILY RESURRECTION
-**Source:** Soteriology documentation across sessions
-**Finding:** Egyptian mummification theology (body preservation ensures *ka*/soul continuation; Pyramid Texts cosmology) provides the theological framework inherited by early Egyptian Christianity's **bodily resurrection doctrine** — not disembodied soul survival (Greek), but actual bodily reconstitution. Early Coptic Christians in Egypt inherit mummification theological frameworks, reinterpreting them in Christian eschatology.
-**Why it matters:** **Bodily-matters soteriology** as an Egyptian contribution to Christianity, embedded in the core doctrine (resurrection of the body) but never explicitly acknowledged in later Christian theology.
-**Tags:** mummification, resurrection, bodily-theology, coptic, egyptian-christian, soteriology, 0-400-CE
+### A-10 ★★ MOSAIC PAVEMENT → ZOROASTRIAN DUALISM (PIKE MAKES THE CONNECTION EXPLICIT)
+**Source:** goblin-masonic-core-1 · 09_symbols/mosaic-pavement.md
+**Finding:** Pike explicitly connects the black-and-white Masonic lodge floor to Zoroastrian Ahura Mazda/Angra Mainyu dualism. Full documented chain: Zoroastrian dualism (-600 BCE) → Mani → Bogomil → Cathar → Masonic lodge floor.
+**Tags:** mosaic-pavement, zoroastrian-dualism, manichaeism, bogomil, cathar, masonic
 
 ---
 
-### MARTYRDOM OF PERPETUA: FEMALE VISIONARY AUTHORITY IN EARLY CHURCH
-**Source:** 02_documents/_phase-4-late-antiquity/phase-4-036-passio-perpetuae.md
-**Finding:** (~+203 CE) — builds on the Martyrdom of Polycarp template but adds **female visionary dreams** as theological authority. Perpetua's diary portions establish female literary authority in early Christian discourse. Visions of her dead brother and own resurrection preview the martyrdom.
-**Why it matters:** Gender dynamics in martyr-literature — female saints gain theological authority through dreams/visions in ways male martyrs did not. Perpetua's first-person diary is **one of the earliest identifiable female-authored texts** in Latin Christian literature.
-**Tags:** perpetua, martyrdom, female-authority, visions, hagiography, 0-400-CE
+### A-11 ★ JACHIN & BOAZ: MASONIC LODGE = KABBALISTIC SEFIROTIC DIAGRAM
+**Source:** goblin-masonic-core-1 · 09_symbols/pillars-jachin-boaz.md
+**Finding:** The twin Masonic pillars = Pillar of Mercy (Jachin) and Pillar of Severity (Boaz) — the right and left pillars of the Kabbalistic Tree of Life. The lodge floor plan is a sefirotic diagram. Phoenician Melqart temple precedent (Herodotus II.44) documented.
+**Tags:** jachin-boaz, kabbalah, sefirot, masonic, phoenician, melqart-temple, tree-of-life
 
 ---
 
-### POLYCARP'S LETTER TO PHILIPPIANS: KENOSIS + CANON-FORMATION
-**Source:** 02_documents/phase-4-066-polycarp-philippians.md · commit d46902c
-**Finding:** Introduces **kenosis** (Christ's self-emptying, Philippians 2:7) as explicit theological doctrine at the apostolic-patristic boundary. Documents early canon-formation language and wires to later Valentinian and Gnostic developments.
-**Tags:** polycarp, kenosis, canon-formation, apostolic-fathers, 0-400-CE
-
----
-
-## III. SYMBOL APPROPRIATION & INVERSION
-
-### ★ KHNUM'S POTTER-WHEEL → GENESIS 2:7 — 5-TRADITION CLAY-CREATION TABLE
-**Source:** sonnet-egyptian-core-1 · 03_deities/khnum.md · commit b7969d2
-**Finding:** Egyptian Khnum (ram-headed creator, attested Old Kingdom ~2700 BCE in Pyramid Texts) **forms human bodies on a potter's wheel before birth**. This parallels Genesis 2:7 (Yahwist J-source, ~9th–10th c. BCE): "the Lord God formed a man from the dust."
-**Five-tradition table:**
-| Tradition | Figure | Action | Date |
-|---|---|---|---|
-| Egyptian | Khnum | forms body + *ka* on wheel | ~2700 BCE Pyramid Texts |
-| Mesopotamian | Mami/Ninhursag | molds humans from clay | ~1700 BCE Atrahasis |
-| Biblical | YHWH | forms Adam from dust | ~9th c. BCE Genesis |
-| Greek | Prometheus | models humans from clay | ~700 BCE Hesiod |
-| Quranic | Allah | creates from clay (*ṭīn*) | 7th c. CE |
-**Why it matters:** Egyptian potter-creation is the **oldest and most visually elaborate** instantiation. Historical proximity (Egyptian-Israelite contact during Solomon's era, Shishak invasion) makes direct transmission plausible. Same cognitive template across three independent ancient Near Eastern zones.
-**Tags:** khnum, potter-wheel, genesis, divine-creation, 5-tradition-parallel, clay-creation, oldest-attestation
-
----
-
-### ★ VAJRA: VEDIC SKY-WEAPON → TANTRIC BUDDHIST ENLIGHTENMENT IMPLEMENT
-**Source:** goblin-sky-weapon-1 · 09_symbols/vajra-dorje.md
-**Finding:** The Vedic vajra (Indra's diamond thunderbolt, Rigveda -1200) becomes in Tantric Buddhism (Vajrayana) a ritual **implement of enlightenment** — a **semantic inversion** from destructive weapon to liberatory tool. 4-variant table: Vedic / Tantric / Tibetan dorje / Japanese kongōsho.
-**Indo-European pattern (Watkins 1995, T1):** Indra-Vritra / Thor-Midgard-Serpent / Zeus-Typhon all share the same sky-weapon-kills-cosmic-enemy structure. Buddhism **radically reframes** the weapon as a path to enlightenment.
-**Tags:** vajra, dorje, vedic-weapon, tantric-buddhism, semantic-inversion, sky-weapon, indra, destructive→liberatory
-
----
-
-### ★ MJOLNIR MOLD: SAME CAST PRODUCES BOTH THOR'S HAMMER AND CHRISTIAN CROSS
-**Source:** goblin-sky-weapon-1 · 09_symbols/mjolnir.md
-**Finding:** Archaeological **Trendgården mold casts** show both Mjolnir AND Christian cross cast from the **same moulds** — direct material evidence of **amulet-tradition competition during Scandinavian Christianization**. The same metalworker produced both sacred symbols responding to market demand from communities choosing religious identity.
-**Why it matters:** Physical archaeological evidence of a religious-transition moment. Rare material documentation of Christianization-era competition at the craft level. Nazi appropriation documented carefully as T4 distortion.
-**Tags:** mjolnir, christianization, archaeology, amulet, cross, material-culture, sky-weapon, religious-competition
-
----
-
-### ★ SATOR SQUARE: POMPEII ATTESTATION (PRE-79 CE) — PREDATES ANY CHRISTIAN CLAIM
+### A-12 ★ SATOR SQUARE: POMPEII ATTESTATION (PRE-79 CE) — PREDATES ANY CHRISTIAN CLAIM
 **Source:** goblin-grimoire-1 · 09_symbols/sator-square.md
-**Finding:** The *SATOR AREPO TENET OPERA ROTAS* palindromic word square is **documented in Pompeii** (pre-79 CE destruction) — **predating Christian origins** of the symbol that later circulated as Christian esoterica. The PATERNOSTER anagram debate is documented. 2,000-year distribution: Roman pagan → Coptic → Ethiopian Orthodox → medieval European.
-**Why it matters:** Christianity *inherited* this from pre-Christian Roman magic tradition, not the reverse. Demonstrates **Christian adoption of pagan esoteric symbols**, then re-labeling them as Christian.
-**Tags:** sator-square, pompeii, palindrome, pre-christian, paternoster, coptic, ethiopian-orthodox, magic-square, appropriation-reversal
+**Finding:** The SATOR AREPO TENET OPERA ROTAS palindromic word square is documented in Pompeii (pre-79 CE), predating Christian origins. 2,000-year distribution: Roman pagan → Coptic → Ethiopian Orthodox → medieval European. Christianity inherited this from pre-Christian Roman magic.
+**Tags:** sator-square, pompeii, pre-christian, paternoster, coptic, ethiopian-orthodox, magic-square
 
 ---
 
-### ★ DOUBLE-HEADED EAGLE: 9-TRADITION PAN-CIVILIZATIONAL TABLE
+### A-13 ★ HERMETIC CORPUS: DIRECT DOCUMENTARY ENGAGEMENT WITH CLEMENT + ORIGEN IN 0–300 CE
+**Source:** STATUS + 0-300 CE Christianity pass
+**Finding:** Direct documentary attestation of Christian-Hermetic engagement in the 0–300 CE zone. Both Clement of Alexandria and Origen cite Hermetic texts. Fowden 1986, Mahé 1978–82 (T1). The strongest documented Christianity-Hermeticism edge in the vault.
+**Tags:** hermetic-corpus, clement-of-alexandria, origen, 0-400-CE, christian-hermetic, alexandrian-synthesis
+
+---
+
+### A-14 ★ MJOLNIR MOLD: SAME CAST PRODUCES BOTH THOR'S HAMMER AND CHRISTIAN CROSS
+**Source:** goblin-sky-weapon-1 · 09_symbols/mjolnir.md
+**Finding:** Archaeological Trendgården mold casts show both Mjolnir AND Christian cross cast from the same moulds — direct material evidence of amulet-tradition competition during Scandinavian Christianization. The same metalworker served both markets.
+**Tags:** mjolnir, christianization, archaeology, amulet, material-culture, religious-competition
+
+---
+
+### A-15 ★ GREAT LAW OF HAUDENOSAUNEE → US CONSTITUTION (FRANKLIN PRIMARY DOCUMENT)
+**Source:** sonnet-indigenous-americas-1 · 05_events/event-great-law-of-peace-haudenosaunee-c1450.md
+**Finding:** Franklin's Albany Plan (1754) explicitly references the Haudenosaunee confederacy model. US Senate Resolution 76 (1988) credits the Great Law as constitutional influence. Women's political authority in the Great Law is suppressed in the US adoption.
+**Tags:** haudenosaunee, great-law, franklin, american-constitution, indigenous-governance, democracy
+
+---
+
+### A-16 ★★★ ASHERAH POLE: YAHWEH HAD A CONSORT — KUNTILLET AJRUD PRIMARY EPIGRAPHY (T1)
+**Source:** goblin-suppressed-sacred-1 · 09_symbols/asherah-pole.md
+**Finding:** Kuntillet Ajrud inscriptions (c. 800 BCE, T1 epigraphy) read "YHWH and his Asherah" — direct epigraphic evidence that early Israelite religion included a divine consort for Yahweh. Deuteronomic reform deliberately suppressed this. The Asherah pole's condemnation in the Hebrew Bible is the evidence of its former presence.
+**Why it matters:** The monotheism we receive is a reformed monotheism — the pre-reform version had a goddess. Documented in primary epigraphy, not theory.
+**Tags:** asherah, yahweh-consort, kuntillet-ajrud, epigraphy, deuteronomic-reform, suppressed-goddess
+
+---
+
+### A-17 ★ ANUBIS → HERMANUBIS → HERMES PSYCHOPOMPOS — DEITY FUNCTION TRANSMISSION
+**Source:** sonnet-egyptian-deities-1 · 03_deities/anubis.md
+**Chain:** Anubis (jackal-headed psychopomp, weighing-of-heart judge) → Hermanubis (syncretic fusion with Hermes, Plutarch §61 T1) → Hermes Psychopompos
+**Cross-tradition weighing-of-heart:** Anubis (Egyptian) / Mithra (Mithraic) / Yama (Hindu) / Michael (Christian) — same judgment-of-souls function transmits across traditions even as deity names change.
+**Tags:** anubis, hermanubis, hermes, psychopomp, weighing-of-heart, judgment, mithra, yama
+
+---
+
+### A-18 ★★ IRMINSUL DESTRUCTION: CHARLEMAGNE KILLS AN AXIS MUNDI (772 CE)
+**Source:** goblin-suppressed-sacred-1 · 09_symbols/maypole-irminsul.md
+**Finding:** Charlemagne's destruction of the Irminsul (772 CE) — the Saxon sacred pillar/world-tree — is a documented axis-mundi conquest: not just military but cosmological. Destroying the sacred center = destroying the world of the conquered people. The Maypole is a descendant surviving Christianization as folk practice.
+**Tags:** irminsul, charlemagne, axis-mundi, saxons, christianization, maypole, sacred-center-conquest
+
+---
+
+---
+
+## TIER B — DEEP PARALLELS, STRONG T1 BACKING
+
+### B-01 ★ KHNUM POTTER-WHEEL → 5-TRADITION CLAY-CREATION TABLE (EGYPT IS OLDEST)
+**Source:** sonnet-egyptian-core-1 · 03_deities/khnum.md
+**5 traditions:** Khnum forms body+*ka* on wheel (~2700 BCE) / Mami/Ninhursag molds from clay (Atrahasis ~1700 BCE) / YHWH forms Adam from dust (Genesis 2:7 ~9th c. BCE) / Prometheus models from clay (Hesiod ~700 BCE) / Allah creates from clay — *ṭīn* (7th c. CE). Egyptian version is 1,000 years older than the Biblical version.
+**Tags:** khnum, potter-wheel, genesis, clay-creation, 5-tradition, oldest-attestation
+
+---
+
+### B-02 ★ VAJRA: VEDIC SKY-WEAPON → TANTRIC ENLIGHTENMENT IMPLEMENT (SEMANTIC INVERSION)
+**Source:** goblin-sky-weapon-1 · 09_symbols/vajra-dorje.md
+**Finding:** Rigveda -1200 vajra (weapon of destruction) becomes in Tantric Buddhism a ritual implement of enlightenment — semantic inversion while maintaining visual continuity. The Indo-European sky-weapon pattern (Indra-Vritra / Thor-Midgard-Serpent / Zeus-Typhon) is documented by Watkins 1995 (T1).
+**Tags:** vajra, dorje, vedic-weapon, tantric-buddhism, semantic-inversion, indo-european
+
+---
+
+### B-03 ★★ SULPHUR-MERCURY-SALT ↔ HINDU THREE GUNAS (INDEPENDENT PARALLEL, 1,700 YEARS APART)
+**Source:** goblin-alchemical-1 · 09_symbols/sulphur-mercury-salt.md
+**Finding:** Paracelsus's Tria Prima (16th c.) has an independent parallel in the Hindu Three Gunas (Sattva/Rajas/Tamas, Bhagavad Gita ~200 BCE) — the Hindu system is 1,700 years earlier. Also: Chinese Three Treasures (Jing/Qi/Shen, neidan) / Neoplatonic Nous/Psyche/Hyle / Valentinian Gnostic Pneuma/Psyche/Hyle.
+**Tags:** sulphur-mercury-salt, paracelsus, three-gunas, bhagavad-gita, neidan, independent-parallel
+
+---
+
+### B-04 ★★ SOLVE ET COAGULA ↔ SHIVA PRALAYA-SRISHTI + OSIRIS DISMEMBERMENT
+**Source:** goblin-alchemical-1 · 09_symbols/solve-et-coagula.md
+**Finding:** The fundamental alchemical maxim (Jabir corpus, 9th c.) parallels: Shiva's pralaya-srishti cycle = solve et coagula at cosmic scale; Osiris dismemberment-and-reassembly by Isis → documented transmission to Hellenistic alchemy via Zosimos; Pauline baptismal death-resurrection (Romans 6:4); Daoist return to *pu*.
+**Tags:** solve-et-coagula, shiva, pralaya, osiris, isis, alchemy, zosimos, cross-tradition
+
+---
+
+### B-05 ★★ REBIS/ARDHANĀRIŚVARA: ALCHEMICAL HERMAPHRODITE ↔ PLATO'S ORIGINAL ANDROGYNE (DOCUMENTED TRANSMISSION)
+**Source:** goblin-alchemical-1 · 09_symbols/rebis.md
+**Finding:** The alchemical Rebis (coniunctio oppositorum) traces to Plato's original androgyne (*Symposium* 189c, documented transmission to Renaissance alchemy). Independent parallel: Ardhanāriśvara (Shiva/Parvati half-body icon, O'Flaherty 1980 T1) / Valentinian Gnostic syzygy / Tibetan yab-yum / Daoist Dragon-Tiger conjunction.
+**Tags:** rebis, ardhanarisvara, coniunctio, plato, androgyne, shiva-parvati, yab-yum, alchemy
+
+---
+
+### B-06 ★★★ KAPĀLA (VAJRAYĀNA SKULL-CUP) ↔ MASONIC CHAMBER OF REFLECTION (IDENTICAL INITIATORY FUNCTION, NO CONTACT)
+**Source:** goblin-death-sacrifice-1 · 09_symbols/memento-mori-skull.md
+**Finding:** The Vajrayāna *kapāla* (skull-cup: confront impermanence to achieve transformation) and the Masonic Chamber of Reflection (candidate meditates with skull, hourglass, salt, sulfur before initiation) have identical initiatory function: confrontation with mortality as prerequisite to transformation. No documented contact. Celtic sacred head also documented in this cluster.
+**Tags:** kapala, vajrayana, masonic-chamber-of-reflection, skull, initiation, memento-mori, independent-convergence
+
+---
+
+### B-07 ★★ CAULDRON OF REBIRTH → HOLY GRAIL (LOOMIS 1927 T1) — 7-TRADITION SACRED VESSEL TABLE
+**Source:** goblin-death-sacrifice-1 · 09_symbols/cauldron-of-rebirth.md
+**Finding:** Celtic cauldrons (Dagda / Pair Dadeni / Cerridwen / Dyrnwch) → Holy Grail. Loomis 1927 (T1) documents transmission. 7-tradition sacred-vessel table: Dagda's Cauldron / Cauldron of Rebirth / Cerridwen's / Holy Grail / Alchemical Vessel / Finnish Sampo / Hindu Amrita. Also: Cauldron = Alchemical athanor / Ocean of Milk (Vedic cosmic cauldron) / Norse Mead of Poetry.
+**Tags:** cauldron-of-rebirth, holy-grail, loomis, celtic, alchemical-vessel, amrita, sacred-vessel-7-traditions
+
+---
+
+### B-08 ★★★ SACRED PEARL: 6-TRADITION TRANSFORMATION-THROUGH-SUFFERING TABLE (WOUND → PEARL)
+**Source:** goblin-hermetic-depth-1 · 09_symbols/sacred-pearl.md
+**6-tradition table:** Gnostic *Hymn of the Pearl* (*Acts of Thomas* ~200–250 CE, Prince→Egypt→serpent→awakening) / Chinese dragon-pearl (*lóng zhū*) as inner-alchemy / Islamic *lulū* in Qur'an + Sufi *maʿrifa* / Hindu *maṇi* + Samudra Manthan + *Maṇi Padme Hūm* / Buddhist dukkha → bodhicitta / Alchemical prima materia → Philosopher's Stone
+**Master equation:** wound→pearl = dukkha→bodhicitta = prima materia→Philosopher's Stone = Jungian shadow→Self
+**Tags:** sacred-pearl, hymn-of-the-pearl, gnostic, chinese-dragon, islamic-pearl, 6-tradition-transformation
+
+---
+
+### B-09 ★★★ ABRAXAS 365 ISOPSEPHY + JUNG'S 1916 PSEUDONYM (GNOSTIC SUPREME DEITY RESURFACES IN DEPTH PSYCHOLOGY)
+**Source:** goblin-hermetic-depth-1 · 09_symbols/abraxas.md
+**Finding:** Basilides's Abraxas (2nd c. CE Gnostic supreme deity, name = 365 in Greek isopsephy = solar year), attested in 3,000+ magical amulets (Bonner 1950 T1). MASSIVE WIN: Jung writes *Septem Sermones ad Mortuos* (1916) under the pseudonym "Basilides of Alexandria" — using Abraxas to symbolize pre-moral totality beyond Good/Evil split. Direct Gnostic theological recovery into 20th-century depth psychology.
+**Tags:** abraxas, basilides, gnostic, isopsephy, jung, depth-psychology, 365-solar-year, 0-400-CE
+
+---
+
+### B-10 ★★ ADINKRA SANKOFA = ANAMNESIS = TESHUVAH = SOLVE ET COAGULA (4-TRADITION CONVERGENCE)
+**Source:** goblin-african-diaspora-1 · 09_symbols/adinkra.md
+**Finding:** Akan Adinkra Sankofa (bird looking backward while moving forward = "return to the past to move forward") is structurally identical to: Greek *anamnesis* (Plato — knowledge as recollection), Hebrew *teshuvah* (return/repentance), alchemical *solve et coagula* (dissolve-and-reconstitute). Four independent traditions, same cognitive structure.
+**Tags:** adinkra, sankofa, anamnesis, teshuvah, solve-et-coagula, akan, african-philosophy, independent-convergence
+
+---
+
+### B-11 ★★ CROSSROADS: HECATE + HERMES + ESHU/ELEGBA + PAPA LEGBA + ROBERT JOHNSON'S DEAL
+**Source:** goblin-african-diaspora-1 · 09_symbols/crossroads-symbol.md
+**Finding:** The crossroads as liminal, dangerous, and divinely inhabited: Greek Hecate (trivium/Enodia) + Hermes (Hermai) + Yoruba Eshu/Elegba (trickster-messenger) + Haitian Vodou Papa Legba (gateway-opener). Robert Johnson's Delta Blues crossroads deal with the devil = African diaspora memory of Eshu translated into Christian-American mythology. Japanese Dōsojin parallel also documented.
+**Tags:** crossroads, hecate, hermes, eshu, papa-legba, robert-johnson, trickster-psychopomp, universal-convergence
+
+---
+
+### B-12 ★★ I CHING = BINARY CODE: LEIBNIZ 1703 PRIMARY SOURCE + YORUBA IFÁ INDEPENDENT BINARY
+**Source:** goblin-asian-systems-1 · STATUS
+**Finding:** Leibniz's 1703 letter to Bouvet (*Explication de l'Arithmétique Binaire*, T1 primary source) explicitly demonstrates I Ching hexagrams are binary notation — 2,500 years before computers. Independent parallel: Yoruba Ifá divination system (Bascom 1969 T1, Eglash 1999 T1) independently developed the same binary combinatorics for 256 divination figures. Niels Bohr chose yin-yang for his coat of arms when knighted, citing complementarity.
+**Tags:** i-ching, binary-code, leibniz, yoruba-ifa, independent-binary, niels-bohr, yin-yang
+
+---
+
+### B-13 ★★ SACRED VOID: THREE MOST RIGOROUS MYSTICAL THEOLOGIES INDEPENDENTLY CONVERGE ON VOID-AS-HIGHEST-REALITY
+**Source:** goblin-21c · 09_symbols/sacred-void.md
+**Finding:** Nāgārjuna's Madhyamaka śūnyatā / Lurianic Kabbalah's Ayin-Ein Sof-Tzimtzum (Scholem T1) / Rhineland mysticism's via negativa-kenosis (Pseudo-Dionysius T1) — the three traditions identified as the most intellectually rigorous mystical theologies — converge independently on void-as-highest-reality. Taoist wu-Wuji / Egyptian Nun / Greek Chaos / Gnostic kenoma documented as parallel forms.
+**Tags:** sacred-void, sunyata, nagarjuna, tzimtzum, kabbalah, via-negativa, kenosis, independent-convergence
+
+---
+
+### B-14 ★★ QUETZALCOATL-VENUS: ASTRONOMICAL MECHANICS ENCODED AS DEATH-RESURRECTION — 4-TRADITION TABLE
+**Source:** sonnet-indigenous-americas-1 · 03_deities/quetzalcoatl.md
+**4-tradition table:** Quetzalcoatl/Venus (Aztec) / Inanna/Venus (Sumerian) / Aphrodite/Morning Star (Greek) / Lucifer/Morning Star (Christian). Venus's actual inferior conjunction encodes death-resurrection theology independently across all four.
+**Tags:** quetzalcoatl, venus, aztec, inanna, lucifer, astronomical-encoding, death-resurrection
+
+---
+
+### B-15 ★★★ XIBALBA ↔ DUAT: INDEPENDENT UNDERWORLD (ZERO POSSIBILITY OF CONTACT)
+**Investigation preset:** `independent-underworld` · **Source:** INVESTIGATIONS
+**Finding:** Popol Vuh's Xibalba (Maya, ~1000 BCE oral tradition) and Egyptian Duat (~2400 BCE) are structurally identical despite zero possibility of contact: both multi-level realms (9 levels / 12 hours), both feature named lords of death, both require hero to navigate by cunning not force, both frame the solar journey as literal nightly underworld passage. Hero Twins navigate Xibalba exactly as Ra navigates the Duat — through cunning, disguise, and knowledge of names.
+**Tags:** xibalba, duat, maya, egyptian, independent-convergence, multi-level-underworld, solar-journey
+
+---
+
+### B-16 ★★ ODIN ON YGGDRASIL: NORSE PASSION — AND ALSO OSIRIS AND PURUSHA (LIKELY INDEPENDENT)
+**Investigation preset:** `odin-sacrifice` · **Source:** INVESTIGATIONS
+**Finding:** Hávamál 138–139: Odin hangs nine days, pierced by a spear, to seize the runes. Structural parallel to Christ's crucifixion AND Egyptian Osiris narrative AND Vedic Purusha dismemberment AND Mesopotamian Inanna descent — all voluntary divine self-sacrifice as price of cosmic knowledge. The Norse version is likely independent (predates intensive Christianization of Iceland).
+**Tags:** odin, yggdrasil, crucifixion, osiris, purusha, inanna, voluntary-sacrifice, independent-development
+
+---
+
+### B-17 ★ SOLAR DEATH: SAME 4-ACT DRAMA ON EVERY INHABITED CONTINENT (STRONGEST UNIVERSAL GRAMMAR ARGUMENT)
+**Investigation preset:** `solar-death-return` · **Source:** INVESTIGATIONS
+**4-act grammar:** (1) solar deity retreats/dies; (2) world enters darkness; (3) assembled powers perform ritual; (4) light returns. Attested independently: Egyptian (Ra vs. Apep) / Japanese (Amaterasu in cave + Ame-no-Uzume's dance) / Norse (Baldr) / Greek (Persephone/Demeter) / Zoroastrian (Ahura Mazda vs. Angra Mainyu) / Christian (Easter three-day darkness).
+**Tags:** solar-death, universal-pattern, amaterasu, baldr, persephone, ra-apep, cross-continental
+
+---
+
+### B-18 ★★ DANSE MACABRE ↔ NATARAJA: DEATH DANCE AS COSMIC CHOREOGRAPHY (INDEPENDENT)
+**Source:** goblin-death-sacrifice-1 · 09_symbols/danse-macabre.md
+**Finding:** Black Death origin (Paris 1424–25) / Holbein's Dance of Death / democratic-leveling theology → independent parallel to Nataraja (Shiva's cremation-ground dance = cosmic destruction enabling renewal) + Tibetan Cham Citipati skeleton-dance + Mexican Día de los Muertos / Santa Muerte.
+**Tags:** danse-macabre, nataraja, shiva, tibetan-cham, dia-de-los-muertos, death-dance, independent-convergence
+
+---
+
+### B-19 ★★ SACRIFICE SUBSTITUTION: 7-TRADITION COMPARISON TABLE (AZTEC SACRIFICE-AS-ENGINEERING IS THE OUTLIER)
+**Source:** goblin-death-sacrifice-1 · 09_symbols/sacrifice-substitution.md
+**7-tradition table:** Akedah / Azazel scapegoat / Greek pharmakos / Christian Eucharist / Vedic yajamāna / Bodhisattva merit-transfer / Aztec sacrifice-as-cosmic-engineering. The Aztec case is the MASSIVE WIN outlier — mechanistic cosmology, not gift/appeasement/scapegoat. Girard mimetic theory (T1) as interpretive frame.
+**Tags:** sacrifice, substitution, akedah, pharmakos, eucharist, girard, mimetic-theory, aztec-engineering
+
+---
+
+### B-20 ★★★ SOLOMONIC SPINE: ONE FIGURE, FIVE INDEPENDENT LIVING TRADITIONS, NO MUTUAL DIALOGUE
+**Investigation preset:** `solomonic-spine-five-traditions` · **Source:** INVESTIGATIONS
+**5 independent living traditions organized around Solomon:** Ethiopian Solomonic dynasty (Kebra Nagast; Ark of the Covenant in Axum — still constitutional basis of modern Ethiopia) / Freemasonry (Solomon's Temple / Hiram Abiff) / Islamic Sulayman (commands jinn and wind) / Key of Solomon grimoire tradition (Dee to Crowley) / Wisdom Christology (Proverbs 8 → John 1 → Logos → Jesus as New Solomon). None of these traditions are in significant dialogue with each other.
+**Tags:** solomon, solomonic-spine, ethiopia, freemasonry, hiram-abiff, sulayman, key-of-solomon, wisdom-christology
+
+---
+
+### B-21 ★★★ CHINESE AXIAL AGE: MOZI = AGAPE / MENGZI vs XUNZI = ROUSSEAU vs HOBBES / HAN FEI = MACHIAVELLI MINUS 1,800 YEARS
+**Source:** chinese-axial-1 · commits f329f12, 374503c, 5cd4606
+**Three independent MASSIVE WINs:**
+- Mozi's *jian ai* (impartial love, ~450 BCE) structurally identical to Christian *agape* — love the neighbor as oneself without distinction of kinship
+- Mengzi vs. Xunzi debate (human nature good vs. evil, ~350 BCE) maps exactly onto Rousseau vs. Hobbes (1750s CE) — 2,100 years earlier
+- Han Fei (~280 BCE) articulates Realpolitik, statecraft as manipulation of incentives, rule by law not virtue — Machiavelli's *Prince* 1,800 years earlier
+**Tags:** mozi, jian-ai, agape, mengzi, xunzi, rousseau-hobbes, han-feizi, machiavelli, axial-age-chinese
+
+---
+
+### B-22 ★★ KA'BA: PRE-ISLAMIC SACRED SITE CONTINUITY — INCORPORATION NOT ERASURE
+**Source:** goblin-suppressed-sacred-1 · 09_symbols/kaaba-black-stone.md
+**Finding:** The Ka'ba is documented as a pre-Islamic sacred site housing 360+ tribal idols. The tawaf (circumambulation) is a pre-Islamic practice incorporated into the Islamic pilgrimage. Contrast with Irminsul (destroyed by Charlemagne): Islam's approach to the Ka'ba is incorporation not erasure — a different strategy of religious appropriation.
+**Tags:** kaaba, black-stone, pre-islamic, tawaf, circumambulation, sacred-site-continuity, incorporation-vs-erasure
+
+---
+
+### B-23 ★★★ PRAGUE CONVERGENCE: DEE'S ENOCHIAN + MAHARAL'S GOLEM + BRAHE/KEPLER — THREE OCCULT TRADITIONS, ONE CITY, NO DIALOGUE
+**Investigation preset:** `prague-convergence` · **Source:** INVESTIGATIONS
+**Finding:** Rudolf II's Prague (~1583–1612) simultaneously hosts: John Dee and Edward Kelley's Enochian angel-communication; the Maharal of Prague's Golem tradition and Kabbalistic neo-Platonism; Tycho Brahe and Johannes Kepler's empirical astronomy. The three apparently never directly engaged. The Rosicrucian manifestos (1614–1616) appear immediately after Rudolf's death, apparently synthesizing the Prague convergence.
+**Tags:** prague, rudolf-ii, john-dee, enochian, maharal, golem, brahe, kepler, rosicrucian, parallel-traditions
+
+---
+
+### B-24 ★★ PERSECUTION → ENLIGHTENMENT: THE INQUISITION CREATES BOTH SPINOZA AND LURIANIC KABBALAH (OPPOSITE DIRECTIONS)
+**Investigation preset:** `persecution-to-enlightenment` · **Source:** INVESTIGATIONS
+**Finding:** Spanish Inquisition (1478) + Alhambra Decree (1492) branches into: Spinoza (via Amsterdam Marrano community → *Tractatus Theologico-Politicus* 1670 = founding document of biblical criticism and secular philosophy) AND Safed Kabbalistic renaissance (Luria, Karo, Cordovero — nearly all 1492 expulsion families). One decree in 1492 → Western secular modernity AND the mystical peak of Jewish tradition, in opposite directions.
+**Tags:** spanish-inquisition, alhambra-decree, spinoza, luria, safed-kabbalah, persecution-to-enlightenment, 1492
+
+---
+
+### B-25 ★★ SELF-LIMITING ABSOLUTE: 6 TRADITIONS INDEPENDENTLY CONTRACT THE INFINITE
+**Investigation preset:** `self-limiting-absolute` · **Source:** INVESTIGATIONS
+**Finding:** Across 6 traditions, the absolute voluntarily contracts to make contingent reality possible: Śiva's āṇava-mala / Luria's tzimtzum / Palamas's essence/energy distinction / Eriugena's divine darkness / Valentinian kenoma / Buddhist śūnyatā-as-ground. The Palamas/Trika parallel (essence = Śiva, energy = Śakti) is an alert-grade structural isomorphism — documented without confirmed contact.
+**Tags:** self-limiting-absolute, tzimtzum, palamas, shiva-anava, eriugena, independent-convergence
+
+---
+
+---
+
+## TIER C — UNDER-EXPLORED / POTENTIALLY ORIGINAL FRAMINGS
+
+### C-01 ★★★ FEATHER OF MA'AT → GOTHIC LAST JUDGMENT → LADY JUSTICE IN EVERY COURTHOUSE (4,000-YEAR CHAIN)
+**Source:** goblin-suppressed-sacred-1 · 09_symbols/feather-of-maat.md
+**Finding:** Feather of Ma'at (Anubis weighs heart against this feather, Book of the Dead ~1550 BCE) → Christian Last Judgment tympana (Gothic cathedral scales: Michael weighing souls) → Lady Justice (blindfolded, scales) in modern courthouses. One iconographic lineage from -1550 BCE to every Western courthouse today.
+**Tags:** feather-of-maat, lady-justice, last-judgment, courthouse, iconographic-chain, 4000-years
+
+---
+
+### C-02 ★★★ SOL NIGER (BLACK SUN): ALCHEMICAL NIGREDO APPROPRIATED BY NAZIS — THE SYMBOL IS OLDER THAN THE CRIME
+**Source:** goblin-sacred-geometry-1 · 09_symbols/sol-niger.md
+**Finding:** The Black Sun (alchemical nigredo / John of the Cross's "dark night of the soul" / Egyptian Ra-as-Osiris in the nocturnal Duat / Hindu Kali parallel) was named as a Nazi symbol by Landig (1971) and installed by Himmler at Wewelsburg (1933–35). The alchemical tradition predates this by centuries. Now flagged by SPLC/ADL/Verfassungsschutz. Critical documentation: the legitimate tradition, the appropriation, and the appropriation's own genealogy.
+**Tags:** sol-niger, black-sun, nigredo, wewelsburg, nazi-appropriation, kali, dark-night-of-soul
+
+---
+
+### C-03 ★★★ METATRON'S CUBE: THE MODERN NAME IS AN INVENTION (1985–1990) — KEPLER IS THE REAL PREDECESSOR
+**Source:** goblin-hermetic-depth-1 · 09_symbols/metatrons-cube.md
+**Finding:** No classical text calls this "Metatron's Cube" — the name is a New Age invention (Drunvalo Melchizedek 1985–1990), clearly documented. The legitimate historical predecessor is Kepler's *Mysterium Cosmographicum* (1596) — all 5 Platonic solids as a single cosmic system. Bonus: C60 Buckminsterfullerene = truncated icosahedron (molecular geometry encodes Platonic forms).
+**Tags:** metatrons-cube, kepler, platonic-solids, new-age-invention, buckminsterfullerene, fabricated-genealogy
+
+---
+
+### C-04 ★★★ VEVE = YANTRA: HAITIAN VODOU RITUAL DIAGRAMS ARE STRUCTURALLY IDENTICAL TO HINDU TANTRA (NO CONTACT)
+**Source:** goblin-african-diaspora-1 · 09_symbols/veve.md
+**Finding:** Haitian Vodou veve (ritual diagrams drawn in cornmeal to summon lwa) are structurally identical to Hindu yantras (geometric diagrams drawn to summon/manifest a deity). No documented contact. Also: Erzulie Freda's heart-sword = Mater Dolorosa — African-diaspora lwa merging with a Catholic Marian image.
+**Tags:** veve, yantra, vodou, hinduism, independent-convergence, erzulie-freda, mater-dolorosa
+
+---
+
+### C-05 ★★★ PONTOS RISCADOS ↔ GOETIA SIGILS: SPIRIT-SIGNATURE CONVERGENCE ACROSS TRADITIONS (NO CONTACT)
+**Source:** goblin-african-diaspora-1 · 09_symbols/pontos-riscados.md
+**Finding:** Afro-Brazilian Candomblé/Umbanda pontos riscados (sacred signature-drawings for orixás) and Western ceremonial magic Goetia sigils are convergent-forms — the same functional idea (a unique visual signature that summons a specific spirit) developed independently. Systematic Afro-Brazilian saint-syncretic identification table: Oxalá/Jesus, Ogum/Saint George, Iemanjá/Our Lady, Exu/crossroads-trident.
+**Tags:** pontos-riscados, goetia-sigils, afro-brazilian, candomble, spirit-signatures, convergent-form
+
+---
+
+### C-06 ★★★ LIBERATION THEOLOGY: FOUR CONTINENTS, ONE THEOLOGICAL MOVE, ZERO MUTUAL CONTACT
+**Preset:** `liberation-theology-four-continents` · **Source:** opus-alchemy-1
+**4 traditions, 4 continents, identical theological operation** — strip the doctrine that legitimizes oppression, re-read the core as liberation mandate:
+1. Donghak Korea (1861, *innaecheon*: "each person is Heaven" → anti-colonial peasant revolution)
+2. Cao Dai Vietnam (1926, syncretic spirit-writing → French colonial resistance)
+3. Ambedkar's Navayana Buddhism India (1956, karma excised as casteist ideology → 500,000 conversions in one day, largest in history)
+4. Latin American Liberation Theology (Gutiérrez 1971, preferential option for the poor)
+**Tags:** liberation-theology, donghak, cao-dai, ambedkar, navayana, gutiérrez, colonialism, theological-reweaponization
+
+---
+
+### C-07 ★★★ AMBEDKAR vs. IQBAL: SAME CONTEXT, SAME PHILOSOPHICAL TOOLKIT, OPPOSITE EXITS
+**Preset:** `south-asian-modernism-divergence` · **Source:** sonnet-south-asia-1
+**Finding:** British India, 1930s–1950s. Iqbal deepens Islam through Bergson/Nietzsche/Hegel — *khudi* (selfhood) against Vedantic dissolution. Ambedkar abandons Hinduism entirely, reconstructing Buddhism as liberation theology. Both read Bergson, Nietzsche, Dewey. Same colonial context, same Western philosophical toolkit, diametrically opposite conclusions. The divergence maps the full range of options available to colonized religious subjects.
+**Tags:** ambedkar, iqbal, south-asia, islamic-modernism, navayana, bergson, nietzsche, colonial-context
+
+---
+
+### C-08 ★★★ KALACHAKRA PAN-EURASIAN: ZURVAN + KRONOS + MITHRAIC AION + TIBETAN TIME-DEITY (INDEPENDENT?)
+**Source:** goblin-asian-systems-1 · STATUS
+**Finding:** Tibetan Kalachakra (Wheel of Time deity) — pan-Eurasian convergence cluster: Zoroastrian Zurvan (infinite time as supreme deity) / Greek Kronos (Father Time) / Mithraic Aion (lion-headed time-god with zodiac belt) / Tibetan Kalachakra. Shambhala/Prester John/Avalon hidden-kingdom cluster also documented — three "hidden realm awaiting revelation" traditions with no contact.
+**Tags:** kalachakra, zurvan, kronos, mithraic-aion, time-deity, shambhala, prester-john, avalon, hidden-kingdom
+
+---
+
+### C-09 ★★ GOLDEN RATIO IN MEDIEVAL ISLAMIC GIRIH TILES: QUASI-CRYSTALLINE GEOMETRY 500 YEARS BEFORE WESTERN DISCOVERY
+**Source:** goblin-hermetic-depth-1 · 09_symbols/golden-ratio.md
+**Finding:** Lu & Steinhardt (*Science*, 2007, T1) prove that medieval Islamic girih tile patterns (Darb-i Imam shrine, Isfahan, 1453) are quasi-crystalline — the same mathematical structure discovered in the West by Penrose in 1974, 500 years later. Markowsky 1992 (T1) documents that nautilus-shell and Parthenon golden-ratio claims are myths.
+**Tags:** golden-ratio, girih-tiles, islamic-geometry, quasi-crystalline, penrose-tiling
+
+---
+
+### C-10 ★★★ NON-GROUND DEBATE: THE DEEPEST UNRESOLVED SPLIT IN MYSTICAL THOUGHT (NOBODY MAPS THIS COMPARATIVELY)
+**Investigation preset:** `non-ground-debate` · **Source:** INVESTIGATIONS
+**Finding:** Is there a positive luminous ground (Trika: Śiva-consciousness; Dzogchen: rigpa; shentong: Buddha-nature-light) or no ground at all (Madhyamaka: śūnyatā)? This debate was never settled. Runs from Nāgārjuna (~150 CE) through Tibetan rangtong/shentong controversy to present, mapping onto Eckhart's unresolved tension between divine nothingness and the soul's spark.
+**Tags:** non-ground-debate, madhyamaka, dzogchen, shentong, eckhart, rangtong, mystical-philosophy
+
+---
+
+### C-11 ★★★ SHATTERING AND REPAIR: LURIANIC KABBALAH = VALENTINIAN SOPHIA FALL — 1492 IS THE HISTORICAL ANCHOR
+**Investigation preset:** `shattering-and-repair` · **Source:** INVESTIGATIONS
+**Finding:** Isaac Luria's three-act cosmogony (tzimtzum → shevirat ha-kelim → tikkun olam) — "divine light too intense for its containers" — is structurally identical to the Valentinian Sophia fall. Scholem's historical anchor: Luria's cosmic exile-and-repair is the metaphysical translation of the 1492 Spanish Expulsion. The greatest flowering of Jewish mystical cosmology is a response to historical catastrophe.
+**Tags:** luria, shevirat-ha-kelim, tikkun-olam, sophia-fall, valentinian, kabbalah, 1492, trauma-into-theology
+
+---
+
+### C-12 ★★ YONI + VENUS FIGURINES → KAMAKHYA → GOTHIC MANDORLA (35,000-YEAR CHAIN IF DOCUMENTED)
+**Source:** goblin-nature-fertility-1 · 09_symbols/yoni.md
+**Finding:** The yoni as cosmic womb — Venus figurines (~35,000 BCE) → Hindu Kamakhya temple (the temple IS a sacred vagina, no anthropomorphic deity image) → Gothic cathedral mandorla (the vesica-piscis frame around Christ/Mary = yoni form). Whether documented transmission or independent convergence is open.
+**Tags:** yoni, venus-figurines, kamakhya, mandorla, vesica-piscis, cosmic-womb, sacred-anatomy
+
+---
+
+### C-13 ★★★ INTERFAITH MARTYRDOM: GURU TEGH BAHADUR DIES FOR HINDUS (UNIQUE CROSS-TRADITION PROTECTIVE MARTYRDOM IN VAULT)
+**Investigation preset:** `interfaith-martyrdom` · **Source:** INVESTIGATIONS
+**Finding:** Guru Tegh Bahadur is beheaded by Aurangzeb specifically for defending Hindu religious freedom. This is the unique cross-tradition protective martyrdom in the vault. Most founding martyrdoms generate in-group solidarity. This one generates an out-group protection mandate — the Khalsa's founding principle: defend the weak regardless of their religion. No other tradition's founding martyrdom generates this structure.
+**Tags:** guru-tegh-bahadur, khalsa, martyrdom, interfaith, aurangzeb, sikh, hindu-protection, unique-structure
+
+---
+
+### C-14 ★★★ DOUBLE-HEADED EAGLE: 9-TRADITION PAN-CIVILIZATIONAL TABLE (HITTITE → MASONIC)
 **Source:** goblin-grimoire-1 · 09_symbols/double-headed-eagle.md
-**Nine-tradition attestation:**
-Hittite (ancient Near East) / Seljuk Muslim (Islamic Anatolia) / Byzantine Christian (Eastern Orthodox) / Habsburg (European heraldry) / Russian Orthodox (ecclesiastical) / Serbian Nemanjic dynasty / Albanian national / Georgian heraldic / Scottish Rite Freemasonry
-**Why it matters:** A heraldic symbol that transmits across pagan, Islamic, Catholic, Orthodox, and Masonic contexts — accumulating incompatible meanings. The most multi-civilizational single symbol in the vault.
+**9-tradition attestation:** Hittite (ancient Near East) / Seljuk Muslim (Islamic Anatolia) / Byzantine Christian (Eastern Orthodox) / Habsburg (European heraldry) / Russian Orthodox / Serbian Nemanjic dynasty / Albanian national / Georgian heraldic / Scottish Rite Freemasonry. A symbol that transcends pagan, Islamic, Catholic, Orthodox, and Masonic contexts — accumulating incompatible meanings.
 **Tags:** double-headed-eagle, heraldry, 9-tradition, hittite, byzantine, ottoman, russian, masonic, pan-civilizational
 
 ---
 
-### ★ MERKABA → HEKHALOT → EZEKIEL → TETRAMORPH → ZODIAC
-**Source:** goblin-esoteric-bodies-1 · 09_symbols/merkaba.md
-**Chain:** Ezekiel's chariot-throne vision (Hayyot, four living creatures) → Hekhalot mysticism (heavenly ascent through seven palaces, 2nd–6th c. CE) → **Tetramorph** in Christian art (four evangelists: Matthew/Lion, Mark/Bull, Luke/Eagle, John/Eagle) → integration with 12-sign zodiac in medieval synthesis
-**Why it matters:** A single prophetic vision becomes the **organizational principle** for celestial-realm mappings across Jewish mysticism and Christian iconography, eventually synthesizing with Hellenistic astrology.
-**Tags:** merkaba, ezekiel, hekhalot, tetramorph, hayyot, zodiac, heavenly-ascent, jewish-christian
+---
+
+## TIER D — META-PATTERNS (ORIENTATION MAPS FOR FUTURE INVESTIGATION)
+
+### D-01 RECURRING TRANSMISSION CORRIDORS
+1. **Egypt → Greece → Rome → Islam → Renaissance → Modern West** — astrology, hermeticism, Neoplatonism, healing-shrine institution
+2. **Mesopotamia → Levant → Greece → Christianity → Islam** — flood narrative, demiurge, celestial omens
+3. **Vedic → Buddhist → Hellenistic (Greco-Buddhist) → Western** — karma, chakra/caduceus, meditation
+4. **Jewish → Christian → Islamic** — martyrdom theology, Merkabah → Heavenly Ascent, prophetic canon
+5. **Templar → Order of Christ → Portuguese colonial sails** — institutional military-religious succession
 
 ---
 
-### ★ KUNDALINI IḌĀ-PIṄGALĀ-SUṢUMṆĀ = CADUCEUS (ICONOGRAPHIC IDENTITY)
-**Source:** goblin-esoteric-bodies-1 · 09_symbols/kundalini.md
-**Finding:** Hindu tantra's kundalini system (serpent-energy at base of spine, coiling up *suṣumṇā* with left *iḍā* and right *piṅgalā* channels) is **iconographically identical** to Hermes' caduceus (two snakes wrapping a central staff). Either direct transmission (Hellenistic-Indian contact in Greco-Buddhist zone) or independent convergence on the same anatomical metaphor.
-**Tags:** kundalini, caduceus, tantra, ida-pingala-susumna, hermes, hellenistic-indian, esoteric-anatomy
-
----
-
-### ★ QUETZALCOATL-VENUS: ASTRONOMICAL ENCODING = DEATH-RESURRECTION — 4-TRADITION TABLE
-**Source:** sonnet-indigenous-americas-1 · 03_deities/quetzalcoatl.md
-**Finding:** Quetzalcoatl encodes Venus's actual orbital mechanics (Morning Star = birth/resurrection; disappearance = death; inferior conjunction = underworld journey).
-**4-tradition table:**
-| Deity | Tradition | Venus role |
-|---|---|---|
-| Quetzalcoatl | Aztec | Morning Star, death-resurrection cycle |
-| Inanna | Sumerian | Descent and return tied to Venus |
-| Aphrodite | Greek | Morning Star association |
-| Lucifer | Christian | Morning Star (carries same mythology) |
-**Why it matters:** Independent astronomical observation → independent theological encoding of the **same celestial phenomenon** as death-resurrection narrative. Venus's orbital mechanics become cross-cultural theological template.
-**Tags:** quetzalcoatl, venus, aztec, inanna, aphrodite, lucifer, astronomical-encoding, death-resurrection
-
----
-
-### ★ EVIL EYE: MOST WIDELY DISTRIBUTED FOLK BELIEF IN HUMAN HISTORY
-**Source:** goblin-esoteric-bodies-1 · 09_symbols/evil-eye.md
-**Finding:** Attested across **36+ documented cultures** from **~3000 BCE (Sumerian)** to present — Sumeria, Egypt, Greece, Rome, Levant, Persian, Islamic, Jewish, Christian, Hindu, Tibetan, Chinese, Turkish, Mediterranean, Germanic, Slavic, Afro-diasporic, Indigenous-American.
-**Why it matters:** Single most widely-distributed symbolic category in the vault. Folk-level **universal anxiety about the power of gaze/attention** — this is not elite theology or transmission but appears to be a psychologically-universal template.
-**Tags:** evil-eye, nazar, apotropaic, 36-cultures, 3000-years, universal-anxiety, folk-belief
-
----
-
-### ★ SPIDER GRANDMOTHER (HOPI): CREATION BY THOUGHT AND SONG — 5-TRADITION PARALLEL
-**Source:** sonnet-indigenous-americas-1 · 03_deities/spider-grandmother-hopi.md
-**Finding:** Hopi Spider Grandmother (Kokyangwuhti) and Palöngawhoya create through thought and sound — **a 5-tradition creator-by-utterance table including a North American tradition with no documented Eurasian contact:**
-1. Hopi Palöngawhoya (vibration/cosmic sound)
-2. Memphite Ptah (heart-thought → tongue-utterance → creation)
-3. Hebrew Genesis 1 (creation-by-divine-speech)
-4. Johannine Logos (Word as divine creative principle)
-5. Vedic *nada brahman* (sound as primordial reality)
-**Why it matters:** **Independent North American** instantiation of the creator-by-utterance template — no documented contact. Strongest evidence that some theological templates are **cognitively universal** rather than transmitted.
-**Tags:** spider-grandmother, hopi, creation-by-thought-song, nada-brahman, 5-tradition-parallel, independent-convergence
-
----
-
-## IV. DEITY CROSS-TRADITION CHAINS
-
-### ★ ATEN HYMN ↔ PSALM 104 — TEXTUAL PARALLEL IN CANONICAL SCRIPTURE
-**Source:** sonnet-egyptian-core-1 · 03_deities/aten.md · 02_documents/phase-1-011-great-hymn-to-aten.md
-**Finding:** Great Hymn to Aten (Akhenaten, ~1350 BCE) and Psalm 104 (Hebrew Bible) share **identical structural parallels**: sun-disk's daily journey, creation of creatures through solar light, sustenance of life through solar power, ordered cosmos maintained by divine attention. Multiple T1 scholarly comparison tables document this. Direct borrowing vs. shared Levantine religious environment remains open, but structural identity is uncontroversial.
-**Why it matters:** Egyptian theological vocabulary embedded **in the canonical Hebrew Bible itself** — not recontextualized in later interpretation but in the canonical text.
-**Tags:** aten, psalm-104, solar-theology, akhenaten, egyptian-hebrew, textual-parallel, canonical-scripture
-
----
-
-### ★ ATUM: COFFIN TEXTS DEMOCRATIZATION OF SALVATION — 2,350-YEAR CHAIN
-**Source:** sonnet-egyptian-core-1 · 03_deities/atum.md + 02_documents/phase-1-009-coffin-texts.md
-**Finding:** Pyramid Texts (exclusive to royalty) → Coffin Texts (accessible to any who can afford a coffin) → Book of the Dead (papyrus, wider access) → mystery cults (initiates) → Paul's "neither Jew nor Greek" (universal salvation) — a **democratization-of-salvation arc spanning 2,350 years** from Old Kingdom Egypt to early Christianity.
-**Soul-anatomy table:** Egyptian Ba/Ka/Akh/Shut/Ib ↔ Greek *psuchē* / Platonic tripartite soul / Vedic *jīva* — Egyptian sophistication **predates Plato by ~1,500 years**.
-**Tags:** atum, coffin-texts, democratization-of-salvation, soul-anatomy, plato-predates, 2350-year-chain
-
----
-
-### ★ ANUBIS → HERMANUBIS → HERMES PSYCHOPOMPOS — DEITY FUNCTION TRANSMISSION
-**Source:** sonnet-egyptian-deities-1 · 03_deities/anubis.md
-**Chain:** Anubis (jackal-headed psychopomp, weighing-of-heart judge) → Hermanubis (syncretic fusion with Hermes, Plutarch §61 T1) → Hermes Psychopompos (Greek soul-guide)
-**Cross-tradition weighing-of-heart:** Anubis (Egyptian) / Mithra (Mithraic) / Yama (Hindu) / Michael (Christian) — same **judgment-of-souls function** across traditions.
-**Why it matters:** The deity's *function* (psychopomp, judge) transmits even when the name and iconography change. Role structure predates Greek philosophy.
-**Tags:** anubis, hermanubis, hermes, psychopomp, weighing-of-heart, judgment, mithra, yama, function-transmission
-
----
-
-### SET: UNIQUE INTEGRATED CHAOS IN 7-TRADITION CHAOSKAMPF TABLE
-**Source:** sonnet-egyptian-deities-1 · 03_deities/set.md
-**7-tradition table:** Set / Typhon / Tiamat / Vritra / Chaos / Apep / Jörmungandr
-**Unique finding:** Set **is not destroyed** — he remains **integrated into the Egyptian cosmos** as Ra's solar defender against night-chaos. Every other chaos-deity in the table is annihilated. Egyptian theology uniquely accepts a paradoxical integrated-enemy role.
-**Why it matters:** Cross-tradition comparison reveals **functional differences** — same mythological role, different theological conclusions depending on whether chaos is destroyed or integrated.
-**Tags:** set, typhon, chaos-deity, chaoskampf, integrated-chaos, 7-tradition-table
-
----
-
-## V. INSTITUTIONAL SUCCESSION CHAINS
-
-### ★ TEMPLAR → ORDER OF CHRIST → PORTUGUESE MARITIME CROSS
-**Source:** opus-portuguese-hermetic-1 · 04_persons/vasco-da-gama.md · commit 9a13d34
-**Chain:** Knights Templar (founded 1119) → papal suppression 1312 → Order of Christ founded 1319 in Portugal (directly inheriting Templar properties and personnel) → Vasco da Gama's ships fly the **Cross of the Order of Christ** to India (1498)
-**Why it matters:** Templar institutional lineage transmits materially into Portuguese colonial enterprise. The **Templar cross literally appears on the sails** of the first European ship to reach India.
-**Tags:** templars, order-of-christ, portuguese-maritime, vasco-da-gama, institutional-succession, cross-symbol
-
----
-
-### ★ HAUDENOSAUNEE GREAT LAW → AMERICAN CONSTITUTION
-**Source:** sonnet-indigenous-americas-1 · 05_events/event-great-law-of-peace-haudenosaunee-c1450.md
-**Finding:** Haudenosaunee (Iroquois) Great Law of Peace (Gayanashagowa, ~1450 CE) — three-house system, consensus governance, women's political authority. Franklin's Albany Plan (1754) explicitly references the confederacy model. US Senate Resolution 76 (1988) credits the Great Law as constitutional influence.
-**Why it matters:** Indigenous political philosophy directly influencing American governmental design — long suppressed in canonical American history.
-**Tags:** haudenosaunee, great-law, iroquois, franklin, american-constitution, indigenous-governance, democracy, women-authority
-
----
-
-## VI. SYNCRETIC SCRIPTURE & MYSTICS
-
-### ★ GURU GRANTH SAHIB: INTERNALLY SYNCRETIC CANON BY DESIGN
-**Source:** bhakti-1 · commit 78bf8b2
-**Finding:** Sikh scripture (compiled 1604 by Guru Arjan) **incorporates poetry from Hindu saints (Ravidas, Namdev), Muslim Sufis (Kabir, Farid), and Sikh Gurus** into a single canonical text. The *Adi Granth* is syncretic **by institutional design**.
-**Tags:** guru-granth-sahib, sikhism, syncretic-scripture, ravidas, kabir, farid, guru-arjan
-
----
-
-### ★ KABIR'S BIJAK: SUFI-BHAKTI STREET-LEVEL SYNCRETISM
-**Source:** bhakti-1 · commit 5b78de0
-**Finding:** Kabir (15th–16th c. weaver-saint, Muslim-Hindu background) writes mystical Sufi-Bhakti synthesis explicitly **rejecting both institutional Islam and Brahmanical Hinduism** for direct mystical experience. Not elite theological fusion — **street-level mystical poetry**.
-**Tags:** kabir, bijak, sufi-bhakti, syncretism, hindi-urdu, street-level-mysticism
-
----
-
-### MIRABAI: FEMALE MYSTICAL VOICE PARALLEL
-**Source:** bhakti-1 · commit 234c5fe
-**Finding:** Mirabai (16th-c. Rajasthani saint-poet) — female mystical voice in Hindu bhakti paralleling female Sufi saints, Christian nuns' mysticism (Hildegard, Teresa of Ávila). Women's mystical authority across traditions, often obscured by male-centered literary history.
-**Tags:** mirabai, bhakti, female-mysticism, saint-poet, hildegard, teresa-of-avila
-
----
-
-## VII. ENTHEOGEN & RITUAL CHEMISTRY
-
-### ELEUSINIAN KYKEON: ERGOT-ALKALOID HYPOTHESIS
-**Source:** 09_symbols/eleusinian-kykeon.md
-**Finding (T3 — hypothesis):** Wasson-Hofmann-Ruck (1978): the sacred kykeon drink contained ergot-alkaloids (*Claviceps purpurea* on grain), producing LSD-like entheogenic experiences. The entire mystery-cult initiation structure revolves around this chemically-induced mystical experience.
-**Why it matters:** If true, reframes Greek mystery-religion as entheogenic practice — explains the sworn secrecy (initiates experienced something genuinely transcendent, chemically induced).
-**Tags:** eleusinian, kykeon, ergot, entheogen, mystery-cult, wasson-hofmann-ruck, T3-hypothesis
-
----
-
-### VEDIC SOMA = AMANITA MUSCARIA? (WASSON HYPOTHESIS)
-**Source:** 09_symbols/amanita-muscaria.md
-**Finding (T3 — hypothesis):** 120+ Rigvedic Soma hymns, no botanical identification in texts. Wasson 1968+: Soma is *Amanita muscaria* (fly agaric mushroom), an entheogenic sacrament in early Indo-Iranian ritual.
-**Tags:** soma, vedic, entheogen, amanita-muscaria, wasson, T3-hypothesis
-
----
-
-## VIII. META-PATTERNS (ACROSS ALL DISCOVERIES)
-
-### RECURRING TRANSMISSION CORRIDORS
-1. **Egypt → Greece → Rome → Islam → Renaissance → Modern West** (astrology, hermeticism, Neoplatonism, magic)
-2. **Mesopotamia → Levant → Greece → Christianity → Islam** (flood, demiurge, celestial omens)
-3. **Vedic → Buddhist → Hellenistic (Greco-Buddhist) → Western** (karma, chakra/caduceus, meditation)
-4. **Jewish → Christian → Islamic** (martyrdom, mysticism, Merkaba → heavenly ascent, prophetic canon)
-5. **Templar → Order of Christ → Colonial enterprise** (institutional military-religious lineage)
-
-### MAXIMUM TRANSMISSION ERAS
+### D-02 MAXIMUM TRANSMISSION ERAS
 | Era | Why Maximum |
 |---|---|
-| Hellenistic period (-330 to +100) | Alexander's campaigns create Greek-Egyptian-Mesopotamian-Indian contact; syncretism becomes institutional norm |
-| Late Antique Synthesis (+200 to +600) | Neoplatonism synthesizes East+West; Christianity institutionalizes; Islam emerges inheriting all prior |
-| Islamic Golden Age (+800 to +1200) | Translation movement at Baghdad/Toledo; Aristotle transmitted + advanced; Indian astronomy/math move west |
-| Renaissance (+1450 to +1650) | Printing + Ficino's 1463 Corpus Hermeticum recovery; Kabbalah-Christian synthesis |
+| **0–400 CE (user priority zone)** | Christianity institutionalizes, simultaneously absorbs Neoplatonism, Egyptian iconography, mystery-cult structures, and generates Islam's foundational parallels |
+| **Hellenistic (-330 to +100)** | Alexander creates Greek-Egyptian-Mesopotamian-Indian contact; syncretism becomes institutional norm; Serapis as example |
+| **Islamic Golden Age (+800–1200)** | Translation movement Baghdad/Toledo; Aristotle transmitted + advanced; Indian astronomy moves West |
+| **Renaissance (+1450–1650)** | Printing + Ficino's 1463 Corpus Hermeticum recovery; Kabbalah-Christian synthesis |
 
-### SYMBOL FAMILIES THAT RECUR
-- **Sky-Weapon:** Vajra (Vedic) / Mjolnir (Norse) / Keraunos (Greek) / Trishula (Shiva)
+---
+
+### D-03 APPROPRIATION TYPOLOGY
+1. **Direct Adoption without Acknowledgment** — Isis Lactans → Nursing Madonna; Serapis shrine → Saint shrine; Egyptian mummification theology → Christian resurrection; Sator Square
+2. **Semantic Inversion** — Vajra (weapon) → enlightenment implement; Platonic Demiurge (good) → Gnostic Demiurge (evil)
+3. **Syncretism via Identification** — Isis = Hera; Hermanubis; Kabir Sufi-Bhakti; Afro-Brazilian saint-orixá equivalences
+4. **Suppression of Source** — Church of the East erased; Egyptian contributions to Christianity obscured; Asherah-Yahweh consort deleted by Deuteronomic reform; Haudenosaunee constitutional influence suppressed
+5. **Incorporation, not Erasure** — Ka'ba absorbed into Islam; Greek philosophical vocabulary adopted and retained
+6. **Commercial Commodification** — Daoism → wellness; Vedic yoga → fitness; Shamanic practices → spiritual tourism
+
+---
+
+### D-04 SYMBOL FAMILIES THAT RECUR
+- **Sky-Weapon:** Vajra (Vedic) / Mjolnir (Norse) / Keraunos (Greek) / Trishula (Shiva) — all PIE documented by Watkins 1995
 - **Cosmic Serpent-Enemy:** Set-Typhon / Tiamat / Jörmungandr / Vritra / Apep
-- **Creator-by-Utterance:** Ptah / Genesis 1 / Johannine Logos / Qur'anic Kun fa-yakun / Vedic Nada Brahman / Hopi Palöngawhoya
-- **Psychopomp-Judge:** Anubis / Hermes / Yama / Mithra / Archangel Michael
-- **Healing-Shrine-Cult:** Serapis Sarapeia / Asclepius temples / Christian saint-shrines / Sufi zaouia
-- **Protective Threshold Guardian:** Lamassu → Cherubim / Sphinx / Janus / Eshu / Ganesha
+- **Creator-by-Utterance:** Ptah / Genesis 1 / Johannine Logos / Qur'anic kun fa-yakun / Vedic nada brahman / Hopi Palöngawhoya
+- **Psychopomp-Judge:** Anubis / Hermes / Yama / Mithra / Archangel Michael (Feather of Ma'at → scales → Lady Justice)
+- **Sacred Vessel:** Dagda's Cauldron / Grail / Alchemical Vas / Amrita / Sampo
+- **Three-Fold System:** Tria Prima / Three Gunas / Three Treasures / Nous-Psyche-Hyle / Trimurti / Sattva-Rajas-Tamas
+- **Divine Center / Hidden Ground:** Dharmadhātu / Ein Sof / Divine Darkness / Wu / Pleroma / Sacred Void
 
-### APPROPRIATION TYPOLOGY
-1. **Direct Adoption without Acknowledgment:** Isis Lactans → Nursing Madonna; Serapis shrine → Saint shrine; Egyptian mummification theology → Christian resurrection
-2. **Semantic Inversion:** Vajra (weapon) → enlightenment implement; Platonic Demiurge (good) → Gnostic Demiurge (evil)
-3. **Syncretism via Identification:** Isis = Hera; Hermanubis (Hermes + Anubis); Kabir's Sufi-Bhakti synthesis
-4. **Suppression of Source:** Church of the East erased; Egyptian contributions to Christianity obscured; Indigenous governance influence on US Constitution suppressed
-5. **Commercial Commodification:** Daoism → wellness industry; Vedic yoga → fitness product; Shamanic practices sold as "spiritual experiences"
+---
 
-### INDEPENDENT CONVERGENCE (NOT TRANSMISSION)
-Cases where no contact is documented but template appears independently:
-- Evil Eye (~36 cultures, 3000 BCE to present, no single origin)
+### D-05 INDEPENDENT CONVERGENCE (NOT TRANSMISSION) — STRONGEST ARGUMENTS FOR UNIVERSAL COGNITIVE GRAMMAR
+Cases where no contact is documented but the template appears independently:
+- Evil Eye (36+ cultures, 3000 BCE to present)
 - Spider Grandmother creation-by-utterance (Hopi, no Eurasian contact)
 - Shamanic drum as axis mundi (Siberian / North American / African / Mesoamerican)
+- Solar Death 4-act drama (every inhabited continent)
+- Xibalba ↔ Duat (Maya / Egyptian, structurally identical, zero contact possible)
+- Kapāla ↔ Masonic Chamber of Reflection (identical initiatory function, no contact)
+- Veve ↔ Yantra (Vodou / Hindu ritual diagrams, no contact)
+- Sankofa = Anamnesis = Teshuvah = Solve et Coagula (four traditions, independent)
+- Sacrifice Substitution as universal pattern (7 traditions)
 
-### THE EPOCH 0–400 CE (HIGH-PRIORITY ZONE)
-Confirmed wins in this zone: Martyrdom of Polycarp (foundation of saint-feast system + Shi'a ʿĀshūrāʾ parallel) / Isis Lactans → Nursing Madonna (workshop level) / Serapis shrine → Christian saint shrine / Stoic Logos → Johannine Logos → Trinitarian orthodoxy / Mummification theology → Bodily resurrection doctrine / Gnostic inversion of Demiurge / Marcion's first NT canon / Perpetua's female visionary authority / Kenosis doctrine (Polycarp letter)
+---
+
+### D-06 THE EPOCH 0–400 CE — CONFIRMED WINS IN THE PRIORITY ZONE
+Wins where the transmission event occurs between Christ's birth and canon solidification:
+- S-01: Divine Pharaoh → Son of God (Nicaea 325 CE)
+- S-03: Ptah Logos chain (Johannine Logos ~90–100 CE)
+- S-04: Serapis → Face of Christ (~200–400 CE)
+- S-05: 3rd-Century Collision Zone (200–280 CE)
+- S-06: Martyrdom of Polycarp → saint-day system (~155 CE)
+- S-08: Merkabah → Mi'raj (Hekhalot mysticism → Muhammad's 619 CE Night Journey)
+- S-09: Zadokite Rupture aftermath (152 BCE → all sects including early Christianity)
+- A-01: Isis Lactans → Nursing Madonna (3rd–5th c. CE workshops)
+- A-02: Stoic Logos → Philo → John 1:1 → Trinitarian orthodoxy (~90–325 CE)
+- A-03: Serapis healing-shrine → Christian saint-shrine (3rd–4th c. CE)
+- A-05: Anubis → Michael (iconographic chain, ~200–500 CE)
+- A-07: Plato Demiurge → Gnostic inversion → Marcion's first canon (~140 CE)
+- A-13: Hermetic Corpus engagement with Clement + Origen (0–300 CE)
+- B-09: Abraxas in 0–400 CE + Jung's 1916 recovery
+- Martyrdom of Perpetua: female visionary authority (~203 CE)
+- Polycarp's Letter: kenosis doctrine + canon-formation language
+
+---
+
+---
+
+## SUPPLEMENTARY WINS — THIRD SWEEP (2026-05-16 archaeology of MASSIVE-WINS-INDEX + INVESTIGATION-LEADS + missed agents)
+
+*Sources: `MASSIVE-WINS-INDEX.md` (42 entries), `INVESTIGATION-LEADS.md` (37 entries), `MASSIVE-WINS-AND-INVESTIGATION-LEADS-session-2026-05-15.md` (24 entries), agents: sonnet-yoruba-1, sonnet-orphic-bardo-1, sonnet-anzu-adapa-1, opus-blake-metatron-1, goblin-esoteric-fire-1, goblin-indigenous-mystery-1, opus-native-pacific-1. Duplicate-checked against Tier S–D above.*
+
+---
+
+### SUPP-S-01 ★★★ SIBYLLINE ORACLES VENTRILOQUISM: JEWISH AUTHORS PLANTED PRO-CHRISTIAN CONTENT CITED FOR 1,700 YEARS
+**Source:** `INVESTIGATION-LEADS.md` §7 · `phase-3-010-sibylline-oracles`
+**Finding:** Jewish authors in 2nd c. BCE Egypt put monotheistic, Torah-loyal content in the mouth of the Sibyl. Justin Martyr, Theophilus, Clement, Lactantius, and Augustine all cited "the Sibyl" as a pagan witness to Christianity — not realizing the pro-Christian material had been planted by Jewish-then-Christian authors. **This is documented deception.** The Sistine Chapel Sibyls (1508–1512 CE) are the visual peak of this 1,700-year arc: Egyptian Jewish pseudepigrapha → Vatican ceiling. The Catholic Church's four Sibyls in the official liturgy (Michelangelo's Delphic, Libyan, Cumaean, Erythraean) are based on content the Jewish authors fabricated.
+**Why it matters:** The most consequential religious ventriloquism in history — pagan prophets used to validate Christianity were Jewish literary constructions.
+**Tags:** sibylline-oracles, jewish-pseudepigrapha, christian-apologetics, sistine-chapel, 0-400-CE
+
+---
+
+### SUPP-S-02 ★★★ 4 MACCABEES: THE ATONEMENT VOCABULARY IS HELLENISTIC JEWISH MARTYR-THEOLOGY, NOT A CHRISTIAN INNOVATION
+**Source:** `INVESTIGATION-LEADS.md` §11 · `phase-3-019-4-maccabees`
+**Finding:** 4 Maccabees 6:29 (*antipsychon* = life-for-life ransom) and 17:22 (*hilastērion* = atoning sacrifice) are verbal and conceptual parallels to Mark 10:45 (*lytron anti*) and Romans 3:25 (*hilastērion*). The NT atonement theology is not a radical innovation — it is the application of an already-existing Hellenistic Jewish martyr-theology to Jesus. The *hilastērion* word-bridge (4 Maccabees → Paul) is one of the most consequential findings in 20th-century NT scholarship. Also: the same Maccabean martyrs who died for the Torah are venerated in Roman Martyrology and Greek Synaxarion as "Holy Maccabean Martyrs" — the most dramatic absorption of Jewish martyrs into Christian hagiography without doctrinal adjustment.
+**Why it matters:** Christian atonement doctrine has its vocabulary in pre-Christian Jewish martyr theology; the martyrs who inspired it are simultaneously honored as Christian saints.
+**Tags:** 4-maccabees, atonement, hilasterion, antipsychon, maccabean-martyrs, christian-saints, 0-400-CE
+
+---
+
+### SUPP-S-03 ★★★ SABIAN-QURANIC LEGAL LOOPHOLE: A PAGAN COMMUNITY SURVIVED UNDER ISLAM FOR 400 YEARS
+**Source:** `INVESTIGATION-LEADS.md` §37 · `event-arabic-harranian-hermetica-c800-1000` · van Bladel 2009 T1
+**Finding:** The Harranian Sabians appropriated the Quranic *Ṣābi'ūn* term (left unidentified in the Quran) and secured Abbasid recognition as a People of the Book. A pagan Greek-Mesopotamian astral-religion community survived under Islamic rule for ~400 years (until early 11th c.) through this textual reinterpretation. Their protected status allowed Thābit ibn Qurra to transmit Greek Hermetic philosophy into Arabic — making the Latin medieval Hermetic tradition downstream of a pagan-community legal survival strategy run through the Quran. One of the most successfully exploited religious-legal-status loopholes in medieval Mediterranean history.
+**Why it matters:** The Hermetic-alchemical tradition in Western Europe is downstream of a Quranic loophole exploited by pagans.
+**Tags:** sabian, harranian, quran, legal-loophole, hermeticism, arabic, abbasid, hermetic-transmission
+
+---
+
+### SUPP-S-04 ★★★ NO ORIGINAL HEBREW BIBLE: MT, LXX, AND SAMARITAN PENTATEUCH ARE THREE BRANCHES
+**Source:** `INVESTIGATION-LEADS.md` §20 · `phase-3-007-samaritan-pentateuch` · Tov consensus T1
+**Finding:** Before Qumran, the Masoretic Text was assumed to be essentially the original. After Qumran: the Dead Sea Scrolls produced manuscripts aligning with the Septuagint's Hebrew Vorlage AND with the Samaritan Pentateuch, separately, against the MT. The three traditions (MT, LXX, SP) are three independent members of a textual family that existed before any of them was standardized. **The "original Bible" is a modern fiction.** This is the Tov consensus position (T1) and has not fully reached popular consciousness.
+**Why it matters:** Every Bible translation is working from one branch of a lost tree. The "word of God" as received is a 2nd-century BCE stabilization of competing textual traditions.
+**Tags:** hebrew-bible, masoretic-text, septuagint, samaritan-pentateuch, qumran, textual-criticism, biblical-plurality
+
+---
+
+### SUPP-S-05 ★★★ HERODOTUS 2.53 — FIRST STATEMENT THAT RELIGION IS A HUMAN CONSTRUCTION (440 BCE)
+**Source:** `INVESTIGATION-LEADS.md` §21 · `phase-2-028-herodotus-histories-book-2`
+**Finding:** Herodotus's claim that the Olympian pantheon was a poetic creation by named, dateable human authors (Homer ~400 years before Herodotus) simultaneously demythologizes Greek religion and anticipates Euhemerism, Xenophanes's critique of anthropomorphic religion, and Hume's naturalist theory of religion. This is the secularization move of the entire Enlightenment in a single observation, made ~440 BCE. Burkert, West, and Fowler (all T1) treat this as one of the most audacious claims in ancient religious criticism.
+**Why it matters:** The entire Enlightenment critique of religion as human construction is prefigured in a single Greek sentence written 2,200 years earlier.
+**Tags:** herodotus, secularization, religion-as-human-construction, euhemerism, enlightenment, greek-criticism
+
+---
+
+### SUPP-S-06 ★★★ TIAN MING — MOST CONSEQUENTIAL POLITICAL-THEOLOGICAL DOCTRINE BY LONGEVITY × POPULATION
+**Source:** `INVESTIGATION-LEADS.md` §22 · `phase-2-033-shujing-book-of-documents`
+**Finding:** Every Chinese dynastic change from -1046 to 1912 CE was legitimated by Tian Ming (Mandate of Heaven). The doctrine also structured political theology in Korea, Vietnam, and Japan. That is ~3,000 years × the world's largest populations. No other single political-theological doctrine has governed more human beings for more centuries. It originates in the Shujing's Western Zhou speeches (~-1050 to -900 BCE). Most Western intellectual history courses don't mention it.
+**Why it matters:** By longevity × population affected, Tian Ming outweighs divine right of kings, papal authority, and democratic mandate combined.
+**Tags:** tian-ming, mandate-of-heaven, chinese-political-theology, dynasties, korea-vietnam-japan, shujing
+
+---
+
+### SUPP-S-07 ★★★ HERMES TRISMEGISTUS = QURANIC PROPHET IDRIS — HERMETISM ENTERS ISLAM AS QUASI-PROPHETIC WISDOM
+**Source:** `INVESTIGATION-LEADS.md` §27 · van Bladel 2009 T1 · `event-arabic-harranian-hermetica-c800-1000`
+**Finding:** The Harranian Sabians identified Hermes Trismegistus with the Quranic prophet Idris (Quran 19:56–57). Result: Hermetic alchemy, astrology, and magic enter mainstream Islamic intellectual culture as quasi-prophetic wisdom. Thābit ibn Qurra translates Hermetic Greek into Arabic; the *Picatrix* becomes the foundational Arabic Hermetic-magical compendium; the Tabula Smaragdina **first surfaces in Arabic** (in Pseudo-Apollonius's *Kitāb Sirr al-Khalīqa*). **The pre-Latin medieval Hermetic philosophical tradition is therefore Arabic, not Latin.** The 12th-c. Toledo translations brought it to Latin centuries before Ficino's 1471 Greek rediscovery.
+**Why it matters:** Medieval European magic, alchemy, and astrology are downstream of a Muslim prophet identification with a Greco-Egyptian god.
+**Tags:** hermes-trismegistus, idris, quran-prophet, arabic-hermeticism, tabula-smaragdina, picatrix, toledo-school
+
+---
+
+### SUPP-S-08 ★★★ SACRED MARRIAGE: INANNA → TERESA OF ÁVILA — 3,700-YEAR CONTINUOUS CHAIN
+**Source:** session-2026-05-15 §A · `sacred-marriage` · `inanna-sumerian`
+**Chain:** Inanna-Dumuzi sacred marriage hymns (~2100 BCE) → Ugaritic Baal-Anat → Hebrew Song of Songs → Gnostic Bridal Chamber mystery (Gospel of Philip) → Alchemical *coniunctio* (Rosarium Philosophorum, ~1550) → Kabbalistic Shabbat theology (Zohar; Luria's Safed) → Christian bridal mysticism (Bernard of Clairvaux → Teresa of Ávila).
+**Sub-finding:** ~15 million Jews perform a sacred marriage ritual every Friday night. Kabbalistic theology: Shabbat is the weekly reunion of the Shekhinah with the Holy One. The Kabbalat Shabbat liturgy is structurally a bridal reception: *Lecha Dodi* is a wedding song; the congregation bows to welcome the Bride. The Sumerian temple ritual performed by high priestess and king in Ur has become the kitchen table of every observant Jewish household.
+**Refs:** Wolkstein/Kramer 1983 T1; Nissinen/Uro 2008 T1; McGinn 1991–2006 T1
+**Tags:** sacred-marriage, hieros-gamos, inanna, dumuzi, shabbat, shekhinah, teresa-of-avila, 3700-year-chain
+
+---
+
+### SUPP-A-01 ★★ CONFUCIANISM → JESUITS → ENLIGHTENMENT → GLOBAL MERITOCRACY
+**Source:** `MASSIVE-WINS-INDEX.md` §3 · `tradition-confucianism` · `leibniz` · `voltaire`
+**Chain:** Matteo Ricci's *accommodatio* → Philippe Couplet's *Confucius Sinarum Philosophus* (1687) → Leibniz (*Novissima Sinica* 1697) → Voltaire (weaponizes Confucianism against the Church) → Physiocrats ("the European Confucius" Quesnay) → British civil service examination (1855, explicitly modeled on China's imperial examination) → global meritocratic bureaucracy.
+**Why it matters:** The global bureaucratic architecture that structures every modern government's civil service descends from Confucian examination culture.
+**Tags:** confucianism, jesuits, leibniz, voltaire, civil-service-examination, enlightenment, meritocracy
+
+---
+
+### SUPP-A-02 ★★ JAIN AHIMSA → GANDHI → MLK → GLOBAL NON-VIOLENT RESISTANCE
+**Source:** `MASSIVE-WINS-INDEX.md` §7 · `tradition-jainism`
+**Finding:** Gandhi grew up in Gujarat surrounded by Jain merchant communities whose *ahimsa* ethic was literal and absolute. This is Gandhi's actual source — not primarily Buddhist or Hindu. Gandhi → Martin Luther King Jr. → global non-violent resistance doctrine. The political methodology that ended British colonialism in India and legalized civil rights in the US descended from Gujarati merchant piety.
+**Tags:** ahimsa, jainism, gandhi, martin-luther-king, non-violent-resistance, political-theology-of-nonviolence
+
+---
+
+### SUPP-A-03 ★★ BHAGAVAD GITA: THE MOST-TRANSLATED HINDU TEXT REACHED NUCLEAR PHYSICS
+**Source:** `MASSIVE-WINS-INDEX.md` §8 · `phase-2-027-bhagavad-gita`
+**Chain:** Wilkins 1785 translation → Emerson's *Over-Soul* (1841) + Thoreau at Walden Pond → Humboldt Berlin lectures (1825–26) → German Idealism → Gandhi's *satyagraha* → MLK → global non-violent resistance → Bhaktivedanta/ISKCON (1968) → Western counterculture. **Peak moment:** Oppenheimer at Trinity test (July 16, 1945) quotes Gita 11:32 in Sanskrit — "Now I am become Death, destroyer of worlds" — the most cited verse from any non-Western scripture in the 20th century, spoken at the creation of nuclear weapons.
+**Tags:** bhagavad-gita, oppenheimer, trinity-test, emerson, thoreau, gandhi, western-reception
+
+---
+
+### SUPP-A-04 ★★ TESTIMONIUM FLAVIANUM — MOST DEBATED PARAGRAPH IN ANCIENT HISTORY
+**Source:** `MASSIVE-WINS-INDEX.md` §36 · `phase-4-070-josephus-antiquities-of-the-jews`
+**Finding:** Josephus, *Antiquities* 18.3.3: the standard text is demonstrably Christianized ("He was the Christ," "he appeared to them alive again"). Arabic and Syriac versions preserve a less-Christianized form closer to the original. Scholarly consensus: Josephus did mention Jesus; the passage was then altered by Christian scribes. The Testimonium is simultaneously the strongest non-Christian attestation of Jesus and the clearest example of Christian scribal intervention in an ancient text.
+**Source:** Meier, John P. (1991). *A Marginal Jew*, vol. 1. Doubleday. [T1]
+**Tags:** testimonium-flavianum, josephus, jesus-attestation, scribal-interpolation, 0-400-CE, christian-forgery
+
+---
+
+### SUPP-A-05 ★★ GUANYIN GENDER TRANSFORMATION — MOST DOCUMENTED CASE OF DIVINE GENDER INVERSION IN TRANSMISSION
+**Source:** `MASSIVE-WINS-INDEX.md` §37 · `avalokitesvara`
+**Finding:** Avalokiteśvara enters China as consistently male (Indian sources); by ~1000 CE Guanyin is consistently female in Chinese iconography; the transformation is fully documented across Tang and Song dynasty sources. Probable mechanism: assimilation to Chinese goddess forms (Lady of Taishan, White Snake Lady). The female Guanyin retransmits to Korean Gwan-eum and Japanese Kannon. One of the vault's most precisely documented cases of cultural transmission transforming a deity's fundamental attributes.
+**Tags:** guanyin, avalokitesvara, gender-inversion, tang-dynasty, kannon, divine-femininity-in-transmission
+
+---
+
+### SUPP-A-06 ★★ ELIJAH-ELISHA MIRACLE CYCLES: THE NARRATIVE DNA OF SYNOPTIC MIRACLES
+**Source:** `INVESTIGATION-LEADS.md` §12 · `phase-2-034-books-of-kings`
+**Finding:** Luke 4:25–27 *explicitly* invokes Elijah and Elisha as precedents for Jesus's ministry. Synoptic miracle type-scenes have documented parallels: Elijah multiplying food (1 Kings 17) / Mark 6 feeding of 5,000; raising the dead (1 Kings 17:17–24) / Mark 5:35–43; healing of "foreigner" (2 Kings 5 Naaman) / Luke 4:27; double portion of spirit transferred / Acts 2 Pentecost. The Gospels name their own template — yet popular presentations of the miracles rarely mention the direct OT framework.
+**Tags:** elijah, elisha, synoptic-miracles, miracle-type-scenes, hebrew-bible-typology, 0-400-CE
+
+---
+
+### SUPP-A-07 ★★ DIDACHE EUCHARIST — OLDEST CHRISTIAN EUCHARISTIC TEXT HAS NO "THIS IS MY BODY"
+**Source:** `MASSIVE-WINS-INDEX.md` §40 · `phase-4-061-didache`
+**Finding:** The Didache's eucharistic prayers (chapters 9–10) are older than the Synoptic accounts; have no words of institution; are focused on *eucharistia* (thanksgiving) for "spiritual food and drink"; are modeled on Jewish *berakah* blessings; may be pre-meal rather than post-meal. The Pauline sacrificial-memorial interpretation ("this cup is the new covenant in my blood") represents a *later* theological layer. The Didache shows the Eucharist in its most fluid early form, before Pauline interpretation fixed its meaning.
+**Why it matters:** The central ritual of Christianity existed before its current theological interpretation was attached to it.
+**Tags:** didache, eucharist, words-of-institution, jewish-berakah, liturgical-archaeology, 0-400-CE
+
+---
+
+### SUPP-A-08 ★★★ MANETHO + TIMOTHEUS: THE MOST DELIBERATE STATE-SPONSORED DEITY DESIGN IN HISTORY
+**Source:** `INVESTIGATION-LEADS.md` §10 · `phase-3-025-manetho-aegyptiaca`
+**Finding:** An Egyptian priest (Manetho) and an Eleusinian ritual specialist (Timotheus of Eleusis) were commissioned by Ptolemy I to *design a new god* — Serapis (= Osiris + Apis + Zeus + Hades + Asclepius) — intended to be authoritative for both Greek and Egyptian populations of Alexandria. Well-attested (Plutarch *De Iside* 28; Tacitus *Histories* 4.83–84). This is the most deliberate state-sponsored act of syncretic deity-construction in ancient history — two priestly intellectuals working from identified cross-tradition parallels to produce a god. The parallel to modern interfaith theology-design is uncomfortable.
+**Tags:** manetho, serapis, ptolemy-i, syncretic-deity, state-religion-engineering, alexandria, timotheus
+
+---
+
+### SUPP-A-09 ★★ ANANSI CROSSED THE ATLANTIC — ORAL TRADITION SURVIVING THE MIDDLE PASSAGE
+**Source:** session-2026-05-15 §B6 · `anansi`
+**Finding:** The Akan spider trickster's stories (*Anansesem*) crossed the Middle Passage from modern Ghana and became Anansi stories in Jamaica and the Caribbean. In the context of slavery, Anansi's victories over more powerful opponents functioned as symbolic resistance encoding. In the American South, Anansi partially merged into Br'er Rabbit (Uncle Remus stories). Henry Louis Gates Jr. traces the deeper transmission through the **Signifying Monkey** as the structural foundation of African-American vernacular rhetorical culture.
+**Refs:** Rattray 1930 T1; Gates *Signifying Monkey* 1988 T1
+**Tags:** anansi, middle-passage, african-diaspora, trickster, oral-tradition-survival, br'er-rabbit, signifying-monkey
+
+---
+
+### SUPP-A-10 ★★ CHRISTIAN HANDS PRESERVED THE HERMETIC CORPUS — WITHOUT THEM IT WOULD NOT EXIST
+**Source:** `INVESTIGATION-LEADS.md` §29 · `event-stobaeus-anthology-c500`
+**Finding:** Stobaeus (~500 CE, Macedonian Christian) preserves 29 Hermetic excerpts otherwise lost (including the Isis-Horus *Kore Kosmou*). Coptic Christian monastic-adjacent collectors at Nag Hammadi (~350 CE) buried three Hermetica with their codices. Armenian Christian monastic compilers preserved Mahé's recovered *Definitions*. The Christian Roman state was suppressing pagan religion in cult contexts while Christian intellectuals were preserving pagan religious literature in textual contexts. **Without Christian compilers there is no surviving Hermetic corpus.**
+**Why it matters:** The esoteric tradition that shaped Renaissance Europe, Freemasonry, and modern occultism was preserved by the religion it supposedly contradicts.
+**Tags:** hermetic-corpus, stobaeus, nag-hammadi, christian-preservation, kore-kosmou, armenian-hermetica
+
+---
+
+### SUPP-A-11 ★★★ SAMARITAN PASSOVER: THE ONLY SURVIVING SACRIFICIAL PASSOVER RITE IN THE WORLD
+**Source:** `INVESTIGATION-LEADS.md` §16 · `phase-3-007-samaritan-pentateuch`
+**Finding:** The ~800-person Samaritan community still performs the Passover sacrifice on Mount Gerizim annually — a blood sacrifice, with lambs, following Exodus 12 literally. This is more ancient in liturgical form than any Jewish Passover practice, since Jewish Passover was restructured after 70 CE to function without a temple. **The world's last surviving Temple-period Passover rite is performed by 800 people most of the world has never heard of.**
+**Tags:** samaritan, passover-sacrifice, temple-period, mount-gerizim, living-ancient-ritual, 800-practitioners
+
+---
+
+### SUPP-B-01 ★★★ SHINRAN TARIKI ↔ LUTHER SOLA FIDE — THE VAULT'S MOST PRECISE DOCTRINAL CONVERGENCE
+**Source:** `MASSIVE-WINS-INDEX.md` §24 · `phase-4-104-sukhavativyuha-larger` · `tradition-protestantism`
+**Finding:** Shinran (Japan, 1173–1263) and Luther (Germany, 1483–1546) independently arrive at structurally identical soteriology: divine power alone saves; human merit is irrelevant or obstructive; the primary recipients of salvation are sinners, not the righteous; faith/trust is itself a gift from the divine, not a human achievement. The parallel extends to: both faced institutional resistance; both translated scripture into the vernacular; both attracted mass followings from non-monastic populations; both generated successor denominations still active today. Zero historical connection.
+**Source:** Bloom, Alfred (1965). *Shinran's Gospel of Pure Grace*. U Arizona Press. [T1]
+**Tags:** shinran, pure-land, tariki, sola-fide, sola-gratia, luther, independent-convergence, soteriology
+
+---
+
+### SUPP-B-02 ★★★ ISAIAH 45:5 — THE SHARPEST THEOLOGICAL INVERSION IN EXTANT ANCIENT TEXTS
+**Source:** `MASSIVE-WINS-INDEX.md` §35 · `yaldabaoth`
+**Finding:** Isaiah 45:5: "I am the LORD, and there is no other; besides me there is no god." Israel's greatest monotheistic declaration. The Sethian Gnostics read this verse in Yaldabaoth's mouth — the blind, arrogant demiurge boasting "I am god and there is no other god beside me" (Apocryphon of John) — thereby proving his ignorance of the higher God above him. The most radical theological inversion in extant ancient texts: a monotheistic declaration weaponized as evidence of divine limitation.
+**Why it matters:** The Gnostics turned the strongest verse in the Hebrew Bible into evidence against its author. This is the inversion engine at the heart of Gnostic theology.
+**Tags:** isaiah-45-5, yaldabaoth, gnostic-inversion, apocryphon-of-john, monotheism-vs-gnosticism, 0-400-CE
+
+---
+
+### SUPP-B-03 ★★★ NĀGĀRJUNA ↔ WITTGENSTEIN — PHILOSOPHY DISSOLVING ITSELF (1,700 YEARS APART)
+**Source:** `MASSIVE-WINS-INDEX.md` §12 · `nagarjuna` · `wittgenstein`
+**Finding:** Both use philosophy's own tools to arrive at dissolution rather than a positive doctrine. Nāgārjuna's *prasaṅga* (reductio): every attempted positive doctrine self-refutes → silence. Wittgenstein's *Tractatus*: "Whereof one cannot speak, thereof one must be silent." His *Investigations*: philosophical problems dissolve when language is examined. Both end not with answers but with the evaporation of questions. 1,700 years, zero contact.
+**Source:** Garfield (1995) T1; Siderits-Katsura (2013) T1
+**Tags:** nagarjuna, wittgenstein, philosophy-as-dissolution, prasanga, language-games, independent-convergence
+
+---
+
+### SUPP-B-04 ★★★ NĀGĀRJUNA ↔ DERRIDA — ŚŪNYATĀ :: DIFFÉRANCE (DOCUMENTED BY T1 SCHOLAR)
+**Source:** `MASSIVE-WINS-INDEX.md` §13 · `nagarjuna` · `derrida`
+**Finding:** Nāgārjuna's *śūnyatā*: no phenomenon is "present" in itself; all depend; no bedrock. Derrida's *différance*: meaning is never present, always deferred and differed; no transcendental signified. Both are anti-foundationalist: no first principle, no finally present ground. **Documented comparison:** Magliola, Robert (1984). *Derrida on the Mend*. Purdue UP. [T1] — a T1 scholar made this comparison explicitly.
+**Tags:** nagarjuna, derrida, sunyata, differance, anti-foundationalism, deconstruction, madhyamaka
+
+---
+
+### SUPP-B-05 ★★★ KUMARBI CYCLE → HESIOD'S THEOGONY — THE MEDITERRANEAN SUCCESSION MYTH IS HURRIAN
+**Source:** `MASSIVE-WINS-INDEX.md` §1 · `kumarbi` · `phase-2-009-hesiod-theogony-works-and-days`
+**Chain:** Anu → Kumarbi (bites off Anu's genitals, becomes pregnant) → Teshub = Ouranos → Kronos (castrates Ouranos) → Zeus. The narrative logic is identical. Transmission route: Hurrian oral tradition (~1600 BCE) → Hittite archive at Hattusa (~1300 BCE) → Late Bronze Age itinerant singer networks → Phoenician intermediary → Hesiod (~700 BCE). Source: Bachvarova, Mary R. (2016). *From Hittite to Homer*. Cambridge UP. [T1]
+**Sub-chain (★★★):** Kumarbi → Kronos → Saturn → Neoplatonist Nous → Gnostic Demiurge/Yaldabaoth. A Hurrian grain god is the traceable ancestor of late antique cosmic intellect theology.
+**Tags:** kumarbi, hesiod, theogony, hurrian, succession-myth, hittite-to-greek, yaldabaoth
+
+---
+
+### SUPP-B-06 ★★ FIVE-TRADITION APOPHATIC SUMMIT — FIVE INDEPENDENT TRADITIONS, ONE LOGICAL MOVE
+**Source:** `MASSIVE-WINS-INDEX.md` §18
+**Finding:** Daoism (DDJ 1: "The Dao that can be named is not the eternal Dao") / Neoplatonism (The One: beyond being and Intellect) / Kabbalah (Ein Sof: "no thought can grasp it") / Advaita Vedanta (Nirguna Brahman: *neti neti*) / Christian mysticism (Eckhart's Gottheit: the Godhead beyond God). All five use the same logical move: predication limits; the Absolute is above all limits; honest language is silence or paradox. The Daodejing predates Plotinus by ~600 years.
+**Tags:** apophatic-theology, daoism, neoplatonism, kabbalah, advaita, eckhart, five-tradition, via-negativa
+
+---
+
+### SUPP-B-07 ★★ INDRA'S NET ↔ LEIBNIZ MONADOLOGY ↔ BOHM IMPLICATE ORDER — MUTUAL REFLECTION
+**Source:** `MASSIVE-WINS-INDEX.md` §19 · `phase-4-102-avatamsaka-sutra` · `leibniz`
+**Finding:** Avataṃsaka Sūtra's Indra's Net (~4th c. CE): at every node of an infinite net hangs a jewel; each jewel reflects all others; each reflection contains all reflections. Leibniz's monadology (1714): each monad reflects the entire universe from its own perspective. Bohm's *Implicate Order* (1980): each region of space contains information about the whole — Bohm explicitly cites Buddhist sources. Ted Nelson cited Indra's Net for the internet architecture concept (1981). Three independent moments of the same insight across 1,600 years.
+**Tags:** indras-net, monadology, implicate-order, leibniz, bohm, mutual-reflection, holography
+
+---
+
+### SUPP-B-08 ★★ ĀLAYAVIJÑĀNA ↔ FREUD'S UNCONSCIOUS ↔ JUNG'S COLLECTIVE UNCONSCIOUS
+**Source:** `MASSIVE-WINS-INDEX.md` §23 · `phase-4-103-lankavatara-sutra` · `sigmund-freud`
+**Finding:** Laṅkāvatāra's *ālayavijñāna* (storehouse consciousness, 4th c. CE): beneath seven active consciousnesses lies a depth storing all karmic impressions; accessible only through practice. Freud's unconscious: beneath conscious awareness lies a depth storing all past experience driving surface behavior. **Jung documented the parallel in *Psychology and Religion* (CW 11, 1938) — explicitly noting the Buddhist precedent.** A Buddhist depth-psychology framework 1,500 years before Freud; Jung provided the documented scholarly bridge.
+**Tags:** alayavijnana, freud, jung, unconscious, buddhist-psychology, lankavatara, depth-psychology
+
+---
+
+### SUPP-B-09 ★★ VINAYA ↔ BENEDICT'S RULE — TWO MOST DURABLE INSTITUTIONAL DOCUMENTS (ZERO CONTACT)
+**Source:** `MASSIVE-WINS-INDEX.md` §30 · `tradition-theravada-buddhism`
+**Finding:** The Pali Vinaya (~5th c. BCE, 227 rules for monks) and Benedict's Rule (~530 CE) both: comprehensively regulate monastic community life; govern sleeping, eating, clothing, property, dispute resolution, ordination; are still actively used 1,500+ years after composition. Both independently discovered that contemplative life requires institutional structure to be sustainable. The same organizational wisdom arrived at independently on opposite ends of Eurasia.
+**Source:** Gombrich (1988) T1; RB 1980 (Liturgical Press) T1
+**Tags:** vinaya, benedicts-rule, monastic-rule, institutional-parallel, independent-convergence, contemplative-community
+
+---
+
+### SUPP-B-10 ★★ ZHU XI ↔ THOMAS AQUINAS — SYNTHESIS PARALLEL (BOTH ABSORB RIVALS, BOTH BECOME STATE ORTHODOXY)
+**Source:** `MASSIVE-WINS-INDEX.md` §32 · `zhu-xi` · `thomas-aquinas`
+**Finding:** Zhu Xi: absorbs Huayan Buddhist metaphysics while polemicizing against Buddhism; becomes imperial examination curriculum for 600 years. Thomas Aquinas: absorbs Aristotelian-Islamic metaphysics while claiming to purify Christian theology; becomes Catholic Church's official philosophy. Both are posthumously attacked as having contaminated their tradition (Wang Yangming vs. Zhu Xi; Protestant Reformers vs. Scholasticism). Structural isomorphism in intellectual history: absorb the rival's metaphysics → systematize → get endorsed by the state → trigger internal reformation.
+**Tags:** zhu-xi, aquinas, neo-confucianism, scholasticism, synthesis-and-orthodoxy, state-endorsed-philosophy
+
+---
+
+### SUPP-B-11 ★★ BINARY MORAL COSMOS: ZOROASTRIAN → QUMRAN → DIDACHE → MANICHAEAN
+**Source:** `MASSIVE-WINS-INDEX.md` §10 · `phase-4-061-didache`
+**Chain:** Zoroastrian *asha/druj* (cosmic truth/lie pair) → Qumran Community Rule Two Spirits (*1QS* 3:13–4:26) → Epistle of Barnabas two-angels → Didache Two Ways (Way of Life / Way of Death) → Hermas Mandate 6 (two angels within every individual soul) → Manichaean Light/Darkness. **The move:** from cosmic theology (Zoroaster) to individual moral psychology (Hermas). The Two Ways structure at the core of early Christian ethics is an Iranian cosmic theology internalized.
+**Tags:** binary-moral-cosmos, zoroastrian, qumran, didache, two-ways, manichaean, moral-dualism, 0-400-CE
+
+---
+
+### SUPP-B-12 ★★ ORPHIC GOLD TABLETS ↔ EGYPTIAN BOOK OF THE DEAD ↔ BARDO THODOL — THREE-TRADITION GENRE CONVERGENCE
+**Source:** sonnet-orphic-bardo-1 · `phase-2-040-orphic-gold-tablets` · `phase-5-029-bardo-thodol`
+**Finding:** Egyptian Book of the Dead (~1550–50 BCE) / Orphic Gold Tablets (~400–100 BCE) / Tibetan Bardo Thodol (~8th c. CE) — same genre, independent development: written instructions for the dead navigating a post-mortem journey; binary challenges (know the passwords / recall your identity / choose correctly); specialist knowledge provides advantage; human-divine parentage affirmed. The Orphic formula "I am a child of Earth and starry Heaven" parallels Bardo instructions on recognizing the clear light. No transmission between Greek and Tibetan traditions.
+**Source:** Graf 2007 T1; Bernabé 2008 T1; Cuevas 2003 T1
+**Tags:** orphic-tablets, book-of-the-dead, bardo-thodol, afterlife-instruction, three-tradition-genre, independent-convergence
+
+---
+
+### SUPP-B-13 ★★ ANZU: EARLIEST REBEL-IN-DIVINE-COURT ARCHETYPE (~2000 BCE)
+**Source:** sonnet-anzu-adapa-1 · `phase-1-033-anzu-myth`
+**Finding:** The Anzu/Zu bird steals the Tablet of Destinies from Enlil; Ninurta defeats him. This is the earliest attested "rebel in divine court → cosmic war → champion defeats rebel → order restored" archetype (~2000 BCE). **Chain:** Anzu → Watchers/1 Enoch (Annus 2010 Apkallu→Watcher inversion thesis) → Origen's Lucifer narrative → Paradise Lost (structural archetype, 3,000 years prior). The archetype that became Satan was a storm-bird stealing the divine administrative database.
+**Source:** Annus 2002 T1; Dalley 1989 T1
+**Tags:** anzu, tablet-of-destinies, rebel-divine-court, watchers, lucifer, paradise-lost, 3000-year-archetype
+
+---
+
+### SUPP-B-14 ★★ ADAPA: EARLIEST FORBIDDEN-DIVINE-FOOD ARCHETYPE (~1400 BCE) — MORAL INVERSION FROM EDEN
+**Source:** sonnet-anzu-adapa-1 · `phase-1-034-adapa-myth`
+**Finding:** Adapa, sage of Eridu, refuses the food and water of life on Ea's false warning; dies mortal. **Earliest "divine figure withholds life-giving substance through deception → human loses immortality"** archetype (~1400 BCE). Key finding: **moral inversion between traditions** — in Adapa, the *patron deity* Ea is the deceptive withholding figure (protecting Adapa from Anu's power); in Genesis 2–3, *God* is the withholding figure (and the serpent is the one offering knowledge). Found in the Amarna archive (Egypt) — proves international circulation near Canaan 700+ years before the Genesis J-source.
+**Source:** Izre'el 2001 T1; Dalley 1989 T1
+**Tags:** adapa, forbidden-food, immortality, ea-deception, genesis-parallel, amarna-archive, moral-inversion
+
+---
+
+### SUPP-B-15 ★★ BLAKE'S PROTESTANT RECONSTRUCTION OF GNOSTIC-KABBALISTIC COSMOGONY
+**Source:** opus-blake-metatron-1 · `william-blake.md` · `adam-kadmon.md` · `anthropos-myth.md`
+**Finding:** William Blake's Prophetic Books construct a complete cosmogony: Albion = Adam Kadmon / Universal Humanity; Urizen = Demiurge/Yaldabaoth; Los = Logos/tikkun; Jerusalem = Shekhinah; Four Zoas = Kabbalistic partzufim. **MASSIVE WIN:** this is a Protestant reconstruction of Gnostic-Kabbalistic cosmogony from Boehme + KJV + Milton — without Blake having direct access to the Gnostic or Kabbalistic primary sources. Blake reinvented the system from Protestant mystical materials. Also: **Metatron's Sar ha-Torah function (Torah-mediation) is structurally identical to Logos-mediation** — connecting Jewish throne-mysticism to Johannine Logos theology.
+**Also:** Adam Kadmon 5-tradition grid (Puruṣa/Gayōmart/Gnostic/Paul/Blake) and Anthropos Myth 6-tradition grid are now fully documented.
+**Tags:** william-blake, urizen, adam-kadmon, anthropos-myth, gnostic-kabbalistic, metatron, logos-mediation
+
+---
+
+### SUPP-B-16 ★★ HAMSA — CROSS-ABRAHAMIC AMULET SHARED BY THREE TRADITIONS SIMULTANEOUSLY
+**Source:** goblin-esoteric-fire-1 · `09_symbols/hamsa.md`
+**Finding:** The Hamsa/Khamsa (Hand of Fatima / Hand of Miriam / Hand of Mary) is simultaneously worn as a protective amulet by Jews, Muslims, and Christians in the Mediterranean world — often in the same marketplace, sometimes by the same families depending on era. Its origins predate all three traditions (Near Eastern apotropaic eye symbols, Phoenician Tanit). A single amulet form carrying three incompatible religious identities simultaneously.
+**Tags:** hamsa, khamsa, hand-of-fatima, hand-of-miriam, cross-abrahamic, apotropaic, shared-material-religion
+
+---
+
+### SUPP-B-17 ★★ WINGED DISK: EGYPTIAN BEHDETY → ASSYRIAN → ACHAEMENID FARAVAHAR — FULL ICONOGRAPHIC CHAIN
+**Source:** goblin-esoteric-fire-1 · `09_symbols/winged-disk.md`
+**Chain:** Egyptian Behdety (solar falcon-disk, Edfu ~2500 BCE) → Assyrian (disc above Assurbanipal's battle scenes, divine presence as radiant disc) → Achaemenid Faravahar (Persepolis reliefs, symbol of divine glory — *khvarenah*) → Zoroastrian national symbol. One of the most precisely traceable iconographic transmissions in the ancient world; the symbol that became Iran's national identity went through Egyptian religious iconography.
+**Tags:** winged-disk, behdety, faravahar, khvarenah, egyptian-assyrian-persian, iconographic-chain, solar-theology
+
+---
+
+### SUPP-B-18 ★★ WAKAN TANKA ↔ STOIC LOGOS ↔ DAOIST DE ↔ SPINOZA — IMMANENT SACRED ACROSS FIVE TRADITIONS
+**Source:** opus-native-pacific-1 · `tradition-lakota`
+**Finding:** Lakota Wakan Tanka ("Great Mystery/Great Spirit"): not a personal creator god above the world but the sacred as distributed within-all-things — every being, stone, river has wakan (sacredness). **Five-tradition convergence table:** Wakan Tanka / Stoic Logos *spermatikos* (divine rationality distributed throughout matter) / Daoist De (the power/virtue of the Dao immanent in each thing) / Spinoza's *Deus sive Natura* / Shinto kami (the sacred as present in particular places, objects, natural forces). Five traditions across three millennia independently discovering the sacred as immanent-within-the-world rather than transcendent-above-it.
+**Tags:** wakan-tanka, lakota, stoic-logos, daoist-de, spinoza, immanent-sacred, five-tradition-panentheism
+
+---
+
+### SUPP-B-19 ★★ HÓZHÓ ↔ MA'AT ↔ ASHA ↔ CONFUCIAN LĬ ↔ VEDIC ṚTA — COSMIC ORDER FIVE-TRADITION
+**Source:** opus-native-pacific-1 · `tradition-navajo`
+**Finding:** Navajo *Hózhó* ("walking in beauty" / right relationship / restoration) / Egyptian Ma'at / Zoroastrian Asha Vahishta / Confucian Lǐ (cosmic pattern/propriety) / Vedic Ṛta (cosmic order underlying sacrifice). Five traditions independently discovering the sacred as *right relationship* — a dynamic order that must be maintained through practice, that is disrupted by moral failing, and that ritual is designed to restore. Navajo sand painting ↔ Tibetan kalachakra mandala: structural parallel table across 8 features; complete independence.
+**Tags:** hozho, maat, asha, li-cosmic-pattern, vedic-rta, cosmic-order, five-tradition, navajo-tibetan-parallel
+
+---
+
+### SUPP-C-01 ★★★ NĀṬYAŚĀSTRA RASA ↔ ARISTOTLE'S CATHARSIS — THE MOST PRODUCTIVE UNSOLVED PROBLEM IN COMPARATIVE AESTHETICS
+**Source:** `INVESTIGATION-LEADS.md` §1 · `phase-3-024-natyashastra`
+**Finding:** Both the Nāṭyaśāstra and Aristotle's *Poetics*: (1) analyze drama as spectator emotional transformation; (2) treat dramatic emotion as categorically distinct from ordinary emotion; (3) identify pity/compassion and fear as the primary dramatic emotions. Composed within a few centuries of each other. No transmission documented. The Gandhāran/Bactrian contact zone (-300 to +200 CE) is the possible channel. Called "the most productive unsolved question in comparative aesthetics" (McEvilley 2002 T2).
+**Tags:** natyashastra, rasa, aristotle, catharsis, comparative-aesthetics, drama-theory, independent-convergence
+
+---
+
+### SUPP-C-02 ★★★ ARJUNA-KRISHNA ↔ PLATO'S PHAEDRUS — SAME METAPHOR, SAME PHILOSOPHICAL CONTENT, NO TRANSMISSION
+**Source:** session-2026-05-15 §E15 · `phase-2-027-bhagavad-gita` · `plato`
+**Finding:** The Bhagavad Gita (~300 BCE oral → text): Arjuna sits paralyzed in his chariot between the armies; Krishna as charioteer delivers the teaching. Plato's *Phaedrus* (~370 BCE): the soul as charioteer driving two horses (rational/irrational) toward the divine. **Same metaphor (chariot/charioteer/horses), same philosophical content (reason governing passion), same compositional moment (teaching delivered to a paralyzed protagonist).** No known transmission pathway. If any single cross-tradition parallel demonstrates independent discovery of the same philosophical metaphor, this is it.
+**Refs:** Edgerton 1944 T1; Hackforth 1952 T1
+**Tags:** bhagavad-gita, phaedrus, chariot-metaphor, arjuna, plato, independent-convergence, reason-vs-passion
+
+---
+
+### SUPP-C-03 ★★★ COYOTE AND LOKI BOTH INTRODUCE DEATH — THE MOST PRECISE TRICKSTER PARALLEL
+**Source:** session-2026-05-15 §B5 · `trickster-archetype` · `loki`
+**Finding:** Among all cross-tradition trickster parallels, this is the most structurally precise:
+
+| Feature | Coyote (Navajo) | Loki (Norse) |
+|---|---|---|
+| Act | Throws stone into water; declares death permanent | Engineers Baldr's death through the mistletoe |
+| Motivation | Impulsive impatience | Jealousy/mischief |
+| Result | Death is irreversible for all | Death enters the world (Baldr, the deathless, dies) |
+| Cosmic consequence | Mortal finite existence begins | Ragnarök set in motion |
+
+Both tricksters are simultaneously responsible for the most important cosmological rupture in their tradition. No transmission. The parallel reflects the narrative logic of the trickster archetype itself: the figure who crosses categorical limits must eventually cross the limit between living and dead.
+**Refs:** Radin 1956 T1; Hyde 1998 T1
+**Tags:** coyote, loki, trickster-death, cosmological-rupture, independent-convergence, mortality-origin
+
+---
+
+### SUPP-C-04 ★★★ PASHUPATI SEAL ↔ CERNUNNOS ↔ SHIVA — 4,000-YEAR HORNED-GOD CLUSTER
+**Source:** session-2026-05-15 §F19 · `cernunnos` · `shiva`
+**Finding:** Pashupati seal (Mohenjo-Daro, Indus Valley, ~2500 BCE): cross-legged figure with antlers/horns, surrounded by animals, palms on knees. Gundestrup Cauldron central panel (Denmark, ~150 BCE): Cernunnos, cross-legged, antlered, holding a torc and ram-headed serpent, surrounded by animals. Shiva as Paśupati ("Lord of Beasts") in contemporary Hinduism: the same cross-legged, ascetic, animal-lord iconography. Three instantiations of the *Potnios Theron* (Lord of Animals) archetype separated by 4,000 years across the Eurasian continent. The visual cognacy is among the most striking in world religious iconography.
+**Refs:** Marshall 1931 T1; Green 1986 T1; Doniger 1973 T1
+**Tags:** pashupati, cernunnos, shiva, horned-god, lord-of-animals, potnios-theron, 4000-year-cluster
+
+---
+
+### SUPP-C-05 ★★★ COOK DING — WORLD'S OLDEST PHILOSOPHICAL TREATMENT OF TACIT KNOWLEDGE (2,200 YEARS BEFORE POLANYI)
+**Source:** `MASSIVE-WINS-INDEX.md` §17 · `phase-2-022-zhuangzi`
+**Finding:** Zhuangzi's Cook Ding parable (Chapter 3, ~4th c. BCE): a master butcher's skill has become so internalized it transcends technique — his knife finds the spaces between joints effortlessly, without cutting. The parable captures what Polanyi would call "tacit knowledge" and Bourdieu "habitus": mastery that can no longer be fully articulated. Polanyi's *Personal Knowledge* (1958) is 2,200 years later. This is the earliest philosophical treatment of the distinction between explicit knowledge and embodied skill.
+**Tags:** zhuangzi, cook-ding, tacit-knowledge, polanyi, bourdieu-habitus, chinese-philosophy, embodied-skill
+
+---
+
+### SUPP-C-06 ★★★ QUARANTINE ENCODES THE BIBLICAL FORTY DAYS — EVERY PANDEMIC INVOKED MOSES UNKNOWINGLY
+**Source:** `INVESTIGATION-LEADS.md` §13 · `09_symbols/sacred-number-forty`
+**Finding:** Italian *quarantina giorni* ("forty days") → Venice 1403 CE practice of isolating ships for 40 days in explicit reference to the biblical 40-day period. The word "quarantine" — used in every language, in every pandemic — contains a hidden theological number. Every English speaker invoking COVID quarantine was invoking the Mosaic wilderness without knowing it.
+**Sub-cluster:** Noah / Moses / Elijah / Jonah / Jesus / Lent / Muhammad's age / Arbaeen / Sufi khalwa / Tibetan bardo — the forty-days cluster connects across 10 traditions.
+**Tags:** quarantine, forty-days, biblical-number, venice, pandemic, sacred-number, hidden-theology
+
+---
+
+### SUPP-C-07 ★★★ CERN NATARAJA — 2,200-YEAR ICONOGRAPHIC CHAIN FROM PERFORMANCE TREATISE TO PARTICLE PHYSICS
+**Source:** `INVESTIGATION-LEADS.md` §24 · `phase-3-024-natyashastra`
+**Finding:** Nāṭyaśāstra's 108 *karaṇas* (dance postures) → depicted in stone on Chidambaram temple (~10th–12th c. CE) → Naṭarāja icon as visual theology of cosmic dance → CERN Naṭarāja installed 2004 by the Indian government at the European Center for Nuclear Research, where particle creation and destruction is framed as Śiva's cosmic dance. The Indian government made the comparison explicitly — it is not a metaphor imposed from outside. A 2,200-year iconographic tradition from a Sanskrit performance treatise to a nuclear physics laboratory.
+**Tags:** nataraja, cern, shiva-cosmic-dance, natyashastra, particle-physics, iconographic-chain, 2200-years
+
+---
+
+### SUPP-C-08 ★★★ SOLAR-FEAST SUBSTITUTION AS MISSIONARY STRATEGY — APPLIED TWICE ON TWO CONTINENTS
+**Source:** session-2026-05-15 §D12 · `inti` · `sol-invictus`
+**Finding:** In Rome, 4th-century Christians placed the Nativity of Christ on December 25 — the existing birthday of Sol Invictus / Mithras. In colonial Peru, Spanish missionaries moved Corpus Christi to June — near the date of pre-conquest **Inti Raymi** (June solstice festival of the Sun). Same move: take the indigenous solar feast, overlay the Christian calendar, allow the celebration to continue under a new name. **The pattern of solar-feast substitution as a missionary strategy was applied twice, on two continents, separated by 1,200 years.** Both Christmas and Corpus Christi in Cusco retain their solar valence in popular practice today.
+**Refs:** MacCormack T1; Dearborn/Bauer 1995 T1
+**Tags:** solar-feast-substitution, christmas, sol-invictus, inti-raymi, corpus-christi, missionary-strategy, two-continents
+
+---
+
+### SUPP-C-09 ★★★ ZAO JUN (KITCHEN GOD): POST-MORTEM JUDGMENT APPLIED TO THE LIVING — ANNUAL HOUSEHOLD AUDIT
+**Source:** session-2026-05-15 §C10 · `zao-jun`
+**Finding:** Zao Jun reports annually to the Jade Emperor on each household's moral conduct. Ritual: smear his paper image's mouth with honey (so he speaks sweetly); burn the image (sending it to heaven); install a new image on New Year's Day. This is **psychostasia-while-living**: rather than a post-mortem judgment, a continuous moral surveillance of the household with an annual audit cycle. Paper-burning is the most materially literal divine-communication technology in any tradition: you do not symbolically offer; you physically transmit by combustion. Structurally unique among the post-mortem-judgment traditions.
+**Tags:** zao-jun, kitchen-god, household-surveillance, annual-audit, living-psychostasia, paper-burning, chinese-folk-religion
+
+---
+
+### SUPP-C-10 ★★ KUMULIPO: POLYNESIAN CREATION CHANT WITH EVOLUTIONARY SEQUENCE CENTURIES BEFORE DARWIN
+**Source:** opus-native-pacific-1 · `tradition-hawaiian`
+**Finding:** The Hawaiian Kumulipo (2,102-line creation chant): proceeds from marine invertebrates → fish → land animals → birds → mammals → humans — an evolutionary sequence centuries before Darwin. Beckwith 1951 documented the parallel; scholarly caution on parallel-vs-prediction is documented in the vault. Also: the 1819 *'Ai Noa* kapu-abolition is the only case in the vault of indigenous religious self-transformation before Western missionary pressure — Hawaiians dismantled their own kapu system.
+**Tags:** kumulipo, hawaiian, evolutionary-sequence, darwin-parallel, creation-chant, indigenous-self-transformation
+
+---
+
+### SUPP-C-11 ★★ WORLD MOUNTAIN — 7 INDEPENDENT CIVILIZATIONS BUILD THE SAME SACRED FORM
+**Source:** `INVESTIGATION-LEADS.md` §5 · `09_symbols/world-mountain`
+**Finding:** Egyptian pyramid / Mesopotamian ziggurat / Buddhist stupa / Hindu *śikhara* / Maya-Aztec teocalli / Khmer prasad / Japanese pagoda — all independent civilizations independently concluding that sacred space must be a mountain. Snodgrass 1985 (*Symbolism of the Stupa*, Cornell UP, T1) documents this most thoroughly for the Buddhist case. **No comparative synthesis across all seven exists in a single T1 study** — this is a gap the vault can fill.
+**Tags:** world-mountain, pyramid, ziggurat, stupa, sikhara, teocalli, independent-convergence, seven-traditions
+
+---
+
+### SUPP-C-12 ★★ YAN RUOQU 1745 — CHINESE HIGHER CRITICISM 130 YEARS BEFORE WELLHAUSEN
+**Source:** `INVESTIGATION-LEADS.md` §15 · `phase-2-033-shujing-book-of-documents`
+**Finding:** Qing scholar Yan Ruoqu's *Shangshu guwen shuzheng* (1745) demonstrated through systematic linguistic analysis that 25 Old Text Shujing chapters were 3rd–4th c. CE forgeries. The method — comparing vocabulary, grammatical patterns, and historical anachronisms against authenticated early sources — is equivalent to European higher criticism. Wellhausen's *Prolegomena* was published in 1878. This is either genuinely independent parallel intellectual development, or a case of European scholars not knowing what Chinese scholars had already done.
+**Tags:** yan-ruoqu, chinese-textual-criticism, wellhausen, documentary-hypothesis, shujing, forgery-detection, independent-parallel
+
+---
+
+### SUPP-C-13 ★★ LACTANTIUS vs. AUGUSTINE — OPPOSITE PATRISTIC READINGS OF THE SAME HERMETICA (~115 YEARS APART)
+**Source:** `INVESTIGATION-LEADS.md` §26 · `lactantius` · `phase-4-029-augustine-city-of-god`
+**Finding:** Lactantius *Divine Institutes* (~311) cites Hermes Trismegistus 21+ times as a pagan-prophet predecessor confirming Christian truth. Augustine *City of God* VIII.23–26 (~426) cites the same Latin *Asclepius* polemically — Hermes as a defeated pagan inadvertently prophesying his own religion's death. Lactantius's pagan-prophet framing is the seed of the Renaissance *prisca theologia* (Ficino's 1471 *Pimander* preface explicitly cites Lactantius). The Hermetic corpus is therefore **simultaneously** a tool of Christian apologetics and a target of Christian polemic — two opposed Latin reading traditions descending from the same texts.
+**Tags:** lactantius, augustine, hermetica, prisca-theologia, opposite-readings, 0-400-CE, christian-hermeticism
+
+---
+
+### SUPP-C-14 ★★ EGYPTIAN APOCALYPSE (ASCLEPIUS §§24–26) — THE ONLY PAGAN APOCALYPSE IN CONTINUOUS WESTERN TRANSMISSION
+**Source:** `INVESTIGATION-LEADS.md` §34 · `phase-4-079-coptic-asclepius-nhc-vi-8`
+**Finding:** A prophecy attributed to Hermes: "Egypt is the image of heaven... there will come a time when... all divinity will leave Egypt and will flee upward to heaven. And Egypt will be widowed." A *pagan apocalypse* — a literary register usually reserved for Jewish-Christian apocalyptic — and read by 4th–5th-c. Christian authors as Hermes inadvertently prophesying Christianity itself. The *Asclepius* is the only pagan-apocalyptic text preserved in continuous Western transmission (via Latin) — making it the load-bearing late-antique pagan-apocalyptic text in the European literary tradition.
+**Tags:** egyptian-apocalypse, asclepius, pagan-apocalypse, hermes, prophecy, 0-400-CE, hermetic-corpus
+
+---
+
+### SUPP-C-15 ★★ YORUBA ORISHA CLUSTER — AFRICAN THEOLOGICAL ARCHITECTURE MAPPING ONTO EVERY TRADITION
+**Source:** sonnet-yoruba-1 · `03_deities/ogun.md` · `03_deities/shango.md` · `03_deities/orunmila.md` · `07_traditions/tradition-yoruba-ifa.md`
+**Finding (multi-win cluster):**
+- **Ogun ↔ Hephaestus:** divine-smith archetype (fire, forge, boundary, violent creativity) documented independently
+- **Shango ↔ Zeus/Thor/Indra:** thunder-god universal table — the sky-storm-authority deity convergence across West Africa, Greece, Scandinavia, and Vedic India (related to PIE sky-weapon pattern but with African branch)
+- **Orunmila ↔ Thoth/Nabu/Chitragupta:** Yoruba Ifá deity is a divine scribe of destiny — fourth entry in the divine-scribe-of-destiny cluster
+- **Ifá corpus ↔ Vedas structural parallel:** both are: oral transmission → specialist memorization → consultation technology → cosmic database with a divinity as its keeper
+- **Eshu colonial misidentification:** documented Eshu=Satan misidentification by missionaries (Bascom 1969 p.82 T1; Idowu 1962 p.80 T1) — crossroads-trickster systematically demonized
+**Tags:** yoruba, orisha, ogun, shango, orunmila, ifa-corpus, eshu, divine-smith, thunder-god, divine-scribe
+
+---
+
+### SUPP-D-07 INVESTIGATION-LEADS STRUCTURAL FINDINGS — FRAMEWORKS THAT REORGANIZE EVERYTHING
+Key structural frameworks from the INVESTIGATION-LEADS audit that don't fit a single-entry format:
+
+1. **The returning-creator structural vulnerability** — Viracocha/Quetzalcoatl myths weaponized by Spanish suggests a broader pattern: is the myth of a creator-deity's return a systematic structural vulnerability in cosmological theologies? Investigate: was the Christian "return of the Messiah" expectation exploited in any colonial context?
+2. **Solar-feast calendar archaeology** — If December 25 / June solstice are solar-feast substitutions, map the entire Christian liturgical calendar against pre-Christian seasonal anchors: Easter / spring equinox; Candlemas / Imbolc; All Saints' Day / Samhain.
+3. **The "John 4 answer to the Samaritan Pentateuch" insight** — The NT's most universalizing statement about worship (John 4:21–24: "neither on this mountain nor in Jerusalem") presupposes the Samaritan Pentateuch's competing Gerizim/Ebal textual tradition as its foil. The resolution of a textual dispute becomes the founding text of Christian non-localized worship.
+4. **Nsibidi/Abakuá transmission** — The only documented case of a specific African secret-society writing system crossing the Atlantic and surviving in active use (Thompson 1983 T1).
+
+---
+
+### SUPP-D-08 MISSED-AGENTS PATTERN SUMMARY
+Wins from agents not incorporated in the first two sweeps:
+
+| Agent | Key wins |
+|---|---|
+| `sonnet-yoruba-1` | Ogun/Hephaestus; Shango/Zeus/Thor/Indra; Orunmila/Thoth; Ifá=binary+Vedas parallel; Eshu colonial demonization |
+| `sonnet-orphic-bardo-1` | Three-tradition genre convergence (BoD/Orphic/Bardo Thodol); Leary/Alpert 1964 documented |
+| `sonnet-anzu-adapa-1` | Anzu = earliest rebel-divine-court (~2000 BCE); Adapa = earliest forbidden-food (~1400 BCE) |
+| `opus-blake-metatron-1` | Blake reconstructs Gnostic-Kabbalistic cosmogony from Protestant materials; Adam Kadmon 5-tradition; Anthropos 6-tradition |
+| `goblin-esoteric-fire-1` | Hamsa cross-Abrahamic; Winged Disk Egyptian→Faravahar chain; Sacred Fire universal cluster |
+| `goblin-indigenous-mystery-1` | Wampum↔quipu↔mala↔tasbih (cord-wisdom cluster); Pakal Sarcophagus Lid as Maya World Tree axis mundi |
+| `opus-native-pacific-1` | Wakan Tanka 5-tradition immanent-sacred; Hózhó 5-tradition cosmic-order; sand painting↔mandala; Kumulipo evolutionary sequence |
 
 ---
 
 ## NEW DISCOVERIES — ADD BELOW
-*(agents: paste new wins here with date + source commit)*
+*(Agents: paste new wins here with date, source commit, tier estimate, and star rating. This is the shared memory. Do not duplicate — check this list first. All Tier S–D entries above + all SUPP- entries are claimed. New entries begin with SUPP-C-16 or a new tier designation.)*
 
 ---
 
-### opus-slavic-1 — 2026-05-14 (rescued to main as commit c2c29ce on 2026-05-15)
-*Batch mission: "hunt missing families or find stuff on the OLDER timelines, try to fill gaps to bridge to modern times." Delivered 5 Slavic deities + Ashurbanipal + 9 edge-sweep wikilinks.*
-
----
-
-### ★ THE 4,500-YEAR MESOPOTAMIAN PRESERVATION CHAIN — ASHURBANIPAL AS THE LITERAL OLDEST→MODERN GATEWAY
-**Source:** opus-slavic-1 · `04_persons/ashurbanipal.md`
-**Chain (11 steps, fully documented):**
-1. Sumerian temple-school originals (c. -2500 — *Eridu Genesis*, Sumerian Flood Story, *Lugalbanda*, Sumerian *Gilgamesh-and-Huwawa*)
-2. Old Babylonian Akkadian translations (c. -1900 to -1600 — OB Gilgamesh, OB Atrahasis, OB Enuma Elish prototype)
-3. Middle Babylonian / Middle Assyrian scribal transmission (c. -1600 to -1100)
-4. Neo-Assyrian "Standard Babylonian" recensions (c. -1100 to -650 — canonical 12-tablet SB Gilgamesh attributed to Sin-leqi-unninni; canonical SB Enuma Elish; canonical SB Atrahasis)
-5. **Ashurbanipal's collection program** (c. -668 to -631) — programmatic assembly into one library at Nineveh, ~10,000 distinct compositions
-6. Fall of Nineveh -612 — library destroyed/buried; tablets baked harder by the fire (happy accident)
-7. 25-century complete oblivion — last datable cuneiform tablet 75 CE, then total loss
-8. Layard & Rassam excavations 1849–1854 — ~30,000 tablets shipped to British Museum
-9. Cuneiform decipherment 1857 (`event-decipherment-of-cuneiform-1857`)
-10. **George Smith reads Babylonian Flood Tablet 3 Dec 1872** — public sensation; *Babel und Bibel* controversy follows (`event-george-smith-flood-tablet-1872`)
-11. Modern critical editions: Lambert & Millard 1969 (*Atrahasis*); George 2003 (*Babylonian Gilgamesh*); Lambert 2013 (*Babylonian Creation Myths*)
-**Why it matters:** ONE NODE closes the longest preservation arc in the vault. Without Ashurbanipal's step-5 collection program, Layard's spade in 1849 hits nothing concentrated enough to trigger the 1872 reorganization of biblical scholarship. Other tells (Sippar, Ur, Nippur, Uruk) yielded the same corpus only piecemeal across 150 years of slower excavation. The *fast* recovery that re-shaped 19th-c. religious culture is overwhelmingly a Library-of-Nineveh phenomenon.
-**Tags:** ashurbanipal, library-of-nineveh, gilgamesh, enuma-elish, atrahasis, layard, george-smith, babel-und-bibel, oldest-to-modern-bridge, preservation-chain
-
----
-
-### ★ ASHURBANIPAL ↔ JOSIAH — NEO-ASSYRIAN COLLAPSE WINDOW = DEUTERONOMISTIC REFORM WINDOW
-**Source:** opus-slavic-1 · `04_persons/ashurbanipal.md` + `04_persons/josiah-king.md`
-**Chain:** Ashurbanipal dies ~-627 → Neo-Assyrian succession crisis (Aššur-etel-ilāni, Sin-šar-iškun) → Nineveh falls -612 → Judah's vassal-grip released → **Josiah's "Book of the Law" reform ~-622** (2 Kings 22) → centralization of sacrifice at Jerusalem Temple → suppression of *bāmôt*, Asherah, Baal, Topheth child-sacrifice → Deuteronomistic History composed
-**Why it matters:** The single most consequential reform in pre-Exilic Israelite religion happens in a 15-year window opened directly by the Neo-Assyrian collapse. The literary apparatus of the Hebrew Bible's middle layer (D-source, Deuteronomistic History) is *politically downstream* of a specific Assyrian succession crisis. Rarely surfaced this concretely.
-**Tags:** ashurbanipal, josiah, deuteronomistic, 622-BCE, neo-assyrian-collapse, hebrew-bible-d-source, political-religion
-
----
-
-### ★ ASHURBANIPAL — TWO PARALLEL WESTERN RECEPTION LINES THAT NEVER MERGE
-**Source:** opus-slavic-1 · `04_persons/ashurbanipal.md`
-**Chain:** Same historical king splits into two non-intersecting Western reception traditions:
-- **Line A — Romantic-Oriental decadent:** Ctesias of Cnidus (5th c. BCE) → Diodorus Siculus → "Sardanapalus" trope of luxurious Eastern king burning himself on pyre with concubines and treasure → Byron *Sardanapalus* (1821) → **Delacroix *Death of Sardanapalus* (1827)** — one of the most-reproduced 19th-c. paintings.
-- **Line B — Assyriological preservation-figure:** Layard 1849 → Smith 1872 → Reade 1999 → Brereton 2018 (British Museum exhibition).
-**Why it matters:** Two cultural reception lines for the same person, generated within decades of each other (1827 Delacroix vs 1849 Layard), that **never cross-reference**. The Romantic-Orientalist Sardanapalus is contemporaneously with the rediscovery-of-Nineveh and yet entirely independent of it. Case-study in how Western culture metabolizes the *same* historical figure as two disjoint myths.
-**Tags:** ashurbanipal, sardanapalus, ctesias, diodorus, byron, delacroix, orientalism, reception-history, parallel-myths
-
----
-
-### ★ THE 5-COGNATE INDO-EUROPEAN STORM-GOD CLUSTER (NOW FULLY WIRED)
-**Source:** opus-slavic-1 · `03_deities/perun.md` + edge-sweeps in `thor.md`, `ukko.md`
-**Chain:** Proto-Indo-European *Per(kʷ)un- → cleanest 5-way etymological + functional cognate cluster in IE comparative religion:
-- **[[perun]]** (Slavic — Vladimirian 980 Kievan pantheon)
-- **Perkūnas** (Baltic Lithuanian — last living pagan European tradition, Lithuania Christianized only 1387)
-- **[[indra]]** (Vedic — RV storm-king, slays serpent Vṛtra to release waters)
-- **Parjanya** (Vedic rain-thunder, RV 5.83, 7.101–102 — closest etymological match)
-- **[[thor]]** (Norse — Þórr-Jǫrmungandr serpent-combat) + **[[ukko]]** (Finno-Ugric typological cognate, possible IE-Uralic deep contact)
-**Underlying mytheme:** IE storm-god-vs-serpent dragon-slaying formula (Watkins 1995) — Indra-Vṛtra, Thor-Jǫrmungandr, Zeus-Typhon, Marduk-Tiāmat, **reconstructed Perun-Veles combat** (Ivanov-Toporov 1965/1974 "fundamental myth"), Yahweh-Leviathan.
-**Why it matters:** Was previously plain-text in `thor.md` and `ukko.md`; now wikilinked across the graph. The Perun-Perkūnas-Parjanya triad is THE textbook IE etymological reconstruction in comparative religion (West 2007 §6.1) — Slavic was the missing seat at the table.
-**Tags:** indo-european, storm-god, perun, perkunas, parjanya, thor, indra, ukko, watkins-dragon-slaying, fundamental-myth, ivanov-toporov
-
----
-
-### ★ THREE LOAD-BEARING EAST-SLAVIC *DVOEVERIE* SAINT-OVERLAYS — DOCUMENTED AS A FAMILY-LEVEL PATTERN
-**Source:** opus-slavic-1 · `03_deities/perun.md`, `03_deities/veles.md`, `03_deities/mokosh.md`
-**Chain (three parallel cases, one batch):**
-1. **[[perun]] (pagan thunder/oath-god) → Prophet Elijah / *Ilya-Gromovnik*** ("Elijah the Thunderer") — feast 20 July (Old Style) inherits Perun's harvest-storm timing; folk belief holds that thunder is Elijah's chariot wheels (2 Kings 2:11 mediation). Fedotov 1948.
-2. **[[veles]] (pagan cattle/wealth/underworld) → Saint Blaise / *St Vlasiy*** — phonetic alignment Volos ~ Vlas(iy) ~ Blasius; 11 February cattle-blessing feast inherits Veles's livestock-protection role. Practice survived into 1920s Russian/Ukrainian ethnographic fieldwork (Tokarev 1957).
-3. **[[mokosh]] (pagan earth-mother / women's-labor) → Saint Paraskeva-Friday / *Paraskeva-Pyatnitsa*** — Greek *paraskēvē* literally means "Friday," allowed missionary Church to map Mokosh's Friday-cult onto a Christian martyr without naming the pagan goddess; spinning-prohibition + well-cult + childbirth-prayer survived through 19th c. *Stoglav* of 1551 records the Church still asking confession questions about "going to Mokuša" — 5½ centuries after Vladimir's 988 baptism.
-**Why it matters:** The single densest example of pagan→Christian functional-continuity in any tradition in the vault. Three saints, one pagan family, one *dvoeverie* mechanism (phonetic-or-functional-coincidence + retained calendar slot + retained domain). Together they support Joanna Hubbs's 1988 *Mother Russia* thesis: a thousand-year continuity from Mokosh → Paraskeva-Friday → Mother-Russia → Theotokos in the Russian feminine-religious imagination. Pattern matches the broader appropriation typology (§ APPROPRIATION TYPOLOGY → Suppression-of-Source + Syncretism-via-Identification).
-**Tags:** slavic, dvoeverie, perun, elijah, ilya-gromovnik, veles, saint-blaise, mokosh, paraskeva-friday, paraskeva-pyatnitsa, hubbs-mother-russia, christianization-988
-
----
-
-### ★ SVAROG ↔ HEPHAESTUS — THE *ONLY* ANCIENT TEXT IDENTIFYING A SLAVIC DEITY WITH A MEDITERRANEAN DEITY BY NAME
-**Source:** opus-slavic-1 · `03_deities/svarog.md` + `03_deities/dazhbog.md`
-**Chain:** *Hypatian Chronicle* (c. 1116, 15th-c. ms) preserves a Slavic translator's gloss on John Malalas's Byzantine *Chronographia*. Malalas had retold Egyptian dynastic history in euhemerized terms (Hephaestus reigned over Egypt; his son Helios succeeded him). The Slavic translator equated:
-- Malalas's Hephaestus = **Svarog**
-- Malalas's Helios = **Dazhbog**, "son of Svarog"
-**Why it matters:** This is the **SOLE textual `ancient-identification` linking a Slavic deity to a Mediterranean deity by name in the entire surviving Slavic textual record.** Methodologically load-bearing despite its mediated character (Christian chronicler's *interpretatio christiana*, not a pagan-period source). Also fixes the Svarog-Dazhbog father-son pair as the single most-confident structural fact about Slavic high-god relationships.
-**Tags:** svarog, dazhbog, hephaestus, helios, hypatian-chronicle, malalas, ancient-identification, slavic-mediterranean-link
-
----
-
-### ★ SLAVIC *BOG* ← IRANIAN *BAGA-* — THE STRONGEST INDO-IRANIAN → SLAVIC RELIGIOUS-VOCABULARY LOAN
-**Source:** opus-slavic-1 · `03_deities/dazhbog.md` (Vasmer 1953, Trubachev 1974ff., West 2007 §3.2)
-**Chain:** Vedic Bhaga ("Sharer/Distributor", giver-of-fortune god) + Avestan Baga (same role) → Slavic *bog* "god" (loaned during the Scythian-Sarmatian-Alan steppe-contact period c. -700 to +400) → transparent Slavic compound **Dažd-bog = "give-god" / "giver-god"** in the 980 Vladimirian Kievan pantheon — semantically and functionally exact match to the Indo-Iranian Bhaga/Baga giver-god type.
-**Why it matters:** The everyday Slavic word for "god" itself (*бог* / *bóg*) is borrowed from Iranian religious vocabulary — and the Slavic sun-god's name is built on that loan. Strongest single piece of evidence for sustained Slavic-Iranian religious contact through the Pontic steppe in the 1500-year window before Christianization. Background to Khors (also Iranian-borrowed name = "sun" in the same Vladimirian 980 list) and Simargl (= Iranian Simurgh).
-**Tags:** slavic, indo-iranian, vasmer, bhaga, baga, bog, dazhbog, khors, simurgh, steppe-contact, scythian-sarmatian, religious-vocabulary-loan
-
----
-
-### ★ DAZHBOG → SERBIAN *DABOG* — SAME DEITY, OPPOSITE CHRISTIANIZATION TRAJECTORIES IN SISTER BRANCHES
-**Source:** opus-slavic-1 · `03_deities/dazhbog.md`
-**Chain:** Same pagan Slavic sun-god enters two separate Christianization channels:
-- **East Slavic (Vladimirian Rus' 988, *de facto* tolerance of folk practice)** → Dazhbog faded into "Dazhbog's grandchildren" royal-ideology trope (*Tale of Igor's Campaign* 1185); celestial-ancestor reading retained in literary register.
-- **South Slavic (Cyril-Methodius Byzantine mission, stronger doctrinal anti-paganism)** → Dazhbog **inverted into demonized chthonic underworld-king *Dabog*** in Serbian folklore (recorded 19th c. by Vuk Karadžić) — a sinister figure possessing mountains of silver and gold, feared rather than venerated.
-**Why it matters:** A controlled comparison case in how the *same* pre-Christian deity receives **opposite** receptions under different missionary channels of the same Christianity. Maps onto the broader appropriation typology (§ APPROPRIATION TYPOLOGY → Semantic Inversion) — except here both inversions happen to the same original deity in two different geographies within the same century.
-**Tags:** dazhbog, dabog, serbian-folklore, christianization-divergence, semantic-inversion, cyril-methodius, vladimir-988
-
----
-
-### ★ THE RUS' PRINCES AS "DAZHBOG'S GRANDCHILDREN" — THE PRINCIPAL SLAVIC DIVINE-ANCESTRY ROYAL-IDEOLOGY EVIDENCE
-**Source:** opus-slavic-1 · `03_deities/dazhbog.md`
-**Chain:** *Tale of Igor's Campaign* (1185 East Slavic heroic poem) — the Rus' princes are *Dažbož'i vnuci*, "Dazhbog's grandchildren." Igor's defeat at the Kayala river is figured as Dazhbog's withdrawal of favour (cosmic eclipse passage). Parallels: Roman *gens Iulia* descending from Venus (via Aeneas); Egyptian pharaonic descent-from-Ra; Japanese imperial descent-from-Amaterasu.
-**Why it matters:** The Igor-Campaign passage is the closest thing to a Slavic narrative theology of kingship in any surviving primary text. Was textually invisible to the vault until [[dazhbog]] landed; now the Slavic seat at the table of IE divine-ancestor royal-ideology cases is filled.
-**Tags:** dazhbog, tale-of-igors-campaign, dažbož'i-vnuci, divine-ancestry, royal-ideology, slavic-kingship, comparative-mythography
-
----
-
-### ★ THE *BOOK OF VELES* AS DOCUMENTED 20th-c. FORGERY (NEGATIVE WIN — FALSE-SOURCE FLAG)
-**Source:** opus-slavic-1 · `03_deities/veles.md` Disputes section
-**Chain:** A "Slavic sacred text" titled *Vles[k]niga* / *Book of Veles* has circulated since the 1950s, presented as authentic Veles-tradition primary source. **It was composed by Yury Mirolyubov (Russian émigré) in the 1950s**, rejected by every serious Slavicist (Tvorogov 1990 source-criticism; Zaliznyak 2008 definitive philological-linguistic demonstration). Continues to be cited by Rodnovery and Russian-nationalist circles.
-**Why it matters:** Anti-pole to the genuine sources. Important enough to flag explicitly because Slavic religion's thin primary-text base makes the temptation to use the *Book of Veles* very high for non-specialists. The vault treats it as Tier-4 pseudoscholarship and does not source Veles material from it.
-**Tags:** veles, book-of-veles, vleskniga, mirolyubov, forgery, rodnovery, pseudoscholarship, tier-4-flag
-
----
-
-*opus-slavic-1 wins-list closes here. Next agent: if you find these gather usefully, consider extracting them into a new section "IX. INDO-EUROPEAN PANTHEON FAMILIES + MESOPOTAMIAN PRESERVATION CHAINS" so the doc stays navigable.*
-
----
-
-### ★ SYMBOLS FORGED IN PERSECUTION — 5-TRADITION PARALLEL (sonnet-persecution-1c · 2026-05-16)
-**Source:** Symbol wiring batch — `09_symbols/latin-cross.md`, `fish-ichthys.md`, `wheat-grain.md`, `dharmachakra.md`, `faravahar.md`
-
-**The pattern:** The single most-recognized visual emblem of each of five major world traditions is a **persecution-survival artifact**. Not incidentally — structurally. The symbol gained its power *because* the tradition was threatened.
-
-| Symbol | Tradition | Persecution origin | Subsequent potency |
-|---|---|---|---|
-| Latin cross | Christianity | Roman execution implement — Hengel 1977: "the most monstrous of deaths" | Global religion's universal emblem |
-| Ichthys fish | Christianity | Covert catacomb recognition-sign for hunted 2nd–3rd c. Christians | Universally recognized Christian symbol |
-| Wheat grain | Christianity | Ignatius of Antioch *Ad Romanos* 4 (~108 CE): "I am God's wheat, ground by the teeth of lions" — written on the way to execution | Foundational martyrdom-theology text |
-| Dharmachakra | Buddhism | Buddhism expelled from its homeland (India) by Islamic conquest, 11th–13th c. | Now on the flag of independent India (1947) |
-| Faravahar | Zoroastrianism | Arab conquest reduced Zoroastrians to ~200,000-person diaspora after 651 CE | Now deployed as anti-Islamic-Republic resistance symbol by Iranian diaspora worldwide |
-
-**The analytical point:** In every case, the symbol grew **more visible and more politically charged** as a result of the persecution. The Latin cross was not publicly displayed for ~500 years after the crucifixion precisely because it was a shameful execution instrument. The Dharmachakra is on the flag of the country that eliminated the tradition that produced it. The Faravahar's political potency grew post-1979 — directly because the 1979 revolution scattered its community.
-
-**Scholarly anchors:**
-- Hengel, M. (1977). *Crucifixion*. Fortress Press. (T1) — "the most monstrous of deaths"
-- Snyder, G.F. (1985). *Ante Pacem*. (T1) — catacomb-era ichthys context
-- Ignatius, *Ad Romanos* 4 (~108 CE) — locus classicus martyrdom text
-- John 12:24 — wheat-grain pericope
-- Boyce, M. (1982). *History of Zoroastrianism* Vol. 2. Brill. (T1) — Faravahar
-
-**Wired to:** `[[theme-persecution-as-legitimation]]`, `[[martyrdom-theology]]`, `[[theme-dying-founder-paradigm]]`
-
-**Preset:** `symbols-forged-in-persecution` in Transmission view (10 nodes)
-
-**Why it matters:** This is the cross-tradition version of the observation that **suffering increases a symbol's cultural capital**. It holds across five traditions with no documented contact between the specific cases. Strongest cases for a standalone Atlas section: "Symbols Born From Oppression."
-
-**Tags:** persecution, symbols, latin-cross, fish-ichthys, wheat-grain, dharmachakra, faravahar, christianity, buddhism, zoroastrianism, martyrdom, 5-tradition-parallel
-
----
-
-## SESSION 2026-05-16 — opus-hellenic-1/2/3 + opus-symbols-1 + opus-zoroastrian-1 (single thread)
-*Greek + Egypt deep-dive → mystery-cult capstone → symbols-map gold-zone → Zoroastrian wedge. 76 new nodes + 30+ wirings + 36 mapped cross-tradition transmission edges.*
-
----
-
-### ★★★ "HOLY BRIMO HAS BORNE THE HOLY CHILD BRIMOS!" — A CHRISTMAS-FORMULA SPOKEN IN PAGAN MYSTERY CULT CENTURIES BEFORE CHRIST
-**Source:** opus-hellenic-3 · `05_events/event-eleusinian-mysteries-c1500-bce-396-ce.md` · `06_themes/eleusinian-mystery-revelation.md`
-**Chain:** Eleusinian Mystery hierophant beats gong + shouts at climactic moment of Greater Mysteries: **ἱερὸν ἔτεκε πότνια κοῦρον — Βριμὼ Βριμόν** ("Holy Brimo has borne the Holy Child Brimos!") → reported by Hippolytus *Refutation of All Heresies* 5.8.39-40 (~+230) polemically against the Naassene Gnostics → the formula's grammatical structure is identical to Luke 2:11 Christmas Nativity announcement
-**Why it matters:** **A Christmas-narrative formula** ("a holy woman has borne a holy child") **spoken in pagan Eleusinian mystery cult centuries before Christianity.** Hippolytus deploys it polemically against Naassene Gnostics — but the mystery-cult priority is uncontested. The Eleusinian formula predates the Christian Nativity narrative by 800+ years. **Single most-unexpected single quotation in this session.** T1 primary source.
-**Tags:** eleusinian-mysteries, hierophant, christmas-formula, brimo-brimos, hippolytus-naassene, pre-christian-pagan-priority
-
-### ★★★ PAUL AT THE AREOPAGUS (ACTS 17) PREACHES AT THE EXACT SITE WHERE ATHENA FOUNDED THE COURT IN AESCHYLUS'S *EUMENIDES*
-**Source:** opus-hellenic-3 · `02_documents/_phase-2-axial-age/phase-2-031-aeschylus-oresteia.md` · `04_persons/aeschylus.md`
-**Chain:** Aeschylus *Eumenides* (-458, Athenian City Dionysia premiere) — Athena establishes the Areopagus court of justice on the Areopagus rocky outcrop → Paul preaches the gospel at the same physical Areopagus to the Athenian philosophers (Acts 17:22-34, ~+50) → Christian-eschatological reframing of Aeschylean Areopagus-justice-founding
-**Why it matters:** **The single most-unmapped edge of the session.** Mainstream Acts-commentary almost never connects this geographic-religious-juridical continuity. The two foundational texts — Greek tragic religious-juridical founding + Christian apostolic preaching — share an exact physical site and a related theme (divine-justice-establishment) but the fields (NT-studies vs. Greek-tragedy-studies) don't talk. T1 geographical fact + T2 thematic continuity.
-**Tags:** acts-17, paul-athens, areopagus, aeschylus-eumenides, geographical-religious-continuity, cross-field-boundary
-
-### ★★★ AESHMA → ASHMEDAI → ASMODEUS — THE 1,500-YEAR DEMON-NAME ETYMOLOGICAL CHAIN
-**Source:** opus-zoroastrian-1 · `03_deities/aeshma.md`
-**Chain:** Avestan ***Aēšma*** (Zoroastrian daeva of wrath, ~-1200) → Pahlavi *Khashm* → Hebrew-Aramaic ***Ashmedai / Asmedai*** (Tobit 3:8, 6:14-17, 8:1-3, ~-200) → Greek ***Asmodaios*** (LXX Tobit) → Latin ***Asmodeus*** (Vulgate; Babylonian Talmud Gittin 68a-b; *Testament of Solomon*) → medieval Christian demonology: Asmodeus is one of the seven princes of Hell (Wierus *Pseudomonarchia Daemonum* 1577; *Lemegeton / Lesser Key of Solomon* 17th c.)
-**Why it matters:** **The single cleanest documented Zoroastrian-into-Abrahamic demonological transmission in the entire religious-historical record** — direct phonetic-etymological chain of the demon-name across 1,500 years and four languages. Hutter 1988 + Encyclopaedia Iranica trace step by step. Mainstream Christian demonology textbooks rarely cite the Zoroastrian origin. T1 documented etymological-genealogical chain.
-**Tags:** aeshma, asmodeus, tobit, ashmedai, zoroastrian-to-christian-demonology, 1500-year-etymological-chain
-
-### ★★★ WEDJAT → CHRISTIAN EYE OF PROVIDENCE → MASONIC ALL-SEEING EYE → US DOLLAR BILL
-**Source:** opus-symbols-1 · `09_symbols/eye-of-horus-wedjat.md`
-**Chain:** Egyptian Wedjat (Eye of Horus, ~-3000 onward — millions of surviving amulets) → Greco-Egyptian magical-amulet diffusion (Hellenistic-Roman period, Bonner 1950) → Coptic-Christian eye-of-God iconography (~+200-400, Frankfurter 1998) → medieval Christian Eye of Providence (eye-in-triangle, Trinity-theological-reading) → Masonic All-Seeing Eye (18th c.; from Christian Eye of Providence + Renaissance Hermetic Egyptophilia via Kircher *Oedipus Aegyptiacus* 1652) → **US Great Seal 1782 / US dollar bill 1935**
-**Why it matters:** **The most-recognizable transmuted Egyptian symbol in modern Western iconography.** Every dollar bill carries a 5,000-year-old Egyptian protective-amulet's lineage; virtually nobody walking past one knows it. Documented at every transmission step. T1.
-**Tags:** wedjat, eye-of-providence, masonic, dollar-bill, egypt-to-modern-west, 5000-year-chain
-
-### ★★★ BENNU → 1 CLEMENT 25 (~+95 CE) — EARLIEST CHRISTIAN APPROPRIATION OF A PAGAN SYMBOL ON RECORD
-**Source:** opus-symbols-1 · `09_symbols/phoenix-bennu.md`
-**Chain:** Egyptian Bennu (Heliopolitan solar-bird ~-2400 onward) → Herodotus 2.73 (~-440) → Hellenistic-Roman phoenix literary elaboration (Ovid *Met.* 15, Tacitus *Annals* 6.28, Pliny *NH* 10.2) → **1 Clement 25 (~+95 CE)** — Clement of Rome deploys the phoenix as Resurrection-proof → Tertullian *De Resurrectione* 13, Origen *Contra Celsum* 4.98, Lactantius *De Ave Phoenice* (full Christian-Christ-figure poem) → medieval Christian heraldry + bestiary tradition → modern Western symbol-genealogy
-**Why it matters:** **1 Clement 25 is the EARLIEST extant Christian text to consciously appropriate a pagan symbol as theological warrant.** Predates by 230+ years the Christian appropriation of solar iconography (Constantinian); predates even the Christian iconography of Christ-as-Good-Shepherd. The standard narrative "early Christianity was resistant to pagan iconography until Constantine" is **wrong on the textual record** — 1 Clement 25 documents conscious appropriation in the apostolic-father generation. T1.
-**Tags:** bennu, phoenix, 1-clement-25, earliest-christian-pagan-appropriation, resurrection-symbol
-
-### ★★★ KHEPRI → AUGUSTINE'S *BONUS SCARABAEUS MEUS* — CHRIST AS DUNG-BEETLE
-**Source:** opus-symbols-1 · `09_symbols/scarab-khepri.md`
-**Chain:** Egyptian Khepri (scarab = morning-aspect of Ra; self-generating-rebirth solar symbol; tens of thousands of amulets ~-2400 onward) → millennia of Egyptian heart-scarab amuletic-funerary tradition → **Augustine *Sermons* 119.4 (~+410):** *"Christus in cruce ut leo, in sepulchro ut formica. **Bonus scarabaeus meus**, non eo tantum, quod unigenitus, quod ipse sui auctor mortalium speciem induerit, sed quod in hac nostra faece sese volutaverit et ex hac ipsa nasci voluerit."* ("Christ on the cross is like a lion, in the tomb like an ant. **My good scarab** — not only because as the only-begotten he took on a mortal form by his own will, but because he rolled himself in this our filth and was willing to be born from it.")
-**Why it matters:** **Augustine of Hippo literally calls Christ a good scarab beetle**, deploying the Egyptian self-generating-rebirth-from-filth symbolism as Christological metaphor. The passage is essentially unknown to mainstream Christian-theology surveys (which compartmentalize Augustinian theology) AND to mainstream Egyptology surveys (which compartmentalize patristic reception). Cross-field-boundary gold-zone. T1 primary text.
-**Tags:** scarab, khepri, augustine-bonus-scarabaeus, christ-symbolism, cross-field-boundary-edge
-
-### ★★★ CINVAT BRIDGE → ISLAMIC SIRĀT — THE CLEANEST ZOROASTRIAN-INTO-ISLAMIC ESCHATOLOGICAL TRANSMISSION
-**Source:** opus-zoroastrian-1-extension · `06_themes/cinvat-bridge-judgment.md`
-**Chain:** Avestan Cinvat Bridge (Bridge of the Separator, ~-1200 Gathic onward) → Pahlavi systematization (bridge narrows to razor-edge for wicked; three judge-yazatas — Mithra + Sraosha + Rashnu) → **Islamic Sirāt** (الصراط — bridge sharper than a sword + thinner than a hair spanning Hellfire; all souls cross on Day of Resurrection) emerges in late-7th-and-8th-c. Arab-Islamic religious culture in direct contact with conquered Zoroastrian Persia after +651 conquest → al-Ghazālī *Iḥyā*ʾ + Mishkat al-Anwar elaborate
-**Why it matters:** **The cleanest single Zoroastrian-into-Islamic eschatological transmission** documented in the entire religious-historical record. Boyce 1991 + Encyclopaedia Iranica treat the transmission as substantially-genealogical, not coincidental. Mainstream Islamic-studies often does not credit the Zoroastrian source explicitly. T1.
-**Tags:** cinvat-bridge, islamic-sirat, zoroastrian-to-islamic-transmission, eschatological-bridge
-
-### ★★ MANETHO → PLUTARCH *DE ISIDE* → CLEMENT *STROMATA* → RENAISSANCE HERMETICISM
-**Source:** opus-hellenic-1 · `04_persons/plutarch.md` · `04_persons/manetho.md` · `02_documents/_phase-4-late-antiquity/phase-4-072-plutarch-de-iside-et-osiride.md`
-**Chain:** Manetho (Egyptian-priest writing Greek for Ptolemy II, ~-280) → Plutarch *De Iside et Osiride* (~+115 CE) → Clement of Alexandria *Stromata* engages Plutarch → Ficino *Pimander* (1463) + Kircher *Oedipus Aegyptiacus* (1652) Renaissance Hermetic-Platonist reception
-**Why it matters:** **Direct documentary chain from Egyptian-priestly theology → Greek Middle Platonist allegoresis → Alexandrian Christian apologetic template → Renaissance Hermetic recovery.** Four-document transmission spine sits between Egyptology and Christianity-studies departmentally; mainstream scholarship rarely connects all four ends. T1.
-**Tags:** egyptian-greek-syncretism, plutarch, manetho, clement, ficino, kircher, 1500-year-chain
-
-### ★★ IMHOTEP → ASKLEPIOS → HERMETIC *ASCLEPIUS* DIALOGUE
-**Source:** opus-hellenic-1 · `04_persons/imhotep.md` · `03_deities/asclepius-greek.md`
-**Chain:** Imhotep (3rd-Dynasty Egyptian architect, ~-2650) → deified by Late Period → Ptolemaic-period syncretic equation with Greek Asclepius → cult of Asklepios-Imhotep at Saqqara/Karnak/Deir el-Bahari → Hermetic *Asclepius* dialogue features Asclepius (= Imhotep) as Hermes Trismegistus's interlocutor
-**Why it matters:** **The single most consequential individual Greek-Egyptian theological syncretism.** A specific deified historical Egyptian becomes the namesake of the principal Hermetic Latin dialogue. T1.
-**Tags:** imhotep, asklepios, hermetic-tradition, deification, syncretism
-
-### ★★ NEITH = ATHENA — THE FOUNDATIONAL ATLANTIS-DIALOGUE IDENTIFICATION
-**Source:** opus-hellenic-1 · `03_deities/neith.md`
-**Chain:** Saite Egyptian Neith (Predynastic; politically central -664 to -525) → Saite priest Sonchis tells Solon at Saïs that Neith = Athena (Plato *Timaeus* 21E) → Plato's Atlantis dialogue frame depends on this identification
-**Why it matters:** **The entire Atlantis dialogue rests on a Greek-Egyptian theological identification.** Plato's most-famous philosophical-religious narrative is anchored in a real Saite Egyptian cult-identification. Modern Atlantis-mythology never traces this back. T1.
-**Tags:** neith, athena, plato-timaeus, atlantis, saite-egypt
-
-### ★★ SOL-INVICTUS RADIATE CROWN → CHRIST-PANTOKRATOR HALO (MAUSOLEUM OF THE JULII)
-**Source:** opus-symbols-1 · `09_symbols/halo-nimbus.md`
-**Chain:** Hellenistic-Roman Helios radiate-crown (~-300 onward) → Caracalla's radiate crown on coinage (+200) → Aurelian institutes Sol Invictus (+274) → **Mausoleum of the Julii Christ-Helios mosaic** (~+250-325, Vatican necropolis) — **Christ literally depicted as Sol Invictus driving the solar chariot with radiate-crown halo** → 4th-c. Christian art systematizes the halo → cruciform Christ-halo 5th-6th c. → universal Christian saint-and-Christ iconography
-**Why it matters:** **The most-direct surviving pagan-to-Christian iconographic appropriation in the visual record.** Mathews 1993 *Clash of Gods* makes the decisive case. The Mausoleum of the Julii mosaic is **the primary visual document**. Also institutionally linked to December 25 / Christmas Christianization of Sol Invictus festival. T1.
-**Tags:** sol-invictus, christ-halo, mausoleum-of-julii, mathews-clash-of-gods, december-25, pagan-to-christian-iconography
-
-### ★★ ANAXIMENES *AĒR* → STOIC *PNEUMA* → PAULINE *PNEUMA HAGION* → CHRISTIAN HOLY SPIRIT (1,000-YEAR PNEUMATIC LINEAGE)
-**Source:** opus-hellenic-2 · `04_persons/anaximenes.md`
-**Chain:** Anaximenes of Miletus (~-550) — *aēr* as cosmic *archê* with condensation-rarefaction → Diogenes of Apollonia (~-440) identifies *aēr* with intelligence → Derveni Papyrus commentator (~-340) deploys Anaximenean-Diogenes *aēr* to allegorize Orphic theogony → Stoic *pneuma* (~-300 onward) — cosmic living-intelligent-divine principle → Pauline *pneuma hagion* (Holy Spirit; same Greek word, theologically reframed) → Basil of Caesarea *On the Holy Spirit* (~+375) explicitly engages Greek philosophical *pneuma*
-**Why it matters:** **One of the cleanest pre-Socratic-to-Christian theological lineages running through 1,000 years**, with documented transmission at every step. Christian "Holy Spirit" terminology has a direct genealogy traceable back to pre-Socratic Milesian *aēr* cosmology. T1.
-**Tags:** anaximenes, aer, pneuma, stoic, pauline-holy-spirit, christian-trinity, 1000-year-pneumatic-lineage
-
-### ★★ KYKEON → EUCHARIST (VIA JUSTIN MARTYR'S POLEMICAL-PRIORITY)
-**Source:** opus-hellenic-3 · `06_themes/eleusinian-mystery-revelation.md`
-**Chain:** Eleusinian *kykeon* (barley-and-mint ritual drink at breaking of initiatic fast, ~-1500 to +396) → Christian Eucharistic cup → Justin Martyr *1 Apology* 66 explicitly polemicizes against pagan-mystery-cult Eucharistic-imitation (target Mithras-cult but pattern is generic)
-**Why it matters:** **The patristic polemical-anxiety presupposes the priority of the pagan ritual.** Justin wouldn't argue "these similar rites are demonic imitations of Christianity" if the pagan rituals didn't visibly resemble Christian sacramental practice. Eleusinian kykeon predates Christian Eucharist by 1500+ years. T1.
-**Tags:** eleusinian-kykeon, eucharist, justin-martyr, polemical-priority
-
-### ★★ PENTHEUS'S SPARAGMOS → CHRISTIAN BROKEN-DIVINE-FLESH EUCHARIST
-**Source:** opus-hellenic-3 · `02_documents/_phase-2-axial-age/phase-2-030-euripides-bacchae.md`
-**Chain:** Euripides *Bacchae* 1118-1143 (-405): Pentheus dismembered by his mother Agave in Bacchic frenzy → Orphic-Zagreus child-Dionysus dismembered by Titans → Christian Eucharistic "this is my body, broken for you" (1 Cor 11:24) → patristic Eucharistic theology of broken-divine-flesh
-**Why it matters:** Dionysian-Orphic-Zagreus dismemberment-and-restoration pattern is **the principal pre-Christian Mediterranean structural template for Eucharistic broken-divine-flesh theology**. Whether direct genealogical influence or shared cultural pattern is debated; structural parallel uncontested. T1 + T2.
-**Tags:** bacchae, pentheus-sparagmos, dionysus-zagreus, eucharist, dismemberment
-
-### ★★ THE MAGI → MATTHEW 2 NATIVITY + ETYMOLOGICAL SOURCE OF "MAGIC"
-**Source:** opus-zoroastrian-1 · `04_persons/the-magi.md`
-**Chain:** Median priestly tribe (Herodotus 1.101, ~-440) → Achaemenid imperial priesthood → Hellenistic-Roman "Magi" stock figure of priestly-wisdom → **Matthew 2:1-12 (~+85)** — *Magoi apo anatolon* with gold/frankincense/myrrh → patristic three-named-kings tradition (Caspar/Melchior/Balthasar by 6th c.) → **Greek *magoi* → Latin *magus / magicus* → English *magic / magician***
-**Why it matters:** **The single most direct Zoroastrian-Christian textual transmission in the New Testament.** Matthew deploys Zoroastrian priest-astrologers as canonical-Christian witnesses to Christ's universal kingship. English word "magic" preserves Zoroastrian priestly-title across 2,500 years. T1.
-**Tags:** magi, matthew-2, zoroastrian-priesthood, nativity, etymology-of-magic
-
-### ★★ SAOSHYANT → CHRISTIAN MESSIAH (VIRGIN-BORN FUTURE-SAVIOR)
-**Source:** opus-zoroastrian-1 · `03_deities/saoshyant.md`
-**Chain:** Avestan Saoshyant (Gathic ~-1200; elaborated Younger Avesta ~-700; Pahlavi virgin-birth narrative) — future savior born of virgin impregnated by Zarathustra's preserved seed; raises the dead; defeats Angra Mainyu; inaugurates Frashokereti → Second-Temple Jewish messianic theology (Daniel, 1 Enoch, Qumran, Sibylline Oracles) emerges in Persian-period contact → Christian Christology (virgin-birth + future Parousia + raising of dead + final cosmic combat + new heavens-and-earth)
-**Why it matters:** **The principal pre-Christian Near Eastern future-savior figure** with virgin-birth + raises-dead + final-cosmic-combat structural features. Boyce 1991 + Hultgård 1998 substantial-influence-on-Second-Temple is the dominant scholarly position. T1 + T2.
-**Tags:** saoshyant, christian-messiah, virgin-birth, future-savior, persian-jewish-contact
-
-### ★★ FRASHOKERETI → REVELATION 21:1 NEW HEAVENS-AND-EARTH
-**Source:** opus-zoroastrian-1 · `06_themes/frashokereti-cosmic-renovation.md`
-**Chain:** Avestan + Pahlavi Frashokereti (universal-resurrection + molten-metal river of purification + final cosmic combat + cosmic renovation) → Second-Temple Jewish apocalyptic (Daniel 12 bodily resurrection; 1 Enoch; Qumran) → **Revelation 21:1** *καινὸν οὐρανὸν καὶ γῆν καινήν* ("new heavens and a new earth") + 2 Peter 3:13
-**Why it matters:** **The principal pre-Christian Near Eastern model for Christian Resurrection-and-New-Creation eschatology.** Universal bodily resurrection + purification-through-fire + new creation pattern is structurally Frashokereti. T1 + T2.
-**Tags:** frashokereti, revelation-21, new-heavens-new-earth, universal-resurrection, persian-influence
-
-### ★★ ISAIAH 45:1 "CYRUS MY ANOINTED" — THE ONLY NON-ISRAELITE *MĀŠÎAḤ* IN THE HEBREW BIBLE
-**Source:** opus-zoroastrian-1 · `05_events/event-cyrus-conquest-of-babylon-539-bce.md`
-**Chain:** Cyrus conquers Babylon (-539) → Edict of Return + Second Temple rebuilding under Persian-imperial patronage → Second Isaiah (~-540) has YHWH explicitly call Cyrus *māšîḥî* ("my anointed," Isa 45:1) — **the only place in the entire Hebrew Bible where a non-Israelite figure is called *māšîaḥ***
-**Why it matters:** **The structural-and-historical roots of cross-tradition Messianic theology run through this passage.** YHWH explicitly anoints a Persian-Zoroastrian king as Messiah. T1.
-**Tags:** cyrus, isaiah-45, messiah-non-israelite, persian-jewish-contact
-
-### ★ APULEIUS'S "SUN AT MIDNIGHT" → CHRISTIAN MYSTICAL ILLUMINATION (1,500-YEAR CHAIN)
-**Source:** opus-hellenic-3 · `02_documents/_phase-4-late-antiquity/phase-4-090-apuleius-metamorphoses-bk-11.md`
-**Chain:** Apuleius *Met.* 11.23 (~+165): *"nocte media vidi solem candido coruscantem lumine"* → Pseudo-Dionysian *theia gnophos* → Gregory of Nyssa → Meister Eckhart → *Cloud of Unknowing* → Renaissance Hermetic-Platonist illumination metaphysics → Romantic-Symbolist poetic-mystical imagery
-**Why it matters:** **The only complete first-person ancient mystery-cult initiation narrative** provides a phrase + image that runs into 1,500 years of Christian mystical-illumination tradition. T1 + T2.
-**Tags:** apuleius, isiac-initiation, pseudo-dionysius, christian-mysticism, divine-darkness, eckhart
-
-### ★ APULEIUS → AUGUSTINE NORTH AFRICAN LATIN-PHILOSOPHICAL → LATIN CHRISTIAN-THEOLOGICAL LINEAGE
-**Source:** opus-hellenic-3 · `04_persons/apuleius.md`
-**Chain:** Apuleius (Madauros, North Africa, ~+165) writes *De Deo Socratis* Middle Platonist daimonology → Augustine (Tagaste/Hippo, North Africa, ~+413) targets Apuleius extensively in *City of God* 8-9 as principal pagan-philosophical opponent to refute (and selectively absorb)
-**Why it matters:** **One of the cleanest single documented edges between Latin pagan Middle Platonism and Latin Christian theology**, both running through the same North African cultural-intellectual corridor. T1.
-**Tags:** apuleius, augustine, north-african-latin, middle-platonism, daimonology, demonology-genealogy
-
-### ★ PHERECYDES CHRONOS-OPHIONEUS COSMIC-SERPENT BATTLE ↔ MESOPOTAMIAN MARDUK-TIAMAT
-**Source:** opus-hellenic-2 · `04_persons/pherecydes-of-syros.md`
-**Chain:** Pherecydes of Syros (~-550) *Heptamychos* — Chronos battles cosmic-serpent Ophioneus and casts him into Tartarus ↔ Mesopotamian *Enuma Elish* (Marduk-Tiamat) ↔ Hittite Storm-god-Illuyanka → Hesiodic Greek-cosmogonic background → Pythagorean transmigration via Pherecydes-as-Pythagoras's-traditional-teacher
-**Why it matters:** **The clearest single piece of Mesopotamian-Hittite cosmogonic transmission into pre-Socratic Greek thought.** T1.
-**Tags:** pherecydes, chronos-ophioneus, marduk-tiamat, illuyanka, near-eastern-to-greek
-
-### ★ AMUN → ZEUS-AMMON (ALEXANDER'S SIWA ORACLE)
-**Source:** opus-hellenic-1 · `03_deities/amun.md`
-**Chain:** Egyptian Amun → Herodotus 2.42 identifies as Zeus → Siwa Oasis oracle (-332) proclaims Alexander son of Zeus-Ammon → Hellenistic-Roman ram-horned Zeus coinage → Jupiter-Ammon in Roman religion. T1.
-
-### ★ PERSEPHONE-POMEGRANATE → BOTTICELLI / MANTEGNA MADONNA-WITH-POMEGRANATE
-**Source:** opus-symbols-1 · `09_symbols/pomegranate.md`
-**Chain:** Persephone (Homeric Hymn to Demeter ~7th c. BCE) → Eleusinian mystery-cult prohibition → Hebrew Temple-pomegranate decoration → late-medieval Italian Madonna-with-Pomegranate iconographic tradition (Botticelli ~1487). Cross-field-boundary chain documented at every step. T1 reception-history.
-
-### ★ THYRSUS = DOCUMENTED NON-BORROWING (THE CASE CHRISTIANITY REFUSED TO ABSORB)
-**Source:** opus-symbols-1 · `09_symbols/thyrsus.md`
-**Chain:** Dionysian-Bacchic thyrsus → Christian *non-borrowing*; Clement of Alexandria *Protrepticus* 2 explicitly attacks Bacchic mysteries by name; Christianity systematically refused to absorb the Bacchic ritual-staff (in contrast to phoenix/halo/scarab). T1.
-**Why it matters:** **The cleanest case of documented non-borrowing in the Christian-pagan iconographic record** — the negative case is theologically informative.
-
-### ★ ASHA ↔ VEDIC ṚTA — PROTO-INDO-IRANIAN COSMIC-TRUTH CONCEPT
-**Source:** opus-zoroastrian-1-extension · `03_deities/asha-vahishta.md`
-**Chain:** Proto-Indo-Iranian \**Hr̥tó-* → Avestan *Aṣ̌a* ↔ Vedic *Ṛta*; both have fire-as-material-manifestation; both opposed to a Lie-principle (Druj / Anṛta) → Persian-period Jewish expansion of *tzedek* → Pauline *dikaiosynē theou*. T1 + T2.
-
-### INDO-IRANIAN COGNATE DEITY CLUSTER — Proto-Indo-Iranian shared pantheon (T1 throughout):
-- **Atar ↔ Agni** (divine fire) — `03_deities/atar.md`
-- **Haoma ↔ Soma** (ritual plant-drink) — `09_symbols/haoma.md`
-- **Verethragna ↔ Indra-Vṛtrahán** (warrior-dragon-slayer) — `03_deities/verethragna.md`
-- **Yima ↔ Yama** (first-mortal / first-king; divergent into king-of-living vs. king-of-dead) — `03_deities/yima-jamshid.md`
-- **Sraosha ↔ Gabriel** (angelic-messenger, T2 structural parallel) — `03_deities/sraosha.md`
-
----
-
-### META-PATTERN: "DIMINISHING-RETURNS INVERSION" METHODOLOGY VALIDATED
-
-**Finding:** When the cataloging agent describes a remaining batch as "diminishing-return polish" compared to the load-bearing core, this is **often a wrong framing**. The cross-tradition transmission edges that genuinely matter live precisely in the items mainstream single-tradition scholarship dismisses, because they sit between fields that don't talk to each other.
-
-**Concrete validation:** opus-hellenic-3 batch (Eleusinian Mysteries + Apuleius + Athenian tragedians) was triaged as "diminishing-return polish" → user flipped framing → delivered the **single highest cross-tradition-edge density of any batch this session**, including the Brimo-Brimos Christmas-formula, Paul-at-the-Areopagus-as-Eumenides-site, and Apuleius-Augustine-North-African-lineage edges — none of which mainstream commentary connects.
-
-**Memorialized in:** `~/.claude/projects/-Users-user-Desktop-Codex-Atlas/memory/feedback_diminishing_returns_inversion.md`
-
----
-
-### INVESTIGATIONS WORTH PURSUING — OPEN GAPS FLAGGED THIS SESSION
-
-Not yet executed; high cross-tradition-ROI candidates:
-
-1. **Hand of Fatima / Hamsa genealogy** — Phoenician transmission of Wedjat-amulet → Levantine evil-eye-amulet → modern Islamic-Mediterranean Hamsa.
-2. **Persian Simurgh ↔ Egyptian Bennu** — the Iranian phoenix tradition: Avestan *Saēna* / Pahlavi *Sēnmurv* / Persian *Sīmurġ* → Attar *Conference of the Birds*. Likely substantial Egyptian-Iranian phoenix-tradition contact via Achaemenid period.
-3. **Christian altar-light / Jewish *ner tamid* / Zoroastrian Atar continuity** — *ner tamid* institutionalizes in the Persian period; possible direct Atar-cult influence on emerging Second-Temple eternal-lamp practice.
-4. **Eleusinian kykeon ↔ Vedic Soma ↔ Zoroastrian Haoma** — three Indo-European ritual-substances; possible deep-Indo-European shared substrate.
-5. **Onomacritus of Athens (~-520)** — Orphic compiler/forger central to Orphic tradition into Athenian-Pythagorean-Platonic philosophy. Not yet stubbed.
-6. **Damascius + Simplicius** — last Athenian Academy head + Aristotle-commentator; fled to Sasanian Persia after Justinian's closure of Academy in 529. **Direct documented Greek-philosophical-into-Sasanian-Iranian intellectual transmission.** Not yet stubbed.
-7. **Individual remaining Amesha Spentas** — Khshathra Vairya, Spenta Armaiti, Haurvatat, Ameretat (currently only Asha Vahishta + Vohu Manah stubbed individually).
-8. **Kartir (Sasanian high priest persecutor of Mani + Christians, ~+240-293)** — Sasanian-period institutional-religious-political consolidation figure.
-
----
-
-*Session 2026-05-16 entries by opus-hellenic-1/2/3 + opus-symbols-1 + opus-zoroastrian-1 single-thread. Star ratings: ★★★ = highest-impact unmapped edge; ★★ = major MASSIVE-win; ★ = solid cross-tradition discovery.*
-
----
-
-*File created 2026-05-16. All agents: read before claiming a discovery. Update rather than duplicate.*
+*Master file created + ranked 2026-05-16. Third-sweep supplementary section added 2026-05-16.*
+*Ranked: S=civilization-defining · A=institution-founding · B=deep-parallel-T1 · C=under-explored · D=meta-pattern*
+*★★★ = vault may be among few who systematically maps this in this form*
+*Total entries: 10×S + 18×A + 25×B + 14×C + 6×D + 8×SUPP-S + 11×SUPP-A + 19×SUPP-B + 15×SUPP-C + 2×SUPP-D = **128 ranked discoveries***
