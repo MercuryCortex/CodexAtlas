@@ -1493,3 +1493,8 @@ Files: cosmic-serpent.md · sacred-ring.md · sacred-number-four.md
 Files: north-star.md · sacred-number-twelve.md · sacred-threshold.md
 - Note: bagua.md already existed (as ba-gua.md); sacred-mirror.md also pre-existed; substituted sacred-number-twelve.md per protocol
 - 248 total symbols · 14978 edges · 0 YAML errors · 0 dead links · commit cea4a58
+
+## Goblin 18A — Sacred Sword / World Tree / Number Nine
+**Status: FINISHED**
+Files: sacred-sword.md · world-tree.md · sacred-number-nine.md
+- 253 total symbols · 15060 edges · 0 YAML errors · 0 new dead links · commit 1d450d0
