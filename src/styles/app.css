@@ -4215,7 +4215,8 @@ mark.sr-ent-demo {
   transition: left var(--t-layout) var(--ease), right var(--t-layout) var(--ease);
 }
 .alpha-pane-live {
-  overflow: hidden;
+  overflow-y: auto;
+  overflow-x: hidden;
 }
 
 /* Active mode pill */
@@ -4288,9 +4289,11 @@ mark.sr-ent-demo {
   letter-spacing: 0.1em;
 }
 
-/* Expanded card — spans full row */
+/* Detail panel — below the grid, not inside it */
+.alpha-glyph-detail { display: none; }
+.alpha-glyph-detail.active { display: block; }
+
 .alpha-glyph-expanded {
-  grid-column: 1 / -1;
   background: var(--bg-1);
   border-top: 2px solid var(--gold-soft);
   border-bottom: 1px solid var(--border-soft);

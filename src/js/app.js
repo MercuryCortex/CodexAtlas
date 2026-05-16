@@ -588,7 +588,7 @@ function setView(name) {
     if (el._sigma) { try { el._sigma.kill(); } catch (e) { /* ignore */ } el._sigma = null; }
     el.remove();
   });
-  document.querySelectorAll('.list-pane,.about-pane,.alch-toolbox,.alch-palette,.tl-zoom-presets,.alch-board-root,.alch-menu,.astrology-pane').forEach(el => el.remove());
+  document.querySelectorAll('.list-pane,.about-pane,.alch-toolbox,.alch-palette,.tl-zoom-presets,.alch-board-root,.alch-menu,.astrology-pane,.alpha-pane').forEach(el => el.remove());
   hideTooltip();
   // Map thumbnail only on geo-relevant views; hide elsewhere.
   // Atlas view uses MapLibre (no SVG map-thumb); zoom meter shown separately.

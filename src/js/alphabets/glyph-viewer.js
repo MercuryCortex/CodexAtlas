@@ -78,7 +78,11 @@
     wrap.innerHTML = '';
     const grid = document.createElement('div');
     grid.className = 'alpha-glyph-grid';
+    // Detail panel lives BELOW the grid, not inside it — avoids mid-row grid disruption
+    const detail = document.createElement('div');
+    detail.className = 'alpha-glyph-detail';
     wrap.appendChild(grid);
+    wrap.appendChild(detail);
 
     data.forEach((g, idx) => {
       const cell = document.createElement('div');
@@ -98,27 +102,31 @@
       cell.addEventListener('click', () => {
         if (_expandedIdx === idx) {
           _expandedIdx = null;
-          // Remove any expanded panel
-          const existing = grid.querySelector('.alpha-glyph-expanded');
-          if (existing) existing.remove();
+          detail.innerHTML = '';
+          detail.classList.remove('active');
           cell.classList.remove('expanded');
         } else {
           _expandedIdx = idx;
-          // Remove previous expansion
           grid.querySelectorAll('.alpha-glyph-cell').forEach(c => c.classList.remove('expanded'));
-          const existing = grid.querySelector('.alpha-glyph-expanded');
+          const existing = detail.querySelector('.alpha-glyph-expanded');
           if (existing) existing.remove();
           cell.classList.add('expanded');
           // Insert expanded card after this cell's row
-          insertExpanded(grid, cell, g, idx);
+          cell.classList.add('expanded');
+          insertExpanded(detail, g);
         }
       });
 
       grid.appendChild(cell);
     });
+
+    // Restore expanded state if already set
+    if (_expandedIdx !== null && data[_expandedIdx]) {
+      insertExpanded(detail, data[_expandedIdx]);
+    }
   }
 
-  function insertExpanded(grid, clickedCell, g, idx) {
+  function insertExpanded(detailEl, g) {
     const expanded = document.createElement('div');
     expanded.className = 'alpha-glyph-expanded';
 
@@ -187,12 +195,15 @@
     expanded.querySelector('.age-close-btn').addEventListener('click', (e) => {
       e.stopPropagation();
       _expandedIdx = null;
-      expanded.remove();
-      clickedCell.classList.remove('expanded');
+      detailEl.innerHTML = '';
+      detailEl.classList.remove('active');
+      const grid = detailEl.previousElementSibling;
+      if (grid) grid.querySelectorAll('.alpha-glyph-cell').forEach(c => c.classList.remove('expanded'));
     });
 
-    // Insert after the clicked cell
-    clickedCell.insertAdjacentElement('afterend', expanded);
+    detailEl.innerHTML = '';
+    detailEl.classList.add('active');
+    detailEl.appendChild(expanded);
     // Scroll into view
     setTimeout(() => expanded.scrollIntoView({ behavior: 'smooth', block: 'nearest' }), 50);
   }
