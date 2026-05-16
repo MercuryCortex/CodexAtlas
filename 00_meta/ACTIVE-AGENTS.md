@@ -4,6 +4,13 @@ _Hand-maintained. Each agent currently working in the vault appends a claim bloc
 
 ---
 
+## goblin-pattern-mystery-1 — symbols / sacred pattern + mystery thread — started 2026-05-16 — IN PROGRESS
+- Owning: `09_symbols/arabesque-girih.md` (NEW), `09_symbols/philosophers-stone.md` (NEW), `09_symbols/labyrinth.md` (NEW), `09_symbols/gorgoneion.md` (NEW)
+- Goal: Islamic sacred geometry quasicrystal win; Philosopher's Stone→Holy Grail; labyrinth universal maze; Gorgoneion apotropaic face
+- Status: in-progress
+
+---
+
 ## opus-nagarjuna-theravada-1 — Nagarjuna + Theravāda upgrades — started 2026-05-16 — IN PROGRESS
 - Owning: `04_persons/nagarjuna.md`, `07_traditions/tradition-theravada-buddhism.md`
 - Also creating stubs: `04_persons/wittgenstein.md`, `04_persons/derrida.md`, `04_persons/candrakirti.md`
