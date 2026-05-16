@@ -19,10 +19,10 @@ key-figures: ["[[siddhartha-gautama-buddha]]", "[[amitabha]] (the cosmic Buddha 
 themes: ["[[bhakti-devotion]]", "[[divine-emanation]]", "[[afterlife-judgment]]"]
 parallels: ["[[phase-4-101-lotus-sutra]]", "[[phase-4-102-avatamsaka-sutra]]", "[[phase-4-103-lankavatara-sutra]]", "[[phase-5-002-heart-sutra]]"]
 influenced-by: ["earlier Mahāyāna bodhisattva-vow literature", "possibly Zoroastrian and Central-Asian paradisiacal imagery (contested — see Disputes)"]
-influences: ["Chinese Pure Land school (Tanluan ~476-542; Daochuo 562-645; Shandao 613-681)", "Japanese Pure Land (Hōnen 1133-1212; Shinran 1173-1263; Jōdo-shū and Jōdo Shinshū)", "Korean and Vietnamese Pure Land traditions", "[[amitabha]] / [[avalokitesvara]] / [[guanyin]] devotion across East Asia", "Tibetan Sukhāvatī devotion (within Vajrayāna)"]
+influences: ["Chinese Pure Land school (Tanluan ~476-542; Daochuo 562-645; Shandao 613-681)", "[[honen]] (1133-1212, founder of Japanese Jōdo-shū, exclusive nembutsu practice)", "[[shinran]] (1173-1263, founder of Jōdo Shinshū, radical tariki soteriology structurally parallel to Lutheran sola fide)", "Korean and Vietnamese Pure Land traditions", "[[amitabha]] / [[avalokitesvara]] / [[guanyin]] devotion across East Asia", "Tibetan Sukhāvatī devotion (within Vajrayāna)", "[[tradition-protestantism]] (structural-parallel: tariki/sola gratia; shinjin/sola fide — the two most radical grace-alone reformations in their respective traditions)"]
 deities-mentioned: ["[[amitabha]]", "[[avalokitesvara]]"]
 events-context: []
-status: "metadata"
+status: "full"
 preservation: "Three classical Pure Land sūtras: the *Larger Sukhāvatīvyūha* (this entry), the *Smaller Sukhāvatīvyūha* (Amitābha Sūtra, very short, Kumārajīva 402 CE), and the *Amitāyurdhyāna Sūtra* (Sutra of Meditation on Amitāyus, Chinese composition c. 424 CE — Pure Land's *Visualization Sūtra*, of disputed Indian origin). The Larger Sukhāvatīvyūha exists in five Chinese translations (Lokakṣema c. 188; Zhi Qian c. 230; Saṃghavarman 252 — the standard East Asian text; Bodhiruci 706; Faxian 1001), reflecting the text's importance and continuing translation activity. Sanskrit text in Nepalese manuscript tradition. Tibetan translation by ~9th c."
 refs:
   - title: "The Land of Bliss: The Paradise of the Buddha of Measureless Light"
@@ -64,7 +64,20 @@ refs:
     publisher: "Hongwanji International Center"
     type: "monograph"
     tier: 2
-tags: [phase-4, mahayana, pure-land, sukhavati, amitabha, amitayus, dharmakara, bhakti, devotion]
+  - title: "Shinran's Gospel of Pure Grace"
+    author: "Bloom, Alfred"
+    year: 1965
+    publisher: "University of Arizona Press"
+    type: "monograph"
+    tier: 1
+    notes: "Foundational comparative study explicitly documenting the Shinran-Luther structural parallel; essential for the tariki/sola fide MASSIVE WIN."
+  - title: "Jōdo Shinshū: Shin Buddhism in Medieval Japan"
+    author: "Dobbins, James C."
+    year: 1989
+    publisher: "Indiana University Press"
+    type: "monograph"
+    tier: 1
+tags: [phase-4, mahayana, pure-land, sukhavati, amitabha, amitayus, dharmakara, bhakti, devotion, tariki, shinran, sola-fide]
 ---
 
 # Larger Sukhāvatīvyūha Sūtra (Larger Pure Land Sūtra)
@@ -100,6 +113,54 @@ The foundational text of the East Asian Pure Land tradition — the most demogra
 - **Mystical paradise and the heavenly geography.** Sukhāvatī as the jewel-treed western paradise belongs to a cross-tradition substrate of mystical-paradise geographies: the Zoroastrian *Garōdmān* / House of Song; the Hebrew Bible's Eden and the apocalyptic-tradition's heavenly Jerusalem (Revelation 21); the Quranic *jannāt 'adn* with its rivers and gardens; the Greek Elysium and the Hellenistic Isles of the Blessed. Substrate; the question of *Iranian/Zoroastrian influence* on Pure Land paradise imagery is contested but actively studied (see Disputes). Williams 2009 ch. 10 surveys.
 - **Calling the divine name.** The Pure Land *nembutsu* tradition belongs to a cross-tradition substrate of devotional name-recitation: the Christian *Jesus Prayer* and Hesychast tradition (Mount Athos, the *Philokalia*); the Sufi *dhikr* / remembrance of the divine names; the Hindu *japa* of mantra-syllables and the *nāma-saṅkīrtana* of Caitanya-Vaiṣṇava bhakti; the Sikh *Nām Simran*. Five traditions independently developing the practice of repetitive divine-name recitation as the operative spiritual practice. Substrate; functional parallel of deep structural significance for the comparative study of devotional practice.
 
+## MASSIVE WIN cross-tradition edges
+
+### 1. Shinran's tariki ↔ Luther's sola fide — the two great "grace alone" reformations
+The most precisely parallel doctrinal convergence in the comparative-religion record. Two reformers, separated by an ocean and three centuries, independently arrived at structurally identical soteriologies from within their respective traditions.
+
+**The Pure Land soteriology of this text** (Dharmākara's 18th vow): Any being who calls Amitābha's name with sincere faith will be born in Sukhāvatī. The operative agent is the *vow-power* of Amitābha, not the practitioner's accumulated merit or meditative attainment. The soteriological logic: a divine being performs a saving act in the past; the practitioner's response is trust/faith/name-recitation; the result is salvation/rebirth in a pure realm.
+
+**[[shinran]] (1173–1263, Japan)**: Shinran radicalized this logic to its conclusion. The *shinjin* (sincere entrusting) — the moment of authentic faith in Amitābha's saving power — is itself given by Amitābha, not achieved by the practitioner. Human "self-power" (*jiriki*) is worthless and actively obstructs; "Other Power" (*tariki*) is everything. A single sincere nembutsu is sufficient because it flows from Amitābha's vow, not from the practitioner's religious effort. Even the most wicked person (*akunin shōki*, the "wicked person as the proper object of Amitābha's saving") is saved — indeed, precisely saved — because Amitābha's vow is directed at those who cannot help themselves. The *Kyōgyōshinshō* (1224) is the systematic statement.
+
+**[[martin-luther]] (1483–1546, Germany)**: Luther's break with medieval Catholic soteriology rested on the conviction that salvation is *sola fide* (by faith alone) and *sola gratia* (by grace alone): God's act in Christ — the atoning sacrifice — is the operative agent; the human being's response is *faith* (*fides*), which is itself a gift of the Holy Spirit, not a human achievement. Works, accumulated merit, and religious effort — even sincere devotional practice — are not the basis of salvation; only faith in Christ's saving act is. The most scandalous form of this: even the worst sinner, trusting Christ, is saved. The *simul iustus et peccator* (simultaneously righteous and sinner) is the Lutheran version of *akunin shōki*.
+
+**The structural identity**:
+
+| Pure Land (this sūtra + Shinran) | Lutheran Reformation (Luther) |
+|---|---|
+| Amitābha's Original Vow (divine saving act, performed in cosmic past) | Christ's atoning sacrifice (divine saving act, performed in historical past) |
+| *Nembutsu* / name-recitation (the human response) | Faith / confession (the human response) |
+| *Shinjin* / sincere entrusting (is itself a gift of Amitābha, not a human achievement) | *Fides* / faith (is itself a gift of the Holy Spirit, not a human achievement) |
+| *Tariki* / Other Power — Amitābha's vow-power alone saves | *Sola gratia* / grace alone — God's gift alone saves |
+| *Jiriki* / self-power — worthless and obstructs | Works / merit — irrelevant to justification |
+| *Akunin shōki* — the wicked person is the proper object of saving | *Simul iustus et peccator* — the sinner is simultaneously justified |
+| Shinran's debates with established Buddhism (works-tradition) | Luther's debates with Catholic Church (merit/indulgence tradition) |
+| Shinran exiled twice | Luther excommunicated |
+
+Shinran was working in Kamakura-period Japan; Luther was working in Reformation-era Germany. There is no historical connection. The convergence is structural. This is arguably the single most precise doctrinal parallel across two entirely independent religious traditions anywhere in the comparative-religion literature.
+
+*MASSIVE WIN: The vault's clearest case of convergent soteriological development. The Bloom 1965 study documents it explicitly; the Christian-Buddhist dialogue at Claremont and Nanzan has worked it through at length.*
+
+### 2. The nembutsu and the single sacred formula — cross-tradition substrate
+The *nembutsu* — *Namu Amida Butsu* / *Namo Amituofo* / *Namo Amitabhaya* — is the most-recited single religious formula in human history over the past millennium (given the demographic weight of East Asian Pure Land Buddhism). It belongs to a cross-tradition substrate of single-formula devotional practices:
+
+- **Islamic *Lā ilāha illā Allāh*** (Shahāda): the single formula of commitment/faith whose sincere recitation constitutes entry into the Islamic community and seals the practitioner's faith. Structurally: one formula; sincere recitation; total orientation toward the divine.
+- **Christian *Jesus Prayer*** (*Kyrie eleison* / *Lord Jesus Christ, Son of God, have mercy on me, a sinner*): the Hesychast tradition's contemplative formula; continuous repetition constituting the mind's return to God. Mount Athos tradition, the *Philokalia*.
+- **Hindu *Japa***: repetitive recitation of divine names or mantras (*Om Namah Shivaya*, *Hare Krishna*, the Vaishnava *nāma-saṅkīrtana* of Caitanya). The bhakti tradition's operational practice.
+- **Sikh *Nām Simran***: continuous remembrance of God's name (*Waheguru*, *Sat Nām*) as the primary Sikh devotional practice, established in the *Guru Granth Sahib*.
+
+Five traditions independently discovering that the highest devotional practice can be compressed to a continuous or repeated invocation of the divine name. *Parallel-motif* substrate of deep structural significance.
+
+### 3. Sukhāvatī paradise and cross-tradition heavenly geography
+The sensory richness of Sukhāvatī — jewel-trees, lotus-ponds, music arising by itself, the smell of sandalwood, the sight of Amitābha's radiance — belongs to a cross-tradition substrate of *mystical-paradise geography*:
+
+- **Zoroastrian *Garōdmān*** (House of Song): the realm of light and song in the best existence after death; presided over by Ahura Mazdā; characterized by endless light, beauty, and the presence of the divine. The possible connection between Zoroastrian paradise imagery and Pure Land Sukhāvatī has been actively studied (the Gandhāran cultural context makes contact with Iranian imagery plausible; see Disputes).
+- **Revelation 21 (New Jerusalem)**: the heavenly city with streets of gold, gates of pearl, a river of life, and no night — continuous divine radiance. The Johannine Apocalypse's paradise.
+- **Quranic *Jannāt 'Adn*** (Gardens of Eden): rivers of water, milk, honey, and wine; silken garments; the *riḍwān* (divine approval) as the ultimate gift. See [[phase-4-034-quran]].
+- **Greek Elysium / Isles of the Blessed**: the western paradise for heroes; characterized by permanent springtime, feasting, and music.
+
+The structural recurrence — a radiant, sensory-rich western/eastern paradise accessible to the faithful, presided over by a divine being — crosses traditions independently. The Pure Land tradition is the most systematically developed of these paradise-theologies.
+
 ## Disputes
 - **Date.** Composition probably 1st-2nd c. CE; Saṃghavarman's 252 CE translation fixes a terminus. The earliest Chinese translation by Lokakṣema (c. 188 CE) pushes the Indian original earlier.
 - **Iranian / Zoroastrian influence on Sukhāvatī imagery.** The hypothesis that Pure Land paradisiacal imagery owes something to Zoroastrian eschatological imagery (the *Garōdmān*, the *frashō-kereti* renovation of the world) has been advanced by various scholars (Pelliot, Lamotte, more recently various authors) and resisted by others. The Gandhāran context makes contact plausible; the doctrinal distinctness of the two systems makes direct borrowing hard to demonstrate. The substrate-overlap is real; *transmissional* claims remain contested. *[claim: contested]*
@@ -113,4 +174,5 @@ The foundational text of the East Asian Pure Land tradition — the most demogra
 3. Foard, J., Solomon, M., Payne, R.K. (eds.) (1996). *The Pure Land Tradition*. Berkeley Buddhist Studies.
 4. Ueda, Y. and Hirota, D. (1989). *Shinran: An Introduction to His Thought*. Hongwanji.
 5. Atone, J. and Hayashi, Y. (2006). *Honen the Buddhist Saint*. Wisdom.
-6. Bloom, A. (1965). *Shinran's Gospel of Pure Grace*. U Arizona Press.
+6. Bloom, A. (1965). *Shinran's Gospel of Pure Grace*. U Arizona Press. [Documents Shinran-Luther structural parallel explicitly.]
+7. Dobbins, J.C. (1989). *Jōdo Shinshū: Shin Buddhism in Medieval Japan*. Indiana UP.
