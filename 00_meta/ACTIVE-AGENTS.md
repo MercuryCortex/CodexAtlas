@@ -33,6 +33,13 @@ _Hand-maintained. Each agent currently working in the vault appends a claim bloc
 
 ---
 
+## goblin-asian-systems-1 — symbols / East-South Asian systems thread — started 2026-05-16 — IN PROGRESS
+- Owning: `09_symbols/ba-gua.md` (NEW), `09_symbols/enso.md` (NEW), `09_symbols/endless-knot.md` (NEW), `09_symbols/kalachakra.md` (NEW)
+- Goal: Chinese I Ching system, Zen circle, Buddhist endless knot, Tibetan Wheel of Time; binary-Leibniz-Ifa MASSIVE WIN
+- Status: in-progress
+
+---
+
 ## goblin-sky-weapon-1 — symbols / sky-weapon Indo-European thread — started 2026-05-16 — IN PROGRESS
 - Owning: `09_symbols/vajra-dorje.md` (NEW), `09_symbols/mjolnir.md` (NEW), `09_symbols/thunderbolt-keraunos.md` (NEW), `09_symbols/labrys.md` (NEW), `09_symbols/trishula.md` (NEW)
 - Goal: Indo-European sky-weapon pattern; Indra-Thor-Zeus-YHWH dragon-slaying myth; Buddhist vajra transformation
@@ -74,10 +81,12 @@ _Hand-maintained. Each agent currently working in the vault appends a claim bloc
 
 ---
 
-## sonnet-egyptian-docs-1 — documents / Book of the Dead + Amduat + Pyramid Texts full upgrades — started 2026-05-16 — **IN PROGRESS**
+## sonnet-egyptian-docs-1 — documents / Book of the Dead + Amduat + Pyramid Texts full upgrades — started 2026-05-16 — **FINISHED 2026-05-16**
 - Owned: `02_documents/_phase-1-ancient-near-east/phase-1-010-book-of-the-dead.md`, `02_documents/_phase-1-ancient-near-east/phase-1-036-amduat.md`, `02_documents/_phase-1-ancient-near-east/phase-1-002-pyramid-texts.md`
 - Goal: Upgrade three foundational Egyptian document nodes from metadata to full; wire MASSIVE WIN cross-tradition edges
-- Status: in-progress
+- Status: finished
+- Delivered: All three upgraded to `status: full`. BD: Negative Confession full analysis + 3-tradition genre table (BD→Orphic→Bardo) + psychostasia transmission chain + illustrated-text tradition. Amduat: Ra-Osiris midnight union 4-tradition table + guided-afterlife-tour prototype table + Apophis eternal-adversary theology. PT: oldest-religious-literature chronological table + 3-strand afterlife (stellar/solar/Osirian) + Nut vignette + Cannibal Hymn + Utterance 600 / Memphite seed. Build: 2303 nodes · 13588 edges · 0 YAML errors · 0 new dead links. Attribution: swept into commit `4b8eaba`.
+- Last edit: `00_meta/STATUS.md`
 
 ---
 
