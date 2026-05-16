@@ -473,6 +473,51 @@ OVERRIDES = {
     "rudolf-ii-habsburg":                 "Rudolf II, Holy Roman Emperor",
     "saladin":                            "Saladin",
     "makeda-queen-of-sheba":              "Queen of Sheba",
+    # ---- Deities bulk pass (thumbnail-system-1, session 2026-05-16) ----
+    # Roman / Greek
+    "bacchus":                            "Bacchus",
+    # Mesopotamian
+    "ishtar-akkadian":                    "Ishtar",
+    "ashur":                              "Ashur (deity)",
+    "apkallu":                            "Apkallu",
+    # Buddhist deities
+    "amitabha":                           "Amitabha",
+    "akshobhya":                          "Akshobhya",
+    "amoghasiddhi":                       "Amoghasiddhi",
+    "bhaisajyaguru":                      "Bhaisajyaguru",
+    # East Asian deities
+    "guan-yu":                            "Guan Yu",
+    "hachiman":                           "Hachiman",
+    # Semitic / Israelite
+    "el-hebrew":                          "El (deity)",
+    "belial":                             "Belial",
+    # Christianity
+    "holy-spirit":                        "Holy Spirit in Christianity",
+    "holy-spirit-paraclete":              "Holy Spirit in Christianity",
+    # Vodou / Afro-Caribbean
+    "baron-samedi":                       "Baron Samedi",
+    "erzulie":                            "Erzulie",
+    # ---- Document fixes — bad suspect overrides (thumbnail-system-1, session 2026-05-16) ----
+    "phase-6-005-luther-95-theses":          "Ninety-five Theses",
+    "phase-5-054-rumi-masnavi":              "Masnavi",
+    "phase-8-009-dreaming-narratives":       "Tjukurpa",
+    "phase-6-050-thomas-vaughan-anthroposophia": "Thomas Vaughan (philosopher)",
+    "phase-4-024-tertullian-apology":        "Tertullian",
+    "phase-4-039-celsus-true-word":          "Celsus (philosopher)",
+    "phase-7-018-aion":                      "Aion (Jung)",
+    "phase-4-062-1-clement":                 "First Epistle of Clement",
+    "phase-3-032-4-ezra-ethiopic-recension": "2 Esdras",
+    "phase-6-038-teresa-interior-castle":    "The Interior Castle",
+    "phase-5-052-sadi-gulistan":             "Gulistan (book)",
+    "phase-5-060-bon-kangyur":               "Bön",
+    "phase-4-096-cantong-qi":                "Can Tong Qi",
+    "phase-8-011-maori-cosmogonic-chants":   "Māori mythology",
+    "phase-4-045-gregory-of-nyssa-life-of-moses": "The Life of Moses (Gregory of Nyssa)",
+    "phase-6-044-llull-ars-magna":           "Ars Magna (Ramon Llull)",
+    "phase-1-034-adapa-myth":                "Adapa",
+    "phase-4-105-apuleius-metamorphoses-book-11": "Metamorphoses (Apuleius)",
+    "phase-1-004-gilgamesh-old-babylonian":  "Epic of Gilgamesh",
+    "phase-7-034-blavatsky-atlantis-root-race": "The Secret Doctrine",
     # ---- Traditions pass (thumbnail-system-1, session 2026-05-16) ----
     "tradition-african-traditional":      "African traditional religions",
     "tradition-akan":                     "Akan religion",
@@ -752,8 +797,10 @@ def _summary_to_thumb(data, matched, node=None):
     extract = (data.get("extract") or "")
 
     # Gate 1: reject near-empty extracts (stubs / disambiguation pages)
-    if len(extract) < MIN_EXTRACT_LEN:
-        return None
+    # OVERRIDES are human-vetted — skip for them (some OVERRIDE articles have short extracts)
+    if node and node.get("id") not in OVERRIDES:
+        if len(extract) < MIN_EXTRACT_LEN:
+            return None
 
     returned_title = data.get("title", "")
 
