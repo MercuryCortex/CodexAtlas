@@ -91,10 +91,10 @@ _Hand-maintained. Each agent currently working in the vault appends a claim bloc
 
 ---
 
-## sonnet-egyptian-core-1 — deities+documents / Atum full + Coffin Texts MASSIVE WIN + Hymn to Aten table + Hathor body — started 2026-05-16 — **IN PROGRESS**
-- Owned: `03_deities/atum.md` (stub→full), `02_documents/_phase-1-ancient-near-east/phase-1-009-coffin-texts.md` (metadata→add MASSIVE WIN), `02_documents/_phase-1-ancient-near-east/phase-1-011-great-hymn-to-aten.md` (metadata→add Psalm 104 table), `03_deities/hathor.md` (metadata→upgrade body)
+## sonnet-egyptian-core-1 — deities+documents / Atum full + Coffin Texts MASSIVE WIN + Hymn to Aten table + Hathor body — started 2026-05-16 — **FINISHED 2026-05-16**
+- Owned: `03_deities/atum.md` (stub→full), `02_documents/_phase-1-ancient-near-east/phase-1-009-coffin-texts.md` (metadata→full), `02_documents/_phase-1-ancient-near-east/phase-1-011-great-hymn-to-aten.md` (metadata→full), `03_deities/hathor.md` (metadata→partial)
 - Goal: Atum self-creation archetype × 5 traditions + Christian Last Man eschatology; Coffin Texts democratization + Ba/Ka soul-anatomy; Aten Hymn Psalm 104 parallel table; Hathor → Aphrodite transmission chain
-- Status: in-progress
+- Status: finished · Commits: fc66b13, 57d154a · 0 new dead links · 2319 nodes · 13706 edges
 
 ---
 
@@ -130,10 +130,15 @@ _Hand-maintained. Each agent currently working in the vault appends a claim bloc
 
 ---
 
-## goblin-african-diaspora-1 — symbols / African + diaspora thread — started 2026-05-16 — IN PROGRESS
+## goblin-african-diaspora-1 — symbols / African + diaspora thread — started 2026-05-16 — **FINISHED 2026-05-16**
 - Owning: `09_symbols/crossroads-symbol.md` (NEW), `09_symbols/veve.md` (NEW), `09_symbols/adinkra.md` (NEW), `09_symbols/pontos-riscados.md` (NEW)
 - Goal: African and diaspora symbolic traditions; Crossroads as pan-cultural MASSIVE WIN; Veve ritual diagram cross-tradition; Adinkra wisdom symbols; Pontos riscados Afro-Brazilian sigils
-- Status: in-progress
+- Status: finished
+- Delivered:
+  - **`crossroads-symbol.md`** — MASSIVE WIN: Hecate (trivium/Enodia) + Hermes (Hermai) + Eshu/Elegba (Yoruba) + Papa Legba (Vodou) convergence; Robert Johnson Delta Blues as African diaspora memory of Eshu; Japanese Dōsojin parallel; cross-symbol edges to axis-mundi, mosaic-pavement, caduceus, trickster-archetype; 5 Tier-1 refs.
+  - **`veve.md`** — Haitian Vodou ritual diagrams; yantra/mandala parallel-form MASSIVE WIN; Erzulie Freda heart-sword = Mater Dolorosa connection; cross-symbol edges to mandala-circle, sri-yantra, crossroads-symbol, sacred-heart, mosaic-pavement; 4 Tier-1 refs.
+  - **`adinkra.md`** — Akan visual philosophy; 5 key adinkra: Sankofa/anamnesis/teshuvah/solve-et-coagula MASSIVE WIN; Gye Nyame sky-deity supremacy; Nyame Dua / Tree of Life / axis-mundi; Dwennimmen / ram / Amun / shofar; Eban / temenos / haram; 4 Tier-1 refs.
+  - **`pontos-riscados.md`** — Afro-Brazilian Candomblé/Umbanda sigils; veve parallel + Goetia sigils convergent-form MASSIVE WIN; Oxalá/Jesus, Ogum/Saint George, Iemanjá/Our Lady, Exu/crossroads-trident; Exu-devil polemic documented; 4 Tier-1 refs.
 
 ---
 
