@@ -1896,3 +1896,477 @@ SCRIPTURE_TEXTS['orphic-theogony'] = {
     },
   ]
 };
+
+// ── 18. CORPUS HERMETICUM III — THE SACRED BOOK ──────────────────────────────
+SCRIPTURE_TEXTS['corpus-hermeticum-3'] = {
+  title: 'Corpus Hermeticum III — The Sacred Book of Hermes',
+  shortTitle: 'CH III — Sacred Book',
+  tradition: 'Hermeticism / Egyptian-Greek',
+  date: 'c. 1st–3rd CE (Greek; Egyptian antecedents ancient)',
+  intro: 'The briefest cosmogonic tractate in the Corpus — a concentrated creation sequence that maps almost point-for-point onto Genesis 1, Enuma Elish, and the Poimandres. Darkness + water + divine breath precede the Word; a holy Light orders the elements; mankind is created last, twofold in nature. Its brevity is its power: the Hermetic creation story stripped to its archetypal skeleton.',
+  crossTradition: [
+    { label: 'Genesis 1 — Darkness · Waters · Spirit · Light',  textId: 'genesis-1',        note: 'CH III and Genesis 1 share the identical sequence: primordial darkness + water + divine breath → light → elemental order → living things. The verbal parallels are close enough that scholars debate Alexandrian Jewish influence on Hermetic cosmogony.' },
+    { label: 'Poimandres (CH I) — the expanded version',        textId: 'poimandres',       note: 'The Poimandres gives the same cosmogony in extended dramatic form: Darkness + waters + Word + Light. CH III is the compressed version, suggesting both draw on a shared Egyptian-Alexandrian template.' },
+    { label: 'Enuma Elish — Primordial Darkness and Waters',    textId: 'enuma-elish-1',    note: 'Tiamat (salt-water darkness) + Apsu (fresh water) as the original pair before light or order. CH III\'s "darkness in the deep and water" echoes the Babylonian opening.' },
+    { label: 'Memphite Theology — Ptah creates by Word',        textId: 'memphite-theology', note: 'God\'s Word (Logos) descending on formless waters to create order is the Hermetic version of Ptah\'s creative Logos — the Egyptian theology, probably the ancestral form, transmitted through Alexandria.' },
+  ],
+  translations: [
+    { id: 'scott',      label: 'Scott 1924 (T1, public domain)' },
+    { id: 'copenhaver', label: 'Copenhaver 1992 (T2)' },
+    { id: 'greek',      label: 'Greek (original)' },
+  ],
+  sections: [
+    {
+      heading: 'I. Darkness, Water, and the Word',
+      verses: [
+        {
+          ref: 'CH III.1',
+          text: 'In the beginning there was darkness in the deep, and water, and a subtle breath intelligent with divine power, existing in chaos by the will of God. Then a holy Light was sent forth, and the elements were set in order from the moist substance.',
+          textVersions: {
+            scott:      'There was darkness in the deep, and water, and a subtle breath intelligent, which existed in chaos by the power of God. Then there arose out of the moist substance a holy light.',
+            copenhaver: 'Darkness was in the deep, and water was in darkness; and fine breath, intelligent, was there, divine power, in chaos. Then from the moist substance holy light arose.',
+            greek:      'Σκότος ἦν ἄβυσσος ὕδωρ τε καὶ πνεῦμα λεπτὸν νοερόν, δύναμιν θείαν ἔχον, ἐν χάει ὄντα.',
+          },
+          entities: [
+            { word: 'darkness in the deep', node: 'primordial-darkness', type: 'concept',
+              note: 'The Hermetic creation opens with the same three elements as Genesis 1:1-2: darkness, water, and the divine breath/spirit. This is not a borrowing but a shared Alexandrian cosmogonic template — the three primordial conditions of non-creation that all creation myths identify.',
+              parallels: [
+                { label: 'Genesis 1:2 — "darkness over the face of the deep"', textId: 'genesis-1', note: 'The Hebrew tehom (the deep/abyss) + darkness + ruach (spirit/breath) before the first creative act. CH III and Genesis 1 are almost certainly drawing on a shared near-Eastern cosmogonic template, probably transmitted through Alexandria.' },
+                { label: 'Nasadiya Sukta — Non-being before creation', textId: 'nasadiya-sukta', note: 'The Vedic "neither existence nor non-existence" before creation, sustained by tapas (heat/breath). The Hermetic pneuma noeron (intelligent breath) in chaos is the same animating principle before the first creative act.' },
+              ]
+            },
+            { word: 'subtle breath intelligent', node: 'nous-hermetic', type: 'concept',
+              note: 'Pneuma noeron — the "intelligent breath" with divine power — is the animating Nous that precedes visible creation. Structurally identical to the Hebrew ruach elohim (Spirit of God) hovering over the waters in Genesis 1:2 and the Vedic breath sustaining the primordial unity in the Nasadiya Sukta.',
+              parallels: [
+                { label: 'Genesis 1:2 — Spirit/Breath of God over the waters', textId: 'genesis-1', note: 'Ruach Elohim = the divine breath/wind hovering over tehom. The Greek pneuma (breath/spirit) in CH III is the direct translation of the Hebrew ruach.' },
+              ]
+            },
+          ]
+        },
+        {
+          ref: 'CH III.2',
+          text: 'And God\'s holy Word (Logos) came upon nature, and nature was joined to that pure work; and the four elements were set in order from the moist substance, held together with fire. And from them living creatures came forth.',
+          textVersions: {
+            scott:      'God\'s Word came upon the water and made it holy; and from the moist substance the four elements were set in order, glued together by fire.',
+            copenhaver: 'God\'s word came upon the nature that was moist, and straightway out of the earth the fire leapt up; out of the water, air; and the earth stood firm.',
+            greek:      'Κατῆλθε δὲ ὁ τοῦ θεοῦ ἅγιος λόγος ἐπὶ τὴν φύσιν καὶ φύσις ἡνώθη τῷ λόγῳ· εἶτα τέτταρα στοιχεῖα ἐκ τῆς ὑγρᾶς οὐσίας ἐκοσμήθη.',
+          },
+          entities: [
+            { word: 'God\'s holy Word (Logos)', node: 'logos-johannine', type: 'concept',
+              note: 'The Logos descending onto the primordial waters to produce ordered creation is the Hermetic version of the event described in John 1:1-3. In John: "the Logos was with God, and through the Logos all things were made." In CH III: "God\'s Logos came upon nature and nature was joined to the Logos." Early Christian Platonists (Clement, Justin Martyr) explicitly cited the Hermetic Logos as pagan evidence for the Johannine doctrine.',
+              parallels: [
+                { label: 'John 1:3 — "Through him all things were made"', textId: 'john-1', note: 'The Johannine and Hermetic Logos doctrines are cognate — both produced in the same Alexandrian synthesis of Greek Stoic logos-philosophy with Egyptian creation theology.' },
+                { label: 'Memphite Theology — Ptah creates by spoken word', textId: 'memphite-theology', note: 'Ptah\'s creative tongue executing the commands of his heart/Nous — creation by word, not physical labor. The Egyptian theology predates the Hermetic by ~2,000 years and is likely its ancestral source.' },
+              ]
+            },
+          ]
+        },
+      ]
+    },
+    {
+      heading: 'II. The Twofold Human',
+      verses: [
+        {
+          ref: 'CH III.3–4',
+          text: 'Man was made in accordance with the divine image — of all living things the most admirable by reason of his kinship with the gods. Man is of twofold nature: mortal in body, immortal in the essential person.',
+          textVersions: {
+            scott:      'Man was fashioned after the image of God. Of all living things on earth man alone is of twofold nature — mortal in body, immortal in the essential man.',
+            copenhaver: 'Man came into being in the image of the God who contains them all. More than any other living thing on earth, man is twofold: mortal because of the body, immortal because of the essential man.',
+            greek:      'Ὁ δὲ ἄνθρωπος ἐγένετο κατ\' εἰκόνα τοῦ θεοῦ· τῶν δὲ ζῴων διττός ἐστιν ὁ ἄνθρωπος, θνητὸς μὲν διὰ τὸ σῶμα, ἀθάνατος δὲ διὰ τὸν οὐσιώδη ἄνθρωπον.',
+          },
+          entities: [
+            { word: 'twofold nature', node: 'anthropos-gnostic', type: 'concept',
+              note: 'The twofold human — simultaneously mortal (body/matter) and immortal (Nous/essential being) — is the central Hermetic anthropology, given its full mythological narrative in the Poimandres where the divine Anthropos descends into matter. CH III states the same doctrine in compressed form. The same dualism appears as Plato\'s mortal body + immortal soul, Paul\'s "flesh" vs "spirit," and the Gnostic material husk + pneumatic spark.',
+              parallels: [
+                { label: 'Poimandres — Anthropos descends into matter', textId: 'poimandres', note: 'CH I gives the full dramatic narrative: the divine Anthropos falls in love with his own reflection in matter and descends, producing the twofold human condition. CH III states the conclusion without the myth.' },
+                { label: 'Bhagavad Gita — immortal self within mortal body', textId: 'bhagavad-gita-4', note: 'The kshetrajna (knower of the field = Atman/Nous) within the kshetra (field = body/matter). Same ontological dualism as CH III\'s mortal body + immortal essential person.' },
+              ]
+            },
+          ]
+        },
+      ]
+    },
+  ]
+};
+
+// ── 19. CORPUS HERMETICUM IV — THE MIXING BOWL ───────────────────────────────
+SCRIPTURE_TEXTS['corpus-hermeticum-4'] = {
+  title: 'Corpus Hermeticum IV — The Mixing Bowl (Krater)',
+  shortTitle: 'CH IV — The Krater',
+  tradition: 'Hermeticism / Egyptian-Greek',
+  date: 'c. 1st–3rd CE',
+  intro: 'God creates the world through Logos, but since Logos could not be distributed equally, God fills a great mixing bowl (krater) with Nous (Mind) and sends it down with a herald. The krater is the prize of gnosis — those who plunge into it receive divine Mind and become fully human; those who refuse remain irrational despite their human form. A direct precursor of Christian baptismal theology.',
+  crossTradition: [
+    { label: 'John 1 — Logos as vehicle of creation',             textId: 'john-1',           note: 'CH IV opens: God made the world through Logos — same doctrine as John 1:1-3. The Krater then becomes the mechanism by which individual minds receive what the cosmic Logos made available.' },
+    { label: 'Gospel of Thomas — Kingdom available to the seeker', textId: 'gospel-of-thomas', note: 'Thomas L.2: "Let one who seeks not stop seeking." The Hermetic krater sent into the world for all who choose — same structure as the hidden-but-findable Kingdom in Thomas.' },
+    { label: 'Sefer Yetzirah — Nous distributing through 32 paths', textId: 'sefer-yetzirah',  note: 'The Kabbalistic 10 sefirot and CH IV\'s krater of Nous are cognate images: divine Mind distributing into creation through structured channels, received by those who actively seek it.' },
+    { label: 'Bhagavad Gita — divine teaching as a prize sought',   textId: 'bhagavad-gita-4',  note: 'Gita 4.34: "Seek the wise men, serve them, question them." Hermetic Nous is "placed as a prize in competition" — only those who seek it receive it, same selective availability.' },
+  ],
+  translations: [
+    { id: 'scott',      label: 'Scott 1924 (T1, public domain)' },
+    { id: 'copenhaver', label: 'Copenhaver 1992 (T2)' },
+    { id: 'greek',      label: 'Greek (original)' },
+  ],
+  sections: [
+    {
+      heading: 'I. God Creates through Logos',
+      verses: [
+        {
+          ref: 'CH IV.1',
+          text: 'Since the craftsman made the whole world not with hands but with the Logos, think of him as present everywhere and always, the maker of all things, the one and only, who formed all things by his will alone.',
+          textVersions: {
+            scott:      'God made the universe not with his hands but by his word. So think of God as being everywhere and always; as the maker of all things; as the one, the only one.',
+            copenhaver: 'Since the craftsman made the whole world not with hands but through the word, you should think of him as always present, as the one who made everything, as the only.',
+            greek:      'Ὁ δημιουργὸς τὸν κόσμον ἐποίησεν οὐ χερσίν, ἀλλὰ λόγῳ.',
+          },
+          entities: [
+            { word: 'not with hands but with the Logos', node: 'logos-johannine', type: 'concept',
+              note: 'Creation through Logos without physical hands parallels John 1:3 ("through him all things were made") and Memphite Theology (Ptah creates by the spoken word of his heart-Nous). Early Christian Platonists cited CH IV as independent pagan testimony to John 1.',
+              parallels: [
+                { label: 'John 1:3 — "Through him all things were made"', textId: 'john-1', note: 'The Johannine and Hermetic Logos doctrines emerge from the same Alexandrian synthesis of Stoic logos-philosophy, Platonic Demiurge theology, and Egyptian Ptah-Logos religion.' },
+              ]
+            },
+          ]
+        },
+      ]
+    },
+    {
+      heading: 'II. The Bowl of Nous Sent to Earth',
+      verses: [
+        {
+          ref: 'CH IV.3–4',
+          text: 'God filled a great mixing bowl with Nous and sent it down to earth, appointing a herald to make this proclamation to human hearts: "Dip yourself in this bowl, you who are able — you who trust you will ascend to the one who sent it, you who know the reason for your creation."',
+          textVersions: {
+            scott:      'God filled a great bowl with Nous, and sent it down, appointing a crier to proclaim: "Plunge into this bowl, O ye that are able — ye who believe ye shall ascend to him that sent the bowl."',
+            copenhaver: 'God filled a great bowl with it and sent it down, appointing a herald to make this proclamation to human hearts: "Baptize yourself in this bowl if your heart has the strength, you who trust that you will go up to the one who sent the bowl."',
+            greek:      'Ἐπλήρωσεν κρατῆρα μέγαν τούτου κατέπεμψε, κήρυκα ἐπιστείλας κηρῦξαι τὰς τῶν ἀνθρώπων καρδίας· βάψον σεαυτὴν ἡ δυναμένη εἰς τοῦτον τὸν κρατῆρα.',
+          },
+          entities: [
+            { word: 'great mixing bowl', node: 'nous-hermetic', type: 'symbol',
+              note: 'The krater (κρατήρ) — the large Greek vessel used at symposia — becomes the vessel of divine Mind sent to earth. Copenhaver\'s translation of βάψον as "baptize" deliberately flags the connection to Christian baptism: the Hermetic krater is the structural precursor of the baptismal font as vessel of divine reception.',
+              parallels: [
+                { label: 'Christian Baptism — immersion in the divine', note: 'The herald\'s call to "baptize yourself in this bowl" (CH IV.4) prefigures Christian baptismal theology: immersion in a sacred vessel as the rite of divine reception. The Hermetic tradition predates Christian baptism.' },
+                { label: 'Vedic Soma — the sacred cup conferring wisdom', note: 'The soma vessel at the Vedic sacrifice — pressed plant juice conferring illumination on those who receive it — is structurally parallel to the krater of Nous.' },
+              ]
+            },
+            { word: 'Dip yourself', node: 'apophatic-mysticism', type: 'concept',
+              note: 'The invitation is open but self-selective: "you who are able," "you who trust," "you who know." Nous cannot be coerced. This voluntary gnosis-reception parallels Thomas L.2 ("let one who seeks not stop seeking"), the Bhagavad Gita\'s "seek the wise men" (4.34), and the Mystery Religion initiations.',
+              parallels: [
+                { label: 'Gospel of Thomas — seek and you will find', textId: 'gospel-of-thomas', note: 'Thomas L.2: the Hermetic "you who are able" and the Thomasine "one who seeks" are the same selective availability — the divine is there for those who pursue it.' },
+              ]
+            },
+          ]
+        },
+        {
+          ref: 'CH IV.5–6',
+          text: 'Those who heeded the herald\'s call and dipped themselves in Nous became partakers in knowledge and received perfection. But those who missed the proclamation remained irrational — having Logos but lacking Nous — not knowing the purpose of their creation or their creator.',
+          textVersions: {
+            scott:      'Those who received the gift of Nous recognised their kin and became perfect men. But those who did not heed the herald remained irrational animals in human form.',
+            copenhaver: 'Those who got a share of his gift, compared to the others, are as immortals to mortals. Those who did not heed the herald\'s call — these are the ones with logos but without Nous.',
+            greek:      'Ὅσοι μὲν οὖν συνῆκαν τοῦ κηρύγματος καὶ ἐβαπτίσαντο τοῦ νοός, οὗτοι μετέσχον τῆς γνώσεως καὶ τέλειοι ἄνθρωποι ἐγένοντο.',
+          },
+          entities: [
+            { word: 'perfect human', node: 'anthropos-gnostic', type: 'concept',
+              note: 'The teleios anthropos (perfect/complete human) who has received Nous is the fully realized Hermetic figure — one who knows their divine origin. Structurally identical to the Gnostic pneumatikos (the spiritual person who knows their divine pneuma), the Buddhist arhat (the perfected one), and the Sufi insan al-kamil (Ibn Arabi\'s perfect human).',
+              parallels: [
+                { label: 'Poimandres — the Anthropos ascending back through the spheres', textId: 'poimandres', note: 'CH I gives the full ascent: the perfect human strips off material qualities at each planetary sphere and merges with divine Nous. The teleios anthropos of CH IV is the same figure, mid-ascent.' },
+                { label: 'Gospel of Thomas — knowing yourself as child of the Father', textId: 'gospel-of-thomas', note: 'Thomas L.3: "When you know yourselves... then you will understand that you are children of the living Father." Same completion as the Hermetic teleios anthropos.' },
+              ]
+            },
+          ]
+        },
+      ]
+    },
+  ]
+};
+
+// ── 20. CORPUS HERMETICUM VII — THE GREATEST EVIL ────────────────────────────
+SCRIPTURE_TEXTS['corpus-hermeticum-7'] = {
+  title: 'Corpus Hermeticum VII — The Greatest Evil Among Men',
+  shortTitle: 'CH VII — Ignorance',
+  tradition: 'Hermeticism / Egyptian-Greek',
+  date: 'c. 1st–3rd CE',
+  intro: 'A diatribe-sermon — the shortest and most urgently polemical tractate in the Corpus. Hermes addresses humanity directly: you are drunk with ignorance, stumbling toward death when immortality is available. The body is the garment of ignorance. A guide waits at the gates of Knowledge where true light shines. The greatest evil in man is ignorance of God. The urgency, the direct address to "you, O men," and the gate-imagery make this the Hermetic equivalent of a prophetic summons — and one of the closest verbal parallels to the Gospel of Thomas in all ancient literature.',
+  crossTradition: [
+    { label: 'Gospel of Thomas L.28 — "found them all drunk"',    textId: 'gospel-of-thomas', note: 'Thomas L.28: "I stood in the midst of the world and found them all drunk; none among them was thirsty." CH VII\'s "drunk with the wine of ignorance" and Thomas\'s "found them all drunk" are verbally parallel — almost certainly sharing a common Alexandrian source.' },
+    { label: 'Job 38 — the Whirlwind rebukes human ignorance',    textId: 'job-38',           note: 'Job 38:4: "Where were you when I laid the earth\'s foundation?" YHWH\'s cosmic questions rebuke Job\'s ignorance. CH VII\'s direct address to "you, O men" who stumble in ignorance carries the same prophetic register.' },
+    { label: 'Tao Te Ching — the threshold beyond ordinary mind',  textId: 'tao-te-ching-1',   note: 'CH VII\'s gates of Knowledge point toward a reality that normal consciousness cannot access — the same transcendent threshold as the Tao.' },
+    { label: 'Nasadiya Sukta — universal epistemic humility',      textId: 'nasadiya-sukta',   note: 'The Vedic sukta\'s closing "who really knows?" and CH VII\'s diagnosis of universal ignorance are the same insight from opposite directions: one epistemic humility, the other prophetic urgency.' },
+  ],
+  translations: [
+    { id: 'scott',      label: 'Scott 1924 (T1, public domain)' },
+    { id: 'copenhaver', label: 'Copenhaver 1992 (T2)' },
+    { id: 'greek',      label: 'Greek (original)' },
+  ],
+  sections: [
+    {
+      heading: 'I. Drunk with the Wine of Ignorance',
+      verses: [
+        {
+          ref: 'CH VII.1',
+          text: 'Whither stumble you, O men, drunk with the strong wine of ignorance? Cannot you bear it? Will you not sober up? Why do you fall face-down following death, when you are able to obtain immortality by choosing life?',
+          textVersions: {
+            scott:      'Whither are you stumbling, O ye men, drunk with the strong wine of ignorance? Cannot ye bear it? Will ye not return? Why do ye follow death, when ye are able to obtain the life immortal?',
+            copenhaver: 'Where are you heading in your drunkenness, you people who have swallowed the doctrine of ignorance? Stop and sober up. Look up with the eyes of the heart — if all of you cannot do so, at least those of you who can.',
+            greek:      'Ποῖ φέρεσθε, ὦ ἄνθρωποι, μεθύοντες τὸν τῆς ἀγνωσίας λόγον πιόντες;',
+          },
+          entities: [
+            { word: 'drunk with the strong wine of ignorance', node: 'tradition-gnosticism', type: 'concept',
+              note: 'Ignorance (agnosia) as drunkenness appears nearly verbatim in the Gospel of Thomas L.28: "I found them all drunk; none among them was thirsty." The parallel is so precise it suggests CH VII and the Gospel of Thomas share a common sayings-source, probably circulating in Alexandria in the 1st–2nd CE.',
+              parallels: [
+                { label: 'Gospel of Thomas L.28 — "found them all drunk"', textId: 'gospel-of-thomas', note: 'Thomas L.28: "I stood in the midst of the world and found all of them drunk. None of them was thirsty; my soul ached for the children of humanity." The verbal parallel with CH VII.1 is near-exact — both in Greek, both produced in Alexandria.' },
+              ]
+            },
+          ]
+        },
+        {
+          ref: 'CH VII.2',
+          text: 'Seek a guide to lead you by the hand to the gates of Knowledge, where shines the light that is clear, where none is drunk, where all are sober and look with the heart toward the one who wills to be seen.',
+          textVersions: {
+            scott:      'Turn back, ye erring ones; come back to the light. Seek for a guide who shall lead you by the hand to the portals of truth, where shines the light which is not darkened by shadow, where none is drunk.',
+            copenhaver: 'Search for a guide to take you by the hand and lead you to the gates of knowledge, where the bright light is, untouched by darkness, where no one is drunk.',
+            greek:      'Ζητήσατε ὁδηγὸν τὸν χειραγωγήσοντα ἐπὶ τὰς τῆς γνώσεως θύρας ὅπου λαμπρόν ἐστι τὸ φῶς.',
+          },
+          entities: [
+            { word: 'gates of Knowledge', node: 'apophatic-mysticism', type: 'concept',
+              note: 'The "gates of Knowledge" (thuran gnosis) where clear light shines is one of the most resonant images in the Hermetic corpus — a threshold to a different order of reality, not a doctrine but an experience. It parallels the Tao as a threshold that cannot be approached by normal intellectual effort, the Zen koan that breaks normal mind to allow enlightenment, and the Sufi maqam as a qualitative shift in consciousness.',
+              parallels: [
+                { label: 'Tao Te Ching — "the gate of all subtleties"', textId: 'tao-te-ching-1', note: 'Tao 1: "The gate of all subtleties." The Hermetic gates of Knowledge and the Taoist gate of all subtleties are the same image — a threshold beyond which ordinary discourse fails.' },
+              ]
+            },
+          ]
+        },
+        {
+          ref: 'CH VII.3',
+          text: 'The greatest evil in man is ignorance of God. From this spring all other evils: the love of the body, concupiscence, deceit, envy, treachery, wrath, rashness, and malice — this is the robe of darkness, the garment of ignorance, the bond of corruption.',
+          textVersions: {
+            scott:      'For the greatest evil among men is ignorance of God. From it proceed all other evils — the desire to obtain the unattainable, all hatreds, all snares.',
+            copenhaver: 'The greatest evil in man is ignorance of God. There follows from this love of the body, then concupiscence, then deceit, then envy, then treachery and finally malice — the whole plague of ignorance.',
+            greek:      'Κακία γάρ ἐστιν ἡ μεγίστη ἐν ἀνθρώποις ἡ ἀγνωσία τοῦ θεοῦ.',
+          },
+          entities: [
+            { word: 'greatest evil in man is ignorance of God', node: 'tradition-hermeticism', type: 'concept',
+              note: 'Ignorance of God as the root of all evil is the Hermetic inversion of the Socratic claim that virtue is knowledge. But where Socrates meant ethical knowledge, Hermes means gnosis — direct experiential knowledge of the divine Nous. This root-cause diagnosis runs across traditions: Avidya (ignorance) in Buddhism as the first link of dependent origination; the Gnostic Demiurge\'s self-ignorance as the source of the material world\'s evil; the Kabbalistic klipot as shells of opacity around the divine light.',
+              parallels: [
+                { label: 'Buddhist Avidya — ignorance as the first link in dependent origination', note: 'The 12 Buddhist nidanas begin with avidya (ignorance). From ignorance all suffering arises. The structural parallel to CH VII\'s "from ignorance spring all other evils" is exact.' },
+              ]
+            },
+            { word: 'garment of ignorance', node: 'primordial-darkness', type: 'symbol',
+              note: 'The body as the "robe of darkness" / "garment of ignorance" is the Hermetic version of the Platonic body-as-tomb (soma-sema), the Gnostic material husk imprisoning the divine spark, and the Orphic body as Titanic clay surrounding the divine Dionysian fragment. The Gospel of Thomas L.37 parallels: "strip off your garments without shame" to see the living one.',
+              parallels: [
+                { label: 'Gospel of Thomas L.37 — stripping garments', textId: 'gospel-of-thomas', note: 'Thomas L.37: "When will you appear to us? When you strip off your garments without shame and trample them underfoot." The Hermetic garment of ignorance and the Thomasine garment to be stripped are the same image of embodiment as obstacle to divine vision.' },
+              ]
+            },
+          ]
+        },
+      ]
+    },
+  ]
+};
+
+// ── 21. CORPUS HERMETICUM XI — THE MIND TO HERMES ────────────────────────────
+SCRIPTURE_TEXTS['corpus-hermeticum-11'] = {
+  title: 'Corpus Hermeticum XI — The Mind Addresses Hermes',
+  shortTitle: 'CH XI — The Mind',
+  tradition: 'Hermeticism / Egyptian-Greek',
+  date: 'c. 1st–3rd CE',
+  intro: 'The most philosophically ambitious tractate in the Corpus. Nous (divine Mind) speaks directly to Hermes and commands him to expand his consciousness to the scale of the cosmos — transcending body, time, and space — in order to understand God. The command to "think yourself immortal and capable of understanding all things" is not a description of mystical experience but an active prescription for achieving it. The pantheistic vision — God as the totality of all things, unnameable because all names are His names — parallels Chandogya 6.2 (tat tvam asi), the Tao Te Ching\'s unnamed ground of being, and Ein Sof in Kabbalah.',
+  crossTradition: [
+    { label: 'Chandogya 6.2 — Tat tvam asi / "That thou art"',    textId: 'chandogya-621',    note: 'The Chandogya teaching that Brahman = individual Atman. CH XI\'s "make yourself equal to God" and "you are everywhere at once" is the Hermetic version of the non-dual identity of individual Nous with universal Nous.' },
+    { label: 'Tao Te Ching — the Tao as all-containing ground',   textId: 'tao-te-ching-1',   note: 'Tao 1: "Named, it is the mother of all things." CH XI\'s Nous containing all space, time, and substance is the Hermetic parallel to the Tao as the unnamed containing ground.' },
+    { label: 'Job 38 — God as the totality of the cosmos',         textId: 'job-38',           note: 'YHWH\'s cosmic inventory in Job 38 is a divine assertion of containing all things. CH XI\'s Nous as container of all space, time, life, and death is the mystic\'s attempt to achieve that same totality of vision.' },
+    { label: 'Poimandres — seeing with the eyes of Nous',          textId: 'poimandres',       note: 'CH I opens with Hermes\' vision granted by Nous — the cosmos opened to mental sight. CH XI is the reverse: Nous telling Hermes how to perform this expansion himself. CH I is the vision; CH XI is the method.' },
+  ],
+  translations: [
+    { id: 'scott',      label: 'Scott 1924 (T1, public domain)' },
+    { id: 'copenhaver', label: 'Copenhaver 1992 (T2)' },
+    { id: 'greek',      label: 'Greek (original)' },
+  ],
+  sections: [
+    {
+      heading: 'I. The Command to Expand',
+      verses: [
+        {
+          ref: 'CH XI.19',
+          text: 'Order your mind to go to any land you choose, and sooner than you can bid it, it will be there. Order it to plunge into the ocean, and again it will be there at once — not as if it has passed from place to place but simply as if it were already there.',
+          textVersions: {
+            scott:      'Command your soul to travel to any part of the world, and it will be there sooner than you can give the command. Bid it go to the ocean, and it will be there at once — not as if it had passed from place to place, but simply as if it were there.',
+            copenhaver: 'Order your mind to go to India, and it will be there before you bid it go. Command it to cross over to the ocean, and again it will quickly be there, not as if it has passed from place to place but simply as if it were already there.',
+            greek:      'Κέλευσον τὴν σεαυτοῦ ψυχὴν εἰς ὁποιονοῦν τόπον ἐλθεῖν, καὶ πρὸ τῆς ἐντολῆς ἐκεῖ ἔσται.',
+          },
+          entities: [
+            { word: 'mind to go to any land', node: 'nous-hermetic', type: 'concept',
+              note: 'The mind\'s instantaneous travel across space is the Hermetic description of Nous operating outside material constraints. It parallels the Vedantic Atman as "subtler than the subtle, greater than the great" (Katha Upanishad 1.2.20) — a consciousness that is everywhere at once because it is not localized in a body.',
+              parallels: [
+                { label: 'Chandogya 6.2 — Atman as salt pervading the ocean', textId: 'chandogya-621', note: 'Atman/Brahman pervades all things the way dissolved salt pervades water — everywhere at once, present without being localized. CH XI\'s mind that can be "anywhere at once" is the same non-local consciousness.' },
+              ]
+            },
+          ]
+        },
+        {
+          ref: 'CH XI.20',
+          text: 'Leap clear of all that is corporeal, and make yourself grow to a like expanse with that greatness which is beyond all measure. Rise above all time and become eternity; then you will understand God. Suppose that nothing is impossible to you — consider yourself immortal.',
+          textVersions: {
+            scott:      'Make yourself to grow to immeasurable greatness, leap clear of all that is corporeal, rise above all time, become eternity; then you will understand God. Suppose that nothing is impossible to yourself.',
+            copenhaver: 'Leap clear of all that is corporeal and make yourself grow to the same expanse as that greatness beyond all measure. Rise above all time, become eternity; then you will understand God.',
+            greek:      'Ἔκθου πᾶν τὸ σωματικόν, καὶ αὔξησόν σεαυτὸν εἰς ἀμέτρητον μέγεθος, ὑπεράνω τοῦ χρόνου γενόμενος αἰών, τότε νοήσεις τὸν θεόν.',
+          },
+          entities: [
+            { word: 'Leap clear of all that is corporeal', node: 'apophatic-mysticism', type: 'concept',
+              note: 'This is the most radical prescription in the Hermetic corpus — not to meditate on God but to actively become God\'s scale. The instruction to leap clear of the body, transcend time, become eternity, and think yourself immortal is a guided practice for achieving the non-dual consciousness of the Chandogya\'s tat tvam asi — the recognition that individual Nous IS universal Nous. Also Platonic homoiosis theo (becoming like God) taken to its logical extreme.',
+              parallels: [
+                { label: 'Chandogya 6.2 — the self IS Brahman', textId: 'chandogya-621', note: '"That which is this subtle essence — in it all that exists has its self. That is the Real. That is Atman. Thou art That." CH XI\'s instruction to "make yourself God\'s scale" is the Hermetic practice for achieving what the Chandogya states as doctrine.' },
+              ]
+            },
+            { word: 'become eternity', node: 'tradition-neoplatonism', type: 'concept',
+              note: 'Becoming eternity (aiōn) rather than being in time is the Hermetic version of Neoplatonic henosis (union with the One). Plotinus describes the same experience in Enneads IV.8: "Often I have woken to myself out of the body, entering into myself, beholding a marvellous beauty... I become actually one with the divine." Plotinus almost certainly knew the Hermetic corpus.',
+              parallels: [
+                { label: 'Plotinus Enneads — the ascent to the One', note: 'Plotinus\' experience of waking out of the body into divine unity (Enneads IV.8.1) is the Neoplatonic parallel to CH XI\'s instruction to "become eternity."' },
+              ]
+            },
+          ]
+        },
+        {
+          ref: 'CH XI.22',
+          text: 'God cannot be named — or rather, all names are names of God, since God is both all things and one alone. God is self-father, self-mother, self-made; all is in God, and God is in all.',
+          textVersions: {
+            scott:      'God cannot be named with a name; or he has all names, since he is the Father of all and of one alone. God is not made, but makes all things. God is all that is, and God is in all.',
+            copenhaver: 'So how can one call God by a name, since God is all names, since there is one Father to all? All things are full of God. God is himself all things and in all things.',
+            greek:      'Θεὸν οὐδεὶς τῶν θεῶν δύναται ὀνομάσαι· ὅτι πάντα ὀνόματα ὀνόματα ἐστι τοῦ θεοῦ, ἐπεὶ ὁ εἷς καὶ ὁ πᾶς πατήρ ἐστιν.',
+          },
+          entities: [
+            { word: 'God cannot be named', node: 'apophatic-mysticism', type: 'concept',
+              note: 'The divine transcends all categories including the category "God." This appears as Ein Sof ("without end/definition") in Kabbalah, the Tao that cannot be spoken in Tao Te Ching 1, "neti neti" (not this, not this) in the Upanishads, and the apophatic theology of Pseudo-Dionysius in Christian mysticism. All are the same apophatic move: the infinite cannot be contained in any finite category.',
+              parallels: [
+                { label: 'Tao Te Ching — "The Tao that can be told is not the eternal Tao"', textId: 'tao-te-ching-1', note: 'The Tao\'s unnameable nature and CH XI\'s "God cannot be named" are the same apophatic move — the infinite cannot be contained in any finite category, including names.' },
+                { label: 'Sefer Yetzirah — Ein Sof beyond all names', textId: 'sefer-yetzirah', note: 'The Kabbalistic Ein Sof (the infinite, without limit, beyond all names) and the Hermetic "God cannot be named" are cognate formulations of the same divine transcendence.' },
+                { label: 'Nasadiya Sukta — "Who really knows?"', textId: 'nasadiya-sukta', note: 'The Vedic epistemological question about who knows the origin of creation — the origin/ground transcends all knowers. Same apophatic move.' },
+              ]
+            },
+          ]
+        },
+      ]
+    },
+  ]
+};
+
+// ── 22. CORPUS HERMETICUM XIII — REBIRTH ─────────────────────────────────────
+SCRIPTURE_TEXTS['corpus-hermeticum-13'] = {
+  title: 'Corpus Hermeticum XIII — The Secret Discourse on the Mountain (Rebirth)',
+  shortTitle: 'CH XIII — Rebirth',
+  tradition: 'Hermeticism / Egyptian-Greek',
+  date: 'c. 1st–3rd CE',
+  intro: 'The most intimate tractate in the Corpus — a private teaching from Hermes to his son Tat on the secret mountain of silence. The subject is palingenesia: spiritual rebirth. The structure is unique: twelve torments of matter are expelled by ten divine powers, and the reborn Hermes sings a closing hymn. The text makes the Hermetic rebirth doctrine explicit and maps it directly onto John 3 (born again), the Bhagavad Gita\'s fire of knowledge, and the Zoroastrian primordial choice between Truth and the Lie.',
+  crossTradition: [
+    { label: 'John 3 — "You must be born again/from above"',       textId: 'john-1',           note: 'John 3:3-7: Jesus tells Nicodemus "you must be born again" (anothen). CH XIII is the Hermetic treatise on the identical doctrine — palingenesia achieved not through water baptism but through Nous received from God. Johannine and Hermetic rebirths are cognate doctrines.' },
+    { label: 'Bhagavad Gita — fire of knowledge burns karma',      textId: 'bhagavad-gita-4',  note: 'Gita 4.37: "As blazing fire turns firewood to ash, the fire of knowledge burns all karma to ash." The Hermetic Decad of powers displacing the twelve torments is the same liberation through divine knowledge.' },
+    { label: 'Gospel of Thomas — the two becoming one',            textId: 'gospel-of-thomas', note: 'Thomas L.22: "When you make the two into one... then you will enter the Kingdom." CH XIII\'s rebirth through the union of ten divine powers overcoming twelve torments is the same transformation.' },
+    { label: 'Yasna 30 — choosing Truth over the Lie',             textId: 'yasna-30',         note: 'Yasna 30.3: the two primordial spirits choose Truth vs the Lie. CH XIII\'s drama of choosing the ten divine powers over the twelve torments is the personal enactment of the Zoroastrian primordial choice — cosmic dualism becomes individual decision.' },
+  ],
+  translations: [
+    { id: 'scott',      label: 'Scott 1924 (T1, public domain)' },
+    { id: 'copenhaver', label: 'Copenhaver 1992 (T2)' },
+    { id: 'greek',      label: 'Greek (original)' },
+  ],
+  sections: [
+    {
+      heading: 'I. The Request for Rebirth',
+      verses: [
+        {
+          ref: 'CH XIII.1–2',
+          text: 'Tat: "Father, in the General Discourses you spoke of rebirth but did not explain it. On this mountaintop of silence I beseech you — how does one come to be born again through God?"\n\nHermes: "My child, this wisdom is not to be taught. It is called to mind by God\'s mercy when he wills it. Know that all things in the material world are an illusion worked through the senses."',
+          textVersions: {
+            scott:      'Tat: "Father, in the general discourse you spoke of palingenesia but did not explain it. I pray you to unfold that doctrine; I earnestly desire to know it."\nHermes: "The doctrine of rebirth is not taught, my son, nor can it be taught — it is God\'s mercy when he wills to remember it in you."',
+            copenhaver: 'Tat: "Father, you talked about rebirth in the General Discourses but did not teach me."\nHermes: "My child, this wisdom is not taught; when god wills it, it is called to mind."',
+            greek:      'Ἑρμῆς: Ὦ τέκνον, οὗτος ὁ λόγος οὐ διδάσκεται, ἀλλὰ ὅταν θελήσῃ ὁ θεός, ὑπομιμνήσκεται.',
+          },
+          entities: [
+            { word: 'not to be taught', node: 'apophatic-mysticism', type: 'concept',
+              note: 'The claim that rebirth/gnosis "cannot be taught but is called to mind by God\'s mercy" is the Hermetic version of a universal mystical epistemology: direct knowledge of God cannot be transmitted through conceptual instruction alone — it requires a qualitative shift in consciousness that can only be pointed toward. The Zen tradition encodes this in the master-student transmission "outside the scriptures." The Gita: "the wise men from whom you seek the truth" (4.34) — instruction points, it does not convey the truth itself.',
+              parallels: [
+                { label: 'Bhagavad Gita 4.34 — seek the wise men who have seen the truth', textId: 'bhagavad-gita-4', note: 'The Gita acknowledges that the fire of knowledge requires a transmission-relationship, not just text-study. Same as Hermetic "not taught but called to mind when God wills."' },
+              ]
+            },
+          ]
+        },
+      ]
+    },
+    {
+      heading: 'II. Twelve Torments and Ten Powers',
+      verses: [
+        {
+          ref: 'CH XIII.7–8',
+          text: 'Hermes: "The twelve torments of matter are: first ignorance, then grief, incontinence, desire, injustice, avarice, deceit, envy, treachery, wrath, rashness, and malice. These twelve enter a person through the body and hold the soul prisoner so it cannot sail back to God."',
+          textVersions: {
+            scott:      'The torments of the zone of matter are twelve: ignorance, grief, intemperance, concupiscence, injustice, avarice, deceit, envy, treachery, anger, rashness, malice.',
+            copenhaver: 'The torments of darkness are: ignorance, grief, incontinence, concupiscence, injustice, avarice, deceit, envy, treachery, anger, rashness, malice — twelve tormentors that enter into each person through the material body.',
+            greek:      'Τοῦ σκότους αἱ τιμωρίαι εἰσὶν αὗται· ἄγνοια, λύπη, ἀκρασία, ἐπιθυμία, ἀδικία, πλεονεξία, ἀπάτη, φθόνος, δόλος, ὀργή, προπέτεια, κακία.',
+          },
+          entities: [
+            { word: 'twelve torments of matter', node: 'tradition-hermeticism', type: 'concept',
+              note: 'The twelve torments (timōriai) head with ignorance — the root of all the others. The Buddhist 12 nidanas (links of dependent origination) also begin with avidya (ignorance) and cascade through craving, grasping, and birth into suffering. Both systems: (1) number 12, (2) begin with ignorance, (3) cascade through desire/craving, (4) produce material captivity. Independent parallel from two distant traditions.',
+              parallels: [
+                { label: 'Buddhist 12 Nidanas — avidya at the head', note: 'The 12 nidanas: ignorance → formations → consciousness → name-form → sense-bases → contact → feeling → craving → grasping → becoming → birth → aging/death. The Hermetic 12 torments and Buddhist 12 nidanas independently derived identical structures.' },
+                { label: 'Yasna 30 — the Lie producing its cascade', textId: 'yasna-30', note: 'The Zoroastrian Druj (Lie/chaos) produces the same cascade of evils that Hermetic agnosia does — ignorance of divine truth leads to grief, injustice, treachery. Different taxonomy, same root-cause structure.' },
+              ]
+            },
+          ]
+        },
+        {
+          ref: 'CH XIII.9',
+          text: 'Hermes: "The ten powers of God now enter: first Knowledge of God, then Joy, Continence, Steadfastness, Justice, Generosity, Truth, Good, Life, and Light. The Decad has driven out the Twelve. You have been reborn. Sing now, my child."',
+          textVersions: {
+            scott:      'Knowledge of God is one; Gladness two; Temperance three; Steadfastness four; Justice five; Sharing six; Truth seven; The Good eight; Life nine; Light ten. The Decad has driven the Twelve from us. We have been made what we are by this rebirth.',
+            copenhaver: 'These ten powers: knowledge of god, joy, continence, steadfastness, justice, sharing, truth, goodness, life, light — these ten have driven out the twelve. Through this Nous-rebirth, I have been made divine.',
+            greek:      'Γνῶσις θεοῦ μία· χαρὰ δευτέρα· ἐγκράτεια τρίτη· καρτερία τετάρτη· δικαιοσύνη πέμπτη· κοινωνία ἕκτη· ἀλήθεια ἑβδόμη· τἀγαθὸν ὄγδοον· ζωὴ ἐνάτη· φῶς δέκατον.',
+          },
+          entities: [
+            { word: 'Knowledge of God is the first', node: 'nous-hermetic', type: 'concept',
+              note: 'The Decad of divine powers begins with Gnosis Theou — knowledge of God — as the foundational power displacing ignorance. The Ten divine powers parallel the Ten Sefirot of the Kabbalistic Sefer Yetzirah: both are systematic accounts of the ten primary modes of divine action through which creation (and re-creation of the soul) occurs.',
+              parallels: [
+                { label: 'Sefer Yetzirah — Ten Sefirot as paths of divine wisdom', textId: 'sefer-yetzirah', note: 'The Kabbalistic 10 Sefirot and the Hermetic 10 divine powers (both explicitly "ten") are cognate structures: ten primary modes of divine presence through which God creates the world and recreates the soul.' },
+                { label: 'Bhagavad Gita — the fire of knowledge burns all karma', textId: 'bhagavad-gita-4', note: 'Gita 4.37: the fire of knowledge burning karma to ash is the same liberation mechanism as the Hermetic Decad displacing the twelve torments.' },
+              ]
+            },
+            { word: 'You have been reborn', node: 'dying-rising-god', type: 'concept',
+              note: 'The palingenesia achieved through the Decad is the Hermetic initiation — death of the old material-bound self, birth of the Nous-infused divine human. Structurally the same event as Christian baptismal rebirth (John 3:5), the Eleusinian Mysteries\' death-and-renewal initiations, and Buddhist parinirvana.',
+              parallels: [
+                { label: 'John 3:5 — born of water and spirit', textId: 'john-1', note: 'Jesus: "No one can enter the kingdom of God unless they are born of water and spirit." CH XIII\'s palingenesia through Nous and the Johannine rebirth through the Logos are structurally identical doctrines from the same Alexandrian milieu.' },
+                { label: 'Orphic Theogony — divine spark liberated from Titanic clay', textId: 'orphic-theogony', note: 'The Orphic soul\'s liberation from Titanic material nature through initiation — the divine Dionysian spark returning to divine origin — is structurally identical to Hermetic palingenesia.' },
+              ]
+            },
+          ]
+        },
+      ]
+    },
+    {
+      heading: 'III. The Hymn of Rebirth',
+      verses: [
+        {
+          ref: 'CH XIII.16–17',
+          text: 'Hermes sings: "Holy is God the Father of all. Holy is God whose will is accomplished by his own powers. Holy is God who wills to be known and is known by his own. Holy are you, who by your Word have made all things to be. Holy are you, of whom all nature is the image."',
+          textVersions: {
+            scott:      'Holy art thou, O God and Father of all things; holy art thou, whose will is wrought by thy powers alone; holy art thou, who dost will to be known, and art known by thine own; holy art thou, who didst make all things by the word; holy art thou, of whom all nature is an image.',
+            copenhaver: 'Holy is god the father of all. Holy is god whose counsel is done by his own powers. Holy is god who wills to be known and is known by those who are his own. Holy art thou who made all things by the word. Holy art thou, of whom all nature is an image.',
+            greek:      'Ἅγιος ὁ θεὸς καὶ πατὴρ τῶν ὅλων· ἅγιος ὁ θεὸς οὗ ἡ βουλὴ τελεῖται ὑπὸ τῶν ἰδίων δυνάμεων· ἅγιος ὁ θεὸς ὁ γνωσθῆναι βουλόμενος καὶ γινωσκόμενος τοῖς ἰδίοις.',
+          },
+          entities: [
+            { word: 'Holy is God the Father of all', node: 'tradition-hermeticism', type: 'concept',
+              note: 'The closing hymn\'s triple "Holy" structure (trishagion) parallels the Qedushah in Jewish liturgy (Isaiah 6:3: "Holy, holy, holy is YHWH"), the Trisagion in Christian liturgy, and the Gayatri mantra\'s triple invocation. The Hermetic hymn was composed in Alexandria in conscious dialogue with Jewish Alexandrian liturgy — both the structure and the address to the "Father of all" are shared.',
+              parallels: [
+                { label: 'Quran Al-Fatiha — "Praise be to God, Lord of all worlds"', textId: 'quran-fatiha-nur', note: 'Al-Fatiha\'s opening praise and CH XIII\'s "Holy is God the Father of all" are the same formal act of divine praise acknowledging God as the totality of all reality.' },
+              ]
+            },
+            { word: 'by your Word have made all things', node: 'logos-johannine', type: 'concept',
+              note: 'The hymn\'s closing address ties the palingenesia of CH XIII back to the Logos-cosmogony of CH III and CH IV: rebirth through Nous is the individual soul\'s participation in the same creative Logos that made the cosmos. The Johannine parallel is exact — John 1:12-13: those who receive the Logos are "born of God."',
+              parallels: [
+                { label: 'John 1:12-13 — "born of God" through receiving the Logos', textId: 'john-1', note: 'John 1:12: "To all who received him... he gave the right to become children of God — born not of natural descent... but born of God." The Hermetic palingenesia through Nous and the Johannine rebirth through the Logos are structurally identical doctrines.' },
+                { label: 'CH III — God creates by the Word/Logos', textId: 'corpus-hermeticum-3', note: 'CH XIII\'s hymn ("you who by your Word have made all things") closes the arc: rebirth (XIII) through Nous is the soul\'s personal participation in the same creative Logos (III/IV) by which God made the cosmos. Cosmogony and palingenesia are the same act at different scales.' },
+              ]
+            },
+          ]
+        },
+      ]
+    },
+  ]
+};
