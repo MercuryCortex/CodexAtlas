@@ -13,7 +13,7 @@ floruit-latest: 571
 historicity: "legendary-with-historical-core"
 texts-authored: ["Degua (the foundational Ethiopian hymnal — 'antiphonary')", "Mawasə'ət (Responses)", "Zəmmare (Hymns of the Eucharistic liturgy)", "Mə'eraf (Common Office)", "Sə'atat (Hours)"]
 texts-attributed-to: ["the entire corpus of *zema* (Ethiopian liturgical chant)"]
-originator-of: ["[[zema-ethiopian-chant]]", "[[ethiopian-liturgical-music]]"]
+originator-of: ["[[music-zema-ethiopian-chant]]", "[[music-zema-ethiopian-chant]]"]
 events-participated: []
 mentioned-in: ["[[phase-5-039-sinkessar-synaxarium]] (feast: 11 Genbot / 19 May Julian)", "Ethiopian Gadla Yared (medieval hagiography)"]
 status: "metadata"
