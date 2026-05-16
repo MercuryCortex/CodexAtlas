@@ -2907,7 +2907,8 @@ const SCRIPTURE_CORPORA = {
         { id: 'phase-2-004-yasna-younger-avesta', label: 'Yasna · Younger Avesta' },
       ]},
       { id: 'avesta-pahlavi-visionary', label: 'Pahlavi visionary literature · Sasanian era (4th–9th c.)', color: '#3a4a8a', books: [
-        { id: 'phase-4-086-arda-viraf-namag', label: 'Ardā Wirāz Nāmag · Zoroastrian heaven + hell journey (~4th–9th c.)' },
+        { id: 'phase-4-086-arda-viraf-namag',  label: 'Ardā Wirāz Nāmag · Zoroastrian heaven + hell journey (~4th–9th c.)' },
+        { id: 'phase-4-107-bundahishn',         label: 'Bundahishn · Zoroastrian cosmogony and cosmic geography' },
       ]},
     ],
   },
@@ -4259,7 +4260,7 @@ const ALCHEMY_PRESETS = [
     picks: [
       'khafre', 'khufu', 'sphinx-guardian',
       'ka-soul-double', 'zep-tepi', 'divine-kingship-solar',
-      'phase-1-031-amduat', 'event-giza-complex-construction-c2560-2490-bce',
+      'phase-1-036-amduat', 'event-giza-complex-construction-c2560-2490-bce',
       'thutmose-iv', 'phase-1-032-dream-stele-thutmose-iv',
     ],
   },
@@ -4305,7 +4306,7 @@ const ALCHEMY_PRESETS = [
     picks: [
       'osiris', 'isis',
       'phase-4-072-plutarch-de-iside-et-osiride',
-      'phase-1-031-amduat',
+      'phase-1-036-amduat',
       'tradition-coptic-orthodox', 'tradition-isis-mysteries',
       'jan-assmann',
     ],
