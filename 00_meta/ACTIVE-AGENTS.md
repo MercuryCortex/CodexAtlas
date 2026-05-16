@@ -132,6 +132,13 @@ _Hand-maintained. Each agent currently working in the vault appends a claim bloc
 
 ---
 
+## rituals-christianity-1 — Christianity ritual deep-dive + by-religion mode — IN PROGRESS (2026-05-17)
+- Owns: `14_rituals/ritual-christian-liturgy-of-hours.md`, `ritual-confirmation-chrismation.md`, `ritual-confession-absolution.md`, `ritual-extreme-unction.md`, `ritual-ordination-laying-hands.md`, `ritual-advent-lent-liturgical-year.md`, `ritual-glossolalia-speaking-tongues.md`, `ritual-agape-love-feast.md` (8 NEW nodes)
+- Owns: `src/js/app.js` — adding "by religion" 5th mode to VIEWS.rituals
+- Status: IN PROGRESS
+
+---
+
 ## music-kabbalah-alchemy-1 — 3 Kabbalah + alchemy music nodes — FINISHED
 - Owned: `10_music/music-zohar-sound-mysticism.md` (NEW full), `10_music/music-abulafia-prophetic-kabbalah.md` (NEW full), `10_music/music-zosimos-alchemical-sound.md` (NEW full)
 - Status: FINISHED — commit `b61c59e`. Build: 58 music nodes · 15893 edges · 0 YAML errors · 0 dead links introduced
@@ -1985,3 +1992,12 @@ Files: sacred-cauldron.md (NEW) · cerridwen.md (STUB, deity) · bran-the-blesse
 - ~~Build: 89 music nodes · 16229 edges · 0 YAML errors · 0 dead links introduced~~
 - ~~Status: FINISHED~~
 - ~~MASSIVE WIN edges: (1) Harmonic series → just intonation → equal temperament: the Western tuning severance is quantifiable — the equal-tempered major third is 14 cents sharp, the minor third 16 cents sharp; these are measurable deformations, not preferences; (2) Kepler orbital ratios are approximately just (not equal-tempered) — if Kepler's empirical result holds, equal temperament moves music further from the ratios governing planetary motion (Kepler, Harmonices Mundi 1619); (3) Harry Partch ↔ Indian raga: two independent traditions (20th-c. American avant-garde + 2,000-year South Asian tradition) reach the same conclusion — pure whole-number ratios are acoustically required, not negotiable; raga never adopted equal temperament, Partch had to rebuild instruments to escape it~~
+
+---
+
+## ~~alphabets-glyph-1 — scriptOnly filter + full per-script letters — 2026-05-16 — FINISHED~~
+- ~~Owned: `src/js/alphabets/glyph-viewer.js` (buildGrid scriptOnly filter + (none) chip fix), `src/js/alphabets/glyph-data.js` (7 Latin + 4 Greek + 8 Egyptian sacred sign entries)~~
+- ~~Latin mode: A–Z complete including C J U V W X Y with full investigationHighlight; two S entries (Samekh + Shin) intentional~~
+- ~~Greek mode: 22 Phoenician-descended letters + Φ Χ Ψ Ω (the 4 Greek inventions with no Phoenician source)~~
+- ~~Hieroglyph mode: 22 Phoenician letters + Ankh Djed Eye-of-Ra Scarab Feather-of-Maat Solar-Barque Lotus Solar-Disk — cosmological signs beyond the alphabetic chain~~
+- ~~Status: FINISHED — commit 7d0cf4f~~
