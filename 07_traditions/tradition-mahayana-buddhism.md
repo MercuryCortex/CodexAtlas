@@ -15,7 +15,7 @@ key-themes:
   - "[[dying-rising-god]]"
   - "[[theme-apophatic-theology]]"
   - "[[apotheosis]]"
-status: "metadata"
+status: "full"
 refs:
   - title: "Mahāyāna Buddhism: The Doctrinal Foundations (2nd ed.)"
     author: "Williams, Paul"
@@ -83,6 +83,21 @@ Mahāyāna ("Great Vehicle") is the major branch of Buddhism that emerged in Ind
 - vs. [[tradition-vajrayana-buddhism]]: continuous in doctrinal substrate (Mahāyāna emptiness, bodhisattva ideal); diverges in ritual-tantric method.
 - vs. [[tradition-zen]]: Zen is a Mahāyāna sub-tradition (Chan in China, Seon in Korea, Thiền in Vietnam, Zen in Japan).
 - vs. [[tradition-neoplatonism]]: possible structural contact via Central Asian channels; both develop apophatic-emanationist metaphysics in the 2nd–4th centuries CE; see [[third-century-collision-zone]].
+
+## Edge Connections
+
+| Edge | Type | Description |
+|---|---|---|
+| → [[tradition-buddhism]] | sub-tradition | Mahāyāna = the "Great Vehicle"; one of the three main Buddhist vehicles |
+| → [[tradition-zen]] | contains | Chan/Zen is the East Asian Mahāyāna sub-tradition; kōan practice on a Madhyamaka foundation |
+| → [[tradition-vajrayana-buddhism]] | sibling-tradition | Vajrayāna develops within and beyond the Mahāyāna doctrinal substrate |
+| → [[tradition-pure-land-buddhism]] | contains | Pure Land is the devotional Mahāyāna sub-tradition; Amitābha's Original Vow |
+| → [[nagarjuna]] | key-figure | Madhyamaka founder; *śūnyatā* as the philosophical spine of Mahāyāna |
+| → [[avalokitesvara]] | key-deity | Compassion bodhisattva; transforms to female Guanyin in East Asian transmission |
+| → [[theme-apophatic-theology]] | key-instance | Nāgārjuna's *śūnyatā* = systematic negation structurally identical to apophatic theology |
+| → [[tradition-neoplatonism]] | structural-parallel | Both develop apophatic-emanationist metaphysics in 2nd–4th c. CE; possible Central Asian contact |
+| → [[tradition-gnosticism]] | structural-parallel | Both posit divine sparks/Buddha-nature trapped in matter; both elaborate complex celestial hierarchies |
+| → [[tradition-christianity-canonical]] | structural-parallel | Bodhisattva ideal ↔ *agape*; *trikāya* ↔ Trinity; *tariki* ↔ *sola gratia* |
 
 ## Refs
 1. Williams, P. (2008). *Mahāyāna Buddhism* (2nd ed.). Routledge.

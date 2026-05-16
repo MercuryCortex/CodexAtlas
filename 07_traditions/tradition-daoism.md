@@ -12,7 +12,7 @@ key-persons: ["[[laozi]]", "[[zhuangzi-person]]"]
 key-documents: ["[[phase-2-014-daodejing]]"]
 key-themes: ["[[alchemy-as-spiritual-discipline]]", "[[soul-immortality]]", "[[ascent-of-the-soul]]"]
 sister-traditions: ["[[tradition-confucianism]]", "[[tradition-buddhism]]"]
-status: "metadata"
+status: "full"
 refs:
   - title: "The Taoist Experience: An Anthology"
     author: "Kohn, Livia (ed.)"
@@ -109,7 +109,23 @@ See [[zhuangzi-person]] for the full analysis. The *Qiwulun* (Chapter 2 of the *
 ### Neidan (inner alchemy) ↔ Western alchemical *opus*
 Daoist *neidan* ("inner alchemy") transmutes the practitioner's inner energies (*jīng/qì/shén* — essence, breath/energy, spirit) through meditation and physical practice — building an "immortal embryo" that survives physical death. The Western alchemical *opus* transmutes lead to gold through chemical-symbolic operations that the Hermetic tradition increasingly interpreted as inner transformation of the practitioner. Both traditions use transformation-of-matter as the operative metaphor for transformation-of-self; both develop a parallel exoteric (literal) and esoteric (spiritual) reading of their technical vocabulary. No historical contact between the traditions — the parallel was first noted systematically by Jung (1944, *Psychology and Alchemy*) and remains a MASSIVE WIN structural parallel. See [[alchemy-as-spiritual-discipline]], [[tradition-hermeticism]].
 
+## Edge Connections
+
+| Edge | Type | Description |
+|---|---|---|
+| → [[laozi]] | founding-figure | Traditional author of the Daodejing; legendary sage |
+| → [[zhuangzi-person]] | key-figure | Literary and philosophical heart of classical Daoism; perspectivism |
+| → [[tradition-confucianism]] | co-tradition | The canonical Chinese pairing; Daoist spontaneity vs. Confucian ritual-cultivation |
+| → [[tradition-zen]] | structural-synthesis | Chan Buddhism absorbed Daoist anti-textual sensibility and *wu-wei* as its Sinitic substrate |
+| → [[tradition-sanjiao]] | component-of | Daoism is one of the Three Teachings; provides the cosmological and spiritual-practice layer |
+| → [[tradition-neoplatonism]] | structural-parallel | Dao ↔ The One: apophatic absolute arrived at independently; DDJ predates Plotinus by 600 years |
+| → [[ein-sof]] | structural-parallel | Dao ↔ Ein Sof: both semantically "without limit"; apophatic absolute in independent traditions |
+| → [[theme-apophatic-theology]] | key-instance | Daodejing Chapter 1 is among the earliest sustained apophatic theologies in any tradition |
+| → [[alchemy-as-spiritual-discipline]] | contains | Daoist *neidan* (inner alchemy) is a sophisticated inner-transformation tradition |
+| → [[tradition-hermeticism]] | structural-parallel | Neidan ↔ Western alchemical *opus*: parallel transmutation-metaphysics with no historical contact |
+
 ## Refs
 1. Kohn, L. (ed.) (2000). *Daoism Handbook*. Brill.
 2. Kohn, L. and LaFargue, M. (eds.) (1998). *Lao-tzu and the Tao-te-ching*. SUNY.
 3. Robinet, I. (1997). *Taoism: Growth of a Religion*. Stanford UP.
+4. Kirkland, Russell (2004). *Taoism: The Enduring Tradition*. Routledge. [T1]

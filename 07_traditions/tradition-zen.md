@@ -14,7 +14,7 @@ sister-traditions: ["[[tradition-mahayana-buddhism]]", "[[tradition-daoism]] (su
 key-themes:
   - "[[apotheosis]]"
   - "[[logos-cosmic-reason]]"
-status: "metadata"
+status: "full"
 refs:
   - title: "Seeing through Zen: Encounter, Transformation, and Genealogy in Chinese Chan Buddhism"
     author: "McRae, John R."
@@ -72,11 +72,30 @@ Zen is institutionally non-theistic in its central self-understanding, though ri
 - **Zen sudden awakening ↔ [[william-james]]'s marks of mystical experience**: James's four marks of genuine mystical experience (*Varieties of Religious Experience*, 1902) — *ineffability*, *noetic quality*, *transiency*, *passivity* — map precisely onto the Zen account of *kenshō*. James drew primarily on Western mystical and conversion literature; Zen is not in his primary sources. The structural convergence suggests that James identified a trans-cultural phenomenological structure rather than a culturally specific Christian datum.
 - **Chan Buddhism ↔ [[tradition-daoism]] (controlled synthesis)**: Chan Buddhism's distinctive Sinification is its absorption of Daoist sensibility into Mahāyāna metaphysics. The Zen master's direct pointing (*zhijie* tradition), the anti-textual stance ("kill the Buddha if you meet him on the road"), the valorization of spontaneous unconventional action, and the *wu-wei*-inflected language of "just sitting" (*shikantaza*) are all Daoist in vocabulary and temperament. Chan is the clearest example in the vault of a tradition achieving total synthesis between an imported religion (Indian Mahāyāna) and an indigenous philosophical framework (Daoism) — producing something irreducibly new.
 
+- **[[d-t-suzuki]] (1870–1966) → Beat Generation → global mindfulness industry (East → West transmission chain)**: D.T. Suzuki's English-language publications — especially *Essays in Zen Buddhism* (3 vols., 1927–1934), *An Introduction to Zen Buddhism* (1934, preface by Carl Jung), and *Mysticism: Christian and Buddhist* (1957) — constitute the single most consequential East-to-West religious transmission of the 20th century. Suzuki's Columbia University seminars (1952–1957) were attended by John Cage, Karen Horney, and Erich Fromm; Alan Watts encountered Suzuki's work and broadcast Zen aesthetics across American culture through his KPFA radio programs (1953–1973) and enormously popular books (*The Way of Zen*, 1957; *The Wisdom of Insecurity*, 1951). The Beat writers absorbed Zen directly: Jack Kerouac's *The Dharma Bums* (1958), Allen Ginsberg's extended Tibetan-Zen practice, Gary Snyder's *Earth House Hold* (1969). John Cage implemented Zen indeterminacy directly in aleatoric music (4'33", 1952). Shunryu Suzuki's San Francisco Zen Center (1962) and Philip Kapleau's Rochester Zen Center (1966) institutionalized practice in America. The culminating link: Jon Kabat-Zinn's Mindfulness-Based Stress Reduction (MBSR, 1979) stripped Zen's *samatha-vipassanā* meditation of explicit Buddhist framing for clinical deployment, generating a secular mindfulness industry now estimated at >$1 billion/year in apps, clinical programs, and corporate wellness. The Buddhist source is rarely credited in the mindfulness industry — making this the vault's clearest case of a contemplative tradition becoming a secular global practice whose origin has been systematically obscured.
+
 ## Relations to neighbors
 - vs. [[tradition-mahayana-buddhism]]: Zen is a Mahāyāna sub-tradition.
 - vs. [[tradition-daoism]]: Daoist substrate (anti-textual sensibility, spontaneity / *wu-wei*, language about the Way that cannot be named) is the most thoroughly Sinified element of Zen.
 - vs. Pure Land Buddhism: in Chinese practice, often combined (Yongming Yanshou ~960 advocated combined practice); in Japanese reception, often opposed (Pure Land's other-power vs. Zen's self-power).
 - vs. East Asian esoteric / Tantric Buddhism (Shingon, Tendai esoteric, Korean Tantric Buddhism): structurally and historically distinct; sometimes mutually critical.
+
+## Edge Connections
+
+| Edge | Type | Description |
+|---|---|---|
+| → [[tradition-mahayana-buddhism]] | parent-tradition | Zen is an East Asian sub-tradition of Mahāyāna Buddhism |
+| → [[tradition-daoism]] | structural-synthesis | Chan absorbed Daoist spontaneity, anti-textual sensibility, and *wu-wei* as its Sinitic substrate |
+| → [[tradition-sanjiao]] | component-of | Zen is the Buddhist component of the Three Teachings synthesis |
+| → [[nagarjuna]] | doctrinal-foundation | Madhyamaka *śūnyatā* is Zen's philosophical spine; "form is emptiness" |
+| → [[bodhidharma]] | founding-figure | Traditional first patriarch of Chan; legendary Indian transmission to China |
+| → [[huineng]] | key-figure | Sixth Patriarch; founder of the Southern School; Platform Sutra |
+| → [[dogen]] | key-figure | Founder of Sōtō Zen in Japan; *Shōbōgenzō*; "just sitting" (*shikantaza*) |
+| → [[hakuin]] | key-figure | Revival of the Rinzai kōan system; systematized kōan curriculum |
+| → [[d-t-suzuki]] | transmission-agent | Introduced Zen to the West; authored Zen-Christian comparative scholarship |
+| → [[meister-eckhart]] | structural-parallel | Suzuki documents identity between Zen awakening-language and Eckhart's Gottheit/Grunt |
+| → [[william-james]] | structural-parallel | James's four marks of mystical experience map precisely onto Zen *kenshō* |
+| → [[tradition-sufism]] | structural-parallel | Both develop master-disciple transmission lineages as authentication of awakening |
 
 ## Refs
 1. McRae, J.R. (2003). *Seeing through Zen*. UC Press.
@@ -84,3 +103,5 @@ Zen is institutionally non-theistic in its central self-understanding, though ri
 3. Heine, S. & Wright, D.S. (eds.) (2008). *Zen Classics*. OUP.
 4. Suzuki, D.T. (1957). *Mysticism: Christian and Buddhist*. Harper & Row.
 5. Faure, Bernard (1993). *Chan Insights and Oversights*. Princeton University Press.
+6. Sharf, Robert H. (1995). "Buddhist Modernism and the Rhetoric of Meditative Experience." *Numen* 42 (3): 228–283.
+7. McMahan, David L. (2008). *The Making of Buddhist Modernism*. Oxford University Press.
