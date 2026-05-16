@@ -344,6 +344,198 @@ window.ALPHA_GLYPH_DATA = [
     relatedNodes: ['alphabet-medu-netjer', 'alphabet-sefer-yetzirah', 'alphabet-creation-by-word'],
   },
 
+  // ── Egyptian hieroglyph expansion — soul, divine, cosmic, royal, scribal ──
+  // 22 additional signs beyond the alphabetic chain and 8 sacred cosmological signs.
+  // These are the signs that make hieroglyphs a complete theology, not just a script.
+
+  // — Soul Trilogy (Ba · Ka · Akh) —
+  {
+    letter: '𓅡', name: 'Ba', meaning: 'the individual soul — the traveling self', gardiner: 'G29',
+    unicode: 0x013161, phoneme: 'bꜣ', greek: '(none)', latin: '(none)',
+    hebrew: '(none)', arabic: '(none)', phoenician: '(none)', scriptOnly: ['hieroglyph'],
+    note: 'The Ba is depicted as a human-headed bird — the aspect of the person that can fly between the world of the living and the dead. At night the Ba travels freely; by day it must return to the body. The Ba is not the whole soul; it is the personality, the individual character that persists after death.',
+    investigationHighlight: 'Egypt had five components of the self: Ba (personality/traveling soul), Ka (vital double), Akh (luminous spirit), Ren (name), and Sheut (shadow). The Ba is closest to what the Greeks called psyche and the Hebrews called nefesh. The human-headed bird is the most precise image of what every tradition struggles to describe: the part of you that is distinctly you, that can leave the body, and that survives death. Three traditions, three words — one image from 3,000 BCE.',
+    relatedNodes: ['alphabet-medu-netjer', 'alphabet-creation-by-word', 'alphabet-sefer-yetzirah'],
+  },
+  {
+    letter: '𓂓', name: 'Ka', meaning: 'the vital force — the spirit double', gardiner: 'D28',
+    unicode: 0x013093, phoneme: 'kꜣ', greek: '(none)', latin: '(none)',
+    hebrew: '(none)', arabic: '(none)', phoenician: '(none)', scriptOnly: ['hieroglyph'],
+    note: 'The Ka is shown as two upraised arms — the hieroglyph for the vital force or spirit double that accompanies every person from birth. The Ka stays with the body (and with the mummy) after death. To die in Egyptian was "to go to one\'s Ka." Offerings at the tomb were "for the Ka" — the vital force must be sustained.',
+    investigationHighlight: 'The Ka is the Egyptian equivalent of what Sanskrit calls prana, Chinese qi, Hebrew ruah, Greek pneuma — the animating life-force that fills the body. Every tradition feels compelled to name it. The Egyptian version is the most architecturally specific: the Ka is a spirit double created at birth by the god Khnum on a potter\'s wheel alongside the body. Two identical forms made simultaneously — body and double — one mortal, one immortal. Khnum at the potter\'s wheel is the image Jeremiah borrows: "like clay in the hand of the potter."',
+    relatedNodes: ['alphabet-medu-netjer', 'alphabet-creation-by-word'],
+  },
+  {
+    letter: '𓅜', name: 'Akh', meaning: 'the luminous spirit — the transformed self', gardiner: 'G25',
+    unicode: 0x01315C, phoneme: 'ꜣḫ', greek: '(none)', latin: '(none)',
+    hebrew: '(none)', arabic: '(none)', phoenician: '(none)', scriptOnly: ['hieroglyph'],
+    note: 'The Akh is the crested ibis — the perfected, luminous soul that results from the successful union of Ba and Ka after death. An Akh is what an Egyptian hoped to become: a being of light dwelling in the Duat, capable of interceding in the world of the living. Malevolent spirits (called "akhu") are Akhs that failed to find peace.',
+    investigationHighlight: 'The Akh is the Egyptian version of the enlightened/transformed soul — the self that has completed the death-journey and become luminous. The crested ibis was chosen because it was a migratory bird that appeared and disappeared — a visitor from another world. The root ꜣḫ means "to be effective, to shine." The same root appears in Akhet (the horizon, where the sun becomes Akh — shining). In the Pyramid Texts, the dead pharaoh becomes an Akh among the stars. The Hebrew malakh (angel/messenger, מלאך) and the Arabic malak share a root-structure that some scholars connect to the same luminous-being concept — the sent, shining one.',
+    relatedNodes: ['alphabet-medu-netjer', 'alphabet-creation-by-word', 'alphabet-greek-vowel-revolution'],
+  },
+
+  // — Divine Authority —
+  {
+    letter: '𓊹', name: 'Neter', meaning: 'god — the divine principle itself', gardiner: 'R8',
+    unicode: 0x0132B9, phoneme: 'nṯr', greek: '(none)', latin: '(none)',
+    hebrew: '(none)', arabic: '(none)', phoenician: '(none)', scriptOnly: ['hieroglyph'],
+    note: 'Neter (𓊹) is the hieroglyph for "god" — a flag on a pole, representing the divine presence. Every Egyptian deity is a neter. The sign itself — a banner or standard — suggests that the divine is that which is elevated, visible, and rallies others toward it. The Egyptians had hundreds of neteru (gods); every neter was a facet of the one unknowable divine.',
+    investigationHighlight: 'Neter is one of the most debated words in Egyptology. It means "god" but also "that which is renewed/refreshed" — the divine as perpetual renewal. Some scholars trace the word into Coptic (ntre) and suggest it influenced the Greek word for nature (natura via Latin). If that etymology holds, our word "nature" and the Egyptian word for "god" share a root: the divine IS the renewing force of the natural world. Egyptian polytheism and Western naturalism may be, terminologically, the same thing.',
+    relatedNodes: ['alphabet-medu-netjer', 'alphabet-creation-by-word', 'alphabet-coptic'],
+  },
+  {
+    letter: '𓌀', name: 'Was Scepter', meaning: 'divine power and dominion', gardiner: 'S40',
+    unicode: 0x013300, phoneme: 'wꜣs', greek: '(none)', latin: '(none)',
+    hebrew: '(none)', arabic: '(none)', phoenician: '(none)', scriptOnly: ['hieroglyph'],
+    note: 'The Was scepter — a staff with an animal head (Set-animal or canine) at the top and a forked base — is the emblem of divine power. Every major deity holds it. Its name wꜣs means "power" or "dominion." The Was appears in the word for Thebes: Wꜣst — City of the Was, City of Power.',
+    investigationHighlight: 'The Was, Djed, and Ankh form the three most common Egyptian power-objects: Was = dominion, Djed = stability, Ankh = life. Together they appear in the formula "all life, stability, and dominion" on temple walls — the three blessings the gods bestow on the pharaoh. This triad maps structurally onto many later three-part divine formulas: the Hindu trimurti (Brahma/Vishnu/Shiva = creation/preservation/destruction), the Christian Trinity, the Platonic Good/True/Beautiful. Three forces; one formula.',
+    relatedNodes: ['alphabet-medu-netjer', 'alphabet-creation-by-word'],
+  },
+  {
+    letter: '𓌅', name: 'Flail', meaning: 'authority over the harvest — the striking power of the divine', gardiner: 'S45',
+    unicode: 0x013305, phoneme: 'nḫꜣḫꜣ', greek: '(none)', latin: '(none)',
+    hebrew: '(none)', arabic: '(none)', phoenician: '(none)', scriptOnly: ['hieroglyph'],
+    note: 'The flail (nḫꜣḫꜣ) is always paired with the crook (ḥqꜣ) in the hands of Osiris and the pharaoh. The crook gathers; the flail strikes. The crook is the shepherd gathering the flock; the flail is the thresher separating grain from chaff. Together they symbolize the complete cycle of pastoral and agricultural sovereignty.',
+    investigationHighlight: 'The crook-and-flail is the most visually distinctive symbol of Egyptian royal theology. What is often missed: it is a grain-processing image. The crook = gathering (shepherd); the flail = threshing (farmer). The Pharaoh holds the tools of food production as symbols of divine kingship — sovereignty over the harvest IS sovereignty over life. This is the same theology behind the bread-and-wine eucharist: the substances that transform grain and grape into life-sustaining food become divine symbols. Osiris was murdered, dismembered, and his body scattered — like grain. He rose again. He IS the grain. The flail that threshes grain threshes the god.',
+    relatedNodes: ['alphabet-medu-netjer', 'alphabet-creation-by-word'],
+  },
+
+  // — Celestial and Cosmic Signs —
+  {
+    letter: '𓈌', name: 'Akhet', meaning: 'the horizon — where the sun becomes luminous', gardiner: 'N27',
+    unicode: 0x01320C, phoneme: 'ꜣḫt', greek: '(none)', latin: '(none)',
+    hebrew: '(none)', arabic: '(none)', phoenician: '(none)', scriptOnly: ['hieroglyph'],
+    note: 'Akhet is the sun disk between two mountains — the horizon at sunrise or sunset. It is the liminal moment when the sun transitions between the worlds: underworld (Duat) and sky. The solar disk in the Akhet sign is the sun becoming Akh — luminous, transformed. The Akhet is the moment of resurrection repeated every morning.',
+    investigationHighlight: 'The Akhet hieroglyph — sun between twin mountains — is the structural origin of the halo. The circle of light around divine heads in Christian, Buddhist, and Hindu iconography preserves the Egyptian sun-disk at the horizon. Akhenaten built his city Akhetaten (modern Amarna) at a location where the cliffs formed a natural Akhet shape at sunrise — the city was a living hieroglyph. Every morning the rising sun wrote the divine name in landscape. The East as the sacred direction of resurrection appears in Egyptian, Jewish (Jerusalem faces east), Christian (churches face east), and Islamic (facing Mecca, which from Egypt is roughly east) traditions — all orient toward the rising Akhet.',
+    relatedNodes: ['alphabet-medu-netjer', 'alphabet-creation-by-word'],
+  },
+  {
+    letter: '𓇼', name: 'Duat Star', meaning: 'the underworld / the night sky / the starred abyss', gardiner: 'N14',
+    unicode: 0x0131FC, phoneme: 'dwꜣt', greek: '(none)', latin: '(none)',
+    hebrew: '(none)', arabic: '(none)', phoenician: '(none)', scriptOnly: ['hieroglyph'],
+    note: 'The five-pointed star is the sign for the Duat — the Egyptian underworld and night sky simultaneously. The Duat is not only underground; it is also above, among the stars. The dead travel to join the stars; the circumpolar stars that never set are the "imperishable ones," the souls of the blessed dead. The star-hieroglyph is also used to write "hour" (wnwt) — time is measured by stars.',
+    investigationHighlight: 'The five-pointed star is over 5,000 years old as a sacred symbol — the Egyptian Duat sign. The same form appears as the Star of David (two triangles = Duat + inversion), the pentagram of Pythagoras (who spent 22 years in Egypt), the Seal of Solomon, and the stars on national flags worldwide. The Egyptians used the five-pointed star for the underworld because the stars are where the dead go. Every five-pointed star on every national flag is, etymologically, a sign for the land of the dead — the Duat, the starred abyss.',
+    relatedNodes: ['alphabet-medu-netjer', 'alphabet-isopsephy-greek', 'alphabet-creation-by-word'],
+  },
+  {
+    letter: '𓅣', name: 'Bennu / Phoenix', meaning: 'the first life — resurrection from the primordial mound', gardiner: 'G31',
+    unicode: 0x013163, phoneme: 'bnn', greek: '(none)', latin: '(none)',
+    hebrew: '(none)', arabic: '(none)', phoenician: '(none)', scriptOnly: ['hieroglyph'],
+    note: 'The Bennu is the sacred heron of Heliopolis — the first living being to alight on the primordial mound (benben) at the moment of creation. The Bennu is the self-created bird, the manifestation of Ra-Osiris at the dawn of time. Greek travelers identified the Bennu with the Phoenix: the bird that dies and is reborn from its own ashes.',
+    investigationHighlight: 'The Phoenix myth is Egyptian. Herodotus (c. 440 BCE) described seeing paintings of the "Phoenix" at Heliopolis — what he saw was the Bennu. The Bennu perches on the benben stone (the primordial mound, possibly the model for the pyramid capstone). The solar barque carries the Bennu at dawn. The word "benben" shares a root with "to arise, to shine forth." The Christian pelican feeding its young with its own blood is a medieval transformation of the same self-sacrificing resurrection-bird archetype. Five thousand years of the same image: the bird that is its own origin, that rises from its own end.',
+    relatedNodes: ['alphabet-medu-netjer', 'alphabet-creation-by-word'],
+  },
+  {
+    letter: '𓇾', name: 'Primordial Mound', meaning: 'the first land — the point of creation', gardiner: 'N16',
+    unicode: 0x0131FE, phoneme: 'tꜣ', greek: '(none)', latin: '(none)',
+    hebrew: '(none)', arabic: '(none)', phoenician: '(none)', scriptOnly: ['hieroglyph'],
+    note: 'The primordial mound (benben or Nun-hill) is the first solid land to emerge from the primordial waters (Nun). All Egyptian creation accounts begin the same way: infinite, dark, still waters — then a mound emerges, and creation begins. This is also the determinative for "land" in Egyptian writing.',
+    investigationHighlight: 'The emergence of land from primordial water is the most universal creation image in world religion. Egyptian: the benben mound rises from Nun. Hebrew: "the earth was without form, and darkness was over the face of the deep" — then dry land appears (Genesis 1:9). Sumerian: Eridu (the first city) = the first mound on the waters. Hindu: the cosmic tortoise rises from the ocean. The primordial mound is humanity\'s ur-image of beginning: matter organizing itself from chaos-water. Every temple in Egypt was built to model this mound — the sanctuary at the center is the high ground of creation, the spot where the world began.',
+    relatedNodes: ['alphabet-medu-netjer', 'alphabet-creation-by-word', 'alphabet-sefer-yetzirah'],
+  },
+
+  // — Deity Signs —
+  {
+    letter: '𓅃', name: 'Horus Falcon', meaning: 'the living sky — the divine king', gardiner: 'G5',
+    unicode: 0x013143, phoneme: 'ḥr', greek: '(none)', latin: '(none)',
+    hebrew: '(none)', arabic: '(none)', phoenician: '(none)', scriptOnly: ['hieroglyph'],
+    note: 'The Horus falcon is the sign of the living pharaoh, who is Horus incarnate. The sun is the right eye of Horus; the moon is his left eye (torn out by Set and restored by Thoth — hence the Eye of Horus as healing symbol). Horus defeats Set; the pharaoh as Horus defeats chaos. At death, the pharaoh becomes Osiris and his son becomes the new Horus.',
+    investigationHighlight: 'The Horus/Osiris theology is the oldest clearly documented dying-and-rising-god sequence. Father (Osiris) is killed, dismembered, and reassembled; son (Horus) avenges the father and inherits the kingdom; the dead father rules the afterlife while the living son rules the earth. The structural parallel to the Christian Father/Son theology — God the Father, Christ the Son; Christ dies and rises; Christ reigns in heaven while the Church continues on earth — is either convergent evolution of a universal myth pattern, or direct transmission through Hellenistic Egyptian religion (which was deeply Christianized in Alexandria). The Horus falcon on the pharaoh\'s crown and the dove descending on Christ at baptism are both divine-bird-on-king images.',
+    relatedNodes: ['alphabet-medu-netjer', 'alphabet-creation-by-word'],
+  },
+  {
+    letter: '𓅝', name: 'Thoth / Ibis', meaning: 'the scribe of the gods — inventor of writing', gardiner: 'G26',
+    unicode: 0x01315D, phoneme: 'ḏḥwty', greek: '(none)', latin: '(none)',
+    hebrew: '(none)', arabic: '(none)', phoenician: '(none)', scriptOnly: ['hieroglyph'],
+    note: 'Thoth is the ibis-headed god of writing, knowledge, the moon, and magic. He invented hieroglyphs, recorded the Weighing of the Heart, and served as the scribe of the gods. He is also depicted as a baboon. The Greeks identified Thoth with Hermes — giving us Hermes Trismegistus ("thrice-great Hermes"), the legendary author of the Hermetic texts.',
+    investigationHighlight: 'Thoth is the deity that bridges Egypt and Western occultism. The Greek identification of Thoth with Hermes produced Hermes Trismegistus — the legendary author attributed with the Corpus Hermeticum, the Emerald Tablet, and the Kybalion. The entire Western Hermetic tradition (alchemy, Kabbalah as filtered through Hermeticism, Rosicrucians, Freemasonry) claims descent from Thoth-Hermes. The ibis-god of scribes became, through this transmission, the patron saint of every Western esotericist. The Renaissance "Egyptian wisdom" craze (Ficino, Pico della Mirandola) was triggered by the re-discovery of the Corpus Hermeticum in 1460 — texts attributed to Thoth.',
+    relatedNodes: ['alphabet-medu-netjer', 'alphabet-isopsephy-greek', 'alphabet-creation-by-word'],
+  },
+  {
+    letter: '𓃣', name: 'Anubis / Jackal', meaning: 'guardian of the dead — the weigher of hearts', gardiner: 'E16',
+    unicode: 0x0130E3, phoneme: 'inpw', greek: '(none)', latin: '(none)',
+    hebrew: '(none)', arabic: '(none)', phoenician: '(none)', scriptOnly: ['hieroglyph'],
+    note: 'Anubis is the jackal-headed god of embalming, the guardian of the necropolis, and the guide of souls through the Duat. He oversees the Weighing of the Heart. The jackal was associated with death because jackals were seen scavenging near desert graveyards — the Egyptians incorporated the animal of death into the theology of death.',
+    investigationHighlight: 'Anubis is the oldest psychopomp — the guide who leads souls from the world of the living to the world of the dead. The same role appears across traditions: Hermes Psychopompos (Greek), Mercury (Roman), Azrael (Islamic angel of death), the archangel Michael as weigher of souls. The jackal who guarded graves became the god who guards the transition itself. Anubis holds the scales in the Weighing of the Heart — he is both the embalmer who prepares the dead and the judge\'s assistant who keeps the balance honest. Every tradition that has a "guide of the dead" is, structurally, drawing on the same psychological need: the dying need a trusted figure who knows the way.',
+    relatedNodes: ['alphabet-medu-netjer', 'alphabet-creation-by-word'],
+  },
+  {
+    letter: '𓁠', name: 'Shu', meaning: 'the atmosphere — the space between heaven and earth', gardiner: 'C4',
+    unicode: 0x013060, phoneme: 'šw', greek: '(none)', latin: '(none)',
+    hebrew: '(none)', arabic: '(none)', phoenician: '(none)', scriptOnly: ['hieroglyph'],
+    note: 'Shu is the god of air and sunlight — the atmosphere itself, the space between the sky (Nut) and the earth (Geb). He is depicted as a man with an ostrich feather on his head, kneeling between the prone body of Geb (earth) and the arched body of Nut (sky), lifting Nut upward. Shu is the act of separation that makes life possible — without the space between sky and earth, there is no room for living things.',
+    investigationHighlight: 'Shu separating Nut (sky) from Geb (earth) is the Egyptian creation act that produces the livable world. The same act appears in Genesis 1: "God separated the waters above from the waters below" (the firmament). In the Babylonian Enuma Elish, Marduk splits Tiamat in half — upper half becomes sky, lower half earth. The separation of primordial unity into sky and earth is the universal second act of creation (after "let there be light" or "mound from water"). Egyptian Shu is the divine embodiment of that separation — he IS the gap that makes space for life.',
+    relatedNodes: ['alphabet-medu-netjer', 'alphabet-creation-by-word'],
+  },
+
+  // — Royal and Protective Signs —
+  {
+    letter: '𓆗', name: 'Uraeus', meaning: 'the rearing cobra — royal divine protection', gardiner: 'I12',
+    unicode: 0x013197, phoneme: 'jꜥrt', greek: '(none)', latin: '(none)',
+    hebrew: '(none)', arabic: '(none)', phoenician: '(none)', scriptOnly: ['hieroglyph'],
+    note: 'The Uraeus is the rearing cobra on the pharaoh\'s crown — the divine protector that spits fire at the enemies of the king. It represents Wadjet, the cobra goddess of Lower Egypt. The Uraeus is the eye of Ra sent out into the world to destroy what threatens divine order. It is the serpent that burns — the destructive aspect of solar power in protective form.',
+    investigationHighlight: 'The Uraeus — the risen serpent on the crown — is one of the most ancient images of divine serpent-power. The same concept appears in the Hindu kundalini (the coiled serpent at the base of the spine that rises to the crown, conferring divine power) and the Caduceus of Hermes (two serpents rising around a staff). The pharaoh who wears the Uraeus has the divine serpent-fire activated at the crown of the head — the same location and the same physiology as the kundalini crown chakra. The ancient world\'s most powerful king wears, at the top of his head, the image of the serpent that has risen.',
+    relatedNodes: ['alphabet-medu-netjer', 'alphabet-creation-by-word', 'alphabet-isopsephy-greek'],
+  },
+  {
+    letter: '𓍷', name: 'Cartouche', meaning: 'the royal name sealed in eternity', gardiner: 'V10',
+    unicode: 0x013377, phoneme: 'šnw', greek: '(none)', latin: '(none)',
+    hebrew: '(none)', arabic: '(none)', phoenician: '(none)', scriptOnly: ['hieroglyph'],
+    note: 'The cartouche (šnw) is an oval loop enclosing the royal name. The shape is an extended Shen ring — a loop of rope with no end, symbolizing eternity. The pharaoh\'s name inside the cartouche is protected by eternal divine power. The name of a king without a cartouche was vulnerable; inside the oval, it was sealed.',
+    investigationHighlight: 'The cartouche is the oldest form of the idea that a name has magical power and needs magical protection. The same concept appears in Jewish law: the divine name YHWH is so powerful it cannot be spoken, only written — and even the written form is treated with extreme reverence (Torah scrolls cannot be destroyed, only buried). In Islam, the divine names (99 names of Allah) are recited as protection. The Egyptian king\'s name in a cartouche, the Jewish divine name in a mezuzah, the Islamic basmala above a door — all are expressions of the same deep structure: sacred names sealed in protective containers ward off chaos.',
+    relatedNodes: ['alphabet-medu-netjer', 'alphabet-sefer-yetzirah', 'alphabet-creation-by-word'],
+  },
+  {
+    letter: '𓍶', name: 'Shen Ring', meaning: 'eternity — the circle with no end', gardiner: 'V9',
+    unicode: 0x013376, phoneme: 'šn', greek: '(none)', latin: '(none)',
+    hebrew: '(none)', arabic: '(none)', phoenician: '(none)', scriptOnly: ['hieroglyph'],
+    note: 'The Shen is a loop of rope tied at the bottom with a bar — representing a circle with no beginning and no end. It is held by Horus falcons and Nekhbet vultures in their talons over the pharaoh as a sign of eternal protection. The Shen elongated became the cartouche; the Shen as a solar symbol connects to Ra\'s eternal circuit.',
+    investigationHighlight: 'The Shen ring is the Egyptian eternity symbol — a loop of rope with no end. The ouroboros (the serpent eating its own tail, the most ancient Western symbol of eternity) is probably a zoomorphic version of the same idea: the Shen\'s circular rope = the serpent\'s circular body. The ouroboros appears first in Egyptian texts (the Enigmatic Book of the Netherworld, c. 1380 BCE), spreading to Greece via Alexandria and from there to the entire alchemical/Hermetic tradition. The circular "no-end" symbol of eternity enters every tradition that had contact with Egypt — and becomes, in alchemy, the symbol for the philosopher\'s stone: the thing that completes and closes the cycle.',
+    relatedNodes: ['alphabet-medu-netjer', 'alphabet-creation-by-word', 'alphabet-isopsephy-greek'],
+  },
+  {
+    letter: '𓋖', name: 'Double Crown (Pschent)', meaning: 'unified sovereignty — the two lands as one', gardiner: 'S5',
+    unicode: 0x0132D6, phoneme: 'sḫmty', greek: '(none)', latin: '(none)',
+    hebrew: '(none)', arabic: '(none)', phoenician: '(none)', scriptOnly: ['hieroglyph'],
+    note: 'The Double Crown (Pschent) combines the White Crown of Upper Egypt (the tall conical crown) and the Red Crown of Lower Egypt (the flat-topped crown with a coil). Wearing the Pschent, the pharaoh rules the "Two Lands" — the unified Egypt. The unification of Upper and Lower Egypt c. 3100 BCE by Narmer is the founding act of the Egyptian state, commemorated in every double crown.',
+    investigationHighlight: 'The Double Crown is political theology made into a hat. The pharaoh does not merely rule two regions; the pharaoh IS the union of two principles — the White Crown\'s Upper Egypt (the Nile Valley, the desert, the old kingdom, Osiris) and the Red Crown\'s Lower Egypt (the Delta, the sea, the new, Horus). The king\'s body holds together what would otherwise be two different worlds. This "sovereign as the union of opposites" theology runs from Egypt through every sacred king tradition: the Chinese Son of Heaven bridging heaven and earth, the Japanese Emperor as living kami, the medieval European king as the body of the nation. The double crown is the original image of the king as metaphysical hinge.',
+    relatedNodes: ['alphabet-medu-netjer', 'alphabet-creation-by-word'],
+  },
+
+  // — Scribal and Sacred Object Signs —
+  {
+    letter: '𓏞', name: 'Scribal Palette', meaning: 'writing as divine act — the scribe\'s sacred tools', gardiner: 'Y3',
+    unicode: 0x0133DE, phoneme: 'mnḥd', greek: '(none)', latin: '(none)',
+    hebrew: '(none)', arabic: '(none)', phoenician: '(none)', scriptOnly: ['hieroglyph'],
+    note: 'The scribal palette (a rectangular board with two ink-cakes — one black, one red — and a slot for reed pens) is the determinative for "writing" in Egyptian. Every scribe carried one. It was placed in tombs as an offering. The scribe\'s tools were sacred objects: to write hieroglyphs was to participate in the creative act of the gods, since Thoth had invented the script.',
+    investigationHighlight: 'In Egypt, only about 1% of the population was literate. Scribes were a priestly class. The hieroglyphic script was called medu netjer — "words of god" — and to write it was a sacred act. The scribal palette in a tomb equipped the dead for writing in the afterlife, because the Duat required the same bureaucracy as the living world (accounts, records, the Book of the Dead itself). The idea that writing connects the human to the divine — that literacy is a form of spiritual access — appears in every tradition that has a sacred scripture: the Torah (written by God at Sinai), the Quran (dictated by Gabriel), the Vedas (heard, not composed). Egypt is the oldest clear case: writing was invented by a god and scribes were his deputies.',
+    relatedNodes: ['alphabet-medu-netjer', 'alphabet-creation-by-word', 'alphabet-arabic-quran'],
+  },
+  {
+    letter: '𓏛', name: 'Papyrus Scroll', meaning: 'knowledge — the sealed record of divine wisdom', gardiner: 'Y1',
+    unicode: 0x0133DB, phoneme: 'mḏꜣt', greek: '(none)', latin: '(none)',
+    hebrew: '(none)', arabic: '(none)', phoenician: '(none)', scriptOnly: ['hieroglyph'],
+    note: 'The sealed papyrus roll is the determinative for "book," "writing," and "abstract concepts" in Egyptian. Any word referring to an intangible idea — knowledge, wisdom, art — is written with this sign. The scroll is the container of meaning; the sealed roll is meaning held and protected.',
+    investigationHighlight: 'The papyrus scroll as the vessel of sacred knowledge appears at the foundation of every book-religion. Egypt exported papyrus to the entire ancient world — the word "papyrus" gives us "paper." The Phoenicians brought the Egyptian scroll technology to Greece; the Greeks called their writing material byblos (from the Phoenician city Byblos, the papyrus trade hub) — which gives us "Bible." The Hebrew word sefer (book/scroll, ספר), Arabic mushaf (Quran manuscript), Greek biblos — all the sacred book words trace to Egyptian papyrus technology. The scroll that holds the word of God is an Egyptian invention, literally.',
+    relatedNodes: ['alphabet-medu-netjer', 'alphabet-phoenician', 'alphabet-creation-by-word'],
+  },
+  {
+    letter: '𓊮', name: 'Flame', meaning: 'purification — the fire that transforms', gardiner: 'Q7',
+    unicode: 0x0132AE, phoneme: 'ḫt / sḏt', greek: '(none)', latin: '(none)',
+    hebrew: '(none)', arabic: '(none)', phoenician: '(none)', scriptOnly: ['hieroglyph'],
+    note: 'The flame determinative appears in Egyptian for words meaning fire, heat, burning, and purification. In Egyptian theology, fire has a dual role: it destroys the enemies of Ra in the Duat (the Lake of Fire), and it purifies and illuminates. The sacred flame of the temples burned continuously.',
+    investigationHighlight: 'The Lake of Fire in the Egyptian Book of the Dead (where the unjudged hearts are destroyed) is the direct ancestor of the concept of hell in Abrahamic traditions. The term "lake of fire" appears verbatim in Revelation (20:10, 20:14-15) — one of the most explicit textual continuities between Egyptian afterlife theology and Christian eschatology. Egyptian fire purifies or destroys depending on the moral state of what it touches — the same ambivalence appears in the Zoroastrian final judgment (all souls pass through a river of fire: for the righteous it is warm milk; for the wicked it is burning). Fire as the final moral discriminator is an Egyptian theological export.',
+    relatedNodes: ['alphabet-medu-netjer', 'alphabet-creation-by-word'],
+  },
+  {
+    letter: '𓏣', name: 'Sistrum', meaning: 'the divine rattle — music as cosmic vibration', gardiner: 'Y8',
+    unicode: 0x0133E3, phoneme: 'sššt', greek: '(none)', latin: '(none)',
+    hebrew: '(none)', arabic: '(none)', phoenician: '(none)', scriptOnly: ['hieroglyph'],
+    note: 'The sistrum is the sacred rattle of the goddess Hathor — shaken in ritual to please the gods and ward off chaos. The rattle\'s sound represented the rustling of papyrus reeds in the Nile wind. Sistrum-players accompanied every major temple ritual. When the sistrum is shaken, the universe is reminded to stay in order.',
+    investigationHighlight: 'The sistrum connects Egypt to the oldest layer of musical theology: sound as the tool for maintaining cosmic order. The Egyptian belief that ritual music prevents chaos (the sistrum holds Apophis at bay) appears in the Vedic understanding that proper chanting (mantra) maintains the cosmic order (rta), in the Pythagorean belief that the harmony of the spheres must be mirrored by earthly music, and in the Jewish temple\'s Levitical choir (whose silence would have been catastrophic). Every culture that has sacred music believes the same thing: the universe requires sound to continue. The sistrum is the instrument that shakes chaos back into order.',
+    relatedNodes: ['alphabet-medu-netjer', 'alphabet-creation-by-word'],
+  },
+
   // ── Arabic-only additions (scriptOnly: ['arabic']) ────────────────────────
   // 6 letters Arabic developed beyond the 22 Phoenician base.
   // Arabic reached 28 letters; these 6 have no direct Phoenician ancestor.
