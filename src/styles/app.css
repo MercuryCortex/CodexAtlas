@@ -4412,30 +4412,34 @@ body.view-alphabets main.canvas { padding-bottom: 220px; }
   overflow: hidden;
 }
 
-/* Detail panel — full-width horizontal bar pinned to bottom */
+/* Detail panel — half-width floating panel, bottom-right */
 .alpha-glyph-detail { display: none; }
 .alpha-glyph-detail.active {
   display: block;
   position: fixed;
-  bottom: 0;
-  left: 44px;
-  right: 0;
+  bottom: 1.5rem;
+  right: 1.5rem;
+  width: 50vw;
+  max-width: 740px;
+  min-width: 480px;
   height: 210px;
   overflow: hidden;
   z-index: 200;
+  border-radius: 12px;
+  border: 1px solid var(--border);
   border-top: 2px solid var(--gold-soft);
-  border-left: 1px solid var(--border);
-  box-shadow: 0 -8px 32px rgba(0,0,0,0.55);
+  box-shadow: 0 8px 36px rgba(0,0,0,0.65), 0 0 0 1px rgba(212,165,90,0.07);
 }
 
 .alpha-glyph-expanded {
   background: var(--bg-1);
+  border-radius: 12px;
   padding: 1rem 2.5rem 1rem 1.25rem;
   height: 100%;
   box-sizing: border-box;
   display: grid;
-  grid-template-columns: 160px 1fr 1fr;
-  gap: 1.25rem;
+  grid-template-columns: 130px 1fr 1fr;
+  gap: 1rem;
   align-items: start;
   overflow: hidden;
   position: relative;
