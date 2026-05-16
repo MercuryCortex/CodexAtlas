@@ -4,6 +4,13 @@ _Hand-maintained. Each agent currently working in the vault appends a claim bloc
 
 ---
 
+## ~~music-gnostic-1 — Valentinian pleroma harmony + Neoplatonic theurgy sound — 2026-05-16 — FINISHED~~
+- ~~Owned: `10_music/music-valentinian-pleroma-harmony.md` (NEW), `10_music/music-neoplatonic-theurgy-sound.md` (NEW), `src/data/patterns.js` (2 new entries), `src/data/observations.js` (1 new entry)~~
+- ~~Status: FINISHED — commit `41b8ed0`. Build: 52 music nodes · 15,832 edges · 0 YAML errors · 0 dead links introduced.~~
+- ~~Key findings: Marcus the Magician's 24-letter alphabetic-musical cosmology is the most explicit ancient statement that cosmic structure IS a harmonic series (7 vowels = 7 planetary spheres = 7 scale notes); Valentinian aeon counts (8+10+12=30) map onto Pythagorean harmonic ratios. Iamblichus's phone vs. logos theory is the most philosophically rigorous ancient defense of mantra-type practice: sound independent of meaning reaches the divine where rational discourse cannot. Proclus establishes musical training as theurgic prerequisite, not aesthetic preparation. Patterns added: hermetic-synthesis-sound-node (Hermes Trismegistus as convergence point of all ancient sound theologies), vowel-chanting-three-traditions (Greek/Hindu/Egyptian independently converge on vowels as divine-contact medium). Observation added: hermetic-gnostic-sonic-spine (full Orphic→Pythagorean→Platonic→Chaldean→Iamblichean→Valentinian→Hermetic documented spine with two-chain convergence at Ficino).~~
+
+---
+
 ## ~~opus-pantheon-v2-spiral-1 — twelve items: spiral layout + tiered key figures + drag-with-edges + always-add select + nav tooltips + icon redesign — started 2026-05-17 — DONE~~
 - ~~Owned: `src/js/views/pantheon-v2.js`, `src/js/dev-panel.js`, `src/styles/app.css`, `src/js/app.js`, `index.html`~~
 - ~~Status: done — JS swept into `ac7a002` by parallel agent; CSS/index/dev-panel committed `e9a0342`. See STATUS.md.~~
