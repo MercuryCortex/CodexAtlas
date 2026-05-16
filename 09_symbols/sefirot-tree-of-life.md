@@ -5,6 +5,12 @@ name: "Sefirot / Tree of Life (Kabbalistic)"
 aka: ["the Tree", "Etz Chaim", "Ten Sefirot", "Otz Chiim", "Kabbalistic Tree"]
 families: ["Rabbinic", "Hermetic", "Modern-Esoteric"]
 category: "geometric"
+tradition-context:
+  - "[[tradition-kabbalah]]"
+  - "[[tradition-christian-kabbalah]]"
+  - "[[tradition-freemasonry]]"
+  - "[[tradition-renaissance-hermeticism]]"
+  - "[[tradition-hermeticism]]"
 appearances:
   - source: "Sefer Yetzirah (Book of Formation), ~3rd–6th century CE"
     description: "The earliest systematic enumeration of ten primordial numbers (sefirot) and twenty-two Hebrew letters as the tools of creation; the diagram is implicit rather than explicit but all subsequent Tree imagery is latent here"
@@ -18,28 +24,28 @@ appearances:
     description: "The sefirot-Tree adopted as the central organizing schema of Western ceremonial magic; every Tarot card, astrological correspondence, element and planet mapped onto the Tree; Aleister Crowley's 777 as the exhaustive correspondence table"
 cross-symbol-edges:
   - target: "hexagram"
-    type: "visual-parallel"
+    type: "syncretic-fusion"
     notes: "The Star of David (hexagram) is placed at Tiferet, the sixth sefirah and the heart of the Tree — the balance-point of the entire structure, the sefirah of the Sun, of Christ in the Hermetic reading, of beauty and harmony. The hexagram within the Tree makes the Star of David the emblem of cosmic balance"
   - target: "menorah"
-    type: "structural"
+    type: "syncretic-fusion"
     notes: "MASSIVE WIN: The seven lower sefirot (Hesed through Malkhut, with Tiferet at center) map onto the seven-branch menorah — Tiferet = the central shaft, three sefirot on each side = three branches on each side. The menorah is a diagram of the lower sefirot, making it simultaneously a ritual object and a cosmological map. The earliest menorah in Exodus 25 may encode this structure"
   - target: "tetragrammaton"
-    type: "structural"
+    type: "syncretic-fusion"
     notes: "YHWH = the name of Tiferet, the heart-sefirah; the four letters of the Tetragrammaton map onto the four worlds (Atziluth/Beriah/Yetzirah/Assiah); the full name repeated across the four worlds generates the 72 Names of God used in practical Kabbalah"
   - target: "monas-hieroglyphica"
-    type: "structural"
+    type: "syncretic-fusion"
     notes: "John Dee's Monas Hieroglyphica (1564) is an explicit synthesis of the Kabbalistic Tree with alchemical symbolism — the Monas glyph encodes the planetary-sefirot correspondences; Dee's commentary is a kabbalistic-alchemical treatise in symbol form"
   - target: "rose-cross-rosicrucian"
-    type: "structural"
+    type: "syncretic-fusion"
     notes: "The Rosicrucian Cross on the Tree of Life is a core image of both the Golden Dawn and earlier Rosicrucian texts — the rose at the center = Tiferet; the cross arms = the three pillars; the entire Rosicrucian program is a re-reading of the Tree"
   - target: "pentagram"
-    type: "structural"
+    type: "syncretic-fusion"
     notes: "The Golden Dawn maps the pentagram onto the Tree: the five points correspond to the five sefirot of the lower Tree (Hesed/Gevurah/Tiferet/Netzah/Hod); the pentagram as divine human body (Leonardo's Vitruvian Man echoes) maps onto the human form standing within the Tree"
   - target: "alpha-omega"
-    type: "structural"
+    type: "syncretic-fusion"
     notes: "MASSIVE WIN: The 22 paths of the Tree = 22 Hebrew letters = the alpha-omega totality (aleph to tav). The Tree diagram maps the complete Hebrew alphabet onto the structure of reality, making it the most elaborated form of the 'alphabet as cosmos' claim. Every letter = a path = a mode of divine energy flowing between sefirot"
   - target: "tree-of-life"
-    type: "typological"
+    type: "parallel-form"
     notes: "The Kabbalistic Tree of Life diagram is the most fully elaborated version of the universal tree-of-life cosmological motif — the cosmic tree whose roots are in the divine realm and whose branches extend to the earthly. Keter (Crown) = the divine root; Malkhut (Kingdom) = the earthly world; the Tree stands as the axis between heaven and earth"
 status: "metadata"
 refs:
@@ -111,3 +117,9 @@ The Hermetic Order of the Golden Dawn (founded London, 1888: MacGregor Mathers, 
 - **A ritual map** (each sefirah accessed through specific ritual practices, pathworkings, and invocations)
 
 The Golden Dawn synthesis turned a specifically Jewish mystical system into the backbone of the entire Western occult tradition. Every contemporary Tarot deck, every ceremonial magic system, every neo-Pagan Qabalah ultimately descends from this 1888 appropriation.
+
+## Masonic and Christian-Kabbalistic Reception
+
+**[[tradition-christian-kabbalah]]** (15th–17th c.) — the Italian-Florentine synthesis initiated by Pico della Mirandola (*Oration on the Dignity of Man*, 1486) and developed by Reuchlin (*De arte cabalistica*, 1517), Agrippa (*De Occulta Philosophia*, 1531), and Giorgi (*De Harmonia Mundi*, 1525) explicitly maps the Sefirot onto Christian theological structure: Keter = the Father, Ḥokhmah = the Son (Logos/Wisdom), Binah = the Holy Spirit. This Christian-Kabbalistic reading of the Tree was the decisive conduit for the Sefirot's entry into Renaissance Hermeticism and subsequent Masonic synthesis. See also [[monas-hieroglyphica]] — John Dee's 1564 *Monas Hieroglyphica* is an explicit Kabbalistic-alchemical synthesis, and Dee's commentary engages the Sefirot-structure directly in Theorems 19 onward.
+
+**[[tradition-freemasonry]]** — the Tree of Life is a significant symbol in the Royal Arch degree and in higher-degree Scottish Rite and York Rite Masonry. The Masonic Kabbalistic synthesis (particularly visible in 18th-c. higher-degree Masonic literature) draws on the Christian-Kabbalistic reception of the Tree; the Three Pillars of the Tree of Life (Mercy/Severity/Equilibrium) map onto Masonic lodge architecture (the two pillars [[pillars-jachin-boaz]] + the Middle Pillar of the Worshipful Master). This Masonic-Kabbalistic synthesis is documented in Mackey's *Encyclopedia of Freemasonry* (1873) and in Hamill & Gilbert's *Freemasonry: A Celebration of the Craft* (1992).

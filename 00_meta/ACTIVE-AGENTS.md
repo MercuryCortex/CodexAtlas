@@ -13,10 +13,16 @@ _Hand-maintained. Each agent currently working in the vault appends a claim bloc
 
 ---
 
-## goblin-grimoire-1 — symbols / grimoire + ceremonial magic — started 2026-05-16 — IN PROGRESS
-- Owning: baphomet.md (NEW symbol node), sator-square.md (NEW), double-headed-eagle.md (NEW), acacia.md (NEW)
+## goblin-grimoire-1 — symbols / grimoire + ceremonial magic — started 2026-05-16 — **FINISHED 2026-05-16**
+- Owned: `09_symbols/baphomet.md` (NEW symbol node), `09_symbols/sator-square.md` (NEW), `09_symbols/double-headed-eagle.md` (NEW), `09_symbols/acacia.md` (NEW)
 - Goal: Grimoire/ceremonial/pan-civilizational symbols; strict Tier sourcing; Templar fabrications documented as fabrications
-- Status: in-progress
+- Status: finished
+- Delivered:
+  - **`baphomet.md`** (symbol layer) — complements existing `03_deities/baphomet.md`; full FABRICATIONS section documenting Templar idol-worship accusation as inquisitorial fabrication (Barber 2006 + Frale 2007 Tier-1); Lévi 1854 as the actual origin; 4 variants; cross-symbol edges to pentagram, caduceus, rose-cross-rosicrucian, ouroboros; 5 Tier-1 refs.
+  - **`sator-square.md`** — MASSIVE WIN: Pompeii attestation (pre-79 CE) predates Christian origin; PATERNOSTER anagram debate documented; 2,000-year cross-tradition distribution (Roman pagan → Coptic → Ethiopian Orthodox → medieval European); cross-symbol edges to tetragrammaton, hexagram; 4 Tier-1 refs.
+  - **`double-headed-eagle.md`** — MASSIVE WIN: 9-tradition pan-civilizational table (Hittite → Seljuk Muslim → Byzantine → Habsburg → Russian Orthodox → Serbian → Albanian → Georgian → Scottish Rite); Pike's "Eagle of Lagash" documented as Tier-3 mytho-history; 2 Tier-1 + 2 Tier-2 refs.
+  - **`acacia.md`** — MASSIVE WIN: triple convergence (Egyptian Osiris / Hebrew Ark shittim wood / Masonic Hiram Abiff) same tree; DMT hypothesis (Shanon 2002) documented as Tier-3; cross-symbol edges to tree-of-life, djed-pillar, wheat-grain; 4 Tier-1 refs.
+- Commit: 6160ce3
 
 ---
 

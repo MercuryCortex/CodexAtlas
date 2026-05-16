@@ -54,6 +54,14 @@ cross-symbol-edges:
     type: "syncretic-fusion"
     notes: "Dee's Hermetic-Pythagorean construction integrates the pentagram-Pentangle five-elements vocabulary alongside the hexagram + ouroboros + ankh + Tetragrammaton in the composite monad."
     refs: ["Yates 1964", "Hakansson 2001"]
+  - target: "caduceus"
+    type: "syncretic-fusion"
+    notes: "Dee's Monas is substantially built from **caduceus elements**: the circle (Sun/prima materia) + the crescent-horns (Moon) + the cross below (four elements) + the Aries-fire glyph together reproduce and re-encode the Hermetic Mercurial iconographic vocabulary of which the caduceus is the primary emblem. Yates 1964 demonstrates that the Renaissance Hermetic revival (Ficino, Pico, Bruno, Dee) treats Hermes Trismegistus and his caduceus as the presiding authority of the entire Hermetic tradition; Dee's Monas is the most concentrated Elizabethan expression of that synthesis."
+    refs: ["Yates 1964", "Hakansson 2001"]
+  - target: "sefirot-tree-of-life"
+    type: "syncretic-fusion"
+    notes: "Dee's *Monas Hieroglyphica* (1564) is an explicit Christian-Kabbalistic synthesis in which the Kabbalistic Sefirot-correspondences are encoded in the composite glyph. Theorems 17 onward in the *Monas* engage Kabbalistic letter-mysticism; the seven symbolic elements of the Monas map onto the seven-planet-sefirot correspondences of the lower Tree of Life. Dee was demonstrably working within the Christian-Kabbalah tradition established by Pico, Reuchlin, and Agrippa, and his commentary engages the Sefirot structure directly."
+    refs: ["Yates 1964", "Hakansson 2001"]
 mystery-status: "documented"
 status: "metadata"
 refs:
@@ -137,6 +145,8 @@ The Monas is **specifically Renaissance Christian-Hermetic-Kabbalistic** in orig
 - → [[rose-cross-rosicrucian]] — *ancestor-of* (the Monas's composite-emblematic methodology is the principal Renaissance precedent for the Rosicrucian-Rose-Cross emblem-synthesis).
 - ↔ [[ouroboros]] — *parallel-form* (both Hermetic composite symbols).
 - ↔ [[tetragrammaton]] — *parallel-form* (both single-glyph compressions of cosmic-divine reality; Dee's Theorem 19 onward engages Kabbalistic letter-mysticism).
+- ↔ [[caduceus]] — *syncretic-fusion*. Dee's Monas is built from Hermetic Mercurial elements (Sun-circle, Moon-crescent, cross, Aries-fire) that re-encode the caduceus vocabulary of Hermes Trismegistus. The caduceus is the presiding Hermetic attribute; the Monas is its most concentrated Elizabethan synthesis.
+- ↔ [[sefirot-tree-of-life]] — *syncretic-fusion*. Dee's Theorems 17 onward engage Kabbalistic letter-mysticism; the seven symbolic elements of the Monas map onto the seven-planet Sefirot correspondences. Dee worked within the Pico-Reuchlin-Agrippa Christian-Kabbalah tradition and explicitly encodes Sefirot-structure in the composite glyph.
 
 ## Refs
 1. Håkansson, H. (2001). *Seeing the Word: John Dee and Renaissance Occultism*. Lund. Tier 1.

@@ -65,6 +65,14 @@ cross-symbol-edges:
     type: "visual-cognate"
     notes: "Same broader Mediterranean serpent-on-staff iconographic family — caduceus (twin-serpent) and Nehushtan (single-serpent) are structural variants of the same vertical-pole-with-coiled-serpent type. Friedlander 1992 documents the broader vocabulary."
     refs: ["Friedlander 1992", "Joines 1974"]
+  - target: "rose-cross-rosicrucian"
+    type: "parallel-form"
+    notes: "The caduceus and the rose-cross are Renaissance Hermetic sibling-symbols: the Rosicrucian program inherits the Hermetic-Mercurial tradition (Hermes Trismegistus as presiding deity of the Hermetic corpus) and the caduceus appears alongside the rose-cross in early-modern Hermetic-alchemical emblem books (Fludd *Utriusque Cosmi Historia* 1617–1621, Maier *Atalanta Fugiens* 1617). Both belong to the same Hermetic iconographic family centred on Mercurius philosophorum."
+    refs: ["Yates 1972", "Hanegraaff 2012"]
+  - target: "ouroboros"
+    type: "parallel-form"
+    notes: "The caduceus (entwined-serpent-staff) and the ouroboros (tail-eating serpent) both encode the Hermetic-alchemical serpent-as-Mercurius-philosophorum. In Renaissance alchemical iconography they are complementary emblems of the same alchemical principle: the caduceus as Mercurius in his active (mediating / transforming) aspect, the ouroboros as Mercurius in his cyclic-eternity aspect. Jung's *Collected Works* 13 (Alchemical Studies) treats both as core Mercurius emblems."
+    refs: ["Eliade 1956", "Jung CW 14"]
 mystery-status: "documented"
 status: "metadata"
 refs:
@@ -188,6 +196,8 @@ None significant.
 
 - → [[asclepian-rod]] — *appropriated-by* (the modern American medical conflation). **THE LOAD-BEARING EDGE for this pair.** The caduceus has been appropriated into the medical-symbol role properly held by the Asclepian rod since 1902. Friedlander 1992 + Wilcox & Whitham 2003 document.
 - ← [[serpent-wisdom-chthonic]] — *ancestor-of*. Mesopotamian Ningishzida's entwined-serpent-staff is one iconographic ancestor.
+- ↔ [[rose-cross-rosicrucian]] — *parallel-form*. Renaissance Hermetic siblings; both belong to the Hermetic-Mercurial iconographic family. The caduceus/Hermes Trismegistus and the rose-cross co-appear in Fludd and Maier emblem books as twin emblems of Hermetic mediation.
+- ↔ [[ouroboros]] — *parallel-form*. Both are Mercurius-philosophorum emblems in alchemical iconography — the caduceus (active/transforming aspect) and the ouroboros (cyclic/eternal aspect) are complementary representations of the same alchemical Mercurius principle.
 
 ## Refs
 

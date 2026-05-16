@@ -75,6 +75,14 @@ cross-symbol-edges:
     type: "parallel-form"
     notes: "Both encode the serpent in a non-hostile, cyclic-or-healing register (against the chaoskampf-cosmic-enemy reading). The Renaissance-alchemical ouroboros and the patristic Nehushtan-on-Christological-cross both function as serpent-as-life-rather-than-death emblems within their respective traditions."
     refs: ["Charlesworth 2010"]
+  - target: "rose-cross-rosicrucian"
+    type: "parallel-form"
+    notes: "The ouroboros is a recurrent frame-emblem in Rosicrucian iconographic literature: Michael Maier's *Atalanta Fugiens* (1617) — the foundational Rosicrucian-alchemical emblem book — pairs the ouroboros with the rose-cross in emblems 14 and 38 as twin emblems of alchemical regeneration and eternal cyclic process. The Hermetic-alchemical context is the shared vocabulary; the ouroboros as the eternal-cyclic *prima materia* and the rose-cross as the redemptive centre are complementary rather than identical."
+    refs: ["Yates 1972", "Hakansson 2001"]
+  - target: "pelican-in-piety"
+    type: "parallel-form"
+    notes: "Both are **alchemical regeneration emblems** in the Renaissance and early-modern Hermetic tradition. The ouroboros encodes cyclic self-regeneration-through-self-consumption; the pelican-in-piety encodes regeneration-through-self-sacrifice. Maier's *Atalanta Fugiens* (1617) and Khunrath's *Amphitheatrum Sapientiae* deploy both in the same alchemical-emblem tradition. They are conceptually paired as the two principal animal-regeneration symbols of the Western Hermetic-alchemical emblem-book tradition."
+    refs: ["Newman 2018", "Hakansson 2001"]
 mystery-status: "documented"
 status: "metadata"
 refs:
@@ -193,6 +201,8 @@ None significant; the symbol is well-documented across all attestation contexts.
 - ↔ [[serpent-cosmic-enemy]] — *parallel-form*. The Apophis-circling and Jörmungandr-encircling attestations share iconographic form with chaoskampf imagery but the ouroboros's semantic content is cyclic eternity, not cosmic hostility.
 - ↔ [[serpent-wisdom-chthonic]] — *parallel-form*. The Hermetic-alchemical ouroboros draws on the wisdom-serpent register.
 - ≈ [[mandala-circle]] — *visual-cognate*. Both bounded-circular cosmographic emblems; Jung 1956 explicitly reads them as parallel, but his synthesis is Jungian-interpretive rather than historical-transmission.
+- ↔ [[rose-cross-rosicrucian]] — *parallel-form*. Both are central Rosicrucian-alchemical emblems; Maier's *Atalanta Fugiens* (1617) pairs ouroboros and rose-cross as twin emblems of eternal alchemical process and redemptive centre.
+- ↔ [[pelican-in-piety]] — *parallel-form*. Both are alchemical **self-sacrificial regeneration emblems** in Hermetic emblem-book tradition (Maier 1617, Khunrath): the ouroboros regenerates through self-consumption; the pelican regenerates through self-wounding-and-feeding.
 
 ## Refs
 

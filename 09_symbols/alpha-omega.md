@@ -14,16 +14,16 @@ appearances:
     description: "\"God's seal is truth (*emet*).\" The word emet = aleph-mem-tav (first/middle/last letter of Hebrew alphabet) = linguistic totality as divine seal"
 cross-symbol-edges:
   - target: "chi-rho-labarum"
-    type: "visual-parallel"
+    type: "syncretic-fusion"
     notes: "Alpha-omega always flanks the Chi-Rho in early Christian art from Constantine onward — the two symbols form a single compositional unit: Christ as cosmic ruler + linguistic totality"
   - target: "tetragrammaton"
-    type: "typological"
+    type: "parallel-form"
     notes: "Both express divine identity through language itself — the Tetragrammaton as the unpronounceable divine name; alpha-omega as the claim that Christ embodies the totality of all names; both treat language as cosmically constitutive"
   - target: "aum-om"
-    type: "structural"
+    type: "parallel-form"
     notes: "MASSIVE WIN: AUM as the encompassing cosmic syllable (Mandukya Upanishad 1: 'all this is AUM') is a parallel totality claim from a completely independent tradition; both assert that a specific sound/letter complex contains all of reality; both used as protective divine invocations"
   - target: "sefirot-tree-of-life"
-    type: "structural"
+    type: "syncretic-fusion"
     notes: "MASSIVE WIN: The 22 Hebrew letters = 22 paths on the Kabbalistic Tree of Life; aleph-tav = the two poles of the 22-letter sequence structuring all creation. Sefer Yetzirah: God created His universe with letter, number, and communication — the alphabet IS the universe's operating code"
 related-symbols: ["[[aum-om]]", "[[sefirot-tree-of-life]]"]
 related-themes: ["[[divine-name]]", "[[creation-by-word]]", "[[logos-cosmic-reason]]"]

@@ -32,6 +32,8 @@ tradition-context:
   - "[[tradition-vedic-hinduism]]"
   - "[[tradition-hermeticism]]"
   - "[[tradition-renaissance-hermeticism]]"
+  - "[[tradition-freemasonry]]"
+  - "[[tradition-christian-kabbalah]]"
 cross-symbol-edges:
   - target: "pentagram"
     type: "parallel-form"
@@ -57,6 +59,14 @@ cross-symbol-edges:
     type: "syncretic-fusion"
     notes: "Dee's *Monas Hieroglyphica* (1564) integrates a hexagram-derived geometric core (the two interpenetrating triangles read as solar+lunar / fire+water Hermetic union-of-opposites). The Christian-Kabbalistic hexagram tradition is one of Dee's principal source-vocabularies."
     refs: ["Yates 1964", "Hakansson 2001"]
+  - target: "pyramid-triangle"
+    type: "visual-cognate"
+    notes: "The hexagram is geometrically constituted by two interlocked triangles (▲▽); in alchemical notation the upward triangle (▲) = fire and the downward triangle (▽) = water. This triangular-composition links the hexagram to the pyramid-triangle in Renaissance alchemical iconography, where the isolated upward triangle appears as the fire-sigil and the isolated downward triangle as the water-sigil (Agrippa *De Occulta Philosophia* 1531, Book I)."
+    refs: ["Yates 1964", "Davies 2009"]
+  - target: "sefirot-tree-of-life"
+    type: "syncretic-fusion"
+    notes: "In Kabbalistic cosmology the hexagram maps specifically to **Tiferet** — the sixth sefirah, the heart and balance-point of the Tree of Life, the Sun-sefirah, and the sefirah of divine beauty and harmony. The Magen David / hexagram centered at Tiferet is the dominant visual synthesis of Kabbalistic, Christian-Kabbalistic, and Golden Dawn iconography. (Scholem 1974 *Kabbalah*; Regardie 1984 *Golden Dawn*.)"
+    refs: ["Scholem 1974", "Yates 1972"]
   - target: "crescent-moon-star"
     type: "visual-cognate"
     notes: "Modern religious-civic emblems: hexagram (Magen David) for Judaism, crescent-and-star for Islam — both 19th-c.-onward emblematic crystallizations of religious-identity onto astral-geometric forms. The pair is iconographic and political rather than theological."
@@ -188,6 +198,8 @@ None significant; the medieval and modern lineages are well-documented even when
 - ↔ [[pentagram]] — *parallel-form*. Both are star-polygon magical-Hermetic emblems with overlapping medieval grimoire traditions.
 - ↔ [[vesica-piscis]] — *parallel-form*. Both are geometric "figures of cosmic harmony" in Renaissance alchemical literature.
 - ≈ self-loop (Shatkona ≈ Magen David): *visual-cognate*, NOT `ancestor-of`. Scholem 1949 is the load-bearing source for this restraint.
+- ≈ [[pyramid-triangle]] — *visual-cognate*. The hexagram is literally two interlocked triangles; in Renaissance alchemical notation the upward triangle = fire (▲) and the downward triangle = water (▽). Agrippa *De Occulta Philosophia* (1531) uses both together.
+- → [[sefirot-tree-of-life]] — *syncretic-fusion*. The hexagram corresponds to **Tiferet** (the sixth sefirah, the heart of the Tree of Life) in Kabbalistic, Christian-Kabbalistic, and Golden Dawn synthesis. The Magen David at Tiferet is the canonical synthesis image.
 
 ## Refs
 

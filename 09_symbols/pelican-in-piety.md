@@ -52,6 +52,14 @@ cross-symbol-edges:
     type: "parallel-form"
     notes: "Both are eucharistic substrate emblems: pelican as Christ-the-Sacrifice, wheat-grain as Christ-the-Bread. Co-occurring on Christian altar-frontals + ciborium decoration from medieval and early-modern periods."
     refs: ["McGowan 2014", "Ferguson 1961"]
+  - target: "ouroboros"
+    type: "parallel-form"
+    notes: "Both are **alchemical self-sacrificial regeneration emblems** in Renaissance Hermetic iconography. The ouroboros encodes cyclic regeneration-through-self-consumption; the pelican encodes regeneration-through-self-wounding-and-feeding-offspring. Maier's *Atalanta Fugiens* (1617) and Khunrath's *Amphitheatrum Sapientiae* deploy both within the same alchemical-emblem register. They are the two principal animal-regeneration symbols of the Western Hermetic emblem-book tradition — conceptually paired in the literature even when not visually combined."
+    refs: ["Newman 2018", "Yates 1972"]
+  - target: "sun-disk"
+    type: "parallel-form"
+    notes: "In alchemical exegesis the pelican's self-sacrificial blood is read as **solar regenerative energy**: the sun 'dies' at sunset and is reborn at dawn; the pelican 'dies' (wounds itself) to revive its young. Maier's solar-alchemical emblem tradition (emblems 14, 22 in *Atalanta Fugiens*) pairs solar imagery with the pelican-regeneration motif. The pelican is thus read as a solar-sacrificial emblem in the Hermetic tradition, in addition to its primary Christian Eucharistic register."
+    refs: ["Newman 2018", "Eliade 1956"]
 mystery-status: "documented"
 status: "metadata"
 refs:
@@ -146,6 +154,8 @@ The pelican-in-piety is **specifically Christian in origin** (Physiologus, c. 20
 ## Cross-symbol edges (provisional)
 - ↔ [[phoenix-bennu]] — *parallel-form*. Both Christian resurrection-and-Eucharistic animal-emblems; both alchemical regenerative-emblems. The phoenix is *fiery* regeneration; the pelican is *blood-sacrificial* regeneration. Paired in emblem-books.
 - ↔ [[fish-ichthys]] — *parallel-form*. Both early-Christian zoomorphic Eucharistic identifying-symbols.
+- ↔ [[ouroboros]] — *parallel-form*. Both alchemical self-sacrificial regeneration emblems; the pelican (self-wounding) and the ouroboros (self-consuming) are conceptually paired as the two principal animal-regeneration symbols in the Hermetic emblem-book tradition (Maier 1617, Khunrath).
+- ↔ [[sun-disk]] — *parallel-form*. In alchemical reading the pelican's blood is solar regenerative energy; Maier's *Atalanta Fugiens* (1617) pairs pelican imagery with solar-alchemical themes. The pelican as solar-sacrificial emblem in the Hermetic tradition complements its primary Christian Eucharistic register.
 
 ## Refs
 1. Curley, M.J. (trans.) (1979). *Physiologus: A Medieval Book of Nature Lore*. Chicago UP. Tier 1.

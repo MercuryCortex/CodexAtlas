@@ -63,6 +63,10 @@ cross-symbol-edges:
     type: "parallel-form"
     notes: "Renaissance and modern occult iconography routinely pairs the Eye and the Pentagram as twin cognition-and-power emblems (Lévi 1854 *Dogme et rituel de la haute magie*; Crowley 1929 *Magick in Theory and Practice*). The pairing is post-Renaissance occult-synthetic, not ancient. Visual-cognate at the level of esoteric iconographic vocabulary."
     refs: ["Hanegraaff 2012", "Yates 1972"]
+  - target: "pyramid-triangle"
+    type: "syncretic-fusion"
+    notes: "The **Eye of Providence in a triangle** (the Eye-in-triangle composition) is the canonical form of the Christian and Masonic All-Seeing-Eye emblem from the 17th c. onward, standardized through Cesare Ripa's *Iconologia* (1593) and Post-Reformation devotional iconography. The US Great Seal (1782) is the most famous modern instance: the Eye above an unfinished pyramid. In Masonic iconography the two symbols are practically never separated — the eye over the triangle/pyramid forms a single compositional unit signifying divine omniscience."
+    refs: ["Wilkinson 1994", "Ovason 2005"]
 mystery-status: "documented"
 status: "metadata"
 refs:
@@ -174,6 +178,7 @@ None significant.
 
 - ↔ [[sun-disk]] — *parallel-form*. The Eye of Ra is solar; canonical Egyptian solar-eye-disk pair.
 - ↔ [[crescent-moon-star]] — *parallel-form*. The Eye of Horus is lunar; sun-and-moon eye pair canonical.
+- → [[pyramid-triangle]] — *syncretic-fusion*. The Eye of Providence over a triangle or pyramid is the standard canonical form in Christian (17th c. onward), Masonic (c. 1750 onward), and US civic (Great Seal 1782) iconography. In Masonic lodge-room imagery the two symbols are effectively a single compositional emblem.
 
 ## Refs
 
