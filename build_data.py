@@ -297,6 +297,7 @@ FAMILY_COLORS = {
     "Andean":           "#a07050",
     "Native-American":  "#8a6a4a",
     "Pacific":          "#3a8aa4",
+    "Baltic":           "#7a9a5a",
     "Modern-Esoteric":  "#9a7ac4",
     "Academic":         "#6a7a8a",
     "Other":            "#7a8090",
@@ -307,7 +308,7 @@ def tradition_family(t: str) -> str:
         return "Other"
     s = t.lower()
     # ORDER matters here — most specific tests first.
-    if "gnostic" in s or "sethian" in s or "valentinian" in s or "thomasine" in s:
+    if "gnostic" in s or "sethian" in s or "valentinian" in s or "thomasine" in s or "cathar" in s:
         return "Gnostic"
     if "mandae" in s:
         return "Mandaean"
@@ -345,23 +346,25 @@ def tradition_family(t: str) -> str:
         return "Celtic"
     if "norse" in s or "germanic" in s or "icelandic" in s or "viking" in s or "asatru" in s or "anglo-saxon" in s:
         return "Norse"
+    if "baltic pagan" in s or "latvian" in s or "lithuanian" in s or "prussian pagan" in s:
+        return "Baltic"
     if "slavic" in s or "finnic" in s or "finnish" in s or "karelian" in s or "sami" in s or "kalevala" in s:
         return "Slavic-Finnic"
     if "greek" in s or "hellenistic" in s or "platonist" in s or "stoic" in s or "aristot" in s or "pythagor" in s or "epicurean" in s or "cynic" in s or "skeptic" in s:
         return "Greek"
     if "roman" in s:
         return "Roman"
-    if "chinese" in s or "confucian" in s or "daoist" in s or "taoist" in s or "shang" in s or "zhou" in s or "shinto" in s or "japanese" in s or "korean" in s:
+    if "chinese" in s or "confucian" in s or "daoist" in s or "daoism" in s or "taoist" in s or "taoism" in s or "shang" in s or "zhou" in s or "shinto" in s or "japanese" in s or "korean" in s:
         return "Chinese"
     if "aztec" in s or "mexica" in s or "nahuatl" in s or "maya" in s or "mayan" in s or "olmec" in s or "toltec" in s or "zapotec" in s or "mixtec" in s or "mesoamerican" in s:
         return "Mesoamerican"
     if "inca" in s or "andean" in s or "quechua" in s or "aymara" in s or "moche" in s:
         return "Andean"
-    if "lakota" in s or "iroquois" in s or "navajo" in s or "hopi" in s or "cherokee" in s or "algonqu" in s or "native american" in s or "first nations" in s or "anishin" in s or "pueblo" in s:
+    if "lakota" in s or "iroquois" in s or "haudenosaunee" in s or "navajo" in s or "hopi" in s or "cherokee" in s or "algonqu" in s or "native american" in s or "first nations" in s or "anishin" in s or "pueblo" in s or "diné" in s:
         return "Native-American"
-    if "polynesian" in s or "maori" in s or "hawaiian" in s or "samoan" in s or "tongan" in s or "aboriginal" in s or "australian" in s or "torres" in s or "papuan" in s or "melanesian" in s or "pacific" in s:
+    if "polynesian" in s or "maori" in s or "māori" in s or "hawaiian" in s or "samoan" in s or "tongan" in s or "aboriginal" in s or "australian" in s or "torres" in s or "papuan" in s or "melanesian" in s or "pacific" in s:
         return "Pacific"
-    if "theosoph" in s or "anthroposoph" in s or "thelem" in s or "rosic" in s or "occult" in s or "gurdj" in s or "esoteric" in s:
+    if "theosoph" in s or "anthroposoph" in s or "thelem" in s or "rosic" in s or "occult" in s or "gurdj" in s or "esoteric" in s or "blakean" in s or "blake" in s or "tenrikyo" in s or "donghak" in s or "cao dai" in s or "cao-dai" in s:
         return "Modern-Esoteric"
     if "academic" in s or "comparative religion" in s or "jungian" in s or "religionsgeschichtl" in s or "phenomenology of religion" in s:
         return "Academic"

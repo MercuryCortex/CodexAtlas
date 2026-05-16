@@ -898,7 +898,7 @@ VIEWS.pantheon = {
       function familyFromTraditionSlug(slug) {
         const s = String(slug || '').toLowerCase();
         if (!s) return null;
-        if (/gnostic|sethian|valentinian|thomasine/.test(s))                                return 'Gnostic';
+        if (/gnostic|sethian|valentinian|thomasine|cathar/.test(s))                         return 'Gnostic';
         if (/mandae/.test(s))                                                                return 'Mandaean';
         if (/manichae/.test(s))                                                              return 'Manichaean';
         if (/neoplaton|plotin|iambl|procl/.test(s))                                          return 'Neoplatonist';
@@ -916,11 +916,12 @@ VIEWS.pantheon = {
         if (/mesopotam|sumer|akkad|babylonian|assyrian|canaanite|ugarit|phoeni/.test(s))     return 'Mesopotamian';
         if (/norse|germanic|asatru/.test(s))                                                 return 'Norse';
         if (/celt|druid/.test(s))                                                            return 'Celtic';
+        if (/baltic-pagan|latvian|lithuanian/.test(s))                                        return 'Baltic';
         if (/slavic|finno|finn|karel/.test(s))                                               return 'Slavic-Finnic';
         if (/yoruba|ifa|vodou|santeria|lucumi|african|akan|dogon|zulu/.test(s))              return 'African';
         if (/aztec|maya|mexica|inca|andean|mesoamerican/.test(s))                            return 'Mesoamerican';
-        if (/polynesian|maori|hawaiian|pacific|aboriginal|melanesian/.test(s))               return 'Pacific';
-        if (/native-american|navajo|hopi|iroquois|lakota/.test(s))                           return 'Native-American';
+        if (/polynesian|maori|māori|hawaiian|pacific|aboriginal|melanesian/.test(s))    return 'Pacific';
+        if (/native-american|navajo|hopi|iroquois|haudenosaunee|lakota/.test(s))             return 'Native-American';
         if (/confucian|daoist|chinese|tao\b/.test(s))                                        return 'Chinese';
         return null;
       }
