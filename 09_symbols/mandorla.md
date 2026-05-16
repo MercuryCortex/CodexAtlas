@@ -5,12 +5,12 @@ name: "Mandorla"
 aka: ["vesica aureola", "vesica gloria", "*vesica piscis* aureole", "almond-shaped aureole", "mandorle", "*prabhāmaṇḍala*", "*torana*", "glory", "aureola"]
 category: "geometric"
 families: ["Christian", "Buddhist", "Hindu"]
-period-earliest: 400
+period-earliest: 432
 period-latest: 2026
-region: "Late Roman / Early Christian art (origin in western use); parallel Buddhist tradition in Gandhara and Central Asia from c. 1st-4th c. CE"
+region: "Late Roman / Early Christian art (Santa Maria Maggiore, Rome, c. 432-440 CE — earliest confirmed Western instance); parallel Buddhist tradition in Gandhara and Central Asia from c. 1st-4th c. CE"
 variants:
   - id: "maiestas-domini-mandorla"
-    description: "**Christ in Majesty (*Maiestas Domini*) mandorla** — the standard Western Christian mandorla: the enthroned Christ is depicted within an almond-shaped aureole of golden or rainbow-colored light at the moment of his Second Coming or divine enthronement. Principal locus: Romanesque tympana (the carved semicircular space above the main portal of a Romanesque or Gothic church). Major examples: Chartres Cathedral (Royal Portal, c. 1145 CE), Vézelay Abbey (c. 1120-1135 CE), Moissac Abbey (c. 1115-1130 CE), Autun Cathedral (Gislebertus, c. 1130-1145 CE). The earliest surviving mandorla images are in Roman catacomb paintings and Ravenna mosaic programs (5th-6th c. CE)."
+    description: "**Christ in Majesty (*Maiestas Domini*) mandorla** — the standard Western Christian mandorla: the enthroned Christ is depicted within an almond-shaped aureole of golden or rainbow-colored light at the moment of his Second Coming or divine enthronement. **Earliest confirmed example**: the Basilica di Santa Maria Maggiore, Rome (Sixtus III, c. 432-440 CE) — the 5th-century mosaic that Britannica identifies as the first appearance of the mandorla form. Principal later locus: Romanesque tympana. Major examples: Chartres Cathedral (Royal Portal, c. 1145 CE), Vézelay Abbey (c. 1120-1135 CE), Moissac Abbey (c. 1115-1130 CE), Autun Cathedral (Gislebertus, c. 1130-1145 CE). The Ravenna mosaic programs (San Vitale, Sant'Apollinare) extend the form in the Eastern imperial context (5th-6th c. CE)."
   - id: "assumption-mary-mandorla"
     description: "**The Virgin Mary at the Assumption mandorla** — the Virgin Mary is depicted within a mandorla at the moment of her bodily Assumption into heaven (formally defined as Catholic dogma 1950, but the iconographic tradition is medieval). The Assumption mandorla signals Mary's transcendence of earth at the moment of her elevation: the same containment-geometry used for Christ's ascension and parousia frames her bodily glorification. This form is particularly prevalent in Italian Gothic and Renaissance painting (Giotto, Fra Angelico, Titian's *Assumption of the Virgin*, 1516-1518)."
   - id: "buddhist-prabhemandala"
@@ -94,9 +94,10 @@ The mandorla IS the **vesica piscis** ([[vesica-piscis]]) — the lens-shaped ov
 The mandorla's meaning is spatial and ontological: **the divine figure at the intersection point of two worlds, belonging to both and transcending both**, contained in the shape that mathematically IS the intersection of two realms.
 
 ## Earliest attestation
-- **c. 4th-5th c. CE** — earliest surviving Christian mandorla images in Roman catacomb paintings and Ravenna mosaic programs: the Christ-in-glory figure within an almond-shaped or oval light.
 - **c. 1st-4th c. CE (Buddhist)** — Gandharan Buddhist sculpture (modern Pakistan/Afghanistan) develops the *prabhāmaṇḍala* body halo in direct Hellenistic-influenced Buddhist art. Whether the Buddhist and Christian mandorla developed in conversation or independently via common Hellenistic precedent is debated.
-- **c. 1100-1150 CE** — the Romanesque Maiestas Domini tympanum reaches its fullest expression (Vézelay 1120-1135, Moissac c. 1115-1130, Autun c. 1130-1145, Chartres Royal Portal c. 1145). The mandorla is now the standard frame for the enthroned Christ in public monumental sculpture.
+- **5th century CE (Christian, precise)** — The **Basilica di Santa Maria Maggiore**, Rome (mosaics commissioned by Pope Sixtus III, c. 432-440 CE), contains the earliest precisely dated Christian mandorla. This is the Britannica-confirmed first appearance — the apse mosaic's Christ-figure in an almond-shaped aureole predates all other major surviving examples. Grabar (1968) places the form's emergence in 5th-century Roman Christian art.
+- **c. 5th-6th c. CE** — Ravenna mosaic programs (San Vitale, Sant'Apollinare Nuovo) develop the mandorla further in the Eastern imperial context.
+- **c. 1100-1150 CE** — the Romanesque Maiestas Domini tympanum reaches its fullest public expression (Vézelay 1120-1135, Moissac c. 1115-1130, Autun c. 1130-1145, Chartres Royal Portal c. 1145).
 
 ## Meaning(s) attested
 

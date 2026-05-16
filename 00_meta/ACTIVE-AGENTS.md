@@ -4,10 +4,10 @@ _Hand-maintained. Each agent currently working in the vault appends a claim bloc
 
 ---
 
-## sonnet-sacred-center-1 — omphalos + labyrinth + mandorla symbols — started 2026-05-16 — IN PROGRESS
-- Owning: `09_symbols/omphalos.md` (NEW), `09_symbols/labyrinth.md` (NEW, completing goblin-pattern-mystery-1 gap), `09_symbols/mandorla.md` (NEW)
-- Goal: Five-tradition omphalos cluster (Delphi/Jerusalem/Mecca/Varanasi/Cusco-navel); Egyptian labyrinth as origin-point; mandorla earliest attestation 5th c. CE; all three with research briefing incorporated
-- Status: in-progress
+## ~~sonnet-sacred-center-1 — omphalos + labyrinth + mandorla symbol upgrades — finished 2026-05-16 — DONE~~
+- ~~Owned: `09_symbols/omphalos.md` (augmented), `09_symbols/labyrinth.md` (augmented), `09_symbols/mandorla.md` (augmented)~~
+- ~~Goal: Research briefing incorporated — Cusco/ceque omphalos + Septuagint bridge + Egyptian labyrinth + Santa Maria Maggiore mandorla earliest attestation~~
+- ~~Status: done — see STATUS.md~~
 
 ---
 

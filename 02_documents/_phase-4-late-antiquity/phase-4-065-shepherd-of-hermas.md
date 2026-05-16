@@ -85,6 +85,58 @@ A sprawling Christian apocalyptic-visionary work in three structural divisions �
 - → [[phase-4-023-irenaeus-against-heresies]] — *direct-quote*: Iren. *AH* 4.20.2 cites Hermas as scripture.
 - → [[phase-4-027-eusebius-ecclesiastical-history]] — *discussion-of*: HE 3.3, where Eusebius records its disputed canonical status.
 
+## The Two Spirits in the Individual Soul — The Fullest Christian Internalization
+
+The Shepherd of Hermas represents the most thoroughgoing **psychological internalization** of the Two Spirits doctrine in all early Christian literature.
+
+**The structure.** *Mandate 6* presents the moral architecture of the human being as two angels: "There are two angels with man — one of righteousness and one of wickedness." The angel of righteousness is "delicate and shy and gentle and tranquil" — its presence produces joy, good thoughts, and desire for righteousness. The angel of wickedness is "sharp-tempered and bitter and foolish" — its presence produces anger, lust, and foolish pleasure. The human being is the battleground on which these two angels fight for control.
+
+**The genealogy.** This is the **Christian moral-psychological extension** of a tradition that runs:
+- Zoroastrian *spənta mainyu* / *angra mainyu* (beneficent spirit / destructive spirit) — cosmic pair
+- Qumran's *Two Spirits* doctrine (1QS 3:13–4:26, → [[phase-3-011-dead-sea-scrolls]]) — angelic-cosmic pair acting through human beings
+- Epistle of Barnabas ch. 18 (→ [[phase-4-064-epistle-of-barnabas]]) — two angels of light and darkness
+- Didache ch. 1–6 (→ [[phase-4-061-didache]]) — two paths (way of life, way of death)
+- **Shepherd of Hermas Mandate 6** — two angels individualized, internalized into moral psychology
+
+Each step moves the cosmic dualism further *inside* the human person. At Qumran the spirits act on human beings cosmically; in Hermas the spirits *are* the structure of every individual's inner life. This is the move from **cosmic theology** to **moral psychology** — a move that Christian confessional practice, examination of conscience, and later Catholic moral theology will develop for two millennia.
+
+**Parallel with Stoic *daimōn*.** The Stoics located the moral self in the *hēgemonikon* (ruling faculty) and imagined a personal *daimōn* — a divine companion-reason guiding the rational soul. Marcus Aurelius's *Meditations* address this inner guide repeatedly. Hermas's two-angels anthropology is a Christian reframing of the same philosophical-psychological space: the inner life as the site of divine-demonic contest. The Stoic substrate is explicit in the *Mandates*' systematic virtue-and-vice catalogue.
+
+## Canon, Anti-Canon, and the Historical-Recency Criterion
+
+The Shepherd's canonical history is one of the most revealing episodes in the formation of the Christian Bible.
+
+**Why it was nearly canonical.** The Shepherd was treated as scripture by Irenaeus of Lyon (~180 CE, → [[phase-4-023-irenaeus-against-heresies]]), Clement of Alexandria, Origen, and Athanasius. It is **included in Codex Sinaiticus** (~350 CE) as a canonical appendix — the most important 4th-century Bible manuscript treats the Shepherd as part of scripture. Eastern Christianity's more inclusive canonical instinct kept it in scriptural circulation far longer than the West.
+
+**Why it was excluded from the Western canon.** The *Muratorian Fragment* (~170/180 CE — the earliest extant Western canonical list) excludes the Shepherd on an explicitly **historical-recency criterion**: "The Shepherd was very recently in our own times written by Hermas, while his brother Pius was occupying the bishop's seat of the church of the city of Rome; and therefore it ought indeed to be read; but it cannot be read publicly to the people in church either among the prophets, whose number is complete, or among the apostles, for it is after their time." 
+
+This is the **first known articulation of the *rule* that canonical books must be apostolic-era documents**. The criterion that excludes the Shepherd — recency — becomes the formal principle for closing the canon. The Shepherd's exclusion is not an accident; it is the moment when the Western church defines what "apostolic" means for canonicity.
+
+**The Montanist shadow.** The Shepherd's charismatic-prophetic mode — Hermas receiving visions, presenting them as fresh revelation, claiming angel-mediated divine speech — was precisely the kind of Christianity that *Montanism* (the 2nd-c. charismatic prophetic movement) embodied. Tertullian, before he became a Montanist, accepted the Shepherd; after his conversion to Montanism, he rejected it as a book that permitted post-baptismal sexual sin. The Shepherd is embedded in the live Montanist controversy about ongoing prophetic revelation. Its canonical exclusion tracks the suppression of charismatic-prophetic Christianity by institutional-episcopal Christianity.
+
+## The Tower of the Church — The Most Elaborate Ecclesial Allegory
+
+*Vision 3* and *Similitude 9* contain the most extensive church-as-building allegory in all early Christian literature — the **Tower built of living stones**.
+
+**The vision.** Six young men build a great tower over water. Stones of various colors, shapes, and sources are brought for the building: some fit perfectly and are laid in; some are rejected and thrown aside; some are round (needing to be squared, representing sins that must be removed before they can be used). The tower-still-under-construction is the Church — not yet complete, still accepting repentant sinners who reshape themselves to fit.
+
+**The theological argument.** The tower's incompleteness is the *Shepherd*'s major theological intervention: because the tower is not yet finished, there is still time for those who have sinned after baptism to repent and re-enter. The "one post-baptismal repentance" the Shepherd offers is not laxity — it is theologically grounded in eschatological *kairos* (appointed time): God has left the tower unfinished specifically to permit repentance. When the tower is finished (i.e., at the end of time), the gate closes.
+
+**The significance.** This ecclesiology — the church as an imperfect, still-building structure that includes sinners in process — is a fundamentally different vision from the emerging institutional church's claim to apostolic purity. The Shepherd's church is porous, merciful, eschatologically oriented. Its post-baptismal repentance theology directly conflicts with the rigorist position (associated later with Novatianism, then Donatism) that the church must be a body of the pure. The Shepherd defends mercy; rigorism defends purity. This argument runs through the entire subsequent history of Western Christianity.
+
+## Connections (expanded)
+- → [[tradition-early-christianity]] | key-document | Largest early Christian non-canonical work; nearly canonical in the East; foundational for Roman penitential practice
+- → [[tradition-zoroastrianism]] | deep-substrate | The two-angels moral psychology traces back (via Qumran Two Spirits) to Zoroastrian *spənta/angra* cosmic pair
+- → [[phase-3-011-dead-sea-scrolls]] | shared-substrate | Mandate 6's two angels is the most individualized Christian development of the Qumran Two Spirits doctrine (1QS 3–4)
+- → [[phase-4-064-epistle-of-barnabas]] | parallel-recension | Barnabas ch. 18 uses the same two-angels framing; both draw on the Jewish Two Ways/Two Angels tradition
+- → [[phase-4-061-didache]] | shared-substrate | The Didache's Two Ways and the Shepherd's two-angels Mandate 6 are Christian variants of the same moral-dualistic substrate
+- → [[phase-4-062-1-clement]] | shared-milieu | Both are Roman Christian documents; same college-of-presbyters governance picture (contra Ignatian monepiscopacy)
+- → [[phase-4-023-irenaeus-against-heresies]] | quoted-as-scripture | Irenaeus cites the Shepherd as scripture (AH 4.20.2) — evidence of its near-canonical status
+- → [[stoic-virtue]] | substrate-wire | The *Mandates*' systematic virtue-vice catalogue is structurally Stoic-Christian compendium; the two-angels framework parallels the Stoic *daimōn* and *hēgemonikon*
+- → [[hermas-of-rome]] | authored-by | The only Roman Christian author known only through self-presentation in a visionary text
+- → [[hermas]] | also-known-as | Note: `hermas.md` and `hermas-of-rome.md` both exist — the subject of this document
+- → [[clement-of-rome]] | mentioned-in | Named as Hermas's contemporary courier (Vis. 2.4.3); connects the Shepherd to the 1 Clement network
+
 ## Disputes
 - **Date and unity.** Stratification is consensus: at least three composition layers across ~+95/+150, by a single author (Hermas) over decades. *Vis. 1–4* earlier; *Vis. 5, Mand., Sim.* later; final redaction under Pius (~+140/+155).
 - **Canonical status.** Active scriptural reception ~+150/+325 in many Christian communities; never formally canonized in the Western tradition; Eastern reception more enduring. The Sinaiticus inclusion documents the *active* uncertainty in the 4th c.
