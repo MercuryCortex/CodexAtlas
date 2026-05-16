@@ -630,6 +630,7 @@ function selectNode(id, opensDetail) {
     document.body.classList.remove('detail-collapsed');
     const dt = document.getElementById('detail-toggle');
     if (dt) dt.textContent = '›';
+    if (window._codexAnimateDetail) window._codexAnimateDetail();
   }
   d3.selectAll('.node-circle').classed('selected', d => d && d.id === id);
 }
@@ -8688,7 +8689,18 @@ if (_sideTabEl) _sideTabEl.addEventListener('click', () => {
   document.body.classList.toggle('nav-collapsed');
   _sideTabEl.textContent = document.body.classList.contains('nav-collapsed') ? '›' : '‹';
 });
+// Detail panel toggle. Cancels any in-flight CSS animations on aside.detail
+// before flipping the class — a defensive guard against the stuck-transition
+// state that can show up when the tab is rapidly hidden/shown mid-animation.
+function _kickDetailToggle() {
+  const aside = document.getElementById('detail');
+  if (aside && aside.getAnimations) {
+    aside.getAnimations().forEach(a => { try { a.cancel(); } catch (e) {} });
+  }
+}
+window._codexAnimateDetail = _kickDetailToggle;
 document.getElementById('detail-toggle').addEventListener('click', () => {
+  _kickDetailToggle();
   document.body.classList.toggle('detail-collapsed');
   document.getElementById('detail-toggle').textContent = document.body.classList.contains('detail-collapsed') ? '‹' : '›';
 });
@@ -8715,6 +8727,7 @@ document.getElementById('svg').addEventListener('click', (ev) => {
     document.body.classList.add('detail-collapsed');
     const dt = document.getElementById('detail-toggle');
     if (dt) dt.textContent = '‹';
+    if (window._codexAnimateDetail) window._codexAnimateDetail();
   }
 });
 

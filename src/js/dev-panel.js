@@ -82,7 +82,7 @@
       id: 'camera',
       title: 'Camera',
       items: [
-        { id: 'cameraRatio', label: 'Zoom ratio', min: 0.40, max: 1.60, step: 0.02, default: 1.20, target: 'camera', fmt: v => v.toFixed(2) + '×' },
+        { id: 'cameraRatio', label: 'Zoom ratio', min: 0.30, max: 1.80, step: 0.02, default: 1.32, target: 'camera', fmt: v => v.toFixed(2) + '×' },
       ]
     },
     {

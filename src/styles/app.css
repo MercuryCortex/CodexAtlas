@@ -845,6 +845,9 @@ body.zoom-visible.detail-collapsed .view-header { right: calc(var(--detail-w-col
 .tl-family-select option { background: var(--bg-1); color: var(--text-1); }
 
 /* DETAIL */
+/* Panel uses width-based collapse with a stuck-animation guard in JS (see
+   detail-toggle handler). The map pane is decoupled from --eff-detail-w so
+   the panel slide never re-flows the diagram. */
 aside.detail {
   position: fixed;
   right: 0; top: 0; bottom: 0;
@@ -1840,14 +1843,18 @@ body.view-atlas main.canvas { background: var(--bg-0); }
 }
 
 /* Pantheon v2 (WebGL R&D) — sigma.js mount + DOM-overlay family rim labels.
-   Hidden behind ?webgl=1 URL flag. Same positioning as other live panes. */
+   Hidden behind ?webgl=1 URL flag.
+   The detail panel is treated as a FLOATING overlay — pane geometry does NOT
+   track --eff-detail-w, so opening/closing the panel never resizes the map
+   (no reflow, no sigma resize, no jitter). The collapsed-rail width is the
+   only right-edge inset we honour. */
 .pantheon-v2-pane {
   position: absolute;
   top: 56px; bottom: 24px;
   left: calc(var(--eff-nav-w) + 24px);
-  right: calc(var(--eff-detail-w) + 24px);
+  right: calc(var(--detail-w-collapsed) + 24px);
   overflow: hidden;
-  transition: left var(--t-layout) var(--ease), right var(--t-layout) var(--ease);
+  transition: left var(--t-layout) var(--ease);
 }
 .pantheon-v2-pane canvas { display: block; }
 
@@ -1858,7 +1865,13 @@ body.view-atlas main.canvas { background: var(--bg-0); }
   position: absolute; inset: 0;
   pointer-events: none;
   overflow: visible;
+  /* Promote to its own compositor layer so per-frame transform updates
+     (afterRender → translate/scale) don't trigger paint of the whole pane.
+     Massive smoothness win during zoom/pan. */
+  will-change: transform;
 }
+.ph2-hulls-g, .ph2-edges-g, .ph2-ticks-g { will-change: transform; }
+.ph2-node-labels-overlay, .ph2-rim-overlay { will-change: contents; }
 /* HULLS — rounded annular wedges, one per family. Geometry matches
    production's .sector-hull (Rinner-22 → Router+22, padAngle 0.014,
    cornerRadius 8). Quiet by default; hot when family-filter is locked. */

@@ -514,16 +514,30 @@
 
     // ----- sigma renderer -----
     let _hoverId = null;
-    let _selectedId = null;
+    let _selectedId = null;       // most-recently-clicked node (anchor of the locked set)
+    let _lockedSet = new Set();   // additive selection — mirrors P1's STATE.lockedSet
 
     // INTERACTIVITY STATE — drives the reducers below.
     //   _labelsMode:  'hub' (degree≥HUB_DEGREE_THRESHOLD, default) | 'all' | 'off'
     //   _egoFocus:    when true + a node is selected, ONLY its 1-hop neighbourhood renders
     //   _familyFilter: family name string (null = no filter) — set by family-legend clicks
+    //   _lockedSet:   persistent multi-select — clicking a node anywhere starts
+    //                 the set; clicking a node that touches the existing set
+    //                 ADDS its neighbourhood (P1's sticky/additive behaviour);
+    //                 clicking a node that doesn't touch resets the set.
+    //                 Empty stage click clears the set.
     let _labelsMode = 'hub';
     let _egoFocus = false;
     let _familyFilter = null;
     let _tierOverlay = false;
+
+    // 1-hop neighbourhood (incl. self) — used by additive selection.
+    function neighborhoodOf(id) {
+      const out = new Set([id]);
+      if (!graph.hasNode(id)) return out;
+      graph.forEachNeighbor(id, (nid) => out.add(nid));
+      return out;
+    }
 
     const settings = {
       renderEdgeLabels: false,
@@ -574,9 +588,23 @@
           out.color = TIER_FILL[tierKey] || TIER_FILL.none;
         }
 
-        // HOVER / SELECT highlighting.
-        if (_hoverId === id || _selectedId === id) {
-          out.highlighted = true;
+        // STICKY LOCK — when a locked set is active, anything outside it dims.
+        // Hover still trumps below.
+        const hasLock = _lockedSet.size > 0;
+        if (hasLock && !_lockedSet.has(id)) {
+          out.color = '#2f3138';
+          out.label = '';
+        }
+
+        // HOVER / SELECT — circular size-bump instead of sigma's stock
+        // `highlighted: true` ring (which renders as a square-ish halo at
+        // small node sizes because the hoverNodes canvas re-strokes the
+        // outline). Same circle program → always perfectly round.
+        if (_hoverId === id) {
+          out.size = (out.size || 4) + 4;
+          out.zIndex = 2;
+        } else if (_selectedId === id) {
+          out.size = (out.size || 4) + 2;
           out.zIndex = 2;
         } else if (_hoverId) {
           const isNeighbor =
@@ -602,13 +630,14 @@
     };
 
     const sigma = new window.Sigma(graph, rootEl, settings);
-    // Ratio 1.20 = zoom OUT past sigma's autofit (which sizes to the node bbox
-    // only). Rim labels sit at world R = Router + 56 = 596, outside the node
-    // bbox, so autofit clips them. 1.20 reveals all 28 family labels at 1440px
-    // viewport without leaving excessive dead space. Dev panel can still override.
+    // Ratio 1.32 = zoom OUT past sigma's autofit so rim labels (at world
+    // R = Router + 56 = 596, outside the node bbox) clear, with room around
+    // the diagram for breathing. Mirrors P1's reset feel — diagram floats
+    // comfortably inside the pane instead of crowding the rim.
+    // Dev panel can still override.
     try {
       const r = window.CODEX_DEV?.settings?.cameraRatio;
-      sigma.getCamera().setState({ ratio: typeof r === 'number' ? r : 1.20 });
+      sigma.getCamera().setState({ ratio: typeof r === 'number' ? r : 1.32 });
       sigma.refresh();
     } catch (e) {}
 
@@ -772,7 +801,11 @@
       ticksG.setAttribute('transform', transform);
     }
 
-    // ----- HOVER DIM ON EDGES (mirrors sigma's reducer behavior) -----
+    // ----- HOVER + LOCK DIM ON EDGES (mirrors sigma's reducer behaviour) -----
+    // Three priority layers, top wins:
+    //   (1) hover present   → incident hot, rest dim
+    //   (2) locked set      → edges where BOTH endpoints in set hot, rest dim
+    //   (3) idle            → all idle
     function applyEdgeHoverState() {
       if (_hoverId) {
         edgeEls.forEach(({ el, s, t }) => {
@@ -780,12 +813,20 @@
           el.classList.toggle('dim', !incident);
           el.classList.toggle('hot', incident);
         });
-      } else {
-        edgeEls.forEach(({ el }) => {
-          el.classList.remove('dim');
-          el.classList.remove('hot');
-        });
+        return;
       }
+      if (_lockedSet.size > 0) {
+        edgeEls.forEach(({ el, s, t }) => {
+          const inLock = _lockedSet.has(s) && _lockedSet.has(t);
+          el.classList.toggle('hot', inLock);
+          el.classList.toggle('dim', !inLock);
+        });
+        return;
+      }
+      edgeEls.forEach(({ el }) => {
+        el.classList.remove('dim');
+        el.classList.remove('hot');
+      });
     }
     function applyHullFilterState() {
       hullEls.forEach(el => {
@@ -950,14 +991,33 @@
       _mouseWorld = null;
       kickLiveness();
     });
+    // CLICK NODE — additive multi-select (P1 parity, app.js:1274-1291).
+    // First click on empty state → lockedSet = node + 1-hop neighbours.
+    // Subsequent click whose neighbourhood TOUCHES the existing lock →
+    //   ADDS those neighbours (extends the investigation subgraph).
+    // Subsequent click whose neighbourhood does NOT touch the lock →
+    //   RESETS the lock to this node + neighbours.
     sigma.on('clickNode', ({ node }) => {
       _selectedId = node;
+      const nbrs = neighborhoodOf(node);
+      let touchesLock = false;
+      if (_lockedSet.size > 0) {
+        for (const id of nbrs) { if (_lockedSet.has(id)) { touchesLock = true; break; } }
+      }
+      if (_lockedSet.size === 0 || !touchesLock) {
+        _lockedSet = new Set(nbrs);
+      } else {
+        nbrs.forEach(id => _lockedSet.add(id));
+      }
       sigma.refresh({ skipIndexation: true });
+      applyEdgeHoverState();
+      if (typeof applyLabelHoverDim === 'function') applyLabelHoverDim();
       if (window.selectNode) window.selectNode(node, true);
     });
     sigma.on('clickStage', () => {
       _selectedId = null;
       _hoverId = null;
+      _lockedSet = new Set();
       sigma.refresh({ skipIndexation: true });
       applyEdgeHoverState();
       hideThumbCard();
@@ -1014,21 +1074,39 @@
       });
     });
 
+    // ZOOM-TIERED degree threshold: as the user zooms in, lower-degree deities
+    // earn their label slot. The deconfliction pass still culls overlaps, so
+    // tighter rings auto-thin. At default ratio (~1.32) you see the top hubs;
+    // zoom to ~0.5 to read the minor pantheon members.
+    function dynamicHubThreshold() {
+      let ratio = 1.32;
+      try { ratio = sigma.getCamera().getState().ratio || 1.32; } catch (e) {}
+      if (ratio >= 1.10) return 6;
+      if (ratio >= 0.80) return 4;
+      if (ratio >= 0.55) return 2;
+      if (ratio >= 0.35) return 1;
+      return 0;
+    }
     function updateNodeLabelVisibility() {
       const devThresh = window.CODEX_DEV?.settings?.hubThreshold;
+      const thresh = devThresh != null ? devThresh : dynamicHubThreshold();
       nodeLabelEntries.forEach(L => {
         let show = true;
         if (_labelsMode === 'off') show = false;
-        else if (_labelsMode === 'hub') {
-          const isHub = devThresh != null ? (L.deg >= devThresh) : _hubIdSet.has(L.id);
-          show = isHub;
-        }
+        else if (_labelsMode === 'hub') show = L.deg >= thresh;
         if (_familyFilter && L.family !== _familyFilter) show = false;
         L.el.style.display = show ? '' : 'none';
         if (show) L.el.style.visibility = '';
       });
       scheduleDeconflict();
     }
+    // Re-evaluate visibility on camera moves (zoom/pan). Debounced via the
+    // deconflict timer chain so wheel-zoom doesn't thrash the DOM.
+    let _labelRefreshTimer = null;
+    sigma.getCamera().on('updated', () => {
+      clearTimeout(_labelRefreshTimer);
+      _labelRefreshTimer = setTimeout(updateNodeLabelVisibility, 40);
+    });
 
     function syncNodeLabels() {
       // Re-project visible label world-positions to screen-space via sigma camera.
@@ -1085,15 +1163,20 @@
     }
 
     function applyLabelHoverDim() {
-      if (!_hoverId) {
-        for (const L of nodeLabelEntries) L.el.classList.remove('dim');
+      // Hover trumps lock. Lock trumps idle.
+      if (_hoverId) {
+        for (const L of nodeLabelEntries) {
+          const isNeighbor = (L.id === _hoverId) ||
+            graph.hasEdge(L.id, _hoverId) || graph.hasEdge(_hoverId, L.id);
+          L.el.classList.toggle('dim', !isNeighbor);
+        }
         return;
       }
-      for (const L of nodeLabelEntries) {
-        const isNeighbor = (L.id === _hoverId) ||
-          graph.hasEdge(L.id, _hoverId) || graph.hasEdge(_hoverId, L.id);
-        L.el.classList.toggle('dim', !isNeighbor);
+      if (_lockedSet.size > 0) {
+        for (const L of nodeLabelEntries) L.el.classList.toggle('dim', !_lockedSet.has(L.id));
+        return;
       }
+      for (const L of nodeLabelEntries) L.el.classList.remove('dim');
     }
 
     // Initial paint + bind camera sync
