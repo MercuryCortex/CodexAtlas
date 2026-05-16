@@ -4,6 +4,17 @@ _Hand-maintained. Each agent currently working in the vault appends a claim bloc
 
 ---
 
+## ~~alphabet-ui-expansion-1 — FINISHED (2026-05-17)~~
+- ~~Glyph viewer UI: rounded cards, sticky bottom-left detail panel, horizontal 3-column layout~~
+- ~~New Ogham tab (12 entries) + Elder Futhark tab (14 entries)~~
+- ~~Cuneiform moved to dedicated tab with independence framing + 20 signs~~
+- ~~Origin chain: 21→28 nodes, 16→23 edges; Nabataean/South Arabian/Sogdian/Mongolian/Ethiopic/Oracle Bone/Hangul added~~
+- ~~ROWS fix (10→12) prevents clipping of bottom-row nodes~~
+- ~~New vault node: alphabet-quran-sacred-language~~
+- ~~Commit: 8b2380f (origin chain) + prior session commits~~
+
+---
+
 ## ~~pantheon-deity-sweep-1 — FINISHED (2026-05-16 goblin audit)~~
 - ~~502 → 530 deity nodes · 0 nodes in Other · 29 families (Baltic added)~~
 - ~~6 family-mapping bugs fixed in build_data.py + app.js (commits c535e12, 5a3a221)~~
