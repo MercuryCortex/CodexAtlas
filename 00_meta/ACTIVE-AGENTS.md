@@ -67,6 +67,14 @@ _Hand-maintained. Each agent currently working in the vault appends a claim bloc
 
 ---
 
+## ~~alphabet-south-semitic-1 — 2 south-semitic script nodes — FINISHED~~
+- ~~Owned: `11_alphabets/alphabet-geez-ethiopic.md` (NEW full), `11_alphabets/alphabet-south-arabian.md` (NEW full)~~
+- ~~No stubs needed — all 20 wikilink targets already existed~~
+- ~~Status: FINISHED — commit below. Build: 2 nodes · 20 wikilinks verified · 0 dead links introduced~~
+- ~~MASSIVE WIN edges: (1) Ge'ez independently invented vowel notation (abugida order-system) in the same 2-century window as Masoretic pointing and Avestan vowel-precision — three independent solutions to the same structural problem, zero contact; (2) Complete 1 Enoch (108 chapters) survives ONLY in Ge'ez — every Western language has only fragments; the Nickelsburg/VanderKam scholarly tradition is entirely dependent on the Ethiopian Orthodox preservation in a dead liturgical language; (3) The Epigraphic South Arabian / Phoenician Y-fork is one of the only clean, fully-documented bifurcations in world script history — proving Proto-Sinaitic as real common ancestor, not hypothetical reconstruction; (4) The Sabaean Kingdom (Sheba) is the historically attested cultural corridor for both the Queen of Sheba narrative and the South Arabian → Ge'ez script transmission~~
+
+---
+
 ## ~~music-gnostic-1 — Valentinian pleroma harmony + Neoplatonic theurgy sound — 2026-05-16 — FINISHED~~
 - ~~Owned: `10_music/music-valentinian-pleroma-harmony.md` (NEW), `10_music/music-neoplatonic-theurgy-sound.md` (NEW), `src/data/patterns.js` (2 new entries), `src/data/observations.js` (1 new entry)~~
 - ~~Status: FINISHED — commit `41b8ed0`. Build: 52 music nodes · 15,832 edges · 0 YAML errors · 0 dead links introduced.~~
