@@ -4,6 +4,12 @@ _Hand-maintained. Each agent currently working in the vault appends a claim bloc
 
 ---
 
+## ~~opus-pantheon-v2-spiral-1 — twelve items: spiral layout + tiered key figures + drag-with-edges + always-add select + nav tooltips + icon redesign — started 2026-05-17 — DONE~~
+- ~~Owned: `src/js/views/pantheon-v2.js`, `src/js/dev-panel.js`, `src/styles/app.css`, `src/js/app.js`, `index.html`~~
+- ~~Status: done — JS swept into `ac7a002` by parallel agent; CSS/index/dev-panel committed `e9a0342`. See STATUS.md.~~
+
+---
+
 ## ~~music-ancient-near-east-1 — 3 ANE music nodes — 2026-05-16 — FINISHED~~
 - ~~Owned: `10_music/music-mesopotamian-temple-music.md` (NEW), `10_music/music-levitical-temple-music.md` (NEW), `10_music/music-zoroastrian-sacred-sound.md` (NEW)~~
 - ~~Status: FINISHED — commit `252a346`. Build: 47 music nodes · 15779 edges · 0 YAML errors · 0 dead links introduced.~~
