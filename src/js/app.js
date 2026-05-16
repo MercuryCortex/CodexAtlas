@@ -8704,7 +8704,7 @@ function renderMoralsFindings(pane) {
 // ============================================================
 // VIEWS.rituals — ritual behaviors across all traditions.
 // ============================================================
-const _ritualsState = { mode: 'lifecycle' };
+const _ritualsState = { mode: 'lifecycle', religion: 'tradition-christianity-canonical' };
 VIEWS.rituals = {
   title: 'Rituals',
   subtitle: 'lifecycle · calendar · daily practice — cross-tradition behaviors',
@@ -8714,6 +8714,7 @@ VIEWS.rituals = {
       <button class="btn btn-mini rituals-mode${_ritualsState.mode==='calendar'?' active':''}" data-mode="calendar">calendar</button>
       <button class="btn btn-mini rituals-mode${_ritualsState.mode==='nodes'?' active':''}" data-mode="nodes">all rituals</button>
       <button class="btn btn-mini rituals-mode${_ritualsState.mode==='findings'?' active':''}" data-mode="findings">findings</button>
+      <button class="btn btn-mini rituals-mode${_ritualsState.mode==='religion'?' active':''}" data-mode="religion">by religion</button>
     `;
     document.querySelectorAll('.rituals-mode').forEach(btn => {
       btn.onclick = () => { _ritualsState.mode = btn.dataset.mode; setView('rituals'); };
@@ -8724,6 +8725,7 @@ VIEWS.rituals = {
     if (_ritualsState.mode === 'lifecycle') renderRitualsLifecycle(pane);
     else if (_ritualsState.mode === 'calendar') renderRitualsCalendar(pane);
     else if (_ritualsState.mode === 'nodes') renderRitualsNodes(pane);
+    else if (_ritualsState.mode === 'religion') renderRitualsReligion(pane);
     else renderRitualsFindings(pane);
     document.getElementById('canvas').appendChild(pane);
   }
@@ -8884,6 +8886,71 @@ function renderRitualsFindings(pane) {
   });
   html += '</div>';
   pane.innerHTML = html;
+}
+
+function renderRitualsReligion(pane) {
+  const religions = [
+    { id: 'tradition-christianity-canonical', label: 'Christianity', color: '#5a6cc4', also: ['tradition-eastern-orthodoxy','tradition-coptic-orthodox','tradition-ethiopian-orthodox-tewahedo','tradition-latin-christianity','tradition-protestantism','tradition-early-christianity','tradition-medieval-christianity','tradition-pentecostalism'] },
+    { id: 'tradition-islam',                  label: 'Islam',        color: '#5aaca8', also: ['tradition-sunni-islam','tradition-shia-islam','tradition-sufism','tradition-islam-mughal'] },
+    { id: 'tradition-judaism',                label: 'Judaism',      color: '#d4a55a', also: ['tradition-rabbinic-judaism','tradition-second-temple-judaism','tradition-hasidism','tradition-kabbalah','tradition-essenes'] },
+    { id: 'tradition-hinduism',               label: 'Hinduism',     color: '#c47453', also: ['tradition-vedic','tradition-vedic-hinduism','tradition-bhakti-vaishnavism','tradition-advaita-vedanta','tradition-kashmir-shaivism','tradition-tantra'] },
+    { id: 'tradition-buddhism',               label: 'Buddhism',     color: '#6e8c6b', also: ['tradition-theravada-buddhism','tradition-mahayana-buddhism','tradition-vajrayana','tradition-tibetan-buddhism','tradition-chan','tradition-pure-land-buddhism'] },
+    { id: 'tradition-persian-zoroastrian',    label: 'Zoroastrianism', color: '#c44a5a', also: [] },
+    { id: 'tradition-sikhism',                label: 'Sikhism',      color: '#a07cc4', also: [] },
+    { id: 'tradition-egyptian-religion',      label: 'Egyptian',     color: '#8ab888', also: ['tradition-egyptian'] },
+    { id: 'tradition-greek-religion',         label: 'Greek / Roman',color: '#aaa080', also: ['tradition-roman-religion','tradition-greek-mystery-religion','tradition-eleusinian-mysteries','tradition-orphic','tradition-dionysian-mysteries','tradition-mystery-cults'] },
+    { id: 'tradition-mesopotamian',           label: 'Mesopotamian', color: '#80a0aa', also: ['tradition-sumerian-mesopotamian'] },
+  ];
+  const allRitualNodes = DATA.nodes.filter(n => n.type === 'ritual');
+  const sel = religions.find(r => r.id === _ritualsState.religion) || religions[0];
+
+  function matchesReligion(node, rel) {
+    const trad = node.tradition || '';
+    const alsoIn = node['also-in-traditions'] || [];
+    const allTradIds = rel.also.concat([rel.id]);
+    return allTradIds.some(id => trad === id || alsoIn.includes(id));
+  }
+
+  const filtered = allRitualNodes.filter(n => matchesReligion(n, sel));
+
+  let html = `<div class="alpha-scripts-header"><h2>Rituals by Religion</h2><span class="alpha-count">${allRitualNodes.length} total ritual nodes</span></div>`;
+
+  // Religion selector grid
+  html += `<div style="padding:0 24px 16px;display:flex;flex-wrap:wrap;gap:8px">`;
+  religions.forEach(rel => {
+    const active = rel.id === _ritualsState.religion;
+    html += `<button class="btn btn-mini rituals-rel-btn${active?' active':''}" data-rel="${rel.id}" style="border-left:3px solid ${rel.color};${active?'background:rgba(255,255,255,.1);':''}">${rel.label}</button>`;
+  });
+  html += `</div>`;
+
+  // Filtered nodes or empty state
+  html += `<div style="padding:0 24px 8px"><h3 style="color:${sel.color};font-size:12px;letter-spacing:.08em;text-transform:uppercase;margin:0 0 12px;border-bottom:1px solid rgba(255,255,255,.08);padding-bottom:6px">${sel.label} — ${filtered.length} ritual node${filtered.length===1?'':'s'} in vault</h3>`;
+  if (!filtered.length) {
+    html += `<div style="color:var(--text-3);font-size:13px;padding:24px 0">No ritual nodes for ${sel.label} yet — content agent can add them to 14_rituals/.</div>`;
+  } else {
+    html += `<div class="alpha-scripts-grid">`;
+    filtered.forEach(n => {
+      const rtype = n['ritual-type'] || 'ritual';
+      html += `<div class="alpha-script-card" data-id="${n.id}" style="border-left:3px solid ${sel.color}">
+        <div class="asc-type">${rtype}</div>
+        <div class="asc-title">${n.title||n.id}</div>
+        <div class="asc-tradition" style="font-size:11px;margin-top:4px">${n.tradition||''}</div>
+      </div>`;
+    });
+    html += `</div>`;
+  }
+  html += `</div>`;
+  pane.innerHTML = html;
+
+  // Religion selector buttons → re-render
+  pane.querySelectorAll('.rituals-rel-btn').forEach(btn => {
+    btn.onclick = () => { _ritualsState.religion = btn.dataset.rel; setView('rituals'); };
+  });
+  // Node cards → detail panel
+  pane.querySelectorAll('.alpha-script-card[data-id]').forEach(c => {
+    c.style.cursor = 'pointer';
+    c.onclick = () => { const nd = DATA.nodes.find(x => x.id === c.dataset.id); if (nd) showDetail(nd); };
+  });
 }
 
 VIEWS.patterns = {
