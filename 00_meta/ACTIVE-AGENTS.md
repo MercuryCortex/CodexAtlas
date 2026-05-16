@@ -2034,3 +2034,16 @@ Files: sacred-cauldron.md (NEW) · cerridwen.md (STUB, deity) · bran-the-blesse
 - ~~Scribal/objects: Scribal Palette (Y3) · Papyrus Scroll (Y1) · Flame (Q7) · Sistrum (Y8)~~
 - ~~Also fixed in same session: all 36 wrong unicode codepoints (Nun was elephant E026, now cobra I010)~~
 - ~~Status: FINISHED — commit d45a9f5~~
+
+---
+
+## ~~alphabets-hieroglyph-expand-2 — 20 more Egyptian signs — 2026-05-16 — FINISHED~~
+- ~~Owned: `src/js/alphabets/glyph-data.js` (20 new scriptOnly:['hieroglyph'] entries; total now 72 signs in hieroglyph mode)~~
+- ~~Divine family: Osiris (C11) · Isis (C12) · Set (E20)~~
+- ~~Creators: Ptah (C7 — Memphite Theology / Logos) · Khnum (C2 — potter / Genesis)~~
+- ~~Solar/cosmic: Hathor (C9) · Sekhmet (C6) · Nut (C5) · Aten (N6 — Psalm 104 parallel) · Heh (C10)~~
+- ~~Chaos: Apophis (I11 — proto-Satan / Revelation 12)~~
+- ~~Animals: Sphinx/Lion (E22) · Cat/Bastet (E13) · Crocodile/Sobek (I3) · Hippo/Taweret (E25)~~
+- ~~Architecture: Obelisk (O25 — Vatican center) · Pyramid (O24 — π and φ)~~
+- ~~Nature: Palm Branch/Year (M4 — Egyptian calendar origin) · Sycamore Tree (M1)~~
+- ~~Status: FINISHED — commit 1cb5d0f~~
