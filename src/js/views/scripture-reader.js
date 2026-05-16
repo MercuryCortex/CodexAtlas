@@ -1,24 +1,30 @@
 // ============================================================
-// CODEX ATLAS — Scripture Reader (clean)
+// CODEX ATLAS — Scripture Reader
 //
 // Layout:
-//   view-header  → text title + corpus/date line (replaces "SCRIPTURE")
-//   view-controls → ← Ring  |  [text ▾]  [language ▾]  [✦ parallels]
-//   #scripture-reader-pane → scrollable text (full width by default)
-//     entity card SLIDES IN from right only when an entity is clicked
+//   sr-topbar  → ← Ring  |  title  |  [text ▾]  [language ▾]  [✦ parallels]
+//   sr-body    → optional ctx panel (toggle) + scrollable text
+//
+// Entity clicks → populate the app's collapsible right detail panel
+// Body class view-scripture-reader → hides global view-header
 // ============================================================
 
 window.ScriptureReader = (function () {
 
-  let _pane      = null;
-  let _textKey   = null;
-  let _kdHandler = null;
-  let _ctxOpen   = false;
+  let _pane             = null;
+  let _textKey          = null;
+  let _kdHandler        = null;
+  let _paneClickHandler = null;
+  let _ctxOpen          = false;
 
   // ── public ───────────────────────────────────────────────────
   function render(pane, textKey) {
     _pane    = pane;
     _ctxOpen = false;
+
+    // Remove stale listeners from previous render (pane element persists across re-renders)
+    if (_kdHandler)        { document.removeEventListener('keydown', _kdHandler); _kdHandler = null; }
+    if (_paneClickHandler) { pane.removeEventListener('click', _paneClickHandler); _paneClickHandler = null; }
 
     const texts = window.SCRIPTURE_TEXTS || {};
     const keys  = Object.keys(texts);
@@ -33,101 +39,103 @@ window.ScriptureReader = (function () {
       STATE.scriptureTranslation = trList[0].id;
     const activeTr = STATE.scriptureTranslation;
 
-    // ── update view-header ────────────────────────────────────
-    const vtEl  = document.getElementById('view-title');
-    const vsEl  = document.getElementById('view-subtitle');
-    if (vtEl) vtEl.textContent = t.title;
-    if (vsEl) vsEl.textContent = t.corpus + '  ·  ' + t.date;
+    // Signal: hide global view-header while reader is active
+    document.body.classList.add('view-scripture-reader');
 
-    // ── populate view-controls ────────────────────────────────
+    // Clear global view-controls (topbar lives inside the pane)
     const vc = document.getElementById('view-controls');
-    if (vc) {
-      const textRows = keys.map(k =>
-        `<div class="sr-pop-row${k === textKey ? ' active' : ''}" data-action="text" data-key="${k}">${esc(texts[k].shortTitle)}</div>`
-      ).join('');
-      const langRows = trList.map(tr =>
-        `<div class="sr-pop-row${tr.id === activeTr ? ' active' : ''}" data-action="lang" data-tr="${tr.id}">${esc(tr.label)}</div>`
-      ).join('');
+    if (vc) vc.innerHTML = '';
 
-      const hasParallels = !!(t.crossTradition && t.crossTradition.length) || !!t.intro;
+    // ── dropdown rows ─────────────────────────────────────────
+    const textRows = keys.map(k =>
+      `<div class="sr-pop-row${k === textKey ? ' active' : ''}" data-action="text" data-key="${k}">${esc(texts[k].shortTitle)}</div>`
+    ).join('');
+    const langRows = trList.map(tr =>
+      `<div class="sr-pop-row${tr.id === activeTr ? ' active' : ''}" data-action="lang" data-tr="${tr.id}">${esc(tr.label)}</div>`
+    ).join('');
 
-      vc.innerHTML = `
-        <button class="btn btn-mini sr-vc-back" id="sr-vc-back">← Ring</button>
-        <div class="sr-pop-wrap" id="sr-text-wrap">
-          <button class="btn btn-mini sr-pop-btn" id="sr-text-btn">${esc(t.shortTitle)} <span class="sr-pop-caret">▾</span></button>
-          <div class="sr-pop-menu" id="sr-text-menu">${textRows}</div>
-        </div>
-        <div class="sr-pop-wrap" id="sr-lang-wrap">
-          <button class="btn btn-mini sr-pop-btn" id="sr-lang-btn">${esc(activeTrLabel(trList, activeTr))} <span class="sr-pop-caret">▾</span></button>
-          <div class="sr-pop-menu" id="sr-lang-menu">${langRows}</div>
-        </div>
-        ${hasParallels ? `<button class="btn btn-mini sr-vc-ctx" id="sr-ctx-btn" title="Cross-tradition context &amp; intro">✦ parallels</button>` : ''}
-      `;
+    const hasParallels = !!(t.crossTradition && t.crossTradition.length) || !!t.intro;
 
-      // back
-      document.getElementById('sr-vc-back').onclick = () => {
-        _cleanup();
-        if (window.STATE) STATE.scriptureReaderMode = null;
-        if (window.setView) setView('scripture');
-      };
-
-      // text picker
-      _wirePopup('sr-text-btn', 'sr-text-menu', vc);
-      // lang picker
-      _wirePopup('sr-lang-btn', 'sr-lang-menu', vc);
-
-      // picker row clicks
-      vc.querySelectorAll('.sr-pop-row').forEach(row => {
-        row.onclick = () => {
-          _closeAllPopups();
-          if (row.dataset.action === 'text') {
-            _cleanup();
-            STATE.scriptureReaderMode = row.dataset.key;
-            render(pane, row.dataset.key);
-          } else {
-            STATE.scriptureTranslation = row.dataset.tr;
-            render(pane, textKey);
-          }
-        };
-      });
-
-      // context toggle
-      const ctxBtn = document.getElementById('sr-ctx-btn');
-      if (ctxBtn) ctxBtn.onclick = () => _toggleCtx(t, activeTr);
-    }
-
-    // ── build pane: context drawer + text + entity drawer ─────
+    // ── build pane ────────────────────────────────────────────
     const sectionsHtml = _buildSections(t, activeTr, trList);
 
     pane.innerHTML = `
       <div class="sr-layout" id="sr-layout">
-        <div class="sr-text-col" id="sr-text-col">
+        <div class="sr-topbar" id="sr-topbar">
+          <div class="sr-topbar-left">
+            <button class="btn btn-mini sr-vc-back" id="sr-vc-back">← Ring</button>
+            <span class="sr-topbar-title">${esc(t.title)}</span>
+          </div>
+          <div class="sr-topbar-right">
+            <div class="sr-pop-wrap" id="sr-text-wrap">
+              <button class="btn btn-mini sr-pop-btn" id="sr-text-btn">${esc(t.shortTitle)}<span class="sr-pop-caret">▾</span></button>
+              <div class="sr-pop-menu" id="sr-text-menu">${textRows}</div>
+            </div>
+            <div class="sr-pop-wrap" id="sr-lang-wrap">
+              <button class="btn btn-mini sr-pop-btn" id="sr-lang-btn">${esc(_activeTrLabel(trList, activeTr))}<span class="sr-pop-caret">▾</span></button>
+              <div class="sr-pop-menu" id="sr-lang-menu">${langRows}</div>
+            </div>
+            ${hasParallels ? `<button class="btn btn-mini sr-vc-ctx" id="sr-ctx-btn" title="Cross-tradition context &amp; intro">✦ parallels</button>` : ''}
+          </div>
+        </div>
+        <div class="sr-body" id="sr-body">
           <div class="sr-ctx-panel" id="sr-ctx-panel" style="display:none"></div>
           <div class="sr-sections" id="sr-sections">${sectionsHtml}</div>
         </div>
-        <div class="sr-entity-col" id="sr-entity-col">
-          <div class="sr-entity-panel" id="sr-entity-panel"></div>
-        </div>
       </div>`;
 
-    // entity mark events
-    const textCol = document.getElementById('sr-text-col');
-    textCol.addEventListener('mouseover', _onHover, { passive: true });
-    textCol.addEventListener('click',     _onClick);
+    // back
+    document.getElementById('sr-vc-back').onclick = () => {
+      _cleanup();
+      if (window.STATE) STATE.scriptureReaderMode = null;
+      if (window.setView) setView('scripture');
+    };
 
-    // outside click clears pinned card
-    pane.addEventListener('click', ev => {
-      if (!ev.target.closest('.sr-ent') && !ev.target.closest('.sr-entity-col')) _closeEntityCol();
+    // text + lang dropdowns
+    _wirePopup('sr-text-btn', 'sr-text-menu');
+    _wirePopup('sr-lang-btn', 'sr-lang-menu');
+
+    // dropdown row clicks
+    pane.querySelectorAll('.sr-pop-row').forEach(row => {
+      row.onclick = ev => {
+        ev.stopPropagation();
+        _closeAllPopups();
+        if (row.dataset.action === 'text') {
+          _cleanup();
+          STATE.scriptureReaderMode = row.dataset.key;
+          render(pane, row.dataset.key);
+        } else {
+          STATE.scriptureTranslation = row.dataset.tr;
+          render(pane, textKey);
+        }
+      };
     });
 
+    // context toggle
+    const ctxBtn = document.getElementById('sr-ctx-btn');
+    if (ctxBtn) ctxBtn.onclick = () => _toggleCtx(t);
+
+    // entity mark events on body
+    const body = document.getElementById('sr-body');
+    body.addEventListener('click', _onClick);
+
+    // click outside entity / topbar → unpin + close popups
+    _paneClickHandler = ev => {
+      if (!ev.target.closest('.sr-ent') && !ev.target.closest('#sr-topbar')) {
+        _closeAllPopups();
+        _unpinEntity();
+      }
+    };
+    pane.addEventListener('click', _paneClickHandler);
+
     _kdHandler = ev => {
-      if (ev.key === 'Escape') { _closeEntityCol(); _closeAllPopups(); }
+      if (ev.key === 'Escape') { _unpinEntity(); _closeAllPopups(); }
     };
     document.addEventListener('keydown', _kdHandler);
   }
 
   // ── context drawer toggle ─────────────────────────────────────
-  function _toggleCtx(t, activeTr) {
+  function _toggleCtx(t) {
     const panel = document.getElementById('sr-ctx-panel');
     const btn   = document.getElementById('sr-ctx-btn');
     if (!panel) return;
@@ -136,7 +144,6 @@ window.ScriptureReader = (function () {
       panel.style.display = 'block';
       panel.innerHTML = _buildCtx(t);
       if (btn) btn.classList.add('sr-vc-ctx-open');
-      // wire cross-tradition links inside ctx
       panel.querySelectorAll('.sr-xtrad-item.linked').forEach(el => {
         el.onclick = () => {
           const key = el.dataset.textid;
@@ -177,38 +184,26 @@ window.ScriptureReader = (function () {
           const isOriginal = activeTr !== (trList[0] && trList[0].id) && !!(v.textVersions && v.textVersions[activeTr]);
           return `<div class="sr-verse" data-ref="${esc(v.ref)}">
             <span class="sr-ref">${esc(v.ref)}</span>
-            <span class="sr-vtext${isOriginal ? ' sr-vtext-original' : ''}">${_annotate(vtext, isOriginal ? [] : v.entities || [])}</span>
+            <span class="sr-vtext${isOriginal ? ' sr-vtext-original' : ''}" dir="auto">${_annotate(vtext, isOriginal ? [] : v.entities || [])}</span>
           </div>`;
         }).join('')}
       </div>`).join('');
   }
 
-  // ── entity events ─────────────────────────────────────────────
-  function _onHover(ev) {
-    const mark = ev.target.closest('.sr-ent');
-    if (!mark || document.querySelector('.sr-ent.pinned')) return;
-    const ent = _findEnt(mark.dataset.word);
-    if (ent) _showCard(ent, mark, false);
-  }
-
+  // ── entity click handler ──────────────────────────────────────
   function _onClick(ev) {
     const mark = ev.target.closest('.sr-ent');
     if (!mark) return;
     ev.stopPropagation();
-    if (mark.classList.contains('pinned')) { _closeEntityCol(); return; }
+    if (mark.classList.contains('pinned')) { _unpinEntity(); return; }
     const ent = _findEnt(mark.dataset.word);
-    if (ent) _showCard(ent, mark, true);
+    if (ent) _showCard(ent, mark);
   }
 
-  // ── entity card ───────────────────────────────────────────────
-  function _showCard(ent, markEl, pin) {
-    const col   = document.getElementById('sr-entity-col');
-    const panel = document.getElementById('sr-entity-panel');
-    if (!col || !panel) return;
-
+  // ── entity card → right detail panel ─────────────────────────
+  function _showCard(ent, markEl) {
     document.querySelectorAll('.sr-ent.active, .sr-ent.pinned').forEach(e => e.classList.remove('active', 'pinned'));
-    markEl.classList.add('active');
-    if (pin) markEl.classList.add('pinned');
+    markEl.classList.add('active', 'pinned');
 
     const node      = window.NODES_BY_ID && NODES_BY_ID[ent.node];
     const nodeLabel = node ? (node.label || node.title || ent.node) : ent.node;
@@ -224,32 +219,36 @@ window.ScriptureReader = (function () {
              </div>`).join('')}
          </div>` : '';
 
-    panel.innerHTML = `
-      <div class="sr-card-close-row">
-        <button class="sr-card-close-btn" id="sr-card-close">✕</button>
-      </div>
-      <div class="sr-card-word">${esc(ent.word)}</div>
-      ${typeLabel ? `<span class="sr-card-type sr-type-${esc(ent.type || 'other')}">${esc(typeLabel)}</span>` : ''}
-      ${node ? `<div class="sr-card-nodeid">${esc(nodeLabel)}</div>` : ''}
-      ${ent.note ? `<div class="sr-card-note">${ent.note}</div>` : ''}
-      ${parallelsHtml}
-      ${ent.node ? `<button class="sr-atlas-btn" data-node="${escAttr(ent.node)}">Open in Atlas →</button>` : ''}`;
+    const el = document.getElementById('detail-inner');
+    if (!el) return;
 
-    // open drawer
-    col.classList.add('open');
+    el.innerHTML = `
+      <div class="sr-detail-card">
+        <div class="sr-card-word">${esc(ent.word)}</div>
+        ${typeLabel ? `<span class="sr-card-type sr-type-${esc(ent.type || 'other')}">${esc(typeLabel)}</span>` : ''}
+        ${node ? `<div class="sr-card-nodeid">${esc(nodeLabel)}</div>` : ''}
+        ${ent.note ? `<div class="sr-card-note">${ent.note}</div>` : ''}
+        ${parallelsHtml}
+        ${ent.node ? `<button class="sr-atlas-btn" data-node="${escAttr(ent.node)}">Open in Atlas →</button>` : ''}
+      </div>`;
 
-    document.getElementById('sr-card-close').onclick = () => _closeEntityCol();
+    // Open detail panel
+    document.body.classList.remove('detail-collapsed');
+    const dt = document.getElementById('detail-toggle');
+    if (dt) dt.textContent = '›';
 
-    panel.querySelectorAll('.sr-parallel.linked').forEach(el => {
-      el.onclick = () => {
-        const key = el.dataset.textid;
+    // Wire cross-tradition parallel links
+    el.querySelectorAll('.sr-parallel.linked').forEach(pEl => {
+      pEl.onclick = () => {
+        const key = pEl.dataset.textid;
         if (key && window.SCRIPTURE_TEXTS && SCRIPTURE_TEXTS[key]) {
           _cleanup(); STATE.scriptureReaderMode = key; render(_pane, key);
         }
       };
     });
 
-    panel.querySelectorAll('.sr-atlas-btn').forEach(btn => {
+    // Wire "Open in Atlas" button
+    el.querySelectorAll('.sr-atlas-btn').forEach(btn => {
       btn.onclick = () => {
         const id = btn.dataset.node;
         _cleanup(); STATE.scriptureReaderMode = null;
@@ -264,14 +263,12 @@ window.ScriptureReader = (function () {
     });
   }
 
-  function _closeEntityCol() {
+  function _unpinEntity() {
     document.querySelectorAll('.sr-ent.active, .sr-ent.pinned').forEach(e => e.classList.remove('active', 'pinned'));
-    const col = document.getElementById('sr-entity-col');
-    if (col) col.classList.remove('open');
   }
 
   // ── popup wiring ──────────────────────────────────────────────
-  function _wirePopup(btnId, menuId, container) {
+  function _wirePopup(btnId, menuId) {
     const btn  = document.getElementById(btnId);
     const menu = document.getElementById(menuId);
     if (!btn || !menu) return;
@@ -293,13 +290,13 @@ window.ScriptureReader = (function () {
     return (v.textVersions && v.textVersions[trId]) ? v.textVersions[trId] : (v.text || '');
   }
 
-  function activeTrLabel(trList, id) {
+  function _activeTrLabel(trList, id) {
     const tr = trList.find(x => x.id === id);
     return tr ? tr.label : id;
   }
 
   function _annotate(text, entities) {
-    if (!entities || !entities.length) return esc(text);
+    if (!entities || !entities.length) return esc(text).replace(/\n/g, '<br>');
     let out = esc(text);
     [...entities].sort((a, b) => b.word.length - a.word.length).forEach(en => {
       const re = new RegExp(`\\b(${escRe(en.word)})\\b`, 'g');
@@ -307,7 +304,7 @@ window.ScriptureReader = (function () {
         `<mark class="sr-ent" data-node="${escAttr(en.node)}" data-type="${escAttr(en.type||'')}" data-word="${escAttr(en.word)}">${m}</mark>`
       );
     });
-    return out;
+    return out.replace(/\n/g, '<br>');
   }
 
   function _findEnt(word) {
@@ -319,7 +316,15 @@ window.ScriptureReader = (function () {
   }
 
   function _cleanup() {
-    if (_kdHandler) { document.removeEventListener('keydown', _kdHandler); _kdHandler = null; }
+    if (_kdHandler)        { document.removeEventListener('keydown', _kdHandler); _kdHandler = null; }
+    if (_paneClickHandler && _pane) { _pane.removeEventListener('click', _paneClickHandler); _paneClickHandler = null; }
+    document.body.classList.remove('view-scripture-reader');
+    // Collapse detail panel and clear entity card
+    const el = document.getElementById('detail-inner');
+    if (el) el.innerHTML = '<div class="empty">Select a node to inspect.</div>';
+    document.body.classList.add('detail-collapsed');
+    const dt = document.getElementById('detail-toggle');
+    if (dt) dt.textContent = '‹';
   }
 
   function esc(s)     { return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;'); }
