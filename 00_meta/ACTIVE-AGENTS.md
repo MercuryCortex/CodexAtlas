@@ -28,10 +28,10 @@ _Hand-maintained. Each agent currently working in the vault appends a claim bloc
 
 ---
 
-## chinese-axial-1 — Chinese Axial Age philosophy upgrades — started 2026-05-16 — IN FLIGHT
-- Owning: `02_documents/_phase-2-axial-age/phase-2-025-mozi.md` (metadata → full), `02_documents/_phase-2-axial-age/phase-2-023-mengzi.md` (metadata → full), `02_documents/_phase-2-axial-age/phase-2-026-han-feizi.md` (metadata → full)
-- Goal: Deep MASSIVE WIN cross-tradition upgrades — jian ai / agape parallels; Mengzi vs Xunzi = Rousseau vs Hobbes; Han Fei as Machiavelli 1800 years earlier
-- Status: in-flight
+## ~~chinese-axial-1 — Chinese Axial Age philosophy upgrades — started 2026-05-16 — FINISHED 2026-05-16~~
+- ~~Owning: `02_documents/_phase-2-axial-age/phase-2-025-mozi.md` (metadata → full), `02_documents/_phase-2-axial-age/phase-2-023-mengzi.md` (metadata → full), `02_documents/_phase-2-axial-age/phase-2-026-han-feizi.md` (metadata → full)~~
+- ~~Goal: Deep MASSIVE WIN cross-tradition upgrades — jian ai / agape parallels; Mengzi vs Xunzi = Rousseau vs Hobbes; Han Fei as Machiavelli 1800 years earlier~~
+- ~~Status: finished — STATUS.md logged — commits f329f12, 374503c, 5cd4606~~
 
 ---
 
@@ -78,6 +78,13 @@ _Hand-maintained. Each agent currently working in the vault appends a claim bloc
 ## goblin-pattern-mystery-1 — symbols / sacred pattern + mystery thread — started 2026-05-16 — IN PROGRESS
 - Owning: `09_symbols/arabesque-girih.md` (NEW), `09_symbols/philosophers-stone.md` (NEW), `09_symbols/labyrinth.md` (NEW), `09_symbols/gorgoneion.md` (NEW)
 - Goal: Islamic sacred geometry quasicrystal win; Philosopher's Stone→Holy Grail; labyrinth universal maze; Gorgoneion apotropaic face
+- Status: in-progress
+
+---
+
+## goblin-authority-emblems-1 — symbols / divine authority emblems thread — started 2026-05-16 — IN PROGRESS
+- Owning: `09_symbols/fasces.md` (NEW), `09_symbols/was-scepter.md` (NEW), `09_symbols/medicine-wheel.md` (NEW), `09_symbols/shofar.md` (NEW)
+- Goal: Authority bundle cross-tradition; Was scepter Egypt→divine power; Medicine Wheel as indigenous mandala; Shofar as sacred horn completing the conch/mjolnir/gjallarhorn pattern
 - Status: in-progress
 
 ---
