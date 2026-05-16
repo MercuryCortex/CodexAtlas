@@ -156,6 +156,10 @@ const STATE = {
   // Active preset ID (or null). Persists across renders so the preset card stays highlighted
   // and the headline keeps showing while the user is exploring the loaded preset.
   alchemyActivePreset: null,
+  // One-shot flag: when set, Transmission skips the shortest-path bridge expansion
+  // on this render and only displays the explicit picks. Used by the Alchemy → Transmission
+  // bridge so a 10+ card board doesn't blow up the force-sim with 50+ auto-bridges.
+  alchemySkipBridges: false,
   // Layout mode for the Alchemy canvas: 'force' (default organic clustering),
   // 'linear' (chronological left→right, type-banded), 'circular' (single ring),
   // 'radial' (picks center cluster, bridges in outer ring).
@@ -2728,13 +2732,15 @@ const SCRIPTURE_CORPORA = {
         { id: 'phase-2-009-hesiod-theogony-works-and-days', label: 'Hesiod · Theogony + Works' },
       ]},
       { id: 'greek-orphic-mystery', label: 'Orphic-mystery revealed corpus', color: '#6a8a9c', books: [
-        { id: 'phase-3-027-derveni-papyrus', label: 'Derveni Papyrus' },
-        { id: 'phase-3-028-orphic-hymns',    label: 'Orphic Hymns' },
+        { id: 'phase-3-027-derveni-papyrus',      label: 'Derveni Papyrus' },
+        { id: 'phase-3-028-orphic-hymns',          label: 'Orphic Hymns' },
+        { id: 'phase-2-040-orphic-gold-tablets',   label: 'Orphic Gold Tablets (~-400 to -200)' },
       ]},
-      { id: 'greek-philosophical-theology', label: 'Philosophical theology (Plato-Aristotle)', color: '#5a7a8c', books: [
+      { id: 'greek-philosophical-theology', label: 'Philosophical theology (Plato-Aristotle-Neoplatonist)', color: '#5a7a8c', books: [
         { id: 'phase-3-002-plato-dialogues',                label: 'Plato · Dialogues' },
         { id: 'phase-3-022-plato-timaeus-critias-atlantis', label: 'Plato · Timaeus + Critias' },
         { id: 'phase-3-003-aristotle-metaphysics',          label: 'Aristotle · Metaphysics' },
+        { id: 'P4-022-chaldean-oracles',                    label: 'Chaldean Oracles (~2nd c. CE) · Neoplatonist scripture' },
       ]},
       { id: 'greek-ethnographic-theological', label: 'Ethnographic-theological (Greek-Egyptian)', color: '#4f6d80', books: [
         { id: 'phase-2-028-herodotus-histories-book-2', label: 'Herodotus · Histories Bk 2 (Egypt)' },
@@ -2817,7 +2823,7 @@ const SCRIPTURE_CORPORA = {
         { id: 'phase-3-024-natyashastra',             label: 'Nāṭyaśāstra (Bharata)' },
       ]},
       { id: 'vedic-purana', label: 'Purāṇa · devotional theology', color: '#b8845a', books: [
-        { id: 'phase-4-065-bhagavata-purana', label: 'Bhāgavata Purāṇa' },
+        { id: 'P5-050-bhagavata-purana', label: 'Bhāgavata Purāṇa' },
       ]},
       { id: 'vedic-vedanta-exegesis', label: 'Medieval Vedānta exegesis', color: '#a07050', books: [
         { id: 'phase-5-016-ramanuja-sribhasya', label: 'Rāmānuja · Śrī-Bhāṣya' },
@@ -2848,6 +2854,7 @@ const SCRIPTURE_CORPORA = {
       ]},
       { id: 'buddhist-indo-greek', label: 'Indo-Greek frontier dialogue (~-150 to +100)', color: '#a07050', books: [
         { id: 'phase-3-029-milindapanha',          label: 'Milindapañha · Questions of King Milinda' },
+        { id: 'P3-030-asokan-edicts',              label: 'Aśokan Edicts (~-250 BCE) · Greco-Buddhist contact zone' },
       ]},
       { id: 'buddhist-prajnaparamita', label: 'Prajñāpāramitā corpus (~-100 to +700)', color: '#b06850', books: [
         { id: 'phase-3-031-asthasahasrika-prajnaparamita', label: 'Aṣṭasāhasrikā · earliest Mahāyāna sūtra' },
@@ -2855,10 +2862,10 @@ const SCRIPTURE_CORPORA = {
         { id: 'phase-5-002-heart-sutra',                   label: 'Heart Sūtra' },
       ]},
       { id: 'buddhist-mahayana-cosmic', label: 'Mahāyāna sūtras · cosmic + devotional + idealist (~+100 to +400)', color: '#b05060', books: [
-        { id: 'phase-4-061-lotus-sutra',           label: 'Lotus Sūtra' },
-        { id: 'phase-4-062-avatamsaka-sutra',      label: 'Avataṃsaka (Flower-Ornament) Sūtra' },
-        { id: 'phase-4-064-sukhavativyuha-larger', label: 'Larger Sukhāvatī-vyūha (Pure Land)' },
-        { id: 'phase-4-063-lankavatara-sutra',     label: 'Laṅkāvatāra Sūtra' },
+        { id: 'phase-4-101-lotus-sutra',           label: 'Lotus Sūtra' },
+        { id: 'phase-4-102-avatamsaka-sutra',      label: 'Avataṃsaka (Flower-Ornament) Sūtra' },
+        { id: 'phase-4-104-sukhavativyuha-larger', label: 'Larger Sukhāvatī-vyūha (Pure Land)' },
+        { id: 'phase-4-103-lankavatara-sutra',     label: 'Laṅkāvatāra Sūtra' },
       ]},
       { id: 'buddhist-madhyamika', label: 'Mādhyamika philosophical (~+200)', color: '#5a7a90', books: [
         { id: 'phase-4-075-mulamadhyamakakarika',  label: 'Mūlamadhyamakakārikā · Nāgārjuna' },
@@ -3055,9 +3062,10 @@ const SCRIPTURE_CORPORA = {
         { id: 'P4-017-ginza-rba', label: 'Ginza Rba (Great Treasure)' },
         { id: 'P4-018-mandaean-book-of-john', label: 'Mandaean Book of John' },
       ]},
-      { id: 'manichaean-texts', label: 'Manichaean corpus · Cologne Codex + Kephalaia', color: '#5a6a7a', books: [
-        { id: 'P4-014-cologne-mani-codex', label: 'Cologne Mani Codex (~5th c. Greek)' },
-        { id: 'P4-015-kephalaia-of-the-teacher', label: 'Kephalaia of the Teacher (Coptic)' },
+      { id: 'manichaean-texts', label: 'Manichaean corpus · Cologne Codex + Kephalaia + Shabuhragan', color: '#5a6a7a', books: [
+        { id: 'P4-014-cologne-mani-codex',        label: 'Cologne Mani Codex (~5th c. Greek)' },
+        { id: 'P4-015-kephalaia-of-the-teacher',  label: 'Kephalaia of the Teacher (Coptic)' },
+        { id: 'P4-016-shabuhragan',               label: 'Shabuhragan (Mani for Shapur I, ~240 CE)' },
       ]},
     ],
   },
@@ -3232,6 +3240,9 @@ const SCRIPTURE_CORPORA = {
       { id: 'bg-8502', label: 'BG 8502 · Berlin Codex (related)', color: '#a87aa0', books: [
         { id: 'phase-4-005-gospel-of-mary',                    label: 'BG 8502,1 · Gospel of Mary' },
       ]},
+      { id: 'nhc-related-codices', label: 'Related codices (Bruce + Askew)', color: '#907880', books: [
+        { id: 'P4-009-pistis-sophia',                          label: 'Pistis Sophia (Askew Codex) · longest Gnostic text' },
+      ]},
     ],
   },
   // ----- Hermetica corpus (wired by opus-scripture-2 after opus-hermetic-1) -----
@@ -3268,6 +3279,57 @@ const SCRIPTURE_CORPORA = {
       ]},
       { id: 'hermetica-modern', label: 'Modern Hermetic reception', color: '#a89880', books: [
         { id: 'phase-7-032-kybalion',                          label: 'The Kybalion (1908)' },
+      ]},
+    ],
+  },
+  // ----- Mesopotamian sacred corpus — oldest continuous literary tradition
+  // in the vault. Cross-tradition: Gilgamesh flood ↔ Genesis; Inanna descent
+  // ↔ Osiris/Persephone/Christ; Enuma Elish Chaoskampf ↔ Baal Cycle ↔ Genesis 1.
+  'mesopotamian': {
+    label: 'Mesopotamian sacred corpus (Sumerian + Akkadian + Canaanite)',
+    available: true,
+    sections: [
+      { id: 'sumerian-earliest', label: 'Sumerian earliest stratum (~-2600 to -2000 BCE)', color: '#9a8050', books: [
+        { id: 'P1-001-kesh-temple-hymn',         label: 'Kesh Temple Hymn (~-2600 BCE) · oldest literary text' },
+        { id: 'P1-003-enheduanna-hymns',         label: 'Enheduanna Hymns (~-2285 BCE) · first named author' },
+        { id: 'P1-016-eridu-genesis-flood',      label: 'Eridu Genesis / Sumerian Flood account (~-1600 BCE)' },
+      ]},
+      { id: 'akkadian-epic', label: 'Akkadian epic tradition (~-1800 to -700 BCE)', color: '#b07040', books: [
+        { id: 'P1-004-gilgamesh-old-babylonian', label: 'Epic of Gilgamesh' },
+        { id: 'P1-008-enuma-elish',              label: 'Enuma Elish · Babylonian creation epic' },
+        { id: 'P1-017-descent-of-inanna',        label: 'Descent of Inanna / Ishtar to the Underworld' },
+      ]},
+      { id: 'canaanite-ugaritic', label: 'Canaanite-Ugaritic (~-1400 to -1200 BCE)', color: '#a06050', books: [
+        { id: 'P1-013-baal-cycle',               label: 'Baal Cycle (Ugarit) · Baal vs. Mot dying-rising' },
+      ]},
+    ],
+  },
+  // ----- Rabbinic canon — oral Torah and its written transmission.
+  // Fills the gap between Tanakh and Kabbalistic corpora.
+  'rabbinic-corpus': {
+    label: 'Rabbinic corpus (Mishnah · Talmud · Hekhalot)',
+    available: true,
+    sections: [
+      { id: 'rabbinic-tannaitic', label: 'Tannaitic stratum · Mishnah (~200 CE)', color: '#9aa05a', books: [
+        { id: 'P4-031-mishnah',              label: 'Mishnah (~200 CE) · codified oral Torah' },
+      ]},
+      { id: 'rabbinic-gemara', label: 'Amoraic Gemara · Talmud (~400–500 CE)', color: '#8a9070', books: [
+        { id: 'P4-032-jerusalem-talmud',     label: 'Jerusalem Talmud (~400 CE)' },
+        { id: 'P4-033-babylonian-talmud',    label: 'Babylonian Talmud (~500 CE) · primary rabbinic authority' },
+      ]},
+      { id: 'rabbinic-hekhalot', label: 'Hekhalot · Merkavah mysticism (~200–700 CE)', color: '#a09870', books: [
+        { id: 'P5-013-hekhalot-literature',  label: 'Hekhalot literature · throne-chariot ascent' },
+      ]},
+    ],
+  },
+  // ----- Jain canonical Āgamas — Mahavira's teachings.
+  'jain-agamas': {
+    label: 'Jain Āgamas · canonical Mahavira tradition',
+    available: true,
+    sections: [
+      { id: 'jain-canonical-angas', label: 'Canonical Āṅgas (primary Āgamas)', color: '#8aaa70', books: [
+        { id: 'phase-2-038-acharanga-sutra', label: 'Āchārāṅga Sūtra · Mahavira biography + ahimsa' },
+        { id: 'phase-2-039-sutrakritanga',   label: 'Sūtrakritāṅga · refutation of rival doctrines' },
       ]},
     ],
   },
@@ -3382,6 +3444,9 @@ VIEWS.scripture = {
       'confucian-classics': 'Confucian',
       'nag-hammadi': 'Nag Hammadi',
       'hermetica': 'Hermetica',
+      'mesopotamian': 'Mesopotamian',
+      'rabbinic-corpus': 'Rabbinic',
+      'jain-agamas': 'Jain',
     };
     const shortLabelFor = (k, c) => SCRIPTURE_CORPUS_SHORT[k]
       || (c && c.label ? c.label.split(/[(·—/]|\s—\s/)[0].trim().slice(0, 14) : k);
@@ -5291,12 +5356,22 @@ VIEWS.transmission = {
     const displayed = new Map();        // id → {node, isPick}
     picks.forEach(id => displayed.set(id, { node: NODES_BY_ID[id], isPick: true }));
 
+    // One-shot skip-bridges flag — set by the Alchemy → Transmission bridge so a
+    // curated 10+ card board doesn't auto-inflate into a 50-200 node graph.
+    // Also: when picks count is large (≥ 10) the user almost certainly wants the
+    // explicit set, not auto-bridges. Consume the flag.
+    const _skipBridges = STATE.alchemySkipBridges || picks.length >= 10;
+    STATE.alchemySkipBridges = false;
+
     // For every ordered pair of picks, compute shortest path (max 5 hops). Union the path nodes.
+    // Also: when picks.length is large (≥ 8) we cap the path search at 2 hops so the bridge
+    // count stays sane.
     const bridgeEdges = [];   // {source, target, type}
-    if (picks.length >= 2) {
+    if (!_skipBridges && picks.length >= 2) {
+      const maxHops = picks.length >= 8 ? 2 : 5;
       for (let i = 0; i < picks.length; i++) {
         for (let j = i + 1; j < picks.length; j++) {
-          const path = alchemyShortestPath(picks[i], picks[j], 5);
+          const path = alchemyShortestPath(picks[i], picks[j], maxHops);
           if (!path) continue;
           for (let k = 0; k < path.length; k++) {
             const nid = path[k];
@@ -5341,6 +5416,31 @@ VIEWS.transmission = {
     window._lastTransmissionNodes = nodes;
     window._lastTransmissionEdges = links;
 
+    // Auto-trigger ELK layout if the current alchemyLayout is an elk-* mode and
+    // positions haven't been computed yet (e.g. coming in from the Alchemy →
+    // Transmission bridge, which sets alchemyLayout='elk-layered' but can't
+    // pre-compute before setView). Fires once, caches, re-renders.
+    if (typeof STATE.alchemyLayout === 'string' &&
+        STATE.alchemyLayout.indexOf('elk-') === 0 &&
+        window._codexLayout &&
+        !(STATE.alchemyElkPositions && STATE.alchemyElkPositions.get(STATE.alchemyLayout) && STATE.alchemyElkPositions.get(STATE.alchemyLayout).size)) {
+      const _algo = STATE.alchemyLayout.slice(4); // strip 'elk-'
+      const _elkNodes = nodes.map(n => ({ id: String(n.id) }));
+      const _elkEdges = links.map(e => ({ source: String(e.source.id || e.source), target: String(e.target.id || e.target) }));
+      window._codexLayout.compute(_elkNodes, _elkEdges, {
+        algorithm: _algo, nodeWidth: 80, nodeHeight: 80,
+        spacing: 50 + STATE.alchemySpacing,
+        direction: _algo === 'mrtree' ? 'DOWN' : 'RIGHT'
+      }).then(pos => {
+        if (!STATE.alchemyElkPositions) STATE.alchemyElkPositions = new Map();
+        STATE.alchemyElkPositions.set(STATE.alchemyLayout, pos);
+        // Only re-render if we're still on this view + same layout key.
+        if (STATE.view === 'transmission' && STATE.alchemyLayout.indexOf('elk-') === 0) {
+          setView('transmission');
+        }
+      }).catch(err => console.warn('[transmission] auto-ELK failed:', err));
+    }
+
     // ---- View-controls (top-right): Presets dropdown trigger + save tree + count + clear ----
     const activePreset = STATE.alchemyActivePreset
       ? findPresetOrTree(STATE.alchemyActivePreset)
@@ -5367,7 +5467,13 @@ VIEWS.transmission = {
       const allNodeIds = nodes.map(n => n.id);
       if (!allNodeIds.length || !window._alchemyBoard) return;
       setView('alchemy');
-      queueMicrotask(() => {
+      // FIX (next-session-queue bug #2): VIEWS.alchemy.render() itself queueMicrotasks
+      // the _alchemyBoard.mount() call, so an inner queueMicrotask runs BEFORE the
+      // mount and addCard() lands on a board with no rootEl. Wait two rAFs (≈32ms)
+      // so the mount has run + the board has measured its container before we
+      // clearBoard + add. Cards land at world coords; the board's mount() centres
+      // the world origin so they appear around screen-centre.
+      requestAnimationFrame(() => requestAnimationFrame(() => {
         if (!window._alchemyBoard) return;
         window._alchemyBoard.clearBoard();
         const R = 320, total = allNodeIds.length;
@@ -5375,7 +5481,7 @@ VIEWS.transmission = {
           const ang = (i / total) * Math.PI * 2 - Math.PI / 2;
           window._alchemyBoard.addCard(id, Math.cos(ang) * R, Math.sin(ang) * R);
         });
-      });
+      }));
     };
     document.getElementById('btn-alch-clear').onclick = () => {
       STATE.alchemyPicks = [];
@@ -7482,6 +7588,30 @@ setView = function patchedSetView(...args) {
 // ============================================================
 // WIRING
 // ============================================================
+// R&D flag: ?webgl=1 unlocks Pantheon v2 — the WebGL re-attempt at the
+// main Pantheon view. Hidden by default so the production nav stays clean.
+// See src/js/views/pantheon-v2.js for the parity-checklist gate.
+(function _wireWebglRandD() {
+  try {
+    const params = new URLSearchParams(window.location.search);
+    if (params.get('webgl') === '1' && window._pantheonV2) {
+      VIEWS['pantheon-v2'] = {
+        title: 'Pantheon v2',
+        subtitle: '',
+        render() { window._pantheonV2.render(document.getElementById('canvas')); }
+      };
+      // Insert nav item right after the production Pantheon.
+      const pantheonNav = document.querySelector('nav.side .item[data-view="pantheon"]');
+      if (pantheonNav && !document.querySelector('nav.side .item[data-view="pantheon-v2"]')) {
+        const v2 = document.createElement('div');
+        v2.className = 'item';
+        v2.setAttribute('data-view', 'pantheon-v2');
+        v2.innerHTML = '<span class="sym">◐</span><span class="lbl">Pantheon v2</span>';
+        pantheonNav.parentNode.insertBefore(v2, pantheonNav.nextSibling);
+      }
+    }
+  } catch (e) { /* ignore — flag is best-effort */ }
+})();
 document.querySelectorAll('nav.side .item').forEach(el => {
   el.addEventListener('click', () => setView(el.dataset.view));
   // Populate data-tooltip from the label text — used by CSS when the nav is collapsed.
