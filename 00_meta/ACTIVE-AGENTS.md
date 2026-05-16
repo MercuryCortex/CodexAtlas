@@ -4,6 +4,20 @@ _Hand-maintained. Each agent currently working in the vault appends a claim bloc
 
 ---
 
+## sonnet-sacred-center-1 — omphalos + labyrinth + mandorla symbols — started 2026-05-16 — IN PROGRESS
+- Owning: `09_symbols/omphalos.md` (NEW), `09_symbols/labyrinth.md` (NEW, completing goblin-pattern-mystery-1 gap), `09_symbols/mandorla.md` (NEW)
+- Goal: Five-tradition omphalos cluster (Delphi/Jerusalem/Mecca/Varanasi/Cusco-navel); Egyptian labyrinth as origin-point; mandorla earliest attestation 5th c. CE; all three with research briefing incorporated
+- Status: in-progress
+
+---
+
+## goblin-divine-motion-1 — symbols / divine motion + cosmic dance thread — started 2026-05-16 — IN PROGRESS
+- Owning: `09_symbols/nataraja.md` (NEW), `09_symbols/bodhi-tree.md` (NEW), `09_symbols/shankha-conch.md` (NEW), `09_symbols/ollin.md` (NEW)
+- Goal: Shiva's cosmic dance→physics win (CERN Nataraja); Bodhi Tree as World Tree / Buddhist axis mundi; conch shell cross-tradition (Triton/shofar/Gjallarhorn); Ollin movement glyph as cosmic maintenance
+- Status: in-progress
+
+---
+
 ## opus-apostolic-fathers-1 — Apostolic Fathers + Josephus upgrades — started 2026-05-16 — IN PROGRESS
 - Owning: `phase-4-061-didache.md`, `phase-4-062-1-clement.md`, `phase-4-063-ignatius-letters.md`, `phase-4-065-shepherd-of-hermas.md`, `phase-4-069-josephus-jewish-war.md`, `phase-4-070-josephus-antiquities-of-the-jews.md`
 - Goal: All six metadata→full; Two Ways / binary cosmology MASSIVE WIN; Eucharist pre-Pauline Jewish form; monepiscopacy invention; "catholic church" first use; martyrdom↔fana MASSIVE WIN; Testimonium Flavianum; Josephus as sole source for Second Temple world
@@ -25,11 +39,10 @@ _Hand-maintained. Each agent currently working in the vault appends a claim bloc
 
 ---
 
-## opus-nagarjuna-theravada-1 — Nagarjuna + Theravāda upgrades — started 2026-05-16 — IN PROGRESS
-- Owning: `04_persons/nagarjuna.md`, `07_traditions/tradition-theravada-buddhism.md`
-- Also creating stubs: `04_persons/wittgenstein.md`, `04_persons/derrida.md`, `04_persons/candrakirti.md`
-- Goal: Both nodes metadata→full; MMK/prasaṅga argument; MASSIVE WINS (Nāgārjuna↔Wittgenstein/Derrida/Zhuangzi/apophatic); Pali Canon/Vinaya; arhat↔bodhisattva; vipassanā→mindfulness; Vinaya↔Benedict's Rule
-- Status: in progress
+## ~~opus-nagarjuna-theravada-1 — Nagarjuna + Theravāda upgrades — finished 2026-05-16 — DONE~~
+- ~~Owning: `04_persons/nagarjuna.md`, `07_traditions/tradition-theravada-buddhism.md`~~
+- ~~Created stubs: `04_persons/wittgenstein.md`, `04_persons/derrida.md`, `04_persons/candrakirti.md`~~
+- ~~Status: done — commits 0c0d59a, 3f25ce9; 13792 edges · 0 new dead links~~
 
 ---
 

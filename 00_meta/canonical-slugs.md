@@ -17,7 +17,7 @@ canonical-slug
 ## Currently resolved slugs (auto-seeded — every existing file)
 
 
-### deity (491 nodes)
+### deity (492 nodes)
 
 - `abathur`
 - `adamastor`
@@ -49,6 +49,7 @@ canonical-slug
 - `anat`
 - `angel-of-the-presence`
 - `angra-mainyu-ahriman`
+- `anput`
 - `anshar-kishar`
 - `anthropos-gnostic`
 - `anubis`
@@ -511,7 +512,7 @@ canonical-slug
 - `zemyna`
 - `zeus`
 
-### document (397 nodes)
+### document (400 nodes)
 
 - `document-kuntillet-ajrud-inscriptions`
 - `phase-1-001-kesh-temple-hymn`
@@ -591,6 +592,9 @@ canonical-slug
 - `phase-2-039-sutrakritanga`
 - `phase-2-040-orphic-gold-tablets`
 - `phase-2-041-book-of-proverbs`
+- `phase-2-042-yi-jing-i-ching`
+- `phase-2-043-great-learning-daxue`
+- `phase-2-044-doctrine-of-the-mean-zhongyong`
 - `phase-3-001-second-third-isaiah`
 - `phase-3-002-plato-dialogues`
 - `phase-3-003-aristotle-metaphysics`
@@ -1099,7 +1103,7 @@ canonical-slug
 - `subterranean-chamber-great-pyramid`
 - `temple-of-inscriptions-palenque`
 
-### person (663 nodes)
+### person (681 nodes)
 
 - `aaron`
 - `abba-garima`
@@ -1204,6 +1208,7 @@ canonical-slug
 - `c-s-lewis`
 - `caiaphas`
 - `cainan-son-of-arpachshad`
+- `candrakirti`
 - `carl-gustav-jung`
 - `carpocrates`
 - `cassiodorus`
@@ -1246,6 +1251,7 @@ canonical-slug
 - `dayananda-saraswati`
 - `decius-emperor`
 - `deganawidah-peacemaker`
+- `derrida`
 - `deucalion`
 - `dietrich-bonhoeffer`
 - `dinis-i-portugal`
@@ -1286,6 +1292,7 @@ canonical-slug
 - `ezana-of-aksum`
 - `ezekiel`
 - `farid-ud-din-attar`
+- `fazang`
 - `fazlur-rahman`
 - `fentos-meqabyan`
 - `fernando-pessoa`
@@ -1338,6 +1345,7 @@ canonical-slug
 - `harold-bloom`
 - `hasan-al-askari`
 - `hasan-ibn-ali`
+- `hatshepsut`
 - `heinrich-khunrath`
 - `helen-schucman`
 - `helena-blavatsky`
@@ -1361,9 +1369,12 @@ canonical-slug
 - `hillel-the-elder`
 - `hippolytus-of-rome`
 - `homer`
+- `honen`
+- `hongren`
 - `hosea-prophet`
 - `howard-vyse`
 - `hugues-de-payens`
+- `huike`
 - `huineng`
 - `huldrych-zwingli`
 - `husayn-ibn-ali`
@@ -1406,6 +1417,8 @@ canonical-slug
 - `jan-assmann`
 - `jan-hus`
 - `jan-van-ruusbroec`
+- `jean-francois-champollion`
+- `jean-jacques-rousseau`
 - `jean-pierre-mahe`
 - `jeremiah`
 - `jerome`
@@ -1419,6 +1432,7 @@ canonical-slug
 - `john-d-turner`
 - `john-dee`
 - `john-evangelist`
+- `john-locke`
 - `john-mark`
 - `john-milton`
 - `john-of-damascus`
@@ -1504,6 +1518,7 @@ canonical-slug
 - `mary-mother-of-jesus`
 - `mary-of-bethany`
 - `matsyendranath`
+- `matteo-ricci`
 - `matthew-apostle`
 - `matthew-evangelist`
 - `max-muller`
@@ -1547,8 +1562,10 @@ canonical-slug
 - `naropa-tilopa`
 - `nathan-of-gaza`
 - `nebuchadnezzar-ii`
+- `nefertiti`
 - `nero-emperor`
 - `nestorius`
+- `nichiren`
 - `nicodemus`
 - `nimbarka`
 - `nisargadatta-maharaj`
@@ -1662,8 +1679,11 @@ canonical-slug
 - `shankara`
 - `shariputra`
 - `shenoute`
+- `shenxiu`
+- `shinran`
 - `shulgi`
 - `siddhartha-gautama-buddha`
+- `sigmund-freud`
 - `silas-silvanus`
 - `simeon-the-stylite`
 - `simon-magus`
@@ -1734,6 +1754,7 @@ canonical-slug
 - `vasugupta`
 - `vidyaranya`
 - `viriato`
+- `voltaire`
 - `wang-yangming`
 - `wendy-doniger`
 - `william-blake`
@@ -1741,6 +1762,7 @@ canonical-slug
 - `william-robertson-smith`
 - `william-seymour`
 - `william-sinclair-rosslyn`
+- `wittgenstein`
 - `wolega-tafari-makonnen-haile-selassie`
 - `wolfram-von-eschenbach`
 - `wovoka`
@@ -1765,14 +1787,23 @@ canonical-slug
 - `ziusudra`
 - `zosimos-of-panopolis`
 
-### symbol (74 nodes)
+### symbol (111 nodes)
 
+- `acacia`
+- `adinkra`
+- `aegishjalmr`
+- `ajna-third-eye`
 - `alpha-omega`
 - `ankh`
+- `arabesque-girih`
 - `asclepian-rod`
 - `aum-om`
 - `axis-mundi`
+- `ba-gua`
+- `baphomet`
 - `beauseant`
+- `bindu`
+- `blazing-star`
 - `bull`
 - `caduceus`
 - `celtic-cross`
@@ -1782,29 +1813,40 @@ canonical-slug
 - `crescent-moon-star`
 - `cross-order-of-christ`
 - `cross-pattee-templar`
+- `crossroads-symbol`
 - `dharmachakra`
 - `djed-pillar`
+- `double-headed-eagle`
 - `dove`
+- `endless-knot`
+- `enso`
 - `eye`
 - `eye-of-horus-wedjat`
 - `faravahar`
 - `feathered-serpent`
 - `fish-ichthys`
 - `fleur-de-lis`
+- `flower-of-life`
 - `greek-cross`
+- `green-lion`
 - `halo-nimbus`
 - `hamsa-khamsa`
 - `haoma`
 - `hexagram`
 - `indus-valley-script`
+- `kalachakra`
+- `labrys`
 - `latin-cross`
 - `lion`
 - `lotus`
 - `maltese-cross`
 - `mandala-circle`
 - `menorah`
+- `metatrons-cube`
 - `mithraic-cross`
+- `mjolnir`
 - `monas-hieroglyphica`
+- `mosaic-pavement`
 - `mount-ararat`
 - `naga-serpent`
 - `nehushtan`
@@ -1813,36 +1855,53 @@ canonical-slug
 - `ouroboros`
 - `pelican-in-piety`
 - `pentagram`
+- `philosophers-stone`
 - `phoenix-bennu`
+- `pillars-jachin-boaz`
 - `pomegranate`
+- `pontos-riscados`
 - `pyramid-triangle`
 - `rainbow-covenant`
+- `rebis`
 - `rose-cross-rosicrucian`
 - `sacred-fire-atash`
 - `sacred-heart`
+- `sator-square`
 - `scarab-khepri`
 - `scorpion`
 - `sefirot-tree-of-life`
 - `serpent-cosmic-enemy`
 - `serpent-wisdom-chthonic`
+- `sol-niger`
+- `solve-et-coagula`
 - `spiral`
+- `square-and-compass`
+- `sri-yantra`
 - `star-of-ishtar`
+- `sulphur-mercury-salt`
 - `sun-disk`
 - `swastika`
 - `tau-cross`
 - `tauroctony`
 - `tetragrammaton`
 - `tetramorph`
+- `thunderbolt-keraunos`
 - `thyrsus`
 - `tree-of-life`
+- `triquetra`
+- `trishula`
 - `triskelion`
 - `uraeus`
+- `vajra-dorje`
+- `valknut`
 - `vesica-piscis`
+- `veve`
 - `vine-grape`
 - `wheat-grain`
+- `yggdrasil`
 - `yin-yang`
 
-### theme (327 nodes)
+### theme (329 nodes)
 
 - `364-day-solar-calendar`
 - `adam-kadmon`
@@ -1970,6 +2029,7 @@ canonical-slug
 - `hanif-monotheism`
 - `heavenly-tablets`
 - `heavenly-tour`
+- `heliopolis-ennead`
 - `henosis`
 - `henotheism-monolatry`
 - `hermetic-correspondences`
@@ -1977,6 +2037,7 @@ canonical-slug
 - `hermetic-piety`
 - `hermetic-rebirth`
 - `hermetic-transmission-chain`
+- `hermopolitan-ogdoad`
 - `hidden-god`
 - `hierophany`
 - `holy-spirit-empowered-witness`
@@ -2322,20 +2383,20 @@ canonical-slug
 
 | Refs | Dead target | Suggested canonical (existing) |
 |---:|---|---|
-| 5 | `tradition-latin-christianity` | `tradition-inca-andean` |
-| 3 | `tradition-hinduism` | `tradition-inca-andean` |
-| 3 | `tradition-andean` | `tradition-inca-andean` |
+| 5 | `tradition-latin-christianity` | `tradition-vodou-haitian` |
+| 3 | `tradition-hinduism` | `tradition-ojibwe` |
+| 3 | `tradition-andean` | `tradition-ojibwe` |
 | 3 | `guru-arjan-dev-ji` | `guru-arjan` |
 | 2 | `yam-canaanite` | `astarte-canaanite` |
-| 2 | `tradition-lingayat` | `tradition-inca-andean` |
-| 2 | `tradition-judaism-sephardic` | `tradition-inca-andean` |
-| 2 | `tradition-islam-shia` | `tradition-inca-andean` |
-| 2 | `tradition-islam-mughal` | `tradition-inca-andean` |
-| 2 | `tradition-hussitism` | `tradition-inca-andean` |
-| 2 | `tradition-christianity-catholic` | `tradition-oriental-orthodox` |
-| 2 | `tradition-bahai` | `tradition-inca-andean` |
-| 2 | `phase-4-045-vishnu-purana` | `phase-4-048-benedict-rule` |
-| 2 | `phase-3-006-homeric-hymns` | `phase-3-002-plato-dialogues` |
+| 2 | `tradition-lingayat` | `tradition-ojibwe` |
+| 2 | `tradition-judaism-sephardic` | `tradition-vodou-haitian` |
+| 2 | `tradition-islam-shia` | `tradition-ojibwe` |
+| 2 | `tradition-islam-mughal` | `tradition-ojibwe` |
+| 2 | `tradition-hussitism` | `tradition-ojibwe` |
+| 2 | `tradition-christianity-catholic` | `tradition-medieval-christianity` |
+| 2 | `tradition-bahai` | `tradition-ojibwe` |
+| 2 | `phase-4-045-vishnu-purana` | `phase-4-043-apophthegmata-patrum` |
+| 2 | `phase-3-006-homeric-hymns` | `phase-3-008-book-of-daniel` |
 | 2 | `phase-1-005-descent-of-inanna` | `phase-1-008-enuma-elish` |
 | 2 | `guru-gobind-singh-ji` | `guru-gobind-singh` |
 | 2 | `divine-names` | `divine-name` |
