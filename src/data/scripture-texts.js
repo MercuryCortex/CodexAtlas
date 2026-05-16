@@ -3880,3 +3880,492 @@ SCRIPTURE_TEXTS['apocryphon-of-john'] = {
     },
   ]
 };
+
+// ── BATCH 6 ─────────────────────────────────────────────────────────────────
+
+SCRIPTURE_TEXTS['ezekiel-1'] = {
+  title: 'Ezekiel 1 — The Chariot Vision (Merkabah)',
+  shortTitle: 'Ezekiel 1',
+  tradition: 'Hebrew Bible',
+  date: 'c. 593 BCE',
+  intro: 'Ezekiel\'s inaugural vision beside the Chebar canal in Babylon is the fountainhead of Jewish mysticism. The prophet sees four living creatures (hayot) with four faces — human, lion, ox, eagle — bearing a wheeled chariot-throne (merkabah). Wheels within wheels full of eyes. Above the creatures, a firmament; above that, a sapphire throne; above that, a figure "like the appearance of a man" — the kavod, the divine Glory. This vision became the seed of the entire Merkabah and Hekhalot mystical tradition, the template for Revelation 4\'s throne-room, and the rabbinic "Work of the Chariot" (Ma\'aseh Merkabah) considered too dangerous for casual study. The four faces of the hayot were later mapped to the four evangelists (human = Matthew, lion = Mark, ox = Luke, eagle = John) — the Tetramorph that appears on medieval church facades and illuminated Gospel codices.',
+  crossTradition: [
+    { label: 'Revelation 4 — four living creatures around the throne', textId: 'revelation-12', note: 'John\'s vision of the throne room in Revelation 4 reproduces Ezekiel\'s four living creatures nearly verbatim — lion, ox, man, eagle — before the throne, with the seraphic "holy, holy, holy" of Isaiah 6 added. Ezekiel → Revelation is the clearest case of canonical Jewish apocalyptic literature directly generating Christian visionary literature.' },
+    { label: 'Bhagavad Gita 11 — Arjuna sees Krishna\'s cosmic form', textId: 'bhagavad-gita-11', note: 'Ezekiel\'s vision of the kavod — a figure radiating incomprehensible light — and Arjuna\'s Vishvarupa — thousands of faces, consuming fire, the totality of time — are structurally parallel prophetic experiences: a human granted temporary divine vision, overwhelmed by what they see, falling prostrate.' },
+    { label: 'Poimandres (CH I) — the divine light-form', textId: 'corpus-hermeticum-1', note: 'Hermes\' encounter with Poimandres as boundless light and Ezekiel\'s kavod as radiant fire and glowing metal (hashmal) are both attempts to describe a direct encounter with divine totality. The Merkabah tradition likely drew on Jewish throne-vision imagery circulating in Alexandria.' },
+    { label: 'Sefer Yetzirah — the ten sefirot as nested spheres', textId: 'sefer-yetzirah', note: 'Ezekiel\'s nested wheels-within-wheels and the Sefer Yetzirah\'s ten sefirot share a geometric intuition: divine reality is structured as nested spheres of emanation. The Merkabah vision is the prophetic prototype; Sefer Yetzirah is the first systematic theorization of that structure.' },
+  ],
+  translations: [
+    { id: 'nrsv', label: 'NRSV (T1)' },
+    { id: 'hebrew', label: 'Hebrew (original)' },
+  ],
+  sections: [
+    {
+      heading: 'The Vision Opens (1:1–4)',
+      verses: [
+        {
+          ref: '1:1',
+          text: 'In the thirtieth year, in the fourth month, on the fifth day of the month, as I was among the exiles by the river Chebar, the heavens were opened and I saw visions of God.',
+          textVersions: {
+            nrsv: 'In the thirtieth year, in the fourth month, on the fifth day of the month, as I was among the exiles by the river Chebar, the heavens were opened and I saw visions of God.',
+            hebrew: 'וַיְהִי בִּשְׁלֹשִׁים שָׁנָה בָּרְבִיעִי בַּחֲמִשָּׁה לַחֹדֶשׁ וַאֲנִי בְתוֹךְ-הַגּוֹלָה עַל-נְהַר-כְּבָר נִפְתְּחוּ הַשָּׁמַיִם וָאֶרְאֶה מַרְאוֹת אֱלֹהִים',
+          },
+          entities: [
+            { word: 'visions of God', node: 'merkabah-mysticism', type: 'concept',
+              note: 'Mar\'ot Elohim — visions of God — inaugurates the most influential prophetic vision in Judaism. The rabbis called this chapter Ma\'aseh Merkabah, the "Work of the Chariot," and considered it esoteric material restricted to mature scholars. Ben Sira warned: "seek not out the things that are too hard for you" (3:21). Yet this vision became the foundation of Merkabah and Hekhalot mysticism, ascending-throne journeys, and the entire trajectory of Jewish apocalypticism.',
+              parallels: [
+                { label: 'Corpus Hermeticum I — Poimandres as boundless light', textId: 'corpus-hermeticum-1', note: 'Poimandres appears to Hermes as a being of boundless light and fire in a vision state. The Merkabah tradition of ecstatic throne-vision and the Hermetic tradition of visionary ascent share a common template: the individual granted direct encounter with the highest divine reality through an altered state of consciousness.' },
+                { label: 'Bhagavad Gita 11 — divine sight granted to Arjuna', textId: 'bhagavad-gita-11', note: 'Krishna grants Arjuna "divine eyes" (divya-chakshu) to see the Vishvarupa — just as Ezekiel receives heavenly vision beside the canal. Both texts establish that normal human sight is insufficient; the divine must grant a special faculty to perceive its own totality.' },
+              ]
+            },
+          ]
+        },
+        {
+          ref: '1:4',
+          text: 'As I looked, a stormy wind came out of the north: a great cloud with brightness around it and fire flashing forth continually, and in the middle of the fire, something like gleaming amber.',
+          textVersions: {
+            nrsv: 'As I looked, a stormy wind came out of the north: a great cloud with brightness around it and fire flashing forth continually, and in the middle of the fire, something like gleaming amber.',
+            hebrew: 'וָאֵרֶא וְהִנֵּה רוּחַ סְעָרָה בָּאָה מִן-הַצָּפוֹן עָנָן גָּדוֹל וְאֵשׁ מִתְלַקַּחַת וְנֹגַהּ לוֹ סָבִיב וּמִתּוֹכָהּ כְּעֵין הַחַשְׁמַל',
+          },
+          entities: [
+            { word: 'gleaming amber', node: 'tradition-jewish-mysticism', type: 'symbol',
+              note: 'The Hebrew "hashmal" — amber, electrum, or gleaming metal — became a central term in Jewish mystical speculation. The Talmud (Hagigah 13a) notes that a child began expounding hashmal\'s meaning and was consumed by fire. The word became untouchable — a marker of the deepest divine mystery. Kabbalists linked hashmal to the divine sparks (nitzotzot) scattered through creation; it is the visible edge of what cannot be looked at directly.',
+              parallels: [
+                { label: 'Rumi Masnavi — fire of love, not breath of air', textId: 'rumi-masnavi', note: 'Ezekiel\'s divine fire as the core of the vision and Rumi\'s "fire of Love" in the reed\'s cry — both use fire to indicate the non-ordinary, non-material nature of the divine encounter. For both Ezekiel and Rumi, fire is not destructive but revelatory.' },
+              ]
+            },
+          ]
+        },
+      ]
+    },
+    {
+      heading: 'The Four Living Creatures (1:5–14)',
+      verses: [
+        {
+          ref: '1:5–6',
+          text: 'In the middle of it was something like four living creatures. This was their appearance: they were of human form. Each had four faces, and each of them had four wings.',
+          textVersions: {
+            nrsv: 'In the middle of it was something like four living creatures. This was their appearance: they were of human form. Each had four faces, and each of them had four wings.',
+            hebrew: 'וּמִתּוֹכָהּ דְּמוּת אַרְבַּע חַיּוֹת וְזֶה מַרְאֵיהֶן דְּמוּת אָדָם לָהֵנָּה',
+          },
+          entities: [
+            { word: 'four living creatures', node: 'merkabah-mysticism', type: 'symbol',
+              note: 'The hayot — with faces of human, lion, ox, and eagle — became one of the most reproduced symbols in Western religious art. Early Christian interpreters mapped them to the four evangelists: Matthew (human, genealogy opening), Mark (lion, wilderness roar), Luke (ox, Temple sacrifice opening), John (eagle, soaring Logos). This "Tetramorph" appears on Romanesque church facades, Byzantine icons, and illuminated manuscripts. The fourfold structure mirrors the four directions, four elements, and Babylonian astronomical guardians (lamassu, shedu).',
+              parallels: [
+                { label: 'Revelation 4 — four living creatures before the throne', textId: 'revelation-12', note: 'Revelation 4:6-8 reproduces Ezekiel\'s hayot almost verbatim: lion, ox, human face, eagle. John adds the seraphic "holy, holy, holy" from Isaiah 6. The Ezekiel → Revelation transmission is one of the clearest cases of direct literary inheritance in the biblical canon.' },
+                { label: 'Bhagavad Gita 11 — thousands of divine forms and faces', textId: 'bhagavad-gita-11', note: 'Ezekiel\'s four-faced hayot and Krishna\'s Vishvarupa with "many mouths and eyes, many wonderful sights" both use multiplication of faces to express divine totality. Four faces or ten thousand — the theological point is the same: divinity cannot be contained in a single form.' },
+              ]
+            },
+          ]
+        },
+      ]
+    },
+    {
+      heading: 'Wheels Within Wheels (1:15–21)',
+      verses: [
+        {
+          ref: '1:16',
+          text: 'The wheels and their construction: their appearance was like the gleaming of beryl; and the four had the same form, their construction being something like a wheel within a wheel.',
+          textVersions: {
+            nrsv: 'The wheels and their construction: their appearance was like the gleaming of beryl; and the four had the same form, their construction being something like a wheel within a wheel.',
+            hebrew: 'מַרְאֵה הָאוֹפַנִּים וּמַעֲשֵׂיהֶם כְּעֵין תַּרְשִׁישׁ וּדְמוּת אֶחָד לְאַרְבַּעְתָּם וּמַרְאֵיהֶם וּמַעֲשֵׂיהֶם כַּאֲשֶׁר יִהְיֶה הָאוֹפַן בְּתוֹךְ הָאוֹפָן',
+          },
+          entities: [
+            { word: 'wheel within a wheel', node: 'merkabah-mysticism', type: 'symbol',
+              note: 'Ophan be-tokh ha-ophan — a wheel within a wheel. The ophanim (wheel-beings) are a separate class of divine beings. Their interlocking wheels full of eyes suggest omniscient perception in all directions simultaneously. Merkabah mystics used this geometry as the template for ascending journeys through the divine halls (hekhalot). The geometric image of nested wheels is structurally related to the Kabbalistic Sefirot map — nested spheres of emanation, each containing and reflecting the others.',
+              parallels: [
+                { label: 'Sefer Yetzirah — the Sefirot as nested spheres of emanation', textId: 'sefer-yetzirah', note: 'The Sefer Yetzirah\'s ten sefirot and Ezekiel\'s nested wheels-within-wheels share a geometric intuition: divine reality is structured as nested spheres, each containing the others. The Merkabah vision is the prophetic prototype; Sefer Yetzirah is its first systematic theorization.' },
+              ]
+            },
+          ]
+        },
+      ]
+    },
+    {
+      heading: 'The Glory of the LORD (1:26–28)',
+      verses: [
+        {
+          ref: '1:26–28',
+          text: 'And above the dome over their heads there was something like a throne, in appearance like sapphire; and seated above the likeness of a throne was something that seemed like a human form... This was the appearance of the likeness of the glory of the LORD. When I saw it, I fell on my face.',
+          textVersions: {
+            nrsv: 'And above the dome over their heads there was something like a throne, in appearance like sapphire; and seated above the likeness of a throne was something that seemed like a human form... This was the appearance of the likeness of the glory of the LORD. When I saw it, I fell on my face.',
+            hebrew: 'וּמִמַּעַל לָרָקִיעַ אֲשֶׁר עַל-רֹאשָׁם כְּמַרְאֵה אֶבֶן-סַפִּיר דְּמוּת כִּסֵּא וְעַל דְּמוּת הַכִּסֵּא דְּמוּת כְּמַרְאֵה אָדָם עָלָיו מִלְמָעְלָה',
+          },
+          entities: [
+            { word: 'the glory of the LORD', node: 'tradition-jewish-mysticism', type: 'concept',
+              note: 'Kavod YHWH — the Glory of the LORD. Ezekiel piles up qualifiers: "appearance of the likeness of the glory" — not God directly, but a manifestation. This deliberate hedging is one of the most careful pieces of religious epistemology in ancient literature: I saw something I cannot describe directly. Later Kabbalists identified this with the Shekhinah (divine indwelling presence), and the Shi\'ur Komah literature attempted to describe the divine body-form Ezekiel saw, giving cosmic dimensions to each limb.',
+              parallels: [
+                { label: 'Apocryphon of John — the Monad described only in negations', textId: 'apocryphon-of-john', note: 'Ezekiel\'s triple-qualifier hedging ("appearance of the likeness of the glory") and the Apocryphon\'s apophatic Monad ("He is not a being among beings") are both attempts to describe what cannot be described. Ezekiel uses nested approximations; the Gnostic text uses systematic negation. Both acknowledge that ordinary language fails before the divine.' },
+                { label: 'Poimandres — Hermes falls before the divine light', textId: 'corpus-hermeticum-1', note: 'Ezekiel falls on his face when he sees the kavod; Hermes is overwhelmed by Poimandres\' light. Both texts stage the same pattern: a human recipient is physically overcome by divine vision. The body registers what the mind cannot process.' },
+              ]
+            },
+          ]
+        },
+      ]
+    },
+  ]
+};
+
+SCRIPTURE_TEXTS['john-3'] = {
+  title: 'John 3 — Born Again / Born from Above',
+  shortTitle: 'John 3',
+  tradition: 'New Testament',
+  date: 'c. 90–100 CE',
+  intro: 'John chapter 3 contains one of the most famous and most misunderstood conversations in the Gospels: Nicodemus, a Pharisee and "teacher of Israel," comes to Jesus at night and is told he must be "born again" — or more precisely, "born from above," since the Greek anothen means both. Nicodemus takes it literally; Jesus means it spiritually. The conversation crystallizes the Fourth Gospel\'s central theological move: the descent of the Logos (John 1) must be replicated in the believer through spiritual rebirth (John 3). This rebirth through water and spirit (3:5) wires directly to the Corpus Hermeticum XIII\'s rebirth through the replacement of the "twelve tormentors" by "powers of God" — both texts describe an interior pneumatic transformation using the language of second birth. The ambiguity in anothen is not an accident: Gnostic readers took the spatial reading ("from above") as the key to the entire Fourth Gospel\'s vertical ontology, while proto-orthodox readers took the temporal reading ("again") as the key to baptismal theology.',
+  crossTradition: [
+    { label: 'Corpus Hermeticum XIII — rebirth through pneumatic regeneration', textId: 'corpus-hermeticum-13', note: 'CH XIII is the closest parallel in ancient literature to John 3. Tat asks Hermes about rebirth; Hermes explains it cannot be taught, only received. Jesus tells Nicodemus "the wind blows where it wishes — so it is with everyone born of the Spirit": pneumatic rebirth cannot be controlled or observed from outside. Both texts frustrate the questioner\'s demand for intellectual explanation and insist on experiential transformation.' },
+    { label: 'Tao Te Ching 1 — the mystery that cannot be named or controlled', textId: 'tao-te-ching-1', note: 'Jesus\' "the wind/spirit blows where it wishes and you do not know where it comes or goes" is structurally similar to Laozi\'s Tao that cannot be grasped or named. Both describe an invisible ordering principle that operates freely, cannot be controlled, yet is the source of all life. Pneuma (wind/spirit in Greek) and Tao (way/flow in Chinese) are parallel concepts for the ungovernable ground.' },
+    { label: 'Apocryphon of John — divine light imprisoned in matter', textId: 'apocryphon-of-john', note: 'The Gnostic reading of John 3: "born from above" means recognizing that one\'s true origin is the divine realm above, not the material world below. The Apocryphon\'s cosmology — divine sparks trapped in Yaldabaoth\'s world, needing gnosis to remember their origin — is a systematic theologization of John 3\'s vertical ontology. For Gnostics, anothen (from above) was the operative word.' },
+    { label: 'Purusha Sukta — three-quarters immortal in heaven, one-quarter in the world', textId: 'purusha-sukta', note: 'John 3:13: "No one has ascended into heaven except the one who descended from heaven, the Son of Man." The Purusha Sukta\'s cosmic Person — three-quarters immortal in heaven, one-quarter manifesting below — establishes the same vertical structure. Rebirth in John is re-entry into the divine pattern that was always the origin.' },
+  ],
+  translations: [
+    { id: 'nrsv', label: 'NRSV (T1)' },
+    { id: 'greek', label: 'Greek (original)' },
+  ],
+  sections: [
+    {
+      heading: 'Nicodemus Comes by Night (3:1–3)',
+      verses: [
+        {
+          ref: '3:1–2',
+          text: 'Now there was a Pharisee named Nicodemus, a leader of the Jews. He came to Jesus by night and said to him, "Rabbi, we know that you are a teacher who has come from God; for no one can do these signs that you do apart from the presence of God."',
+          textVersions: {
+            nrsv: 'Now there was a Pharisee named Nicodemus, a leader of the Jews. He came to Jesus by night and said to him, "Rabbi, we know that you are a teacher who has come from God; for no one can do these signs that you do apart from the presence of God."',
+            greek: 'Ἦν δὲ ἄνθρωπος ἐκ τῶν Φαρισαίων, Νικόδημος ὄνομα αὐτῷ, ἄρχων τῶν Ἰουδαίων· οὗτος ἦλθεν πρὸς αὐτὸν νυκτός',
+          },
+          entities: [
+            { word: 'by night', node: 'logos', type: 'symbol',
+              note: 'Nicodemus comes nuktos — by night — a loaded detail in the Fourth Gospel, where light and darkness are consistently theological categories. Night = the realm of ignorance. That Nicodemus comes in darkness signals his initial status: a man of learning who is still operating without illumination. By the Gospel\'s end (19:39), Nicodemus helps bury Jesus — having moved through darkness toward something else. The night framing echoes John 1\'s "the light shines in the darkness, and the darkness did not overcome it."',
+              parallels: [
+                { label: 'Apocryphon of John — John also comes in grief and darkness', textId: 'apocryphon-of-john', note: 'The Apocryphon opens with John (the apostle) leaving the Temple after the crucifixion in grief — also a movement through darkness toward revelation. Both seekers (Nicodemus and John) approach their revelation from a state of incomplete understanding, and both receive illuminating teaching in that state.' },
+              ]
+            },
+          ]
+        },
+        {
+          ref: '3:3',
+          text: 'Jesus answered him, "Very truly, I tell you, no one can see the kingdom of God without being born from above."',
+          textVersions: {
+            nrsv: 'Jesus answered him, "Very truly, I tell you, no one can see the kingdom of God without being born from above."',
+            greek: 'ἀπεκρίθη Ἰησοῦς καὶ εἶπεν αὐτῷ· ἀμὴν ἀμὴν λέγω σοι, ἐὰν μή τις γεννηθῇ ἄνωθεν, οὐ δύναται ἰδεῖν τὴν βασιλείαν τοῦ θεοῦ.',
+          },
+          entities: [
+            { word: 'born from above', node: 'tradition-gnosticism', type: 'concept',
+              note: 'Anothen — the crux. This Greek word means both "again" (temporal: a second time) and "from above" (spatial: from the divine realm). Nicodemus immediately takes the temporal reading: "How can anyone be born after having grown old?" Jesus means the spatial reading: descent from the divine realm as origin. The Fourth Gospel consistently uses misunderstanding as a pedagogical device — the reader is elevated above the character who misunderstands.',
+              parallels: [
+                { label: 'Corpus Hermeticum XIII — the true regeneration', textId: 'corpus-hermeticum-13', note: 'CH XIII opens: "You spoke in riddles about Divinity and did not teach clearly when you said that no one can be saved before Rebirth." Tat asks the same question Nicodemus asks. Hermes\' answer parallels Jesus\': it\'s not physical but pneumatic; it can\'t be explained, only received; the experience involves a dissolution of the old self.' },
+                { label: 'Rumi Masnavi — exile from origin and the longing for return', textId: 'rumi-masnavi', note: 'Rumi\'s reed was cut from the reed bed — its origin above. The entire Masnavi is about longing to return to that origin. John 3\'s "born from above" is structurally the same: the human being has an origin in the divine realm, and spiritual birth is a recovery of that origin. Directionality: we are from above; we descended; we return.' },
+              ]
+            },
+          ]
+        },
+      ]
+    },
+    {
+      heading: 'Spirit Like the Wind (3:5–8)',
+      verses: [
+        {
+          ref: '3:5–6',
+          text: 'Jesus answered, "Very truly, I tell you, no one can enter the kingdom of God without being born of water and Spirit. What is born of the flesh is flesh, and what is born of the Spirit is spirit."',
+          textVersions: {
+            nrsv: 'Jesus answered, "Very truly, I tell you, no one can enter the kingdom of God without being born of water and Spirit. What is born of the flesh is flesh, and what is born of the Spirit is spirit."',
+            greek: 'ἀπεκρίθη Ἰησοῦς· ἀμὴν ἀμὴν λέγω σοι, ἐὰν μή τις γεννηθῇ ἐξ ὕδατος καὶ πνεύματος, οὐ δύναται εἰσελθεῖν εἰς τὴν βασιλείαν τοῦ θεοῦ.',
+          },
+          entities: [
+            { word: 'born of water and Spirit', node: '', type: 'concept',
+              note: 'Water and pneuma — the two birth media. Early Christian interpreters divided on what "water" means: baptism? Amniotic waters? The Torah? Most settled on baptism, making this verse the proof-text for baptismal theology. But Gnostics read "water" as the realm of the Demiurge (material) and "spirit" as the pneumatic principle — "born of water and spirit" meant moving from material birth to spiritual re-birth. The same two-word phrase carries radically different weight depending on which interpretive tradition receives it.',
+              parallels: [
+                { label: 'Bhagavad Gita 4 — the eternal self versus the mortal body', textId: 'bhagavad-gita-4', note: 'BG 2:20\'s atman that cannot be cut or burned and John 3\'s "what is born of the flesh is flesh, what is born of the spirit is spirit" establish the same ontological dualism: there is a mortal embodied level of existence and an immortal spiritual level. The spiritual birth (John) or the recognition of atman (BG) shifts identity from the first level to the second.' },
+              ]
+            },
+          ]
+        },
+        {
+          ref: '3:8',
+          text: 'The wind blows where it chooses, and you hear the sound of it, but you do not know where it comes from or where it goes. So it is with everyone who is born of the Spirit.',
+          textVersions: {
+            nrsv: 'The wind blows where it chooses, and you hear the sound of it, but you do not know where it comes from or where it goes. So it is with everyone who is born of the Spirit.',
+            greek: 'τὸ πνεῦμα ὅπου θέλει πνεῖ, καὶ τὴν φωνὴν αὐτοῦ ἀκούεις, ἀλλ᾽ οὐκ οἶδας πόθεν ἔρχεται καὶ ποῦ ὑπάγει· οὕτως ἐστὶν πᾶς ὁ γεγεννημένος ἐκ τοῦ πνεύματος.',
+          },
+          entities: [
+            { word: 'wind blows where it chooses', node: 'pneuma', type: 'concept',
+              note: 'Pneuma in Greek means both wind and spirit — the same pun operates in Hebrew (ruach), Arabic (ruh), and Sanskrit (prana). Jesus\' wind/spirit saying exploits this: you can hear the wind but not see where it comes from or goes — pneumatic rebirth has the same quality of invisible causality. This is Jesus\' most Taoist moment: the unpredictable, ungovernable movement of wind is the operative principle.',
+              parallels: [
+                { label: 'Tao Te Ching 1 — the Tao that cannot be named or grasped', textId: 'tao-te-ching-1', note: 'Laozi\'s Tao that cannot be named, flows everywhere without being seen, and generates all things without claiming credit — and Jesus\' pneuma that blows where it chooses and generates new birth in those it touches — are functionally equivalent concepts. Tao and pneuma are both invisible ordering principles that operate by spontaneous, ungovernable flow.' },
+                { label: 'Corpus Hermeticum XIII — rebirth cannot be taught, only received', textId: 'corpus-hermeticum-13', note: 'Hermes tells Tat that regeneration happens through divine mercy when the moment is right — it cannot be explained in advance. Jesus tells Nicodemus that pneumatic birth is as uncontrollable as wind. Both texts refuse to give a technique or schedule: it is received, not manufactured.' },
+              ]
+            },
+          ]
+        },
+      ]
+    },
+    {
+      heading: 'God So Loved the World (3:14–17)',
+      verses: [
+        {
+          ref: '3:14–15',
+          text: 'And just as Moses lifted up the serpent in the wilderness, so must the Son of Man be lifted up, that whoever believes in him may have eternal life.',
+          textVersions: {
+            nrsv: 'And just as Moses lifted up the serpent in the wilderness, so must the Son of Man be lifted up, that whoever believes in him may have eternal life.',
+            greek: 'καὶ καθὼς Μωϋσῆς ὕψωσεν τὸν ὄφιν ἐν τῇ ἐρήμῳ, οὕτως ὑψωθῆναι δεῖ τὸν υἱὸν τοῦ ἀνθρώπου',
+          },
+          entities: [
+            { word: 'Son of Man lifted up', node: 'logos', type: 'concept',
+              note: 'Hypsothenai — "lifted up" — is a double meaning in John: physical crucifixion and theological exaltation. The Mosaic bronze serpent on a pole (Numbers 21:8-9) that healed snake-bitten Israelites becomes a type of the crucifixion: the instrument of death elevated to become an instrument of healing. This hypsosis theology runs through John 8:28 and 12:32-34, culminating in the cross as simultaneous death and glorification — the same paradoxical structure as the Purusha Sukta\'s sacrifice that creates the world.',
+              parallels: [
+                { label: 'Purusha Sukta — cosmic sacrifice as creative act', textId: 'purusha-sukta', note: 'The Purusha Sukta\'s cosmic sacrifice — the Purusha is dismembered to create the world — and John 3\'s Son of Man lifted up — the crucifixion as cosmic event generating eternal life — share the template: destruction of the divine body produces life for all creation. This is the structural core of the "dying god" pattern.' },
+              ]
+            },
+          ]
+        },
+        {
+          ref: '3:16–17',
+          text: 'For God so loved the world that he gave his only Son, so that everyone who believes in him may not perish but may have eternal life. Indeed, God did not send the Son into the world to condemn the world, but in order that the world might be saved through him.',
+          textVersions: {
+            nrsv: 'For God so loved the world that he gave his only Son, so that everyone who believes in him may not perish but may have eternal life. Indeed, God did not send the Son into the world to condemn the world, but in order that the world might be saved through him.',
+            greek: 'οὕτως γὰρ ἠγάπησεν ὁ θεὸς τὸν κόσμον, ὥστε τὸν υἱὸν τὸν μονογενῆ ἔδωκεν, ἵνα πᾶς ὁ πιστεύων εἰς αὐτὸν μὴ ἀπόληται ἀλλ᾽ ἔχῃ ζωὴν αἰώνιον.',
+          },
+          entities: [
+            { word: 'God so loved the world', node: '', type: 'concept',
+              note: 'Houtoos gar egapesen — "for God so loved." This is agape: the love that gives without requiring return. The giving of the Son is framed not as transaction but as divine generosity toward a world that did not earn it. John 3:16 without 3:17 ("not to condemn") shifts the theological weight from liberation to threat — the most popular verse in Christianity is frequently amputated from the sentence that defines it.',
+              parallels: [
+                { label: 'Coffin Text 1130 — Creator loves creation without distinction', textId: 'coffin-text-1130', note: 'The Egyptian Creator\'s declaration: "I made every man like his fellow; I did not command that they do wrong; it is their hearts that disobeyed what I said." Both the Coffin Text and John 3:16-17 locate in the Creator an unconditional love toward the created — and both note that creation\'s suffering originates not in the Creator\'s intent but in creation\'s own choices.' },
+                { label: 'Rumi Masnavi — fire of Love that drives the reed\'s cry', textId: 'rumi-masnavi', note: 'Rumi\'s "fire of Love... has set the reed ablaze" and John 3:16\'s love that gives the Son into the world are the same orientation: divine love as self-giving movement toward the created. For both Rumi and John, love is the cosmological engine — the reason the divine descends.' },
+              ]
+            },
+          ]
+        },
+      ]
+    },
+  ]
+};
+
+SCRIPTURE_TEXTS['bhagavad-gita-11'] = {
+  title: 'Bhagavad Gita 11 — The Cosmic Vision (Vishvarupa)',
+  shortTitle: 'BG 11',
+  tradition: 'Hindu',
+  date: 'c. 200 BCE–200 CE',
+  intro: 'Chapter 11 of the Bhagavad Gita is the pivot of the entire Mahabharata: Arjuna has listened to Krishna\'s teaching through ten chapters and now asks to see the divine form (deva-rupa) that underlies the teaching. Krishna grants divine eyes (divya-chakshu) because human sight cannot bear what follows: the Vishvarupa, the Universal Form — thousands of faces, eyes, mouths, and forms simultaneously; blazing suns; consuming fire; the totality of past, present, and future compressed into one terrifying vision. Arjuna is overwhelmed and begs Krishna to return to his "gentle human form." The chapter ends with Krishna\'s declaration: this form has never been seen through Vedic study, austerity, gifts, or sacrifice — only through undivided devotion (bhakti). BG 11 is structurally parallel to the great prophetic throne visions — Ezekiel 1, Isaiah 6, Revelation 4 — but its theological point is inverted: the cosmic form is revealed precisely so that Arjuna will understand why to love the personal form.',
+  crossTradition: [
+    { label: 'Ezekiel 1 — the Merkabah throne vision', textId: 'ezekiel-1', note: 'Ezekiel\'s vision of the kavod — a radiant divine figure above the chariot-throne, too brilliant to look at directly — and Arjuna\'s Vishvarupa — "blazing like fires, like the sun, dazzling, immeasurable" — are both the experience of divine totality by a single human recipient. Both Ezekiel and Arjuna fall prostrate. Both receive the vision as commissioned servants.' },
+    { label: 'Revelation 4 — Christ in cosmic form', textId: 'revelation-12', note: 'John\'s vision of Christ in Revelation 1 — "face like the sun shining with full force," "voice like the sound of many waters" — reproduces the BG 11 template: the familiar teacher transfigured into an overwhelming cosmic form. In BG 11, Arjuna recognizes Krishna but cannot sustain the vision; in Revelation 1, John recognizes Christ but falls "as though dead."' },
+    { label: 'Corpus Hermeticum XI — the all-is-one meditation', textId: 'corpus-hermeticum-11', note: 'CH XI\'s instruction to "expand your soul to immeasurable size, encompass all time and space, become the universe" is the meditative technique for approaching what BG 11 shows by divine gift. Hermes demands Nous expand to infinity; Krishna simply shows it. Both texts aim at the same cognitive event: the dissolution of the bounded self-perception before the totality.' },
+    { label: 'Apocryphon of John — the Monad with no beginning or end', textId: 'apocryphon-of-john', note: 'Arjuna sees in Krishna "no end, no middle, no beginning" (11:16). The Apocryphon\'s Monad: "He does not exist in eternity but eternity exists in him." Both texts use apophatic temporal negation — no beginning, no end — to point toward divine being that contains time rather than being contained by it.' },
+  ],
+  translations: [
+    { id: 'easwaran', label: 'Easwaran 2007 (T2)' },
+    { id: 'sanskrit', label: 'Sanskrit (original)' },
+  ],
+  sections: [
+    {
+      heading: 'Arjuna\'s Request (11:3–4)',
+      verses: [
+        {
+          ref: '11:3–4',
+          text: 'O Supreme Lord, you are exactly as you have described yourself to be. Now I want to see your divine form. If you think I am strong enough to behold it, show me your unchanging self, O Lord of Yoga.',
+          textVersions: {
+            easwaran: 'O Supreme Lord, you are exactly as you have described yourself to be. Now I want to see your divine form. If you think I am strong enough to behold it, show me your unchanging self, O Lord of Yoga.',
+            sanskrit: 'manyase yadi tac chakkyaṃ mayā draṣṭum iti prabho | yogeśvara tato me tvaṃ darśayātmānam avyayam',
+          },
+          entities: [
+            { word: 'strong enough to behold it', node: 'krishna', type: 'concept',
+              note: 'Arjuna asks whether he has the capacity (shakti) to endure the divine vision. This condition — that the recipient must be prepared — appears across mystical traditions. In Merkabah Judaism, the Chariot vision was restricted to mature scholars; in the Platonic tradition, only the philosopher who has ascended through mathematics can see the Good; in the Hermetic tradition, only the purified soul encounters Poimandres. The divine vision tests its recipient\'s readiness.',
+              parallels: [
+                { label: 'Ezekiel 1 — Ezekiel prepared by exile at the Chebar canal', textId: 'ezekiel-1', note: 'Ezekiel receives his vision "among the exiles" — in the extreme displacement of the Babylonian exile. Both Arjuna (in the crisis of imminent battle) and Ezekiel (in the trauma of exile) receive the vision in extremis. The divine vision appears at the limit of ordinary human experience.' },
+              ]
+            },
+          ]
+        },
+      ]
+    },
+    {
+      heading: 'The Vision Granted (11:10–12)',
+      verses: [
+        {
+          ref: '11:10–11',
+          text: 'Arjuna saw in that universal form unlimited mouths, unlimited eyes, unlimited wonderful visions. The form was decorated with many celestial ornaments and bore many divine upraised weapons. All was wondrous, brilliant, unlimited, all-expanding.',
+          textVersions: {
+            easwaran: 'Arjuna saw in that universal form unlimited mouths, unlimited eyes, unlimited wonderful visions. The form was decorated with many celestial ornaments and bore many divine upraised weapons. All was wondrous, brilliant, unlimited, all-expanding.',
+            sanskrit: 'aneka-vaktra-nayanam anekādbhuta-darśanam | aneka-divyābharaṇaṃ divyānekodyatāyudham',
+          },
+          entities: [
+            { word: 'unlimited mouths, unlimited eyes', node: 'brahman', type: 'symbol',
+              note: 'Aneka — countless, innumerable. This Sanskrit term refuses to specify a number because totality cannot be counted. The multiplication of faces and eyes expresses omnipresence and omniscience: a being that faces all directions simultaneously knows everything simultaneously. This is visually related to Ezekiel\'s hayot (four faces) and ophanim (wheels full of eyes) — the same theological intuition expressed differently. The Vishvarupa takes Ezekiel\'s four-fold structure and multiplies it to infinity.',
+              parallels: [
+                { label: 'Ezekiel 1 — four living creatures with four faces, wheels full of eyes', textId: 'ezekiel-1', note: 'Ezekiel\'s hayot have four faces and the wheels have eyes all around them. BG 11\'s Vishvarupa has unlimited faces and eyes. Both use multiplication to express divine omniscience and omnipresence: the step from four to infinity is a step from Hebrew specificity to Hindu mathematical expansion.' },
+              ]
+            },
+          ]
+        },
+        {
+          ref: '11:12',
+          text: 'If hundreds of thousands of suns were to rise at once into the sky, their radiance might resemble the effulgence of the Supreme Person in that universal form.',
+          textVersions: {
+            easwaran: 'If hundreds of thousands of suns were to rise at once into the sky, their radiance might resemble the effulgence of the Supreme Person in that universal form.',
+            sanskrit: 'divi sūrya-sahasrasya bhaved yugapad utthitā | yadi bhāḥ sadṛśī sā syād bhāsas tasya mahātmanaḥ',
+          },
+          entities: [
+            { word: 'hundreds of thousands of suns', node: 'surya', type: 'symbol',
+              note: 'Sahasra sūrya — a thousand suns. J. Robert Oppenheimer quoted BG 11:32 at the Trinity nuclear test (1945): "Now I am become Death, the destroyer of worlds." The thousand-suns image captures what nuclear light actually looked like — a flash brighter than any natural phenomenon. The ancient author reached for the most extreme natural radiance; modern physics finally produced something that matched it.',
+              parallels: [
+                { label: 'Hymn to Aten — the sun as the face of the single divine reality', textId: 'hymn-to-aten', note: 'Akhenaten\'s hymn describes the Aten (solar disk) as the source of all life, beauty, and sustenance. BG 11\'s thousand suns and the Hymn to Aten\'s singular sun both locate divine presence in solar radiance. Monotheism and henotheism both reach toward the sun as the closest natural analogy for the divine that pervades all things.' },
+              ]
+            },
+          ]
+        },
+      ]
+    },
+    {
+      heading: 'Arjuna is Overwhelmed (11:15–17)',
+      verses: [
+        {
+          ref: '11:15–17',
+          text: 'Arjuna said: My dear Lord, I see assembled in your body all the demigods and various other beings. I see Brahma sitting on the lotus flower as well as Lord Shiva. I see in your body many, many arms, bellies, mouths, and eyes, expanded everywhere, without limit. I see in you no end, no middle, and no beginning.',
+          textVersions: {
+            easwaran: 'Arjuna said: My dear Lord, I see assembled in your body all the demigods and various other beings. I see Brahma sitting on the lotus flower as well as Lord Shiva. I see in your body many, many arms, bellies, mouths, and eyes, expanded everywhere, without limit. I see in you no end, no middle, and no beginning.',
+            sanskrit: 'paśyāmi devāṃs tava deva dehe sarvāṃs tathā bhūta-viśeṣa-saṃghān | brahmāṇam īśaṃ kamalāsana-stham ṛṣīṃś ca sarvān uragāṃś ca divyān',
+          },
+          entities: [
+            { word: 'no end, no middle, and no beginning', node: 'brahman', type: 'concept',
+              note: 'Anādi — beginningless. Ananta — endless. Arjuna describes what he sees in mathematical-theological terms that directly parallel the Apocryphon\'s apophatic Monad ("he has no beginning, he has no end") and the Hermetic Corpus\'s description of God as the sphere whose center is everywhere. All three traditions reach the same logical structure: absolute divine totality transcends the temporal and spatial categories that bound all created things.',
+              parallels: [
+                { label: 'Apocryphon of John — "He is eternal, he has no beginning, no end"', textId: 'apocryphon-of-john', note: 'The Apocryphon\'s Monad: "He does not exist in eternity but eternity exists in him." Arjuna\'s vision: "no beginning, no middle, no end." Both use apophatic temporal negation to point toward divine being that contains time rather than being contained by it.' },
+                { label: 'Corpus Hermeticum XI — God contains all things as thoughts', textId: 'corpus-hermeticum-11', note: 'CH XI: "God contains all things — worlds, gods, all the rest of creation — as thoughts within himself." Arjuna sees all demigods within Krishna\'s body. Both texts stage the same revelation: the particular divine form (Krishna / the Nous) contains all other divine and created beings within itself.' },
+              ]
+            },
+          ]
+        },
+      ]
+    },
+    {
+      heading: 'I Am Time (11:32)',
+      verses: [
+        {
+          ref: '11:32',
+          text: 'The Blessed Lord said: Time I am, the great destroyer of the worlds, and I have come here to destroy all people. With the exception of you, all the soldiers here on both sides will be slain.',
+          textVersions: {
+            easwaran: 'The Blessed Lord said: Time I am, the great destroyer of the worlds, and I have come here to destroy all people. With the exception of you, all the soldiers here on both sides will be slain.',
+            sanskrit: 'kālo\'smi loka-kṣaya-kṛt pravṛddho lokān samāhartum iha pravṛttaḥ | ṛte\'pi tvāṃ na bhaviṣyanti sarve ye\'vasthitāḥ pratyanīkeṣu yodhāḥ',
+          },
+          entities: [
+            { word: 'Time I am, the great destroyer', node: 'kali', type: 'concept',
+              note: 'Kālo\'smi — "I am Time/Death." The Cosmic Form speaks: all the warriors are already slain — time has already consumed them; the battle has already happened from the divine perspective. What humans experience as the future is, from the divine view, already accomplished. Oppenheimer quoted this verse at the Trinity nuclear test. The "destroyer" is not malevolent — it is the natural end-point of all temporal forms within the divine totality.',
+              parallels: [
+                { label: 'Völuspá — Ragnarök already foreknown by the Seeress', textId: 'voluspa', note: 'The Norse Seeress sees the destruction of the world from outside time. Krishna shows Arjuna that the warriors\' deaths are already accomplished; the Völva narrates cosmic destruction as vision, not prediction. Both encode the same insight: divine or prophetic vision is time-transcending — what appears as future to humans is already present to the seer.' },
+                { label: 'Revelation 12 — cosmic warfare seen from the divine vantage', textId: 'revelation-12', note: 'Revelation\'s cosmic warfare — the Dragon, the Woman, the battle in heaven — and BG 11\'s cosmic destruction of the armies share the structure of terrestrial conflict seen from a cosmic perspective. In both, the spiritual dimension of the battle is revealed as prior to and determining the earthly dimension.' },
+              ]
+            },
+          ]
+        },
+      ]
+    },
+  ]
+};
+
+SCRIPTURE_TEXTS['zhuangzi'] = {
+  title: 'Zhuangzi — Butterfly Dream & Cook Ding',
+  shortTitle: 'Zhuangzi',
+  tradition: 'Taoist',
+  date: 'c. 369–286 BCE',
+  intro: 'Zhuangzi (Chuang Tzu) is the second great Taoist classic, radically different from the Tao Te Ching in form: instead of 81 brief aphorisms, Zhuangzi deploys parables, dialogues, and paradoxes designed to dislodge habitual categories. The most famous passage is the Butterfly Dream (Chapter 2): "I do not know whether I was then a man dreaming I was a butterfly, or whether I am now a butterfly dreaming I am a man." This is not skepticism about reality but an investigation into identity: what is the "definite barrier" (huà) between forms? The Cook Ding parable (Chapter 3) shows a butcher whose knife has never dulled in nineteen years because he cuts along the natural joints — following Tao rather than forcing. Together, these passages establish Zhuangzi\'s central claim: the sage does not impose categories on reality but flows with its natural articulations. The death passage (Chapter 6) extends this to mortality itself: Zhuangzi sings at his wife\'s death because he can trace her being backward to the undifferentiated original flux. These are not abstract positions — they are lived demonstrations of what it means to embody the Tao.',
+  crossTradition: [
+    { label: 'Tao Te Ching 1 — the Tao that cannot be named', textId: 'tao-te-ching-1', note: 'The Tao Te Ching states the Tao and names the problem; Zhuangzi enacts the solution through story and paradox. Where Laozi says "the Tao that can be spoken is not the eternal Tao," Zhuangzi shows what it means to live without fixed names: the butterfly dream dissolves "man" and "butterfly" into a fluid identity, demonstrating through narrative what Laozi stated theoretically.' },
+    { label: 'Corpus Hermeticum XI — become all things, expand to infinity', textId: 'corpus-hermeticum-11', note: 'CH XI instructs: "Think of yourself as everywhere at once... become the universe." The butterfly dream\'s dissolution of the man/butterfly boundary is a narrative enactment of the Hermetic expansion of self. For Hermes, the expansion is an ascent to the all; for Zhuangzi, it is a dissolution of boundaries. Different directional metaphors, same cognitive event.' },
+    { label: 'Apocryphon of John — real identity concealed by Yaldabaoth\'s categories', textId: 'apocryphon-of-john', note: 'The Apocryphon teaches that Yaldabaoth has imprisoned divine sparks in a world of false names and categories — making humans believe they are material beings rather than pneumatic ones. Zhuangzi\'s butterfly dream challenges the same assumption: the "man" identity is a category imposed on a more fluid reality. Both texts use "what am I really?" as a liberation technique.' },
+    { label: 'Nasadiya Sukta — before categories, the undifferentiated', textId: 'nasadiya-sukta', note: 'The Nasadiya\'s pre-creation state — "neither being nor non-being" — and Zhuangzi\'s pre-wife state — "no life, no form, no energy, original flux" — are the same metaphysical territory: the undifferentiated ground from which particular forms emerge and to which they return. Both texts locate liberation in recognizing this ground as primary.' },
+  ],
+  translations: [
+    { id: 'watson', label: 'Watson 1968 (T1)' },
+    { id: 'chinese', label: 'Classical Chinese (original)' },
+  ],
+  sections: [
+    {
+      heading: 'The Butterfly Dream (Chapter 2)',
+      verses: [
+        {
+          ref: 'Ch.2',
+          text: 'Once upon a time, I, Chuang Tzu, dreamt I was a butterfly, fluttering hither and thither, to all intents and purposes a butterfly. I was conscious only of my happiness as a butterfly, unaware that I was Chuang Tzu. Soon I awaked, and there lay Chuang Tzu on his bed. But I know not whether I was then a man dreaming I was a butterfly, or whether I am now a butterfly dreaming I am a man.',
+          textVersions: {
+            watson: 'Once upon a time, I, Chuang Tzu, dreamt I was a butterfly, fluttering hither and thither, to all intents and purposes a butterfly. I was conscious only of my happiness as a butterfly, unaware that I was Chuang Tzu. Soon I awaked, and there lay Chuang Tzu on his bed. But I know not whether I was then a man dreaming I was a butterfly, or whether I am now a butterfly dreaming I am a man.',
+            chinese: '昔者莊周夢為蝴蝶，栩栩然蝴蝶也，自喻適志與！不知周也。俄然覺，則蘧蘧然周也。不知周之夢為蝴蝶與？蝴蝶之夢為周與？',
+          },
+          entities: [
+            { word: 'dreaming I was a butterfly', node: 'maya', type: 'concept',
+              note: 'The most economical formulation of the consciousness-reality problem in world literature. Zhuangzi doesn\'t answer the question because the question itself reveals the problem: we assume there is a definite, stable identity that is "really me." The dream dissolves this assumption. The same device appears in Hindu māyā doctrine (what we take as real is a kind of waking dream), in the Apocryphon\'s divine sparks "dreaming" they are material humans, and in the Hermetic teaching that the soul has "fallen asleep" in matter.',
+              parallels: [
+                { label: 'Apocryphon of John — souls dreaming they are material beings', textId: 'apocryphon-of-john', note: 'Yaldabaoth creates souls who forget their divine origin and believe they are material beings — a cosmic dream of false identity. Zhuangzi\'s dreaming-butterfly plays the same epistemological trick: is my current identity the "real" one, or am I something else temporarily identified with this form?' },
+                { label: 'Chandogya Upanishad — tat tvam asi', textId: 'chandogya-6-2', note: 'Uddalaka teaches that Shvetaketu\'s "self" (atman) is not the bounded individual but Brahman, the universal ground. "That art thou." Zhuangzi\'s question "which was the real me?" and Chandogya\'s answer "neither — you are the ground of both" are the same investigation from different directions.' },
+              ]
+            },
+            { word: 'definite barrier', node: 'tao', type: 'concept',
+              note: 'The key philosophical term that follows: "zhī jiān" — a "definite barrier" or "necessary transition." Zhuangzi continues: "There must be a definite barrier between man and butterfly. The transition is called the Transformation of Material Things (wù huà)." Every apparent identity is just a phase in the continuous transformation of Tao. There are no fixed categories, only ongoing flux — and therefore no grounds for suffering over losing what we are.',
+              parallels: [
+                { label: 'Tao Te Ching 1 — the named is the mother of ten thousand things', textId: 'tao-te-ching-1', note: 'Laozi: "The named is the mother of ten thousand things" — naming creates the categories. Zhuangzi: the barrier between butterfly and man is constructed by naming. Both texts identify naming/categorizing as the act that generates apparent multiplicity from the underlying unity of Tao. Dissolving the names dissolves the barriers.' },
+              ]
+            },
+          ]
+        },
+      ]
+    },
+    {
+      heading: 'Cook Ding and the Ox (Chapter 3)',
+      verses: [
+        {
+          ref: 'Ch.3a',
+          text: 'Prince Hui\'s cook was cutting up a bull. Every blow of his hand, every heave of his shoulders, every tread of his foot, every thrust of his knee — zip! zowie! — all was in perfect rhythmic tune, like the Mulberry Grove dance. "Excellent!" cried the Prince. "Your skill is perfect!" "What I follow is Tao," said the cook, "beyond skill."',
+          textVersions: {
+            watson: 'Prince Hui\'s cook was cutting up a bull. Every blow of his hand, every heave of his shoulders, every tread of his foot, every thrust of his knee — zip! zowie! — all was in perfect rhythmic tune, like the Mulberry Grove dance. "Excellent!" cried the Prince. "Your skill is perfect!" "What I follow is Tao," said the cook, "beyond skill."',
+            chinese: '庖丁為文惠君解牛，手之所觸，肩之所倚，足之所履，膝之所踦，砉然嚮然，奏刀騞然，莫不中音。合於桑林之舞，乃中經首之會。',
+          },
+          entities: [
+            { word: 'What I follow is Tao, beyond skill', node: 'tao', type: 'concept',
+              note: 'Pao Ding\'s response distinguishes technique (shu) from Tao. He has moved past technique into the direct perception of the natural structure of the ox — its joints, cavities, and textures — and moves through that structure without forcing. This is wu-wei (non-action/non-forcing) as embodied practice: the knife glides through natural spaces rather than cutting through material resistance. The knife has never dulled in nineteen years because it never meets resistance.',
+              parallels: [
+                { label: 'Tao Te Ching 1 — the Tao that does nothing and leaves nothing undone', textId: 'tao-te-ching-1', note: 'Laozi\'s Tao that "does nothing and leaves nothing undone" and Cook Ding\'s Tao "beyond skill" are the same principle at different scales. Laozi describes it cosmologically; Zhuangzi shows it in a butcher\'s kitchen. The sage\'s craft is enacted Tao — spontaneous, effective, leaving no waste.' },
+                { label: 'Bhagavad Gita 4 — action without attachment to results', textId: 'bhagavad-gita-4', note: 'BG 4\'s "action in inaction" (naishkarmya) and Cook Ding\'s knife that never dulls describe the same phenomenon: when action aligns perfectly with the underlying order (Tao / dharma / divine will), it requires no effort and produces no depletion.' },
+              ]
+            },
+          ]
+        },
+        {
+          ref: 'Ch.3b',
+          text: '"I work with my mind and not with my eye. My mind works along without the control of the senses. Falling back upon eternal principles, I glide through such great joints or cavities as there may be, according to the natural constitution of the animal."',
+          textVersions: {
+            watson: '"I work with my mind and not with my eye. My mind works along without the control of the senses. Falling back upon eternal principles, I glide through such great joints or cavities as there may be, according to the natural constitution of the animal."',
+            chinese: '以神遇而不以目視，官知止而神欲行。依乎天理，批大郤，導大窾，因其固然。',
+          },
+          entities: [
+            { word: 'eternal principles', node: 'tao', type: 'concept',
+              note: 'Tiān lǐ — "heavenly principles" or "natural order." The cook follows the inherent natural structure of the animal as it expresses the universal Tao. This is precisely Plato\'s formulation in Phaedrus 265e — the art of "carving nature at its joints." Both Zhuangzi and Plato use the butcher/carving metaphor for wisdom: the wise person finds and follows the natural structure rather than imposing an arbitrary one.',
+              parallels: [
+                { label: 'Plato Timaeus — the Demiurge following eternal patterns', textId: 'plato-timaeus', note: 'Plato\'s Timaeus shows the Demiurge creating the cosmos by looking toward the eternal pattern (paradeigma). Cook Ding follows the heavenly principle (tiān lǐ) inherent in the ox. Both texts establish that the highest craft consists of discovering and following a pre-existing order — the Demiurge carves the cosmos at its natural joints.' },
+              ]
+            },
+          ]
+        },
+      ]
+    },
+    {
+      heading: 'Zhuangzi Sings at his Wife\'s Death (Chapter 6)',
+      verses: [
+        {
+          ref: 'Ch.6',
+          text: 'When Zhuangzi\'s wife died, Huizi found him singing and drumming on a bowl. "You lived with her and raised children," said Huizi, "and now she\'s dead — is it not enough that you do not weep? You sing!" Zhuangzi said: "When she first died, do you think I did not grieve?... But I looked back at her beginning and there was originally no life, no form, no energy. In the midst of the original flux, there was a change — and there was energy, then form, then life. Now there is another change and she is dead. This is like the progression of the four seasons. I do not weep for her return to her origin."',
+          textVersions: {
+            watson: 'When Zhuangzi\'s wife died, Huizi found him singing and drumming on a bowl. "You lived with her and raised children," said Huizi, "and now she\'s dead — is it not enough that you do not weep? You sing!" Zhuangzi said: "When she first died, do you think I did not grieve?... But I looked back at her beginning and there was originally no life, no form, no energy. In the midst of the original flux, there was a change — and there was energy, then form, then life. Now there is another change and she is dead. This is like the progression of the four seasons. I do not weep for her return to her origin."',
+            chinese: '莊子妻死，惠子弔之，莊子則方箕踞鼓盆而歌。惠子曰：「與人居，長子老身，死不哭亦足矣，又鼓盆而歌，不亦甚乎！」',
+          },
+          entities: [
+            { word: 'return to her origin', node: 'apophatic-mysticism', type: 'concept',
+              note: 'Zhuangzi traces his wife\'s being backward: from death → back to no form → back to no energy → back to the undifferentiated original flux (hun-tun). She has returned to what she was before her particular form emerged. Grief is the mistake of thinking her particular form was the real thing; liberation is recognizing that the form was a temporary crystallization of the eternal flux. Zhuangzi says he did grieve at first — this is not emotional suppression but genuine philosophical transformation.',
+              parallels: [
+                { label: 'Nasadiya Sukta — before creation, undifferentiated "that"', textId: 'nasadiya-sukta', note: 'The Nasadiya\'s pre-creation state — "neither being nor non-being," neither death nor immortality — and Zhuangzi\'s pre-wife state — "no life, no form, no energy, original flux" — are the same metaphysical territory. Both texts locate liberation in recognizing this undifferentiated ground as primary and individual forms as secondary.' },
+                { label: 'Rumi Masnavi — the reed\'s return to the reed bed', textId: 'rumi-masnavi', note: 'Rumi\'s reed cries because it was cut from its origin. Zhuangzi\'s wife has returned to hers. Both frame existence as a temporary separation from the origin and death as a return. Rumi mourns the separation; Zhuangzi sings at the return. Different emotional valences of the same metaphysical structure.' },
+              ]
+            },
+          ]
+        },
+      ]
+    },
+  ]
+};
