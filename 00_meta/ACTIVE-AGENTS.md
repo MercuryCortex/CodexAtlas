@@ -2109,9 +2109,11 @@ Files: sacred-cauldron.md (NEW) · cerridwen.md (STUB, deity) · bran-the-blesse
 
 ---
 
-## ritual-buddhist-zoroastrian-1 — 8 ritual nodes (5 Buddhist + 3 Zoroastrian) — IN PROGRESS (2026-05-17)
-- Owned: `14_rituals/ritual-buddhist-uposatha.md`, `ritual-tibetan-sky-burial.md`, `ritual-zen-sesshin.md`, `ritual-theravada-ordination.md`, `ritual-mandala-offering.md`, `ritual-yasna-fire-ceremony.md`, `ritual-navjote-zoroastrian-initiation.md`, `ritual-zoroastrian-tower-of-silence.md`
-- Status: IN PROGRESS
+## ~~ritual-buddhist-zoroastrian-1 — 8 ritual nodes (5 Buddhist + 3 Zoroastrian) — FINISHED (2026-05-17)~~
+- ~~Owned: `14_rituals/ritual-buddhist-uposatha.md`, `ritual-tibetan-sky-burial.md`, `ritual-zen-sesshin.md`, `ritual-theravada-ordination.md`, `ritual-mandala-offering.md`, `ritual-yasna-fire-ceremony.md`, `ritual-navjote-zoroastrian-initiation.md`, `ritual-zoroastrian-tower-of-silence.md`~~
+- ~~Build: 56 ritual nodes · 17205 edges · 0 YAML errors · 0 dead links introduced~~
+- ~~MASSIVE WINs: (1) Yasna=Yajna — same word, same ritual, 3500-year separation — most documentable deep-time ritual continuity in human history; (2) Jhator=Dakhma — identical physical technology (elevated vulture-exposure) from opposite theologies (dana vs. purity code) with zero documented contact; (3) Uposatha predates the Buddha — the Buddhist Sabbath is a Vedic borrowing, making all four Abrahamic weekly-sacred-cessation institutions derivable from the same Bronze Age root; (4) Mandala offering inverts all sacrifice logic — the only tradition-record ritual that offers everything then sweeps it away as the theological point~~
+- ~~Status: FINISHED — commits 4953228, b98d8a0, 33619c5, fe67003~~
 
 ---
 
