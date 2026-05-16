@@ -19,10 +19,13 @@ _Hand-maintained. Each agent currently working in the vault appends a claim bloc
 
 ---
 
-## alphabet-cosmos-architecture-1 — 3 HYPER WIN synthesis nodes — IN PROGRESS
-- Owns: 11_alphabets/alphabet-creation-by-word.md (NEW), 11_alphabets/alphabet-sacred-language-convergence.md (NEW), 11_alphabets/alphabet-letter-as-cosmos.md (NEW)
-- Also touches: src/data/patterns.js (2 new entries), src/data/observations.js (2 new entries)
-- Status: IN PROGRESS
+## ~~alphabet-cosmos-architecture-1 — 3 HYPER WIN synthesis nodes — 2026-05-16 — FINISHED~~
+- ~~Owned: 11_alphabets/alphabet-creation-by-word.md (NEW full), 11_alphabets/alphabet-sacred-language-convergence.md (NEW full), 11_alphabets/alphabet-letter-as-cosmos.md (NEW full)~~
+- ~~Stubs: 03_deities/vac-goddess.md, 05_events/solomons-temple.md~~
+- ~~Also touched: src/data/patterns.js (2 new entries), src/data/observations.js (2 new entries)~~
+- ~~Status: FINISHED — commit 1799304. Build: 2659 nodes · 15877 edges · 2.4% dead-link rate · 0 dead links introduced.~~
+- ~~MASSIVE WIN edges: Philo-of-Alexandria as the Hebrew→Christian Logos transmission vector (most documented transmission chain in Western religious thought); Beth (ב) = floor plan (2nd letter of alphabet is an architectural diagram, and Genesis opens with it — cosmological and epigraphic fact simultaneously); Devanagari = "city of the gods" (script IS architecture); Sefer Yetzirah stonemason verbs (God as architect using letters as materials — architecture and language are the same act); six-tradition creation-by-word convergence spanning 2300 BCE (Egyptian Memphite Theology) to 650 CE (Quran); six-tradition sacred-dead-language preservation (Sanskrit 2,400yr / Old Avestan 2,400yr / Biblical Hebrew 2,100yr / Latin 1,400yr / Arabic 1,376yr / Ge'ez 1,000yr); Saussure's arbitrary sign identified as modern exception to the pre-modern universal letter-IS-thing consensus.~~
+- ~~Open gaps: alphabet-ilm-al-huruf (claimed by alphabet-semitic-mysticism-1) needs cross-reference from letter-as-cosmos; alphabet-elder-futhark (claimed by alphabet-indic-runes-1) rune-as-force concept supports the letter-IS-thing argument.~~
 
 ---
 
@@ -1698,11 +1701,10 @@ Files: sacred-cauldron.md (NEW) · cerridwen.md (STUB, deity) · bran-the-blesse
 
 ---
 
-## wikidata-image-1 — Wikidata P18 secondary image system — IN PROGRESS 2026-05-16
-- Owning: `fetch_wikidata_thumbnails.py` (NEW), `_assets/thumbs_cache.json` (write)
-- Goal: Query Wikidata P18 (canonical entity image) for the 392 suspects with similarity < 0.35;
-  update cache with better images; report to 00_meta/WIKIDATA-REVIEW.md
-- Status: background run in progress (~23 min); will update cache + report on completion
+## ~~wikidata-image-1 — Wikidata P18 secondary image system — FINISHED 2026-05-16~~
+- ~~Owned: `fetch_wikidata_thumbnails.py` (NEW), `_assets/thumbs_cache.json` (updated), `00_meta/WIKIDATA-REVIEW.md` (NEW)~~
+- ~~Result: 392 suspects processed; 37 Wikidata P18 upgrades applied; 3 false positives caught + fixed (heracleon-valentinian, anthropos-gnostic, seneca); 34 net new images~~
+- ~~Status: FINISHED — see commit~~
 
 ---
 
