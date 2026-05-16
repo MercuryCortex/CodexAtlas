@@ -1511,3 +1511,8 @@ Files: sacred-sword.md · world-tree.md · sacred-number-nine.md
 **Status: FINISHED**
 Files: sacred-mask.md · sphinx-symbol.md · great-work.md
 - 254 total symbols · 15071 edges · 0 YAML errors · 0 dead links · commit e21ce73
+
+## Goblin 19A — Divine Twins / Sacred Bull / Number Eight
+**Status: FINISHED**
+Files: divine-twins.md · sacred-bull.md · sacred-number-eight.md
+- 258 total symbols · 15145 edges · 0 YAML errors · 0 dead links · commit 3a519d5
