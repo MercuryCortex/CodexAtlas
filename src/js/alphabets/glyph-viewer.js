@@ -32,6 +32,7 @@
 
   let _expandedIdx = null;
   let _script = 'hieroglyph';
+  let _docCloseHandler = null;
 
   function getMainChar(g, scriptId) {
     switch (scriptId) {
@@ -133,14 +134,6 @@
     wrap.appendChild(grid);
     wrap.appendChild(detail);
 
-    // Clicking the backdrop (not the modal card) closes the overlay
-    detail.addEventListener('click', (e) => {
-      if (e.target !== detail) return;
-      _expandedIdx = null;
-      detail.innerHTML = '';
-      detail.classList.remove('active');
-      grid.querySelectorAll('.alpha-glyph-cell').forEach(c => c.classList.remove('expanded'));
-    });
 
     const scriptMeta = SCRIPTS.find(s => s.id === _script) || SCRIPTS[0];
 
@@ -318,19 +311,35 @@
       });
     });
 
-    expanded.querySelector('.age-close-btn').addEventListener('click', (e) => {
-      e.stopPropagation();
+    function closePanel() {
       _expandedIdx = null;
       detailEl.innerHTML = '';
       detailEl.classList.remove('active');
-      const grid = detailEl.previousElementSibling;
-      if (grid) grid.querySelectorAll('.alpha-glyph-cell').forEach(c => c.classList.remove('expanded'));
+      const g = detailEl.previousElementSibling;
+      if (g) g.querySelectorAll('.alpha-glyph-cell').forEach(c => c.classList.remove('expanded'));
+      if (_docCloseHandler) {
+        document.removeEventListener('click', _docCloseHandler);
+        _docCloseHandler = null;
+      }
+    }
+
+    expanded.querySelector('.age-close-btn').addEventListener('click', (e) => {
+      e.stopPropagation();
+      closePanel();
     });
 
-    expanded.addEventListener('click', (e) => e.stopPropagation());
     detailEl.innerHTML = '';
     detailEl.classList.add('active');
     detailEl.appendChild(expanded);
+
+    // Click outside the panel (not on a card) dismisses it
+    if (_docCloseHandler) document.removeEventListener('click', _docCloseHandler);
+    _docCloseHandler = (e) => {
+      if (!detailEl.contains(e.target) && !e.target.closest('.alpha-glyph-cell')) {
+        closePanel();
+      }
+    };
+    setTimeout(() => document.addEventListener('click', _docCloseHandler), 0);
   }
 
   window._alphaGlyphs = { render };
