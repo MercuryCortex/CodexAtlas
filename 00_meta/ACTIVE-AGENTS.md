@@ -47,10 +47,11 @@ _Hand-maintained. Each agent currently working in the vault appends a claim bloc
 
 ---
 
-## opus-hittite-upgrade-1 — Hittite + Gita + Zhuangzi upgrades — started 2026-05-16 — IN PROGRESS
-- Owning: `03_deities/teshub.md`, `03_deities/kumarbi.md`, `02_documents/_phase-1-ancient-near-east/phase-1-028-kumarbi-cycle.md`, `02_documents/_phase-2-axial-age/phase-2-027-bhagavad-gita.md`, `02_documents/_phase-2-axial-age/phase-2-022-zhuangzi.md`
+## opus-hittite-upgrade-1 — Hittite + Gita + Zhuangzi upgrades — started 2026-05-16 — **FINISHED 2026-05-16**
+- Owned: `03_deities/teshub.md`, `03_deities/kumarbi.md`, `02_documents/_phase-1-ancient-near-east/phase-1-028-kumarbi-cycle.md`, `02_documents/_phase-2-axial-age/phase-2-027-bhagavad-gita.md`, `02_documents/_phase-2-axial-age/phase-2-022-zhuangzi.md`
 - Goal: Upgrade 5 nodes from metadata to full; wire Kumarbi→Hesiod MASSIVE WIN chain; Gita global career + Zhuangzi↔Nāgārjuna parallel
-- Status: in-progress
+- Status: finished
+- Delivered: 5 nodes → full; 0 new dead links; 13650 edges; Commits: d9e6db4, 0d67b5f, 7eec101
 
 ---
 
