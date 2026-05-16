@@ -22,7 +22,7 @@ influenced-by: ["[[phase-2-001-rig-veda-family-books]]", "Sāṃkhya proto-categ
 influences: ["all subsequent Hindu theistic Vedānta (Ramanuja's Viśiṣṭādvaita explicitly grounds itself in the Śvetāśvatara)", "[[phase-5-016-ramanuja-sribhasya]]", "Śaiva Siddhānta theology", "modern Hindu theistic Vedanta (Aurobindo, Tagore)"]
 deities-mentioned: ["[[rudra-shiva-early]]", "[[brahman]] (as ultimate principle)", "[[purusha]]"]
 events-context: []
-status: "metadata"
+status: "full"
 preservation: "Continuous oral-textual transmission within the Kṛṣṇa Yajurveda Taittirīya/Maitrāyaṇī school; manuscript transmission from ~1100 CE forward. The text is among the most-commented Upaniṣads in the medieval scholastic tradition — Shankara's commentary (~800), Vijñānabhikṣu's (~16th c.), and many more."
 refs:
   - title: "The Early Upaniṣads: Annotated Text and Translation"
@@ -63,6 +63,31 @@ tags: [phase-2, vedic, upanishad, shvetashvatara, rudra, shiva-early, theism, sa
 
 ## What it is
 A late-Vedic Upaniṣad of ~113 verses in six *adhyāyas* (chapters), attached canonically to the Kṛṣṇa Yajurveda (Taittirīya / Maitrāyaṇī school), traditionally attributed to a sage Śvetāśvatara. Unlike the earlier Bṛhadāraṇyaka and Chāndogya Upaniṣads — which are exploratory, dialogical, and broadly impersonal in their treatment of *brahman* — the Śvetāśvatara is the earliest Upaniṣadic text in which *brahman*-the-ultimate is identified with a personal Lord (here Rudra-Śiva), in which proto-Sāṃkhya categories (*puruṣa*, *prakṛti*, the three *guṇas*) are clearly articulated, and in which a recognizable proto-*yoga* and proto-*bhakti* are textually present. It is the bridge document between the impersonal-monistic Upaniṣadic tradition and the personal-theistic Hindu tradition that emerges in the Bhagavad Gītā and the later Vaiṣṇava and Śaiva canon.
+
+## Primary text — selected passages
+
+### ŚU 1.1–2 — The eternal brahman inquiry
+*Trans. Olivelle, P. (1998). The Early Upaniṣads. Oxford University Press.*
+> Those who talk about brahman say: What is the reason? What is brahman? Where are we born? Where do we live? On what are we established? Governed by whom, O you knowers of brahman, do we live in pleasure and in pain, each in our respective situations?
+> Should we regard it as time? Or as intrinsic nature? Or as chance? Or as the elements? Or as the womb? Or as the person? Or as the union of these — but that cannot be, for the self also exists. Yet the self has no power [alone to produce pleasure and pain].
+
+*The Śvetāśvatara opens with the most compressed philosophical survey in the Upaniṣads: seven possible candidates for the ultimate ground (time, nature, chance, elements, womb, person, combination). Their systematic enumeration and rejection prepares the text's answer: the One God, Rudra-Śiva, who underlies them all.*
+
+### ŚU 2.8–10 — Proto-yoga discipline: posture, breath, and absorption
+*Trans. Olivelle 1998.*
+> Holding the body steady with the three upper sections [neck, chest, head] erect, drawing the senses into the heart with the mind, a wise man shall cross all the frightful torrents with the boat of brahman.
+> Compressing his breath and restrained movements here, a man should breathe through his nostrils with reduced breath; like that chariot yoked to vicious horses, his mind the wise man should restrain without distraction.
+
+*ŚU 2 gives the earliest sustained description of an organized yogic meditative discipline in the Upaniṣadic literature: posture, prāṇāyāma (breath control), sensory withdrawal, and meditative absorption. This is the proto-yoga that Patañjali will systematize into the eight-limbed *aṣṭāṅga-yoga*.*
+
+### ŚU 6.11+23 — The hidden God and the earliest bhakti
+*Trans. Olivelle 1998.*
+> 6.11: The One God, hidden in all beings, pervading everything, the inner self of all beings, the overseer of actions, dwelling in all beings, the witness, the knower, the only one, and devoid of attributes...
+> 6.23: To him who has the highest devotion to God [*parā bhaktiḥ*], and as to God, so to his teacher — to him, who is great of soul, these declarations become manifest.
+
+*ŚU 6.11 — *deva eko nigūḍhaḥ* ("One God, hidden") — is the Upaniṣadic statement most structurally parallel to Abrahamic divine-immanence theology. ŚU 6.23 is the earliest unambiguous occurrence of *bhakti* (devotional love for God) as a soteriological term in Sanskrit literature — the textual birth of the tradition that runs through the Bhagavad Gītā to Kabir, Mirabai, and ISKCON.*
+
+*Citations: Olivelle, P. (1998). The Early Upaniṣads. Oxford UP.*
 
 ## Context
 - **Political milieu.** Late-Vedic eastern India (Kuru-Pañcāla → Magadha cultural belt) during the period of the second urbanization (~600–300 BCE), the rise of the Magadhan kingdom, and the contemporaneous emergence of the Buddha (~5th c. BCE), Mahāvīra (~6th–5th c. BCE), and the early Upaniṣadic sages.

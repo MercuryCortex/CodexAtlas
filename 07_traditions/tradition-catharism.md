@@ -56,6 +56,11 @@ refs:
     tier: 1
     notes: "Chapter on Rahn documents the Cathar-Grail mythology's absorption into SS ideology end-to-end."
 tags: [tradition, catharism, albigensian, languedoc, dualism, heresy, medieval, crusade, montségur, perfecti, grail-reception, rahn, nazi-reception, occitania, 13th-century, bogomil]
+depictions:
+  - src: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/52/Massacre_des_Cathares.jpg/400px-Massacre_des_Cathares.jpg"
+    caption: "Massacre of the Cathars — illuminated manuscript, Chroniques de France ou de St Denis (c. 1415)"
+    source: "Wikimedia Commons"
+    license: "Public Domain"
 ---
 
 # Catharism (Albigensian heresy)

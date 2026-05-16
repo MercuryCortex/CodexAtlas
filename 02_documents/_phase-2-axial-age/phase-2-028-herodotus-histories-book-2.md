@@ -57,7 +57,7 @@ deities-mentioned:
   - "[[khonsu]]"
   - "[[apis-bull]]"
 events-context: []
-status: "metadata"
+status: "full"
 preservation: "Continuous manuscript transmission since Hellenistic Alexandria; earliest fragments on papyrus from c. -300; medieval Byzantine mss (Laurentianus 70.3, the *Codex Romanus*); first printed by Aldus (Venice 1502)"
 refs:
   - title: "Herodotus, Book II: Introduction"
@@ -105,6 +105,28 @@ tags: [phase-2, document, herodotus, egypt, greek, ethnography, comparative-reli
 
 ## What it is
 *Histories* Book 2 is [[herodotus]]'s ethnography of Egypt — 182 chapters covering geography (the Nile, climate, fauna, the Delta), customs, food, embalming, animal cults, dynastic history from Min/Menes to the Persian conquest, and most importantly **a sustained Greek-language description of Egyptian religion and its identifications with Greek religion**. Written c. 445–425 BCE, it is the **earliest surviving Greek prose document on Egypt** and the foundational text of the Greco-Egyptian intellectual encounter.
+
+## Primary text — selected passages
+
+### Her. 2.50 — The Egyptian-origin claim for Greek divine names
+*Trans. Godley, A.D. (1920). Herodotus. Loeb Classical Library 117–120.*
+> Almost all the names of the gods came into Greece from Egypt. My inquiries prove that they came from foreign parts, and I believe that Egypt furnished the greater part of them. Except for Poseidon and the Dioscuri... and Hera, and Hestia, and Themis, and the Graces and the Nereids, the other gods have been known from time immemorial in Egypt.
+
+*Herodotus's claim that "almost all the names of the gods came into Greece from Egypt" is almost universally rejected by modern scholarship — Greek religion has Indo-European and Mycenaean Linear-B roots predating any documented Egyptian-Greek religious contact. Yet the claim is load-bearing in intellectual history: it generates the entire tradition of Egyptian-origin mysticism from Neoplatonism through Renaissance Hermeticism.*
+
+### Her. 2.53 — Homer and Hesiod gave the Greeks their gods
+*Trans. Godley 1920.*
+> But whence each of the gods came into existence, or whether they had all forever existed, and how they appeared in form, the Greeks did not know until, one might say, the day before yesterday; for I suppose that Homer and Hesiod are four hundred years older than I, and no more — these are the poets who composed for the Greeks the theogonies, assigned to the gods their epithets, divided among them their honors and functions, and described their forms.
+
+*Herodotus's assertion that Homer and Hesiod "gave the Greeks their gods" — that the Olympian religion is a poetic creation by named, dateable humans — is one of the most audacious claims in ancient religious criticism. It simultaneously demythologizes Greek religion and locates its canonical form in two identifiable authors, anticipating the Euhemerist tradition and naturalist theories of religion from Xenophanes to Hume.*
+
+### Her. 2.42 — Greek-Egyptian divine equations
+*Trans. Godley 1920.*
+> The Thebans hold Heracles to be one of the twelve gods and call the Theban Egyptian god whom they worship by the name of Chons... But as for the Heracles whom the Greeks know, I have seen no mention of him in Egypt. Furthermore, among all the Egyptians, in those parts of Egypt that I have described, no pig is admitted to any sanctuary...
+
+*Herodotus's systematic table of Greek-Egyptian god equations (Zeus/Amun, Demeter/Isis, Dionysus/Osiris, Apollo/Horus, Artemis/Bastet) is the founding document of *interpretatio graeca* — the practice of reading foreign religions through one's own divine categories. Every subsequent cross-tradition divine equation, from Plutarch to Renaissance Hermeticism, descends from this table.*
+
+*Citations: Godley, A.D. (1920). Herodotus. Loeb Classical Library 117–120.*
 
 ## Context
 - **Political milieu.** Egypt is a province of the Achaemenid Persian Empire (conquered by Cambyses in 525 BCE, [[cyrus-the-great]]'s son). Egyptian native dynasties briefly reassert independence (28th–30th Dynasties, 404–343 BCE) but the period of Herodotus's writing is firmly Persian Egypt. Greek mercenaries and merchants have been resident in Egypt since the Saite renaissance (7th c. BCE) — the Greek trading settlement at Naucratis is centuries old by Herodotus's time.

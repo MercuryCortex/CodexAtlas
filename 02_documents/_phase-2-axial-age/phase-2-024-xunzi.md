@@ -22,7 +22,7 @@ influenced-by: ["[[phase-2-015-analects-of-confucius]]", "Zhuangzi (perspectival
 influences: ["[[phase-2-026-han-feizi]] (his student Han Fei built Legalism on Xunzian foundations)", "Qin and Han state-Confucianism (Liu Xiang the redactor was a Han imperial classicist)", "Tang and Song state-Confucian ritual programs", "modern reception of Confucianism as ritual-naturalist rather than metaphysical (Eno 1990; Hutton 2014)"]
 deities-mentioned: ["[[tian-heaven]]"]
 events-context: ["Warring States period (-475 to -221)"]
-status: "metadata"
+status: "full"
 preservation: "Received text: 32 essay-chapters (a fundamentally different form from the dialogue-anecdote *Analects* and *Mengzi* — Xunzi writes essays, the first systematic philosophical prose in Chinese). Redacted by Liu Xiang (~-25 BCE) from a larger collection of 322 *pian*. Continuous transmission, though Xunzi was eclipsed in the Song-onward Neo-Confucian canon by the Mengzi (Zhu Xi explicitly excluded Xunzi from the Four Books). Major modern rehabilitation, especially since the mid-20th c."
 refs:
   - title: "Xunzi: The Complete Text"
@@ -74,6 +74,28 @@ tags: [phase-2, chinese, confucianism, xunzi, human-nature, ritual, naturalist, 
 
 ## What it is
 The third great classical Confucian text, after the Analects and the Mengzi — and the most philosophically systematic of the three. Where the Analects records aphorisms and dialogues, and the Mengzi records advisories and debates, the Xunzi is the first work of sustained essay-prose in Chinese philosophy: thirty-two chapters of argumentative treatises on human nature, ritual, music, learning, naming, the conduct of rulers, the role of the scholar-official, the heart-mind, and Heaven. Xunzi's signature doctrine — *xìng è* 性惡, "human nature is bad" — is the direct counter to Mengzi's "human nature is good." Where Mengzi sees moral cultivation as the unfolding of innate sprouts, Xunzi sees it as the *shaping* of an unruly nature through ritual (*lǐ*), education, and sustained effort. The corollary is that ritual and culture are *human inventions* — created by the sages to channel a nature that, left alone, would consume itself in conflict. This is one of the most consequentially naturalistic claims in pre-modern world thought.
+
+## Primary text — selected passages
+
+### Xunzi ch. 1 — Learning: the blue-dye opening
+*Trans. Hutton, E.L. (2014). Xunzi: The Complete Text. Princeton UP.*
+> Learning should never stop... Blue dye comes from the indigo plant but is bluer than the plant itself. Ice comes from water but is colder than water. Through steaming and bending, you can make wood as straight as an ink line into a wheel. Even after the wheel has dried, it will not straighten again, because the bending has made it so. So too, the person of exemplary conduct who studies broadly and daily examines himself will have clear understanding and will make no errors.
+
+*The blue-dye simile is the locus classicus of Chinese educational rhetoric: culture surpasses nature; the product can exceed the raw material. For Xunzi, this is the foundation of his entire program — humans through cultivation can exceed what nature alone provides. This metaphor has been cited in Korean, Japanese, and Chinese educational discourse for 2,000 years.*
+
+### Xunzi ch. 17 — Heaven is nature, not a moral agent
+*Trans. Hutton 2014.*
+> Heaven does not suspend winter because people dislike cold... the sage does not refuse thunder because it frightens people. Heaven has its constant ways; earth has its constant measurements; the noble person has his constant deportment. The noble person accords with the constant; the petty person calculates against the constant. When there is constancy and good governance, a state is not disordered. When there is constancy and good governance without, disasters will not arrive.
+
+*Xunzi's "Discourse on Heaven" (ch. 17) is the most systematic naturalization of Heaven in classical Chinese thought: Heaven operates by regular pattern indifferent to human moral states. Rain does not fall because of prayer; famine does not strike because of sin. This is proto-secularism in 3rd-century BCE China — an explicit critique of Heaven-worship as mental servitude.*
+
+### Xunzi ch. 23 — Human nature is bad (*xìng è* 性惡)
+*Trans. Hutton 2014.*
+> People's nature is bad. Their goodness is a matter of deliberate effort. Now people's nature is such that they are born with a fondness for profit in them. If they follow along with this, then struggle and contention will arise, and yielding and deference will perish therein. They are born with feelings of hate and dislike in them. If they follow along with these, then cruelty and villainy will arise, and loyalty and trustworthiness will perish therein... If people follow their nature and go along with their feelings, they are sure to come to struggle and contention.
+
+*Ch. 23's signature doctrine — *xìng è* 性惡, "human nature is bad" — is the direct counter to Mengzi's "human nature is good." Moral goodness is a product of deliberate effort (*wěi* 偽), ritual training, and education — not the unfolding of innate goodness. This makes ritual and culture not luxuries but necessities for the survival of civil society.*
+
+*Citations: Hutton, E.L. (2014). Xunzi: The Complete Text. Princeton UP.*
 
 ## Context
 - **Political milieu.** Late Warring States, on the eve of unification under Qin (-221). Xunzi taught at the famous Jixia Academy in Qi, the great Warring States center of intellectual exchange where Mohists, Mencians, Legalists, Logicians, and Daoists met. He later directed the academy at Lanling in Chu. Two of his most famous students, Han Fei and Li Si, became the architects of Legalist Qin governance — a fact that has produced 2,300 years of debate over whether Xunzian Confucianism is a doorway to Legalism.

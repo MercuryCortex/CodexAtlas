@@ -7,10 +7,10 @@
 
 | Stat | Count |
 |---|---|
-| Total nodes | 2487 |
-| Has thumbnail | 1597 (64.2%) |
-| **NULL** (no image) | **890** |
-| **SUSPECT** (possible wrong match) | **220** |
+| Total nodes | 2492 |
+| Has thumbnail | 1600 (64.2%) |
+| **NULL** (no image) | **892** |
+| **SUSPECT** (possible wrong match) | **219** |
 
 ## How to fix
 
@@ -635,7 +635,7 @@
 | `phase-1-021-shumma-izbu` | Šumma Izbu (Teratological-Omen Series) | query≈0.48 — returned: **Summa Irunga Machan** | [view](https://upload.wikimedia.org/wikipedia/en/d/dc/Summa_Irunga_Machan.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled) |
 | `phase-1-020-shumma-alu` | Šumma Ālu (If a City is Set on a Height) | query≈0.59 — returned: **Summilux** | [view](https://upload.wikimedia.org/wikipedia/commons/thumb/1/16/Leica_50mm_f-1.4_Summilux-M_II_%281962%29_Chrome.jpg/330px-Leica_50mm_f-1.4_Summilux-M_II_%281962%29_Chrome.jpg) |
 
-## TRADITIONS  (29 null · 27 suspect)
+## TRADITIONS  (29 null · 25 suspect)
 
 ### Nulls — need an OVERRIDE or `depictions` YAML entry
 
@@ -678,12 +678,10 @@
 | `tradition-alevi-bektashi` | Alevi-Bektashi | query≈0.57 — returned: **Alevism** | [view](https://upload.wikimedia.org/wikipedia/commons/thumb/9/9b/Semah_and_saz.jpg/330px-Semah_and_saz.jpg) |
 | `tradition-aztec-mexica` | Aztec / Mexica Religion | query≈0.34 — returned: **Aztecs** | [view](https://upload.wikimedia.org/wikipedia/commons/thumb/d/d2/Aztec_Empire.png/330px-Aztec_Empire.png?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail) |
 | `tradition-cao-dai` | Cao Dai — Third Divine Alliance | query≈0.31 — returned: **Caodaism** | [view](https://upload.wikimedia.org/wikipedia/en/thumb/f/fc/Divine_Eye_sphere.jpg/330px-Divine_Eye_sphere.jpg) |
-| `tradition-catharism` | Catharism (Albigensian heresy) | query≈0.14 — returned: **Albigensian Crusade** | [view](https://upload.wikimedia.org/wikipedia/commons/thumb/e/ec/Le_massacre_des_Albigeois.jpg/330px-Le_massacre_des_Albigeois.jpg) |
 | `tradition-cheondogyo` | Cheondogyo — Religion of the Heavenly Way | query≈0.31 — returned: **Cheondoism** | [view](https://upload.wikimedia.org/wikipedia/commons/thumb/f/fc/Cheondoism_flag.svg/330px-Cheondoism_flag.svg.png) |
 | `tradition-cybele-attis-mysteries` | Cybele-Attis Mysteries (Magna Mater / Metroac Mysteries) | query≈0.43 — returned: **Cybele** | [view](https://upload.wikimedia.org/wikipedia/commons/thumb/0/03/Unknown_-_Statue_of_a_Seated_Cybele_with_the_Portrait_Head_of_her_Priestess_-_57.AA.19.jpg/330px-Unknown_-_Statue_of_a_Seated_Cybele_with_the_Portrait_Head_of_her_Priestess_-_57.AA.19.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail) |
 | `tradition-donghak` | Donghak — Eastern Learning | query≈0.36 — returned: **Tonghak** | [view](https://upload.wikimedia.org/wikipedia/commons/thumb/9/90/Flag_of_Donghak_Peasant_Revolution_%28small%29.svg/330px-Flag_of_Donghak_Peasant_Revolution_%28small%29.svg.png) |
 | `tradition-finno-karelian` | Finno-Karelian Pre-Christian Religion | query≈0.31 — returned: **Baltic Finnic paganism** | [view](https://upload.wikimedia.org/wikipedia/commons/c/c6/Venesarvinen_hirvi.jpg) |
-| `tradition-gnosticism` | Gnosticism | query≈0.14 — returned: **Apocryphon of John** | [view](https://upload.wikimedia.org/wikipedia/commons/thumb/8/88/Apocryphon_of_John.jpg/330px-Apocryphon_of_John.jpg) |
 | `tradition-hopi` | Hopi Traditional Religion | query≈0.28 — returned: **Hopi** | [view](https://upload.wikimedia.org/wikipedia/commons/thumb/9/9d/Hopi_woman_with_a_traditional_pot_and_traditional_clothing.png/330px-Hopi_woman_with_a_traditional_pot_and_traditional_clothing.png) |
 | `tradition-inca-andean` | Inca / Andean Religion | query≈0.33 — returned: **Religion in the Inca Empire** | [view](https://upload.wikimedia.org/wikipedia/commons/thumb/6/68/Pachacuteckoricancha.jpg/330px-Pachacuteckoricancha.jpg) |
 | `tradition-isis-mysteries` | Isis Mysteries (Hellenistic-Roman Cult of Isis) | query≈0.44 — returned: **Isis** | [view](https://upload.wikimedia.org/wikipedia/commons/thumb/e/ec/Isis.svg/330px-Isis.svg.png) |
@@ -1125,7 +1123,7 @@
 | `tawḥīd` | Tawḥīd — Divine Unity | query≈0.30 — returned: **Tawhid** | [view](https://upload.wikimedia.org/wikipedia/commons/thumb/6/60/Istanbul%2C_Hagia_Sophia%2C_Allah.jpg/330px-Istanbul%2C_Hagia_Sophia%2C_Allah.jpg) |
 | `vicarious-atonement` | Vicarious Atonement | query≈0.59 — returned: **Substitutionary atonement** | [view](https://upload.wikimedia.org/wikipedia/commons/thumb/0/09/Atonement_%28Trento%29.JPG/330px-Atonement_%28Trento%29.JPG) |
 
-## SYMBOLS  (49 null · 32 suspect)
+## SYMBOLS  (51 null · 33 suspect)
 
 ### Nulls — need an OVERRIDE or `depictions` YAML entry
 
@@ -1133,16 +1131,18 @@
 |---|---|---|---|
 | `all-seeing-eye` | All-Seeing Eye (Eye of Providence) | — | [search →](https://en.wikipedia.org/w/index.php?search=All-Seeing+Eye+%28Eye+of+Providence%29) |
 | `asherah-pole` | Asherah Pole (Sacred Tree / Cult Object of Asherah) | — | [search →](https://en.wikipedia.org/w/index.php?search=Asherah+Pole+%28Sacred+Tree+%2F+Cult+Object+of+Asherah%29) |
+| `aten-disk` | Aten Disk | — | [search →](https://en.wikipedia.org/w/index.php?search=Aten+Disk) |
 | `bindu` | Bindu | — | [search →](https://en.wikipedia.org/w/index.php?search=Bindu) |
 | `cauldron-of-rebirth` | Cauldron of Rebirth | — | [search →](https://en.wikipedia.org/w/index.php?search=Cauldron+of+Rebirth) |
 | `chaos-star` | Chaos Star | — | [search →](https://en.wikipedia.org/w/index.php?search=Chaos+Star) |
+| `cosmic-serpent` | Cosmic Serpent | — | [search →](https://en.wikipedia.org/w/index.php?search=Cosmic+Serpent) |
 | `divine-child` | Divine Child | — | [search →](https://en.wikipedia.org/w/index.php?search=Divine+Child) |
 | `dove` | Dove | — | [search →](https://en.wikipedia.org/w/index.php?search=Dove) |
 | `eleusinian-kykeon` | Eleusinian Kykeon | — | [search →](https://en.wikipedia.org/w/index.php?search=Eleusinian+Kykeon) |
 | `evil-eye` | Evil Eye | — | [search →](https://en.wikipedia.org/w/index.php?search=Evil+Eye) |
+| `eye-of-ra` | Eye of Ra | — | [search →](https://en.wikipedia.org/w/index.php?search=Eye+of+Ra) |
 | `eye-of-the-heart` | Eye of the Heart | — | [search →](https://en.wikipedia.org/w/index.php?search=Eye+of+the+Heart) |
 | `feather-of-maat` | Feather of Ma'at (Weighing of the Heart) | — | [search →](https://en.wikipedia.org/w/index.php?search=Feather+of+Ma%27at+%28Weighing+of+the+Heart%29) |
-| `serpent-mound` | Great Serpent Mound | — | [search →](https://en.wikipedia.org/w/index.php?search=Great+Serpent+Mound) |
 | `green-lion` | Green Lion (Viridis Leo) | — | [search →](https://en.wikipedia.org/w/index.php?search=Green+Lion+%28Viridis+Leo%29) |
 | `ifa-divination` | Ifá Divination | — | [search →](https://en.wikipedia.org/w/index.php?search=If%C3%A1+Divination) |
 | `kaaba-black-stone` | Ka'ba and the Black Stone (Al-Ḥajar al-Aswad) | — | [search →](https://en.wikipedia.org/w/index.php?search=Ka%27ba+and+the+Black+Stone+%28Al-%E1%B8%A4ajar+al-Aswad%29) |
@@ -1169,13 +1169,13 @@
 | `sacred-number-three` | Sacred Number Three | — | [search →](https://en.wikipedia.org/w/index.php?search=Sacred+Number+Three) |
 | `sacred-pearl` | Sacred Pearl (Lóng Zhū / Lulu / Mani) | — | [search →](https://en.wikipedia.org/w/index.php?search=Sacred+Pearl+%28L%C3%B3ng+Zh%C5%AB+%2F+Lulu+%2F+Mani%29) |
 | `sacred-river` | Sacred River | — | [search →](https://en.wikipedia.org/w/index.php?search=Sacred+River) |
+| `sacred-scepter` | Sacred Scepter | — | [search →](https://en.wikipedia.org/w/index.php?search=Sacred+Scepter) |
 | `tattoo-sacred` | Sacred Tattoo | — | [search →](https://en.wikipedia.org/w/index.php?search=Sacred+Tattoo) |
 | `sacred-twins` | Sacred Twins | — | [search →](https://en.wikipedia.org/w/index.php?search=Sacred+Twins) |
 | `sacrifice-substitution` | Sacrifice by Substitution | — | [search →](https://en.wikipedia.org/w/index.php?search=Sacrifice+by+Substitution) |
 | `sulphur-mercury-salt` | Sulphur, Mercury, Salt (Tria Prima) | — | [search →](https://en.wikipedia.org/w/index.php?search=Sulphur%2C+Mercury%2C+Salt+%28Tria+Prima%29) |
 | `thread-of-fate` | Thread of Fate | — | [search →](https://en.wikipedia.org/w/index.php?search=Thread+of+Fate) |
 | `was-scepter` | Was Scepter | — | [search →](https://en.wikipedia.org/w/index.php?search=Was+Scepter) |
-| `pagan-wheel-of-year` | Wheel of the Year | — | [search →](https://en.wikipedia.org/w/index.php?search=Wheel+of+the+Year) |
 | `winged-disk` | Winged Disk | — | [search →](https://en.wikipedia.org/w/index.php?search=Winged+Disk) |
 | `world-mountain` | World Mountain | — | [search →](https://en.wikipedia.org/w/index.php?search=World+Mountain) |
 | `sacred-number-zero` | Zero / The Void | — | [search →](https://en.wikipedia.org/w/index.php?search=Zero+%2F+The+Void) |
@@ -1199,6 +1199,7 @@
 | `hamsa-khamsa` | Hamsa / Khamsa — the Hand of Protection | query≈0.23 — returned: **Hamsa** | [view](https://upload.wikimedia.org/wikipedia/commons/thumb/6/63/Khamsa.jpg/330px-Khamsa.jpg) |
 | `hexagram` | Hexagram | query≈0.29 — returned: **Star of David** | [view](https://upload.wikimedia.org/wikipedia/commons/thumb/4/49/Star_of_David.svg/330px-Star_of_David.svg.png) |
 | `infinity-symbol` | Infinity Symbol / Lemniscate | query≈0.53 — returned: **Lemniscate** | [view](https://upload.wikimedia.org/wikipedia/commons/thumb/e/ef/Lemniscate_of_Bernoulli.svg/330px-Lemniscate_of_Bernoulli.svg.png) |
+| `inverted-cross` | Inverted Cross / Cross of Saint Peter | query≈0.55 — returned: **Inverted cross** | [view](https://upload.wikimedia.org/wikipedia/commons/thumb/9/9a/Peter%27s_Cross.svg/330px-Peter%27s_Cross.svg.png) |
 | `lotus` | Lotus | query≈0.29 — returned: **Sacred lotus in religious art** | [view](https://upload.wikimedia.org/wikipedia/commons/thumb/3/31/Nelumbo_nucifera1.jpg/330px-Nelumbo_nucifera1.jpg) |
 | `mandala-circle` | Mandala / Cosmological Circle | query≈0.39 — returned: **Mandala** | [view](https://upload.wikimedia.org/wikipedia/commons/thumb/9/9a/Manjuvajramandala_con_43_divinit%C3%A0_-_Unknown_-_Google_Cultural_Institute.jpg/330px-Manjuvajramandala_con_43_divinit%C3%A0_-_Unknown_-_Google_Cultural_Institute.jpg) |
 | `merkaba` | Merkaba | query≈0.56 — returned: **Merkabah mysticism** | [view](https://upload.wikimedia.org/wikipedia/commons/thumb/e/eb/Ezekiel-Vision-Merkaba.jpg/330px-Ezekiel-Vision-Merkaba.jpg) |

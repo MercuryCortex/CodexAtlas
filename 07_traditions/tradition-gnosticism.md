@@ -38,6 +38,11 @@ refs:
     type: "monograph"
     tier: 2
 tags: [tradition, gnostic, sethian, valentinian, late-antiquity]
+depictions:
+  - src: "https://upload.wikimedia.org/wikipedia/commons/thumb/0/01/Nag_Hammadi_Codex_II.jpg/400px-Nag_Hammadi_Codex_II.jpg"
+    caption: "Nag Hammadi Codex II (c. 4th century CE), containing the Apocryphon of John and Gospel of Thomas — the most important surviving Gnostic library"
+    source: "Wikimedia Commons"
+    license: "Public Domain"
 ---
 
 # Gnosticism
