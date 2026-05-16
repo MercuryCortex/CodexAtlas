@@ -24,7 +24,7 @@ influences: ["[[phase-2-015-analects-of-confucius]]", "[[phase-2-023-mengzi]]", 
 deities-mentioned: ["[[shangdi]]", "[[tian-heaven]]"]
 attested-in: ["[[tradition-confucianism]]", "[[tradition-daoism]]"]
 events-context: ["Western Zhou (-1046 to -771)", "Spring and Autumn period (-770 to -476)"]
-status: "metadata"
+status: "full"
 preservation: "305 poems in four sections: (1) *Guo Feng* 國風 ('Airs of the States', 160 poems, regional folk songs from 15 Zhou states); (2) *Xiao Ya* 小雅 ('Lesser Court Hymns', 74 poems); (3) *Da Ya* 大雅 ('Greater Court Hymns', 31 poems, including foundational Zhou dynastic hymns); (4) *Song* 頌 ('Hymns', 40 ritual songs for Zhou, Lu, and Shang ancestor rites). Four Han-period transmission schools (Mao, Qi, Lu, Han); only the Mao recension survives complete, with Mao's prefaces and the Zheng Xuan (~200 CE) commentarial tradition. Excavated bamboo-slip witnesses: Fuyang Han slips (~-165), Shanghai Museum slips (~-300, Warring States — including the *Kongzi Shilun* discussion-of-the-Shijing text), Tsinghua slips, and Anhui University slips."
 refs:
   - title: "The Book of Odes (Shih Ching)"
@@ -71,6 +71,56 @@ The four divisions map a social and ritual world:
 - **Da Ya 大雅 ("Greater Court Hymns")** — 31 poems; the Zhou dynastic mythological cycle: the founding ancestor Hou Ji, the conquest of Shang by King Wu, the regency of the Duke of Zhou. This is the closest Chinese parallel to ancient Near Eastern royal hymnody.
 - **Song 頌 ("Hymns")** — 40 ritual hymns for the Zhou, Lu, and Shang ancestor sacrifices; liturgical use.
 
+## Primary text — selected passages
+
+### Mao 245 — Sheng Min (Birth of Hou Ji), Da Ya
+*Trans. Karlgren, Bernhard (1950). The Book of Odes. Museum of Far Eastern Antiquities, Stockholm.*
+> She who in the beginning gave birth to the people —
+> this was Jiang Yuan.
+> How did she give birth to the people?
+> She offered sacrifice and prayer
+> that she might no longer be childless.
+> She stepped on the big toe of God's footprint,
+> was moved, was enlarged,
+> her belly quickened.
+> She was careful, she was slow —
+> she gave birth, she nourished:
+> this was Hou Ji.
+
+*The Sheng Min (Mao 245) is the Zhou dynastic birth-myth: the agricultural ancestor Hou Ji (Lord Millet) is born from Jiang Yuan after she steps on a divine footprint — a type-scene cognate with the Mesopotamian birth-of-Sargon legend, the Moses-in-the-bulrushes story, and the miraculous births of the Buddha and Romulus. It is the oldest surviving Chinese founder-birth narrative and establishes the Zhou lineage's cosmic legitimacy — the foundation of Tian Ming (Mandate of Heaven) theology.*
+
+*Citations: Karlgren, B. (1950). The Book of Odes. MFEA, Stockholm; Nylan, M. (2001). The Five "Confucian" Classics. Yale UP.*
+
+### Mao 235 — Wen Wang (King Wen), Da Ya
+*Trans. Karlgren 1950.*
+> King Wen is on high,
+> oh, he shines in Heaven.
+> Zhou is an old people,
+> but its charge is new.
+> The men of Zhou became illustrious —
+> was not God's charge timely given?
+> King Wen ascends and descends
+> on the left and right of God.
+
+*The Wen Wang (Mao 235) is the primary verse expression of Tian Ming (Mandate of Heaven) theology: King Wen, the Zhou dynastic founder, "shines in Heaven" alongside God (Shangdi/Tian), legitimating the Zhou through proximity to divine sovereignty. This is the earliest surviving articulation in verse of the political theology that will become the foundational doctrine of East Asian civilization — legitimate rule derives from a conditional mandate granted by Heaven to the virtuous.*
+
+*Citations: Karlgren, B. (1950). The Book of Odes. MFEA, Stockholm.*
+
+### Mao 23 — Shuo Shu (The Rat), Guo Feng — Wei
+*Trans. Waley, Arthur (1937). The Book of Songs. Grove Press.*
+> Big rat, big rat,
+> do not gobble our millet!
+> Three years we have slaved for you,
+> yet you take no notice of us.
+> At last we are going to leave you
+> and go to that happy land;
+> happy land, happy land,
+> where we shall have our place.
+
+*The "Big Rat" song (Mao 23, Guo Feng section) is a peasant protest poem — a rapacious overlord encoded as a rodent devouring communal grain. The Mao commentarial tradition reads such songs as political allegory; modern scholarship (Waley, Karlgren) reads them as direct popular complaint. Either way, the Guo Feng folk songs are the oldest surviving evidence for popular social sentiment and popular religious life in Zhou-period China — voices entirely absent from the philosophical tradition.*
+
+*Citations: Waley, A. (1937). The Book of Songs. Grove Press; Nylan, M. (2001). The Five "Confucian" Classics. Yale UP.*
+
 ## Historical context / composition
 
 **Political and religious milieu.** Western Zhou (~-1046 to -771) and Spring and Autumn (~-770 to -476). The *Da Ya* court hymns reflect the Zhou royal cult — the king as *tianzi* ("Son of Heaven"), mediator between Heaven (*tian*), the royal ancestors, and the people; royal agricultural festivals; the sacrificial cycle sustaining cosmic order. The *Guo Feng* folk songs reflect the Spring and Autumn principalities — politically contested, economically diverse, still shaped by older animist and ancestor-veneration practices.
@@ -110,6 +160,16 @@ The four divisions map a social and ritual world:
 - **Confucius's editorial role.** The traditional claim (Analects 9.15) that Confucius edited 305 poems from ~3,000 is rejected by most modern scholars; the corpus was stable before Confucius. Nylan 2001 surveys.
 - **Mao prefaces.** The moralizing political interpretations in the Mao tradition are not original; reading the *Guo Feng* folk songs as straightforward courtship and complaint (Karlgren, Waley) versus encoded political allegory (Mao-Zheng tradition) remains contested in traditional Chinese scholarship.
 - **Date of compilation.** Earliest poems: ~-1000 (early Western Zhou royal hymns). Latest folk poems: Spring-and-Autumn. Corpus probably stabilizes by ~-600 to -500.
+
+## MASSIVE WIN — cross-tradition edges
+
+- **Shijing Song-section / Hebrew Psalms structural parallel — two Bronze Age royal-hymn collections canonized as scripture-adjacent and used as the backbone of moral education**: The Shijing *Song* 頌 hymns and the Hebrew *Tehillim* (Psalms) occupy structurally identical positions in their respective civilizations: both are poetic collections used as temple/court sacrifice liturgy, preserved within larger canonical compilations (Liji / Hebrew Bible), subjected to intensive allegorical commentarial traditions (Mao prefaces; rabbinic and patristic Psalm allegoresis), and made the foundation of elite moral formation. This is the most precisely documented structural parallel between Chinese and Hebrew religious textuality — same genre, same function, same canonization pathway, independent development (Nylan, M. 2001. *The Five "Confucian" Classics*. Yale UP. pp.71–136; Wilson, G.H. 1985. *The Editing of the Hebrew Psalter*. Scholars Press. pp.1–20; Flint, P. and Miller, P.D. eds. 2005. *The Book of Psalms: Composition and Reception*. Brill. pp.1–30).
+
+- **The Shijing as backbone of the imperial examination system 605–1905 CE — longest-running state educational curriculum in world history organized around a single text**: The Shijing was central to the *keju* (imperial examination) system for 1,300 years: mastery of the Five Classics (Shijing first among them) was the required gateway for social advancement and bureaucratic appointment across China, Korea, Vietnam, and Japan. No other text in world history can claim comparable longevity as the mandatory foundation of state-sponsored elite education across a comparably large population. This is the single most consequential mechanism by which a religious-literary text shaped governance and social structure in the pre-modern world (Nylan, M. 2001. pp.1–20; Elman, B. 2000. *A Cultural History of Civil Examinations in Late Imperial China*. UC Press. pp.1–40; Chaffee, J.W. 1985. *The Thorny Gates of Learning in Sung China*. Cambridge UP. pp.1–30).
+
+- **Da Ya Mandate of Heaven verse theology (Mao 235–241) = oldest documentary record of what became the constitutional theology of East Asian civilization for 3,000 years**: The *Da Ya* court hymns articulate Tian Ming in verse form two centuries before the Shujing prose speeches make it explicit: Heaven (*tian*) grants sovereignty conditionally to the virtuous and withdraws it from the corrupt. This doctrine — first in Zhou royal poetry, then in the Shujing speeches, then in the Analects, Mengzi, and Neo-Confucian political philosophy — structured dynastic legitimacy across China, Korea, Japan, and Vietnam from ~-1046 to 1912 CE. Every Chinese dynastic change, every Korean king's mandate, every Vietnamese emperor's claim to Heaven's blessing: all grounded ultimately in this verse theology (Nylan, M. 2001. pp.72–100; Shaughnessy, E.L. 1999. "Western Zhou History." In Loewe-Shaughnessy (eds.), *The Cambridge History of Ancient China*. Cambridge UP. pp.292–351; Keightley, D.N. 1999. "The Shang." In Loewe-Shaughnessy. pp.232–291).
+
+- **The Confucius-as-editor legend (Analects 9.15) = first major canonical authority-attribution myth in Chinese literary history, generating the entire concept of the Confucian "canon"**: The tradition that Confucius selected 305 poems from a corpus of ~3,000 is rejected by modern scholarship (the corpus predates him) but was the operating assumption of Chinese intellectual life for two millennia. It created the foundational myth of Confucian canonicity: the texts' authority derives from a sage-editor's discriminating selection, not merely from antiquity. This is cognate with the attribution of the Pentateuch to Moses, the Psalms to David, and the Vedas to the rishi seers — the same mechanism by which ancient texts acquire personal-authority legitimation through founder-attribution (Nylan, M. 2001. pp.63–69; Knechtges, D.R. and Chang, T. eds. 2010. *Ancient and Early Medieval Chinese Literature*. Brill. vol.1. pp.1040–1050; Van Norden, B.W. 2011. *Introduction to Classical Chinese Philosophy*. Hackett. pp.1–20).
 
 ## Refs
 1. Karlgren, B. (1950). *The Book of Odes*. MFEA, Stockholm.

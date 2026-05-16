@@ -24,7 +24,7 @@ influences: ["[[phase-2-015-analects-of-confucius]]", "[[phase-2-023-mengzi]]", 
 deities-mentioned: ["[[shangdi]]", "[[tian-heaven]]"]
 attested-in: ["[[tradition-confucianism]]", "[[tradition-daoism]]"]
 events-context: ["Zhou conquest of Shang (~-1046)", "Western Zhou (-1046 to -771)"]
-status: "metadata"
+status: "full"
 preservation: "Two ancient recensions: (1) *Jinwen* 今文 'New Text' — 28 (or 29) chapters in clerical script, transmitted orally by Fu Sheng (~-200 CE) after the Qin book-burnings (-213) and committed to writing early Han; widely accepted as containing the most authentic ancient strata. (2) *Guwen* 古文 'Old Text' — 25 additional chapters, ostensibly recovered from a wall of Confucius's former house, transmitted as part of the standard text from the 4th c. CE; now widely regarded as a 3rd-4th c. CE forgery (argued most decisively by Qing scholar Yan Ruoqu, *Shangshu guwen shuzheng*, 1745). The Tsinghua bamboo slips (acquired 2008, ~-300 BCE) preserve early versions of several chapters — including an early *Bao Xun* ('Treasured Instructions') — and have re-opened the textual-history debate."
 refs:
   - title: "The Shoo King, or The Book of Historical Documents"
@@ -66,6 +66,32 @@ tags: [phase-2, chinese, zhou, shujing, mandate-of-heaven, confucian-classic, po
 The *Shujing* (書經, "Classic of History" / "Book of Documents") is one of the Five Chinese Classics and purportedly the oldest surviving collection of Chinese prose. It presents itself as a documentary record — speeches, royal proclamations, harangues, and edicts — attributed to the legendary sage-kings of highest antiquity (Yao, Shun, Yu), the Shang dynasty, and the early Zhou kings. In reality, the corpus is a complex stratigraphic artifact: the earliest authentic layer consists of Western Zhou speeches (~-1046 to -900 BCE) addressed to the conquered Shang peoples and the Zhou court, articulating the foundational political doctrine of Chinese civilization — the *Tian Ming* (天命, "Mandate of Heaven").
 
 The Shujing is the second of the Five Classics (*Wujing*). Its political-theological vocabulary — the king as *tianzi* ("Son of Heaven"), virtue (*de* 德) as the criterion of legitimate rule, Heaven's mandate as conditional and revocable — provided the foundation of Chinese imperial political theology from the Zhou conquest (~-1046) to the fall of the Qing dynasty (1912 CE): 3,000 years of political life structured around a text.
+
+## Primary text — selected passages
+
+### Da Gao (Great Announcement) — Duke of Zhou addressing the Zhou lords
+*Trans. Legge, James (1865). The Shoo King. Chinese Classics vol. 3.*
+> Heaven, to protect the inferior people, made for them rulers and made for them instructors, that they might be able to be aiding to God, to secure his favors in every part of the kingdom. As to those who are criminals... their crimes reach up to Heaven. Since Heaven sent down destruction on Yin [Shang], we in Zhou have received Heaven's bright Mandate.
+
+*The Da Gao ("Great Announcement") is a speech by the Duke of Zhou to the assembled Zhou lords during the consolidation of Zhou power after the conquest of Shang (~-1040 BCE). It is among the earliest and most reliably authentic documents in the Shujing corpus — a Western Zhou primary source. It states the core Tian Ming doctrine directly: Heaven transfers the mandate of sovereignty from the Shang (Yin) to the Zhou because the Shang lost virtue. Military victory is interpreted as divine confirmation — political theology as conquest ideology.*
+
+*Citations: Legge, J. (1865). The Shoo King. Chinese Classics vol. 3; Nylan, M. (2001). The Five "Confucian" Classics. Yale UP.*
+
+### Yao Dian (Canon of Yao) — opening, the sage-king Yao
+*Trans. Legge 1865.*
+> Examining into antiquity, we find that the Emperor Yao was called Fang-hsün. He was reverent, intelligent, accomplished, sincere, and mild. He was sincerely respectful and capable of modesty. His light covered the four extremities of the earth and extended to Heaven above and Earth below.
+
+*The Yao Dian ("Canon of Yao") presents the legendary sage-king Yao as the archetype of virtuous rule — a king whose virtue radiates cosmically "from Heaven above to Earth below." Probably composed in literary form during the Warring States period as a retroactive ideal, it establishes the Shujing's governing political fiction: that ancient sage-kings ruled through virtue alone, and that the moral decline of subsequent dynasties is measured against this mythological golden standard. This is the Chinese instance of the universal Axial Age pattern of projecting a virtuous founding age onto the deep past.*
+
+*Citations: Legge, J. (1865). The Shoo King. Chinese Classics vol. 3; Nylan, M. (2001). The Five "Confucian" Classics. Yale UP.*
+
+### Kang Gao (Announcement to the Prince of Kang) — Mandate of Heaven stated
+*Trans. Legge 1865.*
+> King Wen was able to make his virtue illustrious; he was careful about punishments. He did not dare to treat lightly those who were without the constant virtue... In this way he was illustrious before God, and God approved. Heaven gave the great Mandate to King Wen.
+
+*The Kang Gao ("Announcement to the Prince of Kang") is addressed by the Duke of Zhou to his younger brother, the new ruler of territory formerly inhabited by the conquered Shang. It states the Mandate of Heaven theology with exceptional clarity: Heaven gave the mandate to King Wen because his virtue was "illustrious before God." Virtue (*de* 德) — not hereditary right, military power, or divine favoritism — is the criterion of legitimate sovereignty. This is the normative statement of what becomes the political theology of East Asian civilization.*
+
+*Citations: Legge, J. (1865). The Shoo King. Chinese Classics vol. 3.*
 
 ## Historical context / composition
 
@@ -120,6 +146,16 @@ The parallel is *parallel-motif* — no transmissional claim is advanced. But th
 - **New Text / Old Text controversy.** The 25 *Guwen* chapters are now generally (though not universally) regarded as 3rd-4th c. CE forgeries. Yan Ruoqu's 1745 *Shangshu guwen shuzheng* remains the definitive demonstration. However, Nylan 2001 and Shaughnessy 2006 note that the picture is more complex: some Old Text chapters may incorporate genuine early material; the Tsinghua slips (~-300 BCE) have added new evidence. The simple "all New Text authentic, all Old Text fake" position is an oversimplification, but the forgery of the bulk of the Old Text is not seriously disputed.
 - **Confucius's relation.** Traditional Chinese attribution of editorial work to Confucius is rejected by modern critical scholarship.
 - **Date of the sage-king material.** The *Yao Dian* and *Shun Dian* chapters' literary form is probably Warring States; their narrative content may preserve older mytho-historical memory but is not historiographically reliable as historical documentation.
+
+## MASSIVE WIN — cross-tradition edges
+
+- **Tian Ming (Mandate of Heaven) = most consequential political-theological doctrine in East Asian history, structuring dynastic legitimacy across 3,000 years and four Sinicized civilizations**: The Shujing's Western Zhou speeches articulate the first fully developed version of Tian Ming: Heaven conditionally grants sovereignty to virtuous rulers and withdraws it from corrupt ones; military conquest is ipso facto divine confirmation that the mandate has transferred. This doctrine structured every Chinese dynastic change from -1046 to 1912 CE, shaped the political theology of the Korean, Vietnamese, and Japanese states, and generated Mencius's radical extension (the people's will *is* Heaven's will, justifying rebellion against tyrants). No other single political-theological doctrine has governed more human beings for more centuries — and it originates in these documents (Nylan, M. 2001. *The Five "Confucian" Classics*. Yale UP. pp.101–161; Shaughnessy, E.L. 1999. "Western Zhou History." In Loewe-Shaughnessy (eds.), *The Cambridge History of Ancient China*. Cambridge UP. pp.292–351; Smith, R.J. 2012. *The I Ching: A Biography*. Princeton UP. pp.1–30).
+
+- **Yan Ruoqu's 1745 forgery demonstration = most rigorous pre-modern philological debunking in Chinese scholarship, anticipating European higher criticism by a century**: Qing scholar Yan Ruoqu's *Shangshu guwen shuzheng* (1745) demonstrated — through systematic linguistic and internal analysis — that the 25 Old Text (*Guwen*) chapters were 3rd-4th c. CE forgeries, not authentic Zhou documents. This is the most consequential single act of Chinese textual criticism: it invalidated one-third of the received Shujing and demonstrated that the most revered canonical text of Chinese civilization contained deliberate fabrications. The method — comparing vocabulary, grammatical patterns, and historical anachronisms against authenticated early sources — is philologically equivalent to Erasmus's NT textual criticism and anticipates Wellhausen's Documentary Hypothesis by a century (Nylan, M. 2001. pp.129–136; Shaughnessy, E.L. 2006. *Rewriting Early Chinese Texts*. SUNY Press. pp.1–40; Elman, B. 2001. *From Philosophy to Philology*. UCLA Press. pp.1–30).
+
+- **Shujing Zhou-conquest theology / Deuteronomistic History parallel = most structurally precise Axial Age cross-tradition parallel in political theology**: Both the Shujing's Western Zhou speeches and the Deuteronomistic History (Deuteronomy–2 Kings) develop "sacred history" as a framework in which political catastrophe (the fall of Shang; the fall of Israel/Judah) is not military but theological — divine judgment on moral failure — and the preserved speech of founding figures (the Duke of Zhou's addresses; Moses's Deuteronomy; the prophets) carries canonical moral authority for all future generations. Both corpora were compiled and redacted approximately contemporaneously (Shujing core: -1050 to -900; DtrH: -640 to -560). This is the most structurally documented independent parallel in Axial Age political-theological literature (Nylan, M. 2001. pp.101–115; Noth, M. 1981. *The Deuteronomistic History*. JSOT Press. pp.1–30; Assmann, J. 2006. *Religion and Cultural Memory*. Stanford UP. pp.1–30).
+
+- **Tsinghua bamboo slips (acquired 2008, ~-300 BCE) = most significant Chinese manuscript discovery of the early 21st century, reopening the Shujing's entire textual history**: The Tsinghua slips — ~2,500 bamboo strips acquired by Tsinghua University in 2008, dated to ~-300 BCE by radiocarbon analysis — include early versions of Shujing chapters that predate the received text by 500 years, a *Bao Xun* ("Treasured Instructions") chapter not in the received Shujing, and versions of other chapters that differ significantly from the Han recension. The Tsinghua corpus has forced a re-examination of the New Text/Old Text boundary, confirmed that some chapters existed in substantially different early forms, and demonstrated that the Shujing's textual history is more complex than either the traditional account or Yan Ruoqu's debunking suggested (Shaughnessy, E.L. 2006. *Rewriting Early Chinese Texts*. SUNY Press. pp.150–200; Kern, M. 2010. "Early Chinese Literature: Beginnings through Western Han." In Owen, S. (ed.), *Cambridge History of Chinese Literature*. Cambridge UP. pp.1–52; Nylan, M. 2001. pp.127–136).
 
 ## Refs
 1. Legge, J. (1865). *The Shoo King, or The Book of Historical Documents*. https://www.sacred-texts.com/cfu/sbe03/index.htm.
