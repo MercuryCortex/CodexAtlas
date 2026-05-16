@@ -5,7 +5,7 @@ name: "Beheading of Guru Tegh Bahadur — The Interfaith Martyrdom"
 date-earliest: 1675
 date-latest: 1675
 region: "Delhi (Mughal Empire)"
-traditions-involved: ["[[tradition-sikhism]]", "[[tradition-islam-mughal]]", "[[tradition-hinduism]]"]
+traditions-involved: ["[[tradition-sikhism]]", "[[tradition-islam-mughal]]", "[[tradition-vedic-hinduism]]"]
 persons-involved: ["[[guru-tegh-bahadur-ji]]", "[[aurangzeb-emperor]]", "[[guru-gobind-singh-ji]]"]
 status: "metadata"
 refs:
@@ -89,7 +89,7 @@ This is the vault's only example of a **martyrdom explicitly for the religious f
 - → [[guru-gobind-singh-ji]] — *son and 10th Guru*: Khalsa creation is the direct response to this martyrdom
 - → [[event-death-of-guru-arjan-1606]] — *predecessor*: the first Guru-martyr; together they complete the transformation of Sikhism
 - → [[tradition-sikhism]] — *transformative-event*: beheading triggers Khalsa creation, completing the warrior-saint synthesis
-- → [[tradition-hinduism]] — *extraordinary-connection*: Guru Tegh Bahadur died defending Hindu religious freedom — the vault's only interfaith martyrdom
+- → [[tradition-vedic-hinduism]] — *extraordinary-connection*: Guru Tegh Bahadur died defending Hindu religious freedom — the vault's only interfaith martyrdom
 - → [[theme-dying-founder-paradigm]] — *instance*: executed Guru whose death directly creates the Khalsa
 - → [[theme-persecution-as-legitimation]] — *instance*: Mughal execution → Khalsa → Mughal power in Punjab permanently undermined
 - → [[martyrdom-theology]] — *Sikh-supreme-instance*: Tegh Bahadur as the highest expression of principled sacrifice in the Sikh tradition

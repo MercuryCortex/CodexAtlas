@@ -60,6 +60,9 @@ build/
 .claude/worktrees/
 .claude/projects/
 
+# === Ingest / audit working directory (generated analysis outputs) ===
+99_ingest/
+
 # Note: the following ARE intentionally tracked (NOT in this gitignore):
 #   - 00_meta/DASHBOARD.md, dead-links.md, quality-issues.md, orphan-nodes.md, canonical-slugs.md
 #     (auto-generated but useful as historical snapshots — diff == real signal)

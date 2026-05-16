@@ -41,7 +41,7 @@ syncretic-edges:
     notes: "Chitragupta is the Hindu instantiation of the 'Record mechanism' slot in the psychostasia structural grammar: the divine figure who maintains the perfect, unfalsifiable record that makes the divine tribunal's judgment possible. His Agrasandhani is the Hindu equivalent of Thoth's scroll, the Book of Life, the Islamic two-recording-angels system. He is the most precisely documented example of this universal theological requirement."
 mentioned-in:
   - "[[psychostasia-soul-weighing]]"
-  - "[[tradition-hinduism]]"
+  - "[[tradition-vedic-hinduism]]"
 status: "metadata"
 refs:
   - title: "The Garuda Purana (Saroddhara)"
