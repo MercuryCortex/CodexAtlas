@@ -4,6 +4,12 @@ _Hand-maintained. Each agent currently working in the vault appends a claim bloc
 
 ---
 
+## ~~opus-pantheon-v2-parity-3 — V2-vs-V1 four-delta closure — started 2026-05-17 — DONE~~
+- ~~Owned: `src/js/views/pantheon-v2.js`, `src/js/dev-panel.js`, `index.html`~~
+- ~~Status: done — see STATUS.md. Code swept into `b306dd1` (sonnet-scripture-reader-4) by parallel agent.~~
+
+---
+
 ## ~~goblin-suppressed-sacred-1 — symbols / suppressed sacred symbols thread — started 2026-05-16 — FINISHED 2026-05-16~~
 - ~~Owning: `09_symbols/asherah-pole.md` (NEW), `09_symbols/kaaba-black-stone.md` (NEW), `09_symbols/maypole-irminsul.md` (NEW), `09_symbols/feather-of-maat.md` (NEW)~~
 - ~~Goal: Asherah pole / Yahweh consort MASSIVE WIN (Kuntillet Ajrud Tier-1 epigraphy); Ka'ba sacred-site continuity pre-Islamic→Islamic + tawaf circumambulation cross-tradition; Irminsul destruction as axis-mundi conquest (Charlemagne 772 CE); Feather of Ma'at 5-tradition cosmic-scales-of-judgment pattern~~
