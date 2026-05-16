@@ -2134,10 +2134,13 @@ Files: sacred-cauldron.md (NEW) · cerridwen.md (STUB, deity) · bran-the-blesse
 
 ---
 
-## ritual-wiring-hindu-buddhist-zoroastrian-1 — Vault Connections pass on 16 ritual nodes — IN PROGRESS (2026-05-17)
-- Owned: all 8 Hindu ritual nodes + all 8 Buddhist/Zoroastrian ritual nodes in `14_rituals/`
-- Task: add `## Vault Connections` sections with confirmed wikilinks to deity, tradition, alchemy, and cross-tradition ritual nodes
-- Status: IN PROGRESS
+## ~~ritual-wiring-hindu-buddhist-zoroastrian-1 — Vault Connections pass on 16 ritual nodes — FINISHED (2026-05-17)~~
+- ~~Owned: all 8 Hindu ritual nodes + all 8 Buddhist/Zoroastrian ritual nodes in `14_rituals/`~~
+- ~~Task: add `## Vault Connections` sections with confirmed wikilinks to deity, tradition, alchemy, and cross-tradition ritual nodes~~
+- ~~Build: 56 ritual nodes · 17233 edges · 0 YAML errors · 0 dead links introduced~~
+- ~~Commits: a27d460 (Hindu 1) · eb6d7f4 (Hindu 2) · 47df229 (Zoroastrian) · 8d7e3d9 (Buddhist)~~
+- ~~MASSIVE WIN edges: (1) yajna/yasna cognate = same word, same ritual, same ancestor — most documentable deep-time ritual continuity in human history; (2) jhator/dakhma = identical physical technology from opposite theologies with zero documented contact; (3) uposatha/shabbat = Buddhist Sabbath is a Vedic borrowing making all 4 Abrahamic weekly-cessation institutions derivable from same Bronze Age root; (4) tantra/alchemy-conjunction-hieros-gamos = 4,000-year continuity of the divine union pattern (Inanna → Shiva-Shakti → Rosarium); (5) sesshin/alchemy-calcination-stages = 7-day/7-stage parallel transformation map cross-domain~~
+- ~~Status: FINISHED~~
 
 ---
 

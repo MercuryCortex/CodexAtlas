@@ -1,6 +1,6 @@
 ---
 type: symbol
-id: "janus"
+id: "janus-symbol"
 name: "Janus (Two-Faced God of Thresholds)"
 aka: ["Ianus", "Janus Bifrons", "Janus Geminus", "Janus Patulcius", "Janus Clusius", "God of Beginnings", "God of Gates", "God of Transitions", "Janus-faced"]
 category: "anthropomorphic"
