@@ -61,6 +61,24 @@ Khnum (Egyptian *Ḫnmw*) is the **ram-headed creator god** of Egypt, principall
 ## Mythological role
 Khnum's principal mythic role is **bodily creation**: he forms every human child on his potter's wheel before birth. This is depicted in royal "divine birth" reliefs (Luxor, Deir el-Bahari) where Khnum is shown fashioning the future king and his *ka* on the wheel while Amun watches. As guardian of the Nile source he releases the inundation; the Famine Stela makes this his most narratively elaborated act. At Esna in the Greco-Roman period, an elaborate theology develops in which Khnum is identified with Ra and Shu and treated as a universal creator — comparable in scope to Amun-Ra theology at Karnak.
 
+## MASSIVE WIN: Khnum's Potter Wheel → Genesis 2:7 (Yahweh forms Adam from clay)
+
+Khnum forms human bodies from Nile clay on the potter's wheel — the *tactile* divine creation of the physical body. Genesis 2:7 reads: "Then the Lord God formed a man from the dust of the ground and breathed into his nostrils the breath of life." This is the **Yahwist creation account** (J-source, distinct from the Priestly *bara* creation-by-speech of Genesis 1) — God as divine potter shaping the human form from earth-material.
+
+The parallel is structural and the proximity is historical: Egyptian potter-creator theology is attested from the Old Kingdom (~2700 BCE); the Yahwist source of Genesis is conventionally dated ~9th–10th c. BCE, during a period of sustained Egyptian-Israelite contact (Solomon's Egyptian wife, 1 Kings 3:1; Shishak's invasion, 1 Kings 14:25; the exodus narrative set in Egypt regardless of historicity). The comparison does not require direct borrowing — the same cognitive template (divine potter shaping humans from clay-earth) appears in Mesopotamian (Mami/Ninhursag forming humans from clay in Atrahasis, ~1700 BCE) and Greek (Prometheus modeling humans from clay, attested in Hesiod). But the Egyptian Khnum tradition is the oldest and most visually elaborate instantiation of the divine-potter type.
+
+Five-tradition comparison:
+
+| Tradition | Divine potter | Date | Form |
+|---|---|---|---|
+| Egyptian | Khnum forms the body + *ka* on the wheel | ~2700 BCE (Pyramid Texts) | Ram-headed god at potter's wheel |
+| Mesopotamian | Mami/Ninhursag molds humans from clay + Enki's flesh (Atrahasis) | ~1700 BCE | Mother-goddess potter |
+| Biblical (Yahwist) | YHWH forms Adam from "the dust of the ground" (Genesis 2:7) | ~9th c. BCE | Direct divine craftsmanship |
+| Greek | Prometheus models humans from clay | Hesiod (~700 BCE) and later | Titan as craftsman |
+| Quranic | Allah creates humans from clay (*tin*) and *nutfa* (seed) | 7th c. CE (multiple verses) | Direct divine creation of physical form |
+
+Wire: [[phase-1-010-book-of-the-dead]], [[phase-1-002-pyramid-texts]], [[creation-by-word]] (contrasting creation mode — Ptah creates by speech while Khnum creates by hand).
+
 ## Cross-tradition identifications
 - **Chnoubis** — *ancient-identification* / *syncretic-fusion*: in the Greco-Egyptian magical-gem corpus (the so-called *Abrasax gems*, c. +1st–4th c. CE), Khnum-Chnoubis appears as a **lion-headed serpent** — radically transformed from the ram-headed Egyptian form. This is one of the major magical-tradition syncretic figures, and the Chnoubis gems are widely catalogued (Bonner 1950).
 - **[[ra]] / [[shu]]** — *ancient-identification* (Esna theology): triadic identification of Khnum-Ra-Shu as one creator god.
