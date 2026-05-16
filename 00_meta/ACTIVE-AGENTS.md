@@ -137,6 +137,13 @@ _Hand-maintained. Each agent currently working in the vault appends a claim bloc
 
 ---
 
+## goblin-time-sacred-1 — symbols / sacred writing + cosmological time thread — started 2026-05-16 — IN PROGRESS
+- Owning: `09_symbols/runes.md` (NEW), `09_symbols/mayan-calendar.md` (NEW), `09_symbols/ben-ben.md` (NEW)
+- Goal: Elder Futhark as pre-divine cosmic alphabet (Odin/Yggdrasil self-sacrifice = Christ/Prometheus divine-suffering-for-knowledge MASSIVE WIN); Maya triple calendar system + 260-day Tzolk'in cross-tradition verification; Ben-Ben primordial mound = universal primal stone MASSIVE WIN (Omphalos/Even ha-Shetiyah/Kaaba/Bethel)
+- Status: in progress
+
+---
+
 ## ~~sonnet-sacred-center-1 — omphalos + labyrinth + mandorla symbol upgrades — finished 2026-05-16 — DONE~~
 - ~~Owned: `09_symbols/omphalos.md` (augmented), `09_symbols/labyrinth.md` (augmented), `09_symbols/mandorla.md` (augmented)~~
 - ~~Goal: Research briefing incorporated — Cusco/ceque omphalos + Septuagint bridge + Egyptian labyrinth + Santa Maria Maggiore mandorla earliest attestation~~
@@ -1403,4 +1410,12 @@ The things opus-foundation-1 claimed but never started are all still open:
 ## goblin-esoteric-bodies-1 — symbols / esoteric bodies + energy systems thread — started 2026-05-16 — IN PROGRESS
 - Owning: `09_symbols/merkaba.md` (NEW), `09_symbols/kundalini.md` (NEW), `09_symbols/evil-eye.md` (NEW)
 - Goal: Merkavah chariot-throne → Tetramorph MASSIVE WIN (Ezekiel's four hayyot = Christian Tetramorph = four fixed zodiac signs); Kundalini iḍā/piṅgalā/suṣumṇā = caduceus MASSIVE WIN (structurally identical independent traditions); Evil Eye as most widely distributed specific folk belief in history (Mesopotamia → global, continuous -3000 → present)
+- Status: in-progress
+
+---
+
+## goblin-magic-objects-1 — symbols / magic objects thread — started 2026-05-16 — IN PROGRESS
+- Owning: `09_symbols/unicorn.md` (NEW), `09_symbols/prayer-beads.md` (NEW), `09_symbols/tarot.md` (NEW)
+- Goal: Unicorn — Physiologus Christological allegory + alchemical Mercurius + Scottish heraldry + qilin MASSIVE WIN (independent parallel-form convergence 5000 km apart); Prayer beads — documented Hindu mālā → Buddhist mālā → Orthodox prayer rope → Catholic rosary transmission chain; Tarot — card-game-origin chronology corrected + Lévi Kabbalistic-tarot synthesis + Golden Dawn RWS + Western mandala MASSIVE WIN
+- Hands-off: merkaba.md, kundalini.md, evil-eye.md, shaman-drum.md, dreamcatcher.md, nazca-lines.md
 - Status: in-progress
