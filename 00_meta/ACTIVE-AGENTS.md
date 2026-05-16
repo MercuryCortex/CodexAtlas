@@ -4,6 +4,62 @@ _Hand-maintained. Each agent currently working in the vault appends a claim bloc
 
 ---
 
+## opus-mahayana-sutras-1 — Lotus/Laṅkāvatāra/Avataṃsaka/Sukhāvatīvyūha upgrades — started 2026-05-16 — IN PROGRESS
+- Owning: `02_documents/_phase-4-late-antiquity/phase-4-101-lotus-sutra.md`, `02_documents/_phase-4-late-antiquity/phase-4-102-avatamsaka-sutra.md`, `02_documents/_phase-4-late-antiquity/phase-4-103-lankavatara-sutra.md`, `02_documents/_phase-4-late-antiquity/phase-4-104-sukhavativyuha-larger.md`
+- Goal: Upgrade all four nodes from metadata to full; MASSIVE WIN cross-tradition edges (Ekayāna/supersessionism, Guanyin/Marian, Indra's Net/Leibniz/Bohm, ālayavijñāna/Freud-Jung, tathāgatagarbha/Eckhart, Shinran/Luther tariki/sola fide)
+- Status: in-progress
+
+---
+
+## goblin-sky-weapon-1 — symbols / sky-weapon Indo-European thread — started 2026-05-16 — IN PROGRESS
+- Owning: `09_symbols/vajra-dorje.md` (NEW), `09_symbols/mjolnir.md` (NEW), `09_symbols/thunderbolt-keraunos.md` (NEW), `09_symbols/labrys.md` (NEW), `09_symbols/trishula.md` (NEW)
+- Goal: Indo-European sky-weapon pattern; Indra-Thor-Zeus-YHWH dragon-slaying myth; Buddhist vajra transformation
+- Status: in-progress
+
+---
+
+## opus-hittite-upgrade-1 — Hittite + Gita + Zhuangzi upgrades — started 2026-05-16 — IN PROGRESS
+- Owning: `03_deities/teshub.md`, `03_deities/kumarbi.md`, `02_documents/_phase-1-ancient-near-east/phase-1-028-kumarbi-cycle.md`, `02_documents/_phase-2-axial-age/phase-2-027-bhagavad-gita.md`, `02_documents/_phase-2-axial-age/phase-2-022-zhuangzi.md`
+- Goal: Upgrade 5 nodes from metadata to full; wire Kumarbi→Hesiod MASSIVE WIN chain; Gita global career + Zhuangzi↔Nāgārjuna parallel
+- Status: in-progress
+
+---
+
+## goblin-sacred-geometry-1 — symbols / sacred geometry thread — started 2026-05-16 — IN PROGRESS
+- Owning: `09_symbols/sri-yantra.md` (NEW), `09_symbols/flower-of-life.md` (NEW), `09_symbols/metatrons-cube.md` (NEW), `09_symbols/sol-niger.md` (NEW)
+- Goal: Sacred geometry + solar darkness symbols; Hindu-Islamic-Gothic-Hermetic cross-tradition wins
+- Status: in-progress
+
+---
+
+## opus-yijing-1 — Yi Jing + Four Books sub-docs — started 2026-05-16 — IN PROGRESS
+- Owned: `02_documents/_phase-2-axial-age/phase-2-042-yi-jing-i-ching.md` (NEW), `phase-2-043-great-learning-daxue.md` (NEW), `phase-2-044-doctrine-of-the-mean-zhongyong.md` (NEW)
+- Goal: Create Yi Jing full node + Great Learning + Doctrine of the Mean metadata; wire Leibniz/Jung/binary cross-tradition edges
+- Status: in-progress
+
+---
+
+## sonnet-egyptian-docs-1 — documents / Book of the Dead + Amduat + Pyramid Texts full upgrades — started 2026-05-16 — **IN PROGRESS**
+- Owned: `02_documents/_phase-1-ancient-near-east/phase-1-010-book-of-the-dead.md`, `02_documents/_phase-1-ancient-near-east/phase-1-036-amduat.md`, `02_documents/_phase-1-ancient-near-east/phase-1-002-pyramid-texts.md`
+- Goal: Upgrade three foundational Egyptian document nodes from metadata to full; wire MASSIVE WIN cross-tradition edges
+- Status: in-progress
+
+---
+
+## sonnet-akhenaten-egypt-1 — persons/deities / Akhenaten upgrade + Ra node + Champollion + Hatshepsut — started 2026-05-16 — **IN PROGRESS**
+- Owned: `04_persons/akhenaten.md` (stub→full), `03_deities/ra-egyptian.md` (NEW — preset bug fix), `04_persons/jean-francois-champollion.md` (NEW), `04_persons/hatshepsut.md` (NEW stub)
+- Goal: Upgrade Akhenaten to Tier S full; fix ra-node preset bug; add Champollion + Hatshepsut persons
+- Status: in-progress
+
+---
+
+## sonnet-egyptian-deities-1 — deities / Anubis + Ptah + Set + Aten full upgrades — started 2026-05-16 — **IN PROGRESS**
+- Owned: `03_deities/anubis.md`, `03_deities/ptah.md`, `03_deities/set.md`, `03_deities/aten.md`
+- Goal: Upgrade four Egyptian deity stubs to `status: full` with MASSIVE WIN cross-tradition edges
+- Status: in-progress
+
+---
+
 ## goblin-wiring-audit-1 — symbols / cross-symbol wiring audit — started 2026-05-16 — **FINISHED 2026-05-16**
 - Owned: monas-hieroglyphica.md (AUDIT), eye.md (AUDIT), pelican-in-piety.md (AUDIT), alpha-omega.md (AUDIT), hexagram.md (AUDIT), pyramid-triangle.md (AUDIT), beauseant.md (AUDIT), ouroboros.md (AUDIT), caduceus.md (AUDIT), sefirot-tree-of-life.md (AUDIT)
 - Goal: Add missing cross-symbol edges between existing Masonic/occult symbols; wire to traditions not yet linked

@@ -1725,14 +1725,37 @@ body.view-atlas main.canvas { background: var(--bg-0); }
   border-radius: 2px;
 }
 
-/* Pantheon v2 (WebGL R&D) — placeholder card shown while parity checklist
-   is being filled in. Hidden behind ?webgl=1 URL flag in production. */
+/* Pantheon v2 (WebGL R&D) — sigma.js mount + DOM-overlay family rim labels.
+   Hidden behind ?webgl=1 URL flag. Same positioning as other live panes. */
 .pantheon-v2-pane {
-  position: absolute; inset: 56px 24px 24px;
+  position: absolute;
+  top: 56px; bottom: 24px;
   left: calc(var(--eff-nav-w) + 24px);
   right: calc(var(--eff-detail-w) + 24px);
-  display: flex; align-items: center; justify-content: center;
+  overflow: hidden;
   transition: left var(--t-layout) var(--ease), right var(--t-layout) var(--ease);
+}
+.pantheon-v2-pane canvas { display: block; }
+.ph2-rim-overlay {
+  position: absolute; inset: 0;
+  pointer-events: none;
+  z-index: 5;
+}
+.ph2-rim-label {
+  position: absolute;
+  font-family: var(--serif);
+  font-size: 11.5px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  white-space: nowrap;
+  opacity: 0.85;
+  /* transform set inline by the sync function (includes the tangential rotation) */
+  transform-origin: 50% 50%;
+}
+.ph2-error {
+  position: absolute; inset: 0;
+  display: flex; align-items: center; justify-content: center;
+  color: var(--red, #c25450); font-family: var(--serif);
 }
 .pantheon-v2-placeholder {
   max-width: 620px; padding: 36px 44px;
