@@ -2370,3 +2370,399 @@ SCRIPTURE_TEXTS['corpus-hermeticum-13'] = {
     },
   ]
 };
+
+// ── 23. HYMN TO THE ATEN ─────────────────────────────────────────────────────
+SCRIPTURE_TEXTS['hymn-to-aten'] = {
+  title: 'The Great Hymn to the Aten',
+  shortTitle: 'Hymn to the Aten',
+  tradition: 'Ancient Egyptian / Amarna Period',
+  date: 'c. 1345 BCE (reign of Akhenaten / Amenhotep IV)',
+  intro: 'Inscribed in the tomb of Ay at Amarna and attributed to Akhenaten himself — the world\'s first surviving monotheistic hymn. The Aten (sun disk) is the sole god, creator of all peoples and all lands. The structural and verbal parallels with Psalm 104 are so close that Breasted (1912) called the Psalm "an echo of the Aten hymn" — representing either direct transmission or a shared near-Eastern solar hymn tradition. The text also anticipates Stoic universal humanism: the same god made Egyptians, Syrians, Nubians, and all peoples equally.',
+  crossTradition: [
+    { label: 'Psalm 104 — probable direct parallel or shared source',       note: 'The verbal parallels between the Hymn to the Aten and Psalm 104 are among the most documented inter-textual connections in ancient literature: Aten sets → darkness like death (Ps 104:20); creatures emerge at dawn (Ps 104:22); ships sail (Ps 104:26); all receive life from God\'s breath (Ps 104:29-30). Either direct transmission via the Hebrews\' Egyptian sojourn tradition, or both derive from a common near-Eastern solar hymn genre.' },
+    { label: 'Nasadiya Sukta — solar creative energy as the cosmic origin',  textId: 'nasadiya-sukta',   note: 'The Vedic sukta\'s "That One breathed without breath by its own power" parallels Aten\'s self-subsisting creative radiance. Both describe a single divine creative principle that generates all diversity without itself being exhausted.' },
+    { label: 'Genesis 1 — light before all other creation',                 textId: 'genesis-1',        note: 'Both Genesis 1 and the Hymn to the Aten begin with primordial light as the first creative act. The hypothesis that Genesis 1\'s "let there be light" preserves memory of the Aten solar theology through the Hebrew sojourn in Egypt is a contested but live scholarly position.' },
+    { label: 'Poimandres — Nous as primordial light',                        textId: 'poimandres',       note: 'The Hermetic Nous appearing as Light that pierces the darkness in CH I — transmitted through Alexandria — carries the Egyptian solar-Nous theology of Aten forward into the Hellenistic synthesis.' },
+  ],
+  translations: [
+    { id: 'lichtheim', label: 'Lichtheim 1976 (T1, Ancient Egyptian Literature)' },
+    { id: 'allen',     label: 'Allen 2005 (T2, The Art of the Pharaoh)' },
+    { id: 'egyptian',  label: 'Egyptian (hieratic original)' },
+  ],
+  sections: [
+    {
+      heading: 'I. The Rising of the Aten',
+      verses: [
+        {
+          ref: 'Lines 1–10',
+          text: 'You rise in beauty on the horizon of heaven, O living Aten, origin of life! When you dawn from the eastern horizon you fill every land with your beauty. You are bright, great, and dazzling, high above every land; your rays encompass all the lands to the limit of all that you have made.',
+          textVersions: {
+            lichtheim: 'You rise in beauty on the horizon of heaven, O living Aten, origin of life! When you dawn in the eastern light-land, you fill every land with your beauty.',
+            allen:     'You appear beautifully on the horizon of heaven, you living Aten, the beginning of life! When you rise on the eastern horizon you have filled every land with your beauty.',
+            egyptian:  'nfr n.k wbn.k r 3ḫt nt pt ʾitn ʿnḫ tp ḏt sp tpy· ʿḥʿ.k m 3ḫt iȝbt mḥ.k tȝ nb m nfrw.k',
+          },
+          entities: [
+            { word: 'living Aten', node: 'aten', type: 'deity',
+              note: 'The Aten (ʾitn) — the sun disk as a divine entity — is Akhenaten\'s revolutionary theological move: stripping away all the mythological narrative of Egyptian religion (Osiris, Horus, Set, etc.) to identify the divine solely with the physical light of the sun. The Aten is not Ra with a human head and solar disk — it is the disk itself, the energy of light as the sole creative force.',
+              parallels: [
+                { label: 'Ra — the earlier solar theology', node: 'ra', note: 'The Aten theology radicalizes the earlier Ra-Atum solar theology: where Ra was one powerful god among many, the Aten is the only god — a strict monotheism with no pantheon, no myths, no death-and-resurrection narrative.' },
+                { label: 'Sol Invictus — Roman solar monotheism', node: 'sol-invictus', note: 'Constantine\'s Sol Invictus (Unconquered Sun) before his conversion to Christianity is the late Roman form of the same solar monotheism that Akhenaten pioneered 1,600 years earlier. The Aten → Sol Invictus → Christ-as-Light-of-the-World progression is one of the clearest religious transmission chains in history.' },
+              ]
+            },
+            { word: 'your rays encompass all the lands', node: 'tradition-egyptian-religion', type: 'concept',
+              note: 'The universalism of the Aten hymn is striking for 1345 BCE — the same single sun illuminates Egypt, Syria, Nubia, and all other lands equally. This anticipates Stoic cosmopolitanism (all humans share the same divine logos/reason) and the Quranic "Lord of all worlds" (Rabb al-ʿālamīn) in Al-Fatiha.',
+              parallels: [
+                { label: 'Quran Al-Fatiha — "Lord of all worlds"', textId: 'quran-fatiha-nur', note: 'The Aten\'s rays encompassing all lands equally and the Quran\'s "Rabb al-ʿālamīn" (Lord of all worlds) both articulate a universal divine sovereignty that transcends ethnic or national particularity.' },
+              ]
+            },
+          ]
+        },
+        {
+          ref: 'Lines 11–22',
+          text: 'When you set in the western horizon, the land is in darkness, in the manner of death. Men sleep in their rooms, their heads covered, no eye can see its fellow. Every lion goes out from its den; all serpents, they sting. Darkness envelops all. The earth is silent — for he who made them rests in his horizon.',
+          textVersions: {
+            lichtheim: 'When you set in the western lightland, earth is in darkness as if in death. Men sleep in chambers, heads covered, one eye not seeing another. Should one take all their things from under their heads, they would not know it.',
+            allen:     'When you have gone to rest in the western horizon, the land is in darkness, in the condition of death. People sleep in their rooms, their heads wrapped up, one eye not seeing another.',
+            egyptian:  'ḥtp.k m 3ḫt imnt nt pt tȝ m kk.t mi(t)t mwt· ndr n.sn tp.sn n m33 irty.sn ḫft-ḥr.sn',
+          },
+          entities: [
+            { word: 'in darkness, in the manner of death', node: 'primordial-darkness', type: 'concept',
+              note: 'The equation of the Aten\'s setting with death-like darkness is the Egyptian theology that underlies the Osirian death-and-resurrection narrative: the sun\'s daily death (setting) and resurrection (rising) is the cosmic model for all death and rebirth. When Akhenaten strips away Osiris, the same theology remains embedded in the Aten\'s daily cycle.',
+              parallels: [
+                { label: 'Psalm 104:20 — "You bring darkness, it becomes night"', note: 'Psalm 104:20-21: "You bring darkness, it becomes night, and all the beasts of the forest prowl. The lions roar for their prey." The verbal correspondence with this passage of the Aten Hymn (lions going out in darkness, serpents stirring) is the strongest direct parallel between the two texts.' },
+              ]
+            },
+          ]
+        },
+      ]
+    },
+    {
+      heading: 'II. The Creator of All Peoples',
+      verses: [
+        {
+          ref: 'Lines 54–72',
+          text: 'How manifold are your works! They are mysterious, hidden from the face of man. O sole god, there is none like you! You made the earth according to your wish, you alone — all peoples, all herds and flocks, everything on earth that walks on legs, everything in the air that flies with its wings.',
+          textVersions: {
+            lichtheim: 'How manifold are all your works! They are hidden from the face of man. O sole god, like whom there is no other! You made the earth as you wished, you alone, all peoples, herds, and flocks.',
+            allen:     'How many are your deeds, though hidden from sight. O sole god, there is none beside you! You made the earth as you wished, you alone — all peoples, cattle, and flocks.',
+            egyptian:  'iry.k n ȝḫt wr.sn ḥȝp.tw r-ḥr n rmṯ· nṯr wʿ n ky sn.f ḫpr.n.k tȝ m ẖt.k ḏt.k wʿ.k n rmṯ nb',
+          },
+          entities: [
+            { word: 'How manifold are your works', node: 'akhenaten', type: 'person',
+              note: 'The phrase "how manifold are your works" (iry.k n ȝḫt wr.sn) is virtually identical to Psalm 104:24: "How many are your works, O LORD! In wisdom you made them all." Egyptologist Jan Assmann has argued this is one of the clearest cases of direct text transmission in ancient religious history, passing from Egypt to Israel through the Levantine cultural corridor.',
+              parallels: [
+                { label: 'Psalm 104:24 — "How many are your works, O LORD!"', note: 'Psalm 104:24: "How many are your works, LORD! In wisdom you made them all; the earth is full of your creatures." The verbal parallel with the Aten Hymn is precise enough that most scholars now accept either direct literary dependence or derivation from a shared Egyptian-Levantine hymn tradition.' },
+              ]
+            },
+            { word: 'sole god, there is none like you', node: 'tradition-egyptian-religion', type: 'concept',
+              note: 'The formula "sole god, there is none like you" (nṯr wʿ n ky sn.f) is the Egyptian formulation of monotheism. It precedes and structurally parallels the Hebrew Shema: "Hear O Israel, YHWH is our God, YHWH is One" (Deuteronomy 6:4) and the Islamic Shahada: "There is no god but Allah." All three are the same theological claim made in successive cultural contexts.',
+              parallels: [
+                { label: 'Shema — "YHWH is One"', note: 'Deuteronomy 6:4: "Hear, O Israel: The LORD our God, the LORD is one." The Aten Hymn\'s "sole god, there is none like you" and the Hebrew Shema are structurally identical monotheistic declarations, separated by ~600 years.' },
+                { label: 'Shahada — "There is no god but Allah"', textId: 'quran-fatiha-nur', note: 'The Islamic Shahada ("Lā ilāha illā llāh") is the Islamic form of the same monotheistic declaration. The progression Aten Hymn → Shema → Shahada traces the 2,000-year transmission of the "sole god" formula.' },
+              ]
+            },
+          ]
+        },
+        {
+          ref: 'Lines 76–91',
+          text: 'The foreign lands of Syria and Kush, and the land of Egypt — you place every man in his place, you supply their needs. Everyone has his food, and his lifetime is counted. Their tongues are separate in speech, their natures likewise; the colors of their skins are different, for you have distinguished the peoples.',
+          textVersions: {
+            lichtheim: 'The foreign lands, Syria and Kush, the land of Egypt, you set every person in his place, you supply their needs; everyone has his food, his lifetime is counted. Their tongues are separate in speech, their natures as well, their skins are different, for you have differentiated the peoples.',
+            allen:     'The foreign countries of Khor and Kush, the land of Egypt — you set every man in his place, you make their provisions; each one has his ration, his lifetime is reckoned. Their languages are different in speech, their characters likewise; their colors are different, for you have distinguished nation from nation.',
+            egyptian:  'ḫȝswt ẖnt.w Kš tȝ n Kmt· šȝʿ.k nty nb m bw.f dı́.k n.f ˓nḫ.f',
+          },
+          entities: [
+            { word: 'Syria and Kush, and the land of Egypt', node: 'aten', type: 'concept',
+              note: 'The Aten Hymn is remarkable for its explicit universalism: the same god created Syrians, Nubians, and Egyptians equally, and made each people different — different languages, skin colors, characters — as a positive act of divine creativity, not a hierarchy. This is 1345 BCE. It is the earliest surviving text that explicitly affirms human diversity as a divine creation.',
+              parallels: [
+                { label: 'Acts 17:26 — "From one man he made all nations"', note: 'Paul in Athens: "From one man he made all nations of the earth... he determined the times set for them and the exact places where they should live." The Aten Hymn\'s theology of one god creating all peoples in their different places and times is structurally identical to Paul\'s Areopagus speech.' },
+              ]
+            },
+          ]
+        },
+      ]
+    },
+  ]
+};
+
+// ── 24. BOOK OF THE DEAD CHAPTER 125 ─────────────────────────────────────────
+SCRIPTURE_TEXTS['book-of-dead-125'] = {
+  title: 'Book of the Dead — Chapter 125: The Weighing of the Heart',
+  shortTitle: 'Book of the Dead 125',
+  tradition: 'Ancient Egyptian',
+  date: 'c. 1550–50 BCE (New Kingdom through Late Period)',
+  intro: 'Chapter 125 of the Book of the Dead (Egyptian: Pert em Hru, "Coming Forth by Day") contains the Negative Confession and the psychostasia — the weighing of the heart against the feather of Ma\'at before the tribunal of Osiris. It is the foundational text for the Last Judgment theology that passes through Judaism into Christianity and Islam. The 42 declarations of innocence, one for each of 42 assessor gods, constitute the oldest systematic ethics document in human history.',
+  crossTradition: [
+    { label: 'Matthew 25 — the Last Judgment / "I was hungry, you fed me"', note: 'Matthew 25:31-46: the final judgment separating sheep from goats based on acts of care for the poor, sick, and imprisoned — "whatever you did for one of the least of these brothers and sisters of mine, you did for me." The structural parallel to BD 125\'s declaration-based judgment is the strongest documented Egypt→Christian transmission chain.' },
+    { label: 'Yasna 30 — Truth vs Lie as the cosmic moral axis',            textId: 'yasna-30',        note: 'The Zoroastrian Asha (Truth/Right Order) vs Druj (Lie/Chaos) as the two poles of moral reality maps directly onto Ma\'at vs Isfet in Egyptian theology. Both systems make truth/order the criterion of divine judgment.' },
+    { label: 'Quran — the Day of Judgment / Yawm al-Din',                  textId: 'quran-fatiha-nur', note: 'Al-Fatiha 1:4: "Owner of the Day of Judgment" (Mālik yawm al-dīn). The Islamic Day of Judgment with its divine scales weighing deeds inherits the Egyptian psychostasia (heart-weighing) tradition through Jewish and Christian intermediaries.' },
+    { label: 'Gospel of Thomas — the Kingdom is now / judgment is here',    textId: 'gospel-of-thomas', note: 'Thomas L.51: "What you look forward to has already come, but you do not recognize it." The Thomasine internalization of judgment (the Kingdom is already present) is the Gnostic inversion of the BD 125 external tribunal — same theology, reversed locus.' },
+  ],
+  translations: [
+    { id: 'budge',    label: 'Budge 1895 (T1, public domain)' },
+    { id: 'faulkner', label: 'Faulkner 1972 (T2)' },
+    { id: 'egyptian', label: 'Egyptian (hieroglyphic)' },
+  ],
+  sections: [
+    {
+      heading: 'I. Entering the Hall of Two Truths',
+      verses: [
+        {
+          ref: 'BD 125 — Opening Address',
+          text: 'What is said on reaching the Hall of the Two Truths so as to cleanse the deceased of all the sins which he has committed, and to see the faces of all the gods: "Hail to you, O great god, Lord of the Two Truths! I have come before you, my Lord, and I have been brought so that I might see your beauty."',
+          textVersions: {
+            budge:    '"Hail, thou great god, lord of the Two Truths! I have come to thee, O my Lord, that thou mayest bring me so that I may see thy beauteousness."',
+            faulkner: '"Hail to you, great god, lord of the Two Truths! I have come to you, my lord, that you may bring me so that I may see your beauty."',
+            egyptian: 'ḫft ı̓ṱ.ṱ m ı̓ȝt-mȝʿt nfrt ı̓m n ı̓sft nb.s sı̓.tw s m ı̓rr.f ı̓rr.f mȝʿ.f m-ḫft nṯrw',
+          },
+          entities: [
+            { word: 'Hall of the Two Truths', node: 'maat', type: 'concept',
+              note: 'The "Hall of Two Truths" (ı̓ȝt-mȝʿt nfrt ı̓m n ı̓sft) — the hall of Ma\'at-in-truth and Ma\'at-free-from-evil — is the Egyptian court of divine judgment presided over by Osiris. Ma\'at (ّmȝʿt) is simultaneously the goddess of truth/justice and the cosmic principle of right order that holds the universe together. The heart is weighed against her feather: if the heart is lighter than Ma\'at\'s feather, the person passes into the afterlife; if heavier with sin, it is devoured by Ammit (the "devourer").',
+              parallels: [
+                { label: 'Zoroastrian Chinvat Bridge — judgment passage', textId: 'yasna-30', note: 'The Chinvat Bridge (Bridge of the Separator) in Zoroastrianism, which the soul must cross after death — wide for the righteous, narrow as a razor-edge for the wicked — is the Iranian version of the Egyptian Hall of Two Truths as the post-death judgment passage.' },
+                { label: 'Islamic Mizan — the scales of divine judgment', textId: 'quran-fatiha-nur', note: 'The Islamic Mizan (scales/balance) on the Day of Judgment (Quran 21:47: "We shall set up the scales of justice for the Day of Resurrection") directly inherits the Egyptian psychostasia through Jewish and Christian transmission.' },
+              ]
+            },
+          ]
+        },
+      ]
+    },
+    {
+      heading: 'II. The Negative Confession (Declaration of Innocence)',
+      verses: [
+        {
+          ref: 'BD 125 — Negative Confession (selected)',
+          text: '"I have not done falsehood against men. I have not impoverished my associates. I have not done anything wicked in the place of truth. I have not known any evil. I have not made anyone weep. I have not killed. I have not commanded to kill. I have not made anyone suffer. I have not stolen the offerings in the temples. I have not falsified the balance. I have not taken away the milk from the mouths of children."',
+          textVersions: {
+            budge:    '"I have not done iniquity. I have not robbed with violence. I have not done violence to any man. I have not committed theft. I have not slain man or woman. I have not defrauded the offerings. I have not acted deceitfully. I have not uttered falsehood."',
+            faulkner: '"I have not done falsehood. I have not robbed. I have not been rapacious. I have not stolen. I have not killed men. I have not damaged offerings. I have not been deceitful. I have not made anyone weep."',
+            egyptian: 'n ı̓r.n.ı̓ ı̓sft n rmṯ· n ı̓r.n.ı̓ sfx ḥr-tp.sn· n ı̓r.n.ı̓ bı̓n m bw nfr· n rx.n.ı̓ ı̓sft',
+          },
+          entities: [
+            { word: 'I have not done falsehood', node: 'maat', type: 'concept',
+              note: 'The Negative Confession is structured as 42 declarations (one for each of 42 assessor-gods / nomes of Egypt), each denying a specific moral transgression. The structure — comprehensive ethical inventory organized around denials — is the world\'s oldest systematic moral code, predating the Ten Commandments by several centuries. The specific content (no killing, no stealing, no falsehood, no exploitation of the poor) maps directly onto the Decalogue and the Sermon on the Mount.',
+              parallels: [
+                { label: 'Ten Commandments — the same prohibitions in imperative form', note: 'The Ten Commandments (Exodus 20) state in imperative form what the Negative Confession states in declarative form: "You shall not kill" = "I have not killed." The content overlap is extensive and the Egyptian origin is the dominant scholarly hypothesis for the structure.' },
+                { label: 'Matthew 25 — "I was hungry and you fed me"', note: 'Matthew 25:35-36 lists the acts of mercy that constitute righteousness at the Last Judgment — feeding the hungry, clothing the naked, visiting the sick. BD 125\'s "I have not taken away the milk from the mouths of children / I have not made anyone weep" is the same ethics in negative declaration form.' },
+              ]
+            },
+            { word: 'I have not falsified the balance', node: 'anubis', type: 'concept',
+              note: 'The balance/scales of justice (Mḫȝt — the scales of Ma\'at, held by Anubis) is the instrument of divine judgment in the Hall of Two Truths. The moral prohibition against falsifying physical scales on earth mirrors the divine scales of the afterlife — the same principle of truth/measure governs both commerce and cosmic judgment. The Roman figure of Justitia holding scales inherits this directly from Egyptian Ma\'at iconography.',
+              parallels: [
+                { label: 'Lady Justice — Themis/Justitia holds the scales', note: 'The Greco-Roman Themis/Justitia holding scales of justice is the direct iconographic and conceptual descendant of Ma\'at and her feather-scale. The transmission runs: Egyptian Ma\'at → Greek Themis → Roman Justitia → Western Lady Justice.' },
+              ]
+            },
+          ]
+        },
+      ]
+    },
+    {
+      heading: 'III. The Weighing of the Heart',
+      verses: [
+        {
+          ref: 'BD 125 — The Psychostasia',
+          text: 'Then Anubis shall lead the deceased to the scales. He places the heart on one side; the feather of Ma\'at is placed on the other. Thoth stands ready to record the verdict. The heart that is true and light shall pass; Osiris shall say to those who have passed: "Come, you have been vindicated. You are among us."',
+          textVersions: {
+            budge:    'Then Anubis shall lead the deceased before the Great Balance, wherein is weighed the heart against the feather of Ma\'at. Thoth, who is lord of the divine words, shall say "The heart of Osiris N has truly been weighed, and his soul has stood as a witness for him."',
+            faulkner: 'Anubis lays the heart upon the scales. Thoth reads the balance and reports to the Ennead. Those who have been found upright of heart: "Be you perfect, you whose heart is right, for Osiris knows you."',
+            egyptian: 'ı̓n Ḥrw-ımȝḫ.f ı̓b n Wsır N m wḏȝt-ı̓b.f m nfrw.f sdm.n.f mdt.f ı̓n Ḏḥwty',
+          },
+          entities: [
+            { word: 'Anubis', node: 'anubis', type: 'deity',
+              note: 'Anubis (ı̓npw), the jackal-headed god of embalming and the dead, performs the psychostasia — the weighing of the heart. He is the guide of souls through the underworld (psychopomp), equivalent to Hermes Psychopomp in Greek religion, the angel of death in Judaism/Islam, and the Valkyries in Norse tradition. Anubis\'s role as the measurer of moral worth makes him the ancestor of the scales of justice iconography across Western civilization.',
+              parallels: [
+                { label: 'Hermes Psychopomp — guide of souls to the underworld', note: 'The Greek Hermes Psychopomp (guide of souls) who leads the dead to Hades is the direct Greek equivalent of Anubis, transmitted through the Egyptian-Greek cultural synthesis of the Ptolemaic period. The Hermetic tradition keeps this connection explicitly: Hermes = Thoth = the divine messenger and soul-guide.' },
+              ]
+            },
+            { word: 'feather of Ma\'at', node: 'maat', type: 'symbol',
+              note: 'The single ostrich feather of Ma\'at (truth/justice/cosmic order) as the counterweight against the human heart is one of the most arresting images in religious history. The heart (ib) — the seat of consciousness, memory, and moral will — is weighed against truth itself. A heart "lighter than a feather" is one that has been emptied of ego, attachment, and wrongdoing; a "heavy heart" is burdened with sin. This is the origin of the Western metaphor of the heavy conscience.',
+              parallels: [
+                { label: 'The heavy heart — burden of guilt as literal weight', note: 'The metaphor of a "heavy heart" (conscience burdened by guilt) in English and all European languages ultimately derives from the Egyptian psychostasia: a heart made heavy by sin literally sinks the scales of Ma\'at\'s judgment.' },
+                { label: 'Yasna 30 — Truth as the cosmic counterweight to the Lie', textId: 'yasna-30', note: 'The Zoroastrian Asha (Truth/Right Order, feather of Ma\'at equivalent) as the moral axis of the universe against the Druj (the Lie) is the Iranian theological parallel to the Egyptian Ma\'at system.' },
+              ]
+            },
+            { word: 'Thoth stands ready to record', node: 'thoth', type: 'deity',
+              note: 'Thoth (Ḏḥwty), the ibis-headed god of writing, wisdom, and the moon, records the verdict of the psychostasia on his scribal palette. As the divine scribe he is the keeper of the Book of Life — the Egyptian precursor of the biblical and quranic metaphor of divine records in which all human deeds are written. In the Hermetic tradition, Thoth becomes Hermes Trismegistus, the author of the Hermetic corpus: the same divine recording and transmitting intelligence.',
+              parallels: [
+                { label: 'Hermes Trismegistus — Thoth as divine scribe becomes Hermetic author', node: 'hermes-trismegistus', note: 'The Greek Hermes = Egyptian Thoth in the Ptolemaic synthesis. "Hermes Trismegistus" (Thrice-Greatest Hermes) is Thoth elevated to cosmic authority as the author of all divine wisdom. The Hermetic corpus is, in its Egyptian deep structure, the teachings of Thoth.' },
+                { label: 'Book of Life — divine record-keeping in Jewish/Christian/Islamic tradition', note: 'The "Book of Life" in which deeds are recorded (Daniel 12:1, Revelation 20:12, Quran 83:7-9 "the Book of the Wicked / the Book of the Righteous") directly inherits the Egyptian Thoth-scribal tradition via the Alexandrian synthesis.' },
+              ]
+            },
+          ]
+        },
+      ]
+    },
+  ]
+};
+
+// ── 25. PYRAMID TEXTS — UTTERANCES 217 & 222 ─────────────────────────────────
+SCRIPTURE_TEXTS['pyramid-texts'] = {
+  title: 'Pyramid Texts — Utterances 217 & 222 (Resurrection)',
+  shortTitle: 'Pyramid Texts',
+  tradition: 'Ancient Egyptian / Old Kingdom',
+  date: 'c. 2375–2181 BCE (pyramid of Unas at Saqqara; oldest surviving religious texts)',
+  intro: 'The Pyramid Texts are the oldest surviving religious corpus in human history — carved in the burial chambers of Old Kingdom pharaohs at Saqqara beginning c. 2375 BCE. Utterances 217 and 222 are the core resurrection proclamations: the dead king is assured "you have not gone dead, you have gone alive" and is identified with both Osiris and Ra. The theology of bodily resurrection, divine judgment, and the soul\'s ascent to join the gods originates here — 2,400 years before Christianity.',
+  crossTradition: [
+    { label: 'John 11 — "I am the resurrection and the life"',      textId: 'john-1',           note: 'John 11:25: "I am the resurrection and the life. The one who believes in me will live, even though they die." The Pyramid Texts\' proclamation "you have not gone dead, you have gone alive" is the Egyptian theological antecedent of the Johannine resurrection doctrine by ~2,500 years.' },
+    { label: 'Poimandres — ascent through the planetary spheres',   textId: 'poimandres',       note: 'The Hermetic Nous-soul ascending through the planetary spheres to return to God in CH I directly develops the Pyramid Texts\' theology of the dead king ascending through the sky to join the imperishable stars.' },
+    { label: 'Descent of Inanna — the underworld journey as reversal', textId: 'descent-inanna', note: 'The Pyramid Texts\' resurrection — the dead king\'s journey through the underworld reversed into an ascent — is structurally parallel to Inanna\'s descent into the Great Below and her return. Both encode the same pattern: divine being descends into death and returns. The Egyptian theology makes the return assured (through ritual); the Sumerian leaves it ambiguous.' },
+    { label: 'Gospel of Thomas — the deathless self',               textId: 'gospel-of-thomas', note: 'Thomas L.111: "Whoever finds the meaning of these words will not taste death." The Pyramid Texts\' assurance to the king "you have not gone dead" is the original declaration of the same deathless essential self — the divine element within the human that death cannot touch.' },
+  ],
+  translations: [
+    { id: 'faulkner', label: 'Faulkner 1969 (T1, The Ancient Egyptian Pyramid Texts)' },
+    { id: 'allen',    label: 'Allen 2005 (T2)' },
+    { id: 'egyptian', label: 'Egyptian (hieroglyphic/pyramid walls)' },
+  ],
+  sections: [
+    {
+      heading: 'I. Utterance 217 — You Have Not Gone Dead',
+      verses: [
+        {
+          ref: 'PT §§ 152–154 (Utterance 217)',
+          text: '"O King, you have not gone dead; you have gone alive. Sit upon the throne of Osiris, your sceptre in your hand, that you may give commands to the living. Your hand is grasped by Ra; your head is raised by Atum. The sky speaks to you; the earth trembles before you."',
+          textVersions: {
+            faulkner: '"O King, you have not gone dead; you have gone alive. Sit upon the throne of Osiris, your staff of authority in your fist, so that you may give orders to the living; and your sceptre of power is in your hand, so that you may give orders to those whose places are hidden."',
+            allen:    '"O King, you have not died — you have become alive. Ascend to the sky, for you have not died. Sit on the throne of Osiris, your crook in your fist, that you may command the living."',
+            egyptian: 'n mwt.k N n ʿnḫ.k N ḥms m nst Wsır ı̓m.k n ḥtı̓ n nbt ı̓r.k',
+          },
+          entities: [
+            { word: 'you have not gone dead; you have gone alive', node: 'osiris', type: 'concept',
+              note: 'The proclamation "n mwt.k N, n ʿnḫ.k N" — "you have not gone dead, you have gone alive" — is the theological core of the Pyramid Texts. In the Egyptian religious system death is not the end but a transformation: the dead king becomes Osiris (the god who died and was resurrected). This theology — that death is not extinction but a passage to divine life — is the ancestor of the resurrection doctrines in Judaism, Christianity, Islam, and Gnosticism.',
+              parallels: [
+                { label: 'John 11:25-26 — "I am the resurrection and the life"', textId: 'john-1', note: 'Jesus: "I am the resurrection and the life. The one who believes in me will live, even though they die; and whoever lives by believing in me will never die." The Pyramid Texts\' "you have not gone dead, you have gone alive" is the structural and theological antecedent by ~2,500 years.' },
+                { label: 'Osirian resurrection theology', node: 'dying-rising-god', note: 'The dead king\'s identification with Osiris — who was killed by Set, dismembered, and resurrected by Isis — is the foundational dying-and-rising-god theology. Osiris\'s resurrection prefigures the resurrection narratives across ancient Mediterranean religion.' },
+              ]
+            },
+            { word: 'throne of Osiris', node: 'osiris', type: 'deity',
+              note: 'The dead king is identified with Osiris — the first god to die and be resurrected. By sitting on Osiris\'s throne, the king participates in the divine resurrection template. This is the Egyptian prototype of the "seated at the right hand of God" theology in Christianity (Psalm 110:1, Acts 7:55-56) — the vindicated dead occupying the divine throne.',
+              parallels: [
+                { label: 'Psalm 110:1 — "Sit at my right hand"', note: 'YHWH to the king: "Sit at my right hand until I make your enemies a footstool for your feet." The Pyramid Texts\' dead king sitting on the throne of Osiris and the Psalm\'s royal enthronement after death are cognate motifs.' },
+              ]
+            },
+          ]
+        },
+        {
+          ref: 'PT §§ 199–200 (Utterance 222)',
+          text: '"Recitation by Nut, sky-goddess: O King, I have given you the sky and it belongs to you. You shall not die; you shall be alive. You are the eldest of the gods who are with me. I have given you these your eternal stars; you shall not perish, you shall not be destroyed forever."',
+          textVersions: {
+            faulkner: '"Recitation by Nut: O king N., I have given you the sky, that you may traverse it; I have given you the stars, that you may be acquainted with them; you shall not perish, for ever and ever."',
+            allen:    '"Words spoken by Nut: I place the sky before you, king, that you may cross it; I give you the imperishable stars for you to become familiar with them. You shall not perish, you shall not be destroyed forever and ever."',
+            egyptian: 'ḏd-mdw ı̓n Nwt ı̓n.ı̓ n.k pt ı̓ȝḫ.k ı̓n.n.ı̓ n.k sbȝw ı̓mn.w n ḥ.k n sk.k n ḥtm.k r nḥḥ ḏt',
+          },
+          entities: [
+            { word: 'Nut, sky-goddess', node: 'nut', type: 'deity',
+              note: 'Nut (Nwt) the sky-goddess — depicted as a woman arching over the earth, her body covered in stars — is the Egyptian mother of the celestial realm and of the dead king\'s afterlife. She swallows the sun each evening and gives birth to it each morning. The dead king ascending to become one of the "imperishable stars" (ikhemu-sek — the circumpolar stars that never set) is the Egyptian form of the stellar immortality theology.',
+              parallels: [
+                { label: 'Isaiah 14:12 — "morning star, son of the dawn"', note: 'Isaiah\'s address to the fallen king of Babylon: "How you have fallen from heaven, morning star, son of the dawn!" — and the reversal image of the Pyramid Texts\' king ascending to the imperishable stars — are the same stellar-immortality theology used in opposite directions: ascent vs fall.' },
+              ]
+            },
+            { word: 'you shall not perish, you shall not be destroyed forever', node: 'dying-rising-god', type: 'concept',
+              note: 'The double negation — not perish, not be destroyed — and the eternal time-formula (nḥḥ ḏt = cyclical eternity + absolute eternity) is the Pyramid Texts\' fullest theological statement of immortality. It operates on two registers: the king becomes imperishable like the circumpolar stars (cosmological immortality) AND is identified with Osiris who overcame death (mythological immortality). Both registers pass into later resurrection theology.',
+              parallels: [
+                { label: 'Gospel of Thomas L.111 — "will not taste death"', textId: 'gospel-of-thomas', note: 'Thomas L.111: "The heavens and the earth will roll up in your presence, and whoever is living from the living one will not see death." The Pyramid Texts\' royal declaration of never perishing and the Thomasine deathless self are the same theological claim across 2,500 years.' },
+              ]
+            },
+          ]
+        },
+      ]
+    },
+  ]
+};
+
+// ── 26. COFFIN TEXT SPELL 1130 ────────────────────────────────────────────────
+SCRIPTURE_TEXTS['coffin-text-1130'] = {
+  title: 'Coffin Text Spell 1130 — The Creator Addresses All Humanity',
+  shortTitle: 'Coffin Text 1130',
+  tradition: 'Ancient Egyptian / Middle Kingdom',
+  date: 'c. 2100–1650 BCE (Middle Kingdom; coffin inscriptions at Asyut and Bersheh)',
+  intro: 'One of the most remarkable texts in all Egyptian religion — and possibly in world literature. The Creator God (Atum/Shu) speaks directly to all humanity, explaining why he made the world and what gifts he gave them. The text is explicitly egalitarian: "I made every man like his fellow." Most strikingly: "Men are the tears of my eye" — the Egyptian word for men (rmtw) is a pun on tears (rmt). Humanity is born from the Creator\'s grief, or compassion. This text is the Egyptian source for the Hermetic and Gnostic cosmogonies where human existence arises from divine self-contemplation and emotional overflow.',
+  crossTradition: [
+    { label: 'Poimandres — humanity born from divine self-contemplation',    textId: 'poimandres',       note: 'In the Poimandres (CH I), the divine Anthropos falls in love with his own reflection in matter and descends. CT 1130\'s Creator weeping humanity into existence is the Egyptian antecedent: divine emotional overflow (tears/love) as the generative principle of human existence.' },
+    { label: 'Genesis 2 — God breathes life into the human',               textId: 'genesis-1',        note: 'Genesis 2:7: God forms the human from dust and breathes life into the nostrils. CT 1130\'s four divine gifts including "the four winds that every man might breathe" is the Egyptian version: divine breath as the generative principle shared equally among all humans.' },
+    { label: 'Tao Te Ching — the Tao giving without preference',            textId: 'tao-te-ching-1',   note: 'CT 1130\'s Creator giving four universal gifts (wind, water, equality, memory of death) to all people equally — "I did not command that they do evil; it is their hearts that have transgressed" — parallels the Tao\'s giving without preference or judgment. Both articulate a universal creative principle that bestows without discrimination.' },
+    { label: 'Nasadiya Sukta — creation from the Creator\'s own desire',    textId: 'nasadiya-sukta',   note: 'The Vedic sukta\'s "kama tad agre sam avartatādhi" (from desire came the first seed of mind) and CT 1130\'s Creator weeping humanity into existence are both creation-from-divine-interiority narratives: the cosmos arising from within the divine, not constructed externally.' },
+  ],
+  translations: [
+    { id: 'faulkner', label: 'Faulkner 1973–78 (T1, The Ancient Egyptian Coffin Texts)' },
+    { id: 'lichtheim', label: 'Lichtheim 1973 (T2, Ancient Egyptian Literature vol. 1)' },
+    { id: 'egyptian',  label: 'Egyptian (hieroglyphic coffin inscriptions)' },
+  ],
+  sections: [
+    {
+      heading: 'I. The Four Good Deeds',
+      verses: [
+        {
+          ref: 'CT 1130 §§ 461–464',
+          text: '"Words spoken by Him-Whose-Names-Are-Hidden, the Lord of All: I have done four good deeds within the mouth of the horizon. I made the four winds, that every man might breathe thereof, like his fellow — that is one deed. I made the great flood waters, that the poor man might have rights therein like the great man — that is one deed."',
+          textVersions: {
+            faulkner: '"I speak of the four good deeds which my own heart did for me within the coils of the serpent, in order to still evil... I created the four winds, that every man might breathe thereof in his time — this is one of the deeds. I created the inundation, that the humble man might benefit by it like the great — this is one of the deeds."',
+            lichtheim: '"I have done four good deeds within the mouth of the horizon: I created the four winds so that every man might breathe — that is one deed. I created the great inundation so that the poor man could have rights like the great man — that is one deed."',
+            egyptian:  'ı̓r.n.ı̓ nfrw fdw m rȝ-3ḫt· ı̓r.n.ı̓ ṯȝw fdw n rnpt ı̓.šs n rmṯ nb ı̓m.sn mı̓ sn.f',
+          },
+          entities: [
+            { word: 'Him-Whose-Names-Are-Hidden', node: 'atum', type: 'deity',
+              note: 'The Creator God speaking here identifies himself as the hidden, unnamed source — paralleling the Hermetic CH XI\'s "God cannot be named" and the Taoist "the Tao that can be named is not the eternal Tao." The Egyptian formula "Him-Whose-Names-Are-Hidden" (ı̓mn rn.f) is the same apophatic theology in Egyptian form, predating the Greek and Chinese formulations by over a millennium.',
+              parallels: [
+                { label: 'CH XI — "God cannot be named"', textId: 'corpus-hermeticum-11', note: 'CH XI\'s "God cannot be named — or all names are names of God" and CT 1130\'s "Him-Whose-Names-Are-Hidden" are the same apophatic theology 2,000 years apart, connected through the Egyptian-Hermetic transmission.' },
+                { label: 'Tao Te Ching — the unnamed ground', textId: 'tao-te-ching-1', note: 'Tao 1: "Nameless, it is the origin of heaven and earth." The hidden-name Creator of CT 1130 and the unnamed Tao are independent formulations of the same apophatic move: the ultimate creative principle transcends all names.' },
+              ]
+            },
+            { word: 'the poor man might have rights like the great man', node: 'tradition-egyptian-religion', type: 'concept',
+              note: 'This is one of the most striking statements in all ancient religious literature: the Creator God explicitly states that divine justice — equal access to resources — is built into the structure of creation itself. The Nile flood (ḥʿpı̓) that fertilizes all Egypt was the gift of God to all Egyptians equally: a poor farmer and the pharaoh had the same claim on the flood water. This proto-egalitarianism in a divine mandate is the ancestor of the prophetic tradition (Amos, Isaiah) and the Matthew 25 teaching.',
+              parallels: [
+                { label: 'Amos 5:24 — "Let justice roll like a river"', note: 'The Hebrew prophetic tradition of divine justice for the poor — "let justice roll down like waters, and righteousness like an ever-flowing stream" — draws on the same Nile-flood-as-equalizer theology that CT 1130 encodes. The Nile becomes a metaphor for divine justice.' },
+              ]
+            },
+          ]
+        },
+        {
+          ref: 'CT 1130 §§ 465–468',
+          text: '"I made every man like his fellow — I did not command that they do evil; it is their hearts that have transgressed what I have said. That is one deed. I made their hearts not to forget the West, so that divine offerings might be made to the gods of the provinces. That is one deed."',
+          textVersions: {
+            faulkner: '"I created every man like his fellow, and I did not command that they should do evil — it is their own hearts which have violated my commandment. This is one of the deeds. I created their hearts so that they should not forget the West, in order that the gods of the nomes might receive their divine offerings."',
+            lichtheim: '"I made every man like his fellow; I did not ordain that they do wrong — it is their hearts that have disobeyed my commands. That is one deed. I set their hearts to not forget the west, in order that offerings be made to the gods of the provinces."',
+            egyptian:  'ı̓r.n.ı̓ rmṯ nb mı̓ sn.f n wḏ.n.ı̓ ı̓r.sn ı̓sft ı̓b.sn pw ı̓wty mdwt.ı̓',
+          },
+          entities: [
+            { word: 'I did not command that they do evil', node: 'tradition-egyptian-religion', type: 'concept',
+              note: 'The Creator\'s exculpation — "I did not command evil; their hearts transgressed" — is the Egyptian version of the theodicy problem (why does evil exist if God is good?) and its solution: human free will is the source of evil, not divine command. This theodicy appears in identical form in Zoroastrianism (Angra Mainyu\'s choice), Genesis (the Fall), and Gnostic cosmogony (the Demiurge\'s ignorance). CT 1130 is the oldest surviving instance.',
+              parallels: [
+                { label: 'Genesis 3 — "They took and ate" — human transgression, not divine command', textId: 'genesis-1', note: 'The Garden of Eden narrative: God commanded what was good; the human heart transgressed. CT 1130\'s "I did not command evil; it is their hearts that transgressed" is structurally identical to the Fall narrative — 1,500 years earlier.' },
+                { label: 'Yasna 30 — Angra Mainyu chose evil by free will', textId: 'yasna-30', note: 'Yasna 30.3: the two spirits chose at the primordial beginning — one chose truth, one chose the lie. Neither was commanded to choose. The Zoroastrian and Egyptian theologies both locate the origin of evil in a free choice, not in divine creation.' },
+              ]
+            },
+          ]
+        },
+      ]
+    },
+    {
+      heading: 'II. Men Are the Tears of My Eye',
+      verses: [
+        {
+          ref: 'CT 1130 §§ 469–471',
+          text: '"I created the gods from my sweat; and men are the tears of my eye." In this way was the world made: the lesser divine beings from the Creator\'s bodily labor; humanity from his grief, or his compassion — for the words for "men" and "tears" share one sound in the language of Egypt.',
+          textVersions: {
+            faulkner: '"I created the gods from my sweat, and mankind from the tears of my eye." This is a sacred pun: the word for men (rmṯ) sounds like the word for tears (rmt) in Egyptian.',
+            lichtheim: '"I created gods from my sweat; people came from the tears of my eye." The identity of sound between rmṯ (people) and rmt (tears) is not accidental — it encodes the theological claim that human existence arises from divine grief/compassion.',
+            egyptian:  'ı̓r.n.ı̓ nṯrw m ı̓dt.ı̓ rmṯ m rmyt ı̓rt.ı̓',
+          },
+          entities: [
+            { word: 'men are the tears of my eye', node: 'atum', type: 'concept',
+              note: 'This line is perhaps the most theologically resonant in all Egyptian literature. The pun — rmṯ (men/humanity) = rmt (tears) — encodes the claim that human beings originate in the divine Creator\'s emotional life: his grief, his love, his compassion. The parallel with the Bodhisattva\'s compassionate tears in Buddhism (Kuan Yin weeping for all suffering beings), the Zoroastrian Ahura Mazda\'s grief at Angra Mainyu\'s choice, and the Christian God\'s grief over a lost sheep (Luke 15:4) is the same deep structure: the divine is moved by love/sorrow, and humanity is the product of that movement.',
+              parallels: [
+                { label: 'Poimandres — Anthropos falls through love of his reflection', textId: 'poimandres', note: 'In CH I, the divine Anthropos sees his own beautiful reflection in matter and descends through desire/love. Both CT 1130 and the Poimandres encode the same deep structure: divine emotional overflow (tears/love) produces human existence. The Hermetic myth is the philosophical elaboration of the Egyptian pun.' },
+                { label: 'Nasadiya Sukta — creation from desire (kama)', textId: 'nasadiya-sukta', note: 'Rig Veda 10.129.4: "Desire (kama) came upon That One at the beginning — that was the primal seed of mind." The Vedic kama as the first creative impulse and the Egyptian Creator\'s tears as the origin of humanity are the same insight: the cosmos originates in divine interiority, not in mechanical production.' },
+              ]
+            },
+            { word: 'gods from my sweat', node: 'tradition-egyptian-religion', type: 'concept',
+              note: 'The hierarchy of divine creation — gods from sweat (ı̓dt, less intimate, labor-product), humans from tears (rmyt, most intimate, grief-product) — inverts what might be expected. Humans are not lesser beings made from leftover material; they are made from the Creator\'s most intimate emotional expression. This is the Egyptian theological foundation for the universal human dignity that the Hymn to the Aten also articulates: all peoples are equally the Creator\'s tears.',
+              parallels: [
+                { label: 'Genesis 1:26-27 — humans made "in the image of God"', textId: 'genesis-1', note: 'Genesis 1:26: "Let us make mankind in our image, in our likeness." The Egyptian "men are the tears of my eye" and the Hebrew "made in the image of God" both claim an intimacy between Creator and humanity that distinguishes humans from other creatures. The Egyptian formulation is more emotionally intense.' },
+              ]
+            },
+          ]
+        },
+      ]
+    },
+  ]
+};
