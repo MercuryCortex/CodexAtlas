@@ -53,3 +53,25 @@ See also: [[ritual-funeral-rites]], [[ritual-kaddish-mourning]], [[ritual-sacrif
 The *pitru-yana* (path of the fathers through moon → rain → plant → animal → human) in the *Chandogya Upanishad* (6th–5th century BCE) is a complete empirical-sounding reincarnation cosmology embedded in ancestor ritual. The dead physically return as rain and eventually as new people. The shraddha offerings — food given to the dead — are thus logically functioning to *sustain ancestors in a temporary holding state before their next birth*. This means shraddha ritual is not just ancestor veneration: it is the management of the reincarnation queue. Every bowl of pinda is a delay on someone's return.
 
 This also has a theological implication that the tradition partially acknowledges and partially obscures: if your grandfather has already reincarnated as your neighbor's child, who is eating the pinda? The classical response involves the idea that the ancestor's *subtle body* (*sukshma sharira*) remains in the lunar realm and is separate from the physical. But the question is never fully dissolved, and some Hindu theologians acknowledge the tension directly.
+
+## Vault Connections
+
+**Cross-tradition ancestor rituals:**
+- [[ritual-kaddish-mourning]] — Jewish annual memorial; the closest structural parallel: regular communal obligation marking the death anniversary
+- [[ritual-funeral-rites]] — death ritual framework; shraddha is the ongoing post-funeral obligation
+- [[ritual-sacrifice]] — pinda offering (rice balls for ancestors) is a sacrificial feeding logic
+
+**Traditions:**
+- [[tradition-vedic-hinduism]] — primary tradition; shraddha is one of the three classical debts
+- [[tradition-hinduism]] — continues in all Hindu communities today
+
+**Source texts:**
+- [[phase-2-013-chandogya-upanishad]] — contains the pitru-yana (path of the fathers/reincarnation cosmology) embedded in the ancestor ritual
+- [[phase-2-006-brahmanas-aranyakas]] — elaborates the five-daily-fire obligation including pitru-yajna
+
+**Companion rituals:**
+- [[ritual-pilgrimage-cross-tradition]] — tarpana (water offering) pilgrimages to Gaya and Varanasi are the pilgrimage expression of shraddha
+- [[ritual-yajna-vedic-fire]] — the deva-yajna and pitru-yajna are two of the five panchamahayajna daily fire obligations; shraddha is the elaborate lunar/annual form of pitru-yajna
+
+**Themes:**
+- [[moral-karma-as-moral-law]] — the pitru-yana reincarnation cosmology presupposes karma as the governing mechanism of the ancestor's post-death fate

@@ -53,3 +53,21 @@ See also: [[ritual-bar-mitzvah-coming-of-age]], [[ritual-confirmation-chrismatio
 The "something worn on the body marking initiatory status" is universal. Hindu sacred thread, Jewish tallit and tzitzit, Christian scapular, Sikh kara: four different civilizations, four different materials, four different theologies — and all four institutionalized the same solution to the same problem. The initiated body must be visually distinguishable from the uninitiated body at all times. This is not a transmission — it is independent convergence on the same answer. The body is the perpetual, wearable sacrament.
 
 The additional finding: all four also involve a *formula received at initiation* (Gayatri mantra / Torah obligation / baptismal/confirmation creed / Waheguru name). The garment marks the body; the formula marks the mind. The two always travel together.
+
+## Vault Connections
+
+**Cross-tradition parallel initiations:**
+- [[ritual-bar-mitzvah-coming-of-age]] — age 13, Torah obligation, adult religious responsibility; the Jewish coming-of-age structural parallel
+- [[ritual-confirmation-chrismation]] — Christian adult faith commitment, reception of the Holy Spirit; laying-on-of-hands
+- [[ritual-theravada-ordination]] — Buddhist ordination chain; same whispered-transmission + lineage-authority structure
+- [[ritual-navjote-zoroastrian-initiation]] — sudreh + kusti; the Zoroastrian sacred-garment parallel (independent convergence on worn-covenant-marker)
+- [[ritual-rites-of-passage]] — Van Gennep framework; upanayana is the paradigmatic second-birth initiation
+- [[ritual-initiation-mystery]] — ancient mystery cult pattern; whispered secret transmission is the shared technology
+
+**Traditions:**
+- [[tradition-vedic-hinduism]] — primary tradition; upanayana is the gateway to Vedic study
+- [[tradition-hinduism]] — continues in classical Hinduism for dvija varnas
+
+**Companion rituals:**
+- [[ritual-yajna-vedic-fire]] — the tradition the initiated student is now obligated to perform
+- [[ritual-puja-hindu]] — domestic devotion the twice-born male is now responsible for
