@@ -25,6 +25,9 @@ cross-music-edges:
   - target: music-creation-by-sound
     type: parallel-form
     note: Egyptian Ptah creates by speaking names (Memphite Theology) — the same sonic-creation principle; Egyptian temple music participates in ongoing creation through the correctly performed sacred sound
+  - target: music-levitical-temple-music
+    type: transmission-to
+    note: Egypt predates Israel's priestly-musician institution by 1,550 years; Moses raised in the Egyptian court; Solomon's Temple imports Egyptian architectural forms; Levitical hereditary salaried shemayet-model maps onto Egyptian institution (not the structurally distinct Mesopotamian gala)
 
 music-tradition-context:
   - [[tradition-egyptian-religion]]

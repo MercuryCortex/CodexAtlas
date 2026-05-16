@@ -23,10 +23,13 @@ cross-music-edges:
     note: After Temple's destruction, cantillation developed partly to preserve and transmit Temple music practice in portable synagogue form
   - target: music-mesopotamian-temple-music
     type: parallel-form
-    note: Both Mesopotamia and Israel maintained salaried professional priestly singer castes with rosters, hereditary specializations, and shift schedules
+    note: Both Mesopotamia and Israel maintained salaried professional priestly singer castes with rosters, hereditary specializations, and shift schedules — but the Mesopotamian gala is structurally distinct (lamentation focus, emesal gender-liminality, Inanna theology) vs. the Levitical praise/lamentation model; parallel institutional convergence within Fertile Crescent, not direct origin
   - target: music-lyre-kithara
     type: transmission-to
     note: Levitical kinnor (lyre) is a regional variant in the broader kithara/lyre family; possible cognate with Greek kithara
+  - target: music-ancient-egyptian-music
+    type: appropriated-by
+    note: Levitical institution probable inheritor of Egyptian shemayet model — hereditary, salaried, temple-embedded, with ritual authority — transmitted through Egyptian cultural presence in founding Israelite leadership and Solomonic temple-building context
 
 music-tradition-context:
   - [[tradition-judaism]]

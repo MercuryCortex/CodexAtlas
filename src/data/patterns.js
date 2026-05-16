@@ -395,5 +395,13 @@ window.PATTERNS_DATA = [
     sources: ['music-yayue-ritual-music', 'music-boethius-de-musica', 'music-scale-transmission-chain', 'music-western-sacred-chant'],
     summary: 'Japan and Korea preserved Tang-dynasty Chinese court music that China itself lost. Boethius preserved Greek music theory that no Greek institution maintained after the 6th century. Ethiopia preserved early Christian liturgical forms that Rome reformed away. The pattern: when an empire falls or reforms, its cultural periphery — which adopted the forms but was not subject to the center\'s internal pressures — becomes the archive. The most authentic versions of ancient traditions are often found at their geographic margins.',
   },
+  {
+    id: 'egypt-priestly-musician-transmission',
+    title: 'Egypt Transmitted the Priestly-Musician-Caste Institution to Israel — Not a Convergence',
+    category: 'TRANSMISSION',
+    section: 'Music Layer Discoveries',
+    sources: ['music-ancient-egyptian-music', 'music-levitical-temple-music', 'music-mesopotamian-temple-music'],
+    summary: 'The vault\'s three-way Egypt/Mesopotamia/India priestly-musician-caste "convergence" requires revision. Egypt → Israel is documented transmission: Moses raised in the Egyptian court, Solomon\'s Temple imports Egyptian architectural forms, the Levitical hereditary salaried priestly-musician institution maps precisely onto the Egyptian shemayet model (not the Mesopotamian gala, which is structurally different). Egypt predates Israel by 1,550 years. Mesopotamia and Egypt are a Fertile Crescent shared-origin zone (both ancient, both interacting, directional influence unclear). India is a genuine independent convergence — predates the Ophir trade corridor, derives from entirely different theology (Nada Brahma), no transmission vector documented. Revised framing: one transmission, one shared-origin zone, one genuine convergence. The institution is robust enough to be both transmissible and independently reinventable.',
+  },
 
 ];

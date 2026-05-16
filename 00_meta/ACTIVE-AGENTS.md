@@ -1706,9 +1706,16 @@ Files: sacred-cauldron.md (NEW) · cerridwen.md (STUB, deity) · bran-the-blesse
 
 ---
 
-## music-ancient-near-east-1 — Ancient Near East music strand — 2026-05-16 — IN FLIGHT
-- Owns: music-mesopotamian-temple-music.md · music-levitical-temple-music.md · music-zoroastrian-sacred-sound.md (all NEW in 10_music/)
-- Do NOT touch: any existing music node, any app code, patterns.js, observations.js
+## ~~music-ancient-near-east-1 — Ancient Near East music strand — 2026-05-16 — FINISHED~~
+- ~~Owned: music-mesopotamian-temple-music.md · music-levitical-temple-music.md · music-zoroastrian-sacred-sound.md (all NEW in 10_music/); music-ancient-egyptian-music.md (edge update); music-levitical-temple-music.md (edge update)~~
+- ~~Status: FINISHED — see commit log. Build: 47 music nodes · 15781 edges · 0 YAML errors · 0 dead links introduced~~
+
+---
+
+## ~~sonnet-egypt-priestly-musician-origin-1 — origin-point investigation for priestly-musician-caste — 2026-05-16 — FINISHED~~
+- ~~Owned: src/data/observations.js (1 new CONCLUSION: egypt-priestly-musician-origin), src/data/patterns.js (1 new TRANSMISSION entry: egypt-priestly-musician-transmission), 10_music/music-ancient-egyptian-music.md (added transmission-to edge → music-levitical-temple-music), 10_music/music-levitical-temple-music.md (updated Mesopotamia parallel-form note + added appropriated-by ← music-ancient-egyptian-music)~~
+- ~~Build: 47 music nodes · 15781 edges · 0 YAML errors · 0 dead links introduced~~
+- ~~Key findings: Egypt → Israel is TRANSMISSION not convergence (1,550-year head start, Moses-court biography, shemayet→Levitical institutional identity, Solomon Temple imports). Mesopotamia/Egypt = Fertile Crescent shared-origin zone, directional influence unclear, institutions structurally distinct. India = genuine independent convergence (Sama Veda -1200, predates Ophir corridor, Nada Brahma derivation, no transmission vector). Revised framing: one documented transmission + one shared-origin zone + one genuine independent convergence. The institution is robust enough to be both transmissible and independently reinventable.~~
 
 ---
 
