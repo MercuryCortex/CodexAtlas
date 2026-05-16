@@ -4,14 +4,11 @@ _Hand-maintained. Each agent currently working in the vault appends a claim bloc
 
 ---
 
-## pantheon-deity-sweep-1 — IN FLIGHT (2026-05-16 goblin audit)
-- **build_data.py fixes COMMITTED** (c535e12): Baltic family, Māori macron, Daoism, Haudenosaunee, Cathar, Blakean → 0 nodes in Other
-- 4 sub-agents in flight writing 29 new deity nodes:
-  - pacific-andean: maui-polynesian, haumia-tiketike, rongo-maori, tawhirimatea, mama-quilla, supay, illapa, mama-cocha
-  - meso-slavic-norse: xipe-totec, xochiquetzal, ehecatl, hunahpu, marzanna, dazbog, njord
-  - chinese-buddhist-celtic-norse: sun-wukong, erlang-shen, mara-demon, epona, danu, aine, hod
-  - egypt-mesopo-vedic: khepri, amaunet, kek-egyptian, ningal, pazuzu, murugan, manasa-devi
-- DO NOT touch 03_deities/ while these agents are running
+## ~~pantheon-deity-sweep-1 — FINISHED (2026-05-16 goblin audit)~~
+- ~~502 → 530 deity nodes · 0 nodes in Other · 29 families (Baltic added)~~
+- ~~6 family-mapping bugs fixed in build_data.py + app.js (commits c535e12, 5a3a221)~~
+- ~~28 new deities written across 4 batches (commits 83a2d54, 0c47655, 48e6d32, 319b821)~~
+- ~~Notable: Baltic wedge live · Māra/Satan · Danu/Dānu PIE cognate · Ehecatl wind table · Pazuzu apotropaic paradox~~
 
 ---
 
