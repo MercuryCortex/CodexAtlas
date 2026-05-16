@@ -31,9 +31,10 @@
     {
       id: 'edges',
       title: 'Edges',
+      openByDefault: true,
       items: [
-        { id: 'edgeOpacity',   label: 'Idle opacity ×', min: 0,    max: 3,    step: 0.05, default: 1.00, target: 'cssVar', cssVar: '--ph2-edge-opacity-mult', fmt: v => v.toFixed(2) + '×' },
-        { id: 'edgeWidth',     label: 'Idle width ×',   min: 0.4,  max: 3,    step: 0.05, default: 1.00, target: 'cssVar', cssVar: '--ph2-edge-width-mult',   fmt: v => v.toFixed(2) + '×' },
+        { id: 'edgeOpacity',   label: 'Idle opacity ×', min: 0,    max: 3,    step: 0.05, default: 0.20, target: 'cssVar', cssVar: '--ph2-edge-opacity-mult', fmt: v => v.toFixed(2) + '×' },
+        { id: 'edgeWidth',     label: 'Idle width ×',   min: 0.4,  max: 3,    step: 0.05, default: 0.60, target: 'cssVar', cssVar: '--ph2-edge-width-mult',   fmt: v => v.toFixed(2) + '×' },
         { id: 'edgeCurvature', label: 'Curvature',      min: 0,    max: 0.6,  step: 0.01, default: 0.35, target: 'rebuildEdges',                                fmt: v => Math.round(v * 100) + '%' },
         { id: 'edgeHotWidth',  label: 'Hot width',      min: 0.6,  max: 3,    step: 0.1,  default: 1.6,  target: 'cssVar', cssVar: '--ph2-edge-hot-width',    fmt: v => v.toFixed(1) + 'px' },
       ]
@@ -70,7 +71,6 @@
     {
       id: 'force',
       title: 'Force bake',
-      collapsed: true,
       items: [
         { id: 'anchorK',     label: 'Anchor stiffness', min: 0.005, max: 0.080, step: 0.002, default: 0.018, target: 'rerender', fmt: v => v.toFixed(3) },
         { id: 'chargeK',     label: 'Charge repulsion', min: -1200, max: -100,  step: 25,    default: -550,  target: 'rerender', fmt: v => String(Math.round(v)) },
@@ -128,8 +128,11 @@
       const val = c.unit ? (S[c.id] + c.unit) : S[c.id];
       r.style.setProperty(c.cssVar, val);
     });
-    // Hull stroke-opacity derived from hull fill opacity (production convention)
-    r.style.setProperty('--ph2-hull-stroke-opacity', Math.min(1, (S.hullOpacity || 0.12) * 2.5));
+    // Hull stroke-opacity derived from hull fill opacity. Was × 2.5 (matched
+    // production .sector-hull which uses 0.07 fill + 0.30 stroke), but at V2's
+    // 0.12 fill that gave a loud 0.30 colored outline that read as "lit-up
+    // wires" in the screenshot. × 1.4 keeps the outline subtle (~0.17).
+    r.style.setProperty('--ph2-hull-stroke-opacity', Math.min(1, (S.hullOpacity || 0.12) * 1.4));
   }
 
   function sigmaRefresh() {
@@ -319,7 +322,7 @@
         </div>
       `).join('');
       return `
-        <details class="dp-section" ${sec.collapsed ? '' : 'open'}>
+        <details class="dp-section" ${sec.openByDefault ? 'open' : ''}>
           <summary class="dp-sec-title">${sec.title}<span style="font-size:9px;color:var(--text-3)">${sec.items.length}</span></summary>
           <div class="dp-sec-body">${itemsHtml}</div>
         </details>

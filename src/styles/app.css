@@ -1770,7 +1770,11 @@ body.view-atlas main.canvas { background: var(--bg-0); }
    --ph2-edge-opacity-mult is a global multiplier the dev panel tunes. */
 .ph2-edge {
   fill: none;
-  stroke: rgba(120, 140, 182, 0.72);
+  /* Darker slate than production's `rgba(120,140,182,0.72)` — when 1200+
+     edges overlap through the center, even at 0.04 per-edge opacity the
+     cumulative wash reads as colored. A darker base means the cumulative
+     stack stays dark instead of brightening. */
+  stroke: rgba(80, 95, 130, 0.85);
   stroke-width: calc(var(--edge-w, 0.20) * var(--ph2-edge-width-mult, 1));
   stroke-opacity: calc(var(--edge-idle-op, 0.08) * var(--ph2-edge-opacity-mult, 1));
   vector-effect: non-scaling-stroke;
