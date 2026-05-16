@@ -4326,6 +4326,20 @@ mark.sr-ent-demo {
 .alpha-glyph-cell.expanded { background: rgba(212,165,90,0.08); }
 
 /* Latin mode dropped-letters notice */
+.agv-section-divider {
+  grid-column: 1 / -1;
+  padding: 1.1rem 0.25rem 0.4rem;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--gold);
+  border-bottom: 1px solid var(--border-soft);
+  margin-bottom: 0.25rem;
+  opacity: 0.75;
+}
+.agv-section-divider:first-child { padding-top: 0.25rem; }
+
 .agv-latin-notice {
   display: flex; flex-wrap: wrap; gap: 8px; align-items: baseline;
   padding: 8px 1rem 10px; border-bottom: 1px solid var(--border-soft);

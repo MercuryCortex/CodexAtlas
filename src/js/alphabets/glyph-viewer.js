@@ -158,7 +158,27 @@
       wrap.insertBefore(dropped, grid);
     }
 
+    // Hieroglyph mode: group by section, insert dividers
+    let _lastSection = null;
+    if (_script === 'hieroglyph') {
+      const lead = document.createElement('div');
+      lead.className = 'agv-section-divider';
+      lead.textContent = 'The Alphabetic Chain — 22 Proto-Sinaitic Letters';
+      lead.style.paddingTop = '0.25rem';
+      grid.appendChild(lead);
+    }
+
     displayData.forEach((g) => {
+      // Section divider (hieroglyph mode only)
+      if (_script === 'hieroglyph' && g.section && g.section !== _lastSection) {
+        _lastSection = g.section;
+        // Close any open grid row visually with a full-width label
+        const divider = document.createElement('div');
+        divider.className = 'agv-section-divider';
+        divider.textContent = g.section;
+        grid.appendChild(divider);
+      }
+
       const idx = g._origIdx;
       const cell = document.createElement('div');
       cell.className = 'alpha-glyph-cell';
