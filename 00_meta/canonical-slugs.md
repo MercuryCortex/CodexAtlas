@@ -17,6 +17,23 @@ canonical-slug
 ## Currently resolved slugs (auto-seeded — every existing file)
 
 
+### ritual (14 nodes)
+
+- `ritual-baptism`
+- `ritual-christmas-nativity`
+- `ritual-circumcision-covenant`
+- `ritual-daily-prayer`
+- `ritual-eucharist-communion`
+- `ritual-fasting-cross-tradition`
+- `ritual-funeral-rites`
+- `ritual-hajj-pilgrimage`
+- `ritual-initiation-mystery`
+- `ritual-passover-seder`
+- `ritual-pilgrimage-cross-tradition`
+- `ritual-rites-of-passage`
+- `ritual-sabbath-observance`
+- `ritual-sacrifice`
+
 ### moral (12 nodes)
 
 - `moral-ahimsa-nonviolence`
