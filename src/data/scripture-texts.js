@@ -4369,3 +4369,380 @@ SCRIPTURE_TEXTS['zhuangzi'] = {
     },
   ]
 };
+
+// ── BATCH 7 ─────────────────────────────────────────────────────────────────
+
+SCRIPTURE_TEXTS['isaiah-6'] = {
+  title: 'Isaiah 6 — The Throne Vision & the Trishagion',
+  shortTitle: 'Isaiah 6',
+  tradition: 'Hebrew Bible',
+  date: 'c. 740 BCE',
+  intro: 'Isaiah 6 is the prophet\'s inaugural vision — his commissioning scene — and one of the most influential throne visions in all of religious literature. The year is 740 BCE, the year King Uzziah died. Isaiah sees the divine throne room: the LORD seated on a high and exalted throne, the hem of his robe filling the Temple. Above the throne stand seraphim with six wings — two covering their faces, two covering their feet, two for flying — crying "Holy, holy, holy is the LORD of hosts; the whole earth is full of his glory" (the Trishagion). Isaiah is undone: "Woe is me! I am lost, for I am a man of unclean lips." A seraph touches his lips with a burning coal from the altar — purification — and the voice asks "Whom shall I send?" Isaiah answers "Here I am; send me." The Trishagion became the central liturgical acclamation of Jewish and Christian worship; the structure of vision → undoing → purification → commissioning became the template for prophetic literature from Ezekiel to Revelation. The seraphim\'s "the whole earth is full of his glory" is the prophetic answer to Ezekiel\'s "the appearance of the likeness of the glory of the LORD" — not a hidden, qualified radiance, but a presence that fills all things.',
+  crossTradition: [
+    { label: 'Ezekiel 1 — the throne vision template', textId: 'ezekiel-1', note: 'Isaiah 6 and Ezekiel 1 are the two great throne visions of the Hebrew prophets. Isaiah sees the throne directly and is undone; Ezekiel sees it through four degrees of qualification ("appearance of the likeness of the glory"). Both involve the prophet falling before the divine presence. Revelation 4 synthesizes them: the four living creatures come from Ezekiel, the "holy, holy, holy" comes from Isaiah.' },
+    { label: 'Bhagavad Gita 11 — the terrifying divine form that overwhelms the recipient', textId: 'bhagavad-gita-11', note: 'Isaiah\'s "Woe is me! I am undone" before the divine throne and Arjuna\'s terror before the Vishvarupa — "my mind is bewildered... I am unable to stand" — are the same human response to divine totality. Both receive a commissioning after the overwhelming vision; both are sent back into the world with a mission.' },
+    { label: 'Corpus Hermeticum XIII — the final hymn to the All', textId: 'corpus-hermeticum-13', note: 'CH XIII closes with the secret hymn of rebirth: "Silence! for I am about to hymn the Lord of creation." The Trishagion ("Holy, holy, holy") and the Hermetic silent hymn are both acts of worship before divine totality that exceed ordinary language. Both texts locate the divine acclamation at the culmination of a transformation process.' },
+    { label: 'Apocryphon of John — Barbelo as the divine throne room', textId: 'apocryphon-of-john', note: 'Isaiah\'s seraphim crying "holy, holy, holy" before the enthroned LORD and the Apocryphon\'s Barbelo as the First Thought before the Monad — both texts stage a divine inner court where the highest divine realities exist in perpetual worship of the unmanifest. The Gnostic texts took Isaiah\'s throne room as a map of the Pleroma.' },
+  ],
+  translations: [
+    { id: 'nrsv', label: 'NRSV (T1)' },
+    { id: 'hebrew', label: 'Hebrew (original)' },
+  ],
+  sections: [
+    {
+      heading: 'The Throne Room (6:1–4)',
+      verses: [
+        {
+          ref: '6:1–2',
+          text: 'In the year that King Uzziah died, I saw the Lord sitting on a throne, high and lofty; and the hem of his robe filled the temple. Seraphs were in attendance above him; each had six wings: with two they covered their faces, and with two they covered their feet, and with two they flew.',
+          textVersions: {
+            nrsv: 'In the year that King Uzziah died, I saw the Lord sitting on a throne, high and lofty; and the hem of his robe filled the temple. Seraphs were in attendance above him; each had six wings: with two they covered their faces, and with two they covered their feet, and with two they flew.',
+            hebrew: 'בִּשְׁנַת-מוֹת הַמֶּלֶךְ עֻזִּיָּהוּ וָאֶרְאֶה אֶת-אֲדֹנָי יֹשֵׁב עַל-כִּסֵּא רָם וְנִשָּׂא וְשׁוּלָיו מְלֵאִים אֶת-הַהֵיכָל',
+          },
+          entities: [
+            { word: 'seraphs', node: 'tradition-jewish-mysticism', type: 'symbol',
+              note: 'Seraphim — the burning ones (from saraph, to burn). They appear only here in the Hebrew Bible, in sharp contrast to the hayot of Ezekiel and the cherubim of Genesis and the Ark. Their six wings and their perpetual acclamation made them the model for the highest angelic order in later Jewish and Christian angelology. The covering of faces and feet with wings expresses the paradox of divine service: even those closest to the divine cannot look at it or move through their own will; they are sustained in perpetual adoration.',
+              parallels: [
+                { label: 'Ezekiel 1 — the hayot with four wings and four faces', textId: 'ezekiel-1', note: 'Ezekiel\'s four-faced hayot (later six wings in Ezekiel 1:6, four in 10:21 — the text is inconsistent) and Isaiah\'s six-winged seraphim are both attempts to describe the divine throne court. Revelation 4 fuses them: "the four living creatures... each of them with six wings, full of eyes all around and inside." The seraphim\'s six wings and the hayot\'s four faces become a single composite being in John\'s synthesis.' },
+              ]
+            },
+          ]
+        },
+        {
+          ref: '6:3',
+          text: 'And one called to another and said: "Holy, holy, holy is the LORD of hosts; the whole earth is full of his glory."',
+          textVersions: {
+            nrsv: 'And one called to another and said: "Holy, holy, holy is the LORD of hosts; the whole earth is full of his glory."',
+            hebrew: 'וְקָרָא זֶה אֶל-זֶה וְאָמַר קָדוֹשׁ קָדוֹשׁ קָדוֹשׁ יְהוָה צְבָאוֹת מְלֹא כָל-הָאָרֶץ כְּבוֹדוֹ',
+          },
+          entities: [
+            { word: 'Holy, holy, holy', node: 'tradition-jewish-mysticism', type: 'concept',
+              note: 'Qadosh qadosh qadosh — the Trishagion, the triple holiness. Hebrew uses repetition for emphasis; triple repetition indicates the superlative. This acclamation became the Kedushah in Jewish liturgy, the Sanctus in Christian Mass, and the Qaddus in Islamic theology. It is the only moment in the Hebrew Bible where a divine attribute is repeated three times — making holiness the supreme divine quality, surpassing power, wisdom, or love as the primary descriptor. The Trishagion crossed every boundary: Jewish, Christian, Islamic, and Eastern Christian liturgies all use it.',
+              parallels: [
+                { label: 'Corpus Hermeticum XIII — the silent hymn of the reborn', textId: 'corpus-hermeticum-13', note: 'The CH XIII\'s secret hymn: "Holy is God and Father of all... Holy art thou, by whose will nature was perfected... Holy art thou, O Silence." The Trishagion and the Hermetic triple "holy" both use threefold repetition to approach the divine — and both locate holiness at the center of what the divine is. The Hermetic hymn is the personal replication of what the seraphim perform cosmically.' },
+                { label: 'Bhagavad Gita 11 — all worlds crying out before the Vishvarupa', textId: 'bhagavad-gita-11', note: 'The seraphim crying "holy, holy, holy" before the throne and Arjuna\'s description of the cosmos bowing and flowing into the Vishvarupa (11:36: "The world rejoices and is delighted by your glory") are both scenes of cosmic worship — the entire creation in a posture of adoration before the divine totality.' },
+              ]
+            },
+            { word: 'the whole earth is full of his glory', node: '', type: 'concept',
+              note: 'M\'lo kol ha-aretz k\'vodo — "the fullness of all the earth is his glory." This is a radical claim: the divine kavod is not hidden in a throne room above the Temple but fills the entire creation. This verse is the prophetic bridge between the hidden, esoteric kavod of Ezekiel 1 and the Psalms\' "the heavens declare the glory of God" (19:1). For the Kabbalists, this verse proved that the divine presence (Shekhinah) permeates all of physical reality — the foundation of immanence theology in Judaism.',
+              parallels: [
+                { label: 'Corpus Hermeticum XI — everything is full of God', textId: 'corpus-hermeticum-11', note: 'CH XI: "Everything is full of God" (panta plere tou theou). Isaiah\'s "the whole earth is full of his glory" and Hermes\' "everything is full of God" are the same theological claim from different traditions: divine presence is not confined to a holy place but pervades all of creation. This is the strongest cross-tradition parallel for immanence theology.' },
+              ]
+            },
+          ]
+        },
+      ]
+    },
+    {
+      heading: 'Undoing and Purification (6:5–7)',
+      verses: [
+        {
+          ref: '6:5–7',
+          text: 'And I said: "Woe is me! I am lost, for I am a man of unclean lips, and I live among a people of unclean lips; yet my eyes have seen the King, the LORD of hosts!" Then one of the seraphs flew to me, holding a live coal that had been taken from the altar with a pair of tongs. The seraph touched my mouth with it and said: "Now that this has touched your lips, your guilt has departed and your sin is blotted out."',
+          textVersions: {
+            nrsv: 'And I said: "Woe is me! I am lost, for I am a man of unclean lips, and I live among a people of unclean lips; yet my eyes have seen the King, the LORD of hosts!" Then one of the seraphs flew to me, holding a live coal that had been taken from the altar with a pair of tongs. The seraph touched my mouth with it and said: "Now that this has touched your lips, your guilt has departed and your sin is blotted out."',
+            hebrew: 'וָאֹמַר אוֹי-לִי כִי-נִדְמֵיתִי כִּי אִישׁ טְמֵא-שְׂפָתַיִם אָנֹכִי וּבְתוֹךְ עַם-טְמֵא שְׂפָתַיִם אָנֹכִי יוֹשֵׁב כִּי אֶת-הַמֶּלֶךְ יְהוָה צְבָאוֹת רָאוּ עֵינָי',
+          },
+          entities: [
+            { word: 'live coal that had been taken from the altar', node: 'tradition-jewish-mysticism', type: 'symbol',
+              note: 'The burning coal (ritzpah) from the altar is one of the most powerful purification symbols in prophetic literature. Fire purifies; the altar is the locus of atonement; the seraph uses it to touch Isaiah\'s lips — the organ of speech, the instrument of prophecy. The prophet\'s commission is speech; his disqualification is "unclean lips"; the purification is therefore precisely suited to the task. This targeted purification — the specific impediment removed by the specific instrument — is structurally related to alchemical purification: the raw material is made fit for its function by the fire that transforms it.',
+              parallels: [
+                { label: 'Rumi Masnavi — fire of love that makes the reed fit to speak', textId: 'rumi-masnavi', note: 'The seraph\'s coal purifying Isaiah\'s lips so he can speak divine words and Rumi\'s fire of Love that fills the reed with longing-cry — both use fire as the agent that transforms the speaker from the merely human to the divinely commissioned. The fire does not destroy the reed or Isaiah; it qualifies them for their specific function.' },
+              ]
+            },
+          ]
+        },
+      ]
+    },
+    {
+      heading: 'The Commission (6:8)',
+      verses: [
+        {
+          ref: '6:8',
+          text: 'Then I heard the voice of the Lord saying, "Whom shall I send, and who will go for us?" And I said, "Here I am; send me!"',
+          textVersions: {
+            nrsv: 'Then I heard the voice of the Lord saying, "Whom shall I send, and who will go for us?" And I said, "Here I am; send me!"',
+            hebrew: 'וָאֶשְׁמַע אֶת-קוֹל אֲדֹנָי אֹמֵר אֶת-מִי אֶשְׁלַח וּמִי יֵלֶךְ-לָנוּ וָאֹמַר הִנְנִי שְׁלָחֵנִי',
+          },
+          entities: [
+            { word: 'Here I am; send me', node: '', type: 'concept',
+              note: 'Hinneni — "here I am." This is the great biblical word of presence and availability: Abraham says hinneni when called to sacrifice Isaac (Gen 22:1); Moses says it at the burning bush (Ex 3:4); Samuel says it three times before recognizing God\'s voice (1 Sam 3). Isaiah\'s hinneni completes a pattern: the divine call → human availability → divine commissioning. This is the structural core of the prophetic vocation, and it directly parallels the Hermetic pattern of Hermes receiving the vision and then being sent to teach humanity.',
+              parallels: [
+                { label: 'Corpus Hermeticum I — Hermes commissioned to teach humanity', textId: 'corpus-hermeticum-1', note: 'After his vision of Poimandres, Hermes is commissioned: "What you have learned, transmit... You are the guide of those who are worthy." Isaiah\'s "here I am, send me" and Hermes\' acceptance of the teaching mission are both scenes of visionary-commissioning: the one who has seen the divine is sent back into the world as a messenger. The sequence vision → undoing → purification → commissioning is a cross-traditional initiatory template.' },
+              ]
+            },
+          ]
+        },
+      ]
+    },
+  ]
+};
+
+SCRIPTURE_TEXTS['1-corinthians-15'] = {
+  title: '1 Corinthians 15 — The Resurrection Body',
+  shortTitle: '1 Cor 15',
+  tradition: 'New Testament',
+  date: 'c. 54 CE',
+  intro: 'First Corinthians 15 is Paul\'s most sustained argument for bodily resurrection and his most philosophical passage. Writing around 54 CE, Paul addresses Corinthian Christians who doubted resurrection, deploying a sequence of arguments culminating in an extraordinary meditation on the nature of the resurrection body (soma pneumatikon — spiritual body) versus the natural body (soma psychikon). The key move: Paul insists resurrection is not resuscitation of the same physical body but transformation — "it is sown a physical body, it is raised a spiritual body." He uses agricultural and cosmic analogies: seeds, flesh of different degrees (human, animal, bird, fish), and celestial bodies of different glory (sun, moon, stars). The passage closes with the Adam typology: "The first man, Adam, became a living being; the last Adam became a life-giving spirit... The first man was from the earth, a man of dust; the second man is from heaven." This heavenly/earthly, spiritual/physical, first-Adam/second-Adam structure wires directly to John 3\'s born-from-above ontology, to the Purusha Sukta\'s cosmic/earthly person, and to the Hermetic Corpus\'s descent of the Anthropos.',
+  crossTradition: [
+    { label: 'John 3 — born from above, spiritual not physical', textId: 'john-3', note: 'John 3\'s "what is born of the flesh is flesh, what is born of the spirit is spirit" and 1 Cor 15\'s "sown a natural body, raised a spiritual body" are Paul and John independently articulating the same theological claim: there is a higher, spiritual mode of existence that is not a continuation of the natural mode but a transformation of it. Both passages use the binary flesh/spirit, natural/spiritual to map the same ontological territory.' },
+    { label: 'Purusha Sukta — cosmic body as the template for individual transformation', textId: 'purusha-sukta', note: 'Paul\'s "first Adam from earth, second Adam from heaven" and the Purusha Sukta\'s cosmic Person — three-quarters immortal in heaven, one-quarter manifest below — are parallel structural intuitions: there is a heavenly/cosmic template (the second Adam / the Purusha) and an earthly instantiation (the first Adam / the quarter that became creation). Transformation is ascent from the earthly to the heavenly template.' },
+    { label: 'Corpus Hermeticum XIII — the spiritual body of the reborn', textId: 'corpus-hermeticum-13', note: 'CH XIII describes the rebirth into a "body of light" — the ten powers of God replacing the twelve tormentors. Paul\'s soma pneumatikon (spiritual body) and the Hermetic body of light are the same concept: a mode of existence that is bodily (not simply disembodied) but made of a different, higher substance. Both texts insist that this is not the destruction of the person but its transformation.' },
+    { label: 'Bhagavad Gita 2 — the indestructible atman that changes bodies', textId: 'bhagavad-gita-4', note: 'BG 2:22: "Just as a person puts on new garments, giving up old ones, similarly, the soul accepts new material bodies, giving up the old and useless ones." Paul\'s resurrection body and the BG\'s atman changing bodies are different answers to the same question about continuity through transformation. Paul insists on a single transformation (resurrection); the BG allows multiple iterations (reincarnation) — but both preserve the identity of the self through the change of form.' },
+  ],
+  translations: [
+    { id: 'nrsv', label: 'NRSV (T1)' },
+    { id: 'greek', label: 'Greek (original)' },
+  ],
+  sections: [
+    {
+      heading: 'The Seed and the Body (15:35–44)',
+      verses: [
+        {
+          ref: '15:36–38',
+          text: 'Fool! What you sow does not come to life unless it dies. And as for what you sow, you do not sow the body that is to be, but a bare seed, perhaps of wheat or of some other grain. But God gives it a body as he has chosen, and to each kind of seed its own body.',
+          textVersions: {
+            nrsv: 'Fool! What you sow does not come to life unless it dies. And as for what you sow, you do not sow the body that is to be, but a bare seed, perhaps of wheat or of some other grain. But God gives it a body as he has chosen, and to each kind of seed its own body.',
+            greek: 'ἄφρων, σὺ ὃ σπείρεις οὐ ζῳοποιεῖται ἐὰν μὴ ἀποθάνῃ· καὶ ὃ σπείρεις, οὐ τὸ σῶμα τὸ γενησόμενον σπείρεις ἀλλὰ γυμνὸν κόκκον',
+          },
+          entities: [
+            { word: 'does not come to life unless it dies', node: 'osiris', type: 'concept',
+              note: 'This is the seed-death paradox, the theological core of dying-and-rising religion. Paul is using agricultural reality as a theological argument: the seed must die (dissolve its seed-form) to produce the plant. The death is not the end but the condition for the higher form. This precise metaphor appears in John 12:24 ("unless a grain of wheat falls into the earth and dies, it remains just a single grain; but if it dies, it bears much fruit") and throughout mystery religion. Osiris is the dying grain; Persephone descends and returns; Adonis bleeds and flowers. Paul is working within a well-established template.',
+              parallels: [
+                { label: 'Apocryphon of John — the divine spark buried in matter must be awakened', textId: 'apocryphon-of-john', note: 'The Gnostic divine spark buried in material existence and Paul\'s seed buried in the earth are parallel images for the same theological claim: the highest is hidden in the lowest; transformation requires a process of going through death/burial. For Paul, this is resurrection; for the Gnostics, it is gnosis — both are "comebacks" from a buried state.' },
+              ]
+            },
+          ]
+        },
+        {
+          ref: '15:42–44',
+          text: 'So it is with the resurrection of the dead. What is sown is perishable, what is raised is imperishable. It is sown in dishonor, it is raised in glory. It is sown in weakness, it is raised in power. It is sown a physical body, it is raised a spiritual body.',
+          textVersions: {
+            nrsv: 'So it is with the resurrection of the dead. What is sown is perishable, what is raised is imperishable. It is sown in dishonor, it is raised in glory. It is sown in weakness, it is raised in power. It is sown a physical body, it is raised a spiritual body.',
+            greek: 'οὕτως καὶ ἡ ἀνάστασις τῶν νεκρῶν. σπείρεται ἐν φθορᾷ, ἐγείρεται ἐν ἀφθαρσίᾳ· σπείρεται ἐν ἀτιμίᾳ, ἐγείρεται ἐν δόξῃ· σπείρεται ἐν ἀσθενείᾳ, ἐγείρεται ἐν δυνάμει· σπείρεται σῶμα ψυχικόν, ἐγείρεται σῶμα πνευματικόν.',
+          },
+          entities: [
+            { word: 'spiritual body', node: 'pneuma', type: 'concept',
+              note: 'Soma pneumatikon — spiritual body. This is Paul\'s most paradoxical coinage: soma (body) is the material, particular, individual form; pneumatikon (spiritual) is the non-material, universal principle. A "spiritual body" should be a contradiction in terms — yet Paul insists on both words. He is not describing a ghost (pure spirit) or a resuscitated corpse (pure body) but a third thing: a mode of embodied existence whose substance is pneuma rather than matter. This is the closest Paul comes to the Hermetic concept of a body of light.',
+              parallels: [
+                { label: 'Corpus Hermeticum XIII — the body of light of the reborn', textId: 'corpus-hermeticum-13', note: 'CH XIII\'s rebirth produces a transformed body: the tormentors (vices) are replaced by the powers of God, and the reborn soul is described as clothed in divine light. Paul\'s soma pneumatikon and the Hermetic body of light are the same intuition from different traditions: transformation produces not the destruction of individual existence but its elevation to a higher, luminous mode.' },
+                { label: 'Purusha Sukta — three-quarters immortal, one-quarter earthly', textId: 'purusha-sukta', note: 'Paul\'s contrast between the earthly body (from Adam/dust) and the heavenly body (from Christ/spirit) and the Purusha Sukta\'s earthly quarter versus three-quarters immortal in heaven are parallel structural maps of the same territory. What is raised corresponds to what was always immortal in the cosmic template; what is sown corresponds to the quarter that became material creation.' },
+              ]
+            },
+          ]
+        },
+      ]
+    },
+    {
+      heading: 'First Adam and Last Adam (15:45–49)',
+      verses: [
+        {
+          ref: '15:45–49',
+          text: 'Thus it is written, "The first man, Adam, became a living being"; the last Adam became a life-giving spirit. But it is not the spiritual that is first, but the physical, and then the spiritual. The first man was from the earth, a man of dust; the second man is from heaven. As was the man of dust, so are those who are of the dust; and as is the man of heaven, so are those who are of heaven. Just as we have borne the image of the man of dust, we will also bear the image of the man of heaven.',
+          textVersions: {
+            nrsv: 'Thus it is written, "The first man, Adam, became a living being"; the last Adam became a life-giving spirit. But it is not the spiritual that is first, but the physical, and then the spiritual. The first man was from the earth, a man of dust; the second man is from heaven. As was the man of dust, so are those who are of the dust; and as is the man of heaven, so are those who are of heaven.',
+            greek: 'οὕτως καὶ γέγραπται· ἐγένετο ὁ πρῶτος ἄνθρωπος Ἀδὰμ εἰς ψυχὴν ζῶσαν· ὁ ἔσχατος Ἀδὰμ εἰς πνεῦμα ζῳοποιοῦν.',
+          },
+          entities: [
+            { word: 'the last Adam became a life-giving spirit', node: 'logos', type: 'concept',
+              note: 'Eschatos Adam — last Adam. Paul is doing something audacious: identifying Christ with a cosmic Anthropos figure who is the heavenly template for which the earthly Adam was only a copy. This is a direct engagement with the Philonic concept of the "heavenly Man" (ho kat\' eikona anthropos) — the divine image in Genesis 1:27 versus the earthly man formed from dust in Genesis 2:7. Paul reads these as two different beings: the first Adam (earthly, from Genesis 2) and the last Adam (heavenly, identified with Christ). This is almost identical to the Hermetic Anthropos who descends through the spheres and falls in love with Nature.',
+              parallels: [
+                { label: 'Poimandres (CH I) — the Anthropos descending from heaven', textId: 'corpus-hermeticum-1', note: 'CH I\'s Anthropos — the divine Man who descends through the planetary spheres, falls in love with Nature, and becomes entrapped in matter — is the Hermetic version of Paul\'s Adam typology. For Paul, the first Adam fell into earthly existence; the last Adam (Christ) came from heaven to redeem. For Poimandres, the Anthropos descended and is trapped; the return journey is gnosis. Both texts use a two-Adam or two-Anthropos structure to map the fall and the redemption.' },
+                { label: 'Purusha Sukta — the cosmic Man as template for all creation', textId: 'purusha-sukta', note: 'Paul\'s "man of heaven" as the template for the redeemed and the Purusha Sukta\'s cosmic Person as the template from which all creation was formed — both texts use a macro-anthropos (cosmic Man) as the explanatory principle for human existence and its possible transformation. The direction is opposite (Purusha descends to become creation; Christ\'s image ascends as resurrection) but the structural logic is the same.' },
+              ]
+            },
+          ]
+        },
+      ]
+    },
+    {
+      heading: 'Death is Swallowed Up (15:51–55)',
+      verses: [
+        {
+          ref: '15:51–55',
+          text: 'Listen, I will tell you a mystery! We will not all die, but we will all be changed, in a moment, in the twinkling of an eye, at the last trumpet. For the trumpet will sound, and the dead will be raised imperishable, and we will be changed. For this perishable body must put on imperishability, and this mortal body must put on immortality. When this perishable body puts on imperishability, and this mortal body puts on immortality, then the saying that is written will be fulfilled: "Death has been swallowed up in victory. Where, O death, is your victory? Where, O death, is your sting?"',
+          textVersions: {
+            nrsv: 'Listen, I will tell you a mystery! We will not all die, but we will all be changed, in a moment, in the twinkling of an eye, at the last trumpet. For the trumpet will sound, and the dead will be raised imperishable, and we will be changed.',
+            greek: 'ἰδοὺ μυστήριον ὑμῖν λέγω· πάντες οὐ κοιμηθησόμεθα, πάντες δὲ ἀλλαγησόμεθα, ἐν ἀτόμῳ, ἐν ῥιπῇ ὀφθαλμοῦ, ἐν τῇ ἐσχάτῃ σάλπιγγι',
+          },
+          entities: [
+            { word: 'Death has been swallowed up in victory', node: '', type: 'concept',
+              note: 'Paul quotes Isaiah 25:8 ("he will swallow up death forever") and Hosea 13:14 ("O Death, where are your plagues?"). The "swallowing" metaphor is striking: death is eaten by what overcomes it. This reverses the standard image of death as the devourer. Paul\'s entire argument has been building to this reversal: the perishable puts on imperishability, the mortal puts on immortality, and then the last enemy (death, introduced in 15:26) is negated by what it tried to negate. This is the theological structure of Zhuangzi\'s singing at his wife\'s death: death is not the final word, only a transition.',
+              parallels: [
+                { label: 'Zhuangzi — singing at his wife\'s death, the return to origin', textId: 'zhuangzi', note: 'Paul\'s "death is swallowed up in victory" and Zhuangzi\'s singing at his wife\'s death — both texts arrive at a posture of non-defeat before mortality. The paths are different: Paul uses eschatological transformation (resurrection reverses death), Zhuangzi uses metaphysical continuity (death returns to origin). But the conclusion is the same: death is not the final word.' },
+                { label: 'Völuspá — renewal after Ragnarök', textId: 'voluspa', note: 'The Norse Seeress sees not just destruction but renewal: after Ragnarök, the earth rises from the sea, the eagle hunts fish, fields bear unsown crops, Baldr returns. Paul\'s "death swallowed up in victory" and the Völuspá\'s post-apocalyptic renewal are both theologies of transformation beyond destruction — the cosmos or the individual emerges in a higher form after the worst has happened.' },
+              ]
+            },
+          ]
+        },
+      ]
+    },
+  ]
+};
+
+SCRIPTURE_TEXTS['plotinus-enneads'] = {
+  title: 'Plotinus — Enneads VI.9: The Flight of the Alone to the Alone',
+  shortTitle: 'Enneads VI.9',
+  tradition: 'Neoplatonist',
+  date: 'c. 253–270 CE',
+  intro: 'Plotinus (204–270 CE) is the philosopher who synthesized Plato, Pythagorean number-mysticism, Aristotelian logic, and Stoic physics into a single metaphysical system — Neoplatonism — that became the philosophical backbone of late antique religious thought across Judaism (Philo), Christianity (Augustine, Pseudo-Dionysius), Islam (al-Farabi, Ibn Sina), and the Hermetic tradition. The Enneads are nine treatises in six groups edited by his student Porphyry. The final treatise, VI.9, "On the Good or the One," is Plotinus\' most mystical text and his most personal: he describes the soul\'s ascent to union with the One — the highest principle, beyond Being, beyond Intellect, beyond all description — in language that is simultaneously rigorous philosophy and ecstatic testimony. The closing phrase, "the flight of the alone to the Alone" (phygê monou pros monon), is the most famous formulation of mystical union in Western philosophy. Plotinus stands at the exact center of the cross-traditional map: he was influenced by Plato\'s Timaeus and the Pythagoreans, contemporaneous with the Gnostic texts at Nag Hammadi, the Hermetic Corpus, and Origen\'s Christian Neoplatonism, and he in turn became the foundation for all subsequent apophatic mysticism in the Abrahamic traditions.',
+  crossTradition: [
+    { label: 'Apocryphon of John — the apophatic Monad beyond all description', textId: 'apocryphon-of-john', note: 'Plotinus\' One — "it is not this... not that... not Being... not Intellect... not any form... not even the Good as predicated of other things" — and the Apocryphon\'s Monad — "He is not knowable to any of them... He has no existence among existences" — are the closest philosophical parallels in late antiquity. Plotinus and the Nag Hammadi authors are working the same apophatic tradition, almost certainly drawing on shared Alexandrian Platonic sources.' },
+    { label: 'Tao Te Ching 1 — the Tao beyond all naming', textId: 'tao-te-ching-1', note: 'Plotinus\' One that cannot be named, predicated, or even called "the One" without falsifying it, and Laozi\'s Tao that cannot be named — the name is not the thing — are the most precise cross-traditional parallel for the apophatic starting point. Both traditions reached the same conclusion independently: the ultimate principle surpasses all categories, including the categories we use to point toward it.' },
+    { label: 'Chandogya Upanishad — tat tvam asi and the return to Brahman', textId: 'chandogya-6-2', note: 'Plotinus\' "the alone to the Alone" and the Chandogya\'s tat tvam asi ("that art thou") — the atman returning to Brahman — are the most precise Sanskrit/Greek parallels for mystical union. Both describe a return to a source that was never actually absent; the union is recognition, not acquisition. Plotinus says the soul "does not go out to the One but finds the One within itself when it has turned away from everything else."' },
+    { label: 'Corpus Hermeticum XI — God contains all things', textId: 'corpus-hermeticum-11', note: 'CH XI\'s instruction to expand the soul until it becomes the universe and Plotinus\' description of the soul ascending to the One by releasing all particular content — both texts describe the same movement in opposite directions (CH XI: expand to contain all; Plotinus: contract to become none). Both arrive at the same place: union with the source.' },
+  ],
+  translations: [
+    { id: 'mackenna', label: 'MacKenna 1917 (T1)' },
+    { id: 'greek', label: 'Greek (original)' },
+  ],
+  sections: [
+    {
+      heading: 'The One Beyond All Predication (VI.9.3)',
+      verses: [
+        {
+          ref: 'VI.9.3',
+          text: 'The One is perfect because it seeks nothing, has nothing, needs nothing; and overflowing, so to speak, it produces something other than itself. This product turns towards it and is filled, and looking towards it becomes Intellect. Its halt near the One and its turning towards it constitutes being; its gaze upon the One, Intellect. Since it halts near the One so as to see it, it becomes at once Intellect and being.',
+          textVersions: {
+            mackenna: 'The One is perfect because it seeks nothing, has nothing, needs nothing; and overflowing, so to speak, it produces something other than itself. This product turns towards it and is filled, and looking towards it becomes Intellect. Its halt near the One and its turning towards it constitutes being; its gaze upon the One, Intellect.',
+            greek: 'τέλειον δὲ ὅτι οὐδὲν ζητεῖ οὐδὲ ἔχει οὐδὲ δεῖται, ὑπερπλῆρες δὲ ὂν καὶ ὑπερρέον πεποίηκεν ἄλλο',
+          },
+          entities: [
+            { word: 'overflowing, so to speak, it produces something other', node: 'emanation', type: 'concept',
+              note: 'This is Plotinian emanation (prohodos — procession): the One does not create by will or act but by overflow, the way a light source radiates light without diminishing. This is not creation ex nihilo (the Christian doctrine) but emanation by excess: the One is so full that existence pours out from it necessarily. This emanation logic runs through Neoplatonism, the Hermetic Corpus, Kabbalah\'s tzimtzum-and-overflow, and Sufism\'s fayḍ (overflow of divine being). All four traditions are working with a model of creative abundance rather than creative decision.',
+              parallels: [
+                { label: 'Apocryphon of John — the Monad\'s perfection overflows into Barbelo', textId: 'apocryphon-of-john', note: 'The Apocryphon\'s Monad contemplates itself and Barbelo (First Thought) arises as the first emanation — not by decision but by the Monad\'s self-contemplation producing a reflection. Plotinus\' emanation (the One overflows into Intellect) and the Apocryphon\'s emanation (the Monad\'s self-contemplation produces Barbelo) are structurally identical accounts of the first step out of absolute unity into the first distinction.' },
+                { label: 'Sefer Yetzirah — the thirty-two paths emanating from Ein Sof', textId: 'sefer-yetzirah', note: 'The Kabbalistic Ein Sof (without end) overflows through tzimtzum (contraction) and emanation into the ten sefirot — a Jewish version of the Neoplatonic emanation chain. Plotinus\' One → Intellect → Soul → Matter and Kabbalah\'s Ein Sof → ten sefirot are the same emanation model applied to different theological vocabularies.' },
+              ]
+            },
+          ]
+        },
+      ]
+    },
+    {
+      heading: 'The Soul\'s Ascent (VI.9.7)',
+      verses: [
+        {
+          ref: 'VI.9.7',
+          text: 'Filled with love, putting aside the form it had in its descent, the soul that has the strength, stripped of all added in the descent, enters the realm of intellect with all its being, gathering all its parts about it — not scattered and not partial — and becomes pure being, pure intellect, pure act. Then it sees within itself — as if the divine lighted up — all things: all beautiful, all good.',
+          textVersions: {
+            mackenna: 'Filled with love, putting aside the form it had in its descent, the soul that has the strength, stripped of all added in the descent, enters the realm of intellect with all its being, gathering all its parts about it — not scattered and not partial — and becomes pure being, pure intellect, pure act.',
+            greek: 'ἀγάπης δὲ πλησθεῖσα ἀποθεμένη τὸ σχῆμα ὃ εἶχεν κατιοῦσα εἰς τὸν νοῦν ἀναπαύεται τῷ ὄντι ξυλλεγομένη πᾶσα',
+          },
+          entities: [
+            { word: 'stripped of all added in the descent', node: 'tradition-neoplatonism', type: 'concept',
+              note: 'Plotinus describes the return journey as a stripping: the soul shed accretions as it descended through the planetary spheres (Neoplatonic cosmology following the Poimandres model: the soul picks up the qualities of each sphere on the way down). The return strips them away in reverse order. This is the most precise structural parallel between Plotinus and the Hermetic Corpus Hermeticum I: both describe a descent that adds layers and an ascent that removes them. The soul returns to its original condition by subtraction, not addition.',
+              parallels: [
+                { label: 'Poimandres — the soul ascending through the planetary spheres', textId: 'corpus-hermeticum-1', note: 'CH I describes the soul ascending through seven planetary spheres, leaving behind at each sphere the quality it picked up on the way down: at the first, growth and decrease; at the second, evil deceit; at the third, covetous deceit; and so on until the soul is stripped bare and enters the eighth sphere. Plotinus\' "stripped of all added in the descent" is the philosophical description of what Poimandres describes cosmologically.' },
+                { label: 'Rumi Masnavi — the reed stripped back to origin', textId: 'rumi-masnavi', note: 'Rumi\'s reed longs to return to the reed bed — to have the accretion of separation stripped away. Plotinus\' stripped soul returning to the One and Rumi\'s reed crying for reunion are parallel images of the same metaphysical longing: to have what was added by existence removed until the original state is recovered.' },
+              ]
+            },
+          ]
+        },
+      ]
+    },
+    {
+      heading: 'The Flight of the Alone to the Alone (VI.9.11)',
+      verses: [
+        {
+          ref: 'VI.9.11',
+          text: 'This is the life of gods and of the godlike and blessed among men, liberation from the alien that besets us here, a life taking no pleasure in the things of earth, the passing of solitary to solitary. [phygê monou pros monon]',
+          textVersions: {
+            mackenna: 'This is the life of gods and of the godlike and blessed among men, liberation from the alien that besets us here, a life taking no pleasure in the things of earth, the passing of solitary to solitary.',
+            greek: 'αὕτη ἡ ζωὴ θεῶν καὶ θείων καὶ εὐδαιμόνων ἀνθρώπων, ἀπαλλαγὴ τῶν ἄλλων, βίος ἀνήδονος τῶν τῇδε, φυγὴ μόνου πρὸς μόνον.',
+          },
+          entities: [
+            { word: 'the passing of solitary to solitary', node: 'tradition-neoplatonism', type: 'concept',
+              note: 'Phygê monou pros monon — "the flight of the alone to the Alone." The most famous phrase in Western mysticism. The soul (monos — alone, singular, without attributes) returns to the One (Monon — the absolutely singular). The union is between two kinds of singularity: the soul stripped of all its additions (alone), and the One that is alone by nature (beyond all multiplicity). This phrase became the touchstone of Western mystical theology from Pseudo-Dionysius through Meister Eckhart, The Cloud of Unknowing, and John of the Cross.',
+              parallels: [
+                { label: 'Chandogya Upanishad — tat tvam asi: the alone returns to the Alone', textId: 'chandogya-6-2', note: '"That art thou" — the atman is already Brahman; the return is recognition. Plotinus\' "flight of the alone to the Alone" is the Greek-philosophical formulation of the same insight: the individual soul (atman) is already identical with the source (Brahman / the One); the mystical path is the removal of what obscures this identity, not the acquisition of something new.' },
+                { label: 'Apocryphon of John — divine sparks returning to the Pleroma', textId: 'apocryphon-of-john', note: 'The Apocryphon\'s divine sparks, trapped in Yaldabaoth\'s world, awakened by gnosis and returning to the Pleroma — and Plotinus\' soul, trapped in matter, ascending through contemplation to union with the One — are the same cosmological story told with different emphasis. Both describe a return to the source; the Gnostic version adds the dramatic element of the Demiurge who tries to prevent the return.' },
+                { label: 'Rumi Masnavi — the reed returning to the reed bed', textId: 'rumi-masnavi', note: 'Plotinus\' "flight of the alone to the Alone" and Rumi\'s reed longing for reunion with the reed bed are the same movement expressed in philosophical Greek and Sufi Persian. Both describe the soul\'s return journey toward its source. Rumi would read Plotinus as the philosopher who saw what the reed feels.' },
+              ]
+            },
+          ]
+        },
+      ]
+    },
+  ]
+};
+
+SCRIPTURE_TEXTS['bardo-thodol'] = {
+  title: 'Bardo Thodol — The Tibetan Book of the Dead',
+  shortTitle: 'Bardo Thodol',
+  tradition: 'Tibetan Buddhist',
+  date: 'c. 8th–14th CE (compiled)',
+  intro: 'The Bardo Thodol (Liberation in the Intermediate State Through Hearing) is traditionally attributed to Padmasambhava (8th century CE) and discovered as a terma (hidden treasure text) by Karma Lingpa in the 14th century. It is the most detailed and systematic map of consciousness through the dying process in any religious tradition. The text is read aloud to the dying and the recently dead, guiding consciousness through three bardos: the bardo of dying (the Clear Light), the bardo of dharmata (the arising of peaceful and wrathful deities), and the bardo of becoming (the approach to rebirth). The central teaching: at the moment of death, the Clear Light of the Dharmakaya arises — the naked, luminous nature of consciousness itself. If the dying person recognizes it as their own nature and does not flee in fear, liberation occurs. Most people flee, and the journey through the deity-visions and eventual rebirth follows. This is the most detailed Buddhist elaboration of the theme that appears across traditions: at the core of death is a light that is the divine nature; the question is whether consciousness can recognize itself in that light. The parallels with John 3 (born from above), Plotinus (the soul returning to the One), and the Gnostic divine spark are structurally precise.',
+  crossTradition: [
+    { label: 'John 3 — born from above, recognizing one\'s divine origin', textId: 'john-3', note: 'John 3\'s "born from above" and the Bardo\'s liberation through recognizing the Clear Light as one\'s own nature are both about recognizing divine origin. For John, this recognition (spiritual rebirth) happens during life; for the Bardo, the most decisive opportunity is at death. Both texts insist that the recognition is the soteriological act — not a doctrine believed but an identity recognized.' },
+    { label: 'Plotinus — the soul recognizing itself in the One', textId: 'plotinus-enneads', note: 'Plotinus\' mystical union occurs when the soul recognizes its identity with the One — "the alone to the Alone." The Bardo\'s liberation occurs when consciousness recognizes the Clear Light as its own nature. Both are recognition events, not acquisitions: the soul/consciousness is not receiving something new but recognizing what was always already its nature. This is the most precise structural parallel between Neoplatonism and Tibetan Buddhist soteriology.' },
+    { label: 'Apocryphon of John — divine sparks trapped in matter, needing to be awakened', textId: 'apocryphon-of-john', note: 'The Apocryphon\'s divine sparks in Yaldabaoth\'s material world needing gnosis to remember their divine origin, and the Bardo\'s consciousness at death encountering the Clear Light but potentially fleeing into rebirth — both map the same basic situation: a divine nature is present but not recognized, and the failure to recognize it has ontological consequences (re-embodiment, continued imprisonment).' },
+    { label: 'Zhuangzi — death as transformation, not dissolution', textId: 'zhuangzi', note: 'Zhuangzi traces his wife\'s being backward to the undifferentiated flux — death returns to the origin, not to nothing. The Bardo\'s Clear Light is the most basic nature of consciousness, always present — death dissolves the accretions and reveals it. Both texts locate in the process of dying a return to something fundamental that was always there, temporarily obscured by the forms of life.' },
+  ],
+  translations: [
+    { id: 'fremantle', label: 'Fremantle/Trungpa 1975 (T2)' },
+    { id: 'tibetan', label: 'Tibetan (original)' },
+  ],
+  sections: [
+    {
+      heading: 'The Clear Light at Death',
+      verses: [
+        {
+          ref: 'Part I',
+          text: 'O nobly born, now the clear light of reality itself dawns upon you. Recognize it. O nobly born, your present awareness — vacant, naked, empty — is itself the very Reality, the All-Good, the naked dharmakaya. Your own awareness, having no birth nor death, is indeed the Immutable Light — Buddha Amitabha.',
+          textVersions: {
+            fremantle: 'O nobly born, now the clear light of reality itself dawns upon you. Recognize it. O nobly born, your present awareness — vacant, naked, empty — is itself the very Reality, the All-Good, the naked dharmakaya. Your own awareness, having no birth nor death, is indeed the Immutable Light — Buddha Amitabha.',
+            tibetan: 'ཀྱེ་རྒྱལ་བའི་སྲས་ཆེན་ལགས་ཀུན་བཟང་བླ་མ་ཡི་ངོ་སྤྲོད་ཅི་ཞིག་ཡིན་ཞེ་ན།',
+          },
+          entities: [
+            { word: 'your present awareness — vacant, naked, empty — is itself the very Reality', node: 'tradition-tibetan-buddhism', type: 'concept',
+              note: 'This is the central teaching of Dzogchen and the Bardo Thodol: rigpa (pure awareness) is not something the dying person needs to acquire or travel toward — it is what the dying person already is, underneath all the mental formations. "Vacant, naked, empty" describes awareness stripped of content: the sky, not the clouds. The instruction to "recognize it" (Tibetan: ngo shes pa) is the entire practice — a cognitive act, not a spiritual effort. This is the most precise parallel to Plotinus\' "the alone to the Alone": both are recognition events.',
+              parallels: [
+                { label: 'Plotinus — the soul recognizing the One as its own nature', textId: 'plotinus-enneads', note: 'Plotinus\' mystical union: "the soul does not go out to the One but finds the One within itself when it has turned away from everything else." The Bardo\'s "your present awareness is itself the Reality" and Plotinus\' discovery of the One within are the same: the divine is not external to be sought but internal to be recognized.' },
+                { label: 'Apocryphon of John — the Monad\'s silence surrounding all things', textId: 'apocryphon-of-john', note: 'The Apocryphon\'s Monad: "Silence is what surrounds him... He is the invisible Spirit of whom one ought not think of him as a god or as like God... He is more than a god, since there is nothing above him." The Bardo\'s Clear Light: "vacant, naked, empty" — both use emptiness and silence as the positive characterization of the ultimate. Neither is describing an absence but a presence too full for ordinary predication.' },
+              ]
+            },
+          ]
+        },
+        {
+          ref: 'Part I (cont.)',
+          text: 'Do not be afraid of it, do not be bewildered. Recognize it as the natural radiance of your own mind. Since it is your own radiant dharmakaya, recognize it. If you do not recognize it, if you turn away from it in fear, then suffering will continue.',
+          textVersions: {
+            fremantle: 'Do not be afraid of it, do not be bewildered. Recognize it as the natural radiance of your own mind. Since it is your own radiant dharmakaya, recognize it. If you do not recognize it, if you turn away from it in fear, then suffering will continue.',
+            tibetan: 'འདི་ལ་མི་སྐྲག་ཅིག མི་མི་ཤིགས་ཤིག རང་གི་རིག་པའི་གསལ་སྣང་ངོ་ཤེས་ཤིག',
+          },
+          entities: [
+            { word: 'Do not be afraid of it', node: 'tradition-tibetan-buddhism', type: 'concept',
+              note: 'The instruction "do not be afraid" is the pastoral core of the Bardo Thodol. The reason most people fail to recognize the Clear Light is not ignorance but fear: the vast, undifferentiated luminosity of the dharmakaya is so unlike anything in ordinary experience that the unprepared mind flees from it. The fear is the mechanism of continued embodiment. This precise structure — a divine reality encountered in a state of radical exposure, the recipient tempted to flee — appears in Ezekiel falling on his face, in Arjuna begging Krishna to restore his gentle form, in Isaiah crying "Woe is me!" The difference: in those texts, the divine reassures the prophet; in the Bardo, the teaching is given in advance so that the moment of terror can be met with recognition.',
+              parallels: [
+                { label: 'Ezekiel 1 — "I fell on my face" before the glory of the LORD', textId: 'ezekiel-1', note: 'Ezekiel\'s prostration before the kavod and the Bardo\'s warning not to flee the Clear Light — both stage the same moment: a human consciousness encountering the overwhelming radiance of the divine totality. Ezekiel falls; the Bardo instructs not to fall but to recognize. The instruction "do not be afraid" is the Bardo Thodol\'s version of the divine reassurance that follows every great prophetic vision.' },
+                { label: 'Bhagavad Gita 11 — Arjuna terrified, begging for the gentle form', textId: 'bhagavad-gita-11', note: 'Arjuna begs Krishna to withdraw the Vishvarupa and return to the gentle human form (11:45-46) — he cannot sustain the vision of the divine totality. The Bardo Thodol specifically instructs the dying: do not flee to the dim lights (the lower realms, which feel more familiar and comfortable); stay with the blazing Clear Light. Arjuna\'s failure and the Bardo\'s instruction describe the same psychological event from opposite sides.' },
+              ]
+            },
+          ]
+        },
+      ]
+    },
+    {
+      heading: 'The Peaceful Deities Arise',
+      verses: [
+        {
+          ref: 'Part II',
+          text: 'O nobly born, listen without distraction. On the second day, the white light of Vajrasattva will come to meet you, together with the smoky light of hell. At that moment, do not be attracted to the smoky light of hell through the force of anger. The white light of Vajrasattva is your own buddha nature. Recognize it.',
+          textVersions: {
+            fremantle: 'O nobly born, listen without distraction. On the second day, the white light of Vajrasattva will come to meet you, together with the smoky light of hell. At that moment, do not be attracted to the smoky light of hell through the force of anger. The white light of Vajrasattva is your own buddha nature. Recognize it.',
+            tibetan: 'ཀྱེ་རྒྱལ་བའི་སྲས་ཆེན། ད་ལྟ་རྡོ་རྗེ་སེམས་དཔའི་འོད་དཀར་པོ་གསལ་ལ་ཡི་མཐོང་ངམ།',
+          },
+          entities: [
+            { word: 'the smoky light of hell', node: 'tradition-tibetan-buddhism', type: 'concept',
+              note: 'The Bardo Thodol\'s most striking teaching: alongside each blazing divine light, a dim smoky light of the corresponding hell-realm also appears. The dim light is comfortable, familiar, not overwhelming — and therefore deeply attractive to a consciousness that has just fled the terrifying divine radiance. The text is saying: your vices (here, anger) generate their own light — a comfortable, dim alternative to the divine brilliance. The choice between the bright and dim lights is the soteriological choice at every stage of the bardo journey.',
+              parallels: [
+                { label: 'John 3 — the darkness that does not overcome the light', textId: 'john-3', note: 'John 3:19-20: "People loved darkness rather than light because their deeds were evil." The Bardo\'s smoky light of hell alongside the divine white light, and John\'s darkness preferred by those who flee the light — both texts map the same soteriological structure: the divine light is present; the question is whether consciousness turns toward it or away. The dim/dark is not the absence of the divine but an alternative that consciousness chooses.' },
+              ]
+            },
+          ]
+        },
+      ]
+    },
+  ]
+};
