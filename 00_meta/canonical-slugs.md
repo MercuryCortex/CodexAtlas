@@ -17,6 +17,21 @@ canonical-slug
 ## Currently resolved slugs (auto-seeded — every existing file)
 
 
+### moral (12 nodes)
+
+- `moral-ahimsa-nonviolence`
+- `moral-buddhist-five-precepts`
+- `moral-confucian-ren`
+- `moral-divine-command-theory`
+- `moral-euthyphro-dilemma`
+- `moral-golden-rule-cross-tradition`
+- `moral-islamic-sharia`
+- `moral-karma-as-moral-law`
+- `moral-natural-law`
+- `moral-stoic-virtue-ethics`
+- `moral-ten-commandments`
+- `moral-zoroastrian-asha`
+
 ### alphabet (21 nodes)
 
 - `alphabet-avestan`
@@ -2721,6 +2736,21 @@ canonical-slug
 - `tradition-yoruba-ifa`
 - `tradition-zen`
 - `tradition-zoroastrianism`
+
+### alchemy (12 nodes) — `alchemy-content-1` batch, 2026-05-16
+
+- `alchemy-emerald-tablet`
+- `alchemy-jabir-ibn-hayyan`
+- `alchemy-maria-prophetissa`
+- `alchemy-zosimos-of-panopolis`
+- `alchemy-paracelsus`
+- `alchemy-chinese-neidan`
+- `alchemy-philosophers-stone`
+- `alchemy-prima-materia`
+- `alchemy-nigredo-albedo-rubedo`
+- `alchemy-opus-magnum`
+- `alchemy-islamic-tradition`
+- `alchemy-tria-prima`
 
 ## Known historical drift / suggested fixes
 

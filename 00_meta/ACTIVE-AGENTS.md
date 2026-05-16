@@ -4,6 +4,21 @@ _Hand-maintained. Each agent currently working in the vault appends a claim bloc
 
 ---
 
+## ~~morals-content-1 — 12 moral philosophy nodes in 13_morals/ — 2026-05-16 — FINISHED~~
+- ~~NEW: `13_morals/` folder (12 full-tier nodes with type: moral)~~
+- ~~Nodes: moral-divine-command-theory, moral-euthyphro-dilemma, moral-karma-as-moral-law, moral-buddhist-five-precepts, moral-confucian-ren, moral-zoroastrian-asha, moral-natural-law, moral-golden-rule-cross-tradition, moral-ten-commandments, moral-islamic-sharia, moral-stoic-virtue-ethics, moral-ahimsa-nonviolence~~
+- ~~UPDATED: build_data.py — added "moral": ["13_morals"] to NODE_DIRS~~
+- ~~Status: FINISHED — 0 lint errors, 16383 edges, 12 moral nodes in graph~~
+
+---
+
+## rituals-content-1 — 14 ritual nodes in 14_rituals/ — 2026-05-16 — IN FLIGHT
+- NEW: `14_rituals/` folder (14 full-tier nodes with type: ritual)
+- Nodes: ritual-baptism, ritual-circumcision-covenant, ritual-eucharist-communion, ritual-hajj-pilgrimage, ritual-passover-seder, ritual-christmas-nativity, ritual-funeral-rites, ritual-initiation-mystery, ritual-fasting-cross-tradition, ritual-daily-prayer, ritual-sabbath-observance, ritual-rites-of-passage, ritual-sacrifice, ritual-pilgrimage-cross-tradition
+- Status: IN FLIGHT
+
+---
+
 ## ~~axial-age-1 — Axial Age investigation cluster — 2026-05-16 — FINISHED~~
 - ~~NEW: `05_events/event-axial-age-800-200bce.md` (full event node: table of all 5 traditions, 4 structural moves, proposed mechanisms, cross-tradition wiring)~~
 - ~~UPDATED: `src/data/chains.js` — new CONVERGENCE chain `axial-age-five-traditions` (6 links: Zoroaster → Hebrew Prophets → Gautama → Confucius → Socrates → event node)~~

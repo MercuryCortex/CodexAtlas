@@ -28,6 +28,8 @@ NODE_DIRS = {
     "symbol":   ["09_symbols"],
     "music":    ["10_music"],
     "alphabet": ["11_alphabets"],
+    "alchemy":  ["12_alchemy"],
+    "moral":    ["13_morals"],
 }
 
 # ---------- minimal YAML parser tailored to our schema ----------
@@ -792,6 +794,8 @@ def main():
     print(f"  symbols   : {counts.get('symbol', 0)}")
     print(f"  music     : {counts.get('music', 0)}")
     print(f"  alphabets : {counts.get('alphabet', 0)}")
+    print(f"  alchemy   : {counts.get('alchemy', 0)}")
+    print(f"  morals    : {counts.get('moral', 0)}")
     print(f"  edges     : {len(deduped)}")
 
 if __name__ == "__main__":
