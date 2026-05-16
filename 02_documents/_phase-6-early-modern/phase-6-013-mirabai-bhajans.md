@@ -17,12 +17,12 @@ city-of-origin: "Merta (born), Chittor (married court), Vrindavan, Dwarka (last 
 authorship: "attributed — Mirabai (Mira Bai); the corpus is a fluid oral-and-manuscript tradition with substantial later additions"
 key-figures: ["[[mirabai]]"]
 themes: ["[[bhakti-devotion]]", "[[divine-feminine]]", "[[soul-as-bride]]"]
-parallels: ["[[phase-6-020-chaitanya-charitamrita]]", "[[phase-5-x-kabir-sant-poetry]]", "Andal (Phase 5 — Tamil Alvars)"]
+parallels: ["[[phase-6-020-chaitanya-charitamrita]]", "[[phase-6-031-bijak-kabir]]", "Andal (Phase 5 — Tamil Alvars)"]
 influenced-by: ["[[krishna-deity-vaishnava]]", "Bhagavata Purana (Phase 5)", "Sant tradition (Kabir, Ravidas — Phase 5)", "Tamil Alvar poetry (Phase 5)", "Jayadeva's *Gita Govinda* (Phase 5)"]
 influences: ["Modern Hindi devotional canon", "Modern Indian feminist hagiography", "Sikh Adi Granth includes related bhakti poetry (though not Mira's directly)"]
 deities-mentioned: ["[[krishna-deity-vaishnava]] (especially as Giridhar Gopal / Govind)"]
 events-context: ["Sisodia Rajput court at Chittor mid-16th c."]
-status: "metadata"
+status: "partial"
 preservation: "The Mirabai corpus is a striking case of fluid oral-and-manuscript transmission. No manuscript closer to Mirabai's lifetime than the late 17th c. (the earliest dated padas attributed to Mira are in the Kishangarh, Jaipur, and Dadu-panthi manuscripts of ~1690+). Hawley & Juergensmeyer (1988, *Songs of the Saints of India*) and Hawley (2005, *Three Bhakti Voices*) have shown that the popular Mira corpus is a continuous accretion; only a fraction can be reasonably attributed to a historical Mirabai (c. 1498–c. 1547). The tradition remains powerfully alive in North Indian devotional singing."
 refs:
   - title: "Songs of the Saints of India"
@@ -85,6 +85,42 @@ A large and fluid corpus of devotional songs (*padas* / *bhajans*) in mixed Nort
 - → [[phase-6-020-chaitanya-charitamrita]] — *parallel*: Chaitanya's Gaudiya Vaishnavism (founded c. 1510) is the contemporary Bengali Krishna-bhakti movement; Mirabai is its Rajasthani cousin (tradition reports a meeting, but historicity is uncertain).
 - → Sant tradition (Kabir, Ravidas, Dadu — Phase 5/6) — *shared-milieu*: caste-defiance and devotional minimalism.
 - → [[phase-6-016-guru-granth-sahib]] — *parallel*: the Adi Granth incorporates Hindu and Muslim bhakti poets but does not include Mirabai's compositions; the omission is itself studied.
+
+## MASSIVE WIN: Bridal Mysticism — A Cross-Tradition Table
+
+Mirabai's most distinctive register is bridal mysticism: the soul (or the devotee) is the *bride* of the divine Beloved. She is "married to Giridhar" — Krishna — and her entire life is framed as the anguish and ecstasy of the soul separated from its divine spouse (*viraha*, the longing of separation). This is among the most emotionally powerful forms of devotional literature in any tradition.
+
+But it is not unique to Mirabai. Bridal mysticism appears across at least four major traditions simultaneously in the medieval world, often with female or feminized subjects:
+
+| Figure | Tradition | Date | Form |
+|---|---|---|---|
+| **Mirabai** | Krishna-bhakti (Hindu) | c. 1498–1547 | Rajput princess as Krishna's bride; viraha (longing in separation) |
+| **[[bernard-of-clairvaux]]** | Catholic mysticism | 1090–1153 | 86 sermons on the Song of Songs: the soul as bride of Christ; the kiss of the Word |
+| **[[rumi]]** | Sufi Islam | 1207–1273 | The Beloved (divine) pursued by the lover (soul); the reed's cry as viraha |
+| **Akka Mahadevi** | Vira Shaiva (Hindu, Karnataka) | 12th c. | Nakedness before Shiva as husband; stripped of all social garment for the divine |
+
+All four traditions deploy the bridal/lover metaphor to map the soul's deepest longing for union with the divine. All four use erotic intensity deliberately, not as sublimated sexuality but as the most available human analogue for a divine draw that exceeds all other loves. All four involve either literal women (Mirabai, Akka Mahadevi) or male mystics who write from a feminized devotional position (Bernard, Rumi).
+
+The cross-tradition simultaneity is striking. Bernard of Clairvaux's Song of Songs sermons (c. 1135–1153) and Akka Mahadevi's Kannada *vachanas* (c. 12th c.) predate Mirabai by 300–400 years — the bridal-mystical idiom was already fully developed in Christian and Shaiva traditions before it appears in Rajasthani Krishna-bhakti. This is a case of parallel structural solution to the same theological problem: how does the creature relate to a creator of infinite attractiveness? The answer across traditions: as lover to Beloved, as bride to bridegroom.
+
+**Source:** Hawley, J.S. & Juergensmeyer, M. (1988). *Songs of the Saints of India*. Oxford UP. Ramanujan, A.K. (1973). *Speaking of Siva*. Penguin Classics. — translations and analysis of Akka Mahadevi's Kannada vachanas. Mukta, P. (1994). *Upholding the Common Life: The Community of Mirabai*. Oxford UP.
+
+## MASSIVE WIN: Rajput Princess → Ascetic Bhakta — Theology and Female Autonomy
+
+Mirabai was a Rajput princess married into the Sisodia royal house of Mewar (one of the most prestigious Rajput lineages). When her husband died, the expected social role was clear: either *sati* (self-immolation on the husband's funeral pyre — the Rajput *dharmic* ideal for royal widows of her period) or permanent ritual seclusion and mourning in the women's quarters, with no public life. Mirabai refused both.
+
+Instead, she left the palace to sing devotional songs in public, traveled to Vrindavan and Dwarka, ate with low-caste saint-poets, and declared Krishna her only husband. The Rajput court — her in-laws — reportedly attempted to kill her more than once (poison, snake); the hagiography records her miraculous survival through divine protection.
+
+This makes the Mirabai bhajans simultaneously a theological text AND a political act. The theology and the act are inseparable:
+
+- **Theological claim**: Krishna is her *only* husband; no earthly husband or social institution has authority over a soul already claimed by the divine
+- **Political consequence**: a Rajput princess defying widow-immolation, seclusion, and court authority on theological grounds
+
+Parallel: Early Christian women martyrs who refused marriage to pagan husbands — Perpetua, Thecla, Cecilia — made the identical double move: the claim that divine marriage supersedes earthly social obligation, with political defiance as the inevitable consequence. In both cases the women's bodies are the site of the conflict, and the divine-marriage claim is the weapon that makes social compliance impossible.
+
+The parallel is structural, not historical — Mirabai and the Christian martyrs operated in entirely separate cultural contexts. But both cases demonstrate that bridal mysticism, wherever it appears, carries an inherent social-defiance potential: if the soul is married to God, no earthly authority can fully claim it.
+
+**Source:** Mukta, P. (1994). *Upholding the Common Life*. Oxford UP. Hawley, J.S. (2005). *Three Bhakti Voices*. Oxford UP.
 
 ## Disputes
 - **The attribution problem.** Hawley (2005) and earlier critics (Parashuram Chaturvedi) have argued that the bulk of the popular Mirabai corpus is post-Mira accretion; the historical Mirabai's actual compositions may be a small subset.
