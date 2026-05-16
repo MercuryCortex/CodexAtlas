@@ -1762,12 +1762,16 @@ body.view-atlas main.canvas { background: var(--bg-0); }
    default; per-type stroke color from JS only when .hot (hover/select). */
 /* EDGES — mirrors production .edge-line discipline (app.css:1052):
    default is a quiet slate-blue, type-color stashed in --edge-type-color
-   and only painted when .hot. User: "I HATE BIG THICK LINES… not overwhelming." */
+   and only painted when .hot. User: "I HATE BIG THICK LINES… not overwhelming."
+   Production sets per-type stroke-width 0.18-0.46 and opacity 0.10-0.55 INLINE
+   per edge; V2 applies uniform defaults via CSS var (dev panel tunes the var).
+   Matching production's *ambient* baseline (the majority of edges at width 0.18
+   × opacity 0.10) so the 1250-edge slice doesn't pile into a lit-up web. */
 .ph2-edge {
   fill: none;
   stroke: rgba(120, 140, 182, 0.72);
-  stroke-width: 0.25;
-  stroke-opacity: var(--ph2-edge-opacity, 0.13);
+  stroke-width: 0.18;
+  stroke-opacity: var(--ph2-edge-opacity, 0.08);
   vector-effect: non-scaling-stroke;
   transition: stroke-opacity 180ms ease, stroke-width 180ms ease, stroke 180ms ease;
 }

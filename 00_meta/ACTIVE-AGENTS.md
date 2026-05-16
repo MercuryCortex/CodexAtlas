@@ -1326,3 +1326,17 @@ The things opus-foundation-1 claimed but never started are all still open:
 - Owning: `09_symbols/danse-macabre.md` (NEW), `09_symbols/memento-mori-skull.md` (NEW), `09_symbols/cauldron-of-rebirth.md` (NEW), `09_symbols/sacrifice-substitution.md` (NEW)
 - Goal: Danse Macabre as death-as-leveler MASSIVE WIN (Nataraja/Cham dance/Día de Muertos); Memento Mori skull as Kapala/Masonic Chamber of Reflection/Celtic sacred head cross-tradition; Cauldron of Rebirth Celtic→Holy Grail→Alchemical vessel transmission; Sacrifice Substitution as cross-tradition universal mechanism (Girard/Akedah/Pharmakos/Eucharist/Bodhisattva)
 - Status: in-progress
+
+---
+
+## goblin-sacred-architecture-1 — symbols / sacred architecture + thunder weapon thread — started 2026-05-16 — IN PROGRESS
+- Owning: `09_symbols/gothic-cathedral.md` (NEW), `09_symbols/stonehenge.md` (NEW), `09_symbols/all-seeing-eye.md` (NEW), `09_symbols/oshe-shango.md` (NEW)
+- Goal: Gothic Cathedral as total symbolic system (Suger light theology + cross-tradition cosmic house MASSIVE WIN); Stonehenge as megalithic solar calendar (global stone-circle pattern); All-Seeing Eye with rigorous Tier-1 sourcing debunking conspiracy reading; Oshé Shangó completing global thunder-weapon pattern (Yoruba double-axe parallel to Labrys MASSIVE WIN)
+- Status: in-progress
+
+---
+
+## goblin-divine-child-1 — symbols / divine child + sacred twins + torii gate + world mountain — started 2026-05-16 — IN PROGRESS
+- Owning: `09_symbols/divine-child.md` (NEW), `09_symbols/sacred-twins.md` (NEW), `09_symbols/torii-gate.md` (NEW), `09_symbols/world-mountain.md` (NEW)
+- Goal: Divine Child as endangered-infant MASSIVE WIN cross-tradition (Horus/Krishna/Jesus/Dionysus/Moses/Baldr parallel); Sacred Twins as Indo-European *Diewo sunus* pattern (Dioscuri/Ashvins/Hero Twins/Thomas); Torii Gate as sacred-threshold cross-tradition (pylon/gopuram/mezuzah/lamassu MASSIVE WIN); World Mountain as axis mundi architectural embodiment (Meru/Olympus/Sinai/Kailash + pyramid/ziggurat/stupa MASSIVE WIN)
+- Status: in-progress
