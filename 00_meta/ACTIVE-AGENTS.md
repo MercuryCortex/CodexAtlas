@@ -176,9 +176,15 @@ _Hand-maintained. Each agent currently working in the vault appends a claim bloc
 
 ---
 
-## alphabet-ancient-scripts-1 — 4 ancient-scripts nodes — IN PROGRESS
-- Owns: `11_alphabets/alphabet-cuneiform-sacred.md` (NEW), `11_alphabets/alphabet-medu-netjer.md` (NEW), `11_alphabets/alphabet-phoenician.md` (NEW), `11_alphabets/alphabet-ugaritic.md` (NEW)
-- Also touches: `src/data/patterns.js` (2 new entries), `09_symbols/proto-sinaitic.md` (edge update), `03_deities/thoth.md` (edge update), `03_deities/nabu.md` (edge update)
+## ~~alphabet-ancient-scripts-1 — 4 ancient-scripts nodes — IN PROGRESS~~
+- ~~Owns: `11_alphabets/alphabet-cuneiform-sacred.md` (NEW), `11_alphabets/alphabet-medu-netjer.md` (NEW), `11_alphabets/alphabet-phoenician.md` (NEW), `11_alphabets/alphabet-ugaritic.md` (NEW)~~
+- ~~Also touches: `src/data/patterns.js` (2 new entries), `09_symbols/proto-sinaitic.md` (edge update), `03_deities/thoth.md` (edge update), `03_deities/nabu.md` (edge update)~~
+- ~~Status: IN PROGRESS~~
+
+---
+
+## rituals-hindu-1 — 8 Hindu ritual nodes in 14_rituals/ — 2026-05-17 — IN PROGRESS
+- Owns: `14_rituals/ritual-puja-hindu.md`, `ritual-yajna-vedic-fire.md`, `ritual-upanayana-sacred-thread.md`, `ritual-shraddha-ancestor.md`, `ritual-kumbh-mela-pilgrimage.md`, `ritual-yoga-as-ritual.md`, `ritual-diwali-festival-light.md`, `ritual-tantra-initiation.md` (8 NEW nodes)
 - Status: IN PROGRESS
 
 ---
@@ -2083,6 +2089,18 @@ Files: sacred-cauldron.md (NEW) · cerridwen.md (STUB, deity) · bran-the-blesse
 - ~~quran-sacred-language: untranslatability doctrine, Dad uniqueness, uncreated Quran theology (Ash'arism), Ptah/Logos/apaurusheya chain~~
 - ~~data.js rebuilt — 41 alphabet entries, 16,900 edges~~
 - ~~Status: FINISHED — commit affd98c~~
+
+---
+
+## alchemy-mystery-cult-1 — 4 alchemy + 2 mystery cult ritual nodes — IN PROGRESS (2026-05-17)
+- Owned: `12_alchemy/alchemy-robert-boyle.md` (NEW), `12_alchemy/alchemy-rosicrucian-manifestos.md` (NEW), `12_alchemy/alchemy-hermetic-corpus.md` (NEW), `12_alchemy/alchemy-newton-principia-alchemy.md` (NEW), `14_rituals/ritual-eleusinian-mysteries.md` (NEW), `14_rituals/ritual-mithraic-mysteries.md` (NEW)
+- Status: IN PROGRESS
+
+---
+
+## ritual-buddhist-zoroastrian-1 — 8 ritual nodes (5 Buddhist + 3 Zoroastrian) — IN PROGRESS (2026-05-17)
+- Owned: `14_rituals/ritual-buddhist-uposatha.md`, `ritual-tibetan-sky-burial.md`, `ritual-zen-sesshin.md`, `ritual-theravada-ordination.md`, `ritual-mandala-offering.md`, `ritual-yasna-fire-ceremony.md`, `ritual-navjote-zoroastrian-initiation.md`, `ritual-zoroastrian-tower-of-silence.md`
+- Status: IN PROGRESS
 
 ---
 
