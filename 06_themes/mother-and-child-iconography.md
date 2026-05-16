@@ -49,6 +49,11 @@ refs:
     tier: 2
     notes: "Specific evidence for the Isis-Lactans → Coptic Virgin transmission."
 tags: [theme, iconography, transmission, marian, buddhist, egyptian, hellenistic, silk-road, mother-goddess, comparative-religion]
+depictions:
+  - src: "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ec/Isis.svg/400px-Isis.svg.png"
+    caption: "Isis nursing Horus — the Egyptian prototype of the mother-and-child iconographic tradition"
+    source: "Wikimedia Commons"
+    license: "Public domain"
 ---
 
 # Mother and Child Iconography

@@ -32,6 +32,11 @@ refs:
     type: "monograph"
     tier: 1
 tags: [deity, egyptian, ennead, heliopolis, moisture-goddess]
+depictions:
+  - src: "https://upload.wikimedia.org/wikipedia/commons/2/2a/BD_Weighing_of_the_Heart_-_Tefnut.jpg"
+    caption: "Tefnut as lioness-headed goddess, detail from a Book of the Dead papyrus"
+    source: "Wikimedia Commons"
+    license: "Public domain"
 ---
 
 # Tefnut

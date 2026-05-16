@@ -42,6 +42,11 @@ refs:
     tier: 1
     notes: "The standard commentary on John's Gospel; covers the Logos prologue and its Philonic/Wisdom tradition background"
 tags: [theme, ma-at, logos, sophia, wisdom, cosmic-order, philo, john, gospel, egypt, alexandria, neoplatonism, kabbalah, shekhinah, transmission]
+depictions:
+  - src: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ab/Maat.svg/400px-Maat.svg.png"
+    caption: "Maat — goddess of truth, justice, and cosmic order, with the feather of truth"
+    source: "Wikimedia Commons"
+    license: "Public domain"
 ---
 
 # Ma'at → Logos → Sophia: The Cosmic Order Principle

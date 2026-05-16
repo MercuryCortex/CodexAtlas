@@ -53,6 +53,11 @@ refs:
     type: "monograph"
     tier: 1
 tags: [theme, egypt, giza, pyramid, sacred-geometry, royal-cubit, pyramid-inch, pi, golden-ratio, petrie, piazzi-smyth, hermeticism, freemasonry, debunking, investigation]
+depictions:
+  - src: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/af/All_Gizah_Pyramids.jpg/400px-All_Gizah_Pyramids.jpg"
+    caption: "The three Giza pyramids — Khufu, Khafre, Menkaure — center of sacred-geometry claims"
+    source: "Wikimedia Commons"
+    license: "CC BY-SA 2.0"
 ---
 
 # Sacred Geometry of Giza

@@ -25,6 +25,11 @@ refs:
     type: "monograph"
     tier: 1
 tags: [event, monument, egypt, dahshur, pyramid, sneferu, bent, 4th-dynasty, old-kingdom, investigation, construction, casing-stones, evolution]
+depictions:
+  - src: "https://upload.wikimedia.org/wikipedia/commons/thumb/e/eb/Snefru%27s_Bent_Pyramid_in_Dahshur.jpg/400px-Snefru%27s_Bent_Pyramid_in_Dahshur.jpg"
+    caption: "Snefru's Bent Pyramid at Dahshur (c. 2600 BCE) — the changing-angle experiment"
+    source: "Wikimedia Commons"
+    license: "CC BY-SA 3.0"
 ---
 
 # Bent Pyramid of Sneferu (Dahshur)

@@ -63,6 +63,11 @@ refs:
     type: "primary-source"
     tier: 1
 tags: [theme, egypt, pyramid, theology, resurrection, transformation, akh, ba, osiris, re, solar, death, afterlife, spatial-theology, cross-tradition]
+depictions:
+  - src: "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e3/Kheops-Pyramid.jpg/400px-Kheops-Pyramid.jpg"
+    caption: "Great Pyramid of Khufu at Giza — the primary architectural subject of this theme"
+    source: "Wikimedia Commons"
+    license: "CC BY-SA 3.0"
 ---
 
 # Pyramid as Resurrection Machine

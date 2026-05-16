@@ -51,6 +51,11 @@ refs:
     type: "journal-article"
     tier: 1
 tags: [theme, eschatology, judgment, soul, weighing, egyptian, greek, christian, hindu, zoroastrian, buddhist, last-judgment, ma-at, psychostasia]
+depictions:
+  - src: "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ee/BD_Weighing_of_the_Heart.jpg/400px-BD_Weighing_of_the_Heart.jpg"
+    caption: "Weighing of the Heart — Papyrus of Ani (c. 1275 BCE), Book of the Dead spell 125"
+    source: "Wikimedia Commons / British Museum"
+    license: "Public domain"
 ---
 
 # Psychostasia — Weighing of the Soul

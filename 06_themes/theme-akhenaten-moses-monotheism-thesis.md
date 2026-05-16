@@ -65,6 +65,11 @@ refs:
     tier: 1
     notes: "Argues for henotheism, not strict monotheism; skeptical of direct Atenism-Yahwism connections"
 tags: [theme, historiographical, akhenaten, moses, monotheism, egyptian, israelite, freud, assmann, psalm-104, great-hymn]
+depictions:
+  - src: "https://upload.wikimedia.org/wikipedia/commons/thumb/4/47/Akhenaten%2C_Nefertiti_and_their_children.jpg/400px-Akhenaten%2C_Nefertiti_and_their_children.jpg"
+    caption: "Akhenaten and Nefertiti with daughters beneath the Aten sun-disk — Amarna Period limestone relief"
+    source: "Wikimedia Commons / Ägyptisches Museum Berlin"
+    license: "Public domain"
 ---
 
 # Akhenaten–Moses Monotheism Thesis

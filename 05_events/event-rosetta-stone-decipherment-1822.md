@@ -32,6 +32,11 @@ refs:
     type: "popular history"
     tier: 2
 tags: [event, discovery, 1822, rosetta-stone, champollion, hieroglyphics, modern-recovery]
+depictions:
+  - src: "https://upload.wikimedia.org/wikipedia/commons/thumb/2/23/Rosetta_Stone.JPG/400px-Rosetta_Stone.JPG"
+    caption: "The Rosetta Stone — British Museum; deciphered by Champollion in 1822"
+    source: "Wikimedia Commons / British Museum"
+    license: "Public domain"
 ---
 
 # Rosetta Stone Decipherment

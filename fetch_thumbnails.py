@@ -179,6 +179,38 @@ OVERRIDES = {
     # Themes with no specific Wikipedia image — leave null (placeholder is correct)
     # alien-god, anticosmic, personal-daimon: intentionally NOT in OVERRIDES
 
+    # ---- Egyptian religion pass (thumbnail-system-1, session 2026-05-16) ----
+    # Persons
+    "flinders-petrie":                           "Flinders Petrie",
+    "manetho":                                   "Manetho",
+    "thutmose-iv":                               "Thutmose IV",
+    "robert-bauval":                             "Robert Bauval",
+    # Events
+    "event-amarna-period-1353-1336":             "Akhenaten",
+    "event-tutankhamun-tomb-discovery-1922":     "Tutankhamun",
+    "event-hyksos-expulsion-1550-bce":           "Hyksos",
+    "event-hyksos-period":                       "Hyksos",
+    "event-founding-of-alexandria-331-bce":      "Alexandria",
+    "event-nag-hammadi-discovery":               "Nag Hammadi library",
+    "kings-chamber-great-pyramid":               "King's Chamber",
+    "event-school-of-alexandria-300bce-415ce":   "Mouseion",
+    "event-destruction-of-serapeum-391":         "Serapeum",
+    # Documents
+    "P1-027-memphite-theology-shabaka-stone":    "Shabaka Stone",
+    "phase-2-028-herodotus-histories-book-2":    "Histories (Herodotus)",
+    "phase-3-026-diodorus-bibliotheca-book-1":   "Bibliotheca historica",
+    "P4-010-sophia-of-jesus-christ":             "Nag Hammadi library",
+    "P4-008-trimorphic-protennoia":              "Nag Hammadi library",
+    "P4-057-allogenes":                          "Nag Hammadi library",
+    "P4-026-origen-on-first-principles":         "Origen",
+    "P4-042-athanasius-on-the-incarnation":      "Athanasius of Alexandria",
+    "P4-075-corpus-hermeticum-xiii-rebirth":     "Corpus Hermeticum",
+    "P4-076-stobaean-hermetica-kore-kosmou":     "Hermetica",
+    "P4-078-prayer-of-thanksgiving-nhc-vi-7":    "Hermetica",
+    "P4-079-coptic-asclepius-nhc-vi-8":          "Hermetica",
+    # Themes
+    "hermetic-cosmogony":                        "Hermeticism",
+
     # ---- Gnostic audit pass 2 (thumbnail-system-1, session 2026-05-16) ----
     # 10 Gnostic aeon/deity/tradition/person nodes confirmed to have thumbnails
     "sophia-gnostic":                    "Sophia (Gnosticism)",

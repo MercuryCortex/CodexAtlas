@@ -57,6 +57,11 @@ refs:
     tier: 3
     notes: "Tier 3 — synthesizes Cayce, Schoch, Bauval into unified alternative-history argument; the Hall of Records is a significant element."
 tags: [theme, egypt, giza, sphinx, hall-of-records, cayce, atlantis, theosophy, hidden-chamber, investigation, tier-4, fabrication-documented, secret-documents]
+depictions:
+  - src: "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f6/Great_Sphinx_of_Giza_-_20080716a.jpg/400px-Great_Sphinx_of_Giza_-_20080716a.jpg"
+    caption: "Great Sphinx of Giza — the focal site of Hall of Records hypotheses"
+    source: "Wikimedia Commons"
+    license: "CC BY-SA 3.0"
 ---
 
 # Hall of Records Hypothesis

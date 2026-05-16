@@ -25,6 +25,11 @@ refs:
     type: "primary-source"
     tier: 1
 tags: [event, monument-chamber, egypt, giza, pyramid, khufu, subterranean, bedrock, pit, unfinished, investigation, chthonic]
+depictions:
+  - src: "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e3/Kheops-Pyramid.jpg/400px-Kheops-Pyramid.jpg"
+    caption: "Great Pyramid of Khufu — the Subterranean Chamber is cut into bedrock below the pyramid's base"
+    source: "Wikimedia Commons"
+    license: "CC BY-SA 3.0"
 ---
 
 # Subterranean Chamber (Great Pyramid of Khufu)

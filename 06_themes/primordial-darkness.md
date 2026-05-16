@@ -29,6 +29,11 @@ refs:
     tier: 2
     notes: "Cosmogonic hierophany — chaos to cosmos as paradigm"
 tags: [theme, cosmogony, creation-myth, darkness, void, cross-tradition, pacific, egyptian, genesis, vedic]
+depictions:
+  - src: "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/Nun.svg/400px-Nun.svg.png"
+    caption: "Nun — Egyptian god of the primordial waters (nun), the pre-creation void"
+    source: "Wikimedia Commons"
+    license: "Public domain"
 ---
 
 # Primordial Darkness

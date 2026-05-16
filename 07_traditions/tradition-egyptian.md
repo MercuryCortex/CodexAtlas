@@ -45,6 +45,11 @@ refs:
     type: "primary-translation"
     tier: 1
 tags: [tradition, egyptian, phase-1]
+depictions:
+  - src: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/af/All_Gizah_Pyramids.jpg/400px-All_Gizah_Pyramids.jpg"
+    caption: "The Giza pyramid complex — defining monuments of ancient Egyptian religion"
+    source: "Wikimedia Commons"
+    license: "CC BY-SA 2.0"
 ---
 
 # Ancient Egyptian Religion

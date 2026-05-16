@@ -62,6 +62,11 @@ refs:
     tier: 1
     notes: "Greek-Ammon identification"
 tags: [deity, egyptian, theban, new-kingdom, creator-god, hidden-god, king-of-gods, oracular, zeus-ammon, syncretism]
+depictions:
+  - src: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6f/Amun-Ra.jpg/400px-Amun-Ra.jpg"
+    caption: "Amun-Ra — gilded wooden figurine, New Kingdom (c. 1550–1070 BCE)"
+    source: "Wikimedia Commons"
+    license: "Public domain"
 ---
 
 # Amun

@@ -20,6 +20,11 @@ refs:
     type: "monograph"
     tier: 1
 tags: [theme, afterlife, judgment, weighing-of-heart, egyptian]
+depictions:
+  - src: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/66/Ani_chap125.jpg/400px-Ani_chap125.jpg"
+    caption: "Ani before the scales of Maat — Papyrus of Ani, Book of the Dead chapter 125"
+    source: "Wikimedia Commons / British Museum"
+    license: "Public domain"
 ---
 
 # Afterlife and post-mortem judgment
