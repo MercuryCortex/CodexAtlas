@@ -4,6 +4,20 @@ _Hand-maintained. Each agent currently working in the vault appends a claim bloc
 
 ---
 
+## alphabet-semitic-mysticism-1 — 5 letter-mysticism nodes — IN PROGRESS
+- Owns: `11_alphabets/alphabet-sefer-yetzirah.md` (NEW), `11_alphabets/alphabet-gematria-hebrew.md` (NEW), `11_alphabets/alphabet-isopsephy-greek.md` (NEW), `11_alphabets/alphabet-ilm-al-huruf.md` (NEW), `11_alphabets/alphabet-huruf-muqattaat.md` (NEW)
+- Also touches: `src/data/patterns.js` (2 new entries)
+- Status: IN PROGRESS
+
+---
+
+## alphabet-ancient-scripts-1 — 4 ancient-scripts nodes — IN PROGRESS
+- Owns: `11_alphabets/alphabet-cuneiform-sacred.md` (NEW), `11_alphabets/alphabet-medu-netjer.md` (NEW), `11_alphabets/alphabet-phoenician.md` (NEW), `11_alphabets/alphabet-ugaritic.md` (NEW)
+- Also touches: `src/data/patterns.js` (2 new entries), `09_symbols/proto-sinaitic.md` (edge update), `03_deities/thoth.md` (edge update), `03_deities/nabu.md` (edge update)
+- Status: IN PROGRESS
+
+---
+
 ## ~~music-gnostic-1 — Valentinian pleroma harmony + Neoplatonic theurgy sound — 2026-05-16 — FINISHED~~
 - ~~Owned: `10_music/music-valentinian-pleroma-harmony.md` (NEW), `10_music/music-neoplatonic-theurgy-sound.md` (NEW), `src/data/patterns.js` (2 new entries), `src/data/observations.js` (1 new entry)~~
 - ~~Status: FINISHED — commit `41b8ed0`. Build: 52 music nodes · 15,832 edges · 0 YAML errors · 0 dead links introduced.~~

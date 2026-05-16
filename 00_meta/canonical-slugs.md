@@ -17,7 +17,13 @@ canonical-slug
 ## Currently resolved slugs (auto-seeded — every existing file)
 
 
-### deity (499 nodes)
+### alphabet (3 nodes)
+
+- `alphabet-cuneiform-sacred`
+- `alphabet-medu-netjer`
+- `alphabet-sefer-yetzirah`
+
+### deity (500 nodes)
 
 - `abathur`
 - `adamastor`
@@ -306,6 +312,7 @@ canonical-slug
 - `nandi`
 - `nanna-sin`
 - `nanshe-sumerian`
+- `narada`
 - `narayana`
 - `nasr-pre-islamic`
 - `nefertem`
@@ -1129,6 +1136,61 @@ canonical-slug
 ### meta (1 nodes)
 
 - `MASSIVE-WINS-AND-INVESTIGATION-LEADS-session-2026-05-15`
+
+### music (52 nodes)
+
+- `music-aboriginal-songlines`
+- `music-ancient-egyptian-music`
+- `music-arabic-maqam`
+- `music-aum-cosmic-sound`
+- `music-aztec-music`
+- `music-boethius-de-musica`
+- `music-chaldean-oracles-sound`
+- `music-chinese-court-instruments`
+- `music-chinese-pentatonic-cosmology`
+- `music-creation-by-sound`
+- `music-gagaku-japanese`
+- `music-greek-modes`
+- `music-greek-musical-ethos`
+- `music-gregorian-modes`
+- `music-griot-tradition`
+- `music-hermetic-logos-sound`
+- `music-hurrian-hymns`
+- `music-inca-music-cosmology`
+- `music-islamic-adhan-maqam`
+- `music-korean-aak`
+- `music-levitical-temple-music`
+- `music-liturgy-of-hours`
+- `music-lyre-kithara`
+- `music-mayan-music`
+- `music-mbira-spirit-music`
+- `music-mesopotamian-temple-music`
+- `music-music-of-spheres`
+- `music-nada-brahma`
+- `music-native-american-ceremonial`
+- `music-natya-shastra`
+- `music-neoplatonic-theurgy-sound`
+- `music-niggun-hasidic`
+- `music-orpheus-tradition`
+- `music-orphic-hymns`
+- `music-oud-lute-transmission`
+- `music-pentatonic-scale`
+- `music-plato-timaeus-worldsoul`
+- `music-pythagorean-harmony`
+- `music-raga-cosmology`
+- `music-sacred-drone`
+- `music-sama-veda`
+- `music-saraswati-vina`
+- `music-scale-transmission-chain`
+- `music-sefer-yetzirah-sound`
+- `music-sufi-sama`
+- `music-talking-drums`
+- `music-torah-cantillation`
+- `music-valentinian-pleroma-harmony`
+- `music-west-african-polyrhythm`
+- `music-western-sacred-chant`
+- `music-yayue-ritual-music`
+- `music-zoroastrian-sacred-sound`
 
 ### person (705 nodes)
 
@@ -2617,10 +2679,11 @@ canonical-slug
 | Refs | Dead target | Suggested canonical (existing) |
 |---:|---|---|
 | 3 | `guru-arjan-dev-ji` | `guru-arjan` |
+| 3 | `alphabet-ugaritic` | `alphabet-cuneiform-sacred` |
 | 2 | `yam-canaanite` | `astarte-canaanite` |
 | 2 | `was-sceptre` | `was-scepter` |
-| 2 | `tradition-rosicrucian` | `tradition-islam` |
-| 2 | `tradition-lingayat` | `tradition-islam` |
-| 2 | `tradition-islamic-philosophy` | `tradition-neoplatonism` |
-| 2 | `phase-2-004-1-2-chronicles` | `phase-2-002-gathas-of-zarathustra` |
+| 2 | `tradition-rosicrucian` | `tradition-candomble` |
+| 2 | `tradition-lingayat` | `tradition-candomble` |
+| 2 | `tradition-islamic-philosophy` | `tradition-neo-confucianism` |
+| 2 | `phase-2-004-1-2-chronicles` | `phase-2-007-hebrew-bible-e-source` |
 | 2 | `divine-names` | `divine-name` |
