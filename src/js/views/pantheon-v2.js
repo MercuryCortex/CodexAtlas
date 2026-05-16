@@ -222,28 +222,29 @@
   function render(rootEl) {
     if (!rootEl) return;
     rootEl.innerHTML = '';
-    rootEl.classList.add('pantheon-v2-pane');
 
     if (!window.Sigma || !window.graphology) {
       rootEl.innerHTML = '<div class="ph2-error">sigma.js / graphology not loaded</div>';
       return;
     }
     const data = window.VAULT_DATA || { nodes: [], edges: [] };
-    const NODES = data.nodes || [];
     const EDGES = data.edges || [];
     const FAMILIES = data.families || [];
 
-    // FILTER deities — same predicate as main Pantheon's 'deities' mode.
-    const deities = NODES.filter(n => n.type === 'deity');
+    // Filter nodes for the current mode.
+    const deities = filterNodesByMode(_currentMode);
     if (!deities.length) {
-      rootEl.innerHTML = '<div class="ph2-error">No deities in data.js</div>';
+      const msgs = { deities: 'No deities in data.', authors: 'No authors found.',
+        symbols: 'No symbols found.', events: 'No events found.',
+        monuments: 'Monuments — add `tags: [monument]` to site nodes to populate this view.' };
+      rootEl.innerHTML = `<div class="ph2-error">${msgs[_currentMode] || 'No nodes.'}</div>`;
       return;
     }
 
-    // Compute wedge layout + per-deity positions.
-    const { positions, wedges } = computeWedgePositions(deities, FAMILIES);
+    // Compute wedge layout + per-node positions.
+    const { positions, wedges, familyOrder, famByName } = computeWedgePositions(deities, FAMILIES);
 
-    // Build edge slice — only deity↔deity for the hover-trail aesthetic.
+    // Build edge slice — only same-type↔same-type edges.
     const idSet = new Set(deities.map(d => d.id));
     const edges = EDGES.filter(e => idSet.has(e.source) && idSet.has(e.target));
     const degree = computeDegree(edges);
@@ -252,18 +253,23 @@
     const Graph = window.graphology.Graph || window.graphology.default || window.graphology;
     const graph = new Graph();
 
+    // Hub set — top-12 by degree for the 'hub' label mode.
+    const _sortedByDeg = [...degree.entries()].sort((a, b) => b[1] - a[1]);
+    const _hubIdSet = new Set(_sortedByDeg.slice(0, 12).map(e => e[0]));
+
     deities.forEach(d => {
       const pos = positions.get(d.id);
       if (!pos) return;
       const deg = degree.get(d.id) || 0;
       graph.addNode(d.id, {
-        x: pos.x,
-        y: pos.y,
-        size: Math.min(11, 4 + Math.sqrt(deg) * 1.3),
-        color: d.family_color || d.tradition_color || '#7a8090',
-        label: d.title || d.id,
-        // Stash deity for hover lookups
-        _node: d
+        x:       pos.x,
+        y:       pos.y,
+        size:    Math.min(11, 4 + Math.sqrt(deg) * 1.3),
+        color:   d.family_color || d.tradition_color || '#7a8090',
+        label:   d.title || d.id,
+        _isHub:  _hubIdSet.has(d.id),
+        _family: d.family || 'Other',
+        _node:   d
       });
     });
 
@@ -291,9 +297,6 @@
     let _labelsMode = 'hub';
     let _egoFocus = false;
     let _familyFilter = null;
-    // Pre-compute hub set — top-12 by degree, same posture as main Pantheon's hub labels.
-    const _sortedByDeg = [...degree.entries()].sort((a, b) => b[1] - a[1]);
-    const _hubIdSet = new Set(_sortedByDeg.slice(0, 12).map(e => e[0]));
 
     const settings = {
       renderEdgeLabels: false,
@@ -313,7 +316,6 @@
       maxCameraRatio: 8,
       nodeReducer: (id, attrs) => {
         const out = { ...attrs };
-        const nodeData = attrs._node || {};
 
         // EGO FOCUS — when active + a node is selected, hide everything outside the 1-hop neighbourhood.
         if (_egoFocus && _selectedId) {
@@ -323,11 +325,12 @@
           if (!inNeighbourhood) { out.hidden = true; return out; }
         }
         // FAMILY FILTER — when set, dim every node not in that family.
-        if (_familyFilter && nodeData.family !== _familyFilter) {
-          out.color = '#3a3d44';
+        if (_familyFilter && attrs._family !== _familyFilter) {
+          out.color = '#2a2c32';
           out.label = '';
+          return out;
         }
-        // HOVER / SELECT highlighting (existing).
+        // HOVER / SELECT highlighting.
         if (_hoverId === id || _selectedId === id) {
           out.highlighted = true;
           out.zIndex = 2;
@@ -344,7 +347,7 @@
         // LABEL MODE — 'off' kills all labels, 'hub' keeps only top-12, 'all' shows them all.
         if (_labelsMode === 'off') {
           out.label = '';
-        } else if (_labelsMode === 'hub' && !_hubIdSet.has(id)) {
+        } else if (_labelsMode === 'hub' && !attrs._isHub) {
           out.label = '';
         }
         return out;
@@ -392,17 +395,34 @@
     });
 
     // Tangential family rim labels — DOM overlay synced to sigma camera.
-    buildRimLabels(rootEl, wedges, sigma);
+    const rimOverlay = buildRimLabels(rootEl, wedges, sigma, _familyFilter);
 
-    // ----- TOOLBAR (top-left) — labels-mode toggle + ego-focus button -----
+    // ----- TOOLBAR — mode dropdown + labels toggle + ego focus + recenter -----
     const toolbar = document.createElement('div');
     toolbar.className = 'ph2-toolbar';
     toolbar.innerHTML = `
-      <button class="ph2-btn" id="ph2-labels" title="Toggle label density">labels: hub</button>
-      <button class="ph2-btn" id="ph2-ego" title="Show only the selected node's 1-hop neighbourhood">ego focus</button>
-      <button class="ph2-btn" id="ph2-recenter" title="Re-fit the camera to all nodes">recenter</button>
+      <select class="ph2-btn ph2-mode-select" title="What the wedges show">
+        <option value="deities"   ${_currentMode === 'deities'   ? 'selected' : ''}>◯ Deities</option>
+        <option value="authors"   ${_currentMode === 'authors'   ? 'selected' : ''}>✎ Authors</option>
+        <option value="symbols"   ${_currentMode === 'symbols'   ? 'selected' : ''}>✦ Symbols</option>
+        <option value="events"    ${_currentMode === 'events'    ? 'selected' : ''}>★ Events</option>
+        <option value="monuments" ${_currentMode === 'monuments' ? 'selected' : ''}>⛬ Monuments</option>
+      </select>
+      <button class="ph2-btn" id="ph2-labels" title="Toggle label density">labels: ${_labelsMode}</button>
+      <button class="ph2-btn${_egoFocus ? ' ph2-btn-on' : ''}" id="ph2-ego" title="Show 1-hop neighbourhood of selected node">ego focus</button>
+      <button class="ph2-btn" id="ph2-recenter" title="Re-fit camera to all nodes">recenter</button>
     `;
     rootEl.appendChild(toolbar);
+
+    // Mode dropdown — rebuilds entire graph for the new mode
+    toolbar.querySelector('.ph2-mode-select').onchange = (ev) => {
+      _currentMode  = ev.target.value;
+      _familyFilter = null;
+      _egoFocus     = false;
+      _labelsMode   = 'hub';
+      render(rootEl);
+    };
+
     toolbar.querySelector('#ph2-labels').onclick = (ev) => {
       _labelsMode = _labelsMode === 'hub' ? 'all' : _labelsMode === 'all' ? 'off' : 'hub';
       ev.target.textContent = 'labels: ' + _labelsMode;
@@ -411,40 +431,79 @@
     toolbar.querySelector('#ph2-ego').onclick = (ev) => {
       _egoFocus = !_egoFocus;
       ev.target.classList.toggle('ph2-btn-on', _egoFocus);
+      if (!_egoFocus) _selectedId = null;
       sigma.refresh({ skipIndexation: true });
     };
     toolbar.querySelector('#ph2-recenter').onclick = () => {
       try { sigma.getCamera().animatedReset({ duration: 400 }); } catch (e) { /* ignore */ }
+      _egoFocus = false;
+      toolbar.querySelector('#ph2-ego').classList.remove('ph2-btn-on');
+      sigma.refresh({ skipIndexation: true });
     };
 
-    // ----- FAMILY LEGEND (bottom-left) — click any row to filter the wheel to that family -----
+    // ----- FAMILY LEGEND (bottom-left) — click to filter wheel to one family -----
+    const legendStartCollapsed = (() => {
+      try { return localStorage.getItem('legend-collapsed') === '1'; } catch (e) { return false; }
+    })();
     const legend = document.createElement('div');
-    legend.className = 'ph2-legend';
-    const familyOrderForLegend = Object.values(wedges)
-      .sort((a, b) => b.members.length - a.members.length)
-      .filter(w => w.members.length > 0);
-    legend.innerHTML = `
-      <div class="ph2-legend-title">FAMILIES · click to filter</div>
-      <div class="ph2-legend-rows">
-        ${familyOrderForLegend.map(w => `
-          <div class="ph2-legend-row" data-family="${escapeAttr(w.name)}">
-            <span class="ph2-legend-swatch" style="background:${w.color}"></span>
-            <span class="ph2-legend-name">${escapeHtml(w.name)}</span>
-            <span class="ph2-legend-count">${w.members.length}</span>
-          </div>`).join('')}
-      </div>
-    `;
+    legend.className = 'ph2-legend' + (legendStartCollapsed ? ' collapsed' : '');
+    const familyOrderForLegend = (familyOrder || []).filter(name => famByName && famByName[name] && famByName[name].members.length);
+    legend.innerHTML =
+      '<div class="ph2-legend-head">' +
+        '<div class="ph2-legend-title">Families · click to filter</div>' +
+        '<button class="ph2-legend-burger" title="Collapse">≡</button>' +
+      '</div>' +
+      '<div class="ph2-legend-body">' +
+        familyOrderForLegend.map(name => {
+          const w = wedges[name] || {};
+          const color = (w.color) || '#7a8090';
+          const count = (w.members || []).length;
+          return `<div class="ph2-legend-row${_familyFilter === name ? ' ph2-legend-active' : ''}" data-family="${escapeAttr(name)}">
+            <span class="ph2-legend-swatch" style="background:${color}"></span>
+            <span class="ph2-legend-name">${escapeHtml(name)}</span>
+            <span class="ph2-legend-count">${count}</span>
+          </div>`;
+        }).join('') +
+      '</div>';
     rootEl.appendChild(legend);
+
     legend.querySelectorAll('.ph2-legend-row').forEach(row => {
       row.onclick = () => {
         const fam = row.dataset.family;
         _familyFilter = (_familyFilter === fam) ? null : fam;
-        legend.querySelectorAll('.ph2-legend-row').forEach(r => r.classList.toggle('ph2-legend-active', r.dataset.family === _familyFilter));
+        legend.querySelectorAll('.ph2-legend-row').forEach(r => {
+          r.classList.toggle('ph2-legend-active', r.dataset.family === _familyFilter);
+        });
+        // Sync rim-label opacity
+        rimOverlay.querySelectorAll('.ph2-rim-label').forEach(el => {
+          el.style.opacity = (_familyFilter && el.dataset.family !== _familyFilter) ? '0.18' : '0.85';
+        });
         sigma.refresh({ skipIndexation: true });
       };
+      // Hover preview
+      row.addEventListener('mouseenter', () => {
+        if (_familyFilter) return;
+        const fam = row.dataset.family;
+        rimOverlay.querySelectorAll('.ph2-rim-label').forEach(el => {
+          el.style.opacity = el.dataset.family !== fam ? '0.18' : '0.85';
+        });
+      });
+      row.addEventListener('mouseleave', () => {
+        if (_familyFilter) return;
+        rimOverlay.querySelectorAll('.ph2-rim-label').forEach(el => {
+          el.style.opacity = '0.85';
+        });
+      });
     });
 
-    // Stash for diagnostics + potential teardown
+    legend.querySelector('.ph2-legend-burger').onclick = (ev) => {
+      ev.stopPropagation();
+      const willCollapse = !legend.classList.contains('collapsed');
+      legend.classList.toggle('collapsed', willCollapse);
+      try { localStorage.setItem('legend-collapsed', willCollapse ? '1' : '0'); } catch (e) {}
+    };
+
+    // Stash for diagnostics + setView() teardown
     rootEl._sigma = sigma;
     rootEl._graph = graph;
   }

@@ -190,10 +190,16 @@ _Hand-maintained. Each agent currently working in the vault appends a claim bloc
 
 ---
 
-## goblin-norse-celtic-1 — symbols / Norse + Celtic thread — started 2026-05-16 — IN PROGRESS
+## goblin-norse-celtic-1 — symbols / Norse + Celtic thread — started 2026-05-16 — **FINISHED 2026-05-16**
 - Owning: `09_symbols/valknut.md` (NEW), `09_symbols/triquetra.md` (NEW), `09_symbols/yggdrasil.md` (NEW), `09_symbols/aegishjalmr.md` (NEW)
 - Goal: Norse/Celtic symbols; Valknut-Borromean rings-trinity wins; Yggdrasil as world tree depth; triquetra cross-tradition
-- Status: in-progress
+- Status: finished
+- Delivered:
+  - **`valknut.md`** — Borromean topology MASSIVE WIN (Norse → Borromeo heraldry → Lacanian RSI triad in one topological chain); Christian Trinity parallel; Nazi appropriation Tier-4. 4 T1 refs. mystery-status: contested.
+  - **`triquetra.md`** — Vesica piscis geometric substrate (triquetra = 3 interlocked vesicae, documented Bain 1951 T1); Celtic knotwork → knot theory; Insular Christian Trinity emblem (*Book of Kells*); Neopagan Triple Goddess documented as modern 20th-c. reading. 5 T1 refs.
+  - **`yggdrasil.md`** — Odin self-sacrifice = Christian Crucifixion structural parallel (only such parallel in world religion; Hávamál primary source); Shamanic World Tree (Eliade T1); Eagle/Níðhöggr = deepest cross-cultural sky-bird/chthonic-serpent duality in vault; Nine worlds ↔ sefirot-worlds independent parallel. 6 T1 refs.
+  - **`aegishjalmr.md`** — Eight-fold radial = Star of Ishtar parallel (independent); Algiz bindrune → CND peace symbol chain (Holtom 1973 documented); global magical stave tradition (yantra/veve/ponto riscado/grimoire sigils); mandala structural parallel. 5 T1 refs.
+- Build: **4 new nodes · 26 wikilinks verified · 0 dead links introduced**
 
 ---
 

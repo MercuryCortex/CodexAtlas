@@ -1791,11 +1791,28 @@ body.view-atlas main.canvas { background: var(--bg-0); }
   max-height: 60vh; overflow-y: auto;
   min-width: 200px;
 }
+.ph2-legend-head {
+  display: flex; align-items: center; justify-content: space-between;
+  margin-bottom: 8px;
+}
 .ph2-legend-title {
   font-family: var(--mono); font-size: 9.5px;
   color: var(--text-3); letter-spacing: 0.14em;
-  margin-bottom: 8px;
 }
+.ph2-legend-burger {
+  background: none; border: none; cursor: pointer;
+  color: var(--text-3); font-size: 14px; line-height: 1; padding: 0 2px;
+}
+.ph2-legend-burger:hover { color: var(--gold); }
+.ph2-legend-body {
+  display: flex; flex-direction: column; gap: 2px;
+  font-family: var(--serif); font-size: 11.5px;
+  overflow: hidden;
+  max-height: 400px;
+  transition: max-height 200ms ease;
+}
+.ph2-legend.collapsed .ph2-legend-body { max-height: 0; }
+/* Legacy class aliases kept for backwards compat */
 .ph2-legend-rows {
   display: flex; flex-direction: column; gap: 2px;
   font-family: var(--serif); font-size: 11.5px;
@@ -1812,6 +1829,14 @@ body.view-atlas main.canvas { background: var(--bg-0); }
 .ph2-legend-swatch { width: 10px; height: 10px; border-radius: 50%; }
 .ph2-legend-name { color: var(--text-1); }
 .ph2-legend-count { color: var(--text-3); font-family: var(--mono); font-size: 10px; }
+/* Mode select in toolbar — uses same ph2-btn base style */
+.ph2-mode-select {
+  appearance: none; -webkit-appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='5'%3E%3Cpath d='M0 0l4 5 4-5z' fill='%238b8e98'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 8px center;
+  padding-right: 22px;
+}
 .pantheon-v2-placeholder {
   max-width: 620px; padding: 36px 44px;
   border: 1px solid var(--border-soft); border-radius: 6px;
