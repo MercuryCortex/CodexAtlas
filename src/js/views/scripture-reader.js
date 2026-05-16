@@ -29,6 +29,8 @@ window.ScriptureReader = (function () {
     'isaiah-45':          { religion:'Christianity', group:'Old Testament',          canon:'All Canons',          sort:70 },
     'ezekiel-1':          { religion:'Christianity', group:'Old Testament',          canon:'All Canons',          sort:80 },
     'ecclesiastes-1':     { religion:'Christianity', group:'Old Testament',          canon:'All Canons',          sort:90 },
+    'wisdom-of-solomon':  { religion:'Christianity', group:'Deuterocanon',           canon:'Catholic / Orthodox / Ethiopian', sort:10 },
+    'song-of-songs':      { religion:'Christianity', group:'Old Testament',          canon:'All Canons',          sort:95 },
     // ── Christianity — New Testament ────────────────────────────────
     'john-1':             { religion:'Christianity', group:'New Testament',          canon:'All Canons',          sort:10 },
     'john-3':             { religion:'Christianity', group:'New Testament',          canon:'All Canons',          sort:20 },
@@ -36,6 +38,8 @@ window.ScriptureReader = (function () {
     '1-corinthians-15':   { religion:'Christianity', group:'New Testament',          canon:'All Canons',          sort:40 },
     'revelation-12':      { religion:'Christianity', group:'New Testament',          canon:'All Canons',          sort:50 },
     'matthew-sermon-mount': { religion:'Christianity', group:'New Testament',        canon:'All Canons',          sort:25 },
+    'philippians-2':      { religion:'Christianity', group:'New Testament',          canon:'All Canons',          sort:45 },
+    'colossians-1':       { religion:'Christianity', group:'New Testament',          canon:'All Canons',          sort:46 },
     'acts-17-areopagus':  { religion:'Christianity', group:'New Testament',          canon:'All Canons',          sort:55 },
     'luke-15-prodigal':   { religion:'Christianity', group:'New Testament',          canon:'All Canons',          sort:60 },
     // ── Christianity — Ethiopian Canon ──────────────────────────────
@@ -112,7 +116,7 @@ window.ScriptureReader = (function () {
   ];
 
   const GROUP_ORDER = {
-    'Christianity':    ['Old Testament', 'New Testament', 'Ethiopian Canon', 'Christian Mysticism', 'Gnostic / Nag Hammadi', 'Medieval Mysticism'],
+    'Christianity':    ['Old Testament', 'Deuterocanon', 'New Testament', 'Ethiopian Canon', 'Christian Mysticism', 'Medieval Mysticism', 'Gnostic / Nag Hammadi'],
     'Hinduism':        ['Vedic Hymns', 'Upanishads', 'Epics'],
     'Buddhism':        ['Pali Canon', 'Mahayana', 'Vajrayana'],
     'Taoism':          ['Classical Taoism', 'Chinese Classics'],

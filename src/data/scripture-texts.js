@@ -7096,3 +7096,362 @@ SCRIPTURE_TEXTS['julian-of-norwich'] = {
     },
   ]
 };
+
+// ── BATCH 14 ────────────────────────────────────────────────────────────────
+
+SCRIPTURE_TEXTS['wisdom-of-solomon'] = {
+  title: 'Wisdom of Solomon',
+  shortTitle: 'Wisdom of Solomon',
+  tradition: 'Christianity',
+  date: 'c. 100–50 BCE',
+  intro: 'The Wisdom of Solomon is a deuterocanonical text — canonical in Catholic, Orthodox, and Ethiopian Christianity, absent from the Protestant and Jewish canons. Composed in Greek at Alexandria, almost certainly by a Jewish author deeply immersed in Platonic and Stoic philosophy, it is one of the most important texts in the formation of early Christian theology. Its portrait of divine Wisdom (Sophia) as a cosmic mediating principle — "the breath of the power of God," "a reflection of eternal light," present at creation, entering holy souls, making prophets and friends of God — is the direct antecedent of John 1\'s Logos hymn. The text is the missing middle term between Proverbs 8 (Wisdom as the first of God\'s works), the Stoic logos, and the Johannine Word-made-flesh. No other single text does more to explain how a Jewish carpenter from Galilee became identified, within decades of his death, with the cosmic organizing principle of the universe.',
+  crossTradition: [
+    { label: 'John 1 — the Logos as cosmic mediator', textId: 'john-1', note: 'Wisdom of Solomon 7:25–26 describes Sophia as "a breath of the power of God, and a pure emanation of the glory of the Almighty... a reflection of eternal light, a spotless mirror of the working of God, and an image of his goodness." John 1:1–14 describes the Logos as "with God," "was God," "the light of all people," becoming flesh. The parallelism is not coincidence — the Johannine hymn is performing a Christological identification: Jesus is the Sophia of Jewish Wisdom theology. This is arguably the most important literary antecedent in the entire NT, explaining how the Wisdom-as-cosmic-principle category migrated into Christian theology.' },
+    { label: 'Proverbs 8 — Wisdom present at creation', textId: 'proverbs-8', note: 'Proverbs 8:22–31 has Wisdom speaking: "The LORD created me at the beginning of his work... when he established the heavens, I was there." Wisdom of Solomon 9:9: "With you is wisdom, she who knows your works and was present when you made the world." The two texts are in direct dialogue — Wisdom of Solomon is the Hellenized expansion of Proverbs 8\'s personified Wisdom, translating the Hebrew concept into Platonic and Stoic categories available to the Alexandrian Jewish diaspora. Together they form the pre-Christian Jewish foundation on which Johannine Logos Christology is built.' },
+    { label: 'Poimandres — divine Nous as the mediating creative principle', textId: 'poimandres', note: 'The Corpus Hermeticum\'s Nous (Mind) who is "the Father of all, who contains light and life" and whose first act is to generate Logos — the rational principle who organizes the world — is the Hermetic parallel to Wisdom of Solomon\'s Sophia. Both texts are products of the same Alexandrian intellectual world (1st century BCE to 2nd century CE) and share the same philosophical vocabulary: emanation, light, reflection, image of the divine. The Hermetic Nous-Logos chain and the Jewish Sophia tradition are two streams of the same river, independently flowing toward the same idea: a divine mediating principle that is simultaneously the ground of cosmic order and the means of human access to the divine.' },
+  ],
+  translations: [
+    { label: 'NRSV', lang: 'en', default: true },
+    { label: 'KJV (Apocrypha)', lang: 'en' },
+    { label: 'Greek (LXX)', lang: 'grc' },
+  ],
+  sections: [
+    {
+      heading: 'Sophia: Breath and Reflection of the Divine (7:22–8:1)',
+      verses: [
+        {
+          ref: '7:22–26',
+          text: 'For wisdom, the fashioner of all things, taught me. There is in her a spirit that is intelligent, holy, unique, manifold, subtle, mobile, clear, unpolluted, distinct, invulnerable, loving the good, keen, irresistible, beneficent, humane, steadfast, sure, free from anxiety, all-powerful, overseeing all, and penetrating through all spirits that are intelligent, pure, and altogether subtle. For wisdom is more mobile than any motion; because of her pureness she pervades and penetrates all things. For she is a breath of the power of God, and a pure emanation of the glory of the Almighty; therefore nothing defiled gains entrance into her. For she is a reflection of eternal light, a spotless mirror of the working of God, and an image of his goodness.',
+          textVersions: {
+            nrsv: 'For she is a breath of the power of God, and a pure emanation of the glory of the Almighty... a reflection of eternal light, a spotless mirror of the working of God, and an image of his goodness.',
+            kjv: 'For she is the breath of the power of God, and a pure influence flowing from the glory of the Almighty... the brightness of the everlasting light, the unspotted mirror of the power of God, and the image of his goodness.',
+            greek: 'ἀτμὶς γάρ ἐστιν τῆς τοῦ θεοῦ δυνάμεως καὶ ἀπόρροια τῆς τοῦ παντοκράτορος δόξης εἰλικρινής... ἀπαύγασμα γάρ ἐστιν φωτὸς ἀιδίου καὶ ἔσοπτρον ἀκηλίδωτον τῆς τοῦ θεοῦ ἐνεργείας καὶ εἰκὼν τῆς ἀγαθότητος αὐτοῦ.',
+          },
+          entities: [
+            { word: 'a breath of the power of God', node: 'sophia', type: 'concept',
+              note: 'Greek: atmos — vapor, breath, emanation. The same root as atmosphere. Sophia is neither identical with God (she emanates from divine power) nor separate from God (she is a pure emanation of divine glory). This is the precise theological position that will become, in Christian theology, the doctrine of the Son as "of one substance with the Father" — neither created from nothing nor identical with the Father. Wisdom of Solomon is working out, in pre-Christian Jewish philosophy, the conceptual framework that the Council of Nicaea will formalize three centuries later. The text is the philosophical preparation for Trinitarian theology.',
+              parallels: [
+                { label: 'John 1 — "In the beginning was the Word... the Word was with God... the Word was God"', textId: 'john-1', note: 'John 1:1\'s famous oscillation — the Logos "was with God" (distinct) yet "was God" (identical) — is the precise theological problem that Wisdom of Solomon\'s "breath of the power of God" is already navigating. Sophia is neither God (she emanates) nor other than God (she is a pure emanation of glory). The Johannine formula is more compressed and paradoxical; the Wisdom formula is more philosophical. They are addressing the same question: how does a divine mediating principle relate to the divine source? Both answers: not by identity, not by separation, but by a third category that strains language.' },
+                { label: 'Plotinus — emanation from the One as the structure of reality', textId: 'plato-cave', note: 'Plotinus\'s Enneads describe reality as a hierarchy of emanations from the One: the One generates Nous (Mind/Intelligence), Nous generates Psyche (Soul), Soul generates the material world — each level being a kind of "overflow" or "radiation" of the level above, diminished but not cut off. Wisdom of Solomon\'s Sophia as "emanation of the glory of the Almighty" is the Jewish Wisdom tradition\'s version of the same Neoplatonic emanation structure. The convergence is not coincidental — both are drawing on the same Platonic philosophical toolkit available in Alexandria in the 1st century BCE–2nd century CE.' },
+              ]
+            },
+            { word: 'a reflection of eternal light', node: 'divine-light', type: 'concept',
+              note: 'Greek: apaugasma — radiance, the light shining out from a source. The same word is used in Hebrews 1:3 for Christ as the "radiance of God\'s glory." A reflection does not generate its own light but makes the source visible — it is simultaneously dependent on and continuous with the source. This is the Wisdom tradition\'s most precise image for the mediating divine principle: not the light itself, but the form in which the light becomes accessible to those who could not bear the direct radiance. Compare Pseudo-Dionysius\'s "rays of the divine darkness" — the divine light that exceeds direct perception but reaches created minds through mediated radiance.',
+              parallels: [
+                { label: 'Meister Eckhart — the soul as the mirror in which God sees Godself', textId: 'meister-eckhart-godhead', note: 'Eckhart\'s image of the soul as a mirror — "God must act in the soul and pour himself into it when the soul is prepared and is at rest" — extends Wisdom of Solomon\'s "spotless mirror of the working of God." Both texts use mirror-language for the mediating principle (Sophia / the pure soul) that makes the divine visible by reflection. Wisdom\'s Sophia is the mirror at the cosmic level; Eckhart\'s prepared soul is the mirror at the individual level. The purification required in both cases is the same: removal of anything that would obscure or distort the reflection.' },
+              ]
+            },
+          ]
+        },
+        {
+          ref: '7:27–8:1',
+          text: 'Although she is but one, she can do all things, and while remaining in herself, she renews all things; in every generation she passes into holy souls and makes them friends of God, and prophets; for God loves nothing so much as the person who lives with wisdom. She is more beautiful than the sun, and excels every constellation of the stars. Compared with the light she is found to be superior, for it is succeeded by the night, but against wisdom evil does not prevail. She reaches mightily from one end of the earth to the other, and she orders all things well.',
+          textVersions: {
+            nrsv: 'Although she is but one, she can do all things... in every generation she passes into holy souls and makes them friends of God, and prophets.',
+            kjv: 'And being but one, she can do all things: and remaining in herself, she maketh all things new: and in all ages entering into holy souls, she maketh them friends of God, and prophets.',
+            greek: 'μία δὲ οὖσα πάντα δύναται καὶ μένουσα ἐν αὑτῇ τὰ πάντα καινίζει καὶ κατὰ γενεὰς εἰς ψυχὰς ὁσίας μεταβαίνουσα φίλους θεοῦ καὶ προφήτας κατασκευάζει.',
+          },
+          entities: [
+            { word: 'in every generation she passes into holy souls and makes them friends of God, and prophets', node: 'sophia', type: 'concept',
+              note: 'This is the Wisdom tradition\'s account of prophetic inspiration and of the continuity of wisdom across traditions: Sophia does not remain in one person, one people, or one era but passes, in every generation, into holy souls. This is the theological ground for the logoi spermatikoi (seed-words of the Logos) concept that Justin Martyr and Clement of Alexandria will use to claim that Socrates, Heraclitus, and other pagan philosophers were guided by the same divine Sophia/Logos that is fully present in Christ. Wisdom of Solomon is the first text to articulate this universalist wisdom theology explicitly.',
+              parallels: [
+                { label: 'Acts 17 — "your own poets have said" — truth dispersed among all traditions', textId: 'acts-17-areopagus', note: 'Paul\'s Areopagus speech and Wisdom of Solomon 7:27 are the two pillars of Christian universalist wisdom theology. Wisdom: "in every generation she passes into holy souls and makes them friends of God, and prophets" — Sophia is not confined to one tradition. Acts 17:28: "as even some of your own poets have said" — divine truth is present in Greek poetry. Together these texts establish the theological permission for finding divine wisdom in all traditions, which is the methodological charter of the entire cross-tradition investigation.' },
+                { label: 'Bhagavad Gita 4 — "whenever dharma declines I send myself forth"', textId: 'bhagavad-gita-4', note: 'Gita 4.7–8: "Whenever there is a decline of righteousness, O Arjuna, and a rise of unrighteousness, then I send myself forth. For the protection of the good, for the destruction of evil-doers, for the sake of firmly establishing righteousness, I come into being age after age." Wisdom of Solomon: "in every generation she passes into holy souls." Both texts describe the same movement: divine wisdom/presence entering human history repeatedly, in every age, through chosen vessels. The Gita\'s avatar doctrine and the Wisdom tradition\'s sophia-in-prophets are two cultural expressions of the same theological claim about divine immanence in history.' },
+              ]
+            },
+          ]
+        },
+      ]
+    },
+    {
+      heading: 'Sophia Present at Creation (9:1–12)',
+      verses: [
+        {
+          ref: '9:1–6, 9–12',
+          text: 'O God of my ancestors and Lord of mercy, who have made all things by your word, and by your wisdom have formed humankind to have dominion over the creatures you have made, and rule the world in holiness and righteousness, and pronounce judgment in uprightness of soul, give me the wisdom that sits by your throne, and do not reject me from among your servants. [...] With you is wisdom, she who knows your works and was present when you made the world; she understands what is pleasing in your sight and what is right according to your commandments. Send her forth from the holy heavens, and from the throne of your glory send her, that she may labor at my side, and that I may learn what is pleasing to you.',
+          textVersions: {
+            nrsv: 'With you is wisdom, she who knows your works and was present when you made the world.',
+            kjv: 'For thou hast a little child, and the wisdom is with thee that knoweth thy works, and was present when thou madest the world.',
+            greek: 'μετὰ σοῦ ἡ σοφία ἡ εἰδυῖα τὰ ἔργα σου καὶ παροῦσα ὅτε ἐποίεις τὸν κόσμον.',
+          },
+          entities: [
+            { word: 'she who knows your works and was present when you made the world', node: 'sophia', type: 'concept',
+              note: 'Sophia as witness and participant in creation: present at the making of the world, knowing all its works, available to be sent as guide to any who ask. This is the same claim as Proverbs 8:30 ("I was beside him, like a master workman") but now in a full Platonic context: Sophia is the divine blueprint, the model by which the world was made, and therefore the one who truly knows its structure. To receive Wisdom is to understand the world as God understands it — from the inside, from the perspective of the creative principle itself.',
+              parallels: [
+                { label: 'Genesis 1 — "In the beginning God created... the Spirit of God was hovering over the waters"', textId: 'genesis-1', note: 'Genesis 1:2\'s ruach elohim (spirit/breath of God) hovering over the primordial waters and Wisdom of Solomon 9:9\'s Sophia "present when you made the world" are two portraits of the same divine presence at creation: not the creator directly, but the creative breath/wisdom through which the act of creation is mediated. The Priestly author of Genesis 1 and the Alexandrian author of Wisdom of Solomon are reaching for the same concept from different directions — the divine creative principle that is present at and through creation without being identical with the creator.' },
+              ]
+            },
+          ]
+        },
+      ]
+    },
+  ]
+};
+
+SCRIPTURE_TEXTS['colossians-1'] = {
+  title: 'Colossians 1 — The Cosmic Christ Hymn',
+  shortTitle: 'Colossians 1',
+  tradition: 'Christianity',
+  date: 'c. 60–80 CE',
+  intro: 'Colossians 1:15–20 is one of the most compressed and cosmologically ambitious passages in the entire New Testament — a pre-Pauline hymn (most scholars believe it predates the letter) that identifies Christ with the cosmic organizing principle of all existence. "He is the image of the invisible God, the firstborn of all creation; for in him all things in heaven and on earth were created... all things have been created through him and for him... and in him all things hold together." The phrase "all things hold together in him" (ta panta en auto synesteken) is the NT\'s single most direct parallel to Isha Upanishad 1 ("all this is pervaded by the Lord"), Acts 17:28 ("in him we live and move and have our being"), and Stoic logos theology. With John 1 and Wisdom of Solomon 7, it forms the NT\'s three-part cosmic Christology — and it is almost certainly dependent on the Wisdom-of-Solomon framework.',
+  crossTradition: [
+    { label: 'Isha Upanishad — "all this is pervaded by the Lord"', textId: 'isha-upanishad', note: 'Colossians 1:17: "in him all things hold together" (ta panta en auto synesteken). Isha 1: "All this — whatever moves in this moving world — is to be pervaded by the Lord." These are arguably the two most precise cross-tradition parallels in the entire corpus on cosmic divine immanence. The Colossians hymn is describing Christ as the principle of cosmic cohesion — remove him and the universe falls apart. The Isha is describing Ishvara (the personal Lord) as the pervasive ground within which all movement occurs. Same metaphysical structure, different cultural containers.' },
+    { label: 'John 1 — "all things came into being through him"', textId: 'john-1', note: 'John 1:3: "All things came into being through him, and without him not one thing came into being." Colossians 1:16: "in him all things in heaven and on earth were created... all things have been created through him and for him." Both passages make the Logos/Christ the medium of creation, but Colossians adds a dimension absent from John: not only were all things created through him, but they were created FOR him (eis auton) and they are currently HELD TOGETHER in him (en auto synesteken). Creation is not merely origin (John 1) but ongoing telos and cohesion (Colossians 1).' },
+    { label: 'Wisdom of Solomon 7 — Sophia as "the fashioner of all things"', textId: 'wisdom-of-solomon', note: 'Wisdom of Solomon 7:21 calls Sophia "the fashioner of all things" and 8:1 says "she reaches mightily from one end of the earth to the other, and she orders all things well." Colossians 1:17 says Christ "is before all things, and in him all things hold together." The Colossians hymn is performing a deliberate Christological identification: Jesus Christ = the Sophia of Wisdom of Solomon. This identification — Christ as divine Wisdom — is the theological bridge between Jewish Wisdom theology and Christian cosmic Christology. Wisdom of Solomon is the source code; Colossians 1 is the Christian instantiation.' },
+  ],
+  translations: [
+    { label: 'NRSV', lang: 'en', default: true },
+    { label: 'KJV', lang: 'en' },
+    { label: 'Greek (NA28)', lang: 'grc' },
+  ],
+  sections: [
+    {
+      heading: 'The Cosmic Christ Hymn (1:15–20)',
+      verses: [
+        {
+          ref: '1:15–17',
+          text: 'He is the image of the invisible God, the firstborn of all creation; for in him all things in heaven and on earth were created, things visible and invisible, whether thrones or dominions or rulers or powers — all things have been created through him and for him. He himself is before all things, and in him all things hold together.',
+          textVersions: {
+            nrsv: 'He is the image of the invisible God, the firstborn of all creation... in him all things hold together.',
+            kjv: 'Who is the image of the invisible God, the firstborn of every creature: For by him were all things created, that are in heaven, and that are in earth... and by him all things consist.',
+            greek: 'ὅς ἐστιν εἰκὼν τοῦ θεοῦ τοῦ ἀοράτου, πρωτότοκος πάσης κτίσεως... τὰ πάντα ἐν αὐτῷ συνέστηκεν.',
+          },
+          entities: [
+            { word: 'image of the invisible God', node: 'logos', type: 'concept',
+              note: 'Greek: eikon tou theou tou aoratou — image of the unseen God. The invisible God becomes visible through Christ as image. This echoes Wisdom of Solomon 7:26 ("a spotless mirror of the working of God, and an image of his goodness") and Genesis 1:26 ("let us make humankind in our image"). The hymn is stacking these references deliberately: Christ is the original Image of which humanity is a copy; he is the Sophia-Logos through whom the invisible God becomes accessible. The "image of the invisible God" is the NT\'s most direct engagement with the apophatic tradition: the divine is in itself invisible/unknowable, but accessible through the mediating image.',
+              parallels: [
+                { label: 'Poimandres — the divine Mind whose image is the Logos', textId: 'poimandres', note: 'Corpus Hermeticum I: the Father (Mind/Nous) is invisible light; the Son-Logos is the radiance that makes the Father visible. "The Father of all, who contains light and life... sends his own Logos (Son) to the beautiful world." Colossians 1:15: Christ is the "image of the invisible God." The Hermetic Father-Logos relationship and the Colossians God-Christ relationship are the same structure: the invisible divine becomes accessible through the Son-Logos-Image. Both texts are articulating, in different cultural registers, the same fundamental theological principle: the unknowable becomes known through a mediating manifestation.' },
+              ]
+            },
+            { word: 'in him all things hold together', node: 'logos', type: 'concept',
+              note: 'Greek: ta panta en auto synesteken — all things have been held together in him (perfect tense: a past act with continuing present effect). This is the most cosmologically radical claim in the NT: Christ is not merely the creator of the universe (past) or its redeemer (future) but its current principle of cohesion. The universe does not hold together by physical forces alone but by a personal divine principle. This is the Stoic logos doctrine — the rational principle immanent in all things, holding the cosmos together — translated into Christological terms. Paul (or the hymn\'s author) is claiming that the Stoic logos IS Christ.',
+              parallels: [
+                { label: 'Isha Upanishad 1 — "all this is pervaded by the Lord"', textId: 'isha-upanishad', note: 'Isha 1: "All this — whatever moves in this moving world — is to be pervaded (vasyam) by the Lord." Colossians 1:17: "in him all things hold together (synesteken)." The Sanskrit vasyam means "to be pervaded, to be clothed, to be dwelt in" — the divine is the field within which all things exist and from which they draw their being. The Greek synesteken means "to stand together, to cohere, to be held in unity" — Christ is the principle by which scattered multiplicity maintains its coherence. Two different metaphors (pervasion vs. cohesion) for the same metaphysical claim: remove the divine and the world falls apart.' },
+                { label: 'Tao Te Ching — the Tao as the ground of the ten thousand things', textId: 'tao-te-ching-1', note: 'Tao Te Ching 1: the Tao is the mother of the ten thousand things — not one thing among them but the source and ground within which they all arise. Tao 16: "The ten thousand things rise and fall while the Self watches their return... each separate being in the universe returns to the common source." Colossians 1:17: "in him all things hold together." The Tao as the ground of the ten thousand things and Christ as the principle in whom all things cohere are functionally identical metaphysical roles: both are the ultimate organizing principle that holds the multiplicity of existence in coherent unity.' },
+              ]
+            },
+          ]
+        },
+        {
+          ref: '1:18–20',
+          text: 'He is the head of the body, the church; he is the beginning, the firstborn from the dead, so that he might come to have first place in everything. For in him all the fullness of God was pleased to dwell, and through him God was pleased to reconcile to himself all things, whether on earth or in heaven, by making peace through the blood of his cross.',
+          textVersions: {
+            nrsv: 'For in him all the fullness of God was pleased to dwell, and through him God was pleased to reconcile to himself all things.',
+            kjv: 'For it pleased the Father that in him should all fulness dwell; And, having made peace through the blood of his cross, by him to reconcile all things unto himself.',
+            greek: 'ὅτι ἐν αὐτῷ εὐδόκησεν πᾶν τὸ πλήρωμα κατοικῆσαι καὶ δι᾽ αὐτοῦ ἀποκαταλλάξαι τὰ πάντα εἰς αὐτόν.',
+          },
+          entities: [
+            { word: 'all the fullness of God was pleased to dwell', node: 'divine-nature', type: 'concept',
+              note: 'Greek: pan to pleroma — all the fullness (pleroma). In Gnostic thought, the pleroma is the totality of divine light/fullness from which material existence is a fallen fragment. Colossians uses this charged term deliberately: not some of the divine fullness, not a reflection or emanation, but the entirety of the divine pleroma dwells in Christ bodily. This is the anti-Gnostic move: not a fallen spark seeking return to fullness, but the fullness itself descended into the body. The Gnostic and Pauline cosmologies are mirror images: same vocabulary, opposite theological direction.',
+              parallels: [
+                { label: 'Gospel of Philip — the bridal chamber restores the fullness (pleroma)', textId: 'gospel-of-philip', note: 'Gospel of Philip uses pleroma (fullness) as its central category: the bridal chamber is the place where the separated halves of the divine fullness are reunited. Colossians 1:19: "in him all the fullness of God was pleased to dwell." Philip\'s bridal chamber and Paul\'s Christological pleroma are working with the same concept from opposite directions: Philip describes fullness as what must be achieved through the sacramental reunion of separated halves; Paul describes it as what is already present in Christ and available through him. The difference reflects the Gnostic-orthodox divide: is fullness something to be achieved or something to be received?' },
+              ]
+            },
+            { word: 'reconcile to himself all things', node: 'divine-love', type: 'concept',
+              note: 'Greek: apokatallaxai ta panta — to reconcile all things. The scope is total: all things, whether on earth or in heaven. This is the NT\'s closest approach to universal reconciliation (apokatastasis) — the doctrine that all things will ultimately be restored to God. Origen (c. 185–254 CE) will build his universalist theology largely on this verse. The hymn is claiming that the cross is a cosmic event: not merely the salvation of individual souls but the reconciliation of the entire created order — "all things" — to their divine source.',
+              parallels: [
+                { label: 'Julian of Norwich — "all shall be well, and all manner of thing shall be well"', textId: 'julian-of-norwich', note: 'Julian\'s "all shall be well" is her visionary articulation of the apokatastasis implied in Colossians 1:20. If Christ "reconciles to himself all things," then the final state of all things is reconciliation — not condemnation, not separation, but the restoration of all to their source. Julian holds this as mystical certainty against the Church\'s teaching about hell; Colossians holds it as cosmological claim about the scope of the cross. Both are pointing at the same theological reality: the cross is not a partial repair but a total reconciliation.' },
+              ]
+            },
+          ]
+        },
+      ]
+    },
+  ]
+};
+
+SCRIPTURE_TEXTS['philippians-2'] = {
+  title: 'Philippians 2 — The Kenosis Hymn',
+  shortTitle: 'Philippians 2',
+  tradition: 'Christianity',
+  date: 'c. 54–62 CE',
+  intro: 'Philippians 2:5–11 is the earliest and most concentrated Christological hymn in the New Testament — predating the Johannine Logos hymn by several decades. Its central term is kenosis (Greek: ekenosen, "he emptied himself") — the theological claim that the pre-existent divine Christ voluntarily divested himself of divine attributes in order to become human, suffer, and die. No single passage has generated more theological controversy in Christian history, and no single passage has more precise cross-tradition parallels. The divine voluntary self-emptying of Philippians 2 maps directly onto the Taoist wu wei (non-action, emptying), the Buddhist concept of anatta (no-self), the Gita\'s teaching on action without attachment to its fruits, and the Kabbalistic tsimtsum (God\'s self-contraction to make space for creation). The convergence is not superficial — all are articulating the same paradox: that the highest form of power is expressed through self-limitation.',
+  crossTradition: [
+    { label: 'Zohar — tsimtsum: divine contraction to make space for creation', textId: 'zohar-ein-sof', note: 'The Lurianic Kabbalah\'s tsimtsum — God\'s self-contraction (withdrawal into himself) to create a "vacuum" in which the world can exist — and Philippians 2\'s kenosis — Christ\'s self-emptying to become human — are the two most theologically precise expressions of the same divine-self-limitation principle in Jewish and Christian thought. Both describe the moment when the unlimited divine voluntarily limits itself as the foundational act of the divine-world relationship. The direction is different (tsimtsum creates space FOR creation; kenosis enters INTO creation) but the structure is identical: divine omnipotence expressed through voluntary self-restriction.' },
+    { label: 'Bhagavad Gita — action without attachment to fruits (nishkama karma)', textId: 'bhagavad-gita-4', note: 'The Gita\'s teaching on action without attachment — doing what is required without grasping the results — is the practical dimension of what the kenosis hymn describes cosmologically. Christ "did not regard equality with God as something to be exploited" (Phil 2:6) — divine power not grasped but released. The Gita\'s teaching: act from duty, not from desire for outcomes. Both texts are articulating the same spiritual principle: the highest action is action free from the ego\'s grasping, whether that ego is human (Gita) or divine (Philippians). The kenosis is the divine enactment of what the Gita teaches the human to practice.' },
+    { label: 'Tao Te Ching — wu wei: the power of non-grasping', textId: 'tao-te-ching-1', note: 'Tao Te Ching 8: "The highest good is like water. Water gives life to the ten thousand things and does not strive." Tao 22: "Yield and overcome." Philippians 2:6–7: "though he was in the form of God, he did not regard equality with God as something to be exploited, but emptied himself." The Taoist wu wei (non-striving, yielding, emptying) is the philosophical category closest to kenosis: both describe power that expresses itself through relinquishment rather than assertion. The Tao\'s softness that overcomes hardness and Christ\'s self-emptying that becomes exaltation are the same paradoxical logic.' },
+  ],
+  translations: [
+    { label: 'NRSV', lang: 'en', default: true },
+    { label: 'KJV', lang: 'en' },
+    { label: 'Greek (NA28)', lang: 'grc' },
+  ],
+  sections: [
+    {
+      heading: 'The Kenosis: Self-Emptying and Descent (2:5–8)',
+      verses: [
+        {
+          ref: '2:5–8',
+          text: 'Let the same mind be in you that was in Christ Jesus, who, though he was in the form of God, did not regard equality with God as something to be exploited, but emptied himself, taking the form of a slave, being born in human likeness. And being found in human form, he humbled himself and became obedient to the point of death — even death on a cross.',
+          textVersions: {
+            nrsv: 'who, though he was in the form of God, did not regard equality with God as something to be exploited, but emptied himself',
+            kjv: 'Who, being in the form of God, thought it not robbery to be equal with God: But made himself of no reputation, and took upon him the form of a servant',
+            greek: 'ὃς ἐν μορφῇ θεοῦ ὑπάρχων οὐχ ἁρπαγμὸν ἡγήσατο τὸ εἶναι ἴσα θεῷ, ἀλλὰ ἑαυτὸν ἐκένωσεν μορφὴν δούλου λαβών.',
+          },
+          entities: [
+            { word: 'emptied himself', node: 'kenosis', type: 'concept',
+              note: 'Greek: ekenosen — he emptied (himself). Kenosis is from kenos (empty, hollow, void). The theological question this verse has generated for two millennia: of what did Christ empty himself? The range of answers — divine attributes (omniscience, omnipotence), divine glory, divine independence — each has different implications. But the structure is clear: the hymn is describing a voluntary movement from fullness to emptiness as the precondition of incarnation. This is not deprivation but choice; not loss but gift. The divine did not accidentally become human; the divine chose to become human by choosing to become empty.',
+              parallels: [
+                { label: 'Zohar — tsimtsum: God\'s self-contraction to create space for creation', textId: 'zohar-ein-sof', note: 'Luria\'s tsimtsum: "Before the creation of the world, Ein Sof withdrew itself into itself, contracting its infinite light to create a primordial space." Philippians 2:7: "he emptied himself, taking the form of a slave." Both describe the same fundamental divine act: the infinite voluntarily limits itself as the act of love toward the finite. In tsimtsum the contraction creates the space in which creatures can exist; in kenosis the self-emptying creates the form in which God can exist among creatures. Two modes of the same divine self-limitation for the sake of the other.' },
+                { label: 'Tao Te Ching — "the Tao is an empty vessel; it is used, but never filled"', textId: 'tao-te-ching-1', note: 'Tao Te Ching 4: "The Tao is an empty vessel; it is used, but never filled. Oh, unfathomable source of ten thousand things!" The Tao\'s emptiness is not absence but the condition of inexhaustible giving. Philippians 2\'s kenosis — the divine emptying itself to take the form of a servant — and the Tao\'s constitutive emptiness are two descriptions of the same paradox: emptiness as the condition of fullness, self-emptying as the condition of infinite capacity. Both traditions are pointing to a dimension of the divine that ordinary power-language cannot capture.' },
+              ]
+            },
+            { word: 'taking the form of a slave', node: 'incarnation', type: 'concept',
+              note: 'Greek: morphen doulou labon — taking the form of a slave/servant. The contrast is precise and deliberate: morphe theou (form of God) → morphe doulou (form of a slave). The highest status in the ancient world becomes the lowest. This is not merely social reversal but ontological — the divine takes the form of the most radically dependent being in ancient society, one who owns nothing, controls nothing, exists entirely at another\'s disposal. The kenosis is complete: not merely "becoming human" but becoming the most radically dispossessed form of humanity.',
+              parallels: [
+                { label: 'Matthew 5 — "the meek shall inherit the earth" — power through non-power', textId: 'matthew-sermon-mount', note: 'The Beatitudes\' inversion of power — blessed are the poor in spirit, the meek, the mourning — is the practical teaching corresponding to the kenosis hymn\'s cosmological claim. The same logic operates at both levels: the kingdom of heaven belongs to those who have relinquished the normal markers of status and power. Christ\'s self-emptying into the form of a slave is the divine enactment of what the Beatitudes describe as the human path. The teacher teaches what he first himself enacts.' },
+              ]
+            },
+          ]
+        },
+      ]
+    },
+    {
+      heading: 'The Exaltation: Every Knee Shall Bow (2:9–11)',
+      verses: [
+        {
+          ref: '2:9–11',
+          text: 'Therefore God also highly exalted him and gave him the name that is above every name, so that at the name of Jesus every knee should bend, in heaven and on earth and under the earth, and every tongue should confess that Jesus Christ is Lord, to the glory of God the Father.',
+          textVersions: {
+            nrsv: 'Therefore God also highly exalted him and gave him the name that is above every name.',
+            kjv: 'Wherefore God also hath highly exalted him, and given him a name which is above every name.',
+            greek: 'διὸ καὶ ὁ θεὸς αὐτὸν ὑπερύψωσεν καὶ ἐχαρίσατο αὐτῷ τὸ ὄνομα τὸ ὑπὲρ πᾶν ὄνομα.',
+          },
+          entities: [
+            { word: 'the name that is above every name', node: 'divine-name', type: 'concept',
+              note: 'The unnamed name "above every name" is the most striking detail of the exaltation. The hymn does not say "God gave him the name Jesus" (that name was given at birth) but "the name above every name" — which in Jewish theology is the Tetragrammaton, the divine name YHWH. The hymn is claiming that the exalted Christ receives the name that cannot be named, the name that stands above all naming. This is simultaneously the highest possible elevation (identification with YHWH) and an apophatic move: the highest name is the one that cannot be spoken. Compare Gospel of Philip: "Names given to the worldly are very deceptive" — the name above all names is the one that escapes all naming.',
+              parallels: [
+                { label: 'Gospel of Philip — "Names given to the worldly are very deceptive"', textId: 'gospel-of-philip', note: 'Gospel of Philip: "one who hears the word \'God\' does not perceive what is correct." Philippians 2: the exalted Christ receives "the name above every name" — which is precisely the name that cannot be perceived correctly by ordinary language. Both texts converge on the same apophatic recognition: the divine name, at its highest, exceeds the capacity of ordinary naming. Philip draws the conclusion that all theological language misleads; Philippians draws the conclusion that the true divine name calls forth universal recognition (every knee bowing) rather than conceptual comprehension.' },
+              ]
+            },
+            { word: 'every knee should bend, in heaven and on earth and under the earth', node: 'divine-sovereignty', type: 'concept',
+              note: 'The cosmic scope of the exaltation — heaven, earth, and under the earth — reverses the cosmic scope of the descent. The one who descended through all levels (from divine form through human form to death, the "under the earth") is now exalted through all levels. This is the kenosis-exaltation pattern that becomes the template for all Christian mystical theology: the way down is the way up, the self-emptying is the condition of fullness, the cross is the path to exaltation. Paul makes this explicit in 2 Corinthians 12:10: "when I am weak, then I am strong."',
+              parallels: [
+                { label: 'Tao Te Ching — "yield and overcome; bow and be exalted"', textId: 'tao-te-ching-1', note: 'Tao Te Ching 22: "Yield and overcome. Bend and be straight. Empty and be full. Wear out and be new. Have little and gain. Have much and be confused." Philippians 2\'s kenosis-exaltation arc — emptying leading to the name above every name — enacts precisely what Laozi describes as the law of the Tao: the lowest position becomes the highest, self-emptying leads to cosmic exaltation. The difference is that Laozi describes this as a universal principle (of water, of the valley, of the sage), while Philippians describes it as a singular historical event that reveals the structure of the divine.' },
+              ]
+            },
+          ]
+        },
+      ]
+    },
+  ]
+};
+
+SCRIPTURE_TEXTS['song-of-songs'] = {
+  title: 'Song of Songs',
+  shortTitle: 'Song of Songs',
+  tradition: 'Christianity',
+  date: 'c. 10th–3rd century BCE',
+  intro: 'The Song of Songs (Song of Solomon, Canticles) is the most enigmatic book in the Hebrew Bible — eight chapters of erotic love poetry with no explicit mention of God, Torah, covenant, or any of the standard categories of Israelite religion. Its canonical inclusion was contested in antiquity: Rabbi Akiva (c. 50–135 CE) famously declared it "the holy of holies" of all scripture, while others argued it was merely a collection of wedding songs. The mystical reading — that the Beloved is the divine and the Lover is the soul or people of Israel — has dominated Jewish, Christian, and Islamic interpretation since antiquity. Origen of Alexandria wrote ten volumes on it; Bernard of Clairvaux preached 86 sermons on just the first two chapters. In Jewish Kabbalah, the Song is the key text for understanding the relationship between the Holy Blessed One and the Shekhinah. In Sufism, its images of intoxication, the beloved, the night-search, and the fragrance that lingers are the direct ancestors of Rumi and Ibn Arabi. The Song of Songs is the cross-tradition bridge text par excellence: its erotic-mystical language is so archetypal that virtually every tradition has found its own experience of divine encounter reflected in it.',
+  crossTradition: [
+    { label: 'Rumi\'s Masnavi — the reed\'s cry for the beloved', textId: 'rumi-masnavi', note: 'The Song of Songs and Rumi\'s Masnavi are the two greatest examples of erotic-mystical poetry in the Abrahamic traditions. Both use the vocabulary of human romantic love — seeking, finding, longing, intoxication, the beloved\'s beauty, the night-search — as the primary language for the soul\'s relationship with the divine. Song 3:1: "On my bed by night I sought him whom my soul loves; I sought him, but found him not." Rumi\'s reed: "Listen to the story told by the reed." The formal difference is that the Song presents a dialogue between lovers; Rumi frames his through the reed\'s complaint. But both are performing the same theological move: making eros the vehicle for the highest spiritual content.' },
+    { label: 'Zohar — the Song as the Torah\'s inner face', textId: 'zohar-ein-sof', note: 'The Zohar treats the Song of Songs as the key to the inner meaning of Torah: the Beloved is the Holy Blessed One (masculine divine aspect), the Lover is the Shekhinah (feminine divine aspect/the community of Israel), and their union is the model for the cosmic union that sustains creation. Zohar II:145a: "The entire Torah is like a single divine name, and this holy name is the very secret of all that Torah contains." The Song of Songs is the Torah\'s explicit surface enactment of this secret: the love between divine masculine and feminine made visible in human erotic poetry. For the Zohar, reading the Song is participating in the divine union it describes.' },
+    { label: 'Ibn Arabi — the divine beloved in every beautiful face', textId: 'ibn-arabi-fusus', note: 'Ibn Arabi\'s Tarjuman al-Ashwaq (Interpreter of Desires) is a collection of love poems explicitly modeled on the Song of Songs tradition, written after encountering a beautiful Persian scholar in Mecca. For Ibn Arabi, every beautiful face is a manifestation of the divine beauty (jamal), and the love that beautiful faces inspire is the creaturely echo of the divine love that created them. Song 1:15: "Behold, you are beautiful, my love; behold, you are beautiful; your eyes are doves." For Ibn Arabi, this is literally true of the divine: every creature\'s beauty is a reflection of the divine beauty that the mystic is trained to see through the creaturely form to the divine source.' },
+  ],
+  translations: [
+    { label: 'NRSV', lang: 'en', default: true },
+    { label: 'KJV', lang: 'en' },
+    { label: 'Hebrew (BHS)', lang: 'heb' },
+  ],
+  sections: [
+    {
+      heading: 'The Opening Cry and the Beloved\'s Beauty (1:1–8)',
+      verses: [
+        {
+          ref: '1:2–4',
+          text: 'Let him kiss me with the kisses of his mouth! For your love is better than wine; your anointing oils are fragrant; your name is perfume poured out; therefore the maidens love you. Draw me after you, let us make haste. The king has brought me into his chambers. We will exult and rejoice in you; we will extol your love more than wine; rightly do they love you.',
+          textVersions: {
+            nrsv: 'Let him kiss me with the kisses of his mouth! For your love is better than wine.',
+            kjv: 'Let him kiss me with the kisses of his mouth: for thy love is better than wine.',
+            hebrew: 'יִשָּׁקֵ֙נִי֙ מִנְּשִׁיק֣וֹת פִּ֔יהוּ כִּֽי־טוֹבִ֥ים דֹּדֶ֖יךָ מִיָּֽיִן׃',
+          },
+          entities: [
+            { word: 'your name is perfume poured out', node: 'divine-name', type: 'concept',
+              note: 'Hebrew: shemen turaq shemeka — your name is oil poured out (or: "your name is ointment poured forth"). The divine name, in the Song, is not a label but a fragrance: it cannot be seen, only sensed; it permeates without being located; it is known by its effect, not its form. This is the Song\'s implicit apophatic theology: the divine is approached through eros and through the senses (smell, taste, touch, sight) rather than through rational proposition. The fragrance of the name that draws the lover toward the beloved is the Song\'s answer to the question of how the divine makes itself known.',
+              parallels: [
+                { label: 'Philippians 2 — "the name that is above every name"', textId: 'philippians-2', note: 'Philippians 2:9 names the exalted Christ with "the name above every name" — the name that exceeds all naming. The Song says the beloved\'s name is "perfume poured out" — the name that exceeds all naming because it is apprehended through the senses rather than the intellect, through eros rather than theology. Both texts are circling the same apophatic truth: the divine name, at its highest, cannot be conceptually grasped. The Song approaches it through erotic fragrance; Philippians approaches it through the logic of exaltation. The Song\'s fragrance and Paul\'s unnameable name are the same reality approached from opposite angles.' },
+              ]
+            },
+          ]
+        },
+        {
+          ref: '1:5–7',
+          text: 'I am black and beautiful, O daughters of Jerusalem, like the tents of Kedar, like the curtains of Solomon. Do not gaze at me because I am dark, because the sun has gazed on me. My mother\'s sons were angry with me; they made me keeper of the vineyards; but my own vineyard I have not kept! Tell me, you whom my soul loves, where you pasture your flock, where you make it lie down at noon; for why should I be like one who is veiled beside the flocks of your companions?',
+          textVersions: {
+            nrsv: 'I am black and beautiful, O daughters of Jerusalem.',
+            kjv: 'I am black, but comely, O ye daughters of Jerusalem.',
+            hebrew: 'שְׁחוֹרָ֤ה אֲנִי֙ וְנָאוָ֔ה בְּנ֖וֹת יְרוּשָׁלָ֑͏ִם כְּאָהֳלֵ֣י קֵדָ֔ר כִּירִיע֖וֹת שְׁלֹמֹֽה׃',
+          },
+          entities: [
+            { word: 'I am black and beautiful', node: 'mystical-union', type: 'concept',
+              note: 'The Beloved\'s declaration — "I am black and beautiful" — is one of the most theologically significant self-descriptions in scripture. Black and beautiful: not black but beautiful, not beautiful despite being black, but black AND beautiful simultaneously. The coincidentia oppositorum (coincidence of opposites) that Nicholas of Cusa and Meister Eckhart identify as the mark of the divine is here present in the very first self-description of the Beloved. Darkness and beauty are not opposites but the same reality experienced from different orientations. This has been read as a description of the soul (dark with sin but beautiful by grace), of the Church (dark in the world but beautiful to God), and of the divine itself (dark to rational comprehension, beautiful to loving contemplation).',
+              parallels: [
+                { label: 'Pseudo-Dionysius — "the divine darkness" that is the highest light', textId: 'pseudo-dionysius-mystical-theology', note: 'Pseudo-Dionysius\'s Mystical Theology opens with Moses entering "the darkness of unknowing where he leaves behind all rational perception." The divine darkness is not the absence of light but the excess of light that overwhelms rational perception. The Song\'s "I am black and beautiful" is the erotic-lyrical version of the same truth: the Beloved\'s darkness is not a deficiency but the form in which the overwhelming divine beauty appears to those who approach by love rather than reason. Both texts are saying the same thing in different registers: the highest reality appears dark to rational comprehension and beautiful to loving contemplation.' },
+                { label: 'Zohar Ein Sof — the dark flame that cannot be seen', textId: 'zohar-ein-sof', note: 'The Zohar\'s description of the dark flame at the crown of Ein Sof — "neither white nor black, neither red nor green, of no color whatever" yet inseparable from the divine fullness — resonates with the Song\'s "I am black and beautiful." In both, the divine presents itself in a form that exceeds the ordinary categories of color and visibility. The Song\'s Beloved is dark (beyond ordinary perception) and beautiful (apprehended by a love that sees beyond ordinary categories). The Zohar\'s flame is colorless (beyond ordinary color-categories) yet radiates the divine light. Both texts locate the divine at the boundary where normal perception fails and a higher mode of apprehension begins.' },
+              ]
+            },
+          ]
+        },
+      ]
+    },
+    {
+      heading: 'The Night Search: Seeking and Finding (3:1–5)',
+      verses: [
+        {
+          ref: '3:1–5',
+          text: 'Upon my bed by night I sought him whom my soul loves; I sought him, but found him not; I called him, but he gave no answer. "I will rise now and go about the city, in the streets and in the squares; I will seek him whom my soul loves." I sought him, but found him not. The sentinels found me, as they went about in the city. "Have you seen him whom my soul loves?" Scarcely had I passed them, when I found him whom my soul loves. I held him, and would not let him go until I brought him into my mother\'s house, and into the chamber of her who conceived me.',
+          textVersions: {
+            nrsv: 'Upon my bed by night I sought him whom my soul loves; I sought him, but found him not.',
+            kjv: 'By night on my bed I sought him whom my soul loveth: I sought him, but I found him not.',
+            hebrew: 'עַל־מִשְׁכָּבִי֙ בַּלֵּיל֔וֹת בִּקַּ֕שְׁתִּי אֵ֖ת שֶׁאָהֲבָ֣ה נַפְשִׁ֑י בִּקַּשְׁתִּ֖יו וְלֹ֥א מְצָאתִֽיו׃',
+          },
+          entities: [
+            { word: 'I sought him, but found him not', node: 'mystical-union', type: 'concept',
+              note: 'The night search — seeking without finding, then finding suddenly after passing the watchmen — is the Song\'s central mystical pattern and has become the template for the "dark night of the soul" in Christian mysticism (John of the Cross), the Sufi\'s wandering in search of the beloved (Rumi, Hafiz), and the Zen koan\'s frustration of the seeking mind that precedes breakthrough. The structure is precise: the seeking itself does not find; it is only after passing through the city (through the domain of ordinary perception and its guardians) that sudden finding occurs. The finding is not the product of the search but something that happens at the limit of searching.',
+              parallels: [
+                { label: 'Rumi — "I searched for God among the Christians... I found Him in my own heart"', textId: 'rumi-masnavi', note: 'Rumi\'s poem: "I searched for God among the Christians and found Him not upon the Cross. I went into the ancient temples of idolatry; no trace of Him was there. I questioned the scholars and philosophers but God was beyond their understanding. Then I looked into my own heart and there I saw Him; He was nowhere else." Song of Songs 3:1–4: "I sought him, but found him not... scarcely had I passed them, when I found him whom my soul loves." Both describe the same mystical pattern: the divine cannot be found in the expected places (city streets, temples, philosophical systems); it is found when the seeker transcends the domain of ordinary seeking.' },
+              ]
+            },
+          ]
+        },
+      ]
+    },
+    {
+      heading: 'The Ecstasy of Union and the Voice of the Beloved (2:10–13; 8:6–7)',
+      verses: [
+        {
+          ref: '2:10–13',
+          text: 'My beloved speaks and says to me: "Arise, my love, my fair one, and come away; for now the winter is past, the rain is over and gone. The flowers appear on the earth; the time of singing has come, and the voice of the turtledove is heard in our land. The fig tree puts forth its figs, and the vines are in blossom; they give forth fragrance. Arise, my love, my fair one, and come away."',
+          textVersions: {
+            nrsv: '"Arise, my love, my fair one, and come away; for now the winter is past, the rain is over and gone."',
+            kjv: '"Rise up, my love, my fair one, and come away. For, lo, the winter is past, the rain is over and gone."',
+            hebrew: 'עָנָ֤ה דוֹדִי֙ וְאָ֣מַר לִ֔י ק֥וּמִי לָ֖ךְ רַעְיָתִ֑י יָפָתִ֖י וּלְכִי־לָֽךְ׃',
+          },
+          entities: [
+            { word: 'the winter is past, the rain is over and gone', node: 'renewal', type: 'concept',
+              note: 'The beloved\'s invitation comes after the winter — the time of spiritual desolation, the dark night, the absence. The spring passage in 2:10–13 is the Song\'s answer to the night-search of 3:1–4: the finding after searching, the spring after winter, the blossoming after dormancy. This is the structural pattern that all mystical traditions recognize as the movement from purgation (winter/dark night) through illumination (spring/finding) to union (summer/the beloved\'s presence). The Song enacts this pattern through the seasonal imagery of the Levantine spring.',
+            },
+          ]
+        },
+        {
+          ref: '8:6–7',
+          text: 'Set me as a seal upon your heart, as a seal upon your arm; for love is strong as death, passion fierce as the grave. Its flashes are flashes of fire, a raging flame. Many waters cannot quench love, neither can floods drown it. If one offered for love all the wealth of one\'s house, it would be utterly scorned.',
+          textVersions: {
+            nrsv: 'for love is strong as death, passion fierce as the grave... many waters cannot quench love, neither can floods drown it.',
+            kjv: 'for love is strong as death; jealousy is cruel as the grave: the coals thereof are coals of fire, which hath a most vehement flame.',
+            hebrew: 'כִּֽי־עַזָּ֤ה כַמָּ֙וֶת֙ אַהֲבָ֔ה קָשָׁ֥ה כִשְׁא֖וֹל קִנְאָ֑ה רְשָׁפֶ֕יהָ רִשְׁפֵּ֖י אֵ֥שׁ שַׁלְהֶֽבֶתְיָֽה׃',
+          },
+          entities: [
+            { word: 'love is strong as death', node: 'divine-love', type: 'concept',
+              note: 'The final theological claim of the Song: love and death are the two great absolutes of finite existence, and love matches death in strength. This is not saying love defeats death (that is the NT\'s claim in 1 Corinthians 15) but that love equals death in absolute power — nothing can resist either. "Many waters cannot quench love" — love shares with death the property of being undefeatable. The Hebrew word for the flame (shalhevethyah) may contain the divine name: "a flame of YAH" — which would make this the Song\'s single explicit theological claim: the love described throughout is the divine fire of YHWH.',
+              parallels: [
+                { label: '1 Corinthians 15 — "the last enemy to be destroyed is death"', textId: '1-corinthians-15', note: 'Song 8:6: "love is strong as death." 1 Corinthians 15:26: "the last enemy to be destroyed is death." These two texts are in dialogue across the entire biblical canon. The Song says love EQUALS death in strength; Paul says love (in the resurrection of Christ) DEFEATS death. The Song describes the contest; 1 Corinthians 15 describes the outcome. Together they form the biblical theology of divine love as the force that confronts and ultimately overcomes the strongest force in created existence — death itself.' },
+                { label: 'Rumi — "I died to the mineral, I died to the plant... what should I fear?"', textId: 'rumi-masnavi', note: 'Rumi\'s famous poem of serial deaths and rebirths (mineral → plant → animal → human → angel → "beyond angel") ends with "what should I fear?" — because love (the divine) has been the force driving every transformation. Song 8:6: "love is strong as death." For Rumi, love IS the death that moves the soul from one level to the next — the death of each lower form is love\'s invitation to a higher form. The Song\'s equation of love and death is, for Rumi, not a contest but an identity: love works through death, using it as its instrument of transformation.' },
+              ]
+            },
+          ]
+        },
+      ]
+    },
+  ]
+};
