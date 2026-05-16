@@ -345,6 +345,46 @@ window.CHAINS_DATA = [
   },
 
   {
+    id: 'maqam-raga-parallel-evolution',
+    title: 'Maqam vs. Raga — Parallel Modal Systems, 1,200 Years Apart, No Contact at Origin',
+    category: 'CONVERGENCE',
+    span: 'c. -1200 BCE – 900 CE · independent modal cosmologies',
+    summary: 'The Arabic maqam system and the Indian raga system are the world\'s two most developed modal traditions, both assigning specific emotional states, times of day, seasons, and cosmological meanings to specific melodic frameworks. They developed independently: raga emerges from the Vedic Sama Veda tradition (c. -1200 BCE); maqam emerges from the Abbasid Baghdad synthesis of Greek modal theory with Persian and Arab folk music (c. 800-900 CE). The overlap in functional structure — specific mode → specific time → specific mood → specific cosmic effect — was first noted by medieval Islamic scholars who encountered Indian music through trade routes. Neither tradition learned the time-assignment principle from the other.',
+    links: [
+      {
+        date: 'c. -1200 BCE',
+        label: 'Sama Veda — The First Melodic Cosmology',
+        node: 'music-sama-veda',
+        note: 'The Sama Veda is the first document in human history where specific melodies are assigned to specific ritual occasions, times of day, and cosmological purposes. The 1,549 Samans are not free melodies — each is prescribed for a specific rite, a specific moment in that rite, and a specific cosmic intention. This is the foundational document of the raga time-assignment principle: melody is not aesthetic but functional in a cosmological sense.'
+      },
+      {
+        date: 'c. -500 to 200 CE',
+        label: 'Natyashastra — Raga Theory Formalized',
+        node: 'music-raga-cosmology',
+        note: 'Bharata Muni\'s Natyashastra (c. 200 BCE–200 CE) systematizes the raga theory: each raga has a specific time (prahar), season (ritu), deity, and rasa (emotional essence). This is the first surviving text to make the time-of-day assignment explicit as doctrine. The 24-hour cosmic clock is formalized here. From this point, performing the wrong raga at the wrong time is a cosmological error, not merely an aesthetic mistake.'
+      },
+      {
+        date: 'c. 850-900 CE',
+        label: 'Baghdad — Al-Farabi Systematizes Arabic Modal Theory',
+        node: 'music-alkindi-music-therapy',
+        note: 'Al-Farabi\'s *Kitab al-Musiqa al-Kabir* (Great Book of Music, c. 850 CE) is the founding document of Arabic music theory. He systematizes the maqam (melodic framework with specific characteristic notes, ornaments, and emotional character) from Greek modes + Persian folk scales + Arab melodic patterns. Al-Farabi never mentions Indian music. The emotional/cosmological character assignments in maqam develop independently from the same cognitive impulse that produced Indian raga: specific melodic frameworks reliably produce specific states.'
+      },
+      {
+        date: 'c. 1200-1400 CE',
+        label: 'The Maqam Time-of-Day Assignments Solidify',
+        node: 'music-arabic-maqam',
+        note: 'By the Mamluk period, specific maqamat have acquired conventional time-of-day, seasonal, and emotional associations: Rast (dawn, hopefulness), Bayati (morning, longing/sadness), Hijaz (midday, exotic/distant), Rast again at sunset in some traditions. These are not cosmological obligations — performing Bayati at noon does not invoke a cosmic penalty — but they are live conventions that musicians honor. The functional gap between maqam and raga: maqam assigns meaning without obligation; raga assigns obligation as cosmological law.'
+      },
+      {
+        date: 'c. 1200 CE',
+        label: 'Persian Dastgah — A Third Independent Modal Cosmology',
+        node: 'music-arabic-maqam',
+        note: 'The Persian dastgah system (12 primary modes, each with characteristic emotional states, seasons, and occasion-assignments) developed in parallel with Arabic maqam, sharing some modal material but diverging in structure and theory. Dastgah Shur is associated with mourning and autumn; Dastgah Mahur with joy and spring. A third independent tradition assigning specific cosmological meaning to specific modal frameworks — and still not achieving the full raga obligation, for the same structural reasons: no hereditary caste carrier, no court patronage that intensified rather than secularized the tradition.'
+      },
+    ],
+  },
+
+  {
     id: 'post-fludd-esoteric-revival',
     title: 'After Kepler Wins — The Esoteric Sonic Chain Continues Underground',
     category: 'ESOTERIC',

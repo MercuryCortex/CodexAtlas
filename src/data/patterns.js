@@ -498,4 +498,38 @@ window.PATTERNS_DATA = [
     summary: 'Every major pre-modern script tradition treats letters as operative instruments — things that do things in the world, not merely record them. Germanic Elder Futhark runes were used primarily as amulets, weapon-inscriptions, and protective charms. Hebrew letters in mezuzot and tefillin provide household protection. Arabic talismanic letters (Ahmad al-Buni\'s \'ilm al-huruf) produce specific cosmic effects. Sanskrit mantra phonemes are eternal cosmic substances (akshara = letter AND imperishable). Ferdinand de Saussure\'s "arbitrary sign" theory (1916) — which claims the relationship between signifier and signified is purely conventional — is the first formal theory of language that strips letters of operative power. The 20th-century scientific consensus on language is the historical outlier; every pre-modern literate tradition is on the other side.',
   },
 
+  // ─── Music Layer Discoveries — Extended ───────────────────────────────────
+  {
+    id: 'drum-as-cosmos-map',
+    title: 'The Drum as a Literal Map of the Cosmos — Siberia to the Americas',
+    category: 'CONVERGENCE',
+    section: 'Music Layer Discoveries',
+    sources: ['music-siberian-shaman-drum', 'music-yoruba-drum-cosmology', 'music-native-american-ceremonial'],
+    summary: 'Siberian shamanic drums (Buryat, Evenk, Tuvan) are painted with three-zone cosmograms — upper world, middle world, underworld — making the drum a literal map of the cosmos. The drumbeat is the axis mundi connecting all three zones. The same pattern appears in Yoruba Batá consecration (drum as orisha communication technology), pre-Columbian Mesoamerican percussion (tunkul as calendar-ritual instrument), and Native American ceremonial drumming. Two independent music-cosmos theories emerged from human prehistory: the string-instrument tradition (Pythagorean ratio/harmony) and the drum tradition (rhythm/cosmic connectivity). The drum tradition appears to be older.',
+  },
+  {
+    id: 'sacred-resonance-architecture',
+    title: 'Sacred Architecture as Sonic Instrument — Acoustic Evidence Across 35,000 Years',
+    category: 'CONVERGENCE',
+    section: 'Music Layer Discoveries',
+    sources: ['music-maltese-hypogeum-acoustics', 'music-stonehenge-acoustic', 'music-hindu-temple-shikhara-acoustics'],
+    summary: 'The oldest evidence for music-cosmos theory is not a text — it is a building. Palaeolithic cave paintings (c. -32,000 BCE) cluster at acoustic resonance nodes. The Maltese Hypogeum (c. -3600 BCE) resonates at 110 Hz, the frequency that produces altered neurological states. Stonehenge\'s bluestones ring like bells and produce standing waves. Chartres Cathedral\'s nave dimensions produce reverberation tuned to Gregorian chant. Hindu temple shikhara proportions encode Pythagorean ratios. Sacred acoustic architecture predates every surviving text about sacred music by 1,300 to 25,000 years. The connection between specific sonic frequencies and spiritual experience was not theorized first — it was built first.',
+  },
+  {
+    id: 'why-india-preserved-raga',
+    title: 'Four Structural Conditions That Let India Preserve the Raga Obligation When All Others Retreated',
+    category: 'CONCLUSION',
+    section: 'Music Layer Discoveries',
+    sources: ['music-raga-time-cosmology', 'music-nada-brahma', 'music-raga-cosmology'],
+    summary: 'Every civilization developed time-structured music. Only India maintained the cosmic-performance obligation for 2,000+ years. Four structural factors explain the difference: (1) The hereditary musician-caste system (Gandharvas, temple musicians) created an institutional carrier with no parallel in Western or East Asian traditions. (2) Mughal patronage preserved rather than destroyed — Islamic rulers who loved music became the raga system\'s wealthiest sponsors. (3) The cosmological theory (Nada Brahma) is embedded in the performance practice itself, not in a separate text that could be lost — you cannot perform raga correctly without implicitly affirming the theory. (4) The tradition survived colonialism because British administrators categorized it as "art" rather than "religion" — it was not suppressed as idolatry. None of these factors applied to Greek music theory (no caste carrier, Rome\'s Christians suppressed it), Chinese yayue (Confucian rationalization stripped the cosmology), or Fludd\'s tradition (Kepler\'s physics refutation).',
+  },
+  {
+    id: 'harmonic-series-cosmic-discovery',
+    title: 'The Harmonic Series — The Same Mathematical Structure Physics and Music Theory Both Discovered',
+    category: 'ANOMALY',
+    section: 'Music Layer Discoveries',
+    sources: ['music-pythagorean-harmony', 'music-tuvan-overtone-singing', 'music-raga-cosmology'],
+    summary: 'Every vibrating string, column of air, or resonating body naturally produces the harmonic series: a fundamental tone plus overtones at 2x, 3x, 4x, 5x its frequency (octave, fifth, fourth, major third). These ratios (2:1, 3:2, 4:3, 5:4) also appear in planetary orbital resonances: Jupiter and Saturn are near 5:2; Neptune and Uranus near 2:1; Pluto and Neptune exactly 3:2. Pythagoras theorized this as evidence that music and cosmos share the same mathematical structure. The question the vault cannot answer: is this a cognitive imposition of a human perceptual structure onto nature, or is the harmonic series genuinely the mathematical framework that physical vibration expresses at every scale? Tuvan throat singers demonstrate the harmonic series in the human voice. Kepler measured planetary velocity ratios and found intervals. The Pythagorean claim remains neither confirmed nor refuted — merely reformulated.',
+  },
+
 ];
