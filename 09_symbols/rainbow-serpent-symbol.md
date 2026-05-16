@@ -1,7 +1,7 @@
 ---
 type: symbol
-id: "rainbow-serpent"
-name: "Rainbow Serpent"
+id: "rainbow-serpent-symbol"
+name: "Rainbow Serpent (Symbol)"
 aka: ["Almudj", "Ngalyod", "Yurlunggur", "Eingana", "Borlung", "Wonambi", "The Great Snake", "The Dreamtime Serpent"]
 
 category: "theriomorphic"
