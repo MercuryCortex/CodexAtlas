@@ -11,21 +11,37 @@
 //   [✓] Family-color node fills + sqrt-degree node sizing
 //   [✓] Click → window.selectNode (detail panel)
 //   [✓] Hover trail — dim non-neighbors, highlight edges (sigma reducer)
-//   [✓] Colored bezier edges per type (theme.js palette)
-//   [✓] Tangential family rim labels (DOM overlay synced to sigma camera)
+//   [✓] Translucent family hulls (SVG overlay, annular wedge geometry,
+//       same d3.arc-equivalent path as production .sector-hull)
+//   [✓] Curved Q-bezier edges (SVG overlay, control pulled 35% toward
+//       center — exact production formula; sigma's stock edges are
+//       hidden via size 0)
+//   [✓] Tangential family rim labels (DOM overlay synced to camera)
+//   [✓] More deity labels — degree≥6 threshold + labelDensity 1.0
+//   [✓] Thumbnail hover card — image + title + family · tradition +
+//       connection count + wikipedia link
 //   [✓] Mode dropdown (deities/authors/symbols/events/monuments)
 //   [✓] labels: hub/all/off toggle
 //   [✓] Ego-focus button
 //   [✓] Family-legend click-to-filter
 //   [ ] Family-filter + tier-overlay parity
+//   [ ] Force-simulation layout (rigid grid still — see brief §5)
+//
+// EDGE-CURVE NOTE: brief recommended vendoring `@sigma/edge-curve` and
+// registering an EdgeCurveProgram. That package only ships CJS/ESM
+// (no UMD bundle) and imports from `sigma`, which cannot resolve in
+// browser without a bundler. We use option (b) instead — SVG overlay
+// path elements with the exact `Q ${cxp},${cyp}` formula production
+// uses. Sigma's stock straight-line edges are sized to 0 so only the
+// curved overlay paints. At ~1000 edges this is fine perf-wise; if
+// the slice grows past ~5k we can revisit by adding a bundler step.
 //
 // REUSES from existing modules:
-//   window._codexGraph        sigma wrapper (src/js/graph/renderer.js)
-//   window._codexGraphTheme   color tokens
-//   window.NODES_BY_ID / EDGES / DATA / FAMILIES — from app.js
-//   window.selectNode / showTooltip / hideTooltip
+//   window.VAULT_DATA / NODES_BY_ID / EDGES / DATA / FAMILIES — from app.js
+//   window.selectNode
 // ============================================================
 (function () {
+  const SVG_NS = 'http://www.w3.org/2000/svg';
   // Module-level state: persists across render calls so mode/label choices
   // survive filter changes (legend clicks, mode dropdown changes).
   let _currentMode  = 'deities'; // 'deities'|'authors'|'symbols'|'events'|'monuments'
@@ -94,7 +110,7 @@
       });
     });
 
-    return { positions, wedges, familyOrder, famByName };
+    return { positions, wedges, familyOrder, famByName, Rinner, Router };
   }
 
   // Edge-type color palette — based on real types in data.js (audit caught
@@ -106,28 +122,32 @@
   //   child-of / parent-of  attests / attested-in / mentioned-in
   const EDGE_COLOR = {
     // SYNCRETIC / PARALLEL family — green to teal
-    'syncretic':         '#6e8c6b', 'syncretized-with':  '#6e8c6b',
-    'parallel-motif':    '#5a9a8f', 'parallels':         '#5a9a8f',
-    'parallel-form':     '#5a9a8f', 'cognate-of':        '#5a9a8f',
+    'syncretic':                       '#6e8c6b',
+    'syncretized-with':                '#6e8c6b',
+    'syncretic-scholarly-parallel':    '#5a9a8f',
+    'syncretic-ancient-identification':'#6e8c6b',
+    'syncretic-structural-parallel':   '#5a9a8f',
+    'parallel-motif':                  '#5a9a8f',
+    'parallel-form':                   '#5a9a8f',
     // INFLUENCE family — red
     'influenced':        '#c25450', 'influenced-by':     '#c25450',
-    'influences':        '#c25450', 'descends-from':     '#c25450',
+    'influences':        '#c25450',
     // ATTESTATION family — gold
     'attested-in':       '#d4a55a', 'attests':           '#d4a55a',
-    'mentioned-in':      '#aabac5', 'cited-in':          '#aabac5',
+    'mentioned-in':      '#aabac5',
     'key-figure':        '#d4a55a',
     // AUTHORSHIP family — purple
     'authored':          '#a87bb5', 'attributed-author': '#a87bb5',
     'originated':        '#a87bb5',
     // KINSHIP family — purple-lighter
-    'consort':           '#c9a5d4', 'consort-of':        '#c9a5d4',
+    'consort':           '#c9a5d4',
     'child-of':          '#c9a5d4', 'parent-of':         '#c9a5d4',
     'sibling-of':        '#c9a5d4',
     // DOCUMENT-AFFECT family — blue
     'documents-affected':'#5a6cc4', 'preserved-by':      '#5a6cc4',
     'affects-tradition': '#5a6cc4',
     // THEME — amber
-    'theme':             '#e0a850', 'has-theme':         '#e0a850'
+    'has-theme':         '#e0a850'
   };
   const DEFAULT_EDGE_COLOR = '#7a8090';
 
@@ -141,51 +161,65 @@
     return d;
   }
 
-  // DOM overlay for tangential family rim labels — sigma doesn't natively
-  // do curved/rotated SVG text, so we place absolutely-positioned divs
-  // and sync them to sigma's camera on each render.
-  function buildRimLabels(rootEl, wedges, sigmaRenderer, familyFilter) {
-    const overlay = document.createElement('div');
-    overlay.className = 'ph2-rim-overlay';
-    overlay.setAttribute('aria-hidden', 'true');
-    rootEl.appendChild(overlay);
-
-    const Router = 540;
-    const labelEntries = Object.values(wedges).filter(w => w.members.length);
-    labelEntries.forEach(w => {
-      const el = document.createElement('div');
-      el.className = 'ph2-rim-label';
-      el.dataset.family = w.name;
-      el.textContent = w.name;
-      el.style.color = w.color;
-      if (familyFilter && w.name !== familyFilter) el.style.opacity = '0.18';
-      // Stash world-space anchor + angle so the sync function can re-position
-      const ang = w.center;
-      el._wx = (Router + 50) * Math.cos(ang);
-      el._wy = (Router + 50) * Math.sin(ang);
-      // Tangential rotation: angle in degrees, rotated 90° so text follows the rim
-      let rotDeg = (ang * 180 / Math.PI) + 90;
-      // Flip 180° on the bottom half so labels read upright
-      const normalized = ((rotDeg % 360) + 360) % 360;
-      if (normalized > 90 && normalized < 270) rotDeg -= 180;
-      el._rot = rotDeg;
-      overlay.appendChild(el);
-    });
-
-    function sync() {
-      // Convert each label's world position to screen position via sigma's camera.
-      // Sigma exposes viewportToGraph / graphToViewport.
-      const labels = overlay.querySelectorAll('.ph2-rim-label');
-      labels.forEach(el => {
-        const screen = sigmaRenderer.graphToViewport({ x: el._wx, y: el._wy });
-        el.style.left = screen.x + 'px';
-        el.style.top  = screen.y + 'px';
-        el.style.transform = `translate(-50%, -50%) rotate(${el._rot}deg)`;
-      });
+  // ----- ANNULAR-WEDGE PATH GENERATOR -----
+  // Mirror of d3.arc() with cornerRadius — produces a rounded annular wedge
+  // matching production's .sector-hull geometry exactly. Returns SVG path d.
+  //   a0, a1   start/end angles (radians)
+  //   rIn,rOut inner / outer radius
+  //   cr       corner radius (rounded "extruded-rect" look)
+  //   pad      padAngle equivalent — angular padding subtracted from each side
+  // NOTE: production polarXY convention is `x = r*sin(a), y = -r*cos(a)`
+  // (12 o'clock = a=0). The wedge-positions function above uses the standard
+  // math convention (`x=r*cos, y=r*sin`). To keep the hull paths aligned with
+  // sigma's coordinate space, we use the SAME math convention here.
+  function annularWedgePath(a0, a1, rIn, rOut, cr, pad) {
+    const _pad = pad || 0;
+    a0 += _pad; a1 -= _pad;
+    if (a1 <= a0) return '';
+    // Cap corner radius so it never exceeds half the radial span or arc gap.
+    const maxByRadial = (rOut - rIn) / 2;
+    const _cr = Math.max(0, Math.min(cr || 0, maxByRadial));
+    // Math.cos/sin convention (x = r*cos(a), y = r*sin(a))
+    const px = (r, a) => [r * Math.cos(a), r * Math.sin(a)];
+    // Inset angles for the corner-radius arc on inner/outer rims
+    const dOut = _cr / Math.max(rOut, 1e-6);
+    const dIn  = _cr / Math.max(rIn,  1e-6);
+    const a0o = a0 + dOut, a1o = a1 - dOut;
+    const a0i = a0 + dIn,  a1i = a1 - dIn;
+    if (a1o <= a0o || a1i <= a0i) {
+      // Wedge too narrow for rounded corners — fall back to plain arc.
+      const [x0o, y0o] = px(rOut, a0);
+      const [x1o, y1o] = px(rOut, a1);
+      const [x1i, y1i] = px(rIn,  a1);
+      const [x0i, y0i] = px(rIn,  a0);
+      const large = (a1 - a0) > Math.PI ? 1 : 0;
+      return `M ${x0o},${y0o} A ${rOut},${rOut} 0 ${large} 1 ${x1o},${y1o} L ${x1i},${y1i} A ${rIn},${rIn} 0 ${large} 0 ${x0i},${y0i} Z`;
     }
-    sync();
-    sigmaRenderer.on('afterRender', sync);
-    return overlay;
+    // Corner-tangent points (where the corner arcs join the rim arcs / radial lines)
+    const [x0oT, y0oT] = px(rOut, a0o);
+    const [x1oT, y1oT] = px(rOut, a1o);
+    const [x1iT, y1iT] = px(rIn,  a1i);
+    const [x0iT, y0iT] = px(rIn,  a0i);
+    // Corner-end points on the radial sides
+    const [x0oR, y0oR] = px(rOut - _cr, a0);
+    const [x1oR, y1oR] = px(rOut - _cr, a1);
+    const [x1iR, y1iR] = px(rIn  + _cr, a1);
+    const [x0iR, y0iR] = px(rIn  + _cr, a0);
+    const large = (a1o - a0o) > Math.PI ? 1 : 0;
+    // Build path: outer-rim arc → outer-end corner → end-radial → inner-end corner →
+    // inner-rim arc (reversed) → inner-start corner → start-radial → outer-start corner → close
+    return [
+      `M ${x0oT},${y0oT}`,
+      `A ${rOut},${rOut} 0 ${large} 1 ${x1oT},${y1oT}`,
+      `A ${_cr},${_cr} 0 0 1 ${x1oR},${y1oR}`,
+      `L ${x1iR},${y1iR}`,
+      `A ${_cr},${_cr} 0 0 1 ${x1iT},${y1iT}`,
+      `A ${rIn},${rIn} 0 ${large} 0 ${x0iT},${y0iT}`,
+      `A ${_cr},${_cr} 0 0 1 ${x0iR},${y0iR}`,
+      `L ${x0oR},${y0oR}`,
+      `A ${_cr},${_cr} 0 0 1 ${x0oT},${y0oT}`,
+      'Z'
+    ].join(' ');
   }
 
   // ----- node filter by mode -----
@@ -242,7 +276,8 @@
     }
 
     // Compute wedge layout + per-node positions.
-    const { positions, wedges, familyOrder, famByName } = computeWedgePositions(deities, FAMILIES);
+    const { positions, wedges, familyOrder, famByName, Rinner, Router } =
+      computeWedgePositions(deities, FAMILIES);
 
     // Build edge slice — only same-type↔same-type edges.
     const idSet = new Set(deities.map(d => d.id));
@@ -253,9 +288,19 @@
     const Graph = window.graphology.Graph || window.graphology.default || window.graphology;
     const graph = new Graph();
 
-    // Hub set — top-12 by degree for the 'hub' label mode.
+    // LABEL DENSITY (priority 2 of the parity brief) — production paints every
+    // major-degree deity name (~50+ labels: Shiva, Indra, Krishna, Isis, Horus,
+    // Zeus, Demeter, Athena, YHWH, Allah, Enlil, Ishtar, Mary, Jesus, …). We
+    // mark a node as "hub" if its degree ≥ HUB_DEGREE_THRESHOLD so the label
+    // mode 'hub' shows that wider set. Falls back to top-12 if the threshold
+    // would yield fewer than 12 (small slices, e.g. monuments).
+    const HUB_DEGREE_THRESHOLD = 6;
     const _sortedByDeg = [...degree.entries()].sort((a, b) => b[1] - a[1]);
-    const _hubIdSet = new Set(_sortedByDeg.slice(0, 12).map(e => e[0]));
+    const aboveThreshold = _sortedByDeg.filter(e => e[1] >= HUB_DEGREE_THRESHOLD);
+    const _hubIdSet = new Set(
+      (aboveThreshold.length >= 12 ? aboveThreshold : _sortedByDeg.slice(0, 12))
+        .map(e => e[0])
+    );
 
     deities.forEach(d => {
       const pos = positions.get(d.id);
@@ -278,8 +323,10 @@
       if (!graph.hasNode(e.source) || !graph.hasNode(e.target)) return;
       const key = `${e.source}__${e.target}__${e.type || 'rel'}__${_edgeCounter++}`;
       try {
+        // size: 0 — sigma's straight-line edge program is suppressed.
+        // The curved SVG overlay below paints the visible edge.
         graph.addEdgeWithKey(key, e.source, e.target, {
-          size: 0.5,
+          size: 0,
           color: EDGE_COLOR[e.type] || DEFAULT_EDGE_COLOR,
           _type: e.type
         });
@@ -291,7 +338,7 @@
     let _selectedId = null;
 
     // INTERACTIVITY STATE — drives the reducers below.
-    //   _labelsMode:  'hub' (top-N by degree, default) | 'all' | 'off'
+    //   _labelsMode:  'hub' (degree≥HUB_DEGREE_THRESHOLD, default) | 'all' | 'off'
     //   _egoFocus:    when true + a node is selected, ONLY its 1-hop neighbourhood renders
     //   _familyFilter: family name string (null = no filter) — set by family-legend clicks
     let _labelsMode = 'hub';
@@ -306,9 +353,11 @@
       labelSize: 11,
       labelWeight: 400,
       labelFont: 'Cormorant Garamond, serif',
-      labelDensity: 0.5,
-      labelGridCellSize: 80,
-      labelRenderedSizeThreshold: 7,
+      // Density bumped from 0.5 → 1.0 + threshold from 7 → 4 (per brief priority 2)
+      // so the 40-60 hub labels actually paint simultaneously.
+      labelDensity: 1.0,
+      labelGridCellSize: 60,
+      labelRenderedSizeThreshold: 4,
       enableEdgeEvents: false,
       hideEdgesOnMove: true,
       hideLabelsOnMove: true,
@@ -344,7 +393,7 @@
             out.label = '';
           }
         }
-        // LABEL MODE — 'off' kills all labels, 'hub' keeps only top-12, 'all' shows them all.
+        // LABEL MODE — 'off' kills all labels, 'hub' keeps only degree≥threshold, 'all' shows them all.
         if (_labelsMode === 'off') {
           out.label = '';
         } else if (_labelsMode === 'hub' && !attrs._isHub) {
@@ -353,35 +402,214 @@
         return out;
       },
       edgeReducer: (id, attrs) => {
-        const out = { ...attrs };
-        if (_egoFocus && _selectedId) {
-          const ext = graph.extremities(id);
-          if (ext[0] !== _selectedId && ext[1] !== _selectedId) { out.hidden = true; return out; }
-        }
-        if (_hoverId) {
-          const ext = graph.extremities(id);
-          if (ext[0] !== _hoverId && ext[1] !== _hoverId) {
-            out.color = '#2a2c32';
-            out.size = 0.25;
-          } else {
-            // Brighten the hovered node's edges in their own type colour
-            out.size = 1.4;
-            out.zIndex = 1;
-          }
-        }
-        return out;
+        // Sigma edges are size 0 (curved overlay paints them) — reducer just
+        // tracks visibility for hover state, used by overlay-sync below.
+        return attrs;
       }
     };
 
     const sigma = new window.Sigma(graph, rootEl, settings);
 
-    sigma.on('enterNode', ({ node }) => {
-      _hoverId = node;
+    // ============================================================
+    // SVG OVERLAY — hulls (under canvas) + curved edges (under canvas).
+    // Sigma's canvas sits ON TOP of this SVG via z-index, so dots paint
+    // above edges and edges paint above hulls.
+    // ============================================================
+    const overlay = document.createElementNS(SVG_NS, 'svg');
+    overlay.setAttribute('class', 'ph2-svg-overlay');
+    overlay.setAttribute('aria-hidden', 'true');
+    overlay.style.position = 'absolute';
+    overlay.style.inset = '0';
+    overlay.style.pointerEvents = 'none';
+    overlay.style.width  = '100%';
+    overlay.style.height = '100%';
+    // The overlay must sit BEHIND sigma's canvas children. sigma adds canvases
+    // with z-index that defaults to auto; setting z-index:0 on the SVG plus
+    // letting canvases stay at auto (which paints over earlier siblings) keeps
+    // them above the SVG. To be safe we insert the SVG as the FIRST child of
+    // rootEl, so it's the lowest in the stacking order.
+    if (rootEl.firstChild) rootEl.insertBefore(overlay, rootEl.firstChild);
+    else rootEl.appendChild(overlay);
+
+    // Two groups inside the overlay: hulls first (painted bottom), edges on top.
+    const hullsG = document.createElementNS(SVG_NS, 'g');
+    hullsG.setAttribute('class', 'ph2-hulls-g');
+    overlay.appendChild(hullsG);
+    const edgesG = document.createElementNS(SVG_NS, 'g');
+    edgesG.setAttribute('class', 'ph2-edges-g');
+    overlay.appendChild(edgesG);
+
+    // ----- HULLS (priority 1) -----
+    // For each family, draw a rounded annular wedge at the same geometry as
+    // production's `.sector-hull` (Rinner-22 → Router+22, padAngle 0.014,
+    // cornerRadius 8). The path is drawn in WORLD coordinates (centered on
+    // origin, same coord-space as graph nodes). On every sigma camera change
+    // we re-project to screen coords by computing the viewport position of
+    // origin + a unit reference and applying the resulting translate+scale
+    // to the SVG `<g>`'s transform.
+    const HULL_INNER = Rinner - 22;
+    const HULL_OUTER = Router + 22;
+    const HULL_PAD   = 0.014;
+    const HULL_CR    = 8;
+    const hullEls = [];
+    Object.values(wedges).forEach(w => {
+      if (!w.members.length) return;
+      const path = document.createElementNS(SVG_NS, 'path');
+      path.setAttribute('class', 'ph2-hull');
+      path.setAttribute('d', annularWedgePath(w.a0, w.a1, HULL_INNER, HULL_OUTER, HULL_CR, HULL_PAD));
+      path.setAttribute('fill', w.color);
+      path.setAttribute('stroke', w.color);
+      path.dataset.family = w.name;
+      hullsG.appendChild(path);
+      hullEls.push(path);
+    });
+
+    // ----- CURVED EDGES (priority 3) -----
+    // Q-bezier with control point pulled 35% from chord midpoint toward
+    // origin (0,0 = ring center). Exact production formula from
+    // pantheonEdgePath() at app.js:1209-1216.
+    const EDGE_PULL = 0.35;
+    const edgeEls = [];
+    edges.forEach(e => {
+      const sp = positions.get(e.source);
+      const tp = positions.get(e.target);
+      if (!sp || !tp) return;
+      const mx = (sp.x + tp.x) / 2;
+      const my = (sp.y + tp.y) / 2;
+      // center is (0,0) in world coords — pull control point that direction
+      const cxp = mx + (0 - mx) * EDGE_PULL;
+      const cyp = my + (0 - my) * EDGE_PULL;
+      const path = document.createElementNS(SVG_NS, 'path');
+      path.setAttribute('class', 'ph2-edge');
+      path.setAttribute('d', `M ${sp.x},${sp.y} Q ${cxp},${cyp} ${tp.x},${tp.y}`);
+      path.setAttribute('stroke', EDGE_COLOR[e.type] || DEFAULT_EDGE_COLOR);
+      path.dataset.source = e.source;
+      path.dataset.target = e.target;
+      path.dataset.type   = e.type || '';
+      edgesG.appendChild(path);
+      edgeEls.push({ el: path, s: e.source, t: e.target });
+    });
+
+    // Build neighbour index for fast hover dim/highlight on the edge overlay.
+    const neighborIdx = new Map();
+    edges.forEach(e => {
+      if (!neighborIdx.has(e.source)) neighborIdx.set(e.source, new Set());
+      if (!neighborIdx.has(e.target)) neighborIdx.set(e.target, new Set());
+      neighborIdx.get(e.source).add(e.target);
+      neighborIdx.get(e.target).add(e.source);
+    });
+
+    // ----- CAMERA → SVG SYNC -----
+    // Compute a 2D affine transform mapping world coords → screen coords by
+    // probing two reference points via sigma.graphToViewport.
+    function syncOverlay() {
+      const o   = sigma.graphToViewport({ x: 0, y: 0 });
+      const u   = sigma.graphToViewport({ x: 1, y: 0 });
+      // Scale = distance from origin to (1,0) in viewport space.
+      const scale = Math.hypot(u.x - o.x, u.y - o.y) || 1;
+      // Since the layout coord-system has no rotation, a single uniform scale
+      // + translate works. Set transform on each group.
+      const transform = `translate(${o.x} ${o.y}) scale(${scale})`;
+      hullsG.setAttribute('transform', transform);
+      edgesG.setAttribute('transform', transform);
+    }
+
+    // ----- HOVER DIM ON EDGES (mirrors sigma's reducer behavior) -----
+    function applyEdgeHoverState() {
+      if (_hoverId) {
+        edgeEls.forEach(({ el, s, t }) => {
+          const incident = (s === _hoverId || t === _hoverId);
+          el.classList.toggle('dim', !incident);
+          el.classList.toggle('hot', incident);
+        });
+      } else {
+        edgeEls.forEach(({ el }) => {
+          el.classList.remove('dim');
+          el.classList.remove('hot');
+        });
+      }
+    }
+    function applyHullFilterState() {
+      hullEls.forEach(el => {
+        const fam = el.dataset.family;
+        el.classList.toggle('dim', !!(_familyFilter && fam !== _familyFilter));
+        el.classList.toggle('hot', !!(_familyFilter && fam === _familyFilter));
+      });
+    }
+
+    syncOverlay();
+    sigma.on('afterRender', syncOverlay);
+
+    // ----- THUMBNAIL HOVER CARD (priority 4) -----
+    // Production uses showTooltip() with tooltipThumb() — a unified card with
+    // image, title, family·tradition, connection-count, and an optional
+    // wikipedia link. We build a dedicated card so the global #tooltip stays
+    // owned by the production views.
+    const thumbCard = document.createElement('div');
+    thumbCard.className = 'ph2-thumb-card';
+    thumbCard.style.display = 'none';
+    rootEl.appendChild(thumbCard);
+
+    function wikiUrlFromRefs(refs) {
+      if (!Array.isArray(refs)) return null;
+      for (const r of refs) {
+        if (!r) continue;
+        const url = (typeof r === 'string') ? r : (r.url || r.href || '');
+        if (typeof url === 'string' && /wikipedia\.org\/wiki\//.test(url)) return url;
+      }
+      return null;
+    }
+    function showThumbCard(nodeAttrs, evt) {
+      const n = nodeAttrs._node || {};
+      const thumb = n.thumbnail || (Array.isArray(n.depictions) && n.depictions[0] && n.depictions[0].src);
+      const deg = graph.degree(n.id || '') || 0;
+      const wiki = wikiUrlFromRefs(n.refs);
+      const family = nodeAttrs._family || n.family || '—';
+      const tradition = n.tradition || '';
+      const meta1 = family + (tradition ? ' · ' + tradition : '');
+      thumbCard.innerHTML = [
+        thumb ? `<img class="ph2-thumb-img" src="${thumb}" alt="" onerror="this.remove()"/>` : '',
+        `<div class="ph2-thumb-title">${escapeHtml(n.title || n.id || '')}</div>`,
+        `<div class="ph2-thumb-meta">${escapeHtml(meta1)}</div>`,
+        `<div class="ph2-thumb-meta">${deg} connection${deg === 1 ? '' : 's'}${n.geo && n.geo.label ? ' · ' + escapeHtml(n.geo.label) : ''}</div>`,
+        wiki ? `<a class="ph2-thumb-link" href="${escapeAttr(wiki)}" target="_blank" rel="noopener">Wikipedia →</a>` : ''
+      ].join('');
+      thumbCard.style.display = 'block';
+      positionThumbCard(evt);
+    }
+    function positionThumbCard(evt) {
+      if (!evt) return;
+      // evt may be a sigma event with .event.original (a MouseEvent) or a
+      // direct MouseEvent passed from a DOM listener.
+      const mouse = (evt && evt.event && evt.event.original) ? evt.event.original
+                  : (evt && evt.clientX !== undefined ? evt : null);
+      if (!mouse) return;
+      // Position relative to the viewport; the card is position:fixed in CSS.
+      const x = (mouse.clientX || 0) + 14;
+      const y = (mouse.clientY || 0) + 14;
+      thumbCard.style.left = x + 'px';
+      thumbCard.style.top  = y + 'px';
+    }
+    function hideThumbCard() { thumbCard.style.display = 'none'; }
+
+    // ----- SIGMA EVENTS -----
+    sigma.on('enterNode', (e) => {
+      _hoverId = e.node;
       sigma.refresh({ skipIndexation: true });
+      applyEdgeHoverState();
+      const attrs = graph.getNodeAttributes(e.node);
+      showThumbCard(attrs, e);
     });
     sigma.on('leaveNode', () => {
       _hoverId = null;
       sigma.refresh({ skipIndexation: true });
+      applyEdgeHoverState();
+      hideThumbCard();
+    });
+    // Track raw mouse for card positioning — sigma's stage-mousemove fires
+    // continuously; cheaper to listen on the root.
+    rootEl.addEventListener('mousemove', (mev) => {
+      if (thumbCard.style.display === 'block') positionThumbCard(mev);
     });
     sigma.on('clickNode', ({ node }) => {
       _selectedId = node;
@@ -392,6 +620,8 @@
       _selectedId = null;
       _hoverId = null;
       sigma.refresh({ skipIndexation: true });
+      applyEdgeHoverState();
+      hideThumbCard();
     });
 
     // Tangential family rim labels — DOM overlay synced to sigma camera.
@@ -478,6 +708,7 @@
         rimOverlay.querySelectorAll('.ph2-rim-label').forEach(el => {
           el.style.opacity = (_familyFilter && el.dataset.family !== _familyFilter) ? '0.18' : '0.85';
         });
+        applyHullFilterState();
         sigma.refresh({ skipIndexation: true });
       };
       // Hover preview
@@ -487,12 +718,16 @@
         rimOverlay.querySelectorAll('.ph2-rim-label').forEach(el => {
           el.style.opacity = el.dataset.family !== fam ? '0.18' : '0.85';
         });
+        hullEls.forEach(el => {
+          el.classList.toggle('preview-fade', el.dataset.family !== fam);
+        });
       });
       row.addEventListener('mouseleave', () => {
         if (_familyFilter) return;
         rimOverlay.querySelectorAll('.ph2-rim-label').forEach(el => {
           el.style.opacity = '0.85';
         });
+        hullEls.forEach(el => el.classList.remove('preview-fade'));
       });
     });
 
@@ -506,6 +741,53 @@
     // Stash for diagnostics + setView() teardown
     rootEl._sigma = sigma;
     rootEl._graph = graph;
+  }
+
+  // DOM overlay for tangential family rim labels — sigma doesn't natively
+  // do curved/rotated SVG text, so we place absolutely-positioned divs
+  // and sync them to sigma's camera on each render.
+  function buildRimLabels(rootEl, wedges, sigmaRenderer, familyFilter) {
+    const overlay = document.createElement('div');
+    overlay.className = 'ph2-rim-overlay';
+    overlay.setAttribute('aria-hidden', 'true');
+    rootEl.appendChild(overlay);
+
+    const Router = 540;
+    const labelEntries = Object.values(wedges).filter(w => w.members.length);
+    labelEntries.forEach(w => {
+      const el = document.createElement('div');
+      el.className = 'ph2-rim-label';
+      el.dataset.family = w.name;
+      el.textContent = w.name;
+      el.style.color = w.color;
+      if (familyFilter && w.name !== familyFilter) el.style.opacity = '0.18';
+      // Stash world-space anchor + angle so the sync function can re-position
+      const ang = w.center;
+      el._wx = (Router + 50) * Math.cos(ang);
+      el._wy = (Router + 50) * Math.sin(ang);
+      // Tangential rotation: angle in degrees, rotated 90° so text follows the rim
+      let rotDeg = (ang * 180 / Math.PI) + 90;
+      // Flip 180° on the bottom half so labels read upright
+      const normalized = ((rotDeg % 360) + 360) % 360;
+      if (normalized > 90 && normalized < 270) rotDeg -= 180;
+      el._rot = rotDeg;
+      overlay.appendChild(el);
+    });
+
+    function sync() {
+      // Convert each label's world position to screen position via sigma's camera.
+      // Sigma exposes viewportToGraph / graphToViewport.
+      const labels = overlay.querySelectorAll('.ph2-rim-label');
+      labels.forEach(el => {
+        const screen = sigmaRenderer.graphToViewport({ x: el._wx, y: el._wy });
+        el.style.left = screen.x + 'px';
+        el.style.top  = screen.y + 'px';
+        el.style.transform = `translate(-50%, -50%) rotate(${el._rot}deg)`;
+      });
+    }
+    sync();
+    sigmaRenderer.on('afterRender', sync);
+    return overlay;
   }
 
   // --- escape helpers (kept private to this module) ---

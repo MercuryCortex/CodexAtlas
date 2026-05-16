@@ -1736,6 +1736,75 @@ body.view-atlas main.canvas { background: var(--bg-0); }
   transition: left var(--t-layout) var(--ease), right var(--t-layout) var(--ease);
 }
 .pantheon-v2-pane canvas { display: block; }
+
+/* SVG overlay for translucent family hulls + curved bezier edges.
+   Sits as the FIRST child of the pane so sigma's canvases (added later)
+   paint above it — dots > edges > hulls in z-order. */
+.ph2-svg-overlay {
+  position: absolute; inset: 0;
+  pointer-events: none;
+  overflow: visible;
+}
+/* HULLS — rounded annular wedges, one per family. Geometry matches
+   production's .sector-hull (Rinner-22 → Router+22, padAngle 0.014,
+   cornerRadius 8). Quiet by default; hot when family-filter is locked. */
+.ph2-hull {
+  fill-opacity: 0.12;
+  stroke-opacity: 0.30;
+  stroke-width: 0.8;
+  transition: fill-opacity 250ms ease, stroke-opacity 250ms ease;
+  vector-effect: non-scaling-stroke;
+}
+.ph2-hull.dim          { fill-opacity: 0.025; stroke-opacity: 0.08; }
+.ph2-hull.hot          { fill-opacity: 0.20;  stroke-opacity: 0.60; }
+.ph2-hull.preview-fade { fill-opacity: 0.03;  stroke-opacity: 0.10; }
+/* EDGES — Q-bezier paths drawn in the same overlay. Quiet slate-blue by
+   default; per-type stroke color from JS only when .hot (hover/select). */
+.ph2-edge {
+  fill: none;
+  stroke: rgba(120, 140, 182, 0.45);
+  stroke-width: 0.6;
+  stroke-opacity: 0.55;
+  vector-effect: non-scaling-stroke;
+  transition: stroke-opacity 180ms ease, stroke-width 180ms ease;
+}
+.ph2-edge.dim { stroke-opacity: 0.04; }
+.ph2-edge.hot {
+  /* When highlighted, use the type-color we assigned inline on the element. */
+  stroke-opacity: 0.85;
+  stroke-width: 1.2;
+}
+
+/* THUMBNAIL HOVER CARD — modeled on production's #tooltip + .tt-thumb. */
+.ph2-thumb-card {
+  position: fixed; pointer-events: none;
+  background: rgba(13,17,25,0.96); backdrop-filter: blur(8px);
+  border: 1px solid var(--border); border-radius: 4px;
+  padding: 8px 12px; max-width: 260px;
+  z-index: 1000;
+  font-family: var(--sans);
+  color: var(--text-0); font-size: 12px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.5);
+  left: 0; top: 0;
+}
+.ph2-thumb-img {
+  display: block; width: 100%; max-width: 220px;
+  max-height: 130px; object-fit: cover;
+  object-position: center top;
+  border-radius: 3px; margin: -4px -2px 8px;
+  border: 1px solid var(--border);
+  background: var(--bg-2);
+}
+.ph2-thumb-title { font-weight: 500; color: var(--text-0); margin-bottom: 2px; }
+.ph2-thumb-meta  { font-size: 10.5px; color: var(--text-2); font-family: var(--mono); }
+.ph2-thumb-link {
+  display: inline-block; margin-top: 6px;
+  font-family: var(--mono); font-size: 10.5px;
+  color: var(--gold); text-decoration: none;
+  pointer-events: auto;  /* allow click despite parent pointer-events:none */
+}
+.ph2-thumb-link:hover { text-decoration: underline; }
+
 .ph2-rim-overlay {
   position: absolute; inset: 0;
   pointer-events: none;

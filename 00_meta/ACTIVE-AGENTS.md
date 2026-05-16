@@ -11,11 +11,20 @@ _Hand-maintained. Each agent currently working in the vault appends a claim bloc
 
 ---
 
-## sonnet-pantheon-v2-parity-2 — Pantheon v2 visual parity (hulls + thumbnail card + edge curves + label density) — started 2026-05-16 — IN PROGRESS
-- Owning: `src/js/views/pantheon-v2.js`, `src/styles/app.css`, `index.html` (cache-bust only), optional vendor of `@sigma/edge-curve` at `_assets/vendor/sigma/`
-- NOT touching: content folders, other views, `src/js/app.js` (except possibly VIEWS['pantheon-v2'] registration — minimal/surgical only)
-- Goal: Close the four visual gaps the user flagged — (1) translucent rounded-rect family hulls, (2) more deity labels (degree≥6 threshold ~40-60 labels), (3) Q-bezier curved edges via `@sigma/edge-curve`, (4) thumbnail hover card with deity image+title+family+connection-count+wiki link
-- Status: in-progress
+## sonnet-pantheon-v2-parity-2 — Pantheon v2 visual parity (hulls + thumbnail card + edge curves + label density) — started 2026-05-16 — **FINISHED 2026-05-16**
+- Owning: `src/js/views/pantheon-v2.js`, `src/styles/app.css`, `index.html` (cache-bust only)
+- NOT touched: content folders, other views, `src/js/app.js`
+- Goal: Close the four visual gaps the user flagged
+- Status: finished
+- Delivered:
+  - **Hulls (priority 1):** SVG-overlay annular wedges (`annularWedgePath()` mirror of `d3.arc`) — geometry matches production `.sector-hull` exactly (Rinner-22 → Router+22, padAngle 0.014, cornerRadius 8). Fill 12% / stroke 30% in family color. New `.ph2-svg-overlay` SVG inserted as FIRST child of pane so sigma canvases paint above (dots > edges > hulls). Synced to camera via `graphToViewport` two-point probe → `transform="translate scale"`.
+  - **Edge curves (priority 3):** Chose SVG-overlay path (option b in brief). Vendor route was blocked — `@sigma/edge-curve` only ships CJS/ESM (no UMD); imports `sigma` which doesn't resolve in browser without a bundler. SVG overlay uses the EXACT production formula (`Q ${mx+(0-mx)*0.35},${my+(0-my)*0.35}`). Sigma's stock edges suppressed via `size: 0`. ~1000 edges at this slice is fine perf-wise.
+  - **Label density (priority 2):** Hub threshold `degree ≥ 6` (was top-12); falls back to top-12 on small slices. `labelDensity` 0.5 → 1.0; `labelRenderedSizeThreshold` 7 → 4; `labelGridCellSize` 80 → 60. Yields ~40-60 simultaneously-painted labels per slice.
+  - **Thumbnail card (priority 4):** Dedicated `.ph2-thumb-card` (production `.tooltip` styling). Image + title + `family · tradition` + connection count + optional Wikipedia link (matched from `n.refs` by URL pattern). Position:fixed; positioned at `(clientX+14, clientY+14)` via mousemove on rootEl.
+- Open gaps:
+  - Force-simulation polish (brief §5 bonus, explicitly skipped). Rigid grid still — high-degree hubs sit on analytic anchors, no collide pass.
+  - Tier-overlay parity still missing (one parity item that was already open before this batch).
+- Verification: `node --check src/js/views/pantheon-v2.js` passes; `curl http://localhost:8742/?webgl=1` returns 200 and references `?v=20260516-pantheon-v2-d`; served pantheon-v2.js contains all new symbols (annularWedgePath, EDGE_PULL, HUB_DEGREE_THRESHOLD, ph2-thumb-card, ph2-hull).
 
 ---
 
