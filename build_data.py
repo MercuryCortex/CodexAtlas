@@ -387,9 +387,9 @@ def tradition_family(t: str) -> str:
         return "Vedic"
     if "zoroastr" in s or "avesta" in s or "iranian" in s or "ahura" in s:
         return "Zoroastrian"
-    if ("armenian" in s) and ("apostolic" not in s) and ("christian" not in s):
+    if "armenian" in s and "apostolic" not in s:
         return "Armenian"
-    if "etruscan" in s:
+    if "etruscan" in s and "roman" not in s:
         return "Etruscan"
     if "roman" in s:
         return "Roman"
