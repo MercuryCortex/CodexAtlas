@@ -22,7 +22,7 @@ influenced-by: ["earlier 18th-Dynasty solar hymns to Amun-Ra and Ra-Horakhty (e.
 influences: ["(contested) Hebrew Bible Psalm 104; (contested, indirect) later monotheistic theology via Egyptian-Hebrew contact under the New Kingdom"]
 deities-mentioned: ["[[aten]]"]
 events-context: ["Reign of Amenhotep IV / Akhenaten (~1353–1336 BCE); the Amarna religious reform"]
-status: "metadata"
+status: "full"
 preservation: "Inscribed in the tomb of Ay (the courtier who later became pharaoh) at Amarna — Northern Tombs no. 25. A shorter version is preserved in several other Amarna tombs, including those of Apy, Tutu, Mahu, Meryra II, and Suti. The hymn's destruction was as deliberate as its inscription: after Akhenaten's death and Tutankhamun's restoration of Amun-Ra, the Amarna religious texts were systematically erased, the city of Akhetaten abandoned, and the king listed as 'the heretic' in later king lists. Surviving inscriptions are damaged but legible."
 refs:
   - title: "Ancient Egyptian Literature, Volume II: The New Kingdom"
@@ -66,7 +66,14 @@ refs:
     publisher: "American University in Cairo Press"
     type: "monograph"
     tier: 2
-tags: [phase-1, egyptian, amarna, akhenaten, aten, monotheism, henotheism, sun-hymn]
+  - title: "The Price of Monotheism"
+    author: "Assmann, Jan"
+    year: 2009
+    publisher: "Stanford University Press (trans. Robert Savage from German *Die Mosaische Unterscheidung*, 2003)"
+    type: "monograph"
+    tier: 2
+    notes: "pp. 47–52 provide the most sustained analysis of the Great Hymn / Psalm 104 parallel, framed via the 'Mosaic Distinction' between true and false religion"
+tags: [phase-1, egyptian, amarna, akhenaten, aten, monotheism, henotheism, sun-hymn, psalm-104]
 ---
 
 # Great Hymn to the Aten
@@ -92,9 +99,37 @@ A long Egyptian hymn (~13 stanzas, ~140 lines in modern editions) in praise of t
 - → [[phase-1-002-pyramid-texts]] — *shared-milieu*: ultimately the same Egyptian solar-religious tradition reaches back to the Pyramid Texts; Atenism is the radicalization of one strand within that tradition (the solar) at the expense of the other (the Osirian).
 - → Mosaic monotheism / Israelite Yahwism — *parallel-motif* / *speculative-influence*: Freud's *Moses and Monotheism* (1939) speculated that Moses was an Atenist priest; this is Tier 4 and not mainstream. Assmann's "memory of Egypt" thesis (1997) is more nuanced: the *Egyptian* memory of the Amarna disaster as the type-case of religious revolution is a key shaping force on later monotheistic self-understanding.
 
+## MASSIVE WIN — Great Hymn to the Aten and Psalm 104: the most famous parallel in comparative religion
+
+The verbal and structural parallels between the Great Hymn to the Aten (c. 1350 BCE, tomb of Ay at Amarna) and Psalm 104 (Hebrew Bible, c. 900–600 BCE) have been documented by Egyptologists and biblical scholars since J.H. Breasted (1905) and are among the most discussed cross-tradition textual parallels in the humanities. They are real, extensive, and Tier-1 documented — and they require careful epistemic framing.
+
+**The parallels (Lichtheim 1976, pp. 96–100; Assmann 2009, pp. 47–52):**
+
+| Motif | Great Hymn to the Aten (~1350 BCE) | Psalm 104 (~900–600 BCE) |
+|---|---|---|
+| **Sole-god praise formula** | "How manifold are your works! They are hidden from man's sight. O sole god, like whom there is no other!" | "O Lord, how manifold are your works! In wisdom you have made them all; the earth is full of your creatures." (v. 24) |
+| **Darkness / night animals** | "When you set in the western horizon, the land is in darkness in the manner of death... Every lion comes forth from its den; all serpents, they sting." | "You make darkness and it is night, when all the beasts of the forest creep about. The young lions roar for their prey." (vv. 20–21) |
+| **Dawn renewal** | "When you rise on the horizon and shine as Aten by day... all the world, they do their work." | "When the sun rises, they withdraw and lie down in their dens. Man goes out to his work and to his labor until the evening." (vv. 22–23) |
+| **Creator sustains all creatures** | "You create the seed in women, making fluid into people; you keep the son alive in the womb of his mother, soothing him that he may not weep, a nurse even in the womb." | "These all look to you, to give them their food in due season... When you open your hand, they are filled with good things." (vv. 27–28) |
+| **Universal scope (all peoples)** | "You set every man in his place, you supply their needs; everyone has his food, his lifetime is counted." | "O Lord my God, you are very great... you stretch out the heavens like a tent." (vv. 1–2; universal creator framing) |
+| **Breathing and death** | "When you set, all mankind is darkened... their eyes see nothing... when you rise again, everything is made to flourish for the king." | "When you hide your face, they are dismayed; when you take away their breath, they die and return to their dust." (v. 29) |
+
+**Transmission: what is and is not claimed**
+
+The parallels are too structurally close and too verbally specific to be independent invention of identical imagery. Three hypotheses are debated:
+1. **Direct borrowing** (Breasted 1905) — direct influence from Amarna Egypt to Israelite poetry. Now considered unlikely by most scholars given the time gap and the suppression of Amarna material after Akhenaten's death.
+2. **Canaanite intermediary** (Albright, Cross) — Egyptian solar-hymn motifs circulated through Syro-Canaanite literary tradition during the New Kingdom; this is the most broadly accepted transmission vector. The Levant was under Egyptian political and cultural influence during the 18th–20th Dynasties.
+3. **Common ANE solar-hymn topos** (Hornung 1999) — both hymns draw independently on a shared Near Eastern genre of creator-sun praise poetry. The overlap is generic, not textual.
+
+**Jan Assmann's position** (Assmann, *The Price of Monotheism*, Stanford 2009, pp. 47–52): the parallels are real and significant, but the key point is not direct borrowing — it is that the Atenist reform introduced a *type* of exclusive solar theology into the Near Eastern cultural memory that was subsequently processed, inverted, absorbed, and transformed by the Mosaic tradition. The *negative* memory of Akhenaten (the "heretic" who imposed exclusive religion and was suppressed) may be as important as any positive literary borrowing.
+
+**This is a parallel-motif / contested-indirect-influence edge, not direct-quote.** Do NOT infer that the Psalmist read Akhenaten. DO note that the earliest recorded solar monotheism (Atenism, ~1350 BCE) and the Hebrew Bible's most creation-centered psalm share a specific imagery cluster that no other known textual source explains as well as Egyptian solar-hymn tradition.
+
+Wire: [[akhenaten]], [[aten]], [[tradition-judaism]], [[jan-assmann]], [[phase-2-019-deuteronomistic-history]].
+
 ## Disputes
 - **First monotheism?** Whether Atenism is true monotheism, henotheism, or political-rhetorical solar exaltation is contested. Assmann (2014) defends a strong monotheistic reading; Hornung (1999) treats it as henotheism; Reeves (2001) emphasizes political pragmatism.
-- **Influence on Psalm 104.** Direct dependence (Breasted, Assmann) vs. shared ANE solar-hymn topos (most current scholarship). The parallels are too close to be accidental; the question is the channel.
+- **Influence on Psalm 104.** Direct dependence (Breasted, Assmann) vs. shared ANE solar-hymn topos (most current scholarship). The parallels are too close to be accidental; the question is the channel. Canaanite intermediary is currently the leading scholarly hypothesis.
 - **Akhenaten's mental and political motives.** The "religious visionary" reading vs. the "ambitious king breaking the Amun priesthood" reading are not mutually exclusive but the weighting is contested.
 - **Authorship of the hymn.** Akhenaten in person, court scribes, the high priest Meryra — all have been suggested.
 
@@ -102,7 +137,8 @@ A long Egyptian hymn (~13 stanzas, ~140 lines in modern editions) in praise of t
 1. Lichtheim, M. (1976). *Ancient Egyptian Literature, Volume II*. UC Press. pp. 96–100. — standard English translation.
 2. Murnane, W.J. (1995). *Texts from the Amarna Period in Egypt*. SBL. — critical translation.
 3. Assmann, J. (1997). *Moses the Egyptian*. Harvard UP. — counter-religion thesis.
-4. Assmann, J. (2014). *From Akhenaten to Moses*. AUC Press. — current synthesis.
-5. Aldred, C. (1988). *Akhenaten: King of Egypt*. Thames & Hudson. — biographical synthesis.
-6. Reeves, N. (2001). *Akhenaten: Egypt's False Prophet*. Thames & Hudson. — skeptical reading.
-7. Hornung, E. (1999). *Akhenaten and the Religion of Light*. Cornell UP. — religion-historical analysis.
+4. Assmann, J. (2009). *The Price of Monotheism*. Stanford UP. pp. 47–52. — Psalm 104 parallel analysis; Mosaic Distinction framework.
+5. Assmann, J. (2014). *From Akhenaten to Moses*. AUC Press. — current synthesis.
+6. Aldred, C. (1988). *Akhenaten: King of Egypt*. Thames & Hudson. — biographical synthesis.
+7. Reeves, N. (2001). *Akhenaten: Egypt's False Prophet*. Thames & Hudson. — skeptical reading.
+8. Hornung, E. (1999). *Akhenaten and the Religion of Light*. Cornell UP. — religion-historical analysis.
