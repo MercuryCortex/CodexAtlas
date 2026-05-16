@@ -536,6 +536,172 @@ window.ALPHA_GLYPH_DATA = [
     relatedNodes: ['alphabet-medu-netjer', 'alphabet-creation-by-word'],
   },
 
+  // ── Egyptian hieroglyph expansion wave 2 — divine family, animals, architecture ──
+
+  // — The Divine Family (Osiris / Isis / Set) —
+  {
+    letter: '𓁨', name: 'Osiris', meaning: 'the murdered god — death, resurrection, judgment', gardiner: 'C11',
+    unicode: 0x013068, phoneme: 'wsjr', greek: '(none)', latin: '(none)',
+    hebrew: '(none)', arabic: '(none)', phoenician: '(none)', scriptOnly: ['hieroglyph'],
+    note: 'Osiris is depicted as a mummified king wearing the White Crown, holding the crook and flail. He is the god of the dead, the judge of souls, the grain that dies and rises. His story: murdered by his brother Set, dismembered and scattered across Egypt, reassembled by his wife Isis, resurrected just long enough to conceive Horus, then ruling the afterlife as its lord.',
+    investigationHighlight: 'Osiris is the oldest fully documented dying-and-rising god, with a continuous textual record from c. 2400 BCE. The parallels to Christ are the most debated in the history of comparative religion: murdered god, body scattered, reassembled by a faithful woman, resurrected, reigns in heaven while his son continues on earth. The 1st-century historian Plutarch wrote a full account of the Osiris myth (De Iside et Osiride) while Christianity was forming. Alexandrian Egypt — where the two traditions overlapped for 300 years — is the contact zone. Whether the parallels represent direct influence or convergent myth is still contested, but the structural identity is exact.',
+    relatedNodes: ['alphabet-medu-netjer', 'alphabet-creation-by-word'],
+  },
+  {
+    letter: '𓁩', name: 'Isis', meaning: 'the divine mother — magic, devotion, resurrection', gardiner: 'C12',
+    unicode: 0x013069, phoneme: 'ꜣst', greek: '(none)', latin: '(none)',
+    hebrew: '(none)', arabic: '(none)', phoenician: '(none)', scriptOnly: ['hieroglyph'],
+    note: 'Isis is depicted as a woman with a throne hieroglyph on her head. She is the supreme magician, the devoted wife who reassembled Osiris, and the mother of Horus. Her cult spread across the Roman Empire — temples of Isis stood in Rome, Pompeii, London. She absorbed attributes of almost every goddess in the ancient world.',
+    investigationHighlight: 'Isis is the most directly contested parallel to the Virgin Mary in religious history. Both are: divine mothers of a god-king son, depicted with the son on their lap, associated with the star Sirius (Isis) and the Star of Bethlehem (Mary), titled "Queen of Heaven," "Mother of God," and "Seat of Wisdom." The title Theotokos (God-bearer, given to Mary at the Council of Ephesus in 431 CE) was previously applied to Isis. The Council of Ephesus met in a city that had a famous Isis temple. Art historians document the iconographic continuity: the seated Isis nursing Horus is the compositional prototype for the Madonna and Child. No direct causal link has been proved — but the image is identical.',
+    relatedNodes: ['alphabet-medu-netjer', 'alphabet-creation-by-word', 'alphabet-coptic'],
+  },
+  {
+    letter: '𓃩', name: 'Set', meaning: 'chaos, storm, the desert — the necessary enemy', gardiner: 'E20',
+    unicode: 0x0130E9, phoneme: 'stẖ', greek: '(none)', latin: '(none)',
+    hebrew: '(none)', arabic: '(none)', phoenician: '(none)', scriptOnly: ['hieroglyph'],
+    note: 'Set is the god of the desert, storms, foreigners, and chaos — the murderer of Osiris. He is depicted with the enigmatic "Set animal" head, an unidentified creature with squared ears and a curved snout. Yet Set is not simply evil: he stands at the prow of Ra\'s solar barque and fights off Apophis every night. Without Set, the sun does not rise.',
+    investigationHighlight: 'Set is the most complex figure in Egyptian theology — the god of chaos who is also indispensable. The Greeks identified Set with their monster Typhon (giving us the word "typhoon"). Roman-era Egyptians demonized Set entirely, and scholars have traced this demonization as the route by which Set\'s attributes transferred to Satan: the red color, the desert domain, the role as opponent of the good god. But in older Egyptian theology Set was a necessary cosmic force — the violence that keeps chaos from becoming total stagnation. The question of whether evil is a necessary structural feature of the cosmos (Set theology) or an external intruder to be destroyed (later Satan theology) is one of the deepest in religious thought.',
+    relatedNodes: ['alphabet-medu-netjer', 'alphabet-creation-by-word'],
+  },
+
+  // — Creator Deities —
+  {
+    letter: '𓁣', name: 'Ptah', meaning: 'the divine craftsman — creation through thought and speech', gardiner: 'C7',
+    unicode: 0x013063, phoneme: 'ptḥ', greek: '(none)', latin: '(none)',
+    hebrew: '(none)', arabic: '(none)', phoenician: '(none)', scriptOnly: ['hieroglyph'],
+    note: 'Ptah is the mummiform god of Memphis — the patron of craftsmen, architects, and all creative work. He is depicted tightly wrapped, standing on a plinth, holding a composite staff combining the Djed pillar, the Was scepter, and the Ankh. The Memphite Theology (c. 700 BCE but based on much older material) says that Ptah created the world through his heart (mind) and tongue (speech) — thought plus utterance equals existence.',
+    investigationHighlight: 'Ptah\'s Memphite Theology — "creation through the heart (thought) and tongue (speech)" — is the Egyptian version of the Logos doctrine. John 1:1 ("In the beginning was the Word") translates into Egyptian as the Ptah creation formula. The text explicitly says: "All the gods, all people, all animals, all plants came into being through the thought of Ptah\'s heart and the utterance of Ptah\'s tongue." This is written c. 700 BCE (possibly encoding a text from 2300 BCE) — over a millennium before John\'s Gospel. The Word that creates the world is an Egyptian theological principle first articulated in Memphis.',
+    relatedNodes: ['alphabet-medu-netjer', 'alphabet-creation-by-word', 'alphabet-sefer-yetzirah'],
+  },
+  {
+    letter: '𓁛', name: 'Khnum', meaning: 'the divine potter — creator of bodies and souls on the wheel', gardiner: 'C2',
+    unicode: 0x01305B, phoneme: 'ẖnmw', greek: '(none)', latin: '(none)',
+    hebrew: '(none)', arabic: '(none)', phoenician: '(none)', scriptOnly: ['hieroglyph'],
+    note: 'Khnum is the ram-headed god of the Nile cataracts and the divine potter who creates human bodies and their Ka (spirit double) simultaneously on a potter\'s wheel. He shapes every person from clay before birth. As the guardian of the Nile\'s source, he also controls the annual inundation — the flood that makes Egypt fertile.',
+    investigationHighlight: 'Khnum the potter-god is the Egyptian origin of every "God as potter" image in the Abrahamic traditions. The Hebrew Bible uses the potter\'s wheel metaphor for divine creation at least four times: Isaiah 64:8 ("we are the clay, you are the potter"), Jeremiah 18 (God reshapes Israel like a potter reshapes clay), Job 10:9 ("you shaped me like clay"), Romans 9:21 (the potter and the vessel). In Egyptian theology this is not a metaphor — Khnum literally creates each person on a wheel, body and soul simultaneously. The image traveled: Egypt → Hebrew Bible → Paul → Christian theology. Every time a Christian says "the potter and the clay," they are using an image invented in Egyptian temple theology.',
+    relatedNodes: ['alphabet-medu-netjer', 'alphabet-creation-by-word'],
+  },
+
+  // — Solar and Cosmic Deities —
+  {
+    letter: '𓁥', name: 'Hathor', meaning: 'the celestial cow — love, beauty, music, the sky itself', gardiner: 'C9',
+    unicode: 0x013065, phoneme: 'ḥwt-ḥr', greek: '(none)', latin: '(none)',
+    hebrew: '(none)', arabic: '(none)', phoenician: '(none)', scriptOnly: ['hieroglyph'],
+    note: 'Hathor is the goddess of love, music, fertility, and beauty — depicted with cow horns holding a sun disk, or as a cow herself. Her name means "House of Horus" — she is the sky that contains the sun. She is the goddess of joy and the mistress of the West (the land of the dead). She gives the sistrum; she is associated with mirrors, gold, and turquoise.',
+    investigationHighlight: 'Hathor is the most syncretic deity in the ancient world. The Greeks identified her with Aphrodite; the Romans with Venus. She absorbed attributes from Isis, Nut, and Sekhmet. Her cult reached deep into Nubia, the Sinai, and the Levant. The Sinai copper mines where the Proto-Sinaitic alphabet was invented (c. 1850 BCE) were under the patronage of Hathor — the first tentative letters that became A B C were scratched by miners who worked in the goddess\'s domain. The alphabet itself may have been born in Hathor\'s temple. The letter that became aleph (the ox/bull head) could be read as Hathor\'s own symbol.',
+    relatedNodes: ['alphabet-medu-netjer', 'alphabet-proto-sinaitic', 'alphabet-phoenician'],
+  },
+  {
+    letter: '𓁢', name: 'Sekhmet', meaning: 'the lion goddess — destruction, plague, and healing', gardiner: 'C6',
+    unicode: 0x013062, phoneme: 'sḫmt', greek: '(none)', latin: '(none)',
+    hebrew: '(none)', arabic: '(none)', phoenician: '(none)', scriptOnly: ['hieroglyph'],
+    note: 'Sekhmet is the lion-headed goddess of war, plague, and healing — the destructive aspect of the solar Eye of Ra. Her name means "the Powerful One." When Ra grew angry at humanity, he sent Sekhmet to destroy them; she nearly annihilated the human race before Ra tricked her into drinking beer dyed red as blood. Her priests were the physicians of Egypt.',
+    investigationHighlight: 'Sekhmet is the Egyptian embodiment of the paradox that the god who destroys is also the god who heals. The same deity sends plague and removes it — the same solar fire that burns can cauterize. Sekhmet\'s priests were physician-priests: the gods of disease and the gods of healing are the same power applied differently. This paradox runs through every healing tradition: Apollo sends plague and healing (the caduceus); Yahweh "kills and makes alive" (Deuteronomy 32:39); Shiva destroys and renews. Modern medicine preserves the paradox in the Rod of Asclepius — a serpent on a staff, the same symbol used by Moses in Numbers 21 to cure the very snake-plague God sent.',
+    relatedNodes: ['alphabet-medu-netjer', 'alphabet-creation-by-word'],
+  },
+  {
+    letter: '𓁡', name: 'Nut', meaning: 'the sky — the body that swallows and births the sun', gardiner: 'C5',
+    unicode: 0x013061, phoneme: 'nwt', greek: '(none)', latin: '(none)',
+    hebrew: '(none)', arabic: '(none)', phoenician: '(none)', scriptOnly: ['hieroglyph'],
+    note: 'Nut is the sky goddess — depicted as an arching woman whose body spans the heavens, her fingers touching the western horizon and her toes the eastern. Each evening she swallows the sun (Ra); each morning she gives birth to it. The stars are painted on the inside of her body. She is also the coffin goddess — her image lines the inside of sarcophagi, so that the dead return to her womb to be reborn.',
+    investigationHighlight: 'Nut is the cosmic womb — the sky as mother, the night as gestation, the dawn as birth. Her image on the inside of the coffin lid is the most concrete possible expression of the tomb-as-womb theology: death returns you to the mother who will give birth to you again. The same structure appears in Christian baptism (rebirth from water, going back through the birth canal), Hindu moksha (return to Brahman, the source), and Buddhist samsara (the cycle of births from the same cosmic mother). The coffin lid with Nut painted inside is the oldest physical expression of this theology — c. 2100 BCE.',
+    relatedNodes: ['alphabet-medu-netjer', 'alphabet-creation-by-word'],
+  },
+  {
+    letter: '𓇴', name: 'Aten', meaning: 'the solar disk — the one god, the universal divine light', gardiner: 'N6',
+    unicode: 0x0131F4, phoneme: 'jtn', greek: '(none)', latin: '(none)',
+    hebrew: '(none)', arabic: '(none)', phoenician: '(none)', scriptOnly: ['hieroglyph'],
+    note: 'The Aten is not just a sun symbol — it is the sun disk with rays ending in human hands, each hand offering an Ankh (life). This specific form was the only object of worship in Akhenaten\'s reformed religion (c. 1353–1336 BCE). Every other god was suppressed, their images defaced, their temples closed. Only the Aten remained.',
+    investigationHighlight: 'Akhenaten\'s Aten religion is the first fully documented monotheism in human history — not henotheism (one god above others) but the explicit suppression of all other deities. The "Great Hymn to the Aten" (written by Akhenaten himself) has near-verbatim parallels to Psalm 104 — comparing scholars have identified overlaps so close that Psalm 104 is now widely believed to be an adapted version of the Hymn. If Psalm 104 derives from the Aten Hymn, then the Psalms — the devotional core of Judaism and Christianity — carry an Egyptian monotheist poem at their center. The Great Hymn to the Aten predates Psalm 104 by at least 600 years.',
+    relatedNodes: ['alphabet-medu-netjer', 'alphabet-creation-by-word', 'alphabet-sefer-yetzirah'],
+  },
+  {
+    letter: '𓁦', name: 'Heh', meaning: 'eternity / millions of years — the infinite beyond counting', gardiner: 'C10',
+    unicode: 0x013066, phoneme: 'ḥḥ', greek: '(none)', latin: '(none)',
+    hebrew: '(none)', arabic: '(none)', phoenician: '(none)', scriptOnly: ['hieroglyph'],
+    note: 'Heh is the god of infinity and millions of years — depicted as a kneeling man holding two palm ribs (the Egyptian sign for "year" — M4) notched at the top. The notches counted the years of the pharaoh\'s reign; Heh holds the palm ribs of an infinite reign. His name hḥ means "million" and also "eternity." He is the deity who grants millions of years of life.',
+    investigationHighlight: 'Heh holding the palm rib "year" signs is the Egyptian hieroglyphic expression of the concept of eternity as "time beyond counting." The root of the Western number "million" may trace through Latin millio from an Indo-European root — but the concept of a number so large it means "effectively infinite" is Egyptian. More significantly: the image of a divine being who contains and dispenses time appears in every mystical tradition as one of the deepest divine attributes. The Hebrew El Olam ("God of Eternity/Ages"), the Greek aion (age/eternity), the Hindu concept of the kalpa (vast unit of cosmic time). Heh kneeling with the infinite palm ribs is the earliest visual representation of the divine as the holder of time.',
+    relatedNodes: ['alphabet-medu-netjer', 'alphabet-isopsephy-greek'],
+  },
+  {
+    letter: '𓆕', name: 'Apophis', meaning: 'the chaos serpent — the force that would end existence', gardiner: 'I11',
+    unicode: 0x013195, phoneme: 'ꜥppp', greek: '(none)', latin: '(none)',
+    hebrew: '(none)', arabic: '(none)', phoenician: '(none)', scriptOnly: ['hieroglyph'],
+    note: 'Apophis (Apep) is the great serpent of chaos — an entity of pure darkness and disorder that dwells in the Duat and attacks the solar barque every single night. Every dawn is a victory over Apophis. He cannot be permanently killed; he regenerates each night. The only defense is Set, who harpoons Apophis nightly from the prow of Ra\'s boat.',
+    investigationHighlight: 'Apophis is the oldest documented personification of chaos as an active antagonist of cosmic order. He is proto-Satan — not a fallen angel, not a disobedient servant, but a primordial force of anti-existence that preceded creation and constantly threatens to swallow it. The nightly battle against Apophis (which requires Set\'s violence — the necessary evil defending the good) anticipates both the Zoroastrian cosmic dualism (Ahura Mazda vs Ahriman, good vs evil locked in eternal battle) and the Christian apocalyptic tradition (the beast of Revelation, the great serpent/dragon that is Satan). Revelation 12 describes a great red dragon threatening the woman clothed with the sun — the solar barque vs the chaos serpent in new dress.',
+    relatedNodes: ['alphabet-medu-netjer', 'alphabet-creation-by-word'],
+  },
+
+  // — Sacred Animals —
+  {
+    letter: '𓃬', name: 'Sphinx / Lion', meaning: 'the guardian of thresholds — the solar sphinx', gardiner: 'E22',
+    unicode: 0x0130EC, phoneme: 'rw', greek: '(none)', latin: '(none)',
+    hebrew: '(none)', arabic: '(none)', phoenician: '(none)', scriptOnly: ['hieroglyph'],
+    note: 'The recumbent lion is the hieroglyph for lion (rw) and the determinative for the Great Sphinx of Giza. The Sphinx faces east — it watches the sunrise, the Akhet moment, every day. It is the guardian of the plateau, the solar sentinel. In Egyptian, the sphinx form (human head on lion body) is called "Hor-em-akhet" — Horus-in-the-Horizon.',
+    investigationHighlight: 'The Great Sphinx is the oldest monumental stone sculpture on Earth (c. 2500 BCE or possibly older). Its face is debated — Khafre? An earlier pharaoh? A god? — but its orientation is not: it faces exactly east, aligned to the equinox sunrise. The Sphinx is an astronomical instrument as well as a monument. The "Sphinx water erosion hypothesis" (Schoch, 1992) — that the body shows rain erosion consistent with 7000–10000 BCE, not 2500 BCE — is the most contested claim in alternative Egyptology. If correct, it moves the Sphinx to before the last Younger Dryas climate shift, making it the oldest known structure and evidence for a pre-dynastic civilization. The argument remains unresolved.',
+    relatedNodes: ['alphabet-medu-netjer', 'alphabet-creation-by-word'],
+  },
+  {
+    letter: '𓃠', name: 'Cat / Bastet', meaning: 'the domestic sacred — the protected and protecting', gardiner: 'E13',
+    unicode: 0x0130E0, phoneme: 'mjw', greek: '(none)', latin: '(none)',
+    hebrew: '(none)', arabic: '(none)', phoenician: '(none)', scriptOnly: ['hieroglyph'],
+    note: 'The cat was sacred to Bastet, the goddess of the home, fertility, and protection. Killing a cat in Egypt was punishable by death. Thousands of cat mummies have been found in Bastet\'s temple at Bubastis. The domestic cat was first fully domesticated in Egypt — the cat in every home in the world descends from the sacred cats of Egypt.',
+    investigationHighlight: 'Every domestic cat on Earth is an Egyptian sacred animal. DNA studies (2007 and 2017) confirm that all domestic cats (Felis catus) descend from the Near Eastern wildcat (Felis silvestris lybica), domesticated in the Fertile Crescent and then spread globally through Egypt. The Egyptians did not breed cats for utility (as the Chinese bred pigs or the Europeans bred cattle) — they kept cats because cats were sacred to Bastet. The animal that shares more homes with humans than any other mammal except dogs became global because a goddess liked it. Bastet\'s temple at Bubastis contained over 300,000 cat mummies. The cat is the most successful religious export in history.',
+    relatedNodes: ['alphabet-medu-netjer'],
+  },
+  {
+    letter: '𓆊', name: 'Crocodile / Sobek', meaning: 'the terrifying sacred — fear and power unified', gardiner: 'I3',
+    unicode: 0x01318A, phoneme: 'sbk', greek: '(none)', latin: '(none)',
+    hebrew: '(none)', arabic: '(none)', phoenician: '(none)', scriptOnly: ['hieroglyph'],
+    note: 'The crocodile is Sobek — the god of the Nile, military power, and pharaonic might. Crocodiles were kept in temple pools, fed by priests, adorned with gold earrings, and buried with full funerary rites. The Faiyum oasis was the center of Sobek\'s cult; his temple city was called Crocodilopolis by the Greeks.',
+    investigationHighlight: 'Sobek is the paradigm case of the Egyptian religious principle: the most dangerous thing in your environment IS the divine. The crocodile that kills you in the Nile is not the enemy of the gods — it is the god. Egyptians did not pray to be protected from crocodiles by a distant deity; they identified the crocodile itself as divine and propitiated it directly. The same principle appears in the Vedic tradition (the sacred cobra, the sacred tiger in Shaivism) and in Shinto (the shark, the bear). This is the opposite of the Abrahamic theological move, which separates the dangerous natural world from the protective God. Both traditions are responding to the same terror; they reach opposite conclusions.',
+    relatedNodes: ['alphabet-medu-netjer', 'alphabet-creation-by-word'],
+  },
+  {
+    letter: '𓃯', name: 'Hippo / Taweret', meaning: 'the monstrous protector — birth and the guardian of limits', gardiner: 'E25',
+    unicode: 0x0130EF, phoneme: 'db', greek: '(none)', latin: '(none)',
+    hebrew: '(none)', arabic: '(none)', phoenician: '(none)', scriptOnly: ['hieroglyph'],
+    note: 'Taweret is the hippopotamus goddess of childbirth and fertility — depicted as a pregnant hippo standing upright, with lion limbs and a crocodile tail. She is terrifying in form but protective in function. She guards the threshold of birth. Hippo-form amulets were placed in homes and birthing rooms throughout Egypt.',
+    investigationHighlight: 'Taweret combines the three most dangerous animals of the Nile — hippopotamus, lion, and crocodile — into a single protective deity. The Egyptian logic: the most dangerous thing, weaponized on your behalf, is the safest guardian. The hippo that could flip a boat and kill everyone aboard becomes the goddess who ensures safe delivery in childbirth. This "terrifying protector" structure is the theological logic behind cherubim (terrifying composite creatures who guard the Ark of the Covenant), gargoyles (monsters who protect the cathedral from worse monsters), and Buddhist wrathful deities (terrifying forms that scare off greater terrors). The grotesque protector is universal — and the pregnant hippo goddess is one of the oldest.',
+    relatedNodes: ['alphabet-medu-netjer', 'alphabet-creation-by-word'],
+  },
+
+  // — Architecture and Sacred Objects —
+  {
+    letter: '𓉶', name: 'Obelisk', meaning: 'the stone ray — frozen sunlight', gardiner: 'O25',
+    unicode: 0x013276, phoneme: 'txn', greek: '(none)', latin: '(none)',
+    hebrew: '(none)', arabic: '(none)', phoenician: '(none)', scriptOnly: ['hieroglyph'],
+    note: 'The obelisk is a tapering four-sided stone pillar topped with a pyramid form (the pyramidion), originally covered in gold to catch and scatter the first light of day. Obelisks stood in pairs before temple pylons. Their Egyptian name was "tekhenu" — but the Greeks called them obeliskos (little spit/spike). They were raised as images of the first rays of the sun.',
+    investigationHighlight: 'Obelisks are the most widely distributed Egyptian sacred objects in the world. Of the original Egyptian obelisks, more stand outside Egypt than within it. The Romans looted thirteen to Rome — including Caligula\'s which now stands at the center of St. Peter\'s Square in the Vatican. The obelisk in the center of the world\'s largest Christian institution is an Egyptian pagan sacred object, unmodified, erected by a Roman emperor. Washington Monument, the tallest stone obelisk on Earth, is also an Egyptian form. The New York needle in Central Park stood for 3,400 years in Heliopolis — the city of the sun god Re. The obelisk traveled farther than any other form of sacred architecture in history.',
+    relatedNodes: ['alphabet-medu-netjer', 'alphabet-creation-by-word'],
+  },
+  {
+    letter: '𓉴', name: 'Pyramid', meaning: 'the mountain of ascent — the stairway to the divine', gardiner: 'O24',
+    unicode: 0x013274, phoneme: 'mr', greek: '(none)', latin: '(none)',
+    hebrew: '(none)', arabic: '(none)', phoenician: '(none)', scriptOnly: ['hieroglyph'],
+    note: 'The pyramid hieroglyph is the determinative for "pyramid" (Egyptian: mr) — a triangular elevation with a base line. The Great Pyramid of Giza (c. 2560 BCE) was the tallest man-made structure on Earth for 3,800 years. The pyramid form connects to the primordial mound (benben), the first land of creation; the pyramid is a mountain of creation-stone that the dead king climbs to rejoin the sun.',
+    investigationHighlight: 'The Great Pyramid of Giza embeds the most precisely recorded mathematical constants in any ancient monument. The ratio of the pyramid\'s perimeter to twice its height = π (3.14159) to six decimal places. The slant height divided by half the base = φ (1.618, the golden ratio) to four decimal places. Whether these were intentional encodings or accidental consequences of practical building methods is the core debate in archaeomathematics. The Egyptians did not have symbolic notation for π or φ — yet the ratios are in the stone. Either 2560 BCE builders encoded transcendental numbers into a mountain, or transcendental numbers emerge naturally from the method of building a stable pyramid. Either answer is extraordinary.',
+    relatedNodes: ['alphabet-medu-netjer', 'alphabet-isopsephy-greek', 'alphabet-creation-by-word'],
+  },
+
+  // — Nature Signs —
+  {
+    letter: '𓆳', name: 'Palm Branch (Year)', meaning: 'time — the unit of divine measurement', gardiner: 'M4',
+    unicode: 0x0131B3, phoneme: 'rnpt', greek: '(none)', latin: '(none)',
+    hebrew: '(none)', arabic: '(none)', phoenician: '(none)', scriptOnly: ['hieroglyph'],
+    note: 'The notched palm rib is the Egyptian hieroglyph for "year" (rnpt). The notches represent the months and days of a year counted by notching the rib. Heh (the god of eternity) holds two of these in his hands. The palm branch "year" was offered to the pharaoh at festivals as a prayer for millions of years of reign.',
+    investigationHighlight: 'The Egyptians invented the 365-day calendar c. 3000 BCE — the first solar calendar on record. The Egyptian civil year had 12 months of 30 days plus 5 "epagomenal" days (the birthdays of Osiris, Isis, Horus, Set, and Nephthys). The Julian calendar (46 BCE, Julius Caesar) was designed by the Alexandrian astronomer Sosigenes and is explicitly based on the Egyptian calendar. The Gregorian calendar (1582 CE) is a correction of the Julian. Every calendar used by the modern world — including the Islamic calendar\'s reference point, the Christian year, and the secular calendar — is a modification of an Egyptian palm rib.',
+    relatedNodes: ['alphabet-medu-netjer', 'alphabet-creation-by-word'],
+  },
+  {
+    letter: '𓆭', name: 'Sycamore Tree', meaning: 'the tree of heaven — the divine in the natural world', gardiner: 'M1',
+    unicode: 0x0131AD, phoneme: 'nḥt', greek: '(none)', latin: '(none)',
+    hebrew: '(none)', arabic: '(none)', phoenician: '(none)', scriptOnly: ['hieroglyph'],
+    note: 'The sycamore fig (Ficus sycomorus) was sacred to Hathor, Nut, and Isis — goddesses depicted as a woman emerging from within the tree, offering water and food to the dead. The tree at the edge of the desert (the boundary between the living world and the Duat) was a source of shade, fruit, and divine presence. The sycamore was the tree where the dead rested on their journey.',
+    investigationHighlight: 'The sacred tree at the boundary between the worlds is one of the oldest and most universal religious images: the Egyptian sycamore of Hathor, the Hebrew Tree of Life in Eden, the Norse Yggdrasil, the Hindu Ashvattha (the fig tree under which the Buddha achieved enlightenment), the Bodhi tree. In every case the tree is the axis between the human world and the divine — you rest in its shade at the threshold. The sycamore specifically: Luke 19 describes Zacchaeus climbing a sycamore tree to see Jesus pass — which is a hieroglyph come to life: the mortal who cannot see the divine climbing the sacred tree at the boundary to get a glimpse.',
+    relatedNodes: ['alphabet-medu-netjer', 'alphabet-creation-by-word'],
+  },
+
   // ── Arabic-only additions (scriptOnly: ['arabic']) ────────────────────────
   // 6 letters Arabic developed beyond the 22 Phoenician base.
   // Arabic reached 28 letters; these 6 have no direct Phoenician ancestor.
