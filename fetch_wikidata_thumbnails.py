@@ -87,16 +87,15 @@ def sim(a, b):
     return difflib.SequenceMatcher(None, a.lower(), b.lower()).ratio()
 
 
-def _get(url, timeout=12):
+def _get(url, timeout=10):
     req = urllib.request.Request(url, headers={"User-Agent": UA})
-    for attempt in range(4):
+    for attempt in range(3):
         try:
             with urllib.request.urlopen(req, timeout=timeout) as r:
                 return json.loads(r.read())
         except urllib.error.HTTPError as e:
-            if e.code == 429 and attempt < 3:
-                wait = 10 * (2 ** attempt)   # 10s, 20s, 40s
-                time.sleep(wait)
+            if e.code == 429 and attempt < 2:
+                time.sleep(8)   # flat 8s wait, max 2 retries
                 continue
             raise
     raise RuntimeError("Max retries exceeded")
@@ -290,15 +289,18 @@ def find_wikidata_image(node):
     # 4. Node-ID as words (eshu → "Eshu", al-ghazali → "Al Ghazali")
     id_as_words = node_id.replace("-", " ").title()
 
+    # Two queries max: canonical name, then node-ID-as-words (catches
+    # non-ASCII names like "Èṣù" where ASCII "Eshu" is more findable)
     queries = []
-    for q in [clean, paren_inner, ascii_clean, id_as_words]:
+    for q in [clean, id_as_words, ascii_clean, paren_inner]:
         if q and q not in queries:
             queries.append(q)
+    queries = queries[:2]  # limit to 2 queries per node for speed
 
     for query in queries:
         try:
-            time.sleep(1.0)
-            result = wikidata_search(query, limit=5)
+            time.sleep(0.6)
+            result = wikidata_search(query, limit=3)
             for candidate in result.get("search", []):
                 qid         = candidate.get("id", "")
                 label       = candidate.get("label", "")
@@ -309,8 +311,6 @@ def find_wikidata_image(node):
                 # If the search matched via alias (e.g., "Ibn Rushd" → Averroes),
                 # trust it without requiring label similarity
                 if not alias_match:
-                    # Label similarity: allow low threshold since some redirects
-                    # have very different canonical names (Al-Ghazali → Ghazali)
                     name_sim = max(
                         sim(query, label),
                         sim(clean, label),
@@ -324,24 +324,16 @@ def find_wikidata_image(node):
                     continue
 
                 # Look for P18 image
-                time.sleep(0.75)
+                time.sleep(0.6)
                 filename = get_p18(qid)
                 if not filename:
                     continue
 
-                # Try MD5-based URL
+                # Try MD5-based URL first; skip imageinfo fallback for speed
                 url = commons_thumb_md5(filename)
-                time.sleep(0.5)
+                time.sleep(0.4)
                 if url_ok(url):
                     return qid, description, filename, url
-
-                # Fall back to Commons imageinfo API
-                time.sleep(0.75)
-                url2 = commons_imageinfo_url(filename)
-                if url2:
-                    time.sleep(0.5)
-                    if url_ok(url2):
-                        return qid, description, filename, url2
 
         except Exception:
             pass
