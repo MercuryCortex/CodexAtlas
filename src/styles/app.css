@@ -4418,7 +4418,7 @@ body.view-alphabets main.canvas { padding-bottom: 220px; }
   display: block;
   position: fixed;
   bottom: 1.5rem;
-  right: 1.5rem;
+  left: 56px;
   width: 50vw;
   max-width: 740px;
   min-width: 480px;
@@ -4581,6 +4581,44 @@ body.view-alphabets main.canvas { padding-bottom: 220px; }
 .acc-meaning {
   font-size: 0.62rem; color: var(--text-3); text-align: center;
 }
+
+/* ── Cuneiform viewer ────────────────────────────── */
+.acv-compare-banner {
+  padding: 1rem 2rem 1.25rem;
+  background: rgba(212,165,90,0.04);
+  border-bottom: 1px solid var(--border-soft);
+}
+.acv-chain {
+  display: flex; align-items: center; gap: 0.75rem; flex-wrap: wrap;
+  margin-bottom: 0.65rem;
+}
+.acv-chain-item {
+  display: flex; flex-direction: column; align-items: center;
+  font-size: 1.5rem; line-height: 1; color: var(--text-1);
+  gap: 0.2rem;
+}
+.acv-chain-item small { font-size: 0.6rem; color: var(--text-3); text-align: center; font-family: var(--mono); }
+.acv-chain-cuneiform { font-family: 'Noto Sans Cuneiform', 'Segoe UI Historic', monospace; color: var(--text-3); }
+.acv-chain-hier { font-family: 'Noto Sans Egyptian Hieroglyphs', serif; color: var(--gold-soft); }
+.acv-arrow { color: var(--text-3); font-size: 1.1rem; }
+.acv-compare-note { font-size: 0.8rem; color: var(--text-3); max-width: 680px; line-height: 1.55; margin: 0; font-style: italic; }
+.acv-sign { font-family: 'Noto Sans Cuneiform', 'Segoe UI Historic', monospace !important; font-size: 2.2rem !important; color: var(--text-2) !important; }
+.acv-detail {
+  display: flex; align-items: flex-start; gap: 1.25rem;
+  padding: 1rem 3rem 1rem 1.5rem;
+  background: rgba(212,165,90,0.05);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  margin: 0.5rem 0 0.75rem;
+  position: relative;
+}
+.acv-detail-sign {
+  font-family: 'Noto Sans Cuneiform', 'Segoe UI Historic', monospace;
+  font-size: 3rem; line-height: 1; color: var(--gold); flex-shrink: 0;
+}
+.acv-detail-body { flex: 1; }
+.acv-detail-name { font-size: 1rem; font-weight: 600; color: var(--text-0); margin-bottom: 0.4rem; font-family: var(--serif); }
+.acv-detail-note { font-size: 0.85rem; line-height: 1.6; color: var(--text-2); font-style: italic; border-left: 2px solid var(--gold-soft); padding-left: 0.65rem; }
 
 /* ── Origin chain ─────────────────────────────────── */
 .alpha-origin-container {

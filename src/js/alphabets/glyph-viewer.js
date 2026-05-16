@@ -7,20 +7,6 @@
 (function () {
   'use strict';
 
-  // Cuneiform comparison block — independent writing system (U+12000 block)
-  const CUNEIFORM_SAMPLES = [
-    { sign: '\u{12000}', name: 'A', meaning: 'water / canal' },
-    { sign: '\u{12019}', name: 'AN', meaning: 'sky / heaven / deity' },
-    { sign: '\u{1202D}', name: 'DINGIR', meaning: 'god / star' },
-    { sign: '\u{12038}', name: 'EN', meaning: 'lord / master' },
-    { sign: '\u{1207F}', name: 'KI', meaning: 'earth / place' },
-    { sign: '\u{12115}', name: 'LU', meaning: 'person / man' },
-    { sign: '\u{1212D}', name: 'ME', meaning: 'divine powers / being' },
-    { sign: '\u{12163}', name: 'NINDA', meaning: 'bread / food' },
-    { sign: '\u{121B8}', name: 'UD', meaning: 'sun / day / white' },
-    { sign: '\u{1222C}', name: 'ZI', meaning: 'life / breath / soul' },
-  ];
-
   const SCRIPTS = [
     { id: 'hieroglyph', label: 'hieroglyph', font: "'Noto Sans Egyptian Hieroglyphs', serif", dir: 'ltr' },
     { id: 'phoenician', label: 'Phoenician', font: "'Segoe UI', sans-serif", dir: 'rtl' },
@@ -28,6 +14,8 @@
     { id: 'arabic',     label: 'Arabic',     font: "'Segoe UI', sans-serif", dir: 'rtl' },
     { id: 'greek',      label: 'Greek',      font: "serif", dir: 'ltr' },
     { id: 'latin',      label: 'Latin',      font: "serif", dir: 'ltr' },
+    { id: 'ogham',      label: 'Ogham',      font: "'Segoe UI', sans-serif", dir: 'ltr' },
+    { id: 'futhark',    label: 'Futhark',    font: "'Segoe UI', sans-serif", dir: 'ltr' },
   ];
 
   let _expandedIdx = null;
@@ -96,24 +84,6 @@
     pane.appendChild(gridWrap);
 
     buildGrid(gridWrap, data);
-
-    // Cuneiform comparison strip
-    const cuneiStrip = document.createElement('div');
-    cuneiStrip.className = 'alpha-cuneiform-strip';
-    cuneiStrip.innerHTML = `
-      <h3>For comparison: Cuneiform (Sumer, c. 3200 BCE) — an independent writing system</h3>
-      <p class="alpha-cunei-intro">Cuneiform and the Egyptian-Phoenician-Latin chain developed independently. Both started as pictograms, both became abstract over time — but they share no common ancestor. The convergence of pictographic writing across unconnected civilizations is one of the most remarkable parallels in human history.</p>
-      <div class="alpha-cunei-cells">
-        ${CUNEIFORM_SAMPLES.map(c => `
-          <div class="alpha-cunei-cell">
-            <span class="acc-sign">${c.sign}</span>
-            <span class="acc-name">${c.name}</span>
-            <span class="acc-meaning">${c.meaning}</span>
-          </div>
-        `).join('')}
-      </div>
-    `;
-    pane.appendChild(cuneiStrip);
 
     // Wait for fonts and re-render glyphs if needed
     if (document.fonts && document.fonts.ready) {
@@ -238,7 +208,7 @@
     expanded.className = 'alpha-glyph-expanded';
 
     const isHier = g.unicode >= 0x13000 && g.unicode <= 0x1342F;
-    const bigChar   = isHier ? String.fromCodePoint(g.unicode) : (g.arabic || g.hebrew || g.phoenician || g.letter || '');
+    const bigChar   = isHier ? String.fromCodePoint(g.unicode) : (g.arabic || g.hebrew || g.phoenician || g.letter || (g.unicode ? String.fromCodePoint(g.unicode) : ''));
     const bigFont   = isHier ? "'Noto Sans Egyptian Hieroglyphs', serif" : "'Segoe UI', sans-serif";
     const hierChar  = isHier ? String.fromCodePoint(g.unicode) : '';
     const phoenicianChar = g.phoenician || '';
