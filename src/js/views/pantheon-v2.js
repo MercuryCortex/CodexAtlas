@@ -250,114 +250,62 @@
     return { positions, wedges, familyOrder, famByName, Rinner, Router };
   }
 
-  // Edge-type color palette — based on real types in data.js (audit caught
-  // that ~69% of deity↔deity edges fell through to grey because the map was
-  // built from theme.js convention rather than vault reality. Frequency-counts
-  // from data.js (deity-relevant subset):
-  //   syncretic (586) parallel-motif (1018) parallel-form (329)
-  //   influenced-by (506) influences (463) consort (~128)
-  //   child-of / parent-of  attests / attested-in / mentioned-in
-  // PHASE G — Canonical 7-bucket edge visual logic.
-  // Source of truth: AUDIT/edge-logic-spec-2026-05-17.md
-  //
-  //   1. Transmission   #C9743A terracotta   directional   gradient on hover
-  //   2. Parallel       #5A9A8F teal         symmetric
-  //   3. Association    #4A5AA4 slate-indigo symmetric     quiet majority
-  //   4. Kinship        #C9A5D4 lilac        descent=gradient / consort=symmetric
-  //   5. Attestation    #D4A55A gold         directional   gradient on hover
-  //   6. Polemic        #A83E4A crimson      symmetric     HEADLINE (idle 0.25)
-  //   7. Fusion         #C4783A amber-gold   symmetric     HEADLINE (idle 0.30)
-  //
-  // Idle state: every non-headline edge paints the same slate-blue atmosphere.
-  // Hot state: bucket color, type-specific opacity + uniform 1.6 px width.
-  // Headline edges idle visible at their bucket color (idle op 0.25-0.30).
-  const EDGE_BUCKETS = {
-    transmission: { hex: '#C9743A', width: 0.46, idleOp: 0.10, hotOp: 0.95, directional: true,  headline: false },
-    parallel:     { hex: '#5A9A8F', width: 0.34, idleOp: 0.12, hotOp: 0.85, directional: false, headline: false },
-    association:  { hex: '#4A5AA4', width: 0.20, idleOp: 0.08, hotOp: 0.55, directional: false, headline: false },
-    kinship:      { hex: '#C9A5D4', width: 0.34, idleOp: 0.14, hotOp: 0.85, directional: true,  headline: false },
-    attestation:  { hex: '#D4A55A', width: 0.34, idleOp: 0.10, hotOp: 0.90, directional: true,  headline: false },
-    polemic:      { hex: '#A83E4A', width: 0.46, idleOp: 0.25, hotOp: 0.95, directional: false, headline: true  },
-    fusion:       { hex: '#C4783A', width: 0.46, idleOp: 0.30, hotOp: 0.95, directional: false, headline: true  }
+  // EDGE_STYLE — verbatim copy of production app.js:196-241 EDGE_STYLE table.
+  // No bucket abstraction, no headline class, no invented per-type colors.
+  // Each edge type carries its hand-tuned (color, width, opacity).
+  // Idle stroke color is always the slate-blue from CSS (.ph2-edge); these
+  // hex values only paint when the edge is .hot (hover/select) via the
+  // --edge-type-color CSS var.
+  const EDGE_STYLE = {
+    // syncretic / kin — gold-brown-green tints
+    'syncretic-identification':         { c: '#b08840', w: 0.42, op: 0.36 },
+    'syncretic-ancient-identification': { c: '#b08840', w: 0.38, op: 0.30 },
+    'syncretic-scholarly-parallel':     { c: '#947030', w: 0.34, op: 0.24 },
+    'syncretic-folk-syncretism':        { c: '#7d5e28', w: 0.30, op: 0.20 },
+    'syncretic':                        { c: '#b08840', w: 0.36, op: 0.28 },
+    'parent-of':                        { c: '#5a7458', w: 0.34, op: 0.30 },
+    'child-of':                         { c: '#5a7458', w: 0.34, op: 0.24 },
+    'consort':                          { c: '#a85e44', w: 0.36, op: 0.30 },
+    // textual / scholarly — slate-teal-blue
+    'polemic-against':                  { c: '#a83e4a', w: 0.38, op: 0.32 },
+    'direct-quote':                     { c: '#4a8a86', w: 0.34, op: 0.28 },
+    'redaction-of':                     { c: '#8a6a30', w: 0.32, op: 0.24 },
+    'commentary-on':                    { c: '#8a6a8a', w: 0.30, op: 0.22 },
+    'parallel-motif':                   { c: '#5a6a82', w: 0.28, op: 0.22 },
+    'shared-milieu':                    { c: '#4a5aa4', w: 0.28, op: 0.20 },
+    'shared-tradition':                 { c: '#4a5aa4', w: 0.28, op: 0.18 },
+    'manuscript-transmission':          { c: '#6a5a40', w: 0.28, op: 0.20 },
+    'influenced-by':                    { c: '#4a8a86', w: 0.30, op: 0.24 },
+    'influences':                       { c: '#4a8a86', w: 0.30, op: 0.24 },
+    // ambient / structural — barely-visible (flood types)
+    'attests':                          { c: '#3a4a66', w: 0.22, op: 0.12 },
+    'attested-in':                      { c: '#3a4a66', w: 0.22, op: 0.12 },
+    'has-theme':                        { c: '#3a5a3e', w: 0.22, op: 0.12 },
+    'context':                          { c: '#3a3e48', w: 0.22, op: 0.12 },
+    'tradition-deity':                  { c: '#2f3a4e', w: 0.18, op: 0.10 },
+    'tradition-doc':                    { c: '#2f3a4e', w: 0.18, op: 0.10 },
+    'tradition-person':                 { c: '#2f3a4e', w: 0.18, op: 0.10 },
+    'authored':                         { c: '#8a6a30', w: 0.30, op: 0.24 },
+    // cross-symbol — color does the work; width 0.46 / op up to 0.55 for headline
+    'ancestor-of':                      { c: '#d4a55a', w: 0.46, op: 0.55 },
+    'parallel-form':                    { c: '#a08a5a', w: 0.34, op: 0.36 },
+    'syncretic-fusion':                 { c: '#c47a3a', w: 0.42, op: 0.50 },
+    'appropriated-by':                  { c: '#c4a05a', w: 0.42, op: 0.50 },
+    'polemic-inversion':                { c: '#a83e4a', w: 0.46, op: 0.55 },
+    'visual-cognate':                   { c: '#7a8090', w: 0.30, op: 0.28 },
+    // symbol → other-node — high volume, nearly invisible
+    'symbol-attests-in':                { c: '#6a7a90', w: 0.26, op: 0.16 },
+    'symbol-iconography-of':            { c: '#8a6a5a', w: 0.28, op: 0.20 },
+    'symbol-in-tradition':              { c: '#5a7080', w: 0.24, op: 0.14 }
   };
-  // Type → bucket name. Suffix `:hl` flags within-bucket headline overrides.
-  const EDGE_TYPE_BUCKET = {
-    // 1. Transmission
-    'influenced-by':              'transmission',
-    'influences':                 'transmission',
-    'influenced':                 'transmission',
-    'originated':                 'transmission',
-    'affects-tradition':          'transmission',
-    'affects-document':           'transmission',
-    'documents-affected':         'transmission',
-    'produces-document':          'transmission',
-    'manuscript-transmission':    'transmission',
-    'redaction-of':               'transmission',
-    'ancestor-of':                'transmission:hl', // HEADLINE within transmission bucket
-    // 2. Parallel / Structural
-    'parallel-motif':             'parallel',
-    'parallel-form':              'parallel',
-    'syncretic':                  'parallel',
-    'syncretized-with':           'parallel',
-    'syncretic-scholarly-parallel':   'parallel',
-    'syncretic-ancient-identification':'parallel',
-    'syncretic-structural-parallel':   'parallel',
-    'syncretic-parallel-motif':   'parallel',
-    'syncretic-instantiation':    'parallel',
-    'structural-parallel':        'parallel',
-    'contested-identification':   'parallel',
-    'exemplifies':                'parallel',
-    // 3. Association / Context (the 4000+ ambient flood)
-    'has-theme':                  'association',
-    'tradition-deity':            'association',
-    'tradition-doc':              'association',
-    'tradition-person':           'association',
-    'context':                    'association',
-    'shared-milieu':              'association',
-    'shared-tradition':           'association',
-    'symbol-attests-in':          'association',
-    'symbol-iconography-of':      'association',
-    'symbol-in-tradition':        'association',
-    'participated-in':            'association',
-    'component-of':               'association',
-    'contains':                   'association',
-    // 4. Kinship & Consort
-    'child-of':                   'kinship',
-    'parent-of':                  'kinship',
-    'consort':                    'kinship',
-    'sibling-of':                 'kinship',
-    // 5. Attestation / Authorship
-    'attests':                    'attestation',
-    'attested-in':                'attestation',
-    'mentioned-in':               'attestation',
-    'key-figure':                 'attestation',
-    'authored':                   'attestation',
-    'attributed-author':          'attestation',
-    'primary-source':             'attestation',
-    'primary-translation':        'attestation',
-    'critical-edition':           'attestation',
-    'translation':                'attestation',
-    'commentary-on':              'attestation',
-    'direct-quote':               'attestation',
-    'preserved-by':               'attestation',
-    // 6. Polemic / Inversion — entire bucket is headline-loud
-    'polemic-inversion':          'polemic',
-    'polemic-against':            'polemic',
-    // 7. Fusion / Appropriation — entire bucket is headline-loud
-    'syncretic-fusion':           'fusion',
-    'appropriated-by':            'fusion',
-    'visual-cognate':             'fusion'
-  };
-  function edgeStyleFor(type) {
-    const raw = EDGE_TYPE_BUCKET[type] || 'association';
-    const hl  = raw.endsWith(':hl');
-    const key = hl ? raw.slice(0, -3) : raw;
-    const b   = EDGE_BUCKETS[key] || EDGE_BUCKETS.association;
-    if (hl) return { ...b, headline: true, idleOp: 0.30 };
-    return b;
-  }
-  // Legacy alias retained for any external readers
-  const DEFAULT_EDGE_COLOR = EDGE_BUCKETS.association.hex;
+  const EDGE_DEFAULT = { c: '#3a4a66', w: 0.25, op: 0.13 };
+  // Cross-symbol edge types — mirror of production SYMBOL_CROSS_EDGE_TYPES.
+  const SYMBOL_CROSS_EDGE_TYPES = new Set([
+    'ancestor-of', 'parallel-form', 'syncretic-fusion',
+    'appropriated-by', 'polemic-inversion', 'visual-cognate'
+  ]);
+  function edgeStyleFor(type) { return EDGE_STYLE[type] || EDGE_DEFAULT; }
+  const DEFAULT_EDGE_COLOR = EDGE_DEFAULT.c;
 
   // SOURCE-INTEGRITY TIER FILL COLORS — matches production CSS vars (app.css:59-63).
   // Used when _tierOverlay is active; replaces family-color fill on each node.
@@ -689,17 +637,7 @@
     const ticksG = document.createElementNS(SVG_NS, 'g');
     ticksG.setAttribute('class', 'ph2-ticks-g');
     overlay.appendChild(ticksG);
-    // Phase H — <defs> for per-edge linear gradients (directional buckets only).
-    // Pre-built once per render; activated by JS setting inline `stroke: url(#id)`
-    // on the hot path. Sits inside the same overlay so coords are world-space.
-    const defsEl = document.createElementNS(SVG_NS, 'defs');
-    overlay.appendChild(defsEl);
-    // Types whose data direction is semantically REVERSED (the data source is
-    // the *recipient* of the relation, not the origin). Gradient must swap
-    // endpoints so the bright stop sits on the semantic origin.
-    const REVERSE_DIRECTION = new Set([
-      'influenced-by', 'attested-in', 'child-of', 'documents-affected', 'preserved-by'
-    ]);
+    // (Phase H gradients removed — P1 doesn't have them; we copy P1 verbatim now.)
 
     // ----- HULLS (priority 1) -----
     // For each family, draw a rounded annular wedge at the same geometry as
@@ -757,52 +695,28 @@
       // center is (0,0) in world coords — pull control point that direction
       const cxp = mx + (0 - mx) * EDGE_PULL;
       const cyp = my + (0 - my) * EDGE_PULL;
-      // PHASE G — per-edge styling via CSS vars from the 7-bucket lookup.
-      // Idle: every non-headline edge paints the same slate-blue atmosphere.
-      // Headline (ancestor-of, polemic-*, syncretic-fusion, appropriated-by,
-      // visual-cognate) idles in its bucket color at idleOp 0.25-0.30 — these
-      // are the atlas's MASSIVE-wins and must be visible without hover.
-      // Hot: bucket color × per-type hotOp × fixed 1.6 px stroke (CSS cap).
+      // Verbatim copy of production .edge-line pattern (app.js:1235-1252):
+      // - Class: ph2-edge (plus xsym / xsym-xfamily for cross-symbol types in symbols mode)
+      // - Inline `stroke-width` and `stroke-opacity` SVG attrs per edge from EDGE_STYLE
+      // - --edge-type-color CSS var holds the hot-state color; idle stroke is slate-blue from CSS
       const st = edgeStyleFor(e.type);
       const path = document.createElementNS(SVG_NS, 'path');
-      path.setAttribute('class', 'ph2-edge' + (st.headline ? ' ph2-edge-headline' : ''));
+      let cls = 'ph2-edge';
+      if (_currentMode === 'symbols' && SYMBOL_CROSS_EDGE_TYPES.has(e.type)) {
+        cls += ' xsym';
+        const sNode = window.NODES_BY_ID && window.NODES_BY_ID[e.source];
+        const tNode = window.NODES_BY_ID && window.NODES_BY_ID[e.target];
+        if (sNode && tNode && (sNode.family || 'Other') !== (tNode.family || 'Other')) cls += ' xsym-xfamily';
+      }
+      path.setAttribute('class', cls);
       path.setAttribute('d', `M ${sp.x},${sp.y} Q ${cxp},${cyp} ${tp.x},${tp.y}`);
-      path.style.setProperty('--edge-type-color', st.hex);
-      path.style.setProperty('--edge-w',          st.width);
-      path.style.setProperty('--edge-idle-op',    st.idleOp);
-      path.style.setProperty('--edge-hot-op',     st.hotOp);
-      if (st.directional) path.dataset.directional = '1';
+      path.style.setProperty('--edge-type-color', st.c);
+      path.setAttribute('stroke-width', st.w);
+      path.setAttribute('stroke-opacity', st.op);
+      path.setAttribute('fill', 'none');
       path.dataset.source = e.source;
       path.dataset.target = e.target;
       path.dataset.type   = e.type || '';
-      path.dataset.bucket = EDGE_TYPE_BUCKET[e.type] ? EDGE_TYPE_BUCKET[e.type].replace(':hl','') : 'association';
-      // PHASE H — directional gradient. Pre-build per-edge <linearGradient>;
-      // the hover handler swaps `stroke: url(#id)` to activate it. REVERSE_DIRECTION
-      // types swap endpoints so the bright stop sits on the semantic origin
-      // (e.g. influenced-by points FROM the influencer TO the influenced,
-      // even though data src/tgt are reversed).
-      if (st.directional) {
-        const gid = 'ph2eg-' + _edgeCounter; // sigma _edgeCounter is unique per edge
-        const grad = document.createElementNS(SVG_NS, 'linearGradient');
-        grad.setAttribute('id', gid);
-        grad.setAttribute('gradientUnits', 'userSpaceOnUse');
-        const reverse = REVERSE_DIRECTION.has(e.type);
-        const x1 = reverse ? tp.x : sp.x, y1 = reverse ? tp.y : sp.y;
-        const x2 = reverse ? sp.x : tp.x, y2 = reverse ? sp.y : tp.y;
-        grad.setAttribute('x1', x1); grad.setAttribute('y1', y1);
-        grad.setAttribute('x2', x2); grad.setAttribute('y2', y2);
-        const stop0 = document.createElementNS(SVG_NS, 'stop');
-        stop0.setAttribute('offset', '0%');
-        stop0.setAttribute('stop-color', st.hex);
-        stop0.setAttribute('stop-opacity', '0.95');
-        const stop1 = document.createElementNS(SVG_NS, 'stop');
-        stop1.setAttribute('offset', '100%');
-        stop1.setAttribute('stop-color', st.hex);
-        stop1.setAttribute('stop-opacity', '0.35');
-        grad.appendChild(stop0); grad.appendChild(stop1);
-        defsEl.appendChild(grad);
-        path.dataset.gradId = gid;
-      }
       edgesG.appendChild(path);
       edgeEls.push({ el: path, s: e.source, t: e.target, st });
     });
@@ -852,20 +766,11 @@
           const incident = (s === _hoverId || t === _hoverId);
           el.classList.toggle('dim', !incident);
           el.classList.toggle('hot', incident);
-          // Phase H — directional gradient: when an edge becomes .hot,
-          // swap its stroke to the pre-built gradient. CSS .hot rule
-          // normally paints a flat bucket color; inline stroke wins.
-          if (incident && el.dataset.gradId) {
-            el.style.stroke = 'url(#' + el.dataset.gradId + ')';
-          } else if (el.style.stroke) {
-            el.style.stroke = '';
-          }
         });
       } else {
         edgeEls.forEach(({ el }) => {
           el.classList.remove('dim');
           el.classList.remove('hot');
-          if (el.style.stroke) el.style.stroke = '';
         });
       }
     }
@@ -954,8 +859,73 @@
     });
     // Track raw mouse for card positioning — sigma's stage-mousemove fires
     // continuously; cheaper to listen on the root.
+    // PREMIUM LIVENESS — Cosmograph's `simulationRepulsionFromMouse` trick:
+    // nearby nodes gently push away from the cursor. Adds "alive" feel
+    // without a live force-simulation. See AUDIT/premium-dynamics-research.
+    let _mouseWorld = null;    // {x, y} in graph coords, or null when cursor off-canvas
+    const _nudges = new Map(); // nodeId → {dx, dy} current displacement from anchor
+    const NUDGE_RADIUS  = 110; // world-units: cursor proximity to start nudging
+    const NUDGE_MAX     = 6;   // world-units: max displacement applied to nearest node
+    const NUDGE_LERP    = 0.18;// per-frame approach to target nudge
+    const NUDGE_DECAY   = 0.92;// per-frame decay when cursor is gone
+    let _rafId = null;
+    function tickLiveness() {
+      let anyChange = false;
+      // Compute target nudge per node + lerp current toward target
+      positions.forEach((p, id) => {
+        let tx = 0, ty = 0;
+        if (_mouseWorld) {
+          const dx = p.x - _mouseWorld.x;
+          const dy = p.y - _mouseWorld.y;
+          const dist = Math.hypot(dx, dy);
+          if (dist > 0.01 && dist < NUDGE_RADIUS) {
+            const fall = 1 - (dist / NUDGE_RADIUS);          // 1 near, 0 at radius
+            const mag  = NUDGE_MAX * fall * fall;            // quadratic falloff
+            tx = (dx / dist) * mag;
+            ty = (dy / dist) * mag;
+          }
+        }
+        const cur = _nudges.get(id) || { dx: 0, dy: 0 };
+        // Lerp toward target; if no mouse, target=0 with stronger decay
+        if (_mouseWorld) {
+          cur.dx += (tx - cur.dx) * NUDGE_LERP;
+          cur.dy += (ty - cur.dy) * NUDGE_LERP;
+        } else {
+          cur.dx *= NUDGE_DECAY;
+          cur.dy *= NUDGE_DECAY;
+        }
+        if (Math.abs(cur.dx) < 0.02 && Math.abs(cur.dy) < 0.02) {
+          if (_nudges.has(id)) { _nudges.delete(id); anyChange = true; }
+        } else {
+          _nudges.set(id, cur);
+          anyChange = true;
+          // Push the displacement into the live graph node so sigma paints it.
+          if (graph.hasNode(id)) {
+            graph.setNodeAttribute(id, 'x', p.x + cur.dx);
+            graph.setNodeAttribute(id, 'y', p.y + cur.dy);
+          }
+        }
+      });
+      if (anyChange) sigma.refresh({ skipIndexation: true });
+      // Stop the loop when nothing's moving and cursor is gone
+      if (_nudges.size === 0 && !_mouseWorld) { _rafId = null; return; }
+      _rafId = requestAnimationFrame(tickLiveness);
+    }
+    function kickLiveness() {
+      if (_rafId == null) _rafId = requestAnimationFrame(tickLiveness);
+    }
     rootEl.addEventListener('mousemove', (mev) => {
       if (thumbCard.style.display === 'block') positionThumbCard(mev);
+      // Translate viewport (relative to container) → world coords via sigma camera.
+      const rect = rootEl.getBoundingClientRect();
+      const vx = mev.clientX - rect.left;
+      const vy = mev.clientY - rect.top;
+      try { _mouseWorld = sigma.viewportToGraph({ x: vx, y: vy }); } catch (e) { _mouseWorld = null; }
+      kickLiveness();
+    });
+    rootEl.addEventListener('mouseleave', () => {
+      _mouseWorld = null;
+      kickLiveness();
     });
     sigma.on('clickNode', ({ node }) => {
       _selectedId = node;

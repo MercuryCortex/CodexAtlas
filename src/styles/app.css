@@ -53,6 +53,20 @@
   --t-layout:  240ms;
   --t-overlay: 280ms;
 
+  /* Premium-motion tokens — from Stripe (Benjamin De Cock) + Linear refresh +
+     Cosmograph defaults. Use these for graph + interactive surfaces.
+     AUDIT/premium-dynamics-research-2026-05-17.md for full sourcing. */
+  --ease-out-expo:  cubic-bezier(0.16, 1, 0.3, 1);   /* state changes (Linear, Stripe entrances) */
+  --ease-out-quart: cubic-bezier(0.165, 0.84, 0.44, 1); /* draw-ins / reveals (Stripe SVG lines) */
+  --ease-standard:  cubic-bezier(0.4, 0, 0.2, 1);    /* Material standard — back-and-forth state */
+  --motion-instant: 120ms;   /* button-state floor (Linear ~120-150) */
+  --motion-quick:   180ms;   /* hover / selection state change */
+  --motion-base:    260ms;   /* dim / blur layering transitions */
+  --motion-slow:    420ms;   /* draw-in / reveal */
+  /* Dim opacity floor (Datawrapper 0.15 / Cosmograph 0.10) — premium not academic */
+  --dim-opacity:    0.15;
+  --dim-blur:       2px;
+
   /* SOURCE-INTEGRITY TIER COLORS — used only when body.tier-overlay-on is set.
      Scale: T1 (primary, deep gold) → T2 (scholarly, silver) → T3 (reputable secondary, warm grey)
      → T4 (controversial-but-catalogued, muted crimson) → none (no refs yet, faint). */
@@ -1785,35 +1799,37 @@ body.view-atlas main.canvas { background: var(--bg-0); }
 .ph2-hull.dim          { fill-opacity: var(--ph2-hull-dim-fill, 0.025); stroke-opacity: 0.08; }
 .ph2-hull.hot          { fill-opacity: var(--ph2-hull-hot-fill, 0.20);  stroke-opacity: 0.60; }
 .ph2-hull.preview-fade { fill-opacity: 0.03;  stroke-opacity: 0.10; }
-/* PHASE G — 7-BUCKET EDGE VISUAL LOGIC.
-   Spec: AUDIT/edge-logic-spec-2026-05-17.md
-   Each edge has 4 inline CSS vars set by edgeStyleFor():
-     --edge-type-color  bucket hex
-     --edge-w           idle stroke width (0.20 / 0.34 / 0.46)
-     --edge-idle-op     idle stroke opacity per bucket
-     --edge-hot-op      hot stroke opacity per bucket
-   Idle: slate-blue atmosphere for everything EXCEPT .ph2-edge-headline.
-   Hot:  bucket color, per-type hotOp, fixed 1.6 px width.
-   --ph2-edge-opacity-mult is a global multiplier the dev panel tunes. */
+/* EDGES — verbatim copy of production .edge-line (app.css:1052-1083).
+   stroke-width + stroke-opacity are set as INLINE SVG attrs by the build
+   loop from EDGE_STYLE. --edge-type-color is the inline CSS var for hot. */
 .ph2-edge {
-  fill: none;
-  /* EXACT copy of production .edge-line stroke (app.css:1060). Do not deviate. */
-  stroke: rgba(120, 140, 182, 0.72);
-  stroke-width: calc(var(--edge-w, 0.20) * var(--ph2-edge-width-mult, 1));
-  stroke-opacity: calc(var(--edge-idle-op, 0.08) * var(--ph2-edge-opacity-mult, 1));
+  fill: none; pointer-events: none;
   vector-effect: non-scaling-stroke;
-  transition: stroke-opacity 180ms ease, stroke-width 180ms ease, stroke 180ms ease;
+  stroke: rgba(120, 140, 182, 0.72);
+  transition: stroke-opacity 180ms var(--ease-out-expo, cubic-bezier(0.16, 1, 0.3, 1)),
+              stroke-width   180ms var(--ease-out-expo, cubic-bezier(0.16, 1, 0.3, 1)),
+              stroke         180ms var(--ease-out-expo, cubic-bezier(0.16, 1, 0.3, 1)),
+              filter         260ms var(--ease-out-expo, cubic-bezier(0.16, 1, 0.3, 1));
 }
-/* Headline buckets (polemic, fusion, ancestor-of) idle in their bucket color.
-   These are the atlas's MASSIVE-wins — visible without hover. */
-.ph2-edge.ph2-edge-headline {
-  stroke: var(--edge-type-color, rgba(120, 140, 182, 0.72));
+.ph2-edge.dim {
+  /* Dim-on-focus: Datawrapper / Pudding floor — opacity 0.15 + 2 px blur for depth.
+     Was 0.02 alone (academic-infographic value); blur adds real layering. */
+  stroke-opacity: 0.15 !important;
+  filter: blur(2px);
 }
-.ph2-edge.dim { stroke-opacity: 0.02 !important; }
 .ph2-edge.hot {
   stroke: var(--edge-type-color, rgba(212, 165, 90, 0.9)) !important;
-  stroke-opacity: var(--edge-hot-op, 0.9) !important;
-  stroke-width: var(--ph2-edge-hot-width, 1.6) !important;
+  stroke-opacity: 0.9 !important;
+  stroke-width: 1.6 !important;
+}
+.ph2-edge.filter-dim.hover-reveal {
+  stroke: var(--edge-type-color, rgba(212, 165, 90, 0.85)) !important;
+  stroke-opacity: 0.8 !important;
+  stroke-width: 1.3 !important;
+}
+.ph2-edge.xsym { stroke-linecap: round; }
+.ph2-edge.xsym-xfamily {
+  filter: drop-shadow(0 0 1px rgba(212, 165, 90, 0.45));
 }
 
 /* THUMBNAIL HOVER CARD — modeled on production's #tooltip + .tt-thumb. */
