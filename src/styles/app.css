@@ -4272,6 +4272,16 @@ mark.sr-ent-demo {
 .alpha-glyph-cell:hover { background: var(--bg-1); }
 .alpha-glyph-cell.expanded { background: rgba(212,165,90,0.08); }
 
+/* Latin mode dropped-letters notice */
+.agv-latin-notice {
+  display: flex; flex-wrap: wrap; gap: 8px; align-items: baseline;
+  padding: 8px 1rem 10px; border-bottom: 1px solid var(--border-soft);
+  font-size: 0.72rem; line-height: 1.5;
+}
+.agv-ln-label { color: var(--gold-soft); font-weight: 600; }
+.agv-ln-dropped { color: var(--text-3); }
+.agv-ln-added { color: var(--text-3); }
+
 /* Script selector row */
 .agv-script-selector {
   display: flex; flex-wrap: wrap; gap: 6px;

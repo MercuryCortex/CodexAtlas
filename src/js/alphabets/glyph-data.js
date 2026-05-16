@@ -69,7 +69,7 @@ window.ALPHA_GLYPH_DATA = [
     relatedNodes: ['alphabet-masoretes', 'alphabet-hebrew-aleph-bet', 'alphabet-aramaic'],
   },
   {
-    letter: 'Θ', name: 'Teth', meaning: 'basket / coiled rope', gardiner: 'V28',
+    letter: '', name: 'Teth', meaning: 'basket / coiled rope', gardiner: 'V28',
     unicode: 0x130CB, phoneme: 'ṭ (emphatic t)', greek: 'Θ theta', latin: '(none — dropped)',
     hebrew: 'ט', arabic: 'ط', phoenician: '\u{10908}',
     note: 'A wickerwork basket or coiled rope seen from above — the circle with an interior mark. Greek theta (Θ) kept the shape almost exactly. Latin had no emphatic consonant for this, so Teth was dropped entirely — the first letter lost in the Latin transition.',
@@ -141,7 +141,7 @@ window.ALPHA_GLYPH_DATA = [
     relatedNodes: ['alphabet-sefer-yetzirah', 'alphabet-creation-by-word', 'alphabet-hebrew-aleph-bet', 'alphabet-aramaic'],
   },
   {
-    letter: 'Ṣ', name: 'Tsade', meaning: 'plant / fish-hook / man on side', gardiner: 'M17',
+    letter: '', name: 'Tsade', meaning: 'plant / fish-hook / man on side', gardiner: 'M17',
     unicode: 0x130BD, phoneme: 'ṣ (emphatic s)', greek: 'Ϻ san (archaic) / Ϡ sampi', latin: '(none)',
     hebrew: 'צ', arabic: 'ص', phoenician: '\u{10911}',
     note: 'A papyrus plant, fish-hook, or a man lying on his side — the most disputed origin. Became Coptic Ϣ. Dropped from Latin. Survives in Hebrew as Tsade (צ) and in Arabic abjad numerals. A letter that fell through the cracks of the European tradition.',
@@ -165,7 +165,7 @@ window.ALPHA_GLYPH_DATA = [
     relatedNodes: ['alphabet-gematria-hebrew', 'alphabet-sefer-yetzirah', 'alphabet-hebrew-aleph-bet', 'alphabet-medu-netjer'],
   },
   {
-    letter: 'Š', name: 'Shin', meaning: 'tooth', gardiner: 'F18',
+    letter: 'S', name: 'Shin', meaning: 'tooth', gardiner: 'F18',
     unicode: 0x13110, phoneme: 'š (sh-sound)', greek: 'Σ sigma', latin: 'S',
     hebrew: 'ש', arabic: 'ش', phoenician: '\u{10914}',
     note: 'Three teeth. Shin (שִׁן) means "tooth" in Hebrew. The three-pronged W-shape of ש is three teeth in a jaw. Sigma (Σ) flattened the three prongs to a zigzag. The English letter S still traces those three dental ridges — you are looking at a row of teeth every time you read the letter S.',

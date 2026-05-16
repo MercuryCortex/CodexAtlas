@@ -134,7 +134,26 @@
 
     const scriptMeta = SCRIPTS.find(s => s.id === _script) || SCRIPTS[0];
 
-    data.forEach((g, idx) => {
+    // Latin mode: sort A-Z, skip entries with no Latin equivalent
+    let displayData = data.map((g, idx) => ({ ...g, _origIdx: idx }));
+    if (_script === 'latin') {
+      displayData = displayData
+        .filter(g => g.letter && g.letter.trim() !== '')
+        .sort((a, b) => a.letter.localeCompare(b.letter));
+
+      // Dropped-letters notice
+      const dropped = document.createElement('div');
+      dropped.className = 'agv-latin-notice';
+      dropped.innerHTML = `
+        <span class="agv-ln-label">Latin kept 19 of 22 Phoenician letters.</span>
+        <span class="agv-ln-dropped">Dropped: Teth (no emphatic T), Tsade (no emphatic S) — shown in other script views.</span>
+        <span class="agv-ln-added">Added later: C · J · U · V · W · X · Y (derived from existing letters, not new Phoenician imports).</span>
+      `;
+      wrap.insertBefore(dropped, grid);
+    }
+
+    displayData.forEach((g) => {
+      const idx = g._origIdx;
       const cell = document.createElement('div');
       cell.className = 'alpha-glyph-cell';
       cell.dataset.idx = idx;
@@ -183,6 +202,7 @@
     if (_expandedIdx !== null && data[_expandedIdx]) {
       insertExpanded(detail, data[_expandedIdx]);
     }
+
   }
 
   function insertExpanded(detailEl, g) {
