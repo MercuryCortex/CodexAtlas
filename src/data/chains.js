@@ -344,6 +344,80 @@ window.CHAINS_DATA = [
     ],
   },
 
+  {
+    id: 'fludd-kepler-terminus',
+    title: 'The Fludd-Kepler Debate — The Exact Death of Music-of-Spheres as Physics',
+    category: 'INSTITUTIONAL',
+    span: '1619–1622 CE · 3-year terminus event',
+    summary: 'In 1619 Robert Fludd published his world-monochord diagram — a single string spanning Earth to God, with planetary distances mapped as musical intervals — the definitive apex of 3,500 years of music-cosmos theory. Johannes Kepler attacked it in the same year. Their published exchange (1619–1622) is the documented moment when music-of-spheres stopped being a physics claim and became an aesthetic metaphor. The entire prior chain ends here.',
+    links: [
+      {
+        date: '1619',
+        label: 'Fludd — Utriusque Cosmi Historia: The World-Monochord',
+        node: 'music-fludd-world-monochord',
+        note: 'Fludd\'s world-monochord diagram: a single string whose length spans from Earth (the fixed end) to the divine realm (the tuning peg). Planetary distances map to musical intervals with mathematical precision. This is the most visually complete statement of the music-of-spheres theory ever produced — simultaneously the apex and the last gasp of the tradition as a scientific claim.'
+      },
+      {
+        date: '1619',
+        label: 'Kepler — Harmonices Mundi: Planetary Velocities as Music',
+        node: 'music-pythagorean-harmony',
+        note: 'Kepler\'s version is more rigorous: planetary angular velocities at perihelion and aphelion produce intervals (Mars sweeps a minor third; Earth a major second). These intervals are real mathematical ratios derived from orbital mechanics. Kepler explicitly attacks Fludd for basing his ratios on mystical proportion rather than observed data. Two men claiming the same tradition — one with data, one with theology — and they are incompatible.'
+      },
+      {
+        date: '1621',
+        label: 'Fludd Replies — Veritatis Proscenium: Theology vs. Mathematics',
+        node: 'music-fludd-world-monochord',
+        note: 'Fludd distinguishes "formal" (mathematical) and "pyramidal" (qualitative-divine) harmonies — arguing that Kepler is measuring the shadow of the real music, not the music itself. This response clarifies the unbridgeable difference: Fludd is doing theology with mathematical notation; Kepler is doing astronomy. The argument cannot be resolved because the two men are answering different questions. This clarity is the terminus.'
+      },
+      {
+        date: '1622',
+        label: 'Kepler — Pro suo Opere Harmonices Mundi Apologia: Final Word',
+        node: 'music-pythagorean-harmony',
+        note: 'Kepler\'s final response makes the epistemological break explicit: Fludd\'s method produces no testable predictions; Kepler\'s method does. After 1622, no serious astronomer entertains planetary music as a physical claim. The concept migrates entirely into aesthetic metaphor, Romantic poetry, and occult revival — exactly where Fludd\'s tradition would continue.'
+      },
+      {
+        date: 'post-1622',
+        label: 'Aftermath — The Concept Survives as Metaphor',
+        node: 'music-fludd-world-monochord',
+        note: 'The music-of-spheres concept does not die — it migrates. Kepler wins the physics debate; Fludd wins the aesthetic legacy. "Music of the spheres" becomes a poetic phrase (Shakespeare uses it in Pericles); it drives Romantic nature-philosophy (Schelling\'s Naturphilosophie); it feeds Theosophical sound-cosmology; it reaches John Cage via the Yi Jing. But after 1622, nobody claims the planets actually produce tones that can be measured. The 3,500-year physics claim is over.'
+      },
+    ],
+  },
+
+  {
+    id: 'mantra-convergence-four-traditions',
+    title: 'The Mantra Convergence — Four Traditions Independently Develop the Same Sonic Technology',
+    category: 'CONVERGENCE',
+    span: 'c. -1200 BCE – 1291 CE · 2,400 years, no contact',
+    summary: 'Four traditions, across 2,400 years and three continents, independently arrive at the identical conclusion: non-semantic sound sequences (mantras, voces magicae, divine-name permutations, vowel strings) reach the divine or alter consciousness more effectively than semantic language. The technology is: specific sounds, in specific sequences, vocalized with specific breath-rhythm, produce specific effects. This is not metaphor — it is a practical protocol reproduced four times with no documented mutual influence at their origins.',
+    links: [
+      {
+        date: 'c. -1200 to -800 BCE',
+        label: 'Vedic Mantra — The Phoneme as Cosmic Address',
+        node: 'music-raga-time-cosmology',
+        note: 'The Vedic mantra tradition: specific Sanskrit phonemes are eternal cosmic substances (aksharas). The mantra OM is not a word meaning "everything" — it is the sound that IS everything, audible only when all other sound stops. Mantra efficacy is independent of understanding the meaning: you cannot translate a mantra and preserve its function because meaning is irrelevant to the operative mechanism. The phoneme, not the semantic content, does the work.'
+      },
+      {
+        date: 'c. -600 to -300 BCE',
+        label: 'Orphic Divine Names — Voces Magicae in Greek Ritual',
+        node: 'music-orphic-hymns',
+        note: 'The Orphic hymns use divine names in precise metrical patterns. Papyri magicae graecae (Greek magical papyri, c. 1st–4th c. CE) document voces magicae — strings of vowels and divine names used as operative sonic tools. The critical feature: the vowels ΑΕΗΙΟΥΩ (seven Greek vowels = seven planetary spheres = seven scale notes) are used in sequences that have no semantic content. Non-meaning is the point. Same technology as Vedic mantra, 600–900 years later, no contact.'
+      },
+      {
+        date: 'c. 300 CE',
+        label: 'Iamblichus — Vowel Sequences as Theurgic Technology',
+        node: 'music-neoplatonic-theurgy-sound',
+        note: 'De Mysteriis Book 7: Iamblichus explicitly argues that divine names reach the gods independently of their meaning. Phone (sound) vs. logos (meaning): the gods respond to the sonic form, not the semantic content. The Neoplatonist explicitly theorizes what the Vedic tradition had practiced for 1,500 years. Seven-vowel sequences, "barbarous names" (untranslatable sounds), and specific instrumental tones all operate on the same principle. Iamblichus has never read Vedic texts — he is arriving here independently through the Chaldean Oracles and Orphic materials.'
+      },
+      {
+        date: 'c. 1270–1291 CE',
+        label: 'Abulafia — Letter-Permutation as Prophetic Technology',
+        node: 'music-abulafia-prophetic-kabbalah',
+        note: 'Abraham Abulafia\'s prophetic Kabbalah: take a divine name (YHWH), permute its letters according to specific rules, vocalize the permutations rhythmically with coordinated breathing. The sonic sequence — independent of semantic meaning — triggers prophetic consciousness. Abulafia explicitly notes that the technique works for practitioners who do not know Hebrew semantics: the letters operate as sonic tools, not semantic units. Four traditions, no contact, same technology, same theoretical justification: meaning is irrelevant; sonic form is operative.'
+      },
+    ],
+  },
+
   // ─── CROSS-TRADITION TRANSMISSION CHAINS ──────────────────────────────────
 
   {

@@ -807,6 +807,7 @@ VIEWS.pantheon = {
       'symbols':   'Symbols of the Pantheon',
       'events':    'Events of the Pantheon',
       'music':     'Music of the Pantheon',
+      'alphabet':  'Alphabets of the Pantheon',
       'monuments': 'Monuments of the Pantheon',
     };
     document.getElementById('view-title').textContent = titleByMode[mode] || 'Pantheon';
@@ -838,6 +839,8 @@ VIEWS.pantheon = {
         if (n.type !== 'symbol') return false;
       } else if (mode === 'music') {
         if (n.type !== 'music') return false;
+      } else if (mode === 'alphabet') {
+        if (n.type !== 'alphabet') return false;
       } else if (mode === 'events') {
         if (n.type !== 'event') return false;
       } else if (mode === 'monuments') {
@@ -1051,6 +1054,7 @@ VIEWS.pantheon = {
         <option value="symbols"   ${mode === 'symbols'   ? 'selected' : ''}>✦ Symbols</option>
         <option value="events"    ${mode === 'events'    ? 'selected' : ''}>★ Events</option>
         <option value="music"     ${mode === 'music'     ? 'selected' : ''}>♩ Music</option>
+        <option value="alphabet"  ${mode === 'alphabet'  ? 'selected' : ''}>ℵ Alphabets</option>
         <option value="scripture" ${mode === 'scripture' ? 'selected' : ''}>✠ Scripture →</option>
         ${FEATURES.pantheonMonuments ? `<option value="monuments" ${mode === 'monuments' ? 'selected' : ''}>⛬ Monuments</option>` : ''}
       </select>

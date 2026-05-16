@@ -510,6 +510,7 @@
       if (mode === 'symbols')   return n.type === 'symbol';
       if (mode === 'events')    return n.type === 'event';
       if (mode === 'music')     return n.type === 'music';
+      if (mode === 'alphabet')  return n.type === 'alphabet';
       if (mode === 'monuments') {
         const tags = Array.isArray(n.tags) ? n.tags
           : (typeof n.tags === 'string' ? n.tags.split(/[,\s]+/) : []);
@@ -1427,6 +1428,7 @@
         <option value="symbols"   ${_currentMode === 'symbols'   ? 'selected' : ''}>✦ Symbols</option>
         <option value="events"    ${_currentMode === 'events'    ? 'selected' : ''}>★ Events</option>
         <option value="music"     ${_currentMode === 'music'     ? 'selected' : ''}>♩ Music</option>
+        <option value="alphabet"  ${_currentMode === 'alphabet'  ? 'selected' : ''}>ℵ Alphabets</option>
         <option value="monuments" ${_currentMode === 'monuments' ? 'selected' : ''}>⛬ Monuments</option>
       </select>
       <button class="ph2-btn" id="ph2-labels" title="Toggle label density">labels: ${_labelsMode}</button>
