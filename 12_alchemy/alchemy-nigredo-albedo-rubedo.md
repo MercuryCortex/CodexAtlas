@@ -98,3 +98,15 @@ The Nigredo-Albedo-Rubedo sequence is the alchemical formulation of the universa
 **Sufi**: *Maqamat* (stations of the path): *tawba* (repentance, turning away = Nigredo), *zuhd*, *sabr*, *tawakkul* (purification stations = Albedo), *fana* and *baqa* (annihilation and subsistence in God = Rubedo). The Sufi path of the heart is an alchemical path.
 
 This convergence — the same three-stage death-transformation-rebirth pattern appearing in independent alchemical, mystical, and anthropological contexts across cultures — is the strongest evidence that the pattern describes something real about the structure of human psychological and spiritual transformation, not merely a culturally transmitted metaphor.
+
+## Cross-Tradition Connections
+
+- [[ritual-rites-of-passage]] — van Gennep's separation/liminality/reincorporation as the anthropological name for nigredo/albedo/rubedo
+- [[ritual-initiation-mystery]] — mystery cult initiation as the ritual enactment of the three-stage sequence
+- [[phase-6-039-dark-night-of-the-soul]] — St. John of the Cross's dark night = the Nigredo in Christian mystical language
+- [[katabasis-and-anabasis]] — the descent-and-return as the Nigredo-Rubedo arc in Greek narrative form
+- [[fanaa-annihilation]] — Sufi fana (annihilation) as Nigredo; baqa (subsistence) as Rubedo
+- [[dying-rising-god]] — the death-rebirth mythological form of the nigredo-rubedo sequence
+- [[apotheosis]] — the Rubedo endpoint: deification/divine union across traditions
+- [[alchemy-calcination-stages]] — seven-stage expansion of the same sequence
+- [[alchemy-vitriol-descent]] — the VITRIOL instruction as the entry-point into the Nigredo

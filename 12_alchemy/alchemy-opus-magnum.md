@@ -105,3 +105,15 @@ The Opus Magnum is the alchemical name for what every major mystical tradition c
 **The Conclusion**
 
 The Opus Magnum investigation in the Codex Atlas produces a single overwhelming finding: across six traditions, developed in geographic, cultural, and temporal isolation from each other, the same pattern emerges — a multi-stage practice of intentional self-transformation, starting from an undifferentiated or degraded condition, proceeding through stages of dissolution, purification, and integration, and culminating in a state that transcends the ordinary human condition. The names differ (Gnosis, Moksha, Nirvana, Theosis, Fana, Xian). The structure is the same. The alchemical Opus Magnum names the pattern in its most explicitly proceduralized Western form.
+
+## Cross-Tradition Connections
+
+- [[fanaa-annihilation]] — Sufi fana as the Opus Magnum's Nigredo/annihilation equivalent
+- [[apotheosis]] — deification/divine union as the Opus Magnum's completion across traditions
+- [[dying-rising-god]] — the death-and-resurrection pattern as the Opus Magnum's narrative form
+- [[ritual-initiation-mystery]] — mystery cult initiation as the Opus Magnum in ritual form
+- [[ritual-rites-of-passage]] — van Gennep's rites-of-passage as the Opus Magnum's anthropological structure
+- [[neoplatonic-henosis]] — Neoplatonic union with the One as the Opus Magnum's philosophical endpoint
+- [[katabasis-and-anabasis]] — the descent-and-return as the Opus Magnum's narrative arc
+- [[alchemy-calcination-stages]] — the seven-stage expansion of the Opus Magnum
+- [[alchemy-kabbalah-alchemy-synthesis]] — the Opus Magnum as tikkun ha-Olam in the Renaissance synthesis

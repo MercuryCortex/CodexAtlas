@@ -85,3 +85,14 @@ In actual alchemical practice (as opposed to purely philosophical reading), prim
 **The Laboratory Re-enacts Cosmogony**
 
 The deepest implication of the prima materia concept is that the laboratory re-enacts the original creation of the cosmos. The alchemist who reduces a metal back to prima materia has returned it to the pre-creation state. The alchemist who then transforms it through the stages of the Great Work and produces the Stone is performing creation again — the second creation, the human imitation of divine cosmogony. This is not metaphor in the alchemical framework: the laboratory is a sacred space where creation happens again, through human hands, in miniature. See [[alchemy-as-spiritual-discipline]] and [[alchemical-marriage]].
+
+## Cross-Tradition Connections
+
+- [[chaos-primordial]] — the symbolic node for primordial chaos across traditions
+- [[tiamat]] — Babylonian salt-water chaos; structural equivalent of prima materia
+- [[ein-sof]] — Kabbalistic infinite ground before any sefirot differentiation; prima materia at the divine level
+- [[the-pleroma]] — Gnostic fullness whose outer darkness (hyle) is the Gnostic prima materia
+- [[sophia-gnostic]] — Sophia's fall into matter is the Gnostic narrative of the prima materia becoming animated
+- [[sophia-pleroma]] — Sophia within the Pleroma before the fall
+- [[alchemy-ouroboros]] — the ouroboros as the symbol of prima materia: beginning = end, dissolution = creation
+- [[alchemy-kabbalah-alchemy-synthesis]] — Keter as the Kabbalistic prima materia
