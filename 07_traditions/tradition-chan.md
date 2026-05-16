@@ -4,7 +4,7 @@ id: "tradition-chan"
 name: "Chan Buddhism"
 aka: ["Chan (禪)", "Chinese Zen", "Seon (Korea)", "Thiền (Vietnam)"]
 parent-tradition: "[[tradition-zen]]"
-status: "stub"
+status: "metadata"
 refs: []
 tags: [tradition, chan, buddhism, zen, china]
 ---

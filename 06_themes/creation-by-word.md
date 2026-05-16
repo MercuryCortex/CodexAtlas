@@ -3,8 +3,8 @@ type: theme
 id: "creation-by-word"
 name: "Creation by word / speech"
 category: "cosmogonic"
-appearances: ["[[phase-1-027-memphite-theology-shabaka-stone]]", "[[phase-2-018-hebrew-bible-p-source]]", "[[phase-3-020-gospel-of-john]]", "[[phase-4-034-quran]]"]
-deity-instances: ["[[ptah-egyptian]]", "[[yahweh]]", "[[allah]]"]
+appearances: ["[[phase-1-027-memphite-theology-shabaka-stone]]", "[[phase-2-018-hebrew-bible-p-source]]", "[[phase-3-020-gospel-of-john]]", "[[phase-4-034-quran]]", "[[spider-grandmother-hopi]]", "[[palongawhoya]]"]
+deity-instances: ["[[ptah]]", "[[yahweh]]", "[[allah]]", "[[spider-grandmother-hopi]]"]
 status: "metadata"
 refs:
   - title: "The Memphite Theology of Creation"
@@ -75,6 +75,7 @@ Creation-by-word is theologically distinctive because it implies the creator's *
 - → [[phase-2-018-hebrew-bible-p-source]]: *attested-in*; Genesis 1's repeated fiat formula
 - → [[phase-3-020-gospel-of-john]]: *attested-in*; Johannine Logos as creative divine speech in the eternal beginning
 - → [[phase-4-034-quran]]: *attested-in*; *kun fa-yakun* at 8 locations; the most compressed theological expression of the formula
-- → [[ptah-egyptian]]: *deity-instance*; Ptah as the god who creates by utterance
+- → [[ptah]]: *deity-instance*; Ptah as the god who creates by utterance
+- → [[spider-grandmother-hopi]]: *deity-instance*; Hopi creation-by-thought-and-song — the most complete independent cognate to the Abrahamic creation-by-word cluster; adds the *vibration/song* dimension absent from the Egyptian/Hebrew/Islamic formulations
 - → [[yahweh]]: *deity-instance*; Genesis 1's creative speaker
 - → [[allah]]: *deity-instance*; Quranic *kun fa-yakun* as supreme creative command

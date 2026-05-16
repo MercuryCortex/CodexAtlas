@@ -12,7 +12,7 @@ key-persons: []
 key-documents: []
 key-themes: ["[[world-axis]]", "[[finisterre-end-of-world]]"]
 sister-traditions: ["[[tradition-celtic]]", "[[tradition-lusitanian-religion]]"]
-status: "stub"
+status: "metadata"
 refs:
   - title: "Facing the Ocean: The Atlantic and Its Peoples"
     author: "Cunliffe, Barry"

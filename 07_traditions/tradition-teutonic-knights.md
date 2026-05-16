@@ -11,7 +11,10 @@ key-deities: ["[[jesus-christ-deity]]", "[[mary-theotokos]] (the Order's primary
 key-persons: ["Hermann von Salza (4th Grand Master, 1209–1239 — the strategic architect of the Order's pivot from Outremer to the Baltic)", "Albert of Buxhoeveden (founder of Livonian operations)"]
 key-documents: ["Rule of the Teutonic Knights (modeled on Templar Rule, ~1198)"]
 sister-traditions: ["[[tradition-knights-templar]]", "[[tradition-hospitallers]]"]
-status: "stub"
+key-themes:
+  - "[[theme-persecution-as-legitimation]]"
+  - "[[divine-kingship-solar]]"
+status: "metadata"
 refs:
   - title: "The Teutonic Knights: A Military History"
     author: "Turnbull, Stephen"
@@ -51,6 +54,11 @@ The **Order of the German House of Saint Mary in Jerusalem** — Latin *Ordo dom
 
 ## The Northern Crusades wedge
 The Teutonic Knights are the institutional vector by which Latin Christianity is imposed on the **last pagan polities of Europe** — the Old Prussians (~1230–1283), the Estonians and Latvians (Livonian Crusade, 1198–1290), and eventually Lithuania (continuous warfare from 1230 until the 1386 baptism of Jogaila / Władysław II as part of the Lithuanian-Polish dynastic union). The Lithuanian case is especially important for the Codex Atlas wedge: **Lithuania was the last officially-pagan European state**, baptized only in 1386 — long after the rest of Europe — and pagan-Baltic religion (Dievas, Perkūnas, Žemyna, etc.) persisted in folk practice well into the 19th c., making the Baltic the longest-surviving European source for non-Christianized Indo-European religion.
+
+## MASSIVE WIN — cross-tradition edges
+- **Lithuania 1386 = the vault's last act of European pagan Christianity**: When Grand Duke Jogaila converted to Latin Christianity and married Queen Jadwiga of Poland, he ended the last officially pagan polity in Europe — the Lithuanian grand duchy, which had actively defended Baltic Indo-European religion against Teutonic crusading pressure for 150 years. The Baltic religious tradition preserved in Lithuanian folk practice (Dievas / [[perkunas]] / [[zemyna]]) is the closest surviving Indo-European religious material to the reconstructed PIE substrate — Lithuanians were still worshipping at oak groves, asking [[perkunas]] for rain, venerating [[zemyna]] at earth-level offerings, into the 19th century in folk practice. The Teutonic Order is the direct institutional agent of this tradition's suppression. The 1386 baptism is the endpoint of a 1,200-year process (from Constantine's conversion, ~312 CE) — the Teutonic Knights delivered the final act.
+- **Hohenzollern → Prussian state → German nationalism (military order as dynastic seed)**: Grand Master Albrecht von Hohenzollern's 1525 secularization of the Order's Prussian holdings into the Lutheran Duchy of Prussia is the origin-point of the Hohenzollern dynasty's territorial power. The chain: Teutonic Ordensstaat (1230–1525) → Duchy of Prussia (1525) → Kingdom of Prussia (1701) → German Empire (1871) → World War I → Weimar Republic → Third Reich. The Teutonic Order's institutional machinery — a disciplined, hierarchical, German-national organization with a mission of territorial conquest justified by religious mandate — is the structural ancestor of what Max Weber called the "Prussianism" that would define German political culture. The Baltic Crusade as colonial project precedes Iberian colonialism by 200 years and is the dress rehearsal for Christian-justified conquest of non-Christian peoples.
+- **Northern Crusades as colonial template ↔ Iberian colonialism ↔ doctrine of terra nullius**: The Teutonic state in Prussia is a colonial project structurally identical to what the Portuguese and Spanish would do in the Americas 200–300 years later: conquest of indigenous people by a Christian military force, forced conversion, settlement by colonists from the home country, economic exploitation of conquered territory, elimination of indigenous religious practice. The legal justification — *terra nullius* / pagan land subject to Christian expropriation — was first systematically worked out in the papal bulls authorizing the Northern Crusades (*Crusade Bull* of 1147; *Golden Bull of Rimini* 1226). These legal arguments are the direct ancestors of the *Inter Caetera* (1493) and *Romanus Pontifex* (1455) that justified Portuguese and Spanish colonialism.
 
 ## Relations to neighbors
 - **vs. [[tradition-knights-templar]] / [[tradition-hospitallers]]:** parallel military-religious orders; the Teutons' German national identity differentiates the Order institutionally.

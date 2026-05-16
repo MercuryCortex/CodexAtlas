@@ -2,7 +2,7 @@
 type: tradition
 id: "tradition-egyptian-religion"
 name: "Egyptian Religion"
-status: "stub"
+status: "metadata"
 tags: [tradition, egypt]
 ---
 

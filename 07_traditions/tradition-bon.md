@@ -11,7 +11,10 @@ key-deities: ["Tonpa Shenrab", "Sherab Chamma", "Kuntu Zangpo (Bön Samantabhadr
 key-persons: ["Tonpa Shenrab Miwoche (mythic founder)"]
 key-documents: ["Zermig and Ziji (founder hagiographies)", "the Bön Kanjur and Tenjur (parallel-to-Buddhist canon)"]
 sister-traditions: ["[[tradition-vajrayana-buddhism]]"]
-status: "stub"
+key-themes:
+  - "[[apotheosis]]"
+  - "[[dying-rising-god]]"
+status: "metadata"
 refs:
   - title: "The Heart Drops of Dharmakaya: Dzogchen Practice of the Bön Tradition"
     author: "Wangyal, Tenzin"
@@ -44,6 +47,11 @@ The non-Buddhist (or rather: alongside-Buddhist) Tibetan religious tradition tra
 2. **First-period Bön / suppression** (8th c.) — Buddhism becomes Tibetan state religion under King Tri Songdetsen; Bön is partially suppressed.
 3. **Renaissance / systematization** (11th–14th c.) — Yungdrung Bön emerges in its modern monastic-textual form; mutual influence with the new Buddhist schools.
 4. **Modern** — recognized as the fifth Tibetan religious school (alongside Nyingma, Kagyu, Sakya, Gelug) by the Dalai Lama's exile administration; substantial Western interest in Bön Dzogchen.
+
+## MASSIVE WIN — cross-tradition edges
+- **Bön Dzogchen ↔ Vajrayana Dzogchen (same apex teaching under rival institutional identities)**: The Zhang Zhung Nyengyud — the core Bön Dzogchen lineage — teaches *rigpa* (pure awareness, the natural state) in terms structurally identical to the Nyingma Dzogchen instructions in [[tradition-vajrayana-buddhism]]: the ground is primordially pure, the path is direct recognition rather than gradual development, the fruit is always already present. Whether Bön "borrowed" this from Nyingma Buddhism after the 8th century, or whether both inherited it from a pre-Buddhist Zhang-Zhung contemplative tradition, is the central academic debate (Karmay 2007; Snellgrove). Either way, this is the vault's clearest example of the same apex teaching appearing under two competing institutional names that claim mutual priority. The doctrinal content is essentially identical; the institutional history is a 1,200-year argument about origins.
+- **Pre-Buddhist Tibetan religion as sole surviving window into non-Buddhist Central Asian shamanism**: Bön preserves elements of the pre-Buddhist Tibetan royal funerary cult — death-rituals, divination, mountain-spirit veneration, and the royal soul-concept — that are essentially inaccessible in any other surviving source. This makes Bön structurally analogous to Celtic Druidic tradition as preserved in medieval Irish hagiography: the only transmission vehicle for a pre-Axial religious layer that the conquering world-religion (Buddhism in Tibet; Christianity in Ireland) failed to entirely erase. The pre-Buddhist "chos" substrate — protective deity veneration, landscape animation, royal sacrifice — shapes Tibetan religious culture at a depth that Buddhism overlaid but did not eliminate.
+- **Zhang-Zhung ↔ Iranian religious sphere (possible Central Asian transmission node)**: The legendary Zhang-Zhung civilization of western Tibet is geographically positioned at the intersection of Tibetan, Mongolian, Indian, and Iranian cultural spheres. Some Bön scholars (Namkhai Norbu) propose that Zhang-Zhung functioned as a transmission node through which Iranian Manichaean and Zoroastrian religious elements entered Tibet before Buddhism's arrival. If this transmission is real, Bön is the vehicle through which [[tradition-zoroastrianism]]'s dualism and light-cosmology entered Himalayan religious culture — making the Bön-Buddhist debate a partial echo of the Zoroastrian-Buddhist contact in Bactria.
 
 ## Refs
 1. Karmay & Watt (eds.), *Bön: The Magic Word*, 2007.

@@ -10,9 +10,11 @@ regions-spread: ["Huelva / Tartessian heartland", "coastal Algarve and Alentejo 
 key-deities: ["[[melqart]] (via Gades — the Phoenician religious presence in Tartessian territory)"]
 key-persons: ["[[arganthonius]] (semi-legendary king of Tartessos, c. -630 to -550, attested in Herodotus and Strabo as a centuries-long-lived monarch who befriended the Phocaean Greeks)"]
 key-documents: []
-key-themes: []
+key-themes:
+  - "[[finisterre-end-of-world]]"
+  - "[[world-axis]]"
 sister-traditions: ["[[tradition-phoenician]] (Phoenician traders as primary external contact)", "[[tradition-greek-religion]] (Phocaean Greek contact, 7th-6th c. BCE)"]
-status: "stub"
+status: "metadata"
 refs:
   - title: "Tartessos: The Archaeology of a Lost Civilization"
     author: "Koch, John T. and Cunliffe, Barry (eds.)"

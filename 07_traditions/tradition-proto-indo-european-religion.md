@@ -11,7 +11,11 @@ key-deities: ["*Dyeus Pḥtḗr (Sky Father — reconstructed) → Greek Zeus / 
 key-persons: []
 key-documents: ["Vedic Rig Veda (~1500–1200 BCE — the oldest surviving IE religious text, closest to the PIE substrate)", "Avesta / Yasna (~600 BCE — Iranian; preserves archaic IE vocabulary alongside radical Zoroastrian reform)", "Linear B tablets (Mycenaean Greek, ~1450–1200 BCE — oldest Greek deity names)", "Hittite texts (~1400–1200 BCE — oldest attested IE language; preserves some archaic shared IE religious terms)"]
 sister-traditions: ["[[tradition-vedic-hinduism]]", "[[tradition-greek-religion]]", "[[tradition-roman-religion]]", "[[tradition-norse]]", "[[tradition-celtic]]", "[[tradition-lusitanian-religion]]", "[[tradition-lithuanian-religion]]"]
-status: "stub"
+key-themes:
+  - "[[world-axis]]"
+  - "[[divine-kingship-solar]]"
+  - "[[dying-rising-god]]"
+status: "metadata"
 refs:
   - title: "The Horse, the Wheel, and Language: How Bronze-Age Riders from the Eurasian Steppes Shaped the Modern World"
     author: "Anthony, David W."

@@ -11,7 +11,10 @@ key-deities: ["Tinia (Jupiter equivalent)", "Uni (Juno)", "Menrva (Minerva)", "N
 key-persons: []
 key-documents: ["The Liber Linteus (Zagreb mummy bandages, c. 200 BCE)", "the Piacenza bronze liver (haruspex divinatory aid)"]
 sister-traditions: ["[[tradition-roman-religion]]"]
-status: "stub"
+key-themes:
+  - "[[divine-kingship-solar]]"
+  - "[[logos-cosmic-reason]]"
+status: "metadata"
 refs:
   - title: "The Religion of the Etruscans"
     author: "de Grummond, Nancy Thomson and Simon, Erika (eds.)"
@@ -39,6 +42,11 @@ The pre-Roman religious tradition of Etruria (modern Tuscany, Lazio, Umbria), c.
 3. **Classical** (-480 to -300) — gradual eclipse by Roman expansion.
 4. **Hellenistic** (-300 to -100) — Roman absorption; Etruscan language and religion gradually lost (Etruscan was extinct as a spoken language by 1st c. CE).
 5. **Disciplina Etrusca preserved within Roman religion** — haruspicy continued as Roman state practice into the imperial period.
+
+## MASSIVE WIN — cross-tradition edges
+- **Etruscan haruspicy → Roman state religion (fully documented divinatory system transfer)**: The Etruscan *disciplina haruspicina* — reading sheep livers, observing lightning strikes, interpreting bird behavior — was formally adopted into Roman state religious practice through the institution of the haruspices (officially Roman specialists in Etruscan divinatory technique). The transmission is documented: the Romans explicitly called it *Etrusca disciplina* (Etruscan learning), trained Roman youths in Etruria to master it (per Livy and Cicero), and maintained it as a parallel system alongside Roman augury through the entire imperial period. This is the vault's clearest transmission of a complete technical-divinatory system from one culture to another with full institutional acknowledgment of the borrowing.
+- **Etruscan kings of Rome → Capitoline Triad (political-religious institutional transfer)**: The Tarquinian dynasty (three Etruscan kings of Rome, 616–509 BCE) brought Etruscan religious-institutional forms directly into the Roman state. The Capitoline triad — Jupiter, Juno, Minerva — maps exactly onto the Etruscan Tinia, Uni, Menrva, and the Capitoline temple itself (traditionally built under the Tarquins) institutionalized this Etruscan-origin theology as the heart of Roman civic religion. Jupiter/Juno/Minerva then becomes the implicit template for the Christian Trinity structural parallel noted by Tertullian, and the Capitoline triad structure echoes in the Christian Father/Son/Spirit formula. The chain: Etruscan → Roman → Christian structural analogy runs through this transmission point.
+- **Fufluns / Dionysus (earliest documented northwest transmission of Greek mystery religion)**: The Etruscan god Fufluns — the god of wine, ecstasy, and the life-force of vegetation, functionally and iconographically identical to the Greek Dionysus — is attested in Etruscan contexts from the 6th century BCE, making this one of the earliest documented cases of Greek mystery-cult religion transmitted into the Italian peninsula. The Dionysus cult arrived in Rome via Etruria before Rome directly absorbed Greek religion; Fufluns/Dionysus then becomes the Roman Bacchus, whose *Bacchanalia* festivals led to the Roman Senate's suppression decree of 186 BCE — the first systematic Roman religious persecution. The transmission chain Greek → Etruscan → Roman → early-Christian-period context is the Dionysiac route into Roman cultural space.
 
 ## Note
 The Etruscan religious tradition's principal long-term influence is its absorption into Roman religion; the gods Tinia, Uni, Menrva map onto the Capitoline triad (Jupiter, Juno, Minerva). The script and language are partly readable; the religious content is mostly inferred from inscriptions, tomb-paintings, and bronze objects.

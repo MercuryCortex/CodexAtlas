@@ -11,7 +11,11 @@ key-deities: ["[[allah]]"]
 key-persons: ["[[ismail-ibn-jafar]]", "[[al-muizz-fatimid]]", "[[hasan-i-sabbah]]", "[[al-kirmani]]", "[[nasir-i-khusraw]]"]
 key-documents: ["[[phase-5-011-rasail-ikhwan-al-safa]]", "the Fatimid daʿwa corpus (Sijistānī, Kirmānī, Muʾayyad fī al-Dīn al-Shīrāzī)", "Nizārī esoteric texts"]
 sister-traditions: ["[[tradition-shia-islam]] (Imami/Twelver)", "[[tradition-sufism]]", "[[tradition-neoplatonism]]"]
-status: "stub"
+key-themes:
+  - "[[messianic-future-savior]]"
+  - "[[theme-apophatic-theology]]"
+  - "[[apotheosis]]"
+status: "metadata"
 refs:
   - title: "The Ismāʿīlīs: Their History and Doctrines (2nd ed.)"
     author: "Daftary, Farhad"
@@ -57,6 +61,12 @@ Ismā'īlī Shi'ism — the "Sevener" branch of Shi'a Islam — emerged from the
 - **Cosmological emanationism** — Neoplatonic emanation adapted to Islam.
 - **Graded initiation** (*daʿwa*) — the missionary network is hierarchical; initiates ascend through grades.
 - **Cyclical history** — seven prophet-cycles (each opened by a *nāṭiq* / speaking prophet and continued by a *ṣāmit* / silent imam); the final cycle is that of the Qāʾim / Resurrector.
+
+## MASSIVE WIN — cross-tradition edges
+- **Fatimid Neoplatonism ↔ Christian Neoplatonism ↔ Kabbalah (same emanationist apparatus across three Abrahamic traditions)**: The Ismaili philosophical tradition — the Fatimid *daʿwa* corpus (al-Kirmānī, al-Sijistānī) and the Ikhwan al-Safa encyclopedism ([[phase-5-011-rasail-ikhwan-al-safa]]) — adapted Plotinian-Proclean emanationism (First Intellect → Universal Soul → cosmic spheres → material world) to Islamic theological needs, producing the most sophisticated Neoplatonic synthesis in medieval Islam. This is structurally identical to what Christian Neoplatonists did (pseudo-Dionysius's nine angelic orders; Eriugena's *Periphyseon*) and what Kabbalah did (the ten Sefirot as emanative levels from *Eyn Sof* in *Sefer Yetzirah* and the Zoharic tradition). Three Abrahamic traditions, one late-antique Neoplatonic apparatus, three independent theological applications — all drawing on the same Arabic *Theology of Aristotle* (Baghdad, ~830 CE, the intermediary text). See [[tradition-neoplatonism]], [[tradition-kabbalah]].
+- **Bāṭin/Ẓāhir hermeneutic ↔ Kabbalistic PaRDeS ↔ Christian four senses of Scripture (three independent esoteric-reading systems)**: The Ismaili claim that the Qur'an has an exoteric surface (*ẓāhir*) and an esoteric inner meaning (*bāṭin*) accessible only through the living Imam's guidance is structurally identical to the Kabbalistic PaRDeS system (Peshat / Remez / Derash / Sod — four levels from plain to mystical meaning) and the Christian four senses of Scripture (literal, allegorical, tropological, anagogical — systematized by John Cassian and Aquinas). All three posit: sacred text has a surface meaning available to all believers, and deeper layers accessible only through spiritual advancement or formal initiation. The Ismaili system is the most institutionally developed, requiring hierarchical initiation through *daʿwa* grades to access progressively deeper *bāṭin*.
+- **Ismaili cyclical prophet-theory ↔ Hindu avatāra ↔ Zoroastrian world-ages (convergent sacred-history frameworks)**: The Ismaili doctrine of seven successive prophet-cycles (*adwār*) — each opened by a *nāṭiq* (speaking prophet: Adam, Noah, Abraham, Moses, Jesus, Muhammad, the coming Qāʾim) and sustained by a *ṣāmit* (silent imam) — is structurally parallel to Hindu avatāra theory (Vishnu's ten *avatāras* descending across the four cosmic ages to restore dharma) and Zoroastrian world-age theology (twelve-thousand-year cosmic cycles culminating in Saoshyant's renovation). All three posit: cosmic history organized into defined cycles; a specially endowed figure appearing at the cycle-turning point; a final, climactic salvific appearance at history's end. See [[tradition-zoroastrianism]], [[tradition-vedic-hinduism]].
+- **Nizārī Great Resurrection (1164) ↔ antinomian mysticism (the formal institutional suspension of Law)**: In 1164 the Alamut Grand Master Ḥasan II declared the *Qiyāma* (Resurrection) — announcing that the era of *ẓāhir* (outward religious law) was superseded; the Imam's presence meant the metaphysical resurrection was now operative, and the restrictions of Islamic law were lifted for those who had attained inner knowledge. This is structurally identical to antinomian poles that appear across esoteric traditions: the Sabbatian movement's antinomianism after 1666 (sin as redemptive act); Sufi *malamatiyya* (deliberately attracting blame to transcend ego-performance); some Gnostic antinomian sects. The Ismaili case is institutionally the clearest: a formal, dated proclamation by a sovereign political-religious authority suspending religious law in the name of esoteric fulfillment.
 
 ## Relations to neighbors
 - vs. [[tradition-shia-islam]] (Twelver): sister Shi'a tradition diverging at the seventh Imam.

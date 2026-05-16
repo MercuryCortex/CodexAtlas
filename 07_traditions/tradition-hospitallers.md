@@ -11,7 +11,10 @@ key-deities: ["[[jesus-christ-deity]]", "[[mary-theotokos]]", "John the Baptist 
 key-persons: ["Gerard the Founder (~1080–1120)", "Raymond du Puy (first formal Grand Master ~1120–1160)", "Pierre d'Aubusson (siege of Rhodes 1480)", "Jean Parisot de Valette (Great Siege of Malta 1565)"]
 key-documents: ["Rule of Raymond du Puy (~1140s)", "Statutes of the Order"]
 sister-traditions: ["[[tradition-knights-templar]] (parallel military-religious order; absorbed most Templar assets 1312)", "[[tradition-teutonic-knights]] (parallel German military order)"]
-status: "stub"
+key-themes:
+  - "[[theme-persecution-as-legitimation]]"
+  - "[[martyrdom-theology]]"
+status: "metadata"
 refs:
   - title: "The Knights of St John in Jerusalem and Cyprus, c.1050-1310"
     author: "Riley-Smith, Jonathan"
@@ -57,6 +60,11 @@ The Order's John-the-Baptist patronage is notable for the Codex Atlas wedge: acr
 7. **Wandering** (1522–1530) — Suleiman the Magnificent expels the Order from Rhodes (1522).
 8. **Malta** (1530–1798) — Charles V grants the Order Malta. Survives the **Great Siege of Malta** (1565) — a major event of the early-modern Christian–Ottoman frontier. Expelled by Napoleon 1798.
 9. **Sovereign Military Order of Malta** (1834–present) — Rome-based, retains UN observer status; runs international humanitarian operations.
+
+## MASSIVE WIN — cross-tradition edges
+- **Johannite patronage ↔ Mandaean Baptist-tradition ↔ "Johannite" esoteric Christianity (the Baptist as cross-tradition hinge)**: The Hospitallers' primary devotion to John the Baptist is the institutional anchor of Baptist-centered Christianity in the medieval Latin West — and John the Baptist is the vault's most cross-tradition figure. The [[tradition-mandaeism|Mandaeans]] of Iraq regard John as their supreme prophet and reject Jesus as a false teacher. The "Johannite" esoteric Christianity of the 18th-19th century (Bernard-Raymond Fabré-Palaprat's *Johannite Church*, claiming Templar-Hospitaller succession) argued the real apostolic lineage ran through the Baptist, not through Jesus. While the historical Hospitallers are straightforwardly Catholic, their 900-year Johannite patronage means they are structurally woven into every conspiracy and esoteric narrative in the vault's Templar-Grail zone — an institutional coincidence with enormous cross-tradition significance.
+- **Military-religious order as institutional survival template (900 years of continuous corporate identity)**: The Hospitallers are the vault's prime case of an institution surviving beyond every conceivable civilizational rupture — loss of the Holy Land (1291), loss of Cyprus (1310), conquest and loss of Rhodes (1522), loss of Malta (Napoleon, 1798) — while maintaining institutional identity, assets, and canonical legitimacy throughout. The Order of Christ in Portugal offers a partial parallel; no other institution in the vault matches the Hospitallers' record of continuous survival across 900 years and five distinct political-territorial contexts. The institutional mechanics (sovereign recognition, papal protection, international asset base, regular recruitment) are the template for modern trans-national NGOs and humanitarian organizations. The present Sovereign Military Order of Malta holds permanent observer status at the United Nations — a medieval religious order with more formal international standing than most modern nation-states.
+- **Krak des Chevaliers → sacred-space transmission across religious regimes**: The great Hospitaller fortress-complex at Krak des Chevaliers (Syria) was built on a site occupied by the Kurdish Emirate of Homs before the Crusaders, possibly sacred in pre-Islamic form before that. The Hospitallers held it 1142–1271; it was then held by the Mamluk Sultanate; it survived into the 21st century as one of the best-preserved medieval fortifications on earth. The transmission of militarily and strategically significant sites across religious regimes — pagan → Christian → Muslim, each reusing the previous occupation's infrastructure — is a repeating vault pattern at sites like the Temple Mount, the Umayyad Mosque (built over a Byzantine church, built over a pagan temple), and Santiago de Compostela (built at a pre-Roman sacred promontory).
 
 ## Relations to neighbors
 - **vs. [[tradition-knights-templar]]:** parallel order, often institutional rival, but theologically and ideologically similar; received the bulk of Templar assets after the 1312 suppression (papal bull *Ad providam*).

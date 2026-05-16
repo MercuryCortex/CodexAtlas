@@ -59,9 +59,37 @@ Feathered serpent — the central image. Wind aspect (Ehécatl-Quetzalcóatl): d
 - **Cortés-as-Quetzalcoatl thesis.** That Moctezuma II identified Cortés with the returning Quetzalcoatl, easing the conquest, is a well-known claim. Lockhart (1993), Restall (2003), and Townsend (2003) have substantially deconstructed it as a post-conquest narrative imposed by both Spanish and Indigenous chroniclers to make sense of conquest. The actual pre-conquest Quetzalcoatl-return prophecy is much less prominent than the post-conquest tradition suggests.
 - **Topiltzin / god conflation.** See above.
 
+## MASSIVE WIN — Quetzalcoatl as Venus / Morning Star
+
+Quetzalcoatl's apotheosis as **Venus the Morning Star** (*Tlahuizcalpantecuhtli* — "Lord of the Dawn") after his death/exile is one of the most important astronomical-theological connections in Mesoamerican religion — and it links to a global pattern of deities identified with Venus as the planet of death-and-resurrection.
+
+The Quetzalcoatl-Venus identification (attested in the *Annales de Cuauhtitlan*, one of the earliest post-conquest Nahuatl texts) works as follows: Topiltzin Quetzalcoatl, the Toltec priest-king, commits ritual transgression, abdicates, and sails east on a raft of serpents. He sacrifices himself by fire. Four days later, he rises as the planet Venus at the moment of its heliacal rising — the first appearance of Venus as Morning Star after its passage through inferior conjunction (its "death" when it disappears into the sun's glare). The timing is precise: Venus disappears for approximately **8 days** at inferior conjunction (when it passes between Earth and Sun), precisely mirroring the four-day death-and-resurrection interval.
+
+### Venus as Death-and-Resurrection Deity — Cross-Tradition Table
+
+| Tradition | Deity | Venus Role | Source |
+|-----------|-------|-----------|--------|
+| Aztec/Mexica | Quetzalcoatl / Tlahuizcalpantecuhtli | Apotheosis as Morning Star after death; 8-day inferior conjunction = death | *Annales de Cuauhtitlan*; Sahagún |
+| Mesopotamian (Sumerian/Akkadian) | [[inanna]] / [[ishtar]] | Descent to the Underworld = Venus's inferior conjunction; ascent = heliacal rising as Morning Star | [[phase-1-005-descent-of-inanna]] |
+| Greek | [[aphrodite-greek]] | Venus's identification with Aphrodite; her birth from the sea = heliacal rising | Theogony; no explicit inferior-conjunction death narrative, but the mythological linkage is ancient |
+| Lucifer / Christian tradition | *Lucifer* (Latin: "light-bearer") | Isaiah 14:12 applies *helel ben shachar* ("shining son of the dawn" = Morning Star) to the fallen king of Babylon; Christian tradition identifies this with Satan's fall from heaven | Isaiah 14; Revelation 22:16 (Christ also called "morning star") |
+
+**Investigative finding**: The Quetzalcoatl-Venus apotheosis is the clearest Mesoamerican instance of a **planet-deity whose mythology encodes the planet's astronomical cycle** — the death (disappearance at inferior conjunction), 8-day underworld period, and resurrection (heliacal rising as Morning Star) are not poetic metaphors but astronomical observations embedded in myth. The closest parallel in the vault is Inanna's Descent ([[phase-1-005-descent-of-inanna]]) — her 7-day descent through 7 gates is read by some scholars as encoding Venus's 7-day inferior conjunction (the period varies). Whether the Aztec and Mesopotamian Venus-death-resurrection myths are independent inventions or deeply ancient connected traditions (Beringia path into the Americas?) remains open. What is documented: both traditions developed sophisticated astronomical observation of Venus and embedded it in their deity mythology. This places Quetzalcoatl in the same cluster as Inanna as **astronomy embedded in theology** — the science of planetary observation expressed through mythic narrative.
+
+## Edge Connections
+
+- → [[tradition-aztec-mexica]] — core deity; civilizer-creator role
+- → [[tradition-mesoamerican]] — pan-Mesoamerican Feathered Serpent
+- → [[kukulkan]] — Maya syncretic identification; same deity under different name
+- → [[inanna]] — parallel-motif: Venus-death-resurrection mythology encoding inferior conjunction; parallel-form, no documented transmission
+- → [[sacrifice-as-cosmic-renewal]] — Quetzalcoatl's self-sacrifice at Teotihuacan is the cosmogonic sacrifice that creates the Fifth Sun
+- → [[creation-by-word]] — in some variants, Quetzalcoatl as creator uses divine speech and wind (Ehécatl aspect) as creative forces
+
 ## Refs
-1. Carrasco, D. (1982). *Quetzalcoatl and the Irony of Empire*. Chicago UP.
-2. Lafaye, J. (1976). *Quetzalcoatl and Guadalupe*. Chicago UP.
-3. Florescano, E. (1993). *El mito de Quetzalcóatl*. FCE.
-4. Townsend, C. (2003). "Burying the White Gods." *American Historical Review* 108.
-5. Nicholson, H.B. (2001). *Topiltzin Quetzalcoatl*. Colorado UP.
+1. Carrasco, D. (1982). *Quetzalcoatl and the Irony of Empire*. Chicago UP. Tier 1.
+2. Lafaye, J. (1976). *Quetzalcoatl and Guadalupe*. Chicago UP. Tier 1.
+3. Florescano, E. (1993). *El mito de Quetzalcóatl*. FCE. Tier 1.
+4. Townsend, C. (2003). "Burying the White Gods." *American Historical Review* 108. Tier 2.
+5. Nicholson, H.B. (2001). *Topiltzin Quetzalcoatl*. Colorado UP. Tier 1.
+6. Milbrath, S. (1999). *Star Gods of the Maya: Astronomy in Art, Folklore, and Calendars*. University of Texas Press. Tier 1.
+7. Taube, K. (1992). *The Major Gods of Ancient Yucatan*. Dumbarton Oaks. Tier 1.
