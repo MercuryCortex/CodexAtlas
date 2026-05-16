@@ -1308,7 +1308,21 @@ The things opus-foundation-1 claimed but never started are all still open:
 
 ---
 
-## goblin-flow-fate-1 — symbols / sacred river + thread of fate + sacred dance + tattoo thread — started 2026-05-16 — IN PROGRESS
-- Owning: `09_symbols/sacred-river.md` (NEW), `09_symbols/thread-of-fate.md` (NEW), `09_symbols/sacred-dance.md` (NEW), `09_symbols/tattoo-sacred.md` (NEW)
-- Goal: Sacred River MASSIVE WIN — four rivers of Eden + Gangā as goddess + Jordan baptism + Styx as death boundary; Thread of Fate — Moirai/Norns/Red Thread of Fate/Ariadne/Indra's Net; Sacred Dance — Nataraja as template + Sufi sema + Ghost Dance + Danse Macabre; Tattoo as skin-scripture — Ötzi + Polynesian tatau + Sak Yant + Coptic cross wrist tattoo
+## ~~goblin-flow-fate-1 — symbols / sacred river + thread of fate + sacred dance + tattoo thread — started 2026-05-16 — FINISHED~~
+- ~~Owning: `09_symbols/sacred-river.md` (NEW), `09_symbols/thread-of-fate.md` (NEW), `09_symbols/sacred-dance.md` (NEW), `09_symbols/tattoo-sacred.md` (NEW)~~
+- ~~Goal: Sacred River MASSIVE WIN — four rivers of Eden + Gangā as goddess + Jordan baptism + Styx as death boundary; Thread of Fate — Moirai/Norns/Red Thread of Fate/Ariadne/Indra's Net; Sacred Dance — Nataraja as template + Sufi sema + Ghost Dance + Danse Macabre; Tattoo as skin-scripture — Ötzi + Polynesian tatau + Sak Yant + Coptic cross wrist tattoo~~
+- ~~Status: finished — 4 new symbol nodes · 173 total symbols · 14541 edges · 0 YAML errors · 0 new dead links introduced · STATUS.md logged~~
+
+---
+
+## goblin-sacred-numbers-2 — symbols / sacred-number-forty + sacred-number-108 + zodiac-wheel + nsibidi — started 2026-05-16 — IN PROGRESS
+- Owning: `09_symbols/sacred-number-forty.md` (NEW), `09_symbols/sacred-number-108.md` (NEW), `09_symbols/zodiac-wheel.md` (NEW), `09_symbols/nsibidi.md` (NEW)
+- Goal: Number 40 as trial/testing duration across Abrahamic traditions (quarantine etymology MASSIVE WIN); Number 108 as Dharmic cosmic count with astronomical grounding; Zodiac wheel as most-transmitted astronomical-divinatory system (Babylonian→Greek→Islamic→Indian→Chinese); Nsibidi as West African sacred ideographic script of Ekpe society with Abakuá diaspora survival
+- Status: in-progress
+
+---
+
+## goblin-death-sacrifice-1 — symbols / death + sacrifice thread — started 2026-05-16 — IN PROGRESS
+- Owning: `09_symbols/danse-macabre.md` (NEW), `09_symbols/memento-mori-skull.md` (NEW), `09_symbols/cauldron-of-rebirth.md` (NEW), `09_symbols/sacrifice-substitution.md` (NEW)
+- Goal: Danse Macabre as death-as-leveler MASSIVE WIN (Nataraja/Cham dance/Día de Muertos); Memento Mori skull as Kapala/Masonic Chamber of Reflection/Celtic sacred head cross-tradition; Cauldron of Rebirth Celtic→Holy Grail→Alchemical vessel transmission; Sacrifice Substitution as cross-tradition universal mechanism (Girard/Akedah/Pharmakos/Eucharist/Bodhisattva)
 - Status: in-progress

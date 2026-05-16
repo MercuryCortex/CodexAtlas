@@ -655,13 +655,19 @@
     // Compute a 2D affine transform mapping world coords → screen coords by
     // probing two reference points via sigma.graphToViewport.
     function syncOverlay() {
-      const o   = sigma.graphToViewport({ x: 0, y: 0 });
-      const u   = sigma.graphToViewport({ x: 1, y: 0 });
-      // Scale = distance from origin to (1,0) in viewport space.
-      const scale = Math.hypot(u.x - o.x, u.y - o.y) || 1;
-      // Since the layout coord-system has no rotation, a single uniform scale
-      // + translate works. Set transform on each group.
-      const transform = `translate(${o.x} ${o.y}) scale(${scale})`;
+      // Probe sigma's world→viewport mapping on BOTH axes. Sigma uses math
+      // convention (Y up) internally; SVG uses canvas convention (Y down).
+      // Sample (0,0), (1,0), (0,1) to recover sx and sy separately — sy will
+      // be negative when sigma flips Y. Without this flip, every hull and
+      // edge in the overlay paints mirrored across the horizontal axis from
+      // where sigma renders its nodes (the bug observed in opus-pantheon-v2-
+      // labels-1 — nodes upper-right, hulls lower-right).
+      const o = sigma.graphToViewport({ x: 0, y: 0 });
+      const ux = sigma.graphToViewport({ x: 1, y: 0 });
+      const uy = sigma.graphToViewport({ x: 0, y: 1 });
+      const sx = (ux.x - o.x) || 1;
+      const sy = (uy.y - o.y) || 1;
+      const transform = `translate(${o.x} ${o.y}) scale(${sx} ${sy})`;
       hullsG.setAttribute('transform', transform);
       edgesG.setAttribute('transform', transform);
     }
