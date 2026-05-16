@@ -27,6 +27,18 @@ cross-music-edges:
   - target: music-nada-brahma
     type: parallel-form
     note: Both traditions treat sound as the ontological substrate of physical reality — the world IS sound, not merely described by it
+  - target: music-siberian-shaman-drum
+    type: parallel-form
+    note: Both use sound as the technology for cosmic travel and contact — drum in Siberian tradition, song-route in Australian tradition; independent arrivals at the same functional principle across 10,000+ km
+  - target: music-raga-cosmology
+    type: parallel-form
+    note: Both embed cosmic obligation in performance — the raga must be performed at the correct time, the Songline must be sung correctly; incorrect performance is cosmologically dangerous in both traditions
+  - target: music-inca-huanca-sacred
+    type: parallel-form
+    note: Both treat the physical landscape as cosmologically active and saturated with sacred presence — the Australian ancestor's Songline and the Andean huaca both make specific geography into living theological text
+  - target: music-drum-as-cosmos-hub
+    type: parallel-form
+    note: Songlines are the Australian parallel to the drum-as-cosmos-map: a musical technology that IS the cosmos, not merely represents it
 
 music-tradition-context:
   - [[tradition-australian-aboriginal]]
