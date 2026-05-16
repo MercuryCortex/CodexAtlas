@@ -561,3 +561,18 @@ Script: `add_depictions.py` (new helper for direct Commons depictions[] injectio
 - FINDING: Egypt→Israel = documented transmission (1,550-year head start, Moses/Egyptian court, kinnor/kinniru, Temple design); Egypt/Mesopotamia = Fertile Crescent shared-origin zone (unresolvable direction); India = genuine independent convergence (Sama Veda predates Ophir trade corridor)
 - META-FINDING: priestly-musician-caste is first confirmed case of a form that is simultaneously transmissible AND independently reinventable — the vault's first form in this class
 - Commit: 7ee8473
+
+---
+
+## music-hermetic-1 — Hermetic sound cosmology — FINISHED 2026-05-16
+- 3 nodes: music-hermetic-logos-sound · music-orphic-hymns · music-chaldean-oracles-sound
+- KEY FIND: Hermes Trismegistus = Thoth (creator-by-naming) + Hermes (lyre-inventor + psychopomp) — unique synthesis of ALL THREE sound-deity functions; Discourse on the 8th+9th = transcendence framed as going ABOVE THE OCTAVE; Orphic Hymns ↔ Sama Veda = Western/Indian mantra convergence (zero contact)
+- Wired to: phase-4-011 (CH I), phase-4-013 (Discourse 8+9), phase-4-022 (Chaldean Oracles), phase-4-020 (Iamblichus De Mysteriis) — all pre-existing vault nodes
+- Build: 51 music nodes · 15,824 edges · commit fd7c403
+
+## music-gnostic-1 — Gnostic harmony theology + Hermetic spine — FINISHED 2026-05-16
+- 2 nodes: music-valentinian-pleroma-harmony · music-neoplatonic-theurgy-sound
+- 2 patterns (hermetic-synthesis-sound-node, vowel-chanting-three-traditions) + 1 observation (hermetic-gnostic-sonic-spine)
+- KEY FIND: Marcus the Magician's alphabetic-musical cosmology = most explicit ancient statement that cosmic structure IS a harmonic series; parallel-form wired to Sefer Yetzirah (same structure, no contact); Iamblichus phone-vs-logos = most rigorous ancient defense of mantra principle
+- META-FIND: Two parallel 2,000-year sonic chains — Babylon→Boethius→Bach (institutional) and Orpheus→Pythagoras→Chaldean Oracles→Iamblichus→Hermeticism (esoteric) — share Pythagorean node, diverge, reconverge at Ficino/Renaissance
+- Build: 52 music nodes · 15,832 edges · commit 41b8ed0
