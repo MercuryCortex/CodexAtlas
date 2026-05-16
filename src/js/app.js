@@ -5047,7 +5047,7 @@ const INVESTIGATIONS = [
     ],
     seeds: [
       'P8-001-popol-vuh', 'P8-003-dresden-codex-maya', 'P8-002-codex-borgia',
-      'quetzalcoatl', 'P1-002-pyramid-texts', 'ra', 'osiris',
+      'quetzalcoatl', 'phase-1-002-pyramid-texts', 'ra', 'osiris',
       'katabasis-and-anabasis', 'theme-pyramid-as-resurrection-machine',
       'temple-of-inscriptions-palenque', 'great-pyramid-of-khufu',
       'world-axis', 'sun-disk',
@@ -5071,7 +5071,7 @@ const INVESTIGATIONS = [
     ],
     seeds: [
       'P8-019-kojiki', 'amaterasu', 'izanagi',
-      'ra', 'osiris', 'P1-002-pyramid-texts',
+      'ra', 'osiris', 'phase-1-002-pyramid-texts',
       'baldr', 'P8-014-poetic-edda',
       'dionysus', 'sun-disk',
       'theme-pyramid-as-resurrection-machine',
@@ -7762,34 +7762,20 @@ setView = function patchedSetView(...args) {
   try {
     const params = new URLSearchParams(window.location.search);
     if (params.get('webgl') === '1' && window._pantheonV2) {
-      // Ensure a dedicated pane element exists for sigma to mount into.
-      // Using a separate element (not #codex-graph-pane) keeps v2 fully isolated.
-      let v2Pane = document.getElementById('pantheon-v2-pane');
-      if (!v2Pane) {
-        v2Pane = document.createElement('div');
-        v2Pane.id = 'pantheon-v2-pane';
-        v2Pane.className = 'pantheon-v2-pane';
-        v2Pane.style.display = 'none';
-        document.getElementById('canvas').appendChild(v2Pane);
-      }
-
       VIEWS['pantheon-v2'] = {
         title: 'Pantheon v2',
         subtitle: 'WebGL · sigma.js · polar family wedges',
         render() {
-          // Hide SVG + other panes; show our dedicated pane.
+          // setView()'s teardown removes .pantheon-v2-pane on every view-change,
+          // so we create a fresh pane here on each render call.
+          const canvasEl = document.getElementById('canvas');
+          const pane = document.createElement('div');
+          pane.className = 'pantheon-v2-pane';
+          canvasEl.appendChild(pane);
+          // Hide SVG — setView() re-shows it for non-atlas views; override here.
           const svgEl = document.getElementById('svg');
           if (svgEl) svgEl.style.display = 'none';
-          const graphPane = document.getElementById('codex-graph-pane');
-          if (graphPane) graphPane.style.display = 'none';
-          v2Pane.style.display = 'block';
-          window._pantheonV2.render(v2Pane);
-        },
-        destroy() {
-          if (window._pantheonV2 && window._pantheonV2.destroy) {
-            window._pantheonV2.destroy();
-          }
-          v2Pane.style.display = 'none';
+          window._pantheonV2.render(pane);
         }
       };
 
