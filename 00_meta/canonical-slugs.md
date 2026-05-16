@@ -2716,8 +2716,8 @@ canonical-slug
 | 3 | `guru-arjan-dev-ji` | `guru-arjan` |
 | 2 | `yam-canaanite` | `astarte-canaanite` |
 | 2 | `was-sceptre` | `was-scepter` |
-| 2 | `tradition-rosicrucian` | `tradition-tantra` |
-| 2 | `tradition-lingayat` | `tradition-tantra` |
-| 2 | `tradition-islamic-philosophy` | `tradition-bhakti-vaishnavism` |
-| 2 | `phase-2-004-1-2-chronicles` | `phase-2-002-gathas-of-zarathustra` |
+| 2 | `tradition-rosicrucian` | `tradition-gnosticism` |
+| 2 | `tradition-lingayat` | `tradition-gnosticism` |
+| 2 | `tradition-islamic-philosophy` | `tradition-gnosticism` |
+| 2 | `phase-2-004-1-2-chronicles` | `phase-2-008-homeric-epics` |
 | 2 | `divine-names` | `divine-name` |

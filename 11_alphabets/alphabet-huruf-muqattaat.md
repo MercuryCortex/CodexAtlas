@@ -29,6 +29,7 @@ cross-alphabet-edges:
     note: "Abjad numerical interpretation of the Muqatta'at is the most persistent classical analysis — applying the same letter-number framework as Hebrew Gematria to the Quranic mysterious letters"
 alphabet-tradition-context:
   - "[[tradition-islam]]"
+  - "[[phase-4-034-quran]]"
 refs:
   - "Nöldeke, Theodor, Friedrich Schwally, et al. *Geschichte des Qorāns*. 3 vols. Dieterich, 1909–1938. [T2 — foundational Quran scholarship; survey of early interpretations of the mysterious letters]"
   - "Neuwirth, Angelika. *The Quran and Late Antiquity: A Shared Heritage*. Oxford University Press, 2019. [T2 — sura-composition analysis; thematic clustering of suras beginning with Muqatta'at]"
