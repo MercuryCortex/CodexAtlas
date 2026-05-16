@@ -22,7 +22,7 @@ influenced-by: ["[[phase-2-002-gathas-of-zarathustra]]", "earlier Indo-Iranian p
 influences: ["Second Temple Jewish angelology", "Manichaean dualism (Phase 4)", "Pahlavi-period Bundahishn and Denkard"]
 deities-mentioned: ["[[ahura-mazda]]", "[[angra-mainyu-ahriman]]", "[[spenta-mainyu]]", "[[mithra-zoroastrian]]", "[[anahita]]", "[[the-amesha-spentas]]"]
 events-context: []
-status: "metadata"
+status: "full"
 preservation: "The Yasna (72-chapter liturgy enclosing the Gathas) plus Yashts (21 hymns to individual yazatas), Visperad (extension liturgy), and Vendidad (purity code) survive in priestly transmission. The Sasanian Great Avesta (21 nasks) is largely lost; what survives is the liturgical canon used in actual ritual. Oldest extant Avestan manuscript: K7a (Copenhagen, 1278 CE) and J2 / K5 (Yasna with Pahlavi gloss, 1323 CE)."
 refs:
   - title: "Avesta: Die heiligen Bücher der Parsen"
@@ -67,6 +67,43 @@ tags: [phase-2, zoroastrian, avestan, mithra, anahita, dualism, yashts]
 ## What it is
 The Younger Avestan corpus — composed and accreted around the older Gathic core over several centuries — comprises (1) the **Yasna**, a 72-chapter liturgy that enwraps the Gathas as its central holy text; (2) the **Yashts**, 21 hymns each addressed to an individual *yazata* (worship-worthy being — Mithra, Anāhitā, Verethraghna, Tištrya, etc.); (3) the **Visperad**, extension prayers used in major festivals; and (4) the **Vendidad** (Vidēvdād, "law against the daēvas"), a priestly code of purity and demonology. These texts elaborate the Gathic dualism into a full theological system: seven Amesha Spentas around Ahura Mazda, a hierarchy of yazatas, a structured demonology, and explicit eschatology.
 
+## Primary text — selected passages
+
+### Yasna 9.1–4 — Haoma Yasht: the divine plant speaks
+*Trans. Mills, L.H. (1887). The Zend-Avesta, Part III: The Yasna. Sacred Books of the East 31. Clarendon Press.*
+> Who are you, oh man! who do here appear before mine eyes as the beautiful, the well-formed, and the stout,
+> the most glorious of all the Beings whom I have ever seen, — brilliant as the moon?
+> [Haoma of the golden hue replied:] Yea, I am, O Zarathustra! the Haoma who keeps death afar.
+> Press me for the drink of life; praise me for drinking, even me, the good,
+> even me the Haoma who makes righteousness.
+
+*Haoma — the ritual plant whose pressed juice embodies divine vitality — is the Avestan cognate of Vedic Soma. This passage typifies the Younger Avesta's reintegration of Indo-Iranian nature-deities into a Zoroastrian frame as yazatas (worship-worthy beings).*
+
+### Yasht 10.1–3 — Mihr Yasht: Ahura Mazda creates Mithra
+*Trans. Darmesteter, J. (1883). The Zend-Avesta, Part II. Sacred Books of the East 23. Clarendon Press.*
+> Ahura Mazda spake to the holy Zarathustra:
+> "When I created Mithra of wide pastures, O holy Zarathustra,
+> I created him as worthy of sacrifice, as worthy of prayer as myself, Ahura Mazda.
+> The ruffian who lies unto Mithra brings death upon the whole country,
+> destroying the whole of the sanctified world."
+
+*Yasht 10 is the longest and most theologically elaborate of the 21 Yashts — a 145-verse hymn to Mithra as guardian of contracts, light, and martial order. Mithra's subordination to Ahura Mazda as a yazata while retaining cosmic-warrior functions typifies the Younger Avesta's integrative strategy toward the pre-Zoroastrian Indo-Iranian pantheon.*
+
+### Hadhokht Nask 2.7–15 — The soul's meeting with its daena (conscience) after death
+*Trans. West, E.W. (1880). Pahlavi Texts, Part I. Sacred Books of the East 5. Clarendon Press (Pahlavi rendering of the Hadhokht Nask).*
+> Then comes the holy daena in the form of a maiden,
+> fair, bright, white-armed, strong, tall-formed, high-standing, thick-breasted,
+> beautiful of body, noble, of a glorious lineage,
+> fifteen years old in appearance — as fair in form as the fairest of creatures.
+> [The soul asks:] Who are you, maiden? You are the fairest maiden I have ever seen.
+> [She replies:] I am your own conscience, O youth of good thoughts, good words, good deeds,
+> good religion. When you saw the man doing evil, you sat singing hymns and praying;
+> so you spoke to your own conscience and caused it to appear thus.
+
+*The soul's post-death encounter with its own daena (embodied conscience) as a beautiful maiden (for the righteous) or hideous hag (for the wicked) is one of the earliest individualized judgment-after-death sequences in any religion — structurally parallel to the Egyptian negative confession before Osiris.*
+
+*Citations: Mills 1887, SBE 31; Darmesteter 1883, SBE 23; West 1880, SBE 5.*
+
 ## Context
 - **Political milieu.** Composition spans the late second through mid first millennium BCE, crossing the rise of the Median and especially the Achaemenid (550–330 BCE) Persian empire. By the Achaemenid period Zoroastrianism (in something like its developed form) is the religion of the imperial dynasty (Darius's Bisotun inscription invokes Ahura Mazda).
 - **Religious milieu.** The Younger Avesta re-admits, in the Yashts, several inherited Indo-Iranian deities that the Gathas had elided — most importantly Mithra (Yt. 10), Anāhitā (Yt. 5, "Ābān Yašt"), and Verethraghna (Yt. 14). These are subordinated to Ahura Mazda as yazatas, not co-equal gods; the move is integrative rather than reverting to polytheism.
@@ -91,6 +128,16 @@ The Younger Avestan corpus — composed and accreted around the older Gathic cor
 - **Dating internal layers.** The relative chronology of Yashts is contested; Yt. 10 (Mithra) and Yt. 5 (Anāhitā) contain demonstrably old material (Mithra's Indo-Iranian inheritance) packaged within a later frame. Skjærvø, Hintze, Kellens differ on stratification.
 - **Vendidad's date.** The Vendidad is often dated very late within the Younger Avestan period; some scholars treat it as Arsacid (~250 BCE–224 CE) on linguistic grounds. Boyce defends a substantially earlier core.
 - **Were the Achaemenids Zoroastrian?** Strict definitions (Gathic) vs. loose definitions (Mazdayasnian) yield different answers. Most scholars say yes in a broad sense; some (Henkelman) emphasize continuity with older Iranian polytheism.
+
+## MASSIVE WIN — cross-tradition edges
+
+- **Amesha Spentas → Jewish archangels → Christian and Islamic angel-hierarchy: the most documentable doctrinal cross-tradition transfer of the Axial Age**: The seven Amesha Spentas surrounding Ahura Mazda (Vohu Manah, Asha Vahishta, Khshathra Vairya, Spenta Armaiti, Haurvatat, Ameretat, + Spenta Mainyu) are the organizational template for Second Temple Judaism's developed angelology — Michael, Gabriel, Raphael, Uriel, Saraqael, Remiel, and Raguel as the seven holy angels in 1 Enoch 20. The Persian period (539–332 BCE), when Judeans lived under Achaemenid patronage, is the historical contact zone. This is the most precisely dateable cross-tradition doctrinal transfer of the Axial Age: Jewish pre-exilic texts have no named angels; post-exilic and Second Temple texts have a full named-angel hierarchy. The Amesha Spentas → archangels → Christian and Islamic angel-hierarchies sequence is a 2,500-year downstream from Younger Avestan theology (Boyce & Grenet 1991, *A History of Zoroastrianism vol. III*, Brill pp.358–369; Shaked 1984, *Irano-Judaica* vol. 1, Ben-Zvi Institute; Collins 2016, *The Apocalyptic Imagination*, Eerdmans pp.76–79).
+
+- **Haoma (Yasna 9) ↔ Vedic Soma (Rig Veda 9) — the oldest documented sacramental-drink theology in any religion, with a common proto-Indo-Iranian ancestor**: Haoma and Soma are linguistic cognates (*h-* / *s-* being a regular Indo-Iranian sound change) and functional cognates — both are pressed plant-juices with divine consciousness-altering properties, both are personified as a deity addressed in hymns, both are the central ritual element in priestly sacrifice. The Younger Avesta's Hōm Yasht and RV 9 are independent liturgical branches of the same proto-Indo-Iranian ritual complex, antedating both texts by centuries. This makes the Avestan-Vedic parallel the oldest recoverable line of sacramental-drink theology — predating Dionysiac wine-ritual, the Eleusinian kykeon, and the Christian Eucharist by at least a millennium. It also makes the Zoroastrian–Vedic split the longest-range documented liturgical divergence in world religion (Flattery & Schwartz 1989, *Haoma and Harmaline*, Near Eastern Studies 21, UC Press; Boyce 1975, *A History of Zoroastrianism vol. I*, Brill pp.157–163; Watkins 1995, *How to Kill a Dragon*, Oxford UP).
+
+- **Mithra (Yasht 10) → Roman Mithraism → the most contested cross-tradition question in late-antique comparative religion**: Yasht 10's Mithra — warrior of divine light, guardian of cosmic contracts, solar yazata — becomes the namesake of the Roman Mithraic mysteries (Mithras, 1st–4th c. CE), the most widespread mystery cult of the Roman army. Whether Roman Mithraism derives continuously from Iranian Mithra (Cumont's thesis) or was largely a Roman-period creation using Iranian names (Ulansey, Beck) is the central debate of late-antique comparative religion. The stakes: if derivation is real, then the virgin-born-of-rock sun-god who slaughters the bull and shares a sacred meal with his initiates is a Zoroastrian stream running parallel to Christianity in the same Roman milieu. The structural parallelisms (solar birth, December 25 calendrical alignment, communal sacred meal, initiatory grades) drove the early-20th-century "pagan origins of Christianity" school and remain contested today (Cumont 1903, *The Mysteries of Mithra*; Beck 2006, *The Religion of the Mithras Cult in the Roman Empire*, Cambridge UP pp.1–28; Clauss 2000, *The Roman Cult of Mithras*, Edinburgh UP).
+
+- **Vendidad purity code ↔ Levitical purity code — the Persian-period mutual-shaping of the two most influential purity systems in history**: The Vendidad's elaborate contamination rules (corpse impurity, menstrual separation, fire-maintenance, dog sanctity) and Leviticus 11–15's clean/unclean legislation are structurally parallel and historically contemporaneous. Whether direct borrowing occurred, or both elaborated a common ANE purity logic, the Persian period (539–330 BCE) created a contact zone where Zoroastrian mōbeds and Jerusalem priests were under the same imperial administration. The Jewish purity system then passed through rabbinic Judaism into Christian dietary and sexual law and into Islamic *ṭahāra* purity codes. The Zoroastrian → Jewish → Christian/Islamic purity-law sequence is one of the longest institutional transmission chains in world religion (Neusner 1973, *The Idea of Purity in Ancient Judaism*, Brill; Macuch 2012, *Encyclopaedia Iranica*, "Nērang"; Milgrom 1991, *Leviticus 1–16*, Anchor Bible, Yale UP pp.45–63).
 
 ## Refs
 1. Geldner, K.F. (1886–1896). *Avesta: Die heiligen Bücher der Parsen*. Kohlhammer. — critical edition.
