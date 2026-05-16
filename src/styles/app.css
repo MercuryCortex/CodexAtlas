@@ -1855,16 +1855,43 @@ body.view-atlas main.canvas { background: var(--bg-0); }
   font-size: 11px;
 }
 .ph2-node-label.dim { opacity: 0.15; }
+/* PHASE F — HORIZONTAL family rim labels (production parity, app.css:1086).
+   Position + transform percentages set inline per-label so each reads
+   naturally based on its angular position around the ring.
+   Serif uppercase letterform + dark halo so they read over the hulls. */
 .ph2-rim-label {
   position: absolute;
+  left: 0; top: 0;
   font-family: var(--serif);
-  font-size: 11.5px;
-  letter-spacing: 0.14em;
+  font-weight: 500;
+  font-size: 13px;
+  letter-spacing: 0.22em;
   text-transform: uppercase;
   white-space: nowrap;
-  opacity: 0.85;
-  /* transform set inline by the sync function (includes the tangential rotation) */
-  transform-origin: 50% 50%;
+  color: var(--text-2);
+  opacity: 0.92;
+  /* Halo trick — production uses paint-order:stroke; in DOM the equivalent
+     is a tight text-shadow stack so glyphs read over translucent hulls. */
+  text-shadow:
+    0 0 2px var(--bg-0),
+     1px  1px 0 var(--bg-0),
+    -1px  1px 0 var(--bg-0),
+     1px -1px 0 var(--bg-0),
+    -1px -1px 0 var(--bg-0);
+  transition: opacity 200ms ease, color 200ms ease;
+}
+/* Brighter for the big families (≥6 members) — same convention as production .family-label.bright */
+.ph2-rim-label.ph2-rim-label-bright { color: var(--text-0); }
+
+/* PHASE F — radial tick line from inside the hull rim out toward each
+   family label. Painted in the SVG overlay, so it inherits the Y-flipped
+   camera transform from syncOverlay(). Color set inline per-tick to the
+   family color. */
+.ph2-rim-tick {
+  stroke-width: 0.8;
+  stroke-opacity: 0.45;
+  vector-effect: non-scaling-stroke;
+  transition: stroke-opacity 200ms ease;
 }
 .ph2-error {
   position: absolute; inset: 0;

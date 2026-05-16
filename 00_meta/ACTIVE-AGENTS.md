@@ -109,6 +109,25 @@ _Hand-maintained. Each agent currently working in the vault appends a claim bloc
 
 ---
 
+## ~~opus-pantheon-v2-yflip-1 — CRITICAL · SVG overlay Y-flip fix — started 2026-05-17 — DONE~~
+- ~~Owned: `src/js/views/pantheon-v2.js`~~
+- ~~Status: done — syncOverlay() now samples both axes; sy comes back negative, flipping SVG Y to match sigma's math-convention world Y; hulls + edges + labels + nodes all aligned~~
+
+---
+
+## ~~opus-pantheon-v2-edge-calm-1 — lower edge stroke-width + opacity — started 2026-05-17 — DONE~~
+- ~~Owned: `src/styles/app.css`, `src/js/dev-panel.js`, `index.html`~~
+- ~~Status: done — .ph2-edge stroke-width 0.25→0.18, default opacity 0.13→0.08 to match production's *ambient* baseline~~
+
+---
+
+## ~~opus-pantheon-v2-rim-horiz-1 — Phase F · horizontal family rim labels + tick lines — started 2026-05-17 — DONE~~
+- ~~Owned: `src/js/views/pantheon-v2.js`, `src/styles/app.css`, `index.html`~~
+- ~~Status: done — buildRimLabels rewrote to horizontal text at Router+56 with CSS-percentage anchoring + arc-scaled font; SVG ticksG inside overlay with radial tick lines per wedge~~
+- ~~V2 now at visual parity with production across all 7 divergences from the audit~~
+
+---
+
 ## ~~goblin-islamic-sacred-1 — symbols / Islamic sacred symbols + Sudarshana + Ashtamangala thread — started 2026-05-16 — FINISHED~~
 - ~~Owning: `09_symbols/rub-el-hizb.md` (NEW), `09_symbols/basmala.md` (NEW), `09_symbols/sudarshana-chakra.md` (NEW), `09_symbols/ashtamangala.md` (NEW)~~
 - ~~Goal: Rub el Hizb 8-pointed star cross-tradition (Ishtar/crescent/Islamic heraldry); Basmala as sacred-word-as-image (parallels Tetragrammaton/Aum/IHS); Sudarshana Chakra as spinning divine weapon + Wheel of Ezekiel parallel; Ashtamangala as complete 8-symbol auspiciousness set~~

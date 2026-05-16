@@ -580,6 +580,12 @@
     const edgesG = document.createElementNS(SVG_NS, 'g');
     edgesG.setAttribute('class', 'ph2-edges-g');
     overlay.appendChild(edgesG);
+    // Phase F — radial tick lines from hull outer rim to just inside each
+    // family-rim label, matching production (app.js:1169-1177). Painted on
+    // TOP of hulls + edges so they read as ownership cues for the labels.
+    const ticksG = document.createElementNS(SVG_NS, 'g');
+    ticksG.setAttribute('class', 'ph2-ticks-g');
+    overlay.appendChild(ticksG);
 
     // ----- HULLS (priority 1) -----
     // For each family, draw a rounded annular wedge at the same geometry as
@@ -594,6 +600,7 @@
     const HULL_PAD   = 0.014;
     const HULL_CR    = 8;
     const hullEls = [];
+    const tickEls = [];
     Object.values(wedges).forEach(w => {
       if (!w.members.length) return;
       const path = document.createElementNS(SVG_NS, 'path');
@@ -604,6 +611,21 @@
       path.dataset.family = w.name;
       hullsG.appendChild(path);
       hullEls.push(path);
+      // Phase F — radial tick line: from inside the hull's outer rim out
+      // toward the family label. Production geometry (app.js:1169-1177):
+      // Router+6 → Router+38 (hull outer is Router+22, label is at +56).
+      const tick = document.createElementNS(SVG_NS, 'line');
+      const cx0 = (Router +  6) * Math.cos(w.center);
+      const cy0 = (Router +  6) * Math.sin(w.center);
+      const cx1 = (Router + 38) * Math.cos(w.center);
+      const cy1 = (Router + 38) * Math.sin(w.center);
+      tick.setAttribute('x1', cx0); tick.setAttribute('y1', cy0);
+      tick.setAttribute('x2', cx1); tick.setAttribute('y2', cy1);
+      tick.setAttribute('stroke', w.color);
+      tick.setAttribute('class', 'ph2-rim-tick');
+      tick.dataset.family = w.name;
+      ticksG.appendChild(tick);
+      tickEls.push(tick);
     });
 
     // ----- CURVED EDGES (priority 3) -----
@@ -670,6 +692,7 @@
       const transform = `translate(${o.x} ${o.y}) scale(${sx} ${sy})`;
       hullsG.setAttribute('transform', transform);
       edgesG.setAttribute('transform', transform);
+      ticksG.setAttribute('transform', transform);
     }
 
     // ----- HOVER DIM ON EDGES (mirrors sigma's reducer behavior) -----
@@ -1040,9 +1063,26 @@
     rootEl._graph = graph;
   }
 
-  // DOM overlay for tangential family rim labels — sigma doesn't natively
-  // do curved/rotated SVG text, so we place absolutely-positioned divs
-  // and sync them to sigma's camera on each render.
+  // PHASE F — DOM overlay for HORIZONTAL family rim labels.
+  //
+  // Previously tangential (rotated to follow rim) at Router+50. Production
+  // (app.js:1162-1206) uses HORIZONTAL text at Router+56 with text-anchor +
+  // dy computed from the angle so each label reads naturally regardless of
+  // where it sits around the ring, plus a tick line from hull rim to label.
+  //
+  // For DOM divs we translate via CSS percentages rather than SVG text-anchor:
+  //   cos(a) > 0.35       → anchor at LEFT  edge   (tx =    0%)
+  //   cos(a) < -0.35      → anchor at RIGHT edge   (tx = -100%)
+  //   else                 → centered horizontally (tx =  -50%)
+  //   sin(a) > 0.55       → label is ABOVE anchor  (ty = -100%)   (top of ring)
+  //   sin(a) < -0.55      → label is BELOW anchor  (ty =    0%)   (bottom)
+  //   else                 → centered vertically   (ty =  -50%)
+  //
+  // V2 uses math-convention angle (cos = x, sin = y) post-Y-flip. Sigma flips
+  // Y when rendering, so sin > 0 = screen-up = top half (matches production).
+  //
+  // Font size scales with wedge angular size (narrower wedge → smaller font),
+  // production formula: max(9, min(14, 8 + arc × 11)).
   function buildRimLabels(rootEl, wedges, sigmaRenderer, familyFilter) {
     const overlay = document.createElement('div');
     overlay.className = 'ph2-rim-overlay';
@@ -1050,36 +1090,37 @@
     rootEl.appendChild(overlay);
 
     const Router = 540;
-    const labelEntries = Object.values(wedges).filter(w => w.members.length);
-    labelEntries.forEach(w => {
+    const labelR = Router + 56;
+    const entries = Object.values(wedges).filter(w => w.members.length);
+    entries.forEach(w => {
       const el = document.createElement('div');
-      el.className = 'ph2-rim-label';
+      el.className = 'ph2-rim-label' + (w.members.length >= 6 ? ' ph2-rim-label-bright' : '');
       el.dataset.family = w.name;
       el.textContent = w.name;
-      el.style.color = w.color;
-      if (familyFilter && w.name !== familyFilter) el.style.opacity = '0.18';
-      // Stash world-space anchor + angle so the sync function can re-position
+      if (familyFilter && w.name !== familyFilter) el.style.opacity = '0.30';
       const ang = w.center;
-      el._wx = (Router + 50) * Math.cos(ang);
-      el._wy = (Router + 50) * Math.sin(ang);
-      // Tangential rotation: angle in degrees, rotated 90° so text follows the rim
-      let rotDeg = (ang * 180 / Math.PI) + 90;
-      // Flip 180° on the bottom half so labels read upright
-      const normalized = ((rotDeg % 360) + 360) % 360;
-      if (normalized > 90 && normalized < 270) rotDeg -= 180;
-      el._rot = rotDeg;
+      const c = Math.cos(ang);
+      const s = Math.sin(ang);
+      // Stash world-space label anchor
+      el._wx = labelR * c;
+      el._wy = labelR * s;
+      // CSS translate percentages (anchor position WITHIN the label box)
+      const tx = c >  0.35 ?    '0%' : c < -0.35 ? '-100%' : '-50%';
+      const ty = s >  0.55 ? '-100%' : s < -0.55 ?    '0%' : '-50%';
+      el._tx = tx; el._ty = ty;
+      // Font size scales with wedge arc — production formula
+      const arc = w.a1 - w.a0;
+      el.style.fontSize = Math.max(9, Math.min(14, 8 + arc * 11)).toFixed(1) + 'px';
       overlay.appendChild(el);
     });
 
     function sync() {
-      // Convert each label's world position to screen position via sigma's camera.
-      // Sigma exposes viewportToGraph / graphToViewport.
       const labels = overlay.querySelectorAll('.ph2-rim-label');
       labels.forEach(el => {
         const screen = sigmaRenderer.graphToViewport({ x: el._wx, y: el._wy });
         el.style.left = screen.x + 'px';
         el.style.top  = screen.y + 'px';
-        el.style.transform = `translate(-50%, -50%) rotate(${el._rot}deg)`;
+        el.style.transform = `translate(${el._tx}, ${el._ty})`;
       });
     }
     sync();
