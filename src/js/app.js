@@ -8554,6 +8554,326 @@ function renderAlphaFindings(pane) {
   });
 }
 
+// ============================================================
+// VIEWS.morals — divine roots of ethics, moral evolution, cross-tradition.
+// ============================================================
+const _moralsState = { mode: 'roots' };
+VIEWS.morals = {
+  title: 'Morals',
+  subtitle: 'divine roots · moral evolution · cross-tradition ethics',
+  render() {
+    document.getElementById('view-controls').innerHTML = `
+      <button class="btn btn-mini morals-mode${_moralsState.mode==='roots'?' active':''}" data-mode="roots">roots</button>
+      <button class="btn btn-mini morals-mode${_moralsState.mode==='systems'?' active':''}" data-mode="systems">systems</button>
+      <button class="btn btn-mini morals-mode${_moralsState.mode==='findings'?' active':''}" data-mode="findings">findings</button>
+    `;
+    document.querySelectorAll('.morals-mode').forEach(btn => {
+      btn.onclick = () => { _moralsState.mode = btn.dataset.mode; setView('morals'); };
+    });
+    legend.style('display','none').html('');
+    const pane = document.createElement('div');
+    pane.className = 'alpha-pane alpha-pane-live';
+    if (_moralsState.mode === 'roots') renderMoralsRoots(pane);
+    else if (_moralsState.mode === 'systems') renderMoralsSystems(pane);
+    else renderMoralsFindings(pane);
+    document.getElementById('canvas').appendChild(pane);
+  }
+};
+
+function renderMoralsRoots(pane) {
+  const nodes = DATA.nodes.filter(n => n.type === 'moral');
+  const moralDeities = [
+    { id:'ahura-mazda', trad:'Zoroastrian', note:'Commands Asha (Truth/Righteousness) — cosmic moral principle opposing Druj (the Lie). First systematic ethical monotheism.' },
+    { id:'yahweh', trad:'Jewish/Christian', note:'Lawgiver at Sinai — Ten Commandments as direct divine speech. Prototype of written divine-command ethics.' },
+    { id:'maat', trad:'Egyptian', note:'Cosmic order: truth, justice, balance. Every pharaoh\'s moral legitimacy measured against Maat. The weighing of the heart.' },
+    { id:'varuna', trad:'Vedic', note:'Sky god of cosmic moral order (rta). Watches over oaths, punishes violations. Precursor to karma as cosmic moral causation.' },
+    { id:'allah', trad:'Islamic', note:'Ultimate moral authority — Quran as comprehensive moral-legal code. Al-Adl (The Just), Al-Hakim (The Wise) among the 99 Names.' },
+    { id:'shangdi', trad:'Chinese', note:'Shang Dynasty supreme deity. Source of the Mandate of Heaven (Tianming) — moral legitimacy flows from heavenly approval.' },
+  ];
+  let html = `<div class="alpha-scripts-header"><h2>Moral Roots in the Divine</h2><span class="alpha-count">${nodes.length} moral nodes · deity-as-moral-anchor across traditions</span></div>
+  <div style="padding:0 24px 24px">
+  <p style="color:var(--text-2);font-size:13px;line-height:1.6;margin-bottom:20px">Every major moral system originates in either a divine command (God commands → you must obey) or a cosmic order (the universe has a moral structure → you must align with it). These are the key deity-anchors of moral order across traditions.</p>
+  <div class="alpha-scripts-grid">`;
+  moralDeities.forEach(d => {
+    const nd = DATA.nodes.find(n => n.id === d.id);
+    const title = nd ? (nd.title || nd.name || d.id) : d.id;
+    html += `<div class="alpha-script-card" data-id="${d.id}" style="border-left:3px solid #d4a55a">
+      <div class="asc-type">${d.trad}</div>
+      <div class="asc-title">${title}</div>
+      <div class="asc-tradition" style="font-size:11px;line-height:1.4;margin-top:4px">${d.note}</div>
+    </div>`;
+  });
+  html += '</div>';
+  if (nodes.length) {
+    html += `<h3 style="margin:24px 0 8px;font-size:13px;color:var(--text-2);letter-spacing:.06em;text-transform:uppercase">Moral Philosophy Nodes</h3><div class="alpha-scripts-grid">`;
+    nodes.forEach(n => {
+      html += `<div class="alpha-script-card" data-id="${n.id}" style="border-left:3px solid #5a6cc4">
+        <div class="asc-type">${n['moral-type']||'moral'}</div>
+        <div class="asc-title">${n.title||n.id}</div>
+      </div>`;
+    });
+    html += '</div>';
+  } else {
+    html += '<div style="margin:16px 0;color:var(--text-3);font-size:13px">Moral nodes loading — content agent populating 13_morals/ now.</div>';
+  }
+  html += '</div>';
+  pane.innerHTML = html;
+  pane.querySelectorAll('[data-id]').forEach(el => {
+    el.style.cursor = 'pointer';
+    el.onclick = () => { const nd = DATA.nodes.find(x => x.id === el.dataset.id); if (nd) showDetail(nd); };
+  });
+}
+
+function renderMoralsSystems(pane) {
+  const nodes = DATA.nodes.filter(n => n.type === 'moral');
+  const systems = [
+    { name:'Divine Command', color:'#d4a55a', traditions:'Judaism · Christianity · Islam · Zoroastrianism',
+      desc:'Moral obligation derived from God\'s commands. An act is right because God commands it. The Euthyphro Dilemma (Plato, 399 BCE) remains the central unsolved tension.' },
+    { name:'Cosmic Order / Karma', color:'#5aaca8', traditions:'Hinduism · Buddhism · Jainism · Daoism',
+      desc:'Impersonal moral causation — actions generate proportional consequences through the structure of reality. No divine enforcer needed.' },
+    { name:'Natural Law', color:'#6e8c6b', traditions:'Stoicism · Catholicism · Enlightenment philosophy',
+      desc:'Moral norms discoverable through reason as built into nature. Stoic Logos → Cicero → Aquinas → Locke → Declaration of Independence.' },
+    { name:'Virtue Ethics', color:'#5a6cc4', traditions:'Greek · Confucian · Buddhist · Aristotelian',
+      desc:'Focus on character rather than rules. Aristotelian eudaimonia, Confucian Ren (humaneness), Buddhist Sila. The agent, not the act, is primary.' },
+    { name:'The Golden Rule', color:'#c44a5a', traditions:'All seven major traditions — attested independently',
+      desc:'"Treat others as you wish to be treated." Found in Confucius (500 BCE), Hillel (30 BCE), Jesus (30 CE), Buddha, Jain texts, Islamic hadith, Zoroastrian texts — before any cross-cultural contact.' },
+  ];
+  let html = `<div class="alpha-scripts-header"><h2>Moral Systems</h2><span class="alpha-count">${nodes.length} moral nodes in vault</span></div><div style="padding:0 24px 24px">`;
+  systems.forEach(s => {
+    html += `<div style="border-left:3px solid ${s.color};margin:10px 0;padding:14px 16px;background:rgba(0,0,0,.18);border-radius:4px">
+      <div style="font-weight:600;color:var(--text-1);margin-bottom:4px">${s.name}</div>
+      <div style="font-size:11px;color:${s.color};margin-bottom:8px">${s.traditions}</div>
+      <div style="font-size:13px;color:var(--text-2);line-height:1.5">${s.desc}</div>
+    </div>`;
+  });
+  if (nodes.length) {
+    html += `<h3 style="margin:24px 0 8px;font-size:13px;color:var(--text-2);letter-spacing:.06em;text-transform:uppercase">Vault Moral Nodes</h3><div class="alpha-scripts-grid">`;
+    nodes.forEach(n => {
+      html += `<div class="alpha-script-card" data-id="${n.id}" style="border-left:3px solid #5a6cc4">
+        <div class="asc-type">${n['moral-type']||'moral'}</div>
+        <div class="asc-title">${n.title||n.id}</div>
+      </div>`;
+    });
+    html += '</div>';
+  }
+  html += '</div>';
+  pane.innerHTML = html;
+  pane.querySelectorAll('[data-id]').forEach(el => {
+    el.style.cursor = 'pointer';
+    el.onclick = () => { const nd = DATA.nodes.find(x => x.id === el.dataset.id); if (nd) showDetail(nd); };
+  });
+}
+
+function renderMoralsFindings(pane) {
+  const findings = [
+    { label:'CONVERGENCE', color:'#d4a55a', title:'The Golden Rule — 7 independent attestations',
+      body:'Confucius (500 BCE): "Do not impose on others what you yourself do not want." Hillel (30 BCE): "What is hateful to you, do not do to your neighbor — that is the whole Torah." Jesus (30 CE): "Do unto others as you would have them do." Buddha (5th c. BCE): "As I am, so are other beings." Jain, Islamic, Zoroastrian texts: same principle before contact. Seven traditions, same rule, zero documented cross-contact at time of first attestation. The strongest evidence for a universal human moral intuition.' },
+    { label:'TRANSMISSION', color:'#5aaca8', title:'Euthyphro Dilemma — 399 BCE, still live in three traditions',
+      body:'Plato\'s Socrates: "Is something pious because the gods love it, or do the gods love it because it is pious?" Al-Ash\'ari (Islamic, 873–935 CE): God\'s will creates morality. Mu\'tazilites: God commands the good because it IS good. Maimonides (Jewish): second horn via natural law. Calvin (Christian): first horn (voluntarism). Aquinas (Christian): second horn via natural law. The same Greek philosophical problem structures live theological debates 2,400 years later across three traditions.' },
+    { label:'CONVERGENCE', color:'#6e8c6b', title:'Moral law inscribed in stone — four traditions',
+      body:'Hammurabi\'s Code (c.1754 BCE, Babylon): divine-king law on diorite stele. Ten Commandments (c.7th–6th BCE): God writes on stone tablets directly. Ashoka\'s Edicts (c.250 BCE, India): Buddhist moral code on rock pillars across the subcontinent. Roman Twelve Tables (c.450 BCE): foundational law on bronze. All four: permanent moral inscription claiming divine or cosmic authority.' },
+    { label:'MASSIVE WIN', color:'#c44a5a', title:'Karma vs. Last Judgment — two complete moral accounting systems',
+      body:'Buddhist/Hindu/Jain karma: impersonal cosmic mechanism tracking every intentional action across rebirths. No judge — the law is built into reality itself. Christian/Islamic/Jewish Last Judgment: God judges each soul after death with a final accounting. Two complete solutions to the same problem: how does the universe ensure moral actions receive appropriate consequences? One requires no God; one requires only God. Together they account for the moral frameworks of roughly 5 billion people.' },
+    { label:'CONVERGENCE', color:'#5a6cc4', title:'Natural Law — three independent frameworks',
+      body:'Stoic Logos (Greek, c.300 BCE): moral norms discoverable by reason as built into cosmic order. Confucian Tian (Chinese, c.500 BCE): Heaven has a moral structure; the Mandate of Heaven reflects moral reality. Islamic Mu\'tazilite (Baghdad, c.830 CE): God commands what is good because it IS good by nature — moral facts accessible to reason. Three traditions, same claim: morality is built into reality, accessible to reason, not merely revealed by divine will.' },
+  ];
+  let html = `<div class="alpha-scripts-header"><h2>Morals Findings</h2><span class="alpha-count">cross-tradition moral convergences</span></div><div style="padding:0 24px 24px">`;
+  findings.forEach(f => {
+    html += `<div style="border-left:3px solid ${f.color};margin:12px 0;padding:14px 16px;background:rgba(0,0,0,.18);border-radius:4px">
+      <div style="font-size:10px;letter-spacing:.1em;color:${f.color};text-transform:uppercase;margin-bottom:6px">${f.label}</div>
+      <div style="font-weight:600;margin-bottom:8px;color:var(--text-1)">${f.title}</div>
+      <div style="font-size:13px;color:var(--text-2);line-height:1.5">${f.body}</div>
+    </div>`;
+  });
+  html += '</div>';
+  pane.innerHTML = html;
+}
+
+// ============================================================
+// VIEWS.rituals — ritual behaviors across all traditions.
+// ============================================================
+const _ritualsState = { mode: 'lifecycle' };
+VIEWS.rituals = {
+  title: 'Rituals',
+  subtitle: 'lifecycle · calendar · daily practice — cross-tradition behaviors',
+  render() {
+    document.getElementById('view-controls').innerHTML = `
+      <button class="btn btn-mini rituals-mode${_ritualsState.mode==='lifecycle'?' active':''}" data-mode="lifecycle">lifecycle</button>
+      <button class="btn btn-mini rituals-mode${_ritualsState.mode==='calendar'?' active':''}" data-mode="calendar">calendar</button>
+      <button class="btn btn-mini rituals-mode${_ritualsState.mode==='nodes'?' active':''}" data-mode="nodes">all rituals</button>
+      <button class="btn btn-mini rituals-mode${_ritualsState.mode==='findings'?' active':''}" data-mode="findings">findings</button>
+    `;
+    document.querySelectorAll('.rituals-mode').forEach(btn => {
+      btn.onclick = () => { _ritualsState.mode = btn.dataset.mode; setView('rituals'); };
+    });
+    legend.style('display','none').html('');
+    const pane = document.createElement('div');
+    pane.className = 'alpha-pane alpha-pane-live';
+    if (_ritualsState.mode === 'lifecycle') renderRitualsLifecycle(pane);
+    else if (_ritualsState.mode === 'calendar') renderRitualsCalendar(pane);
+    else if (_ritualsState.mode === 'nodes') renderRitualsNodes(pane);
+    else renderRitualsFindings(pane);
+    document.getElementById('canvas').appendChild(pane);
+  }
+};
+
+function renderRitualsNodes(pane) {
+  const nodes = DATA.nodes.filter(n => n.type === 'ritual');
+  const typeColors = { lifecycle:'#d4a55a', calendar:'#5aaca8', daily:'#6e8c6b', initiatory:'#5a6cc4', sacrificial:'#c44a5a', pilgrimage:'#c47453', communal:'#6b3a8a', funerary:'#7a8090' };
+  const typeOrder = ['lifecycle','initiatory','calendar','daily','sacrificial','pilgrimage','communal','funerary','other'];
+  const byType = {};
+  nodes.forEach(n => { const t=n['ritual-type']||'other'; (byType[t]=byType[t]||[]).push(n); });
+  const ordered = typeOrder.filter(t=>byType[t]).concat(Object.keys(byType).filter(t=>!typeOrder.includes(t)));
+  let html = `<div class="alpha-scripts-header"><h2>Ritual Nodes</h2><span class="alpha-count">${nodes.length} nodes in vault</span></div>`;
+  if (!nodes.length) {
+    html += '<div style="padding:48px;color:var(--text-3)">No ritual nodes yet — content agent is populating 14_rituals/ now.</div>';
+  } else {
+    ordered.forEach(t => {
+      if (!byType[t]) return;
+      const c = typeColors[t]||'#d4a55a';
+      html += `<div style="color:${c};padding:12px 24px 4px;font-size:11px;text-transform:uppercase;letter-spacing:.08em">${t}</div><div class="alpha-scripts-grid">`;
+      byType[t].forEach(n => {
+        html += `<div class="alpha-script-card" data-id="${n.id}" style="border-left:3px solid ${c}">
+          <div class="asc-type">${n.tier?'Tier '+n.tier:''}</div>
+          <div class="asc-title">${n.title||n.id}</div>
+          <div class="asc-tradition">${n.tradition||''}</div>
+        </div>`;
+      });
+      html += '</div>';
+    });
+  }
+  pane.innerHTML = html;
+  pane.querySelectorAll('.alpha-script-card[data-id]').forEach(c => {
+    c.onclick = () => { const nd=DATA.nodes.find(x=>x.id===c.dataset.id); if(nd) showDetail(nd); };
+  });
+}
+
+function renderRitualsLifecycle(pane) {
+  const ritualNodes = DATA.nodes.filter(n => n.type==='ritual' && n['ritual-type']==='lifecycle');
+  const stages = [
+    { stage:'Birth & Naming', color:'#d4a55a', items:[
+      { trad:'Jewish', name:'Brit Milah + naming', desc:'8th-day circumcision + naming. Entry into covenant community.' },
+      { trad:'Christian', name:'Baptism', desc:'Water immersion invoking the Trinity. Remission of original sin, entry into the Church.' },
+      { trad:'Muslim', name:'Aqiqah', desc:'Animal sacrifice + naming on the 7th day. Hair shaving, charitable donation.' },
+      { trad:'Hindu', name:'Namakarana', desc:'Naming ceremony (10th–12th day). The child formally enters the human community.' },
+    ]},
+    { stage:'Puberty & Adulthood', color:'#5aaca8', items:[
+      { trad:'Jewish', name:'Bar/Bat Mitzvah', desc:'Age 13/12. Torah reading before congregation. Full moral responsibility begins.' },
+      { trad:'Christian', name:'Confirmation', desc:'Renewal of baptismal vows, anointing with chrism. Adult membership in the Church.' },
+      { trad:'Hindu', name:'Upanayana (Thread ceremony)', desc:'Brahminical "second birth." Sacred thread + first Gayatri Mantra. Entry into student life.' },
+      { trad:'Indigenous', name:'Vision Quest', desc:'Isolation, fasting, seeking a spirit guardian. Native American transition from child to adult.' },
+    ]},
+    { stage:'Marriage', color:'#6e8c6b', items:[
+      { trad:'Jewish', name:'Chuppah + Seven Blessings', desc:'Under the wedding canopy. Seven blessings, breaking the glass. Two-part ceremony.' },
+      { trad:'Hindu', name:'Saptapadi (Seven Steps)', desc:'Seven circumambulations of the sacred fire (Agni as witness). Legally binding at the seventh step.' },
+      { trad:'Islamic', name:'Nikah', desc:'Contract before witnesses, mahr (gift), wali (guardian). Civil contract with divine witness — no clergy required.' },
+      { trad:'Christian', name:'Wedding Mass + Vows', desc:'Exchange of vows before God, rings, Nuptial Blessing. "One flesh" theology.' },
+    ]},
+    { stage:'Death & Burial', color:'#7a8090', items:[
+      { trad:'Jewish', name:'Tahara + Shiva (7 days)', desc:'Ritual washing, white shrouds, burial within 24 hours. Seven days of communal mourning.' },
+      { trad:'Hindu', name:'Antyesti (cremation)', desc:'Pyre cremation (Ganges if possible). Eldest son lights pyre. 13-day mourning.' },
+      { trad:'Tibetan Buddhist', name:'Bardo Thodol readings', desc:'Lama reads aloud to orient consciousness through the 49-day bardo after death.' },
+      { trad:'Zoroastrian', name:'Dakhma (Tower of Silence)', desc:'Sky burial — body exposed to vultures. Preserves purity of earth, fire, and water.' },
+    ]},
+  ];
+  let html = `<div class="alpha-scripts-header"><h2>Lifecycle Rituals</h2><span class="alpha-count">birth · adulthood · marriage · death — Van Gennep's three-stage structure across traditions</span></div><div style="padding:0 24px 24px">`;
+  stages.forEach(s => {
+    html += `<h3 style="color:${s.color};font-size:12px;letter-spacing:.08em;text-transform:uppercase;margin:20px 0 8px;border-bottom:1px solid rgba(255,255,255,.08);padding-bottom:6px">${s.stage}</h3><div class="alpha-scripts-grid">`;
+    s.items.forEach(it => {
+      html += `<div class="alpha-script-card" style="border-left:3px solid ${s.color}">
+        <div class="asc-type">${it.trad}</div>
+        <div class="asc-title">${it.name}</div>
+        <div class="asc-tradition" style="font-size:11px;line-height:1.4;margin-top:4px">${it.desc}</div>
+      </div>`;
+    });
+    html += '</div>';
+  });
+  if (ritualNodes.length) {
+    html += `<h3 style="margin:24px 0 8px;font-size:13px;color:var(--text-2)">Lifecycle Ritual Nodes in Vault</h3><div class="alpha-scripts-grid">`;
+    ritualNodes.forEach(n => { html += `<div class="alpha-script-card" data-id="${n.id}" style="border-left:3px solid #d4a55a"><div class="asc-title">${n.title||n.id}</div></div>`; });
+    html += '</div>';
+  }
+  html += '</div>';
+  pane.innerHTML = html;
+  pane.querySelectorAll('[data-id]').forEach(el => {
+    el.style.cursor='pointer';
+    el.onclick=()=>{ const nd=DATA.nodes.find(x=>x.id===el.dataset.id); if(nd) showDetail(nd); };
+  });
+}
+
+function renderRitualsCalendar(pane) {
+  const calNodes = DATA.nodes.filter(n => n.type==='ritual' && n['ritual-type']==='calendar');
+  const seasons = [
+    { season:'Winter Solstice', color:'#5a6cc4', items:[
+      { trad:'Christian', name:'Christmas (Dec 25)', desc:'Nativity of Christ. Overlaps Roman Sol Invictus and Norse Yule. Midnight Mass, gifts, Nativity scene.' },
+      { trad:'Jewish', name:'Hanukkah (Kislev 25)', desc:'8-day Festival of Lights — menorah lighting, Maccabee rededication. Solar-adjacent: darkest days.' },
+      { trad:'Roman / Persian', name:'Saturnalia / Yalda Night', desc:'Saturnalia (Dec 17-23): role-reversal feast. Yalda Night (Iran): longest night, birth of Mithra the Sun God.' },
+      { trad:'Norse', name:'Yule (Jól)', desc:'13-day midwinter feast. Yule log, Wild Hunt. The Germanic precursor absorbed into Christmas.' },
+    ]},
+    { season:'Spring / Renewal', color:'#6e8c6b', items:[
+      { trad:'Jewish', name:'Passover (Nisan 14–21)', desc:'Exodus commemoration. Seder: matzah, bitter herbs, four cups, Haggadah. "In every generation..."' },
+      { trad:'Christian', name:'Easter', desc:'Resurrection of Christ. 40-day Lent fast precedes. Paschal fire lit in darkness. Baptismal renewal.' },
+      { trad:'Persian / Zoroastrian', name:'Nowruz (Spring equinox)', desc:'Persian New Year. Haft-sin table, fire-jumping. 3,000+ years — oldest continuously celebrated festival.' },
+      { trad:'Hindu', name:'Holi', desc:'Spring colors festival. Holika bonfire the night before. Dissolution of social distinctions.' },
+    ]},
+    { season:'Fasting & Atonement', color:'#c44a5a', items:[
+      { trad:'Islamic', name:'Ramadan (month-long)', desc:'Full daylight fast for 30 days. Commemorates first Quranic revelation. Iftar at sunset, Suhoor at dawn.' },
+      { trad:'Jewish', name:'Yom Kippur (25-hr fast)', desc:'Day of Atonement. Kol Nidre night service. Confession, repentance, divine forgiveness. Holiest Jewish day.' },
+      { trad:'Christian', name:'Lent (40 days)', desc:'40-day preparation for Easter. Fasting mirrors Jesus\'s desert fast. Ash Wednesday begins it.' },
+      { trad:'Buddhist', name:'Vassa (3-month retreat)', desc:'Monks refrain from eating after noon for 3 months during the rain retreat.' },
+    ]},
+  ];
+  let html = `<div class="alpha-scripts-header"><h2>Calendar Rituals</h2><span class="alpha-count">seasonal festivals · holy days · solar anchors</span></div><div style="padding:0 24px 24px">
+  <p style="color:var(--text-2);font-size:13px;line-height:1.6;margin-bottom:16px">Winter solstice festivals appear in every Northern Hemisphere tradition independently. Harvest festivals, atonement days, and spring renewals cluster around the same astronomical moments across cultures with zero documented contact.</p>`;
+  seasons.forEach(s => {
+    html += `<h3 style="color:${s.color};font-size:12px;letter-spacing:.08em;text-transform:uppercase;margin:20px 0 8px;border-bottom:1px solid rgba(255,255,255,.08);padding-bottom:6px">${s.season}</h3><div class="alpha-scripts-grid">`;
+    s.items.forEach(it => {
+      html += `<div class="alpha-script-card" style="border-left:3px solid ${s.color}">
+        <div class="asc-type">${it.trad}</div>
+        <div class="asc-title">${it.name}</div>
+        <div class="asc-tradition" style="font-size:11px;line-height:1.4;margin-top:4px">${it.desc}</div>
+      </div>`;
+    });
+    html += '</div>';
+  });
+  if (calNodes.length) {
+    html += `<h3 style="margin:24px 0 8px;font-size:13px;color:var(--text-2)">Calendar Ritual Nodes in Vault</h3><div class="alpha-scripts-grid">`;
+    calNodes.forEach(n => { html += `<div class="alpha-script-card" data-id="${n.id}" style="border-left:3px solid #5aaca8"><div class="asc-title">${n.title||n.id}</div></div>`; });
+    html += '</div>';
+  }
+  html += '</div>';
+  pane.innerHTML = html;
+  pane.querySelectorAll('[data-id]').forEach(el => {
+    el.style.cursor='pointer';
+    el.onclick=()=>{ const nd=DATA.nodes.find(x=>x.id===el.dataset.id); if(nd) showDetail(nd); };
+  });
+}
+
+function renderRitualsFindings(pane) {
+  const findings = [
+    { label:'CONVERGENCE', color:'#d4a55a', title:'Van Gennep\'s three stages — universal ritual grammar',
+      body:'Every transition ritual in human culture follows: (1) Separation — detachment from previous status; (2) Liminality — threshold state, "betwixt and between"; (3) Reincorporation — new status with new rights and obligations. Documented in: Greek mystery initiations, Christian baptism, Jewish bar mitzvah, Hindu Upanayana, West African Poro, Apache Sunrise Dance, Andean rutuchiku. Not transmitted — repeatedly invented because it maps onto how cognitive identity actually changes.' },
+    { label:'CONVERGENCE', color:'#5aaca8', title:'Winter solstice — the most universal ritual moment in human history',
+      body:'Roman Saturnalia (Dec 17-23) · Persian Yalda Night (Mithra\'s birth) · Norse Yule · Germanic Midwinter blót · Mesopotamian Zagmuk · Zoroastrian Sada · Celtic Yule · Japanese Tōji. Christmas (Dec 25) is the Christianization of the most universal ritual in Northern civilization. Every culture marks the solar nadir by lighting fires in the longest darkness.' },
+    { label:'CONVERGENCE', color:'#5a6cc4', title:'Water initiation — universal transformation portal',
+      body:'Christian baptism · Jewish mikveh · Mandaean masbuta (possibly older than Christian baptism) · Hindu abhisheka · Japanese misogi (Shinto waterfall purification) · Egyptian Nile sacred bathing · Greek mystery cult sea-bathing · Native American sweat lodge (steam = transformed water) · Vedic snana. Every tradition treats water as the substance that effects purification and transformation. The specific theology differs; the ritual grammar is identical.' },
+    { label:'CONVERGENCE', color:'#6e8c6b', title:'Daily prayer — dawn and dusk as universal sacred threshold',
+      body:'Islamic salat (5 daily prayers at solar moments) · Jewish 3 daily prayers (following Temple sacrifice schedule) · Catholic Divine Office (7 "hours") · Hindu Sandhyavandana (3 dawn/noon/dusk prayers facing the sun) · Tibetan Buddhist morning/evening puja. All independently chose dawn and dusk as the primary prayer moments. The solar transition marks the threshold of the sacred every day — in every tradition that developed fixed daily prayer.' },
+    { label:'MASSIVE WIN', color:'#c44a5a', title:'The sacred meal — consuming the divine across all traditions',
+      body:'Christian Eucharist (bread and wine = body and blood of Christ) · Jewish Passover Seder (direct ancestor of the Last Supper) · Dionysian omophagia (eating raw divine flesh at festivals) · Mithraic sacred meal (documented by Justin Martyr as a "devilish imitation" of the Eucharist) · Vedic Soma (divine drink conferring communion with gods) · Aztec teoqualo ("god-eating" — amaranth dough shaped as Huitzilopochtli) · Sikh langar (communal meal as spiritual practice). The consumption of a sacred substance that effects union with the divine is documented across every inhabited continent.' },
+  ];
+  let html = `<div class="alpha-scripts-header"><h2>Ritual Findings</h2><span class="alpha-count">cross-tradition behavioral convergences</span></div><div style="padding:0 24px 24px">`;
+  findings.forEach(f => {
+    html += `<div style="border-left:3px solid ${f.color};margin:12px 0;padding:14px 16px;background:rgba(0,0,0,.18);border-radius:4px">
+      <div style="font-size:10px;letter-spacing:.1em;color:${f.color};text-transform:uppercase;margin-bottom:6px">${f.label}</div>
+      <div style="font-weight:600;margin-bottom:8px;color:var(--text-1)">${f.title}</div>
+      <div style="font-size:13px;color:var(--text-2);line-height:1.5">${f.body}</div>
+    </div>`;
+  });
+  html += '</div>';
+  pane.innerHTML = html;
+}
+
 VIEWS.patterns = {
   title: 'Patterns',
   subtitle: 'cross-tradition discoveries — convergences · transmissions · science · inversions',

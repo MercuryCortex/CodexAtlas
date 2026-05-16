@@ -147,11 +147,17 @@
         `<span class="agc-sec-char" style="font-family:${s.font}" title="${s.label}">${s.ch}</span>`
       ).join('');
 
+      // Pull first sentence of investigation highlight as card preview
+      const previewText = g.investigationHighlight
+        ? g.investigationHighlight.split('.')[0] + '.'
+        : '';
+
       cell.innerHTML = `
         <span class="agc-main-char" style="font-family:${scriptMeta.font};direction:${scriptMeta.dir}">${mainChar}</span>
         <span class="agc-name">${g.name}</span>
         <span class="agc-meaning">${g.meaning}</span>
         <div class="agc-secondary">${secHtml}</div>
+        ${previewText ? `<div class="agc-preview">${previewText}</div>` : ''}
       `;
 
       cell.addEventListener('click', () => {
