@@ -183,9 +183,13 @@ _Hand-maintained. Each agent currently working in the vault appends a claim bloc
 
 ---
 
-## rituals-hindu-1 — 8 Hindu ritual nodes in 14_rituals/ — 2026-05-17 — IN PROGRESS
-- Owns: `14_rituals/ritual-puja-hindu.md`, `ritual-yajna-vedic-fire.md`, `ritual-upanayana-sacred-thread.md`, `ritual-shraddha-ancestor.md`, `ritual-kumbh-mela-pilgrimage.md`, `ritual-yoga-as-ritual.md`, `ritual-diwali-festival-light.md`, `ritual-tantra-initiation.md` (8 NEW nodes)
-- Status: IN PROGRESS
+## ~~rituals-hindu-1 — 8 Hindu ritual nodes in 14_rituals/ — 2026-05-17 — FINISHED~~
+- ~~Owns: `14_rituals/ritual-puja-hindu.md`, `ritual-yajna-vedic-fire.md`, `ritual-upanayana-sacred-thread.md`, `ritual-shraddha-ancestor.md`, `ritual-kumbh-mela-pilgrimage.md`, `ritual-yoga-as-ritual.md`, `ritual-diwali-festival-light.md`, `ritual-tantra-initiation.md` (8 NEW nodes)~~
+- ~~Build: 52 ritual nodes · 17184 edges · 0 YAML errors · 0 dead links introduced~~
+- ~~MASSIVE WINS: (1) Puja 16-step upacharas = Catholic Mass: two independent royal-hospitality-protocols applied to the divine; (2) Yajna/Yasna cognate — Sanskrit + Avestan share documented PIE fire-ritual ancestor, 4-civilization fire-as-medium convergence; (3) Upanayana — "something worn on the body marking initiatory status" universal (thread/tallit/scapular/kara); (4) Kumbh Mela — astronomical anchoring of pilgrimage is universal (Jupiter/Easter-moon/Ramadan-moon); thin-place geography convergence; (5) Diwali — same festival claimed by 3 religions (Hindu/Jain/Sikh) for 3 different events: ritual-continuity + theological-plasticity; (6) Tantra — highest holy and deepest forbidden share a boundary; every mystical tradition has a transgressive sub-tradition~~
+- ~~SURPRISING FINDS: (1) Shraddha pitru-yana = full reincarnation cosmology inside ancestor ritual centuries before Upanishads formalised samsara; (2) Yoga Sutras = Hindu reframing of Buddhist meditation using Samkhya metaphysics~~
+- ~~Commits: 84d3ed6 (batch 1) · 93ef146 (batch 2)~~
+- ~~Status: FINISHED~~
 
 ---
 
