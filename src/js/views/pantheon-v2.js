@@ -770,6 +770,33 @@
       path.dataset.target = e.target;
       path.dataset.type   = e.type || '';
       path.dataset.bucket = EDGE_TYPE_BUCKET[e.type] ? EDGE_TYPE_BUCKET[e.type].replace(':hl','') : 'association';
+      // PHASE H — directional gradient. Pre-build per-edge <linearGradient>;
+      // the hover handler swaps `stroke: url(#id)` to activate it. REVERSE_DIRECTION
+      // types swap endpoints so the bright stop sits on the semantic origin
+      // (e.g. influenced-by points FROM the influencer TO the influenced,
+      // even though data src/tgt are reversed).
+      if (st.directional) {
+        const gid = 'ph2eg-' + _edgeCounter; // sigma _edgeCounter is unique per edge
+        const grad = document.createElementNS(SVG_NS, 'linearGradient');
+        grad.setAttribute('id', gid);
+        grad.setAttribute('gradientUnits', 'userSpaceOnUse');
+        const reverse = REVERSE_DIRECTION.has(e.type);
+        const x1 = reverse ? tp.x : sp.x, y1 = reverse ? tp.y : sp.y;
+        const x2 = reverse ? sp.x : tp.x, y2 = reverse ? sp.y : tp.y;
+        grad.setAttribute('x1', x1); grad.setAttribute('y1', y1);
+        grad.setAttribute('x2', x2); grad.setAttribute('y2', y2);
+        const stop0 = document.createElementNS(SVG_NS, 'stop');
+        stop0.setAttribute('offset', '0%');
+        stop0.setAttribute('stop-color', st.hex);
+        stop0.setAttribute('stop-opacity', '0.95');
+        const stop1 = document.createElementNS(SVG_NS, 'stop');
+        stop1.setAttribute('offset', '100%');
+        stop1.setAttribute('stop-color', st.hex);
+        stop1.setAttribute('stop-opacity', '0.35');
+        grad.appendChild(stop0); grad.appendChild(stop1);
+        defsEl.appendChild(grad);
+        path.dataset.gradId = gid;
+      }
       edgesG.appendChild(path);
       edgeEls.push({ el: path, s: e.source, t: e.target, st });
     });
@@ -819,11 +846,20 @@
           const incident = (s === _hoverId || t === _hoverId);
           el.classList.toggle('dim', !incident);
           el.classList.toggle('hot', incident);
+          // Phase H — directional gradient: when an edge becomes .hot,
+          // swap its stroke to the pre-built gradient. CSS .hot rule
+          // normally paints a flat bucket color; inline stroke wins.
+          if (incident && el.dataset.gradId) {
+            el.style.stroke = 'url(#' + el.dataset.gradId + ')';
+          } else if (el.style.stroke) {
+            el.style.stroke = '';
+          }
         });
       } else {
         edgeEls.forEach(({ el }) => {
           el.classList.remove('dim');
           el.classList.remove('hot');
+          if (el.style.stroke) el.style.stroke = '';
         });
       }
     }
