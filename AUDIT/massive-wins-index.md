@@ -189,4 +189,60 @@
 
 ---
 
+## Session additions — 2026-05-15/16 (Portuguese hermetic + astrology spine batches)
+
+_Added manually; will be incorporated on next auto-compile pass once `## MASSIVE WIN:` annotations land in the source vault nodes (see list at the end of this section)._
+
+### I. DOCUMENTED TRANSMISSION CHAINS (continued)
+
+80. **Templar cross-pattée (1147 Vézelay) → Portuguese Order of Christ cross (1319 Tomar) → Vasco da Gama's caravel sails (1498)** — Documented institutional Templar-survival via papal bull *Ad ea ex quibus* (John XXII, 14 March 1319). The cross of Christ on Discovery-era caravels is the iconographic endpoint of Tier-1 institutional + personnel + asset succession from cleared Iberian Templars. **The cleanest documented Templar-survival case in Latin Christendom — distinct from speculative Strict-Templar-Observance / Holy-Blood-Holy-Grail fabrications.** Sources: `tradition-order-of-christ`, `cross-order-of-christ`, `event-order-of-christ-foundation-1319`.
+
+81. **Enuma Anu Enlil (c. -1500 → -700) → Berossus *Babyloniaca* (c. -290) → Hellenistic astrology (Ptolemy *Tetrabiblos* 2nd c. CE)** — Mesopotamian celestial-omen tradition transmitted into Greek scholarship via Berossus's Greek-language reception in Cos. The empirical-observational basis (Mesopotamian planetary diaries) + technical machinery (Greek mathematical astronomy) synthesis is the foundation of all subsequent Western astrology. Sources: `phase-1-019-enuma-anu-enlil`, `berossus`, `firmicus-maternus`.
+
+82. **Bandarra *Trovas* (c. 1530s) → Vieira *História do Futuro* (1640s–1660s) → Pessoa *Mensagem* (1934)** — 400-year explicit reception chain in Portuguese vernacular form. Bandarra was a Trancoso shoemaker tried by the Inquisition in 1541; Pessoa includes a specific "Bandarra" poem in *Mensagem* Section III (*O Encoberto*) — explicit acknowledgment of the inheritance. Sources: `phase-6-040-bandarra-trovas`, `phase-7-037-pessoa-mensagem`, `fifth-empire-quinto-imperio`.
+
+83. **Crowley → Pessoa correspondence (1929–1930) → Boca do Inferno hoax (September 1930)** — Documented Crowley Lisbon visit; staged faked-disappearance at the Boca do Inferno cliffs in Cascais in collaboration with Pessoa. Pessoa-authored press articles "investigating" Crowley's death (a Pessoa-Crowley collaboration). The principal Portuguese-modernism / English-Thelema documented contact event. Sources: `fernando-pessoa`, `aleister-crowley`.
+
+84. **12th-c. Toledo Translation School → Latin medieval astrology** — Gerard of Cremona, Plato of Tivoli, Adelard of Bath: Arabic → Latin renderings of Albumasar, al-Kindi, Sahl ibn Bishr. Institutional reception in Bologna/Padua/Paris/Oxford created the medieval-medical-astrological professional class. The valve through which the Islamic Golden Age's astrological synthesis enters Latin Christendom. Sources: `al-kindi`, `tradition-western-astrology`.
+
+85. **Yavanajataka (Sphujidhvaja, c. 269 CE) → Indian Jyotisha** — Documented Greek-to-Sanskrit transmission of Hellenistic natal-astrology technical machinery (twelve houses, lots, aspects) into Indian tradition. Pingree 1978 edition is the canonical attestation. **The eastward bookend of the Hellenistic astrological diffusion** — the parallel to the Toledo School's westward bookend. Sources: `tradition-jyotisha-indian-astrology`.
+
+### V. DATE/SCALE SURPRISES (continued)
+
+86. **Western Astrology = 3,500-year continuous tradition — longer than the Abrahamic religions** — Mesopotamia (c. -1500) → Berossus → Hellenistic synthesis → Sasanian Pahlavi → Islamic Golden Age → Toledo translations → Renaissance Hermetic → modern occult revival → contemporary natal-chart culture. **Longer than Judaism (~3,200), Christianity (~2,000), or Islam (~1,400).** The single longest continuously-attested intellectual tradition in the vault, with documented institutional and textual succession across every major Old World religious-cultural boundary. **The single best 60-second demo of the entire Atlas's value proposition.** Source: `tradition-western-astrology`.
+
+87. **Joachim of Fiore (1135–1202) → Bandarra → Vieira *Quinto Império* → Pessoa Mensagem (1934) — 800-year prophetic-political theology chain** — Calabrian Cistercian Trinitarian-Status schema running through 4 centuries into a 20th-c. modernist national epic. The political-theological spine of Portuguese Hermeticism; one of the longest continuous prophetic-political theology chains in Western history. Sources: `fifth-empire-quinto-imperio`, `phase-6-040-bandarra-trovas`, `phase-7-037-pessoa-mensagem`.
+
+### IV. SCHOLARLY SURPRISES (continued)
+
+88. **Pessoa cast horoscopes for each of his heteronyms** — Each fictive author (Alberto Caeiro, Ricardo Reis, Álvaro de Campos, Bernardo Soares) has its own birth chart in the Espólio Pessoa at the Biblioteca Nacional de Portugal. Raphael Baldaya is his explicit astrologer-heteronym. Thousands of pages of astrological notebooks survive. **A singular literary-occult practice — no comparable case in 20th-c. world literature** — and underexplored in Anglophone Pessoa scholarship. Source: `fernando-pessoa`.
+
+89. **Pico della Mirandola — pro-hermetic AND anti-astrology** — His 1494 *Disputationes adversus astrologiam divinatricem* is the most sustained pre-modern philosophical attack on astrology, **paradoxically by the same author whose 900 Theses + *Heptaplus* integrate hermetic-kabbalistic-astrological material**. The internal contradiction is itself the discovery; Pico's anti-astrology is the principal Renaissance philosophical counter-pole to the integration tradition. Source: `giovanni-pico-della-mirandola`.
+
+90. **Watchers (1 Enoch) = the principal pre-Christian Jewish anti-astrology framing** — Kokabiel/Baraqel/Kasdeja teach astrology to humanity as **fallen-angel transgressive forbidden knowledge**. The doctrinal counter-pole to the integration-tradition; the structural source of medieval Christian + Islamic anti-astrology positions. "Astrology as forbidden knowledge" is itself a discovery — most narrative-religious-history treatments of astrology lack this anti-pole. Sources: `phase-3-004-1-enoch`, `kokabiel`, `baraqel`, `kasdeja`.
+
+### II. STRUCTURAL PARALLELS (continued)
+
+91. **The hidden-returning-king motif — Sebastianismo / Arthur / Frederick Barbarossa / Mahdi** — Independent cross-cultural convergence on the same messianic-king-will-return expectation. Portuguese Sebastian I (disappeared at Alcácer Quibir 1578) + British "rex quondam et futurus" + German Frederick at the Kyffhäuser + Shia Twelver Imam-Mahdi (in occultation since 874 CE). The structural motif is identical across four traditions; documented transmission exists only for Sebastian → Vieira → Pessoa within the Portuguese line. Sources: `sebastian-i-portugal`, `tradition-sebastianism`.
+
+92. **Quinta da Regaleira Initiation Wells (1904–1910) = 9 levels of compound symbolic ambiguity** — Carvalho Monteiro's inverted-tower spiral well descending 27m in 9 stages of 15 steps. Reading register #1: Dante's 9 circles of Hell. Register #2: the 9 Templar founders. Register #3: the 9 levels of Rosicrucian initiation. **The architectural ambiguity is itself the intent** — the most fully-articulated esoteric architectural complex in early-20th-c. Europe. Sources: `antonio-carvalho-monteiro`, `event-quinta-da-regaleira-construction-1904-1910`.
+
+### Contested but catalogued (Tier-4 with `[claim: contested]`)
+
+93. **Gandra's Mafra-666-Heliopolis hypothesis** `[claim: contested]` — The Mafra Monument (1717–1755) read as encoding Solomonic temple typology + Heliopolitan solar theology + apocalyptic-666 numerology. Tier-4 Gandra-attested; not supported by mainstream architectural-history scholarship (Saraiva 2003, Kubler 1972, official DGPC documentation). **Carried in the vault as a catalogued Portuguese-hermetic-scholarship interpretation, not as endorsed history** — per methodology §"Symbol-research discipline" and `feedback_deviant_bridges`. Sources: `event-mafra-monument-construction-1717-1755`, `manuel-j-gandra`, `phase-7-039-gandra-da-face-oculta-2009`.
+
+---
+
+**Annotations queued for next auto-compile pass:**
+Source nodes that need `## MASSIVE WIN: <title>` sections added so the next compile-script run incorporates these naturally:
+- `07_traditions/tradition-western-astrology.md` → for entries 81, 84, 86
+- `07_traditions/tradition-order-of-christ.md` → for entry 80
+- `04_persons/fernando-pessoa.md` → for entries 83, 88
+- `04_persons/giovanni-pico-della-mirandola.md` → for entry 89
+- `06_themes/fifth-empire-quinto-imperio.md` → for entries 82, 87
+- `02_documents/_phase-3-hellenistic-second-temple/phase-3-004-1-enoch.md` → for entry 90
+- `05_events/event-mafra-monument-construction-1717-1755.md` → for entry 93 (flagged contested)
+
+---
+
 *For full argumentation and Tier-1 citations, consult the originating vault nodes. This index is optimized for scanning and cross-tradition pattern recognition.*

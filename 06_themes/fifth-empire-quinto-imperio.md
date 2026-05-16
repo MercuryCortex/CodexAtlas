@@ -89,3 +89,8 @@ How does the doctrine morph across its 500-year span?
 4. van den Besselaar, J. (1976). *Bandarra, o Sapateiro de Trancoso*. Brill. — Tier 1.
 5. Gandra, M.J. (1999). *Joaquim de Fiore: Joaquimismo e Esperança Sebástica*. Fundação Lusíada. — Tier 4.
 6. Disney, A.R. (2009). *A History of Portugal and the Portuguese Empire*. Cambridge UP. — Tier 1.
+
+## MASSIVE WIN: 800-year continuous prophetic-political theology chain
+
+Joachim of Fiore (Calabrian Cistercian, 1135–1202) → [[goncalo-annes-bandarra|Bandarra]] *Trovas* (c. 1530s) → Vieira *História do Futuro* (1640s–1660s) → [[fernando-pessoa|Pessoa]] [[phase-7-037-pessoa-mensagem|*Mensagem*]] (1934). **One of the longest continuous prophetic-political theology chains in Western history** — Calabrian Cistercian Trinitarian-Status apocalyptic schema running through 4 centuries of Portuguese Sebastianist messianism into a 20th-c. modernist national epic. The political-theological spine of [[tradition-portuguese-hermeticism|Portuguese Hermeticism]]. Each link in the chain is documented (no transmission speculation): Joachim's tripartite *Status* enters Iberian-monastic circulation in the 13th c.; Bandarra structurally inherits the schema in his vernacular *Trovas*; Vieira's Jesuit synthesis explicitly cites Bandarra alongside Daniel and Isaiah as his three predictive sources; Pessoa includes a specific "Bandarra" poem in *Mensagem* Section III. The chain spans pre-Reformation medieval apocalyptic, Iberian Counter-Reformation Jesuit theology, and Portuguese modernist literary recovery — three substantially different religious-cultural moments held together by one structural-doctrinal substrate.
+

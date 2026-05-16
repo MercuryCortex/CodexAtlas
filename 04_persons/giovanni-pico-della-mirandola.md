@@ -64,3 +64,8 @@ Pico is the founder of Christian Kabbalah and the most consequential single figu
 2. Farmer (1998). *Syncretism in the West*. MRTS.
 3. Copenhaver (2019). *Magic and the Dignity of Man*. Harvard UP.
 4. Idel, M. (2007). *Kabbalah in Italy 1280–1510*. Yale UP.
+
+## MASSIVE WIN: Pro-hermetic AND anti-astrology — the principal Renaissance philosophical counter-pole
+
+Pico's 1494 ***Disputationes adversus astrologiam divinatricem*** (published posthumously 1496) is **the most sustained pre-modern philosophical attack on astrology** — twelve books systematically dismantling the doctrinal foundations of judicial astrology, anticipating the early-modern scientific revolution's eventual rejection of astrology by nearly two centuries. The discovery isn't just the *Disputationes* itself; it's the **internal contradiction** that the same Pico whose 900 Theses (1486) and *Heptaplus* (1489) integrate hermetic-kabbalistic-astrological material into Christian Platonism also produced the most rigorous attack on astrology of his century. The two positions cannot be reconciled by simple chronology — they reflect a genuine internal tension within the Renaissance hermetic project itself. Pico's Disputationes is therefore the **principal Renaissance philosophical counter-pole** to the integration-tradition: a hermetic insider attacking astrology with hermetic tools. The unresolved contradiction is the discovery.
+

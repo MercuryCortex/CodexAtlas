@@ -102,3 +102,12 @@ Pessoa's fame began with the 1942 first selection-edition of his poetry (Ática 
 4. Lopes, M.T.R. (2008). *Pessoa: Uma Quase Autobiografia*. Porto Editora. — Tier 2.
 5. Patrício, R. (2018). "Fernando Pessoa's Esotericism." *Aries* 18: 192–223. — Tier 1.
 6. Pessoa, F. (1934). *Mensagem*. Lisbon: Parceria António Maria Pereira. [Primary text — see [[phase-7-037-pessoa-mensagem]].]
+
+## MASSIVE WIN: Pessoa cast horoscopes for each of his heteronyms
+
+A singular literary-occult practice with no comparable case in 20th-c. world literature: Pessoa gave each of his fictive author-personalities (Alberto Caeiro, Ricardo Reis, Álvaro de Campos, Bernardo Soares) a **distinct birth chart**, preserved in the Espólio Pessoa at the Biblioteca Nacional de Portugal. **Raphael Baldaya** is his explicit *astrologer-heteronym* — a fictive personality whose entire literary function is astrological practice and theory. Thousands of pages of astrological notebooks survive in the Espólio. The heteronymic-with-horoscopes practice is interpretable (per Mendia 2023 Brill chapter) as a Rosicrucian-Hermetic initiation discipline of *self-multiplication* — each heteronym as a separate cosmologically-located self. Underexplored in Anglophone Pessoa scholarship; the [[manuel-j-gandra|Gandra]] / Centeno / [[fifth-empire-quinto-imperio|Portuguese-hermetic-circle]] Portuguese-language scholarship treats it with substantially more interpretive weight.
+
+## MASSIVE WIN: The 1930 Boca do Inferno hoax — Pessoa + Crowley collaboration
+
+Documented Portuguese-modernism ↔ English-Thelema contact event. [[aleister-crowley|Crowley]] corresponded with Pessoa from 1929 and visited Lisbon in **September 1930**; in collaboration with Pessoa, Crowley staged a **faked disappearance** at the **Boca do Inferno cliffs** near Cascais on 23 September 1930. Pessoa published several articles "investigating" the disappearance for the Lisbon press, including "Crowley est mort à Boca do Inferno" / "Crowley is dead at the Boca do Inferno" — a deliberate Pessoa-Crowley collaboration in occult-publicity-theatre. (Crowley reappeared in Berlin some weeks later.) Documented in Crowley's diaries + Pessoa's preserved Lisbon-press correspondence in the Espólio. **One of the principal Portuguese-modernism / English-Thelema documented contact events** — and the cleanest demonstration that the Western occult-revival in 1930 was a single interconnected scene rather than national-bounded.
+

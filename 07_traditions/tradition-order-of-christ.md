@@ -134,3 +134,8 @@ There is also a separate **Vatican Order of the Supreme Order of Christ** (*Supr
 4. Olival, F. (2005). *Templários, Freires de Cristo e Fidalgos da Casa Real*. Caleidoscópio / CIDEHUS-UE. — Tier 1.
 5. Russell, P. (2000). *Henry the Navigator*. Yale UP. — Tier 1.
 6. Gandra, M.J. (2000). *Os Templários na Literatura*. Hugin. — Tier 4 (reception-history).
+
+## MASSIVE WIN: The single best-documented institutional Templar-survival in Latin Christendom
+
+The Portuguese Order of Christ (1319 papal-bull-authorized refoundation under [[event-order-of-christ-foundation-1319|*Ad ea ex quibus*]], John XXII) is **the cleanest documented Templar-survival case** — distinct from the speculative Strict Templar Observance / Priory of Sion / Holy-Blood-Holy-Grail fabrications. The Tier-1 transmission claim rests on three convergent documentary chains: (1) explicit papal bull authorizing the refoundation (14 March 1319), (2) Portuguese-crown documentary record of asset transfer (preserved at Torre do Tombo), (3) personnel continuity from Iberian Templars cleared by the 1310 Council of Salamanca inquiry. The institutional seat translated from Castro Marim (Algarve) to Tomar (1356/1357) — Templar headquarters with the Charola round-form church begun by Gualdim Pais c. 1160. The [[cross-order-of-christ|Cross of the Order of Christ]] (red cross-pattée with internal white cross) painted on Vasco da Gama's caravel sails (1498) is the iconographic endpoint — the most-photographed European-Christian symbol of the Age of Discoveries is therefore a documented Templar-descendant mark, not a speculative one.
+
