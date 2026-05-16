@@ -1315,10 +1315,10 @@ The things opus-foundation-1 claimed but never started are all still open:
 
 ---
 
-## goblin-sacred-numbers-2 — symbols / sacred-number-forty + sacred-number-108 + zodiac-wheel + nsibidi — started 2026-05-16 — IN PROGRESS
-- Owning: `09_symbols/sacred-number-forty.md` (NEW), `09_symbols/sacred-number-108.md` (NEW), `09_symbols/zodiac-wheel.md` (NEW), `09_symbols/nsibidi.md` (NEW)
-- Goal: Number 40 as trial/testing duration across Abrahamic traditions (quarantine etymology MASSIVE WIN); Number 108 as Dharmic cosmic count with astronomical grounding; Zodiac wheel as most-transmitted astronomical-divinatory system (Babylonian→Greek→Islamic→Indian→Chinese); Nsibidi as West African sacred ideographic script of Ekpe society with Abakuá diaspora survival
-- Status: in-progress
+## ~~goblin-sacred-numbers-2 — symbols / sacred-number-forty + sacred-number-108 + zodiac-wheel + nsibidi — started 2026-05-16 — FINISHED 2026-05-16~~
+- ~~Owning: `09_symbols/sacred-number-forty.md` (NEW), `09_symbols/sacred-number-108.md` (NEW), `09_symbols/zodiac-wheel.md` (NEW), `09_symbols/nsibidi.md` (NEW)~~
+- ~~Goal: Number 40 as trial/testing duration across Abrahamic traditions (quarantine etymology MASSIVE WIN); Number 108 as Dharmic cosmic count with astronomical grounding; Zodiac wheel as most-transmitted astronomical-divinatory system (Babylonian→Greek→Islamic→Indian→Chinese); Nsibidi as West African sacred ideographic script of Ekpe society with Abakuá diaspora survival~~
+- ~~Status: finished — 185 total symbols · 14544 edges · 0 dead links introduced · STATUS.md logged~~
 
 ---
 
@@ -1339,4 +1339,12 @@ The things opus-foundation-1 claimed but never started are all still open:
 ## goblin-divine-child-1 — symbols / divine child + sacred twins + torii gate + world mountain — started 2026-05-16 — IN PROGRESS
 - Owning: `09_symbols/divine-child.md` (NEW), `09_symbols/sacred-twins.md` (NEW), `09_symbols/torii-gate.md` (NEW), `09_symbols/world-mountain.md` (NEW)
 - Goal: Divine Child as endangered-infant MASSIVE WIN cross-tradition (Horus/Krishna/Jesus/Dionysus/Moses/Baldr parallel); Sacred Twins as Indo-European *Diewo sunus* pattern (Dioscuri/Ashvins/Hero Twins/Thomas); Torii Gate as sacred-threshold cross-tradition (pylon/gopuram/mezuzah/lamassu MASSIVE WIN); World Mountain as axis mundi architectural embodiment (Meru/Olympus/Sinai/Kailash + pyramid/ziggurat/stupa MASSIVE WIN)
+- Status: in-progress
+
+---
+
+## goblin-hermetic-depth-1 — symbols / abraxas + golden-ratio + holy-grail + sacred-pearl — started 2026-05-16 — IN PROGRESS
+- Owning: `09_symbols/abraxas.md` (NEW), `09_symbols/golden-ratio.md` (NEW), `09_symbols/holy-grail.md` (NEW), `09_symbols/sacred-pearl.md` (NEW)
+- Note: omphalos.md already exists → writing sacred-pearl.md as fourth node
+- Goal: Abraxas as Gnostic supreme deity (365 solar gematria) + Jung's Seven Sermons MASSIVE WIN; Golden Ratio as cross-tradition sacred proportion (Pythagorean pentagram + Islamic girih + Hindu Sri Yantra); Holy Grail as sacred vessel cross-tradition (Celtic cauldron → Christian cup → Alchemical vas); Sacred Pearl as transformation-through-suffering MASSIVE WIN (Gnostic Hymn of Pearl + Dragon pearl + Islamic lulu)
 - Status: in-progress
