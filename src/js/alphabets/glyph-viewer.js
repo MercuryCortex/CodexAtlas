@@ -237,71 +237,79 @@
     const expanded = document.createElement('div');
     expanded.className = 'alpha-glyph-expanded';
 
-    const hieroglyphChar = String.fromCodePoint(g.unicode);
+    const isHier = g.unicode >= 0x13000 && g.unicode <= 0x1342F;
+    const bigChar   = isHier ? String.fromCodePoint(g.unicode) : (g.arabic || g.hebrew || g.phoenician || g.letter || '');
+    const bigFont   = isHier ? "'Noto Sans Egyptian Hieroglyphs', serif" : "'Segoe UI', sans-serif";
+    const hierChar  = isHier ? String.fromCodePoint(g.unicode) : '';
     const phoenicianChar = g.phoenician || '';
     const greekChar = g.greek ? g.greek.split(' ')[0] : '';
     const latinChar = g.latin ? g.latin.split(' ')[0] : '';
+    const safe = v => (!v || v === '(none)') ? '' : v;
+    const gardinerLine = g.gardiner
+      ? `Gardiner ${g.gardiner} · U+${g.unicode.toString(16).toUpperCase()}`
+      : `U+${g.unicode.toString(16).toUpperCase()}`;
+
+    const descItems = [
+      g.hebrew, g.arabic, g.greek, g.latin, g.phoneme
+    ].map((v, i) => {
+      const label = ['Hebrew','Arabic','Greek','Latin','Sound'][i];
+      return safe(v) ? `<span class="age-desc-item"><span class="age-desc-script">${label}</span> ${safe(v)}</span>` : '';
+    }).filter(Boolean).join('');
 
     expanded.innerHTML = `
-      <div class="age-top">
-        <div class="age-letter-big">
-          <span class="age-hieroglyph-big">${hieroglyphChar}</span>
-          <span class="age-letter-name">${g.name} — "${g.meaning}"</span>
-          <span class="age-gardiner">Gardiner ${g.gardiner} · U+${g.unicode.toString(16).toUpperCase()}</span>
-        </div>
-        <div class="age-chain-wrap">
-          <div class="age-chain-label-row">Transmission chain:</div>
-          <div class="age-chain">
-            <div class="age-chain-step">
-              <span class="age-chain-glyph age-chain-hier">${hieroglyphChar}</span>
-              <span class="age-chain-step-label">Egyptian hieroglyph</span>
-              <span class="age-chain-step-sub">c. 2000 BCE</span>
-            </div>
-            <span class="age-arrow">→</span>
-            <div class="age-chain-step">
-              <span class="age-chain-glyph age-chain-proto">${hieroglyphChar}</span>
-              <span class="age-chain-step-label">Proto-Sinaitic</span>
-              <span class="age-chain-step-sub">c. 1850 BCE</span>
-            </div>
-            <span class="age-arrow">→</span>
-            <div class="age-chain-step">
-              <span class="age-chain-glyph age-chain-phoen">${phoenicianChar}</span>
-              <span class="age-chain-step-label">Phoenician</span>
-              <span class="age-chain-step-sub">c. 1050 BCE</span>
-            </div>
-            <span class="age-arrow">→</span>
-            <div class="age-chain-step">
-              <span class="age-chain-glyph age-chain-greek">${greekChar}</span>
-              <span class="age-chain-step-label">Greek</span>
-              <span class="age-chain-step-sub">c. 800 BCE</span>
-            </div>
-            <span class="age-arrow">→</span>
-            <div class="age-chain-step">
-              <span class="age-chain-glyph age-chain-latin">${latinChar}</span>
-              <span class="age-chain-step-label">Latin / Modern</span>
-              <span class="age-chain-step-sub">c. 600 BCE → now</span>
-            </div>
+      <div class="age-col-letter">
+        <span class="age-hieroglyph-big" style="font-family:${bigFont}">${bigChar}</span>
+        <span class="age-letter-name">${g.name} — "${g.meaning}"</span>
+        <span class="age-gardiner">${gardinerLine}</span>
+        ${descItems ? `<div class="age-descendants">${descItems}</div>` : ''}
+      </div>
+      <div class="age-col-chain">
+        <div class="age-chain-label-row">Transmission chain</div>
+        <div class="age-chain">
+          <div class="age-chain-step">
+            <span class="age-chain-glyph age-chain-hier">${hierChar}</span>
+            <span class="age-chain-step-label">Egyptian</span>
+            <span class="age-chain-step-sub">c. 2000 BCE</span>
+          </div>
+          <span class="age-arrow">→</span>
+          <div class="age-chain-step">
+            <span class="age-chain-glyph age-chain-proto">${hierChar}</span>
+            <span class="age-chain-step-label">Proto-Sinaitic</span>
+            <span class="age-chain-step-sub">c. 1850 BCE</span>
+          </div>
+          <span class="age-arrow">→</span>
+          <div class="age-chain-step">
+            <span class="age-chain-glyph age-chain-phoen">${phoenicianChar}</span>
+            <span class="age-chain-step-label">Phoenician</span>
+            <span class="age-chain-step-sub">c. 1050 BCE</span>
+          </div>
+          <span class="age-arrow">→</span>
+          <div class="age-chain-step">
+            <span class="age-chain-glyph age-chain-greek">${greekChar}</span>
+            <span class="age-chain-step-label">Greek</span>
+            <span class="age-chain-step-sub">c. 800 BCE</span>
+          </div>
+          <span class="age-arrow">→</span>
+          <div class="age-chain-step">
+            <span class="age-chain-glyph age-chain-latin">${latinChar}</span>
+            <span class="age-chain-step-label">Latin</span>
+            <span class="age-chain-step-sub">c. 600 BCE+</span>
           </div>
         </div>
+        <div class="age-note">${g.note || ''}</div>
       </div>
-      <div class="age-descendants">
-        <span class="age-desc-item"><span class="age-desc-script">Hebrew</span> ${g.hebrew}</span>
-        <span class="age-desc-item"><span class="age-desc-script">Arabic</span> ${g.arabic}</span>
-        <span class="age-desc-item"><span class="age-desc-script">Greek</span> ${g.greek}</span>
-        <span class="age-desc-item"><span class="age-desc-script">Latin</span> ${g.latin}</span>
-        <span class="age-desc-item"><span class="age-desc-script">Sound</span> ${g.phoneme}</span>
+      <div class="age-col-inv">
+        ${g.investigationHighlight ? `
+        <div class="age-investigation">
+          <div class="age-inv-label">what the investigation found</div>
+          <div class="age-inv-text">${g.investigationHighlight}</div>
+          ${(g.relatedNodes || []).length ? `
+          <div class="age-inv-nodes">
+            ${(g.relatedNodes || []).map(id => `<span class="age-inv-node" data-id="${id}">${id.replace(/^alphabet-/,'').replace(/-/g,' ')}</span>`).join('')}
+          </div>` : ''}
+        </div>` : '<div class="age-no-inv"></div>'}
       </div>
-      <div class="age-note">${g.note}</div>
-      ${g.investigationHighlight ? `
-      <div class="age-investigation">
-        <div class="age-inv-label">what the investigation found</div>
-        <div class="age-inv-text">${g.investigationHighlight}</div>
-        ${(g.relatedNodes || []).length ? `
-        <div class="age-inv-nodes">
-          ${(g.relatedNodes || []).map(id => `<span class="age-inv-node" data-id="${id}">${id.replace(/^alphabet-/,'').replace(/-/g,' ')}</span>`).join('')}
-        </div>` : ''}
-      </div>` : ''}
-      <button class="age-close-btn">close ✕</button>
+      <button class="age-close-btn" title="Close">✕</button>
     `;
 
     expanded.querySelectorAll('.age-inv-node[data-id]').forEach(chip => {

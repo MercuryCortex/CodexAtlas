@@ -4303,6 +4303,8 @@ mark.sr-ent-demo {
 .alpha-glyph-grid-wrap {
   padding: 0.75rem 1rem;
 }
+/* Extra bottom room so fixed panel doesn't cover the last grid row */
+body.view-alphabets main.canvas { padding-bottom: 220px; }
 
 .alpha-glyph-grid {
   display: grid;
@@ -4410,137 +4412,137 @@ mark.sr-ent-demo {
   overflow: hidden;
 }
 
-/* Detail panel — sticky bottom-left panel, no overlay */
+/* Detail panel — full-width horizontal bar pinned to bottom */
 .alpha-glyph-detail { display: none; }
 .alpha-glyph-detail.active {
   display: block;
   position: fixed;
-  bottom: 1.5rem;
-  left: 50px;
-  width: 440px;
-  max-height: 70vh;
-  overflow-y: auto;
+  bottom: 0;
+  left: 44px;
+  right: 0;
+  height: 210px;
+  overflow: hidden;
   z-index: 200;
-  border-radius: 12px;
-  border: 1px solid var(--border);
   border-top: 2px solid var(--gold-soft);
-  box-shadow: 0 16px 48px rgba(0,0,0,0.7), 0 0 0 1px rgba(212,165,90,0.08);
+  border-left: 1px solid var(--border);
+  box-shadow: 0 -8px 32px rgba(0,0,0,0.55);
 }
 
 .alpha-glyph-expanded {
   background: var(--bg-1);
-  border-radius: 12px;
-  padding: 1.75rem 1.75rem 1.5rem;
+  padding: 1rem 2.5rem 1rem 1.25rem;
+  height: 100%;
+  box-sizing: border-box;
+  display: grid;
+  grid-template-columns: 160px 1fr 1fr;
+  gap: 1.25rem;
+  align-items: start;
+  overflow: hidden;
   position: relative;
 }
 
-.age-top {
-  display: flex;
-  gap: 2rem;
-  align-items: flex-start;
-  flex-wrap: wrap;
-  margin-bottom: 1rem;
+/* ── 3-column horizontal panel layout ── */
+.age-col-letter {
+  display: flex; flex-direction: column; align-items: center;
+  gap: 0.2rem; text-align: center; overflow: hidden;
+}
+.age-col-chain {
+  display: flex; flex-direction: column; gap: 0.35rem; overflow: hidden;
+}
+.age-col-inv {
+  display: flex; flex-direction: column; overflow: hidden; height: 100%;
 }
 
-.age-letter-big {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 0.3rem;
-  min-width: 90px;
-}
 .age-hieroglyph-big {
-  font-family: 'Noto Sans Egyptian Hieroglyphs', serif;
-  font-size: 4rem;
-  line-height: 1;
-  color: var(--gold);
+  font-size: 3rem; line-height: 1; color: var(--gold);
 }
 .age-letter-name {
-  font-size: 1rem; font-weight: 600; color: var(--text-0);
+  font-size: 0.88rem; font-weight: 600; color: var(--text-0);
   text-align: center; font-family: var(--serif);
+  display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;
 }
 .age-gardiner {
-  font-size: 0.68rem; color: var(--text-3);
-  font-family: var(--mono); text-align: center;
+  font-size: 0.62rem; color: var(--text-3); font-family: var(--mono);
 }
-
-.age-chain-wrap { flex: 1; min-width: 300px; }
-.age-chain-label-row {
-  font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.1em;
-  color: var(--text-3); margin-bottom: 0.5rem;
-}
-.age-chain {
-  display: flex;
-  align-items: flex-start;
-  gap: 0.4rem;
-  flex-wrap: wrap;
-}
-.age-chain-step {
-  display: flex; flex-direction: column; align-items: center; gap: 0.2rem;
-  min-width: 56px;
-}
-.age-chain-glyph {
-  font-size: 1.8rem; line-height: 1;
-}
-.age-chain-hier { font-family: 'Noto Sans Egyptian Hieroglyphs', serif; color: var(--gold); }
-.age-chain-proto { font-family: 'Noto Sans Egyptian Hieroglyphs', serif; color: var(--gold-soft); }
-.age-chain-phoen { font-family: 'Noto Serif Hebrew', serif; color: var(--text-1); }
-.age-chain-greek { font-family: var(--serif); font-size: 1.6rem; color: var(--text-0); }
-.age-chain-latin { font-family: var(--sans); font-size: 1.6rem; font-weight: 700; color: var(--text-0); }
-.age-chain-step-label { font-size: 0.68rem; color: var(--text-2); text-align: center; }
-.age-chain-step-sub { font-size: 0.63rem; color: var(--text-3); text-align: center; font-family: var(--mono); }
-.age-arrow { color: var(--text-3); font-size: 1.2rem; padding-top: 0.4rem; }
-
 .age-descendants {
-  display: flex; flex-wrap: wrap; gap: 0.75rem; margin-bottom: 0.75rem;
+  display: flex; flex-wrap: wrap; gap: 0.3rem 0.5rem; margin-top: 0.3rem;
+  justify-content: center;
 }
 .age-desc-item {
-  font-size: 0.95rem; color: var(--text-1);
-  display: flex; align-items: center; gap: 0.3rem;
+  font-size: 0.78rem; color: var(--text-1);
+  display: flex; align-items: center; gap: 0.25rem;
 }
 .age-desc-script {
-  font-size: 0.65rem; text-transform: uppercase; letter-spacing: 0.08em;
+  font-size: 0.58rem; text-transform: uppercase; letter-spacing: 0.08em;
   color: var(--text-3); background: var(--bg-2);
-  padding: 0.1em 0.4em; border-radius: 2px;
+  padding: 0.1em 0.35em; border-radius: 2px;
 }
+
+.age-chain-label-row {
+  font-size: 0.62rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--text-3);
+}
+.age-chain {
+  display: flex; align-items: flex-start; gap: 0.3rem; flex-wrap: nowrap;
+}
+.age-chain-step {
+  display: flex; flex-direction: column; align-items: center; gap: 0.15rem;
+  min-width: 48px;
+}
+.age-chain-glyph { font-size: 1.5rem; line-height: 1; }
+.age-chain-hier  { font-family: 'Noto Sans Egyptian Hieroglyphs', serif; color: var(--gold); }
+.age-chain-proto { font-family: 'Noto Sans Egyptian Hieroglyphs', serif; color: var(--gold-soft); }
+.age-chain-phoen { font-family: 'Noto Serif Hebrew', serif; color: var(--text-1); }
+.age-chain-greek { font-family: var(--serif); font-size: 1.3rem; color: var(--text-0); }
+.age-chain-latin { font-family: var(--sans); font-size: 1.3rem; font-weight: 700; color: var(--text-0); }
+.age-chain-step-label { font-size: 0.6rem; color: var(--text-2); text-align: center; }
+.age-chain-step-sub   { font-size: 0.57rem; color: var(--text-3); text-align: center; font-family: var(--mono); }
+.age-arrow { color: var(--text-3); font-size: 1rem; padding-top: 0.35rem; }
+
 .age-note {
-  font-size: 0.95rem; line-height: 1.75; color: var(--text-1);
+  font-size: 0.8rem; line-height: 1.55; color: var(--text-2);
   font-family: var(--serif); font-style: italic;
-  border-left: 3px solid var(--gold-soft); padding-left: 1rem;
-  margin-bottom: 1.25rem;
+  border-left: 2px solid var(--gold-soft); padding-left: 0.65rem;
+  display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;
 }
-/* Investigation highlight block — inside expanded letter card */
+
+/* Investigation column */
 .age-investigation {
-  margin-top: 0;
-  padding: 1.1rem 1.25rem 1rem;
-  background: rgba(90,172,168,0.07);
-  border: 1px solid rgba(90,172,168,0.25);
-  border-radius: 4px;
+  height: 100%;
+  padding: 0.65rem 0.85rem 0.5rem;
+  background: rgba(90,172,168,0.06);
+  border: 1px solid rgba(90,172,168,0.22);
+  border-radius: 6px;
+  display: flex; flex-direction: column; gap: 0.4rem;
+  overflow: hidden;
 }
 .age-inv-label {
-  font-size: 0.65rem; letter-spacing: 0.14em; text-transform: uppercase;
-  color: #5aaca8; margin-bottom: 0.65rem; font-weight: 600;
+  font-size: 0.6rem; letter-spacing: 0.13em; text-transform: uppercase;
+  color: #5aaca8; font-weight: 600; flex-shrink: 0;
 }
 .age-inv-text {
-  font-size: 1rem; line-height: 1.75; color: var(--text-0);
-  margin-bottom: 0.85rem;
+  font-size: 0.82rem; line-height: 1.55; color: var(--text-0);
+  display: -webkit-box; -webkit-line-clamp: 4; -webkit-box-orient: vertical; overflow: hidden;
+  flex-shrink: 1;
 }
 .age-inv-nodes {
-  display: flex; flex-wrap: wrap; gap: 6px;
+  display: flex; flex-wrap: wrap; gap: 5px; flex-shrink: 0;
 }
 .age-inv-node {
-  font-size: 0.72rem; padding: 2px 9px; border-radius: 3px; cursor: pointer;
+  font-size: 0.68rem; padding: 2px 8px; border-radius: 3px; cursor: pointer;
   background: rgba(212,165,90,0.08); border: 1px solid rgba(212,165,90,0.3);
   color: var(--gold-soft); transition: background 0.12s; text-transform: capitalize;
 }
 .age-inv-node:hover { background: rgba(212,165,90,0.2); }
 
 .age-close-btn {
-  position: absolute; top: 0.75rem; right: 0.75rem;
-  background: none; border: 1px solid var(--border-soft); border-radius: 3px;
-  color: var(--text-3); font-size: 0.7rem; cursor: pointer; padding: 0.2em 0.5em;
+  position: absolute; top: 0.6rem; right: 0.65rem;
+  width: 26px; height: 26px;
+  display: flex; align-items: center; justify-content: center;
+  background: var(--bg-2); border: 1px solid var(--border);
+  border-radius: 50%; color: var(--text-2); font-size: 0.75rem;
+  cursor: pointer; transition: all 0.12s; line-height: 1;
 }
-.age-close-btn:hover { border-color: var(--gold-soft); color: var(--gold); }
+.age-close-btn:hover { border-color: var(--gold-soft); color: var(--gold); background: var(--bg-3); }
 
 /* ── Cuneiform comparison strip ──────────────────── */
 .alpha-cuneiform-strip {
