@@ -49,12 +49,14 @@ _Auto-generated 2026-05-16. Status claims not meeting the bar in methodology.md.
 | `hans-jonas` | person | status:metadata but only 1 refs |
 | `sri-yukteswar` | person | status:metadata but only 1 refs |
 | `james-frazer` | person | status:metadata but only 1 refs |
+| `nichiren` | person | status:metadata but only 0 refs |
 | `francisco-clavigero` | person | status:metadata but only 1 refs |
 | `swami-vivekananda` | person | status:metadata but only 1 refs |
 | `chogyam-trungpa` | person | status:metadata but only 1 refs |
 | `annie-besant` | person | status:metadata but only 1 refs |
 | `krishnadasa-kaviraja` | person | status:metadata but only 1 refs |
 | `ramana-maharshi` | person | status:metadata but only 1 refs |
+| `shinran` | person | status:metadata but only 0 refs |
 | `clement-of-alexandria` | person | status:metadata but only 1 refs |
 | `basil-of-caesarea` | person | status:metadata but only 1 refs |
 | `eusebius-of-caesarea` | person | status:metadata but only 1 refs |
@@ -62,6 +64,8 @@ _Auto-generated 2026-05-16. Status claims not meeting the bar in methodology.md.
 | `gerald-gardner` | person | status:metadata but only 1 refs |
 | `ramakrishna` | person | status:metadata but only 1 refs |
 | `karen-king` | person | status:metadata but only 1 refs |
+| `sigmund-freud` | person | status:metadata but only 0 refs |
+| `honen` | person | status:metadata but only 0 refs |
 | `g-i-gurdjieff` | person | status:metadata but only 1 refs |
 | `sayyid-qutb` | person | status:metadata but only 1 refs |
 | `anton-lavey` | person | status:metadata but only 1 refs |
@@ -90,6 +94,7 @@ _Auto-generated 2026-05-16. Status claims not meeting the bar in methodology.md.
 | `gregory-of-nyssa` | person | status:metadata but only 1 refs |
 | `t-g-h-strehlow` | person | status:metadata but only 1 refs |
 | `stephen-mcnallen` | person | status:metadata but only 1 refs |
+| `fazang` | person | status:metadata but only 0 refs |
 | `p-d-ouspensky` | person | status:metadata but only 1 refs |
 | `snorri-sturluson` | person | status:metadata but only 1 refs |
 | `thich-nhat-hanh` | person | status:metadata but only 1 refs |
@@ -99,14 +104,13 @@ _Auto-generated 2026-05-16. Status claims not meeting the bar in methodology.md.
 | `brigham-young` | person | status:metadata but only 1 refs |
 | `gregory-of-nazianzus` | person | status:metadata but only 1 refs |
 | `william-robertson-smith` | person | status:metadata but only 1 refs |
+| `huike` | person | status:metadata but only 0 refs |
 | `frances-yates` | person | status:metadata but only 1 refs |
 | `emile-durkheim` | person | status:metadata but only 1 refs |
 | `paul-tillich` | person | status:metadata but only 1 refs |
 | `khafre` | person | status:metadata but only 1 refs |
 | `charles-taze-russell` | person | status:metadata but only 1 refs |
 | `phase-3-034-huainanzi` | document | status:metadata but only 0 refs |
-| `phase-7-014-gnostic-gospels` | document | status:partial but only 3 refs (need 4+) |
-| `phase-7-018-aion` | document | status:partial but only 3 refs (need 4+) |
 | `phase-4-099-shangqing-corpus` | document | status:metadata but only 0 refs |
 | `phase-4-097-baopuzi-ge-hong` | document | status:metadata but only 0 refs |
 | `phase-4-096-cantong-qi` | document | status:metadata but only 0 refs |

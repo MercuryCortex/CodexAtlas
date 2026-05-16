@@ -1787,7 +1787,7 @@ canonical-slug
 - `ziusudra`
 - `zosimos-of-panopolis`
 
-### symbol (111 nodes)
+### symbol (116 nodes)
 
 - `acacia`
 - `adinkra`
@@ -1804,6 +1804,7 @@ canonical-slug
 - `beauseant`
 - `bindu`
 - `blazing-star`
+- `bodhi-tree`
 - `bull`
 - `caduceus`
 - `celtic-cross`
@@ -1836,11 +1837,13 @@ canonical-slug
 - `indus-valley-script`
 - `kalachakra`
 - `labrys`
+- `labyrinth`
 - `latin-cross`
 - `lion`
 - `lotus`
 - `maltese-cross`
 - `mandala-circle`
+- `mandorla`
 - `menorah`
 - `metatrons-cube`
 - `mithraic-cross`
@@ -1849,9 +1852,11 @@ canonical-slug
 - `mosaic-pavement`
 - `mount-ararat`
 - `naga-serpent`
+- `nataraja`
 - `nehushtan`
 - `noahs-ark`
 - `obelisk`
+- `omphalos`
 - `ouroboros`
 - `pelican-in-piety`
 - `pentagram`
@@ -2383,21 +2388,21 @@ canonical-slug
 
 | Refs | Dead target | Suggested canonical (existing) |
 |---:|---|---|
-| 5 | `tradition-latin-christianity` | `tradition-vodou-haitian` |
-| 3 | `tradition-hinduism` | `tradition-ojibwe` |
-| 3 | `tradition-andean` | `tradition-ojibwe` |
+| 5 | `tradition-latin-christianity` | `tradition-mithraic-mysteries` |
+| 3 | `tradition-hinduism` | `tradition-haudenosaunee` |
+| 3 | `tradition-andean` | `tradition-haudenosaunee` |
 | 3 | `guru-arjan-dev-ji` | `guru-arjan` |
 | 2 | `yam-canaanite` | `astarte-canaanite` |
-| 2 | `tradition-lingayat` | `tradition-ojibwe` |
-| 2 | `tradition-judaism-sephardic` | `tradition-vodou-haitian` |
-| 2 | `tradition-islam-shia` | `tradition-ojibwe` |
-| 2 | `tradition-islam-mughal` | `tradition-ojibwe` |
-| 2 | `tradition-hussitism` | `tradition-ojibwe` |
-| 2 | `tradition-christianity-catholic` | `tradition-medieval-christianity` |
-| 2 | `tradition-bahai` | `tradition-ojibwe` |
-| 2 | `phase-4-045-vishnu-purana` | `phase-4-043-apophthegmata-patrum` |
-| 2 | `phase-3-006-homeric-hymns` | `phase-3-008-book-of-daniel` |
-| 2 | `phase-1-005-descent-of-inanna` | `phase-1-008-enuma-elish` |
+| 2 | `tradition-lingayat` | `tradition-haudenosaunee` |
+| 2 | `tradition-judaism-sephardic` | `tradition-mithraic-mysteries` |
+| 2 | `tradition-islam-shia` | `tradition-etruscan-religion` |
+| 2 | `tradition-islam-mughal` | `tradition-mithraic-mysteries` |
+| 2 | `tradition-hussitism` | `tradition-etruscan-religion` |
+| 2 | `tradition-christianity-catholic` | `tradition-mithraic-mysteries` |
+| 2 | `tradition-bahai` | `tradition-buddhism` |
+| 2 | `phase-4-045-vishnu-purana` | `phase-4-047-cassian-conferences` |
+| 2 | `phase-3-006-homeric-hymns` | `phase-3-006-septuagint` |
+| 2 | `phase-1-005-descent-of-inanna` | `phase-1-006-atrahasis` |
 | 2 | `guru-gobind-singh-ji` | `guru-gobind-singh` |
 | 2 | `divine-names` | `divine-name` |
 | 2 | `aurangzeb-emperor` | `zara-yaqob-emperor` |
