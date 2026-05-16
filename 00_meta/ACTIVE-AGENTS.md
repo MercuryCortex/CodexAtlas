@@ -274,10 +274,12 @@ _Hand-maintained. Each agent currently working in the vault appends a claim bloc
 
 ---
 
-## alchemy-wiring-2 — cross-tradition wikilinks in 6 alchemy/ritual nodes — IN PROGRESS (2026-05-17)
-- Owned: `12_alchemy/alchemy-hermetic-corpus.md`, `12_alchemy/alchemy-rosicrucian-manifestos.md`, `12_alchemy/alchemy-robert-boyle.md`, `12_alchemy/alchemy-newton-principia-alchemy.md`, `14_rituals/ritual-eleusinian-mysteries.md`, `14_rituals/ritual-mithraic-mysteries.md`
-- Task: Add `## Vault Connections` sections with confirmed cross-tradition [[wikilinks]]
-- Status: IN PROGRESS
+## ~~alchemy-wiring-2 — cross-tradition wikilinks in 6 alchemy/ritual nodes — FINISHED (2026-05-17)~~
+- ~~Owned: `12_alchemy/alchemy-hermetic-corpus.md`, `12_alchemy/alchemy-rosicrucian-manifestos.md`, `12_alchemy/alchemy-robert-boyle.md`, `12_alchemy/alchemy-newton-principia-alchemy.md`, `14_rituals/ritual-eleusinian-mysteries.md`, `14_rituals/ritual-mithraic-mysteries.md`~~
+- ~~Added `## Vault Connections` sections: ~80 confirmed wikilinks across 6 nodes; 206 lines inserted~~
+- ~~Build: 17217 edges (up from ~16900, +317 new edges) · 0 YAML errors · 0 dead links introduced — commit cf154a7~~
+- ~~Strongest connections: (1) Hermetic Corpus → full Logos-theology web (logos-johannine/stoic/cosmic-reason + plato + plotinus/nous/the-one + sophia-gnostic/the-pleroma + prisca-theologia); (2) Rosicrucian Manifestos → Freemasonry downstream + Robert Fludd contemporaries; (3) Eleusinian Mysteries → full deity web (persephone/demeter/dionysus/iacchus) + Orphic tradition + plato as initiate; (4) Mithraic Mysteries → sol-invictus + mithra-zoroastrian/Iranian origin chain + Freemasonry structural descendant~~
+- ~~Status: FINISHED~~
 
 ---
 
