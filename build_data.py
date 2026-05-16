@@ -26,6 +26,7 @@ NODE_DIRS = {
     "theme":    ["06_themes"],
     "tradition":["07_traditions"],
     "symbol":   ["09_symbols"],
+    "music":    ["10_music"],
 }
 
 # ---------- minimal YAML parser tailored to our schema ----------
@@ -411,6 +412,10 @@ def collect_node_edges(nodes_by_id):
         ("appearances",       "symbol-attests-in"),
         ("deity-instances",   "symbol-iconography-of"),
         ("tradition-context", "symbol-in-tradition"),
+        # MUSIC node fields (10_music/). mirrors symbol field pattern.
+        ("music-appearances",         "music-attests-in"),
+        ("music-deity-connections",   "music-iconography-of"),
+        ("music-tradition-context",   "music-in-tradition"),
         # EVENT node outgoing fields. The pre-existing schema-event.md uses these YAML
         # keys (participants / traditions-affected / documents-affected / documents-produced)
         # but they were never registered as edge-emitters — so every event had ONLY incoming
@@ -477,6 +482,25 @@ def collect_node_edges(nodes_by_id):
                         "target": target,
                         "type": etype,
                         "field": "cross-symbol-edges",
+                    })
+        # cross-music-edges — same structured form for 10_music/ nodes.
+        xmus = fm.get("cross-music-edges")
+        if isinstance(xmus, list):
+            for s in xmus:
+                if not isinstance(s, dict) or not s.get("target"):
+                    continue
+                etype = (s.get("type") or "parallel-form").strip()
+                target_raw = str(s["target"]).strip()
+                targets = list(wikilinks(target_raw)) or [target_raw.lstrip("[").rstrip("]")]
+                for target in targets:
+                    target = target.strip()
+                    if not target or target == node_id:
+                        continue
+                    edges.append({
+                        "source": node_id,
+                        "target": target,
+                        "type": etype,
+                        "field": "cross-music-edges",
                     })
     return edges
 
@@ -744,6 +768,7 @@ def main():
     print(f"  events    : {counts['event']}")
     print(f"  traditions: {counts['tradition']}")
     print(f"  symbols   : {counts.get('symbol', 0)}")
+    print(f"  music     : {counts.get('music', 0)}")
     print(f"  edges     : {len(deduped)}")
 
 if __name__ == "__main__":
