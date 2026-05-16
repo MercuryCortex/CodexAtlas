@@ -50,6 +50,7 @@ music-appearances:
 refs:
   - "Sama Veda, trans. Ralph T.H. Griffith, 1893 (Benares: E.J. Lazarus) — standard early English translation"
   - "Wayne Howard, Samavedic Chant, Yale University Press, 1977 — most systematic modern musicological study"
+  - "Staal, Frits. 'The Meaninglessness of Ritual.' Numen 26.1 (1979): 2–22 — foundational argument that Vedic ritual (including chant) operates as syntax without semantics; the sound structure IS the operative element, not the meaning"
   - "Frits Staal, Agni: The Vedic Ritual of the Fire Altar, 2 vols., Asian Humanities Press, 1983 — definitive documentation of living Vedic chant practice"
   - "Michael Witzel, Vedas and Upanishads, in The Blackwell Companion to Hinduism, ed. Gavin Flood, 2003"
   - "Chandogya Upanishad, c. 800–600 BCE — the Upanishad directly associated with Sama Veda practice; the earliest systematic AUM theology"

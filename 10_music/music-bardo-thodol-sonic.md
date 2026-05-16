@@ -58,6 +58,7 @@ refs:
   - "Sogyal Rinpoche. The Tibetan Book of Living and Dying (1992)"
   - "Norbu, Namkhai. The Crystal and the Way of Light (1986)"
   - "Jung, Carl G. 'Psychological Commentary.' In Evans-Wentz (ed.), The Tibetan Book of the Dead (1927)"
+  - "Assmann, Jan. Death and Salvation in Ancient Egypt. Cornell University Press (2005) — the Egypt acoustic-death parallel; frames Egyptian mortuary texts as performative speech-acts for navigating post-mortem consciousness"
 ---
 
 ## A Manual, Not a Mythology

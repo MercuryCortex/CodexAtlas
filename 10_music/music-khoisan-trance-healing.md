@@ -6,7 +6,7 @@ music-type: ritual
 status: full
 tier: 1
 tradition: tradition-san-bushmen
-date_earliest: -50000
+date_earliest: -35000
 date_latest: 2000
 tags:
   - music
@@ -26,7 +26,7 @@ cross-music-edges:
     note: Both use sustained acoustic stimulus — drone or repetitive communal singing — to induce altered states; the San practice is the oldest documented instance of this mechanism.
   - target: music-sufi-sama
     type: parallel-form
-    note: Structural identity in trance-healing protocol: sustained communal sound + movement + altered state + therapeutic laying-on-of-hands; San practice predates Sufi sama by ~49,500 years.
+    note: Structural identity in trance-healing protocol: sustained communal sound + movement + altered state + therapeutic laying-on-of-hands; San practice predates Sufi sama by at least 34,000 years.
   - target: music-siberian-shaman-drum
     type: parallel-form
     note: Both are shamanic healing systems using sustained acoustic stimulus to produce kia/trance; San system is purely vocal, Siberian uses instrument.
@@ -55,7 +55,7 @@ refs:
 
 ## The Oldest Music-Medicine Protocol
 
-The !Kung San people of the Kalahari Desert practice a healing system — the *n/um-kxao* trance dance — that represents the **oldest continuously documented music-as-medicine protocol on Earth**. Archaeological evidence from southern African rock art and genetic analysis of San population history places continuous San cultural practice at approximately 50,000 years. The trance dance's core structure is depicted in the oldest preserved visual art associated with San culture, suggesting a practice that predates the emergence of any other documented healing tradition by tens of thousands of years.
+The !Kung San people of the Kalahari Desert practice a healing system — the *n/um-kxao* trance dance — that represents the **oldest documented music-as-medicine protocol on Earth** (at least 35,000 years; see Lewis-Williams 2002 and Winkelman 2010 in refs). Archaeological evidence from southern African rock art places continuous San cultural practice at a minimum of 35,000 years (Lewis-Williams, *The Mind in the Cave*, 2002); comparative shamanism literature (Winkelman 2010) extends the estimate to ~40,000 years based on global shamanic parallels. The trance dance's core structure is depicted in the oldest preserved visual art associated with San culture, suggesting a practice that predates the emergence of any other documented healing tradition by at least 30,000 years.
 
 The protocol is structurally simple and operationally precise:
 
@@ -70,11 +70,11 @@ The protocol is structurally simple and operationally precise:
 
 The cross-tradition parallels with this practice are exact — and the temporal gap between the San practice and all others is the most significant finding:
 
-**Sufi sama** (9th–13th c. CE): Communal singing and movement + altered state + healing/spiritual transformation. ~49,700 years after San practice begins.
+**Sufi sama** (9th–13th c. CE): Communal singing and movement + altered state + healing/spiritual transformation. ~35,000 years after San practice begins.
 
-**Siberian shamanic drumming** (~3,000–5,000 years documented): Drum-induced trance + spirit-journey + healing of the sick. ~45,000 years after San practice.
+**Siberian shamanic drumming** (~40,000 years, rock art and comparative evidence): Drum-induced trance + spirit-journey + healing of the sick. Broadly contemporaneous with or slightly older than the San documentation; the two traditions represent independent parallelisms, not a gap.
 
-**Tibetan singing-bowl healing** (post-8th c. CE): Sustained frequency + healing vibration applied to body. ~49,700 years after San practice.
+**Tibetan singing-bowl healing** (post-8th c. CE): Sustained frequency + healing vibration applied to body. ~35,000 years after San practice.
 
 **Christian Pentecostal healing services** (20th c.): Communal sustained singing + altered state + laying on of hands for healing.
 

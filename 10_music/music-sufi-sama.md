@@ -53,6 +53,7 @@ refs:
   - "Hazrat Inayat Khan, The Mysticism of Sound and Music, Shambhala, 1991 — primary 20th-c. Sufi music theology"
   - "Rumi, trans. Coleman Barks, The Essential Rumi, Harper, 1995 — widely used poetic translation"
   - "Al-Ghazali, Ihya Ulum al-Din (Revival of the Religious Sciences), c. 1095 CE — most important medieval Muslim theologian on music's permissibility"
+  - "Schimmel, Annemarie. Mystical Dimensions of Islam. University of North Carolina Press (1975) — chapter on sama and Sufi musical theology; standard Western academic reference"
   - "Amnon Shiloah, The Dimension of Music in Islamic and Jewish Culture, Ashgate/Variorum, 1993"
   - "Seyyed Hossein Nasr, Islamic Art and Spirituality, Golgonooza Press, 1987 — Sufi aesthetics; music chapter"
 ---
