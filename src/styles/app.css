@@ -1751,12 +1751,12 @@ body.view-atlas main.canvas { background: var(--bg-0); }
 .ph2-hull {
   fill-opacity: var(--ph2-hull-opacity, 0.12);
   stroke-opacity: var(--ph2-hull-stroke-opacity, 0.30);
-  stroke-width: 0.8;
+  stroke-width: var(--ph2-hull-stroke-width, 0.8);
   transition: fill-opacity 250ms ease, stroke-opacity 250ms ease;
   vector-effect: non-scaling-stroke;
 }
-.ph2-hull.dim          { fill-opacity: 0.025; stroke-opacity: 0.08; }
-.ph2-hull.hot          { fill-opacity: 0.20;  stroke-opacity: 0.60; }
+.ph2-hull.dim          { fill-opacity: var(--ph2-hull-dim-fill, 0.025); stroke-opacity: 0.08; }
+.ph2-hull.hot          { fill-opacity: var(--ph2-hull-hot-fill, 0.20);  stroke-opacity: 0.60; }
 .ph2-hull.preview-fade { fill-opacity: 0.03;  stroke-opacity: 0.10; }
 /* PHASE G — 7-BUCKET EDGE VISUAL LOGIC.
    Spec: AUDIT/edge-logic-spec-2026-05-17.md
@@ -1771,7 +1771,7 @@ body.view-atlas main.canvas { background: var(--bg-0); }
 .ph2-edge {
   fill: none;
   stroke: rgba(120, 140, 182, 0.72);
-  stroke-width: var(--edge-w, 0.20);
+  stroke-width: calc(var(--edge-w, 0.20) * var(--ph2-edge-width-mult, 1));
   stroke-opacity: calc(var(--edge-idle-op, 0.08) * var(--ph2-edge-opacity-mult, 1));
   vector-effect: non-scaling-stroke;
   transition: stroke-opacity 180ms ease, stroke-width 180ms ease, stroke 180ms ease;
@@ -1840,7 +1840,7 @@ body.view-atlas main.canvas { background: var(--bg-0); }
   transform: translate(-50%, -100%);
   pointer-events: none;
   font-family: var(--sans);
-  font-size: 10px;
+  font-size: var(--ph2-node-label-size, 10px);
   line-height: 1.05;
   color: var(--text-2);
   white-space: nowrap;
@@ -1858,7 +1858,7 @@ body.view-atlas main.canvas { background: var(--bg-0); }
 .ph2-node-label.hub {
   color: var(--text-0);
   font-weight: 500;
-  font-size: 11px;
+  font-size: var(--ph2-node-hub-label-size, 11px);
 }
 .ph2-node-label.dim { opacity: 0.15; }
 /* PHASE F — HORIZONTAL family rim labels (production parity, app.css:1086).
@@ -1870,12 +1870,12 @@ body.view-atlas main.canvas { background: var(--bg-0); }
   left: 0; top: 0;
   font-family: var(--serif);
   font-weight: 500;
-  font-size: 13px;
-  letter-spacing: 0.22em;
+  font-size: var(--ph2-rim-label-size, 13px);
+  letter-spacing: var(--ph2-rim-label-spacing, 0.22em);
   text-transform: uppercase;
   white-space: nowrap;
   color: var(--text-2);
-  opacity: 0.92;
+  opacity: var(--ph2-rim-label-opacity, 0.92);
   /* Halo trick — production uses paint-order:stroke; in DOM the equivalent
      is a tight text-shadow stack so glyphs read over translucent hulls. */
   text-shadow:
@@ -1895,7 +1895,7 @@ body.view-atlas main.canvas { background: var(--bg-0); }
    family color. */
 .ph2-rim-tick {
   stroke-width: 0.8;
-  stroke-opacity: 0.45;
+  stroke-opacity: var(--ph2-tick-opacity, 0.45);
   vector-effect: non-scaling-stroke;
   transition: stroke-opacity 200ms ease;
 }

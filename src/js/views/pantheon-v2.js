@@ -106,11 +106,14 @@
       P.set(d.id, { x: p.x + jx, y: p.y + jy, vx: 0, vy: 0, ax: p.x, ay: p.y });
     });
     // Constants (tuned for V2's 220→540 world scale; production uses 14 px radial pad).
-    const ANCHOR_K     = 0.018;  // was 0.05 — weaker anchor lets jitter spread organically
-    const CHARGE_K     = -550;   // was -380 — stronger repulsion for more breathing room
-    const CHARGE_RANGE = 180;    // max distance for charge to act
-    const COLLIDE_PAD  = 1.5;    // gap between node circles
-    const DAMP         = 0.55;
+    // Dev panel may override anchorK / chargeK / chargeRange / damp live via
+    // window.CODEX_DEV.settings (re-render is triggered on slider release).
+    const D = window.CODEX_DEV?.settings || {};
+    const ANCHOR_K     = D.anchorK     != null ? D.anchorK     : 0.018;
+    const CHARGE_K     = D.chargeK     != null ? D.chargeK     : -550;
+    const CHARGE_RANGE = D.chargeRange != null ? D.chargeRange : 180;
+    const DAMP         = D.damp        != null ? D.damp        : 0.55;
+    const COLLIDE_PAD  = 1.5;
     const RADIAL_PAD   = 14;
     const ANG_PAD_MAX  = 0.045;
     for (let iter = 0; iter < iterations; iter++) {
@@ -647,7 +650,10 @@
     // Sigma's default fit leaves ~25% padding on each side — too sparse for
     // 500-node deity rings. Ratio 0.78 keeps a small margin without cropping
     // family rim labels (which sit at Router+50).
-    try { sigma.getCamera().setState({ ratio: 0.78 }); } catch (e) {}
+    try {
+      const r = window.CODEX_DEV?.settings?.cameraRatio;
+      sigma.getCamera().setState({ ratio: typeof r === 'number' ? r : 0.78 });
+    } catch (e) {}
 
     // ============================================================
     // SVG OVERLAY — hulls (under canvas) + curved edges (under canvas).
@@ -1300,5 +1306,14 @@
     return String(s == null ? '' : s).replace(/["'&<>]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'})[c]);
   }
 
-  window._pantheonV2 = { render };
+  window._pantheonV2 = {
+    render,
+    // Convenience for the dev panel — re-render the live pane after changing
+    // any setting (force constants, camera ratio, etc.) that requires a full
+    // bake + paint rather than a CSS-var swap or sigma.refresh.
+    rerender: function () {
+      const pane = document.querySelector('.pantheon-v2-pane');
+      if (pane) render(pane);
+    }
+  };
 })();
