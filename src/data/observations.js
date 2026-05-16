@@ -287,4 +287,15 @@ What this means for the investigation: the priestly-musician-caste institution i
     evidence: ['music-fludd-world-monochord', 'music-pythagorean-harmony', 'music-ficino-lyre-therapy'],
   },
 
+  {
+    id: 'aramaic-hidden-backbone',
+    title: 'Aramaic Is the Hidden Backbone of Western Religious Language',
+    category: 'CONCLUSION',
+    summary: 'Aramaic is present in every major Western religious tradition as a silent structural layer — the script-ancestor of Hebrew and Arabic, the language of Jesus, the Talmud, and the Zohar, and via Syriac the vehicle that carried Christianity to Tang Dynasty China.',
+    body: 'Aramaic is present in every major Western religious tradition as a silent structural layer. It is the script-ancestor of both Hebrew square script and the Arabic alphabet. It is the language Jesus spoke (Abba, Talitha koum, Eli Eli lema sabachthani, Maranatha — preserved untranslated in the Greek New Testament because these words were too intimate or too sacred to render into Greek). It is the language of the Babylonian Talmud, which became the normative document of world Judaism. It is the language in which Moses de Leon wrote the Zohar, the foundational text of Kabbalah, deliberately in medieval Castile to appear ancient.\n\nIts Memra theology is the documented bridge between Jewish scripture and the Johannine Logos: the Aramaic Targum tradition (synagogue paraphrase-translations of Torah) used Memra — "Word" — as a divine intermediary agent wherever the Hebrew text depicted God acting too directly. Philo of Alexandria synthesized this with Platonic Logos philosophy. The Gospel of John\'s prologue ("In the beginning was the Logos...") presupposes this synthesis. The transmission chain from Jewish Aramaic synagogue practice to the opening of the Christian Gospel is documented by T2 scholarship (Chilton, McNamara, Hayward).\n\nVia Syriac — its eastern dialect — Aramaic carried Christianity the furthest east of any transmission in the first millennium. The Xi\'an Nestorian Stone (781 CE) is a bilingual Syriac-Chinese stele erected in Tang Dynasty China commemorating 150 years of Nestorian Christianity. It is the endpoint of the world\'s longest documented single graphic transmission chain: Egyptian hieroglyphs → Proto-Sinaitic → Phoenician → Aramaic → Syriac → the Xi\'an stone. One unbroken graphic tradition, 3,400 years, from the Sinai Peninsula to central China.\n\nMost people have never heard of Aramaic. Every Western religious tradition they practice was shaped by it.',
+    category: 'CONCLUSION',
+    tier: 1,
+    nodes: ['alphabet-aramaic', 'alphabet-syriac', 'alphabet-phoenician', 'logos-johannine', 'phase-4-034-quran'],
+  },
+
 ];
