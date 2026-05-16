@@ -58,7 +58,7 @@ Strong: Eusebius (HE 4.30) treats him as a Christian apologist (against Marcioni
 
 ## Works
 - ***Book of the Laws of Countries*** — argues for human free will against Chaldean astrological fatalism, using ethnographic data on different cultures' customs as evidence that human choice overrides celestial determination. A philosophically sophisticated text.
-- **150 hymns** — lost; influenced [[ephrem-syrian|Ephrem the Syrian]], who composed his own hymns explicitly to displace Bardaisan's in popular use.
+- **150 hymns** — lost; influenced [[ephrem-the-syrian|Ephrem the Syrian]], who composed his own hymns explicitly to displace Bardaisan's in popular use.
 - **Cosmological texts** — lost; reconstructable in part from Ephrem and Theodore bar Konai.
 
 ## Role in the tradition

@@ -21,7 +21,7 @@ variants:
     description: "Hittite solar disk with wings — attested at Yazılıkaya rock sanctuary and on Hittite royal seals. Probable transmission from Egypt via Levantine contacts in the Middle Bronze Age."
 deity-instances:
   - "[[horus]]"
-  - "[[ra-egyptian]]"
+  - "[[ra]]"
   - "[[ahura-mazda]]"
 tradition-context:
   - "[[tradition-egyptian-religion]]"

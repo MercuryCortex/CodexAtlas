@@ -10,7 +10,7 @@ appearances:
   - "[[baal]]"
   - "[[phase-1-007-book-of-the-dead]]"
   - "[[phase-4-004-gospel-of-philip]]"
-  - "[[phase-3-006-homeric-hymns]]"
+  - "[[phase-3-035-homeric-hymns]]"
 related-themes:
   - "[[alchemy-as-spiritual-discipline]]"
   - "[[divine-feminine]]"

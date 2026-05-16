@@ -518,7 +518,7 @@ canonical-slug
 - `zemyna`
 - `zeus`
 
-### document (412 nodes)
+### document (414 nodes)
 
 - `document-kuntillet-ajrud-inscriptions`
 - `phase-1-001-kesh-temple-hymn`
@@ -636,6 +636,7 @@ canonical-slug
 - `phase-3-032-4-ezra-ethiopic-recension`
 - `phase-3-033-book-of-giants-qumran-manichaean`
 - `phase-3-034-huainanzi`
+- `phase-3-035-homeric-hymns`
 - `phase-4-001-gospel-of-thomas`
 - `phase-4-002-apocryphon-of-john`
 - `phase-4-003-gospel-of-truth`
@@ -741,6 +742,7 @@ canonical-slug
 - `phase-4-106-greek-magical-papyri`
 - `phase-4-107-bundahishn`
 - `phase-4-108-peshitta`
+- `phase-4-109-vishnu-purana`
 - `phase-5-001-devi-mahatmya`
 - `phase-5-002-heart-sutra`
 - `phase-5-002b-diamond-sutra`
@@ -1123,7 +1125,7 @@ canonical-slug
 - `subterranean-chamber-great-pyramid`
 - `temple-of-inscriptions-palenque`
 
-### person (691 nodes)
+### person (695 nodes)
 
 - `aaron`
 - `abba-garima`
@@ -1136,6 +1138,7 @@ canonical-slug
 - `aeschylus`
 - `ahmose-i`
 - `aisha-bint-abi-bakr`
+- `akbar-mughal`
 - `akhenaten`
 - `akiva-ben-yosef`
 - `al-biruni`
@@ -1195,6 +1198,7 @@ canonical-slug
 - `atisa`
 - `atrahasis-flood-hero`
 - `augustine-of-hippo`
+- `aurangzeb-emperor`
 - `baal-shem-tov`
 - `bahaullah`
 - `bahya-ibn-paquda`
@@ -1314,6 +1318,7 @@ canonical-slug
 - `ezana-of-aksum`
 - `ezekiel`
 - `farid-ud-din-attar`
+- `fatima-bint-muhammad`
 - `fazang`
 - `fazlur-rahman`
 - `fentos-meqabyan`
@@ -1352,6 +1357,7 @@ canonical-slug
 - `gudea-of-lagash`
 - `guru-arjan`
 - `guru-gobind-singh`
+- `guru-gobind-singh-ji`
 - `guru-nanak`
 - `guru-tegh-bahadur-ji`
 - `haci-bektas-veli`
@@ -1817,7 +1823,7 @@ canonical-slug
 - `ziusudra`
 - `zosimos-of-panopolis`
 
-### symbol (275 nodes)
+### symbol (277 nodes)
 
 - `abraxas`
 - `acacia`
@@ -1877,6 +1883,7 @@ canonical-slug
 - `dragon-eastern`
 - `dragon-western`
 - `dreamcatcher`
+- `dying-rising-god`
 - `eagle-symbol`
 - `eleusinian-kykeon`
 - `emerald-tablet`
@@ -1994,6 +2001,7 @@ canonical-slug
 - `sacred-crown`
 - `sacred-dance`
 - `sacred-dove`
+- `sacred-eclipse`
 - `sacred-feather`
 - `sacred-fire`
 - `sacred-fire-atash`
@@ -2095,7 +2103,7 @@ canonical-slug
 - `yoni`
 - `zodiac-wheel`
 
-### theme (330 nodes)
+### theme (333 nodes)
 
 - `364-day-solar-calendar`
 - `adam-kadmon`
@@ -2162,6 +2170,7 @@ canonical-slug
 - `crucifixion-theology`
 - `crusade-theology-of-malecide`
 - `demiurge`
+- `diaspora-formation`
 - `diaspora-judaism`
 - `discipleship-failure`
 - `divinatory-calendar`
@@ -2292,6 +2301,7 @@ canonical-slug
 - `paraclete-spirit`
 - `passion-narrative`
 - `perennial-philosophy`
+- `persecution-as-legitimation`
 - `persian-period-injection`
 - `personal-daimon`
 - `pharmakos`
@@ -2352,6 +2362,7 @@ canonical-slug
 - `stoic-virtue`
 - `suffering-servant`
 - `sympathetic-magic`
+- `syncretism-deliberate`
 - `syncretism-egyptian-greek`
 - `tabot-ark-replica`
 - `tahafut-controversy`
@@ -2428,7 +2439,7 @@ canonical-slug
 - `zep-tepi`
 - `zeus-pantokrator-transmission`
 
-### tradition (149 nodes)
+### tradition (153 nodes)
 
 - `tradition-advaita-vedanta`
 - `tradition-african-traditional`
@@ -2489,14 +2500,17 @@ canonical-slug
 - `tradition-hindutva`
 - `tradition-hopi`
 - `tradition-hospitallers`
+- `tradition-hussitism`
 - `tradition-inca-andean`
 - `tradition-isis-mysteries`
 - `tradition-islam`
+- `tradition-islam-mughal`
 - `tradition-islamic-modernism`
 - `tradition-islamism-political`
 - `tradition-ismailism`
 - `tradition-jainism`
 - `tradition-judaism`
+- `tradition-judaism-sephardic`
 - `tradition-jungian-depth-psychology`
 - `tradition-jyotisha-indian-astrology`
 - `tradition-kabbalah`
@@ -2539,6 +2553,7 @@ canonical-slug
 - `tradition-proto-indo-european-religion`
 - `tradition-pure-land-buddhism`
 - `tradition-pythagorean`
+- `tradition-rabbinic-judaism`
 - `tradition-rastafari`
 - `tradition-renaissance-hermeticism`
 - `tradition-roman-religion`
@@ -2589,16 +2604,8 @@ canonical-slug
 | 3 | `guru-arjan-dev-ji` | `guru-arjan` |
 | 2 | `yam-canaanite` | `astarte-canaanite` |
 | 2 | `was-sceptre` | `was-scepter` |
-| 2 | `tradition-lingayat` | `tradition-asatru` |
-| 2 | `tradition-judaism-sephardic` | `tradition-islamic-modernism` |
-| 2 | `tradition-islam-shia` | `tradition-islamic-modernism` |
-| 2 | `tradition-islam-mughal` | `tradition-islamic-modernism` |
-| 2 | `tradition-hussitism` | `tradition-islamic-modernism` |
-| 2 | `tradition-christianity-catholic` | `tradition-islamic-modernism` |
-| 2 | `tradition-bahai` | `tradition-asatru` |
-| 2 | `phase-4-045-vishnu-purana` | `phase-4-047-cassian-conferences` |
-| 2 | `phase-3-006-homeric-hymns` | `phase-3-008-book-of-daniel` |
-| 2 | `phase-1-005-descent-of-inanna` | `phase-1-004-gilgamesh-old-babylonian` |
-| 2 | `guru-gobind-singh-ji` | `guru-gobind-singh` |
+| 2 | `tradition-rosicrucian` | `tradition-druze` |
+| 2 | `tradition-lingayat` | `tradition-druze` |
+| 2 | `tradition-islamic-philosophy` | `tradition-western-astrology` |
+| 2 | `phase-2-004-1-2-chronicles` | `phase-2-003-atharva-veda` |
 | 2 | `divine-names` | `divine-name` |
-| 2 | `aurangzeb-emperor` | `zara-yaqob-emperor` |

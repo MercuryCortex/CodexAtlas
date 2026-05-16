@@ -254,36 +254,107 @@
   //   syncretic (586) parallel-motif (1018) parallel-form (329)
   //   influenced-by (506) influences (463) consort (~128)
   //   child-of / parent-of  attests / attested-in / mentioned-in
-  const EDGE_COLOR = {
-    // SYNCRETIC / PARALLEL family — green to teal
-    'syncretic':                       '#6e8c6b',
-    'syncretized-with':                '#6e8c6b',
-    'syncretic-scholarly-parallel':    '#5a9a8f',
-    'syncretic-ancient-identification':'#6e8c6b',
-    'syncretic-structural-parallel':   '#5a9a8f',
-    'parallel-motif':                  '#5a9a8f',
-    'parallel-form':                   '#5a9a8f',
-    // INFLUENCE family — red
-    'influenced':        '#c25450', 'influenced-by':     '#c25450',
-    'influences':        '#c25450',
-    // ATTESTATION family — gold
-    'attested-in':       '#d4a55a', 'attests':           '#d4a55a',
-    'mentioned-in':      '#aabac5',
-    'key-figure':        '#d4a55a',
-    // AUTHORSHIP family — purple
-    'authored':          '#a87bb5', 'attributed-author': '#a87bb5',
-    'originated':        '#a87bb5',
-    // KINSHIP family — purple-lighter
-    'consort':           '#c9a5d4',
-    'child-of':          '#c9a5d4', 'parent-of':         '#c9a5d4',
-    'sibling-of':        '#c9a5d4',
-    // DOCUMENT-AFFECT family — blue
-    'documents-affected':'#5a6cc4', 'preserved-by':      '#5a6cc4',
-    'affects-tradition': '#5a6cc4',
-    // THEME — amber
-    'has-theme':         '#e0a850'
+  // PHASE G — Canonical 7-bucket edge visual logic.
+  // Source of truth: AUDIT/edge-logic-spec-2026-05-17.md
+  //
+  //   1. Transmission   #C9743A terracotta   directional   gradient on hover
+  //   2. Parallel       #5A9A8F teal         symmetric
+  //   3. Association    #4A5AA4 slate-indigo symmetric     quiet majority
+  //   4. Kinship        #C9A5D4 lilac        descent=gradient / consort=symmetric
+  //   5. Attestation    #D4A55A gold         directional   gradient on hover
+  //   6. Polemic        #A83E4A crimson      symmetric     HEADLINE (idle 0.25)
+  //   7. Fusion         #C4783A amber-gold   symmetric     HEADLINE (idle 0.30)
+  //
+  // Idle state: every non-headline edge paints the same slate-blue atmosphere.
+  // Hot state: bucket color, type-specific opacity + uniform 1.6 px width.
+  // Headline edges idle visible at their bucket color (idle op 0.25-0.30).
+  const EDGE_BUCKETS = {
+    transmission: { hex: '#C9743A', width: 0.46, idleOp: 0.10, hotOp: 0.95, directional: true,  headline: false },
+    parallel:     { hex: '#5A9A8F', width: 0.34, idleOp: 0.12, hotOp: 0.85, directional: false, headline: false },
+    association:  { hex: '#4A5AA4', width: 0.20, idleOp: 0.08, hotOp: 0.55, directional: false, headline: false },
+    kinship:      { hex: '#C9A5D4', width: 0.34, idleOp: 0.14, hotOp: 0.85, directional: true,  headline: false },
+    attestation:  { hex: '#D4A55A', width: 0.34, idleOp: 0.10, hotOp: 0.90, directional: true,  headline: false },
+    polemic:      { hex: '#A83E4A', width: 0.46, idleOp: 0.25, hotOp: 0.95, directional: false, headline: true  },
+    fusion:       { hex: '#C4783A', width: 0.46, idleOp: 0.30, hotOp: 0.95, directional: false, headline: true  }
   };
-  const DEFAULT_EDGE_COLOR = '#7a8090';
+  // Type → bucket name. Suffix `:hl` flags within-bucket headline overrides.
+  const EDGE_TYPE_BUCKET = {
+    // 1. Transmission
+    'influenced-by':              'transmission',
+    'influences':                 'transmission',
+    'influenced':                 'transmission',
+    'originated':                 'transmission',
+    'affects-tradition':          'transmission',
+    'affects-document':           'transmission',
+    'documents-affected':         'transmission',
+    'produces-document':          'transmission',
+    'manuscript-transmission':    'transmission',
+    'redaction-of':               'transmission',
+    'ancestor-of':                'transmission:hl', // HEADLINE within transmission bucket
+    // 2. Parallel / Structural
+    'parallel-motif':             'parallel',
+    'parallel-form':              'parallel',
+    'syncretic':                  'parallel',
+    'syncretized-with':           'parallel',
+    'syncretic-scholarly-parallel':   'parallel',
+    'syncretic-ancient-identification':'parallel',
+    'syncretic-structural-parallel':   'parallel',
+    'syncretic-parallel-motif':   'parallel',
+    'syncretic-instantiation':    'parallel',
+    'structural-parallel':        'parallel',
+    'contested-identification':   'parallel',
+    'exemplifies':                'parallel',
+    // 3. Association / Context (the 4000+ ambient flood)
+    'has-theme':                  'association',
+    'tradition-deity':            'association',
+    'tradition-doc':              'association',
+    'tradition-person':           'association',
+    'context':                    'association',
+    'shared-milieu':              'association',
+    'shared-tradition':           'association',
+    'symbol-attests-in':          'association',
+    'symbol-iconography-of':      'association',
+    'symbol-in-tradition':        'association',
+    'participated-in':            'association',
+    'component-of':               'association',
+    'contains':                   'association',
+    // 4. Kinship & Consort
+    'child-of':                   'kinship',
+    'parent-of':                  'kinship',
+    'consort':                    'kinship',
+    'sibling-of':                 'kinship',
+    // 5. Attestation / Authorship
+    'attests':                    'attestation',
+    'attested-in':                'attestation',
+    'mentioned-in':               'attestation',
+    'key-figure':                 'attestation',
+    'authored':                   'attestation',
+    'attributed-author':          'attestation',
+    'primary-source':             'attestation',
+    'primary-translation':        'attestation',
+    'critical-edition':           'attestation',
+    'translation':                'attestation',
+    'commentary-on':              'attestation',
+    'direct-quote':               'attestation',
+    'preserved-by':               'attestation',
+    // 6. Polemic / Inversion — entire bucket is headline-loud
+    'polemic-inversion':          'polemic',
+    'polemic-against':            'polemic',
+    // 7. Fusion / Appropriation — entire bucket is headline-loud
+    'syncretic-fusion':           'fusion',
+    'appropriated-by':            'fusion',
+    'visual-cognate':             'fusion'
+  };
+  function edgeStyleFor(type) {
+    const raw = EDGE_TYPE_BUCKET[type] || 'association';
+    const hl  = raw.endsWith(':hl');
+    const key = hl ? raw.slice(0, -3) : raw;
+    const b   = EDGE_BUCKETS[key] || EDGE_BUCKETS.association;
+    if (hl) return { ...b, headline: true, idleOp: 0.30 };
+    return b;
+  }
+  // Legacy alias retained for any external readers
+  const DEFAULT_EDGE_COLOR = EDGE_BUCKETS.association.hex;
 
   // SOURCE-INTEGRITY TIER FILL COLORS — matches production CSS vars (app.css:59-63).
   // Used when _tierOverlay is active; replaces family-color fill on each node.
@@ -479,7 +550,7 @@
         // The curved SVG overlay below paints the visible edge.
         graph.addEdgeWithKey(key, e.source, e.target, {
           size: 0,
-          color: EDGE_COLOR[e.type] || DEFAULT_EDGE_COLOR,
+          color: edgeStyleFor(e.type).hex,
           _type: e.type
         });
       } catch (err) { /* ignore parallel-edge collisions */ }
@@ -669,18 +740,27 @@
       // center is (0,0) in world coords — pull control point that direction
       const cxp = mx + (0 - mx) * EDGE_PULL;
       const cyp = my + (0 - my) * EDGE_PULL;
+      // PHASE G — per-edge styling via CSS vars from the 7-bucket lookup.
+      // Idle: every non-headline edge paints the same slate-blue atmosphere.
+      // Headline (ancestor-of, polemic-*, syncretic-fusion, appropriated-by,
+      // visual-cognate) idles in its bucket color at idleOp 0.25-0.30 — these
+      // are the atlas's MASSIVE-wins and must be visible without hover.
+      // Hot: bucket color × per-type hotOp × fixed 1.6 px stroke (CSS cap).
+      const st = edgeStyleFor(e.type);
       const path = document.createElementNS(SVG_NS, 'path');
-      path.setAttribute('class', 'ph2-edge');
+      path.setAttribute('class', 'ph2-edge' + (st.headline ? ' ph2-edge-headline' : ''));
       path.setAttribute('d', `M ${sp.x},${sp.y} Q ${cxp},${cyp} ${tp.x},${tp.y}`);
-      // Production discipline: default stroke is a single quiet slate-blue (CSS);
-      // the per-type color is stashed as a CSS var and only paints when .hot
-      // (hover/select). Keeps the default canvas calm — no rainbow.
-      path.style.setProperty('--edge-type-color', EDGE_COLOR[e.type] || DEFAULT_EDGE_COLOR);
+      path.style.setProperty('--edge-type-color', st.hex);
+      path.style.setProperty('--edge-w',          st.width);
+      path.style.setProperty('--edge-idle-op',    st.idleOp);
+      path.style.setProperty('--edge-hot-op',     st.hotOp);
+      if (st.directional) path.dataset.directional = '1';
       path.dataset.source = e.source;
       path.dataset.target = e.target;
       path.dataset.type   = e.type || '';
+      path.dataset.bucket = EDGE_TYPE_BUCKET[e.type] ? EDGE_TYPE_BUCKET[e.type].replace(':hl','') : 'association';
       edgesG.appendChild(path);
-      edgeEls.push({ el: path, s: e.source, t: e.target });
+      edgeEls.push({ el: path, s: e.source, t: e.target, st });
     });
 
     // Dev panel hook — expose sigma + overlay data for live-tweaking.

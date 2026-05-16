@@ -11,7 +11,7 @@ domains: ["earth rescue", "cosmic restoration", "divine power", "protection"]
 gender: masculine
 role: "Vishnu's boar incarnation who dives into the cosmic ocean to rescue the Earth-goddess Bhudevi; third avatar of Vishnu in the Dashavatara"
 historicity: legendary
-attested-in: ["[[phase-4-045-vishnu-purana]]"]
+attested-in: ["[[phase-4-109-vishnu-purana]]"]
 syncretic-edges:
   - target: "[[earth-diver-creation]]"
     type: "parallel-motif"

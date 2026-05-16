@@ -5,7 +5,7 @@ name: "The Spanish Inquisition — Persecution, Conversion, and the Birth of Ibe
 date-earliest: 1478
 date-latest: 1834
 region: "Spain (Castile, Aragon); later Portugal, Spanish colonies"
-traditions-involved: ["[[tradition-christianity-catholic]]", "[[tradition-judaism-sephardic]]", "[[tradition-islam-iberian-andalus]]"]
+traditions-involved: ["[[tradition-latin-christianity]]", "[[tradition-judaism-sephardic]]", "[[tradition-islam-iberian-andalus]]"]
 persons-involved: ["[[tomas-de-torquemada]]", "[[ferdinand-ii-of-aragon]]", "[[isabella-i-of-castile]]"]
 status: "metadata"
 refs:

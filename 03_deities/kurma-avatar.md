@@ -11,7 +11,7 @@ domains: ["cosmic support", "stability", "the churning of the ocean", "earth's f
 gender: masculine
 role: "Vishnu's tortoise incarnation who provides the stable base for Mount Mandara during the churning of the cosmic ocean (Samudra Manthan); the divine support of the world"
 historicity: legendary
-attested-in: ["[[phase-4-045-vishnu-purana]]"]
+attested-in: ["[[phase-4-109-vishnu-purana]]"]
 syncretic-edges:
   - target: "[[sky-woman-haudenosaunee]]"
     type: "parallel-form"

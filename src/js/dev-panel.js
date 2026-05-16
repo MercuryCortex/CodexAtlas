@@ -22,7 +22,7 @@
   const LS_KEY = 'codex-atlas/dev-panel-v1';
 
   const DEFAULTS = {
-    edgeOpacity:   0.08,
+    edgeOpacity:   1.00,
     edgeCurvature: 0.35,
     nodeSizeMult:  1.0,
     hubThreshold:  6,
@@ -33,7 +33,7 @@
 
   let S = { ...DEFAULTS };
   try { Object.assign(S, JSON.parse(localStorage.getItem(LS_KEY) || '{}')); } catch (e) {}
-  S.edgeOpacity   = clamp(S.edgeOpacity,   0,   1);
+  S.edgeOpacity   = clamp(S.edgeOpacity,   0,   3);
   S.edgeCurvature = clamp(S.edgeCurvature, 0,   0.6);
   S.nodeSizeMult  = clamp(S.nodeSizeMult,  0.5, 2.5);
   S.hubThreshold  = clamp(S.hubThreshold,  1,   30);
@@ -50,7 +50,8 @@
   // ── CSS vars (instant — no JS re-render needed) ──────────────────
   function applyCssVars() {
     const r = document.documentElement;
-    r.style.setProperty('--ph2-edge-opacity',         S.edgeOpacity);
+    // Phase G — `edgeOpacity` is now a MULTIPLIER on per-bucket idle op
+    r.style.setProperty('--ph2-edge-opacity-mult',    S.edgeOpacity);
     r.style.setProperty('--ph2-hull-opacity',         S.hullOpacity);
     r.style.setProperty('--ph2-hull-stroke-opacity',  Math.min(1, S.hullOpacity * 2.5));
   }
@@ -184,9 +185,9 @@
   // ── Control descriptors ──────────────────────────────────────────
   const CONTROLS = [
     {
-      id: 'edgeOpacity', label: 'Edge opacity',
-      min: 0, max: 1, step: 0.01,
-      fmt: v => v.toFixed(2),
+      id: 'edgeOpacity', label: 'Edge opacity ×',
+      min: 0, max: 3, step: 0.05,
+      fmt: v => v.toFixed(2) + '×',
       onInput: () => applyCssVars(),
     },
     {

@@ -16,9 +16,9 @@ variants:
   - id: "celtic-druid-oak"
     description: "The **Druid oak**: Pliny (*Naturalis Historia* 16.249) records that Druids 'do not perform any sacred rites without the leaves of that tree.' The word 'Druid' likely derives from Proto-Celtic *dru-wid-* = 'oak-knower' or 'oak-wisdom.' The mistletoe cut from the sacred oak with a golden sickle is the supreme Druidic ritual object. The *nemeton* (sacred grove) centers on the oak. See [[tradition-celtic]]."
   - id: "norse-germanic-sacred-oak"
-    description: "The great oak **Irminsul** at Eresburg (Saxon), felled by Boniface in 723 CE as part of Christianization. **[[Thor]]'s** connection to the oak mirrors the Zeus/Jupiter pattern: the storm god's lightning attracts to and sanctifies the oak. The *hallowed grove* (*vi* or *holt*) as the pre-Christian Germanic sacred space. See [[maypole-irminsul]] and [[tradition-norse]]."
+    description: "The great oak **Irminsul** at Eresburg (Saxon), felled by Boniface in 723 CE as part of Christianization. **[[thor]]'s** connection to the oak mirrors the Zeus/Jupiter pattern: the storm god's lightning attracts to and sanctifies the oak. The *hallowed grove* (*vi* or *holt*) as the pre-Christian Germanic sacred space. See [[maypole-irminsul]] and [[tradition-norse]]."
   - id: "slavic-perun-oak"
-    description: "The oak as the tree of **[[Perun]]** — the Slavic thunder god. Oak groves sacred to Perun; perpetual sacred oak-fires maintained at Slavic temples. The Slavic oak-fire ritual is the most directly preserved form of the PIE sacred oak-fire theology. See [[tradition-slavic]]."
+    description: "The oak as the tree of **[[perun]]** — the Slavic thunder god. Oak groves sacred to Perun; perpetual sacred oak-fires maintained at Slavic temples. The Slavic oak-fire ritual is the most directly preserved form of the PIE sacred oak-fire theology. See [[tradition-slavic]]."
   - id: "biblical-oracle-oak"
     description: "The **Elon Mamre** (Genesis 13:18): Abraham camped 'by the oaks of Mamre'; in Genesis 18, divine visitors appear to Abraham at the oak of Mamre. The **Elon Moreh** ('oracle oak' or 'teacher's oak', Genesis 12:6; Deuteronomy 11:30) at Shechem. The oak as the site of divine-human encounter — the biblical survival of the broader Near Eastern sacred-oak theology."
 appearances:
@@ -119,8 +119,8 @@ The most important structural fact about the sacred oak is that it is a **Proto-
 | Greek | Zeus | Oracle at Dodona; Zeus's oak |
 | Roman | Jupiter | Capitoline oak; *corona civica* oak wreath |
 | Celtic | (storm association) | Druidic oak rites; *nemeton* |
-| Norse/Germanic | [[Thor]] | Geismar oak; Irminsul |
-| Slavic | [[Perun]] | Perun's oak groves; perpetual oak-fire |
+| Norse/Germanic | [[thor]] | Geismar oak; Irminsul |
+| Slavic | [[perun]] | Perun's oak groves; perpetual oak-fire |
 | Vedic | [[Indra]] | Thunderbolt from wood; Indra's sacred tree |
 
 The probability that this equation arose independently in all six branches is negligible. It is a PIE-level theological feature — the oldest demonstrably shared mythological belief we can reconstruct, arising from the accurate observation that oaks attract lightning and confirming that the PIE thunder god was associated with the oak tree before the dispersal c. −3500 BCE.
@@ -151,13 +151,13 @@ The *nemeton* (sacred grove) centered on the oak: every Gaulish and British sacr
 
 ## Germanic and Norse Sacred Oaks
 
-**[[Thor]]'s** sacred oak at Geismar (Hesse) was felled by the missionary Boniface in 723 CE, according to his biography (*Vita Bonifatii*). The felling was a deliberate confrontation with the thunder god — Boniface expected to be struck by lightning and was not. The Franks converted. The episode is documented in historical sources and illustrates the living reality of the oak cult in 8th-century Germany.
+**[[thor]]'s** sacred oak at Geismar (Hesse) was felled by the missionary Boniface in 723 CE, according to his biography (*Vita Bonifatii*). The felling was a deliberate confrontation with the thunder god — Boniface expected to be struck by lightning and was not. The Franks converted. The episode is documented in historical sources and illustrates the living reality of the oak cult in 8th-century Germany.
 
 The **Irminsul** at Eresburg — the great Saxon sacred pillar, possibly an oak post — was destroyed by Charlemagne in 772 CE. The Irminsul is the Saxon axis mundi ([[axis-mundi]]) in its arboreal form, connecting the sacred-oak and world-tree concepts. See [[maypole-irminsul]] and [[tradition-norse]].
 
 ## Slavic Perun's Oak
 
-Among the Slavic peoples, **[[Perun]]** (the thunder god, cognate with Baltic Perkunas and Vedic Parjanya) was worshipped at perpetual oak-fires. The eternal flame at Slavic temples was specifically an oak-fire — not the wood of any tree, but the thunder god's tree, burning continuously. This is the most directly preserved form of the PIE sacred oak theology, as Slavic paganism survived comparatively late (Christianized 9th–12th centuries CE) and was documented by Christian missionaries. See [[tradition-slavic]].
+Among the Slavic peoples, **[[perun]]** (the thunder god, cognate with Baltic Perkunas and Vedic Parjanya) was worshipped at perpetual oak-fires. The eternal flame at Slavic temples was specifically an oak-fire — not the wood of any tree, but the thunder god's tree, burning continuously. This is the most directly preserved form of the PIE sacred oak theology, as Slavic paganism survived comparatively late (Christianized 9th–12th centuries CE) and was documented by Christian missionaries. See [[tradition-slavic]].
 
 ## Biblical Survival
 

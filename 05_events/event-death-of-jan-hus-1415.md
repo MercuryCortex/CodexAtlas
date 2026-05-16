@@ -5,7 +5,7 @@ name: "Burning of Jan Hus at the Council of Constance"
 date-earliest: 1415
 date-latest: 1415
 region: "Constance (Holy Roman Empire, modern Germany)"
-traditions-involved: ["[[tradition-christianity-catholic]]", "[[tradition-hussitism]]"]
+traditions-involved: ["[[tradition-latin-christianity]]", "[[tradition-hussitism]]"]
 persons-involved: ["[[jan-hus]]", "[[pope-john-xxiii-council]]"]
 status: "metadata"
 refs:

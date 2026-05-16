@@ -11,7 +11,7 @@ region: "Phoenicia (Byblos) → Greece → Rome"
 date-earliest: -1400
 status: "metadata"
 key-texts:
-  - "[[phase-3-006-homeric-hymns]]"
+  - "[[phase-3-035-homeric-hymns]]"
   - "Ovid, *Metamorphoses* X (the Adonis and Venus narrative)"
   - "Theocritus, *Idylls* XV (*Adoniazusai*)"
   - "Bion of Smyrna, *Lament for Adonis* (~100 BCE)"

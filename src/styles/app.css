@@ -1758,28 +1758,34 @@ body.view-atlas main.canvas { background: var(--bg-0); }
 .ph2-hull.dim          { fill-opacity: 0.025; stroke-opacity: 0.08; }
 .ph2-hull.hot          { fill-opacity: 0.20;  stroke-opacity: 0.60; }
 .ph2-hull.preview-fade { fill-opacity: 0.03;  stroke-opacity: 0.10; }
-/* EDGES — Q-bezier paths drawn in the same overlay. Quiet slate-blue by
-   default; per-type stroke color from JS only when .hot (hover/select). */
-/* EDGES — mirrors production .edge-line discipline (app.css:1052):
-   default is a quiet slate-blue, type-color stashed in --edge-type-color
-   and only painted when .hot. User: "I HATE BIG THICK LINES… not overwhelming."
-   Production sets per-type stroke-width 0.18-0.46 and opacity 0.10-0.55 INLINE
-   per edge; V2 applies uniform defaults via CSS var (dev panel tunes the var).
-   Matching production's *ambient* baseline (the majority of edges at width 0.18
-   × opacity 0.10) so the 1250-edge slice doesn't pile into a lit-up web. */
+/* PHASE G — 7-BUCKET EDGE VISUAL LOGIC.
+   Spec: AUDIT/edge-logic-spec-2026-05-17.md
+   Each edge has 4 inline CSS vars set by edgeStyleFor():
+     --edge-type-color  bucket hex
+     --edge-w           idle stroke width (0.20 / 0.34 / 0.46)
+     --edge-idle-op     idle stroke opacity per bucket
+     --edge-hot-op      hot stroke opacity per bucket
+   Idle: slate-blue atmosphere for everything EXCEPT .ph2-edge-headline.
+   Hot:  bucket color, per-type hotOp, fixed 1.6 px width.
+   --ph2-edge-opacity-mult is a global multiplier the dev panel tunes. */
 .ph2-edge {
   fill: none;
   stroke: rgba(120, 140, 182, 0.72);
-  stroke-width: 0.18;
-  stroke-opacity: var(--ph2-edge-opacity, 0.08);
+  stroke-width: var(--edge-w, 0.20);
+  stroke-opacity: calc(var(--edge-idle-op, 0.08) * var(--ph2-edge-opacity-mult, 1));
   vector-effect: non-scaling-stroke;
   transition: stroke-opacity 180ms ease, stroke-width 180ms ease, stroke 180ms ease;
+}
+/* Headline buckets (polemic, fusion, ancestor-of) idle in their bucket color.
+   These are the atlas's MASSIVE-wins — visible without hover. */
+.ph2-edge.ph2-edge-headline {
+  stroke: var(--edge-type-color, rgba(120, 140, 182, 0.72));
 }
 .ph2-edge.dim { stroke-opacity: 0.02 !important; }
 .ph2-edge.hot {
   stroke: var(--edge-type-color, rgba(212, 165, 90, 0.9)) !important;
-  stroke-opacity: 0.9 !important;
-  stroke-width: 1.6 !important;
+  stroke-opacity: var(--edge-hot-op, 0.9) !important;
+  stroke-width: var(--ph2-edge-hot-width, 1.6) !important;
 }
 
 /* THUMBNAIL HOVER CARD — modeled on production's #tooltip + .tt-thumb. */

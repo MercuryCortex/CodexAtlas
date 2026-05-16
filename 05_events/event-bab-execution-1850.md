@@ -5,7 +5,7 @@ name: "Execution of the Bab — Founding Martyrdom of the Bahá'í Faith"
 date-earliest: 1850
 date-latest: 1850
 region: "Tabriz, Iran (Qajar Persia)"
-traditions-involved: ["[[tradition-bahai]]", "[[tradition-islam-shia]]"]
+traditions-involved: ["[[tradition-baha-i]]", "[[tradition-shia-islam]]"]
 persons-involved: ["[[the-bab]]", "[[bahaullah]]"]
 status: "metadata"
 refs:
@@ -94,8 +94,8 @@ The Bab's execution follows the dying-founder paradigm with unusual precision:
 ## Connections
 - → [[the-bab]] — *protagonist*
 - → [[bahaullah]] — *successor*: the Bab's martyrdom precipitates Bahá'u'lláh's self-revelation
-- → [[tradition-bahai]] — *founding-martyrdom*: the execution that is the hinge of the faith's history
-- → [[tradition-islam-shia]] — *context*: the Bab emerged from Shia messianic expectation (the Hidden Imam tradition)
+- → [[tradition-baha-i]] — *founding-martyrdom*: the execution that is the hinge of the faith's history
+- → [[tradition-shia-islam]] — *context*: the Bab emerged from Shia messianic expectation (the Hidden Imam tradition)
 - → [[theme-dying-founder-paradigm]] — *instance*: dying forerunner whose martyrdom enables the tradition's greater figure
 - → [[theme-persecution-as-legitimation]] — *instance*: the most intense per-capita founding persecution in modern religious history
 - → [[martyrdom-theology]] — *Bahá'í-instance*: the Bab's death as the faith's founding sacrifice
