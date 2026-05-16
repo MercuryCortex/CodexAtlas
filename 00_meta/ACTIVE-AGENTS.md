@@ -29,6 +29,13 @@ _Hand-maintained. Each agent currently working in the vault appends a claim bloc
 
 ---
 
+## music-kabbalah-alchemy-1 — 3 Kabbalah + alchemy music nodes — FINISHED
+- Owned: `10_music/music-zohar-sound-mysticism.md` (NEW full), `10_music/music-abulafia-prophetic-kabbalah.md` (NEW full), `10_music/music-zosimos-alchemical-sound.md` (NEW full)
+- Status: FINISHED — commit `b61c59e`. Build: 58 music nodes · 15893 edges · 0 YAML errors · 0 dead links introduced
+- MASSIVE WIN: (1) Zohar sefirot-as-resonant-chambers vs. Valentinian aeons-as-harmonic-series — same sonic-emanation metaphor independently developed in medieval Castile (1280) and late-antique Alexandria (150–220 CE); (2) Abulafia's ziruf letter-permutation = Iamblichean theurgic vowel-sequences = Hindu mantra — three independent traditions with identical sonic-altered-state technology (specific rhythmic sound patterns + breath coordination → divine-contact altered states); (3) Zosimos's sonic conservation law — voice persists through alchemical dissolution = Logos ontologically prior to matter; alchemy is "forced modulation" between elemental "keys" in the Pythagorean ratio system
+
+---
+
 ## alphabet-indic-runes-1 — 6 eastern+northern sacred script nodes — IN PROGRESS
 - Owns: 11_alphabets/alphabet-devanagari-sacred.md (NEW), 11_alphabets/alphabet-brahmi-origin.md (NEW), 11_alphabets/alphabet-tibetan-tantric.md (NEW), 11_alphabets/alphabet-elder-futhark.md (NEW), 11_alphabets/alphabet-ogham.md (NEW), 11_alphabets/alphabet-avestan.md (NEW)
 - Also touches: src/data/patterns.js (2 new entries), stubs for missing wikilink targets
