@@ -702,6 +702,164 @@ window.ALPHA_GLYPH_DATA = [
     relatedNodes: ['alphabet-medu-netjer', 'alphabet-creation-by-word'],
   },
 
+  // ── Egyptian hieroglyph expansion wave 3 — hidden god, moon, numbers, emblems ──
+
+  // — The Hidden and The Paired —
+  {
+    letter: '𓁟', name: 'Amun', meaning: 'the hidden one — the god whose name cannot be seen', gardiner: 'C3',
+    unicode: 0x01305F, phoneme: 'jmn', greek: '(none)', latin: '(none)',
+    hebrew: '(none)', arabic: '(none)', phoenician: '(none)', scriptOnly: ['hieroglyph'],
+    note: 'Amun (or Amen) is "the hidden one" — the supreme god of Thebes and, during the New Kingdom, effectively the national god of Egypt. He is depicted as a man with two tall ostrich feathers on his head. His name means "hidden" or "concealed." He cannot be depicted directly; every image is only an approximation. With Ra he forms Amun-Ra, the ultimate solar creator.',
+    investigationHighlight: '"Amen" — the word spoken at the end of every Jewish, Christian, and Islamic prayer — is Amun\'s name. The Hebrew word "amen" (אמן) means "so be it / truly" and shares its consonant root with the Egyptian Amun (jmn = hidden/true). Early Christian theologians noticed this and debated whether "amen" preserved an Egyptian divine name. Revelation 3:14 uses "Amen" as a title for Christ: "The Amen, the faithful and true witness, the beginning of God\'s creation." The god whose name means "the hidden one" may be embedded, unnoticed, in the closing word of every prayer in three world religions.',
+    relatedNodes: ['alphabet-medu-netjer', 'alphabet-creation-by-word', 'alphabet-sefer-yetzirah'],
+  },
+  {
+    letter: '𓁪', name: 'Nephthys', meaning: 'lady of the house — keeper of the boundary of death', gardiner: 'C13',
+    unicode: 0x01306A, phoneme: 'nbt-ḥwt', greek: '(none)', latin: '(none)',
+    hebrew: '(none)', arabic: '(none)', phoenician: '(none)', scriptOnly: ['hieroglyph'],
+    note: 'Nephthys is the fourth child of Geb and Nut — Set\'s wife, Osiris\'s sister, Isis\'s constant companion. Her name means "Lady of the House" (the House being the sky or the horizon). She is always present at death alongside Isis: the two sisters stand at opposite ends of every coffin, their wings spread. Where Isis faces life, Nephthys faces the threshold.',
+    investigationHighlight: 'Nephthys is the Egyptian personification of liminal space — the boundary between life and death, the edge of the desert, the horizon line. She has no mythology of her own; she exists entirely in relation to others (Isis\'s shadow, Set\'s wife, Osiris\'s mourner). Yet she is present at every death and every resurrection in the Egyptian corpus. The paired mourning women — Isis and Nephthys — at the head and foot of the coffin are the prototype for every paired mourner scene in ancient art. In Christian iconography, Mary Magdalene and the Virgin Mary at the foot and head of the cross are the same compositional structure: the two women, one facing resurrection, one facing loss, both present at the moment of death.',
+    relatedNodes: ['alphabet-medu-netjer', 'alphabet-creation-by-word'],
+  },
+  {
+    letter: '𓁤', name: 'Min', meaning: 'the oldest god — primal fertility, the raised arm', gardiner: 'C8',
+    unicode: 0x013064, phoneme: 'mnw', greek: '(none)', latin: '(none)',
+    hebrew: '(none)', arabic: '(none)', phoenician: '(none)', scriptOnly: ['hieroglyph'],
+    note: 'Min is one of the oldest Egyptian deities — attested from predynastic times (c. 3100 BCE). He is depicted as a man with an erect phallus and a raised right arm holding a flail. He is the god of male fertility, the Eastern Desert, and the harvest. His festivals involved the pharaoh harvesting grain and releasing a white bull. His double-plumed crown was later combined with Amun\'s.',
+    investigationHighlight: 'Min\'s raised arm and flail is the oldest image of divine masculine power in Egyptian religion. The gesture — single arm raised, holding an implement — appears in the earliest known Egyptian religious images at Koptos (c. 3100 BCE), predating the pyramid texts by 500 years. The raised-arm gesture survives in: the Jewish blessing posture (raised arms, spread fingers), the Islamic takbir gesture (hands raised to ears), and the priestly blessing of the Catholic mass (raised arms). The original Egyptian gesture of male divine authority flows unbroken into every modern religious hand position.',
+    relatedNodes: ['alphabet-medu-netjer', 'alphabet-creation-by-word'],
+  },
+  {
+    letter: '𓃗', name: 'Apis Bull', meaning: 'the living god — the divine incarnate in an animal', gardiner: 'E6',
+    unicode: 0x0130D7, phoneme: 'ḥp', greek: '(none)', latin: '(none)',
+    hebrew: '(none)', arabic: '(none)', phoenician: '(none)', scriptOnly: ['hieroglyph'],
+    note: 'The Apis Bull was the living incarnation of Ptah — a real black bull, born with specific markings (a white triangle on the forehead, a crescent moon on the flank), identified by priests as the god made flesh, housed in the temple of Ptah at Memphis, worshipped during his lifetime, and buried with full funerary rites at death. Each Apis bull was unique and irreplaceable.',
+    investigationHighlight: 'The Apis Bull is one of the most explicit ancient cases of a god living in a physical animal body — the divine incarnate in biological form. When Moses descends from Sinai to find the Israelites worshipping the Golden Calf (Exodus 32), biblical scholars widely identify this as Apis Bull worship: the Israelites, recently escaped from Egypt, defaulted to the sacred bull theology they had lived with. The Golden Calf is an Egyptian religious memory. Aaron\'s statement — "These are your gods, O Israel, who brought you up out of Egypt" — echoes exactly the Apis theology: the bull IS the divine made present. The Exodus story\'s central crisis is Apis worship by former Egyptian slaves.',
+    relatedNodes: ['alphabet-medu-netjer', 'alphabet-creation-by-word'],
+  },
+  {
+    letter: '𓅐', name: 'Nekhbet Vulture', meaning: 'the mother vulture — protection from above', gardiner: 'G14',
+    unicode: 0x013150, phoneme: 'nḫbt', greek: '(none)', latin: '(none)',
+    hebrew: '(none)', arabic: '(none)', phoenician: '(none)', scriptOnly: ['hieroglyph'],
+    note: 'Nekhbet is the vulture goddess of Upper Egypt — depicted as a white vulture hovering with wings spread, clutching a shen ring (eternity) in her talons. She is the patron of the pharaoh and the divine mother. With Wadjet the cobra (Uraeus), she forms the "Two Ladies" — the protective pair of the pharaoh\'s titles. The vulture was sacred because female vultures were believed to conceive from the wind.',
+    investigationHighlight: 'The belief that vultures are all female and conceive from the wind made Nekhbet the symbol of virgin conception in the ancient world. This was not metaphor — it was ornithological "fact" as understood in antiquity. Horapollo (5th c. BCE), Plutarch, and early Christian theologians cited the "virgin vulture" as evidence that virgin birth was possible in nature. Tertullian and other Church Fathers used the vulture-conception argument to defend the Virgin Birth. The theological argument for Mary\'s virginity ran, in part, through an Egyptian ornithological error: the vulture mother goddess who needs no male became the scientific proof that the Virgin Mother was not biologically impossible.',
+    relatedNodes: ['alphabet-medu-netjer', 'alphabet-creation-by-word'],
+  },
+
+  // — Celestial Signs —
+  {
+    letter: '𓇹', name: 'Moon Crescent', meaning: 'the lunar cycle — the measure of sacred time', gardiner: 'N11',
+    unicode: 0x0131F9, phoneme: 'jꜥḥ', greek: '(none)', latin: '(none)',
+    hebrew: '(none)', arabic: '(none)', phoenician: '(none)', scriptOnly: ['hieroglyph'],
+    note: 'The crescent moon is the sign for the moon god Iah (jꜥḥ), later identified with Thoth and Khonsu. The moon is the left eye of Horus — torn out by Set in their battle, restored by Thoth, which is why the moon waxes and wanes. The crescent is also the sign for the lunar calendar: the Egyptians tracked both solar (civil) and lunar (religious) calendars simultaneously.',
+    investigationHighlight: 'The crescent moon is the single most widely used religious symbol in the world after the cross. It is the emblem of Islam (on every Muslim-majority nation\'s flag), a symbol of Cybele/Artemis/Diana in antiquity, and the crown of the Virgin Mary in Catholic iconography ("a woman clothed with the sun, with the moon under her feet," Revelation 12:1). In all cases, the crescent connects to a divine feminine or to sacred time. The Egyptian lunar calendar governed festival dates — all Egyptian religious observance was lunar-timed. Jewish, Islamic, and Hindu calendars remain lunar or lunisolar: the moon that Thoth restored in the myth of Horus and Set is still timing the Ramadan fast and the Jewish High Holidays.',
+    relatedNodes: ['alphabet-medu-netjer', 'alphabet-creation-by-word'],
+  },
+
+  // — Phonetic Sacred Signs —
+  {
+    letter: '𓅓', name: 'Owl', meaning: 'm — the sound of night, the letter of the silent', gardiner: 'G17',
+    unicode: 0x013153, phoneme: 'm', greek: '(none)', latin: '(none)',
+    hebrew: '(none)', arabic: '(none)', phoenician: '(none)', scriptOnly: ['hieroglyph'],
+    note: 'The barn owl is one of the most frequently used phonetic signs in the Egyptian hieroglyphic script — it spells the consonant "m." It is unilateral: one sign, one sound. In Egyptian writing, the owl always faces the reader — uniquely, it faces backward compared to other signs (which face the direction of reading). When hieroglyphs are read right to left, the owl faces left; when left to right, it faces right.',
+    investigationHighlight: 'The owl in Egyptian hieroglyphs is a purely phonetic sign — it means nothing except its sound. Yet the choice of the owl for the "m" consonant is not arbitrary: owls are nocturnal, associated with the boundary between day and night, heard but rarely seen. "M" in the Semitic abjad is Mem (מ), the water sign — another boundary marker. The owl\'s reversed orientation in the script (always facing the reader) may indicate that it was considered "other" — the sign that looks back at you. Across traditions, the owl marks the threshold: Athena\'s owl (wisdom at the boundary of knowledge), Roman owls as death omens, Aztec owl as Mictlantecuhtli\'s messenger. The hieroglyph of the m-sound chose the most liminal bird.',
+    relatedNodes: ['alphabet-medu-netjer', 'alphabet-creation-by-word'],
+  },
+  {
+    letter: '𓅱', name: 'Quail Chick', meaning: 'w — the birth consonant, the newest of sounds', gardiner: 'G43',
+    unicode: 0x013171, phoneme: 'w', greek: '(none)', latin: '(none)',
+    hebrew: '(none)', arabic: '(none)', phoenician: '(none)', scriptOnly: ['hieroglyph'],
+    note: 'The quail chick is the hieroglyph for the consonant "w" — one of the most common unilateral signs in Egyptian. It appears in countless words. The quail chick is a newborn animal — downy, just hatched — which gave it associations with new life, dawn, and the beginning of things. The sign for the sound "w" (which can also be a semi-vowel, like modern "w") is a newly born bird.',
+    investigationHighlight: 'The quail chick hieroglyph for "w" is a phonetic fossil: it preserves the Egyptian scribal logic of sound-as-nature. The youngest bird encodes the sound that begins words of becoming. In Egyptian, "wnn" (to be, to exist) begins with this chick. The word for the sun\'s boat (wꜣ) begins with it. The god Osiris\'s resurrection formula uses it. The connection between the "w" sound and beginnings/becoming survived into the Latin alphabet (through Waw → Vav → F/V/W chain) — the most productive letter in history is still sounded by the sign of a freshly hatched bird.',
+    relatedNodes: ['alphabet-medu-netjer', 'alphabet-phoenician'],
+  },
+
+  // — Royal Emblems of the Two Lands —
+  {
+    letter: '𓇓', name: 'Sedge Plant', meaning: 'Upper Egypt — the southern kingdom', gardiner: 'M23',
+    unicode: 0x0131D3, phoneme: 'sw', greek: '(none)', latin: '(none)',
+    hebrew: '(none)', arabic: '(none)', phoenician: '(none)', scriptOnly: ['hieroglyph'],
+    note: 'The sedge plant (Cyperus rotundus, a tall reed grass) is the heraldic emblem of Upper Egypt — the Nile Valley, the south. The pharaoh\'s title always included "nsw-bity" — King of the Sedge and the Bee — meaning "King of Upper and Lower Egypt." The sedge is the southern kingdom; the bee is the northern.',
+    investigationHighlight: 'The Pharaoh\'s double title "He of the Sedge and the Bee" (nsw-bity) is the world\'s oldest recorded dual-sovereignty formula — a king who rules two things at once, whose very name is a conjunction. The tradition of compound sovereignty titles persists: "King of England and France" (English monarchs claimed France for centuries), "Emperor of the Holy Roman Empire" (technically ruler of both sacred and secular), the Mughal title Shahanshah (King of Kings). Every compound royal title echoes the Egyptian formula: you are not truly a world-ruler unless you can name the two opposite things you hold together.',
+    relatedNodes: ['alphabet-medu-netjer', 'alphabet-creation-by-word'],
+  },
+  {
+    letter: '𓆤', name: 'Bee', meaning: 'Lower Egypt — the northern kingdom of the Delta', gardiner: 'L2',
+    unicode: 0x0131A4, phoneme: 'bjt', greek: '(none)', latin: '(none)',
+    hebrew: '(none)', arabic: '(none)', phoenician: '(none)', scriptOnly: ['hieroglyph'],
+    note: 'The bee is the emblem of Lower Egypt — the Delta, the north, the land near the sea. Paired with the sedge plant, it completes the "Two Lands" formula that defined pharaonic sovereignty. Egypt\'s honey was famous in antiquity; bee-keeping is documented from the Old Kingdom (c. 2400 BCE). The bee hieroglyph is a meticulous rendering of the insect — wings, body segments, antennae.',
+    investigationHighlight: 'The bee as royal emblem — Lower Egypt — is one of the strangest choices in any heraldic tradition, and one of the most suggestive. In the classical world, the bee was associated with the soul: Pythagoreans believed that just souls were reincarnated as bees (Porphyry, De Antro Nympharum). The Merovingian kings of France (c. 500 CE) used bees as royal symbols — when Childeric I\'s tomb was opened in 1653, it contained 300 golden bee amulets. Napoleon adopted the bee for his imperial emblems specifically to connect to ancient kingship and circumvent the revolutionary rejection of the fleur-de-lis. The bee on the pharaoh\'s title → Merovingian bee-kings → Napoleon\'s bee emblem: a 5,000-year line of the bee as sovereign emblem.',
+    relatedNodes: ['alphabet-medu-netjer', 'alphabet-creation-by-word'],
+  },
+
+  // — Sacred Objects —
+  {
+    letter: '𓎬', name: 'Tyet / Knot of Isis', meaning: 'the blood of Isis — protection through the divine feminine', gardiner: 'V39',
+    unicode: 0x0133AC, phoneme: 'tyt', greek: '(none)', latin: '(none)',
+    hebrew: '(none)', arabic: '(none)', phoenician: '(none)', scriptOnly: ['hieroglyph'],
+    note: 'The Tyet (also called the Knot of Isis or Girdle of Isis) resembles an Ankh with its arms folded down. It was worn as a protective amulet and placed in mummy wrappings. The Book of the Dead specifies the Tyet must be made of red jasper — it is the "blood of Isis," her menstrual blood as divine life force. The Tyet and the Djed pillar always appear together: Isis (Tyet) and Osiris (Djed).',
+    investigationHighlight: 'The Tyet amulet — made of red jasper to represent divine blood — is one of the oldest documented cases of sacred blood theology in world religion. The blood of the goddess protects the dead. This structure runs directly into: the blood of Christ that protects (Passover blood on the doorpost → Christ as Passover lamb), the red thread tied on a baby\'s wrist in Jewish and Turkish folk tradition to ward off the evil eye, the red cord of Rahab (Joshua 2:18), and the Buddhist red string from pilgrimage sites. The red protective cord/amulet is one of the most persistent ritual objects in world history, and the Tyet — red jasper, blood of a goddess — is its oldest documented form.',
+    relatedNodes: ['alphabet-medu-netjer', 'alphabet-creation-by-word'],
+  },
+  {
+    letter: '𓋄', name: 'Menat Necklace', meaning: 'joy, health, and the music of the goddess', gardiner: 'R17',
+    unicode: 0x0132C4, phoneme: 'mnt', greek: '(none)', latin: '(none)',
+    hebrew: '(none)', arabic: '(none)', phoenician: '(none)', scriptOnly: ['hieroglyph'],
+    note: 'The Menat is a heavy beaded necklace with a distinctive counterweight at the back, sacred to Hathor. It was shaken ritually like a percussion instrument — the rattling sound was the voice of Hathor. The Menat was presented as a gift of joy; to receive it from the goddess was to receive health and pleasure. Priestesses of Hathor carried the Menat as their emblem of office.',
+    investigationHighlight: 'The Menat necklace embeds a medical theology: Hathor\'s counterweight (the Menat\'s heavy back element) was associated with healing. Hathor was the goddess of love, music, and medicine simultaneously — in the Egyptian framework, joy and health are the same force. The same integration appears in: the Greek Apollo (sun, music, healing — one god); the Ayurvedic concept that rasa (aesthetic experience/juice of life) is both health and beauty; and the modern immunological research showing that music and positive affect measurably improve immune function. The Egyptian goddess whose necklace was both percussion instrument and medical tool knew something the modern hospital is only rediscovering.',
+    relatedNodes: ['alphabet-medu-netjer', 'alphabet-creation-by-word'],
+  },
+  {
+    letter: '𓋔', name: 'Red Crown', meaning: 'Lower Egypt — the delta kingdom in power', gardiner: 'S3',
+    unicode: 0x0132D4, phoneme: 'dšrt', greek: '(none)', latin: '(none)',
+    hebrew: '(none)', arabic: '(none)', phoenician: '(none)', scriptOnly: ['hieroglyph'],
+    note: 'The Red Crown (Deshret) is the flat-topped crown with a coil at the front, worn by the rulers of Lower Egypt (the Delta). Its name means "the red thing" — red being the color of the desert, of Set, and of danger in Egyptian symbolism. The Red Crown was worn by the goddess Neith and the pharaoh when performing northern rites.',
+    investigationHighlight: 'The Red Crown and White Crown together form the Double Crown, but individually they encode the oldest documented color symbolism in political theology. Red = Delta/north/danger/Set/activity. White = Valley/south/purity/Osiris/stability. The color opposition runs into: medieval European heraldry (gules/red = boldness; argent/white = peace), Chinese imperial color theology (red = south/fire/vitality), and modern traffic lights (red = stop/danger). The Egyptian choice to make the crown of the northern, delta kingdom red — identifying it with Set, with the desert, with the challenging, dangerous principle — may be the origin of every red = danger/power color code in Western symbolism.',
+    relatedNodes: ['alphabet-medu-netjer', 'alphabet-creation-by-word'],
+  },
+
+  // — The Number System —
+  {
+    letter: '𓏤', name: 'Number 1 (Stroke)', meaning: 'one — the unit, the singular', gardiner: 'Z1',
+    unicode: 0x0133E4, phoneme: 'wꜤ', greek: '(none)', latin: '(none)',
+    hebrew: '(none)', arabic: '(none)', phoenician: '(none)', scriptOnly: ['hieroglyph'],
+    note: 'A single vertical stroke is the Egyptian number 1. Egyptian mathematics used purely additive notation: numbers were written by repeating signs. Nine strokes (nine 1s) = 9. No zero existed. No positional notation. Yet Egyptian scribes calculated the area of a circle, estimated π to 3.16, and built the pyramids with this system.',
+    investigationHighlight: 'The Egyptian number system had no zero and no positional notation — yet it was sufficient to build the most precise large stone structures in history. Every number from 1 to 9,999,999 could be written using the seven signs (stroke, arch, coil, lotus, finger, frog, Heh). The system was additive: you wrote the symbols for each component and summed them. The absence of zero is significant: Egyptian mathematics was concrete, not abstract. You could not write "no cattle" — you would just not write the cattle number. The philosophical implications of zero (a symbol for nothing, which is itself something) required the Indian mathematical tradition to develop separately. The concept of zero as a number entered Western mathematics from India via the Arabs (al-Khwarizmi, c. 820 CE), not from Egypt. Egypt gave the world its first written numbers but not its most radical number.',
+    relatedNodes: ['alphabet-medu-netjer', 'alphabet-isopsephy-greek'],
+  },
+  {
+    letter: '𓎆', name: 'Number 10 (Arch)', meaning: 'ten — the first multiple, the counting of hands', gardiner: 'V20',
+    unicode: 0x013386, phoneme: 'mḏ', greek: '(none)', latin: '(none)',
+    hebrew: '(none)', arabic: '(none)', phoenician: '(none)', scriptOnly: ['hieroglyph'],
+    note: 'The Egyptian hieroglyph for 10 is a cattle hobble or arch shape — ten strokes bundled into one symbol. To write 23, an Egyptian scribe wrote two arch-10s and three strokes. The decimal structure mirrors finger-counting: 10 is one full hand-count complete.',
+    investigationHighlight: 'The Egyptians chose base-10 for their number system — as did almost every independent mathematical tradition (Babylon used base-60 as a supplement, but base-10 was primary across Egypt, India, China, Mesoamerica). The convergence on base-10 across unconnected civilizations is almost certainly anatomical: humans have ten fingers. The Egyptian number system is a crystallized version of hand-counting, turned into a written script. Every time you use decimal arithmetic, you are using a system designed around the human body — and documented first in Egypt c. 3000 BCE.',
+    relatedNodes: ['alphabet-medu-netjer', 'alphabet-isopsephy-greek'],
+  },
+  {
+    letter: '𓍢', name: 'Number 100 (Coil)', meaning: 'hundred — the coil of rope, length made abstract', gardiner: 'V1',
+    unicode: 0x013362, phoneme: 'šnt', greek: '(none)', latin: '(none)',
+    hebrew: '(none)', arabic: '(none)', phoenician: '(none)', scriptOnly: ['hieroglyph'],
+    note: 'The Egyptian number 100 is a coil of rope. Measurement, surveying, and large-scale construction were the domains where hundreds were needed — and rope was the primary measuring tool. The choice of a rope coil for 100 is the hieroglyphic equivalent of "a rope\'s worth" — the number that represents the scale of real construction projects.',
+    investigationHighlight: 'Egyptian rope-stretchers (harpedonaptai in Greek) used knotted ropes to survey land boundaries and lay out the foundations of temples and pyramids. The 3-4-5 right triangle (created by a rope knotted at 3, 4, and 5 equal intervals) was their primary tool for creating perfect right angles. Pythagoras\'s theorem, attributed to the Greeks, was used practically by Egyptian surveyors 2,000 years before Pythagoras. The rope-coil that is the number 100 is also the tool that built the buildings that required those numbers. The sign contains its own application.',
+    relatedNodes: ['alphabet-medu-netjer', 'alphabet-isopsephy-greek'],
+  },
+  {
+    letter: '𓂭', name: 'Number 10,000 (Finger)', meaning: 'ten thousand — the human body as cosmic measure', gardiner: 'D50',
+    unicode: 0x0130AD, phoneme: 'ḏbꜤ', greek: '(none)', latin: '(none)',
+    hebrew: '(none)', arabic: '(none)', phoenician: '(none)', scriptOnly: ['hieroglyph'],
+    note: 'The Egyptian number 10,000 is a pointed finger — the finger used for counting and pointing. The word "ḏbꜤ" means both "finger" and "10,000." One complete count of all fingers on all hands ten times over — the finger as the unit of repetition across a large scale. The finger-glyph for ten thousand is also the determinative in the word for "sealed" and "counted."',
+    investigationHighlight: 'The Egyptian body-as-measure system is one of the oldest documented. The cubit (forearm length), the palm (width of four fingers), the digit (width of one finger), and the span (spread hand) were all standard units. The Great Pyramid\'s dimensions are in royal cubits (52.4 cm) to extraordinary precision. The same body-measurement principle appears in: the Roman foot (pes), the English inch (originally a thumb-width), the yard (an arm-length), and the fathom (outstretched arms). Every imperial measurement system before the metric is a fossilized Egyptian body. The modern rejection of these measures in favor of abstract metric units is the first time in 5,000 years that human measurement was detached from the human body.',
+    relatedNodes: ['alphabet-medu-netjer', 'alphabet-isopsephy-greek'],
+  },
+  {
+    letter: '𓆐', name: 'Number 100,000 (Tadpole)', meaning: 'a hundred thousand — the flood and the uncountable', gardiner: 'I8',
+    unicode: 0x013190, phoneme: 'ḥfn', greek: '(none)', latin: '(none)',
+    hebrew: '(none)', arabic: '(none)', phoenician: '(none)', scriptOnly: ['hieroglyph'],
+    note: 'The Egyptian number 100,000 is a tadpole — because after the Nile\'s annual inundation, tadpoles appeared in their millions in the receding floodwaters. The tadpole was the visible image of a number beyond easy counting. The same sign is used as the determinative for the word "many" and "numerous." The frog/tadpole hieroglyph also appears on the Heqet amulet — the frog goddess of fertility.',
+    investigationHighlight: 'The tadpole as 100,000 is the Egyptian system\'s most poetic number: the sign for "beyond normal counting" is the thing that appears in uncountable multitudes after the life-giving flood. The Nile flood deposited the rich black silt (Kemet — "the Black Land," Egypt\'s name for itself) that made agriculture possible, and the tadpoles that swarmed in its wake were the visual proof of the flood\'s fertility. The frog goddess Heqet, associated with the same symbol, was the goddess of childbirth — she counted souls into bodies. The number 100,000, the symbol of life erupting from floodwater, and the goddess of new birth all share the same hieroglyph.',
+    relatedNodes: ['alphabet-medu-netjer', 'alphabet-creation-by-word'],
+  },
+
   // ── Arabic-only additions (scriptOnly: ['arabic']) ────────────────────────
   // 6 letters Arabic developed beyond the 22 Phoenician base.
   // Arabic reached 28 letters; these 6 have no direct Phoenician ancestor.
