@@ -1587,3 +1587,21 @@ Files: sacred-cauldron.md (NEW) · cerridwen.md (STUB, deity) · bran-the-blesse
 - Suspects: 731 total (up from 553 — new OVERRIDES with redirects added to suspect pool)
 - Remaining: ~258 nulls (mostly abstract themes without Wikipedia images, obscure persons)
 - commit: pending
+
+---
+
+## quran-wiring-1 — Quran corpus wiring (SCRIPTURE_CORPORA + figure stubs) — FINISHED 2026-05-16
+**Status: FINISHED**
+- 11 new Quranic figure stubs: iblis-shaytan, hud-prophet, salih-prophet, shuayb-prophet, luqman-sage, dhu-al-qarnayn, al-khidr, uzayr, zechariah-priest, pharaoh-exodus, lut
+- SCRIPTURE_CORPORA: quran (4-section Meccan-Medinan Nöldeke) + quran-manzil (7-section traditional)
+- Cross-trail arcs: Moses, Abraham, Mary, Jesus, Pharaoh, Solomon, David, Noah across Bible+Quran
+- 2569 nodes · 15403 edges · 0 dead links introduced
+- Commits: 84a291d (stubs), fe74c3b (corpus), 49eda2d (closeout)
+
+---
+
+## wikidata-image-1 — Wikidata P18 secondary image system — IN PROGRESS 2026-05-16
+- Owning: `fetch_wikidata_thumbnails.py` (NEW), `_assets/thumbs_cache.json` (write)
+- Goal: Query Wikidata P18 (canonical entity image) for the 392 suspects with similarity < 0.35;
+  update cache with better images; report to 00_meta/WIKIDATA-REVIEW.md
+- Status: background run in progress (~23 min); will update cache + report on completion
