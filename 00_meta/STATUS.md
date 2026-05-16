@@ -389,3 +389,14 @@ Zero behavior change. The atlas renders identically. The split unlocks:
 - `09_symbols/memento-mori-skull.md` — Skull as cross-tradition contemplation; Theravāda sīvathikā / Stoic practice / Vanitas genre / Yorick; MASSIVE WIN: Kapāla (Vajrayāna skull-cup) ↔ Masonic Chamber of Reflection — identical initiatory function; Celtic sacred head; Golgotha/Adam's skull
 - `09_symbols/cauldron-of-rebirth.md` — 4 Celtic cauldrons (Dagda/Pair Dadeni/Cerridwen/Dyrnwch); MASSIVE WINs: Cauldron → Holy Grail (Loomis 1927 T1) / Cauldron = Alchemical vessel (athanor) / Ocean of Milk (Vedic cosmic cauldron) / Norse Mead of Poetry
 - `09_symbols/sacrifice-substitution.md` — Universal substitution; Akedah / Azazel-scapegoat / Greek pharmakos / Eucharist / Vedic yajamāna / Bodhisattva merit-transfer; Girard mimetic theory (T1, tier-disciplined); 7-tradition comparison table
+
+## goblin-hermetic-depth-1 — FINISHED 2026-05-16
+
+**4 new symbol nodes** · 195 total symbols · 14544 edges · 0 YAML errors · 0 dead links introduced · commit c9b829e
+
+Note: omphalos.md already existed → wrote sacred-pearl.md as fourth node
+
+- `09_symbols/abraxas.md` — Basilidean Gnostic supreme deity (365 solar isopsephy); 3000+ magical amulets (Bonner 1950 T1); MASSIVE WIN: Jung's *Septem Sermones ad Mortuos* (1916) under "Basilides of Alexandria" pseudonym — Abraxas as pre-moral totality beyond God/Devil split; divine-name-as-number cross-tradition table (Abraxas/Tetragrammaton/AUM/INRI)
+- `09_symbols/golden-ratio.md` — φ = Pythagorean pentagram (Burkert T1); Euclid *Elements* Book VI formalization; Pacioli *De Divina Proportione* with Leonardo illustrations; verified phyllotaxis (Jean 1994 T1) + Lu & Steinhardt *Science* 2007 quasi-crystalline girih tiles; Markowsky 1992 (T1) correcting nautilus-shell and Parthenon misconceptions; Sri Yantra tier-2 note
+- `09_symbols/holy-grail.md` — Full textual tradition: Chrétien de Troyes (1190, no Christian ID) → Robert de Boron (1200, cup of Last Supper) → Wolfram von Eschenbach (1210, *lapis exillis* = Philosopher's Stone) → Malory (1485, Galahad/Perceval/Bors); Waste Land structure (Frazer/Weston/Eliot); MASSIVE WIN: 7-tradition sacred-vessel table (Dagda/Cauldron of Rebirth/Cerridwen/Grail/Alchemical vas/Sampo/Amrita); Jung/von Franz individuation analysis; Templar connection documented as Tier-3/4 (Plantard forgery noted)
+- `09_symbols/sacred-pearl.md` — Gnostic *Hymn of the Pearl* (*Acts of Thomas* c.200-250 CE): Prince→Egypt→serpent→awakening→return allegory fully decoded; Chinese dragon-pearl (*lóng zhū*) as cosmic wisdom + inner-alchemy golden pill; Islamic *lulū* in Quran (Q52:24, Q56:22-23) + Sufi *maʿrifa*; Hindu *maṇi*/navaratna/moon + Samudra Manthan + *Maṇi Padme Hūm*; MASSIVE WIN: 6-tradition transformation-through-suffering table (wound→pearl = dukkha→bodhicitta = prima materia→Philosopher's Stone = shadow→Self)
