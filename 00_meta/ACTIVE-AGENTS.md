@@ -88,6 +88,13 @@ _Hand-maintained. Each agent currently working in the vault appends a claim bloc
 
 ---
 
+## ~~opus-pantheon-v2-bake-1 — Phase D · force-relaxation bake + camera fit — started 2026-05-17 — DONE~~
+- ~~Owned: `src/js/views/pantheon-v2.js`, `index.html`~~
+- ~~Status: done — relaxPositions() one-shot pre-paint bake + sigma camera ratio 0.78~~
+- ~~Next: E (DOM node labels), F (horizontal family rim labels)~~
+
+---
+
 ## goblin-islamic-sacred-1 — symbols / Islamic sacred symbols + Sudarshana + Ashtamangala thread — started 2026-05-16 — IN PROGRESS
 - Owning: `09_symbols/rub-el-hizb.md` (NEW), `09_symbols/basmala.md` (NEW), `09_symbols/sudarshana-chakra.md` (NEW), `09_symbols/ashtamangala.md` (NEW)
 - Goal: Rub el Hizb 8-pointed star cross-tradition (Ishtar/crescent/Islamic heraldry); Basmala as sacred-word-as-image (parallels Tetragrammaton/Aum/IHS); Sudarshana Chakra as spinning divine weapon + Wheel of Ezekiel parallel; Ashtamangala as complete 8-symbol auspiciousness set

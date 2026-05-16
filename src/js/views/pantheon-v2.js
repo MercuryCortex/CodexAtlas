@@ -54,6 +54,119 @@
     return Math.abs(h);
   }
 
+  // ============================================================
+  // PHASE D — FORCE-RELAXATION BAKE
+  // ============================================================
+  // One-shot pre-paint relaxation pass. Mirrors production's
+  // d3.forceSimulation (app.js:1322-1361) but bakes settled positions
+  // before sigma ever paints — no live loop, zero render-perf cost.
+  //
+  // Three forces:
+  //   anchor  — pull each node toward its computed wedge-slot (the
+  //             radial-row position from computeWedgePositions)
+  //   charge  — gentle Coulomb repulsion from neighbours WITHIN the
+  //             same wedge (other wedges are angularly clamped out)
+  //   collide — non-overlap constraint (radius ∝ √degree)
+  //
+  // Hard wedge clamp every iteration:
+  //   radial   ∈ [Rinner + 14,  Router - 14]
+  //   angular  ∈ [center - halfArc + padA,  center + halfArc - padA]
+  //
+  // O(Σ wedge_size²) per iter ≈ O(10k) — finishes in ~50 ms for 500 nodes.
+  function relaxPositions(deities, positions, wedges, Rinner, Router, degree, iterations) {
+    iterations = iterations || 150;
+    // Group nodes by wedge for fast per-wedge pairwise force evaluation.
+    const wedgeMembers = new Map();
+    const wedgeByNode  = new Map();
+    deities.forEach(d => {
+      const w = wedges[d.family || 'Other'];
+      if (!w) return;
+      wedgeByNode.set(d.id, w);
+      if (!wedgeMembers.has(w.name)) wedgeMembers.set(w.name, []);
+      wedgeMembers.get(w.name).push(d.id);
+    });
+    // Per-node radius for collide (slightly larger than visual size for breathing).
+    const radius = new Map();
+    deities.forEach(d => {
+      const deg = degree.get(d.id) || 0;
+      radius.set(d.id, 9 + Math.sqrt(deg) * 1.5);
+    });
+    // Working state: { x, y, vx, vy, ax, ay } where (ax,ay) is the static anchor.
+    const P = new Map();
+    deities.forEach(d => {
+      const p = positions.get(d.id);
+      if (!p) return;
+      P.set(d.id, { x: p.x, y: p.y, vx: 0, vy: 0, ax: p.x, ay: p.y });
+    });
+    // Constants (tuned for V2's 220→540 world scale; production uses 14 px radial pad).
+    const ANCHOR_K     = 0.05;   // per-iter pull toward anchor (gentle)
+    const CHARGE_K     = -380;   // repulsion coefficient (Coulomb)
+    const CHARGE_RANGE = 180;    // max distance for charge to act
+    const COLLIDE_PAD  = 1.5;    // gap between node circles
+    const DAMP         = 0.55;
+    const RADIAL_PAD   = 14;
+    const ANG_PAD_MAX  = 0.045;
+    for (let iter = 0; iter < iterations; iter++) {
+      // 1) anchor force
+      P.forEach(p => {
+        p.vx += (p.ax - p.x) * ANCHOR_K;
+        p.vy += (p.ay - p.y) * ANCHOR_K;
+      });
+      // 2) per-wedge pairwise charge + collide
+      wedgeMembers.forEach(ids => {
+        for (let i = 0; i < ids.length; i++) {
+          const pi = P.get(ids[i]); if (!pi) continue;
+          const ri = radius.get(ids[i]);
+          for (let j = i + 1; j < ids.length; j++) {
+            const pj = P.get(ids[j]); if (!pj) continue;
+            const dx = pi.x - pj.x, dy = pi.y - pj.y;
+            const d2 = dx * dx + dy * dy;
+            if (d2 < 0.001) continue;
+            const dist = Math.sqrt(d2);
+            // CHARGE — inverse-square, capped range
+            if (dist < CHARGE_RANGE) {
+              const fmag = CHARGE_K / d2;
+              const fx = (dx / dist) * fmag, fy = (dy / dist) * fmag;
+              pi.vx -= fx; pi.vy -= fy;
+              pj.vx += fx; pj.vy += fy;
+            }
+            // COLLIDE — positional resolve if overlapping
+            const rj = radius.get(ids[j]);
+            const minDist = ri + rj + COLLIDE_PAD;
+            if (dist < minDist) {
+              const push = (minDist - dist) * 0.35;
+              const ux = dx / dist, uy = dy / dist;
+              pi.x += ux * push; pi.y += uy * push;
+              pj.x -= ux * push; pj.y -= uy * push;
+            }
+          }
+        }
+      });
+      // 3) integrate + hard wedge clamp
+      P.forEach((p, id) => {
+        p.vx *= DAMP; p.vy *= DAMP;
+        p.x += p.vx; p.y += p.vy;
+        const w = wedgeByNode.get(id); if (!w) return;
+        let r = Math.hypot(p.x, p.y) || 0.0001;
+        let ang = Math.atan2(p.y, p.x);
+        // angular clamp — signed shortest delta from wedge center
+        let delta = ((ang - w.center + Math.PI * 3) % (Math.PI * 2)) - Math.PI;
+        const halfArc = (w.a1 - w.a0) / 2;
+        const padA = Math.min(ANG_PAD_MAX, halfArc * 0.22);
+        const maxDelta = Math.max(0, halfArc - padA);
+        if (delta >  maxDelta) ang = w.center + maxDelta;
+        if (delta < -maxDelta) ang = w.center - maxDelta;
+        // radial clamp
+        if (r < Rinner + RADIAL_PAD) r = Rinner + RADIAL_PAD;
+        if (r > Router - RADIAL_PAD) r = Router - RADIAL_PAD;
+        p.x = r * Math.cos(ang);
+        p.y = r * Math.sin(ang);
+      });
+    }
+    // Write settled positions back
+    P.forEach((p, id) => positions.set(id, { x: p.x, y: p.y }));
+  }
+
   // FAMILY-WEDGE polar layout — same math as the main D3 Pantheon
   // (app.js around line 975), so the angular allocation is identical.
   function computeWedgePositions(deities, families) {
@@ -298,6 +411,12 @@
     const edges = EDGES.filter(e => idSet.has(e.source) && idSet.has(e.target));
     const degree = computeDegree(edges);
 
+    // Phase D — bake settled positions (force-relaxation pre-paint pass).
+    // Lets siblings within a wedge nudge tangentially / radially around each
+    // other for breathing room; hubs push minor deities sideways. Hard-clamped
+    // to the wedge so nothing escapes. ~50 ms one-shot, zero ongoing perf cost.
+    relaxPositions(deities, positions, wedges, Rinner, Router, degree, 150);
+
     // ----- build graphology graph -----
     const Graph = window.graphology.Graph || window.graphology.default || window.graphology;
     const graph = new Graph();
@@ -434,6 +553,11 @@
     };
 
     const sigma = new window.Sigma(graph, rootEl, settings);
+    // Zoom camera in so the diagram fills the viewport like production does.
+    // Sigma's default fit leaves ~25% padding on each side — too sparse for
+    // 500-node deity rings. Ratio 0.78 keeps a small margin without cropping
+    // family rim labels (which sit at Router+50).
+    try { sigma.getCamera().setState({ ratio: 0.78 }); } catch (e) {}
 
     // ============================================================
     // SVG OVERLAY — hulls (under canvas) + curved edges (under canvas).
