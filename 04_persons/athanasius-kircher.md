@@ -9,8 +9,8 @@ region: "Germany / Rome"
 date-born: 1602
 date-died: 1680
 historicity: "documented"
-texts-authored: ["[[phase-6-024-kircher-oedipus-aegyptiacus]] (1652–1654)", "*Prodromus Coptus* (1636)", "*Lingua Aegyptiaca Restituta* (1643)", "*Obeliscus Pamphilius* (1650)", "*Musurgia Universalis* (1650)", "*Mundus Subterraneus* (1665)", "*China Illustrata* (1667)", "~40 published works in total"]
-status: "metadata"
+texts-authored: ["[[phase-6-024-kircher-oedipus-aegyptiacus]] (1652–1654)", "*Prodromus Coptus* (1636)", "*Lingua Aegyptiaca Restituta* (1643)", "*Obeliscus Pamphilius* (1650)", "[[music-kircher-musurgia-universalis]] (1650)", "*Mundus Subterraneus* (1665)", "*China Illustrata* (1667)", "~40 published works in total"]
+status: "full"
 refs:
   - title: "Athanasius Kircher: The Last Man Who Knew Everything"
     author: "Findlen, Paula (ed.)"
