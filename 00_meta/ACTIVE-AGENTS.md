@@ -1456,3 +1456,10 @@ The things opus-foundation-1 claimed but never started are all still open:
 - Goal: Pagan Wheel of the Year — 8-sabbat calendar documented as 20th-c. Gardner/Nichols synthesis (Hutton T1) + MASSIVE WIN universal sacred year-wheel parallel (Chinese 24 solar terms / Aztec 365-day / Hindu / Jewish calendar cross-tradition table); Serpent Mound — world's largest serpent effigy + astronomical alignment (summer solstice sunset) + MASSIVE WIN cosmic-serpent-encircling-cosmic-egg pattern (Egyptian Apep / Norse Jörmungandr / Hindu Ananta Shesha / Aztec / Ohio earthen form); Sacred Feather — MASSIVE WIN three independent civilizations use feathers as measurement unit of the sacred (Egyptian Maat heart-weighing / Native American eagle-feather deed-honor / Aztec quetzal-feather value-index)
 - Hands-off: sacred-cave.md, blood-sacred.md, infinity-symbol.md, sacred-horse.md, jacobs-ladder.md, wheel-of-fortune.md, sigil.md, sacred-smoke.md, sacred-spring.md, sacred-number-zero.md, chaos-star.md, inverted-cross.md
 - Status: IN PROGRESS
+
+---
+
+## ~~goblin-mystery-depth-1 — symbols / sacred-cave + blood-sacred + infinity-symbol — started 2026-05-16 — FINISHED~~
+- ~~Owning: `09_symbols/sacred-cave.md` (NEW), `09_symbols/blood-sacred.md` (NEW), `09_symbols/infinity-symbol.md` (NEW)~~
+- ~~Goal: Sacred cave as universal initiation structure (Paleolithic → Greek → Mithraic → Christian → Buddhist → Platonic MASSIVE WIN cave-exit = enlightenment); Sacred blood cross-tradition cosmic-debt-paid-in-blood MASSIVE WIN (Aztec nextlahualli / Christian Eucharist / Vedic yajna / Dionysiac sparagmos); Infinity symbol / lemniscate independent mathematical-esoteric-topological MASSIVE WIN (Wallis 1655 / Bernoulli / Möbius strip / Rider-Waite Tarot / Ouroboros)~~
+- ~~Status: finished — 3 new full symbol nodes · 232 total symbols · 14792 edges · 0 YAML errors · 0 new dead links introduced · commit 0e20ea5~~
