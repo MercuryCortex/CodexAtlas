@@ -21,10 +21,10 @@ _Hand-maintained. Each agent currently working in the vault appends a claim bloc
 
 ---
 
-## goblin-primordial-matter-1 — symbols / primordial matter thread — started 2026-05-16 — IN PROGRESS
-- Owning: `09_symbols/prima-materia.md` (NEW), `09_symbols/nun-primordial-waters.md` (NEW), `09_symbols/chaos-primordial.md` (NEW), `09_symbols/tyet-isis-knot.md` (NEW)
-- Goal: Pre-creation void symbols across traditions; Nun+Chaos+Tohu+Tiamat+Prima Materia MASSIVE WIN; Tyet protective knot cross-tradition
-- Status: in-progress
+## ~~goblin-primordial-matter-1 — symbols / primordial matter thread — started 2026-05-16 — FINISHED 2026-05-16~~
+- ~~Owning: `09_symbols/prima-materia.md` (NEW), `09_symbols/nun-primordial-waters.md` (NEW), `09_symbols/chaos-primordial.md` (NEW), `09_symbols/tyet-isis-knot.md` (NEW)~~
+- ~~Goal: Pre-creation void symbols across traditions; Nun+Chaos+Tohu+Tiamat+Prima Materia MASSIVE WIN; Tyet protective knot cross-tradition~~
+- ~~Status: finished — see STATUS.md + commit goblin-primordial-matter-1~~
 
 ---
 
