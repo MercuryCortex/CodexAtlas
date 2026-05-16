@@ -8953,6 +8953,107 @@ function renderRitualsReligion(pane) {
   });
 }
 
+// ============================================================
+// VIEWS.music — sound cosmology · music-cosmos investigation.
+// Two modes: nodes (browse 10_music/ vault content) and findings (MASSIVE WIN).
+// ============================================================
+const _musicState = { mode: 'nodes' };
+
+VIEWS.music = {
+  title: 'Music',
+  subtitle: 'sound · cosmos · healing — how every civilization heard the universe',
+  render() {
+    document.getElementById('view-controls').innerHTML = `
+      <button class="btn btn-mini music-mode${_musicState.mode==='nodes'?' active':''}" data-mode="nodes">nodes</button>
+      <button class="btn btn-mini music-mode${_musicState.mode==='findings'?' active':''}" data-mode="findings">findings</button>
+    `;
+    document.querySelectorAll('.music-mode').forEach(b => {
+      b.onclick = () => { _musicState.mode = b.dataset.mode; setView('music'); };
+    });
+    legend.style('display', 'none').html('');
+    if (_musicState.mode === 'findings') return _renderMusicFindings();
+    return _renderMusicNodes();
+  }
+};
+
+function _renderMusicNodes() {
+  const pane = document.createElement('div');
+  pane.className = 'alpha-pane alpha-pane-live';
+  const nodes = DATA.nodes.filter(n => n.type === 'music');
+  const typeColors = {
+    'theory-concept': '#d4a55a',
+    'practice':       '#5aaca8',
+    'composition':    '#6e8c6b',
+    'text':           '#9a7ad4',
+    'instrument':     '#c47453',
+    'person-work':    '#5a7ec4',
+    'ritual':         '#a44a5a',
+    'other':          '#7a8090',
+  };
+  const typeOrder = ['theory-concept','practice','composition','text','instrument','person-work','ritual','other'];
+  const byType = {};
+  nodes.forEach(n => {
+    const t = n['music-type'] || 'other';
+    if (!byType[t]) byType[t] = [];
+    byType[t].push(n);
+  });
+  const ordered = typeOrder.filter(t => byType[t]).concat(Object.keys(byType).filter(t => !typeOrder.includes(t)));
+  let html = `<div class="alpha-scripts-header"><h2>Music Nodes</h2><span class="alpha-count">${nodes.length} music nodes across every tradition</span></div>`;
+  ordered.forEach(t => {
+    const color = typeColors[t] || '#d4a55a';
+    const label = t.replace('-', ' ');
+    html += `<div style="color:${color};padding:12px 24px 4px;font-size:11px;text-transform:uppercase;letter-spacing:.08em">${label}</div><div class="alpha-scripts-grid">`;
+    byType[t].forEach(n => {
+      html += `<div class="alpha-script-card" data-id="${n.id}" style="border-left:3px solid ${color}">
+        <div class="asc-type">${n.tier ? 'Tier '+n.tier : ''}</div>
+        <div class="asc-title">${n.title||n.id}</div>
+        <div class="asc-tradition">${n.tradition||''}</div>
+      </div>`;
+    });
+    html += '</div>';
+  });
+  pane.innerHTML = html;
+  pane.querySelectorAll('.alpha-script-card[data-id]').forEach(card => {
+    card.onclick = () => { const nd = DATA.nodes.find(x => x.id === card.dataset.id); if (nd) showDetail(nd); };
+  });
+  document.getElementById('canvas').appendChild(pane);
+}
+
+function _renderMusicFindings() {
+  const pane = document.createElement('div');
+  pane.className = 'alpha-pane alpha-pane-live';
+  const findings = [
+    { label: 'CONVERGENCE', color: '#d4a55a', title: 'Sound at the Origin of Cosmos — Five Continents, No Single Transmission',
+      body: 'Egypt (c. −2300 BCE), India (c. −1200 BCE), China (c. −1000 BCE), sub-Saharan Africa (Dogon/Yoruba), pre-Columbian Americas (Maya, Inca). Five independent civilizations conclude that sound is foundational to cosmic structure. The geographic separation makes a single-origin transmission model implausible. Something about high-complexity civilization-building reliably produces the music-cosmos conclusion.' },
+    { label: 'HYPOTHESIS', color: '#5aaca8', title: 'Trance-Through-Drone Predates Cosmology by 33,000+ Years',
+      body: 'San Bushmen n/um-kxao healing trance: at least 35,000 years (rock art evidence). Explicit cosmological music theory (music orders the planets): no earlier than 1200 BCE (Sama Veda, Pythagorean tradition). The 33,000-year gap suggests the cosmological elaborations are secondary frameworks built on a prior discovery: specific sounds alter consciousness. Trance is the discovery; cosmology is the explanation.' },
+    { label: 'MASSIVE WIN', color: '#c44a5a', title: 'The Non-Semantic Sound Protocol — Four Traditions, Zero Contact, Same Technology',
+      body: 'Vedic mantra (c. −1200 BCE), Orphic voces magicae (c. −500 BCE), Iamblichean theurgy (c. 300 CE), Abulafia\'s prophetic Kabbalah (c. 1280 CE). All four independently arrive at the identical practical protocol: non-semantic sound sequences, vocalized with specific rhythm and breath, reach the divine more effectively than semantic language. Not a vague idea — a specific, testable four-element protocol replicated across four traditions with no documented contact.' },
+    { label: 'CONCLUSION', color: '#6e8c6b', title: 'The Hermetic-Gnostic Sonic Spine — More Documented Than Babylon-to-Bach',
+      body: 'Orphic sonic ritual → Pythagorean music-of-spheres → Platonic world-soul scale → Chaldean Oracles → Neoplatonic theurgy → Valentinian pleroma-harmony → Hermetic Logos-sound: a step-by-step documented transmission from c. 600 BCE to c. 300 CE. The mainstream chain (Babylon-to-Bach) and this esoteric chain share the Pythagorean node and diverge — both arrive at the Renaissance simultaneously. Bach\'s equal temperament and Ficino\'s lyre-therapy are contemporaneous products of two 2,000-year chains finally converging.' },
+    { label: 'CONCLUSION', color: '#6e8c6b', title: 'India Was the Only Civilization That Completed the Cosmic Clock',
+      body: 'The Indian raga system assigns specific ragas to specific times of day as a cosmological obligation — performing the wrong raga at the wrong time is spiritually harmful. No other tradition completed this. Four structural conditions India alone combined: hereditary musician-caste, Mughal patronage that intensified rather than suppressed the tradition, theory embedded in practice (you cannot perform raga while agnostically treating it as neutral sound), and British colonial misclassification as "art" that exempted it from suppression.' },
+    { label: 'ANOMALY', color: '#c47453', title: 'Death as Acoustic Navigation — Egypt and Tibet, Zero Contact, Identical Structure',
+      body: 'The Egyptian Book of the Dead and the Tibetan Bardo Thodol both frame death as primarily an acoustic event requiring sonic competence from the deceased: navigate the post-mortem realms through correct sound. The mechanism differs (Egyptian heka = correct utterance; Tibetan Dzogchen = correct recognition), but the underlying claim is identical. Two civilizations, no documented contact, same conclusion: the soul\'s post-mortem journey is fundamentally acoustic.' },
+    { label: 'INVERSION', color: '#9a7ad4', title: 'Equal Temperament — The Tuning System That Severed Music from Cosmos',
+      body: 'The adoption of 12-tone equal temperament (Bach\'s Well-Tempered Clavier, 1722) deforms every interval except the octave: major third is 14 cents sharp, minor third 16 cents sharp, fifth 2 cents flat. These are the same integer ratios Kepler measured in planetary orbital velocities and the same ratios the Pythagorean tradition identified with cosmic structure. Two independent traditions have maintained the refusal for 2,000 years and an ocean apart: Indian classical raga (never adopted equal temperament) and Harry Partch (explicitly rebuilt his own instruments to escape it).' },
+    { label: 'CONCLUSION', color: '#d4a55a', title: 'Music Is the Scaffold Paradox in Sonic Form — Every Tradition Points at Silence',
+      body: 'Every serious musical mystical tradition, pursued to its conclusion, arrives at silence. Pythagorean cosmic music is inaudible because it is always playing. Vedic AUM\'s fourth element is the silence after M — described as the most important. Sufi fana: sama achieves its purpose by eliminating the one who hears it. John Cage\'s 4\'33" (1952): 2,750 years after Pythagoras, Cage demonstrates the same conclusion by removing the frame that was blocking the audience from hearing what was always already there.' },
+  ];
+  let html = `<div class="alpha-scripts-header"><h2>Music Findings</h2><span class="alpha-count">cross-tradition sound · cosmos · silence</span></div><div style="padding:0 24px 24px">`;
+  findings.forEach(f => {
+    html += `<div style="border-left:3px solid ${f.color};margin:12px 0;padding:14px 16px;background:rgba(0,0,0,.18);border-radius:4px">
+      <div style="font-size:10px;letter-spacing:.1em;color:${f.color};text-transform:uppercase;margin-bottom:6px">${f.label}</div>
+      <div style="font-weight:600;margin-bottom:8px;color:var(--text-1)">${f.title}</div>
+      <div style="font-size:13px;color:var(--text-2);line-height:1.5">${f.body}</div>
+    </div>`;
+  });
+  html += '</div>';
+  pane.innerHTML = html;
+  document.getElementById('canvas').appendChild(pane);
+}
+
+// ============================================================
 VIEWS.patterns = {
   title: 'Patterns',
   subtitle: 'cross-tradition discoveries — convergences · transmissions · science · inversions',
