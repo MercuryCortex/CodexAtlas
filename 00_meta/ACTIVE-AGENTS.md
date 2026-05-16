@@ -4,6 +4,20 @@ _Hand-maintained. Each agent currently working in the vault appends a claim bloc
 
 ---
 
+## goblin-dragon-1 — symbols / dragons + stupa + thunderbird thread — started 2026-05-16 — IN PROGRESS
+- Owning: `09_symbols/dragon-eastern.md` (NEW), `09_symbols/dragon-western.md` (NEW), `09_symbols/stupa.md` (NEW), `09_symbols/thunderbird.md` (NEW)
+- Goal: Eastern/Western dragon polarity MASSIVE WIN; dragon-slaying PIE pattern (Indra/Marduk/Zeus/Thor/George); stupa as man-made sacred mountain cross-tradition; Thunderbird as universal storm-bird pattern
+- Status: in-progress
+
+---
+
+## goblin-alchemic-script-1 — symbols / alchemy + writing systems thread — started 2026-05-16 — IN PROGRESS
+- Owning: `09_symbols/azoth.md` (NEW), `09_symbols/athanor.md` (NEW), `09_symbols/proto-sinaitic.md` (NEW), `09_symbols/rongorongo.md` (NEW)
+- Goal: Alchemical universal solvent + inner furnace as soul-transformation parallels (Paracelsus/Tummo/Theosis/divine smith); Proto-Sinaitic as ancestor of all alphabets (MASSIVE WIN); Rongorongo as mystery undeciphered script
+- Status: in-progress
+
+---
+
 ## goblin-nature-fertility-1 — symbols / nature + fertility thread — started 2026-05-16 — IN PROGRESS
 - Owning: `09_symbols/green-man.md` (NEW), `09_symbols/sheela-na-gig.md` (NEW), `09_symbols/shiva-lingam.md` (NEW), `09_symbols/yoni.md` (NEW)
 - Goal: Foliate-face cross-tradition (Roman acanthus mask → medieval Christian green man); Sheela-na-gig apotropaic paired with green man; Shiva lingam as axis mundi/cosmic phallus; yoni as cosmic womb (Venus figurines → Kamakhya → Gothic mandorla)
@@ -11,10 +25,10 @@ _Hand-maintained. Each agent currently working in the vault appends a claim bloc
 
 ---
 
-## goblin-sacred-sound-1 — symbols / sacred sound instruments thread — started 2026-05-16 — IN PROGRESS
-- Owning: `09_symbols/sistrum.md` (NEW), `09_symbols/sacred-bell.md` (NEW), `09_symbols/shamanic-drum.md` (NEW), `09_symbols/ogham.md` (NEW)
-- Goal: Sacred-sound objects across traditions; sistrum→Roman Isis reception; bell cross-tradition divine summons; shamanic drum as axis mundi; Ogham as sylvan cosmic alphabet
-- Status: in-progress
+## ~~goblin-sacred-sound-1 — symbols / sacred sound instruments thread — started 2026-05-16 — FINISHED~~
+- ~~Owning: `09_symbols/sistrum.md` (NEW), `09_symbols/sacred-bell.md` (NEW), `09_symbols/shamanic-drum.md` (NEW), `09_symbols/ogham.md` (NEW)~~
+- ~~Goal: Sacred-sound objects across traditions; sistrum→Roman Isis reception; bell cross-tradition divine summons; shamanic drum as axis mundi; Ogham as sylvan cosmic alphabet~~
+- ~~Status: finished — 4 new symbol nodes · 138 total symbols · 14153 edges · 0 dead links introduced · STATUS.md logged~~
 
 ---
 
@@ -71,6 +85,20 @@ _Hand-maintained. Each agent currently working in the vault appends a claim bloc
 - ~~Owned: `src/js/views/pantheon-v2.js`, `src/styles/app.css`, `src/js/dev-panel.js`, `index.html`~~
 - ~~Status: done — edge discipline, row radial formula, node-size cap removed~~
 - ~~Next batches D/E/F queued (force-bake, DOM labels, horizontal family labels)~~
+
+---
+
+## goblin-islamic-sacred-1 — symbols / Islamic sacred symbols + Sudarshana + Ashtamangala thread — started 2026-05-16 — IN PROGRESS
+- Owning: `09_symbols/rub-el-hizb.md` (NEW), `09_symbols/basmala.md` (NEW), `09_symbols/sudarshana-chakra.md` (NEW), `09_symbols/ashtamangala.md` (NEW)
+- Goal: Rub el Hizb 8-pointed star cross-tradition (Ishtar/crescent/Islamic heraldry); Basmala as sacred-word-as-image (parallels Tetragrammaton/Aum/IHS); Sudarshana Chakra as spinning divine weapon + Wheel of Ezekiel parallel; Ashtamangala as complete 8-symbol auspiciousness set
+- Status: in-progress
+
+---
+
+## goblin-sacred-number-1 — symbols / sacred numbers + ritual gesture + corn deity thread — started 2026-05-16 — IN PROGRESS
+- Owning: `09_symbols/sacred-number-three.md` (NEW), `09_symbols/sacred-number-seven.md` (NEW), `09_symbols/mudra.md` (NEW), `09_symbols/corn-mother.md` (NEW)
+- Goal: Sacred-Three trinity structures cross-tradition MASSIVE WIN; Sacred-Seven Babylonian planetary week to world religions; mudra abhaya cross-tradition (Buddha/Christ/Shiva); corn-mother grain-deity resurrection pattern (Osiris/Demeter/Christ Eucharist)
+- Status: in-progress
 
 ---
 
