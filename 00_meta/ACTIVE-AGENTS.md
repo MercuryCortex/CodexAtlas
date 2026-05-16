@@ -1857,7 +1857,18 @@ Files: sacred-cauldron.md (NEW) · cerridwen.md (STUB, deity) · bran-the-blesse
 
 ---
 
-## alphabet-greek-vowel-1 — Greek alphabet + vowel invention as cognitive revolution — 2026-05-16 — IN FLIGHT
-- Owned: `11_alphabets/alphabet-greek-vowel-revolution.md` (NEW)
-- Stubs: `07_traditions/tradition-ancient-greek.md` (NEW), `11_alphabets/alphabet-latin.md` (NEW)
-- Do NOT touch: any existing node, app code, src/js/, src/styles/, index.html
+## ~~alphabet-greek-vowel-1 — Greek alphabet + vowel invention as cognitive revolution — 2026-05-16 — FINISHED~~
+- ~~Owned: `11_alphabets/alphabet-greek-vowel-revolution.md` (NEW full)~~
+- ~~Stubs: `07_traditions/tradition-ancient-greek.md` (NEW), `11_alphabets/alphabet-latin.md` (NEW)~~
+- ~~Observation: `greek-vowel-cognitive-threshold` (CONCLUSION) in `src/data/observations.js`~~
+- ~~Build: 35 alphabets · 167 traditions · 16154 edges · 0 YAML errors · 0 dead links introduced~~
+- ~~MASSIVE WIN: vowel addition = cognitive precondition for Axial Age Western philosophy (Havelock 1963/1982); Aramaic parallel-by-contrast (same source script, no vowels added, different cognitive culture); Western Greek → Etruscan → Latin chain documented; isopsephy dependency on stable vowel sequence; Runic Western Greek hypothesis documented with contested note~~
+
+---
+
+## alphabet-caucasus-1 — Armenian + Georgian missionary alphabets — 2026-05-16 — IN PROGRESS
+- Owns: `11_alphabets/alphabet-armenian.md` (NEW), `11_alphabets/alphabet-georgian.md` (NEW)
+- Stubs to create: `07_traditions/tradition-georgian-orthodox.md` (NEW stub), `05_events/event-armenian-genocide.md` (NEW stub)
+- Patterns: `alphabet-as-identity-weapon` (both scripts); cross-link to `alphabet-glagolitic-cyrillic`, `alphabet-hangul`, `alphabet-cherokee`
+- Do NOT touch: any app code, src/js/, src/styles/, index.html, src/data/patterns.js, src/data/observations.js
+- Status: IN PROGRESS

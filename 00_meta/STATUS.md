@@ -645,3 +645,16 @@ Script: `add_depictions.py` (new helper for direct Commons depictions[] injectio
 - KEY FIND: Masoretes parallel with Avestan scribes — identical problem (preserve sacred vowels in a liturgical language no longer spoken natively), identical solution (supplementary diacritic system), zero contact between the two traditions
 - KEY FIND: Masoretic letter/word counting = textual checksum system; middle letter of the Torah is a disputed vav in a verse about creeping things (Lev 11:42)
 - Build: 32 alphabets · 16147 edges · commit 78c8577
+
+---
+
+## alphabet-greek-vowel-1 — Greek vowel revolution — FINISHED 2026-05-16
+- 1 full node: alphabet-greek-vowel-revolution · 2 stubs: alphabet-latin · tradition-ancient-greek · 1 observation: greek-vowel-cognitive-threshold
+- KEY FIND: Greek vowel addition (c. 800 BCE) = first writing system capable of representing any human utterance without ambiguity — this is the cognitive precondition for Western philosophical culture
+- KEY FIND: Havelock (1963, 1982) argument documented — the shift from oral Homeric mnemonic tradition to written Platonic abstract argument is not a change in medium but a change in cognitive operation; alphabetic text externalizes memory into a form that can be criticized, compared, revised
+- KEY FIND: Aramaic parallel-by-contrast — same Phoenician source, same era, no vowels added because Semitic phonology did not require it; result: two parallel script traditions from the same source that produced two different cognitive cultures — one for exact abstract philosophical argument (Greek), one for oral-context-dependent sacred text (Aramaic/Semitic religious tradition)
+- KEY FIND: Western Greek → Etruscan → Latin transmission chain documented; the English alphabet is Western Greek letter forms via two intermediaries, 2,700 years; English A-B-C are NOT Eastern (standardized) Greek but the Euboean variant that circulated before 403 BCE
+- KEY FIND: Etruscan gap — we know all the sounds of Etruscan (can read every inscription aloud) but cannot translate most of them; the language is a likely isolate; another case of script survived / civilizational context destroyed
+- KEY FIND: Isopsephy dependency — Greek alphabetic numerology (isopsephy) only works because the vowel addition made the alphabet stable and complete; the vowels are the precondition for the number-mysticism that sits on top of the alphabet
+- KEY FIND: Vowel addition = Axial Age cognitive precondition; the Greek philosophical Axial Age (600–300 BCE) is 200 years downstream of the vowel addition (c. 800 BCE); the vowels made stable written abstract nouns possible; stable abstract nouns made philosophical argument possible
+- Build: 35 alphabets · 167 traditions · 16154 edges · 0 YAML errors · 0 dead links · commit 9d5671c
