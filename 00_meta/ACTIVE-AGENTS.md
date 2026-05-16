@@ -1806,6 +1806,7 @@ Files: sacred-cauldron.md (NEW) · cerridwen.md (STUB, deity) · bran-the-blesse
 
 ---
 
-## alphabet-independent-scripts-1 — 3 independent-tradition script nodes — IN PROGRESS
-- Owns: 11_alphabets/alphabet-mayan-glyphs.md (NEW), 11_alphabets/alphabet-chinese-oracle-bones.md (NEW), 11_alphabets/alphabet-indus-valley-script.md (NEW, enriches 09_symbols/indus-valley-script.md)
-- Status: IN PROGRESS
+## ~~alphabet-independent-scripts-1 — 3 independent-tradition script nodes — FINISHED~~
+- ~~Owned: 11_alphabets/alphabet-mayan-glyphs.md (full), 11_alphabets/alphabet-chinese-oracle-bones.md (full), 11_alphabets/alphabet-indus-valley-script.md (full, alphabet-tier node cross-referencing 09_symbols/indus-valley-script.md); stubs: 03_deities/chaac.md, 05_events/shang-dynasty.md~~
+- ~~MASSIVE WIN edges: (1) Popol Vuh = 7th independent creation-by-word tradition (trans-oceanic, zero contact with Old World — strongest evidence for universal cognitive template); (2) Chinese character zi (word) = child-under-roof = civilization embedded in script's own semantic structure; (3) Chinese fu talisman = operative writing parallel to Elder Futhark runes (6-tradition convergence); (4) Indus Valley Script if proto-Dravidian = South Indian literacy 1,500 years older than Sanskrit; (5) writing-origins-religious-universal pattern: every independently invented writing system originated in sacred context — 5 cases documented~~
+- ~~Status: FINISHED — commit 4047f9b · 21 alphabets · 2675 nodes · 16046 edges · 0 dead links introduced~~
