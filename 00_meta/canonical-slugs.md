@@ -17,10 +17,11 @@ canonical-slug
 ## Currently resolved slugs (auto-seeded — every existing file)
 
 
-### alphabet (18 nodes)
+### alphabet (21 nodes)
 
 - `alphabet-avestan`
 - `alphabet-brahmi-origin`
+- `alphabet-chinese-oracle-bones`
 - `alphabet-creation-by-word`
 - `alphabet-cuneiform-sacred`
 - `alphabet-devanagari-sacred`
@@ -28,8 +29,10 @@ canonical-slug
 - `alphabet-gematria-hebrew`
 - `alphabet-huruf-muqattaat`
 - `alphabet-ilm-al-huruf`
+- `alphabet-indus-valley-script`
 - `alphabet-isopsephy-greek`
 - `alphabet-letter-as-cosmos`
+- `alphabet-mayan-glyphs`
 - `alphabet-medu-netjer`
 - `alphabet-ogham`
 - `alphabet-phoenician`
@@ -38,7 +41,7 @@ canonical-slug
 - `alphabet-tibetan-tantric`
 - `alphabet-ugaritic`
 
-### deity (501 nodes)
+### deity (502 nodes)
 
 - `abathur`
 - `adamastor`
@@ -133,6 +136,7 @@ canonical-slug
 - `ceres-roman`
 - `cernunnos`
 - `cerridwen`
+- `chaac`
 - `chac`
 - `changing-woman`
 - `chaos-primordial`
@@ -960,7 +964,7 @@ canonical-slug
 - `phase-8-023-gayanashagowa`
 - `tummal-chronicle`
 
-### event (188 nodes)
+### event (189 nodes)
 
 - `bent-pyramid-sneferu-dahshur`
 - `el-castillo-chichen-itza`
@@ -1145,6 +1149,7 @@ canonical-slug
 - `queens-chamber-great-pyramid`
 - `red-pyramid-sneferu-dahshur`
 - `relieving-chambers-great-pyramid`
+- `shang-dynasty`
 - `solomons-temple`
 - `sphinx-of-giza`
 - `step-pyramid-djoser-saqqara`
@@ -1155,12 +1160,13 @@ canonical-slug
 
 - `MASSIVE-WINS-AND-INVESTIGATION-LEADS-session-2026-05-15`
 
-### music (58 nodes)
+### music (68 nodes)
 
 - `music-aboriginal-songlines`
 - `music-abulafia-prophetic-kabbalah`
 - `music-alkindi-music-therapy`
 - `music-ancient-egyptian-music`
+- `music-ancient-egyptian-music-cosmology`
 - `music-arabic-maqam`
 - `music-aum-cosmic-sound`
 - `music-aztec-music`
@@ -1169,6 +1175,7 @@ canonical-slug
 - `music-chinese-court-instruments`
 - `music-chinese-pentatonic-cosmology`
 - `music-creation-by-sound`
+- `music-dogon-nommo-vibration`
 - `music-ficino-lyre-therapy`
 - `music-fludd-world-monochord`
 - `music-gagaku-japanese`
@@ -1178,6 +1185,7 @@ canonical-slug
 - `music-griot-tradition`
 - `music-hermetic-logos-sound`
 - `music-hurrian-hymns`
+- `music-inca-huanca-sacred`
 - `music-inca-music-cosmology`
 - `music-islamic-adhan-maqam`
 - `music-korean-aak`
@@ -1187,8 +1195,10 @@ canonical-slug
 - `music-mayan-music`
 - `music-mbira-spirit-music`
 - `music-mesopotamian-temple-music`
+- `music-messiaen-modes-color`
 - `music-music-of-spheres`
 - `music-nada-brahma`
+- `music-nada-yoga-revival`
 - `music-native-american-ceremonial`
 - `music-natya-shastra`
 - `music-neoplatonic-theurgy-sound`
@@ -1204,14 +1214,19 @@ canonical-slug
 - `music-sama-veda`
 - `music-saraswati-vina`
 - `music-scale-transmission-chain`
+- `music-scriabin-mysterium`
 - `music-sefer-yetzirah-sound`
+- `music-steiner-eurhythmy`
+- `music-stockhausen-cosmic`
 - `music-sufi-sama`
 - `music-talking-drums`
+- `music-theosophy-sound-cosmology`
 - `music-torah-cantillation`
 - `music-valentinian-pleroma-harmony`
 - `music-west-african-polyrhythm`
 - `music-western-sacred-chant`
 - `music-yayue-ritual-music`
+- `music-yoruba-drum-cosmology`
 - `music-zohar-sound-mysticism`
 - `music-zoroastrian-sacred-sound`
 - `music-zosimos-alchemical-sound`
@@ -2716,8 +2731,8 @@ canonical-slug
 | 3 | `guru-arjan-dev-ji` | `guru-arjan` |
 | 2 | `yam-canaanite` | `astarte-canaanite` |
 | 2 | `was-sceptre` | `was-scepter` |
-| 2 | `tradition-rosicrucian` | `tradition-gnosticism` |
-| 2 | `tradition-lingayat` | `tradition-gnosticism` |
-| 2 | `tradition-islamic-philosophy` | `tradition-gnosticism` |
-| 2 | `phase-2-004-1-2-chronicles` | `phase-2-008-homeric-epics` |
+| 2 | `tradition-rosicrucian` | `tradition-advaita-vedanta` |
+| 2 | `tradition-lingayat` | `tradition-advaita-vedanta` |
+| 2 | `tradition-islamic-philosophy` | `tradition-advaita-vedanta` |
+| 2 | `phase-2-004-1-2-chronicles` | `phase-2-007-hebrew-bible-e-source` |
 | 2 | `divine-names` | `divine-name` |

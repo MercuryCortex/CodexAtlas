@@ -435,8 +435,16 @@ window.PATTERNS_DATA = [
     title: 'Every Major Ancient Writing System Originated in Sacred/Temple Context',
     category: 'CONVERGENCE',
     section: 'Alphabet Layer Discoveries',
-    sources: ['alphabet-cuneiform-sacred', 'alphabet-medu-netjer', 'proto-sinaitic'],
-    summary: 'Cuneiform (c. 3200 BCE): invented by Sumerian temple accountants for the redistributive economy of the goddess Inanna\'s storehouse. Egyptian hieroglyphs (c. 3100 BCE): named medu netjer ("Words of God"), used first for temple walls and divine inscriptions. Proto-Sinaitic (c. 1850 BCE): adapted from Egyptian hieroglyphs by Semitic workers at a temple to the goddess Hathor in the Sinai mines. Chinese characters (c. 1200 BCE): first known use is oracle bones — divination records of ritual questions posed to ancestors and deities. Mayan glyphs (c. 300 BCE): royal-divine inscriptions on monuments. The pattern: writing is not invented for commerce or communication but for divine accounting and sacred communication; the mercantile and administrative uses are secondary adaptations of an originally sacred technology.',
+    sources: ['alphabet-cuneiform-sacred', 'alphabet-medu-netjer', 'proto-sinaitic', 'alphabet-chinese-oracle-bones', 'alphabet-mayan-glyphs', 'alphabet-indus-valley-script'],
+    summary: 'Cuneiform (c. 3200 BCE): invented by Sumerian temple accountants for the redistributive economy of the goddess Inanna\'s storehouse. Egyptian hieroglyphs (c. 3100 BCE): named medu netjer ("Words of God"), used first for temple walls and divine inscriptions. Proto-Sinaitic (c. 1850 BCE): adapted from Egyptian hieroglyphs by Semitic workers at a temple to the goddess Hathor in the Sinai mines. Chinese oracle-bone script (c. 1250 BCE): the ENTIRE PURPOSE of the script is royal divination — every character was carved to communicate a question to royal ancestors and the high god Di; writing IS the ritual act. Mayan glyphs (c. 300 BCE): royal-divine inscriptions on monuments; almost every Classic Maya inscription deals with accession, bloodletting, ballgame sacrifice, and astronomical events linked to deities. Indus Valley Script (c. 2600 BCE): possibly ritual — the unicorn-bull seal motif repeats the same sign-sequences across 1,755 identical seals, suggesting liturgical repetition rather than unique commercial identifiers. The pattern covers every independently invented major writing system: writing was invented to communicate with gods before it was used to communicate between humans.',
+  },
+  {
+    id: 'writing-origins-religious-universal',
+    title: 'Writing Invented for God-Communication — Five Independent Traditions',
+    category: 'CONVERGENCE',
+    section: 'Alphabet Layer Discoveries',
+    sources: ['alphabet-cuneiform-sacred', 'alphabet-medu-netjer', 'alphabet-chinese-oracle-bones', 'alphabet-mayan-glyphs', 'alphabet-indus-valley-script'],
+    summary: 'Every independently invented major writing system on record originated in religious or ritual context: Sumerian cuneiform (temple accounting for the goddess Inanna, c. 3200 BCE), Egyptian hieroglyphs (medu netjer = "Words of God", c. 3100 BCE), Chinese oracle-bone script (royal divination — characters carved to ask gods questions, c. 1250 BCE), Mayan glyphs (divine-royal monument inscriptions, c. 300 BCE), and the Indus Valley Script (possibly ritual, c. 2600 BCE). Writing was invented to communicate with gods, not between humans. The secular uses of writing — commerce, administration, literature — are secondary adaptations of an originally sacred technology. Saussure\'s "arbitrary sign" (1916) arrives after 5,000 years in which the sign was anything but arbitrary: it was divine.',
   },
 
   // ─── Script and Alphabet Mysteries ───────────────────────────────────────

@@ -1,6 +1,6 @@
 ---
 id: alphabet-creation-by-word
-title: "Creation by Word — Six-Tradition Convergence"
+title: "Creation by Word — Seven-Tradition Convergence"
 type: alphabet
 alphabet-type: convergence-pattern
 status: full
@@ -16,7 +16,7 @@ tags:
   - divine-speech
   - logos
   - creation-by-word
-  - six-traditions
+  - seven-traditions
 cross-alphabet-edges:
   - target: alphabet-sefer-yetzirah
     type: convergence
@@ -27,6 +27,9 @@ cross-alphabet-edges:
   - target: alphabet-devanagari-sacred
     type: convergence
     note: "Devanagari encodes the Sanskrit phoneme-theology (akshara = eternal phoneme) in which the universe speaks Sanskrit; the Vedas were heard from the cosmos, not composed by humans"
+  - target: alphabet-mayan-glyphs
+    type: convergence
+    note: "The Popol Vuh (K'iche' Maya, transcribed c. 1550 CE) contains the seventh independent creation-by-word theology: Heart of Sky spoke 'Earth!' and the earth appeared; human creation succeeded when creatures could speak the gods' names. The most geographically isolated instance — separated from all Old World cases by the Atlantic Ocean — making it the strongest evidence for the pattern as a universal human cognitive template"
 alphabet-tradition-context:
   - "[[tradition-judaism]]"
   - "[[tradition-christianity-canonical]]"
@@ -44,13 +47,13 @@ refs:
   - "Runia, David T. Philo of Alexandria and the Timaeus of Plato. Brill, 1986. [T1 — definitive study of Philo's synthesis of Hebrew creation theology with Platonic Logos; documents the Philo → Gospel of John transmission vector]"
 ---
 
-# Creation by Word — Six-Tradition Convergence
+# Creation by Word — Seven-Tradition Convergence
 
 ## The Pattern
 
-Across six independent religious traditions spanning from c. 2300 BCE to 650 CE, the cosmogony (creation story) places language, speech, or letters **at the act of creation** — not as description but as instrument. In every case, the universe came into existence through an act of divine language. This is the most extensively attested cross-tradition convergence in the Codex Atlas vault.
+Across seven independent religious traditions spanning from c. 2300 BCE to 650 CE (with a Mesoamerican strand whose oral tradition predates its 1550 CE written record), the cosmogony (creation story) places language, speech, or letters **at the act of creation** — not as description but as instrument. In every case, the universe came into existence through an act of divine language. This is the most extensively attested cross-tradition convergence in the Codex Atlas vault.
 
-The six traditions:
+The seven traditions:
 
 ---
 
@@ -126,6 +129,29 @@ This makes the Vedic case the most radical version of creation-by-word: not "God
 
 ---
 
+## 7. Mesoamerican — Popol Vuh (K'iche' Maya, c. 1550 CE transcription of oral tradition)
+
+The **[[phase-8-001-popol-vuh]]** (K'iche' Maya creation epic) was written down in the Latin alphabet around 1550 CE by K'iche' Maya nobles after the Spanish conquest, encoding an oral tradition of much greater antiquity. Its creation cosmogony is the seventh independent instance of the creation-by-word pattern:
+
+> *"Then the earth was created by them, so it was, in truth they created the earth. 'Earth!' they said, and instantly it was made."*
+
+**Heart of Sky** (Huracán — the hurricane deity) and the Forefathers spoke the animals into being. The first creation attempts failed: humans made from mud (could not hold form), humans made from wood (could speak but "their faces had no expression; their legs and arms had no strength; they had no blood, no lymph, no perspiration, no fat; their cheeks were dry"). The **third creation** — humans made from maize — succeeded because they could properly speak and name their creators.
+
+**The Maya creation-by-word theology**:
+- Earth is summoned into being from water by a spoken word: "Earth!"
+- The test of successfully created beings is **speech** — the ability to name the gods and speak the names of what is sacred
+- The Hero Twins' victory over the Lords of Death in the underworld also involves naming and speech-acts
+
+**The key insight**: Language is not merely what humans do after being created. Language is the **criterion of successful creation**. Mud-humans and wood-humans failed not because they were structurally wrong but because they could not speak properly. Proper speech is what makes a human being human.
+
+This is the **most geographically isolated** of all the creation-by-word theologies. The six Old World instances (Egyptian, Hebrew, Vedic, Hindu, Greek/Christian, Islamic) share a broadly connected cultural zone — diffusion pathways are conceivable even if not documented. The Maya case is separated from all of them by the Atlantic Ocean. There is no plausible transmission vector.
+
+**Its independent parallel status makes it the strongest single piece of evidence that creation-by-divine-speech is a universal human cognitive template, not a cultural transmission artifact.**
+
+See [[alphabet-mayan-glyphs]] for the full context of the Maya writing system and the Popol Vuh's role within it.
+
+---
+
 ## The Meta-Pattern
 
 | Tradition | Primary Text | Date | Claim |
@@ -137,8 +163,9 @@ This makes the Vedic case the most radical version of creation-by-word: not "God
 | Hindu | Nada Brahma | c. 300 BCE onward | The universe IS sound, continuously |
 | Greek/Christian | Gospel of John 1:1 | c. 90–110 CE | Logos (Word) is the creative principle through which all things are made |
 | Islamic | Quran 36:82 | 610–632 CE | God speaks "Be!" and creation exists; the Quran's Arabic letters are divine substance |
+| Mesoamerican | Popol Vuh | c. 300 BCE oral tradition, c. 1550 CE written | Heart of Sky speaks "Earth!" and the world appears; successful creation = beings who can speak the gods' names |
 
-**The pattern is independent across traditions.** Egyptian Memphite Theology predates Hebrew Bible by 1,600 years. The Vedic Vak hymns are contemporaneous with or earlier than the Hebrew materials. The Islamic case arrives last and makes the most compressed statement (two letters = the creation command). The convergence is cross-cultural and cross-temporal.
+**The pattern is independent across traditions.** Egyptian Memphite Theology predates Hebrew Bible by 1,600 years. The Vedic Vak hymns are contemporaneous with or earlier than the Hebrew materials. The Islamic case arrives last and makes the most compressed statement (two letters = the creation command). The Maya case, separated by the Atlantic Ocean, is the strongest argument that the pattern transcends any cultural zone. The convergence is cross-cultural, cross-temporal, and trans-oceanic.
 
 ---
 
