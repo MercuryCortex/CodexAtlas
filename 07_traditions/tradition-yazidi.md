@@ -9,7 +9,7 @@ region-origin: "Northern Mesopotamia (Sinjar, Lalish)"
 regions-spread: ["Kurdistan (Iraq, Syria, Turkey)", "Caucasus", "diaspora (Germany, etc.)"]
 key-deities: ["Melek Taus (the Peacock Angel)", "Şêx Adî (Sheikh Adi ibn Musafir, the saint-founder)"]
 key-persons: ["Şêx Adî ibn Musafir (1075–1162, founder)"]
-key-documents: ["Kitêba Cilwe (Book of Revelation; authenticity disputed)", "Mishefa Reş (Black Book; authenticity disputed)", "qewls (oral hymns)"]
+key-documents: ["[[phase-5-061-kiteba-cilwe]] (Kitêba Cilwe + Mishefa Reş; authenticity disputed)", "qewls (oral hymns, primary tradition)"]
 sister-traditions: []
 key-themes:
   - "[[dualism-cosmic]]"

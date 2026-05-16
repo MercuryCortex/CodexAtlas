@@ -2840,14 +2840,19 @@ const SCRIPTURE_CORPORA = {
         { id: 'phase-3-024-natyashastra',             label: 'Nāṭyaśāstra (Bharata)' },
       ]},
       { id: 'vedic-purana', label: 'Purāṇa · devotional theology', color: '#b8845a', books: [
-        { id: 'P5-050-bhagavata-purana', label: 'Bhāgavata Purāṇa' },
+        { id: 'P5-050-bhagavata-purana',       label: 'Bhāgavata Purāṇa' },
+        { id: 'phase-5-001-devi-mahatmya',     label: 'Devī Māhātmya (Durgā Saptaśatī)' },
       ]},
       { id: 'vedic-vedanta-exegesis', label: 'Medieval Vedānta exegesis', color: '#a07050', books: [
-        { id: 'phase-5-016-ramanuja-sribhasya', label: 'Rāmānuja · Śrī-Bhāṣya' },
+        { id: 'phase-5-016-ramanuja-sribhasya',   label: 'Rāmānuja · Śrī-Bhāṣya' },
+        { id: 'phase-5-034-vivekachudamani',       label: 'Śaṅkara · Vivekacūḍāmaṇi' },
+        { id: 'phase-5-032-yogavasishtha',         label: 'Yoga Vāsiṣṭha · non-dual teaching stories' },
       ]},
       { id: 'vedic-tantra', label: 'Tantra · Kashmir Śaiva + later esoteric', color: '#80604a', books: [
-        { id: 'phase-5-006-vijnana-bhairava-tantra', label: 'Vijñāna-Bhairava Tantra' },
-        { id: 'phase-5-014-abhinavagupta-tantraloka', label: 'Abhinavagupta · Tantrāloka' },
+        { id: 'phase-5-006-vijnana-bhairava-tantra',  label: 'Vijñāna-Bhairava Tantra' },
+        { id: 'phase-5-014-abhinavagupta-tantraloka',  label: 'Abhinavagupta · Tantrāloka' },
+        { id: 'phase-5-033-shiva-sutras',              label: 'Śiva-Sūtras · Vasugupta' },
+        { id: 'phase-5-035-hatha-yoga-pradipika',      label: 'Haṭha Yoga Pradīpikā · Svātmārāma' },
       ]},
     ],
   },
@@ -2886,6 +2891,7 @@ const SCRIPTURE_CORPORA = {
       ]},
       { id: 'buddhist-madhyamika', label: 'Mādhyamika philosophical (~+200)', color: '#5a7a90', books: [
         { id: 'phase-4-075-mulamadhyamakakarika',  label: 'Mūlamadhyamakakārikā · Nāgārjuna' },
+        { id: 'phase-4-077-abhidharmakosa',        label: 'Abhidharmakośa · Vasubandhu' },
       ]},
       { id: 'buddhist-theravada-synthesis', label: 'Theravāda systematic synthesis (~+430)', color: '#8a6a40', books: [
         { id: 'phase-4-076-visuddhimagga',         label: 'Visuddhimagga · Buddhaghosa' },
@@ -2895,6 +2901,7 @@ const SCRIPTURE_CORPORA = {
       ]},
       { id: 'buddhist-vajrayana', label: 'Tibetan Vajrayāna terma (~+1326)', color: '#6a4a80', books: [
         { id: 'phase-5-029-bardo-thodol',          label: 'Bardo Thödol · Tibetan Book of the Dead' },
+        { id: 'phase-5-049-bodhicaryavatara',      label: 'Bodhicaryāvatāra · Śāntideva' },
       ]},
     ],
   },
@@ -3418,6 +3425,82 @@ const SCRIPTURE_CORPORA = {
       ]},
     ],
   },
+  // ----- Shīʿa canonical corpus. Nahj al-Balāgha compiled ~1009 CE is the canonical
+  // second text of Twelver Shīʿa Islam after the Quran. The Four Books of Shīʿa ḥadīth
+  // (al-Kāfī, ~941; al-Tahdhīb; al-Istibṣār; Man lā yaḥḍuruhu al-faqīh) parallel
+  // the Sunni Ṣaḥīḥayn but are organized around the authority of the Imams, not
+  // the Prophet alone. Key cross-tradition edge: Hidden Imam messianism ↔ Mahdī ↔
+  // Maitreya ↔ Moshiach ↔ Paraclete cluster. -----
+  'shia-corpus': {
+    label: 'Shīʿa canonical corpus (Nahj al-Balāgha · Hadith Four Books)',
+    available: true,
+    sections: [
+      { id: 'shia-primary', label: 'Nahj al-Balāgha · sermons of Imam ʿAlī (~1009)', color: '#5a7a90', books: [
+        { id: 'phase-5-058-nahj-al-balagha', label: 'Nahj al-Balāgha · Peak of Eloquence' },
+      ]},
+    ],
+  },
+  // ----- Druze canonical corpus. Rasāʾil al-Ḥikma (111 Epistles of Wisdom) composed
+  // 1017–1043 CE by Hamza ibn ʿAlī. Closed to non-initiates for a millennium. Contains
+  // reincarnation doctrine (the clearest case of transmigration entering an Abrahamic-
+  // adjacent tradition), al-Ḥākim deification (divine-ruler theophany in Islamic context),
+  // and Neoplatonic-Pythagorean cosmological hierarchy. -----
+  'druze-corpus': {
+    label: 'Druze canon · Rasāʾil al-Ḥikma (Epistles of Wisdom, ~1017–1043)',
+    available: true,
+    sections: [
+      { id: 'druze-epistles', label: 'Rasāʾil al-Ḥikma · Epistles of Wisdom (1017–1043)', color: '#7a5a8a', books: [
+        { id: 'phase-5-059-rasail-al-hikma', label: 'Rasāʾil al-Ḥikma (111 Epistles)' },
+      ]},
+    ],
+  },
+  // ----- Yungdrung Bön canon. The Bön Kanjur is the pre-Buddhist Tibetan religion's
+  // scriptural parallel to the Buddhist Kangyur — compiled ~13th–15th c. from a tradition
+  // claiming origin in the Zhang-Zhung culture of western Tibet. The Dzogchen section
+  // shares so much with Vajrayāna Nyingma Dzogchen that priority is disputed.
+  // Most significant question for the vault: does Dzogchen originate in Bön (pre-Buddhist)
+  // or Buddhism — or did both inherit from a common Central Asian source? -----
+  'bon-corpus': {
+    label: 'Yungdrung Bön canon (Bön Kanjur · pre-Buddhist Tibet)',
+    available: true,
+    sections: [
+      { id: 'bon-kanjur', label: 'Bön Kanjur · Zhang-Zhung / Tibetan pre-Buddhist scripture', color: '#6a8a5a', books: [
+        { id: 'phase-5-060-bon-kangyur', label: 'Bön Kanjur (Dzogchen + sūtra + tantra sections)' },
+      ]},
+    ],
+  },
+  // ----- Yazidi sacred texts. Kitêba Cilwe (Book of Illumination) + Mishefa Reş (Black
+  // Book) are the two written Yazidi sacred texts; the primary vehicle is oral qewls
+  // (hymns of the qewwals, hereditary reciters). The Melek Taus / Peacock Angel narrative
+  // — in which the chief angel *refused* to bow to Adam and was rewarded rather than
+  // punished — is the vault's sharpest cross-tradition angelological case study.
+  // The Yazidis survived 72 documented firmans of destruction + 2014 ISIS genocide. -----
+  'yazidi-corpus': {
+    label: 'Yazidi sacred texts (Kitêba Cilwe · Mishefa Reş · qewls)',
+    available: true,
+    sections: [
+      { id: 'yazidi-texts', label: 'Kitêba Cilwe + Mishefa Reş · written sacred texts', color: '#8a6a3a', books: [
+        { id: 'phase-5-061-kiteba-cilwe', label: 'Kitêba Cilwe / Mishefa Reş · Yazidi sacred texts' },
+      ]},
+    ],
+  },
+  // ----- Protestant Reformation canon. Luther's De Servo Arbitrio (Bondage of the Will,
+  // 1525) and Calvin's Institutio Christianae Religionis (1536/1559) are the two foundational
+  // texts of the Reformation. Cross-tradition edge: Augustinian predestination → Reformation
+  // grace-theology → Calvinist Federal theology → modern secular political philosophy
+  // (sovereignty, covenant, constitutionalism). -----
+  'reformation': {
+    label: 'Protestant Reformation canon (Luther · Calvin)',
+    available: true,
+    sections: [
+      { id: 'reformation-lutheran', label: 'Lutheran foundation (1517–1525)', color: '#8a7040', books: [
+        { id: 'phase-6-007-luther-bondage-of-will', label: 'Luther · De Servo Arbitrio (Bondage of the Will, 1525)' },
+      ]},
+      { id: 'reformation-calvinist', label: 'Reformed tradition (1536–1559)', color: '#6a6050', books: [
+        { id: 'phase-6-010-calvin-institutes',  label: 'Calvin · Institutio Christianae Religionis (1536/1559)' },
+      ]},
+    ],
+  },
 };
 
 // Edge types that bind a person/deity/event to a document for the Scripture view.
@@ -3536,6 +3619,11 @@ VIEWS.scripture = {
       'cathar-bogomil': 'Cathar',
       'bahai-corpus': 'Baháʼí',
       'spanish-mystical': 'Spanish Mystics',
+      'shia-corpus': 'Shīʿa',
+      'druze-corpus': 'Druze',
+      'bon-corpus': 'Bön',
+      'yazidi-corpus': 'Yazidi',
+      'reformation': 'Reformation',
     };
     const shortLabelFor = (k, c) => SCRIPTURE_CORPUS_SHORT[k]
       || (c && c.label ? c.label.split(/[(·—/]|\s—\s/)[0].trim().slice(0, 14) : k);

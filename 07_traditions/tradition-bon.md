@@ -9,7 +9,7 @@ region-origin: "Zhang-Zhung (western Tibet) → Tibet"
 regions-spread: ["Tibet", "Bhutan", "Nepal", "diaspora"]
 key-deities: ["Tonpa Shenrab", "Sherab Chamma", "Kuntu Zangpo (Bön Samantabhadra equivalent)"]
 key-persons: ["Tonpa Shenrab Miwoche (mythic founder)"]
-key-documents: ["Zermig and Ziji (founder hagiographies)", "the Bön Kanjur and Tenjur (parallel-to-Buddhist canon)"]
+key-documents: ["Zermig and Ziji (founder hagiographies)", "[[phase-5-060-bon-kangyur]] (Bön Kanjur, ~13th–15th c. compilation)"]
 sister-traditions: ["[[tradition-vajrayana-buddhism]]"]
 key-themes:
   - "[[apotheosis]]"

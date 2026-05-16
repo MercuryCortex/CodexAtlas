@@ -9,7 +9,7 @@ region-origin: "Hijaz; classical center Iraq and Iran"
 regions-spread: ["Iran (majority post-1501)", "Iraq (Imami majority)", "Lebanon", "Bahrain", "Azerbaijan", "Yemen (Zaydi)", "South Asia, East Africa diasporas"]
 key-deities: ["[[allah]]"]
 key-persons: ["[[ali-ibn-abi-talib]] (1st Imam)", "[[hasan-ibn-ali]] (2nd Imam)", "[[husayn-ibn-ali]] (3rd Imam — martyr of Karbala)", "[[ali-zayn-al-abidin]] (4th Imam)", "[[muhammad-al-baqir]] (5th Imam)", "[[jafar-al-sadiq]] (6th Imam — eponym of Ja'fari jurisprudence)", "[[musa-al-kazim]] (7th Imam)", "[[ali-al-rida]] (8th Imam — shrine at Mashhad)", "[[muhammad-al-jawad]] (9th Imam)", "[[ali-al-hadi]] (10th Imam)", "[[hasan-al-askari]] (11th Imam)", "[[muhammad-al-mahdi]] (12th Imam — Hidden Imam, in occultation)", "[[suhrawardi]] (broadly Shi'a-leaning)", "Mulla Sadra (Phase 6)"]
-key-documents: ["*Nahj al-Balagha* (sayings of Ali, compiled by al-Sharif al-Radi ~1009)", "Twelver Shi'a hadith collections (al-Kulayni's *al-Kafi* ~941; al-Tusi's *Tahdhib*; Ibn Babawayh's *Man la yahduruhu al-faqih*)"]
+key-documents: ["[[phase-5-058-nahj-al-balagha]] (sayings of Ali, compiled by al-Sharif al-Radi ~1009)", "Twelver Shi'a hadith collections (al-Kulayni's *al-Kafi* ~941; al-Tusi's *Tahdhib*; Ibn Babawayh's *Man la yahduruhu al-faqih*)"]
 sister-traditions: ["[[tradition-islam]] (Sunni)", "[[tradition-ismailism]] (Sevener Shi'a branch)", "[[tradition-sufism]] (substantial overlap)"]
 key-themes:
   - "[[messianic-future-savior]]"

@@ -9,7 +9,7 @@ region-origin: "Fatimid Cairo → Levantine highlands (Lebanon, Syria, Palestine
 regions-spread: ["Lebanon", "Syria", "Israel", "Jordan", "diaspora"]
 key-deities: []
 key-persons: ["al-Ḥākim bi-Amr Allāh (Fatimid caliph, 985–1021)", "Hamza ibn Ali (founder-theologian)", "Bahā' al-Dīn al-Muqtanā", "Muḥammad al-Darazī"]
-key-documents: ["Rasāʾil al-Ḥikma (Epistles of Wisdom)"]
+key-documents: ["[[phase-5-059-rasail-al-hikma]] (Epistles of Wisdom, 111 epistles, 1017–1043)"]
 sister-traditions: ["[[tradition-ismailism]]"]
 key-themes:
   - "[[apotheosis]]"
