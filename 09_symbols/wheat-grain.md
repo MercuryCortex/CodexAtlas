@@ -165,6 +165,9 @@ None significant.
 - ↔ [[vine-grape]] — *parallel-form*. The bread-and-wine eucharistic pair.
 - ↔ [[tree-of-life]] — *parallel-form*. Plant-as-divine-presence emblems.
 
+## Connections
+- → [[martyrdom-theology]] — *instance*: the wheat-grain is the locus classicus symbol of Christian martyrdom: John 12:24 ("unless a grain of wheat falls into the earth and dies, it remains alone; but if it dies, it bears much fruit") is Jesus's own prediction of his death as fruitful sacrifice; Ignatius of Antioch (*Ad Romanos* 4, c. 108 CE) — "I am God's wheat, ground by the teeth of lions to become the bread of Christ" — is the foundational martyrdom-ideology text; the symbol structures the dying-for-fruitfulness complex that martyrdom-theology inherits
+
 ## Refs
 
 1. Helene P. Foley (ed.), *The Homeric Hymn to Demeter* (Princeton UP, 1994). Tier 1.

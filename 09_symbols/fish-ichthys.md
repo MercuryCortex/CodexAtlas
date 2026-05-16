@@ -172,6 +172,9 @@ None significant.
 - ← [[vesica-piscis]] — *ancestor-of* (Bagatti's disputed hypothesis). Cross-edge present at both nodes.
 - ↔ [[serpent-wisdom-chthonic]] — *parallel-form*. Oannes / apkallu fish-sages and the wisdom-serpent (Quetzalcoatl, naga) share the theriomorphic-civilization-bringer register.
 
+## Connections
+- → [[theme-persecution-as-legitimation]] — *instance*: the ichthys was the covert recognition-emblem of the pre-Constantinian persecuted Christian community (2nd–3rd c. catacomb context — Snyder 1985); a symbol created under persecution, subsequently elevated to global icon; its chi-rho parallel (see cross-symbol-edges) shows the same pre-imperial → post-imperial ascent pattern operating across multiple Christian identification-signs simultaneously
+
 ## Refs
 
 1. Graydon F. Snyder, *Ante Pacem* (Mercer UP, 1985 / rev. 2003). Tier 1.

@@ -158,6 +158,10 @@ None major — the Faravahar is well-attested iconographically; the theological-
 - → [[halo-nimbus]] — *parallel-form*. Independent developments of divine-radiance iconography; no genealogical link.
 - → [[ankh]] — *parallel-form*. Ring-as-symbol-of-life-and-power; structural parallel, no documented direct transmission.
 
+## Connections
+- → [[theme-persecution-as-legitimation]] — *instance*: Zoroastrianism was reduced to a tiny persecuted diaspora (~200,000 Parsis globally) by Arab conquest after 651 CE, yet the Faravahar became more globally visible as a result; post-1979, the Iranian diaspora explicitly weaponized the Faravahar as a pre-Islamic identity-marker against the Islamic Republic — the symbol's political potency grew directly from the persecution that scattered its community
+- → [[tradition-zoroastrianism]] — *principal-emblem*: the Faravahar is the universal visual identifying-emblem of Zoroastrianism across all diaspora communities
+
 ## Refs
 1. Boyce, M. (1982). *History of Zoroastrianism* Vol. 2. Brill.
 2. Frye, R.N. (1962). *The Heritage of Persia*. World Publishing.

@@ -143,6 +143,10 @@ The Dharmachakra is **specifically Indic-Buddhist in origin** (and parallel Jain
 - ↔ [[mandala-circle]] — *parallel-form*. Both Buddhist cosmological-geometric forms; distinct functions (teaching vs. meditation).
 - ↔ [[lotus]] — *parallel-form*. Often paired in Buddhist iconography.
 
+## Connections
+- → [[event-destruction-of-nalanda-1193]] — *institutional-destruction*: the Islamic destruction of Nalanda (1193) ended the institutional center of the tradition whose symbol this is; the Dharmachakra as "wheel of teaching" survived only because Buddhism had already diffused into Sri Lanka, Burma, China, Tibet, Korea, and Japan before the Indian centers were destroyed
+- → [[theme-persecution-as-legitimation]] — *instance*: Buddhism was effectively expelled from its homeland (India) by persecution over the 11th–13th c., yet survived globally via its diaspora transmission lines; the Dharmachakra is now the flag-emblem of independent India (1947) — the tradition's symbol outlasting the conquest of its origin-center
+
 ## Refs
 1. Snellgrove, D.L. (1987). *Indo-Tibetan Buddhism*. Shambhala. Tier 1.
 2. Gethin, R. (1998). *The Foundations of Buddhism*. OUP. Tier 1.

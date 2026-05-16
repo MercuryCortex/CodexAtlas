@@ -134,6 +134,11 @@ None at this level — the Latin cross is the best-documented Christian symbol. 
 - ↔ [[sun-disk]] — *syncretic-fusion*. Sol-Invictus solar iconography under Constantine and the haloed-cross variant of the developed Latin form make the solar substrate visible. **MASSIVE-win edge** (Jensen 2017; Mathews 1993; Roll 1995).
 - → [[celtic-cross]] — *ancestor-of*. The Insular ringed-cross is a 7th-c. Latin-Christian development within Roman Britain / Ireland; the ring is the Insular addition.
 
+## Connections
+- → [[event-crucifixion-of-jesus-c30ce]] — *iconographic-referent*: the Latin cross IS the emblem of the crucifixion; public adoption from c. 500 CE marks the point crucifixion ceased to carry Roman-execution stigma and the symbol became triumphant rather than scandalous (Jensen 2017)
+- → [[crucifixion-theology]] — *iconographic-referent*: the shift from chi-rho (Christ-as-victor monogram) to standing Latin cross (Christ-as-suffering-redeemer) tracks the development of passion and atonement theology in Western Christianity
+- → [[theme-persecution-as-legitimation]] — *instance*: crucifixion was a deliberately humiliating Roman execution method (Hengel 1977: "the most monstrous of deaths"); its adoption as the central symbol of a world religion is the structurally purest instance of persecution-as-legitimation in Western history
+
 ## Refs
 
 1. Robin M. Jensen, *The Cross: History, Art, and Controversy* (Harvard UP, 2017). Tier 1. The standard contemporary monograph.
