@@ -93,15 +93,49 @@ refs:
 - music-music-of-spheres, music-nada-brahma, music-pentatonic-scale, music-sacred-drone
 - music-creation-by-sound, music-aum-om, music-hurrian-hymns, music-pythagorean-harmony
 
-### Batch 2 — Greek/Western Strand (music-greek-western-1) — DISPATCHED 2026-05-16
-Greek modal theory, Boethius transmission, Orpheus, lyre, Plato Timaeus world-soul,
-Western sacred chant lineage. Agent owns: all nodes with `tradition-pythagoreanism`,
-`tradition-neoplatonism`, `tradition-western-classical-music`.
+### Batch 2 — Greek/Western Strand (music-greek-western-1) — COMPLETED 2026-05-16
+7 nodes: Greek modes, Orpheus, lyre/kithara, Boethius De Musica, Plato Timaeus world-soul,
+Gregorian modes, Western sacred chant. Commit: 61d14bf.
 
-### Batch 3 — Indian/Eastern/Islamic/Jewish Strand (music-eastern-1) — DISPATCHED 2026-05-16
-Sama Veda, Natya Shastra, raga cosmology, Saraswati/vina, mantra, kirtan, AUM elaboration;
-Arabic maqam, oud-lute transmission chain, Sufi sama; Sefer Yetzirah sound mysticism,
-Torah cantillation, niggun. Agent owns: Indian, Arabic, Jewish music nodes.
+### Batch 3 — Indian/Islamic/Jewish Strand (music-eastern-1) — COMPLETED 2026-05-16
+10 nodes: raga cosmology, Natya Shastra, Sama Veda, Saraswati/vina, Arabic maqam,
+oud-lute transmission, Sufi sama, Sefer Yetzirah, Torah cantillation, niggun hasidic.
+Stub: narada (03_deities/). Commit: 01f93af.
+
+### Batch 4 — African Strand (music-africa-1) — COMPLETED 2026-05-16
+5 nodes: West African polyrhythm, griot tradition, talking drums, mbira spirit music,
+ancient Egyptian music. KEY FIND: Egypt's priestly musician caste predates Israel and India
+by 1,000+ years — may be origin point, not convergence. Commit: cd6f41d.
+
+### Batch 5 — East Asian Strand (music-eastasia-1) — COMPLETED 2026-05-16
+5 nodes: Chinese pentatonic cosmology (五音/5-element mapping — most complete music-cosmos
+system in vault), Yayue ritual music, Chinese court instruments (bāyīn/8 trigrams),
+Gagaku Japanese, Korean Aak. KEY FIND: Confucian yayue + Platonic modal censorship = same
+argument in independent civilizations. Preservation-by-periphery confirmed twice (Japan +
+Korea both archived Tang music China lost). Commits: 79edeea + e41f4af.
+
+### Batch 6 — Raga Singularity Investigation (music-raga-singularity-1) — COMPLETED 2026-05-16
+3 nodes: Greek musical ethos, Liturgy of Hours, Islamic adhan maqam conventions. Plus:
+2 new patterns (time-music-gradient-six-traditions, preservation-by-periphery) and
+1 new observation (why-india-completed-the-clock). KEY FIND: tawhid doctrine specifically
+blocks the Nada Brahma move — Islam couldn't complete the clock for doctrinal reasons,
+not for lack of musical sophistication. Commits: 4110670 + 53aac59.
+
+### Batch 7 — Americas + Oceania (music-americas-oceania-1) — COMPLETED 2026-05-16
+5 nodes: Aboriginal Songlines, Inca siku, Native American ceremonial, Mayan music,
+Aztec music. KEY FIND: Songlines = only tradition where creation-by-sound is ongoing
+maintenance, not historical event. Seasonal song restriction independently discovered on
+3 continents. Instrument burial convergence confirmed: Maya + Mesopotamia + China.
+Commit: 3b0606d.
+
+### Batch 8 — Ancient Near East (music-ancient-near-east-1) — COMPLETED 2026-05-16
+3 nodes: Mesopotamian temple music (world's first salaried musicians, gala gender-liminality),
+Levitical temple music (Psalm 137 = first music strike), Zoroastrian sacred sound.
+KEY FIND: Zoroastrian Gathas and Sama Veda are same type of metered sacred oral composition;
+opposite conclusions on instruments. Possible transmission vector for Islamic anti-instrument
+jurisprudence. Commit: 252a346.
+
+**CURRENT STATE: 47 music nodes · 15,779 edges · all inhabited continents covered**
 
 ---
 

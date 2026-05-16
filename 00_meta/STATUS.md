@@ -520,3 +520,31 @@ Script: `add_depictions.py` (new helper for direct Commons depictions[] injectio
 - 9 seed nodes covering the MASSIVE WIN convergence layer
 - Schema: 00_meta/MUSIC-INVESTIGATION.md
 - 2 follow-on agent batches dispatched: Greek/Western + Indian/Islamic/Jewish
+
+---
+
+## music-africa-1 — African music cosmology — FINISHED 2026-05-16
+- 5 nodes: west-african-polyrhythm · griot-tradition · talking-drums · mbira-spirit-music · ancient-egyptian-music
+- KEY FIND: Egypt's priestly musician caste (~-2500) predates Levitical singers (~-950) and Indian temple musicians by 1,000+ years — may be institutional origin, not convergence
+- Build: 35 music nodes · 15,696 edges · commit cd6f41d
+
+## music-eastasia-1 — East Asian music cosmology — FINISHED 2026-05-16
+- 5 nodes: chinese-pentatonic-cosmology · yayue-ritual-music · chinese-court-instruments · gagaku-japanese · korean-aak
+- KEY FIND: Confucian yayue theory + Platonic modal censorship = identical argument in independent civilizations; Japan+Korea both archived Tang music China lost (preservation-by-periphery ×2)
+- Build: 38 music nodes · 15,713 edges · commits 79edeea + e41f4af
+
+## music-raga-singularity-1 — Raga comparative investigation — FINISHED 2026-05-16
+- 3 nodes: greek-musical-ethos · liturgy-of-hours · islamic-adhan-maqam
+- 2 patterns (time-music-gradient-six-traditions, preservation-by-periphery) + 1 observation (why-india-completed-the-clock)
+- KEY FIND: tawhid doctrine specifically blocks the Nada Brahma ontological move — Islam couldn't complete the cosmic clock for doctrinal reasons, not musical ones
+- Build: 44 music nodes · 15,756 edges · commits 4110670 + 53aac59
+
+## music-americas-oceania-1 — Americas + Oceania music — FINISHED 2026-05-16
+- 5 nodes: aboriginal-songlines · inca-music-cosmology · native-american-ceremonial · mayan-music · aztec-music
+- KEY FIND: Aboriginal Songlines = only tradition where creation-by-sound is ongoing maintenance, not historical event; seasonal song restriction discovered independently on 3 continents; instrument burial convergence (Maya + Mesopotamia + China)
+- Build: 45 music nodes · 15,766 edges · commit 3b0606d
+
+## music-ancient-near-east-1 — Ancient Near East music — FINISHED 2026-05-16
+- 3 nodes: mesopotamian-temple-music · levitical-temple-music · zoroastrian-sacred-sound
+- KEY FIND: Zoroastrian Gathas + Sama Veda = same type of ancient metered sacred oral composition, opposite conclusions on instruments; Psalm 137 = first documented music strike; possible Zoroastrian → Islamic anti-instrument transmission vector
+- Build: 47 music nodes · 15,779 edges · commit 252a346
