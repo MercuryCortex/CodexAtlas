@@ -35,6 +35,8 @@ window.ScriptureReader = (function () {
     'romans-8':           { religion:'Christianity', group:'New Testament',          canon:'All Canons',          sort:30 },
     '1-corinthians-15':   { religion:'Christianity', group:'New Testament',          canon:'All Canons',          sort:40 },
     'revelation-12':      { religion:'Christianity', group:'New Testament',          canon:'All Canons',          sort:50 },
+    'matthew-sermon-mount': { religion:'Christianity', group:'New Testament',        canon:'All Canons',          sort:25 },
+    'acts-17-areopagus':  { religion:'Christianity', group:'New Testament',          canon:'All Canons',          sort:55 },
     // ── Christianity — Ethiopian Canon ──────────────────────────────
     'book-of-enoch':      { religion:'Christianity', group:'Ethiopian Canon',        canon:'Ethiopian Orthodox',  sort:10 },
     // ── Christianity — Christian Mysticism ──────────────────────────
@@ -45,6 +47,7 @@ window.ScriptureReader = (function () {
     'apocryphon-of-john': { religion:'Christianity', group:'Gnostic / Nag Hammadi', canon:'Non-canonical',       sort:20 },
     // ── Judaism ─────────────────────────────────────────────────────
     'sefer-yetzirah':     { religion:'Judaism',       group:'Kabbalah',              canon:'Rabbinic / Kabbalistic', sort:10 },
+    'zohar-ein-sof':      { religion:'Judaism',       group:'Kabbalah',              canon:'Rabbinic / Kabbalistic', sort:20 },
     // ── Islam ───────────────────────────────────────────────────────
     'quran-fatiha-nur':   { religion:'Islam',         group:'Quran',                 canon:'All Canons',          sort:10 },
     'surah-ya-sin':       { religion:'Islam',         group:'Quran',                 canon:'All Canons',          sort:20 },
@@ -57,6 +60,7 @@ window.ScriptureReader = (function () {
     'katha-upanishad':    { religion:'Hinduism',      group:'Upanishads',            canon:'Upanishads',          sort:20 },
     'mandukya-upanishad': { religion:'Hinduism',      group:'Upanishads',            canon:'Upanishads',          sort:30 },
     'brihadaranyaka-neti-neti': { religion:'Hinduism', group:'Upanishads',           canon:'Upanishads',          sort:40 },
+    'isha-upanishad':     { religion:'Hinduism',      group:'Upanishads',            canon:'Upanishads',          sort:50 },
     'bhagavad-gita-4':    { religion:'Hinduism',      group:'Epics',                 canon:'Mahabharata',         sort:10 },
     'bhagavad-gita-11':   { religion:'Hinduism',      group:'Epics',                 canon:'Mahabharata',         sort:20 },
     // ── Buddhism ────────────────────────────────────────────────────

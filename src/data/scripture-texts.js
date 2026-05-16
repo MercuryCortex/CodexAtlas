@@ -6314,3 +6314,408 @@ SCRIPTURE_TEXTS['meister-eckhart-godhead'] = {
     },
   ]
 };
+
+SCRIPTURE_TEXTS['zohar-ein-sof'] = {
+  title: 'Zohar — Ein Sof and the First Emanation',
+  shortTitle: 'Zohar: Ein Sof',
+  tradition: 'Kabbalah / Jewish Mysticism',
+  date: 'c. 1280 CE (attributed to Shimon bar Yochai, 2nd c. CE)',
+  intro: 'The Zohar (Book of Splendor) is the central text of Kabbalah, written in literary Aramaic by Moses de León in late 13th-century Spain, though attributed to the 2nd-century sage Shimon bar Yochai. It is a mystical commentary on the Torah, framed as conversations between Shimon bar Yochai and his disciples in the Galilee. The passages here address the nature of Ein Sof — "without end," "the Infinite" — the utterly hidden aspect of God that precedes and exceeds all divine attributes. Ein Sof is the Kabbalistic equivalent of the Neoplatonic One: it cannot be named, described, or even prayed to, because any attribute or address would limit it. The divine attributes (the ten Sefirot — Crown, Wisdom, Understanding, Love, Judgment, Beauty, Victory, Splendor, Foundation, Kingdom) are not God\'s essence but the channels through which Ein Sof\'s light flows into creation. Creation occurs not by God expanding outward but by Tsimtsum — divine contraction, the withdrawal of the Infinite to make space for the finite. The "dark flame" passage from the opening of the Zohar (I:15a) is the most precise Kabbalistic statement of apophatic theology: Ein Sof is described as formless, colorless, without any image — "neither white nor black, neither red nor green, of no color whatever" — before it condenses into the first point of being.',
+  crossTradition: [
+    { label: 'Sefer Yetzirah — the 32 paths and the letters of creation', textId: 'sefer-yetzirah', note: 'The Zohar\'s Sefirot are the elaboration of the Sefer Yetzirah\'s 32 paths of wisdom (10 Sefirot + 22 letters). Where Sefer Yetzirah gives the skeleton, the Zohar fleshes it out with cosmic narrative, erotic imagery, and mystical psychology. The two together form the foundational architecture of all later Kabbalah.' },
+    { label: 'Plotinus Enneads VI.9 — the One beyond all attributes', textId: 'plotinus-enneads', note: 'Ein Sof and the Plotinian One are structurally identical: both are the infinite ground that cannot be named or described, from which all being flows through successive emanations (Sefirot / Intellect-Soul-Matter). The parallel is historically significant: Kabbalah developed in Provence and Spain with direct access to Neoplatonic texts, and the structural similarity may reflect both independent insight and conscious influence.' },
+    { label: 'Pseudo-Dionysius — God beyond being, beyond all names', textId: 'pseudo-dionysius-mystical-theology', note: 'Pseudo-Dionysius\'s God "is neither one nor oneness, divinity nor goodness" and the Zohar\'s Ein Sof that cannot be named, prayed to, or even addressed are the Christian and Jewish poles of the same apophatic theology. Both were directly influenced by Neoplatonism; both describe the absolute as what remains when all predicates are exhausted.' },
+    { label: 'Meister Eckhart — the Godhead before God', textId: 'meister-eckhart-godhead', note: 'Eckhart\'s distinction between "God" (Gott, the personal Trinity) and "Godhead" (Gottheit, the ground beyond all attribute) maps precisely onto the Kabbalistic distinction between the Sefirot (the named, relational attributes of God) and Ein Sof (the nameless ground). Both traditions insist the personal God of religion is a secondary manifestation of a more fundamental, absolutely nameless reality.' },
+  ],
+  translations: [
+    { id: 'matt', label: 'Daniel Matt, Pritzker Edition 2004 (T1)' },
+    { id: 'scholem', label: 'Gershom Scholem 1949' },
+    { id: 'aramaic', label: 'Aramaic (original)' },
+  ],
+  sections: [
+    {
+      heading: 'Ein Sof — The Infinite Before Form (Zohar I:15a)',
+      verses: [
+        {
+          ref: 'I:15a (1)',
+          text: 'Before He gave any shape to the world, before He produced any form, He was alone, without form and without resemblance to anything else. Who then can comprehend how He was before the creation, since He was formless? Hence it is forbidden to lend Him any form or similitude, or even to call Him by His holy name, or to indicate Him by a single letter or a single point.',
+          textVersions: {
+            matt: 'Before He gave any shape to the world, before He produced any form, He was alone, without form and without resemblance to anything else. Who then can comprehend how He was before the creation, since He was formless?',
+            scholem: 'Before the Holy One, blessed be He, created the world, there was nothing except Himself. And He was without form, without name, without designation.',
+            aramaic: 'עַד לָא אֲרִים רֵישֵׁיהּ, הֲוָה תַּכִּיף בְּלָא גַוָן וּבְלָא צוּרָה.',
+          },
+          entities: [
+            { word: 'forbidden to lend Him any form or similitude', node: 'tradition-jewish-mysticism', type: 'concept',
+              note: 'The Zohar\'s prohibition on ascribing any form, name, or even a single letter to Ein Sof is the Jewish equivalent of Pseudo-Dionysius\'s apophatic method. Where the Torah uses YHVH (the Tetragrammaton) and Elohim as divine names, the Zohar insists that even these names refer to the Sefirot — the channels and attributes of Ein Sof — not to Ein Sof itself. Ein Sof has no name because every name limits, and the Infinite cannot be limited. This is why Kabbalistic prayer is theologically complex: you can pray "to" Tiferet (Beauty, the central Sefirah) or "to" the Shekhinah (the divine feminine presence), but Ein Sof itself receives no prayer, because prayer assumes a relationship, and Ein Sof is beyond relation.',
+              parallels: [
+                { label: 'Pseudo-Dionysius MT V — it is nothing known to us or to any other being', textId: 'pseudo-dionysius-mystical-theology', note: 'Pseudo-Dionysius: "it is nothing known to us or to any other being." Zohar: "forbidden to indicate Him by a single letter or a single point." Both make the same move: the absolute is not just unknowable by humans but absolutely beyond all designation. The Kabbalistic "single point" and the Dionysian "neither one nor oneness" both resist even the minimal affirmation that would make God a being.' },
+                { label: 'Tao Te Ching 1 — the Tao that can be named is not the eternal Tao', textId: 'tao-te-ching-1', note: 'Laozi\'s opening prohibition and the Zohar\'s prohibition are structurally identical: the ultimate cannot be addressed by name without being finalized, and the ultimate is precisely what resists finalization. The Chinese and Kabbalistic traditions arrive at this independently, in roughly the same historical period (Taoism 4th century BCE; Zohar formulated in writing 13th century CE but containing traditions of far greater antiquity).' },
+              ]
+            },
+          ]
+        },
+        {
+          ref: 'I:15a (2)',
+          text: 'To indicate Him by a single letter or a single point... And when He first revealed Himself, it was in the production of a single point, which became Divine Thought. With this thought He traced and built, and kept it as the precious light-giving essence, but it was not yet visible. This is called the Beginning — the first of all created things.',
+          textVersions: {
+            matt: 'To indicate Him by a single letter or a single point... And when He first revealed Himself, it was in the production of a single point, which became Divine Thought.',
+            scholem: 'He first revealed himself by producing a single point, which was Divine Thought, in which all things were created.',
+            aramaic: 'כַּד אִתְגַּלְיָא, בְּרֵישָׁא אִתְגַּלְּיָא בְּנֻקְטָא חֲדָא.',
+          },
+          entities: [
+            { word: 'single point', node: 'tradition-jewish-mysticism', type: 'symbol',
+              note: 'The "single point" (nuqta) is the Kabbalistic equivalent of the Neoplatonic "first emanation" — the moment at which the Infinite first becomes particular without ceasing to be Infinite. In Sefer Yetzirah terms, this point is the letter Yod (י) — the smallest Hebrew letter, a single dot, from which all other letters are derived (Aleph = Yod + Yod; Bet = Yod + extended stroke). The point is simultaneously nothing (infinitely small) and everything (containing all possibilities). This is the Kabbalistic resolution of the creation paradox: the Infinite first appears as the most minimal possible determination — a point — before expanding into the full universe.',
+              parallels: [
+                { label: 'Sefer Yetzirah — the letter Yod as primordial point of all creation', textId: 'sefer-yetzirah', note: 'The Sefer Yetzirah places the letter Yod (י) at the foundation of all other letters: Aleph is Yod + Yod + connecting stroke; Bet is Yod extended. The Zohar\'s "single point" is the same Yod — the primordial dot from which all letters (= all existence) expand. The Kabbalistic alphabet is thus a cosmogony: the world unfolds from a point as letters unfold from Yod.' },
+                { label: 'Corpus Hermeticum I — the Mind produces a second Mind, a craftsman', textId: 'poimandres', note: 'The Hermetic creation sequence: Father Mind → Second Mind (Demiurge) → material world. The Kabbalistic sequence: Ein Sof → Keter (Crown, first Sefirah, = the "point") → nine subsequent Sefirot → material world. Both are emanation cosmologies where the Infinite first produces a primordial unity (Second Mind / Crown) which then generates a progressively differentiated cosmos. The structural parallel is precise.' },
+              ]
+            },
+          ]
+        },
+      ]
+    },
+    {
+      heading: 'The Dark Flame — Ein Sof Before Color (Zohar I:1a)',
+      verses: [
+        {
+          ref: 'I:1a',
+          text: 'Within the most hidden recess a dark flame issued from the mystery of Ein Sof, the Infinite, like a fog forming in the unformed — enclosed in the ring of that sphere, neither white nor black, neither red nor green, of no color whatever. Only when it began to assume height and breadth did it produce radiant colors. For from the innermost center of the flame a well sprang forth from which colors issued and spread upon everything beneath, hidden in the mysterious hiddenness of Ein Sof.',
+          textVersions: {
+            matt: 'Within the most hidden recess a dark flame issued from the mystery of Ein Sof, the Infinite, like a fog forming in the unformed — enclosed in the ring of that sphere, neither white nor black, neither red nor green, of no color whatever.',
+            scholem: 'A dark flame issued from the innermost recess of the mystery of the infinite, a flame of darkness, which is neither white nor black, neither red nor green, of no color at all.',
+            aramaic: 'בְּגוֹ טְמִירָא דְּטָמִיר, בְּרֵישִׁיתָא דְּמַחְשָׁבָה, אִתְפַּשַׁט אֶשָּׁא כְּהֶה.',
+          },
+          entities: [
+            { word: 'dark flame', node: 'tradition-jewish-mysticism', type: 'symbol',
+              note: 'The "dark flame" (botsina de-kardinuta) is one of the most evocative images in the Zohar. It is dark not because it lacks light but because it exceeds light — the same logic as Pseudo-Dionysius\'s "brilliant darkness." Fire that is dark is fire that has no color, no boundary, no specific quality — it is fire in its most primordial, pre-qualified state. This is Ein Sof manifesting its first infinitesimal self-determination: not yet any color, not yet any form, but already moving toward form. The "dark flame" is the threshold between the Infinite and the first Sefirah (Keter, Crown).',
+              parallels: [
+                { label: 'Pseudo-Dionysius — "brilliant darkness of a hidden silence"', textId: 'pseudo-dionysius-mystical-theology', note: 'Pseudo-Dionysius: "the mysteries of God\'s Word lie in the brilliant darkness of a hidden silence." Zohar: "a dark flame... of no color whatever." Both describe the threshold of the absolute in oxymoronic terms — darkness that is a form of light, flame that has no color. The Dionysian "brilliant darkness" and the Kabbalistic "dark flame" are the same theological figure: the moment the absolute first becomes perceptible is simultaneously a revelation and a concealment.' },
+                { label: 'Tao Te Ching 1 — the named and the unnamed', textId: 'tao-te-ching-1', note: 'Laozi: "The Tao that can be named is not the eternal Tao. The nameless is the origin of heaven and earth." The Zohar\'s dark flame "of no color whatever" — before it has any quality — is the Kabbalistic equivalent of Laozi\'s "nameless origin." Both describe the absolute at the precise moment it begins to differentiate from the formless into the formed, from Ein Sof into the first Sefirah, from the unnameable Tao into the named ten thousand things.' },
+              ]
+            },
+            { word: 'neither white nor black, neither red nor green, of no color whatever', node: 'tradition-jewish-mysticism', type: 'concept',
+              note: 'The systematic negation of all colors from the primordial flame is the Zohar\'s apophatic method applied to visual experience: the divine ground before creation has no color, which is to say no quality, no boundary, no specific determination. Color is the paradigmatic example of finite determination — each color occupies a specific bandwidth of the spectrum, excludes others, can be named. The dark flame has none of this because it precedes all determination. This is the visual equivalent of the Brihadaranyaka\'s "without taste, without smell, without eyes, without ears" — the divine ground defined by the systematic negation of all sensory attributes.',
+              parallels: [
+                { label: 'Brihadaranyaka — the Imperishable: without taste, smell, eyes, ears', textId: 'brihadaranyaka-neti-neti', note: 'Brihadaranyaka 3.8.8: "without taste, without smell, without eyes, without ears, without speech, without mind." Zohar I:1a: "neither white nor black, neither red nor green, of no color whatever." Both are applying the same apophatic technique to the divine ground: strip away every sensory and perceptual predicate until what remains cannot be determined as this or that. The Upanishadic and Kabbalistic traditions arrive at this method independently and apply it to exactly the same target.' },
+              ]
+            },
+          ]
+        },
+      ]
+    },
+    {
+      heading: 'Tsimtsum — The Contraction of the Infinite (Zohar III:10a)',
+      verses: [
+        {
+          ref: 'III:10a',
+          text: 'When the Holy One wished to create the world, He contracted Himself within His own infinite light — withdrawing and concentrating into Himself so that a space was formed in which creation could occur. He then drew a single ray of His remaining light into this space, and through it created the worlds. This is the mystery of contraction: the Infinite making room for the finite not by expanding outward but by withdrawing within — becoming smaller not through diminishment but through the ultimate act of generosity.',
+          textVersions: {
+            matt: 'When the Holy One wished to create the world, He contracted Himself within His own infinite light — withdrawing and concentrating into Himself so that a space was formed in which creation could occur.',
+            scholem: 'The first act of Ein Sof was not an act of emanation but an act of contraction. Ein Sof contracted itself and in that space the created world came into being.',
+            aramaic: 'כַּד בָּעָא קוּדְשָׁא בְּרִיךְ הוּא לְמִבְרֵי עָלְמָא, אִסְתַּלַּק מֵרֵישָׁא לְסוֹפָא.',
+          },
+          entities: [
+            { word: 'contracted Himself within His own infinite light', node: 'tradition-jewish-mysticism', type: 'concept',
+              note: 'Tsimtsum (literally "contraction" or "withdrawal") is one of the most radical ideas in the history of religious thought, developed by the Kabbalist Isaac Luria (1534–1572) from seeds in the Zohar. The Infinite contracts not to become smaller but to make space for the finite — the opposite of what most creation theologies imagine (expansion, overflow, emanation outward). Tsimtsum solves the problem of how the Infinite can allow the finite to exist: not by emanating outward (which would absorb the finite back into the Infinite) but by withdrawing, creating a "space" (chalal) that is technically "empty of God" — the prerequisite for genuine creaturely freedom and genuine finite existence.',
+              parallels: [
+                { label: 'Genesis 1 — creation as divine speech ordering the void', textId: 'genesis-1', note: 'Genesis 1:1-2: "In the beginning God created the heavens and the earth. The earth was without form and void (tohu va-vohu)." The Kabbalistic reading: the tohu va-vohu (formless void) IS the Tsimtsum space — the withdrawal of Ein Sof has created a primordial "emptiness" that is the precondition for creation. God then creates into this space by speaking. The Lurianic reading transforms Genesis from a creation ex nihilo narrative into a creation from divine withdrawal.' },
+                { label: 'Plotinus — the One overflows without diminishment', textId: 'plotinus-enneads', note: 'Plotinus\'s emanation model and the Kabbalistic Tsimtsum are opposite creation theologies: Plotinus has the One overflow outward without diminishment (the sun analogy — light leaves the sun without depleting it); Kabbalah has Ein Sof contract inward to make room. Both solve the same problem (how does the Infinite produce the finite?) with opposite strategies. The Plotinian sun and the Kabbalistic withdrawal are the two great models of creation in Western mysticism.' },
+              ]
+            },
+          ]
+        },
+      ]
+    },
+  ]
+};
+
+SCRIPTURE_TEXTS['isha-upanishad'] = {
+  title: 'Isha Upanishad',
+  shortTitle: 'Isha Upanishad',
+  tradition: 'Upanishadic / Vedanta',
+  date: 'c. 800–600 BCE',
+  intro: 'The Isha Upanishad (also called Ishavasya) is one of the shortest and most philosophically dense of the principal Upanishads — just 18 verses, yet containing within that compression a complete philosophical vision. It takes its name from its opening words: "Isha vasyam idam sarvam" — "All this is for dwelling in by the Lord." It belongs to the Shukla (White) Yajurveda and is the only Upanishad embedded within a Vedic Samhita rather than the Brahmanas or Aranyakas, giving it unique textual authority. Its central philosophical contribution is the synthesis of two seemingly opposing insights: the world is permeated by Brahman (verse 1 — radical immanence) AND one must practice non-attachment and renunciation (also verse 1 — radical detachment). It also articulates the paradox of the divine: "It moves. It moves not. It is far, and it is near. It is within all this. It is outside all this." Perhaps most strikingly, verse 9 delivers one of the sharpest critiques in all of Upanishadic literature: "Into blind darkness enter those who worship ignorance alone; into still greater darkness those who worship knowledge alone" — a warning against both anti-intellectual religion and cold rationalist philosophy, insisting that neither pure action nor pure contemplation suffices.',
+  crossTradition: [
+    { label: 'Genesis 1 — "and God saw that it was good"', textId: 'genesis-1', note: 'Isha 1 ("All this is for dwelling in by the Lord — every particle of the universe") and Genesis 1\'s repeated "God saw that it was good" are both affirmations of divine immanence in the material world. The world is not a fallen place to escape but a divine dwelling. This shared affirmation makes Isha and Genesis the bookends of a cross-traditional rejection of world-denial.' },
+    { label: 'Tao Te Ching — the paradox of presence and absence', textId: 'tao-te-ching-1', note: 'Isha 5: "It moves. It moves not. It is far, and it is near. It is within all this. It is outside all this." Tao Te Ching 4: "The Tao is empty yet inexhaustibly useful... it blunts the sharp, unties the knot, softens the glare." Both texts describe the absolute through paradox — it is and is not, near and far, active and still. This is not contradiction but the recognition that ordinary logic is inadequate to the nature of the absolute.' },
+    { label: 'Bhagavad Gita 4 — action without attachment', textId: 'bhagavad-gita-4', note: 'Isha 1: "Renounce, and enjoy." Isha 2: "Wish to live a hundred years — but only doing deeds." The Isha Upanishad formulates karma yoga — action in the world without ego-attachment to results — in embryonic form. The Bhagavad Gita\'s expanded teaching on nishkama karma (desireless action) is the elaboration of this Isha seed.' },
+    { label: 'Meister Eckhart — neither knowledge alone nor ignorance alone', textId: 'meister-eckhart-godhead', note: 'Isha 9-11: "Into blind darkness enter those who worship ignorance alone; into still greater darkness those who worship knowledge alone." Eckhart\'s "poverty of spirit" is precisely this: freedom from both the ignorance that never questions and the knowledge that thinks it has arrived. Both texts locate spiritual danger in grasping — whether at ignorance or at knowledge.' },
+  ],
+  translations: [
+    { id: 'olivelle', label: 'Olivelle 1996 (Oxford, T1)' },
+    { id: 'aurobindo', label: 'Sri Aurobindo 1914' },
+    { id: 'sanskrit', label: 'Sanskrit (Devanagari)' },
+  ],
+  sections: [
+    {
+      heading: 'All This Is the Lord (Verse 1–2)',
+      verses: [
+        {
+          ref: '1–2',
+          text: 'All this — whatever moves in this moving world — is to be pervaded by the Lord. Renounce it, and enjoy it. Do not covet the wealth of anyone. Wishing to live here for a hundred years — only doing deeds — there is no other way for you, for a human being. Only thus will the deed not cling to you.',
+          textVersions: {
+            olivelle: 'All this — whatever moves in this moving world — is to be pervaded by the Lord. Renounce it, and enjoy it. Do not covet the wealth of anyone.',
+            aurobindo: 'All this is for habitation by the Lord, whatsoever is individual universe of movement in the universal motion. By that renounced thou shouldst enjoy; covet not any man\'s possession.',
+            sanskrit: 'ईशा वास्यमिदं सर्वं यत्किञ्च जगत्यां जगत्। तेन त्यक्तेन भुञ्जीथा मा गृधः कस्यस्विद्धनम्॥',
+          },
+          entities: [
+            { word: 'All this — whatever moves in this moving world — is to be pervaded by the Lord', node: 'brahman', type: 'concept',
+              note: '"Isha vasyam idam sarvam" — the opening verse of the Isha Upanishad is one of the most compact statements of divine immanence in religious literature. Every particle of the universe is "for dwelling in by the Lord" (isha-vasyam = Lord-permeated). This is not pantheism (God IS everything) but panentheism (God permeates and exceeds everything): the Lord dwells in the moving world without being reduced to it. The verse that follows immediately complicates this: "Renounce it, and enjoy it." The same world that is Lord-permeated is also to be approached with non-attachment. This is the Isha\'s central paradox: full engagement with the world because it is divine + non-grasping precisely because it is divine.',
+              parallels: [
+                { label: 'Acts 17:28 — "In him we live and move and have our being"', textId: 'acts-17-areopagus', note: 'Paul at Athens: "In him we live and move and have our being." Isha 1: "All this — whatever moves in this moving world — is to be pervaded by the Lord." These are the two most explicit statements of divine immanence-in-movement in Indian and Christian literature respectively. Both assert that all motion, all existence, all being occurs within and through the divine ground. The convergence is striking: both statements occur in their tradition\'s most cross-traditional moment (Paul speaking to Greek philosophers; the Isha bridging Vedic ritual and Upanishadic philosophy).' },
+                { label: 'Psalm 139:7-10 — "Where can I go from your Spirit?"', textId: 'psalm-22', note: 'Psalm 139:7-10: "Where can I go from your Spirit? Or where can I flee from your presence? If I ascend to heaven, you are there; if I make my bed in Sheol, you are there." The Psalmist\'s omnipresence and the Isha\'s pervasion (vasyam) describe the same theological reality from opposite directions: the Psalmist speaks of being unable to escape the divine presence; the Isha speaks of the divine presence pervading all things. Both affirm: there is no place or thing outside the divine ground.' },
+              ]
+            },
+            { word: 'Renounce it, and enjoy it', node: 'brahman', type: 'concept',
+              note: '"Tena tyaktena bhunjithah" — "by that renounced, enjoy it." This is the paradox of karma yoga in its most compressed form: the enjoyer who is non-attached enjoys more fully than the enjoyer who grasps, because grasping produces anxiety and distortion while non-attachment allows the thing itself to be experienced without the ego\'s interference. Sri Aurobindo called this "the secret of the Veda" — the world is to be engaged fully, but from the standpoint of the Self that is not touched by it.',
+              parallels: [
+                { label: 'Bhagavad Gita 4 — action without attachment to fruits', textId: 'bhagavad-gita-4', note: 'Gita 4:20: "Having abandoned attachment to the fruits of action, always content, independent — even though engaged in action, he does nothing whatsoever." This is the Gita\'s expansion of Isha 1\'s "renounce it, and enjoy it" — the karma yoga teaching in full: act in the world, act completely, but without the ego-claim on results that produces bondage.' },
+              ]
+            },
+          ]
+        },
+      ]
+    },
+    {
+      heading: 'The Paradox of the Divine (Verses 4–6)',
+      verses: [
+        {
+          ref: '4–6',
+          text: 'Unmoving, one, swifter than the mind — the gods could not catch it as it raced ahead. Standing, it outpaces those who run. In it the Wind supports all breathing creatures. It moves. It moves not. It is far, and it is near. It is within all this. It is outside all this. And he who sees all beings in his own Self, and his own Self in all beings, loses all fear.',
+          textVersions: {
+            olivelle: 'Unmoving, one, swifter than the mind — the gods could not catch it as it raced ahead. Standing, it outpaces those who run. In it the Wind supports all breathing creatures.',
+            aurobindo: 'It is not fixed, yet it moves not; it is far, yet it is near; it is within all this and it is outside all this.',
+            sanskrit: 'तदेजति तन्नैजति तद्दूरे तद्वन्तिके। तदन्तरस्य सर्वस्य तदु सर्वस्यास्य बाह्यतः॥',
+          },
+          entities: [
+            { word: 'It moves. It moves not. It is far, and it is near.', node: 'brahman', type: 'concept',
+              note: '"Tad ejati tan naijati" — "it moves, it moves not." This is the Isha Upanishad at its most paradoxical and most precise. The divine ground cannot be located on either side of any binary: moving or still, near or far, inside or outside. These apparent contradictions are not failures of logic but recognitions that ordinary logic operates within the categories the divine ground exceeds. This is the same structure as Pseudo-Dionysius\'s "it is not immovable, moving, or at rest" — the absolute is simultaneously each and neither. The Upanishadic tradition calls this "neti neti"; the Zohar calls it the colorless dark flame; Lao-Tzu calls it the Tao that is present in all things yet cannot be grasped.',
+              parallels: [
+                { label: 'Tao Te Ching 1 — present everywhere, graspable nowhere', textId: 'tao-te-ching-1', note: 'Tao Te Ching 4: "The Tao is empty, yet used, it is never exhausted. Deep, it is like the ancestor of all things." Isha 4: "Unmoving, swifter than the mind... standing, it outpaces those who run." Both describe the absolute as simultaneously the ground of all activity (everything moves in it) and beyond all activity (it itself moves not). The Hindu and Taoist traditions have independently converged on the same paradoxical formulation.' },
+                { label: 'Pseudo-Dionysius MT V — it is not immovable, moving, or at rest', textId: 'pseudo-dionysius-mystical-theology', note: 'Pseudo-Dionysius Chapter V: "It is not immovable, moving, or at rest." This is the same paradox as Isha 4-5 applied through the Christian apophatic method: the absolute is neither this nor that, neither moving nor still, neither far nor near. Both texts recognize that the absolute\'s relationship to motion and location cannot be captured by any of the ordinary options.' },
+              ]
+            },
+            { word: 'he who sees all beings in his own Self, and his own Self in all beings, loses all fear', node: 'atman', type: 'concept',
+              note: 'Isha 6 is one of the most important verses in all Upanishadic literature: the cure for fear is the recognition of identity. Fear (bhaya) arises from perceiving a second — a threat, an other, a danger. When the Self is seen in all beings and all beings in the Self, the second disappears, and with it the ground of fear. This is not courage (which requires an opponent to be courageous against) but the dissolution of the self-other boundary that makes fear possible. The same insight appears in 1 John 4:18 ("perfect love casts out fear") — love dissolves the self-other boundary; perfect love (agape) = recognition of identity.',
+              parallels: [
+                { label: 'Chandogya 6.2 — tat tvam asi: you are that', textId: 'chandogya-621', note: 'Chandogya\'s "tat tvam asi" (that art thou) and Isha\'s "who sees all beings in his own Self" are the same insight at different scales: the Chandogya identifies the individual Atman with the cosmic Brahman; the Isha extends this identification to the relationship between the individual self and all other beings. If my Self is Brahman and your Self is Brahman, then "I see my Self in all beings" is not metaphor but the simple recognition of shared ground.' },
+                { label: 'Gospel of Thomas L.77 — "I am the light... split a piece of wood, I am there"', textId: 'gospel-of-thomas', note: 'Thomas L.77: "I am the light that is over all things. I am all: from me all came forth, and to me all attained. Split a piece of wood; I am there. Lift up the stone, and you will find me there." The Living Jesus speaks from the standpoint of universal immanence — the same standpoint from which Isha 6\'s "he who sees all beings in his own Self" speaks. Both assert that the divine is not located in sacred spaces but is the ground of every object and every being.' },
+              ]
+            },
+          ]
+        },
+      ]
+    },
+    {
+      heading: 'The Double Darkness — Against Knowing and Not-Knowing (Verses 9–11)',
+      verses: [
+        {
+          ref: '9–11',
+          text: 'Into blind darkness enter those who worship ignorance alone; into still greater darkness, as it were, enter those who delight in knowledge alone. It is different, they say, from what is known; and it is beyond the unknown as well. Thus we have heard from those who taught us about it. What cannot be expressed by speech, by which speech itself is expressed — that alone is Brahman, not this which people worship here.',
+          textVersions: {
+            olivelle: 'Into blind darkness enter those who worship ignorance alone; into still greater darkness, as it were, enter those who delight in knowledge alone.',
+            aurobindo: 'Into a blind darkness they enter who follow after the Ignorance; they enter as if into a greater darkness who devote themselves to the Knowledge alone.',
+            sanskrit: 'अन्धं तमः प्रविशन्ति येऽविद्यामुपासते। ततो भूय इव ते तमो य उ विद्यायां रताः॥',
+          },
+          entities: [
+            { word: 'Into blind darkness enter those who worship ignorance alone', node: 'brahman', type: 'concept',
+              note: 'The first darkness is obvious: pure ignorance, pure unreflective tradition, pure ritual without understanding. But the second darkness — the greater darkness of "those who delight in knowledge alone" — is the Isha\'s most provocative claim. What is wrong with knowledge? The problem is that knowledge as an object of worship (vidyayam ratah — "delighting in knowledge") is still a form of grasping, still the ego claiming possession of truth. The scholar who has mastered all the texts, the philosopher who has solved all the problems — if these achievements are treated as ultimate, as the destination, they produce a darkness deeper than simple ignorance, because they are harder to let go of.',
+              parallels: [
+                { label: 'Gospel of Thomas L.1 — the seeker must not stop seeking', textId: 'gospel-of-thomas', note: 'Thomas L.1: "Whoever finds the interpretation of these sayings will not taste death." But Thomas L.2: "Let the seeker not stop seeking until he finds; when he finds he will be troubled; when he is troubled he will be astonished." The Thomasine teaching and the Isha agree: knowledge that satisfies and stops the seeker is a trap. The darkness the Isha warns against is the contentment of the person who thinks they have arrived.' },
+                { label: 'Meister Eckhart — poverty of spirit means freedom from knowledge', textId: 'meister-eckhart-godhead', note: 'Eckhart Sermon 52: the truly poor person is "free of all the knowledge that lives in him." This is the Rhineland Christian formulation of Isha\'s warning: knowledge hoarded as spiritual achievement becomes an obstacle. Both traditions insist the absolute requires not a full container but an empty one — what Eckhart calls Abgeschiedenheit (detachment) and the Isha calls tyaga (renunciation).' },
+              ]
+            },
+          ]
+        },
+      ]
+    },
+  ]
+};
+
+SCRIPTURE_TEXTS['matthew-sermon-mount'] = {
+  title: 'Matthew 5–7 — The Sermon on the Mount',
+  shortTitle: 'Sermon on Mount',
+  tradition: 'New Testament',
+  date: 'c. 80–90 CE',
+  intro: 'The Sermon on the Mount (Matthew 5–7) is the longest continuous teaching attributed to Jesus in the Gospels, and the text most responsible for Christianity\'s distinctive ethical and spiritual vision. Delivered "on a mountain" in an echo of Moses receiving the Torah on Sinai, it contains the Beatitudes, the Lord\'s Prayer, the antitheses ("You have heard it said... but I say to you"), the warnings against religious performance, and the summary teachings on love of enemies and non-judgment. Matthew presents it as Jesus\'s first major discourse, establishing his authority ("he taught them as one who had authority, and not as their scribes"). The Beatitudes are both a reversal of the world\'s value system (the poor in spirit, the mourning, the meek are "blessed") and a precise map of the contemplative life — each beatitude corresponds to a stage of spiritual development recognized across traditions. "Blessed are the pure in heart, for they shall see God" is the most mystically precise: the vision of God requires a heart cleared of all secondary objects, which is structurally identical to Eckhart\'s "poverty of spirit," the Upanishadic "neti neti," and the Buddhist "beginner\'s mind." The Lord\'s Prayer (6:9-13) is the most widely recited mantra in Christian history, functioning exactly as mantra does in Hindu and Buddhist tradition: a memorized sacred formula whose repetition restructures consciousness.',
+  crossTradition: [
+    { label: 'Bhagavad Gita 4 — "do your duty, without attachment to results"', textId: 'bhagavad-gita-4', note: '"Do not worry about tomorrow" (6:34) and "seek first the kingdom of God" (6:33) are the Gospel formulations of nishkama karma: act fully in the world (do not be anxious) while being completely non-attached to outcomes (seek the kingdom, not the results). The Sermon on the Mount is the closest the Gospels come to karma yoga.' },
+    { label: 'Meister Eckhart — "blessed are the poor in spirit"', textId: 'meister-eckhart-godhead', note: 'Eckhart\'s great Sermon 52, condemning him to posthumous trial, takes its text from Matthew 5:3: "Blessed are the poor in spirit." He argues that "poor in spirit" means not wanting, not knowing, not having — freedom from all creaturely things including God as concept. The Beatitude that opens the Sermon on the Mount becomes, in Eckhart\'s reading, a summons to apophatic mysticism.' },
+    { label: 'Dhammapada 1 — "the mind is everything; what we think we become"', textId: 'dhammapada-1', note: '"Blessed are the pure in heart, for they shall see God" (5:8) and the Dhammapada\'s "all that we are is the result of what we have thought" make the same claim from different directions: the inner state (heart/mind) is the determining factor, not external circumstance. Both texts anchor their entire ethical teaching in this premise.' },
+    { label: 'Yasna 30 — Zarathustra\'s teaching on good thought, good word, good deed', textId: 'yasna-30', note: 'The Sermon on the Mount\'s integration of inner thought ("for out of the heart come evil thoughts," 15:19) and outer action is structurally parallel to Zarathustra\'s triad: Humata (good thought), Hukhta (good word), Havarshta (good deed). Both teachings begin inside (thought/heart) and move outward, rejecting any separation between internal disposition and external action.' },
+  ],
+  translations: [
+    { id: 'nrsv', label: 'NRSV 1989 (T1)' },
+    { id: 'kjv', label: 'KJV 1611' },
+    { id: 'greek', label: 'Greek (Nestle-Aland 28)' },
+  ],
+  sections: [
+    {
+      heading: 'The Beatitudes (5:3–12)',
+      verses: [
+        {
+          ref: '5:3–12',
+          text: 'Blessed are the poor in spirit, for theirs is the kingdom of heaven. Blessed are those who mourn, for they will be comforted. Blessed are the meek, for they will inherit the earth. Blessed are those who hunger and thirst for righteousness, for they will be filled. Blessed are the merciful, for they will receive mercy. Blessed are the pure in heart, for they will see God. Blessed are the peacemakers, for they will be called children of God. Blessed are those who are persecuted for righteousness\' sake, for theirs is the kingdom of heaven.',
+          textVersions: {
+            nrsv: 'Blessed are the poor in spirit, for theirs is the kingdom of heaven. Blessed are those who mourn, for they will be comforted. Blessed are the meek, for they will inherit the earth. Blessed are the pure in heart, for they will see God.',
+            kjv: 'Blessed are the poor in spirit: for theirs is the kingdom of heaven. Blessed are they that mourn: for they shall be comforted. Blessed are the meek: for they shall inherit the earth. Blessed are the pure in heart: for they shall see God.',
+            greek: 'Μακάριοι οἱ πτωχοὶ τῷ πνεύματι, ὅτι αὐτῶν ἐστιν ἡ βασιλεία τῶν οὐρανῶν.',
+          },
+          entities: [
+            { word: 'poor in spirit', node: '', type: 'concept',
+              note: 'Ptochoi to pneumati — "poor in the spirit" or "poor with respect to spirit." This is the most theologically contested of all the Beatitudes. The obvious reading (humble, not arrogant) is correct but insufficient. Eckhart reads it as "having nothing in the spirit" — the apophatic poverty that releases all concepts, including concepts of God. The Franciscan tradition reads it as material poverty embraced for spiritual freedom. The monastic tradition reads it as detachment from self-will. All these readings converge: "poor in spirit" names the state in which the ego has released its claims, leaving the "kingdom" (divine ground) uncovered.',
+              parallels: [
+                { label: 'Meister Eckhart Sermon 52 — "free of all creaturely things, of God and of himself"', textId: 'meister-eckhart-godhead', note: 'Eckhart\'s great sermon takes Matthew 5:3 as its text and radicalized it: "A man who is poor as I mean it should be free of all creaturely things, of God and of himself." The "poor in spirit" Beatitude becomes, in Eckhart, the summons to apophatic mysticism: poverty of spirit means freedom from all objects of grasping — including the concept of God.' },
+                { label: 'Isha Upanishad 1 — "Renounce it, and enjoy it"', textId: 'isha-upanishad', note: 'Isha 1: "Renounce it, and enjoy it. Do not covet the wealth of anyone." The Isha\'s tyaga (renunciation) and the Beatitude\'s "poor in spirit" are the same spiritual orientation: the released person is blessed/enjoys, not the grasping person. In both traditions, release from grasping (whether material or spiritual) is the precondition for full participation in reality.' },
+              ]
+            },
+            { word: 'pure in heart, for they will see God', node: 'tradition-christian', type: 'concept',
+              note: '"Blessed are the katharoi tê kardia" — the clean-hearted. In Greek, katharos means physically pure, morally clean, and intellectually clear. The promise — "they will see God" — is the mystical promise of the entire Sermon: not that they will be rewarded after death but that clarity of heart produces a specific kind of perception available now. This is the "beatific vision" tradition in Christianity. The connection is precise: what makes God invisible is not God\'s absence but the "dirt" (desires, fears, attachments, concepts) that fills the heart-eye. The pure heart sees God because it is not filled with anything else. Augustine: "our heart is restless until it rests in Thee." The restlessness is the impurity; the rest is the vision.',
+              parallels: [
+                { label: 'Mandukya Upanishad — turiya as pure awareness without object', textId: 'mandukya-upanishad', note: 'Turiya is "peaceful, blissful, non-dual, thought to be the Self." The state of turiya is pure awareness without any specific content — the pure heart that sees through rather than at. The Beatitude\'s "pure in heart" and the Mandukya\'s turiya are both describing the same threshold: the mind/heart that has been cleared of all secondary objects becomes capable of perceiving the ground that was always present.' },
+                { label: 'Bardo Thodol — recognize the clear light, do not be distracted', textId: 'bardo-thodol', note: 'The Bardo Thodol\'s instruction — recognize the clear light of the Dharmakaya at death, do not be distracted by the softer lights of attraction and aversion — is the Tibetan Buddhist equivalent of "pure in heart." The "distractions" (desires, fears, habitual patterns) are what prevent recognition of the clear light. Purity of heart = the absence of these distractions = the capacity to see the divine ground directly.' },
+              ]
+            },
+          ]
+        },
+      ]
+    },
+    {
+      heading: 'Love of Enemies (5:43–48)',
+      verses: [
+        {
+          ref: '5:43–48',
+          text: 'You have heard that it was said, "You shall love your neighbor and hate your enemy." But I say to you, Love your enemies and pray for those who persecute you, so that you may be children of your Father in heaven; for he makes his sun rise on the evil and on the good, and sends rain on the righteous and on the unrighteous. For if you love those who love you, what reward do you have? Do not even the tax collectors do the same? Be perfect, therefore, as your heavenly Father is perfect.',
+          textVersions: {
+            nrsv: 'You have heard that it was said, "You shall love your neighbor and hate your enemy." But I say to you, Love your enemies and pray for those who persecute you, so that you may be children of your Father in heaven.',
+            kjv: 'But I say unto you, Love your enemies, bless them that curse you, do good to them that hate you, and pray for them which despitefully use you, and persecute you.',
+            greek: 'Ἀγαπᾶτε τοὺς ἐχθροὺς ὑμῶν καὶ προσεύχεσθε ὑπὲρ τῶν διωκόντων ὑμᾶς.',
+          },
+          entities: [
+            { word: 'Love your enemies', node: 'tradition-christian', type: 'concept',
+              note: 'Agapate tous echthruous hymon — the command to love enemies is the most radical ethical teaching in the Sermon on the Mount and, arguably, in religious history. The Greek agape (love) is distinguished from eros (desire-love) and philia (friendship-love): agape is unconditional, non-reciprocal, not contingent on the lovable qualities of the recipient. The theological grounding Jesus gives is: God\'s sun rises on evil and good alike, God\'s rain falls on righteous and unrighteous alike — divine love is non-discriminatory by nature. To love your enemies is to participate in the divine nature (be "children of your Father").',
+              parallels: [
+                { label: 'Yasna 30 — Zarathustra chooses good thought, rejecting the lie', textId: 'yasna-30', note: 'Zoroastrian ethics insists on choosing good thought (humata) regardless of what others choose. Zarathustra teaches allegiance to the truth-principle (Asha) even when Druj (the Lie) prevails around you. The Sermon\'s love of enemies and Zarathustra\'s commitment to good-thought in the face of evil are both ethics of unconditional orientation: the good is not contingent on the goodness of the environment.' },
+                { label: 'Bhagavad Gita 4 — same-sightedness toward all beings', textId: 'bhagavad-gita-4', note: 'Gita 4:35: "You shall see all beings without exception in yourself and then in Me." The same-sightedness (samadarshana) toward all beings — the sage sees the divine in enemy and friend alike — is the Gita\'s parallel to "love your enemies." Both teachings root the ethical posture in a metaphysical recognition: the enemy and the friend share the same divine ground.' },
+              ]
+            },
+            { word: 'Be perfect, therefore, as your heavenly Father is perfect', node: 'tradition-christian', type: 'concept',
+              note: 'Esesthe oun hymeis teleioi — "You shall be perfect" (teleios = complete, mature, whole — not "sinless"). The telos (end/perfection) is theosis in the Eastern Orthodox tradition: participation in the divine nature. Matthew 5:48 is the summary of the entire ethical section of the Sermon: the standard is not human convention but divine nature itself. The sun/rain image just given is not merely meteorological: God\'s perfection is precisely the undiscriminating, universal beneficence of natural forces. To be perfect as God is perfect is to stop discriminating in love — which is exactly what "love your enemies" demands.',
+              parallels: [
+                { label: 'Chandogya 6.2 — tat tvam asi: the student and Brahman share the same ground', textId: 'chandogya-621', note: 'The Chandogya\'s tat tvam asi (that art thou) teaches that the student\'s Atman is identical with Brahman. Matthew\'s "be perfect as your Father is perfect" teaches that humans can and should embody the divine nature. Both texts are saying: the distance between human and divine is not ontological but perceptual/behavioral — the divine nature is what we most truly are, and the spiritual path is the actualization of what we already are at the deepest level.' },
+              ]
+            },
+          ]
+        },
+      ]
+    },
+    {
+      heading: 'The Lord\'s Prayer (6:9–13)',
+      verses: [
+        {
+          ref: '6:9–13',
+          text: 'Our Father in heaven, hallowed be your name. Your kingdom come. Your will be done, on earth as it is in heaven. Give us this day our daily bread. And forgive us our debts, as we also have forgiven our debtors. And do not bring us to the time of trial, but rescue us from the evil one.',
+          textVersions: {
+            nrsv: 'Our Father in heaven, hallowed be your name. Your kingdom come. Your will be done, on earth as it is in heaven. Give us this day our daily bread.',
+            kjv: 'Our Father which art in heaven, Hallowed be thy name. Thy kingdom come. Thy will be done in earth, as it is in heaven. Give us this day our daily bread.',
+            greek: 'Πάτερ ἡμῶν ὁ ἐν τοῖς οὐρανοῖς· ἁγιασθήτω τὸ ὄνομά σου. ἐλθέτω ἡ βασιλεία σου.',
+          },
+          entities: [
+            { word: 'Your kingdom come. Your will be done, on earth as it is in heaven', node: 'tradition-christian', type: 'concept',
+              note: '"Eltheto he basileia sou" — "Let your kingdom come." The Lord\'s Prayer is not a petition for escape from earth but for the transformation of earth into something like heaven: "on earth as it is in heaven." This is the Christian equivalent of the Isha Upanishad\'s "isha vasyam idam sarvam" — all of this (earth, the material world) is to become what it already is at the deepest level (Lord-permeated, kingdom-filled). The prayer moves from the divine name (hallowed/holy), to the divine will (your will be done), to the human need (daily bread), to the human relationship (forgiveness), to the ultimate aspiration (rescue from evil). This is a complete map of the contemplative-active life compressed into six petitions.',
+              parallels: [
+                { label: 'Rumi — the reed\'s longing for return to origin', textId: 'rumi-masnavi', note: 'Rumi\'s reed flute cries for return to the reed-bed from which it was cut. The Lord\'s Prayer\'s "your kingdom come" is a cry with the same structure: the creature who recognizes its origin in the divine longing for the divine order to be established here, in the domain of its exile. Both are expressions of the fundamental Sufi-Christian spiritual movement: longing for the restoration of the divine order in the creaturely realm.' },
+              ]
+            },
+            { word: 'Our Father in heaven', node: 'tradition-christian', type: 'concept',
+              note: 'Pater hemon — "Our Father." The Lord\'s Prayer begins by addressing God as Abba (Father), the intimate Aramaic term for parent. This is the most distinctive element of Jesus\'s religious innovation: the approach to the divine as a child to a parent, with intimacy, trust, and directness. The prayer is communal ("our" not "my") and begins by acknowledging divine transcendence (in heaven) before immediately asserting immanence (your will be done, on earth). The combination — "Father in heaven" who wills the earthly — is the same panentheism of the Isha: the Lord who is transcendent ("in heaven") yet pervades all ("on earth as it is in heaven").',
+              parallels: [
+                { label: 'Sefer Yetzirah — the 32 paths include the divine name', textId: 'sefer-yetzirah', note: 'Sefer Yetzirah\'s mysticism of the divine names — YHVH inscribed into the structure of creation — resonates with the Lord\'s Prayer\'s opening "hallowed be your name." In Jewish mysticism, the divine name is not a label but an ontological reality: to hallow the name is to recognize and manifest the divine nature encoded in the letters. The Lord\'s Prayer begins with name-hallowing; Sefer Yetzirah begins with letter-mysticism. Both start from the same premise: the divine name is the access point.' },
+              ]
+            },
+          ]
+        },
+      ]
+    },
+  ]
+};
+
+SCRIPTURE_TEXTS['acts-17-areopagus'] = {
+  title: 'Acts 17:22–34 — Paul at the Areopagus',
+  shortTitle: 'Acts 17: Areopagus',
+  tradition: 'New Testament',
+  date: 'c. 80–90 CE',
+  intro: 'Acts 17:22–34 records Paul\'s speech to Athenian philosophers at the Areopagus (Mars Hill) — arguably the most cross-traditional moment in the entire New Testament. Athens in 50 CE was the center of Greek philosophical life, home to the Stoic, Epicurean, and Platonic schools. Paul had observed an altar inscribed "To an Unknown God" and uses this as his opening: the God he proclaims is precisely the one the Athenians already acknowledged as unknowable. His speech then quotes two Greek poets — Epimenides of Crete ("In him we live and move and have our being") and Aratus of Soli ("For we are indeed his offspring") — to demonstrate that the divine immanence he proclaims was already recognized within the Greek tradition itself. The speech represents a deliberate strategy of finding common ground across traditions: Paul does not begin with Scripture, not with the Hebrew tradition, not with Jesus — he begins with what the Athenians already know and shows that the God of Israel is the same reality they have been groping toward. The phrase "In him we live and move and have our being" — adapted from Epimenides\' poem about Zeus — is the most explicitly pantheistic/panentheistic statement in the New Testament, and one of the most important cross-tradition bridges in Christian theological history.',
+  crossTradition: [
+    { label: 'Isha Upanishad — all this is pervaded by the Lord', textId: 'isha-upanishad', note: '"In him we live and move and have our being" (Acts 17:28) and "all this — whatever moves in this moving world — is to be pervaded by the Lord" (Isha 1) are the most direct cross-traditional parallels in the corpus. Both assert total divine immanence: nothing moves, nothing lives, nothing has being outside the divine ground. Paul\'s phrasing even echoes Isha\'s emphasis on movement: "whatever moves... is pervaded by the Lord" / "in him we live and MOVE and have our being."' },
+    { label: 'Pseudo-Dionysius — the Unknown God and the apophatic absolute', textId: 'pseudo-dionysius-mystical-theology', note: 'Paul\'s "Unknown God" (agnostos theos) is the altar-inscription that names the apophatic insight the Greek tradition had already reached: the divine ground exceeds all names and forms. Pseudo-Dionysius builds his entire Mystical Theology on this Pauline moment: the Unknown God is not a gap to be filled by better theology but the proper name for the absolute that exceeds all theology. Athens already knew what Paul was proclaiming — it just hadn\'t been connected to the Jewish tradition.' },
+    { label: 'Zohar — Ein Sof: forbidden to indicate Him by a single letter', textId: 'zohar-ein-sof', note: 'The Athenians\' "Unknown God" altar and the Zohar\'s Ein Sof that "cannot be indicated by a single letter or a single point" are the Hellenistic and Kabbalistic poles of the same apophatic recognition. Both assert that the divine ground exceeds all naming. Paul\'s move — identifying this Unknown God with the God of Israel — is the same as the Zohar\'s move of identifying Ein Sof with YHVH: the nameless and the named are related as ground and manifestation.' },
+    { label: 'Corpus Hermeticum — in him all things have their being', textId: 'poimandres', note: 'The Poimandres opens: "Father of all, who contains all things... what is in you is your light and your life." Paul\'s "in him we live and move and have our being" and the Hermetic vision of the Father who contains all things are the same panentheistic theology. The Hermetic tradition (c. 1st–3rd century CE) was the Egyptian-Greek synthesis that Paul\'s speech in Athens implicitly engages.' },
+  ],
+  translations: [
+    { id: 'nrsv', label: 'NRSV 1989 (T1)' },
+    { id: 'kjv', label: 'KJV 1611' },
+    { id: 'greek', label: 'Greek (Nestle-Aland 28)' },
+  ],
+  sections: [
+    {
+      heading: 'The Unknown God (17:22–25)',
+      verses: [
+        {
+          ref: '17:22–25',
+          text: 'Paul stood in front of the Areopagus and said, "Athenians, I see how extremely religious you are in every way. For as I went through the city and looked carefully at the objects of your worship, I found among them an altar with the inscription, \'To an unknown god.\' What therefore you worship as unknown, this I proclaim to you. The God who made the world and everything in it, he who is Lord of heaven and earth, does not live in shrines made by human hands, nor is he served by human hands, as though he needed anything, since he himself gives to all mortals life and breath and all things."',
+          textVersions: {
+            nrsv: 'Paul stood in front of the Areopagus and said, "Athenians, I see how extremely religious you are in every way. For as I went through the city and looked carefully at the objects of your worship, I found among them an altar with the inscription, \'To an unknown god.\'"',
+            kjv: 'Then Paul stood in the midst of Mars\' hill, and said, Ye men of Athens, I perceive that in all things ye are too superstitious. For as I passed by, and beheld your devotions, I found an altar with this inscription, TO THE UNKNOWN GOD.',
+            greek: 'Σταθεὶς δὲ [ὁ] Παῦλος ἐν μέσῳ τοῦ Ἀρείου πάγου ἔφη· ἄνδρες Ἀθηναῖοι, κατὰ πάντα ὡς δεισιδαιμονεστέρους ὑμᾶς θεωρῶ.',
+          },
+          entities: [
+            { word: 'To an unknown god', node: '', type: 'symbol',
+              note: 'The altar inscription "agnostou theou" (to an unknown god) is Paul\'s theological entry point. He does not treat this as ignorance to be corrected but as a genuine recognition to be clarified: the Athenians have already identified the divine ground — they just don\'t know its name or nature. This rhetorical move is significant: Paul is not bringing something alien to Athens but showing that what Athens was already reaching toward is what he has come to announce. This is the method of the Pseudo-Dionysius in theological form: the Unknown God is not deficient theology but the highest theological recognition — the acknowledgment that the divine exceeds all names.',
+              parallels: [
+                { label: 'Pseudo-Dionysius — the divine darkness beyond all knowing', textId: 'pseudo-dionysius-mystical-theology', note: 'Pseudo-Dionysius builds his entire Mystical Theology on Paul\'s encounter with the agnostos theos: the apophatic tradition begins precisely here, with the recognition that the divine ground "is nothing known to us or to any other being." The Unknown God altar becomes, in the Dionysian tradition, the proper icon of all theology: every name we give to God is a finite approximation of what exceeds all naming.' },
+                { label: 'Zohar — Ein Sof: forbidden to indicate by any letter or point', textId: 'zohar-ein-sof', note: 'The Athenians\' altar to the Unknown God and the Zohar\'s description of Ein Sof as beyond all naming are parallel recognitions. Paul\'s move was to identify this Unknown God with the God of Israel. The Zohar\'s move was to distinguish Ein Sof (the absolutely unknown) from YHVH (the named, relational God). In both cases, the apophatic recognition of the unknowable is not the endpoint but the entry point.' },
+              ]
+            },
+            { word: 'does not live in shrines made by human hands', node: 'tradition-christian', type: 'concept',
+              note: 'Paul\'s critique of temple religion — God does not live in shrines made by human hands — is also a critique of the localizing of the divine in any particular place. This resonates with Solomon\'s prayer at the Temple dedication (1 Kings 8:27: "even heaven and the highest heaven cannot contain you, much less this house that I have built") and with Jesus\'s saying to the Samaritan woman (John 4:21-23: "the hour is coming when you will worship the Father neither on this mountain nor in Jerusalem"). The divine is not located but omnipresent — which is exactly what "in him we live and move and have our being" will assert.',
+              parallels: [
+                { label: 'Gospel of Thomas L.77 — "Split a piece of wood, I am there"', textId: 'gospel-of-thomas', note: 'Thomas L.77: "Split a piece of wood; I am there. Lift up the stone, and you will find me there." The Living Jesus radically desacralizes sacred space: the divine is not in the Temple or on the mountain but in the split wood and the lifted stone. Paul\'s "does not live in shrines made by human hands" and Thomas L.77\'s immanence in ordinary objects are the same de-localization of the divine.' },
+              ]
+            },
+          ]
+        },
+      ]
+    },
+    {
+      heading: 'In Him We Live and Move (17:26–28)',
+      verses: [
+        {
+          ref: '17:26–28',
+          text: 'From one ancestor he made all nations to inhabit the whole earth, and he allotted the times of their existence and the boundaries of the places where they would live, so that they would search for God and perhaps grope for him and find him — though indeed he is not far from each one of us. For "In him we live and move and have our being"; as even some of your own poets have said, "For we are indeed his offspring."',
+          textVersions: {
+            nrsv: 'For "In him we live and move and have our being"; as even some of your own poets have said, "For we are indeed his offspring."',
+            kjv: 'For in him we live, and move, and have our being; as certain also of your own poets have said, For we are also his offspring.',
+            greek: 'ἐν αὐτῷ γὰρ ζῶμεν καὶ κινούμεθα καὶ ἐσμέν, ὡς καί τινες τῶν καθ᾽ ὑμᾶς ποιητῶν εἰρήκασιν.',
+          },
+          entities: [
+            { word: 'In him we live and move and have our being', node: 'logos', type: 'concept',
+              note: '"En auto gar zomen kai kinoumetha kai esmen" — Paul quotes this from Epimenides of Crete (originally about Zeus). The verse is the most explicitly panentheistic statement in the New Testament: not only does God exist, but all existence, all movement, all being occurs within God. Three verbs — zomen (we live), kinoumetha (we move), esmen (we are) — cover the totality of creaturely existence. This is not just a theological claim about divine omnipresence; it is a claim that the divine IS the field within which creaturely existence occurs — the ground, not an object within the ground.',
+              parallels: [
+                { label: 'Isha Upanishad 1 — "All this — whatever moves in this moving world — is pervaded by the Lord"', textId: 'isha-upanishad', note: 'Isha 1: "All this — whatever moves in this moving world — is to be pervaded by the Lord." Acts 17:28: "In him we live and move and have our being." These are the most direct cross-traditional parallels in the corpus on divine immanence. The Isha\'s "whatever moves" and Paul\'s "we live and MOVE" even share the emphasis on movement as the category of existence most obviously grounded in the divine. Paul quotes a Greek poet who was describing Zeus; the Isha describes Brahman-as-Ishvara. The theological convergence is so precise that Christian-Hindu dialogue has consistently returned to this pair.' },
+                { label: 'Corpus Hermeticum I — the Father who contains all things', textId: 'poimandres', note: 'Poimandres: "Father of all, who contains all things... what is in you is your light and your life." Acts 17:28: "in him we live and move and have our being." The Hermetic Father who contains all things and Paul\'s divine ground within which all existence occurs are the same panentheistic vision. Both texts were composed within roughly the same historical period (1st–2nd century CE) in the same Hellenistic intellectual world — the convergence reflects a shared Neoplatonic-influenced panentheism that was the intellectual air of the Mediterranean at that moment.' },
+                { label: 'John 1 — "All things came into being through him"', textId: 'john-1', note: 'John 1:3: "All things came into being through him, and without him not one thing came into being." Acts 17:28: "In him we live and move and have our being." The Johannine Logos and the Areopagus speech are two formulations of the same panentheistic theology, one cosmological (all things created through the Logos) and one existential (all beings exist in God). Together they make the Christian claim: the divine is not merely the creator of the world but the ground within which the world continuously exists.' },
+              ]
+            },
+            { word: 'some of your own poets have said', node: '', type: 'concept',
+              note: 'Paul\'s quotation of Greek poets (Epimenides and Aratus) to support a Jewish-Christian theological claim is the most explicit acknowledgment in the New Testament that divine truth is not exclusive to the Hebrew tradition. "Your own poets have said" — the truth was already present in the tradition Paul is addressing. This is the methodological principle of Clement of Alexandria, Justin Martyr, and the entire apologetic tradition: the Logos scattered seeds (logoi spermatikoi) throughout all human cultures, and those seeds can be identified and harvested. Paul at the Areopagus is the scriptural charter for cross-tradition theological investigation.',
+              parallels: [
+                { label: 'Pseudo-Dionysius — the Unknown God already recognized in pagan tradition', textId: 'pseudo-dionysius-mystical-theology', note: 'Pseudo-Dionysius\'s entire project is a version of Paul\'s move at the Areopagus: showing that Neoplatonic philosophical tradition (Plato, Plotinus, Proclus) was already reaching toward the same apophatic absolute that Christian theology names as God. As Paul said "your own poets have said [what I am now making explicit]," Pseudo-Dionysius says "Plotinus and Proclus have already described what the Christian tradition names as the divine darkness."' },
+              ]
+            },
+          ]
+        },
+      ]
+    },
+  ]
+};
