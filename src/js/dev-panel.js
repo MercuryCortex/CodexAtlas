@@ -72,8 +72,8 @@
       id: 'force',
       title: 'Force bake',
       items: [
-        { id: 'anchorK',     label: 'Anchor stiffness', min: 0.005, max: 0.080, step: 0.002, default: 0.018, target: 'rerender', fmt: v => v.toFixed(3) },
-        { id: 'chargeK',     label: 'Charge repulsion', min: -1200, max: -100,  step: 25,    default: -550,  target: 'rerender', fmt: v => String(Math.round(v)) },
+        { id: 'anchorK',     label: 'Anchor stiffness', min: 0.005, max: 0.080, step: 0.002, default: 0.045, target: 'rerender', fmt: v => v.toFixed(3) },
+        { id: 'chargeK',     label: 'Charge repulsion', min: -1200, max: -100,  step: 25,    default: -260,  target: 'rerender', fmt: v => String(Math.round(v)) },
         { id: 'chargeRange', label: 'Charge range',     min: 60,    max: 320,   step: 10,    default: 180,   target: 'rerender', fmt: v => String(Math.round(v)) },
         { id: 'damp',        label: 'Velocity damping', min: 0.30,  max: 0.85,  step: 0.02,  default: 0.55,  target: 'rerender', fmt: v => v.toFixed(2) },
       ]
@@ -82,7 +82,7 @@
       id: 'camera',
       title: 'Camera',
       items: [
-        { id: 'cameraRatio', label: 'Zoom ratio', min: 0.40, max: 1.40, step: 0.02, default: 0.78, target: 'camera', fmt: v => v.toFixed(2) + '×' },
+        { id: 'cameraRatio', label: 'Zoom ratio', min: 0.40, max: 1.60, step: 0.02, default: 1.20, target: 'camera', fmt: v => v.toFixed(2) + '×' },
       ]
     },
     {

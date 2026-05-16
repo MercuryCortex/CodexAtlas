@@ -39,8 +39,9 @@ window.ScriptureReader = (function () {
       STATE.scriptureTranslation = trList[0].id;
     const activeTr = STATE.scriptureTranslation;
 
-    // Signal: hide global view-header while reader is active
+    // Signal: hide global view-header + zoom meter while reader is active
     document.body.classList.add('view-scripture-reader');
+    document.querySelectorAll('.zoom-meter').forEach(zm => { zm.style.display = 'none'; });
 
     // Clear global view-controls (topbar lives inside the pane)
     const vc = document.getElementById('view-controls');
@@ -200,67 +201,31 @@ window.ScriptureReader = (function () {
     if (ent) _showCard(ent, mark);
   }
 
-  // ── entity card → right detail panel ─────────────────────────
+  // ── entity card → right detail panel (uses real vault selectNode) ────────
   function _showCard(ent, markEl) {
     document.querySelectorAll('.sr-ent.active, .sr-ent.pinned').forEach(e => e.classList.remove('active', 'pinned'));
     markEl.classList.add('active', 'pinned');
 
-    const node      = window.NODES_BY_ID && NODES_BY_ID[ent.node];
-    const nodeLabel = node ? (node.label || node.title || ent.node) : ent.node;
-    const typeLabel = ent.type ? ent.type[0].toUpperCase() + ent.type.slice(1) : '';
+    if (ent.node && window.NODES_BY_ID && NODES_BY_ID[ent.node]) {
+      // Render the real vault node in the detail panel (edges, body, connections)
+      if (window.STATE) STATE.selected = ent.node;
+      document.body.classList.remove('detail-collapsed');
+      const dt = document.getElementById('detail-toggle');
+      if (dt) dt.textContent = '›';
+      if (window.renderDetail) renderDetail();
+      return;
+    }
 
-    const parallelsHtml = (ent.parallels || []).length
-      ? `<div class="sr-card-parallels">
-           <div class="sr-pl-heading">Cross-tradition parallels</div>
-           ${ent.parallels.map(p => `
-             <div class="sr-parallel${p.textId ? ' linked' : ''}" ${p.textId ? `data-textid="${p.textId}"` : ''}>
-               <div class="sr-pl-label">${esc(p.label)}</div>
-               ${p.note ? `<div class="sr-pl-note">${esc(p.note)}</div>` : ''}
-             </div>`).join('')}
-         </div>` : '';
-
+    // Fallback: node not in vault — show a minimal inline note
     const el = document.getElementById('detail-inner');
     if (!el) return;
-
-    el.innerHTML = `
-      <div class="sr-detail-card">
-        <div class="sr-card-word">${esc(ent.word)}</div>
-        ${typeLabel ? `<span class="sr-card-type sr-type-${esc(ent.type || 'other')}">${esc(typeLabel)}</span>` : ''}
-        ${node ? `<div class="sr-card-nodeid">${esc(nodeLabel)}</div>` : ''}
-        ${ent.note ? `<div class="sr-card-note">${ent.note}</div>` : ''}
-        ${parallelsHtml}
-        ${ent.node ? `<button class="sr-atlas-btn" data-node="${escAttr(ent.node)}">Open in Atlas →</button>` : ''}
-      </div>`;
-
-    // Open detail panel
+    el.innerHTML = `<div class="sr-detail-card">
+      <div class="sr-card-word">${esc(ent.word)}</div>
+      ${ent.note ? `<div class="sr-card-note">${ent.note}</div>` : '<p style="color:var(--text-3);font-size:13px;margin-top:10px">No vault node found.</p>'}
+    </div>`;
     document.body.classList.remove('detail-collapsed');
     const dt = document.getElementById('detail-toggle');
     if (dt) dt.textContent = '›';
-
-    // Wire cross-tradition parallel links
-    el.querySelectorAll('.sr-parallel.linked').forEach(pEl => {
-      pEl.onclick = () => {
-        const key = pEl.dataset.textid;
-        if (key && window.SCRIPTURE_TEXTS && SCRIPTURE_TEXTS[key]) {
-          _cleanup(); STATE.scriptureReaderMode = key; render(_pane, key);
-        }
-      };
-    });
-
-    // Wire "Open in Atlas" button
-    el.querySelectorAll('.sr-atlas-btn').forEach(btn => {
-      btn.onclick = () => {
-        const id = btn.dataset.node;
-        _cleanup(); STATE.scriptureReaderMode = null;
-        if (window.setView) {
-          setView('pantheon');
-          if (window.selectNode && window.NODES_BY_ID) {
-            const n = NODES_BY_ID[id];
-            if (n) setTimeout(() => selectNode(n), 320);
-          }
-        }
-      };
-    });
   }
 
   function _unpinEntity() {
@@ -319,6 +284,7 @@ window.ScriptureReader = (function () {
     if (_kdHandler)        { document.removeEventListener('keydown', _kdHandler); _kdHandler = null; }
     if (_paneClickHandler && _pane) { _pane.removeEventListener('click', _paneClickHandler); _paneClickHandler = null; }
     document.body.classList.remove('view-scripture-reader');
+    document.querySelectorAll('.zoom-meter').forEach(zm => { zm.style.display = ''; });
     // Collapse detail panel and clear entity card
     const el = document.getElementById('detail-inner');
     if (el) el.innerHTML = '<div class="empty">Select a node to inspect.</div>';

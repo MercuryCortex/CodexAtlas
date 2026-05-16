@@ -109,8 +109,13 @@
     // Dev panel may override anchorK / chargeK / chargeRange / damp live via
     // window.CODEX_DEV.settings (re-render is triggered on slider release).
     const D = window.CODEX_DEV?.settings || {};
-    const ANCHOR_K     = D.anchorK     != null ? D.anchorK     : 0.018;
-    const CHARGE_K     = D.chargeK     != null ? D.chargeK     : -550;
+    // Production force-sim uses charge strength -22 with distanceMax 140 and
+    // anchor strength 0.55 (app.js:1322-1331). V2's one-shot Coulomb bake uses
+    // a different math model, but the visual target is the same: gentle
+    // tangential nudges around the anchor, not aggressive separation. Anchor
+    // bumped up + charge halved gets us close to V1's settled feel.
+    const ANCHOR_K     = D.anchorK     != null ? D.anchorK     : 0.045;
+    const CHARGE_K     = D.chargeK     != null ? D.chargeK     : -260;
     const CHARGE_RANGE = D.chargeRange != null ? D.chargeRange : 180;
     const DAMP         = D.damp        != null ? D.damp        : 0.55;
     const COLLIDE_PAD  = 1.5;
@@ -481,9 +486,9 @@
       graph.addNode(d.id, {
         x:       pos.x,
         y:       pos.y,
-        // Production formula (app.js:1296): radius = 5 + √degree × 1.8, no cap.
-        // Hubs get visibly bigger; low-degree nodes stay readable.
-        size:    5 + Math.sqrt(deg) * 1.8,
+        // Production tier cap (app.js:1383, TIER_RADIUS = [8, 6, 4.5, 3.5]).
+        // Hard cap at 8 px so Zeus/Ra don't bulldoze siblings out of the wedge.
+        size:    Math.min(8, 4 + Math.sqrt(deg) * 1.2),
         color:   d.family_color || d.tradition_color || '#7a8090',
         label:   d.title || d.id,
         _isHub:  _hubIdSet.has(d.id),
@@ -522,7 +527,10 @@
 
     const settings = {
       renderEdgeLabels: false,
-      defaultEdgeColor: DEFAULT_EDGE_COLOR,
+      // Sigma's stock canvas edge program still strokes a 1-px hairline per
+      // edge even with size: 0; making the default color fully transparent
+      // suppresses it so only the curved SVG overlay paints visible edges.
+      defaultEdgeColor: 'rgba(0,0,0,0)',
       defaultNodeColor: '#7a8090',
       labelColor: { color: '#cad0d8' },
       labelSize: 11,
@@ -594,13 +602,14 @@
     };
 
     const sigma = new window.Sigma(graph, rootEl, settings);
-    // Zoom camera in so the diagram fills the viewport like production does.
-    // Sigma's default fit leaves ~25% padding on each side — too sparse for
-    // 500-node deity rings. Ratio 0.78 keeps a small margin without cropping
-    // family rim labels (which sit at Router+50).
+    // Ratio 1.20 = zoom OUT past sigma's autofit (which sizes to the node bbox
+    // only). Rim labels sit at world R = Router + 56 = 596, outside the node
+    // bbox, so autofit clips them. 1.20 reveals all 28 family labels at 1440px
+    // viewport without leaving excessive dead space. Dev panel can still override.
     try {
       const r = window.CODEX_DEV?.settings?.cameraRatio;
-      sigma.getCamera().setState({ ratio: typeof r === 'number' ? r : 0.78 });
+      sigma.getCamera().setState({ ratio: typeof r === 'number' ? r : 1.20 });
+      sigma.refresh();
     } catch (e) {}
 
     // ============================================================
