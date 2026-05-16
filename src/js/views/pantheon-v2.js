@@ -650,7 +650,10 @@
     const HULL_INNER = Rinner - 22;
     const HULL_OUTER = Router + 22;
     const HULL_PAD   = 0.014;
-    const HULL_CR    = 8;
+    // Was 8 — narrow wedges fell back to plain arc (no rounding), making the
+    // ring read as inconsistent (some round, some sharp). 4 fits inside every
+    // wedge so all of them get rounded corners.
+    const HULL_CR    = 4;
     const hullEls = [];
     const tickEls = [];
     Object.values(wedges).forEach(w => {
@@ -711,8 +714,14 @@
       path.setAttribute('class', cls);
       path.setAttribute('d', `M ${sp.x},${sp.y} Q ${cxp},${cyp} ${tp.x},${tp.y}`);
       path.style.setProperty('--edge-type-color', st.c);
-      path.setAttribute('stroke-width', st.w);
-      path.setAttribute('stroke-opacity', st.op);
+      // V2 needs to dim P1's values uniformly. P1's live force-sim bundles
+      // edges (connected nodes pull together → shorter, less-overlapping chords).
+      // V2's static bake produces longer cross-canvas chords that pile up
+      // through the centre, making the same width/opacity feel ~2× louder.
+      // 0.6× scale brings perceived density in line with P1 while preserving
+      // P1's per-type RANKING (ambient still ambient, headlines still loud).
+      path.setAttribute('stroke-width',   (st.w  * 0.6).toFixed(3));
+      path.setAttribute('stroke-opacity', (st.op * 0.6).toFixed(3));
       path.setAttribute('fill', 'none');
       path.dataset.source = e.source;
       path.dataset.target = e.target;
@@ -816,12 +825,17 @@
       const family = nodeAttrs._family || n.family || '—';
       const tradition = n.tradition || '';
       const meta1 = family + (tradition ? ' · ' + tradition : '');
+      // Horizontal card layout — circular avatar + .ph2-thumb-body text column.
+      const meta2 = deg + ' connection' + (deg === 1 ? '' : 's') +
+                    (n.geo && n.geo.label ? ' · ' + escapeHtml(n.geo.label) : '');
       thumbCard.innerHTML = [
-        thumb ? `<img class="ph2-thumb-img" src="${thumb}" alt="" onerror="this.remove()"/>` : '',
-        `<div class="ph2-thumb-title">${escapeHtml(n.title || n.id || '')}</div>`,
-        `<div class="ph2-thumb-meta">${escapeHtml(meta1)}</div>`,
-        `<div class="ph2-thumb-meta">${deg} connection${deg === 1 ? '' : 's'}${n.geo && n.geo.label ? ' · ' + escapeHtml(n.geo.label) : ''}</div>`,
-        wiki ? `<a class="ph2-thumb-link" href="${escapeAttr(wiki)}" target="_blank" rel="noopener">Wikipedia →</a>` : ''
+        thumb ? `<img class="ph2-thumb-img" src="${escapeAttr(thumb)}" alt="" onerror="this.remove()"/>` : '',
+        '<div class="ph2-thumb-body">',
+          `<div class="ph2-thumb-title">${escapeHtml(n.title || n.id || '')}</div>`,
+          `<div class="ph2-thumb-meta">${escapeHtml(meta1)}</div>`,
+          `<div class="ph2-thumb-meta">${meta2}</div>`,
+          wiki ? `<a class="ph2-thumb-link" href="${escapeAttr(wiki)}" target="_blank" rel="noopener">Wikipedia →</a>` : '',
+        '</div>'
       ].join('');
       thumbCard.style.display = 'block';
       positionThumbCard(evt);
@@ -864,10 +878,13 @@
     // without a live force-simulation. See AUDIT/premium-dynamics-research.
     let _mouseWorld = null;    // {x, y} in graph coords, or null when cursor off-canvas
     const _nudges = new Map(); // nodeId → {dx, dy} current displacement from anchor
-    const NUDGE_RADIUS  = 110; // world-units: cursor proximity to start nudging
-    const NUDGE_MAX     = 6;   // world-units: max displacement applied to nearest node
-    const NUDGE_LERP    = 0.18;// per-frame approach to target nudge
-    const NUDGE_DECAY   = 0.92;// per-frame decay when cursor is gone
+    // Tuned subtle — was "magnet" (NUDGE_MAX 6, RADIUS 110); user could not click nodes.
+    // Now: only the OUTER ring of neighbours nudges; closest stays put for clickability.
+    const NUDGE_RADIUS  = 70;  // world-units: smaller proximity window
+    const NUDGE_DEAD    = 14;  // world-units: nodes inside this stay still (clickable)
+    const NUDGE_MAX     = 1.2; // world-units: max displacement (subtle breathe, not push)
+    const NUDGE_LERP    = 0.12;// per-frame approach (slower = more damped)
+    const NUDGE_DECAY   = 0.90;
     let _rafId = null;
     function tickLiveness() {
       let anyChange = false;
@@ -878,8 +895,10 @@
           const dx = p.x - _mouseWorld.x;
           const dy = p.y - _mouseWorld.y;
           const dist = Math.hypot(dx, dy);
-          if (dist > 0.01 && dist < NUDGE_RADIUS) {
-            const fall = 1 - (dist / NUDGE_RADIUS);          // 1 near, 0 at radius
+          // Dead zone — the closest node(s) MUST stay clickable
+          if (dist > NUDGE_DEAD && dist < NUDGE_RADIUS) {
+            const span = NUDGE_RADIUS - NUDGE_DEAD;
+            const fall = 1 - ((dist - NUDGE_DEAD) / span);   // 1 just outside dead zone, 0 at radius
             const mag  = NUDGE_MAX * fall * fall;            // quadratic falloff
             tx = (dx / dist) * mag;
             ty = (dy / dist) * mag;

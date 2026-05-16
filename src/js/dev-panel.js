@@ -62,7 +62,7 @@
       id: 'hulls',
       title: 'Hulls',
       items: [
-        { id: 'hullOpacity',  label: 'Fill opacity',     min: 0,    max: 0.40, step: 0.01, default: 0.12,  target: 'cssVar', cssVar: '--ph2-hull-opacity',         fmt: v => v.toFixed(2) },
+        { id: 'hullOpacity',  label: 'Fill opacity',     min: 0,    max: 0.40, step: 0.01, default: 0.07,  target: 'cssVar', cssVar: '--ph2-hull-opacity',         fmt: v => v.toFixed(2) },
         { id: 'hullStrokeW',  label: 'Stroke width',     min: 0.2,  max: 2.0,  step: 0.1,  default: 0.8,   target: 'cssVar', cssVar: '--ph2-hull-stroke-width',    fmt: v => v.toFixed(1) + 'px' },
         { id: 'hullHotFill',  label: 'Hot fill',         min: 0.10, max: 0.50, step: 0.02, default: 0.20,  target: 'cssVar', cssVar: '--ph2-hull-hot-fill',        fmt: v => v.toFixed(2) },
         { id: 'hullDimFill',  label: 'Dim fill',         min: 0.005,max: 0.08, step: 0.005,default: 0.025, target: 'cssVar', cssVar: '--ph2-hull-dim-fill',        fmt: v => v.toFixed(3) },
@@ -132,7 +132,8 @@
     // production .sector-hull which uses 0.07 fill + 0.30 stroke), but at V2's
     // 0.12 fill that gave a loud 0.30 colored outline that read as "lit-up
     // wires" in the screenshot. × 1.4 keeps the outline subtle (~0.17).
-    r.style.setProperty('--ph2-hull-stroke-opacity', Math.min(1, (S.hullOpacity || 0.12) * 1.4));
+    // Match P1's .sector-hull discipline: fill ~0.07, stroke ~0.30 fixed.
+    r.style.setProperty('--ph2-hull-stroke-opacity', 0.30);
   }
 
   function sigmaRefresh() {
