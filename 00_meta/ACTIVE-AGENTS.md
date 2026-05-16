@@ -34,10 +34,10 @@ _Hand-maintained. Each agent currently working in the vault appends a claim bloc
 
 ---
 
-## opus-mahayana-sutras-1 — Lotus/Laṅkāvatāra/Avataṃsaka/Sukhāvatīvyūha upgrades — started 2026-05-16 — IN PROGRESS
-- Owning: `02_documents/_phase-4-late-antiquity/phase-4-101-lotus-sutra.md`, `02_documents/_phase-4-late-antiquity/phase-4-102-avatamsaka-sutra.md`, `02_documents/_phase-4-late-antiquity/phase-4-103-lankavatara-sutra.md`, `02_documents/_phase-4-late-antiquity/phase-4-104-sukhavativyuha-larger.md`
-- Goal: Upgrade all four nodes from metadata to full; MASSIVE WIN cross-tradition edges (Ekayāna/supersessionism, Guanyin/Marian, Indra's Net/Leibniz/Bohm, ālayavijñāna/Freud-Jung, tathāgatagarbha/Eckhart, Shinran/Luther tariki/sola fide)
-- Status: in-progress
+## opus-mahayana-sutras-1 — Lotus/Laṅkāvatāra/Avataṃsaka/Sukhāvatīvyūha upgrades — started 2026-05-16 — **FINISHED 2026-05-16**
+- Owned: `phase-4-101-lotus-sutra.md`, `phase-4-102-avatamsaka-sutra.md`, `phase-4-103-lankavatara-sutra.md`, `phase-4-104-sukhavativyuha-larger.md` (all metadata→full); NEW stubs: `nichiren.md`, `fazang.md`, `huike.md`, `sigmund-freud.md`, `shinran.md`, `honen.md`
+- Result: 4 documents upgraded to full · 6 new person stubs · 13706→13732 edges · 0 dead links introduced
+- Commits: 4aed335, bc24782, 1a95f06, 129786a (+ wrap-up)
 
 ---
 
