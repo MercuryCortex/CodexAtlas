@@ -21,7 +21,7 @@ influenced-by: ["Orphic theogonic tradition", "Pythagorean metempsychosis doctri
 influences: ["Platonic eschatology (Republic 614b–621d Myth of Er; Phaedrus; Phaedo)", "later Neoplatonic afterlife thought", "Virgil's Aeneid Book VI", "Western esoteric tradition"]
 deities-mentioned: ["[[persephone-greek]]", "[[dionysus]]", "[[mnemosyne]]", "[[hermes-greek]]"]
 events-context: []
-status: metadata
+status: "full"
 refs:
   - title: "Ritual Texts for the Afterlife: Orpheus and the Bacchic Gold Tablets"
     author: "Graf, Fritz and Johnston, Sarah Iles"
