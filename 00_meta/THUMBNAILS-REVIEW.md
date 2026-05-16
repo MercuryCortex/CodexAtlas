@@ -7,10 +7,10 @@
 
 | Stat | Count |
 |---|---|
-| Total nodes | 2546 |
-| Has thumbnail | 2546 (100.0%) |
+| Total nodes | 2557 |
+| Has thumbnail | 2557 (100.0%) |
 | **NULL** (no image) | **0** |
-| **SUSPECT** (possible wrong match) | **965** |
+| **SUSPECT** (possible wrong match) | **970** |
 
 ## How to fix
 
@@ -24,7 +24,7 @@
 
 ---
 
-## PERSONS  (0 null · 153 suspect)
+## PERSONS  (0 null · 157 suspect)
 
 ### Suspect hits — verify before trusting
 
@@ -76,6 +76,7 @@
 | `fazlur-rahman` | Fazlur Rahman Malik | query≈0.16 — returned: **Islamic philosophy** | [view](https://upload.wikimedia.org/wikipedia/commons/thumb/5/57/Double-leaf_frontispiece_from_%22The_Epistles_of_the_Brethren_of_Purity%22_%28cropped%29.jpg/330px-Double-leaf_frontispiece_from_%22The_Epistles_of_the_Brethren_of_Purity%22_%28cropped%29.jpg) |
 | `fentos-meqabyan` | Fentos (Meqabyan III) | query≈0.27 — returned: **Maccabees** | [view](https://upload.wikimedia.org/wikipedia/commons/thumb/6/66/Hasmonean_dynasty_family_tree.svg/330px-Hasmonean_dynasty_family_tree.svg.png) |
 | `firmicus-maternus` | Firmicus Maternus | query≈0.20 — returned: **Religion in ancient Rome** | [view](https://upload.wikimedia.org/wikipedia/commons/thumb/1/1e/Roma%2C_Museo_Ara_Pacis_-_Calco_di_Roma_con_Vittoria_-_Foto_Giovanni_Dall%27Orto%2C_30-Mar-2008.jpg/330px-Roma%2C_Museo_Ara_Pacis_-_Calco_di_Roma_con_Vittoria_-_Foto_Giovanni_Dall%27Orto%2C_30-Mar-2008.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail) |
+| `pharaoh-exodus` | Firʿawn (Pharaoh) | query≈0.17 — returned: **Pharaoh in Islam** | [view](https://upload.wikimedia.org/wikipedia/commons/thumb/4/46/Berlin%2C_Pertsch_Persisch_1016_fol_106v_Musa_magic_battle.jpg/330px-Berlin%2C_Pertsch_Persisch_1016_fol_106v_Musa_magic_battle.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail) |
 | `fulcanelli` | Fulcanelli (pseudonymous) | query≈0.21 — returned: **Notre-Dame de Paris** | [view](https://upload.wikimedia.org/wikipedia/commons/thumb/f/f7/Notre-Dame_de_Paris%2C_4_October_2017.jpg/330px-Notre-Dame_de_Paris%2C_4_October_2017.jpg) |
 | `fatima-bint-muhammad` | Fāṭima bint Muḥammad | query≈0.31 — returned: **Fatima** | [view](https://upload.wikimedia.org/wikipedia/commons/thumb/3/33/FatimaalZahra_%28cropped%29.jpg/330px-FatimaalZahra_%28cropped%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail) |
 | `galen-of-pergamon` | Galen of Pergamon | query≈0.45 — returned: **Galen** | [view](https://upload.wikimedia.org/wikipedia/commons/thumb/8/80/Galenus.jpg/330px-Galenus.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail) |
@@ -119,6 +120,7 @@
 | `louis-komjathy` | Louis Komjathy | query≈0.40 — returned: **Taoism** | [view](https://upload.wikimedia.org/wikipedia/commons/thumb/b/b8/%E6%AD%A6%E5%BD%93%E5%B1%B1%E7%B4%AB%E9%9C%84%E5%AE%AB_%2814739990839%29.jpg/330px-%E6%AD%A6%E5%BD%93%E5%B1%B1%E7%B4%AB%E9%9C%84%E5%AE%AB_%2814739990839%29.jpg) |
 | `lucian-of-samosata` | Lucian of Samosata | query≈0.50 — returned: **Lucian** | [view](https://upload.wikimedia.org/wikipedia/commons/thumb/3/35/Lucian_of_Samosata.png/330px-Lucian_of_Samosata.png) |
 | `seneca` | Lucius Annaeus Seneca | query≈0.31 — returned: **Seneca the Younger** | [view](https://upload.wikimedia.org/wikipedia/commons/thumb/4/44/Duble_herma_of_Socrates_and_Seneca_Antikensammlung_Berlin_07.jpg/330px-Duble_herma_of_Socrates_and_Seneca_Antikensammlung_Berlin_07.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail) |
+| `lut` | Lūṭ | query≈0.13 — returned: **Lot in Islam** | [view](https://upload.wikimedia.org/wikipedia/commons/thumb/b/b4/Lut_and_his_daughters_with_Jibril_near_Sodom.jpg/330px-Lut_and_his_daughters_with_Jibril_near_Sodom.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail) |
 | `manetho` | Manetho of Sebennytos | query≈0.50 — returned: **Manetho** | [view](https://upload.wikimedia.org/wikipedia/commons/thumb/1/11/Manetho_Waddell1940_PD_Excerpt_pIX.jpg/330px-Manetho_Waddell1940_PD_Excerpt_pIX.jpg) |
 | `manu` | Manu (Vaivasvata Manu — first man and flood-survivor) | query≈0.40 — returned: **Matsya** | [view](https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Matsya_Avatar_of_Vishnu_Printed_by_Ravi_Varma_Press_-_Vintage_Poster.jpg/330px-Matsya_Avatar_of_Vishnu_Printed_by_Ravi_Varma_Press_-_Vintage_Poster.jpg) |
 | `manuel-j-gandra` | Manuel J. Gandra (Manuel José Gandra) | query≈0.15 — returned: **Hermeticism** | [view](https://upload.wikimedia.org/wikipedia/commons/thumb/0/07/HermesTrismegistusCaucHighRes.jpg/330px-HermesTrismegistusCaucHighRes.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail) |
@@ -179,12 +181,14 @@
 | `william-sinclair-rosslyn` | William Sinclair, 1st Earl of Caithness | query≈0.23 — returned: **Rosslyn Chapel** | [view](https://upload.wikimedia.org/wikipedia/commons/thumb/d/d5/Rosslyn_Chapel_%28Mentioned_in_Dan_Brown%27s_DaVinci_Code%29.jpg/330px-Rosslyn_Chapel_%28Mentioned_in_Dan_Brown%27s_DaVinci_Code%29.jpg) |
 | `xunzi-person` | Xunzi (Xun Kuang) | query≈0.35 — returned: **Confucianism** | [view](https://upload.wikimedia.org/wikipedia/commons/thumb/2/23/%E6%9C%A8%E9%90%B8_---_Confucian_wooden-clapper_bell.svg/330px-%E6%9C%A8%E9%90%B8_---_Confucian_wooden-clapper_bell.svg.png) |
 | `yohanan-ben-zakkai` | Yohanan ben Zakkai | query≈0.24 — returned: **Mishnah** | [view](https://upload.wikimedia.org/wikipedia/commons/thumb/5/55/Adolf_Behrman_-_Talmudysci.jpg/330px-Adolf_Behrman_-_Talmudysci.jpg) |
+| `zechariah-priest` | Zakariyyā | query≈0.30 — returned: **Zechariah in Islam** | [view](https://upload.wikimedia.org/wikipedia/commons/thumb/1/1f/Berlin%2C_Pertsch_Persisch_1016_fol_195r_Zakaria_being_sawed_in_half_after_Satan_revealed_his_hiding.jpg/330px-Berlin%2C_Pertsch_Persisch_1016_fol_195r_Zakaria_being_sawed_in_half_after_Satan_revealed_his_hiding.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail) |
 | `zarathustra` | Zarathustra | query≈0.50 — returned: **Zoroaster** | [view](https://upload.wikimedia.org/wikipedia/commons/thumb/c/cd/Yazd%2C_Templo_del_Fuego_%282000%29_02_%28cropped%29.jpg/330px-Yazd%2C_Templo_del_Fuego_%282000%29_02_%28cropped%29.jpg) |
 | `zhuangzi-person` | Zhuangzi (Zhuang Zhou) | query≈0.29 — returned: **Taoism** | [view](https://upload.wikimedia.org/wikipedia/commons/thumb/b/b8/%E6%AD%A6%E5%BD%93%E5%B1%B1%E7%B4%AB%E9%9C%84%E5%AE%AB_%2814739990839%29.jpg/330px-%E6%AD%A6%E5%BD%93%E5%B1%B1%E7%B4%AB%E9%9C%84%E5%AE%AB_%2814739990839%29.jpg) |
 | `umar-ibn-al-khattab` | ʿUmar ibn al-Khaṭṭāb | query≈0.33 — returned: **Umar** | [view](https://upload.wikimedia.org/wikipedia/commons/thumb/5/55/Hagia_Sopia_6163502494_%28cropped%29.jpg/330px-Hagia_Sopia_6163502494_%28cropped%29.jpg) |
 | `aisha-bint-abi-bakr` | ʿĀʾisha bint Abī Bakr | query≈0.10 — returned: **Battle of the Camel** | [view](https://upload.wikimedia.org/wikipedia/commons/thumb/e/e4/Ali_and_Aisha_at_the_Battle_of_the_Camel.jpg/330px-Ali_and_Aisha_at_the_Battle_of_the_Camel.jpg) |
+| `salih-prophet` | Ṣāliḥ | query≈0.40 — returned: **Salih** | [view](https://upload.wikimedia.org/wikipedia/commons/thumb/2/28/Saleh_leads_she-camel_crop.jpg/330px-Saleh_leads_she-camel_crop.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail) |
 
-## DEITYS  (0 null · 139 suspect)
+## DEITYS  (0 null · 140 suspect)
 
 ### Suspect hits — verify before trusting
 
@@ -231,6 +235,7 @@
 | `hwanung` | Hwanung | query≈0.57 — returned: **Tan'gun** | [view](https://upload.wikimedia.org/wikipedia/commons/thumb/b/b8/Portrait_of_Dangun.jpg/330px-Portrait_of_Dangun.jpg) |
 | `hariti` | Hārītī | query≈0.50 — returned: **Hariti** | [view](https://upload.wikimedia.org/wikipedia/commons/thumb/d/d6/%E5%96%84%E5%8C%96%E5%AF%BA%E5%A4%A7%E9%9B%84%E5%AE%9D%E6%AE%BF%E6%AE%BF%E5%86%85%E9%87%91%E4%BB%A3%E9%AC%BC%E5%AD%90%E6%AF%8D%E5%92%8C%E5%8F%B3%E4%BE%A7%E5%90%8E%E6%9C%9D%E5%A2%9E%E5%A1%91%E5%B0%8F%E9%AC%BC%E9%80%A0%E5%83%8F.jpg/330px-%E5%96%84%E5%8C%96%E5%AF%BA%E5%A4%A7%E9%9B%84%E5%AE%9D%E6%AE%BF%E6%AE%BF%E5%86%85%E9%87%91%E4%BB%A3%E9%AC%BC%E5%AD%90%E6%AF%8D%E5%92%8C%E5%8F%B3%E4%BE%A7%E5%90%8E%E6%9C%9D%E5%A2%9E%E5%A1%91%E5%B0%8F%E9%AC%BC%E9%80%A0%E5%83%8F.jpg) |
 | `iapetus` | Iapetus | query≈0.46 — returned: **Titans** | [view](https://upload.wikimedia.org/wikipedia/commons/thumb/a/a4/Cornelis_Cornelisz._van_Haarlem_-_The_Fall_of_the_Titans_-_Google_Art_Project.jpg/330px-Cornelis_Cornelisz._van_Haarlem_-_The_Fall_of_the_Titans_-_Google_Art_Project.jpg) |
+| `iblis-shaytan` | Iblīs / Shayṭān | query≈0.40 — returned: **Iblis** | [view](https://upload.wikimedia.org/wikipedia/commons/thumb/9/9d/Istanbul%2C_Topkap%C4%B1_Saray_M%C3%BCzesi_K%C3%BCt%C3%BCphanesi%2C_MS_Ba%C4%9Fdat_282_fol_16_Adam_and_the_Angels_watched_by_Iblis.jpg/330px-Istanbul%2C_Topkap%C4%B1_Saray_M%C3%BCzesi_K%C3%BCt%C3%BCphanesi%2C_MS_Ba%C4%9Fdat_282_fol_16_Adam_and_the_Angels_watched_by_Iblis.jpg) |
 | `io-matua-kore` | Io-matua-kore | query≈0.21 — returned: **Māori mythology** | [view](https://upload.wikimedia.org/wikipedia/commons/thumb/f/f2/Maorigodsymbols.jpg/330px-Maorigodsymbols.jpg) |
 | `ishara` | Ishara | query≈0.27 — returned: **Hurrian religion** | [view](https://upload.wikimedia.org/wikipedia/commons/thumb/5/5e/Hurrian_incense_container.JPG/330px-Hurrian_incense_container.JPG) |
 | `ishtar-akkadian` | Ishtar | query≈0.33 — returned: **Inanna** | [view](https://upload.wikimedia.org/wikipedia/commons/thumb/5/5c/Ishtar_on_an_Akkadian_seal.jpg/330px-Ishtar_on_an_Akkadian_seal.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail) |
