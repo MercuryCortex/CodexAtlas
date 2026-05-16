@@ -701,8 +701,36 @@ nav.side .section-label {
   color: var(--text-3); font-weight: 600; white-space: nowrap;
 }
 body.nav-collapsed .nav-inner { padding-left: 0; padding-right: 0; }
-body.nav-collapsed nav.side .item { padding: 11px 0; justify-content: center; }
+body.nav-collapsed nav.side .item { padding: 11px 0; justify-content: center; position: relative; }
 body.nav-collapsed nav.side .item .lbl { opacity: 0; display: none; }
+/* Hover-tooltip when nav is collapsed — pops to the right of the icon strip
+   showing the full label. Pulled from the .lbl text via JS (sets data-tooltip
+   on every .item on first render). */
+body.nav-collapsed nav.side .item:hover::after {
+  content: attr(data-tooltip);
+  position: absolute;
+  left: calc(100% + 12px); top: 50%; transform: translateY(-50%);
+  background: rgba(14,16,22,0.96);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  color: var(--text-0);
+  border: 1px solid var(--border-soft);
+  padding: 5px 11px; border-radius: 3px;
+  font-family: var(--mono); font-size: 11px; letter-spacing: 0.06em;
+  white-space: nowrap; pointer-events: none;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.45);
+  z-index: 210;
+}
+body.nav-collapsed nav.side .item:hover::before {
+  content: '';
+  position: absolute;
+  left: calc(100% + 6px); top: 50%; transform: translateY(-50%);
+  width: 0; height: 0;
+  border-top: 5px solid transparent;
+  border-bottom: 5px solid transparent;
+  border-right: 6px solid var(--border-soft);
+  pointer-events: none; z-index: 210;
+}
 body.nav-collapsed nav.side .section-label { opacity: 0; padding: 8px 0; height: 8px; overflow: hidden; }
 
 /* CANVAS */

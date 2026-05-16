@@ -7415,6 +7415,9 @@ setView = function patchedSetView(...args) {
 // ============================================================
 document.querySelectorAll('nav.side .item').forEach(el => {
   el.addEventListener('click', () => setView(el.dataset.view));
+  // Populate data-tooltip from the label text — used by CSS when the nav is collapsed.
+  const _lbl = el.querySelector('.lbl');
+  if (_lbl) el.setAttribute('data-tooltip', _lbl.textContent.trim());
 });
 
 ['family', 'type'].forEach(k => {
