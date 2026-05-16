@@ -8289,6 +8289,58 @@ function renderAstrologyMode(mode, count) {
   }
 }
 
+VIEWS.patterns = {
+  title: 'Patterns',
+  subtitle: 'cross-tradition discoveries — convergences · transmissions · science · inversions',
+  render() {
+    const pane = document.createElement('div'); pane.className = 'list-pane patterns-pane';
+    const patterns = (window.PATTERNS_DATA || []);
+    const BADGE_COLORS = {
+      'CONVERGENCE':           { bg: 'rgba(212,165,90,0.15)',  border: 'rgba(212,165,90,0.5)',  text: '#d4a55a' },
+      'TRANSMISSION':          { bg: 'rgba(90,172,168,0.15)',  border: 'rgba(90,172,168,0.5)',  text: '#5aaca8' },
+      'SCIENCE':               { bg: 'rgba(110,140,107,0.15)', border: 'rgba(110,140,107,0.5)', text: '#8ab888' },
+      'INVERSION':             { bg: 'rgba(196,74,90,0.15)',   border: 'rgba(196,74,90,0.5)',   text: '#c44a5a' },
+      'CONVERGENCE+TRANSMISSION': { bg: 'rgba(160,130,200,0.15)', border: 'rgba(160,130,200,0.5)', text: '#b09ad8' },
+    };
+    // Group by section
+    const sections = [];
+    const seen = {};
+    patterns.forEach(p => {
+      if (!seen[p.section]) { seen[p.section] = true; sections.push({ title: p.section, items: [] }); }
+      sections[sections.length - 1].items.push(p);
+    });
+    pane.innerHTML = sections.map(sec => {
+      const items = sec.items.map(p => {
+        const bc = BADGE_COLORS[p.category] || BADGE_COLORS['CONVERGENCE'];
+        const badge = `<span class="pattern-badge" style="background:${bc.bg};border-color:${bc.border};color:${bc.text}">${p.category}</span>`;
+        const chips = (p.sources || []).map(s => {
+          const n = NODES_BY_ID[s];
+          return n
+            ? `<span class="pattern-source" data-id="${s}">${n.title}</span>`
+            : `<span class="pattern-source pattern-source--missing">${s}</span>`;
+        }).join('');
+        return `<div class="pattern-card" data-id="${p.sources && p.sources[0] || ''}">
+          <div class="pattern-card-head">
+            ${badge}
+            <div class="pattern-title">${p.title}</div>
+          </div>
+          <div class="pattern-summary">${p.summary}</div>
+          ${chips ? `<div class="pattern-sources">${chips}</div>` : ''}
+        </div>`;
+      }).join('');
+      return `<div class="list-pane-header" style="--lph-accent:var(--gold-soft)"><span class="lph-rule"></span>${sec.title}<span class="lph-count">· ${sec.items.length}</span></div>${items}`;
+    }).join('') || '<div class="list-pane-empty">No patterns defined yet — add entries to src/data/patterns.js.</div>';
+    // Click on a card → open the first source node
+    pane.addEventListener('click', ev => {
+      const chip = ev.target.closest('.pattern-source[data-id]');
+      if (chip) { selectNode(chip.dataset.id, true); return; }
+      const card = ev.target.closest('.pattern-card[data-id]');
+      if (card && card.dataset.id && NODES_BY_ID[card.dataset.id]) selectNode(card.dataset.id, true);
+    });
+    document.getElementById('canvas').appendChild(pane);
+  }
+};
+
 VIEWS.about = {
   title: 'About this atlas',
   subtitle: 'posture, schema, sources',

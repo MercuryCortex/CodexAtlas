@@ -1605,3 +1605,10 @@ Files: sacred-cauldron.md (NEW) · cerridwen.md (STUB, deity) · bran-the-blesse
 - Goal: Query Wikidata P18 (canonical entity image) for the 392 suspects with similarity < 0.35;
   update cache with better images; report to 00_meta/WIKIDATA-REVIEW.md
 - Status: background run in progress (~23 min); will update cache + report on completion
+
+---
+
+## patterns-tab — Patterns sidebar tab — 2026-05-16 — FINISHED
+- Owning: `src/data/patterns.js` (NEW), `index.html`, `src/js/app.js`, `src/styles/app.css`
+- 37 pattern entries · 5 sections · 5 badge types · source chips wired to vault nodes
+- Agents: add new entries to `src/data/patterns.js` — the tab auto-updates on next page load

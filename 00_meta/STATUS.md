@@ -478,3 +478,15 @@ Added 185+ new OVERRIDES in `fetch_thumbnails.py` in 4 passes, covering:
 Remaining nulls: ~258 (abstract themes without Wikipedia images, obscure figures)  
 Suspects: 731 (up from 553 — new OVERRIDES added redirect thumbnails to suspect pool)  
 Script: `add_depictions.py` (new helper for direct Commons depictions[] injection)
+
+---
+
+## patterns-tab — PATTERNS sidebar tab — FINISHED 2026-05-16
+
+- New file: `src/data/patterns.js` — 37 pattern entries in 5 sections; agents extend this file to grow the tab
+- `index.html`: added `<div class="item" data-view="patterns">` (Indexes section) + script tag
+- `src/js/app.js`: `VIEWS.patterns` render function — groups by section, badge colors per category, clickable source chips open detail panel
+- `src/styles/app.css`: `.patterns-pane`, `.pattern-card`, `.pattern-badge`, `.pattern-source` styles
+- Badge categories: CONVERGENCE (gold) · TRANSMISSION (teal) · SCIENCE (green) · INVERSION (crimson) · CONVERGENCE+TRANSMISSION (violet)
+- Source: `AUDIT/massive-wins-index.md` (35 curated wins from 67 symbol files)
+- Verified in browser: 37 cards, all 5 badge types, source chips navigate to symbol nodes

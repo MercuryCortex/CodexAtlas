@@ -1,0 +1,324 @@
+// CODEX ATLAS — PATTERNS DATA
+// Cross-tradition discoveries curated from 09_symbols/*.md.
+// To add a new pattern: append an entry to window.PATTERNS_DATA below.
+// category values: 'CONVERGENCE' | 'TRANSMISSION' | 'SCIENCE' | 'INVERSION' | 'CONVERGENCE+TRANSMISSION'
+// sources: array of symbol/node slugs (must exist in vault as clickable targets)
+// section: display group heading shown in the Patterns tab
+//
+// Agents: update this file when a new MASSIVE WIN is confirmed in a symbol node.
+// The Patterns tab auto-reflects any additions on next page load / data rebuild.
+
+window.PATTERNS_DATA = [
+
+  // ─── I. IDENTICAL STRUCTURES, ZERO CONTACT ────────────────────────────────
+
+  {
+    id: 'medicine-wheel-mandala',
+    title: 'Medicine Wheel = Buddhist Mandala',
+    category: 'CONVERGENCE',
+    section: 'Identical Structures, Zero Contact',
+    sources: ['medicine-wheel', 'mandala-circle'],
+    summary: 'Circle divided into four quadrants, sacred center, directional colors and cosmic principles — same structure across 9,000 km separation, zero contact.',
+  },
+  {
+    id: 'three-mystics-void',
+    title: 'Three Mystics Independently Arrive at the Void',
+    category: 'CONVERGENCE',
+    section: 'Identical Structures, Zero Contact',
+    sources: ['sacred-void'],
+    summary: 'Nagarjuna (India, c. 150 CE), Isaac Luria (Safed, c. 1570), Meister Eckhart (Rhineland, c. 1310) each concluded independently: ultimate reality is void, accessible only by radical self-emptying. Zero contact between the three. Same conclusion: silence is the most accurate theology.',
+  },
+  {
+    id: 'eclipse-devouring-universal',
+    title: 'Eclipse = Celestial Devouring — Universal Panic Structure',
+    category: 'CONVERGENCE',
+    section: 'Identical Structures, Zero Contact',
+    sources: ['sacred-eclipse'],
+    summary: 'Every independent civilization generated the same narrative for solar eclipses — a chaos-monster swallowing the sun — and the same response: make ritual noise to scare it away. Hindu, Mesopotamian, Maya, Chinese, Norse, and Christian traditions all converge on this structure.',
+  },
+  {
+    id: 'dying-rising-god-pattern',
+    title: 'The Dying and Rising God — 3,000-Year Universal Pattern',
+    category: 'CONVERGENCE',
+    section: 'Identical Structures, Zero Contact',
+    sources: ['dying-rising-god'],
+    summary: 'Death → descent into underworld → resurrection → cosmic renewal across 3,000 years and multiple language families: Osiris, Dumuzi/Tammuz, Dionysus-Zagreus, Adonis, Attis, Baldr, Christ. No documented literary borrowing between the earliest and latest cases.',
+  },
+  {
+    id: 'caduceus-kundalini',
+    title: 'Caduceus = Tantric Subtle Body',
+    category: 'CONVERGENCE',
+    section: 'Identical Structures, Zero Contact',
+    sources: ['kundalini', 'caduceus'],
+    summary: 'The Tantric diagram of iḍā and piṅgalā winding around the central suṣumṇā — crossing at each chakra — is structurally identical to the caduceus. Both encode solar and lunar currents flanking a central axis, with crossing-points as nodes of concentrated power. Independent development.',
+  },
+  {
+    id: 'gorgoneion-taotie-haka',
+    title: 'Gorgoneion = Chinese Taotie = Māori Haka Face',
+    category: 'CONVERGENCE',
+    section: 'Identical Structures, Zero Contact',
+    sources: ['gorgoneion'],
+    summary: 'The frontal apotropaic face with staring eyes and protruding tongue appears as an independent convergence across Greek, Shang-dynasty Chinese, and Māori traditions with zero contact. The visual grammar of the apotropaic threat-face is apparently universal.',
+  },
+  {
+    id: 'unicorn-qilin',
+    title: 'Western Unicorn = Chinese Qilin',
+    category: 'CONVERGENCE',
+    section: 'Identical Structures, Zero Contact',
+    sources: ['unicorn'],
+    summary: 'The European unicorn and the Chinese qilin (麒麟) are independent parallel developments of the same type: a rare, one-horned beast appearing only in the presence of a righteous ruler, signaling a golden age. No documented transmission.',
+  },
+  {
+    id: 'wheel-fortune-bhavacakra',
+    title: 'Wheel of Fortune = Buddhist Bhavacakra',
+    category: 'CONVERGENCE',
+    section: 'Identical Structures, Zero Contact',
+    sources: ['wheel-of-fortune'],
+    summary: 'Western Rota Fortunae (Boethius, c. 524 CE) and Buddhist Bhavacakra are independent elaborations of the wheel as the mechanism of endless cycling — beings rise and fall, bound to the wheel until enlightenment or Grace intervenes. Separated by 5,000 km.',
+  },
+  {
+    id: 'sacred-mountain-universal',
+    title: 'Every Civilization Independently Built the Sacred Mountain',
+    category: 'CONVERGENCE',
+    section: 'Identical Structures, Zero Contact',
+    sources: ['world-mountain', 'pyramid-triangle'],
+    summary: 'Egypt (pyramids), Mesopotamia (ziggurats), Hindu/Buddhist temple-mountains (Angkor Wat, Borobudur = Mount Meru), Mesoamerica (temple-pyramids), Gothic cathedrals (heaven-pointing spires) — every civilization that built monumental sacred architecture concluded: the sacred place is a mountain, so build an artificial one.',
+  },
+  {
+    id: 'sacred-cave-five-theologies',
+    title: 'The Sacred Cave — Five Identical Theologies',
+    category: 'CONVERGENCE',
+    section: 'Identical Structures, Zero Contact',
+    sources: ['sacred-cave'],
+    summary: 'Five apparently independent cave-theology systems share the same deep structure: the cave = the womb of the earth = the place of death/rebirth/transformation. Plato\'s Cave, Cave of Machpelah, Cave of Hira, Hindu cave temples, and Lascaux/Altamira all converge on this.',
+  },
+  {
+    id: 'odin-christ-prometheus-shaman',
+    title: 'Odin / Christ / Prometheus / Shamanic Initiation — One Structure',
+    category: 'CONVERGENCE',
+    section: 'Identical Structures, Zero Contact',
+    sources: ['runes'],
+    summary: 'In all four: a divine figure undergoes extreme suffering on a vertical structure, crossing the boundary between worlds, to receive or transmit cosmic knowledge. Odin on Yggdrasil, Christ on the Cross, Prometheus on the rock, Siberian shamanic initiatory death.',
+  },
+  {
+    id: 'sacred-heart-sufi-qalb',
+    title: 'Catholic Sacred Heart = Sufi Qalb',
+    category: 'CONVERGENCE',
+    section: 'Identical Structures, Zero Contact',
+    sources: ['sacred-heart'],
+    summary: 'The Catholic Sacred Heart (formalized c. 1673–1675) and the Sufi qalb (the heart as the organ of divine knowing, the polished mirror receiving divine self-disclosure) are structurally identical: the heart as the meeting-point between human and divine. Two theologies with no cross-contact at the time of formalization.',
+  },
+  {
+    id: 'sacred-threshold-universal',
+    title: 'The Sacred Threshold — Every Tradition Solves the Same Problem',
+    category: 'CONVERGENCE',
+    section: 'Identical Structures, Zero Contact',
+    sources: ['torii-gate', 'mezuzah'],
+    summary: 'Every major religious tradition independently solved: how do you mark the boundary between ordinary and sacred space? Shinto torii, Egyptian pylons, Roman limen, Gothic west portal, Hindu gopuram, Islamic iwan, Jewish mezuzah, Christian narthex — all different answers to the same cognitive need.',
+  },
+  {
+    id: 'rainbow-bridge-universal',
+    title: 'The Rainbow as Universal Bridge to the Otherworld',
+    category: 'CONVERGENCE',
+    section: 'Identical Structures, Zero Contact',
+    sources: ['rainbow-bridge'],
+    summary: 'Bifröst (Norse), Iris\'s path (Greek), Cherokee spirit-world border, Polynesian anuenue — all are independent theological responses to the same optical phenomenon. The rainbow looks like a bridge to the sky; every tradition that looks at it produces the same theology: this is a path to the other world.',
+  },
+
+  // ─── II. DOCUMENTED TRANSMISSION CHAINS ───────────────────────────────────
+
+  {
+    id: 'isis-madonna-transmission',
+    title: 'Isis Lactans → Madonna and Child',
+    category: 'TRANSMISSION',
+    section: 'Documented Transmission Chains',
+    sources: ['divine-child'],
+    summary: 'André Grabar (1968) documents the direct iconographic transmission from the enthroned nursing Isis to the enthroned Virgin Mary holding the Christ child. The compositional scheme passes from Egyptian into Coptic Christian and then Western Christian iconography. The Madonna and Child is an Egyptian theological image in Christian clothes.',
+  },
+  {
+    id: 'prayer-beads-chain',
+    title: 'Prayer Beads: Hindu → Buddhist → Catholic Rosary',
+    category: 'TRANSMISSION',
+    section: 'Documented Transmission Chains',
+    sources: ['prayer-beads'],
+    summary: 'Hindu japa mālā (108 beads) → Buddhist mālā → probable Silk Road transmission → Eastern Orthodox komboskini → Catholic rosary (Dominican tradition, c. 1200 CE). The technology of counting prayer repetitions on a string originated in Vedic India and reached every major world religion.',
+  },
+  {
+    id: 'lamassu-cherubim-chain',
+    title: 'Lamassu = Biblical Cherubim → Tetramorph → Zodiac',
+    category: 'TRANSMISSION',
+    section: 'Documented Transmission Chains',
+    sources: ['lamassu'],
+    summary: 'The biblical cherubim guarding the Ark of the Covenant are Mesopotamian lamassu — winged composite guardians flanking Assyrian palace gateways. Ezekiel elaborates them at cosmic scale; Irenaeus maps the four faces onto the four Evangelists; those faces also map onto the four fixed zodiac signs. One Babylonian image → Jewish prophecy → Christian iconography → zodiacal cosmology.',
+  },
+  {
+    id: 'winged-disk-chain',
+    title: 'Egyptian Winged Disk → Assyrian Royal Sun → Faravahar',
+    category: 'TRANSMISSION',
+    section: 'Documented Transmission Chains',
+    sources: ['winged-disk'],
+    summary: 'Behdety (Egyptian solar winged disk) → Assyrian royal sun-disk → Achaemenid Faravahar (the Zoroastrian winged disk with human figure, Persepolis reliefs). One of the best-documented cross-cultural symbol transmissions in the ancient Near East.',
+  },
+  {
+    id: 'nsibidi-atlantic-crossing',
+    title: 'Nsibidi Crosses the Atlantic',
+    category: 'TRANSMISSION',
+    section: 'Documented Transmission Chains',
+    sources: ['nsibidi'],
+    summary: 'The Nigerian Nsibidi script system crossed the Atlantic during the Middle Passage and survived in Cuba as the Abakuá brotherhood, maintaining a version of nsibidi writing called anaforuana. Nsibidi is the only known African script to survive the transatlantic slave trade as a living tradition.',
+  },
+  {
+    id: 'masonic-blazing-star-sirius',
+    title: 'Masonic Blazing Star → Sirius → Isis → Egyptian Calendar',
+    category: 'TRANSMISSION',
+    section: 'Documented Transmission Chains',
+    sources: ['blazing-star'],
+    summary: 'Albert Pike (Morals and Dogma, 1871) explicitly identifies the Masonic Blazing Star as Sirius. Sirius in ancient Egypt was Sopdet/Sothis, identified with Isis. Sopdet\'s heliacal rising announced the Nile flood and Egyptian New Year. The entire agricultural-religious calendar organized around one stellar event that a Masonic Tier-1 source explicitly preserves.',
+  },
+  {
+    id: 'celtic-cauldron-grail-stone',
+    title: 'Celtic Cauldron → Holy Grail → Philosopher\'s Stone',
+    category: 'TRANSMISSION',
+    section: 'Documented Transmission Chains',
+    sources: ['cauldron-of-rebirth', 'holy-grail'],
+    summary: 'Loomis (1963) documents: the four Celtic magical cauldrons enter Arthurian mythology as the Holy Grail. Wolfram von Eschenbach\'s Parzival (c. 1210) then identifies the Grail as a stone (lapsit exillis) = the Philosopher\'s Stone. Celtic Cauldron → Holy Grail → Philosopher\'s Stone.',
+  },
+  {
+    id: 'sator-square-2000-years',
+    title: 'Sator Square: Pagan Roman → Coptic → Ethiopian Orthodox (2,000 Years)',
+    category: 'TRANSMISSION',
+    section: 'Documented Transmission Chains',
+    sources: ['sator-square'],
+    summary: 'The SATOR-AREPO-TENET-OPERA-ROTAS palindrome square traveled from pagan Roman Pompeii (pre-79 CE) through possibly pre-Nicene Christian communities, into Coptic Christian Egypt, and into Ethiopian Orthodox tradition — surviving as a protective charm into the 20th century. A single five-word arrangement in continuous documented use across 2,000 years and three continents.',
+  },
+  {
+    id: 'zoroastrian-dualism-chain',
+    title: 'Zoroastrian Dualism → Mani → Bogomils → Cathars → Masonic Pavement',
+    category: 'TRANSMISSION',
+    section: 'Documented Transmission Chains',
+    sources: ['mosaic-pavement'],
+    summary: 'The black-and-white Masonic lodge pavement is the most architecturally visible expression of a cosmic dualism transmission chain spanning 2,600 years: Zoroaster\'s Ahura Mazda/Angra Mainyu → Manichaeism → Bogomilism → Catharism → Freemasonry. Albert Pike in Morals and Dogma makes this connection explicit.',
+  },
+  {
+    id: 'dioscuri-cosmas-damian',
+    title: 'Dioscuri → Saints Cosmas and Damian',
+    category: 'TRANSMISSION',
+    section: 'Documented Transmission Chains',
+    sources: ['sacred-twins'],
+    summary: 'As Christianity displaced Greco-Roman religion, the Dioscuri (Castor and Pollux — divine twin brothers, healers, navigators) were reformulated as Saints Cosmas and Damian — twin physician-martyrs whose feast day was celebrated at the temple of Castor and Pollux in the Roman Forum. The divine twin motif did not die — it changed clothes.',
+  },
+  {
+    id: 'dee-obsidian-mirror',
+    title: 'Aztec Tezcatlipoca Mirror → John Dee\'s Enochian Angels',
+    category: 'TRANSMISSION',
+    section: 'Documented Transmission Chains',
+    sources: ['sacred-mirror'],
+    summary: 'A Mexican Aztec ritual obsidian mirror — made for Tezcatlipoca-cult divination before 1521 — arrived in England and was used by John Dee as the medium through which his seer Edward Kelley received the Enochian angelic communications of 1582–1587. Both traditions agreed: an obsidian disc, properly approached, shows what is otherwise invisible. Object now in the British Museum.',
+  },
+
+  // ─── III. WHEN MODERN SCIENCE FINDS THE SYMBOL WAS RIGHT ──────────────────
+
+  {
+    id: 'girih-penrose-tiling',
+    title: 'Islamic Girih Tiles = Penrose Quasi-Crystal Tiling (500 Years Early)',
+    category: 'SCIENCE',
+    section: 'Modern Science Validates the Symbol',
+    sources: ['arabesque-girih'],
+    summary: 'Lu and Steinhardt (Science, 2007) discovered that Islamic girih tile patterns from the Darb-i-Imam shrine (Isfahan, 1453 CE) encode Penrose quasi-periodic tiling — a mathematical pattern not formally discovered in the West until Roger Penrose in 1974. Medieval Iranian craftsmen were generating patterns with 10-fold rotational symmetry that Western mathematics only formalized 500 years later.',
+  },
+  {
+    id: 'zero-sunyata',
+    title: 'Mathematical Zero = Buddhist Śūnyatā',
+    category: 'SCIENCE',
+    section: 'Modern Science Validates the Symbol',
+    sources: ['sacred-number-zero'],
+    summary: 'The Sanskrit word śūnya means both "empty/void" and "zero." Mathematical zero (formalized by Brahmagupta, 628 CE) and Buddhist śūnyatā developed in the same intellectual environment. The void that enables all mathematical representation and the void that underlies all phenomena share a word, a culture, and possibly the same cognitive discovery in two registers.',
+  },
+  {
+    id: 'kepler-metatrons-cube',
+    title: 'Kepler\'s Planetary Model = Metatron\'s Cube',
+    category: 'SCIENCE',
+    section: 'Modern Science Validates the Symbol',
+    sources: ['metatrons-cube'],
+    summary: 'In 1596, Kepler proposed that the six then-known planetary orbits were separated by the five Platonic solids nested within each other — precisely the claim encoded in Metatron\'s Cube. The geometric intuition was correct (the same deep mathematical structures do underlie atomic-scale and cosmic-scale geometry); Kepler\'s specific orbital model was wrong.',
+  },
+  {
+    id: 'sacred-forty-quarantine',
+    title: 'Sacred Number 40 → Epidemiological Quarantine',
+    category: 'SCIENCE',
+    section: 'Modern Science Validates the Symbol',
+    sources: ['sacred-number-forty'],
+    summary: 'The word quarantine derives from quarantina giorni — forty days of isolation. Medieval Venetian plague law based this on the biblical period of 40 as the duration of sacred trial: Noah\'s flood, Moses on Sinai, Jesus in the desert. A Bronze Age theology encoding "sufficient time for transformation" became the modern epidemiological standard for viral incubation.',
+  },
+  {
+    id: 'buckminster-icosahedron',
+    title: 'Buckminsterfullerene = Sacred Geometry\'s Icosahedron',
+    category: 'SCIENCE',
+    section: 'Modern Science Validates the Symbol',
+    sources: ['metatrons-cube'],
+    summary: 'The C60 molecule (Nobel Prize 1996) is a truncated icosahedron — one of the Platonic solids that sacred geometry has treated as cosmologically fundamental since Plato\'s Timaeus. The icosahedron appears in viral capsid structure, quasi-crystal formation, and carbon molecular geometry. The sacred geometers were right that it is a fundamental natural form.',
+  },
+
+  // ─── IV. THE INVERSION MACHINE ────────────────────────────────────────────
+
+  {
+    id: 'serpent-inversion',
+    title: 'The Serpent — History\'s Most Inverted Symbol',
+    category: 'INVERSION',
+    section: 'The Inversion Machine',
+    sources: ['serpent-cosmic-enemy', 'naga-serpent'],
+    summary: 'The wisdom-healing serpent of pre-Yahwist Near Eastern religion was assigned to Satan by biblical monotheism. The same tradition that deployed Nehushtan (Moses\'s healing bronze serpent = lifted up like Christ) also made the Eden serpent the Devil\'s avatar. Spanish missionaries mapped Quetzalcoatl (feathered wisdom-serpent) onto the Devil. The symbol was so important it could not be discarded — only inverted.',
+  },
+  {
+    id: 'swastika-inversion',
+    title: 'Swastika: Prehistoric Universal → Nazi Genocide Emblem',
+    category: 'INVERSION',
+    section: 'The Inversion Machine',
+    sources: ['swastika'],
+    summary: 'The swastika is attested as a solar-rotation good-luck symbol in Vedic India (c. -3000 BCE), pre-Columbian America, Bronze Age Europe, ancient Greece, Rome, and Celtic culture. The Nazi appropriation (1920–1945) converted the most geographically widespread positive sacred symbol in human history into the emblem of genocide in approximately 15 years.',
+  },
+  {
+    id: 'cauldron-witch-inversion',
+    title: 'Sacred Cauldron → Witch\'s Cauldron',
+    category: 'INVERSION',
+    section: 'The Inversion Machine',
+    sources: ['sacred-cauldron'],
+    summary: 'The sacred cauldron (inexhaustible, life-restoring, wisdom-giving — Dagda, Cerridwen, Pair Dadeni) was inverted in early modern European demonology (c. 1450–1750 CE) into the witch\'s cauldron: a vessel of poisoning, transformation into death rather than through it. The inversion tracks the suppression of folk religion by institutional Christianity.',
+  },
+  {
+    id: 'black-sun-inversion',
+    title: 'Alchemical Black Sun ≠ Nazi Black Sun',
+    category: 'INVERSION',
+    section: 'The Inversion Machine',
+    sources: ['sol-niger', 'black-sun'],
+    summary: 'The alchemical Sol Niger is the nigredo — a positive symbol (necessary dissolution before transformation). The name "Schwarze Sonne" was invented after 1945 by Nazi-esotericist fiction writers (Landig, 1971), retroactively applied to the Wewelsburg mosaic. The alchemical black sun and the neo-Nazi emblem share a form but have zero theological connection. The most recent large-scale inversion in the vault.',
+  },
+
+  // ─── V. SINGLE NODES THAT OPEN INTO EVERYTHING ───────────────────────────
+
+  {
+    id: 'ba-gua-binary',
+    title: 'Ba Gua / I Ching: Ancient Binary Code',
+    category: 'CONVERGENCE+TRANSMISSION',
+    section: 'Single Nodes That Open Into Everything',
+    sources: ['ba-gua'],
+    summary: 'Four independent binary systems: I Ching / Ba Gua (China, c. -1000 BCE) → Leibniz\'s binary arithmetic (1679, independently; Jesuit Bouvet shows him the I Ching in 1701 and Leibniz sees his own system) → Yoruba Ifá divination (256 odù from binary palm-nut throws, structurally identical to the I Ching, no contact) → Niels Bohr\'s coat of arms (1947, yin-yang: "Contraria sunt complementa").',
+  },
+  {
+    id: 'abraxas-365',
+    title: 'Abraxas = 365: Divine Name Encodes the Solar Year',
+    category: 'CONVERGENCE',
+    section: 'Single Nodes That Open Into Everything',
+    sources: ['abraxas'],
+    summary: 'ABRAXAS by Greek letter-values = 365, the solar year. The supreme deity of Basilidean Gnosticism encodes the year in its name. In 1916, C.G. Jung privately wrote Septem Sermones ad Mortuos under the pseudonym "Basilides of Alexandria" — the Gnostic name for the deepest insight he had yet reached. Abraxas, for Jung, was the pre-moral totality beyond God and Devil.',
+  },
+  {
+    id: 'tarot-western-mandala',
+    title: 'The Tarot = The Western Mandala',
+    category: 'CONVERGENCE',
+    section: 'Single Nodes That Open Into Everything',
+    sources: ['tarot'],
+    summary: 'The tarot is the closest analog to the Buddhist mandala in Western esotericism. Both are complete cosmological diagrams used as meditation and divination simultaneously, encoding initiatory knowledge, and synthesizing multiple cross-tradition layers. The Major Arcana\'s Fool\'s Journey maps onto the mandala path from outer to inner.',
+  },
+
+];
