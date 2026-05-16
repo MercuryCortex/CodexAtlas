@@ -56,9 +56,16 @@ _Hand-maintained. Each agent currently working in the vault appends a claim bloc
 ## opus-three-tabs-1 — Alchemy · Morals · Rituals tabs — IN PROGRESS 2026-05-16
 - Owns app code: `src/js/app.js` (VIEWS.alchemy expand + NEW VIEWS.morals + NEW VIEWS.rituals), `index.html` (nav items)
 - Owns content: `12_alchemy/` folder (NEW — 12 alchemy nodes), `13_morals/` folder (NEW — 10 moral-philosophy nodes), `14_rituals/` folder (NEW — 14 ritual-behavior nodes)
-- Sub-agents in flight: `alchemy-content-1`, `morals-content-1`, `rituals-content-1`
+- Sub-agents in flight: ~~`alchemy-content-1`~~ DONE · ~~`morals-content-1`~~ DONE · `rituals-content-1`
 - DO NOT TOUCH: src/js/app.js (I own it), 12_alchemy/, 13_morals/, 14_rituals/ (sub-agents own)
 - Status: IN PROGRESS
+
+## ~~alchemy-content-1 — 12 alchemy nodes in 12_alchemy/ — 2026-05-16 — FINISHED~~
+- ~~NEW: `12_alchemy/` folder (12 full-tier type:alchemy nodes)~~
+- ~~Nodes: alchemy-emerald-tablet, alchemy-jabir-ibn-hayyan, alchemy-maria-prophetissa, alchemy-zosimos-of-panopolis, alchemy-paracelsus, alchemy-chinese-neidan, alchemy-philosophers-stone, alchemy-prima-materia, alchemy-nigredo-albedo-rubedo, alchemy-opus-magnum, alchemy-islamic-tradition, alchemy-tria-prima~~
+- ~~UPDATED: build_data.py — added "alchemy": ["12_alchemy"] to NODE_DIRS; added alchemy count to print output~~
+- ~~MASSIVE WIN edges: (1) Opus Magnum = Fana/Baqa/Moksha/Nirvana/Theosis/Xian — 6-tradition universal transformational project; (2) Tria Prima = Hindu Gunas = Neidan Three Treasures = Platonic tripartite soul = Zoroastrian triple principle; (3) Prima Materia = Tehom = Tiamat = Daoist Hundun = Prakriti = Gnostic Hyle — 6 pre-creation substrates; (4) Nigredo-Albedo-Rubedo = van Gennep rites of passage = mystery cult initiation = shamanic death-rebirth = Christian kenosis/resurrection = Buddhist path; (5) Philosopher's Stone = al-Iksir = Jindan = Soma/Amrita = Zoroastrian Xvarnah — 5-tradition sacred-immortality-substance convergence~~
+- ~~Status: FINISHED — 12 alchemy nodes · 16383 edges · 0 lint errors · 0 dead links introduced~~
 
 ---
 
