@@ -106,3 +106,20 @@ The structural parallel to military conscription in secular societies is exact: 
 - "Malalgoda, Kitsiri. *Buddhism in Sinhalese Society 1750–1900*. University of California Press, 1976 — Tier-1 (Siamese mission documentation)"
 - "Spiro, Melford E. *Buddhism and Society: A Great Tradition and Its Burmese Vicissitudes*. University of California Press, 1970 — Tier-1 (shinbyu documentation)"
 - "Tambiah, Stanley J. *Buddhism and the Spirit Cults in North-East Thailand*. Cambridge University Press, 1970 — Tier-1"
+
+## Vault Connections
+
+**Cross-tradition apostolic-succession parallels (MAJOR):**
+- [[ritual-ordination-laying-hands]] — Catholic apostolic succession; structurally identical chain-theory: founding ordination event → unbroken chain → quorum requirement → chain-integrity anxiety; the closest structural counterpart
+- [[ritual-upanayana-sacred-thread]] — Hindu initiation parallel; whispered transmission of sacred formula from qualified teacher; chain of adhikara authority
+
+**Lifecycle framework:**
+- [[ritual-rites-of-passage]] — the temporary ordination (shinbyu/tok tah) is Van Gennep's liminal period institutionalized as a rite of passage converting boys to men
+
+**Traditions:**
+- [[tradition-theravada-buddhism]] — primary tradition; the Vinaya Pitaka specifies every detail of upasampada
+- [[tradition-mahayana-buddhism]] — Mahayana ordination parallels the same Vinaya substrate
+- [[tradition-tibetan-buddhism]] — Vajrayana ordination line also claims lineage-integrity back to the Buddha
+
+**Companion rituals:**
+- [[ritual-buddhist-uposatha]] — the recurring Uposatha Patimokkha recitation is the ongoing communal expression of the ordination community; ordination creates the sangha that the uposatha maintains

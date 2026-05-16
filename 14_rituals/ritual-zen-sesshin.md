@@ -108,3 +108,25 @@ The Japanese Zen monastery that produced the sesshin practice arrived in the Ame
 - "Hyers, M. Conrad. *Zen and the Comic Spirit*. Rider, 1974 — Tier-2 (koan as comedy)"
 - "McMahan, David L. *The Making of Buddhist Modernism*. Oxford University Press, 2008 — Tier-1 (Theosophy-Zen connection)"
 - "Fields, Rick. *How the Swans Came to the Lake: A Narrative History of Buddhism in America*. Shambhala, 1981 — Tier-2"
+
+## Vault Connections
+
+**Cross-tradition staged-transformation parallels:**
+- [[ritual-yoga-as-ritual]] — eight-limbed path; the same three-phase structure (ethical → contemplative → union); sesshin is yoga's samadhi compressed into a 7-day intensive retreat
+- [[alchemy-calcination-stages]] — 7-stage alchemical transformation map parallels the 7-day sesshin arc; both are systematic dismantling-and-reconstitution protocols
+
+**Death-rebirth framework:**
+- [[ritual-initiation-mystery]] — sesshin as controlled death and rebirth; the 7-day dismantling of ego-structure follows Van Gennep's separation → liminality → reincorporation schema
+- [[ritual-rites-of-passage]] — same Van Gennep framework; sesshin is an adult initiatory rite in monastic form
+
+**Key persons:**
+- [[nagarjuna]] — Madhyamaka philosophy (reduce all conceptual positions to contradiction) is the philosophical equivalent of the koan method; Nagarjuna's reductio ad absurdum = productive crisis of knowing
+- [[d-t-suzuki]] — primary Western transmission vector; first came West through the Theosophical network
+- [[helena-blavatsky]] — the unexpected Theosophy-Zen chain: Blavatsky → Paul Carus → D.T. Suzuki → Alan Watts → American mindfulness industry
+
+**Traditions:**
+- [[tradition-zen]] — primary tradition; Rinzai (koan-intensive) and Soto (shikantaza/just sitting) variants
+- [[tradition-mahayana-buddhism]] — Zen as a Mahayana school
+- [[tradition-sufism]] — chilla (40-day retreat) is the closest structural analogue in intensity and fana-as-goal
+- [[tradition-daoism]] — wu-wei absorption parallels the kensho endpoint; Chan (Chinese Zen) is partially a Daoist-Buddhist synthesis
+- [[tradition-theosophy]] — the unexpected transmission vehicle for Zen to the Western world

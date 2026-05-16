@@ -89,6 +89,32 @@ The Buddhist Uposatha predates all the Abrahamic instances and shares its Indo-I
 
 See also: [[ritual-sabbath-observance]], [[ritual-daily-prayer]], [[moral-buddhist-five-precepts]], [[tradition-theravada-buddhism]], [[tradition-hinduism]], [[tradition-vedic]], [[ritual-fasting-cross-tradition]].
 
+## Vault Connections
+
+**Sabbath parallel (MOST IMPORTANT):**
+- [[ritual-sabbath-observance]] — the cross-tradition weekly sacred cessation pattern; uposatha is the oldest documented instance (predates the Buddha); Buddhist Sabbath
+- [[ritual-shabbat-havdalah]] — Jewish Shabbat; the closest structural counterpart; both involve communal confession/renewal, shared sacred status, and lunar/calendar anchoring
+
+**Cross-tradition communal confession/renewal:**
+- [[ritual-kaddish-mourning]] — Jewish annual memorial + kaddish recitation at prescribed times; same logic of communal re-commitment at calendrical boundaries
+- [[ritual-fasting-cross-tradition]] — the Eight Precepts include no-eating-after-noon; uposatha is a partial fast day for laypeople
+
+**Predecessor:**
+- [[ritual-yajna-vedic-fire]] — the Vedic upavasatha (purification fast before the Soma sacrifice) is the direct ancestor of the Buddhist Uposatha; the Buddha adopted an existing Indo-Iranian temporal rhythm
+
+**Traditions:**
+- [[tradition-theravada-buddhism]] — primary tradition; the Vinaya Patimokkha recitation is the heart of the monastic uposatha
+- [[tradition-mahayana-buddhism]] — uposatha practice continues in Mahayana monasticism
+- [[tradition-tibetan-buddhism]] — Vajrayana also observes lunar observance days
+- [[tradition-zen]] — Japanese and Chinese Zen retain lunar-day observance structures
+- [[tradition-hinduism]] — the Vedic upavasatha root; uposatha is a conscious adoption of this existing Hindu/Vedic temporal form
+
+**Companion ritual:**
+- [[ritual-theravada-ordination]] — ordination creates the sangha whose communal Patimokkha recitation is the heart of every monastic uposatha; ordination and uposatha are mutually constituting
+
+**Morals:**
+- [[moral-buddhist-five-precepts]] — the Five Precepts are the baseline; uposatha laypeople extend to Eight Precepts for 24 hours
+
 ### Cross-Tradition Investigation
 
 **The Sabbath Migration Hypothesis**: Every major axial-age religion generated a periodic-cessation institution, but none of them are independent inventions. The Vedic *upavasatha* and the pre-Israelite Babylonian *shabattu* are the two documented deep roots. Both spread through trade networks, military conquest, and cultural prestige. The Buddha explicitly adopted the existing Indian practice; the early Christians explicitly modified the Jewish Shabbat. The Islamic Jumu'ah is explicitly presented as a replacement for the Jewish Sabbath (Quran 62:9). The dependence chain is documented at every link.

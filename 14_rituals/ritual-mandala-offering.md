@@ -91,6 +91,24 @@ The Buddhist concept of *sunyata* (emptiness) pervades the mandala offering: the
 
 See also: [[ritual-sacrifice]], [[mandala-circle]], [[ritual-funeral-rites]], [[tradition-tibetan-buddhism]], [[tradition-vajrayana-buddhism]], [[tradition-bon]], [[axis-mundi]], [[sefirot-tree-of-life]], [[sri-yantra]], [[tradition-navajo]].
 
+## Vault Connections
+
+**The inverted sacrifice (MOST IMPORTANT):**
+- [[ritual-sacrifice]] — mandala offering inverts sacrifice logic: instead of permanently transferring something to the divine, it offers everything and sweeps it away; the only documented ritual whose content is the non-attachment to the ritual act
+- [[ritual-yajna-vedic-fire]] — the yajna tradition that mandala offering explicitly inverts; yajna's oblations go into fire and cannot be retrieved; mandala sweeps and begins again
+
+**Cosmic architecture:**
+- [[axis-mundi]] — Mount Meru at the mandala's center; the cosmic axis around which all realms rotate
+- [[mandala-circle]] — the geometric cosmogram form shared with Kalachakra sand mandala, yantra, and the cosmological diagram tradition
+- [[sefirot-tree-of-life]] — Kabbalistic geometric cosmogram; same impulse to render divine structure as a diagram
+- [[sri-yantra]] — Hindu geometric cosmogram of the universe; same impulse as the mandala cosmograph
+
+**Traditions:**
+- [[tradition-tibetan-buddhism]] — primary tradition; mandala offering is one of the four ngondro preliminaries
+- [[tradition-vajrayana-buddhism]] — Vajrayana practice context
+- [[tradition-mahayana-buddhism]] — Mahayana bodhichitta framework; the offering accumulates merit for all sentient beings
+- [[tradition-bon]] — pre-Buddhist substrate; some mandala-offering antecedents in Bon ritual
+
 ### Refs
 - "Jamgön Kongtrül. *The Treasury of Knowledge* (Shes bya mdzod). Shambhala, 2003 — Tier-1 (traditional doctrinal source)"
 - "Gyatrul Rinpoche. *Ancient Wisdom: Nyingma Teachings on Dream Yoga, Self-Healing, and Rigpa*. Snow Lion, 1993 — Tier-2"
