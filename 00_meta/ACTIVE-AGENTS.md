@@ -30,10 +30,10 @@ _Hand-maintained. Each agent currently working in the vault appends a claim bloc
 
 ---
 
-## opus-apostolic-fathers-1 — Apostolic Fathers + Josephus upgrades — started 2026-05-16 — IN PROGRESS
-- Owning: `phase-4-061-didache.md`, `phase-4-062-1-clement.md`, `phase-4-063-ignatius-letters.md`, `phase-4-065-shepherd-of-hermas.md`, `phase-4-069-josephus-jewish-war.md`, `phase-4-070-josephus-antiquities-of-the-jews.md`
-- Goal: All six metadata→full; Two Ways / binary cosmology MASSIVE WIN; Eucharist pre-Pauline Jewish form; monepiscopacy invention; "catholic church" first use; martyrdom↔fana MASSIVE WIN; Testimonium Flavianum; Josephus as sole source for Second Temple world
-- Status: in-progress
+## ~~opus-apostolic-fathers-1 — Apostolic Fathers + Josephus upgrades — started 2026-05-16 — FINISHED 2026-05-16~~
+- ~~Owned: `phase-4-061-didache.md`, `phase-4-062-1-clement.md`, `phase-4-063-ignatius-letters.md`, `phase-4-065-shepherd-of-hermas.md`, `phase-4-069-josephus-jewish-war.md`, `phase-4-070-josephus-antiquities-of-the-jews.md`~~
+- ~~Result: All 6 documents metadata→full · 13923 edges · 2.6% dead-link ratio · 0 new dead links introduced~~
+- ~~Status: done — commits 9786d78, 627744e, 5febe42~~
 
 ---
 
