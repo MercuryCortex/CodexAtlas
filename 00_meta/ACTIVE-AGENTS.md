@@ -1874,9 +1874,9 @@ Files: sacred-cauldron.md (NEW) · cerridwen.md (STUB, deity) · bran-the-blesse
 
 ---
 
-## alphabet-caucasus-1 — Armenian + Georgian missionary alphabets — 2026-05-16 — IN PROGRESS
-- Owns: `11_alphabets/alphabet-armenian.md` (NEW), `11_alphabets/alphabet-georgian.md` (NEW)
-- Stubs to create: `07_traditions/tradition-georgian-orthodox.md` (NEW stub), `05_events/event-armenian-genocide.md` (NEW stub)
-- Patterns: `alphabet-as-identity-weapon` (both scripts); cross-link to `alphabet-glagolitic-cyrillic`, `alphabet-hangul`, `alphabet-cherokee`
-- Do NOT touch: any app code, src/js/, src/styles/, index.html, src/data/patterns.js, src/data/observations.js
-- Status: IN PROGRESS
+## ~~alphabet-caucasus-1 — Armenian + Georgian missionary alphabets — 2026-05-16 — FINISHED~~
+- ~~Owned: `11_alphabets/alphabet-armenian.md` (NEW full), `11_alphabets/alphabet-georgian.md` (NEW full)~~
+- ~~Stubs created: `07_traditions/tradition-georgian-orthodox.md` (NEW stub), `05_events/event-armenian-genocide.md` (NEW stub)~~
+- ~~Build: 39 alphabets · 169 traditions · 190 events · 0 dead links introduced · 0 YAML errors~~
+- ~~Status: FINISHED — commit alphabet-caucasus-1~~
+- ~~MASSIVE WIN edges: (1) Visual independence as political argument — Armenian letters deliberately bear no resemblance to Greek or Syriac; Hangul parallel (both fully original inventions designed to signal cultural non-subordination); (2) The Caucasian alphabet burst 405–430 CE — 3 new scripts (Armenian + Georgian + Caucasian Albanian) for 3 neighboring nations within 25 years; no other region in world history compressed this density of original script invention; (3) Armenian Genocide scripts-as-resistance — Ottoman policy specifically targeted Armenian-language schools and press; the script survived as the primary diaspora ethnic-identity marker; best-documented modern case of script-as-survival-vector; (4) Georgian three-script system — only living language with 3 distinct historical alphabets (Asomtavruli / Nuskhuri / Mkhedruli), all still in active use, in the world; UNESCO Intangible Cultural Heritage; (5) Script survival mechanisms compared: Armenian survived via diaspora community maintenance; Georgian survived via intact church scriptoriums; two neighboring scripts, same age, two completely different survival architectures~~
