@@ -22,7 +22,7 @@ influenced-by: ["Sant tradition predecessors (Namdev, Ravidas)", "Sufi vernacula
 influences: ["[[guru-nanak]] and Sikhism (Adi Granth incorporates ~270 Kabir hymns)", "all subsequent North Indian Sant tradition (Dadu, Rajjab, Sundardas)", "[[ramprasad-sen]] and Bengali Śākta devotional poetry (structural parallel)", "Hindi modernist literary tradition (Hazariprasad Dwivedi's reception)", "global Kabir reception via Tagore's 1915 English translation"]
 deities-mentioned: ["*Rām* / *Hari* / *Allāh* / *Khudā* / *Sain* / *Sahib* — addressed indifferently as alternative names for the same nameless divine"]
 events-context: []
-status: "metadata"
+status: "full"
 preservation: "Three principal manuscript-textual recensions of the Kabir corpus: (1) the *Bijak* (Kabir-Panth recension at Banaras, ~17th c. textualization), (2) the *Kabir-Granthāvalī* (Rajasthani recension via the Dadu-Panth, with earliest manuscripts ~1614), (3) the *Ādi Granth* selections (Sikh recension compiled by Guru Arjan, 1604, the earliest dated Kabir manuscript material). The three recensions overlap substantially but with distinct emphases — the *Bijak* is the most polemical and most strongly *nirguṇa*; the *Granthāvalī* preserves more Krishna-bhakti-inflected material; the Sikh selection emphasizes the unitary-formless God."
 refs:
   - title: "The Bījak of Kabir"
@@ -87,6 +87,51 @@ The principal Kabir-Panth recension of the corpus of poetic-religious sayings at
 - → Bengal Śākta Sant tradition ([[ramprasad-sen]], ~18th c.) — *parallel-motif*: structural-functional analog within the Bengali Śākta devotional tradition (formless Kālī worship, anti-formalist devotional poetry).
 - → 20th-c. global Kabir reception — *direct-influence*: Tagore 1915, *Songs of Kabir*; the Beat poets and the 1960s-70s Western counterculture absorbed Kabir alongside Rumi and the Tao Te Ching; the modern global "spiritual but not religious" idiom has Kabir as one of its principal canonical voices.
 - → Modern Indian anti-caste politics — *direct-influence*: B.R. Ambedkar invoked Kabir as a foundational anti-caste voice; modern Dalit Bahujan political movements have repeatedly reclaimed Kabir.
+
+## MASSIVE WIN: Kabir's Double Rejection — Neither Temple nor Mosque
+
+The theological core of the *Bijak* is Kabir's simultaneous rejection of both Hindu and Muslim institutional religion. This is not syncretism (combining the best of both) but *transcendence*: both traditions' externals are equally insufficient before the formless divine reality. The most famous verse (Hess & Singh 2002):
+
+> *"O Qazi, what book do you read? / What pundits, what Vedas recite? / Neither mosque nor temple... / Neither inside nor outside... / I neither fast nor perform Ramadan... / Kabir says: whoever knows this secret, / He alone is liberated."*
+
+The Sant tradition that Kabir founded (*sant* = "saint," from Sanskrit *sat*, "truth/being") is defined precisely by this transcendence: a realized holy person is neither Hindu nor Muslim but beyond both. Five-tradition comparison of "universal love beyond institutional religion":
+
+| Figure | Tradition | Date | Core claim |
+|---|---|---|---|
+| Kabir | Sant tradition | c. 1440–1518 | Neither temple nor mosque; *Rām* = *Allāh* |
+| Francis of Assisi | Catholic poverty mysticism | 1181–1226 | Strip wealth, institutions, hierarchy; embrace *pauper Christus* |
+| [[ibn-arabi]] | Sufi Islam | 1165–1240 | "My heart has become capable of every form... Love is my religion" |
+| [[rumi]] | Sufi Islam | 1207–1273 | The divine tavern beyond mosque and church; love as the only religion |
+| Zhuangzi | Taoism | c. 369–286 BCE | *Ziran* (natural spontaneity) vs. ritual propriety; Confucian rites as bird-cage |
+
+The date chain is remarkable: Mozi's *jian ai* (universal love, ~430 BCE) → Zhuangzi's *ziran* (~370 BCE) → Francis of Assisi (1181) → Ibn Arabi (1165) → Rumi (1207) → **Kabir (~1450)** → Gandhi's *sarvodaya* (welfare of all, 20th c.). Kabir is the hinge point where this stream enters the South Asian vernacular tradition and becomes accessible to illiterate weavers and farmers, not just scholars and monastics.
+
+**Source:** Hess, L. & Singh, S. (2002). *The Bījak of Kabir*. Oxford UP. Vaudeville, C. (1993). *A Weaver Named Kabir*. Oxford UP.
+
+## MASSIVE WIN: Kabir as Ancestor of Sikhism — The Three-Stream Synthesis
+
+Guru Nanak (1469–1539) was Kabir's near-contemporary. Whether they met historically is contested, but the influence is documented in the most concrete way possible: 541 verses attributed to Kabir appear in the [[phase-6-016-guru-granth-sahib]] — more than any other non-Guru voice. [[guru-nanak]]'s *nirguṇa* theology, his use of both Hindu and Islamic divine names, his caste-defiance, and his Sant-tradition formation are all traceable to the Kabir corpus.
+
+Scholars of Sikhism (McLeod, Mann) identify three primary streams feeding Guru Nanak's synthesis:
+1. **Sant tradition** — Kabir, Namdev, Ravidas: *nirguṇa* devotion, caste-transcendence, devotion as direct interior realization
+2. **Sufi tradition** — Sheikh Farid and the Chishti order in Punjab: the divine Beloved, the critique of mere external observance, the intimacy of *ishq* (divine love)
+3. **Vedantic** — formless-Brahman theology from the Upanishadic tradition
+
+Kabir is the chief representative of the first stream and the figure who most decisively shaped the idiom in which all three streams were synthesized. The Sant tradition he founded is thus the deepest root of the most cross-tradition synthesis in world religion — Sikhism — which canonized a Muslim saint, a Muslim weaver-poet, Hindu Vaishnava poets, and its own Gurus in a single scripture.
+
+**Source:** McLeod, W.H. (1984). *Textual Sources for the Study of Sikhism*. Manchester UP. Hawley, J.S. (2015). *A Storm of Songs*. Harvard UP.
+
+## MASSIVE WIN: Low-Caste Theology as Political Subversion
+
+Kabir was a *julaha* — a Muslim weaver, traditionally among the lowest-status occupational groups in the caste hierarchy, despised by both Hindu caste orthodoxy and by the upper-status ashraf Muslim social hierarchy. His situation placed him beneath contempt from two directions simultaneously.
+
+His poetry did not merely comment on this position — it weaponized it. The *Bijak* recurrently inverts the caste hierarchy: the Brahmin who performs rituals without interior realization is a worse fool than the weaver who knows the formless divine in the act of weaving. The Qazi who reads the Quran without realizing its inner meaning is less realized than the untouchable who has found God in the breath. The formal distinction between pure and impure, high and low, Muslim and Hindu, is the very thing that blocks realization.
+
+This is 500 years before liberation theology — before Gustavo Gutiérrez's systematic theology of the preferential option for the poor, before Ambedkar's Dalit politics. It is the earliest sustained South Asian vernacular theological argument that low-caste and low-status social position is *epistemically advantageous* for direct spiritual realization, not despite but because of its position outside the ritual-purity hierarchies.
+
+The political implications were not lost on later readers. B.R. Ambedkar (1891–1956), the Dalit leader who drafted the Indian Constitution, named Kabir as one of his three primary intellectual and spiritual ancestors (alongside the Buddha and Jyotiba Phule). The Kabir-Panth has been a site of Dalit religious identity for five centuries. Modern Dalit Bahujan political movements invoke the *Bijak* as foundational text.
+
+**Source:** Lorenzen, D.N. (1991). *Kabir Legends*. SUNY. Hess & Singh (2002). *Bījak*. Oxford UP.
 
 ## Disputes
 - **Authorship of specific compositions**: the corpus problem is severe. Hess & Singh and Vaudeville have demonstrated that significant portions of the popular Kabir corpus are post-Kabir accretion; the historical-Kabir corpus is smaller than the popular corpus. The *Bijak*-specific compositions are textually distinct from the *Granthāvalī* and the Adi Granth selections in ways that allow disentangling.
