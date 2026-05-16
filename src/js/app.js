@@ -6102,17 +6102,27 @@ function alchemyLoadPresetToCards(presetId) {
   }));
 }
 
-// VIEWS.alchemy — card pinboard (new 2026-05-15). A free-form research
-// workbench: drop nodes as cards, drag them around, right-click to expand
-// connections / neighbors / shortest-path bridges. Implementation lives
-// in src/js/alchemy/board.js (window._alchemyBoard.mount).
+// VIEWS.alchemy — soul alchemy · physical alchemy · cross-tradition investigation.
+// Three modes: nodes (browse 12_alchemy/ content), findings (MASSIVE WIN edges),
+// board (free-form card pinboard via src/js/alchemy/board.js).
 // ============================================================
+const _alchInvMode = { mode: 'board' };
+
 VIEWS.alchemy = {
   title: 'Alchemy',
-  subtitle: 'free-form card board · drop nodes · drag · right-click to expand connections',
+  subtitle: 'soul · matter · transmutation — cross-tradition investigation',
   render() {
-    document.getElementById('view-controls').innerHTML = '';
+    document.getElementById('view-controls').innerHTML = `
+      <button class="btn btn-mini alch-inv-m${_alchInvMode.mode==='nodes'?' active':''}" data-m="nodes">nodes</button>
+      <button class="btn btn-mini alch-inv-m${_alchInvMode.mode==='findings'?' active':''}" data-m="findings">findings</button>
+      <button class="btn btn-mini alch-inv-m${_alchInvMode.mode==='board'?' active':''}" data-m="board">board ⚗</button>
+    `;
+    document.querySelectorAll('.alch-inv-m').forEach(b => {
+      b.onclick = () => { _alchInvMode.mode = b.dataset.m; setView('alchemy'); };
+    });
     legend.style('display', 'none').html('');
+    if (_alchInvMode.mode === 'nodes') return renderAlchNodes();
+    if (_alchInvMode.mode === 'findings') return renderAlchFindings();
     document.querySelectorAll('.alch-presets-dropdown').forEach(el => el.remove());
     // Tear down any previous mount + create a fresh host div appended to #canvas
     document.querySelectorAll('.alch-board-root').forEach(el => el.remove());
@@ -6212,6 +6222,76 @@ VIEWS.alchemy = {
     });
   }
 };
+
+// ── Alchemy investigation helpers ─────────────────────────────────────────────
+function renderAlchNodes() {
+  const pane = document.createElement('div');
+  pane.className = 'alpha-pane alpha-pane-live';
+  const nodes = DATA.nodes.filter(n => n.type === 'alchemy');
+  const byType = {};
+  nodes.forEach(n => {
+    const t = n['alchemy-type'] || 'other';
+    if (!byType[t]) byType[t] = [];
+    byType[t].push(n);
+  });
+  const typeOrder = ['practitioner','text','process','substance','concept','tradition','other'];
+  const ordered = typeOrder.filter(t => byType[t]).concat(Object.keys(byType).filter(t => !typeOrder.includes(t)));
+  const typeColors = {
+    practitioner:'#d4a55a', text:'#5aaca8', process:'#6e8c6b',
+    substance:'#c47453', concept:'#5a6cc4', tradition:'#6b3a8a', other:'#7a8090',
+  };
+  let html = `<div class="alpha-scripts-header"><h2>Alchemy Nodes</h2><span class="alpha-count">${nodes.length} nodes in vault</span></div>`;
+  if (!nodes.length) {
+    html += '<div class="alpha-stub" style="padding:48px;color:var(--text-3)">No alchemy nodes yet — content agent is populating 12_alchemy/ now.</div>';
+  } else {
+    ordered.forEach(t => {
+      html += `<div style="color:${typeColors[t]||'#d4a55a'};padding:12px 24px 4px;font-size:11px;text-transform:uppercase;letter-spacing:.08em">${t}</div><div class="alpha-scripts-grid">`;
+      byType[t].forEach(n => {
+        html += `<div class="alpha-script-card" data-id="${n.id}" style="border-left:3px solid ${typeColors[t]||'#d4a55a'}">
+          <div class="asc-type">${n.tier ? 'Tier '+n.tier : ''}</div>
+          <div class="asc-title">${n.title||n.id}</div>
+          <div class="asc-tradition">${n.tradition||''}</div>
+        </div>`;
+      });
+      html += '</div>';
+    });
+  }
+  pane.innerHTML = html;
+  pane.querySelectorAll('.alpha-script-card[data-id]').forEach(card => {
+    card.onclick = () => { const nd = DATA.nodes.find(x => x.id === card.dataset.id); if (nd) showDetail(nd); };
+  });
+  document.getElementById('canvas').appendChild(pane);
+}
+
+function renderAlchFindings() {
+  const pane = document.createElement('div');
+  pane.className = 'alpha-pane alpha-pane-live';
+  const findings = [
+    { label:'TRANSMISSION', color:'#d4a55a', title:'Alexandrian → Islamic → European chain',
+      body:'Jabir ibn Hayyan (Baghdad c.750 CE) transmits Alexandrian Greek alchemy into Arabic. Toledo translators (1144 CE) carry it into Latin. Paracelsus (1493–1541) synthesizes it with Christian mysticism. The word "alchemy" is Arabic (al-kīmiyāʾ). Without this documented chain, there is no European alchemy.' },
+    { label:'CONVERGENCE', color:'#5aaca8', title:'Soul alchemy — three independent arrivals',
+      body:'Zosimos of Panopolis (c.300 CE Alexandria): transmutation = liberation of the pneuma from matter. Chinese Neidan (inner alchemy, Tang onward): the body as crucible, jing/qi/shen as the Three Treasures to refine. Jungian analysis (20th c.): alchemy as projection of individuation. Three traditions, same conclusion: the Great Work is psychological, not chemical.' },
+    { label:'CONVERGENCE', color:'#5aaca8', title:'Prima Materia — six pre-creation equivalents',
+      body:'Prima Materia (undifferentiated first matter) = Gnostic pre-cosmos darkness = Daoist Wu (non-being) = Hindu Prakriti = Mesopotamian Tiamat = Genesis tehom. The alchemist\'s starting material is every tradition\'s pre-creation substrate. The laboratory re-enacts cosmogony.' },
+    { label:'CONVERGENCE', color:'#5aaca8', title:'Opus Magnum — the universal transformational project',
+      body:'Islamic fanaa · Hindu moksha · Buddhist nirvana · Christian theosis · Gnostic apolytrosis · Daoist xian. All are names for the same architecture: multi-stage transformation culminating in transcendence of ordinary human existence. The Opus Magnum is the alchemical vocabulary for a universal soteriological claim.' },
+    { label:'MASSIVE WIN', color:'#c44a5a', title:'Paracelsus Tria Prima = Christian Trinity',
+      body:'Paracelsus maps Sulfur (Soul) / Mercury (Spirit) / Salt (Body) onto Father/Son/Holy Spirit explicitly. The same triple-principle also appears in Hindu Gunas (Sattva/Rajas/Tamas), Chinese Three Treasures (Jing/Qi/Shen), and Zoroastrian cosmology. Five traditions, one three-fold cosmic structure.' },
+    { label:'MASSIVE WIN', color:'#c44a5a', title:'Emerald Tablet — macrocosm-microcosm in 14 words',
+      body:'"As above, so below." (Arabic, c.600–750 CE, Hermes Trismegistus). The Neoplatonic macrocosm-microcosm principle encoded as a practical recipe. Isaac Newton copied it by hand. Every European alchemist from Albertus Magnus forward read it as their foundational text.' },
+  ];
+  let html = `<div class="alpha-scripts-header"><h2>Alchemy Findings</h2><span class="alpha-count">cross-tradition transmutation chains</span></div><div style="padding:0 24px 24px">`;
+  findings.forEach(f => {
+    html += `<div style="border-left:3px solid ${f.color};margin:12px 0;padding:14px 16px;background:rgba(0,0,0,.18);border-radius:4px">
+      <div style="font-size:10px;letter-spacing:.1em;color:${f.color};text-transform:uppercase;margin-bottom:6px">${f.label}</div>
+      <div style="font-weight:600;margin-bottom:8px;color:var(--text-1)">${f.title}</div>
+      <div style="font-size:13px;color:var(--text-2);line-height:1.5">${f.body}</div>
+    </div>`;
+  });
+  html += '</div>';
+  pane.innerHTML = html;
+  document.getElementById('canvas').appendChild(pane);
+}
 
 // VIEWS.transmission — the former Alchemy view (renamed 2026-05-15). Internal
 // state still uses `STATE.alchemyPicks` etc. for backwards compatibility with
@@ -8565,8 +8645,8 @@ VIEWS.observations = {
 };
 
 VIEWS.chains = {
-  title: 'Chains',
-  subtitle: 'curated transmission chains · how ideas traveled across time and civilizations',
+  title: 'Lineages',
+  subtitle: 'documented transmission lineages · how ideas traveled across time and civilizations',
   render() {
     const pane = document.createElement('div');
     pane.className = 'list-pane chains-pane';
@@ -8582,7 +8662,7 @@ VIEWS.chains = {
 
     const header = document.createElement('div');
     header.className = 'list-pane-header';
-    header.innerHTML = `<span class="lph-title">Transmission Chains</span><span class="lph-rule"></span><span class="lph-count">${chains.length} chains</span>`;
+    header.innerHTML = `<span class="lph-title">Transmission Lineages</span><span class="lph-rule"></span><span class="lph-count">${chains.length} chains</span>`;
     pane.appendChild(header);
 
     chains.forEach(chain => {

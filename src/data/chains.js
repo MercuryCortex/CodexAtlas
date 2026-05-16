@@ -538,7 +538,7 @@ window.CHAINS_DATA = [
       {
         date: 'c. -1200 to -800 BCE',
         label: 'Vedic Mantra — The Phoneme as Cosmic Address',
-        node: 'music-raga-time-cosmology',
+        node: 'music-aum-cosmic-sound',
         note: 'The Vedic mantra tradition: specific Sanskrit phonemes are eternal cosmic substances (aksharas). The mantra OM is not a word meaning "everything" — it is the sound that IS everything, audible only when all other sound stops. Mantra efficacy is independent of understanding the meaning: you cannot translate a mantra and preserve its function because meaning is irrelevant to the operative mechanism. The phoneme, not the semantic content, does the work.'
       },
       {
