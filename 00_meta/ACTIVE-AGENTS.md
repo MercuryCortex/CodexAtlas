@@ -102,9 +102,16 @@ _Hand-maintained. Each agent currently working in the vault appends a claim bloc
 
 ---
 
-## goblin-sacred-number-1 — symbols / sacred numbers + ritual gesture + corn deity thread — started 2026-05-16 — IN PROGRESS
-- Owning: `09_symbols/sacred-number-three.md` (NEW), `09_symbols/sacred-number-seven.md` (NEW), `09_symbols/mudra.md` (NEW), `09_symbols/corn-mother.md` (NEW)
-- Goal: Sacred-Three trinity structures cross-tradition MASSIVE WIN; Sacred-Seven Babylonian planetary week to world religions; mudra abhaya cross-tradition (Buddha/Christ/Shiva); corn-mother grain-deity resurrection pattern (Osiris/Demeter/Christ Eucharist)
+## ~~goblin-sacred-number-1 — symbols / sacred numbers + ritual gesture + corn deity thread — started 2026-05-16 — FINISHED 2026-05-16~~
+- ~~Owning: `09_symbols/sacred-number-three.md` (NEW), `09_symbols/sacred-number-seven.md` (NEW), `09_symbols/mudra.md` (NEW), `09_symbols/corn-mother.md` (NEW)~~
+- ~~Goal: Sacred-Three trinity structures cross-tradition MASSIVE WIN; Sacred-Seven Babylonian planetary week to world religions; mudra abhaya cross-tradition (Buddha/Christ/Shiva); corn-mother grain-deity resurrection pattern (Osiris/Demeter/Christ Eucharist)~~
+- ~~Status: finished — 4 new symbol nodes · 154 symbols total · 14336 edges · 0 YAML errors · 0 new dead links · see STATUS.md~~
+
+---
+
+## goblin-entheogen-1 — symbols / sacred entheogen plants thread — started 2026-05-16 — IN PROGRESS
+- Owning: `09_symbols/peyote.md` (NEW), `09_symbols/eleusinian-kykeon.md` (NEW), `09_symbols/ayahuasca.md` (NEW), `09_symbols/amanita-muscaria.md` (NEW)
+- Goal: Cross-continental entheogen-as-divine-teacher category MASSIVE WIN; peyote (Americas, 5700-year archaeological record); kykeon (Eleusinian Mysteries, 2000-year lifespan + Wasson-Hofmann-Ruck hypothesis); ayahuasca (Amazonia, biochemical-precision mystery + Santo Daime syncretic church); Amanita muscaria (Vedic Soma hypothesis + Siberian shamanism + Santa Claus Tier-3)
 - Status: in-progress
 
 ---
