@@ -53,6 +53,13 @@ _Hand-maintained. Each agent currently working in the vault appends a claim bloc
 
 ---
 
+## sonnet-egyptian-core-1 — deities+documents / Atum full + Coffin Texts MASSIVE WIN + Hymn to Aten table + Hathor body — started 2026-05-16 — **IN PROGRESS**
+- Owned: `03_deities/atum.md` (stub→full), `02_documents/_phase-1-ancient-near-east/phase-1-009-coffin-texts.md` (metadata→add MASSIVE WIN), `02_documents/_phase-1-ancient-near-east/phase-1-011-great-hymn-to-aten.md` (metadata→add Psalm 104 table), `03_deities/hathor.md` (metadata→upgrade body)
+- Goal: Atum self-creation archetype × 5 traditions + Christian Last Man eschatology; Coffin Texts democratization + Ba/Ka soul-anatomy; Aten Hymn Psalm 104 parallel table; Hathor → Aphrodite transmission chain
+- Status: in-progress
+
+---
+
 ## sonnet-egyptian-docs-1 — documents / Book of the Dead + Amduat + Pyramid Texts full upgrades — started 2026-05-16 — **IN PROGRESS**
 - Owned: `02_documents/_phase-1-ancient-near-east/phase-1-010-book-of-the-dead.md`, `02_documents/_phase-1-ancient-near-east/phase-1-036-amduat.md`, `02_documents/_phase-1-ancient-near-east/phase-1-002-pyramid-texts.md`
 - Goal: Upgrade three foundational Egyptian document nodes from metadata to full; wire MASSIVE WIN cross-tradition edges

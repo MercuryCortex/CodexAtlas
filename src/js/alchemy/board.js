@@ -583,14 +583,17 @@
     nodeIds.forEach(id => { if (id && !seen.has(id)) { seen.add(id); picks.push(id); } });
     window.STATE.alchemyPicks = picks;
     window.STATE.alchemyActivePreset = null;
-    // FIX (next-session-queue bug #1): the user curated this set on the Alchemy
-    // board — don't auto-inflate it with shortest-path bridges. The previous
-    // behaviour ran O(N²) BFS expansions and dumped 50-200+ cold-positioned
-    // bridge nodes into the force-sim, which then violently rearranged. Skip
-    // bridge expansion in Transmission and pre-layout via ELK so the graph
-    // lands stable.
+    // FIX (bug #1 — Alchemy→Transmission explosion):
+    // 1. Skip bridge expansion: the user curated this set — don't inflate it
+    //    with O(N²) BFS intermediates that flood the force-sim with cold nodes.
+    // 2. Clear the ELK position cache so stale positions from a previous
+    //    Transmission session don't corrupt the new layout. Without this, ELK
+    //    positions computed for a different node set are reused for the new
+    //    picks and the sim explodes trying to reconcile them.
+    // 3. Use elk-layered so nodes land in a stable DAG rather than a force blob.
     window.STATE.alchemySkipBridges = true;
     window.STATE.alchemyLayout = 'elk-layered';
+    if (window.STATE.alchemyElkPositions) window.STATE.alchemyElkPositions = new Map();
     try { localStorage.setItem('alch-layout', 'elk-layered'); } catch (e) { /* ignore */ }
     if (typeof window.setView === 'function') window.setView('transmission');
     else {
@@ -1017,5 +1020,5 @@
   const _origAdd = addCard, _origRemove = removeCard, _origClear = clearBoard;
   // (counters update inline via save() callbacks; keep this slot for future hooks)
 
-  window._alchemyBoard = { mount, addCard, clearBoard, save, load };
+  window._alchemyBoard = { mount, addCard, clearBoard, save, load, zoomToFit };
 })();
