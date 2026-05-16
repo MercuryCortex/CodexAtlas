@@ -15,10 +15,8 @@ variants:
     description: "The **Bighorn Medicine Wheel** in the Bighorn Mountains of Wyoming is the best-studied medicine wheel. It has 28 spokes radiating from a central cairn, six outer cairns at irregular positions, and a diameter of approximately 25 meters. Astronomer John Eddy (1974) demonstrated that the spokes and outer cairns align with the heliacal risings of **Aldebaran** (Taurus — spring marker), **Rigel** (Orion — summer marker), and **Fomalhaut** (Piscis Austrinus — autumn marker) at the latitude and elevation of the wheel. The wheel functions as a horizon calendar for the agricultural and ceremonial year."
   - id: "symbolic-medicine-wheel-teachings"
     description: "The symbolic medicine wheel — as a cosmological teaching diagram, a meditation object, and a map of human experience — is the form most widely known outside indigenous communities. The four directions (North/South/East/West) are assigned specific colors (Black/White/Yellow/Red in Lakota teaching; assignments vary by nation), seasons (Winter/Summer/Spring/Fall), animal spirits, human stages of life (Elder/Adult/Child/Infant), and cosmic principles. **Black Elk's teachings** in *Black Elk Speaks* (Neihardt 1932) are the most influential formulation in English."
-appearances:
-  - "[[phase-8-013-navajo-blessingway]]"
+appearances: []
 deity-instances:
-  - "[[wi-sun-lakota]]"
   - "[[spider-grandmother-hopi]]"
 tradition-context:
   - "[[tradition-lakota]]"
@@ -151,7 +149,7 @@ The quartering of the circle by the four cardinal directions is one of the most 
 - **Christian cathedral orientation** (nave faces East, toward the rising sun and Jerusalem; four Evangelists at the four corners of the cosmic vision — Matthew/Mark/Luke/John = Tetramorph)
 - **Aztec cosmogram** (five world-directions: four cardinal points plus Center = the five *solar ages*)
 - **Egyptian temple orientation** (aligned to cardinal directions, with each direction carrying specific divine associations)
-- **Mesoamerican sacred geography** (Mayan four *Bacabs* at four world-corners; four-color four-direction system in the Dresden Codex [[phase-8-003-dresden-codex-maya]])
+- **Mesoamerican sacred geography** (Mayan four *Bacabs* at four world-corners; four-color four-direction system in the Dresden Codex (Mayan))
 
 The four-direction circle is likely **independently generated in every culture that observes the sun's movement** — East and West are given by sunrise and sunset; North and South by the midday sun's position in the northern hemisphere. The four-direction circle is the natural human response to astronomical observation.
 
