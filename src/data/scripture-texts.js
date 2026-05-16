@@ -5843,3 +5843,474 @@ SCRIPTURE_TEXTS['surah-ya-sin'] = {
     },
   ]
 };
+
+SCRIPTURE_TEXTS['book-of-enoch'] = {
+  title: 'Book of Enoch (1 Enoch)',
+  shortTitle: '1 Enoch',
+  tradition: 'Second Temple Judaism',
+  date: 'c. 300–200 BCE',
+  intro: 'The First Book of Enoch is a Jewish apocalyptic text preserved in full only in Ge\'ez (Ethiopic), because the Ethiopian Orthodox Church considers it canonical scripture. Attributed to the patriarch Enoch (Genesis 5:24 — "Enoch walked with God; then he was no more, because God took him"), it contains the oldest detailed divine throne vision in religious literature, the Watchers narrative that became the template for Gnostic archon mythology, and the "Son of Man" celestial figure that Jesus appears to have consciously adopted. The Watchers section (chapters 6–16) answers a question Genesis leaves open: where did evil originate? The answer — rebellious divine beings who descended, mated with human women, and taught forbidden arts — became one of the most generative mythological templates in religious history, surfacing in Gnostic cosmology, Islamic jinn theology, and occult traditions. The throne vision (chapter 14) is the oldest known Merkabah (divine chariot) mysticism, predating Ezekiel commentaries by centuries. The "Son of Man" figure (chapters 46–48) is pre-existent before creation and enthroned to judge the world — the immediate background for the New Testament Gospels\' use of the same title, making 1 Enoch arguably the most important Jewish text for understanding early Christianity that most Christians have never read.',
+  crossTradition: [
+    { label: 'Ezekiel 1 — the Merkabah chariot-throne', textId: 'ezekiel-1', note: '1 Enoch 14\'s throne vision is the direct template for Merkabah mysticism: concentric palaces of crystal and fire, the enthroned Glory whose face cannot be seen. Together with Ezekiel 1, they established the Merkabah tradition that runs through Hekhalot literature to the Zohar and Kabbalah.' },
+    { label: 'Apocryphon of John — the Watchers as archon template', textId: 'apocryphon-of-john', note: 'The Watchers — divine beings who descended from their proper realm, corrupted matter, and produced hybrid offspring — are the mythological template for Gnostic archons. Yaldabaoth is the chief Watcher recast in Platonic cosmology: a powerful but deficient divine being whose unauthorized act produces a corrupted material order.' },
+    { label: 'Revelation 4 — crystal sea and flaming throne', textId: 'revelation-12', note: 'Revelation\'s crystal sea before the divine throne (4:6), the four living creatures, and the flaming lamps are direct Enochic imagery transmitted through the Merkabah tradition. The sequence 1 Enoch → Ezekiel → Revelation shows a 600-year development of throne-room iconography.' },
+    { label: 'Plato\'s Cave — forbidden knowledge as dangerous divine gift', textId: 'plato-cave', note: 'Azazel\'s teaching of metallurgy and war-craft to humans is the Jewish Prometheus myth: divine knowledge whose transmission causes cosmic disruption. Both traditions encode the same ambivalence — civilization\'s gifts (beauty, violence, technology) were divine gifts that also corrupted.' },
+  ],
+  translations: [
+    { id: 'nickelsburg', label: 'Nickelsburg & VanderKam 2012 (T1)' },
+    { id: 'charles', label: 'R.H. Charles 1917' },
+    { id: 'ethiopic', label: 'Ge\'ez (Ethiopic original)' },
+  ],
+  sections: [
+    {
+      heading: 'Prologue: Enoch the Seer (1:1–3)',
+      verses: [
+        {
+          ref: '1:1–3',
+          text: 'The words of the blessing of Enoch, with which he blessed the elect and righteous, who will be living in the day of tribulation, when all the wicked and godless are to be removed. And he took up his parable and said — Enoch a righteous man, whose eyes were opened by God, saw the vision of the Holy One in the heavens, which the angels showed me, and from them I heard everything, and from them I understood as I saw.',
+          textVersions: {
+            nickelsburg: 'The words of the blessing of Enoch, with which he blessed the elect and righteous, who will be living in the day of tribulation, when all the wicked and godless are to be removed.',
+            charles: 'The words of the blessing of Enoch, wherewith he blessed the elect and righteous, who will be living in the day of tribulation, when all the wicked and godless are to be removed.',
+            ethiopic: 'ቃለ፡ ቡራኬ፡ ሄኖክ፡ ዘባረኸ፡ ኀበ፡ ኅሩያን፡ ወጻድቃን።',
+          },
+          entities: [
+            { word: 'eyes were opened by God', node: 'tradition-jewish-mysticism', type: 'concept',
+              note: 'The "opened eyes" of Enoch uses the same phrase as Genesis 3:7 (Adam and Eve after eating the forbidden fruit). The parallel is deliberate: Eden\'s opening was unauthorized and catastrophic; Enoch\'s is divinely authorized and salvific. This sets up the entire Watchers narrative: the sin is not knowledge itself but knowledge transmitted without divine sanction — which is exactly what the Watchers then do.',
+              parallels: [
+                { label: 'Genesis 1 — the creation before the Fall', textId: 'genesis-1', note: 'Genesis 5:24 simply says "Enoch walked with God; then he was no more, because God took him." 1 Enoch expands this cryptic departure into a full cosmological tour: Enoch does not die but is taken into the heavenly realm and shown its structure. The Enoch literature is thus a midrash on silence — an expansion of what Genesis left unspoken.' },
+              ]
+            },
+          ]
+        },
+      ]
+    },
+    {
+      heading: 'The Watchers Descend (6:1 — 8:4)',
+      verses: [
+        {
+          ref: '6:1–6',
+          text: 'And it came to pass when the children of men had multiplied that in those days were born unto them beautiful and comely daughters. And the angels, the children of the heaven, saw and lusted after them, and said to one another: "Come, let us choose us wives from among the children of men." And Semjâzâ, who was their leader, said: "I fear ye will not indeed agree to do this deed, and I alone shall have to pay the penalty of a great sin." And they all answered: "Let us all swear an oath not to abandon this plan but to do this thing." Then sware they all together and bound themselves by mutual imprecations upon it.',
+          textVersions: {
+            nickelsburg: 'And it came to pass when the children of men had multiplied that in those days were born unto them beautiful and comely daughters. And the angels, the children of the heaven, saw and lusted after them.',
+            charles: 'And it came to pass when the children of men had multiplied that in those days were born unto them beautiful and comely daughters. And the angels, the children of the heaven, saw and lusted after them.',
+            ethiopic: 'ወኮነ፡ ሶበ፡ ተፈጸሙ፡ ደቂቀ፡ ሰብእ። ወወለዱ፡ ሎሙ።',
+          },
+          entities: [
+            { word: 'angels, the children of the heaven', node: 'tradition-jewish-mysticism', type: 'deity',
+              note: 'The "sons of God" (bene ha-elohim) identified here as Watchers (Aramaic: irin). Their descent is a metaphysical violation: divine beings crossing the boundary between their realm and matter. This is the mythological template for Gnostic cosmogony — the Sophia narrative in the Apocryphon of John is structurally identical: a divine being transgresses its proper domain, produces hybrid offspring, and a corrupted material order results requiring higher correction.',
+              parallels: [
+                { label: 'Apocryphon of John — Sophia\'s unauthorized descent producing Yaldabaoth', textId: 'apocryphon-of-john', note: 'Sophia\'s unauthorized act produces Yaldabaoth, a deficient divine being who creates the material world. This structurally parallels the Watchers\' descent: divine being transgresses domain, produces deficient offspring (nephilim / archons), material realm becomes contaminated. The Gnostic theologians almost certainly knew 1 Enoch and consciously reformulated its mythology in Platonic terms.' },
+              ]
+            },
+          ]
+        },
+        {
+          ref: '8:1–3',
+          text: 'And Azâzêl taught men to make swords and knives and shields and breastplates, and made known to them the metals of the earth and the art of working them, and bracelets, and ornaments, and the use of antimony, and the beautifying of the eyelids, and all kinds of costly stones, and all colouring tinctures. And there arose much godlessness, and they committed fornication, and they were led astray, and became corrupt in all their ways.',
+          textVersions: {
+            nickelsburg: 'And Azazel taught men to make swords, and knives, and shields, and breastplates, and made known to them the metals of the earth and the art of working them.',
+            charles: 'And Azâzêl taught men to make swords, and knives, and shields, and breastplates, and made known to them the metals of the earth and the art of working them.',
+            ethiopic: 'ወተምህሮ፡ ዓዛዜል፡ ሰብአ፡ ሠርቆ፡ ሰዓሩ።',
+          },
+          entities: [
+            { word: 'Azâzêl taught men', node: 'tradition-jewish-mysticism', type: 'deity',
+              note: 'Azazel — whose name appears in Leviticus 16 as the scapegoat recipient on Yom Kippur — is here the Watcher who transmitted the dual arts of war and beauty: metallurgy for weapons, cosmetics for seduction. The irony: civilization\'s most visible achievements were divine gifts that corrupted. Azazel is later identified with Iblis (Satan) in Islamic tradition before the Fall, and appears as a major figure in the grimoire tradition.',
+              parallels: [
+                { label: 'Prometheus — fire as forbidden divine technology', textId: 'plato-cave', note: 'Prometheus stealing fire from Olympus and Azazel teaching metallurgy to humans are structurally identical myths: a divine being violates the boundary between realms by transmitting a technology that permanently changes civilization. Both receive imprisonment as punishment. The parallel suggests a cross-cultural archetype: the dangerous gift requires the imprisonment of the giver.' },
+              ]
+            },
+          ]
+        },
+      ]
+    },
+    {
+      heading: 'The Divine Throne (14:8–23)',
+      verses: [
+        {
+          ref: '14:8–16',
+          text: 'Behold, in the vision clouds invited me and a mist summoned me, and the course of the stars and the lightnings sped and hastened me, and the winds in the vision caused me to fly and lifted me upward, and bore me into heaven. And I went in till I drew nigh to a wall which is built of crystals and surrounded by tongues of fire: and it began to affright me. And I went into the tongues of fire and drew nigh to a large house which was built of crystals: and the walls of the house were like a tessellated floor of crystals, and its groundwork was of crystal.',
+          textVersions: {
+            nickelsburg: 'Behold, in the vision clouds invited me and a mist summoned me, and the course of the stars and the lightnings sped and hastened me, and the winds in the vision caused me to fly and lifted me upward, and bore me into heaven.',
+            charles: 'Behold, in the vision clouds invited me and a mist summoned me, and the course of the stars and the lightnings sped and hastened me.',
+            ethiopic: 'ወተሐልዎ፡ ሊተ፡ ዝንቱ፡ ርእየቶሙ። ናሁ፡ ደመናት፡ ጸውዑኒ።',
+          },
+          entities: [
+            { word: 'wall which is built of crystals surrounded by tongues of fire', node: 'merkabah-mysticism', type: 'symbol',
+              note: 'The crystal-fire boundary is the signature image of Merkabah mysticism: approach to the divine throne always passes through a crystal-fire interface. In Ezekiel 1:22 it is "the likeness of an expanse, shining like awesome crystal." In Revelation 4:6, "before the throne there is something like a sea of glass, like crystal." In Hekhalot literature, later Merkabah mystics must pass through seven celestial palaces guarded by angelic gatekeepers. 1 Enoch 14 is the earliest detailed account — the template all later throne mysticism followed.',
+              parallels: [
+                { label: 'Ezekiel 1 — the crystal expanse above the four living creatures', textId: 'ezekiel-1', note: 'Ezekiel 1:22: "Over the heads of the living creatures there was something like a dome, shining like crystal, spread out above their heads." 1 Enoch\'s crystal wall uses the same imagery. Whether drawing on shared tradition or direct influence, both visions establish the same convention: approach to the divine presence passes through crystal-and-fire — holiness as simultaneously cold and burning.' },
+              ]
+            },
+          ]
+        },
+        {
+          ref: '14:17–23',
+          text: 'And I observed and saw inside it a throne: its appearance was as crystal, and the wheels thereof as the shining sun, and there was the vision of cherubim. And from underneath the throne came streams of flaming fire so that I could not look thereon. And the Great Glory sat thereon, and His raiment shone more brightly than the sun and was whiter than any snow. None of the angels could enter and could behold His face by reason of the magnificence and glory and no flesh could behold Him.',
+          textVersions: {
+            nickelsburg: 'And I observed and saw inside it a throne: its appearance was as crystal, and the wheels thereof as the shining sun, and there was the vision of cherubim. And from underneath the throne came streams of flaming fire.',
+            charles: 'And I observed and saw inside it a throne: its appearance was as crystal, and the wheels thereof as the shining sun, and there was the vision of cherubim.',
+            ethiopic: 'ወሐነጽኩ፡ ወርኢኩ፡ ህየ፡ ዐጸደ፡ ንጉሥ፡ ዘርኢየቱ፡ ከበረ።',
+          },
+          entities: [
+            { word: 'no flesh could behold Him', node: 'tradition-jewish-mysticism', type: 'concept',
+              note: 'The prohibition on seeing the divine face is consistent across all mystical traditions: Moses sees only God\'s back (Exodus 33:20), Isaiah says "I am ruined" when he sees the heavenly court (Isaiah 6:5), Enoch cannot look at the Glory. This is not a limitation of the vision but a theological statement: the divine ground is not an object that can be seen by a subject. Plotinus makes the same point: the One exceeds even the intellect\'s capacity for vision. Pseudo-Dionysius calls it "the brilliant darkness of hidden silence."',
+              parallels: [
+                { label: 'Isaiah 6 — "I am ruined! For I am a man of unclean lips"', textId: 'isaiah-6', note: 'Isaiah\'s throne room vision parallels Enoch\'s: both involve the divine throne room, overwhelming fire and light, and a crisis in the seer. Isaiah is given a mission (purified lips = prophetic commission); Enoch is given cosmic information. Both establish the protocol: entry into the divine presence is survivable but only through transformation of the seer.' },
+                { label: 'Plotinus Enneads VI.9 — the One beyond even intellectual vision', textId: 'plotinus-enneads', note: 'Plotinus: "The One does not even know itself, because knowledge involves a distinction between knower and known, and the One is beyond all distinction." Enoch\'s "no flesh could behold Him" and Plotinus\'s One beyond vision are both formulations of the same apophatic principle: ultimate reality exceeds the subject-object structure that makes seeing possible.' },
+              ]
+            },
+          ]
+        },
+      ]
+    },
+    {
+      heading: 'The Son of Man (46:1–3)',
+      verses: [
+        {
+          ref: '46:1–3',
+          text: 'And there I saw One who had a head of days, and His head was white like wool, and with Him was another being whose countenance had the appearance of a man, and his face was full of graciousness, like one of the holy angels. And I asked the angel who went with me: "Who is this Son of Man, and whence is he, and why does he go with the Head of Days?" And he answered: "This is the Son of Man who has righteousness, with whom dwells righteousness, and who reveals all the treasures of that which is hidden."',
+          textVersions: {
+            nickelsburg: 'And there I saw One who had a head of days, and His head was white like wool, and with Him was another being whose countenance had the appearance of a man, and his face was full of graciousness.',
+            charles: 'And there I saw One who had a head of days, and His head was white like wool, and with Him was another being whose countenance had the appearance of a man.',
+            ethiopic: 'ወሀሎ፡ ህየ፡ ወካሄ፡ ዘለቦ፡ ርእሰ፡ ዕቀ፡ ወርኢኩ፡ ሮፄ።',
+          },
+          entities: [
+            { word: 'Son of Man', node: 'tradition-jewish-mysticism', type: 'person',
+              note: 'The "Son of Man" (Aramaic: bar enasha) in 1 Enoch 46–48 is a pre-existent celestial figure, hidden before creation, revealed at the end of time to judge the wicked. This is the immediate background for the Gospels\' "Son of Man" sayings: when Jesus says "they will see the Son of Man coming on clouds with great power and glory" (Mark 13:26), he is using a title with a specific referent — the Enochic Son of Man — that his audience, steeped in this tradition, would have recognized. 1 Enoch is the reason the title is mysterious in the Gospels: it is not humble self-reference but a royal-eschatological claim.',
+              parallels: [
+                { label: 'Corpus Hermeticum — the Father and the mediating Mind (Nous)', textId: 'poimandres', note: 'The Hermetic Father-Nous dyad and the Enochic Head of Days–Son of Man dyad are structurally identical: a supreme unknowable absolute (Head of Days / Father) paired with a mediating divine figure (Son of Man / Nous) who interfaces between the absolute and creation. This structure appears independently in: Enoch (Head of Days + Son of Man), Hermeticism (Father + Nous), Christianity (Father + Logos/Son), Neoplatonism (One + Intellect), Vedanta (Brahman + Ishvara). The persistence of this dyad across traditions suggests a structural constraint: the unknowable absolute requires a mediating principle.' },
+              ]
+            },
+          ]
+        },
+      ]
+    },
+  ]
+};
+
+SCRIPTURE_TEXTS['pseudo-dionysius-mystical-theology'] = {
+  title: 'The Mystical Theology (Pseudo-Dionysius)',
+  shortTitle: 'Mystical Theology',
+  tradition: 'Christian Neoplatonism',
+  date: 'c. 500 CE',
+  intro: 'The Mystical Theology is a short treatise (five brief chapters) attributed to Dionysius the Areopagite — the Athenian converted by Paul in Acts 17:34 — but actually written around 500 CE by an anonymous Syrian Christian deeply immersed in Neoplatonism, almost certainly a student of Proclus (d. 485 CE). The pseudonymous attribution gave the text apostolic authority, and its influence was immense: Maximus the Confessor, John Scotus Eriugena, Thomas Aquinas, Bonaventure, and Meister Eckhart all treated it as foundational. What the text performs is the most systematic Christian formulation of apophatic (negative) theology: the claim that God can only be approached by stripping away every positive attribute, every concept, every name — not because God is nothing but because God exceeds everything. The culminating image is Moses ascending into the cloud on Sinai: not darkness from absence of light but darkness from excess of light — "the superlucent darkness of silence." This text is the structural bridge between Plotinus\' One (beyond being and thought) and the entire Christian mystical tradition that follows, from Eckhart\'s "desert of the Godhead" to the Spanish mystics. In its method, it is the closest Western parallel to the Mandukya Upanishad\'s description of turiya through pure negation.',
+  crossTradition: [
+    { label: 'Plotinus Enneads VI.9 — the One beyond being and thought', textId: 'plotinus-enneads', note: 'Pseudo-Dionysius is Plotinus translated into Christian theology. Both describe the absolute as beyond being and beyond thought. The key difference: Plotinus\' One is impersonal; Pseudo-Dionysius\' God is the Trinity approached through Christ. But the apophatic method and "beyond all categories" endpoint are identical.' },
+    { label: 'Mandukya Upanishad — turiya described through negations', textId: 'mandukya-upanishad', note: 'Both texts describe their ultimate category through pure negation: Mandukya turiya "is not conscious of internal, not external, not both, not a mass, not conscious, not unconscious" — Pseudo-Dionysius\' God "is not soul nor intellect... not number, nor order, not being, not truth, not kingship." The structural parallel is exact: the absolute is defined by the systematic failure of all predicates.' },
+    { label: 'Meister Eckhart — the desert of the Godhead', textId: 'meister-eckhart-godhead', note: 'Eckhart read Pseudo-Dionysius and built his mystical theology on the Dionysian distinction: "God" (the personal Trinity) vs "Godhead" (the ground beyond all personal attributes). The "desert of the Godhead" is Eckhart\'s German rendering of what Pseudo-Dionysius calls "the divine darkness of unknowing."' },
+    { label: 'Brihadaranyaka — neti neti: not this, not this', textId: 'brihadaranyaka-neti-neti', note: 'Yajnavalkya\'s "neti neti" and Pseudo-Dionysius\'s Chapter V are the East-West poles of apophatic method, separated by 1,200 years and independent of each other, doing structurally identical philosophical work.' },
+  ],
+  translations: [
+    { id: 'luibheid', label: 'Luibheid 1987 (Paulist Press, T1)' },
+    { id: 'rolt', label: 'C.E. Rolt 1920' },
+    { id: 'greek', label: 'Greek (Patrologia Graeca 3)' },
+  ],
+  sections: [
+    {
+      heading: 'Chapter I — The Brilliant Darkness',
+      verses: [
+        {
+          ref: 'MT I.1',
+          text: 'Trinity!! Higher than any being, any divinity, any goodness! Lead us up beyond unknowing and light, up to the farthest, highest peak of mystic scripture, where the mysteries of God\'s Word lie simple, absolute and unchangeable in the brilliant darkness of a hidden silence. Amid the deepest shadow they pour overwhelming light on what is most manifest. Amid the wholly unsensed and unseen they completely fill our sightless minds with treasures beyond all beauty.',
+          textVersions: {
+            luibheid: 'Trinity!! Higher than any being, any divinity, any goodness! Lead us up beyond unknowing and light, up to the farthest, highest peak of mystic scripture, where the mysteries of God\'s Word lie simple, absolute and unchangeable in the brilliant darkness of a hidden silence.',
+            rolt: 'O Trinity, which transcendest all Being, all Divinity, all Goodness! Guide of Christians in Divine Wisdom, direct our path to the summit of Thy mystical oracles, most incomprehensible, most lucid and most exalted.',
+            greek: 'Τριὰς ὑπερούσιε καὶ ὑπέρθεε καὶ ὑπεράγαθε, ἐπόπτα τῆς θεοσόφου Χριστιανῶν ἱεραρχίας.',
+          },
+          entities: [
+            { word: 'brilliant darkness of a hidden silence', node: '', type: 'concept',
+              note: '"Brilliant darkness" (hyperphõs gnophos) is the central oxymoron of apophatic mysticism. God is not dark from absence of light but from superabundance of light — the sightless state when light overwhelms the capacity to see. Pseudo-Dionysius applies this optical principle to consciousness: the divine ground is unknowable not because it is absent but because it exceeds every epistemic category. This precise formulation influenced Eckhart\'s "desert of the Godhead" and the entire tradition of Christian negative theology.',
+              parallels: [
+                { label: 'Mandukya 7 — turiya beyond all predicates', textId: 'mandukya-upanishad', note: 'Mandukya 7 defines turiya through pure negation: "not conscious of internal, not of external, not of both, not a mass of consciousness, not conscious, not unconscious." Pseudo-Dionysius\' "brilliant darkness of a hidden silence" describes the experiential state of approaching the same threshold from the Western side. Both characterize the point where positive description collapses.' },
+                { label: 'Tao Te Ching 1 — the Tao that can be spoken is not the eternal Tao', textId: 'tao-te-ching-1', note: 'Laozi points at his own inadequacy: language cannot capture the Tao. Pseudo-Dionysius makes the same move through cataphatic overload — instead of silence (Laozi\'s strategy), he heaps up contradictions until language breaks under the weight. Both end at the same place: the absolute exceeds language, reached through opposite verbal strategies.' },
+              ]
+            },
+          ]
+        },
+      ]
+    },
+    {
+      heading: 'Chapter II — Moses and the Divine Darkness',
+      verses: [
+        {
+          ref: 'MT II',
+          text: 'Moses is praised by the divine Word itself. First he is told to undergo purification himself and to be separated from those who have not undergone it. When every purification is complete, he hears the many-voiced trumpets. He sees the many lights, pure and with rays streaming abundantly. Then he breaks free of them, away from what sees and is seen, and he plunges into the truly mysterious darkness of unknowing. Here, being neither oneself nor someone else, one is supremely united to the completely unknown by an inactivity of all knowledge, and knows beyond the mind by knowing nothing.',
+          textVersions: {
+            luibheid: 'Moses... breaks free of them, away from what sees and is seen, and he plunges into the truly mysterious darkness of unknowing. Here, being neither oneself nor someone else, one is supremely united to the completely unknown by an inactivity of all knowledge.',
+            rolt: 'He plunges into the truly mystical darkness of unknowing... and by the cessation of all knowledge he becomes united with the Unknowable in a manner more noble than any act of intelligence.',
+            greek: 'Ὁ θεῖος Μωσῆς πρῶτον μὲν ἁγνίζεσθαι κελεύεται.',
+          },
+          entities: [
+            { word: 'plunges into the truly mysterious darkness of unknowing', node: '', type: 'concept',
+              note: 'The image of Moses "plunging" into divine darkness is the key interpretive move: the darkness of Sinai (Exodus 20:21 — "Moses approached the thick darkness where God was") is reread not as literal darkness but as the darkness of apophatic unknowing. Moses was not hiding in shadow; he was ascending into a state of awareness that transcends seeing. This exegetical move — reading biblical narrative as mystical phenomenology — allowed Pseudo-Dionysius to graft Neoplatonic mysticism directly onto the Hebrew and Christian scriptures.',
+              parallels: [
+                { label: 'Bardo Thodol — plunge into the clear light, not the safer dim lights', textId: 'bardo-thodol', note: 'The Bardo Thodol instructs: recognize the clear light that appears at death; do not run from it into the safer-seeming softer lights. Pseudo-Dionysius\' Moses plunges past the "many lights, pure and with rays streaming abundantly" into the darkness beyond light. Both describe the same spiritual decision: pass through the dazzling intermediate illuminations to arrive at the ground beyond all dazzle.' },
+                { label: 'Isaiah 6 — vision, crisis, transformation', textId: 'isaiah-6', note: 'Isaiah\'s throne vision moves from vision (I saw the Lord) to crisis (I am ruined) to transformation (the coal purifies his lips). Pseudo-Dionysius\' Moses moves from vision (the holy lights) to stripping away all seeing, to plunging into darkness. Both stage the same journey: approach → overwhelm → transformation. But Isaiah\'s vision remains affirmative; Moses ends in pure unknowing.' },
+              ]
+            },
+          ]
+        },
+      ]
+    },
+    {
+      heading: 'Chapter V — God is Neither This Nor That',
+      verses: [
+        {
+          ref: 'MT V',
+          text: 'Again, as we climb higher we say this. It is not soul or mind, nor does it possess imagination, conviction, speech, or understanding. It cannot be spoken of and it cannot be grasped by understanding. It is not number, nor order, nor greatness, nor equality, nor similarity. It is not immovable, moving, or at rest. It has no power, it is not power, nor is it light. It does not live nor is it life. It is not a substance, nor is it eternity, nor is it time. It is neither one nor oneness, divinity nor goodness. It is not sonship or fatherhood and it is nothing known to us or to any other being.',
+          textVersions: {
+            luibheid: 'It is not soul or mind, nor does it possess imagination, conviction, speech, or understanding... It is not kingship. It is not wisdom. It is neither one nor oneness, divinity nor goodness... it is nothing known to us or to any other being.',
+            rolt: 'It is not soul or mind, nor does it possess imagination, conviction, speech, or understanding... It is not Royalty or Wisdom; not one, not oneness, not Godhead or Goodness.',
+            greek: 'Οὐδὲ ψυχή ἐστιν, οὐδὲ νοῦς, οὐδὲ φαντασίαν ἔχει ἢ δόξαν ἢ λόγον ἢ νόησιν.',
+          },
+          entities: [
+            { word: 'It is not soul or mind, nor', node: '', type: 'concept',
+              note: 'The great apophatic litany of Chapter V is the most systematic negative-theology statement in Christian literature. Pseudo-Dionysius strips away every category in ascending order: sensory faculties → intellectual faculties → relational concepts → ontological concepts → theological concepts — finally denying "one, oneness, divinity, goodness." This is the strategy of the Mandukya Upanishad applied to the entire Christian conceptual vocabulary. The goal: remove every conceptual handle until only direct non-conceptual awareness remains.',
+              parallels: [
+                { label: 'Mandukya 7 — turiya: not conscious, not unconscious, unthinkable, unnameable', textId: 'mandukya-upanishad', note: 'Mandukya 7: "not conscious of internal objects, not conscious of external objects... unseen, unrelatable, ungraspable, characterless, unthinkable, unnameable." Pseudo-Dionysius MT V: "not soul or mind... not number, not order... neither one nor oneness." These are the most structurally parallel passages in Eastern and Western mystical literature. Both systematically exhaust the conceptual vocabulary to clear the way for direct apophatic encounter.' },
+                { label: 'Brihadaranyaka — neti neti: not this, not this', textId: 'brihadaranyaka-neti-neti', note: 'Yajnavalkya\'s "neti neti" (not this, not this) is the Indian parallel, predating Pseudo-Dionysius by 1,200 years. Both texts exhaust all possible predicates in approaching Brahman/God. The Indian tradition compressed this into two syllables; Pseudo-Dionysius expanded it into a liturgical performance. Both make the same philosophical point: the absolute is approached through systematic exhaustion of all identifications.' },
+                { label: 'Apocryphon of John — the Monad: not a being among beings', textId: 'apocryphon-of-john', note: 'The Apocryphon opens with extensive negation of the Monad: "He is not a being among beings... not corporeal nor incorporeal... not great nor small." This Gnostic parallel (c. 150 CE) predates Pseudo-Dionysius by 350 years, drawing on the same Neoplatonic sources. Both deploy exhaustive negation to characterize the highest divine principle.' },
+              ]
+            },
+            { word: 'nothing known to us or to any other being', node: '', type: 'concept',
+              note: 'The final phrase extends unknowability beyond humans to all beings, including the highest angels. The divine ground is not merely humanly unknowable but absolutely unknowable — because knowing is a creaturely activity and the divine ground precedes all creaturely activity. Plotinus takes the same position: the One is unknowable even to itself, because self-knowledge would require the subject-object distinction the One transcends.',
+              parallels: [
+                { label: 'Plotinus — the One does not even know itself', textId: 'plotinus-enneads', note: 'Plotinus Enneads VI.9: "The One does not even know itself, because knowledge involves a distinction between knower and known, and the One is beyond all distinction." Pseudo-Dionysius: "nothing known to us or to any other being." Both locate the absolute beyond even the self-knowing that would be the highest form of creaturely intelligence — this is not mystification but precision: a truly unconditional absolute cannot be conditioned by the subject-object structure of knowledge.' },
+              ]
+            },
+          ]
+        },
+      ]
+    },
+  ]
+};
+
+SCRIPTURE_TEXTS['brihadaranyaka-neti-neti'] = {
+  title: 'Brihadaranyaka Upanishad — Neti Neti',
+  shortTitle: 'Brihadaranyaka',
+  tradition: 'Upanishadic / Early Vedanta',
+  date: 'c. 700 BCE',
+  intro: 'The Brihadaranyaka Upanishad is one of the oldest and most philosophically dense of the Upanishads, embedded in the Shatapatha Brahmana of the Yajurveda. Its name means "forest" (aranya) "great" (brihad) — these are teachings for those who have withdrawn from ordinary life, the Indian equivalent of the desert fathers. The central teacher is Yajnavalkya, who publicly defeats all rivals in theological debate, tells his wife Maitreyi that wealth is irrelevant compared to the immortal Self, and articulates the "neti neti" (not this, not this) method — the systematic negation of every predicate in approaching Brahman. Three passages are central here: 2.3.6 (the first neti neti), 3.8.7-11 (Yajnavalkya and Gargi — the Imperishable on which everything is strung), and 4.5.15 (the Maitreyi dialogue — "as when a lump of salt is dissolved in water, you cannot seize the salt but everywhere you taste salt"). Together they establish the Upanishadic method for approaching the absolute: not by adding concepts but by removing them. This text predates Pseudo-Dionysius\' apophatic theology by 1,200 years and develops the same core insight independently — the absolute cannot be reached by accumulation of better descriptions but only by the systematic exhaustion of all descriptions.',
+  crossTradition: [
+    { label: 'Pseudo-Dionysius — the apophatic litany of Chapter V', textId: 'pseudo-dionysius-mystical-theology', note: 'Neti neti and Pseudo-Dionysius MT Chapter V are the East-West poles of apophatic method: both systematically strip every predicate from the absolute. The Brihadaranyaka predates Pseudo-Dionysius by 1,200 years, confirming independent development of the same logical insight.' },
+    { label: 'Mandukya Upanishad — turiya as the fruit of neti neti', textId: 'mandukya-upanishad', note: 'The Mandukya\'s description of turiya through pure negation is the direct application of the Brihadaranyaka\'s neti neti method: neti neti is the technique; turiya is what it reveals. Together they define the Hindu apophatic tradition.' },
+    { label: 'Meister Eckhart — Seelengrund as one ground with Gottesgrund', textId: 'meister-eckhart-godhead', note: 'Eckhart\'s distinction between God and Godhead is structurally identical to the Upanishadic distinction between saguna Brahman (with attributes) and nirguna Brahman (without attributes). Eckhart\'s "the soul\'s ground and God\'s ground are one ground" = Yajnavalkya\'s Atman = Brahman.' },
+    { label: 'Ibn Arabi — fana: the dissolution of the self in the divine', textId: 'ibn-arabi-fusus', note: 'The salt-in-water dissolution metaphor (4.5.15) is the Upanishadic template for what Sufism calls fana (annihilation) followed by baqa (subsistence as universal consciousness). Both traditions teach: the individual does not cease to exist — the saltness is everywhere in the ocean.' },
+  ],
+  translations: [
+    { id: 'olivelle', label: 'Olivelle 1996 (Oxford, T1)' },
+    { id: 'radhakrishnan', label: 'Radhakrishnan 1953' },
+    { id: 'sanskrit', label: 'Sanskrit (Devanagari)' },
+  ],
+  sections: [
+    {
+      heading: 'Neti Neti — Not This, Not This (2.3.1–6)',
+      verses: [
+        {
+          ref: '2.3.1–6',
+          text: 'There are, verily, two forms of Brahman: the formed and the formless, the mortal and the immortal, the stationary and the moving, the actual and the beyond. Now the formless is the immortal, the moving, the beyond — this is what dwells in that shining disc of the sun. And there is this teaching about it: "Not this, not this" (neti neti) — for there is nothing higher than this, that one should say "not this." Now the name of this supreme thing is "the truth of truth" — for the vital force is truth, and it is the truth of that.',
+          textVersions: {
+            olivelle: 'There are, verily, two forms of Brahman: the formed and the formless... And there is this teaching about it: "Not this, not this" (neti neti) — for there is nothing higher than this, that one should say "not this."',
+            radhakrishnan: 'Verily, there are two forms of Brahman: the formed (murta) and the formless (amurta)... of him, the description is "Not so, not so" (neti neti), for there is nothing else higher than this.',
+            sanskrit: 'द्वे वाव ब्रह्मणो रूपे मूर्तं चैवामूर्तं च। ... नेति नेति। न ह्येतस्मादिति नेत्यन्यत्परमस्ति।',
+          },
+          entities: [
+            { word: 'Not this, not this', node: 'brahman', type: 'concept',
+              note: '"Neti neti" (Sanskrit: न इति न इति) is the defining statement of the apophatic method in Hindu philosophy. Yajnavalkya uses it as a technical formula: when asked to define Brahman, the correct response is neti neti, because every positive statement captures something finite. The phrase performs what it describes: by refusing to define, it indicates the indefinable. The double repetition (neti neti rather than just neti) signals an ongoing, open-ended process — there is always another "not this" to make.',
+              parallels: [
+                { label: 'Pseudo-Dionysius MT V — the exhaustive apophatic litany', textId: 'pseudo-dionysius-mystical-theology', note: 'Pseudo-Dionysius Chapter V is a 500-word "neti neti" applied to the Christian conceptual vocabulary: "not soul or mind... not number, not order... not kingship, not wisdom... neither one nor oneness." The Indian philosopher compressed the insight into two syllables (c. 700 BCE); the Syrian Christian expanded it into a liturgical performance (c. 500 CE). Both do the same philosophical work.' },
+                { label: 'Tao Te Ching 1 — the Tao that can be named is not the eternal Tao', textId: 'tao-te-ching-1', note: 'Laozi\'s opening is a single neti: the named Tao is not it. Yajnavalkya\'s formula extends this to all possible names: neti neti — whatever you name, not that. Both recognize the same logical structure: the absolute cannot be an object of linguistic reference without being finalized, and the absolute is precisely what resists finalization.' },
+              ]
+            },
+            { word: 'truth of truth', node: 'brahman', type: 'concept',
+              note: '"Satyasya satyam" — the truth of truth. The vital force (prana) is truth because it is the most evident reality of living experience; Brahman is the truth of even that truth — the ground beneath the most fundamental fact of experience. This "meta-truth" structure appears in Plotinus (the One is the source of Intellect which is source of truth) and in the Johannine Logos ("I am the way, the truth, and the life" — truth is not a proposition but a Person, the ground from which all true propositions derive their truthfulness).',
+              parallels: [
+                { label: 'Plotinus — the One as source of Intellect, which is the realm of truth', textId: 'plotinus-enneads', note: 'Plotinus: Intellect (Nous) is the realm of truth; the One is the source of Intellect. The One is therefore not merely true but the source of truth — truth of truth, in Yajnavalkya\'s formulation. The Neoplatonic and Upanishadic hierarchies converge: there is a level above ordinary truth (facts, knowledge) which is the ground from which all truth derives its truthfulness.' },
+              ]
+            },
+          ]
+        },
+      ]
+    },
+    {
+      heading: 'Gargi and the Imperishable (3.8.7–11)',
+      verses: [
+        {
+          ref: '3.8.7–11',
+          text: '"Yajnavalkya," she said, "what is woven on top of and below the sky?" He said: "That, O Gargi, which the knowers of Brahman call the Imperishable (akshara). It is neither coarse nor fine, neither short nor long, neither red nor adhesive like water. It is without shadow, without darkness, without air, without ether. It is without taste, without smell, without eyes, without ears, without speech, without mind, without inner life, without breath. It is not within, not without." He said: "It is this Imperishable, O Gargi, that holds the sun and moon and stars, the sky and earth and space, all these beings together — as a lump of clay holds together all that is of clay."',
+          textVersions: {
+            olivelle: 'That, O Gargi, which the knowers of Brahman call the Imperishable (akshara). It is neither coarse nor fine... without taste, without smell, without eyes, without ears, without speech, without mind.',
+            radhakrishnan: 'The knowers of Brahman call it the Imperishable (akshara). It is not coarse, not fine, not short, not long... It has no inner sense, no hands, no feet, it is eternal, all-pervading, extremely subtle.',
+            sanskrit: 'एतद् वा अक्षरं गार्गि ब्राह्मणा अभिवदन्ति। अस्थूलमनण्वह्रस्वमदीर्घम्।',
+          },
+          entities: [
+            { word: 'Imperishable (akshara)', node: 'brahman', type: 'concept',
+              note: 'Akshara means both "imperishable" and "syllable" in Sanskrit — the two meanings are not accidental. The imperishable is the ground that cannot be destroyed; the syllable is the unit of language. The Mandukya Upanishad makes the connection explicit: OM (the sacred syllable) = Brahman = the imperishable. Language and being share the same ultimate ground. This dual meaning prefigures the Logos tradition: the creative Word is both the ground of reality (imperishable) and the principle of structure (syllable/language).',
+              parallels: [
+                { label: 'Sefer Yetzirah — the 22 Hebrew letters as the building material of creation', textId: 'sefer-yetzirah', note: 'The Sefer Yetzirah\'s 22 Hebrew letters as building blocks of creation parallel the Upanishadic akshara: in both traditions, linguistic units (letters/syllables) are not arbitrary signs but ontological substances — the material of which reality is made. The convergence of these traditions (Vedic c. 700 BCE, Jewish c. 200–600 CE) on the same metaphysical thesis — the alphabet is the structure of being — is one of the strongest cross-tradition patterns.' },
+              ]
+            },
+            { word: 'without taste, without smell, without eyes, without ears, without speech, without mind', node: 'brahman', type: 'concept',
+              note: 'The description of the Imperishable through negations of physical and sensory properties is systematic neti neti applied to the ontological ground. The list moves from gross physical properties through sensory modalities to the subtlest attributes of consciousness — and negates them all. When nothing more can be negated, what remains is the akshara.',
+              parallels: [
+                { label: 'Pseudo-Dionysius MT V — not soul or mind, not number, not order, not being', textId: 'pseudo-dionysius-mystical-theology', note: 'Brihadaranyaka 3.8.8: "without taste, smell, eyes, ears, speech, mind, inner life, breath." Pseudo-Dionysius MT V: "not soul or mind, nor imagination, conviction, speech, or understanding... not number, not order, not greatness." The two lists are drawn from different conceptual vocabularies but deploy the same logical strategy: strip away every category to approach the uncategorizable. Independent parallel confirming this is a structural feature of apophatic method, not cultural borrowing.' },
+              ]
+            },
+          ]
+        },
+      ]
+    },
+    {
+      heading: 'The Salt in the Ocean — Maitreyi (4.5.15)',
+      verses: [
+        {
+          ref: '4.5.15',
+          text: '"Just as, my dear, a lump of salt thrown into water becomes one with the water, so that you cannot seize it, but wherever you take it, it tastes salty — similarly, my dear, this great Being is without end, without limit, consisting of nothing but awareness. When he has departed, there is no more awareness." Maitreyi said: "Here you have bewildered me, sir, when you say \'when he has departed, there is no more awareness.\'" Yajnavalkya replied: "I am not saying anything bewildering, my dear. For when there is a duality, then one can smell the other, one can see the other — but when everything has become one\'s own Self, then what should one smell and with what? What should one see and with what? Through what should one know the knower of knowing?"',
+          textVersions: {
+            olivelle: 'Just as, my dear, a lump of salt thrown into water becomes one with the water, so that you cannot seize it, but wherever you take it, it tastes salty — similarly, my dear, this great Being is without end, without limit, consisting of nothing but awareness.',
+            radhakrishnan: 'As a lump of salt cast into water dissolves in the water and there is no way to take it out, but wherever you take water it tastes salt, even so, my dear, this great Being is infinite and without limits, and consists only of consciousness.',
+            sanskrit: 'यथा सोम्य लवणमेतदुदके प्रास्यासीत्। तद्यथाद्रवेत्। न हास्य उद्धरणाय स्यात्। यत्र क्व चाभिप्रशेत। लवणमेव।',
+          },
+          entities: [
+            { word: 'lump of salt thrown into water', node: 'brahman', type: 'symbol',
+              note: 'The salt-in-water metaphor is the most famous image in the Brihadaranyaka. Individual consciousness (the salt) does not cease to exist when it merges with Brahman (the ocean) — it becomes identical with the medium. The salt is everywhere; it cannot be extracted; yet wherever you taste, the saltness is present. Death ("when he has departed, there is no more awareness") does not mean annihilation but dissolution into universal consciousness — the individual awareness merges with the ground of all awareness, becoming impossible to locate separately but impossible to remove from the whole.',
+              parallels: [
+                { label: 'Sufi fana — annihilation of the individual self in God', textId: 'ibn-arabi-fusus', note: 'Ibn Arabi\'s fana (annihilation) and baqa (subsistence) parallel the salt-in-water dissolution: the individual self disappears as a separate entity but returns as God-consciousness. The salt dissolves, but what remains is not "no salt" but "pure salt-nature pervading all the water." The Sufi and Upanishadic traditions arrive at the same paradox: the individual\'s dissolution is simultaneously its greatest realization.' },
+                { label: 'Gospel of Thomas L.108 — drinking from the mouth, becoming the teacher', textId: 'gospel-of-thomas', note: 'Thomas L.108: "Whoever drinks from my mouth will become like me; I myself shall become that person." The Thomasine union image (the disciple becomes identical with the teacher) is the Gnostic equivalent of the salt-in-water dissolution: separate identity disappears but is replaced by participation in the universal consciousness represented by the Living Jesus.' },
+              ]
+            },
+            { word: 'Through what should one know the knower of knowing?', node: 'brahman', type: 'concept',
+              note: 'Yajnavalkya\'s rhetorical question cuts to the logical core of Advaita Vedanta: ordinary perception requires a subject (who perceives) and an object (what is perceived). When the individual self dissolves into universal Self, the subject-object structure dissolves with it — not into unconsciousness but into a form of awareness that does not require the dualism. This is what the Mandukya calls turiya: "not conscious, not unconscious" — a fourth state beyond the ordinary subject-object structure.',
+              parallels: [
+                { label: 'Mandukya 7 — turiya beyond subject-object consciousness', textId: 'mandukya-upanishad', note: 'Mandukya 7 describes turiya as "not inwardly cognitive, not outwardly cognitive... unseen, unrelatable, ungraspable." The state Yajnavalkya gestures at ("what should one know the knower of knowing?") and the state the Mandukya describes are the same: the awareness that remains when the knower-known distinction dissolves.' },
+                { label: 'Meister Eckhart — the eye through which I see God is the eye through which God sees me', textId: 'meister-eckhart-godhead', note: 'Eckhart\'s most famous sentence — "my eye and God\'s eye are one eye, one seeing, one knowing" — describes the same dissolution of the subject-object structure. When the seer and the seen are one, there is no longer a "seeing" in the ordinary sense. Yajnavalkya and Eckhart both point to the same terminus: the knowing faculty cannot be known without ceasing to be itself.' },
+              ]
+            },
+          ]
+        },
+      ]
+    },
+  ]
+};
+
+SCRIPTURE_TEXTS['meister-eckhart-godhead'] = {
+  title: 'Meister Eckhart — The Desert of the Godhead',
+  shortTitle: 'Eckhart: Godhead',
+  tradition: 'Rhineland Christian Mysticism',
+  date: 'c. 1300–1327 CE',
+  intro: 'Meister Eckhart (c. 1260–1328 CE) was a Dominican theologian and mystic whose sermons represent the apex of medieval Christian mysticism and one of the most radical philosophical positions in the history of Western thought. Preaching in vernacular Middle High German to lay audiences — including the Beguines, communities of religious women outside formal monastic structures — he developed a theology so uncompromising that 28 propositions were condemned by Pope John XXII in 1329, shortly after his death. The core of Eckhart\'s theology is a distinction with no exact precedent in Western Christian thought: "God" (Gott) — the personal Trinity, Creator, the God of Scripture — versus "Godhead" (Gottheit) — the ground beyond all attributes, beyond being, beyond will, beyond even the Trinitarian distinctions. The Godhead is what Eckhart calls "the desert" (wüeste) and "the silent stillness" — so utterly empty that even God has never entered it. The soul has a "spark" (Fünklein) or "ground" (Seelengrund) identical in nature with the Godhead — not created, not temporal, not a creature at all. The mystical path is the return of this spark to its ground: not the soul approaching God but the soul recognizing that its deepest nature never left the Godhead. This position — condemned as pantheism in 1329, recognized now as a remarkably precise parallel to Advaita Vedanta, Zen Buddhism, and Tibetan Dzogchen — makes Eckhart the most important single bridge between Eastern and Western mystical traditions.',
+  crossTradition: [
+    { label: 'Pseudo-Dionysius — the divine darkness beyond all knowing', textId: 'pseudo-dionysius-mystical-theology', note: 'Eckhart explicitly built on Pseudo-Dionysius: the "desert of the Godhead" is his German rendering of Dionysian apophasis. But where Pseudo-Dionysius maintains theological caution, Eckhart takes the logic further — not just God is beyond all attributes, but the soul\'s ground is identical with that beyond.' },
+    { label: 'Mandukya Upanishad — turiya and the ground of consciousness', textId: 'mandukya-upanishad', note: 'Eckhart\'s Seelengrund (ground of the soul, identical with the Godhead) and the Mandukya\'s turiya (the fourth state, ground of the other three) are the most precise cross-cultural parallels in mystical literature. Both are: non-temporal, beyond ordinary consciousness, the ground from which all other states arise, and paradoxically both "nothing" and the fullness of being.' },
+    { label: 'Chandogya — tat tvam asi: that art thou', textId: 'chandogya-621', note: 'The Chandogya\'s "tat tvam asi" (that art thou — you are the Brahman you seek) is the Indian formulation of what Eckhart says in German: "The eye through which I see God is the same eye through which God sees me." Both are identity claims, not union claims: not two becoming one but the recognition that there was never two.' },
+    { label: 'Brihadaranyaka — through what should one know the knower of knowing?', textId: 'brihadaranyaka-neti-neti', note: 'Yajnavalkya\'s salt-in-water dissolution and Eckhart\'s breakthrough into the Godhead describe the same event: the subject-object structure of ordinary consciousness dissolves, and what remains is not unconsciousness but pure awareness without an object.' },
+  ],
+  translations: [
+    { id: 'walshe', label: 'Walshe 1987 (Element Books, T1)' },
+    { id: 'blakney', label: 'Blakney 1941' },
+    { id: 'mhg', label: 'Middle High German (MS)' },
+  ],
+  sections: [
+    {
+      heading: 'Sermon 52 — Free of God (Beati Pauperes Spiritu)',
+      verses: [
+        {
+          ref: 'Sermon 52 (1)',
+          text: 'Blessed are the poor in spirit. Now I pray you to be poor in such a way that you do not wish to understand even this very sermon. A man who is poor as I mean it should be free of all creaturely things, of God and of himself. More than this: he must be free of all knowledge that lives in him — free of all the knowing that he himself has ever had of God, and free of all that God himself might wish to work in him.',
+          textVersions: {
+            walshe: 'Blessed are the poor in spirit. A man who is poor as I mean it should be free of all creaturely things, of God and of himself. More than this: he must be free of all knowledge that lives in him.',
+            blakney: 'God wills that I shall be as free of God as I was before I existed. When, by the grace of God, a man is really poor, that means he is free of all creaturely things, free of God, free of himself.',
+            mhg: 'Nû rede ich aber, daz ich noch nie geredet enhabe. Gott enwil niht, daz ich got suoche. Gott enwil niht mê, danne daz ich got vergezze.',
+          },
+          entities: [
+            { word: 'free of all creaturely things, of God and of himself', node: '', type: 'concept',
+              note: '"Free of God" (got ledic) is one of the most radical phrases in Western religious literature. Eckhart does not mean atheism but apophatic theology pressed to its logical conclusion: even the concept "God" must be surrendered in the approach to the Godhead. God (the personal Trinity, the Creator) is already a concept — and the Godhead is the ground that precedes all concepts, including "God." To be "free of God" means to release the concept "God" in order to encounter the Godhead that precedes all names. Philosophically precise; spiritually dangerous language — which is why it was condemned.',
+              parallels: [
+                { label: 'Pseudo-Dionysius MT V — it is neither one nor oneness, divinity nor goodness', textId: 'pseudo-dionysius-mystical-theology', note: 'Pseudo-Dionysius: "it is neither one nor oneness, divinity nor goodness." Eckhart: "free of God." Both are saying the same thing with different levels of audacity. The absolute cannot be identified with "God" because "God" is already a concept, and the absolute precedes all concepts. Pseudo-Dionysius says it in cautious theological prose; Eckhart says it in vernacular sermons to lay audiences, which is why he was condemned.' },
+                { label: 'Tao Te Ching 1 — the Tao that can be named is not the eternal Tao', textId: 'tao-te-ching-1', note: 'Laozi\'s opening verse: even "Tao" — the most adequate name for the ultimate — is inadequate if taken as a positive identification. Eckhart says: the Godhead is not "God" if "God" means a concept. Laozi says: the eternal Tao is not "the Tao that can be named." Same move, same reason.' },
+              ]
+            },
+          ]
+        },
+        {
+          ref: 'Sermon 52 (2)',
+          text: 'Now God says: "I am before there was any God." God, properly speaking, is not eternal: he entered eternity. But I was the cause of myself. No one has given me being. No one has given my being to God. God and I are one in that act of knowing. Before there were creatures, God was not "God." He was what he was. When creatures came to be and took cognizance of God, God was not God to himself but to the creatures.',
+          textVersions: {
+            walshe: 'Now God says: "I am before there was any God." And God, properly speaking, is not eternal: he entered eternity. But I was the cause of myself.',
+            blakney: 'Now God says: "I am before there was any God." That is what I said to the man who asked me: "What was God doing before he created heaven and earth?"',
+            mhg: 'Nû sprichet got: ich bin ê daz iendein got würde. Got ist niht êwic, wan er kam in die êwicheit. Ich was mîn selbes sache.',
+          },
+          entities: [
+            { word: 'I was the cause of myself', node: '', type: 'concept',
+              note: '"Ich was mîn selbes sache" — "I was the cause of myself." This is Eckhart\'s most radical statement: the ground of the soul (Seelengrund), being identical with the Godhead, is self-causing (causa sui). It was not created, not temporal, not contingent. It was there before God "was God" — before the relational God-creature distinction arose. This claim is philosophically equivalent to the Mandukya\'s turiya as the ground that makes the other three states possible, or Plotinus\' One as self-grounded beyond even the cause-effect structure that governs everything else.',
+              parallels: [
+                { label: 'Mandukya — turiya as the unconditioned ground of the three states', textId: 'mandukya-upanishad', note: 'Mandukya 7: turiya is "the cessation of phenomena, peaceful, blissful, non-dual, thought to be the Self." Eckhart\'s soul-ground that "was the cause of itself" and was present "before there was any God" is precisely the turiya: the unconditioned ground that is not produced by anything prior because it is prior to all production.' },
+                { label: 'Apocryphon of John — the Monad that preceded even the Father', textId: 'apocryphon-of-john', note: 'The Apocryphon describes the Monad as preceding even the Father: "Before anything else came to be, [the Monad] decided to have its form appear." The Gnostic Monad is the "God before God" — the ground from which the personal God emerges. Eckhart\'s "before there was any God" and the Apocryphon\'s pre-Father Monad are structurally identical.' },
+              ]
+            },
+          ]
+        },
+      ]
+    },
+    {
+      heading: 'The Uncreated Spark (Sermon 2)',
+      verses: [
+        {
+          ref: 'Sermon 2 (DW 2)',
+          text: 'There is in the soul something that is uncreated and uncreatable. If the soul were totally this, it would be uncreated and uncreatable. This is the Intellect. There is something else in the soul which is the seat of the spirit, the spiritual spark. It is as though a great lord were to build his house together with a little hut attached to it, and were to live in the little hut rather than in the great house. This spark, which is God\'s image and light, is covered and hidden under thirty or forty thicknesses, skins of the soul\'s powers.',
+          textVersions: {
+            walshe: 'There is in the soul something that is uncreated and uncreatable. If the soul were totally this, it would be uncreated and uncreatable. This is the Intellect.',
+            blakney: 'There is in the soul something so akin to God that it is one with him and not merely united to him. It is one, not united.',
+            mhg: 'Ez ist iht in der sêle, daz ist ungeschaffen und ungeschaffelich. Daz ist der vünke.',
+          },
+          entities: [
+            { word: 'uncreated and uncreatable', node: '', type: 'concept',
+              note: 'The "spark" (Fünklein) or "ground" (Grund) of the soul is "uncreated and uncreatable" — it was not made and it cannot be made or unmade. This is the central claim that made Eckhart\'s theology dangerous: if there is an uncreated element in the soul, the soul\'s deepest nature is identical with the divine ground. This is exactly what the Upanishads say: Atman = Brahman. The Eckhart scholar Ananda Coomaraswamy called this "the clearest case of structural convergence between Christian mysticism and Advaita Vedanta."',
+              parallels: [
+                { label: 'Chandogya 6.2 — tat tvam asi: you are the ground of all being', textId: 'chandogya-621', note: 'Chandogya tat tvam asi ("that art thou") establishes: the Atman of the student is identical with Brahman, the ground of all being. Eckhart\'s spark that is "uncreated and uncreatable" is the German equivalent: the deepest element of the soul shares the nature of the divine ground rather than being produced by it.' },
+                { label: 'Mandukya — turiya as the Self that was never absent', textId: 'mandukya-upanishad', note: 'Turiya is identified as "the Self" (Atman) — not a state the soul achieves through mystical progress but what the soul\'s ground always already is, covered over by ordinary consciousness. Eckhart\'s uncreated spark is the same: covered by "thirty or forty thicknesses" but not created by removing those thicknesses. Mystical practice is not acquisition but recognition.' },
+              ]
+            },
+            { word: 'thirty or forty thicknesses, skins of the soul\'s powers', node: '', type: 'symbol',
+              note: 'The layering metaphor — the divine spark covered by "thicknesses" of ordinary psychological faculties — is the Western equivalent of the Buddhist teaching on cognitive obscurations (kleshavaranas). The spiritual path is subtraction not addition: remove the layers obscuring recognition of what is already present. This structure is identical in Plato\'s Cave (turn around to face the sun that was always behind you) and the Bardo Thodol (recognize the clear light as your own nature).',
+              parallels: [
+                { label: 'Plato\'s Cave — the philosopher turns to see the sun that was always there', textId: 'plato-cave', note: 'In Plato\'s allegory, the prisoners do not need the sun created or given to them — they need to turn around. The sun was always there. Eckhart\'s "thirty or forty thicknesses" are the chains preventing the turning. In both traditions the spiritual movement is removal of obstruction rather than addition of content.' },
+                { label: 'Bardo Thodol — recognize the clear light as your own nature', textId: 'bardo-thodol', note: 'The Bardo\'s central instruction: the clear light that appears at death is your own nature — recognize it, do not flee it. Eckhart\'s "thicknesses" = the obscurations produced by attachment and aversion. The path in both traditions is their removal — not attainment of something new but recovery of what was always already the ground.' },
+              ]
+            },
+          ]
+        },
+      ]
+    },
+    {
+      heading: 'My Eye and God\'s Eye Are One Eye',
+      verses: [
+        {
+          ref: 'Counsels on Discernment 6',
+          text: 'The eye through which I see God is the same eye through which God sees me. My eye and God\'s eye are one eye, one seeing, one knowing, and one love. I say to the soul: God\'s is-ness (Istigkeit) is my is-ness, and neither more nor less. Let a man be what he will, the soul\'s ground (Seelengrund) and God\'s ground (Gottesgrund) are one ground.',
+          textVersions: {
+            walshe: 'The eye through which I see God is the same eye through which God sees me. My eye and God\'s eye are one eye, one seeing, one knowing, and one love.',
+            blakney: 'The eye through which I see God is the same as the eye through which God sees me. My eye and God\'s eye are one and the same — one in seeing, one in knowing, one in loving.',
+            mhg: 'Daz ouge, dâ inne ich got sihe, daz ist daz selbe ouge, dâ inne got mich sihet. Mîn ouge und gotes ouge, daz ist ein ouge und ein gesiht und ein bekennen und ein minnen.',
+          },
+          entities: [
+            { word: 'My eye and God\'s eye are one eye', node: '', type: 'concept',
+              note: 'Condemned as proposition 23 by Pope John XXII in 1329. Not that the human eye and the divine eye are similar or working in parallel — they are the same seeing. The faculty of awareness is not private property of either the human or the divine; it is a single event that appears on both "sides" of the subject-object divide. This is the Western equivalent of "tat tvam asi" pressed into one sentence.',
+              parallels: [
+                { label: 'Chandogya 6.8–16 — tat tvam asi: that art thou (Atman = Brahman)', textId: 'chandogya-621', note: 'Chandogya: "That finest of all essences, this whole world has it as its Self. That art thou (tat tvam asi), Shvetaketu." Eckhart: "My eye and God\'s eye are one eye." Both assert identity — not similarity, not union of two pre-existing entities, but the recognition that there was never a genuine duality. The Indian formula is cosmological; Eckhart\'s formula is perceptual. Both point to the same non-dual ground.' },
+                { label: 'Corpus Hermeticum — the Mind that saw its own reflection in matter', textId: 'poimandres', note: 'In the Poimandres, the divine Mind (Nous) and human intellect are of the same nature: the divine Mind descends, and the human who recognizes the Nous within recognizes his own nature as divine. Eckhart compresses this Hermetic insight into one sentence: the eye seeing God and God\'s seeing are one movement.' },
+              ]
+            },
+            { word: 'soul\'s ground (Seelengrund) and God\'s ground (Gottesgrund) are one ground', node: '', type: 'concept',
+              note: '"Seelengrund" (soul-ground) and "Gottesgrund" (God-ground) as "ein grunt" (one ground) is Eckhart\'s most condensed theological statement. The ground of the soul — the deepest, most naked level, stripped of all functions and properties — and the ground of God — the Godhead beneath all Trinitarian distinctions — are one and the same ground. This is not pantheism but the precise claim: the deepest nature of the soul and the deepest nature of the divine are not different. Vedantic equivalent: Atman = Brahman. Zen equivalent: Buddha-nature as one\'s own nature. Tibetan equivalent: rigpa (pure awareness) as Dharmakaya (Buddha-nature).',
+              parallels: [
+                { label: 'Mandukya — turiya as Atman: "the fourth is thought to be the Self"', textId: 'mandukya-upanishad', note: 'Mandukya 12: "This same Self (Atman), taught as having four feet, is OM." The deepest level of soul analysis (turiya) and the deepest level of cosmic analysis (Brahman) are identified. Eckhart\'s Seelengrund = Gottesgrund is structurally identical to the Mandukya\'s turiya = Atman = Brahman.' },
+                { label: 'Plotinus — the soul\'s return to the One it never left', textId: 'plotinus-enneads', note: 'Plotinus: the soul\'s return to the One is not a journey from one place to another but the recognition that the soul never truly left. "We are never without the One." Eckhart\'s one-ground is the same: there is no actual distance between the soul\'s deepest nature and the divine ground. The mystical path is the realization of a unity that always already obtained.' },
+              ]
+            },
+          ]
+        },
+      ]
+    },
+  ]
+};
