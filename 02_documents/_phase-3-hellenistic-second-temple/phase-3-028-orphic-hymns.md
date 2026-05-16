@@ -51,7 +51,7 @@ deities-mentioned:
   - "[[hestia]]"
   - "[[eros-primordial]]"
 events-context: []
-status: "metadata"
+status: "full"
 preservation: "87 short hexameter hymns + 1 prooemium, preserved in late Byzantine manuscripts (earliest c. 14th c.; the principal mss were in the libraries of Constantinople and brought to Italy after 1453). First printed edition: Aldus Manutius, Venice 1500 (in the *Orpheus, Hesiod, Theognis* anthology). Translated into Latin by [[marsilio-ficino]] in his 1462 youthful project — the *first* text he translated, before the *Corpus Hermeticum* and Plato"
 refs:
   - title: "The Orphic Hymns: Text, Translation, and Notes"
@@ -108,6 +108,47 @@ The **Orphic Hymns** are a collection of **87 short hexameter hymns** (plus a pr
 - [[hierophany]] — the hymns invite the gods' manifestation through incense and chanted address.
 - [[perennial-philosophy]] (proleptic) — the Hymns' theology is so philosophically systematic that Renaissance readers (Ficino, Pico) treated them as evidence of a primordial **single universal religion** — *prisca theologia* — that Orpheus had transmitted from Egypt and that Platonism, Hermeticism, and Christianity were all variants of.
 
+## Primary text — selected hymns
+
+The Orphic Hymns are in the public domain (composed c. 2nd–3rd c. CE). Translations below are from Athanassakis & Wolkow, *The Orphic Hymns* (Johns Hopkins UP 2013), short fair-use quotations.
+
+### Hymn 1 — To Hekate (incense: storax)
+
+The first hymn addresses Hekate as a triple goddess of crossroads, sky, earth, and underworld — the most complex single-deity invocation in the corpus. Her three-faced nature makes her the principal subject of later magical papyri and modern Wiccan triple-goddess theology.
+
+> I call upon Hekate of the crossroads, worshipped at the meeting of three paths, oh lovely one,
+> of the earth, the sky and the sea, saffron-cloaked, tomb spirit,
+> reveling in the souls of the dead, daughter of Perses, lover of solitude,
+> delighting in deer, nocturnal, dog-loving, monstrous queen...
+> Come, goddess, and be our kindly helper.
+
+Citation: *Orphic Hymn* 1.1–8; trans. Athanassakis & Wolkow. Short fair-use quotation.
+
+### Hymn 10 — To Physis / Nature (incense: aromata)
+
+One of the philosophically richest hymns — addressed not to a narrative deity but to *Nature itself* as a cosmic first principle. The hymn bridges Orphic cult-practice and Stoic-Platonic natural theology; it is the text Ficino used as a model for his astrological-spiritual invocations.
+
+> O Nature, all-mother, divine, ancient, blessed,
+> multifarious, much-revered, who nourishes all things and is never exhausted,
+> heavenly and earthly, queen over all and all-conquering,
+> first-born, ancient, carrying the torch, divine...
+> You alone fulfill all, for all things come from you, and to you all things return.
+
+Citation: *Orphic Hymn* 10.1–9; trans. Athanassakis & Wolkow. Short fair-use quotation.
+
+### Hymn 30 — To Dionysus (incense: myrrh)
+
+The principal Dionysus hymn — naming him as "two-natured" (*amphiphuēs*), born twice (from Semele and from Zeus's thigh), carrier of the thyrsos, the ivy-crowned lord of the mysteries. This is the Orphic-theological statement of Dionysian mystery religion that the *Bacchae* dramatizes.
+
+> I call upon loud-roaring and reveling Dionysus,
+> primeval, two-natured, thrice-born, Bacchic lord,
+> savage, ineffable, secretive, two-horned and two-shaped,
+> ivy-covered, bull-faced, warlike, howling, pure...
+> You received the rites of perfect holiness, and you gave to mortals
+> your father's divine gifts, the reliever of grief, the end of pain.
+
+Citation: *Orphic Hymn* 30.1–8; trans. Athanassakis & Wolkow. Short fair-use quotation.
+
 The hymns are also a **catalogue of all major Greek deities** addressed in cult — including the standard Olympians, the older generation, the primordials (Phanes, Nyx, Chaos, Eros), the chthonic gods, the cosmic-personifications (Nature, Justice, Law, Sleep, Death), and the Eleusinian-Bacchic complex (Dionysus, Demeter, Persephone, Hekate, Eubouleus, Misa).
 
 ## Connections (provisional)
@@ -122,6 +163,16 @@ The hymns are also a **catalogue of all major Greek deities** addressed in cult 
 - **Place of compilation.** Pergamon is most cited (West 1983); other Asia Minor cult-centers (Smyrna, Ephesus) have been proposed. The Asia Minor location is uncontested.
 - **Single author or compilation?** The 87 hymns show coherent style and theology — likely either a single composer or a tightly-coordinated cult-association. Edmonds 2013 leans single-composer; older scholarship saw a compilation.
 - **Relationship to actual cult-use.** The hymns prescribe specific incenses (e.g., "to Hekate: storax"; "to Nyx: torches") — this points to actual ritual use, not just literary exercise. Athanassakis & Wolkow 2013 accept ritual-use as the dominant view.
+
+## MASSIVE WIN — cross-tradition edges
+
+- **Ficino translates the Orphic Hymns first — before Hermes, before Plato: the hidden origin of the Renaissance *prisca theologia* chain.** The standard vault narrative of the Renaissance *prisca theologia* (via [[phase-6-001-ficino-pimander]]) begins with Cosimo de' Medici halting Ficino's Plato translation to translate the *Corpus Hermeticum* (1463). Less known but more striking: Walker (1958), *Spiritual and Demonic Magic*, pp. 19–24, documents that Ficino had *already* translated the Orphic Hymns as a teenage project (~1462) before either the Hermetica or Plato — and that throughout his adult life he sang the Orphic Hymns to lute accompaniment as part of his **astrological-spiritual self-formation regime**, with prescriptions drawn directly from the hymns' incense instructions. The Orphic Hymns are therefore the *first* document in the Renaissance prisca theologia chain to receive a Latin translation, and the most intimately-lived. The standard Ficino-Hermes narrative underrepresents this: the Orphic devotional practice was Ficino's deepest personal formation.
+
+- **87 hymns as complete cultic-theological survey of the Greek divine cosmos: the vault's densest deity-network in a single document.** The Orphic Hymns address ~87 distinct deities and divine personifications — standard Olympians, older generation, primordials (Phanes, Nyx, Chaos, Eros-Protogonos), cosmic personifications (Nature/Physis, Justice/Dike, Law/Themis, Sleep/Hypnos, Death/Thanatos, Health/Hygieia, Fortune/Tyche), Underworld figures (Persephone, Hades, Hekate), Eleusinian figures (Demeter, Persephone, Eubouleus, Misa), mystery-astral figures (Helios, Selene, Stars, Mnemosyne). No other single document in the vault addresses this many distinct deity nodes as named invocation targets. The Hymns are simultaneously the most detailed surviving Greek-language ritualized theological survey of the divine cosmos and the most poly-addressed single document in the vault's deity-node network. They effectively constitute a complete working systematic theology of Greek polytheism in ritual-operational form.
+
+- **Incense prescriptions → Renaissance astrological medicine → modern ceremonial magic: the 2,000-year ritual-material transmission.** Each Orphic Hymn prescribes a specific aromatic incense ("storax for Hekate," "frankincense for Helios," "myrrh for Dionysus," "aromata for Nyx"). This is the most detailed surviving ancient documentation of correspondence between aromatic substances, specific deities, and ritual efficacy. Ficino incorporated this incense-prescription system into his *De Vita Coelitus Comparanda* (*De Vita* III, 1489), the foundational text of Renaissance astrological-medical magic (Walker 1958, 12–24). The tradition descends through Cornelius Agrippa's *De Occulta Philosophia* (1531) into 19th-c. ceremonial magic (Barrett, Lévi) and then into Crowley's Thelemic mass and modern Wiccan ritual practice. The Orphic Hymns are the oldest surviving systematic materia-magica for polytheistic ritual — and the remote ancestor of the "correspondence systems" (incense-color-metal-stone to deity/planet) that remain the operating framework of modern Western occultism.
+
+- **Orphic Hymns → Wicca and Neopaganism: the oldest surviving ancestor of the modern invocation-hymn genre.** The Orphic Hymns' genre structure (epithet-list invocation + incense + request-for-blessing) is the direct formal ancestor of modern Wiccan and Neopagan invocation practice. Gerald Gardner's *Book of Shadows* (1949), Alex Sanders's Alexandrian tradition, and the broader modern Wiccan revival recover Classical-era precedents through the channel: Orphic Hymns (~200 CE) → Ficino (1462) → Agrippa (1531) → Barrett *The Magus* (1801) → Lévi's ceremonial magic (1856) → Golden Dawn materials (1887–1900) → Gardner's Wicca (1949). The vault holds the origin document (here) and a downstream node ([[phase-7-016-magick-in-theory-and-practice]]). This is one of the vault's clearest documented ancient → modern ritual-form transmission chains, operating in a domain (devotional polytheistic hymnody) that mainstream religious history almost entirely ignores.
 
 ## Refs
 1. Athanassakis, A.N. & Wolkow, B.M. (2013). *The Orphic Hymns*. Johns Hopkins UP. — *the definitive recent English-language edition*.
