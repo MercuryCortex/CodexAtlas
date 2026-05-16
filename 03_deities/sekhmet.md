@@ -81,7 +81,7 @@ The structure is consistent: **divine feminine energy that protects by destroyin
 ## Sekhmet and Medicine: The Paradox of the Disease-Deity as Healer
 Sekhmet was the patroness of the **physician-priests of ancient Egypt** — the *wabw-Sḫmt* ("Pure Ones of Sekhmet"), a specialized priestly-medical class whose title explicitly invokes the goddess. The logic is *similia similibus*: the deity who sends plague is the deity who can cure it; appeasing Sekhmet withdraws the affliction she has sent. This theology of **the disease-deity as healer** recurs across traditions and is one of the vault's structurally richest cross-tradition archetypes:
 
-- **[[apollo-greek]]** (Greek): sends plague (Iliad 1, the opening pestilence); patron of the physician; his son Asclepius is the divine healer — the same divine lineage encompasses both destruction by disease and the cure
+- **[[apollo]]** (Greek): sends plague (Iliad 1, the opening pestilence); patron of the physician; his son Asclepius is the divine healer — the same divine lineage encompasses both destruction by disease and the cure
 - **Asclepius** (Greek): healer-god connected to the serpent of death (the rod of Asclepius = the same serpent that symbolizes chthonic danger); healing and poison are one substance in different doses
 - **Dhanvantari** (Hindu, Vedic): divine physician of the gods; emerges from the churning of the cosmic ocean alongside *amrita* (immortality nectar) — arises from the same primordial waters that produce danger; healing and poison simultaneously produced in the *samudra-manthan*
 
