@@ -26,10 +26,16 @@ _Hand-maintained. Each agent currently working in the vault appends a claim bloc
 
 ---
 
-## sonnet-content-gap-1 — content / eliade-upgrade + PGM + saadi-check + hafez-check — started 2026-05-16 — **IN PROGRESS**
-- Owning: `04_persons/mircea-eliade.md` (UPGRADE), `02_documents/_phase-4-late-antiquity/phase-4-106-greek-magical-papyri.md` (NEW), `04_persons/sadi-of-shiraz.md` (ALREADY FULL — no changes needed), `04_persons/hafez.md` (ALREADY FULL — no changes needed)
-- Goal: Fill three content gaps identified in audit: (1) Eliade node depth — add hierophany, eternal return, shamanism, Smith critique, Romania problem; (2) Greek Magical Papyri missing document node; (3) check/upgrade Hafez and Saadi (both already have full body text)
-- Status: in-progress
+## sonnet-content-gap-1 — content / eliade-upgrade + PGM + saadi-check + hafez-check — started 2026-05-16 — **FINISHED 2026-05-16**
+- Owned: `04_persons/mircea-eliade.md` (UPGRADE metadata→full), `02_documents/_phase-4-late-antiquity/phase-4-106-greek-magical-papyri.md` (NEW full), `04_persons/sadi-of-shiraz.md` (ALREADY FULL — no action), `04_persons/hafez.md` (ALREADY FULL — no action)
+- Goal: Fill content gaps: (1) Eliade depth; (2) Greek Magical Papyri document node; (3) check Hafez + Saadi
+- Status: finished
+- Delivered:
+  - `mircea-eliade.md` — upgraded metadata→full; 5 body sections (Sacred and Profane hierophany, Myth of Eternal Return / Zep Tepi apparatus, Shamanism archaic ecstasy, MASSIVE WIN Smith methodological fault line, Iron Guard Romania problem); 6 new refs in YAML.
+  - `phase-4-106-greek-magical-papyri.md` — NEW full document node (200 BCE–500 CE); 5 Tier-1 refs; 3 MASSIVE WIN clusters (Jewish divine names Mosaic Distinction paradox / Christian divine names in PGM / Thoth-Hermes popular-register synthesis); 10 wikilink connections all verified live.
+  - `hafez.md` + `sadi-of-shiraz.md` — already full; Goethe/Hammer-Purgstall transmission + UN Bani Adam quatrain already documented. No action taken; no duplicates created.
+- Build: 2259 nodes · 13162 edges · 0 YAML errors · 0 new dead links introduced
+- Last edit: `00_meta/STATUS.md`
 
 ---
 
