@@ -32,6 +32,8 @@ window.ScriptureReader = (function () {
     'wisdom-of-solomon':  { religion:'Christianity', group:'Deuterocanon',           canon:'Catholic / Orthodox / Ethiopian', sort:10 },
     'song-of-songs':      { religion:'Christianity', group:'Old Testament',          canon:'All Canons',          sort:95 },
     'exodus-3':           { religion:'Christianity', group:'Old Testament',          canon:'All Canons',          sort:15 },
+    'deuteronomy-6':      { religion:'Christianity', group:'Old Testament',          canon:'All Canons',          sort:55 },
+    'daniel-7':           { religion:'Christianity', group:'Old Testament',          canon:'All Canons',          sort:75 },
     // ── Christianity — New Testament ────────────────────────────────
     'john-1':             { religion:'Christianity', group:'New Testament',          canon:'All Canons',          sort:10 },
     'john-3':             { religion:'Christianity', group:'New Testament',          canon:'All Canons',          sort:20 },
@@ -47,6 +49,7 @@ window.ScriptureReader = (function () {
     'luke-15-prodigal':   { religion:'Christianity', group:'New Testament',          canon:'All Canons',          sort:60 },
     // ── Christianity — Ethiopian Canon ──────────────────────────────
     'book-of-enoch':      { religion:'Christianity', group:'Ethiopian Canon',        canon:'Ethiopian Orthodox',  sort:10 },
+    'book-of-jubilees':   { religion:'Christianity', group:'Ethiopian Canon',        canon:'Ethiopian Orthodox',  sort:20 },
     // ── Christianity — Christian Mysticism ──────────────────────────
     'pseudo-dionysius-mystical-theology': { religion:'Christianity', group:'Christian Mysticism', canon:'Neoplatonic Christianity', sort:10 },
     'meister-eckhart-godhead':            { religion:'Christianity', group:'Christian Mysticism', canon:'Rhineland Mysticism',      sort:20 },
@@ -59,6 +62,7 @@ window.ScriptureReader = (function () {
     'julian-of-norwich':  { religion:'Christianity', group:'Medieval Mysticism',    canon:'Catholic Mysticism',  sort:10 },
     // ── Judaism ─────────────────────────────────────────────────────
     'ezekiel-37-dry-bones': { religion:'Judaism',     group:'Nevi\'im (Prophets)',   canon:'Hebrew Bible',        sort:10 },
+    '3-enoch-metatron':   { religion:'Judaism',       group:'Merkabah / Hekhalot',  canon:'Mystical Judaism',    sort:10 },
     'sefer-yetzirah':     { religion:'Judaism',       group:'Kabbalah',              canon:'Rabbinic / Kabbalistic', sort:10 },
     'zohar-ein-sof':      { religion:'Judaism',       group:'Kabbalah',              canon:'Rabbinic / Kabbalistic', sort:20 },
     // ── Islam ───────────────────────────────────────────────────────
@@ -126,7 +130,7 @@ window.ScriptureReader = (function () {
     'Taoism':          ['Classical Taoism', 'Chinese Classics'],
     'Ancient Egyptian':['Temple Texts', 'Funerary Texts'],
     'Mesopotamian':    ['Sumerian', 'Babylonian'],
-    'Judaism':         ['Nevi\'im (Prophets)', 'Kabbalah'],
+    'Judaism':         ['Nevi\'im (Prophets)', 'Merkabah / Hekhalot', 'Kabbalah'],
     'Islam':           ['Quran', 'Sufism'],
     'Hermeticism':     ['Corpus Hermeticum'],
     'Greek Philosophy':['Plato', 'Neoplatonism', 'Mystery Traditions'],

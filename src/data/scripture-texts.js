@@ -7833,3 +7833,281 @@ SCRIPTURE_TEXTS['hebrews-11'] = {
     },
   ]
 };
+
+// ── BATCH 16 ────────────────────────────────────────────────────────────────
+
+SCRIPTURE_TEXTS['deuteronomy-6'] = {
+  title: 'Deuteronomy 6 — The Shema',
+  shortTitle: 'Deuteronomy 6',
+  tradition: 'Christianity',
+  date: 'c. 7th–6th century BCE',
+  intro: 'Deuteronomy 6:4–9 contains the Shema — "Hear, O Israel: The LORD our God, the LORD is one" — the foundational declaration of Jewish monotheism, recited by observant Jews twice daily for over two millennia. The Shema is simultaneously the most-repeated sentence in the history of Judaism, the sentence that Jesus quotes when asked for the greatest commandment (Mark 12:29), and the sentence that Islamic theology sees as its closest scriptural antecedent in the Hebrew Bible. It is the hinge text of Abrahamic monotheism: everything in Judaism, Christianity, and Islam about divine unity passes through it. The assertion that the divine is radically ONE maps onto Advaita Vedanta\'s non-dualism (Brahman as the one without a second), onto the Tao as the undivided ground of all things, and onto Buddhist dependent origination (all things arise from one ground). The Shema is the most cross-tradition-resonant sentence in the Hebrew Bible.',
+  crossTradition: [
+    { label: 'Chandogya 6.2 — "one only, without a second": sat as the singular ground', textId: 'chandogya-621', note: 'Chandogya 6.2.1: "In the beginning, my dear, this world was just Being (sat), one only, without a second (ekam eva advitiyam)." The Shema: "The LORD our God, the LORD is one (echad)." Both texts make the same ontological claim: ultimate reality is singular, undivided, without rival. The Chandogya\'s "one only, without a second" is the Vedantic formulation; the Shema\'s "echad" is the Hebrew formulation. The difference is that the Chandogya is a cosmological claim about Being itself (the ultimate structure of existence is non-dual), while the Shema is a theological-liturgical declaration about this specific God. Both are arguing against the same thing: the polytheism and multiplicity that fragments ultimate reality.' },
+    { label: 'Quran 112 — "Say: He is God, the One (Ahad)"', textId: 'quran-fatiha-nur', note: 'Surah Al-Ikhlas (112) is the Quranic Shema — the briefest and most concentrated statement of tawhid (divine unity) in Islamic scripture. "Qul huwa Allahu ahad" — "Say: He is God, the One." Both texts use the same Semitic root for "one" (Hebrew echad, Arabic ahad — from the same Proto-Semitic source ʾḥd). Both declare divine unity against the background of polytheism. The Quran acknowledges this lineage explicitly: Muhammad\'s monotheism is consciously in the Abrahamic tawhid tradition. The Shema and Al-Ikhlas together are the Semitic monotheistic tradition\'s two clearest and most repeated declarations of divine unity.' },
+    { label: 'Mandukya Upanishad — turiya as the one ground of the three states of consciousness', textId: 'mandukya-upanishad', note: 'The Mandukya\'s turiya — the fourth state that underlies and unifies waking, dreaming, and deep sleep — is the Upanishadic version of the Shema\'s theological insight. The Shema says: what you encounter in all your experiences is ONE. Deuteronomy 6:7 commands speaking the Shema "when you lie down and when you rise up" — covering the full range of daily consciousness. The Mandukya says: the consciousness that underlies all three states is ONE. Both texts are making unity-claims that span the full range of human experience.' },
+  ],
+  translations: [
+    { label: 'NRSV', lang: 'en', default: true },
+    { label: 'KJV', lang: 'en' },
+    { label: 'Hebrew (BHS)', lang: 'heb' },
+  ],
+  sections: [
+    {
+      heading: 'The Shema: Divine Unity (6:4–5)',
+      verses: [
+        {
+          ref: '6:4–5',
+          text: 'Hear, O Israel: The LORD is our God, the LORD alone. You shall love the LORD your God with all your heart, and with all your soul, and with all your might.',
+          textVersions: {
+            nrsv: 'Hear, O Israel: The LORD is our God, the LORD alone.',
+            kjv: 'Hear, O Israel: The LORD our God is one LORD.',
+            hebrew: 'שְׁמַ֖ע יִשְׂרָאֵ֑ל יְהוָ֥ה אֱלֹהֵ֖ינוּ יְהוָ֥ה אֶחָֽד׃',
+          },
+          entities: [
+            { word: 'The LORD is our God, the LORD alone', node: 'monotheism', type: 'concept',
+              note: 'Hebrew: Shema Yisrael YHWH Eloheinu YHWH Echad. Six words in Hebrew. Three distinct readings have been simultaneously operative in Jewish tradition: (1) ontological unity — there is only one God; (2) exclusive loyalty — among all gods, only YHWH is ours; (3) eschatological hope — one day the LORD will be recognized as one by all peoples (Zechariah 14:9). The word echad (one) — as opposed to yachid (solitary) — allows for unity that contains internal differentiation, which is why Kabbalistic tradition reads the Shema as encoding the sefirot: the divine is one but not simple.',
+              parallels: [
+                { label: 'Chandogya 6.2 — "one only, without a second"', textId: 'chandogya-621', note: 'Chandogya\'s ekam eva advitiyam ("one only, without a second") and the Shema\'s echad are the Sanskrit and Hebrew words for "one" deployed in the two great ancient assertions of divine/ultimate unity. The Chandogya is more philosophically precise (it explicitly negates any second); the Shema is more liturgically powerful. Together they form the Semitic and Indic traditions\' most fundamental ontological claims: the ultimate is the single ground from which all multiplicity arises.' },
+                { label: 'Quran — "Say: He is God, the One (Ahad)"', textId: 'quran-fatiha-nur', note: 'The Arabic ahad and Hebrew echad share the same Proto-Semitic root (ʾḥd), making this the single most direct linguistic-theological connection between Judaism and Islam. When the Quran says "Allahu Ahad" and Deuteronomy says "YHWH Echad," they are using the same word for the same theological claim — a linguistic fact noted by Jewish-Muslim dialogue for centuries.' },
+                { label: 'Tao Te Ching — "the Tao gives birth to One; One gives birth to two"', textId: 'tao-te-ching-1', note: 'Tao 42: "The Tao gives birth to One. One gives birth to two. Two gives birth to three. Three gives birth to ten thousand things." The Tao\'s primordial ONE from which all multiplicity unfolds and the Shema\'s affirmation that the divine is ONE despite the apparent multiplicity of the world are two angles on the same insight. Laozi describes the cosmological process (unity → multiplicity); the Shema makes a liturgical declaration (amid multiplicity, assert unity).' },
+              ]
+            },
+            { word: 'love the LORD your God with all your heart, and with all your soul, and with all your might', node: 'divine-love', type: 'concept',
+              note: 'The immediate consequence of the unity-declaration is the love-command — the theological logic is precise: if the LORD is ONE, the appropriate response is total, undivided love. The three-fold "all" — all your heart (lev), all your soul (nefesh), all your might (meod) — covers the totality of the human person. Jesus quotes this in Mark 12:29–30 as the greatest commandment.',
+              parallels: [
+                { label: '1 John 4 — "We love because he first loved us"', textId: '1-john-4', note: 'Deuteronomy 6:5\'s love-command and 1 John 4\'s "God is love" are the two poles of the NT-OT love-theology. The Shema commands love as the response to divine unity; 1 John grounds the capacity for love in the prior reality of divine love: "we love because he first loved us." The command becomes possible because the love is already there, flowing from the divine source.' },
+              ]
+            },
+          ]
+        },
+      ]
+    },
+    {
+      heading: 'The Mezuzah Principle: Sacred Inscription on Every Threshold (6:6–9)',
+      verses: [
+        {
+          ref: '6:6–9',
+          text: 'Keep these words that I am commanding you today in your heart. Recite them to your children and talk about them when you are at home and when you are away, when you lie down and when you rise. Bind them as a sign on your hand, fix them as an emblem on your forehead, and write them on the doorposts of your house and on your gates.',
+          textVersions: {
+            nrsv: 'when you are at home and when you are away, when you lie down and when you rise.',
+            kjv: 'when thou sittest in thine house, and when thou walkest by the way, and when thou liest down, and when thou risest up.',
+            hebrew: 'וּדְבַרְתָּ֣ם בְּשִׁבְתְּךָ֤ בְּבֵיתֶ֙ךָ֙ וּבְלֶכְתְּךָ֣ בַדֶּ֔רֶךְ וּֽבְשָׁכְבְּךָ֖ וּבְקוּמֶֽךָ׃',
+          },
+          entities: [
+            { word: 'when you lie down and when you rise', node: 'sacred-practice', type: 'concept',
+              note: 'The four pairs — home/away, lying down/rising — are a merism covering the totality of daily experience. The Shema is to permeate not a special sacred time or place but every moment of ordinary life. The mezuzah (the Shema written on the doorpost) is the physical embodiment of this theology: the declaration of divine unity inscribed on every threshold, reminding all who cross it that the One is present here.',
+              parallels: [
+                { label: 'Isha Upanishad — "all this — whatever moves — is pervaded by the Lord"', textId: 'isha-upanishad', note: 'Isha 1: "All this — whatever moves in this moving world — is to be pervaded by the Lord." The Shema commands speaking the LORD\'s unity in every state; the Isha teaches that every movement is pervaded by the Lord. Both insist on total divine immanence — not a God visited in the temple but a God present in every act, every transition, every threshold of ordinary life.' },
+              ]
+            },
+          ]
+        },
+      ]
+    },
+  ]
+};
+
+SCRIPTURE_TEXTS['daniel-7'] = {
+  title: 'Daniel 7 — The Ancient of Days and the Son of Man',
+  shortTitle: 'Daniel 7',
+  tradition: 'Christianity',
+  date: 'c. 167–164 BCE',
+  intro: 'Daniel 7 is the most cosmologically ambitious vision in the Hebrew Bible — and the single most influential text for the development of apocalyptic theology across Judaism, Christianity, and Islam. Four great beasts rise from the sea, the Ancient of Days (Atik Yomin) takes his throne on a fiery chariot, the beasts are judged, and then "one like a Son of Man" (kebar enash) comes on the clouds of heaven and is given dominion over all peoples for eternity. This Son of Man figure — human in form, divine in authority — became the single most debated figure in Second Temple Judaism and early Christianity. Jesus\'s self-identification as "the Son of Man" in the Synoptics (used over 80 times) is a deliberate engagement with Daniel 7. The Ancient of Days on his fiery throne connects directly to Ezekiel 1\'s Merkabah vision and to Kabbalistic Throne mysticism. Daniel 7 is where Jewish apocalypticism, Christian Christology, Islamic eschatology, and comparative mythology all converge.',
+  crossTradition: [
+    { label: 'Ezekiel 1 — the Merkabah throne vision', textId: 'ezekiel-1', note: 'Ezekiel 1\'s chariot-throne vision and Daniel 7\'s Ancient of Days on the fiery throne are the two foundational texts of Jewish throne mysticism (Merkabah/Hekhalot literature). Ezekiel sees it from below (the chariot descending); Daniel sees it in the heavenly court (the Ancient of Days taking his seat). Together they formed the textual basis for centuries of Jewish mystical practice: the ascent to the divine throne-room through meditative practice.' },
+    { label: 'Book of Enoch — the Head of Days and the Son of Man', textId: 'book-of-enoch', note: 'The Parables of Enoch (1 Enoch 46–48) directly reads Daniel 7: Enoch sees "one who had a head of days" and beside him "one whose face had the appearance of a man." The Book of Enoch identifies the Son of Man as the pre-existent Elect One / Messiah who will judge the wicked kings. This identification — Son of Man = pre-existent Messiah = divine judge — is the theological background against which Jesus\'s own Son of Man sayings must be read.' },
+    { label: 'Purusha Sukta — the cosmic Man as the totality of existence', textId: 'purusha-sukta', note: 'The Rig Veda\'s Purusha — "a thousand heads, a thousand eyes, a thousand feet" — simultaneously individual and cosmic, the primordial human from whose body the universe is made, and Daniel\'s Son of Man who receives cosmic dominion are two ancient formulations of the "cosmic human" archetype: a figure whose form is human but whose scope is universal. Both texts explore the intuition that the human form is somehow the image or instantiation of the infinite.' },
+  ],
+  translations: [
+    { label: 'NRSV', lang: 'en', default: true },
+    { label: 'KJV', lang: 'en' },
+    { label: 'Aramaic (BHS)', lang: 'arc' },
+  ],
+  sections: [
+    {
+      heading: 'The Four Beasts and the Ancient of Days (7:2–10)',
+      verses: [
+        {
+          ref: '7:2–8',
+          text: 'I, Daniel, saw in my vision by night the four winds of heaven stirring up the great sea, and four great beasts came up out of the sea, different from one another. The first was like a lion and had eagles\' wings. Then, as I watched, its wings were plucked off, and it was lifted up from the ground and made to stand on two feet like a human being; and a human mind was given to it. Another beast appeared, a second one, that looked like a bear. [...] After this, as I watched, another appeared, like a leopard, with four wings of a bird on its back; and the beast had four heads; and dominion was given to it. After this I saw in the visions by night a fourth beast, terrifying and dreadful and exceedingly strong. It had great iron teeth and was devouring, breaking in pieces, and stamping what was left with its feet.',
+          textVersions: {
+            nrsv: 'four great beasts came up out of the sea, different from one another.',
+            kjv: 'four great beasts came up from the sea, diverse one from another.',
+            aramaic: 'אַרְבַּ֤ע חֵיוָן֙ רַבְרְבָ֔ן סָלְקָ֖ן מִן־יַמָּ֑א שָׁנְיָ֖ן דָּ֥א מִן־דָּֽא׃',
+          },
+          entities: [
+            { word: 'four great beasts came up out of the sea', node: 'apocalypse', type: 'concept',
+              note: 'The four beasts from the sea are the central image of apocalyptic literature: chaos (the sea, tehom) producing monstrous political empires (Babylon, Media, Persia, Greece/Seleucid). The sea in Hebrew cosmology is the domain of pre-creation chaos — the tehom of Genesis 1:2 — so beasts that arise from it are creatures of anti-creation, powers that reverse the divine ordering of the world.',
+              parallels: [
+                { label: 'Nasadiya Sukta — primordial darkness and undifferentiated chaos before order', textId: 'nasadiya-sukta', note: 'The Nasadiya\'s primordial state — "darkness within darkness, all was undifferentiated fluid" — and Daniel\'s sea from which the beasts arise are two ancient versions of the mythological chaos that precedes and threatens order. The Nasadiya is cosmogonic (how did order arise from primordial chaos?); Daniel is apocalyptic (how does order survive the threat of chaos?). Both recognize the same primordial reality: beneath the ordered world lies a chaos that periodically erupts in the form of monstrous powers, and that requires divine intervention to overcome.' },
+              ]
+            },
+          ]
+        },
+        {
+          ref: '7:9–10',
+          text: 'As I watched, thrones were set in place, and an Ancient One took his throne, his clothing was white as snow, and the hair of his head like pure wool; his throne was fiery flames, and its wheels were burning fire. A stream of fire issued and flowed out from his presence. A thousand thousands served him, and ten thousand times ten thousand stood attending him. The court sat in judgment, and the books were opened.',
+          textVersions: {
+            nrsv: 'An Ancient One took his throne, his clothing was white as snow... his throne was fiery flames, and its wheels were burning fire.',
+            kjv: 'the Ancient of days did sit, whose garment was white as snow, and the hair of his head like the pure wool: his throne was like the fiery flame.',
+            aramaic: 'עַתִּ֤יק יוֹמִין֙ יְתִ֔ב לְבוּשֵׁ֣הּ כִּתְלַ֣ג חִוָּ֔ר וּשְׂעַ֥ר רֵאשֵׁ֖הּ כַּעֲמַ֣ר נְקֵ֑א כָּרְסְיֵהּ֙ שְׁבִיבִ֣ין דִּי־נ֔וּר',
+          },
+          entities: [
+            { word: 'the Ancient of Days', node: 'divine-nature', type: 'concept',
+              note: 'Aramaic: Atik Yomin — the one advanced in days. The white hair signals primordial antiquity — this is the divine who precedes all time. The flaming throne with burning wheels is borrowed directly from Ezekiel 1\'s Merkabah vision and became the basis for the entire tradition of Jewish throne mysticism. The Ancient of Days is the Hebrew Bible\'s most powerful image of divine sovereignty over history: the empires are temporary; the Ancient of Days is eternal.',
+              parallels: [
+                { label: 'Ezekiel 1 — the Merkabah: fiery throne-chariot of the divine', textId: 'ezekiel-1', note: 'Ezekiel 1:26–28: "above the firmament... was something like a throne... and seated above the likeness of a throne was something that seemed like a human form... gleaming amber, something like fire." Daniel 7:9: the Ancient of Days on his fiery throne with burning wheels. Both visions describe the same divine throne-room with fire, brightness, and the human-like figure as primary categories. The Merkabah tradition that develops from these two passages is the most esoteric strand of ancient Jewish mysticism and the direct ancestor of Kabbalistic contemplation.' },
+                { label: '3 Enoch — the throne of glory and Metatron seated beside it', textId: '3-enoch-metatron', note: '3 Enoch\'s Rabbi Ishmael ascends to the divine throne-room and encounters Metatron seated on a throne like the throne of glory. This is a direct elaboration of Daniel 7\'s throne-room: the Ancient of Days is the supreme divine; Metatron\'s throne beside the divine throne is the apocalyptic tradition\'s most extreme statement of divine-human proximity. The "two thrones" setup in Daniel 7 (one for the Ancient of Days and implicitly one for the Son of Man) is the scriptural basis for Metatron\'s enthronement in 3 Enoch.' },
+              ]
+            },
+          ]
+        },
+      ]
+    },
+    {
+      heading: 'The Son of Man Given Everlasting Dominion (7:13–14)',
+      verses: [
+        {
+          ref: '7:13–14',
+          text: 'As I watched in the night visions, I saw one like a human being coming with the clouds of heaven. And he came to the Ancient One and was presented before him. To him was given dominion and glory and kingship, that all peoples, nations, and languages should serve him. His dominion is an everlasting dominion that shall not pass away, and his kingship is one that shall never be destroyed.',
+          textVersions: {
+            nrsv: 'I saw one like a human being coming with the clouds of heaven... To him was given dominion and glory and kingship, that all peoples, nations, and languages should serve him.',
+            kjv: 'one like the Son of man came with the clouds of heaven... there was given him dominion, and glory, and a kingdom, that all people, nations, and languages, should serve him.',
+            aramaic: 'וַאֲרוּ֙ עִם־עֲנָנֵ֣י שְׁמַיָּ֔א כְּבַ֥ר אֱנָ֖שׁ אָתֵ֣ה הֲוָ֑ה... וְלֵ֤הּ יְהִיב֙ שָׁלְטָ֣ן וִיקָ֔ר וּמַלְכ֕וּ',
+          },
+          entities: [
+            { word: 'one like a human being coming with the clouds of heaven', node: 'son-of-man', type: 'concept',
+              note: 'Aramaic: kebar enash — one like a son of man / one like a human being. The "like" is crucial: human in form but coming "with the clouds of heaven," the biblical idiom for divine presence. The human form coming on divine clouds is the paradox that the NT will identify with Christ: fully human in appearance, divine in authority and origin.',
+              parallels: [
+                { label: 'Philippians 2 — "God highly exalted him and gave him the name above every name"', textId: 'philippians-2', note: 'Philippians 2:9–11: "God also highly exalted him and gave him the name that is above every name, so that at the name of Jesus every knee should bend." Daniel 7:14: "To him was given dominion and glory and kingship, that all peoples, nations, and languages should serve him." The structural parallel is exact: a figure human in form receives divine authority and universal dominion. Early Christian identification of Jesus with Daniel\'s Son of Man made Philippians 2\'s exaltation language the NT enactment of Daniel 7\'s vision.' },
+                { label: 'Purusha Sukta — the cosmic Man whose body is the universe', textId: 'purusha-sukta', note: 'Purusha Sukta: the Purusha has "a thousand heads, a thousand eyes, a thousand feet... he pervades the earth on all sides." Daniel\'s Son of Man who receives dominion over "all peoples, nations, and languages" is the Hebrew apocalyptic version of the same "cosmic human" archetype: human in form, universal in scope. The Vedic Purusha is the universe in human form; the Son of Man is the human who receives sovereignty over the universe.' },
+              ]
+            },
+          ]
+        },
+      ]
+    },
+  ]
+};
+
+SCRIPTURE_TEXTS['book-of-jubilees'] = {
+  title: 'Book of Jubilees — Heavenly Tablets',
+  shortTitle: 'Book of Jubilees',
+  tradition: 'Christianity',
+  date: 'c. 160–150 BCE',
+  intro: 'The Book of Jubilees — fully canonical in Ethiopian Orthodox Christianity and the Beta Israel (Ethiopian Jewish) tradition, and represented by 15+ copies at Qumran — is a retelling of Genesis 1 through Exodus 12 organized by jubilee-periods (49-year cycles). Its most distinctive theological claim is the existence of the "Heavenly Tablets" (luchot hashamayim): a pre-existing celestial record that contains the entire history of the world before it happens, the complete law before Sinai, and the names of all the righteous. Jubilees is also the text most responsible for systematizing angelology in the Second Temple period: it introduces Mastema (parallel to Satan), describes angels teaching humanity the arts and sciences, and treats the 364-day solar calendar as a cosmic-theological matter — using the wrong calendar is a cosmic error. The Heavenly Tablets connect to the Quran\'s Lawh Mahfuz (Preserved Tablet), Sefer Yetzirah\'s blueprint of creation, and the Platonic Ideas as divine originals.',
+  crossTradition: [
+    { label: 'Sefer Yetzirah — creation through the 32 paths of divine wisdom', textId: 'sefer-yetzirah', note: 'Sefer Yetzirah\'s 32 paths of wisdom (10 sefirot + 22 letters) through which God created the world and Jubilees\' Heavenly Tablets on which all of history is inscribed before it occurs are two expressions of the same theological conviction: the world is not an improvisation but the execution of a pre-existing divine plan encoded in a celestial text. Both are developing a theology of the cosmos as divine text — reality as the reading-out of what God has written.' },
+    { label: 'Book of Enoch — the Watchers, the Flood, and the pre-existing names', textId: 'book-of-enoch', note: 'Jubilees and 1 Enoch are the two most important Second Temple Jewish texts outside the Hebrew Bible canon and are in constant dialogue. Both describe the Watchers (fallen angels who taught humanity forbidden knowledge), the pre-Flood corruption, and the Heavenly Tablets motif. Jubilees focuses on law and calendar; Enoch focuses on cosmological secrets and the Son of Man. Together they constitute the theological world that produced the NT.' },
+    { label: 'Quran — the "Preserved Tablet" (Lawh Mahfuz) as celestial original of revelation', textId: 'quran-fatiha-nur', note: 'Quran 85:21–22: "But this is an honored Qur\'an inscribed in a Preserved Tablet." The Islamic Lawh Mahfuz on which the Quran is inscribed in the celestial realm before its revelation to Muhammad is the direct heir of Jubilees\' Heavenly Tablets tradition. Both describe a celestial written text of which the earthly revealed text is the copy. The Heavenly Tablets tradition in Second Temple Judaism → Jubilees → Dead Sea Scrolls → early Islam is one of the clearest lines of theological transmission in Abrahamic religious history.' },
+  ],
+  translations: [
+    { label: 'Wintermute (OTP)', lang: 'en', default: true },
+    { label: 'Ethiopic (Ge\'ez)', lang: 'gez' },
+  ],
+  sections: [
+    {
+      heading: 'The Heavenly Tablets and the Pre-Existing Law (3:10; 4:17–19)',
+      verses: [
+        {
+          ref: '3:10; 4:17–19',
+          text: '"For this reason it is prescribed in the heavenly tablets that all who know the judgment of the law... The Angel of the Presence spoke to Moses according to the Lord\'s word, saying: Write the complete history of the creation, how in six days the Lord God completed all his works." [...] Enoch was the first among men that are born on earth who learnt writing and knowledge and wisdom and who wrote down the signs of heaven according to the order of their months in a book, that men might know the seasons of the years according to the order of their separate months. And he was the first to write a testimony, and he testified to the sons of men among the generations of the earth, and recounted the weeks of the jubilees.',
+          textVersions: {
+            wintermute: '"For this reason it is prescribed in the heavenly tablets."',
+          },
+          entities: [
+            { word: 'the heavenly tablets', node: 'divine-revelation', type: 'concept',
+              note: 'The luchot hashamayim (Heavenly Tablets) in Jubilees are the celestial pre-text of which Torah is the terrestrial copy. Everything written in the Heavenly Tablets is true before it happens in history. This concept of a celestial book in which the world is pre-written appears across traditions: Psalm 139:16 ("in your book were written all the days that were formed for me"), the Quran\'s Umm al-Kitab, the Zoroastrian concept of the divine plan (daena), and the Platonic Ideas as divine blueprints. The Heavenly Tablets is the apocalyptic Jewish form of the ancient conviction that earthly reality is the copy of a celestial original.',
+              parallels: [
+                { label: 'Sefer Yetzirah — the 32 paths of wisdom as the blueprint of creation', textId: 'sefer-yetzirah', note: 'Sefer Yetzirah\'s 32 paths of wisdom (10 sefirot + 22 Hebrew letters) are the divine blueprint of which creation is the actualization. Jubilees\' Heavenly Tablets are the written record of all that will occur, inscribed in the celestial realm before history begins. Both are developing a theology of the cosmos as divine writing.' },
+                { label: 'Quran — the "Mother of the Book" (Umm al-Kitab) in God\'s presence', textId: 'quran-fatiha-nur', note: 'Quran 43:4: "It is in the Mother of the Book with Us, lofty and full of wisdom." The Islamic Lawh Mahfuz and Jubilees\' Heavenly Tablets describe the same thing: a celestial written text that is the pre-existing original of which the earthly revealed text is the copy. The Heavenly Tablets tradition → Dead Sea Scrolls → early Islam is one of the clearest lines of theological transmission in Abrahamic history.' },
+              ]
+            },
+          ]
+        },
+      ]
+    },
+    {
+      heading: 'The Solar Calendar as Cosmic Law (6:29–38)',
+      verses: [
+        {
+          ref: '6:29–38',
+          text: '"And you, Moses, command the children of Israel to observe the years according to this reckoning — three hundred and sixty-four days — and these will constitute a complete year, and they will not disturb its time from its days and from its feasts; for everything will fall out in them according to their testimony, and they will not leave out any day nor disturb any feasts. [...] For I know and from henceforth will I declare it unto thee, and it is not of my own devising; for the book lies written before me, and on the heavenly tablets the division of days is ordained."',
+          textVersions: {
+            wintermute: '"on the heavenly tablets the division of days is ordained."',
+          },
+          entities: [
+            { word: 'on the heavenly tablets the division of days is ordained', node: 'sacred-time', type: 'concept',
+              note: 'Jubilees\' insistence that time itself is a theological structure — that the 364-day solar calendar is inscribed in the Heavenly Tablets and is therefore as binding as the moral law — is unique in ancient literature. Time is not a neutral container; time has a divinely ordained structure, and deviating from it is a cosmic transgression. The same conviction underlies the liturgical calendar systems of Zoroastrianism, the Hindu panchanga, the Mayan Long Count, and the Christian liturgical year.',
+              parallels: [
+                { label: 'Mandukya Upanishad — OM as the structure of all time', textId: 'mandukya-upanishad', note: 'The Mandukya\'s OM — which encompasses past, present, and future (and what is beyond time) — and Jubilees\' Heavenly Tablets that prescribe the division of all time are two ways of claiming that time is a theological category. The Mandukya says: OM is time (all of it); Jubilees says: the proper structure of time is written in the divine tablets. Both insist that time is not the neutral medium of events but is itself meaningful, structured, and sacred.' },
+              ]
+            },
+          ]
+        },
+      ]
+    },
+  ]
+};
+
+SCRIPTURE_TEXTS['3-enoch-metatron'] = {
+  title: '3 Enoch — Metatron, the Lesser YHWH',
+  shortTitle: '3 Enoch / Metatron',
+  tradition: 'Christianity',
+  date: 'c. 5th–6th century CE (traditions much older)',
+  intro: '3 Enoch (Sefer Hekhalot, "Book of the Palaces") describes Rabbi Ishmael\'s ascent through the seven heavenly palaces to the divine throne, where he is taught by the angel Metatron — the highest of all angels, the "Prince of the Divine Presence," identified as the transformed Enoch (Genesis 5:24: "he walked with God and was not, for God took him"). Metatron\'s most extraordinary attribute is his name: he is called YHWH HaKatan — "the Lesser YHWH" — because God placed his own name on Metatron (3 Enoch 12:5: "for my Name is in him"). This claim — that a human being was so completely transformed by nearness to God that he became a divine being bearing the divine name — is the most radical statement of human divinization (theosis) in ancient Jewish literature. It resonates powerfully with Christian Logos theology (the pre-existent divine figure), Sufi concepts of the Perfect Man (al-Insan al-Kamil), the Gnostic Anthropos (primordial divine human), and Hindu avatar theology. 3 Enoch is the Jewish mystical tradition\'s most explicit bridge between human and divine.',
+  crossTradition: [
+    { label: 'John 1 — "the Word became flesh" / "the Word was God"', textId: 'john-1', note: 'John 1:14: "the Word became flesh and lived among us." 3 Enoch: flesh became the Word (the human Enoch became Metatron who bears the divine name YHWH). The directions are opposite but the theological claim is the same: the divine and the human are not separated by an unbridgeable gulf. In John, the divine descends into the human (incarnation); in 3 Enoch, the human ascends into the divine (divinization). Christianity emphasizes incarnation; Jewish mysticism emphasizes ascent. Both presuppose the same conviction: the divine and the human can become one.' },
+    { label: 'Ibn Arabi — al-Insan al-Kamil: the Perfect Man as the mirror of God', textId: 'ibn-arabi-fusus', note: 'Ibn Arabi\'s al-Insan al-Kamil (the Perfect Man) — the spiritually realized individual who has actualized all the divine names and become the complete mirror of the divine — is the Islamic Sufi parallel to Metatron. Both describe the highest possible human attainment: the human being who, through proximity to and alignment with the divine, becomes the most complete terrestrial reflection of divine reality. For Ibn Arabi, Muhammad is the paradigmatic Perfect Man; for 3 Enoch, Enoch/Metatron is the paradigmatic divine human.' },
+    { label: 'Colossians 1 — "in him all the fullness of God was pleased to dwell"', textId: 'colossians-1', note: 'Colossians 1:19: "in him all the fullness of God was pleased to dwell." 3 Enoch: God placed his own name YHWH on Metatron because "my Name is in him." Both texts make the same claim about a divine-human figure: the fullness/name of God is present in a being who also has a human identity (Enoch/Christ). The theological controversy generated by both claims is identical: the Arian controversy about whether Christ is truly divine, and the rabbinic "two powers in heaven" heresy about Metatron.' },
+  ],
+  translations: [
+    { label: 'Alexander (OTP)', lang: 'en', default: true },
+    { label: 'Hebrew', lang: 'heb' },
+  ],
+  sections: [
+    {
+      heading: 'Enoch\'s Transformation into Metatron (Chapters 3–4)',
+      verses: [
+        {
+          ref: '3 En. 3–4',
+          text: 'Rabbi Ishmael said: When I ascended on high to behold the vision of the Merkabah and had entered the six halls, one within the other, as soon as I reached the door of the seventh hall I stood still in prayer before the Holy One, blessed be he... In that moment Metatron, Prince of the Divine Presence, came and welcomed me with great joy... Metatron said to me: "I am Enoch, the son of Jared. My name is Metatron the angel. When the generation of the Flood sinned and turned to evil deeds, and said to God: Depart from us, for we do not desire the knowledge of thy ways — then the Holy One, blessed be he, brought me up from their midst to be a witness against them in the high heavens."',
+          textVersions: {
+            alexander: 'Metatron said to me: "I am Enoch, the son of Jared."',
+          },
+          entities: [
+            { word: 'I am Enoch, the son of Jared', node: 'divine-human', type: 'concept',
+              note: 'The revelation that the highest angel — the Prince of the Divine Presence, bearer of the divine name — is the transformed Enoch, a human being from Genesis 5:24, is the most theologically explosive moment in 3 Enoch. The continuity between Enoch-the-human and Metatron-the-divine-being is preserved: Metatron declares his human identity. This is theosis (divinization) in its most radical form: the human being who walked with God has been so completely transformed by divine proximity that he has become functionally divine — bearing the divine name, sitting on the throne of glory, serving as mediator between the infinite divine and all other beings.',
+              parallels: [
+                { label: 'John 1 — "the Word became flesh": incarnation as the inverse trajectory', textId: 'john-1', note: 'John 1:14: "the Word became flesh." 3 Enoch: flesh became the Word (Enoch became Metatron the Lesser YHWH). Christianity emphasizes descent (divine becoming human); Jewish merkabah mysticism emphasizes ascent (human becoming divine). Both trajectories presuppose the same theological conviction: the divine and the human are not permanently separated. The two movements together form a complete circuit: divine descends into flesh (incarnation), flesh ascends into divine (divinization/theosis) — and the NT itself contains both (incarnation in John 1; theosis in 2 Peter 1:4: "you may become participants of the divine nature").' },
+                { label: 'Ibn Arabi — the Perfect Man as the complete mirror of all divine names', textId: 'ibn-arabi-fusus', note: 'Ibn Arabi\'s Perfect Man actualizes all the divine names and becomes the most complete mirror of the divine. Metatron bears the divine name YHWH and is the most complete mediator between God and all other beings. Both describe the same attainment: the human being who, through proximity to the divine, becomes the most adequate terrestrial reflection of divine reality — and therefore the point of contact through which the divine and the human world communicate.' },
+              ]
+            },
+          ]
+        },
+      ]
+    },
+    {
+      heading: 'Metatron Enthroned: The Lesser YHWH (Chapters 10–12)',
+      verses: [
+        {
+          ref: '3 En. 10:1–3; 12:5',
+          text: 'The Holy One, blessed be he, made for me a throne like the throne of glory. And he spread over me a curtain of splendour and brilliant appearance... and he called me by the name "the Lesser YHWH" in the presence of all his heavenly household, as it is written: "For my Name is in him." [...] Furthermore, the Holy One, blessed be he, made for me a robe of glory, in which all kinds of lights were set, and he put it on me; and he made me a crown of royalty... and he fixed it on my head. And he called me "the Lesser YHWH".',
+          textVersions: {
+            alexander: 'He called me by the name "the Lesser YHWH" in the presence of all his heavenly household.',
+          },
+          entities: [
+            { word: 'the Lesser YHWH', node: 'divine-human', type: 'concept',
+              note: 'YHWH HaKatan — the Lesser YHWH. The justification is Exodus 23:21: "for my Name is in him." God\'s name (YHWH) is in Metatron, so Metatron legitimately bears the Tetragrammaton — qualified as "lesser" to preserve divine uniqueness. This claim was condemned in rabbinic Judaism as the "two powers in heaven" heresy — yet it survived in 3 Enoch. It is the Jewish mystical tradition\'s most extreme statement of human divinization and the closest Jewish parallel to Christian Logos Christology.',
+              parallels: [
+                { label: 'Colossians 1 — "the image of the invisible God... in him the fullness of God was pleased to dwell"', textId: 'colossians-1', note: 'Colossians 1:15, 19: Christ is "the image of the invisible God" and "in him all the fullness of God was pleased to dwell." 3 Enoch: Metatron bears the divine name YHWH because "my Name is in him." Both texts make the same claim: the fullness/name of the divine is present in a figure who also has human identity (Enoch/Christ). The theological controversy generated by both — Arian controversy in Christianity, "two powers" heresy in Judaism — is identical: how can divine fullness/name be present in a non-supreme being without compromising divine unity?' },
+                { label: 'Exodus 3 — "I AM WHO I AM": the divine name as transferable presence', textId: 'exodus-3', note: 'In Exodus 3, Moses carries the divine name to the Israelites as a proclamation: "I AM has sent me." In 3 Enoch, the divine name is given to Metatron as his own identity. Both texts describe the divine name as shareable, transferable — as something that can be carried by a human or human-like figure. Moses carries the name rhetorically (announcing it to the people); Metatron carries it ontologically (inscribed on him). The two texts together reveal the theological trajectory: from name-as-proclamation (Exodus) to name-as-identity (3 Enoch).' },
+              ]
+            },
+          ]
+        },
+      ]
+    },
+  ]
+};
