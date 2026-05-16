@@ -23,7 +23,7 @@ syncretic-edges:
   - target: "horus"
     type: "ancient-identification"
     source: "At Kom Ombo, Sobek and Horus the Elder share temple dedication; theological identification of Sobek with Horus's regal aspect"
-status: "metadata"
+status: "partial"
 refs:
   - title: "Le crocodile et son culte dans l'Égypte ancienne"
     author: "Brovarski, Edward; el-Sayed, Ramadan"
@@ -43,7 +43,19 @@ refs:
     publisher: "Brill"
     type: "primary-translation-with-commentary"
     tier: 1
-tags: [deity, egyptian, crocodile, fayum, kom-ombo, pharaonic, syncretism]
+  - title: "The Complete Gods and Goddesses of Ancient Egypt"
+    author: "Wilkinson, Richard H."
+    year: 2003
+    publisher: "Thames & Hudson"
+    type: "reference"
+    tier: 1
+  - title: "Egypt and the Egyptians"
+    author: "Brewer, Douglas J. and Teeter, Emily"
+    year: 1999
+    publisher: "Cambridge University Press"
+    type: "monograph"
+    tier: 2
+tags: [deity, egyptian, crocodile, fayum, kom-ombo, pharaonic, syncretism, solar, nile, papyri]
 ---
 
 # Sobek
@@ -71,6 +83,36 @@ Sobek is principally a **cult-figure** rather than a narrative-figure: he has co
 - **Atef-crown** (twin plumes), **solar disc** on the head (especially in Sobek-Ra form), or simply a uraeus
 - **Ankh and *was*-scepter**
 - The Fayum temple-pools kept living crocodiles as cult-images, adorned with gold and gem-encrusted jewelry — described in detail by Herodotus and corroborated archaeologically by mummified gold-adorned crocodiles from the Fayum
+
+## Sobek-Ra syncretism: the solar crocodile
+
+In the **Middle Kingdom Fayum cult** (c. 1991–1650 BCE), Sobek undergoes one of Egyptian theology's most conceptually striking syncretic fusions: he is merged with [[ra]] to produce **Sobek-Ra**, a solar-crocodile composite deity. The fusion produces an unusual theological image: the **sun manifest as a river crocodile** — the terrifying primal animal of the Nile elevated to embody solar creative power rising from the primordial waters of [[nun]].
+
+This Sobek-Ra identification is recorded in Middle Kingdom hymns from the Fayum region and in the iconographic program of the Fayum temple at Shedet (Crocodilopolis). The logic: Sobek is master of the primordial waters (the Nile, which rises from the deep); [[ra]] rises each morning from the primordial ocean (*Nun*) to bring light and creation. Both are acts of emergence from the deep — the crocodile slides from the water each morning just as the sun rises. The solar-crocodile is a theologically coherent, if iconographically startling, fusion (Hornung 1982).
+
+The Sobek-Ra formula makes Sobek one of the most unusual solar-deity expressions in Egyptian theology — alongside Amun-Ra (the hidden-air-god as solar-creator) and Khepri (the scarab beetle as the rising sun). All three use a non-human form to capture a specific quality of solar emergence.
+
+## MASSIVE WIN: Sobek's Fayum and the earliest Christian manuscripts
+
+The **Fayum oasis** is one of history's most consequential intersections of sacred geography and textual accident. The oasis was created by artificial irrigation in the Middle Kingdom — it is Sobek's sacred landscape, the territory of the crocodile-god whose Nile-water domain was engineered into farmland by pharaonic hydraulic works. The Ptolemies transformed it further, renaming its capital from Shedet to Arsinoe and populating it with Greek settlers, making it a culturally mixed Egyptian-Greek-Jewish zone.
+
+The consequential accident: **the Fayum papyri**. The dry desert conditions of the Fayum oasis created one of the world's richest archaeological papyrus deposits. Papyri discarded in the ancient rubbish heaps of Fayum towns (especially Oxyrhynchus, Tebtunis, and Arsinoe) survived for two millennia because of Sobek's sacred desert. Among the recovered papyri:
+
+- **P52** (Rylands Library Papyrus P52) — the **oldest surviving fragment of any New Testament text** (John 18:31–33, 37–38, dated c. 125–150 CE), recovered from the Fayum region and first identified in 1934. The crocodile-god's sacred territory holds the oldest piece of the Gospel of [[phase-3-020-gospel-of-john]].
+- **P45, P46** — among the earliest substantial NT manuscripts, also recovered from the Fayum region. P46 (c. 175–225 CE) contains most of Paul's letters and is among the earliest large Christian codices.
+- The **Oxyrhynchus Papyri** (the largest papyrus cache in the world, 500,000+ fragments) — partially from Fayum-adjacent territory — have produced dozens of early NT fragments.
+
+The theological edge here is not doctrinal — Sobek did not "influence" Christianity. The connection is geographic-providential: **Sobek's sacred territory, preserved by his sacred dry desert, became the accidental archive of the earliest Christian textual witnesses**. The crocodile-god's landscape preserved the faith's founding documents (Wilkinson 2003; Brewer and Teeter 1999).
+
+Wire: [[phase-3-020-gospel-of-john]], [[tradition-christianity-canonical]].
+
+## Healing, fertility, and the Nile flood
+
+Sobek's primary domain is the **Nile flood** — the annual inundation that covers the Fayum and Nile valley with the silt that makes Egyptian agriculture possible. This makes Sobek a deity of **abundance and life**, as well as fear: the same crocodile that kills humans also inhabits the river that feeds the entire civilization.
+
+This dual quality — life-giver and killer, the same force — is characteristic of Nile religion generally (compare [[osiris]], the death-and-resurrection deity whose body is also the flood's fertilizing gift). Sobek worship at Fayum temples included agricultural fertility rites tied to the flood-cycle. The temple-crocodiles' well-being was understood as predictive of the flood's strength: a healthy, active sacred crocodile augured a good inundation year.
+
+Sobek is also invoked in the [[phase-1-002-pyramid-texts]] and [[phase-1-009-coffin-texts]] as a protective figure for the dead — commanding the Nile-waters in the afterlife journey. The crocodile's amphibious nature (moving between water and land) makes it a natural symbol for the threshold between living and dead worlds.
 
 ## Disputes
 - **Sobek's theological status.** Whether Sobek is a primordial creator or "just" a regional patron of crocodiles is contested: some Middle Kingdom hymns elevate him to creator-god, but most cult-practice treats him as a specialized patron deity rather than a high-god.
