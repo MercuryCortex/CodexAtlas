@@ -11,7 +11,11 @@ key-deities: ["[[el-canaanite]]", "[[baal-hadad]]", "[[asherah]]", "[[anat]]", "
 key-persons: []
 key-documents: ["[[phase-1-013-baal-cycle]]", "[[phase-1-014-ugaritic-ritual-texts]]", "[[phase-1-012-amarna-letters]]"]
 sister-traditions: ["[[tradition-sumerian-mesopotamian]]", "[[tradition-egyptian]]"]
-status: "stub"
+key-themes:
+  - "[[dying-rising-god]]"
+  - "[[divine-feminine]]"
+  - "[[sacred-king]]"
+status: "metadata"
 refs:
   - title: "The Early History of God: Yahweh and the Other Deities in Ancient Israel"
     author: "Smith, Mark S."
@@ -81,6 +85,13 @@ The polytheistic religion of the West Semitic-speaking peoples of the Levant —
 - **Dying-rising vegetation cycle.** Baal's seasonal death-and-revival (and Mot's parallel cycle) encodes the Levantine wet-dry agricultural rhythm.
 - **Sacred-marriage and royal cult.** The king participates in ritual that may involve sacred-marriage symbolism; the king is also the chief priestly officiant.
 - **Cult of the dead.** Ancestral dead (the *rapiʾūma* = Hebrew *rephaim*) receive offerings and are believed to participate in the cosmic order.
+
+## MASSIVE wins — cross-tradition edges
+- **El → Yahweh name-transfer and epithet absorption (most documented deity-absorption in the vault)**: The Canaanite high god *El* — "Father of Years," patriarch of the divine council, creator of heaven and earth — has his name, epithets, and mythology absorbed entirely by Yahweh in the Hebrew Bible. *El Shaddai* (Gen 17:1), *El Elyon* (Gen 14:18), *El Olam* (Gen 21:33), *El Roi* (Gen 16:13) are all El epithets used for Yahweh in the Pentateuch; in some strata they suggest different deities later merged. The Ugaritic divine title *ab ʿm* ("Father of the peoples / nations") recurs as an Israelite epithet. Smith 2002 (T1) documents this as the primary mechanism of Israelite religion's emergence from the Canaanite matrix. El is not displaced — he is *absorbed*.
+- **Asherah as Yahweh's consort: Kuntillet Ajrud inscription (~800 BCE)**: The inscriptions from Kuntillet ʿAjrud (Sinai, ~800 BCE) and Khirbet el-Qom (Judah, ~750 BCE) read "YHWH of Samaria and his Asherah" and "YHWH of Teman and his Asherah" — the earliest direct archaeological evidence that Yahweh had a divine consort in popular Israelite religion, drawing directly from the Canaanite tradition where Asherah is El's wife and mother of the seventy gods. The Hebrew Bible's sustained polemic against the *asherim* (cultic poles) reflects not an exotic foreign import but a mainstream Israelite practice that the Deuteronomistic reformers were fighting to eliminate. This is the vault's best single piece of archaeological evidence for pre-Deuteronomic Israelite religion's Canaanite substrate.
+- **Baal Cycle ↔ Chaoskampf universal pattern ↔ Genesis 1**: The Baal Cycle's combat sequence — Baal defeats Yam (Sea / Chaos) → Baal builds his palace → Baal descends to Mot's realm / rises again — is the Levantine instance of the universal *Chaoskampf* pattern (Marduk/Tiamat in Babylon; Zeus/Typhon in Greece; Indra/Vritra in the Vedas; Ra/Apophis in Egypt). The Canaanite instance is the direct mythological background of Genesis 1:2 (the *tĕhôm* / deep = Tiamat / Yamm). Yahweh's "dividing the waters" in the priestly creation account directly re-codes the Canaanite-Babylonian cosmic battle as an effortless divine fiat. Cross 1973 (T1) is the foundational analysis.
+- **Adonis = Tammuz = Baal seasonal dying-rising (documented Levantine → Greek transmission)**: The Greek Adonis cult, celebrated with women's mourning (*adonia*) at Athens, Alexandria, and Rome, is the Hellenized form of the Levantine Baal/Tammuz dying-and-rising vegetation deity. The name *Adonis* is the Greek form of the Semitic *adon* ("lord") — the same root as Hebrew *Adonai*. Lucian (*De Dea Syria*, ~160 CE) describes the cult at Byblos as explicitly a mourning ritual for the dead and risen Adonis / Tammuz. The Phoenician Adonis cult at Byblos is thus the direct transmission vehicle for Mesopotamian Tammuz mythology into Greek religion and, downstream, into the wider dying-rising-god religious complex. See [[dying-rising-god]].
+- **Astarte → Aphrodite (Phoenician → Greek transmission, attested in Herodotus)**: Herodotus (1.105) explicitly states that the Greeks learned the cult of Aphrodite Ourania ("Heavenly Aphrodite") from the Phoenicians of Ascalon, who had it from Assyria. Phoenician Astarte is the West Semitic form of Ishtar/Inanna. The transmission chain Inanna → Ishtar → Astarte → Aphrodite is one of the most completely documented deity-transformation sequences in the ancient world, with the physical cult-site at Paphos (Cyprus) as the geographical midpoint of the Phoenician-Greek religious transfer.
 
 ## Relations to neighbors
 - vs. [[tradition-egyptian]]: substantial contact in the Late Bronze Age; Egyptian imperial control of the Levant; Egyptian adoption of Anat, Astarte, Baal (= Set); Egyptian art and religion at Byblos and other Phoenician ports.

@@ -11,7 +11,10 @@ key-deities: ["[[yahweh]]", "[[metatron]]"]
 key-persons: ["[[rabbi-akiva]]", "[[rabbi-ishmael-ben-elisha]]", "[[rabbi-nehunya-ben-ha-qanah]]"]
 key-documents: ["[[phase-5-013-hekhalot-literature]]", "[[phase-5-012-sefer-yetzirah]]"]
 sister-traditions: ["[[tradition-kabbalah]]", "[[tradition-gnosticism]]"]
-status: "stub"
+key-themes:
+  - "[[merkabah-miraj-ascent-chain]]"
+  - "[[apotheosis]]"
+status: "metadata"
 refs:
   - title: "Major Trends in Jewish Mysticism"
     author: "Scholem, Gershom"
@@ -54,6 +57,11 @@ The earliest stratum of Jewish mystical literature, focused on heavenly ascent t
 - Esoteric transmission through gates / passwords / angelic-name liturgies.
 - Theology of *Shiʿur Qomah*: the cosmic-anthropic measurements of God's body.
 - Restricted teaching: per the Talmudic *m. Ḥagigah*, *maʿaseh merkavah* is not to be taught publicly.
+
+## MASSIVE wins — cross-tradition edges
+- **Merkavah ascent ↔ Mi'raj ascent ↔ Neoplatonic anagoge (the [[merkabah-miraj-ascent-chain]] as the vault's central vertical-ascent convergence)**: Ezekiel's chariot-vision (~593 BCE) generates the entire Merkavah ascent tradition: the adept rises through seven heavenly palaces, past angelic gate-guardians requiring passwords and divine names, to the throne-room of God. This is structurally identical to Muhammad's *miʿrāj* (night journey through seven heavens, past angelic stations, to the divine presence) and Plotinus' Neoplatonic *anagoge* (the soul's ascent through nous to the One). All three posit: hierarchical cosmic structure; the trained soul's capacity to ascend; passage through guarded thresholds; culmination in direct encounter with ultimate reality. The Merkavah-miraj identification was noted by medieval Jewish-Islamic scholars; the Neoplatonic parallel is structurally independent. See [[merkabah-miraj-ascent-chain]].
+- **Metatron ↔ Logos / Philo's Powers ↔ pre-Nicene Christ (divine-intermediary figure across the same Second Temple milieu)**: [[metatron]], the "Lesser YHWH" of the Hekhalot texts — the chief angel, deified Enoch, cosmic vizier who carries the divine name — belongs to the same Second Temple Jewish category as Philo's *Logos* (the rational intermediary between God and creation) and the pre-Nicene "high Christology" of John 1:1 and Colossians 1:15. All three are Jewish Second Temple divine-mediator figures positing a subordinate divine being who bridges the gap between the absolutely transcendent God and the created order. The Merkavah-period texts (200–500 CE) were composed in the same Palestinian-Babylonian milieu that produced early rabbinic Judaism and early Christianity; the shared intellectual environment almost certainly reflects common development rather than simple linear borrowing. See [[metatron]], [[logos-philonic]], [[logos-johannine]].
+- **Hekhalot palace-ascent → medieval Kabbalah → Dante's spheres (vertical ascent literature transmission chain)**: The Hekhalot seven-palaces ascent becomes the seven Sefirot in early Kabbalah (*Sefer Yetzirah*, ~3rd–6th c.); the Kabbalistic tree of ten Sefirot with its ascent structure feeds into Christian Kabbalah; Dante's nine heavenly spheres in *Paradiso* (1320) deploy the same hierarchical-ascent structure, partly mediated through pseudo-Dionysius's nine angelic orders. The chain Ezekiel → Merkavah → Kabbalah → Christian Kabbalah → Dante is one of the vault's longest-range documented literary transmission chains. See [[tradition-kabbalah]], [[pseudo-dionysius-the-areopagite]].
 
 ## Relations to neighbors
 - vs. [[tradition-judaism]]: stands in tension with rabbinic discomfort; the Aher-Pardes narratives are operative warnings.

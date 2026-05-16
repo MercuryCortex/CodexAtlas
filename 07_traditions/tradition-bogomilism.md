@@ -11,7 +11,10 @@ key-deities: ["[[the-good-god-cathar]] (= Bogomil Good Father)", "[[satanael]]"]
 key-persons: ["[[bogomil-priest]]", "Basil the Physician (executed Constantinople ~1099)"]
 key-documents: ["[[phase-5-020-interrogatio-iohannis]]", "no original Bogomil writings survive — doctrine reconstructed from Byzantine and Bulgarian anti-Bogomil polemic"]
 sister-traditions: ["[[tradition-catharism]] (Western European descendant)", "Paulician dualism (Anatolian ancestor)", "[[tradition-manichaeism]] (debated ancestor)"]
-status: "stub"
+key-themes:
+  - "[[dualism-cosmic]]"
+  - "[[theme-persecution-as-legitimation]]"
+status: "metadata"
 refs:
   - title: "The Bogomils: A Study in Balkan Neo-Manichaeism"
     author: "Obolensky, Dimitri"

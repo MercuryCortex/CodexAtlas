@@ -2,16 +2,19 @@
 type: tradition
 id: "tradition-madhyamaka"
 name: "Madhyamaka"
-aka: ["Middle Way school", "Mādhyamika", "Shunyavada (Sanskrit)", "Prasangika", "Svatantrika"]
-region: "India (origin), Tibet, China (Sanlun school), Japan"
-date-established: 150
-date-dissolved:
-founder: "[[nagarjuna]]"
+aka: ["Middle Way school", "Mādhyamika", "Shunyavada", "Prasangika-Madhyamaka", "Svatantrika-Madhyamaka"]
 parent-tradition: "[[tradition-mahayana-buddhism]]"
-child-traditions: []
-related-traditions: ["[[tradition-vajrayana]]", "[[tradition-zen]]", "[[tradition-yogacara]]"]
-deity-instances: []
-status: "stub"
+date-emergence: 150
+date-end: ""
+region-origin: "India (Bihar / Nagarjunakonda), later Tibet, China, Japan"
+regions-spread: ["India", "Tibet", "China (Sanlun school)", "Japan (via Huayan/Kegon)", "modern global"]
+key-persons: ["[[nagarjuna]] (~150–250 CE — founder)", "Candrakīrti (~600 CE — Prāsaṅgika systematizer)", "Bhāvaviveka (~500 CE — Svātantrika branch)", "[[tsongkhapa]] (1357–1419 — Gelug Prāsaṅgika standard)"]
+key-documents: []
+key-themes:
+  - "[[emptiness-sunyata]]"
+  - "[[theme-apophatic-theology]]"
+sister-traditions: ["[[tradition-vajrayana-buddhism]]", "[[tradition-zen]]", "[[tradition-advaita-vedanta]]", "[[tradition-kashmir-shaivism]]"]
+status: "metadata"
 refs:
   - title: "The Fundamental Wisdom of the Middle Way: Nāgārjuna's Mūlamadhyamakakārikā"
     author: "Garfield, Jay L."

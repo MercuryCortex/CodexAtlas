@@ -11,7 +11,11 @@ key-deities: ["[[vajradhara]]", "[[vajrasattva]]", "[[samantabhadra-buddha]]", "
 key-persons: ["[[padmasambhava]]", "[[naropa-tilopa]]", "[[atisa]]", "[[milarepa]]", "[[tsongkhapa]]", "[[karma-lingpa]]"]
 key-documents: ["[[phase-5-029-bardo-thodol]]", "Guhyasamāja Tantra", "Cakrasaṃvara Tantra", "Hevajra Tantra", "Kālacakra Tantra"]
 sister-traditions: ["[[tradition-mahayana-buddhism]]", "Kashmir Shaivism / Trika (parallel-tantric)"]
-status: "stub"
+key-themes:
+  - "[[apotheosis]]"
+  - "[[dying-rising-god]]"
+  - "[[merkabah-miraj-ascent-chain]]"
+status: "metadata"
 refs:
   - title: "Indo-Tibetan Buddhism: Indian Buddhists and Their Tibetan Successors"
     author: "Snellgrove, David L."
@@ -62,6 +66,12 @@ Vajrayāna ("Adamantine Vehicle" / "Diamond Vehicle") is the Tantric form of Mah
 - **Master-disciple transmission** (*paramparā*) — initiation (*abhiṣeka* / *wang*) as enabling condition.
 - **Three roots** — guru (root of blessing), yidam (root of accomplishment), dharma-protector (root of activity).
 - **Mahāmudrā** (Kagyu, Gelug) and **Dzogchen** (Nyingma) — apex teachings on the direct recognition of mind's nature.
+
+## MASSIVE wins — cross-tradition edges
+- **Deity yoga ↔ Eastern Orthodox theosis ↔ Gnostic divine-identity mysticism (three independent routes to human→divine transformation)**: Vajrayāna deity yoga — visualizing oneself as the awakened Buddha-figure, then dissolving the distinction between practitioner and deity — is the most methodologically elaborate form of the human-divine-identity claim that runs across the vault. The practitioner does not worship the deity from outside; they *become* the deity in the generation stage and then recognize that the deity was always already their own nature in the completion stage. This is structurally identical to Orthodox theosis (the human person participates in and becomes God through uncreated energies), Gnostic divine-spark return (the pneumatic recognizes their essential identity with the Pleroma), and the Sufi *fanāʾ* apex. All four traditions posit a method by which the practitioner's fundamental nature is revealed as divine — and all four generate controversy about whether this claims human equality with God.
+- **Tibetan Book of the Dead ↔ Egyptian Book of the Dead ↔ Orphic Gold Tablets (three-tradition afterlife-instruction genre)**: The *Bardo Thodol* ([[phase-5-029-bardo-thodol]]) belongs to the same literary genre as the Egyptian *Book of the Dead* ([[phase-1-010-book-of-the-dead]]) and the Orphic Gold Tablets ([[phase-2-040-orphic-gold-tablets]]): written instructions for the dead (or dying) to navigate a structured post-mortem realm toward liberation. Three independent traditions, three millennia, same genre. The Tibetan instance is the most internally elaborated — 49 days of Bardo states, each with a specific deceptive and liberating light, requiring specific recognitions — and is the only version still used in active religious practice.
+- **Kālacakra Tantra ↔ Zoroastrian cosmic cycles ↔ Hindu Yuga theory (convergent cosmic-time frameworks)**: The Kālacakra ("Wheel of Time") Tantra (~11th c.) posits an elaborate cosmic chronology: world ages, celestial cycles, the Shambhala prophecy (a future pure Buddhist kingdom that will defeat a final apocalyptic war and usher in a world renovation). The structural parallels to Zoroastrian Frashokereti (world renovation after cosmic battle) and Hindu Yuga theory (cosmic time cycles ending in destruction and renewal) are extensive. Whether this reflects contact or independent convergence in the shared cosmological vocabulary of the medieval Indian subcontinent is debated; the Kālacakra's explicit engagement with non-Buddhist traditions (it includes detailed summaries of Islamic, Hindu, and Bon cosmologies to refute/absorb them) shows deliberate comparative awareness.
+- **Dzogchen "natural state" ↔ [[tradition-advaita-vedanta]] *Brahman* ↔ [[meister-eckhart]] *Gottheit* (tri-tradition non-dual ground convergence)**: Dzogchen's apex teaching — the *rigpa* (pure awareness / the natural state) that is intrinsically luminous, empty, and already perfect prior to any practice — is structurally identical to Advaita's *Brahman* (pure awareness, self-luminous, ever-present) and Eckhart's *Gottheit* (the Godhead prior to God, prior to all conceptual predication, the ground of the soul). The Sanderson-Davidson debate (whether Vajrayāna borrowed from Śaiva Tantra or not) is the internal version of this question; the cross-tradition reach to Vedanta and Eckhart is independent. All three posit: a ground of pure awareness that is the practitioner's fundamental nature, is already perfect, and is disclosed through recognition rather than construction.
 
 ## Relations to neighbors
 - vs. [[tradition-mahayana-buddhism]]: doctrinal continuity, ritual-methodological distinction.
