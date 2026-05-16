@@ -670,6 +670,13 @@ Format:
 
 ---
 
+## quran-wiring-1 — Quran corpus wiring (SCRIPTURE_CORPORA + figure stubs) — started 2026-05-16 — IN PROGRESS
+- Owning: `src/js/app.js` (SCRIPTURE_CORPORA.quran only), `03_deities/iblis-shaytan.md` (NEW), `04_persons/hud-prophet.md` (NEW), `04_persons/salih-prophet.md` (NEW), `04_persons/shuayb-prophet.md` (NEW), `04_persons/luqman-sage.md` (NEW), `04_persons/dhu-al-qarnayn.md` (NEW), `04_persons/al-khidr.md` (NEW), `04_persons/uzayr.md` (NEW), `04_persons/zechariah-priest.md` (NEW), `04_persons/pharaoh-exodus.md` (NEW), `04_persons/lut.md` (NEW)
+- Goal: Wire Quran as a fully-structured corpus in SCRIPTURE_CORPORA (Meccan-Medinan default + 7-Manzil toggle); create 11 missing Quranic figure stubs
+- Status: in-flight
+
+---
+
 ## goblin-esoteric-fire-1 — symbols / esoteric fire thread — started 2026-05-16 — IN PROGRESS
 - Owning: `09_symbols/hamsa.md` (NEW), `09_symbols/winged-disk.md` (NEW), `09_symbols/royal-arch.md` (NEW), `09_symbols/sacred-fire.md` (NEW)
 - Note: `hamsa-khamsa.md` already exists (full); `sacred-fire-atash.md` already exists (metadata Zoroastrian focus); `faravahar.md` already exists. New files use distinct IDs: hamsa, sacred-fire, winged-disk, royal-arch — all verified unique.
