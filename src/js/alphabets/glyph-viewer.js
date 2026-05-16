@@ -47,9 +47,10 @@
 
   function getSecondaryChars(g, scriptId) {
     // Show the scripts NOT currently leading, condensed
-    const hier  = String.fromCodePoint(g.unicode);
+    // Only show hieroglyph secondary if unicode is actually in the Egyptian Hieroglyphs block
+    const hierChar = (g.unicode >= 0x13000 && g.unicode <= 0x1342F) ? String.fromCodePoint(g.unicode) : '';
     const parts = [];
-    if (scriptId !== 'hieroglyph') parts.push({ ch: hier,                         label: 'hier',   font: "'Noto Sans Egyptian Hieroglyphs', serif" });
+    if (scriptId !== 'hieroglyph') parts.push({ ch: hierChar,                      label: 'hier',   font: "'Noto Sans Egyptian Hieroglyphs', serif" });
     if (scriptId !== 'hebrew')     parts.push({ ch: g.hebrew || '',                label: 'heb',    font: "'Segoe UI', sans-serif" });
     if (scriptId !== 'arabic')     parts.push({ ch: g.arabic || '',                label: 'ar',     font: "'Segoe UI', sans-serif" });
     if (scriptId !== 'greek')      parts.push({ ch: (g.greek || '').split(' ')[0], label: 'gk',     font: 'serif' });

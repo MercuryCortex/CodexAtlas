@@ -343,6 +343,58 @@ window.ALPHA_GLYPH_DATA = [
     investigationHighlight: 'Akhenaten\'s Aten theology is the most discussed candidate for proto-monotheism in the ancient world. Freud argued (Moses and Monotheism, 1939) that Moses was an Atenist priest whose theology survived Akhenaten\'s suppression and became the foundation of Israelite monotheism. The scholarly consensus rejects Freud\'s specific claim — but the structural parallel between Aten (one god, universal, no images) and early Yahwism (one god, universal, no images) remains one of the most contested questions in religious history. The solar disk is the center of the argument.',
     relatedNodes: ['alphabet-medu-netjer', 'alphabet-sefer-yetzirah', 'alphabet-creation-by-word'],
   },
+
+  // ── Arabic-only additions (scriptOnly: ['arabic']) ────────────────────────
+  // 6 letters Arabic developed beyond the 22 Phoenician base.
+  // Arabic reached 28 letters; these 6 have no direct Phoenician ancestor.
+  {
+    letter: 'ث', name: 'Tha', meaning: 'emphatic th — Arabic sound expansion', gardiner: '',
+    unicode: 0x062B, phoneme: 'θ (voiced → ث)', greek: '(none)', latin: 'Th',
+    hebrew: '(none)', arabic: 'ث', phoenician: '(none)', scriptOnly: ['arabic'],
+    note: 'Tha (ث) represents the voiceless dental fricative — the "th" in "think." It was added to the Arabic script by placing dots above the base letter Sin (ث = ش with different dots). The dot-diacritic system let Arabic create six new letters from existing forms without inventing new shapes.',
+    investigationHighlight: 'The Arabic dot system is one of the most elegant expansions of an alphabet in history. Arabic took 17 basic letterforms from the 22 Phoenician letters and generated 28 distinct letters by adding 1, 2, or 3 dots above or below. Six letters (ث خ ذ ض ظ غ) have no Phoenician root — they represent sounds Semitic scribes needed for Arabic phonology but which the original abjad never encoded. The dots are not decoration; they are a complete phonological expansion system built onto a 3,000-year-old chassis.',
+    relatedNodes: ['alphabet-arabic-quran', 'alphabet-phoenician'],
+  },
+  {
+    letter: 'خ', name: 'Kha', meaning: 'guttural kh — the divine breath consonant', gardiner: '',
+    unicode: 0x062E, phoneme: 'x / χ (velar fricative)', greek: '(none)', latin: 'Kh',
+    hebrew: 'כ/ח', arabic: 'خ', phoenician: '(none)', scriptOnly: ['arabic'],
+    note: 'Kha (خ) is the voiceless velar fricative — the sound in Scottish "loch" or German "Bach." It is formed by placing a dot above Ha (ح). In Arabic, Kha appears in the divine name "al-Khāliq" (the Creator) and in "khayr" (goodness). The sound has no English equivalent.',
+    investigationHighlight: 'Kha shares its place in the divine vocabulary of Arabic with Ha and Kaf — all three are used in divine epithets. "al-Khāliq" (the Creator), "al-Ḥaqq" (the Truth), "al-Kabīr" (the Great). The guttural consonants of Arabic are not roughness; they are precision — sounds that distinguish meanings that lighter consonants would conflate. The Quran\'s untranslatability is partly a consonant problem: the English alphabet cannot render Kha, ʿAyn, Ḥa, or Ghain, so every transliteration loses phonological precision that the original text encodes.',
+    relatedNodes: ['alphabet-arabic-quran', 'alphabet-quran-sacred-language'],
+  },
+  {
+    letter: 'ذ', name: 'Dhal', meaning: 'voiced th — the sound of "this"', gardiner: '',
+    unicode: 0x0630, phoneme: 'ð (voiced dental fricative)', greek: '(none)', latin: 'Dh',
+    hebrew: '(none)', arabic: 'ذ', phoenician: '(none)', scriptOnly: ['arabic'],
+    note: 'Dhal (ذ) is the voiced dental fricative — the "th" in "this" (not "think"). It is Dal (د) with a dot. The Arabic script distinguishes what English cannot: "this" (ð) and "think" (θ) are written with completely different letters (ذ and ث) — the dot marks the voicing distinction that English "th" erases.',
+    investigationHighlight: 'Arabic makes phonological distinctions English cannot. Tha (ث) vs Dhal (ذ) = "think" vs "this" — unvoiced vs voiced, two completely separate letters. Sin (س) vs Sad (ص) = plain s vs emphatic s. Dal (د) vs Dad (ض) = plain d vs emphatic d. The Arabic consonant grid is more precise than English in the same way that a 28-color palette is more precise than a 22-color palette. The "difficulty" of Arabic to Western learners is largely a precision problem: Arabic distinguishes what European languages collapsed into single sounds.',
+    relatedNodes: ['alphabet-arabic-quran', 'alphabet-phoenician'],
+  },
+  {
+    letter: 'ض', name: 'Dad', meaning: 'emphatic d — the letter Arabic is named for', gardiner: '',
+    unicode: 0x0636, phoneme: 'dˤ (pharyngealized d)', greek: '(none)', latin: 'D',
+    hebrew: '(none)', arabic: 'ض', phoenician: '(none)', scriptOnly: ['arabic'],
+    note: 'Dad (ض) is the emphatic or pharyngealized D — pronounced with the back of the tongue raised toward the pharynx, giving a "dark" quality to the surrounding vowels. Classical Arabic was so distinguished by this sound that the language was called "Lughat al-Dad" — the language of the Dad. No other language in the world has this specific phoneme.',
+    investigationHighlight: 'Arabic is the only language in the world with the Dad phoneme — a pharyngealized D that no other human language has developed independently. The Arabs called their own language "Lughat al-Dad" (the language of the ض) as early as the 8th century. The Quran\'s opening chapter uses Dad in "al-Ḍāllīn" (those who are astray) — the very first Sura ends on a letter unique to Arabic on Earth. The uniqueness of this phoneme was historically used as theological evidence that Arabic was a divinely chosen language.',
+    relatedNodes: ['alphabet-arabic-quran', 'alphabet-quran-sacred-language'],
+  },
+  {
+    letter: 'ظ', name: 'Dha', meaning: 'emphatic dh — pharyngealized voiced th', gardiner: '',
+    unicode: 0x0638, phoneme: 'ðˤ (pharyngealized voiced dental fricative)', greek: '(none)', latin: 'Dh',
+    hebrew: '(none)', arabic: 'ظ', phoenician: '(none)', scriptOnly: ['arabic'],
+    note: 'Dha (ظ) is the pharyngealized form of Dhal (ذ) — a voiced dental fricative with dark pharyngeal coloring. It is one of the four "emphatic" consonants in Arabic (ص ض ط ظ). The emphatics are the hardest Arabic sounds for non-native speakers and are the primary source of vowel darkening (imala) in Classical Arabic phonology.',
+    investigationHighlight: 'The four Arabic emphatic consonants (ص ض ط ظ) represent a systematic phonological category with no parallel in any European language. They are not just "harder" versions of their plain counterparts — they trigger completely different vowel qualities in the surrounding syllables. When the Quran describes itself as "Arabic mubīn" (clear Arabic), it means this precision: Arabic has consonants that other languages lack, and those consonants carry semantic distinctions that translation cannot preserve. The emphatics are the consonantal infrastructure of untranslatability.',
+    relatedNodes: ['alphabet-arabic-quran', 'alphabet-quran-sacred-language'],
+  },
+  {
+    letter: 'غ', name: 'Ghain', meaning: 'voiced guttural — the sound of depth', gardiner: '',
+    unicode: 0x063A, phoneme: 'ɣ (voiced velar fricative)', greek: '(none)', latin: 'Gh',
+    hebrew: '(none)', arabic: 'غ', phoenician: '(none)', scriptOnly: ['arabic'],
+    note: 'Ghain (غ) is the voiced velar fricative — roughly the sound of gargling, or the French R. It is Ayn (ع) with a dot, but they are entirely different phonemes: Ayn is a pharyngeal constriction, Ghain is a velar fricative. In the word "Ghayb" — the unseen, the hidden, the divine mystery — Ghain carries the sound of what cannot be seen.',
+    investigationHighlight: 'The Arabic word "al-Ghayb" (الغيب) — the unseen, the hidden realm, the divine mystery — is built on Ghain, a letter with no English equivalent. The Quran declares that only Allah knows the Ghayb (6:59, 27:65). Ghain begins the word that names the boundary between the knowable and the unknowable. The letter that describes the hidden divine uses a sound that most of humanity\'s languages cannot make. The phonological boundary and the theological boundary coincide: what cannot be pronounced cannot be fully known.',
+    relatedNodes: ['alphabet-arabic-quran', 'alphabet-quran-sacred-language'],
+  },
 ];
 
 // Gematria / Isopsephy / Abjad comparative data
