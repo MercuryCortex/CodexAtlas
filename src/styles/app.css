@@ -4272,16 +4272,32 @@ mark.sr-ent-demo {
 .alpha-glyph-cell:hover { background: var(--bg-1); }
 .alpha-glyph-cell.expanded { background: rgba(212,165,90,0.08); }
 
-.agc-hieroglyph {
-  font-family: 'Noto Sans Egyptian Hieroglyphs', serif;
-  font-size: 2.6rem;
-  line-height: 1;
-  color: var(--gold);
+/* Script selector row */
+.agv-script-selector {
+  display: flex; flex-wrap: wrap; gap: 6px;
+  padding: 10px 1rem 14px;
+  border-bottom: 1px solid var(--border-soft);
 }
-.agc-letter {
-  font-size: 1.1rem; font-weight: 700; font-family: var(--mono);
-  color: var(--text-0);
+.agv-script-btn {
+  font-size: 0.72rem; letter-spacing: 0.08em;
+  padding: 4px 12px; border-radius: 3px; cursor: pointer;
+  background: transparent; border: 1px solid var(--border-soft);
+  color: var(--text-2); transition: all 0.12s;
 }
+.agv-script-btn:hover { border-color: var(--gold-soft); color: var(--text-1); }
+.agv-script-btn.active {
+  background: rgba(212,165,90,0.12); border-color: var(--gold-soft);
+  color: var(--gold-soft);
+}
+
+/* Main character — the "lead" script shown large */
+.agc-main-char {
+  font-size: 2.6rem; line-height: 1; color: var(--gold);
+  min-height: 3rem; display: flex; align-items: center; justify-content: center;
+}
+/* Legacy hieroglyph class kept for font re-trigger after font load */
+.agc-hieroglyph { font-family: 'Noto Sans Egyptian Hieroglyphs', serif; }
+
 .agc-name {
   font-size: 0.72rem; font-weight: 600; color: var(--text-1);
   text-align: center;
@@ -4290,9 +4306,13 @@ mark.sr-ent-demo {
   font-size: 0.67rem; color: var(--text-3); text-align: center;
   font-style: italic;
 }
-.agc-modern {
-  font-size: 1rem; color: var(--text-2);
-  letter-spacing: 0.1em;
+/* Secondary chars row — the other scripts, shown small */
+.agc-secondary {
+  display: flex; gap: 6px; align-items: center; margin-top: 2px;
+}
+.agc-sec-char {
+  font-size: 0.85rem; color: var(--text-3);
+  line-height: 1;
 }
 
 /* Detail panel — below the grid, not inside it */

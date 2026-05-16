@@ -1,5 +1,5 @@
 // CODEX ATLAS — Alphabet Glyph Viewer
-// Mode: glyphs — 22 Proto-Sinaitic letters as Egyptian hieroglyphs → modern descendants
+// Mode: glyphs — 22 Proto-Sinaitic letters, viewable as any script in the chain
 // Registers as window._alphaGlyphs = { render(pane) }
 // Depends on: glyph-data.js (window.ALPHA_GLYPH_DATA)
 // Font: Noto Sans Egyptian Hieroglyphs (loaded in index.html via Google Fonts)
@@ -8,7 +8,6 @@
   'use strict';
 
   // Cuneiform comparison block — independent writing system (U+12000 block)
-  // These are Sumerian cuneiform signs with known meanings
   const CUNEIFORM_SAMPLES = [
     { sign: '\u{12000}', name: 'A', meaning: 'water / canal' },
     { sign: '\u{12019}', name: 'AN', meaning: 'sky / heaven / deity' },
@@ -22,7 +21,41 @@
     { sign: '\u{1222C}', name: 'ZI', meaning: 'life / breath / soul' },
   ];
 
+  const SCRIPTS = [
+    { id: 'hieroglyph', label: 'hieroglyph', font: "'Noto Sans Egyptian Hieroglyphs', serif", dir: 'ltr' },
+    { id: 'phoenician', label: 'Phoenician', font: "'Segoe UI', sans-serif", dir: 'rtl' },
+    { id: 'hebrew',     label: 'Hebrew',     font: "'Segoe UI', sans-serif", dir: 'rtl' },
+    { id: 'arabic',     label: 'Arabic',     font: "'Segoe UI', sans-serif", dir: 'rtl' },
+    { id: 'greek',      label: 'Greek',      font: "serif", dir: 'ltr' },
+    { id: 'latin',      label: 'Latin',      font: "serif", dir: 'ltr' },
+  ];
+
   let _expandedIdx = null;
+  let _script = 'hieroglyph';
+
+  function getMainChar(g, scriptId) {
+    switch (scriptId) {
+      case 'hieroglyph': return String.fromCodePoint(g.unicode);
+      case 'phoenician': return g.phoenician || '';
+      case 'hebrew':     return g.hebrew || '';
+      case 'arabic':     return g.arabic || '';
+      case 'greek':      return (g.greek || '').split(' ')[0];
+      case 'latin':      return g.letter || '';
+      default:           return String.fromCodePoint(g.unicode);
+    }
+  }
+
+  function getSecondaryChars(g, scriptId) {
+    // Show the scripts NOT currently leading, condensed
+    const hier  = String.fromCodePoint(g.unicode);
+    const parts = [];
+    if (scriptId !== 'hieroglyph') parts.push({ ch: hier,                         label: 'hier',   font: "'Noto Sans Egyptian Hieroglyphs', serif" });
+    if (scriptId !== 'hebrew')     parts.push({ ch: g.hebrew || '',                label: 'heb',    font: "'Segoe UI', sans-serif" });
+    if (scriptId !== 'arabic')     parts.push({ ch: g.arabic || '',                label: 'ar',     font: "'Segoe UI', sans-serif" });
+    if (scriptId !== 'greek')      parts.push({ ch: (g.greek || '').split(' ')[0], label: 'gk',     font: 'serif' });
+    if (scriptId !== 'latin')      parts.push({ ch: g.letter || '',                label: 'lat',    font: 'serif' });
+    return parts;
+  }
 
   function render(pane) {
     const data = window.ALPHA_GLYPH_DATA || [];
@@ -34,9 +67,26 @@
     header.className = 'alpha-glyph-header';
     header.innerHTML = `
       <h2>Every letter you read is a 3,900-year-old picture of a thing</h2>
-      <p>The 22 letters of the Phoenician alphabet descend from Egyptian hieroglyphs via Proto-Sinaitic script (c. 1850 BCE). Click any letter to see its full transmission chain and the story hidden in its shape.</p>
+      <p>The 22 letters of the Phoenician alphabet descend from Egyptian hieroglyphs via Proto-Sinaitic script (c. 1850 BCE). Choose a writing system to view. Click any letter to see its full transmission chain.</p>
     `;
     pane.appendChild(header);
+
+    // Script selector
+    const selector = document.createElement('div');
+    selector.className = 'agv-script-selector';
+    SCRIPTS.forEach(s => {
+      const btn = document.createElement('button');
+      btn.className = 'agv-script-btn' + (s.id === _script ? ' active' : '');
+      btn.textContent = s.label;
+      btn.dataset.script = s.id;
+      btn.addEventListener('click', () => {
+        _script = s.id;
+        selector.querySelectorAll('.agv-script-btn').forEach(b => b.classList.toggle('active', b.dataset.script === _script));
+        buildGrid(gridWrap, data);
+      });
+      selector.appendChild(btn);
+    });
+    pane.appendChild(selector);
 
     // Grid wrapper
     const gridWrap = document.createElement('div');
@@ -66,7 +116,6 @@
     // Wait for fonts and re-render glyphs if needed
     if (document.fonts && document.fonts.ready) {
       document.fonts.ready.then(() => {
-        // Re-trigger paint by forcing a tiny DOM update
         pane.querySelectorAll('.agc-hieroglyph').forEach(el => {
           el.style.fontFamily = "'Noto Sans Egyptian Hieroglyphs', serif";
         });
@@ -78,11 +127,12 @@
     wrap.innerHTML = '';
     const grid = document.createElement('div');
     grid.className = 'alpha-glyph-grid';
-    // Detail panel lives BELOW the grid, not inside it — avoids mid-row grid disruption
     const detail = document.createElement('div');
     detail.className = 'alpha-glyph-detail';
     wrap.appendChild(grid);
     wrap.appendChild(detail);
+
+    const scriptMeta = SCRIPTS.find(s => s.id === _script) || SCRIPTS[0];
 
     data.forEach((g, idx) => {
       const cell = document.createElement('div');
@@ -90,13 +140,18 @@
       cell.dataset.idx = idx;
       if (_expandedIdx === idx) cell.classList.add('expanded');
 
-      const hieroglyphChar = String.fromCodePoint(g.unicode);
+      const mainChar = getMainChar(g, _script);
+      const secondaries = getSecondaryChars(g, _script);
+
+      const secHtml = secondaries.slice(0, 3).map(s =>
+        `<span class="agc-sec-char" style="font-family:${s.font}" title="${s.label}">${s.ch}</span>`
+      ).join('');
+
       cell.innerHTML = `
-        <span class="agc-hieroglyph" title="Egyptian hieroglyph: ${g.gardiner}">${hieroglyphChar}</span>
-        <span class="agc-letter">${g.letter}</span>
+        <span class="agc-main-char" style="font-family:${scriptMeta.font};direction:${scriptMeta.dir}">${mainChar}</span>
         <span class="agc-name">${g.name}</span>
         <span class="agc-meaning">${g.meaning}</span>
-        <span class="agc-modern">${g.hebrew} ${g.arabic}</span>
+        <div class="agc-secondary">${secHtml}</div>
       `;
 
       cell.addEventListener('click', () => {
@@ -110,8 +165,6 @@
           grid.querySelectorAll('.alpha-glyph-cell').forEach(c => c.classList.remove('expanded'));
           const existing = detail.querySelector('.alpha-glyph-expanded');
           if (existing) existing.remove();
-          cell.classList.add('expanded');
-          // Insert expanded card after this cell's row
           cell.classList.add('expanded');
           insertExpanded(detail, g);
         }
@@ -131,11 +184,7 @@
     expanded.className = 'alpha-glyph-expanded';
 
     const hieroglyphChar = String.fromCodePoint(g.unicode);
-
-    // Phoenician character for the chain
     const phoenicianChar = g.phoenician || '';
-
-    // Determine Greek display: pull just the first letter character
     const greekChar = g.greek ? g.greek.split(' ')[0] : '';
     const latinChar = g.latin ? g.latin.split(' ')[0] : '';
 
@@ -204,7 +253,6 @@
     detailEl.innerHTML = '';
     detailEl.classList.add('active');
     detailEl.appendChild(expanded);
-    // Scroll into view
     setTimeout(() => expanded.scrollIntoView({ behavior: 'smooth', block: 'nearest' }), 50);
   }
 
