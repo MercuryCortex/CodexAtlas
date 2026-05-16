@@ -69,3 +69,30 @@ Every mystical tradition has a "left-hand path" variant that uses transgression 
 **The highest holy and the deepest forbidden share a boundary.** Taboo substances and acts concentrate maximum cultural charge. Ritual redirection of that charge, under initiatic control, produces the most intense sacred experience available. Every tradition stumbles onto this insight and generates a controlled transgressive sub-tradition.
 
 The boundary-sharing of holy and forbidden is not a coincidence or a corruption — it is a structural feature of how sacred power works across human cultures. The Tantric tradition is the most explicit and systematic formulation of this insight; other traditions implement it while denying it.
+
+## Vault Connections
+
+**Central deities:**
+- [[shiva]] — pure consciousness (Shiva); the kundalini's destination at the crown; central to Shaiva Tantra
+- [[parvati]] — Shakti principle; the rising kundalini energy that unites with Shiva; cosmic feminine force
+
+**Sacred concept:**
+- [[kundalini]] — the serpent energy coiled at the muladhara; the central Tantric practice raises it through the chakras
+
+**Cross-tradition sacramental transgression parallels:**
+- [[alchemy-conjunction-hieros-gamos]] — the divine union (Shiva-Shakti / sulfur-mercury / Rex-Regina) is the apex of both Tantric and alchemical symbolism; MAJOR cross-domain connection (4,000-year continuity of the hieros gamos pattern)
+- [[ritual-eucharist-communion]] — structurally transgressive sacrament parallel: eating God's body is as transgressive from the outside as the Panchamakara from the inside
+- [[ritual-eleusinian-mysteries]] — transgressive sacred context; kykeon (sacred drink) + revealed forbidden sights parallel to Tantric diksha's whispered forbidden knowledge
+
+**Yoga connection:**
+- [[ritual-yoga-as-ritual]] — body-as-preparation principle; Tantra extends classical yoga with kundalini theory and transgressive sacramentalism
+
+**Traditions:**
+- [[tradition-tantra]] — primary tradition; the Shaiva and Shakta Agamas
+- [[tradition-hinduism]] — home tradition
+- [[tradition-vajrayana-buddhism]] — Vajrayana absorbed the Tantric model; Buddhist Tantra parallel tradition
+
+**Source texts:**
+- [[phase-5-006-vijnana-bhairava-tantra]] — 112 dharanas; the Tantric meditation manual
+- [[phase-5-014-abhinavagupta-tantraloka]] — systematic Tantric theology of Kashmir Shaivism
+- [[phase-5-033-shiva-sutras]] — Shiva's direct revelation to Vasugupta; foundational Kashmir Shaivism

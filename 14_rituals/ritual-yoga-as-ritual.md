@@ -58,3 +58,27 @@ See also: [[ritual-initiation-mystery]], [[ritual-fasting-cross-tradition]], [[t
 [[patanjali-yoga-sutras-author]]'s *Yoga Sutras* synthesize [[tradition-samkhya-yoga]] dualism (*prakriti/purusha*) with Buddhist meditation techniques. The text is almost certainly *responding to* Buddhist meditation literature that had already established the vocabulary and staged structure. Classical yoga is a Hindu reframing of Buddhist praxis with Samkhya metaphysics — making it a *counter-tradition* built on the technology of its rival. This is one of the most documented cross-tradition syntheses in ancient South Asian religious history: the Hindu tradition absorbed Buddhist meditation and redeployed it within a non-Buddhist metaphysical framework that the Buddha himself had explicitly rejected (the permanent self / *atman* that yoga calls *purusha*).
 
 The irony: the most widely exported Hindu spiritual technology globally (modern yoga) was originally a Hindu appropriation of Buddhist technique.
+
+## Vault Connections
+
+**Key person:**
+- [[patanjali-yoga-sutras-author]] — composer of the Yoga Sutras c. 400 CE; synthesizes Buddhist meditation with Samkhya metaphysics
+
+**Source text:**
+- [[phase-3-023-yoga-sutras-of-patanjali]] — document node; the systematic exposition of the eight-limbed path
+
+**Cross-tradition staged-transformation parallels:**
+- [[alchemy-calcination-stages]] — 7-stage alchemical path (calcination → dissolution → separation → conjunction → fermentation → distillation → coagulation) maps onto the 8-limb structure; both are staged transformation protocols ending in unity (MAJOR cross-domain connection)
+- [[alchemy-opus-magnum]] — yoga as the Hindu opus magnum; both frame the practitioner's entire life as a transformation work
+- [[ritual-zen-sesshin]] — 7-day intensive; same three-phase structure (ethical → contemplative → union); sesshin = yoga's samadhi compressed into a retreat
+- [[ritual-tantra-initiation]] — body-as-sacred-instrument parallel; Tantric body-theology extends the yogic body-preparation logic
+
+**Traditions:**
+- [[tradition-samkhya-yoga]] — primary philosophical framework; purusha/prakriti dualism
+- [[tradition-hinduism]] — home tradition
+- [[tradition-tantra]] — Tantric yoga extends the classical system with kundalini theory
+- [[tradition-buddhism]] — the tradition yoga borrowed from (dhyana/jhana shared vocabulary)
+- [[tradition-sufism]] — fana (annihilation) = samadhi; Sufi staged maqamat parallels the eight limbs
+
+**Sacred concept:**
+- [[kundalini]] — the energy raised through systematic practice; links yoga to the Tantric body-map

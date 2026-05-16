@@ -54,3 +54,28 @@ See also: [[ritual-pilgrimage-cross-tradition]], [[ritual-hajj-pilgrimage]], [[r
 Every major pilgrimage tradition independently identifies a specific geographic point as the thinnest place in the human/divine boundary AND anchors the optimal visit time to an astronomical event. Prayagraj/Jupiter, Jerusalem/full moon, Mecca/lunar calendar, Delphi/Pythian Games cycle: the pattern is structural, not coincidental. The human intuition that "here" is holier than "there" and "now" is holier than "later" is universal — but what varies is *which* astronomical body is used to calculate the holiest moment. The Kumbh uses Jupiter (the guru planet); Christianity uses the Moon (lunar Easter calculation); Islam uses the Moon (Ramadan/Hajj). The astronomical anchor differs; the logic of astronomical anchoring does not.
 
 The additional finding: the Kumbh Mela's mass-gathering theology makes an explicit claim that no Western pilgrimage tradition articulates with equal clarity — the concentration of 120 million bodies in one river at one moment creates a spiritual density that amplifies individual liberation. The physics of the sacred is, in this theology, additive.
+
+## Vault Connections
+
+**Deities in the founding narrative:**
+- [[brahma]] — the Samudra Manthan (cosmic ocean churning) involves Brahma as cosmic creator; the amrita that created the Kumbh sites is from the primordial churning
+- [[vishnu]] — preserves and participates in the Samudra Manthan; Kurma avatar supports Mount Mandara
+- [[shiva]] — drinks the poison that emerges in the churning, protecting the universe
+- [[lakshmi]] — emerges from the Samudra Manthan alongside the amrita; her emergence is Diwali
+
+**Sacred geography:**
+- [[sacred-river]] — the Ganges and Yamuna at Prayagraj's Sangam; the river as the sacred medium for liberation
+
+**Cross-tradition pilgrimage parallels:**
+- [[ritual-hajj-pilgrimage]] — scale + axis-mundi parallel; the closest structural counterpart (mass convergence + astronomical timing + sacred geography)
+- [[ritual-pilgrimage-cross-tradition]] — generic pilgrimage framework
+
+**Traditions:**
+- [[tradition-hinduism]] — primary tradition
+- [[tradition-vedic-hinduism]] — the Jupiter-cycle calculation is rooted in Vedic astronomical tradition
+
+**Companion ritual:**
+- [[ritual-shraddha-ancestor]] — tarpana (ancestor water offerings) at sacred river confluences, especially at Prayagraj, is the shraddha pilgrimage expression
+
+**Axis-mundi:**
+- [[axis-mundi]] — the Sangam confluence as the supreme tirtha = the center-point between human and divine worlds; the meeting place of heaven and earth

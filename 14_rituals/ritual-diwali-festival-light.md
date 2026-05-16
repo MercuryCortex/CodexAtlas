@@ -63,3 +63,26 @@ Diwali is simultaneously and legitimately claimed by Hinduism (Rama's return/Lak
 This makes Diwali the clearest documented example in world religious history of **ritual continuity with theological plasticity**: the same ritual practice (lamp-lighting on the darkest autumn night) absorbed three separate theological framings from three different religions. The festival was older than any of its explanations; each religion retrospectively claimed it.
 
 The cross-tradition implication is immense: if ritual practices can survive across religious boundaries by absorbing new theological explanations, then the persistence of a ritual tells us almost nothing about the persistence of its theology — and the origin of a ritual may be far older and more religiously neutral than any of the traditions currently performing it claim.
+
+## Vault Connections
+
+**Deities:**
+- [[lakshmi]] — central to the main Diwali night; her birthday (Shakta tradition) or her welcome into prosperous homes; lamp-lighting is the invitation
+- [[vishnu]] — Vaishnava tradition: Rama's return from exile; Lakshmi is Vishnu's consort
+- [[rama]] — Vaishnava Diwali narrative; Ayodhya lamps guiding the divine king home through darkness
+
+**Religious figures in other traditions' Diwali:**
+- [[mahavira]] — Jain Diwali; attained nirvana on this night 527 BCE; soul-light departed the universe
+- [[guru-nanak]] — Sikh tradition; Bandi Chhor Divas celebrates Guru Hargobind's release, observed on Diwali date as act of interfaith solidarity with Jain Diwali
+
+**Cross-tradition light-festival parallels:**
+- [[ritual-christmas-nativity]] — winter light festival parallel; both mark the darkness of the year's darkest period with maximum human light-production
+- [[ritual-advent-lent-liturgical-year]] — the liturgical calendar's darkest season has its own light-feast; Candlemas (February 2) and Advent candles share the compensatory-light logic
+
+**Traditions:**
+- [[tradition-hinduism]] — primary tradition (majority celebration)
+- [[tradition-jainism]] — Mahavira's nirvana narrative
+- [[tradition-sikhism]] — Bandi Chhor Divas
+
+**Companion ritual:**
+- [[ritual-puja-hindu]] — Lakshmi puja is the specific puja performed on Diwali's main night; the festival is organized around a single deity's reception
