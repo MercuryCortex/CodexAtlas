@@ -4,6 +4,15 @@ _Hand-maintained. Each agent currently working in the vault appends a claim bloc
 
 ---
 
+## sonnet-egyptian-quartet-1 — Bastet/Sobek/Geb/Nut upgrades — started 2026-05-16 — IN PROGRESS
+- Owning: `03_deities/bastet.md`, `03_deities/sobek.md`, `03_deities/geb.md`, `03_deities/nut.md`
+- Stubs to create if missing: `03_deities/diana.md`
+- NOT touching: app code; any other deity file
+- Goal: Upgrade all four from metadata/stub → partial; wire MASSIVE WIN cross-tradition edges (Bastet→Artemis→Diana; Sobek-Fayum papyri→earliest Christian MSS; Geb/Nut cosmic couple archetype)
+- Status: in-progress
+
+---
+
 ## sonnet-serapis-ennead-1 — Serapis full upgrade + heliopolis-ennead theme — started 2026-05-16 — IN PROGRESS
 - Owning: `03_deities/serapis.md` (upgrade metadata → full), `06_themes/heliopolis-ennead.md` (NEW partial)
 - NOT touching: `03_deities/apis-bull.md` (already metadata, no conflict with sonnet-egyptian-persons-1)
@@ -19,10 +28,11 @@ _Hand-maintained. Each agent currently working in the vault appends a claim bloc
 
 ---
 
-## opus-pantheon-v2-1 — Pantheon WebGL v2 build — started 2026-05-16 — IN PROGRESS
-- Owning: `src/js/views/pantheon-v2.js`, `src/js/app.js` (VIEWS wiring), `index.html`, `src/styles/app.css`
-- Goal: Implement full Pantheon v2 sigma.js WebGL view behind ?webgl=1; pass parity gate (mode dropdown, label toggle, ego-focus, family legend click-to-filter)
-- Status: in-progress
+## opus-pantheon-v2-1 — Pantheon WebGL v2 build — started 2026-05-16 — **FINISHED 2026-05-16**
+- Owning: `src/js/views/pantheon-v2.js`, `src/js/app.js` (VIEWS wiring), `src/styles/app.css`
+- Goal: Implement full Pantheon v2 sigma.js WebGL view behind ?webgl=1; pass parity gate
+- Status: finished
+- Delivered: Parity gate 9/10. Mode dropdown (deities/authors/symbols/events/monuments) + labels hub/all/off + ego-focus (1-hop neighbourhood) + family-legend click-to-filter + hover-preview + rim-label dim on filter. VIEWS wiring: fresh pane per render, nav item wired with explicit listener. CSS: ph2-legend-head/body/burger, ph2-mode-select, collapsed state. One remaining parity item: tier-overlay parity (badge system not yet mirrored in WebGL canvas).
 
 ---
 

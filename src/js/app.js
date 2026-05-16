@@ -4840,6 +4840,54 @@ const ALCHEMY_PRESETS = [
       'phase-1-010-book-of-the-dead',
     ],
   },
+  {
+    id: 'ptah-logos-creation-chain',
+    category: 'transmission',
+    name: 'Ptah → Logos → John 1:1 — 2,500-Year Chain',
+    headline: 'The Memphite Theology (~2350 BCE): "Ptah created by thought in the heart and word on the tongue — all things that exist, the gods and their kas." James Allen (Yale 1988, Tier 1) documents this Heart-Tongue formula as the oldest creation-by-divine-word theology in recorded history. The chain runs: Ptah\'s *heka* → Genesis 1 "And God said..." (6th c. BCE) → Philo\'s Logos (1st c. BCE) → John 1:1 "In the beginning was the Word" (~90 CE) → Quranic *kun fa-yakun* (7th c. CE). Christianity\'s most central theological concept — the creative divine Word — has a 2,500-year older ancestor in a Memphis temple.',
+    picks: [
+      'ptah', 'phase-1-027-memphite-theology-shabaka-stone',
+      'creation-by-word', 'logos-cosmic-reason', 'logos-philonic', 'logos-johannine',
+      'phase-3-013-philo-of-alexandria', 'phase-3-020-gospel-of-john',
+      'jan-assmann',
+    ],
+  },
+  {
+    id: 'solar-monotheism-lineage',
+    category: 'transmission',
+    name: 'Ra → Sol Invictus → Christ Iconography',
+    headline: 'The visual and theological image of Christ-as-Sun is not metaphor — it is documented transmission. Egyptian Ra (3000 BCE) is the sun itself as a divine body. Akhenaten radicalizes this as Aten monotheism (1350 BCE). Hellenistic Helios equates Ra with the Greek sun. Roman Aurelian formalizes Sol Invictus as state religion in 274 CE, establishing December 25 as the Sun\'s birthday. Constantine converts to Christianity while maintaining solar imagery; Christ absorbs the solar nimbus, the December 25 date, and the "Sun of Righteousness" (Malachi 4:2) epithet. The bearded curly-haired Christ iconographic type derives from Serapis (Osiris-Apis syncretic deity). Egyptian solar theology is the ancestral form of the most reproduced image in Western history.',
+    picks: [
+      'ra', 'aten', 'akhenaten',
+      'amun-ra', 'divine-kingship-solar',
+      'sol-invictus', 'phase-1-011-great-hymn-to-aten',
+      'jan-assmann', 'tradition-egyptian-religion',
+    ],
+  },
+  {
+    id: 'set-typhon-demonology',
+    category: 'transmission',
+    name: 'Set → Typhon → The Adversary Archetype',
+    headline: 'Plutarch (*De Iside et Osiride* §49, c. 100 CE) explicitly states: "the power of Set they call Typhon." This documented equation is the transmission vector for Egyptian chaos-theology into Western demonology. Set\'s unique theological position — the chaos-god who murders Osiris AND defends Ra\'s solar barque against Apophis — anticipates the Satan paradox (God\'s adversary who remains under divine permission). The Chaoskampf table: Marduk/Tiamat, Baal/Yam, Indra/Vrtra, Yahweh/Leviathan, Horus+Ra/Set+Apophis, Zeus/Typhon, Thor/Jörmungandr — Set is the only chaos-figure in the list who is integrated rather than destroyed.',
+    picks: [
+      'set', 'chaoskampf', 'osiris', 'ra',
+      'phase-4-072-plutarch-de-iside-et-osiride',
+      'tradition-canaanite-ugaritic',
+      'theme-rebel-against-the-divine',
+    ],
+  },
+  {
+    id: 'anubis-judgment-transmission',
+    category: 'transmission',
+    name: 'Anubis → Michael — The Judgment Scales Chain',
+    headline: 'The most visually reproduced religious image in Western history — the archangel Michael weighing souls on scales at the Last Judgment — derives from Egyptian Anubis. The direct chain: Anubis (jackal-headed weigher of souls, ~2400 BCE in Pyramid Texts) → psychostasia scene in Hellenistic Egyptian-Greek contact → Byzantine Michael with scales (~5th c. CE, documented in Frankfurter 1998 as Egyptian-Christian iconographic transmission) → Gothic cathedral tympana (Chartres, Notre-Dame, Bourges: Michael + scales + beast consuming the damned). Ammit (crocodile-hippo-lion devourer beneath the scales) is the ancestor of the Hellmouth beast. All documented via primary ancient sources and Tier-1 art history scholarship.',
+    picks: [
+      'anubis', 'phase-1-010-book-of-the-dead',
+      'ma-at', 'psychostasia-soul-weighing',
+      'thoth', 'osiris',
+      'theme-graduated-afterlife', 'theme-guide-through-underworld',
+    ],
+  },
 ];
 
 // Active research investigations — cross-tradition threads being investigated.
