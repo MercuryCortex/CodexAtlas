@@ -7,10 +7,10 @@
 
 | Stat | Count |
 |---|---|
-| Total nodes | 2482 |
-| Has thumbnail | 1562 (62.9%) |
-| **NULL** (no image) | **920** |
-| **SUSPECT** (possible wrong match) | **204** |
+| Total nodes | 2487 |
+| Has thumbnail | 1597 (64.2%) |
+| **NULL** (no image) | **890** |
+| **SUSPECT** (possible wrong match) | **220** |
 
 ## How to fix
 
@@ -635,90 +635,73 @@
 | `phase-1-021-shumma-izbu` | Šumma Izbu (Teratological-Omen Series) | query≈0.48 — returned: **Summa Irunga Machan** | [view](https://upload.wikimedia.org/wikipedia/en/d/dc/Summa_Irunga_Machan.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled) |
 | `phase-1-020-shumma-alu` | Šumma Ālu (If a City is Set on a Height) | query≈0.59 — returned: **Summilux** | [view](https://upload.wikimedia.org/wikipedia/commons/thumb/1/16/Leica_50mm_f-1.4_Summilux-M_II_%281962%29_Chrome.jpg/330px-Leica_50mm_f-1.4_Summilux-M_II_%281962%29_Chrome.jpg) |
 
-## TRADITIONS  (60 null · 13 suspect)
+## TRADITIONS  (29 null · 27 suspect)
 
 ### Nulls — need an OVERRIDE or `depictions` YAML entry
 
 | Node ID | Title | Tradition | Wikipedia search |
 |---|---|---|---|
 | `tradition-african-traditional` | African Traditional Religions | — | [search →](https://en.wikipedia.org/w/index.php?search=African+Traditional+Religions) |
-| `tradition-akan` | Akan Religion | — | [search →](https://en.wikipedia.org/w/index.php?search=Akan+Religion) |
-| `tradition-alevi-bektashi` | Alevi-Bektashi | — | [search →](https://en.wikipedia.org/w/index.php?search=Alevi-Bektashi) |
 | `tradition-anthroposophy` | Anthroposophy | — | [search →](https://en.wikipedia.org/w/index.php?search=Anthroposophy) |
 | `tradition-megalithic-atlantic` | Atlantic Megalithic Tradition | — | [search →](https://en.wikipedia.org/w/index.php?search=Atlantic+Megalithic+Tradition) |
-| `tradition-australian-aboriginal` | Australian Aboriginal Religious Traditions | — | [search →](https://en.wikipedia.org/w/index.php?search=Australian+Aboriginal+Religious+Traditions) |
-| `tradition-bhakti-vaishnavism` | Bhakti Vaishnavism | — | [search →](https://en.wikipedia.org/w/index.php?search=Bhakti+Vaishnavism) |
-| `tradition-canaanite-ugaritic` | Canaanite / Ugaritic Religion | — | [search →](https://en.wikipedia.org/w/index.php?search=Canaanite+%2F+Ugaritic+Religion) |
 | `tradition-christianity-canonical` | Canonical Christianity (Earliest stratum — through ~+150) | — | [search →](https://en.wikipedia.org/w/index.php?search=Canonical+Christianity+%28Earliest+stratum+%E2%80%94+through+~%2B150%29) |
 | `tradition-celtic` | Celtic Religion (pre-Christian) | — | [search →](https://en.wikipedia.org/w/index.php?search=Celtic+Religion+%28pre-Christian%29) |
-| `tradition-cybele-attis-mysteries` | Cybele-Attis Mysteries (Magna Mater / Metroac Mysteries) | — | [search →](https://en.wikipedia.org/w/index.php?search=Cybele-Attis+Mysteries+%28Magna+Mater+%2F+Metroac+Mysteries%29) |
 | `tradition-navajo` | Diné/Navajo Religion | — | [search →](https://en.wikipedia.org/w/index.php?search=Din%C3%A9%2FNavajo+Religion) |
 | `tradition-early-christianity` | Early Christianity | — | [search →](https://en.wikipedia.org/w/index.php?search=Early+Christianity) |
 | `tradition-essenes` | Essenes | — | [search →](https://en.wikipedia.org/w/index.php?search=Essenes) |
-| `tradition-ethiopian-orthodox-tewahedo` | Ethiopian Orthodox Tewahedo Christianity | — | [search →](https://en.wikipedia.org/w/index.php?search=Ethiopian+Orthodox+Tewahedo+Christianity) |
 | `tradition-etruscan-religion` | Etruscan Religion | — | [search →](https://en.wikipedia.org/w/index.php?search=Etruscan+Religion) |
-| `tradition-finno-karelian` | Finno-Karelian Pre-Christian Religion | — | [search →](https://en.wikipedia.org/w/index.php?search=Finno-Karelian+Pre-Christian+Religion) |
-| `tradition-mystery-cults` | Greco-Roman Mystery Cults | — | [search →](https://en.wikipedia.org/w/index.php?search=Greco-Roman+Mystery+Cults) |
-| `tradition-greek-religion` | Greek Religion (Archaic and Classical) | — | [search →](https://en.wikipedia.org/w/index.php?search=Greek+Religion+%28Archaic+and+Classical%29) |
-| `tradition-haudenosaunee` | Haudenosaunee Religion (Iroquois Confederacy) | — | [search →](https://en.wikipedia.org/w/index.php?search=Haudenosaunee+Religion+%28Iroquois+Confederacy%29) |
 | `tradition-hellenistic-philosophy` | Hellenistic Philosophy | — | [search →](https://en.wikipedia.org/w/index.php?search=Hellenistic+Philosophy) |
 | `tradition-hindu-modernism` | Hindu Modernism (Neo-Vedanta) | — | [search →](https://en.wikipedia.org/w/index.php?search=Hindu+Modernism+%28Neo-Vedanta%29) |
-| `tradition-hopi` | Hopi Traditional Religion | — | [search →](https://en.wikipedia.org/w/index.php?search=Hopi+Traditional+Religion) |
-| `tradition-inca-andean` | Inca / Andean Religion | — | [search →](https://en.wikipedia.org/w/index.php?search=Inca+%2F+Andean+Religion) |
-| `tradition-isis-mysteries` | Isis Mysteries (Hellenistic-Roman Cult of Isis) | — | [search →](https://en.wikipedia.org/w/index.php?search=Isis+Mysteries+%28Hellenistic-Roman+Cult+of+Isis%29) |
 | `tradition-jainism` | Jainism | — | [search →](https://en.wikipedia.org/w/index.php?search=Jainism) |
-| `tradition-jungian-depth-psychology` | Jungian Depth Psychology | — | [search →](https://en.wikipedia.org/w/index.php?search=Jungian+Depth+Psychology) |
 | `tradition-jyotisha-indian-astrology` | Jyotisha (Vedic / Indian Astrology) | — | [search →](https://en.wikipedia.org/w/index.php?search=Jyotisha+%28Vedic+%2F+Indian+Astrology%29) |
-| `tradition-bantu-kongo` | Kongo/Bantu Cosmology | — | [search →](https://en.wikipedia.org/w/index.php?search=Kongo%2FBantu+Cosmology) |
-| `tradition-lakota` | Lakota Religion | — | [search →](https://en.wikipedia.org/w/index.php?search=Lakota+Religion) |
 | `tradition-lusitanian-religion` | Lusitanian Religion (Pre-Roman Iberian) | — | [search →](https://en.wikipedia.org/w/index.php?search=Lusitanian+Religion+%28Pre-Roman+Iberian%29) |
 | `tradition-maori` | Maori Religion | — | [search →](https://en.wikipedia.org/w/index.php?search=Maori+Religion) |
-| `tradition-maya-religion` | Maya Religion | — | [search →](https://en.wikipedia.org/w/index.php?search=Maya+Religion) |
-| `tradition-medieval-christianity` | Medieval Christianity (Western, 500–1500 CE) | — | [search →](https://en.wikipedia.org/w/index.php?search=Medieval+Christianity+%28Western%2C+500%E2%80%931500+CE%29) |
-| `tradition-merkavah-mysticism` | Merkavah / Hekhalot Mysticism | — | [search →](https://en.wikipedia.org/w/index.php?search=Merkavah+%2F+Hekhalot+Mysticism) |
 | `tradition-mesoamerican` | Mesoamerican Religion | — | [search →](https://en.wikipedia.org/w/index.php?search=Mesoamerican+Religion) |
-| `tradition-ordo-novi-templi` | Ordo Novi Templi (Order of the New Templars; ONT) | — | [search →](https://en.wikipedia.org/w/index.php?search=Ordo+Novi+Templi+%28Order+of+the+New+Templars%3B+ONT%29) |
 | `tradition-pentecostalism` | Pentecostalism | — | [search →](https://en.wikipedia.org/w/index.php?search=Pentecostalism) |
-| `tradition-islamism-political` | Political Islamism | — | [search →](https://en.wikipedia.org/w/index.php?search=Political+Islamism) |
-| `tradition-polynesian` | Polynesian Religious Traditions | — | [search →](https://en.wikipedia.org/w/index.php?search=Polynesian+Religious+Traditions) |
 | `tradition-portuguese-hermeticism` | Portuguese Hermeticism (Hermetismo Português) | — | [search →](https://en.wikipedia.org/w/index.php?search=Portuguese+Hermeticism+%28Hermetismo+Portugu%C3%AAs%29) |
-| `tradition-norse` | Pre-Christian Norse Religion | — | [search →](https://en.wikipedia.org/w/index.php?search=Pre-Christian+Norse+Religion) |
-| `tradition-slavic` | Pre-Christian Slavic Religion | — | [search →](https://en.wikipedia.org/w/index.php?search=Pre-Christian+Slavic+Religion) |
-| `tradition-proto-indo-european-religion` | Proto-Indo-European Religion (Reconstructed) | — | [search →](https://en.wikipedia.org/w/index.php?search=Proto-Indo-European+Religion+%28Reconstructed%29) |
-| `tradition-roman-religion` | Roman Religion | — | [search →](https://en.wikipedia.org/w/index.php?search=Roman+Religion) |
-| `tradition-sanjiao` | Sanjiao (三教 — The Three Teachings) | — | [search →](https://en.wikipedia.org/w/index.php?search=Sanjiao+%28%E4%B8%89%E6%95%99+%E2%80%94+The+Three+Teachings%29) |
 | `tradition-second-temple-judaism` | Second Temple Judaism | — | [search →](https://en.wikipedia.org/w/index.php?search=Second+Temple+Judaism) |
 | `tradition-shia-islam` | Shi'a Islam | — | [search →](https://en.wikipedia.org/w/index.php?search=Shi%27a+Islam) |
-| `tradition-spiritualism` | Spiritualism (Modern) | — | [search →](https://en.wikipedia.org/w/index.php?search=Spiritualism+%28Modern%29) |
 | `tradition-strict-templar-observance` | Strict Templar Observance (Strikte Observanz; Rite of Strict Observance) | — | [search →](https://en.wikipedia.org/w/index.php?search=Strict+Templar+Observance+%28Strikte+Observanz%3B+Rite+of+Strict+Observance%29) |
 | `tradition-sufism` | Sufism (Tasawwuf) | — | [search →](https://en.wikipedia.org/w/index.php?search=Sufism+%28Tasawwuf%29) |
 | `tradition-samkhya-yoga` | Sāṃkhya-Yoga | — | [search →](https://en.wikipedia.org/w/index.php?search=S%C4%81%E1%B9%83khya-Yoga) |
 | `tradition-theravada-buddhism` | Theravāda Buddhism | — | [search →](https://en.wikipedia.org/w/index.php?search=Therav%C4%81da+Buddhism) |
-| `tradition-traditionalism-perennialist` | Traditionalism (Perennialist School / École Pérenne) | — | [search →](https://en.wikipedia.org/w/index.php?search=Traditionalism+%28Perennialist+School+%2F+%C3%89cole+P%C3%A9renne%29) |
 | `tradition-vajrayana-buddhism` | Vajrayāna Buddhism | — | [search →](https://en.wikipedia.org/w/index.php?search=Vajray%C4%81na+Buddhism) |
 | `tradition-vedic-hinduism` | Vedic Religion and early Hinduism | — | [search →](https://en.wikipedia.org/w/index.php?search=Vedic+Religion+and+early+Hinduism) |
 | `tradition-western-astrology` | Western Astrology (Mesopotamian–Hellenistic–Islamic–Latin continuous transmission) | — | [search →](https://en.wikipedia.org/w/index.php?search=Western+Astrology+%28Mesopotamian%E2%80%93Hellenistic%E2%80%93Islamic%E2%80%93Latin+continuous+transmission%29) |
 | `tradition-won-buddhism` | Won Buddhism — 圓佛敎 | — | [search →](https://en.wikipedia.org/w/index.php?search=Won+Buddhism+%E2%80%94+%E5%9C%93%E4%BD%9B%E6%95%8E) |
-| `tradition-asatru` | Ásatrú / Heathenry | — | [search →](https://en.wikipedia.org/w/index.php?search=%C3%81satr%C3%BA+%2F+Heathenry) |
 | `tradition-eglise-johannite` | Église Johannite des Chrétiens Primitifs (Johannite Church) | — | [search →](https://en.wikipedia.org/w/index.php?search=%C3%89glise+Johannite+des+Chr%C3%A9tiens+Primitifs+%28Johannite+Church%29) |
 
 ### Suspect hits — verify before trusting
 
 | Node ID | Title | Issue | Thumbnail |
 |---|---|---|---|
+| `tradition-alevi-bektashi` | Alevi-Bektashi | query≈0.57 — returned: **Alevism** | [view](https://upload.wikimedia.org/wikipedia/commons/thumb/9/9b/Semah_and_saz.jpg/330px-Semah_and_saz.jpg) |
 | `tradition-aztec-mexica` | Aztec / Mexica Religion | query≈0.34 — returned: **Aztecs** | [view](https://upload.wikimedia.org/wikipedia/commons/thumb/d/d2/Aztec_Empire.png/330px-Aztec_Empire.png?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail) |
 | `tradition-cao-dai` | Cao Dai — Third Divine Alliance | query≈0.31 — returned: **Caodaism** | [view](https://upload.wikimedia.org/wikipedia/en/thumb/f/fc/Divine_Eye_sphere.jpg/330px-Divine_Eye_sphere.jpg) |
 | `tradition-catharism` | Catharism (Albigensian heresy) | query≈0.14 — returned: **Albigensian Crusade** | [view](https://upload.wikimedia.org/wikipedia/commons/thumb/e/ec/Le_massacre_des_Albigeois.jpg/330px-Le_massacre_des_Albigeois.jpg) |
 | `tradition-cheondogyo` | Cheondogyo — Religion of the Heavenly Way | query≈0.31 — returned: **Cheondoism** | [view](https://upload.wikimedia.org/wikipedia/commons/thumb/f/fc/Cheondoism_flag.svg/330px-Cheondoism_flag.svg.png) |
+| `tradition-cybele-attis-mysteries` | Cybele-Attis Mysteries (Magna Mater / Metroac Mysteries) | query≈0.43 — returned: **Cybele** | [view](https://upload.wikimedia.org/wikipedia/commons/thumb/0/03/Unknown_-_Statue_of_a_Seated_Cybele_with_the_Portrait_Head_of_her_Priestess_-_57.AA.19.jpg/330px-Unknown_-_Statue_of_a_Seated_Cybele_with_the_Portrait_Head_of_her_Priestess_-_57.AA.19.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail) |
 | `tradition-donghak` | Donghak — Eastern Learning | query≈0.36 — returned: **Tonghak** | [view](https://upload.wikimedia.org/wikipedia/commons/thumb/9/90/Flag_of_Donghak_Peasant_Revolution_%28small%29.svg/330px-Flag_of_Donghak_Peasant_Revolution_%28small%29.svg.png) |
+| `tradition-finno-karelian` | Finno-Karelian Pre-Christian Religion | query≈0.31 — returned: **Baltic Finnic paganism** | [view](https://upload.wikimedia.org/wikipedia/commons/c/c6/Venesarvinen_hirvi.jpg) |
 | `tradition-gnosticism` | Gnosticism | query≈0.14 — returned: **Apocryphon of John** | [view](https://upload.wikimedia.org/wikipedia/commons/thumb/8/88/Apocryphon_of_John.jpg/330px-Apocryphon_of_John.jpg) |
+| `tradition-hopi` | Hopi Traditional Religion | query≈0.28 — returned: **Hopi** | [view](https://upload.wikimedia.org/wikipedia/commons/thumb/9/9d/Hopi_woman_with_a_traditional_pot_and_traditional_clothing.png/330px-Hopi_woman_with_a_traditional_pot_and_traditional_clothing.png) |
+| `tradition-inca-andean` | Inca / Andean Religion | query≈0.33 — returned: **Religion in the Inca Empire** | [view](https://upload.wikimedia.org/wikipedia/commons/thumb/6/68/Pachacuteckoricancha.jpg/330px-Pachacuteckoricancha.jpg) |
+| `tradition-isis-mysteries` | Isis Mysteries (Hellenistic-Roman Cult of Isis) | query≈0.44 — returned: **Isis** | [view](https://upload.wikimedia.org/wikipedia/commons/thumb/e/ec/Isis.svg/330px-Isis.svg.png) |
 | `tradition-ismailism` | Ismā'īlī Shi'ism | query≈0.56 — returned: **Ismailism** | [view](https://upload.wikimedia.org/wikipedia/commons/thumb/1/1b/Ismaili_Center%2C_Dushanbe%2C_Tajikistan.JPG/330px-Ismaili_Center%2C_Dushanbe%2C_Tajikistan.JPG) |
+| `tradition-bantu-kongo` | Kongo/Bantu Cosmology | query≈0.34 — returned: **Kongo religion** | [view](https://upload.wikimedia.org/wikipedia/commons/thumb/0/0e/WLA_metmuseum_Power_Figure_Male_Nkisi.jpg/330px-WLA_metmuseum_Power_Figure_Male_Nkisi.jpg) |
 | `tradition-mahayana-buddhism` | Mahāyāna Buddhism | query≈0.48 — returned: **Mahayana** | [view](https://upload.wikimedia.org/wikipedia/commons/thumb/1/1b/Astasahasrika_Prajnaparamita_Maitreya_Detail.jpeg/330px-Astasahasrika_Prajnaparamita_Maitreya_Detail.jpeg) |
+| `tradition-medieval-christianity` | Medieval Christianity (Western, 500–1500 CE) | query≈0.36 — returned: **Church and state in medieval Europe** | [view](https://upload.wikimedia.org/wikipedia/commons/thumb/a/af/Arbre_des_batailles_BnF_Arsenal_ms_2695_folio_6v.jpg/330px-Arbre_des_batailles_BnF_Arsenal_ms_2695_folio_6v.jpg) |
 | `tradition-mithraic-mysteries` | Mithraic Mysteries (Roman Mithraism) | query≈0.59 — returned: **Mithraism** | [view](https://upload.wikimedia.org/wikipedia/commons/thumb/0/02/Mithra_sacrifiant_le_Taureau-005.JPG/330px-Mithra_sacrifiant_le_Taureau-005.JPG) |
 | `tradition-mormonism` | Mormonism / Latter-day Saint movement | query≈0.39 — returned: **Mormonism** | [view](https://upload.wikimedia.org/wikipedia/commons/thumb/9/97/Salt_Lake_Temple%2C_Utah_-_Sept_2004.jpg/330px-Salt_Lake_Temple%2C_Utah_-_Sept_2004.jpg) |
 | `tradition-ojibwe` | Ojibwe / Anishinaabe Traditional Religion | query≈0.26 — returned: **Ojibwe** | [view](https://upload.wikimedia.org/wikipedia/commons/thumb/1/15/Ojibwe_Language_Map.png/330px-Ojibwe_Language_Map.png?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail) |
+| `tradition-ordo-novi-templi` | Ordo Novi Templi (Order of the New Templars; ONT) | query≈0.24 — returned: **Ariosophy** | [view](https://upload.wikimedia.org/wikipedia/commons/thumb/f/f7/WernervonB%C3%BClowsWorldRuneClock.JPG/330px-WernervonB%C3%BClowsWorldRuneClock.JPG) |
+| `tradition-polynesian` | Polynesian Religious Traditions | query≈0.51 — returned: **Polynesian mythology** | [view](https://upload.wikimedia.org/wikipedia/commons/thumb/3/33/HivaOa_Takii.jpg/330px-HivaOa_Takii.jpg) |
+| `tradition-slavic` | Pre-Christian Slavic Religion | query≈0.36 — returned: **Slavic paganism** | [view](https://upload.wikimedia.org/wikipedia/commons/thumb/6/6e/Steinrelief_Pfarrkirche_Altenkirchen.jpg/330px-Steinrelief_Pfarrkirche_Altenkirchen.jpg) |
+| `tradition-roman-religion` | Roman Religion | query≈0.42 — returned: **Religion in ancient Rome** | [view](https://upload.wikimedia.org/wikipedia/commons/thumb/1/1e/Roma%2C_Museo_Ara_Pacis_-_Calco_di_Roma_con_Vittoria_-_Foto_Giovanni_Dall%27Orto%2C_30-Mar-2008.jpg/330px-Roma%2C_Museo_Ara_Pacis_-_Calco_di_Roma_con_Vittoria_-_Foto_Giovanni_Dall%27Orto%2C_30-Mar-2008.jpg) |
+| `tradition-sanjiao` | Sanjiao (三教 — The Three Teachings) | query≈0.09 — returned: **Three teachings** | [view](https://upload.wikimedia.org/wikipedia/commons/thumb/7/7f/Sakyamuni%2C_Lao_Tzu%2C_and_Confucius_-_Google_Art_ProjectFXD.jpg/330px-Sakyamuni%2C_Lao_Tzu%2C_and_Confucius_-_Google_Art_ProjectFXD.jpg) |
 | `tradition-tenrikyo` | Tenrikyo — Religion of Divine Wisdom | query≈0.36 — returned: **Tenrikyo** | [view](https://upload.wikimedia.org/wikipedia/commons/thumb/6/6f/Tenrikyo_Church_Headquarters.jpg/330px-Tenrikyo_Church_Headquarters.jpg) |
 | `tradition-wicca-modern-pagan` | Wicca / Modern Pagan witchcraft | query≈0.28 — returned: **Wicca** | [view](https://upload.wikimedia.org/wikipedia/commons/thumb/8/82/Wiccan_Jewellery.JPG/330px-Wiccan_Jewellery.JPG) |
+| `tradition-asatru` | Ásatrú / Heathenry | query≈0.06 — returned: **Germanic paganism** | [view](https://upload.wikimedia.org/wikipedia/commons/thumb/5/5f/Bracteate_from_Funen%2C_Denmark_%28DR_BR42%29.jpg/330px-Bracteate_from_Funen%2C_Denmark_%28DR_BR42%29.jpg) |
 
 ## EVENTS  (109 null · 23 suspect)
 
@@ -1142,7 +1125,7 @@
 | `tawḥīd` | Tawḥīd — Divine Unity | query≈0.30 — returned: **Tawhid** | [view](https://upload.wikimedia.org/wikipedia/commons/thumb/6/60/Istanbul%2C_Hagia_Sophia%2C_Allah.jpg/330px-Istanbul%2C_Hagia_Sophia%2C_Allah.jpg) |
 | `vicarious-atonement` | Vicarious Atonement | query≈0.59 — returned: **Substitutionary atonement** | [view](https://upload.wikimedia.org/wikipedia/commons/thumb/0/09/Atonement_%28Trento%29.JPG/330px-Atonement_%28Trento%29.JPG) |
 
-## SYMBOLS  (48 null · 30 suspect)
+## SYMBOLS  (49 null · 32 suspect)
 
 ### Nulls — need an OVERRIDE or `depictions` YAML entry
 
@@ -1152,16 +1135,16 @@
 | `asherah-pole` | Asherah Pole (Sacred Tree / Cult Object of Asherah) | — | [search →](https://en.wikipedia.org/w/index.php?search=Asherah+Pole+%28Sacred+Tree+%2F+Cult+Object+of+Asherah%29) |
 | `bindu` | Bindu | — | [search →](https://en.wikipedia.org/w/index.php?search=Bindu) |
 | `cauldron-of-rebirth` | Cauldron of Rebirth | — | [search →](https://en.wikipedia.org/w/index.php?search=Cauldron+of+Rebirth) |
+| `chaos-star` | Chaos Star | — | [search →](https://en.wikipedia.org/w/index.php?search=Chaos+Star) |
 | `divine-child` | Divine Child | — | [search →](https://en.wikipedia.org/w/index.php?search=Divine+Child) |
 | `dove` | Dove | — | [search →](https://en.wikipedia.org/w/index.php?search=Dove) |
 | `eleusinian-kykeon` | Eleusinian Kykeon | — | [search →](https://en.wikipedia.org/w/index.php?search=Eleusinian+Kykeon) |
 | `evil-eye` | Evil Eye | — | [search →](https://en.wikipedia.org/w/index.php?search=Evil+Eye) |
 | `eye-of-the-heart` | Eye of the Heart | — | [search →](https://en.wikipedia.org/w/index.php?search=Eye+of+the+Heart) |
 | `feather-of-maat` | Feather of Ma'at (Weighing of the Heart) | — | [search →](https://en.wikipedia.org/w/index.php?search=Feather+of+Ma%27at+%28Weighing+of+the+Heart%29) |
+| `serpent-mound` | Great Serpent Mound | — | [search →](https://en.wikipedia.org/w/index.php?search=Great+Serpent+Mound) |
 | `green-lion` | Green Lion (Viridis Leo) | — | [search →](https://en.wikipedia.org/w/index.php?search=Green+Lion+%28Viridis+Leo%29) |
 | `ifa-divination` | Ifá Divination | — | [search →](https://en.wikipedia.org/w/index.php?search=If%C3%A1+Divination) |
-| `infinity-symbol` | Infinity Symbol / Lemniscate | — | [search →](https://en.wikipedia.org/w/index.php?search=Infinity+Symbol+%2F+Lemniscate) |
-| `jacobs-ladder` | Jacob's Ladder | — | [search →](https://en.wikipedia.org/w/index.php?search=Jacob%27s+Ladder) |
 | `kaaba-black-stone` | Ka'ba and the Black Stone (Al-Ḥajar al-Aswad) | — | [search →](https://en.wikipedia.org/w/index.php?search=Ka%27ba+and+the+Black+Stone+%28Al-%E1%B8%A4ajar+al-Aswad%29) |
 | `lamassu` | Lamassu (Winged Bull Guardian of the Threshold) | — | [search →](https://en.wikipedia.org/w/index.php?search=Lamassu+%28Winged+Bull+Guardian+of+the+Threshold%29) |
 | `maypole-irminsul` | Maypole and Irminsul (The European Cosmic Pillar) | — | [search →](https://en.wikipedia.org/w/index.php?search=Maypole+and+Irminsul+%28The+European+Cosmic+Pillar%29) |
@@ -1177,6 +1160,7 @@
 | `sacred-cave` | Sacred Cave | — | [search →](https://en.wikipedia.org/w/index.php?search=Sacred+Cave) |
 | `cow-sacred` | Sacred Cow | — | [search →](https://en.wikipedia.org/w/index.php?search=Sacred+Cow) |
 | `sacred-crown` | Sacred Crown | — | [search →](https://en.wikipedia.org/w/index.php?search=Sacred+Crown) |
+| `sacred-feather` | Sacred Feather | — | [search →](https://en.wikipedia.org/w/index.php?search=Sacred+Feather) |
 | `sacred-fire` | Sacred Fire | — | [search →](https://en.wikipedia.org/w/index.php?search=Sacred+Fire) |
 | `sacred-horse` | Sacred Horse | — | [search →](https://en.wikipedia.org/w/index.php?search=Sacred+Horse) |
 | `sacred-number-108` | Sacred Number 108 | — | [search →](https://en.wikipedia.org/w/index.php?search=Sacred+Number+108) |
@@ -1185,16 +1169,16 @@
 | `sacred-number-three` | Sacred Number Three | — | [search →](https://en.wikipedia.org/w/index.php?search=Sacred+Number+Three) |
 | `sacred-pearl` | Sacred Pearl (Lóng Zhū / Lulu / Mani) | — | [search →](https://en.wikipedia.org/w/index.php?search=Sacred+Pearl+%28L%C3%B3ng+Zh%C5%AB+%2F+Lulu+%2F+Mani%29) |
 | `sacred-river` | Sacred River | — | [search →](https://en.wikipedia.org/w/index.php?search=Sacred+River) |
-| `sacred-spring` | Sacred Spring / Holy Well | — | [search →](https://en.wikipedia.org/w/index.php?search=Sacred+Spring+%2F+Holy+Well) |
 | `tattoo-sacred` | Sacred Tattoo | — | [search →](https://en.wikipedia.org/w/index.php?search=Sacred+Tattoo) |
 | `sacred-twins` | Sacred Twins | — | [search →](https://en.wikipedia.org/w/index.php?search=Sacred+Twins) |
 | `sacrifice-substitution` | Sacrifice by Substitution | — | [search →](https://en.wikipedia.org/w/index.php?search=Sacrifice+by+Substitution) |
 | `sulphur-mercury-salt` | Sulphur, Mercury, Salt (Tria Prima) | — | [search →](https://en.wikipedia.org/w/index.php?search=Sulphur%2C+Mercury%2C+Salt+%28Tria+Prima%29) |
 | `thread-of-fate` | Thread of Fate | — | [search →](https://en.wikipedia.org/w/index.php?search=Thread+of+Fate) |
 | `was-scepter` | Was Scepter | — | [search →](https://en.wikipedia.org/w/index.php?search=Was+Scepter) |
-| `wheel-of-fortune` | Wheel of Fortune | — | [search →](https://en.wikipedia.org/w/index.php?search=Wheel+of+Fortune) |
+| `pagan-wheel-of-year` | Wheel of the Year | — | [search →](https://en.wikipedia.org/w/index.php?search=Wheel+of+the+Year) |
 | `winged-disk` | Winged Disk | — | [search →](https://en.wikipedia.org/w/index.php?search=Winged+Disk) |
 | `world-mountain` | World Mountain | — | [search →](https://en.wikipedia.org/w/index.php?search=World+Mountain) |
+| `sacred-number-zero` | Zero / The Void | — | [search →](https://en.wikipedia.org/w/index.php?search=Zero+%2F+The+Void) |
 | `zodiac-wheel` | Zodiac Wheel | — | [search →](https://en.wikipedia.org/w/index.php?search=Zodiac+Wheel) |
 
 ### Suspect hits — verify before trusting
@@ -1214,6 +1198,7 @@
 | `greek-cross` | Greek cross | query≈0.40 — returned: **Christian cross variants** | [view](https://upload.wikimedia.org/wikipedia/commons/thumb/0/03/Cross_%28PSF%29.png/330px-Cross_%28PSF%29.png) |
 | `hamsa-khamsa` | Hamsa / Khamsa — the Hand of Protection | query≈0.23 — returned: **Hamsa** | [view](https://upload.wikimedia.org/wikipedia/commons/thumb/6/63/Khamsa.jpg/330px-Khamsa.jpg) |
 | `hexagram` | Hexagram | query≈0.29 — returned: **Star of David** | [view](https://upload.wikimedia.org/wikipedia/commons/thumb/4/49/Star_of_David.svg/330px-Star_of_David.svg.png) |
+| `infinity-symbol` | Infinity Symbol / Lemniscate | query≈0.53 — returned: **Lemniscate** | [view](https://upload.wikimedia.org/wikipedia/commons/thumb/e/ef/Lemniscate_of_Bernoulli.svg/330px-Lemniscate_of_Bernoulli.svg.png) |
 | `lotus` | Lotus | query≈0.29 — returned: **Sacred lotus in religious art** | [view](https://upload.wikimedia.org/wikipedia/commons/thumb/3/31/Nelumbo_nucifera1.jpg/330px-Nelumbo_nucifera1.jpg) |
 | `mandala-circle` | Mandala / Cosmological Circle | query≈0.39 — returned: **Mandala** | [view](https://upload.wikimedia.org/wikipedia/commons/thumb/9/9a/Manjuvajramandala_con_43_divinit%C3%A0_-_Unknown_-_Google_Cultural_Institute.jpg/330px-Manjuvajramandala_con_43_divinit%C3%A0_-_Unknown_-_Google_Cultural_Institute.jpg) |
 | `merkaba` | Merkaba | query≈0.56 — returned: **Merkabah mysticism** | [view](https://upload.wikimedia.org/wikipedia/commons/thumb/e/eb/Ezekiel-Vision-Merkaba.jpg/330px-Ezekiel-Vision-Merkaba.jpg) |
@@ -1222,6 +1207,7 @@
 | `pyramid-triangle` | Pyramid / Triangle | query≈0.56 — returned: **Pyramid** | [view](https://upload.wikimedia.org/wikipedia/commons/thumb/c/c2/01_khafre_north.jpg/330px-01_khafre_north.jpg) |
 | `sacred-fire-atash` | Sacred Fire (Ataš / Atar) | query≈0.27 — returned: **Atar** | [view](https://upload.wikimedia.org/wikipedia/commons/thumb/e/e3/Gold_coin_of_Ardashir_I.jpg/330px-Gold_coin_of_Ardashir_I.jpg) |
 | `sacred-smoke` | Sacred Smoke / Incense | query≈0.48 — returned: **Incense** | [view](https://upload.wikimedia.org/wikipedia/commons/thumb/c/cb/Incenselonghua.jpg/330px-Incenselonghua.jpg) |
+| `sacred-spring` | Sacred Spring / Holy Well | query≈0.53 — returned: **Holy well** | [view](https://upload.wikimedia.org/wikipedia/commons/thumb/8/84/Holy_Well%2C_Coole_Upper_Two_Churches%2C_North_Cork.JPG/330px-Holy_Well%2C_Coole_Upper_Two_Churches%2C_North_Cork.JPG) |
 | `sefirot-tree-of-life` | Sefirot / Tree of Life (Kabbalistic) | query≈0.48 — returned: **Sefirot** | [view](https://upload.wikimedia.org/wikipedia/commons/thumb/d/d5/Ktreewnames.png/330px-Ktreewnames.png) |
 | `serpent-wisdom-chthonic` | Serpent (Wisdom / Chthonic / Healing) | query≈0.26 — returned: **Rod of Asclepius** | [view](https://upload.wikimedia.org/wikipedia/commons/thumb/5/5b/Star_of_life2.svg/330px-Star_of_life2.svg.png) |
 | `serpent-cosmic-enemy` | Serpent / Dragon (Cosmic Enemy) | query≈0.15 — returned: **Chaoskampf** | [view](https://upload.wikimedia.org/wikipedia/commons/thumb/9/9d/Destruction_of_Leviathan.png/330px-Destruction_of_Leviathan.png?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail) |

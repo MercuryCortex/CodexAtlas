@@ -1463,3 +1463,11 @@ The things opus-foundation-1 claimed but never started are all still open:
 - ~~Owning: `09_symbols/sacred-cave.md` (NEW), `09_symbols/blood-sacred.md` (NEW), `09_symbols/infinity-symbol.md` (NEW)~~
 - ~~Goal: Sacred cave as universal initiation structure (Paleolithic → Greek → Mithraic → Christian → Buddhist → Platonic MASSIVE WIN cave-exit = enlightenment); Sacred blood cross-tradition cosmic-debt-paid-in-blood MASSIVE WIN (Aztec nextlahualli / Christian Eucharist / Vedic yajna / Dionysiac sparagmos); Infinity symbol / lemniscate independent mathematical-esoteric-topological MASSIVE WIN (Wallis 1655 / Bernoulli / Möbius strip / Rider-Waite Tarot / Ouroboros)~~
 - ~~Status: finished — 3 new full symbol nodes · 232 total symbols · 14792 edges · 0 YAML errors · 0 new dead links introduced · commit 0e20ea5~~
+
+---
+
+## goblin-sacred-zero-1 — symbols / void + chaos + Petrine cross — started 2026-05-16 — IN PROGRESS
+- Owning: `09_symbols/sacred-number-zero.md` (NEW), `09_symbols/chaos-star.md` (NEW), `09_symbols/inverted-cross.md` (NEW)
+- Goal: Zero — MASSIVE WIN mathematical zero (Brahmagupta 628 CE) ↔ Buddhist śūnyatā (Nāgārjuna) ↔ Kabbalistic Ain Sof (tsimtsum) ↔ Mayan zero (shell glyph, base-20 independent invention) — four independent traditions encoding "nothing as generative"; Chaos Star — rare case: documented 1963 CE origin (Moorcock fiction) → chaos magic reception → pop misuse; Inverted Cross — irony case: Catholic Petrine Cross of humility (Acts of Peter) co-opted as anti-Christian symbol by LaVey 1966, not knowing it was the pope's own emblem
+- Hands-off: sacred-cave.md, blood-sacred.md, infinity-symbol.md, sacred-horse.md, jacobs-ladder.md, wheel-of-fortune.md, sigil.md, sacred-smoke.md, sacred-spring.md, pagan-wheel-of-year.md, serpent-mound.md, sacred-feather.md
+- Status: IN PROGRESS
