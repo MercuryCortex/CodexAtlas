@@ -1419,3 +1419,18 @@ The things opus-foundation-1 claimed but never started are all still open:
 - Goal: Unicorn — Physiologus Christological allegory + alchemical Mercurius + Scottish heraldry + qilin MASSIVE WIN (independent parallel-form convergence 5000 km apart); Prayer beads — documented Hindu mālā → Buddhist mālā → Orthodox prayer rope → Catholic rosary transmission chain; Tarot — card-game-origin chronology corrected + Lévi Kabbalistic-tarot synthesis + Golden Dawn RWS + Western mandala MASSIVE WIN
 - Hands-off: merkaba.md, kundalini.md, evil-eye.md, shaman-drum.md, dreamcatcher.md, nazca-lines.md
 - Status: in-progress
+
+---
+
+## ~~goblin-shamanic-earth-1 — symbols / shamanic + earth + geoglyphs thread — started 2026-05-16 — FINISHED 2026-05-16~~
+- ~~Owning: `09_symbols/dreamcatcher.md` (NEW), `09_symbols/nazca-lines.md` (NEW), `09_symbols/totem-pole.md` (NEW)~~
+- ~~Note: `shamanic-drum.md` already exists (goblin-sacred-sound-1); skipped; wrote `totem-pole.md` instead~~
+- ~~Goal: Dreamcatcher — Ojibwe Asibikaashi spider-woman protective web + cultural appropriation case study; Nazca Lines — contested geoglyph sacred landscape + alien hypothesis debunked (Tier-4 documented); Totem Pole — Northwest Coast heraldic axis mundi + potlatch suppression history~~
+- ~~Status: finished — 219 symbols · 14729 edges · 0 YAML errors · 0 new dead links · commit 148dd86~~
+
+---
+
+## goblin-veiled-mystery-1 — symbols / veil-of-isis + enneagram — started 2026-05-16 — IN PROGRESS
+- Owning: `09_symbols/veil-of-isis.md` (NEW), `09_symbols/enneagram.md` (NEW)
+- Goal: Veil of Isis — Plutarch Sais inscription + Hermetic/Rosicrucian unveiling tradition + Schiller/Novalis Romantic reception + Blavatsky title + MASSIVE WIN cross-veil-pattern (Temple Veil/hijab/maya/Eleusinian Mysteries); Enneagram — Gurdjieff symbol (Laws of Three + Seven) + Ichazo/Naranjo personality application + claimed-but-undocumented ancient Sufi origin + MASSIVE WIN: only personality system with esoteric mystical roots, parallels Sefirot/planetary character types/Navagraha
+- Status: in progress
