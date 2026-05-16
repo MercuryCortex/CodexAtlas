@@ -4,6 +4,13 @@ _Hand-maintained. Each agent currently working in the vault appends a claim bloc
 
 ---
 
+## ~~goblin-suppressed-sacred-1 — symbols / suppressed sacred symbols thread — started 2026-05-16 — FINISHED 2026-05-16~~
+- ~~Owning: `09_symbols/asherah-pole.md` (NEW), `09_symbols/kaaba-black-stone.md` (NEW), `09_symbols/maypole-irminsul.md` (NEW), `09_symbols/feather-of-maat.md` (NEW)~~
+- ~~Goal: Asherah pole / Yahweh consort MASSIVE WIN (Kuntillet Ajrud Tier-1 epigraphy); Ka'ba sacred-site continuity pre-Islamic→Islamic + tawaf circumambulation cross-tradition; Irminsul destruction as axis-mundi conquest (Charlemagne 772 CE); Feather of Ma'at 5-tradition cosmic-scales-of-judgment pattern~~
+- ~~Status: finished — 160 total symbols · 14393 edges · 0 dead links introduced · STATUS.md logged~~
+
+---
+
 ## ~~goblin-dragon-1 — symbols / dragons + stupa + thunderbird thread — started 2026-05-16 — FINISHED~~
 - ~~Owning: `09_symbols/dragon-eastern.md` (NEW), `09_symbols/dragon-western.md` (NEW), `09_symbols/stupa.md` (NEW), `09_symbols/thunderbird.md` (NEW)~~
 - ~~Goal: Eastern/Western dragon polarity MASSIVE WIN; dragon-slaying PIE pattern (Indra/Marduk/Zeus/Thor/George); stupa as man-made sacred mountain cross-tradition; Thunderbird as universal storm-bird pattern~~
@@ -106,6 +113,13 @@ _Hand-maintained. Each agent currently working in the vault appends a claim bloc
 - ~~Owning: `09_symbols/sacred-number-three.md` (NEW), `09_symbols/sacred-number-seven.md` (NEW), `09_symbols/mudra.md` (NEW), `09_symbols/corn-mother.md` (NEW)~~
 - ~~Goal: Sacred-Three trinity structures cross-tradition MASSIVE WIN; Sacred-Seven Babylonian planetary week to world religions; mudra abhaya cross-tradition (Buddha/Christ/Shiva); corn-mother grain-deity resurrection pattern (Osiris/Demeter/Christ Eucharist)~~
 - ~~Status: finished — 4 new symbol nodes · 154 symbols total · 14336 edges · 0 YAML errors · 0 new dead links · see STATUS.md~~
+
+---
+
+## goblin-threshold-guardian-1 — symbols / threshold guardian thread — started 2026-05-16 — IN PROGRESS
+- Owning: `09_symbols/lamassu.md` (NEW), `09_symbols/sphinx.md` (NEW), `09_symbols/janus.md` (NEW), `09_symbols/mezuzah.md` (NEW)
+- Goal: Threshold guardian cross-tradition MASSIVE WIN; lamassu→cherubim transmission (best-documented cross-tradition link in Near Eastern religion); sphinx Egyptian-vs-Greek transformation; Janus two-faced threshold deity = Eshu/Hermes/Ganesha convergence; mezuzah as universal threshold-inscription pattern
+- Status: in-progress
 
 ---
 
