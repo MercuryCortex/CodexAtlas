@@ -1967,6 +1967,12 @@ body.view-atlas main.canvas { background: var(--bg-0); }
   fill: none; pointer-events: none;
   vector-effect: non-scaling-stroke;
   stroke: rgba(120, 140, 182, 0.72);
+  /* CSS-level stroke values override the SVG attrs set by JS — this is what
+     gives the dev-panel `Idle opacity ×` and `Idle width ×` sliders their
+     effect. Each edge sets --base-op and --base-w inline from EDGE_STYLE;
+     the multipliers are :root vars set by the dev panel. */
+  stroke-opacity: calc(var(--base-op, 0.13) * var(--ph2-edge-opacity-mult, 1));
+  stroke-width:   calc(var(--base-w,  0.25) * var(--ph2-edge-width-mult,   1));
   transition: stroke-opacity 180ms var(--ease-out-expo, cubic-bezier(0.16, 1, 0.3, 1)),
               stroke-width   180ms var(--ease-out-expo, cubic-bezier(0.16, 1, 0.3, 1)),
               stroke         180ms var(--ease-out-expo, cubic-bezier(0.16, 1, 0.3, 1)),
@@ -1981,7 +1987,7 @@ body.view-atlas main.canvas { background: var(--bg-0); }
 .ph2-edge.hot {
   stroke: var(--edge-type-color, rgba(212, 165, 90, 0.9)) !important;
   stroke-opacity: 0.9 !important;
-  stroke-width: 1.6 !important;
+  stroke-width: var(--ph2-edge-hot-width, 1.6) !important;
 }
 .ph2-edge.filter-dim.hover-reveal {
   stroke: var(--edge-type-color, rgba(212, 165, 90, 0.85)) !important;

@@ -770,8 +770,12 @@
     }
     function applyInitialFit() {
       try {
+        // Dev-panel override only wins if user explicitly moved the slider
+        // off its default. Otherwise always recompute the aspect-aware fit so
+        // reload-load looks identical to the 100% button.
         const override = window.CODEX_DEV?.settings?.cameraRatio;
-        const ratio = (typeof override === 'number' && override !== 1.32) ? override : computeFitRatio();
+        const isCustom = typeof override === 'number' && Math.abs(override - 1.32) > 0.001;
+        const ratio = isCustom ? override : computeFitRatio();
         sigma.getCamera().setState({ ratio, x: 0.5, y: 0.5, angle: 0 });
         sigma.refresh();
       } catch (e) {}
@@ -905,7 +909,12 @@
       path.setAttribute('class', cls);
       path.setAttribute('d', `M ${sp.x},${sp.y} Q ${cxp},${cyp} ${tp.x},${tp.y}`);
       path.style.setProperty('--edge-type-color', st.c);
-      // P1 verbatim — st.w and st.op straight from EDGE_STYLE, no scaling.
+      // P1 EDGE_STYLE values exposed as CSS vars on each edge so the
+      // .ph2-edge CSS rule can multiply by --ph2-edge-opacity-mult /
+      // --ph2-edge-width-mult from the dev panel. SVG attrs are still set as
+      // fallback for browsers that don't honour CSS on the stroke-* SVG attrs.
+      path.style.setProperty('--base-op', st.op);
+      path.style.setProperty('--base-w',  st.w);
       path.setAttribute('stroke-width',   st.w);
       path.setAttribute('stroke-opacity', st.op);
       path.setAttribute('fill', 'none');
@@ -1342,6 +1351,14 @@
       _labelRefreshTimer = setTimeout(updateNodeLabelVisibility, 40);
     });
 
+    // Expose inner refresh hooks so the dev panel can re-run them when CSS
+    // vars (label size, hub threshold, etc.) change without a full rerender.
+    if (window._pantheonV2) {
+      window._pantheonV2._refreshLabels    = updateNodeLabelVisibility;
+      window._pantheonV2._refreshFit       = applyInitialFit;
+      window._pantheonV2._scheduleDecon    = scheduleDeconflict;
+    }
+
     function syncNodeLabels() {
       // Re-project visible label world-positions to screen-space via sigma camera.
       const len = nodeLabelEntries.length;
@@ -1467,9 +1484,12 @@
       sigma.refresh({ skipIndexation: true });
     };
     toolbar.querySelector('#ph2-fit-100').onclick = () => {
-      // True 100% = the default-fit ratio (1.32) that shows the full diagram
-      // including rim labels. Animated so the user sees the snap-back motion.
-      try { sigma.getCamera().animate({ x: 0.5, y: 0.5, ratio: 1.32, angle: 0 }, { duration: 320 }); } catch (e) {}
+      // True 100% = computeFitRatio() — the SAME math used on initial render.
+      // Clicking 100% should always reproduce the just-loaded view.
+      try {
+        const ratio = computeFitRatio();
+        sigma.getCamera().animate({ x: 0.5, y: 0.5, ratio, angle: 0 }, { duration: 320 });
+      } catch (e) {}
     };
     toolbar.querySelector('#ph2-recenter').onclick = () => {
       try { sigma.getCamera().animatedReset({ duration: 400 }); } catch (e) { /* ignore */ }

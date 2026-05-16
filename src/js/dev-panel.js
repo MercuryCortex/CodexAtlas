@@ -348,6 +348,19 @@
     document.body.appendChild(panel);
 
     // Wire each slider
+    // IDs whose change affects label sizes/visibility — the deconflict pass
+    // is in screen-space so it must rerun when any label dimension changes.
+    const LABEL_AFFECTING = new Set([
+      'nodeLabelSize', 'nodeHubLabelSize', 'rimLabelSize', 'rimLabelSpacing',
+      'hubThreshold',
+    ]);
+    function refreshLabelsAfterTweak() {
+      const v2 = window._pantheonV2;
+      if (!v2) return;
+      if (typeof v2._refreshLabels === 'function') v2._refreshLabels();
+      else if (typeof v2._scheduleDecon === 'function') v2._scheduleDecon();
+    }
+
     ALL_CONTROLS.forEach(c => {
       const input = document.getElementById('dp-' + c.id);
       const valEl = document.getElementById('dpv-' + c.id);
@@ -365,6 +378,9 @@
           case 'camera':       applyCamera(); break;
           case 'rerender':     scheduleRerender(); break;
         }
+        // After ANY label-affecting tweak, re-run label visibility +
+        // deconflict so size changes don't leave overlapping labels stuck.
+        if (LABEL_AFFECTING.has(c.id)) refreshLabelsAfterTweak();
       });
     });
 
