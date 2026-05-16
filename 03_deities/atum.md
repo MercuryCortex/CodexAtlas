@@ -17,7 +17,7 @@ attributes: ["double crown of Upper and Lower Egypt", "human form (regal, elderl
 attested-in: ["[[phase-1-002-pyramid-texts]]", "[[phase-1-009-coffin-texts]]", "[[phase-1-010-book-of-the-dead]]"]
 equivalents: []
 syncretic-edges:
-  - target: "[[ra-egyptian]]"
+  - target: "[[ra]]"
     type: "ancient-identification"
     source: "Already in the Pyramid Texts Atum is fused with Ra as Atum-Ra; the Heliopolitan theology treats them as aspects of the same creator — Ra as the midday sun in his power, Atum as the primordial origin and the aging sun descending into the west. Allen 1988."
 status: "full"
@@ -71,7 +71,7 @@ depictions:
 
 Atum is the self-emergent primordial creator of Egyptian Heliopolitan theology — the "Complete One" (the name *itm* derives from the verb *tm*, "to be complete, to be perfect, to finish"). He emerges spontaneously from the primordial waters of [[nun]], stands alone on the first mound (the *benben* — the primeval hill that first rose from the receding waters), and generates the first divine couple [[shu]] (air) and [[tefnut]] (moisture) by self-procreation. The act of creation is variously described: by masturbation (most explicitly in [[phase-1-002-pyramid-texts]] PT 600, where his hand is personified as a goddess), by spitting them forth, or by sneezing. These variants coexist within the corpus and are not treated as contradictory — they are multiple facets of the same theological event: differentiation out of undifferentiated unity.
 
-From Shu and Tefnut descend [[geb]] (earth) and [[nut]] (sky), and from them the second-generation gods [[osiris]], [[isis]], [[set]], and Nephthys — the Heliopolitan **Ennead** (nine gods, with Atum as first). Atum is paired and fused with [[ra-egyptian]] as Atum-Ra: where Ra is the visible daily sun in his noon power, Atum is the primordial creator-origin and the sun at evening — the aged, descending form. The Pyramid Texts already use "Atum-Ra" as a unified theological formula (PT 217).
+From Shu and Tefnut descend [[geb]] (earth) and [[nut]] (sky), and from them the second-generation gods [[osiris]], [[isis]], [[set]], and Nephthys — the Heliopolitan **Ennead** (nine gods, with Atum as first). Atum is paired and fused with [[ra]] as Atum-Ra: where Ra is the visible daily sun in his noon power, Atum is the primordial creator-origin and the sun at evening — the aged, descending form. The Pyramid Texts already use "Atum-Ra" as a unified theological formula (PT 217).
 
 ## Mythological role
 
@@ -118,7 +118,7 @@ Note: The serpentine form Atum assumes at the end of time is also interesting in
 
 ## Atum-Ra synthesis
 
-The compound "Atum-Ra" or "Ra-Atum" appears already in the Pyramid Texts (the oldest surviving Egyptian religious corpus, c. 2350 BCE) and represents the theological fusion of the two greatest solar-creator figures in Egyptian religion. Ra is the visible, powerful sun at noon, sailing across the sky in his solar boat. Atum is the primordial originating force and the aging, setting sun descending into the western horizon toward the Duat (underworld). In the *Amduat* (the royal underworld book), the sun fuses with Osiris at midnight and is reborn as [[ra-egyptian]] at dawn — but the *beginning* of the solar journey into night is under Atum's identity.
+The compound "Atum-Ra" or "Ra-Atum" appears already in the Pyramid Texts (the oldest surviving Egyptian religious corpus, c. 2350 BCE) and represents the theological fusion of the two greatest solar-creator figures in Egyptian religion. Ra is the visible, powerful sun at noon, sailing across the sky in his solar boat. Atum is the primordial originating force and the aging, setting sun descending into the western horizon toward the Duat (underworld). In the *Amduat* (the royal underworld book), the sun fuses with Osiris at midnight and is reborn as [[ra]] at dawn — but the *beginning* of the solar journey into night is under Atum's identity.
 
 The synthesis formula means: the same divine creative power that initiated the cosmos (*Atum*) is also the power that perpetually re-creates itself through the daily solar cycle (*Ra*). This is not conceptually different from the distinction between *primordial creation* and *cyclical maintenance* — Atum handles the ontological origin, Ra handles the cosmological cycle.
 
@@ -127,7 +127,7 @@ The synthesis formula means: the same divine creative power that initiated the c
 - → [[phase-1-002-pyramid-texts]] — *attested-in*: Atum's creation of Shu and Tefnut is narrated in PT 527 ("You [Atum] took your phallus in your grasp..."); the cosmogonic formula and the Ennead structure are first systematically set out here. Allen 2005.
 - → [[phase-1-009-coffin-texts]] — *attested-in*: The eschatological dissolution passage (CT 76–80, BD 175 parallel) is the key Atum text beyond the Pyramid Texts. The cosmogonic spells CT 76–80 present Atum's philosophical theology in extended form.
 - → [[phase-1-010-book-of-the-dead]] — *attested-in*: BD Spell 175 is the locus classicus of the Atum eschatological dialogue with Osiris.
-- → [[ra-egyptian]] — *syncretic-identification*: Atum-Ra fusion already in PT 217; they are aspects of the single solar-creative divine power. Allen 1988.
+- → [[ra]] — *syncretic-identification*: Atum-Ra fusion already in PT 217; they are aspects of the single solar-creative divine power. Allen 1988.
 - → [[shu]] — *parent-of*: Shu (air/atmosphere) is the first creation of Atum's self-procreation.
 - → [[tefnut]] — *parent-of*: Tefnut (moisture/order) is the first creation alongside Shu.
 - → [[geb]] — *grandparent-of*: Geb (earth) is Shu and Tefnut's son, Atum's grandson.

@@ -17,7 +17,7 @@ texts-attributed-to: ["the Shorter Hymn to the Aten (in several Amarna tombs)", 
 events-participated: ["[[event-amarna-period-1353-1336]]", "the founding of Akhetaten (~year 5 of reign, ~1348 BCE)", "the closure and defacement of the Amun-Ra temples and other Egyptian cults", "the diplomatic exchanges preserved in the [[phase-1-012-amarna-letters]]"]
 mentioned-in: ["[[phase-1-011-great-hymn-to-aten]]", "[[phase-1-012-amarna-letters]]"]
 influences: ["[[jan-assmann]] (Mosaic Distinction thesis)", "[[moses]] (disputed — cultural memory, not genealogy per Assmann)", "[[tradition-judaism]] (Assmann's cultural-memory thesis)", "[[executed-divine-claimant]] (damnatio memoriae pattern)"]
-influenced-by: ["[[ra-egyptian]]", "[[amun-ra]]", "[[aten]]"]
+influenced-by: ["[[ra]]", "[[amun-ra]]", "[[aten]]"]
 status: "full"
 refs:
   - title: "Moses the Egyptian: The Memory of Egypt in Western Monotheism"
@@ -137,7 +137,7 @@ Robust. (1) Monumental inscriptions and reliefs from Akhetaten: boundary stelae,
 - → [[jan-assmann]]: Mosaic Distinction thesis — Akhenaten as world-historical type-case
 - → [[aten]]: the deity Akhenaten elevated to sole legitimate worship
 - → [[amun-ra]] / [[amun]]: the tradition he suppressed; his successors restored it
-- → [[ra-egyptian]]: the solar theology Atenism radicalized from
+- → [[ra]]: the solar theology Atenism radicalized from
 - → [[moses]]: the figure Assmann links to Akhenaten through cultural memory (NOT historical identity)
 - → [[tradition-judaism]]: the tradition Assmann argues bears the cultural memory trace of the Mosaic Distinction
 - → [[event-amarna-period-1353-1336]]: his reign as historical event
