@@ -36,10 +36,11 @@ _Hand-maintained. Each agent currently working in the vault appends a claim bloc
 
 ---
 
-## alphabet-indic-runes-1 — 6 eastern+northern sacred script nodes — IN PROGRESS
-- Owns: 11_alphabets/alphabet-devanagari-sacred.md (NEW), 11_alphabets/alphabet-brahmi-origin.md (NEW), 11_alphabets/alphabet-tibetan-tantric.md (NEW), 11_alphabets/alphabet-elder-futhark.md (NEW), 11_alphabets/alphabet-ogham.md (NEW), 11_alphabets/alphabet-avestan.md (NEW)
-- Also touches: src/data/patterns.js (2 new entries), stubs for missing wikilink targets
-- Status: IN PROGRESS
+## ~~alphabet-indic-runes-1 — 6 eastern+northern sacred script nodes — 2026-05-17 — FINISHED~~
+- ~~Owned: 11_alphabets/alphabet-devanagari-sacred.md (NEW), 11_alphabets/alphabet-brahmi-origin.md (NEW), 11_alphabets/alphabet-tibetan-tantric.md (NEW), 11_alphabets/alphabet-elder-futhark.md (NEW), 11_alphabets/alphabet-ogham.md (NEW), 11_alphabets/alphabet-avestan.md (NEW)~~
+- ~~Also touched: src/data/patterns.js (2 new entries: acrophonic-principle-double, operative-writing-pattern); stubs/metadata: tradition-vedic, tradition-tantra, tradition-vajrayana, tradition-tibetan-buddhism, tradition-norse-germanic, tradition-germanic-paganism, tradition-persian-zoroastrian, tradition-irish-celtic, tradition-druidism, ashoka, avesta~~
+- ~~MASSIVE WIN edges: Devanagari akshara = eternal phoneme; Vak = Logos parallel 1000+ years earlier; Brahmi both-ways win; Tibetan 5-vowels/5-elements = Pythagorean fivefold parallel; Ogham = acrophonic double of Proto-Sinaitic (zero contact, 2200 years apart); Futhark = god sacrifices himself FOR the alphabet (unique); Avestan = 53-letter precision instrument for 3000-year oral tradition~~
+- ~~Build: 2660 nodes · 15885 edges · 0 dead links introduced · 0 YAML errors~~
 
 ---
 
