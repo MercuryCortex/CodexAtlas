@@ -82,7 +82,7 @@ Wire: [[amun-ra]], [[amun]], [[tradition-neoplatonism]], [[heliopolis-ennead]].
 
 The Gnostic Valentinian system arranges divine powers in pairs called *syzygies* within a "pleroma" (fullness) — the primordial divine realm before material creation. The Hermopolitan eight pairs are structurally identical to the Valentinian pleroma pairs, and both operate in the same intellectual environment (Alexandrian Egypt, 2nd–3rd c. CE). The Valentinian Gnostics were aware of Egyptian theological traditions; the Hermopolitan Ogdoad provided a ready-made template for arranging primordial divine pairs as the architecture of a pre-creation pleroma.
 
-The Nag Hammadi texts discovered in Middle Egypt (1945) include multiple texts exploring these paired divine powers — they were found near what had been Hermopolis Magna, in a region steeped in Ogdoad theology. Whether the proximity is coincidence or causal is an open scholarly question. Wire: [[tradition-gnosticism]], [[tradition-valentinian-gnosticism]] (verify these exist before adding wikilinks).
+The Nag Hammadi texts discovered in Middle Egypt (1945) include multiple texts exploring these paired divine powers — they were found near what had been Hermopolis Magna, in a region steeped in Ogdoad theology. Whether the proximity is coincidence or causal is an open scholarly question. Wire: [[tradition-gnosticism]].
 
 ## Relations
 
