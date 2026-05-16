@@ -22,7 +22,7 @@ influenced-by: ["Gospel of Mark", "Q", "L source (Lukan special material)", "LXX
 influences: ["All subsequent Christian church-history writing (Eusebius, etc.)", "Christology of the early creeds", "Marcionite movement (which canonized a stripped-down Luke + Paul)"]
 deities-mentioned: ["[[yahweh]]", "[[jesus-of-nazareth]]", "[[holy-spirit]]"]
 events-context: ["Jesus's ministry, passion, resurrection (~+30/+33)", "Pentecost and apostolic mission (~+30s/+60s)", "Paul's missionary journeys (~+47/+58)", "Destruction of Jerusalem (+70)", "Continued growth of Gentile churches"]
-status: "metadata"
+status: "full"
 preservation: "P75 (Bodmer XIV/XV, ~+175/+225) contains substantial Luke and John; P45 (~+250) contains all four Gospels including Luke and Acts portions. Complete: Codex Vaticanus, Sinaiticus. Acts has its own textual peculiarity: the **Western Text** (represented by Codex Bezae) is ~8% longer than the Alexandrian text — a textual problem unique to Acts."
 refs:
   - title: "The Gospel According to Luke (Anchor Yale Bible 28, 28A)"
@@ -73,6 +73,43 @@ tags: [phase-3, early-christianity, synoptic-gospels, luke, acts, lukan, gentile
 ## What it is
 A two-volume literary work, addressed to "most excellent Theophilus" (Lk 1:3; Acts 1:1), narrating the origins of Christianity from before Jesus's birth through Paul's arrival in Rome under house arrest (~+62). The first volume (the **Gospel of Luke**, 24 chapters) covers the birth and infancy of John the Baptist and Jesus, Jesus's Galilean ministry, a long "travel narrative" (Lk 9:51–19:27) of teaching journeys toward Jerusalem, and the Jerusalem passion-resurrection. The second volume (**Acts of the Apostles**, 28 chapters) covers Pentecost, the Jerusalem community, the Hellenist-Hebrew dispute, the Stephen martyrdom, the early mission to Samaria and the Ethiopian eunuch, the conversion of Saul/Paul, the inclusion of Gentile God-fearers (Cornelius), the Antiochene mission, and Paul's three missionary journeys, his arrest, trials, and voyage to Rome.
 
+## Primary text — selected passages
+
+### Luke 1:46–55 — The Magnificat: Mary's song of reversal
+*Trans. NRSV; Fitzmyer, J.A. (1981). The Gospel According to Luke. Anchor Yale Bible 28. Doubleday.*
+> "My soul magnifies the Lord,
+>   and my spirit rejoices in God my Savior,
+> for he has looked with favor on the lowliness of his servant.
+>   Surely, from now on all generations will call me blessed...
+> He has shown strength with his arm;
+>   he has scattered the proud in the thoughts of their hearts.
+> He has brought down the powerful from their thrones,
+>   and lifted up the lowly;
+> he has filled the hungry with good things,
+>   and sent the rich away empty."
+
+*The Magnificat is modeled on Hannah's song (1 Sam 2:1–10) and contains three past-tense "social reversal" statements (scattered the proud / brought down the powerful / filled the hungry) — whether these describe eschatological future or prophetic past-as-done is theologically contested. It has been sung at Evening Prayer (Vespers) in the Christian liturgy every day for ~1,600 years.*
+
+### Luke 4:16–21 — The Nazareth manifesto: Jesus reads Isaiah 61
+*Trans. NRSV*
+> He stood up to read, and the scroll of the prophet Isaiah was given to him. He unrolled the scroll and found the place where it was written: "The Spirit of the Lord is upon me, because he has anointed me to bring good news to the poor. He has sent me to proclaim release to the captives and recovery of sight to the blind, to let the oppressed go free, to proclaim the year of the Lord's favor." And he rolled up the scroll, gave it back to the attendant, and sat down. The eyes of all in the synagogue were fixed on him. Then he began to say to them, "Today this scripture has been fulfilled in your hearing."
+
+*Luke 4:18–19's "year of the Lord's favor" is a jubilee-release declaration: the remission of debts and liberation of the oppressed specified in Leviticus 25 and Isaiah 61. The liberation-theology reading of Luke (Gutiérrez, 1971) traces directly to this programmatic scene.*
+
+### Acts 2:1–4 — Pentecost: the founding of the church
+*Trans. NRSV*
+> When the day of Pentecost had come, they were all together in one place. And suddenly from heaven there came a sound like the rush of a violent wind, and it filled the entire house where they were sitting. Divided tongues, as of fire, appeared among them, and a tongue rested on each of them. All of them were filled with the Holy Spirit and began to speak in other languages, as the Spirit gave them ability.
+
+*The Pentecost narrative reverses Babel (Gen 11): where Babel scattered humanity by diversifying language, Pentecost unites across language-diversity. This explicit anti-Babel reading has been made by patristic exegetes since Irenaeus.*
+
+### Acts 17:26–28 — Paul at the Areopagus: Greek philosophy meets the gospel
+*Trans. NRSV*
+> "From one ancestor he made all nations to inhabit the whole earth... so that they would search for God and perhaps grope for him and find him — though indeed he is not far from each one of us. For 'In him we live and move and have our being'; as even some of your own poets have said, 'For we too are his offspring.'"
+
+*The two quoted Greek poets are: Epimenides of Crete ("In him we live and move and have our being") and Aratus's *Phaenomena* 5 ("For we too are his offspring"). This is the NT's most explicit engagement with Greek philosophical literature and the founding moment of natural theology.*
+
+*Citations: NRSV; Fitzmyer 1981, AYB 28; Pervo 2009, Hermeneia.*
+
 ## Context
 - **Political milieu.** Luke writes in the post-+70 world for an audience of urban Greek-speaking believers. The Roman Empire is treated relatively favorably: Roman officials are repeatedly portrayed as recognizing Christian innocence (Gallio in Corinth, Acts 18; Festus and Agrippa, Acts 25–26; the centurion at the cross declares Jesus "innocent" — Lk 23:47, Luke's redaction of Mark's "Son of God"). This *apologetic* orientation toward Rome distinguishes Luke from Mark and (especially) Revelation.
 - **Religious milieu.** A predominantly Gentile-Christian audience that nonetheless honors Christianity's Jewish origins. Luke positions the Christian movement as **the legitimate continuation of Israel's story** — fulfilled in Jesus and extending universally through the Spirit-empowered apostolic mission.
@@ -100,6 +137,16 @@ A two-volume literary work, addressed to "most excellent Theophilus" (Lk 1:3; Ac
 - **Authorship.** Lukan-companion (Marshall, Bauckham, Hengel) vs. anonymous later author (Vielhauer, Pervo, Ehrman). The "we-passages" are central evidence either way.
 - **Historicity of Acts.** Spectrum from highly reliable (Bruce, Hemer) to creative theological history with thin factual underpinning (Pervo) to anti-Pauline reinscription of the Pauline tradition (Walaskay, Mount).
 - **Lukan vs. Pauline Paul.** The Paul of Acts and the Paul of the undisputed letters show striking disjunctures (Athens speech, Jerusalem Council narrative, Paul's relationship to the Law); how to reconcile is contested.
+
+## MASSIVE WIN — cross-tradition edges
+
+- **The Magnificat (Lk 1:46–55) — the most-sung text in Christian liturgy, and the most-performed social-reversal manifesto in the history of religion**: The Magnificat has been sung at Evening Prayer (Vespers / Evensong) in the Western and Eastern Christian liturgies every day for approximately 1,600 years — a liturgical frequency unmatched by any other NT text. Its three "reversal" statements (scattered the proud / brought down the powerful / lifted up the lowly / sent the rich away empty) are the starkest social-justice declarations in the New Testament. During the Guatemalan civil war (1980s), the Magnificat was banned by the government as subversive; the Argentine junta reportedly prohibited its public display. Liberation theology (Gutiérrez, Boff, Sobrino) treats the Magnificat as the founding text of the "preferential option for the poor." John Wesley cited it as central to early Methodism's social mission. Hannah's Song (1 Sam 2), which the Magnificat directly models, links it to an earlier Israelite revolutionary tradition (Fitzmyer 1981, AYB 28 pp.359–366; Gutiérrez 1971, *A Theology of Liberation*, Orbis; Brown 1977, *The Birth of the Messiah*, Doubleday pp.354–365).
+
+- **Conzelmann's three-epoch salvation-history schema (Israel / Jesus / Church) — the founding framework of Christian philosophy of history, generating all subsequent Christian historical theology**: Hans Conzelmann's *Die Mitte der Zeit* (1954, "The Middle of Time") identified Luke's distinctive theological contribution as the periodization of salvation history into three epochs: (1) the time of Israel (from creation to John the Baptist); (2) the time of Jesus (the *Mitte der Zeit*, the central period of history); (3) the time of the church (from Pentecost to the parousia). Luke invented this schema by writing a two-volume work (Gospel + Acts) where the second volume covers the post-resurrection period. This periodization underlies: Eusebius's *Ecclesiastical History* (the first Christian historiography); Augustine's *City of God* (sacred vs. secular history); Joachim of Fiore's three ages (Father/Son/Spirit); Hegel's three-stage philosophy of history; and all modern Christian philosophy of history (Conzelmann 1960, *The Theology of St Luke*, Harper & Row; Dunn 2009, *Beginning from Jerusalem*, Eerdmans; Bovon 2002, *Luke the Theologian*, Baylor UP).
+
+- **Acts 17:28 "in him we live and move and have our being" — the NT's most consequential engagement with Greek philosophy, founding natural theology and Catholic intellectual tradition**: Paul's Areopagus speech (Acts 17:22–31) quotes two Greek poets (Epimenides: "in him we live and move and have our being"; Aratus, *Phaenomena* 5: "For we too are his offspring") to argue that the Athenians' "unknown god" is the God who made the world. This is the first and most programmatic instance in the NT of *natural theology* — the argument that God is knowable from creation and human reason without special revelation. It becomes the foundation of the Catholic intellectual tradition: Justin Martyr's *logos spermatikos* (seeds of the Word in Greek philosophy), Clement of Alexandria's "philosophy as pedagogy," Thomas Aquinas's *quinque viae* (Five Ways), and Vatican I's declaration that God can be known by natural reason. The Areopagus speech is the gate through which Greek philosophy entered Christian theology as a legitimate conversation partner (Pervo 2009, Hermeneia pp.434–455; Fitzmyer 1998, AYB 31 pp.600–612; Jaeger 1961, *Early Christianity and Greek Paideia*, Harvard UP pp.7–28).
+
+- **Acts' Western Text (Codex Bezae ~8% longer) — the most dramatic textual divergence in the canonical NT, proving the early Christian canon was fluid in its earliest centuries**: Acts has a unique textual problem: the "Western Text" (represented principally by Codex Bezae Cantabrigiensis, Greek-Latin diglot, ~+400) is approximately 8% longer than the "Alexandrian text" (Vaticanus, Sinaiticus) — adding over 1,000 words of additional narrative, expanded speeches, and modified readings. Whether the Western Text represents an earlier and more expansive original that was later shortened, or a later scribal expansion of the Alexandrian text, is unresolved. This is the largest unresolved textual divergence between two complete-text traditions in the NT canon. It proves that Acts in particular, and the NT canon in general, was not a fixed text in its earliest centuries — scribes and communities shaped it. The Bezae divergence is the NT parallel to the Q source question: evidence of multiple textual traditions behind what became canonical (Metzger 1994, *A Textual Commentary on the Greek NT*, UBS pp.222–236; Pervo 2009, Hermeneia pp.lxii–lxxv; Parker 2008, *Codex Bezae*, Cambridge UP).
 
 ## Refs
 1. Fitzmyer, J.A. (1981, 1985, 1998). *Luke* AYB 28, 28A; *Acts* AYB 31.
