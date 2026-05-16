@@ -1301,11 +1301,10 @@ The things opus-foundation-1 claimed but never started are all still open:
 
 ---
 
-## goblin-spirit-mirror-1 — symbols / breath-spirit + sacred-mirror + rainbow-serpent + severed-head thread — started 2026-05-16 — IN PROGRESS
-- Owning: `09_symbols/ruach-pneuma.md` (NEW), `09_symbols/sacred-mirror.md` (NEW), `09_symbols/rainbow-serpent.md` (NEW), `09_symbols/sacred-head.md` (NEW)
-- Goal: Ruach/Pneuma MASSIVE WIN cross-linguistic wind-breath-spirit convergence; Sacred Mirror as divine self-reflection (Amaterasu/Ibn Arabi/Tezcatlipoca/Dee); Rainbow Serpent oldest continuous deity + independent serpent-creator parallel; Severed Head as oracle/wisdom across Celtic/Greek/Islamic/Christian traditions
-- Status: in-progress
-- ~~Commits: 78bf8b2, 5b78de0, 234c5fe, b1112e2~~
+## ~~goblin-spirit-mirror-1 — symbols / breath-spirit + sacred-mirror + rainbow-serpent + severed-head thread — started 2026-05-16 — FINISHED 2026-05-16~~
+- ~~Owning: `09_symbols/ruach-pneuma.md` (NEW), `09_symbols/sacred-mirror.md` (NEW), `09_symbols/rainbow-serpent.md` (NEW), `09_symbols/sacred-head.md` (NEW)~~
+- ~~Goal: Ruach/Pneuma MASSIVE WIN cross-linguistic wind-breath-spirit convergence; Sacred Mirror as divine self-reflection (Amaterasu/Ibn Arabi/Tezcatlipoca/Dee); Rainbow Serpent oldest continuous deity + independent serpent-creator parallel; Severed Head as oracle/wisdom across Celtic/Greek/Islamic/Christian traditions~~
+- ~~Status: finished — 4 new symbol nodes · 163 total symbols · 14424 edges · 0 dead links introduced · STATUS.md logged~~
 
 ---
 
