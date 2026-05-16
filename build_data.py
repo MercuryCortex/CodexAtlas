@@ -264,6 +264,7 @@ TRADITION_FAMILY_ORDER = [
     "Andean",
     "Native-American",
     "Pacific",
+    "Shinto",
     # Modern / academic / NRM
     "Modern-Esoteric",
     "Academic",
@@ -298,6 +299,7 @@ FAMILY_COLORS = {
     "Andean":           "#a07050",
     "Native-American":  "#8a6a4a",
     "Pacific":          "#3a8aa4",
+    "Shinto":           "#c85050",
     "Baltic":           "#7a9a5a",
     "Modern-Esoteric":  "#9a7ac4",
     "Academic":         "#6a7a8a",
@@ -373,6 +375,8 @@ def tradition_family(t: str) -> str:
         return "Rabbinic"
     if "islam" in s or "qur" in s or "sufi" in s or "shia" in s or "shi'a" in s or "ismaili" in s or "alevi" in s or "druze" in s or "yazidi" in s or "muslim" in s:
         return "Islamic"
+    if "shinto" in s or "kojiki" in s or "nihon shoki" in s or "nihongi" in s:
+        return "Shinto"
     if "buddh" in s or "theravada" in s or "mahayana" in s or "zen" in s or "chan" in s or "vajra" in s or "tantric buddh" in s or "pure land" in s or "dzogchen" in s or "bon" in s:
         return "Buddhist"
     if "sikh" in s or "vedic" in s or "hindu" in s or "upanish" in s or "brahman" in s or "tantric" in s or "vaishnav" in s or "shakta" in s or "shaiv" in s or "bhakti" in s or "vedanta" in s or "jain" in s or "hindutva" in s:
@@ -381,7 +385,7 @@ def tradition_family(t: str) -> str:
         return "Zoroastrian"
     if "roman" in s:
         return "Roman"
-    if "chinese" in s or "confucian" in s or "daoist" in s or "daoism" in s or "taoist" in s or "taoism" in s or "shang" in s or "zhou" in s or "shinto" in s or "japanese" in s or "korean" in s:
+    if "chinese" in s or "confucian" in s or "daoist" in s or "daoism" in s or "taoist" in s or "taoism" in s or "shang" in s or "zhou" in s or "korean" in s:
         return "Chinese"
     if "aztec" in s or "mexica" in s or "nahuatl" in s or "maya" in s or "mayan" in s or "olmec" in s or "toltec" in s or "zapotec" in s or "mixtec" in s or "mesoamerican" in s:
         return "Mesoamerican"
