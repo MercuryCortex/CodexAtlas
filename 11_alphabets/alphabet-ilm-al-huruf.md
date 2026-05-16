@@ -30,6 +30,9 @@ cross-alphabet-edges:
   - target: alphabet-huruf-muqattaat
     type: ancestor-of
     note: "'Ilm al-Huruf provides the theoretical framework within which the mysterious Quranic letters are interpreted; the Muqatta'at are the supreme mystery of the science of letters"
+  - target: music-islamic-adhan-maqam
+    type: parallel-form
+    note: "Two faces of Islamic sacred sound: 'Ilm al-Huruf treats Arabic letters as divine sonic substances whose correct vocalization activates their cosmic power; the adhan and maqam tradition develops specific melodic modes for specific sacred occasions. Both operate on the same premise — sound in Arabic, specifically structured, connects to the divine."
 alphabet-tradition-context:
   - "[[tradition-sufism]]"
   - "[[tradition-islam]]"

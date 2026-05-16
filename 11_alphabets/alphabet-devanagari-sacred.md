@@ -29,6 +29,9 @@ cross-alphabet-edges:
   - target: alphabet-medu-netjer
     type: parallel-form
     note: "Both are sacred scripts whose name announces their theology: Medu Netjer = 'Words of God'; Devanagari = 'city/script of the gods.' Both treat the writing system as divinely inhabited."
+  - target: music-nada-brahma
+    type: parallel-form
+    note: "Devanagari gives the visual form; Nada Brahma gives the sonic theory. Both deal with the same underlying claim: Sanskrit phonemes (akshara) are eternal cosmic substances. The script is the visual face of a sonic cosmology — each Devanagari character is the visible body of a sound that IS a structure of reality."
 alphabet-tradition-context:
   - "[[tradition-hinduism]]"
   - "[[tradition-vedic]]"

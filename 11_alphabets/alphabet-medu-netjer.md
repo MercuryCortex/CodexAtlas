@@ -28,6 +28,9 @@ cross-alphabet-edges:
   - target: alphabet-ugaritic
     type: influenced-by
     note: "Ugaritic alphabetic texts from Ras Shamra show Egyptian-scripted administrative contexts; Egypt controlled Canaan during the Late Bronze Age when Ugarit flourished"
+  - target: music-ancient-egyptian-music
+    type: parallel-form
+    note: "Medu Netjer and Egyptian sacred music are two faces of the same operative theology: the hieroglyph IS the divine thing; the temple music (sistrum-shaking, sacred chant) IS the divine sound. Both are instruments of Ma'at — the cosmic order that must be maintained through correct performance. The scribe and the temple musician hold parallel roles."
 alphabet-tradition-context:
   - "[[tradition-egyptian]]"
 refs:

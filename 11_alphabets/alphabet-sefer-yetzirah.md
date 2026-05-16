@@ -27,6 +27,12 @@ cross-alphabet-edges:
   - target: alphabet-huruf-muqattaat
     type: parallel-form
     note: "Both Sefer Yetzirah and the Quranic mysterious letters treat individual letters (not words) as primary units of divine meaning — the letter itself carries cosmic weight"
+  - target: music-sefer-yetzirah-sound
+    type: parallel-form
+    note: "Same text, two facets: as alphabet node, Sefer Yetzirah establishes the 22 letters as cosmic building materials; as music node, it establishes the sonic dimension — vocalizing the letter-combinations is participation in ongoing creation"
+  - target: music-abulafia-prophetic-kabbalah
+    type: ancestor-of
+    note: "Abulafia's letter-permutation technique (c. 1280 CE) is the practical operationalization of Sefer Yetzirah's theory: if 22 letters are the materials of creation, systematically permuting the letters of a divine name with specific breath-rhythm is theurgic practice"
 alphabet-tradition-context:
   - "[[tradition-kabbalah]]"
   - "[[tradition-judaism]]"

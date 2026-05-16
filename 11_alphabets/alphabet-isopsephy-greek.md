@@ -27,6 +27,12 @@ cross-alphabet-edges:
   - target: alphabet-phoenician
     type: descended-from
     note: "Greek alphabet derived from Phoenician c. 800 BCE, preserving the Phoenician letter-order and inheriting the numerical values latent in that order"
+  - target: music-valentinian-pleroma-harmony
+    type: parallel-form
+    note: "Marcus the Magician (c. 160-180 CE) makes the most explicit ancient statement that the 24 Greek letters = 24 musical intervals = the harmonic structure of the divine Pleroma. Isopsephy provides the numerical substrate; Marcus extends it into a full letter-number-music-cosmos homology. The 7 vowels = 7 planetary spheres = 7 scale notes is the most compressed statement of the ancient music-cosmos theory."
+  - target: music-orphic-hymns
+    type: parallel-form
+    note: "The voces magicae in the Greek magical papyri — untranslatable vowel sequences (ΑΕΗΙΟΥΩ) used as operative sound tools — are the sonic application of isopsephy's insight that Greek letters carry inherent cosmic force. Both are from the same late-antique Greek ritual milieu."
 alphabet-tradition-context:
   - "[[tradition-hellenistic-philosophy]]"
   - "[[tradition-neoplatonism]]"
