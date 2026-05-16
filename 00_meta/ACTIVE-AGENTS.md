@@ -1646,7 +1646,8 @@ Files: sacred-cauldron.md (NEW) · cerridwen.md (STUB, deity) · bran-the-blesse
 - ~~MASSIVE WIN edges: Plato Republic modal censorship→Augustine→Church Fathers liturgical mode regulation; Boethius transmission bottleneck (mode-name mistranslation acknowledged); Pythagorean ratios→world-soul→Gregorian modes→equal temperament; Kepler empirical orbital-interval confirmation; Lyre of Ur→kinnor→kithara cross-civilizational sacred object; Orpheus shamanic descent archetype cross-tradition; monophonic sacred chant = universal sacred-sound technology~~
 - ~~Build: 21 music nodes · 15597 edges · 0 dead links introduced · 0 YAML errors · see STATUS.md~~
 
-## music-eastern-1 — Indian/Islamic/Jewish music strand — 2026-05-16 — IN PROGRESS
-- Owning: all 10_music/ nodes for Indian classical, Arabic maqam, Sufi sama, Hebrew cantillation, Jewish niggun
-- DO NOT create: nodes already in music-seed-1 (music-nada-brahma, music-aum-cosmic-sound, music-sacred-drone)
-- Target new nodes: music-raga-cosmology, music-natya-shastra, music-sama-veda, music-saraswati-vina, music-arabic-maqam, music-oud-lute-transmission, music-sufi-sama, music-sefer-yetzirah-sound, music-torah-cantillation, music-niggun-hasidic
+## ~~music-eastern-1 — Indian/Islamic/Jewish music strand — 2026-05-16 — FINISHED~~
+- ~~Owned: music-raga-cosmology (NEW full) · music-natya-shastra (NEW full) · music-sama-veda (NEW full) · music-saraswati-vina (NEW full) · music-arabic-maqam (NEW full) · music-oud-lute-transmission (NEW full) · music-sufi-sama (NEW full) · music-sefer-yetzirah-sound (NEW full) · music-torah-cantillation (NEW full) · music-niggun-hasidic (NEW full)~~
+- ~~Wiring Law stub: 03_deities/narada.md (NEW stub)~~
+- ~~MASSIVE WIN edges: raga-time 5-tradition convergence; musician-deity archetype 7-tradition table (Saraswati/Apollo/Narada/Krishna/David/Orpheus/Odin); oud etymology as historical document (al-oud>lute, Arabic article survived 1000 years); 6-tradition non-verbal sound convergence (niggun/sama/AUM/overtone/ison); Sefer Yetzirah sonic-cosmogony vs. 5 traditions; Torah cantillation notation development convergence; Jewish-Islamic maqam co-development in al-Andalus~~
+- ~~Build: 26 music nodes · 15651 edges · 0 dead links introduced · 0 YAML errors · see STATUS.md~~
