@@ -532,17 +532,10 @@
             out.label = '';
           }
         }
-        // LABEL MODE — 'off' kills all labels, 'hub' keeps only degree≥threshold, 'all' shows them all.
-        // Dev panel can override the threshold live without a full re-render.
-        if (_labelsMode === 'off') {
-          out.label = '';
-        } else if (_labelsMode === 'hub') {
-          const _devThresh = window.CODEX_DEV?.settings?.hubThreshold;
-          const _isHub = _devThresh != null
-            ? (degree.get(id) || 0) >= _devThresh
-            : attrs._isHub;
-          if (!_isHub) out.label = '';
-        }
+        // Phase E — DOM overlay handles ALL node labels (production-style: text
+        // above each node, with a halo, plus a degree-priority deconfliction pass).
+        // Sigma's built-in labels are fully suppressed here.
+        out.label = '';
         return out;
       },
       edgeReducer: (id, attrs) => {
@@ -756,6 +749,7 @@
       _hoverId = e.node;
       sigma.refresh({ skipIndexation: true });
       applyEdgeHoverState();
+      if (typeof applyLabelHoverDim === 'function') applyLabelHoverDim();
       const attrs = graph.getNodeAttributes(e.node);
       showThumbCard(attrs, e);
     });
@@ -763,6 +757,7 @@
       _hoverId = null;
       sigma.refresh({ skipIndexation: true });
       applyEdgeHoverState();
+      if (typeof applyLabelHoverDim === 'function') applyLabelHoverDim();
       hideThumbCard();
     });
     // Track raw mouse for card positioning — sigma's stage-mousemove fires
@@ -785,6 +780,141 @@
 
     // Tangential family rim labels — DOM overlay synced to sigma camera.
     const rimOverlay = buildRimLabels(rootEl, wedges, sigma, _familyFilter);
+
+    // ============================================================
+    // PHASE E — DOM NODE LABELS + DECONFLICTION
+    // ============================================================
+    // Sigma's stock labels paint at each node's center and de-overlap via a
+    // grid — but the grid just *hides* collisions, it doesn't move labels
+    // out of the way. Result: 40-60 labels piled up on the inner ring.
+    //
+    // Production uses SVG <text> in a dedicated layer, positioned ABOVE each
+    // node (dy = -(7 + √deg × 1.8)), with a stroke-paint halo, and runs a
+    // greedy-by-degree deconfliction pass at the end of the force-sim.
+    //
+    // V2 mirror: a DOM overlay (one <div> per deity) synced to sigma's
+    // camera on every afterRender. Label IS centered above its node by
+    // CSS transform; halo is text-shadow. Deconflict runs ~60 ms after
+    // each sync settles, hiding lower-degree labels that overlap higher-
+    // degree ones.
+    const nodeLabelOverlay = document.createElement('div');
+    nodeLabelOverlay.className = 'ph2-node-labels-overlay';
+    nodeLabelOverlay.setAttribute('aria-hidden', 'true');
+    rootEl.appendChild(nodeLabelOverlay);
+
+    const nodeLabelEntries = [];
+    deities.forEach(d => {
+      const pos = positions.get(d.id);
+      if (!pos) return;
+      const deg = degree.get(d.id) || 0;
+      const el = document.createElement('div');
+      el.className = 'ph2-node-label' + (_hubIdSet.has(d.id) ? ' hub' : '');
+      el.dataset.nodeId = d.id;
+      el.dataset.family = d.family || 'Other';
+      // Two-line stacking for slashed double-names ("Enki / Ea", "Inanna / Ishtar")
+      const title = d.title || d.id || '';
+      if (/\s+\/\s+/.test(title) && title.length < 32) {
+        const parts = title.split(/\s+\/\s+/);
+        el.innerHTML = '<span>' + escapeHtml(parts[0]) + '</span>' +
+                       '<br><span>' + escapeHtml(parts.slice(1).join(' / ')) + '</span>';
+      } else {
+        el.textContent = title;
+      }
+      nodeLabelOverlay.appendChild(el);
+      nodeLabelEntries.push({
+        el, id: d.id, family: d.family || 'Other',
+        wx: pos.x, wy: pos.y,
+        deg,
+        dy: 7 + Math.sqrt(deg) * 1.5  // pixels above the node, scales with size
+      });
+    });
+
+    function updateNodeLabelVisibility() {
+      const devThresh = window.CODEX_DEV?.settings?.hubThreshold;
+      nodeLabelEntries.forEach(L => {
+        let show = true;
+        if (_labelsMode === 'off') show = false;
+        else if (_labelsMode === 'hub') {
+          const isHub = devThresh != null ? (L.deg >= devThresh) : _hubIdSet.has(L.id);
+          show = isHub;
+        }
+        if (_familyFilter && L.family !== _familyFilter) show = false;
+        L.el.style.display = show ? '' : 'none';
+        if (show) L.el.style.visibility = '';
+      });
+      scheduleDeconflict();
+    }
+
+    function syncNodeLabels() {
+      // Re-project visible label world-positions to screen-space via sigma camera.
+      const len = nodeLabelEntries.length;
+      for (let i = 0; i < len; i++) {
+        const L = nodeLabelEntries[i];
+        if (L.el.style.display === 'none') continue;
+        const screen = sigma.graphToViewport({ x: L.wx, y: L.wy });
+        L.el.style.left = screen.x + 'px';
+        L.el.style.top  = (screen.y - L.dy) + 'px';
+      }
+      scheduleDeconflict();
+    }
+
+    let _deconflictTimer = null;
+    function scheduleDeconflict() {
+      clearTimeout(_deconflictTimer);
+      _deconflictTimer = setTimeout(deconflictNodeLabels, 60);
+    }
+
+    // Greedy first-fit by degree (production's exact algorithm, app.js:1444).
+    // Reset visibility on candidates → measure bb → sort by deg desc →
+    // walk through and claim screen-space rects; hide labels that conflict.
+    function deconflictNodeLabels() {
+      const cands = [];
+      for (let i = 0; i < nodeLabelEntries.length; i++) {
+        const L = nodeLabelEntries[i];
+        if (L.el.style.display === 'none') continue;
+        L.el.style.visibility = '';
+        cands.push(L);
+      }
+      if (!cands.length) return;
+      // Measure AFTER visibility reset
+      const items = [];
+      for (const L of cands) {
+        const bb = L.el.getBoundingClientRect();
+        if (!bb.width || !bb.height) continue;
+        items.push({ L, bb, deg: L.deg });
+      }
+      items.sort((a, b) => b.deg - a.deg);
+      const claimed = [];
+      const PAD = 2;
+      for (const it of items) {
+        const bb = it.bb;
+        const x0 = bb.left - PAD, x1 = bb.right + PAD;
+        const y0 = bb.top  - PAD, y1 = bb.bottom + PAD;
+        let conflict = false;
+        for (const c of claimed) {
+          if (!(x1 < c.x0 || c.x1 < x0 || y1 < c.y0 || c.y1 < y0)) { conflict = true; break; }
+        }
+        if (conflict) it.L.el.style.visibility = 'hidden';
+        else claimed.push({ x0, x1, y0, y1 });
+      }
+    }
+
+    function applyLabelHoverDim() {
+      if (!_hoverId) {
+        for (const L of nodeLabelEntries) L.el.classList.remove('dim');
+        return;
+      }
+      for (const L of nodeLabelEntries) {
+        const isNeighbor = (L.id === _hoverId) ||
+          graph.hasEdge(L.id, _hoverId) || graph.hasEdge(_hoverId, L.id);
+        L.el.classList.toggle('dim', !isNeighbor);
+      }
+    }
+
+    // Initial paint + bind camera sync
+    updateNodeLabelVisibility();
+    syncNodeLabels();
+    sigma.on('afterRender', syncNodeLabels);
 
     // ----- TOOLBAR — mode dropdown + labels toggle + ego focus + recenter -----
     const toolbar = document.createElement('div');
@@ -815,6 +945,7 @@
     toolbar.querySelector('#ph2-labels').onclick = (ev) => {
       _labelsMode = _labelsMode === 'hub' ? 'all' : _labelsMode === 'all' ? 'off' : 'hub';
       ev.target.textContent = 'labels: ' + _labelsMode;
+      updateNodeLabelVisibility();
       sigma.refresh({ skipIndexation: true });
     };
     toolbar.querySelector('#ph2-ego').onclick = (ev) => {
@@ -868,6 +999,7 @@
           el.style.opacity = (_familyFilter && el.dataset.family !== _familyFilter) ? '0.18' : '0.85';
         });
         applyHullFilterState();
+        updateNodeLabelVisibility();
         sigma.refresh({ skipIndexation: true });
       };
       // Hover preview

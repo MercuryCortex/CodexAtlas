@@ -1813,6 +1813,44 @@ body.view-atlas main.canvas { background: var(--bg-0); }
   pointer-events: none;
   z-index: 5;
 }
+
+/* PHASE E — DOM NODE LABELS overlay.
+   One <div> per deity, positioned absolutely via JS (synced to sigma camera).
+   Transform centers each label horizontally and stacks it ABOVE the node.
+   Halo via text-shadow mimics production's paint-order:stroke trick. */
+.ph2-node-labels-overlay {
+  position: absolute; inset: 0;
+  pointer-events: none;
+  z-index: 4;          /* above sigma canvas, below rim labels (z-index 5) */
+  contain: layout;
+}
+.ph2-node-label {
+  position: absolute;
+  left: 0; top: 0;
+  transform: translate(-50%, -100%);
+  pointer-events: none;
+  font-family: var(--sans);
+  font-size: 10px;
+  line-height: 1.05;
+  color: var(--text-2);
+  white-space: nowrap;
+  text-align: center;
+  /* Halo: dark stroke around glyphs so labels read over edges + hulls */
+  text-shadow:
+    0 0 2px var(--bg-0),
+     1px  1px 0 var(--bg-0),
+    -1px  1px 0 var(--bg-0),
+     1px -1px 0 var(--bg-0),
+    -1px -1px 0 var(--bg-0);
+  transition: opacity 200ms ease, color 200ms ease;
+  will-change: left, top;
+}
+.ph2-node-label.hub {
+  color: var(--text-0);
+  font-weight: 500;
+  font-size: 11px;
+}
+.ph2-node-label.dim { opacity: 0.15; }
 .ph2-rim-label {
   position: absolute;
   font-family: var(--serif);

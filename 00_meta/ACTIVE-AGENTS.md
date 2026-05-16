@@ -102,6 +102,13 @@ _Hand-maintained. Each agent currently working in the vault appends a claim bloc
 
 ---
 
+## ~~opus-pantheon-v2-labels-1 — Phase E · DOM node labels + deconflict — started 2026-05-17 — DONE~~
+- ~~Owned: `src/js/views/pantheon-v2.js`, `src/styles/app.css`, `index.html`~~
+- ~~Status: done — sigma labels suppressed; DOM overlay with halo + greedy-by-degree deconflict; ~87 labels visible at default zoom vs 304 piled on inner ring before~~
+- ~~Next: F (horizontal family rim labels at Router+56)~~
+
+---
+
 ## ~~goblin-islamic-sacred-1 — symbols / Islamic sacred symbols + Sudarshana + Ashtamangala thread — started 2026-05-16 — FINISHED~~
 - ~~Owning: `09_symbols/rub-el-hizb.md` (NEW), `09_symbols/basmala.md` (NEW), `09_symbols/sudarshana-chakra.md` (NEW), `09_symbols/ashtamangala.md` (NEW)~~
 - ~~Goal: Rub el Hizb 8-pointed star cross-tradition (Ishtar/crescent/Islamic heraldry); Basmala as sacred-word-as-image (parallels Tetragrammaton/Aum/IHS); Sudarshana Chakra as spinning divine weapon + Wheel of Ezekiel parallel; Ashtamangala as complete 8-symbol auspiciousness set~~
@@ -457,6 +464,13 @@ _Hand-maintained. Each agent currently working in the vault appends a claim bloc
 - Attribution note: all files swept into commit 772babb by parallel agent before explicit commit landed; work fully present; this log corrects the record
 - MASSIVE WIN edges: earth-diver 7-tradition table (Haudenosaunee/Ojibwe/Lakota/Cherokee/Finnish Ilmatar/Vedic Varaha/Siberian); Spider Grandmother ↔ Memphite/Hebrew/Islamic/Vedic creation-by-thought table; Quetzalcoatl-Venus inferior-conjunction ↔ Inanna's Descent; Aztec sacrifice-as-engineering (mechanistic cosmology vs. gift/appeasement); Great Law Gayanashagowa → US Constitution (Franklin 1754 primary document)
 - Last edit: `00_meta/STATUS.md`
+
+---
+
+## goblin-divine-union-1 — symbols / divine union + sacred objects thread — started 2026-05-16 — IN PROGRESS
+- Owning: `09_symbols/hieros-gamos.md` (NEW), `09_symbols/ark-of-the-covenant.md` (NEW), `09_symbols/sacred-crown.md` (NEW)
+- Goal: Hieros Gamos — sacred marriage cross-tradition (Inanna-Dumuzi/alchemical Coniunctio/Kabbalistic Shabbat/Tantric Maithuna/Christian Bride of Christ); Ark of the Covenant — portable divine throne with Ethiopian living tradition + Cherubim-throne theology + palladium pattern; Sacred Crown — divine authority marker pan-civilizational (Egyptian Double Crown/Mesopotamian horned tiara/Hindu mukuta/Buddhist Vairocana/Yoruba ade/Inca mascapaycha) + Crown Chakra external materialization
+- Status: in-progress
 
 ---
 
@@ -1292,3 +1306,10 @@ The things opus-foundation-1 claimed but never started are all still open:
 - Goal: Ruach/Pneuma MASSIVE WIN cross-linguistic wind-breath-spirit convergence; Sacred Mirror as divine self-reflection (Amaterasu/Ibn Arabi/Tezcatlipoca/Dee); Rainbow Serpent oldest continuous deity + independent serpent-creator parallel; Severed Head as oracle/wisdom across Celtic/Greek/Islamic/Christian traditions
 - Status: in-progress
 - ~~Commits: 78bf8b2, 5b78de0, 234c5fe, b1112e2~~
+
+---
+
+## goblin-flow-fate-1 — symbols / sacred river + thread of fate + sacred dance + tattoo thread — started 2026-05-16 — IN PROGRESS
+- Owning: `09_symbols/sacred-river.md` (NEW), `09_symbols/thread-of-fate.md` (NEW), `09_symbols/sacred-dance.md` (NEW), `09_symbols/tattoo-sacred.md` (NEW)
+- Goal: Sacred River MASSIVE WIN — four rivers of Eden + Gangā as goddess + Jordan baptism + Styx as death boundary; Thread of Fate — Moirai/Norns/Red Thread of Fate/Ariadne/Indra's Net; Sacred Dance — Nataraja as template + Sufi sema + Ghost Dance + Danse Macabre; Tattoo as skin-scripture — Ötzi + Polynesian tatau + Sak Yant + Coptic cross wrist tattoo
+- Status: in-progress
