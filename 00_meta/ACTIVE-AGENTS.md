@@ -74,10 +74,12 @@ _Hand-maintained. Each agent currently working in the vault appends a claim bloc
 
 ---
 
-## sonnet-akhenaten-egypt-1 — persons/deities / Akhenaten upgrade + Ra node + Champollion + Hatshepsut — started 2026-05-16 — **IN PROGRESS**
-- Owned: `04_persons/akhenaten.md` (stub→full), `03_deities/ra-egyptian.md` (NEW — preset bug fix), `04_persons/jean-francois-champollion.md` (NEW), `04_persons/hatshepsut.md` (NEW stub)
+## sonnet-akhenaten-egypt-1 — persons/deities / Akhenaten upgrade + Ra node + Champollion + Hatshepsut — started 2026-05-16 — **FINISHED 2026-05-16**
+- Owned: `04_persons/akhenaten.md` (stub→full, Tier S), `03_deities/ra-egyptian.md` (NEW metadata), `04_persons/jean-francois-champollion.md` (NEW metadata), `04_persons/hatshepsut.md` (NEW metadata stub)
 - Goal: Upgrade Akhenaten to Tier S full; fix ra-node preset bug; add Champollion + Hatshepsut persons
-- Status: in-progress
+- Status: finished
+- Delivered: akhenaten stub→full (Tier S, Mosaic Distinction 5-section, 8 refs); ra-egyptian NEW metadata (3 forms, Ra-Osiris MASSIVE WIN, solar lineage MASSIVE WIN, 6 Tier-1 refs); jean-francois-champollion NEW metadata (Coptic key MASSIVE WIN, 1822+1824 primary sources); hatshepsut NEW metadata stub (female divine kingship, Amun-Ra election, damnatio memoriae). Build: 2294 nodes · 13479 edges · 0 YAML errors · 0 new dead links. Attribution: swept into commit ab4350f by parallel agent; work fully present.
+- Last edit: `00_meta/STATUS.md`
 
 ---
 
@@ -140,6 +142,13 @@ _Hand-maintained. Each agent currently working in the vault appends a claim bloc
   - **`blazing-star.md`** — 6 Tier-1 refs; MASSIVE WIN: Masonic Blazing Star = Sirius (Pike 1871 primary source) → Egyptian Sopdet/Isis → Egyptian New Year + Nile flood; Great Pyramid Sirius alignment; five-pointed = Pythagorean pentalpha; Polaris/axis-mundi reading; 5 cross-symbol edges.
   - **`mosaic-pavement.md`** — 6 Tier-1 refs; MASSIVE WIN: Pike explicitly connects the pavement to Zoroastrian Ahura Mazda/Angra Mainyu dualism; full chain -600 BCE→Mani→Bogomil→Cathar→Masonic lodge; Kabbalistic Malkuth reading; yin-yang visual cognate; 4 cross-symbol edges.
 - Build: **4 new nodes · 0 dead links introduced · all wikilinks verified**
+
+---
+
+## goblin-norse-celtic-1 — symbols / Norse + Celtic thread — started 2026-05-16 — IN PROGRESS
+- Owning: `09_symbols/valknut.md` (NEW), `09_symbols/triquetra.md` (NEW), `09_symbols/yggdrasil.md` (NEW), `09_symbols/aegishjalmr.md` (NEW)
+- Goal: Norse/Celtic symbols; Valknut-Borromean rings-trinity wins; Yggdrasil as world tree depth; triquetra cross-tradition
+- Status: in-progress
 
 ---
 
