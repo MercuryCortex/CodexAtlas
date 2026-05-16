@@ -1806,7 +1806,33 @@ Files: sacred-cauldron.md (NEW) · cerridwen.md (STUB, deity) · bran-the-blesse
 
 ---
 
+---
+
+## alphabet-undecoded-1 — 3 great undecoded scripts — 2026-05-16 — IN FLIGHT
+- Owned: `11_alphabets/alphabet-linear-a.md` (NEW), `11_alphabets/alphabet-proto-elamite.md` (NEW), `11_alphabets/alphabet-rongorongo.md` (NEW)
+- Do NOT touch: any existing node, app code, src/js/, src/styles/, index.html
+
+---
+
+## alphabet-calligraphy-1 — Arabic calligraphy as sacred architecture + Coptic — 2026-05-16 — IN FLIGHT
+- Owned: `11_alphabets/alphabet-arabic-calligraphy.md` (NEW), `11_alphabets/alphabet-coptic.md` (NEW)
+- Do NOT touch: any existing node, app code, src/js/, src/styles/, index.html
+
+---
+
 ## ~~alphabet-independent-scripts-1 — 3 independent-tradition script nodes — FINISHED~~
 - ~~Owned: 11_alphabets/alphabet-mayan-glyphs.md (full), 11_alphabets/alphabet-chinese-oracle-bones.md (full), 11_alphabets/alphabet-indus-valley-script.md (full, alphabet-tier node cross-referencing 09_symbols/indus-valley-script.md); stubs: 03_deities/chaac.md, 05_events/shang-dynasty.md~~
 - ~~MASSIVE WIN edges: (1) Popol Vuh = 7th independent creation-by-word tradition (trans-oceanic, zero contact with Old World — strongest evidence for universal cognitive template); (2) Chinese character zi (word) = child-under-roof = civilization embedded in script's own semantic structure; (3) Chinese fu talisman = operative writing parallel to Elder Futhark runes (6-tradition convergence); (4) Indus Valley Script if proto-Dravidian = South Indian literacy 1,500 years older than Sanskrit; (5) writing-origins-religious-universal pattern: every independently invented writing system originated in sacred context — 5 cases documented~~
 - ~~Status: FINISHED — commit 4047f9b · 21 alphabets · 2675 nodes · 16046 edges · 0 dead links introduced~~
+
+---
+
+## alphabet-missionary-1 — 3 deliberately invented script nodes — 2026-05-16 — IN FLIGHT
+- Owned: `11_alphabets/alphabet-glagolitic-cyrillic.md` (NEW), `11_alphabets/alphabet-hangul.md` (NEW), `11_alphabets/alphabet-cherokee.md` (NEW)
+- Do NOT touch: any existing node, app code, src/js/, src/styles/, index.html
+
+---
+
+## alphabet-hebrew-script-1 — Hebrew aleph-bet deep dive + transmission audit — 2026-05-16 — IN FLIGHT
+- Owned: `11_alphabets/alphabet-hebrew-aleph-bet.md` (NEW), `11_alphabets/alphabet-masoretes.md` (NEW)
+- Do NOT touch: any existing node, app code, src/js/, src/styles/, index.html
