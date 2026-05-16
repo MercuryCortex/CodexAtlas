@@ -24,6 +24,11 @@ SCRIPTURE_TEXTS['genesis-1'] = {
   date: 'c. 6th–9th century BCE (Priestly source)',
   docNode: 'phase-2-006-genesis',
   language: 'Hebrew · King James Version (1611)',
+  translations: [
+    { id: 'kjv',    label: 'KJV (1611)',      note: 'King James Version — the classic literary English rendering' },
+    { id: 'hebrew', label: 'Hebrew (MT)',      note: 'Masoretic Text transliteration + word-by-word gloss — closest to the original' },
+    { id: 'lxx',    label: 'LXX (Greek)',      note: 'Septuagint c. 285 BCE — Greek translation used by NT authors and early Church Fathers' },
+  ],
   intro: 'The Priestly (P) account of creation, composed during or after the Babylonian exile. Genesis 1 is the most cross-tradition–connected text in the vault: the Hebrew word tehom ("the deep") in verse 2 is linguistically cognate with the Akkadian Tiāmat of the Enuma Elish — the most-documented case of Mesopotamian influence on Hebrew cosmology (Gunkel 1895).',
   crossTradition: [
     { label: 'Enuma Elish I (Mesopotamian)', textId: 'enuma-elish-1', note: 'tehom ↔ Tiāmat: the same primordial ocean, 1,000 years apart. Gunkel 1895 established the linguistic cognate; Day 1985 confirmed it.' },
@@ -35,6 +40,11 @@ SCRIPTURE_TEXTS['genesis-1'] = {
       heading: 'Day One',
       verses: [
         { ref: '1:1', text: 'In the beginning God created the heaven and the earth.',
+          textVersions: {
+            kjv:    'In the beginning God created the heaven and the earth.',
+            hebrew: 'בְּרֵאשִׁית בָּרָא אֱלֹהִים אֵת הַשָּׁמַיִם וְאֵת הָאָרֶץ\nbə-rê-šîṯ  bā-rā  ʾĔ-lō-hîm  ʾêṯ  haš-šā-ma-yim  wə-ʾêṯ  hā-ʾā-reṣ\n[in-beginning] [created] [God/Elohim] [obj.mark] [the-heavens] [and-obj.mark] [the-earth]',
+            lxx:    'Ἐν ἀρχῇ ἐποίησεν ὁ θεὸς τὸν οὐρανὸν καὶ τὴν γῆν.\nEn archē epoiēsen ho theos ton ouranon kai tēn gēn.\n[In beginning] [made] [the God] [the heaven] [and] [the earth]',
+          },
           entities: [
             { word: 'God', node: 'elohim', type: 'deity',
               note: 'Hebrew: ʾĒlōhîm — grammatically plural, used throughout the P source with a singular verb. The generic Semitic word for divinity. The personal name YHWH (Yahweh) does not appear until 2:4.',
@@ -46,6 +56,11 @@ SCRIPTURE_TEXTS['genesis-1'] = {
           ]
         },
         { ref: '1:2', text: 'And the earth was without form, and void; and darkness was upon the face of the deep. And the Spirit of God moved upon the face of the waters.',
+          textVersions: {
+            kjv:    'And the earth was without form, and void; and darkness was upon the face of the deep. And the Spirit of God moved upon the face of the waters.',
+            hebrew: 'וְהָאָרֶץ הָיְתָה תֹהוּ וָבֹהוּ וְחֹשֶׁךְ עַל־פְּנֵי תְהוֹם וְרוּחַ אֱלֹהִים מְרַחֶפֶת עַל־פְּנֵי הַמָּיִם\nwə-hā-ʾā-reṣ  hā-yə-ṯāh  ṯō-hū  wā-ḇō-hū  wə-ḥō-šeḵ  ʿal-pə-nê  tə-hôm  wə-rū-aḥ  ʾĔ-lō-hîm  mə-ra-ḥe-p̄eṯ  ʿal-pə-nê  ham-mā-yim\n[and-the-earth] [was] [waste] [and-void] [and-darkness] [upon-face-of] [THE-DEEP (תְּהוֹם tĕhôm)] [and-spirit/wind-of] [God] [hovering/brooding] [upon-face-of] [the-waters]',
+            lxx:    'ἡ δὲ γῆ ἦν ἀόρατος καὶ ἀκατασκεύαστος, καὶ σκότος ἐπάνω τῆς ἀβύσσου, καὶ πνεῦμα θεοῦ ἐπεφέρετο ἐπάνω τοῦ ὕδατος.\nhē de gē ēn aoratos kai akataskeuastos, kai skotos epanō tēs abyssou, kai pneuma theou epephereto epanō tou hydatos.\n[the-earth was invisible and-unformed, and darkness over the-abyss (ἄβυσσος abyssos), and spirit of-God was-borne-over the waters]\nNote: Greek abyssos = direct translation of tĕhôm → enters English as "abyss"',
+          },
           entities: [
             { word: 'the deep', node: 'cosmic-ocean', type: 'symbol',
               note: 'Hebrew: tĕhôm (תְּהוֹם). Linguistically cognate with Akkadian Tiāmat — the primordial saltwater ocean of the Enuma Elish. Gunkel (1895) established this as the most-documented case of Mesopotamian influence on Hebrew cosmology; confirmed by Day (1985) and Wyatt (2005). The primordial waters are the pre-creation substrate in Egyptian (Nun), Hindu (Kshira Sagara), Norse (Ginnungagap), and Greek (Okeanos) cosmologies — all independent, but sharing the same deep structure.',
@@ -64,6 +79,11 @@ SCRIPTURE_TEXTS['genesis-1'] = {
           ]
         },
         { ref: '1:3', text: 'And God said, Let there be light: and there was light.',
+          textVersions: {
+            kjv:    'And God said, Let there be light: and there was light.',
+            hebrew: 'וַיֹּאמֶר אֱלֹהִים יְהִי אוֹר וַיְהִי אוֹר\nway-yō-mer  ʾĔ-lō-hîm  yə-hî  ʾôr  way-yə-hî  ʾôr\n[and-said] [God] [let-there-be] [light] [and-there-was] [light]\nNote: The divine IMPERATIVE yəhî — "let there be" — is the engine of all creation in the P source.',
+            lxx:    'καὶ εἶπεν ὁ θεός Γενηθήτω φῶς. καὶ ἐγένετο φῶς.\nkai eipen ho theos: Genēthētō phōs. kai egeneto phōs.\n[and said the God: Let-come-into-being light. and came-into-being light]\nNote: genēthētō → Latin fiat lux (Vulgate) → "Let there be light" — the most translated clause in human history.',
+          },
           entities: [
             { word: 'God said', node: 'creation-by-word', type: 'theme',
               note: 'Creation by divine speech (*creatio per verbum*). The spoken command as cosmogonic act appears in: Egyptian Memphite Theology (Ptah creates by heart and tongue, –700 BCE); Vedic *Vāc* (sacred speech as creative principle); and reaches its philosophical apex in John 1:1 ("In the beginning was the Logos"). The divine word is the one cosmogonic mechanism that appears independently across Egyptian, Hebrew, and Greek traditions before their meeting.',
@@ -164,6 +184,10 @@ SCRIPTURE_TEXTS['enuma-elish-1'] = {
   date: 'c. 1800–1100 BCE (Old Babylonian to Kassite period)',
   docNode: 'phase-1-002-enuma-elish',
   language: 'Akkadian · L.W. King translation (1902)',
+  translations: [
+    { id: 'king-1902', label: 'King (1902)',   note: 'L.W. King 1902 public domain — standard literary English rendering' },
+    { id: 'akkadian',  label: 'Akkadian',       note: 'Cuneiform transliteration of the Standard Babylonian recension — the original language of the text' },
+  ],
   intro: 'The Babylonian Epic of Creation, recited during the Akitu New Year festival. The opening lines describe the state before creation: the primordial commingling of Apsu (fresh water) and Tiamat (salt water). The word Tiāmat is linguistically cognate with the Hebrew tehom ("the deep") of Genesis 1:2 — the most-documented case of cross-tradition textual borrowing in ancient religion.',
   crossTradition: [
     { label: 'Genesis 1 (Hebrew)', textId: 'genesis-1', note: 'tehom (Gen 1:2) is linguistically cognate with Tiāmat — same word, same primordial ocean, 1,000 years later.' },
@@ -175,9 +199,17 @@ SCRIPTURE_TEXTS['enuma-elish-1'] = {
       heading: 'Before Creation',
       verses: [
         { ref: 'I.1–2', text: 'When on high the heaven had not been named, firm ground below had not been called by name,',
+          textVersions: {
+            'king-1902': 'When on high the heaven had not been named, firm ground below had not been called by name,',
+            akkadian:    'e-nu-ma e-liš la na-bu-ú šá-ma-mu\nšap-liš am-ma-tum šu-ma la zak-rat\n[When above] [the-heavens] [not] [had-been-named]\n[below] [the-earth] [a-name] [not] [had-been-proclaimed]',
+          },
           entities: []
         },
         { ref: 'I.3–4', text: 'Naught but primordial Apsu, their begetter, and Mummu-Tiamat, she who bore them all,',
+          textVersions: {
+            'king-1902': 'Naught but primordial Apsu, their begetter, and Mummu-Tiamat, she who bore them all,',
+            akkadian:    'ZU.AB-ma reš-tu-ú za-ru-šu-un\nmu-um-mu ti-amat mu-al-li-da-at gim-ri-šu-un\n[Apsu] [primordial] [their-begetter]\n[Mummu-Tiamat] [the-one-who-gave-birth-to] [them-all]\nNote: Tiamat (ti-amat) = "sea" in Akkadian; cognate with Hebrew tĕhôm via Proto-Semitic *tihāmat-',
+          },
           entities: [
             { word: 'Apsu', node: 'apsu', type: 'deity',
               note: 'The primordial freshwater ocean; the male principle of the pre-creation state. Apsu represents the subterranean sweet water and, with Tiamat, constitutes the undifferentiated substrate before existence. He is killed by Ea (Enki) when the young gods disturb his peace — his body becomes the subterranean freshwater ocean beneath the earth.',
@@ -266,6 +298,10 @@ SCRIPTURE_TEXTS['descent-inanna'] = {
   date: 'c. 2100–1700 BCE (Ur III to Old Babylonian period)',
   docNode: 'phase-1-017-descent-of-inanna',
   language: 'Sumerian · adapted from ETCSL / Wolkstein-Kramer',
+  translations: [
+    { id: 'etcsl',    label: 'ETCSL (English)', note: 'Electronic Text Corpus of Sumerian Literature adaptation — scholarly English' },
+    { id: 'sumerian', label: 'Sumerian',         note: 'ETCSL transliteration of the cuneiform original — one of the world\'s oldest written languages' },
+  ],
   intro: 'The oldest narrative of a divine descent into the underworld and return. Inanna, Queen of Heaven, abandons her heavenly domains and descends through seven gates to the land of the dead, ruled by her sister Ereshkigal. The myth is the earliest form of the dying-and-rising deity cycle, whose later expressions include Adonis (Phoenician-Greek) and the Osiris myth (Egyptian).',
   crossTradition: [
     { label: 'Adonis (Greek-Phoenician)', note: 'Adonis = Dumuzi/Tammuz, received by Persephone = Ereshkigal. The structure is preserved through Phoenician transmission into the Greek Adonia festival.' },
@@ -277,6 +313,10 @@ SCRIPTURE_TEXTS['descent-inanna'] = {
       heading: 'Inanna Abandons Heaven',
       verses: [
         { ref: 'lines 1–4', text: 'From the great heaven she set her mind toward the great below. From the great heaven the goddess set her mind toward the great below. From the great heaven Inanna set her mind toward the great below.',
+          textVersions: {
+            etcsl:    'From the great heaven she set her mind toward the great below. From the great heaven the goddess set her mind toward the great below. From the great heaven Inanna set her mind toward the great below.',
+            sumerian: 'an-gal-ta kur-gal-še₃\nĝeštug₂-ga-ni na-an-gub\nan-gal-ta nin-e kur-gal-še₃\nĝeštug₂-ga-ni na-an-gub\nan-gal-ta d inanna-ke₄ kur-gal-še₃\nĝeštug₂-ga-ni na-an-gub\n[from-heaven-great toward-underworld-great]\n[ear/attention-her she-fixed]\n[from-heaven-great the-lady toward-underworld-great]\n[ear-her she-fixed]\n[from-heaven-great INANNA toward-underworld-great]\n[ear-her she-fixed]',
+          },
           entities: [
             { word: 'Inanna', node: 'inanna-sumerian', type: 'deity',
               note: 'Queen of Heaven and Earth; goddess of love, war, and the morning/evening star (Venus). Her descent to the Kur (the Great Below) is the oldest surviving narrative of divine death and return. The Venus connection is literal: the myth encodes Venus\'s astronomical cycle — disappearing at inferior conjunction (= Inanna\'s descent) and rising as Morning Star (= her return).',
@@ -353,6 +393,119 @@ SCRIPTURE_TEXTS['descent-inanna'] = {
                 { label: 'Eucharist (Christian)', note: 'The body and blood as "food of life" and "water of life" administered to the dead-and-risen body of Christ; same resurrective substance grammar.' },
               ]
             }
+          ]
+        },
+      ]
+    },
+  ]
+};
+
+// ── MEMPHITE THEOLOGY (SHABAKA STONE) ────────────────────────────────────────
+SCRIPTURE_TEXTS['memphite-theology'] = {
+  id: 'memphite-theology',
+  title: 'The Memphite Theology',
+  shortTitle: 'Memphite Theology',
+  corpus: 'Ancient Egyptian scripture',
+  tradId: 'tradition-ancient-egypt',
+  date: 'c. 700 BCE copy (Shabaka Stone); composition possibly Old Kingdom c. 2700–2200 BCE',
+  language: 'Late Egyptian hieroglyphic · paraphrase after Lichtheim (1973)',
+  translations: [
+    { id: 'lichtheim', label: 'English',  note: 'Paraphrase after Lichtheim (1973) — standard scholarly rendering' },
+    { id: 'egyptian',  label: 'Egyptian', note: 'Transliteration of the Late Egyptian hieroglyphic text (Shabaka Stone)' },
+  ],
+  intro: 'The earliest documented logos theology — predating John 1:1 by at least 700 years. King Shabaka of the 25th Dynasty inscribed it on black granite (c. 700 BCE), claiming to copy a crumbling papyrus. The text recasts all Egyptian creation gods as aspects of Ptah, whose heart (thought) and tongue (spoken word) are the twin principles of creation — the same structure as the Greek logos and the Hebrew dabar.',
+  crossTradition: [
+    { label: 'Genesis 1:3 — "And God said"', textId: 'genesis-1', note: 'The same grammar: divine word as the engine of creation. The Memphite Theology is the oldest known explicit statement of this theology.' },
+    { label: 'John 1:1 — "In the beginning was the Logos"', note: 'Heart (thought) + tongue (word) = logos. Scholars trace the Johannine logos tradition through Philo of Alexandria, steeped in Egyptian Hellenistic thought.' },
+    { label: 'Enuma Elish — Marduk creates by word', textId: 'enuma-elish-1', note: 'Three independent traditions — Egyptian, Mesopotamian, Hebrew — each arrive at the spoken divine word as the cosmogonic principle.' },
+  ],
+  sections: [
+    {
+      heading: 'Heart and Tongue: The Creative Principles',
+      verses: [
+        { ref: 'col. 48', text: 'There came into being as the heart and there came into being as the tongue something in the form of Atum. The mighty great one is Ptah, who transmitted life to all gods through this heart — by which Horus became Ptah — and through this tongue — by which Thoth became Ptah.',
+          textVersions: {
+            lichtheim: 'There came into being as the heart and there came into being as the tongue something in the form of Atum. The mighty great one is Ptah, who transmitted life to all gods through this heart — by which Horus became Ptah — and through this tongue — by which Thoth became Ptah.',
+            egyptian:  'jw ḫpr.w m jb  jw ḫpr.w m ns.t  m jrw n Jtm\nwr.w wr Ptḥ  dj-ꜥnḫ nṯr.w nb.w\nm jb pn  jw Ḥr.w ḫpr m Ptḥ\nm ns.t tn  jw Ḏḥwtj ḫpr m Ptḥ\n[came-to-be as heart]  [came-to-be as tongue]  [in-likeness of Atum]\n[greatest great Ptah]  [gave-life gods all]\n[through heart this: Horus became Ptah]\n[through tongue this: Thoth became Ptah]',
+          },
+          entities: [
+            { word: 'Ptah', node: 'ptah', type: 'deity',
+              note: 'The craftsman god of Memphis and the deepest creative ground in this text. Ptah creates through heart (thought) and tongue (word). This logos theology predates John 1:1 by at least 700 years.',
+              parallels: [
+                { label: 'Logos (John 1:1)', note: '"In the beginning was the Word" — the same theological structure: the divine word as the creator of all things.' },
+                { label: '"God said" (Genesis 1:3)', textId: 'genesis-1', note: 'Creation by divine speech — the structural parallel that makes this the oldest known antecedent to biblical creation theology.' },
+              ]
+            },
+            { word: 'Atum', node: 'atum', type: 'deity',
+              note: 'The self-created god of Heliopolis, the first being to emerge from Nun (the primordial waters). In this text Ptah and Atum are synthesized: two competing Egyptian creation traditions unified, with Ptah as the deeper ground.',
+              parallels: [
+                { label: 'God (Genesis 1:1)', textId: 'genesis-1', note: 'Both Atum and Elohim are the primary divine agent who orders the primordial waters into creation.' },
+              ]
+            },
+            { word: 'Horus', node: 'horus-egyptian', type: 'deity',
+              note: 'The sky god, divine prototype of the Pharaoh. "Horus becomes Ptah through the heart" — all Egyptian gods are reinterpreted as manifestations of Ptah\'s thought.',
+              parallels: []
+            },
+            { word: 'Thoth', node: 'thoth-egyptian', type: 'deity',
+              note: 'God of wisdom and writing — the deity most associated with language. "Thoth becomes Ptah through the tongue." Thoth is the Egyptian deity Greek settlers identified with Hermes, producing Hermes Trismegistus and the Hermetic tradition.',
+              parallels: [
+                { label: 'Hermes Trismegistus (Hermetica)', note: 'Hermes + Thoth = the fusion that generated the Hermetic corpus. Thoth\'s role as divine tongue here is the Egyptian root.' },
+              ]
+            },
+          ]
+        },
+        { ref: 'col. 50–51', text: 'Thus heart and tongue gained power over all other members of the body — teaching that Ptah is in every body and in every mouth of all gods, all people, all cattle, all creeping things, and everything that lives. By thinking and commanding all that he wishes.',
+          textVersions: {
+            lichtheim: 'Thus heart and tongue gained power over all other members of the body — teaching that Ptah is in every body and in every mouth of all gods, all people, all cattle, all creeping things, and everything that lives. By thinking and commanding all that he wishes.',
+            egyptian:  'ꜥḥꜥ.n jb ns.t sḫm.n.sn r ḥꜥ.w nb.w\nsḏm.n.sn  jw Ptḥ m ḥꜥ nb m r nb\nn nṯr.w nb.w  rm.ṯ nb.w  nḥs.yw nb.w\nꜥ.wt nb.t  ḫpr.w nb.w\nm jrj jb  jrj ns.t\n[thus heart tongue gained-power over members all]\n[teaching: Ptah is in body all in mouth all]\n[of gods all  people all  animals all  living-things all]\n[by-doing of-heart  by-doing of-tongue]',
+          },
+          entities: [
+            { word: 'heart', node: 'creation-by-word', type: 'theme',
+              note: 'The Egyptian heart (jb) = the seat of thought and intelligence. The pairing heart (thought) + tongue (speech) as twin creative principles is the most explicit pre-Greek logos theology. Greek logos = both "reason" and "word" — the same duality as the Memphite heart-and-tongue.',
+              parallels: [
+                { label: 'Logos (John 1:1)', note: 'Greek logos = "word" (tongue) + "reason" (heart). The Memphite heart-and-tongue is the Egyptian root of this dual meaning.' },
+              ]
+            },
+          ]
+        },
+      ]
+    },
+    {
+      heading: 'Creation by Command',
+      verses: [
+        { ref: 'col. 53', text: 'Thus were made all work and all crafts — the action of the arms, the movement of the legs, and the activity of every member — in conformance with this command which the heart conceived and which came forth through the tongue.',
+          textVersions: {
+            lichtheim: 'Thus were made all work and all crafts — the action of the arms, the movement of the legs, and the activity of every member — in conformance with this command which the heart conceived and which came forth through the tongue.',
+            egyptian:  'ꜥḥꜥ.n ḫpr kꜣ.t nb.t  bꜣk.t nb.t\nqd n ꜥ.wy  nm.t n rd.wy\nḥr.t nb.t n ꜥ.w nb.w\nm md.t nt jb  jmj.t ṯs.t ns.t\n[thus came-to-be work all  craft all]\n[building of arms  walking of legs]\n[activity all of members all]\n[by word-of heart  which-is-in utterance-of tongue]',
+          },
+          entities: [
+            { word: 'command', node: 'creation-by-word', type: 'theme',
+              note: 'The divine command (md.t = word) conceived by the heart and spoken through the tongue. The same structure as the Hebrew dabar and the Greek logos — the word that does not merely describe but enacts.',
+              parallels: [
+                { label: '"And God said" (Genesis 1:3)', textId: 'genesis-1', note: 'Hebrew yəhî ("let there be") = the divine imperative that the Memphite Theology calls "command of the heart through the tongue."' },
+                { label: 'Logos (John 1:1)', note: '"The Word was God" — the Memphite Theology is the oldest known explicit theological statement of this structure.' },
+              ]
+            },
+          ]
+        },
+      ]
+    },
+    {
+      heading: 'The Rest of Ptah',
+      verses: [
+        { ref: 'col. 58', text: 'Thus Ptah was satisfied after he had made everything, as well as all the divine order. He had formed the gods, he had made their sanctuaries, he had established their offerings. His strength is greater than that of all the gods.',
+          textVersions: {
+            lichtheim: 'Thus Ptah was satisfied after he had made everything, as well as all the divine order. He had formed the gods, he had made their sanctuaries, he had established their offerings. His strength is greater than that of all the gods.',
+            egyptian:  'jw Ptḥ ḥtp.f  m-ḫt jr.n.f ḫt nb.t\nḥnꜥ nṯr.w nb.w\nsnḏm.n.f nṯr.w\nqd.n.f ḥw.wt-nṯr\njw.f jr.n.f ḥtp.w-nṯr\njw gm.n.f  wḏ.n.f  sḫm.n.f r nṯr.w nb.w\n[Ptah was-satisfied  after-he-made things all]\n[together with gods all]\n[he-settled gods  he-built temples]\n[he-established offerings]\n[thus found  greater than gods all]',
+          },
+          entities: [
+            { word: 'satisfied', node: 'shabbat-theology', type: 'theme',
+              note: 'Ptah "rests" (is satisfied) after completing creation — a structural parallel to Genesis 2:2 where God "rested on the seventh day." Divine satisfaction/rest after completing creation appears in Egyptian (Ptah), Hebrew (YHWH/Sabbath), and Mesopotamian (the gods rest after humanity is created) traditions independently.',
+              parallels: [
+                { label: 'Sabbath / Genesis 2:2', textId: 'genesis-1', note: '"He rested on the seventh day from all his work" — divine satisfaction after completion, centuries later.' },
+                { label: 'Marduk (Enuma Elish VII)', textId: 'enuma-elish-1', note: 'After creating humanity to serve the gods, the gods rest in Marduk\'s temple — the same divine-rest-after-creation structure.' },
+              ]
+            },
           ]
         },
       ]

@@ -1,8 +1,8 @@
 // ============================================================
 // CODEX ATLAS — Scripture Reader
-// Mounts into #scripture-reader-pane when STATE.scriptureReaderMode
-// is set. Two-column layout: scrollable annotated text on the left,
-// entity / cross-tradition card panel on the right.
+// Mounts into #scripture-reader-pane when STATE.scriptureReaderMode is set.
+// Navigation (← Ring, text tabs, translation) lives in #view-controls,
+// NOT inside the pane, so it never overlaps the sidebar.
 // ============================================================
 
 window.ScriptureReader = (function () {
@@ -18,12 +18,62 @@ window.ScriptureReader = (function () {
     const texts = window.SCRIPTURE_TEXTS || {};
     const keys = Object.keys(texts);
     if (!keys.length) {
-      pane.innerHTML = '<div class="sr-empty-state">No scripture texts loaded.</div>';
+      pane.innerHTML = '<div class="sr-panel-empty">No scripture texts loaded.</div>';
       return;
     }
     if (!textKey || !texts[textKey]) textKey = keys[0];
     _activeTextKey = textKey;
     const t = texts[textKey];
+
+    // Current translation (defaults to first available)
+    const trList = t.translations || [{ id: 'default', label: 'Translation' }];
+    if (!window.STATE) window.STATE = {};
+    if (!STATE.scriptureTranslation || !trList.find(x => x.id === STATE.scriptureTranslation)) {
+      STATE.scriptureTranslation = trList[0].id;
+    }
+    const activeTr = STATE.scriptureTranslation;
+
+    // ── populate view-controls (header strip, outside the pane) ──
+    const vc = document.getElementById('view-controls');
+    if (vc) {
+      const tabsHtml = keys.map(k =>
+        `<button class="btn btn-mini sr-vc-tab${k === textKey ? ' sr-vc-tab-active' : ''}" data-key="${k}">${esc(texts[k].shortTitle)}</button>`
+      ).join('');
+
+      const trHtml = trList.length > 1
+        ? trList.map(tr =>
+            `<button class="btn btn-mini sr-vc-tr${tr.id === activeTr ? ' sr-vc-tr-active' : ''}" data-tr="${tr.id}" title="${esc(tr.note || '')}">${esc(tr.label)}</button>`
+          ).join('')
+        : '';
+
+      vc.innerHTML = `
+        <button class="btn btn-mini sr-vc-back" id="sr-vc-back" title="Return to ring visualization">← Ring</button>
+        <span class="sr-vc-sep">|</span>
+        ${tabsHtml}
+        ${trHtml ? `<span class="sr-vc-sep">|</span>${trHtml}` : ''}
+      `;
+
+      document.getElementById('sr-vc-back').onclick = () => {
+        _cleanup();
+        if (window.STATE) STATE.scriptureReaderMode = null;
+        if (window.setView) setView('scripture');
+      };
+
+      vc.querySelectorAll('.sr-vc-tab').forEach(btn => {
+        btn.onclick = () => {
+          _cleanup();
+          if (window.STATE) STATE.scriptureReaderMode = btn.dataset.key;
+          render(pane, btn.dataset.key);
+        };
+      });
+
+      vc.querySelectorAll('.sr-vc-tr').forEach(btn => {
+        btn.onclick = () => {
+          if (window.STATE) STATE.scriptureTranslation = btn.dataset.tr;
+          render(pane, textKey);
+        };
+      });
+    }
 
     // ── cross-tradition header block ──────────────────────────
     const xtradHtml = (t.crossTradition && t.crossTradition.length)
@@ -38,27 +88,26 @@ window.ScriptureReader = (function () {
            </div>
          </div>` : '';
 
-    // ── section / verse body ──────────────────────────────────
+    // ── verse body ────────────────────────────────────────────
     const sectionsHtml = t.sections.map(sec => `
       <div class="sr-section">
         ${sec.heading ? `<div class="sr-section-heading">${esc(sec.heading)}</div>` : ''}
-        ${sec.verses.map(v => `
+        ${sec.verses.map(v => {
+          const vtext = _verseText(v, activeTr);
+          // isOriginal = we're showing a non-English transliteration for this verse
+          const isOriginal = activeTr !== (trList[0] && trList[0].id) && !!(v.textVersions && v.textVersions[activeTr]);
+          return `
           <div class="sr-verse" data-ref="${esc(v.ref)}">
             <span class="sr-ref">${esc(v.ref)}</span>
-            <span class="sr-vtext">${annotate(v.text, v.entities || [])}</span>
-          </div>`).join('')}
+            <span class="sr-vtext${isOriginal ? ' sr-vtext-original' : ''}">${annotate(vtext, isOriginal ? [] : v.entities || [])}</span>
+          </div>`;
+        }).join('')}
       </div>`).join('');
 
     // ── full pane render ──────────────────────────────────────
     pane.innerHTML = `
       <div class="sr-layout">
         <div class="sr-text-col" id="sr-text-col">
-          <div class="sr-bar">
-            <button class="sr-back" id="sr-back" title="Return to ring visualization">← Ring</button>
-            <div class="sr-tabs" id="sr-tabs">
-              ${keys.map(k => `<button class="sr-tab${k === textKey ? ' active' : ''}" data-key="${k}">${esc(texts[k].shortTitle)}</button>`).join('')}
-            </div>
-          </div>
           <div class="sr-text-header">
             <div class="sr-text-title">${esc(t.title)}</div>
             <div class="sr-text-meta">
@@ -66,7 +115,7 @@ window.ScriptureReader = (function () {
               <span class="sr-msep">·</span>
               <span class="sr-date">${esc(t.date)}</span>
               <span class="sr-msep">·</span>
-              <span class="sr-lang">${esc(t.language)}</span>
+              <span class="sr-lang">${esc(activeTrLabel(trList, activeTr))}</span>
             </div>
             ${t.intro ? `<p class="sr-intro">${esc(t.intro)}</p>` : ''}
             ${xtradHtml}
@@ -76,26 +125,12 @@ window.ScriptureReader = (function () {
 
         <div class="sr-entity-col" id="sr-entity-col">
           <div class="sr-entity-panel" id="sr-entity-panel">
-            ${emptyPanelHtml()}
+            ${_emptyPanelHtml()}
           </div>
         </div>
       </div>`;
 
-    // ── wire events ───────────────────────────────────────────
-    document.getElementById('sr-back').onclick = () => {
-      _cleanup();
-      if (window.STATE) STATE.scriptureReaderMode = null;
-      if (window.setView) setView('scripture');
-    };
-
-    document.querySelectorAll('.sr-tab').forEach(btn => {
-      btn.onclick = () => {
-        _cleanup();
-        if (window.STATE) STATE.scriptureReaderMode = btn.dataset.key;
-        render(pane, btn.dataset.key);
-      };
-    });
-
+    // ── wire cross-tradition links ────────────────────────────
     document.querySelectorAll('.sr-xtrad-item.linked').forEach(el => {
       el.onclick = () => {
         const key = el.dataset.textid;
@@ -107,25 +142,34 @@ window.ScriptureReader = (function () {
       };
     });
 
-    // entity marks — hover shows, click pins
+    // ── entity marks — hover shows, click pins ────────────────
     const textCol = document.getElementById('sr-text-col');
     textCol.addEventListener('mouseover', _onHover, { passive: true });
     textCol.addEventListener('click', _onClick);
 
-    // Esc clears active card
+    // Esc clears pinned card
     _keydownHandler = (ev) => { if (ev.key === 'Escape') _clearCard(); };
     document.addEventListener('keydown', _keydownHandler);
   }
 
+  // ── helpers ───────────────────────────────────────────────────
+  function _verseText(v, trId) {
+    if (v.textVersions && v.textVersions[trId]) return v.textVersions[trId];
+    return v.text || '';
+  }
+
+  function activeTrLabel(trList, activeTr) {
+    const tr = trList.find(x => x.id === activeTr);
+    return tr ? tr.label : activeTr;
+  }
+
   // ── entity annotation ─────────────────────────────────────────
   function annotate(text, entities) {
-    if (!entities.length) return esc(text);
+    if (!entities || !entities.length) return esc(text);
     let out = esc(text);
-    // longer phrases first so "Spirit of God" wins over "God"
     const sorted = [...entities].sort((a, b) => b.word.length - a.word.length);
     sorted.forEach(en => {
-      const reStr = escRe(en.word);
-      const re = new RegExp(`\\b(${reStr})\\b`, 'g');
+      const re = new RegExp(`\\b(${escRe(en.word)})\\b`, 'g');
       out = out.replace(re, (m) =>
         `<mark class="sr-ent" data-node="${escAttr(en.node)}" data-type="${escAttr(en.type || '')}" data-word="${escAttr(en.word)}">${m}</mark>`
       );
@@ -137,7 +181,6 @@ window.ScriptureReader = (function () {
   function _onHover(ev) {
     const mark = ev.target.closest('.sr-ent');
     if (!mark) return;
-    // only show on hover if nothing is pinned
     if (document.querySelector('.sr-ent.pinned')) return;
     const ent = _findEntity(mark.dataset.word);
     if (ent) _showCard(ent, mark, false);
@@ -147,20 +190,17 @@ window.ScriptureReader = (function () {
     const mark = ev.target.closest('.sr-ent');
     if (!mark) return;
     ev.stopPropagation();
-    // toggle pin: clicking pinned mark clears; clicking new mark pins
     if (mark.classList.contains('pinned')) { _clearCard(); return; }
     const ent = _findEntity(mark.dataset.word);
     if (ent) _showCard(ent, mark, true);
   }
 
-  // ── card rendering ─────────────────────────────────────────────
+  // ── card rendering ────────────────────────────────────────────
   function _showCard(ent, markEl, pin) {
     const panel = document.getElementById('sr-entity-panel');
     if (!panel) return;
 
-    document.querySelectorAll('.sr-ent.active, .sr-ent.pinned').forEach(el => {
-      el.classList.remove('active', 'pinned');
-    });
+    document.querySelectorAll('.sr-ent.active, .sr-ent.pinned').forEach(el => el.classList.remove('active', 'pinned'));
     markEl.classList.add('active');
     if (pin) markEl.classList.add('pinned');
 
@@ -186,14 +226,13 @@ window.ScriptureReader = (function () {
           ${pin ? `<button class="sr-card-close" title="Close (Esc)">✕</button>` : ''}
         </div>
         ${node ? `<div class="sr-card-nodeid">${esc(nodeLabel)}</div>` : ''}
-        ${ent.note ? `<div class="sr-card-note">${esc(ent.note)}</div>` : ''}
+        ${ent.note ? `<div class="sr-card-note">${ent.note}</div>` : ''}
         ${parallelsHtml}
         <div class="sr-card-actions">
           ${ent.node ? `<button class="sr-atlas-btn" data-node="${escAttr(ent.node)}">Open in Atlas →</button>` : ''}
         </div>
       </div>`;
 
-    // parallel text jumps
     panel.querySelectorAll('.sr-parallel.linked').forEach(el => {
       el.onclick = () => {
         const key = el.dataset.textid;
@@ -205,11 +244,9 @@ window.ScriptureReader = (function () {
       };
     });
 
-    // close button
     const closeBtn = panel.querySelector('.sr-card-close');
     if (closeBtn) closeBtn.onclick = _clearCard;
 
-    // Open in Atlas
     panel.querySelectorAll('.sr-atlas-btn').forEach(btn => {
       btn.onclick = () => {
         const nodeId = btn.dataset.node;
@@ -227,14 +264,12 @@ window.ScriptureReader = (function () {
   }
 
   function _clearCard() {
-    document.querySelectorAll('.sr-ent.active, .sr-ent.pinned').forEach(el => {
-      el.classList.remove('active', 'pinned');
-    });
+    document.querySelectorAll('.sr-ent.active, .sr-ent.pinned').forEach(el => el.classList.remove('active', 'pinned'));
     const panel = document.getElementById('sr-entity-panel');
-    if (panel) panel.innerHTML = emptyPanelHtml();
+    if (panel) panel.innerHTML = _emptyPanelHtml();
   }
 
-  function emptyPanelHtml() {
+  function _emptyPanelHtml() {
     return `
       <div class="sr-panel-empty">
         <div class="sr-panel-glyph">✦</div>
@@ -242,7 +277,6 @@ window.ScriptureReader = (function () {
       </div>`;
   }
 
-  // ── find entity by word in current text ───────────────────────
   function _findEntity(word) {
     const t = window.SCRIPTURE_TEXTS && SCRIPTURE_TEXTS[_activeTextKey];
     if (!t) return null;
@@ -256,7 +290,6 @@ window.ScriptureReader = (function () {
     return null;
   }
 
-  // ── cleanup (remove event listeners) ─────────────────────────
   function _cleanup() {
     if (_keydownHandler) {
       document.removeEventListener('keydown', _keydownHandler);
@@ -266,18 +299,10 @@ window.ScriptureReader = (function () {
 
   // ── escape helpers ────────────────────────────────────────────
   function esc(s) {
-    return String(s)
-      .replace(/&/g, '&amp;')
-      .replace(/</g, '&lt;')
-      .replace(/>/g, '&gt;')
-      .replace(/"/g, '&quot;');
+    return String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
   }
-  function escAttr(s) {
-    return String(s).replace(/"/g, '&quot;').replace(/'/g, '&#39;');
-  }
-  function escRe(s) {
-    return s.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
-  }
+  function escAttr(s) { return String(s).replace(/"/g, '&quot;').replace(/'/g, '&#39;'); }
+  function escRe(s) { return s.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'); }
 
   return { render };
 })();

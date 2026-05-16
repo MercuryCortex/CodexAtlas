@@ -3692,13 +3692,13 @@ VIEWS.scripture = {
     // ----- Reader mode: show annotated text pane instead of the ring -----
     if (STATE.scriptureReaderMode && window.ScriptureReader) {
       svg.node().style.display = 'none';
+      legend.style('display', 'none').html('');
       const _srPane = document.getElementById('scripture-reader-pane');
       if (_srPane) {
         _srPane.style.display = 'flex';
         ScriptureReader.render(_srPane, STATE.scriptureReaderMode);
+        // view-controls populated inside ScriptureReader.render()
       }
-      document.getElementById('view-controls').innerHTML = '';
-      legend.style('display', 'none').html('');
       return;
     }
 
