@@ -12,7 +12,7 @@ key-persons: ["[[mahavira]]", "[[rishabha]]"]
 key-documents: ["[[phase-2-038-acharanga-sutra]]", "[[phase-2-039-sutrakritanga]]"]
 key-themes: ["[[reincarnation]]", "[[dualism-spirit-matter]]", "[[soul-immortality]]", "[[priestly-purity]]"]
 sister-traditions: ["[[tradition-buddhism]]", "[[tradition-vedic-hinduism]]", "[[tradition-sikhism]]"]
-status: "metadata"
+status: "full"
 refs:
   - title: "The Jains"
     author: "Dundas, Paul"
@@ -93,7 +93,70 @@ Jain *ahiṃsā* is the most consequential Indian ethical export that didn't tra
 ### Ṛṣabha absorbed into Vaiṣṇava tradition
 [[rishabha]] (Ṛṣabhanātha, the first Tīrthaṅkara) is absorbed into *Bhāgavata Purāṇa* Book V as a Vaiṣṇava saint and near-avatar — one of the vault's clearest cases of inter-tradition figure-absorption. The Jain culture-hero becomes a Hindu holy man; the Jain tradition claims the Purāṇic text borrowed from them. See [[rishabha]].
 
+## Ahiṃsā as foundational: the most radical version in world religion
+
+Jain *ahiṃsā* (non-violence) is categorically more demanding than Buddhist or Hindu equivalents. It extends not merely to large animals but to ALL living beings including plants, microorganisms, and insects. Digambara monks sweep the path before them to avoid treading on insects; Śvetāmbara monks wear cloth over the mouth to avoid inhaling airborne organisms; both traditions filter water before drinking. Jain monks at the end of their lives may choose *sallekhana* — voluntary fasting unto death — to ensure they harm no living being in their dying. This is not metaphor or aspiration; it is a lived daily practice representing the tradition's most demanding ethical commitment.
+
+The *ahiṃsā* principle has a documented political afterlife that no other ancient Indian ethical tradition can match: it is the direct source of Mohandas Gandhi's non-violent resistance doctrine. Gandhi was raised in Gujarat's Jain-inflected merchant culture; his family's Jain neighbors and the Vaishnava bhakti tradition of his mother were the two primary moral environments of his childhood. The Jain merchant community's *ahiṃsā* ethic is Gandhi's actual operative source — not primarily the Bhagavad Gita (which he interpreted through an *ahiṃsā* lens he already held). Through Gandhi, Jain *ahiṃsā* became the philosophical foundation of the 20th century's most consequential non-violent resistance movement, influencing the American civil rights movement through Martin Luther King Jr. The entire lineage: Jain merchants of Porbandar → Gandhi's *satyagraha* → King's Montgomery bus boycott → global non-violent resistance tradition.
+
+## MASSIVE WIN: Anekāntavāda (many-sidedness) ↔ Zhuangzi ↔ Nāgārjuna — the anti-absolutist cluster
+
+Jain *anekāntavāda* (अनेकान्तवाद, "many-sidedness of reality") is the oldest systematic philosophical treatment of perspectivism in any tradition. The companion doctrine *syādvāda* ("maybe-ism") requires adding *syāt* ("in some respect") to every assertion. The full sevenfold predication (*saptabhaṅgī*) for any subject S and property P:
+
+1. In some respect, S is P (*syāt asti*)
+2. In some respect, S is not-P (*syāt nāsti*)
+3. In some respect, S is both P and not-P (*syāt asti-nāsti*)
+4. In some respect, S is indescribable (*syāt avaktavya*)
+5. In some respect, S is P and indescribable (*syāt asti avaktavya*)
+6. In some respect, S is not-P and indescribable (*syāt nāsti avaktavya*)
+7. In some respect, S is P, not-P, and indescribable (*syāt asti-nāsti avaktavya*)
+
+This is not relativism — it is the claim that reality is genuinely complex and no single perspective is complete. The three-way anti-absolutist comparison:
+
+| Tradition | Figure | Anti-absolutist move | Dates |
+|---|---|---|---|
+| Jain | Mahāvīra / Umāsvāti | *Anekāntavāda*: reality is genuinely many-sided; all seven predications simultaneously valid | ~-500 onward |
+| Daoist | [[zhuangzi-person]] | *Qiwulun* ("discourse on the equalization of things"): no single perspective captures the whole; the sage rides perspectives without fixing | ~-300 CE |
+| Buddhist | [[nagarjuna]] | *Śūnyatā* / *Madhyamaka*: all views fail to latch onto fixed nature; systematic reductio of any stable position | ~150 CE |
+
+The critical distinction: *anekāntavāda* is **additive** (all perspectives simultaneously valid — reality has all these aspects at once); Nāgārjuna's *śūnyatā* is **dissolving** (the attempt to predicate fails entirely — things have no fixed nature to be found). Nāgārjuna would critique *anekāntavāda* as presupposing a real object with multiple real aspects — a subtle form of *svabhāva*-attachment. Jain logicians counter that Madhyamaka's systematic negation is itself an absolutism (absolutism of negation). The debate is live in classical Indian philosophical literature and unresolved. See [[anekantavada]], [[zhuangzi-person]], [[nagarjuna]].
+
+## MASSIVE WIN: Jain cosmology — the most consistent non-theism in world religion
+
+Jain cosmology posits an eternal, uncreated universe cycling through immense progressive (*utsarpiṇī*) and regressive (*avasarpiṇī*) half-cycles, each lasting trillions of years. The present cosmic moment is in an *avasarpiṇī* (declining) half-cycle, approximately at its midpoint. There is no creator god — the Jain universe has always existed and always will. Creation ex nihilo is philosophically impossible in a Jain framework: something cannot emerge from nothing.
+
+The liberated souls (*siddhas*) reside at the top of the universe (*siddhaloka*) in eternal, motionless bliss. They cannot interact with the world. They do not answer prayers. They do not intervene in human affairs. They are not recipients of devotion in any transactional sense — they are models to aspire toward, not powers to propitiate. This makes Jainism the most consistently non-theistic of the world's major living traditions — more thoroughgoing than Buddhism, which developed celestial bodhisattvas (*Amitābha*, *Avalokiteśvara*) who do respond to prayer and do intervene.
+
+The Jain ethical structure requires this: if a supreme deity existed and permitted the suffering of living beings, that deity would be morally responsible for it. Non-theism is not incidental to Jain ethics but logically required by *ahiṃsā* — an omnipotent creator who permits suffering cannot be morally perfect.
+
+## The Jain canon
+
+The canonical texts (*Āgamas*) exist in two forms: the Śvetāmbara tradition accepts 45 texts (with some debate about the eleventh); the Digambara tradition holds that the original canon was lost and existing texts are corrupt. The oldest surviving Jain texts are:
+
+- [[phase-2-038-acharanga-sutra]] — *Ācārāṅga Sūtra*: oldest surviving Jain text (compiled from oral tradition, written ~3rd–1st c. BCE). Contains detailed accounts of Mahāvīra's austerities and the rules of monastic conduct. The descriptions of Mahāvīra's meditation while birds nested in his hair and insects walked on his body are among the most viscerally specific asceticism accounts in world religious literature.
+- [[phase-2-039-sutrakritanga]] — *Sūtrakṛtāṅga*: second-oldest; polemical text defending Jain doctrine against rival Vedic and Ājīvika traditions.
+- *Tattvārtha Sūtra* (Umāsvāti, ~2nd–3rd c. CE): the most systematic philosophical treatise in the Jain tradition; accepted by both Śvetāmbara and Digambara sects as authoritative. Ten chapters covering the nature of souls, karma, the universe, and the path to liberation.
+
+## Edge connections
+
+| Target | Type | Evidence |
+|---|---|---|
+| [[mahavira]] | central-figure | 24th Tīrthaṅkara; historical founder of the Jain community as presently constituted |
+| [[rishabha]] | central-figure | First Tīrthaṅkara; legendary; absorbed into Vaiṣṇava tradition (*Bhāgavata Purāṇa* Book V) |
+| [[phase-2-038-acharanga-sutra]] | canonical-text | Oldest surviving Jain text; accounts of Mahāvīra's austerities |
+| [[phase-2-039-sutrakritanga]] | canonical-text | Second-oldest; doctrinal defense against rivals |
+| [[tradition-buddhism]] | sibling-tradition | Same śramaṇa milieu; Buddha and Mahāvīra near-contemporaneous; Pali Canon cross-attestation |
+| [[tradition-vedic-hinduism]] | sibling-tradition | Shared Gangetic cultural context; Jainism rejects Vedic authority and animal sacrifice |
+| [[tradition-sikhism]] | sibling-tradition | Shared Gujarati merchant milieu; Jain merchants patrons of early Sikh langars |
+| [[zhuangzi-person]] | structural-parallel | *Anekāntavāda* ↔ *Qiwulun* perspectivism — two independent anti-absolutist philosophies |
+| [[nagarjuna]] | structural-parallel | *Anekāntavāda* predates and parallels Madhyamaka; the Jain-Madhyamaka debate is live in classical texts |
+| [[anekantavada]] | instantiates | The syādvāda / saptabhaṅgī system; the vault's oldest systematic perspectivism |
+| [[tradition-gnosticism]] | structural-parallel | *Jīva* trapped in karma-matter ↔ pneuma trapped in hylē; luminous true self requiring extraction from matter |
+| [[kabir]] | cross-tradition-figure | Sant tradition figure in Guru Granth Sahib; Jain-influenced Punjabi milieu |
+
 ## Refs
-1. Dundas, P. (2002). *The Jains*. Routledge.
-2. Jacobi, H. (1884–1895). *Jaina Sūtras*. SBE 22, 45.
-3. Long, J.D. (2009). *Jainism: An Introduction*. I.B. Tauris.
+1. Dundas, P. (2002). *The Jains* (2nd ed.). Routledge. [T1]
+2. Jaini, P.S. (1979). *The Jaina Path of Purification*. University of California Press. [T1]
+3. Tatia, N. (trans.) (1994). *That Which Is: Tattvārtha Sūtra*. HarperOne. [T1]
+4. Jacobi, H. (1884–1895). *Jaina Sūtras*. Sacred Books of the East 22, 45. [T2]
+5. Long, J.D. (2009). *Jainism: An Introduction*. I.B. Tauris. [T2]
