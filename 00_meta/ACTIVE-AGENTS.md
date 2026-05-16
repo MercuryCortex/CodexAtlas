@@ -4,11 +4,17 @@ _Hand-maintained. Each agent currently working in the vault appends a claim bloc
 
 ---
 
-## sonnet-egyptian-quartet-1 — Bastet/Sobek/Geb/Nut upgrades — started 2026-05-16 — IN PROGRESS
-- Owning: `03_deities/bastet.md`, `03_deities/sobek.md`, `03_deities/geb.md`, `03_deities/nut.md`
-- Stubs to create if missing: `03_deities/diana.md`
-- NOT touching: app code; any other deity file
-- Goal: Upgrade all four from metadata/stub → partial; wire MASSIVE WIN cross-tradition edges (Bastet→Artemis→Diana; Sobek-Fayum papyri→earliest Christian MSS; Geb/Nut cosmic couple archetype)
+## ~~sonnet-egyptian-quartet-1 — Bastet/Sobek/Geb/Nut upgrades — finished 2026-05-16 — DONE~~
+- ~~Owning: `03_deities/bastet.md`, `03_deities/sobek.md`, `03_deities/geb.md`, `03_deities/nut.md`~~
+- ~~Goal: Upgrade all four from metadata/stub → partial; MASSIVE WIN cross-tradition edges~~
+- ~~Status: done — commits efd15ce, 59f24d2~~
+
+---
+
+## sonnet-pantheon-v2-parity-2 — Pantheon v2 visual parity (hulls + thumbnail card + edge curves + label density) — started 2026-05-16 — IN PROGRESS
+- Owning: `src/js/views/pantheon-v2.js`, `src/styles/app.css`, `index.html` (cache-bust only), optional vendor of `@sigma/edge-curve` at `_assets/vendor/sigma/`
+- NOT touching: content folders, other views, `src/js/app.js` (except possibly VIEWS['pantheon-v2'] registration — minimal/surgical only)
+- Goal: Close the four visual gaps the user flagged — (1) translucent rounded-rect family hulls, (2) more deity labels (degree≥6 threshold ~40-60 labels), (3) Q-bezier curved edges via `@sigma/edge-curve`, (4) thumbnail hover card with deity image+title+family+connection-count+wiki link
 - Status: in-progress
 
 ---
