@@ -1477,3 +1477,11 @@ The things opus-foundation-1 claimed but never started are all still open:
 Files: eye-of-ra.md · aten-disk.md · sacred-scepter.md
 - Note: sacred-crown.md already existed; sacred-scepter.md substituted per protocol
 - 241 total symbols · 14865 edges · 0 YAML errors · commit b34006b
+
+---
+
+## Goblin 17B — Cosmic Serpent / Sacred Ring / Number Four
+**Status: FINISHED**
+Files: cosmic-serpent.md · sacred-ring.md · sacred-number-four.md
+- 245 total symbols · 14936 edges · 0 YAML errors · 0 dead links · commit a3d0ee2
+- Note: cosmic-serpent.md was already in vault from prior thumbnail sweep; sacred-ring + sacred-number-four newly added
