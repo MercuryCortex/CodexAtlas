@@ -4,6 +4,20 @@ _Hand-maintained. Each agent currently working in the vault appends a claim bloc
 
 ---
 
+## alphabet-cosmos-architecture-1 — 3 HYPER WIN synthesis nodes — IN PROGRESS
+- Owns: 11_alphabets/alphabet-creation-by-word.md (NEW), 11_alphabets/alphabet-sacred-language-convergence.md (NEW), 11_alphabets/alphabet-letter-as-cosmos.md (NEW)
+- Also touches: src/data/patterns.js (2 new entries), src/data/observations.js (2 new entries)
+- Status: IN PROGRESS
+
+---
+
+## alphabet-indic-runes-1 — 6 eastern+northern sacred script nodes — IN PROGRESS
+- Owns: 11_alphabets/alphabet-devanagari-sacred.md (NEW), 11_alphabets/alphabet-brahmi-origin.md (NEW), 11_alphabets/alphabet-tibetan-tantric.md (NEW), 11_alphabets/alphabet-elder-futhark.md (NEW), 11_alphabets/alphabet-ogham.md (NEW), 11_alphabets/alphabet-avestan.md (NEW)
+- Also touches: src/data/patterns.js (2 new entries), stubs for missing wikilink targets
+- Status: IN PROGRESS
+
+---
+
 ## alphabet-semitic-mysticism-1 — 5 letter-mysticism nodes — IN PROGRESS
 - Owns: `11_alphabets/alphabet-sefer-yetzirah.md` (NEW), `11_alphabets/alphabet-gematria-hebrew.md` (NEW), `11_alphabets/alphabet-isopsephy-greek.md` (NEW), `11_alphabets/alphabet-ilm-al-huruf.md` (NEW), `11_alphabets/alphabet-huruf-muqattaat.md` (NEW)
 - Also touches: `src/data/patterns.js` (2 new entries)

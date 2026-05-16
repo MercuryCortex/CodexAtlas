@@ -46,6 +46,14 @@ cross-symbol-edges:
     type: "parallel-form"
     notes: "Both Proto-Sinaitic and the Indus Valley Script represent independent reductions of complex pictographic systems toward greater simplicity and utility. Both remain partially contested. No documented transmission between them — structural parallel of the simplification-toward-alphabet move."
     refs: ["Sass 1988"]
+  - target: "alphabet-phoenician"
+    type: "ancestor-of"
+    notes: "Proto-Sinaitic → Proto-Canaanite → Phoenician abjad (c. 1050 BCE). Phoenician is the standardized descendant that transmitted the alphabetic principle across the Mediterranean. See also alphabet-medu-netjer for the hieroglyphic source of the acrophonic principle."
+    refs: ["Naveh 1987", "Goldwasser 2010"]
+  - target: "alphabet-medu-netjer"
+    type: "descended-from"
+    notes: "Proto-Sinaitic derives from Egyptian hieroglyphs by acrophony: the Semitic miners at Serabit el-Khadim adapted Egyptian hieroglyphic signs using their Semitic names (aleph = ox, beth = house), creating the first purely phonemic writing system from a pictographic one."
+    refs: ["Goldwasser 2010", "Sass 1988"]
 
 mystery-status: "partially-deciphered"
 status: "metadata"

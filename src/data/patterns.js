@@ -420,4 +420,23 @@ window.PATTERNS_DATA = [
     summary: 'Greek theurgic tradition (Iamblichus, c. 300 CE): chanting the 7 Greek vowels to activate the 7 planetary spheres. Hindu tradition: the vowels of Sanskrit are sacred sounds whose vibration carries divine power (AUM = the sonic body of Brahman). Egyptian sacred language: the divine names in the PGM are predominantly vowel-heavy sequences. Three traditions, no documented contact at origin, same conclusion: vowel sounds are the primary medium of divine-human sonic contact.',
   },
 
+  // ─── VII. ALPHABET LAYER DISCOVERIES ─────────────────────────────────────
+
+  {
+    id: 'scribal-deity-triad',
+    title: 'The Scribal Deity Triad — Nabu / Thoth / Hermes: One Figure, Three Traditions',
+    category: 'CONVERGENCE',
+    section: 'Alphabet Layer Discoveries',
+    sources: ['alphabet-cuneiform-sacred', 'alphabet-medu-netjer', 'nabu', 'thoth', 'hermes-trismegistus'],
+    summary: 'Three major ancient civilizations — Mesopotamian (Nabu), Egyptian (Thoth), and Greek/Hellenistic (Hermes Trismegistus) — each independently attributed the invention of writing to the same archetypal figure: a divine messenger who mediates between cosmic and human realms, governs wisdom, and is associated with the planet Mercury. All three are inventors of their tradition\'s writing system; all three are psychopomps; all three hold cosmic knowledge in tablets or books. Ptolemaic syncretism explicitly equated Thoth with Hermes, producing Hermes Trismegistus. The structural convergence is either the most powerful documented independent parallel in the vault, or evidence of very early cultural diffusion. Either conclusion is a MASSIVE WIN: writing itself generates a boundary-crossing divine figure.',
+  },
+  {
+    id: 'script-starts-sacred',
+    title: 'Every Major Ancient Writing System Originated in Sacred/Temple Context',
+    category: 'CONVERGENCE',
+    section: 'Alphabet Layer Discoveries',
+    sources: ['alphabet-cuneiform-sacred', 'alphabet-medu-netjer', 'proto-sinaitic'],
+    summary: 'Cuneiform (c. 3200 BCE): invented by Sumerian temple accountants for the redistributive economy of the goddess Inanna\'s storehouse. Egyptian hieroglyphs (c. 3100 BCE): named medu netjer ("Words of God"), used first for temple walls and divine inscriptions. Proto-Sinaitic (c. 1850 BCE): adapted from Egyptian hieroglyphs by Semitic workers at a temple to the goddess Hathor in the Sinai mines. Chinese characters (c. 1200 BCE): first known use is oracle bones — divination records of ritual questions posed to ancestors and deities. Mayan glyphs (c. 300 BCE): royal-divine inscriptions on monuments. The pattern: writing is not invented for commerce or communication but for divine accounting and sacred communication; the mercantile and administrative uses are secondary adaptations of an originally sacred technology.',
+  },
+
 ];

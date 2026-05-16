@@ -138,6 +138,10 @@ The convergence is striking — the need for a divine witness who keeps incorrup
 - **Renaissance Hermeticism as Egyptian transmission**: The Renaissance Hermetists believed they were recovering ancient Egyptian wisdom — but what they actually recovered was a late antique Greek synthesis. The "Egyptian" character of Renaissance esotericism is mediated through Alexandrian philosophy, not through direct Egyptian priestly tradition.
 - **Thoth-Hermes as identity**: The ancient equation was a real religious claim, not merely a scholarly category — but it was also a Hellenistic political/cultural move. The identification served Greek and Ptolemaic interests in making Egyptian religion legible and prestigious within the Greek intellectual world.
 
+## Alphabet Layer
+
+Thoth's identity as inventor of writing is the theological foundation of Egyptian medu netjer ("Words of God") — the name Egyptians gave their hieroglyphic script. The full medu netjer theological framework, including the acrophonic transmission chain (hieroglyphs → Proto-Sinaitic → Phoenician alphabet), is documented at [[alphabet-medu-netjer]]. Thoth is the first node in the scribal-deity-triad pattern: Nabu (Mesopotamian) / Thoth (Egyptian) / Hermes (Greek) — three independent civilizations, same divine figure. See the `scribal-deity-triad` entry in the Patterns tab.
+
 ## Refs
 
 1. Fowden, Garth. *The Egyptian Hermes: A Historical Approach to the Late Pagan Mind*. Princeton University Press, 1986. Tier 1.

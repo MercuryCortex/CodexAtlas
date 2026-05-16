@@ -63,6 +63,10 @@ Nabu is the Babylonian and Assyrian god of writing, wisdom, and destiny — scri
 - **Date of cult-elevation.** Nabu rises from a relatively minor deity in the Old Babylonian period to one of the two chief gods of the empire by the Neo-Babylonian period. The precise mechanism (Aramaean migration influence? Babylonian dynastic preference?) is debated; Pomponio (1978) tracks the elevation via the Neo-Assyrian state-cult evidence.
 - **Relation to Nisaba.** Sumerian Nisaba was the original scribe-goddess; Nabu absorbs much of her function but not all (Nisaba retains a residual cult). Whether this is gendered replacement or parallel cultic developments is debated.
 
+## Alphabet Layer
+
+Nabu is the patron deity of cuneiform — the world's first writing system, invented c. 3200 BCE in Uruk temples. The full sacred-writing context of cuneiform (temple origin, scribal school system, cylinder seals, connection to Gilgamesh and Enuma Elish) is documented at [[alphabet-cuneiform-sacred]]. Nabu is the first node in the scribal-deity-triad convergence: Nabu (Mesopotamian) / Thoth (Egyptian) / Hermes (Greek) — three independent civilizations independently generated the same boundary-crossing divine scribe figure. See the `scribal-deity-triad` entry in the Patterns tab.
+
 ## Refs
 1. Bottéro, J. (2001). *Mesopotamian Religion*. University of Chicago Press.
 2. Black, J. & Green, A. (1992). *Gods, Demons and Symbols of Ancient Mesopotamia*. British Museum Press.
