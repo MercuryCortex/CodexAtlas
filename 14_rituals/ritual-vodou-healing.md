@@ -78,18 +78,32 @@ The Vodou healing system belongs to a global pattern in which medicine and ritua
 
 **The critical implication:** In these integrated systems, the distinction between *prayer* and *prescription* does not exist. The plant remedy is prayer in material form; the prayer is prescription in verbal form. Vodou herbalism has produced a documented pharmacopoeia of genuine empirical efficacy (including the source of the compound used in neuromuscular blocking agents used in surgery). The ritual frame and the pharmacological content are not separable — they developed together and are maintained together.
 
-## Cross-Tradition Links
-- → [[damballa]] — principal healing lwa for deep/chronic conditions
-- → [[baron-samedi]] — presides over the threshold between life and death; governs healing at that threshold
-- → [[erzulie]] — Erzulie Dantor governs protection and fierce maternal healing
-- → [[ritual-vodou-ceremony]] — the full ceremony structure within which wanga healing occurs
-- → [[ritual-bori-spirit-possession]] — Hausa Bori parallel; bori spirits also heal and diagnose illness
-- → [[ritual-ifa-divination]] — the Yoruba divination system that diagnoses the relational source of illness
-- → [[ritual-vision-quest]] — Plains Indian parallel; healing through spirit-contact in the wilderness
-- → [[ritual-sweat-lodge]] — physical purification as healing technology with ritual frame
-- → [[shamanism]] — the cross-tradition shamanic healing hub; possession and soul-journey as parallel healing technologies
-- → [[sympathetic-magic]] — the broader framework for wanga-construction
-- → [[tradition-vodou-haitian]] — parent tradition
+## Vault Connections
+
+**Healing lwa (Vodou spirits):**
+- [[damballa]] — principal healing lwa for deep/chronic conditions; his remedies are pure white foods (eggs, white rice, milk) and cool water; governs constitutional restoration
+- [[baron-samedi]] — presides over the threshold between life and death; governs healing at that threshold; he has authority over death itself and can delay or reverse it
+- [[erzulie]] — Erzulie Dantor governs fierce maternal protection and healing; Erzulie Freda governs the emotional-relational sources of illness
+- [[eshu]] — at the crossroads of illness and recovery; all diagnoses involve Legba/Eshu as the communicator between the sick person and the healing lwa
+
+**Yoruba root orishas in healing:**
+- [[ogun]] — Yoruba Osain (herbal medicine patron) is Ogun-adjacent; the pharmacological dimension of Vodou healing derives from Yoruba herbalism
+- [[yemoja]] — water as healing medium; her domain includes the cleansing and restoration of depleted vital force
+- [[obatala]] — the clarity and creative power that is restored by successful healing; Obatala's domain includes mental health and white-cloth purification
+
+**Traditions:**
+- [[tradition-vodou-haitian]] — parent tradition
+- [[tradition-yoruba]] — the Yoruba healing system (Osain herbalism, Ifá diagnosis) is the root of Vodou healing
+- [[tradition-yoruba-ifa]] — the Ifá divination system that diagnoses the relational source of illness
+
+**Cross-tradition connections:**
+- [[ritual-vodou-ceremony]] — the full ceremony structure within which wanga healing occurs
+- [[ritual-bori-spirit-possession]] — Hausa Bori parallel; bori spirits also heal and diagnose illness
+- [[ritual-ifa-divination]] — the Yoruba divination system that identifies which lwa/orisha is the source of the illness
+- [[ritual-vision-quest]] — Plains Indian parallel; healing through spirit-contact in the wilderness
+- [[ritual-sweat-lodge]] — physical purification as healing technology with ritual frame
+- [[shamanism]] — the cross-tradition shamanic healing hub; possession and soul-journey as parallel healing technologies
+- [[sympathetic-magic]] — the broader framework for wanga-construction
 
 ## Refs
 1. McCarthy Brown, K. (1991). *Mama Lola: A Vodou Priestess in Brooklyn*. California UP. [Tier 1 — most detailed account of healing practice in context; Alourdes's wanga preparation documented]

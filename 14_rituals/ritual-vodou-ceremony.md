@@ -90,19 +90,33 @@ The three traditions developed these diagram-based invocation systems in complet
 
 The Pentecostal parallel noted in the brief: Pentecostal churches arrange their ritual space (the altar call, the prayer circle, the laying on of hands) to "call down the Holy Spirit" — the difference is that the sacred geometry is human-body arrangement rather than drawn diagram. The operational structure (specific arrangement → specific divine arrival) is parallel.
 
-## Cross-Tradition Links
-- → [[damballa]] — the serpent lwa; the most elevated Rada lwa; first called in Rada ceremonies
-- → [[erzulie]] — lwa of love; Rada counterpart and Petwo variant (Erzulie Dantor)
-- → [[baron-samedi]] — death lwa; Gede family head; crossroads theology
-- → [[eshu]] — Legba in Haitian form; opener of the gate; the first and last lwa
-- → [[ritual-bori-spirit-possession]] — direct parallel; Hausa Bori possession as cross-tradition comparand
-- → [[possession-ritual]] — the cross-tradition spirit-possession hub
-- → [[ritual-ifa-divination]] — Yoruba root tradition; Vodou emerged from the Yoruba-Fon-Ewe complex brought to Haiti by enslaved West Africans
-- → [[ritual-mandala-offering]] — Tibetan mandala parallel for the vévé geometry claim
-- → [[sri-yantra]] — Hindu yantra parallel
-- → [[sacred-geometry-cosmic-proportion]] — the broader cross-tradition sacred geometry theme
-- → [[sacred-dance]] — dance is central to Vodou ceremony; the body's movement completes the lwa-invitation
-- → [[tradition-vodou-haitian]] — parent tradition
+## Vault Connections
+
+**Lwa (Vodou spirits):**
+- [[damballa]] — the serpent lwa; the most elevated Rada lwa; first called in Rada ceremonies; his vévé shows two intertwined serpents
+- [[erzulie]] — lwa of love, beauty, and luxury; her vévé is a heart surrounded by flowers and stars; she weeps because divine love cannot be fully realized in the human world
+- [[baron-samedi]] — death lwa; Gede family head; crossroads theology; his possession is ribald and liberating — death in Vodou is comic, not tragic
+- [[eshu]] — Legba in Haitian form; opener of the gate through which all lwa pass; no ceremony begins without calling Legba
+
+**Yoruba root deities (orishas whose Vodou forms are invoked):**
+- [[ogun]] — the Yoruba orisha of iron and war enters Vodou as Ogou/Ogoun; associated with soldiers and those who work with metal; one of the most active Petwo-adjacent lwa
+- [[shango]] — the Yoruba thunder orisha enters Vodou as Shango/Chango; his thunder and lightning domain is maintained in the Haitian context
+- [[yemoja]] — the Yoruba water orisha enters Vodou as La Sirène / Lasiren; the ocean lwa with her mermaid iconography; governs the seas and wealth
+- [[obatala]] — the Yoruba sky orisha enters Vodou as Blanc Dani or related white-cloth lwa; associated with clarity and creation
+
+**Traditions:**
+- [[tradition-vodou-haitian]] — parent tradition
+- [[tradition-yoruba]] — root tradition; Vodou emerged from the Yoruba-Fon-Ewe complex brought to Haiti by enslaved West Africans
+- [[tradition-afro-diasporic]] — the broader tradition of African religious systems reconstituted in the diaspora
+
+**Cross-tradition connections:**
+- [[ritual-bori-spirit-possession]] — direct parallel; Hausa Bori possession as cross-tradition comparand; different spirits, same mechanism
+- [[possession-ritual]] — the cross-tradition spirit-possession hub
+- [[ritual-ifa-divination]] — Yoruba root tradition; the Ifá oracle governs which lwa is to be served in Haitian practice
+- [[ritual-mandala-offering]] — Tibetan sand mandala as the geometry-calls-deity parallel for the vévé system
+- [[sri-yantra]] — Hindu yantra as the third geometry-calls-deity comparand across three independent traditions
+- [[sacred-geometry-cosmic-proportion]] — the broader cross-tradition sacred geometry theme
+- [[sacred-dance]] — dance is central to Vodou ceremony; the body's movement completes the lwa-invitation
 
 ## Refs
 1. Deren, M. (1953). *Divine Horsemen: The Living Gods of Haiti*. Thames & Hudson. [Tier 1 — foundational ethnographic account; Deren was herself mounted by Erzulie during fieldwork]

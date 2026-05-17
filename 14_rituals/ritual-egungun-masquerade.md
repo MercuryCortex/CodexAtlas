@@ -74,17 +74,30 @@ Five traditions, distributed across four continents and spanning three thousand 
 
 **The comparison illuminates each case.** The Hopi Kachina is "discovered" by non-Hopi anthropologists to be "performed by men in masks" — and this discovery is treated as a debunking. But from within the Hopi theological frame, this is like discovering that the Eucharist bread is "just wheat" and concluding that the Eucharist is therefore not the body of Christ. The theological claim is identity-substitution, not absence-plus-representation.
 
-## Cross-Tradition Links
-- → [[ancestor-veneration]] — the cross-tradition ancestor-veneration hub; Egungun as Yoruba instantiation
-- → [[orisha-pantheon]] — the lwa and orishas share the structural position of mediating between humans and the supreme divine
-- → [[eshu]] — the Yoruba deity of crossroads and communication; present at Egungun as at all Yoruba ritual transitions
-- → [[ritual-ifa-divination]] — the Ifá oracle system that governs when and how Egungun is performed; the two ritual systems are complementary
-- → [[ritual-bori-spirit-possession]] — the adjacent possession technology in Hausa/northern Nigerian tradition
-- → [[ritual-vodou-ceremony]] — Vodou as the diasporic descendant of Yoruba-Fon tradition; Vodou possessions are the Caribbean analogue of Egungun
-- → [[sacred-mask]] — the cross-tradition sacred mask node
-- → [[sacred-dance]] — Egungun is embodied in dance; the movement IS the ancestor's movement
-- → [[possession-ritual]] — the cross-tradition possession/identity-substitution hub
-- → [[tradition-yoruba]] — parent tradition
+## Vault Connections
+
+**Orishas present at Egungun:**
+- [[eshu]] — the Yoruba deity of crossroads and communication; present at Egungun as at all Yoruba ritual transitions; he opens the gate between the living and the ancestral realm
+- [[ogun]] — orisha of iron and warfare; ancestors who were warriors enter through Ogun's domain; Ogun's energy is present in the most aggressive Egungun manifestations
+- [[shango]] — thunder orisha; ancestral warriors who showed lightning-like power invoke Shango's presence in the Egungun ceremony
+- [[obatala]] — the sky orisha of clarity and creation; elder ancestors and ancestors associated with wisdom carry Obatala's quality in their Egungun manifestation
+- [[yemoja]] — water orisha; ancestors connected to the ocean, fishing, or the Ogun River manifest with Yemoja's fluid presence
+
+**Traditions:**
+- [[tradition-yoruba]] — parent tradition; Egungun is a foundational institution of Yoruba religious life
+- [[tradition-yoruba-ifa]] — the Ifá oracle system that governs when and how Egungun is performed; the two ritual systems are complementary
+- [[tradition-afro-diasporic]] — Egungun was reconstituted in Cuba (Candomblé de Caboclo), Brazil, and the Caribbean
+
+**Cross-tradition connections:**
+- [[ancestor-veneration]] — the cross-tradition ancestor-veneration hub; Egungun as the Yoruba instantiation
+- [[orisha-pantheon]] — the orishas share the structural position of mediating between humans and the supreme divine; Egungun addresses the ancestral tier
+- [[ritual-ifa-divination]] — the Ifá oracle system governs when and how Egungun is performed
+- [[ritual-bori-spirit-possession]] — the adjacent possession technology in Hausa/northern Nigerian tradition
+- [[ritual-vodou-ceremony]] — Vodou as the diasporic descendant of Yoruba-Fon tradition; Vodou lwa-possession is the Caribbean analogue
+- [[ritual-samhain]] — dead-return convergence: at Samhain the boundary between living and dead dissolves; at Egungun the ancestors literally return to the community; same structural claim across Celtic and Yoruba traditions
+- [[sacred-mask]] — the cross-tradition sacred mask node; the Egungun costume as the world's most elaborate identity-substitution mask technology
+- [[sacred-dance]] — Egungun is embodied in dance; the movement IS the ancestor's movement
+- [[possession-ritual]] — the cross-tradition possession/identity-substitution hub
 
 ## Refs
 1. Drewal, H.J., & Mason, J. (1998). *Beads, Body, and Soul: Art and Light in the Yoruba Universe*. UCLA Fowler Museum. [Tier 1 — definitive art-historical treatment; Egungun costume and cosmology in depth]

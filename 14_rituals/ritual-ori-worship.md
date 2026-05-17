@@ -85,17 +85,28 @@ Five traditions — separated by millennia and geography — independently concl
 
 See also: [[personal-daimon]], [[non-duality]].
 
-## Cross-Tradition Links
-- → [[orisha-pantheon]] — the orishas who are secondary to Ori in the Yoruba hierarchy
-- → [[ritual-ifa-divination]] — Ifá divination is used to consult about the content of one's Ori-chosen destiny; the babalawo reads what Ori determined before birth
-- → [[ritual-egungun-masquerade]] — Egungun is the ancestor-return ceremony; Ori after death enters the ancestral realm and may eventually return as an ancestor-spirit
-- → [[ritual-vodou-ceremony]] — Vodou as diasporic descendant of Yoruba-Fon practice; the lwa-devotee personal relationship has structural parallels to Ori-cultivation
-- → [[personal-daimon]] — the cross-tradition personal-divine-companion hub
-- → [[non-duality]] — the Hindu Atman/Brahman identity as the most radical form of the personal-divine-as-universal-divine claim
-- → [[ancestor-veneration]] — Ori, after death, becomes part of the ancestral complex that the living continue to honor
-- → [[eshu]] — Eshu governs all crossroads, including the crossroads of destiny; Ori and Eshu interact at moments of fateful choice
-- → [[tradition-yoruba]] — parent tradition
-- → [[tradition-yoruba-ifa]] — the Ifá system that maps and reads the content of Ori-destinies
+## Vault Connections
+
+**Orishas in relation to Ori:**
+- [[eshu]] — Eshu governs all crossroads, including the crossroads of destiny; Ori and Eshu interact at moments of fateful choice; no destiny-moment is navigated without Eshu's presence
+- [[ogun]] — the orisha of iron and making; a person whose Ori has determined a path of craft or warrior-work will find Ogun's power supporting their Ori's direction
+- [[shango]] — the thunder orisha; those whose Ori has chosen leadership and power will find Shango's energy consonant with their Ori-chosen path
+- [[yemoja]] — the ocean mother; those whose Ori has chosen nurturing and depth will find Yemoja's domain aligned with their inner calling
+- [[obatala]] — the sky father and creator of the physical body (including the head); Obatala shaped the physical head (*ori*) in which the divine Ori dwells; the closest orisha to Ori's domain
+
+**Traditions:**
+- [[tradition-yoruba]] — parent tradition
+- [[tradition-yoruba-ifa]] — the Ifá system that maps and reads the content of Ori-destinies; the babalawo reads what Ori chose before birth
+- [[tradition-afro-diasporic]] — Ori doctrine travels with the Yoruba diaspora; in Candomblé and Santería, the *ori* concept is preserved as the personal guardian angel/head orisha
+
+**Cross-tradition connections:**
+- [[orisha-pantheon]] — the orishas who are secondary to Ori in the Yoruba hierarchy; Ori takes precedence over all of them for the individual
+- [[ritual-ifa-divination]] — Ifá divination is used to consult about the content of one's Ori-chosen destiny
+- [[ritual-egungun-masquerade]] — Egungun is the ancestor-return ceremony; Ori after death enters the ancestral realm and may eventually return as an ancestor-spirit
+- [[ritual-vodou-ceremony]] — Vodou as diasporic descendant of Yoruba-Fon practice; the lwa-devotee personal relationship has structural parallels to Ori-cultivation
+- [[personal-daimon]] — the cross-tradition personal-divine-companion hub; Stoic *daimōn*, Christian guardian angel, Hindu Ātman, and Neoplatonic soul-spark are all structural parallels
+- [[non-duality]] — the Hindu Atman/Brahman identity as the most radical form of the personal-divine-as-universal-divine claim; Ori worship converges on this at the practical level
+- [[ancestor-veneration]] — Ori, after death, becomes part of the ancestral complex that the living continue to honor
 
 ## Refs
 1. Abimbola, W. (1975). "The Concept of Good Character in Ifá Literary Corpus." In *Yoruba Oral Tradition*, ed. Abimbola. Ibadan University Press. [Tier 1 — foundational account of Ori doctrine from the leading Ifá scholar]
