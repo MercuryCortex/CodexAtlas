@@ -8921,6 +8921,9 @@ function renderRitualsReligion(pane) {
     { id: 'tradition-yoruba',                label: 'Yoruba / Vodou', color: '#c4903a', also: ['tradition-yoruba-ifa','tradition-vodou-haitian','tradition-candomble'] },
     { id: 'tradition-chinese-folk-religion', label: 'Chinese',      color: '#c45a5a', also: ['tradition-daoism','tradition-confucianism','tradition-chan'] },
     { id: 'tradition-norse-germanic',        label: 'Norse',        color: '#7090b0', also: ['tradition-germanic-paganism'] },
+    { id: 'tradition-druidism',              label: 'Celtic',       color: '#6e9060', also: ['tradition-celtic','tradition-irish-celtic'] },
+    { id: 'tradition-polynesian',            label: 'Polynesian',   color: '#5a90a8', also: ['tradition-maori'] },
+    { id: 'tradition-australian-aboriginal', label: 'Aboriginal',   color: '#c49060', also: [] },
   ];
   const allRitualNodes = DATA.nodes.filter(n => n.type === 'ritual');
   const sel = religions.find(r => r.id === _ritualsState.religion) || religions[0];
