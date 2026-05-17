@@ -151,7 +151,7 @@
 
     displayData.forEach((g) => {
       // Section divider for hieroglyph + standalone script modes
-      const _showDivider = _script === 'hieroglyph' || _script === 'chinese' || _script === 'japanese' || _script === 'devanagari' || _script === 'hangul' || _script === 'ogham' || _script === 'futhark';
+      const _showDivider = _script === 'hieroglyph' || _script === 'chinese' || _script === 'japanese' || _script === 'devanagari' || _script === 'hangul' || _script === 'ogham' || _script === 'futhark' || _script === 'aztec' || _script === 'maya' || _script === 'quipu';
       if (_showDivider && g.section && g.section !== _lastSection) {
         _lastSection = g.section;
         // Close any open grid row visually with a full-width label
@@ -167,7 +167,10 @@
       cell.dataset.idx = idx;
       if (_expandedIdx === idx) cell.classList.add('expanded');
 
-      const mainChar = getMainChar(g, _script);
+      const mainChar = g.glyphSVG ? '' : getMainChar(g, _script);
+      const mainCharContent = g.glyphSVG
+        ? `<svg viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="2.5" style="width:1em;height:1em;display:block;overflow:visible">${g.glyphSVG}</svg>`
+        : mainChar;
       const secondaries = getSecondaryChars(g, _script);
 
       const secHtml = secondaries.slice(0, 3).map(s =>
@@ -180,7 +183,7 @@
         : '';
 
       cell.innerHTML = `
-        <span class="agc-main-char" style="font-family:${scriptMeta.font};direction:${scriptMeta.dir}">${mainChar}</span>
+        <span class="agc-main-char" style="font-family:${scriptMeta.font};direction:${scriptMeta.dir}">${mainCharContent}</span>
         <span class="agc-name">${g.name}</span>
         <span class="agc-meaning">${g.meaning}</span>
         <div class="agc-secondary">${secHtml}</div>
@@ -217,9 +220,11 @@
     const expanded = document.createElement('div');
     expanded.className = 'alpha-glyph-expanded';
 
-    const isHier = g.unicode >= 0x13000 && g.unicode <= 0x1342F;
+    const isHier = g.unicode != null && g.unicode >= 0x13000 && g.unicode <= 0x1342F;
     const isScriptOnly = !!(g.scriptOnly && g.scriptOnly.length > 0);
-    const bigChar   = (isHier || isScriptOnly) ? String.fromCodePoint(g.unicode) : (g.arabic || g.hebrew || g.phoenician || g.letter || (g.unicode ? String.fromCodePoint(g.unicode) : ''));
+    const bigChar = g.glyphSVG
+      ? `<svg viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="2.5" style="width:1em;height:1em;display:inline-block;overflow:visible">${g.glyphSVG}</svg>`
+      : (isHier || isScriptOnly) ? String.fromCodePoint(g.unicode) : (g.arabic || g.hebrew || g.phoenician || g.letter || (g.unicode ? String.fromCodePoint(g.unicode) : ''));
     const bigFont   = isHier ? "'Noto Sans Egyptian Hieroglyphs', serif" : "'Segoe UI', sans-serif";
     const hierChar  = isHier ? String.fromCodePoint(g.unicode) : '';
     const phoenicianChar = g.phoenician || '';
@@ -227,8 +232,8 @@
     const latinChar = g.latin ? g.latin.split(' ')[0] : '';
     const safe = v => (!v || v === '(none)') ? '' : v;
     const gardinerLine = g.gardiner
-      ? `Gardiner ${g.gardiner} · U+${g.unicode.toString(16).toUpperCase()}`
-      : `U+${g.unicode.toString(16).toUpperCase()}`;
+      ? `Gardiner ${g.gardiner} · U+${(g.unicode || 0).toString(16).toUpperCase()}`
+      : g.unicode ? `U+${g.unicode.toString(16).toUpperCase()}` : '';
 
     const descItems = [
       g.hebrew, g.arabic, g.greek, g.latin, g.phoneme
