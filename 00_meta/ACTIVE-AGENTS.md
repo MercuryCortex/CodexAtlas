@@ -2286,12 +2286,13 @@ Files: sacred-cauldron.md (NEW) · cerridwen.md (STUB, deity) · bran-the-blesse
 
 ---
 
-## ritual-wiring-celtic-polynesian-aboriginal-norse-vodou-1 — IN FLIGHT (2026-05-17)
-- Wiring agent: adding/augmenting `## Vault Connections` sections on 15 ritual nodes in 14_rituals/
-- Celtic (2): ritual-samhain, ritual-druidic-oak-sacred
-- Polynesian (2): ritual-polynesian-tapu, ritual-haka
-- Aboriginal (3): ritual-dreamtime-ceremony, ritual-initiation-walkabout, ritual-smoking-ceremony
-- Norse expansion (4): ritual-norse-funeral-ship, ritual-thing-assembly, ritual-runic-inscription, ritual-einherjar-valhalla
-- Vodou/Yoruba expansion (4): ritual-vodou-ceremony, ritual-egungun-masquerade, ritual-vodou-healing, ritual-ori-worship
-- Commits planned: ritual-wiring-celtic-polynesian-aboriginal-1 · ritual-wiring-norse-vodou-expansion-1
-- Status: IN FLIGHT
+## ~~ritual-wiring-celtic-polynesian-aboriginal-norse-vodou-1 — Vault Connections on 15 ritual nodes — FINISHED (2026-05-17)~~
+- ~~Wiring agent: added/augmented `## Vault Connections` sections on 15 ritual nodes in 14_rituals/~~
+- ~~Celtic (2): ritual-samhain (donn-celtic, danu, dead-return triad), ritual-druidic-oak-sacred (brigid, danu, misogi, dreamtime)~~
+- ~~Polynesian (2): ritual-polynesian-tapu (pele, full traditions), ritual-haka (oral-tradition-transmission)~~
+- ~~Aboriginal (3): ritual-dreamtime-ceremony (alchemy-prima-materia, creation-by-word, druidic-oak cross-ref), ritual-initiation-walkabout, ritual-smoking-ceremony (full traditions)~~
+- ~~Norse expansion (4): ship-burial (hel, thor, freyr + germanic-paganism, asatru), thing-assembly (tyr, freyr + germanic-paganism, asatru), runic-inscription (tyr, thor, freyr + germanic-paganism, asatru), einherjar-valhalla (thor, tyr, hel, jormungandr + germanic-paganism, asatru)~~
+- ~~Vodou/Yoruba expansion (4): vodou-ceremony (ogun/shango/yemoja/obatala + yoruba, afro-diasporic), egungun-masquerade (all 5 orishas + yoruba-ifa, afro-diasporic + samhain dead-return cross-ref MASSIVE WIN), vodou-healing (eshu/ogun/yemoja/obatala + yoruba, yoruba-ifa), ori-worship (all 5 orishas + afro-diasporic)~~
+- ~~Build: 105 ritual nodes · 17,460 edges · 0 YAML errors · 0 dead links introduced~~
+- ~~Commits: fe50d21 (Celtic/Polynesian/Aboriginal) · 4500a76 (Norse/Vodou expansion)~~
+- ~~Status: FINISHED~~
