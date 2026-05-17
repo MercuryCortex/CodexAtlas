@@ -34,6 +34,30 @@ cross-tradition-edges:
   - target: music-pythagorean-harmony
     type: parent-of
     note: Pythagorean music theory (ratios 1:2 octave, 2:3 fifth, 3:4 fourth) is the oldest documented case of mathematics used to describe a perceptual phenomenon — and it produced 2,500 years of Western and Islamic music theory.
+  - target: alphabet-sefer-yetzirah
+    type: parallel
+    note: Sefer Yetzirah's 10 sefirot as the numerical substrate of creation parallels the Pythagorean decad (1+2+3+4=10). Both treat numbers as intrinsically cosmological. The Neoplatonic bridge makes Pythagorean → Kabbalistic transmission structurally plausible.
+  - target: alphabet-gematria-hebrew
+    type: parallel
+    note: Hebrew gematria and Pythagorean number theology are structurally identical — specific numerical relationships reveal the architecture of reality. Both programs operate through the same Neoplatonic mediation channel.
+  - target: reincarnation
+    type: related
+    note: Pythagorean metempsychosis (soul-transmigration) is the religious substrate of Pythagorean mathematics — the soul is purified through mathematical study, enabling better incarnation and eventual liberation. The mathematical and ethical-religious programs are aspects of one project.
+  - target: music-sama-veda
+    type: parallel
+    note: Sama Veda's doctrine that precise musical ratios are cosmologically operative parallels the Pythagorean music-of-the-spheres. India and Greece independently assigned cosmological necessity — not merely beauty — to correct musical ratios.
+  - target: philosophy-neoplatonism
+    type: ancestor-of
+    note: Neoplatonism systematized Pythagorean number theology into a full metaphysical program. The One = Pythagorean Monad; the three hypostases parallel the 1-2-3 structure; music-of-the-spheres becomes the audible expression of the emanation schema.
+  - target: mathematics-sacred-geometry
+    type: sibling
+    note: Sacred geometry and Pythagorean sacred number are two aspects of the same program — proportion in space (geometry) and proportion in time (music/arithmetic) as windows onto divine order. Pythagorean number theology is the theoretical framework; sacred geometry is its architectural expression.
+  - target: philolaus
+    type: child-of
+    note: Philolaus (c. 470–385 BCE) is the first Pythagorean to publish, committing the oral tradition to writing after the Croton uprising. His fragments on limiters/unlimiteds, harmonia, and the Central Fire cosmology are the earliest written record of the mathematical-sacred program.
+  - target: nicomachus
+    type: child-of
+    note: Nicomachus of Gerasa (c. 60–120 CE) transmitted Pythagorean number theology and music-cosmos homology into late antiquity via his Introduction to Arithmetic (→ Boethius → medieval quadrivium) and Manual of Harmonics (7 strings = 7 planets = 7 vowels).
 ---
 
 Pythagoreanism is the oldest documented tradition in which **mathematics was practiced as religion** — not as a tool for describing the divine, but as the direct experience of it. For the Pythagorean community founded by [[pythagoras]] at Croton (c. 530 BCE), numbers were not abstractions applied to reality; they **were** reality, the fundamental substance of the cosmos.
