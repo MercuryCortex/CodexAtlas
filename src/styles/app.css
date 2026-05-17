@@ -1979,10 +1979,11 @@ body.view-atlas main.canvas { background: var(--bg-0); }
               filter         260ms var(--ease-out-expo, cubic-bezier(0.16, 1, 0.3, 1));
 }
 .ph2-edge.dim {
-  /* Dim-on-focus: Datawrapper / Pudding floor — opacity 0.15 + 2 px blur for depth.
-     Was 0.02 alone (academic-infographic value); blur adds real layering. */
-  stroke-opacity: 0.15 !important;
-  filter: blur(2px);
+  /* IDLE-PRESERVED on hover: non-incident edges keep their normal idle
+     opacity (calc(--base-op * --ph2-edge-opacity-mult)). Only .hot edges
+     change. The user's explicit preference — the idle stack should stay
+     coherent on hover. No-op rule retained so future tweaks can hook here
+     without re-wiring the JS class toggle. */
 }
 .ph2-edge.hot {
   stroke: var(--edge-type-color, rgba(212, 165, 90, 0.9)) !important;

@@ -44,8 +44,10 @@
       title: 'Nodes',
       items: [
         { id: 'nodeSizeMult',     label: 'Size ×',          min: 0.5, max: 2.5, step: 0.1, default: 1.0, target: 'sigmaRefresh',                                       fmt: v => v.toFixed(1) + '×' },
-        { id: 'nodeLabelSize',    label: 'Label size',      min: 8,   max: 14,  step: 0.5, default: 10,  target: 'cssVar', cssVar: '--ph2-node-label-size',     fmt: v => v.toFixed(1) + 'px' },
-        { id: 'nodeHubLabelSize', label: 'Hub label size',  min: 9,   max: 15,  step: 0.5, default: 11,  target: 'cssVar', cssVar: '--ph2-node-hub-label-size', fmt: v => v.toFixed(1) + 'px' },
+        { id: 'nodeStrokeW',      label: 'Stroke (halo) px', min: 0,  max: 4,   step: 0.2, default: 0,   target: 'cssVar', cssVar: '--ph2-node-stroke-w',       fmt: v => v.toFixed(1) + 'px' },
+        { id: 'nodeLabelSize',    label: 'Label size',      min: 8,   max: 16,  step: 0.5, default: 10,  target: 'cssVar', cssVar: '--ph2-node-label-size',     fmt: v => v.toFixed(1) + 'px' },
+        { id: 'nodeHubLabelSize', label: 'Hub label size',  min: 9,   max: 18,  step: 0.5, default: 11,  target: 'cssVar', cssVar: '--ph2-node-hub-label-size', fmt: v => v.toFixed(1) + 'px' },
+        { id: 'nodeLabelDist',    label: 'Label distance',  min: 0.5, max: 2.5, step: 0.05, default: 1.0, target: 'sigmaRefresh',                                      fmt: v => v.toFixed(2) + '×' },
       ]
     },
     {
@@ -371,7 +373,7 @@
     // is in screen-space so it must rerun when any label dimension changes.
     const LABEL_AFFECTING = new Set([
       'nodeLabelSize', 'nodeHubLabelSize', 'rimLabelSize', 'rimLabelSpacing',
-      'hubThreshold',
+      'hubThreshold', 'nodeLabelDist',
     ]);
     function refreshLabelsAfterTweak() {
       const v2 = window._pantheonV2;

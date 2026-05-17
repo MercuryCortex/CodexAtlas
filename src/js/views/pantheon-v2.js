@@ -54,6 +54,33 @@
     return Math.abs(h);
   }
 
+  // Blend a hex color toward the canvas background — used for dimming nodes
+  // without losing family identity. Returns a hex string that's the original
+  // color mixed 10% with the bg, so a faded red still reads as red-ish, not grey.
+  const _DIM_BG    = [10, 13, 20];     // app bg approximately
+  const _fadeCache = new Map();
+  function fadeToBg(hex, t /* 0..1, default 0.10 */) {
+    const alpha = (t == null ? 0.10 : t);
+    if (!hex || typeof hex !== 'string') return '#1a1d22';
+    const key = hex + ':' + alpha;
+    const cached = _fadeCache.get(key);
+    if (cached) return cached;
+    let r, g, b;
+    if (hex[0] === '#' && hex.length === 7) {
+      r = parseInt(hex.slice(1, 3), 16);
+      g = parseInt(hex.slice(3, 5), 16);
+      b = parseInt(hex.slice(5, 7), 16);
+    } else { return hex; }
+    const mr = Math.round(r * alpha + _DIM_BG[0] * (1 - alpha));
+    const mg = Math.round(g * alpha + _DIM_BG[1] * (1 - alpha));
+    const mb = Math.round(b * alpha + _DIM_BG[2] * (1 - alpha));
+    const out = '#' + mr.toString(16).padStart(2, '0')
+                    + mg.toString(16).padStart(2, '0')
+                    + mb.toString(16).padStart(2, '0');
+    _fadeCache.set(key, out);
+    return out;
+  }
+
   // ============================================================
   // PHASE D — FORCE-RELAXATION BAKE
   // ============================================================
@@ -646,12 +673,24 @@
     let _familyFilter = null;
     let _tierOverlay = false;
 
-    // 1-hop neighbourhood (incl. self) — used by additive selection.
+    // Cached 1-hop neighbourhood (incl. self) — used by additive selection
+    // AND by the nodeReducer hover-dim check, which fires per node per frame.
+    // graph.areNeighbors / hasEdge are O(degree) lookups; doing them 492×
+    // every refresh adds up. Cache once, invalidate on graph rebuild (which
+    // happens on full render() — this closure dies with each rebuild).
+    const _neighborCache = new Map();
     function neighborhoodOf(id) {
+      const cached = _neighborCache.get(id);
+      if (cached) return cached;
       const out = new Set([id]);
-      if (!graph.hasNode(id)) return out;
-      graph.forEachNeighbor(id, (nid) => out.add(nid));
+      if (graph.hasNode(id)) graph.forEachNeighbor(id, (nid) => out.add(nid));
+      _neighborCache.set(id, out);
       return out;
+    }
+    // Fast `is b in 1-hop(a)?` — both directions, no graph re-walk.
+    function inNeighborhood(a, b) {
+      if (a === b) return true;
+      return neighborhoodOf(a).has(b);
     }
 
     const settings = {
@@ -675,6 +714,9 @@
       hideLabelsOnMove: true,
       minCameraRatio: 0.05,
       maxCameraRatio: 8,
+      // zIndex enabled so dim nodes paint BEHIND highlighted ones — fixes the
+      // grey-on-top issue. Sigma renders in ascending zIndex order.
+      zIndex: true,
       nodeReducer: (id, attrs) => {
         const out = { ...attrs };
 
@@ -684,51 +726,47 @@
 
         // EGO FOCUS — when active + a node is selected, hide everything outside the 1-hop neighbourhood.
         if (_egoFocus && _selectedId) {
-          const inNeighbourhood = (id === _selectedId) ||
-            graph.hasEdge(id, _selectedId) || graph.hasEdge(_selectedId, id) ||
-            graph.areNeighbors(id, _selectedId);
-          if (!inNeighbourhood) { out.hidden = true; return out; }
+          if (!inNeighborhood(_selectedId, id)) { out.hidden = true; return out; }
         }
-        // FAMILY FILTER — when set, dim every node not in that family.
+        // FAMILY FILTER — when set, fade every node not in that family using
+        // its OWN family color blended toward bg (not a flat grey).
         if (_familyFilter && attrs._family !== _familyFilter) {
-          out.color = '#2a2c32';
+          out.color = fadeToBg(attrs.color);
           out.label = '';
+          out.zIndex = 0;
           return out;
         }
         // TIER OVERLAY — replace family-color fill with source-integrity tier color.
-        // Only fires when _tierOverlay is true and the node has NOT been early-returned
-        // by EGO FOCUS or FAMILY FILTER (those paths already set a specific dim color).
         if (_tierOverlay) {
           const tierKey = String((attrs._node || {})._tier ?? 'none');
           out.color = TIER_FILL[tierKey] || TIER_FILL.none;
         }
 
-        // STICKY LOCK — when a locked set is active, anything outside it dims.
-        // Hover still trumps below.
+        // STICKY LOCK — when a locked set is active, anything outside it fades.
         const hasLock = _lockedSet.size > 0;
         if (hasLock && !_lockedSet.has(id)) {
-          out.color = '#2f3138';
+          out.color = fadeToBg(attrs.color);
           out.label = '';
+          out.zIndex = 0;          // paint BEHIND locked + hot nodes
         }
 
         // HOVER / SELECT — circular size-bump instead of sigma's stock
         // `highlighted: true` ring (which renders as a square-ish halo at
-        // small node sizes because the hoverNodes canvas re-strokes the
-        // outline). Same circle program → always perfectly round.
+        // small node sizes). Same circle program → always round.
         if (_hoverId === id) {
           out.size = (out.size || 4) + 4;
-          out.zIndex = 2;
+          out.zIndex = 3;
         } else if (_selectedId === id) {
           out.size = (out.size || 4) + 2;
-          out.zIndex = 2;
+          out.zIndex = 3;
         } else if (_hoverId) {
-          const isNeighbor =
-            graph.hasEdge(id, _hoverId) ||
-            graph.hasEdge(_hoverId, id) ||
-            graph.areNeighbors(id, _hoverId);
-          if (!isNeighbor) {
-            out.color = '#3a3d44';
+          const isNeighbor = inNeighborhood(_hoverId, id);
+          if (isNeighbor) {
+            out.zIndex = 2;        // neighbours sit just below the hovered hub
+          } else {
+            out.color = fadeToBg(attrs.color);
             out.label = '';
+            out.zIndex = 0;        // non-neighbours go to the back
           }
         }
         // Phase E — DOM overlay handles ALL node labels (production-style: text
@@ -1201,6 +1239,15 @@
       applyEdgeHoverState();
       hideThumbCard();
     });
+    // Double-click on empty = animated reset to computeFitRatio (same view
+    // as the 100% button, no slider value, no surprise).
+    sigma.on('doubleClickStage', ({ event }) => {
+      if (event && event.preventSigmaDefault) event.preventSigmaDefault();
+      try {
+        const ratio = computeFitRatio();
+        sigma.getCamera().animate({ x: 0.5, y: 0.5, ratio, angle: 0 }, { duration: 320 });
+      } catch (e) {}
+    });
 
     // ----- NODE DRAG (P1 parity) -----
     // Grab a deity dot and slide it inside its family wedge. The wedge clamp
@@ -1318,20 +1365,28 @@
     // earn their label slot. The deconfliction pass still culls overlaps, so
     // tighter rings auto-thin. At default ratio (~1.32) you see the top hubs;
     // zoom to ~0.5 to read the minor pantheon members.
-    // Aggressive tiering: by the time the user zooms past 0.65× they want
-    // to read everything. The deconfliction pass culls overlaps after,
-    // so we never paint a mess of stacked labels.
+    // Smooth gradient: at the 100% fit ratio (~1.32) the user-specified
+    // threshold (default 10) gates only the top hubs; as the user zooms IN
+    // (ratio shrinks toward 0.30), the threshold drops linearly toward 1.
+    // No more stepped jumps — labels reveal continuously with zoom.
     function dynamicHubThreshold() {
       let ratio = 1.32;
       try { ratio = sigma.getCamera().getState().ratio || 1.32; } catch (e) {}
-      if (ratio >= 1.20) return 6;
-      if (ratio >= 0.95) return 3;
-      if (ratio >= 0.65) return 1;
-      return 0;   // SHOW EVERYTHING — deconflict still hides overlaps
+      // User can pin a manual ceiling via dev panel (defaults to 10 = "show
+      // the top hubs at 100% zoom"). We never go ABOVE that.
+      const HIGH = Math.max(1, Math.round(window.CODEX_DEV?.settings?.hubThreshold ?? 10));
+      const LOW  = 1;
+      const R_HI = 1.32;  // 100% fit
+      const R_LO = 0.30;  // close zoom — show all
+      // Linear interpolation in ratio space, clamped to [LOW, HIGH].
+      const t = Math.max(0, Math.min(1, (R_HI - ratio) / (R_HI - R_LO)));
+      return Math.round(HIGH - t * (HIGH - LOW));
     }
     function updateNodeLabelVisibility() {
-      const devThresh = window.CODEX_DEV?.settings?.hubThreshold;
-      const thresh = devThresh != null ? devThresh : dynamicHubThreshold();
+      // Always use the smooth gradient. The dev-panel hubThreshold value is
+      // already consumed inside dynamicHubThreshold() as the ceiling (HIGH);
+      // do NOT short-circuit with it here, that's what defeated the gradient.
+      const thresh = dynamicHubThreshold();
       nodeLabelEntries.forEach(L => {
         let show = true;
         if (_labelsMode === 'off') show = false;
@@ -1358,21 +1413,50 @@
       window._pantheonV2._scheduleDecon    = scheduleDeconflict;
     }
 
+    // Tracks whether the camera is moving (pan / zoom). When true, we
+    // SKIP the deconflict pass — its visibility-reset → measure → re-hide
+    // sequence flashes the hidden labels for one frame, which the user sees
+    // as "labels flicker during zoom". Also hide all labels while moving so
+    // the user gets a clean transition.
+    let _isPanning      = false;
+    let _panEndTimer    = null;
+    let _labelsOverlay  = nodeLabelOverlay;
+    function setPanning(on) {
+      if (on === _isPanning) return;
+      _isPanning = on;
+      if (on) {
+        _labelsOverlay.style.opacity = '0';
+      } else {
+        _labelsOverlay.style.opacity = '';
+        // Run a single deconflict after motion settles.
+        scheduleDeconflict();
+      }
+    }
+    sigma.getCamera().on('updated', () => {
+      setPanning(true);
+      clearTimeout(_panEndTimer);
+      _panEndTimer = setTimeout(() => setPanning(false), 140);
+    });
+
     function syncNodeLabels() {
       // Re-project visible label world-positions to screen-space via sigma camera.
+      // Per-sync read of dev-panel label-distance multiplier so live tweaks apply.
+      const distMult = window.CODEX_DEV?.settings?.nodeLabelDist || 1;
       const len = nodeLabelEntries.length;
       for (let i = 0; i < len; i++) {
         const L = nodeLabelEntries[i];
         if (L.el.style.display === 'none') continue;
         const screen = sigma.graphToViewport({ x: L.wx, y: L.wy });
         L.el.style.left = screen.x + 'px';
-        L.el.style.top  = (screen.y - L.dy) + 'px';
+        L.el.style.top  = (screen.y - L.dy * distMult) + 'px';
       }
-      scheduleDeconflict();
+      // Skip deconflict during pan/zoom — it's the source of the flash.
+      if (!_isPanning) scheduleDeconflict();
     }
 
     let _deconflictTimer = null;
     function scheduleDeconflict() {
+      if (_isPanning) return;
       clearTimeout(_deconflictTimer);
       _deconflictTimer = setTimeout(deconflictNodeLabels, 60);
     }
