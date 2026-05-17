@@ -395,7 +395,7 @@
   const BUCKETS = {
     transmission:      { hex: '#C9743A', idle: 0.10, hot: 0.95, headline: false, directional: true  },
     parallel:          { hex: '#5A9A8F', idle: 0.12, hot: 0.85, headline: false, directional: false },
-    'cross-tradition': { hex: '#7ABFB0', idle: 0.28, hot: 0.95, headline: false, directional: false },
+    'cross-tradition': { hex: '#7ABFB0', idle: 0.62, hot: 0.95, headline: true,  directional: false },
     association:       { hex: '#4A5AA4', idle: 0.08, hot: 0.55, headline: false, directional: false },
     kinship:           { hex: '#C9A5D4', idle: 0.14, hot: 0.85, headline: false, directional: false },
     attestation:       { hex: '#D4A55A', idle: 0.10, hot: 0.90, headline: false, directional: true  },
@@ -404,7 +404,7 @@
   };
   // Per-bucket widths — kept compatible with the existing dev-panel mult.
   const BUCKET_WIDTH = {
-    transmission: 0.34, parallel: 0.30, 'cross-tradition': 0.50, association: 0.22, kinship: 0.32,
+    transmission: 0.34, parallel: 0.30, 'cross-tradition': 0.70, association: 0.22, kinship: 0.32,
     attestation:  0.30, polemic:  0.46, fusion:            0.40,
   };
   // Type → bucket map. Built from the spec + the runtime edge-type tally.
