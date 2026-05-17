@@ -12,10 +12,11 @@ _Hand-maintained. Each agent currently working in the vault appends a claim bloc
 
 ---
 
-## ritual-african-chinese-norse-1 — IN PROGRESS (2026-05-17)
-- Creating 7 nodes in 14_rituals/: ritual-ifa-divination, ritual-bori-spirit-possession, ritual-chinese-ancestor-veneration, ritual-taoist-inner-alchemy, ritual-chinese-new-year, ritual-blot, ritual-seidr
-- Traditions: tradition-yoruba-ifa, tradition-yoruba, tradition-vodou-haitian, tradition-daoism, tradition-chinese-folk-religion, tradition-norse-germanic
-- Do NOT touch 10_music/ or src/js/app.js
+## ~~ritual-african-chinese-norse-1 — FINISHED (2026-05-17)~~
+- ~~7 nodes in 14_rituals/: ritual-ifa-divination, ritual-bori-spirit-possession, ritual-chinese-ancestor-veneration, ritual-taoist-inner-alchemy, ritual-chinese-new-year, ritual-blot, ritual-seidr~~
+- ~~Traditions: tradition-yoruba-ifa, tradition-yoruba, tradition-vodou-haitian, tradition-daoism, tradition-chinese-folk-religion, tradition-norse-germanic~~
+- ~~MASSIVE WINs: Ifá binary-256 = I Ching binary-64 = Leibniz binary logic (independent invention); possession-as-divine-vehicle on 5 continents; ancestor-as-ongoing-community-member in 5 traditions; body-as-alchemical-laboratory (neidan/Western alchemy/kundalini); annual cosmic reset (Chūnjié/Akitu/Rosh Hashanah/Nowruz); blood as divine currency 5-tradition cluster; seiðr world-journey as most geographically distributed shamanic technology~~
+- ~~Build: 90 ritual nodes · 17,312 edges · 0 YAML errors · 0 dead links introduced~~
 
 ---
 
