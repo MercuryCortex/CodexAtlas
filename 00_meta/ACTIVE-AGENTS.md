@@ -78,6 +78,19 @@ _Hand-maintained. Each agent currently working in the vault appends a claim bloc
 
 ---
 
+## ~~medicine-cross-tradition-syncretic-1 — FINISHED (2026-05-17)~~
+- ~~Added `syncretic-edges:` YAML entries to 6 medicine deity files so cross-tradition parallels render in Pantheon graph~~
+- ~~ninisina ↔ asklepios (Sacred Healing Dog, 1400 yr); ninisina ↔ sekhmet (destroyer-healer)~~
+- ~~gula ↔ sekhmet (destroyer-healer); gula ↔ asklepios (dog-healer)~~
+- ~~ninkarrak ↔ sekhmet (destroyer-healer)~~
+- ~~sekhmet ↔ apollo (destroyer-healer); sekhmet ↔ ninisina~~
+- ~~asklepios ↔ ninisina + gula (dog-healer)~~
+- ~~apollo ↔ sekhmet (destroyer-healer)~~
+- ~~All edges sourced: Edelstein 1945, Lesko 1999, Stol 2000/2011, Black & Green 1992~~
+- ~~Build: 17,742 edges · 0 YAML errors. Commit fa4b8a7~~
+
+---
+
 ## ritual-indigenous-americas-1 — FINISHED (2026-05-17)
 - 6 nodes in 14_rituals/: ritual-sun-dance, ritual-sweat-lodge, ritual-potlatch, ritual-aztec-autosacrifice, ritual-inca-capacocha, ritual-vision-quest
 - Traditions: tradition-lakota (4 nodes), tradition-aztec-mexica (1), tradition-inca-andean (1)
