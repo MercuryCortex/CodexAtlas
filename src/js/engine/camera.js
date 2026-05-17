@@ -22,19 +22,21 @@
 //                         scale = 0.5 →  zoomed out 2×
 //
 // CRITICAL TRANSFORMS
-//   World uses math convention (Y up). Screen uses canvas
-//   convention (Y down). The renderer's view-uniform flips Y
-//   so positive world.y appears at the TOP of the screen. The
-//   camera's world↔screen helpers below apply the same flip
-//   so hit-tests and any pixel-aware logic stays consistent
-//   with what the renderer actually paints.
+//   The renderer paints world points using viewScaleY < 0
+//   (Y-flip from world to NDC). On the framebuffer this means
+//   a world point at the positive-Y end of the layout lands
+//   in the LOWER half of the screen. The camera's
+//   world↔screen math below MUST match that behavior so
+//   hover hit-tests align with what the user is looking at.
 //
 //   world → CSS px:   px.x = (world.x - center.x) * scale + viewport.w / 2
-//                     px.y = viewport.h / 2 - (world.y - center.y) * scale
+//                     px.y = (world.y - center.y) * scale + viewport.h / 2
 //   CSS px → world:   world.x = (px.x - viewport.w / 2) / scale + center.x
-//                     world.y = (viewport.h / 2 - px.y) / scale + center.y
-//   world → NDC:      ndc.x =  (world.x - center.x) * scale * 2 / viewport.w
-//                     ndc.y = -(world.y - center.y) * scale * 2 / viewport.h
+//                     world.y = (px.y - viewport.h / 2) / scale + center.y
+//
+//   Note: layout positions are math-convention (Y up) — the
+//   visible "flip" in screen space is the renderer's job, not
+//   the camera's. The camera is a straight world↔screen map.
 // ============================================================
 
 (function () {
@@ -99,32 +101,32 @@
       // ── Coordinate conversions ──────────────────────
       // viewport: { w, h } in CSS pixels (NOT backing-store).
 
-      // Y-flipped: world is Y-up (math), screen is Y-down (canvas).
+      // Straight world↔screen mapping. The renderer's view-
+      // uniform handles the math-Y-up → screen-Y-down flip;
+      // the camera stays a simple affine.
       worldToScreen(wx, wy, viewport) {
         return {
           x: (wx - state.centerX) * state.scale + viewport.w / 2,
-          y: viewport.h / 2 - (wy - state.centerY) * state.scale,
+          y: (wy - state.centerY) * state.scale + viewport.h / 2,
         };
       },
 
       screenToWorld(sx, sy, viewport) {
         return {
           x: (sx - viewport.w / 2) / state.scale + state.centerX,
-          y: (viewport.h / 2 - sy) / state.scale + state.centerY,
+          y: (sy - viewport.h / 2) / state.scale + state.centerY,
         };
       },
 
       // ── Operations ──────────────────────────────────
 
-      // Pan by a CSS-pixel delta (the natural input from a
-      // mouse-drag handler). World-space delta is dx/scale on
-      // X; on Y the screen is flipped, so a downward drag
-      // (dy > 0 in CSS) moves world content DOWN (the camera
-      // sees a smaller Y, i.e. center.y increases).
+      // Pan by a CSS-pixel delta. The drag gesture should
+      // make the wheel follow the cursor: dragging right
+      // moves world content right (camera centre moves left).
       panByScreen(dxPx, dyPx) {
         if (dxPx === 0 && dyPx === 0) return;
         state.centerX -= dxPx / state.scale;
-        state.centerY += dyPx / state.scale;
+        state.centerY -= dyPx / state.scale;
         _emit();
       },
 
@@ -135,14 +137,12 @@
       zoomAt(factor, anchorScreenX, anchorScreenY, viewport) {
         const newScale = Math.max(MIN_SCALE, Math.min(MAX_SCALE, state.scale * factor));
         if (newScale === state.scale) return;
-        // World point currently under the anchor (Y-flipped).
+        // World point currently under the anchor (straight map).
         const wAnchorX = (anchorScreenX - viewport.w / 2) / state.scale + state.centerX;
-        const wAnchorY = (viewport.h / 2 - anchorScreenY) / state.scale + state.centerY;
-        // Invariant: after zoom, the same world point maps back
-        // to the same anchor. Solve for new center under the
-        // Y-flipped worldToScreen.
+        const wAnchorY = (anchorScreenY - viewport.h / 2) / state.scale + state.centerY;
+        // Invariant: same world point stays under anchor.
         state.centerX = wAnchorX - (anchorScreenX - viewport.w / 2) / newScale;
-        state.centerY = wAnchorY - (viewport.h / 2 - anchorScreenY) / newScale;
+        state.centerY = wAnchorY - (anchorScreenY - viewport.h / 2) / newScale;
         state.scale   = newScale;
         _emit();
       },
