@@ -33,6 +33,22 @@ refs:
     type: "monograph"
     tier: 1
 tags: [phase-5, christian, scholastic, dominican, aristotelianism, paris, thomism]
+cross-tradition-edges:
+  - target: aristotle
+    type: heir-of
+    note: The *Summa Theologiae* is the Christian reception of Aristotle. Aquinas uses Aristotelian categories — substance/accident, act/potency, form/matter, the four causes — to express Christian doctrine on God, creation, the soul, and the virtues. His Five Ways for God's existence all derive from Aristotle's physics and cosmology (the Unmoved Mover, First Cause, Necessary Being). Aquinas's achievement is Aristotelian philosophy given Christian content: the natural reason of "the Philosopher" in the service of the theology of the Fathers.
+  - target: mathematics-house-of-wisdom
+    type: heir-of
+    note: Aquinas could not have written the *Summa Theologiae* without the House of Wisdom's transmission of Aristotle. The Latin translations that came through Toledo (Gerard of Cremona, William of Moerbeke — Aquinas's personal translator) are the texts he commented on. Aquinas benefited from the Islamic philosophical tradition directly — his engagement with Avicenna and Averroes (whom he calls "the Commentator") shapes his theology on the intellect, the soul's immortality, and the eternity of the world.
+  - target: tradition-neoplatonism
+    type: parallel
+    note: Aquinas also synthesized Neoplatonic elements into his Aristotelianism — particularly through Pseudo-Dionysius the Areopagite (whose *Divine Names* he commented on in detail) and through Augustine (who transmitted Neoplatonic categories into Western Christianity). His doctrine of the divine names (God as Being, Truth, Goodness) combines Aristotelian categories with Pseudo-Dionysian apophatic theology.
+  - target: mathematics-pythagorean-sacred
+    type: distant-heir
+    note: Aquinas inherited the Augustinian-Platonic tradition's mathematical theology (Augustine's *De Musica*, the proportional cosmology of the *Timaeus*) filtered through Aristotelian physics. His aesthetics — beauty as integrity, proportion, and clarity — preserves the Pythagorean-Platonic proportional cosmos within Aristotelian categories. The Gothic cathedrals built by his contemporaries embody the mathematical theology his metaphysics implicitly endorses.
+  - target: euclid
+    type: structural-parallel
+    note: The *Summa Theologiae* is structured in explicit emulation of the scholastic quaestio method — objection, response, reply to objections — which is a Euclidean-style formal procedure: state the problem, state the solution, address counterexamples. The *Summa*'s deductive architecture (from first principles to conclusions, always addressing objections) mirrors Euclidean proof structure. Both represent the aspiration to derive all results rigorously from established starting points.
 ---
 
 # Thomas Aquinas
