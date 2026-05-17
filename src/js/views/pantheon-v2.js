@@ -715,6 +715,7 @@
       if (mode === 'authors')   return n.type === 'person' && authorSet && authorSet.has(n.id);
       if (mode === 'symbols')   return n.type === 'symbol';
       if (mode === 'events')    return n.type === 'event';
+      if (mode === 'documents') return n.type === 'document';
       if (mode === 'music')        return n.type === 'music';
       if (mode === 'alphabet')     return n.type === 'alphabet';
       if (mode === 'rituals')      return n.type === 'ritual';
@@ -750,6 +751,7 @@
     if (!deities.length) {
       const msgs = { deities: 'No deities in data.', authors: 'No authors found.',
         symbols: 'No symbols found.', events: 'No events found.',
+        documents: 'No documents found.',
         music: 'No music nodes found.', alphabet: 'No alphabet nodes found.',
         rituals: 'No ritual nodes found.', alchemy: 'No alchemy nodes found.',
         morals: 'No moral nodes found.', philosophy: 'No philosophy nodes found.',
@@ -1944,6 +1946,7 @@
         <option value="authors"      ${_currentMode === 'authors'      ? 'selected' : ''}>✎ Authors</option>
         <option value="symbols"      ${_currentMode === 'symbols'      ? 'selected' : ''}>✦ Symbols</option>
         <option value="events"       ${_currentMode === 'events'       ? 'selected' : ''}>★ Events</option>
+        <option value="documents"    ${_currentMode === 'documents'    ? 'selected' : ''}>❡ Documents</option>
         <option value="rituals"      ${_currentMode === 'rituals'      ? 'selected' : ''}>⚱ Rituals</option>
         <option value="music"        ${_currentMode === 'music'        ? 'selected' : ''}>♩ Music</option>
         <option value="alphabet"     ${_currentMode === 'alphabet'     ? 'selected' : ''}>ℵ Alphabets</option>

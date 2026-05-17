@@ -978,7 +978,11 @@ body.view-about .footer-toggle { display: none !important; }
    descendants — trapping the toggle inside the translated footer regardless of its
    own position:fixed. Sibling placement avoids the trap entirely. */
 .footer-toggle {
-  position: fixed; bottom: 10px; left: calc(var(--nav-w) + 10px); z-index: 51;
+  /* When the footer is OPEN, the toggle floats just above the bar so it
+     never overlaps the "family" / "type" labels at the bar's left edge.
+     When the footer is COLLAPSED, the toggle drops to the bottom so the
+     user has somewhere to click to re-open. */
+  position: fixed; bottom: 54px; left: calc(var(--nav-w) + 10px); z-index: 51;
   background: rgba(13, 17, 25, 0.86); backdrop-filter: blur(6px);
   border: 1px solid var(--border);
   color: var(--text-2); width: 26px; height: 22px;
@@ -987,11 +991,12 @@ body.view-about .footer-toggle { display: none !important; }
   display: flex; align-items: center; justify-content: center;
   transition: color 140ms, border-color 140ms,
               transform 240ms cubic-bezier(0.2, 0.8, 0.2, 1),
+              bottom 240ms cubic-bezier(0.2, 0.8, 0.2, 1),
               left 240ms cubic-bezier(0.2, 0.8, 0.2, 1);
 }
 .footer-toggle:hover { color: var(--gold); border-color: var(--gold-soft); }
 body.nav-collapsed .footer-toggle { left: calc(var(--nav-w-collapsed) + 10px); }
-body.footer-collapsed .footer-toggle { transform: rotate(180deg); }
+body.footer-collapsed .footer-toggle { transform: rotate(180deg); bottom: 10px; }
 footer .filter-group { display: flex; gap: 6px; align-items: center; }
 footer label {
   letter-spacing: 0.06em; text-transform: uppercase; color: var(--text-3); font-size: 10px;
@@ -2228,18 +2233,30 @@ body.view-atlas main.canvas { background: var(--bg-0); }
 .ph2-filter-name { font-family: var(--sans); font-size: 11px; color: var(--text-1); }
 .ph2-filter-count { font-family: var(--mono); font-size: 10px; color: var(--text-3); }
 
-/* ── BOTTOM-RIGHT ZOOM WIDGET ──────────────────────────────────────── */
+/* ── BOTTOM-RIGHT ZOOM WIDGET ──────────────────────────────────────
+   Sits ABOVE the footer (not over it). The footer is 44px tall when
+   visible. When body.footer-collapsed, the widget can drop. */
 .ph2-zoom-widget {
-  position: absolute; right: 22px; bottom: 22px;
+  position: absolute;
+  /* Right edge tracks the floating detail panel's rail width — same idiom
+     the footer uses, so the widget never slips behind the detail. */
+  right: 22px;
+  bottom: 56px;
   display: flex; gap: 4px;
   background: rgba(14,16,22,0.55);
   backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);
   border: 1px solid var(--border-soft);
   border-radius: 3px;
   padding: 3px;
-  z-index: 12;
+  z-index: 52;   /* above the 50-z footer */
   pointer-events: auto;
+  transition: bottom 240ms cubic-bezier(0.2, 0.8, 0.2, 1);
 }
+body.footer-collapsed .ph2-zoom-widget { bottom: 16px; }
+/* Hide the legacy P1 zoom-meter on the promoted V2 Pantheon — it was a
+   D3-zoom indicator that doesn't apply to sigma. */
+body.view-pantheon .zoom-meter,
+body.view-pantheon-v2 .zoom-meter { display: none !important; }
 .ph2-zoom-btn, .ph2-zoom-pct {
   background: transparent;
   border: none;
