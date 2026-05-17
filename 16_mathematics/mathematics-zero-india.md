@@ -34,6 +34,15 @@ cross-tradition-edges:
   - target: nagarjuna
     type: parallel
     note: Structural parallel only — no documented causal link between Nagarjuna's sunyata and Brahmagupta's zero arithmetic, but both emerge from a culture that normalized "nothing" as a productive concept.
+  - target: fibonacci
+    type: ancestor-of
+    note: Indian zero traveled to Europe through a precise chain — Brahmagupta (628 CE) → Arabic translation (c. 775 CE) → al-Khwarizmi (c. 825 CE) → Latin translation (c. 1126 CE) → Fibonacci's Liber Abaci (1202), which opens explicitly: "With these nine figures, and with the sign 0 which the Arabs call zephyr, any number whatsoever can be written." That sentence began the displacement of Roman numerals from European commerce.
+  - target: mathematics-chinese-nine-chapters
+    type: parallel
+    note: The Chinese Jiuzhang's negative numbers (Chapter 8, fu = debt, c. 100 BCE) and India's zero arithmetic (Brahmagupta, 628 CE) are parallel extensions of number systems into previously "impossible" territory. China got there first on negatives; India got there first on zero as number. Both steps were taken in accounting contexts — the same cognitive barrier (accepting a result with no physical magnitude counterpart) crossed by two civilizations independently.
+  - target: brahmagupta
+    type: child-of
+    note: Brahmagupta's Brahmasphutasiddhanta (628 CE) is the founding document of zero as arithmetic rather than placeholder. Earlier texts (Bakhshali, c. 300 CE) use zero as a positional mark; Brahmagupta first states rules for operating with zero as a number.
 ---
 
 The **invention of zero** is one of the most consequential intellectual events in human history — and it happened in India, emerging from a tradition where philosophical concepts of **śūnya** (emptiness, nothingness) were already operative in both Buddhist metaphysics and Vedic mathematical thinking.
