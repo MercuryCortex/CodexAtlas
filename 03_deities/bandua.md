@@ -15,7 +15,7 @@ child-of: []
 consort: []
 attributes: ["the fortress / hilltop (his domain is the *castro*, the defended hilltop settlement)", "boundaries and territorial edges", "the warrior assembly"]
 attested-in: ["~50+ Latin votive inscriptions from Gallaecia and Lusitania (Encarnação 1975)", "Multiple stones at Figueira de Castelo Rodrigo, Viseu, and Orense — the geographic center of the Gallaecian Celtic zone", "Military dedications alongside Roman Mars in later inscriptions"]
-equivalents: ["[[mars-roman]] (partial Roman identification in some inscriptions)", "[[ares-greek]] (structural parallel — protective war-god type)", "[[dunatis-gaulish]] (Gaulish 'fortress-god' — possible cognate type)"]
+equivalents: ["[[mars-roman]] (partial Roman identification in some inscriptions)", "[[ares]] (structural parallel — protective war-god type)", "[[dunatis-gaulish]] (Gaulish 'fortress-god' — possible cognate type)"]
 syncretic-edges:
   - target: "mars-roman"
     type: "partial-identification"

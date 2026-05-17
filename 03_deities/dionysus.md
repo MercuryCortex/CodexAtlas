@@ -15,7 +15,7 @@ child-of: ["[[zeus]]", "Semele"]
 consort: ["Ariadne"]
 attributes: ["thyrsus (fennel staff)", "ivy crown", "leopards / panthers", "grapevine", "drinking cup"]
 attested-in: ["[[phase-2-008-homeric-epics]]", "[[phase-2-009-hesiod-theogony-works-and-days]]", "Homeric Hymn to Dionysus", "Linear B (di-wo-nu-so, Pylos and Khania — 13th c. BCE!)"]
-equivalents: ["[[bacchus-roman]]"]
+equivalents: ["[[bacchus]]"]
 syncretic-edges:
   - target: "osiris-egyptian"
     type: "ancient-identification"

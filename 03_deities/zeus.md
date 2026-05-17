@@ -15,7 +15,7 @@ child-of: ["[[kronos]]", "Rhea"]
 consort: ["[[hera]]", "many mortal and divine consorts"]
 attributes: ["thunderbolt", "eagle", "oak", "aegis"]
 attested-in: ["[[phase-2-008-homeric-epics]]", "[[phase-2-009-hesiod-theogony-works-and-days]]", "[[phase-2-028-herodotus-histories-book-2]]", "[[phase-4-072-plutarch-de-iside-et-osiride]]", "Linear B Mycenaean tablets (~-1400 BCE) — Diwo (di-we) in Knossos / Pylos"]
-equivalents: ["[[jupiter-roman]]", "[[amun]] (as Zeus-Ammon — Herodotus 2.42)", "[[amun-ra]] (composite identification)"]
+equivalents: ["[[jupiter]]", "[[amun]] (as Zeus-Ammon — Herodotus 2.42)", "[[amun-ra]] (composite identification)"]
 syncretic-edges:
   - target: "indra"
     type: "scholarly-parallel"

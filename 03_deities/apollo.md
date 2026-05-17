@@ -15,7 +15,7 @@ child-of: ["[[zeus]]", "Leto"]
 consort: []
 attributes: ["bow", "lyre", "laurel", "dolphin", "swan"]
 attested-in: ["[[phase-2-008-homeric-epics]]", "Homeric Hymn to Apollo", "[[phase-2-009-hesiod-theogony-works-and-days]]"]
-equivalents: ["[[apollo-roman]]"]
+equivalents: ["[[apollo]]"]
 syncretic-edges:
   - target: "horus-egyptian"
     type: "ancient-identification"

@@ -15,7 +15,7 @@ child-of: ["Born from the blood of [[kagutsuchi]] (fire deity) dripping from [[i
 consort: []
 attributes: ["sword", "lightning", "sacred deer (Kasuga Shrine)", "divine sword Futsunushi"]
 attested-in: ["Kojiki (712 CE)", "Nihon Shoki (720 CE)", "Engishiki (927 CE)"]
-equivalents: ["[[indra]]", "[[thor]]", "[[michael-archangel]]", "[[ogun]]", "[[ares-greek]]", "[[mars-roman]]"]
+equivalents: ["[[indra]]", "[[thor]]", "[[michael-archangel]]", "[[ogun]]", "[[ares]]", "[[mars-roman]]"]
 syncretic-edges:
   - target: "[[indra]]"
     type: "scholarly-parallel"
@@ -76,7 +76,7 @@ The **diplomatic-military mission** (*kuni-yuzuri*): Amaterasu and Takamimusubi 
 - **[[thor]]** — *scholarly-parallel*: Norse thunder deity whose weapon (Mjolnir) is the instrument of both battle and consecration; the thunder-deity-as-divine-warrior archetype.
 - **[[michael-archangel]]** — *scholarly-parallel*: the sword-bearing heavenly warrior sent as divine emissary to establish celestial sovereignty; Michael's defeat of Satan / Takemikazuchi's pacification of the earthly deities are structurally parallel.
 - **[[ogun]]** — *scholarly-parallel*: Yoruba deity of iron, war, and all bladed instruments; the divine patron of martial arts and all who work with metal weapons — the sword/weapon deity as martial patron cross-tradition archetype.
-- **[[ares-greek]]** / **[[mars-roman]]** — *scholarly-parallel*: divine war-deity born from divine power; patron of military victory and martial virtue.
+- **[[ares]]** / **[[mars-roman]]** — *scholarly-parallel*: divine war-deity born from divine power; patron of military victory and martial virtue.
 - **[[okuninushi]]** — *ancient-identification*: the encounter between Takemikazuchi and Ōkuninushi at Inasa Beach is one of the pivotal scenes in Kojiki; the two deities define each other — divine emissary of heaven / sovereign of earth.
 
 ## Iconography

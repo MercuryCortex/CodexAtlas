@@ -15,7 +15,7 @@ child-of: ["[[kronos]]", "Rhea"]
 consort: ["[[zeus]]"]
 attributes: ["peacock", "diadem", "scepter", "cuckoo"]
 attested-in: ["[[phase-2-008-homeric-epics]]", "[[phase-2-009-hesiod-theogony-works-and-days]]", "Linear B (e-ra, Pylos and elsewhere)"]
-equivalents: ["[[juno-roman]]"]
+equivalents: ["[[juno]]"]
 syncretic-edges:
   - target: "juno-roman"
     type: "syncretic-identification"

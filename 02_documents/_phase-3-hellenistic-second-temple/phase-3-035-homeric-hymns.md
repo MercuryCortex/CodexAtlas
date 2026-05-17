@@ -16,7 +16,7 @@ geo-lon: 23.5
 geo-label: "Athens / Ionian Greek world"
 historicity: "documented"
 key-figures: []
-deities-mentioned: ["[[demeter-greek]]", "[[dionysus]]", "[[apollo-greek]]", "[[aphrodite-greek]]", "[[hermes-greek]]", "[[ares-greek]]", "[[adonis]]"]
+deities-mentioned: ["[[demeter-greek]]", "[[dionysus]]", "[[apollo-greek]]", "[[aphrodite-greek]]", "[[hermes-greek]]", "[[ares]]", "[[adonis]]"]
 influenced-by:
   - "[[phase-2-008-homeric-epics]] — same hexameter tradition, related mythological world"
   - "[[tradition-greek-religion]] — Panhellenic mythology and ritual"
