@@ -11,9 +11,10 @@ _Hand-maintained. Each agent currently working in the vault appends a claim bloc
 
 ---
 
-## ritual-celtic-polynesian-aboriginal-1 — IN FLIGHT (2026-05-17)
-- 7 nodes in 14_rituals/: ritual-samhain, ritual-druidic-oak-sacred, ritual-polynesian-tapu, ritual-haka, ritual-dreamtime-ceremony, ritual-initiation-walkabout, ritual-smoking-ceremony
-- Traditions: tradition-druidism (2), tradition-polynesian (1), tradition-maori (1), tradition-australian-aboriginal (3)
+## ~~ritual-celtic-polynesian-aboriginal-1 — FINISHED (2026-05-17)~~
+- ~~7 nodes in 14_rituals/: ritual-samhain, ritual-druidic-oak-sacred, ritual-polynesian-tapu, ritual-haka, ritual-dreamtime-ceremony, ritual-initiation-walkabout, ritual-smoking-ceremony~~
+- ~~Traditions: tradition-druidism (2), tradition-polynesian (1), tradition-maori (1), tradition-australian-aboriginal (3)~~
+- ~~MASSIVE WINs: five-civilization dead-return-feast; three-independent forest-as-primary-sacred-space; sacred-electricity-four-traditions (tapu/tumah/ashaucha/kegare); embodied-performance-as-binding-speech-act (haka/mantra/oriki/bardic/aoidos); creation-by-sound-five-traditions (Songlines/Nada Brahma/Memphite Theology/Māori/Genesis); initiation-route-IS-scripture (walkabout unique); fragrant-smoke-purification-six-continents~~
 
 ---
 
