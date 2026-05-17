@@ -14,13 +14,23 @@ parent-of: ["the seventy sons of the divine assembly (in Ugaritic)"]
 child-of: []
 consort: ["[[el-canaanite]]; (in Israelite folk religion, attested at Kuntillet ʿAjrud and Khirbet el-Qom) consort of Yahweh"]
 attributes: ["the asherah-pole (the wooden cultic emblem from which she is named in the Hebrew Bible)", "lions", "sacred tree", "stylized tree-of-life"]
-attested-in: ["[[phase-1-013-baal-cycle]]", "[[phase-1-014-ugaritic-ritual-texts]]"]
+attested-in: ["[[phase-1-013-baal-cycle]]", "[[phase-1-014-ugaritic-ritual-texts]]", "[[document-kuntillet-ajrud-inscriptions]]"]
 equivalents: []
 syncretic-edges:
   - target: "[[ishtar-akkadian]]"
     type: "scholarly-parallel"
     source: "Some functional overlap as great-goddess but the two are distinct figures; closer Canaanite parallel to Ishtar is Astarte/Ashtart"
-status: "stub"
+status: "full"
+cross-tradition-edges:
+  - type: "parallel-form"
+    target: "[[el-canaanite]]"
+    note: "Asherah is El's consort in Ugaritic mythology — Lady Athirat of the Sea, Mother of the Seventy divine sons. This pairing is systematically transferred to Yahweh in Israelite folk religion: the Kuntillet Ajrud inscriptions (c. 800 BCE) read 'Yahweh and his Asherah' — El's consort became Yahweh's consort as YHWH absorbed El's divine profile."
+  - type: "parallel-form"
+    target: "[[shekhinah]]"
+    note: "The Kabbalistic Shekhinah (divine feminine presence, bride of God, the immanent aspect of deity) is the post-biblical evolution of the Israelite Asherah: the same divine-feminine consort role, transformed from a distinct goddess into an attribute or emanation of the one God. The suppression of Asherah worship (8th-7th c. BCE) did not eliminate the feminine-divine intuition — it drove it into the mystical tradition as the Shekhinah."
+  - type: "parallel-form"
+    target: "[[sophia-gnostic]]"
+    note: "Gnostic Sophia (the divine feminine wisdom who falls, is recovered, is the consort of the divine masculine) and Asherah (the divine mother goddess paired with the high god) are parallel instantiations of the feminine-divine-consort principle. Both represent the theological strand that monotheism suppressed and mystical traditions preserved."
 refs:
   - title: "Asherah: Goddess of Israel?"
     author: "Olyan, Saul M."
@@ -51,3 +61,9 @@ Asherah (Ugaritic *ʾAṯiratu*, "Lady Athirat of the Sea") is the great mother-
 
 ## Mythological role
 The archaeological evidence has transformed the discussion. Two key inscriptions — at **Kuntillet ʿAjrud** (Sinai, ~800 BCE) and **Khirbet el-Qom** (Hebron region, ~750 BCE) — read "Yahweh of Samaria and his Asherah" / "Yahweh of Teman and his Asherah" / "blessed by Yahweh and his Asherah." Most scholars (Dever 2005; Olyan 1988; Smith 2002) now accept that in pre-exilic Israelite folk religion Asherah was widely worshipped as **Yahweh's consort**, and that the prophetic-Deuteronomistic polemic against the asherahs is a polemic against a *standard* Israelite religious practice that the reformers were trying (over centuries) to eliminate. The 2 Kings 23 reform of Josiah (~622 BCE) describes removing the asherah-image from the Jerusalem Temple itself — implying it had been there. This represents one of the most consequential reframings of Israelite religious history in 20th-century scholarship: monotheism was a polemical *project* against an older, broader, partly-goddess-inclusive Israelite religion, not the default starting point.
+
+## Vault Connections
+
+**HYPER WIN — "Yahweh and his Asherah": archaeology versus the Bible.** The Kuntillet Ajrud pithoi (c. 800 BCE, a desert road-station in the Sinai frequented by Israelites from Samaria) carry the inscription: *"I bless you by YHWH of Samaria and by his Asherah" (brkt ʾtkm lyhwh šmrn wlʾšrth)*. A second inscription at Khirbet el-Qom (Hebron region, c. 750 BCE) reads: "Blessed be Uriah by Yahweh, and by his Asherah." The possessive pronoun ("his Asherah") is theologically extraordinary: if Asherah were merely a cult object, the possessive would be odd; it indicates a divine consort. The Hebrew Bible explicitly records Asherah-pole worship *in the Jerusalem Temple*: 2 Kings 21:7 says Manasseh "made an image of Asherah and put it in the Temple"; 2 Kings 23:6–7 says Josiah (c. 622 BCE) removed it. This was not syncretism imported from outside: it was standard Israelite temple religion that the Deuteronomic reform was fighting to eliminate. The received picture of Israelite monotheism as the original religious starting point is an artifact of the reform movement that won.
+
+**MASSIVE WIN — The Shekhinah as suppressed Asherah.** The trajectory: Asherah (Canaanite goddess, YHWH's consort, 2000–700 BCE) → suppressed by Deuteronomic reform (700–500 BCE) → feminine-divine intuition survives as Wisdom (*Hokmah*) in Proverbs 8 and Sirach 24 (personified feminine figure present at creation, God's consort in creation) → Shekhinah in rabbinic literature (divine Presence, feminine grammatical gender, exiled alongside Israel) → Kabbalistic Shekhinah as the tenth sefirah, God's immanent feminine face. The suppression did not eliminate the feminine-divine theology — it sublimated it into mysticism. The [[shekhinah]] is the Asherah who survived the reform in disguise. See also [[sophia-gnostic]] for the Gnostic parallel.
