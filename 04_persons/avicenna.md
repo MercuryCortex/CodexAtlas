@@ -39,6 +39,25 @@ refs:
     year: 1974
     publisher: "SUNY Press"
     type: biography
+cross-tradition-edges:
+  - target: aristotle
+    type: heir-of
+    note: Avicenna rewrote the entire Aristotelian corpus in Arabic philosophical form — his Shifa (Book of Healing) covers logic, natural science, mathematics, and metaphysics in explicit dialogue with Aristotle. He describes reading al-Farabi's commentary and understanding Aristotle's Metaphysics for the first time. His Floating Man argument (a person deprived of all sensory input still knows they exist) is the Islamic precursor to Descartes's Cogito and anticipates Kant's transcendental apperception.
+  - target: al-farabi
+    type: heir-of
+    note: Avicenna explicitly credits al-Farabi as his decisive philosophical influence. He read al-Farabi's commentary on Aristotle's Metaphysics when he was stuck on the text and understood it immediately. Al-Farabi's synthesis of Platonic-Aristotelian philosophy with Islamic prophetology is the framework Avicenna builds on — he extends it with more systematic psychology (the Floating Man, levels of the soul) and metaphysics (the Necessary Being argument for God's existence).
+  - target: mathematics-house-of-wisdom
+    type: heir-of
+    note: Avicenna was a Persian polymath working in the eastern Islamic world (Bukhara, Hamadan, Isfahan) — chronologically after the Baghdad House of Wisdom's peak. But he was its intellectual heir: he absorbed the Greek-Arabic synthesis the translation movement had produced and extended it in medicine, philosophy, mathematics, and astronomy. His Canon of Medicine systematized everything from Greek, Persian, and Islamic medicine that the House of Wisdom tradition had assembled.
+  - target: thomas-aquinas
+    type: ancestor-of
+    note: Avicenna is one of Aquinas's most important sources in the Summa Theologiae. Aquinas's Five Ways for God's existence include an argument from contingency (everything that exists might not have existed; there must be a Necessary Being that could not not-exist) — which is directly Avicenna's argument from Shifa, Metaphysics VIII. Aquinas cites Avicenna by name and often refers to him as "the Philosopher's commentator." The Avicennian necessary/contingent distinction structures all of Aquinas's natural theology.
+  - target: averroes
+    type: parallel
+    note: Avicenna (980-1037) and Averroes (1126-1198) are the two peaks of Islamic Aristotelianism — separated by a century, representing two different approaches. Avicenna Neoplatonized Aristotle (incorporating emanation theory, a cosmic active intellect, illuminationist psychology); Averroes sought to purify Aristotle of Neoplatonic additions. Both are present in Aquinas's Summa — he uses Avicenna's Necessary Being, argues against Averroes's unity of intellect. The internal Islamic philosophical tension between them structures all of Latin Scholasticism.
+  - target: mathematics-pythagorean-sacred
+    type: distant-heir
+    note: Avicenna's Floating Man argument — that the mind knows its own existence prior to all sensory experience — connects to the Platonic-Pythagorean tradition of the soul's inherent mathematical knowledge (Plato's Meno: the slave boy who knows geometry). His Islamic Neoplatonism (cosmic intellect radiating knowledge downward to human souls) is the Islamic version of the Pythagorean-Platonic framework of mathematical knowledge as participation in divine mathematical structure.
 ---
 
 Ibn Sina (Avicenna, 980–1037 CE) is the most influential physician after Hippocrates and Galen — and arguably more influential than either in terms of the duration and geographic scope of his impact. His *Canon of Medicine* was the standard medical textbook in Islamic schools from its composition until the 19th century and in **European universities until the late 17th century** — a dominance of 600+ years over two civilizations simultaneously.
