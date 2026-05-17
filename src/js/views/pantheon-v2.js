@@ -54,6 +54,33 @@
     return Math.abs(h);
   }
 
+  // Translate any color string ("#RRGGBB", "#RRGGBBAA", "rgb(...)", "rgba(...)")
+  // to an rgba() string with the given alpha. Sigma's circle program accepts
+  // rgba — this is how we get TRANSLUCENT dim nodes (the user's intent) instead
+  // of replacing them with a different opaque color.
+  const _alphaCache = new Map();
+  function withAlpha(color, alpha) {
+    if (!color || typeof color !== 'string') return 'rgba(70,75,90,' + alpha + ')';
+    const key = color + ':' + alpha;
+    const cached = _alphaCache.get(key);
+    if (cached) return cached;
+    let r = 0, g = 0, b = 0;
+    if (color[0] === '#' && color.length === 7) {
+      r = parseInt(color.slice(1, 3), 16);
+      g = parseInt(color.slice(3, 5), 16);
+      b = parseInt(color.slice(5, 7), 16);
+    } else if (color[0] === '#' && color.length === 9) {
+      r = parseInt(color.slice(1, 3), 16);
+      g = parseInt(color.slice(3, 5), 16);
+      b = parseInt(color.slice(5, 7), 16);
+    } else {
+      const m = color.match(/rgba?\(\s*(\d+)\s*,\s*(\d+)\s*,\s*(\d+)/);
+      if (m) { r = +m[1]; g = +m[2]; b = +m[3]; }
+    }
+    const out = `rgba(${r},${g},${b},${alpha})`;
+    _alphaCache.set(key, out);
+    return out;
+  }
   // Blend a hex color toward the canvas background — used for dimming nodes
   // without losing family identity. Returns a hex string that's the original
   // color mixed 10% with the bg, so a faded red still reads as red-ish, not grey.
@@ -693,6 +720,33 @@
       return neighborhoodOf(a).has(b);
     }
 
+    // Single source of truth for "what state is this node in?"
+    // Used by nodeReducer (color + zIndex + size), updateNodeLabelVisibility
+    // (whether to force-show this label), and deconflict (priority ordering).
+    //   HOVERED  — the node currently under the cursor, or the selected node
+    //              if there's no hover. Always painted top, label always on.
+    //   ACTIVE   — touched by the current focus (1-hop of hover OR member of
+    //              _lockedSet). Full color, label always on regardless of
+    //              degree threshold or distance from camera centre.
+    //   DIM      — there IS a focus context, and this node is NOT in it.
+    //              Original colour at 10% alpha, lowest zIndex.
+    //   NORMAL   — no focus context anywhere; idle render.
+    function nodeStateFor(id) {
+      if (_hoverId === id) return 'HOVERED';
+      if (!_hoverId && _selectedId === id && _lockedSet.size === 0) return 'HOVERED';
+      if (_hoverId) {
+        return inNeighborhood(_hoverId, id) ? 'ACTIVE' : 'DIM';
+      }
+      if (_lockedSet.size > 0) {
+        return _lockedSet.has(id) ? 'ACTIVE' : 'DIM';
+      }
+      return 'NORMAL';
+    }
+    function isActiveOrHovered(id) {
+      const s = nodeStateFor(id);
+      return s === 'HOVERED' || s === 'ACTIVE';
+    }
+
     const settings = {
       renderEdgeLabels: false,
       // Sigma's stock canvas edge program still strokes a 1-px hairline per
@@ -723,8 +777,23 @@
       minCameraRatio: 0.05,
       maxCameraRatio: 8,
       // zIndex enabled so dim nodes paint BEHIND highlighted ones — fixes the
-      // grey-on-top issue. Sigma renders in ascending zIndex order.
       zIndex: true,
+      // ── NODE STATE MACHINE ───────────────────────────────────────────
+      // One function decides the visual state of every node per frame. Four
+      // mutually-exclusive states. The reducer below just applies the state.
+      //
+      //   HOVERED  — _hoverId === id, OR (_selectedId === id with no hover)
+      //   ACTIVE   — in current focus set: 1-hop of hover, or in _lockedSet
+      //   DIM      — there IS a focus, this node is NOT in it
+      //   NORMAL   — no focus; idle render
+      //
+      //  Per-state attrs:
+      //                size mult   zIndex   color                  label?
+      //   HOVERED      +4 / +2      3       attrs.color (full)     ALWAYS
+      //   ACTIVE       attrs.size   2       attrs.color (full)     ALWAYS
+      //   DIM          attrs.size   0       rgba(...,0.10)         hidden
+      //   NORMAL       attrs.size   1       attrs.color            by threshold
+      //
       nodeReducer: (id, attrs) => {
         const out = { ...attrs };
 
@@ -732,54 +801,44 @@
         const _devMult = window.CODEX_DEV?.settings?.nodeSizeMult;
         if (_devMult && _devMult !== 1) out.size = (attrs.size || 4) * _devMult;
 
-        // EGO FOCUS — when active + a node is selected, hide everything outside the 1-hop neighbourhood.
+        // EGO FOCUS short-circuit — hide everything outside the ego subgraph.
         if (_egoFocus && _selectedId) {
           if (!inNeighborhood(_selectedId, id)) { out.hidden = true; return out; }
         }
-        // FAMILY FILTER — when set, fade every node not in that family using
-        // its OWN family color blended toward bg (not a flat grey).
+        // FAMILY FILTER short-circuit — fade by own color, lowest layer.
         if (_familyFilter && attrs._family !== _familyFilter) {
-          out.color = fadeToBg(attrs.color);
-          out.label = '';
+          out.color  = withAlpha(attrs.color, 0.10);
           out.zIndex = 0;
+          out.label  = '';
           return out;
         }
-        // TIER OVERLAY — replace family-color fill with source-integrity tier color.
-        if (_tierOverlay) {
-          const tierKey = String((attrs._node || {})._tier ?? 'none');
-          out.color = TIER_FILL[tierKey] || TIER_FILL.none;
-        }
+        // TIER OVERLAY — substitute family color with source-integrity tier.
+        const baseColor = _tierOverlay
+          ? (TIER_FILL[String((attrs._node || {})._tier ?? 'none')] || TIER_FILL.none)
+          : attrs.color;
 
-        // STICKY LOCK — when a locked set is active, anything outside it fades.
-        const hasLock = _lockedSet.size > 0;
-        if (hasLock && !_lockedSet.has(id)) {
-          out.color = fadeToBg(attrs.color);
-          out.label = '';
-          out.zIndex = 0;          // paint BEHIND locked + hot nodes
+        const state = nodeStateFor(id);
+        switch (state) {
+          case 'HOVERED':
+            out.size   = (out.size || 4) + (_hoverId === id ? 4 : 2);
+            out.zIndex = 3;
+            out.color  = baseColor;
+            break;
+          case 'ACTIVE':
+            out.zIndex = 2;
+            out.color  = baseColor;
+            break;
+          case 'DIM':
+            out.color  = withAlpha(baseColor, 0.10);
+            out.zIndex = 0;
+            break;
+          case 'NORMAL':
+          default:
+            out.color  = baseColor;
+            out.zIndex = 1;
+            break;
         }
-
-        // HOVER / SELECT — circular size-bump instead of sigma's stock
-        // `highlighted: true` ring (which renders as a square-ish halo at
-        // small node sizes). Same circle program → always round.
-        if (_hoverId === id) {
-          out.size = (out.size || 4) + 4;
-          out.zIndex = 3;
-        } else if (_selectedId === id) {
-          out.size = (out.size || 4) + 2;
-          out.zIndex = 3;
-        } else if (_hoverId) {
-          const isNeighbor = inNeighborhood(_hoverId, id);
-          if (isNeighbor) {
-            out.zIndex = 2;        // neighbours sit just below the hovered hub
-          } else {
-            out.color = fadeToBg(attrs.color);
-            out.label = '';
-            out.zIndex = 0;        // non-neighbours go to the back
-          }
-        }
-        // Phase E — DOM overlay handles ALL node labels (production-style: text
-        // above each node, with a halo, plus a degree-priority deconfliction pass).
-        // Sigma's built-in labels are fully suppressed here.
+        // DOM overlay handles all node labels — sigma's built-in suppressed.
         out.label = '';
         return out;
       },
@@ -1000,16 +1059,23 @@
     }
 
     // ── THUMBNAIL FILL OVERLAY ──────────────────────────────────────────
-    // Each deity that has a `thumbnail` URL gets a circular SVG <image>
-    // positioned at the dot's screen location, sized to the dot's radius.
+    // Sits ABOVE sigma's node canvas (so the photo covers the dot fill, not
+    // sits behind it). A separate top-layer SVG is appended to rootEl AFTER
+    // sigma was constructed, so it's the last sibling in paint order.
     // Hidden by default; toggled via the toolbar "photos" button.
-    // Images use a single <clipPath> with a relative-coord circle that
-    // gets sized per-image via attribute, so we don't pay the cost of
-    // 492 clipPaths in defs.
+    const thumbsLayer = document.createElementNS(SVG_NS, 'svg');
+    thumbsLayer.setAttribute('class', 'ph2-thumbs-layer');
+    thumbsLayer.setAttribute('aria-hidden', 'true');
+    thumbsLayer.style.position = 'absolute';
+    thumbsLayer.style.inset = '0';
+    thumbsLayer.style.pointerEvents = 'none';
+    thumbsLayer.style.width = '100%';
+    thumbsLayer.style.height = '100%';
+    thumbsLayer.style.display = 'none';
+    rootEl.appendChild(thumbsLayer);   // appended AFTER sigma's canvases
     const thumbsG = document.createElementNS(SVG_NS, 'g');
     thumbsG.setAttribute('class', 'ph2-thumbs-g');
-    thumbsG.style.display = 'none';        // hidden until user enables
-    overlay.appendChild(thumbsG);
+    thumbsLayer.appendChild(thumbsG);
     const thumbEntries = [];               // { el, id, wx, wy, baseR }
     deities.forEach(d => {
       if (!d.thumbnail) return;
@@ -1036,14 +1102,13 @@
       thumbEntries.push({ el: img, clipCircle, id: d.id, wx: pos.x, wy: pos.y, baseR });
     });
     function syncThumbsImmediate() {
-      if (thumbsG.style.display === 'none') return;
+      if (thumbsLayer.style.display === 'none') return;
       const mult = window.CODEX_DEV?.settings?.nodeSizeMult || 1;
       for (let i = 0; i < thumbEntries.length; i++) {
         const T = thumbEntries[i];
-        // Thumbnails follow node movement (drag updates positions Map).
         const pos = positions.get(T.id) || { x: T.wx, y: T.wy };
         const screen = sigma.graphToViewport({ x: pos.x, y: pos.y });
-        const r = (T.baseR * mult) * 1.4;  // slightly larger than the dot so the photo reads
+        const r = (T.baseR * mult) * 1.4;
         const d = r * 2;
         T.el.setAttribute('x', screen.x - r);
         T.el.setAttribute('y', screen.y - r);
@@ -1055,7 +1120,7 @@
       }
     }
     function setThumbsEnabled(on) {
-      thumbsG.style.display = on ? '' : 'none';
+      thumbsLayer.style.display = on ? '' : 'none';
       if (on) syncThumbsImmediate();
     }
 
@@ -1451,26 +1516,26 @@
       return Math.round(HIGH - t * (HIGH - LOW));
     }
     function updateNodeLabelVisibility() {
-      // Always use the smooth gradient. The dev-panel hubThreshold value is
-      // already consumed inside dynamicHubThreshold() as the ceiling (HIGH).
       const thresh = dynamicHubThreshold();
       nodeLabelEntries.forEach(L => {
         let show = true;
         if (_labelsMode === 'off') show = false;
         else if (_labelsMode === 'hub') show = L.deg >= thresh;
         if (_familyFilter && L.family !== _familyFilter) show = false;
-        // Set display ONLY when it actually changes — touching the property
-        // when it's already correct just adds DOM churn.
+        // ACTIVE / HOVERED nodes get their label ALWAYS — overrides the
+        // threshold, overrides the family filter, overrides everything. The
+        // user must be able to read every node in their current focus.
+        if (isActiveOrHovered(L.id)) show = true;
         const cur = L.el.style.display;
         const next = show ? '' : 'none';
         if (cur !== next) L.el.style.display = next;
-        // Do NOT clear .visibility here. The deconflict pass owns visibility,
-        // and clearing it indiscriminately is what caused the flash.
+        // Active/hovered labels ALSO escape deconflict-hidden state — clear
+        // their visibility so the next deconflict pass keeps them visible.
+        if (isActiveOrHovered(L.id) && L.el.style.visibility === 'hidden') {
+          L.el.style.visibility = '';
+        }
       });
-      // Sync positions for every newly-revealed label so they appear at the
-      // correct screen position on the very next paint — no stale frames.
       syncNodeLabelsImmediate();
-      // Deconflict only after motion has settled (guarded inside).
       scheduleDeconflict();
     }
 
@@ -1557,18 +1622,20 @@
     // labels visible-then-hidden. We compute the target state for every
     // label and only TOUCH .visibility when it would change.
     function deconflictNodeLabels() {
-      // Snapshot all display-eligible labels with their current bboxes.
       const items = [];
       for (let i = 0; i < nodeLabelEntries.length; i++) {
         const L = nodeLabelEntries[i];
         if (L.el.style.display === 'none') continue;
         const bb = L.el.getBoundingClientRect();
         if (!bb.width || !bb.height) continue;
-        items.push({ L, bb, deg: L.deg });
+        const priority = isActiveOrHovered(L.id) ? 1 : 0;
+        items.push({ L, bb, deg: L.deg, priority });
       }
       if (!items.length) return;
-      // Greedy first-fit by degree.
-      items.sort((a, b) => b.deg - a.deg);
+      // Sort: ACTIVE/HOVERED first (they claim their slot no matter what),
+      // then by degree. A high-degree distant label can NEVER displace a
+      // selected/hovered node's label.
+      items.sort((a, b) => (b.priority - a.priority) || (b.deg - a.deg));
       const claimed = [];
       const PAD = 2;
       for (const it of items) {
@@ -1579,11 +1646,12 @@
         for (const c of claimed) {
           if (!(x1 < c.x0 || c.x1 < x0 || y1 < c.y0 || c.y1 < y0)) { conflict = true; break; }
         }
-        const target = conflict ? 'hidden' : '';
-        // Only touch the DOM when the state needs to change. This is the
-        // entire trick — no visibility flash, no churn, no flicker.
+        // Active/hovered labels are NEVER hidden by deconflict — they always
+        // claim their slot. Lesser labels around them get hidden instead.
+        const target = (conflict && it.priority === 0) ? 'hidden' : '';
         if (it.L.el.style.visibility !== target) it.L.el.style.visibility = target;
-        if (!conflict) claimed.push({ x0, x1, y0, y1 });
+        // Both claimed-by-active and claimed-by-normal reserve space.
+        if (!conflict || it.priority === 1) claimed.push({ x0, x1, y0, y1 });
       }
     }
 
