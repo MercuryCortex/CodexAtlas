@@ -1,9 +1,15 @@
 /*!
- * dev-panel.js — Codex Atlas live-style-tweak panel (v2: 7-section / 24 controls)
+ * dev-panel.js — Codex Atlas live-style-tweak panel
  *
- * Gated by ?dev=1 or ?webgl=1 — completely dormant in production.
+ * The panel + edge-tab now load on every page view so the tweak surface is
+ * always one click away (vertical "Dev Panel" tab pinned to the right edge).
  * D key (when not in an input field) toggles the drawer open/closed.
  * Settings persist to localStorage['codex-atlas/dev-panel-v1'].
+ *
+ * Was gated on `?dev=1`/`?webgl=1` before — invisible unless you knew the
+ * URL flag. With the SaaS pivot we want the tweak surface visible to the
+ * operator (John) without URL hacking; downstream user-gating happens at
+ * the auth boundary, not here.
  *
  * Exposes window.CODEX_DEV.settings so pantheon-v2.js can read live values
  * from nodeReducer, relaxPositions, and the camera-init block.
@@ -18,9 +24,6 @@
  */
 (function () {
   'use strict';
-
-  const sp = new URLSearchParams(location.search);
-  if (sp.get('dev') !== '1' && sp.get('webgl') !== '1') return;
 
   const LS_KEY = 'codex-atlas/dev-panel-v1';
 

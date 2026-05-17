@@ -2219,11 +2219,35 @@ body.view-atlas main.canvas { background: var(--bg-0); }
    Sigma owns the colored disk via WebGL; this overlay rides above. Quiet
    white-translucent stroke/fill so the glyph reads against family color
    without competing with the label or the edges. */
-.ph2-type-glyphs-layer { z-index: 3; }   /* above sigma canvas (0/1/2), below node-labels (4) */
+/* Stack:
+   - sigma canvases:           z-index auto (0)  — node disks
+   - .ph2-edges-overlay:       z-index 2         — wire connections (above disks)
+   - .ph2-type-glyphs-layer:   z-index 3         — per-node type symbols
+   - .ph2-node-labels-overlay: z-index 4         — DOM labels
+   Edges-above-nodes is intentional: on a locked focus, the hot wires need to
+   read clearly over the dim disks (which fall to ~10% with their family hue,
+   not white). Hulls + ticks stay BELOW sigma (in .ph2-svg-overlay) so node
+   disks paint on top of family backgrounds and hull-click hit-test still
+   routes via sigma's mouse canvas. */
+.ph2-edges-overlay     { z-index: 2; pointer-events: none; }
+.ph2-type-glyphs-layer { z-index: 3; }
 .ph2-type-glyph {
   overflow: visible;
-  color: rgba(255, 255, 255, var(--ph2-type-glyph-opacity, 0.86));
+  /* color is set per-element inline to a lighter hue of the node's family
+     color (see typeGlyphsLayer build loop). currentColor inside the SVG
+     paths inherits that tint. Falls back here for any glyph that escapes
+     the per-element setter. */
+  color: var(--text-1);
+  opacity: var(--ph2-type-glyph-opacity, 0.86);
   pointer-events: none;
+  transition: opacity 160ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+/* Focus dim — applied by applyTypeGlyphDim() when a node is in the DIM
+   state (hover or lock context active but this node is outside the focus
+   set) or its family is filtered out. Fades to 10% so the wire-edges
+   above-and-the-hot-disks read as the dominant visual signal. */
+.ph2-type-glyph.ph2-type-glyph-dim {
+  opacity: 0.10;
 }
 
 .ph2-rim-overlay {

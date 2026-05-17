@@ -149,6 +149,33 @@
     _alphaCache.set(key, out);
     return out;
   }
+  // Lighten a color toward white by `amount` (0..1). Used for type-glyph
+  // tints: the wheel-overlay glyphs adopt a lighter hue of the node's
+  // family color (NOT stark white) so dimmed nodes still read as their
+  // family, just attenuated. amount=0 returns the original; amount=1 → #fff.
+  const _lightenCache = new Map();
+  function lightenColor(color, amount) {
+    if (!color || typeof color !== 'string') return '#cccccc';
+    const key = color + ':' + amount;
+    const cached = _lightenCache.get(key);
+    if (cached) return cached;
+    let r = 0, g = 0, b = 0;
+    if (color[0] === '#' && (color.length === 7 || color.length === 9)) {
+      r = parseInt(color.slice(1, 3), 16);
+      g = parseInt(color.slice(3, 5), 16);
+      b = parseInt(color.slice(5, 7), 16);
+    } else {
+      const m = color.match(/rgba?\(\s*(\d+)\s*,\s*(\d+)\s*,\s*(\d+)/);
+      if (m) { r = +m[1]; g = +m[2]; b = +m[3]; }
+    }
+    const t = Math.max(0, Math.min(1, amount));
+    r = Math.round(r + (255 - r) * t);
+    g = Math.round(g + (255 - g) * t);
+    b = Math.round(b + (255 - b) * t);
+    const hex = '#' + [r, g, b].map(v => v.toString(16).padStart(2, '0')).join('');
+    _lightenCache.set(key, hex);
+    return hex;
+  }
   // Pre-multiply RGB by alpha. Sigma uses blendFunc(ONE, ONE_MINUS_SRC_ALPHA)
   // — pre-multiplied alpha blending — but its node shader doesn't pre-multiply,
   // so non-premult rgba(...,0.1) renders at full brightness. We pre-mult here
@@ -1198,12 +1225,19 @@
     } catch (e) { /* ResizeObserver not available */ }
 
     // ============================================================
-    // SVG OVERLAY — hulls + curved edges.
-    // Sigma defers canvas creation until after the constructor returns, so
-    // DOM-order tricks are unreliable. Use z-index instead: overlay at z:3
-    // sits above sigma's canvases (z:auto = 0 in DOM stacking) but below
-    // labels (z:4) and toolbar (z:10). pointer-events:none passes all
-    // mouse events through to sigma's sigma-mouse canvas (z:auto).
+    // SVG OVERLAYS — hulls (below sigma) + edges (above sigma).
+    // --------------------------------------------------------------
+    // Two separate SVG containers now. Hulls + ticks sit below sigma's
+    // canvases (DOM-first-child) so node disks paint on top of family
+    // backgrounds and so clickStage hit-tests can route hull clicks via
+    // sigma's mouse canvas. Edges sit in a SECOND overlay appended AFTER
+    // sigma (z-index 2) so the wire connections paint OVER the colored
+    // node disks — including the dimmed non-focused disks when a node is
+    // locked. Without this lift, the focus-state hot edges read as faint
+    // threads behind a sea of node disks.
+    //
+    // Camera-sync (syncOverlay below) applies the same affine transform
+    // to both overlays' group containers.
     // ============================================================
     const overlay = document.createElementNS(SVG_NS, 'svg');
     overlay.setAttribute('class', 'ph2-svg-overlay');
@@ -1213,25 +1247,33 @@
     overlay.style.pointerEvents = 'none';
     overlay.style.width  = '100%';
     overlay.style.height = '100%';
-    // NO z-index — DOM order is the invariant. Put overlay as FIRST CHILD
-    // so sigma's later canvases paint on top of it. Hull clicks reach us via
-    // sigma's clickStage hit-test, not via SVG event propagation.
     if (rootEl.firstChild) rootEl.insertBefore(overlay, rootEl.firstChild);
     else                   rootEl.appendChild(overlay);
 
-    // Two groups inside the overlay: hulls first (painted bottom), edges on top.
+    // Hulls + ticks live in the BELOW-sigma overlay.
     const hullsG = document.createElementNS(SVG_NS, 'g');
     hullsG.setAttribute('class', 'ph2-hulls-g');
     overlay.appendChild(hullsG);
-    const edgesG = document.createElementNS(SVG_NS, 'g');
-    edgesG.setAttribute('class', 'ph2-edges-g');
-    overlay.appendChild(edgesG);
-    // Phase F — radial tick lines from hull outer rim to just inside each
-    // family-rim label, matching production (app.js:1169-1177). Painted on
-    // TOP of hulls + edges so they read as ownership cues for the labels.
     const ticksG = document.createElementNS(SVG_NS, 'g');
     ticksG.setAttribute('class', 'ph2-ticks-g');
     overlay.appendChild(ticksG);
+
+    // Edges live in the ABOVE-sigma overlay (z-index 2). Appended to rootEl
+    // here even though sigma's canvases don't exist yet — the canvases are
+    // sized + positioned by sigma at construct time and will sit BELOW this
+    // SVG via z-index 2 vs sigma's auto-stacking.
+    const edgesOverlay = document.createElementNS(SVG_NS, 'svg');
+    edgesOverlay.setAttribute('class', 'ph2-edges-overlay');
+    edgesOverlay.setAttribute('aria-hidden', 'true');
+    edgesOverlay.style.position = 'absolute';
+    edgesOverlay.style.inset = '0';
+    edgesOverlay.style.pointerEvents = 'none';
+    edgesOverlay.style.width  = '100%';
+    edgesOverlay.style.height = '100%';
+    rootEl.appendChild(edgesOverlay);
+    const edgesG = document.createElementNS(SVG_NS, 'g');
+    edgesG.setAttribute('class', 'ph2-edges-g');
+    edgesOverlay.appendChild(edgesG);
     // (Phase H gradients removed — P1 doesn't have them; we copy P1 verbatim now.)
 
     // ----- HULLS (priority 1) -----
@@ -1496,23 +1538,26 @@
     const typeGlyphsG = document.createElementNS(SVG_NS, 'g');
     typeGlyphsG.setAttribute('class', 'ph2-type-glyphs-g');
     typeGlyphsLayer.appendChild(typeGlyphsG);
-    const typeGlyphEntries = [];   // { el, id, baseR }
+    const typeGlyphEntries = [];   // { el, id, baseR, family }
     deities.forEach(d => {
       const pos = positions.get(d.id);
       if (!pos) return;
       const deg = degree.get(d.id) || 0;
       const baseR = nodeSizeForDeg(deg);
       const glyphInner = TYPE_GLYPHS[typeKey(d.type)] || TYPE_GLYPHS.theme;
-      // Wrap each glyph in its own <svg> so the 0–12 viewBox transforms
-      // cleanly to per-node x/y/width/height. Reusing one <defs>+<use>
-      // would force a transform on each `<use>` which is just as much code.
+      // Per-node tint: lighter hue of the family color (NOT stark white).
+      // Reads as a soft pastel signal of the family on every disk; on focus-
+      // dim, the glyph keeps its family color and just fades to 10 % via the
+      // ph2-type-glyph-dim class (set by applyTypeGlyphDim).
+      const tint = lightenColor(d.family_color || d.tradition_color || '#cccccc', 0.55);
       const g = document.createElementNS(SVG_NS, 'svg');
       g.setAttribute('class', 'ph2-type-glyph');
       g.setAttribute('viewBox', '0 0 12 12');
       g.setAttribute('overflow', 'visible');
+      g.style.color = tint;
       g.innerHTML = glyphInner;
       typeGlyphsG.appendChild(g);
-      typeGlyphEntries.push({ el: g, id: d.id, baseR });
+      typeGlyphEntries.push({ el: g, id: d.id, baseR, family: d.family || 'Other' });
     });
     function syncTypeGlyphsImmediate() {
       const dev   = (window.CODEX_DEV && window.CODEX_DEV.settings) || {};
@@ -1532,6 +1577,24 @@
         T.el.setAttribute('y', screen.y - r);
         T.el.setAttribute('width',  d);
         T.el.setAttribute('height', d);
+      }
+    }
+    // Type-glyph state mirror — toggles `.ph2-type-glyph-dim` on entries
+    // whose node is in DIM state (hover or lock context active, but this
+    // node isn't in the focus set) or whose family is filtered out. The
+    // dim class drops opacity to 0.10 via CSS, matching the disk premult-
+    // alpha pass and the "wires paint over dim nodes" intent.
+    function applyTypeGlyphDim() {
+      for (let i = 0; i < typeGlyphEntries.length; i++) {
+        const T = typeGlyphEntries[i];
+        let dim = false;
+        if (!famInFilter(T.family)) {
+          dim = true;
+        } else {
+          const state = nodeStateFor(T.id);
+          if (state === 'DIM') dim = true;
+        }
+        T.el.classList.toggle('ph2-type-glyph-dim', dim);
       }
     }
 
@@ -1598,6 +1661,7 @@
           setHot(el, incident, st);
           el.classList.toggle('dim', !incident);
         });
+        applyTypeGlyphDim();
         return;
       }
       if (_lockedSet.size > 0) {
@@ -1606,12 +1670,14 @@
           setHot(el, inLock, st);
           el.classList.toggle('dim', !inLock);
         });
+        applyTypeGlyphDim();
         return;
       }
       edgeEls.forEach(({ el, st }) => {
         setHot(el, false, st);
         el.classList.remove('dim');
       });
+      applyTypeGlyphDim();
     }
     function applyHullFilterState() {
       const filtering = _familyFilter.size > 0;
@@ -1625,6 +1691,9 @@
         const fam = el.dataset.family;
         el.classList.toggle('dim', filtering && !_familyFilter.has(fam));
       });
+      // Mirror onto the type-glyph layer so out-of-filter families' glyphs
+      // also fade. Without this, dim node disks render under bright glyphs.
+      applyTypeGlyphDim();
     }
 
     syncOverlay();
