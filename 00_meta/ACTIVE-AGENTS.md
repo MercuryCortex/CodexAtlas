@@ -123,10 +123,10 @@ _Hand-maintained. Each agent currently working in the vault appends a claim bloc
 
 ---
 
-## medicine-chinese-1 — IN FLIGHT (2026-05-17)
-- Owned: `17_medicine/medicine-chinese-traditional.md`, `02_documents/_phase-2.../phase-2-046-huangdi-neijing.md`, `03_deities/shennong.md`, `02_documents/_phase-3.../phase-3-037-shennong-bencao-jing.md`, `04_persons/hua-tuo.md`, `04_persons/sun-simiao.md`
-- Cross-tradition edges to: medicine-hippocratic, medicine-ayurveda, medicine-islamic-golden-age, dhanvantari, avicenna
-- DO NOT TOUCH: src/js/, src/styles/, index.html, app.js
+## ~~medicine-chinese-1 — FINISHED (2026-05-17)~~
+- 6 nodes: medicine-chinese-traditional (hub), phase-2-046-huangdi-neijing, phase-3-037-shennong-bencao-jing, shennong (deity), hua-tuo (person), sun-simiao (person)
+- MASSIVE WINs: mafeisan = first documented general anesthesia (1,640 yr before ether); Five Phases ↔ Four Humors simultaneous axial-age parallel; Six independent pharmacopeia traditions; Dayi Jing Cheng = Chinese Hippocratic Oath; Shennong transparent-abdomen sacred pharmacology archetype
+- Cross-tradition edges: medicine-chinese-traditional ↔ medicine-hippocratic/medicine-ayurveda/medicine-islamic-golden-age; shennong ↔ dhanvantari/asklepios; sun-simiao ↔ hippocrates/avicenna; hua-tuo ↔ hippocrates; phase-3-037-shennong-bencao-jing ↔ phase-1-037-ebers-papyrus/phase-5-063-avicenna-canon-of-medicine
 
 ---
 
