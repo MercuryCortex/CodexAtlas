@@ -4,6 +4,13 @@ _Hand-maintained. Each agent currently working in the vault appends a claim bloc
 
 ---
 
+## ~~maya-glyph-mode-1 — Maya tzolkin day signs glyph mode — 2026-05-17 — FINISHED~~
+- ~~Owned: `src/js/alphabets/glyph-data.js` (+150 lines), `src/js/alphabets/glyph-viewer.js` (Maya added to SCRIPTS + isStandaloneScript), `index.html` (version bump)~~
+- ~~Maya: 20 tzolkin day signs (Imix→Ajaw) in 4 sections; 9 signs carry explicit Aztec-parallel HYPER WIN notes (same animal, same day number, common Olmec origin)~~
+- ~~Status: FINISHED. Commit 01c3b58~~
+
+---
+
 ## ~~aztec-quipu-scripts-1 — Aztec day signs + Inca Quipu glyph modes — 2026-05-17 — FINISHED~~
 - ~~Owned: `src/js/alphabets/glyph-data.js` (+230 lines), `src/js/alphabets/glyph-viewer.js` (SCRIPTS + isStandaloneScript), `index.html` (version bump)~~
 - ~~Aztec: 20 tonalpohualli day signs across 4 sections; emoji glyphs + investigation notes + relatedNodes~~
@@ -95,6 +102,13 @@ _Hand-maintained. Each agent currently working in the vault appends a claim bloc
 
 ---
 
+## aristotle-kepler-chain-1 — Scientific Revolution persons upgrade — 2026-05-17 — IN PROGRESS
+- Owns: `04_persons/aristotle.md`, `04_persons/ibn-al-haytham.md`, `04_persons/galileo-galilei.md`, `04_persons/thomas-aquinas.md`, `04_persons/kepler.md`
+- Task: stub/metadata → full upgrades; add cross-tradition-edges; commit individually
+- Status: IN PROGRESS
+
+---
+
 ## ~~medicine-cross-tradition-syncretic-1 — FINISHED (2026-05-17)~~
 - ~~Added `syncretic-edges:` YAML entries to 6 medicine deity files so cross-tradition parallels render in Pantheon graph~~
 - ~~ninisina ↔ asklepios (Sacred Healing Dog, 1400 yr); ninisina ↔ sekhmet (destroyer-healer)~~
@@ -105,6 +119,13 @@ _Hand-maintained. Each agent currently working in the vault appends a claim bloc
 - ~~apollo ↔ sekhmet (destroyer-healer)~~
 - ~~All edges sourced: Edelstein 1945, Lesko 1999, Stol 2000/2011, Black & Green 1992~~
 - ~~Build: 17,742 edges · 0 YAML errors. Commit fa4b8a7~~
+
+---
+
+## medicine-chinese-1 — IN FLIGHT (2026-05-17)
+- Owned: `17_medicine/medicine-chinese-traditional.md`, `02_documents/_phase-2.../phase-2-046-huangdi-neijing.md`, `03_deities/shennong.md`, `02_documents/_phase-3.../phase-3-037-shennong-bencao-jing.md`, `04_persons/hua-tuo.md`, `04_persons/sun-simiao.md`
+- Cross-tradition edges to: medicine-hippocratic, medicine-ayurveda, medicine-islamic-golden-age, dhanvantari, avicenna
+- DO NOT TOUCH: src/js/, src/styles/, index.html, app.js
 
 ---
 
