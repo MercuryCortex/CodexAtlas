@@ -59,6 +59,7 @@ build/
 .claude/launch.json
 .claude/worktrees/
 .claude/projects/
+.claude/*.lock
 
 # === Ingest / audit working directory (generated analysis outputs) ===
 99_ingest/

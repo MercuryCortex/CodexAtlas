@@ -1532,7 +1532,7 @@ canonical-slug
 - `music-zoroastrian-sacred-sound`
 - `music-zosimos-alchemical-sound`
 
-### person (720 nodes)
+### person (726 nodes)
 
 - `aaron`
 - `abba-garima`
@@ -1610,6 +1610,7 @@ canonical-slug
 - `atrahasis-flood-hero`
 - `augustine-of-hippo`
 - `aurangzeb-emperor`
+- `averroes`
 - `avicenna`
 - `baal-shem-tov`
 - `bahaullah`
@@ -1672,6 +1673,7 @@ canonical-slug
 - `cleopatra-vii`
 - `confucius`
 - `constantine-i`
+- `copernicus`
 - `cornelius-agrippa`
 - `cornelius-centurion`
 - `cosimo-de-medici`
@@ -1691,6 +1693,7 @@ canonical-slug
 - `decius-emperor`
 - `deganawidah-peacemaker`
 - `derrida`
+- `descartes`
 - `deucalion`
 - `dhu-al-qarnayn`
 - `dietrich-bonhoeffer`
@@ -1820,6 +1823,7 @@ canonical-slug
 - `hongren`
 - `hosea-prophet`
 - `howard-vyse`
+- `hua-tuo`
 - `hud-prophet`
 - `hugues-de-payens`
 - `huike`
@@ -2032,6 +2036,7 @@ canonical-slug
 - `noetus-of-smyrna`
 - `numenius-of-apamea`
 - `nund-rishi`
+- `omar-khayyam`
 - `onesimus`
 - `onias-iii`
 - `onias-iv`
@@ -2166,6 +2171,7 @@ canonical-slug
 - `suetonius`
 - `suhrawardi`
 - `sun-myung-moon`
+- `sun-simiao`
 - `surdas`
 - `swami-vivekananda`
 - `symeon-the-new-theologian`
@@ -3176,16 +3182,16 @@ canonical-slug
 
 | Refs | Dead target | Suggested canonical (existing) |
 |---:|---|---|
-| 6 | `phase-6-002-florentine-codex` | `phase-8-004-florentine-codex-sahagun` |
-| 5 | `tradition-islam-sunni` | `tradition-ismailism` |
+| 6 | `phase-6-002-florentine-codex` | `phase-6-005-luther-95-theses` |
+| 5 | `tradition-islam-sunni` | `tradition-greek-religion` |
 | 4 | `phase-4-040-quran` | `phase-4-048-benedict-rule` |
-| 3 | `tradition-afro-diasporic` | `tradition-second-temple-judaism` |
+| 3 | `tradition-afro-diasporic` | `tradition-greek-religion` |
 | 3 | `guru-arjan-dev-ji` | `guru-arjan` |
 | 2 | `yam-canaanite` | `astarte-canaanite` |
 | 2 | `was-sceptre` | `was-scepter` |
-| 2 | `tradition-rosicrucian` | `tradition-persian-zoroastrian` |
-| 2 | `tradition-lingayat` | `tradition-ismailism` |
+| 2 | `tradition-rosicrucian` | `tradition-greek-religion` |
+| 2 | `tradition-lingayat` | `tradition-greek-religion` |
 | 2 | `theme-logos-theology` | `theme-apophatic-theology` |
 | 2 | `phase-8-002-popol-vuh` | `phase-8-008-kebra-nagast` |
-| 2 | `phase-6-006-chilam-balam` | `phase-6-001-ficino-pimander` |
+| 2 | `phase-6-006-chilam-balam` | `phase-6-005-luther-95-theses` |
 | 2 | `divine-names` | `divine-name` |

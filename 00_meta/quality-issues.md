@@ -50,6 +50,7 @@ _Auto-generated 2026-05-17. Status claims not meeting the bar in methodology.md.
 | `sri-yukteswar` | person | status:metadata but only 1 refs |
 | `james-frazer` | person | status:metadata but only 1 refs |
 | `euclid` | person | status:full but only 0 refs |
+| `descartes` | person | status:full but only 0 refs |
 | `nichiren` | person | status:metadata but only 0 refs |
 | `francisco-clavigero` | person | status:metadata but only 1 refs |
 | `swami-vivekananda` | person | status:metadata but only 1 refs |
@@ -72,6 +73,7 @@ _Auto-generated 2026-05-17. Status claims not meeting the bar in methodology.md.
 | `sigmund-freud` | person | status:metadata but only 0 refs |
 | `honen` | person | status:metadata but only 0 refs |
 | `g-i-gurdjieff` | person | status:metadata but only 1 refs |
+| `copernicus` | person | status:full but only 0 refs |
 | `baruch-spinoza` | person | status:full but only 0 refs |
 | `sayyid-qutb` | person | status:metadata but only 1 refs |
 | `anton-lavey` | person | status:metadata but only 1 refs |
@@ -86,6 +88,7 @@ _Auto-generated 2026-05-17. Status claims not meeting the bar in methodology.md.
 | `helen-schucman` | person | status:metadata but only 1 refs |
 | `nicomachus` | person | status:full but only 0 refs |
 | `bahaullah` | person | status:metadata but only 1 refs |
+| `averroes` | person | status:full but only 0 refs |
 | `rashid-rida` | person | status:metadata but only 1 refs |
 | `marshall-vian-summers` | person | status:metadata but only 1 refs |
 | `dutty-boukman` | person | status:metadata but only 1 refs |
@@ -118,6 +121,7 @@ _Auto-generated 2026-05-17. Status claims not meeting the bar in methodology.md.
 | `frances-yates` | person | status:metadata but only 1 refs |
 | `emile-durkheim` | person | status:metadata but only 1 refs |
 | `paul-tillich` | person | status:metadata but only 1 refs |
+| `omar-khayyam` | person | status:full but only 0 refs |
 | `khafre` | person | status:metadata but only 1 refs |
 | `charles-taze-russell` | person | status:metadata but only 1 refs |
 | `phase-3-034-huainanzi` | document | status:metadata but only 0 refs |

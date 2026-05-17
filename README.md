@@ -32,9 +32,11 @@ Each is its own folder; every node is a markdown file with structured YAML front
 The vault ships with a self-contained visualization. From the vault root:
 
 ```bash
-python3 build_data.py   # scans markdown, regenerates data.js
-open index.html         # opens the atlas in your browser
+python3 build_data.py   # scans markdown, regenerates data.js (~10 sec, ~27 MB)
+./start-atlas.command   # serves the atlas at http://localhost:8742
 ```
+
+**Note:** `data.js` is `.gitignore`d — it's a generated artifact (regenerable from the markdown vault). After a fresh clone, run `python3 build_data.py` once before opening the atlas.
 
 Views: **Pantheon** (deity graph, clustered by tradition), **Timeline**, **Documents**, **Themes**, **Connections** (every edge by type), **Traditions**, **All nodes**, **About**. Full usage in [[00_meta/app-usage]].
 
@@ -48,7 +50,7 @@ Codex Atlas/
 ├── src/
 │   ├── styles/app.css        — atlas-app CSS
 │   └── js/app.js             — atlas-app JS
-├── 00_meta/                  — methodology, schemas, registries (DASHBOARD, ACTIVE-AGENTS, STATUS, canonical-slugs, dead-links, quality-issues, orphan-nodes, locations, label-taxonomy, source-integrity, app-usage, HANDOFF)
+├── 00_meta/                  — three master files (ONTOLOGY, PROTOCOL, LANES) + lane claim files (ACTIVE-CONTENT, ACTIVE-UX) + ABSORPTION-QUEUE + auto-regenerated (DASHBOARD, canonical-slugs, dead-links, quality-issues, orphan-nodes) + rolling STATUS + status-archive/ + agents-archive/
 ├── 01_timeline/              — master chronological index (all nodes by date)
 ├── 02_documents/             — primary texts, organized by phase
 │   ├── _phase-1-ancient-near-east/        (~2600–1500 BCE)
