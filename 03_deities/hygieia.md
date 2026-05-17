@@ -57,7 +57,6 @@ refs:
     publisher: "Routledge"
     type: "monograph"
     tier: 1
-tags: [deity, greek, health, prevention, hygiene, hippocratic-oath, asklepios-family]
 ---
 
 # Hygieia

@@ -9400,6 +9400,8 @@ function renderMedDeities(pane) {
     { id:'thoth',            trad:'Egyptian',               color:'#5a6cc4', note:'Scribe of the gods; patron of all sacred knowledge including medicine. The medical papyri were attributed to his divine authorship.' },
     { id:'babalu-aye',       trad:'Yoruba / Afro-diasporic', color:'#a44a5a', note:'Yoruba deity of disease and healing — ruler of smallpox and infectious disease. Syncretized with San Lázaro in Cuba. Healer through affliction.' },
     { id:'brigid',           trad:'Celtic / Irish',         color:'#6e8c6b', note:'Irish triple goddess: healing, smithcraft, and poetry. Her sacred flame at Kildare was the most important healing shrine in Celtic Ireland.' },
+    { id:'hygieia',          trad:'Greek',                  color:'#5aaca8', note:'Daughter of Asklepios; goddess of preventive health. Named in the Hippocratic Oath line 1. Every use of the word "hygiene" in every language is a linguistic trace of this goddess — 7 billion speakers, zero awareness.' },
+    { id:'panacea',          trad:'Greek',                  color:'#9a7ad4', note:'Daughter of Asklepios; goddess of universal cure. Named in the Hippocratic Oath line 1. The word "panacea" in every language — "there\'s no panacea" in political speeches worldwide — invokes her name unknowingly.' },
     { id:'hippocrates',      trad:'Greek',                  color:'#5aaca8', note:'Father of Western rational medicine. "On the Sacred Disease" is the first systematic rejection of divine causation. The Oath; the case records; the humors.' },
     { id:'avicenna',         trad:'Islamic',                color:'#d4a55a', note:'Canon of Medicine: dominant textbook in Islamic schools through the 19th century AND European universities through the 17th century — simultaneously, 600 years.' },
     { id:'galen-of-pergamon', trad:'Greek / Roman',         color:'#7a8090', note:'Synthesizer of the Hippocratic tradition (2nd c. CE). Practiced at the Pergamon Asklepion. His errors became canonical for 1,400 years.' },
@@ -9625,17 +9627,26 @@ function renderMedFindings(pane) {
     { label:'CONVERGENCE', color:'#7a5a9a',
       title:'The Āšipu/Asû Dyad — the foundational split medicine never resolved',
       body:'Mesopotamian medicine (c. 2700 BCE) divided healing between the Āšipu (supernatural diagnosis through ritual) and the Asû (material treatment through plants). These two practitioners worked in tandem. Modern hospitals run the same implicit dyad: the physician treats the body; the chaplain, social worker, and psychologist address the relational-spiritual dimension. The Mesopotamian 2-practitioner frame — supernatural causation + material treatment — is the operational architecture of serious healing institutions 4,700 years later.' },
+    { label:'MASSIVE WIN', color:'#c47453', nodeId:'physicians-oath',
+      title:'The Physician\'s Oath — same 7-element structure, Greece + India, 5,000 miles apart',
+      body:'The Hippocratic Oath (c. 400 BCE) and the Charaka Samhita physician\'s oath (Vimānasthāna 8.13, c. 100 BCE–200 CE) share the same structure: divine witness · teacher-as-parent · restricted transmission · patient welfare · confidentiality · sexual conduct prohibition · conditional consequences. Written independently, 5,000 miles apart. Also: the "do no harm" principle is structurally identical to Jain ahimsa — both formulated in the 5th–4th century BCE. The Hippocratic confidentiality clause seeded 2,400 years of professional secrecy law: Catholic confessional seal (1215 CE) → attorney-client privilege → HIPAA (1996). Click to explore the cross-tradition oath investigation node.' },
   ];
   let html = `<div class="alpha-scripts-header"><h2>Medicine Findings</h2><span class="alpha-count">cross-tradition convergences · MASSIVE WINS</span></div><div style="padding:0 24px 24px">`;
   findings.forEach(f => {
-    html += `<div style="border-left:4px solid ${f.color};margin:14px 0;padding:16px 18px;background:rgba(0,0,0,.18);border-radius:4px">
-      <div style="font-size:10px;letter-spacing:.1em;color:${f.color};text-transform:uppercase;margin-bottom:6px;font-weight:600">${f.label}</div>
+    const clickable = f.nodeId && DATA.nodes.find(n => n.id === f.nodeId);
+    html += `<div style="border-left:4px solid ${f.color};margin:14px 0;padding:16px 18px;background:rgba(0,0,0,.18);border-radius:4px${clickable ? ';cursor:pointer' : ''}" ${clickable ? `data-id="${f.nodeId}"` : ''}>
+      <div style="font-size:10px;letter-spacing:.1em;color:${f.color};text-transform:uppercase;margin-bottom:6px;font-weight:600">${f.label}${clickable ? ' <span style="font-size:9px;opacity:.6">↗ vault node</span>' : ''}</div>
       <div style="font-weight:700;margin-bottom:10px;color:var(--text-1);font-size:14px;line-height:1.3">${f.title}</div>
       <div style="font-size:13px;color:var(--text-2);line-height:1.6">${f.body}</div>
     </div>`;
   });
   html += '</div>';
   pane.innerHTML = html;
+  pane.querySelectorAll('[data-id]').forEach(el => {
+    el.onmouseenter = () => el.style.background = 'rgba(255,255,255,.04)';
+    el.onmouseleave = () => el.style.background = 'rgba(0,0,0,.18)';
+    el.onclick = () => { const nd = DATA.nodes.find(n => n.id === el.dataset.id); if (nd) selectNode(nd.id, true); };
+  });
 }
 
 // ============================================================

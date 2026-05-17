@@ -50,7 +50,6 @@ refs:
     publisher: "Harvard University Press"
     type: "monograph"
     tier: 1
-tags: [deity, greek, healing, pharmacology, panacea, hippocratic-oath, asklepios-family]
 ---
 
 # Panacea
