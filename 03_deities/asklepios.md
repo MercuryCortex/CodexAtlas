@@ -10,7 +10,7 @@ period-active-latest: 500
 domains: ["medicine", "healing", "surgery", "dream-oracles", "pharmacy", "resurrection (boundary-crossing)"]
 gender: "masculine"
 role: "god of medicine; divine physician; son of Apollo; patron of the healing arts; his rod is the universal symbol of medicine"
-parent-of: ["Hygieia (Health)", "Panacea (All-Cure)", "Machaon (battlefield surgery)", "Podalirius (internal medicine)", "Telesphoros (convalescence)", "Iaso (recovery)", "Aceso (healing process)"]
+parent-of: ["[[hygieia]] (Health)", "[[panacea]] (All-Cure)", "Machaon (battlefield surgery)", "Podalirius (internal medicine)", "Telesphoros (convalescence)", "Iaso (recovery)", "Aceso (healing process)"]
 child-of: ["[[apollo]]", "Coronis (mortal mother — killed by Apollo for infidelity while pregnant)"]
 consort: ["Epione (Soother of Pain)"]
 attributes: ["Rod of Asclepius (single serpent coiled on a staff)", "rooster (sacred offering upon recovery)", "dog", "snake (shedding skin = regeneration)", "staff"]

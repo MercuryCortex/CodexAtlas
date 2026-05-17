@@ -28,6 +28,9 @@ cross-moral-edges:
   - target: moral-karma-as-moral-law
     type: parallel-form
     note: "Ahimsa is grounded in karma: violence toward any sentient being generates negative karmic consequences; the Jain tradition makes this most explicit with karma as actual matter coating the jiva."
+  - target: physicians-oath
+    type: convergent-principle
+    note: "The Hippocratic 'do no harm' (non-maleficence) and Jain/Buddhist/Hindu ahimsa are structurally identical ethical commitments formulated nearly simultaneously during the Axial Age (5th–4th century BCE). Both place non-injury as the foundational obligation prior to all positive duties. Mahavira (~599–527 BCE) and Hippocrates (~460–370 BCE) were near-contemporaries. This is the Axial Age's most cross-culturally consistent ethical convergence."
   - target: moral-golden-rule-cross-tradition
     type: parallel-form
     note: "Ahimsa is the universalized form of the Golden Rule's non-harm principle — extended beyond humans to all sentient beings based on the insight that all jivas experience suffering similarly."

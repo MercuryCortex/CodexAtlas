@@ -46,7 +46,7 @@ The secret whispering of a sacred formula is the initiatory technology. The Gaya
 
 **The Garment of Covenant Status**: The sacred thread worn across the body for life is a direct parallel to: the Jewish *tallit* (prayer shawl) and *tzitzit* (fringed garment as perpetual covenant reminder per Numbers 15:38-40); the Christian *scapular* (worn across shoulders, indicating membership in a religious order or confraternity); the Sikh *kara* (iron bracelet, one of the Five Ks marking Khalsa initiation status). The structural claim across traditions: initiation creates an obligation, and that obligation must be physically marked on the body at all times.
 
-See also: [[ritual-bar-mitzvah-coming-of-age]], [[ritual-confirmation-chrismation]], [[ritual-rites-of-passage]], [[ritual-initiation-mystery]], [[tradition-hinduism]], [[tradition-vedic-hinduism]], [[patanjali-yoga-sutras-author]]
+See also: [[ritual-bar-mitzvah-coming-of-age]], [[ritual-confirmation-chrismation]], [[ritual-rites-of-passage]], [[ritual-initiation-mystery]], [[tradition-hinduism]], [[tradition-vedic-hinduism]], [[patanjali-yoga-sutras-author]], [[physicians-oath]]
 
 ## MASSIVE WIN
 

@@ -22,6 +22,31 @@ tags:
   - clinical-observation
 status: full
 tier: 1
+cross-tradition-edges:
+  - target: "physicians-oath"
+    type: "primary-instance"
+    note: "The Hippocratic Oath is the canonical Western instance of the Physician's Oath as a cross-tradition sacred form. Its structure — divine witnesses, teacher-student covenant, conduct prohibitions, confidentiality — appears independently in the Charaka Samhita's initiation vow (Vimānasthāna 8.13). Two traditions, 5,000 miles apart, same era, same form."
+  - target: "moral-ahimsa-nonviolence"
+    type: "convergent-principle"
+    note: "The Hippocratic non-maleficence principle ('do no harm') and the Jain/Buddhist/Hindu ahimsa are structurally identical ethical commitments formulated during the same Axial Age epoch (5th–4th century BCE). Mahavira and Hippocrates were near-contemporaries who independently placed non-harm as the foundational ethical obligation."
+  - target: "ritual-upanayana-sacred-thread"
+    type: "structural-parallel"
+    note: "The Hippocratic Oath's teacher-veneration clause ('treat your teacher as a parent, his children as your siblings') mirrors the Vedic guru-shishya structure made institutional in the upanayana — the student leaves family to live with the teacher and adopts that teacher's household as their own. Both encode medicine and knowledge as sacred family lineage transmitted through obligation, not commerce."
+  - target: "mystery-initiation"
+    type: "structural-parallel"
+    note: "The Hippocratic Oath has the complete structure of mystery school initiation: divine witnesses, restricted transmission (teach only oath-takers), secrecy requirement, quasi-familial loyalty obligations. The Eleusinian Mysteries and Pythagorean brotherhood use the same institutional architecture."
+  - target: "pythagoras"
+    type: "possible-origin"
+    note: "Edelstein (1943) argued the Oath is Pythagorean in origin — a minority medical sect, not mainstream Greek medicine. Anti-surgery, anti-abortion, oath-brotherhood structure, purity ethics: all Pythagorean markers. If correct, the document that defines Western medical ethics is a mystery-school text that achieved universal adoption."
+  - target: "ritual-confession-absolution"
+    type: "ancestor-of"
+    note: "The Hippocratic confidentiality clause (c. 400 BCE) is the earliest documented professional confidentiality obligation. It seeds a 2,400-year transmission chain: Hippocratic Oath → Roman legal practice → Catholic sacramental seal (Lateran IV, 1215 CE) → English attorney-client privilege → modern physician-patient and therapist-patient privilege. HIPAA (1996) is structurally Hippocratic."
+  - target: "hygieia"
+    type: "patron-of"
+    note: "Hygieia is named in the Oath's opening invocation — the second daughter of the medical divine family, granddaughter of Apollo. Every use of the word 'hygiene' in any language is a linguistic trace of this invocation."
+  - target: "panacea"
+    type: "patron-of"
+    note: "Panacea is named in the Oath's opening invocation alongside Hygieia. Every use of the word 'panacea' in any language encodes this Greek goddess of universal cure."
 refs:
   - title: "Hippocratic Writings"
     author: "Lloyd, G.E.R. (ed.)"
@@ -84,7 +109,16 @@ This is the founding text of **secular medicine**: the argument that divine myst
 
 - [[medicine-hippocratic]] — the tradition he founded
 - [[phase-2-045-hippocratic-corpus]] — the textual tradition bearing his name
+- [[physicians-oath]] — the Oath as cross-tradition sacred form; its 6 MASSIVE WIN connections
 - [[asklepios]] — the divine physician whose name opens the Hippocratic Oath
+- [[hygieia]] — Asklepios's daughter; goddess of Health; named in Oath line 1; root of "hygiene"
+- [[panacea]] — Asklepios's daughter; goddess of universal cure; named in Oath line 1; root of "panacea"
+- [[apollo]] — grandfather of the medical divine family; invoked first in the Oath
 - [[galen-of-pergamon]] — the systematizer of Hippocratic medicine; extended Hippocrates's authority 500 years later
 - [[avicenna]] — the Islamic inheritor; the Canon of Medicine is built on Galenic Hippocratism
 - [[medicine-asklepion-cult]] — the contemporaneous divine healing tradition; Hippocratic rationalism emerged alongside it on Kos
+- [[moral-ahimsa-nonviolence]] — "do no harm" = ahimsa; Axial Age parallel formulations
+- [[pythagoras]] — Edelstein's thesis: the Oath may be a Pythagorean brotherhood text
+- [[ritual-confession-absolution]] — the confidentiality clause origin of 2,400 years of professional secrecy law
+- [[mystery-initiation]] — the Oath's structural identity with mystery school initiation
+- [[phase-3-036-charaka-samhita]] — the Āyurvedic parallel; Vimānasthāna 8.13 physician's oath

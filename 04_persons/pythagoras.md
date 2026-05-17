@@ -59,6 +59,9 @@ cross-tradition-edges:
   - target: archytas
     type: teacher-of
     note: Archytas of Tarentum (c. 435–347 BCE), Pythagorean mathematician-statesman, was probably Plato's host during his Sicilian visits — making Archytas the live transmission node in the Pythagoras → Plato → Academy chain.
+  - target: physicians-oath
+    type: possible-origin
+    note: "Ludwig Edelstein (1943) argued the Hippocratic Oath was composed by a Pythagorean minority within Greek medicine, not by mainstream Hippocratic physicians. The evidence: (1) anti-surgery clause — Pythagoreans treated body-integrity as sacred; (2) anti-abortion and anti-euthanasia — Pythagorean reverence for the divinely-given soul; (3) oath-swearing structure — Pythagorean brotherhood ritual form; (4) 'in purity and holiness I will guard my life and my art' — Pythagorean purity ethics. If Edelstein is correct, the foundational text of Western medical ethics is a mystery-school sectarian document."
   - target: empedocles
     type: influenced
     note: Empedocles (c. 494–434 BCE) carried Pythagorean metempsychosis and vegetarianism into his own system; fr. 129 praises Pythagoras's extraordinary memory of past lives. The Pythagorean ethical-cultic complex passed into the Presocratic mainstream through Empedocles.
