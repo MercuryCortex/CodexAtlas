@@ -4,6 +4,14 @@ _Hand-maintained. Each agent currently working in the vault appends a claim bloc
 
 ---
 
+## ~~aztec-quipu-scripts-1 — Aztec day signs + Inca Quipu glyph modes — 2026-05-17 — FINISHED~~
+- ~~Owned: `src/js/alphabets/glyph-data.js` (+230 lines), `src/js/alphabets/glyph-viewer.js` (SCRIPTS + isStandaloneScript), `index.html` (version bump)~~
+- ~~Aztec: 20 tonalpohualli day signs across 4 sections; emoji glyphs + investigation notes + relatedNodes~~
+- ~~Quipu: 9 entries across 3 sections (knot types / string colors / structural logic)~~
+- ~~Status: FINISHED. Commit e5be1f2~~
+
+---
+
 ## ~~baal-cycle-wiring-1 — Baal Cycle deity stubs → full nodes — 2026-05-17 — FINISHED~~
 - ~~Owned: `03_deities/baal-hadad.md`, `03_deities/yam.md`, `03_deities/el-canaanite.md`, `03_deities/asherah.md`, `03_deities/el-elohim-hebrew.md`~~
 - ~~5 stubs upgraded to full with cross-tradition-edges + Vault Connections sections~~
