@@ -16,6 +16,28 @@ tags:
   - rain-deity
   - storm-deity
   - agriculture
+syncretic-edges:
+  - target: "tlaloc"
+    type: "scholarly-parallel"
+    source: "Coe & Houston, *The Maya* (2015); Freidel, Schele, Parker, *Maya Cosmos* (1993) — Chaac and Tlaloc are the Maya and Aztec instances of the central-Mesoamerican rain-storm-deity; both have goggle-eye iconography and quadripartite (one per cardinal direction) elaboration"
+    notes: "Mesoamerican rain-deity convergence"
+  - target: "indra"
+    type: "scholarly-parallel"
+    source: "Eliade, *Patterns in Comparative Religion* (1958), Ch. II — Indra as Vedic storm-thunder-axe deity; Chaac as Maya storm-lightning-axe deity. The thunder-axe wielding storm-god is among the most widespread deity types"
+    notes: "Storm-god-with-axe cross-cultural archetype"
+  - target: "baal-hadad"
+    type: "scholarly-parallel"
+    source: "Eliade 1958 — Canaanite Baal as storm-god with thunderbolt; structural parallel to Chaac"
+  - target: "zeus"
+    type: "scholarly-parallel"
+    source: "Eliade 1958; the thunderbolt-wielding sky-storm-god as supreme-of-pantheon (Zeus, Indra, Thor, Perun, Chaac) is a near-universal Indo-European-and-beyond deity type"
+  - target: "thor"
+    type: "scholarly-parallel"
+    source: "Eliade 1958; Norse Thor's Mjölnir parallels Chaac's lightning-axe"
+  - target: "perun"
+    type: "scholarly-parallel"
+    source: "Eliade 1958; Slavic Perun as storm-god parallels Chaac structurally"
+    notes: "MASSIVE WIN: 6-tradition storm-deity-with-thunder-axe/thunderbolt convergence (Maya Chaac, Aztec Tlaloc, Vedic Indra, Canaanite Baal, Greek Zeus, Norse Thor, Slavic Perun) — the storm-axe-as-rain-bringer is one of the most-universally-attested mythological constellations"
 refs:
   - "Simon Martin and Nikolai Grube, Chronicle of the Maya Kings and Queens, Thames and Hudson, 2000 [T1/T2]"
   - "David Freidel, Linda Schele, Joy Parker, Maya Cosmos: Three Thousand Years on the Shaman's Path, Morrow, 1993 [T2]"

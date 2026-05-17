@@ -17,9 +17,17 @@ attributes: ["feathered serpent", "wind imagery", "the El Castillo pyramid at Ch
 attested-in: ["[[phase-8-001-popol-vuh]] (as Q'uq'umatz)", "[[phase-8-005-chilam-balam]]"]
 equivalents: ["[[quetzalcoatl]]"]
 syncretic-edges:
-  - target: "[[quetzalcoatl]]"
+  - target: "quetzalcoatl"
     type: "ancient-identification"
     source: "Yucatec-Toltec contact at Chichén Itzá ~9th-10th c.; Coe & Houston 2015"
+  - target: "enki-ea"
+    type: "scholarly-parallel"
+    source: "Eliade, *Patterns in Comparative Religion* (1958), Ch. V on water/serpent; the Mesoamerican feathered-serpent-as-civilizer parallels the Mesopotamian Enki/Ea as wisdom-and-water deity who teaches humanity the arts"
+    notes: "Feathered-serpent-as-civilizer convergence; not a transmission claim"
+  - target: "dagon"
+    type: "scholarly-parallel"
+    source: "Eliade 1958 — fish/water/serpent civilizer-deity type attested in Philistia and parallel structurally to the Mesoamerican feathered-serpent civilizer"
+    notes: "Water-serpent civilizer parallel"
 status: "metadata"
 refs:
   - title: "The Maya"

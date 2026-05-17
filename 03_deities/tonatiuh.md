@@ -15,7 +15,25 @@ child-of: []
 consort: []
 attributes: ["solar disk", "red coloration", "eagle (its solar associate)", "the calendar-stone (Piedra del Sol) central image"]
 attested-in: ["[[phase-8-002-codex-borgia]]", "[[phase-8-004-florentine-codex-sahagun]]"]
-syncretic-edges: []
+syncretic-edges:
+  - target: "ra"
+    type: "scholarly-parallel"
+    source: "Carrasco, *Religions of Mesoamerica* (2014); Wilkinson, *The Complete Gods and Goddesses of Ancient Egypt* (2003) — Tonatiuh and Ra are independent solar-sovereign deities whose iconography centres on the daily sun-journey requiring divine sustenance (Ra's nightly Underworld passage / Tonatiuh's blood-tribute). Both are the eye-of-cosmos that legitimates kingship"
+    notes: "Independent emergence on opposite hemispheres; the canonical solar-pantheon convergence the vault exists to map"
+  - target: "surya"
+    type: "scholarly-parallel"
+    source: "Eliade, *Patterns in Comparative Religion* (1958), Ch. III on the sun; the Vedic Surya as sky-traversing sovereign with seven-horse chariot parallels Tonatiuh's daily traverse"
+    notes: "Indo-European and Mesoamerican solar-deity structural cognate"
+  - target: "helios"
+    type: "scholarly-parallel"
+    source: "Eliade 1958; both are personified solar disks driving the cosmic chariot; Helios's daily journey from east to west and night-return parallels Tonatiuh's blood-sustained traverse"
+  - target: "amaterasu"
+    type: "scholarly-parallel"
+    source: "Eliade 1958; both are solar sovereigns underwriting royal legitimacy (Amaterasu as ancestress of the Japanese imperial line; Tonatiuh as patron of the Mexica state). The Pacific-cross solar parallel emerges independently"
+  - target: "sol-invictus"
+    type: "scholarly-parallel"
+    source: "Halsberghe, *The Cult of Sol Invictus* (1972) — late-Roman state solar-cult parallels the Mexica imperial Tonatiuh-cult: solar-sovereign as the divine guarantor of empire"
+    notes: "MASSIVE WIN: 5-tradition solar-sovereign-of-empire convergence (Egyptian Ra / Vedic Surya / Greek Helios / Japanese Amaterasu / Mexica Tonatiuh) — solar-pantheon-as-imperial-legitimation is one of the most-consistently-attested cross-cultural deity types in world religion"
 status: "metadata"
 refs:
   - title: "The Aztec Calendar Stone"

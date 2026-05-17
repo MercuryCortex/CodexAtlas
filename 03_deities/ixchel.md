@@ -16,9 +16,22 @@ consort: ["[[itzamna]] (in some traditions)"]
 attributes: ["serpent in hair / headdress", "weaving implements", "rainbow", "old woman in some aspects, young in others"]
 attested-in: ["[[phase-8-003-dresden-codex-maya]]", "[[phase-8-005-chilam-balam]]"]
 syncretic-edges:
-  - target: "Our Lady of Guadalupe (some folk-Catholic Yucatec syncretism — contested)"
-    type: "folk-syncretism"
-    source: "contested"
+  - target: "selene"
+    type: "scholarly-parallel"
+    source: "Taube, *The Major Gods of Ancient Yucatan* (1992); Eliade, *Patterns in Comparative Religion* (1958), Ch. IV on the moon — Selene as Greek lunar goddess and Ixchel as Maya lunar goddess share the woman-with-the-moon iconography and the night-domain feminine principle"
+    notes: "Lunar-feminine cross-cultural archetype"
+  - target: "chang-e"
+    type: "scholarly-parallel"
+    source: "Eliade 1958; Chinese moon-goddess Chang'e and Maya Ixchel are both lunar-feminine deities associated with the moon as their dwelling/embodiment"
+    notes: "Lunar-feminine pan-cultural parallel"
+  - target: "mama-quilla"
+    type: "scholarly-parallel"
+    source: "Eliade 1958 — both are American (Maya / Inca) lunar goddesses; the moon's appearance in Mesoamerican and Andean theology converges on the same feminine-principle iconography"
+    notes: "American lunar-feminine convergence; New-World structural parallel"
+  - target: "hathor"
+    type: "scholarly-parallel"
+    source: "Taube 1992; both are mother-and-fertility goddesses with lunar/cow attributes; both protect childbirth and women. Hathor's cow-form and Ixchel's old-woman-with-rabbit-in-the-moon parallel as fertility-protectresses"
+    notes: "Moon-fertility-feminine archetype"
 status: "metadata"
 refs:
   - title: "The Major Gods of Ancient Yucatan"

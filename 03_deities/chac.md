@@ -17,9 +17,24 @@ attributes: ["long curved nose", "axe / lightning-celt", "T-shaped tooth", "the 
 attested-in: ["[[phase-8-003-dresden-codex-maya]]", "[[phase-8-005-chilam-balam]]"]
 equivalents: ["[[tlaloc]]"]
 syncretic-edges:
-  - target: "[[tlaloc]]"
+  - target: "tlaloc"
     type: "scholarly-parallel"
     source: "Coe & Houston 2015"
+  - target: "indra"
+    type: "scholarly-parallel"
+    source: "Eliade 1958, Ch. II on sky-and-storm; Vedic Indra and Maya Chac are both rain-thunder-axe-wielding storm-deities at the centre of their pantheons' agricultural cult"
+    notes: "Storm-deity-with-axe/thunderbolt cross-cultural archetype"
+  - target: "baal-hadad"
+    type: "scholarly-parallel"
+    source: "Eliade 1958; the Canaanite Baal as storm-god with thunderbolt and Maya Chac with lightning-axe converge on the rain-deity-as-bringer-of-life-water"
+    notes: "Storm-god convergence"
+  - target: "perun"
+    type: "scholarly-parallel"
+    source: "Eliade 1958; Slavic Perun as thunder-and-rain god parallels Chac structurally"
+  - target: "thor"
+    type: "scholarly-parallel"
+    source: "Eliade 1958; Norse Thor with Mjölnir as storm-axe-wielder parallels Chac's lightning-axe"
+    notes: "MASSIVE WIN: storm-god-with-axe/hammer/thunderbolt cross-cultural convergence — Indo-European (Indra, Thor, Perun, Zeus) + Northwest-Semitic (Baal-Hadad) + Mesoamerican (Chac/Chaac, Tlaloc); the storm-deity-as-rain-giver-of-life is one of the most universally-attested deity types"
 status: "metadata"
 refs:
   - title: "The Maya"

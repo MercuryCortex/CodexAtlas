@@ -17,9 +17,19 @@ attributes: ["black mouth-area (the eating of filth)", "spindle in headdress (te
 attested-in: ["[[phase-6-002-florentine-codex]] (Sahagún Book 1, Book 6)"]
 equivalents: []
 syncretic-edges:
-  - target: "[[coatlicue]]"
+  - target: "coatlicue"
     type: "structural-parallel"
     source: "Both are earth-mother / female-generative figures with primal-filth aspects; Tlazolteotl is the more specifically erotic-and-confessional pole of the earth-mother complex"
+  - target: "inanna-sumerian"
+    type: "scholarly-parallel"
+    source: "Carrasco 1999; both are female-deities-of-sexual-power who govern erotic transgression and its consequences. Inanna's underworld-descent and bodily-violation parallels Tlazolteotl's filth-eating absorption of human sexual transgression"
+    notes: "Female-sexual-power deity parallel"
+  - target: "hathor"
+    type: "scholarly-parallel"
+    source: "Wilkinson 2003 — Egyptian Hathor as goddess of love, music, and sexuality with a rage-aspect (Sekhmet) absorbing transgression"
+  - target: "demeter"
+    type: "scholarly-parallel"
+    source: "Eliade 1958 — earth-mother / fertility-grief parallel; Demeter as Greek earth-fertility-mother with chthonic aspect"
 status: "stub"
 refs:
   - title: "The Aztecs"
