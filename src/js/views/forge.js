@@ -1,61 +1,59 @@
 // ============================================================
-// CODEX ATLAS — FORGE VIEW
+// CODEX ATLAS — FORGE VIEW (Phase 2)
 // ============================================================
-// Forge is the isolated parallel build of the proprietary
-// WebGPU rendering engine. Same isolation pattern Pantheon V2
-// used: own pane, own state, zero shared mutable state with
-// the rest of the app. Read-only access to `window.VAULT_DATA`.
+// Forge renders the full Pantheon wheel via the proprietary
+// WebGPU engine. Isolated from the production Pantheon V2 —
+// own pane, own state, zero shared mutable state.
 //
-// Read these before editing:
-//   - AGENTS.md → "Craft doctrine" (load-bearing rules)
-//   - src/js/engine/README.md  (engine architecture)
-//   - src/js/engine/contract.js (the API surface)
+// Read before editing:
+//   - AGENTS.md → "Craft doctrine"
+//   - src/js/engine/README.md
+//   - src/js/engine/contract.js  (the API surface)
 //
-// PHASE 1 (this commit): WebGPU bootstrap + first disk.
-//   - Mounts a status strip + a full-area <canvas>
-//   - Async-bootstraps the WebGPU renderer
-//   - Draws ONE anti-aliased gold disk at canvas centre
-//   - Resizes on viewport change
-//   - Tears down GPU device on view-change
+// PHASE 2 SCOPE (this commit)
+//   - Read VAULT_DATA, filter to deities + edges between them
+//   - Compute degree map + radial wedge layout
+//   - Pack node + edge instance buffers
+//   - Async-bootstrap WebGPU renderer
+//   - Fit-to-viewport camera
+//   - One drawFrame per render: instanced disks + curved edges
+//   - Resize handler re-fits + redraws
+//   - Status strip: node/edge counts, bucket breakdown, last-frame ms
 //
-// PHASE 2 NEXT: render all 660 deities + 3k edges via instanced
-// draw calls; cinematic camera; 60 fps with everything visible.
+// PHASE 3 NEXT
+//   - Hover state (highlight + dim)
+//   - Family hulls + type-glyphs
+//   - Cinematic pan/zoom camera with momentum
 // ============================================================
 
 (function () {
   'use strict';
 
-  // Gold #d4a55a — the Atlas brand mark. The first pixel that
-  // the proprietary engine paints is the brand color. Statement
-  // of intent: every visual that follows is ours.
-  const FIRST_DISK_COLOR = [0xd4 / 255, 0xa5 / 255, 0x5a / 255, 1.0];
+  // World-space bounding box of the radial wedge layout. The
+  // layout's R_OUTER is ~540, so a ~600-unit box with a 24-unit
+  // letterbox margin gives breathing room around the outermost
+  // ring of nodes.
+  const WORLD_PAD = 24;
 
-  // Disk size as a fraction of min(canvas.width, canvas.height).
-  // 0.18 = a substantial but not viewport-filling disk; reads as
-  // a deliberate visual anchor rather than a screensaver fill.
-  const DISK_FRACTION = 0.18;
-
-  // ── Public render entry (called by VIEWS.forge) ────────────
   function render(rootEl) {
     if (!rootEl) return;
     rootEl.innerHTML = '';
 
-    // Engine sanity check — refuse to mount if the contract /
-    // types / math / renderer modules failed to load.
-    const eng = window.AtlasEngine;
-    const tps = window.AtlasEngineTypes;
-    const mth = window.AtlasEngineMath;
-    const gpu = window.AtlasEngineWebGPU;
-    if (!eng || !tps || !mth || !gpu) {
+    // ── Engine sanity check ───────────────────────────────
+    const eng    = window.AtlasEngine;
+    const tps    = window.AtlasEngineTypes;
+    const mth    = window.AtlasEngineMath;
+    const gpu    = window.AtlasEngineWebGPU;
+    const layout = window.AtlasEngineLayout;
+    const graph  = window.AtlasEngineGraph;
+    if (!eng || !tps || !mth || !gpu || !layout || !graph) {
       rootEl.innerHTML = '<div class="forge-error">'
         + 'Engine modules missing. Check index.html loads '
         + 'engine/contract.js + types.js + math.js + '
+        + 'layout/radial.js + graph/node.js + graph/edge.js + '
         + 'renderer/webgpu.js before views/forge.js.</div>';
       return;
     }
-
-    // WebGPU availability gate. If absent, show a clear notice
-    // instead of throwing — Phase 1b will add WebGL2 fallback.
     if (!navigator.gpu) {
       rootEl.innerHTML = '<div class="forge-error">'
         + 'WebGPU is not available in this browser. Forge requires '
@@ -65,11 +63,32 @@
       return;
     }
 
-    // ── Build the pane DOM ───────────────────────────────────
-    // Two stacked sections:
-    //   1. Top status strip — fixed height; shows engine state.
-    //   2. Canvas wrapper  — fills the rest; <canvas> is sized
-    //      to the wrapper via ResizeObserver.
+    // ── Data prep ─────────────────────────────────────────
+    // Read VAULT_DATA, isolate deities + deity-deity edges.
+    // (Phase 3 will add mode switching; Phase 2 is Deities only.)
+    const vault = window.VAULT_DATA || { nodes: [], edges: [], families: [] };
+    const deities = (vault.nodes || []).filter(n => n && n.type === 'deity');
+    const allEdges = vault.edges || [];
+    const edges = layout.filterEdgesByNodes(allEdges, deities);
+    const degree = layout.computeDegree(deities, edges);
+    const familyOrder = (vault.families || []).map(f => f.name);
+    const { wedges, positions, rInner, rOuter } = layout.radialWedgeLayout(
+      deities, familyOrder, { degree }
+    );
+
+    // World-space bounding box for the camera fit.
+    const worldExtent = {
+      x0: -(rOuter + WORLD_PAD),
+      y0: -(rOuter + WORLD_PAD),
+      x1:  (rOuter + WORLD_PAD),
+      y1:  (rOuter + WORLD_PAD),
+    };
+
+    // ── Pack instance buffers ────────────────────────────
+    const nodePacked = graph.packNodes(deities, positions, degree);
+    const edgePacked = graph.packEdges(edges, positions);
+
+    // ── Build pane DOM ───────────────────────────────────
     const shell = document.createElement('div');
     shell.className = 'forge-shell-v1';
     rootEl.appendChild(shell);
@@ -80,13 +99,19 @@
       '<span class="forge-status-tag">FORGE</span>',
       '<span class="forge-status-sep">·</span>',
       '<span class="forge-status-k">phase</span>',
-      '<span class="forge-status-v">1 · webgpu bootstrap</span>',
+      '<span class="forge-status-v">2 · full wheel</span>',
       '<span class="forge-status-sep">·</span>',
       '<span class="forge-status-k">device</span>',
       '<span class="forge-status-v forge-status-pending" id="forge-status-device">acquiring…</span>',
       '<span class="forge-status-sep">·</span>',
-      '<span class="forge-status-k">surface</span>',
-      '<span class="forge-status-v" id="forge-status-surface">—</span>',
+      '<span class="forge-status-k">nodes</span>',
+      '<span class="forge-status-v" id="forge-status-nodes">' + nodePacked.instanceCount + '</span>',
+      '<span class="forge-status-sep">·</span>',
+      '<span class="forge-status-k">edges</span>',
+      '<span class="forge-status-v" id="forge-status-edges">' + edgePacked.instanceCount + '</span>',
+      '<span class="forge-status-sep">·</span>',
+      '<span class="forge-status-k">frame</span>',
+      '<span class="forge-status-v" id="forge-status-frame">—</span>',
     ].join('');
     shell.appendChild(status);
 
@@ -98,18 +123,13 @@
     canvas.className = 'forge-canvas';
     stage.appendChild(canvas);
 
-    // Local state for this mount. Lives on rootEl so setView
-    // teardown can find + destroy the GPU device cleanly via
-    // the destroy() hook we set up below.
+    // ── Local mount state ────────────────────────────────
     const local = {
-      renderer:   null,    // { drawDisk, resize, destroy, ... } from webgpu.js
-      resizeObs:  null,
-      lastSize:   { w: 0, h: 0 },
-      destroyed:  false,
+      renderer:  null,
+      resizeObs: null,
+      lastSize:  { w: 0, h: 0 },
+      destroyed: false,
     };
-
-    // Expose teardown to setView (via rootEl._engine, picked up
-    // in app.js view-change cleanup pass).
     rootEl._engine = {
       destroy() {
         local.destroyed = true;
@@ -124,15 +144,12 @@
       },
     };
 
-    // ── Renderer bootstrap (async) ───────────────────────────
-    // The first colored pixel happens here.
+    // ── Bootstrap renderer + first frame ─────────────────
     (async function bootstrap() {
       let renderer;
       try {
         renderer = await gpu.create(canvas);
       } catch (err) {
-        // Race: another setView fired before we awaited. Drop
-        // the half-created renderer; nothing to clean.
         if (local.destroyed) {
           if (renderer && renderer.destroy) {
             try { renderer.destroy(); } catch (e) { /* ignore */ }
@@ -144,42 +161,25 @@
           + 'WebGPU bootstrap failed: ' + escapeHtml(msg) + '</div>';
         return;
       }
-
-      // Lost-race teardown — view changed while we were awaiting.
       if (local.destroyed) {
         try { renderer.destroy(); } catch (e) { /* ignore */ }
         return;
       }
       local.renderer = renderer;
 
-      // Update status: device acquired, surface format known.
       const devEl = document.getElementById('forge-status-device');
-      const surEl = document.getElementById('forge-status-surface');
       if (devEl) {
-        devEl.textContent = 'active';
+        devEl.textContent = 'active · ' + renderer.format;
         devEl.classList.remove('forge-status-pending');
         devEl.classList.add('forge-status-ok');
       }
-      if (surEl) {
-        surEl.textContent = renderer.format + ' · ' + (window.devicePixelRatio || 1) + '×dpr';
-      }
 
-      // Initial paint. Do NOT defer through requestAnimationFrame
-      // — Chrome throttles rAF in hidden / background tabs (the
-      // preview iframe is one), so the first frame can be deferred
-      // indefinitely. By the time bootstrap's await returns, layout
-      // has already settled (we awaited the GPU device, which
-      // takes orders of magnitude longer than a layout pass).
-      // Paint synchronously; the ResizeObserver below handles
-      // subsequent changes.
+      // Initial paint — synchronous after await so layout is settled.
+      // Chrome throttles rAF in hidden tabs (preview iframe is one),
+      // so we cannot defer the first frame through requestAnimationFrame.
       resizeAndDraw();
 
-      // ResizeObserver — re-fits + redraws on viewport change.
-      // Atlas's window-resize chain also fires the global
-      // ResizeObserver in app.js which calls setView for the
-      // current view; that re-mounts Forge cleanly. The local
-      // observer here handles in-place pane resizes (sidebar
-      // collapse, detail-panel toggle) without a full remount.
+      // ResizeObserver — handles pane resizes without re-mounting.
       local.resizeObs = new ResizeObserver(() => {
         if (local.destroyed) return;
         resizeAndDraw();
@@ -187,39 +187,37 @@
       local.resizeObs.observe(stage);
     })();
 
-    // ── resize + redraw ─────────────────────────────────────
-    // Single source of truth for "what should the canvas show".
-    // Reads stage CSS size, resizes the renderer, draws the disk.
     function resizeAndDraw() {
       if (!local.renderer || local.destroyed) return;
       const rect = stage.getBoundingClientRect();
       const w = Math.max(1, Math.floor(rect.width));
       const h = Math.max(1, Math.floor(rect.height));
-      if (w === local.lastSize.w && h === local.lastSize.h) {
-        // Same size — repaint anyway in case loseContext fired.
-        drawScene();
-        return;
+      if (w !== local.lastSize.w || h !== local.lastSize.h) {
+        local.lastSize = { w, h };
+        canvas.style.width  = w + 'px';
+        canvas.style.height = h + 'px';
+        local.renderer.resize(w, h);
       }
-      local.lastSize = { w, h };
-      // CSS size — explicit so the canvas owns its layout box.
-      canvas.style.width  = w + 'px';
-      canvas.style.height = h + 'px';
-      // Backing-store size + context re-configure happens inside
-      // the renderer's resize().
-      local.renderer.resize(w, h);
-      drawScene();
+      drawFrame();
     }
 
-    function drawScene() {
+    function drawFrame() {
       if (!local.renderer || local.destroyed) return;
       const w = local.lastSize.w;
       const h = local.lastSize.h;
       if (!w || !h) return;
-      // Disk: centre of canvas, sized to a fraction of min(w, h).
-      const cx = w / 2;
-      const cy = h / 2;
-      const r  = Math.min(w, h) * DISK_FRACTION;
-      local.renderer.drawDisk(cx, cy, r, FIRST_DISK_COLOR, { w, h });
+
+      const t0 = performance.now();
+      local.renderer.drawFrame({
+        viewportCss:    { w, h },
+        worldExtent:    worldExtent,
+        nodeInstances:  nodePacked.data,
+        edgeInstances:  edgePacked.data,
+      });
+      const dt = performance.now() - t0;
+
+      const fEl = document.getElementById('forge-status-frame');
+      if (fEl) fEl.textContent = dt.toFixed(1) + ' ms';
     }
   }
 
@@ -229,6 +227,5 @@
     })[c]);
   }
 
-  // Expose on window so the VIEWS dispatch can route to us.
   window._forge = { render: render };
 })();
