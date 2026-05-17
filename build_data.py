@@ -32,6 +32,7 @@ NODE_DIRS = {
     "moral":    ["13_morals"],
     "ritual":   ["14_rituals"],
     "philosophy": ["15_philosophy"],
+    "mathematics": ["16_mathematics"],
 }
 
 # ---------- minimal YAML parser tailored to our schema ----------
@@ -667,6 +668,25 @@ def collect_node_edges(nodes_by_id):
                         "type": etype,
                         "field": "cross-music-edges",
                     })
+        # cross-tradition-edges — same structured form for 16_mathematics/ nodes.
+        xmath = fm.get("cross-tradition-edges")
+        if isinstance(xmath, list):
+            for s in xmath:
+                if not isinstance(s, dict) or not s.get("target"):
+                    continue
+                etype = (s.get("type") or "parallel-form").strip()
+                target_raw = str(s["target"]).strip()
+                targets = list(wikilinks(target_raw)) or [target_raw.lstrip("[").rstrip("]")]
+                for target in targets:
+                    target = target.strip()
+                    if not target or target == node_id:
+                        continue
+                    edges.append({
+                        "source": node_id,
+                        "target": target,
+                        "type": etype,
+                        "field": "cross-tradition-edges",
+                    })
     return edges
 
 
@@ -954,6 +974,7 @@ def main():
     print(f"  morals    : {counts.get('moral', 0)}")
     print(f"  rituals   : {counts.get('ritual', 0)}")
     print(f"  philosophy: {counts.get('philosophy', 0)}")
+    print(f"  mathematics:{counts.get('mathematics', 0)}")
     print(f"  edges     : {len(deduped)}")
 
 if __name__ == "__main__":

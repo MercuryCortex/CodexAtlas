@@ -36,11 +36,11 @@ _Hand-maintained. Each agent currently working in the vault appends a claim bloc
 - Tag existing nodes: sekhmet, apollo, imhotep, ninazu, galen-of-pergamon
 - App: `VIEWS.medicine` (5 modes: deities · traditions · spine · pharmacology · findings) + nav item
 
-## maths-sciences-1 — IN FLIGHT (2026-05-17)
-- New folder 16_mathematics/ with 6 nodes: mathematics-babylonian-temple, mathematics-sulba-sutras, mathematics-pythagorean-sacred, mathematics-house-of-wisdom, mathematics-zero-india, mathematics-sacred-geometry
-- 3 person stubs: al-khwarizmi, brahmagupta, euclid
-- New `∑ Mathematics` tab in app (3 modes: nodes / transmission / findings)
-- build_data.py: adding "mathematics": ["16_mathematics"]
+## ~~maths-sciences-1 — FINISHED (2026-05-17)~~
+- ~~New folder 16_mathematics/ with 6 nodes: mathematics-babylonian-temple, mathematics-sulba-sutras, mathematics-pythagorean-sacred, mathematics-house-of-wisdom, mathematics-zero-india, mathematics-sacred-geometry~~
+- ~~4 person stubs: al-khwarizmi, brahmagupta, euclid, ibn-al-haytham~~
+- ~~New `∑ Mathematics` tab in app (3 modes: nodes / transmission / findings) — verified in browser~~
+- ~~build_data.py: "mathematics": ["16_mathematics"] + cross-tradition-edges emitter~~
 
 ---
 
@@ -2283,3 +2283,15 @@ Files: sacred-cauldron.md (NEW) · cerridwen.md (STUB, deity) · bran-the-blesse
 - ~~Greek/Roman (4 nodes): hestia/juno/mars-roman/ares/dionysus/jupiter + tradition-greek-religion + cross-refs + sacrifice-as-cosmic-renewal/scapegoat-mechanism/cosmic-cycles/priestly-purity/temple-economy~~
 - ~~Mesopotamian (3 nodes): nanna-sin/ishtar-akkadian/utu-shamash/enki-ea/nergal/nebuchadnezzar-ii/hammurabi/gilgamesh-king/geshtinanna/dumuzi-tammuz/ereshkigal + bridal-mysticism/divine-feminine/chaoskampf/divinatory-calendar~~
 - ~~Status: FINISHED~~
+
+---
+
+## ritual-wiring-celtic-polynesian-aboriginal-norse-vodou-1 — IN FLIGHT (2026-05-17)
+- Wiring agent: adding/augmenting `## Vault Connections` sections on 15 ritual nodes in 14_rituals/
+- Celtic (2): ritual-samhain, ritual-druidic-oak-sacred
+- Polynesian (2): ritual-polynesian-tapu, ritual-haka
+- Aboriginal (3): ritual-dreamtime-ceremony, ritual-initiation-walkabout, ritual-smoking-ceremony
+- Norse expansion (4): ritual-norse-funeral-ship, ritual-thing-assembly, ritual-runic-inscription, ritual-einherjar-valhalla
+- Vodou/Yoruba expansion (4): ritual-vodou-ceremony, ritual-egungun-masquerade, ritual-vodou-healing, ritual-ori-worship
+- Commits planned: ritual-wiring-celtic-polynesian-aboriginal-1 · ritual-wiring-norse-vodou-expansion-1
+- Status: IN FLIGHT
