@@ -314,6 +314,7 @@ window.ScriptureReader = (function () {
               <div class="sr-pop-menu" id="sr-lang-menu">${langRows}</div>
             </div>
             ${hasParallels ? `<button class="btn btn-mini sr-vc-ctx" id="sr-ctx-btn" title="Cross-tradition context &amp; intro">✦ parallels</button>` : ''}
+            <button class="btn btn-mini sr-vc-ctx" id="sr-trans-btn" title="Global cross-tradition transmissions index">⇌ transmissions</button>
           </div>
         </div>
         <div class="sr-body" id="sr-body">
@@ -359,6 +360,10 @@ window.ScriptureReader = (function () {
     // context toggle
     const ctxBtn = document.getElementById('sr-ctx-btn');
     if (ctxBtn) ctxBtn.onclick = () => _toggleCtx(t);
+
+    // transmissions index
+    const transBtn = document.getElementById('sr-trans-btn');
+    if (transBtn) transBtn.onclick = () => renderTransmissions(pane);
 
     // entity clicks on body
     const body = document.getElementById('sr-body');
@@ -468,21 +473,37 @@ window.ScriptureReader = (function () {
     document.querySelectorAll('.sr-ent.active, .sr-ent.pinned').forEach(e => e.classList.remove('active', 'pinned'));
     markEl.classList.add('active', 'pinned');
 
-    if (ent.node && window.NODES_BY_ID && NODES_BY_ID[ent.node]) {
-      if (window.STATE) STATE.selected = ent.node;
-      document.body.classList.remove('detail-collapsed');
-      const dt = document.getElementById('detail-toggle');
-      if (dt) dt.textContent = '›';
-      if (window.renderDetail) renderDetail();
-      return;
-    }
-
     const el = document.getElementById('detail-inner');
     if (!el) return;
+
+    const parallelsHtml = (ent.parallels && ent.parallels.length)
+      ? `<div class="sr-card-parallels">
+           <div class="sr-pl-heading">Cross-tradition parallels</div>
+           ${ent.parallels.map(p => {
+             const isLinked = p.textId && window.SCRIPTURE_TEXTS && SCRIPTURE_TEXTS[p.textId];
+             return `<div class="sr-parallel${isLinked ? ' linked' : ''}" data-textid="${escAttr(p.textId || '')}">
+               <div class="sr-pl-label">${esc(p.label)}</div>
+               ${p.note ? `<div class="sr-pl-note">${esc(p.note)}</div>` : ''}
+             </div>`;
+           }).join('')}
+         </div>`
+      : '';
+
     el.innerHTML = `<div class="sr-detail-card">
       <div class="sr-card-word">${esc(ent.word)}</div>
-      ${ent.note ? `<div class="sr-card-note">${ent.note}</div>` : '<p style="color:var(--text-3);font-size:13px;margin-top:10px">No vault node found.</p>'}
+      ${ent.note ? `<div class="sr-card-note">${ent.note}</div>` : ''}
+      ${parallelsHtml}
     </div>`;
+
+    el.querySelectorAll('.sr-parallel.linked').forEach(row => {
+      row.onclick = () => {
+        const key = row.dataset.textid;
+        if (key && window.SCRIPTURE_TEXTS && SCRIPTURE_TEXTS[key]) {
+          _cleanup(); if (window.STATE) STATE.scriptureReaderMode = key; render(_pane, key);
+        }
+      };
+    });
+
     document.body.classList.remove('detail-collapsed');
     const dt = document.getElementById('detail-toggle');
     if (dt) dt.textContent = '›';
@@ -550,6 +571,137 @@ window.ScriptureReader = (function () {
     document.body.classList.add('detail-collapsed');
     const dt = document.getElementById('detail-toggle');
     if (dt) dt.textContent = '‹';
+  }
+
+  // ── Transmissions index ───────────────────────────────────────
+
+  function _inferTrad(label) {
+    const l = (label || '').toLowerCase();
+    if (/buddha|dhammapada|buddhis|pali |mahayana|sutra|nirvana|bodhisattva|bardo|lotus sutra|paramita/.test(l)) return 'Buddhism';
+    if (/quran|sufi|rumi|ibn arabi|islamic|tawba|basmala|masnavi|fatiha/.test(l)) return 'Islam';
+    if (/bhagavad|upanishad|vedic|vedanta|brahman|ātman|atman|hindu|gita|rig veda|advaita|krishna|chandogya|nasadiya|mundaka/.test(l)) return 'Hinduism';
+    if (/tao te|laozi|taoist|zhuangzi|wu wei/.test(l)) return 'Taoism';
+    if (/confuci|analects/.test(l)) return 'Chinese Philosophy';
+    if (/hermeti|poimandres|corpus hermeti/.test(l)) return 'Hermeticism';
+    if (/plato|plotinus|stoic|neoplatoni/.test(l)) return 'Greek Philosophy';
+    if (/egyptian|aten|osiris|isis|memphite/.test(l)) return 'Ancient Egyptian';
+    if (/mesopotam|sumeri|babylonian|enuma|gilgamesh|inanna/.test(l)) return 'Mesopotamian';
+    if (/zoroastr|avesta|yasna|ahura|frasho/.test(l)) return 'Zoroastrianism';
+    if (/maya|popol|mesoamerica/.test(l)) return 'Mesoamerican';
+    if (/norse|edda|odin|voluspa/.test(l)) return 'Norse';
+    if (/sikh|japji|guru granth|nanak/.test(l)) return 'Sikhism';
+    if (/jain|acaranga|mahavira/.test(l)) return 'Jainism';
+    if (/jewish|kabbalah|talmud|midrash|zohar|sefer yetzirah|merkabah/.test(l)) return 'Judaism';
+    return null;
+  }
+
+  function _buildTransmissions() {
+    const texts = window.SCRIPTURE_TEXTS || {};
+    const records = [];
+    Object.keys(texts).forEach(k => {
+      const t = texts[k];
+      if (!t) return;
+      const srcCat  = CATALOG[k];
+      const srcTrad = srcCat ? srcCat.religion : 'Other';
+      (t.crossTradition || []).forEach(ct => {
+        const tgtCat  = ct.textId ? CATALOG[ct.textId] : null;
+        const tgtTrad = tgtCat ? tgtCat.religion : (_inferTrad(ct.label) || 'Other');
+        records.push({ sourceKey: k, sourceTitle: t.title || k, srcTrad, tgtTrad,
+                       label: ct.label, targetKey: ct.textId || null, note: ct.note || '' });
+      });
+    });
+    return records;
+  }
+
+  function renderTransmissions(pane) {
+    _cleanup();
+    document.body.classList.add('view-scripture-reader');
+    document.querySelectorAll('.zoom-meter').forEach(zm => { zm.style.display = 'none'; });
+    const vc = document.getElementById('view-controls');
+    if (vc) vc.innerHTML = '';
+
+    const records = _buildTransmissions().filter(r => r.srcTrad !== r.tgtTrad);
+
+    // Group: srcTrad → tgtTrad → items[]
+    const groups = {};
+    records.forEach(r => {
+      if (!groups[r.srcTrad]) groups[r.srcTrad] = {};
+      if (!groups[r.srcTrad][r.tgtTrad]) groups[r.srcTrad][r.tgtTrad] = [];
+      groups[r.srcTrad][r.tgtTrad].push(r);
+    });
+
+    let indexHtml = '';
+    RELIGION_ORDER.forEach(srcTrad => {
+      if (!groups[srcTrad]) return;
+      let pairsHtml = '';
+      RELIGION_ORDER.forEach(tgtTrad => {
+        const items = (groups[srcTrad] || {})[tgtTrad];
+        if (!items || !items.length) return;
+        const itemsHtml = items.map(r => {
+          const isLinked = r.targetKey && window.SCRIPTURE_TEXTS && SCRIPTURE_TEXTS[r.sourceKey];
+          return `<div class="sr-trans-item${isLinked ? ' linked' : ''}" data-sourcekey="${escAttr(r.sourceKey)}">
+            <div class="sr-trans-item-hd">
+              <span class="sr-trans-src">${esc(r.sourceTitle.split('—')[0].trim())}</span>
+              <span class="sr-trans-arrow">→</span>
+              <span class="sr-trans-lbl">${esc(r.label)}</span>
+            </div>
+            ${r.note ? `<div class="sr-trans-ntxt">${esc(r.note)}</div>` : ''}
+          </div>`;
+        }).join('');
+        pairsHtml += `<div class="sr-trans-pair-group">
+          <div class="sr-trans-pair-header">${esc(srcTrad)} → ${esc(tgtTrad)}<span class="sr-trans-count">${items.length}</span></div>
+          ${itemsHtml}
+        </div>`;
+      });
+      if (pairsHtml) indexHtml += `<div class="sr-trans-section">${pairsHtml}</div>`;
+    });
+
+    pane.innerHTML = `
+      <div class="sr-layout" id="sr-layout">
+        <div class="sr-topbar" id="sr-topbar">
+          <div class="sr-topbar-left">
+            <button class="btn btn-mini sr-vc-back" id="sr-vc-back">← Ring</button>
+            <span class="sr-topbar-title">Transmissions</span>
+            <span class="sr-canon-badge">${records.length} connections · ${Object.keys(texts).length} texts</span>
+          </div>
+          <div class="sr-topbar-right">
+            <input class="sr-trans-search" id="sr-trans-search" placeholder="Search traditions, themes, texts…" type="search" autocomplete="off">
+          </div>
+        </div>
+        <div class="sr-body sr-trans-body" id="sr-body">
+          <div class="sr-trans-index" id="sr-trans-index">${indexHtml}</div>
+        </div>
+      </div>`;
+
+    document.getElementById('sr-vc-back').onclick = () => {
+      _cleanup();
+      if (window.STATE) STATE.scriptureReaderMode = null;
+      if (window.setView) setView('scripture');
+    };
+
+    _kdHandler = ev => { if (ev.key === 'Escape') { _cleanup(); if (window.setView) setView('scripture'); } };
+    document.addEventListener('keydown', _kdHandler);
+
+    pane.querySelectorAll('.sr-trans-item.linked').forEach(item => {
+      item.onclick = () => {
+        const key = item.dataset.sourcekey;
+        if (key && window.SCRIPTURE_TEXTS && SCRIPTURE_TEXTS[key]) {
+          _cleanup(); if (window.STATE) STATE.scriptureReaderMode = key; render(pane, key);
+        }
+      };
+    });
+
+    const searchEl = document.getElementById('sr-trans-search');
+    if (searchEl) searchEl.oninput = () => {
+      const q = searchEl.value.toLowerCase();
+      pane.querySelectorAll('.sr-trans-item').forEach(el => {
+        el.style.display = (!q || el.textContent.toLowerCase().includes(q)) ? '' : 'none';
+      });
+      pane.querySelectorAll('.sr-trans-pair-group').forEach(grp => {
+        const vis = [...grp.querySelectorAll('.sr-trans-item')].some(i => i.style.display !== 'none');
+        grp.style.display = vis ? '' : 'none';
+      });
+    };
   }
 
   function esc(s)     { return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;'); }

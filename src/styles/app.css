@@ -4447,6 +4447,88 @@ mark.sr-ent-demo {
 }
 .sr-atlas-btn:hover { color: var(--gold); border-color: var(--gold-soft); }
 
+/* ── Transmissions index ──────────────────────────────────────── */
+.sr-trans-body { overflow-y: auto; overflow-x: hidden; }
+.sr-trans-search {
+  background: var(--bg-1);
+  border: 1px solid var(--border);
+  border-radius: 3px;
+  color: var(--text-1);
+  font-family: var(--mono);
+  font-size: 11px;
+  padding: 5px 10px;
+  width: 220px;
+  outline: none;
+  transition: border-color 120ms;
+}
+.sr-trans-search:focus { border-color: var(--gold-soft); }
+.sr-trans-index { padding: 18px 24px 48px; }
+.sr-trans-section { margin-bottom: 28px; }
+.sr-trans-pair-group { margin-bottom: 20px; }
+.sr-trans-pair-header {
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.10em;
+  text-transform: uppercase;
+  color: var(--gold);
+  padding: 5px 0 8px;
+  border-bottom: 1px solid var(--border-soft);
+  margin-bottom: 8px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.sr-trans-count {
+  background: rgba(212,165,90,0.12);
+  color: var(--gold);
+  border-radius: 10px;
+  padding: 1px 7px;
+  font-size: 9px;
+}
+.sr-trans-item {
+  padding: 9px 12px;
+  border: 1px solid var(--border-soft);
+  border-radius: 3px;
+  margin-bottom: 5px;
+  background: var(--bg-0);
+  transition: border-color 120ms;
+}
+.sr-trans-item.linked { cursor: pointer; }
+.sr-trans-item.linked:hover { border-color: var(--gold-soft); background: var(--bg-1); }
+.sr-trans-item-hd {
+  display: flex;
+  align-items: baseline;
+  gap: 6px;
+  flex-wrap: wrap;
+  margin-bottom: 4px;
+}
+.sr-trans-src {
+  font-family: var(--serif);
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--text-2);
+  white-space: nowrap;
+}
+.sr-trans-item.linked:hover .sr-trans-src { color: var(--gold); }
+.sr-trans-arrow { color: var(--text-3); font-size: 10px; flex-shrink: 0; }
+.sr-trans-lbl {
+  font-family: var(--serif);
+  font-size: 12.5px;
+  color: var(--text-1);
+  line-height: 1.4;
+}
+.sr-trans-ntxt {
+  font-family: var(--serif);
+  font-size: 12px;
+  color: var(--text-3);
+  line-height: 1.6;
+  font-style: italic;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+}
+
 /* ---- "Read" button in the scripture ring view controls ---- */
 .btn.btn-mini.scripture-read-btn {
   border-color: var(--gold-soft);
