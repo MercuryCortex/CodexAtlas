@@ -599,18 +599,33 @@ def collect_node_edges(nodes_by_id):
                         "type": etype,
                         "field": field,
                     })
-        # syncretic-edges has a structured form
+        # syncretic-edges has a structured form. The target field may be either a
+        # [[wikilink]] OR a bare slug ("athena" rather than "[[athena]]"). Both forms
+        # appear across the vault (~half-and-half: 673 wikilink-form / 781 bare-slug
+        # form as of 2026-05-17). The bare-slug form was previously silently dropped,
+        # leaving authored cross-tradition syncretic claims invisible in the graph —
+        # which manifested as e.g. the Pre-Islamic-Arabian hull having zero deity-to-
+        # deity cross-family edges despite explicit Allat→Athena / Wadd→Nanna-Sin /
+        # al-Uzza→Aphrodite syncretic claims in YAML. This parser now matches the
+        # behaviour of cross-symbol-edges (line ~626) and cross-alphabet-edges.
         sync = fm.get("syncretic-edges")
         if isinstance(sync, list):
             for s in sync:
-                if isinstance(s, dict) and s.get("target"):
-                    for target in wikilinks(s["target"]):
-                        edges.append({
-                            "source": node_id,
-                            "target": target,
-                            "type": "syncretic-" + (s.get("type") or "identification"),
-                            "field": "syncretic-edges",
-                        })
+                if not isinstance(s, dict) or not s.get("target"):
+                    continue
+                target_raw = str(s["target"]).strip()
+                # accept either "[[slug]]" or bare "slug"
+                targets = list(wikilinks(target_raw)) or [target_raw.lstrip("[").rstrip("]")]
+                for target in targets:
+                    target = target.strip()
+                    if not target or target == node_id:
+                        continue
+                    edges.append({
+                        "source": node_id,
+                        "target": target,
+                        "type": "syncretic-" + (s.get("type") or "identification"),
+                        "field": "syncretic-edges",
+                    })
         # cross-symbol-edges — structured form on 09_symbols/ nodes. Edge type is taken
         # verbatim from each entry's `type` field (ancestor-of, parallel-form,
         # syncretic-fusion, appropriated-by, polemic-inversion, visual-cognate).
