@@ -850,7 +850,7 @@
     // INTERACTIVITY STATE — drives the reducers below.
     //   _labelsMode:  'hub' (degree≥HUB_DEGREE_THRESHOLD, default) | 'all' | 'off'
     //   _egoFocus:    when true + a node is selected, ONLY its 1-hop neighbourhood renders
-    //   _familyFilter: family name string (null = no filter) — set by family-legend clicks
+    //   _familyFilter: Set<family-name> (empty = no filter, multi-select)
     //   _lockedSet:   persistent multi-select — clicking a node anywhere starts
     //                 the set; clicking a node that touches the existing set
     //                 ADDS its neighbourhood (P1's sticky/additive behaviour);
@@ -858,7 +858,11 @@
     //                 Empty stage click clears the set.
     let _labelsMode = 'hub';
     let _egoFocus = false;
-    let _familyFilter = null;
+    let _familyFilter = new Set();
+    // Helper — is this family currently visible? True iff no filter active OR family is in the set.
+    function famInFilter(fam) {
+      return _familyFilter.size === 0 || _familyFilter.has(fam);
+    }
     let _tierOverlay = false;
 
     // Cached 1-hop neighbourhood (incl. self) — used by additive selection
@@ -978,7 +982,7 @@
           if (!inNeighborhood(_selectedId, id)) { out.hidden = true; return out; }
         }
         // FAMILY FILTER short-circuit — fade by own color, lowest layer.
-        if (_familyFilter && attrs._family !== _familyFilter) {
+        if (!famInFilter(attrs._family)) {
           out.color  = withAlpha(attrs.color, 0.10);
           out.zIndex = 0;
           out.label  = '';
@@ -1134,7 +1138,9 @@
       path.addEventListener('click', (ev) => {
         ev.stopPropagation();
         const fam = w.name;
-        _familyFilter = (_familyFilter === fam) ? null : fam;
+        // Toggle this family's membership in the multi-select filter set.
+        if (_familyFilter.has(fam)) _familyFilter.delete(fam);
+        else                         _familyFilter.add(fam);
         _lockedSet = new Set();
         _selectedId = null;
         _hoverId = null;
@@ -1142,6 +1148,7 @@
         applyEdgeHoverState();
         if (typeof applyLabelHoverDim === 'function') applyLabelHoverDim();
         if (typeof updateNodeLabelVisibility === 'function') updateNodeLabelVisibility();
+        if (typeof syncFamilyMenu === 'function') syncFamilyMenu();
         sigma.refresh({ skipIndexation: true });
       });
       hullsG.appendChild(path);
@@ -1423,14 +1430,16 @@
       });
     }
     function applyHullFilterState() {
+      const filtering = _familyFilter.size > 0;
       hullEls.forEach(el => {
         const fam = el.dataset.family;
-        el.classList.toggle('dim', !!(_familyFilter && fam !== _familyFilter));
-        el.classList.toggle('hot', !!(_familyFilter && fam === _familyFilter));
+        const isIn = _familyFilter.has(fam);
+        el.classList.toggle('hot', filtering && isIn);
+        el.classList.toggle('dim', filtering && !isIn);
       });
       tickEls.forEach(el => {
         const fam = el.dataset.family;
-        el.classList.toggle('dim', !!(_familyFilter && fam !== _familyFilter));
+        el.classList.toggle('dim', filtering && !_familyFilter.has(fam));
       });
     }
 
@@ -1612,12 +1621,13 @@
       _selectedId   = null;
       _hoverId      = null;
       _lockedSet    = new Set();
-      _familyFilter = null;
+      _familyFilter = new Set();
       sigma.refresh({ skipIndexation: true });
       applyEdgeHoverState();
       applyHullFilterState();
       if (typeof applyLabelHoverDim === 'function') applyLabelHoverDim();
       if (typeof updateNodeLabelVisibility === 'function') updateNodeLabelVisibility();
+      if (typeof syncFamilyMenu === 'function') syncFamilyMenu();
       hideThumbCard();
     });
     // Double-click on empty = animated reset to computeFitRatio (same view
@@ -1769,7 +1779,7 @@
         let show = true;
         if (_labelsMode === 'off') show = false;
         else if (_labelsMode === 'hub') show = L.deg >= thresh;
-        if (_familyFilter && L.family !== _familyFilter) show = false;
+        if (!famInFilter(L.family)) show = false;
         // ACTIVE / HOVERED nodes get their label ALWAYS — overrides the
         // threshold, overrides the family filter, overrides everything. The
         // user must be able to read every node in their current focus.
@@ -1945,18 +1955,15 @@
         <option value="monuments"    ${_currentMode === 'monuments'    ? 'selected' : ''}>⛬ Monuments</option>
       </select>
       <button class="ph2-btn" id="ph2-labels" title="Toggle label density">labels: ${_labelsMode}</button>
-      <button class="ph2-btn${_tierOverlay ? ' ph2-btn-on' : ''}" id="ph2-tier" title="Color nodes by source-integrity tier (T1=gold T2=silver T3=grey T4=crimson)">tier: ${_tierOverlay ? 'on' : 'off'}</button>
       <button class="ph2-btn${_egoFocus ? ' ph2-btn-on' : ''}" id="ph2-ego" title="Show 1-hop neighbourhood of selected node">ego focus</button>
       <button class="ph2-btn" id="ph2-thumbs" title="Show deity thumbnails as circle fills">photos: off</button>
-      <button class="ph2-btn" id="ph2-fit-100" title="Reset zoom to 100% — fit the full diagram with margin">100%</button>
-      <button class="ph2-btn" id="ph2-recenter" title="Re-fit camera to all nodes">recenter</button>
     `;
     rootEl.appendChild(toolbar);
 
     // Mode dropdown — rebuilds entire graph for the new mode
     toolbar.querySelector('.ph2-mode-select').onchange = (ev) => {
       _currentMode  = ev.target.value;
-      _familyFilter = null;
+      _familyFilter = new Set();
       _egoFocus     = false;
       _labelsMode   = 'hub';
       render(rootEl);
@@ -1966,12 +1973,6 @@
       _labelsMode = _labelsMode === 'hub' ? 'all' : _labelsMode === 'all' ? 'off' : 'hub';
       ev.target.textContent = 'labels: ' + _labelsMode;
       updateNodeLabelVisibility();
-      sigma.refresh({ skipIndexation: true });
-    };
-    toolbar.querySelector('#ph2-tier').onclick = (ev) => {
-      _tierOverlay = !_tierOverlay;
-      ev.target.textContent = 'tier: ' + (_tierOverlay ? 'on' : 'off');
-      ev.target.classList.toggle('ph2-btn-on', _tierOverlay);
       sigma.refresh({ skipIndexation: true });
     };
     toolbar.querySelector('#ph2-ego').onclick = (ev) => {
@@ -1989,87 +1990,140 @@
       ev.target.textContent = 'photos: ' + (_thumbsOn ? 'on' : 'off');
       ev.target.classList.toggle('ph2-btn-on', _thumbsOn);
     };
-    toolbar.querySelector('#ph2-fit-100').onclick = () => {
-      // True 100% = computeFitRatio() — the SAME math used on initial render.
-      // Clicking 100% should always reproduce the just-loaded view.
-      try {
-        const ratio = computeFitRatio();
-        sigma.getCamera().animate({ x: 0.5, y: 0.5, ratio, angle: 0 }, { duration: 320 });
-      } catch (e) {}
-    };
-    toolbar.querySelector('#ph2-recenter').onclick = () => {
-      try { sigma.getCamera().animatedReset({ duration: 400 }); } catch (e) { /* ignore */ }
-      _egoFocus = false;
-      toolbar.querySelector('#ph2-ego').classList.remove('ph2-btn-on');
-      sigma.refresh({ skipIndexation: true });
-    };
+    // 100% + recenter moved to the bottom-right zoom widget (see below).
 
-    // ----- FAMILY LEGEND (bottom-left) — click to filter wheel to one family -----
-    const legendStartCollapsed = (() => {
-      try { return localStorage.getItem('legend-collapsed') === '1'; } catch (e) { return false; }
-    })();
-    const legend = document.createElement('div');
-    legend.className = 'ph2-legend' + (legendStartCollapsed ? ' collapsed' : '');
-    const familyOrderForLegend = (familyOrder || []).filter(name => famByName && famByName[name] && famByName[name].members.length);
-    legend.innerHTML =
-      '<div class="ph2-legend-head">' +
-        '<div class="ph2-legend-title">Families · click to filter</div>' +
-        '<button class="ph2-legend-burger" title="Collapse">≡</button>' +
-      '</div>' +
-      '<div class="ph2-legend-body">' +
-        familyOrderForLegend.map(name => {
-          const w = wedges[name] || {};
-          const color = (w.color) || '#7a8090';
-          const count = (w.members || []).length;
-          return `<div class="ph2-legend-row${_familyFilter === name ? ' ph2-legend-active' : ''}" data-family="${escapeAttr(name)}">
-            <span class="ph2-legend-swatch" style="background:${color}"></span>
-            <span class="ph2-legend-name">${escapeHtml(name)}</span>
-            <span class="ph2-legend-count">${count}</span>
-          </div>`;
-        }).join('') +
-      '</div>';
-    rootEl.appendChild(legend);
+    // ── FAMILY-FILTER DROPDOWN (toolbar) ──────────────────────────────
+    // Tick-box multi-select panel: pick one or many families to isolate.
+    // Reset button clears all selections. Replaces the old bottom-left
+    // legend entirely. Lives inside the top toolbar next to the mode select.
+    const familyOrderForMenu = (familyOrder || []).filter(name => famByName && famByName[name] && famByName[name].members.length);
+    const filterMenu = document.createElement('div');
+    filterMenu.className = 'ph2-filter-menu';
+    filterMenu.innerHTML = `
+      <button class="ph2-btn ph2-filter-trigger" id="ph2-filter-trigger" title="Filter by family">Families ▾</button>
+      <div class="ph2-filter-dropdown" id="ph2-filter-dropdown">
+        <div class="ph2-filter-head">
+          <span class="ph2-filter-head-title">Filter families</span>
+          <button class="ph2-filter-reset" id="ph2-filter-reset" title="Show all">Reset</button>
+        </div>
+        <div class="ph2-filter-body">
+          ${familyOrderForMenu.map(name => {
+            const w = wedges[name] || {};
+            const color = w.color || '#7a8090';
+            const count = (w.members || []).length;
+            return `<label class="ph2-filter-row" data-family="${escapeAttr(name)}">
+              <input type="checkbox" class="ph2-filter-check" data-family="${escapeAttr(name)}">
+              <span class="ph2-filter-swatch" style="background:${color}"></span>
+              <span class="ph2-filter-name">${escapeHtml(name)}</span>
+              <span class="ph2-filter-count">${count}</span>
+            </label>`;
+          }).join('')}
+        </div>
+      </div>
+    `;
+    // Insert at index 1 (right after the mode dropdown) so it reads as a peer.
+    toolbar.insertBefore(filterMenu, toolbar.children[1] || null);
 
-    legend.querySelectorAll('.ph2-legend-row').forEach(row => {
-      row.onclick = () => {
-        const fam = row.dataset.family;
-        _familyFilter = (_familyFilter === fam) ? null : fam;
-        legend.querySelectorAll('.ph2-legend-row').forEach(r => {
-          r.classList.toggle('ph2-legend-active', r.dataset.family === _familyFilter);
-        });
-        // Sync rim-label opacity
-        rimOverlay.querySelectorAll('.ph2-rim-label').forEach(el => {
-          el.style.opacity = (_familyFilter && el.dataset.family !== _familyFilter) ? '0.18' : '0.85';
-        });
-        applyHullFilterState();
-        updateNodeLabelVisibility();
-        sigma.refresh({ skipIndexation: true });
-      };
-      // Hover preview
-      row.addEventListener('mouseenter', () => {
-        if (_familyFilter) return;
-        const fam = row.dataset.family;
-        rimOverlay.querySelectorAll('.ph2-rim-label').forEach(el => {
-          el.style.opacity = el.dataset.family !== fam ? '0.18' : '0.85';
-        });
-        hullEls.forEach(el => {
-          el.classList.toggle('preview-fade', el.dataset.family !== fam);
-        });
+    const filterTrigger  = filterMenu.querySelector('#ph2-filter-trigger');
+    const filterDropdown = filterMenu.querySelector('#ph2-filter-dropdown');
+    const filterChecks   = filterMenu.querySelectorAll('.ph2-filter-check');
+    const filterResetBtn = filterMenu.querySelector('#ph2-filter-reset');
+
+    function syncFamilyMenu() {
+      // Drive checkbox state + the trigger button label from the live set.
+      filterChecks.forEach(cb => { cb.checked = _familyFilter.has(cb.dataset.family); });
+      const n = _familyFilter.size;
+      filterTrigger.textContent = n === 0
+        ? 'Families ▾'
+        : (n === 1 ? `Family: ${Array.from(_familyFilter)[0]} ▾` : `Families · ${n} selected ▾`);
+      filterTrigger.classList.toggle('ph2-btn-on', n > 0);
+      // Rim label opacity follows the filter.
+      const filtering = n > 0;
+      rimOverlay.querySelectorAll('.ph2-rim-label').forEach(el => {
+        el.style.opacity = (filtering && !_familyFilter.has(el.dataset.family)) ? '0.18' : '0.85';
       });
-      row.addEventListener('mouseleave', () => {
-        if (_familyFilter) return;
-        rimOverlay.querySelectorAll('.ph2-rim-label').forEach(el => {
-          el.style.opacity = '0.85';
-        });
-        hullEls.forEach(el => el.classList.remove('preview-fade'));
+    }
+    function commitFilterChange() {
+      applyHullFilterState();
+      updateNodeLabelVisibility();
+      applyEdgeHoverState();
+      syncFamilyMenu();
+      sigma.refresh({ skipIndexation: true });
+    }
+    filterTrigger.onclick = (ev) => {
+      ev.stopPropagation();
+      filterMenu.classList.toggle('open');
+    };
+    filterChecks.forEach(cb => {
+      cb.addEventListener('change', () => {
+        const fam = cb.dataset.family;
+        if (cb.checked) _familyFilter.add(fam);
+        else            _familyFilter.delete(fam);
+        commitFilterChange();
       });
     });
+    filterResetBtn.onclick = () => {
+      _familyFilter = new Set();
+      commitFilterChange();
+    };
+    // Close dropdown on any outside click.
+    document.addEventListener('click', (ev) => {
+      if (!filterMenu.contains(ev.target)) filterMenu.classList.remove('open');
+    });
+    // Initial sync (in case render() re-fires with a populated set).
+    syncFamilyMenu();
 
-    legend.querySelector('.ph2-legend-burger').onclick = (ev) => {
-      ev.stopPropagation();
-      const willCollapse = !legend.classList.contains('collapsed');
-      legend.classList.toggle('collapsed', willCollapse);
-      try { localStorage.setItem('legend-collapsed', willCollapse ? '1' : '0'); } catch (e) {}
+    // ── BOTTOM-RIGHT ZOOM WIDGET ──────────────────────────────────────
+    // Compact zoom UI: percentage label (also acts as 100%/fit button on
+    // click) + zoom in / zoom out steppers + recenter. Lives over the
+    // bottom-right of the pane; sits above the search bar via z-index.
+    const zoomWidget = document.createElement('div');
+    zoomWidget.className = 'ph2-zoom-widget';
+    zoomWidget.innerHTML = `
+      <button class="ph2-zoom-btn" id="ph2-zoom-out" title="Zoom out">−</button>
+      <button class="ph2-zoom-pct" id="ph2-zoom-pct" title="Click to fit (100%)">100%</button>
+      <button class="ph2-zoom-btn" id="ph2-zoom-in" title="Zoom in">+</button>
+      <button class="ph2-zoom-btn ph2-zoom-recenter" id="ph2-zoom-recenter" title="Recenter to all nodes">⌖</button>
+    `;
+    rootEl.appendChild(zoomWidget);
+
+    const zoomPctEl = zoomWidget.querySelector('#ph2-zoom-pct');
+    function syncZoomPct() {
+      try {
+        const ratio = sigma.getCamera().getState().ratio;
+        const fit   = computeFitRatio();
+        // 100% = at-fit-ratio. Smaller ratio (more zoomed-in) = larger %.
+        const pct = Math.round((fit / ratio) * 100);
+        zoomPctEl.textContent = pct + '%';
+      } catch (e) {}
+    }
+    sigma.getCamera().on('updated', syncZoomPct);
+    syncZoomPct();
+
+    zoomPctEl.onclick = () => {
+      try {
+        const ratio = computeFitRatio();
+        sigma.getCamera().animate({ x: 0.5, y: 0.5, ratio, angle: 0 }, { duration: 280 });
+      } catch (e) {}
+    };
+    zoomWidget.querySelector('#ph2-zoom-in').onclick = () => {
+      try {
+        const cam = sigma.getCamera();
+        const cur = cam.getState().ratio;
+        cam.animate({ ratio: Math.max(0.05, cur / 1.30) }, { duration: 180 });
+      } catch (e) {}
+    };
+    zoomWidget.querySelector('#ph2-zoom-out').onclick = () => {
+      try {
+        const cam = sigma.getCamera();
+        const cur = cam.getState().ratio;
+        cam.animate({ ratio: Math.min(8, cur * 1.30) }, { duration: 180 });
+      } catch (e) {}
+    };
+    zoomWidget.querySelector('#ph2-zoom-recenter').onclick = () => {
+      try { sigma.getCamera().animatedReset({ duration: 360 }); } catch (e) {}
+      _egoFocus = false;
+      toolbar.querySelector('#ph2-ego')?.classList.remove('ph2-btn-on');
     };
 
     // Stash for diagnostics + setView() teardown
@@ -2111,7 +2165,8 @@
       el.className = 'ph2-rim-label' + (w.members.length >= 6 ? ' ph2-rim-label-bright' : '');
       el.dataset.family = w.name;
       el.textContent = w.name;
-      if (familyFilter && w.name !== familyFilter) el.style.opacity = '0.30';
+      // familyFilter is a Set; empty = no filter.
+      if (familyFilter && familyFilter.size > 0 && !familyFilter.has(w.name)) el.style.opacity = '0.30';
       const ang = w.center;
       const c = Math.cos(ang);
       const s = Math.sin(ang);

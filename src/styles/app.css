@@ -2175,8 +2175,89 @@ body.view-atlas main.canvas { background: var(--bg-0); }
 .ph2-btn:hover { color: var(--gold); border-color: var(--gold-soft); }
 .ph2-btn-on { color: var(--gold); background: rgba(212,165,90,0.16); border-color: var(--gold-soft); }
 
-/* Family legend — bottom-left, click-to-filter rows.
-   Same idiom as the main Pantheon's family legend so the user's eye-training transfers. */
+/* ── FAMILY-FILTER DROPDOWN — toolbar tick-box menu ──────────────────
+   Multi-select: pick one or many families to isolate. Reset clears.
+   Lives inline in the toolbar next to the mode select. */
+.ph2-filter-menu { position: relative; display: inline-block; }
+.ph2-filter-trigger { white-space: nowrap; }
+.ph2-filter-dropdown {
+  position: absolute; top: calc(100% + 6px); left: 0;
+  min-width: 220px; max-height: 60vh; overflow: hidden;
+  background: rgba(13,17,25,0.97);
+  backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);
+  border: 1px solid var(--border-soft);
+  border-radius: 4px;
+  box-shadow: 0 8px 28px rgba(0,0,0,0.55);
+  display: none;
+  flex-direction: column;
+  z-index: 50;
+}
+.ph2-filter-menu.open .ph2-filter-dropdown { display: flex; }
+.ph2-filter-head {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 7px 11px; border-bottom: 1px solid var(--border-soft);
+  font-family: var(--mono); font-size: 10px;
+  letter-spacing: 0.08em; text-transform: uppercase;
+  color: var(--text-2);
+}
+.ph2-filter-reset {
+  background: rgba(212,165,90,0.12);
+  border: 1px solid var(--gold-soft);
+  color: var(--gold);
+  font-family: var(--mono); font-size: 9.5px;
+  padding: 3px 8px; border-radius: 2px;
+  cursor: pointer; letter-spacing: 0.06em;
+}
+.ph2-filter-reset:hover { background: rgba(212,165,90,0.22); }
+.ph2-filter-body {
+  overflow-y: auto; padding: 4px 0;
+}
+.ph2-filter-body::-webkit-scrollbar { width: 6px; }
+.ph2-filter-body::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.08); border-radius: 3px; }
+.ph2-filter-row {
+  display: grid;
+  grid-template-columns: 18px 12px 1fr auto;
+  align-items: center; gap: 8px;
+  padding: 6px 12px;
+  cursor: pointer;
+  transition: background 120ms ease;
+}
+.ph2-filter-row:hover { background: rgba(255,255,255,0.04); }
+.ph2-filter-check { accent-color: var(--gold); margin: 0; }
+.ph2-filter-swatch { width: 10px; height: 10px; border-radius: 50%; display: inline-block; }
+.ph2-filter-name { font-family: var(--sans); font-size: 11px; color: var(--text-1); }
+.ph2-filter-count { font-family: var(--mono); font-size: 10px; color: var(--text-3); }
+
+/* ── BOTTOM-RIGHT ZOOM WIDGET ──────────────────────────────────────── */
+.ph2-zoom-widget {
+  position: absolute; right: 22px; bottom: 22px;
+  display: flex; gap: 4px;
+  background: rgba(14,16,22,0.55);
+  backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);
+  border: 1px solid var(--border-soft);
+  border-radius: 3px;
+  padding: 3px;
+  z-index: 12;
+  pointer-events: auto;
+}
+.ph2-zoom-btn, .ph2-zoom-pct {
+  background: transparent;
+  border: none;
+  color: var(--text-1);
+  font-family: var(--mono); font-size: 11px;
+  letter-spacing: 0.04em;
+  padding: 4px 9px;
+  cursor: pointer;
+  border-radius: 2px;
+  transition: background 120ms ease, color 120ms ease;
+}
+.ph2-zoom-btn { min-width: 22px; }
+.ph2-zoom-pct { min-width: 50px; text-align: center; color: var(--text-0); font-weight: 600; }
+.ph2-zoom-btn:hover, .ph2-zoom-pct:hover { background: rgba(212,165,90,0.18); color: var(--gold); }
+.ph2-zoom-recenter { color: var(--text-2); }
+
+/* OLD bottom-left legend — kept as no-op so any stale ref doesn't error.
+   The toolbar filter menu is now the only family-filter UI. */
 .ph2-legend {
   position: absolute; bottom: 18px; left: 22px; z-index: 10;
   background: rgba(14,16,22,0.85);
