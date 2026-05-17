@@ -16,7 +16,6 @@ texts-authored:
   - "Astronomia Nova (1609) — first two laws of planetary motion"
   - "Harmonices Mundi (1619) — third law of planetary motion embedded in Pythagorean harmony theology"
   - "Epitome Astronomiae Copernicanae (1617–1621)"
-status: stub
 tags:
   - astronomy
   - mathematics
@@ -38,6 +37,20 @@ cross-tradition-edges:
   - target: tradition-neoplatonism
     type: heir-of
     note: Kepler's cosmological program is explicitly Neoplatonic-Pythagorean. He believed the mathematical archetypes in the divine mind were the models for creation — a direct statement of Plotinian-Proclan number metaphysics. Kepler read Proclus's commentary on Euclid and cited it; his geometry is the geometry of God's mind.
+  - target: galileo-galilei
+    type: parallel
+    note: Kepler and Galileo are the two great contemporaries of the Scientific Revolution. Kepler's three laws of planetary motion (celestial mechanics) + Galileo's laws of terrestrial motion = Newton's synthesis. They corresponded; Galileo acknowledged receipt of Kepler's early work. Both pursued the Copernican model but by different methods — Galileo empirically (telescope), Kepler mathematically (harmonic analysis of orbital data).
+  - target: isaac-newton
+    type: ancestor-of
+    note: Newton's universal gravitation synthesizes Kepler's three laws with Galileo's terrestrial mechanics. The third law (T²∝a³) was the mathematical clue that gravity must follow an inverse-square law — Kepler's harmonic cosmology, decoded, becomes Newtonian physics. Newton acknowledged Kepler explicitly. The *Principia*'s program is to demonstrate that all three of Kepler's laws follow from a single law of gravitation.
+  - target: baruch-spinoza
+    type: parallel
+    note: Kepler and Spinoza share the conviction that mathematical structure is divine — Kepler because he found God's geometric archetypes in the solar system, Spinoza because he identified God with mathematical Nature. Both represent the 17th-century trajectory of Pythagorean sacred mathematics into the Scientific Revolution and early modern rationalism. Kepler died in 1630; Spinoza was born in 1632.
+  - target: ibn-al-haytham
+    type: heir-of
+    note: Kepler's *Dioptrice* (1611) is the direct European heir of ibn al-Haytham's optical tradition. Kepler was the first to correctly explain how the eye works (retinal image formation), building on al-Haytham's intromission theory transmitted through Latin translations of Witelo and Roger Bacon. His theory of the telescope — which allowed Galileo's observations to be trusted — is Alhazen's optics systematized.
+status: "full"
+tier: 1
 ---
 
 Johannes Kepler (1571–1630) is the scientist who discovered the laws of planetary motion — and simultaneously the last major Western thinker who pursued the Pythagorean music-of-the-spheres program as his primary cosmological framework. His third law of planetary motion, that T²∝a³ (the square of orbital period is proportional to the cube of orbital radius), emerged directly from his search for harmonic ratios among planetary velocities.
