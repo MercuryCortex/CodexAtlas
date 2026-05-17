@@ -2196,10 +2196,11 @@ Files: sacred-cauldron.md (NEW) · cerridwen.md (STUB, deity) · bran-the-blesse
 
 ---
 
-## ritual-sikh-jain-shinto-1 — 8 ritual nodes (3 Sikh + 3 Jain + 2 Shinto) — IN PROGRESS (2026-05-17)
-- Owned: `14_rituals/ritual-amrit-sanchar.md`, `ritual-langar.md`, `ritual-ardas.md`, `ritual-sallekhana.md`, `ritual-paryushana.md`, `ritual-pratikraman.md`, `ritual-misogi-purification.md`, `ritual-matsuri.md`
-- Agent: sonnet-4-6 content pass
-- Status: IN PROGRESS
+## ~~ritual-sikh-jain-shinto-1 — 8 ritual nodes (3 Sikh + 3 Jain + 2 Shinto) — FINISHED (2026-05-17)~~
+- ~~Owned: `14_rituals/ritual-amrit-sanchar.md`, `ritual-langar.md`, `ritual-ardas.md`, `ritual-sallekhana.md`, `ritual-paryushana.md`, `ritual-pratikraman.md`, `ritual-misogi-purification.md`, `ritual-matsuri.md`~~
+- ~~Build: 83 ritual nodes · 17253 edges · 0 YAML errors · 0 dead links introduced~~
+- ~~MASSIVE WINs: (1) 5-tradition initiatory liquid convergence (Amrit Sanchar); (2) communal meal as anti-hierarchy tech (Langar); (3) 4-tradition annual moral accounting (Paryushana/Michhami Dukkadam); (4) 4-tradition voluntary chosen death (Sallekhana); (5) most systematic pollution taxonomy + kami creation from purification (Misogi); (6) 5-tradition processional portable deity (Matsuri mikoshi)~~
+- ~~Status: FINISHED~~
 
 ---
 
