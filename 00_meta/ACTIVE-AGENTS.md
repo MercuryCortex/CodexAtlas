@@ -4,6 +4,28 @@ _Hand-maintained. Each agent currently working in the vault appends a claim bloc
 
 ---
 
+## ~~ritual-wiring-sikh-jain-shinto-indigenous-yoruba-chinese-norse-1 — FINISHED (2026-05-17)~~
+- ~~Wiring agent: added/augmented ## Vault Connections sections on 21 ritual nodes in 14_rituals/~~
+- ~~Sikh (3): ritual-amrit-sanchar, ritual-langar, ritual-ardas~~
+- ~~Jain (3): ritual-sallekhana, ritual-paryushana, ritual-pratikraman~~
+- ~~Shinto (2): ritual-misogi-purification, ritual-matsuri~~
+- ~~Indigenous Americas (6): ritual-sun-dance, ritual-sweat-lodge, ritual-potlatch, ritual-vision-quest, ritual-aztec-autosacrifice, ritual-inca-capacocha~~
+- ~~Yoruba/Vodou (2): ritual-ifa-divination, ritual-bori-spirit-possession~~
+- ~~Chinese/Taoist (3): ritual-chinese-ancestor-veneration, ritual-taoist-inner-alchemy, ritual-chinese-new-year~~
+- ~~Norse (2): ritual-blot, ritual-seidr~~
+- ~~3 commits: ritual-wiring-sikh-jain-shinto-1 · ritual-wiring-indigenous-1 · ritual-wiring-yoruba-chinese-norse-1~~
+- ~~All IDs grep-verified before use. Zero dead links introduced.~~
+
+---
+
+## maths-sciences-1 — IN FLIGHT (2026-05-17)
+- New folder 16_mathematics/ with 6 nodes: mathematics-babylonian-temple, mathematics-sulba-sutras, mathematics-pythagorean-sacred, mathematics-house-of-wisdom, mathematics-zero-india, mathematics-sacred-geometry
+- 3 person stubs: al-khwarizmi, brahmagupta, euclid
+- New `∑ Mathematics` tab in app (3 modes: nodes / transmission / findings)
+- build_data.py: adding "mathematics": ["16_mathematics"]
+
+---
+
 ## ~~glyph-chinese-japanese-1 — FINISHED (2026-05-17)~~
 - Added Chinese (11 chars, 3 sections) + Japanese (8 hiragana, 2 sections) script modes to Alphabets → Glyphs tab
 - isScriptOnly flag in insertExpanded replaces Semitic chain with Pictographic origin panel
