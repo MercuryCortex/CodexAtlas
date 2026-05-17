@@ -77,12 +77,14 @@
   // @param nodes      Array of node records.
   // @param positions  Map<id, { x, y }>  (world space)
   // @param degree     Map<id, number>
+  // @param opts       { tierRadii: [r0, r1, r2, r3] } (optional override)
   // @returns {
   //   data:           Float32Array, length = nodes.length * 8
   //   instanceCount:  number
   //   idIndex:        Array<string>  — instance index → node id (for hover dispatch)
   // }
-  function packNodes(nodes, positions, degree) {
+  function packNodes(nodes, positions, degree, opts) {
+    const tiers = (opts && Array.isArray(opts.tierRadii)) ? opts.tierRadii : TIER_RADIUS;
     const tierFor = buildTierClassifier(nodes, degree);
 
     // Filter to nodes that actually have a position — defensive,
@@ -104,7 +106,7 @@
       const n   = renderable[i];
       const pos = positions.get(n.id);
       const deg = degree.get(n.id) || 0;
-      const r   = TIER_RADIUS[tierFor(deg)];
+      const r   = tiers[tierFor(deg)];
       const col = parseColor(n.family_color || n.tradition_color, fallbackColor);
 
       const off = i * FLOATS_PER_INSTANCE;

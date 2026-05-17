@@ -5512,7 +5512,7 @@ body.view-alphabets main.canvas { padding-bottom: 220px; }
   color: var(--gold);
 }
 .item.forge-nav::after {
-  content: 'p4f';
+  content: 'p5';
   margin-left: 6px;
   font-family: var(--mono); font-size: 9px;
   letter-spacing: 0.08em;
@@ -5701,5 +5701,384 @@ body.nav-collapsed .item.forge-nav::after { display: none; }
     -1px -1px 0 var(--bg-0);
   /* Hidden by default; JS toggles display when in focused set. */
   display: none;
+}
+
+/* ============================================================
+   FORGE — Phase 5: Visual-tuning dev panel
+   ============================================================
+   Right-edge drawer that exposes every visual parameter as a
+   live slider, plus an icon picker per node-type and font picker
+   per scope. Dummy-proof labels + one-sentence hints + double-
+   click to reset a single slider. Owned by dev-panel-forge.js.
+   ============================================================ */
+
+/* ── Right-edge handle (always visible when Forge is mounted) ── */
+#forge-dev-tab {
+  position: fixed;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%) rotate(180deg);
+  writing-mode: vertical-rl;
+  z-index: 60;
+  padding: 10px 6px;
+  border: 1px solid var(--rule);
+  border-right: none;
+  border-radius: 6px 0 0 6px;
+  background: var(--bg-1, #14171c);
+  color: var(--text-1);
+  font-family: var(--mono, "JetBrains Mono", Menlo, monospace);
+  font-size: 10px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  cursor: pointer;
+  user-select: none;
+  transition: color .15s ease, border-color .15s ease, background .15s ease;
+}
+#forge-dev-tab:hover     { color: var(--gold); border-color: var(--gold-soft); }
+#forge-dev-tab.is-open   { color: var(--gold); border-color: var(--gold); }
+
+/* ── Drawer ─────────────────────────────────────────────── */
+#forge-dev-panel {
+  position: fixed;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  width: 380px;
+  max-width: 92vw;
+  z-index: 59;                  /* under the handle so it stays clickable */
+  display: flex;
+  flex-direction: column;
+  background: rgba(14, 17, 22, 0.96);
+  border-left: 1px solid var(--rule);
+  box-shadow: -16px 0 40px rgba(0, 0, 0, 0.45);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  transform: translateX(100%);
+  transition: transform .22s cubic-bezier(.2, .8, .2, 1);
+  font-family: var(--sans);
+  color: var(--text-1);
+}
+#forge-dev-panel.is-open { transform: translateX(0); }
+
+/* ── Header ─────────────────────────────────────────────── */
+.fdp-header {
+  flex: 0 0 auto;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 14px 10px;
+  border-bottom: 1px solid var(--rule);
+  background: rgba(0, 0, 0, 0.25);
+}
+.fdp-title {
+  flex: 1 1 auto;
+  font-family: var(--mono, "JetBrains Mono", Menlo, monospace);
+  font-size: 11px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--gold);
+}
+.fdp-header-actions { display: flex; gap: 6px; }
+.fdp-mini {
+  background: transparent;
+  color: var(--text-2);
+  border: 1px solid var(--rule);
+  border-radius: 4px;
+  padding: 4px 8px;
+  font-family: var(--mono, "JetBrains Mono", Menlo, monospace);
+  font-size: 10px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: color .12s, border-color .12s, background .12s;
+}
+.fdp-mini:hover { color: var(--gold); border-color: var(--gold-soft); background: rgba(180, 140, 60, 0.06); }
+.fdp-close {
+  background: transparent;
+  color: var(--text-2);
+  border: 1px solid var(--rule);
+  border-radius: 4px;
+  width: 26px; height: 26px;
+  font-size: 16px;
+  line-height: 1;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+.fdp-close:hover { color: var(--text-0); border-color: var(--gold-soft); }
+
+/* ── Doctrine strip — reminder of the lock rule ── */
+.fdp-doctrine {
+  flex: 0 0 auto;
+  padding: 8px 14px;
+  font-size: 10.5px;
+  line-height: 1.45;
+  color: var(--text-3);
+  border-bottom: 1px solid var(--rule);
+  background: rgba(180, 140, 60, 0.03);
+}
+
+/* ── Scroll body ─────────────────────────────────────────── */
+.fdp-body {
+  flex: 1 1 auto;
+  overflow-y: auto;
+  overflow-x: hidden;
+  padding: 6px 0 24px;
+  scrollbar-width: thin;
+  scrollbar-color: var(--rule) transparent;
+}
+.fdp-body::-webkit-scrollbar { width: 8px; }
+.fdp-body::-webkit-scrollbar-thumb { background: var(--rule); border-radius: 4px; }
+.fdp-body::-webkit-scrollbar-thumb:hover { background: var(--gold-soft); }
+
+/* ── Section (collapsible) ──────────────────────────────── */
+.fdp-section {
+  border-bottom: 1px solid var(--rule);
+}
+.fdp-section[open] { background: rgba(255, 255, 255, 0.012); }
+.fdp-sec-title {
+  list-style: none;
+  cursor: pointer;
+  padding: 11px 14px 9px;
+  font-family: var(--mono, "JetBrains Mono", Menlo, monospace);
+  font-size: 10.5px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--text-1);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.fdp-sec-title::-webkit-details-marker { display: none; }
+.fdp-sec-title::before {
+  content: '▸';
+  font-size: 9px;
+  color: var(--text-3);
+  transition: transform .15s ease;
+}
+.fdp-section[open] > .fdp-sec-title::before { transform: rotate(90deg); }
+.fdp-sec-title:hover { color: var(--gold); }
+.fdp-sec-blurb {
+  padding: 0 14px 8px;
+  font-size: 11px;
+  line-height: 1.45;
+  color: var(--text-3);
+  font-style: italic;
+}
+.fdp-sec-body {
+  padding: 2px 0 8px;
+}
+
+/* ── Slider row ─────────────────────────────────────────── */
+.fdp-row {
+  padding: 9px 14px 11px;
+  border-top: 1px solid rgba(255, 255, 255, 0.025);
+  position: relative;
+}
+.fdp-row:first-child { border-top: none; }
+.fdp-row:hover { background: rgba(180, 140, 60, 0.025); }
+.fdp-row-head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 8px;
+  margin-bottom: 3px;
+}
+.fdp-label {
+  font-size: 12px;
+  color: var(--text-0);
+  line-height: 1.3;
+  font-weight: 500;
+}
+.fdp-value {
+  flex: 0 0 auto;
+  font-family: var(--mono, "JetBrains Mono", Menlo, monospace);
+  font-size: 10.5px;
+  color: var(--gold);
+  font-variant-numeric: tabular-nums;
+}
+.fdp-hint {
+  font-size: 10.5px;
+  line-height: 1.4;
+  color: var(--text-3);
+  margin-bottom: 6px;
+  padding-right: 4px;
+}
+
+/* Native slider — restyled for the panel */
+.fdp-slider {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 100%;
+  height: 18px;
+  background: transparent;
+  cursor: pointer;
+  display: block;
+}
+.fdp-slider:focus { outline: none; }
+.fdp-slider::-webkit-slider-runnable-track {
+  height: 3px;
+  background: var(--rule);
+  border-radius: 2px;
+}
+.fdp-slider::-moz-range-track {
+  height: 3px;
+  background: var(--rule);
+  border-radius: 2px;
+}
+.fdp-slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 12px; height: 12px;
+  margin-top: -4.5px;
+  border-radius: 50%;
+  background: var(--gold);
+  border: 1px solid var(--bg-0, #0a0c10);
+  box-shadow: 0 0 0 1px var(--gold-soft);
+  cursor: grab;
+  transition: transform .1s ease, box-shadow .1s ease;
+}
+.fdp-slider::-moz-range-thumb {
+  width: 12px; height: 12px;
+  border-radius: 50%;
+  background: var(--gold);
+  border: 1px solid var(--bg-0, #0a0c10);
+  box-shadow: 0 0 0 1px var(--gold-soft);
+  cursor: grab;
+}
+.fdp-slider:hover::-webkit-slider-thumb,
+.fdp-slider:active::-webkit-slider-thumb {
+  transform: scale(1.18);
+  box-shadow: 0 0 0 2px rgba(180, 140, 60, 0.35);
+}
+
+/* Reset-on-double-click affordance: a soft tooltip on hover. */
+.fdp-row::after {
+  content: 'double-click row to reset';
+  position: absolute;
+  right: 14px;
+  bottom: 2px;
+  font-family: var(--mono, "JetBrains Mono", Menlo, monospace);
+  font-size: 8.5px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-3);
+  opacity: 0;
+  transition: opacity .15s ease;
+  pointer-events: none;
+}
+.fdp-row:hover::after { opacity: 0.55; }
+
+/* ── Icon picker ────────────────────────────────────────── */
+.fdp-icon-type {
+  margin: 0 8px 6px;
+  border: 1px solid var(--rule);
+  border-radius: 6px;
+  background: rgba(0, 0, 0, 0.15);
+  overflow: hidden;
+}
+.fdp-icon-type[open] { border-color: var(--gold-soft); }
+.fdp-icon-type-head {
+  list-style: none;
+  cursor: pointer;
+  padding: 8px 10px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 12px;
+}
+.fdp-icon-type-head::-webkit-details-marker { display: none; }
+.fdp-icon-type-head:hover { background: rgba(180, 140, 60, 0.05); }
+.fdp-icon-current {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px; height: 24px;
+  border-radius: 4px;
+  background: rgba(255, 255, 255, 0.04);
+  color: var(--gold);
+  flex: 0 0 auto;
+}
+.fdp-icon-current svg { width: 18px; height: 18px; display: block; }
+.fdp-icon-type-label {
+  flex: 1 1 auto;
+  color: var(--text-0);
+}
+.fdp-icon-current-id {
+  font-family: var(--mono, "JetBrains Mono", Menlo, monospace);
+  font-size: 9.5px;
+  letter-spacing: 0.06em;
+  color: var(--text-3);
+}
+.fdp-icon-cat-label {
+  padding: 8px 12px 4px;
+  font-family: var(--mono, "JetBrains Mono", Menlo, monospace);
+  font-size: 9.5px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--text-3);
+  border-top: 1px solid var(--rule);
+}
+.fdp-icon-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+  padding: 0 10px 8px;
+}
+.fdp-icon-btn {
+  width: 28px; height: 28px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.025);
+  border: 1px solid transparent;
+  border-radius: 4px;
+  color: var(--text-1);
+  cursor: pointer;
+  padding: 0;
+  transition: background .12s, border-color .12s, color .12s, transform .08s;
+}
+.fdp-icon-btn:hover {
+  background: rgba(180, 140, 60, 0.10);
+  border-color: var(--gold-soft);
+  color: var(--gold);
+  transform: scale(1.06);
+}
+.fdp-icon-btn.is-selected {
+  background: rgba(180, 140, 60, 0.18);
+  border-color: var(--gold);
+  color: var(--gold);
+}
+.fdp-icon-btn svg {
+  width: 18px;
+  height: 18px;
+  display: block;
+}
+
+/* ── Font picker dropdown ───────────────────────────────── */
+.fdp-font-select {
+  width: 100%;
+  background: rgba(0, 0, 0, 0.25);
+  color: var(--text-0);
+  border: 1px solid var(--rule);
+  border-radius: 4px;
+  padding: 6px 8px;
+  font-family: var(--sans);
+  font-size: 12px;
+  cursor: pointer;
+  transition: border-color .12s;
+}
+.fdp-font-select:hover  { border-color: var(--gold-soft); }
+.fdp-font-select:focus  { outline: none; border-color: var(--gold); }
+.fdp-font-select option {
+  background: var(--bg-1, #14171c);
+  color: var(--text-0);
+}
+
+/* ── Narrow viewports: drawer takes full width ───────────── */
+@media (max-width: 540px) {
+  #forge-dev-panel { width: 100vw; }
+  #forge-dev-tab   { font-size: 9px; }
 }
 

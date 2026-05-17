@@ -126,12 +126,19 @@
   // ── Pack instances ────────────────────────────────────
   // @param edges      Array of { source, target, type }.
   // @param positions  Map<id, { x, y }>  (world space)
+  // @param opts       Optional overrides:
+  //                     widths:  { transmission: 0.34, ... }
+  //                     idleOps: { transmission: 0.10, ... }
+  //                     curves:  { transmission: 0.35, ... }
   // @returns {
   //   data:          Float32Array, length = N * 12
   //   instanceCount: number
   //   bucketCounts:  { transmission: n, parallel: n, ... }  diagnostic
   // }
-  function packEdges(edges, positions) {
+  function packEdges(edges, positions, opts) {
+    const wOver = (opts && opts.widths)  || null;
+    const oOver = (opts && opts.idleOps) || null;
+    const cOver = (opts && opts.curves)  || null;
     const FLOATS_PER_INSTANCE = 12;
 
     // First pass: collect renderable edges (both endpoints
@@ -159,7 +166,9 @@
       // layer that becomes story on hover).
       const isHeadline = HEADLINE_BUCKETS.has(buc);
       const rgb = isHeadline ? hexToRgb(bucketColor(buc)) : SLATE;
-      const alpha = bucketIdleOp(buc);
+      const alpha = (oOver && typeof oOver[buc] === 'number') ? oOver[buc] : bucketIdleOp(buc);
+      const widthVal = (wOver && typeof wOver[buc] === 'number') ? wOver[buc] : bucketWidth(buc);
+      const curveVal = (cOver && typeof cOver[buc] === 'number') ? cOver[buc] : (CURVE_STRENGTH[buc] || 0.3);
 
       const off = i * FLOATS_PER_INSTANCE;
       data[off +  0] = sp.x;
@@ -170,8 +179,8 @@
       data[off +  5] = rgb[1];
       data[off +  6] = rgb[2];
       data[off +  7] = alpha;
-      data[off +  8] = bucketWidth(buc) * WIDTH_SCALE;
-      data[off +  9] = CURVE_STRENGTH[buc] || 0.3;
+      data[off +  8] = widthVal * WIDTH_SCALE;
+      data[off +  9] = curveVal;
       data[off + 10] = BUCKET_INDEX[buc];
       data[off + 11] = 0;  // pad
     }

@@ -31,14 +31,61 @@
   // World-space bbox of the radial layout, padded.
   const WORLD_PAD = 24;
 
-  // Dim attenuation for non-focused instances. 0.85 = focused
-  // nodes / edges stay at full alpha, non-focused get
-  // multiplied by 0.15. Tunable from a dev-panel slider later.
-  const DIM_AMOUNT = 0.85;
-
   // Wheel-event zoom sensitivity. Browser delta varies; this
   // tuning keeps a normal scroll click feeling like a step.
   const WHEEL_ZOOM_K = 0.0015;
+
+  // Default values for every dev-panel parameter. setParam(id, v)
+  // writes into local.params and dispatches the right rebake.
+  // Keys MUST match the SECTIONS catalog in dev-panel-forge.js.
+  const PARAM_DEFAULTS = Object.freeze({
+    // What you see at rest
+    edge_idle_transmission: 0.10,
+    edge_idle_parallel:     0.12,
+    edge_idle_association:  0.08,
+    edge_idle_kinship:      0.14,
+    edge_idle_attestation:  0.10,
+    edge_idle_polemic:      0.25,
+    edge_idle_fusion:       0.30,
+    atmosphere:             0.025,
+    // Focus
+    dim_amount:             0.85,
+    hot_width_mult:         2.4,
+    edge_hot_transmission:  0.95,
+    edge_hot_parallel:      0.85,
+    edge_hot_kinship:       0.85,
+    edge_hot_attestation:   0.90,
+    edge_hot_polemic:       0.95,
+    edge_hot_fusion:        0.95,
+    // Nodes
+    node_radius_tier1: 16,
+    node_radius_tier2: 12,
+    node_radius_tier3:  9,
+    node_radius_tier4:  7,
+    // Glyphs
+    glyph_scale:   0.95,
+    glyph_opacity: 0.86,
+    glyph_tint:    0.55,
+    // Edges
+    edge_width_transmission: 0.34,
+    edge_width_parallel:     0.30,
+    edge_width_association:  0.22,
+    edge_width_kinship:      0.32,
+    edge_width_attestation:  0.30,
+    edge_width_polemic:      0.40,
+    edge_width_fusion:       0.36,
+    curve_transmission: 0.35,
+    curve_parallel:     0.30,
+    curve_kinship:      0.40,
+    curve_fusion:       0.45,
+    // Labels
+    label_size: 11,
+    label_cap:  80,
+    // Camera
+    pan_tau:   0.18,
+    zoom_tau:  0.08,
+    flyto_dur: 0.55,
+  });
 
   function render(rootEl) {
     if (!rootEl) return;
@@ -202,6 +249,12 @@
       // current mode exactly.
       glyphEls:    [],            // Array<{ el, id, baseR, family }>
       glyphFamilyColor: new Map(),// id → string  (for label tint)
+      // Phase 5: live-tweak parameter dict + per-type icon overrides.
+      // Populated from PARAM_DEFAULTS on mount; the Forge dev panel
+      // overrides via setParam / setIcon / setFont.
+      params:       Object.assign({}, PARAM_DEFAULTS),
+      iconByType:   {},           // type → iconId (from icon library)
+      fontByScope:  {},           // scope → { family }
     };
 
     rootEl._engine = {
@@ -387,8 +440,8 @@
       const modeEdges = layout.filterEdgesByNodes(allEdges, modeNodes);
       const degree    = layout.computeDegree(modeNodes, modeEdges);
       const lay       = layout.radialWedgeLayout(modeNodes, familyOrder, { degree });
-      const nodePack  = graph.packNodes(modeNodes, lay.positions, degree);
-      const edgePack  = graph.packEdges(modeEdges, lay.positions);
+      const nodePack  = graph.packNodes(modeNodes, lay.positions, degree, { tierRadii: tierRadiiFromParams() });
+      const edgePack  = graph.packEdges(modeEdges, lay.positions, edgeOverridesFromParams());
       const adj       = graph.buildAdjacency(modeEdges);
 
       const hitNodesNew = new Array(nodePack.instanceCount);
@@ -517,7 +570,7 @@
       local.renderer.drawFrame({
         viewportCss:   { w: vp.w, h: vp.h },
         camera:        camera.state,
-        dimAmount:     DIM_AMOUNT,
+        dimAmount:     local.params.dim_amount,
         nodeInstances: local.mode.nodePacked.data,
         edgeInstances: local.mode.edgePacked.data,
         nodeStates:    local.nodeStates,
@@ -545,6 +598,7 @@
       const vp = local.lastSize;
       if (!vp.w || !vp.h) return;
       const sc = camera.state.scale;
+      const glyphScale = local.params.glyph_scale;
       const hitNodes = local.mode.hitNodes;
       // hitNodes order matches glyphEls order (both come from
       // nodePack.idIndex). Iterate by index for O(N) with no
@@ -554,8 +608,8 @@
         const n = hitNodes[i];
         if (!n) continue;
         const s = camera.worldToScreen(n.x, n.y, vp);
-        // Glyph fills the disk: size = 2 * baseR * scale, centered.
-        const dPx = Math.max(2, 2 * g.baseR * sc);
+        // Glyph fills the disk × glyph_scale (dev-tweakable).
+        const dPx = Math.max(2, 2 * g.baseR * sc * glyphScale);
         const half = dPx / 2;
         g.el.style.left   = (s.x - half) + 'px';
         g.el.style.top    = (s.y - half) + 'px';
@@ -975,6 +1029,211 @@
         wrapped.observe(stage);
       }
     }
+
+    // ── Param helpers (Phase 5 — dev panel wires) ───────
+    function tierRadiiFromParams() {
+      return [
+        local.params.node_radius_tier1,
+        local.params.node_radius_tier2,
+        local.params.node_radius_tier3,
+        local.params.node_radius_tier4,
+      ];
+    }
+    function edgeOverridesFromParams() {
+      return {
+        widths: {
+          transmission: local.params.edge_width_transmission,
+          parallel:     local.params.edge_width_parallel,
+          association:  local.params.edge_width_association,
+          kinship:      local.params.edge_width_kinship,
+          attestation:  local.params.edge_width_attestation,
+          polemic:      local.params.edge_width_polemic,
+          fusion:       local.params.edge_width_fusion,
+        },
+        idleOps: {
+          transmission: local.params.edge_idle_transmission,
+          parallel:     local.params.edge_idle_parallel,
+          association:  local.params.edge_idle_association,
+          kinship:      local.params.edge_idle_kinship,
+          attestation:  local.params.edge_idle_attestation,
+          polemic:      local.params.edge_idle_polemic,
+          fusion:       local.params.edge_idle_fusion,
+        },
+        curves: {
+          transmission: local.params.curve_transmission,
+          parallel:     local.params.curve_parallel,
+          kinship:      local.params.curve_kinship,
+          fusion:       local.params.curve_fusion,
+        },
+      };
+    }
+    function hotPaletteFromParams() {
+      function hex2rgba(hex, a) {
+        if (!hex || typeof hex !== 'string' || hex[0] !== '#' || hex.length < 7) {
+          return [0.31, 0.37, 0.51, a];
+        }
+        return [
+          parseInt(hex.slice(1, 3), 16) / 255,
+          parseInt(hex.slice(3, 5), 16) / 255,
+          parseInt(hex.slice(5, 7), 16) / 255,
+          a,
+        ];
+      }
+      const buckets = window.EDGE_BUCKETS || {};
+      function hot(name, hex) {
+        const a = local.params['edge_hot_' + name];
+        const useHex = (buckets[name] && buckets[name].hex) || hex;
+        return hex2rgba(useHex, a);
+      }
+      return [
+        hot('transmission', '#C9743A'),
+        hot('parallel',     '#5A9A8F'),
+        hot('association',  '#4A5AA4'),
+        hot('kinship',      '#C9A5D4'),
+        hot('attestation',  '#D4A55A'),
+        hot('polemic',      '#A83E4A'),
+        hot('fusion',       '#C4783A'),
+      ];
+    }
+
+    // Rebake node instances + glyph DOM (called when tier radii
+    // or glyph tint changes — both depend on the packed radius).
+    function rebakeNodes() {
+      const m = local.mode;
+      const np = graph.packNodes(m.nodes, m.positions, layout.computeDegree(m.nodes, m.edges), { tierRadii: tierRadiiFromParams() });
+      m.nodePacked = np;
+      // Re-derive hit-test index.
+      m.hitNodes = new Array(np.instanceCount);
+      for (let i = 0; i < np.instanceCount; i++) {
+        const off = i * NODE_FLOATS;
+        m.hitNodes[i] = { id: np.idIndex[i], x: np.data[off], y: np.data[off + 1], r: np.data[off + 2] };
+      }
+      local.nodeStates = new Float32Array(np.instanceCount);
+      rebakeGlyphsForMode();
+      drawFrame();
+    }
+    // Rebake edge instances (idle alpha / width / curve).
+    function rebakeEdges() {
+      const m = local.mode;
+      m.edgePacked = graph.packEdges(m.edges, m.positions, edgeOverridesFromParams());
+      local.edgeStates = new Float32Array(m.edgePacked.instanceCount);
+      drawFrame();
+    }
+    // Push hot palette to the renderer.
+    function rebakeBucketPalette() {
+      if (!local.renderer) return;
+      local.renderer.setBucketPalette(hotPaletteFromParams());
+      drawFrame();
+    }
+    // Rebuild glyph DOM (called by mode switch + tier-radii change
+    // + icon override + tint change).
+    function rebakeGlyphsForMode() {
+      glyphOverlay.innerHTML = '';
+      local.glyphEls.length = 0;
+      local.glyphFamilyColor.clear();
+      const m = local.mode;
+      const modeNodeById = new Map();
+      for (const n of m.nodes) modeNodeById.set(n.id, n);
+      for (let i = 0; i < m.nodePacked.instanceCount; i++) {
+        const id = m.nodePacked.idIndex[i];
+        const n  = modeNodeById.get(id);
+        if (!n) continue;
+        const r  = m.nodePacked.data[i * NODE_FLOATS + 2];
+        const fc = n.family_color || n.tradition_color || '#cccccc';
+        const tint = mth.lightenColor(fc, local.params.glyph_tint);
+        const iconOverride = local.iconByType[n.type];
+        const innerSvg = iconOverride && window.AtlasEngineIconLibrary
+          ? window.AtlasEngineIconLibrary.fullSvg(iconOverride, 12)
+          : glyphmod.fullSvg(n.type, 12);
+        const span = document.createElement('span');
+        span.className = 'forge-glyph';
+        span.style.color = tint;
+        span.innerHTML = innerSvg;
+        glyphOverlay.appendChild(span);
+        local.glyphEls.push({ el: span, id, baseR: r });
+        local.glyphFamilyColor.set(id, fc);
+      }
+      syncGlyphPositions();
+    }
+
+    // ── Public API for dev panel ────────────────────────
+    function setParam(name, value) {
+      if (typeof value !== 'number' || isNaN(value)) return;
+      if (!(name in local.params)) return;
+      local.params[name] = value;
+      // Dispatch — what's the cheapest valid reaction?
+      if (name === 'dim_amount') { drawFrame(); return; }
+      if (name === 'atmosphere') {
+        document.documentElement.style.setProperty('--forge-atmosphere', String(value));
+        return;
+      }
+      if (name === 'label_size') {
+        document.documentElement.style.setProperty('--forge-label-size', value + 'px');
+        return;
+      }
+      if (name === 'label_cap') {
+        syncLabels(); return;
+      }
+      if (name === 'glyph_opacity') {
+        document.documentElement.style.setProperty('--forge-glyph-opacity', String(value));
+        return;
+      }
+      if (name === 'glyph_scale') {
+        // syncGlyphPositions multiplies the disk diameter by this
+        // each frame; we store it on local.params and trigger
+        // a sync. (No per-frame read; we just need a redraw.)
+        syncGlyphPositions(); return;
+      }
+      if (name === 'glyph_tint') {
+        rebakeGlyphsForMode(); return;
+      }
+      if (name === 'hot_width_mult') {
+        // Currently shader-hardcoded (2.4). Phase 5b will wire
+        // this through a view-uniform field. For now this slider
+        // updates local.params but the visual effect waits.
+        return;
+      }
+      if (name.startsWith('node_radius_tier')) {
+        rebakeNodes(); return;
+      }
+      if (name.startsWith('edge_idle_') ||
+          name.startsWith('edge_width_') ||
+          name.startsWith('curve_')) {
+        rebakeEdges(); return;
+      }
+      if (name.startsWith('edge_hot_')) {
+        rebakeBucketPalette(); return;
+      }
+      if (name === 'pan_tau' || name === 'zoom_tau' || name === 'flyto_dur') {
+        // Camera tuning constants — would need camera-module setters.
+        // Stored for now; Phase 5b can plumb them through.
+        return;
+      }
+    }
+
+    function setIcon(nodeType, iconId) {
+      if (!nodeType) return;
+      local.iconByType[nodeType] = iconId;
+      rebakeGlyphsForMode();
+    }
+
+    function setFont(scope, font) {
+      if (!scope || !font || !font.family) return;
+      local.fontByScope[scope] = font;
+      const cssVar = '--forge-font-' + scope;
+      document.documentElement.style.setProperty(cssVar, font.family);
+    }
+
+    // Apply glyph-scale CSS var so syncGlyphPositions can read it.
+    // Done once at mount + on every setParam('glyph_scale').
+    document.documentElement.style.setProperty('--forge-glyph-opacity', String(local.params.glyph_opacity));
+    document.documentElement.style.setProperty('--forge-atmosphere', String(local.params.atmosphere));
+    document.documentElement.style.setProperty('--forge-label-size', local.params.label_size + 'px');
+
+    // Expose on window for dev panel.
+    window._forge.setParam = setParam;
+    window._forge.setIcon  = setIcon;
+    window._forge.setFont  = setFont;
   }
 
   function escapeHtml(s) {
