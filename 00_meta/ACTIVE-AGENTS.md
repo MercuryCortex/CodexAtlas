@@ -4,6 +4,12 @@ _Hand-maintained. Each agent currently working in the vault appends a claim bloc
 
 ---
 
+## ~~aztec-maya-svg-glyphs-1 — SVG line-art replaces emoji for 40 Aztec + Maya glyphs — 2026-05-17 — FINISHED~~
+- ~~Owned: `src/js/alphabets/glyph-data.js` (40 `unicode:` → `glyphSVG:` replacements), `src/js/alphabets/glyph-viewer.js` (SVG rendering + unicode guard + section divider fix), `index.html` (version bump)~~
+- ~~Status: FINISHED. Commit bc4e848~~
+
+---
+
 ## ~~maya-glyph-mode-1 — Maya tzolkin day signs glyph mode — 2026-05-17 — FINISHED~~
 - ~~Owned: `src/js/alphabets/glyph-data.js` (+150 lines), `src/js/alphabets/glyph-viewer.js` (Maya added to SCRIPTS + isStandaloneScript), `index.html` (version bump)~~
 - ~~Maya: 20 tzolkin day signs (Imix→Ajaw) in 4 sections; 9 signs carry explicit Aztec-parallel HYPER WIN notes (same animal, same day number, common Olmec origin)~~
