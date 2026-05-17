@@ -1090,13 +1090,14 @@
     overlay.style.pointerEvents = 'none';
     overlay.style.width  = '100%';
     overlay.style.height = '100%';
-    // The overlay must sit BEHIND sigma's canvas children. sigma adds canvases
-    // with z-index that defaults to auto; setting z-index:0 on the SVG plus
-    // letting canvases stay at auto (which paints over earlier siblings) keeps
-    // them above the SVG. To be safe we insert the SVG as the FIRST child of
-    // rootEl, so it's the lowest in the stacking order.
+    // Append AS FIRST CHILD so the overlay paints UNDER sigma's canvases.
+    // Visual order: hulls → edges → dots → labels (sigma canvases on top).
+    // The dim-at-10%-alpha treatment of non-active dots ONLY reads if dots
+    // are above the colour overlay; otherwise hulls + hot edges cover them.
+    // Hull clicks reach us via the clickStage hit-test, not SVG event
+    // propagation, so DOM order = paint order is the right invariant.
     if (rootEl.firstChild) rootEl.insertBefore(overlay, rootEl.firstChild);
-    else rootEl.appendChild(overlay);
+    else                   rootEl.appendChild(overlay);
 
     // Two groups inside the overlay: hulls first (painted bottom), edges on top.
     const hullsG = document.createElementNS(SVG_NS, 'g');

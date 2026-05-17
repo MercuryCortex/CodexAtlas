@@ -66,7 +66,6 @@ refs:
     type: "monograph"
     tier: 2
     notes: "Good survey of Sekhmet mythology including the Book of the Heavenly Cow narrative"
-tags: [deity, egyptian, war, plague, lion-goddess, eye-of-ra, memphite-triad, healing, cross-tradition]
 ---
 
 # Sekhmet

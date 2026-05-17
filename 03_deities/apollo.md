@@ -52,7 +52,6 @@ refs:
     publisher: "Blackwell"
     type: "monograph"
     tier: 1
-tags: [deity, greek, olympian, apollo, prophecy, delphi, music]
 ---
 
 # Apollo
