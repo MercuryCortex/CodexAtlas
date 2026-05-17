@@ -9115,3 +9115,292 @@ SCRIPTURE_TEXTS['thomas-a-kempis'] = {
     },
   ]
 };
+
+// ── Batch 20 ──────────────────────────────────────────────────────────────
+
+SCRIPTURE_TEXTS['john-17'] = {
+  title: 'John 17 — The High Priestly Prayer',
+  shortTitle: 'John 17',
+  tradition: 'New Testament',
+  date: 'c. 90–100 CE',
+  intro: 'John 17 is the longest prayer of Jesus recorded in the Gospels — the culmination of the "Farewell Discourse" (chapters 13–17) in which Jesus speaks intimately with his disciples on the night before his death. Three movements: Jesus prays for himself (17:1–5), for his disciples (17:6–19), and for all future believers (17:20–26). The theological core is the petition for unity: "that they all may be one; as thou, Father, art in me, and I in thee, that they also may be one in us." This prayer has driven more Christian mystical theology than perhaps any other single passage — the vision of a unity between humanity and God patterned on the unity within God. Meister Eckhart\'s teaching on the soul\'s return to the Godhead, John of the Cross\'s transformation in the Beloved, and Julian\'s showings all circle this text. It is also the most quoted New Testament passage in ecumenical theology.',
+  crossTradition: [
+    { textId: 'mundaka-upanishad', label: 'Mundaka — "he who knows Brahman becomes Brahman"; union as the goal', note: 'Mundaka 3.2.9: "brahma-vid brahmaiva bhavati — he who knows Brahman becomes Brahman." John 17:21: "that they may all be one, as thou, Father, art in me, and I in thee, that they also may be in us." Both texts describe the highest state as a participation in divine unity — not the dissolution of the person but the transformation of the person\'s mode of being into unity with the absolute. The river flowing into the sea (Mundaka) and the human becoming one as the Father and Son are one (John 17) are the same ontological claim in different cultural vocabularies.' },
+    { textId: 'ibn-arabi-fusus', label: 'Ibn Arabi — wahdat al-wujud; unity of being as the theological destination', note: 'Ibn Arabi\'s doctrine of wahdat al-wujud (unity of being) holds that ultimately there is only one Being — divine Being — and that created beings participate in it. This is the Sufi philosophical elaboration of what John 17:21 describes as prayer: "that they may be one, even as we are one." The Christian theologians who were most influenced by John 17 (Eckhart, Ruusbroec, John of the Cross) developed a doctrine of union that Ibn Arabi would recognize, and Ibn Arabi\'s doctrine is the elaboration of what John 17 initiates.' },
+    { textId: 'meister-eckhart-godhead', label: 'Meister Eckhart — the soul\'s return to the Godhead as fulfillment of John 17', note: 'Eckhart\'s entire mystical theology can be read as the philosophical expansion of John 17:21-23. "The eye through which I see God is the same eye through which God sees me" (Eckhart) = "I in them and thou in me, that they may be perfectly one" (John 17:23). The Johannine prayer provides the scriptural foundation; Eckhart provides the speculative framework that maps the prayer onto the Neoplatonic schema of emanation and return. The prayer is the map; Eckhart gives directions.' },
+  ],
+  translations: [
+    { lang: 'en', label: 'NRSV' },
+    { lang: 'en-kjv', label: 'King James (1611)' },
+    { lang: 'grc', label: 'Greek (Koine)' },
+  ],
+  sections: [
+    {
+      heading: 'Eternal Life as Knowing — Prayer for Himself (17:1–5)',
+      verses: [
+        {
+          ref: '17:1–5',
+          text: 'After Jesus had spoken these words, he looked up to heaven and said, "Father, the hour has come; glorify your Son so that the Son may glorify you, since you have given him authority over all people, to give eternal life to all whom you have given him. And this is eternal life, that they may know you, the only true God, and Jesus Christ whom you have sent. I glorified you on earth by finishing the work that you gave me to do. So now, Father, glorify me in your own presence with the glory that I had in your presence before the world existed."',
+          entities: [
+            { word: 'this is eternal life, that they may know you', node: 'gnosis', type: 'concept',
+              note: 'John 17:3 is the most important theological definition in the Gospel of John: eternal life is not a duration but a quality — and specifically, it is knowing (Greek: ginōskōsin) God. Not knowing about God. Not believing propositions about God. Knowing God — directly, personally, in the mode that the Gnostic tradition calls gnosis and the Upanishadic tradition calls jnana. This single verse collapses the traditional Protestant distinction between faith and knowledge, and opens the entire mystical tradition: if eternal life is knowing God, then the mystics who seek to know God directly are not eccentric but central.',
+              parallels: [
+                { label: 'Gospel of Truth — gnosis of the Father as the gospel itself', textId: 'gospel-of-truth', note: 'The Gospel of Truth opens: "the gospel of truth is joy for those who have received from the Father of Truth the gift of knowing him." John 17:3: "this is eternal life, that they may know thee, the only true God." Both texts make direct knowing (gnosis) of the Father the definition of salvation — not a means to salvation but salvation itself. The Valentinian Gospel of Truth is the consistent development of what John 17:3 initiates: if knowing God IS eternal life, then everything depends on the nature and conditions of that knowing.' },
+                { label: 'Mundaka Upanishad — higher knowledge as liberation itself', textId: 'mundaka-upanishad', note: 'The Mundaka distinguishes lower knowledge (all the sacred sciences) from para vidya (the higher knowledge by which Brahman is directly known). The higher knowledge is liberation — not the means to liberation but liberation itself. John 17:3 makes the same move: eternal life IS the knowing. Both texts collapse the instrumental distinction between knowledge as means and liberation as end. The knowing and the liberation are one event.' },
+              ]
+            },
+          ]
+        },
+      ]
+    },
+    {
+      heading: 'The Unity Prayer — That They May Be One (17:20–26)',
+      verses: [
+        {
+          ref: '17:20–23',
+          text: '"I ask not only on behalf of these, but also on behalf of those who will believe in me through their word, that they may all be one. As you, Father, are in me and I am in you, may they also be in us, so that the world may believe that you have sent me. The glory that you have given me I have given them, so that they may be one, as we are one, I in them and you in me, that they may be completely one, so that the world may know that you sent me and have loved them even as you have loved me."',
+          entities: [
+            { word: 'that they may all be one, as you, Father, are in me and I am in you', node: 'mystical-union', type: 'concept',
+              note: 'The unity that Jesus prays for is explicitly patterned on the unity within the Trinity: "as we are one." This is not organizational unity (one institution) but ontological unity — the same kind of indwelling that characterizes the Father-Son relationship is to characterize the relationship between believers and God. "I in them and you in me" is the theological claim that drove Meister Eckhart, John of the Cross, and the entire Christian mystical tradition: the perichoresis (mutual indwelling) of Father and Son is extended to include humanity. This is the Christian equivalent of Mundaka\'s "he who knows Brahman becomes Brahman" — not metaphor but ontological claim.',
+              parallels: [
+                { label: 'Meister Eckhart — "I am what God is"; the eye that sees God', textId: 'meister-eckhart-godhead', note: 'Eckhart: "The eye through which I see God is the same eye through which God sees me; my eye and God\'s eye are one eye, one seeing, one knowing, one love." This is Eckhart\'s philosophical translation of John 17:21-23: "I in them and you in me, that they may be completely one." The mutual indwelling (perichoresis) that John 17 describes as prayer becomes in Eckhart the description of the soul\'s highest state of union with the Godhead. The prayer is the map; Eckhart describes the territory.' },
+                { label: 'Rumi — the reed and the reed-bed; longing as the form of union', textId: 'rumi-masnavi', note: 'Rumi\'s reed flute cries for its reed-bed from which it was cut. The separation IS the longing that drives the return. John 17:21: Jesus prays that the separation between humanity and God (the Fall, the exile, the "the world did not know him" of John 1) be healed: "that they may be one in us." Both texts describe the same cosmological narrative: original unity, separation, and longing for return. Rumi describes the longing that is the movement of return; John 17 describes the prayer from within the divine for the return of the estranged creation.' },
+              ]
+            },
+          ]
+        },
+        {
+          ref: '17:24–26',
+          text: '"Father, I desire that those also, whom you have given me, may be with me where I am, to see my glory, which you have given me because you loved me before the foundation of the world. Righteous Father, the world does not know you, but I know you; and these know that you have sent me. I made your name known to them, and I will make it known, so that the love with which you have loved me may be in them, and I in them."',
+          entities: [
+            { word: 'the love with which you have loved me may be in them, and I in them', node: 'divine-love', type: 'concept',
+              note: 'The final clause of the prayer and the Gospel of John\'s Farewell Discourse: "I in them." Not "I with them" (external relationship) but "I in them" (interior presence). The movement from the prayer\'s opening (the Father\'s love for the Son "before the foundation of the world") to its close ("that love... may be in them") describes the entire Johannine theology: the eternal divine love that was always within the Trinity is extended into history through the sending of the Son and into each believer through the indwelling Spirit. 1 John 4:16 ("God is love, and those who abide in love abide in God") is the summary of this conclusion.',
+              parallels: [
+                { label: '1 John 4 — "God is love; those who abide in love abide in God"', textId: '1-john-4', note: '1 John 4:16 is the theological summary of what John 17:26 prays toward: the divine love that was in the Father-Son relationship is extended into the community of believers, and abiding in that love is identical with abiding in God. John 17 is the prayer; 1 John 4 is the theological statement of its fulfillment. Together they form the Johannine theology of divine immanence through love.' },
+              ]
+            },
+          ]
+        },
+      ]
+    },
+  ]
+};
+
+SCRIPTURE_TEXTS['matthew-25'] = {
+  title: 'Matthew 25 — The Sheep and the Goats',
+  shortTitle: 'Matthew 25',
+  tradition: 'New Testament',
+  date: 'c. 85–90 CE',
+  intro: 'Matthew 25:31–46 is one of the most ethically consequential texts in the Christian canon. At the final judgment, the criterion for separation is not doctrinal belief, not ritual practice, not church membership — but care for the hungry, thirsty, stranger, naked, sick, and imprisoned. The disclosure that makes the text unforgettable: those who fed the hungry and visited the imprisoned had not known they were doing it to Christ. And those who failed to care had not known they were failing Christ. The hidden Christ in the poor is the hermeneutical key: wherever the suffering stranger is, Christ is there — unrecognized, vulnerable, waiting. Martin Luther King Jr. quoted this text at Selma. Liberation theologians built entire theologies from it. It is also the most rigorous biblical challenge to the Protestant doctrine of salvation by faith alone — the parable measures by works, not words.',
+  crossTradition: [
+    { textId: 'amos-5', label: 'Amos 5 — justice as the prophetic precondition for worship', note: 'Amos 5:21–24 is the great prophetic statement that precedes Matthew 25: God hates the solemn assemblies of worshipers who do not practice justice. Matthew 25 extends this: the judgment by which the nations are separated is not their worship (the righteous ask "Lord, when did we see you hungry?") but their practice of justice and care. Both texts are making the same prophetic claim: religious practice disconnected from care for the vulnerable is not only insufficient but actively rejected by God. "Let justice roll down like waters" (Amos) and "I was hungry and you gave me food" (Matthew 25) are the same prophetic demand from different angles.' },
+    { textId: 'confucius-analects', label: 'Confucius — ren as care for all; the Golden Rule as the standard', note: 'Confucius Analects 15.23: "What you do not want done to yourself, do not do to others" (the negative Golden Rule). Matthew 7:12 (Sermon on the Mount): "Do to others as you would have them do to you." Matthew 25 takes this principle to its logical conclusion: the standard of judgment is whether you treated "the least of these" as you would want to be treated — or equivalently, as you would treat Christ himself if you knew it was him. The Confucian and Matthean ethics converge on the same conclusion: the test of moral character is the treatment of the vulnerable other.' },
+    { textId: 'bhagavad-gita-4', label: 'Bhagavad Gita — selfless action; serving God through serving the creation', note: 'BG 4:24: "The offering is Brahman; the oblation is Brahman; it is offered by Brahman into the fire of Brahman. Brahman is to be attained by him who always sees Brahman in action." Matthew 25:40: "Truly I tell you, just as you did it to one of the least of these who are members of my family, you did it to me." Both texts teach that service to the other is simultaneously service to the divine — that there is no gap between the religious act (worship, sacrifice) and the ethical act (care for the vulnerable) when rightly understood. The Gita collapses the distinction between offering and the divine recipient; Matthew collapses the distinction between the poor and Christ.' },
+  ],
+  translations: [
+    { lang: 'en', label: 'NRSV' },
+    { lang: 'en-kjv', label: 'King James (1611)' },
+    { lang: 'grc', label: 'Greek (Koine)' },
+  ],
+  sections: [
+    {
+      heading: 'The Hidden Christ — "When Did We See You?" (25:31–40)',
+      verses: [
+        {
+          ref: '25:31–36',
+          text: '"When the Son of Man comes in his glory, and all the angels with him, then he will sit on the throne of his glory. All the nations will be gathered before him, and he will separate people one from another as a shepherd separates the sheep from the goats, and he will put the sheep at his right hand and the goats at the left. Then the king will say to those at his right hand, \'Come, you that are blessed by my Father, inherit the kingdom prepared for you from the foundation of the world; for I was hungry and you gave me food, I was thirsty and you gave me something to drink, I was a stranger and you welcomed me, I was naked and you gave me clothing, I was sick and you took care of me, I was in prison and you visited me.\'"',
+          entities: [
+            { word: 'I was hungry and you gave me food, I was a stranger and you welcomed me', node: 'ethics', type: 'concept',
+              note: 'The six works of mercy listed here became the canonical list of "corporal works of mercy" in Catholic moral theology: feeding the hungry, giving drink to the thirsty, welcoming the stranger, clothing the naked, caring for the sick, visiting the imprisoned. But the theological shock of Matthew 25 is not the list but the identification: the hungry person IS Christ, not as metaphor but as the criterion of final judgment. The text does not say "treat the hungry as you would treat Christ" but "you did it TO ME." The hungry person is the site of Christ\'s presence, which means that the religious and the ethical are ontologically identified: there is no encounter with Christ that bypasses the hungry stranger.',
+              parallels: [
+                { label: 'Amos 5 — justice for the vulnerable as the prerequisite for worship', textId: 'amos-5', note: 'Amos 5:21-24: God hates solemn assemblies that are disconnected from justice. Matthew 25:31-46: the criterion of final judgment is not solemn assemblies but care for the hungry, sick, and imprisoned. Both texts are making the same prophetic claim across eight centuries: the test of genuine religion is not the quality of worship but the quality of care for the vulnerable. "Let justice roll down like waters" (Amos) is the same demand as "I was hungry and you gave me food" (Matthew), translated across time.' },
+              ]
+            },
+          ]
+        },
+        {
+          ref: '25:37–40',
+          text: '"Then the righteous will answer him, \'Lord, when was it that we saw you hungry and gave you food, or thirsty and gave you something to drink? And when was it that we saw you a stranger and welcomed you, or naked and gave you clothing? And when was it that we saw you sick or in prison and visited you?\' And the king will answer them, \'Truly I tell you, just as you did it to one of the least of these who are members of my family, you did it to me.\'"',
+          entities: [
+            { word: 'just as you did it to one of the least of these, you did it to me', node: 'divine-immanence', type: 'concept',
+              note: 'The theological crux: the righteous did not know they were serving Christ. Their service was genuine — unmotivated by the desire for heavenly reward, because they did not know the stakes. This is the ethical equivalent of the Bhagavad Gita\'s nishkama karma (desireless action): action without attachment to the outcome, without knowledge of the cosmic significance of the deed. The person who feeds the hungry without knowing it is Christ is precisely the person who has not calculated the religious return on the investment. The hidden Christ rewards those who never looked for him.',
+              parallels: [
+                { label: 'Bhagavad Gita — desireless action; offering without regard to fruit', textId: 'bhagavad-gita-4', note: 'BG 4:20: "He who has abandoned attachment to the fruits of action, who is always content, who is self-sufficient — even while engaged in action, he really does not act." The righteous in Matthew 25 act without knowing the cosmic significance of their action — they feed the hungry because the hungry are hungry, not because of eschatological calculation. This is nishkama karma in action: care for the vulnerable performed without awareness of its divine weight. The Gita describes the disposition; Matthew 25 describes the judgment that vindicates it.' },
+                { label: 'Luke 15 — the father who runs to meet the returning prodigal', textId: 'luke-15-prodigal', note: 'Both the Prodigal Son and the Sheep and Goats parables turn on an unexpected recognition scene. In Luke 15, the father recognizes the returning son "while he was yet a great way off" and runs to meet him. In Matthew 25, the Son of Man recognizes in the least of these his own presence, and this recognition reorganizes all the actions of history. Both parables reveal that the divine has been present in the encounter all along — the father was always looking for the son; Christ was always in the hungry stranger.' },
+              ]
+            },
+          ]
+        },
+      ]
+    },
+    {
+      heading: 'The Other Side — "I Was Hungry and You Gave Me No Food" (25:41–46)',
+      verses: [
+        {
+          ref: '25:41–46',
+          text: '"Then he will say to those at his left hand, \'You that are accursed, depart from me into the eternal fire prepared for the devil and his angels; for I was hungry and you gave me no food, I was thirsty and you gave me nothing to drink, I was a stranger and you did not welcome me, naked and you did not give me clothing, sick and in prison and you did not visit me.\' Then they also will answer, \'Lord, when was it that we saw you hungry or thirsty or a stranger or naked or sick or in prison, and did not take care of you?\' Then he will answer them, \'Truly I tell you, just as you did not do it to one of the least of these, you did not do it to me.\' And these will go away into eternal punishment, but the righteous into eternal life."',
+          entities: [
+            { word: 'just as you did not do it to one of the least of these, you did not do it to me', node: 'judgment', type: 'concept',
+              note: 'The mirror image of 25:40 is more disturbing than the original: those who failed to care also did not know they were failing Christ. Both groups are equally ignorant; the difference is in what they did with the suffering person in front of them. This is the theological argument against the idea that religious ignorance excuses ethical failure: the goats did not know it was Christ, but they knew it was a hungry person. The standard of judgment is not theological knowledge but ethical response to the suffering other. The question "when did we see you?" applies equally to both groups — and both answers are the same: in the hungry stranger.',
+              parallels: [
+                { label: '4 Ezra — the few who are saved and the many who are not', textId: '4-ezra', note: '4 Ezra 8:1: "the world to come for the sake of only a few." Matthew 25:46: "these will go away into eternal punishment, but the righteous into eternal life." Both texts grapple with the same uncomfortable conclusion: not all are saved. But the grounds for the judgment are radically different. 4 Ezra\'s few are mysterious, perhaps predetermined; Matthew 25\'s righteous are defined by an ethic of care that anyone could have practiced. The tension between predestinarian and ethical-works understandings of salvation is already visible in the New Testament itself.' },
+              ]
+            },
+          ]
+        },
+      ]
+    },
+  ]
+};
+
+SCRIPTURE_TEXTS['japji-sahib'] = {
+  title: 'Japji Sahib — Guru Nanak',
+  shortTitle: 'Japji Sahib',
+  tradition: 'Sikh — Guru Granth Sahib',
+  date: 'c. 1500–1522 CE',
+  intro: 'Japji Sahib opens the Guru Granth Sahib (GGS 1–8), the Sikh scripture compiled in 1604 by the fifth Guru, Arjan Dev Ji. It was composed by Guru Nanak (1469–1539), the founder of Sikhism, and is recited by Sikhs every morning as the primary daily prayer. The text opens with the Mool Mantar — the "Root Formula" or "Seed Statement" — which is the theological declaration that grounds the entire Sikh understanding of God: "Ik Onkar" (One God/One Being), followed by the divine attributes (Satnam, Kartapurkh, Nirbhau, Nirvair — True Name, Creative Being, Without Fear, Without Enmity). The Pauris (stanzas) that follow explore how this One can be known: not through ritual, not through intellectual cleverness, not through silence alone, but through Naam (the Name, the divine presence experienced in the heart). Guru Nanak emerged from the encounter of Hinduism and Islam in 15th-century Punjab and synthesized both into something that was neither, insisting on the One beyond all religious division.',
+  crossTradition: [
+    { textId: 'tao-te-ching-1', label: 'Tao Te Ching — the unnameable named; the eternal beyond words', note: 'Tao Te Ching 1: "The Tao that can be told is not the eternal Tao; the name that can be named is not the eternal name." Japji Sahib: "By thinking, He cannot be reduced to thought, even by thinking hundreds of thousands of times" (Pauri 1). Both texts open by establishing the absolute transcendence of ultimate reality beyond all verbal and conceptual grasp — and both then proceed to speak extensively about it anyway. Both are aware of the paradox: the book that begins "the Tao cannot be named" names it for eighty-one chapters; Japji Sahib\'s "He cannot be reduced to thought" runs for thirty-eight stanzas of thought about Him.' },
+    { textId: 'cloud-of-unknowing', label: 'Cloud of Unknowing — thinking cannot reach God; only love/Naam can', note: 'The Cloud: "By love may He be gotten and holden; but by thought, never." Japji Sahib (Pauri 1): "By thinking, He cannot be reduced to thought." Both texts arrive at the same conclusion about the limits of intellectual effort — and both then specify what does reach God. For the Cloud, it is love (the dart of longing love). For Guru Nanak, it is Naam (the divine Name received through the Guru\'s grace and experienced in simran, remembrance). The apophatic move is identical; the prescribed mode of access differs.' },
+    { textId: 'nasadiya-sukta', label: 'Nasadiya Sukta — the One before all divisions; cosmological unknowing', note: 'The Nasadiya Sukta asks who was present before the world existed, and ends with the honest answer: perhaps even God does not know. Japji Sahib\'s Mool Mantar declares that God is "Akal Murat" (deathless form) and "Ajuni" (unborn, before all birth), and the Pauris explore how such a being can be known at all. Both texts begin from the same place: before all divisions (existence/non-existence, male/female, this tradition/that tradition), there was One — and the question of how humans can know that One is the question that drives both hymns.' },
+  ],
+  translations: [
+    { lang: 'en', label: 'Manmohan Singh (1962)' },
+    { lang: 'en-nikky', label: 'Nikky Guninder Kaur Singh (1995)' },
+    { lang: 'pa', label: 'Punjabi / Gurmukhi (original)' },
+  ],
+  sections: [
+    {
+      heading: 'Mool Mantar — The Root Formula (GGS 1)',
+      verses: [
+        {
+          ref: 'GGS 1 (Mool Mantar)',
+          text: 'Ik Onkar — One Being Is. Satnam — Truth is Its Name. Kartapurkh — Creative Being Personified. Nirbhau — Without Fear. Nirvair — Without Enmity. Akaal Murat — Timeless Form. Ajuni — Unborn. Saibhang — Self-Existent. Gurprasad — By Guru\'s Grace.',
+          entities: [
+            { word: 'Ik Onkar — One Being Is', node: 'divine-unity', type: 'concept',
+              note: 'Ik Onkar (literally: One, the sound Om makes, Being) is the most compressed theological statement in the Guru Granth Sahib — and perhaps in world scripture. It is not "there is one God" (a factual claim) but "One Being Is" (an ontological claim). The Ik (One) that precedes the Onkar (the sacred sound of Being) is the absolute priority of unity over multiplicity: before any name, any attribute, any description, there is One. This is structurally identical to the Shema\'s "Hear O Israel, the Lord our God, the Lord is One" (Deuteronomy 6:4) and to the Muslim Shahada\'s "La ilaha illa Allah" (There is no god but God). All three monotheistic traditions in Guru Nanak\'s milieu are making this same foundational claim.',
+              parallels: [
+                { label: 'Deuteronomy 6 — "The Lord our God, the Lord is One"', textId: 'deuteronomy-6', note: 'The Shema (Deuteronomy 6:4) is the foundational monotheistic declaration of Judaism, which shaped both Christianity and Islam. Ik Onkar is Guru Nanak\'s equivalent — the foundational Sikh declaration of divine unity. Guru Nanak emerged in a milieu in which the Shema\'s tradition (through Islam) and the Upanishadic tradition (through Hinduism) were both present, and Ik Onkar synthesizes their common intuition: before all multiplicity, One. The resonance is deliberate — Nanak was in explicit dialogue with both traditions.' },
+                { label: 'Nasadiya Sukta — the One before existence and non-existence', textId: 'nasadiya-sukta', note: 'The Nasadiya Sukta describes the One before creation: "There was neither existence nor non-existence then... That One breathed by its own impulse." The Mool Mantar\'s "Ajuni" (Unborn) and "Saibhang" (Self-Existent) are the same attributes: the One that was before all becoming, that does not need anything else for its existence, that breathes by its own impulse. The Vedic hymn and the Sikh Mool Mantar are describing the same theological necessity: a self-sufficient One prior to all conditioned reality.' },
+              ]
+            },
+          ]
+        },
+      ]
+    },
+    {
+      heading: 'How Is God Known? — The Limits of Human Effort (Pauri 1–4)',
+      verses: [
+        {
+          ref: 'Pauri 1',
+          text: 'By thinking, He cannot be reduced to thought, even by thinking hundreds of thousands of times. By remaining silent, inner silence is not obtained, even by remaining lovingly absorbed in silence. The hunger of the hungry is not appeased, even by piling up loads of worldly goods. Hundreds of thousands of clever tricks, but not even one of them will go along with you in the end. So how can you become truthful? And how can the veil of illusion be torn away? O Nanak, it is written that you shall obey the Hukam of His Command, and walk in Its Way.',
+          entities: [
+            { word: 'By thinking, He cannot be reduced to thought, even by thinking hundreds of thousands of times', node: 'apophatic-theology', type: 'concept',
+              note: 'Guru Nanak\'s opening Pauri performs the same apophatic move as the Cloud of Unknowing ("by thought, never"), the Mundaka ("not by speech, not by the other senses"), and the Tao Te Ching ("the Tao that can be named is not the eternal Tao"). The very first thing Japji Sahib establishes is the limit of the human capacity to reach the divine through its own effort — intellectual (thinking), ascetic (silence), economic (worldly goods). The answer to "how then?" is not another technique but a different category altogether: Hukam (the divine Command / Will) — the divine initiative that responds to surrender, not to effort.',
+              parallels: [
+                { label: 'Tao Te Ching — the Tao beyond naming and thinking', textId: 'tao-te-ching-1', note: 'Tao Te Ching 1: "The Tao that can be told is not the eternal Tao." Japji Sahib Pauri 1: "By thinking, He cannot be reduced to thought." Both texts open with the fundamental apophatic statement and then proceed to describe the Tao/God extensively anyway. The paradox is shared: to say the absolute is beyond language requires language; to say God cannot be reduced to thought requires thought. Both authors are aware of the paradox and write anyway, trusting that the pointing finger can gesture at the moon even if it cannot be the moon.' },
+              ]
+            },
+          ]
+        },
+        {
+          ref: 'Pauri 4',
+          text: 'Truth is higher than everything; but higher still is truthful living. Through the Guru\'s Grace, that treasure of Naam is obtained. O Nanak, having obtained it, the mind becomes clean.',
+          entities: [
+            { word: 'Truth is higher than everything; but higher still is truthful living', node: 'ethics', type: 'concept',
+              note: 'Guru Nanak\'s formulation is one of the most compressed ethical-mystical statements in world scripture: truth (sach) is the highest value, but truthful living (sach achar) is higher still. This is the direct Sikh critique of all purely contemplative or intellectual religion: to know the truth is not enough; to live truthfully is the higher thing. This resonates with Thomas à Kempis ("a virtuous life maketh thee dear to God" over theological discussion), with Amos\'s prophetic demand (justice rolling like water over religious ritual), and with the Confucian hierarchy of virtue over learning.',
+              parallels: [
+                { label: 'Thomas à Kempis — "a virtuous life maketh thee dear to God"', textId: 'thomas-a-kempis', note: 'The Imitation: "lofty words make thee not holy and just; but a virtuous life maketh thee dear to God." Japji Pauri 4: "Truth is higher than everything; but higher still is truthful living." Both texts are making the same hierarchy: the conceptual/verbal (lofty words / knowing truth) is surpassed by the practical/existential (a virtuous life / truthful living). Guru Nanak and Thomas à Kempis, across traditions and centuries, are diagnosing the same religious failure mode: confusing knowing the right things with living them.' },
+                { label: 'Amos 5 — "let justice roll down like waters" over solemn assemblies', textId: 'amos-5', note: 'Amos 5:24: God rejects solemn assemblies in favor of justice rolling like water. Japji Pauri 4: truthful living is higher than merely knowing the truth. Both texts privilege the lived ethical reality over the religious/intellectual form. The Sikh "sach achar" and the Amosian "mishpat" (justice) are both names for the same demand: the sacred must be embodied, not merely professed.' },
+              ]
+            },
+          ]
+        },
+      ]
+    },
+    {
+      heading: 'The Vastness of the One — Beyond All Counting (Pauri 24–27)',
+      verses: [
+        {
+          ref: 'Pauri 24–25',
+          text: 'Countless are the fools, blinded by ignorance. Countless are the thieves and embezzlers. Countless impose their will by force. Countless cut-throats and ruthless killers. Countless sinners who keep on sinning. Countless liars, wandering lost in their lies. Countless wretches, eating the filth of corruption. Countless slanderers, carrying the weight of their foolishness. Nanak says, one who reflects on this comes to feel the most vile and low. Yet to please You, O True Lord, is the offering above all others.',
+          entities: [
+            { word: 'to please You, O True Lord, is the offering above all others', node: 'worship', type: 'concept',
+              note: 'After the long litany of human failure (the countless fools, sinners, liars), Guru Nanak arrives at the one positive: pleasing the True Lord. This is the structural move of the Psalms — Psalm 22\'s cry of dereliction followed by trust in the divine; or the Nasadiya Sukta\'s unknowing followed by the question that implies the questioner trusts there is an answer. The litany of human failure makes the divine the only remaining positive reference. The offering above all others is not ritual, not pilgrimage, not theological knowledge — but pleasing God, which can only be done through truthful living (Pauri 4). The ethical and the devotional are one.',
+              parallels: [
+                { label: 'Psalm 22 — from dereliction to praise; the liturgical inversion', textId: 'psalm-22', note: 'Psalm 22 moves from "My God, my God, why hast thou forsaken me" to "I will declare thy name unto my brethren: in the midst of the congregation will I praise thee." Japji Pauris 24-25 move from the litany of human failure to "to please You is the offering above all others." Both texts use the full weight of human darkness as the ground from which genuine praise becomes possible — not naive praise that ignores suffering, but praise that has passed through the honest reckoning with what is wrong.' },
+              ]
+            },
+          ]
+        },
+      ]
+    },
+  ]
+};
+
+SCRIPTURE_TEXTS['amos-5'] = {
+  title: 'Amos 5 — Let Justice Roll',
+  shortTitle: 'Amos 5',
+  tradition: 'Hebrew Bible / Old Testament',
+  date: 'c. 760–750 BCE',
+  intro: 'Amos was a shepherd from Tekoa in Judah, called to prophesy in the northern kingdom of Israel during a period of economic prosperity and religious complacency. His message is among the most socially radical in the Hebrew Bible: the religious establishment — its festivals, sacrifices, and songs — is actively rejected by God when it coexists with economic exploitation of the poor. The climax of chapter 5 is one of the most quoted lines in world literature: "But let justice roll down like waters, and righteousness like an ever-flowing stream" (5:24). Quoted by Martin Luther King Jr. at the 1963 March on Washington, embedded in liberation theology, and invoked in every generation of social justice movements, it remains the prophetic standard against which religious and political establishments are measured. Amos 5 is also the theological predecessor of Matthew 25: both declare that the criterion of genuine religion is the treatment of the vulnerable.',
+  crossTradition: [
+    { textId: 'matthew-25', label: 'Matthew 25 — the hidden Christ in the poor; justice as the criterion of judgment', note: 'Matthew 25:31-46 and Amos 5:21-24 are the two pillars of the prophetic-ethical tradition. Amos declares God\'s rejection of worship disconnected from justice; Matthew declares that the criterion of final judgment is care for the hungry, stranger, sick, and imprisoned. Eight centuries separate the texts, but the theological claim is identical: God is encountered in the suffering poor, and religious practice that ignores this is not merely insufficient but actively rejected. The movement from Amos to Matthew is the movement from prophetic denunciation to christological disclosure: the same demand, but now the poor are identified as Christ himself.' },
+    { textId: 'japji-sahib', label: 'Japji Sahib — truthful living above ritual; the prophetic demand in Sikh theology', note: 'Japji Sahib Pauri 4: "Truth is higher than everything; but higher still is truthful living." Amos 5:21: "I hate, I despise your festivals, and I take no delight in your solemn assemblies." Both texts, from completely different cultural contexts, make the same prophetic hierarchy: lived ethical reality surpasses ritual correctness. Guru Nanak\'s sach achar (truthful living) and Amos\'s mishpat (justice) are both names for the same demand that authentic religion places on its practitioners.' },
+    { textId: 'yasna-44', label: 'Yasna 44 — asha (truth/righteousness) as the cosmic standard', note: 'Zarathustra\'s asha (truth/righteousness/right order) in Yasna 44 is the cosmic principle that the druj (the Lie) opposes. Amos\'s "righteousness like an ever-flowing stream" (tzedakah) is the social/ethical manifestation of the same demand: that human community align with the cosmic principle of right order. Both traditions — Avestan and Hebrew — use the metaphor of flowing water for the social expression of the divine will: the stream of righteousness is not a human achievement but a natural phenomenon that must be allowed to flow, not dammed up by injustice.' },
+  ],
+  translations: [
+    { lang: 'en', label: 'NRSV' },
+    { lang: 'en-kjv', label: 'King James (1611)' },
+    { lang: 'he', label: 'Hebrew (Masoretic Text)' },
+  ],
+  sections: [
+    {
+      heading: 'Seek Good, Not Evil (5:7; 14–15)',
+      verses: [
+        {
+          ref: '5:7; 14–15',
+          text: 'Ah, you that turn justice to wormwood, and bring righteousness to the ground! [...] Seek good and not evil, that you may live; and so the Lord, the God of hosts, will be with you, just as you have said. Hate evil and love good, and establish justice in the gate; it may be that the Lord, the God of hosts, will be gracious to the remnant of Joseph.',
+          entities: [
+            { word: 'Seek good and not evil, that you may live', node: 'ethics', type: 'concept',
+              note: 'Amos\'s ethical imperative is as compressed as anything in the Hebrew Bible: seek good, not evil, that you may live. The connection between ethical life and life itself (biological, communal, covenantal) is not causal in a mechanical sense but ontological: to seek evil is to move toward death, to seek good is to move toward life, because the structure of reality is ordered toward the good (asha / tzedek / tov). This is the prophetic version of what the Upanishads will say philosophically: Brahman = Sat-Chit-Ananda (Being-Consciousness-Bliss), and to align with Being is to flourish. The prophetic and the philosophical arrive at the same point from different directions.',
+              parallels: [
+                { label: 'Confucius Analects — ren (humaneness) as the ground of the good life', textId: 'confucius-analects', note: 'Confucius Analects 4.5: "The Master said, \'Riches and honours are what men desire. If it cannot be obtained in the proper way, it should not be held. Poverty and meanness are what men dislike. If it cannot be avoided in the proper way, it should not be avoided. If a superior man abandon virtue, how can he fulfil the requirements of that name?\'" Amos: "Seek good and not evil, that you may live." Both the Chinese sage and the Hebrew prophet are making the same argument: the good is not separable from flourishing; to pursue the good IS to pursue life. Ethics and self-interest rightly understood are identical.' },
+              ]
+            },
+          ]
+        },
+      ]
+    },
+    {
+      heading: 'God Hates Your Festivals — The Prophetic Rejection of Empty Worship (5:21–24)',
+      verses: [
+        {
+          ref: '5:21–24',
+          text: 'I hate, I despise your festivals, and I take no delight in your solemn assemblies. Even though you offer me your burnt offerings and grain offerings, I will not accept them; and the offerings of well-being of your fatted animals I will not look upon. Take away from me the noise of your songs; I will not listen to the melody of your harps. But let justice roll down like waters, and righteousness like an ever-flowing stream.',
+          entities: [
+            { word: 'I hate, I despise your festivals... But let justice roll down like waters', node: 'prophetic-tradition', type: 'concept',
+              note: 'The contrast structure of Amos 5:21-24 is one of the most rhetorically powerful passages in world scripture: a sustained divine rejection of religious practice (festivals, burnt offerings, grain offerings, songs, harps) followed by a single positive demand (justice rolling like waters). The force of the passage comes from the completeness of the rejection: not merely supplementing religious practice with justice, but declaring that religious practice without justice is actively hated by God. "I hate, I despise" — not "I prefer," not "I would like more," but hate and despise. This is the prophetic tradition at its most radical.',
+              parallels: [
+                { label: 'Thomas à Kempis — "lofty words make thee not holy; a virtuous life maketh thee dear to God"', textId: 'thomas-a-kempis', note: 'Thomas à Kempis and Amos are making the same structural move: the rejection of the religious form (theological discussion / solemn assemblies) in favor of the ethical substance (virtuous life / justice). Amos is the prophetic voice; Thomas is the medieval devotional voice; the structure is identical. Both are critiques from within the tradition — neither Thomas nor Amos is an outsider attacking religion, but an insider insisting that the tradition has forgotten what it is for.' },
+                { label: 'Matthew 25 — the criterion of judgment is not solemn assemblies but feeding the hungry', textId: 'matthew-25', note: 'Matthew 25:31-46 is the New Testament\'s fulfillment of Amos 5:21-24. Where Amos declares that God rejects worship without justice, Matthew reveals what justice means at the level of final judgment: feeding the hungry, welcoming the stranger, visiting the imprisoned. Both texts declare that the religious performance (festivals / solemn assemblies / theological confession) is measured by the ethical reality. The prophetic and the eschatological traditions are saying the same thing across eight centuries.' },
+              ]
+            },
+          ]
+        },
+        {
+          ref: '5:24 (standalone)',
+          text: '"But let justice roll down like waters, and righteousness like an ever-flowing stream."',
+          entities: [
+            { word: 'let justice roll down like waters, and righteousness like an ever-flowing stream', node: 'justice', type: 'concept',
+              note: 'The water metaphor is precisely chosen: justice is not to be dispensed like a controlled faucet (a little, now and then, when convenient) but to roll like a river — unstoppable, self-replenishing, carving its own channel. The ever-flowing stream (Hebrew: nahal etan — an always-flowing wadi, not a seasonal one) is the image of a justice that does not stop when it becomes inconvenient. Martin Luther King Jr. quoted this verse at the 1963 March on Washington, choosing it precisely for the unconditional quality of the demand: not "let there be more justice" but "let justice ROLL" — an irresistible natural force that the status quo cannot contain. The image crosses into the Yasna 44 tradition of asha (righteousness) as the cosmic principle of right order that Ahura Mazda sustains against the druj. Water flows; righteousness flows. Both are the natural state of things when unobstructed.',
+              parallels: [
+                { label: 'Yasna 44 — asha as the cosmic principle of right order that must flow', textId: 'yasna-44', note: 'Yasna 44 asks Ahura Mazda who sustains the cosmic order of asha (righteousness/right order) against the druj (the Lie/disorder). Amos 5:24 declares that social justice (mishpat) and righteousness (tzedakah) must roll like a river. Both texts use the metaphor of natural flow to describe the proper state of ethical reality: asha/justice is not a human construction that must be effortfully maintained but a cosmic principle that flows naturally when unobstructed by the druj/evil. The prophet and the prophet-sage across different traditions describe the same thing: righteousness is the natural state of the cosmos; injustice is the blockage.' },
+              ]
+            },
+          ]
+        },
+      ]
+    },
+  ]
+};

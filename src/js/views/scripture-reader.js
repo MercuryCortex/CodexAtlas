@@ -25,6 +25,7 @@ window.ScriptureReader = (function () {
     'proverbs-8':         { religion:'Christianity', group:'Old Testament',          canon:'All Canons',          sort:30 },
     'psalm-22':           { religion:'Christianity', group:'Old Testament',          canon:'All Canons',          sort:40 },
     'psalm-82':           { religion:'Christianity', group:'Old Testament',          canon:'All Canons',          sort:50 },
+    'amos-5':             { religion:'Christianity', group:'Old Testament',          canon:'All Canons',          sort:53 },
     'isaiah-6':           { religion:'Christianity', group:'Old Testament',          canon:'All Canons',          sort:60 },
     'isaiah-45':          { religion:'Christianity', group:'Old Testament',          canon:'All Canons',          sort:70 },
     'ezekiel-1':          { religion:'Christianity', group:'Old Testament',          canon:'All Canons',          sort:80 },
@@ -37,11 +38,13 @@ window.ScriptureReader = (function () {
     'daniel-7':           { religion:'Christianity', group:'Old Testament',          canon:'All Canons',          sort:75 },
     // ── Christianity — New Testament ────────────────────────────────
     'john-1':             { religion:'Christianity', group:'New Testament',          canon:'All Canons',          sort:10 },
+    'john-17':            { religion:'Christianity', group:'New Testament',          canon:'All Canons',          sort:12 },
     'john-3':             { religion:'Christianity', group:'New Testament',          canon:'All Canons',          sort:20 },
     'romans-8':           { religion:'Christianity', group:'New Testament',          canon:'All Canons',          sort:30 },
     '1-corinthians-15':   { religion:'Christianity', group:'New Testament',          canon:'All Canons',          sort:40 },
     'revelation-12':      { religion:'Christianity', group:'New Testament',          canon:'All Canons',          sort:50 },
     'matthew-sermon-mount': { religion:'Christianity', group:'New Testament',        canon:'All Canons',          sort:25 },
+    'matthew-25':         { religion:'Christianity', group:'New Testament',          canon:'All Canons',          sort:26 },
     'philippians-2':      { religion:'Christianity', group:'New Testament',          canon:'All Canons',          sort:45 },
     'colossians-1':       { religion:'Christianity', group:'New Testament',          canon:'All Canons',          sort:46 },
     '1-john-4':           { religion:'Christianity', group:'New Testament',          canon:'All Canons',          sort:65 },
@@ -129,12 +132,14 @@ window.ScriptureReader = (function () {
     'yasna-44':           { religion:'Zoroastrianism',group:'Gathas',                canon:'Avesta',              sort:20 },
     'popol-vuh':          { religion:'Mesoamerican',  group:"K'iche' Maya",          canon:"K'iche' Maya Canon",  sort:10 },
     'voluspa':            { religion:'Norse',         group:'Poetic Edda',           canon:'Eddic Poetry',        sort:10 },
+    // ── Sikhism ─────────────────────────────────────────────────────
+    'japji-sahib':        { religion:'Sikhism',       group:'Guru Granth Sahib',     canon:'Classical Sikh',      sort:10 },
     // ── Chinese Philosophy ──────────────────────────────────────────
     'confucius-analects': { religion:'Chinese Philosophy', group:'Classical Confucianism', canon:'Classical Chinese',  sort:10 },
   };
 
   const RELIGION_ORDER = [
-    'Christianity', 'Judaism', 'Islam', 'Hinduism', 'Buddhism', 'Taoism',
+    'Christianity', 'Judaism', 'Islam', 'Sikhism', 'Hinduism', 'Buddhism', 'Taoism',
     'Chinese Philosophy', 'Hermeticism', 'Greek Philosophy', 'Ancient Egyptian', 'Mesopotamian',
     'Zoroastrianism', 'Mesoamerican', 'Norse',
   ];
@@ -149,6 +154,7 @@ window.ScriptureReader = (function () {
     'Mesopotamian':    ['Sumerian', 'Babylonian'],
     'Judaism':         ['Nevi\'im (Prophets)', 'Merkabah / Hekhalot', 'Kabbalah'],
     'Islam':           ['Quran', 'Sufism'],
+    'Sikhism':         ['Guru Granth Sahib'],
     'Hermeticism':     ['Corpus Hermeticum'],
     'Greek Philosophy':['Plato', 'Neoplatonism', 'Mystery Traditions'],
   };
