@@ -114,6 +114,8 @@
       '<span class="forge-status-k">lock</span><span class="forge-status-v" id="forge-status-lock">—</span>',
       '<span class="forge-status-sep">·</span>',
       '<span class="forge-status-k">frame</span><span class="forge-status-v" id="forge-status-frame">—</span>',
+      '<span class="forge-status-spacer"></span>',
+      '<input type="text" class="forge-status-search" id="forge-status-search" placeholder="search…" autocomplete="off" spellcheck="false">',
     ].join('');
     shell.appendChild(status);
 
@@ -344,6 +346,23 @@
         modeSelectEl.addEventListener('change', (ev) => {
           if (local.destroyed) return;
           rebuildForMode(ev.target.value);
+        });
+      }
+
+      // Search wire-up (Phase 4f).
+      const searchEl = document.getElementById('forge-status-search');
+      if (searchEl) {
+        // Enter → search + fly-to. Live-typing doesn't fire to
+        // avoid camera lurching with each keystroke; user commits.
+        searchEl.addEventListener('keydown', (ev) => {
+          if (local.destroyed) return;
+          if (ev.key === 'Enter') {
+            ev.preventDefault();
+            handleSearch(searchEl.value);
+          } else if (ev.key === 'Escape') {
+            searchEl.value = '';
+            searchEl.blur();
+          }
         });
       }
 
@@ -715,6 +734,94 @@
         }
       }
       recomputeFocus();
+    }
+
+    // ── Search (Phase 4f) ─────────────────────────────
+    // Substring match (case-insensitive) across title, id, and
+    // aka of the CURRENT mode's nodes. First match wins; ties
+    // broken by degree (highest first) so "zeus" beats a tiny
+    // "zeusite" stub. Returns the node id, or null.
+    function findBestMatch(query) {
+      const q = (query || '').trim().toLowerCase();
+      if (!q) return null;
+      const nodes = local.mode.nodes;
+      let bestExact = null, bestExactDeg = -1;
+      let bestPrefix = null, bestPrefixDeg = -1;
+      let bestContains = null, bestContainsDeg = -1;
+      for (const n of nodes) {
+        if (!n) continue;
+        const title = String(n.title || '').toLowerCase();
+        const id    = String(n.id || '').toLowerCase();
+        // Build a small haystack list: title, id, then any aka aliases.
+        const akaArr = Array.isArray(n.aka) ? n.aka : [];
+        const haystacks = [title, id];
+        for (const a of akaArr) {
+          if (typeof a === 'string') haystacks.push(a.toLowerCase());
+        }
+        const deg = (local.mode.adjacency.get(n.id) || new Set()).size;
+        for (const h of haystacks) {
+          if (h === q) {
+            if (deg > bestExactDeg) { bestExact = n.id; bestExactDeg = deg; }
+          } else if (h.startsWith(q)) {
+            if (deg > bestPrefixDeg) { bestPrefix = n.id; bestPrefixDeg = deg; }
+          } else if (h.indexOf(q) >= 0) {
+            if (deg > bestContainsDeg) { bestContains = n.id; bestContainsDeg = deg; }
+          }
+        }
+      }
+      return bestExact || bestPrefix || bestContains;
+    }
+
+    // Submit a search query. On match: lock the node, fly the
+    // camera to frame the node + its 1-hop neighbourhood.
+    function handleSearch(query) {
+      const hitId = findBestMatch(query);
+      if (!hitId) return;
+      // Replace lock with just this hit (search should focus, not
+      // accumulate). User can still cmd-click to compound.
+      local.lockedSet.clear();
+      local.lockedSet.add(hitId);
+      const lEl = document.getElementById('forge-status-lock');
+      if (lEl) lEl.textContent = String(local.lockedSet.size);
+      recomputeFocus();
+      // Camera fly-to: frame the hit + its 1-hop neighbours into the viewport.
+      flyToFocusedSet();
+      if (camera.isAnimating()) startAnimLoop();
+    }
+
+    // Compute a target camera (centre + scale) that frames the
+    // current focused set into the viewport with margin, then
+    // call camera.flyTo() to ease there.
+    function flyToFocusedSet() {
+      const focus = local.focusedSet;
+      if (!focus || !focus.size) return;
+      const vp = local.lastSize;
+      if (!vp.w || !vp.h) return;
+      // World-space bbox of the focused nodes' positions, padded
+      // by an extra disk radius so circles aren't clipped at the
+      // viewport edge.
+      let x0 =  Infinity, y0 =  Infinity, x1 = -Infinity, y1 = -Infinity;
+      const hitNodes = local.mode.hitNodes;
+      for (let i = 0; i < hitNodes.length; i++) {
+        const n = hitNodes[i];
+        if (!focus.has(n.id)) continue;
+        if (n.x - n.r < x0) x0 = n.x - n.r;
+        if (n.y - n.r < y0) y0 = n.y - n.r;
+        if (n.x + n.r > x1) x1 = n.x + n.r;
+        if (n.y + n.r > y1) y1 = n.y + n.r;
+      }
+      if (!isFinite(x0)) return;
+      // Margin so labels have breathing room above each disk.
+      const padW = 60;   // world units
+      x0 -= padW; y0 -= padW; x1 += padW; y1 += padW;
+      const worldW = x1 - x0;
+      const worldH = y1 - y0;
+      const targetScale = Math.min(vp.w / worldW, vp.h / worldH);
+      camera.flyTo({
+        centerX: (x0 + x1) / 2,
+        centerY: (y0 + y1) / 2,
+        scale:   targetScale,
+      }, 0.55);
     }
 
     // Toggle the locked state for a node. Click on an empty

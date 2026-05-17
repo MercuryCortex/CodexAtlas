@@ -5512,7 +5512,7 @@ body.view-alphabets main.canvas { padding-bottom: 220px; }
   color: var(--gold);
 }
 .item.forge-nav::after {
-  content: 'p4e';
+  content: 'p4f';
   margin-left: 6px;
   font-family: var(--mono); font-size: 9px;
   letter-spacing: 0.08em;
@@ -5593,6 +5593,31 @@ body.nav-collapsed .item.forge-nav::after { display: none; }
   background: var(--bg-1);
   color: var(--text-1);
 }
+
+/* Spacer pushes the search input to the right edge of the strip. */
+.forge-status-spacer { flex: 1 1 auto; }
+
+/* Search input (Phase 4f). Lives at the right end of the status
+   strip. Enter commits → camera flies to the match. */
+.forge-status-search {
+  appearance: none; -webkit-appearance: none;
+  background: rgba(13, 17, 25, 0.85);
+  color: var(--text-0);
+  font-family: var(--mono); font-size: 11px;
+  letter-spacing: 0.04em;
+  border: 1px solid var(--border, #2a2e3a);
+  border-radius: 3px;
+  padding: 3px 10px;
+  outline: none;
+  min-width: 200px;
+}
+.forge-status-search::placeholder { color: var(--text-3); }
+.forge-status-search:hover  { border-color: var(--gold-soft); }
+.forge-status-search:focus  { border-color: var(--gold); color: var(--text-0); }
+
+/* The status bar uses flex; ensure the right-aligned children
+   (spacer + search) actually flex-align correctly. */
+.forge-status { display: flex; align-items: center; }
 
 .forge-stage {
   flex: 1 1 auto;

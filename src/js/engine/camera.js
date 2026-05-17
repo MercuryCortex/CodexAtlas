@@ -57,10 +57,11 @@
       scale:   typeof o.scale   === 'number' ? o.scale   : 1,
     };
 
-    // Animation state (Phase 4c). Closure-local so each camera
+    // Animation state (Phase 4c + 4f). Closure-local so each camera
     // instance has its own in-flight motion. See `tick(dt)`.
-    let panAnim  = null;  // { vx, vy }  in CSS px / second
-    let zoomAnim = null;  // { targetScale, worldX, worldY, screenX, screenY, vw, vh }
+    let panAnim   = null;  // { vx, vy }  in CSS px / second
+    let zoomAnim  = null;  // { targetScale, worldX, worldY, screenX, screenY, vw, vh }
+    let flyToAnim = null;  // { fromX, fromY, fromScale, toX, toY, toScale, duration, elapsed }
 
     // Listeners — view layer subscribes to re-draw when the
     // camera moves. Multiple subscribers supported.
@@ -169,8 +170,9 @@
         state.scale   = s;
         // Cancel any in-flight animations — fit-to-extent is a
         // teleport, not an ease.
-        panAnim = null;
-        zoomAnim = null;
+        panAnim   = null;
+        zoomAnim  = null;
+        flyToAnim = null;
         _emit();
       },
 
@@ -239,19 +241,53 @@
       stopAnim() {
         panAnim = null;
         zoomAnim = null;
+        flyToAnim = null;
       },
 
-      // Returns true if either animation is in flight.
+      // Cinematic fly-to — animate centre + scale from current
+      // state toward (targetCenterX, targetCenterY, targetScale)
+      // over `duration` seconds with ease-out-cubic. Used by the
+      // search bar in Phase 4f to glide the camera to a hit. Any
+      // other in-flight animation (pan inertia, wheel ease) is
+      // cancelled — fly-to is a deliberate direction, not a
+      // hand-off from momentum.
+      flyTo(target, duration) {
+        const tx = (typeof target.centerX === 'number') ? target.centerX : state.centerX;
+        const ty = (typeof target.centerY === 'number') ? target.centerY : state.centerY;
+        const ts = (typeof target.scale   === 'number') ? Math.max(MIN_SCALE, Math.min(MAX_SCALE, target.scale)) : state.scale;
+        panAnim  = null;
+        zoomAnim = null;
+        flyToAnim = {
+          fromX: state.centerX, fromY: state.centerY, fromScale: state.scale,
+          toX: tx, toY: ty, toScale: ts,
+          duration: Math.max(0.05, duration || 0.6),
+          elapsed: 0,
+        };
+      },
+
+      // Returns true if any animation is in flight.
       isAnimating() {
-        return !!(panAnim || zoomAnim);
+        return !!(panAnim || zoomAnim || flyToAnim);
       },
 
-      // Advance both animations by `dt` seconds. Returns true if
-      // motion is still in flight after this tick.
+      // Advance all in-flight animations by `dt` seconds. Returns
+      // true if motion is still in flight after this tick.
       tick(dt) {
-        if (!panAnim && !zoomAnim) return false;
+        if (!panAnim && !zoomAnim && !flyToAnim) return false;
         let changed = false;
         if (dt <= 0) dt = 1 / 60;
+
+        if (flyToAnim) {
+          flyToAnim.elapsed += dt;
+          const t = Math.min(1, flyToAnim.elapsed / flyToAnim.duration);
+          // Ease-out cubic: 1 - (1 - t)^3 — fast start, soft land.
+          const e = 1 - Math.pow(1 - t, 3);
+          state.centerX = flyToAnim.fromX + (flyToAnim.toX - flyToAnim.fromX) * e;
+          state.centerY = flyToAnim.fromY + (flyToAnim.toY - flyToAnim.fromY) * e;
+          state.scale   = flyToAnim.fromScale + (flyToAnim.toScale - flyToAnim.fromScale) * e;
+          changed = true;
+          if (t >= 1) flyToAnim = null;
+        }
 
         if (panAnim) {
           // World delta = (vx * dt) / scale (vx is in CSS px / s).
@@ -293,7 +329,7 @@
         }
 
         if (changed) _emit();
-        return !!(panAnim || zoomAnim);
+        return !!(panAnim || zoomAnim || flyToAnim);
       },
     };
   }
