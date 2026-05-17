@@ -80,3 +80,17 @@ This means that Lakota spiritual authority is not institutional (no clergy ordai
 3. Irwin, L. (1994). *The Dream Seekers: Native American Visionary Traditions of the Great Plains*. Oklahoma UP. [Tier 1]
 4. Powers, W.K. (1977). *Oglala Religion*. Nebraska UP. [Tier 1]
 5. Halifax, J. (1979). *Shamanic Voices: A Survey of Visionary Narratives*. Dutton. [Tier 2 — comparative]
+
+## Vault Connections
+
+- [[tradition-lakota]] — the Seven Sacred Rites; Haŋbléčheyapi as the second rite
+- [[white-buffalo-calf-woman]] — bringer of the Seven Rites; the vision quest is her gift
+- [[wakan-tanka]] — the Great Mystery; what the vision quest candidate cries out to
+- [[ritual-sweat-lodge]] — Inípi precedes the vision quest; purification before wilderness encounter
+- [[ritual-sun-dance]] — the communal intensification of the vision quest structure; same visionary logic embedded in ceremony
+- [[moses]] — 40 days on Sinai; the Mosaic wilderness encounter as prophetic authentication parallel
+- [[elijah-prophet]] — 40 days to Horeb; the still, small voice in the wilderness cave
+- [[ritual-fasting-cross-tradition]] — the fasting dimension; vision quest as the Indigenous Americas node in the cross-tradition fasting cluster
+- [[ritual-ordination-laying-hands]] — authority-authentication parallel: the vision quest establishes spiritual authority through direct encounter, not institutional transmission
+- [[ritual-bori-spirit-possession]] — spirit-encounter parallel: both traditions establish direct relationship with non-human beings as the source of healing authority
+- [[ritual-seidr]] — Norse shamanic world-journey parallel: trance-departure, spirit encounter, return with knowledge

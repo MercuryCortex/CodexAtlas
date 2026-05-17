@@ -67,3 +67,16 @@ The purification is not moral cleansing of sin (there is no sin-concept in class
 2. Walker, J.R. (1980). *Lakota Belief and Ritual*. Ed. DeMallie and Jahner. Nebraska UP. [Tier 1]
 3. Bruchac, J. (1993). *The Native American Sweat Lodge: History and Legends*. Crossing Press. [Tier 2]
 4. Laubin, R. and G. Laubin (1957). *The Indian Tipi: Its History, Construction, and Use*. Oklahoma UP. [Tier 2 — comparative Plains structures]
+
+## Vault Connections
+
+- [[tradition-lakota]] — theological matrix; the Seven Sacred Rites; Inípi is the first and foundational
+- [[white-buffalo-calf-woman]] — bringer of the Seven Rites; Inípi is the first rite she gave
+- [[wakan-tanka]] — the Great Mystery; the stones (*tȟuŋkášila*) are the oldest beings in the Wakan cosmology
+- [[ritual-sun-dance]] — Inípi precedes the Sun Dance; no major ceremony proceeds without purification
+- [[ritual-vision-quest]] — Inípi precedes the vision quest; the purification before wilderness encounter
+- [[ritual-mikveh-immersion]] — water purification parallel: immersion in living water for ontological change; death-rebirth structure
+- [[ritual-baptism]] — water-as-rebirth parallel: the Christian womb-of-the-font theology mirrors the lodge-as-womb
+- [[ritual-misogi-purification]] — Shinto water purification parallel: the moving-water requirement; purification before kami-encounter
+- [[ritual-fasting-cross-tradition]] — the fast accompanying the lodge; bodily emptying as preparation for sacred encounter
+- [[ritual-ordination-laying-hands]] — authority-authentication parallel: the sweat lodge is the prerequisite that validates all subsequent ceremonial authority

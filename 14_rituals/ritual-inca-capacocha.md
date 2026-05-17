@@ -83,3 +83,14 @@ A human who dies at a mountain peak in the correct ritual context becomes a huac
 3. Molina, C. de. (2011 [c.1574]). *Account of the Fables and Rites of the Incas*. Trans. Bauer, Smith, and Araoz. UT Press. [Tier 1]
 4. McEwan, C. and M.A. van de Guchte (1992). "Ancestral Time and Sacred Space in Inca State Ritual." in *The Ancient Americas: Art from Sacred Landscapes*. Chicago: Art Institute. [Tier 1]
 5. Wilson, A.S. et al. (2007). "Stable isotope and DNA evidence for ritual sequences in Inca child sacrifice." *PNAS* 104(42): 16456–16461. [Tier 1 — the Llullaillaco isotopic study]
+
+## Vault Connections
+
+- [[tradition-inca-andean]] — the theological matrix; huaca religion; Inti as solar patron
+- [[inti]] — the Sun; Inca imperial patron; capacocha at Inti Raymi honors him directly
+- [[pachamama]] — Earth Mother; mountain peaks are sacred to her; the children are entrusted to her keeping
+- [[ritual-sacrifice]] — the broader sacrificial logic; capacocha as the most intensive Andean form
+- [[ritual-aztec-autosacrifice]] — Aztec child sacrifice to Tlaloc for rain as the parallel Mesoamerican answer
+- [[abraham-patriarch]] — the Aqedah: near-sacrifice of Isaac as the comparative case; ram substitution as the alternate resolution to the same theological premise
+- [[isaac-patriarch]] — the child offered; the Andean capacocha child's role parallels Isaac's precisely
+- [[ritual-yajna-vedic-fire]] — fire and soma offering parallel: the Vedic ashvamedha as another imperial ritual requiring costly sacrifice at state transitions

@@ -76,3 +76,15 @@ The Spanish prohibition of autosacrifice and human sacrifice (1521 onward) was t
 4. Clendinnen, I. (1991). *Aztecs: An Interpretation*. Cambridge UP. [Tier 1 — the phenomenological account]
 5. Read, K.A. (1998). *Time and Sacrifice in the Aztec Cosmos*. Indiana UP. [Tier 1]
 6. Umberger, E. (2007). "Historia del Arte e Imperio Azteca." *Res: Anthropology and Aesthetics* 52. [Tier 2]
+
+## Vault Connections
+
+- [[tradition-aztec-mexica]] — the theological matrix; blood debt as the organizing cosmological principle
+- [[quetzalcoatl]] — descended to Mictlan; shed his blood to create the Fifth Sun's humans; the autosacrifice mythology's primary agent
+- [[tlaloc]] — rain deity; autosacrifice to Tlaloc precedes planting; blood and tears call the rain
+- [[tonatiuh]] — the Fifth Sun; fed by blood offerings; without autosacrifice the sun stops
+- [[phase-8-004-florentine-codex-sahagun]] — primary source documenting autosacrifice ritual sequences
+- [[ritual-sun-dance]] — body-piercing sacrifice parallel: the self given as the highest offering; cosmic exchange logic
+- [[ritual-sacrifice]] — the broader sacrificial complex; Mexica autosacrifice as the individualized daily form
+- [[ritual-inca-capacocha]] — Andean parallel: child sacrifice as the alternate solution to the question of what the divine requires
+- [[ritual-yajna-vedic-fire]] — fire-offering parallel: Vedic priests also practice bodily discipline before sacrifice; the oblation rises in smoke

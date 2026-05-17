@@ -69,3 +69,11 @@ The 1951 revision of the Indian Act removed the ban. Many communities, particula
 3. Codere, H. (1950). *Fighting with Property: A Study of Kwakiutl Potlatching and Warfare, 1792–1930*. Monographs of the American Ethnological Society. [Tier 1]
 4. Cole, D. and I. Chaikin (1990). *An Iron Hand Upon the People: The Law Against the Potlatch on the Northwest Coast*. Douglas & McIntyre. [Tier 1 — the colonial prohibition]
 5. Bracken, C. (1997). *The Potlatch Papers: A Colonial Case History*. Chicago UP. [Tier 1]
+
+## Vault Connections
+
+- [[ritual-sacrifice]] — the gift-giving logic of sacrifice; potlatch destruction of property as a form of offering
+- [[ritual-yom-kippur-atonement]] — contrast: Yom Kippur is communal spiritual clearing; potlatch is communal status performance through giving; both are ceremonial reset rituals
+- [[ritual-yajna-vedic-fire]] — Vedic fire sacrifice parallel: the patron's wealth destroyed in fire as the offering; cosmic reciprocity as the justification
+- [[ritual-langar]] — Sikh free communal kitchen parallel: wealth given without condition, status inverted at the meal; both use radical giving as social architecture
+- [[tradition-native-american]] — parent tradition; potlatch as one of the two greatest economic-theological systems of indigenous North America

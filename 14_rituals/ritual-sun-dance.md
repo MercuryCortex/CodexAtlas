@@ -81,3 +81,17 @@ The U.S. Office of Indian Affairs banned the Sun Dance in 1883 as part of the In
 3. Powers, W.K. (1977). *Oglala Religion*. Nebraska UP. [Tier 1]
 4. Jorgensen, J.G. (1972). *The Sun Dance Religion: Power for the Powerless*. Chicago UP. [Tier 1 — comparative Plains study]
 5. DeMallie, R.J. (1984). *The Sixth Grandfather*. Nebraska UP. [Tier 1]
+
+## Vault Connections
+
+- [[tradition-lakota]] — Lakota theological matrix; the Seven Sacred Rites of which Sun Dance is the central ceremony
+- [[wakan-tanka]] — the Great Mystery; to whom the offering of the piercing is made
+- [[white-buffalo-calf-woman]] — mythological founder who brought the Seven Rites including the Sun Dance
+- [[wi-sun-lakota]] — the Sun; the direction of the dance; the celestial patron
+- [[ritual-vision-quest]] — embedded within the Sun Dance; the same visionary logic in communal form
+- [[ritual-sweat-lodge]] — Inípi precedes the Sun Dance; purification before sacrifice
+- [[ritual-aztec-autosacrifice]] — body-piercing sacrifice parallel: blood as the highest offering; self as the medium
+- [[ritual-sacrifice]] — the broader sacrificial logic; Sun Dance as the Lakota instantiation of self-sacrifice
+- [[ritual-yajna-vedic-fire]] — fire and smoke offering parallel: the Vedic homa as the Indo-European counterpart to Plains smoke-prayer
+- [[ritual-yom-kippur-atonement]] — bodily atonement parallel: fasting + bodily denial in exchange for divine favor and communal renewal
+- [[ritual-fasting-cross-tradition]] — the four-day fast without food or water as the physiological technology of visionary access
