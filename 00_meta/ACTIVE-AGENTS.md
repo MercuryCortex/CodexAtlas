@@ -2204,7 +2204,11 @@ Files: sacred-cauldron.md (NEW) · cerridwen.md (STUB, deity) · bran-the-blesse
 
 ---
 
-## ritual-wiring-cross-tradition-1 — vault connection wiring on 13 Egyptian/Greek/Roman/Mesopotamian ritual nodes — IN PROGRESS (2026-05-17)
-- Owned: all 13 Egyptian/Greek/Roman/Mesopotamian ritual nodes in `14_rituals/`
-- Batches: ritual-wiring-egyptian-1, ritual-wiring-greek-roman-1, ritual-wiring-mesopotamian-1
-- Status: IN PROGRESS
+## ~~ritual-wiring-cross-tradition-1 — vault connection wiring on 13 Egyptian/Greek/Roman/Mesopotamian ritual nodes — FINISHED (2026-05-17)~~
+- ~~Owned: all 13 Egyptian/Greek/Roman/Mesopotamian ritual nodes in `14_rituals/`~~
+- ~~Batches: ritual-wiring-egyptian-1 (commit 03891fa) · ritual-wiring-greek-roman-1 (commit 24baf53) · ritual-wiring-mesopotamian-1 (commit ebf53ac)~~
+- ~~Build: 17273 edges (up from 17253) · 0 YAML errors · 0 dead links introduced~~
+- ~~Egyptian (6 nodes): thoth/book-of-the-dead/pyramid-texts/coffin-texts/amduat/nephthys/mut/khonsu/amun-ra/horus/ptah/chitragupta/navjote + tradition-egyptian-religion~~
+- ~~Greek/Roman (4 nodes): hestia/juno/mars-roman/ares/dionysus/jupiter + tradition-greek-religion + cross-refs + sacrifice-as-cosmic-renewal/scapegoat-mechanism/cosmic-cycles/priestly-purity/temple-economy~~
+- ~~Mesopotamian (3 nodes): nanna-sin/ishtar-akkadian/utu-shamash/enki-ea/nergal/nebuchadnezzar-ii/hammurabi/gilgamesh-king/geshtinanna/dumuzi-tammuz/ereshkigal + bridal-mysticism/divine-feminine/chaoskampf/divinatory-calendar~~
+- ~~Status: FINISHED~~
