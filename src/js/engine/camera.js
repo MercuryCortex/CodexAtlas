@@ -57,6 +57,11 @@
       scale:   typeof o.scale   === 'number' ? o.scale   : 1,
     };
 
+    // Animation state (Phase 4c). Closure-local so each camera
+    // instance has its own in-flight motion. See `tick(dt)`.
+    let panAnim  = null;  // { vx, vy }  in CSS px / second
+    let zoomAnim = null;  // { targetScale, worldX, worldY, screenX, screenY, vw, vh }
+
     // Listeners — view layer subscribes to re-draw when the
     // camera moves. Multiple subscribers supported.
     const listeners = new Set();
@@ -162,10 +167,153 @@
         state.centerX = (extent.x0 + extent.x1) / 2;
         state.centerY = (extent.y0 + extent.y1) / 2;
         state.scale   = s;
+        // Cancel any in-flight animations — fit-to-extent is a
+        // teleport, not an ease.
+        panAnim = null;
+        zoomAnim = null;
         _emit();
+      },
+
+      // ── ANIMATION (Phase 4c — cinematic camera) ──────
+      //
+      // Two independent sub-systems both ticked by `tick(dt)`:
+      //
+      //   panAnim  — pan inertia. Velocity in CSS px / second.
+      //              Decays exponentially with time constant
+      //              PAN_TAU.  Released by `kickPanVelocity` at
+      //              the end of a drag gesture.
+      //
+      //   zoomAnim — zoom ease. Wheel events accumulate a target
+      //              scale + an anchor (world point under the
+      //              cursor at wheel time). Each tick eases the
+      //              actual scale toward the target and recomputes
+      //              center so the anchor stays pinned under the
+      //              screen position throughout the ease.
+      //
+      // `tick(dt)` returns true when motion is still in flight;
+      // the view layer's rAF loop uses that to decide whether to
+      // schedule another frame.
+      //
+      // Idle (no pan, no zoom) → tick is never called.
+
+      kickPanVelocity(vxPx, vyPx) {
+        // CSS-pixel velocity. Sub-pixel velocities get clamped to
+        // zero so a slow drag doesn't trigger a barely-visible drift.
+        if (Math.abs(vxPx) < PAN_KICK_THRESHOLD && Math.abs(vyPx) < PAN_KICK_THRESHOLD) {
+          panAnim = null;
+          return;
+        }
+        panAnim = { vx: vxPx, vy: vyPx };
+      },
+
+      // Bump the zoom target by `factor` while keeping the world
+      // point under (anchorSx, anchorSy) pinned. Compounds with
+      // previous wheel events that haven't settled yet.
+      nudgeZoomTarget(factor, anchorSx, anchorSy, viewport) {
+        if (factor === 1 || !factor) return;
+        // If a zoom animation is in flight, compound the factor
+        // against the EXISTING target (not the current scale) so
+        // rapid wheel ticks accumulate cleanly.
+        const base = zoomAnim ? zoomAnim.targetScale : state.scale;
+        const next = Math.max(MIN_SCALE, Math.min(MAX_SCALE, base * factor));
+        if (next === state.scale && !zoomAnim) return;
+        // World anchor — resolve at CURRENT scale (not target),
+        // so successive wheel events at the same cursor position
+        // walk through world space consistently.
+        const wAnchorX = (anchorSx - viewport.w / 2) / state.scale + state.centerX;
+        const wAnchorY = (anchorSy - viewport.h / 2) / state.scale + state.centerY;
+        zoomAnim = {
+          targetScale: next,
+          worldX: wAnchorX,
+          worldY: wAnchorY,
+          screenX: anchorSx,
+          screenY: anchorSy,
+          vw: viewport.w,
+          vh: viewport.h,
+        };
+      },
+
+      // Cancel in-flight animations — used when starting a new
+      // drag (pan inertia from a previous release shouldn't keep
+      // adding momentum) or on view teardown.
+      stopAnim() {
+        panAnim = null;
+        zoomAnim = null;
+      },
+
+      // Returns true if either animation is in flight.
+      isAnimating() {
+        return !!(panAnim || zoomAnim);
+      },
+
+      // Advance both animations by `dt` seconds. Returns true if
+      // motion is still in flight after this tick.
+      tick(dt) {
+        if (!panAnim && !zoomAnim) return false;
+        let changed = false;
+        if (dt <= 0) dt = 1 / 60;
+
+        if (panAnim) {
+          // World delta = (vx * dt) / scale (vx is in CSS px / s).
+          const dx = panAnim.vx * dt / state.scale;
+          const dy = panAnim.vy * dt / state.scale;
+          state.centerX -= dx;
+          state.centerY -= dy;
+          // Exponential decay. v *= exp(-dt / PAN_TAU).
+          const k = Math.exp(-dt / PAN_TAU);
+          panAnim.vx *= k;
+          panAnim.vy *= k;
+          if (Math.abs(panAnim.vx) < PAN_STOP_THRESHOLD &&
+              Math.abs(panAnim.vy) < PAN_STOP_THRESHOLD) {
+            panAnim = null;
+          }
+          changed = true;
+        }
+
+        if (zoomAnim) {
+          // Critically damped ease: scale → target.
+          const remaining = zoomAnim.targetScale - state.scale;
+          if (Math.abs(remaining) < ZOOM_STOP_THRESHOLD) {
+            state.scale = zoomAnim.targetScale;
+            // Snap centre to the exact final position so the
+            // world anchor sits perfectly on the screen anchor.
+            state.centerX = zoomAnim.worldX
+              - (zoomAnim.screenX - zoomAnim.vw / 2) / state.scale;
+            state.centerY = zoomAnim.worldY
+              - (zoomAnim.screenY - zoomAnim.vh / 2) / state.scale;
+            zoomAnim = null;
+          } else {
+            state.scale += remaining * (1 - Math.exp(-dt / ZOOM_TAU));
+            state.centerX = zoomAnim.worldX
+              - (zoomAnim.screenX - zoomAnim.vw / 2) / state.scale;
+            state.centerY = zoomAnim.worldY
+              - (zoomAnim.screenY - zoomAnim.vh / 2) / state.scale;
+          }
+          changed = true;
+        }
+
+        if (changed) _emit();
+        return !!(panAnim || zoomAnim);
       },
     };
   }
+
+  // Animation tuning. Time constants τ define the exponential
+  // approach rate: ~63 % of the gap closes in one τ.
+  //   PAN_TAU  — how quickly pan inertia decays (smaller = snappier)
+  //   ZOOM_TAU — how quickly scale eases to target
+  // Stop thresholds prevent floating-point drift from keeping the
+  // animation loop alive forever.
+  const PAN_TAU  = 0.18;
+  const ZOOM_TAU = 0.08;
+  const PAN_KICK_THRESHOLD = 30;     // CSS px/s — below this, no inertia
+  const PAN_STOP_THRESHOLD = 2;      // CSS px/s — animation halts here
+  const ZOOM_STOP_THRESHOLD = 0.001;
+
+  // Animation state is closure-local per camera; not exposed on
+  // `state` because callers should treat the camera as opaque
+  // during motion — read `state` to render, call `tick` to step.
+  // Declared inside createCamera to be per-instance.
 
   window.AtlasEngineCamera = Object.freeze({
     create: createCamera,

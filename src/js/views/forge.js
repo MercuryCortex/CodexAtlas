@@ -113,7 +113,7 @@
     status.innerHTML = [
       '<span class="forge-status-tag">FORGE</span>',
       '<span class="forge-status-sep">·</span>',
-      '<span class="forge-status-k">phase</span><span class="forge-status-v">4b · lock + labels</span>',
+      '<span class="forge-status-k">phase</span><span class="forge-status-v">4c · cinematic camera</span>',
       '<span class="forge-status-sep">·</span>',
       '<span class="forge-status-k">device</span>',
       '<span class="forge-status-v forge-status-pending" id="forge-status-device">acquiring…</span>',
@@ -168,6 +168,14 @@
       panLastX:    0,
       panLastY:    0,
       panMoved:    false,
+      // Phase 4c: pan velocity tracking. A small ring buffer of
+      // (clientX, clientY, t) samples; on release we average the
+      // most recent ~80ms to derive release velocity. Avoids the
+      // jitter you get from using just the final move's delta.
+      panSamples:  [],
+      // Animation loop rAF id. Null when idle.
+      animRafId:   null,
+      animLastT:   0,
       // Label DOM nodes — one per renderable deity. Created lazily
       // (only when first shown) to avoid 663 hidden divs at mount.
       labelEls:    new Map(),     // id → HTMLDivElement
@@ -176,6 +184,10 @@
     rootEl._engine = {
       destroy() {
         local.destroyed = true;
+        if (local.animRafId != null) {
+          try { cancelAnimationFrame(local.animRafId); } catch (e) { /* ignore */ }
+          local.animRafId = null;
+        }
         if (local.resizeObs) {
           try { local.resizeObs.disconnect(); } catch (e) { /* ignore */ }
           local.resizeObs = null;
@@ -184,6 +196,7 @@
           try { local.renderer.destroy(); } catch (e) { /* ignore */ }
           local.renderer = null;
         }
+        try { camera.stopAnim(); } catch (e) { /* ignore */ }
       },
     };
 
@@ -202,6 +215,20 @@
       hitNodesAt:   (i) => hitNodes[i],
       hitNodeCount: () => hitNodes.length,
       toggleLock:   (id) => toggleLock(id),
+      // Animation introspection (Phase 4c).
+      isAnimating:  () => camera.isAnimating(),
+      // Step the camera animation manually (bypasses rAF). Used
+      // by automated tests that can't rely on rAF firing in
+      // background tabs. Real users get the rAF-driven loop.
+      tickAnim:     (dt) => camera.tick(dt),
+      // Diagnostic peek at the live pan-sample ring + velocity
+      // computation. _lastEndPan is the most recent endPan record.
+      panSamples:    () => local.panSamples.slice(),
+      lastEndPan:    () => local._lastEndPan || null,
+      // Direct injection — bypass the pointer-event path so we
+      // can verify the animation system without depending on
+      // setTimeout cadence (which the preview iframe throttles).
+      kickPanVelocity: (vx, vy) => { camera.kickPanVelocity(vx, vy); },
     };
 
     // ── Bootstrap renderer + first frame ────────────────
@@ -437,6 +464,38 @@
       return best;
     }
 
+    // ── Animation loop (Phase 4c) ────────────────────────
+    // Drives camera.tick(dt) while the camera reports motion.
+    // rAF-based so the browser schedules at refresh cadence.
+    // The Chrome-throttles-rAF-in-hidden-tabs issue (which we
+    // hit at first-paint bootstrap) doesn't apply here — these
+    // animations only start in response to user input, which
+    // requires the tab to be foreground.
+    function startAnimLoop() {
+      if (local.animRafId != null) return;     // already running
+      local.animLastT = performance.now();
+      local.animRafId = requestAnimationFrame(animTick);
+    }
+    function animTick() {
+      if (local.destroyed) {
+        local.animRafId = null;
+        return;
+      }
+      const now = performance.now();
+      const dt  = (now - local.animLastT) / 1000;
+      local.animLastT = now;
+      // Clamp dt — if the loop was paused (tab background), the
+      // first tick after resume could have a huge dt that
+      // teleports the camera. 100ms cap keeps motion sane.
+      const dtClamped = Math.min(dt, 0.1);
+      const stillMoving = camera.tick(dtClamped);
+      if (stillMoving) {
+        local.animRafId = requestAnimationFrame(animTick);
+      } else {
+        local.animRafId = null;
+      }
+    }
+
     // Look up a node by id. NODES_BY_ID is a plain object in
     // this codebase (not a Map). Defensive handling so a future
     // Map refactor doesn't break callers.
@@ -513,6 +572,12 @@
             local.panMoved = true;
             camera.panByScreen(dx, dy);  // triggers draw via onChange
           }
+          // Phase 4c — record sample for release-velocity. Ring-
+          // buffer length 6; older samples drop off the front.
+          // Use performance.now() not ev.timeStamp — synthetic
+          // events for automated tests can have zero/equal stamps.
+          local.panSamples.push({ x: ev.clientX, y: ev.clientY, t: performance.now() });
+          if (local.panSamples.length > 6) local.panSamples.shift();
           return;
         }
         // Hover hit-test in idle state.
@@ -533,10 +598,13 @@
         // Chromium; we still want pan to work for automated testing.
         // It's a UX nicety for real input, not a correctness gate.
         try { canvas.setPointerCapture(ev.pointerId); } catch (e) { /* ignore */ }
-        local.panActive = true;
-        local.panMoved  = false;
-        local.panLastX  = ev.clientX;
-        local.panLastY  = ev.clientY;
+        // New drag → cancel any in-flight inertia or zoom ease.
+        camera.stopAnim();
+        local.panActive  = true;
+        local.panMoved   = false;
+        local.panLastX   = ev.clientX;
+        local.panLastY   = ev.clientY;
+        local.panSamples = [{ x: ev.clientX, y: ev.clientY, t: performance.now() }];
         ev.preventDefault();
       });
       const endPan = (ev) => {
@@ -552,12 +620,39 @@
           const cssY = ev.clientY - canvasRect.top;
           const hit = hitTestAt(cssX, cssY);
           toggleLock(hit);   // hit === null → clear all
+          return;
         }
+        // Phase 4c — release-velocity from the last ~80ms of samples.
+        // Use the OLDEST sample within the window so a fast last
+        // micro-move doesn't spike the velocity.
+        const samples = local.panSamples;
+        if (samples.length >= 2) {
+          const tNow = performance.now();
+          let i = samples.length - 1;
+          while (i > 0 && (tNow - samples[i - 1].t) < 80) i--;
+          const oldest = samples[i];
+          const newest = samples[samples.length - 1];
+          const dt = (newest.t - oldest.t) / 1000;   // seconds
+          let vx = 0, vy = 0;
+          if (dt > 0.001) {
+            vx = (newest.x - oldest.x) / dt;
+            vy = (newest.y - oldest.y) / dt;
+            camera.kickPanVelocity(vx, vy);
+            if (camera.isAnimating()) startAnimLoop();
+          }
+          // Diagnostic snapshot for automated verification.
+          local._lastEndPan = { sampleCount: samples.length, oldest, newest, dt, vx, vy, animating: camera.isAnimating() };
+        } else {
+          local._lastEndPan = { sampleCount: samples.length, animating: camera.isAnimating() };
+        }
+        local.panSamples = [];
       };
       canvas.addEventListener('pointerup',     endPan);
       canvas.addEventListener('pointercancel', endPan);
 
-      // Zoom: wheel toward cursor.
+      // Zoom: wheel toward cursor. Phase 4c — use nudgeZoomTarget
+      // so rapid wheel events accumulate into a single smooth ease
+      // instead of compounding into jerky discrete steps.
       canvas.addEventListener('wheel', (ev) => {
         if (local.destroyed) return;
         ev.preventDefault();
@@ -565,7 +660,8 @@
         const cssY = ev.clientY - canvasRect.top;
         // deltaY: positive = scroll down = zoom out.
         const factor = Math.exp(-ev.deltaY * WHEEL_ZOOM_K);
-        camera.zoomAt(factor, cssX, cssY, { w: local.lastSize.w, h: local.lastSize.h });
+        camera.nudgeZoomTarget(factor, cssX, cssY, { w: local.lastSize.w, h: local.lastSize.h });
+        if (camera.isAnimating()) startAnimLoop();
         // Hover may now point to a different node — re-test at the
         // same screen position.
         const hit = hitTestAt(cssX, cssY);
