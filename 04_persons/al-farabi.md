@@ -14,7 +14,30 @@ texts-attributed-to: []
 originator-of: ["[[falsafa]] (al-Farabi is the principal architect after al-Kindi)", "the *al-muʿallim al-thānī* 'second teacher' status (second after Aristotle himself)"]
 events-participated: []
 mentioned-in: ["[[phase-5-019-maimonides-guide-for-the-perplexed]] (Maimonides praises al-Farabi above all other Arabic philosophers; the *Guide* is substantially al-Farabi-influenced)", "[[phase-5-024-aquinas-summa-theologiae]] (Latin reception)"]
-status: "metadata"
+status: full
+tier: 1
+cross-tradition-edges:
+  - target: aristotle
+    type: heir-of
+    note: Al-Farabi earned the title "the Second Teacher" (al-muʿallim al-thānī) — second after Aristotle himself. His project was a systematic reception and extension of the entire Aristotelian corpus. His companion treatises Philosophy of Aristotle / Philosophy of Plato argued that Plato and Aristotle are in fundamental agreement — the synthesis that all subsequent Islamic philosophy would work within. His Organon commentaries made Aristotelian logic the foundation of Islamic intellectual life.
+  - target: plato
+    type: heir-of
+    note: Al-Farabi's political philosophy (Mabādiʾ ārāʾ ahl al-madīna al-fāḍila, The Opinions of the Inhabitants of the Virtuous City) is the Islamic Plato's Republic — the philosopher-prophet as ruler, the ideal state as a reflection of cosmic order, political science as applied philosophy. His synthesis of Platonic political theory with Islamic prophetology is the founding document of Islamic political philosophy.
+  - target: mathematics-house-of-wisdom
+    type: member-of
+    note: Al-Farabi worked in Baghdad during the late Abbasid period and was part of the same intellectual network centered on the House of Wisdom, though chronologically he worked after the peak translation period (his floruit 900-950 CE). He synthesized the Greek philosophical materials the translation movement had assembled — producing the first systematic Islamic philosophy rather than piecemeal commentary.
+  - target: avicenna
+    type: ancestor-of
+    note: Avicenna (980-1037) described his own philosophical development as primarily dependent on al-Farabi. He reports reading al-Farabi's commentary on Aristotle's Metaphysics when stuck on the text — and immediately understanding Aristotle for the first time. Al-Farabi's philosophical framework — especially the active intellect theory and the harmony of religion and philosophy — structures Avicenna's entire synthesis.
+  - target: averroes
+    type: ancestor-of
+    note: Averroes, a century after Avicenna, represents the third peak of Islamic Aristotelianism. His commentaries are more strictly Aristotelian than al-Farabi's Neoplatonized synthesis — he corrects what he sees as al-Farabi and Avicenna's Neoplatonic distortions of Aristotle. But al-Farabi's basic project (harmonizing Greek philosophy with Islamic prophetology, making Aristotelian logic the framework for religious reasoning) is the project Averroes both inherits and revises.
+  - target: thomas-aquinas
+    type: ancestor-of
+    note: Al-Farabi's Enumeration of the Sciences (Iḥṣāʾ al-ʿulūm), translated into Latin by Gerard of Cremona as De scientiis, was one of the most influential texts in the Latin reception of Islamic learning. It provided medieval European thinkers with a map of all the sciences organized on Aristotelian principles. Aquinas's classification of sciences and his integration of philosophy with theology owes significant debt to al-Farabi's organizational framework.
+  - target: music-pythagorean-harmony
+    type: parallel
+    note: Al-Farabi's Kitāb al-Mūsīqā al-kabīr (Great Book of Music) is the most comprehensive medieval music treatise in any language. It combines Greek music theory (Pythagorean ratios, Aristoxenian melodic practice) with Arabic musical practice and Islamic philosophical principles. He identifies the Pythagorean music-number correspondence (musical ratios as cosmic ratios) and extends it with precise analysis of Arabic maqam modes. He is the Islamic heir of the Pythagorean-Boethian music theory tradition.
 refs:
   - title: "Al-Farabi and the Foundation of Islamic Political Philosophy"
     author: "Mahdi, Muhsin S."
