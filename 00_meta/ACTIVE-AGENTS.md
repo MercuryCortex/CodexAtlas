@@ -4,6 +4,19 @@ _Hand-maintained. Each agent currently working in the vault appends a claim bloc
 
 ---
 
+## ~~glyph-chinese-japanese-1 — FINISHED (2026-05-17)~~
+- Added Chinese (11 chars, 3 sections) + Japanese (8 hiragana, 2 sections) script modes to Alphabets → Glyphs tab
+- isScriptOnly flag in insertExpanded replaces Semitic chain with Pictographic origin panel
+- Section dividers extended to Chinese/Japanese/Ogham/Futhark modes
+
+---
+
+## ritual-celtic-polynesian-aboriginal-1 — IN FLIGHT (2026-05-17)
+- 7 nodes in 14_rituals/: ritual-samhain, ritual-druidic-oak-sacred, ritual-polynesian-tapu, ritual-haka, ritual-dreamtime-ceremony, ritual-initiation-walkabout, ritual-smoking-ceremony
+- Traditions: tradition-druidism (2), tradition-polynesian (1), tradition-maori (1), tradition-australian-aboriginal (3)
+
+---
+
 ## ritual-indigenous-americas-1 — FINISHED (2026-05-17)
 - 6 nodes in 14_rituals/: ritual-sun-dance, ritual-sweat-lodge, ritual-potlatch, ritual-aztec-autosacrifice, ritual-inca-capacocha, ritual-vision-quest
 - Traditions: tradition-lakota (4 nodes), tradition-aztec-mexica (1), tradition-inca-andean (1)

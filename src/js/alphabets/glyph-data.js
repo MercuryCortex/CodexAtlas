@@ -1155,6 +1155,147 @@ window.ALPHA_GLYPH_DATA = [
     note: 'The final rune — the ancestral estate, inherited land, what passes through generations. The Futhark ends with inheritance, not fire or conquest.',
     investigationHighlight: 'Othala (ancestral heritage) as final rune ↔ Hebrew Tav (last letter — the seal/mark of covenant completion) ↔ Greek Omega ("I am Alpha and Omega") ↔ Taoist Te (virtue inherited from the Tao). Alphabets end with completion and inheritance. The last letter is always a reckoning with what was received from the ancestors who came before.',
     relatedNodes: ['alphabet-elder-futhark'] },
+
+  // ─── CHINESE: Oracle Bone Script and Classical Characters ────────────────
+  // Pictographic tradition independent of the Semitic chain.
+  // Oracle Bone Script (甲骨文) c. 1250 BCE — the earliest attested Chinese writing.
+
+  { unicode: 0x65E5, name: 'Ri', meaning: 'sun / day', phoneme: 'rì',
+    letter: '', hebrew: '', arabic: '', phoenician: '', greek: '', section: 'Pictographic Origins',
+    gardiner: '', scriptOnly: ['chinese'],
+    note: 'Oracle Bone Script 日 is a circle with a dot at center — the eye of the sun. Evolution: circle-with-dot (OBS, c. 1250 BCE) → rectangular form (Small Seal, 221 BCE) → modern square 日. The dot that was the sun\'s core was lost when the brush replaced the bone-stylus.',
+    investigationHighlight: 'MASSIVE WIN: The Oracle Bone 日 (circle + central dot) is structurally identical to the Egyptian Ra hieroglyph N5 (circle + dot). Two civilizations 7,000 miles apart, with zero known contact in 1250 BCE, both drew the sun as a circle with a dot. The dot represents the visible solar disk, not the orb. Independent convergence on the same visual solution for the same astronomical object.',
+    relatedNodes: ['alphabet-chinese-oracle-bones', 'alphabet-creation-by-word'] },
+
+  { unicode: 0x6708, name: 'Yue', meaning: 'moon / month', phoneme: 'yuè',
+    letter: '', hebrew: '', arabic: '', phoenician: '', greek: '', section: 'Pictographic Origins',
+    gardiner: '', scriptOnly: ['chinese'],
+    note: 'Oracle Bone Script 月 is a crescent with a single dot or stroke inside. The crescent shape — not the full circle — is the primary moon-picture across cultures. Modern 月 retains the crescent outline.',
+    investigationHighlight: 'The crescent-moon pictogram appears independently in: Egyptian Gardiner N9/N11 (crescent), Sumerian cuneiform for Sin (crescent), Oracle Bone 月 (crescent). All three drew the moon as a crescent without contact. The monthly cycle — the same 29.5 days everywhere on Earth — produced the same picture everywhere on Earth. The universe enforced the design.',
+    relatedNodes: ['alphabet-chinese-oracle-bones', 'alphabet-creation-by-word'] },
+
+  { unicode: 0x5C71, name: 'Shan', meaning: 'mountain', phoneme: 'shān',
+    letter: '', hebrew: '', arabic: '', phoenician: '', greek: '', section: 'Pictographic Origins',
+    gardiner: '', scriptOnly: ['chinese'],
+    note: 'Three peaks: the central peak is tallest. Oracle Bone form already shows three peaks with the middle peak raised — the same design as modern 山. It is one of the most stable pictograms in the history of Chinese writing; it has barely changed in 3,000 years.',
+    investigationHighlight: '山 (three peaks) vs. Sumerian KUR (wedge shape for mountain) vs. Egyptian N25 (three hills). The "mountain" pictogram across every tradition encodes the same idea: a sacred peak that connects earth to heaven. Mount Tai (Taishan), Mount Sinai, Olympus, Meru — the sacred mountain is the universal axis mundi. Writing encoded it first; theology followed.',
+    relatedNodes: ['alphabet-chinese-oracle-bones', 'alphabet-letter-as-cosmos'] },
+
+  { unicode: 0x6C34, name: 'Shui', meaning: 'water', phoneme: 'shuǐ',
+    letter: '', hebrew: '', arabic: '', phoenician: '', greek: '', section: 'Pictographic Origins',
+    gardiner: '', scriptOnly: ['chinese'],
+    note: 'Wavy lines representing flowing water. Oracle Bone form is three wavy vertical strokes. Radically similar to Egyptian N35 (wavy horizontal line) and Semitic Mem (wavy lines = water). All three encode water as a waveform.',
+    investigationHighlight: 'Water = wavy lines appears in: Egyptian N35 (wavy line for "n" sound, also water), Proto-Sinaitic Mem (wavy lines → Hebrew Mem → Greek Mu), Chinese 水 (wavy strokes). Three writing systems independently encoded water as oscillation. The universe has one visual signature for flow, and every writing system found it. Chinese 水 is also the radical in 河 (river), 海 (sea), 泳 (swim), 洗 (wash) — water-root permeates vocabulary.',
+    relatedNodes: ['alphabet-chinese-oracle-bones', 'alphabet-creation-by-word'] },
+
+  { unicode: 0x706B, name: 'Huo', meaning: 'fire', phoneme: 'huǒ',
+    letter: '', hebrew: '', arabic: '', phoenician: '', greek: '', section: 'Pictographic Origins',
+    gardiner: '', scriptOnly: ['chinese'],
+    note: 'Flames rising from a base. Oracle Bone form shows a central flame with two smaller side flames. The "fire" radical 火 appears in: 炎 (blazing), 炸 (explode), 煮 (boil), 烤 (roast) — fire-root in cooking, heat, destruction.',
+    investigationHighlight: '火 (fire/flames) as one of the Five Phases (Wu Xing): Wood-Fire-Earth-Metal-Water. Chinese cosmology made fire a cosmic principle, not just a chemical event. Compare: Greek Four Elements (fire as one of four), Vedic Agni (fire as divine intermediary), Zoroastrian sacred flame. Four independent civilizations independently elevated fire to cosmological status. The sacred fire is the most cross-culturally stable religious object on Earth.',
+    relatedNodes: ['alphabet-chinese-oracle-bones', 'music-chinese-pentatonic-cosmology'] },
+
+  { unicode: 0x4EBA, name: 'Ren (person)', meaning: 'person / human', phoneme: 'rén',
+    letter: '', hebrew: '', arabic: '', phoenician: '', greek: '', section: 'Pictographic Origins',
+    gardiner: '', scriptOnly: ['chinese'],
+    note: 'A side view of a standing person with legs spread slightly apart. One of the simplest and most abstract Oracle Bone pictograms — just the profile silhouette of upright posture. Appears as a radical in thousands of Chinese characters: 你 (you), 他 (he), 们 (plural), 们 (us).',
+    investigationHighlight: 'The character for "person" (人) is also the character for "other person" built into pronouns and social words. Confucius\'s core virtue is 仁 (rén) = benevolence/humaneness — literally 人 (person) + 二 (two). The Confucian ethics are encoded in the shape: two people facing each other = the ethical relationship = the core of civilization. Writing made ethics pictographic.',
+    relatedNodes: ['alphabet-chinese-oracle-bones', 'alphabet-letter-as-cosmos', 'moral-confucian-ren'] },
+
+  { unicode: 0x5929, name: 'Tian', meaning: 'heaven / sky', phoneme: 'tiān',
+    letter: '', hebrew: '', arabic: '', phoenician: '', greek: '', section: 'Power & Cosmos',
+    gardiner: '', scriptOnly: ['chinese'],
+    note: 'Oracle Bone form: a stick figure of a person (大 = "large") with an enlarged head marked by a horizontal stroke or circle. Heaven = the space above a person\'s head. Later standardized as 大 (person) + extra stroke at top.',
+    investigationHighlight: '天 (heaven as "above the person") vs. Hebrew Shamayim (heaven from "fire and water") vs. Greek Ouranos (from PIE *wers-, "to rain") vs. Sanskrit Deva-loka ("divine realm"). Every tradition placed heaven above — but Chinese encoded it as "the top of a person\'s head." Heaven is not a separate divine realm but the extension of human orientation upward. The cosmology is anthropocentric from the pictogram up.',
+    relatedNodes: ['alphabet-chinese-oracle-bones', 'alphabet-letter-as-cosmos', 'tradition-confucianism'] },
+
+  { unicode: 0x738B, name: 'Wang', meaning: 'king / ruler', phoneme: 'wáng',
+    letter: '', hebrew: '', arabic: '', phoenician: '', greek: '', section: 'Power & Cosmos',
+    gardiner: '', scriptOnly: ['chinese'],
+    note: 'Three horizontal lines (Heaven, Humanity, Earth) connected by a single vertical stroke. The king is the being who connects all three realms. This cosmological interpretation is attested in Dong Zhongshu\'s Chunqiu Fanlu (c. 150 BCE) and is not a modern reading.',
+    investigationHighlight: 'MASSIVE WIN: 王 (three realms united by a connecting axis) is the Hermetic axiom "As Above, So Below" encoded as a single character. The king/priest is the axis mundi — the column connecting heaven and earth. Compare: Egyptian pharaoh as living Horus/Osiris bridge, Vedic priest as yagna-mediator, Norse World Tree as axis. Every tradition needed a figure who connects the cosmic layers. Chinese writing put this cosmology INTO the character for "king."',
+    relatedNodes: ['alphabet-chinese-oracle-bones', 'alphabet-letter-as-cosmos', 'tradition-confucianism'] },
+
+  { unicode: 0x9053, name: 'Dao', meaning: 'the Way / path', phoneme: 'dào',
+    letter: '', hebrew: '', arabic: '', phoenician: '', greek: '', section: 'Power & Cosmos',
+    gardiner: '', scriptOnly: ['chinese'],
+    note: '道 = 首 (head/face, showing the direction one is walking) + 辶 (the walking-path radical). Literally: "the path that a thinking being walks." The Tao Te Ching opens: 道可道，非常道 — "The Tao that can be named is not the eternal Tao." The character encodes the paradox: it IS a path, and yet it cannot be followed by walking.',
+    investigationHighlight: 'VAULT TOP-LEVEL CONVERGENCE: 道 (Tao) = Greek Logos (λόγος, "word/reason/cosmic ordering principle") = Hindu Dharma (cosmic law/right order) = Hebrew Torah (instruction/law as cosmic structure). All four are: (1) the ordering principle underlying reality, (2) described as both transcendent and accessible through practice, (3) impossible to fully name. Four traditions independently arrived at the same meta-concept: there is an underlying order, and the human task is alignment with it.',
+    relatedNodes: ['alphabet-chinese-oracle-bones', 'alphabet-creation-by-word', 'alphabet-letter-as-cosmos', 'tradition-confucianism'] },
+
+  { unicode: 0x6587, name: 'Wen', meaning: 'writing / culture / pattern', phoneme: 'wén',
+    letter: '', hebrew: '', arabic: '', phoenician: '', greek: '', section: 'Writing & Civilization',
+    gardiner: '', scriptOnly: ['chinese'],
+    note: 'Oracle Bone form: a person with a decorative pattern marked on their chest — a tattooed or painted body. Writing begins as bodily inscription. 文 is the root of: 文化 (culture), 文明 (civilization), 文字 (writing system), 文学 (literature). All culture and civilization derive from the decorated body.',
+    investigationHighlight: 'Writing begins as tattoo. The Oracle Bone 文 (person with chest marking) shows writing as bodily inscription before it became clay inscription. Compare: Polynesian tatau (sacred body patterns encoding genealogy and status), Hebrew tzitzit (garment fringes as bodily reminder of commandments), Aztec codex skin covers. Three traditions: the body as first writing surface. The decorated body precedes the written page.',
+    relatedNodes: ['alphabet-chinese-oracle-bones', 'alphabet-creation-by-word', 'alphabet-letter-as-cosmos'] },
+
+  { unicode: 0x5B57, name: 'Zi', meaning: 'character / word / child', phoneme: 'zì',
+    letter: '', hebrew: '', arabic: '', phoenician: '', greek: '', section: 'Writing & Civilization',
+    gardiner: '', scriptOnly: ['chinese'],
+    note: '字 = 宀 (roof/house radical) + 子 (child). A "written character" or "word" is literally "a child under a roof." The character for WRITING encodes the act of education: protecting and raising a child. Writing = transmission of knowledge to the next generation under the shelter of culture.',
+    investigationHighlight: 'MASSIVE WIN: 字 (written character = child under roof) encodes the theory of writing as cultural transmission. Compare: Hebrew 字 (Yod = hand that teaches), Latin "litera" (letter = what is marked, from "linere" to smear/mark), Sanskrit "akshara" (syllable = imperishable). Chinese goes further: the CHARACTER for "character" IS the act of transmission — raising a child. Writing = parenthood. The vault\'s deepest claim about what writing IS.',
+    relatedNodes: ['alphabet-chinese-oracle-bones', 'alphabet-creation-by-word', 'alphabet-letter-as-cosmos'] },
+
+  // ─── JAPANESE: Hiragana ──────────────────────────────────────────────────
+  // Created by Heian court women c. 800–1000 CE as "woman's hand" (女手, onnade).
+  // Each hiragana is a simplified cursive of a Chinese character (man'yogana).
+
+  { unicode: 0x3042, name: 'A', meaning: '"peace" (from kanji 安)', phoneme: 'a',
+    letter: '', hebrew: '', arabic: '', phoenician: '', greek: '', section: 'The Vowels',
+    gardiner: '', scriptOnly: ['japanese'],
+    note: 'Hiragana あ derives from cursive 安 (peace/tranquility), itself composed of 宀 (roof) + 女 (woman). "Peaceful" = "a woman under a roof." The sound \'a\' — the first vowel, the open throat — was mapped onto the kanji for peace and shelter.',
+    investigationHighlight: 'MASSIVE WIN: The first sound of Japanese writing (あ → 安 → woman-under-roof) was codified by women at the Heian court (794–1185 CE). These women — Murasaki Shikibu, Sei Shōnagon — invented hiragana as "woman\'s hand" (onnade) because they were excluded from the official Chinese-character system used by men. The world\'s first novel (The Tale of Genji, c. 1008 CE) was written in a script invented by its author\'s excluded gender. Writing systems encode the social order of their creators.',
+    relatedNodes: ['alphabet-chinese-oracle-bones', 'alphabet-creation-by-word'] },
+
+  { unicode: 0x3044, name: 'I', meaning: '"he/she" (from kanji 以)', phoneme: 'i',
+    letter: '', hebrew: '', arabic: '', phoenician: '', greek: '', section: 'The Vowels',
+    gardiner: '', scriptOnly: ['japanese'],
+    note: 'Hiragana い derives from cursive 以 (to use, by means of). Two parallel vertical strokes, slightly curved — the brush-movement that remains after the full kanji is simplified to its essential gesture.',
+    investigationHighlight: 'The five Japanese vowels (a-i-u-e-o) are arranged in a fixed order in every Japanese syllabary (the gojuuon ordering). This order encodes oral cavity position: "a" is the most open (back of throat), "u" is rounded lips, "i" is the widest smile. The vowel ordering is a map of the human mouth. Every Japanese child\'s first literacy lesson is a diagram of phonetic physiology.',
+    relatedNodes: ['alphabet-creation-by-word'] },
+
+  { unicode: 0x3046, name: 'U', meaning: '"cosmos/roof" (from kanji 宇)', phoneme: 'u',
+    letter: '', hebrew: '', arabic: '', phoenician: '', greek: '', section: 'The Vowels',
+    gardiner: '', scriptOnly: ['japanese'],
+    note: 'Hiragana う derives from cursive 宇 (eaves/cosmos). The kanji 宇 = 宀 (roof) + 于 (sound component). 宇宙 (universe) literally means "roof + time-span" — the universe is the cosmic eaves. The sound "u" carries cosmos.',
+    investigationHighlight: '宇宙 (universe) = "cosmic roof-span." Chinese/Japanese cosmology encoded the universe as a house with a roof (宀) extended infinitely in space and time. Compare: Hebrew Shamayim (heaven), Greek Ouranos (vault of sky), Latin Universus (turned into one). Four traditions described the cosmos as a single enclosing container. The universe is a room.',
+    relatedNodes: ['alphabet-creation-by-word', 'alphabet-letter-as-cosmos'] },
+
+  { unicode: 0x3048, name: 'E', meaning: '"work/weaving" (from kanji 衣)', phoneme: 'e',
+    letter: '', hebrew: '', arabic: '', phoenician: '', greek: '', section: 'The Vowels',
+    gardiner: '', scriptOnly: ['japanese'],
+    note: 'Hiragana え derives from cursive 衣 (clothing/garment). The kanji 衣 shows a collar and robe draping downward. 衣 appears in: 文化 is to culture as 衣食住 (clothing-food-shelter) is to the three necessities of life. Writing emerged from the clothed body.',
+    investigationHighlight: 'The connection between cloth and writing runs deep: Mayan codices use woven metaphors; Norse Norns weave fate; Greek Moirai spin the thread of life; Indian Indra\'s net is woven. The Japanese vowel "e" carries the kanji for clothing — the woven surface. Weaving and writing share the same root logic: threads (strokes) crossing to create pattern (meaning). The loom is a text.',
+    relatedNodes: ['alphabet-creation-by-word', 'alphabet-letter-as-cosmos'] },
+
+  { unicode: 0x304A, name: 'O', meaning: '"respect/offer" (from kanji 於)', phoneme: 'o',
+    letter: '', hebrew: '', arabic: '', phoenician: '', greek: '', section: 'The Vowels',
+    gardiner: '', scriptOnly: ['japanese'],
+    note: 'Hiragana お derives from cursive 於 (at/in/from — a positional particle). The kanji 於 contains 方 (direction) + 乃 (and/from). A preposition of position. The round open vowel "o" carries the concept of spatial relation.',
+    investigationHighlight: 'All five Japanese vowels derive from Chinese characters that encode aspects of civilization: peace (a), use (i), cosmos (u), garment (e), position (o). The phonetic alphabet is not random — the sounds were matched to meanings by Heian court poets who felt the resonance. This is the same logic as Hebrew acrophony (Aleph=ox sound "a" because aleph means ox) and Pythagorean music theory (tones carry cosmic meaning). Sound carries semantic weight across traditions.',
+    relatedNodes: ['alphabet-creation-by-word', 'alphabet-letter-as-cosmos'] },
+
+  { unicode: 0x306F, name: 'Ha', meaning: 'topic marker particle (from kanji 波 "wave")', phoneme: 'ha/wa',
+    letter: '', hebrew: '', arabic: '', phoenician: '', greek: '', section: 'The Gender Invention',
+    gardiner: '', scriptOnly: ['japanese'],
+    note: 'Hiragana は derives from 波 (wave/ripple). As a grammatical particle, は marks the topic of a sentence — "as for X..." It is the most frequent character in written Japanese. When は is used as a particle, it is pronounced "wa" not "ha" — a grammatical convention that preserves the original sound while the writing fossilizes an older pronunciation.',
+    investigationHighlight: 'The topic-marker は (ha/wa) has no equivalent in European languages. Japanese grammar requires speakers to mark what the sentence is ABOUT before saying anything about it. This forces constant explicit attention to framing and perspective. The particle だけ means "only"; は + だけ = "as for this, only." Grammar encodes epistemology. Wittgenstein: "The limits of my language are the limits of my world" — Japanese grammar built perspective-marking into every sentence.',
+    relatedNodes: ['alphabet-creation-by-word'] },
+
+  { unicode: 0x306E, name: 'No', meaning: 'possessive / of (from kanji 乃)', phoneme: 'no',
+    letter: '', hebrew: '', arabic: '', phoenician: '', greek: '', section: 'The Gender Invention',
+    gardiner: '', scriptOnly: ['japanese'],
+    note: 'Hiragana の derives from 乃 (meaning "and, from, thus"). The の curve — a single spiral brushstroke — is the most iconic character in Japanese visual culture, used in logos, design, and as the symbol of traditional Japan itself. Its shape is a coiled spiral that returns to its origin.',
+    investigationHighlight: 'The の spiral is Japan\'s most recognized graphic symbol — used in shop signs, logos, traditional arts. In Zen calligraphy, the enso (円相 — "circular form") is a single brushstroke circle made in one motion, representing: enlightenment, the void, completeness. の and enso share the same formal quality: a stroke that curves back on itself, making a loop. The ending is the beginning. The grammar particle of possession encodes the Zen principle of return.',
+    relatedNodes: ['alphabet-creation-by-word', 'alphabet-letter-as-cosmos'] },
+
+  { unicode: 0x3093, name: 'N', meaning: 'the pure nasal — silence after sound', phoneme: 'n/m/ng',
+    letter: '', hebrew: '', arabic: '', phoenician: '', greek: '', section: 'The Gender Invention',
+    gardiner: '', scriptOnly: ['japanese'],
+    note: 'ん is the only hiragana that is a pure consonant — it cannot begin a syllable, only end one. Its sound shifts depending on context: "n" before most sounds, "m" before b/p, "ng" before k/g. It is the only character in the syllabary with no fixed sound.',
+    investigationHighlight: 'ん (the pure nasal resonance at sentence-end) ↔ Sanskrit anusvara अं (the nasalized ending in AUM, the seed-syllable reduced to pure resonance) ↔ Hebrew final forms (letters that change shape at word-end) ↔ Arabic tanwin (final nasal inflection). Across every tradition, the ENDING of the word carries special grammatical and spiritual weight. The final sound is different from all others. Writing systems encode the sacred status of the ending.',
+    relatedNodes: ['alphabet-creation-by-word', 'alphabet-letter-as-cosmos'] },
 ];
 
 // Gematria / Isopsephy / Abjad comparative data

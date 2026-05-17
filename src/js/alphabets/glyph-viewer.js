@@ -16,6 +16,8 @@
     { id: 'latin',      label: 'Latin',      font: "serif", dir: 'ltr' },
     { id: 'ogham',      label: 'Ogham',      font: "'Segoe UI', sans-serif", dir: 'ltr' },
     { id: 'futhark',    label: 'Futhark',    font: "'Segoe UI', sans-serif", dir: 'ltr' },
+    { id: 'chinese',    label: 'Chinese',    font: "'Segoe UI', 'Apple Color Emoji', sans-serif", dir: 'ltr' },
+    { id: 'japanese',   label: 'Japanese',   font: "'Segoe UI', 'Apple Color Emoji', sans-serif", dir: 'ltr' },
   ];
 
   let _expandedIdx = null;
@@ -141,8 +143,9 @@
     }
 
     displayData.forEach((g) => {
-      // Section divider (hieroglyph mode only)
-      if (_script === 'hieroglyph' && g.section && g.section !== _lastSection) {
+      // Section divider for hieroglyph + standalone script modes
+      const _showDivider = _script === 'hieroglyph' || _script === 'chinese' || _script === 'japanese' || _script === 'ogham' || _script === 'futhark';
+      if (_showDivider && g.section && g.section !== _lastSection) {
         _lastSection = g.section;
         // Close any open grid row visually with a full-width label
         const divider = document.createElement('div');
@@ -208,7 +211,8 @@
     expanded.className = 'alpha-glyph-expanded';
 
     const isHier = g.unicode >= 0x13000 && g.unicode <= 0x1342F;
-    const bigChar   = isHier ? String.fromCodePoint(g.unicode) : (g.arabic || g.hebrew || g.phoenician || g.letter || (g.unicode ? String.fromCodePoint(g.unicode) : ''));
+    const isScriptOnly = !!(g.scriptOnly && g.scriptOnly.length > 0);
+    const bigChar   = (isHier || isScriptOnly) ? String.fromCodePoint(g.unicode) : (g.arabic || g.hebrew || g.phoenician || g.letter || (g.unicode ? String.fromCodePoint(g.unicode) : ''));
     const bigFont   = isHier ? "'Noto Sans Egyptian Hieroglyphs', serif" : "'Segoe UI', sans-serif";
     const hierChar  = isHier ? String.fromCodePoint(g.unicode) : '';
     const phoenicianChar = g.phoenician || '';
@@ -234,6 +238,10 @@
         ${descItems ? `<div class="age-descendants">${descItems}</div>` : ''}
       </div>
       <div class="age-col-chain">
+        ${isScriptOnly ? `
+        <div class="age-chain-label-row">Pictographic origin</div>
+        <div class="age-note">${g.note || ''}</div>
+        ` : `
         <div class="age-chain-label-row">Transmission chain</div>
         <div class="age-chain">
           <div class="age-chain-step">
@@ -267,6 +275,7 @@
           </div>
         </div>
         <div class="age-note">${g.note || ''}</div>
+        `}
       </div>
       <div class="age-col-inv">
         ${g.investigationHighlight ? `
