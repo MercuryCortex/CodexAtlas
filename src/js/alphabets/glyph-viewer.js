@@ -109,9 +109,11 @@
 
     const scriptMeta = SCRIPTS.find(s => s.id === _script) || SCRIPTS[0];
 
-    // Filter by scriptOnly: include if no restriction, or if restriction includes current script
-    // Exclude entries whose scriptOnly list exists but does NOT include the current script
+    // Chinese/Japanese modes show only their own scriptOnly entries (no Semitic letters).
+    // All other modes show shared entries (no scriptOnly) plus their own scriptOnly entries.
+    const isStandaloneScript = _script === 'chinese' || _script === 'japanese';
     let displayData = data.map((g, idx) => ({ ...g, _origIdx: idx })).filter(g => {
+      if (isStandaloneScript) return g.scriptOnly && g.scriptOnly.includes(_script);
       if (!g.scriptOnly) return true;           // no restriction — show in all scripts
       return g.scriptOnly.includes(_script);    // only show in listed scripts
     });
