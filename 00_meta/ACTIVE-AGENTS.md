@@ -4,6 +4,15 @@ _Hand-maintained. Each agent currently working in the vault appends a claim bloc
 
 ---
 
+## ~~baal-cycle-wiring-1 — Baal Cycle deity stubs → full nodes — 2026-05-17 — FINISHED~~
+- ~~Owned: `03_deities/baal-hadad.md`, `03_deities/yam.md`, `03_deities/el-canaanite.md`, `03_deities/asherah.md`, `03_deities/el-elohim-hebrew.md`~~
+- ~~5 stubs upgraded to full with cross-tradition-edges + Vault Connections sections~~
+- ~~HYPER WINs: El=El; Kuntillet Ajrud "his Asherah"; Exod 6:2-3 P merger text; Deut 32:8-9 DSS restoration; Ps82→John10:34 line~~
+- ~~MASSIVE WINs: 5-tradition chaoskampf; Yam/Lotan=Leviathan; Ps29=reworked Baal hymn; Shekhinah=suppressed Asherah~~
+- ~~Status: FINISHED. Commit 1e0005b~~
+
+---
+
 ## ~~alphabet-devanagari-hangul-1 — complete Devanagari + Hangul glyph modes — 2026-05-17 — FINISHED~~
 - ~~Owned: `src/js/alphabets/glyph-data.js` (+242 lines), `src/js/alphabets/glyph-viewer.js` (12-script filter)~~
 - ~~Devanagari: 46 total entries (full Sanskrit alphabet — vowels, 5 consonant rows, semivowels, sibilants, OM, Anusvara, Visarga)~~
