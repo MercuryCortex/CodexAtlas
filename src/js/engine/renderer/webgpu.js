@@ -74,12 +74,14 @@
   //   view_offset         vec2     — (-cam.centerX*view_scale.x, -cam.centerY*view_scale.y)
   //   viewport_px         vec2     — backing-store dimensions (for AA)
   //   dim_amount          f32      — 0..1: how much non-focused instances dim
-  //   _pad                f32
+  //   wire_min_screen_px  f32      — Phase 6b: clamp stroke widths in FB px
+  //   wire_max_screen_px  f32
+  //   _pad1, _pad2, _pad3 f32 × 3  — pad to 16-byte align the next array
   //   bucket_hot_colors   [8]vec4  — bucket-hex at hot alpha, indexed by
   //                                  bucket_index 0..6 (slot 7 unused).
   //                                  0:transmission 1:parallel 2:association
   //                                  3:kinship 4:attestation 5:polemic 6:fusion
-  // Total: 32 + 128 = 160 bytes (vec4-aligned).
+  // Total: 48 + 128 = 176 bytes (vec4-aligned).
   //
   // Phase 4a: bucket_hot_colors enables the edge fragment shader
   // to mix the per-instance idle color with the bucket-hot color
@@ -93,12 +95,16 @@
   // ============================================================
   const NODE_SHADER = /* wgsl */ `
     struct View {
-      view_scale:        vec2<f32>,
-      view_offset:       vec2<f32>,
-      viewport_px:       vec2<f32>,
-      dim_amount:        f32,
-      _pad:              f32,
-      bucket_hot_colors: array<vec4<f32>, 8>,
+      view_scale:         vec2<f32>,
+      view_offset:        vec2<f32>,
+      viewport_px:        vec2<f32>,
+      dim_amount:         f32,
+      wire_min_screen_px: f32,
+      wire_max_screen_px: f32,
+      _pad1:              f32,
+      _pad2:              f32,
+      _pad3:              f32,
+      bucket_hot_colors:  array<vec4<f32>, 8>,
     };
     @group(0) @binding(0) var<uniform> v: View;
 
@@ -146,12 +152,16 @@
   // ============================================================
   const EDGE_SHADER = /* wgsl */ `
     struct View {
-      view_scale:        vec2<f32>,
-      view_offset:       vec2<f32>,
-      viewport_px:       vec2<f32>,
-      dim_amount:        f32,
-      _pad:              f32,
-      bucket_hot_colors: array<vec4<f32>, 8>,
+      view_scale:         vec2<f32>,
+      view_offset:        vec2<f32>,
+      viewport_px:        vec2<f32>,
+      dim_amount:         f32,
+      wire_min_screen_px: f32,        // Phase 6b: wire-width zoom clamp (framebuffer px)
+      wire_max_screen_px: f32,
+      _pad1:              f32,
+      _pad2:              f32,
+      _pad3:              f32,
+      bucket_hot_colors:  array<vec4<f32>, 8>,
     };
     @group(0) @binding(0) var<uniform> v: View;
 
@@ -193,8 +203,17 @@
       // into the instance attribute. inst_extra.x = idle width,
       // inst_extra.w = hot width. state=0 (focused) → use hot;
       // state=1 (idle) → use idle.
-      let world_w = mix(inst_extra.w, inst_extra.x, inst_state);
-      let half_w  = world_w * 0.5;
+      let world_w_raw = mix(inst_extra.w, inst_extra.x, inst_state);
+      // Phase 6b: zoom-aware clamp. Convert world width →
+      // framebuffer-px (= cam.scale × DPR × world), clamp to
+      // [wire_min_screen_px, wire_max_screen_px] (also in FB px),
+      // then convert back to world units. Keeps strokes legible
+      // at zoom-out + stops them bloating at zoom-in.
+      let world_to_fb = v.view_scale.x * v.viewport_px.x * 0.5;
+      let fb_w_raw    = world_w_raw * world_to_fb;
+      let fb_w        = clamp(fb_w_raw, v.wire_min_screen_px, v.wire_max_screen_px);
+      let world_w     = select(world_w_raw, fb_w / world_to_fb, world_to_fb > 0.0);
+      let half_w      = world_w * 0.5;
       let world  = pos + perp * quad_vertex.y * half_w;
       let ndc = world * v.view_scale + v.view_offset;
 
@@ -310,8 +329,10 @@
     });
 
     // ── Shared view-uniform ────────────────────────────
-    // 160 bytes: 32-byte view header + 128-byte bucket palette (8 × vec4).
-    const VIEW_UBO_SIZE = 160;
+    // 176 bytes: 48-byte view header + 128-byte bucket palette (8 × vec4).
+    // Header grew in Phase 6b: added wire_min/max_screen_px (FB px) + 3 pads
+    // to keep the array of vec4 16-byte aligned.
+    const VIEW_UBO_SIZE = 176;
     const viewUbo = device.createBuffer({
       label: 'forge-view-ubo', size: VIEW_UBO_SIZE,
       usage: GPUBufferUsage.UNIFORM | GPUBufferUsage.COPY_DST,
@@ -506,6 +527,13 @@
         const vp   = frame.viewportCss;
         const cam  = frame.camera;
         const dimA = (typeof frame.dimAmount === 'number') ? frame.dimAmount : 0.85;
+        // Phase 6b: wire-width zoom clamp. JS-side values are
+        // CSS px; the uniform stores framebuffer px so the shader
+        // can compare against the world×view-scale projection
+        // (which is also FB px).
+        const dpr  = window.devicePixelRatio || 1;
+        const wMin = (typeof frame.wireMinScreenPx === 'number') ? frame.wireMinScreenPx * dpr : 0;
+        const wMax = (typeof frame.wireMaxScreenPx === 'number') ? frame.wireMaxScreenPx * dpr : 1e9;
 
         const nVB  = frame.nodeInstances;
         const eVB  = frame.edgeInstances;
@@ -518,22 +546,23 @@
         const viewOffsetX = -cam.centerX * viewScaleX;
         const viewOffsetY = -cam.centerY * viewScaleY;
 
-        // 160-byte view-uniform: 32-byte header + 128-byte bucket palette.
-        // We could split this into two writeBuffer calls (header per-frame,
-        // palette only when it changes), but the palette is 128 bytes —
-        // copying it every frame is cheaper than the bookkeeping for a
-        // dirty-flag system, and writeBuffer is async-batched anyway.
-        const viewData = new Float32Array(40);  // 160 / 4
-        viewData[0] = viewScaleX;
-        viewData[1] = viewScaleY;
-        viewData[2] = viewOffsetX;
-        viewData[3] = viewOffsetY;
-        viewData[4] = vp.w * (window.devicePixelRatio || 1);
-        viewData[5] = vp.h * (window.devicePixelRatio || 1);
-        viewData[6] = dimA;
-        viewData[7] = 0;
-        // Bucket palette (8 × 4 floats) starts at offset 8 (32 bytes).
-        viewData.set(bucketPalette, 8);
+        // 176-byte view-uniform: 48-byte header + 128-byte bucket palette.
+        // Phase 6b grew the header by 4 floats (wire min/max + 2 pads).
+        const viewData = new Float32Array(44);  // 176 / 4
+        viewData[0]  = viewScaleX;
+        viewData[1]  = viewScaleY;
+        viewData[2]  = viewOffsetX;
+        viewData[3]  = viewOffsetY;
+        viewData[4]  = vp.w * dpr;
+        viewData[5]  = vp.h * dpr;
+        viewData[6]  = dimA;
+        viewData[7]  = wMin;
+        viewData[8]  = wMax;
+        viewData[9]  = 0; // pad1
+        viewData[10] = 0; // pad2
+        viewData[11] = 0; // pad3
+        // Bucket palette (8 × 4 floats) starts at offset 12 (48 bytes).
+        viewData.set(bucketPalette, 12);
         device.queue.writeBuffer(viewUbo, 0, viewData);
 
         // ── Instance buffers (static geometry) ──────

@@ -116,6 +116,10 @@
     node_min_screen_px:    3,    // dynamic-sizing clamps
     node_max_screen_px:   28,
 
+    // ── WIRES · ZOOM CLAMP (Phase 6b) ──
+    wire_min_screen_px:   0.5,   // don't shrink below this CSS-px width
+    wire_max_screen_px:   4,     // don't grow above this CSS-px width
+
     // ── GLYPHS ──
     glyph_scale:   0.95,
     glyph_opacity: 0.86,
@@ -636,13 +640,15 @@
       // faint idle alphas (0.10–0.30) aren't further attenuated.
       const effectiveDim = local.focusedSet ? local.params.dim_amount : 0;
       local.renderer.drawFrame({
-        viewportCss:   { w: vp.w, h: vp.h },
-        camera:        camera.state,
-        dimAmount:     effectiveDim,
-        nodeInstances: local.mode.nodePacked.data,
-        edgeInstances: local.mode.edgePacked.data,
-        nodeStates:    local.nodeStates,
-        edgeStates:    local.edgeStates,
+        viewportCss:      { w: vp.w, h: vp.h },
+        camera:           camera.state,
+        dimAmount:        effectiveDim,
+        wireMinScreenPx:  local.params.wire_min_screen_px,
+        wireMaxScreenPx:  local.params.wire_max_screen_px,
+        nodeInstances:    local.mode.nodePacked.data,
+        edgeInstances:    local.mode.edgePacked.data,
+        nodeStates:       local.nodeStates,
+        edgeStates:       local.edgeStates,
       });
       const dt = performance.now() - t0;
       const fEl = document.getElementById('forge-status-frame');
@@ -1288,6 +1294,10 @@
           name === 'node_min_screen_px' ||
           name === 'node_max_screen_px') {
         rebakeNodes(); return;
+      }
+      // Wire-width zoom clamp — uniform-only, just redraw.
+      if (name === 'wire_min_screen_px' || name === 'wire_max_screen_px') {
+        drawFrame(); return;
       }
 
       // Wires — IDLE state (instance buffer attributes).

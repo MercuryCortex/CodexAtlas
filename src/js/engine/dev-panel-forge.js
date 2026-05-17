@@ -93,6 +93,15 @@
           controls: BUCKETS.map(bucketCurveControl),
         },
         {
+          id: 'wires-clamp',
+          title: 'ON-SCREEN SIZE CLAMP (zoom-aware)',
+          blurb: 'Caps the apparent stroke width as you zoom. Mirrors the node clamp — keeps wires legible when zoomed out + stops them ballooning at deep zoom-in.',
+          controls: [
+            { kind: 'slider', id: 'wire_min_screen_px', label: 'Don\'t shrink below', hint: 'Minimum apparent stroke width in CSS pixels.', min: 0, max: 6,  step: 0.1, default: 0.5, unit: 'px' },
+            { kind: 'slider', id: 'wire_max_screen_px', label: 'Don\'t grow above',  hint: 'Maximum apparent stroke width in CSS pixels.', min: 1, max: 12, step: 0.1, default: 4,   unit: 'px' },
+          ],
+        },
+        {
           id: 'wires-focus',
           title: 'FOCUS DIM',
           blurb: 'How much non-focused stuff fades when something is hovered or locked.',

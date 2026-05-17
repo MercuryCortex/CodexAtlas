@@ -5512,7 +5512,7 @@ body.view-alphabets main.canvas { padding-bottom: 220px; }
   color: var(--gold);
 }
 .item.forge-nav::after {
-  content: 'p6';
+  content: 'p6b';
   margin-left: 6px;
   font-family: var(--mono); font-size: 9px;
   letter-spacing: 0.08em;
@@ -5721,9 +5721,15 @@ body.nav-collapsed .item.forge-nav::after { display: none; }
    z-index ~9000 and anchors `right: 0` — it would cover the
    Forge drawer entirely. It also has no hooks into Forge state
    (its controls only mutate Pantheon V2), so we hide it whenever
-   the Forge view is active. */
+   the Forge view is active.
+   Phase 6b: the legacy app-wide vault filter (the bottom-of-page
+   <footer> with `#filter-search`) is also Pantheon-only — its
+   filter wiring doesn't reach the Forge view, so it's just dead
+   chrome here. Hide it + its toggle button. */
 body.view-forge #codex-dev-panel,
-body.view-forge #codex-dev-tab {
+body.view-forge #codex-dev-tab,
+body.view-forge > footer,
+body.view-forge #footer-toggle {
   display: none !important;
 }
 
