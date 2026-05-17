@@ -33,6 +33,18 @@ cross-tradition-edges:
   - target: mathematics-babylonian-temple
     type: related
     note: Babylonian temple construction used the 3-4-5 right triangle for laying foundations; the sexagesimal system encoded in the 360-degree circle is itself a sacred-geometric artifact — the circle divided into 360 units because the solar year was approximately 360 days.
+  - target: gothic-cathedral
+    type: parallel
+    note: Gothic cathedral architecture (12th–15th century) is the most explicit European instance of sacred geometry in monumental building. The pointed arch, ribbed vault, and flying buttress are geometric solutions; the proportional systems governing nave width, height, and bay relationships used systems derived from Pythagorean harmonic ratios transmitted through Vitruvius and Boethius. The medieval master-builders (masons) transmitted geometric knowledge through guild secrecy — a form of esoteric transmission.
+  - target: kepler
+    type: parallel
+    note: Kepler's *Mysterium Cosmographicum* (1596) is the most explicit Renaissance application of sacred geometry to natural science: the five Platonic solids nested inside each other between the planetary spheres. He believed the cosmos was literally a three-dimensional sacred-geometric construction by the divine Architect. This connects the medieval sacred-geometry tradition directly to the birth of modern astronomy.
+  - target: music-pythagorean-harmony
+    type: sibling
+    note: Sacred geometry (proportion in space) and Pythagorean harmonic ratios (proportion in time/frequency) are two aspects of the same program: the cosmos is structured by the same proportional relationships that appear in music and in architecture. Vitruvius explicitly states this; the Gothic masters used harmonic ratios for architectural proportions; the Islamic arabesque encodes harmonic proportions in two-dimensional tiling.
+  - target: golden-ratio
+    type: child-of
+    note: The golden ratio (φ ≈ 1.618) is sacred geometry's most celebrated specific ratio — appearing in the Parthenon, the Great Pyramid (debated), Fibonacci spirals in natural forms, and Renaissance paintings (Luca Pacioli's *De Divina Proportione*, illustrated by Leonardo da Vinci, 1509). Sacred geometry tradition treats φ as the signature of divine proportion in natural form.
 ---
 
 **Sacred geometry** is the cross-civilizational practice of encoding cosmological or theological meaning in precise geometric and proportional relationships — a practice attested in every major civilization that builds permanent sacred structures. The proportions are not purely symbolic: they involve mathematically precise relationships (golden ratio, π approximations, Pythagorean triples, harmonic ratios) that appear in the physical structure of temples, cathedrals, mosques, and mandalas across unconnected cultures.
