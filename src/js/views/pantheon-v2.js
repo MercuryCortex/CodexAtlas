@@ -81,6 +81,31 @@
     _alphaCache.set(key, out);
     return out;
   }
+  // Pre-multiply RGB by alpha. Sigma uses blendFunc(ONE, ONE_MINUS_SRC_ALPHA)
+  // — pre-multiplied alpha blending — but its node shader doesn't pre-multiply,
+  // so non-premult rgba(...,0.1) renders at full brightness. We pre-mult here
+  // and emit `rgba(R*a, G*a, B*a, a)`: dot is visually dim AND lets whatever
+  // is behind the canvas (hulls/edges) show through proportionally.
+  const _preMultCache = new Map();
+  function premultAlpha(hex, alpha) {
+    if (!hex || typeof hex !== 'string') return `rgba(70,75,90,${alpha})`;
+    const key = hex + ':' + alpha;
+    const cached = _preMultCache.get(key);
+    if (cached) return cached;
+    let r, g, b;
+    if (hex[0] === '#' && hex.length === 7) {
+      r = parseInt(hex.slice(1, 3), 16);
+      g = parseInt(hex.slice(3, 5), 16);
+      b = parseInt(hex.slice(5, 7), 16);
+    } else {
+      const m = hex.match(/rgba?\(\s*(\d+)\s*,\s*(\d+)\s*,\s*(\d+)/);
+      if (!m) return hex;
+      r = +m[1]; g = +m[2]; b = +m[3];
+    }
+    const out = `rgba(${Math.round(r*alpha)},${Math.round(g*alpha)},${Math.round(b*alpha)},${alpha})`;
+    _preMultCache.set(key, out);
+    return out;
+  }
   // Blend a hex color toward the canvas background — used for dimming nodes
   // without losing family identity. Returns a hex string that's the original
   // color mixed 10% with the bg, so a faded red still reads as red-ish, not grey.
@@ -982,10 +1007,10 @@
       //
       //  Per-state attrs:
       //                size mult   zIndex   color                  label?
-      //   HOVERED      +4 / +2      3       attrs.color (full)     ALWAYS
-      //   ACTIVE       attrs.size   2       attrs.color (full)     ALWAYS
+      //   HOVERED      +4 / +2      3       rgba(...,1.00)         ALWAYS
+      //   ACTIVE       attrs.size   2       rgba(...,1.00)         ALWAYS
       //   DIM          attrs.size   0       rgba(...,0.10)         hidden
-      //   NORMAL       attrs.size   1       attrs.color            by threshold
+      //   NORMAL       attrs.size   1       rgba(...,0.75)         by threshold
       //
       nodeReducer: (id, attrs) => {
         const out = { ...attrs };
@@ -998,11 +1023,9 @@
         if (_egoFocus && _selectedId) {
           if (!inNeighborhood(_selectedId, id)) { out.hidden = true; return out; }
         }
-        // FAMILY FILTER short-circuit — fade by own color, lowest layer.
-        // fadeToBg returns a solid hex blended toward bg — sigma's WebGL node
-        // program ignores rgba alpha, so we must dim via RGB blend not opacity.
+        // FAMILY FILTER short-circuit — fade out at 10% premultiplied alpha.
         if (!famInFilter(attrs._family)) {
-          out.color  = fadeToBg(attrs.color, 0.10);
+          out.color  = premultAlpha(attrs.color, 0.10);
           out.zIndex = 0;
           out.label  = '';
           return out;
@@ -1017,21 +1040,19 @@
           case 'HOVERED':
             out.size   = (out.size || 4) + (_hoverId === id ? 4 : 2);
             out.zIndex = 3;
-            out.color  = baseColor;
+            out.color  = baseColor;                       // 1.00 alpha (hex)
             break;
           case 'ACTIVE':
             out.zIndex = 2;
-            out.color  = baseColor;
+            out.color  = baseColor;                       // 1.00 alpha (hex)
             break;
           case 'DIM':
-            // fadeToBg, not withAlpha — sigma's stock node program ignores
-            // rgba alpha so dim must be a solid hex blended toward bg.
-            out.color  = fadeToBg(baseColor, 0.10);
+            out.color  = premultAlpha(baseColor, 0.10);   // 0.10 premult
             out.zIndex = 0;
             break;
           case 'NORMAL':
           default:
-            out.color  = baseColor;
+            out.color  = premultAlpha(baseColor, 0.75);   // 0.75 premult (idle)
             out.zIndex = 1;
             break;
         }
