@@ -34,6 +34,18 @@ cross-tradition-edges:
   - target: mathematics-sulba-sutras
     type: heir-of
     note: Indian mathematical achievements (trigonometry, numerical systems, algebraic methods) reached Baghdad through Brahmasphutasiddhanta translations; Brahmagupta's zero-arithmetic rules (628 CE) were in circulation at the House of Wisdom.
+  - target: fibonacci
+    type: ancestor-of
+    note: Fibonacci studied directly with Islamic mathematicians in Béjaïa (North Africa), trained in the House of Wisdom tradition. His Liber Abaci (1202) is the transmission node from Islamic mathematics into Latin Europe — the single most consequential act of mathematical translation since the Baghdad translation movement itself. House of Wisdom synthesis (762-1258) → Islamic North Africa → Fibonacci → European Renaissance mathematics.
+  - target: mathematics-chinese-nine-chapters
+    type: parallel
+    note: The Jiuzhang (Chapter 8, Fang Cheng) solves simultaneous linear equations using Gaussian elimination — developed c. 100 BCE, 900 years before the House of Wisdom's algebraic synthesis. Both traditions developed general equation-solving procedures as administrative and astronomical tools, independently and without cross-influence.
+  - target: mathematics-egyptian-rhind-papyrus
+    type: heir-of
+    note: The Rhind Papyrus's unit-fraction arithmetic entered the Greek-Roman mathematical world through Hellenistic Alexandria. The Hellenistic mathematical corpus the House of Wisdom translated included this Egyptian administrative-mathematical tradition. Egyptian fraction methods appear in Archimedes, enter Arabic mathematics through Greek texts, and appear in Fibonacci's Liber Abaci as an alternative computational method.
+  - target: brahmagupta
+    type: heir-of
+    note: The Brahmasphutasiddhanta (628 CE) was among the first Indian texts translated into Arabic, reaching Baghdad c. 773-775 CE under Caliph al-Mansur — 40 years before the House of Wisdom's most productive period. Al-Khwarizmi's treatise on Hindu calculation transmits Brahmagupta's zero arithmetic directly. Brahmagupta is the Indian grandfather of the House of Wisdom's numerical system.
 ---
 
 The **Bayt al-Hikma** (House of Wisdom) was the intellectual center of the Abbasid Caliphate in Baghdad, established under Caliph Harun al-Rashid (c. 762) and reaching its peak under al-Ma'mun (813–833 CE). It was the largest organized translation project in history — and it created the mathematical foundation of European science.
