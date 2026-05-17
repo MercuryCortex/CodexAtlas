@@ -6,7 +6,7 @@ aka: ["*rita*", "*dharma*", "*ma'at*", "*asha*", "*chokhmah* (in the cosmic-orde
 category: "ethical"
 traditions-where-attested: ["Egyptian (Ma'at)", "Vedic (Rita / Dharma)", "Zoroastrian (Asha)", "Hebrew Wisdom literature (Chokhmah)", "Heraclitean (Logos)", "Stoic (Logos)", "Confucian (Tian / Dao)"]
 appearances: ["[[phase-1-005-instruction-of-ptahhotep]]", "[[phase-2-001-rig-veda-family-books]]", "[[phase-2-002-gathas-of-zarathustra]]", "[[phase-2-021-proverbs]]", "[[phase-3-005-stoic-foundational-texts]]"]
-deity-instances: ["[[maat]]", "[[asha-vahishta]]"]
+deity-instances: ["[[ma-at]]", "[[asha-vahishta]]"]
 status: "stub"
 refs:
   - title: "Ma'at, the Moral Ideal in Ancient Egypt"

@@ -499,7 +499,7 @@ def tradition_family(t: str) -> str:
     if ("polynesian" in s or "maori" in s or "māori" in s or "hawaiian" in s
             or "samoan" in s or "tongan" in s or "aboriginal" in s or "australian" in s
             or "australia" in s or "torres" in s or "papuan" in s or "melanesian" in s
-            or "pacific" in s or "kimberley" in s or "kulin" in s):
+            or "pacific" in s or _re.search(r'\bkimberley\b', s) or _re.search(r'\bkulin\b', s)):
         return "Pacific"
     # Modern-Esoteric — "caodai" no-space variant added.
     if ("theosoph" in s or "anthroposoph" in s or "thelem" in s or "rosic" in s

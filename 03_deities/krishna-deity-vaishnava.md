@@ -11,13 +11,13 @@ domains: ["love (mādhurya)", "playfulness (līlā)", "supreme personal deity", 
 gender: "masculine"
 role: "Eighth avatāra of Viṣṇu (in classical scheme); or the *svayaṃ bhagavān* (supreme Lord himself, of whom Viṣṇu is an expansion, per Gauḍīya theology); cosmic instructor of the *Bhagavad Gītā*; cowherd-lover of the *gopīs*"
 parent-of: []
-child-of: ["[[vishnu-deity]] (in classical avatāra theology); [[devaki]] and [[vasudeva]] (mythic earthly parents); raised by [[yashoda]] and [[nanda]]"]
+child-of: ["[[vishnu]] (in classical avatāra theology); [[devaki]] and [[vasudeva]] (mythic earthly parents); raised by [[yashoda]] and [[nanda]]"]
 consort: ["[[radha-deity]]", "Rukminī", "Satyabhāmā", "the gopīs (mystical-devotional)"]
 attributes: ["dark-blue or black-skinned", "peacock-feather crown", "yellow garments (*pītāmbara*)", "flute (*vēṇu*)", "Sudarśana cakra (discus)", "*śrīvatsa* curl on chest", "*kaustubha* gem"]
 attested-in: ["[[phase-2-017-mahabharata-ramayana-oral-layers]]", "Harivaṃśa (~+300)", "Viṣṇu Purāṇa (~+400)", "Bhāgavata Purāṇa (~+900)", "[[phase-6-013-mirabai-bhajans]]", "[[phase-6-019-tulsidas-ramcharitmanas]]", "[[phase-6-020-chaitanya-charitamrita]]"]
-equivalents: ["[[vishnu-deity]] (one *aṃśa* / avatāra in classical theology; *svayaṃ bhagavān* in Gauḍīya)"]
+equivalents: ["[[vishnu]] (one *aṃśa* / avatāra in classical theology; *svayaṃ bhagavān* in Gauḍīya)"]
 syncretic-edges:
-  - target: "vishnu-deity"
+  - target: "vishnu"
     type: "avatāra-identification"
     source: "Classical Pāñcarātra and Bhāgavata theology"
   - target: "vasudeva-vrishni"

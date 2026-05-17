@@ -93,7 +93,7 @@ The daily service was performed for every deity with a temple — the specific t
 
 **Deity connections**:
 - [[thoth]] — patron of ritual precision; the daily service is defined by its exactness, and Thoth's oversight guarantees correct performance
-- [[maat]] — the service maintains maat; interruption disrupts cosmic order
+- [[ma-at]] — the service maintains maat; interruption disrupts cosmic order
 - [[ra]] — at Heliopolis the statue's awakening at dawn synchronized with the sun's actual rising; the daily service is cosmological precision, not merely liturgical habit
 - [[amun]] — primary Karnak service; the largest and most elaborate daily temple in Egypt; the Amun service was the theological center of the New Kingdom
 - [[ptah]] — Memphis temple; the daily service before Ptah replays his cosmogonic mouth-opening; each service is a micro-creation event

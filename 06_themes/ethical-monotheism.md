@@ -5,7 +5,7 @@ name: "Ethical Monotheism"
 aka: ["prophetic monotheism", "ethical theism"]
 category: "ethical"
 appearances: ["[[phase-2-005-hebrew-bible-j-source]]", "[[phase-2-007-hebrew-bible-e-source]]", "[[phase-2-010-hebrew-bible-early-prophets]]", "[[phase-2-011-hebrew-bible-d-source]]", "[[phase-3-001-second-third-isaiah]]", "[[phase-3-015-pauline-epistles]]", "[[phase-4-034-quran]]"]
-deity-instances: ["[[yahweh]]", "[[el-hebrew]]", "[[allah]]"]
+deity-instances: ["[[yahweh]]", "[[el-elohim-hebrew]]", "[[allah]]"]
 status: "stub"
 refs:
   - title: "Religion of Reason out of the Sources of Judaism"

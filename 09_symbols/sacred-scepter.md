@@ -46,7 +46,7 @@ deity-instances:
   - "[[indra]]"
   - "[[zeus]]"
   - "[[hermes-greek]]"
-  - "[[vishnu-deity]]"
+  - "[[vishnu]]"
   - "[[poseidon]]"
   - "[[odin]]"
 tradition-context:

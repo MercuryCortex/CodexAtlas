@@ -17,7 +17,7 @@ attributes: ["thyrsus (fennel staff)", "ivy crown", "leopards / panthers", "grap
 attested-in: ["[[phase-2-008-homeric-epics]]", "[[phase-2-009-hesiod-theogony-works-and-days]]", "Homeric Hymn to Dionysus", "Linear B (di-wo-nu-so, Pylos and Khania — 13th c. BCE!)"]
 equivalents: ["[[bacchus]]"]
 syncretic-edges:
-  - target: "osiris-egyptian"
+  - target: "osiris"
     type: "ancient-identification"
     source: "Herodotus 2.42, 2.144; Plutarch, On Isis and Osiris"
     notes: "Greeks identified Dionysus with Egyptian Osiris from Herodotus onward; both are dying-and-rising vegetation gods."

@@ -21,7 +21,7 @@ themes: ["[[cosmic-body-cosmogony]]", "[[chaoskampf]]", "[[divine-council]]", "[
 parallels: ["[[phase-2-002-gathas-of-zarathustra]]", "[[phase-1-008-enuma-elish]]", "[[phase-2-001-rig-veda-family-books]]"]
 influenced-by: ["Proto-Indo-Iranian poetic tradition (shared with Avestan)", "earlier Indo-European hymnic forms (reconstructed by Watkins 1995)", "possible BMAC contact religion"]
 influences: ["[[phase-2-003-atharva-veda]]", "[[phase-2-006-brahmanas-aranyakas]]", "[[phase-2-012-brihadaranyaka-upanishad]]", "[[phase-2-013-chandogya-upanishad]]", "[[phase-2-027-bhagavad-gita]]", "[[tradition-vedic-hinduism]]"]
-deities-mentioned: ["[[agni]]", "[[indra]]", "[[varuna]]", "[[soma]]", "[[ushas]]", "[[mitra-vedic]]", "[[dyaus-pita]]", "[[vishnu-deity]]", "[[rudra-shiva-early]]", "[[prajapati]]"]
+deities-mentioned: ["[[agni]]", "[[indra]]", "[[varuna]]", "[[soma]]", "[[ushas]]", "[[mitra-vedic]]", "[[dyaus-pita]]", "[[vishnu]]", "[[rudra-shiva-early]]", "[[prajapati]]"]
 attested-in: ["[[tradition-vedic-hinduism]]", "[[tradition-zoroastrianism]]"]
 events-context: ["Indo-Iranian migration period (~-2000 to -1200)"]
 status: "full"
@@ -142,7 +142,7 @@ Citation: RV 1.32.1–2; trans. Jamison & Brereton (2014). Short fair-use quotat
 ## Contents / structure
 
 **The ten Maṇḍalas:**
-- **Maṇḍalas 1–9:** Core sacrificial hymns. The dominant deities in the family books are [[indra]] (~250 hymns — more than any other deity), [[agni]] (~200 hymns), [[soma]] (all of Maṇḍala 9 is dedicated to Soma), [[varuna]] and [[mitra-vedic]] (together as guardians of *ṛta*), [[ushas]] (the dawn goddess — among the most beautiful hymns), [[rudra-shiva-early]] (the fierce storm-archer who must be appeased), [[vishnu-deity]] (early, cosmic-striding form), and [[dyaus-pita]] (sky-father, cognate with Greek Zeus, Roman Jupiter, Norse Tyr — a rare trace of the oldest Indo-European theology).
+- **Maṇḍalas 1–9:** Core sacrificial hymns. The dominant deities in the family books are [[indra]] (~250 hymns — more than any other deity), [[agni]] (~200 hymns), [[soma]] (all of Maṇḍala 9 is dedicated to Soma), [[varuna]] and [[mitra-vedic]] (together as guardians of *ṛta*), [[ushas]] (the dawn goddess — among the most beautiful hymns), [[rudra-shiva-early]] (the fierce storm-archer who must be appeased), [[vishnu]] (early, cosmic-striding form), and [[dyaus-pita]] (sky-father, cognate with Greek Zeus, Roman Jupiter, Norse Tyr — a rare trace of the oldest Indo-European theology).
 - **Maṇḍala 10 (latest stratum):** Contains the most philosophically daring hymns:
   - **Purusha Sūkta (10.90):** The primordial being Purusha whose cosmic dismemberment creates the universe — moon from his mind, sun from his eye, sky from his navel, earth from his feet, the four social varṇas from his body-parts. The Vedic locus classicus for [[cosmic-body-cosmogony]].
   - **Nāsadīya Sūkta (10.129):** The "Hymn of Creation" — a profound cosmogonic meditation on non-being and being: "Then was neither non-being nor being... Who really knows? Who shall proclaim it here?" The first articulation of philosophical aporia about origins in Indian thought.

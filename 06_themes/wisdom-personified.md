@@ -50,7 +50,7 @@ A feminine, quasi-hypostatic Wisdom — *Hokmah* / *Sophia* — who is present a
 - **Rabbinic Torah-personification:** Genesis Rabbah 1:1 — God "looked into the Torah and created the world"; pre-existent Torah develops the Hokmah motif within rabbinic Judaism.
 
 ## Cross-tradition parallels
-- **Egyptian Ma'at:** [[maat]] — cosmic order personified as goddess; conceptual relative.
+- **Egyptian Ma'at:** [[ma-at]] — cosmic order personified as goddess; conceptual relative.
 - **Iranian Daēnā:** Personified conscience/religion; possibly contributed iconographic patterns.
 - **Greek Sophia / Athena:** Some scholarly proposals connect personified Wisdom to Greek philosophical *sophia* and to Athena as goddess of wisdom (less persuasive — the Hebrew tradition seems indigenous).
 

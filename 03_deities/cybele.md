@@ -15,9 +15,9 @@ child-of: []
 consort: ["[[attis]]"]
 attributes: ["mural crown (city walls)", "lion (often two flanking her throne)", "tympanum (drum)", "throne of lions"]
 attested-in: []
-equivalents: ["[[isis-hellenistic]]", "[[demeter]]", "[[rhea-greek]]", "[[inanna-sumerian]]", "[[ishtar-akkadian]]"]
+equivalents: ["[[isis-hellenistic]]", "[[demeter]]", "[[rhea]]", "[[inanna-sumerian]]", "[[ishtar-akkadian]]"]
 syncretic-edges:
-  - target: "rhea-greek"
+  - target: "rhea"
     type: "ancient-identification"
     source: "Greek identification from Pindar / Euripides; Rhea-Cybele cultic merger in Hellenistic period"
   - target: "demeter"
@@ -75,7 +75,7 @@ The defining Cybele-Attis narrative: Attis, a beautiful Phrygian youth (sometime
 The cult's most controversial element was the **Galli** — eunuch priests who self-castrated in ecstatic ritual, then served as professional cult attendants. Roman aristocrats found this disturbing (early Roman citizens were forbidden by law from becoming Galli) but the cult flourished anyway.
 
 ## Cross-tradition identifications
-- **[[rhea-greek]]** — *ancient-identification*: standard Greek interpretatio from late archaic onward.
+- **[[rhea]]** — *ancient-identification*: standard Greek interpretatio from late archaic onward.
 - **[[demeter]]** — *scholarly-parallel*: both are mother / fertility goddesses, parallel but not equated.
 - **[[isis-hellenistic]]** — *ancient-identification*: Apuleius *Met.* 11.5 has Isis name herself "Mother of the Gods" among many other names — explicit syncretic identification.
 - **[[inanna-sumerian]]** / **[[ishtar-akkadian]]** — *scholarly-parallel*: Eastern Mediterranean mother-goddesses with overlapping fertility-and-wild-nature domains.

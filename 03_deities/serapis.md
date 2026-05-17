@@ -17,7 +17,7 @@ attributes: ["modius (grain measure) headdress", "throne and scepter", "Cerberus
 attested-in: ["[[phase-3-010-sibylline-oracles]]", "[[phase-3-025-manetho-aegyptiaca]]", "[[phase-3-026-diodorus-bibliotheca-book-1]]", "[[phase-4-072-plutarch-de-iside-et-osiride]]"]
 equivalents: ["[[osiris]]", "[[apis-bull]]", "[[zeus]]", "[[hades]]", "[[dionysus-mystery]]"]
 syncretic-edges:
-  - target: "osiris-egyptian"
+  - target: "osiris"
     type: "ancient-identification"
     source: "Plutarch *De Iside et Osiride* 28; Tacitus *Histories* 4.83–84"
   - target: "apis-bull"

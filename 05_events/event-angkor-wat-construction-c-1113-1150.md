@@ -91,7 +91,7 @@ The bas-relief programme of the outer gallery (over 600 m of continuous relief c
 ## Connections
 - [[event-destruction-of-nalanda-1193]] — *contemporary*; the destruction of Nalanda in 1193 is roughly coincident with Jayavarman VII's Buddhist re-foundation of the Khmer state.
 - [[event-bhakti-movement-c-700-1700]] — *associated Vaishnava devotional context* (the Bhakti tradition's southern-Indian wave overlaps with the Khmer Vaishnava 12th-c. moment).
-- [[vishnu]], [[vishnu-deity]] — *deity-of-the-sanctuary*.
+- [[vishnu]], [[vishnu]] — *deity-of-the-sanctuary*.
 - [[krishna]], [[rama]] — *avatars-depicted*.
 - [[siddhartha-gautama-buddha]] — *deity-of-the-later-Buddhist-phase*.
 - [[avalokitesvara]] — *associated Mahayana figure* of the Jayavarman-VII-era Khmer Buddhist re-foundation.

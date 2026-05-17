@@ -2,7 +2,7 @@
 type: deity
 id: "ma-at"
 name: "Ma'at"
-aka: ["Maat", "Ma'at", "Mayet", "Truth", "Justice", "Cosmic Order", "Divine Balance", "Lady of the Hall of Two Truths"]
+aka: ["Maat", "Ma'at", "Mꜣꜥt", "Mayet", "Truth", "Justice", "Cosmic Order", "Divine Balance", "Lady of the Hall of Two Truths"]
 tradition: "Egyptian"
 sub-tradition: "Old Kingdom–New Kingdom universal theology"
 label: "deity"

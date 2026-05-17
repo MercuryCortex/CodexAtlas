@@ -23,7 +23,7 @@ geo: "Egypt (conceptual — Hall of Two Truths / Duat)"
 
 # Weighing of the Heart (Psychostasia)
 
-The weighing of the heart — Egyptian *wḏt-ib*, Greek *psychostasia* — is the moral judgment ceremony described in the *Book of the Dead* (especially Chapter 125) and depicted across thousands of papyri and tomb paintings from the Middle Kingdom onward. The deceased's heart is placed on a scale against the feather of [[maat]]; [[anubis]] calibrates the balance; [[thoth]] records the verdict; and if the heart outweighs the feather, [[ammit-devourer]] consumes it — a "second death" from which there is no resurrection.
+The weighing of the heart — Egyptian *wḏt-ib*, Greek *psychostasia* — is the moral judgment ceremony described in the *Book of the Dead* (especially Chapter 125) and depicted across thousands of papyri and tomb paintings from the Middle Kingdom onward. The deceased's heart is placed on a scale against the feather of [[ma-at]]; [[anubis]] calibrates the balance; [[thoth]] records the verdict; and if the heart outweighs the feather, [[ammit-devourer]] consumes it — a "second death" from which there is no resurrection.
 
 It is the earliest documented mass-participation moral accounting system at death (c. 2400 BCE for precursors; fully elaborated by c. 1550 BCE) and the only ancient judgment tradition that specifies a physical scale.
 
@@ -33,7 +33,7 @@ The deceased enters the *Aaru* — the Field of Reeds — only by passing throug
 
 1. **[[anubis]]** — the jackal-headed god of embalming; calibrates and reads the scale; the psychopomp who guides the deceased into the hall
 2. **[[thoth]]** — the ibis-headed scribe; records the verdict on his palette; his record is definitive and cannot be disputed
-3. **[[maat]]** — the feather on the opposite pan; she IS the standard (truth, cosmic order, justice); the heart is weighed not against an abstraction but against the deity herself
+3. **[[ma-at]]** — the feather on the opposite pan; she IS the standard (truth, cosmic order, justice); the heart is weighed not against an abstraction but against the deity herself
 4. **[[ammit-devourer]]** — the composite beast (crocodile head / lion body / hippopotamus haunches); waits beside the scale; if the heart is heavy (weighted with moral failure) she devours it
 
 [[osiris]] presides from his throne as judge, flanked by [[isis]] and Nephthys, and receives the declaration of Thoth.
@@ -54,7 +54,7 @@ Every major tradition has a moral accounting mechanism at death. Egyptian is the
 |---|---|---|
 | **Egyptian** | Physical scale, heart vs. Maat feather, 42 assessors | c. 2400 BCE (Pyramid Texts) |
 | **Zoroastrian** | [[cinvat-bridge-judgment]] — the Chinvat Bridge widens for the righteous, narrows to a blade for the wicked | c. 600 BCE (Gathas) |
-| **Hindu/Buddhist** | [[maat]] parallel: Chitragupta records all deeds; Yama judges; karma as cumulative moral weight | c. 800–500 BCE (Upanishads + early Buddhist texts) |
+| **Hindu/Buddhist** | [[ma-at]] parallel: Chitragupta records all deeds; Yama judges; karma as cumulative moral weight | c. 800–500 BCE (Upanishads + early Buddhist texts) |
 | **Christian** | [[final-judgment]] — the Last Judgment before Christ's throne; the Book of Life opened | 1st century CE (Revelation 20) |
 | **Islamic** | Day of Judgment; scales (*mizan*) weigh deeds; bridge (*sirat*) over Hell | 7th century CE (Quran 21:47; 101:6-9) |
 
@@ -89,7 +89,7 @@ This is structurally distinct from Christian hell (eternal conscious torment), B
 - [[ankh]] — held by Anubis; life itself is what is at stake in the judgment
 
 **Deity connections**:
-- [[maat]] — the feather and the principle; she IS the standard
+- [[ma-at]] — the feather and the principle; she IS the standard
 - [[anubis]] — calibrates the scale; the judge's technician
 - [[thoth]] — records the verdict; divine scribe
 - [[osiris]] — presides over the hall; himself the resurrection-judge

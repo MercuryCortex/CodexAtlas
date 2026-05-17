@@ -15,7 +15,7 @@ child-of: ["[[shiva]]"]
 consort: []
 attributes: ["seated on a lotus or a coiled serpent", "surrounded by snakes", "holds a bowl of snakes or a bunch of serpents", "one eye (sometimes depicted as semi-divine and half-blind)", "associated with the neem tree", "snakes in her hair"]
 attested-in: []
-equivalents: ["[[wadjet]] (Egyptian — serpent goddess protecting the pharaoh and the land)", "[[asclepius-greek]] (partial — healing through serpent power)", "[[vishnu-deity]] (via the serpent Shesha / Ananta on whom Vishnu reclines — serpent theology connection)"]
+equivalents: ["[[wadjet]] (Egyptian — serpent goddess protecting the pharaoh and the land)", "[[asclepius-greek]] (partial — healing through serpent power)", "[[vishnu]] (via the serpent Shesha / Ananta on whom Vishnu reclines — serpent theology connection)"]
 syncretic-edges:
   - target: "[[shiva]]"
     type: "ancient-identification"
@@ -89,7 +89,7 @@ The epic narrative of Behula and Lakshminder — Behula's preservation of her de
 - **[[durga]]** — *scholarly-parallel*: Durga defeats demons through martial power; Manasa defeats resistance through the deployment of serpentine forces. Both represent the goddess's ultimate sovereignty over the male world. Kinsley (1988) groups them in the broader category of "fierce goddesses who assert divine autonomy."
 - **[[wadjet]]** (Egyptian) — *scholarly-parallel*: Wadjet, the cobra-headed protective goddess of Lower Egypt, and Manasa share the core function of serpent-goddess-who-protects. Both are among the oldest layers of their respective religious traditions. Both are associated with royal protection and agricultural fertility. No direct transmission — a deep structural parallel that suggests an ancient stratum of snake-goddess theology common to agricultural civilizations.
 - **[[asclepius-greek]]** — *scholarly-parallel*: Asclepius's healing power is mediated through serpents (the rod of Asclepius); Manasa's protection from snakebite is snake-goddess power deployed as medicine. Both represent the ambivalent healing-and-killing power of serpent knowledge.
-- **[[vishnu-deity]]** — *scholarly-parallel (via naga connection)*: Vishnu reclines on the cosmic serpent Shesha/Ananta between cosmic cycles; Manasa governs the nagas and serpentine powers of the earth. The serpent as cosmic substrate (Shesha) and the serpent as earth-power (naga/Manasa) are two aspects of the same theological understanding: serpents as the life-force underlying all creation.
+- **[[vishnu]]** — *scholarly-parallel (via naga connection)*: Vishnu reclines on the cosmic serpent Shesha/Ananta between cosmic cycles; Manasa governs the nagas and serpentine powers of the earth. The serpent as cosmic substrate (Shesha) and the serpent as earth-power (naga/Manasa) are two aspects of the same theological understanding: serpents as the life-force underlying all creation.
 
 ### MASSIVE WIN — The Serpent Goddess Pattern
 

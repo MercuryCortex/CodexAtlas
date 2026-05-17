@@ -20,7 +20,7 @@ themes: ["[[prisca-theologia]]", "[[hidden-god]]", "[[microcosm-macrocosm]]", "[
 parallels: ["[[phase-6-022-fludd-utriusque-cosmi-historia]]", "Kircher's other Egypt works (*Prodromus Coptus*, *Lingua Aegyptiaca Restituta*, *Obeliscus Pamphilius*)"]
 influenced-by: ["[[phase-6-001-ficino-pimander]]", "[[phase-6-006-reuchlin-de-arte-cabalistica]]", "[[phase-6-009-agrippa-de-occulta-philosophia]]", "[[phase-4-012-asclepius]]", "Horapollo's *Hieroglyphica*", "Yuhanna ibn Saliba's Coptic-Arabic grammar (Kircher's principal source for Coptic)"]
 influences: ["Champollion (who used Kircher's identification of Coptic as the late form of ancient Egyptian)", "Egyptological iconography in the 18th–19th c.", "late occultist Egyptosophy"]
-deities-mentioned: ["[[hermes-trismegistus]]", "[[isis-hellenistic]]", "[[osiris-egyptian]]"]
+deities-mentioned: ["[[hermes-trismegistus]]", "[[isis-hellenistic]]", "[[osiris]]"]
 events-context: ["[[event-casaubon-redates-hermetica-1614]] — Kircher's Oedipus is in part a stubborn post-Casaubon attempt to maintain the prisca-theologia framework"]
 status: "metadata"
 preservation: "Three folio volumes (four books in four parts, 2200+ pages total), printed at Rome by Vitalis Mascardi 1652–1654 under Pope Innocent X's patronage. The work is among the most lavishly produced books of the 17th century, with hundreds of engravings, multilingual type-settings, and the first European printing of substantial Coptic grammatical material. Continuous early-modern transmission as the authoritative (though increasingly questioned) account of Egyptian wisdom; mostly displaced by Champollion's 1822 decipherment but still studied as a major Renaissance synthesis."

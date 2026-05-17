@@ -20,7 +20,7 @@ themes: ["[[afterlife-judgment]]", "[[primordial-waters]]", "[[creation-by-word]
 parallels: ["[[phase-1-002-pyramid-texts]]", "[[phase-1-010-book-of-the-dead]]"]
 influenced-by: ["[[phase-1-002-pyramid-texts]]"]
 influences: ["[[phase-1-010-book-of-the-dead]]"]
-deities-mentioned: ["[[ra]]", "[[atum]]", "[[osiris]]", "[[isis]]", "[[horus]]", "[[set]]", "[[thoth]]", "[[anubis]]", "[[maat]]", "[[nun]]"]
+deities-mentioned: ["[[ra]]", "[[atum]]", "[[osiris]]", "[[isis]]", "[[horus]]", "[[set]]", "[[thoth]]", "[[anubis]]", "[[ma-at]]", "[[nun]]"]
 events-context: ["Egyptian First Intermediate Period and Middle Kingdom; 'democratization' of the afterlife after the Old Kingdom's collapse"]
 status: "full"
 preservation: "Painted (or, less commonly, carved) in cursive hieroglyphs and hieratic on the interior surfaces of wooden coffins of Middle Kingdom non-royal elites — provincial governors, officials, and their families. ~1185 numbered spells in de Buck's standard edition (CT 1–1185); no single coffin contains more than a fraction. Best assemblages from Deir el-Bersheh (governors of Hare nome). Some spells also appear on papyri and tomb walls; the corpus partially overlaps with both the earlier Pyramid Texts and the later Book of the Dead."

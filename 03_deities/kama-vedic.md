@@ -11,7 +11,7 @@ domains: ["erotic love", "desire", "attraction", "procreation", "cosmic creative
 gender: "masculine"
 role: "god of erotic desire and love; primordial creative force; son of Brahma or Vishnu (variant); burned to ash by Shiva; reborn as Ananga (the Bodiless)"
 parent-of: []
-child-of: ["[[brahma]] (variant)", "[[vishnu-deity]] (variant)", "Dharma and Shradda (variant)"]
+child-of: ["[[brahma]] (variant)", "[[vishnu]] (variant)", "Dharma and Shradda (variant)"]
 consort: ["Rati (goddess of passion)"]
 attributes: ["bow of sugarcane", "bowstring of bees", "flower-arrows (five flowers: lotus, ashoka, mango blossom, jasmine, blue lotus)", "makara (sea-creature) banner", "parrot"]
 attested-in: []

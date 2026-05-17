@@ -33,7 +33,7 @@ appearances:
 deity-instances:
   - "[[yahweh]]"
   - "[[el-elohim-hebrew]]"
-  - "[[el-hebrew]]"
+  - "[[el-elohim-hebrew]]"
   - "[[ein-sof]]"
 tradition-context:
   - "[[tradition-judaism]]"

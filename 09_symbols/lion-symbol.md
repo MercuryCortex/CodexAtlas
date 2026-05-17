@@ -28,7 +28,7 @@ deity-instances:
   - "[[sekhmet]]"
   - "[[hathor]]"
   - "[[durga]]"
-  - "[[vishnu-deity]]"
+  - "[[vishnu]]"
   - "[[heracles]]"
 tradition-context:
   - "[[tradition-egyptian-religion]]"

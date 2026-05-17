@@ -24,7 +24,7 @@ appearances:
   - "[[phase-2-017-mahabharata-ramayana-oral-layers]]"
 deity-instances:
   - "[[garuda]]"
-  - "[[vishnu-deity]]"
+  - "[[vishnu]]"
 tradition-context:
   - "[[tradition-vedic-hinduism]]"
   - "[[tradition-bhakti-vaishnavism]]"

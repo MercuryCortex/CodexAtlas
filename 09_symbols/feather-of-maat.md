@@ -22,7 +22,7 @@ variants:
     description: "**Islamic Mizan (ميزان — scales of judgment)** — Quran 21:47: *'We shall set up just scales on the Day of Resurrection so that no soul will be treated unjustly, even if it concerns a grain of mustard seed.'* Quran 7:8-9, 101:6-9 elaborate the cosmic scales. The Mizan is a central feature of Islamic eschatology: every soul's deeds are weighed on divine scales; those whose good deeds outweigh evil pass to paradise; those whose evil outweighs good face punishment. The Islamic Mizan is structurally identical to the Egyptian Ma'at-scales: cosmic scales, divine judgment, souls weighed by their moral lives. Three traditions (Egyptian, Christian, Islamic) independently develop or transmit the cosmic-judgment-by-weight motif."
 appearances: []
 deity-instances:
-  - "[[maat]]"
+  - "[[ma-at]]"
 tradition-context:
   - "[[tradition-egyptian-religion]]"
 cross-symbol-edges:

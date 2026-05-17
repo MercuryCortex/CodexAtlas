@@ -19,7 +19,7 @@ variants:
     description: "The wing — composed of feathers — as the universal attribute of divine beings: Egyptian gods (Horus/Isis/Thoth/Maat with spread wings); Assyrian winged deities and lamassu; Greek Eros, Nike, Hermes; Zoroastrian Faravahar; Christian angels (all major iconography from Byzantine period onward). The wing marks the divine being's access to all cosmic levels simultaneously."
 appearances: []
 deity-instances:
-  - "[[maat]]"
+  - "[[ma-at]]"
   - "[[horus]]"
   - "[[thoth]]"
   - "[[quetzalcoatl]]"

@@ -15,7 +15,7 @@ deity-instances:
   - "[[yahweh]]"
   - "[[el-shaddai]]"
   - "[[el-elohim-hebrew]]"
-  - "[[el-hebrew]]"
+  - "[[el-elohim-hebrew]]"
   - "[[asherah]]"
 status: "stub"
 refs:

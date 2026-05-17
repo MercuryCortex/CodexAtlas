@@ -17,7 +17,7 @@ attributes: ["bow (Kodanda)", "blue-dark complexion", "monkey allies (Hanuman, S
 attested-in: ["[[phase-2-017-mahabharata-ramayana-oral-layers]]", "[[phase-6-019-tulsidas-ramcharitmanas]]", "[[phase-5-050-bhagavata-purana]]"]
 equivalents: []
 syncretic-edges:
-  - target: "[[vishnu-deity]]"
+  - target: "[[vishnu]]"
     type: "ancient-identification"
     source: "Puranic theology — Rama as seventh avatar (saptama avatara)"
   - target: "[[vishnu]]"
@@ -51,7 +51,7 @@ tags: [deity, vaishnavism, avatar, ramayana, hinduism, bhakti, dharma]
 
 See also [[rama]] (stub node).
 
-The seventh *avatāra* of [[vishnu-deity]] (or [[vishnu]]) in Puranic theology; hero of Valmiki's Sanskrit *Rāmāyaṇa* (~3rd–2nd c. BCE in core form) and of Tulsidas's Awadhi vernacular *Ramcharitmanas* (1574 CE). In the bhakti devotional tradition centered on Rama — *Rāma-bhakti* — Rama is not merely a hero or an avatar but the supreme personal deity, simultaneously God-as-king and God-as-ideal-human.
+The seventh *avatāra* of [[vishnu]] (or [[vishnu]]) in Puranic theology; hero of Valmiki's Sanskrit *Rāmāyaṇa* (~3rd–2nd c. BCE in core form) and of Tulsidas's Awadhi vernacular *Ramcharitmanas* (1574 CE). In the bhakti devotional tradition centered on Rama — *Rāma-bhakti* — Rama is not merely a hero or an avatar but the supreme personal deity, simultaneously God-as-king and God-as-ideal-human.
 
 ## Maryādā Puruṣottama
 
@@ -90,7 +90,7 @@ Rama's image has been politically mobilized in modern India: the Ram Janmabhoomi
 ## Related
 
 - [[rama]] — base stub node
-- [[vishnu-deity]], [[vishnu]] — the deity of whom Rama is an avatar
+- [[vishnu]], [[vishnu]] — the deity of whom Rama is an avatar
 - [[avatar-doctrine]] — the theological framework
 - [[tradition-bhakti-vaishnavism]] — the devotional tradition
 - [[tradition-vedic-hinduism]] — broader Hindu context

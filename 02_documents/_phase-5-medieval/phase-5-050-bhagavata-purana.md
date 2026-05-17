@@ -17,7 +17,7 @@ city-of-origin: ""
 authorship: "attributed (traditional: Vyāsa; critically: anonymous Vaiṣṇava theologians of the South Indian bhakti milieu)"
 key-figures:
   - "[[krishna-deity-vaishnava]]"
-  - "[[vishnu-deity]]"
+  - "[[vishnu]]"
   - "[[vishnu]]"
   - "[[brahma]]"
   - "[[shiva]]"
@@ -47,7 +47,7 @@ influences:
   - "all Krishna-līlā iconography, music, dance, and painting across South and Southeast Asia"
 deities-mentioned:
   - "[[krishna-deity-vaishnava]]"
-  - "[[vishnu-deity]]"
+  - "[[vishnu]]"
   - "[[vishnu]]"
   - "[[brahma]]"
   - "[[shiva]]"

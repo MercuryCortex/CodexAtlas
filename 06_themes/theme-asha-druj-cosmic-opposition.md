@@ -9,7 +9,7 @@ deity-instances: ["[[asha-vahishta]] (the cosmic Truth principle, first Amesha S
 related-themes: ["[[dualism-cosmic]] (the broader category; Asha/Druj is Zoroastrianism's specific instance)", "[[ethical-dualism]] (every human choice is an alignment with Asha or Druj)", "[[frashokereti-cosmic-renovation]] (the eschatological end of the Asha/Druj combat)", "[[light-and-darkness-dualism]] (later developments re-express this axis as light/darkness in Manichaeism and Qumran)"]
 related-documents: ["[[phase-2-002-gathas-of-zarathustra]] (founding text — the Asha/Druj axis is the structural spine of every Gatha)", "[[phase-2-004-yasna-younger-avesta]] (extended elaboration)", "[[phase-3-011-dead-sea-scrolls]] (Two Spirits treatise, 1QS 3:13–4:26 — closest Jewish parallel)"]
 cross-tradition-parallels:
-  - target: "maat"
+  - target: "ma-at"
     type: "parallel-motif"
     tradition: "Egyptian"
     note: "Egyptian Ma'at (cosmic order, truth, justice, right-measure) vs. Isfet (chaos, disorder, injustice) is structurally isomorphic to Asha/Druj. Both are (a) cosmic ontological axes, not merely personal virtues; (b) embodied in personified divine-beings AND in abstract principles simultaneously; (c) the structuring condition of correct social and ritual order; (d) the criterion of post-mortem judgment (heart weighed against Ma'at's feather; soul crossing the Chinvat Bridge). The temporal relationship is unresolved — Old Kingdom Ma'at predates Zarathustra by 1,000+ years; the parallelism is typological, not genealogical."

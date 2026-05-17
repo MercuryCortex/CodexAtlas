@@ -79,7 +79,7 @@ By the New Kingdom the logic is spiritualized: the pharaoh's ka (divine double) 
 **Deity connections**:
 - [[ra]] — the king as Ra's son; solar fitness must be demonstrated to justify continued solar patronage
 - [[isis]] — as the maternal figure who enables resurrection; she is present in Heb-Sed theology as the mother-guarantor
-- [[maat]] — the continued reign is justified only if the king maintains maat; the Heb-Sed confirms he can
+- [[ma-at]] — the continued reign is justified only if the king maintains maat; the Heb-Sed confirms he can
 - [[horus]] — the living pharaoh IS Horus; the Sed Festival is the renewal of Horus's living presence in the king's body; the divine son's power must be periodically demonstrated
 - [[ptah]] — the Apis bull is Ptah's manifestation; the pharaoh's race with the Apis bull is a direct confrontation with the chthonic fertility force
 

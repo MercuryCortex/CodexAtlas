@@ -25,7 +25,7 @@ appearances:
 
 deity-instances:
   - "[[vishnu]]"
-  - "[[vishnu-deity]]"
+  - "[[vishnu]]"
   - "[[quetzalcoatl]]"
   - "[[lakshmi]]"
 

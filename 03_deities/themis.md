@@ -15,9 +15,9 @@ child-of: ["[[uranus-greek]]", "[[gaia]]"]
 consort: ["[[zeus]] (after Metis)"]
 attributes: ["scales of justice", "blindfold (Roman *Iustitia* development)", "sword"]
 attested-in: ["[[phase-2-009-hesiod-theogony-works-and-days]]", "Homeric Hymn to Apollo"]
-equivalents: ["[[maat]]", "[[asha-vahishta|Aša Vahišta]] (Zoroastrian)"]
+equivalents: ["[[ma-at]]", "[[asha-vahishta|Aša Vahišta]] (Zoroastrian)"]
 syncretic-edges:
-  - target: "[[maat]]"
+  - target: "[[ma-at]]"
     type: "scholarly-parallel"
     source: "Egyptian divine truth / cosmic order personified as feminine deity — Themis is the structural cognate (West 1997)"
   - target: "[[the-moirai]]"
@@ -47,7 +47,7 @@ Titan goddess of **divine custom, natural law, and proper ritual order**. *Themi
 **The Delphic oracle**: Themis held the Delphic oracle before [[apollo]] (Homeric Hymn to Apollo 3; Aeschylus *Eumenides* 1–8) — preserving the early-Greek conception of prophetic legitimacy as anchored in divine *order* rather than divine *poetic frenzy*. **Cosmic legislator**: in Aeschylus *Prometheus Bound* 18 Themis is conflated with Gaia, and as Prometheus's mother gives him the foreknowledge of Zeus's eventual fall.
 
 ## Cross-tradition identifications
-- **[[maat]]** — *scholarly-parallel*: cosmic order / divine law as feminine personification (West 1997 *East Face of Helicon*).
+- **[[ma-at]]** — *scholarly-parallel*: cosmic order / divine law as feminine personification (West 1997 *East Face of Helicon*).
 - **Aša Vahišta** — *parallel-motif*: Zoroastrian Truth/Best-Order, one of the Amesha Spentas.
 - **Roman *Iustitia*** — *appropriated-by*: the Roman Lady Justice with scales/blindfold/sword descends iconographically from Themis.
 

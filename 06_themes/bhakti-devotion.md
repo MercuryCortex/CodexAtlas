@@ -5,7 +5,7 @@ name: "Bhakti (Devotion)"
 aka: ["bhakti-marga", "loving devotion", "personal devotion to deity"]
 category: "soteriological"
 appearances: ["[[phase-2-017-mahabharata-ramayana-oral-layers]]", "[[phase-5-001-devi-mahatmya]]", "[[phase-5-016-ramanuja-sribhasya]]", "[[phase-5-022-madhva-brahma-sutra-bhasya]]", "[[phase-6-013-mirabai-bhajans]]", "[[phase-6-019-tulsidas-ramcharitmanas]]", "[[phase-6-020-chaitanya-charitamrita]]"]
-deity-instances: ["[[krishna-deity-vaishnava]]", "[[vishnu-deity]]", "[[shiva-deity]]", "[[devi]]"]
+deity-instances: ["[[krishna-deity-vaishnava]]", "[[vishnu]]", "[[shiva-deity]]", "[[devi]]"]
 status: "stub"
 refs:
   - title: "Viraha-Bhakti: The Early History of Krishna Devotion in South India"

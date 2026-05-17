@@ -149,7 +149,7 @@ Navajo sand paintings (*iikááh* — "place where the gods come and go") are ce
 ## Edge Connections
 - → [[changing-woman]] — the most important Holy Person; embodies hózhó as seasonal cycle
 - → [[phase-8-013-navajo-blessingway]] — the central ceremony; the technology of hózhó restoration
-- → [[maat]] — Egyptian cosmic-order parallel to hózhó
+- → [[ma-at]] — Egyptian cosmic-order parallel to hózhó
 - → [[asha-vahishta]] — Zoroastrian truth-order parallel
 - → [[wisdom-as-cosmic-order]] — theme: sacred as right relationship
 - → [[tradition-lakota]] — sister tradition: Plains immanent-sacred parallel

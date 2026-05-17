@@ -87,7 +87,7 @@ All three treat breath/orifice-opening as the activation mechanism. All three di
 - [[djed-pillar]] — Osirian stability symbol; frequently paired with the mouth-opening sequence in tomb programs
 
 **Deity connections**:
-- [[maat]] — the animated deceased must then pass Maat's feather; wepet-ra enables them to stand before her
+- [[ma-at]] — the animated deceased must then pass Maat's feather; wepet-ra enables them to stand before her
 - [[isis]] — collects and reassembles Osiris's body before Horus performs the wepet-ra; she is the pre-ritual agent
 - [[thoth]] — patron of ritual precision; the 75-act sequence is a Thoth-domain scribal technology; he witnesses and records the animation
 

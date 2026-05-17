@@ -7,7 +7,7 @@ date-emergence: -3500
 date-end: 500
 region-origin: "Egypt (Nile valley and Delta)"
 regions-spread: ["Egypt", "Nubia", "Levant (via empire and trade)", "Greco-Roman Mediterranean (Isis-Osiris-Serapis mysteries)"]
-key-deities: ["[[ra]]", "[[atum]]", "[[ptah]]", "[[osiris]]", "[[isis]]", "[[horus]]", "[[set]]", "[[thoth]]", "[[anubis]]", "[[maat]]", "[[aten]]", "[[nun]]", "[[amun]]", "[[amun-ra]]", "[[mut]]", "[[khonsu]]", "[[khnum]]", "[[neith]]", "[[sobek]]", "[[bastet]]", "[[bes]]", "[[apis-bull]]", "[[serapis]]", "[[hermes-trismegistus]]"]
+key-deities: ["[[ra]]", "[[atum]]", "[[ptah]]", "[[osiris]]", "[[isis]]", "[[horus]]", "[[set]]", "[[thoth]]", "[[anubis]]", "[[ma-at]]", "[[aten]]", "[[nun]]", "[[amun]]", "[[amun-ra]]", "[[mut]]", "[[khonsu]]", "[[khnum]]", "[[neith]]", "[[sobek]]", "[[bastet]]", "[[bes]]", "[[apis-bull]]", "[[serapis]]", "[[hermes-trismegistus]]"]
 key-persons: ["[[unas]]", "[[akhenaten]]", "[[imhotep]]", "[[manetho]]", "[[ptolemy-i-soter]]", "[[ptolemy-ii-philadelphus]]"]
 key-documents: ["[[phase-1-002-pyramid-texts]]", "[[phase-1-009-coffin-texts]]", "[[phase-1-010-book-of-the-dead]]", "[[phase-1-011-great-hymn-to-aten]]", "[[phase-1-012-amarna-letters]]", "[[phase-1-027-memphite-theology-shabaka-stone]]", "[[phase-2-028-herodotus-histories-book-2]]", "[[phase-3-025-manetho-aegyptiaca]]", "[[phase-3-026-diodorus-bibliotheca-book-1]]", "[[phase-4-072-plutarch-de-iside-et-osiride]]"]
 sister-traditions: ["[[tradition-sumerian-mesopotamian]]", "[[tradition-canaanite-ugaritic]]"]
@@ -87,7 +87,7 @@ The religion of pharaonic Egypt, attested for roughly three and a half millennia
 - [[set]] — desert, storm, disorder; Ombos.
 - [[thoth]] — writing, knowledge, recorder of judgment; Hermopolis.
 - [[anubis]] — embalming, psychopomp; Cynopolis.
-- [[maat]] — cosmic order personified; pervasive.
+- [[ma-at]] — cosmic order personified; pervasive.
 - [[aten]] — the visible solar disc; sole god of Amarna.
 - [[nun]] — primordial waters.
 

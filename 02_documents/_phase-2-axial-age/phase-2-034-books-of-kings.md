@@ -20,7 +20,7 @@ themes: ["[[divine-kingship]]", "[[prophet-and-king]]", "[[chosen-people]]", "[[
 parallels: ["[[phase-2-019-deuteronomistic-history]]", "[[phase-2-018-hebrew-bible-p-source]]", "[[phase-2-004-yasna-younger-avesta]]"]
 influenced-by: ["Earlier Israelite/Judahite royal annals ('Book of the Acts of Solomon', 'Book of the Chronicles of the Kings of Israel/Judah' — referenced but lost); prophetic source collections (Elijah-Elisha cycle); [[phase-2-011-hebrew-bible-d-source]]"]
 influences: ["[[phase-3-002-plato-dialogues]] (indirect cultural influence via Hellenistic Jewish synthesis); [[phase-3-013-philo-of-alexandria]]; New Testament typology (Elijah → John the Baptist); Christian hagiography"]
-deities-mentioned: ["[[yahweh]]", "[[baal]]", "[[asherah]]", "[[el-hebrew]]"]
+deities-mentioned: ["[[yahweh]]", "[[baal]]", "[[asherah]]", "[[el-elohim-hebrew]]"]
 events-context: ["Divided monarchy period (930–722 BCE for Israel; 930–586 BCE for Judah); fall of Samaria 722 BCE; fall of Jerusalem 586 BCE; Babylonian exile"]
 status: "full"
 preservation: "Hebrew Masoretic Text (MT); Septuagint (LXX — substantially different arrangement and some additional material in 3 Kingdoms/4 Kingdoms); Dead Sea Scrolls fragments confirm pre-MT textual variants; Peshitta (Syriac) and Vulgate (Latin) translations."

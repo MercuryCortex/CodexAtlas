@@ -15,9 +15,9 @@ child-of: []
 consort: ["Lakshmi (Śrī)"]
 attributes: ["recumbent on the cosmic serpent Ananta-Śeṣa on the milky ocean", "the four arms with conch, discus, mace, lotus"]
 attested-in: ["[[phase-2-006-brahmanas-aranyakas]]", "[[phase-2-017-mahabharata-ramayana-oral-layers]]"]
-equivalents: ["[[vishnu-deity]]"]
+equivalents: ["[[vishnu]]"]
 syncretic-edges:
-  - target: "vishnu-deity"
+  - target: "vishnu"
     type: "ancient-identification"
     source: "Mahabharata, Bhagavad Gita passim"
 status: "stub"
@@ -51,7 +51,7 @@ A name and aspect of Vishnu in his supreme-cosmic form — the deity reclining o
 The supreme-cosmic resting deity from whom creation flows; in many Vaishnava narratives the cosmic-cycle pattern is *pralaya* (dissolution) → Nārāyaṇa reclining → Brahmā arising from his navel-lotus → creation.
 
 ## Cross-tradition identifications
-- **[[vishnu-deity]]** — *ancient-identification*: in classical Vaishnavism Nārāyaṇa is Vishnu in supreme/transcendent form.
+- **[[vishnu]]** — *ancient-identification*: in classical Vaishnavism Nārāyaṇa is Vishnu in supreme/transcendent form.
 
 ## Refs
 1. Kinsley, *Hindu Goddesses*, 1986.
