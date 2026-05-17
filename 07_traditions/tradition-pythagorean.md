@@ -41,6 +41,38 @@ refs:
     type: "encyclopedia"
     tier: 3
 tags: [tradition, pythagorean, mathematics, reincarnation, magna-graecia, neo-pythagorean]
+
+cross-tradition-edges:
+  - target: mathematics-pythagorean-sacred
+    type: parent-of
+    note: The Pythagorean tradition is the direct origin of sacred number theology — the doctrine that number is the arche (primary substance) of all things. The mathematical-cosmological program (tetraktys, music of spheres, harmonic ratios as cosmic structure) is Pythagoreanism's core intellectual legacy, transmitted via Philolaus, Archytas, Nicomachus, Boethius into the Western quadrivium.
+  - target: music-pythagorean-harmony
+    type: parent-of
+    note: Pythagorean harmony theory — the discovery that consonant musical intervals correspond to integer ratios (2:1 octave, 3:2 fifth, 4:3 fourth) — is the oldest documented application of mathematics to a perceptual phenomenon. This is not a secondary product of Pythagoreanism; it is its founding empirical demonstration.
+  - target: tradition-orphic
+    type: parallel
+    note: Pythagorean metempsychosis (soul-transmigration) and Orphic transmigration are structurally parallel and mutually influencing doctrines developed in the same geographic and cultural zone (Magna Graecia, 6th–5th century BCE). Both require vegetarianism, ritual purity, and post-mortem soul judgment. Ancient sources report direct interaction; Plato's eschatological myths blend the two.
+  - target: philosophy-neoplatonism
+    type: ancestor-of
+    note: Neoplatonism is in significant part Pythagoreanism systematized into a complete metaphysical program. The Pythagorean Monad → Neoplatonic One; the Dyad → Neoplatonic Intellect/Nous; the three hypostases parallel the Pythagorean 1-2-3 cosmogonic structure. Iamblichus's De Vita Pythagorica and the theurgical Neoplatonism of his school are explicitly Pythagoreanizing Neoplatonism.
+  - target: tradition-mystery-cults
+    type: parallel
+    note: Pythagoreanism operated as a mystery cult in structure: initiation tiers (akousmatikoi / mathēmatikoi), oral transmission to initiates only, dietary prohibitions, ritual silence, communal property, oath-brotherhood. The Eleusinian Mysteries, Orphic groups, and Pythagorean brotherhood share the same organizational template.
+  - target: tradition-neoplatonism
+    type: ancestor-of
+    note: The entire Neoplatonic program from Plotinus through Iamblichus, Proclus, and Damascius is a systematic philosophical development of Pythagorean number theology. The Neoplatonists were explicit about this: Iamblichus ranked Pythagoras above Plato as the source tradition.
+  - target: reincarnation
+    type: parent-of
+    note: The Pythagorean doctrine of metempsychosis is the oldest philosophically articulated theory of reincarnation in the Western world. Pythagoras claimed personal memory of past lives (Euphorbus at Troy among them). The doctrine provided the religious ground for Pythagorean vegetarianism (animals may contain reincarnated human souls) and for the entire ascetic-purification program.
+  - target: physicians-oath
+    type: possible-origin
+    note: Edelstein (1943) argued the Hippocratic Oath was composed by a Pythagorean minority within Greek medicine. The anti-surgery clause (body integrity sacred), anti-abortion clause, oath-brotherhood structure, and purity language ('in purity and holiness I will guard my life and my art') are all Pythagorean markers absent from mainstream Greek medicine. If correct, the foundational document of Western medical ethics is a Pythagorean brotherhood text.
+  - target: alphabet-sefer-yetzirah
+    type: parallel
+    note: Sefer Yetzirah's program — 10 sefirot + 22 letter-paths as the arithmetic substrate of creation — is structurally isomorphic with Pythagorean number theology. The Neoplatonic bridge (Pythagorean → Plotinian → early Kabbalistic) makes transmission structurally plausible, though direct influence cannot be proven. Both systems treat the first decade of numbers as cosmologically exhaustive.
+  - target: mathematics-house-of-wisdom
+    type: ancestor-of
+    note: Pythagorean number theory and harmonic ratios entered Islamic mathematics via Plato's Academy, Aristotle's school, and above all Nicomachus's Introduction to Arithmetic (translated into Arabic; al-Kindi explicitly names Pythagoras as a source). The House of Wisdom preserved, commented on, and extended Pythagorean mathematical doctrine.
 ---
 
 # Pythagoreanism
