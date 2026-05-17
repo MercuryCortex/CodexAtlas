@@ -27,11 +27,29 @@ _Hand-maintained. Each agent currently working in the vault appends a claim bloc
 
 ---
 
+## medicine-tab-1 — IN FLIGHT (2026-05-17)
+- New folder `17_medicine/` with 6 tradition-hub nodes (Mesopotamian, Egyptian, Greek Asklepion, Ayurveda, Islamic Golden Age, Shamanic)
+- 2 deity nodes: `asklepios.md`, `dhanvantari.md`
+- 2 person nodes: `hippocrates.md`, `avicenna.md`
+- 3 theme nodes: `temple-incubation.md`, `sacred-pharmacology.md`, `healer-priest.md`
+- 5 document nodes: `phase-1-037-ebers-papyrus.md`, `phase-1-038-edwin-smith-papyrus.md`, `phase-2-045-hippocratic-corpus.md`, `phase-3-036-charaka-samhita.md`, `phase-5-063-avicenna-canon-of-medicine.md`
+- Tag existing nodes: sekhmet, apollo, imhotep, ninazu, galen-of-pergamon
+- App: `VIEWS.medicine` (5 modes: deities · traditions · spine · pharmacology · findings) + nav item
+
 ## maths-sciences-1 — IN FLIGHT (2026-05-17)
 - New folder 16_mathematics/ with 6 nodes: mathematics-babylonian-temple, mathematics-sulba-sutras, mathematics-pythagorean-sacred, mathematics-house-of-wisdom, mathematics-zero-india, mathematics-sacred-geometry
 - 3 person stubs: al-khwarizmi, brahmagupta, euclid
 - New `∑ Mathematics` tab in app (3 modes: nodes / transmission / findings)
 - build_data.py: adding "mathematics": ["16_mathematics"]
+
+---
+
+## ritual-norse-vodou-expansion-1 — FINISHED (2026-05-17)
+- 8 nodes in 14_rituals/: ritual-norse-funeral-ship, ritual-thing-assembly, ritual-runic-inscription, ritual-einherjar-valhalla, ritual-vodou-ceremony, ritual-egungun-masquerade, ritual-vodou-healing, ritual-ori-worship
+- Traditions: tradition-norse-germanic (4 nodes), tradition-vodou-haitian (2), tradition-yoruba (2)
+- MASSIVE WINs: (1) Five traditions equip their dead — Norse ship burial + Egyptian mummification as the two most architecturally elaborate expressions; (2) Sacred assembly as locus of law — Norse Thing/Roman Comitia/Athenian Ekklesia/Iroquois Great Council; (3) Operative writing across 5 traditions — runes/hieroglyphic spells/mezuzah/bija/fu: Saussure's arbitrary sign is the modern exception; (4) Warrior death as divine election — Valhalla/shahid/Khalsa martyrdom/Aztec hummingbird warriors; (5) Sacred geometric diagram calls deity — vévé/sand mandala/yantra: identical operational theory across 3 traditions; (6) Masked performer IS the sacred being — Egungun/Hopi Kachina/Greek tragic mask/Tibetan Cham; (7) Personal divine within — Ori/Atman/Stoic daimon/guardian angel/Neoplatonic soul-spark
+- All wikilinks verified against canonical-slugs.md and vault file IDs. Zero dead links introduced.
+- Build: run after commit.
 
 ---
 
