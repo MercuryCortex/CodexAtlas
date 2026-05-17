@@ -131,19 +131,30 @@ This is not superstition overlaid on practical governance. This IS the governanc
 - [[marduk]] — Marduk's approval was sought in extispicy; the *baru* priests operated primarily within Marduk's temple complex in Babylon
 - [[enlil]] — Enlil was the sky-god whose celestial domain was the primary subject of the EAE omen series; the series opens "When Anu and Enlil..."
 - [[inanna]] — Ishtar/Venus was the most closely watched planet in the EAE series; approximately one-third of the Venus tablets concern Ishtar's omens; the original Venus observation tablet (*Enuma Anu Enlil* Tablet 63) covers 21 years of Venus observations from the Old Babylonian period
+- [[utu-shamash]] — the sun god of justice and truth; the primary divine addressee in extispicy; when a question was posed to the sacrifice, it was specifically addressed to Shamash as the god who knows all truths; he "wrote" the answer in the liver
+- [[nanna-sin]] — the moon god; lunar phenomena constitute a major category of the EAE celestial omen series; Nanna-Sin's monthly cycle generated the most watched predictive sequence in Babylonian divination
+- [[enki-ea]] — god of wisdom and craft; patron of ritual knowledge and the scribal arts; the *baru* priests who maintained the divination system were under Ea's divine patronage as keepers of secret knowledge
+- [[nergal]] — god of pestilence, death, and the underworld; certain extispicy configurations in the liver specifically pointed to Nergal's domain — plague, military defeat, royal death; his negative omens were the most feared
 
 **Document nodes**
 - [[phase-1-019-enuma-anu-enlil]] — the 70-tablet celestial omen series; 7,000 omens; the foundation of mathematical astronomy
+- [[phase-1-008-enuma-elish]] — the *Enuma Elish* was itself a divinatory text in that its annual recitation at Akitu "read" the cosmic order and established the fates for the coming year; cosmogony and divination are inseparable in Babylonian theology
+
+**Persons**:
+- [[hammurabi]] — his law code includes references to divination; the legal system and the divination system were co-legitimating: divine consultation authorized royal law-making
+- [[gilgamesh-king]] — the historical Gilgamesh era (Uruk III, c. 2700 BCE) precedes the formal *baru* system but the Epic documents early consultation practice; Gilgamesh consults Shamash before his cedar forest quest
 
 **Alphabet/Script nodes**
 - [[alphabet-chinese-oracle-bones]] — the parallel divination system that generated Chinese writing; the closest institutional parallel to the Mesopotamian *baru* system
 
 **Symbol nodes**
 - [[ifa-divination]] — the Yoruba Ifa system; the longest continuously operating divination institution
+- [[divinatory-calendar]] — the hub theme for the calendar-divination nexus; Mesopotamian divination created the 7-day week and zodiacal system that still structures modern time
 
 **Ritual nodes**
 - [[ritual-sacrifice]] — extispicy required prior sacrifice; divination and sacrifice were a single integrated ritual act
 - [[ritual-akitu-new-year]] — the Akitu festival incorporated divination; the fixing of destinies by the divine assembly was the annual consultation writ cosmological
+- [[ritual-olympic-games]] — the Olympic oracle at Olympia (Zeus answering through the priests reading sacrificial signs) is a Greek parallel to the Mesopotamian extispicy system; both make divine consultation mandatory before major civic decisions
 
 **Tradition nodes**
 - [[tradition-mesopotamian]] — home tradition

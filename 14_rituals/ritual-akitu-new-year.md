@@ -122,6 +122,17 @@ The earliest Akitu evidence dates to the Ur III period (c. 2100 BCE) at Ur and N
 - [[tradition-mesopotamian]] — home tradition
 - [[tradition-sumerian-mesopotamian]] — broader Mesopotamian tradition; Akitu originated in Sumerian practice
 
+**Deity nodes (expanded)**:
+- [[nanna-sin]] — moon god; in the Sumerian Akitu at Ur (the earliest form), Nanna-Sin's festival was the anchor of the lunar calendar; the Neo-Babylonian Marduk-centered Akitu displaced but incorporated earlier lunar elements
+- [[ishtar-akkadian]] — Ishtar's lions line the Processional Way (the glazed-brick reliefs of the Ishtar Gate); her role in earlier Sumerian Akitu variants was more central than in the Marduk-dominated later form
+- [[nebuchadnezzar-ii]] — the Neo-Babylonian king who built the Processional Way and the Ishtar Gate; his building program created the monumental stage for the Akitu procession's most fully documented form
+- [[hammurabi]] — Old Babylonian king who first fully elaborated the Akitu as New Year ceremony; his law code represents the same theology of divine delegation of political authority that the king's humiliation ritual dramatizes
+
+**Cross-tradition parallels (expanded)**:
+- [[ritual-opet-festival]] — the Egyptian Opet Festival is the most precise structural parallel to Akitu: divine statue processed out of its temple, king re-invested with divine mandate, cosmic order renewed for the year; two fully independent ancient Near Eastern solutions to the same problem
+- [[ritual-sed-festival]] — the Sed Festival's royal humiliation/renewal and the Akitu's king-slapping and re-investiture are parallel mechanisms; in both, the king's authority is demonstrated to be temporary and divinely sourced, not inherent
+- [[chaoskampf]] — the *Enuma Elish* recitation enacts the Chaoskampf — Marduk's combat with Tiamat (primordial chaos); the annual recitation is the canonical Mesopotamian instance of the cosmos-ordered-from-chaos-combat pattern
+
 ## MASSIVE WIN
 
 **The king of Babylon — the most powerful man in the most powerful city on earth — was annually stripped of his crown, slapped in the face, had his ears pulled, and was required to weep before a statue to prove his fitness to rule.** This is not ritual humility — it is a theological statement that political authority is not inherent but delegated annually from the divine. The *Enuma Elish* recitation, the king's humiliation, and the divine assembly's fixing of destinies all point to the same Babylonian theological claim: **the world is not self-sustaining, power is not self-justifying, and both require annual divine renewal to continue.** The modern political intuition that power requires periodic legitimation (elections, accountability) is a secular echo of this 4,000-year-old ritual technology.
