@@ -21,6 +21,7 @@
     { id: 'devanagari',  label: 'Devanagari',  font: "'Noto Sans Devanagari', 'Segoe UI', sans-serif", dir: 'ltr' },
     { id: 'hangul',      label: 'Hangul',      font: "'Noto Sans KR', 'Malgun Gothic', 'Segoe UI', sans-serif", dir: 'ltr' },
     { id: 'aztec',       label: 'Aztec',       font: "'Apple Color Emoji', 'Segoe UI Emoji', 'Noto Emoji', sans-serif", dir: 'ltr' },
+    { id: 'maya',        label: 'Maya',        font: "'Apple Color Emoji', 'Segoe UI Emoji', 'Noto Emoji', sans-serif", dir: 'ltr' },
     { id: 'quipu',       label: 'Quipu',       font: "'Apple Color Emoji', 'Segoe UI Emoji', 'Noto Emoji', 'Segoe UI', sans-serif", dir: 'ltr' },
   ];
 
@@ -115,7 +116,7 @@
 
     // Chinese/Japanese modes show only their own scriptOnly entries (no Semitic letters).
     // All other modes show shared entries (no scriptOnly) plus their own scriptOnly entries.
-    const isStandaloneScript = _script === 'chinese' || _script === 'japanese' || _script === 'devanagari' || _script === 'hangul' || _script === 'aztec' || _script === 'quipu';
+    const isStandaloneScript = _script === 'chinese' || _script === 'japanese' || _script === 'devanagari' || _script === 'hangul' || _script === 'aztec' || _script === 'maya' || _script === 'quipu';
     let displayData = data.map((g, idx) => ({ ...g, _origIdx: idx })).filter(g => {
       if (isStandaloneScript) return g.scriptOnly && g.scriptOnly.includes(_script);
       if (!g.scriptOnly) return true;           // no restriction — show in all scripts
