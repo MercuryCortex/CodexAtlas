@@ -8901,6 +8901,9 @@ function renderRitualsReligion(pane) {
     { id: 'tradition-egyptian-religion',      label: 'Egyptian',     color: '#8ab888', also: ['tradition-egyptian'] },
     { id: 'tradition-greek-religion',         label: 'Greek / Roman',color: '#aaa080', also: ['tradition-roman-religion','tradition-greek-mystery-religion','tradition-eleusinian-mysteries','tradition-orphic','tradition-dionysian-mysteries','tradition-mystery-cults'] },
     { id: 'tradition-mesopotamian',           label: 'Mesopotamian', color: '#80a0aa', also: ['tradition-sumerian-mesopotamian'] },
+    { id: 'tradition-jainism',               label: 'Jain',         color: '#b8a060', also: [] },
+    { id: 'tradition-shinto',                label: 'Shinto',       color: '#a0b880', also: [] },
+    { id: 'tradition-native-american',       label: 'Indigenous',   color: '#c47870', also: ['tradition-lakota','tradition-aztec-mexica','tradition-inca-andean'] },
   ];
   const allRitualNodes = DATA.nodes.filter(n => n.type === 'ritual');
   const sel = religions.find(r => r.id === _ritualsState.religion) || religions[0];
