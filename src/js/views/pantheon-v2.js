@@ -1097,8 +1097,11 @@
     overlay.style.pointerEvents = 'none';
     overlay.style.width  = '100%';
     overlay.style.height = '100%';
-    overlay.style.zIndex = '3';
-    rootEl.appendChild(overlay);
+    // NO z-index — DOM order is the invariant. Put overlay as FIRST CHILD
+    // so sigma's later canvases paint on top of it. Hull clicks reach us via
+    // sigma's clickStage hit-test, not via SVG event propagation.
+    if (rootEl.firstChild) rootEl.insertBefore(overlay, rootEl.firstChild);
+    else                   rootEl.appendChild(overlay);
 
     // Two groups inside the overlay: hulls first (painted bottom), edges on top.
     const hullsG = document.createElementNS(SVG_NS, 'g');
@@ -2045,7 +2048,12 @@
       </select>
       <button class="ph2-btn" id="ph2-labels" title="Toggle label density">labels: ${_labelsMode}</button>
       <button class="ph2-btn${_egoFocus ? ' ph2-btn-on' : ''}" id="ph2-ego" title="Show 1-hop neighbourhood of selected node">ego focus</button>
-      <button class="ph2-btn" id="ph2-thumbs" title="Show deity thumbnails as circle fills">photos: off</button>
+      <div class="ph2-toolbar-zoom" role="group" aria-label="Zoom">
+        <button class="ph2-btn ph2-tz-btn" id="ph2-zoom-out" title="Zoom out">−</button>
+        <button class="ph2-btn ph2-tz-pct" id="ph2-zoom-pct" title="Fit (100%)">100%</button>
+        <button class="ph2-btn ph2-tz-btn" id="ph2-zoom-in" title="Zoom in">+</button>
+        <button class="ph2-btn ph2-tz-btn" id="ph2-zoom-recenter" title="Recenter to all nodes">⌖</button>
+      </div>
     `;
     rootEl.appendChild(toolbar);
 
@@ -2070,16 +2078,8 @@
       if (!_egoFocus) _selectedId = null;
       sigma.refresh({ skipIndexation: true });
     };
-    // Thumbnail-fill toggle — overlays each deity's thumbnail (clipped to a
-    // circle) on top of the dot. Hidden by default; flips state on click.
-    let _thumbsOn = false;
-    toolbar.querySelector('#ph2-thumbs').onclick = (ev) => {
-      _thumbsOn = !_thumbsOn;
-      setThumbsEnabled(_thumbsOn);
-      ev.target.textContent = 'photos: ' + (_thumbsOn ? 'on' : 'off');
-      ev.target.classList.toggle('ph2-btn-on', _thumbsOn);
-    };
-    // 100% + recenter moved to the bottom-right zoom widget (see below).
+    // Photos toggle removed from the toolbar — too cluttered. Thumbnails
+    // can be re-enabled programmatically via `setThumbsEnabled(true)`.
 
     // ── FAMILY-FILTER DROPDOWN (toolbar) ──────────────────────────────
     // Tick-box multi-select panel: pick one or many families to isolate.
@@ -2162,54 +2162,42 @@
     // Initial sync (in case render() re-fires with a populated set).
     syncFamilyMenu();
 
-    // ── BOTTOM-RIGHT ZOOM WIDGET ──────────────────────────────────────
-    // Compact zoom UI: percentage label (also acts as 100%/fit button on
-    // click) + zoom in / zoom out steppers + recenter. Lives over the
-    // bottom-right of the pane; sits above the search bar via z-index.
-    const zoomWidget = document.createElement('div');
-    zoomWidget.className = 'ph2-zoom-widget';
-    zoomWidget.innerHTML = `
-      <button class="ph2-zoom-btn" id="ph2-zoom-out" title="Zoom out">−</button>
-      <button class="ph2-zoom-pct" id="ph2-zoom-pct" title="Click to fit (100%)">100%</button>
-      <button class="ph2-zoom-btn" id="ph2-zoom-in" title="Zoom in">+</button>
-      <button class="ph2-zoom-btn ph2-zoom-recenter" id="ph2-zoom-recenter" title="Recenter to all nodes">⌖</button>
-    `;
-    rootEl.appendChild(zoomWidget);
-
-    const zoomPctEl = zoomWidget.querySelector('#ph2-zoom-pct');
+    // ── ZOOM CONTROLS (inline in top toolbar) ─────────────────────────
+    // Same UI vocabulary as the rest of the toolbar — buttons live INSIDE
+    // ph2-toolbar via `.ph2-toolbar-zoom` group (rendered above with the
+    // other buttons). No separate bottom-right floater.
+    const zoomPctEl = toolbar.querySelector('#ph2-zoom-pct');
     function syncZoomPct() {
       try {
         const ratio = sigma.getCamera().getState().ratio;
         const fit   = computeFitRatio();
-        // 100% = at-fit-ratio. Smaller ratio (more zoomed-in) = larger %.
         const pct = Math.round((fit / ratio) * 100);
         zoomPctEl.textContent = pct + '%';
       } catch (e) {}
     }
     sigma.getCamera().on('updated', syncZoomPct);
     syncZoomPct();
-
     zoomPctEl.onclick = () => {
       try {
         const ratio = computeFitRatio();
         sigma.getCamera().animate({ x: 0.5, y: 0.5, ratio, angle: 0 }, { duration: 280 });
       } catch (e) {}
     };
-    zoomWidget.querySelector('#ph2-zoom-in').onclick = () => {
+    toolbar.querySelector('#ph2-zoom-in').onclick = () => {
       try {
         const cam = sigma.getCamera();
         const cur = cam.getState().ratio;
         cam.animate({ ratio: Math.max(0.05, cur / 1.30) }, { duration: 180 });
       } catch (e) {}
     };
-    zoomWidget.querySelector('#ph2-zoom-out').onclick = () => {
+    toolbar.querySelector('#ph2-zoom-out').onclick = () => {
       try {
         const cam = sigma.getCamera();
         const cur = cam.getState().ratio;
         cam.animate({ ratio: Math.min(8, cur * 1.30) }, { duration: 180 });
       } catch (e) {}
     };
-    zoomWidget.querySelector('#ph2-zoom-recenter').onclick = () => {
+    toolbar.querySelector('#ph2-zoom-recenter').onclick = () => {
       try { sigma.getCamera().animatedReset({ duration: 360 }); } catch (e) {}
       _egoFocus = false;
       toolbar.querySelector('#ph2-ego')?.classList.remove('ph2-btn-on');

@@ -1949,11 +1949,10 @@ body.view-atlas main.canvas { background: var(--bg-0); }
   will-change: transform;
 }
 .ph2-hulls-g, .ph2-edges-g, .ph2-ticks-g { will-change: transform; }
-/* Hulls are clickable — clicking a wedge background isolates that family.
-   The SVG overlay parent has pointer-events:none so canvas mouse events
-   still pass through everywhere ELSE; only the hull paths themselves grab. */
-.ph2-hulls-g { pointer-events: auto; }
-.ph2-hull    { cursor: pointer; }
+/* Hulls are NOT clickable directly — clicks pass through to sigma, which
+   fires clickStage; the clickStage handler does an SVG hit-test against
+   each hull (`isPointInFill`) and routes accordingly. Letting hulls grab
+   pointer events used to BLOCK every node click on the wheel. */
 .ph2-node-labels-overlay, .ph2-rim-overlay { will-change: contents; }
 /* HULLS — rounded annular wedges, one per family. Geometry matches
    production's .sector-hull (Rinner-22 → Router+22, padAngle 0.014,
@@ -2003,7 +2002,11 @@ body.view-atlas main.canvas { background: var(--bg-0); }
      stay where they were. The atmosphere layer is information. */
 }
 .ph2-edge.hot {
-  stroke: var(--edge-bucket-color, rgba(212, 165, 90, 0.9)) !important;
+  /* `stroke` is intentionally WITHOUT !important so JS-set inline
+     `style.stroke = url(#grad-id)` wins for directional edges (Transmission,
+     Attestation, kinship descent, appropriated-by). Non-directional .hot
+     edges fall back to the bucket colour via the CSS var. */
+  stroke: var(--edge-bucket-color, rgba(212, 165, 90, 0.9));
   stroke-opacity: var(--hot-op, 0.9) !important;
   stroke-width: var(--ph2-edge-hot-width, 1.0) !important;
 }
@@ -2024,18 +2027,21 @@ body.view-atlas main.canvas { background: var(--bg-0); }
    shape next to the cursor); now a 44 px circle avatar + text flowing to the
    right, which feels like a Linear/Notion hover card instead of a tooltip. */
 .ph2-thumb-card {
+  /* Same design vocabulary as the toolbar: mono font, 3 px radius, soft
+     border-soft outline, blur(10px). The card reads as a peer of the
+     `Families ▾` and zoom widgets, not a separate visual language. */
   position: fixed; pointer-events: none;
   display: flex; align-items: center; gap: 10px;
-  background: rgba(13,17,25,0.94); backdrop-filter: blur(14px) saturate(140%);
-  -webkit-backdrop-filter: blur(14px) saturate(140%);
-  border: 1px solid rgba(255,255,255,0.08);
-  border-radius: 10px;
-  padding: 8px 14px 8px 8px;
+  background: rgba(14,16,22,0.92);
+  backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);
+  border: 1px solid var(--border-soft);
+  border-radius: 3px;
+  padding: 8px 12px 8px 8px;
   max-width: 320px;
   z-index: 1000;
-  font-family: var(--sans);
-  color: var(--text-0); font-size: 12px;
-  box-shadow: 0 8px 28px rgba(0,0,0,0.55);
+  font-family: var(--mono); color: var(--text-0); font-size: 11px;
+  letter-spacing: 0.02em;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.55);
   left: 0; top: 0;
   opacity: 0;
   transform: translateY(2px);
@@ -2261,53 +2267,40 @@ select.ph2-btn:hover {
 .ph2-filter-name { font-family: var(--sans); font-size: 11px; color: var(--text-1); }
 .ph2-filter-count { font-family: var(--mono); font-size: 10px; color: var(--text-3); }
 
-/* ── BOTTOM-RIGHT ZOOM WIDGET ──────────────────────────────────────
-   Sits ABOVE the footer (not over it). The footer is 44px tall when
-   visible. When body.footer-collapsed, the widget can drop. */
-.ph2-zoom-widget {
-  position: absolute;
-  /* Detail-panel aware (same idiom as .ph2-toolbar above): slides left when
-     the detail panel opens so it never hides behind the floating rail. */
-  right: calc(var(--eff-detail-w) - var(--detail-w-collapsed) + 22px);
-  bottom: 56px;
-  display: flex; gap: 4px;
-  background: rgba(14,16,22,0.55);
-  backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);
-  border: 1px solid var(--border-soft);
-  border-radius: 3px;
-  padding: 3px;
-  z-index: 52;   /* above the 50-z footer */
-  pointer-events: auto;
-  transition: bottom 240ms cubic-bezier(0.2, 0.8, 0.2, 1),
-              right  var(--t-layout) var(--ease);
+/* ── INLINE ZOOM GROUP (lives inside .ph2-toolbar) ─────────────────── */
+.ph2-toolbar-zoom {
+  display: inline-flex;
+  align-items: center;
+  margin-left: 4px;
+  padding: 0;
 }
-body.footer-collapsed .ph2-zoom-widget { bottom: 16px; }
+.ph2-toolbar-zoom .ph2-btn {
+  border-radius: 0;
+  margin: 0;
+  border-right-width: 0;
+}
+.ph2-toolbar-zoom .ph2-btn:first-child { border-radius: 3px 0 0 3px; }
+.ph2-toolbar-zoom .ph2-btn:last-child  { border-radius: 0 3px 3px 0; border-right-width: 1px; }
+.ph2-tz-btn { min-width: 26px; padding: 5px 8px; justify-content: center; }
+.ph2-tz-pct { min-width: 52px; justify-content: center; font-weight: 600; color: var(--text-0); }
 /* Hide the legacy P1 zoom-meter on the promoted V2 Pantheon — it was a
    D3-zoom indicator that doesn't apply to sigma. */
 body.view-pantheon .zoom-meter,
 body.view-pantheon-v2 .zoom-meter { display: none !important; }
 /* Map-thumb stays visible on V2 — it picks up V2 hover via window.selectNode
    which already calls setMapTarget in the production code path. */
-.ph2-zoom-btn, .ph2-zoom-pct {
-  background: transparent;
-  border: none;
-  color: var(--text-1);
-  font-family: var(--mono); font-size: 11px;
-  letter-spacing: 0.04em;
-  padding: 4px 9px;
-  cursor: pointer;
-  border-radius: 2px;
-  transition: background 120ms ease, color 120ms ease;
-}
-.ph2-zoom-btn { min-width: 22px; }
-.ph2-zoom-pct { min-width: 50px; text-align: center; color: var(--text-0); font-weight: 600; }
-.ph2-zoom-btn:hover, .ph2-zoom-pct:hover { background: rgba(212,165,90,0.18); color: var(--gold); }
-.ph2-zoom-recenter { color: var(--text-2); }
+/* old .ph2-zoom-widget rules retired — see .ph2-toolbar-zoom above */
 
 /* ── WIRE-LEGEND TOGGLE + PANEL (bottom-left) ───────────────────────── */
 .ph2-wire-legend-toggle {
-  position: absolute;
-  left: 12px; bottom: 54px;
+  /* Position-fixed sibling of <footer> for the same reason as .footer-toggle:
+     when the footer translateY's, fixed elements need their own anchor. Sits
+     directly above the footer-toggle so the two stack as a tidy pair at the
+     bottom-left rail. Same width / height / styling as .footer-toggle so the
+     pair reads as a uniform control. */
+  position: fixed;
+  left: calc(var(--nav-w) + 10px);
+  bottom: 86px;   /* footer-toggle bottom (54) + its height (22) + 10 gap */
   width: 26px; height: 22px;
   background: rgba(13, 17, 25, 0.86);
   backdrop-filter: blur(6px); -webkit-backdrop-filter: blur(6px);
@@ -2319,15 +2312,17 @@ body.view-pantheon-v2 .zoom-meter { display: none !important; }
   display: flex; align-items: center; justify-content: center;
   z-index: 52;
   transition: color 140ms, border-color 140ms,
-              bottom 240ms cubic-bezier(0.2, 0.8, 0.2, 1);
+              bottom 240ms cubic-bezier(0.2, 0.8, 0.2, 1),
+              left 240ms cubic-bezier(0.2, 0.8, 0.2, 1);
 }
 .ph2-wire-legend-toggle:hover { color: var(--gold); border-color: var(--gold-soft); }
 .ph2-wire-legend-toggle.ph2-btn-on { color: var(--gold); border-color: var(--gold-soft); background: rgba(212,165,90,0.16); }
-body.footer-collapsed .ph2-wire-legend-toggle { bottom: 38px; }
+body.nav-collapsed    .ph2-wire-legend-toggle { left: calc(var(--nav-w-collapsed) + 10px); }
+body.footer-collapsed .ph2-wire-legend-toggle { bottom: 42px; }
 
 .ph2-wire-legend-panel {
-  position: absolute;
-  left: 12px; bottom: 84px;
+  position: fixed;
+  left: calc(var(--nav-w) + 10px); bottom: 116px;
   width: 280px;
   background: rgba(13, 17, 25, 0.97);
   backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);
@@ -2342,7 +2337,8 @@ body.footer-collapsed .ph2-wire-legend-toggle { bottom: 38px; }
   transition: bottom 240ms cubic-bezier(0.2, 0.8, 0.2, 1);
 }
 .ph2-wire-legend-panel.open { display: block; }
-body.footer-collapsed .ph2-wire-legend-panel { bottom: 68px; }
+body.nav-collapsed    .ph2-wire-legend-panel { left: calc(var(--nav-w-collapsed) + 10px); }
+body.footer-collapsed .ph2-wire-legend-panel { bottom: 72px; }
 .ph2-wl-head {
   font-size: 10px; letter-spacing: 0.08em; text-transform: uppercase;
   color: var(--gold); margin-bottom: 8px;
