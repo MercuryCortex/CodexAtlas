@@ -2076,25 +2076,46 @@
     sigma.on('afterRender', () => { syncNodeLabels(); syncThumbsImmediate(); });
 
     // ----- TOOLBAR — mode dropdown + labels toggle + ego focus + recenter -----
+    // Mode list: shared between trigger label and dropdown rows so the chrome
+    // matches the family-filter dropdown (custom panel, not a native <select>).
+    const MODE_OPTIONS = [
+      { value: 'deities',     glyph: '◯', label: 'Deities' },
+      { value: 'authors',     glyph: '✎', label: 'Authors' },
+      { value: 'symbols',     glyph: '✦', label: 'Symbols' },
+      { value: 'events',      glyph: '★', label: 'Events' },
+      { value: 'documents',   glyph: '❡', label: 'Documents' },
+      { value: 'rituals',     glyph: '⚱', label: 'Rituals' },
+      { value: 'music',       glyph: '♩', label: 'Music' },
+      { value: 'alphabet',    glyph: 'ℵ', label: 'Alphabets' },
+      { value: 'alchemy',     glyph: '🜍', label: 'Alchemy' },
+      { value: 'philosophy',  glyph: '✺', label: 'Philosophy' },
+      { value: 'morals',      glyph: '⚖', label: 'Morals' },
+      { value: 'medicine',    glyph: '☤', label: 'Medicine' },
+      { value: 'mathematics', glyph: '∑', label: 'Mathematics' },
+      { value: 'monuments',   glyph: '⛬', label: 'Monuments' },
+    ];
+    const currentMode = MODE_OPTIONS.find(m => m.value === _currentMode) || MODE_OPTIONS[0];
     const toolbar = document.createElement('div');
     toolbar.className = 'ph2-toolbar';
     toolbar.innerHTML = `
-<select class="ph2-btn ph2-mode-select" title="What the wedges show">
-        <option value="deities"      ${_currentMode === 'deities'      ? 'selected' : ''}>◯ Deities</option>
-        <option value="authors"      ${_currentMode === 'authors'      ? 'selected' : ''}>✎ Authors</option>
-        <option value="symbols"      ${_currentMode === 'symbols'      ? 'selected' : ''}>✦ Symbols</option>
-        <option value="events"       ${_currentMode === 'events'       ? 'selected' : ''}>★ Events</option>
-        <option value="documents"    ${_currentMode === 'documents'    ? 'selected' : ''}>❡ Documents</option>
-        <option value="rituals"      ${_currentMode === 'rituals'      ? 'selected' : ''}>⚱ Rituals</option>
-        <option value="music"        ${_currentMode === 'music'        ? 'selected' : ''}>♩ Music</option>
-        <option value="alphabet"     ${_currentMode === 'alphabet'     ? 'selected' : ''}>ℵ Alphabets</option>
-        <option value="alchemy"      ${_currentMode === 'alchemy'      ? 'selected' : ''}>🜍 Alchemy</option>
-        <option value="philosophy"   ${_currentMode === 'philosophy'   ? 'selected' : ''}>✺ Philosophy</option>
-        <option value="morals"       ${_currentMode === 'morals'       ? 'selected' : ''}>⚖ Morals</option>
-        <option value="medicine"     ${_currentMode === 'medicine'     ? 'selected' : ''}>☤ Medicine</option>
-        <option value="mathematics"  ${_currentMode === 'mathematics'  ? 'selected' : ''}>∑ Mathematics</option>
-        <option value="monuments"    ${_currentMode === 'monuments'    ? 'selected' : ''}>⛬ Monuments</option>
-      </select>
+      <div class="ph2-mode-menu" id="ph2-mode-menu">
+        <button class="ph2-btn ph2-mode-trigger" id="ph2-mode-trigger" title="What the wedges show">
+          <span class="ph2-mode-glyph">${currentMode.glyph}</span>
+          <span class="ph2-mode-name">${escapeHtml(currentMode.label)}</span>
+          <span>▾</span>
+        </button>
+        <div class="ph2-mode-dropdown" id="ph2-mode-dropdown">
+          <div class="ph2-mode-body">
+            ${MODE_OPTIONS.map(m => `
+              <div class="ph2-mode-row${m.value === _currentMode ? ' active' : ''}" data-mode="${escapeAttr(m.value)}">
+                <span class="ph2-mode-glyph">${m.glyph}</span>
+                <span class="ph2-mode-name">${escapeHtml(m.label)}</span>
+                <span class="ph2-mode-tick">✓</span>
+              </div>
+            `).join('')}
+          </div>
+        </div>
+      </div>
       <button class="ph2-btn" id="ph2-labels" title="Toggle label density">labels: ${_labelsMode}</button>
       <button class="ph2-btn${_egoFocus ? ' ph2-btn-on' : ''}" id="ph2-ego" title="Show 1-hop neighbourhood of selected node">ego focus</button>
       <div class="ph2-toolbar-zoom" role="group" aria-label="Zoom">
@@ -2106,14 +2127,29 @@
     `;
     rootEl.appendChild(toolbar);
 
-    // Mode dropdown — rebuilds entire graph for the new mode
-    toolbar.querySelector('.ph2-mode-select').onchange = (ev) => {
-      _currentMode  = ev.target.value;
-      _familyFilter = new Set();
-      _egoFocus     = false;
-      _labelsMode   = 'hub';
-      render(rootEl);
+    // Mode dropdown — same open/close/outside-click logic as the family filter.
+    const modeMenu     = toolbar.querySelector('#ph2-mode-menu');
+    const modeTrigger  = toolbar.querySelector('#ph2-mode-trigger');
+    modeTrigger.onclick = (ev) => {
+      ev.stopPropagation();
+      modeMenu.classList.toggle('open');
     };
+    toolbar.querySelectorAll('.ph2-mode-row').forEach(row => {
+      row.addEventListener('click', () => {
+        const next = row.dataset.mode;
+        modeMenu.classList.remove('open');
+        if (next === _currentMode) return;
+        _currentMode  = next;
+        _familyFilter = new Set();
+        _egoFocus     = false;
+        _labelsMode   = 'hub';
+        render(rootEl);
+      });
+    });
+    // Outside-click closes the mode menu (same pattern as the filter menu).
+    document.addEventListener('click', (ev) => {
+      if (!modeMenu.contains(ev.target)) modeMenu.classList.remove('open');
+    });
 
     toolbar.querySelector('#ph2-labels').onclick = (ev) => {
       _labelsMode = _labelsMode === 'hub' ? 'all' : _labelsMode === 'all' ? 'off' : 'hub';
