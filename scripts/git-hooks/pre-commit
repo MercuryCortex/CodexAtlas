@@ -2,11 +2,13 @@
 # ============================================================
 # CODEX ATLAS pre-commit hook
 #
-# Catches the two failure modes that have bitten the site:
+# Catches three failure modes that have bitten the site:
 #  1. Staging a syntactically broken src/js/*.js (sonnet content
 #     batches sweeping in a stale checkout — observed twice 2026-05-15).
 #  2. Quietly committing a revert that loses recent app-code work
 #     (we run a sanity grep for known-required globals after #1 passes).
+#  3. Cross-lane commits — staging Lane B (UX) paths AND Lane A
+#     (content) paths in the same commit. See 00_meta/LANES.md.
 #
 # Install:  ln -sf ../../scripts/git-hooks/pre-commit .git/hooks/pre-commit
 # Bypass (NEVER for routine work):  git commit --no-verify
@@ -18,8 +20,37 @@ set -e
 REPO_ROOT="$(git rev-parse --show-toplevel)"
 cd "$REPO_ROOT"
 
+STAGED_ALL="$(git diff --cached --name-only --diff-filter=ACM)"
+
+# ---------- 3. Cross-lane check (run first; cheapest) ----------
+# Lane B owns: src/, index.html, build/lint/linkcheck/fetch python scripts, _assets/
+LANE_B="$(printf '%s\n' "$STAGED_ALL" | grep -E '^(src/|index\.html$|build_[^/]+\.py$|lint_yaml\.py$|linkcheck\.py$|fetch_[^/]+\.py$|review_thumbnails\.py$|add_depictions\.py$|_assets/|scripts/|start-atlas\.command$)' || true)"
+# Lane A owns: numbered content folders + the auto-regenerated meta files
+LANE_A="$(printf '%s\n' "$STAGED_ALL" | grep -E '^(0[1-9]_|1[0-7]_)' || true)"
+
+if [ -n "$LANE_B" ] && [ -n "$LANE_A" ]; then
+  echo "" >&2
+  echo "✗ pre-commit: cross-lane commit detected." >&2
+  echo "" >&2
+  echo "  Lane B (UX) paths in stage:" >&2
+  printf '%s\n' "$LANE_B" | sed 's/^/    /' >&2
+  echo "  Lane A (content) paths in stage:" >&2
+  printf '%s\n' "$LANE_A" | sed 's/^/    /' >&2
+  echo "" >&2
+  echo "  These two lanes commit separately by design — content agents must not" >&2
+  echo "  sweep app-code into their batches (twice killed the site 2026-05-15)." >&2
+  echo "  See 00_meta/LANES.md." >&2
+  echo "" >&2
+  echo "  To split: unstage the wrong-lane paths and commit your own lane only." >&2
+  echo "    git reset HEAD -- <wrong-lane-path>" >&2
+  echo "" >&2
+  echo "  Override (only if John explicitly authorised it):" >&2
+  echo "    git commit --no-verify" >&2
+  exit 1
+fi
+
 # Find any staged .js files under src/js/.
-STAGED_JS="$(git diff --cached --name-only --diff-filter=ACM | grep -E '^src/js/.+\.js$' || true)"
+STAGED_JS="$(printf '%s\n' "$STAGED_ALL" | grep -E '^src/js/.+\.js$' || true)"
 
 if [ -n "$STAGED_JS" ]; then
   # 1. Syntax check every staged JS file.
