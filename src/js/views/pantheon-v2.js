@@ -715,8 +715,14 @@
       if (mode === 'authors')   return n.type === 'person' && authorSet && authorSet.has(n.id);
       if (mode === 'symbols')   return n.type === 'symbol';
       if (mode === 'events')    return n.type === 'event';
-      if (mode === 'music')     return n.type === 'music';
-      if (mode === 'alphabet')  return n.type === 'alphabet';
+      if (mode === 'music')        return n.type === 'music';
+      if (mode === 'alphabet')     return n.type === 'alphabet';
+      if (mode === 'rituals')      return n.type === 'ritual';
+      if (mode === 'alchemy')      return n.type === 'alchemy';
+      if (mode === 'morals')       return n.type === 'moral';
+      if (mode === 'philosophy')   return n.type === 'philosophy';
+      if (mode === 'medicine')     return n.type === 'medicine';
+      if (mode === 'mathematics')  return n.type === 'mathematics';
       if (mode === 'monuments') {
         const tags = Array.isArray(n.tags) ? n.tags
           : (typeof n.tags === 'string' ? n.tags.split(/[,\s]+/) : []);
@@ -744,7 +750,10 @@
     if (!deities.length) {
       const msgs = { deities: 'No deities in data.', authors: 'No authors found.',
         symbols: 'No symbols found.', events: 'No events found.',
-        music: 'No music nodes found.',
+        music: 'No music nodes found.', alphabet: 'No alphabet nodes found.',
+        rituals: 'No ritual nodes found.', alchemy: 'No alchemy nodes found.',
+        morals: 'No moral nodes found.', philosophy: 'No philosophy nodes found.',
+        medicine: 'No medicine nodes found.', mathematics: 'No mathematics nodes found.',
         monuments: 'Monuments — add `tags: [monument]` to site nodes to populate this view.' };
       rootEl.innerHTML = `<div class="ph2-error">${msgs[_currentMode] || 'No nodes.'}</div>`;
       return;
@@ -1886,14 +1895,20 @@
     const toolbar = document.createElement('div');
     toolbar.className = 'ph2-toolbar';
     toolbar.innerHTML = `
-      <select class="ph2-btn ph2-mode-select" title="What the wedges show">
-        <option value="deities"   ${_currentMode === 'deities'   ? 'selected' : ''}>◯ Deities</option>
-        <option value="authors"   ${_currentMode === 'authors'   ? 'selected' : ''}>✎ Authors</option>
-        <option value="symbols"   ${_currentMode === 'symbols'   ? 'selected' : ''}>✦ Symbols</option>
-        <option value="events"    ${_currentMode === 'events'    ? 'selected' : ''}>★ Events</option>
-        <option value="music"     ${_currentMode === 'music'     ? 'selected' : ''}>♩ Music</option>
-        <option value="alphabet"  ${_currentMode === 'alphabet'  ? 'selected' : ''}>ℵ Alphabets</option>
-        <option value="monuments" ${_currentMode === 'monuments' ? 'selected' : ''}>⛬ Monuments</option>
+<select class="ph2-btn ph2-mode-select" title="What the wedges show">
+        <option value="deities"      ${_currentMode === 'deities'      ? 'selected' : ''}>◯ Deities</option>
+        <option value="authors"      ${_currentMode === 'authors'      ? 'selected' : ''}>✎ Authors</option>
+        <option value="symbols"      ${_currentMode === 'symbols'      ? 'selected' : ''}>✦ Symbols</option>
+        <option value="events"       ${_currentMode === 'events'       ? 'selected' : ''}>★ Events</option>
+        <option value="rituals"      ${_currentMode === 'rituals'      ? 'selected' : ''}>⚱ Rituals</option>
+        <option value="music"        ${_currentMode === 'music'        ? 'selected' : ''}>♩ Music</option>
+        <option value="alphabet"     ${_currentMode === 'alphabet'     ? 'selected' : ''}>ℵ Alphabets</option>
+        <option value="alchemy"      ${_currentMode === 'alchemy'      ? 'selected' : ''}>🜍 Alchemy</option>
+        <option value="philosophy"   ${_currentMode === 'philosophy'   ? 'selected' : ''}>✺ Philosophy</option>
+        <option value="morals"       ${_currentMode === 'morals'       ? 'selected' : ''}>⚖ Morals</option>
+        <option value="medicine"     ${_currentMode === 'medicine'     ? 'selected' : ''}>☤ Medicine</option>
+        <option value="mathematics"  ${_currentMode === 'mathematics'  ? 'selected' : ''}>∑ Mathematics</option>
+        <option value="monuments"    ${_currentMode === 'monuments'    ? 'selected' : ''}>⛬ Monuments</option>
       </select>
       <button class="ph2-btn" id="ph2-labels" title="Toggle label density">labels: ${_labelsMode}</button>
       <button class="ph2-btn${_tierOverlay ? ' ph2-btn-on' : ''}" id="ph2-tier" title="Color nodes by source-integrity tier (T1=gold T2=silver T3=grey T4=crimson)">tier: ${_tierOverlay ? 'on' : 'off'}</button>

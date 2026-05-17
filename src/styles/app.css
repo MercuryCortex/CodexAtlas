@@ -1995,7 +1995,7 @@ body.view-atlas main.canvas { background: var(--bg-0); }
 .ph2-edge.hot {
   stroke: var(--edge-bucket-color, rgba(212, 165, 90, 0.9)) !important;
   stroke-opacity: var(--hot-op, 0.9) !important;
-  stroke-width: var(--ph2-edge-hot-width, 1.6) !important;
+  stroke-width: var(--ph2-edge-hot-width, 1.0) !important;
 }
 /* Directional hot edges have their gradient set inline via JS — the inline
    style.stroke wins over the .hot stroke rule. (See applyEdgeHoverState.) */
