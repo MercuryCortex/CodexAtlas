@@ -29,6 +29,7 @@ window.ScriptureReader = (function () {
     'micah-6':            { religion:'Christianity', group:'Old Testament',          canon:'All Canons',          sort:54 },
     'isaiah-53':          { religion:'Christianity', group:'Old Testament',          canon:'All Canons',          sort:63 },
     'psalm-139':          { religion:'Christianity', group:'Old Testament',          canon:'All Canons',          sort:42 },
+    'hosea-11':           { religion:'Christianity', group:'Old Testament',          canon:'All Canons',          sort:56 },
     'isaiah-6':           { religion:'Christianity', group:'Old Testament',          canon:'All Canons',          sort:60 },
     'isaiah-40':          { religion:'Christianity', group:'Old Testament',          canon:'All Canons',          sort:62 },
     'isaiah-45':          { religion:'Christianity', group:'Old Testament',          canon:'All Canons',          sort:70 },
@@ -61,6 +62,8 @@ window.ScriptureReader = (function () {
     '2-corinthians-3':    { religion:'Christianity', group:'New Testament',          canon:'All Canons',          sort:32 },
     'ephesians-1':        { religion:'Christianity', group:'New Testament',          canon:'All Canons',          sort:47 },
     'john-6-bread-of-life': { religion:'Christianity', group:'New Testament',        canon:'All Canons',          sort:13 },
+    'luke-10-good-samaritan': { religion:'Christianity', group:'New Testament',      canon:'All Canons',          sort:62 },
+    'revelation-21':      { religion:'Christianity', group:'New Testament',          canon:'All Canons',          sort:80 },
     // ── Christianity — Ethiopian Canon ──────────────────────────────
     'book-of-enoch':      { religion:'Christianity', group:'Ethiopian Canon',        canon:'Ethiopian Orthodox',  sort:10 },
     'book-of-jubilees':   { religion:'Christianity', group:'Ethiopian Canon',        canon:'Ethiopian Orthodox',  sort:20 },
@@ -148,11 +151,13 @@ window.ScriptureReader = (function () {
     'japji-sahib':        { religion:'Sikhism',       group:'Guru Granth Sahib',     canon:'Classical Sikh',      sort:10 },
     // ── Chinese Philosophy ──────────────────────────────────────────
     'confucius-analects': { religion:'Chinese Philosophy', group:'Classical Confucianism', canon:'Classical Chinese',  sort:10 },
+    // ── Jainism ─────────────────────────────────────────────────────
+    'acaranga-sutra':     { religion:'Jainism',       group:'Agamas',                canon:'Jain Canon',          sort:10 },
   };
 
   const RELIGION_ORDER = [
     'Christianity', 'Judaism', 'Islam', 'Sikhism', 'Hinduism', 'Buddhism', 'Taoism',
-    'Chinese Philosophy', 'Hermeticism', 'Greek Philosophy', 'Ancient Egyptian', 'Mesopotamian',
+    'Chinese Philosophy', 'Jainism', 'Hermeticism', 'Greek Philosophy', 'Ancient Egyptian', 'Mesopotamian',
     'Zoroastrianism', 'Mesoamerican', 'Norse',
   ];
 
@@ -160,6 +165,7 @@ window.ScriptureReader = (function () {
     'Christianity':    ['Old Testament', 'Deuterocanon', 'New Testament', 'Ethiopian Canon', 'Christian Mysticism', 'Medieval Mysticism', 'Gnostic / Nag Hammadi'],
     'Hinduism':        ['Vedic Hymns', 'Upanishads', 'Epics'],
     'Buddhism':        ['Pali Canon', 'Mahayana', 'Vajrayana'],
+    'Jainism':         ['Agamas'],
     'Taoism':          ['Classical Taoism', 'Chinese Classics'],
     'Chinese Philosophy': ['Classical Confucianism'],
     'Ancient Egyptian':['Temple Texts', 'Funerary Texts'],
