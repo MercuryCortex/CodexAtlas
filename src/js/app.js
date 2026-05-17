@@ -783,23 +783,39 @@ function _renderPantheonWebGL() {
   });
 }
 
+// ═════════════════════════════════════════════════════════════════════
+// PANTHEON ROUTE — promoted to V2 on 2026-05-17.
+//
+// `VIEWS.pantheon` now uses the WebGL/sigma renderer (pantheon-v2.js).
+// The legacy D3-SVG implementation is preserved as `VIEWS._legacyPantheon`
+// for one-line emergency rollback (set VIEWS.pantheon = VIEWS._legacyPantheon
+// in console + reload). It will be DELETED after a session of green usage.
+//
+// Phase 2 (TODO): drop the legacy block + this comment.
+// ═════════════════════════════════════════════════════════════════════
 VIEWS.pantheon = {
   title: 'Pantheon',
   subtitle: '',
   render() {
-    // Phase 1 WebGL Pantheon REVERTED 2026-05-15 — the stripped-down sigma.js render
-    // lost the design language (mode tabs, family hulls/labels, colored bezier edges,
-    // hover trails). Routing all modes through the legacy SVG path until the visual
-    // parity work is done. _renderPantheonWebGL() kept in-file for next attempt.
-    // if ((STATE.pantheonMode || 'deities') === 'deities') {
-    //   return _renderPantheonWebGL();
-    // }
-    // Mode: 'deities' (gods clustered by family) | 'authors' (persons who authored, were
-    // attributed-to, originated a concept, or are listed as a doc's key-figure) | 'symbols'
-    // (iconographic units clustered by origin family with cross-family edges loud) |
-    // 'events' (historical events clustered by tradition/region) | 'monuments' (placeholder
-    // — discovery sites / temples / churches; node type not yet in vault).
-    // 'scripture' is intercepted in the dropdown handler and redirects to the Scripture view.
+    // V2 renderer — same as VIEWS['pantheon-v2'] used to be behind ?webgl=1.
+    // setView()'s teardown removes .pantheon-v2-pane on every view-change,
+    // so we create a fresh pane here on each render call.
+    const canvasEl = document.getElementById('canvas');
+    const pane = document.createElement('div');
+    pane.className = 'pantheon-v2-pane';
+    canvasEl.appendChild(pane);
+    const svgEl = document.getElementById('svg');
+    if (svgEl) svgEl.style.display = 'none';
+    if (window._pantheonV2) window._pantheonV2.render(pane);
+  },
+};
+
+// Legacy D3-SVG Pantheon — retained for rollback only. Reachable manually
+// via console (`STATE.view='_legacyPantheon'; setView('_legacyPantheon');`).
+VIEWS._legacyPantheon = {
+  title: 'Pantheon (legacy SVG)',
+  subtitle: '',
+  render() {
     const mode = STATE.pantheonMode || 'deities';
     const titleByMode = {
       'deities':   'Pantheon',
@@ -10019,42 +10035,10 @@ setView = function patchedSetView(...args) {
 // R&D flag: ?webgl=1 unlocks Pantheon v2 — the WebGL re-attempt at the
 // main Pantheon view. Hidden by default so the production nav stays clean.
 // See src/js/views/pantheon-v2.js for the parity-checklist gate.
-(function _wireWebglRandD() {
-  try {
-    const params = new URLSearchParams(window.location.search);
-    if (params.get('webgl') === '1' && window._pantheonV2) {
-      VIEWS['pantheon-v2'] = {
-        title: 'Pantheon v2',
-        subtitle: 'WebGL · sigma.js · polar family wedges',
-        render() {
-          // setView()'s teardown removes .pantheon-v2-pane on every view-change,
-          // so we create a fresh pane here on each render call.
-          const canvasEl = document.getElementById('canvas');
-          const pane = document.createElement('div');
-          pane.className = 'pantheon-v2-pane';
-          canvasEl.appendChild(pane);
-          // Hide SVG — setView() re-shows it for non-atlas views; override here.
-          const svgEl = document.getElementById('svg');
-          if (svgEl) svgEl.style.display = 'none';
-          window._pantheonV2.render(pane);
-        }
-      };
-
-      // Insert nav item right after the production Pantheon.
-      const pantheonNav = document.querySelector('nav.side .item[data-view="pantheon"]');
-      if (pantheonNav && !document.querySelector('nav.side .item[data-view="pantheon-v2"]')) {
-        const v2NavEl = document.createElement('div');
-        v2NavEl.className = 'item';
-        v2NavEl.setAttribute('data-view', 'pantheon-v2');
-        v2NavEl.setAttribute('data-tooltip', 'Pantheon v2');
-        v2NavEl.innerHTML = '<span class="sym">◐</span><span class="lbl">Pantheon v2</span>';
-        // Wire the click listener manually (the querySelectorAll below runs before this).
-        v2NavEl.addEventListener('click', () => setView('pantheon-v2'));
-        pantheonNav.parentNode.insertBefore(v2NavEl, pantheonNav.nextSibling);
-      }
-    }
-  } catch (e) { /* ignore — flag is best-effort */ }
-})();
+// Backwards-compat alias: anything still routing to 'pantheon-v2' (old
+// bookmarks, URL params, sub-agent docs) gets the same render path as the
+// promoted 'pantheon'. The `?webgl=1` gate is gone — V2 is now the default.
+VIEWS['pantheon-v2'] = VIEWS.pantheon;
 document.querySelectorAll('nav.side .item').forEach(el => {
   el.addEventListener('click', () => {
     // Alchemy board → Transmission: skip bridge expansion so the user's curated
