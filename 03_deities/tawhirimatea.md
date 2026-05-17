@@ -15,7 +15,26 @@ child-of: ["[[ranginui]]", "[[papatuanuku]]"]
 consort: []
 attributes: ["winds", "storms", "tempest", "hurricane", "wrath against the other brothers"]
 attested-in: []
-syncretic-edges: []
+syncretic-edges:
+  - target: "indra"
+    type: "scholarly-parallel"
+    source: "Best, *Maori Religion and Mythology* (1924); Eliade, *Patterns in Comparative Religion* (1958), Ch. II — Maori Tāwhirimātea as storm-god; Vedic Indra as Indo-European storm-and-thunder god"
+    notes: "Storm-god cross-cultural archetype"
+  - target: "thor"
+    type: "scholarly-parallel"
+    source: "Best 1924; Eliade 1958 — Norse Thor as storm-and-thunder; Tāwhirimātea as Maori storm-of-anger"
+  - target: "perun"
+    type: "scholarly-parallel"
+    source: "Eliade 1958 — Slavic Perun as storm-god"
+  - target: "tlaloc"
+    type: "scholarly-parallel"
+    source: "Eliade 1958 — Aztec Tlaloc as rain-storm-god; both govern the meteorological-violence pole of the pantheon"
+  - target: "raijin"
+    type: "scholarly-parallel"
+    source: "Best 1924; Eliade 1958 — Shinto Raijin as thunder-god"
+  - target: "fujin"
+    type: "scholarly-parallel"
+    source: "Eliade 1958 — Shinto Fūjin as wind-god; closest Asian parallel to Tāwhirimātea's wind-and-storm primary domain"
 mentioned-in:
   - "[[tradition-maori]]"
   - "[[ranginui]]"

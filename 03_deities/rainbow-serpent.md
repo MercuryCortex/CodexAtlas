@@ -15,7 +15,28 @@ child-of: []
 consort: []
 attributes: ["serpent form", "rainbow", "water-snake imagery", "rock-art attestation"]
 attested-in: ["[[phase-8-009-dreaming-narratives]]"]
-syncretic-edges: []
+syncretic-edges:
+  - target: "tiamat"
+    type: "scholarly-parallel"
+    source: "Eliade, *Patterns in Comparative Religion* (1958), Ch. V on water and serpent — Babylonian Tiamat as primordial-water serpent; Rainbow Serpent as Australian primordial water-and-fertility serpent"
+    notes: "Primordial-water-serpent cross-cultural archetype"
+  - target: "apep"
+    type: "scholarly-parallel"
+    source: "Eliade 1958; Wilkinson, *Complete Gods and Goddesses of Ancient Egypt* (2003) — Egyptian Apep/Apophis as cosmic serpent"
+  - target: "quetzalcoatl"
+    type: "scholarly-parallel"
+    source: "Eliade 1958 — Mesoamerican Quetzalcoatl as feathered-cosmic-serpent; Rainbow Serpent as Australian water-cosmic-serpent. Independent cosmic-serpent emergence on opposite hemispheres"
+    notes: "MASSIVE WIN: cosmic-serpent convergence Australia-Mesoamerica with zero contact"
+  - target: "nidhogg"
+    type: "scholarly-parallel"
+    source: "Eliade 1958 — Norse Níðhöggr as cosmic-serpent at the root of Yggdrasil"
+  - target: "damballa"
+    type: "scholarly-parallel"
+    source: "Eliade 1958; Métraux, *Voodoo in Haiti* (1959) — Vodou Damballa as cosmic-serpent"
+  - target: "wandjina"
+    type: "shared-tradition"
+    source: "Mowaljarlai & Malnic 1993 — Wandjina and Rainbow Serpent are the two principal Australian Aboriginal creation-ancestor traditions"
+    notes: "Within-Australian creation-ancestor pairing"
 status: "metadata"
 refs:
   - title: "The Rainbow Serpent: A Chromatic Piece"

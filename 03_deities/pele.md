@@ -15,7 +15,20 @@ child-of: ["Haumea (in some traditions)"]
 consort: []
 attributes: ["volcanic eruption", "lava", "red flowers (ohia lehua)", "an old woman appearance or a beautiful young woman appearance"]
 attested-in: ["[[phase-8-010-kumulipo]] (later strata)"]
-syncretic-edges: []
+syncretic-edges:
+  - target: "sekhmet"
+    type: "scholarly-parallel"
+    source: "Beckwith, *Hawaiian Mythology* (1940); Wilkinson, *Complete Gods and Goddesses of Ancient Egypt* (2003) — Pele as volcanic-destruction goddess and Sekhmet as Egyptian fire-and-destruction lioness; both encode the divine-feminine-destructive-fire principle"
+    notes: "Divine-feminine-destructive-fire cross-cultural parallel"
+  - target: "agni"
+    type: "scholarly-parallel"
+    source: "Beckwith 1940; Eliade, *Patterns in Comparative Religion* (1958) — Vedic Agni as fire-god; Pele as Hawaiian fire/volcano goddess (gender-inverted parallel)"
+  - target: "vulcan"
+    type: "scholarly-parallel"
+    source: "Eliade 1958 — Roman Vulcan as fire-and-forge god"
+  - target: "hephaestus"
+    type: "scholarly-parallel"
+    source: "Eliade 1958 — Greek Hephaestus as forge-god associated with volcanic islands (Lemnos); Pele as volcanic-island goddess"
 status: "metadata"
 refs:
   - title: "Pele and Hi'iaka: A Myth from Hawaii"

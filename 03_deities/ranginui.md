@@ -15,7 +15,22 @@ child-of: []
 consort: ["[[papatuanuku]]"]
 attributes: ["the sky itself", "rain (his tears for Papa)", "stars"]
 attested-in: ["[[phase-8-011-maori-cosmogonic-chants]]"]
-syncretic-edges: []
+syncretic-edges:
+  - target: "uranus-greek"
+    type: "scholarly-parallel"
+    source: "Best, *Maori Religion and Mythology* (1924); Eliade, *Patterns in Comparative Religion* (1958) — Ranginui as Maori sky-father coupled to Papatuanuku earth-mother; Uranus as Greek sky-father coupled to Gaia earth-mother. The primordial-cosmic-couple-separated-by-children pattern is structurally identical (Tāne separates Rangi-Papa / Kronos castrates Uranus to separate him from Gaia)"
+    notes: "MASSIVE WIN: cosmic-sky-father-separated-from-earth-mother convergence Maori-Greek — same cosmogonic narrative structure independently"
+  - target: "dyaus-pita"
+    type: "scholarly-parallel"
+    source: "Eliade 1958; West, *Indo-European Poetry and Myth* (2007) — Vedic Dyauṣ Pitṛ ('Sky-Father') coupled to Pṛthivī (earth-mother); Ranginui as Maori sky-father"
+  - target: "geb"
+    type: "scholarly-parallel"
+    source: "Eliade 1958; Wilkinson 2003 — gender-inverted parallel: Egyptian Geb (earth-father) coupled to Nut (sky-mother) — Egyptian myth INVERTS the standard gender of sky-father/earth-mother that Ranginui-Papatuanuku and Uranus-Gaia share"
+    notes: "Egyptian gender-inverted parallel"
+  - target: "wakea"
+    type: "ancient-identification"
+    source: "Best 1924; Beckwith, *Hawaiian Mythology* (1940) — Hawaiian Wākea is a related sky-father figure; Proto-Polynesian sky-deity stratum"
+    notes: "Proto-Polynesian sky-father cognate"
 status: "metadata"
 refs:
   - title: "Maori Religion and Mythology"

@@ -15,7 +15,24 @@ child-of: []
 consort: ["Hina (in some pairings)"]
 attributes: ["aggressive carved *ki'i* (temple images)", "feather images with shell eyes and mother-of-pearl teeth", "red and yellow feathers"]
 attested-in: ["[[phase-8-010-kumulipo]]"]
-syncretic-edges: []
+syncretic-edges:
+  - target: "tu-maori"
+    type: "ancient-identification"
+    source: "Beckwith, *Hawaiian Mythology* (1940); Best, *Maori Religion and Mythology* (1924) — Hawaiian Kū and Maori Tū-mata-uenga are linguistic-and-functional cognates of the same Proto-Polynesian war-god"
+    notes: "Proto-Polynesian war-god cognate"
+  - target: "ares"
+    type: "scholarly-parallel"
+    source: "Beckwith 1940; Eliade 1958 — Hawaiian Kū as war-god; Greek Ares as war-god. Both encode the warrior-aspect of the male divine principle within their pantheons"
+    notes: "War-god cross-cultural archetype"
+  - target: "mars-roman"
+    type: "scholarly-parallel"
+    source: "Eliade 1958 — Roman Mars as state war-god; Kū as Hawaiian royal war-god (Kamehameha's principal deity)"
+  - target: "tyr"
+    type: "scholarly-parallel"
+    source: "Eliade 1958; Dumézil, *Mitra-Varuna* (1948) — Norse Tyr as warrior-sky-god; Kū as Hawaiian war-god"
+  - target: "ogun"
+    type: "scholarly-parallel"
+    source: "Eliade 1958; Awolalu 1979 — Yoruba Ogun as war-and-iron god; Kū as Hawaiian war-god. Cross-Atlantic war-deity convergence"
 status: "metadata"
 refs:
   - title: "How Chiefs Became Kings"
