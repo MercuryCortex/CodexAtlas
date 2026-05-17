@@ -62,7 +62,10 @@
     symbol:      '<path d="M6,1.6 L7.3,5 L10.6,6 L7.3,7 L6,10.4 L4.7,7 L1.4,6 L4.7,5 Z" fill="currentColor"/>',
     event:       '<path d="M6,1.6 L10.4,6 L6,10.4 L1.6,6 Z" fill="none" stroke="currentColor" stroke-width="1.3"/><circle cx="6" cy="6" r="1.4" fill="currentColor"/>',
     ritual:      '<path d="M6,1.4 L6,10.6 M1.4,6 L10.6,6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>',
-    music:       '<path d="M5.4,2 L9.4,2 L9.4,7.4" stroke="currentColor" stroke-width="1.3" fill="none" stroke-linecap="round"/><ellipse cx="4.2" cy="8.2" rx="1.7" ry="1.3" fill="currentColor"/><ellipse cx="8.1" cy="7.7" rx="1.5" ry="1.2" fill="currentColor"/>',
+    // Music — single quarter note, head + stem. Matches the `♩` glyph used in
+    // the toolbar mode-dropdown. The previous double-note design read as noise
+    // at small sizes (two ellipses sat too close together to resolve).
+    music:       '<path d="M8.6,2 L8.6,8.4" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/><ellipse cx="5.6" cy="8.6" rx="2.4" ry="1.7" fill="currentColor" transform="rotate(-22 5.6 8.6)"/>',
     alphabet:    '<path d="M2.8,10.4 L6,1.8 L9.2,10.4 M4.2,7.6 L7.8,7.6" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>',
     alchemy:     '<path d="M6,1.6 L10.6,9.8 L1.4,9.8 Z" fill="none" stroke="currentColor" stroke-width="1.3"/><path d="M3.6,7 L8.4,7" stroke="currentColor" stroke-width="1.1"/>',
     philosophy:  '<circle cx="6" cy="6" r="3.6" fill="none" stroke="currentColor" stroke-width="1.3"/><circle cx="6" cy="6" r="0.9" fill="currentColor"/>',
@@ -921,7 +924,11 @@
     const _degSorted = deities.map(d => degree.get(d.id) || 0).sort((a, b) => b - a);
     const _q = (p) => _degSorted[Math.floor(_degSorted.length * p)] || 0;
     const TIER_CUTOFFS = [_q(0.04), _q(0.15), _q(0.40)];   // top 4%, next 11%, next 25%, rest
-    const TIER_RADIUS  = [13, 10, 7, 5];                    // px (production uses 8/6/4.5/3.5)
+    // Tier radii. Bumped from [13,10,7,5] — at the previous baseline, nodes in
+    // sparse family hulls (rest-tier 5 px) read as dust. New floor 7 px makes
+    // a single-node Greek-Mystery node legible; hubs grow proportionally to
+    // 16 px so the degree hierarchy stays visible. Production used 8/6/4.5/3.5.
+    const TIER_RADIUS  = [16, 12, 9, 7];                    // px
     function nodeSizeForDeg(deg) {
       if (deg >= TIER_CUTOFFS[0]) return TIER_RADIUS[0];
       if (deg >= TIER_CUTOFFS[1]) return TIER_RADIUS[1];
@@ -2134,22 +2141,37 @@
     }
     function updateNodeLabelVisibility() {
       const thresh = dynamicHubThreshold();
+      // SPACE-FILL RULE (hub mode):
+      //   Every label enters the deconflict pool — not just hubs. Deconflict
+      //   sorts by degree, so hubs claim their slots first; non-hubs fill the
+      //   leftover space. Non-hubs start at visibility:hidden so they don't
+      //   flash before the deconflict pass runs. Hubs start visible; if a
+      //   higher-priority active/hovered label collides with one, deconflict
+      //   downgrades the hub for that pass.
+      //
+      // 'off' still hides everything. Family-filter still hard-hides out-of-
+      // filter families. Active/hovered always wins.
       nodeLabelEntries.forEach(L => {
-        let show = true;
-        if (_labelsMode === 'off') show = false;
-        else if (_labelsMode === 'hub') show = L.deg >= thresh;
-        if (!famInFilter(L.family)) show = false;
-        // ACTIVE / HOVERED nodes get their label ALWAYS — overrides the
-        // threshold, overrides the family filter, overrides everything. The
-        // user must be able to read every node in their current focus.
-        if (isActiveOrHovered(L.id)) show = true;
-        const cur = L.el.style.display;
-        const next = show ? '' : 'none';
-        if (cur !== next) L.el.style.display = next;
-        // Active/hovered labels ALSO escape deconflict-hidden state — clear
-        // their visibility so the next deconflict pass keeps them visible.
-        if (isActiveOrHovered(L.id) && L.el.style.visibility === 'hidden') {
-          L.el.style.visibility = '';
+        let displayed = true;
+        let initiallyVisible = true;
+        if (_labelsMode === 'off') { displayed = false; initiallyVisible = false; }
+        else if (_labelsMode === 'hub') {
+          // Pool: all labels. Initial paint: only hubs visible; non-hubs
+          // start hidden and earn visibility in the deconflict pass.
+          displayed = true;
+          initiallyVisible = (L.deg >= thresh);
+        }
+        // 'all' falls through: displayed=true, initiallyVisible=true.
+        if (!famInFilter(L.family)) { displayed = false; initiallyVisible = false; }
+        if (isActiveOrHovered(L.id))  { displayed = true; initiallyVisible = true; }
+
+        const curDisplay = L.el.style.display;
+        const nextDisplay = displayed ? '' : 'none';
+        if (curDisplay !== nextDisplay) L.el.style.display = nextDisplay;
+
+        if (displayed) {
+          const v = initiallyVisible ? '' : 'hidden';
+          if (L.el.style.visibility !== v) L.el.style.visibility = v;
         }
       });
       syncNodeLabelsImmediate();
