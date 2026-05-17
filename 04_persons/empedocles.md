@@ -58,6 +58,20 @@ refs:
     type: "scholarly-collection"
     tier: 2
 tags: [person, greek, pre-socratic, pythagorean, sicily, akragas, four-elements, love-and-strife, reincarnation, ritual-purity, wonder-worker]
+
+cross-tradition-edges:
+  - target: tradition-pythagorean
+    type: parallel
+    note: Empedocles moved in the same Magna Graecian Pythagorean world as Philolaus. He shared the Pythagorean doctrines of metempsychosis, vegetarianism, and ritual purity — his *Purifications* poem is the most explicit pre-Platonic Greek statement of soul-transmigration. Ancient tradition reports direct Pythagorean influence. He was probably a pupil of Pythagoras's students.
+  - target: reincarnation
+    type: originator-of
+    note: Empedocles's *Purifications* contains the oldest Greek poem about reincarnation written by an identifiable author. He writes in the first person about his own transmigrations — "I have already been a boy, a girl, a bush, a bird, and a mute fish in the sea." The soul is a daimon (divine being) that has fallen into the material world through sin and must complete a cycle of incarnations before returning to divine unity.
+  - target: tradition-orphic
+    type: parallel
+    note: The Orphic tradition and Empedocles share the core doctrine of the fallen soul undergoing cyclic incarnations as purification. The Orphic Gold Tablets and Empedocles's *Purifications* are contemporary (5th century BCE) and structurally parallel: divine origin → fall → cyclic incarnation → possible return. Whether Empedocles drew from Orphic materials or both drew from a shared Pythagorean-Orphic pool is debated.
+  - target: moral-ahimsa-nonviolence
+    type: parallel
+    note: Empedocles's vegetarianism, rooted in metempsychosis (animals may be reincarnated humans or divine beings), is the most rigorous pre-Platonic Greek formulation of nonviolence. He extends this to a cosmic level in his cosmology — the cosmic principle of Love (Philia) binding all things together versus Strife (Neikos) separating them. His cosmological pacifism parallels the Jain/Buddhist ahimsa principle formulated simultaneously on the other side of Eurasia.
 ---
 
 # Empedocles of Acragas

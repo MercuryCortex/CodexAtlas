@@ -16,6 +16,20 @@ texts-attributed-to: []
 events-participated: []
 mentioned-in: ["Eusebius *Praeparatio Evangelica* IX.6–8, XI.9–10, XV.17 (our principal source — Eusebius preserves extensive verbatim quotation)", "Porphyry *Life of Plotinus* 14, 17, 20 (Porphyry reports that Plotinus's pupil Amelius compiled all of Numenius's books and that Plotinus's enemies accused him of plagiarizing Numenius)", "Proclus *Commentary on the Timaeus* (multiple references)", "Origen *Contra Celsum* IV.51, V.38 (Origen knew Numenius and engages with his three-Gods doctrine and his Jewish-philosophical interest)"]
 status: "metadata"
+
+cross-tradition-edges:
+  - target: tradition-pythagorean
+    type: heir-of
+    note: Numenius called himself a Pythagorean and asked the famous question "What is Plato but Moses speaking Greek?" — treating Plato as a transmitter of Pythagorean doctrine harmonizable with Jewish scripture. He explicitly identified the Pythagorean Monad with Plato's Good and proposed that both expressed the same divine first principle as the God of Genesis 1:2. This is the first explicit Greek-Pythagorean-Jewish synthesis.
+  - target: mathematics-pythagorean-sacred
+    type: child-of
+    note: Numenius's metaphysical system treats the First God (the Monad) as beyond all arithmetic and contact — pure unity. The Second God performs the Demiurgic function of imposing mathematical structure on matter. His three-God hierarchy (Monad → Demiurge → World) is a Pythagorean number-metaphysics systematized into a theological sequence. Plotinus's three hypostases are this system refined.
+  - target: philosophy-neoplatonism
+    type: ancestor-of
+    note: Numenius is Plotinus's most important immediate predecessor. Plotinus's students compiled all of Numenius's books; opponents accused Plotinus of plagiarizing Numenius. Whether or not the accusation holds, the structural parallels — three divine principles, the One beyond being, the soul's descent and ascent — are undeniable. Numenius is the missing link between Middle Platonism and Plotinian Neoplatonism.
+  - target: god-the-father-christian
+    type: parallel
+    note: Numenius's "First God" — beyond being, beyond action, pure unity, unmoved — parallels the Christian God the Father in the same structural way the Neoplatonic One does. Numenius was known to Origen and other early Christian theologians; his three-God hierarchy (First God = beyond being; Second God = active Demiurge; Third God = the World/cosmos) was compared to the Trinity in antiquity. His Moses-Plato equation made him a resource for Christian Neoplatonists.
 refs:
   - title: "Numenius: Fragments (text établi et traduit)"
     author: "des Places, Édouard (ed.)"

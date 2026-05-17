@@ -25,8 +25,18 @@ refs:
     url: "https://plato.stanford.edu/entries/porphyry/"
     type: "encyclopedia"
     tier: 3
-tags: [person, neoplatonist, philosopher, porphyry, plotinus
-]
+tags: [person, neoplatonist, philosopher, porphyry, plotinus]
+
+cross-tradition-edges:
+  - target: tradition-pythagorean
+    type: heir-of
+    note: Porphyry wrote a *Life of Pythagoras* — one of the two principal surviving ancient biographies (alongside Iamblichus's *De Vita Pythagorica*). His biography presents Pythagoras as the paradigmatic philosopher-sage, the archetype of the contemplative life that Porphyry and Plotinus themselves exemplify. The Pythagorean vegetarianism and ascetic program is explicitly endorsed by Porphyry in his *On Abstinence from Killing Animals*.
+  - target: mathematics-pythagorean-sacred
+    type: heir-of
+    note: Porphyry's commentary on Ptolemy's Harmonics (which itself extends Pythagorean harmonic theory) and his transmission of Pythagorean mathematics through the Plotinian circle kept the number-theology alive between Nicomachus (~100 CE) and Iamblichus (~280 CE). He is the relay node between Neo-Pythagorean and theurgical Neoplatonist treatments of mathematical-sacred doctrine.
+  - target: tradition-neoplatonism
+    type: member-of
+    note: Porphyry is Plotinus's primary student and editor. Without Porphyry's editorial work — assembling the *Enneads*, writing the *Life of Plotinus*, arranging the 54 treatises into six groups of nine — Neoplatonism's foundational text would not exist in its current form. He is also responsible for the Porphyrian tree (genus-species logic diagram) that structured medieval Western logic for 600 years.
 ---
 
 # Porphyry
