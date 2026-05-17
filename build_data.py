@@ -365,8 +365,10 @@ def tradition_family(t: str) -> str:
     if "egyptian" in s or "amarna" in s or "ptolema" in s or "kemetic" in s:
         return "Egyptian"
     # Pre-Islamic Arabian — pagan Arabian pantheon (al-Uzza, Allat, Manat, Hubal, Nasr, Wadd)
-    # Must come BEFORE Islamic to prevent "pre-islamic" from matching "islam" substring
-    if "pre-islamic" in s or "arabian polytheism" in s or "south arabian religion" in s or "minaean" in s or "nabataean" in s:
+    # Guard: must NOT start with "islam" — prevents allah's tradition from landing here
+    if not s.startswith("islam") and (
+        "pre-islamic" in s or "arabian polytheism" in s or "south arabian religion" in s or "minaean" in s or "nabataean" in s
+    ):
         return "Pre-Islamic-Arabian"
     if "yoruba" in s or "ifa" in s or "vodun" in s or "vodou" in s or "santeria" in s or "candomble" in s or "akan" in s or "bantu" in s or "ethiopian" in s or "aksumite" in s or "kebra" in s or "african" in s or "san " in s or "maasai" in s or "dahomey" in s:
         return "African"
@@ -392,19 +394,23 @@ def tradition_family(t: str) -> str:
         return "Christian"
     if "rabbinic" in s or "mishnah" in s or "talmud" in s or "midrash" in s or "kabbal" in s or "hasidic" in s or "hasidism" in s or "merkavah" in s or "hekhalot" in s or "sabbatean" in s or "frankist" in s:
         return "Rabbinic"
-    # "pre-islamic" already returned above; guard here for any remaining overlap
+    # startswith guard — "pre-islamic" handled above; only block if string STARTS with it
     # "shia" as bare word only — prevents "tsimshian" (Native-American) from matching
-    if "pre-islamic" not in s and (
+    if not s.startswith("pre-islamic") and (
         "islam" in s or "qur" in s or "sufi" in s or _re.search(r'\bshia\b', s) or "shi'a" in s
         or "ismaili" in s or "alevi" in s or "druze" in s or "yazidi" in s or "muslim" in s
     ):
         return "Islamic"
     if "shinto" in s or "kojiki" in s or "nihon shoki" in s or "nihongi" in s:
         return "Shinto"
+    # Chinese checked BEFORE Buddhist/Vedic — origin wins for syncretic deities (Guan Yu, Mazu, Sun Wukong, Yan Wang)
+    if "chinese" in s or "confucian" in s or "daoist" in s or "daoism" in s or "taoist" in s or "taoism" in s or "shang" in s or "zhou" in s or "korean" in s:
+        return "Chinese"
     # Vedic checked BEFORE Buddhist — origin tradition wins for shared deities (Garuda, Kubera, Yama, Mahakala)
     if "sikh" in s or "vedic" in s or "hindu" in s or "upanish" in s or "brahman" in s or "tantric" in s or "vaishnav" in s or "shakta" in s or "shaiv" in s or "bhakti" in s or "vedanta" in s or "jain" in s or "hindutva" in s:
         return "Vedic"
-    if "buddh" in s or "theravada" in s or "mahayana" in s or "zen" in s or "chan" in s or "vajra" in s or "tantric buddh" in s or "pure land" in s or "dzogchen" in s or "bon" in s:
+    # "chan" uses word boundary — "chant" (as in Hawaiian creation chant) must not match Chan Buddhism
+    if "buddh" in s or "theravada" in s or "mahayana" in s or "zen" in s or _re.search(r'\bchan\b', s) or "vajra" in s or "tantric buddh" in s or "pure land" in s or "dzogchen" in s or "bon" in s:
         return "Buddhist"
     if "zoroastr" in s or "avesta" in s or "iranian" in s or "ahura" in s:
         return "Zoroastrian"
@@ -412,13 +418,12 @@ def tradition_family(t: str) -> str:
         return "Armenian"
     if "etruscan" in s and "roman" not in s:
         return "Etruscan"
-    if "chinese" in s or "confucian" in s or "daoist" in s or "daoism" in s or "taoist" in s or "taoism" in s or "shang" in s or "zhou" in s or "korean" in s:
-        return "Chinese"
     if "aztec" in s or "mexica" in s or "nahuatl" in s or "maya" in s or "mayan" in s or "olmec" in s or "toltec" in s or "zapotec" in s or "mixtec" in s or "mesoamerican" in s:
         return "Mesoamerican"
     if "inca" in s or "andean" in s or "quechua" in s or "aymara" in s or "moche" in s:
         return "Andean"
-    if "lakota" in s or "iroquois" in s or "haudenosaunee" in s or "navajo" in s or "hopi" in s or "cherokee" in s or "algonqu" in s or "native american" in s or "first nations" in s or "anishin" in s or "pueblo" in s or "diné" in s or "inuit" in s or "yupik" in s or "tlingit" in s or "haida" in s or "tsimshian" in s:
+    # "inuit" word-boundary — "continuity" contains "inuit" as substring
+    if "lakota" in s or "iroquois" in s or "haudenosaunee" in s or "navajo" in s or "hopi" in s or "cherokee" in s or "algonqu" in s or "native american" in s or "first nations" in s or "anishin" in s or "pueblo" in s or "diné" in s or _re.search(r'\binuit\b', s) or "yupik" in s or "tlingit" in s or "haida" in s or "tsimshian" in s:
         return "Native-American"
     if "polynesian" in s or "maori" in s or "māori" in s or "hawaiian" in s or "samoan" in s or "tongan" in s or "aboriginal" in s or "australian" in s or "torres" in s or "papuan" in s or "melanesian" in s or "pacific" in s:
         return "Pacific"
