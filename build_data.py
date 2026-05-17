@@ -599,112 +599,63 @@ def collect_node_edges(nodes_by_id):
                         "type": etype,
                         "field": field,
                     })
-        # syncretic-edges has a structured form. The target field may be either a
-        # [[wikilink]] OR a bare slug ("athena" rather than "[[athena]]"). Both forms
-        # appear across the vault (~half-and-half: 673 wikilink-form / 781 bare-slug
-        # form as of 2026-05-17). The bare-slug form was previously silently dropped,
-        # leaving authored cross-tradition syncretic claims invisible in the graph —
-        # which manifested as e.g. the Pre-Islamic-Arabian hull having zero deity-to-
-        # deity cross-family edges despite explicit Allat→Athena / Wadd→Nanna-Sin /
-        # al-Uzza→Aphrodite syncretic claims in YAML. This parser now matches the
-        # behaviour of cross-symbol-edges (line ~626) and cross-alphabet-edges.
-        sync = fm.get("syncretic-edges")
-        if isinstance(sync, list):
-            for s in sync:
+        # === Structured-edge fields ===
+        # Each of the *-edges / connections / connects-to / cross-* fields uses a
+        # block-list of dicts with at minimum a `target:` field. The edge type comes
+        # from the entry's `type:` (or `relation:` for connects-to), falling back to
+        # a per-field default. Targets may be either "[[wikilink]]" or bare slug.
+        #
+        # The bare-slug fallback rejects prose-shaped strings (anything that isn't
+        # kebab-case lowercase). This prevents emitting fake edges from descriptive
+        # notes accidentally typed into the `target:` slot, e.g.
+        #   - target: "Saint Patrick (because of the snake imagery)"
+        # which previously produced damballa→"Saint Patrick (because..."  dead-edges.
+        #
+        # The structured-edge registry below covers every per-folder convention found
+        # in the vault as of 2026-05-17. New conventions should be added here, not
+        # re-implemented inline.
+        STRUCTURED_EDGE_FIELDS = [
+            ("syncretic-edges",         "identification",  "syncretic-"),   # deities
+            ("cross-symbol-edges",      "visual-cognate",  None),           # 09_symbols/
+            ("cross-alphabet-edges",    "parallel-form",   None),           # 11_alphabets/
+            ("cross-music-edges",       "parallel-form",   None),           # 10_music/
+            ("cross-tradition-edges",   "parallel-form",   None),           # 16_mathematics/
+            ("cross-alchemy-edges",     "parallel-form",   None),           # 12_alchemy/
+            ("cross-ritual-edges",      "parallel-form",   None),           # 14_rituals/
+            ("cross-moral-edges",       "parallel-form",   None),           # 13_morals/
+            ("cross-tradition-parallels","parallel-motif", None),           # 06_themes/
+            ("cross-links",             "ancestor-of",     None),           # 03_deities/ (Celtic/Welsh anchors)
+            ("connections",             "parallel-form",   None),           # 09_symbols/ (older convention used by a few nodes)
+            ("connects-to",             "connects-to",     None),           # 04_persons/ (uses `relation:` instead of `type:`)
+        ]
+        SLUG_RE = re.compile(r"^[a-z0-9_-]+$")
+        for field, default_etype, etype_prefix in STRUCTURED_EDGE_FIELDS:
+            block = fm.get(field)
+            if not isinstance(block, list):
+                continue
+            for s in block:
                 if not isinstance(s, dict) or not s.get("target"):
                     continue
                 target_raw = str(s["target"]).strip()
-                # accept either "[[slug]]" or bare "slug"
-                targets = list(wikilinks(target_raw)) or [target_raw.lstrip("[").rstrip("]")]
-                for target in targets:
-                    target = target.strip()
-                    if not target or target == node_id:
-                        continue
-                    edges.append({
-                        "source": node_id,
-                        "target": target,
-                        "type": "syncretic-" + (s.get("type") or "identification"),
-                        "field": "syncretic-edges",
-                    })
-        # cross-symbol-edges — structured form on 09_symbols/ nodes. Edge type is taken
-        # verbatim from each entry's `type` field (ancestor-of, parallel-form,
-        # syncretic-fusion, appropriated-by, polemic-inversion, visual-cognate).
-        # The target field can be either a bare slug or a [[wikilink]].
-        xsym = fm.get("cross-symbol-edges")
-        if isinstance(xsym, list):
-            for s in xsym:
-                if not isinstance(s, dict) or not s.get("target"):
-                    continue
-                etype = (s.get("type") or "visual-cognate").strip()
-                target_raw = str(s["target"]).strip()
-                # accept either "[[slug]]" or bare "slug"
-                targets = list(wikilinks(target_raw)) or [target_raw.lstrip("[").rstrip("]")]
-                for target in targets:
-                    target = target.strip()
-                    if not target or target == node_id:
-                        continue
-                    edges.append({
-                        "source": node_id,
-                        "target": target,
-                        "type": etype,
-                        "field": "cross-symbol-edges",
-                    })
-        # cross-alphabet-edges — same structured form for 11_alphabets/ nodes.
-        xalph = fm.get("cross-alphabet-edges")
-        if isinstance(xalph, list):
-            for s in xalph:
-                if not isinstance(s, dict) or not s.get("target"):
-                    continue
-                etype = (s.get("type") or "parallel-form").strip()
-                target_raw = str(s["target"]).strip()
-                targets = list(wikilinks(target_raw)) or [target_raw.lstrip("[").rstrip("]")]
-                for target in targets:
-                    target = target.strip()
+                # accept "[[slug]]" anywhere in target, else bare-slug if valid shape
+                candidate_targets = list(wikilinks(target_raw))
+                if not candidate_targets:
+                    bare = target_raw.lstrip("[").rstrip("]").strip()
+                    if SLUG_RE.match(bare):
+                        candidate_targets = [bare]
+                    # else: drop — target looks like prose, not a slug
+                # edge type: prefer `type:`, fall back to `relation:` (connects-to),
+                # then per-field default. Apply optional prefix for syncretic-edges.
+                raw_etype = (s.get("type") or s.get("relation") or default_etype).strip()
+                etype = (etype_prefix + raw_etype) if etype_prefix else raw_etype
+                for target in candidate_targets:
                     if not target or target == node_id:
                         continue
                     edges.append({
                         "source": node_id,
                         "target": target,
                         "type": etype,
-                        "field": "cross-alphabet-edges",
-                    })
-        # cross-music-edges — same structured form for 10_music/ nodes.
-        xmus = fm.get("cross-music-edges")
-        if isinstance(xmus, list):
-            for s in xmus:
-                if not isinstance(s, dict) or not s.get("target"):
-                    continue
-                etype = (s.get("type") or "parallel-form").strip()
-                target_raw = str(s["target"]).strip()
-                targets = list(wikilinks(target_raw)) or [target_raw.lstrip("[").rstrip("]")]
-                for target in targets:
-                    target = target.strip()
-                    if not target or target == node_id:
-                        continue
-                    edges.append({
-                        "source": node_id,
-                        "target": target,
-                        "type": etype,
-                        "field": "cross-music-edges",
-                    })
-        # cross-tradition-edges — same structured form for 16_mathematics/ nodes.
-        xmath = fm.get("cross-tradition-edges")
-        if isinstance(xmath, list):
-            for s in xmath:
-                if not isinstance(s, dict) or not s.get("target"):
-                    continue
-                etype = (s.get("type") or "parallel-form").strip()
-                target_raw = str(s["target"]).strip()
-                targets = list(wikilinks(target_raw)) or [target_raw.lstrip("[").rstrip("]")]
-                for target in targets:
-                    target = target.strip()
-                    if not target or target == node_id:
-                        continue
-                    edges.append({
-                        "source": node_id,
-                        "target": target,
-                        "type": etype,
-                        "field": "cross-tradition-edges",
+                        "field": field,
                     })
     return edges
 
