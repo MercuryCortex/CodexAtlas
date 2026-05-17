@@ -26,6 +26,18 @@ cross-music-edges:
   - target: music-pentatonic-scale
     type: ancestor-of
     note: The Chinese wǔyīn system is the theoretical cosmological framing of the pentatonic scale that also appears universally
+  - target: music-harmonic-series-physics
+    type: child-of
+    note: The wǔyīn five tones are the five strongest overtones in the natural harmonic series (octave, fifth, fourth, major third, minor third); the Chinese cosmological system was built on top of the same physical fact Pythagoras derived from his monochord — the physical phenomenon precedes both theoretical frameworks
+  - target: music-tuvan-overtone-singing
+    type: parallel-form
+    note: Tuvan khoomei demonstrates the harmonic series from a single voice; Chinese wǔyīn cosmology maps those same ratios onto the five elements — both arrive at the harmonic series from opposite ends (vocal physics vs. bamboo measurement) and both build cosmological frameworks on what they find
+  - target: music-chinese-twelve-lü
+    type: ancestor-of
+    note: The wǔyīn five-tone system is the cosmological core from which the 12-lü chromatic derivation extends; the five tones are the cosmological primary, the 12 lü are the full mathematical elaboration via the sānfēn sǔnyì fǎ (successive-fifths method)
+  - target: music-marquis-yi-bells
+    type: ancestor-of
+    note: The Marquis Yi bells are the physical implementation of the wǔyīn + 12-lü theory at the highest level of ancient Chinese craftsmanship; the bell inscriptions are the earliest written record of pitch theory in China, built on the wǔyīn cosmological base
 
 music-tradition-context:
   - [[tradition-daoism]]

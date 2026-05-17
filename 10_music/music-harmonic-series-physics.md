@@ -39,6 +39,15 @@ cross-music-edges:
   - target: music-pentatonic-scale
     type: ancestor-of
     note: The pentatonic scale's universality has a physical explanation: the five notes (1st, 2nd, 3rd, 5th, 6th overtones) are the strongest and most consonant in the natural harmonic series; different civilizations independently 'discovered' a structure already present in every musical tone
+  - target: music-chinese-pentatonic-cosmology
+    type: parallel-form
+    note: The Chinese wǔyīn five-tone cosmology and the sānfēn sǔnyì fǎ bamboo-tube derivation are the Chinese independent discovery of the harmonic series; both the Greek (monochord) and Chinese (bamboo) traditions arrived at the same ratio structure (3:2, 4:3, 5:4) from physical measurement of vibrating media, with zero documented contact
+  - target: music-chinese-twelve-lü
+    type: ancestor-of
+    note: The Chinese 12-lü system extends the harmonic series derivation into the full chromatic scale using the same successive-fifths method as Pythagorean tuning; both traditions discover the Pythagorean comma (12 fifths ≠ 7 octaves) independently as the mathematical limit of harmonic series derivation
+  - target: music-sheng-free-reed-chord
+    type: parent-of
+    note: The sheng mouth organ is the instrument that makes the harmonic series visible as physical structure — multiple simultaneous vibrating reeds at integer-ratio frequencies, producing the chord that Pythagoras theorized and Gyuto monks vocalize; it is the most direct mechanical implementation of the harmonic series as audible chord
 
 ---
 

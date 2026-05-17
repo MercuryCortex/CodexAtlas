@@ -1206,6 +1206,9 @@ canonical-slug
 - `music-chaldean-oracles-sound`
 - `music-chinese-court-instruments`
 - `music-chinese-pentatonic-cosmology`
+- `music-chinese-twelve-lü`
+- `music-marquis-yi-bells`
+- `music-sheng-free-reed-chord`
 - `music-creation-by-sound`
 - `music-dogon-nommo-vibration`
 - `music-ficino-lyre-therapy`
