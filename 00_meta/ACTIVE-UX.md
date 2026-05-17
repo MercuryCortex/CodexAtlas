@@ -33,4 +33,6 @@ Priority order for the kit + view migration sequence (from the Workflow Reset pl
 
 ## Recently completed (last 5)
 
-_Nothing here yet under the new lane protocol. Older UX work is in `agents-archive/2026-05-W2-active.md`._
+- `opus-pantheon-hovercard-1` (2026-05-17) — Pantheon V2 hover-card rebuild + per-node-type SVG glyph vocabulary. Wide cover-cropped image, curated `role` tagline (falls back to attributed Wikipedia extract — no invented prose), family · BCE/CE period meta, edge-bucket connection breakdown, tag-label chips. New `ph2-type-glyphs-layer` paints a distinct geometric primitive per node type (deity / author / document / symbol / event / ritual / music / alphabet / alchemy / philosophy / moral / medicine / mathematics / monument / theme / tradition / place) — first-pass primitives, slot in hand-illustrated vectors by replacing TYPE_GLYPHS entries. Files: `src/js/views/pantheon-v2.js`, `src/styles/app.css`, `index.html`.
+
+_Older UX work is in `agents-archive/2026-05-W2-active.md`._

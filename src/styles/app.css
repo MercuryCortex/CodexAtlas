@@ -2022,26 +2022,23 @@ body.view-atlas main.canvas { background: var(--bg-0); }
   filter: drop-shadow(0 0 1px rgba(212, 165, 90, 0.45));
 }
 
-/* HOVER CARD — premium horizontal info card with circular avatar, not a big
-   portrait box. Was a 220×130 image dominating the card (read as "squared"
-   shape next to the cursor); now a 44 px circle avatar + text flowing to the
-   right, which feels like a Linear/Notion hover card instead of a tooltip. */
+/* HOVER CARD V2 — academic trading-card. Wide cover-cropped image on top,
+   body column below: type-glyph + title, curated `role` tagline (NO invented
+   prose; falls back to attributed Wikipedia extract), family · period meta,
+   connection breakdown by edge-bucket, then platform-tag chips. Tags render
+   as proper labels — same vocabulary as the family-filter chips, not as
+   hashtags. The card itself reads as a peer of `Families ▾` and the zoom
+   widgets: mono, 3 px radius, border-soft, blur(10px). */
 .ph2-thumb-card {
-  /* Same design vocabulary as the toolbar: mono font, 3 px radius, soft
-     border-soft outline, blur(10px). The card reads as a peer of the
-     `Families ▾` and zoom widgets, not a separate visual language. */
   position: fixed; pointer-events: none;
-  display: flex; align-items: center; gap: 10px;
-  background: rgba(14,16,22,0.92);
+  background: rgba(14,16,22,0.94);
   backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);
   border: 1px solid var(--border-soft);
   border-radius: 3px;
-  padding: 8px 12px 8px 8px;
-  max-width: 320px;
   z-index: 1000;
   font-family: var(--mono); color: var(--text-0); font-size: 11px;
   letter-spacing: 0.02em;
-  box-shadow: 0 6px 18px rgba(0,0,0,0.55);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.62);
   left: 0; top: 0;
   opacity: 0;
   transform: translateY(2px);
@@ -2049,29 +2046,185 @@ body.view-atlas main.canvas { background: var(--bg-0); }
               transform 140ms var(--ease-out-expo, cubic-bezier(0.16, 1, 0.3, 1));
 }
 .ph2-thumb-card[style*="display: block"] { opacity: 1; transform: translateY(0); }
-.ph2-thumb-img {
-  flex: 0 0 auto;
-  display: block;
-  width: 44px; height: 44px;
-  object-fit: cover; object-position: center top;
-  border-radius: 50%;
-  background: var(--bg-2);
-  border: 1px solid rgba(255,255,255,0.10);
+
+.ph2-thumb-card-v2 {
+  display: flex; flex-direction: column;
+  width: 288px;
+  padding: 0;
+  overflow: hidden;
 }
-.ph2-thumb-body { display: flex; flex-direction: column; min-width: 0; }
-.ph2-thumb-title { font-weight: 500; color: var(--text-0); line-height: 1.15; }
-.ph2-thumb-meta  {
+.ph2-thumb-imgwrap {
+  position: relative;
+  width: 100%; height: 144px;
+  background: linear-gradient(180deg, var(--bg-1) 0%, var(--bg-0) 100%);
+  overflow: hidden;
+  border-bottom: 1px solid var(--border-soft);
+}
+.ph2-thumb-img {
+  display: block;
+  width: 100%; height: 100%;
+  object-fit: cover; object-position: center 30%;
+}
+/* Subtle vignette so the image grounds into the card */
+.ph2-thumb-imgwrap::after {
+  content: '';
+  position: absolute; inset: 0;
+  pointer-events: none;
+  background: linear-gradient(180deg, rgba(0,0,0,0) 60%, rgba(8,10,16,0.55) 100%);
+}
+/* Glyph badge in the corner — quiet, just a type signal on the image. */
+.ph2-thumb-imgglyph {
+  position: absolute; left: 8px; top: 8px;
+  width: 22px; height: 22px;
+  display: grid; place-items: center;
+  background: rgba(10,12,18,0.7);
+  border: 1px solid var(--border-soft);
+  border-radius: 3px;
+  color: var(--text-1);
+}
+.ph2-thumb-imgglyph svg { display: block; }
+/* Fallback (no thumbnail): center the glyph at large size. */
+.ph2-thumb-imgwrap-fallback { background: var(--bg-1); }
+.ph2-thumb-imgwrap-fallback::after { display: none; }
+.ph2-thumb-imgwrap-fallback .ph2-thumb-imgglyph {
+  position: absolute; left: 50%; top: 50%;
+  transform: translate(-50%, -50%);
+  width: 64px; height: 64px;
+  background: transparent; border: none;
+  color: var(--text-2);
+}
+.ph2-thumb-imgwrap-fallback .ph2-thumb-imgglyph svg { width: 48px; height: 48px; }
+
+.ph2-thumb-body {
+  display: flex; flex-direction: column;
+  gap: 6px;
+  padding: 10px 12px 12px;
+  min-width: 0;
+}
+.ph2-thumb-titlerow {
+  display: flex; align-items: center; gap: 7px;
+  min-width: 0;
+}
+.ph2-thumb-typeglyph {
+  flex: 0 0 auto;
+  display: inline-grid; place-items: center;
+  width: 14px; height: 14px;
+  color: var(--gold);
+}
+.ph2-thumb-typeglyph svg { display: block; }
+.ph2-thumb-title {
+  font-family: var(--sans);
+  font-size: 14px; font-weight: 500;
+  color: var(--text-0); line-height: 1.1;
+  letter-spacing: 0;
+  overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+}
+.ph2-thumb-tagline {
+  font-family: var(--sans);
+  font-style: italic;
+  font-size: 12px; line-height: 1.32;
+  color: var(--text-1);
+  letter-spacing: 0;
+  /* Two-line clamp; ellipsis if longer. */
+  display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+.ph2-thumb-tagline-src {
+  font-style: normal;
+  font-family: var(--mono);
+  font-size: 9.5px;
+  color: var(--text-3);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  margin-left: 4px;
+}
+.ph2-thumb-meta {
   font-size: 10.5px; color: var(--text-2); font-family: var(--mono);
-  letter-spacing: 0.02em; line-height: 1.3;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  line-height: 1.3;
   white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
 }
-.ph2-thumb-link {
-  display: inline-block; margin-top: 4px;
+.ph2-thumb-sep { color: var(--text-3); margin: 0 2px; }
+
+.ph2-thumb-conn-total {
+  margin-top: 2px;
   font-family: var(--mono); font-size: 10px;
-  color: var(--gold); text-decoration: none;
-  pointer-events: auto;
+  letter-spacing: 0.06em; text-transform: uppercase;
+  color: var(--text-3);
 }
-.ph2-thumb-link:hover { text-decoration: underline; }
+.ph2-thumb-conn-list {
+  list-style: none; padding: 0; margin: 2px 0 0;
+  display: flex; flex-direction: column;
+}
+.ph2-thumb-conn-row {
+  display: flex; align-items: center; gap: 6px;
+  padding: 1px 0;
+  font-family: var(--mono); font-size: 10.5px;
+  color: var(--text-1);
+}
+.ph2-thumb-conn-swatch {
+  flex: 0 0 auto;
+  width: 12px; height: 2px;
+  border-radius: 1px;
+  background: var(--text-3);
+}
+/* Edge-bucket colors — these match the BUCKETS hex set in pantheon-v2.js.
+   Single source of truth ideally; for now duplicated here so the hover card
+   doesn't need a JS palette injection. Update both if the spec changes. */
+.ph2-thumb-conn-swatch[data-bucket="transmission"] { background: #C9743A; }
+.ph2-thumb-conn-swatch[data-bucket="parallel"]     { background: #5A9A8F; }
+.ph2-thumb-conn-swatch[data-bucket="association"]  { background: #4A5AA4; }
+.ph2-thumb-conn-swatch[data-bucket="kinship"]      { background: #C9A5D4; }
+.ph2-thumb-conn-swatch[data-bucket="attestation"]  { background: #D4A55A; }
+.ph2-thumb-conn-swatch[data-bucket="polemic"]      { background: #A83E4A; }
+.ph2-thumb-conn-swatch[data-bucket="fusion"]       { background: #C4783A; }
+.ph2-thumb-conn-name {
+  flex: 1 1 auto;
+  color: var(--text-2);
+  text-transform: capitalize;
+  letter-spacing: 0.02em;
+}
+.ph2-thumb-conn-n {
+  flex: 0 0 auto;
+  color: var(--text-1);
+  font-variant-numeric: tabular-nums;
+}
+.ph2-thumb-conn-rest .ph2-thumb-conn-name { color: var(--text-3); }
+.ph2-thumb-conn-rest .ph2-thumb-conn-n    { color: var(--text-3); }
+
+/* Tag chips — proper platform labels, not hashtags. Same vocabulary as the
+   family-filter chip (.ph2-filter-row swatches) and the toolbar buttons. */
+.ph2-thumb-tags {
+  display: flex; flex-wrap: wrap; gap: 4px;
+  margin-top: 4px;
+}
+.ph2-thumb-tag {
+  display: inline-flex; align-items: center;
+  padding: 2px 7px;
+  font-family: var(--mono); font-size: 10px;
+  letter-spacing: 0.04em;
+  color: var(--text-1);
+  background: var(--bg-2);
+  border: 1px solid var(--border-soft);
+  border-radius: 2px;
+  white-space: nowrap;
+  max-width: 100%;
+  overflow: hidden; text-overflow: ellipsis;
+}
+
+/* ── TYPE-GLYPH OVERLAY (the wheel's per-node shape vocabulary) ──
+   One small SVG per node sits inside its colored family disk, conveying
+   the node-type (deity / document / ritual / symbol / music / monument…).
+   Sigma owns the colored disk via WebGL; this overlay rides above. Quiet
+   white-translucent stroke/fill so the glyph reads against family color
+   without competing with the label or the edges. */
+.ph2-type-glyphs-layer { z-index: 3; }   /* above sigma canvas (0/1/2), below node-labels (4) */
+.ph2-type-glyph {
+  overflow: visible;
+  color: rgba(255, 255, 255, 0.86);
+  pointer-events: none;
+}
 
 .ph2-rim-overlay {
   position: absolute; inset: 0;

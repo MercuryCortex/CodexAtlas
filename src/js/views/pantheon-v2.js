@@ -46,6 +46,71 @@
   // survive filter changes (legend clicks, mode dropdown changes).
   let _currentMode  = 'deities'; // 'deities'|'authors'|'symbols'|'events'|'monuments'
 
+  // ====================================================================
+  // TYPE-SHAPE VOCABULARY
+  // --------------------------------------------------------------------
+  // Each node type gets a distinct geometric primitive so the wheel reads
+  // as a typed graph at a glance (deity vs document vs ritual vs symbol …).
+  // Authored as inline SVG inside a 12×12 unit viewBox; `currentColor`
+  // means the consumer drives stroke/fill via CSS `color`. First-pass
+  // geometry — hand-illustrated vectors slot in by replacing entries.
+  // ====================================================================
+  const TYPE_GLYPHS = {
+    deity:       '<circle cx="6" cy="6" r="4.6" fill="none" stroke="currentColor" stroke-width="0.9"/><circle cx="6" cy="6" r="2.2" fill="currentColor"/>',
+    person:      '<circle cx="6" cy="4" r="1.7" fill="currentColor"/><path d="M2.7,10 Q6,6.6 9.3,10" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/>',
+    document:    '<rect x="3.2" y="1.8" width="5.6" height="8.4" rx="0.5" fill="none" stroke="currentColor" stroke-width="1.2"/><path d="M4.4,4.2 L7.6,4.2 M4.4,6 L7.6,6 M4.4,7.8 L6.6,7.8" stroke="currentColor" stroke-width="1" stroke-linecap="round"/>',
+    symbol:      '<path d="M6,1.6 L7.3,5 L10.6,6 L7.3,7 L6,10.4 L4.7,7 L1.4,6 L4.7,5 Z" fill="currentColor"/>',
+    event:       '<path d="M6,1.6 L10.4,6 L6,10.4 L1.6,6 Z" fill="none" stroke="currentColor" stroke-width="1.3"/><circle cx="6" cy="6" r="1.4" fill="currentColor"/>',
+    ritual:      '<path d="M6,1.4 L6,10.6 M1.4,6 L10.6,6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>',
+    music:       '<path d="M5.4,2 L9.4,2 L9.4,7.4" stroke="currentColor" stroke-width="1.3" fill="none" stroke-linecap="round"/><ellipse cx="4.2" cy="8.2" rx="1.7" ry="1.3" fill="currentColor"/><ellipse cx="8.1" cy="7.7" rx="1.5" ry="1.2" fill="currentColor"/>',
+    alphabet:    '<path d="M2.8,10.4 L6,1.8 L9.2,10.4 M4.2,7.6 L7.8,7.6" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>',
+    alchemy:     '<path d="M6,1.6 L10.6,9.8 L1.4,9.8 Z" fill="none" stroke="currentColor" stroke-width="1.3"/><path d="M3.6,7 L8.4,7" stroke="currentColor" stroke-width="1.1"/>',
+    philosophy:  '<circle cx="6" cy="6" r="3.6" fill="none" stroke="currentColor" stroke-width="1.3"/><circle cx="6" cy="6" r="0.9" fill="currentColor"/>',
+    moral:       '<path d="M2.2,3.8 L9.8,3.8 M6,3.8 L6,9.8 M3.5,9.8 L8.5,9.8" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" fill="none"/><path d="M2.4,3.8 Q1.4,5.8 3.4,5.8 Q5.4,5.8 4.4,3.8 M7.6,3.8 Q6.6,5.8 8.6,5.8 Q10.6,5.8 9.6,3.8" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round"/>',
+    medicine:    '<path d="M6,1.6 L6,10.4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/><path d="M3.8,3.6 Q6,2.4 8.2,3.6 M3.8,6 Q6,4.8 8.2,6 M3.8,8.4 Q6,7.2 8.2,8.4" fill="none" stroke="currentColor" stroke-width="1.1" stroke-linecap="round"/>',
+    mathematics: '<circle cx="6" cy="6" r="3.6" fill="none" stroke="currentColor" stroke-width="1.2"/><path d="M6,2.4 L6,9.6 M2.4,6 L9.6,6" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/>',
+    monument:    '<rect x="4.2" y="1.8" width="3.6" height="8" fill="currentColor"/><rect x="2.6" y="9" width="6.8" height="1.6" fill="currentColor"/>',
+    theme:       '<circle cx="6" cy="6" r="1.6" fill="currentColor"/><circle cx="6" cy="6" r="3.6" fill="none" stroke="currentColor" stroke-width="0.9" stroke-dasharray="1.3 1.3"/>',
+    tradition:   '<circle cx="6" cy="6" r="4.2" fill="none" stroke="currentColor" stroke-width="1.3"/><circle cx="6" cy="6" r="1" fill="currentColor"/>',
+    place:       '<path d="M6,1.6 C8.5,1.6 10,3.4 10,5.4 C10,7.8 6,10.6 6,10.6 C6,10.6 2,7.8 2,5.4 C2,3.4 3.5,1.6 6,1.6 Z" fill="none" stroke="currentColor" stroke-width="1.3"/><circle cx="6" cy="5.2" r="1.3" fill="currentColor"/>',
+  };
+  // Some legacy node `type` strings map onto the vocabulary above.
+  const TYPE_ALIAS = { deities: 'deity', persons: 'person', documents: 'document', symbols: 'symbol', events: 'event', rituals: 'ritual', alchemys: 'alchemy', mathematics: 'mathematics', monuments: 'monument', themes: 'theme', traditions: 'tradition', places: 'place' };
+  function typeKey(type) {
+    if (!type) return 'theme';
+    return TYPE_ALIAS[type] || (TYPE_GLYPHS[type] ? type : 'theme');
+  }
+  function typeGlyphSVG(type, sizePx, opts) {
+    const inner = TYPE_GLYPHS[typeKey(type)] || TYPE_GLYPHS.theme;
+    const cls   = (opts && opts.cls) ? ` class="${opts.cls}"` : '';
+    const style = (opts && opts.style) ? ` style="${opts.style}"` : '';
+    return `<svg${cls}${style} width="${sizePx}" height="${sizePx}" viewBox="0 0 12 12" aria-hidden="true">${inner}</svg>`;
+  }
+  // Human label for a node type — used in the hover card type-row.
+  const TYPE_LABEL = {
+    deity: 'deity', person: 'author', document: 'document', symbol: 'symbol',
+    event: 'event', ritual: 'ritual', music: 'music', alphabet: 'alphabet',
+    alchemy: 'alchemy', philosophy: 'philosophy', moral: 'moral', medicine: 'medicine',
+    mathematics: 'mathematics', monument: 'monument', theme: 'theme',
+    tradition: 'tradition', place: 'place',
+  };
+
+  // Period formatter — module-local to keep this view self-contained (the
+  // app.js fmtDate helpers are not exposed on window). Matches the vault
+  // convention: negative = BCE, positive = CE, "—" for missing.
+  function fmtYear(y) {
+    if (y === undefined || y === null || y === '') return null;
+    if (typeof y !== 'number') return String(y);
+    if (y < 0) return Math.abs(y) + ' BCE';
+    return y + ' CE';
+  }
+  function fmtPeriod(a, b) {
+    const fa = fmtYear(a), fb = fmtYear(b);
+    if (!fa && !fb) return '';
+    if (fa && fb && fa !== fb) return fa + ' – ' + fb;
+    return fa || fb;
+  }
+
   // Deterministic per-id hash (djb2) — used for radial jitter so the wedge
   // grid doesn't look mechanical. Matches production's hashStr usage.
   function hashStr(s) {
@@ -1394,6 +1459,60 @@
       if (on) syncThumbsImmediate();
     }
 
+    // ── TYPE-GLYPH OVERLAY (the wheel's "shape per node-type" layer) ──
+    // One small SVG glyph per node, drawn at the node's screen position,
+    // inside the colored family disk. Adds the typed-graph reading: deities
+    // read as inner-dot-with-ring, documents as scrolls, rituals as +,
+    // music as a note, etc. Same camera-sync pattern as thumbsLayer; sits
+    // above sigma's canvas, below the labels overlay. Mouse events fall
+    // through (pointer-events: none) so sigma's hit-tester is unaffected.
+    const typeGlyphsLayer = document.createElementNS(SVG_NS, 'svg');
+    typeGlyphsLayer.setAttribute('class', 'ph2-type-glyphs-layer');
+    typeGlyphsLayer.setAttribute('aria-hidden', 'true');
+    typeGlyphsLayer.style.position = 'absolute';
+    typeGlyphsLayer.style.inset = '0';
+    typeGlyphsLayer.style.pointerEvents = 'none';
+    typeGlyphsLayer.style.width = '100%';
+    typeGlyphsLayer.style.height = '100%';
+    rootEl.appendChild(typeGlyphsLayer);
+    const typeGlyphsG = document.createElementNS(SVG_NS, 'g');
+    typeGlyphsG.setAttribute('class', 'ph2-type-glyphs-g');
+    typeGlyphsLayer.appendChild(typeGlyphsG);
+    const typeGlyphEntries = [];   // { el, id, baseR }
+    deities.forEach(d => {
+      const pos = positions.get(d.id);
+      if (!pos) return;
+      const deg = degree.get(d.id) || 0;
+      const baseR = nodeSizeForDeg(deg);
+      const glyphInner = TYPE_GLYPHS[typeKey(d.type)] || TYPE_GLYPHS.theme;
+      // Wrap each glyph in its own <svg> so the 0–12 viewBox transforms
+      // cleanly to per-node x/y/width/height. Reusing one <defs>+<use>
+      // would force a transform on each `<use>` which is just as much code.
+      const g = document.createElementNS(SVG_NS, 'svg');
+      g.setAttribute('class', 'ph2-type-glyph');
+      g.setAttribute('viewBox', '0 0 12 12');
+      g.setAttribute('overflow', 'visible');
+      g.innerHTML = glyphInner;
+      typeGlyphsG.appendChild(g);
+      typeGlyphEntries.push({ el: g, id: d.id, baseR });
+    });
+    function syncTypeGlyphsImmediate() {
+      const mult = (window.CODEX_DEV && window.CODEX_DEV.settings && window.CODEX_DEV.settings.nodeSizeMult) || 1;
+      for (let i = 0; i < typeGlyphEntries.length; i++) {
+        const T = typeGlyphEntries[i];
+        const pos = positions.get(T.id);
+        if (!pos) continue;
+        const screen = sigma.graphToViewport({ x: pos.x, y: pos.y });
+        // Glyph occupies ~95% of the disk diameter — readable, not overflowing.
+        const r = (T.baseR * mult) * 0.95;
+        const d = r * 2;
+        T.el.setAttribute('x', screen.x - r);
+        T.el.setAttribute('y', screen.y - r);
+        T.el.setAttribute('width',  d);
+        T.el.setAttribute('height', d);
+      }
+    }
+
     // Build neighbour index for fast hover dim/highlight on the edge overlay.
     const neighborIdx = new Map();
     edges.forEach(e => {
@@ -1489,44 +1608,158 @@
     syncOverlay();
     sigma.on('afterRender', syncOverlay);
 
-    // ----- THUMBNAIL HOVER CARD (priority 4) -----
-    // Production uses showTooltip() with tooltipThumb() — a unified card with
-    // image, title, family·tradition, connection-count, and an optional
-    // wikipedia link. We build a dedicated card so the global #tooltip stays
-    // owned by the production views.
+    // ====================================================================
+    // HOVER CARD — academic node preview
+    // --------------------------------------------------------------------
+    // Wide-image trading-card layout. Discipline:
+    //   • NO invented prose. The tagline is the curated `role` field (YAML
+    //     frontmatter, hand-written per the absorb-and-dissect protocol).
+    //     Falls back to `thumb_extract` (Wikipedia API, attributed). Empty
+    //     → empty.
+    //   • Tags are platform labels, not hashtags. Same vocabulary as the
+    //     family-filter chips. Slug/family/type tags are filtered out as
+    //     redundant. Future: clickable to drive multi-tag filter.
+    //   • Connection count breaks down by edge-bucket (transmission /
+    //     parallel / kinship / …) — the 7-bucket palette already on edges.
+    //   • Type glyph in the title row signals what kind of node this is
+    //     (deity vs document vs ritual vs symbol vs music vs monument …).
+    //   • No Wikipedia link in the hover surface; link belongs in the
+    //     detail panel, not in a transient tooltip.
+    // ====================================================================
     const thumbCard = document.createElement('div');
-    thumbCard.className = 'ph2-thumb-card';
+    thumbCard.className = 'ph2-thumb-card ph2-thumb-card-v2';
     thumbCard.style.display = 'none';
     rootEl.appendChild(thumbCard);
 
-    function wikiUrlFromRefs(refs) {
-      if (!Array.isArray(refs)) return null;
-      for (const r of refs) {
-        if (!r) continue;
-        const url = (typeof r === 'string') ? r : (r.url || r.href || '');
-        if (typeof url === 'string' && /wikipedia\.org\/wiki\//.test(url)) return url;
-      }
-      return null;
+    // Build a count of incident edges grouped by edge-bucket — uses the live
+    // `attrs.bucket` already set by edgeStyleFor() when edges were created.
+    function bucketBreakdown(nodeId) {
+      const counts = Object.create(null);
+      try {
+        graph.forEachEdge(nodeId, (eid, attrs) => {
+          const b = (attrs && attrs.bucket) || 'association';
+          counts[b] = (counts[b] || 0) + 1;
+        });
+      } catch (e) { /* node missing from graph — return empty */ }
+      const entries = Object.keys(counts).map(k => ({ bucket: k, n: counts[k] }));
+      entries.sort((a, b) => b.n - a.n);
+      return entries;
     }
+
+    // Drop the tags that would just echo metadata the card already shows.
+    // The vault assigns slug + type + family as tags on every node; those
+    // are noise here. Keep the genuinely descriptive ones.
+    function relevantTags(n) {
+      if (!Array.isArray(n.tags)) return [];
+      const skip = new Set([
+        String(n.id || '').toLowerCase(),
+        String(n.type || '').toLowerCase(),
+        String(n.family || '').toLowerCase(),
+        String(n.tradition || '').toLowerCase().replace(/\s+/g, '-'),
+      ]);
+      // Also skip the family slug after a basic kebab-cleanup
+      const famSlug = String(n.family || '').toLowerCase().replace(/\s+/g, '-');
+      skip.add(famSlug);
+      const out = [];
+      for (const raw of n.tags) {
+        const t = String(raw || '').trim();
+        if (!t) continue;
+        const lo = t.toLowerCase();
+        if (skip.has(lo)) continue;
+        out.push(t);
+        if (out.length >= 4) break;
+      }
+      return out;
+    }
+
     function showThumbCard(nodeAttrs, evt) {
       const n = nodeAttrs._node || {};
       const thumb = n.thumbnail || (Array.isArray(n.depictions) && n.depictions[0] && n.depictions[0].src);
       const deg = graph.degree(n.id || '') || 0;
-      const wiki = wikiUrlFromRefs(n.refs);
-      const family = nodeAttrs._family || n.family || '—';
+      const family = nodeAttrs._family || n.family || '';
       const tradition = n.tradition || '';
-      const meta1 = family + (tradition ? ' · ' + tradition : '');
-      // Horizontal card layout — circular avatar + .ph2-thumb-body text column.
-      const meta2 = deg + ' connection' + (deg === 1 ? '' : 's') +
-                    (n.geo && n.geo.label ? ' · ' + escapeHtml(n.geo.label) : '');
+      // Tradition usually elaborates on family ("Greek" family, "Greek" tradition
+      // → just show one). Compare case-insensitively.
+      const showTradition = tradition && tradition.toLowerCase() !== family.toLowerCase();
+      const period = fmtPeriod(n.date_earliest, n.date_latest);
+      // Tagline: prefer curated `role`; fall back to attributed Wikipedia
+      // extract (first sentence). Never invent.
+      let tagline = '';
+      let taglineSrc = '';
+      if (n.role && typeof n.role === 'string' && n.role.trim()) {
+        tagline = n.role.trim();
+      } else if (n.thumb_extract && typeof n.thumb_extract === 'string' && n.thumb_extract.trim()) {
+        // First sentence only — keep the card compact.
+        const ex = n.thumb_extract.trim();
+        const m = ex.match(/^[^.!?]+[.!?]/);
+        tagline = (m ? m[0] : ex).trim();
+        taglineSrc = 'wikipedia';
+      }
+      const buckets = bucketBreakdown(n.id || '');
+      const tags = relevantTags(n);
+      const typeK = typeKey(n.type);
+      const typeName = TYPE_LABEL[typeK] || typeK;
+
+      const headerMeta = [];
+      if (family)        headerMeta.push(escapeHtml(family));
+      if (showTradition) headerMeta.push(escapeHtml(tradition));
+      if (period)        headerMeta.push(escapeHtml(period));
+
+      // Bucket breakdown row — top 3 named buckets + spillover count.
+      let connHTML = `<div class="ph2-thumb-conn-total">${deg} connection${deg === 1 ? '' : 's'}</div>`;
+      if (buckets.length) {
+        const top = buckets.slice(0, 3);
+        const rest = buckets.slice(3).reduce((s, b) => s + b.n, 0);
+        connHTML += '<ul class="ph2-thumb-conn-list">' + top.map(b =>
+          `<li class="ph2-thumb-conn-row" data-bucket="${escapeAttr(b.bucket)}">
+             <span class="ph2-thumb-conn-swatch" data-bucket="${escapeAttr(b.bucket)}"></span>
+             <span class="ph2-thumb-conn-name">${escapeHtml(b.bucket)}</span>
+             <span class="ph2-thumb-conn-n">${b.n}</span>
+           </li>`).join('');
+        if (rest > 0) {
+          connHTML += `<li class="ph2-thumb-conn-row ph2-thumb-conn-rest">
+             <span class="ph2-thumb-conn-name">other</span>
+             <span class="ph2-thumb-conn-n">${rest}</span>
+           </li>`;
+        }
+        connHTML += '</ul>';
+      }
+
+      // Tag chips — clickable affordance via class only for now (event wiring
+      // arrives with the multi-tag-filter rebuild).
+      const tagsHTML = tags.length
+        ? `<div class="ph2-thumb-tags">${tags.map(t =>
+              `<span class="ph2-thumb-tag" data-tag="${escapeAttr(t)}">${escapeHtml(t)}</span>`
+            ).join('')}</div>`
+        : '';
+
+      // Image block — wide cover-crop. Falls back to the type-glyph drawn
+      // at large size when no thumbnail is available.
+      const imgHTML = thumb
+        ? `<div class="ph2-thumb-imgwrap">
+             <img class="ph2-thumb-img" src="${escapeAttr(thumb)}" alt="" onerror="this.parentNode.classList.add('ph2-thumb-imgwrap-fallback'); this.remove();"/>
+             <div class="ph2-thumb-imgglyph">${typeGlyphSVG(n.type, 36)}</div>
+           </div>`
+        : `<div class="ph2-thumb-imgwrap ph2-thumb-imgwrap-fallback">
+             <div class="ph2-thumb-imgglyph">${typeGlyphSVG(n.type, 48)}</div>
+           </div>`;
+
       thumbCard.innerHTML = [
-        thumb ? `<img class="ph2-thumb-img" src="${escapeAttr(thumb)}" alt="" onerror="this.remove()"/>` : '',
+        imgHTML,
         '<div class="ph2-thumb-body">',
-          `<div class="ph2-thumb-title">${escapeHtml(n.title || n.id || '')}</div>`,
-          `<div class="ph2-thumb-meta">${escapeHtml(meta1)}</div>`,
-          `<div class="ph2-thumb-meta">${meta2}</div>`,
-          wiki ? `<a class="ph2-thumb-link" href="${escapeAttr(wiki)}" target="_blank" rel="noopener">Wikipedia →</a>` : '',
-        '</div>'
+          '<div class="ph2-thumb-titlerow">',
+            `<span class="ph2-thumb-typeglyph" title="${escapeAttr(typeName)}">${typeGlyphSVG(n.type, 14)}</span>`,
+            `<span class="ph2-thumb-title">${escapeHtml(n.title || n.id || '')}</span>`,
+          '</div>',
+          tagline
+            ? `<div class="ph2-thumb-tagline${taglineSrc ? ' ph2-thumb-tagline-' + taglineSrc : ''}">${escapeHtml(tagline)}${taglineSrc ? ` <span class="ph2-thumb-tagline-src">via Wikipedia</span>` : ''}</div>`
+            : '',
+          headerMeta.length
+            ? `<div class="ph2-thumb-meta">${headerMeta.join(' <span class="ph2-thumb-sep">·</span> ')}</div>`
+            : '',
+          connHTML,
+          tagsHTML,
+        '</div>',
       ].join('');
       thumbCard.style.display = 'block';
       positionThumbCard(evt);
@@ -1538,11 +1771,22 @@
       const mouse = (evt && evt.event && evt.event.original) ? evt.event.original
                   : (evt && evt.clientX !== undefined ? evt : null);
       if (!mouse) return;
-      // Position relative to the viewport; the card is position:fixed in CSS.
-      const x = (mouse.clientX || 0) + 14;
-      const y = (mouse.clientY || 0) + 14;
-      thumbCard.style.left = x + 'px';
-      thumbCard.style.top  = y + 'px';
+      // Anchor to the cursor with a comfortable gap, then clamp inside the
+      // viewport so the card never gets clipped at the right or bottom edge.
+      const card = thumbCard;
+      const cw = card.offsetWidth  || 320;
+      const ch = card.offsetHeight || 200;
+      const pad = 14;
+      const vw = window.innerWidth || document.documentElement.clientWidth;
+      const vh = window.innerHeight || document.documentElement.clientHeight;
+      let x = (mouse.clientX || 0) + pad;
+      let y = (mouse.clientY || 0) + pad;
+      if (x + cw + pad > vw) x = (mouse.clientX || 0) - cw - pad;
+      if (y + ch + pad > vh) y = (mouse.clientY || 0) - ch - pad;
+      if (x < pad) x = pad;
+      if (y < pad) y = pad;
+      card.style.left = x + 'px';
+      card.style.top  = y + 'px';
     }
     function hideThumbCard() { thumbCard.style.display = 'none'; }
 
@@ -2073,7 +2317,8 @@
     // Initial paint + bind camera sync
     updateNodeLabelVisibility();
     syncNodeLabels();
-    sigma.on('afterRender', () => { syncNodeLabels(); syncThumbsImmediate(); });
+    syncTypeGlyphsImmediate();
+    sigma.on('afterRender', () => { syncNodeLabels(); syncThumbsImmediate(); syncTypeGlyphsImmediate(); });
 
     // ----- TOOLBAR — mode dropdown + labels toggle + ego focus + recenter -----
     // Mode list: shared between trigger label and dropdown rows so the chrome
