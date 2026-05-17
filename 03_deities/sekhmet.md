@@ -20,6 +20,18 @@ syncretic-edges:
   - target: "hathor"
     type: "splitting-doublet"
     source: "*Book of the Heavenly Cow* (New Kingdom mortuary text in Tutankhamun's shrine and later royal tombs); Hathor and Sekhmet are explicitly two aspects of the same goddess"
+  - target: "gula-akkadian"
+    type: "cross-tradition-archetype"
+    source: "Comparative religion — Lesko 1999 *The Great Goddesses of Egypt*; Stol 2000 *Epilepsy in Babylonia*; both are the supreme healing deity who simultaneously sends disease and cures it; both have priest-healer corps operating in her name"
+    notes: "Destroyer-healer archetype: Sekhmet (Egypt, attested c. 2500 BCE) and Gula (Mesopotamia, peak c. 1800–600 BCE) are independent instantiations of the same theological structure — the deity who commands disease commands its cure. The *wabw-Sḫmt* priest-physicians and the *āšipu*/*asû* dual-practitioner system are both institutional expressions of this logic."
+  - target: "apollo"
+    type: "cross-tradition-archetype"
+    source: "Comparative religion — Iliad 1.43–52 (Apollo sends plague with his arrows); *Homeric Hymn to Apollo*; both Apollo and Sekhmet are sun-associated divine archers who send plague as punishment and preside over its cure"
+    notes: "Greek destroyer-healer parallel: Apollo opens the Iliad by shooting plague-arrows at the Greeks; yet Apollo is simultaneously 'Apollo Physician' and father of Asklepios. Same theological logic as Sekhmet: divine wrath manifests as plague, divine authority includes the cure. Independent Greek instantiation of the destroyer-healer archetype."
+  - target: "ninisina"
+    type: "cross-tradition-archetype"
+    source: "Comparative religion — Stol 2000; Lesko 1999; both are feminine healing-deity archetypes with domain over disease and a corps of institutionalized priest-healers"
+    notes: "The Mesopotamian healing-goddess cluster (Ninisina/Gula/Ninkarrak) and Sekhmet form the two earliest institutional expressions of the healer-as-disease-authority pattern in recorded history."
 tags:
   - medicine
   - healing-deity

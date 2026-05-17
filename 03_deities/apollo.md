@@ -25,6 +25,10 @@ syncretic-edges:
     type: "parent-of"
     source: "Hesiod (Coronis myth); Pindar Pythian 3; Homeric Hymn to Asklepios"
     notes: "Apollo fathered Asclepius on the mortal Coronis; raised him via Chiron; Asclepius became the divine physician, eclipsing Apollo's healing function."
+  - target: "sekhmet"
+    type: "cross-tradition-archetype"
+    source: "Comparative religion — Iliad 1.43–52 (Apollo sends plague-arrows); Lesko 1999 on Sekhmet as plague-sender and healer; both are sun-associated divine figures who send plague as punishment and preside over healing"
+    notes: "Destroyer-healer archetype: Apollo sends plague (Iliad I arrows), is called 'Apollo Physician,' and fathers the divine physician Asklepios. Sekhmet sends plague as the Eye of Ra and is patron of Egypt's priest-physicians. Independent Greek and Egyptian convergence on the destroyer-healer theological structure."
 tags:
   - medicine
   - healing-deity

@@ -27,6 +27,10 @@ syncretic-edges:
   - target: "bau-sumerian"
     type: "ancient-identification"
     source: "Black & Green 1992 — Bau of Lagash, Ninisina of Isin, Ninkarrak of Karrak, and Gula form the four-way healing-goddess syncretic cluster"
+  - target: "sekhmet"
+    type: "cross-tradition-archetype"
+    source: "Comparative religion — Lesko 1999 *The Great Goddesses of Egypt*; both are feminine healing-deity archetypes in which authority over disease derives from domain over disease; both have institutionalized priest-healer corps operating in their name"
+    notes: "Destroyer-healer archetype: Ninkarrak (Mesopotamia, attested c. 2500 BCE via Hammurabi Code) and Sekhmet (Egypt, c. 2500 BCE) are the two earliest attested instances of the theological pattern in which the same divine being sends plague and cures it."
 status: "metadata"
 refs:
   - title: "Gods, Demons and Symbols of Ancient Mesopotamia: An Illustrated Dictionary"

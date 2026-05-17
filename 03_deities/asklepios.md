@@ -29,6 +29,14 @@ syncretic-edges:
     type: "parallel"
     source: "Comparative religion"
     notes: "Both are divine physicians born of a supreme deity (Apollo / Vishnu). Both bring medical knowledge as divine gift. Both have divine offspring personifying aspects of health. Structurally identical divine medical families."
+  - target: "ninisina"
+    type: "functional-parallel"
+    source: "Comparative religion — Stol 2011 *RlA* 'Hund' on dog burials at Isin; Edelstein 1945 *Asclepius* vol.1 on sacred dogs at Epidauros; both healing cults independently deploy the dog as the sacred healing animal across a 1,400-year gap"
+    notes: "MASSIVE WIN: Sacred Healing Dog. Ninisina's cult at Isin (c. 2000 BCE) has the earliest archaeological evidence of ritual healing dogs; Asklepios's wound-licking dogs at Epidauros are 1,400 years later. Dog saliva contains lysozyme, IgA, and histatins — real antimicrobial agents. Mesopotamia and Greece independently encoded the same pharmacological truth in religious form."
+  - target: "gula-akkadian"
+    type: "functional-parallel"
+    source: "Comparative religion — Black & Green 1992 on votive dogs at Gula sanctuaries; Edelstein 1945 on dogs at Asklepios sanctuaries"
+    notes: "Gula's votive dogs at Nippur, Isin, and Borsippa and Asklepios's dogs at Epidauros are parallel expressions of the healing-dog tradition across a 1,000-year gap and a 2,500-mile geographical distance."
 tags:
   - medicine
   - healing-deity
