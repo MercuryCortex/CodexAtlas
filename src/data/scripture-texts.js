@@ -11014,3 +11014,333 @@ SCRIPTURE_TEXTS['romans-12'] = {
     },
   ]
 };
+
+SCRIPTURE_TEXTS['psalm-51'] = {
+  id: 'psalm-51',
+  title: 'Psalm 51 — Miserere Mei',
+  tradition: 'Christianity',
+  scriptureRef: 'Psalm 51:1–17',
+  language: 'Hebrew (Biblical)',
+  date: 'c. 10th century BCE (attributed); possibly post-exilic compilation',
+  summary: 'The great penitential psalm — traditionally David\'s prayer after the Bathsheba affair — grounds the petition for forgiveness entirely in divine hesed and raḥămîm rather than human merit, asks for interior re-creation using the same verb as Genesis 1:1, and arrives at the revolutionary claim that the only sacrifice truly acceptable to God is "a broken and contrite heart."',
+  crossTradition: [
+    { label: 'Sufi tawba — the soul\'s turning/return toward God as its fundamental movement', textId: 'rumi-masnavi', note: 'The Quranic tawba (turning/return) and Psalm 51\'s movement from "I have sinned against you" to "restore to me the joy of your salvation" are structurally parallel: both describe the soul\'s motion back toward its source after alienation. For Rumi the separation-cry IS the prayer; for the Psalmist the confession IS already the beginning of restoration. Both traditions locate the turning-point not in human achievement but in divine responsiveness to the cry of return.' },
+    { label: 'Buddhist pratideśanā — verbal acknowledgment of harmful action as a mechanism of karmic purification', textId: 'diamond-sutra', note: 'Buddhist pratideśanā (confession practice) and Psalm 51\'s "I acknowledge my transgressions; my sin is ever before me" both treat explicit verbal acknowledgment as a mechanism of purification. In Buddhist practice, naming the harmful action breaks its karmic force; in the Psalm, naming sin before God is the precondition for divine forgiveness. Both traditions understand that harmful action gains power partly through hiddenness — naming brings it into the light where it can be addressed.' },
+    { label: 'Hindu prayaschitta — ritual atonement and purification of the antaḥkaraṇa (inner instrument)', textId: 'bhagavad-gita-4', note: 'Hindu prayaschitta (atonement/expiation in Dharmaśāstra) and Psalm 51\'s "create in me a clean heart" both address the interior instrument of knowledge and will. The Psalm uses bārāʾ (to create, the verb reserved for divine ex nihilo action in Genesis 1:1) — the heart\'s renewal requires divine re-creation, not human repair. Vedantic tradition similarly acknowledges that the deepest purification of ahaṅkāra and vāsanā cannot be accomplished by ego alone but requires prasāda (grace).' },
+  ],
+  sections: [
+    {
+      heading: 'Have Mercy — Hesed as the Basis of the Petition (51:1–5)',
+      verses: [
+        {
+          ref: '51:1–5',
+          text: 'Have mercy on me, O God, according to your steadfast love; according to your abundant mercy blot out my transgressions. Wash me thoroughly from my iniquity, and cleanse me from my sin. For I know my transgressions, and my sin is ever before me. Against you, you alone, have I sinned, and done what is evil in your sight, so that you are justified in your sentence and blameless when you pass judgment. Indeed, I was born guilty, a sinner when my mother conceived me.',
+          entities: [
+            { word: 'steadfast love... abundant mercy', node: 'divine-attributes', type: 'concept',
+              note: '"Ḥasdeḵā... rōḇ raḥămeḵā" — your hesed (steadfast covenant-love) and your raḥămîm (womb-compassion). The prayer opens by naming the two most theologically loaded words in the Hebrew Bible: hesed is the covenant-loyalty that persists through failure (see Exodus 34:6 divine name revelation; Hosea 2:19 remarriage of Israel); raḥămîm comes from reḥem (womb) — visceral maternal compassion. David appeals to no merit of his own but only to the character of God as revealed in the divine name. The petition structure ("according to your X...") grounds forgiveness entirely in divine nature rather than human desert. This is the theological logic of grace.',
+              parallels: [
+                { label: 'Exodus 34:6 — divine name: "abounding in steadfast love and faithfulness"', textId: 'exodus-3', note: 'Exodus 34:6-7: "The Lord, the Lord, a God merciful and gracious, slow to anger, and abounding in steadfast love and faithfulness, forgiving iniquity and transgression and sin." Psalm 51\'s opening appeal to "your steadfast love" (ḥasdeḵā) is a direct citation of the divine name formula revealed at Sinai. The Psalm is not asking for something foreign to God\'s nature but calling God to act according to the character God has already revealed. This name-formula is the theological foundation on which every prayer for forgiveness in the Hebrew Bible rests.' },
+                { label: 'Hosea 11 — "my compassion grows warm and tender; I will not execute my fierce anger"', textId: 'hosea-11', note: 'Hosea 11:8-9: "My heart recoils within me; my compassion grows warm and tender." The same divine raḥămîm (womb-compassion) that Psalm 51 appeals to is the force that overrides divine judgment in Hosea 11. In both texts divine compassion is a visceral, interior movement — not a legal decision but a parental response. Hosea 11 dramatizes the internal divine struggle that resolves in raḥămîm; Psalm 51 counts on this same divine vulnerability to the cry of the child.' },
+              ]
+            },
+            { word: 'against you, you alone, have I sinned', node: 'sin', type: 'concept',
+              note: '"Leḵā leḇāḏeḵā ḥāṭāʾtî" — against you, to you alone, I have sinned. Historically David sinned against Bathsheba, Uriah, and Israel — yet the Psalm claims the sin is against God alone. This is not denial of human harm; it is a theological claim about the ultimate ground of moral order: every human-directed wrong is simultaneously a violation of the divine order in which human dignity is grounded. If God is the source of every person\'s worth, then harming any person is harming what belongs to God. The claim establishes God as the supreme moral reference point, not merely one wronged party among others.',
+              parallels: [
+                { label: 'Jain karma — harm done to another is harm done to the universal life-force in which all jīvas share', textId: 'acaranga-sutra', note: '"One who you think should be struck IS you." The Jain metaphysics of universal jīva-equality (all living beings share in the one life-force) and Psalm 51\'s "against you alone" are both claiming that the ultimate target of moral wrong is not merely the immediate victim but something universal — in the Psalm\'s idiom, God whose image every person bears; in Jain idiom, the universal jīva of which every individual soul is a manifestation. Both traditions make moral harm metaphysically larger than it appears.' },
+                { label: 'Islamic dhikr — sin as ghafla (forgetfulness of God), repentance as returning to remembrance', textId: 'al-fatiha', note: 'The Quranic framing of sin as ghafla (heedlessness, forgetfulness of God) parallels Psalm 51\'s "against you alone" — both locate the core of sin in the vertical dimension (forgetting God, turning from God) rather than merely the horizontal (harm to neighbor). The Sufi concept of tawba as dhikr (remembrance of God) parallels the Psalm\'s return-structure: the penitent brings sin into divine presence, naming it as rebellion against God, and this very naming is the beginning of return.' },
+              ]
+            },
+          ]
+        },
+      ]
+    },
+    {
+      heading: 'Create in Me a Clean Heart (51:6–12)',
+      verses: [
+        {
+          ref: '51:6–12',
+          text: 'You desire truth in the inward being; therefore teach me wisdom in my secret heart. Purge me with hyssop, and I shall be clean; wash me, and I shall be whiter than snow. Let me hear joy and gladness; let the bones that you have crushed rejoice. Hide your face from my sins, and blot out all my iniquities. Create in me a clean heart, O God, and put a new and right spirit within me. Do not cast me away from your presence, and do not take your holy spirit from me. Restore to me the joy of your salvation, and sustain in me a willing spirit.',
+          entities: [
+            { word: 'create in me a clean heart', node: 'spiritual-transformation', type: 'concept',
+              note: '"Lēḇ ṭāhôr bərāʾ-lî ʾĕlōhîm" — a clean/pure heart CREATE for me, O God. The verb bārāʾ is reserved in the Hebrew Bible almost exclusively for divine creation: Genesis 1:1 ("God created [bārāʾ] the heavens and the earth"), Isaiah 40-45 (the great creation passages). The Psalmist is not asking for renovation or improvement of the existing heart — not "fix my heart" or "improve my heart" — but for an act of creation ex nihilo: the same power that brought the cosmos into existence must bring a new heart into existence within the penitent. The old heart is so thoroughly corrupted that no human remedy suffices; only divine creative action can produce genuine interior renewal.',
+              parallels: [
+                { label: 'Jeremiah 31:31-34 — new covenant: "I will put my law within them and write it on their hearts"', textId: 'acts-2-pentecost', note: 'Jeremiah 31:31-34: "I will make a new covenant... I will put my law within them, and I will write it on their hearts." The "new heart" of Psalm 51:10 and the "heart-written law" of Jeremiah 31 are the same theological vision: the exterior law enforced by social sanction is insufficient because the human heart is its own obstacle. The divine solution in both texts is interior: God writes the law on the heart itself, or creates a new heart that desires the good. Psalm 51\'s "create in me a clean heart" is the prayer for what Jeremiah 31\'s promise anticipates.' },
+                { label: 'Chandogya 8.1 — ākāśa within the heart: the inner space where Brahman dwells', textId: 'chandogya-6-2', note: 'Chandogya 8.1.1-3: "Within this city of Brahman there is a small lotus-shrine, and within that a small space. What is within that small space — that is what one should seek." The "inward being" in which God desires truth (Psalm 51:6) and the inner ākāśa (space) of the heart where Brahman dwells (Chandogya 8) are both pointing to the interior depth that is simultaneously the site of human failure and divine presence. In both traditions the heart\'s depth is where the fundamental orientation is set — toward God/Brahman or away — and purification of this depth is the essential work.' },
+              ]
+            },
+            { word: 'truth in the inward being... wisdom in my secret heart', node: 'interiority', type: 'concept',
+              note: '"ʾĕmet bəṭuḥôt ḥāpāṣtā... baʾsātum ḥoḵmāh tôdîʿēnî" — truth in the hidden parts you desire; in the covered/secret place wisdom you make me know. The two words ṭuḥôt (hidden inner recesses) and sātum (covered/secret place) both point to the innermost interiority, beyond social performance and even conscious self-knowledge. God desires truth not in the public presentation of piety but in the concealed depth where the actual orientation of the will is formed. The Psalm is diagnosing the human capacity for self-deception and asking God to penetrate to the level where self-deception no longer functions.',
+              parallels: [
+                { label: 'Confucian cheng — sincerity/authenticity: the interior alignment that makes ritual performance efficacious', textId: 'confucius-analects', note: 'Confucius\'s cheng (sincerity/authenticity, 誠) — the interior state without which ritual performance is empty formalism — parallels Psalm 51\'s "truth in the inward being." Analects 3.3: "If a person is not ren, what is the use of ritual?" and Psalm 51\'s move from "you would not have delight in sacrifice" (v.16) to "a broken spirit" as the true sacrifice are both arguing for the priority of interior truth over exterior form. Both traditions distinguish between the performance of righteousness and the interior alignment that makes that performance genuine.' },
+              ]
+            },
+          ]
+        },
+      ]
+    },
+    {
+      heading: 'The Sacrifice of Broken Spirit (51:13–17)',
+      verses: [
+        {
+          ref: '51:13–17',
+          text: 'Then I will teach transgressors your ways, and sinners will return to you. Deliver me from bloodshed, O God, O God of my salvation, and my tongue will sing aloud of your deliverance. O Lord, open my lips, and my mouth will declare your praise. For you have no delight in sacrifice; if I were to give a burnt offering, you would not be pleased. The sacrifice acceptable to God is a broken spirit; a broken and contrite heart, O God, you will not despise.',
+          entities: [
+            { word: 'the sacrifice acceptable to God is a broken spirit', node: 'sacrifice', type: 'concept',
+              note: '"Ziḇḥê ʾĕlōhîm rûaḥ niḇrāʾ, lēḇ-niḇrāḵ wəniḏkeh ʾĕlōhîm lō-ṯiḇzeh" — the sacrifices of God are a broken spirit; a broken and contrite heart, O God, you will not despise. The Psalm does not abolish animal sacrifice (v.19 restores it after the temple is rebuilt) but radically re-grounds it: exterior sacrifice is only acceptable when it expresses the interior sacrifice — the crushed ego, the shattered self-reliance. The word niḇrāʾ (broken) shares a root with "crushed bones" in v.8: the same crushing that seemed like divine punishment is here re-framed as the sacrifice God actually wants. The Temple sacrifices were offered by those whose hearts remained intact; this sacrifice requires the heart itself to be offered.',
+              parallels: [
+                { label: 'Rumi — the reed flute\'s wound IS its music; woundedness as the place of divine entry', textId: 'rumi-masnavi', note: 'Rumi\'s Masnavi opens with the reed flute\'s lament from separation. The wound of separation is not an obstacle to reunion but its precondition — the emptied reed becomes the flute only through its hollow wound. Psalm 51\'s "broken and contrite heart" and Rumi\'s wounded reed are structurally identical: the brokenness is not a barrier to God but the opening through which God enters. Both traditions invert the normal logic of sacrifice (give God the best, the unblemished) to reveal a deeper logic: God requires the honest wound, not the performed perfection.' },
+                { label: 'Buddhist anattā — dissolution of the defended self as the condition for liberation', textId: 'diamond-sutra', note: 'The Diamond Sutra\'s deconstruction of the fixed self and Psalm 51\'s "broken and contrite heart" both point to the dissolution of the defended ego as a spiritual necessity. In Buddhist understanding, liberation requires the dissolution of the self that clings and defends; in Psalm 51, the broken spirit is the self that has stopped defending its own righteousness and thrown itself on divine mercy. Both traditions locate the opening toward the ultimate in the precise place where the ego\'s defenses collapse.' },
+                { label: 'Romans 12 — "present your bodies as a living sacrifice, holy and acceptable to God"', textId: 'romans-12', note: 'Romans 12:1-2: "Present your bodies as a living sacrifice, holy and acceptable to God, which is your spiritual worship." Paul\'s "living sacrifice" is the New Testament counterpart to Psalm 51:17\'s "broken and contrite heart." Both texts move the locus of sacrifice from exterior ritual to interior offering. Paul\'s "reasonable/spiritual worship" (logikē latreia) — the offering of the whole self — is the fulfillment of what Psalm 51 anticipates: the sacrifice God actually desires is the transformed self, not the performed ritual.' },
+              ]
+            },
+          ]
+        },
+      ]
+    },
+  ]
+};
+
+SCRIPTURE_TEXTS['romans-1'] = {
+  id: 'romans-1',
+  title: 'Romans 1–2:4 — The Righteousness of God Revealed',
+  tradition: 'Christianity',
+  scriptureRef: 'Romans 1:16–2:4',
+  language: 'Greek (Koine)',
+  date: 'c. 57 CE (Paul, dictated to Tertius)',
+  summary: 'The programmatic opening of Paul\'s most systematic letter announces the "righteousness of God" revealed "from faith to faith" (quoting Habakkuk 2:4 — the spark of the Reformation), argues that the divine eternal power and nature are visible through creation itself, diagnoses humanity\'s cognitive fall as the suppression of this natural knowledge producing darkened minds and idolatry, and arrives at the paradox that God\'s very kindness is the mechanism that leads to repentance.',
+  crossTradition: [
+    { label: 'Stoic logos — the rational order permeating the cosmos that all rational beings can access through their own rational nature', textId: 'poimandres', note: 'The Stoic logos (rational principle ordering the cosmos) is the philosophical framework Paul both uses and critiques in Romans 1:18-23. Paul accepts the Stoic premise (divine power and nature are visible through creation) but diagnoses the Stoic confidence as fatally compromised: the rational faculty has been darkened by the suppression of truth. The logos is visible; the human capacity to see it has been corrupted. This is Paul\'s critique of natural theology from within natural theology.' },
+    { label: 'Buddhist dependent origination — the cosmos as conditioned arising that reveals the nature of reality to those who see', textId: 'heart-sutra', note: 'Pratītyasamutpāda (dependent origination) shares with Romans 1:20 the claim that the structure of reality can be "seen through" phenomena by those with the right orientation. The Buddha\'s enlightenment was described as "seeing" the dependent-arising structure always already present but hidden. Paul\'s "seen through the things he has made" and Buddhist yathābhūtaṃ dassanaṃ (seeing things as they are) are both claiming that reality has a transparent structure — the question is whether the cognitive apparatus is clear enough to see it.' },
+    { label: 'Confucian tian — Heaven as the moral order that gives human nature its constitution and holds all things accountable', textId: 'confucius-analects', note: 'Confucius\'s Tian (Heaven, 天) as the source of moral order parallels Paul\'s claim in Romans 2:4 that God\'s chrēstotēs (kindness) leads to repentance. Both Confucius and Paul argue that the divine/heavenly moral order is experienced not primarily as threat but as a gracious standard calling humanity toward its deepest nature. Confucius\'s fear of "not knowing the decrees of Heaven" and Paul\'s "the kindness of God leads you to repentance" both describe a moral universe in which the divine order is experienced as orientation, not only condemnation.' },
+  ],
+  sections: [
+    {
+      heading: 'The Righteousness of God — Ek Pisteōs Eis Pistin (1:16–17)',
+      verses: [
+        {
+          ref: '1:16–17',
+          text: 'For I am not ashamed of the gospel; it is the power of God for salvation to everyone who has faith, to the Jew first and also to the Greek. For in it the righteousness of God is revealed through faith for faith; as it is written, "The one who is righteous will live by faith."',
+          entities: [
+            { word: 'the righteousness of God is revealed through faith for faith', node: 'divine-attributes', type: 'concept',
+              note: '"Dikaiosynē theou en autō apokalyptetai ek pisteōs eis pistin" — the righteousness of God in it is being unveiled from faith to faith. The phrase "ek pisteōs eis pistin" (from faith to faith) has been read as: from God\'s faithfulness to the human response of faith; from one degree of faith to another; from the faith of the Old Testament to the faith of the gospel. The most theologically rich reading: dikaiosynē theou is not primarily a forensic verdict (God declares the sinner just) but an active, creative power — the righteousness belonging to God\'s own character, which creates righteousness in the world through faith. The quote from Habakkuk 2:4 ("the righteous one shall live by faith") was the spark that ignited Luther\'s Reformation.',
+              parallels: [
+                { label: 'Bhagavad Gita 4:7-8 — avatāra as divine descent to establish dharma (righteousness) when it declines', textId: 'bhagavad-gita-4', note: '"Whenever righteousness declines and unrighteousness rises, I send myself forth... for the sake of establishing righteousness." Paul\'s "righteousness of God revealed in the gospel" and Krishna\'s descent to "establish dharma" are structurally parallel: in both cases divine righteousness does not simply judge from outside but enters the human situation to restore the moral order from within. Both the Incarnation and the avatāra are modes of divine engagement with human moral failure — not merely declaring a verdict but actively intervening to recreate righteousness.' },
+                { label: 'Isaiah 45:8 — "let righteousness spring up; let the earth open that salvation may blossom"', textId: 'isaiah-45', note: 'Isaiah 45:8: "Shower, O heavens, from above, and let the skies rain down righteousness; let the earth open, that salvation may spring up." The Deutero-Isaianic vision of ṣeḏeq (righteousness) as a creative, life-giving force parallels Paul\'s "righteousness of God revealed" in Romans 1:17. In both texts dikaiosynē/ṣeḏeq is not primarily punitive but creative and restorative — God\'s righteous power to make things right. The agricultural metaphor in Isaiah (righteousness "blossoming") and Paul\'s apocalyptic unveiling are different idioms for the same claim: God\'s righteousness is an active, world-transforming power.' },
+              ]
+            },
+          ]
+        },
+      ]
+    },
+    {
+      heading: 'Seen Through Things Made — Natural Theology and the Cognitive Fall (1:18–23)',
+      verses: [
+        {
+          ref: '1:18–23',
+          text: 'For the wrath of God is revealed from heaven against all ungodliness and wickedness of those who by their wickedness suppress the truth. For what can be known about God is plain to them, because God has shown it to them. Ever since the creation of the world his eternal power and divine nature, invisible though they are, have been understood and seen through the things he has made. So they are without excuse; for though they knew God, they did not honor him as God or give thanks to him, but they became futile in their thinking, and their senseless minds were darkened. Claiming to be wise, they became fools.',
+          entities: [
+            { word: 'seen through the things he has made', node: 'natural-theology', type: 'concept',
+              note: '"Ta gar aorata autou apo ktiseōs kosmou tois poiēmasin nooumena kathoratai" — the invisible things of him from the creation of the world, being understood by the things made, are clearly seen. The compound kathoratai (from kata + horaō: see completely/thoroughly) combined with nooumena (being perceived by the nous) describes a two-stage process: the mind apprehends the invisible realities through the visible creation, then sees them clearly. Paul articulates a doctrine of natural revelation: the cosmos is a medium of divine self-disclosure. "His eternal power" (aidios dynamis) and "divine nature" (theiotēs) are genuinely accessible through careful attention to the made things.',
+              parallels: [
+                { label: 'Nasadiya Sukta — the cosmic seer "looking down from the highest heaven" on the origin of all things', textId: 'nasadiya-sukta', note: 'Rig Veda 10.129.6-7: "Who really knows? Who will here proclaim it? Whence was it produced?... He, the first origin of this creation, whether he formed it all or did not form it — whose eye controls this world in highest heaven, he verily knows it, or perhaps he does not know." The Nasadiya holds open as question what Paul asserts: whether the creation transparently reveals its Creator. Both texts use the language of "seeing" as the instrument of cosmic knowledge. The Vedic seer looks and finds the question unanswered; Paul claims the vision is clear but the faculty of seeing has been corrupted.' },
+                { label: 'Poimandres — Nous descends through the cosmic spheres; those who look upward can trace the visible back to the invisible source', textId: 'poimandres', note: 'Poimandres (Corpus Hermeticum 1): the divine Nous/Light is the source from which all things proceed, and the cosmos is its visible expression. Those who look upward through the cosmic spheres can trace visible back to invisible source. Paul\'s "seen through the things he has made" and the Hermetic cosmos-as-medium are both claiming that creation is transparent to its divine source for the eye that can see — but Paul moves from God down to creation (revelation), while Hermeticism traces the path from creation up to God (ascent). The premise is shared; the direction is reversed.' },
+              ]
+            },
+            { word: 'they became futile in their thinking, and their senseless minds were darkened', node: 'consciousness', type: 'concept',
+              note: '"Emataiōthēsan en tois dialogismois autōn kai eskotisthē hē asunetos autōn kardia" — they were made futile/empty in their reasonings and their uncomprehending heart was darkened. Both verbs are passives: emataiōthēsan (made futile, from mataios: empty/purposeless — the Septuagint word for "idols") and eskotisthē (was darkened). The darkness is interior — the mind becomes unable to see what was previously visible. This is a cognitive fall: darkening of the nous resulting from the prior volitional failure (suppressing truth, refusing to honor God). The suppression of truth darkens the truth-perceiving faculty itself.',
+              parallels: [
+                { label: 'Genesis 3 — eating the fruit of knowledge; "their eyes were opened" yet they were expelled from the garden', textId: 'genesis-3', note: 'Genesis 3:5-7: "You will be like God, knowing good and evil... their eyes were opened and they knew that they were naked." Paul\'s "senseless minds were darkened" and Genesis 3\'s cognitive shift describe the same complex fall: the human cognitive faculty is simultaneously hyperactivated (claiming to be wise) and darkened. In Genesis the eyes are opened but they are expelled from the garden; in Romans 1 the minds are darkened. Together: the tree of knowledge promised wisdom and delivered a kind of knowing that simultaneously obscured the deeper vision of God.' },
+                { label: 'Chandogya 6.2 — avidyā (non-knowledge of Brahman) as the fundamental root of bondage and suffering', textId: 'chandogya-6-2', note: 'The Vedantic avidyā (ignorance of Brahman) as the root cause of samsāra parallels Paul\'s "darkened minds" as the root of human moral disorder. In both frameworks the fundamental problem is cognitive before it is moral: a failure of vision, a loss of access to the ground of reality, that produces moral and spiritual disorders. For Vedanta, avidyā produces false ego-identification leading to craving and karma; for Paul, the darkened heart produces idolatry (giving ultimate loyalty to creatures). Both diagnoses are ultimately optimistic: if the problem is vision-based, the solution is enlightenment/revelation — a restoration of the capacity to see.' },
+              ]
+            },
+          ]
+        },
+      ]
+    },
+    {
+      heading: 'God\'s Kindness Leads to Repentance (1:28–2:4)',
+      verses: [
+        {
+          ref: '1:28–2:4',
+          text: 'And since they did not see fit to acknowledge God, God gave them up to a debased mind and to things that should not be done... You, therefore, have no excuse, whoever you are, when you judge others; for in passing judgment on another you condemn yourself, because you, the judge, are doing the very same things... Do you despise the riches of his kindness and forbearance and patience? Do you not know that God\'s kindness is meant to lead you to repentance?',
+          entities: [
+            { word: 'God\'s kindness is meant to lead you to repentance', node: 'repentance', type: 'concept',
+              note: '"To chrēston tou theou eis metanoian se agei" — the kindness/goodness of God leads you toward metanoia (change of mind/repentance). Chrēstotēs (kindness, goodness, benevolence) is one of the nine-fold Fruit of the Spirit in Galatians 5:22. Here it names the divine character-attribute that is the primary motive for repentance: not fear of punishment (though that is present) but the experience of divine goodness, patience (anochē), and long-suffering (makrothymia) despite continuing sin. To "despise" this kindness is to misread it as permission rather than invitation. The logic is pastoral and paradoxical: God\'s very refusal to immediately execute judgment is the mechanism of repentance.',
+              parallels: [
+                { label: 'Hosea 11 — "I will not execute my fierce anger... for I am God and no mortal, the Holy One in your midst"', textId: 'hosea-11', note: 'Hosea 11:8-9: "How can I give you up, Ephraim?... My heart recoils within me; my compassion grows warm and tender. I will not execute my fierce anger... for I am God and no mortal." Hosea 11\'s divine restraint — the refusal to execute punishment despite Israel\'s faithlessness — is the Old Testament counterpart to Paul\'s "God\'s kindness leads to repentance." Both texts describe divine forbearance as the expression of God\'s character (raḥămîm/chrēstotēs) rather than weakness or indifference. In both, the restraint is purposive: it creates the space in which repentance becomes possible.' },
+                { label: 'Rumi — "come, come, whoever you are... though you have broken your vows a thousand times, come"', textId: 'rumi-masnavi', note: 'The inscription above Rumi\'s shrine: "Come, come, whoever you are — wanderer, worshiper, lover of leaving. Even if you have broken your vows a thousand times — come, come again, come." The Sufi understanding of divine mercy as an unconditional invitation that precedes and creates the conditions for tawba parallels Paul\'s "God\'s kindness leads you to repentance." In both traditions divine mercy is not the reward for repentance but its precondition — the divine goodness that first creates the space of safety in which the soul can acknowledge its failure and return.' },
+              ]
+            },
+          ]
+        },
+      ]
+    },
+  ]
+};
+
+SCRIPTURE_TEXTS['galatians-5'] = {
+  id: 'galatians-5',
+  title: 'Galatians 5 — The Fruit of the Spirit',
+  tradition: 'Christianity',
+  scriptureRef: 'Galatians 5:1–6:8',
+  language: 'Greek (Koine)',
+  date: 'c. 48–55 CE (Paul)',
+  summary: 'Paul\'s most concentrated treatment of freedom — freedom from the Law as a system of earning divine favor — and the alternative to both lawlessness and rule-keeping: the nine-fold Fruit of the Spirit described as a single organic fruit (love, joy, peace, patience, kindness, goodness, faithfulness, gentleness, self-control), concluding with the karma-like axiom "you reap whatever you sow."',
+  crossTradition: [
+    { label: 'Buddhist pāramitās — the ten perfections that emerge when the bodhisattva goes beyond rule-following to character transformation', textId: 'diamond-sutra', note: 'The Buddhist pāramitās (dāna/generosity, śīla/virtue, kṣānti/patience, vīrya/energy, dhyāna/meditation, prajñā/wisdom) and the Pauline Fruit of the Spirit are both describing qualities that emerge when the practitioner has gone beyond rule-keeping to a deeper transformation of character. The Diamond Sutra\'s pāramitā of non-attached giving parallels Paul\'s "faith working through love" — both describe a mode of action that springs from a transformed interior rather than external obligation.' },
+    { label: 'Bhagavad Gita 16 — daivī sampad: divine endowments that spontaneously characterize those born to divine nature', textId: 'bhagavad-gita-4', note: 'BG 16:1-3: "Fearlessness, purity of heart, steadfastness, generosity, self-restraint, sacrifice, non-violence, truth, freedom from anger, renunciation, peacefulness, compassion for all beings, freedom from greed, gentleness, modesty, steadiness, forgiveness, fortitude, cleanliness, freedom from malice and pride — these are the endowments of one born to divine nature." The daivī sampad and the Fruit of the Spirit are parallel catalogues of qualities that spontaneously emerge in the person transformed by the divine — not as achievements of self-discipline but as expressions of a renewed nature.' },
+    { label: 'Confucian five constants — rén, yì, lǐ, zhì, xìn: the inherent virtues of Heaven-given human nature', textId: 'confucius-analects', note: 'The Confucian wǔcháng (five constants, 五常) and the Fruit of the Spirit are both describing virtues that constitute genuine human flourishing — what the human being looks like when living according to its deepest Heaven-given/Spirit-indwelt nature. Both traditions claim virtue is not external imposition but the expression of what human nature properly is. Confucian rén (benevolence/humaneness) and Pauline agapē (love) are both placed first in their respective lists as the root virtue from which the others flow.' },
+  ],
+  sections: [
+    {
+      heading: 'For Freedom Christ Has Set Us Free (5:1–6)',
+      verses: [
+        {
+          ref: '5:1–6',
+          text: 'For freedom Christ has set us free. Stand firm, therefore, and do not submit again to a yoke of slavery. Listen! I, Paul, am telling you that if you let yourselves be circumcised, Christ will be of no benefit to you... For in Christ Jesus neither circumcision nor uncircumcision counts for anything; the only thing that counts is faith working through love.',
+          entities: [
+            { word: 'for freedom Christ has set us free', node: 'liberation', type: 'concept',
+              note: '"Tē eleutheriā hēmas Christos ēleutherōsen" — for/to freedom Christ freed us. The tautological structure (freedom... freed) is deliberate: freedom is the goal, not merely the instrument. This is not freedom-for-something-else (from Law in order to keep new rules) but freedom as its own end. Eleutheria in the Greco-Roman world was the civic status of the non-slave — the free person belonged to themselves and acted from their own deliberation rather than a master\'s command. Paul radicalizes this: freedom in Christ is freedom from every system that makes divine approval contingent on human performance. The freed person is no longer striving to earn something but acting from a transformed nature.',
+              parallels: [
+                { label: 'Buddhist mokṣa — liberation from conditioned existence; the unconditioned as its own goal', textId: 'heart-sutra', note: 'Buddhist mokṣa from samsāra (conditioned existence driven by craving and karma) parallels Paul\'s eleutheria from the yoke of the Law. Both describe liberation from a structure of conditional existence: in Buddhism, craving → karma → rebirth; in Paul, observance → merit → divine acceptance. Both diagnose the problem as a wrong orientation (craving/self-justification) and describe the liberated state as a qualitatively different mode of existence — activity from a different source: compassion (Buddhism) or faith-working-through-love (Paul).' },
+                { label: 'Jain mukti — liberation from karma as the soul\'s return to its own pure, unbounded nature', textId: 'acaranga-sutra', note: 'Jain mukti is the soul\'s return to its pure, infinite, unbounded nature after karmic accretions have been burned off through ahimsa and tapas. Paul\'s "for freedom Christ has set us free — stand firm and do not submit again to a yoke of slavery" and the Jain liberated soul\'s freedom from karmic bondage are both describing a state that is constitutively free rather than freedom won through ongoing effort. The paradox in both: the freedom is given (Christ freed us; the soul\'s nature is pure) AND it must be maintained (stand firm; practice ahimsa). Freedom is ontologically prior but practically contested.' },
+              ]
+            },
+            { word: 'faith working through love', node: 'love', type: 'concept',
+              note: '"Pistis di\' agapēs energoumenē" — faith working/being-energized through love. The word energoumenē (present middle/passive of energeō: to work, be active, be energized) describes faith not as a static belief-state but as a dynamic process powered by love. The phrase synthesizes the entire argument of Galatians: faith (not Law-observance) is what matters, but this faith is not merely intellectual assent — it is a living, agape-energized reality. Love is the energy through which faith becomes operative in the world. This will be echoed in 1 Corinthians 13 ("faith without love is nothing") and Romans 13:8-10 ("love is the fulfillment of the law").',
+              parallels: [
+                { label: 'Japji Sahib — nām (the divine Name) as the operative reality that transforms the practitioner from within', textId: 'japji-sahib', note: 'Guru Nanak\'s concept of nām (divine Name) as the operative reality that transforms the practitioner — not external ritual performance but interior saturation with the divine reality — parallels Paul\'s "faith working through love." In both cases the operative principle is not external observance but interior orientation: the Sikh who lives in nām-consciousness acts from that consciousness; the Pauline believer whose faith is agape-energized acts from that love. Love is the medium through which faith becomes action in the world.' },
+              ]
+            },
+          ]
+        },
+      ]
+    },
+    {
+      heading: 'Works of the Flesh vs. Fruit of the Spirit (5:16–23)',
+      verses: [
+        {
+          ref: '5:16–23',
+          text: 'Live by the Spirit, I say, and do not gratify the desires of the flesh. For what the flesh desires is opposed to the Spirit... Now the works of the flesh are obvious: fornication, impurity, licentiousness, idolatry, sorcery, enmities, strife, jealousy, anger, quarrels, dissensions, factions, envy, drunkenness, carousing, and things like these... By contrast, the fruit of the Spirit is love, joy, peace, patience, kindness, goodness, faithfulness, gentleness, and self-control. There is no law against such things.',
+          entities: [
+            { word: 'the fruit of the Spirit is love, joy, peace, patience, kindness, goodness, faithfulness, gentleness, self-control', node: 'virtues', type: 'concept',
+              note: '"Ho de karpos tou pneumatos estin agapē, chara, eirēnē, makrothymia, chrēstotēs, agathōsynē, pistis, prautēs, enkrateia" — the fruit [singular] of the Spirit is love, joy, peace, long-patience, kindness, goodness, faithfulness, gentleness, self-control. The singular karpos (fruit) is significant: Paul does not list nine "fruits" but one fruit with nine aspects — a unified whole, not a checklist. The organic metaphor indicates these qualities emerge naturally from the transformed nature, as fruit from a tree, rather than being assembled through disciplined effort. The sequence moves: Godward (love, joy, peace) → social (patience, kindness) → dispositional (faithfulness, gentleness, self-control).',
+              parallels: [
+                { label: 'Tao Te Ching 38 — highest virtue (de) doesn\'t strive to be virtuous and so is truly virtuous', textId: 'tao-te-ching-1', note: 'Tao Te Ching 38: "The person of superior virtue is not conscious of virtue and so truly has virtue. The person of inferior virtue strives to be virtuous and so lacks true virtue." Paul\'s agricultural metaphor (fruit, not achievement) and Laozi\'s distinction between natural virtue (de as spontaneous expression of Tao) and effortful virtue (straining after virtue) are pointing at the same phenomenon. Both describe a mode of virtue that is not the product of self-conscious will-power but the natural expression of a transformed nature. The Taoist sage\'s virtue flows naturally as a river downhill; Paul\'s Fruit is natural as a tree bearing its own kind.' },
+                { label: 'Acaranga Sutra — the liberated soul sees all beings as oneself and naturally embodies ahimsa, beyond the need for rule', textId: 'acaranga-sutra', note: 'The Acaranga\'s description of the liberated Jain ascetic who sees all beings as oneself and therefore naturally abstains from all violence (not as rule-keeping but as the expression of realized nature) parallels Paul\'s "there is no law against such things." In both cases the genuinely transformed person — by the Spirit (Paul) or by the dissolution of karma and ego (Jain) — is beyond the need for external law because their interior nature produces the same outputs the law was attempting to require. The law exists for those whose nature has not yet been transformed; the transformed nature renders the law obsolete as a constraint.' },
+              ]
+            },
+            { word: 'there is no law against such things', node: 'law', type: 'concept',
+              note: '"Kata tōn toioutōn ouk estin nomos" — against such things there is no law. One of Paul\'s most ironic formulations. Having catalogued the works of the flesh (against which the Law does legislate — sexual immorality, murder, idolatry are all prohibited in Torah), Paul notes that against love, joy, peace, patience, kindness, goodness, faithfulness, gentleness, self-control — there is no law. The Law\'s own inner logic acknowledges its limitation: it can prohibit destructive vices but cannot command authentic virtues. You cannot legislate genuine love or real joy. The person who exhibits the Fruit has done everything the Law was attempting to achieve and more — not merely avoided the prohibited but actively embodied the positive goods the Law was trying to protect.',
+              parallels: [
+                { label: 'Confucius at 70 — "I could follow what my heart desired without transgressing what was right"', textId: 'confucius-analects', note: 'Analects 2.4: "At seventy I could follow what my heart desired without transgressing what was right." The aged Confucius describes the culmination of the path as freedom — the freedom of the deeply formed character that can follow its own desires because those desires have been so thoroughly cultivated toward the good that they naturally conform to righteousness. Paul\'s "there is no law against such things" and Confucius at seventy are both describing the same paradox: the most law-observant person eventually becomes the person who no longer needs the law as external constraint because their character has become the law\'s living expression.' },
+              ]
+            },
+          ]
+        },
+      ]
+    },
+    {
+      heading: 'Sow to the Spirit — You Reap Whatever You Sow (5:25–6:8)',
+      verses: [
+        {
+          ref: '5:25–6:8',
+          text: 'If we live by the Spirit, let us also be guided by the Spirit. Let us not become conceited, competing against one another, envying one another... Bear one another\'s burdens, and in this way you will fulfill the law of Christ... Do not be deceived; God is not mocked, for you reap whatever you sow. If you sow to your own flesh, you will reap corruption from the flesh; but if you sow to the Spirit, you will reap eternal life from the Spirit.',
+          entities: [
+            { word: 'you reap whatever you sow', node: 'karma', type: 'concept',
+              note: '"Ho gar ean speirē anthrōpos, touto kai therisei" — whatever a person sows, this also they will reap. This agricultural aphorism is structurally the closest parallel in the New Testament to the Hindu-Buddhist concept of karma. Presented as a universal law of spiritual reality ("God is not mocked" — the law cannot be circumvented): moral actions have consequences that correspond to their nature. The sowing metaphor is rich: a seed planted does not immediately produce fruit (the harvest is future); the harvest is proportional to the seed; different seeds produce qualitatively different harvests. Sowing to the flesh produces phthora (corruption/decay) because the flesh is a decaying substrate; sowing to the Spirit produces zōēn aiōnion (eternal life) because the Spirit is a life-giving substrate.',
+              parallels: [
+                { label: 'Bhagavad Gita — the field (kṣetra) and its knower; every action sown in the field of prakṛti produces its inevitable fruit', textId: 'bhagavad-gita-4', note: 'BG 13:1-6 (the field and the knower of the field) and the karma-yoga teaching throughout: every action (karma) sown in the field of material existence produces its inevitable fruit (phala), binding the soul to further existence. Paul\'s "you reap whatever you sow" and the Gita\'s karma-phala logic are structurally identical: action → corresponding consequence, with no possibility of circumventing the law. The Gita\'s solution (nishkāma karma: action without attachment to fruit) and Paul\'s solution (sow to the Spirit: orient action toward the eternal) are both meta-level responses to the same law — how to act within the sowing/karmic structure without being bound by its consequences.' },
+                { label: 'Dhammapada 1 — "mind is the forerunner of all actions; what we are is what we have thought"', textId: 'dhammapada-1', note: 'Dhammapada 1:1-2: "Mind is the forerunner of all actions. All deeds are led by mind, created by mind. If one speaks or acts with a serene mind, happiness follows, as a shadow that never departs." The Dhammapada\'s teaching on mind as the soil in which actions are planted parallels Paul\'s "sow to the Spirit/flesh" metaphor. Both texts describe a causal structure in which interior orientation (Spirit vs. flesh; serene vs. corrupt mind) determines the quality of the harvest. The Dhammapada\'s "mind is the forerunner" and Paul\'s "if we live by the Spirit, let us also walk by the Spirit" both point to interior orientation as the decisive factor in the moral life.' },
+              ]
+            },
+          ]
+        },
+      ]
+    },
+  ]
+};
+
+SCRIPTURE_TEXTS['john-20'] = {
+  id: 'john-20',
+  title: 'John 20 — Resurrection Appearances',
+  tradition: 'Christianity',
+  scriptureRef: 'John 20:1–31',
+  language: 'Greek (Koine)',
+  date: 'c. 90–100 CE',
+  summary: 'John\'s resurrection chapter unfolds in three encounters: Mary Magdalene at the empty tomb recognized through her name ("Rabbouni!"); the disciples in the locked room where Christ\'s emphysaō (breath) echoes Genesis 2:7 new creation; and Thomas\'s confession ("My Lord and my God!") — the highest Christological statement in the Gospel — followed by the Gospel\'s explicit statement of purpose: written so that readers might believe.',
+  crossTradition: [
+    { label: 'Tibetan Bardo Thodol — recognition of the luminous ground by name; the guide calling the deceased to recognize their own buddha-nature', textId: 'bardo-thodol', note: 'The Bardo Thodol instructs the guide to call the deceased by name and remind them of their buddha-nature as they move through the bardo states. Mary\'s recognition of the risen Christ occurs precisely through the personal call of her name: "Jesus said to her, \'Mary!\' She turned and said to him, \'Rabbouni!\'" (20:16). The recognition is triggered by direct address — the sound of her own name spoken by the one she loves. In both traditions the decisive moment of awakening/recognition is personal and relational: not an abstract doctrine but a specific address that breaks through the confusion of grief/non-recognition (John) or the bardo intermediate state (Tibetan Buddhism).' },
+    { label: 'Hermetic soul ascent — the soul returning from death to the divine source; recognized at each sphere', textId: 'poimandres', note: 'The Poimandres describes the soul\'s ascent after death through the planetary spheres, shedding karmic accretions at each level, until it enters the divine realm. Christ\'s "do not hold on to me, for I have not yet ascended to the Father" (20:17) describes a transitional state analogous to the Hermetic ascent: between the earthly and divine modes of existence, moving toward the final ascent that will make the Spirit-gift possible (20:22). The Hermetic recognition at each sphere and Mary\'s "Rabbouni!" are both moments of mutual recognition between the soul and the divine after the boundary of death.' },
+    { label: 'Hindu darśan — the sacred beholding of the divine form; the devotee\'s eye meeting the deity\'s eye as mutual gift', textId: 'bhagavad-gita-4', note: 'Hindu darśan (beholding the divine image) is not passive viewing but a mutual exchange: the devotee sees the deity and the deity sees the devotee. Thomas\'s "My Lord and my God!" upon seeing the risen Christ (20:28) and Jesus\'s "blessed are those who have not seen and yet have come to believe" (20:29) both operate within a visual theology: the encounter with the divine body (whether in the temple image or the resurrection body) is the occasion of recognition and transformation. BG 11\'s cosmic vision (Arjuna\'s darśan of the universal form) and Thomas\'s encounter with the resurrection body are both moments of transformative beholding that produce confession.' },
+  ],
+  sections: [
+    {
+      heading: 'Mary at the Tomb — "Rabbouni!" (20:1–18)',
+      verses: [
+        {
+          ref: '20:1–18',
+          text: 'Early on the first day of the week, while it was still dark, Mary Magdalene came to the tomb... Mary stood weeping outside the tomb... She turned around and saw Jesus standing there, but she did not know that it was Jesus. Jesus said to her, "Woman, why are you weeping? Whom are you looking for?" Supposing him to be the gardener, she said to him, "Sir, if you have carried him away, tell me where you have laid him, and I will take him away." Jesus said to her, "Mary!" She turned and said to him in Hebrew, "Rabbouni!" (which means Teacher). Jesus said to her, "Do not hold on to me, because I have not yet ascended to the Father. But go to my brothers and say to them, \'I am ascending to my Father and your Father, to my God and your God.\'"',
+          entities: [
+            { word: 'Mary! ... Rabbouni!', node: 'recognition', type: 'concept',
+              note: '"Legei autē Iēsous: Maria. Straphēisa ekeinē legei autō Hebraisti: Rabbouni" — Jesus says to her: Mary. That one, having turned, says to him in Hebrew: Rabbouni (my teacher/rabbi). The recognition scene pivots entirely on the personal name. Mary has already seen the tomb, the angels, and Jesus himself — but without recognition. Recognition occurs through hearing her name spoken by Jesus: the voice, the inflection, the particular way the name was said. This is one of the most intimate moments in the Gospels: the risen Lord first appears not to the apostles but to Mary Magdalene, and the recognition occurs through the most personal of sounds — one\'s own name spoken by one who loves you. "Rabbouni" with the possessive suffix is more intimate than the public "Rabbi" — it is the personal, owned address of the beloved disciple.',
+              parallels: [
+                { label: 'John 10:3-4 — the shepherd calls his own sheep by name and they follow because they know his voice', textId: 'john-6-bread-of-life', note: '"The gatekeeper opens the gate for him, and the sheep hear his voice. He calls his own sheep by name and leads them out... and the sheep follow him because they know his voice." John 10 prepares for Mary\'s recognition in John 20: the risen Christ calls Mary by name and she recognizes his voice — exactly as the sheep in John 10 recognize the shepherd\'s voice. The resurrection recognition is the eschatological fulfillment of the Good Shepherd metaphor: the call by name across the threshold of death is the ultimate proof of the shepherd\'s identity.' },
+                { label: 'Acts 2 — the Pentecost community calling upon the name of the Lord; "everyone who calls on the name of the Lord shall be saved"', textId: 'acts-2-pentecost', note: 'Acts 2:21 (quoting Joel 2:32): "Everyone who calls on the name of the Lord shall be saved." Mary\'s recognition is triggered by Christ calling her name; Acts 2\'s promise is salvation for those who call upon Christ\'s name. The name-recognition is bilateral in John\'s resurrection theology: Christ knows each person by name (John 20:16) and calls them; those who belong to him recognize his voice and call upon his name in return (Acts 2:21). The name is the site of mutual recognition and belonging across the death-boundary.' },
+              ]
+            },
+            { word: 'do not hold on to me, because I have not yet ascended', node: 'ascension', type: 'concept',
+              note: '"Mē mou haptou, oupō gar anabebēka pros ton patera" — do not grasp/touch me, for not yet have I ascended to the Father. The Latin noli me tangere (do not touch me) became one of the most painted scenes in Western art. The Greek haptou (from haptō: to touch, hold, grasp) implies clinging — not merely a momentary contact but holding on. The prohibition is temporal ("not yet") rather than absolute: connected to the uncompleted ascent. The resurrection body is in a transitional state between earthly and divine — touchable in principle (Thomas will be invited to touch, 20:27) but between the historical and the pneumatic. The command is also a commission: instead of holding this moment, Mary is sent as apostle to the apostles.',
+              parallels: [
+                { label: 'Bhagavad Gita 4 — "the one who sees inaction in action and action in inaction"; the non-clinging that enables true union', textId: 'bhagavad-gita-4', note: 'BG 4:18: "The one who sees inaction in action and action in inaction — that one is wise; that one is a yogi, the accomplisher of all actions." Krishna\'s teaching on action-without-attachment and "do not hold on to me" share a structural logic: the clinging that seeks to possess and retain the beloved/divine is itself an obstacle to the deeper union. Mary must release the historical Jesus (the form she knew) in order to receive the pneumatic Christ (the form of the Spirit). The Gita\'s non-attached action and the Johannine "do not hold on to me" both counsel a releasing-while-remaining — not abandonment of relationship but transformation of its mode.' },
+              ]
+            },
+          ]
+        },
+      ]
+    },
+    {
+      heading: 'Peace Be With You — Receive the Holy Spirit (20:19–23)',
+      verses: [
+        {
+          ref: '20:19–23',
+          text: 'When it was evening on that day, the first day of the week, and the doors of the house where the disciples had met were locked for fear of the Jews, Jesus came and stood among them and said, "Peace be with you." After he said this, he showed them his hands and his side. Then the disciples rejoiced when they saw the Lord. Jesus said to them again, "Peace be with you. As the Father has sent me, so I send you." When he had said this, he breathed on them and said to them, "Receive the Holy Spirit. If you forgive the sins of anyone, they are forgiven them; if you retain the sins of anyone, they are retained."',
+          entities: [
+            { word: 'he breathed on them', node: 'holy-spirit', type: 'concept',
+              note: '"Kai touto eipōn enephysēsen kai legei autois: labete pneuma hagion" — and having said this he breathed-into [them] and says to them: receive holy spirit/wind/breath. The verb enephysēsen (from emphysaō: to breathe into) is the same word used in the Septuagint for Genesis 2:7: "the Lord God... breathed into his nostrils the breath of life (enephysēsen)." This is John\'s Pentecost — not the wind and fire of Acts 2 but a new-creation moment: as God breathed life into Adam, so the risen Christ breathes the new life/Spirit into the new humanity. The "first day of the week" (20:1, 19) frames the entire chapter as a new creation week: the resurrection on the first day echoes God\'s first creative act, and the Spirit-breath echoes Genesis 2:7. The locked doors are no barrier — the one who passed through death passes through doors.',
+              parallels: [
+                { label: 'Acts 2 — the Pentecost wind (pnoē biaias) and tongues of fire; Spirit as transforming communal power', textId: 'acts-2-pentecost', note: 'Acts 2:2-4: "Suddenly from heaven there came a sound like the rush of a violent wind (pnoē biaias)... all of them were filled with the Holy Spirit." John 20:22 (emphysaō: intimate personal breath) and Acts 2:2 (pnoē biaias: violent wind filling the building) are complementary Spirit-giving accounts. John\'s is intimate, individual, personal — the breath from one person to another in a locked room; Acts\'s is cosmic, public, communal — the violent wind that fills the city and creates a community across all languages. Both use wind/breath as metaphor for Spirit (pneuma = wind/breath/spirit), connecting to the rûaḥ of Genesis 1:2 moving over the primordial waters.' },
+                { label: 'Ezekiel 37:9 — "Come from the four winds, O breath, and breathe upon these slain, that they may live"', textId: 'isaiah-53', note: 'Ezekiel 37:9-10: "Thus says the Lord God: Come from the four winds, O breath, and breathe upon these slain, that they may live." Ezekiel\'s divine breath (rûaḥ) restoring life to the dry bones parallels John 20:22\'s emphysaō. Both use breath as the metaphor for divine life-giving action, both describe a restoration that reverses death, and both frame the Spirit-breath as the agent of new creation. Ezekiel\'s vision applies to Israel (restoration from exile-as-death); John applies the same breath-metaphor to the new creation community that will carry the mission into the world.' },
+              ]
+            },
+          ]
+        },
+      ]
+    },
+    {
+      heading: 'Thomas Confession — "My Lord and My God" (20:24–31)',
+      verses: [
+        {
+          ref: '20:24–31',
+          text: 'But Thomas (who was called the Twin), one of the twelve, was not with them when Jesus came. So the other disciples told him, "We have seen the Lord." But he said to them, "Unless I see the mark of the nails in his hands, and put my finger in the mark of the nails and my hand in his side, I will not believe." A week later his disciples were again in the house, and Thomas was with them. Although the doors were shut, Jesus came and stood among them and said, "Peace be with you." Then he said to Thomas, "Put your finger here and see my hands. Reach out your hand and put it in my side. Do not doubt but believe." Thomas answered him, "My Lord and my God!" Jesus said to him, "Have you believed because you have seen me? Blessed are those who have not seen and yet have come to believe."',
+          entities: [
+            { word: 'My Lord and my God!', node: 'christology', type: 'concept',
+              note: '"Ho kyrios mou kai ho theos mou" — the Lord of me and the God of me. Thomas\'s confession is the highest Christological statement in the Gospel of John and arguably in the entire New Testament. The double title "Lord" (kyrios: the Septuagint translation of YHWH) and "God" (theos) is an explicit identification of Jesus with the God of Israel. The double possessive ("my" twice) makes it personal — not a theological proposition but a direct commitment: MY lord and MY god, spoken to the risen Jesus himself. This is the Gospel\'s explicit goal: John 20:31 states the entire Gospel was written "so that you may come to believe that Jesus is the Messiah, the Son of God." Thomas\'s confession — the last and highest in John\'s long series of confessions and misunderstandings — is the fulfillment of the Prologue\'s "the Word was God" (1:1).',
+              parallels: [
+                { label: 'Bhagavad Gita 11 — Arjuna\'s vision of the cosmic form; "I am frightened... be gracious to me, O God of gods"', textId: 'bhagavad-gita-4', note: 'BG 11:45: "I am frightened... be gracious to me, O God of gods, O home of the universe. I bow to you, I prostrate myself before you." Arjuna\'s confession before the cosmic form of Krishna and Thomas\'s "My Lord and my God!" are structurally parallel moments of overwhelming divine encounter producing prostration/confession. Both disciples had been in close personal relationship with their teacher but the encounter with the divine fullness — the cosmic form, the resurrection body with its wounds — breaks through the familial relationship to produce the recognition of the divine. Both confessions are simultaneously frightening and illuminating.' },
+                { label: 'Hebrews 11:1 — "faith is the assurance of things hoped for, the conviction of things not seen"', textId: 'ephesians-1', note: 'Hebrews 11:1: "Now faith is the assurance of things hoped for, the conviction of things not seen." Jesus\'s "blessed are those who have not seen and yet have come to believe" (John 20:29) and Hebrews 11\'s definition of faith as "conviction of things not seen" are making the same point: faith that requires visible proof is a diminished form of faith. Thomas\'s faith is real — Jesus does not dismiss it — but the mode of faith the entire New Testament is cultivating trusts testimony, the internal witness of the Spirit, and the character of God without requiring physical confirmation. This is not credulity but a different epistemology: trusting personal testimony and interior evidence rather than requiring external empirical proof.' },
+              ]
+            },
+            { word: 'blessed are those who have not seen and yet have come to believe', node: 'faith', type: 'concept',
+              note: '"Makarioi hoi mē idontes kai pisteusantes" — blessed are those who did not see and believed. The final beatitude of the Gospel addresses all future readers: they are precisely the "those who have not seen." The beatitude is spoken by the risen Christ across the text itself — functioning as direct address to every reader of John\'s Gospel in every generation. The "blessed" (makarios) echoes the Beatitudes of Matthew 5 but applies specifically to the epistemic situation of post-resurrection faith: the eye-witnesses are done; from now on faith works through testimony (the Gospel itself) and interior recognition. This is how the apostolic witness reaches across time — not through transmission of a formula but through encounter with the living text that continues to mediate the living Christ.',
+              parallels: [
+                { label: 'Mundaka Upanishad — parā vidyā: the higher knowledge not transmitted by instruction but by the illumined teacher to the ready student', textId: 'chandogya-6-2', note: 'Mundaka Upanishad 1.1.3: "Two kinds of knowledge must be known: the higher and the lower. The lower consists of the Vedas... The higher is that by which the imperishable Brahman is directly known." The Mundaka\'s distinction between aparā vidyā (lower knowledge through texts) and parā vidyā (higher knowledge through the illumined teacher\'s presence) parallels the Johannine tension between seeing and believing. Thomas\'s faith through sight is the "lower" epistemology; the blessed faith of those who have not seen is the "higher" — not less certain but differently grounded, in the living encounter with the risen Christ mediated through text and the Spirit\'s interior witness.' },
+                { label: 'Rumi fanāʾ — "die before you die and discover there is no death"; the annihilation that becomes recognition', textId: 'rumi-masnavi', note: 'Rumi\'s fanāʾ (annihilation of the ego-self in the divine): "die before you die and discover there is no death." Thomas\'s demand to touch the wounds is the desire to confirm by physical contact that the death was real and the resurrection is real; Jesus\'s invitation to touch the wounds, and Thomas\'s resulting confession "My Lord and my God!", is the moment when the death of all his categories (about how the story should have gone) produces the birth of a new and deeper faith. The Sufi fanāʾ and the Johannine death/resurrection both describe the death of the smaller self as the precondition for recognition of the divine.' },
+              ]
+            },
+          ]
+        },
+      ]
+    },
+  ]
+};
