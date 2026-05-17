@@ -30,6 +30,10 @@ syncretic-edges:
     type: "grandchild-of"
     source: "Standard Greek divine genealogy: Apollo → Asklepios → Hygieia"
     notes: "Hygieia is Apollo's granddaughter. The Hippocratic Oath invokes Apollo, then Asklepios, then Hygieia and Panacea — in exact divine genealogical order. The Oath's divine witness list encodes the family tree of healing."
+  - target: "bhaisajyaguru"
+    type: "structural-parallel"
+    source: "Comparative religion — Edelstein 1945; Birnbaum 1979 *The Healing Buddha*; Bhaisajyaguru's first of twelve vows guarantees that all beings in his realm are entirely free from disease and physical defect — proactive health-maintenance; Hygieia represents prevention and health-maintenance within the Asklepian healing family"
+    notes: "Prevention-first archetype: Hygieia (Greek goddess of health-maintenance, hygiene, and prevention — her name roots the English word 'hygiene') and Bhaisajyaguru (whose first vow is freedom from disease for all beings in his eastern Pure Land) both represent the proactive dimension of divine medicine: keeping beings healthy rather than restoring the already-sick. Independent Greek/Buddhist convergence on prevention-as-the-highest-form-of-medicine."
 tags:
   - medicine
   - healing-deity

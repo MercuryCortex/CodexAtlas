@@ -40,6 +40,18 @@ syncretic-edges:
   - target: "serapis"
     type: "scholarly-parallel"
     source: "Birnbaum 1979; Hornblower & Spawforth, *Oxford Classical Dictionary* — Hellenistic Serapis as composite Egyptian-Greek healing deity at Alexandria; the Serapeum's incubation-healing cult parallels Bhaisajyaguru's healing-vows"
+  - target: "panacea"
+    type: "cross-tradition-archetype"
+    source: "Comparative religion — Birnbaum 1979; Burkert 1985 *Greek Religion* — Bhaisajyaguru holds myrobalan (haritaki, the Tibetan 'king of all medicines,' believed to treat all disease) and Panacea's domain is the universal remedy; both personify the pharmacopeia complete enough to cure everything"
+    notes: "Complete-pharmacopeia archetype: Bhaisajyaguru's right hand holds myrobalan fruit — the Tibetan pharmacopeia's supreme medicine plant (triphala: haritaki/amalaki/bibhitaki), depicted in his hand because it treats every condition; Panacea's name encodes the same concept (pan-akos = all-remedy). Independent Buddhist/Greek convergence on the deity whose specific domain is the universally sufficient medicine."
+  - target: "hygieia"
+    type: "structural-parallel"
+    source: "Comparative religion — Edelstein 1945; Birnbaum 1979; Bhaisajyaguru's first vow (of twelve) guarantees freedom from disease for all beings in his realm — proactive prevention; Hygieia represents health-maintenance and prevention within the Asklepian healing family"
+    notes: "Prevention-first archetype: Bhaisajyaguru's first vow is that all beings in his eastern Pure Land are entirely free from disease and physical defect — healing by eliminating disease before it strikes; Hygieia (Greek, 'health') represents the same preventive dimension of medicine. Both stand in contrast to the reactive/curative figures in their traditions (Asklepios who heals the sick; the other Buddhas who address rebirth and liberation)."
+  - target: "nefertem"
+    type: "cross-tradition-archetype"
+    source: "Comparative religion — Wilkinson 2003 *Complete Gods and Goddesses of Ancient Egypt*; Birnbaum 1979; Ebers Papyrus on blue lotus (*Nymphaea caerulea*) in Egyptian medicine; lotus iconography in Bhaisajyaguru cult across East Asia"
+    notes: "Lotus-medicine deity archetype: Nefertem (Egyptian, c. 2700 BCE) is defined by the blue water-lily (*Nymphaea caerulea*), used medicinally in Egyptian medical papyri and as a psychoactive ritual perfume; Bhaisajyaguru sits on a lotus throne and holds myrobalan as the supreme healing plant. Both link the lotus specifically to divine medicine and healing. Independent Egyptian/Buddhist convergence across a 2,800-year gap."
 status: "metadata"
 refs:
   - title: "The Healing Buddha"
@@ -62,7 +74,7 @@ refs:
     publisher: "Princeton UP"
     type: "scholarly-article"
     tier: 2
-tags: [deity, buddhist, mahayana, medicine-buddha, pure-land, east-asian, tibetan, japanese, chinese, healing]
+tags: [deity, buddhist, mahayana, medicine-buddha, pure-land, east-asian, tibetan, japanese, chinese, healing, medicine, healing-deity]
 ---
 
 # Bhaisajyaguru

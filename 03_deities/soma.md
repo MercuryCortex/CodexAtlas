@@ -21,6 +21,18 @@ syncretic-edges:
     type: "scholarly-parallel"
     source: "Boyce 1975; cognate Indo-Iranian ritual substance"
     notes: "Vedic Soma and Avestan Haoma are cognate names for cognate ritual substances pressed and consumed in cognate liturgies. This is one of the strongest pieces of evidence for Indo-Iranian religious unity."
+  - target: "dhanvantari"
+    type: "structural-parallel"
+    source: "Bhagavata Purana 8.8 — Dhanvantari emerges from the Samudra Manthan bearing amrita; Jamison & Brereton 2014 *Rigveda* — soma is the pressed plant of immortality; multiple Puranic texts identify amrita and soma as the same substance"
+    notes: "Amrita = Soma theological equation: Soma is the deified plant pressed for immortality in Vedic sacrifice; Dhanvantari bears amrita (nectar of immortality) from the same cosmic ocean churning. In Vedic theology, soma IS the immortality drink that sustains divine life. Dhanvantari is the god-form who holds and delivers the substance that Soma-as-deity personifies: the divine carrier of the supreme sacred plant-medicine."
+  - target: "sacred-pharmacology"
+    type: "attested-in"
+    source: "Rigveda Mandala 9 (~114 hymns entirely dedicated to Soma Pavamana); Falk 1989 *Bulletin SOAS*"
+    notes: "Soma is the paradigmatic case of sacred pharmacology in the vault: a plant-substance so central to ritual that it was deified, given an entire book of the Rig Veda, and became the theological template for divine plant-medicine across the Indo-Iranian world. The hymns describe pressing, filtering, and divine ascent — the full apparatus of ritual pharmacology."
+  - target: "medicine-ayurveda"
+    type: "foundational"
+    source: "Wujastyk 2003 *Roots of Ayurveda*; Charaka Samhita — Soma listed as *oshadhi-raja* ('king of plants') in Ayurvedic pharmacology; the concept of ojas (vital essence) derives from Soma theology"
+    notes: "Soma is the theoretical root of Ayurvedic pharmacology: identified as *oshadhi-raja* ('king of plants') in the Charaka Samhita; the Ayurvedic concept of *ojas* (vital essence produced by perfect digestion and health) derives directly from Vedic soma theology. The plant that powered Vedic sacrifice became the conceptual foundation of the first systematic pharmacopeia."
 status: "stub"
 refs:
   - title: "Soma: Divine Mushroom of Immortality"
@@ -43,7 +55,7 @@ refs:
     publisher: "Oxford University Press"
     type: "primary-translation"
     tier: 1
-tags: [deity, vedic, soma, haoma, ritual-substance, indo-iranian, entheogen]
+tags: [deity, vedic, soma, haoma, ritual-substance, indo-iranian, entheogen, medicine, sacred-pharmacology]
 ---
 
 # Soma

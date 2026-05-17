@@ -30,6 +30,14 @@ syncretic-edges:
     type: "patron-of"
     source: "Etymological and cult evidence — Panacea's domain is specifically remedies and medicines, making her the divine patron of pharmacology"
     notes: "The entire tradition of plant-based healing, sacred pharmacology, and the search for universal remedies is conceptually organized under her name."
+  - target: "dhanvantari"
+    type: "cross-tradition-archetype"
+    source: "Comparative religion — Burkert 1985; Wujastyk 2003 *Roots of Ayurveda* — Panacea as 'all-remedy' and Dhanvantari as bearer of amrita (the nectar that cures all and grants immortality) occupy the same theological slot in their traditions"
+    notes: "Universal-remedy archetype: Panacea's name encodes the complete pharmacopeia (pan-akos = all-remedy); Dhanvantari bears amrita, the Hindu divine substance complete enough to cure all disease and grant immortality. Both personify a medicine so comprehensive it addresses every affliction. Independent Greek/Hindu convergence, no documented contact."
+  - target: "bhaisajyaguru"
+    type: "cross-tradition-archetype"
+    source: "Comparative religion — Birnbaum 1979 *The Healing Buddha*; Bhaisajyaguru Sutra — the Medicine Buddha's right hand holds myrobalan fruit (haritaki, the 'king of medicines' in Tibetan pharmacopeia, believed to treat all disease); Panacea's domain is the all-cure remedy"
+    notes: "Complete-pharmacopeia archetype: Bhaisajyaguru holds myrobalan — the Tibetan pharmacopeia's 'king of all medicines' (triphala complex: haritaki/amalaki/bibhitaki) believed to treat every major condition; Panacea's name encodes the same concept (all-remedy). Independent Buddhist/Greek convergence on the deity whose specific domain is the pharmacopeia complete enough to cure everything."
 tags:
   - medicine
   - healing-deity

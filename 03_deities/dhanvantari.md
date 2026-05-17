@@ -25,6 +25,14 @@ syncretic-edges:
     type: "avatar-of"
     source: "Bhagavata Purana 8.8"
     notes: "Dhanvantari emerged from the Churning of the Ocean (Samudra Manthan) as a direct avatar of Vishnu — specifically as the god who brings amrita (immortality) to the worlds. His medical function is therefore framed as divine preservation/sustenance, the core Vaishnava theological principle."
+  - target: "panacea"
+    type: "cross-tradition-archetype"
+    source: "Comparative religion — Burkert 1985 *Greek Religion*; Wujastyk 2003 *Roots of Ayurveda* — Panacea (pan + akos, 'all-remedy') and Dhanvantari (bearer of amrita that heals all) occupy the same theological slot: divine personification of the complete pharmacopeia"
+    notes: "Universal-remedy archetype: Panacea is the Greek goddess of the all-cure (her name IS the English word for universal remedy); Dhanvantari bears amrita, the nectar that heals all affliction and grants immortality. Both emerge within a healing divine family (Asklepian genealogy / Vishnu-avatar chain). Independent Greek/Hindu convergence on the deity-of-complete-pharmacopeia, no documented contact."
+  - target: "soma"
+    type: "structural-parallel"
+    source: "Bhagavata Purana 8.8 — Dhanvantari emerges bearing amrita from the same Samudra Manthan that yields soma; Jamison & Brereton 2014 *Rigveda* — soma is the pressed plant of immortality; multiple Puranic texts identify amrita and soma as the same substance"
+    notes: "Amrita = Soma theological equation: Dhanvantari bears the amrita that gods and demons churn the cosmic ocean to obtain; Soma is the deified plant whose pressed juice grants the same immortality. In Vedic sacrifice, soma IS the drink the gods consume to sustain their divinity. Dhanvantari is the god-form who holds and delivers the substance that Soma-as-deity personifies — the divine carrier of the supreme sacred plant-medicine."
 tags:
   - medicine
   - healing-deity
