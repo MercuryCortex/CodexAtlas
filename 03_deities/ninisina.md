@@ -79,6 +79,23 @@ The **dog** is her most distinctive emblem — dog burials and votive dog-figuri
 - **Identity / distinction from Gula and Ninkarrak.** Whether Ninisina, Gula, and Ninkarrak were originally three distinct goddesses later syncretized (Wiggermann's view) or one goddess under multiple regional names is debated. The current default is "three originally distinct, syncretized by the Old Babylonian period" (Wiggermann *RlA*).
 - **Antiquity of the dog-symbolism.** Whether the dog is original to Ninisina or transferred from Gula or another healing cult is unsettled; the Isin temple dog-cemetery (Isin-Larsa period) is the earliest secure archaeological evidence.
 
+## MASSIVE WIN: The Dog-Healer Connection
+
+Ninisina's dog — shared with [[gula-akkadian]] and [[ninkarrak]] — reappears at [[asklepios]]'s healing sanctuaries in Greece 1,500 years later. At Epidauros, sacred dogs licked the wounds of petitioners as healing acts (recorded in the *iamata* inscriptions). Dog saliva contains lysozyme, immunoglobulin A, and histatins — genuine antibacterial and wound-healing agents. The ancient observation was pharmacologically accurate. Two civilizations, independently, embedded the same animal in the same healing-sanctuary role because it worked. See [[destroyer-healer]] for the full pattern.
+
+## Vault Connections
+
+- [[medicine-mesopotamian-temple]] — the hub she anchors; her Egalmah temple at Isin IS the founding institution
+- [[gula-akkadian]] — her Akkadian continuation; identified with her by the Old Babylonian period
+- [[ninkarrak]] — member of the same four-way healing-goddess syncretic cluster
+- [[bau-sumerian]] — parallel Sumerian healing-goddess in the same cluster
+- [[healer-priest]] — the *azu* and *āšipu* act in her name; the Āšipu/Asû dyad is her institutional expression
+- [[sacred-pharmacology]] — the Uruanna plant list descends from her priestly pharmaceutical tradition
+- [[destroyer-healer]] — the archetype she embodies: the healing-goddess can also afflict
+- [[asklepios]] — Greek parallel divine physician; both traditions deploy sacred dogs in healing sanctuaries
+- [[dhanvantari]] — Hindu parallel: divine physician patron of pharmacological tradition
+- [[sekhmet]] — Egyptian parallel: destroyer-healer goddess; same archetype, different civilization
+
 ## Refs
 1. Black, J. & Green, A. (1992). *Gods, Demons and Symbols of Ancient Mesopotamia*. BM Press.
 2. Wiggermann, F. A. M. (2000). "Nin-Isina." *RlA* 9. — definitive encyclopedia entry.

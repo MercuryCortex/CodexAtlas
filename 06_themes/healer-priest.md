@@ -71,7 +71,11 @@ The content is scientific; the structure is initiation. The white coat is the he
 - [[medicine-shamanic]] — the shaman as the original healer-priest
 - [[medicine-asklepion-cult]] — Asklepion priests as healer-priest successors
 - [[medicine-ayurveda]] — the Atharva Veda bhishaj; the Ayurvedic vaidya as healer-priest
+- [[ninisina]] — Sumerian founding case: the *azu* physicians act in her name; Egalmah temple is the oldest documented healing-profession institution
+- [[gula-akkadian]] — Akkadian continuation: the *āšipu* and *asû* operate under her patronage; Hammurabi's Code formalizes medical fees invoking her lineage
+- [[sekhmet]] — Egyptian destroyer-healer; the *wabw-Sḫmt* priest-healers are her institutional expression
 - [[asklepios]] — divine patron of the healer-priest role
 - [[dhanvantari]] — divine source of Ayurvedic healer-priest knowledge
 - [[imhotep]] — the archetypal healer-priest who became a god
+- [[destroyer-healer]] — the theological archetype underlying healer-priest authority: the healer's power over disease proves domain over disease
 - [[ritual-bori-spirit-possession]] — the bori adept as healer-priest in Hausa tradition

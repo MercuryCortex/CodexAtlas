@@ -75,7 +75,11 @@ The same structure — fee scales, malpractice liability, professional accountab
 
 ## Vault Connections
 
-- [[sekhmet]] — Egyptian counterpart: lion-headed goddess of plague AND healing; the equivalence reveals the universal "destroyer-healer" archetype
+- [[ninisina]] — the Sumerian healing-goddess whose Egalmah temple at Isin IS the founding healing-cult institution; patron of the *azu* physicians
+- [[gula-akkadian]] — the Akkadian/Babylonian continuation of Ninisina; supreme healing-goddess of the late Mesopotamian tradition; the Uruanna pharmacopoeia is associated with her cult
+- [[ninkarrak]] — member of the four-way healing-goddess cluster (Ninisina · Gula · Bau · Ninkarrak); invoked in Hammurabi to inflict incurable disease AND to heal
+- [[destroyer-healer]] — the cross-tradition archetype these three goddesses exemplify: the same divine power kills and cures
+- [[sekhmet]] — Egyptian counterpart: lion-headed goddess of plague AND healing; structural parallel for the destroyer-healer archetype
 - [[ninazu]] — Sumerian "Lord Physician"; divine patron of healing; his son [[ningishzida]] (serpent-deity) = the snake-symbol's medical origin
 - [[ningishzida]] — Mesopotamian serpent healing deity; source of the snake-and-staff symbol that becomes the Rod of Asklepios
 - [[ritual-divination-mesopotamian]] — the Āšipu's omen-reading is the same cognitive operation as medical diagnosis

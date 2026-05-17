@@ -96,6 +96,18 @@ The pattern — that mastery of disease and mastery of healing are theologically
 - **Sekhmet-Hathor as one or two.** Junker (1917) and most subsequent Egyptologists treat the two as aspectual rather than separate; some popular literature treats them as discrete goddesses, which is misleading for understanding the *Book of the Heavenly Cow* and the Eye-of-Ra mythology.
 - **Healing-by-reversal.** Whether Sekhmet's physician function is by *similia similibus* (the bringer of plague is the curer of plague) or by independent cultic development is debated; the priestly title *wabw-Sḫmt* is attested from the Middle Kingdom; the functional logic is consistent across the tradition.
 
+## Vault Connections
+
+- [[medicine-egyptian-temple]] — the hub she anchors; the *wabw-Sḫmt* priest-physicians are her institutional expression
+- [[destroyer-healer]] — the cross-tradition archetype she is the paradigm case of: disease deity who is patron of healing
+- [[gula-akkadian]] — Mesopotamian structural parallel: supreme healing-goddess who also inflicts disease; 1,500-year earlier case of the same archetype
+- [[ninisina]] — Sumerian parallel: healing-goddess whose dog-animal and priestly-physician role mirrors Sekhmet's *wabw* priests
+- [[apollo]] — Greek parallel: sends plague (Iliad I arrows) and is simultaneously "Apollo Physician"; the Greek expression of the same destroyer-healer logic
+- [[healer-priest]] — the *wabw-Sḫmt* priests are the Egyptian instance of the healer-priest archetype
+- [[phase-1-037-ebers-papyrus]] — the Ebers Papyrus invokes Sekhmet's healing power in medical spells
+- [[bastet]] — her complementary aspect; the tamed/gentle expression of the same solar-eye energy
+- [[kali]] — Hindu structural parallel: terrifying-destroyer goddess whose destruction IS liberation/healing (independent convergence)
+
 ## Refs
 1. Wilkinson, R.H. (2003). *The Complete Gods and Goddesses of Ancient Egypt*. Thames & Hudson.
 2. Junker, H. (1917). *Der ägyptische Mythos von der Sonnenauge*. Akademie der Wissenschaften in Wien.

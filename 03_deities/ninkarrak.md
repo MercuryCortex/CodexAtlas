@@ -103,6 +103,16 @@ The iconography is largely indistinguishable from Ninisina's and Gula's — cons
 - **Location of Karrak.** The toponym *karrak* is not securely identified with any excavated site; mainstream guesses place it near Isin in the alluvial plain. The location-uncertainty is one reason for the historical interpretive difficulty.
 - **Strength of the four-way syncretism.** The Old Babylonian-period syncretism of Ninisina-Gula-Bau-Ninkarrak is well-attested; whether all four were ever cleanly distinct deities or whether the syncretism reflects pre-existing functional overlap is debated.
 
+## Vault Connections
+
+- [[medicine-mesopotamian-temple]] — the hub she belongs to; member of the founding four-way healing-goddess cluster
+- [[ninisina]] — closest syncretic identification; both rooted in the Isin healing tradition
+- [[gula-akkadian]] — her Akkadian absorber; by the Neo-Babylonian period Ninkarrak is functionally Gula
+- [[bau-sumerian]] — co-member of the four-way healing-goddess cluster
+- [[healer-priest]] — the physician-priests who invoke her in healing practice
+- [[destroyer-healer]] — the archetype she exemplifies: invoked in Hammurabi to inflict incurable disease AND to heal
+- [[phase-1-007-code-of-hammurabi]] — the epilogue curse-formula: the most-cited textual attestation
+
 ## Refs
 1. Black, J. & Green, A. (1992). *Gods, Demons and Symbols of Ancient Mesopotamia*. BM Press.
 2. Krebernik, M. (2001). "Ninkarrak." *RlA* 9. de Gruyter. **Load-bearing.**

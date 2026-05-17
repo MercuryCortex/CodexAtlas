@@ -70,5 +70,9 @@ This is not metaphor for naive cultures. It is a transmission technology: the ex
 - [[medicine-ayurveda]] — Charaka Samhita materia medica (600+ plant substances)
 - [[medicine-islamic-golden-age]] — Avicenna's Canon Book II (800 substances)
 - [[ritual-bori-spirit-possession]] — spirit-possession healing using plant medicines in Hausa tradition
+- [[ninisina]] — the Uruanna plant list (Mesopotamia's pharmacopoeia) descends from her priestly tradition at Isin
+- [[gula-akkadian]] — the Uruanna is associated with her cult centers at Isin and Nippur
+- [[panacea]] — the goddess of universal cure; her name is the mythological name for the pharmacological search
+- [[destroyer-healer]] — every medicine is a poison at wrong dose; the dose-makes-the-poison principle encodes this
 - [[dhanvantari]] — holds the pot of amrita; divine origin of pharmacological knowledge
 - [[asklepios]] — the Asklepion's sacred healing herbal gardens

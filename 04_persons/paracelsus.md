@@ -44,6 +44,14 @@ Documented through his own writings, a substantial body of contemporary referenc
 ## Role in the tradition
 Paracelsus is one of the most consequential single figures in the early modern history of medicine, chemistry, and esoteric Christianity. The Paracelsian tradition (17th-c. iatrochemistry: van Helmont, Fludd, Sennert) is a major root of modern biochemistry and medicine; the Paracelsian theology fed into Rosicrucianism and Boehmian theosophy; the Jungian rediscovery of alchemical psychology takes Paracelsus as central.
 
+## Vault Connections
+
+- [[medicine-islamic-golden-age]] — his intellectual ancestors: Jabir ibn Hayyan (Geber), al-Razi, and Ibn Sina formed the alchemical-medical synthesis he reformed; his burning of Avicenna's *Canon* was a polemic against the tradition that made him possible
+- [[alchemy-rosarium-philosophorum]] — the alchemical text tradition he both inherits and radicalizes; Paracelsus transforms alchemy from metallic transmutation to iatrochemistry (medicine as chemistry)
+- [[sacred-pharmacology]] — his "doctrine of signatures" (the external form of a plant reveals its medicinal use) is the metaphysical framework for sacred pharmacological knowledge
+- [[destroyer-healer]] — his foundational pharmacological principle: *"The dose makes the poison."* Every substance heals at the right dose and kills at excess — the pharmacological formulation of the destroyer-healer archetype
+- [[phase-6-008-paracelsus-corpus]] — his collected works
+
 ## Refs
 1. Webster (2008). *Paracelsus*. Yale UP.
 2. Pagel (1982). *Paracelsus*. Karger.

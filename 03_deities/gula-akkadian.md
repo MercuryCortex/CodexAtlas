@@ -100,6 +100,19 @@ Seated goddess in horned crown, often with a **dog** at her feet or under her th
 - **Gula vs. Ninisina vs. Ninkarrak vs. Bau — one goddess or four?** The Mesopotamian healing-goddess complex is itself layered: in earliest sources these are distinguishable local deities (Bau at Lagash, Ninisina at Isin, Ninkarrak in West-Semitic contexts). From the Old Babylonian period they are increasingly treated as identifications of a single healing-goddess identity, normally called Gula. Westenholz 2013 treats this as a real syncretic merger; older scholarship sometimes preserved them as distinct. The vault separates Bau (as the Sumerian Lagashite city-goddess with her own distinct civic role) from Gula (as the Akkadian/Babylonian healing-goddess umbrella), per the splitting rule.
 - **Consort identity**. Gula's consort is variously [[ninurta]] (in Isin and Babylon), Pabilsag (the older Isin theology that Ninurta absorbs), or no fixed consort. The variation reflects local cultic emphases, not contradiction.
 
+## Vault Connections
+
+- [[medicine-mesopotamian-temple]] — the hub she anchors; patron deity of the *azu* physician tradition
+- [[ninisina]] — her Sumerian precursor; explicitly identified with her by the Old Babylonian period
+- [[ninkarrak]] — member of the same four-way syncretic cluster
+- [[bau-sumerian]] — the Lagashite predecessor whose dog-iconography transfers to her
+- [[healer-priest]] — the *azu* and *āšipu* professionals act under her divine patronage
+- [[sacred-pharmacology]] — the Uruanna plant-medicine series is associated with her cult at Isin and Nippur
+- [[destroyer-healer]] — the archetype she exemplifies: Hammurabi invokes her to inflict incurable disease; she is simultaneously the supreme healing-goddess
+- [[sekhmet]] — Egyptian structural parallel: destroyer-healer; same divine logic, different civilization
+- [[asklepios]] — Greek structural parallel: divine physician with sacred healing dogs at sanctuaries; Gula's votive dog-figurines serve the same healing function — 1,500-year cross-civilizational dog-healer convergence
+- [[phase-1-007-code-of-hammurabi]] — the epilogue curse-formula invokes Ninkarrak/Gula to afflict lawbreakers with incurable disease
+
 ## Refs
 1. Westenholz, J.G. (2013). "Goddesses in Context." *OBO* 259. — most detailed recent treatment of the Mesopotamian healing-goddess complex.
 2. Black, J., and Green, A. (1992). *Gods, Demons and Symbols of Ancient Mesopotamia*. British Museum Press. — concise reference with iconography.
