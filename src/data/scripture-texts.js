@@ -9404,3 +9404,294 @@ SCRIPTURE_TEXTS['amos-5'] = {
     },
   ]
 };
+
+// ── Batch 21 ──────────────────────────────────────────────────────────────
+
+SCRIPTURE_TEXTS['luke-1-magnificat'] = {
+  title: 'Luke 1 — The Magnificat',
+  shortTitle: 'Magnificat',
+  tradition: 'New Testament',
+  date: 'c. 85–90 CE',
+  intro: 'The Magnificat — Mary\'s song of praise after the Annunciation, when she visits her cousin Elizabeth (Luke 1:46–55) — is the most radical social proclamation in the New Testament outside of Matthew 25. Drawing heavily on Hannah\'s Song (1 Samuel 2:1–10), it declares that God\'s saving action consists in the inversion of the social order: the proud are scattered, the mighty are brought down from their thrones, the hungry are filled, the rich are sent away empty. It is simultaneously the most Jewish text in the Gospel of Luke (a mosaic of Hebrew Bible allusions), the most Marian text in the canon, and the most politically dangerous. Liberation theologians have made it the charter of the "preferential option for the poor." The Argentine junta banned the Magnificat\'s public display in 1977. It is sung daily as the evening canticle (Vespers) in Catholic, Anglican, and Lutheran liturgy — which makes it perhaps the most frequently sung text in Christian history.',
+  crossTradition: [
+    { textId: 'amos-5', label: 'Amos 5 — the prophetic demand for justice that precedes and grounds the Magnificat', note: 'Amos 5:21-24 is the prophetic rejection of empty worship in favor of justice rolling like waters. The Magnificat is Amos\'s demand translated into a hymn: Mary sings what Amos proclaimed. "He has brought down the powerful from their thrones, and lifted up the lowly; he has filled the hungry with good things, and sent the rich away empty." The same prophetic inversion — the lowly lifted, the mighty cast down — runs from Amos through Hannah\'s song through the Magnificat to Matthew 25. The prophetic tradition is a single continuous line across eight centuries.' },
+    { textId: 'matthew-25', label: 'Matthew 25 — the hidden Christ in the poor; both texts declare God\'s solidarity with the lowly', note: 'Matthew 25 and the Magnificat are the two poles of New Testament social theology. Mary\'s song declares the ontological status of the reversal (God\'s saving action IS the lifting of the poor); Matthew 25 reveals the criterion of judgment (care for the poor = care for Christ himself). Together they say: the poor are the site of God\'s presence (Magnificat: God fills the hungry) and the site of Christ\'s presence (Matthew 25: Christ is in the hungry stranger). The logic in both texts is identical: the divine is where the vulnerable are.' },
+    { textId: 'psalm-22', label: 'Psalm 22 — from dereliction to praise; the liturgical inversion structure', note: 'Psalm 22 moves from "My God, my God, why hast thou forsaken me" to universal praise. The Magnificat moves from Mary\'s personal rejoicing ("My soul magnifies the Lord") outward to the cosmic social reversal ("He has brought down the powerful"). Both texts use the liturgical inversion structure: the personal experience of divine mercy becomes the ground for cosmic social proclamation. The hymn form carries the theological claim: what happened to me is what God does — and what God does is the reversal of what the world counts as power.' },
+  ],
+  translations: [
+    { lang: 'en', label: 'NRSV' },
+    { lang: 'en-kjv', label: 'King James (1611)' },
+    { lang: 'la', label: 'Latin Vulgate (Magnificat)' },
+    { lang: 'grc', label: 'Greek (Koine)' },
+  ],
+  sections: [
+    {
+      heading: 'Mary\'s Praise — The Personal Ground of the Cosmic Proclamation (1:46–49)',
+      verses: [
+        {
+          ref: '1:46–49',
+          text: 'And Mary said, "My soul magnifies the Lord, and my spirit rejoices in God my Savior, for he has looked with favor on the lowliness of his servant. Surely, from now on all generations will call me blessed; for the Mighty One has done great things for me, and holy is his name."',
+          entities: [
+            { word: 'he has looked with favor on the lowliness of his servant', node: 'divine-grace', type: 'concept',
+              note: 'The theological starting point of the Magnificat is not an abstract principle but a personal experience: God looked at the lowliness (tapeinōsis — humiliation, lowly estate) of Mary and chose her. This is the Magnificat\'s epistemological foundation — the cosmic social reversal that follows (vv. 51-53) is not a political program but a theological description of how God acts, known through personal experience. Mary moves from "he looked at me in my lowliness" to "he brings down the mighty and lifts the lowly" — the personal case becomes the universal pattern. This is identical to the Psalmist\'s movement in Psalm 22: from personal dereliction to cosmic praise.',
+              parallels: [
+                { label: 'Japji Sahib — "Countless are the fools... yet to please You is the offering above all"', textId: 'japji-sahib', note: 'Guru Nanak\'s litany of human failure ends with the single positive: pleasing God. Mary\'s song begins from the single personal positive (God looked at me) and expands it cosmically. Both texts move from particularity to universality: the specific experience of divine attention (the lowly servant / the one who pleases God) becomes the ground for a universal theological statement. The structure is: God did this particular thing → therefore God is like this → therefore the world is oriented this way.' },
+              ]
+            },
+          ]
+        },
+      ]
+    },
+    {
+      heading: 'The Great Reversal — God\'s Political Theology (1:50–55)',
+      verses: [
+        {
+          ref: '1:51–53',
+          text: '"He has shown strength with his arm; he has scattered the proud in the thoughts of their hearts. He has brought down the powerful from their thrones, and lifted up the lowly; he has filled the hungry with good things, and sent the rich away empty."',
+          entities: [
+            { word: 'He has brought down the powerful from their thrones, and lifted up the lowly', node: 'justice', type: 'concept',
+              note: 'The Magnificat\'s core theological claim: God\'s saving action is structurally inversionary. The proud are scattered; the mighty are brought down; the hungry are filled; the rich are sent empty. Note the tenses: in the Greek, these are aorist — past tense, completed action. This is not a future promise ("God will bring down the mighty") but a present declaration of what God has already done — or more precisely, what God characteristically does, what God\'s way of acting in history looks like. This makes the Magnificat a theological statement about the nature of divine action, not merely an eschatological hope.',
+              parallels: [
+                { label: 'Amos 5 — let justice roll; the prophetic demand for structural reversal', textId: 'amos-5', note: 'Amos 5:24 demands that justice roll like waters — not as a utopian hope but as a present imperative. Mary declares that God has already done the reversal. The prophetic demand (Amos: this is what must happen) and the Marian praise (Magnificat: this is what God does) are two grammatical tenses of the same theological claim. Between them stands the entire prophetic tradition: Isaiah, Jeremiah, Micah, all declaring what God requires and what God does in bringing down the mighty and lifting the lowly.' },
+                { label: 'Matthew 25 — the hungry filled; the hidden Christ in the poor', textId: 'matthew-25', note: '"He has filled the hungry with good things" (Magnificat 1:53) and "I was hungry and you gave me food" (Matthew 25:35) are the same theological statement from different angles. The Magnificat declares God fills the hungry as a divine characteristic; Matthew 25 reveals that the hungry person IS the site of Christ\'s presence. Together they constitute the New Testament theology of the poor: the poor are not merely the recipients of divine favor (Magnificat) but the presence of Christ himself (Matthew 25). Mary sings what Christ embodies.' },
+              ]
+            },
+          ]
+        },
+        {
+          ref: '1:54–55',
+          text: '"He has helped his servant Israel, in remembrance of his mercy, according to the promise he made to our ancestors, to Abraham and to his descendants forever."',
+          entities: [
+            { word: 'in remembrance of his mercy, according to the promise he made to our ancestors', node: 'covenant', type: 'concept',
+              note: 'The Magnificat ends with covenant memory — the reversal that Mary describes is not a new program but the fulfillment of a promise made to Abraham. This ties the Magnificat back to Jeremiah 31 (the new covenant that fulfills the old), to Deuteronomy 6 (love the Lord who brought you out of Egypt), and to the entire Hebrew covenant tradition. The Christian gospel, in Mary\'s telling, is not the replacement of Israel\'s covenant but its deepening and fulfillment. The promise made to Abraham is what is being remembered in the Annunciation.',
+              parallels: [
+                { label: 'Jeremiah 31 — the new covenant as the fulfillment of the Abrahamic promise', textId: 'jeremiah-31', note: 'Jeremiah 31:31-34 promises a new covenant with the house of Israel — explicitly grounding it in the covenant tradition that began with the exodus. The Magnificat grounds Mary\'s praise in the same covenant memory: "the promise he made to our ancestors, to Abraham." Both texts are saying: what is happening now is the fulfillment of what God promised then. The new and the old covenant are not opposed; the new is the internalization and fulfillment of the old. Mary is doing Jeremiah\'s theology in hymn form.' },
+              ]
+            },
+          ]
+        },
+      ]
+    },
+  ]
+};
+
+SCRIPTURE_TEXTS['john-15-vine'] = {
+  title: 'John 15 — The Vine and the Branches',
+  shortTitle: 'John 15',
+  tradition: 'New Testament',
+  date: 'c. 90–100 CE',
+  intro: 'John 15 is the last of the great "I am" discourses in John\'s Gospel, spoken in the Farewell Discourse on the night before the crucifixion. "I am the true vine" — the sixth "I am" saying — presents an organic metaphor for the relationship between Jesus and his disciples: the vine and its branches are not separate things that enter a relationship but a single organic system, and the branch can only bear fruit by abiding (Greek: menō — remaining, dwelling, staying) in the vine. The word menō appears ten times in John 15:1-11 — "abide in me," "abide in my love" — making abiding or indwelling the central spiritual concept. John 17\'s prayer ("that they may be one as we are one") is here described from the inside: abiding in the vine is what that unity feels and looks like in practice. The chapter also contains the most demanding ethical statement in John\'s Gospel: "No one has greater love than this, to lay down one\'s life for one\'s friends" (15:13).',
+  crossTradition: [
+    { textId: 'john-17', label: 'John 17 — abiding in the vine is the inner experience of being one', note: 'John 17:21 prays that believers "may all be one, as thou, Father, art in me, and I in thee." John 15:4-5 describes the mechanism: "Abide in me as I abide in you. Just as the branch cannot bear fruit by itself unless it abides in the vine, neither can you unless you abide in me. I am the vine, you are the branches." The prayer of John 17 and the metaphor of John 15 are describing the same reality: the perichoretic unity (mutual indwelling) that characterizes the Father-Son relationship is available to humanity through abiding in the vine. John 15 is the practical how; John 17 is the theological why.' },
+    { textId: 'meister-eckhart-godhead', label: 'Meister Eckhart — the soul that abides in God as the vine-branch relationship', note: 'Eckhart\'s mystical theology is substantially a philosophical elaboration of John 15\'s abiding. The soul that has achieved detachment (Abgeschiedenheit) and breakthrough (Durchbruch) into the Godhead is the soul that abides — that remains in God as the branch remains in the vine, drawing its life entirely from that source. "The soul that has nothing but God, who does not want to have this or that, who does not cling to anything — such a soul abides in God and God in it." This is John 15:4 translated into Rhineland mystical vocabulary.' },
+    { textId: 'mundaka-upanishad', label: 'Mundaka — the river flowing into the sea; union without dissolution', note: 'Mundaka 3.2.8: "As rivers flow into the sea and lose themselves in the sea with their name and form, so the wise attains the divine Person." John 15: "I am the vine, you are the branches. Those who abide in me and I in them bear much fruit." Both use organic/natural metaphors for mystical union — river-into-sea and branch-in-vine — and both preserve the distinction between the parts (river / branch) even while declaring their unity with the whole (sea / vine). The branch does not become the vine; the river does not remain a river in the sea. Union that preserves the distinct without dissolving it: the paradox of mystical union in every tradition.' },
+  ],
+  translations: [
+    { lang: 'en', label: 'NRSV' },
+    { lang: 'en-kjv', label: 'King James (1611)' },
+    { lang: 'grc', label: 'Greek (Koine)' },
+  ],
+  sections: [
+    {
+      heading: 'The Vine and the Branches — Abiding as the Form of Union (15:1–11)',
+      verses: [
+        {
+          ref: '15:1–5',
+          text: '"I am the true vine, and my Father is the vinegrower. He removes every branch in me that bears no fruit. Every branch that bears fruit he prunes to make it bear more fruit. You have already been cleansed by the word that I have spoken to you. Abide in me as I abide in you. Just as the branch cannot bear fruit by itself unless it abides in the vine, neither can you unless you abide in me. I am the vine, you are the branches. Those who abide in me and I in them bear much fruit, because apart from me you can do nothing."',
+          entities: [
+            { word: 'Abide in me as I abide in you', node: 'mystical-union', type: 'concept',
+              note: 'The Greek word menō (abide, remain, dwell, stay) appears ten times in John 15:1-11 — the most concentrated use in any NT passage. It names the central spiritual posture: not visiting God (arriving and departing) but remaining in God, making God one\'s permanent dwelling. This is the Johannine equivalent of the Cloud of Unknowing\'s "humble impulse of love" that must be sustained without interruption — the dart of longing love is not a technique for arriving but the permanent orientation of the heart. The vine metaphor makes the logic biological: the branch does not occasionally connect to the vine for nourishment; it is always already connected. To abide is to stop interrupting the connection that is already there.',
+              parallels: [
+                { label: 'Cloud of Unknowing — the sustained dart of longing love; not arriving but remaining', textId: 'cloud-of-unknowing', note: 'The Cloud instructs the contemplative to "go not thence for anything that befalleth" after smiting the cloud with the dart of longing love. This is abiding: not departing when the experience seems to fade, but remaining in the disposition of love. John 15\'s menō (abide) and the Cloud\'s "go not thence" are the same spiritual instruction: union with the divine is not a moment to be achieved but a posture to be maintained. The vine-branch metaphor makes this vivid: you cannot un-be a branch while remaining on the vine.' },
+                { label: '1 John 4 — those who abide in love abide in God', textId: '1-john-4', note: '1 John 4:16: "God is love, and those who abide in love abide in God, and God abides in them." This is the ethical translation of John 15\'s vine metaphor: abiding in the vine = abiding in love = abiding in God. The move from organic metaphor (vine/branch) to ethical reality (love) is the same move the Johannine tradition makes throughout: the mystical and the ethical are not separate domains. You cannot abide in the vine without bearing fruit; you cannot abide in God without abiding in love.' },
+              ]
+            },
+          ]
+        },
+        {
+          ref: '15:9–11',
+          text: '"As the Father has loved me, so I have loved you; abide in my love. If you keep my commandments, you will abide in my love, just as I have kept my Father\'s commandments and abide in his love. I have said these things to you so that my joy may be in you, and that your joy may be complete."',
+          entities: [
+            { word: 'As the Father has loved me, so I have loved you; abide in my love', node: 'divine-love', type: 'concept',
+              note: 'The love structure of John 15 is a cascade: the Father\'s love for the Son → the Son\'s love for the disciples → the disciples abiding in that love. This is the Johannine version of the Neoplatonic emanation structure: the Good/One overflows into the Nous, which overflows into the Soul, which overflows into creation. But in John\'s version, the overflow is love rather than being, and the return is abiding rather than intellectual ascent. The "as... so" construction ("as the Father loved me, so I loved you") is crucial: the quality and character of the love are identical across the cascade. The disciples are loved with the same love that the Father loves the Son.',
+              parallels: [
+                { label: 'John 17 — the love with which the Father loved me may be in them', textId: 'john-17', note: 'John 17:26: "the love with which you have loved me may be in them, and I in them." John 15:9: "As the Father has loved me, so I have loved you." Both passages describe the same cascading love structure — the trinitarian love extended into humanity. John 15 describes the abiding that makes this possible; John 17 prays that it happen. The vine metaphor (ch. 15) and the unity prayer (ch. 17) are describing the same reality from complementary angles: what does it feel like from inside (abiding / vine-branch) and what does it mean from above (being one as Father and Son are one).' },
+              ]
+            },
+          ]
+        },
+      ]
+    },
+    {
+      heading: 'Greater Love — The Ethical Fruit of Abiding (15:12–17)',
+      verses: [
+        {
+          ref: '15:12–17',
+          text: '"This is my commandment, that you love one another as I have loved you. No one has greater love than this, to lay down one\'s life for one\'s friends. You are my friends if you do what I command you. I do not call you servants any longer, because the servant does not know what the master is doing; but I have called you friends, because I have made known to you everything that I have heard from my Father."',
+          entities: [
+            { word: 'No one has greater love than this, to lay down one\'s life for one\'s friends', node: 'divine-love', type: 'concept',
+              note: 'The ethical climax of the vine discourse: the fruit that abiding in the vine produces is love, and the measure of love is the willingness to give one\'s life. The verse is the Johannine statement of what the cross means: not a transaction (sacrifice to satisfy divine justice) but a demonstration of love at its maximum. The same measure appears in the Confucian tradition (Analects 15.9: "they will even sacrifice their lives to preserve their virtue complete") and in Hebrews 11\'s martyrs. But John adds the "friends" category: this is not the love of a master for servants but of friends — implying mutual knowledge, intimacy, chosen relationship.',
+              parallels: [
+                { label: 'Confucius Analects — "sacrifice their lives to preserve their virtue complete"', textId: 'confucius-analects', note: 'Analects 15.9: "sha shen yi cheng ren — kill the body to complete humaneness/virtue." John 15:13: "No one has greater love than this, to lay down one\'s life for one\'s friends." Both identify the willingness to die for what one loves most as the mark of the highest human character. The Confucian junzi who dies for ren and the Johannine friend who lays down life for friends are performing the same ultimate gesture. The difference: Confucius describes it as ethical self-sacrifice; John describes it as love — and in John\'s vocabulary, love is the divine substance itself.' },
+                { label: 'Hebrews 11 — faith and the willingness to die', textId: 'hebrews-11', note: 'Hebrews 11:35-38: "others were tortured, refusing to accept release, in order to obtain a better resurrection." John 15:13: "greater love has no one than this, to lay down one\'s life for one\'s friends." Both texts identify the willingness to die as the highest expression of the central virtue (faith / love). But where Hebrews 11 motivates this by faith in an unseen future resurrection, John 15 motivates it by love itself — the natural overflow of abiding in the vine. The martyr of Hebrews 11 acts out of confident hope; the friend of John 15 acts out of love. Same act; different ground.' },
+              ]
+            },
+          ]
+        },
+      ]
+    },
+  ]
+};
+
+SCRIPTURE_TEXTS['isaiah-40'] = {
+  title: 'Isaiah 40 — Comfort My People',
+  shortTitle: 'Isaiah 40',
+  tradition: 'Hebrew Bible / Old Testament',
+  date: 'c. 550–540 BCE (Deutero-Isaiah)',
+  intro: 'Isaiah 40 opens the second half of the book of Isaiah (chapters 40–55), almost certainly composed by an anonymous prophet (called Deutero-Isaiah or Second Isaiah) writing to the Jewish exiles in Babylon around 550–540 BCE, on the eve of Cyrus the Great\'s conquest that would allow their return. After the devastating lament of the first Isaiah (chapters 1–39), the prophet opens with one of the most famous words in the Hebrew Bible: "Comfort, comfort my people." The chapter pivots immediately from exile to creation: the God who is able to comfort Israel is the God who "sits above the circle of the earth," who "measures the waters in the hollow of his hand," who brings "princes to naught." The climax is one of the most quoted verses in world scripture: "They who wait upon the Lord shall renew their strength; they shall mount up with wings as eagles." Isaiah 40 is the prophetic ground for the Christian theology of the incarnation (40:3, quoted by all four Gospels as the "voice in the wilderness"), for the Book of Job\'s theology of divine transcendence, and for every tradition that finds hope in the contrast between human fragility and divine inexhaustibility.',
+  crossTradition: [
+    { textId: 'job-38', label: 'Job 38 — divine transcendence as the answer to human suffering', note: 'Job 38\'s divine speeches and Isaiah 40 are the two great Hebrew Bible meditations on divine transcendence. Both describe a God who "sits above the circle of the earth" (Isaiah 40:22) and who "laid the foundations of the earth" (Job 38:4) — a God so vast that human suffering, while not dismissed, must be understood within a far larger frame. Both texts use cosmological imagery (the measuring of waters, the weighing of mountains, the bringing out of stars) to establish divine transcendence. But their purposes differ: Job 38 silences Job\'s complaint; Isaiah 40 comforts the exiles. The same theological move — divine vastness — serves both silencing and comforting.' },
+    { textId: 'nasadiya-sukta', label: 'Nasadiya Sukta — the God above the circle of the earth; transcendence before creation', note: 'The Nasadiya Sukta asks who was present before creation: "Who really knows? Who will here proclaim it?" Isaiah 40:28 answers from within a monotheistic framework: "The Lord is the everlasting God, the Creator of the ends of the earth. He does not faint or grow weary; his understanding is unsearchable." Both texts are meditating on the God/absolute who precedes and sustains all created reality — and both establish that this reality is not accessible to ordinary human comprehension. The Vedic hymn maintains unknowing; Isaiah maintains that the unknowable God has spoken and acts. The parallel is in the structure of divine transcendence; the resolution differs.' },
+    { textId: 'tao-te-ching-1', label: 'Tao Te Ching — the inexhaustible source that does not grow weary', note: 'Tao Te Ching 4: "The Tao is like a well: used but never used up." Isaiah 40:28: "He does not faint or grow weary." Both texts describe the absolute as inexhaustible — the source that gives without diminishing, the power that acts without depleting. The Taoist characterization (the Tao is empty but inexhaustible, like a bellows) and the Deutero-Isaianic characterization (the Creator of the ends of the earth does not grow weary) are describing the same essential attribute of ultimate reality: its inexhaustibility is the ground of the creature\'s hope. Those who wait on the Lord (Isaiah) and those who embody the Tao (Taoism) both draw from the same inexhaustible source.' },
+  ],
+  translations: [
+    { lang: 'en', label: 'NRSV' },
+    { lang: 'en-kjv', label: 'King James (1611)' },
+    { lang: 'he', label: 'Hebrew (Masoretic Text)' },
+  ],
+  sections: [
+    {
+      heading: 'Comfort My People — The Voice in the Wilderness (40:1–8)',
+      verses: [
+        {
+          ref: '40:1–5',
+          text: 'Comfort, O comfort my people, says your God. Speak tenderly to Jerusalem, and cry to her that she has served her term, that her penalty is paid, that she has received from the Lord\'s hand double for all her sins. A voice cries out: "In the wilderness prepare the way of the Lord, make straight in the desert a highway for our God. Every valley shall be lifted up, and every mountain and hill be made low; the uneven ground shall become level, and the rough places a plain. Then the glory of the Lord shall be revealed, and all people shall see it together, for the mouth of the Lord has spoken."',
+          entities: [
+            { word: 'Comfort, O comfort my people', node: 'divine-grace', type: 'concept',
+              note: 'The doubling of the imperative ("comfort, comfort") is the opening of Second Isaiah\'s entire ministry: after the judgment of chapters 1–39, after the Babylonian exile, after the destruction of Jerusalem, the first word from God is comfort. The Hebrew word (nacham) means both comfort and to be moved with compassion — to feel viscerally the pain of another. God is moved with compassion for the exiles before any word of response or repentance from them. This is grace as prevenient: the comfort precedes the turning. Paul\'s theology in Romans 5 ("while we were yet sinners, Christ died for us") is the New Testament form of the same move.',
+              parallels: [
+                { label: 'Luke 15 Prodigal — the father who runs to meet the returning son', textId: 'luke-15-prodigal', note: 'The father in the Prodigal Son parable runs to his son "while he was yet a great way off" — before the son has finished his repentance speech. Isaiah 40:1 speaks comfort to Jerusalem before any turning has happened. Both texts describe the same theological structure: divine compassion is not conditional on prior repentance but is the condition that makes genuine repentance possible. The comfort (Isaiah) and the running father (Luke 15) are the same theological claim: grace precedes merit.' },
+              ]
+            },
+          ]
+        },
+        {
+          ref: '40:6–8',
+          text: 'A voice says, "Cry out!" And I said, "What shall I cry?" All people are grass, their constancy is like the flower of the field. The grass withers, the flower fades, when the breath of the Lord blows upon it; surely the people are grass. The grass withers, the flower fades; but the word of our God will stand forever.',
+          entities: [
+            { word: 'All people are grass... but the word of our God will stand forever', node: 'divine-eternity', type: 'concept',
+              note: 'The contrast between human fragility (grass, flower — beautiful but transient) and divine permanence (the word that stands forever) is one of the most powerful in world scripture. This is not pessimism about humanity but the theological ground of comfort: the God whose word stands forever is the God who just said "comfort my people." The permanent word and the comforting word are the same word. Human transience (grass) is placed against divine permanence (the word) not to diminish humans but to establish the ground on which they can rely when all the human grounds fail. Babylon was powerful — grass. Persia will be powerful — grass. The word stands.',
+              parallels: [
+                { label: 'Tao Te Ching — the Tao endures; those who follow the Tao endure', textId: 'tao-te-ching-1', note: 'Tao Te Ching 16: "The myriad creatures all rise together and I watch their return. The teeming creatures all return to their separate roots. Returning to one\'s roots is known as stillness... What has a destined end is called constant. Knowledge of the constant is called discernment." Isaiah 40:6-8 and Tao 16 are meditating on the same phenomenon: the transience of all created things and the permanence of the underlying principle (the Tao / the Word of God). Both use the observation of natural cycling (grass withering, creatures returning to roots) to ground the claim that the absolute endures.' },
+              ]
+            },
+          ]
+        },
+      ]
+    },
+    {
+      heading: 'The Creator Above — Divine Transcendence as the Ground of Hope (40:21–31)',
+      verses: [
+        {
+          ref: '40:21–26',
+          text: 'Have you not known? Have you not heard? Has it not been told you from the beginning? Have you not understood from the foundations of the earth? It is he who sits above the circle of the earth, and its inhabitants are like grasshoppers; who stretches out the heavens like a curtain, and spreads them like a tent to live in; who brings princes to naught, and makes the rulers of the earth as nothing. [...] Lift up your eyes on high and see: Who created these? He who brings out their host and numbers them, calling them all by name; because he is great in strength, mighty in power, not one is missing.',
+          entities: [
+            { word: 'He who sits above the circle of the earth', node: 'divine-transcendence', type: 'concept',
+              note: 'The rhetorical questions ("Have you not known? Have you not heard?") appeal to a knowledge that the exiles should already have — the knowledge of God\'s transcendence that the tradition has always taught. This is not a new revelation but a reminder: the exile has made them forget what they knew. The cosmological catalog (circle of the earth, stretching heavens like a curtain, bringing princes to naught) establishes divine transcendence not as abstract theology but as existential comfort: Babylon\'s power is real, but it is "nothing" compared to the One who stretches the heavens. The empire that has humiliated Israel is itself a grasshopper from the divine perspective.',
+              parallels: [
+                { label: 'Job 38 — the divine speeches that situate human suffering within cosmic scale', textId: 'job-38', note: 'Job 38 and Isaiah 40 deploy the same rhetorical strategy: divine questions about the foundations of the earth, the measuring of the heavens, the bringing out of stars — all establishing a perspective from which human crisis (Job\'s suffering / Israel\'s exile) is situated within a vastly larger frame. But where Job 38 uses cosmic transcendence to silence complaint ("Where were you when I laid the foundations?"), Isaiah 40 uses it to generate hope ("He who does this does not grow weary"). The same divine vastness serves opposite pastoral purposes.' },
+              ]
+            },
+          ]
+        },
+        {
+          ref: '40:28–31',
+          text: 'Have you not known? Have you not heard? The Lord is the everlasting God, the Creator of the ends of the earth. He does not faint or grow weary; his understanding is unsearchable. He gives power to the faint, and strengthens the powerless. Even youths will faint and be weary, and the young will fall exhausted; but those who wait for the Lord shall renew their strength, they shall mount up with wings like eagles, they shall run and not be weary, they shall walk and not faint.',
+          entities: [
+            { word: 'those who wait for the Lord shall renew their strength; they shall mount up with wings like eagles', node: 'spiritual-transformation', type: 'concept',
+              note: 'The eagle image is the climax of the entire chapter. The inexhaustible Creator (who does not faint or grow weary) transfers something of this inexhaustibility to those who wait on him — the Hebrew word for "wait" (qavah) also means to hope, to expect with patience, to be entwined. The eagle metaphor is precise: eagles do not flap constantly (exhausting effort) but soar on thermals, using the invisible energy of the air. Those who wait on the Lord are not exerting human effort but are caught up in a divine current that carries them. This is the active-passive paradox of mystical theology in every tradition: the highest action is the action in which the human is carried rather than striving.',
+              parallels: [
+                { label: 'Tao Te Ching — wu wei; acting without effort by aligning with the Tao', textId: 'tao-te-ching-1', note: 'Tao Te Ching 48: "In the pursuit of learning, every day something is acquired. In the pursuit of Tao, every day something is dropped. Less and less is done until non-action is achieved. When nothing is done, nothing is left undone." Isaiah\'s "mount up with wings like eagles" through waiting and the Tao\'s effortless action through wu wei are describing the same mode of being: the highest effectiveness is not the straining human effort but the carrying of a current larger than the self. The eagle soars because it has stopped flapping; the sage acts effectively because they have stopped forcing.' },
+                { label: 'Cloud of Unknowing — "go not thence"; sustained waiting as the contemplative act', textId: 'cloud-of-unknowing', note: 'The Cloud instructs the contemplative to remain — "go not thence for anything that befalleth" — after the dart of longing love has been sent. Isaiah 40:31 describes those who "wait for the Lord" as receiving renewed strength. Both texts are describing the same posture: the sustained orientation toward God without grasping or forcing, which paradoxically results in empowerment (renewed strength / bearing much fruit). Waiting is not passivity but the most active possible orientation: remaining present to the divine without demand.' },
+              ]
+            },
+          ]
+        },
+      ]
+    },
+  ]
+};
+
+SCRIPTURE_TEXTS['lotus-sutra-2'] = {
+  title: 'Lotus Sutra — Chapter 2: Skillful Means',
+  shortTitle: 'Lotus Sutra 2',
+  tradition: 'Mahayana Buddhism',
+  date: 'c. 1st century BCE – 1st century CE',
+  intro: 'The Saddharmapuṇḍarīka Sūtra (Lotus Sutra) is the most influential text in East Asian Buddhism — the foundational scripture of Tiantai, Tendai, Nichiren, and Zen Buddhism. Chapter 2, "Skillful Means" (Sanskrit: upāya; Japanese: hōben), makes the Lotus Sutra\'s most revolutionary theological claim: all the previous teachings of the Buddha (including the Pali Canon Theravada teachings on the Three Vehicles — for disciples, for pratyekabuddhas, and for bodhisattvas) were upāya — "skillful means," pedagogical devices adapted to the capacity of different listeners. The true teaching, revealed for the first time in the Lotus Sutra, is the One Vehicle (ekayāna): there is only one path of liberation, and it leads everyone to full Buddhahood. The parable of the burning house (chapter 3) illustrates this: the father who tells his children different things to get them out of the burning house is not lying — he is using skillful means adapted to each child\'s desire. The Buddha-nature (tathāgatagarbha) is universal: every being will attain Buddhahood.',
+  crossTradition: [
+    { textId: 'gospel-of-thomas', label: 'Gospel of Thomas — the single Kingdom hidden in plain sight; one path despite many descriptions', note: 'The Gospel of Thomas presents Jesus\'s sayings as a single hidden treasure that transforms the finder — not a path with stages but a direct recognition available to those who can receive it. The Lotus Sutra\'s One Vehicle makes the same claim in a different direction: not that there is one path (the Lotus) rather than three, but that what appeared to be three paths was always already one. Both texts are critiquing their tradition\'s apparent multiplicity (the 114 logia of Thomas vs. the Three Vehicles of Hinayana) by pointing to an underlying unity. The hidden Kingdom (Thomas) and the One Vehicle (Lotus) are different images for the same claim: beneath the apparent diversity of paths, there is one destination.' },
+    { textId: 'bhagavad-gita-4', label: 'Bhagavad Gita — Krishna\'s multiple paths all leading to the same One', note: 'BG 4:11: "In whatever way people approach me, in that very way do I render to them. People everywhere follow my path, O Arjuna." The Bhagavad Gita explicitly states that all paths lead to Krishna, whatever the form of approach. The Lotus Sutra\'s upāya doctrine makes the same claim structurally: the Buddha\'s different teachings were adaptations to different capacities, but all were pointing to the same One Vehicle. Both texts resolve the apparent competition between paths by placing them within a single divine pedagogy — the paths are real, but they are real as adaptations, not as ultimate distinctions.' },
+    { textId: 'poimandres', label: 'Poimandres — the Nous that reveals the path to each according to their capacity', note: 'Poimandres in Corpus Hermeticum 1 tells the narrator: "Understand the light." The Nous reveals the path to the one who can receive it — and the revelation is direct rather than systematic. The Lotus Sutra\'s Buddha similarly reveals the highest teaching only "when the time has come" — when the disciples are ready to receive the One Vehicle rather than the preliminary Three Vehicles. Both traditions describe a divine pedagogy sensitive to the recipient\'s capacity, in which the highest revelation is held back until the student can bear it. The upāya principle and the Hermetic pedagogy of progressive revelation are describing the same divine teaching strategy.' },
+  ],
+  translations: [
+    { lang: 'en', label: 'Burton Watson (1993)' },
+    { lang: 'en-hurvitz', label: 'Leon Hurvitz (1976)' },
+    { lang: 'sa', label: 'Sanskrit (Saddharmapuṇḍarīka)' },
+    { lang: 'ja', label: 'Japanese (Myōhō Renge Kyō)' },
+  ],
+  sections: [
+    {
+      heading: 'The Unsurpassable Wisdom — Only Buddhas Know Each Other (Ch. 2, opening)',
+      verses: [
+        {
+          ref: 'Ch. 2:1–5',
+          text: 'At that time the World-Honored One calmly arose from his samadhi and addressed Shariputra, saying: "The wisdom of the Buddhas is infinitely profound and immeasurable. The door to this wisdom is difficult to understand and difficult to enter. Not one of the voice-hearers or pratyekabuddhas is able to comprehend it. What is the reason? A Buddha has personally attended a hundred, a thousand, ten thousand, a million, a countless number of Buddhas and has fully carried out an immeasurable number of religious practices. He has exerted himself bravely and vigorously, and his name is universally known. He has realized the Law that is profound and never encountered before."',
+          entities: [
+            { word: 'The wisdom of the Buddhas is infinitely profound and immeasurable', node: 'divine-wisdom', type: 'concept',
+              note: 'The Lotus Sutra\'s opening move in Chapter 2 is apophatic: the Buddha\'s wisdom is not merely greater than ordinary wisdom but "infinitely profound and immeasurable" — beyond the capacity of the voice-hearers (shravakas) and pratyekabuddhas (solitary enlightened ones) to comprehend. This is the Mahayana critique of Theravada: the arhat who achieves nirvana has reached a real liberation, but not the highest liberation. The Buddha\'s wisdom exceeds what any previous teaching has conveyed. This is the same move that the Mundaka makes (lower vs. higher knowledge) and the Cloud of Unknowing makes (thought vs. love): there is a level of reality that the current mode of knowing cannot reach.',
+              parallels: [
+                { label: 'Mundaka Upanishad — lower vs. higher knowledge; para vidya exceeds apara vidya', textId: 'mundaka-upanishad', note: 'The Mundaka distinguishes lower knowledge (all the Vedic sciences, including meditation techniques and philosophical analysis) from para vidya (the direct knowledge of Brahman that everything else points toward). The Lotus Sutra distinguishes the Three Vehicles (all genuine paths, but preliminary) from the One Vehicle (the ultimate teaching that subsumes all others). Both texts are making the same structural move: there is a level of the teaching that exceeds all prior teaching while not invalidating it. The Vedic sciences are not false; the Three Vehicles are not false. But there is more.' },
+              ]
+            },
+          ]
+        },
+      ]
+    },
+    {
+      heading: 'Skillful Means — Why the Buddha Taught Different Things (Ch. 2: middle)',
+      verses: [
+        {
+          ref: 'Ch. 2: The Upaya Revelation',
+          text: '"Shariputra, the Buddhas of the ten directions use immeasurable, countless skillful means, various causes and conditions, words of simile and parable, to expound the teachings for the sake of living beings. All of these teachings are for the sake of the one Buddha vehicle, so that the living beings who receive instruction from the Buddhas will in the end gain the wisdom of all species. [...] All the teachings preached by the Buddhas are to free living beings from their sufferings. But I have never yet expounded the greatest vehicle for living beings who had not yet eliminated their desires."',
+          entities: [
+            { word: 'various causes and conditions, words of simile and parable, to expound the teachings for the sake of living beings', node: 'upaya', type: 'concept',
+              note: 'Upāya (skillful means) is the Mahayana principle that the Buddha adapts his teaching to the capacity of each audience, not out of deception but out of pedagogical compassion. The Three Vehicles (for disciples, solitary sages, bodhisattvas) were genuine teachings — real paths that freed real people. But they were not the final teaching. The final teaching is the One Vehicle: everyone will become a Buddha. Upāya explains why the tradition has produced apparently contradictory teachings: they were true adaptations to different human needs, not competing doctrines. The principle has massive cross-traditional implications: it is the Buddhist framework that makes interfaith dialogue possible without relativism.',
+              parallels: [
+                { label: 'Bhagavad Gita — "in whatever way people approach me, in that way do I render to them"', textId: 'bhagavad-gita-4', note: 'BG 4:11 is the Upanishadic-Hindu formulation of the upāya principle: the divine meets each person where they are, in the form they can receive. The Lotus Sutra makes the same claim from the Buddha\'s perspective: the different vehicles were divine pedagogy adapted to human capacity. Both texts resolve religious diversity by grounding it in divine compassion rather than divine inconsistency. The many teachings are not contradictions — they are the same inexhaustible wisdom clothed differently for different ears.' },
+                { label: 'Gospel of Truth — the Father\'s Name revealed only to those who can receive it', textId: 'gospel-of-truth', note: 'The Gospel of Truth describes the Father\'s revelation as withheld until the recipient is prepared: "No one could see the Father except his Son." The Lotus Sutra\'s Buddha withholds the One Vehicle teaching until the time has come: "I have never yet expounded the greatest vehicle for living beings who had not yet eliminated their desires." Both texts describe divine pedagogy as sensitive to readiness: the highest teaching is not hidden out of stinginess but because it cannot be received by those who are not yet prepared. The withholding is itself an act of compassion.' },
+              ]
+            },
+          ]
+        },
+      ]
+    },
+    {
+      heading: 'The One Vehicle — Everyone Will Become a Buddha (Ch. 2: close)',
+      verses: [
+        {
+          ref: 'Ch. 2: The Declaration of One Vehicle',
+          text: '"Shariputra, I will now tell you directly. [...] All the voice-hearers and pratyekabuddhas who have heard this Law of mine will without exception attain Buddhahood. [...] I have vowed that all beings shall be the equal of myself and of my fellow devotees. [...] If I only used spiritual powers to extol the Thus Come One, then the living beings, deluded, would not understand and in their confusion would fall into evil paths. Now I will expound it in a straightforward manner."',
+          entities: [
+            { word: 'All the voice-hearers and pratyekabuddhas who have heard this Law of mine will without exception attain Buddhahood', node: 'universal-salvation', type: 'concept',
+              note: 'This is the Lotus Sutra\'s most radical claim and its greatest contribution to world religious thought: "without exception." Not the few righteous, not the spiritually advanced, not those who chose the right path — but everyone who has heard the teaching. Universal Buddhahood: every sentient being will attain full enlightenment. This is the Buddhist pole opposite to 4 Ezra\'s "the world to come for the sake of only a few." The Lotus Sutra resolves the exclusivist/universalist tension that 4 Ezra and Julian of Norwich could not resolve within Christianity: everyone, in the fullness of time, will attain liberation. The One Vehicle has no final exits.',
+              parallels: [
+                { label: 'Julian of Norwich — "All shall be well"; the universalist pole in Christian theology', textId: 'julian-of-norwich', note: 'Julian\'s revelation that "all shall be well, and all manner of thing shall be well" is the Christian equivalent of the Lotus Sutra\'s declaration that all will attain Buddhahood. Both texts are asserting universal salvation against the excluding tradition (4 Ezra\'s few saved; the Theravada arhat path that requires specific conditions). Julian receives this as revelation but cannot reconcile it with the Church\'s doctrine of damnation. The Lotus Sutra is the fully developed philosophical argument for what Julian received as intuition: universal liberation is not a soft sentiment but the ultimate structure of reality, because Buddha-nature (tathāgatagarbha) is in all beings.' },
+                { label: '4 Ezra — "the world to come for the sake of only a few"; the opposite pole', textId: '4-ezra', note: '4 Ezra 8:1 and the Lotus Sutra\'s universal Buddhahood are the two poles of the world religious tradition\'s response to the question: will all be saved? 4 Ezra: only a few; the world to come is for a small remnant. Lotus Sutra: all, without exception, will attain Buddhahood. The Buddhist tradition arrives at the universalist answer through the doctrine of Buddha-nature (every sentient being has the capacity for Buddhahood); the exclusivist answer appears in both Judaism (4 Ezra) and Christianity (Augustine, Calvin). The tension is unresolved; both answers exist in the world\'s sacred texts.' },
+              ]
+            },
+          ]
+        },
+      ]
+    },
+  ]
+};

@@ -27,6 +27,7 @@ window.ScriptureReader = (function () {
     'psalm-82':           { religion:'Christianity', group:'Old Testament',          canon:'All Canons',          sort:50 },
     'amos-5':             { religion:'Christianity', group:'Old Testament',          canon:'All Canons',          sort:53 },
     'isaiah-6':           { religion:'Christianity', group:'Old Testament',          canon:'All Canons',          sort:60 },
+    'isaiah-40':          { religion:'Christianity', group:'Old Testament',          canon:'All Canons',          sort:62 },
     'isaiah-45':          { religion:'Christianity', group:'Old Testament',          canon:'All Canons',          sort:70 },
     'ezekiel-1':          { religion:'Christianity', group:'Old Testament',          canon:'All Canons',          sort:80 },
     'ecclesiastes-1':     { religion:'Christianity', group:'Old Testament',          canon:'All Canons',          sort:90 },
@@ -37,7 +38,9 @@ window.ScriptureReader = (function () {
     'jeremiah-31':        { religion:'Christianity', group:'Old Testament',          canon:'All Canons',          sort:58 },
     'daniel-7':           { religion:'Christianity', group:'Old Testament',          canon:'All Canons',          sort:75 },
     // ── Christianity — New Testament ────────────────────────────────
+    'luke-1-magnificat':  { religion:'Christianity', group:'New Testament',          canon:'All Canons',          sort:8  },
     'john-1':             { religion:'Christianity', group:'New Testament',          canon:'All Canons',          sort:10 },
+    'john-15-vine':       { religion:'Christianity', group:'New Testament',          canon:'All Canons',          sort:11 },
     'john-17':            { religion:'Christianity', group:'New Testament',          canon:'All Canons',          sort:12 },
     'john-3':             { religion:'Christianity', group:'New Testament',          canon:'All Canons',          sort:20 },
     'romans-8':           { religion:'Christianity', group:'New Testament',          canon:'All Canons',          sort:30 },
@@ -98,6 +101,7 @@ window.ScriptureReader = (function () {
     'bhagavad-gita-11':   { religion:'Hinduism',      group:'Epics',                 canon:'Mahabharata',         sort:20 },
     // ── Buddhism ────────────────────────────────────────────────────
     'dhammapada-1':       { religion:'Buddhism',      group:'Pali Canon',            canon:'Theravada',           sort:10 },
+    'lotus-sutra-2':      { religion:'Buddhism',      group:'Mahayana',              canon:'Mahayana',            sort:5  },
     'heart-sutra':        { religion:'Buddhism',      group:'Mahayana',              canon:'Mahayana',            sort:10 },
     'bardo-thodol':       { religion:'Buddhism',      group:'Vajrayana',             canon:'Tibetan Canon',       sort:10 },
     // ── Taoism ──────────────────────────────────────────────────────
