@@ -2212,35 +2212,48 @@
       const thresh = dynamicHubThreshold();
       // SPACE-FILL RULE (hub mode):
       //   Every label enters the deconflict pool — not just hubs. Deconflict
-      //   sorts by degree, so hubs claim their slots first; non-hubs fill the
-      //   leftover space. Non-hubs start at visibility:hidden so they don't
-      //   flash before the deconflict pass runs. Hubs start visible; if a
-      //   higher-priority active/hovered label collides with one, deconflict
-      //   downgrades the hub for that pass.
+      //   sorts by degree, hubs claim their slots first, non-hubs fill the
+      //   leftover space.
+      //
+      // INVARIANT: deconflict OWNS the `visibility` property after it has run
+      // once. This function ONLY seeds visibility when a label is newly
+      // entering the pool (display: none → ''). For labels already in the
+      // pool, leave visibility alone — otherwise we clobber the choices
+      // deconflict just made (the cause of the pan/zoom twitch fixed
+      // 2026-05-17: every `_camRefreshT` mid-motion call was re-hiding the
+      // non-hubs that deconflict had promoted to visible, and the pan-gate
+      // on deconflict meant they stayed hidden until release).
       //
       // 'off' still hides everything. Family-filter still hard-hides out-of-
       // filter families. Active/hovered always wins.
       nodeLabelEntries.forEach(L => {
         let displayed = true;
-        let initiallyVisible = true;
-        if (_labelsMode === 'off') { displayed = false; initiallyVisible = false; }
+        let seedVisible = true;
+        if (_labelsMode === 'off') { displayed = false; seedVisible = false; }
         else if (_labelsMode === 'hub') {
-          // Pool: all labels. Initial paint: only hubs visible; non-hubs
-          // start hidden and earn visibility in the deconflict pass.
+          // Pool: all labels. Seed: hubs visible immediately, non-hubs hidden
+          // until deconflict promotes them.
           displayed = true;
-          initiallyVisible = (L.deg >= thresh);
+          seedVisible = (L.deg >= thresh);
         }
-        // 'all' falls through: displayed=true, initiallyVisible=true.
-        if (!famInFilter(L.family)) { displayed = false; initiallyVisible = false; }
-        if (isActiveOrHovered(L.id))  { displayed = true; initiallyVisible = true; }
+        // 'all' mode: displayed=true, seedVisible=true.
+        if (!famInFilter(L.family)) { displayed = false; seedVisible = false; }
+        if (isActiveOrHovered(L.id))  { displayed = true; seedVisible = true; }
 
         const curDisplay = L.el.style.display;
+        const wasOff     = (curDisplay === 'none');
         const nextDisplay = displayed ? '' : 'none';
         if (curDisplay !== nextDisplay) L.el.style.display = nextDisplay;
 
-        if (displayed) {
-          const v = initiallyVisible ? '' : 'hidden';
-          if (L.el.style.visibility !== v) L.el.style.visibility = v;
+        if (!displayed) return;   // hidden via display:none, visibility irrelevant
+
+        // Seed visibility ONLY on transitions into the pool. For already-
+        // visible labels, leave deconflict's choice intact. Active/hovered
+        // override: ALWAYS lift from hidden.
+        if (wasOff) {
+          L.el.style.visibility = seedVisible ? '' : 'hidden';
+        } else if (isActiveOrHovered(L.id) && L.el.style.visibility === 'hidden') {
+          L.el.style.visibility = '';
         }
       });
       syncNodeLabelsImmediate();
@@ -2314,7 +2327,6 @@
     //     once after the user lets go, which is the natural settle moment.
     let _isPanning     = false;
     let _panEndTimer   = null;
-    let _camRefreshT   = null;
     function syncNodeLabelsImmediate() {
       const distMult = window.CODEX_DEV?.settings?.nodeLabelDist || 1;
       for (let i = 0; i < nodeLabelEntries.length; i++) {
@@ -2326,20 +2338,23 @@
       }
     }
     sigma.getCamera().on('updated', () => {
-      // Mark motion so deconflict gets deferred. No overlay opacity changes.
+      // Mark motion. While panning/zooming, do NOT recompute visibility —
+      // every mid-motion `updateNodeLabelVisibility` re-seeded non-hubs to
+      // `visibility: hidden`, and deconflict was gated by `_isPanning`, so
+      // the labels stayed hidden until the user let go (the twitch). The
+      // pool is already wide (every label is display:'' in hub mode), so
+      // we don't lose anything by waiting for settle to re-evaluate.
+      // Positions update via syncNodeLabels on afterRender — labels follow
+      // the camera smoothly with no visibility churn.
       _isPanning = true;
       clearTimeout(_panEndTimer);
       _panEndTimer = setTimeout(() => {
         _isPanning = false;
-        // Final visibility refresh + deconflict once motion has actually
-        // stopped (200 ms quiet window).
+        // Settle: re-evaluate threshold (zoom may have crossed a tier
+        // boundary) + deconflict once.
         updateNodeLabelVisibility();
         scheduleDeconflict();
       }, 200);
-      // Re-evaluate threshold mid-motion so labels appear/disappear in
-      // proportion to zoom — but on a slower cadence to avoid thrashing.
-      clearTimeout(_camRefreshT);
-      _camRefreshT = setTimeout(updateNodeLabelVisibility, 80);
     });
 
     function syncNodeLabels() {
