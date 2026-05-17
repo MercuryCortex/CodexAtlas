@@ -9695,3 +9695,287 @@ SCRIPTURE_TEXTS['lotus-sutra-2'] = {
     },
   ]
 };
+
+// ── Batch 22 ──────────────────────────────────────────────────────────────
+
+SCRIPTURE_TEXTS['acts-2-pentecost'] = {
+  title: 'Acts 2 — The Day of Pentecost',
+  shortTitle: 'Acts 2',
+  tradition: 'New Testament',
+  date: 'c. 85–90 CE',
+  intro: 'Acts 2 narrates the birth of the Christian community at Pentecost — fifty days after the Passover crucifixion — when the Holy Spirit descends on the gathered disciples as a rushing wind and tongues of fire, enabling them to speak in every language simultaneously. Peter interprets the event through Joel 2:28–32: "I will pour out my Spirit upon all flesh; your sons and daughters shall prophesy, your old men shall dream dreams, your young men shall see visions." This is the New Testament fulfillment of Jeremiah 31\'s promise (the new covenant written on hearts) and Ezekiel 37\'s vision (the Spirit breathed into the dry bones). The Pentecost event is deliberately presented as the reversal of Babel (Genesis 11) — where Babel scattered languages and peoples, Pentecost unites them through the Spirit\'s gift of universal intelligibility. Acts 2:38\'s proclamation — "repent, be baptized, receive the Holy Spirit; the promise is for you and for all who are far away" — makes the Spirit\'s outpouring explicitly universal.',
+  crossTradition: [
+    { textId: 'jeremiah-31', label: 'Jeremiah 31 — "I will write my law on their hearts"; Acts 2 as fulfillment', note: 'Jeremiah 31:33 promises a new covenant written on hearts, replacing the external law of Sinai. Acts 2:38 delivers: the Holy Spirit given to every believer is the mechanism of that interior inscription. Paul makes this connection explicit in 2 Corinthians 3:3 ("written not on tablets of stone but on tablets of human hearts"). Acts 2 is the event; Jeremiah 31 is the promise; 2 Corinthians 3 is the theological commentary. The three texts form a single movement: prophetic promise → eschatological event → apostolic interpretation.' },
+    { textId: 'ezekiel-37-dry-bones', label: 'Ezekiel 37 — the Spirit breathed into dry bones; Acts 2 as its fulfillment', note: 'Ezekiel 37 describes the prophet\'s vision of a valley of dry bones that come to life when the Spirit (ruach — wind, breath, spirit) is breathed into them. Acts 2:1-4 describes the Pentecost Spirit as a "rushing wind" (pneuma = wind/spirit in Greek) filling the house and the people. Both texts use the same vocabulary (wind/spirit, filling, new life) to describe divine animation of a community that was previously static. The Ezekiel dry bones are Israel in exile — spiritually dead; the Acts 2 disciples are fearfully hiding in an upper room. In both cases, the Spirit turns the dead/dormant into a living, speaking, witnessing community.' },
+    { textId: 'japji-sahib', label: 'Japji Sahib — the Hukam (divine Command) that comes from above; Spirit as the divine initiative', note: 'Japji Sahib\'s central concept of Hukam — the divine will or command that orders all things and that the human must align with rather than resist — parallels the Acts 2 understanding of the Spirit as the divine initiative that cannot be earned or manufactured but only received. Guru Nanak: "By thinking, He cannot be reduced to thought" — the Spirit comes unbidden, as wind. Acts 2:2: "And suddenly from heaven there came a sound like the rush of a violent wind." Both texts insist that the divine breaking-in is not a human achievement but a divine gift — and both describe it as arriving from a higher dimension into the human situation.' },
+  ],
+  translations: [
+    { lang: 'en', label: 'NRSV' },
+    { lang: 'en-kjv', label: 'King James (1611)' },
+    { lang: 'grc', label: 'Greek (Koine)' },
+  ],
+  sections: [
+    {
+      heading: 'Wind and Fire — The Spirit\'s Arrival (2:1–4)',
+      verses: [
+        {
+          ref: '2:1–4',
+          text: 'When the day of Pentecost had come, they were all together in one place. And suddenly from heaven there came a sound like the rush of a violent wind, and it filled the entire house where they were sitting. Divided tongues, as of fire, appeared among them, and a tongue rested on each of them. All of them were filled with the Holy Spirit and began to speak in other languages, as the Spirit gave them ability.',
+          entities: [
+            { word: 'a sound like the rush of a violent wind', node: 'holy-spirit', type: 'concept',
+              note: 'The wind metaphor for the Spirit is deeply rooted in both Hebrew (ruach = wind/breath/spirit) and Greek (pneuma = wind/breath/spirit) vocabulary — the word for spirit IS the word for wind in both languages. Acts 2 exploits this: the Spirit arrives as wind before it arrives as fire. The auditory experience precedes the visual. This is the experiential order of encounter with the divine in many traditions: first the hearing (the rushing sound, the Word spoken), then the illumination (tongues of fire, light). The rabbinic tradition held that at Sinai the divine voice was also divided into all the languages of the world — Acts 2 is a deliberate echo of Sinai.',
+              parallels: [
+                { label: 'Ezekiel 37 — "come from the four winds, O breath, and breathe upon these slain"', textId: 'ezekiel-37-dry-bones', note: 'Ezekiel 37:9: "Come from the four winds, O breath (ruach), and breathe upon these slain, that they may live." Acts 2:2: "suddenly from heaven there came a sound like the rush of a violent wind." Both use the same Hebrew/Greek vocabulary (ruach/pneuma = wind/spirit/breath) and both describe the Spirit\'s arrival as the animation of a previously static or dead community. Ezekiel\'s bones rise and become an army; the Acts 2 disciples begin speaking in all languages and the community grows by three thousand. Wind animates; Spirit creates community.' },
+              ]
+            },
+          ]
+        },
+      ]
+    },
+    {
+      heading: 'Peter\'s Sermon — "I Will Pour Out My Spirit on All Flesh" (2:14–21)',
+      verses: [
+        {
+          ref: '2:14–21',
+          text: 'But Peter, standing with the eleven, raised his voice and addressed them, "Men of Judea and all who live in Jerusalem, let this be known to you, and listen to what I say. Indeed, these are not drunk, as you suppose, for it is only nine o\'clock in the morning. No, this is what was spoken through the prophet Joel: \'In the last days it will be, God declares, that I will pour out my Spirit upon all flesh, and your sons and your daughters shall prophesy, and your young men shall see visions, and your old men shall dream dreams. Even upon my slaves, both men and women, in those days I will pour out my Spirit; and they shall prophesy.\'"',
+          entities: [
+            { word: 'I will pour out my Spirit upon all flesh', node: 'holy-spirit', type: 'concept',
+              note: 'The Joel 2 quotation is Acts 2\'s theological key: "all flesh" — not Israel only, not the learned only, not the male only (sons AND daughters, old men AND young men, slaves both male and female). The Pentecost universalism is encoded in the prophecy Peter quotes. This is the pneumatological fulfillment of Jeremiah 31:34 ("they shall all know me, from the least to the greatest") — the Spirit democratizes prophetic experience, which had previously been the gift of specific individuals (Moses, Elijah, Isaiah). Every person becomes a potential prophet. This democratization of the Spirit is the NT equivalent of the Lotus Sutra\'s universal Buddhahood: the highest spiritual capacity is now in principle available to all.',
+              parallels: [
+                { label: 'Jeremiah 31 — "they shall all know me, from the least to the greatest"', textId: 'jeremiah-31', note: 'Jeremiah 31:34: "they shall all know me, from the least of them to the greatest." Acts 2:17-18: "I will pour out my Spirit upon all flesh... your sons and daughters shall prophesy... even upon my slaves." Both texts declare the universalization of direct divine knowledge — no longer mediated only through priests, prophets, or teachers but available to every person. The Pentecost Spirit and Jeremiah\'s new covenant are making the same theological claim about the removal of the spiritual hierarchy that mediated divine knowledge in the old covenant.' },
+                { label: 'Lotus Sutra — universal Buddhahood; all without exception will attain enlightenment', textId: 'lotus-sutra-2', note: 'The Lotus Sutra\'s declaration that all beings will attain Buddhahood and Acts 2\'s Joel quotation that the Spirit will be poured on all flesh are structurally parallel universalisms. Both texts are breaking down the boundaries that restricted spiritual attainment to specific classes (the arhat / the prophet) by declaring that the highest spiritual gift is now universally available. The mechanism differs (Buddha-nature as always-present / Spirit poured from above), but the universalist conclusion is the same: all flesh, not a spiritual elite.' },
+              ]
+            },
+          ]
+        },
+      ]
+    },
+    {
+      heading: 'The Promise Is for All (2:38–41)',
+      verses: [
+        {
+          ref: '2:38–41',
+          text: 'Peter said to them, "Repent, and be baptized every one of you in the name of Jesus Christ so that your sins may be forgiven; and you will receive the gift of the Holy Spirit. For the promise is for you, for your children, and for all who are far away, everyone whom the Lord our God calls to him." [...] So those who welcomed his message were baptized, and that day about three thousand persons were added.',
+          entities: [
+            { word: 'the promise is for you, for your children, and for all who are far away', node: 'salvation', type: 'concept',
+              note: '"All who are far away" — the phrase reaches beyond Jerusalem, beyond Israel, beyond the first generation, toward the Gentile mission that will occupy the rest of Acts and the entire Pauline corpus. This is the geographical and temporal expansion of the Pentecost universalism: not just all flesh prophetically (Joel 2) but all who are far away practically. The Babel narrative (Genesis 11) scattered peoples into different languages and created the category of "the far away." Acts 2 reverses Babel: the Spirit enables communication across the language barrier, and the promise is explicitly for those who are "far away." The scattering of Babel becomes the gathering of Pentecost.',
+              parallels: [
+                { label: 'Isaiah 40 — "The Creator of the ends of the earth does not grow weary"', textId: 'isaiah-40', note: 'Isaiah 40 describes a God whose reach extends to the ends of the earth (40:28) and who gives power to the faint (40:29). Acts 2\'s "all who are far away" is the fulfilment of that reach — the Spirit that cannot be limited by geography any more than the Creator can be limited by the ends of the earth. Both texts are making the same claim about divine universality: the God of Israel is also the God of all peoples, and the divine gift (comfort/Spirit) crosses the boundaries that human religion has set.' },
+              ]
+            },
+          ]
+        },
+      ]
+    },
+  ]
+};
+
+SCRIPTURE_TEXTS['micah-6'] = {
+  title: 'Micah 6 — What the Lord Requires',
+  shortTitle: 'Micah 6',
+  tradition: 'Hebrew Bible / Old Testament',
+  date: 'c. 735–700 BCE',
+  intro: 'Micah 6:8 is the most compressed prophetic ethics in the Hebrew Bible — three words in Hebrew (mishpat, hesed, tzniut) that summarize everything: do justice, love kindness/mercy, walk humbly with your God. It is the prophetic answer to a question that has occupied every religion: what exactly does God require of human beings? Micah frames the answer as a lawsuit — the Lord summons Israel to trial before the mountains and the foundations of the earth, asking what Israel has done with the covenant, and receiving the question back: "With what shall I come before the Lord?" The answer deflates all ritualism and transactionalism in three words. Composed during the same 8th-century prophetic renaissance as Amos and the first Isaiah, Micah 6:8 has been quoted more often in interfaith and social-justice contexts than perhaps any other OT verse. Its three terms — mishpat (justice/right judgment), hesed (kindness/mercy/faithfulness), and tzniut/halakh with God (humble walking with God) — are simultaneously ethical, relational, and mystical.',
+  crossTradition: [
+    { textId: 'amos-5', label: 'Amos 5 — let justice roll; the same prophetic demand a decade earlier', note: 'Amos (c. 760 BCE) and Micah (c. 735 BCE) are prophetic contemporaries delivering the same message from different angles. Amos 5:24 demands justice rolling like waters; Micah 6:8 summarizes what justice requires: mishpat (right judgment in the civic/legal sense), hesed (kindness/mercy in the relational sense), and walking humbly with God (the devotional/mystical ground of both). Amos gives the image; Micah gives the analysis. Together they form the prophetic ethics of the 8th century — the same ethics that Jesus will quote in the Sermon on the Mount and Matthew 25.' },
+    { textId: 'confucius-analects', label: 'Confucius — ren (humaneness) and the cultivation of virtue; the exact parallel to hesed', note: 'Micah\'s three terms map strikingly onto Confucian ethics: mishpat (justice, right judgment) = yi (righteousness, the right thing in the right situation); hesed (kindness, mercy, faithfulness) = ren (humaneness, the central Confucian virtue of care for others); walking humbly with God = the Confucian cultivation of humility and self-knowledge that marks the junzi. Both the Hebrew prophet and the Chinese sage are describing the same three-dimensional ethical-spiritual life: right action, right relationship, right orientation of the self. The conceptual vocabulary is different; the structure of the good life is identical.' },
+    { textId: 'japji-sahib', label: 'Japji Sahib — "truth is higher than everything; but higher still is truthful living"', note: 'Guru Nanak\'s Pauri 4: "Truth is higher than everything; but higher still is truthful living." Micah 6:8: "He has told you, O mortal, what is good; and what does the Lord require of you but to do justice, and to love kindness, and to walk humbly with your God?" Both texts compress the entire religious life into a brief formulation and insist that lived practice surpasses theoretical knowledge. Both are also structurally trinitarian in their formulation: truth/truthful living (Nanak) and justice/mercy/humility (Micah) both describe a three-dimensional wholeness that cannot be reduced to any one of its parts.' },
+  ],
+  translations: [
+    { lang: 'en', label: 'NRSV' },
+    { lang: 'en-kjv', label: 'King James (1611)' },
+    { lang: 'he', label: 'Hebrew (Masoretic Text)' },
+  ],
+  sections: [
+    {
+      heading: 'The Cosmic Lawsuit — What Have You Done With the Covenant? (6:1–5)',
+      verses: [
+        {
+          ref: '6:1–5',
+          text: 'Hear what the Lord says: Rise, plead your case before the mountains, and let the hills hear your voice. Hear, you mountains, the controversy of the Lord, and you enduring foundations of the earth; for the Lord has a controversy with his people, and he will contend with Israel. "O my people, what have I done to you? In what have I wearied you? Answer me! For I brought you up from the land of Egypt, and redeemed you from the house of slavery; and I sent before you Moses, Aaron, and Miriam."',
+          entities: [
+            { word: 'Rise, plead your case before the mountains', node: 'covenant', type: 'concept',
+              note: 'The cosmic lawsuit form (rib pattern) appears in several Hebrew prophets (Hosea 4, Isaiah 1, Micah 6): God summons all creation as witness and judge in a lawsuit against Israel. The mountains and foundations of the earth are the witnesses — they have been present since creation and have watched the covenant history unfold. This is not merely literary but theological: the covenant between God and Israel was always a cosmic event, not a private agreement. The lawsuit reminds Israel of what God has done (exodus, wilderness, redemption from slavery) as the ground for the demand that follows. The question "what have I done to you? In what have I wearied you?" is the divine equivalent of the human parent\'s lament: I gave everything; what more could I have done?',
+              parallels: [
+                { label: 'Yasna 44 — Zarathustra interrogates Ahura Mazda about cosmic order', textId: 'yasna-44', note: 'Yasna 44\'s dialogue structure and Micah 6\'s cosmic lawsuit are both forms of prophetic questioning before cosmic witnesses. Where Zarathustra questions the divine about who maintains cosmic order, Micah 6 has the divine questioning Israel about their faithfulness to the covenant. Both texts deploy the cosmos (mountains/foundations, sun and stars) as the frame within which the ethical relationship between the divine and the human is contested. The prophetic mode — interrogation in cosmic terms — crosses the Avestan and Hebrew traditions.' },
+              ]
+            },
+          ]
+        },
+      ]
+    },
+    {
+      heading: 'The Great Question — What Does the Lord Require? (6:6–8)',
+      verses: [
+        {
+          ref: '6:6–7',
+          text: '"With what shall I come before the Lord, and bow myself before God on high? Shall I come before him with burnt offerings, with calves a year old? Will the Lord be pleased with thousands of rams, with ten thousands of rivers of oil? Shall I give my firstborn for my transgression, the fruit of my body for the sin of my soul?"',
+          entities: [
+            { word: 'Shall I give my firstborn for my transgression, the fruit of my body for the sin of my soul?', node: 'worship', type: 'concept',
+              note: 'The ascending scale of offerings — burnt offerings, year-old calves, thousands of rams, ten thousand rivers of oil, one\'s firstborn child — describes a logic of escalating religious transaction: if the ordinary offering isn\'t enough, I will give more; if more isn\'t enough, I will give my most precious possession. The question "Shall I give my firstborn?" is not describing actual child sacrifice (which was condemned in Israel) but describing the transactional religious logic taken to its ultimate conclusion: what price is sufficient to secure divine favor? Micah\'s answer (6:8) demolishes the premise: the question is wrong. It is not about quantity of offering but quality of life.',
+              parallels: [
+                { label: 'Amos 5 — "I hate, I despise your festivals"; the prophetic rejection of religious transaction', textId: 'amos-5', note: 'Amos 5:21-24 rejects the entire apparatus of ritual worship when divorced from justice. Micah 6:6-7 adds a ladder of escalation to the same critique: more rams, more oil, even one\'s firstborn — none of it is what God requires. Both prophets are dismantling the transactional model of religion (give God enough and receive divine favor) and replacing it with a relational model (live with justice, mercy, and humility). The prophetic critique is consistent across the 8th century.' },
+              ]
+            },
+          ]
+        },
+        {
+          ref: '6:8',
+          text: 'He has told you, O mortal, what is good; and what does the Lord require of you but to do justice, and to love kindness, and to walk humbly with your God?',
+          entities: [
+            { word: 'to do justice, and to love kindness, and to walk humbly with your God', node: 'ethics', type: 'concept',
+              note: 'Three Hebrew words: mishpat (justice — right judgment, the rights of others maintained in the civic and legal sphere), hesed (kindness/mercy/faithfulness — the covenant loyalty that exceeds what is strictly owed, what we might call grace in the horizontal dimension), and tzniut/halakh — literally "walking humbly," the attentive, unassuming daily orientation toward God that grounds both mishpat and hesed. The structure is: outward (justice in the public sphere) → relational (mercy in the human relationship) → inward/vertical (humble walking with God). All three are required; none can substitute for the others. To do justice without mercy is harsh; to love mercy without justice is sentimental; to walk humbly without doing justice or loving mercy is pietism without ethics.',
+              parallels: [
+                { label: 'Matthew 25 — justice = the hidden Christ in the poor; mercy = welcome and care', textId: 'matthew-25', note: 'Matthew 25:31-46 is the New Testament expansion of Micah 6:8. "Do justice" = feed the hungry, clothe the naked, visit the imprisoned. "Love kindness/mercy" = welcome the stranger. "Walk humbly with your God" = do all this without knowing you are doing it to Christ — the absence of calculation or self-consciousness that constitutes true humility. Matthew 25 unpacks what Micah 6:8 compresses. They are the same text at different levels of specificity.' },
+                { label: 'Confucius — mishpat = yi (righteousness), hesed = ren (humaneness), walking humbly = junzi cultivation', textId: 'confucius-analects', note: 'The three Confucian cardinal virtues (ren — humaneness, yi — righteousness, li — ritual propriety/humility) map directly onto Micah\'s three requirements (hesed — kindness, mishpat — justice, walking humbly). Confucius 12.1: "To master oneself and return to propriety is humaneness." Micah 6:8: "walk humbly with your God." Both the Hebrew prophet and the Chinese sage are describing the same three-dimensional structure of the ethical life. The conceptual vocabulary is culturally specific; the structure is universal.' },
+                { label: 'Japji Sahib — truthful living as the synthesis of all three', textId: 'japji-sahib', note: 'Japji Pauri 4: "Truth is higher than everything; but higher still is truthful living." Micah 6:8 is the content of truthful living specified: do justice, love mercy, walk humbly. Guru Nanak\'s sach achar (truthful conduct) and Micah\'s three requirements are the same demand in different cultural vocabularies. Both recognize that the highest religious value is not the intellectual acknowledgment of truth but the practical embodiment of it in the full dimensions of human life (civic/justice, relational/mercy, spiritual/humility).' },
+              ]
+            },
+          ]
+        },
+      ]
+    },
+  ]
+};
+
+SCRIPTURE_TEXTS['2-corinthians-3'] = {
+  title: '2 Corinthians 3 — The Letter and the Spirit',
+  shortTitle: '2 Corinthians 3',
+  tradition: 'New Testament',
+  date: 'c. 54–55 CE',
+  intro: '2 Corinthians 3 is Paul\'s most philosophically sophisticated reflection on the difference between the old and new covenants, built entirely on Jeremiah 31\'s promise of the law written on hearts. Defending his apostolic authority, Paul declares that the Corinthians themselves are his "letter of recommendation" — "written not with ink but with the Spirit of the living God, not on tablets of stone but on tablets of human hearts" (3:3). From there he develops the contrast between letter (gramma — the written law, external and potentially lethal when divorced from the Spirit) and Spirit (pneuma — the interior transformation that gives life). The chapter reaches its climax in one of the most transformative verses in the NT: "And all of us, with unveiled faces, seeing the glory of the Lord as though reflected in a mirror, are being transformed into the same image from one degree of glory to another; for this comes from the Lord, the Spirit." This verse — transformation by beholding — is the ground of the entire Christian mystical tradition.',
+  crossTradition: [
+    { textId: 'jeremiah-31', label: 'Jeremiah 31 — the new covenant written on hearts; 2 Cor 3 as its apostolic commentary', note: '2 Corinthians 3:3 is the explicit New Testament commentary on Jeremiah 31:33: "written not with ink but with the Spirit of the living God, not on tablets of stone but on tablets of human hearts." Paul is not merely alluding to Jeremiah — he is doing sustained theological exegesis of the new covenant promise. The Corinthians themselves (transformed by the Spirit) are the proof that Jeremiah\'s promise has been enacted. The text-commentary relationship: Jeremiah 31 provides the promise; 2 Corinthians 3 describes the fulfillment as experienced in the apostolic community.' },
+    { textId: 'mundaka-upanishad', label: 'Mundaka — transformation by knowing; "he who knows Brahman becomes Brahman"', note: 'Mundaka 3.2.9: "brahma-vid brahmaiva bhavati — he who knows Brahman becomes Brahman." 2 Corinthians 3:18: "beholding the glory of the Lord as though reflected in a mirror, are being transformed into the same image." Both texts describe transformation through encounter with the absolute — not transformation achieved by effort but transformation that happens in the act of genuine knowing/beholding. The Upanishadic epistemology (like knows like; to know Brahman is to become Brahman) and the Pauline transformation theology (beholding = being transformed) are describing the same ontological structure of the highest knowing.' },
+    { textId: 'plato-cave', label: 'Plato\'s Cave — turning to face the sun; the unveiled face as the equivalent of ascent', note: 'In Plato\'s allegory, the prisoner who turns toward the sun is initially blinded but gradually can see more clearly, and the ascent transforms what the person can see — and by implication, what the person is. 2 Corinthians 3:18 describes beholding the divine glory "with unveiled faces" — the veil removed by turning to the Lord (3:16). Both texts use the turning/unveiling metaphor for the transition from the mediated to the direct perception of the true reality. Both describe this transition as transformative — you cannot behold the true reality without being changed by it. Plato\'s ascent-toward-sun and Paul\'s unveiled beholding are describing the same epistemological-ontological event.' },
+  ],
+  translations: [
+    { lang: 'en', label: 'NRSV' },
+    { lang: 'en-kjv', label: 'King James (1611)' },
+    { lang: 'grc', label: 'Greek (Koine)' },
+  ],
+  sections: [
+    {
+      heading: 'Written on Hearts — The New Covenant Enacted (3:1–6)',
+      verses: [
+        {
+          ref: '3:1–6',
+          text: 'Are we beginning to commend ourselves again? Surely we do not need, as some do, letters of recommendation to you or from you, do we? You yourselves are our letter, written on our hearts, to be known and read by all; and you show that you are a letter of Christ, prepared by us, written not with ink but with the Spirit of the living God, not on tablets of stone but on tablets of human hearts. [...] Not that we are competent of ourselves to claim anything as coming from us; our competence is from God, who has made us competent to be ministers of a new covenant, not of letter but of spirit; for the letter kills, but the Spirit gives life.',
+          entities: [
+            { word: 'the letter kills, but the Spirit gives life', node: 'covenant', type: 'concept',
+              note: 'The most quoted phrase from this chapter — and one of the most misunderstood. Paul is not dismissing the written word or the law as such (he cites scripture constantly). He is making a claim about the mode of encounter with the divine: the letter (gramma — the written code treated as an external law to be obeyed) kills because it reduces the living relationship between God and humanity to a transaction, a checklist, a contract. The Spirit (pneuma) gives life because it is the interior transformation that makes the external law unnecessary — not because the law was wrong but because the Spirit has written it on the heart (Jeremiah 31). The Spirit does not abolish the law; the Spirit internalizes it.',
+              parallels: [
+                { label: 'Jeremiah 31 — "I will write my law on their hearts"; letter becomes Spirit', textId: 'jeremiah-31', note: '2 Corinthians 3:3 quotes Jeremiah 31:33 directly: "written not on tablets of stone but on tablets of human hearts." The "letter kills" (external law on stone) and "the Spirit gives life" (internal law on the heart) is Paul\'s commentary on exactly the transition Jeremiah describes: from the Sinai covenant written in stone to the new covenant written in the heart by the Spirit. The letter is Sinai; the Spirit is Jeremiah\'s new covenant; 2 Corinthians 3 is the theological elaboration of how the transition happened.' },
+                { label: 'Thomas à Kempis — "many know much but have little life"; the letter without Spirit', textId: 'thomas-a-kempis', note: 'Thomas à Kempis: "lofty words make thee not holy and just; but a virtuous life maketh thee dear to God." Paul: "the letter kills, but the Spirit gives life." Both are critiquing the same failure: knowledge and form without interior transformation. The theological scholar who knows the letter of scripture without the Spirit, and the proud philosopher who watches the stars without knowing himself, are both casualties of the letter-without-Spirit. Thomas\'s practical devotion and Paul\'s theology of the Spirit are both prescriptions for the same disease: the form without the life.' },
+              ]
+            },
+          ]
+        },
+      ]
+    },
+    {
+      heading: 'The Veil Removed — From Fading Glory to Permanent Transformation (3:7–18)',
+      verses: [
+        {
+          ref: '3:12–16',
+          text: 'Since, then, we have such a hope, we act with great boldness, not like Moses, who put a veil over his face to keep the people of Israel from gazing at the end of the glory that was being set aside. But their minds were hardened. Indeed, to this very day, when they hear the reading of the old covenant, that same veil is still there, since only in Christ is it set aside. Indeed, to this very day whenever Moses is read, a veil lies over their minds; but when one turns to the Lord, the veil is removed.',
+          entities: [
+            { word: 'when one turns to the Lord, the veil is removed', node: 'spiritual-transformation', type: 'concept',
+              note: 'Paul reinterprets the Exodus 34 narrative of Moses\'s veil with extraordinary creativity. In Exodus, Moses veils his face because the divine glory is too bright for Israel to bear. Paul reads the veil differently: it conceals the fading of the old covenant\'s glory, and it is not a permanent condition but one that is removed by "turning to the Lord." The Greek word for "turning" (epistrephō) is the same word used for conversion — it is the turn toward the light that removes the veil. This is structurally identical to Plato\'s cave allegory: the prisoner must turn away from the shadows and toward the light, and this turning is painful but liberating.',
+              parallels: [
+                { label: 'Gospel of Truth — "when they wake up, the nightmare is gone"; gnosis removes the veil', textId: 'gospel-of-truth', note: 'The Gospel of Truth describes gnosis as waking from a nightmare: "when those who are going through all these things wake up, they see nothing." 2 Corinthians 3:16: "when one turns to the Lord, the veil is removed." Both texts describe the same epistemological event: the removal of the obscuring layer (nightmare / veil) that prevented clear vision of reality. The Valentinian gnosis and the Pauline turning-to-the-Lord are different theological accounts of the same structural event: the unveiling that reveals what was always already true.' },
+                { label: 'Plato\'s Cave — the turning toward the sun that removes the veil of shadows', textId: 'plato-cave', note: 'Plato\'s allegory: the prisoner turns (periagōgē — turning around) from the shadows on the cave wall toward the fire, then toward the sun. 2 Corinthians 3:16: "when one turns to the Lord, the veil is removed." Both use the vocabulary of turning to describe the fundamental reorientation that enables seeing what was previously obscured. The Platonic periagōgē and the Pauline epistrephō are the same gesture — the soul turning from the derivative toward the original, from the shadow toward the light.' },
+              ]
+            },
+          ]
+        },
+        {
+          ref: '3:17–18',
+          text: 'Now the Lord is the Spirit, and where the Spirit of the Lord is, there is freedom. And all of us, with unveiled faces, seeing the glory of the Lord as though reflected in a mirror, are being transformed into the same image from one degree of glory to another; for this comes from the Lord, the Spirit.',
+          entities: [
+            { word: 'are being transformed into the same image from one degree of glory to another', node: 'theosis', type: 'concept',
+              note: 'The Greek metamorphoumetha (we are being transformed) is the present passive — ongoing transformation by an external agent (the Spirit). "From glory to glory" (apo doxēs eis doxan) describes transformation as a continuous progression rather than a single event. The mechanism is beholding: "seeing the glory of the Lord as though reflected in a mirror." This is the foundational text for the Christian doctrine of theosis (deification): the human being is gradually transformed into the divine likeness by the act of beholding the divine. Meister Eckhart, John of the Cross, Gregory of Nyssa all cite this verse. It is Paul\'s version of Mundaka\'s "he who knows Brahman becomes Brahman" — transformation through encounter with the absolute.',
+              parallels: [
+                { label: 'Mundaka Upanishad — "he who knows Brahman becomes Brahman"; like knows like', textId: 'mundaka-upanishad', note: 'Mundaka 3.2.9: "brahma-vid brahmaiva bhavati." 2 Corinthians 3:18: "beholding the glory... are being transformed into the same image." Both texts describe the same ontological event: genuine encounter with the absolute transforms the one who encounters. In the Mundaka, the mechanism is knowing (jnana — not intellectual knowing but the direct knowing that is identity); in Paul, the mechanism is beholding (katoptrizomenoi — seeing as in a mirror). Both are describing transformation through encounter that collapses the subject-object distinction.' },
+                { label: 'Meister Eckhart — "The eye through which I see God is the same eye through which God sees me"', textId: 'meister-eckhart-godhead', note: 'Eckhart\'s statement is the mystical commentary on 2 Corinthians 3:18: beholding the glory means the eye that beholds and the glory beheld become one seeing. "From glory to glory" is the description of the ongoing deepening of this union — the soul is gradually transformed until the distinction between the beholder and the glory becomes transparent. Eckhart\'s "breakthrough" (Durchbruch) into the Godhead is the full arrival at what Paul describes as the ongoing process of transformation from glory to glory.' },
+              ]
+            },
+          ]
+        },
+      ]
+    },
+  ]
+};
+
+SCRIPTURE_TEXTS['ephesians-1'] = {
+  title: 'Ephesians 1 — The Cosmic Christ',
+  shortTitle: 'Ephesians 1',
+  tradition: 'New Testament',
+  date: 'c. 62 CE (Pauline) or c. 80–90 CE (Deutero-Pauline)',
+  intro: 'Ephesians 1 opens with one of the longest and most theologically dense sentences in the New Testament (1:3–14 is a single Greek sentence of 202 words) — a cosmic hymn of blessing that sweeps from "before the foundation of the world" (1:4) through the present gathering of the community to the ultimate "fullness of time" when God will "unite all things in him, things in heaven and things on earth" (1:10). The theological center is anakephalaiōsis (recapitulation) — the Greek word of 1:10, meaning literally "to bring all things under one head again" or "to summarize all things." Irenaeus of Lyon made this the organizing principle of his entire theology: Christ recapitulates (re-heads) all of human history, gathering the scattered creation back into unity. The chapter ends with the ecclesiology of the pleroma — the church as "his body, the fullness (pleroma) of him who fills all in all" — which makes the Christian community the site of the cosmic gathering.',
+  crossTradition: [
+    { textId: 'colossians-1', label: 'Colossians 1 — the cosmic Christ hymn; both texts describe the same gathered creation', note: 'Colossians 1:15-20 and Ephesians 1:3-14 are the two great cosmic Christ hymns of the Pauline tradition, almost certainly in literary relationship with each other. Both describe Christ as the one in whom, through whom, and for whom all things were created; both describe the gathering of all things under one head (anakephalaiōsis in Ephesians / apokatallaxai — reconciliation of all things in Colossians). Together they form the most expansive Christology in the New Testament: Christ as the cosmic gathering principle of a scattered creation.' },
+    { textId: 'john-1', label: 'John 1 — Logos as the one through whom all things were made; cosmic Christ from a different angle', note: 'John 1:3 ("all things were made through him, and without him was not anything made that was made") and Ephesians 1:10 ("a plan for the fullness of time, to unite all things in him") describe the same cosmic Christ from the perspectives of creation and eschatology. John 1 looks backward: in the beginning, all things through the Logos. Ephesians 1 looks forward: at the fullness of time, all things gathered back into Christ. Together they describe a cosmic arc — creation through the Logos, recapitulation through the same Logos-Christ — that Irenaeus would call the "economy of salvation."' },
+    { textId: 'plotinus-enneads', label: 'Plotinus — emanation from the One and return to the One; the Ephesians cosmic arc in Neoplatonic terms', note: 'Plotinus\'s Enneads describe the eternal procession (proodos) from the One into multiplicity and the return (epistrophē) of multiplicity to the One. Ephesians 1:3-14 describes the same arc in historical-theological terms: creation in Christ "before the foundation of the world" (eternal choosing/origin), the present gathering of the community through grace, and the eschatological recapitulation of all things in Christ. Irenaeus\'s anakephalaiōsis and Plotinus\'s epistrophē are describing the same cosmic movement — the return of the many to the One — in theological and philosophical vocabularies respectively.' },
+  ],
+  translations: [
+    { lang: 'en', label: 'NRSV' },
+    { lang: 'en-kjv', label: 'King James (1611)' },
+    { lang: 'grc', label: 'Greek (Koine)' },
+  ],
+  sections: [
+    {
+      heading: 'Before the Foundation of the World — The Cosmic Election (1:3–6)',
+      verses: [
+        {
+          ref: '1:3–6',
+          text: 'Blessed be the God and Father of our Lord Jesus Christ, who has blessed us in Christ with every spiritual blessing in the heavenly places, just as he chose us in Christ before the foundation of the world to be holy and blameless before him in love. He destined us for adoption as his children through Jesus Christ, according to the good pleasure of his will, to the praise of his glorious grace that he freely bestowed on us in the Beloved.',
+          entities: [
+            { word: 'he chose us in Christ before the foundation of the world', node: 'divine-election', type: 'concept',
+              note: 'The temporal scope of Ephesians 1 begins before creation itself — "before the foundation of the world." The choosing (eklegō) is not reactive (God responding to human merit) but prior to any human existence or action. This is the strongest predestination language in the New Testament, and it provided the textual basis for Augustine\'s and Calvin\'s doctrines of election. But in Ephesians, the predestination is not primarily about individual salvation (who is saved, who is not) but about cosmic purpose — the gathering of all things in Christ. The election is in service of the anakephalaiōsis; it is the means, not the end.',
+              parallels: [
+                { label: 'John 17 — "the glory I had with you before the world existed"', textId: 'john-17', note: 'John 17:5: "Glorify me in your own presence with the glory that I had in your presence before the world existed." Ephesians 1:4: "chosen in Christ before the foundation of the world." Both texts locate the origin of the divine plan in a pre-creation reality — the divine relationship that precedes the cosmos. Both are asserting that history is not the discovery of God\'s plan but its unfolding in time. The "before the world existed" of John 17 and the "before the foundation of the world" of Ephesians 1 are describing the same eternal ground of the temporal economy of salvation.' },
+              ]
+            },
+          ]
+        },
+      ]
+    },
+    {
+      heading: 'The Mystery of His Will — Recapitulation of All Things (1:7–10)',
+      verses: [
+        {
+          ref: '1:9–10',
+          text: 'He has made known to us the mystery of his will, according to his good pleasure that he set forth in Christ, as a plan for the fullness of time, to gather up all things in him, things in heaven and things on earth.',
+          entities: [
+            { word: 'to gather up all things in him, things in heaven and things on earth', node: 'cosmic-redemption', type: 'concept',
+              note: 'Anakephalaiōsis — the Greek word translated "gather up" or "recapitulate" or "sum up all things" — is the theological crux of Ephesians 1. It means literally to bring all things under one kephalē (head), to re-head the cosmos. Irenaeus (c. 180 CE) built his entire theology of salvation on this verse: Christ recapitulates (re-does, re-heads, sums up) the entire history of humanity, correcting at every point where Adam went wrong. But Ephesians itself is broader: not just human history but "things in heaven and things on earth" — the entire cosmos is gathered. This is the most cosmologically ambitious statement in the NT: the goal of the divine plan is the reunification of all scattered, fragmented, exiled reality under one head.',
+              parallels: [
+                { label: 'Lotus Sutra — the One Vehicle that gathers all paths into one', textId: 'lotus-sutra-2', note: 'The Lotus Sutra\'s One Vehicle (ekayāna) gathers all the different vehicles of Buddhist practice into one: "all the teachings preached by the Buddhas are for the sake of the one Buddha vehicle." Ephesians\' anakephalaiōsis gathers all things — in heaven and on earth — under one head. Both texts are describing the same cosmological vision: the apparent multiplicity of paths/beings/things is gathered into a primordial unity that was always the goal. The Lotus\'s skillful means (different paths for different capacities) and Ephesians\'s economy of salvation (creation, election, recapitulation) are different accounts of the same cosmic arc from multiplicity to unity.' },
+                { label: 'Plotinus Enneads — the return of all things to the One', textId: 'plotinus-enneads', note: 'Plotinus describes the structure of reality as procession (proodos) from the One and return (epistrophē) to the One. Ephesians 1:10 describes the "fullness of time" as the moment of cosmic recapitulation — the return of all things to their unity in Christ. Irenaeus explicitly drew on this Platonic structure to interpret Ephesians: the anakephalaiōsis is the epistrophē of all creation to its source. The Neoplatonic cosmos and the Pauline cosmos are describing the same fundamental ontological arc: from unity through multiplicity back to unity.' },
+              ]
+            },
+          ]
+        },
+      ]
+    },
+    {
+      heading: 'The Pleroma — The Church as the Fullness of Him Who Fills All (1:20–23)',
+      verses: [
+        {
+          ref: '1:22–23',
+          text: 'And he has put all things under his feet and has made him the head over all things for the church, which is his body, the fullness of him who fills all in all.',
+          entities: [
+            { word: 'the fullness of him who fills all in all', node: 'divine-immanence', type: 'concept',
+              note: 'Pleroma (fullness) — the most philosophically loaded word in Ephesians, used here for the church and later adapted by the Valentinian Gnostics for their entire cosmological system. In Ephesians, the pleroma is Christ ("the fullness of him who fills all in all"), and the church is the body of the pleroma — the concrete historical community that is the site of the cosmic fullness. This is not the Gnostic pleroma (the transcendent divine fullness distant from matter) but the incarnational pleroma: the fullness of the divine dwells in the embodied community. The church is not a building or an institution but the site where the cosmic recapitulation is being enacted in history.',
+              parallels: [
+                { label: 'Colossians 1 — "in him the whole pleroma of the godhead dwells bodily"', textId: 'colossians-1', note: 'Colossians 1:19 ("in him all the fullness of God was pleased to dwell") and 2:9 ("in him the whole fullness of deity dwells bodily") are the direct parallels to Ephesians 1:23. Both texts use pleroma to describe what is concentrated in Christ — the full divine presence not distributed across the cosmos but gathered ("filled") in this one body/community. Together, Colossians and Ephesians develop the pleroma theology: the cosmic fullness (scattered across creation, waiting to be gathered) is found in concentrated form in Christ and, through Christ, in the community of the gathered.' },
+                { label: 'Poimandres — the Nous that is "all in all"; the Hermetic pleroma', textId: 'poimandres', note: 'Corpus Hermeticum 1 (Poimandres): "The Nous, the Father of all, who is Life and Light, gave birth to a Man like himself... The Man saw the Father\'s form... and falling in love with it, wished to dwell in it." Ephesians 1:23: "the fullness of him who fills all in all." Both texts are theorizing the relationship between the divine fullness and the material world: in Poimandres, the Nous fills all through the Anthropos (the heavenly Man who descends and illuminates); in Ephesians, the divine fullness fills all through the cosmic Christ. The Hermetic and Pauline cosmologies are engaged with the same question: how does the transcendent divine become present in matter?' },
+              ]
+            },
+          ]
+        },
+      ]
+    },
+  ]
+};

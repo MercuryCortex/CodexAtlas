@@ -19,6 +19,17 @@ tags:
   - nagarjuna
   - middle-way
   - deconstruction
+
+cross-music-edges:
+  - target: music-bardo-thodol-sonic
+    type: parent-of
+    note: The Bardo Thodol's core instruction — to recognize the clear-light sounds as one's own nature rather than fleeing them — is a Madhyamaka practice application. Madhyamaka emptiness doctrine (all phenomena arise without inherent existence) is the philosophical backdrop; the Bardo applies it to the acoustic phenomena of dying, which arise equally without inherent existence and should therefore be recognized as dharmata rather than feared.
+  - target: music-tibetan-sound-cosmology
+    type: parent-of
+    note: Tibetan Dzogchen's "natural sound of dharmata" (chos nyid rang sgra) — the thin, omnipresent resonance that arises when conceptual mind ceases — is the Madhyamaka insight in acoustic form. The sound is not produced by anything; it arises from the absence of the grasping mind that was previously obscuring it. Emptiness has a sound, and it is this.
+  - target: music-gyuto-monks-multiphonic
+    type: sibling-of
+    note: Gyuto Tantric multiphonic chanting (three simultaneous tones = the trikaya) is a practice lineage that presupposes Madhyamaka's emptiness analysis. The trikaya (dharmakaya / sambhogakaya / nirmanakaya) is the Madhyamaka characterization of Buddha's nature at three ontological levels; the triple-tone chord is its acoustic instantiation.
 ---
 
 Madhyamaka ("Middle Way" school) is the philosophical tradition founded by [[nagarjuna]] (c. 150–250 CE) in his *[[phase-4-075-mulamadhyamakakarika|Mulamadhyamakakarika]]* (Fundamental Verses on the Middle Way). It was extended by Chandrakirti (c. 600–650 CE) in the Prasannapada commentary, and received its definitive Tibetan systematization by [[tsongkhapa]] (1357–1419 CE) in the Gelug school.

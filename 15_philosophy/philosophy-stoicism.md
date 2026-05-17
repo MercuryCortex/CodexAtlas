@@ -18,6 +18,14 @@ tags:
   - ethics
   - hellenistic
   - cosmopolitanism
+
+cross-music-edges:
+  - target: music-pythagorean-harmony
+    type: sibling-of
+    note: The Stoic Logos (rational fire/pneuma that orders all reality) and Pythagorean harmony (mathematical ratios that constitute cosmic order) are two articulations of the same Greek conviction — the cosmos is rationally ordered, and that order is audible. Both schools treat the proportions governing the universe as simultaneously mathematical, physical, and ethical. Chrysippus explicitly identified the cosmic Logos with the Pythagorean ordering principle; the two schools shared the premise that the good life consists in alignment with cosmic reason-order.
+  - target: music-boethius-de-musica
+    type: ancestor-of
+    note: Boethius's tripartite music theory (musica mundana = cosmic music / musica humana = body-soul music / musica instrumentalis = sounding music) is Stoic pneuma doctrine expressed as music theory. The Stoic conviction that the same rational principle governs cosmos, human nature, and skilled human action provided the philosophical architecture for the three levels. Boethius is the Stoic-Neoplatonic synthesis made musical — and his De Institutione Musica governed European music theory from 500 CE to 1600 CE.
 ---
 
 Stoicism was founded by [[zeno-of-citium]] (c. 334–262 BCE) in Athens and systematized by [[chrysippus]] (c. 279–206 BCE), who gave the school its mature logical and physical framework. Its later Roman expressions — [[epictetus]], [[seneca]], and [[marcus-aurelius-emperor]] — represent the ethical tradition at its most practical and personally demanding.

@@ -20,6 +20,20 @@ tags:
   - the-one
   - mysticism
   - late-antique
+
+cross-music-edges:
+  - target: music-neoplatonic-theurgy-sound
+    type: parent-of
+    note: Iamblichus's theurgic practice — that phone (raw vocal sound) reaches the divine where logos (rational discourse) cannot — is the direct philosophical source for the non-semantic sound protocol documented across four independent traditions.
+  - target: music-pythagorean-harmony
+    type: parent-of
+    note: Neoplatonism inherited and systematized Pythagorean music-of-spheres; Plotinus and Proclus treat musical ratios as the mathematical expression of the One's emanation into multiplicity — the intervals ARE the hypostatic structure.
+  - target: music-orphic-hymns
+    type: parent-of
+    note: The Orphic Hymns were the liturgical corpus of Neoplatonic/theurgic practice; Proclus composed his own Orphic-style hymns as theurgic instruments. The hymns are Neoplatonism in operative sonic form.
+  - target: music-chaldean-oracles-sound
+    type: parent-of
+    note: The Chaldean Oracles are Iamblichus's primary theurgic text; their description of the iynx (whirling sound-fire mediating between Father and cosmos) is the sonic engine of the Neoplatonic emanation schema made ritually actionable.
 ---
 
 Neoplatonism is the philosophical system formalized by [[plotinus]] (204–270 CE) in the *[[phase-4-019-plotinus-enneads|Enneads]]*, systematized by [[porphyry]], extended liturgically by [[iamblichus]], and brought to full scholastic completion by [[proclus]]. Its central structure is a descending emanation of being from a single, ineffable absolute — **The One** ([[the-one-plotinus]]) — through Nous (divine Intellect), through World Soul, into Matter. The reverse movement — the soul's ascent through contemplation back toward The One — is the framework's ethical and soteriological core.

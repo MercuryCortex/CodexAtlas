@@ -19,6 +19,14 @@ tags:
   - china
   - political-philosophy
   - meritocracy
+
+cross-music-edges:
+  - target: music-yayue-ritual-music
+    type: parent-of
+    note: Yayue (elegant/refined music) is the Confucian theory of music as cosmic-social regulator made institutional. Confucius himself is documented saying "When the rites are lost, seek them in the music" — music is the living embodiment of li (ritual propriety). The collapse of correct yayue is both a symptom and a cause of dynastic illegitimacy; the investigation of the vault's Confucianism node is incomplete without understanding yayue as its sonic extension.
+  - target: music-greek-musical-ethos
+    type: parallel-form
+    note: Confucian music theory (specific modes appropriate to specific occasions; music shapes moral character) and Greek ethos theory (Plato's Republic: specific modes should be banned because they form character badly) are the two most developed ancient theories of music's direct ethical-political power. Both treat music as a state-level concern, not merely individual preference. Zero contact; same conclusion.
 ---
 
 Confucianism is the philosophical and ethical tradition founded by [[confucius]] (Kongzi, 551–479 BCE), systematized by Mencius (Mengzi, 372–289 BCE) and Xunzi (310–235 BCE), and given its Neo-Confucian metaphysical elaboration by [[zhu-xi]] (1130–1200 CE). The tradition centers on the cultivation of virtue (*de*), social harmony through ritual propriety (*li*), humaneness (*ren*), and the transformation of society through the exemplary person (*junzi*, the "gentleman" or "superior person").

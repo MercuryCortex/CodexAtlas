@@ -20,6 +20,17 @@ tags:
   - china
   - laozi
   - zhuangzi
+
+cross-music-edges:
+  - target: music-chinese-pentatonic-cosmology
+    type: parent-of
+    note: The Chinese pentatonic scale and its five-element cosmology (five tones = five elements = five directions) is the Daoist sonic equivalent of the Pythagorean music-of-spheres — both treat scale structure as cosmic map. Daoist practitioners used the qin (seven-string zither) as a tool for aligning with the Dao through tonal resonance.
+  - target: music-yayue-ritual-music
+    type: sibling-of
+    note: Yayue (ritual court music) is the Confucian institutional expression of the same underlying Chinese conviction that music and cosmic-social order are isomorphic. Daoism critiques yayue as artificial — the Dao's music is the unforced sound of nature (wind through trees, water over stones), not institutional performance — but both Daoist and Confucian frameworks share the premise that the cosmos sounds.
+  - target: music-creation-by-sound
+    type: parallel-form
+    note: The Dao De Jing's "The Tao that can be named is not the eternal Tao" places the absolute beyond language — and by extension, beyond music. But the pre-linguistic Dao is described through water and wind metaphors that are inherently acoustic. The Daoist endpoint (wu-wei effortless alignment) is sonically equivalent to John Cage's 4'33" — stop producing sound and hear what was always there.
 ---
 
 Philosophical Daoism (*Daojia*) refers to the philosophical systems articulated in the *Dao De Jing* (attributed to Laozi, c. 400–300 BCE) and the *[[phase-2-022-zhuangzi|Zhuangzi]]* (c. 350–250 BCE), distinguished from the later institutionalized religion of Daoism (*Daojiao*). The Dao (道, "Way") is the unnameable source from which all things emerge and to which they return — simultaneously cosmic principle, ethical standard, and the ground of meditative practice.

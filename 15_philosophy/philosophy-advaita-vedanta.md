@@ -20,6 +20,17 @@ tags:
   - vedanta
   - india
   - shankara
+
+cross-music-edges:
+  - target: music-nada-brahma
+    type: parent-of
+    note: Nada Brahma ("Sound is Brahman") is the sonic formulation of Advaita's central claim — the cosmos IS Brahman, not a product of Brahman. Applied to sound, this means the universe IS an acoustic event, not a universe in which sounds occur. Music-nada-brahma is the sonic wing of the philosophy-advaita-vedanta structure.
+  - target: music-aum-cosmic-sound
+    type: parent-of
+    note: AUM is the sonic expression of Atman=Brahman identity; its four components (A, U, M, and the silence after) map onto the Advaitic levels of consciousness (waking, dreaming, deep sleep, turiya). Chanting AUM is not symbolic of the identity — it participates in it.
+  - target: music-sama-veda
+    type: ancestor-of
+    note: Advaita's Upanishadic sources — especially the Chandogya and Mandukya Upanishads — emerge directly from the Sama Veda tradition; the mahavakya "Tat tvam asi" (Chandogya 6.8–16) is embedded in a text that is itself a musical performance tradition.
 ---
 
 Advaita Vedanta ("Non-Dual Vedanta") is the philosophical school systematized by [[shankara]] (Adi Shankaracharya, 788–820 CE) in his commentaries on the Brahma Sutras (*[[phase-5-005-shankara-brahma-sutra-bhasya]]*), the principal Upanishads, and the Bhagavad Gita. Advaita = "not-two": there is only one reality (Brahman), and the individual self (Atman) is identical with it.
