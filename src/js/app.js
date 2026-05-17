@@ -9248,6 +9248,143 @@ function renderMathFindings(pane) {
 }
 
 // ============================================================
+// VIEWS.medicine — sacred healing · cross-tradition medical systems.
+// Three modes: nodes (17_medicine/ vault content), transmission (chain view),
+// findings (MASSIVE WIN convergences across traditions).
+// ============================================================
+const _medState = { mode: 'nodes' };
+
+VIEWS.medicine = {
+  title: 'Medicine',
+  subtitle: 'sacred healing · the religious roots of medicine · where the body meets the divine',
+  render() {
+    document.getElementById('view-controls').innerHTML = `
+      <button class="btn btn-mini med-mode${_medState.mode==='nodes'?' active':''}" data-mode="nodes">nodes</button>
+      <button class="btn btn-mini med-mode${_medState.mode==='transmission'?' active':''}" data-mode="transmission">transmission</button>
+      <button class="btn btn-mini med-mode${_medState.mode==='findings'?' active':''}" data-mode="findings">findings</button>
+    `;
+    document.querySelectorAll('.med-mode').forEach(b => {
+      b.onclick = () => { _medState.mode = b.dataset.mode; setView('medicine'); };
+    });
+    legend.style('display','none').html('');
+    const pane = document.createElement('div');
+    pane.className = 'alpha-pane alpha-pane-live';
+    if (_medState.mode === 'nodes') renderMedNodes(pane);
+    else if (_medState.mode === 'transmission') renderMedTransmission(pane);
+    else renderMedFindings(pane);
+    document.getElementById('canvas').appendChild(pane);
+  }
+};
+
+function renderMedNodes(pane) {
+  const nodes = DATA.nodes.filter(n => n.type === 'medicine');
+  const typeColors = {
+    'tradition-hub': '#d4a55a',
+    'shamanic':      '#6e8c6b',
+    'temple':        '#5a7ec4',
+    'rational':      '#5aaca8',
+    'transmission':  '#9a7ad4',
+    'cross-tradition':'#c47453',
+  };
+  const typeOrder = ['tradition-hub','shamanic','temple','rational','transmission','cross-tradition'];
+  const byType = {};
+  nodes.forEach(n => { const t = n['medicine-type'] || 'tradition-hub'; (byType[t] = byType[t] || []).push(n); });
+  const ordered = typeOrder.filter(t => byType[t]).concat(Object.keys(byType).filter(t => !typeOrder.includes(t)));
+  let html = `<div class="alpha-scripts-header"><h2>Medicine Nodes</h2><span class="alpha-count">${nodes.length} nodes · every medical tradition begins as sacred practice</span></div>`;
+  if (!nodes.length) {
+    html += '<div style="padding:48px;color:var(--text-3)">No medicine nodes yet — 17_medicine/ is queued.</div>';
+  } else {
+    ordered.forEach(t => {
+      if (!byType[t]) return;
+      const c = typeColors[t] || '#d4a55a';
+      const label = t.replace('-', ' ');
+      html += `<div style="color:${c};padding:12px 24px 4px;font-size:11px;text-transform:uppercase;letter-spacing:.08em">${label}</div><div class="alpha-scripts-grid">`;
+      byType[t].forEach(n => {
+        html += `<div class="alpha-script-card" data-id="${n.id}" style="border-left:3px solid ${c}">
+          <div class="asc-type">${n.tradition || ''}</div>
+          <div class="asc-title">${n.title || n.id}</div>
+          <div class="asc-tradition">${n.date_earliest ? (n.date_earliest < 0 ? Math.abs(n.date_earliest)+' BCE' : n.date_earliest+' CE') : ''}</div>
+        </div>`;
+      });
+      html += '</div>';
+    });
+  }
+  pane.innerHTML = html;
+  pane.querySelectorAll('[data-id]').forEach(el => {
+    el.style.cursor = 'pointer';
+    el.onclick = () => { const nd = DATA.nodes.find(x => x.id === el.dataset.id); if (nd) selectNode(nd.id, true); };
+  });
+}
+
+function renderMedTransmission(pane) {
+  const chain = [
+    { era: 'c. 40,000 BCE →', label: 'Shamanic Medicine', sub: 'Global — every inhabited continent', color: '#6e8c6b', id: 'medicine-shamanic',
+      note: 'The oldest and most geographically distributed healing system: the shaman as specialist who crosses into non-ordinary reality to retrieve health information. Plant-medicine knowledge accumulated over tens of millennia — including tobacco (Americas), coca (Andes), psilocybin (Mesoamerica), kava (Pacific), ayahuasca (Amazonia) — all developed before contact with the literate traditions that would later classify them. Every subsequent medical tradition inherits the shamanic question: what is the relationship between the visible body and the invisible forces acting on it?' },
+    { era: 'c. 3000 BCE', label: 'Egyptian Temple Medicine', sub: 'Nile Valley', color: '#5a7ec4', id: 'medicine-egyptian-temple',
+      note: 'The Edwin Smith Papyrus (c. 1600 BCE — copying older texts) is the oldest surgical text in the world: 48 cases of trauma injury, systematically described with physical examination, diagnosis, treatment, and prognosis. Remarkably secular for its era — the word "magic" appears rarely. Yet simultaneously the temples of Sekhmet (goddess of disease) and Imhotep (deified physician) practiced incubation-dream healing. Egypt held both the empirical and the sacred without conflict.' },
+    { era: 'c. 600 BCE', label: 'Ayurveda (Charaka + Sushruta)', sub: 'Indian Subcontinent', color: '#d4a55a', id: 'medicine-ayurveda',
+      note: 'Two independent texts; two complete theories. Charaka Samhita (internal medicine): the tridosha system — vata/pitta/kapha as the three constitutional forces whose balance determines health. Sushruta Samhita (surgery): rhinoplasty, cataract surgery, Cesarean section — techniques Europe would "rediscover" 1,500–2,000 years later. Ayurveda is the oldest continuously practiced comprehensive medical system in the world.' },
+    { era: 'c. 460 – 370 BCE', label: 'Hippocratic Medicine', sub: 'Greek Mediterranean', color: '#5aaca8', id: 'medicine-hippocratic',
+      note: 'The Hippocratic Corpus: humoral theory (blood/yellow bile/black bile/phlegm) as the Greek equivalent of tridosha — health as dynamic balance, disease as imbalance. Clinical observation, the Hippocratic oath, prognosis as a discipline. The Asklepion temple healing system (dream incubation, sacred snakes, therapeutic baths) ran in parallel as the divine complement to rational medicine — the same culture held both without embarrassment.' },
+    { era: '750 – 1000 CE', label: 'Islamic Golden Age Medicine', sub: 'Baghdad, Cairo, Córdoba', color: '#9a7ad4', id: 'medicine-islamic-golden-age',
+      note: 'Al-Razi (865–925 CE): first to distinguish measles from smallpox; 23-volume Kitab al-Hawi is a comprehensive clinical encyclopedia. Avicenna (980–1037 CE): Canon of Medicine — the most influential medical textbook in history, used in European universities until the 17th century. The Quran\'s mandate for ʿilm (knowledge as divine duty) motivated systematic preservation of Greek texts and systematic clinical investigation. Without Islamic medicine, Europe\'s Medical Revolution would have lacked its empirical foundation.' },
+    { era: '1543 → present', label: 'Scientific Medicine', sub: 'Europe → Global', color: '#c47453', id: 'medicine-hippocratic',
+      note: 'Vesalius (1543) — the first accurate human anatomy based on actual dissection, correcting Galen after 1,300 years of error. Harvey (1628) — blood circulation. Pasteur (1850s) — germ theory. The entire chain: Hippocratic clinical method → Islamic preservation and extension → Toledo Latin translations → Vesalius → modern biomedicine. Contemporary medicine is a 2,500-year accumulation, and its founding documents are religious.' },
+  ];
+  let html = `<div class="alpha-scripts-header"><h2>The Healing Transmission</h2><span class="alpha-count">40,000 BCE → modern medicine — the sacred thread never broke</span></div><div style="padding:0 24px 32px">`;
+  chain.forEach((step, i) => {
+    html += `<div style="display:flex;gap:16px;margin:0 0 4px;align-items:stretch">
+      <div style="display:flex;flex-direction:column;align-items:center;width:32px;flex-shrink:0">
+        <div style="width:14px;height:14px;border-radius:50%;background:${step.color};flex-shrink:0;margin-top:4px"></div>
+        ${i < chain.length-1 ? `<div style="width:2px;flex:1;background:${step.color};opacity:.35;min-height:20px;margin-top:2px"></div>` : ''}
+      </div>
+      <div style="flex:1;padding-bottom:20px">
+        <div style="font-size:10px;color:var(--text-3);letter-spacing:.07em;margin-bottom:2px">${step.era}</div>
+        <div style="font-weight:700;color:${step.color};font-size:14px;cursor:pointer" data-id="${step.id}">${step.label}</div>
+        <div style="font-size:11px;color:var(--text-3);margin-bottom:6px">${step.sub}</div>
+        <div style="font-size:13px;color:var(--text-2);line-height:1.5">${step.note}</div>
+      </div>
+    </div>`;
+  });
+  html += '</div>';
+  pane.innerHTML = html;
+  pane.querySelectorAll('[data-id]').forEach(el => {
+    el.style.cursor = 'pointer';
+    el.onclick = () => { const nd = DATA.nodes.find(x => x.id === el.dataset.id); if (nd) selectNode(nd.id, true); };
+  });
+}
+
+function renderMedFindings(pane) {
+  const findings = [
+    { label: 'MASSIVE WIN', color: '#d4a55a',
+      title: 'The tridosha system and the Hippocratic humoral theory are structurally identical — invented independently c. 400 BCE with zero documented contact',
+      body: 'Ayurvedic tridosha (vata/pitta/kapha) and Greek humoralism (blood/yellow bile/black bile/phlegm) share the same theoretical architecture: health is the dynamic balance of constitutive body forces; disease is imbalance; treatment restores balance; each person has a constitutional baseline. Both were codified in the 4th–5th centuries BCE on opposite ends of the known world. The Charaka Samhita and the Hippocratic Corpus were written without knowledge of each other. The convergence is not transmission — it is independent discovery of the same insight: the body is a system, and health is equilibrium. The specific forces differ (the Ayurvedic mapping is richer and more individualized); the theoretical move is identical.' },
+    { label: 'MASSIVE WIN', color: '#5aaca8',
+      title: 'Temple incubation healing — the patient sleeps in a sacred space, receives a divine dream, and wakes cured — is independently attested across four civilizations',
+      body: 'Greek Asklepion temples (400+ sites across the Mediterranean): patients underwent ritual purification, fasted, then slept in the abaton. Dreams of Asklepios — or his sacred snakes — were interpreted as divine prescriptions or as direct cures. Egyptian Serapis and Imhotep healing temples: same ritual structure, divine dream as therapeutic event. Mesopotamian healing shrines: incubation before temple images of Ninisina and Gula. Hindu healing traditions: temple sleeping before Dhanvantari. The technology — the sacred space, the altered state of sleep, the divine encounter, the healing — is a cross-cultural invariant. Whether this reflects a genuine psychophysiological mechanism (sleep-state immune modulation, placebo cascade, psychological processing), a shared ancient practice, or convergent cultural logic around the body-divine interface remains open. What is closed: it worked consistently enough to sustain 400+ Asklepion sites for 800 years.' },
+    { label: 'MASSIVE WIN', color: '#6e8c6b',
+      title: 'Rhinoplasty was described in the Sushruta Samhita (c. 6th century BCE) — and "rediscovered" in Europe 1,500–2,000 years later',
+      body: 'The Sushruta Samhita describes nasal reconstruction surgery using a skin flap from the cheek or forehead — the same basic technique that Branca da Polizzi "invented" in 15th-century Italy and that Gaspare Tagliacozzi systematized in 1597. 15th-century Italian and Indian surgeons arrived at the same anatomical solution through the same procedure. The delay was not anatomical — Sushruta\'s description is complete and correct. It was epistemic: European medieval medicine was based on Galen (2nd century CE), and Galen\'s text-based medicine had replaced the empirical surgical tradition. The technique existed; the institutional knowledge system that could transmit it did not.' },
+    { label: 'MASSIVE WIN', color: '#9a7ad4',
+      title: 'Without Quranic ʿilm theology, there is no modern medicine — the chain runs through Baghdad',
+      body: 'Al-Razi (865–925 CE) wrote the first clinical distinction between measles and smallpox. Avicenna\'s Canon of Medicine was the primary medical textbook in European universities until the 17th century. Ibn al-Haytham\'s experimental method in optics established the scientific protocol that Vesalius applied to anatomy. The House of Wisdom preserved Galen, Hippocrates, and Dioscorides during the centuries when Latin Europe was not copying Greek medical texts. The Islamic medical tradition did not merely transmit — it corrected (al-Razi challenged Galen repeatedly), expanded (new drugs, clinical records), and institutionalized (the first dedicated hospital, bimaristan, Baghdad 805 CE). Modern medicine\'s epistemological infrastructure — clinical observation, case records, pharmacological experimentation — was developed in Arabic before it was redeveloped in Latin.' },
+    { label: 'CONVERGENCE', color: '#c47453',
+      title: 'Every independently attested medical tradition begins as sacred practice — the priest-healer is the universal origin form',
+      body: 'Egyptian: Imhotep is simultaneously architect, physician, and high priest of Ptah — deified after death, worshipped as a healing god for 2,500 years. Mesopotamian: the asu (physician) and ashipu (exorcist-priest) operated as complementary specialists, both with temple affiliations. Greek: Hippocratic physicians trained at Asklepion temples; the Hippocratic oath swears by Apollo and Asklepios. Hindu: Ayurveda\'s origin texts attribute the system to Dhanvantari, divine physician and avatar of Vishnu. Shamanic: the healer is definitionally a specialist in sacred reality, not merely biological reality. There is no ancient medical tradition that originates in secular practice. The claim that medicine became scientific by separating from religion is historically accurate; the implied claim that it was always separate is not. The question "what is wrong with this person and how do we fix it" was everywhere first answered in terms of the relationship between the person and the sacred order of reality.' },
+  ];
+  let html = `<div class="alpha-scripts-header"><h2>Medicine Findings</h2><span class="alpha-count">discoveries at the intersection of healing and the sacred</span></div><div style="padding:0 24px 24px">`;
+  findings.forEach(f => {
+    html += `<div style="border-left:3px solid ${f.color};margin:12px 0;padding:14px 16px;background:rgba(0,0,0,.18);border-radius:4px">
+      <div style="font-size:10px;letter-spacing:.1em;color:${f.color};text-transform:uppercase;margin-bottom:6px">${f.label}</div>
+      <div style="font-weight:600;margin-bottom:8px;color:var(--text-1)">${f.title}</div>
+      <div style="font-size:13px;color:var(--text-2);line-height:1.5">${f.body}</div>
+    </div>`;
+  });
+  html += '</div>';
+  pane.innerHTML = html;
+}
+
+// ============================================================
 // VIEWS.music — sound cosmology · music-cosmos investigation.
 // Two modes: nodes (browse 10_music/ vault content) and findings (MASSIVE WIN).
 // ============================================================

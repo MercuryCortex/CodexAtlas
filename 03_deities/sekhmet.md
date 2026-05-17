@@ -20,6 +20,11 @@ syncretic-edges:
   - target: "hathor"
     type: "splitting-doublet"
     source: "*Book of the Heavenly Cow* (New Kingdom mortuary text in Tutankhamun's shrine and later royal tombs); Hathor and Sekhmet are explicitly two aspects of the same goddess"
+tags:
+  - medicine
+  - healing-deity
+  - destroyer-healer
+  - plague
 status: "partial"
 refs:
   - title: "The Complete Gods and Goddesses of Ancient Egypt"

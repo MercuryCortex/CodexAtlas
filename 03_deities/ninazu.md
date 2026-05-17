@@ -27,6 +27,10 @@ syncretic-edges:
   - target: "ereshkigal"
     type: "ancient-identification"
     source: "Wiggermann *RlA*; Black & Green 1992 — in the Enegi tradition Ninazu is the son of Ereshkigal, the underworld queen, establishing his chthonic credentials directly"
+tags:
+  - medicine
+  - healing-deity
+  - serpent-symbolism
 status: "metadata"
 refs:
   - title: "Mesopotamian Protective Spirits: The Ritual Texts"

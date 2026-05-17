@@ -12,6 +12,11 @@ historicity: "documented"
 texts-authored: ["enormous corpus (~400 works, ~150 surviving) on medicine, philosophy, anatomy, logic"]
 events-participated: ["Court physician to Marcus Aurelius, Commodus, Septimius Severus"]
 mentioned-in: ["[[phase-3-005-stoic-foundational-texts]]", "[[phase-5-010-saadia-emunot-ve-deot]]", "[[phase-6-008-paracelsus-corpus]]", "wide later Greek-Arabic-Latin medical tradition; the entire medieval medical curriculum was Galenic"]
+tags:
+  - medicine
+  - clinical-observation
+  - humoral-theory
+  - transmission
 status: "stub"
 refs:
   - title: "Galen: On the Affected Parts; On the Therapeutic Method (Loeb)"
