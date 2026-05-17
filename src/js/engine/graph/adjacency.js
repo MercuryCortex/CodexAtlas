@@ -63,14 +63,13 @@
     return out;
   }
 
-  // Compute per-instance state floats from a focusedSet.
-  //   0.0 = focused (full opacity)
-  //   1.0 = dimmed
-  // Length matches idIndex. When focusedSet is null, returns
-  // an all-zeros array (no dim — idle state).
-  //
-  // The renderer multiplies (1 - state * dimAmount) by node
-  // alpha in the fragment shader.
+  // Compute per-instance NODE state floats from a focusedSet.
+  //   0.0 = focused (full opacity, no dim)
+  //   1.0 = dimmed (alpha multiplied by 1 - dim_amount)
+  // Length matches idIndex. When focusedSet is null (truly
+  // idle — no hover, no lock), returns an all-zeros array so
+  // every node paints at full opacity. The dim only kicks in
+  // when something is in focus.
   function computeNodeStates(idIndex, focusedSet) {
     const out = new Float32Array(idIndex.length);
     if (!focusedSet) return out;
@@ -80,13 +79,20 @@
     return out;
   }
 
-  // Per-edge state: an edge is "focused" iff BOTH endpoints
-  // are in focusedSet (1-hop edges incident to the hovered
-  // node are focused; edges between two non-focused nodes
-  // are dimmed).
+  // Per-edge state.
+  //   0.0 = HOT — paint with bucket-hex hot color (focused, in 1-hop)
+  //   1.0 = IDLE — paint with instance_color (slate / headline-low-alpha)
+  // An edge is "hot" iff BOTH endpoints are in focusedSet.
+  //
+  // When focusedSet is null (truly idle — no hover, no lock),
+  // every edge gets state=1 so the whole wire constellation
+  // sits at IDLE (faint slate atmosphere + headline-color
+  // whispers for polemic/fusion). The drawFrame caller is
+  // expected to also drop dimAmount to 0 in this case so the
+  // already-faint idle alphas aren't further attenuated.
   function computeEdgeStates(edges, focusedSet) {
     const out = new Float32Array(edges.length);
-    if (!focusedSet) return out;
+    if (!focusedSet) { out.fill(1.0); return out; }
     for (let i = 0; i < edges.length; i++) {
       const e = edges[i];
       out[i] = (focusedSet.has(e.source) && focusedSet.has(e.target)) ? 0.0 : 1.0;

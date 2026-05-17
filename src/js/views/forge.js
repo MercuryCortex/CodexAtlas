@@ -472,8 +472,12 @@
         worldExtent: ext,
       };
       // State buffers must size to the new instance counts.
+      // Nodes default to 0 (no dim — full alpha at idle).
+      // Edges default to 1 (idle — paint instance_color, the slate
+      // atmosphere / headline-low-alpha). State 0 means HOT in the
+      // edge shader, so leaving as zeros would light every wire up.
       local.nodeStates = new Float32Array(nodePack.instanceCount);
-      local.edgeStates = new Float32Array(edgePack.instanceCount);
+      local.edgeStates = new Float32Array(edgePack.instanceCount).fill(1.0);
 
       // Cross-mode hover/lock cleared — node ids don't map
       // between modes.
@@ -567,10 +571,14 @@
       const vp = local.lastSize;
       if (!vp.w || !vp.h) return;
       const t0 = performance.now();
+      // dim_amount only applies when something is in focus. At
+      // true idle (no hover, no lock) we pass 0 so the already-
+      // faint idle alphas (0.10–0.30) aren't further attenuated.
+      const effectiveDim = local.focusedSet ? local.params.dim_amount : 0;
       local.renderer.drawFrame({
         viewportCss:   { w: vp.w, h: vp.h },
         camera:        camera.state,
-        dimAmount:     local.params.dim_amount,
+        dimAmount:     effectiveDim,
         nodeInstances: local.mode.nodePacked.data,
         edgeInstances: local.mode.edgePacked.data,
         nodeStates:    local.nodeStates,
@@ -1116,7 +1124,8 @@
     function rebakeEdges() {
       const m = local.mode;
       m.edgePacked = graph.packEdges(m.edges, m.positions, edgeOverridesFromParams());
-      local.edgeStates = new Float32Array(m.edgePacked.instanceCount);
+      // Preserve current focus state if any; recompute fresh otherwise.
+      local.edgeStates = graph.computeEdgeStates(m.edges, local.focusedSet);
       drawFrame();
     }
     // Push hot palette to the renderer.
