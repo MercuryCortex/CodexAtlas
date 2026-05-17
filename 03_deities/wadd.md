@@ -21,6 +21,10 @@ syncretic-edges:
     type: "scholarly-parallel"
     source: "Hoyland 2001 *Arabia and the Arabs* — South Arabian Wadd / Almaqah / Sīn moon-deity cluster is part of the broader Semitic moon-god type; Akkadian Nanna-Sîn is the Mesopotamian analog"
     notes: "Functional / typological parallel — South Arabian moon-deities as part of the broader Semitic astral-religion pattern, not a derivation claim"
+  - target: "almaqah"
+    type: "scholarly-parallel"
+    source: "Hoyland 2001; Beeston 1989-1994 Sabaean epigraphic corpus — Wadd (Minaean high-god) and Almaqah (Sabaean high-god) are the two principal South Arabian moon-deities; the cult-overlap between Minaean and Sabaean religion places them as close regional variants of the same lunar-and-paternal high-deity type"
+    notes: "Close South Arabian regional cognate; Minaean-Sabaean religious continuity at the South Arabian moon-god type"
 status: "metadata"
 refs:
   - title: "Arabia and the Arabs: From the Bronze Age to the Coming of Islam"
