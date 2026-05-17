@@ -567,4 +567,98 @@ window.PATTERNS_DATA = [
     summary: 'When individuals or communities deliberately invent writing systems, the act is always political and theological simultaneously. Cyril invents Glagolitic to win the Slavic soul for Byzantium against Rome; King Sejong invents Hangul to break the scholarly class monopoly on literacy; Sequoyah invents Cherokee syllabary to give his people the power of the "talking leaf." In all three cases: the alphabet = the ideology; the script = the territory. And in all three cases, colonial or imperial forces immediately recognized the threat and moved to suppress or destroy the script. The Frankish church accused the Brothers of heresy (868 CE); the yangban scholars suppressed Hangul for four centuries; the Indian Removal Act followed Cherokee mass literacy by five years (1830). The pattern holds across three continents, three centuries, and three completely different cultural contexts: a people that can write is harder to erase, and dominant powers act accordingly.',
   },
 
+  // ─── VII. RITUAL LAYER DISCOVERIES ───────────────────────────────────────
+
+  {
+    id: 'scheduled-inversion-5-traditions',
+    title: 'Scheduled Social Inversion — Five Traditions Independently Discovered the Same Technology',
+    category: 'CONVERGENCE',
+    section: 'Ritual Layer Discoveries',
+    sources: ['ritual-roman-saturnalia', 'ritual-sacrifice', 'ritual-blot'],
+    summary: 'Roman Saturnalia (masters serve slaves), Jewish Purim (festive license, costume, role reversal), Hindu Holi (caste boundaries dissolved), Medieval Feast of Fools (clergy mocked, junior clergy run the liturgy), Mardi Gras/Carnival (preceding Lent\'s severe discipline): five independent civilizations discovered that periodic, scheduled inversion of social hierarchy is the most effective mechanism for preserving that hierarchy. The valve releases pressure that would otherwise fracture the structure. Van Gennep\'s "liminal period" captures the mechanism; the five independent inventions confirm the universality.',
+  },
+  {
+    id: 'eternal-flame-4-traditions',
+    title: 'The Eternal Flame — Divine Fire as Community Survival across Four Civilizations',
+    category: 'CONVERGENCE',
+    section: 'Ritual Layer Discoveries',
+    sources: ['ritual-vestal-virgins', 'ritual-yajna-vedic-fire', 'ritual-yasna-fire-ceremony'],
+    summary: 'Roman Vestal Virgins (eternal flame of Vesta = survival of Rome; extinguishing = catastrophe), Zoroastrian Atash Bahram (the highest-grade sacred fire, maintained continuously, never permitted to die), Jewish ner tamid (eternal lamp above the Ark, continuously lit in every synagogue and temple since antiquity), Hindu akhand jyoti (continuously lit sacred flame in puja and major temples). Four civilizations, four independent conclusions: the cosmic order requires a continuously burning fire maintained by human ritual attention. The fire is not symbolic of the divine — it IS the divine presence made physically continuous.',
+  },
+  {
+    id: 'annual-cosmic-reset-4-civilizations',
+    title: 'Annual Cosmic Reset — Four Civilizations Concluded the Cosmos Does Not Self-Sustain',
+    category: 'CONVERGENCE',
+    section: 'Ritual Layer Discoveries',
+    sources: ['ritual-akitu-new-year', 'ritual-chinese-new-year', 'ritual-yajna-vedic-fire'],
+    summary: 'Babylonian Akitu (king re-legitimated, Enuma Elish recited in full, Marduk\'s victory over chaos re-enacted: the cosmos is re-created), Chinese Chūnjié (15-day cycle restores cosmic and social order; kitchen god bribed, debts cleared, evil expelled), Jewish Rosh Hashanah + Yom Kippur (divine decree for the year set; cosmic record purged), Iranian Nowruz (spring equinox marks cosmic renewal; fire jumped, house purified). Four civilizations on opposite sides of the known world reached the same conclusion: the cosmic order is not self-maintaining. Without annual human ritual action, order would degrade back into chaos. The cosmos requires liturgical maintenance.',
+  },
+  {
+    id: 'dead-return-feast-5-continents',
+    title: 'The Dead Return Annually for a Meal — Five Continents, Independent Invention',
+    category: 'CONVERGENCE',
+    section: 'Ritual Layer Discoveries',
+    sources: ['ritual-samhain', 'ritual-chinese-ancestor-veneration', 'ritual-shraddha-ancestor', 'ritual-egungun-masquerade', 'ritual-funeral-rites'],
+    summary: 'Celtic Samhain (the dead walk freely; tables set for them; fire reset; boundary dissolved for one night), Japanese Obon (ancestors return for three days; lanterns guide them home; dances performed for them), Chinese Qingming (paper goods burned, food offered at graves; ancestors fed), Mexican Día de los Muertos (altar with food, photos, marigolds; dead return and are feasted), Yoruba Egungun (the dead literally arrive in masked form; the living community hosts them). Five independent systems on five continents, making the same ontological claim: the dead are not safely past. They return annually, require hospitality, and become dangerous if neglected. The sharp living/dead boundary is the unusual position.',
+  },
+  {
+    id: 'fragrant-smoke-6-continents',
+    title: 'Fragrant Smoke as Divine Medium — Six Continents, Universal Ritual Technology',
+    category: 'CONVERGENCE',
+    section: 'Ritual Layer Discoveries',
+    sources: ['ritual-smoking-ceremony', 'ritual-yajna-vedic-fire', 'ritual-incense-offering'],
+    summary: 'Incense in Egyptian temple ritual (kyphi, the sacred compound burned daily in temples since c. 2000 BCE), frankincense in Jewish Temple (ketoret, one of the rarest biblical ingredients), Christian/Orthodox liturgical incense (theologically: prayer made visible as it rises), Islamic bakhoor (oud-wood incense in sacred and domestic contexts), Hindu dhupa (incense as one of the sixteen offerings to a deity), Aboriginal smoking ceremony (smoke as purification, welcome, and healing), Plains Indian smudging (sage and cedar smoke as prayer vehicle). Six continents, multiple independent origins, same mechanism: fragrant smoke is the substance that crosses the boundary between human and divine. The rising of smoke is the visible form of the movement of prayer.',
+  },
+  {
+    id: 'wilderness-authenticates-authority',
+    title: 'Wilderness Isolation Authenticates Spiritual Authority — Five Traditions',
+    category: 'CONVERGENCE',
+    section: 'Ritual Layer Discoveries',
+    sources: ['ritual-vision-quest', 'ritual-initiation-mystery', 'ritual-initiation-walkabout', 'ritual-sweat-lodge'],
+    summary: 'Lakota Vision Quest (alone on a hilltop, fasting, no water; receives visions that determine life direction), Christian desert monks (Anthony of Egypt, 270 CE; the desert as the place where God is found and demons defeated), Jewish Elijah under the broom tree and on Horeb (the prophet\'s authority certified by wilderness encounter), Islamic Quranic revelation (Muhammad receives revelation in the cave at Hira; Ramadan retreat extends this), Hindu forest hermitage (vanaprastha stage: retirement to the forest for deepening practice). Five traditions, one conclusion: ordinary social space produces ordinary authority. To receive extraordinary authority, the person must go where there is nothing to confirm their status except the divine itself. The wilderness is the place where the social ego has nothing to cling to.',
+  },
+  {
+    id: 'body-as-sacrifice-blood-currency',
+    title: 'Blood as Divine Currency — Five Civilizations Identified the Same Substance',
+    category: 'CONVERGENCE',
+    section: 'Ritual Layer Discoveries',
+    sources: ['ritual-sacrifice', 'ritual-blot', 'ritual-yajna-vedic-fire', 'ritual-aztec-autosacrifice'],
+    summary: 'Norse blót (blood sprinkled on altar and worshippers: hlaut; the Uppsala 9-year great sacrifice; Odin\'s own blood sacrifice on Yggdrasil), Vedic pashu-bandha (animal sacrifice to carry the sacrificer\'s intent to the devas via Agni; blood as the life-substance that feeds the gods), Jewish korban (Temple sacrifice: the blood is thrown against the altar, not consumed; blood = life = return of life to the Life-giver), Roman suovetaurilia (pig/sheep/bull triple sacrifice; blood on the altar), Aztec bloodletting (autosacrifice via obsidian blade; feeding the sun with human blood to prevent cosmic collapse). Five civilizations independently concluded: blood is the substance that crosses the human/divine boundary because it is life itself. To give blood is to give life; to give life is to give what the gods gave you. This is not primitive — it is a philosophically coherent gift economy between humans and the divine order.',
+  },
+  {
+    id: 'tridosha-humoral-parallel',
+    title: 'Tridosha = Hippocratic Humoral Theory — Independent Discovery c. 400 BCE',
+    category: 'CONVERGENCE',
+    section: 'Ritual Layer Discoveries',
+    sources: ['medicine-ayurveda', 'medicine-hippocratic'],
+    summary: 'Ayurvedic tridosha (vata/pitta/kapha) and Greek humoralism (blood/yellow bile/black bile/phlegm) share the same theoretical architecture: health is the dynamic balance of constitutive body forces; disease is imbalance; treatment restores balance; each person has a constitutional baseline. Both were codified in the 4th–5th centuries BCE on opposite ends of the known world with no documented cross-contact. The Charaka Samhita and the Hippocratic Corpus were written without knowledge of each other. The convergence is not transmission — it is independent discovery that the body is a system and health is equilibrium.',
+  },
+  {
+    id: 'temple-incubation-healing-4-civilizations',
+    title: 'Temple Incubation Healing — Sleep in a Sacred Space, Receive a Divine Dream, Wake Cured',
+    category: 'CONVERGENCE',
+    section: 'Ritual Layer Discoveries',
+    sources: ['medicine-asklepion-cult', 'medicine-egyptian-temple', 'medicine-mesopotamian-temple', 'medicine-ayurveda'],
+    summary: 'Greek Asklepion temples (400+ sites; patients purified, fasted, then slept in the abaton; dreams of Asklepios interpreted as divine prescriptions or direct cures), Egyptian Serapis and Imhotep healing temples (same ritual structure, divine dream as therapeutic event), Mesopotamian healing shrines (incubation before images of Ninisina and Gula), Hindu temples (sleeping before Dhanvantari). The technology — sacred space, altered state of sleep, divine encounter, healing — is a cross-cultural invariant operating across four independent civilizations. It sustained 400+ Asklepion sites for 800 years.',
+  },
+  {
+    id: 'pythagorean-theorem-not-greek',
+    title: 'The "Pythagorean" Theorem Was Known 1,300 Years Before Pythagoras',
+    category: 'CONVERGENCE+TRANSMISSION',
+    section: 'Ritual Layer Discoveries',
+    sources: ['mathematics-sulba-sutras', 'mathematics-babylonian-temple', 'mathematics-pythagorean-sacred'],
+    summary: 'Baudhayana\'s Sulba Sūtra (c. 800 BCE) states the right-triangle relationship 200–300 years before Pythagoras (c. 570–495 BCE). The Babylonian Plimpton 322 tablet (c. 1800 BCE) lists Pythagorean triples systematically 1,300 years before him. Both pre-Greek discoveries were driven by ritual requirements: Vedic fire-altar construction demanding geometric precision; Babylonian temple scribal schools. The name "Pythagorean theorem" is a historiographic artifact of which texts European universities read — not a discovery record. Three civilizations discovered the same geometric relationship independently, all driven by the same mechanism: sacred building.',
+  },
+
+  // ─── VIII. KNOWLEDGE TRANSMISSION ────────────────────────────────────────
+
+  {
+    id: 'islamic-bridge-mathematics',
+    title: 'The Islamic Transmission Bridge — Without Baghdad, No European Science',
+    category: 'CONVERGENCE+TRANSMISSION',
+    section: 'Knowledge Transmission',
+    sources: ['mathematics-house-of-wisdom', 'medicine-islamic-golden-age'],
+    summary: 'Two of the most consequential knowledge transmission events in world history flow through the same city and the same theological motivation. Al-Khwarizmi\'s algebra and algorithm (House of Wisdom, Baghdad, c. 820 CE) and Avicenna\'s Canon of Medicine (c. 1025 CE) were both produced under the Quranic mandate for ʿilm (knowledge as religious duty) and both transmitted to Latin Europe via the Toledo translation school (c. 1100–1200 CE). The words "algebra," "algorithm," and "Avicenna" are Arabic proper nouns embedded in the technical vocabulary of modern mathematics and medicine. Every time a doctor prescribes using dosage calculations or a programmer writes an algorithm, they use tools whose names are Islamic proper nouns and whose creation was motivated by Quranic theology.',
+  },
+
 ];
