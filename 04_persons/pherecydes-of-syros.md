@@ -41,6 +41,20 @@ refs:
     tier: 1
     notes: "Argues Pherecydes's cosmogony shows substantial Near Eastern (Phoenician, Babylonian, Egyptian) influence"
 tags: [person, greek, pre-socratic, proto-philosophical, syros, theogony, first-greek-prose, near-eastern-influence, reincarnation, pythagoras-teacher]
+
+cross-tradition-edges:
+  - target: pythagoras
+    type: teacher-of
+    note: Pherecydes is the traditional teacher of Pythagoras — the person from whom Pythagoras may have received the doctrine of soul-transmigration and possibly Near Eastern cosmological knowledge. The teaching relationship is attested from Cicero onward and is plausible given chronology and geography, though direct documentation is lacking. Pherecydes is the missing link between Greek cosmological speculation and the Pythagorean religious-philosophical synthesis.
+  - target: reincarnation
+    type: possible-origin
+    note: Pherecydes is the first attested Greek thinker credited with the doctrine of soul-immortality and transmigration. The chain Pherecydes → Pythagoras → Empedocles → Plato is the canonical Greek metempsychosis transmission. Whether Pherecydes taught full transmigration or only soul-survival after death is debated; Cicero's testimony is the primary ancient source.
+  - target: mathematics-babylonian-temple
+    type: parallel
+    note: West (1997) provides extensive evidence that Pherecydes's cosmogony shows Near Eastern (Phoenician, Babylonian) influence — the Chronos-Ophioneus cosmic battle parallel to Marduk-Tiamat, and the cosmogonic cloak parallel to Near Eastern creation-by-separation myths. Pherecydes is the clearest documented case of Near Eastern cosmological material entering Greek proto-philosophical thought.
+  - target: tradition-orphic
+    type: parallel
+    note: Pherecydes's system — cosmic marriage, seven underworld chambers (*mychoi*) through which souls pass, primordial serpent figure — overlaps substantially with Orphic cosmogonic literature. Whether he influenced the Orphic tradition, drew from it, or both drew from a shared Near Eastern-Aegean substrate is debated. He is the node at which multiple traditions converge.
 ---
 
 # Pherecydes of Syros
