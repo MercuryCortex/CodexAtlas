@@ -5374,3 +5374,153 @@ body.view-alphabets main.canvas { padding-bottom: 220px; }
   position: absolute; inset: 0; display: flex; align-items: center; justify-content: center;
 }
 
+/* ═══════════════════════════════════════════════════════════════════
+   FORGE — Phase 0 scaffold
+   -------------------------------------------------------------------
+   Proprietary WebGPU engine route. Isolated like Pantheon V2 was.
+   Phase 0 styles only — informational pane reporting engine status
+   and the phase roadmap. Phase 1+ will add the actual rendering canvas
+   and overlay chrome; this block is the design seed.
+   ═══════════════════════════════════════════════════════════════════ */
+.forge-pane {
+  position: absolute; inset: 0;
+  display: flex; align-items: center; justify-content: center;
+  background:
+    radial-gradient(ellipse at center, rgba(212,165,90,0.04) 0%, transparent 60%),
+    var(--bg-0);
+  overflow: auto;
+}
+.forge-error {
+  max-width: 520px; padding: 24px 32px;
+  font-family: var(--mono); font-size: 12px;
+  color: var(--crimson, #c44a5a);
+  border: 1px solid var(--crimson, #c44a5a);
+  border-radius: 4px;
+  background: rgba(196, 74, 90, 0.06);
+  margin: auto;
+}
+.forge-shell {
+  width: min(960px, 92vw);
+  padding: 56px 44px 44px;
+  display: flex; flex-direction: column; gap: 28px;
+}
+.forge-header {
+  display: flex; align-items: baseline; gap: 16px;
+  border-bottom: 1px solid var(--border-soft);
+  padding-bottom: 14px;
+}
+.forge-h {
+  font-family: var(--mono);
+  font-size: 22px; font-weight: 500;
+  letter-spacing: 0.32em;
+  color: var(--gold);
+  margin: 0;
+}
+.forge-sub {
+  font-family: var(--mono); font-size: 10.5px;
+  letter-spacing: 0.16em; text-transform: uppercase;
+  color: var(--text-3);
+}
+.forge-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
+}
+.forge-card {
+  border: 1px solid var(--border-soft);
+  border-radius: 3px;
+  padding: 16px 18px 14px;
+  background: rgba(14, 16, 22, 0.6);
+  backdrop-filter: blur(6px); -webkit-backdrop-filter: blur(6px);
+  display: flex; flex-direction: column; gap: 12px;
+}
+.forge-card-full { grid-column: 1 / -1; }
+.forge-card-label {
+  font-family: var(--mono); font-size: 10px;
+  letter-spacing: 0.16em; text-transform: uppercase;
+  color: var(--text-3);
+}
+.forge-card-rows {
+  display: flex; flex-direction: column; gap: 4px;
+}
+.forge-row {
+  display: flex; align-items: baseline; justify-content: space-between;
+  font-family: var(--mono); font-size: 11.5px;
+  color: var(--text-1);
+  padding: 2px 0;
+  border-bottom: 1px dashed rgba(255, 255, 255, 0.04);
+}
+.forge-row:last-child { border-bottom: none; }
+.forge-k { color: var(--text-2); }
+.forge-v { color: var(--text-0); font-variant-numeric: tabular-nums; }
+.forge-v.ok      { color: var(--sage, #6e8c6b); }
+.forge-v.pending { color: var(--text-3); font-style: italic; }
+.forge-v.fail    { color: var(--crimson, #c44a5a); }
+
+.forge-phases {
+  list-style: none; padding: 0; margin: 0;
+  display: flex; flex-direction: column; gap: 6px;
+}
+.forge-phase {
+  display: flex; align-items: center; gap: 12px;
+  font-family: var(--mono); font-size: 11.5px;
+  color: var(--text-2);
+  padding: 4px 8px;
+  border-left: 2px solid transparent;
+}
+.forge-phase-tag {
+  display: inline-grid; place-items: center;
+  width: 22px; height: 22px;
+  border: 1px solid var(--border-soft);
+  border-radius: 3px;
+  font-size: 10.5px; color: var(--text-3);
+  flex: 0 0 auto;
+}
+.forge-phase.done {
+  color: var(--text-1);
+  border-left-color: var(--sage, #6e8c6b);
+}
+.forge-phase.done .forge-phase-tag {
+  color: var(--sage, #6e8c6b);
+  border-color: var(--sage, #6e8c6b);
+}
+.forge-phase.next {
+  color: var(--text-0);
+  border-left-color: var(--gold);
+}
+.forge-phase.next .forge-phase-tag {
+  color: var(--gold);
+  border-color: var(--gold-soft);
+}
+.forge-footnote {
+  font-family: var(--mono); font-size: 10.5px;
+  color: var(--text-3);
+  border-top: 1px solid var(--border-soft);
+  padding-top: 14px;
+  line-height: 1.5;
+}
+.forge-footnote code {
+  font-family: var(--mono); font-size: 10.5px;
+  color: var(--text-1);
+  background: rgba(255, 255, 255, 0.04);
+  padding: 1px 4px; border-radius: 2px;
+}
+
+/* Side-nav badge: small "p0" tag next to the Forge label so it's
+   visually marked as under construction. Disappears at graduation. */
+.item.forge-nav .sym {
+  color: var(--gold);
+}
+.item.forge-nav::after {
+  content: 'p0';
+  margin-left: 6px;
+  font-family: var(--mono); font-size: 9px;
+  letter-spacing: 0.08em;
+  color: var(--gold-soft);
+  border: 1px solid var(--gold-soft);
+  border-radius: 2px;
+  padding: 1px 4px;
+  opacity: 0.7;
+}
+body.nav-collapsed .item.forge-nav::after { display: none; }
+

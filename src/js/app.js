@@ -557,6 +557,16 @@ function setView(name) {
     if (el._popstateListener) { window.removeEventListener('popstate', el._popstateListener); el._popstateListener = null; }
     el.remove();
   });
+  // Forge pane teardown — same pattern. Phase 0 has no GPU device yet
+  // so there's nothing GPU-specific to kill; later phases will release
+  // the WebGPU device + canvas via el._engine?.destroy() before remove.
+  document.querySelectorAll('.forge-pane').forEach(el => {
+    if (el._engine && typeof el._engine.destroy === 'function') {
+      try { el._engine.destroy(); } catch (e) { /* ignore */ }
+      el._engine = null;
+    }
+    el.remove();
+  });
   // ── HASH ROUTER (push view change) ────────────────────────────────
   // On a true view change, pushState so the back button moves between
   // views. Re-renders of the same view use replaceState (or nothing) so
@@ -794,6 +804,30 @@ VIEWS.pantheon = {
     const svgEl = document.getElementById('svg');
     if (svgEl) svgEl.style.display = 'none';
     if (window._pantheonV2) window._pantheonV2.render(pane);
+  },
+};
+
+// ═════════════════════════════════════════════════════════════════════
+// FORGE ROUTE — proprietary WebGPU engine (Phase 0 scaffold).
+//
+// Isolated parallel build, same pattern Pantheon V2 used. Mounts its
+// own pane (.forge-pane). setView() teardown removes it on view-change.
+// Phase 1 will instantiate a WebGPU device on this pane and start
+// rendering; Phase 0 just reports engine status + roadmap.
+//
+// See src/js/views/forge.js and src/js/engine/README.md.
+// ═════════════════════════════════════════════════════════════════════
+VIEWS.forge = {
+  title: 'Forge',
+  subtitle: 'proprietary engine — phase 0 scaffold',
+  render() {
+    const canvasEl = document.getElementById('canvas');
+    const pane = document.createElement('div');
+    pane.className = 'forge-pane';
+    canvasEl.appendChild(pane);
+    const svgEl = document.getElementById('svg');
+    if (svgEl) svgEl.style.display = 'none';
+    if (window._forge) window._forge.render(pane);
   },
 };
 

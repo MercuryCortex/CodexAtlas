@@ -64,6 +64,51 @@ Details and rationale in PROTOCOL.md §3.
 
 ---
 
+## Craft doctrine (read before any UX-lane work)
+
+These are **load-bearing rules** for how this product gets built. They override the agent's default instinct to "ship fast."
+
+### 1. We are NOT shipping until the app is 100 % done.
+
+Codex Atlas is being built to be **the most gorgeous visual representation of human history's cross-tradition transmissions ever produced**. The launch criterion is not "MVP that works" — it is "so crafted that a competitor attempting to reproduce the design + visualization gets stuck on the surface alone."
+
+This means:
+
+- **No "ship fast" posture.** No "good enough for now." No "we'll polish later." No "the user won't notice."
+- **No third-party graph libraries** (Cosmograph, deck.gl, react-flow, etc.) for the production rendering surface. The Atlas visual is proprietary — every shader, every curve, every glyph is ours, written from first principles. Browser APIs (WebGPU, WebGL2, Canvas2D) are the only acceptable rendering primitives.
+- **No SaaS dependencies that could shift pricing, license, or roadmap under us.** MIT/BSD/Apache FOSS libraries are fine *only* when they sit at the primitive layer (e.g., a math helper) and we could fork-and-replace within a day. Anything graph-domain-specific is built proprietary.
+- **Quality target: visual signature so distinct it's hard to copy purely from a design / visualization POV.** Type-glyphs, family hulls, edge-bucket palette, focus-dim hierarchy, cinematic camera, animated wires — every visual is a designed choice, not a library default.
+
+### 2. Re-evaluate tech at every friction signal.
+
+The default agent instinct is to *optimize what's there*. That instinct is wrong for this project. When you hit:
+
+- A regression you can't fix without touching the architecture
+- A performance ceiling that requires "tuning" instead of solving
+- A library limitation that requires fighting the framework
+- An iteration loop that takes more than seconds (compile, hot-reload, manual click-through)
+
+**STOP. Step back. Ask: is this the right tech for the ambition?**
+
+The current stack (vanilla JS + Sigma WebGL + SVG overlays + D3 + MapLibre) is *adequate* for the current 660-node scale. It is **not** the right foundation for "thousands of nodes, the most gorgeous visual of human history." That conversation should have happened on day one and didn't. It is happening now. The Forge tab (Lane B, `src/js/views/forge.js` + `src/js/engine/`) is the proprietary WebGPU foundation being built to actually carry the product ambition. Pantheon V2 stays in production *only* until Forge proves it carries the visual ambition at scale — then graduates the same way V2 graduated.
+
+Every agent doing UX-lane work has standing permission — actually, **standing obligation** — to escalate a "we are using the wrong tech for this" finding to John the moment evidence accumulates. Polishing wrong-tech instead of escalating is a protocol violation.
+
+### 3. Proprietary, not rented.
+
+When the choice is between adopting a library and building it ourselves:
+
+- **Default to building.** Especially for anything that touches the visual signature.
+- **Choose libraries only when (a) it's a math / I/O primitive, (b) MIT/BSD/Apache FOSS, (c) we could fork-and-replace within a day if needed, (d) it does not shape the user-visible product.**
+- **Never adopt anything commercial / SaaS-licensed for the production surface.**
+- **Reuse from John's own work (the portable core, the portable core) is encouraged** — copy patterns and code into Atlas, no live dependency. Atlas should never break because the portable core changed.
+
+### 4. Forward compatibility is part of craft.
+
+When building TypeScript engine code today, design the contracts so a future Rust+WASM port (via the portable core) is a mechanical swap, not a rewrite. Type definitions in `src/js/engine/types.js` mirror the portable core's Rust structs by intention. The Renderer API is small and well-defined. The view layer never reaches past the engine contract into WebGPU directly. This is non-negotiable for engine-layer code.
+
+---
+
 ## Critical files (quick links)
 
 | File | Purpose |
