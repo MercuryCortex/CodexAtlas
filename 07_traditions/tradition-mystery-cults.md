@@ -42,7 +42,24 @@ refs:
     publisher: "Routledge"
     type: "critical-edition"
     tier: 1
-tags: [tradition, mystery-cults, eleusis, dionysus, isis, mithras, cybele, hellenistic, initiation
+tags: [tradition, mystery-cults, eleusis, dionysus, isis, mithras, cybele, hellenistic, initiation]
+
+cross-tradition-edges:
+  - target: tradition-pythagorean
+    type: parallel
+    note: Pythagoreanism operates as a mystery cult in structure — initiation tiers, oath-brotherhood, oral secret transmission, dietary prohibitions, communal property. Burkert (1972) establishes early Pythagoreanism as primarily cultic-religious rather than philosophical. The Pythagorean brotherhood uses the same institutional template as the Eleusinian and Bacchic mysteries.
+  - target: physicians-oath
+    type: parallel
+    note: The Hippocratic Oath has the complete structure of a mystery-cult initiation: divine witnesses as guarantors, restricted transmission (teach only oath-takers), secrecy requirement, quasi-familial loyalty obligations. Edelstein (1943) argued the Oath is specifically Pythagorean — a Pythagorean mystery-cult text achieving universal medical adoption.
+  - target: tradition-gnosticism
+    type: ancestor-of
+    note: Gnostic Christianity (2nd–3rd century CE) is in many respects a Christianized mystery cult — restricted gnosis as the path to salvation, initiation stages, sacramental meals, soul-ascent eschatology. The Valentinian "pleroma" with its graduated initiation into higher knowledge directly parallels mystery-cult structure. The shared milieu (Hellenistic Mediterranean) makes formal influence plausible; shared structure is documented.
+  - target: tradition-freemasonry
+    type: structural-descendant
+    note: Modern Masonic lodges (from 1717) preserve the mystery-cult template into modernity: graduated degrees (Entered Apprentice / Fellow Craft / Master Mason), oath-brotherhood with secrecy requirements, allegorical drama (the Hiram Abiff legend), esoteric transmission of symbolic knowledge. Freemasonry explicitly models itself on ancient mysteries; whether it has unbroken continuity or is a Renaissance-modern reconstruction is debated.
+  - target: mystery-initiation
+    type: parent-of
+    note: The mystery-initiation as a cross-tradition pattern (divine witness, restricted transmission, secrecy, quasi-familial loyalty, conditional blessing/curse) is the institutional form that the mystery-cults produced. This pattern appears in the Hippocratic Oath, Masonic degrees, Sufi silsila, and Buddhist upasampada — all institutional forms with structural roots in the Greek mystery-cult template.
 ]
 ---
 

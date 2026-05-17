@@ -46,6 +46,23 @@ refs:
     type: "primary-translation"
     tier: 1
 tags: [tradition, orphic, mystery-cult, reincarnation, dionysus, soul-ascent, greek-mysticism]
+
+cross-tradition-edges:
+  - target: tradition-pythagorean
+    type: parallel
+    note: Orphism and Pythagoreanism are the two most closely related traditions in the Greek world — both in the same Magna Graecian milieu, both requiring vegetarianism from metempsychosis, both organized as initiate-brotherhoods with secret doctrines. Plato's eschatological myths draw on both. The mutual influence is so strong that ancient and modern scholars sometimes cannot determine which doctrine originated where.
+  - target: reincarnation
+    type: parent-of
+    note: Orphism is one of the oldest documented Greek traditions of soul-transmigration. The Orphic Gold Tablets (5th–4th century BCE, from Magna Graecia and Crete) are instructions for the soul after death — passwords for the underworld, the correct spring to drink from (Memory, not Forgetfulness), declarations of divine origin. These are practical documents for the transmigrating soul, not theoretical theology.
+  - target: tradition-gnosticism
+    type: ancestor-of
+    note: Orphic theology — the soul is a divine spark imprisoned in matter (the body as tomb/prison, *soma = sema*); liberation comes through initiation and gnosis; the material world is a fall from divine origin — is structurally identical to Gnostic soteriology. The Orphic "Titan myth" (humans are born from the ashes of the Titans who devoured Dionysus, mixing divine Dionysian spark with Titanic material) is the precise mythological precedent for the Gnostic divine spark trapped in material creation.
+  - target: tradition-mystery-cults
+    type: member-of
+    note: Orphism is a subtype of Greek mystery religion — sharing the initiation structure, restricted transmission, promised eschatological advantage, and divine-feminine mediating figure with the Eleusinian Mysteries, Dionysiac mysteries, and Isis cult. What distinguishes Orphism is its specific theology (metempsychosis, divine-soul-in-Titanic-body) and its textual tradition (Orphic Hymns, Gold Tablets, theogonies).
+  - target: tradition-neoplatonism
+    type: ancestor-of
+    note: Neoplatonism gave Orphism its most systematic philosophical treatment. Proclus composed Orphic theologies in his commentaries; Iamblichus integrated Orphic ritual into theurgical Neoplatonism; the Orphic Rhapsodies were used as philosophical theology. For the Neoplatonists, Orpheus was the theologian, Pythagoras the sage, and Plato the philosopher — three voices of one wisdom.
 ---
 
 # Orphism (Orphic mysteries)
