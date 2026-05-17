@@ -12,7 +12,14 @@ _Hand-maintained. Each agent currently working in the vault appends a claim bloc
 
 ---
 
-## harmonic-chinese-1 — IN PROGRESS (2026-05-17)
+## ritual-african-chinese-norse-1 — IN PROGRESS (2026-05-17)
+- Creating 7 nodes in 14_rituals/: ritual-ifa-divination, ritual-bori-spirit-possession, ritual-chinese-ancestor-veneration, ritual-taoist-inner-alchemy, ritual-chinese-new-year, ritual-blot, ritual-seidr
+- Traditions: tradition-yoruba-ifa, tradition-yoruba, tradition-vodou-haitian, tradition-daoism, tradition-chinese-folk-religion, tradition-norse-germanic
+- Do NOT touch 10_music/ or src/js/app.js
+
+---
+
+## ~~harmonic-chinese-1 — FINISHED (2026-05-17)~~
 - Creating: music-marquis-yi-bells, music-chinese-twelve-lü, music-sheng-free-reed-chord
 - Updating: cross-edges in music-chinese-pentatonic-cosmology, music-harmonic-series-physics, music-chinese-court-instruments, music-gyuto-monks-multiphonic
 - Adding observation: harmonic-series-three-paths
