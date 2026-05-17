@@ -72,16 +72,19 @@
   // Shared view-uniform layout (consumed by NODE + EDGE shaders).
   //   view_scale          vec2     — (cam.scale*2/vp.w, -cam.scale*2/vp.h)
   //   view_offset         vec2     — (-cam.centerX*view_scale.x, -cam.centerY*view_scale.y)
-  //   viewport_px         vec2     — backing-store dimensions (for AA)
-  //   dim_amount          f32      — 0..1: how much non-focused instances dim
-  //   wire_min_screen_px  f32      — Phase 6b: clamp stroke widths in FB px
-  //   wire_max_screen_px  f32
-  //   _pad1, _pad2, _pad3 f32 × 3  — pad to 16-byte align the next array
-  //   bucket_hot_colors   [8]vec4  — bucket-hex at hot alpha, indexed by
-  //                                  bucket_index 0..6 (slot 7 unused).
-  //                                  0:transmission 1:parallel 2:association
-  //                                  3:kinship 4:attestation 5:polemic 6:fusion
-  // Total: 48 + 128 = 176 bytes (vec4-aligned).
+  //   viewport_px              vec2     — backing-store dimensions (for AA)
+  //   dim_amount               f32      — 0..1: edge dim
+  //   wire_min_screen_px       f32      — Phase 6b: clamp stroke widths in FB px
+  //   wire_max_screen_px       f32
+  //   dim_amount_nodes         f32      — Phase 6c: separate node dim channel
+  //   selected_size_mult       f32      — Phase 6c: ×r for SELECTED instances
+  //   selected_glow_strength   f32      — Phase 6c: outer-ring alpha
+  //   selected_glow            vec4     — xyz = glow color, w = glow extent (×r)
+  //   bucket_hot_colors        [8]vec4  — bucket-hex at hot alpha, indexed by
+  //                                       bucket_index 0..6 (slot 7 unused).
+  //                                       0:transmission 1:parallel 2:association
+  //                                       3:kinship 4:attestation 5:polemic 6:fusion
+  // Total: 64 + 128 = 192 bytes (vec4-aligned).
   //
   // Phase 4a: bucket_hot_colors enables the edge fragment shader
   // to mix the per-instance idle color with the bucket-hot color
@@ -95,16 +98,17 @@
   // ============================================================
   const NODE_SHADER = /* wgsl */ `
     struct View {
-      view_scale:         vec2<f32>,
-      view_offset:        vec2<f32>,
-      viewport_px:        vec2<f32>,
-      dim_amount:         f32,
-      wire_min_screen_px: f32,
-      wire_max_screen_px: f32,
-      _pad1:              f32,
-      _pad2:              f32,
-      _pad3:              f32,
-      bucket_hot_colors:  array<vec4<f32>, 8>,
+      view_scale:             vec2<f32>,
+      view_offset:            vec2<f32>,
+      viewport_px:            vec2<f32>,
+      dim_amount:             f32,    // edges
+      wire_min_screen_px:     f32,
+      wire_max_screen_px:     f32,
+      dim_amount_nodes:       f32,    // Phase 6c
+      selected_size_mult:     f32,
+      selected_glow_strength: f32,
+      selected_glow:          vec4<f32>,  // xyz = color, w = extent (×r)
+      bucket_hot_colors:      array<vec4<f32>, 8>,
     };
     @group(0) @binding(0) var<uniform> v: View;
 
@@ -113,24 +117,34 @@
       @location(0) local_pos:  vec2<f32>,
       @location(1) inst_color: vec4<f32>,
       @location(2) state:      f32,
+      @location(3) sel:        f32,
     };
 
     @vertex
     fn vs_main(
-      @location(0) quad_vertex: vec2<f32>,
-      @location(1) inst_pos_r:  vec4<f32>,
-      @location(2) inst_color:  vec4<f32>,
-      @location(3) inst_state:  f32,
+      @location(0) quad_vertex:    vec2<f32>,
+      @location(1) inst_pos_r:     vec4<f32>,
+      @location(2) inst_color:     vec4<f32>,
+      @location(3) inst_state_sel: vec2<f32>,
     ) -> VsOut {
-      let inst_pos    = inst_pos_r.xy;
-      let inst_radius = inst_pos_r.z;
-      let world = inst_pos + quad_vertex * inst_radius;
-      let ndc   = world * v.view_scale + v.view_offset;
+      let inst_pos      = inst_pos_r.xy;
+      let inst_radius   = inst_pos_r.z;
+      let inst_state    = inst_state_sel.x;
+      let inst_selected = inst_state_sel.y;
+      // Phase 6c — selected nodes grow + need quad room for the
+      // glow ring. The quad spans local_pos ∈ [-quad_scale, quad_scale]
+      // so the SDF distance equals 1 at the disk edge and equals
+      // glow_extent at the glow's outer edge.
+      let size_mult  = mix(1.0, v.selected_size_mult, inst_selected);
+      let quad_scale = mix(1.0, v.selected_glow.w, inst_selected);
+      let world      = inst_pos + quad_vertex * inst_radius * size_mult * quad_scale;
+      let ndc        = world * v.view_scale + v.view_offset;
       var out: VsOut;
       out.position   = vec4<f32>(ndc, 0.0, 1.0);
-      out.local_pos  = quad_vertex;
+      out.local_pos  = quad_vertex * quad_scale;
       out.inst_color = inst_color;
       out.state      = inst_state;
+      out.sel        = inst_selected;
       return out;
     }
 
@@ -138,12 +152,30 @@
     fn fs_main(in: VsOut) -> @location(0) vec4<f32> {
       let dist  = length(in.local_pos);
       let aa    = fwidth(dist);
-      let alpha = 1.0 - smoothstep(1.0 - aa, 1.0, dist);
-      let c     = in.inst_color;
-      // state=0 → full, state=1 → multiplied by (1 - dim_amount).
-      let dim_mult = mix(1.0, 1.0 - v.dim_amount, in.state);
-      let a_final  = c.a * alpha * dim_mult;
-      return vec4<f32>(c.rgb * a_final, a_final);
+      // Disk: SDF edge at dist=1.0 (independent of quad_scale —
+      // the vs lifts local_pos into the same normalised frame).
+      let disk_alpha = 1.0 - smoothstep(1.0 - aa, 1.0, dist);
+      let c = in.inst_color;
+      // Background dim — separate channel from edges so the user
+      // can fade nodes harder than the wire constellation.
+      let dim_mult = mix(1.0, 1.0 - v.dim_amount_nodes, in.state);
+      let disk_a   = c.a * disk_alpha * dim_mult;
+      let disk_rgb = c.rgb * disk_a;
+
+      // Glow ring — only painted for SELECTED instances, only in
+      // the annulus dist ∈ (1.0, glow_extent). Smooth fade on both
+      // edges so it integrates with the disk's anti-aliasing.
+      let glow_outer  = v.selected_glow.w;
+      let glow_inner  = 1.0;
+      let glow_fade   = (1.0 - smoothstep(glow_inner, glow_outer, dist))
+                      * smoothstep(glow_inner - aa, glow_inner, dist);
+      let glow_a      = in.sel * v.selected_glow_strength * glow_fade;
+      let glow_rgb    = v.selected_glow.xyz * glow_a;
+
+      // Composite the glow UNDER the disk (premultiplied alpha).
+      let final_rgb = disk_rgb + glow_rgb * (1.0 - disk_a);
+      let final_a   = disk_a   + glow_a   * (1.0 - disk_a);
+      return vec4<f32>(final_rgb, final_a);
     }
   `;
 
@@ -152,16 +184,17 @@
   // ============================================================
   const EDGE_SHADER = /* wgsl */ `
     struct View {
-      view_scale:         vec2<f32>,
-      view_offset:        vec2<f32>,
-      viewport_px:        vec2<f32>,
-      dim_amount:         f32,
-      wire_min_screen_px: f32,        // Phase 6b: wire-width zoom clamp (framebuffer px)
-      wire_max_screen_px: f32,
-      _pad1:              f32,
-      _pad2:              f32,
-      _pad3:              f32,
-      bucket_hot_colors:  array<vec4<f32>, 8>,
+      view_scale:             vec2<f32>,
+      view_offset:            vec2<f32>,
+      viewport_px:            vec2<f32>,
+      dim_amount:             f32,
+      wire_min_screen_px:     f32,
+      wire_max_screen_px:     f32,
+      dim_amount_nodes:       f32,
+      selected_size_mult:     f32,
+      selected_glow_strength: f32,
+      selected_glow:          vec4<f32>,
+      bucket_hot_colors:      array<vec4<f32>, 8>,
     };
     @group(0) @binding(0) var<uniform> v: View;
 
@@ -329,10 +362,11 @@
     });
 
     // ── Shared view-uniform ────────────────────────────
-    // 176 bytes: 48-byte view header + 128-byte bucket palette (8 × vec4).
-    // Header grew in Phase 6b: added wire_min/max_screen_px (FB px) + 3 pads
-    // to keep the array of vec4 16-byte aligned.
-    const VIEW_UBO_SIZE = 176;
+    // 192 bytes: 64-byte view header + 128-byte bucket palette (8 × vec4).
+    // Phase 6c grew the header 176→192: added dim_amount_nodes,
+    // selected_size_mult, selected_glow_strength + selected_glow
+    // (vec4 = rgb + extent).
+    const VIEW_UBO_SIZE = 192;
     const viewUbo = device.createBuffer({
       label: 'forge-view-ubo', size: VIEW_UBO_SIZE,
       usage: GPUBufferUsage.UNIFORM | GPUBufferUsage.COPY_DST,
@@ -359,9 +393,11 @@
               { shaderLocation: 1, offset:  0, format: 'float32x4' },
               { shaderLocation: 2, offset: 16, format: 'float32x4' },
           ] },
-          // [2] per-instance state (single float)
-          { arrayStride: 4, stepMode: 'instance', attributes: [
-              { shaderLocation: 3, offset: 0, format: 'float32' },
+          // [2] per-instance (state, selected) — Phase 6c bumped
+          // from a single f32 (state only) to a vec2: state in .x,
+          // selected flag in .y. Same VBO, just twice as wide.
+          { arrayStride: 8, stepMode: 'instance', attributes: [
+              { shaderLocation: 3, offset: 0, format: 'float32x2' },
           ] },
         ],
       },
@@ -526,7 +562,8 @@
       drawFrame(frame) {
         const vp   = frame.viewportCss;
         const cam  = frame.camera;
-        const dimA = (typeof frame.dimAmount === 'number') ? frame.dimAmount : 0.85;
+        const dimA = (typeof frame.dimAmount       === 'number') ? frame.dimAmount       : 0.85;
+        const dimN = (typeof frame.dimAmountNodes  === 'number') ? frame.dimAmountNodes  : dimA;
         // Phase 6b: wire-width zoom clamp. JS-side values are
         // CSS px; the uniform stores framebuffer px so the shader
         // can compare against the world×view-scale projection
@@ -534,6 +571,11 @@
         const dpr  = window.devicePixelRatio || 1;
         const wMin = (typeof frame.wireMinScreenPx === 'number') ? frame.wireMinScreenPx * dpr : 0;
         const wMax = (typeof frame.wireMaxScreenPx === 'number') ? frame.wireMaxScreenPx * dpr : 1e9;
+        // Phase 6c — SELECTED-state uniforms.
+        const selSize = (typeof frame.selectedSizeMult     === 'number') ? frame.selectedSizeMult     : 1.0;
+        const selStr  = (typeof frame.selectedGlowStrength === 'number') ? frame.selectedGlowStrength : 0.0;
+        const selExt  = (typeof frame.selectedGlowExtent   === 'number') ? frame.selectedGlowExtent   : 1.5;
+        const selCol  = frame.selectedGlowColorRgb || [1, 1, 1];
 
         const nVB  = frame.nodeInstances;
         const eVB  = frame.edgeInstances;
@@ -546,9 +588,10 @@
         const viewOffsetX = -cam.centerX * viewScaleX;
         const viewOffsetY = -cam.centerY * viewScaleY;
 
-        // 176-byte view-uniform: 48-byte header + 128-byte bucket palette.
-        // Phase 6b grew the header by 4 floats (wire min/max + 2 pads).
-        const viewData = new Float32Array(44);  // 176 / 4
+        // 192-byte view-uniform: 64-byte header + 128-byte bucket palette.
+        // Phase 6c grew the header 176→192 (added dim_nodes,
+        // selected_size_mult, selected_glow_strength + vec4 glow).
+        const viewData = new Float32Array(48);  // 192 / 4
         viewData[0]  = viewScaleX;
         viewData[1]  = viewScaleY;
         viewData[2]  = viewOffsetX;
@@ -558,11 +601,15 @@
         viewData[6]  = dimA;
         viewData[7]  = wMin;
         viewData[8]  = wMax;
-        viewData[9]  = 0; // pad1
-        viewData[10] = 0; // pad2
-        viewData[11] = 0; // pad3
-        // Bucket palette (8 × 4 floats) starts at offset 12 (48 bytes).
-        viewData.set(bucketPalette, 12);
+        viewData[9]  = dimN;
+        viewData[10] = selSize;
+        viewData[11] = selStr;
+        viewData[12] = selCol[0];
+        viewData[13] = selCol[1];
+        viewData[14] = selCol[2];
+        viewData[15] = selExt;
+        // Bucket palette (8 × 4 floats) starts at offset 16 (64 bytes).
+        viewData.set(bucketPalette, 16);
         device.queue.writeBuffer(viewUbo, 0, viewData);
 
         // ── Instance buffers (static geometry) ──────
@@ -577,16 +624,14 @@
           device.queue.writeBuffer(edgeInstanceVbo, 0, eVB);
         }
 
-        // ── State buffers (dynamic; one float per instance) ──
+        // ── State buffers (dynamic) ──
+        // Phase 6c: node state is now (state, selected) per
+        // instance — 2 floats × 4 bytes = 8 bytes/instance.
         if (nodeCount > 0) {
-          const stateBytes = nodeCount * 4;
+          const stateBytes = nodeCount * 8;
           const r = ensureBuffer(nodeStateVbo, nodeStateVboSize, stateBytes, 'forge-node-state-vbo');
           nodeStateVbo = r.buf; nodeStateVboSize = r.size;
-          const stateData = frame.nodeStates || new Float32Array(nodeCount);
-          // The buffer may be padded to >stateBytes for chunk alignment.
-          // writeBuffer only copies stateBytes; the padding stays whatever
-          // was last written (or zero on fresh allocation). The shader
-          // only reads `nodeCount` instances, so padding is harmless.
+          const stateData = frame.nodeStates || new Float32Array(nodeCount * 2);
           device.queue.writeBuffer(nodeStateVbo, 0, stateData, 0, Math.floor(stateBytes / 4));
         }
         if (edgeCount > 0) {

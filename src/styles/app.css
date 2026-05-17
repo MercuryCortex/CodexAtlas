@@ -5512,7 +5512,7 @@ body.view-alphabets main.canvas { padding-bottom: 220px; }
   color: var(--gold);
 }
 .item.forge-nav::after {
-  content: 'p6b';
+  content: 'p6c';
   margin-left: 6px;
   font-family: var(--mono); font-size: 9px;
   letter-spacing: 0.08em;
@@ -5643,12 +5643,16 @@ body.nav-collapsed .item.forge-nav::after { display: none; }
      overrides can take over once the renderer is up. */
   width: 100%;
   height: 100%;
-  /* Interaction affordances — grab for pan, no native touch
-     gestures (we own zoom via wheel). */
-  cursor: grab;
+  /* Interaction affordances. Default arrow at rest (design-app
+     feel — the wheel is the subject, not a clickable region);
+     `grabbing` shows up only while a drag is in flight, gated by
+     the `.is-panning` class the view module toggles. No native
+     touch gestures (we own zoom via wheel). */
+  cursor: default;
   touch-action: none;
 }
-.forge-canvas:active { cursor: grabbing; }
+.forge-canvas.is-panning { cursor: grabbing; }
+.forge-canvas.is-hover-node { cursor: pointer; }
 
 /* Phase 4e — Type-shape glyph overlay.
    One <span> per node, containing an inline <svg> that draws the

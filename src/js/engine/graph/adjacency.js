@@ -100,10 +100,25 @@
     return out;
   }
 
+  // Per-node SELECTED flag — 1 if the node is in `selectedSet`
+  // (the anchor set: hoverId ∪ lockedSet), else 0. Phase 6c
+  // introduced this as the third visual state on top of the
+  // existing focus/dim binary. Used to drive the glow ring +
+  // size bump in the node shader.
+  function computeSelectedStates(idIndex, selectedSet) {
+    const out = new Float32Array(idIndex.length);
+    if (!selectedSet || !selectedSet.size) return out;
+    for (let i = 0; i < idIndex.length; i++) {
+      out[i] = selectedSet.has(idIndex[i]) ? 1.0 : 0.0;
+    }
+    return out;
+  }
+
   // ── Export ────────────────────────────────────────────
   window.AtlasEngineGraph = window.AtlasEngineGraph || {};
-  window.AtlasEngineGraph.buildAdjacency    = buildAdjacency;
-  window.AtlasEngineGraph.focusedSetFor     = focusedSetFor;
-  window.AtlasEngineGraph.computeNodeStates = computeNodeStates;
-  window.AtlasEngineGraph.computeEdgeStates = computeEdgeStates;
+  window.AtlasEngineGraph.buildAdjacency        = buildAdjacency;
+  window.AtlasEngineGraph.focusedSetFor         = focusedSetFor;
+  window.AtlasEngineGraph.computeNodeStates     = computeNodeStates;
+  window.AtlasEngineGraph.computeEdgeStates     = computeEdgeStates;
+  window.AtlasEngineGraph.computeSelectedStates = computeSelectedStates;
 })();

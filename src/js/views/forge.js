@@ -105,8 +105,24 @@
     curve_fusion:       0.45,
 
     // ── FOCUS / DIM ──
-    dim_amount:    0.85,
-    atmosphere:    0.025,
+    // Three separate channels: edges (wires), nodes (disks),
+    // glyphs (SVG overlay). The glyphs were previously not
+    // fading at all because they're DOM elements with their own
+    // opacity — the shader-side dim only touched the disks.
+    dim_amount:        0.85,    // edges
+    dim_amount_nodes:  0.85,
+    dim_amount_glyphs: 0.85,
+    atmosphere:        0.025,
+
+    // ── SELECTED STATE (Phase 6c — 3rd state above HIGHLIGHTED) ──
+    // The actually clicked / hovered node, distinct from its
+    // 1-hop neighbours. Renders with an SDF glow ring + optional
+    // size bump so the anchor stays visually distinct from its
+    // illuminated tree.
+    selected_size_mult:     1.15,
+    selected_glow_strength: 0.65,
+    selected_glow_extent:   1.6,
+    selected_glow_color:    '#FFE9B0',  // warm gold-cream
 
     // ── NODES ──
     node_radius_tier1:    16,
@@ -536,11 +552,10 @@
         worldExtent: ext,
       };
       // State buffers must size to the new instance counts.
-      // Nodes default to 0 (no dim — full alpha at idle).
-      // Edges default to 1 (idle — paint instance_color, the slate
-      // atmosphere / headline-low-alpha). State 0 means HOT in the
-      // edge shader, so leaving as zeros would light every wire up.
-      local.nodeStates = new Float32Array(nodePack.instanceCount);
+      // Nodes: 2 floats per instance — (state, selected). state
+      // defaults to 0 (no dim, full alpha); selected defaults to 0.
+      // Edges: 1 float per instance, default 1 (idle).
+      local.nodeStates = new Float32Array(nodePack.instanceCount * 2);
       local.edgeStates = new Float32Array(edgePack.instanceCount).fill(1.0);
 
       // Cross-mode hover/lock cleared — node ids don't map
@@ -638,17 +653,31 @@
       // dim_amount only applies when something is in focus. At
       // true idle (no hover, no lock) we pass 0 so the already-
       // faint idle alphas (0.10–0.30) aren't further attenuated.
-      const effectiveDim = local.focusedSet ? local.params.dim_amount : 0;
+      const hasFocus      = !!(local.focusedSet && local.focusedSet.size);
+      const effectiveDim  = hasFocus ? local.params.dim_amount       : 0;
+      const effectiveDimN = hasFocus ? local.params.dim_amount_nodes : 0;
+      // Hex glow → rgb in 0..1. Cheap; called once per frame.
+      const gh = local.params.selected_glow_color || '#FFFFFF';
+      const glowRgb = [
+        parseInt(gh.slice(1, 3), 16) / 255,
+        parseInt(gh.slice(3, 5), 16) / 255,
+        parseInt(gh.slice(5, 7), 16) / 255,
+      ];
       local.renderer.drawFrame({
-        viewportCss:      { w: vp.w, h: vp.h },
-        camera:           camera.state,
-        dimAmount:        effectiveDim,
-        wireMinScreenPx:  local.params.wire_min_screen_px,
-        wireMaxScreenPx:  local.params.wire_max_screen_px,
-        nodeInstances:    local.mode.nodePacked.data,
-        edgeInstances:    local.mode.edgePacked.data,
-        nodeStates:       local.nodeStates,
-        edgeStates:       local.edgeStates,
+        viewportCss:           { w: vp.w, h: vp.h },
+        camera:                camera.state,
+        dimAmount:             effectiveDim,
+        dimAmountNodes:        effectiveDimN,
+        wireMinScreenPx:       local.params.wire_min_screen_px,
+        wireMaxScreenPx:       local.params.wire_max_screen_px,
+        selectedSizeMult:      local.params.selected_size_mult,
+        selectedGlowStrength:  local.params.selected_glow_strength,
+        selectedGlowExtent:    local.params.selected_glow_extent,
+        selectedGlowColorRgb:  glowRgb,
+        nodeInstances:         local.mode.nodePacked.data,
+        edgeInstances:         local.mode.edgePacked.data,
+        nodeStates:            local.nodeStates,
+        edgeStates:            local.edgeStates,
       });
       const dt = performance.now() - t0;
       const fEl = document.getElementById('forge-status-frame');
@@ -858,12 +887,64 @@
     // Re-compute the focused set from current hover + lock state,
     // re-pack per-instance state buffers, update labels, redraw.
     // Called whenever hover changes, lock changes, or camera moves.
+    //
+    // Phase 6c — three states:
+    //   SELECTED    = {hoverId} ∪ lockedSet  (the actual anchors)
+    //   HIGHLIGHTED = SELECTED ∪ 1-hop neighbours (focusedSet)
+    //   DIMMED      = everything else
+    // Selected nodes get glow + size mult in the shader; the
+    // node-state attribute is bumped from 1 float to vec2(state, selected).
     function recomputeFocus() {
-      local.focusedSet = graph.focusedSetFor(local.hoverId, local.lockedSet, local.mode.adjacency);
-      local.nodeStates = graph.computeNodeStates(local.mode.nodePacked.idIndex, local.focusedSet);
+      const idx       = local.mode.nodePacked.idIndex;
+      local.focusedSet  = graph.focusedSetFor(local.hoverId, local.lockedSet, local.mode.adjacency);
+      local.selectedSet = computeSelectedSet(local.hoverId, local.lockedSet);
+      const states    = graph.computeNodeStates(idx, local.focusedSet);
+      const selectFlags = graph.computeSelectedStates
+        ? graph.computeSelectedStates(idx, local.selectedSet)
+        : new Float32Array(idx.length);
+      // Interleave into the 2-float-per-instance VBO layout.
+      local.nodeStates = interleavePairs(states, selectFlags);
       local.edgeStates = graph.computeEdgeStates(local.mode.edges, local.focusedSet);
+      syncGlyphFocus();
       syncLabels();
       drawFrame();
+    }
+
+    function computeSelectedSet(hoverId, lockedSet) {
+      const s = new Set();
+      if (hoverId) s.add(hoverId);
+      if (lockedSet) for (const id of lockedSet) s.add(id);
+      return s;
+    }
+
+    function interleavePairs(a, b) {
+      const n = a.length;
+      const out = new Float32Array(n * 2);
+      for (let i = 0; i < n; i++) {
+        out[i*2]   = a[i];
+        out[i*2+1] = b[i];
+      }
+      return out;
+    }
+
+    // Apply per-glyph CSS opacity based on focus membership.
+    // Glyphs are DOM elements (SVG spans), not painted by the
+    // WebGPU shader — so the shader-side dim doesn't touch them.
+    // Without this, on focus the disks fade but the glyphs stay
+    // bright on top, making the focus state look weak.
+    function syncGlyphFocus() {
+      const focus  = local.focusedSet;
+      const baseOp = local.params.glyph_opacity;
+      const dimMul = local.params.dim_amount_glyphs;
+      const dimOp  = baseOp * (1 - dimMul);
+      for (let i = 0; i < local.glyphEls.length; i++) {
+        const g = local.glyphEls[i];
+        if (focus && !focus.has(g.id)) {
+          g.el.style.opacity = String(dimOp);
+        } else {
+          g.el.style.opacity = '';   // fall back to CSS var
+        }
+      }
     }
 
     // Update hoverId, then refresh focus. No-op when the hover
@@ -871,6 +952,9 @@
     function setHoverId(newId) {
       if (newId === local.hoverId) return;
       local.hoverId = newId;
+      // Cursor cue — pointer over a node, default arrow elsewhere.
+      // is-panning (set on pointerdown) wins via CSS rule order.
+      canvas.classList.toggle('is-hover-node', !!newId);
       const hEl = document.getElementById('forge-status-hover');
       if (hEl) {
         if (newId) {
@@ -1042,12 +1126,14 @@
         local.panLastX   = ev.clientX;
         local.panLastY   = ev.clientY;
         local.panSamples = [{ x: ev.clientX, y: ev.clientY, t: performance.now() }];
+        canvas.classList.add('is-panning');
         ev.preventDefault();
       });
       const endPan = (ev) => {
         if (!local.panActive) return;
         try { canvas.releasePointerCapture(ev.pointerId); } catch (e) { /* ignore */ }
         local.panActive = false;
+        canvas.classList.remove('is-panning');
         // Click = pointerup without intermediate move. If the pointer
         // didn't move during the drag, treat it as a click and toggle
         // the lock at the cursor's hit. Click on empty space clears
@@ -1215,7 +1301,14 @@
         m.hitNodes[i] = hn;
         m.hitById.set(id, hn);
       }
-      local.nodeStates = new Float32Array(np.instanceCount);
+      // Rebuild the (state, selected) interleaved buffer from the
+      // CURRENT focus + lock state — a fresh zero array would lose
+      // the SELECTED flag when zoom triggers a re-pack mid-lock.
+      const states      = graph.computeNodeStates(np.idIndex, local.focusedSet);
+      const selectFlags = graph.computeSelectedStates
+        ? graph.computeSelectedStates(np.idIndex, local.selectedSet)
+        : new Float32Array(np.idIndex.length);
+      local.nodeStates  = interleavePairs(states, selectFlags);
       // Track the camera scale this pack was made at, so the
       // re-pack-on-zoom hook knows when it's actually stale.
       local.packedAtScale = (camera && camera.state) ? camera.state.scale : 1;
@@ -1266,6 +1359,10 @@
         local.glyphFamilyColor.set(id, fc);
       }
       syncGlyphPositions();
+      // Restore the per-glyph focus opacity (rebake recreated DOM
+      // nodes from scratch — they all start at default opacity,
+      // and we want to honour the current focus state).
+      syncGlyphFocus();
     }
 
     // ── Public API for dev panel ────────────────────────
@@ -1277,7 +1374,10 @@
       local.params[name] = value;
 
       // Cheap one-liners first — CSS vars + redraws.
-      if (name === 'dim_amount')   { drawFrame(); return; }
+      if (name === 'dim_amount')        { drawFrame(); return; }
+      if (name === 'dim_amount_nodes')  { drawFrame(); return; }
+      if (name === 'dim_amount_glyphs') { syncGlyphFocus(); return; }
+      if (name.startsWith('selected_')) { drawFrame(); return; }
       if (name === 'atmosphere')   { document.documentElement.style.setProperty('--forge-atmosphere',    String(value)); return; }
       if (name === 'label_size')   { document.documentElement.style.setProperty('--forge-label-size',    value + 'px'); scheduleIdleLabelSync(); return; }
       if (name === 'glyph_opacity'){ document.documentElement.style.setProperty('--forge-glyph-opacity', String(value)); return; }

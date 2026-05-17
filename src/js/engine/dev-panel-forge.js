@@ -31,7 +31,7 @@
 
   if (typeof window === 'undefined') return;
 
-  const LS_KEY = 'codex-atlas/forge-dev-panel-v2';   // v2 schema
+  const LS_KEY = 'codex-atlas/forge-dev-panel-v3';   // v3 schema (Phase 6c: SELECTED state + dim split)
 
   // Bucket order matches `BUCKET_INDEX` in engine/graph/edge.js.
   const BUCKETS = [
@@ -104,10 +104,12 @@
         {
           id: 'wires-focus',
           title: 'FOCUS DIM',
-          blurb: 'How much non-focused stuff fades when something is hovered or locked.',
+          blurb: 'How much non-focused stuff fades when something is hovered or locked. Three independent channels — wires + disks + symbols — so you can dial them separately.',
           controls: [
-            { kind: 'slider', id: 'dim_amount', label: 'Background fade — strength', hint: '1 = invisible at idle; 0 = stays bright.', min: 0, max: 1, step: 0.01, default: 0.85 },
-            { kind: 'slider', id: 'atmosphere', label: 'Stage atmosphere — strength', hint: 'Soft radial glow behind the wheel.',     min: 0, max: 0.2, step: 0.005, default: 0.025 },
+            { kind: 'slider', id: 'dim_amount',        label: 'Background WIRES — fade',   hint: '1 = invisible at focus; 0 = stays bright.',           min: 0, max: 1,   step: 0.01,  default: 0.85 },
+            { kind: 'slider', id: 'dim_amount_nodes',  label: 'Background NODES — fade',   hint: 'Same scale, applied to dimmed disks.',                 min: 0, max: 1,   step: 0.01,  default: 0.85 },
+            { kind: 'slider', id: 'dim_amount_glyphs', label: 'Background SYMBOLS — fade', hint: 'Glyphs are DOM (SVG); shader dim doesn\'t touch them.', min: 0, max: 1,   step: 0.01,  default: 0.85 },
+            { kind: 'slider', id: 'atmosphere',        label: 'Stage atmosphere — strength', hint: 'Soft radial glow behind the wheel.',                  min: 0, max: 0.2, step: 0.005, default: 0.025 },
           ],
         },
       ],
@@ -135,6 +137,17 @@
           controls: [
             { kind: 'slider', id: 'node_min_screen_px', label: 'Don\'t shrink below', hint: 'Minimum apparent on-screen radius (px).', min: 0, max: 12, step: 0.5, default: 3,  unit: 'px' },
             { kind: 'slider', id: 'node_max_screen_px', label: 'Don\'t grow above',  hint: 'Maximum apparent on-screen radius (px).', min: 8, max: 64, step: 1,   default: 28, unit: 'px' },
+          ],
+        },
+        {
+          id: 'nodes-selected',
+          title: 'SELECTED STATE (the anchor — distinct from its 1-hop tree)',
+          blurb: 'Three visual states: IDLE → HIGHLIGHTED (the 1-hop neighbourhood) → SELECTED (the actual clicked / hovered node). This group tunes the SELECTED layer on top.',
+          controls: [
+            { kind: 'slider', id: 'selected_size_mult',     label: 'Size multiplier',  hint: '1.0 = same size as idle; 1.5 = 50% bigger.',          min: 1,    max: 2,    step: 0.05,  default: 1.15, unit: '×' },
+            { kind: 'slider', id: 'selected_glow_strength', label: 'Glow strength',    hint: 'Soft halo ring outside the disk. 0 = no glow.',       min: 0,    max: 1,    step: 0.02,  default: 0.65 },
+            { kind: 'slider', id: 'selected_glow_extent',   label: 'Glow radius',      hint: 'How far the glow reaches. 1.0 = no halo; 2.0 = double radius.', min: 1, max: 2.5, step: 0.05, default: 1.6, unit: '×' },
+            { kind: 'color',  id: 'selected_glow_color',    label: 'Glow color',       hint: 'The halo tint. Warm cream by default; pick any.',     default: '#FFE9B0' },
           ],
         },
       ],
