@@ -16,8 +16,10 @@
     { id: 'latin',      label: 'Latin',      font: "serif", dir: 'ltr' },
     { id: 'ogham',      label: 'Ogham',      font: "'Segoe UI', sans-serif", dir: 'ltr' },
     { id: 'futhark',    label: 'Futhark',    font: "'Segoe UI', sans-serif", dir: 'ltr' },
-    { id: 'chinese',    label: 'Chinese',    font: "'Segoe UI', 'Apple Color Emoji', sans-serif", dir: 'ltr' },
-    { id: 'japanese',   label: 'Japanese',   font: "'Segoe UI', 'Apple Color Emoji', sans-serif", dir: 'ltr' },
+    { id: 'chinese',     label: 'Chinese',     font: "'Segoe UI', 'Apple Color Emoji', sans-serif", dir: 'ltr' },
+    { id: 'japanese',    label: 'Japanese',    font: "'Segoe UI', 'Apple Color Emoji', sans-serif", dir: 'ltr' },
+    { id: 'devanagari',  label: 'Devanagari',  font: "'Noto Sans Devanagari', 'Segoe UI', sans-serif", dir: 'ltr' },
+    { id: 'hangul',      label: 'Hangul',      font: "'Noto Sans KR', 'Malgun Gothic', 'Segoe UI', sans-serif", dir: 'ltr' },
   ];
 
   let _expandedIdx = null;
@@ -111,7 +113,7 @@
 
     // Chinese/Japanese modes show only their own scriptOnly entries (no Semitic letters).
     // All other modes show shared entries (no scriptOnly) plus their own scriptOnly entries.
-    const isStandaloneScript = _script === 'chinese' || _script === 'japanese';
+    const isStandaloneScript = _script === 'chinese' || _script === 'japanese' || _script === 'devanagari' || _script === 'hangul';
     let displayData = data.map((g, idx) => ({ ...g, _origIdx: idx })).filter(g => {
       if (isStandaloneScript) return g.scriptOnly && g.scriptOnly.includes(_script);
       if (!g.scriptOnly) return true;           // no restriction — show in all scripts
@@ -146,7 +148,7 @@
 
     displayData.forEach((g) => {
       // Section divider for hieroglyph + standalone script modes
-      const _showDivider = _script === 'hieroglyph' || _script === 'chinese' || _script === 'japanese' || _script === 'ogham' || _script === 'futhark';
+      const _showDivider = _script === 'hieroglyph' || _script === 'chinese' || _script === 'japanese' || _script === 'devanagari' || _script === 'hangul' || _script === 'ogham' || _script === 'futhark';
       if (_showDivider && g.section && g.section !== _lastSection) {
         _lastSection = g.section;
         // Close any open grid row visually with a full-width label
