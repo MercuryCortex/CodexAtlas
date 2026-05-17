@@ -11,7 +11,7 @@ domains: ["destructive forces", "rocks", "thorns", "monsters", "winter", "dishar
 gender: "masculine"
 role: "creator-destroyer / dualistic adversary"
 parent-of: []
-child-of: ["[[sky-woman]] (through her daughter or directly, depending on tradition)"]
+child-of: ["[[sky-woman-haudenosaunee]] (through her daughter or directly, depending on tradition)"]
 consort: []
 attributes: ["flint stone", "cold", "thorns and briars", "monsters"]
 attested-in: ["[[phase-8-023-gayanashagowa]]"]

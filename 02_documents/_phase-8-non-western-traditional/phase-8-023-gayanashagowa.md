@@ -18,9 +18,9 @@ authorship: "Attributed to [[deganawidah-peacemaker]] (the Peacemaker) in collab
 key-figures: ["[[deganawidah-peacemaker]]", "[[hiawatha-haudenosaunee]]"]
 themes: []
 parallels: []
-influenced-by: ["Sky World cosmogony of [[sky-woman]]", "Haudenosaunee condolence ceremony traditions"]
+influenced-by: ["Sky World cosmogony of [[sky-woman-haudenosaunee]]", "Haudenosaunee condolence ceremony traditions"]
 influences: ["Benjamin Franklin's Albany Plan of Union (1754)", "Articles of Confederation (1777)", "US Constitution (1787) — degree of influence contested; see tradition-haudenosaunee MASSIVE WIN section"]
-deities-mentioned: ["[[sky-woman]]", "[[sapling-deity]]"]
+deities-mentioned: ["[[sky-woman-haudenosaunee]]", "[[sapling-deity]]"]
 events-context: []
 status: "stub"
 refs:

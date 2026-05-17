@@ -11,7 +11,7 @@ domains: ["life-sustaining creation", "animals", "plants", "rivers", "sunlight",
 gender: "masculine"
 role: "creator / embodied-good-mind"
 parent-of: []
-child-of: ["[[sky-woman]] (through her daughter or directly, depending on tradition)"]
+child-of: ["[[sky-woman-haudenosaunee]] (through her daughter or directly, depending on tradition)"]
 consort: []
 attributes: ["the sun", "fertile earth", "good animals and plants"]
 attested-in: ["[[phase-8-023-gayanashagowa]]"]

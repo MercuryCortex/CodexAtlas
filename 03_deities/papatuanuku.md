@@ -19,7 +19,7 @@ syncretic-edges:
   - target: "[[gaia]]"
     type: "scholarly-parallel"
     source: "Structural parallel: both are primordial earth-mother deities whose separation from a sky-father figure creates the differentiated world. Both are the literal ground of existence. No transmission documented. Independent convergence in the sky-earth separation myth — see tradition-maori MASSIVE WIN section."
-  - target: "[[sky-woman]]"
+  - target: "[[sky-woman-haudenosaunee]]"
     type: "scholarly-parallel"
     source: "Both are cosmogonic primordial mothers in Indigenous traditions (Māori and Haudenosaunee respectively); both are literally foundational to the existence of the earth and all life on it. No transmission documented."
 status: "metadata"

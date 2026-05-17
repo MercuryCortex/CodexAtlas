@@ -7,7 +7,7 @@ date-emergence: -3000
 date-end:
 region-origin: "Northeast Woodlands, North America (present upstate New York / southeastern Ontario / Quebec)"
 regions-spread: ["Northeast Woodlands", "Eastern Great Lakes", "St. Lawrence valley"]
-key-deities: ["[[sky-woman]]", "[[flint-deity]]", "[[sapling-deity]]", "[[deganawidah-peacemaker]]"]
+key-deities: ["[[sky-woman-haudenosaunee]]", "[[flint-deity]]", "[[sapling-deity]]", "[[deganawidah-peacemaker]]"]
 key-persons: ["[[deganawidah-peacemaker]]", "[[hiawatha-haudenosaunee]]"]
 key-documents: ["[[phase-8-023-gayanashagowa]]"]
 sister-traditions: ["[[tradition-lakota]]", "[[tradition-navajo]]", "[[tradition-australian-aboriginal]]"]
@@ -64,7 +64,7 @@ Sky Woman gives birth to twins:
 The twins contend throughout creation and eventually in direct combat. Flint is defeated and confined, but not destroyed — the dualism is permanent, not eschatological. Evil/difficulty are not abolished but bounded.
 
 ## Pantheon
-- [[sky-woman]] — the primordial mother who falls from the Sky World; the earth itself is created by her presence
+- [[sky-woman-haudenosaunee]] — the primordial mother who falls from the Sky World; the earth itself is created by her presence
 - [[flint-deity]] — the Evil Mind twin; creator of destructive forces in the world; the adversarial aspect of creation
 - [[sapling-deity]] — the Good Mind twin; creator of life-sustaining aspects of the world
 - [[deganawidah-peacemaker]] — the Peacemaker; semi-divine founder of the confederacy; brings the Great Law
@@ -132,7 +132,7 @@ The Sapling-Flint twin structure maps onto the Zoroastrian Ahura Mazda / Ahriman
 ---
 
 ## Edge Connections
-- → [[sky-woman]] — cosmogonic Sky World ancestor; creator of Turtle Island
+- → [[sky-woman-haudenosaunee]] — cosmogonic Sky World ancestor; creator of Turtle Island
 - → [[flint-deity]] — Evil Mind twin; permanent dualistic counterpart to good creation
 - → [[sapling-deity]] — Good Mind twin; life-sustaining creation
 - → [[deganawidah-peacemaker]] — the Peacemaker; semi-divine founder of the confederacy
