@@ -27,14 +27,16 @@ _Hand-maintained. Each agent currently working in the vault appends a claim bloc
 
 ---
 
-## medicine-tab-1 — IN FLIGHT (2026-05-17)
-- New folder `17_medicine/` with 6 tradition-hub nodes (Mesopotamian, Egyptian, Greek Asklepion, Ayurveda, Islamic Golden Age, Shamanic)
-- 2 deity nodes: `asklepios.md`, `dhanvantari.md`
-- 2 person nodes: `hippocrates.md`, `avicenna.md`
-- 3 theme nodes: `temple-incubation.md`, `sacred-pharmacology.md`, `healer-priest.md`
-- 5 document nodes: `phase-1-037-ebers-papyrus.md`, `phase-1-038-edwin-smith-papyrus.md`, `phase-2-045-hippocratic-corpus.md`, `phase-3-036-charaka-samhita.md`, `phase-5-063-avicenna-canon-of-medicine.md`
-- Tag existing nodes: sekhmet, apollo, imhotep, ninazu, galen-of-pergamon
-- App: `VIEWS.medicine` (5 modes: deities · traditions · spine · pharmacology · findings) + nav item
+## ~~medicine-tab-1 — FINISHED (2026-05-17)~~
+- ~~New folder `17_medicine/` with 6 tradition-hub nodes (Mesopotamian, Egyptian, Greek Asklepion, Ayurveda, Islamic Golden Age, Shamanic)~~
+- ~~2 deity nodes: `asklepios.md`, `dhanvantari.md`~~
+- ~~2 person nodes: `hippocrates.md`, `avicenna.md`~~
+- ~~3 theme nodes: `temple-incubation.md`, `sacred-pharmacology.md`, `healer-priest.md`~~
+- ~~5 document nodes: Ebers Papyrus, Edwin Smith Papyrus, Hippocratic Corpus, Charaka Samhita, Avicenna Canon~~
+- ~~Tag existing nodes: sekhmet, apollo, imhotep, ninazu, galen-of-pergamon~~
+- ~~App: `VIEWS.medicine` upgraded to 5 full modes (deities · traditions · transmission · pharmacology · findings) — browser-verified~~
+- ~~Build: 7 medicine nodes · 17,460 edges · 0 YAML errors~~
+- ~~MASSIVE WINs: Tridosha↔Humors parallel · 6 independent willow bark discoveries · Sushruta rhinoplasty 2,300yr before Europe · Islamic hospital invention · incubation→psychoanalysis 2,500yr chain · moldy bread→penicillin 3,500yr precedent~~
 
 ## ~~maths-sciences-1 — FINISHED (2026-05-17)~~
 - ~~New folder 16_mathematics/ with 6 nodes: mathematics-babylonian-temple, mathematics-sulba-sutras, mathematics-pythagorean-sacred, mathematics-house-of-wisdom, mathematics-zero-india, mathematics-sacred-geometry~~
