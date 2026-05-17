@@ -496,7 +496,10 @@ def tradition_family(t: str) -> str:
     # "inuit" word-boundary — "continuity" contains "inuit" as substring
     if "lakota" in s or "iroquois" in s or "haudenosaunee" in s or "navajo" in s or "hopi" in s or "cherokee" in s or "algonqu" in s or "native american" in s or "first nations" in s or "anishin" in s or "pueblo" in s or "diné" in s or _re.search(r'\binuit\b', s) or "yupik" in s or "tlingit" in s or "haida" in s or "tsimshian" in s:
         return "Native-American"
-    if "polynesian" in s or "maori" in s or "māori" in s or "hawaiian" in s or "samoan" in s or "tongan" in s or "aboriginal" in s or "australian" in s or "torres" in s or "papuan" in s or "melanesian" in s or "pacific" in s:
+    if ("polynesian" in s or "maori" in s or "māori" in s or "hawaiian" in s
+            or "samoan" in s or "tongan" in s or "aboriginal" in s or "australian" in s
+            or "australia" in s or "torres" in s or "papuan" in s or "melanesian" in s
+            or "pacific" in s or "kimberley" in s or "kulin" in s):
         return "Pacific"
     # Modern-Esoteric — "caodai" no-space variant added.
     if ("theosoph" in s or "anthroposoph" in s or "thelem" in s or "rosic" in s
