@@ -9268,7 +9268,7 @@ function renderMathFindings(pane) {
 
 // ============================================================
 // VIEWS.music — sound cosmology · music-cosmos investigation.
-// Two modes: nodes (browse 10_music/ vault content) and findings (MASSIVE WIN).
+// Three modes: nodes · findings · lineages (transmission chains absorbed from Lineages tab).
 // ============================================================
 const _musicState = { mode: 'nodes' };
 
@@ -9279,12 +9279,14 @@ VIEWS.music = {
     document.getElementById('view-controls').innerHTML = `
       <button class="btn btn-mini music-mode${_musicState.mode==='nodes'?' active':''}" data-mode="nodes">nodes</button>
       <button class="btn btn-mini music-mode${_musicState.mode==='findings'?' active':''}" data-mode="findings">findings</button>
+      <button class="btn btn-mini music-mode${_musicState.mode==='lineages'?' active':''}" data-mode="lineages">lineages</button>
     `;
     document.querySelectorAll('.music-mode').forEach(b => {
       b.onclick = () => { _musicState.mode = b.dataset.mode; setView('music'); };
     });
     legend.style('display', 'none').html('');
     if (_musicState.mode === 'findings') return _renderMusicFindings();
+    if (_musicState.mode === 'lineages') return _renderMusicLineages();
     return _renderMusicNodes();
   }
 };
@@ -9367,6 +9369,68 @@ function _renderMusicFindings() {
   });
   html += '</div>';
   pane.innerHTML = html;
+  document.getElementById('canvas').appendChild(pane);
+}
+
+function _renderMusicLineages() {
+  const pane = document.createElement('div');
+  pane.className = 'list-pane chains-pane';
+  const chains = window.CHAINS_DATA || [];
+  const BADGE = {
+    'INSTITUTIONAL': { bg: '#2a4a5a', color: '#7ab8cc', label: 'INSTITUTIONAL' },
+    'ESOTERIC':      { bg: '#3a2a4a', color: '#b07acc', label: 'ESOTERIC' },
+    'GEOGRAPHIC':    { bg: '#2a4a3a', color: '#7acc9a', label: 'GEOGRAPHIC' },
+    'CONVERGENCE':   { bg: '#4a3a20', color: '#ccaa55', label: 'CONVERGENCE' },
+  };
+  const header = document.createElement('div');
+  header.className = 'list-pane-header';
+  header.innerHTML = `<span class="lph-title">Transmission Lineages</span><span class="lph-rule"></span><span class="lph-count">${chains.length} chains</span>`;
+  pane.appendChild(header);
+  chains.forEach(chain => {
+    const b = BADGE[chain.category] || BADGE['INSTITUTIONAL'];
+    const card = document.createElement('div');
+    card.className = 'chain-card';
+    card.innerHTML = `
+      <div class="chain-head">
+        <div class="chain-head-top">
+          <span class="chain-badge" style="background:${b.bg};color:${b.color}">${b.label}</span>
+          <span class="chain-span">${chain.span || ''}</span>
+        </div>
+        <h3 class="chain-title">${chain.title}</h3>
+        <p class="chain-summary">${chain.summary}</p>
+      </div>
+      <div class="chain-links">
+        ${(chain.links || []).map((lk, i) => `
+          <div class="chain-link">
+            <div class="chain-link-left">
+              <div class="chain-date">${lk.date}</div>
+              <div class="chain-dot-col">
+                <div class="chain-dot"></div>
+                ${i < (chain.links.length - 1) ? '<div class="chain-line"></div>' : ''}
+              </div>
+            </div>
+            <div class="chain-link-right">
+              <span class="chain-node-label" data-node="${lk.node || ''}">${lk.label}</span>
+              <p class="chain-note">${lk.note}</p>
+            </div>
+          </div>
+        `).join('')}
+      </div>
+    `;
+    card.querySelectorAll('.chain-node-label[data-node]').forEach(el => {
+      const nid = el.dataset.node;
+      if (!nid) return;
+      el.style.cursor = 'pointer';
+      el.addEventListener('click', e => { e.stopPropagation(); selectNode(nid); });
+    });
+    pane.appendChild(card);
+  });
+  if (!chains.length) {
+    const empty = document.createElement('div');
+    empty.className = 'list-pane-empty';
+    empty.textContent = 'No chains yet.';
+    pane.appendChild(empty);
+  }
   document.getElementById('canvas').appendChild(pane);
 }
 
