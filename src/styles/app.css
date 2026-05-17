@@ -1944,6 +1944,11 @@ body.view-atlas main.canvas { background: var(--bg-0); }
   will-change: transform;
 }
 .ph2-hulls-g, .ph2-edges-g, .ph2-ticks-g { will-change: transform; }
+/* Hulls are clickable — clicking a wedge background isolates that family.
+   The SVG overlay parent has pointer-events:none so canvas mouse events
+   still pass through everywhere ELSE; only the hull paths themselves grab. */
+.ph2-hulls-g { pointer-events: auto; }
+.ph2-hull    { cursor: pointer; }
 .ph2-node-labels-overlay, .ph2-rim-overlay { will-change: contents; }
 /* HULLS — rounded annular wedges, one per family. Geometry matches
    production's .sector-hull (Rinner-22 → Router+22, padAngle 0.014,

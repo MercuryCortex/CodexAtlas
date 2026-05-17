@@ -915,13 +915,24 @@
       // suppresses it so only the curved SVG overlay paints visible edges.
       defaultEdgeColor: 'rgba(0,0,0,0)',
       defaultNodeColor: '#7a8090',
-      // ZOOM SENSITIVITY — sigma's default `zoomingRatio: 1.7` is per-wheel-
-      // event, which trackpads fire 5-20× per gesture (compound 1.7^N → wild).
-      // 1.10 gives a smooth, natural feel on trackpads. zoomDuration shortened
-      // a touch so the animation feels responsive without overshoot.
-      zoomingRatio:               1.10,
-      zoomDuration:                180,
-      doubleClickZoomingRatio:    1.40,
+      // Custom hover renderer — sigma's default draws a label-background rect
+      // even when label === '' (any string triggers it), producing a 5-px white
+      // sliver to the right of the dot. Ours just paints the bumped-size dot,
+      // no label box. Size bump itself lives in nodeReducer.
+      defaultDrawNodeHover: (ctx, data) => {
+        ctx.beginPath();
+        ctx.arc(data.x, data.y, data.size + 0.5, 0, Math.PI * 2);
+        ctx.fillStyle = data.color;
+        ctx.closePath();
+        ctx.fill();
+      },
+      // ZOOM SENSITIVITY — sigma's default 1.7 is too aggressive (compounds
+      // wildly on trackpads), but 1.10 needed too many wheel ticks. 1.25 is
+      // the sweet spot — a trackpad gesture reaches usable zoom in a single
+      // motion without compounding into spaceland on a hard wheel.
+      zoomingRatio:               1.25,
+      zoomDuration:                160,
+      doubleClickZoomingRatio:    1.50,
       doubleClickZoomingDuration:  220,
       labelColor: { color: '#cad0d8' },
       labelSize: 11,
@@ -1118,6 +1129,21 @@
       path.setAttribute('fill', w.color);
       path.setAttribute('stroke', w.color);
       path.dataset.family = w.name;
+      // CLICK-A-HULL → isolate that family. Click again on same hull to clear.
+      // Background click (stage) and deity click already clear via clickStage.
+      path.addEventListener('click', (ev) => {
+        ev.stopPropagation();
+        const fam = w.name;
+        _familyFilter = (_familyFilter === fam) ? null : fam;
+        _lockedSet = new Set();
+        _selectedId = null;
+        _hoverId = null;
+        applyHullFilterState();
+        applyEdgeHoverState();
+        if (typeof applyLabelHoverDim === 'function') applyLabelHoverDim();
+        if (typeof updateNodeLabelVisibility === 'function') updateNodeLabelVisibility();
+        sigma.refresh({ skipIndexation: true });
+      });
       hullsG.appendChild(path);
       hullEls.push(path);
       // Phase F — radial tick line: from inside the hull's outer rim out
@@ -1579,11 +1605,19 @@
       if (window.selectNode) window.selectNode(node, true);
     });
     sigma.on('clickStage', () => {
-      _selectedId = null;
-      _hoverId = null;
-      _lockedSet = new Set();
+      // Clicking empty stage clears the LOCKED selection + the family-isolate
+      // filter set by hull click. Deity-click flow is handled separately and
+      // does NOT clear the family filter (clicking a node inside the isolate
+      // narrows further; user needs an explicit empty click to fully reset).
+      _selectedId   = null;
+      _hoverId      = null;
+      _lockedSet    = new Set();
+      _familyFilter = null;
       sigma.refresh({ skipIndexation: true });
       applyEdgeHoverState();
+      applyHullFilterState();
+      if (typeof applyLabelHoverDim === 'function') applyLabelHoverDim();
+      if (typeof updateNodeLabelVisibility === 'function') updateNodeLabelVisibility();
       hideThumbCard();
     });
     // Double-click on empty = animated reset to computeFitRatio (same view
