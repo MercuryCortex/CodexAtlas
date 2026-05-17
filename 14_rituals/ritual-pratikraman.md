@@ -87,6 +87,8 @@ The Jain pratikraman is unique in two ways: (1) it extends the scope of moral ac
 ## Vault Connections
 
 - [[mahavira]] — Mahavira systematized pratikraman as a core monastic obligation
+- [[mahavira-jain]] — deity form reference; liberated being whose path pratikraman traces
+- [[rishabha]] — first Tirthankara; established the ascetic framework within which pratikraman operates
 - [[tradition-jainism]] — tradition
 - [[moral-ahimsa-nonviolence]] — the ethical principle that makes the micro-organism category of confession necessary
 - [[ritual-paryushana]] — annual atonement that extends and intensifies the daily pratikraman; the *Samvatsari Pratikraman* at Paryushana's end reviews the entire year
@@ -94,3 +96,4 @@ The Jain pratikraman is unique in two ways: (1) it extends the scope of moral ac
 - [[ritual-confession-absolution]] — Catholic parallel: examination of conscience + confession structure
 - [[ritual-salat-five-prayers]] — Islamic five-prayer parallel: structured daily practice with prescribed form
 - [[ritual-yasna-fire-ceremony]] — Zoroastrian daily ritual maintenance parallel
+- [[ritual-daily-prayer]] — cross-tradition daily structured prayer node; pratikraman as the Jain instantiation

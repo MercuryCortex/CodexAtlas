@@ -83,6 +83,11 @@ The Ark of the Covenant in Israelite tradition (Samuel 4-6) is the most charged 
 ## Vault Connections
 
 - [[amaterasu]] — central kami in many major matsuri traditions
+- [[izanagi]] — the primordial creator; source of the kami whose festivals matsuri celebrates
+- [[izanami]] — Izanagi's wife; her death established the boundary between worlds that matsuri ritually bridges
+- [[susanoo]] — storm kami; many matsuri involve propitiation of Susanoo and purification from his power
+- [[tsukuyomi]] — moon kami; lunar calendar matsuri observe his cycle
 - [[tradition-shinto]] — tradition
-- [[ritual-opet-festival]] — Egyptian barque procession parallel; most structurally similar ancient precedent
+- [[ritual-opet-festival]] — Egyptian barque procession parallel; most structurally similar ancient precedent; divine carried on shoulders through human space
 - [[ritual-misogi-purification]] — the purification prerequisite that precedes all matsuri participation
+- [[ritual-chinese-ancestor-veneration]] — parallel: the divine/dead return to community space during the Ghost Month festivals; Obon as the Japanese bridge between these traditions

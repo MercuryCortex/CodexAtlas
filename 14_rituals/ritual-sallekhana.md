@@ -75,7 +75,12 @@ The controversy produced one of the most sophisticated modern legal debates abou
 
 - [[mahavira]] — exemplar; died this way
 - [[mahavira-jain]] — deity form reference
+- [[rishabha]] — first Tirthankara; established the path of liberation that sallekhana perfects
 - [[tradition-jainism]] — tradition
 - [[moral-ahimsa-nonviolence]] — the foundational principle sallekhana applies to one's own death
 - [[ritual-pratikraman]] — companion daily repentance ritual; what sallekhana perfects over months
 - [[ritual-paryushana]] — annual atonement context in which sallekhana commitments are often made public
+- [[ritual-fasting-cross-tradition]] — the voluntary food-withdrawal dimension; sallekhana as the most extreme fasting structure in any tradition
+- [[ritual-yom-kippur-atonement]] — annual fast parallel: Yom Kippur as the Jewish bodily atonement; contrast with sallekhana's irreversible commitment
+- [[ritual-ramadan-sawm]] — collective fast parallel: Islam's month of voluntary food restriction; contrast with sallekhana's terminal structure
+- [[event-buddha-parinirvana-c-400-bce]] — Buddhist parallel: the enlightened being's chosen death; parinirvana and sallekhana share the structure of consciously willed final departure

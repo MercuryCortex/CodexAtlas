@@ -68,7 +68,8 @@ The distinctiveness of the Sikh langar: it is permanent (daily, not seasonal), m
 - [[guru-nanak]] — founder of langar as institution
 - [[waheguru]] — the divine presence honored through seva
 - [[tradition-sikhism]] — tradition
-- [[ritual-agape-love-feast]] — early Christian parallel: communal meal as anti-hierarchy technology
-- [[ritual-ramadan-sawm]] — Islamic fasting parallel: collective meal as moral reset
+- [[ritual-agape-love-feast]] — early Christian parallel: communal meal as anti-hierarchy technology; slave eats with master
+- [[ritual-eucharist-communion]] — Eucharist as shared sacred meal; the Christian ritual that displaced the agape love feast
+- [[ritual-ramadan-sawm]] — Islamic fasting parallel: collective meal as moral reset; iftar as communal breaking of fast
 - [[ritual-amrit-sanchar]] — companion ritual; initiation makes you eligible for full community membership
 - [[ritual-ardas]] — companion prayer; langar often follows communal Ardas recitation

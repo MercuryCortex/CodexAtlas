@@ -79,9 +79,11 @@ The Five Beloved at the 1699 initiation came from five different castes and five
 - [[guru-gobind-singh-ji]] — alternate reference
 - [[guru-nanak]] — Sikhism's founder; established the tradition's anti-caste theology
 - [[waheguru]] — the divine name transmitted through amrit
+- [[phase-6-016-guru-granth-sahib]] — the scripture whose Banis are recited while stirring the amrit
 - [[tradition-sikhism]] — tradition
-- [[ritual-baptism]] — water initiation parallel
-- [[ritual-mikveh-immersion]] — immersion-as-membership parallel
+- [[ritual-baptism]] — water initiation parallel: liquid transmits membership in the sacred community
+- [[ritual-mikveh-immersion]] — immersion-as-membership parallel: living water and ontological change
 - [[ritual-navjote-zoroastrian-initiation]] — thread + purification initiation parallel
-- [[ritual-upanayana-sacred-thread]] — thread initiation parallel
+- [[ritual-upanayana-sacred-thread]] — thread initiation parallel: the body marked as belonging to a sacred order
+- [[ritual-daily-prayer]] — Ardas is recited immediately after amrit-sanchar; prayer completes initiation
 - [[ritual-langar]] — companion anti-caste ritual; the communal meal completes what initiation begins

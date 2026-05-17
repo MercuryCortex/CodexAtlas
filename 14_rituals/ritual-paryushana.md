@@ -79,9 +79,12 @@ The Buddhist Vassa retreat and Jain Paryushana share the monsoon timing — both
 ## Vault Connections
 
 - [[mahavira]] — the Kalpa Sutra reading during Paryushana centers on Mahavira's life
+- [[mahavira-jain]] — deity form; his liberation is the model for the paryushana practitioners
+- [[rishabha]] — first Tirthankara; the Digambara Das Lakshana commemorates the virtues he embodied
 - [[tradition-jainism]] — tradition
 - [[moral-ahimsa-nonviolence]] — the ethical foundation that makes Michhami Dukkadam necessary
 - [[ritual-pratikraman]] — the daily repentance ritual that reaches its annual climax in Paryushana's *Samvatsari Pratikraman*
 - [[ritual-sallekhana]] — commitments to sallekhana are sometimes publicly made during Paryushana
 - [[ritual-yom-kippur-atonement]] — Jewish annual atonement parallel: 10 Days of Awe, collective moral review
 - [[ritual-ramadan-sawm]] — Islamic 30-day collective moral reset parallel
+- [[ritual-confession-absolution]] — Catholic repentance parallel: structured acknowledgment of harm; periodic (not daily) moral accounting

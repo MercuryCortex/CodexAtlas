@@ -73,8 +73,11 @@ This has no parallel in Islamic *salat*, Christian Liturgy of the Hours, Jewish 
 
 - [[guru-gobind-singh]] — formalized the Ardas structure
 - [[guru-gobind-singh-ji]] — alternate reference
+- [[guru-nanak]] — Sikhism's founder; Ardas commemorates all ten Gurus by name
 - [[waheguru]] — the divine address of the prayer
+- [[phase-6-016-guru-granth-sahib]] — the living Guru whose presence is invoked in the Ardas
 - [[tradition-sikhism]] — tradition
-- [[ritual-salat-five-prayers]] — Islamic five-prayer parallel: structured daily prayer with prescribed form
+- [[ritual-salat-five-prayers]] — Islamic five-prayer parallel: structured daily prayer with prescribed form and bodily posture
+- [[ritual-daily-prayer]] — cross-tradition standing-prayer node: the Ardas as the Sikh instantiation
 - [[ritual-langar]] — the communal meal that typically follows Ardas in gurdwara services
 - [[ritual-amrit-sanchar]] — initiation that makes one eligible to lead Ardas
