@@ -26,6 +26,7 @@ window.ScriptureReader = (function () {
     'psalm-22':           { religion:'Christianity', group:'Old Testament',          canon:'All Canons',          sort:40 },
     'psalm-82':           { religion:'Christianity', group:'Old Testament',          canon:'All Canons',          sort:50 },
     'amos-5':             { religion:'Christianity', group:'Old Testament',          canon:'All Canons',          sort:53 },
+    'micah-6':            { religion:'Christianity', group:'Old Testament',          canon:'All Canons',          sort:54 },
     'isaiah-6':           { religion:'Christianity', group:'Old Testament',          canon:'All Canons',          sort:60 },
     'isaiah-40':          { religion:'Christianity', group:'Old Testament',          canon:'All Canons',          sort:62 },
     'isaiah-45':          { religion:'Christianity', group:'Old Testament',          canon:'All Canons',          sort:70 },
@@ -54,6 +55,9 @@ window.ScriptureReader = (function () {
     'hebrews-11':         { religion:'Christianity', group:'New Testament',          canon:'All Canons',          sort:70 },
     'acts-17-areopagus':  { religion:'Christianity', group:'New Testament',          canon:'All Canons',          sort:55 },
     'luke-15-prodigal':   { religion:'Christianity', group:'New Testament',          canon:'All Canons',          sort:60 },
+    'acts-2-pentecost':   { religion:'Christianity', group:'New Testament',          canon:'All Canons',          sort:52 },
+    '2-corinthians-3':    { religion:'Christianity', group:'New Testament',          canon:'All Canons',          sort:32 },
+    'ephesians-1':        { religion:'Christianity', group:'New Testament',          canon:'All Canons',          sort:47 },
     // ── Christianity — Ethiopian Canon ──────────────────────────────
     'book-of-enoch':      { religion:'Christianity', group:'Ethiopian Canon',        canon:'Ethiopian Orthodox',  sort:10 },
     'book-of-jubilees':   { religion:'Christianity', group:'Ethiopian Canon',        canon:'Ethiopian Orthodox',  sort:20 },
