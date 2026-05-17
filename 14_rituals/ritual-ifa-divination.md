@@ -90,3 +90,18 @@ Leibniz, who invented binary mathematics in 1679 (and corresponded with Jesuit m
 2. Abimbola, W. (1977). *Ifa: An Exposition of Ifa Literary Corpus*. Oxford UP. [Tier 1 — internal Yoruba scholarly voice]
 3. Peek, P.M. (ed.) (1991). *African Divination Systems: Ways of Knowing*. Indiana UP. [Tier 1 — comparative survey]
 4. UNESCO (2005). Ifá Divination System — Representative List of Intangible Cultural Heritage of Humanity. [Tier 1 — official inscription documentation]
+
+## Vault Connections
+
+- [[orunmila]] — the divinity of Ifá wisdom; witness at creation; patron of the babalawo
+- [[eshu]] — the trickster Orisha who must be propitiated first at every Ifá consultation; gatekeeper between worlds
+- [[ogun]] — iron Orisha; bladed objects used in sacrifice prescribed by Ifá Odù
+- [[obatala]] — creator Orisha; Ifá addresses him for matters of birth and physical formation
+- [[tradition-yoruba-ifa]] — the Ifá sub-tradition; diaspora forms in Cuba and Brazil
+- [[tradition-yoruba]] — parent tradition
+- [[phase-2-042-yi-jing-i-ching]] — structural parallel: binary permutation → 64 hexagrams vs. 256 Odù; two independent inventions of binary logic
+- [[phase-8-007-ifa-divination-corpus]] — the Ifá literary corpus as UNESCO intangible heritage text
+- [[ifa-divination]] — the divination chain symbol node in the vault
+- [[ritual-divination-mesopotamian]] — parallel information-retrieval infrastructure for state governance; baru extispicy as the Near Eastern counterpart
+- [[ritual-glossolalia-speaking-tongues]] — accessing divine speech through the human body; babalawo as oracle parallel to glossolalist
+- [[ritual-zen-sesshin]] — altered consciousness as the frame for receiving non-ordinary knowledge; the sesshin intensive as a parallel threshold-crossing

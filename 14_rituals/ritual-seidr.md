@@ -95,3 +95,18 @@ The seiðr world-journey — spirit leaves body, travels to other worlds, return
 3. Price, N. (2002). *The Viking Way: Magic and Mind in Late Iron Age Scandinavia*. Oxbow Books. [Tier 1 — definitive archaeological + textual study of seiðr]
 4. Eliade, M. (1951). *Shamanism: Archaic Techniques of Ecstasy*. Princeton UP (Bollingen, 1964). [Tier 1 — foundational comparative framework; noted biases; still essential]
 5. Solli, B. (2002). *Seid: Myter, sjamanisme og kjønn i vikingenes tid*. Pax Forlag. [Tier 1 — gender analysis of seiðr in Norse context]
+
+## Vault Connections
+
+- [[odin]] — seiðr practitioner; the god who transgresses the gender code to obtain shamanic knowledge; learned it from Freyja
+- [[freyja]] — the original seiðr practitioner; the Vanir goddess who taught Odin; her knowledge precedes the Aesir pantheon
+- [[yggdrasil]] — the world tree whose nine worlds are the seiðr journey's cosmological map
+- [[world-tree]] — the universal axis of the shamanic cosmology; the model for the seiðr world-journey structure
+- [[shamanism]] — the cross-cultural theme; seiðr as the Norse instantiation of world-journey shamanism
+- [[shamanic-drum]] — the instrument associated with Siberian shamanic trance; contrast with the völva's song-induction (*varðlokkur*)
+- [[tradition-norse-germanic]] — parent tradition
+- [[tradition-siberian-shamanism]] — the closest structural parallel; three-world cosmology; drum trance; shaman as spirit-vehicle
+- [[ritual-vision-quest]] — Native American structural parallel: spirit journey for knowledge and identity; same epistemological claim about direct encounter
+- [[ritual-bori-spirit-possession]] — Yoruba/Hausa parallel: the drummed possession ceremony as the West African counterpart; song as induction mechanism
+- [[ritual-blot]] — the sacrificial complement to seiðr; two halves of Norse religious practice
+- [[shamanism-hypothesis]] — the academic debate about shamanism as a cross-cultural universal; seiðr as a primary test case

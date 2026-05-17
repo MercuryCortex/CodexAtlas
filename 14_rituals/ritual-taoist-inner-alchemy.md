@@ -93,3 +93,16 @@ Three traditions, with no documented mutual influence at the time of their devel
 2. Robinet, I. (1993). *Taoist Meditation: The Mao-shan Tradition of Great Purity*. SUNY Press. [Tier 1]
 3. Pregadio, F. (2006). *Great Clarity: Daoism and Alchemy in Early Medieval China*. Stanford UP. [Tier 1]
 4. Kohn, L. (ed.) (1989). *Taoist Meditation and Longevity Techniques*. Michigan UP. [Tier 1]
+
+## Vault Connections
+
+- [[alchemy-chinese-neidan]] — the dedicated alchemy vault node for this tradition; neidan as the internal path vs. outer waidan
+- [[laozi]] — the Daoist founder; the *Tao Te Ching* as the philosophical ground of neidan practice
+- [[zhuangzi-person]] — Zhuangzi's descriptions of the perfected person map directly onto neidan's spirit-embryo goal
+- [[tradition-daoism]] — parent tradition; neidan as its highest internal practice
+- [[alchemy-as-spiritual-discipline]] — Western alchemy structural parallel: opus magnum as inner transformation; Jungian reading closes the gap
+- [[kundalini]] — Hindu tantric structural parallel; energy ascent through the body's axial channel; shakti vs. shen
+- [[yin-yang]] — the cosmological foundation of neidan; jing/qi/shen as the refinement of yin into yang
+- [[soul-immortality]] — the cross-tradition theme of achieved immortality; xian as the Taoist instantiation
+- [[ritual-yoga-as-ritual]] — Hindu yoga as structural parallel; the body as the instrument of transformation
+- [[phase-7-017-psychology-and-alchemy]] — Jung's dissolution of the inner/outer alchemy distinction; neidan vindicated as the most honest statement of the alchemical claim

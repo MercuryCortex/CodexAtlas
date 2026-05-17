@@ -77,3 +77,19 @@ The sharpest cross-tradition finding concerns not the *practice* of ancestor ven
 2. Ahern, E.M. (1973). *The Cult of the Dead in a Chinese Village*. Stanford UP. [Tier 1 — definitive village-level ethnography]
 3. Watson, J. & Rawski, E. (eds.) (1988). *Death Ritual in Late Imperial and Modern China*. California UP. [Tier 1]
 4. Keightley, D.N. (1978). *Sources of Shang History: The Oracle-Bone Inscriptions of Bronze Age China*. California UP. [Tier 1 — foundational for Shang oracle-bone evidence]
+
+## Vault Connections
+
+- [[shang-dynasty]] — the Shang oracle-bone context; where ancestor veneration is first attested as a state institution
+- [[alphabet-chinese-oracle-bones]] — oracle-bone script; ancestor questions inscribed on bones c. 1250 BCE; the oldest dialogue with the dead
+- [[jade-emperor]] — the supreme deity of Chinese folk cosmology; recipient of the kitchen god's annual report; the divine bureaucrat to whom ancestors report
+- [[guan-yu]] — deified general; among the patron ancestors invoked for protection; model of the ancestral protector who died heroically
+- [[laozi]] — the Daoist sage; his tradition provides the theological framework for ghost month and spirit-world navigation
+- [[tradition-chinese-folk-religion]] — primary tradition
+- [[tradition-confucianism]] — *xiào* (filial piety) as the Confucian systematization of ancestor duty
+- [[tradition-daoism]] — Daoist incorporation of ancestor veneration into ritual calendar; ghost month theology
+- [[ritual-shraddha-ancestor]] — Hindu parallel: pitru paksha ancestor feeding obligation; pinda offerings
+- [[ritual-kaddish-mourning]] — Jewish memorial parallel: the kaddish as the ongoing obligation to the dead; communal recitation maintains connection
+- [[ritual-matsuri]] — Japanese Shinto festival complex; includes ancestral kami veneration; Obon as the Japanese transmission
+- [[ritual-funeral-rites]] — the death-transition context that establishes the ancestor relationship
+- [[orunmila]] — Yoruba parallel: Ifá preserves ancestors' wisdom in Odù; the dead speak through the oracle

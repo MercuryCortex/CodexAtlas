@@ -87,3 +87,21 @@ Five civilizations, with no common religious tradition at the time of their prac
 2. Adam of Bremen (c. 1073). *Gesta Hammaburgensis Ecclesiae Pontificum*, Book IV. [Tier 1 — external eyewitness account of Uppsala; Christian bias noted]
 3. Turville-Petre, E.O.G. (1964). *Myth and Religion of the North: The Religion of Ancient Scandinavia*. Weidenfeld & Nicolson. [Tier 1 — definitive mid-20th century scholarly treatment]
 4. DuBois, T.A. (1999). *Nordic Religions in the Viking Age*. Pennsylvania UP. [Tier 1 — modern scholarly synthesis]
+
+## Vault Connections
+
+- [[odin]] — the primary recipient of the Sigrblót and Uppsala sacrifices; god of war, wisdom, and sacrifice; self-hung on Yggdrasil for nine nights
+- [[thor]] — recipient of the Haustblót; the harvest-and-protection god most widely worshiped among ordinary farmers
+- [[tyr]] — god of law and justice; receives the blót of warriors who seek fair judgment in battle
+- [[loki]] — the trickster whose presence in Norse religion complicates all transactional ritual; the destabilizer of covenant
+- [[freyja]] — the Dísablót's recipient tradition; seiðr's original practitioner; the Vanir goddess who taught Odin
+- [[frigg]] — Odin's wife; protective deity of household and birth; associated with the Dísablót's feminine sphere
+- [[yggdrasil]] — the world tree; the Uppsala hanging sacrifice re-enacts Odin's self-sacrifice on Yggdrasil
+- [[world-tree]] — the cosmic tree in whose model the sacrifice grove is organized
+- [[tradition-norse-germanic]] — parent tradition
+- [[tradition-asatru]] — the modern revival; contemporary blót practice in living Asatru communities
+- [[ritual-sacrifice]] — the cross-tradition sacrifice hub; blót as the Norse instantiation of blood offering
+- [[ritual-yajna-vedic-fire]] — Vedic parallel: fire as divine-communication medium; pashu sacrifice structure; blood returned to earth
+- [[ritual-aztec-autosacrifice]] — blood-as-solar-fuel parallel; the most extreme blood-sacrifice theology; comparison reveals the Norse system's communal-communion emphasis
+- [[ritual-seidr]] — the two halves of Norse religious practice: public blood offering (blót) + private world-journey (seiðr)
+- [[ritual-olympic-games]] — Greek parallel: the Olympic games originate in a sacrifice complex at Olympia; athletic competition and divine offering intertwined

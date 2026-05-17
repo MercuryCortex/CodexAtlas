@@ -87,3 +87,21 @@ The horse/rider metaphor is universal across traditions that have otherwise no d
 2. Deren, M. (1953). *Divine Horsemen: The Living Gods of Haiti*. Thames & Hudson. [Tier 1 — classic Vodou possession study by filmmaker-practitioner]
 3. McCarthy Brown, K. (1991). *Mama Lola: A Vodou Priestess in Brooklyn*. California UP. [Tier 1 — ethnographic depth]
 4. Bourguignon, E. (1973). *Religion, Altered States of Consciousness, and Social Change*. Ohio State UP. [Tier 1 — cross-cultural comparative survey; 488 societies studied]
+
+## Vault Connections
+
+- [[shango]] — the lightning Orisha; characteristic violent electrically-charged possession style
+- [[yemoja]] — the ocean Orisha; oceanic swaying possession; mother figure
+- [[ogun]] — iron, war, and labor Orisha; warrior-possession style; parallel to Ogou in Vodou
+- [[obatala]] — white-clad creator Orisha; possession marked by cool serenity
+- [[eshu]] — the crossroads Orisha; first invoked at all ceremonies; the gatekeeper between worlds
+- [[oya]] — the Orisha of storms and transformation; possesses with whirlwind intensity
+- [[papa-legba]] — Vodou lwa of crossroads; parallel to Eshu; first invoked in all Vodou ceremonies
+- [[tradition-vodou-haitian]] — Haitian Vodou as the primary diaspora transmission of West African possession ritual
+- [[tradition-yoruba-ifa]] — the parent tradition for Orisha possession
+- [[tradition-yoruba]] — parent tradition
+- [[ritual-glossolalia-speaking-tongues]] — Pentecostal Holy Spirit possession as Christian structural parallel; divine speech through human body
+- [[ritual-divination-mesopotamian]] — parallel knowledge-extraction via altered state; the baru priest as possession-adjacent oracle
+- [[ritual-zen-sesshin]] — altered-state parallel: the sesshin creates the threshold conditions for non-ordinary experience; contrast with possession (receptive vs. emptied)
+- [[ritual-vision-quest]] — spirit-encounter parallel: both establish relationship with non-human beings as the basis of healing and social authority
+- [[ritual-seidr]] — Norse shamanic parallel: the völva's sung trance as the European counterpart to bori's drummed possession

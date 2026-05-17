@@ -77,3 +77,16 @@ The structural analysis of major new year festivals reveals a convergence that i
 2. Stepanchuk, C. & Wong, C. (1991). *Mooncakes and Hungry Ghosts: Festivals of China*. China Books. [Tier 2 — accessible survey]
 3. Welch, H. (1967). *The Practice of Chinese Buddhism*. Harvard UP. Relevant sections on festival calendar. [Tier 1]
 4. Eberhard, W. (1952). *Chinese Festivals*. Schuman. [Tier 2]
+
+## Vault Connections
+
+- [[jade-emperor]] — the supreme deity who receives the kitchen god's annual report; the divine bureaucrat who fixes destiny for the new year
+- [[guan-yu]] — deified general; among the patron deities invoked for protection and prosperity at new year
+- [[laozi]] — Daoist sage; his tradition gives the seasonal cycle cosmological weight; yin-yang renewal at spring
+- [[yin-yang]] — the cosmic balance New Year rituals maintain; the renewal of yang force at spring equinox
+- [[tradition-chinese-folk-religion]] — primary tradition; the festival synthesizes Daoist, Buddhist, and Confucian elements
+- [[tradition-daoism]] — the theological framework that gives the seasonal cycle cosmological weight
+- [[ritual-akitu-new-year]] — the closest structural parallel; Babylonian cosmic-reset festival; Marduk re-defeats Tiamat just as Chinese New Year exorcises Nián
+- [[ritual-yom-kippur-atonement]] — annual accounting parallel: divine court session and book of life parallel the jade emperor's bureaucratic judgment
+- [[ritual-roman-saturnalia]] — Roman inversion-festival associated with year-transition; chaos-holiday before renewed order; same dangerous interregnum logic
+- [[ritual-chinese-ancestor-veneration]] — ancestors included in reunion dinner; the new year is simultaneously an ancestral feast
