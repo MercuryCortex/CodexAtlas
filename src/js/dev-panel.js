@@ -33,7 +33,7 @@
       title: 'Edges',
       openByDefault: true,
       items: [
-        { id: 'edgeOpacity',   label: 'Idle opacity ×', min: 0,    max: 3,    step: 0.05, default: 0.20, target: 'cssVar', cssVar: '--ph2-edge-opacity-mult', fmt: v => v.toFixed(2) + '×' },
+        { id: 'edgeOpacity',   label: 'Idle opacity ×', min: 0,    max: 3,    step: 0.05, default: 0.15, target: 'cssVar', cssVar: '--ph2-edge-opacity-mult', fmt: v => v.toFixed(2) + '×' },
         { id: 'edgeWidth',     label: 'Idle width ×',   min: 0.4,  max: 3,    step: 0.05, default: 0.60, target: 'cssVar', cssVar: '--ph2-edge-width-mult',   fmt: v => v.toFixed(2) + '×' },
         { id: 'edgeCurvature', label: 'Curvature',      min: 0,    max: 0.6,  step: 0.01, default: 0.35, target: 'rebuildEdges',                                fmt: v => Math.round(v * 100) + '%' },
         { id: 'edgeHotWidth',  label: 'Hot width',      min: 0.4,  max: 3,    step: 0.1,  default: 1.0,  target: 'cssVar', cssVar: '--ph2-edge-hot-width',    fmt: v => v.toFixed(1) + 'px' },

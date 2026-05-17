@@ -2158,9 +2158,16 @@ body.view-atlas main.canvas { background: var(--bg-0); }
 /* Pantheon v2 toolbar — labels-mode toggle + ego-focus + recenter. Top-right
    above the wheel so it doesn't collide with the family-legend on the left. */
 .ph2-toolbar {
-  position: absolute; top: 18px; right: 22px; z-index: 10;
+  position: absolute; top: 18px; z-index: 10;
+  /* DETAIL-PANEL AWARE: stays just inside the detail panel's left edge.
+     When the detail panel is collapsed (rail width = --detail-w-collapsed),
+     this evaluates to right:22px (current behaviour). When it's open
+     (rail width = --detail-w), the toolbar slides left to clear the panel.
+     `eff-detail-w` already tracks body.detail-collapsed automatically. */
+  right: calc(var(--eff-detail-w) - var(--detail-w-collapsed) + 22px);
   display: flex; gap: 6px;
   pointer-events: auto;
+  transition: right var(--t-layout) var(--ease);
 }
 /* Toolbar buttons — uniform pill design across every control in the top
    bar. Select and button elements share the same shell. */
@@ -2259,9 +2266,9 @@ select.ph2-btn:hover {
    visible. When body.footer-collapsed, the widget can drop. */
 .ph2-zoom-widget {
   position: absolute;
-  /* Right edge tracks the floating detail panel's rail width — same idiom
-     the footer uses, so the widget never slips behind the detail. */
-  right: 22px;
+  /* Detail-panel aware (same idiom as .ph2-toolbar above): slides left when
+     the detail panel opens so it never hides behind the floating rail. */
+  right: calc(var(--eff-detail-w) - var(--detail-w-collapsed) + 22px);
   bottom: 56px;
   display: flex; gap: 4px;
   background: rgba(14,16,22,0.55);
@@ -2271,17 +2278,16 @@ select.ph2-btn:hover {
   padding: 3px;
   z-index: 52;   /* above the 50-z footer */
   pointer-events: auto;
-  transition: bottom 240ms cubic-bezier(0.2, 0.8, 0.2, 1);
+  transition: bottom 240ms cubic-bezier(0.2, 0.8, 0.2, 1),
+              right  var(--t-layout) var(--ease);
 }
 body.footer-collapsed .ph2-zoom-widget { bottom: 16px; }
 /* Hide the legacy P1 zoom-meter on the promoted V2 Pantheon — it was a
    D3-zoom indicator that doesn't apply to sigma. */
 body.view-pantheon .zoom-meter,
 body.view-pantheon-v2 .zoom-meter { display: none !important; }
-/* Map-thumb is wired to the legacy P1 hover events — disable on V2 until
-   it's rewired to listen to V2 deity hovers. */
-body.view-pantheon .map-thumb,
-body.view-pantheon-v2 .map-thumb { display: none !important; }
+/* Map-thumb stays visible on V2 — it picks up V2 hover via window.selectNode
+   which already calls setMapTarget in the production code path. */
 .ph2-zoom-btn, .ph2-zoom-pct {
   background: transparent;
   border: none;
@@ -2297,6 +2303,61 @@ body.view-pantheon-v2 .map-thumb { display: none !important; }
 .ph2-zoom-pct { min-width: 50px; text-align: center; color: var(--text-0); font-weight: 600; }
 .ph2-zoom-btn:hover, .ph2-zoom-pct:hover { background: rgba(212,165,90,0.18); color: var(--gold); }
 .ph2-zoom-recenter { color: var(--text-2); }
+
+/* ── WIRE-LEGEND TOGGLE + PANEL (bottom-left) ───────────────────────── */
+.ph2-wire-legend-toggle {
+  position: absolute;
+  left: 12px; bottom: 54px;
+  width: 26px; height: 22px;
+  background: rgba(13, 17, 25, 0.86);
+  backdrop-filter: blur(6px); -webkit-backdrop-filter: blur(6px);
+  border: 1px solid var(--border);
+  color: var(--text-2);
+  border-radius: 3px;
+  font-size: 13px; line-height: 1;
+  cursor: pointer;
+  display: flex; align-items: center; justify-content: center;
+  z-index: 52;
+  transition: color 140ms, border-color 140ms,
+              bottom 240ms cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+.ph2-wire-legend-toggle:hover { color: var(--gold); border-color: var(--gold-soft); }
+.ph2-wire-legend-toggle.ph2-btn-on { color: var(--gold); border-color: var(--gold-soft); background: rgba(212,165,90,0.16); }
+body.footer-collapsed .ph2-wire-legend-toggle { bottom: 38px; }
+
+.ph2-wire-legend-panel {
+  position: absolute;
+  left: 12px; bottom: 84px;
+  width: 280px;
+  background: rgba(13, 17, 25, 0.97);
+  backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);
+  border: 1px solid var(--border-soft);
+  border-radius: 4px;
+  box-shadow: 0 8px 28px rgba(0,0,0,0.55);
+  padding: 10px 12px;
+  z-index: 53;
+  display: none;
+  font-family: var(--mono); font-size: 10.5px;
+  color: var(--text-1);
+  transition: bottom 240ms cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+.ph2-wire-legend-panel.open { display: block; }
+body.footer-collapsed .ph2-wire-legend-panel { bottom: 68px; }
+.ph2-wl-head {
+  font-size: 10px; letter-spacing: 0.08em; text-transform: uppercase;
+  color: var(--gold); margin-bottom: 8px;
+}
+.ph2-wl-rows { display: flex; flex-direction: column; gap: 5px; }
+.ph2-wl-row { display: grid; grid-template-columns: 12px 84px 1fr; gap: 8px; align-items: center; }
+.ph2-wl-swatch { width: 10px; height: 10px; border-radius: 50%; }
+.ph2-wl-name { font-weight: 600; color: var(--text-0); }
+.ph2-wl-note { color: var(--text-3); font-size: 9.5px; }
+.ph2-wl-foot {
+  margin-top: 8px; padding-top: 8px;
+  border-top: 1px solid var(--border-soft);
+  color: var(--text-3); font-size: 9.5px; line-height: 1.5;
+}
+.ph2-wl-foot code { color: var(--gold); font-size: 9.5px; }
 
 /* OLD bottom-left legend — kept as no-op so any stale ref doesn't error.
    The toolbar filter menu is now the only family-filter UI. */

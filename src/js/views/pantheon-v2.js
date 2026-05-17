@@ -393,18 +393,19 @@
   // stops so the bright end sits on the SEMANTIC origin, not the
   // data-edge source.
   const BUCKETS = {
-    transmission: { hex: '#C9743A', idle: 0.10, hot: 0.95, headline: false, directional: true  },
-    parallel:     { hex: '#5A9A8F', idle: 0.12, hot: 0.85, headline: false, directional: false },
-    association:  { hex: '#4A5AA4', idle: 0.08, hot: 0.55, headline: false, directional: false },
-    kinship:      { hex: '#C9A5D4', idle: 0.14, hot: 0.85, headline: false, directional: false },
-    attestation:  { hex: '#D4A55A', idle: 0.10, hot: 0.90, headline: false, directional: true  },
-    polemic:      { hex: '#A83E4A', idle: 0.25, hot: 0.95, headline: true,  directional: false },
-    fusion:       { hex: '#C4783A', idle: 0.30, hot: 0.95, headline: true,  directional: false },
+    transmission:      { hex: '#C9743A', idle: 0.10, hot: 0.95, headline: false, directional: true  },
+    parallel:          { hex: '#5A9A8F', idle: 0.12, hot: 0.85, headline: false, directional: false },
+    'cross-tradition': { hex: '#7ABFB0', idle: 0.28, hot: 0.95, headline: false, directional: false },
+    association:       { hex: '#4A5AA4', idle: 0.08, hot: 0.55, headline: false, directional: false },
+    kinship:           { hex: '#C9A5D4', idle: 0.14, hot: 0.85, headline: false, directional: false },
+    attestation:       { hex: '#D4A55A', idle: 0.10, hot: 0.90, headline: false, directional: true  },
+    polemic:           { hex: '#A83E4A', idle: 0.25, hot: 0.95, headline: true,  directional: false },
+    fusion:            { hex: '#C4783A', idle: 0.30, hot: 0.95, headline: true,  directional: false },
   };
   // Per-bucket widths — kept compatible with the existing dev-panel mult.
   const BUCKET_WIDTH = {
-    transmission: 0.34, parallel: 0.30, association: 0.22, kinship: 0.32,
-    attestation:  0.30, polemic:  0.46, fusion:      0.40,
+    transmission: 0.34, parallel: 0.30, 'cross-tradition': 0.50, association: 0.22, kinship: 0.32,
+    attestation:  0.30, polemic:  0.46, fusion:            0.40,
   };
   // Type → bucket map. Built from the spec + the runtime edge-type tally.
   const EDGE_BUCKET = {
@@ -448,6 +449,9 @@
     'contested-identification':         'parallel',
     'exemplifies':                      'parallel',
     'instantiation-of':                 'parallel',
+    'syncretic-cross-tradition-archetype': 'cross-tradition',
+    'syncretic-functional-parallel':       'cross-tradition',
+    'syncretic-parallel':                  'cross-tradition',
     // Association
     'has-theme':                        'association',
     'context':                          'association',
@@ -1078,9 +1082,12 @@
     } catch (e) { /* ResizeObserver not available */ }
 
     // ============================================================
-    // SVG OVERLAY — hulls (under canvas) + curved edges (under canvas).
-    // Sigma's canvas sits ON TOP of this SVG via z-index, so dots paint
-    // above edges and edges paint above hulls.
+    // SVG OVERLAY — hulls + curved edges.
+    // Sigma defers canvas creation until after the constructor returns, so
+    // DOM-order tricks are unreliable. Use z-index instead: overlay at z:3
+    // sits above sigma's canvases (z:auto = 0 in DOM stacking) but below
+    // labels (z:4) and toolbar (z:10). pointer-events:none passes all
+    // mouse events through to sigma's sigma-mouse canvas (z:auto).
     // ============================================================
     const overlay = document.createElementNS(SVG_NS, 'svg');
     overlay.setAttribute('class', 'ph2-svg-overlay');
@@ -1090,14 +1097,8 @@
     overlay.style.pointerEvents = 'none';
     overlay.style.width  = '100%';
     overlay.style.height = '100%';
-    // Append AS FIRST CHILD so the overlay paints UNDER sigma's canvases.
-    // Visual order: hulls → edges → dots → labels (sigma canvases on top).
-    // The dim-at-10%-alpha treatment of non-active dots ONLY reads if dots
-    // are above the colour overlay; otherwise hulls + hot edges cover them.
-    // Hull clicks reach us via the clickStage hit-test, not SVG event
-    // propagation, so DOM order = paint order is the right invariant.
-    if (rootEl.firstChild) rootEl.insertBefore(overlay, rootEl.firstChild);
-    else                   rootEl.appendChild(overlay);
+    overlay.style.zIndex = '3';
+    rootEl.appendChild(overlay);
 
     // Two groups inside the overlay: hulls first (painted bottom), edges on top.
     const hullsG = document.createElementNS(SVG_NS, 'g');
@@ -1517,6 +1518,8 @@
       if (typeof applyLabelHoverDim === 'function') applyLabelHoverDim();
       const attrs = graph.getNodeAttributes(e.node);
       showThumbCard(attrs, e);
+      // Global map-thumb shows hovered deity's geo location.
+      if (window.setMapTarget && attrs._node) window.setMapTarget(attrs._node);
     });
     sigma.on('leaveNode', () => {
       _hoverId = null;
@@ -1524,6 +1527,8 @@
       applyEdgeHoverState();
       if (typeof applyLabelHoverDim === 'function') applyLabelHoverDim();
       hideThumbCard();
+      // Hide global map-thumb when hover ends (and no lock owns it).
+      if (window.setMapTarget && _lockedSet.size === 0) window.setMapTarget(null);
     });
     // Track raw mouse for card positioning — sigma's stage-mousemove fires
     // continuously; cheaper to listen on the root.
@@ -2209,6 +2214,46 @@
       _egoFocus = false;
       toolbar.querySelector('#ph2-ego')?.classList.remove('ph2-btn-on');
     };
+
+    // ── BOTTOM-LEFT WIRE-LEGEND TOGGLE ─────────────────────────────────
+    // Compact button that, when clicked, expands a panel showing all 7
+    // edge buckets with their canonical hex + meaning. Lives just above
+    // the footer-toggle in the bottom-left corner.
+    const legendToggle = document.createElement('button');
+    legendToggle.className = 'ph2-wire-legend-toggle';
+    legendToggle.title = 'Show / hide wire-connection legend';
+    legendToggle.textContent = '⊜';
+    rootEl.appendChild(legendToggle);
+
+    const legendPanel = document.createElement('div');
+    legendPanel.className = 'ph2-wire-legend-panel';
+    legendPanel.innerHTML = `
+      <div class="ph2-wl-head">Wire colours</div>
+      <div class="ph2-wl-rows">
+        <div class="ph2-wl-row"><span class="ph2-wl-swatch" style="background:#C9743A"></span><span class="ph2-wl-name">Transmission</span><span class="ph2-wl-note">A → B  (gradient)</span></div>
+        <div class="ph2-wl-row"><span class="ph2-wl-swatch" style="background:#5A9A8F"></span><span class="ph2-wl-name">Parallel</span><span class="ph2-wl-note">structural resemblance</span></div>
+        <div class="ph2-wl-row"><span class="ph2-wl-swatch" style="background:#4A5AA4"></span><span class="ph2-wl-name">Association</span><span class="ph2-wl-note">ambient / theme</span></div>
+        <div class="ph2-wl-row"><span class="ph2-wl-swatch" style="background:#C9A5D4"></span><span class="ph2-wl-name">Kinship</span><span class="ph2-wl-note">parent / child / consort</span></div>
+        <div class="ph2-wl-row"><span class="ph2-wl-swatch" style="background:#D4A55A"></span><span class="ph2-wl-name">Attestation</span><span class="ph2-wl-note">doc → entity  (gradient)</span></div>
+        <div class="ph2-wl-row"><span class="ph2-wl-swatch" style="background:#A83E4A"></span><span class="ph2-wl-name">Polemic</span><span class="ph2-wl-note">inversion / against</span></div>
+        <div class="ph2-wl-row"><span class="ph2-wl-swatch" style="background:#C4783A"></span><span class="ph2-wl-name">Fusion</span><span class="ph2-wl-note">merger / appropriation</span></div>
+      </div>
+      <div class="ph2-wl-foot">Idle non-headlines paint slate. Bucket colour shows on hover and on the two HEADLINE buckets (Polemic, Fusion) + <code>ancestor-of</code> at idle.</div>
+    `;
+    rootEl.appendChild(legendPanel);
+    legendToggle.addEventListener('click', (ev) => {
+      ev.stopPropagation();
+      const open = legendPanel.classList.toggle('open');
+      legendToggle.classList.toggle('ph2-btn-on', open);
+    });
+    document.addEventListener('click', (ev) => {
+      if (legendPanel.classList.contains('open') &&
+          !legendPanel.contains(ev.target) &&
+          ev.target !== legendToggle) {
+        legendPanel.classList.remove('open');
+        legendToggle.classList.remove('ph2-btn-on');
+      }
+    });
 
     // Stash for diagnostics + setView() teardown
     rootEl._sigma = sigma;
