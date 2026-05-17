@@ -2162,21 +2162,42 @@ body.view-atlas main.canvas { background: var(--bg-0); }
   display: flex; gap: 6px;
   pointer-events: auto;
 }
+/* Toolbar buttons — uniform pill design across every control in the top
+   bar. Select and button elements share the same shell. */
 .ph2-btn {
-  /* Quiet button background — buttons read at a glance but the diagram
-     stays visible underneath the toolbar strip. */
   background: rgba(14,16,22,0.35);
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
   border: 1px solid var(--border-soft);
-  color: var(--text-2);
+  color: var(--text-1);
   font-family: var(--mono); font-size: 10.5px;
   letter-spacing: 0.06em;
   padding: 5px 11px; border-radius: 3px;
   cursor: pointer;
-  transition: all 120ms ease;
+  height: 26px;
+  display: inline-flex; align-items: center; gap: 6px;
+  transition: background 120ms ease, color 120ms ease, border-color 120ms ease;
 }
-.ph2-btn:hover { background: rgba(14,16,22,0.70); }
+.ph2-btn:hover { background: rgba(14,16,22,0.70); color: var(--gold); border-color: var(--gold-soft); }
+/* Native <select> needs explicit appearance reset so it doesn't show the
+   OS chrome chevron — gives the select the same pill as the buttons. */
+select.ph2-btn {
+  appearance: none; -webkit-appearance: none; -moz-appearance: none;
+  background-image:
+    linear-gradient(45deg, transparent 50%, var(--text-2) 50%),
+    linear-gradient(135deg, var(--text-2) 50%, transparent 50%);
+  background-position:
+    calc(100% - 12px) center,
+    calc(100% - 8px) center;
+  background-size: 4px 4px, 4px 4px;
+  background-repeat: no-repeat;
+  padding-right: 22px;
+}
+select.ph2-btn:hover {
+  background-image:
+    linear-gradient(45deg, transparent 50%, var(--gold) 50%),
+    linear-gradient(135deg, var(--gold) 50%, transparent 50%);
+}
 .ph2-btn:hover { color: var(--gold); border-color: var(--gold-soft); }
 .ph2-btn-on { color: var(--gold); background: rgba(212,165,90,0.16); border-color: var(--gold-soft); }
 
@@ -2257,6 +2278,10 @@ body.footer-collapsed .ph2-zoom-widget { bottom: 16px; }
    D3-zoom indicator that doesn't apply to sigma. */
 body.view-pantheon .zoom-meter,
 body.view-pantheon-v2 .zoom-meter { display: none !important; }
+/* Map-thumb is wired to the legacy P1 hover events — disable on V2 until
+   it's rewired to listen to V2 deity hovers. */
+body.view-pantheon .map-thumb,
+body.view-pantheon-v2 .map-thumb { display: none !important; }
 .ph2-zoom-btn, .ph2-zoom-pct {
   background: transparent;
   border: none;

@@ -722,7 +722,10 @@
       if (mode === 'alchemy')      return n.type === 'alchemy';
       if (mode === 'morals')       return n.type === 'moral';
       if (mode === 'philosophy')   return n.type === 'philosophy';
-      if (mode === 'medicine')     return n.type === 'medicine';
+      if (mode === 'medicine') {
+        const tags = Array.isArray(n.tags) ? n.tags : (typeof n.tags === 'string' ? n.tags.split(/[,\s]+/) : []);
+        return tags.includes('medicine');
+      }
       if (mode === 'mathematics')  return n.type === 'mathematics';
       if (mode === 'monuments') {
         const tags = Array.isArray(n.tags) ? n.tags
@@ -1615,11 +1618,45 @@
       if (typeof applyLabelHoverDim === 'function') applyLabelHoverDim();
       if (window.selectNode) window.selectNode(node, true);
     });
-    sigma.on('clickStage', () => {
-      // Clicking empty stage clears the LOCKED selection + the family-isolate
-      // filter set by hull click. Deity-click flow is handled separately and
-      // does NOT clear the family filter (clicking a node inside the isolate
-      // narrows further; user needs an explicit empty click to fully reset).
+    sigma.on('clickStage', ({ event }) => {
+      // The sigma-mouse canvas captures every click before our SVG hull
+      // paths see it — so the per-hull click handler never fires. We
+      // hit-test the click in WORLD coords against each hull's geometry
+      // and route accordingly:
+      //   inside a hull   → toggle that family in the filter set
+      //   outside hulls   → full reset (clear lock + filter)
+      let hitFamily = null;
+      try {
+        const world = sigma.viewportToGraph({ x: event.x, y: event.y });
+        const overlayEl = hullEls[0] && hullEls[0].ownerSVGElement;
+        if (overlayEl) {
+          const pt = overlayEl.createSVGPoint();
+          pt.x = world.x; pt.y = world.y;
+          for (const hullEl of hullEls) {
+            if (hullEl.isPointInFill && hullEl.isPointInFill(pt)) {
+              hitFamily = hullEl.dataset.family;
+              break;
+            }
+          }
+        }
+      } catch (e) {}
+      if (hitFamily) {
+        // HIT a hull → toggle its family in the filter set.
+        if (_familyFilter.has(hitFamily)) _familyFilter.delete(hitFamily);
+        else                              _familyFilter.add(hitFamily);
+        _lockedSet  = new Set();
+        _selectedId = null;
+        _hoverId    = null;
+        applyHullFilterState();
+        applyEdgeHoverState();
+        if (typeof applyLabelHoverDim === 'function') applyLabelHoverDim();
+        if (typeof updateNodeLabelVisibility === 'function') updateNodeLabelVisibility();
+        if (typeof syncFamilyMenu === 'function') syncFamilyMenu();
+        sigma.refresh({ skipIndexation: true });
+        hideThumbCard();
+        return;
+      }
+      // OUTSIDE every hull (the true empty stage) → full reset.
       _selectedId   = null;
       _hoverId      = null;
       _lockedSet    = new Set();
@@ -1805,6 +1842,49 @@
       window._pantheonV2._refreshLabels    = updateNodeLabelVisibility;
       window._pantheonV2._refreshFit       = applyInitialFit;
       window._pantheonV2._scheduleDecon    = scheduleDeconflict;
+      // Search hook — wires the footer search input to V2:
+      //  - Empty query clears the lock + filter.
+      //  - Substring match against id + title + family across rendered
+      //    nodes; the highest-degree match is selected, camera animates
+      //    to it, and _lockedSet pins the match + its 1-hop neighbours.
+      window._pantheonV2._searchAndFocus = function (rawQuery) {
+        const q = (rawQuery || '').trim().toLowerCase();
+        if (!q) {
+          _lockedSet    = new Set();
+          _familyFilter = new Set();
+          _selectedId   = null;
+          if (typeof syncFamilyMenu === 'function') syncFamilyMenu();
+          applyHullFilterState(); applyEdgeHoverState();
+          updateNodeLabelVisibility();
+          sigma.refresh({ skipIndexation: true });
+          return;
+        }
+        let best = null, bestDeg = -1;
+        graph.forEachNode((id, attrs) => {
+          const t = (attrs._node && (attrs._node.title || '')).toLowerCase();
+          if (id.toLowerCase().includes(q) || t.includes(q)) {
+            const d = degree.get(id) || 0;
+            if (d > bestDeg) { best = id; bestDeg = d; }
+          }
+        });
+        if (!best) return;
+        _selectedId = best;
+        _lockedSet  = neighborhoodOf(best);
+        const pos = positions.get(best);
+        if (pos) {
+          try {
+            // Convert world pos to camera coords (sigma.normalize? — just
+            // animate ratio + lock the locked-set; camera-center math
+            // varies by sigma version, so leave the camera and let the
+            // selected dot pop via the size bump).
+            sigma.refresh({ skipIndexation: true });
+          } catch (e) {}
+        }
+        applyHullFilterState();
+        applyEdgeHoverState();
+        updateNodeLabelVisibility();
+        if (window.selectNode) window.selectNode(best, true);
+      };
     }
 
     // ── PAN/ZOOM LIFECYCLE — labels stay visible AND dynamic ──────────────

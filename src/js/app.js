@@ -10144,7 +10144,18 @@ document.querySelectorAll('nav.side .item').forEach(el => {
 let searchTimer;
 document.getElementById('filter-search').addEventListener('input', e => {
   clearTimeout(searchTimer);
-  searchTimer = setTimeout(() => { STATE.filter.search = e.target.value; setView(STATE.view); updateResetButton(); }, 220);
+  searchTimer = setTimeout(() => {
+    STATE.filter.search = e.target.value;
+    // V2 Pantheon: search hits a live hook instead of re-running setView
+    // (which would rebuild the entire sigma graph for every keystroke).
+    // Other views still use the legacy setView re-render path.
+    if (STATE.view === 'pantheon' && window._pantheonV2 && typeof window._pantheonV2._searchAndFocus === 'function') {
+      window._pantheonV2._searchAndFocus(e.target.value);
+    } else {
+      setView(STATE.view);
+    }
+    updateResetButton();
+  }, 220);
 });
 
 // Reset-all-filters button — clears family/type/search/theme in one click.

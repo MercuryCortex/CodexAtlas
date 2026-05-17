@@ -8,7 +8,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&family=EB+Garamond:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@300;400;500;600&family=Noto+Serif+Hebrew:wght@400;700&family=Noto+Sans+Egyptian+Hieroglyphs&display=swap" rel="stylesheet" />
 <link rel="stylesheet" href="_assets/vendor/maplibre/maplibre-gl.css?v=5.24.0" />
-<link rel="stylesheet" href="src/styles/app.css?v=20260516-reader-nav-1" />
+<link rel="stylesheet" href="src/styles/app.css?v=20260517-search-wire" />
 </head>
 <body class="nav-collapsed detail-collapsed footer-collapsed">
 
@@ -162,29 +162,19 @@
 <button class="footer-toggle" id="footer-toggle" title="Collapse / expand the filter bar" aria-label="Toggle filter bar">▾</button>
 
 <footer>
-  <div class="filter-group">
-    <label>family</label>
-    <select id="filter-family"><option value="">all</option></select>
-  </div>
-  <div class="filter-group">
-    <label>type</label>
-    <select id="filter-type">
-      <option value="">all</option>
-      <option value="document">documents</option>
-      <option value="deity">deities</option>
-      <option value="theme">themes</option>
-      <option value="person">persons</option>
-      <option value="event">events</option>
-      <option value="symbol">symbols</option>
-    </select>
-  </div>
+  <!-- Family + Type dropdowns removed 2026-05-17 — the V2 toolbar carries
+       both (mode dropdown = type, Families ▾ checkbox menu = family).
+       Hidden inputs retained so legacy JS that reads filter-family /
+       filter-type doesn't error out. -->
+  <input type="hidden" id="filter-family" value="" />
+  <input type="hidden" id="filter-type"   value="" />
   <div class="filter-group">
     <label>search</label>
-    <input type="text" id="filter-search" placeholder="title / id / theme..." style="width: 200px" />
+    <input type="text" id="filter-search" placeholder="title / id / theme..." style="width: 280px" />
   </div>
   <div class="filter-group" id="active-theme-wrap" style="display:none"></div>
   <div class="filter-group">
-    <button id="btn-reset-filters" class="btn-reset" title="Clear all filters">↺ reset filters</button>
+    <button id="btn-reset-filters" class="btn-reset" title="Clear search">↺ reset</button>
   </div>
   <div class="filter-group" style="margin-left:auto; color: var(--text-3)">
     <span id="footer-status"></span>
@@ -207,30 +197,30 @@
 <script src="_assets/vendor/sigma/graphology.umd.min.js"></script>
 <script src="_assets/vendor/sigma/sigma.min.js"></script>
 <script src="_assets/vendor/elk/elk.bundled.js"></script>
-<script src="src/js/layout/elk-layout.js?v=20260517-zoom-aware"></script>
-<script src="src/js/views/pantheon-v2.js?v=20260517-zoom-aware"></script>
+<script src="src/js/layout/elk-layout.js?v=20260517-search-wire"></script>
+<script src="src/js/views/pantheon-v2.js?v=20260517-search-wire"></script>
 
-<script src="src/js/graph/theme.js?v=20260517-zoom-aware"></script>
-<script src="src/js/graph/layout.js?v=20260517-zoom-aware"></script>
-<script src="src/js/graph/renderer.js?v=20260517-zoom-aware"></script>
+<script src="src/js/graph/theme.js?v=20260517-search-wire"></script>
+<script src="src/js/graph/layout.js?v=20260517-search-wire"></script>
+<script src="src/js/graph/renderer.js?v=20260517-search-wire"></script>
 
 <script src="src/data/scripture-texts.js?v=20260516-scripture-texts-28"></script>
 <script src="src/data/patterns.js?v=20260516-patterns-tab"></script>
 <script src="src/data/observations.js?v=20260516-observations-tab"></script>
 <script src="src/data/chains.js?v=20260516-chains-2"></script>
-<script src="src/js/app.js?v=20260517-zoom-aware"></script>
-<script src="src/js/alchemy/board.js?v=20260517-zoom-aware"></script>
-<script src="src/js/astrology/spine.js?v=20260517-zoom-aware"></script>
+<script src="src/js/app.js?v=20260517-search-wire"></script>
+<script src="src/js/alchemy/board.js?v=20260517-search-wire"></script>
+<script src="src/js/astrology/spine.js?v=20260517-search-wire"></script>
 <script src="src/js/astrology/decanic.js?v=20260515-decanic-clarity"></script>
-<script src="src/js/astrology/wheel.js?v=20260517-zoom-aware"></script>
+<script src="src/js/astrology/wheel.js?v=20260517-search-wire"></script>
 <script src="src/js/astrology/now.js?v=20260515-now-events"></script>
-<script src="src/js/astrology/astro-pantheon.js?v=20260517-zoom-aware"></script>
+<script src="src/js/astrology/astro-pantheon.js?v=20260517-search-wire"></script>
 <script src="src/js/alphabets/glyph-data.js?v=20260516-alpha-1"></script>
 <script src="src/js/alphabets/glyph-viewer.js?v=20260516-alpha-1"></script>
 <script src="src/js/alphabets/origin-chain.js?v=20260516-alpha-1"></script>
 <script src="src/js/alphabets/mysticism.js?v=20260516-alpha-1"></script>
 <script src="src/js/alphabets/cuneiform-viewer.js?v=20260517-cuneiform-1"></script>
-<script src="src/js/dev-panel.js?v=20260517-zoom-aware"></script>
+<script src="src/js/dev-panel.js?v=20260517-search-wire"></script>
 <script src="src/js/views/scripture-reader.js?v=20260516-reader-nav-15"></script>
 </body>
 </html>
