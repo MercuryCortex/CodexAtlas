@@ -64,6 +64,25 @@ _assets/       — vendored libraries, basemaps, thumbnails
 
 **The repository has a pre-commit hook** that runs `node --check src/js/app.js` (and other JS files under `src/js/`). It will refuse to commit syntax-broken JS. **Do not bypass it with `--no-verify`** unless John explicitly says so.
 
+### 🛑 APP-CODE WORK SERIALIZES (hard rule, added 2026-05-17 after seven sweeps)
+
+Two app-code agents working in parallel on `src/js/` keep stepping on each other. Observed concrete failures across one session:
+
+- A parallel agent reverted `insertBefore(overlay, …)` to `appendChild(overlay)` and added an `overlay.style.zIndex = '3'`, which moved the SVG hull layer ON TOP of sigma's canvases and made every click hit a hull instead of a deity. The fix had to be re-done.
+- A parallel agent overwrote a clean `.ph2-edge.hot { stroke: var(--edge-bucket-color) }` with `!important`, blocking the inline gradient that `applyEdgeHoverState` was setting. Gradients silently stopped painting.
+- My staged files got swept into another agent's unrelated commit three separate times this session — attribution muddied, commit messages wrong, rollback path harder.
+
+**The rule:**
+
+1. **Before editing any file under `src/js/`, `src/styles/`, or `index.html`**, scan `00_meta/ACTIVE-AGENTS.md` for a non-finished claim listing that file in its `Owns:` line. If one exists and is in-progress, **STOP**. Coordinate (leave a note in ACTIVE-AGENTS asking to take over) or pick a different task.
+2. **Your own claim block must explicitly enumerate every app-code file you will touch** before you start. `Owns: src/js/views/pantheon-v2.js, src/styles/app.css, index.html`. "Owns: app code" is not specific enough.
+3. **Commit in tight cycles** — every 1-2 surgical edits, not at the end of a session. The faster you commit, the smaller the parallel-sweep window.
+4. **Never `git checkout HEAD -- <file>` on an app-code file mid-session without checking who owns it.** That's how clean work gets reverted under another agent's nose.
+5. **If you spot an in-flight claim collision**, stop and write the conflict to `ACTIVE-AGENTS.md` instead of working around it.
+6. **The pre-commit hook does NOT enforce this.** It only catches syntax. Coordination is a human discipline — read the file list before you stage.
+
+If you are working on app code AND another agent's claim mentions the same file: **the existing claim wins.** Do something else.
+
 ### BEFORE you start (or at the latest, while working)
 
 1. **Pick a handle** in the existing convention: `opus-<wedge>-<n>`. Examples in flight: `opus-hellenic-3`, `opus-ethiopian-4`, `opus-design-1`, `opus-gaps-1`, `opus-housekeeper-1`. Pick the next number for your wedge.

@@ -392,20 +392,26 @@
   // 0.95) to terminus (dim stop, 0.35). REVERSE_DIRECTION types swap
   // stops so the bright end sits on the SEMANTIC origin, not the
   // data-edge source.
+  // STRICT 7-bucket palette per AUDIT/edge-color-spec-2026-05-17.md.
+  // A parallel agent had previously injected a 'cross-tradition' bucket at
+  // idle:0.62 / headline:true / width:0.70 — way off-spec, and the visible
+  // teal lines the user kept seeing as "stuck" connections were these. The
+  // three edge types that pointed at it now route to `parallel` per spec.
+  // Headline idle opacities dropped (0.25/0.30 → 0.15/0.18) so the
+  // always-visible Polemic + Fusion edges read as quiet accents, not as
+  // "stuck highlights" the user can't clear.
   const BUCKETS = {
-    transmission:      { hex: '#C9743A', idle: 0.10, hot: 0.95, headline: false, directional: true  },
-    parallel:          { hex: '#5A9A8F', idle: 0.12, hot: 0.85, headline: false, directional: false },
-    'cross-tradition': { hex: '#7ABFB0', idle: 0.62, hot: 0.95, headline: true,  directional: false },
-    association:       { hex: '#4A5AA4', idle: 0.08, hot: 0.55, headline: false, directional: false },
-    kinship:           { hex: '#C9A5D4', idle: 0.14, hot: 0.85, headline: false, directional: false },
-    attestation:       { hex: '#D4A55A', idle: 0.10, hot: 0.90, headline: false, directional: true  },
-    polemic:           { hex: '#A83E4A', idle: 0.25, hot: 0.95, headline: true,  directional: false },
-    fusion:            { hex: '#C4783A', idle: 0.30, hot: 0.95, headline: true,  directional: false },
+    transmission: { hex: '#C9743A', idle: 0.10, hot: 0.95, headline: false, directional: true  },
+    parallel:     { hex: '#5A9A8F', idle: 0.12, hot: 0.85, headline: false, directional: false },
+    association:  { hex: '#4A5AA4', idle: 0.08, hot: 0.55, headline: false, directional: false },
+    kinship:      { hex: '#C9A5D4', idle: 0.14, hot: 0.85, headline: false, directional: false },
+    attestation:  { hex: '#D4A55A', idle: 0.10, hot: 0.90, headline: false, directional: true  },
+    polemic:      { hex: '#A83E4A', idle: 0.15, hot: 0.95, headline: true,  directional: false },
+    fusion:       { hex: '#C4783A', idle: 0.18, hot: 0.95, headline: true,  directional: false },
   };
-  // Per-bucket widths — kept compatible with the existing dev-panel mult.
   const BUCKET_WIDTH = {
-    transmission: 0.34, parallel: 0.30, 'cross-tradition': 0.70, association: 0.22, kinship: 0.32,
-    attestation:  0.30, polemic:  0.46, fusion:            0.40,
+    transmission: 0.34, parallel: 0.30, association: 0.22, kinship: 0.32,
+    attestation:  0.30, polemic:  0.40, fusion:      0.36,
   };
   // Type → bucket map. Built from the spec + the runtime edge-type tally.
   const EDGE_BUCKET = {
@@ -449,9 +455,11 @@
     'contested-identification':         'parallel',
     'exemplifies':                      'parallel',
     'instantiation-of':                 'parallel',
-    'syncretic-cross-tradition-archetype': 'cross-tradition',
-    'syncretic-functional-parallel':       'cross-tradition',
-    'syncretic-parallel':                  'cross-tradition',
+    // These three previously routed to a rogue 'cross-tradition' bucket
+    // (parallel-agent injection, off-spec). Routed to `parallel` per spec.
+    'syncretic-cross-tradition-archetype': 'parallel',
+    'syncretic-functional-parallel':       'parallel',
+    'syncretic-parallel':                  'parallel',
     // Association
     'has-theme':                        'association',
     'context':                          'association',
@@ -1666,10 +1674,25 @@
         return;
       }
       // OUTSIDE every hull (the true empty stage) → full reset.
+      // Clears V2 internal state AND the global STATE.selected / detail
+      // panel — without those, clicking empty leaves the node label + the
+      // detail panel stuck visible, which reads as "highlight that can't
+      // be cleared."
       _selectedId   = null;
       _hoverId      = null;
       _lockedSet    = new Set();
       _familyFilter = new Set();
+      try { if (window.STATE) window.STATE.selected = null; } catch (e) {}
+      try {
+        if (!document.body.classList.contains('detail-collapsed')) {
+          document.body.classList.add('detail-collapsed');
+          const dt = document.getElementById('detail-toggle');
+          if (dt) dt.textContent = '‹';
+          if (window._codexAnimateDetail) window._codexAnimateDetail();
+        }
+        const detailInner = document.getElementById('detail-inner');
+        if (detailInner) detailInner.innerHTML = '<div class="empty">Select a node to inspect.</div>';
+      } catch (e) {}
       sigma.refresh({ skipIndexation: true });
       applyEdgeHoverState();
       applyHullFilterState();
@@ -1677,6 +1700,7 @@
       if (typeof updateNodeLabelVisibility === 'function') updateNodeLabelVisibility();
       if (typeof syncFamilyMenu === 'function') syncFamilyMenu();
       hideThumbCard();
+      if (window.setMapTarget) window.setMapTarget(null);
     });
     // Double-click on empty = animated reset to computeFitRatio (same view
     // as the 100% button, no slider value, no surprise).
