@@ -87,7 +87,7 @@ This reading gave alchemy a serious interpretive framework in 20th-century thoug
 
 The Rosarium's central image — the sacred marriage (*hieros gamos*) of Sun-King and Moon-Queen, their erotic union producing a transformed third entity — is among the oldest religious symbols in human culture:
 
-- **Sumerian**: Inanna and Dumuzi's sacred marriage ritual — the divine union performed annually to ensure cosmic fertility; the Queen of Heaven marrying the shepherd-king. See [[inanna]] and [[hieros-gamos]].
+- **Sumerian**: Inanna and Dumuzi's sacred marriage ritual — the divine union performed annually to ensure cosmic fertility; the Queen of Heaven marrying the shepherd-king. See [[inanna-sumerian]] and [[hieros-gamos]].
 - **Egyptian**: the union of Osiris and Isis producing Horus — the death, dismemberment, and resurrection of Osiris, reassembled by Isis, conceiving the divine child. Structural identity with the Rosarium's death-resurrection sequence.
 - **Hebrew**: the *Song of Songs* (*Shir HaShirim*) — the erotic dialogue between Beloved and Lover, read rabbinically as the love between God and Israel, read mystically as the union of Tiferet and Shekhinah in Kabbalah. See [[phase-2-037-song-of-songs]]. The Rosarium's language of Sol and Luna is partially derived from Song of Songs commentary.
 - **Tantric**: the union of Shiva and Shakti in Tantric cosmology — consciousness and energy, the masculine principle and the feminine principle, whose separation is the universe's fragmented state and whose union is liberation (*moksha*). See [[shiva]] and [[tradition-tantra]].

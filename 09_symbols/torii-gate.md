@@ -77,8 +77,8 @@ The torii is a specific solution to the universal religious problem of marking t
 | Egyptian | Pylon gateway (*pylōn*) | Massive trapezoidal twin towers flanking a central passage | Marks entry to the deity's cosmic dwelling |
 | Hindu | *Gopuram* | Towered gateway over temple entrance | Marks entry to the deity's cosmic palace; increases in height toward the innermost sanctum |
 | Jewish | [[mezuzah]] | Parchment scroll in a case, affixed to the doorpost | Inscribes divine protection and presence on every domestic threshold |
-| Mesopotamian | [[lamassu]] pair | Winged bull-men with human heads, flanking palace and temple gates | Guards and enables entry; presence of apotropaic divine beings at the crossing-point |
-| Roman | [[janus]] / Ianus Geminus | Double-faced god of passages; the sacred archway in Rome's Forum | The god of transitions is *himself* the threshold; to pass through a gate is to enter Janus's body |
+| Mesopotamian | [[lamassu-symbol]] pair | Winged bull-men with human heads, flanking palace and temple gates | Guards and enables entry; presence of apotropaic divine beings at the crossing-point |
+| Roman | [[janus-symbol]] / Ianus Geminus | Double-faced god of passages; the sacred archway in Rome's Forum | The god of transitions is *himself* the threshold; to pass through a gate is to enter Janus's body |
 | Christian | West portal tympanum | Sculpted Last Judgment relief above the cathedral's main door | Reminds the entrant of eternal judgment; the threshold as eschatological moment |
 | Islamic | *Mihrab* | Pointed niche in the mosque wall indicating the direction of Mecca | Orients sacred attention; the threshold of prayer aligned toward the divine center |
 
@@ -93,9 +93,9 @@ The Nihongi (*Nihon Shoki*, 720 CE), one of the two foundational chronicles of J
 ## Cross-Tradition Connections
 
 - [[axis-mundi]]: The torii marks the entrance to the vertical axis where heaven and earth meet; the deepest point of a shrine's inner sanctum is the axis mundi's earthly anchor
-- [[lamassu]]: Both the torii and the lamassu pair mark the transition from profane to sacred/royal space; one dematerializes the threshold (the torii is pure geometry), the other hyper-materializes it (the lamassu is massive figurative sculpture) — opposite solutions to the same ritual requirement
+- [[lamassu-symbol]]: Both the torii and the lamassu pair mark the transition from profane to sacred/royal space; one dematerializes the threshold (the torii is pure geometry), the other hyper-materializes it (the lamassu is massive figurative sculpture) — opposite solutions to the same ritual requirement
 - [[mezuzah]]: The Jewish mezuzah solves the threshold-marking problem with inscription (the divine Name) rather than architecture; the torii with structure; the same theological need generates radically different material responses
-- [[janus]]: The Roman god Janus *is* the threshold; the torii is the threshold's architectural analogue — in both cases the liminal space between inside and outside becomes a sacred category
+- [[janus-symbol]]: The Roman god Janus *is* the threshold; the torii is the threshold's architectural analogue — in both cases the liminal space between inside and outside becomes a sacred category
 - [[mandorla]]: The mandorla (almond-shaped glory surrounding divine figures) is a visual threshold — the boundary between the divine being and the world it inhabits — structurally analogous to the torii as the boundary between worlds
 - [[spiral]]: Fushimi Inari's tunnel of thousands of torii spiraling up the sacred mountain combines threshold (torii) with ascent (spiral) as a single kinetic devotional experience
 

@@ -142,7 +142,7 @@ Hannah (1952, Tier-2 with polemical framing) documented this name in *Darkness V
 ## Cross-Tradition Context
 
 ### Temple of Solomon Theology
-The Royal Arch is the fullest expression of Masonic Temple theology — the idea that the Craft degrees and the Royal Arch together constitute a symbolic pilgrimage from the outer courts of Solomon's Temple through the inner sanctuary to the Holy of Holies, where the divine Name dwells. See [[pillars-jachin-boaz]] for the threshold theology; [[ark-of-the-covenant]] for the portable divine-presence emblem; [[tetragrammaton]] for the Name itself.
+The Royal Arch is the fullest expression of Masonic Temple theology — the idea that the Craft degrees and the Royal Arch together constitute a symbolic pilgrimage from the outer courts of Solomon's Temple through the inner sanctuary to the Holy of Holies, where the divine Name dwells. See [[pillars-jachin-boaz]] for the threshold theology; [[ark-of-the-covenant-symbol]] for the portable divine-presence emblem; [[tetragrammaton]] for the Name itself.
 
 ### Kabbalistic Resonances
 Jacob Katz (1970, Tier-1) traces how Masonic Temple symbolism incorporated Kabbalistic elements as the tradition developed — the Tree of Life mapped onto Lodge architecture, the sefirot onto pillars and degrees. The Royal Arch's recovery of the Divine Name echoes Kabbalistic theurgic practice: the Name is not merely a label but an operative instrument of divine power. See [[sefirot-tree-of-life]].
@@ -159,7 +159,7 @@ The tau cross (Hebrew *taw* = the final letter) carries a deep completion-theolo
 ## Cross-Symbol Edges (Provisional)
 
 - → [[pillars-jachin-boaz]] — *syncretic-fusion*. The Royal Arch narrative passes through the Solomonic pillars on the way to the vault.
-- → [[ark-of-the-covenant]] — *syncretic-fusion*. The vault contains an "Ark of the Royal Arch" bearing the Ineffable Name.
+- → [[ark-of-the-covenant-symbol]] — *syncretic-fusion*. The vault contains an "Ark of the Royal Arch" bearing the Ineffable Name.
 - → [[tetragrammaton]] — *syncretic-fusion*. The degree's climax is the recovery of the Divine Name.
 - → [[all-seeing-eye]] — *parallel-form*. Both Masonic emblems of divine omniscience, operating at different initiatic levels.
 - → [[tau-cross]] — *contains*. The Triple Tau is built from three tau crosses; the tau's completion-theology is the Triple Tau's foundation.

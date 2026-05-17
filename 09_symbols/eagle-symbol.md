@@ -34,7 +34,7 @@ related_symbols:
 related_deities:
   - "[[zeus]]"
   - "[[jupiter]]"
-  - "[[garuda]]"
+  - "[[garuda-symbol]]"
   - "[[quetzalcoatl]]"
 connections:
   - target: "[[thunderbird]]"
@@ -55,7 +55,7 @@ connections:
   - target: "[[zeus]]"
     type: divine-vehicle
     note: "Zeus's primary divine bird; the eagle carries Ganymede to Olympus; perches on Zeus's scepter paired with the thunderbolt"
-  - target: "[[garuda]]"
+  - target: "[[garuda-symbol]]"
     type: parallel-form
     note: "Garuda is the Vedic/Hindu eagle-deity, divine vehicle of Vishnu and eternal enemy of the Nagas — the eagle-serpent polarity at cosmic scale in South Asian tradition"
 ---
@@ -140,7 +140,7 @@ This vision is depicted on the Mexican national flag and coat of arms today — 
 
 ### Vedic-Hindu: Garuda vs. the Nagas
 
-**[[garuda]]** (Sanskrit: *garuḍa*) is the divine eagle-deity of Hindu tradition: the vehicle (*vahana*) of Vishnu, the Preserver, and the eternal enemy of the Nagas (serpent beings). Garuda is described as blazing like the sun, with golden wings, capable of extinguishing fire with his wingbeats. His birth story (Mahabharata, Adi Parva) is a cosmic conflict: Garuda defeats the gods to obtain *amrita* (the nectar of immortality) for his mother Vinata, who had been enslaved by the Nagas.
+**[[garuda-symbol]]** (Sanskrit: *garuḍa*) is the divine eagle-deity of Hindu tradition: the vehicle (*vahana*) of Vishnu, the Preserver, and the eternal enemy of the Nagas (serpent beings). Garuda is described as blazing like the sun, with golden wings, capable of extinguishing fire with his wingbeats. His birth story (Mahabharata, Adi Parva) is a cosmic conflict: Garuda defeats the gods to obtain *amrita* (the nectar of immortality) for his mother Vinata, who had been enslaved by the Nagas.
 
 The Garuda-Naga opposition is the most elaborated form of the eagle-serpent polarity in world religion: an entire mythology of their enmity, with complex theological stakes (divine service, freedom, cosmic balance). Yet even within Hinduism, the relationship is not simply antagonistic — Vishnu (whom Garuda serves) also contains the Nagas (Ananta-Shesha, the cosmic serpent, forms Vishnu's couch). The eagle and the serpent are both necessary to the complete divine reality.
 

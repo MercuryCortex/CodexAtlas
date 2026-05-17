@@ -100,7 +100,7 @@ The distribution — Greek, Vedic, Baltic, possibly Slavic and Roman — is too 
 
 ## Cross-Tradition Connections
 
-- [[divine-twins]]: The 06_themes node for the twin motif across mythology; wired here as the thematic parent
+- [[divine-twins-symbol]]: The 06_themes node for the twin motif across mythology; wired here as the thematic parent
 - [[yin-yang]]: The East Asian dyadic symbol encodes the same insight as the sacred twins — complementary principles in dynamic balance rather than static opposition; the twin motif and the yin-yang pattern are structural cognates
 - [[djed-pillar]]: As Osiris's backbone, the djed represents stability against which the twin dynamic (Osiris/Set, life/death) plays out; the divine pair Osiris/Set are a variant of the sacred twin motif
 - [[thread-of-fate]]: The Moirai who spin fate work in triple formation but the twin principle appears in Clotho/Lachesis (spinner and measurer) — the dual aspect of fate

@@ -7,7 +7,7 @@ date-emergence: -1500
 date-end:
 region-origin: "Sapta Sindhu (Punjab / upper Indus and Sarasvati basin)"
 regions-spread: ["pan-Indian subcontinent", "Southeast Asia (Cambodia, Indonesia, Thailand)", "global diaspora"]
-key-deities: ["[[indra]]", "[[agni]]", "[[varuna]]", "[[soma]]", "[[mitra-vedic]]", "[[usha]]", "[[rudra-shiva-early]]", "[[prajapati]]"]
+key-deities: ["[[indra]]", "[[agni]]", "[[varuna]]", "[[soma]]", "[[mitra-vedic]]", "[[ushas]]", "[[rudra-shiva-early]]", "[[prajapati]]"]
 key-persons: []
 key-documents: ["[[phase-2-001-rig-veda-family-books]]", "[[phase-2-003-atharva-veda]]", "[[phase-2-006-brahmanas-aranyakas]]", "[[phase-2-012-brihadaranyaka-upanishad]]", "[[phase-2-013-chandogya-upanishad]]", "[[phase-2-017-mahabharata-ramayana-oral-layers]]"]
 sister-traditions: ["[[tradition-zoroastrianism]]", "[[tradition-buddhism]]", "[[tradition-jainism]]"]
@@ -66,7 +66,7 @@ The Vedic tradition and its development into what we now call Hinduism is the re
 - [[varuna]] — cosmic-order Asura; demoted to god of waters.
 - [[soma]] — deified ritual substance; later moon-god.
 - [[mitra-vedic]] — covenant-god, paired with Varuṇa.
-- [[usha]] — Indo-European dawn-goddess.
+- [[ushas]] — Indo-European dawn-goddess.
 - [[rudra-shiva-early]] — outsider storm-god, becomes Śiva.
 - [[prajapati]] — Brāhmaṇa-period creator; partly displaced by Brahmā.
 - (Phase 3+: classical Hindu pantheon centered on Viṣṇu, Śiva, Devī)

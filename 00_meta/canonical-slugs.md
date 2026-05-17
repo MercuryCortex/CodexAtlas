@@ -254,7 +254,7 @@ canonical-slug
 - `hestia`
 - `hokmah-hebrew`
 - `holy-spirit`
-- `holy-spirit-paraclete`
+- `holy-spirit`
 - `horus`
 - `hubal`
 - `huitzilopochtli`
@@ -266,7 +266,6 @@ canonical-slug
 - `idunn`
 - `illuyanka`
 - `ilmatar`
-- `inanna`
 - `inanna-sumerian`
 - `inari`
 - `indra`
@@ -537,7 +536,6 @@ canonical-slug
 - `uranus-greek`
 - `uriel-archangel`
 - `urizen`
-- `usha`
 - `utu-shamash`
 - `vac-goddess`
 - `vainamoinen`
@@ -570,7 +568,6 @@ canonical-slug
 - `yan-wang`
 - `yashoda`
 - `yemoja`
-- `yima-iranian`
 - `yima-jamshid`
 - `ymir`
 - `zagreus`
@@ -1474,7 +1471,7 @@ canonical-slug
 - `frumentius`
 - `fulcanelli`
 - `g-i-gurdjieff`
-- `gabriel-archangel`
+- `gabriel-archangel-person`
 - `galawdewos-emperor`
 - `galen-of-pergamon`
 - `gamaliel-ii`
@@ -1709,7 +1706,7 @@ canonical-slug
 - `menelik-i-legendary`
 - `mengzi-person`
 - `mes-anepada`
-- `michael-archangel`
+- `michael-archangel-person`
 - `michael-maier`
 - `michael-sendivogius`
 - `milarepa`
@@ -1726,7 +1723,7 @@ canonical-slug
 - `muhammad-abduh`
 - `muhammad-al-baqir`
 - `muhammad-al-jawad`
-- `muhammad-al-mahdi`
+- `muhammad-al-mahdi-person`
 - `muhammad-ibn-abdullah`
 - `muhammad-iqbal`
 - `mulla-sadra`
@@ -1760,7 +1757,7 @@ canonical-slug
 - `orpheus`
 - `p-d-ouspensky`
 - `pachomius`
-- `padmasambhava`
+- `padmasambhava-person`
 - `papias-of-hierapolis`
 - `paracelsus`
 - `paramahansa-yogananda`
@@ -1987,7 +1984,7 @@ canonical-slug
 - `amanita-muscaria`
 - `ankh`
 - `arabesque-girih`
-- `ark-of-the-covenant`
+- `ark-of-the-covenant-symbol`
 - `asclepian-rod`
 - `asherah-pole`
 - `ashtamangala`
@@ -1998,7 +1995,7 @@ canonical-slug
 - `ayahuasca`
 - `azoth`
 - `ba-gua`
-- `baphomet`
+- `baphomet-symbol`
 - `basmala`
 - `beauseant`
 - `ben-ben`
@@ -2011,11 +2008,11 @@ canonical-slug
 - `caduceus`
 - `cauldron-of-rebirth`
 - `celtic-cross`
-- `chaos-primordial`
+- `chaos-primordial-symbol`
 - `chaos-star`
 - `chi-rho-labarum`
 - `coptic-cross`
-- `corn-mother`
+- `corn-mother-symbol`
 - `cornucopia`
 - `cosmic-egg`
 - `cosmic-ocean`
@@ -2028,14 +2025,14 @@ canonical-slug
 - `danse-macabre`
 - `dharmachakra`
 - `divine-child`
-- `divine-twins`
+- `divine-twins-symbol`
 - `djed-pillar`
 - `double-headed-eagle`
 - `dove`
 - `dragon-eastern`
 - `dragon-western`
 - `dreamcatcher`
-- `dying-rising-god`
+- `dying-rising-god-symbol`
 - `eagle-symbol`
 - `eleusinian-kykeon`
 - `emerald-tablet`
@@ -2054,7 +2051,7 @@ canonical-slug
 - `fish-ichthys`
 - `fleur-de-lis`
 - `flower-of-life`
-- `garuda`
+- `garuda-symbol`
 - `gobekli-tepe-pillars`
 - `golden-ratio`
 - `gorgoneion`
@@ -2076,13 +2073,13 @@ canonical-slug
 - `infinity-symbol`
 - `inverted-cross`
 - `jacobs-ladder`
-- `janus`
+- `janus-symbol`
 - `kaaba-black-stone`
-- `kalachakra`
+- `kalachakra-symbol`
 - `kundalini`
 - `labrys`
 - `labyrinth`
-- `lamassu`
+- `lamassu-symbol`
 - `latin-cross`
 - `lion`
 - `lion-symbol`

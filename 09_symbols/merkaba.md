@@ -117,7 +117,7 @@ Five attested variants: Ezekiel-chariot (biblical), Hekhalot-Merkavah (1st–7th
 
 - **Jewish → Christian** — the hayyot-fourfold transmits directly into the Christian Tetramorph via Irenaeus (c. 180 CE). `ancestor-of` → [[tetramorph]].
 - **Merkavah → Kabbalah** — the ascent-mysticism of the Hekhalot tradition is the direct predecessor of Kabbalistic theosophy. `ancestor-of` → [[sefirot-tree-of-life]].
-- **Merkavah ↔ Ark** — both function as the earthly/heavenly throne-seat of YHWH; the Chariot vision appears in exile as a mobile replacement for the destroyed Temple Ark. `parallel-form` ↔ [[ark-of-the-covenant]].
+- **Merkavah ↔ Ark** — both function as the earthly/heavenly throne-seat of YHWH; the Chariot vision appears in exile as a mobile replacement for the destroyed Temple Ark. `parallel-form` ↔ [[ark-of-the-covenant-symbol]].
 
 ## Contested interpretations
 
@@ -129,7 +129,7 @@ Five attested variants: Ezekiel-chariot (biblical), Hekhalot-Merkavah (1st–7th
 
 - → [[tetramorph]] — *ancestor-of*. **MASSIVE WIN:** Ezekiel's hayyot-fourfold → Irenaeus Tetramorph → zodiac fixed signs: same quaternary in Jewish, Christian, and Babylonian frameworks simultaneously.
 - → [[sefirot-tree-of-life]] — *ancestor-of*. Merkavah mysticism is the direct predecessor of Kabbalistic sefirotic theosophy.
-- ↔ [[ark-of-the-covenant]] — *parallel-form*. Both are YHWH's throne-seat; Merkavah as mobile/exilic replacement for the Temple Ark.
+- ↔ [[ark-of-the-covenant-symbol]] — *parallel-form*. Both are YHWH's throne-seat; Merkavah as mobile/exilic replacement for the Temple Ark.
 
 ## Refs
 

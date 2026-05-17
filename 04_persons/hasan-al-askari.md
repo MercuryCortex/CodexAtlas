@@ -40,7 +40,7 @@ tags: [person, islam, shia, imam, eleventh-imam, al-askari, samarra, twelver, su
 # Hasan al-Askari
 
 ## Identity
-Son of [[ali-al-hadi]]; born in Medina ~846; brought to Samarra with his father as a child. Succeeded his father as **Eleventh Imam** in 868 at age ~22. Lived under continued Abbasid surveillance in Samarra, with very limited access by the Imami community. Died in Samarra 874 at age ~28 (poisoned per Shi'i tradition; the historical record is suggestive). His death triggered the **succession crisis** that gave rise to the doctrine of the Twelfth Imam's *occultation* (*ghayba*) — see [[muhammad-al-mahdi]].
+Son of [[ali-al-hadi]]; born in Medina ~846; brought to Samarra with his father as a child. Succeeded his father as **Eleventh Imam** in 868 at age ~22. Lived under continued Abbasid surveillance in Samarra, with very limited access by the Imami community. Died in Samarra 874 at age ~28 (poisoned per Shi'i tradition; the historical record is suggestive). His death triggered the **succession crisis** that gave rise to the doctrine of the Twelfth Imam's *occultation* (*ghayba*) — see [[muhammad-al-mahdi-person]].
 
 ## Historical evidence
 Documented in Shi'i hadith collections; less extensively in Sunni biographical sources. The crucial *historiographical-doctrinal* question — whether al-Askari had a son who succeeded him as Twelfth Imam — is the foundational issue of post-874 Twelver Shi'ism (see Disputes).
@@ -65,7 +65,7 @@ This crystallization process is the focus of Modarressi's *Crisis and Consolidat
 - **Cause of death.** Standard Shi'i tradition (poisoned by orders of Caliph al-Mu'tamid). Historical evidence suggestive, not securely demonstrable.
 
 ## Cross-tradition connections
-- ↔ [[ali-al-hadi]] (father), [[muhammad-al-mahdi]] (son, per Twelver doctrine; Twelfth Imam in occultation) — the terminal link in the visible Twelver Imami line.
+- ↔ [[ali-al-hadi]] (father), [[muhammad-al-mahdi-person]] (son, per Twelver doctrine; Twelfth Imam in occultation) — the terminal link in the visible Twelver Imami line.
 - ↔ [[tradition-shia-islam]] — the succession crisis at his death is the founding moment of post-Imam Twelver Islam.
 - ↔ [[messianism]], [[apocalyptic-cosmic-warfare]] — the post-874 doctrinal consolidation produces the most fully-developed Islamic messianism.
 

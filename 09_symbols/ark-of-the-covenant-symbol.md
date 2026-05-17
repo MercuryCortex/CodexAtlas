@@ -1,6 +1,6 @@
 ---
 type: symbol
-id: "ark-of-the-covenant"
+id: "ark-of-the-covenant-symbol"
 name: "Ark of the Covenant"
 aka: ["Ark of the Covenant", "Aron ha-Brit", "Aron ha-Edut", "Ark of the Testimony", "Ark of God", "Aron Yahweh", "Tabut al-Ahd", "Tabot (Ethiopian)", "Ark of the Lord"]
 category: "cosmological"
@@ -92,7 +92,7 @@ The evidence is explicit:
 
 The formula "enthroned between the cherubim" (*yōšēb hakkerûbîm*) is the precise theological description: the two golden Cherubim (*kərûvîm*) on the **kapporet** (the Ark's gold cover, traditionally translated "mercy seat" — Hebrew *kappar*, "to cover/atone") face each other with their wings extended over the empty space between them. That empty space IS the throne. Yahweh is present, but not imaged.
 
-**Cross 1981 (Tier 1)** documents the closest ancient Near Eastern parallel: **the Megiddo ivories** (12th century BCE ivory panels from Canaanite Megiddo) show a king enthroned on a sphinx-throne — a chair supported by two sphinx (cherubic) creatures. The Ark's mercy seat is this same iconographic type: a portable throne for the invisible king, flanked by cherubic guardians. The parallels extend to the [[lamassu]] (Assyrian winged guardian creatures flanking palace gates) — all instances of the cherubic-threshold theology.
+**Cross 1981 (Tier 1)** documents the closest ancient Near Eastern parallel: **the Megiddo ivories** (12th century BCE ivory panels from Canaanite Megiddo) show a king enthroned on a sphinx-throne — a chair supported by two sphinx (cherubic) creatures. The Ark's mercy seat is this same iconographic type: a portable throne for the invisible king, flanked by cherubic guardians. The parallels extend to the [[lamassu-symbol]] (Assyrian winged guardian creatures flanking palace gates) — all instances of the cherubic-threshold theology.
 
 ## The Ark in battle: divine palladium
 
@@ -143,7 +143,7 @@ The film popularized the Ark's mystery for an entire generation and substantiall
 ## Cross-symbol edges (provisional)
 
 - ↔ [[tetramorph]] — *parallel-form*. The Ark's cherubim = Ezekiel's four living creatures = the tetramorph. Both are the throne-guardians of the invisible divine presence.
-- ↔ [[lamassu]] — *parallel-form*. Lamassu (Assyrian guardian cherubs) and Ark's cherubim are both instantiations of the cherubic-threshold guardian theology; the Megiddo cherubim-throne ivories are the direct archaeological parallel.
+- ↔ [[lamassu-symbol]] — *parallel-form*. Lamassu (Assyrian guardian cherubs) and Ark's cherubim are both instantiations of the cherubic-threshold guardian theology; the Megiddo cherubim-throne ivories are the direct archaeological parallel.
 - ↔ [[djed-pillar]] — *parallel-form*. Both are portable sacred objects carried by priestly specialists; both embody concentrated divine power; both generate ritual danger if mishandled.
 - ↔ [[menorah]] — *parallel-form*. The Ark and Menorah are the two supreme sacred objects of the Tabernacle/Temple; both disappeared from history after 586 BCE / 70 CE.
 - ↔ [[pillars-jachin-boaz]] — *parallel-form*. The Temple's sacred geography axis: threshold pillars → outer courts → Ark in Holy of Holies.

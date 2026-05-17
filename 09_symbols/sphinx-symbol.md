@@ -59,7 +59,7 @@ cross-symbol-edges:
     notes: The Great Sphinx faces east — precisely where the solar axis meets the horizon at equinox. Its east-facing posture aligns it with the solar axis-mundi; it marks the point where the cosmic vertical (the sun's daily passage) intersects the horizon, the threshold between night and day, death and rebirth.
     refs:
       - Lehner 1997
-  - target: "[[lamassu]]"
+  - target: "[[lamassu-symbol]]"
     type: parallel-form
     notes: The Assyrian lamassu (human-headed winged bull) and the Egyptian sphinx are parallel composite guardian figures — both combine human intelligence with animal power, both protect sacred thresholds, and both emerged from the ancient Near Eastern environment that transmitted symbols across Egypt, Mesopotamia, and the Levant.
     refs:
@@ -148,4 +148,4 @@ Aleister Crowley's synthesis in *The Book of Thoth* and *Liber AL* is more inter
 
 The massive comparative convergence across the sphinx's traditions is that **the composite guardian always makes the same demand**: before the sacred is accessible, the candidate must demonstrate that they possess what the guardian embodies. The Egyptian sphinx, with its royal human face, asks "Are you the king?" — and only the rightful king's face resembles the answer. The Greek sphinx asks "What is Man?" — and only genuine self-knowledge produces the answer. The esoteric sphinx asks "Do you know the fourfold structure of the cosmos?" — and only the initiated answer correctly.
 
-This is identical to the logic of the [[labyrinth]] (only Theseus, with Ariadne's thread of insight, navigates the Cretan maze) and the [[lamassu]] (the Assyrian gate-guardian who protects the sacred precinct by combining all the powers that might threaten it). The threshold-guardian as test-of-worthiness is one of the most widespread symbolic structures in human religious imagination — and the sphinx is its most durable and recognizable form.
+This is identical to the logic of the [[labyrinth]] (only Theseus, with Ariadne's thread of insight, navigates the Cretan maze) and the [[lamassu-symbol]] (the Assyrian gate-guardian who protects the sacred precinct by combining all the powers that might threaten it). The threshold-guardian as test-of-worthiness is one of the most widespread symbolic structures in human religious imagination — and the sphinx is its most durable and recognizable form.

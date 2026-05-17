@@ -19,7 +19,7 @@ aliases:
   - "circle of animals"
   - "ecliptic"
 related:
-  - "[[kalachakra]]"
+  - "[[kalachakra-symbol]]"
   - "[[sudarshana-chakra]]"
   - "[[dharmachakra]]"
   - "[[mandala-circle]]"
@@ -137,7 +137,7 @@ The 12 earthly branches (*shí'èr dìzhī* 十二地支) — associated with th
 ## The Wheel as Cross-Traditional Form
 
 The zodiac wheel is one instantiation of the cosmic wheel as a cross-traditional symbol:
-- **[[kalachakra]]** — the Tibetan Buddhist "Wheel of Time" is an elaborate cosmic-cyclic system with zodiac-like divisions; its 12-month structure has explicit zodiac parallels
+- **[[kalachakra-symbol]]** — the Tibetan Buddhist "Wheel of Time" is an elaborate cosmic-cyclic system with zodiac-like divisions; its 12-month structure has explicit zodiac parallels
 - **[[sudarshana-chakra]]** — Vishnu's discus, a spinning cosmic wheel with 12 spokes in some representations, evoking the annual solar cycle
 - **[[dharmachakra]]** — the Buddhist Wheel of the Dharma, whose spokes organize spiritual progress as the zodiac organizes cosmic time
 - **[[ba-gua]]** — the 8-trigram wheel of the Chinese *I Ching* is a parallel 8-unit cosmic map rather than 12-unit, reflecting a different organizing principle

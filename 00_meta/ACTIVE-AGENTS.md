@@ -4,6 +4,15 @@ _Hand-maintained. Each agent currently working in the vault appends a claim bloc
 
 ---
 
+## ~~pantheon-integrity-goblins-1 — full Pantheon deity audit + classifier hardening — 2026-05-17 — FINISHED~~
+- ~~Owned: `build_data.py` (tradition_family classifier + hard-fail dup-id), `00_meta/canonical-slugs.md`, 8 conflict pairs renamed (4 in `04_persons/` → `-person`, 4 in `09_symbols/` → `-symbol`), 6 cross-folder dupes renamed (`09_symbols/{ark-of-the-covenant,divine-twins,dying-rising-god,garuda,janus,kalachakra}.md` → `-symbol`), 5 dupes deleted (`03_deities/{inanna,ningal,usha,yima-iranian,holy-spirit-paraclete}.md`), 2 deity nodes enriched (`holy-spirit.md` fold from paraclete; `yima-jamshid.md` equivalents expanded), ~25 inbound wikilink redirects across symbol/person/theme files~~
+- ~~3 goblins ran in parallel (read-only): Goblin A (classification audit, 10 misclass + 8 suspicious) · Goblin B (substring landmines, 9 fragile substrings + 4 latent + order-bugs) · Goblin C (structural integrity, 8 silently-lost deities + 5 dupes + 84 dead deity wikilinks + dup-id hard-fail recommendation)~~
+- ~~Build: **628 deities · 17,399 edges · 33 named families · 0 Other · 0 YAML errors · 0 warnings**~~
+- ~~MASSIVE WIN edges: (1) **8 invisible deities now on the ring** — Michael, Gabriel, Padmasambhava, Muhammad al-Mahdi, Baphomet, Lamassu, Chaos-Primordial, Corn-Mother were all authored as deities but silently overwritten at build time; the Pantheon was missing 4 archangels + 2 winged-bull-guardian + 1 grain-mother + 1 Mahdi for an unknown duration; (2) **substring-collision bug class closed** — 9 fragile substrings word-boundaried so Bonaventure/Renaissance/Shanghai/Siberian/Maya-Angelou/Pisan-cult/Arakanese-Burmese/André-Breton/Sorbonne can never again silently misroute a future deity; (3) **build hard-fails on duplicate slugs** — same-slug-different-folder conflicts now break the build with a precise error message rather than silently dropping a node; (4) **origin-wins protocol fully audited** — Vedic-origin deities (Garuda/Kubera/Yama/Mahakala) stay Vedic; Buddhist-origin deities (Hariti/Dizang) now correctly Buddhist; Chinese-origin deities (Guan Yu/Mazu/Sun Wukong/Yan Wang) stay Chinese; the classifier explicitly encodes the origin-wins rule rather than relying on substring-matching luck~~
+- ~~Status: FINISHED~~
+
+---
+
 ## ~~ritual-wiring-sikh-jain-shinto-indigenous-yoruba-chinese-norse-1 — FINISHED (2026-05-17)~~
 - ~~Wiring agent: added/augmented ## Vault Connections sections on 21 ritual nodes in 14_rituals/~~
 - ~~Sikh (3): ritual-amrit-sanchar, ritual-langar, ritual-ardas~~

@@ -1,6 +1,6 @@
 ---
 type: symbol
-id: "divine-twins"
+id: "divine-twins-symbol"
 name: "Divine Twins"
 aka: ["Dioscuri", "Asvins", "Hero Twins", "Dios Kouroi", "Heavenly Twins", "Twin Gods", "Gemini", "Dievo Suneliai"]
 category: "anthropomorphic"

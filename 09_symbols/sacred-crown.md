@@ -130,7 +130,7 @@ This fusion is theologically significant: the Iron Crown implicitly makes the cl
 
 ## Crown as throne: the head-as-Holy-of-Holies
 
-In Hebrew Temple theology, the **Holy of Holies** (Devir) — the innermost, darkest chamber of the Temple — was the site where Yahweh's presence was concentrated above the Ark of the Covenant ([[ark-of-the-covenant]]). Entry was restricted to the High Priest alone, once a year, on Yom Kippur.
+In Hebrew Temple theology, the **Holy of Holies** (Devir) — the innermost, darkest chamber of the Temple — was the site where Yahweh's presence was concentrated above the Ark of the Covenant ([[ark-of-the-covenant-symbol]]). Entry was restricted to the High Priest alone, once a year, on Yom Kippur.
 
 The **High Priest's turban** (*mitznefet*) with its golden plate (*tzitz*) inscribed "Holy to Yahweh" was not a crown of royal authority but a crown of **concentrated divine presence** — the head of the High Priest as the ambulatory Holy of Holies, the priest as the moving temple, his crowned head as the mobile Ark. The High Priest's crown transforms the head into a portable sacred chamber.
 

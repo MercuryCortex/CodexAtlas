@@ -165,12 +165,12 @@ This "searching divine figure" whose grief is cosmogonically active is a cross-t
 |---|---|---|---|
 | Egyptian | [[isis]] | [[osiris]] (dismembered) | Reassembly + resurrection; conceives [[horus]] from revived corpse |
 | Greek | [[demeter]] | [[persephone-greek]] (abducted) | Withdrawal causes winter; return causes spring (Herodotus *Hist.* 2.59 explicitly identifies Isis's search with Demeter's search) |
-| Sumerian | [[inanna]] | [[dumuzi-tammuz]] (sent to underworld) | Descent-and-return structures the vegetative cycle |
+| Sumerian | [[inanna-sumerian]] | [[dumuzi-tammuz]] (sent to underworld) | Descent-and-return structures the vegetative cycle |
 | Christian | [[mary-theotokos]] | [[jesus-of-nazareth]] (crucified) | Mary at the foot of the cross; Stabat Mater; intercessory power rooted in maternal grief |
 
 Herodotus (*Histories* 2.59) documents the ancient-identification directly: "What the Egyptians call the Mysteries of Isis, the Greeks call the Mysteries of Demeter." Plutarch (§35) explicitly equates Osiris with [[dionysus]].
 
-**Wiring**: → [[persephone-greek]]: *parallel-motif* + *ancient-identification* (Herodotus 2.59 is the Tier-1 source); → [[inanna]]: *parallel-motif* (structural parallel of grief-and-descent cycle; no documented transmission, Tier-2); → [[phase-4-072-plutarch-de-iside-et-osiride]]: *attested-in* (fullest ancient narrative); → [[dying-rising-god]]: the theme node for the wider pattern; → [[phase-1-009-coffin-texts]]: earliest attested Isis-as-searcher.
+**Wiring**: → [[persephone-greek]]: *parallel-motif* + *ancient-identification* (Herodotus 2.59 is the Tier-1 source); → [[inanna-sumerian]]: *parallel-motif* (structural parallel of grief-and-descent cycle; no documented transmission, Tier-2); → [[phase-4-072-plutarch-de-iside-et-osiride]]: *attested-in* (fullest ancient narrative); → [[dying-rising-god]]: the theme node for the wider pattern; → [[phase-1-009-coffin-texts]]: earliest attested Isis-as-searcher.
 
 ## Refs
 1. Apuleius, *Metamorphoses* Book 11, ed./trans. Hanson Loeb 453 (1989).

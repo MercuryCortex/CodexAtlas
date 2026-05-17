@@ -25,7 +25,7 @@ related:
   - "[[ashtamangala]]"
   - "[[aum-om]]"
   - "[[lotus]]"
-  - "[[kalachakra]]"
+  - "[[kalachakra-symbol]]"
   - "[[sri-yantra]]"
   - "[[bindu]]"
   - "[[mudra]]"
@@ -118,7 +118,7 @@ The [[ashtamangala]] (eight auspicious Buddhist symbols) frequently includes the
 ## Investigative Threads
 
 - **108 and the [[mandala-circle]]:** The mandala's division into symbolic zones may encode the 108-unit count in its most elaborate forms — investigate whether the sand mandala traditions of [[tradition-vajrayana-buddhism]] explicitly organize their deities in 108-unit patterns.
-- **108 and [[kalachakra]]:** The Kalachakra Tantra (Wheel of Time) is the most astronomically sophisticated of the Vajrayana systems — investigate whether its cyclic count explicitly incorporates 108 as a structural unit.
+- **108 and [[kalachakra-symbol]]:** The Kalachakra Tantra (Wheel of Time) is the most astronomically sophisticated of the Vajrayana systems — investigate whether its cyclic count explicitly incorporates 108 as a structural unit.
 - **Independent Indian astronomy vs. transmission from Babylonian/Greek**: The question of whether Indian astronomers independently discovered the ~108 solar ratios or derived them from transmitted Mesopotamian/Hellenistic data (Pingree 1978 argues for substantial Greek transmission to India) is a live scholarly debate. The astronomical correspondence alone does not resolve whether it *caused* the number's sacredness.
 
 ---

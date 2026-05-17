@@ -1,6 +1,6 @@
 ---
 type: person
-id: "padmasambhava"
+id: "padmasambhava-person"
 name: "Padmasambhava (historical figure)"
 aka: ["Guru Rinpoche", "Lopön Rinpoche", "the Lotus-Born"]
 role: "Indian Tantric master, founder of Tibetan Buddhism (Nyingma tradition)"

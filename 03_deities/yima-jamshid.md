@@ -15,11 +15,20 @@ child-of: ["Vivahvant (Avestan; Vedic Vivasvat)"]
 consort: []
 attributes: ["the golden seal-ring (or golden cup of all-seeing — *Jam-e Jam*)", "the dagger and the goad", "the magnificent throne", "the radiant *xvarənah* (divine-royal-glory) that he originally possessed and later lost"]
 attested-in: ["[[phase-2-002-gathas-of-zarathustra]]", "[[phase-2-004-yasna-younger-avesta]]"]
-equivalents: ["[[manu-vedic]] (Vedic — structural-functional cognate as first-human and first-king)", "Yama (Vedic — direct etymological cognate)"]
+equivalents: ["[[yama-vedic]] (Vedic — direct etymological cognate via PIE \\*Yemo-)", "[[manu-vedic]] (Vedic — structural-functional cognate as first-human and first-king)", "[[noah]] (scholarly-parallel — cataclysm-survivor pattern, with winter for flood)", "[[gilgamesh-king]] (golden-age king who confronts mortality)"]
 syncretic-edges:
-  - target: "manu-vedic"
+  - target: "[[yama-vedic]]"
+    type: "ancient-identification"
+    source: "Indo-Iranian: Avestan Yima and Vedic Yama descend from PIE *Yemo- 'twin' — Lincoln 1986 *Myth, Cosmos, and Society*; both are the first mortal (in Iran the king, in India the dead-king)"
+  - target: "[[manu-vedic]]"
     type: "scholarly-parallel"
     source: "Both first-king-and-culture-hero figures; both build a structure to survive cosmic catastrophe (Yima's Var underground refuge from cosmic-winter; Manu's boat that survives the cosmic flood — note: Yima's Avestan narrative is a *winter* flood, not a water-flood, distinguishing it from the Manu / Mesopotamian / biblical water-flood pattern). Structural cognate; etymological cognate via Vedic Yama (the brother of Manu in some traditions)"
+  - target: "[[noah]]"
+    type: "scholarly-parallel"
+    source: "Vendidad 2 — Ahura Mazda warns Yima of a coming devastating winter; Yima builds the Vara underground refuge for paired specimens of all species and the most beautiful humans — a structural parallel to the Noah-ark mytheme and Mesopotamian Utnapishtim/Atrahasis flood-survival, the Iranian variant being a *winter* not a flood (Boyce 1975)"
+  - target: "[[gilgamesh-king]]"
+    type: "scholarly-parallel"
+    source: "Golden-age king who confronts mortality; structural-parallel as primordial-royal-survivor figure"
 status: "metadata"
 refs:
   - title: "A History of Zoroastrianism, Vol. 1"

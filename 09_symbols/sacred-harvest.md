@@ -12,7 +12,7 @@ variants:
   - id: "osiris-death-resurrection"
     description: "Osiris murdered by Set, dismembered, reassembled by [[isis]], revived by the [[djed-pillar]] ceremony. The deceased pharaoh *becomes* Osiris. The annual 'Raising of the Djed' reenacts the resurrection as a cosmogonic act. Primary sources: Pyramid Texts (c. −2400 BCE), Coffin Texts."
   - id: "dumuzi-tammuz-descent"
-    description: "[[dumuzi-tammuz]] the shepherd-lover of [[inanna]], consigned to the underworld in her place after [[inanna]]'s descent. Spends half the year below (summer drought, flocks absent) and half above (spring, flocks return). The agricultural calendar personified. Source: *Inanna's Descent to the Netherworld* (c. −2000 BCE). Weeping for Tammuz attested in Ezekiel 8:14."
+    description: "[[dumuzi-tammuz]] the shepherd-lover of [[inanna-sumerian]], consigned to the underworld in her place after [[inanna-sumerian]]'s descent. Spends half the year below (summer drought, flocks absent) and half above (spring, flocks return). The agricultural calendar personified. Source: *Inanna's Descent to the Netherworld* (c. −2000 BCE). Weeping for Tammuz attested in Ezekiel 8:14."
   - id: "baal-mot-cycle"
     description: "[[baal-hadad]] the storm god dies and descends to the underworld ruled by Mot; his death = drought; his resurrection = rain. Baal texts from Ras Shamra (c. −1400 BCE) provide the closest textual parallel to both Osiris and Christ patterns from the Canaanite tradition. See [[tradition-canaanite-ugaritic]]."
   - id: "persephone-eleusinian"
@@ -39,7 +39,7 @@ deity-instances:
   - "[[osiris]]"
   - "[[dumuzi-tammuz]]"
   - "[[baal-hadad]]"
-  - "[[inanna]]"
+  - "[[inanna-sumerian]]"
   - "[[persephone-greek]]"
   - "[[demeter]]"
   - "[[adonis]]"
@@ -149,7 +149,7 @@ The deepest structural insight: the dying-and-rising pattern maps onto the annua
 
 ### Dumuzi/Tammuz (Mesopotamia, c. −2000 BCE onward)
 
-[[Dumuzi-tammuz]] is the shepherd-consort of [[inanna]]. After [[inanna]]'s descent to the underworld, Dumuzi is given as her substitute price of return. He spends half the year below (= summer drought, the flocks absent) and half above (= spring, the flocks return). The weeping for Tammuz is attested in the Hebrew Bible (Ezekiel 8:14), demonstrating the cult's reach into Israel. See [[tradition-sumerian-mesopotamian]].
+[[Dumuzi-tammuz]] is the shepherd-consort of [[inanna-sumerian]]. After [[inanna-sumerian]]'s descent to the underworld, Dumuzi is given as her substitute price of return. He spends half the year below (= summer drought, the flocks absent) and half above (= spring, the flocks return). The weeping for Tammuz is attested in the Hebrew Bible (Ezekiel 8:14), demonstrating the cult's reach into Israel. See [[tradition-sumerian-mesopotamian]].
 
 ### Baal (Ugarit, c. −1400 BCE)
 

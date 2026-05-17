@@ -2,7 +2,7 @@
 type: deity
 id: "holy-spirit"
 name: "Holy Spirit"
-aka: ["Holy Ghost", "Paraclete", "Spirit of Truth", "Pneuma Hagion", "Ruah ha-Qodesh"]
+aka: ["Holy Ghost", "Paraclete", "Spirit of Truth", "Spirit of God", "Comforter", "Pneuma Hagion", "Ruah ha-Qodesh", "Ruach"]
 tradition: "Christianity (Trinitarian)"
 region: "(supernatural)"
 period-active-earliest: 0
@@ -16,7 +16,10 @@ consort: []
 attributes: ["the dove (Mt 3:16 par.)", "tongues of fire (Acts 2)", "rushing wind (Acts 2)", "anointing oil"]
 attested-in: ["[[phase-3-015-pauline-epistles]]", "[[phase-3-018-luke-acts]]", "[[phase-3-020-gospel-of-john]]"]
 equivalents: []
-syncretic-edges: []
+syncretic-edges:
+  - target: "[[wisdom-personified]]"
+    type: "scholarly-parallel"
+    source: "Some early Syriac Christian traditions (Odes of Solomon, Aphrahat) feminine-coded the Spirit, drawing on Hebrew *Ruach* (fem.) and Wisdom-theology"
 status: "stub"
 refs:
   - title: "God the Spirit"
@@ -31,7 +34,13 @@ refs:
     publisher: "University of Chicago Press"
     type: "monograph"
     tier: 1
-tags: [deity, christianity, trinity, pneumatology]
+  - title: "The Holy Spirit in the Early Church"
+    author: "Hauschild, Wolf-Dieter"
+    year: 1972
+    publisher: "Mohr Siebeck"
+    type: "monograph"
+    tier: 1
+tags: [deity, christianity, trinity, pneumatology, paraclete]
 ---
 
 # Holy Spirit
@@ -53,6 +62,7 @@ The third person of the Christian Trinity — eternally proceeding from the Fath
 ## Cross-tradition identifications
 - Islamic *Rūḥ al-Quds* (Holy Spirit) is identified in Islamic tradition with the angel Gabriel (Q 2:97); not equivalent to the Trinitarian Holy Spirit in Christian theology.
 - Jewish *Ruaḥ ha-Qodesh* — divine inspiration, especially prophetic, but never personified as a separate divine person.
+- **Feminine reception (early Syriac).** The Odes of Solomon (~2nd c.) and Aphrahat (~4th c.) used feminine pronouns and imagery for the Spirit, drawing on Hebrew *Ruach* (grammatically feminine) and Jewish Wisdom-theology ([[wisdom-personified]]). The feminine Spirit-tradition survived in Syriac Christianity longer than in Greek/Latin streams.
 
 ## Disputes
 - The Filioque clause (added at Toledo 589; defended in the West, rejected in the East).

@@ -88,7 +88,7 @@ The hieros gamos is the documented root of a cross-traditional sacred-union them
 
 The ritual sexual union as cosmological generator — the claim that human sexual enactment of divine union produces real cosmic effects (fertility, agricultural abundance, cosmic renewal) — appears across traditions:
 
-1. **Mesopotamian hieros gamos** (2100 BCE): King + high priestess = Dumuzi + Inanna. Agricultural fertility guaranteed by the union. Oldest documentation. See [[inanna]], [[inanna-sumerian]].
+1. **Mesopotamian hieros gamos** (2100 BCE): King + high priestess = Dumuzi + Inanna. Agricultural fertility guaranteed by the union. Oldest documentation. See [[inanna-sumerian]], [[inanna-sumerian]].
 
 2. **Hindu Tantric ritual union** (Shaiva Tantra, 6th–12th c. CE): The *maithuna* element in some Kaula tantric traditions involves ritual sexual union between a male practitioner and a female partner embodying Shakti, generating *kundalini* energy release and liberation (*moksha*). The union is understood as participating in and re-enacting the cosmic Shiva-Shakti union that generates all manifest reality. Independent development, approximately 3,000 years after the Mesopotamian documentation.
 
@@ -101,7 +101,7 @@ The ritual sexual union as cosmological generator — the claim that human sexua
 ## Vault Connections
 
 **Deity nodes**
-- [[inanna]] — the goddess of the hieros gamos; her love poetry with Dumuzi is the oldest erotic-sacred literature
+- [[inanna-sumerian]] — the goddess of the hieros gamos; her love poetry with Dumuzi is the oldest erotic-sacred literature
 - [[inanna-sumerian]] — the Sumerian Inanna specifically; the earliest layer of the tradition before Akkadian Ishtar
 - [[ishtar-akkadian]] — the Akkadian continuation; Ishtar and Tammuz carry the hieros gamos tradition into the first millennium BCE
 

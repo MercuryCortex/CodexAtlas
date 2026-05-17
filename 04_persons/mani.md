@@ -134,6 +134,6 @@ This meta-religious claim — "I know the other religions, I use them, I improve
 | → [[event-mani-execution-274-or-277]] | died-in | Killed by Kartir/Bahram I; martyrdom narrative |
 | → [[progressive-revelation]] | exemplifies | Prophetic chain leading to Mani as the final revealer |
 | → [[martyrdom-theology]] | exemplifies | Prophet killed by religious establishment; death seeds tradition's spread |
-| → [[holy-spirit-paraclete]] | claims-to-be | The Paraclete identity — his central self-legitimating claim within Christianity |
+| → [[holy-spirit]] | claims-to-be | The Paraclete identity — his central self-legitimating claim within Christianity |
 
 ---

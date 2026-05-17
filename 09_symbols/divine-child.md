@@ -106,7 +106,7 @@ The Jungian reading is a psychological framework, not a historical-transmission 
 
 - [[cosmic-egg]]: The divine child often emerges from a cosmic egg (Orphic Phanes, the Vedic Hiranyagarbha as cosmic womb-child) — the egg and the infant are both images of potency before unfolding
 - [[halo-nimbus]]: The divine radiance of the child made visible; infant Jesus and child Krishna are both depicted with the divine aura
-- [[divine-twins]]: The divine child motif overlaps with sacred-twin narratives; several divine children are twins or one of a pair (Castor and Pollux, Hunahpu and Xbalanque)
+- [[divine-twins-symbol]]: The divine child motif overlaps with sacred-twin narratives; several divine children are twins or one of a pair (Castor and Pollux, Hunahpu and Xbalanque)
 - [[flood-motif]]: Like the divine child, the flood survivor (Noah, Manu, Utnapishtim) is preserved through danger in a vessel on water — parallel structures of survival-through-liminal-containment
 
 ## References

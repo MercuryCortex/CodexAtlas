@@ -15,9 +15,9 @@ child-of: ["[[helios]] (as sibling rather than child — daughter of Hyperion an
 consort: ["Tithonus (mortal, granted immortality without youth)", "Astraeus (Titan of dusk)", "Ares (briefly, Aphrodite's curse)"]
 attributes: ["saffron robe", "rose-tinted fingers", "golden chariot drawn by two horses (Lampos and Phaethon)", "wings", "torch or crown of stars"]
 attested-in: []
-equivalents: ["[[usha]]", "[[amaterasu]]", "[[ra]]"]
+equivalents: ["[[ushas]]", "[[amaterasu]]", "[[ra]]"]
 syncretic-edges:
-  - target: "[[usha]]"
+  - target: "[[ushas]]"
     type: "scholarly-parallel"
     source: "West 2007, Indo-European Poetry and Myth; Mallory & Adams 2006 — PIE *h₂ewsṓs (dawn-goddess) yields Vedic Uṣas, Greek Eos, Latin Aurora, Lithuanian Aušrinė. The most securely reconstructed PIE goddess; cognate names, cognate epithets ('Daughter of Heaven'), cognate chariot-imagery."
 status: "metadata"
@@ -63,7 +63,7 @@ Eos is one of the most securely reconstructed Proto-Indo-European deities: PIE *
 - **Homer, Iliad** (c. 750 BCE): "rosy-fingered Dawn" appears at XI.1, as she opens the tale of day; throughout as a formulaic marker of day transitions.
 - **Hesiod, Theogony** 371–374 (c. 700 BCE): gives her parentage (Hyperion + Theia) and children (the winds and stars).
 - **Mycenaean Linear B**: no direct attestation — Eos's name is not yet attested in Mycenaean texts, though Helios (i-re-ja?) and Selene analogues may be.
-- **Vedic parallel** [[usha]]: Rigveda hymns to Uṣas (c. 1200–1000 BCE) predate the Greek documentation and preserve the PIE dawn-goddess pattern at its earliest recoverable form.
+- **Vedic parallel** [[ushas]]: Rigveda hymns to Uṣas (c. 1200–1000 BCE) predate the Greek documentation and preserve the PIE dawn-goddess pattern at its earliest recoverable form.
 
 ## Mythological role
 
@@ -79,7 +79,7 @@ Eos is notable for two mythological clusters:
 
 ## Cross-tradition identifications
 
-- **[[usha]]** — *scholarly-parallel* (PIE genetic): the most secure cross-tradition identification in all of comparative mythology. Vedic Uṣas and Greek Eos are not analogous — they are cognates. Same PIE root (*h₂ewsṓs), same "Daughter of Heaven" epithet, same chariot-imagery, same perpetual-youth attribute. West (2007) devotes extensive analysis to confirming the reconstruction. The Uṣas hymns of the Rigveda are the oldest surviving text about this deity, predating Homer by 400+ years.
+- **[[ushas]]** — *scholarly-parallel* (PIE genetic): the most secure cross-tradition identification in all of comparative mythology. Vedic Uṣas and Greek Eos are not analogous — they are cognates. Same PIE root (*h₂ewsṓs), same "Daughter of Heaven" epithet, same chariot-imagery, same perpetual-youth attribute. West (2007) devotes extensive analysis to confirming the reconstruction. The Uṣas hymns of the Rigveda are the oldest surviving text about this deity, predating Homer by 400+ years.
 - **[[amaterasu]]** — *scholarly-parallel*: Japanese sun-goddess who withdraws into a cave (cosmic darkness), then is coaxed out by Ame-no-Uzume's dance — the world restored to light. This is structurally parallel to Eos-as-light-bringer and to the Vedic Uṣas driving away cosmic darkness. The "dawn restores the world from darkness" mytheme appears independently in Japan and in the PIE dawn-goddess tradition.
 - **[[ra]]** — *scholarly-parallel*: Egyptian Ra rising through the Duat each night and emerging at dawn parallels Eos opening heaven's gates. Both are the mechanism by which light returns. The dawn-as-cosmic-battle (Ra defeating Apophis each dawn) is a more dramatic version of what Eos's morning traversal implies.
 - **[[utu-shamash]]** — *scholarly-parallel*: Sumero-Akkadian sun deity who rises between the twin mountains of Mashu each dawn; the divine opening of heaven for the light is structurally parallel to Eos opening the sky's gates.

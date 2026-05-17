@@ -1,6 +1,6 @@
 ---
 type: symbol
-id: "chaos-primordial"
+id: "chaos-primordial-symbol"
 name: "Chaos (Primordial Void)"
 aka: ["χάος", "*Khaos*", "the Gaping Void", "the Yawning Abyss", "*Rudis indigestaque moles*"]
 category: "cosmological"

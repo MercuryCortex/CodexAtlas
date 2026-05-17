@@ -1,6 +1,6 @@
 ---
 type: person
-id: "gabriel-archangel"
+id: "gabriel-archangel-person"
 name: "Gabriel (Archangel)"
 aka: ["Gavriel (Hebrew)", "Jibrīl (Arabic)", "the angel of revelation"]
 role: "angel | mediator-of-revelation"

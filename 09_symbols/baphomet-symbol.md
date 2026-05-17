@@ -1,6 +1,6 @@
 ---
 type: symbol
-id: "baphomet"
+id: "baphomet-symbol"
 name: "Baphomet"
 aka: ["Sabbatic Goat", "Goat of Mendes (19th-c. identification)", "the Androgynous Goat", "Lévi's Goat"]
 category: "anthropomorphic"

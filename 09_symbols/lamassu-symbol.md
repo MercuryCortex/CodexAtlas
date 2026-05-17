@@ -1,6 +1,6 @@
 ---
 type: symbol
-id: "lamassu"
+id: "lamassu-symbol"
 name: "Lamassu (Winged Bull Guardian of the Threshold)"
 aka: ["Alad", "Lamma", "Shedu", "Lamassu", "Human-headed Bull", "Colossal Guardian", "Palace Guardian", "Five-legged Guardian"]
 category: "theriomorphic"

@@ -30,7 +30,7 @@ appearances:
   - "Modern: Picasso peace dove (1949); United Nations iconography; international peace movement"
 deity-instances:
   - "[[inanna-sumerian]]"
-  - "[[inanna]]"
+  - "[[inanna-sumerian]]"
   - "[[aphrodite-greek]]"
   - "[[venus-roman]]"
 tradition-context:

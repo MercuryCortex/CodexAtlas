@@ -1,6 +1,6 @@
 ---
 type: symbol
-id: "corn-mother"
+id: "corn-mother-symbol"
 name: "Corn Mother / Corn Goddess"
 aka: ["Corn Mother", "Corn Goddess", "Maize Mother", "Grandmother Corn", "Selu", "Changing Woman", "Corn Maidens", "Chicomecoatl", "Centeotl", "Xilonen", "Three Sisters", "Corn Woman"]
 category: "phytomorphic"

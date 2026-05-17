@@ -130,7 +130,7 @@ This is not superstition overlaid on practical governance. This IS the governanc
 **Deity nodes**
 - [[marduk]] — Marduk's approval was sought in extispicy; the *baru* priests operated primarily within Marduk's temple complex in Babylon
 - [[enlil]] — Enlil was the sky-god whose celestial domain was the primary subject of the EAE omen series; the series opens "When Anu and Enlil..."
-- [[inanna]] — Ishtar/Venus was the most closely watched planet in the EAE series; approximately one-third of the Venus tablets concern Ishtar's omens; the original Venus observation tablet (*Enuma Anu Enlil* Tablet 63) covers 21 years of Venus observations from the Old Babylonian period
+- [[inanna-sumerian]] — Ishtar/Venus was the most closely watched planet in the EAE series; approximately one-third of the Venus tablets concern Ishtar's omens; the original Venus observation tablet (*Enuma Anu Enlil* Tablet 63) covers 21 years of Venus observations from the Old Babylonian period
 - [[utu-shamash]] — the sun god of justice and truth; the primary divine addressee in extispicy; when a question was posed to the sacrifice, it was specifically addressed to Shamash as the god who knows all truths; he "wrote" the answer in the liver
 - [[nanna-sin]] — the moon god; lunar phenomena constitute a major category of the EAE celestial omen series; Nanna-Sin's monthly cycle generated the most watched predictive sequence in Babylonian divination
 - [[enki-ea]] — god of wisdom and craft; patron of ritual knowledge and the scribal arts; the *baru* priests who maintained the divination system were under Ea's divine patronage as keepers of secret knowledge

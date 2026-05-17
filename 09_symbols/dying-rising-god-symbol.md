@@ -1,6 +1,6 @@
 ---
 type: symbol
-id: "dying-rising-god"
+id: "dying-rising-god-symbol"
 name: "Dying and Rising God"
 aka: ["vegetation god", "resurrection deity", "suffering redeemer", "dying savior", "corn king", "year-deity", "seasonal sacrifice", "Frazer's dying god"]
 category: "cosmological"

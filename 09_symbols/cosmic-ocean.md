@@ -12,7 +12,7 @@ variants:
   - id: "egyptian-nun"
     description: "**Nun** (nwn): the primordial ocean of inertness, darkness, and potential that existed before the first moment of creation. [[Atum]] emerges from Nun as the primordial hill (the [[ben-ben]]). At the end of time, the created world will dissolve back into Nun — it is simultaneously origin and eschatological destination. Primary sources: *Pyramid Texts*, *Coffin Texts*, Memphite Theology. See [[nun-primordial-waters]]."
   - id: "mesopotamian-apsu-tiamat"
-    description: "[[Apsu]] (sweet/fresh water) and [[tiamat]] (salt/sea water) are the two primordial oceans whose intermingling produces the first gods (*Enuma Elish*, c. −1800 BCE). Apsu is killed by [[marduk]]'s father Ea; [[tiamat]] raises an army; [[marduk]] kills Tiamat and creates heaven and earth from her body. The primordial waters are gendered (male freshwater = Apsu; female saltwater = Tiamat = [[chaos-primordial]]). See [[tradition-mesopotamian]]."
+    description: "[[Apsu]] (sweet/fresh water) and [[tiamat]] (salt/sea water) are the two primordial oceans whose intermingling produces the first gods (*Enuma Elish*, c. −1800 BCE). Apsu is killed by [[marduk]]'s father Ea; [[tiamat]] raises an army; [[marduk]] kills Tiamat and creates heaven and earth from her body. The primordial waters are gendered (male freshwater = Apsu; female saltwater = Tiamat = [[chaos-primordial-symbol]]). See [[tradition-mesopotamian]]."
   - id: "hebrew-tehom"
     description: "**Tehom** (תְּהוֹם): Genesis 1:2 — 'the earth was without form and void, and darkness was over the face of the *tehom*, and the Spirit of God was hovering over the face of the waters.' The cognate relationship of *tehom* with Akkadian *Tiāmat* is one of the most documented cases of Mesopotamian influence on Hebrew cosmology (Gunkel 1895). The 'waters above the firmament' and 'waters below' are the separated primordial waters of Genesis 1:7."
   - id: "hindu-milky-ocean"
@@ -64,7 +64,7 @@ cross-symbol-edges:
     type: "syncretic-fusion"
     notes: "The axis mundi rises from the primordial waters. All world-pillars and world-trees have their roots in the deep: Yggdrasil's roots reach into the waters of Hvergelmir; the Egyptian obelisk/Djed is planted in the Nile silt (= Nun). The axis is what holds the cosmos stable above the chaos-waters."
     refs: ["Prose Edda, Gylfaginning 15"]
-  - target: "[[chaos-primordial]]"
+  - target: "[[chaos-primordial-symbol]]"
     type: "parallel-form"
     notes: "The primordial waters and primordial chaos are often identical (Tiamat IS both the saltwater ocean AND the chaos-force Marduk must defeat). The water symbol makes the chaos tangible and bounded — an ocean can be crossed; chaos can be slain."
     refs: ["Enuma Elish Tablet I"]
@@ -137,7 +137,7 @@ See [[tradition-egyptian-religion]].
 
 The *Enuma Elish* (c. −1800 BCE) opens with the primordial waters in their most fully developed narrative form: "When on high the heavens had not yet been named, nor below the earth called by name — primordial Apsu was their progenitor, and matrix Tiamat, who bore them all; they were mingling their waters together, and no pasture land had been formed, no marsh had appeared."
 
-**[[Apsu]]** (fresh water) and **[[tiamat]]** (salt water) are the two primordial oceans. Their intermingling — without boundary or distinct form — is the state before creation. The younger gods disturb the primordial silence; **[[marduk]]** defeats **[[tiamat]]** and constructs heaven and earth from her body, fixing the seas in place. Creation is the violent defeat and ordering of the primordial chaos-waters. See **[[chaos-primordial]]** and [[tradition-mesopotamian]].
+**[[Apsu]]** (fresh water) and **[[tiamat]]** (salt water) are the two primordial oceans. Their intermingling — without boundary or distinct form — is the state before creation. The younger gods disturb the primordial silence; **[[marduk]]** defeats **[[tiamat]]** and constructs heaven and earth from her body, fixing the seas in place. Creation is the violent defeat and ordering of the primordial chaos-waters. See **[[chaos-primordial-symbol]]** and [[tradition-mesopotamian]].
 
 ## The Hebrew Tehom
 

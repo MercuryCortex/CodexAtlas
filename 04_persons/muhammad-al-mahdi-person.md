@@ -1,6 +1,6 @@
 ---
 type: person
-id: "muhammad-al-mahdi"
+id: "muhammad-al-mahdi-person"
 name: "Muhammad al-Mahdi"
 aka: ["Muḥammad ibn al-Ḥasan al-Mahdī", "Imam al-Mahdī (the Rightly-Guided One)", "al-Ḥujja (the Proof)", "al-Qā'im (the Riser / He Who Will Rise)", "Ṣāḥib al-Zamān (Lord of the Age)", "the Hidden Imam"]
 role: "twelfth Shi'a Imam (Twelver line) / eschatological Mahdi"

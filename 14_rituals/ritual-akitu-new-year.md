@@ -101,7 +101,7 @@ The earliest Akitu evidence dates to the Ur III period (c. 2100 BCE) at Ur and N
 
 **Deity nodes**
 - [[marduk]] — Akitu was Marduk's festival; the *Enuma Elish* recitation was Marduk's creation story; the processional re-enacted his triumph; the divine assembly ratified his supremacy
-- [[inanna]] — Inanna/Ishtar's lions line the Processional Way; her role in earlier Sumerian Akitu variants was more central before Marduk's theological supremacy displaced her
+- [[inanna-sumerian]] — Inanna/Ishtar's lions line the Processional Way; her role in earlier Sumerian Akitu variants was more central before Marduk's theological supremacy displaced her
 - [[enlil]] — in earlier (Sumerian) Akitu variants at Nippur, Enlil was the supreme deity whose primacy was renewed annually; the Mardukian theology of later Babylon replaced Enlil with Marduk while preserving the ritual structure
 
 **Document nodes**

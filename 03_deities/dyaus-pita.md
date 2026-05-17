@@ -10,7 +10,7 @@ period-active-latest: -800
 domains: ["sky", "fatherhood", "daylight", "kingship-of-the-gods (in PIE reconstruction)"]
 gender: "masculine"
 role: "sky-father; reconstructed PIE chief deity from whom Vedic Dyaus, Greek Zeus, Roman Jupiter, and Norse Tyr (etymologically) descend"
-parent-of: ["[[usha]] (Dawn; Vedic Dyaus's daughter)", "[[indra]] (in some Vedic accounts)"]
+parent-of: ["[[ushas]] (Dawn; Vedic Dyaus's daughter)", "[[indra]] (in some Vedic accounts)"]
 child-of: []
 consort: ["Prithvi (Earth-Mother; the Dyaus-Prithvi pairing)"]
 attributes: ["bull (Vedic 'Dyaus the bull')", "lightning (in some PIE reconstructions)", "expansive daylit sky"]

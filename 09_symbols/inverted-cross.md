@@ -66,7 +66,7 @@ The inverted cross is unambiguously a Catholic Christian symbol of holiness, hum
 **DOCUMENTATION REQUIRED — This is a Tier-4 practitioner claim, documented as such.**
 
 In 1966 CE, Anton LaVey (1930–1997) founded the Church of Satan in San Francisco and published *The Satanic Bible* (1969). LaVey's aesthetic system was built heavily on INVERSION of Christian symbols as gestures of anti-Christian defiance:
-- The upright pentagram (medieval Christian, representing the five wounds of Christ or the five senses) was inverted to create the "goat's head" pentagram (Baphomet configuration — see [[baphomet]]).
+- The upright pentagram (medieval Christian, representing the five wounds of Christ or the five senses) was inverted to create the "goat's head" pentagram (Baphomet configuration — see [[baphomet-symbol]]).
 - The upright cross was inverted — the logic being: if the cross = Christianity, then the inverted cross = anti-Christianity.
 
 However, this adoption is based on a factual error: LaVey and the heavy metal / horror culture that followed him did not know that the inverted cross was ALREADY a Catholic Christian symbol — one of the pope's own emblems, representing Peter's humility. The intended desecration was, ironically, the adoption of a papal symbol.

@@ -331,6 +331,20 @@ def tradition_family(t: str) -> str:
     #    so primary-tradition wikilink nodes (e.g. tradition: "[[tradition-donghak]]") still classify.
     cleaned = _re.sub(r'\[\[([^|\]]+)(?:\|[^\]]+)?\]\]', r'\1', cleaned)
     s = cleaned.lower()
+    # 3. Christian-tradition slug guards — when the primary tradition is a wikilink
+    #    to a Christian sub-tradition whose slug contains a region/family keyword
+    #    (e.g. tradition-ethiopian-orthodox-tewahedo, tradition-coptic-orthodox,
+    #    tradition-armenian-apostolic, tradition-greek-orthodox), those keywords
+    #    would otherwise leak into African/Egyptian/Armenian/Greek checks. Catch
+    #    the explicit Christian-Orthodox/Apostolic markers up-front.
+    if "tewahedo" in s or "apostolic christian" in s or "armenian-apostolic" in s or "armenian apostolic" in s:
+        return "Christian"
+    if ("orthodox" in s) and (
+        "greek" in s or "russian" in s or "serbian" in s or "ethiopian" in s
+        or "coptic" in s or "syrian" in s or "antiochian" in s or "georgian" in s
+        or "eastern" in s or "oriental" in s
+    ):
+        return "Christian"
     # ORDER matters — most-origin-specific first so that cross-traditional strings
     # ("Pre-Christian Slavic", "Zoroastrian → Christian demonology", etc.) land in
     # their ORIGIN family, not the latest tradition mentioned.
@@ -338,7 +352,9 @@ def tradition_family(t: str) -> str:
         return "Gnostic"
     if not s.startswith("christianit") and "mandae" in s:
         return "Mandaean"
-    if "manichae" in s:
+    # Manichaean — guard against Second-Temple Jewish texts (Book of Giants etc.)
+    # that Manichaeism canonized later. Origin-wins: those are Israelite.
+    if "manichae" in s and not (s.startswith("second temple") or s.startswith("second-temple")):
         return "Manichaean"
     if "neoplaton" in s or "plotin" in s or "iambl" in s or "procl" in s:
         return "Neoplatonist"
@@ -346,7 +362,11 @@ def tradition_family(t: str) -> str:
         return "Hermetic"
     if s.startswith("roman") or "italic religion" in s:
         return "Roman"
-    if not s.startswith("greek") and ("mystery" in s or "mithra" in s or "orphic" in s or "eleusin" in s or "phrygian" in s or "bacchic" in s):
+    # Mystery — also catch nodes explicitly marked as mystery-cult layer
+    # (e.g. dionysus-mystery: "Greek and Roman mystery-cult layers (distinguished from civic Olympian Dionysus)")
+    if (("mystery-cult" in s or "mystery cult" in s)
+            or (not s.startswith("greek") and ("mystery" in s or "mithra" in s or "orphic" in s
+                                               or "eleusin" in s or "phrygian" in s or "bacchic" in s))):
         return "Mystery"
     # --- Ancient origin traditions checked BEFORE Christian so that strings like
     #     "Pre-Christian Slavic", "Zoroastrian → Christian demonology", "Celtic
@@ -354,11 +374,18 @@ def tradition_family(t: str) -> str:
     #     all land in their origin family, not in Christian. ---
     if not (s.startswith("vedic") or s.startswith("hindu")) and ("zoroastr" in s or "avesta" in s or "mazdean" in s):
         return "Zoroastrian"
-    if not s.startswith("greek") and ("canaan" in s or "ugarit" in s or "philistine" in s or "phoenic" in s or "northwest semitic" in s):
+    # Canaanite — adds "levantine" so Phoenician/Levantine deities don't fall through.
+    # Guard against "pre-islamic" prefix so Hubal ("Pre-Islamic Arabian ... Levantine
+    # import") still lands in Pre-Islamic-Arabian below.
+    if (not s.startswith("greek") and not s.startswith("pre-islamic")
+            and ("canaan" in s or "ugarit" in s or "philistine" in s or "phoenic" in s
+                 or "northwest semitic" in s or "levantine" in s)):
         return "Canaanite"
     if not s.startswith("christianit") and ("israel" in s or "hebrew" in s or "jewish" in s or "judaism" in s or "second temple" in s or "qumran" in s or "essene" in s):
         return "Israelite"
-    if "hittite" in s or "hurrian" in s or "luwian" in s or "hattic" in s:
+    # Hittite — origin-wins guard against Greek figures with Anatolian substrate (e.g. Typhon).
+    if (("hittite" in s or "hurrian" in s or "luwian" in s or "hattic" in s)
+            and not s.startswith("greek")):
         return "Hittite"
     if "sumerian" in s or "akkadian" in s or "babylonian" in s or "assyrian" in s or "mesopotam" in s or "elamite" in s:
         return "Mesopotamian"
@@ -370,9 +397,18 @@ def tradition_family(t: str) -> str:
         "pre-islamic" in s or "arabian polytheism" in s or "south arabian religion" in s or "minaean" in s or "nabataean" in s
     ):
         return "Pre-Islamic-Arabian"
-    if "yoruba" in s or "ifa" in s or "vodun" in s or "vodou" in s or "santeria" in s or "candomble" in s or "akan" in s or "bantu" in s or "ethiopian" in s or "aksumite" in s or "kebra" in s or "african" in s or "san " in s or "maasai" in s or "dahomey" in s:
+    # African — \bakan\b and \bsan\b word-boundaries so Arakanese (Burmese) and
+    # "Pisan civic cult" don't false-fire into African.
+    if ("yoruba" in s or "ifa" in s or "vodun" in s or "vodou" in s or "santeria" in s
+            or "candomble" in s or _re.search(r'\bakan\b', s) or "bantu" in s
+            or "ethiopian" in s or "aksumite" in s or "kebra" in s or "african" in s
+            or _re.search(r'\bsan\b', s) or "maasai" in s or "dahomey" in s):
         return "African"
-    if "celtic" in s or "druid" in s or "gaelic" in s or "irish" in s or "welsh" in s or "gaulish" in s or "breton" in s or "lusitanian" in s or "iberian" in s or "gallaecian" in s:
+    # Celtic — \biberian\b and \bbreton\b word-boundaries so Siberian shamanism and
+    # André Breton don't false-fire into Celtic.
+    if ("celtic" in s or "druid" in s or "gaelic" in s or "irish" in s or "welsh" in s
+            or "gaulish" in s or _re.search(r'\bbreton\b', s) or "lusitanian" in s
+            or _re.search(r'\biberian\b', s) or "gallaecian" in s):
         return "Celtic"
     if "norse" in s or "germanic" in s or "icelandic" in s or "viking" in s or "asatru" in s or "anglo-saxon" in s:
         return "Norse"
@@ -380,7 +416,11 @@ def tradition_family(t: str) -> str:
         return "Baltic"
     if "slavic" in s or "finnic" in s or "finnish" in s or "karelian" in s or "sami" in s or "kalevala" in s or "finno-karelian" in s:
         return "Slavic-Finnic"
-    if "greek" in s or "hellenistic" in s or "platonist" in s or "stoic" in s or "aristot" in s or "pythagor" in s or "epicurean" in s or "cynic" in s or "skeptic" in s:
+    # Greek — adds "greco-roman" / "graeco-roman" so e.g. psyche-myth doesn't fall
+    # through to Modern-Esoteric via "literary mythology".
+    if ("greek" in s or "hellenistic" in s or "greco-roman" in s or "graeco-roman" in s
+            or "platonist" in s or "stoic" in s or "aristot" in s or "pythagor" in s
+            or "epicurean" in s or "cynic" in s or "skeptic" in s):
         return "Greek"
     # Christian checked AFTER ancient origin traditions — also excludes "pre-christian" strings
     # s.startswith("christianit") catches "Christianity (from Second Temple Jewish substrate)" before "jewish" fires
@@ -403,31 +443,65 @@ def tradition_family(t: str) -> str:
         return "Islamic"
     if "shinto" in s or "kojiki" in s or "nihon shoki" in s or "nihongi" in s:
         return "Shinto"
-    # Chinese checked BEFORE Buddhist/Vedic — origin wins for syncretic deities (Guan Yu, Mazu, Sun Wukong, Yan Wang)
-    if "chinese" in s or "confucian" in s or "daoist" in s or "daoism" in s or "taoist" in s or "taoism" in s or "shang" in s or "zhou" in s or "korean" in s:
-        return "Chinese"
-    # Vedic checked BEFORE Buddhist — origin tradition wins for shared deities (Garuda, Kubera, Yama, Mahakala)
-    if "sikh" in s or "vedic" in s or "hindu" in s or "upanish" in s or "brahman" in s or "tantric" in s or "vaishnav" in s or "shakta" in s or "shaiv" in s or "bhakti" in s or "vedanta" in s or "jain" in s or "hindutva" in s:
+    # Vedic checked first among the East/South-Asian block — origin tradition wins for
+    # shared deities (Garuda, Kubera, Yama, Mahakala) whose tradition strings lead with
+    # "Vedic"/"Hindu" but also list Buddhism/Jainism downstream.
+    if ("sikh" in s or "vedic" in s or "hindu" in s or "upanish" in s or "brahman" in s
+            or "tantric" in s or "vaishnav" in s or "shakta" in s or "shaiv" in s
+            or "bhakti" in s or "vedanta" in s or "jain" in s or "hindutva" in s):
         return "Vedic"
-    # "chan" uses word boundary — "chant" (as in Hawaiian creation chant) must not match Chan Buddhism
-    if "buddh" in s or "theravada" in s or "mahayana" in s or "zen" in s or _re.search(r'\bchan\b', s) or "vajra" in s or "tantric buddh" in s or "pure land" in s or "dzogchen" in s or "bon" in s:
+    # Chinese — uses STARTSWITH guards on Chinese-keyword leads so deified Chinese
+    # generals/officials (Guan Yu, Mazu, Sun Wukong, Yan Wang) whose tradition strings
+    # start with "Chinese folk religion / ... / Buddhist" land in Chinese (origin-wins),
+    # while Indian-origin Buddhist deities with Chinese reception in the tail (Hariti's
+    # "Buddhism — early Indian, Gandhāran, Chinese, Japanese", Dizang's "Mahāyāna
+    # Buddhism (Chinese, Japanese, Korean — pan-East Asian)") fall through to the
+    # Buddhist check below. \bshang\b word-boundary prevents Shanghai/Shangri-La hits.
+    if (s.startswith("chinese") or s.startswith("confucian") or s.startswith("daoist")
+            or s.startswith("daoism") or s.startswith("taoist") or s.startswith("taoism")
+            or s.startswith("korean") or s.startswith("zhou")
+            or _re.search(r'\bshang\b', s)):
+        return "Chinese"
+    # Buddhist — catches Indian-Buddhist origin deities even when their tradition
+    # string mentions Chinese/Japanese/Korean reception downstream (Hariti, Dizang).
+    # Word-boundaries on \bbon\b, \bzen\b, \bchan\b so Bonaventure/Sorbonne,
+    # Renaissance/citizen, "chant" don't false-fire.
+    if ("buddh" in s or "theravada" in s or "mahayana" in s
+            or _re.search(r'\bzen\b', s) or _re.search(r'\bchan\b', s)
+            or "vajra" in s or "tantric buddh" in s or "pure land" in s
+            or "dzogchen" in s or _re.search(r'\bbon\b', s)):
         return "Buddhist"
+    # Chinese — fallback for tradition strings that mention Chinese keywords in the
+    # tail (no Vedic/Buddhist origin marker fired earlier).
+    if ("chinese" in s or "confucian" in s or "daoist" in s or "daoism" in s
+            or "taoist" in s or "taoism" in s or "korean" in s):
+        return "Chinese"
     if "zoroastr" in s or "avesta" in s or "iranian" in s or "ahura" in s:
         return "Zoroastrian"
     if "armenian" in s and "apostolic" not in s:
         return "Armenian"
     if "etruscan" in s and "roman" not in s:
         return "Etruscan"
-    if "aztec" in s or "mexica" in s or "nahuatl" in s or "maya" in s or "mayan" in s or "olmec" in s or "toltec" in s or "zapotec" in s or "mixtec" in s or "mesoamerican" in s:
+    # Mesoamerican — \bmaya\b word-boundary so "Himalayan" / "Maya Angelou" don't
+    # false-fire (Himalayan would also be caught by Buddhist/Vedic above).
+    if ("aztec" in s or "mexica" in s or "nahuatl" in s or _re.search(r'\bmaya\b', s)
+            or "mayan" in s or "olmec" in s or "toltec" in s or "zapotec" in s
+            or "mixtec" in s or "mesoamerican" in s):
         return "Mesoamerican"
-    if "inca" in s or "andean" in s or "quechua" in s or "aymara" in s or "moche" in s:
+    # Andean — \binca\b word-boundary so "incarnation" / "incantation" don't false-fire.
+    if _re.search(r'\binca\b', s) or "andean" in s or "quechua" in s or "aymara" in s or "moche" in s:
         return "Andean"
     # "inuit" word-boundary — "continuity" contains "inuit" as substring
     if "lakota" in s or "iroquois" in s or "haudenosaunee" in s or "navajo" in s or "hopi" in s or "cherokee" in s or "algonqu" in s or "native american" in s or "first nations" in s or "anishin" in s or "pueblo" in s or "diné" in s or _re.search(r'\binuit\b', s) or "yupik" in s or "tlingit" in s or "haida" in s or "tsimshian" in s:
         return "Native-American"
     if "polynesian" in s or "maori" in s or "māori" in s or "hawaiian" in s or "samoan" in s or "tongan" in s or "aboriginal" in s or "australian" in s or "torres" in s or "papuan" in s or "melanesian" in s or "pacific" in s:
         return "Pacific"
-    if "theosoph" in s or "anthroposoph" in s or "thelem" in s or "rosic" in s or "occult" in s or "gurdj" in s or "esoteric" in s or "blakean" in s or "blake" in s or "tenrikyo" in s or "donghak" in s or "cao dai" in s or "cao-dai" in s or "literary mythology" in s or "literary fiction" in s:
+    # Modern-Esoteric — "caodai" no-space variant added.
+    if ("theosoph" in s or "anthroposoph" in s or "thelem" in s or "rosic" in s
+            or "occult" in s or "gurdj" in s or "esoteric" in s or "blakean" in s
+            or "blake" in s or "tenrikyo" in s or "donghak" in s or "cao dai" in s
+            or "cao-dai" in s or "caodai" in s or "literary mythology" in s
+            or "literary fiction" in s):
         return "Modern-Esoteric"
     if "academic" in s or "comparative religion" in s or "jungian" in s or "religionsgeschichtl" in s or "phenomenology of religion" in s:
         return "Academic"
@@ -796,7 +870,22 @@ def main():
                 if g:
                     node["geo"] = g
                 if node_id in nodes_by_id:
-                    print(f"  ⚠ DUPLICATE ID  {node_id!r}  — {md.relative_to(VAULT)} overwrites {id_sources[node_id]}")
+                    # Hard-fail on duplicate slug. Silent overwrites caused 8 deity nodes
+                    # to disappear from the Pantheon ring (same-slug symbol/person files
+                    # winning the build race). If two nodes really share a concept, give
+                    # them distinct slugs with a -person/-symbol/-deity suffix and link
+                    # them via syncretic-edges. Set ATLAS_ALLOW_DUP_ID=1 to downgrade to
+                    # the previous warning behavior (only for emergency builds).
+                    msg = (
+                        f"  ✗ DUPLICATE ID  {node_id!r}\n"
+                        f"      first claimed by: {id_sources[node_id]}\n"
+                        f"      overwritten by:   {md.relative_to(VAULT)}\n"
+                        f"      Fix: rename one file so the two nodes have distinct slugs."
+                    )
+                    if os.environ.get("ATLAS_ALLOW_DUP_ID") == "1":
+                        print("  ⚠ " + msg[4:])
+                    else:
+                        raise SystemExit(msg)
                 else:
                     id_sources[node_id] = str(md.relative_to(VAULT))
                     counts[ntype] += 1

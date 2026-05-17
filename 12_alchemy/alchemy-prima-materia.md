@@ -88,7 +88,7 @@ The deepest implication of the prima materia concept is that the laboratory re-e
 
 ## Cross-Tradition Connections
 
-- [[chaos-primordial]] — the symbolic node for primordial chaos across traditions
+- [[chaos-primordial-symbol]] — the symbolic node for primordial chaos across traditions
 - [[tiamat]] — Babylonian salt-water chaos; structural equivalent of prima materia
 - [[ein-sof]] — Kabbalistic infinite ground before any sefirot differentiation; prima materia at the divine level
 - [[the-pleroma]] — Gnostic fullness whose outer darkness (hyle) is the Gnostic prima materia

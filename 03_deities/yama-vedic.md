@@ -15,9 +15,9 @@ child-of: ["Vivasvant (the Sun)"]
 consort: ["Yamī (his twin sister)"]
 attributes: ["buffalo mount", "noose (pāśa)", "mace (daṇḍa)", "scales of judgment"]
 attested-in: ["[[phase-2-001-rig-veda-family-books]] — Rig Veda 10.10, 10.14, 10.135", "[[phase-2-003-atharva-veda]]", "Kaṭha Upaniṣad"]
-equivalents: ["[[yima-iranian]]", "[[yamantaka]]", "[[hades]]", "[[osiris]]", "[[mictlantecuhtli]]", "[[hel]]", "[[anubis]]", "[[ereshkigal]]"]
+equivalents: ["[[yima-jamshid]]", "[[yamantaka]]", "[[hades]]", "[[osiris]]", "[[mictlantecuhtli]]", "[[hel]]", "[[anubis]]", "[[ereshkigal]]"]
 syncretic-edges:
-  - target: "[[yima-iranian]]"
+  - target: "[[yima-jamshid]]"
     type: "ancient-identification"
     source: "Indo-Iranian common inheritance: Vedic Yama and Avestan Yima both descend from PIE *Yemo- 'twin', and both are the first mortal who founds the realm of the dead — the cleanest deity-cognacy across the Indo-Iranian split (Lincoln 1986)"
   - target: "[[yamantaka]]"
@@ -50,7 +50,7 @@ The first mortal in Vedic theology — the **first one to die** and thereby the 
 The **Yama-Yamī dialogue** (Rig Veda 10.10) is the earliest known incest-refusal text: Yamī proposes she and Yama propagate humanity by sibling intercourse; Yama refuses. This refusal-of-incest at the first generation is a primordial moral-ordering moment. **In the Kaṭha Upaniṣad**, Yama personally instructs the young Naciketas in the doctrine of the immortal Self (Ātman) — Yama as both god of death *and* teacher of what survives death.
 
 ## Cross-tradition identifications
-- **[[yima-iranian]]** — Indo-Iranian deity-cognate (PIE *\*Yemo-* "twin"). The cleanest cross-Indo-Iranian deity identification.
+- **[[yima-jamshid]]** — Indo-Iranian deity-cognate (PIE *\*Yemo-* "twin"). The cleanest cross-Indo-Iranian deity identification.
 - **[[yamantaka]]** — Vajrayana: "the ender of Yama," the wisdom-deity who slays death.
 - **Yan Wang / Enma** — *folk-syncretism*: Buddhist Yama imported into China as Yan Wang (judge of the underworld) and into Japan as Enma; the missing keystone for East Asian afterlife mythology that previously had no proper Sinitic anthropomorphic death-god.
 - **[[hades]] / [[osiris]] / [[mictlantecuhtli]] / [[hel]] / [[anubis]] / [[ereshkigal]] / [[ix-chel|Ixchel]]** — *parallel-motif*: cross-tradition death-god / death-goddess.

@@ -8,7 +8,7 @@ date-end: ""
 region-origin: "Indian subcontinent (Bengal, Bihar, Kashmir, Oḍḍiyāna)"
 regions-spread: ["Tibet, Bhutan, Mongolia, Nepal, Himalayan regions, Japan (Shingon, Tendai esotericism), modern global"]
 key-deities: ["[[vajradhara]]", "[[vajrasattva]]", "[[samantabhadra-buddha]]", "[[kalachakra]]", "[[tara]]", "[[mahakala]]", "[[padmasambhava]]"]
-key-persons: ["[[padmasambhava]]", "[[naropa-tilopa]]", "[[atisa]]", "[[milarepa]]", "[[tsongkhapa]]", "[[karma-lingpa]]"]
+key-persons: ["[[padmasambhava-person]]", "[[naropa-tilopa]]", "[[atisa]]", "[[milarepa]]", "[[tsongkhapa]]", "[[karma-lingpa]]"]
 key-documents: ["[[phase-5-029-bardo-thodol]]", "Guhyasamāja Tantra", "Cakrasaṃvara Tantra", "Hevajra Tantra", "Kālacakra Tantra"]
 sister-traditions: ["[[tradition-mahayana-buddhism]]", "Kashmir Shaivism / Trika (parallel-tantric)"]
 key-themes:

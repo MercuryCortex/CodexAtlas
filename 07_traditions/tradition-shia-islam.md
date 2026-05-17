@@ -8,7 +8,7 @@ date-end: ""
 region-origin: "Hijaz; classical center Iraq and Iran"
 regions-spread: ["Iran (majority post-1501)", "Iraq (Imami majority)", "Lebanon", "Bahrain", "Azerbaijan", "Yemen (Zaydi)", "South Asia, East Africa diasporas"]
 key-deities: ["[[allah]]"]
-key-persons: ["[[ali-ibn-abi-talib]] (1st Imam)", "[[hasan-ibn-ali]] (2nd Imam)", "[[husayn-ibn-ali]] (3rd Imam — martyr of Karbala)", "[[ali-zayn-al-abidin]] (4th Imam)", "[[muhammad-al-baqir]] (5th Imam)", "[[jafar-al-sadiq]] (6th Imam — eponym of Ja'fari jurisprudence)", "[[musa-al-kazim]] (7th Imam)", "[[ali-al-rida]] (8th Imam — shrine at Mashhad)", "[[muhammad-al-jawad]] (9th Imam)", "[[ali-al-hadi]] (10th Imam)", "[[hasan-al-askari]] (11th Imam)", "[[muhammad-al-mahdi]] (12th Imam — Hidden Imam, in occultation)", "[[suhrawardi]] (broadly Shi'a-leaning)", "Mulla Sadra (Phase 6)"]
+key-persons: ["[[ali-ibn-abi-talib]] (1st Imam)", "[[hasan-ibn-ali]] (2nd Imam)", "[[husayn-ibn-ali]] (3rd Imam — martyr of Karbala)", "[[ali-zayn-al-abidin]] (4th Imam)", "[[muhammad-al-baqir]] (5th Imam)", "[[jafar-al-sadiq]] (6th Imam — eponym of Ja'fari jurisprudence)", "[[musa-al-kazim]] (7th Imam)", "[[ali-al-rida]] (8th Imam — shrine at Mashhad)", "[[muhammad-al-jawad]] (9th Imam)", "[[ali-al-hadi]] (10th Imam)", "[[hasan-al-askari]] (11th Imam)", "[[muhammad-al-mahdi-person]] (12th Imam — Hidden Imam, in occultation)", "[[suhrawardi]] (broadly Shi'a-leaning)", "Mulla Sadra (Phase 6)"]
 key-documents: ["[[phase-5-058-nahj-al-balagha]] (sayings of Ali, compiled by al-Sharif al-Radi ~1009)", "Twelver Shi'a hadith collections (al-Kulayni's *al-Kafi* ~941; al-Tusi's *Tahdhib*; Ibn Babawayh's *Man la yahduruhu al-faqih*)"]
 sister-traditions: ["[[tradition-islam]] (Sunni)", "[[tradition-ismailism]] (Sevener Shi'a branch)", "[[tradition-sufism]] (substantial overlap)"]
 key-themes:
@@ -40,7 +40,7 @@ Shi'a Islam — *Shīʿat ʿAlī*, "the Party of ʿAlī" — is the second-large
 
 ## Historical phases
 1. **Early Shi'a (~656–680)** — the First Fitna; ʿAlī's caliphate; [[event-karbala-680]] (10 October 680) — the martyrdom of [[husayn-ibn-ali]], the founding traumatic event of Shi'a identity.
-2. **Imami formation (~680–940)** — the line of Imams under Umayyad and Abbasid persecution; [[jafar-al-sadiq]] (Sixth Imam, d. 765) as the supreme jurist-figure and cross-confessional teacher; the 874 succession crisis at [[hasan-al-askari]]'s death and the Minor / Major Occultation of [[muhammad-al-mahdi]] (the Twelfth Imam).
+2. **Imami formation (~680–940)** — the line of Imams under Umayyad and Abbasid persecution; [[jafar-al-sadiq]] (Sixth Imam, d. 765) as the supreme jurist-figure and cross-confessional teacher; the 874 succession crisis at [[hasan-al-askari]]'s death and the Minor / Major Occultation of [[muhammad-al-mahdi-person]] (the Twelfth Imam).
 3. **Buyid Shi'a flourishing (~932–1055)** — Imami Shi'a hadith compilation (Kulayni, ibn Babawayh, al-Tusi); the great Twelver scholars; Ismaili Fatimid Caliphate in Egypt 909–1171.
 4. **Mongol and post-Mongol period (~1258–1500)** — Mongol conversion to Shi'a (Ilkhanid Olçaytu briefly); Hilli's *uṣūl al-fiqh*; Imamism crystallizes.
 5. **Safavid establishment in Iran (1501)** — Shah Ismā'īl I declares Twelver Shi'ism the state religion of Iran; substantial post-1501 Twelver flourishing (Phase 6).
@@ -56,7 +56,7 @@ Shi'a Islam — *Shīʿat ʿAlī*, "the Party of ʿAlī" — is the second-large
 - [[allah]] — the same God of Sunni Islam.
 - [[ali-ibn-abi-talib]] — the first Imam; cousin and son-in-law of Muhammad; central Shi'a figure.
 - [[husayn-ibn-ali]] — third Imam; martyred at [[event-karbala-680]]; the foundational Shi'a martyr.
-- The Twelve Imams (Twelver Shi'a) — proceeding through [[ali-ibn-abi-talib]] → [[hasan-ibn-ali]] → [[husayn-ibn-ali]] → [[ali-zayn-al-abidin]] → [[muhammad-al-baqir]] → [[jafar-al-sadiq]] → [[musa-al-kazim]] → [[ali-al-rida]] → [[muhammad-al-jawad]] → [[ali-al-hadi]] → [[hasan-al-askari]] → [[muhammad-al-mahdi]] (in occultation since 874 / 941).
+- The Twelve Imams (Twelver Shi'a) — proceeding through [[ali-ibn-abi-talib]] → [[hasan-ibn-ali]] → [[husayn-ibn-ali]] → [[ali-zayn-al-abidin]] → [[muhammad-al-baqir]] → [[jafar-al-sadiq]] → [[musa-al-kazim]] → [[ali-al-rida]] → [[muhammad-al-jawad]] → [[ali-al-hadi]] → [[hasan-al-askari]] → [[muhammad-al-mahdi-person]] (in occultation since 874 / 941).
 - Fāṭima al-Zahrāʾ — daughter of Muhammad, wife of ʿAlī, mother of Hasan and Husayn; central female figure.
 
 ## Defining doctrines

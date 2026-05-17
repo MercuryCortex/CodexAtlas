@@ -124,7 +124,7 @@ The physical threshold is the spatial enactment of phase 2. You stand in the doo
 
 ### Rome: Janus and the Architecture of Time
 
-The Roman god [[janus]] is the most theologically explicit expression of threshold consciousness in any tradition. Two-faced — one looking backward into the past, one looking forward into the future — Janus is the god of beginnings, doorways, gates, and passages. He is invoked first in every Roman prayer, before even Jupiter, because every act begins with a threshold.
+The Roman god [[janus-symbol]] is the most theologically explicit expression of threshold consciousness in any tradition. Two-faced — one looking backward into the past, one looking forward into the future — Janus is the god of beginnings, doorways, gates, and passages. He is invoked first in every Roman prayer, before even Jupiter, because every act begins with a threshold.
 
 The Temple of Janus in the Roman Forum was an architectural ritual object: its doors were opened in time of war (the army passes through the threshold into the liminal state of conflict) and closed in time of peace (the state is non-liminal, settled, at rest). The doors were reportedly closed only three times in Roman history before Augustus — such was the perpetual liminality of Roman military existence. The temple's ritual state was a continuous diagnostic of Rome's cosmic condition.
 

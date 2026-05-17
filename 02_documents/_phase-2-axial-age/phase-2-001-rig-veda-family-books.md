@@ -20,7 +20,7 @@ themes: ["[[divine-kingship]]", "[[primordial-waters]]", "[[chaoskampf]]", "[[di
 parallels: ["[[phase-2-002-gathas-of-zarathustra]]", "[[phase-2-003-atharva-veda]]"]
 influenced-by: ["Proto-Indo-Iranian poetic tradition (shared with Avestan)", "earlier Indo-European hymnic forms (Watkins)"]
 influences: ["[[phase-2-003-atharva-veda]]", "[[phase-2-006-brahmanas-aranyakas]]", "[[phase-2-012-brihadaranyaka-upanishad]]", "[[phase-2-013-chandogya-upanishad]]"]
-deities-mentioned: ["[[indra]]", "[[agni]]", "[[varuna]]", "[[soma]]", "[[mitra-vedic]]", "[[usha]]", "[[rudra-shiva-early]]", "[[prajapati]]"]
+deities-mentioned: ["[[indra]]", "[[agni]]", "[[varuna]]", "[[soma]]", "[[mitra-vedic]]", "[[ushas]]", "[[rudra-shiva-early]]", "[[prajapati]]"]
 events-context: []
 status: "full"
 preservation: "Transmitted with extraordinary fidelity by oral memorization (pada-pāṭha, krama-pāṭha, ghana-pāṭha recitation modes) for ~2,500 years before any surviving manuscript. The oldest physical manuscripts are paper/birch-bark from ~1000–1500 CE; the textual stability is corroborated by cross-school comparison (Śākala vs. Bāṣkala recensions agree to a remarkable degree)."

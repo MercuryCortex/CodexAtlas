@@ -23,7 +23,7 @@ syncretic-edges:
   - target: "[[jesus-christ-deity]]"
     type: "ancient-identification"
     source: "Second person of the Trinity"
-  - target: "[[holy-spirit-paraclete]]"
+  - target: "[[holy-spirit]]"
     type: "ancient-identification"
     source: "Third person of the Trinity"
   - target: "[[the-amesha-spentas]]"
@@ -61,7 +61,7 @@ tags: [deity, christianity, trinity, doctrine]
 
 # The Trinity
 
-The doctrine — and as a node, treated as the unified divine reality — that God is *one being* (*ousia*) in *three persons* (*hypostases*): [[god-the-father-christian|Father]], [[jesus-christ-deity|Son]], and [[holy-spirit-paraclete|Holy Spirit]]. The doctrine emerges gradually in the 2nd–4th centuries, fixed dogmatically at [[event-council-of-nicaea-325|Nicaea, +325]] (Father and Son *homoousios*) and the Council of Constantinople (+381) which secured the full divinity of the Spirit and produced the Nicene-Constantinopolitan Creed.
+The doctrine — and as a node, treated as the unified divine reality — that God is *one being* (*ousia*) in *three persons* (*hypostases*): [[god-the-father-christian|Father]], [[jesus-christ-deity|Son]], and [[holy-spirit|Holy Spirit]]. The doctrine emerges gradually in the 2nd–4th centuries, fixed dogmatically at [[event-council-of-nicaea-325|Nicaea, +325]] (Father and Son *homoousios*) and the Council of Constantinople (+381) which secured the full divinity of the Spirit and produced the Nicene-Constantinopolitan Creed.
 
 Trinitarian theology was the central doctrinal innovation of patristic Christianity. It distinguished Christianity from:
 - **Strict Jewish monotheism** (Rabbinic Judaism's *yichud Hashem* — the absolute unity of God)

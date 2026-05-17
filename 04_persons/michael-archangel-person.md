@@ -1,6 +1,6 @@
 ---
 type: person
-id: "michael-archangel"
+id: "michael-archangel-person"
 name: "Michael (Archangel)"
 aka: ["Mîkhāʾēl (Hebrew, 'Who is like God?')", "Mikha'il (Arabic)", "Michaḗl (Greek)", "the Prince of Light", "the Great Prince"]
 role: "angelic figure"
