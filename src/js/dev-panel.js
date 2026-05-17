@@ -93,6 +93,23 @@
       items: [
         { id: 'tickOpacity', label: 'Tick opacity', min: 0.05, max: 0.95, step: 0.05, default: 0.45, target: 'cssVar', cssVar: '--ph2-tick-opacity', fmt: v => v.toFixed(2) },
       ]
+    },
+    {
+      id: 'hovercard',
+      title: 'Hover card',
+      items: [
+        { id: 'thumbCardW',        label: 'Card width',           min: 220,  max: 420,  step: 4,   default: 288, target: 'cssVar', cssVar: '--ph2-thumb-card-w',       fmt: v => Math.round(v) + 'px', unit: 'px' },
+        { id: 'thumbImgH',         label: 'Image height',         min: 80,   max: 260,  step: 4,   default: 144, target: 'cssVar', cssVar: '--ph2-thumb-img-h',        fmt: v => Math.round(v) + 'px', unit: 'px' },
+        { id: 'thumbTaglineLines', label: 'Tagline lines',        min: 1,    max: 5,    step: 1,   default: 2,   target: 'cssVar', cssVar: '--ph2-thumb-tagline-lines', fmt: v => String(Math.round(v)) },
+      ]
+    },
+    {
+      id: 'typeglyphs',
+      title: 'Type glyphs',
+      items: [
+        { id: 'typeGlyphScale',   label: 'Wheel glyph scale ×',  min: 0.30, max: 1.40, step: 0.05, default: 0.95, target: 'sigmaRefresh',                                          fmt: v => v.toFixed(2) + '×' },
+        { id: 'typeGlyphOpacity', label: 'Wheel glyph opacity',  min: 0.20, max: 1.00, step: 0.02, default: 0.86, target: 'cssVar', cssVar: '--ph2-type-glyph-opacity', fmt: v => v.toFixed(2) },
+      ]
     }
   ];
 

@@ -586,8 +586,28 @@ function setView(name) {
   // leaks listeners), so handle it explicitly first.
   document.querySelectorAll('.pantheon-v2-pane').forEach(el => {
     if (el._sigma) { try { el._sigma.kill(); } catch (e) { /* ignore */ } el._sigma = null; }
+    // Unbind the view's own popstate listener so it doesn't leak across mounts.
+    if (el._popstateListener) { window.removeEventListener('popstate', el._popstateListener); el._popstateListener = null; }
     el.remove();
   });
+  // ── HASH ROUTER (push view change) ────────────────────────────────
+  // On a true view change, pushState so the back button moves between
+  // views. Re-renders of the same view use replaceState (or nothing) so
+  // the back-stack doesn't fill with intermediate states. View modules
+  // own their own intra-view URL state (mode / filter / focus).
+  if (_isViewChange) {
+    try {
+      const sp = new URLSearchParams(location.search);
+      const prev = sp.get('view');
+      if (prev !== name) {
+        // Drop the previous view's intra-view params on a view change.
+        // (`families`, `locked`, `focus`, `mode` are per-view scope.)
+        sp.delete('mode'); sp.delete('families'); sp.delete('locked'); sp.delete('focus');
+        sp.set('view', name);
+        history.pushState({ view: name }, '', location.pathname + '?' + sp.toString() + location.hash);
+      }
+    } catch (e) { /* not fatal */ }
+  }
   document.querySelectorAll('.list-pane,.about-pane,.alch-toolbox,.alch-palette,.tl-zoom-presets,.alch-board-root,.alch-menu,.astrology-pane,.alpha-pane').forEach(el => el.remove());
   hideTooltip();
   // Map thumbnail only on geo-relevant views; hide elsewhere.
@@ -10335,6 +10355,31 @@ _canvasResizeObs.observe(document.getElementById('svg'));
 buildThemesDropdown();
 renderActiveTheme();
 updateResetButton();
-setView('pantheon');
+// ── HASH ROUTER (initial view from URL) ──────────────────────────────
+// `?view=<name>` selects the initial route; pantheon stays the default.
+// Per-view state (mode / families / focus / locked) is owned by the
+// view module and read inside its render() — app.js only routes top-level.
+// Whitelist guards against URL-poking landing on a non-existent view.
+(function () {
+  let v = 'pantheon';
+  try {
+    const sp = new URLSearchParams(location.search);
+    const q = sp.get('view');
+    if (q && VIEWS && Object.prototype.hasOwnProperty.call(VIEWS, q)) v = q;
+  } catch (e) {}
+  setView(v);
+})();
+// popstate — back/forward across views. The view module's own popstate
+// listener handles intra-view state (mode/filter/focus). Here we only
+// re-route when the top-level `view` changes.
+window.addEventListener('popstate', function () {
+  try {
+    const sp = new URLSearchParams(location.search);
+    const q = sp.get('view') || 'pantheon';
+    if (q !== STATE.view && VIEWS && Object.prototype.hasOwnProperty.call(VIEWS, q)) {
+      setView(q);
+    }
+  } catch (e) {}
+});
 document.getElementById('footer-status').textContent =
   `gen ${(DATA.generated_at_utc || '').slice(0, 10)} · build_data.py to refresh`;

@@ -851,6 +851,17 @@
     const EDGES = data.edges || [];
     const FAMILIES = data.families || [];
 
+    // ── URL → STATE (priority 1: pre-build) ──────────────────────────
+    // Apply `mode` BEFORE filterNodesByMode runs. The `families` / `focus` /
+    // `locked` params need names/ids that only exist after the wheel is
+    // built — those are applied post-render below.
+    try {
+      const _sp = new URLSearchParams(location.search);
+      const _validModes = ['deities','authors','symbols','events','documents','rituals','music','alphabet','alchemy','philosophy','morals','medicine','mathematics','monuments'];
+      const _qMode = _sp.get('mode');
+      if (_qMode && _validModes.indexOf(_qMode) >= 0) _currentMode = _qMode;
+    } catch (e) { /* URL parsing failure — silently keep current state */ }
+
     // Filter nodes for the current mode.
     const deities = filterNodesByMode(_currentMode);
     if (!deities.length) {
@@ -1497,14 +1508,18 @@
       typeGlyphEntries.push({ el: g, id: d.id, baseR });
     });
     function syncTypeGlyphsImmediate() {
-      const mult = (window.CODEX_DEV && window.CODEX_DEV.settings && window.CODEX_DEV.settings.nodeSizeMult) || 1;
+      const dev   = (window.CODEX_DEV && window.CODEX_DEV.settings) || {};
+      const mult  = dev.nodeSizeMult   || 1;
+      // typeGlyphScale defaults to 0.95 (matches the original constant) — the
+      // dev panel lifts/drops it live without a re-bake. Layer pointer-events
+      // remain `none`, so changing this doesn't affect hit-testing.
+      const scale = (typeof dev.typeGlyphScale === 'number') ? dev.typeGlyphScale : 0.95;
       for (let i = 0; i < typeGlyphEntries.length; i++) {
         const T = typeGlyphEntries[i];
         const pos = positions.get(T.id);
         if (!pos) continue;
         const screen = sigma.graphToViewport({ x: pos.x, y: pos.y });
-        // Glyph occupies ~95% of the disk diameter — readable, not overflowing.
-        const r = (T.baseR * mult) * 0.95;
+        const r = (T.baseR * mult) * scale;
         const d = r * 2;
         T.el.setAttribute('x', screen.x - r);
         T.el.setAttribute('y', screen.y - r);
@@ -1903,6 +1918,7 @@
       applyEdgeHoverState();
       if (typeof applyLabelHoverDim === 'function') applyLabelHoverDim();
       if (window.selectNode) window.selectNode(node, true);
+      if (typeof _writeUrl === 'function') _writeUrl();
     });
     sigma.on('clickStage', ({ event }) => {
       // The sigma-mouse canvas captures every click before our SVG hull
@@ -1940,6 +1956,7 @@
         if (typeof syncFamilyMenu === 'function') syncFamilyMenu();
         sigma.refresh({ skipIndexation: true });
         hideThumbCard();
+        if (typeof _writeUrl === 'function') _writeUrl();
         return;
       }
       // OUTSIDE every hull (the true empty stage) → full reset.
@@ -1970,6 +1987,7 @@
       if (typeof syncFamilyMenu === 'function') syncFamilyMenu();
       hideThumbCard();
       if (window.setMapTarget) window.setMapTarget(null);
+      if (typeof _writeUrl === 'function') _writeUrl();
     });
     // Double-click on empty = animated reset to computeFitRatio (same view
     // as the 100% button, no slider value, no surprise).
@@ -2386,8 +2404,19 @@
         if (next === _currentMode) return;
         _currentMode  = next;
         _familyFilter = new Set();
+        _lockedSet    = new Set();
+        _selectedId   = null;
         _egoFocus     = false;
         _labelsMode   = 'hub';
+        // Write URL BEFORE re-rendering — otherwise the top-of-render URL-
+        // read would clobber `_currentMode` with the OLD ?mode= value.
+        try {
+          const sp = new URLSearchParams(location.search);
+          sp.set('view', 'pantheon');
+          if (next === 'deities') sp.delete('mode'); else sp.set('mode', next);
+          sp.delete('families'); sp.delete('locked'); sp.delete('focus');
+          history.replaceState(history.state, '', location.pathname + '?' + sp.toString() + location.hash);
+        } catch (e) {}
         render(rootEl);
       });
     });
@@ -2468,6 +2497,7 @@
       applyEdgeHoverState();
       syncFamilyMenu();
       sigma.refresh({ skipIndexation: true });
+      if (typeof _writeUrl === 'function') _writeUrl();
     }
     filterTrigger.onclick = (ev) => {
       ev.stopPropagation();
@@ -2572,6 +2602,90 @@
         legendToggle.classList.remove('ph2-btn-on');
       }
     });
+
+    // ── STATE → URL (the writer) ─────────────────────────────────────
+    // `replaceState` not `pushState` for in-view tweaks: clicking around
+    // shouldn't grow the back-stack into a wall of intermediate states.
+    // The "view" param itself uses pushState — that's wired in app.js.
+    function _writeUrl() {
+      try {
+        const sp = new URLSearchParams(location.search);
+        sp.set('view', 'pantheon');
+        if (_currentMode && _currentMode !== 'deities') sp.set('mode', _currentMode); else sp.delete('mode');
+        if (_familyFilter.size > 0) sp.set('families', Array.from(_familyFilter).join(','));
+        else                        sp.delete('families');
+        if (_lockedSet.size > 0)    sp.set('locked',   Array.from(_lockedSet).join(','));
+        else                        sp.delete('locked');
+        if (_selectedId)            sp.set('focus',    _selectedId);
+        else                        sp.delete('focus');
+        const next = location.pathname + '?' + sp.toString() + location.hash;
+        history.replaceState(history.state, '', next);
+      } catch (e) { /* not a fatal path */ }
+    }
+    // Expose for outside callers (the toolbar mode-row also writes via this
+    // helper; without it, switching mode would re-render but not update URL.)
+    rootEl._writeUrl = _writeUrl;
+
+    // ── URL → STATE (priority 2: post-build, post-toolbar) ───────────
+    // `mode` was applied at the top of render(). Now that the graph exists
+    // and the toolbar is wired, apply the rest: families filter, locked
+    // set, focus node. Each one is best-effort — unknown values silently
+    // ignored so URLs from older deployments stay safe.
+    try {
+      const sp = new URLSearchParams(location.search);
+      // families: csv of family names. Must intersect known families.
+      const famParam = sp.get('families');
+      if (famParam) {
+        const known = new Set(Object.keys(famByName || {}));
+        famParam.split(',').forEach(f => {
+          const t = f.trim();
+          if (t && known.has(t)) _familyFilter.add(t);
+        });
+        if (_familyFilter.size > 0) {
+          applyHullFilterState();
+          if (typeof updateNodeLabelVisibility === 'function') updateNodeLabelVisibility();
+          if (typeof syncFamilyMenu === 'function') syncFamilyMenu();
+        }
+      }
+      // locked: csv of node ids. Each must exist in the live graph.
+      const lockParam = sp.get('locked');
+      if (lockParam) {
+        lockParam.split(',').forEach(id => {
+          const t = id.trim();
+          if (t && graph.hasNode(t)) _lockedSet.add(t);
+        });
+        if (_lockedSet.size > 0) applyEdgeHoverState();
+      }
+      // focus: single node id. Centers + selects + locks 1-hop.
+      const focusParam = sp.get('focus');
+      if (focusParam && graph.hasNode(focusParam)) {
+        // Schedule on next frame so sigma's camera is settled before zoom.
+        requestAnimationFrame(() => {
+          if (window._pantheonV2 && typeof window._pantheonV2._searchAndFocus === 'function') {
+            window._pantheonV2._searchAndFocus(focusParam);
+          }
+        });
+      }
+    } catch (e) { /* silent */ }
+
+    // ── popstate (browser back/forward) — re-render to reflect URL ──
+    // Re-renders only when on the pantheon view (avoids touching other
+    // views' state). Single listener — removed on view teardown via the
+    // `_popstateListener` stash so we don't leak handlers.
+    const _popstateHandler = function () {
+      // Only act when this V2 pane is still in the DOM.
+      if (!document.body.contains(rootEl)) return;
+      // setView() in app.js will see ?view=… and re-route. If it's still
+      // pantheon, force a re-render so we pick up the new URL params.
+      const sp = new URLSearchParams(location.search);
+      const v = sp.get('view') || 'pantheon';
+      if (v !== 'pantheon') return;
+      // Fully tear down + re-bake (mode might have changed → wheel layout
+      // changes → cheapest fix is to re-run render).
+      render(rootEl);
+    };
+    window.addEventListener('popstate', _popstateHandler);
+    rootEl._popstateListener = _popstateHandler;   // setView teardown will unbind
 
     // Stash for diagnostics + setView() teardown
     rootEl._sigma = sigma;
