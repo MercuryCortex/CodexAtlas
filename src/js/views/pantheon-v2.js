@@ -501,238 +501,31 @@
   }
 
   // ── EDGE COLOR / GRADIENT SYSTEM ────────────────────────────────────
-  // Implementation of AUDIT/edge-color-spec-2026-05-17.md:
-  // 7 semantic buckets, one canonical hex each. Idle stroke is the spec's
-  // single slate (rgba(80,95,130,0.85)) for non-headlines — bucket color
-  // only paints on .hot, or at idle for the two HEADLINE buckets
-  // (Polemic, Fusion) and the single headline edge type (ancestor-of).
+  // Universal 7-bucket palette + routing lives in `src/js/edge-buckets.js`
+  // (loaded before this file by index.html). Both this view and the
+  // production D3 Pantheon in app.js consume the same singletons:
+  //   window.EDGE_BUCKETS, window.EDGE_BUCKET, window.edgeStyleFor,
+  //   window.EDGE_REVERSE_DIRECTION, window.EDGE_DIRECTIONAL_TYPES,
+  //   window.EDGE_HEADLINE_TYPES.
   //
-  // Directional buckets (Transmission, Attestation, kinship descent,
-  // `appropriated-by`) get a <linearGradient> from origin (bright stop,
-  // 0.95) to terminus (dim stop, 0.35). REVERSE_DIRECTION types swap
-  // stops so the bright end sits on the SEMANTIC origin, not the
-  // data-edge source.
-  // STRICT 7-bucket palette per AUDIT/edge-color-spec-2026-05-17.md.
-  // A parallel agent had previously injected a 'cross-tradition' bucket at
-  // idle:0.62 / headline:true / width:0.70 — way off-spec, and the visible
-  // teal lines the user kept seeing as "stuck" connections were these. The
-  // three edge types that pointed at it now route to `parallel` per spec.
-  // Headline idle opacities dropped (0.25/0.30 → 0.15/0.18) so the
-  // always-visible Polemic + Fusion edges read as quiet accents, not as
-  // "stuck highlights" the user can't clear.
-  const BUCKETS = {
-    transmission: { hex: '#C9743A', idle: 0.10, hot: 0.95, headline: false, directional: true  },
-    parallel:     { hex: '#5A9A8F', idle: 0.12, hot: 0.85, headline: false, directional: false },
-    association:  { hex: '#4A5AA4', idle: 0.08, hot: 0.55, headline: false, directional: false },
-    kinship:      { hex: '#C9A5D4', idle: 0.14, hot: 0.85, headline: false, directional: false },
-    attestation:  { hex: '#D4A55A', idle: 0.10, hot: 0.90, headline: false, directional: true  },
-    polemic:      { hex: '#A83E4A', idle: 0.15, hot: 0.95, headline: true,  directional: false },
-    fusion:       { hex: '#C4783A', idle: 0.18, hot: 0.95, headline: true,  directional: false },
-  };
-  const BUCKET_WIDTH = {
-    transmission: 0.34, parallel: 0.30, association: 0.22, kinship: 0.32,
-    attestation:  0.30, polemic:  0.40, fusion:      0.36,
-  };
-  // Type → bucket map. Built from the spec + the runtime edge-type tally.
-  const EDGE_BUCKET = {
-    // Transmission
-    'influenced-by':                    'transmission',
-    'influences':                       'transmission',
-    'influenced':                       'transmission',
-    'originated':                       'transmission',
-    'affects-tradition':                'transmission',
-    'affects-document':                 'transmission',
-    'documents-affected':               'transmission',
-    'produces-document':                'transmission',
-    'manuscript-transmission':          'transmission',
-    'redaction-of':                     'transmission',
-    'transmission-to':                  'transmission',
-    'ancestor-of':                      'transmission',   // HEADLINE override below
-    'syncretic-ancestor-of':            'transmission',   // HEADLINE override below
-    // Parallel
-    'parallel-motif':                   'parallel',
-    'parallel-form':                    'parallel',
-    'syncretic':                        'parallel',
-    'syncretized-with':                 'parallel',
-    'syncretic-scholarly-parallel':     'parallel',
-    'syncretic-ancient-identification': 'parallel',
-    'syncretic-structural-parallel':    'parallel',
-    'syncretic-parallel-motif':         'parallel',
-    'syncretic-parallel-form':          'parallel',
-    'syncretic-syncretic-identification':'parallel',
-    'syncretic-identification':         'parallel',
-    'syncretic-folk-syncretism':        'parallel',
-    'syncretic-continuous-development': 'parallel',
-    'syncretic-aspect-of':              'parallel',
-    'syncretic-instantiation':          'parallel',
-    'structural-parallel':              'parallel',
-    'parallel-amulet':                  'parallel',
-    'visual-parallel':                  'parallel',
-    'structural':                       'parallel',
-    'typological':                      'parallel',
-    'thematic-overlap':                 'parallel',
-    'variant-of':                       'parallel',
-    'contested-identification':         'parallel',
-    'exemplifies':                      'parallel',
-    'instantiation-of':                 'parallel',
-    // These three previously routed to a rogue 'cross-tradition' bucket
-    // (parallel-agent injection, off-spec). Routed to `parallel` per spec.
-    'syncretic-cross-tradition-archetype': 'parallel',
-    'syncretic-functional-parallel':       'parallel',
-    'syncretic-parallel':                  'parallel',
-    // Association
-    'has-theme':                        'association',
-    'context':                          'association',
-    'shared-milieu':                    'association',
-    'shared-tradition':                 'association',
-    'co-tradition':                     'association',
-    'co-appears-with':                  'association',
-    'tradition-deity':                  'association',
-    'tradition-doc':                    'association',
-    'tradition-person':                 'association',
-    'symbol-attests-in':                'association',
-    'symbol-iconography-of':            'association',
-    'symbol-in-tradition':              'association',
-    'music-in-tradition':               'association',
-    'music-attests-in':                 'association',
-    'music-iconography-of':             'association',
-    'participated-in':                  'association',
-    'component-of':                     'association',
-    'contains':                         'association',
-    'related':                          'association',
-    // Kinship
-    'parent-of':                        'kinship',
-    'child-of':                         'kinship',
-    'consort':                          'kinship',
-    'sibling-of':                       'kinship',
-    'syncretic-sacred-marriage':        'kinship',
-    // Attestation
-    'attests':                          'attestation',
-    'attested-in':                      'attestation',
-    'mentioned-in':                     'attestation',
-    'key-figure':                       'attestation',
-    'authored':                         'attestation',
-    'attributed-author':                'attestation',
-    'primary-source':                   'attestation',
-    'primary-translation':              'attestation',
-    'critical-edition':                 'attestation',
-    'translation':                      'attestation',
-    'commentary-on':                    'attestation',
-    'direct-quote':                     'attestation',
-    'preserved-by':                     'attestation',
-    'syncretic-manuscript-transmission':'attestation',
-    'syncretic-attested-in':            'attestation',
-    'syncretic-reports-to':             'attestation',
-    // Polemic — entire bucket is headline (idle in bucket color)
-    'polemic-inversion':                'polemic',
-    'polemic-against':                  'polemic',
-    'syncretic-polemic-against':        'polemic',
-    'syncretic-polemic-inversion':      'polemic',
-    'syncretic-lineage-claim':          'polemic',
-    // Fusion — entire bucket is headline (idle in bucket color)
-    'syncretic-fusion':                 'fusion',
-    'syncretic-syncretic-fusion':       'fusion',
-    'appropriated-by':                  'fusion',
-    'visual-cognate':                   'fusion',
-  };
-  // Directional edge types. Bright stop on the SEMANTIC origin.
-  // Direction is `source → target` by default. These types' DATA points
-  // source/target the "wrong" way (`child-of` data = child→parent, but
-  // the semantic origin is the parent) so we swap gradient stops.
-  const REVERSE_DIRECTION = new Set([
-    'influenced-by', 'influenced', 'child-of', 'attested-in', 'mentioned-in',
-    'documents-affected', 'preserved-by', 'syncretic-attested-in',
-  ]);
-  // Single edge types in symmetric buckets that nonetheless carry direction.
-  const DIRECTIONAL_TYPES = new Set([
-    'parent-of', 'child-of', 'ancestor-of', 'syncretic-ancestor-of',
-    'appropriated-by',
-  ]);
-  // Headline overrides on otherwise non-headline buckets.
-  const HEADLINE_TYPES = new Set(['ancestor-of', 'syncretic-ancestor-of']);
-
-  function edgeStyleFor(type) {
-    const bucketName = EDGE_BUCKET[type] || 'association';
-    const b          = BUCKETS[bucketName];
-    const headline   = b.headline || HEADLINE_TYPES.has(type);
-    const directional = b.directional || DIRECTIONAL_TYPES.has(type);
-    return {
-      bucket:      bucketName,
-      c:           b.hex,              // bucket color (for hot + headline idle)
-      w:           BUCKET_WIDTH[bucketName] || 0.30,
-      op:          b.idle,             // idle opacity
-      hotOp:       b.hot,
-      headline,
-      directional,
-      reverse:     REVERSE_DIRECTION.has(type),
-    };
-  }
-  // Legacy reference left for compatibility; not actually used by the build
-  // loop (which now reads `edgeStyleFor`). Kept inert so external dev-panel
-  // diagnostics don't break.
-  const EDGE_STYLE = {
-    // syncretic / kin — gold-brown-green tints
-    'syncretic-identification':         { c: '#b08840', w: 0.42, op: 0.36 },
-    'syncretic-ancient-identification': { c: '#b08840', w: 0.38, op: 0.30 },
-    'syncretic-scholarly-parallel':     { c: '#947030', w: 0.34, op: 0.24 },
-    'syncretic-folk-syncretism':        { c: '#7d5e28', w: 0.30, op: 0.20 },
-    'syncretic':                        { c: '#b08840', w: 0.36, op: 0.28 },
-    // syncretic-* variants — all forms of cross-tradition identification. Mirror
-    // the parent `syncretic` styling so the 250 deity-deity edges in these
-    // sub-types stop falling to the slate-blue default. Headline-equivalent
-    // variants (polemic, fusion, ancestor-of) inherit the headline colors.
-    'syncretic-scholarly-parallel':     { c: '#b08840', w: 0.34, op: 0.24 },
-    'syncretic-ancient-identification': { c: '#b08840', w: 0.34, op: 0.28 },
-    'syncretic-structural-parallel':    { c: '#b08840', w: 0.32, op: 0.22 },
-    'syncretic-syncretic-identification':{ c: '#b08840', w: 0.32, op: 0.22 },
-    'syncretic-folk-syncretism':        { c: '#b08840', w: 0.30, op: 0.20 },
-    'syncretic-manuscript-transmission':{ c: '#6a5a40', w: 0.30, op: 0.22 },
-    'syncretic-aspect-of':              { c: '#b08840', w: 0.30, op: 0.22 },
-    'syncretic-parallel-motif':         { c: '#5a6a82', w: 0.28, op: 0.22 },
-    'syncretic-parallel-form':          { c: '#a08a5a', w: 0.34, op: 0.32 },
-    'syncretic-polemic-against':        { c: '#a83e4a', w: 0.38, op: 0.32 },
-    'syncretic-polemic-inversion':      { c: '#a83e4a', w: 0.46, op: 0.50 },
-    'syncretic-syncretic-fusion':       { c: '#c47a3a', w: 0.42, op: 0.48 },
-    'syncretic-ancestor-of':            { c: '#d4a55a', w: 0.40, op: 0.45 },
-    'syncretic-sacred-marriage':        { c: '#a85e44', w: 0.36, op: 0.32 },
-    'syncretic-identification':         { c: '#b08840', w: 0.32, op: 0.24 },
-    'syncretic-continuous-development': { c: '#b08840', w: 0.32, op: 0.22 },
-    'parent-of':                        { c: '#5a7458', w: 0.34, op: 0.30 },
-    'child-of':                         { c: '#5a7458', w: 0.34, op: 0.24 },
-    'consort':                          { c: '#a85e44', w: 0.36, op: 0.30 },
-    // textual / scholarly — slate-teal-blue
-    'polemic-against':                  { c: '#a83e4a', w: 0.38, op: 0.32 },
-    'direct-quote':                     { c: '#4a8a86', w: 0.34, op: 0.28 },
-    'redaction-of':                     { c: '#8a6a30', w: 0.32, op: 0.24 },
-    'commentary-on':                    { c: '#8a6a8a', w: 0.30, op: 0.22 },
-    'parallel-motif':                   { c: '#5a6a82', w: 0.28, op: 0.22 },
-    'shared-milieu':                    { c: '#4a5aa4', w: 0.28, op: 0.20 },
-    'shared-tradition':                 { c: '#4a5aa4', w: 0.28, op: 0.18 },
-    'manuscript-transmission':          { c: '#6a5a40', w: 0.28, op: 0.20 },
-    'influenced-by':                    { c: '#4a8a86', w: 0.30, op: 0.24 },
-    'influences':                       { c: '#4a8a86', w: 0.30, op: 0.24 },
-    // ambient / structural — barely-visible (flood types)
-    'attests':                          { c: '#3a4a66', w: 0.22, op: 0.12 },
-    'attested-in':                      { c: '#3a4a66', w: 0.22, op: 0.12 },
-    'has-theme':                        { c: '#3a5a3e', w: 0.22, op: 0.12 },
-    'context':                          { c: '#3a3e48', w: 0.22, op: 0.12 },
-    'tradition-deity':                  { c: '#2f3a4e', w: 0.18, op: 0.10 },
-    'tradition-doc':                    { c: '#2f3a4e', w: 0.18, op: 0.10 },
-    'tradition-person':                 { c: '#2f3a4e', w: 0.18, op: 0.10 },
-    'authored':                         { c: '#8a6a30', w: 0.30, op: 0.24 },
-    // cross-symbol — color does the work; width 0.46 / op up to 0.55 for headline
-    'ancestor-of':                      { c: '#d4a55a', w: 0.46, op: 0.55 },
-    'parallel-form':                    { c: '#a08a5a', w: 0.34, op: 0.36 },
-    'syncretic-fusion':                 { c: '#c47a3a', w: 0.42, op: 0.50 },
-    'appropriated-by':                  { c: '#c4a05a', w: 0.42, op: 0.50 },
-    'polemic-inversion':                { c: '#a83e4a', w: 0.46, op: 0.55 },
-    'visual-cognate':                   { c: '#7a8090', w: 0.30, op: 0.28 },
-    // symbol → other-node — high volume, nearly invisible
-    'symbol-attests-in':                { c: '#6a7a90', w: 0.26, op: 0.16 },
-    'symbol-iconography-of':            { c: '#8a6a5a', w: 0.28, op: 0.20 },
-    'symbol-in-tradition':              { c: '#5a7080', w: 0.24, op: 0.14 }
-  };
-  // Cross-symbol edge types — mirror of production SYMBOL_CROSS_EDGE_TYPES.
+  // Routing follows ONTOLOGY.md §3 (master). Where it differs from the
+  // earlier AUDIT/edge-color-spec, ONTOLOGY wins — see
+  // AUDIT/ontology-pantheon-bucket-routing-2026-05-17.md.
+  //
+  // Directional edges paint a <linearGradient> origin→terminus
+  // (0.95 → 0.35 stops). REVERSE_DIRECTION types swap stops so the bright
+  // end sits on the SEMANTIC origin, not the data-edge source.
+  const BUCKETS            = window.EDGE_BUCKETS           || {};
+  const EDGE_BUCKET        = window.EDGE_BUCKET            || {};
+  const REVERSE_DIRECTION  = window.EDGE_REVERSE_DIRECTION || new Set();
+  const DIRECTIONAL_TYPES  = window.EDGE_DIRECTIONAL_TYPES || new Set();
+  const HEADLINE_TYPES     = window.EDGE_HEADLINE_TYPES    || new Set();
+  const edgeStyleFor       = window.edgeStyleFor           || (() => ({
+    bucket: 'association', c: '#4A5AA4', w: 0.22, op: 0.08, hotOp: 0.55,
+    headline: false, directional: false, reverse: false,
+  }));
+  // Cross-symbol edge types — view-local: cross-edges painted with extra
+  // emphasis when in symbols / music mode.
   const SYMBOL_CROSS_EDGE_TYPES = new Set([
     'ancestor-of', 'parallel-form', 'syncretic-fusion',
     'appropriated-by', 'polemic-inversion', 'visual-cognate'
@@ -741,9 +534,7 @@
     'ancestor-of', 'parallel-form', 'syncretic-fusion',
     'transmission-to', 'appropriated-by', 'child-of'
   ]);
-  // `edgeStyleFor` is defined above as the bucket-aware version; the
-  // per-type EDGE_STYLE map (kept for compat) is no longer consulted by it.
-  const DEFAULT_EDGE_COLOR = BUCKETS.association.hex;
+  const DEFAULT_EDGE_COLOR = (BUCKETS.association && BUCKETS.association.hex) || '#4A5AA4';
 
   // SOURCE-INTEGRITY TIER FILL COLORS — matches production CSS vars (app.css:59-63).
   // Used when _tierOverlay is active; replaces family-color fill on each node.

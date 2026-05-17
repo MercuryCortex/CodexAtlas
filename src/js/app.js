@@ -193,61 +193,28 @@ const STATE = {
 //     ones that ARE the story; color makes them distinguishable; width keeps them subtle)
 //
 // `vector-effect: non-scaling-stroke` in CSS pins these widths regardless of zoom.
-const EDGE_STYLE = {
-  // ------- Syncretic / lineage / kin (gold–brown–green tints) -------
-  'syncretic-identification':         { c: '#b08840', w: 0.42, op: 0.36 },  // muted gold
-  'syncretic-ancient-identification': { c: '#b08840', w: 0.38, op: 0.30 },
-  'syncretic-scholarly-parallel':     { c: '#947030', w: 0.34, op: 0.24 },
-  'syncretic-folk-syncretism':        { c: '#7d5e28', w: 0.30, op: 0.20 },
-  'syncretic':                        { c: '#b08840', w: 0.36, op: 0.28 },
-  'parent-of':                        { c: '#5a7458', w: 0.34, op: 0.30 },
-  'child-of':                         { c: '#5a7458', w: 0.34, op: 0.24 },
-  'consort':                          { c: '#a85e44', w: 0.36, op: 0.30 },
-  // ------- Textual / scholarly (slate-teal-blue) -------
-  'polemic-against':                  { c: '#a83e4a', w: 0.38, op: 0.32 },  // red — clear semantic
-  'direct-quote':                     { c: '#4a8a86', w: 0.34, op: 0.28 },
-  'redaction-of':                     { c: '#8a6a30', w: 0.32, op: 0.24 },
-  'commentary-on':                    { c: '#8a6a8a', w: 0.30, op: 0.22 },
-  'parallel-motif':                   { c: '#5a6a82', w: 0.28, op: 0.22 },
-  'shared-milieu':                    { c: '#4a5aa4', w: 0.28, op: 0.20 },  // ★ the pleasant blue the user liked
-  'shared-tradition':                 { c: '#4a5aa4', w: 0.28, op: 0.18 },
-  'manuscript-transmission':          { c: '#6a5a40', w: 0.28, op: 0.20 },
-  'influenced-by':                    { c: '#4a8a86', w: 0.30, op: 0.24 },
-  'influences':                       { c: '#4a8a86', w: 0.30, op: 0.24 },
-  // ------- Ambient / structural (kept barely-visible — these flood the graph in volume) -------
-  'attests':                          { c: '#3a4a66', w: 0.22, op: 0.12 },
-  'attested-in':                      { c: '#3a4a66', w: 0.22, op: 0.12 },
-  'has-theme':                        { c: '#3a5a3e', w: 0.22, op: 0.12 },
-  'context':                          { c: '#3a3e48', w: 0.22, op: 0.12 },
-  'tradition-deity':                  { c: '#2f3a4e', w: 0.18, op: 0.10 },
-  'tradition-doc':                    { c: '#2f3a4e', w: 0.18, op: 0.10 },
-  'tradition-person':                 { c: '#2f3a4e', w: 0.18, op: 0.10 },
-  'authored':                         { c: '#8a6a30', w: 0.30, op: 0.24 },
-  // ------- Cross-symbol edge types (09_symbols/) -------
-  // PREVIOUSLY these were force-loud at w ≥ 0.95 per the "MASSIVE wins" demand. User has
-  // since seen the result and asked for everything thin. Color now does ALL the work:
-  // gold = transmission, red = polemic-inversion, amber = merger/appropriation, grey =
-  // weakest claim. Hover/.hot in CSS still bumps to 1.6px when highlighted.
-  'ancestor-of':                      { c: '#d4a55a', w: 0.46, op: 0.55 },  // bright gold, directional, primary
-  'parallel-form':                    { c: '#a08a5a', w: 0.34, op: 0.36 },  // muted gold — resemblance, not transmission
-  'syncretic-fusion':                 { c: '#c47a3a', w: 0.42, op: 0.50 },  // amber — two-into-one merger
-  'appropriated-by':                  { c: '#c4a05a', w: 0.42, op: 0.50 },  // adoption across traditions
-  'polemic-inversion':                { c: '#a83e4a', w: 0.46, op: 0.55 },  // red — swastika-Nazi case
-  'visual-cognate':                   { c: '#7a8090', w: 0.30, op: 0.28 },  // grey — weakest claim
-  // Symbol → other-node edges. High volume → kept nearly invisible.
-  'symbol-attests-in':                { c: '#6a7a90', w: 0.26, op: 0.16 },
-  'symbol-iconography-of':            { c: '#8a6a5a', w: 0.28, op: 0.20 },
-  'symbol-in-tradition':              { c: '#5a7080', w: 0.24, op: 0.14 },
-};
-// Set of edge types that count as "cross-family connections between symbols" — used by
-// the Pantheon Symbols mode to surface those edges with prominent styling. The user's
-// MASSIVE-win demos (ankh → coptic-cross, swastika polemic-inversion) live here.
+// Universal 7-bucket palette + routing lives in `src/js/edge-buckets.js`
+// (loaded before this file by index.html). `edgeStyle(t)` is a thin shim
+// over `window.edgeStyleFor(t)` so every consumer in this file gets the
+// same `{ c, w, op, hotOp, bucket, headline, directional, reverse }`
+// shape the Pantheon V2 prototype uses. See
+// AUDIT/ontology-pantheon-bucket-routing-2026-05-17.md for the routing.
 const SYMBOL_CROSS_EDGE_TYPES = new Set([
   'ancestor-of', 'parallel-form', 'syncretic-fusion',
   'appropriated-by', 'polemic-inversion', 'visual-cognate',
 ]);
-const EDGE_DEFAULT = { c: '#3a4a66', w: 0.25, op: 0.13 };  // very subtle baseline
-function edgeStyle(t) { return EDGE_STYLE[t] || EDGE_DEFAULT; }
+const EDGE_DEFAULT = { c: '#4A5AA4', w: 0.22, op: 0.08, hotOp: 0.55, bucket: 'association', headline: false, directional: false, reverse: false };
+function edgeStyle(t) {
+  return (typeof window !== 'undefined' && window.edgeStyleFor)
+    ? window.edgeStyleFor(t)
+    : EDGE_DEFAULT;
+}
+// Back-compat alias: a few legacy spots index EDGE_STYLE directly (line 4470).
+// Provide a Proxy that satisfies `EDGE_STYLE[type]` lookups using the universal map.
+const EDGE_STYLE = new Proxy({}, {
+  get(_, type) { return (typeof type === 'string') ? edgeStyle(type) : undefined; },
+  has(_, type) { return typeof type === 'string'; },
+});
 
 // String hash → 0..2^31
 function hashStr(s) { let h = 2166136261 >>> 0; for (let i = 0; i < s.length; i++) { h = Math.imul(h ^ s.charCodeAt(i), 16777619); } return h >>> 0; }
