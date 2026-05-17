@@ -82,17 +82,28 @@ Saussure (1916) defined the linguistic sign as *arbitrary*: the word "tree" has 
 
 **Saussure's arbitrary sign is the modern exception,** not the historical rule. See also: [[alphabet-elder-futhark]], [[alphabet-letter-as-cosmos]].
 
-## Cross-Tradition Links
-- → [[odin]] — the god who sacrificed himself to obtain the runes; the divine model of runic knowledge
-- → [[yggdrasil]] — the cosmic tree at whose base the runes were embedded; Odin's sacrifice site
-- → [[runes]] — the symbol-node for rune cosmology in the vault
-- → [[alphabet-elder-futhark]] — the 24-rune system as cosmic structure
-- → [[ritual-mezuzah-tefillin]] — Hebrew parallel; written text as protective presence
-- → [[ritual-yajna-vedic-fire]] — Vedic parallel; the mantra as operative force, not description
-- → [[ritual-blot]] — the blót blood-sprinkling is an operative ritual parallel; both carve/pour the sacred substance to create the effect
-- → [[shamanism]] — seiðr and rune-carving belong to the same operative-magic complex in Norse religion
-- → [[sympathetic-magic]] — the broader category of operative magic to which runic inscription belongs
-- → [[tradition-norse-germanic]] — parent tradition
+## Vault Connections
+
+**Deities:**
+- [[odin]] — the god who sacrificed himself to obtain the runes; the divine model of runic knowledge; the Hávamál is his first-person account of the ordeal
+- [[tyr]] — the rune *tīwaz* (ᛏ) in Tyr's ætt is the justice/victory rune; carved on weapons for lawful victory in combat; Tyr's name is encoded in the third ætt
+- [[thor]] — the rune *þurisaz* (ᚦ) in Freyr's ætt invokes Thor's domain of giants and thunder-power; Thor's hammer rune carved on graves as protection
+- [[freyr]] — the first ætt of the Futhark bears Freyr's name (*Freyr's ætt*); includes *fehu* (wealth), *uruz* (vitality), *wunjō* (joy) — Freyr's domain of prosperity and life-force
+
+**Traditions:**
+- [[tradition-norse-germanic]] — parent tradition; Elder Futhark attested across all Germanic territories
+- [[tradition-germanic-paganism]] — the runic operative tradition is pan-Germanic; the Elder Futhark pre-dates the Norse/Scandinavian split
+- [[tradition-asatru]] — contemporary revival; runic inscription is among the most widely practiced Ásatrú ritual technologies
+
+**Cross-tradition connections:**
+- [[yggdrasil]] — the cosmic tree at whose base the runes were embedded; Odin's sacrifice site; runes are ontologically prior to Yggdrasil's own existence
+- [[runes]] — the symbol-node for rune cosmology in the vault
+- [[alphabet-elder-futhark]] — the 24-rune system as cosmic structure; the three aettir and their deity-groupings
+- [[ritual-mezuzah-tefillin]] — Hebrew parallel; written text as protective presence; the mezuzah IS the divine protection, not a symbol of it
+- [[ritual-yajna-vedic-fire]] — Vedic parallel; the mantra as operative force, not description; bīja syllables as runic equivalents
+- [[ritual-blot]] — the blót blood-sprinkling is an operative ritual parallel; both carve/pour the sacred substance to create the effect
+- [[shamanism]] — seiðr and rune-carving belong to the same operative-magic complex in Norse religion; the seiðr practitioner uses runes for travel and protection
+- [[sympathetic-magic]] — the broader category of operative magic to which runic inscription belongs
 
 ## Refs
 1. Page, R.I. (1987). *Runes*. British Museum Press. [Tier 1 — standard scholarly introduction to runic epigraphy]

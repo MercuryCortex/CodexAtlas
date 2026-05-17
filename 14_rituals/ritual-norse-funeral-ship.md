@@ -86,18 +86,29 @@ Both traditions simultaneously concluded: (1) the afterlife is real and requires
 
 The logistical theology of death — the idea that the journey requires packing — is perhaps the most practically minded metaphysical commitment in human religious history.
 
-## Cross-Tradition Links
-- → [[odin]] — ruler of Valhalla; the destination of warrior dead; Odin himself died hanging on [[yggdrasil]] and was cremated — the god models the funeral technology
-- → [[freyja]] — goddess who receives half the battle-dead in Fólkvangr; overlaps with the Valkyrie function
-- → [[ritual-blot]] — the same blood-sacrifice logic; the dead ship funeral involves animal sacrifice as provision-for-the-journey
-- → [[ritual-embalming-mummification]] — Egyptian parallel; most direct cross-tradition comparison in afterlife-equipment logic
-- → [[ritual-inca-capacocha]] — Andean accompanying sacrifice; children sent as companions/servants to the dead
-- → [[ritual-funeral-rites]] — cross-tradition funerary hub
-- → [[ritual-tibetan-sky-burial]] — distinct approach (dissolution rather than equipment); useful contrast
-- → [[afterlife-judgment]] — the judgment context into which the dead arrive equipped or unequipped
-- → [[ragnarok-apocalyptic]] — the Norse eschatological frame; Valhalla warriors are ultimately recruiting for the final battle
-- → [[sacred-horse]] — the horse as sacred transport animal sacrificed to accompany the dead
-- → [[tradition-norse-germanic]] — parent tradition
+## Vault Connections
+
+**Deities:**
+- [[odin]] — ruler of Valhalla; the destination of warrior dead; Odin himself died hanging on [[yggdrasil]] and was cremated — the god models the funeral technology
+- [[freyja]] — goddess who receives half the battle-dead in Fólkvangr; overlaps with the Valkyrie function; she is the other destination for the elite dead
+- [[hel]] — ruler of the grey realm Hel where the common dead (non-warriors) go; the ship burial's logic is partly about avoiding Hel by arriving in Valhalla equipped
+- [[thor]] — protector deity; his hammer Mjolnir was placed on burial ships and in graves as a blessing and protection for the journey
+- [[freyr]] — associated with the burial mound (*haugr*) tradition; ancestor-mound veneration is the third afterlife alternative alongside Valhalla and Hel
+
+**Traditions:**
+- [[tradition-norse-germanic]] — parent tradition
+- [[tradition-germanic-paganism]] — the ship burial tradition spans all Germanic peoples, not only Norse; the Sutton Hoo ship (Anglo-Saxon) is the broadest evidence
+- [[tradition-asatru]] — contemporary revival tradition; ship burial symbolism remains central to Ásatrú funerary thinking
+
+**Cross-tradition connections:**
+- [[ritual-blot]] — the same blood-sacrifice logic; the ship funeral involves animal sacrifice as provision-for-the-journey
+- [[ritual-embalming-mummification]] — Egyptian parallel; most direct cross-tradition comparison in afterlife-equipment logic; pyramid as ship-equivalent
+- [[ritual-inca-capacocha]] — Andean accompanying sacrifice; children sent as companions/servants to the dead
+- [[ritual-funeral-rites]] — cross-tradition funerary hub
+- [[ritual-tibetan-sky-burial]] — distinct approach (dissolution rather than equipment); the contrast illuminates the logistical-theology model
+- [[afterlife-judgment]] — the judgment context into which the dead arrive equipped or unequipped
+- [[ragnarok-apocalyptic]] — the Norse eschatological frame; Valhalla warriors (equipped by the ship burial) are ultimately recruiting for the final battle
+- [[sacred-horse]] — the horse as sacred transport animal sacrificed to accompany the dead
 
 ## Refs
 1. Ibn Fadlan, Ahmad (922 CE). *Risala* (Mission Report). Modern edition: Montgomery, J.E. (2000). "Ibn Fadlan and the Rusiyyah." *Journal of Arabic and Islamic Studies* 3: 1–25. [Tier 1 — eyewitness account; Arabic manuscript tradition; minor transmission gaps noted]

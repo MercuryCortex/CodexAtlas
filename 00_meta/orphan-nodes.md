@@ -1,9 +1,12 @@
 # Orphan nodes
 
-_Auto-generated 2026-05-16. Nodes with zero edges in either direction._
+_Auto-generated 2026-05-17. Nodes with zero edges in either direction._
 
 | Stem | Type | Status |
 |---|---|---|
+| `ritual-zakat-charity` | ritual | full |
 | `danse-macabre` | symbol | metadata |
 | `memento-mori-skull` | symbol | metadata |
 | `blood-sacred` | symbol | metadata |
+| `alphabet-quran-sacred-language` | alphabet | full |
+| `alphabet-arabic-quran` | alphabet | full |

@@ -83,18 +83,30 @@ Four traditions — separated by ocean, language, and history — independently 
 
 The cross-tradition pattern is striking because the specific doctrines are radically different: Odin needs warriors for Ragnarök (a completely Norse concern), Allah accepts martyrs into paradise (Islamic), the Aztec sun needs heart-blood as fuel (Mesoamerican cosmic renewal). The surface content is entirely distinct. The deep structure — violent death as divine selection with enhanced afterlife — is identical.
 
-## Cross-Tradition Links
-- → [[odin]] — Valhalla's lord; the god who organizes the einherjar; practitioner of seiðr and sacrifice
-- → [[freyja]] — receives half the battle-dead in Fólkvangr; the female divine counterpart to Valhalla selection
-- → [[ragnarok-apocalyptic]] — the eschatological frame that gives Valhalla its purpose; the einherjar's ultimate mission
-- → [[fenrir]] — one of the primary Ragnarök combatants the einherjar will face
-- → [[martyrdom-theology]] — the cross-tradition hub for martyr/warrior-death theology
-- → [[ritual-blot]] — the Sigrblót specifically prepares warriors for Valkyrie selection by establishing relationship with Odin
-- → [[ritual-norse-funeral-ship]] — the logistical implementation of Valhalla theology in burial practice
-- → [[huitzilopochtli]] — the Aztec sun-god whose warriors become hummingbirds; direct cross-tradition parallel
-- → [[ritual-sacrifice]] — warrior sacrifice and the blót as related operative technologies
-- → [[afterlife-judgment]] — the judgment framework within which Valhalla selection operates
-- → [[tradition-norse-germanic]] — parent tradition
+## Vault Connections
+
+**Deities:**
+- [[odin]] — Valhalla's lord; the god who organizes the einherjar; practitioner of seiðr and sacrifice; collects the best warriors knowing he will lose Ragnarök
+- [[freyja]] — receives half the battle-dead in Fólkvangr; the female divine counterpart to Valhalla selection; the Valkyries report to both Odin and Freyja
+- [[thor]] — his warriors go to a different afterlife (not explicitly Valhalla); Thor's devotees are farmers and craftsmen whose deaths are not battlefield deaths; the contrast reveals Valhalla's selectivity
+- [[tyr]] — god of law and justice; his warriors die in the name of lawful combat; the Sigrblót (victory-blót) addressed to Odin and the Valkyries also invokes Tyr for the justice of the cause
+- [[hel]] — ruler of the grey realm where the common dead go; Valhalla theology is defined partly against Hel — the einherjar avoid the grey realm of *straw death*
+- [[fenrir]] — one of the primary Ragnarök combatants the einherjar will face; it is Fenrir who kills Odin; the einherjar are training specifically for this
+- [[jormungandr]] — the World Serpent; kills Thor at Ragnarök; the einherjar fight against Jormungandr's forces
+
+**Traditions:**
+- [[tradition-norse-germanic]] — parent tradition
+- [[tradition-germanic-paganism]] — the Valhalla complex is attested in continental Germanic sources (the Heruli, the Langobards) before the Norse written record
+- [[tradition-asatru]] — contemporary revival; Valhalla theology remains central to Ásatrú warrior-death discourse
+
+**Cross-tradition connections:**
+- [[ragnarok-apocalyptic]] — the eschatological frame that gives Valhalla its purpose; the einherjar's ultimate mission is a doomed last stand
+- [[martyrdom-theology]] — the cross-tradition hub for warrior/martyr death as divine selection
+- [[ritual-blot]] — the Sigrblót specifically prepares warriors for Valkyrie selection by establishing relationship with Odin
+- [[ritual-norse-funeral-ship]] — the logistical implementation of Valhalla theology in burial practice; equip the dead to arrive as warriors
+- [[huitzilopochtli]] — the Aztec sun-god whose warriors become hummingbirds; direct cross-tradition parallel in violent death as divine selection
+- [[ritual-sacrifice]] — warrior sacrifice and the blót as related operative technologies
+- [[afterlife-judgment]] — the judgment framework within which Valhalla selection operates
 
 ## Refs
 1. Lindow, J. (2001). *Norse Mythology: A Guide to Gods, Heroes, Rituals, and Beliefs*. Oxford UP. [Tier 1 — standard modern scholarly reference; Valhalla and einherjar comprehensively treated]

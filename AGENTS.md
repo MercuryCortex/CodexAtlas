@@ -93,6 +93,38 @@ _assets/       — vendored libraries, basemaps, thumbnails
 
 **Why this matters:** agents have repeatedly written 5–10 rich nodes with 50+ wikilinks, committed, and walked away leaving 15–20 dead links. The graph is only as strong as its weakest connection. Connection IS the product.
 
+### ⚖️ THE INTEGRITY LAW — NON-NEGOTIABLE (added 2026-05-17 after pantheon-integrity-goblins-1)
+
+> **Every node must have a globally unique slug. The build will hard-fail on duplicates. Do not "fix" the failure by silencing it; resolve the conflict.**
+
+`build_data.py` raises `SystemExit` on any duplicate-id at build time. Before this guard was added, 8 deity files (Michael-Archangel, Gabriel-Archangel, Padmasambhava, Muhammad al-Mahdi, Baphomet, Lamassu, Chaos-Primordial, Corn-Mother) were silently dropped from the Pantheon ring because same-slug files in `09_symbols/` or `04_persons/` won the build race. The warning printed to stdout; nothing in CI surfaced it; the chart looked correct because the loss was invisible.
+
+**What this means for you:**
+1. **If the build hard-fails on your duplicate-id, do not set `ATLAS_ALLOW_DUP_ID=1`** — that flag exists only for emergency hot-fixes. The right fix is to rename one file (typical convention: deity keeps bare slug; symbol gets `-symbol` suffix; person gets `-person` suffix; theme keeps bare for cross-temporal motifs).
+2. **Same-slug pairs are legitimate** when they represent genuinely different node-types of the same entity (e.g., `michael-archangel` deity + `michael-archangel-person` historical-figure-stub + `michael-archangel-symbol` iconographic-type). The rule is: distinct slugs, cross-linked via `syncretic-edges`. Never same slug.
+3. **When you create a deity node whose name might already exist as a symbol or person, grep first.** `grep -rn "^id: \"<slug>\"" .` will find the conflict before the build does.
+
+### 🔍 THE GOBLIN-AUDIT ETHIC (added 2026-05-17)
+
+When you keep coming back with one-line fixes and the user says "this isn't bulletproof" — **stop patching, audit.** Three parallel read-only agents (one per audit dimension) running against the same data set will catch what iterative-bugfix can't:
+
+- **Goblin A: correctness** (does every record have the right value?)
+- **Goblin B: rule-engine fragility** (are the rules themselves fragile? substring collisions, order-dependencies, etc.)
+- **Goblin C: structural integrity** (duplicates, empty fields, dangling references, orphan classes)
+
+Run them **in parallel** (single message, multiple Agent tool calls), **read-only** (they report; you fix), and **with judgment authority** (give them the goal, not the script). The pantheon-integrity-goblins-1 sweep (2026-05-17) closed an entire bug class in one pass that ten prior one-line-fix commits hadn't.
+
+**When to dispatch goblins:**
+- The user says "this concerns me, the integrity is not bulletproof"
+- A prior agent has been iterating bugfixes for hours and still finding more
+- You're about to ship a classification, mapping, or routing change that touches a large set of records
+- A new substring-based rule or string-match heuristic enters the codebase
+
+**When NOT to dispatch goblins:**
+- The bug is clearly isolated and reproducible
+- You can verify the fix with a single grep or a single re-build
+- The scope is one node, one wikilink, one slug
+
 ### WHEN you finish
 
 1. **Update your claim block** with `Status: finished`, the full delivery list (node-by-node with wikilinks), the MASSIVE-win edges added, and an "Open gaps for follow-up agents" section.
