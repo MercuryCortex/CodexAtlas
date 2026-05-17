@@ -700,6 +700,14 @@
       // suppresses it so only the curved SVG overlay paints visible edges.
       defaultEdgeColor: 'rgba(0,0,0,0)',
       defaultNodeColor: '#7a8090',
+      // ZOOM SENSITIVITY — sigma's default `zoomingRatio: 1.7` is per-wheel-
+      // event, which trackpads fire 5-20× per gesture (compound 1.7^N → wild).
+      // 1.10 gives a smooth, natural feel on trackpads. zoomDuration shortened
+      // a touch so the animation feels responsive without overshoot.
+      zoomingRatio:               1.10,
+      zoomDuration:                180,
+      doubleClickZoomingRatio:    1.40,
+      doubleClickZoomingDuration:  220,
       labelColor: { color: '#cad0d8' },
       labelSize: 11,
       labelWeight: 400,
@@ -1384,8 +1392,7 @@
     }
     function updateNodeLabelVisibility() {
       // Always use the smooth gradient. The dev-panel hubThreshold value is
-      // already consumed inside dynamicHubThreshold() as the ceiling (HIGH);
-      // do NOT short-circuit with it here, that's what defeated the gradient.
+      // already consumed inside dynamicHubThreshold() as the ceiling (HIGH).
       const thresh = dynamicHubThreshold();
       nodeLabelEntries.forEach(L => {
         let show = true;
@@ -1395,15 +1402,14 @@
         L.el.style.display = show ? '' : 'none';
         if (show) L.el.style.visibility = '';
       });
+      // Whenever a label's display state changes, its left/top may be stale
+      // (last sync was before it was hidden). Re-sync positions now so the
+      // next paint shows every newly-revealed label at its correct screen
+      // position — fixes the "labels appear in empty space" glitch.
+      syncNodeLabelsImmediate();
+      // Deconflict only after motion has settled (guarded inside).
       scheduleDeconflict();
     }
-    // Re-evaluate visibility on camera moves (zoom/pan). Debounced via the
-    // deconflict timer chain so wheel-zoom doesn't thrash the DOM.
-    let _labelRefreshTimer = null;
-    sigma.getCamera().on('updated', () => {
-      clearTimeout(_labelRefreshTimer);
-      _labelRefreshTimer = setTimeout(updateNodeLabelVisibility, 40);
-    });
 
     // Expose inner refresh hooks so the dev panel can re-run them when CSS
     // vars (label size, hub threshold, etc.) change without a full rerender.
@@ -1413,29 +1419,52 @@
       window._pantheonV2._scheduleDecon    = scheduleDeconflict;
     }
 
-    // Tracks whether the camera is moving (pan / zoom). When true, we
-    // SKIP the deconflict pass — its visibility-reset → measure → re-hide
-    // sequence flashes the hidden labels for one frame, which the user sees
-    // as "labels flicker during zoom". Also hide all labels while moving so
-    // the user gets a clean transition.
-    let _isPanning      = false;
-    let _panEndTimer    = null;
-    let _labelsOverlay  = nodeLabelOverlay;
+    // ── PAN/ZOOM LIFECYCLE — clean reveal of labels ─────────────────────
+    // The cleanest invariant: while the camera is moving, the overlay is
+    // hidden. When it stops, we (a) re-evaluate which labels should show
+    // at the new ratio, (b) re-sync every displayed label's screen position
+    // BEFORE the overlay becomes visible again, (c) only then restore
+    // opacity. No label ever paints at a stale position.
+    let _isPanning     = false;
+    let _panEndTimer   = null;
+    const _labelsOverlay = nodeLabelOverlay;
+    function syncNodeLabelsImmediate() {
+      // Called from inside updateNodeLabelVisibility — needs to run regardless
+      // of _isPanning so newly-revealed labels get correct positions even
+      // mid-motion (they're still invisible because overlay opacity is 0).
+      const distMult = window.CODEX_DEV?.settings?.nodeLabelDist || 1;
+      for (let i = 0; i < nodeLabelEntries.length; i++) {
+        const L = nodeLabelEntries[i];
+        if (L.el.style.display === 'none') continue;
+        const screen = sigma.graphToViewport({ x: L.wx, y: L.wy });
+        L.el.style.left = screen.x + 'px';
+        L.el.style.top  = (screen.y - L.dy * distMult) + 'px';
+      }
+    }
     function setPanning(on) {
       if (on === _isPanning) return;
       _isPanning = on;
       if (on) {
         _labelsOverlay.style.opacity = '0';
       } else {
-        _labelsOverlay.style.opacity = '';
-        // Run a single deconflict after motion settles.
-        scheduleDeconflict();
+        // Motion just stopped. Recompute visibility + positions FIRST, then
+        // reveal on the next animation frame so the browser has paint-state
+        // ready before opacity restores. No flash of stale positions.
+        updateNodeLabelVisibility();
+        syncNodeLabelsImmediate();
+        requestAnimationFrame(() => {
+          _labelsOverlay.style.opacity = '';
+          scheduleDeconflict();
+        });
       }
     }
+    // Single 'updated' listener — drives both panning state AND label
+    // refresh. Previously two separate listeners fired in parallel and could
+    // race (one hiding labels while the other tried to show them).
     sigma.getCamera().on('updated', () => {
       setPanning(true);
       clearTimeout(_panEndTimer);
-      _panEndTimer = setTimeout(() => setPanning(false), 140);
+      _panEndTimer = setTimeout(() => setPanning(false), 160);
     });
 
     function syncNodeLabels() {
