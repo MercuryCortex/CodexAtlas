@@ -146,11 +146,12 @@ When in doubt, ask in your claim block (`Owns: ... — also touching <unclear fi
 
 ## 8. Reading list (in order, before any session)
 
-1. [`ONTOLOGY.md`](ONTOLOGY.md) — what we're mapping (the 17 lenses + 7 edge buckets + MASSIVE-WIN patterns + source-integrity tiers). ~30 KB.
-2. [`PROTOCOL.md`](PROTOCOL.md) — how to absorb + dissect + wire + commit. ~30 KB.
-3. [`LANES.md`](LANES.md) — this file. Pick a lane. ~7 KB.
-4. The claim file for your lane: [`ACTIVE-CONTENT.md`](ACTIVE-CONTENT.md) or [`ACTIVE-UX.md`](ACTIVE-UX.md). ~5 KB.
+1. [`ONTOLOGY.md`](ONTOLOGY.md) — structural: the 17 lenses + 7 edge buckets + MASSIVE-WIN pattern categories + source-integrity tiers. ~25 KB.
+2. [`CORE-THEMES.md`](CORE-THEMES.md) — the hunt-list: ~150 canonical cross-tradition patterns (themes / symbols / rituals / morals) with slugs and edge buckets. ~30 KB.
+3. [`PROTOCOL.md`](PROTOCOL.md) — how to absorb + dissect + wire + commit. ~28 KB.
+4. [`LANES.md`](LANES.md) — this file. Pick a lane. ~9 KB.
+5. The claim file for your lane: [`ACTIVE-CONTENT.md`](ACTIVE-CONTENT.md) or [`ACTIVE-UX.md`](ACTIVE-UX.md). ~5 KB.
 
-That's the entire pre-flight. ~75 KB total instead of the previous ~800 KB.
+That's the entire pre-flight. ~100 KB total instead of the previous ~800 KB.
 
-Older docs (`methodology.md`, the seven `schema-*.md` files, `source-integrity.md`) are retained for now as compatibility references but are **deprecated** — PROTOCOL.md and ONTOLOGY.md replace them. If you find a contradiction, the three master files (ONTOLOGY / PROTOCOL / LANES) are authoritative.
+Older docs (`methodology.md`, the seven `schema-*.md` files, `source-integrity.md`) are retained for now as compatibility references but are **deprecated** — the four master files replace them. If you find a contradiction, ONTOLOGY / CORE-THEMES / PROTOCOL / LANES are authoritative.

@@ -14,13 +14,15 @@
 
 ---
 
-## The three master files (read these, in order, before any work)
+## The four master files (read these, in order, before any work)
 
-1. **[`00_meta/ONTOLOGY.md`](00_meta/ONTOLOGY.md)** — *what* we're mapping. The 17 lenses (one folder each), the 7 edge buckets (Transmission / Parallel / Association / Kinship / Attestation / Polemic / Fusion), the MASSIVE-WIN transmission patterns we hunt, the source-integrity tiers (T1–T4), the node status tiers, slug discipline.
+1. **[`00_meta/ONTOLOGY.md`](00_meta/ONTOLOGY.md)** — *what* we're mapping (structural). The 17 lenses (one folder each), the 7 edge buckets (Transmission / Parallel / Association / Kinship / Attestation / Polemic / Fusion), the MASSIVE-WIN transmission patterns we hunt, the source-integrity tiers (T1–T4), the node status tiers, slug discipline.
 
-2. **[`00_meta/PROTOCOL.md`](00_meta/PROTOCOL.md)** — *how* to map it. The absorb-and-dissect SOP (claim → absorb → dissect → wire → hunt transmissions → stub-sweep → build → commit), the four laws (WIRING / INTEGRITY / GOBLIN-AUDIT / APP-CODE-SERIALIZES), the YAML skeletons for all 17 node types.
+2. **[`00_meta/CORE-THEMES.md`](00_meta/CORE-THEMES.md)** — *what* to hunt for (content). The curated hunt-list of ~150 load-bearing cross-tradition patterns — themes (cosmogonic / eschatological / soteriological / theological / dualism / political-theological / anthropological + transmission-spine), symbols (cosmological / solar / theriomorphic / vegetal / architectural / cruciform / geometric / mystery / indigenous), rituals (sacrifice / initiation / mortuary / festival / pilgrimage / divination / prayer / ascetic / civic), and morals. Each entry: canonical slug + one-line "look for" + traditions usually carrying it + edge bucket the cross-tradition link lands in.
 
-3. **[`00_meta/LANES.md`](00_meta/LANES.md)** — *where your work belongs*. Two lanes:
+3. **[`00_meta/PROTOCOL.md`](00_meta/PROTOCOL.md)** — *how* to map it. The absorb-and-dissect SOP (claim → absorb → dissect → wire → hunt transmissions → stub-sweep → build → commit), the four laws (WIRING / INTEGRITY / GOBLIN-AUDIT / APP-CODE-SERIALIZES), the YAML skeletons for all 17 node types.
+
+4. **[`00_meta/LANES.md`](00_meta/LANES.md)** — *where your work belongs*. Two lanes:
    - **Lane A — INVESTIGATION** (many agents, parallel): owns `01_*` through `17_*` content folders + the auto-regenerated meta files. Claim in [`ACTIVE-CONTENT.md`](00_meta/ACTIVE-CONTENT.md).
    - **Lane B — UX** (one agent at a time): owns `src/`, `index.html`, build scripts, `_assets/`. Claim the single slot in [`ACTIVE-UX.md`](00_meta/ACTIVE-UX.md).
 
@@ -28,19 +30,19 @@
 
 ---
 
-## Pre-flight is ~75 KB total. Do not read more than that before starting work.
+## Pre-flight is ~100 KB total. Do not read more than that before starting work.
 
-The older docs (`methodology.md`, the seven `schema-*.md` files, `source-integrity.md`, the deep AGENTS.md) are deprecated by the three master files above. They're retained as compatibility references; if you find a contradiction, ONTOLOGY / PROTOCOL / LANES win.
+The older docs (`methodology.md`, the seven `schema-*.md` files, `source-integrity.md`, the deep AGENTS.md) are deprecated by the four master files above. They're retained as compatibility references; if you find a contradiction, ONTOLOGY / CORE-THEMES / PROTOCOL / LANES win.
 
 ---
 
 ## Quick-claim cheat sheet
 
 **Lane A — content agent:**
-1. Read ONTOLOGY → PROTOCOL → LANES.
+1. Read ONTOLOGY → CORE-THEMES → PROTOCOL → LANES.
 2. Pick a primary text from [`00_meta/ABSORPTION-QUEUE.md`](00_meta/ABSORPTION-QUEUE.md), [`00_meta/DASHBOARD.md`](00_meta/DASHBOARD.md)'s priority queue, [`AUDIT/05_priority_queue.md`](AUDIT/05_priority_queue.md), or your own hunt.
 3. Append your row to [`00_meta/ACTIVE-CONTENT.md`](00_meta/ACTIVE-CONTENT.md).
-4. Absorb + dissect across the 17 lenses + wire + hunt MASSIVE-WIN transmissions + stub-sweep + `python3 build_data.py && python3 build_dashboard.py && python3 linkcheck.py` + commit.
+4. Absorb the text + dissect across the 17 lenses (use CORE-THEMES as the pattern lens) + wire + hunt MASSIVE-WIN transmissions + stub-sweep + `python3 build_data.py && python3 build_dashboard.py && python3 linkcheck.py` + commit.
 
 **Lane B — UX agent:**
 1. Read LANES → [`00_meta/VIEW-CONTRACT.md`](00_meta/VIEW-CONTRACT.md) (once it exists).
@@ -66,7 +68,8 @@ Details and rationale in PROTOCOL.md §3.
 
 | File | Purpose |
 |---|---|
-| [`00_meta/ONTOLOGY.md`](00_meta/ONTOLOGY.md) | What we map (17 lenses + 7 edge buckets + MASSIVE-WIN patterns + tiers) |
+| [`00_meta/ONTOLOGY.md`](00_meta/ONTOLOGY.md) | Structural — 17 lenses + 7 edge buckets + tiers + MASSIVE-WIN patterns |
+| [`00_meta/CORE-THEMES.md`](00_meta/CORE-THEMES.md) | The hunt-list — ~150 cross-tradition patterns (themes / symbols / rituals / morals) with canonical slugs |
 | [`00_meta/PROTOCOL.md`](00_meta/PROTOCOL.md) | How to map (SOP + laws + YAML skeletons) |
 | [`00_meta/LANES.md`](00_meta/LANES.md) | Where work belongs (lane definitions + path map) |
 | [`00_meta/ACTIVE-CONTENT.md`](00_meta/ACTIVE-CONTENT.md) | Lane A in-flight claims |

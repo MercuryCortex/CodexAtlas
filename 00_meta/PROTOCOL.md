@@ -51,6 +51,8 @@ If this is your first session, read [`ONTOLOGY.md`](ONTOLOGY.md) end-to-end. Aft
 
 ### Step 4 — Dissect across the 17 lenses
 
+Open [`CORE-THEMES.md`](CORE-THEMES.md) alongside your text — it's the curated hunt-list of ~150 cross-tradition patterns with canonical slugs. When the text touches a pattern, use the canonical slug; do not coin a duplicate.
+
 Walk the text and ask, **for each entity that appears**:
 
 - Is this a divinity? → create / extend a node in `03_deities/`.

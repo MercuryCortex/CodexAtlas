@@ -105,7 +105,13 @@ This table tells you which bucket your edge will land in, depending on the YAML 
 
 ## 4. MASSIVE-WIN transmission patterns we hunt
 
-The prize is the **cross-tradition transmission**. When you absorb a primary text, hunt for the older-tradition source and write it as an explicit Transmission edge with a Tier-1 or Tier-2 source. The full catalog (with vault-node links) lives in [`MASSIVE-WINS-INDEX.md`](MASSIVE-WINS-INDEX.md). The categories:
+The prize is the **cross-tradition transmission**. When you absorb a primary text, hunt for the older-tradition source and write it as an explicit Transmission edge with a Tier-1 or Tier-2 source.
+
+**Two companion files are mandatory reading alongside this section:**
+- [`CORE-THEMES.md`](CORE-THEMES.md) — the curated hunt-list of ~150 cross-tradition patterns (themes / symbols / rituals / morals) with canonical slugs. **Use it as your lens** when dissecting a text; never coin a new slug for a pattern that already has a canonical entry.
+- [`MASSIVE-WINS-INDEX.md`](MASSIVE-WINS-INDEX.md) — full catalog with vault-node pointers and source citations.
+
+The categories below summarise the transmission patterns; CORE-THEMES.md §1 has each pattern as a row with traditions + edge bucket.
 
 ### A. Documented transmissions (historical chain, evidenced)
 The strongest claims. A primary source explicitly attests A → B, or a scholarly consensus is built on textual/manuscript evidence.
@@ -240,6 +246,7 @@ The Pantheon V2 view (`src/js/views/pantheon-v2.js`) is the **design prototype**
 ## 9. What's NOT in this file
 
 For SOP and workflow, read:
+- [`CORE-THEMES.md`](CORE-THEMES.md) — the canonical hunt-list (themes / symbols / rituals / morals) with slugs and edge buckets. Use as the dissection lens.
 - [`PROTOCOL.md`](PROTOCOL.md) — the absorb-and-dissect SOP, the four laws (WIRING / INTEGRITY / GOBLIN-AUDIT / APP-CODE-SERIALIZES), the YAML skeletons.
 - [`LANES.md`](LANES.md) — the two-lane workflow + path map + pre-commit hook behavior.
 - [`ACTIVE-CONTENT.md`](ACTIVE-CONTENT.md) — investigation lane in-flight claims.
