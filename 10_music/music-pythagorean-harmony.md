@@ -42,6 +42,23 @@ music-appearances:
   - [[plato]]
   - [[boethius]]
 
+cross-tradition-edges:
+  - target: music-sama-veda
+    type: parallel
+    note: The Sama Veda's doctrine that precise musical ratios are cosmologically operative — that correct chant ratios maintain cosmic order — parallels the Pythagorean music-of-the-spheres. India and Greece independently assigned cosmological necessity, not merely aesthetic preference, to specific musical ratios. Both traditions treat the physical ratios of sound as windows onto cosmic structure. The convergence is not coincidence — the harmonic series is physically real and universally perceivable.
+  - target: music-raga-cosmology
+    type: parallel
+    note: Indian raga cosmology assigns specific ragas to times of day, seasons, and cosmic states — the musical intervals of each raga correspond to qualities of the natural world at that time. The Pythagorean music-cosmos homology operates by the same logic: musical structure and cosmic structure are the same structure in two registers. Both traditions use musical interval ratios as the vocabulary of cosmic order.
+  - target: mathematics-pythagorean-sacred
+    type: sibling
+    note: Pythagorean harmony and sacred number theology are two expressions of the same program. Harmony theory is the empirical demonstration (these ratios are acoustically real, measurable, cross-cultural) and sacred number theology is the metaphysical generalization (therefore number structures reality). They are inseparable in the original Pythagorean synthesis.
+  - target: mathematics-house-of-wisdom
+    type: ancestor-of
+    note: Al-Kindi's *Risala fi Khubr Ta'lif al-Alhan* (Epistle on the Composition of Melodies, c. 840) and al-Farabi's *Kitab al-Musiqa al-Kabir* (Great Book of Music, c. 900) both transmit and extend Pythagorean harmonic theory in Arabic. Both cite Pythagoras directly. The Islamic music-cosmos homology (seven planets, seven strings, seven modes) is the Nicomachean seven-fold scheme reaching the Arabic-speaking world via the House of Wisdom translation movement.
+  - target: kepler
+    type: ancestor-of
+    note: Kepler's *Harmonices Mundi* (1619) is the most detailed post-antique application of Pythagorean harmonic ratios to a specific natural phenomenon. Kepler showed that the ratios between each planet's maximum and minimum orbital speeds correspond to specific musical intervals. His third law of planetary motion (T²∝a³) emerged from this harmonic analysis — a law of physics extracted from a Pythagorean musical cosmology.
+
 refs:
   - "Nicomachus of Gerasa, Manual of Harmonics (c. 100 CE) — primary Pythagorean source on intervals"
   - "Iamblichus, Life of Pythagoras (c. 300 CE) — account of the blacksmith-shop discovery"

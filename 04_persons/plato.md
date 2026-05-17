@@ -36,6 +36,29 @@ refs:
     type: "monograph"
     tier: 2
 tags: [person, philosopher, greek, athens, academy, platonism]
+
+cross-tradition-edges:
+  - target: mathematics-pythagorean-sacred
+    type: child-of
+    note: Plato is the primary philosophical transmitter of Pythagorean sacred mathematics. The *Timaeus* — his cosmological masterwork — constructs the World Soul from the same integer ratios that Pythagorean music theory uses (octave 1:2, fifth 2:3, fourth 3:4). The Forms are mathematical structures; the Demiurge geometrizes matter; the Divided Line is a ratio. Plato's philosophy is Pythagorean number theology given full metaphysical systematization.
+  - target: tradition-pythagorean
+    type: heir-of
+    note: Plato studied in Pythagorean circles on three visits to Sicily and southern Italy and was in direct contact with Archytas of Tarentum — probably his most important Pythagorean contact. His Academy absorbed and continued the Pythagorean mathematical program; his students Speusippus and Xenocrates explicitly Pythagoreanized his teaching. The ancient tradition consistently links Plato's mathematical metaphysics to his Pythagorean education.
+  - target: archytas
+    type: student-of
+    note: Plato and Archytas had a close documented relationship. Plato visited Tarentum on his Sicilian journeys; Letter VII reports their collaboration; Archytas reportedly sent a warship to rescue Plato from Dionysius II's Syracuse. The *Timaeus* mathematical cosmology — World Soul from harmonic ratios, five regular solids corresponding to elements — reflects Archytas's mathematical-philosophical work directly.
+  - target: philosophy-neoplatonism
+    type: ancestor-of
+    note: Neoplatonism is explicitly Platonic — Plotinus saw himself as recovering the authentic Plato. The three hypostases (One, Intellect, Soul) are drawn from the *Republic* (the Good), the *Parmenides* (the One's relation to being), and the *Timaeus* (Demiurge/World Soul). Every major Neoplatonist wrote Plato commentaries; Neoplatonism is Plato systematized.
+  - target: mathematics-sacred-geometry
+    type: parent-of
+    note: Plato's *Timaeus* is the foundational text of sacred geometry: the five Platonic solids assigned to the four elements plus the heavens, the World Soul constructed from harmonic ratios, the Demiurge geometrizing prime matter. Kepler's *Mysterium Cosmographicum* is explicitly a Platonic-solid cosmology. The tradition of treating geometric forms as theologically significant traces through Plato.
+  - target: demiurge
+    type: originator-of
+    note: Plato's Demiurge in the *Timaeus* is the craftsman-god who constructs the cosmos from mathematical archetypes — not creation ex nihilo but formation of matter according to eternal Forms. The Gnostic Demiurge (evil creator-god) is the *Timaeus* Demiurge with moral valuation inverted. The Neoplatonic Nous/Intellect is the *Timaeus* Demiurge rationalized.
+  - target: reincarnation
+    type: child-of
+    note: Plato's eschatological myths (*Phaedo*, *Republic* Book X, *Phaedrus*) develop the Pythagorean-Orphic doctrine of metempsychosis into detailed narratives of post-mortem judgment, cosmic journey, and rebirth choice. The Er myth (*Republic* 614b–621d) is the most detailed pre-Buddhist Western account of the between-life state and the mechanics of choosing a new incarnation.
 ---
 
 # Plato

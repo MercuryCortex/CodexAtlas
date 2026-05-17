@@ -38,6 +38,23 @@ refs:
     type: "edited-volume"
     tier: 1
 tags: [person, late-antique, christian, neoplatonism, boethius, consolation, last-roman, MASSIVE-WIN, executed-divine-claimant]
+
+cross-tradition-edges:
+  - target: mathematics-pythagorean-sacred
+    type: transmitter-of
+    note: Boethius's *De Institutione Arithmetica* (translation and expansion of Nicomachus's Introduction) is the Latin West's primary text for Pythagorean number theology. Every medieval European student learned that number is the structure of reality through Boethius's transmission. This is not secondary influence — without Boethius, Pythagorean sacred mathematics exists only in untranslated Greek for the 600-year Latin-dominant medieval period.
+  - target: music-pythagorean-harmony
+    type: transmitter-of
+    note: Boethius's *De Institutione Musica* translates and extends Nicomachus's Manual of Harmonics and Ptolemy's Harmonics into Latin. It defined the three types of music for the medieval West — musica mundana (cosmic), musica humana (human soul), musica instrumentalis (audible) — and set the Pythagorean harmonic ratios as the foundation of music theory. Used as the university music textbook for 900 years.
+  - target: nicomachus
+    type: heir-of
+    note: Boethius translated both of Nicomachus's major mathematical works into Latin. Without this act of translation, Nicomachus's Pythagorean number theology would have remained inaccessible to the Latin West for centuries. Boethius is the single most important transmission relay between Neo-Pythagorean Greek thought and medieval European intellectual culture.
+  - target: mathematics-house-of-wisdom
+    type: parallel
+    note: Boethius (480–524) and the earliest House of Wisdom scholars (8th century) perform the same structural function: both translate Greek mathematical science into a new language (Latin / Arabic) and thereby extend the Pythagorean-Platonic tradition into a new cultural sphere. The parallel is structural even without documented contact.
+  - target: tradition-neoplatonism
+    type: child-of
+    note: The *Consolation of Philosophy* is philosophically a late Neoplatonic work — the metaphysics, the conception of Fortune, the highest good as unity, the providential overarching order — all derive from Plotinus and Proclus mediated through Porphyry. Boethius is the vector by which late Athenian Neoplatonism enters medieval Christian thought without ever naming itself as such.
 ---
 
 # Boethius
