@@ -5712,6 +5712,16 @@ body.nav-collapsed .item.forge-nav::after { display: none; }
    click to reset a single slider. Owned by dev-panel-forge.js.
    ============================================================ */
 
+/* The legacy Pantheon-V2 dev panel (`#codex-dev-panel`) is at
+   z-index ~9000 and anchors `right: 0` — it would cover the
+   Forge drawer entirely. It also has no hooks into Forge state
+   (its controls only mutate Pantheon V2), so we hide it whenever
+   the Forge view is active. */
+body.view-forge #codex-dev-panel,
+body.view-forge #codex-dev-tab {
+  display: none !important;
+}
+
 /* ── Right-edge handle (always visible when Forge is mounted) ── */
 #forge-dev-tab {
   position: fixed;
@@ -5719,7 +5729,7 @@ body.nav-collapsed .item.forge-nav::after { display: none; }
   top: 50%;
   transform: translateY(-50%) rotate(180deg);
   writing-mode: vertical-rl;
-  z-index: 60;
+  z-index: 9101;
   padding: 10px 6px;
   border: 1px solid var(--rule);
   border-right: none;
@@ -5745,7 +5755,7 @@ body.nav-collapsed .item.forge-nav::after { display: none; }
   bottom: 0;
   width: 380px;
   max-width: 92vw;
-  z-index: 59;                  /* under the handle so it stays clickable */
+  z-index: 9100;                /* above the legacy Pantheon-V2 dev panel (z=9000) */
   display: flex;
   flex-direction: column;
   background: rgba(14, 17, 22, 0.96);
