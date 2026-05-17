@@ -999,8 +999,10 @@
           if (!inNeighborhood(_selectedId, id)) { out.hidden = true; return out; }
         }
         // FAMILY FILTER short-circuit — fade by own color, lowest layer.
+        // fadeToBg returns a solid hex blended toward bg — sigma's WebGL node
+        // program ignores rgba alpha, so we must dim via RGB blend not opacity.
         if (!famInFilter(attrs._family)) {
-          out.color  = withAlpha(attrs.color, 0.10);
+          out.color  = fadeToBg(attrs.color, 0.10);
           out.zIndex = 0;
           out.label  = '';
           return out;
@@ -1022,7 +1024,9 @@
             out.color  = baseColor;
             break;
           case 'DIM':
-            out.color  = withAlpha(baseColor, 0.10);
+            // fadeToBg, not withAlpha — sigma's stock node program ignores
+            // rgba alpha so dim must be a solid hex blended toward bg.
+            out.color  = fadeToBg(baseColor, 0.10);
             out.zIndex = 0;
             break;
           case 'NORMAL':
