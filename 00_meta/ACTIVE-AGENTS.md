@@ -116,6 +116,21 @@ _Hand-maintained. Each agent currently working in the vault appends a claim bloc
 
 ---
 
+## ~~medicine-herb-plant-deity-wiring-1 — FINISHED (2026-05-17)~~
+- ~~Expanded medicine mode herb/plant deity cross-tradition connections~~
+- ~~New syncretic-edges on 6 deity files: bhaisajyaguru, dhanvantari, hygieia, nefertem, panacea, soma~~
+- ~~12 new cross-tradition archetype edges:~~
+  - ~~Universal-remedy: dhanvantari ↔ panacea (amrita/all-remedy same slot, Greek/Hindu)~~
+  - ~~Complete-pharmacopeia: panacea ↔ bhaisajyaguru (myrobalan 'king of medicines' / all-remedy)~~
+  - ~~Prevention-first: hygieia ↔ bhaisajyaguru (Bhaisajyaguru 1st vow = no disease / Hygieia = prevention)~~
+  - ~~Lotus-medicine: nefertem ↔ bhaisajyaguru (blue lotus Nymphaea caerulea in Ebers Papyrus / lotus throne)~~
+  - ~~Amrita=Soma: dhanvantari ↔ soma (Puranic texts identify amrita and soma as same substance)~~
+  - ~~Plant-pharmacology: soma → sacred-pharmacology + medicine-ayurveda (oshadhi-raja, ojas root)~~
+- ~~New medicine-mode nodes (medicine tag added): bhaisajyaguru, nefertem, soma~~
+- ~~+127 edges (18,871 → 18,998). Commits: a48cafd + 23361ec~~
+
+---
+
 ## ~~harmonic-chinese-1 — FINISHED (2026-05-17)~~
 - Creating: music-marquis-yi-bells, music-chinese-twelve-lü, music-sheng-free-reed-chord
 - Updating: cross-edges in music-chinese-pentatonic-cosmology, music-harmonic-series-physics, music-chinese-court-instruments, music-gyuto-monks-multiphonic
