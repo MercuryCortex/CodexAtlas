@@ -30,6 +30,14 @@ refs:
   - "During, Jean. Music and the Islamic World. Aga Khan Trust for Culture, 1991 — Tier-1"
   - "Rasmussen, Anne. Women, the Recited Quran, and Islamic Music in Indonesia. UC Press, 2010 — Tier-1"
   - "Manuel, Peter. Popular Musics of the Non-Western World. Oxford University Press, 1988 — Tier-2"
+
+cross-music-edges:
+  - target: music-islamic-adhan-maqam
+    type: parent-of
+    note: The adhan is the foundational case of Islamic music theology — the human voice as the only permitted sacred instrument, legally mandated to be unaccompanied, yet musically sophisticated in its maqam deployment. Music-islamic-adhan-maqam documents how the five daily calls collectively create a maqam framework across the day; the adhan ritual IS the occasion and theological justification for that sonic architecture. The call to prayer is Islamic sacred music theory made obligatory law.
+  - target: music-sufi-sama
+    type: sibling-of
+    note: Adhan and sama represent the two poles of Islamic sound theology — the permissible (adhan; legalistic mainstream) and the contested (sama; Sufi ecstatic listening). Both treat the voice as the primary instrument, both are structured around specific words with theologically specified effects, and both claim sonic encounter with the divine as their goal. The legal debate between them (is music haram or wajib?) is Islam's most sustained music-theology conversation, and the adhan is the fixed point around which that debate turns.
 ---
 
 ## Adhan — The Call to Prayer and the Founding Politics of the Sacred Voice

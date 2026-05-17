@@ -43,6 +43,14 @@ refs:
   - "Kerenyi, Carl. Eleusis: Archetypal Image of Mother and Daughter. Pantheon, 1967 — Tier-1 — Jungian-mythological analysis; documentation of the Demeter-Persephone theological core"
   - "Cicero, Marcus Tullius. De Legibus II.14.36 — Tier-1 — 'For among the many excellent and indeed divine institutions which your Athens has brought forth and contributed to human life, none, in my opinion, is better than those Mysteries… by which we are educated and softened from the rustic and savage way of life'"
   - "Clinton, Kevin. 'The Epidauria and the Arrival of Asclepius in Athens.' In Ancient Greek Cult Practice from the Epigraphical Evidence, ed. Hägg. Stockholm, 1994 — Tier-1 — Precise documentation of the nine-day ritual sequence"
+
+cross-music-edges:
+  - target: music-orphic-hymns
+    type: sibling-of
+    note: The Orphic Hymns were performed within the Eleusinian initiation framework — Orphic myth (Persephone's descent and return) provided the theological narrative of the Greater Mysteries, and Orphic hymns to Demeter, Persephone, and Dionysus were the sung accompaniment to the ritual sequence. The two nodes are co-constitutive; the Mysteries are the ritual container and the Orphic hymns are the sonic content. Neoplatonic philosophers (Proclus, Iamblichus) treated the Mysteries as the enacted version of Orphic theological cosmology.
+  - target: music-pythagorean-harmony
+    type: sibling-of
+    note: The documented Eleusinian initiates include Pythagoras, Plato, and Aristotle — and the Mysteries' structure (descent into darkness, revelation, ascent to light) maps directly onto Pythagorean cosmology (soul's descent through planetary spheres, initiation as recollection of harmonic truth, ascent through musical knowledge). Plato's cave allegory is almost certainly a sanitized philosophical translation of the Telesterion experience. Pythagorean harmonic theory and Eleusinian initiation share the same cosmological premise — the soul is tuned to cosmic harmony, and correct ritual/philosophical knowledge restores that attunement.
 ---
 
 ## The Eleusinian Mysteries — Ancient Philosophy's Entheogenic Foundation

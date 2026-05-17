@@ -18,6 +18,11 @@ tags:
   - body-sacrifice
   - MASSIVE-WIN
 geo: Great Plains, North America
+
+cross-music-edges:
+  - target: music-native-american-ceremonial
+    type: child-of
+    note: The Sun Dance is the most intensive documented instance of the Plains ceremonial music tradition — the four-day song cycle (hundreds of songs, each prescribed to a specific ceremonial moment), the continuous drum, the vocal styles shifting from dawn songs to night songs, the healing songs for pledgers. Music is not accompaniment in the Sun Dance; it is the structure that the ceremony IS. The Sun Dance songs constitute one of the most complete examples of a living ceremonial music tradition in which the ceremonial occasion and the music are formally inseparable.
 ---
 
 # Sun Dance (Wiwáŋyaŋg Wačhípi)

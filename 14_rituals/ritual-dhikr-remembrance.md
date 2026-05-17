@@ -32,6 +32,14 @@ refs:
   - "Newberg, Andrew and Mark Waldman. Why God Won't Go Away: Brain Science and the Biology of Belief. Ballantine, 2001 — Tier-2"
   - "Austin, James. Zen and the Brain. MIT Press, 1998 — Tier-2"
   - "Rumi, Jalal al-Din. The Masnavi. Trans. Jawid Mojaddedi. Oxford University Press, 2004 — Tier-1"
+
+cross-music-edges:
+  - target: music-sufi-sama
+    type: parent-of
+    note: Dhikr is the foundational practice that Sufi sama grows from — sama is the musical dimension of dhikr, the point where breath-repetition becomes group chanting, becomes whirling, becomes the full qawwali/hadra ceremony. The same theological claim underlies both; sama is dhikr with instruments added and the body's motion as amplifier. Rumi's poetry — "Listen to the reed, how it tells a tale of separation" — is the dhikr practice rendered as literature. The Music node documents the sonic technology; the Ritual node documents the practice context.
+  - target: music-khoisan-trance-healing
+    type: parallel-form
+    note: San Bushmen trance healing (n/om activation through sustained group singing) and Sufi dhikr are structurally identical — both use sustained rhythmic vocal repetition by a group to induce altered states, both interpret the altered state as therapeutic/spiritually operative, both transmit the practice through specialist lineages. The San tradition predates Islam by at minimum 30,000 years, making the parallel a convergent discovery of the same cognitive mechanism; repetition at specific tempos drives neural entrainment toward trance-states in a way that appears to be a pan-human cognitive feature rather than a cultural invention.
 ---
 
 ## Dhikr — Sufi Remembrance and the Cross-Tradition Repetition Technology

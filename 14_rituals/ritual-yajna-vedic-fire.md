@@ -20,6 +20,14 @@ tags:
   - oldest-surviving-ritual
   - agni
   - proto-indo-european
+
+cross-music-edges:
+  - target: music-sama-veda
+    type: parent-of
+    note: The Sama Veda IS the musical dimension of the yajna — the Rigvedic hymns set to melody for performance during the fire sacrifice. Without the Udgatri priest's sung samans, the yajna is incomplete; the sacrifice does not reach the gods. Music is not decoration in yajna; it is the transmission mechanism. The Sama Veda tradition of chanting to Agni is the world's oldest documented professional musical liturgy (c. 1200 BCE), surviving in continuous practice to the present day.
+  - target: music-aum-cosmic-sound
+    type: sibling-of
+    note: Yajna and AUM chanting are the two primary Vedic sonic technologies — yajna channels divine contact through elaborate sacrificial performance; AUM channels it through a single primordial phoneme. Both rest on the same Vedic cosmological claim that correctly performed sound reaches the divine because the cosmos itself was spoken into being. The Mandukya Upanishad — the definitive text on AUM — emerged from the Atharva Veda tradition that runs parallel to the yajna texts; both traditions share the premise that sound-as-cosmic-substance underlies ritual efficacy.
 ---
 
 # Yajna — Vedic Fire Sacrifice

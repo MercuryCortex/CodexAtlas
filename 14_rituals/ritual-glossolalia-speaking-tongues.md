@@ -24,6 +24,14 @@ tags:
   - pentecostal
   - prophecy
 geo: Jerusalem / Corinth / Global
+
+cross-music-edges:
+  - target: music-khoisan-trance-healing
+    type: parallel-form
+    note: Glossolalia and San Bushmen n/om-vocalization are the two clearest documented cases of non-semantic ecstatic vocalization serving as the primary modality of spiritual encounter — both produce utterances whose content is inaccessible to ordinary cognitive processing, both arise in group settings with sustained rhythmic activity as the inducing condition, and both traditions interpret the vocalizations as literally coming from outside the speaker (the Spirit in the Pentecostal account; the !Num force in the San account). This is the non-semantic sound protocol at its most extreme — sound that bypasses language entirely as the spiritual transmission channel.
+  - target: music-siberian-shaman-drum
+    type: parallel-form
+    note: Siberian shamanic trance-vocalization (spirit songs, tutelary-spirit calls, meaningless syllables received in trance) and glossolalia share the same structural feature; they are vocalizations whose validity is precisely that they bypass the speaker's intentional control, thereby authenticating divine/spirit origin. Both traditions require specialist contexts and community witnesses; both treat the non-semantic content as more spiritually potent than semantic speech. The Siberian tradition is documentable to c. 10,000 BCE and represents the deep-time human template for the Pentecostal phenomenon.
 ---
 
 ## Glossolalia — Speaking in Tongues and Ecstatic Spirit-Speech
