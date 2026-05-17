@@ -25,6 +25,12 @@ syncretic-edges:
     type: "structural-parallel"
     source: "Mbiti (1991)"
     notes: "Both are fire/volcanic deities associated with the raw power of the earth's interior. Typological parallel — no transmission."
+  - target: "hephaestus"
+    type: "scholarly-parallel"
+    source: "Mbiti 1991; Eliade 1958 — Greek Hephaestus as volcanic-fire-and-forge god"
+  - target: "pele"
+    type: "scholarly-parallel"
+    source: "Mbiti 1991 — Hawaiian Pele as volcano goddess (gender-inverted parallel); Aganju as Yoruba volcano-and-fire-of-earth god"
 status: "stub"
 refs:
   - title: "Notes sur le culte des Orisha et Vodun à Bahia"
