@@ -77,9 +77,22 @@
     { sign: '\u{1222C}', code: 'ZI',    name: 'ZI',       meaning: 'life / breath / soul',   category: 'Sacred Realm',
       note: 'ZI collapses life, breath, and soul into a single sign — in Sumerian there was no distinction between the animating breath and the life-principle it sustained.',
       inv: 'Hebrew nefesh (soul/breath/life) — the same triple meaning. Greek pneuma (breath/spirit/soul). Latin spiritus (breath/spirit). Across six writing systems: the soul is breath, and breath is life. The sign ZI encodes what every tradition independently discovered.' },
+    // Script Bridge — Ugaritic alphabetic cuneiform
+    { sign: '𐎀', code: 'ALF',   name: 'Ugaritic Aleph', meaning: 'ox — alphabetic cuneiform', category: 'Script Bridge',
+      note: 'Ugaritic ALF means "ox" — the same etymology as Phoenician aleph (𐤀) and Hebrew alef (א). The letter name is borrowed from the Proto-Sinaitic alphabetic tradition, not from Sumerian cuneiform. The writing medium is Mesopotamian (wedge on clay); the alphabetic principle is Semitic. Ugaritic is a scribal hybrid.',
+      inv: 'Mainstream consensus (Pardee 2002; Rollston 2010): Ugaritic is NOT the ancestor of Phoenician. They are siblings — both derived independently from Proto-Sinaitic, using different media. The shared letter names (alf, bet, gam…) prove a common alphabetic source; the different sign forms prove independent graphic invention.' },
+    { sign: '𐎁', code: 'BET',   name: 'Ugaritic Beth',  meaning: 'house — medium vs. message', category: 'Script Bridge',
+      note: 'Ugaritic BET means "house" — the same as Phoenician beth (𐤁), Hebrew bet (ב), Greek beta (β). The letter names follow the identical Proto-Sinaitic acrophonic sequence as the Phoenician chain. Both scripts name their letters in the same order (alf, bet, gam, dal…) because both draw on the same source.',
+      inv: 'MASSIVE WIN: The Ugaritic alphabet order (alf, bet, gam, dal…) is the earliest documented instance of the abgad letter sequence — predating the oldest Phoenician inscriptions. It proves the alphabetic letter-order is pre-Phoenician, inherited from a common Proto-Sinaitic ancestor.' },
+    { sign: '𐎒', code: 'ŠN',    name: 'Ugaritic Shin',  meaning: 'tooth — the samekh question', category: 'Script Bridge',
+      note: 'The most debated "faint connection" in the scholarship. Some researchers see a visual parallel between Ugaritic shin (𐎒) and Phoenician samekh (𐤎). The CREWS Project (Cambridge) examined this carefully: the similarity is probably coincidental. Cuneiform wedge combinations and linear scratches happened to look alike.',
+      inv: 'Pierre Boyes (2018, Cambridge Archaeological Journal) argues Ugaritic was created specifically to negotiate between Mesopotamian and Egyptian/Levantine scribal cultures simultaneously present at Ugarit. It is a politically negotiated hybrid, not an accident.' },
+    { sign: '𐎍', code: 'LAM',   name: 'Ugaritic Lamd',  meaning: 'ox goad — the bilingual archive', category: 'Script Bridge',
+      note: 'At Ugarit (Ras Shamra, Syria, c. 1400–1185 BCE), the same scribal community wrote in both Akkadian logo-syllabic cuneiform AND Ugaritic alphabetic cuneiform. Hundreds of tablets in both scripts were found in the same archive rooms. Two writing systems coexisted in one building.',
+      inv: 'THE KEY FINDING: at Ugarit, cuneiform and the alphabetic tradition KNEW EACH OTHER — and chose to remain separate systems. Mesopotamian cuneiform = administrative/diplomatic prestige. Ugaritic alphabet = local literature and religious texts (the Baal Cycle). When Ugarit was destroyed by the Sea Peoples (c. 1185 BCE), Ugaritic alphabetic cuneiform died with it. The linear Phoenician tradition survived. Contact happened; transmission did not.' },
   ];
 
-  const CATEGORIES = ['Elements', 'Sacred Realm', 'Society', 'Production', 'Numbers'];
+  const CATEGORIES = ['Elements', 'Sacred Realm', 'Society', 'Production', 'Numbers', 'Script Bridge'];
 
   let _expandedSign = null;
 
@@ -110,6 +123,10 @@
         <span class="acv-chain-item">A<br><small>Latin<br>c. 600 BCE</small></span>
       </div>
       <p class="acv-compare-note">Cuneiform never merged with the Phoenician chain. It was replaced by Aramaic script (~500 BCE) and died with the last Babylonian scribes (~100 CE). What you see here has no living descendants.</p>
+      <div class="acv-bridge-note">
+        <span class="acv-bridge-label">ONE EXCEPTION — THE UGARITIC BRIDGE</span>
+        At Ugarit (Ras Shamra, Syria, c. 1400–1185 BCE), scribes created <strong>Ugaritic alphabetic cuneiform</strong> — a 30-sign consonantal alphabet written with the Mesopotamian wedge-on-clay technique but organized on the Semitic alphabetic principle. It is the only known system that combined both traditions. Crucially, the same scribes wrote in both Akkadian cuneiform AND Ugaritic alphabetic cuneiform in the same archive. Two systems coexisted; neither replaced the other. When Ugarit was destroyed by the Sea Peoples (c. 1185 BCE), Ugaritic died with it. Mainstream consensus (Pardee 2002; Rollston 2010; Boyes 2018): Ugaritic is NOT the ancestor of Phoenician — they are <em>siblings</em> from a common Proto-Sinaitic source. Contact happened. Transmission did not. See the <strong>Script Bridge</strong> section below.
+      </div>
     `;
     pane.appendChild(banner);
 

@@ -4419,9 +4419,9 @@ body.view-alphabets main.canvas { padding-bottom: 220px; }
   display: block;
   position: fixed;
   bottom: 1.5rem;
-  left: 56px;
-  width: 50vw;
-  max-width: 740px;
+  right: 1.5rem;
+  width: 52vw;
+  max-width: 820px;
   min-width: 480px;
   height: 210px;
   overflow: hidden;
@@ -4603,6 +4603,27 @@ body.view-alphabets main.canvas { padding-bottom: 220px; }
 .acv-chain-hier { font-family: 'Noto Sans Egyptian Hieroglyphs', serif; color: var(--gold-soft); }
 .acv-arrow { color: var(--text-3); font-size: 1.1rem; }
 .acv-compare-note { font-size: 0.8rem; color: var(--text-3); max-width: 680px; line-height: 1.55; margin: 0; font-style: italic; }
+.acv-bridge-note {
+  margin-top: 0.9rem;
+  padding: 0.75rem 1rem;
+  background: rgba(90,140,212,0.07);
+  border: 1px solid rgba(90,140,212,0.25);
+  border-left: 3px solid rgba(90,140,212,0.55);
+  border-radius: 6px;
+  font-size: 0.82rem;
+  line-height: 1.6;
+  color: var(--text-2);
+  max-width: 820px;
+}
+.acv-bridge-label {
+  display: block;
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  color: rgba(90,140,212,0.85);
+  text-transform: uppercase;
+  margin-bottom: 0.4rem;
+}
 .acv-sign { font-family: 'Noto Sans Cuneiform', 'Segoe UI Historic', monospace !important; font-size: 2.2rem !important; color: var(--text-2) !important; }
 .acv-detail {
   display: flex; align-items: flex-start; gap: 1.25rem;
