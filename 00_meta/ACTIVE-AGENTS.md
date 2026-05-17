@@ -4,6 +4,15 @@ _Hand-maintained. Each agent currently working in the vault appends a claim bloc
 
 ---
 
+## ~~alphabet-devanagari-hangul-1 — complete Devanagari + Hangul glyph modes — 2026-05-17 — FINISHED~~
+- ~~Owned: `src/js/alphabets/glyph-data.js` (+242 lines), `src/js/alphabets/glyph-viewer.js` (12-script filter)~~
+- ~~Devanagari: 46 total entries (full Sanskrit alphabet — vowels, 5 consonant rows, semivowels, sibilants, OM, Anusvara, Visarga)~~
+- ~~Hangul: 24 total entries (14 consonants incl. aspirated set + 10 vowels incl. y-series)~~
+- ~~Fixed: duplicate `];` syntax error from previous session~~
+- ~~Status: FINISHED. Commit e25b50d~~
+
+---
+
 ## ~~pantheon-integrity-goblins-1 — full Pantheon deity audit + classifier hardening — 2026-05-17 — FINISHED~~
 - ~~Owned: `build_data.py` (tradition_family classifier + hard-fail dup-id), `00_meta/canonical-slugs.md`, 8 conflict pairs renamed (4 in `04_persons/` → `-person`, 4 in `09_symbols/` → `-symbol`), 6 cross-folder dupes renamed (`09_symbols/{ark-of-the-covenant,divine-twins,dying-rising-god,garuda,janus,kalachakra}.md` → `-symbol`), 5 dupes deleted (`03_deities/{inanna,ningal,usha,yima-iranian,holy-spirit-paraclete}.md`), 2 deity nodes enriched (`holy-spirit.md` fold from paraclete; `yima-jamshid.md` equivalents expanded), ~25 inbound wikilink redirects across symbol/person/theme files~~
 - ~~3 goblins ran in parallel (read-only): Goblin A (classification audit, 10 misclass + 8 suspicious) · Goblin B (substring landmines, 9 fragile substrings + 4 latent + order-bugs) · Goblin C (structural integrity, 8 silently-lost deities + 5 dupes + 84 dead deity wikilinks + dup-id hard-fail recommendation)~~
