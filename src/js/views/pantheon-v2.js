@@ -999,6 +999,66 @@
       window.CODEX_DEV._positions = positions;
     }
 
+    // ── THUMBNAIL FILL OVERLAY ──────────────────────────────────────────
+    // Each deity that has a `thumbnail` URL gets a circular SVG <image>
+    // positioned at the dot's screen location, sized to the dot's radius.
+    // Hidden by default; toggled via the toolbar "photos" button.
+    // Images use a single <clipPath> with a relative-coord circle that
+    // gets sized per-image via attribute, so we don't pay the cost of
+    // 492 clipPaths in defs.
+    const thumbsG = document.createElementNS(SVG_NS, 'g');
+    thumbsG.setAttribute('class', 'ph2-thumbs-g');
+    thumbsG.style.display = 'none';        // hidden until user enables
+    overlay.appendChild(thumbsG);
+    const thumbEntries = [];               // { el, id, wx, wy, baseR }
+    deities.forEach(d => {
+      if (!d.thumbnail) return;
+      const pos = positions.get(d.id);
+      if (!pos) return;
+      const deg = degree.get(d.id) || 0;
+      const baseR = nodeSizeForDeg(deg);
+      // <clipPath> per image — required to clip to a circle at the
+      // image's location. defs-based shared clip wouldn't follow per-image.
+      const clipId = 'ph2-thumb-clip-' + d.id.replace(/[^a-z0-9_-]/gi, '_');
+      const defs = document.createElementNS(SVG_NS, 'defs');
+      const clip = document.createElementNS(SVG_NS, 'clipPath');
+      clip.setAttribute('id', clipId);
+      const clipCircle = document.createElementNS(SVG_NS, 'circle');
+      clip.appendChild(clipCircle);
+      defs.appendChild(clip);
+      thumbsG.appendChild(defs);
+      const img = document.createElementNS(SVG_NS, 'image');
+      img.setAttribute('href', d.thumbnail);
+      img.setAttributeNS('http://www.w3.org/1999/xlink', 'xlink:href', d.thumbnail);
+      img.setAttribute('clip-path', 'url(#' + clipId + ')');
+      img.setAttribute('preserveAspectRatio', 'xMidYMid slice');
+      thumbsG.appendChild(img);
+      thumbEntries.push({ el: img, clipCircle, id: d.id, wx: pos.x, wy: pos.y, baseR });
+    });
+    function syncThumbsImmediate() {
+      if (thumbsG.style.display === 'none') return;
+      const mult = window.CODEX_DEV?.settings?.nodeSizeMult || 1;
+      for (let i = 0; i < thumbEntries.length; i++) {
+        const T = thumbEntries[i];
+        // Thumbnails follow node movement (drag updates positions Map).
+        const pos = positions.get(T.id) || { x: T.wx, y: T.wy };
+        const screen = sigma.graphToViewport({ x: pos.x, y: pos.y });
+        const r = (T.baseR * mult) * 1.4;  // slightly larger than the dot so the photo reads
+        const d = r * 2;
+        T.el.setAttribute('x', screen.x - r);
+        T.el.setAttribute('y', screen.y - r);
+        T.el.setAttribute('width',  d);
+        T.el.setAttribute('height', d);
+        T.clipCircle.setAttribute('cx', screen.x);
+        T.clipCircle.setAttribute('cy', screen.y);
+        T.clipCircle.setAttribute('r',  r);
+      }
+    }
+    function setThumbsEnabled(on) {
+      thumbsG.style.display = on ? '' : 'none';
+      if (on) syncThumbsImmediate();
+    }
+
     // Build neighbour index for fast hover dim/highlight on the edge overlay.
     const neighborIdx = new Map();
     edges.forEach(e => {
@@ -1399,13 +1459,16 @@
         if (_labelsMode === 'off') show = false;
         else if (_labelsMode === 'hub') show = L.deg >= thresh;
         if (_familyFilter && L.family !== _familyFilter) show = false;
-        L.el.style.display = show ? '' : 'none';
-        if (show) L.el.style.visibility = '';
+        // Set display ONLY when it actually changes — touching the property
+        // when it's already correct just adds DOM churn.
+        const cur = L.el.style.display;
+        const next = show ? '' : 'none';
+        if (cur !== next) L.el.style.display = next;
+        // Do NOT clear .visibility here. The deconflict pass owns visibility,
+        // and clearing it indiscriminately is what caused the flash.
       });
-      // Whenever a label's display state changes, its left/top may be stale
-      // (last sync was before it was hidden). Re-sync positions now so the
-      // next paint shows every newly-revealed label at its correct screen
-      // position — fixes the "labels appear in empty space" glitch.
+      // Sync positions for every newly-revealed label so they appear at the
+      // correct screen position on the very next paint — no stale frames.
       syncNodeLabelsImmediate();
       // Deconflict only after motion has settled (guarded inside).
       scheduleDeconflict();
@@ -1419,19 +1482,24 @@
       window._pantheonV2._scheduleDecon    = scheduleDeconflict;
     }
 
-    // ── PAN/ZOOM LIFECYCLE — clean reveal of labels ─────────────────────
-    // The cleanest invariant: while the camera is moving, the overlay is
-    // hidden. When it stops, we (a) re-evaluate which labels should show
-    // at the new ratio, (b) re-sync every displayed label's screen position
-    // BEFORE the overlay becomes visible again, (c) only then restore
-    // opacity. No label ever paints at a stale position.
+    // ── PAN/ZOOM LIFECYCLE — labels stay visible AND dynamic ──────────────
+    // No more overlay-hide trick. The diagram tracks the camera continuously:
+    //   - syncNodeLabelsImmediate runs on every afterRender → positions follow
+    //     the camera every frame, so labels move smoothly with the dots.
+    //   - updateNodeLabelVisibility runs on a 60 ms debounce during camera
+    //     updates → toggles which labels are eligible based on the current
+    //     ratio (smooth gradient hub threshold). Only TOUCHES `display` when
+    //     it would actually change — no DOM churn.
+    //   - Deconflict is OWNERSHIP of the `visibility` property and is the
+    //     only place that touches it. It NEVER resets visibility before
+    //     measuring — measures off the current state, computes the diff,
+    //     applies only what changed. No flash.
+    //   - During motion, deconflict is debounced 220 ms so it only fires
+    //     once after the user lets go, which is the natural settle moment.
     let _isPanning     = false;
     let _panEndTimer   = null;
-    const _labelsOverlay = nodeLabelOverlay;
+    let _camRefreshT   = null;
     function syncNodeLabelsImmediate() {
-      // Called from inside updateNodeLabelVisibility — needs to run regardless
-      // of _isPanning so newly-revealed labels get correct positions even
-      // mid-motion (they're still invisible because overlay opacity is 0).
       const distMult = window.CODEX_DEV?.settings?.nodeLabelDist || 1;
       for (let i = 0; i < nodeLabelEntries.length; i++) {
         const L = nodeLabelEntries[i];
@@ -1441,30 +1509,21 @@
         L.el.style.top  = (screen.y - L.dy * distMult) + 'px';
       }
     }
-    function setPanning(on) {
-      if (on === _isPanning) return;
-      _isPanning = on;
-      if (on) {
-        _labelsOverlay.style.opacity = '0';
-      } else {
-        // Motion just stopped. Recompute visibility + positions FIRST, then
-        // reveal on the next animation frame so the browser has paint-state
-        // ready before opacity restores. No flash of stale positions.
-        updateNodeLabelVisibility();
-        syncNodeLabelsImmediate();
-        requestAnimationFrame(() => {
-          _labelsOverlay.style.opacity = '';
-          scheduleDeconflict();
-        });
-      }
-    }
-    // Single 'updated' listener — drives both panning state AND label
-    // refresh. Previously two separate listeners fired in parallel and could
-    // race (one hiding labels while the other tried to show them).
     sigma.getCamera().on('updated', () => {
-      setPanning(true);
+      // Mark motion so deconflict gets deferred. No overlay opacity changes.
+      _isPanning = true;
       clearTimeout(_panEndTimer);
-      _panEndTimer = setTimeout(() => setPanning(false), 160);
+      _panEndTimer = setTimeout(() => {
+        _isPanning = false;
+        // Final visibility refresh + deconflict once motion has actually
+        // stopped (200 ms quiet window).
+        updateNodeLabelVisibility();
+        scheduleDeconflict();
+      }, 200);
+      // Re-evaluate threshold mid-motion so labels appear/disappear in
+      // proportion to zoom — but on a slower cadence to avoid thrashing.
+      clearTimeout(_camRefreshT);
+      _camRefreshT = setTimeout(updateNodeLabelVisibility, 80);
     });
 
     function syncNodeLabels() {
@@ -1490,25 +1549,25 @@
       _deconflictTimer = setTimeout(deconflictNodeLabels, 60);
     }
 
-    // Greedy first-fit by degree (production's exact algorithm, app.js:1444).
-    // Reset visibility on candidates → measure bb → sort by deg desc →
-    // walk through and claim screen-space rects; hide labels that conflict.
+    // Greedy first-fit by degree — NO visibility reset.
+    //
+    // Key invariant: visibility:hidden elements STILL report correct
+    // getBoundingClientRect (they occupy layout, they just don't paint).
+    // So we can measure off the current state without ever blinking
+    // labels visible-then-hidden. We compute the target state for every
+    // label and only TOUCH .visibility when it would change.
     function deconflictNodeLabels() {
-      const cands = [];
+      // Snapshot all display-eligible labels with their current bboxes.
+      const items = [];
       for (let i = 0; i < nodeLabelEntries.length; i++) {
         const L = nodeLabelEntries[i];
         if (L.el.style.display === 'none') continue;
-        L.el.style.visibility = '';
-        cands.push(L);
-      }
-      if (!cands.length) return;
-      // Measure AFTER visibility reset
-      const items = [];
-      for (const L of cands) {
         const bb = L.el.getBoundingClientRect();
         if (!bb.width || !bb.height) continue;
         items.push({ L, bb, deg: L.deg });
       }
+      if (!items.length) return;
+      // Greedy first-fit by degree.
       items.sort((a, b) => b.deg - a.deg);
       const claimed = [];
       const PAD = 2;
@@ -1520,8 +1579,11 @@
         for (const c of claimed) {
           if (!(x1 < c.x0 || c.x1 < x0 || y1 < c.y0 || c.y1 < y0)) { conflict = true; break; }
         }
-        if (conflict) it.L.el.style.visibility = 'hidden';
-        else claimed.push({ x0, x1, y0, y1 });
+        const target = conflict ? 'hidden' : '';
+        // Only touch the DOM when the state needs to change. This is the
+        // entire trick — no visibility flash, no churn, no flicker.
+        if (it.L.el.style.visibility !== target) it.L.el.style.visibility = target;
+        if (!conflict) claimed.push({ x0, x1, y0, y1 });
       }
     }
 
@@ -1545,7 +1607,7 @@
     // Initial paint + bind camera sync
     updateNodeLabelVisibility();
     syncNodeLabels();
-    sigma.on('afterRender', syncNodeLabels);
+    sigma.on('afterRender', () => { syncNodeLabels(); syncThumbsImmediate(); });
 
     // ----- TOOLBAR — mode dropdown + labels toggle + ego focus + recenter -----
     const toolbar = document.createElement('div');
@@ -1563,6 +1625,7 @@
       <button class="ph2-btn" id="ph2-labels" title="Toggle label density">labels: ${_labelsMode}</button>
       <button class="ph2-btn${_tierOverlay ? ' ph2-btn-on' : ''}" id="ph2-tier" title="Color nodes by source-integrity tier (T1=gold T2=silver T3=grey T4=crimson)">tier: ${_tierOverlay ? 'on' : 'off'}</button>
       <button class="ph2-btn${_egoFocus ? ' ph2-btn-on' : ''}" id="ph2-ego" title="Show 1-hop neighbourhood of selected node">ego focus</button>
+      <button class="ph2-btn" id="ph2-thumbs" title="Show deity thumbnails as circle fills">photos: off</button>
       <button class="ph2-btn" id="ph2-fit-100" title="Reset zoom to 100% — fit the full diagram with margin">100%</button>
       <button class="ph2-btn" id="ph2-recenter" title="Re-fit camera to all nodes">recenter</button>
     `;
@@ -1594,6 +1657,15 @@
       ev.target.classList.toggle('ph2-btn-on', _egoFocus);
       if (!_egoFocus) _selectedId = null;
       sigma.refresh({ skipIndexation: true });
+    };
+    // Thumbnail-fill toggle — overlays each deity's thumbnail (clipped to a
+    // circle) on top of the dot. Hidden by default; flips state on click.
+    let _thumbsOn = false;
+    toolbar.querySelector('#ph2-thumbs').onclick = (ev) => {
+      _thumbsOn = !_thumbsOn;
+      setThumbsEnabled(_thumbsOn);
+      ev.target.textContent = 'photos: ' + (_thumbsOn ? 'on' : 'off');
+      ev.target.classList.toggle('ph2-btn-on', _thumbsOn);
     };
     toolbar.querySelector('#ph2-fit-100').onclick = () => {
       // True 100% = computeFitRatio() — the SAME math used on initial render.
