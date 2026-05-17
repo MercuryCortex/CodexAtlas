@@ -29,6 +29,12 @@ cross-tradition-edges:
   - target: mathematics-house-of-wisdom
     type: ancestor-of
     note: Babylonian astronomical records (MUL.APIN, EAE) were translated into Arabic at the House of Wisdom; al-Khwarizmi's astronomical tables (zij) explicitly incorporate Babylonian sexagesimal notation. 3,500-year continuous use of base-60.
+  - target: mathematics-egyptian-rhind-papyrus
+    type: parallel
+    note: The Babylonian scribal school tradition (earliest mathematical tablets c. 3200 BCE; Plimpton 322 c. 1800 BCE) and the Egyptian Rhind Papyrus (c. 1650 BCE) are near-contemporaneous and structurally parallel — both are scribal teaching texts, both embed practical mathematics in temple-administrative function, both serve as worked-problem collections for training scribes. The parallel is the earliest documented case of mathematical sophistication as a hallmark of complex civilization in two independent cultures.
+  - target: mathematics-chinese-nine-chapters
+    type: parallel
+    note: The Babylonian scribal tradition and the Chinese Jiuzhang Suanshu both apply mathematics to state administration — surveying, taxation, grain management, construction — without any Pythagorean/Euclidean emphasis on proof and abstraction. Both produce sophisticated numerical procedures embedded in sacred-political administrative order. Both treat mathematics as a tool of governance rather than philosophy.
 ---
 
 Babylonian temple mathematics is the oldest documented tradition of systematic quantitative reasoning in human history, born inside the scribal schools (**edubba**, "tablet houses") attached to Mesopotamian temples between c. 3000–500 BCE. Its emergence is inseparable from religious and administrative function: temple economies required precise land measurement, grain distribution, and astronomical calendars for festival timing — and the mathematics developed to serve those needs.
