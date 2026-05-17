@@ -261,6 +261,8 @@ TRADITION_FAMILY_ORDER = [
     "Neoplatonist",
     "Manichaean",
     "Mandaean",
+    # Pre-Islamic Arabian (distinct from Islamic — pagan Arabian pantheon condemned in Quran)
+    "Pre-Islamic-Arabian",
     # Islamic
     "Islamic",
     # New World / Pacific (geographic cluster)
@@ -301,6 +303,7 @@ FAMILY_COLORS = {
     "Neoplatonist":     "#5a8a8a",
     "Manichaean":       "#7a4a9a",
     "Mandaean":         "#3a6a8a",
+    "Pre-Islamic-Arabian": "#b87a40",  # desert amber
     "Islamic":          "#3a8a6a",
     "Mesoamerican":     "#9a4a3a",
     "Andean":           "#a07050",
@@ -333,7 +336,7 @@ def tradition_family(t: str) -> str:
     # their ORIGIN family, not the latest tradition mentioned.
     if "gnostic" in s or "sethian" in s or "valentinian" in s or "thomasine" in s or "cathar" in s or "bogomil" in s:
         return "Gnostic"
-    if "mandae" in s:
+    if not s.startswith("christianit") and "mandae" in s:
         return "Mandaean"
     if "manichae" in s:
         return "Manichaean"
@@ -343,15 +346,15 @@ def tradition_family(t: str) -> str:
         return "Hermetic"
     if s.startswith("roman") or "italic religion" in s:
         return "Roman"
-    if "mystery" in s or "mithra" in s or "orphic" in s or "eleusin" in s or "phrygian" in s or "bacchic" in s:
+    if not s.startswith("greek") and ("mystery" in s or "mithra" in s or "orphic" in s or "eleusin" in s or "phrygian" in s or "bacchic" in s):
         return "Mystery"
     # --- Ancient origin traditions checked BEFORE Christian so that strings like
     #     "Pre-Christian Slavic", "Zoroastrian → Christian demonology", "Celtic
     #     paganism → Irish Christianity", or "Hebrew Bible → medieval Christian"
     #     all land in their origin family, not in Christian. ---
-    if "zoroastr" in s or "avesta" in s or "mazdean" in s:
+    if not (s.startswith("vedic") or s.startswith("hindu")) and ("zoroastr" in s or "avesta" in s or "mazdean" in s):
         return "Zoroastrian"
-    if "canaan" in s or "ugarit" in s or "philistine" in s or "phoenic" in s or "northwest semitic" in s:
+    if not s.startswith("greek") and ("canaan" in s or "ugarit" in s or "philistine" in s or "phoenic" in s or "northwest semitic" in s):
         return "Canaanite"
     if not s.startswith("christianit") and ("israel" in s or "hebrew" in s or "jewish" in s or "judaism" in s or "second temple" in s or "qumran" in s or "essene" in s):
         return "Israelite"
@@ -361,7 +364,11 @@ def tradition_family(t: str) -> str:
         return "Mesopotamian"
     if "egyptian" in s or "amarna" in s or "ptolema" in s or "kemetic" in s:
         return "Egyptian"
-    if "yoruba" in s or "ifa" in s or "vodun" in s or "vodou" in s or "santeria" in s or "candomble" in s or "akan" in s or "bantu" in s or "ethiopian" in s or "aksumite" in s or "sabaean" in s or "kebra" in s or "african" in s or "san " in s or "maasai" in s or "dahomey" in s:
+    # Pre-Islamic Arabian — pagan Arabian pantheon (al-Uzza, Allat, Manat, Hubal, Nasr, Wadd)
+    # Must come BEFORE Islamic to prevent "pre-islamic" from matching "islam" substring
+    if "pre-islamic" in s or "arabian polytheism" in s or "south arabian religion" in s or "minaean" in s or "nabataean" in s:
+        return "Pre-Islamic-Arabian"
+    if "yoruba" in s or "ifa" in s or "vodun" in s or "vodou" in s or "santeria" in s or "candomble" in s or "akan" in s or "bantu" in s or "ethiopian" in s or "aksumite" in s or "kebra" in s or "african" in s or "san " in s or "maasai" in s or "dahomey" in s:
         return "African"
     if "celtic" in s or "druid" in s or "gaelic" in s or "irish" in s or "welsh" in s or "gaulish" in s or "breton" in s or "lusitanian" in s or "iberian" in s or "gallaecian" in s:
         return "Celtic"
@@ -385,14 +392,20 @@ def tradition_family(t: str) -> str:
         return "Christian"
     if "rabbinic" in s or "mishnah" in s or "talmud" in s or "midrash" in s or "kabbal" in s or "hasidic" in s or "hasidism" in s or "merkavah" in s or "hekhalot" in s or "sabbatean" in s or "frankist" in s:
         return "Rabbinic"
-    if "islam" in s or "qur" in s or "sufi" in s or "shia" in s or "shi'a" in s or "ismaili" in s or "alevi" in s or "druze" in s or "yazidi" in s or "muslim" in s:
+    # "pre-islamic" already returned above; guard here for any remaining overlap
+    # "shia" as bare word only — prevents "tsimshian" (Native-American) from matching
+    if "pre-islamic" not in s and (
+        "islam" in s or "qur" in s or "sufi" in s or _re.search(r'\bshia\b', s) or "shi'a" in s
+        or "ismaili" in s or "alevi" in s or "druze" in s or "yazidi" in s or "muslim" in s
+    ):
         return "Islamic"
     if "shinto" in s or "kojiki" in s or "nihon shoki" in s or "nihongi" in s:
         return "Shinto"
-    if "buddh" in s or "theravada" in s or "mahayana" in s or "zen" in s or "chan" in s or "vajra" in s or "tantric buddh" in s or "pure land" in s or "dzogchen" in s or "bon" in s:
-        return "Buddhist"
+    # Vedic checked BEFORE Buddhist — origin tradition wins for shared deities (Garuda, Kubera, Yama, Mahakala)
     if "sikh" in s or "vedic" in s or "hindu" in s or "upanish" in s or "brahman" in s or "tantric" in s or "vaishnav" in s or "shakta" in s or "shaiv" in s or "bhakti" in s or "vedanta" in s or "jain" in s or "hindutva" in s:
         return "Vedic"
+    if "buddh" in s or "theravada" in s or "mahayana" in s or "zen" in s or "chan" in s or "vajra" in s or "tantric buddh" in s or "pure land" in s or "dzogchen" in s or "bon" in s:
+        return "Buddhist"
     if "zoroastr" in s or "avesta" in s or "iranian" in s or "ahura" in s:
         return "Zoroastrian"
     if "armenian" in s and "apostolic" not in s:
