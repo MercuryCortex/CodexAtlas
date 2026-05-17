@@ -107,6 +107,20 @@ When the choice is between adopting a library and building it ourselves:
 
 When building TypeScript engine code today, design the contracts so a future Rust+WASM port (via the portable core) is a mechanical swap, not a rewrite. Type definitions in `src/js/engine/types.js` mirror the portable core's Rust structs by intention. The Renderer API is small and well-defined. The view layer never reaches past the engine contract into WebGPU directly. This is non-negotiable for engine-layer code.
 
+### 5. Color, stroke, and visual style are a single locked system.
+
+Palette / family colors / bucket hex / dim levels / hot alphas / stroke widths / curve strengths / background atmosphere / type-glyph tints — these are not independent knobs. Tweaking one in isolation creates visual debt; the system needs to move as a coordinated whole.
+
+**Rules:**
+
+- **No per-element ad-hoc color tweaks during functional work.** When you ship a feature (a renderer, a view, an overlay), use whatever palette currently exists. Do *not* "lower this opacity" or "brighten that bucket" mid-batch. That's how the visual surface accumulates clashes.
+- **When the operator (John) flags visual debt** ("this is jarring", "the colors fight each other"), do **not** offer micro-tweaks. Record the observation. Continue functional work.
+- **When visual debt accumulates enough that further functional work is wasted polish**, propose a dedicated **color / style / dogma batch**. That batch focuses 100 % on the visual system: palette breakdown, bucket-hex audit, family-color audit, dim/hot ratio audit, stroke width audit, atmosphere audit. NO chart code touched in that batch. Come back to chart code only after the system is locked.
+- **The dev panel** (when built) is the operator's interface to the locked system. ALL visual parameters live there: per-bucket idle/hot alpha + width + curve, family color overrides, dim amount, hot-width multiplier, AA falloff, node tier radii, edge segment count, atmosphere strength, camera ratios, label thresholds + sizes. Building it is part of the color/style/dogma batch, not a separate concern.
+- **Until the dogma batch happens**, the current state is "we know it's visually broken; we're recording the debt; we'll fix it as a unified pass." Don't apologize for it mid-feature; just keep building functional surface until enough exists to justify the pass.
+
+**Recorded debt as of 2026-05-17 evening:** Forge wheel at zoom-in shows ~2,000 Fusion bucket edges at idle 0.30 amber, dominating the visual into orange spaghetti that obscures family clusters. Headline-bucket idle-paints-in-bucket-hex rule is part of the question. Whole atlas-app color system has never been audited. Both will be addressed in the dedicated dogma batch.
+
 ---
 
 ## Critical files (quick links)

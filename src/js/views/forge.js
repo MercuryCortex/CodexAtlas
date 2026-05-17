@@ -113,7 +113,7 @@
     status.innerHTML = [
       '<span class="forge-status-tag">FORGE</span>',
       '<span class="forge-status-sep">·</span>',
-      '<span class="forge-status-k">phase</span><span class="forge-status-v">3 · camera + hover</span>',
+      '<span class="forge-status-k">phase</span><span class="forge-status-v">4b · lock + labels</span>',
       '<span class="forge-status-sep">·</span>',
       '<span class="forge-status-k">device</span>',
       '<span class="forge-status-v forge-status-pending" id="forge-status-device">acquiring…</span>',
@@ -123,6 +123,8 @@
       '<span class="forge-status-k">edges</span><span class="forge-status-v">' + edgePacked.instanceCount + '</span>',
       '<span class="forge-status-sep">·</span>',
       '<span class="forge-status-k">hover</span><span class="forge-status-v" id="forge-status-hover">—</span>',
+      '<span class="forge-status-sep">·</span>',
+      '<span class="forge-status-k">lock</span><span class="forge-status-v" id="forge-status-lock">—</span>',
       '<span class="forge-status-sep">·</span>',
       '<span class="forge-status-k">frame</span><span class="forge-status-v" id="forge-status-frame">—</span>',
     ].join('');
@@ -136,6 +138,17 @@
     canvas.className = 'forge-canvas';
     stage.appendChild(canvas);
 
+    // ── Labels overlay ──────────────────────────────────
+    // DOM <div> per node, absolutely positioned over the canvas.
+    // Pointer-events: none so it never intercepts hover. Hidden
+    // by default; revealed for nodes in the current focused set
+    // (hover or lock + their 1-hop neighbours). Phase 4c will
+    // add an idle-time hub-label pass with deconfliction; for
+    // now, labels only paint on focus to stay readable.
+    const labelsOverlay = document.createElement('div');
+    labelsOverlay.className = 'forge-labels-overlay';
+    stage.appendChild(labelsOverlay);
+
     // ── Camera ──────────────────────────────────────────
     const camera = cammod.create({ centerX: 0, centerY: 0, scale: 1 });
 
@@ -146,6 +159,7 @@
       lastSize:    { w: 0, h: 0 },
       destroyed:   false,
       hoverId:     null,
+      lockedSet:   new Set(),    // Phase 4b: sticky focus from clickNode
       focusedSet:  null,
       nodeStates:  new Float32Array(nodePacked.instanceCount),
       edgeStates:  new Float32Array(edgePacked.instanceCount),
@@ -154,6 +168,9 @@
       panLastX:    0,
       panLastY:    0,
       panMoved:    false,
+      // Label DOM nodes — one per renderable deity. Created lazily
+      // (only when first shown) to avoid 663 hidden divs at mount.
+      labelEls:    new Map(),     // id → HTMLDivElement
     };
 
     rootEl._engine = {
@@ -174,12 +191,17 @@
     // hover state from outside the closure. Safe to leave on in
     // dev; gated to dev once we add user gating.
     window._forgeDebug = {
-      hitTestAt: (x, y) => hitTestAt(x, y),
+      hitTestAt:    (x, y) => hitTestAt(x, y),
       cameraState:  () => camera.state,
       lastSize:     () => ({ w: local.lastSize.w, h: local.lastSize.h }),
       hoverId:      () => local.hoverId,
+      lockedIds:    () => Array.from(local.lockedSet),
+      visibleLabels:() => Array.from(local.labelEls.entries())
+                            .filter(([, el]) => el.style.display !== 'none')
+                            .map(([id]) => id),
       hitNodesAt:   (i) => hitNodes[i],
       hitNodeCount: () => hitNodes.length,
+      toggleLock:   (id) => toggleLock(id),
     };
 
     // ── Bootstrap renderer + first frame ────────────────
@@ -309,6 +331,83 @@
       const dt = performance.now() - t0;
       const fEl = document.getElementById('forge-status-frame');
       if (fEl) fEl.textContent = dt.toFixed(1) + ' ms';
+      // Labels are CSS-positioned over the canvas, so any camera
+      // change also needs them re-positioned. Cheap when small;
+      // skip entirely when no focus is set.
+      syncLabelPositions();
+    }
+
+    // ── Labels ─────────────────────────────────────────
+    // Only paint labels for nodes in the focused set (hover or
+    // lock + their 1-hop neighbours). Phase 4c will add an
+    // idle-time hub-label pass with deconfliction.
+    //
+    // syncLabels() — call when the focused set CHANGES. Creates
+    //   label divs lazily, shows/hides them, sets text, then
+    //   positions them.
+    // syncLabelPositions() — call every camera change. Cheap:
+    //   only iterates currently-visible labels.
+    function ensureLabelEl(id) {
+      let el = local.labelEls.get(id);
+      if (el) return el;
+      el = document.createElement('div');
+      el.className = 'forge-label';
+      const node = nodeById(id);
+      el.textContent = (node && node.title) || id;
+      labelsOverlay.appendChild(el);
+      local.labelEls.set(id, el);
+      return el;
+    }
+    function syncLabels() {
+      const focus = local.focusedSet;
+      // Hide all existing labels first, then reveal the ones
+      // that are in the focused set. Cheap at our scale.
+      for (const el of local.labelEls.values()) {
+        el.style.display = 'none';
+      }
+      if (!focus || focus.size === 0) return;
+      // Cap how many labels we show on a really large lock — at
+      // ~150+ visible labels the overlay becomes noise. Phase 4c
+      // can add proper deconfliction; for now, cap and order by
+      // tier (which is implicit in idIndex order via degree sort).
+      const MAX_LABELS = 80;
+      let shown = 0;
+      for (const id of focus) {
+        if (shown >= MAX_LABELS) break;
+        const el = ensureLabelEl(id);
+        // Explicit 'block' — clearing to '' would fall back to
+        // the CSS rule which sets display:none as the default.
+        el.style.display = 'block';
+        shown++;
+      }
+      syncLabelPositions();
+    }
+    function syncLabelPositions() {
+      const focus = local.focusedSet;
+      if (!focus || focus.size === 0) return;
+      const vp = local.lastSize;
+      if (!vp.w || !vp.h) return;
+      // Position each currently-visible label above its node's
+      // screen position. Use the camera (NOT the renderer's flip)
+      // — labels need the actual canvas pixel, which already
+      // accounts for the renderer's Y-flip via the camera's
+      // straight world→screen.
+      for (let i = 0; i < hitNodes.length; i++) {
+        const n = hitNodes[i];
+        if (!focus.has(n.id)) continue;
+        const el = local.labelEls.get(n.id);
+        if (!el || el.style.display === 'none') continue;
+        const s = camera.worldToScreen(n.x, n.y, vp);
+        // Label sits just above the disk. Negate-Y in render
+        // means world.y POSITIVE maps to canvas.y SMALL (top of
+        // canvas), so the disk's "top edge" on screen is at
+        // canvas.y = s.y - n.r * scale. Place label above that
+        // with a small gap.
+        const px = s.x;
+        const py = s.y - n.r * camera.state.scale - 6;
+        el.style.left = px + 'px';
+        el.style.top  = py + 'px';
+      }
     }
 
     // ── Hover hit-test ──────────────────────────────────
@@ -338,33 +437,59 @@
       return best;
     }
 
-    // Update hoverId + recompute focused-state buffers, then
-    // re-draw. No-op when the hover hasn't actually changed.
-    function setHoverId(newId) {
-      if (newId === local.hoverId) return;
-      local.hoverId    = newId;
-      local.focusedSet = graph.focusedSetFor(newId, null, adjacency);
+    // Look up a node by id. NODES_BY_ID is a plain object in
+    // this codebase (not a Map). Defensive handling so a future
+    // Map refactor doesn't break callers.
+    function nodeById(id) {
+      const idx = window.NODES_BY_ID;
+      if (!idx) return null;
+      if (typeof idx.get === 'function') return idx.get(id);
+      return idx[id];
+    }
+
+    // Re-compute the focused set from current hover + lock state,
+    // re-pack per-instance state buffers, update labels, redraw.
+    // Called whenever hover changes, lock changes, or camera moves.
+    function recomputeFocus() {
+      local.focusedSet = graph.focusedSetFor(local.hoverId, local.lockedSet, adjacency);
       local.nodeStates = graph.computeNodeStates(nodePacked.idIndex, local.focusedSet);
       local.edgeStates = graph.computeEdgeStates(edges, local.focusedSet);
+      syncLabels();
+      drawFrame();
+    }
+
+    // Update hoverId, then refresh focus. No-op when the hover
+    // hasn't actually changed.
+    function setHoverId(newId) {
+      if (newId === local.hoverId) return;
+      local.hoverId = newId;
       const hEl = document.getElementById('forge-status-hover');
       if (hEl) {
         if (newId) {
-          // Look up the node title for display. window.NODES_BY_ID
-          // is a plain object in this codebase (not a Map). Handle
-          // both shapes defensively so a future refactor that swaps
-          // it for a Map doesn't break the hover label.
-          let node = null;
-          const idx = window.NODES_BY_ID;
-          if (idx) {
-            if (typeof idx.get === 'function') node = idx.get(newId);
-            else                               node = idx[newId];
-          }
+          const node = nodeById(newId);
           hEl.textContent = (node && node.title) || newId;
         } else {
           hEl.textContent = '—';
         }
       }
-      drawFrame();
+      recomputeFocus();
+    }
+
+    // Toggle the locked state for a node. Click on an empty
+    // canvas (no node hit) clears the entire lock — the standard
+    // "click to dismiss" gesture.
+    function toggleLock(id) {
+      if (id == null) {
+        if (local.lockedSet.size === 0) return;
+        local.lockedSet.clear();
+      } else if (local.lockedSet.has(id)) {
+        local.lockedSet.delete(id);
+      } else {
+        local.lockedSet.add(id);
+      }
+      const lEl = document.getElementById('forge-status-lock');
+      if (lEl) lEl.textContent = local.lockedSet.size > 0 ? String(local.lockedSet.size) : '—';
+      recomputeFocus();
     }
 
     // ── Interaction handlers ────────────────────────────
@@ -418,6 +543,16 @@
         if (!local.panActive) return;
         try { canvas.releasePointerCapture(ev.pointerId); } catch (e) { /* ignore */ }
         local.panActive = false;
+        // Click = pointerup without intermediate move. If the pointer
+        // didn't move during the drag, treat it as a click and toggle
+        // the lock at the cursor's hit. Click on empty space clears
+        // the entire lock — natural "dismiss" gesture.
+        if (!local.panMoved) {
+          const cssX = ev.clientX - canvasRect.left;
+          const cssY = ev.clientY - canvasRect.top;
+          const hit = hitTestAt(cssX, cssY);
+          toggleLock(hit);   // hit === null → clear all
+        }
       };
       canvas.addEventListener('pointerup',     endPan);
       canvas.addEventListener('pointercancel', endPan);

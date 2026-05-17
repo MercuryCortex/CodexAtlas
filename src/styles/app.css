@@ -5589,3 +5589,38 @@ body.nav-collapsed .item.forge-nav::after { display: none; }
 }
 .forge-canvas:active { cursor: grabbing; }
 
+/* Phase 4b — Labels overlay.
+   DOM <div>s positioned over the canvas. Pointer-events: none so
+   the overlay never intercepts cursor → canvas hit-testing. Label
+   visibility is JS-driven (focused nodes only); positions are
+   sync'd to GPU positions via camera.worldToScreen each frame. */
+.forge-labels-overlay {
+  position: absolute; inset: 0;
+  pointer-events: none;
+  /* Above the canvas, below any future toolbar/status chrome. */
+  z-index: 5;
+}
+.forge-label {
+  position: absolute;
+  /* (left, top) are set inline; translate centres the text on
+     the anchor point + lifts it just above the disk top edge. */
+  transform: translate(-50%, -100%);
+  font-family: var(--sans);
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.01em;
+  color: var(--text-0);
+  white-space: nowrap;
+  /* Halo so labels read over the wire constellation. The 4-corner
+     text-shadow trick mimics paint-order:stroke without requiring
+     SVG. Keeps anti-aliasing native. */
+  text-shadow:
+    0 0 3px var(--bg-0),
+     1px  1px 0 var(--bg-0),
+    -1px  1px 0 var(--bg-0),
+     1px -1px 0 var(--bg-0),
+    -1px -1px 0 var(--bg-0);
+  /* Hidden by default; JS toggles display when in focused set. */
+  display: none;
+}
+

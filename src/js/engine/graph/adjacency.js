@@ -51,7 +51,14 @@
       if (nbrs) for (const n of nbrs) out.add(n);
     }
     if (hasLock) {
-      for (const id of lockedSet) out.add(id);
+      // Locked nodes also get 1-hop expansion so a click-to-pin
+      // preserves the network when the cursor moves away. Same
+      // visual rule as hover, just sticky.
+      for (const id of lockedSet) {
+        out.add(id);
+        const nbrs = adjacency.get(id);
+        if (nbrs) for (const n of nbrs) out.add(n);
+      }
     }
     return out;
   }
