@@ -9,11 +9,11 @@
 // Each instance is 12 floats (48 bytes):
 //   [0,1]   sourceX, sourceY        — world-space endpoint
 //   [2,3]   targetX, targetY        — world-space endpoint
-//   [4..7]  colorR, G, B, A         — bucket color + idle opacity
-//   [8]     width                   — world-space stroke width
+//   [4..7]  colorR, G, B, A         — idle color + idle opacity
+//   [8]     idleWidth               — world-space stroke width at idle
 //   [9]     curveStrength           — 0..1 fraction pull toward (0,0)
-//   [10]    bucketIndex             — 0..6 for the 7 buckets (hover ID later)
-//   [11]    _pad                    — alignment
+//   [10]    bucketIndex             — 0..6 for the 7 buckets (hot-color lookup)
+//   [11]    hotWidth                — world-space stroke width when in focus
 //
 // Pure function. No DOM, no global state.
 // ============================================================
@@ -126,19 +126,23 @@
   // ── Pack instances ────────────────────────────────────
   // @param edges      Array of { source, target, type }.
   // @param positions  Map<id, { x, y }>  (world space)
-  // @param opts       Optional overrides:
-  //                     widths:  { transmission: 0.34, ... }
-  //                     idleOps: { transmission: 0.10, ... }
-  //                     curves:  { transmission: 0.35, ... }
+  // @param opts       Optional overrides (all keyed by bucket name):
+  //                     idleWidths:  { transmission: 0.34, ... }  (alias: widths)
+  //                     hotWidths:   { transmission: 0.82, ... }  per-bucket focus stroke
+  //                     idleOps:     { transmission: 0.10, ... }
+  //                     idleColors:  { transmission: '#3a4a66', ... }  hex overrides
+  //                     curves:      { transmission: 0.35, ... }
   // @returns {
   //   data:          Float32Array, length = N * 12
   //   instanceCount: number
   //   bucketCounts:  { transmission: n, parallel: n, ... }  diagnostic
   // }
   function packEdges(edges, positions, opts) {
-    const wOver = (opts && opts.widths)  || null;
-    const oOver = (opts && opts.idleOps) || null;
-    const cOver = (opts && opts.curves)  || null;
+    const wOver  = (opts && (opts.idleWidths || opts.widths)) || null;
+    const hwOver = (opts && opts.hotWidths)  || null;
+    const oOver  = (opts && opts.idleOps)    || null;
+    const cOver  = (opts && opts.curves)     || null;
+    const colOver = (opts && opts.idleColors) || null;
     const FLOATS_PER_INSTANCE = 12;
 
     // First pass: collect renderable edges (both endpoints
@@ -161,14 +165,24 @@
       const buc = bucketFor(e.type);
       bucketCounts[buc] = (bucketCounts[buc] || 0) + 1;
 
-      // Color: headline buckets paint their hue at idle;
-      // everything else paints slate at idle (the atmosphere
-      // layer that becomes story on hover).
-      const isHeadline = HEADLINE_BUCKETS.has(buc);
-      const rgb = isHeadline ? hexToRgb(bucketColor(buc)) : SLATE;
-      const alpha = (oOver && typeof oOver[buc] === 'number') ? oOver[buc] : bucketIdleOp(buc);
-      const widthVal = (wOver && typeof wOver[buc] === 'number') ? wOver[buc] : bucketWidth(buc);
-      const curveVal = (cOver && typeof cOver[buc] === 'number') ? cOver[buc] : (CURVE_STRENGTH[buc] || 0.3);
+      // Idle color: explicit override > headline-bucket hue > slate.
+      // The dev panel's per-bucket idle color picker writes into
+      // `colOver`; without an override, headline buckets paint
+      // their hue and the rest paint slate atmosphere.
+      let rgb;
+      if (colOver && typeof colOver[buc] === 'string') {
+        rgb = hexToRgb(colOver[buc]);
+      } else if (HEADLINE_BUCKETS.has(buc)) {
+        rgb = hexToRgb(bucketColor(buc));
+      } else {
+        rgb = SLATE;
+      }
+      const alpha    = (oOver  && typeof oOver[buc]  === 'number') ? oOver[buc]  : bucketIdleOp(buc);
+      const idleW    = (wOver  && typeof wOver[buc]  === 'number') ? wOver[buc]  : bucketWidth(buc);
+      const curveVal = (cOver  && typeof cOver[buc]  === 'number') ? cOver[buc]  : (CURVE_STRENGTH[buc] || 0.3);
+      // Hot width: explicit override, or 2.4× the idle stroke
+      // (matches the pre-Phase-6 global `hot_width_mult`).
+      const hotW     = (hwOver && typeof hwOver[buc] === 'number') ? hwOver[buc] : idleW * 2.4;
 
       const off = i * FLOATS_PER_INSTANCE;
       data[off +  0] = sp.x;
@@ -179,10 +193,10 @@
       data[off +  5] = rgb[1];
       data[off +  6] = rgb[2];
       data[off +  7] = alpha;
-      data[off +  8] = widthVal * WIDTH_SCALE;
+      data[off +  8] = idleW * WIDTH_SCALE;
       data[off +  9] = curveVal;
       data[off + 10] = BUCKET_INDEX[buc];
-      data[off + 11] = 0;  // pad
+      data[off + 11] = hotW * WIDTH_SCALE;
     }
 
     return { data, instanceCount: renderable.length, bucketCounts };

@@ -77,7 +77,14 @@
   // @param nodes      Array of node records.
   // @param positions  Map<id, { x, y }>  (world space)
   // @param degree     Map<id, number>
-  // @param opts       { tierRadii: [r0, r1, r2, r3] } (optional override)
+  // @param opts       {
+  //                     tierRadii:   [r0, r1, r2, r3]  optional override
+  //                     camScale:    number            current camera scale
+  //                                                    (required if min/max set)
+  //                     minScreenPx: number            don't shrink below this
+  //                                                    apparent on-screen radius
+  //                     maxScreenPx: number            don't grow above this
+  //                   }
   // @returns {
   //   data:           Float32Array, length = nodes.length * 8
   //   instanceCount:  number
@@ -85,6 +92,10 @@
   // }
   function packNodes(nodes, positions, degree, opts) {
     const tiers = (opts && Array.isArray(opts.tierRadii)) ? opts.tierRadii : TIER_RADIUS;
+    const camScale = (opts && typeof opts.camScale    === 'number') ? opts.camScale : null;
+    const minPx    = (opts && typeof opts.minScreenPx === 'number') ? opts.minScreenPx : null;
+    const maxPx    = (opts && typeof opts.maxScreenPx === 'number') ? opts.maxScreenPx : null;
+    const clampActive = camScale && (minPx !== null || maxPx !== null);
     const tierFor = buildTierClassifier(nodes, degree);
 
     // Filter to nodes that actually have a position — defensive,
@@ -106,7 +117,19 @@
       const n   = renderable[i];
       const pos = positions.get(n.id);
       const deg = degree.get(n.id) || 0;
-      const r   = tiers[tierFor(deg)];
+      let   r   = tiers[tierFor(deg)];
+      // Phase 6: clamp the apparent on-screen radius. At low
+      // zoom-out we widen the world radius so dots stay legible;
+      // at deep zoom-in we shrink it so a single node doesn't
+      // bloat the viewport. This is the same piecewise idea the
+      // Atlas Map v3 uses.
+      if (clampActive) {
+        const screenR = r * camScale;
+        let targetScreen = screenR;
+        if (minPx !== null && targetScreen < minPx) targetScreen = minPx;
+        if (maxPx !== null && targetScreen > maxPx) targetScreen = maxPx;
+        r = targetScreen / camScale;
+      }
       const col = parseColor(n.family_color || n.tradition_color, fallbackColor);
 
       const off = i * FLOATS_PER_INSTANCE;

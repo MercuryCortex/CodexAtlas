@@ -38,50 +38,107 @@
   // Default values for every dev-panel parameter. setParam(id, v)
   // writes into local.params and dispatches the right rebake.
   // Keys MUST match the SECTIONS catalog in dev-panel-forge.js.
+  //
+  // Phase 6: organised by visual state.
+  //   IDLE state    — what you see when nothing is hovered or locked.
+  //   ACTIVE state  — what lights up when something is in focus.
+  //   SHAPE         — state-independent geometry (curvature).
+  //   NODES         — disk sizing + zoom-aware clamps.
+  //   GLYPHS        — per-disk symbol look.
+  //   LABELS        — idle-tier visibility hierarchy.
+  //   PALETTE       — global colours (background / label text + halo).
+  //   CAMERA        — pan inertia + zoom + fly-to timing.
   const PARAM_DEFAULTS = Object.freeze({
-    // What you see at rest
-    edge_idle_transmission: 0.10,
-    edge_idle_parallel:     0.12,
-    edge_idle_association:  0.08,
-    edge_idle_kinship:      0.14,
-    edge_idle_attestation:  0.10,
-    edge_idle_polemic:      0.25,
-    edge_idle_fusion:       0.30,
-    atmosphere:             0.025,
-    // Focus
-    dim_amount:             0.85,
-    hot_width_mult:         2.4,
-    edge_hot_transmission:  0.95,
-    edge_hot_parallel:      0.85,
-    edge_hot_kinship:       0.85,
-    edge_hot_attestation:   0.90,
-    edge_hot_polemic:       0.95,
-    edge_hot_fusion:        0.95,
-    // Nodes
-    node_radius_tier1: 16,
-    node_radius_tier2: 12,
-    node_radius_tier3:  9,
-    node_radius_tier4:  7,
-    // Glyphs
+    // ── WIRES · IDLE STATE (per bucket) ──
+    idle_color_transmission: '#3a4a66',  // slate atmospheric
+    idle_color_parallel:     '#3a4a66',
+    idle_color_association:  '#3a4a66',
+    idle_color_kinship:      '#3a4a66',
+    idle_color_attestation:  '#3a4a66',
+    idle_color_polemic:      '#A83E4A',  // headline bucket idles in its hue
+    idle_color_fusion:       '#C4783A',
+    idle_opacity_transmission: 0.10,
+    idle_opacity_parallel:     0.12,
+    idle_opacity_association:  0.08,
+    idle_opacity_kinship:      0.14,
+    idle_opacity_attestation:  0.10,
+    idle_opacity_polemic:      0.25,
+    idle_opacity_fusion:       0.30,
+    idle_stroke_transmission:  0.34,
+    idle_stroke_parallel:      0.30,
+    idle_stroke_association:   0.22,
+    idle_stroke_kinship:       0.32,
+    idle_stroke_attestation:   0.30,
+    idle_stroke_polemic:       0.40,
+    idle_stroke_fusion:        0.36,
+
+    // ── WIRES · ACTIVE STATE (per bucket) ──
+    active_color_transmission: '#C9743A',
+    active_color_parallel:     '#5A9A8F',
+    active_color_association:  '#4A5AA4',
+    active_color_kinship:      '#C9A5D4',
+    active_color_attestation:  '#D4A55A',
+    active_color_polemic:      '#A83E4A',
+    active_color_fusion:       '#C4783A',
+    active_opacity_transmission: 0.95,
+    active_opacity_parallel:     0.85,
+    active_opacity_association:  0.55,
+    active_opacity_kinship:      0.85,
+    active_opacity_attestation:  0.90,
+    active_opacity_polemic:      0.95,
+    active_opacity_fusion:       0.95,
+    active_stroke_transmission:  0.82,   // pre-Phase-6: 2.4× idle
+    active_stroke_parallel:      0.72,
+    active_stroke_association:   0.53,
+    active_stroke_kinship:       0.77,
+    active_stroke_attestation:   0.72,
+    active_stroke_polemic:       0.96,
+    active_stroke_fusion:        0.86,
+
+    // ── WIRES · SHAPE (state-independent) ──
+    curve_transmission: 0.35,
+    curve_parallel:     0.30,
+    curve_association:  0.22,
+    curve_kinship:      0.40,
+    curve_attestation:  0.32,
+    curve_polemic:      0.42,
+    curve_fusion:       0.45,
+
+    // ── FOCUS / DIM ──
+    dim_amount:    0.85,
+    atmosphere:    0.025,
+
+    // ── NODES ──
+    node_radius_tier1:    16,
+    node_radius_tier2:    12,
+    node_radius_tier3:     9,
+    node_radius_tier4:     7,
+    node_min_screen_px:    3,    // dynamic-sizing clamps
+    node_max_screen_px:   28,
+
+    // ── GLYPHS ──
     glyph_scale:   0.95,
     glyph_opacity: 0.86,
     glyph_tint:    0.55,
-    // Edges
-    edge_width_transmission: 0.34,
-    edge_width_parallel:     0.30,
-    edge_width_association:  0.22,
-    edge_width_kinship:      0.32,
-    edge_width_attestation:  0.30,
-    edge_width_polemic:      0.40,
-    edge_width_fusion:       0.36,
-    curve_transmission: 0.35,
-    curve_parallel:     0.30,
-    curve_kinship:      0.40,
-    curve_fusion:       0.45,
-    // Labels
-    label_size: 11,
-    label_cap:  80,
-    // Camera
+
+    // ── LABELS ──
+    // Per-tier zoom thresholds for IDLE-state labels.
+    // Use 999 to mean "never show at idle for this tier".
+    label_idle_zoom_tier1: 0,      // tier 0 (top 4%) — always
+    label_idle_zoom_tier2: 1.0,    // tier 1 (next 11%)
+    label_idle_zoom_tier3: 1.8,    // tier 2 (next 25%)
+    label_idle_zoom_tier4: 999,    // tier 3 (rest) — only on focus
+    label_idle_max:        200,    // safety cap on idle labels
+    label_size:            11,
+    label_cap:             80,     // focus-state label cap
+    label_collision_pad:   4,      // AABB padding in px
+
+    // ── GLOBAL PALETTE ──
+    palette_background: '#0a0c10',
+    palette_label_text: '#e8e2d0',
+    palette_label_halo: '#0a0c10',
+
+    // ── CAMERA ──
     pan_tau:   0.18,
     zoom_tau:  0.08,
     flyto_dur: 0.55,
@@ -334,36 +391,10 @@
       // Upload the 7-bucket hot-color palette for the edge
       // fragment shader (Phase 4a hot-edge brighten). Order
       // MUST match BUCKET_INDEX in src/js/engine/graph/edge.js.
-      // Hot alpha pulled from window.EDGE_BUCKETS (universal
-      // routing module) if loaded; falls back to spec values.
-      const buckets = window.EDGE_BUCKETS || {};
-      function hex2rgba(hex, a) {
-        if (!hex || typeof hex !== 'string' || hex[0] !== '#' || hex.length < 7) {
-          return [0.31, 0.37, 0.51, a];   // slate fallback
-        }
-        return [
-          parseInt(hex.slice(1, 3), 16) / 255,
-          parseInt(hex.slice(3, 5), 16) / 255,
-          parseInt(hex.slice(5, 7), 16) / 255,
-          a,
-        ];
-      }
-      function bucketHot(name, fallbackHex, fallbackHot) {
-        const b = buckets[name];
-        if (b && typeof b.hex === 'string' && typeof b.hot === 'number') {
-          return hex2rgba(b.hex, b.hot);
-        }
-        return hex2rgba(fallbackHex, fallbackHot);
-      }
-      renderer.setBucketPalette([
-        bucketHot('transmission', '#C9743A', 0.95),  // 0
-        bucketHot('parallel',     '#5A9A8F', 0.85),  // 1
-        bucketHot('association',  '#4A5AA4', 0.55),  // 2
-        bucketHot('kinship',      '#C9A5D4', 0.85),  // 3
-        bucketHot('attestation',  '#D4A55A', 0.90),  // 4
-        bucketHot('polemic',      '#A83E4A', 0.95),  // 5
-        bucketHot('fusion',       '#C4783A', 0.95),  // 6
-      ]);
+      // Phase 6: source from `local.params` so the dev panel's
+      // per-bucket active color/opacity drives the palette
+      // directly — no second source of truth.
+      renderer.setBucketPalette(hotPaletteFromParams());
 
       const devEl = document.getElementById('forge-status-device');
       if (devEl) {
@@ -390,7 +421,29 @@
       // Camera re-renders on every change. The interaction
       // handlers below mutate `camera`; the listener pushes
       // a new frame each time.
-      camera.onChange(() => { if (!local.destroyed) drawFrame(); });
+      // Phase 6: zoom also retriggers (a) the node-size clamp
+      // pack (when scale crosses ~5%) and (b) idle-label
+      // visibility recomputation (per-tier zoom thresholds).
+      camera.onChange(() => {
+        if (local.destroyed) return;
+        // Re-pack nodes if the camera scale has drifted enough
+        // since the last pack. 5% threshold keeps a smooth pan
+        // free from re-packs while a real zoom triggers one.
+        const camScale = camera.state.scale;
+        const lastScale = local.packedAtScale || camScale;
+        if (lastScale > 0) {
+          const ratio = camScale / lastScale;
+          if (ratio < 0.95 || ratio > 1.05) {
+            // Cheap re-pack (663 nodes ≈ 0.3 ms). Rebuilds
+            // hitNodes (radii update) + glyph DOM (size sync)
+            // + idle-label tier visibility.
+            rebakeNodes();
+            return;   // rebakeNodes already calls drawFrame
+          }
+        }
+        drawFrame();
+        scheduleIdleLabelSync();
+      });
 
       // Mode dropdown wire-up (Phase 4d).
       const modeSelectEl = document.getElementById('forge-status-mode');
@@ -440,19 +493,25 @@
       const modeEdges = layout.filterEdgesByNodes(allEdges, modeNodes);
       const degree    = layout.computeDegree(modeNodes, modeEdges);
       const lay       = layout.radialWedgeLayout(modeNodes, familyOrder, { degree });
-      const nodePack  = graph.packNodes(modeNodes, lay.positions, degree, { tierRadii: tierRadiiFromParams() });
+      const nodePack  = graph.packNodes(modeNodes, lay.positions, degree, nodeOverridesFromParams());
       const edgePack  = graph.packEdges(modeEdges, lay.positions, edgeOverridesFromParams());
       const adj       = graph.buildAdjacency(modeEdges);
+      const tierFor   = graph.buildTierClassifier(modeNodes, degree);
 
       const hitNodesNew = new Array(nodePack.instanceCount);
+      const hitByIdNew  = new Map();
       for (let i = 0; i < nodePack.instanceCount; i++) {
         const off = i * NODE_FLOATS;
-        hitNodesNew[i] = {
-          id: nodePack.idIndex[i],
-          x:  nodePack.data[off + 0],
-          y:  nodePack.data[off + 1],
-          r:  nodePack.data[off + 2],
+        const id  = nodePack.idIndex[i];
+        const hn  = {
+          id,
+          x:    nodePack.data[off + 0],
+          y:    nodePack.data[off + 1],
+          r:    nodePack.data[off + 2],
+          tier: tierFor(degree.get(id) || 0),
         };
+        hitNodesNew[i] = hn;
+        hitByIdNew.set(id, hn);
       }
 
       const ext = {
@@ -469,6 +528,7 @@
         nodePacked:  nodePack,
         edgePacked:  edgePack,
         hitNodes:    hitNodesNew,
+        hitById:     hitByIdNew,
         worldExtent: ext,
       };
       // State buffers must size to the new instance counts.
@@ -649,50 +709,69 @@
     }
     function syncLabels() {
       const focus = local.focusedSet;
-      // Hide all existing labels first, then reveal the ones
-      // that are in the focused set. Cheap at our scale.
+      // Pass 1: compute the UNION of (focused labels) ∪ (idle-tier
+      // labels at current zoom). The focused set always wins —
+      // hubs in focus don't drop out just because they collide.
+      const visible = new Set();
+      // Focused labels first (capped).
+      if (focus && focus.size > 0) {
+        const focusCap = local.params.label_cap || 80;
+        let shown = 0;
+        for (const id of focus) {
+          if (shown >= focusCap) break;
+          visible.add(id);
+          shown++;
+        }
+      }
+      // Idle-tier labels — only when at TRUE idle (no focus).
+      // When focus is active the dim pass already nukes the
+      // background to atmosphere; idle hubs would just clutter.
+      if (!focus || focus.size === 0) {
+        const camScale = camera.state.scale;
+        const vp       = local.lastSize;
+        const opts     = labelHierarchyFromParams();
+        opts.worldToScreen = (x, y) => camera.worldToScreen(x, y, vp);
+        const idleSet = graph.computeIdleLabelVisibility(local.mode.hitNodes, camScale, opts);
+        for (const id of idleSet) visible.add(id);
+      }
+
+      // Pass 2: show/hide the DOM. Create lazily for new ids.
+      // Hide everything first so transitions out of the visible
+      // set don't leave stale labels.
       for (const el of local.labelEls.values()) {
         el.style.display = 'none';
       }
-      if (!focus || focus.size === 0) return;
-      // Cap how many labels we show on a really large lock — at
-      // ~150+ visible labels the overlay becomes noise. Phase 4c
-      // can add proper deconfliction; for now, cap and order by
-      // tier (which is implicit in idIndex order via degree sort).
-      const MAX_LABELS = 80;
-      let shown = 0;
-      for (const id of focus) {
-        if (shown >= MAX_LABELS) break;
+      for (const id of visible) {
         const el = ensureLabelEl(id);
-        // Explicit 'block' — clearing to '' would fall back to
-        // the CSS rule which sets display:none as the default.
         el.style.display = 'block';
-        shown++;
       }
       syncLabelPositions();
     }
+    // Idle-label visibility depends on camera scale; positions
+    // depend on scale + pan. We only need to RECOMPUTE the
+    // visibility set when scale crosses a tier threshold, but
+    // it's cheap (1 ms at 663 nodes) so we just rAF-debounce.
+    function scheduleIdleLabelSync() {
+      if (local.idleLabelRaf) return;
+      local.idleLabelRaf = requestAnimationFrame(() => {
+        local.idleLabelRaf = 0;
+        if (local.destroyed) return;
+        syncLabels();
+      });
+    }
     function syncLabelPositions() {
-      const focus = local.focusedSet;
-      if (!focus || focus.size === 0) return;
       const vp = local.lastSize;
       if (!vp.w || !vp.h) return;
-      // Position each currently-visible label above its node's
-      // screen position. Use the camera (NOT the renderer's flip)
-      // — labels need the actual canvas pixel, which already
-      // accounts for the renderer's Y-flip via the camera's
-      // straight world→screen.
-      const hitNodes = local.mode.hitNodes;
-      for (let i = 0; i < hitNodes.length; i++) {
-        const n = hitNodes[i];
-        if (!focus.has(n.id)) continue;
-        const el = local.labelEls.get(n.id);
-        if (!el || el.style.display === 'none') continue;
+      if (local.labelEls.size === 0) return;
+      // Position every currently-displayed label (focus AND
+      // idle-tier hubs). Cheap because we iterate the label map,
+      // not all nodes.
+      const hitById = local.mode.hitById;
+      for (const [id, el] of local.labelEls) {
+        if (el.style.display === 'none') continue;
+        const n = hitById ? hitById.get(id) : null;
+        if (!n) continue;
         const s = camera.worldToScreen(n.x, n.y, vp);
-        // Label sits just above the disk. Negate-Y in render
-        // means world.y POSITIVE maps to canvas.y SMALL (top of
-        // canvas), so the disk's "top edge" on screen is at
-        // canvas.y = s.y - n.r * scale. Place label above that
-        // with a small gap.
         const px = s.x;
         const py = s.y - n.r * camera.state.scale - 6;
         el.style.left = px + 'px';
@@ -1038,7 +1117,9 @@
       }
     }
 
-    // ── Param helpers (Phase 5 — dev panel wires) ───────
+    // ── Param helpers (Phase 5 + 6 — dev panel wires) ──
+    const BUCKET_ORDER = ['transmission','parallel','association','kinship','attestation','polemic','fusion'];
+
     function tierRadiiFromParams() {
       return [
         local.params.node_radius_tier1,
@@ -1048,76 +1129,92 @@
       ];
     }
     function edgeOverridesFromParams() {
+      const p = local.params;
+      const o = { idleColors: {}, idleOps: {}, idleWidths: {}, hotWidths: {}, curves: {} };
+      for (const b of BUCKET_ORDER) {
+        o.idleColors[b] = p['idle_color_'    + b];
+        o.idleOps[b]    = p['idle_opacity_'  + b];
+        o.idleWidths[b] = p['idle_stroke_'   + b];
+        o.hotWidths[b]  = p['active_stroke_' + b];
+        o.curves[b]     = p['curve_'         + b];
+      }
+      return o;
+    }
+    function nodeOverridesFromParams() {
       return {
-        widths: {
-          transmission: local.params.edge_width_transmission,
-          parallel:     local.params.edge_width_parallel,
-          association:  local.params.edge_width_association,
-          kinship:      local.params.edge_width_kinship,
-          attestation:  local.params.edge_width_attestation,
-          polemic:      local.params.edge_width_polemic,
-          fusion:       local.params.edge_width_fusion,
-        },
-        idleOps: {
-          transmission: local.params.edge_idle_transmission,
-          parallel:     local.params.edge_idle_parallel,
-          association:  local.params.edge_idle_association,
-          kinship:      local.params.edge_idle_kinship,
-          attestation:  local.params.edge_idle_attestation,
-          polemic:      local.params.edge_idle_polemic,
-          fusion:       local.params.edge_idle_fusion,
-        },
-        curves: {
-          transmission: local.params.curve_transmission,
-          parallel:     local.params.curve_parallel,
-          kinship:      local.params.curve_kinship,
-          fusion:       local.params.curve_fusion,
-        },
+        tierRadii:   tierRadiiFromParams(),
+        camScale:    (camera && camera.state) ? camera.state.scale : 1,
+        minScreenPx: local.params.node_min_screen_px,
+        maxScreenPx: local.params.node_max_screen_px,
       };
     }
-    function hotPaletteFromParams() {
-      function hex2rgba(hex, a) {
-        if (!hex || typeof hex !== 'string' || hex[0] !== '#' || hex.length < 7) {
-          return [0.31, 0.37, 0.51, a];
-        }
-        return [
-          parseInt(hex.slice(1, 3), 16) / 255,
-          parseInt(hex.slice(3, 5), 16) / 255,
-          parseInt(hex.slice(5, 7), 16) / 255,
-          a,
-        ];
-      }
-      const buckets = window.EDGE_BUCKETS || {};
-      function hot(name, hex) {
-        const a = local.params['edge_hot_' + name];
-        const useHex = (buckets[name] && buckets[name].hex) || hex;
-        return hex2rgba(useHex, a);
+    function hex2rgba(hex, a) {
+      if (!hex || typeof hex !== 'string' || hex[0] !== '#' || hex.length < 7) {
+        return [0.31, 0.37, 0.51, a];
       }
       return [
-        hot('transmission', '#C9743A'),
-        hot('parallel',     '#5A9A8F'),
-        hot('association',  '#4A5AA4'),
-        hot('kinship',      '#C9A5D4'),
-        hot('attestation',  '#D4A55A'),
-        hot('polemic',      '#A83E4A'),
-        hot('fusion',       '#C4783A'),
+        parseInt(hex.slice(1, 3), 16) / 255,
+        parseInt(hex.slice(3, 5), 16) / 255,
+        parseInt(hex.slice(5, 7), 16) / 255,
+        a,
       ];
     }
+    function hotPaletteFromParams() {
+      const p = local.params;
+      return BUCKET_ORDER.map(b => hex2rgba(
+        p['active_color_'   + b],
+        p['active_opacity_' + b],
+      ));
+    }
+    function labelHierarchyFromParams() {
+      const p = local.params;
+      return {
+        tierZoomThresholds: [
+          p.label_idle_zoom_tier1,
+          p.label_idle_zoom_tier2,
+          p.label_idle_zoom_tier3,
+          p.label_idle_zoom_tier4,
+        ],
+        maxLabels:          p.label_idle_max,
+        labelSizePx:        p.label_size,
+        collisionPaddingPx: p.label_collision_pad,
+      };
+    }
 
-    // Rebake node instances + glyph DOM (called when tier radii
-    // or glyph tint changes — both depend on the packed radius).
+    // Rebake node instances + glyph DOM (called when tier radii,
+    // glyph tint, screen-px clamps, OR camera scale change).
     function rebakeNodes() {
       const m = local.mode;
-      const np = graph.packNodes(m.nodes, m.positions, layout.computeDegree(m.nodes, m.edges), { tierRadii: tierRadiiFromParams() });
+      const deg = layout.computeDegree(m.nodes, m.edges);
+      const np = graph.packNodes(m.nodes, m.positions, deg, nodeOverridesFromParams());
       m.nodePacked = np;
-      // Re-derive hit-test index.
+      // Tier classifier so hitNodes know their tier for the
+      // label-hierarchy module.
+      const tierFor = graph.buildTierClassifier(m.nodes, deg);
+      // Re-derive hit-test index. Tier is stored on the hitNode
+      // so the label module can route per-tier without needing
+      // a side lookup.
       m.hitNodes = new Array(np.instanceCount);
+      m.hitById  = new Map();
       for (let i = 0; i < np.instanceCount; i++) {
         const off = i * NODE_FLOATS;
-        m.hitNodes[i] = { id: np.idIndex[i], x: np.data[off], y: np.data[off + 1], r: np.data[off + 2] };
+        const id  = np.idIndex[i];
+        const hn  = {
+          id,
+          x:    np.data[off],
+          y:    np.data[off + 1],
+          r:    np.data[off + 2],
+          tier: tierFor(deg.get(id) || 0),
+        };
+        m.hitNodes[i] = hn;
+        m.hitById.set(id, hn);
       }
       local.nodeStates = new Float32Array(np.instanceCount);
+      // Track the camera scale this pack was made at, so the
+      // re-pack-on-zoom hook knows when it's actually stale.
+      local.packedAtScale = (camera && camera.state) ? camera.state.scale : 1;
       rebakeGlyphsForMode();
+      scheduleIdleLabelSync();
       drawFrame();
     }
     // Rebake edge instances (idle alpha / width / curve).
@@ -1166,56 +1263,59 @@
     }
 
     // ── Public API for dev panel ────────────────────────
+    // setParam accepts both numbers (sliders) and hex strings
+    // (color pickers). The param name uniquely determines which.
     function setParam(name, value) {
-      if (typeof value !== 'number' || isNaN(value)) return;
       if (!(name in local.params)) return;
+      if (typeof value === 'number' && isNaN(value)) return;
       local.params[name] = value;
-      // Dispatch — what's the cheapest valid reaction?
-      if (name === 'dim_amount') { drawFrame(); return; }
-      if (name === 'atmosphere') {
-        document.documentElement.style.setProperty('--forge-atmosphere', String(value));
-        return;
-      }
-      if (name === 'label_size') {
-        document.documentElement.style.setProperty('--forge-label-size', value + 'px');
-        return;
-      }
-      if (name === 'label_cap') {
-        syncLabels(); return;
-      }
-      if (name === 'glyph_opacity') {
-        document.documentElement.style.setProperty('--forge-glyph-opacity', String(value));
-        return;
-      }
-      if (name === 'glyph_scale') {
-        // syncGlyphPositions multiplies the disk diameter by this
-        // each frame; we store it on local.params and trigger
-        // a sync. (No per-frame read; we just need a redraw.)
-        syncGlyphPositions(); return;
-      }
-      if (name === 'glyph_tint') {
-        rebakeGlyphsForMode(); return;
-      }
-      if (name === 'hot_width_mult') {
-        // Currently shader-hardcoded (2.4). Phase 5b will wire
-        // this through a view-uniform field. For now this slider
-        // updates local.params but the visual effect waits.
-        return;
-      }
-      if (name.startsWith('node_radius_tier')) {
+
+      // Cheap one-liners first — CSS vars + redraws.
+      if (name === 'dim_amount')   { drawFrame(); return; }
+      if (name === 'atmosphere')   { document.documentElement.style.setProperty('--forge-atmosphere',    String(value)); return; }
+      if (name === 'label_size')   { document.documentElement.style.setProperty('--forge-label-size',    value + 'px'); scheduleIdleLabelSync(); return; }
+      if (name === 'glyph_opacity'){ document.documentElement.style.setProperty('--forge-glyph-opacity', String(value)); return; }
+      if (name === 'glyph_scale')  { syncGlyphPositions(); return; }
+      if (name === 'glyph_tint')   { rebakeGlyphsForMode(); return; }
+
+      // Palette → CSS vars.
+      if (name === 'palette_background') { document.documentElement.style.setProperty('--forge-bg',         value); return; }
+      if (name === 'palette_label_text') { document.documentElement.style.setProperty('--forge-label-text', value); return; }
+      if (name === 'palette_label_halo') { document.documentElement.style.setProperty('--forge-label-halo', value); return; }
+
+      // Nodes — tier radii OR screen-px clamps both require a pack.
+      if (name.startsWith('node_radius_tier') ||
+          name === 'node_min_screen_px' ||
+          name === 'node_max_screen_px') {
         rebakeNodes(); return;
       }
-      if (name.startsWith('edge_idle_') ||
-          name.startsWith('edge_width_') ||
+
+      // Wires — IDLE state (instance buffer attributes).
+      if (name.startsWith('idle_color_')  ||
+          name.startsWith('idle_opacity_')||
+          name.startsWith('idle_stroke_') ||
+          name.startsWith('active_stroke_')||
           name.startsWith('curve_')) {
         rebakeEdges(); return;
       }
-      if (name.startsWith('edge_hot_')) {
+      // Wires — ACTIVE color + opacity (uniform palette).
+      if (name.startsWith('active_color_') ||
+          name.startsWith('active_opacity_')) {
         rebakeBucketPalette(); return;
       }
+      // Wires — focus dim handled above.
+
+      // Labels — idle-tier hierarchy.
+      if (name === 'label_cap' ||
+          name === 'label_idle_max' ||
+          name === 'label_collision_pad' ||
+          name.startsWith('label_idle_zoom_')) {
+        scheduleIdleLabelSync(); return;
+      }
+
+      // Camera tuning — stored; live wiring goes through the
+      // camera module setters (Phase 6b — not blocking).
       if (name === 'pan_tau' || name === 'zoom_tau' || name === 'flyto_dur') {
-        // Camera tuning constants — would need camera-module setters.
-        // Stored for now; Phase 5b can plumb them through.
         return;
       }
     }
@@ -1233,11 +1333,14 @@
       document.documentElement.style.setProperty(cssVar, font.family);
     }
 
-    // Apply glyph-scale CSS var so syncGlyphPositions can read it.
-    // Done once at mount + on every setParam('glyph_scale').
+    // Apply CSS vars so the DOM overlay matches local.params at
+    // mount. Each is also re-pushed from setParam when dialed live.
     document.documentElement.style.setProperty('--forge-glyph-opacity', String(local.params.glyph_opacity));
-    document.documentElement.style.setProperty('--forge-atmosphere', String(local.params.atmosphere));
-    document.documentElement.style.setProperty('--forge-label-size', local.params.label_size + 'px');
+    document.documentElement.style.setProperty('--forge-atmosphere',    String(local.params.atmosphere));
+    document.documentElement.style.setProperty('--forge-label-size',    local.params.label_size + 'px');
+    document.documentElement.style.setProperty('--forge-bg',            local.params.palette_background);
+    document.documentElement.style.setProperty('--forge-label-text',    local.params.palette_label_text);
+    document.documentElement.style.setProperty('--forge-label-halo',    local.params.palette_label_halo);
 
     // Expose on window for dev panel.
     window._forge.setParam = setParam;

@@ -189,10 +189,12 @@
       let tan  = bezier_tan(p0, p1, p2, t);
       let tnorm = normalize(tan);
       let perp  = vec2<f32>(-tnorm.y, tnorm.x);
-      // Phase 4a: incident edges (state=0) widen as well as brighten,
-      // so the 1-hop connection ribbon reads as the dominant visual.
-      let hot_mult = mix(2.4, 1.0, inst_state);   // state=0 → 2.4x, state=1 → 1x
-      let half_w   = inst_extra.x * 0.5 * hot_mult;
+      // Phase 6: per-bucket idle + hot stroke widths are baked
+      // into the instance attribute. inst_extra.x = idle width,
+      // inst_extra.w = hot width. state=0 (focused) → use hot;
+      // state=1 (idle) → use idle.
+      let world_w = mix(inst_extra.w, inst_extra.x, inst_state);
+      let half_w  = world_w * 0.5;
       let world  = pos + perp * quad_vertex.y * half_w;
       let ndc = world * v.view_scale + v.view_offset;
 
