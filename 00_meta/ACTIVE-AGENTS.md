@@ -102,10 +102,11 @@ _Hand-maintained. Each agent currently working in the vault appends a claim bloc
 
 ---
 
-## aristotle-kepler-chain-1 — Scientific Revolution persons upgrade — 2026-05-17 — IN PROGRESS
-- Owns: `04_persons/aristotle.md`, `04_persons/ibn-al-haytham.md`, `04_persons/galileo-galilei.md`, `04_persons/thomas-aquinas.md`, `04_persons/kepler.md`
-- Task: stub/metadata → full upgrades; add cross-tradition-edges; commit individually
-- Status: IN PROGRESS
+## ~~aristotle-kepler-chain-1 — Scientific Revolution persons upgrade — 2026-05-17 — FINISHED~~
+- ~~Owned: `04_persons/aristotle.md`, `04_persons/ibn-al-haytham.md`, `04_persons/galileo-galilei.md`, `04_persons/thomas-aquinas.md`, `04_persons/kepler.md`~~
+- ~~5 nodes upgraded stub/metadata → full; 29 cross-tradition-edges added total~~
+- ~~Dead links: 874 → 861 (-13). Commits: 76a2f34 · c9e764d · e17e4f1 · 9984624 · 315473c~~
+- ~~Status: FINISHED~~
 
 ---
 

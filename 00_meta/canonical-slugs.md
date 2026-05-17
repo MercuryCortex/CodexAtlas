@@ -95,7 +95,7 @@ canonical-slug
 - `alphabet-tibetan-tantric`
 - `alphabet-ugaritic`
 
-### deity (662 nodes)
+### deity (663 nodes)
 
 - `abathur`
 - `abrasax`
@@ -177,6 +177,7 @@ canonical-slug
 - `avalokitesvara`
 - `awonawilona`
 - `azazel`
+- `ba-xian`
 - `baal`
 - `baal-hadad`
 - `babalu-aye`
@@ -265,7 +266,6 @@ canonical-slug
 - `ekeko`
 - `el-canaanite`
 - `el-elohim-hebrew`
-- `el-hebrew`
 - `el-shaddai`
 - `endovelicus`
 - `enki-ea`
@@ -340,6 +340,7 @@ canonical-slug
 - `hubal`
 - `huitzilopochtli`
 - `hun-hunahpu`
+- `hunab-ku`
 - `hunahpu`
 - `hwanin`
 - `hwanung`
@@ -421,7 +422,6 @@ canonical-slug
 - `lugh`
 - `lugus`
 - `ma-at`
-- `maat`
 - `macha`
 - `mahakala`
 - `mahavira-jain`
@@ -447,6 +447,7 @@ canonical-slug
 - `mastema`
 - `matsya-avatar`
 - `maui-polynesian`
+- `mawu-lisa`
 - `mayahuel`
 - `mazu`
 - `meder`
@@ -475,6 +476,7 @@ canonical-slug
 - `mut`
 - `nabia`
 - `nabu`
+- `nana-buluku`
 - `nandi`
 - `nane-armenian`
 - `nanna-sin`
@@ -586,7 +588,6 @@ canonical-slug
 - `remiel-archangel`
 - `reue-lusitanian`
 - `rhea`
-- `rhea-greek`
 - `rhiannon`
 - `rishabha-jain`
 - `rod-slavic`
@@ -618,6 +619,7 @@ canonical-slug
 - `shango`
 - `shaushka-hurrian`
 - `shekhinah`
+- `shennong`
 - `shiva`
 - `shu`
 - `sif`
@@ -726,7 +728,6 @@ canonical-slug
 - `vidar`
 - `viracocha`
 - `vishnu`
-- `vishnu-deity`
 - `vohu-manah`
 - `vritra`
 - `vulcan-roman`
@@ -760,7 +761,7 @@ canonical-slug
 - `zeus`
 - `zorya`
 
-### document (420 nodes)
+### document (422 nodes)
 
 - `avesta`
 - `document-kuntillet-ajrud-inscriptions`
@@ -847,6 +848,7 @@ canonical-slug
 - `phase-2-043-great-learning-daxue`
 - `phase-2-044-doctrine-of-the-mean-zhongyong`
 - `phase-2-045-hippocratic-corpus`
+- `phase-2-046-huangdi-neijing`
 - `phase-3-001-second-third-isaiah`
 - `phase-3-002-plato-dialogues`
 - `phase-3-003-aristotle-metaphysics`
@@ -884,6 +886,7 @@ canonical-slug
 - `phase-3-034-huainanzi`
 - `phase-3-035-homeric-hymns`
 - `phase-3-036-charaka-samhita`
+- `phase-3-037-shennong-bencao-jing`
 - `phase-4-001-gospel-of-thomas`
 - `phase-4-002-apocryphon-of-john`
 - `phase-4-003-gospel-of-truth`
@@ -1377,19 +1380,22 @@ canonical-slug
 - `subterranean-chamber-great-pyramid`
 - `temple-of-inscriptions-palenque`
 
-### mathematics (6 nodes)
+### mathematics (8 nodes)
 
 - `mathematics-babylonian-temple`
+- `mathematics-chinese-nine-chapters`
+- `mathematics-egyptian-rhind-papyrus`
 - `mathematics-house-of-wisdom`
 - `mathematics-pythagorean-sacred`
 - `mathematics-sacred-geometry`
 - `mathematics-sulba-sutras`
 - `mathematics-zero-india`
 
-### medicine (7 nodes)
+### medicine (8 nodes)
 
 - `medicine-asklepion-cult`
 - `medicine-ayurveda`
+- `medicine-chinese-traditional`
 - `medicine-egyptian-temple`
 - `medicine-hippocratic`
 - `medicine-islamic-golden-age`
@@ -1526,7 +1532,7 @@ canonical-slug
 - `music-zoroastrian-sacred-sound`
 - `music-zosimos-alchemical-sound`
 
-### person (714 nodes)
+### person (720 nodes)
 
 - `aaron`
 - `abba-garima`
@@ -1552,6 +1558,7 @@ canonical-slug
 - `al-kindi`
 - `al-shafii`
 - `al-tabari`
+- `albert-einstein`
 - `albertus-magnus`
 - `alcuin-of-york`
 - `aldous-huxley`
@@ -1731,6 +1738,7 @@ canonical-slug
 - `fazlur-rahman`
 - `fentos-meqabyan`
 - `fernando-pessoa`
+- `fibonacci`
 - `firmicus-maternus`
 - `flinders-petrie`
 - `frances-yates`
@@ -1741,6 +1749,7 @@ canonical-slug
 - `gabriel-archangel-person`
 - `galawdewos-emperor`
 - `galen-of-pergamon`
+- `galileo-galilei`
 - `gamaliel-ii`
 - `gamaliel-the-elder`
 - `garth-fowden`
@@ -1833,6 +1842,7 @@ canonical-slug
 - `irenaeus-of-lyon`
 - `isaac-casaubon`
 - `isaac-luria`
+- `isaac-newton`
 - `isaac-patriarch`
 - `isaac-the-blind`
 - `isaiah-first`
@@ -1906,6 +1916,7 @@ canonical-slug
 - `karen-king`
 - `karl-gotthelf-von-hund`
 - `karma-lingpa`
+- `kepler`
 - `keshub-chandra-sen`
 - `kevin-van-bladel`
 - `khadija-bint-khuwaylid`
@@ -1921,6 +1932,7 @@ canonical-slug
 - `lanz-von-liebenfels`
 - `laozi`
 - `lazarus-of-bethany`
+- `leibniz`
 - `leo-the-great`
 - `lipit-ishtar`
 - `louis-komjathy`
@@ -2363,7 +2375,7 @@ canonical-slug
 - `ritual-zen-sesshin`
 - `ritual-zoroastrian-tower-of-silence`
 
-### symbol (277 nodes)
+### symbol (278 nodes)
 
 - `abraxas`
 - `acacia`
@@ -2489,6 +2501,7 @@ canonical-slug
 - `minotaur`
 - `mithraic-cross`
 - `mjolnir`
+- `monad-pythagorean`
 - `monas-hieroglyphica`
 - `mosaic-pavement`
 - `mount-ararat`
@@ -2643,7 +2656,7 @@ canonical-slug
 - `yoni`
 - `zodiac-wheel`
 
-### theme (336 nodes)
+### theme (339 nodes)
 
 - `364-day-solar-calendar`
 - `adam-kadmon`
@@ -2710,6 +2723,7 @@ canonical-slug
 - `crucifixion-theology`
 - `crusade-theology-of-malecide`
 - `demiurge`
+- `destroyer-healer`
 - `diaspora-formation`
 - `diaspora-judaism`
 - `discipleship-failure`
@@ -2724,6 +2738,7 @@ canonical-slug
 - `divine-kingship-solar`
 - `divine-name`
 - `divine-twins`
+- `divine-unity`
 - `dualism-cosmic`
 - `dualism-spirit-matter`
 - `dumezil-trifunctional`
@@ -2846,6 +2861,7 @@ canonical-slug
 - `persian-period-injection`
 - `personal-daimon`
 - `pharmakos`
+- `physicians-oath`
 - `possession-ritual`
 - `pratitya-samutpada`
 - `pratyabhijna`
@@ -3160,15 +3176,16 @@ canonical-slug
 
 | Refs | Dead target | Suggested canonical (existing) |
 |---:|---|---|
-| 6 | `phase-6-002-florentine-codex` | `phase-6-005-luther-95-theses` |
-| 5 | `tradition-islam-sunni` | `tradition-hasidism` |
+| 6 | `phase-6-002-florentine-codex` | `phase-8-004-florentine-codex-sahagun` |
+| 5 | `tradition-islam-sunni` | `tradition-ismailism` |
 | 4 | `phase-4-040-quran` | `phase-4-048-benedict-rule` |
-| 3 | `tradition-afro-diasporic` | `tradition-hasidism` |
+| 3 | `tradition-afro-diasporic` | `tradition-second-temple-judaism` |
 | 3 | `guru-arjan-dev-ji` | `guru-arjan` |
 | 2 | `yam-canaanite` | `astarte-canaanite` |
 | 2 | `was-sceptre` | `was-scepter` |
-| 2 | `tradition-rosicrucian` | `tradition-hasidism` |
-| 2 | `tradition-lingayat` | `tradition-hasidism` |
+| 2 | `tradition-rosicrucian` | `tradition-persian-zoroastrian` |
+| 2 | `tradition-lingayat` | `tradition-ismailism` |
 | 2 | `theme-logos-theology` | `theme-apophatic-theology` |
 | 2 | `phase-8-002-popol-vuh` | `phase-8-008-kebra-nagast` |
+| 2 | `phase-6-006-chilam-balam` | `phase-6-001-ficino-pimander` |
 | 2 | `divine-names` | `divine-name` |

@@ -49,24 +49,30 @@ _Auto-generated 2026-05-17. Status claims not meeting the bar in methodology.md.
 | `hans-jonas` | person | status:metadata but only 1 refs |
 | `sri-yukteswar` | person | status:metadata but only 1 refs |
 | `james-frazer` | person | status:metadata but only 1 refs |
+| `euclid` | person | status:full but only 0 refs |
 | `nichiren` | person | status:metadata but only 0 refs |
 | `francisco-clavigero` | person | status:metadata but only 1 refs |
 | `swami-vivekananda` | person | status:metadata but only 1 refs |
 | `chogyam-trungpa` | person | status:metadata but only 1 refs |
 | `annie-besant` | person | status:metadata but only 1 refs |
 | `krishnadasa-kaviraja` | person | status:metadata but only 1 refs |
+| `isaac-newton` | person | status:full but only 0 refs |
 | `ramana-maharshi` | person | status:metadata but only 1 refs |
+| `albert-einstein` | person | status:full but only 0 refs |
 | `shinran` | person | status:metadata but only 0 refs |
 | `clement-of-alexandria` | person | status:metadata but only 1 refs |
 | `basil-of-caesarea` | person | status:metadata but only 1 refs |
 | `eusebius-of-caesarea` | person | status:metadata but only 1 refs |
 | `c-s-lewis` | person | status:metadata but only 1 refs |
+| `philolaus` | person | status:full but only 0 refs |
 | `gerald-gardner` | person | status:metadata but only 1 refs |
 | `ramakrishna` | person | status:metadata but only 1 refs |
 | `karen-king` | person | status:metadata but only 1 refs |
+| `fibonacci` | person | status:full but only 0 refs |
 | `sigmund-freud` | person | status:metadata but only 0 refs |
 | `honen` | person | status:metadata but only 0 refs |
 | `g-i-gurdjieff` | person | status:metadata but only 1 refs |
+| `baruch-spinoza` | person | status:full but only 0 refs |
 | `sayyid-qutb` | person | status:metadata but only 1 refs |
 | `anton-lavey` | person | status:metadata but only 1 refs |
 | `dietrich-bonhoeffer` | person | status:metadata but only 1 refs |
@@ -78,12 +84,15 @@ _Auto-generated 2026-05-17. Status claims not meeting the bar in methodology.md.
 | `sun-myung-moon` | person | status:metadata but only 1 refs |
 | `mary-baker-eddy` | person | status:metadata but only 1 refs |
 | `helen-schucman` | person | status:metadata but only 1 refs |
+| `nicomachus` | person | status:full but only 0 refs |
 | `bahaullah` | person | status:metadata but only 1 refs |
 | `rashid-rida` | person | status:metadata but only 1 refs |
 | `marshall-vian-summers` | person | status:metadata but only 1 refs |
 | `dutty-boukman` | person | status:metadata but only 1 refs |
+| `al-khwarizmi` | person | status:full but only 0 refs |
 | `wendy-doniger` | person | status:metadata but only 1 refs |
 | `nisargadatta-maharaj` | person | status:metadata but only 1 refs |
+| `kepler` | person | status:full but only 0 refs |
 | `sri-aurobindo` | person | status:metadata but only 1 refs |
 | `karen-armstrong` | person | status:metadata but only 1 refs |
 | `paramahansa-yogananda` | person | status:metadata but only 1 refs |
@@ -101,6 +110,7 @@ _Auto-generated 2026-05-17. Status claims not meeting the bar in methodology.md.
 | `shabbatai-tzvi` | person | status:metadata but only 1 refs |
 | `v-d-savarkar` | person | status:metadata but only 1 refs |
 | `rudolf-otto` | person | status:metadata but only 1 refs |
+| `brahmagupta` | person | status:full but only 0 refs |
 | `brigham-young` | person | status:metadata but only 1 refs |
 | `gregory-of-nazianzus` | person | status:metadata but only 1 refs |
 | `william-robertson-smith` | person | status:metadata but only 1 refs |
@@ -151,5 +161,9 @@ _Auto-generated 2026-05-17. Status claims not meeting the bar in methodology.md.
 | `hamsa-khamsa` | symbol | symbol status:full but only 2 refs (need 3+) |
 | `nsibidi` | symbol | symbol status:metadata but only 0 refs (need 3+) |
 | `blood-sacred` | symbol | symbol status:metadata but only 0 refs (need 3+) |
+| `monad-pythagorean` | symbol | symbol status:full but only 0 refs (need 3+) |
 | `fleur-de-lis` | symbol | symbol status:metadata but only 2 refs (need 3+) |
 | `chaos-star` | symbol | symbol status:metadata but only 0 refs (need 3+) |
+| `divine-unity` | theme | status:full but only 0 refs |
+| `destroyer-healer` | theme | status:full but only 0 refs |
+| `physicians-oath` | theme | status:full but only 0 refs |
