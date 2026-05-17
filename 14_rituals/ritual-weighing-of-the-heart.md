@@ -93,8 +93,19 @@ This is structurally distinct from Christian hell (eternal conscious torment), B
 - [[anubis]] — calibrates the scale; the judge's technician
 - [[thoth]] — records the verdict; divine scribe
 - [[osiris]] — presides over the hall; himself the resurrection-judge
-- [[ammit-devourer]] — the consequence agent; devours the failed heart
 - [[isis]] — present as intercessor; mourner-advocate for the deceased
+- [[chitragupta]] — Hindu parallel scribe of the dead; Chitragupta maintains the karmic ledger for Yama's judgment, exactly as Thoth records Osiris's verdict; both are divine bureaucrats of cosmic moral accounting
+
+**Documents**:
+- [[phase-1-010-book-of-the-dead]] — Chapter 125 is the definitive text of the weighing ceremony; the 42 negative confessions are preserved there in full; the papyrus is the primary source document
+- [[phase-1-002-pyramid-texts]] — earliest precursors of the judgment theology; the "Eye of Horus" spells lay groundwork for the ethical afterlife schema
+
+**Traditions**:
+- [[tradition-egyptian-religion]] — home tradition; the psychostasia is one of the defining theological contributions of Egyptian religion
+- [[tradition-egyptian]] — broader Egyptian cultural tradition
+
+**Cross-tradition judgment parallels**:
+- [[end-times-judgment]] — hub theme for eschatological judgment structures across traditions; the weighing of the heart is the earliest systematically documented instance
 
 ## Sources
 

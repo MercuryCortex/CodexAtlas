@@ -94,6 +94,19 @@ The daily service was performed for every deity with a temple — the specific t
 **Deity connections**:
 - [[thoth]] — patron of ritual precision; the daily service is defined by its exactness, and Thoth's oversight guarantees correct performance
 - [[maat]] — the service maintains maat; interruption disrupts cosmic order
+- [[ra]] — at Heliopolis the statue's awakening at dawn synchronized with the sun's actual rising; the daily service is cosmological precision, not merely liturgical habit
+- [[amun]] — primary Karnak service; the largest and most elaborate daily temple in Egypt; the Amun service was the theological center of the New Kingdom
+- [[ptah]] — Memphis temple; the daily service before Ptah replays his cosmogonic mouth-opening; each service is a micro-creation event
+- [[osiris]] — Abydos service; maintaining Osiris's daily service keeps his resurrection alive; interruption risks his second death
+- [[horus]] — Edfu temple; the best-preserved daily-service documentation; Edfu ritual texts describe the wepet-ra miniaturization in exceptional detail
+- [[isis]] — present in the daily service theology as the mythological agent who first assembled the divine body; her role grounds the statue-care logic
+
+**Documents**:
+- [[phase-1-002-pyramid-texts]] — earliest attestation of the daily awakening formula in Egyptian religious texts; the Pyramid Texts preserve the primordial waking-spell that became the standard daily liturgy
+
+**Traditions**:
+- [[tradition-egyptian-religion]] — home tradition; the daily temple service is the defining institutional practice of Egyptian temple religion
+- [[tradition-egyptian]] — broader Egyptian cultural tradition
 
 ## Sources
 

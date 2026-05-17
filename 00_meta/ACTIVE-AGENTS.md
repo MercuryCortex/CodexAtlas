@@ -2177,3 +2177,17 @@ Files: sacred-cauldron.md (NEW) · cerridwen.md (STUB, deity) · bran-the-blesse
 - ~~Commits: 86fba25 (Part A) · 5943aeb (Part B)~~
 - ~~MASSIVE WIN edges: (1) ouroboros cross-cultural archetype — Egyptian/Gnostic/Norse/Aztec/Hindu independent attestations with zero contact; (2) conjunction 4,000-year continuity — Inanna-Dumuzi → Isis-Osiris → Shiva-Shakti → Tiferet-Shekhinah → Christ-Church; (3) VITRIOL = universal descent pattern — Inanna/katabasis/harrowing/shamanic/Dante structural identity; (4) sulfur-mercury theory as alchemy's atomic theory — 800 years of legitimate science from Jabir to Boyle; (5) Kabbalah-Alchemy synthesis as the convergence point where Neoplatonism + Kabbalah + Hermeticism + alchemy produce both modern science and ceremonial magic from the same root~~
 - ~~Status: FINISHED~~
+
+---
+
+## ritual-sikh-jain-shinto-1 — 8 ritual nodes (3 Sikh + 3 Jain + 2 Shinto) — IN PROGRESS (2026-05-17)
+- Owned: `14_rituals/ritual-amrit-sanchar.md`, `ritual-langar.md`, `ritual-ardas.md`, `ritual-sallekhana.md`, `ritual-paryushana.md`, `ritual-pratikraman.md`, `ritual-misogi-purification.md`, `ritual-matsuri.md`
+- Agent: sonnet-4-6 content pass
+- Status: IN PROGRESS
+
+---
+
+## ritual-wiring-cross-tradition-1 — vault connection wiring on 13 Egyptian/Greek/Roman/Mesopotamian ritual nodes — IN PROGRESS (2026-05-17)
+- Owned: all 13 Egyptian/Greek/Roman/Mesopotamian ritual nodes in `14_rituals/`
+- Batches: ritual-wiring-egyptian-1, ritual-wiring-greek-roman-1, ritual-wiring-mesopotamian-1
+- Status: IN PROGRESS

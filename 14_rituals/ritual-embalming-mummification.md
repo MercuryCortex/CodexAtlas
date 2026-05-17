@@ -130,6 +130,17 @@ This costuming-as-identity-replacement has a near-universal parallel: shamanic a
 - [[horus]] — performs the opening of the mouth on the completed mummy; the son completes the work the mother began
 - [[thoth]] — oversees the ritual spells; the correct invocations at each wrapping stage are Thoth's domain
 - [[ra]] — the sun's daily death and rebirth is the cosmic model that the mummy follows
+- [[nephthys]] — Osiris's other sister; mourns with Isis at the embalming; her protective role gives the embalming process divine witnesses on both sides
+
+**Documents**:
+- [[phase-1-010-book-of-the-dead]] — the spells placed with the mummy (especially the heart-scarab spell, Chapter 30B) are drawn directly from the Book of the Dead; the mummification process and the Book are inseparable technologies
+- [[phase-1-009-coffin-texts]] — Middle Kingdom precursors to the Book of the Dead; the Coffin Texts were placed with the mummy and contain parallel protective spells for each limb
+- [[phase-1-002-pyramid-texts]] — earliest funerary texts (c. 2400 BCE); the Pyramid Texts are the ritual framework within which mummification theology developed
+- [[phase-1-036-amduat]] — the Amduat documents the 12-hour journey of the sun through the underworld that the mummy ritually mirrors; the mummy follows Ra's nightly trajectory
+
+**Traditions**:
+- [[tradition-egyptian-religion]] — home tradition; mummification is the defining Egyptian contribution to world mortuary practice
+- [[tradition-egyptian]] — broader Egyptian cultural tradition
 
 ## Sources
 

@@ -80,6 +80,17 @@ By the New Kingdom the logic is spiritualized: the pharaoh's ka (divine double) 
 - [[ra]] — the king as Ra's son; solar fitness must be demonstrated to justify continued solar patronage
 - [[isis]] — as the maternal figure who enables resurrection; she is present in Heb-Sed theology as the mother-guarantor
 - [[maat]] — the continued reign is justified only if the king maintains maat; the Heb-Sed confirms he can
+- [[horus]] — the living pharaoh IS Horus; the Sed Festival is the renewal of Horus's living presence in the king's body; the divine son's power must be periodically demonstrated
+- [[ptah]] — the Apis bull is Ptah's manifestation; the pharaoh's race with the Apis bull is a direct confrontation with the chthonic fertility force
+
+**Traditions**:
+- [[tradition-egyptian-religion]] — home tradition; the Heb-Sed is the most archaic ritual in the Egyptian repertoire, with pre-Dynastic roots
+- [[tradition-egyptian]] — broader Egyptian cultural tradition
+
+**Cross-ritual royal-renewal parallels**:
+- [[ritual-opet-festival]] — companion Egyptian festival; Opet renews the divine ka annually; Heb-Sed confirms physical fitness after 30 years; together they comprise the complete royal-renewal system
+- [[ritual-roman-triumph]] — the Roman Triumph is a structural parallel: both confirm the ruler's divine mandate through a public ritual of demonstrated power before the divine
+- [[ritual-akitu-new-year]] — the Babylonian king's annual re-investiture at Akitu parallels the Sed: in both, royal authority is not permanent but must be periodically renewed through ritual
 
 ## Sources
 

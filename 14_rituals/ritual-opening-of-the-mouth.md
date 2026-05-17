@@ -89,6 +89,18 @@ All three treat breath/orifice-opening as the activation mechanism. All three di
 **Deity connections**:
 - [[maat]] — the animated deceased must then pass Maat's feather; wepet-ra enables them to stand before her
 - [[isis]] — collects and reassembles Osiris's body before Horus performs the wepet-ra; she is the pre-ritual agent
+- [[thoth]] — patron of ritual precision; the 75-act sequence is a Thoth-domain scribal technology; he witnesses and records the animation
+
+**Documents**:
+- [[phase-1-010-book-of-the-dead]] — Chapter 23 of the Book of the Dead specifically provides the spell for "opening the mouth" of the deceased; the spell-text IS the wepet-ra
+- [[phase-1-002-pyramid-texts]] — earliest written version of the wepet-ra sequence; Spell 11 of the Pyramid Texts documents the ur-form
+
+**Traditions**:
+- [[tradition-egyptian-religion]] — home tradition; wepet-ra is one of the defining rites of the Egyptian religious system
+- [[tradition-egyptian]] — broader Egyptian cultural tradition
+
+**Cross-tradition initiation parallels**:
+- [[ritual-navjote-zoroastrian-initiation]] — Navjote initiation includes a ritual breath-prayer sequence that animates the initiate's status as a Zoroastrian; parallel inauguration-through-breath logic
 
 ## Sources
 

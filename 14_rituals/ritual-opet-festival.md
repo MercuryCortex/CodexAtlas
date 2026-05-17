@@ -81,6 +81,17 @@ Every major tradition with a temple cult has a processional form. The structural
 **Deity connections**:
 - [[ra]] — solar synthesis in Amun-Ra; the visible face of the divine power being renewed
 - [[osiris]] — his resurrection narrative is the template for the pharaoh's renewal at Opet; the king dies to his old self and is reborn
+- [[amun-ra]] — the composite deity whose power is renewed through the Opet ceremony; the hidden (Amun) and visible (Ra) divine principles are unified in the pharaoh's ka-renewal
+- [[mut]] — Amun's consort, the Theban mother goddess; her barque processes alongside Amun's, completing the divine family triad
+- [[khonsu]] — moon god and son of Amun and Mut; the third barque of the Theban triad; integrates lunar timing into the solar festival
+
+**Traditions**:
+- [[tradition-egyptian-religion]] — home tradition; the Opet Festival is the flagship annual ritual of the New Kingdom
+- [[tradition-egyptian]] — broader Egyptian cultural tradition
+
+**Cross-ritual processional parallels**:
+- [[ritual-sed-festival]] — companion Egyptian royal-renewal ritual; the Sed Festival confirms physical fitness while Opet renews the divine ka; both are mechanisms for sustaining the pharaoh's divine mandate
+- [[ritual-roman-triumph]] — Roman Triumph is a structural parallel to Opet's procession: both move a divine-human figure through a community, renewing cosmic legitimacy through the act of civic passage
 
 ## Sources
 
