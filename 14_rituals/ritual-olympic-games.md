@@ -105,10 +105,17 @@ The modern revival (Athens, 1896) deliberately stripped the religious structure,
 **Tradition nodes**
 - [[tradition-greek-religion]] — home tradition
 - [[tradition-ancient-greek]] — broader Greek cultural tradition
+- [[tradition-mystery-cults]] — the Panhellenic religious system that produced the Olympics also produced the mystery cults; both are expressions of the same Greek theology of divine-human encounter
 
 **Theme nodes**
 - [[divine-kingship]] — the Olympic victor temporarily occupied a quasi-divine status; breaking city walls for a victor is the same logic as divine kingship: the god-blessed body transforms the civic space
 - [[eternal-return]] — the four-year Olympiad is a calendrical return to sacred time; the games do not merely commemorate Pelops's victory but re-enact it before Zeus each cycle
+- [[sacrifice-as-cosmic-renewal]] — the hecatomb of 100 oxen to Zeus is the ritual center; the athletic competition flows from the sacrifice, not the reverse; victory is the sacrifice's result
+
+**Cross-tradition parallels**:
+- [[ritual-opet-festival]] — structural parallel: the Olympic Games and Opet Festival both create a divinely guaranteed truce/suspension of normal political hostility around a sacred processional-festival event
+- [[ritual-roman-triumph]] — the olive-crowned victor entering Rome parallels the triumphator entering the city; both are moments of divinely recognized human achievement transforming civic space
+- [[ritual-akitu-new-year]] — both involve fixing cosmic order for the coming year through divinely witnessed human performance; the Olympic four-year cycle and the Akitu annual cycle share the calendrical-renewal theology
 
 ## refs
 - "Swaddling, Judith. *The Ancient Olympic Games*. University of Texas Press, 2008 — Tier-1 — Standard accessible account combining archaeological and textual evidence; full ritual sequence documentation"

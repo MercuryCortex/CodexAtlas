@@ -4,6 +4,22 @@ _Hand-maintained. Each agent currently working in the vault appends a claim bloc
 
 ---
 
+## ritual-indigenous-americas-1 — FINISHED (2026-05-17)
+- 6 nodes in 14_rituals/: ritual-sun-dance, ritual-sweat-lodge, ritual-potlatch, ritual-aztec-autosacrifice, ritual-inca-capacocha, ritual-vision-quest
+- Traditions: tradition-lakota (4 nodes), tradition-aztec-mexica (1), tradition-inca-andean (1)
+- MASSIVE WINs: body-as-sacrifice 5-tradition cluster; heat-purification 4-continent; radical-giving 4-tradition; wilderness-encounter 5-tradition; child-sacrifice Bronze-Age-to-Andean
+- Cross-links verified: quetzalcoatl, tlaloc, inti, moses, elijah-prophet, isaac-patriarch, abraham-patriarch, wakan-tanka, white-buffalo-calf-woman, wi-sun-lakota, ritual-sacrifice, ritual-mikveh-immersion, ritual-yom-kippur-atonement, ritual-sun-dance↔ritual-vision-quest↔ritual-sweat-lodge
+
+---
+
+## harmonic-chinese-1 — IN PROGRESS (2026-05-17)
+- Creating: music-marquis-yi-bells, music-chinese-twelve-lü, music-sheng-free-reed-chord
+- Updating: cross-edges in music-chinese-pentatonic-cosmology, music-harmonic-series-physics, music-chinese-court-instruments, music-gyuto-monks-multiphonic
+- Adding observation: harmonic-series-three-paths
+- Do NOT touch 10_music/ Chinese nodes or src/data/observations.js
+
+---
+
 ## ~~alphabet-ui-expansion-1 — FINISHED (2026-05-17)~~
 - ~~Glyph viewer UI: rounded cards, sticky bottom-left detail panel, horizontal 3-column layout~~
 - ~~New Ogham tab (12 entries) + Elder Futhark tab (14 entries)~~

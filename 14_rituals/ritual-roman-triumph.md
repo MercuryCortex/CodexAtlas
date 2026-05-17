@@ -98,13 +98,22 @@ The triumph continued into the Christian imperial period, with Constantine and l
 **Ritual nodes**
 - [[ritual-sacrifice]] — the Capitoline sacrifice of white oxen was the triumph's ritual completion; without the sacrifice, the borrowed divinity was not properly returned
 - [[ritual-eleusinian-mysteries]] — both involve temporary liminal transformation with careful ritual management of the divine/human boundary
+- [[ritual-opet-festival]] — the Opet procession and the Roman Triumph are both processional-deity/divine-figure movements through civic space that renew the cosmic-social compact; the pharaoh's ka-renewal at Opet and the triumphator's Jupiter-impersonation share the same theological logic
+- [[ritual-sed-festival]] — the Sed Festival's running of the course and the Roman Triumph's procession both enact the king's/general's continued divine fitness before the divine; physical performance confirms cosmic mandate
+- [[ritual-mithraic-mysteries]] — Mithraism's soldier-focused initiation system and the Roman military triumph both structure warrior identity through sacred ritual; both flourished in the same Roman military culture
+
+**Deity nodes (expanded)**:
+- [[mars-roman]] — god of war; the triumph departed from the Campus Martius (Field of Mars) and processed back to Jupiter's temple; Mars authorized the military victory that Jupiter then consecrated
+- [[ares]] — Greek parallel; the Greek divine-victory theology that Rome inherited through its Etruscan and Hellenistic contacts; structurally parallel divine sanction of martial achievement
 
 **Theme nodes**
 - [[divine-kingship]] — the triumph is the Roman Republican management of divine-kingship theology: the same sacral logic as pharaonic Egypt but constitutionally limited to one day
 - [[sacred-king]] — the sacred-king pattern across traditions; the triumphator is the Roman instantiation
+- [[sacrifice-as-cosmic-renewal]] — the Capitoline sacrifice is not a closing ceremony but the theological completion of the triumph; the victory is returned to Jupiter and thereby made cosmically legitimate
 
 **Tradition nodes**
 - [[tradition-roman-religion]] — home tradition
+- [[tradition-greek-religion]] — the triumph's theology has Hellenistic roots; the Roman appropriation of Greek divine-kingship philosophy via Etruscan mediation
 
 ## refs
 - "Beard, Mary. *The Roman Triumph*. Harvard University Press, 2007 — Tier-1 — The definitive modern scholarly study; demolishes the 19th-century reconstructions and builds from primary evidence; critical for the red-face debate and the slave-reminder question"

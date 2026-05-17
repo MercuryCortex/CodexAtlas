@@ -96,17 +96,23 @@ The cross-traditional convergence on this exact ritual technology suggests that 
 
 **Deity nodes**
 - [[saturn-roman]] — Saturnalia was Saturn's festival; the statue was unbound; the Golden Age theology requires Saturn as the god of the prior egalitarian order
+- [[jupiter]] — Jupiter's present order was the hierarchy being inverted; Saturnalia is structurally the defeat (temporary) of Jupiter's post-Golden-Age world by Saturn's pre-Jovian equality; the theological inversion is embedded in the divine genealogy
+- [[dionysus]] — Dionysus's festivals in Greece (especially the rural Dionysia and Anthesteria) shared the inversion-license-festivity structure with Saturnalia; both involved temporary suspension of normal social order under divine authorization
 
 **Ritual nodes**
 - [[ritual-sacrifice]] — the opening sacrifice at the Temple of Saturn authorized the inversion; divine endorsement preceded social reversal
 - [[ritual-advent-lent-liturgical-year]] — Saturnalia directly preceded Christmas in the Christian adaptation of December; gift-giving and social license carried forward
 - [[ritual-eleusinian-mysteries]] — companion Greek-world sacred festival; both were Tier-1 religious festivals with mandatory social suspension (the Olympic truce parallels the Saturnalian suspension of normal rules)
+- [[ritual-akitu-new-year]] — the Akitu festival's annual cosmic reset and the Saturnalia's annual return to the Golden Age are parallel annual cosmological inversions: both enact a temporary return to primordial conditions
 
 **Theme nodes**
 - [[eternal-return]] — Saturnalia enacted an annual cosmological return to the Golden Age, the Saturnian time before Jupiter's present order; it was not merely a festival but a temporal portal
+- [[scapegoat-mechanism]] — the Saturnalian "king of Saturnalia" chosen by lot from slaves, given absolute authority, and then removed at festival's end is a documented scapegoat-king structure; the community transfers its tensions to the temporary king and resolves them through his removal
+- [[cosmic-cycles]] — Saturnalia encodes a cyclical cosmology: the Golden Age → Jupiter's order → annual Saturnalian reversion → Golden Age brief restoration; cosmic time moves in cycles, not linear progression
 
 **Tradition nodes**
 - [[tradition-roman-religion]] — home tradition
+- [[tradition-greek-religion]] — Saturnalia's Golden Age theology has Greek antecedents in Hesiod's Works and Days (the myth of the five ages); Kronos/Saturn mythology is inherited from Greek through Etruscan intermediaries
 
 ## MASSIVE WIN
 

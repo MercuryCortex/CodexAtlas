@@ -115,10 +115,13 @@ This is not diffusion. The PIE sacred-fire tradition (reconstructed from the cog
 
 **Deity nodes**
 - [[vesta]] — the goddess and the flame were identical in Roman theology; Vesta had no mythology because she was entirely the fire itself
+- [[hestia]] — the Greek Vesta; Hestia/Vesta are cognates from the Proto-Indo-European hearth-goddess *h₁welth₂-; the PIE sacred hearth tradition is documented through the Greek-Roman parallel
+- [[juno]] — the other major Roman goddess associated with civic purity and women's sacred roles; Juno and Vesta together constitute the female civic-religion infrastructure of Rome
 
 **Ritual nodes**
 - [[ritual-yasna-fire-ceremony]] — Zoroastrian eternal fire theology; closest external parallel; both require specialist guardians and permanent maintenance
 - [[ritual-yajna-vedic-fire]] — Vedic sacred fire; shares PIE ancestor with Roman Vesta; Agni as cosmic fire vs. Vesta as civic fire
+- [[ritual-daily-temple]] — the Egyptian daily temple service has a structural parallel to the Vestals' perpetual maintenance: in both, the divine presence is maintained through continuous specialist care; extinction/interruption is equally catastrophic
 
 **Symbol nodes**
 - [[sacred-fire]] — the cross-tradition sacred fire symbol node
@@ -127,9 +130,12 @@ This is not diffusion. The PIE sacred-fire tradition (reconstructed from the cog
 
 **Theme nodes**
 - [[divine-kingship]] — the Vestals' extraordinary legal powers (pardoning condemned prisoners by accidental encounter) placed them above the law in the same way that sacred kings were legally untouchable; both institutions managed the divine/human boundary in civic space
+- [[priestly-purity]] — the Vestal's ritual purity is the most precisely legally codified purity requirement in the ancient Western world; the burial-alive punishment for unchastity is the most extreme documented consequence of ritual impurity
+- [[temple-economy]] — the Vestals controlled the mola salsa (salted flour cake) essential for every Roman sacrifice; they were the production infrastructure for the entire Roman sacrificial economy
 
 **Tradition nodes**
 - [[tradition-roman-religion]] — home tradition
+- [[tradition-greek-religion]] — the Hestia parallel documents shared PIE sacred-fire heritage; Greek civic religion had the hearth goddess as a central institution
 - [[tradition-kabbalah]] — Kabbalistic Shekinah as divine presence associated with flame and light; relevant to the Jewish eternal-flame strand of the convergence
 
 ## MASSIVE WIN
