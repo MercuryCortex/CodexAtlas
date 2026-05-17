@@ -5512,7 +5512,7 @@ body.view-alphabets main.canvas { padding-bottom: 220px; }
   color: var(--gold);
 }
 .item.forge-nav::after {
-  content: 'p4d';
+  content: 'p4e';
   margin-left: 6px;
   font-family: var(--mono); font-size: 9px;
   letter-spacing: 0.08em;
@@ -5620,6 +5620,28 @@ body.nav-collapsed .item.forge-nav::after { display: none; }
   touch-action: none;
 }
 .forge-canvas:active { cursor: grabbing; }
+
+/* Phase 4e — Type-shape glyph overlay.
+   One <span> per node, containing an inline <svg> that draws the
+   type-shape primitive (◉ deity / ❡ document / ✦ symbol / etc).
+   Sized to the disk diameter; positioned over the WebGPU canvas.
+   pointer-events: none so it never blocks hover hit-testing on
+   the canvas. The SVG `currentColor` is driven by the wrapper
+   span's `color` style (set inline at rebuild time to a lighter
+   hue of the family color). */
+.forge-glyphs-overlay {
+  position: absolute; inset: 0;
+  pointer-events: none;
+  z-index: 4;   /* above canvas (z auto/2), below labels (5) */
+}
+.forge-glyph {
+  position: absolute;
+  display: block;
+  pointer-events: none;
+  /* The SVG inside fills the span. */
+  line-height: 0;
+}
+.forge-glyph svg { display: block; width: 100%; height: 100%; overflow: visible; }
 
 /* Phase 4b — Labels overlay.
    DOM <div>s positioned over the canvas. Pointer-events: none so

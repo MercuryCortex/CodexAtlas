@@ -45,14 +45,15 @@
     rootEl.innerHTML = '';
 
     // ── Engine sanity check ─────────────────────────────
-    const eng     = window.AtlasEngine;
-    const mth     = window.AtlasEngineMath;
-    const gpu     = window.AtlasEngineWebGPU;
-    const layout  = window.AtlasEngineLayout;
-    const graph   = window.AtlasEngineGraph;
-    const cammod  = window.AtlasEngineCamera;
-    const modemod = window.AtlasEngineMode;
-    if (!eng || !mth || !gpu || !layout || !graph || !cammod || !modemod) {
+    const eng       = window.AtlasEngine;
+    const mth       = window.AtlasEngineMath;
+    const gpu       = window.AtlasEngineWebGPU;
+    const layout    = window.AtlasEngineLayout;
+    const graph     = window.AtlasEngineGraph;
+    const cammod    = window.AtlasEngineCamera;
+    const modemod   = window.AtlasEngineMode;
+    const glyphmod  = window.AtlasEngineGlyph;
+    if (!eng || !mth || !gpu || !layout || !graph || !cammod || !modemod || !glyphmod) {
       rootEl.innerHTML = '<div class="forge-error">'
         + 'Engine modules missing. Check index.html loads '
         + 'engine/contract.js + types.js + math.js + camera.js + '
@@ -124,6 +125,23 @@
     canvas.className = 'forge-canvas';
     stage.appendChild(canvas);
 
+    // ── Glyph overlay (Phase 4e) ──────────────────────
+    // SVG-per-node, positioned absolutely over the canvas.
+    // Adds the type-shape vocabulary (◉ deity / ✎ person /
+    // ❡ document / ✦ symbol / ◆ event / ✚ ritual / ♩ music /
+    // ℵ alphabet / △ alchemy / ○ philosophy / ⚖ moral /
+    // ⚕ medicine / ⊕ mathematics / ▮ monument / ◇ theme /
+    // ⊙ tradition / pin place) inside each disk.  Drawn at idle
+    // when the wheel is at rest — disambiguates node TYPE
+    // (especially useful across mode switches where the wheel
+    // density changes drastically).
+    //
+    // pointer-events: none so glyphs never intercept hover.
+    // Positioned via camera.worldToScreen each frame.
+    const glyphOverlay = document.createElement('div');
+    glyphOverlay.className = 'forge-glyphs-overlay';
+    stage.appendChild(glyphOverlay);
+
     // ── Labels overlay ──────────────────────────────────
     // DOM <div> per node, absolutely positioned over the canvas.
     // Pointer-events: none so it never intercepts hover. Hidden
@@ -177,6 +195,11 @@
       // Label DOM nodes — one per renderable deity. Created lazily
       // (only when first shown) to avoid 663 hidden divs at mount.
       labelEls:    new Map(),     // id → HTMLDivElement
+      // Glyph DOM nodes (Phase 4e) — one per node, all visible.
+      // Created at rebuildForMode time so the overlay matches the
+      // current mode exactly.
+      glyphEls:    [],            // Array<{ el, id, baseR, family }>
+      glyphFamilyColor: new Map(),// id → string  (for label tint)
     };
 
     rootEl._engine = {
@@ -392,6 +415,35 @@
       }
       local.labelEls.clear();
 
+      // Rebuild glyph overlay (Phase 4e). One inline-SVG per
+      // node, tinted to a lighter hue of the family color. The
+      // positions follow the camera via syncGlyphPositions on
+      // every camera change.
+      glyphOverlay.innerHTML = '';
+      local.glyphEls.length = 0;
+      local.glyphFamilyColor.clear();
+      // Build a `<span>` per node containing an inline <svg>.
+      // Iterate via nodePack.idIndex so the order matches
+      // hitNodes / state buffers exactly (and any node that
+      // failed positioning is correctly skipped).
+      const modeNodeById = new Map();
+      for (const n of modeNodes) modeNodeById.set(n.id, n);
+      for (let i = 0; i < nodePack.instanceCount; i++) {
+        const id = nodePack.idIndex[i];
+        const n  = modeNodeById.get(id);
+        if (!n) continue;
+        const r  = nodePack.data[i * NODE_FLOATS + 2];   // baseR (world units)
+        const fc = n.family_color || n.tradition_color || '#cccccc';
+        const tint = mth.lightenColor(fc, 0.55);
+        const span = document.createElement('span');
+        span.className = 'forge-glyph';
+        span.style.color = tint;
+        span.innerHTML = glyphmod.fullSvg(n.type, 12);   // fill via CSS sizing
+        glyphOverlay.appendChild(span);
+        local.glyphEls.push({ el: span, id, baseR: r });
+        local.glyphFamilyColor.set(id, fc);
+      }
+
       // Status strip counters + dropdown selection sync.
       const nEl = document.getElementById('forge-status-nodes');
       const eEl = document.getElementById('forge-status-edges');
@@ -459,6 +511,38 @@
       // change also needs them re-positioned. Cheap when small;
       // skip entirely when no focus is set.
       syncLabelPositions();
+      // Glyphs are also CSS-positioned. Sync on every camera move.
+      syncGlyphPositions();
+    }
+
+    // ── Glyph positions (Phase 4e) ─────────────────────
+    // Iterate glyphEls (one per node) and place each span at
+    // its node's screen position. Size = disk diameter at the
+    // current camera scale. Skip when no glyphs (empty mode).
+    function syncGlyphPositions() {
+      if (local.destroyed) return;
+      const els = local.glyphEls;
+      if (!els.length) return;
+      const vp = local.lastSize;
+      if (!vp.w || !vp.h) return;
+      const sc = camera.state.scale;
+      const hitNodes = local.mode.hitNodes;
+      // hitNodes order matches glyphEls order (both come from
+      // nodePack.idIndex). Iterate by index for O(N) with no
+      // per-frame Map lookups.
+      for (let i = 0; i < els.length; i++) {
+        const g = els[i];
+        const n = hitNodes[i];
+        if (!n) continue;
+        const s = camera.worldToScreen(n.x, n.y, vp);
+        // Glyph fills the disk: size = 2 * baseR * scale, centered.
+        const dPx = Math.max(2, 2 * g.baseR * sc);
+        const half = dPx / 2;
+        g.el.style.left   = (s.x - half) + 'px';
+        g.el.style.top    = (s.y - half) + 'px';
+        g.el.style.width  = dPx + 'px';
+        g.el.style.height = dPx + 'px';
+      }
     }
 
     // ── Labels ─────────────────────────────────────────
