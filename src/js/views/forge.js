@@ -205,6 +205,40 @@
       }
       local.renderer = renderer;
 
+      // Upload the 7-bucket hot-color palette for the edge
+      // fragment shader (Phase 4a hot-edge brighten). Order
+      // MUST match BUCKET_INDEX in src/js/engine/graph/edge.js.
+      // Hot alpha pulled from window.EDGE_BUCKETS (universal
+      // routing module) if loaded; falls back to spec values.
+      const buckets = window.EDGE_BUCKETS || {};
+      function hex2rgba(hex, a) {
+        if (!hex || typeof hex !== 'string' || hex[0] !== '#' || hex.length < 7) {
+          return [0.31, 0.37, 0.51, a];   // slate fallback
+        }
+        return [
+          parseInt(hex.slice(1, 3), 16) / 255,
+          parseInt(hex.slice(3, 5), 16) / 255,
+          parseInt(hex.slice(5, 7), 16) / 255,
+          a,
+        ];
+      }
+      function bucketHot(name, fallbackHex, fallbackHot) {
+        const b = buckets[name];
+        if (b && typeof b.hex === 'string' && typeof b.hot === 'number') {
+          return hex2rgba(b.hex, b.hot);
+        }
+        return hex2rgba(fallbackHex, fallbackHot);
+      }
+      renderer.setBucketPalette([
+        bucketHot('transmission', '#C9743A', 0.95),  // 0
+        bucketHot('parallel',     '#5A9A8F', 0.85),  // 1
+        bucketHot('association',  '#4A5AA4', 0.55),  // 2
+        bucketHot('kinship',      '#C9A5D4', 0.85),  // 3
+        bucketHot('attestation',  '#D4A55A', 0.90),  // 4
+        bucketHot('polemic',      '#A83E4A', 0.95),  // 5
+        bucketHot('fusion',       '#C4783A', 0.95),  // 6
+      ]);
+
       const devEl = document.getElementById('forge-status-device');
       if (devEl) {
         devEl.textContent = 'active · ' + renderer.format;

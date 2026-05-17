@@ -70,12 +70,22 @@
 
   // ============================================================
   // Shared view-uniform layout (consumed by NODE + EDGE shaders).
-  //   view_scale   vec2 — (cam.scale*2/vp.w, -cam.scale*2/vp.h)
-  //   view_offset  vec2 — (-cam.centerX*view_scale.x, -cam.centerY*view_scale.y)
-  //   viewport_px  vec2 — backing-store dimensions (for AA)
-  //   dim_amount   f32  — 0..1: how much non-focused instances dim
-  //   _pad         f32
-  // Total: 32 bytes, 8 floats.
+  //   view_scale          vec2     — (cam.scale*2/vp.w, -cam.scale*2/vp.h)
+  //   view_offset         vec2     — (-cam.centerX*view_scale.x, -cam.centerY*view_scale.y)
+  //   viewport_px         vec2     — backing-store dimensions (for AA)
+  //   dim_amount          f32      — 0..1: how much non-focused instances dim
+  //   _pad                f32
+  //   bucket_hot_colors   [8]vec4  — bucket-hex at hot alpha, indexed by
+  //                                  bucket_index 0..6 (slot 7 unused).
+  //                                  0:transmission 1:parallel 2:association
+  //                                  3:kinship 4:attestation 5:polemic 6:fusion
+  // Total: 32 + 128 = 160 bytes (vec4-aligned).
+  //
+  // Phase 4a: bucket_hot_colors enables the edge fragment shader
+  // to mix the per-instance idle color with the bucket-hot color
+  // based on the per-instance focus state. Without this, focused
+  // edges stay slate; with it, they light up in their bucket hue
+  // when a user hovers a 1-hop neighborhood.
   // ============================================================
 
   // ============================================================
@@ -83,11 +93,12 @@
   // ============================================================
   const NODE_SHADER = /* wgsl */ `
     struct View {
-      view_scale:  vec2<f32>,
-      view_offset: vec2<f32>,
-      viewport_px: vec2<f32>,
-      dim_amount:  f32,
-      _pad:        f32,
+      view_scale:        vec2<f32>,
+      view_offset:       vec2<f32>,
+      viewport_px:       vec2<f32>,
+      dim_amount:        f32,
+      _pad:              f32,
+      bucket_hot_colors: array<vec4<f32>, 8>,
     };
     @group(0) @binding(0) var<uniform> v: View;
 
@@ -135,19 +146,21 @@
   // ============================================================
   const EDGE_SHADER = /* wgsl */ `
     struct View {
-      view_scale:  vec2<f32>,
-      view_offset: vec2<f32>,
-      viewport_px: vec2<f32>,
-      dim_amount:  f32,
-      _pad:        f32,
+      view_scale:        vec2<f32>,
+      view_offset:       vec2<f32>,
+      viewport_px:       vec2<f32>,
+      dim_amount:        f32,
+      _pad:              f32,
+      bucket_hot_colors: array<vec4<f32>, 8>,
     };
     @group(0) @binding(0) var<uniform> v: View;
 
     struct VsOut {
       @builtin(position) position: vec4<f32>,
-      @location(0) edge_y:     f32,
-      @location(1) edge_color: vec4<f32>,
-      @location(2) state:      f32,
+      @location(0) edge_y:       f32,
+      @location(1) edge_color:   vec4<f32>,
+      @location(2) state:        f32,
+      @location(3) bucket_index: f32,    // interpolated; floor() in fs
     };
 
     fn bezier_pos(p0: vec2<f32>, p1: vec2<f32>, p2: vec2<f32>, t: f32) -> vec2<f32> {
@@ -176,15 +189,19 @@
       let tan  = bezier_tan(p0, p1, p2, t);
       let tnorm = normalize(tan);
       let perp  = vec2<f32>(-tnorm.y, tnorm.x);
-      let half_w = inst_extra.x * 0.5;
+      // Phase 4a: incident edges (state=0) widen as well as brighten,
+      // so the 1-hop connection ribbon reads as the dominant visual.
+      let hot_mult = mix(2.4, 1.0, inst_state);   // state=0 → 2.4x, state=1 → 1x
+      let half_w   = inst_extra.x * 0.5 * hot_mult;
       let world  = pos + perp * quad_vertex.y * half_w;
       let ndc = world * v.view_scale + v.view_offset;
 
       var out: VsOut;
-      out.position   = vec4<f32>(ndc, 0.0, 1.0);
-      out.edge_y     = quad_vertex.y;
-      out.edge_color = inst_color;
-      out.state      = inst_state;
+      out.position     = vec4<f32>(ndc, 0.0, 1.0);
+      out.edge_y       = quad_vertex.y;
+      out.edge_color   = inst_color;
+      out.state        = inst_state;
+      out.bucket_index = inst_extra.z;
       return out;
     }
 
@@ -192,10 +209,21 @@
     fn fs_main(in: VsOut) -> @location(0) vec4<f32> {
       let aa = fwidth(in.edge_y);
       let alpha_aa = 1.0 - smoothstep(1.0 - aa, 1.0, abs(in.edge_y));
-      let c = in.edge_color;
+
+      // Bucket-hot color lookup. The bucket_index varies per-instance
+      // (not per-vertex) so interpolation is exact; floor + clamp for
+      // safety against float drift at instance boundaries.
+      let bidx_raw = floor(in.bucket_index + 0.5);
+      let bidx     = clamp(i32(bidx_raw), 0, 7);
+      let hot      = v.bucket_hot_colors[bidx];
+
+      // state=0 → fully hot (bucket hex at hot alpha).
+      // state=1 → idle (instance color = slate or headline-bucket at idle alpha).
+      // Linear blend in between for any future fractional state.
+      let color    = mix(hot, in.edge_color, in.state);
       let dim_mult = mix(1.0, 1.0 - v.dim_amount, in.state);
-      let a = c.a * alpha_aa * dim_mult;
-      return vec4<f32>(c.rgb * a, a);
+      let a        = color.a * alpha_aa * dim_mult;
+      return vec4<f32>(color.rgb * a, a);
     }
   `;
 
@@ -280,8 +308,10 @@
     });
 
     // ── Shared view-uniform ────────────────────────────
+    // 160 bytes: 32-byte view header + 128-byte bucket palette (8 × vec4).
+    const VIEW_UBO_SIZE = 160;
     const viewUbo = device.createBuffer({
-      label: 'forge-view-ubo', size: 32,
+      label: 'forge-view-ubo', size: VIEW_UBO_SIZE,
       usage: GPUBufferUsage.UNIFORM | GPUBufferUsage.COPY_DST,
     });
     const viewBgl = device.createBindGroupLayout({
@@ -380,10 +410,47 @@
 
     const CLEAR_COLOR = { r: 0.0274, g: 0.0353, b: 0.0588, a: 1 };
 
+    // ── Bucket palette storage (Phase 4a hot-edge brighten) ─
+    // Float32Array of 8 × 4 = 32 floats. Indexed at the bucket-
+    // hot-colors offset (32 bytes into the view-uniform). The
+    // view module writes this once via setBucketPalette() during
+    // bootstrap; drawFrame copies it into the view-uniform along
+    // with the per-frame camera data.
+    const bucketPalette = new Float32Array(32);
+    // Default: slate for all (safe fallback if the view forgets
+    // to call setBucketPalette before drawFrame). 0.85 alpha so
+    // a focused edge is at least clearly visible.
+    for (let i = 0; i < 8; i++) {
+      bucketPalette[i * 4 + 0] = 80 / 255;
+      bucketPalette[i * 4 + 1] = 95 / 255;
+      bucketPalette[i * 4 + 2] = 130 / 255;
+      bucketPalette[i * 4 + 3] = 0.85;
+    }
+
     // ── Public API ──────────────────────────────────
     const api = {
       device, context, format, canvas,
       EDGE_SEGMENTS,
+
+      // Write the 7-bucket hot-color palette into the renderer.
+      // @param colors  Array of 7 [r, g, b, a] in [0, 1].
+      //                Order MUST match the BUCKET_INDEX in
+      //                src/js/engine/graph/edge.js:
+      //                0:transmission 1:parallel 2:association
+      //                3:kinship 4:attestation 5:polemic 6:fusion
+      // Effect is immediate — applied on next drawFrame. Safe to
+      // call from a dev-panel slider without bouncing the renderer.
+      setBucketPalette(colors) {
+        if (!Array.isArray(colors)) return;
+        for (let i = 0; i < Math.min(colors.length, 7); i++) {
+          const c = colors[i];
+          if (!c) continue;
+          bucketPalette[i * 4 + 0] = +c[0] || 0;
+          bucketPalette[i * 4 + 1] = +c[1] || 0;
+          bucketPalette[i * 4 + 2] = +c[2] || 0;
+          bucketPalette[i * 4 + 3] = (c[3] === undefined) ? 0.9 : +c[3];
+        }
+      },
 
       resize(cssW, cssH) {
         const dpr = window.devicePixelRatio || 1;
@@ -449,7 +516,12 @@
         const viewOffsetX = -cam.centerX * viewScaleX;
         const viewOffsetY = -cam.centerY * viewScaleY;
 
-        const viewData = new Float32Array(8);
+        // 160-byte view-uniform: 32-byte header + 128-byte bucket palette.
+        // We could split this into two writeBuffer calls (header per-frame,
+        // palette only when it changes), but the palette is 128 bytes —
+        // copying it every frame is cheaper than the bookkeeping for a
+        // dirty-flag system, and writeBuffer is async-batched anyway.
+        const viewData = new Float32Array(40);  // 160 / 4
         viewData[0] = viewScaleX;
         viewData[1] = viewScaleY;
         viewData[2] = viewOffsetX;
@@ -458,6 +530,8 @@
         viewData[5] = vp.h * (window.devicePixelRatio || 1);
         viewData[6] = dimA;
         viewData[7] = 0;
+        // Bucket palette (8 × 4 floats) starts at offset 8 (32 bytes).
+        viewData.set(bucketPalette, 8);
         device.queue.writeBuffer(viewUbo, 0, viewData);
 
         // ── Instance buffers (static geometry) ──────
