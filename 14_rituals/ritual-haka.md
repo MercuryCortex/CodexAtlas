@@ -62,17 +62,23 @@ Five traditions encode the same claim: **voiced-embodied performance is causally
 
 The Māori haka is distinctive among these in its physical intensity and collective nature — it is not one performer but a community of performers whose synchronized bodies constitute the speech act together. But the underlying logic is identical: sound plus body plus intention produces effects that outlast the performance itself.
 
-## Cross-Tradition Links
+## Vault Connections
 
+**Deities:**
+- [[tangaroa]] — ocean-crossing haka invoke Tangaroa's domain; navigational haka encode route knowledge in performance; Tangaroa-specific haka are performed before major ocean voyages
+- [[tane]] — haka performed at the felling of a significant tree invoke Tane as forest deity and owner of trees
+- [[maui-polynesian]] — haka compositions invoke Māui's feats (fishing up islands, snaring the sun) as ancestral precedents; Māui's exploits constitute a haka catalogue
+
+**Traditions:**
+- [[tradition-maori]] — primary tradition; haka is a central institution of Māori social, legal, and ceremonial life
+- [[tradition-polynesian]] — pan-Polynesian performance tradition; Hawaiian *oli* (chant) and Samoan *fa'aluma* are structural cousins
+
+**Cross-tradition operative-speech parallels:**
 - [[ritual-polynesian-tapu]] — tapu governs who may lead or participate in specific haka forms; the body in haka carries elevated tapu
-- [[ritual-yajna-vedic-fire]] — Vedic yajna is the closest structural parallel: precise vocalization as causal technology
-- [[ritual-ifa-divination]] — Yoruba oriki tradition as parallel embodied-vocal performance
-- [[ritual-zen-sesshin]] — the sesshin's chanting (kinhin) encodes a similar synchrony-of-breath-as-practice logic
-- [[tangaroa]] — ocean-crossing haka invoke Tangaroa's domain; navigational haka encode route knowledge in performance
-- [[tane]] — haka performed at the felling of a significant tree invoke Tane as forest deity
-- [[maui-polynesian]] — haka compositions invoke Māui's feats as ancestral precedents
-- [[tradition-maori]] — primary tradition
-- [[tradition-polynesian]] — pan-Polynesian performance tradition; Hawaiian oli (chant) and Samoan slit-drum composition are cousins
+- [[ritual-yajna-vedic-fire]] — Vedic yajna is the closest structural parallel: precise vocalization as causal technology; mantra recitation encodes the same speech-act logic as haka
+- [[ritual-ifa-divination]] — Yoruba *oriki* (praise-singing) as parallel embodied-vocal performance; the oriki summons what it names, exactly as haka enacts what it declares
+- [[ritual-zen-sesshin]] — the sesshin's coordinated chanting encodes a similar synchrony-of-breath-as-practice logic; collective regulation through coordinated respiration
+- [[oral-tradition-transmission]] — haka is a legal and genealogical document encoded in performance; the oral-transmission hub
 
 ## Sourcing Notes
 

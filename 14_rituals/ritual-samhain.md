@@ -64,18 +64,27 @@ The structural equation: **the dead are not safely past — they are ongoing com
 
 The Celtic version is distinctive in adding the fire-reset and explicit divination, suggesting that the Samhain complex integrates three otherwise separate concerns — ancestral contact, cosmological renewal, and temporal rupture — into a single calendrical event.
 
-## Cross-Tradition Links
+## Vault Connections
 
-- [[ritual-chinese-ancestor-veneration]] — Chinese ancestor hospitality system; nearest structural parallel to Samhain's table-setting for the dead
-- [[ritual-funeral-rites]] — cross-tradition death-management hub
-- [[ritual-sacrifice]] — Samhain involved animal sacrifice in the pre-Christian period
-- [[dagda]] — the Dagda's síd at Brú na Bóinne is associated with Samhain; he mates with the Morrigan on this night
-- [[the-morrigan]] — goddess of death, battle, and sovereignty; most active at Samhain
+**Deities:**
+- [[dagda]] — the Dagda's síd at Brú na Bóinne is associated with Samhain; he mates with the Morrigan on this night; the communal fire reset is under his sovereignty
+- [[the-morrigan]] — goddess of death, battle, and sovereignty; her triple nature (Badb/Macha/Nemain) is most active at Samhain when the veil thins
 - [[lugh]] — Lughnasadh (Aug 1) is the harvest festival that precedes Samhain; the pair bracket the light/dark transition
-- [[tradition-druidism]] — primary tradition
+- [[donn-celtic]] — the Irish lord of the dead; his dwelling Tech Duinn is the first stop of the dead; Samhain is the night when the dead pass through his house
+- [[danu]] — the mother goddess of the Tuatha Dé Danann; their retreat into the síde (mounds) at Samhain is the event that creates the boundary between worlds
+
+**Traditions:**
+- [[tradition-druidism]] — primary tradition; communal fire reset and divination are Druidic practices
 - [[tradition-celtic]] — pan-Celtic festival attested across Gaul, Britain, Ireland
-- [[tradition-irish-celtic]] — most complete textual record in Irish annals
-- [[tradition-christianity-canonical]] — direct Christianization: All Saints + All Souls is the explicit successor event
+- [[tradition-irish-celtic]] — most complete textual record in Irish annals and Ulster Cycle
+- [[tradition-christianity-canonical]] — direct Christianization: All Saints (Nov 1) + All Souls (Nov 2) is the explicit successor complex
+
+**Cross-tradition ritual parallels (dead-return convergence):**
+- [[ritual-chinese-ancestor-veneration]] — Chinese ancestor hospitality system; nearest structural parallel to Samhain's table-setting for the dead; both require periodic hospitality or the dead become dangerous
+- [[ritual-egungun-masquerade]] — Yoruba ancestor return: at Egungun the dead literally arrive in the living community; structural parallel to Samhain's boundary dissolution
+- [[ritual-bori-spirit-possession]] — Hausa Bori spirits cross the boundary into the living world; same dead-return convergence at a different ontological register
+- [[ritual-funeral-rites]] — cross-tradition death-management hub
+- [[ritual-sacrifice]] — Samhain involved animal sacrifice in the pre-Christian period; the communal fire reset required blood offerings
 
 ## Sourcing Notes
 

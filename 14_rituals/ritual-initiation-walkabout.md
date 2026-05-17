@@ -60,18 +60,23 @@ The walkabout is distinctive among these in that the wilderness itself is the te
 
 A second distinction: the Aboriginal initiation is the only one where the initiate *assumes a specific named custodial responsibility* as the outcome. The bar mitzvah, the upanayana, and the sesshin produce a transformed person. The walkabout produces a transformed person *who is now legally responsible for a specific portion of the living landscape.*
 
-## Cross-Tradition Links
+## Vault Connections
 
-- [[ritual-dreamtime-ceremony]] — the Songline that the initiate retraces; the walking IS the ceremony
-- [[ritual-smoking-ceremony]] — smoking ceremonies mark transition points during initiation
-- [[ritual-vision-quest]] — Lakota parallel: wilderness isolation as identity transformation
-- [[ritual-bar-mitzvah-coming-of-age]] — community-witnessed transformation parallel
-- [[ritual-upanayana-sacred-thread]] — Hindu parallel: sacred thread marks new categorical status
-- [[ritual-zen-sesshin]] — Zen parallel: intensive structured experience dissolves ordinary self
-- [[ritual-circumcision-covenant]] — circumcision as mark of categorical transformation appears in Aboriginal initiation and Abrahamic traditions
+**Deities:**
+- [[baiame]] — Sky Father associated with the moral-legal law transmitted during male initiation in eastern Australian traditions; the law the initiate receives is Baiame's law
+
+**Traditions:**
+- [[tradition-australian-aboriginal]] — primary tradition; custodial responsibility for specific Songline country is the outcome of initiation
+
+**Cross-tradition connections:**
+- [[ritual-dreamtime-ceremony]] — the Songline that the initiate retraces; the walking IS the ceremony; the landscape IS the scripture
+- [[ritual-smoking-ceremony]] — smoking ceremonies mark transition points during initiation; smoke acknowledges the Ancestor custodians
+- [[ritual-vision-quest]] — Lakota parallel: wilderness isolation as identity transformation; the spirits of the land appear and grant a medicine song
+- [[ritual-bar-mitzvah-coming-of-age]] — community-witnessed transformation parallel; the Torah study is the Songline-equivalent — both encode the tradition in the initiate's body
+- [[ritual-upanayana-sacred-thread]] — Hindu parallel: sacred thread marks new categorical status; the brahmacharya period is the parallel wilderness/study isolation
+- [[ritual-zen-sesshin]] — Zen parallel: intensive structured experience dissolves the ordinary self; koan resolution parallels Songline mastery as a categorical marker
+- [[ritual-circumcision-covenant]] — circumcision as mark of categorical transformation appears in both Aboriginal male initiation and Abrahamic traditions
 - [[ritual-rites-of-passage]] — cross-tradition hub for initiatory structures
-- [[baiame]] — Sky Father associated with the moral-legal law transmitted during male initiation in eastern Australian traditions
-- [[tradition-australian-aboriginal]] — primary tradition
 
 ## Sourcing Notes
 

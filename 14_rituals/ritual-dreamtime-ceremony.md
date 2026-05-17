@@ -57,13 +57,21 @@ The Aboriginal Songline tradition is unique among all five in one structural fea
 
 This makes the Songline tradition arguably the most integrated cosmological system documented — it fuses ontology, cosmology, practical geography, legal structure (land rights derive from custodianship of specific Songlines), and ceremonial obligation into a single, unitary system.
 
-## Cross-Tradition Links
+## Vault Connections
 
-- [[ritual-initiation-walkabout]] — male initiation involves learning and retracing the ancestral Songline; the route is the education
-- [[ritual-smoking-ceremony]] — smoking ceremonies mark ceremonial space before major Tjukurpa ceremonies
-- [[ritual-dreamtime-ceremony]] — self-reference: see also the initiation and smoking nodes for the ceremony's components
-- [[baiame]] — the Sky Father deity who appears across many eastern Australian traditions; associated with the moral law dimension of Tjukurpa
-- [[tradition-australian-aboriginal]] — primary tradition
+**Deities:**
+- [[baiame]] — the Sky Father deity who appears across many eastern Australian traditions (Wiradjuri, Kamilaroi, Ngemba); associated with the moral-law dimension of Tjukurpa; the first Songlines were walked by beings like Baiame
+
+**Traditions:**
+- [[tradition-australian-aboriginal]] — primary tradition; the oldest continuously practiced ritual system on Earth (65,000+ years)
+
+**Cross-tradition connections:**
+- [[ritual-initiation-walkabout]] — male initiation involves learning and retracing the ancestral Songline; the route IS the education; the walking IS the ceremony
+- [[ritual-smoking-ceremony]] — smoking ceremonies mark ceremonial space before major Tjukurpa ceremonies; the smoke acknowledges the Ancestor custodians of the country
+- [[ritual-druidic-oak-sacred]] — the nemeton encodes the same logic: landscape as primary sacred space, the built temple as secondary; both traditions treat geography as scripture
+- [[alchemy-prima-materia]] — the Tjukurpa's "ongoing Dreaming dimension" that underlies reality parallels the alchemical prima materia: both are the pre-differentiated ground from which created forms emerge and to which they return
+- [[oral-tradition-transmission]] — the Songlines are the world's most integrated oral-transmission system: navigation, cosmology, law, and ceremony encoded in a single song-track
+- [[creation-by-word]] — Ancestor beings sang the world into existence; this is the closest non-Western parallel to the Memphite Theology (Ptah creates by speaking) and the Johannine Logos doctrine
 
 ## Sourcing Notes
 

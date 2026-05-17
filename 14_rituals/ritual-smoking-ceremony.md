@@ -69,21 +69,26 @@ Six continents. Zero cross-cultural contact during the periods of initial practi
 
 The Aboriginal version is the deepest in temporal terms (at minimum 60,000 years of continuous practice, with some estimates suggesting the pharmacological knowledge of aromatic plants may date to 100,000+ years), and the most integrated into a broader cosmological system (the smoke ceremony is a Tjukurpa-grounded act, not merely a hygiene practice). But structurally, the Aboriginal smoking ceremony is in conversation with every incense tradition on Earth.
 
-## Cross-Tradition Links
+## Vault Connections
 
-- [[ritual-dreamtime-ceremony]] — the Tjukurpa framework that grounds the smoking ceremony's cosmological meaning
-- [[ritual-initiation-walkabout]] — smoking ceremony performed at key transition points in male initiation
-- [[ritual-yajna-vedic-fire]] — the Vedic fire ceremony; the agnihotra specifically uses fragrant offerings; closest structural parallel in the Hindu world
-- [[ritual-yasna-fire-ceremony]] — Zoroastrian sacred fire; fire as divine medium; incense offerings in the yasna sequence
-- [[ritual-eucharist-communion]] — Catholic thurible incense frames the Eucharist; the same plant-smoke-divine-communication logic in a Christian liturgical context
+**Deities:**
+- [[baiame]] — Sky Father deity in eastern Australian traditions; the smoking ceremony acknowledges the divine custodians of sky country and requests their presence and blessing
+
+**Traditions:**
+- [[tradition-australian-aboriginal]] — primary tradition; 60,000+ year continuous practice; the deepest temporal layer of the global smoke-purification convergence
+- [[tradition-hinduism]] — havan/agnihotra parallel; ghee and fragrant herbs in the sacred fire
+- [[tradition-latin-christianity]] — Catholic thurible tradition; frankincense at Mass, funerals, and blessings
+- [[tradition-judaism]] — Temple *ketoret* (Exodus 30:34–38); the incense formula under sacred secrecy; the rising smoke as the divine-communication channel
+- [[tradition-lakota]] — sweetgrass and sage smudging; the Plains Indian parallel to the Aboriginal smoking ceremony
+
+**Cross-tradition smoke-purification parallels:**
+- [[ritual-dreamtime-ceremony]] — the Tjukurpa framework that grounds the smoking ceremony's cosmological meaning; smoke acknowledges the Ancestor custodians
+- [[ritual-initiation-walkabout]] — smoking ceremony performed at key transition points in male initiation; marks separation from ordinary space
+- [[ritual-yajna-vedic-fire]] — the Vedic fire ceremony; agnihotra specifically uses fragrant offerings; the rising smoke carries the oblation to the gods
+- [[ritual-yasna-fire-ceremony]] — Zoroastrian sacred fire; fire as divine medium; incense offerings in the yasna sequence; same smoke-as-communication logic
+- [[ritual-eucharist-communion]] — Catholic thurible incense frames the Eucharist; the smoke-rising-to-the-divine logic in a Christian liturgical context
 - [[ritual-sun-dance]] — Lakota sweetgrass and sage smudging used in preparation for the Sun Dance
-- [[ritual-vision-quest]] — sage smudging marks the entry into the vision quest
-- [[baiame]] — Sky Father deity in eastern Australian traditions; smoking ceremony acknowledges the divine custodians of sky country
-- [[tradition-australian-aboriginal]] — primary tradition
-- [[tradition-hinduism]] — havan/agnihotra parallel
-- [[tradition-latin-christianity]] — Catholic thurible tradition
-- [[tradition-judaism]] — Temple ketoret (Exodus 30:34–38; the formula was under sacred secrecy)
-- [[tradition-lakota]] — sweetgrass and sage smudging
+- [[ritual-vision-quest]] — sage smudging marks entry into the vision quest; the purification precedes the sacred contact
 
 ## Sourcing Notes
 

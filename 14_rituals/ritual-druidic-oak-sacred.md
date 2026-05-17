@@ -55,19 +55,28 @@ Three geographically and culturally separate traditions independently treated th
 
 **Secondary parallel:** Biblical *asherot* — the sacred poles and groves condemned repeatedly by the prophets (*Deuteronomy* 16:21, *Judges* 6:25–28, *I Kings* 18:19, *II Kings* 23:4–15). The frequency of prophetic condemnation is direct evidence of widespread practice. Pre-monarchic and rural Israelite religion included sacred trees and poles associated with the goddess Asherah. The prophetic campaign against these was precisely a campaign to abolish the nemeton-equivalent in Israelite worship.
 
-## Cross-Tradition Links
+## Vault Connections
 
-- [[ritual-sacrifice]] — sacrificial practice at the nemeton, including animal and possibly human sacrifice
-- [[ritual-samhain]] — Samhain fire rituals took place at specific nemeton sites
-- [[cernunnos]] — the antlered lord of the forest; most likely a nemeton deity
-- [[dagda]] — associated with oak strength and the sacred center
-- [[the-morrigan]] — crow/raven presences in sacred groves
-- [[lugh]] — Lughnasadh games may have had nemeton locations
-- [[asherah]] — the biblical sacred-pole tradition is the Semitic parallel to the Druidic sacred tree
-- [[tradition-druidism]] — primary tradition
-- [[tradition-celtic]] — nemeton attested across all Celtic territories including Galatia
-- [[tradition-hinduism]] — *devavana* and *sarpa kavu* parallel
-- [[tradition-shinto]] — *chinju no mori* parallel
+**Deities:**
+- [[cernunnos]] — the antlered lord of the forest; the most plausible resident deity of the nemeton; depicted surrounded by animals in the grove context
+- [[dagda]] — associated with oak strength and the sacred center; the great oak is one of his symbols
+- [[the-morrigan]] — crow/raven presences in sacred groves; her bird forms inhabit the great trees
+- [[lugh]] — Lughnasadh assembly games may have had nemeton locations; the grove as the site of sacred games
+- [[danu]] — mother of the Tuatha Dé Danann; the forest as her body is implicit in the devavana parallel
+- [[brigid]] — sacred fire within the grove; the eternal flame at Kildare preserves the nemeton-fire connection
+
+**Traditions:**
+- [[tradition-druidism]] — primary tradition; the nemeton IS the Druidic temple
+- [[tradition-celtic]] — nemeton attested across all Celtic territories including Galatia (Drunemeton = "oak sanctuary")
+- [[tradition-irish-celtic]] — Irish sacred grove traditions attested in place names and medieval texts
+- [[tradition-hinduism]] — *devavana* (god's forest) and *sarpa kavu* (serpent grove) parallel; sacred groves maintained continuously from Vedic period
+- [[tradition-shinto]] — *chinju no mori* (tutelary grove) parallel; the grove is the kami's actual dwelling
+
+**Cross-tradition connections:**
+- [[ritual-sacrifice]] — sacrificial practice at the nemeton, including animal and possibly human sacrifice (wicker man; bog bodies)
+- [[ritual-samhain]] — Samhain fire rituals took place at specific nemeton sites; the communal fire reset was a grove event
+- [[ritual-misogi-purification]] — Shinto purification in natural water adjacent to the sacred grove; nature-as-sacred-space logic shared with the nemeton
+- [[ritual-dreamtime-ceremony]] — Aboriginal Songlines similarly encode landscape-as-scripture; both traditions treat the natural world as the primary ontological site of the sacred
 
 ## Sourcing Notes
 

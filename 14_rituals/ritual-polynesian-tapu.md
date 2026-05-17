@@ -63,18 +63,23 @@ European Christianity collapsed this distinction when it translated the Hebrew *
 
 The *Kapu* system in Hawaii was abolished in 1819 — voluntarily, by Hawaiian chiefs themselves, one year before Christian missionaries arrived. Ka'ahumanu (queen regent) and Liholiho (Kamehameha II) ate together in public, violating the fundamental gender kapu. The heiau (temples) were destroyed. This self-abolition was the result of internal political dynamics, not missionary pressure. It is one of the most striking examples of indigenous ritual reform in the historical record.
 
-## Cross-Tradition Links
+## Vault Connections
 
-- [[ritual-mikveh-immersion]] — the Hebrew parallel: water removes ritual impurity transmitted by contact with the sacred-dangerous
-- [[ritual-misogi-purification]] — Shinto water purification; parallel structure to noa
-- [[ritual-wudu-ritual-purity]] — Islamic ritual purity system; parallel in structure though different theological grounding
-- [[ritual-vision-quest]] — tapu-like isolation during the Lakota vision quest; the seeker becomes temporarily dangerous/sacred through contact with the spirit world
+**Deities:**
+- [[tangaroa]] — the sea deity; ocean crossings required careful tapu management; new canoes were ceremonially made *noa* before use; the ocean is the highest concentration of mana-charge
+- [[tane]] — the forest deity; trees felled for war canoes required tapu protocols during felling and building; Tane himself is tapu
+- [[maui-polynesian]] — Māui's exploits consistently involve transgressing tapu boundaries; his death results from violating Hine-nui-te-pō's tapu (the ultimate tapu-transgression)
+- [[pele]] — Hawaiian volcanic deity; her domain (active lava, volcanic crater) is permanently tapu; the Hawaiian *kapu* system's most dangerous geographic site
+
+**Traditions:**
+- [[tradition-polynesian]] — primary tradition; tapu/mana system is proto-Polynesian, 1000–2000 BCE origin
+- [[tradition-maori]] — Māori tapu system is the most extensively documented; provides most complete picture of noa (tapu-removal) procedures
+
+**Cross-tradition purity parallels (sacred electricity convergence):**
+- [[ritual-mikveh-immersion]] — Hebrew mikveh removes *tumah* (ritual impurity from contact with the sacred-dangerous); structural parallel to Polynesian *noa*
+- [[ritual-misogi-purification]] — Shinto *harae* removes *kegare* (impurity from contact with death/illness); same sacred-electricity management logic
+- [[ritual-wudu-ritual-purity]] — Islamic ritual purity system; different theological grounding (moral purity) but parallel management of sacred contact
 - [[ritual-haka]] — haka performances are governed by tapu protocol; the performer's body in the haka state carries elevated tapu
-- [[tangaroa]] — the sea deity; ocean crossings required careful tapu management; new canoes were ceremonially made noa before use
-- [[tane]] — the forest deity; trees for war canoes required tapu protocols during felling and building
-- [[maui-polynesian]] — Māui's exploits consistently involve transgressing tapu boundaries; his death results from violating Hine-nui-te-pō's tapu
-- [[tradition-polynesian]] — primary tradition
-- [[tradition-maori]] — Māori tapu system is the most extensively documented
 
 ## Sourcing Notes
 
