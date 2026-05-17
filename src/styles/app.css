@@ -1963,35 +1963,44 @@ body.view-atlas main.canvas { background: var(--bg-0); }
 /* EDGES — verbatim copy of production .edge-line (app.css:1052-1083).
    stroke-width + stroke-opacity are set as INLINE SVG attrs by the build
    loop from EDGE_STYLE. --edge-type-color is the inline CSS var for hot. */
+/* ── EDGE COLOR / GRADIENT (spec: AUDIT/edge-color-spec-2026-05-17.md) ──
+   Idle:    one slate stroke for all non-headline edges (atmosphere).
+   Hot:     bucket color, .ph2-edge-hot-width thickness.
+   Headline (Polemic, Fusion, ancestor-of): idle in bucket color, never slate.
+   Directional (Transmission, Attestation, parent-of/child-of/ancestor-of/
+   appropriated-by): a <linearGradient> is pre-built per edge; JS swaps it
+   in inline on .hot. Headline directional edges paint the gradient at idle.
+   --base-op and --hot-op are per-edge from the bucket spec; the dev panel
+   --ph2-edge-opacity-mult multiplies the idle layer only. */
 .ph2-edge {
   fill: none; pointer-events: none;
   vector-effect: non-scaling-stroke;
-  stroke: rgba(120, 140, 182, 0.72);
-  /* CSS-level stroke values override the SVG attrs set by JS — this is what
-     gives the dev-panel `Idle opacity ×` and `Idle width ×` sliders their
-     effect. Each edge sets --base-op and --base-w inline from EDGE_STYLE;
-     the multipliers are :root vars set by the dev panel. */
-  stroke-opacity: calc(var(--base-op, 0.13) * var(--ph2-edge-opacity-mult, 1));
-  stroke-width:   calc(var(--base-w,  0.25) * var(--ph2-edge-width-mult,   1));
+  /* Single slate for the entire idle layer — atmosphere, not story. */
+  stroke: rgba(80, 95, 130, 0.85);
+  stroke-opacity: calc(var(--base-op, 0.10) * var(--ph2-edge-opacity-mult, 1));
+  stroke-width:   calc(var(--base-w,  0.30) * var(--ph2-edge-width-mult,   1));
   transition: stroke-opacity 180ms var(--ease-out-expo, cubic-bezier(0.16, 1, 0.3, 1)),
               stroke-width   180ms var(--ease-out-expo, cubic-bezier(0.16, 1, 0.3, 1)),
-              stroke         180ms var(--ease-out-expo, cubic-bezier(0.16, 1, 0.3, 1)),
-              filter         260ms var(--ease-out-expo, cubic-bezier(0.16, 1, 0.3, 1));
+              stroke         180ms var(--ease-out-expo, cubic-bezier(0.16, 1, 0.3, 1));
+}
+/* HEADLINE buckets (Polemic, Fusion, ancestor-of) idle in bucket color —
+   the user should READ these at rest without hovering. */
+.ph2-edge.ph2-edge-headline {
+  stroke: var(--edge-bucket-color, rgba(168, 62, 74, 0.9));
 }
 .ph2-edge.dim {
-  /* IDLE-PRESERVED on hover: non-incident edges keep their normal idle
-     opacity (calc(--base-op * --ph2-edge-opacity-mult)). Only .hot edges
-     change. The user's explicit preference — the idle stack should stay
-     coherent on hover. No-op rule retained so future tweaks can hook here
-     without re-wiring the JS class toggle. */
+  /* No-op — idle opacity preserved on hover. Hot edges brighten; the rest
+     stay where they were. The atmosphere layer is information. */
 }
 .ph2-edge.hot {
-  stroke: var(--edge-type-color, rgba(212, 165, 90, 0.9)) !important;
-  stroke-opacity: 0.9 !important;
+  stroke: var(--edge-bucket-color, rgba(212, 165, 90, 0.9)) !important;
+  stroke-opacity: var(--hot-op, 0.9) !important;
   stroke-width: var(--ph2-edge-hot-width, 1.6) !important;
 }
+/* Directional hot edges have their gradient set inline via JS — the inline
+   style.stroke wins over the .hot stroke rule. (See applyEdgeHoverState.) */
 .ph2-edge.filter-dim.hover-reveal {
-  stroke: var(--edge-type-color, rgba(212, 165, 90, 0.85)) !important;
+  stroke: var(--edge-bucket-color, rgba(212, 165, 90, 0.85)) !important;
   stroke-opacity: 0.8 !important;
   stroke-width: 1.3 !important;
 }

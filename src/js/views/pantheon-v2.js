@@ -380,12 +380,164 @@
     return { positions, wedges, familyOrder, famByName, Rinner, Router };
   }
 
-  // EDGE_STYLE — verbatim copy of production app.js:196-241 EDGE_STYLE table.
-  // No bucket abstraction, no headline class, no invented per-type colors.
-  // Each edge type carries its hand-tuned (color, width, opacity).
-  // Idle stroke color is always the slate-blue from CSS (.ph2-edge); these
-  // hex values only paint when the edge is .hot (hover/select) via the
-  // --edge-type-color CSS var.
+  // ── EDGE COLOR / GRADIENT SYSTEM ────────────────────────────────────
+  // Implementation of AUDIT/edge-color-spec-2026-05-17.md:
+  // 7 semantic buckets, one canonical hex each. Idle stroke is the spec's
+  // single slate (rgba(80,95,130,0.85)) for non-headlines — bucket color
+  // only paints on .hot, or at idle for the two HEADLINE buckets
+  // (Polemic, Fusion) and the single headline edge type (ancestor-of).
+  //
+  // Directional buckets (Transmission, Attestation, kinship descent,
+  // `appropriated-by`) get a <linearGradient> from origin (bright stop,
+  // 0.95) to terminus (dim stop, 0.35). REVERSE_DIRECTION types swap
+  // stops so the bright end sits on the SEMANTIC origin, not the
+  // data-edge source.
+  const BUCKETS = {
+    transmission: { hex: '#C9743A', idle: 0.10, hot: 0.95, headline: false, directional: true  },
+    parallel:     { hex: '#5A9A8F', idle: 0.12, hot: 0.85, headline: false, directional: false },
+    association:  { hex: '#4A5AA4', idle: 0.08, hot: 0.55, headline: false, directional: false },
+    kinship:      { hex: '#C9A5D4', idle: 0.14, hot: 0.85, headline: false, directional: false },
+    attestation:  { hex: '#D4A55A', idle: 0.10, hot: 0.90, headline: false, directional: true  },
+    polemic:      { hex: '#A83E4A', idle: 0.25, hot: 0.95, headline: true,  directional: false },
+    fusion:       { hex: '#C4783A', idle: 0.30, hot: 0.95, headline: true,  directional: false },
+  };
+  // Per-bucket widths — kept compatible with the existing dev-panel mult.
+  const BUCKET_WIDTH = {
+    transmission: 0.34, parallel: 0.30, association: 0.22, kinship: 0.32,
+    attestation:  0.30, polemic:  0.46, fusion:      0.40,
+  };
+  // Type → bucket map. Built from the spec + the runtime edge-type tally.
+  const EDGE_BUCKET = {
+    // Transmission
+    'influenced-by':                    'transmission',
+    'influences':                       'transmission',
+    'influenced':                       'transmission',
+    'originated':                       'transmission',
+    'affects-tradition':                'transmission',
+    'affects-document':                 'transmission',
+    'documents-affected':               'transmission',
+    'produces-document':                'transmission',
+    'manuscript-transmission':          'transmission',
+    'redaction-of':                     'transmission',
+    'transmission-to':                  'transmission',
+    'ancestor-of':                      'transmission',   // HEADLINE override below
+    'syncretic-ancestor-of':            'transmission',   // HEADLINE override below
+    // Parallel
+    'parallel-motif':                   'parallel',
+    'parallel-form':                    'parallel',
+    'syncretic':                        'parallel',
+    'syncretized-with':                 'parallel',
+    'syncretic-scholarly-parallel':     'parallel',
+    'syncretic-ancient-identification': 'parallel',
+    'syncretic-structural-parallel':    'parallel',
+    'syncretic-parallel-motif':         'parallel',
+    'syncretic-parallel-form':          'parallel',
+    'syncretic-syncretic-identification':'parallel',
+    'syncretic-identification':         'parallel',
+    'syncretic-folk-syncretism':        'parallel',
+    'syncretic-continuous-development': 'parallel',
+    'syncretic-aspect-of':              'parallel',
+    'syncretic-instantiation':          'parallel',
+    'structural-parallel':              'parallel',
+    'parallel-amulet':                  'parallel',
+    'visual-parallel':                  'parallel',
+    'structural':                       'parallel',
+    'typological':                      'parallel',
+    'thematic-overlap':                 'parallel',
+    'variant-of':                       'parallel',
+    'contested-identification':         'parallel',
+    'exemplifies':                      'parallel',
+    'instantiation-of':                 'parallel',
+    // Association
+    'has-theme':                        'association',
+    'context':                          'association',
+    'shared-milieu':                    'association',
+    'shared-tradition':                 'association',
+    'co-tradition':                     'association',
+    'co-appears-with':                  'association',
+    'tradition-deity':                  'association',
+    'tradition-doc':                    'association',
+    'tradition-person':                 'association',
+    'symbol-attests-in':                'association',
+    'symbol-iconography-of':            'association',
+    'symbol-in-tradition':              'association',
+    'music-in-tradition':               'association',
+    'music-attests-in':                 'association',
+    'music-iconography-of':             'association',
+    'participated-in':                  'association',
+    'component-of':                     'association',
+    'contains':                         'association',
+    'related':                          'association',
+    // Kinship
+    'parent-of':                        'kinship',
+    'child-of':                         'kinship',
+    'consort':                          'kinship',
+    'sibling-of':                       'kinship',
+    'syncretic-sacred-marriage':        'kinship',
+    // Attestation
+    'attests':                          'attestation',
+    'attested-in':                      'attestation',
+    'mentioned-in':                     'attestation',
+    'key-figure':                       'attestation',
+    'authored':                         'attestation',
+    'attributed-author':                'attestation',
+    'primary-source':                   'attestation',
+    'primary-translation':              'attestation',
+    'critical-edition':                 'attestation',
+    'translation':                      'attestation',
+    'commentary-on':                    'attestation',
+    'direct-quote':                     'attestation',
+    'preserved-by':                     'attestation',
+    'syncretic-manuscript-transmission':'attestation',
+    'syncretic-attested-in':            'attestation',
+    'syncretic-reports-to':             'attestation',
+    // Polemic — entire bucket is headline (idle in bucket color)
+    'polemic-inversion':                'polemic',
+    'polemic-against':                  'polemic',
+    'syncretic-polemic-against':        'polemic',
+    'syncretic-polemic-inversion':      'polemic',
+    'syncretic-lineage-claim':          'polemic',
+    // Fusion — entire bucket is headline (idle in bucket color)
+    'syncretic-fusion':                 'fusion',
+    'syncretic-syncretic-fusion':       'fusion',
+    'appropriated-by':                  'fusion',
+    'visual-cognate':                   'fusion',
+  };
+  // Directional edge types. Bright stop on the SEMANTIC origin.
+  // Direction is `source → target` by default. These types' DATA points
+  // source/target the "wrong" way (`child-of` data = child→parent, but
+  // the semantic origin is the parent) so we swap gradient stops.
+  const REVERSE_DIRECTION = new Set([
+    'influenced-by', 'influenced', 'child-of', 'attested-in', 'mentioned-in',
+    'documents-affected', 'preserved-by', 'syncretic-attested-in',
+  ]);
+  // Single edge types in symmetric buckets that nonetheless carry direction.
+  const DIRECTIONAL_TYPES = new Set([
+    'parent-of', 'child-of', 'ancestor-of', 'syncretic-ancestor-of',
+    'appropriated-by',
+  ]);
+  // Headline overrides on otherwise non-headline buckets.
+  const HEADLINE_TYPES = new Set(['ancestor-of', 'syncretic-ancestor-of']);
+
+  function edgeStyleFor(type) {
+    const bucketName = EDGE_BUCKET[type] || 'association';
+    const b          = BUCKETS[bucketName];
+    const headline   = b.headline || HEADLINE_TYPES.has(type);
+    const directional = b.directional || DIRECTIONAL_TYPES.has(type);
+    return {
+      bucket:      bucketName,
+      c:           b.hex,              // bucket color (for hot + headline idle)
+      w:           BUCKET_WIDTH[bucketName] || 0.30,
+      op:          b.idle,             // idle opacity
+      hotOp:       b.hot,
+      headline,
+      directional,
+      reverse:     REVERSE_DIRECTION.has(type),
+    };
+  }
+  // Legacy reference left for compatibility; not actually used by the build
+  // loop (which now reads `edgeStyleFor`). Kept inert so external dev-panel
+  // diagnostics don't break.
   const EDGE_STYLE = {
     // syncretic / kin — gold-brown-green tints
     'syncretic-identification':         { c: '#b08840', w: 0.42, op: 0.36 },
@@ -448,7 +600,6 @@
     'symbol-iconography-of':            { c: '#8a6a5a', w: 0.28, op: 0.20 },
     'symbol-in-tradition':              { c: '#5a7080', w: 0.24, op: 0.14 }
   };
-  const EDGE_DEFAULT = { c: '#3a4a66', w: 0.25, op: 0.13 };
   // Cross-symbol edge types — mirror of production SYMBOL_CROSS_EDGE_TYPES.
   const SYMBOL_CROSS_EDGE_TYPES = new Set([
     'ancestor-of', 'parallel-form', 'syncretic-fusion',
@@ -458,8 +609,9 @@
     'ancestor-of', 'parallel-form', 'syncretic-fusion',
     'transmission-to', 'appropriated-by', 'child-of'
   ]);
-  function edgeStyleFor(type) { return EDGE_STYLE[type] || EDGE_DEFAULT; }
-  const DEFAULT_EDGE_COLOR = EDGE_DEFAULT.c;
+  // `edgeStyleFor` is defined above as the bucket-aware version; the
+  // per-type EDGE_STYLE map (kept for compat) is no longer consulted by it.
+  const DEFAULT_EDGE_COLOR = BUCKETS.association.hex;
 
   // SOURCE-INTEGRITY TIER FILL COLORS — matches production CSS vars (app.css:59-63).
   // Used when _tierOverlay is active; replaces family-color fill on each node.
@@ -976,28 +1128,30 @@
       tickEls.push(tick);
     });
 
-    // ----- CURVED EDGES (priority 3) -----
-    // Q-bezier with control point pulled 35% from chord midpoint toward
-    // origin (0,0 = ring center). Exact production formula from
-    // pantheonEdgePath() at app.js:1209-1216.
+    // ----- CURVED EDGES with 7-bucket palette + directional gradients ----
+    // (Implementation of AUDIT/edge-color-spec-2026-05-17.md.)
+    // For every directional edge we pre-build a <linearGradient> in the SVG
+    // <defs>, attached to its semantic origin → terminus. The gradient
+    // paints on .hot (and on idle for HEADLINE buckets / ancestor-of).
     const EDGE_PULL = 0.35;
-    const edgeEls = [];
+    const edgeEls   = [];
+    const defsEl    = document.createElementNS(SVG_NS, 'defs');
+    edgesG.appendChild(defsEl);
+    let _gradCounter = 0;
     edges.forEach(e => {
       const sp = positions.get(e.source);
       const tp = positions.get(e.target);
       if (!sp || !tp) return;
       const mx = (sp.x + tp.x) / 2;
       const my = (sp.y + tp.y) / 2;
-      // center is (0,0) in world coords — pull control point that direction
       const cxp = mx + (0 - mx) * EDGE_PULL;
       const cyp = my + (0 - my) * EDGE_PULL;
-      // Verbatim copy of production .edge-line pattern (app.js:1235-1252):
-      // - Class: ph2-edge (plus xsym / xsym-xfamily for cross-symbol types in symbols mode)
-      // - Inline `stroke-width` and `stroke-opacity` SVG attrs per edge from EDGE_STYLE
-      // - --edge-type-color CSS var holds the hot-state color; idle stroke is slate-blue from CSS
-      const st = edgeStyleFor(e.type);
+      const st  = edgeStyleFor(e.type);
+
       const path = document.createElementNS(SVG_NS, 'path');
       let cls = 'ph2-edge';
+      if (st.headline)    cls += ' ph2-edge-headline';
+      if (st.directional) cls += ' ph2-edge-directional';
       if (_currentMode === 'symbols' && SYMBOL_CROSS_EDGE_TYPES.has(e.type)) {
         cls += ' xsym';
         const sNode = window.NODES_BY_ID && window.NODES_BY_ID[e.source];
@@ -1012,19 +1166,50 @@
       }
       path.setAttribute('class', cls);
       path.setAttribute('d', `M ${sp.x},${sp.y} Q ${cxp},${cyp} ${tp.x},${tp.y}`);
-      path.style.setProperty('--edge-type-color', st.c);
-      // P1 EDGE_STYLE values exposed as CSS vars on each edge so the
-      // .ph2-edge CSS rule can multiply by --ph2-edge-opacity-mult /
-      // --ph2-edge-width-mult from the dev panel. SVG attrs are still set as
-      // fallback for browsers that don't honour CSS on the stroke-* SVG attrs.
-      path.style.setProperty('--base-op', st.op);
-      path.style.setProperty('--base-w',  st.w);
+      // Per-edge CSS vars consumed by .ph2-edge CSS calc (dev-panel mults).
+      path.style.setProperty('--edge-bucket-color', st.c);
+      path.style.setProperty('--base-op',           st.op);
+      path.style.setProperty('--base-w',            st.w);
+      path.style.setProperty('--hot-op',            st.hotOp);
       path.setAttribute('stroke-width',   st.w);
       path.setAttribute('stroke-opacity', st.op);
       path.setAttribute('fill', 'none');
       path.dataset.source = e.source;
       path.dataset.target = e.target;
       path.dataset.type   = e.type || '';
+      path.dataset.bucket = st.bucket;
+
+      // Pre-build the directional <linearGradient> if applicable. The
+      // gradient lives in <defs>; the path activates it on .hot via JS in
+      // applyEdgeHoverState (or always for HEADLINE directional types).
+      if (st.directional) {
+        const gid = 'eg-' + (_gradCounter++);
+        const grad = document.createElementNS(SVG_NS, 'linearGradient');
+        grad.setAttribute('id', gid);
+        grad.setAttribute('gradientUnits', 'userSpaceOnUse');
+        const x1 = st.reverse ? tp.x : sp.x;
+        const y1 = st.reverse ? tp.y : sp.y;
+        const x2 = st.reverse ? sp.x : tp.x;
+        const y2 = st.reverse ? sp.y : tp.y;
+        grad.setAttribute('x1', x1); grad.setAttribute('y1', y1);
+        grad.setAttribute('x2', x2); grad.setAttribute('y2', y2);
+        const stop0 = document.createElementNS(SVG_NS, 'stop');
+        stop0.setAttribute('offset', '0%');
+        stop0.setAttribute('stop-color', st.c);
+        stop0.setAttribute('stop-opacity', '0.95');
+        const stop1 = document.createElementNS(SVG_NS, 'stop');
+        stop1.setAttribute('offset', '100%');
+        stop1.setAttribute('stop-color', st.c);
+        stop1.setAttribute('stop-opacity', '0.35');
+        grad.appendChild(stop0);
+        grad.appendChild(stop1);
+        defsEl.appendChild(grad);
+        path.dataset.gradId = gid;
+        // For headline directional edges (ancestor-of), paint the gradient at
+        // idle too — the user sees the directionality without needing to hover.
+        if (st.headline) path.style.stroke = 'url(#' + gid + ')';
+      }
+
       edgesG.appendChild(path);
       edgeEls.push({ el: path, s: e.source, t: e.target, st });
     });
@@ -1161,25 +1346,45 @@
     //   (2) locked set      → edges where BOTH endpoints in set hot, rest dim
     //   (3) idle            → all idle
     function applyEdgeHoverState() {
+      // setHotEdge — toggles the .hot class AND swaps the inline stroke to
+      // the directional gradient (if any). On .dim/idle the inline stroke
+      // is cleared so CSS resumes ownership.
+      function setHot(el, hot, st) {
+        if (hot) {
+          el.classList.add('hot');
+          el.classList.remove('dim');
+          if (st.directional && el.dataset.gradId) {
+            el.style.stroke = 'url(#' + el.dataset.gradId + ')';
+          }
+        } else {
+          el.classList.remove('hot');
+          // Clear the gradient inline override so the CSS rule for headline /
+          // non-headline takes over again. (HEADLINE directional edges set
+          // their idle gradient inline at build time — preserve that.)
+          if (el.dataset.gradId && !el.classList.contains('ph2-edge-headline')) {
+            el.style.stroke = '';
+          }
+        }
+      }
       if (_hoverId) {
-        edgeEls.forEach(({ el, s, t }) => {
+        edgeEls.forEach(({ el, s, t, st }) => {
           const incident = (s === _hoverId || t === _hoverId);
+          setHot(el, incident, st);
           el.classList.toggle('dim', !incident);
-          el.classList.toggle('hot', incident);
         });
         return;
       }
       if (_lockedSet.size > 0) {
-        edgeEls.forEach(({ el, s, t }) => {
+        edgeEls.forEach(({ el, s, t, st }) => {
           const inLock = _lockedSet.has(s) && _lockedSet.has(t);
-          el.classList.toggle('hot', inLock);
+          setHot(el, inLock, st);
           el.classList.toggle('dim', !inLock);
         });
         return;
       }
-      edgeEls.forEach(({ el }) => {
+      edgeEls.forEach(({ el, st }) => {
+        setHot(el, false, st);
         el.classList.remove('dim');
-        el.classList.remove('hot');
       });
     }
     function applyHullFilterState() {
