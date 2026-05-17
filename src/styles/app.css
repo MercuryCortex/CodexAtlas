@@ -5512,7 +5512,7 @@ body.view-alphabets main.canvas { padding-bottom: 220px; }
   color: var(--gold);
 }
 .item.forge-nav::after {
-  content: 'p4';
+  content: 'p4d';
   margin-left: 6px;
   font-family: var(--mono); font-size: 9px;
   letter-spacing: 0.08em;
@@ -5561,6 +5561,38 @@ body.nav-collapsed .item.forge-nav::after { display: none; }
 .forge-status-v.forge-status-ok      { color: var(--sage, #6e8c6b); }
 .forge-status-v.forge-status-pending { color: var(--text-3); font-style: italic; }
 .forge-status-v.forge-status-fail    { color: var(--crimson, #c44a5a); }
+
+/* Mode dropdown (Phase 4d) — primary "what is this wheel" control.
+   Native <select> styled to fit the status strip.  Custom caret via
+   appearance:none + background-image gradient. */
+.forge-status-mode {
+  appearance: none; -webkit-appearance: none;
+  background: rgba(13, 17, 25, 0.85);
+  color: var(--gold);
+  font-family: var(--mono); font-size: 11px;
+  letter-spacing: 0.04em;
+  border: 1px solid var(--border, #2a2e3a);
+  border-radius: 3px;
+  padding: 3px 22px 3px 8px;
+  cursor: pointer;
+  /* Caret SVG — simple downward chevron in gold-soft */
+  background-image:
+    linear-gradient(45deg, transparent 50%, var(--gold-soft, #a87f3e) 50%),
+    linear-gradient(135deg, var(--gold-soft, #a87f3e) 50%, transparent 50%);
+  background-position:
+    right 9px top 50%,
+    right 5px top 50%;
+  background-size: 4px 4px, 4px 4px;
+  background-repeat: no-repeat;
+  outline: none;
+  min-width: 140px;
+}
+.forge-status-mode:hover  { border-color: var(--gold-soft); }
+.forge-status-mode:focus  { border-color: var(--gold); }
+.forge-status-mode option {
+  background: var(--bg-1);
+  color: var(--text-1);
+}
 
 .forge-stage {
   flex: 1 1 auto;

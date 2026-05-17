@@ -45,17 +45,18 @@
     rootEl.innerHTML = '';
 
     // ── Engine sanity check ─────────────────────────────
-    const eng    = window.AtlasEngine;
-    const mth    = window.AtlasEngineMath;
-    const gpu    = window.AtlasEngineWebGPU;
-    const layout = window.AtlasEngineLayout;
-    const graph  = window.AtlasEngineGraph;
-    const cammod = window.AtlasEngineCamera;
-    if (!eng || !mth || !gpu || !layout || !graph || !cammod) {
+    const eng     = window.AtlasEngine;
+    const mth     = window.AtlasEngineMath;
+    const gpu     = window.AtlasEngineWebGPU;
+    const layout  = window.AtlasEngineLayout;
+    const graph   = window.AtlasEngineGraph;
+    const cammod  = window.AtlasEngineCamera;
+    const modemod = window.AtlasEngineMode;
+    if (!eng || !mth || !gpu || !layout || !graph || !cammod || !modemod) {
       rootEl.innerHTML = '<div class="forge-error">'
         + 'Engine modules missing. Check index.html loads '
         + 'engine/contract.js + types.js + math.js + camera.js + '
-        + 'layout/radial.js + graph/{node,edge,adjacency}.js + '
+        + 'layout/radial.js + graph/{node,edge,adjacency,mode}.js + '
         + 'renderer/webgpu.js before views/forge.js.</div>';
       return;
     }
@@ -67,41 +68,19 @@
       return;
     }
 
-    // ── Data prep ───────────────────────────────────────
-    const vault    = window.VAULT_DATA || { nodes: [], edges: [], families: [] };
-    const deities  = (vault.nodes || []).filter(n => n && n.type === 'deity');
-    const allEdges = vault.edges || [];
-    const edges    = layout.filterEdgesByNodes(allEdges, deities);
-    const degree   = layout.computeDegree(deities, edges);
+    // ── Vault data (mode-independent) ────────────────────
+    const vault       = window.VAULT_DATA || { nodes: [], edges: [], families: [] };
+    const allNodes    = vault.nodes || [];
+    const allEdges    = vault.edges || [];
     const familyOrder = (vault.families || []).map(f => f.name);
-    const { wedges, positions, rOuter } = layout.radialWedgeLayout(
-      deities, familyOrder, { degree }
-    );
 
-    const worldExtent = {
-      x0: -(rOuter + WORLD_PAD), y0: -(rOuter + WORLD_PAD),
-      x1:  (rOuter + WORLD_PAD), y1:  (rOuter + WORLD_PAD),
-    };
-
-    const nodePacked = graph.packNodes(deities, positions, degree);
-    const edgePacked = graph.packEdges(edges, positions);
-    const adjacency  = graph.buildAdjacency(edges);
-
-    // Spatial index for hover hit-test: array of {id, x, y, r}
-    // in world coordinates. Hit-test is O(N) per pointer event
-    // — fine at 663 nodes. Spatial index (grid bucket) is a
-    // Phase 4 optimisation if needed.
+    // ── Mode-dependent state lives on `local.mode` ────────
+    // rebuildForMode(id) repopulates this object whenever the
+    // user picks a different mode in the dropdown.  Keeping the
+    // mode state in one place means the renderer / camera / DOM
+    // chrome / interaction handlers can all read from a single
+    // bag without re-binding closure variables.
     const NODE_FLOATS = graph.NODE_FLOATS_PER_INSTANCE;
-    const hitNodes = new Array(nodePacked.instanceCount);
-    for (let i = 0; i < nodePacked.instanceCount; i++) {
-      const off = i * NODE_FLOATS;
-      hitNodes[i] = {
-        id: nodePacked.idIndex[i],
-        x:  nodePacked.data[off + 0],
-        y:  nodePacked.data[off + 1],
-        r:  nodePacked.data[off + 2],
-      };
-    }
 
     // ── Build pane DOM ──────────────────────────────────
     const shell = document.createElement('div');
@@ -110,17 +89,24 @@
 
     const status = document.createElement('div');
     status.className = 'forge-status';
+    // Mode dropdown is FIRST in the status row so it reads as the
+    // primary "what is this wheel showing" indicator.  The rest
+    // (device / counts / hover / lock / frame) follow.
+    const modeOptionsHtml = modemod.MODES.map(m =>
+      '<option value="' + m.value + '">' + m.glyph + '  ' + m.label + '</option>'
+    ).join('');
     status.innerHTML = [
       '<span class="forge-status-tag">FORGE</span>',
       '<span class="forge-status-sep">·</span>',
-      '<span class="forge-status-k">phase</span><span class="forge-status-v">4c · cinematic camera</span>',
+      '<span class="forge-status-k">mode</span>',
+      '<select class="forge-status-mode" id="forge-status-mode">' + modeOptionsHtml + '</select>',
       '<span class="forge-status-sep">·</span>',
       '<span class="forge-status-k">device</span>',
       '<span class="forge-status-v forge-status-pending" id="forge-status-device">acquiring…</span>',
       '<span class="forge-status-sep">·</span>',
-      '<span class="forge-status-k">nodes</span><span class="forge-status-v">' + nodePacked.instanceCount + '</span>',
+      '<span class="forge-status-k">nodes</span><span class="forge-status-v" id="forge-status-nodes">—</span>',
       '<span class="forge-status-sep">·</span>',
-      '<span class="forge-status-k">edges</span><span class="forge-status-v">' + edgePacked.instanceCount + '</span>',
+      '<span class="forge-status-k">edges</span><span class="forge-status-v" id="forge-status-edges">—</span>',
       '<span class="forge-status-sep">·</span>',
       '<span class="forge-status-k">hover</span><span class="forge-status-v" id="forge-status-hover">—</span>',
       '<span class="forge-status-sep">·</span>',
@@ -161,8 +147,20 @@
       hoverId:     null,
       lockedSet:   new Set(),    // Phase 4b: sticky focus from clickNode
       focusedSet:  null,
-      nodeStates:  new Float32Array(nodePacked.instanceCount),
-      edgeStates:  new Float32Array(edgePacked.instanceCount),
+      // Mode-dependent baking, refilled by rebuildForMode(id).
+      mode:        {
+        id:           modemod.defaultMode(),
+        nodes:        [],
+        edges:        [],
+        positions:    new Map(),
+        adjacency:    new Map(),
+        nodePacked:   { data: new Float32Array(), instanceCount: 0, idIndex: [] },
+        edgePacked:   { data: new Float32Array(), instanceCount: 0 },
+        hitNodes:     [],
+        worldExtent:  { x0: -100, y0: -100, x1: 100, y1: 100 },
+      },
+      nodeStates:  new Float32Array(0),
+      edgeStates:  new Float32Array(0),
       // Pan-drag state
       panActive:   false,
       panLastX:    0,
@@ -212,8 +210,9 @@
       visibleLabels:() => Array.from(local.labelEls.entries())
                             .filter(([, el]) => el.style.display !== 'none')
                             .map(([id]) => id),
-      hitNodesAt:   (i) => hitNodes[i],
-      hitNodeCount: () => hitNodes.length,
+      hitNodesAt:   (i) => local.mode.hitNodes[i],
+      hitNodeCount: () => local.mode.hitNodes.length,
+      currentMode:  () => local.mode.id,
       toggleLock:   (id) => toggleLock(id),
       // Animation introspection (Phase 4c).
       isAnimating:  () => camera.isAnimating(),
@@ -299,6 +298,11 @@
       // do NOT defer through rAF (preview iframe throttles it).
       resizeAndFit(true);
 
+      // Phase 4d: bake the initial mode (deities by default).
+      // Must happen AFTER resizeAndFit so the camera has a valid
+      // viewport for the fitToExtent call inside rebuildForMode.
+      rebuildForMode(local.mode.id);
+
       local.resizeObs = new ResizeObserver(() => {
         if (local.destroyed) return;
         resizeAndFit(false);
@@ -310,9 +314,102 @@
       // a new frame each time.
       camera.onChange(() => { if (!local.destroyed) drawFrame(); });
 
+      // Mode dropdown wire-up (Phase 4d).
+      const modeSelectEl = document.getElementById('forge-status-mode');
+      if (modeSelectEl) {
+        modeSelectEl.value = local.mode.id;
+        modeSelectEl.addEventListener('change', (ev) => {
+          if (local.destroyed) return;
+          rebuildForMode(ev.target.value);
+        });
+      }
+
       // Bind interaction handlers AFTER renderer is ready.
       attachInteractions();
     })();
+
+    // ── rebuildForMode (Phase 4d) ──────────────────────
+    // Filter nodes for the mode, recompute the radial layout,
+    // pack instance buffers, rebuild adjacency + hit-test
+    // index, clear hover/lock, reset camera fit. Safe to call
+    // before the renderer exists (it stores state); the next
+    // drawFrame() picks up the new instance buffers.
+    //
+    // Heavy work scales with the active mode's node count, not
+    // the whole vault — `documents` at 700+ nodes is the busiest
+    // and still finishes in <20 ms on modern hardware.
+    function rebuildForMode(modeId) {
+      if (!modemod.isValidMode(modeId)) modeId = modemod.defaultMode();
+
+      const modeNodes = modemod.filterNodesByMode(modeId, allNodes, allEdges);
+      const modeEdges = layout.filterEdgesByNodes(allEdges, modeNodes);
+      const degree    = layout.computeDegree(modeNodes, modeEdges);
+      const lay       = layout.radialWedgeLayout(modeNodes, familyOrder, { degree });
+      const nodePack  = graph.packNodes(modeNodes, lay.positions, degree);
+      const edgePack  = graph.packEdges(modeEdges, lay.positions);
+      const adj       = graph.buildAdjacency(modeEdges);
+
+      const hitNodesNew = new Array(nodePack.instanceCount);
+      for (let i = 0; i < nodePack.instanceCount; i++) {
+        const off = i * NODE_FLOATS;
+        hitNodesNew[i] = {
+          id: nodePack.idIndex[i],
+          x:  nodePack.data[off + 0],
+          y:  nodePack.data[off + 1],
+          r:  nodePack.data[off + 2],
+        };
+      }
+
+      const ext = {
+        x0: -(lay.rOuter + WORLD_PAD), y0: -(lay.rOuter + WORLD_PAD),
+        x1:  (lay.rOuter + WORLD_PAD), y1:  (lay.rOuter + WORLD_PAD),
+      };
+
+      local.mode = {
+        id:          modeId,
+        nodes:       modeNodes,
+        edges:       modeEdges,
+        positions:   lay.positions,
+        adjacency:   adj,
+        nodePacked:  nodePack,
+        edgePacked:  edgePack,
+        hitNodes:    hitNodesNew,
+        worldExtent: ext,
+      };
+      // State buffers must size to the new instance counts.
+      local.nodeStates = new Float32Array(nodePack.instanceCount);
+      local.edgeStates = new Float32Array(edgePack.instanceCount);
+
+      // Cross-mode hover/lock cleared — node ids don't map
+      // between modes.
+      local.hoverId    = null;
+      local.lockedSet  = new Set();
+      local.focusedSet = null;
+      // Wipe label divs from the previous mode — different ids,
+      // different positions. Lazy creation re-mounts on demand.
+      for (const el of local.labelEls.values()) {
+        try { el.remove(); } catch (e) { /* ignore */ }
+      }
+      local.labelEls.clear();
+
+      // Status strip counters + dropdown selection sync.
+      const nEl = document.getElementById('forge-status-nodes');
+      const eEl = document.getElementById('forge-status-edges');
+      const hEl = document.getElementById('forge-status-hover');
+      const lEl = document.getElementById('forge-status-lock');
+      if (nEl) nEl.textContent = String(nodePack.instanceCount);
+      if (eEl) eEl.textContent = String(edgePack.instanceCount);
+      if (hEl) hEl.textContent = '—';
+      if (lEl) lEl.textContent = '—';
+
+      // Refit camera to the new layout. Cancel any in-flight
+      // animation — fit-to-extent is a teleport, not an ease.
+      camera.stopAnim();
+      if (local.lastSize.w && local.lastSize.h) {
+        camera.fitToExtent(ext, local.lastSize, 0);
+      }
+      drawFrame();
+    }
 
     // ── resize + fit ─────────────────────────────────────
     function resizeAndFit(initial) {
@@ -329,10 +426,10 @@
       }
       if (initial) {
         // Frame the wheel into the viewport on mount.
-        camera.fitToExtent(worldExtent, { w, h }, 0);
+        camera.fitToExtent(local.mode.worldExtent, { w, h }, 0);
       } else if (sizeChanged) {
         // On resize, re-fit so the wheel doesn't get cropped.
-        camera.fitToExtent(worldExtent, { w, h }, 0);
+        camera.fitToExtent(local.mode.worldExtent, { w, h }, 0);
       }
       // camera.onChange would have triggered draw, but if
       // camera state was already at fit (e.g., first call before
@@ -350,8 +447,8 @@
         viewportCss:   { w: vp.w, h: vp.h },
         camera:        camera.state,
         dimAmount:     DIM_AMOUNT,
-        nodeInstances: nodePacked.data,
-        edgeInstances: edgePacked.data,
+        nodeInstances: local.mode.nodePacked.data,
+        edgeInstances: local.mode.edgePacked.data,
         nodeStates:    local.nodeStates,
         edgeStates:    local.edgeStates,
       });
@@ -419,6 +516,7 @@
       // — labels need the actual canvas pixel, which already
       // accounts for the renderer's Y-flip via the camera's
       // straight world→screen.
+      const hitNodes = local.mode.hitNodes;
       for (let i = 0; i < hitNodes.length; i++) {
         const n = hitNodes[i];
         if (!focus.has(n.id)) continue;
@@ -451,6 +549,7 @@
       // earlier ones in the wheel, so we want the LAST
       // matching node. Track the nearest within radius as a
       // tie-break for overlapping disks (rare but possible).
+      const hitNodes = local.mode.hitNodes;
       for (let i = 0; i < hitNodes.length; i++) {
         const n = hitNodes[i];
         const dx = world.x - n.x;
@@ -510,9 +609,9 @@
     // re-pack per-instance state buffers, update labels, redraw.
     // Called whenever hover changes, lock changes, or camera moves.
     function recomputeFocus() {
-      local.focusedSet = graph.focusedSetFor(local.hoverId, local.lockedSet, adjacency);
-      local.nodeStates = graph.computeNodeStates(nodePacked.idIndex, local.focusedSet);
-      local.edgeStates = graph.computeEdgeStates(edges, local.focusedSet);
+      local.focusedSet = graph.focusedSetFor(local.hoverId, local.lockedSet, local.mode.adjacency);
+      local.nodeStates = graph.computeNodeStates(local.mode.nodePacked.idIndex, local.focusedSet);
+      local.edgeStates = graph.computeEdgeStates(local.mode.edges, local.focusedSet);
       syncLabels();
       drawFrame();
     }
