@@ -27,6 +27,8 @@ window.ScriptureReader = (function () {
     'psalm-82':           { religion:'Christianity', group:'Old Testament',          canon:'All Canons',          sort:50 },
     'amos-5':             { religion:'Christianity', group:'Old Testament',          canon:'All Canons',          sort:53 },
     'micah-6':            { religion:'Christianity', group:'Old Testament',          canon:'All Canons',          sort:54 },
+    'isaiah-53':          { religion:'Christianity', group:'Old Testament',          canon:'All Canons',          sort:63 },
+    'psalm-139':          { religion:'Christianity', group:'Old Testament',          canon:'All Canons',          sort:42 },
     'isaiah-6':           { religion:'Christianity', group:'Old Testament',          canon:'All Canons',          sort:60 },
     'isaiah-40':          { religion:'Christianity', group:'Old Testament',          canon:'All Canons',          sort:62 },
     'isaiah-45':          { religion:'Christianity', group:'Old Testament',          canon:'All Canons',          sort:70 },
@@ -58,6 +60,7 @@ window.ScriptureReader = (function () {
     'acts-2-pentecost':   { religion:'Christianity', group:'New Testament',          canon:'All Canons',          sort:52 },
     '2-corinthians-3':    { religion:'Christianity', group:'New Testament',          canon:'All Canons',          sort:32 },
     'ephesians-1':        { religion:'Christianity', group:'New Testament',          canon:'All Canons',          sort:47 },
+    'john-6-bread-of-life': { religion:'Christianity', group:'New Testament',        canon:'All Canons',          sort:13 },
     // ── Christianity — Ethiopian Canon ──────────────────────────────
     'book-of-enoch':      { religion:'Christianity', group:'Ethiopian Canon',        canon:'Ethiopian Orthodox',  sort:10 },
     'book-of-jubilees':   { religion:'Christianity', group:'Ethiopian Canon',        canon:'Ethiopian Orthodox',  sort:20 },
@@ -106,6 +109,7 @@ window.ScriptureReader = (function () {
     // ── Buddhism ────────────────────────────────────────────────────
     'dhammapada-1':       { religion:'Buddhism',      group:'Pali Canon',            canon:'Theravada',           sort:10 },
     'lotus-sutra-2':      { religion:'Buddhism',      group:'Mahayana',              canon:'Mahayana',            sort:5  },
+    'diamond-sutra':      { religion:'Buddhism',      group:'Mahayana',              canon:'Mahayana',            sort:10 },
     'heart-sutra':        { religion:'Buddhism',      group:'Mahayana',              canon:'Mahayana',            sort:10 },
     'bardo-thodol':       { religion:'Buddhism',      group:'Vajrayana',             canon:'Tibetan Canon',       sort:10 },
     // ── Taoism ──────────────────────────────────────────────────────

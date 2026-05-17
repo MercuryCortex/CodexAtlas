@@ -9979,3 +9979,364 @@ SCRIPTURE_TEXTS['ephesians-1'] = {
     },
   ]
 };
+
+// ── Batch 23 ──────────────────────────────────────────────────────────────
+
+SCRIPTURE_TEXTS['isaiah-53'] = {
+  id: 'isaiah-53',
+  title: 'Isaiah 52–53 — The Suffering Servant',
+  tradition: 'Christianity / Judaism',
+  date: 'c. 550–540 BCE (Deutero-Isaiah)',
+  language: 'Biblical Hebrew',
+  crossTradition: [
+    { label: 'Bodhisattva vow — taking on the suffering of all beings', textId: 'lotus-sutra-2', note: 'The Bodhisattva vow in Mahayana Buddhism is the commitment to remain in the cycle of suffering (samsara) until all beings are liberated — taking on others\' suffering as one\'s own mission. Isaiah\'s Servant "bore our infirmities and carried our diseases" (53:4) and "was wounded for our transgressions" (53:5) — the same structure of vicarious suffering accepted voluntarily for others\' liberation. The Suffering Servant and the Bodhisattva are the two great world-religion images of redemptive, voluntary self-offering for others. Neither is merely passive: both transform suffering into a vehicle of universal liberation.' },
+    { label: 'Purusha Sukta — the cosmic person whose sacrifice creates new life', textId: 'genesis-1', note: 'The Rig Veda\'s Purusha Sukta (RV 10:90) describes the cosmic Person (Purusha) who is sacrificed — "with Purusha as the oblation, the gods performed the sacrifice" — and from whose dismembered body the entire cosmos is created. Isaiah\'s Servant is "cut off from the land of the living" (53:8), "poured out his soul to death" (53:12), and from this death comes life for "many" (53:11). Both texts posit a foundational cosmic sacrifice: the death of a singular figure from which new life, new order, new creation emerges.' },
+    { label: 'Osiris myth — the dismembered god whose death brings resurrection and judgment', textId: 'book-of-the-dead', note: 'Osiris is murdered and dismembered by Set, gathered by Isis, and resurrected to become lord of the underworld and judge of the dead. Isaiah\'s Servant is "despised and rejected" (53:3), stricken, cut off — and then "exalted and lifted up" (52:13), "allotted a portion with the great" (53:12). Both follow the same narrative arc: humiliation → death → exaltation, and in both cases the death is the condition for a new intercessory role. The dying-and-rising pattern appears in both Osiris and the Servant, predating the Christian use of Isaiah 53 by centuries.' },
+  ],
+  sections: [
+    {
+      heading: 'The Servant\'s Disfigurement — Despised and Rejected (52:13–53:3)',
+      verses: [
+        {
+          ref: '52:13–53:3',
+          text: 'See, my servant shall prosper; he shall be exalted and lifted up, and shall be very high. Just as there were many who were astonished at him — so marred was his appearance, beyond human semblance, and his form beyond that of mortals — so he shall startle many nations... He was despised and rejected by others; a man of suffering and acquainted with infirmity; and as one from whom others hide their faces he was despised, and we held him of no account.',
+          entities: [
+            { word: 'exalted and lifted up', node: 'divine-exaltation', type: 'concept',
+              note: 'The Hebrew root nasa/rum used for "exalted and lifted up" in 52:13 is the same used for the divine throne in Isaiah 6:1 ("I saw the Lord sitting on a throne, high and lofty"). The Servant\'s exaltation is described in the vocabulary of divine enthronement. The movement from marred/disfigured (52:14) to exalted/very high (52:13) is presented in inverted order in the Hebrew — the exaltation is announced first, then the humiliation, so the reader knows from the outset that the suffering is not the endpoint. This literary structure mirrors the Passion narratives\' retrospective logic: the cross is read through the lens of resurrection.',
+              parallels: [
+                { label: 'Philippians 2 — "Therefore God exalted him to the highest place"', textId: 'philippians-2', note: 'Philippians 2:9 ("Therefore God exalted him to the highest place") is the NT\'s direct application of Isaiah 52:13\'s exaltation language to Jesus. The kenosis hymn (2:6-11) follows the exact structure of Isaiah\'s Servant Song: pre-existent glory → voluntary humiliation → death → divine exaltation. Paul was almost certainly reading Isaiah 52-53 when he composed or quoted this hymn. The "name above every name" corresponds to the Servant\'s "startling many nations" — a universal impact flowing from a singular humiliation.' },
+                { label: 'Bardo Thodol — the luminous body that emerges from dissolution', textId: 'bardo-thodol', note: 'The Tibetan Book of the Dead describes the dissolution of the ordinary self and the emergence of the Clear Light of the Dharmakāya — the true nature revealed precisely in the moment of greatest vulnerability. Isaiah\'s Servant is "marred beyond human semblance" — the ordinary human form dissolved — and then "exalted very high." Both texts trace a movement through maximum dissolution/disfigurement toward maximum radiance/exaltation. The dissolution is not destruction but the condition of transfiguration.' },
+              ]
+            },
+            { word: 'man of suffering and acquainted with infirmity', node: 'divine-kenosis', type: 'concept',
+              note: '"Man of suffering" (ish maḵ\'ōvōṯ) — the Hebrew maḵ\'ōv is bodily/emotional pain. "Acquainted with infirmity" (yāḏua ḥŏlî) — he knows illness from the inside, not as an observer. This is one of the most radical statements in the Hebrew Bible: the figure who will be exalted to the highest place is characterized not by power or beauty but by intimate knowledge of suffering. The Servant\'s credentials are experiential, not hierarchical. This is precisely the quality that makes him an effective intercessor: he "has borne our infirmities" (53:4) because he knows them from the inside.',
+              parallels: [
+                { label: 'Hebrews 11 — "of whom the world was not worthy"; the hall of suffering faith', textId: 'hebrews-11', note: 'Hebrews 11:37-38 describes the heroes of faith who were "stoned, sawn in two, killed by the sword... destitute, persecuted, tormented — of whom the world was not worthy." The Servant of Isaiah 53 is the archetype for this hall of shame/honor: the one "despised and rejected" by the world is the one the world was not worthy of. Hebrews uses this Isaiah logic to reframe the entire Jewish martyrological tradition: suffering for righteousness is not divine rejection but divine validation.' },
+                { label: 'Thomas à Kempis — the whole spirituality of imitating Christ in his humiliation', textId: 'thomas-a-kempis', note: 'Thomas à Kempis (Imitation of Christ 1.1) explicitly inverts worldly values: knowledge without humility is vanity; what matters is experiential knowledge of suffering, poverty, and self-emptying. The Servant is "acquainted with infirmity" — his knowledge is experiential, not theoretical. Thomas\'s entire spirituality is structured around imitation of the Suffering Servant: contempt of the world, embracing affliction, following Christ in his humiliation rather than his glory.' },
+              ]
+            },
+          ]
+        },
+      ]
+    },
+    {
+      heading: 'Vicarious Suffering — Wounded for Our Transgressions (53:4–9)',
+      verses: [
+        {
+          ref: '53:4–9',
+          text: 'Surely he has borne our infirmities and carried our diseases; yet we accounted him stricken, struck down by God, and afflicted. But he was wounded for our transgressions, crushed for our iniquities; upon him was the punishment that made us whole, and by his bruises we are healed. All we like sheep have gone astray; we have all turned to our own way, and the LORD has laid on him the iniquity of us all. He was oppressed, and he was afflicted, yet he did not open his mouth; like a lamb that is led to the slaughter... By a perversion of justice he was taken away... he had done no violence, and there was no deceit in his mouth.',
+          entities: [
+            { word: 'wounded for our transgressions, crushed for our iniquities', node: 'atonement', type: 'concept',
+              note: 'The mechanism described here is substitutionary: the Servant receives punishment that belongs to others, and the others receive healing that belongs to the Servant. The Hebrew is precise: ḥōlāyēnû (our illnesses) he bore; maḵ\'ōvênû (our pains) he carried; meḥōlāl (pierced/profaned) for our pešā\'îm (rebellions); medukkā (crushed) for our \'ăvōnōṯ (guilt-iniquities). Every term is a substitution: his body for our moral condition. This is not metaphor in Hebrew thinking — the Servant\'s physical wounds are the actual vehicle of our healing. The exchange is physical, not merely symbolic.',
+              parallels: [
+                { label: 'Scapegoat ritual — Leviticus 16; Aaron lays the sins of all Israel on the goat', textId: 'exodus-3', note: 'Leviticus 16 describes the Day of Atonement: Aaron "shall lay both his hands on the head of the live goat, and confess over it all the iniquities of the people of Israel... putting them on the head of the goat, and sending it away into the wilderness" (Lev 16:21). Isaiah 53 is the prophetic internalization of the scapegoat ritual: the goat (anonymous animal) becomes the Servant (specific, voluntary). The mechanism is identical — transference of sin, removal outside the community — but the Servant is no longer a passive animal but an active, willing agent who "did not open his mouth" (53:7).' },
+                { label: 'Bhagavad Gita 4 — the divine descent to restore dharma', textId: 'bhagavad-gita-4', note: 'In BG 4:7-8, Krishna descends (avatāra) "whenever righteousness (dharma) declines... for the protection of the good, for the destruction of evil-doers." The Suffering Servant reverses this: rather than descending to destroy evildoers, he absorbs their evil — "the LORD has laid on him the iniquity of us all" (53:6). The avatāra is martial power; the Servant is silent absorption. The cross-tradition comparison illuminates what is genuinely distinctive about the Isaian model: the same divine problem (moral disorder) solved by opposite postures.' },
+              ]
+            },
+            { word: 'like a lamb that is led to the slaughter', node: 'sacrifice', type: 'concept',
+              note: 'The lamb imagery (seh latibbah yubal) connects to three registers simultaneously: (1) the Passover lamb (Exodus 12), whose blood caused death to "pass over"; (2) the daily Temple tamid offering (a lamb sacrificed every morning and evening); (3) Isaiah 1\'s critique of the very same sacrificial system. The Servant is described as a lamb going to sacrifice, but by a "perversion of justice" — a judicial killing, not a cultic one. The prophet reuses Temple sacrifice imagery to describe something that transcends and replaces Temple sacrifice.',
+              parallels: [
+                { label: 'Gospel of John — "Behold the Lamb of God who takes away the sin of the world"', textId: 'john-1', note: 'John 1:29 (John the Baptist\'s identification of Jesus as "the Lamb of God who takes away the sin of the world") is the Fourth Gospel\'s direct reading of Isaiah 53:7. John\'s Gospel is structured around this identification: Jesus dies on the day the Passover lambs are slaughtered (14 Nisan in John\'s chronology), and no bones are broken (John 19:36 = Exodus 12:46, the Passover lamb rule). The entire Johannine Passion is a liturgical performance of Isaiah 53 as historical narrative.' },
+                { label: 'Yasna 44 — Zoroastrian sacrifice and the question of right order', textId: 'yasna-44', note: 'Yasna 44 is Zarathustra\'s great interrogation of Ahura Mazda: "When will righteousness prevail?" The Suffering Servant and the Yasna share a common concern: when the righteous suffer and the wicked prosper, what is the divine order? Zarathustra asks it as a question; Isaiah 53 answers it with the Servant figure: the suffering of the righteous is not disorder but the mechanism of cosmic restoration. Both traditions emerged in the same 6th century BCE context — the Babylonian exile for Israel, the consolidation of Zoroastrianism in Persia.' },
+              ]
+            },
+          ]
+        },
+      ]
+    },
+    {
+      heading: 'Vindication — He Shall See Light and Be Satisfied (53:10–12)',
+      verses: [
+        {
+          ref: '53:10–12',
+          text: 'Yet it was the will of the LORD to crush him with pain. When you make his life an offering for sin, he shall see his offspring, and shall prolong his days; through him the will of the LORD shall prosper. Out of his anguish he shall see light; he shall find satisfaction through his knowledge. The righteous one, my servant, shall make many righteous, and he shall bear their iniquities. Therefore I will allot him a portion with the great, and he shall divide the spoil with the strong, because he poured out himself to death, and was numbered with the transgressors; yet he bore the sin of many, and made intercession for the transgressors.',
+          entities: [
+            { word: 'out of his anguish he shall see light', node: 'resurrection', type: 'concept',
+              note: '"Out of his anguish he shall see light" (mē\'āmāl napšô yirʾeh ʾôr) — the Dead Sea Scrolls text of Isaiah (1QIsa-a) adds "light" explicitly here, resolving a textual ambiguity in the Masoretic text. The Servant sees light out of the anguish of his soul — the vindication that reverses the death. "Shall see his offspring" and "shall prolong his days" are impossible if the Servant is simply dead: he sees offspring and has prolonged days after being "cut off from the land of the living" (53:8). The text either envisions resurrection/vindication or a corporate interpretation (the Servant = Israel surviving the exile). Both readings are ancient and live: the Christian reads resurrection, the Jewish reads national restoration.',
+              parallels: [
+                { label: 'Zohar — the righteous suffer in this world and are vindicated in the world to come', textId: 'zohar-ein-sof', note: 'The Zohar\'s kabbalistic reading of the Suffering Servant is that the souls of the righteous (tzaddikim) absorb the sins and sorrows of their generation — the concept of yissurin shel ahavah (afflictions of love) and the tzaddik as conduit of atonement. The Servant who "bears their iniquities" (53:11) becomes in kabbalistic thought the model for the tzaddik who takes on the spiritual weight of his community. "Out of his anguish he shall see light" — the Or Ein Sof (light of the Infinite) is the vindication of the suffering righteous.' },
+                { label: 'Cloud of Unknowing — darkness that is really light; unknowing that is knowledge', textId: 'cloud-of-unknowing', note: 'The Cloud of Unknowing\'s author describes the contemplative\'s experience as a "cloud of unknowing" — the darkness of God\'s incomprehensibility becomes, paradoxically, the place of divine encounter. "Out of his anguish he shall see light" traces the same arc: the deepest darkness (anguish, death, God\'s crushing) is not opposed to light but is the condition of seeing it. The Servant "sees light" out of anguish, not after it. Both are apophatic: the negative (suffering, darkness, unknowing) is the medium of the positive (light, vindication, union).' },
+              ]
+            },
+            { word: 'made intercession for the transgressors', node: 'intercession', type: 'concept',
+              note: '"Made intercession for the transgressors" (lappōšeʿîm yapgîaʿ) — the word pagaʿ (intercede) appears earlier in 53:6 as "the LORD laid on him the iniquity of us all" — same root. The Servant\'s intercession and the divine laying-on of iniquity are described with the same verb: encounter/meeting. The Servant meets God with our iniquities; and meets us in our transgressions as intercessor. He is not a passive victim but an active mediator whose very suffering is an act of intercession.',
+              parallels: [
+                { label: 'John 17 — the High Priestly Prayer; Jesus intercedes for the world', textId: 'john-17', note: 'John 17 (the High Priestly Prayer) is Jesus enacting the Servant\'s intercession in real time: "I ask not only on behalf of these, but also on behalf of those who will believe in me through their word, that they may all be one" (17:20-21). The Servant "makes intercession for the transgressors" (Isa 53:12); the Johannine Jesus intercedes for the disciples (17:9), for future believers (17:20), and for the world\'s unity (17:21). Hebrews 7:25 makes the connection explicit: "he always lives to make intercession for them."' },
+                { label: 'Gospel of Mary — Mary intercedes and comforts the disciples after the Passion', textId: 'gospel-of-mary', note: 'In the Gospel of Mary, after Jesus\'s departure, Mary Magdalene comforts the grieving disciples: "Do not weep and do not grieve nor be irresolute, for his grace will be entirely with you and will protect you." She intercedes between the absent teacher and the confused community — the role of the Servant who "makes intercession for the transgressors." The Gospel of Mary extends the Servant\'s intercessory function to Mary: just as the Servant mediates between God and the people, Mary mediates between the risen Christ and the bewildered disciples.' },
+              ]
+            },
+          ]
+        },
+      ]
+    },
+  ]
+};
+
+SCRIPTURE_TEXTS['john-6-bread-of-life'] = {
+  id: 'john-6-bread-of-life',
+  title: 'John 6 — Bread of Life Discourse',
+  tradition: 'Christianity',
+  date: 'c. 90–100 CE (Johannine community)',
+  language: 'Koine Greek',
+  crossTradition: [
+    { label: 'Vedic Soma ritual — the sacred drink that confers immortality', textId: 'rig-veda-soma', note: 'The Vedic Soma ritual centers on pressing and drinking a sacred plant whose juice confers immortality (amṛta) and union with the gods. John 6:54: "Those who eat my flesh and drink my blood have eternal life." The Eucharistic theology of John 6 and the Soma theology of the Rig Veda share the same sacramental logic: ingestion of a sacred substance confers divine life — amṛta (non-death) in the Vedic context, eternal life (zōē aiōnios) in the Johannine. Both are "mysteries": the sacred meal transforms the participant at the ontological level, not merely the ethical.' },
+    { label: 'Manna narrative — Exodus 16; bread from heaven in the wilderness', textId: 'exodus-3', note: 'Jesus explicitly invokes the manna typology: "Your ancestors ate the manna in the wilderness, and they died... I am the living bread that came down from heaven. Whoever eats of this bread will live forever" (John 6:49-51). The bread from heaven (leḥem min haššāmayim, Exodus 16) is reread as a type of the Eucharist: temporary, biological bread from above replaced by eternal, ontological bread from above. The typological replacement of manna with Eucharist is one of the earliest and most developed examples of Christian typological exegesis.' },
+    { label: 'Amrita — the nectar of immortality in Hindu and Buddhist traditions', textId: 'bhagavad-gita-4', note: 'Amṛta (a-mṛta = non-death) is the divine nectar produced at the churning of the cosmic ocean — the gods\' secret for immortality. John 6:50: "This is the bread that comes down from heaven, so that one may eat of it and not die." The Johannine "bread of immortality" and the Hindu amṛta share the structure of a divine substance that, when ingested, confers immortality on mortal beings. The sacramental logic — eating/drinking → immortality — is one of the most cross-culturally consistent religious patterns, appearing in Greek, Vedic, Persian, and Christian contexts.' },
+  ],
+  sections: [
+    {
+      heading: 'The True Bread from Heaven — I Am the Bread of Life (6:32–40)',
+      verses: [
+        {
+          ref: '6:32–40',
+          text: 'Jesus said to them, "Very truly, I tell you, it was not Moses who gave you the bread from heaven, but it is my Father who gives you the true bread from heaven. For the bread of God is that which comes down from heaven and gives life to the world." They said to him, "Sir, give us this bread always." Jesus said to them, "I am the bread of life. Whoever comes to me will never be hungry, and whoever believes in me will never be thirsty... I have come down from heaven, not to do my own will, but the will of him who sent me."',
+          entities: [
+            { word: 'I am the bread of life', node: 'divine-logos', type: 'concept',
+              note: '"I am the bread of life" (Egō eimi ho artos tēs zōēs) — the first of the seven great "I AM" (Egō eimi) declarations in John\'s Gospel, each using a metaphor of essential sustenance: bread, light, door, shepherd, resurrection, way/truth/life, vine. The Egō eimi formula echoes the divine self-disclosure of Exodus 3:14 (Ehyeh asher ehyeh — I AM WHO I AM), which the Septuagint renders Egō eimi ho ōn. By using the same formula, the Johannine Jesus claims divine identity through the manna imagery: the God who gave bread in the wilderness IS now giving himself as bread. The metaphor is not illustrative but ontological: Jesus is not like bread, he IS bread — the essential nutritive substance of divine life.',
+              parallels: [
+                { label: 'Poimandres — the Nous that is Life and Light, nourishing the mind', textId: 'poimandres', note: 'Corpus Hermeticum 1 (Poimandres): "This Light is I, the Nous, your God, who existed before the watery nature... And from the Light, a holy Word descended upon the Nature." John 6:35 ("I am the bread of life") and Poimandres\'s Nous ("I am the Light") are the same structure: the transcendent divine principle self-identifies as the essential nourishment of human consciousness. In Poimandres, the Nous nourishes the mind with divine Light/Word; in John 6, the Logos nourishes the soul with his flesh — both are forms of divine self-giving as sustenance.' },
+                { label: 'Tao Te Ching — the Tao as the mother that nourishes without depleting', textId: 'tao-te-ching-1', note: 'Tao Te Ching 6: "The valley spirit never dies; it is called the mysterious female... Continuously, continuously, it seems to exist. In being used, it is effortless." John 6:35 ("whoever comes to me will never be hungry... never be thirsty") describes the same inexhaustible nourishing presence: the bread of life does not run out, the water of life does not fail. Both the Tao and the Johannine Christ are presented as the inexhaustible source of essential sustenance.' },
+              ]
+            },
+            { word: 'not to do my own will, but the will of him who sent me', node: 'divine-will', type: 'concept',
+              note: 'John 6:38 — "I have come down from heaven, not to do my own will, but the will of him who sent me." The descent from heaven (katabas ek tou ouranou) is purposive: the purpose of the incarnation is submission to the Father\'s will. This language of divine mission (apostellein — sending) is central to John\'s Christology: Jesus is the apostle (sent one) of God, and his bread-of-life function is inseparable from his obedience-to-mission structure. The bread comes down because the Son comes down — the two descents are one.',
+              parallels: [
+                { label: 'Japji Sahib — hukam (divine will) as the force that gives and sustains all life', textId: 'japji-sahib', note: 'Guru Nanak\'s Japji Sahib: "By His command, beings are created... Everything is in the Hukam (command/will) of the Lord; nothing is outside of the Hukam." John 6:38 ("I have come down to do the will of him who sent me") presents Jesus as the Hukam made flesh: the divine will that creates and sustains all things becomes present as the bread of life. In Japji Sahib, surrendering to the Hukam is the path to liberation; in John 6, eating the bread of the one who came to do the Father\'s will is the path to eternal life.' },
+              ]
+            },
+          ]
+        },
+      ]
+    },
+    {
+      heading: 'My Flesh for the Life of the World (6:51–58)',
+      verses: [
+        {
+          ref: '6:51–58',
+          text: '"I am the living bread that came down from heaven. Whoever eats of this bread will live forever; and the bread that I will give for the life of the world is my flesh." The Jews then disputed among themselves, saying, "How can this man give us his flesh to eat?" So Jesus said to them, "Very truly, I tell you, unless you eat the flesh of the Son of Man and drink his blood, you have no life in you. Those who eat my flesh and drink my blood have eternal life, and I will raise them up on the last day; for my flesh is true food and my blood is true drink. Those who eat my flesh and drink my blood abide in me, and I in them."',
+          entities: [
+            { word: 'my flesh is true food and my blood is true drink', node: 'incarnation', type: 'concept',
+              note: '"True food" (alēthinē brōsis) and "true drink" (alēthinē posis) — the adjective alēthinos (true/real) in John always means "the reality of which earthly things are images." True bread (6:32), true vine (15:1), true light (1:9) — these are Platonic-Johannine realism: the earthly bread is a shadow/image of the heavenly bread, now identified as the flesh of the Son of Man. This is the most scandalous verse in John: not a metaphor, not symbolic eating, but a claim about the ontological character of the Eucharistic flesh as true food — the alēthes (truth/reality) that earthly nutrition points toward but cannot supply.',
+              parallels: [
+                { label: 'Rig Veda Soma — "We have drunk the Soma; we have become immortal; we have gone to the light"', textId: 'rig-veda-soma', note: 'Rig Veda 8:48: "We have drunk the Soma; we have become immortal; we have gone to the light; we have found the gods." John 6:54: "Those who eat my flesh and drink my blood have eternal life." The parallel is structural and striking: in both cases, ingestion of a sacred substance produces immortality/eternal life, divine encounter/resurrection, and communion with the divine. The Vedic Soma-drinking and the Johannine Eucharist are the two most developed ancient theologies of sacramental ingestion — sacred substance drunk that transforms the drinker\'s ontological status.' },
+                { label: 'Bardo Thodol — ingesting consecrated substance for liberation (dutsi rilbu)', textId: 'bardo-thodol', note: 'Tibetan Buddhist ritual includes dutsi rilbu (nectar pills) — blessed substances ritually transformed into the five nectars (ambrosia), which when ingested are believed to clear obstacles and support liberation. The Tibetan logic is identical to John 6\'s: a material substance is transformed through sacred practice into a vehicle of ontological transformation (liberation, eternal life). Both traditions insist on the materiality of the sacramental substance — the transformation is not merely symbolic — while also insisting that the material vehicle points beyond itself.' },
+              ]
+            },
+            { word: 'abide in me, and I in them', node: 'divine-union', type: 'concept',
+              note: '"Abide in me and I in them" (menei en emoi kagō en autō) — the mutual indwelling language of John 6:56 anticipates the vine discourse of John 15 ("abide in me as I abide in you," 15:4). The Eucharist is not merely a memorial but an ontological event: eating the flesh and blood creates mutual indwelling between Jesus and the believer. This is the most intimate union language in John — en (in) used reciprocally. The believer is in Jesus; Jesus is in the believer. This mutual immanence is the Eucharistic definition of salvation: not merely forgiveness but ontological coinherence.',
+              parallels: [
+                { label: 'Chandogya 6.2 — "tat tvam asi"; the self within the self, all in all', textId: 'chandogya-6-2', note: 'Chandogya 6.8.7: "Tat tvam asi" (That thou art) — the identity of the individual self (ātman) with the universal Self (Brahman). John 6:56 ("those who eat my flesh abide in me, and I in them") and tat tvam asi are both statements of mutual identity/coinherence between the individual and the divine. In Chandogya, the identity is ontological and always-already true (the self IS Brahman, though obscured); in John, the identity is enacted sacramentally through eating — the Eucharist creates the coinherence that is always potentially there.' },
+                { label: 'Meister Eckhart — "The eye with which I see God is the same eye with which God sees me"', textId: 'meister-eckhart-godhead', note: 'Meister Eckhart\'s Sermon 12: "Das Auge, mit dem Gott mich sieht, ist dasselbe Auge, mit dem ich Gott sehe; mein Auge und Gottes Auge ist ein Auge und ein Sehen." Eckhart is reading John through Neoplatonic lens: the mutual seeing/knowing between the soul and God is the same event from two perspectives. "Abide in me and I in them" — the Eucharistic mutual indwelling becomes, in Eckhart\'s mystical theology, the ground of identity between the soul\'s intellect and the divine intellect. The bread-of-life discourse is the sacramental foundation for Rhenish mysticism\'s union theology.' },
+              ]
+            },
+          ]
+        },
+      ]
+    },
+    {
+      heading: 'The Spirit Gives Life — "To Whom Shall We Go?" (6:60–69)',
+      verses: [
+        {
+          ref: '6:60–69',
+          text: 'When many of his disciples heard it, they said, "This teaching is difficult; who can accept it?" ... Jesus, knowing in himself that his disciples were complaining about it, said to them, "Does this offend you? Then what if you were to see the Son of Man ascending to where he was before? It is the spirit that gives life; the flesh is useless. The words that I have spoken to you are spirit and life." ... Simon Peter answered him, "Lord, to whom can we go? You have the words of eternal life. We have come to believe and know that you are the Holy One of God."',
+          entities: [
+            { word: 'it is the spirit that gives life; the flesh is useless', node: 'spirit', type: 'concept',
+              note: 'John 6:63 — "to pneuma estin to zōopoioun, hē sarx ouk ōphelei ouden" (the spirit is the one giving life; the flesh profits nothing). This verse appears to contradict 6:51-56 ("eat my flesh and drink my blood"). The tension is deliberate: the flesh that is "useless" is fleshly comprehension of spiritual realities — the disciples who stumble are approaching it at the sarx level (literal, biological). The flesh that is "true food" (6:55) is the Logos-made-flesh (1:14) received through the Spirit. John is not dismissing the Eucharist\'s materiality but insisting that material reality must be approached pneumatically to be understood.',
+              parallels: [
+                { label: '2 Corinthians 3 — "the letter kills, the Spirit gives life"', textId: '2-corinthians-3', note: '2 Corinthians 3:6 ("the letter kills, but the Spirit gives life") and John 6:63 ("the Spirit is the one giving life; the flesh is useless") are the same Pauline/Johannine claim in different contexts. Both texts distinguish between two modes of reception: fleshly/literal (the letter, the sarx) which produces death/uselessness, and spiritual (the pneuma) which produces life. In 2 Corinthians, the distinction is applied to Torah interpretation. In John 6, it\'s applied to the bread-of-life discourse. Both come from early Christianity\'s struggle to articulate the pneumatic transformation of material religion.' },
+                { label: 'Mundaka Upanishad — lower knowledge versus higher knowledge; what cannot be grasped by the mind', textId: 'mundaka-upanishad', note: 'Mundaka 1.1.4-5 distinguishes between aparā vidyā (lower knowledge — Vedas, grammar, ritual) and parā vidyā (higher knowledge — "that by which the Imperishable is known"). The lower knowledge is not false but insufficient: it cannot touch the Brahman. John 6:63 makes the same distinction: fleshly knowledge (sarx) of the bread-of-life cannot receive the reality; only pneumatic knowledge can. Both texts insist that the highest reality (Brahman, the Logos-made-flesh) can only be known through the higher mode (parā vidyā, pneuma).' },
+              ]
+            },
+            { word: 'to whom can we go? You have the words of eternal life', node: 'divine-logos', type: 'concept',
+              note: '"Kyrie, pros tina apeleusometha; rhēmata zōēs aiōniou echeis" (Lord, to whom shall we go? Words of eternal life you have). Peter\'s confession is structured as a negative absolute: there is nowhere else to go, because this is the source of eternal life. The Greek rhēmata (words, utterances) echoes the Johannine Logos theology of chapter 1: the words of Jesus are not merely propositions but life-giving utterances, speech-acts that create what they signify. "We have believed and we know" (pepisteukamen kai egnōkamen) — in the perfect tense: a settled, continuing state. This is not intellectual assent but existential commitment.',
+              parallels: [
+                { label: 'Gospel of Truth — "He who possesses knowledge knows where he comes from and where he is going"', textId: 'gospel-of-truth', note: 'The Gospel of Truth (Valentinian): "The knowledge of the living book which he revealed to the aeons... is not the letters of the alphabet." Peter\'s confession ("to whom shall we go? You have the words of eternal life") is the orthodox/Johannine version of this: the one who has gnōsis of the source of eternal life recognizes it as unique and irreplaceable. The Valentinian Gospel of Truth and the Johannine Gospel share the epistemological structure — salvation as recognition of the unique divine source — while differing on the nature of that source: for John, the enfleshed Logos; for the Gospel of Truth, the Pleroma known through the Name.' },
+                { label: 'Areopagus speech — Paul proclaims the unknown God already present in Athens', textId: 'acts-17-areopagus', note: 'Acts 17:23 (Paul at the Areopagus): "What therefore you worship as unknown, this I proclaim to you." The Athenians have the religious impulse (altar to the unknown God) but not the object of worship. Peter\'s "to whom shall we go?" confesses that the object has been found. Paul\'s Areopagus speech and Peter\'s confession are complementary: Paul addresses those who are seeking but haven\'t found; Peter confesses those who have found and cannot leave. Together they map the phenomenology of religious searching: the universal need (Paul) and the recognition of having arrived (Peter).' },
+              ]
+            },
+          ]
+        },
+      ]
+    },
+  ]
+};
+
+SCRIPTURE_TEXTS['psalm-139'] = {
+  id: 'psalm-139',
+  title: 'Psalm 139 — Where Can I Go from Your Spirit?',
+  tradition: 'Christianity / Judaism',
+  date: 'c. 6th–5th century BCE (post-exilic)',
+  language: 'Biblical Hebrew',
+  crossTradition: [
+    { label: 'Vedantic omnipresence of Brahman — "smaller than the smallest, greater than the greatest"', textId: 'chandogya-6-2', note: 'Chandogya 6.8 and Mundaka 3.1.7 describe Brahman as that which pervades all things: "smaller than the small, greater than the great, the Self is set in the heart of every creature." Psalm 139:7-10: "Where can I go from your spirit? Or where can I flee from your presence? If I ascend to heaven, you are there; if I make my bed in Sheol, you are there." Both texts describe divine omnipresence — the impossibility of escaping the divine presence. But the affective register differs: the Upanishads describe omnipresence with philosophical equanimity; the Psalmist with both awe and intimacy — this omnipresence is not impersonal but personal, known and knowing.' },
+    { label: 'Sufi concept of divine nearness — "We are closer to him than his jugular vein" (Quran 50:16)', textId: 'quran-opening', note: 'The Quran (50:16): "We created man, and We know what his soul whispers to him. We are closer to him than his jugular vein." Psalm 139:1-4: "O LORD, you have searched me and known me... Even before a word is on my tongue, O LORD, you know it completely." Both texts describe a divine omniscience that is simultaneously intimate and encompassing — God knows the human from the inside, before speech, before thought becomes word. The Quran\'s nearness (aqrab, closer than the jugular) and the Psalm\'s searching-and-knowing are the same theological claim: divine presence is not spatially distant but constitutively interior to human consciousness.' },
+    { label: 'Tao that pervades all things without location', textId: 'tao-te-ching-1', note: 'Tao Te Ching 34: "The great Tao flows everywhere; it may go left or right. All things depend upon it to exist, and it does not abandon them." Psalm 139:9-10: "If I take the wings of the morning and settle at the farthest limits of the sea, even there your hand shall lead me." Both texts describe an omnipresent reality that cannot be escaped or located, that pervades all directions, and that is characterized by care/holding rather than mere presence. The Tao and the LORD of Psalm 139 are both described through spatial impossibility — everywhere-ness that cannot be circumscribed.' },
+  ],
+  sections: [
+    {
+      heading: 'You Have Searched Me and Known Me (139:1–6)',
+      verses: [
+        {
+          ref: '139:1–6',
+          text: 'O LORD, you have searched me and known me. You know when I sit down and when I rise up; you discern my thoughts from far away. You search out my path and my lying down, and are acquainted with all my ways. Even before a word is on my tongue, O LORD, you know it completely. You hem me in, behind and before, and lay your hand upon me. Such knowledge is too wonderful for me; it is so high that I cannot attain it.',
+          entities: [
+            { word: 'you have searched me and known me', node: 'divine-omniscience', type: 'concept',
+              note: '"Ḥaqartanî wattēḏā\'ênî" — you searched/examined me and you know me. The verb ḥāqar means to penetrate to the deepest part, to probe, to investigate thoroughly — it is used for mining operations (Job 28:3, penetrating the earth for ore) and judicial investigation. God\'s knowing of the human is not casual or superficial but a thorough penetration to the deepest stratum. "Wattēḏā\'ênî" — and you know me — the result of the searching is complete knowledge: the Hebrew yāḏaʿ carries the connotation of intimate relational knowing, not merely propositional. The Psalm begins with an assertion that would be terrifying (total divine surveillance) but is received as wonder — "too wonderful for me."',
+              parallels: [
+                { label: 'Job 38 — God questions Job from the whirlwind; Job\'s unknowing before divine knowledge', textId: 'job-38', note: 'Job 38:4: "Where were you when I laid the foundation of the earth?" — God\'s questioning establishes the asymmetry of knowledge: God knows the depths of creation; Job does not. Psalm 139:6: "Such knowledge is too wonderful for me; it is so high that I cannot attain it" — the Psalmist reaches the same acknowledgment: divine knowledge of the human exceeds the human\'s capacity to comprehend. Both texts end at the same place — the human confronted with a divine knowledge that exceeds human cognition — but the path differs: adversarial (Job) versus intimate (Psalm 139).' },
+                { label: 'Gospel of Truth — knowledge of self and knowledge of the source as one movement', textId: 'gospel-of-truth', note: 'The Gospel of Truth describes gnōsis as mutual recognition: the Father knows his children, and the children come to know the Father — and in knowing the Father they know themselves. Psalm 139 traces the same reciprocal structure: God searches and knows the Psalmist (139:1), and the Psalmist responds by asking God to search him again (139:23-24, "Search me, O God, and know my heart"). The Psalmist asks God to do again what God has already done — a second searching that will purify what the first revealed. This reciprocal search/know movement is the deep structure of both the Psalm and the Gnostic Gospel\'s account of salvation.' },
+              ]
+            },
+            { word: 'you hem me in, behind and before', node: 'divine-presence', type: 'concept',
+              note: '"Āḥôr wāqeḏem ṣartānî" — you have hemmed/besieged me behind and before. The verb ṣûr means to besiege, to compress, to enclose — it is the word used for besieging a city. God\'s encompassing presence is described with military vocabulary: the divine omnipresence is a surrounding/besieging force, covering the past (āḥôr) and the future (qeḏem). "And lay your hand upon me" (waššet ālāy kappekā) — the divine hand resting on the person like a weight or a covering. The combination of divine enclosure (siege) and divine hand-resting creates a complex emotional space: the Psalmist is not merely observed but held, enclosed — a presence that is total but personal.',
+              parallels: [
+                { label: 'John 17 — "Holy Father, protect them in your name... so that they may be one"', textId: 'john-17', note: 'John 17:11: "Holy Father, protect them in your name that you have given me, so that they may be one, as we are one." The divine protection/enclosure of Psalm 139 ("you hem me in, behind and before") is elaborated in John 17\'s High Priestly Prayer as the Father\'s keeping/guarding (tēreō) of the disciples. The Psalmist finds himself already enclosed by the divine presence; Jesus prays that the Father will enclose the disciples in the same encompassing divine name.' },
+                { label: 'Japji Sahib — the divine Hukam surrounds and sustains all creation without exception', textId: 'japji-sahib', note: 'Japji Sahib (pauri 2): "By His command, beings are created. By His command, they are exalted or remain lowly... His Command cannot be described. He who obeys His Command, O Nanak, is freed of ego." The Psalmist\'s "you hem me in, behind and before" and Japji Sahib\'s Hukam are both describing total divine encompassing: nothing falls outside the divine embrace. The Psalm is personal and intimate (God encloses THIS person), while Japji Sahib is cosmic and universal (the Hukam encompasses ALL beings). Together they cover the full range: from the most intimate personal enclosure to the most universal cosmic ordering.' },
+              ]
+            },
+          ]
+        },
+      ]
+    },
+    {
+      heading: 'Where Can I Go from Your Spirit? (139:7–12)',
+      verses: [
+        {
+          ref: '139:7–12',
+          text: 'Where can I go from your spirit? Or where can I flee from your presence? If I ascend to heaven, you are there; if I make my bed in Sheol, you are there. If I take the wings of the morning and settle at the farthest limits of the sea, even there your hand shall lead me, and your right hand shall hold me fast. If I say, "Surely the darkness shall cover me, and the light around me become night," even the darkness is not dark to you; the night is as bright as the day, for darkness is as light to you.',
+          entities: [
+            { word: 'where can I flee from your presence', node: 'divine-omnipresence', type: 'concept',
+              note: '"Wĕ\'ānāh mippānêkā ʾebraḥ" — and where from your face/presence shall I flee? The question is rhetorical (the Psalmist is not trying to flee but marveling at the impossibility) but it echoes the actual flight narratives: Jonah flees "from the presence of the LORD" (Jonah 1:3, mippenê YHWH) — and the point of Jonah is that such flight is impossible, as the Psalm explicitly states. The spatial survey that follows is a theodicy of divine omnipresence: heaven (cosmic height), Sheol (cosmic depth), wings of the morning (eastern horizon), farthest limits of the sea (western horizon) — all four cosmic directions, all containing the divine presence.',
+              parallels: [
+                { label: 'Amos 9 — "If they dig into Sheol, from there shall my hand take them"', textId: 'amos-5', note: 'Amos 9:2-4 is the prophetic parallel to Psalm 139:7-10: "If they dig into Sheol, from there shall my hand take them; if they climb up to heaven, from there I will bring them down... If they go into captivity before their enemies, there I will command the sword." Amos uses divine omnipresence as threat (God will find the wicked everywhere); Psalm 139 uses it as comfort (God will hold the righteous everywhere). The same theology — spatial inescapability of the divine — serves opposite emotional registers depending on moral posture.' },
+                { label: 'Rumi — the reed flute\'s homesickness; longing even in separation is divine presence', textId: 'rumi-masnavi', note: 'Rumi\'s Masnavi opens with the reed flute\'s lament of separation from the reed bed — but the very longing for God is a form of divine presence. Psalm 139\'s question "where can I flee from your presence?" and Rumi\'s reed flute lament are both discovering that divine presence persists even in the experience of distance/separation. For the Psalmist, the surprise is that God is even in Sheol; for Rumi, the surprise is that the longing itself is divine. Both texts map the paradox of divine presence in the experience of divine absence.' },
+              ]
+            },
+            { word: 'darkness is as light to you', node: 'divine-light', type: 'concept',
+              note: '"Gam-ḥōšek lō-yaḥšîk mimmekā wĕlayĕlāh kāyôm yāʾîr ḥăšēkāh kāʾôrāh" — even darkness does not obscure from you, and night like day shines; darkness like light. The Psalm\'s claim is ontological: for God, darkness and light are identical in their epistemological transparency. The human experiences darkness as concealment; God experiences no concealment. The pseudo-Dionysian tradition will build an entire apophatic theology on this verse: God dwells in "dazzling darkness" — a darkness that is darkness only to us, light from within.',
+              parallels: [
+                { label: 'Pseudo-Dionysius — the Divine Dark; "the dazzling darkness of the hidden silence"', textId: 'pseudo-dionysius-mystical-theology', note: 'Pseudo-Dionysius the Areopagite (Mystical Theology 1.1): "Into the dazzling darkness of the hidden silence." He is directly interpreting Exodus 20:21 (Moses drew near "to the thick darkness where God was") through Psalm 139:12 ("darkness is as light to you"). The apophatic tradition from Dionysius through John of the Cross is built on the Psalm\'s paradox: divine presence is "dark" to human cognition because it exceeds all categories, but from within, it is pure light. The Cloud of Unknowing\'s "dark contemplation" and John of the Cross\'s "dark night" are both exegeses of this verse.' },
+                { label: 'Meister Eckhart — the "desert of the Godhead" where all distinction collapses', textId: 'meister-eckhart-godhead', note: 'Meister Eckhart\'s Godhead (Gottheit) is the apophatic ground beyond all predicates — the divine wilderness "where neither Father, Son, nor Holy Spirit exists." Psalm 139:12 ("darkness is as light to you") points to the same collapse of distinction at the divine level: the opposition that structures all human experience (light/dark, known/unknown, presence/absence) does not exist from the divine perspective. Eckhart\'s Gottheit and the Psalm\'s God-to-whom-darkness-is-light are both descriptions of the non-dual divine ground — the place where all opposites return to identity.' },
+              ]
+            },
+          ]
+        },
+      ]
+    },
+    {
+      heading: 'You Knit Me Together — I Am Fearfully and Wonderfully Made (139:13–18)',
+      verses: [
+        {
+          ref: '139:13–18',
+          text: 'For it was you who formed my inward parts; you knit me together in my mother\'s womb. I praise you, for I am fearfully and wonderfully made. Wonderful are your works; that I know very well. My frame was not hidden from you, when I was being made in secret, intricately woven in the depths of the earth. Your eyes beheld my unformed substance. In your book were written all the days that were formed for me, when none of them as yet existed.',
+          entities: [
+            { word: 'you knit me together in my mother\'s womb', node: 'creation', type: 'concept',
+              note: '"Kî-ʾattāh qānîtā kilyōtāy tĕsukkēnî bĕveṭen ʾimmî" — for you created (qānāh) my kidneys (kilyōtāy = inward parts/deepest self); you wove/knit me (tĕsukkēnî, from the root skk, to weave/interweave) in my mother\'s womb. The kidney (kilyah) in Hebrew thought is the seat of deepest emotion and decision — the moral core. God creates not just the body but the inward moral self in the womb. "Tĕsukkēnî" — to weave together — the same root used for the covering/weaving of the Temple curtain and priestly garments. The Psalmist\'s formation in the womb is described with Temple-craft vocabulary: God as master weaver creating a sacred vessel.',
+              parallels: [
+                { label: 'Job 10 — "Your hands fashioned and made me... you knit me together with bones and sinews"', textId: 'job-38', note: 'Job 10:8-11: "Your hands fashioned and made me altogether... Did you not pour me out like milk and curdle me like cheese? You clothed me with skin and flesh, and knit me together with bones and sinews." Job uses the same knitting/weaving imagery (Job 10:11 = Ps 139:13) to argue with God about the value of the human life God created. The Psalmist uses the same imagery to worship; Job uses it to protest. Both reach the same theological conclusion: God is intimately responsible for the human body as creator, and that responsibility grounds the relationship — either as an occasion for complaint (Job) or for praise (Psalm).' },
+                { label: 'Proverbs 8 — Wisdom delights in the inhabited world; "I was beside him like a master workman"', textId: 'proverbs-8', note: 'Proverbs 8:27-31: Wisdom was present when God "drew a circle on the face of the deep... I was beside him, like a master workman, and I was daily his delight, rejoicing before him always, rejoicing in his inhabited world and delighting in the children of man." Psalm 139\'s account of God\'s intricate creation of the individual in the womb is the first-person experience of what Wisdom describes in the third person: the divine delight in creating the human. Proverbs 8\'s Wisdom-as-craftsperson and Psalm 139\'s God-as-weaver are two accounts of the same divine creativity — one cosmic (creation of the world), one intimate (creation of the individual).' },
+              ]
+            },
+            { word: 'fearfully and wonderfully made', node: 'sacred-body', type: 'concept',
+              note: '"Nôrāʾôt niplêtî" — fearfully/awesomely I am distinguished/separated (niphlêtî from the root palah, to be set apart, to be distinguished). The marvel is not just craftsmanship but ontological distinction — the setting apart of this particular person as a unique entity. "Nôrāʾôt" (fearful, awesome, terrifying) is the same word used for the theophany at Sinai. The human body is a theophany: encountering the body rightly produces the same awe as encountering the divine at Sinai. This is the anthropological equivalent of Isaiah 6\'s "holy, holy, holy" — the human being as site of divine glory.',
+              parallels: [
+                { label: 'Chandogya 6.2 — the self within, the fine essence: "that is what you are"', textId: 'chandogya-6-2', note: 'Chandogya 6.8.7 (tat tvam asi) — the innermost self (ātman) is identical with the universal divine ground (Brahman). Psalm 139\'s "fearfully and wonderfully made" and "you formed my inward parts" are the Hebrew equivalent of the Upanishadic insistence on the divine depth of the human person. The Upanishads work inward (the ātman within is Brahman); Psalm 139 works outward (the God who is everywhere-present is also the God who formed the innermost self). Both reach the same claim: the innermost human reality and the divine ground are deeply connected.' },
+                { label: 'Poimandres — the Anthropos made in the image of the divine Nous; the body as vehicle of divine light', textId: 'poimandres', note: 'Poimandres (Corpus Hermeticum 1): "The Nous, Father of all, being Life and Light, gave birth to a Man like himself, whom he loved as his own child. The Man, being beautiful, had the image of his Father." Psalm 139\'s "fearfully and wonderfully made" and the Poimandres\'s account of the Anthropos made in the divine image are both describing the human body as a site of divine glory. The Psalmist marvels at the intricate weaving of his physical form; Poimandres describes the Anthropos as beautiful with the Father\'s image. Both locate divine presence inside the human form — the body as the site of divine self-expression.' },
+              ]
+            },
+          ]
+        },
+      ]
+    },
+  ]
+};
+
+SCRIPTURE_TEXTS['diamond-sutra'] = {
+  id: 'diamond-sutra',
+  title: 'Diamond Sutra — Vajracchedikā Prajñāpāramitā',
+  tradition: 'Buddhism',
+  date: 'c. 300–400 CE (Kushan period)',
+  language: 'Sanskrit / Classical Chinese',
+  crossTradition: [
+    { label: 'Pseudo-Dionysius — apophatic theology; God beyond all concepts and names', textId: 'pseudo-dionysius-mystical-theology', note: 'The Diamond Sutra systematically deconstructs all positive statements about the Tathāgata using the tetralemma: "X is not-X, therefore it is called X." Pseudo-Dionysius\'s apophatic method (Mystical Theology) proceeds identically: every affirmation about God must be negated, and then the negation also negated, until language dissolves into silence. Both the Diamond Sutra\'s tetralemma and Dionysius\'s via negativa are formal procedures for preventing conceptual reification of what transcends concepts. The Buddhist and Christian apophatic traditions converged on the same logical structure independently.' },
+    { label: 'Meister Eckhart — the soul\'s ground beyond ego; dissolution as the condition of union', textId: 'meister-eckhart-godhead', note: 'Meister Eckhart: "The soul must lose itself in order to find itself." Diamond Sutra (section 17): "A Bodhisattva who creates the perception of a being cannot be called a Bodhisattva... A Bodhisattva should not act with the sense of self, being, soul, or person." Both texts identify the ego-structure as the obstacle to the deepest reality (the Gottheit, the Buddha-nature). Eckhart\'s Abgeschiedenheit (detachment/letting-go) and the Diamond Sutra\'s doctrine of non-attachment are formally identical: both require the dissolution of the bounded self as the condition of union with the transcendent ground.' },
+    { label: 'Tao Te Ching — the Tao that cannot be named; the inexhaustible ground of all things', textId: 'tao-te-ching-1', note: 'Tao Te Ching 1: "The Tao that can be told is not the eternal Tao; the name that can be named is not the eternal name." Diamond Sutra (section 13): "The Tathāgata has said that the Perfection of Wisdom is not \'the Perfection of Wisdom\'; that is why it is called the Perfection of Wisdom." Both texts use the same logical maneuver: the ultimate truth cannot be captured in language, and any positive statement must be immediately qualified by its negation. The Tao-that-cannot-be-named and the Prajñāpāramitā-that-is-not-prajñāpāramitā are structurally identical: the highest truth exceeds its own name, and the language that points to it must point beyond itself.' },
+  ],
+  sections: [
+    {
+      heading: 'The Question of Mind — How Should a Bodhisattva Practice? (Sections 2–3)',
+      verses: [
+        {
+          ref: 'Sections 2–3',
+          text: '"How, O Blessed One, should a son or daughter of good family who has entered on the Bodhisattva path stand, how progress, how restrain the mind?" ... "All beings — whatever beings there may be... all these I must lead to Nirvana, to the realm of Nirvana which leaves nothing behind. And yet, after I have thus led beings to Nirvana, no being at all has been led to Nirvana." And why? If, O Subhuti, a Bodhisattva had the perception of a being, they could not be called a Bodhisattva."',
+          entities: [
+            { word: 'no being at all has been led to Nirvana', node: 'non-self', type: 'concept',
+              note: 'The Diamond Sutra\'s central paradox: the Bodhisattva vows to lead all beings to liberation, and yet after this has happened, "no being at all has been led to Nirvana." The logic is anattā (non-self): if the Bodhisattva believes that a "being" is being liberated, the Bodhisattva is caught in the conceptual reification that IS the problem. Liberation is not a state achieved by a self; it is the recognition that the self who was supposedly unenlightened was a construction. This is the most efficient statement of the Madhyamaka deconstruction of substantialist thinking: the liberator, the liberated, and the act of liberation are all empty (śūnya) of inherent existence.',
+              parallels: [
+                { label: 'Gospel of Truth — "the knowledge of the living book... is not the letters of the alphabet"', textId: 'gospel-of-truth', note: 'The Gospel of Truth (Valentinian): "The knowledge of the living book which he revealed to the aeons... is not the letters of the alphabet, not something that says what one does not seek." The Diamond Sutra and the Gospel of Truth share the same critique of reified knowledge: the "truth" that can be stated in ordinary language is not the truth being sought. When the Gospel of Truth says that gnōsis is "not the letters of the alphabet," it is making the Diamond Sutra\'s point: the teaching (dharma) cannot be captured in its verbal formulation. Both texts create a paradox of teaching: the teaching points to what cannot be taught; the book contains what cannot be written.' },
+                { label: 'Meister Eckhart — "God is no-thing"; the Godhead beyond being', textId: 'meister-eckhart-godhead', note: 'Meister Eckhart: "God is a being beyond being and a nothingness beyond being... God is nameless because no one can say or understand anything about him." Diamond Sutra (section 14): "Even \'the dharma\' has to be surrendered; how much more \'non-dharma\'?" Both texts are performing the same apophatic move on the highest category: Eckhart denies "being" to the Godhead; the Diamond Sutra denies "the dharma" to the ultimate truth. Neither is nihilism — both are pointing beyond the category (Being, Dharma) to what the category serves but cannot contain.' },
+              ]
+            },
+            { word: 'should not act with the sense of self, being, soul, or person', node: 'non-self', type: 'concept',
+              note: 'The four constructs the Diamond Sutra deconstructs throughout: ātman (self), sattva (being), jīva (soul/life-principle), pudgala (person) — the four ways human consciousness reifies a permanent, independent subject. The Bodhisattva must act for the liberation of all beings without the perception of any of these four constructs. This is the Diamond Sutra\'s razor edge (vajra): it cuts through all four simultaneously. Action without a subject; liberation without a being liberated; teaching without a teacher or student.',
+              parallels: [
+                { label: 'Philippians 2 — "do nothing from selfish ambition... emptied himself"', textId: 'philippians-2', note: 'Philippians 2:3-5: "Do nothing from selfish ambition or conceit... Let the same mind be in you that was in Christ Jesus, who, though he was in the form of God... emptied himself." Paul\'s kenosis (self-emptying) and the Diamond Sutra\'s "no perception of self, being, soul, or person" are structurally parallel: both describe the mode of action appropriate to the enlightened/saved being — action without ego-grasping, giving without self-interest. The Bodhisattva\'s non-attached action and the kenotic Christ\'s self-emptying are two formulations of egoless, other-directed action.' },
+                { label: 'Thomas à Kempis — "He is truly great who is little in his own sight"', textId: 'thomas-a-kempis', note: 'Thomas à Kempis (Imitation 1.2): "He is truly great who is little in his own sight, and regards all high positions as nothing." The Diamond Sutra\'s "no perception of self, being, soul, or person" and Thomas\'s self-abasement are the same requirement in different idioms: both require the dissolution of self-aggrandizement as the condition of genuine practice. The Bodhisattva who perceives a self cannot be a Bodhisattva; the one who pursues knowledge for pride rather than wisdom cannot be said to know.' },
+              ]
+            },
+          ]
+        },
+      ]
+    },
+    {
+      heading: 'The Raft Must Be Left Behind — Teachings Are Not the Truth (Section 6)',
+      verses: [
+        {
+          ref: 'Section 6',
+          text: '"So too, Subhuti, the dharmas I have taught are like a raft. The dharma has to be given up, let alone the non-dharma. My dharma is without real substance [no fixed dharma]. If someone were to say \'The Tathāgata has a definite teaching to give,\' they would be slandering the Buddha... No dharma can be seized and held as I, with a fixed view."',
+          entities: [
+            { word: 'the dharma has to be given up, let alone the non-dharma', node: 'apophatic-theology', type: 'concept',
+              note: 'The raft simile (Section 6): a man uses a raft to cross a river, then, having crossed, carries the raft on his head for the rest of his journey. Would this be sensible? No — having used the raft to cross, you leave it. The dharma (teaching) is the raft; enlightenment is the far shore. Having crossed — having been liberated — even the liberation-producing teaching must be released. And then: "let alone the non-dharma" — even the rejection of the teaching must be released. The double negation (release the dharma AND the non-dharma) is the Diamond Sutra\'s characteristic tetralemma: not X, not not-X, not (X and not-X), not (neither X nor not-X).',
+              parallels: [
+                { label: 'Tao Te Ching 1 — "the Tao that can be told is not the eternal Tao"', textId: 'tao-te-ching-1', note: 'Tao Te Ching 1: "The Tao that can be told is not the eternal Tao." The Diamond Sutra\'s raft-simile and the Tao Te Ching\'s opening statement make the same point: the teaching (raft, named Tao) is a vehicle for reaching the truth (far shore, eternal Tao), not the truth itself. Having used the teaching, you must release it to arrive at the reality. Both texts insist that attachment to the formulation of the teaching is the primary obstacle to the truth the teaching conveys.' },
+                { label: 'Cloud of Unknowing — all concepts must be placed under the cloud; naked intent toward God', textId: 'cloud-of-unknowing', note: 'The Cloud of Unknowing (Chapter 5): "Of God himself can no man think." The author\'s "cloud of unknowing" functions identically to the Diamond Sutra\'s raft: all concepts, all images, all teachings (including about God) must be placed under the cloud and transcended. The Cloud\'s author is not destroying the value of theology — just as the Diamond Sutra is not destroying the value of dharma — but insisting that the conceptual teaching must be released in the moment of contemplative encounter.' },
+              ]
+            },
+            { word: 'no dharma can be seized and held as I, with a fixed view', node: 'emptiness', type: 'concept',
+              note: '"No fixed dharma" — the Tathāgata has no fixed teaching, no teaching that can be seized and held as a definite view. This is śūnyatā (emptiness) applied to the teaching itself: the dharma is empty of inherent existence, just as all phenomena are empty. The Diamond Sutra performs a self-referential move: the text is teaching that no teaching is fixed, which means this teaching is also not fixed. It is intentionally unstable, auto-deconstructing.',
+              parallels: [
+                { label: 'Pseudo-Dionysius — God is beyond being, beyond non-being; the negation of the negation', textId: 'pseudo-dionysius-mystical-theology', note: 'Pseudo-Dionysius (Mystical Theology 5): "It is beyond every assertion and every denial." The Diamond Sutra\'s "no fixed dharma" and Pseudo-Dionysius\'s via negativa both arrive at the same formal endpoint: the ultimate reality is beyond both affirmation and negation. The Diamond Sutra\'s tetralemma and Dionysius\'s via eminentiae (the super-affirmation beyond both assertion and denial) are two culturally distinct formalizations of the same apophatic endpoint: the transcendent reality exceeds all logical and linguistic categories.' },
+                { label: 'Nasadiya Sukta — "Who really knows? Who will here proclaim it?"', textId: 'nasadiya-sukta', note: 'Rig Veda 10.129 (Nasadiya Sukta) ends: "Who really knows? Who will here proclaim it? Whence was it produced?... Only He who is its overseer in highest heaven knows, He only knows, or perhaps He does not know." The Nasadiya and the Diamond Sutra converge on the same apophatic agnosticism about ultimates: even the highest perspective may not know. Both texts use radical questioning — not as nihilism but as the most honest epistemic posture before the ultimate.' },
+              ]
+            },
+          ]
+        },
+      ]
+    },
+    {
+      heading: 'All Phenomena Are Like a Dream — The Final Verse (Section 32)',
+      verses: [
+        {
+          ref: 'Section 32',
+          text: '"So you should view this fleeting world — a star at dawn, a bubble in a stream; a flash of lightning in a summer cloud, a flickering lamp, a phantom, and a dream." ... The Lord said: "Anyone who has seen me in form or has heard me in a sound has engaged in a wrong effort; this person will not see the Tathāgata. One should see the Tathāgata from the dharma itself; dharmakāya is the guidance of the buddhas; the dharma\'s real nature cannot be discerned."',
+          entities: [
+            { word: 'a star at dawn, a bubble in a stream', node: 'impermanence', type: 'concept',
+              note: 'The closing verse of the Diamond Sutra (Kumārajīva version): "All conditioned phenomena are like a dream, an illusion, a bubble, a shadow; like dew or like a flash of lightning. Thus we shall perceive them." The six similes (dream, illusion, bubble, shadow, dew, lightning) are a meditation on anicca (impermanence) applied to ALL conditioned phenomena — including the teaching, including the self who is reading the teaching. The Diamond Sutra ends by undermining its own ontological claims: even the dharma just taught is "like a dream." This is the final razor cut (vajra): the text deconstructs itself in its closing verse.',
+              parallels: [
+                { label: 'Ecclesiastes 1 — "vanity of vanities; all is vanity" — the same impermanence from Wisdom tradition', textId: 'ecclesiastes-1', note: 'Ecclesiastes 1:2: "Hevel havalim, hakkōl hāvel" — Vanity of vanities, all is vanity. The Hebrew hevel (vapor, breath, bubble) is Ecclesiastes\' master-metaphor — everything is vapor, insubstantial, transient. The Diamond Sutra\'s "bubble in a stream, a flash of lightning, a dream" and Ecclesiastes\' hevel are the same observation from two cultural positions. Both are surveying conditioned existence and finding it ontologically thin — not non-existent, but lacking the substance that would justify clinging. Their responses differ: Ecclesiastes counsels enjoyment of simple things; the Diamond Sutra counsels non-grasping of all things.' },
+                { label: 'Nasadiya Sukta — creation as a question; the universe held in uncertainty', textId: 'nasadiya-sukta', note: 'Rig Veda 10.129 describes the original state before creation: "There was neither non-existence nor existence then... What stirred? Where? In whose protection?" The Diamond Sutra\'s final similes (all phenomena are like dreams and lightning flashes) and the Nasadiya\'s pre-creation nothingness are both pointing to the radical contingency and insubstantiality of all conditioned things. The Nasadiya finds this at the origin (before creation was this insubstantial nothing); the Diamond Sutra finds it at every moment (all phenomena are always already as insubstantial as dreams).' },
+              ]
+            },
+            { word: 'one should see the Tathāgata from the dharma itself', node: 'buddha-nature', type: 'concept',
+              note: '"Dharmato Buddho draṣṭavyaḥ" — the Tathāgata should be seen from/through the dharma. The Dharmakāya (Dharma-body, Truth-body) is the ultimate mode of the Buddha\'s existence — not the physical body (rūpakāya) that disciples saw during his lifetime, but the body of truth/reality itself. "Dharmakāya is the guidance of the buddhas" — the real Buddha is not the historical Gautama but the dharmadhātu (the totality of reality as it is). This is the most philosophically significant move in the Diamond Sutra: it shifts the locus of Buddhahood from the historical individual to the structure of reality itself.',
+              parallels: [
+                { label: 'John 1 — "the Word was made flesh... and we beheld his glory"', textId: 'john-1', note: 'John 1:14: "The Word became flesh and dwelt among us, and we have seen his glory." The Diamond Sutra\'s Dharmakāya (the truth-body of the Buddha as the nature of reality) and John\'s Logos (the divine Word that became flesh) are parallel attempts to articulate the relationship between the historical teacher and the ultimate truth. The Diamond Sutra says: look past the historical figure to the Dharma-itself; John says: in the historical figure you see the Logos-itself. The direction is reversed — the Diamond Sutra moves from history to truth; John moves from truth to history — but both navigate the same territory: the relationship between the contingent teacher and the absolute teaching.' },
+                { label: 'Gospel of Truth — "Jesus Christ illumined those who were in darkness"', textId: 'gospel-of-truth', note: 'The Gospel of Truth (Valentinian): "Jesus Christ illumined those who were in darkness... He became a way for those who were going astray, and knowledge for those who were ignorant." The Diamond Sutra\'s "one should see the Tathāgata from the dharma itself" and the Gospel of Truth\'s identification of Jesus with the illuminating Logos are parallel: both point beyond the historical figure to the cosmic principle the figure embodies. For the Gospel of Truth, Jesus IS the gnōsis/logos that rescues from ignorance; for the Diamond Sutra, the Tathāgata IS the Dharma. Both texts resist a merely historical or biographical reception of the teacher.' },
+              ]
+            },
+          ]
+        },
+      ]
+    },
+  ]
+};
