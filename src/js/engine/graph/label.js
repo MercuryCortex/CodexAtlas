@@ -70,22 +70,40 @@
     // Each label's AABB is (cx ± halfW, cy ± halfH) where cx,cy is
     // the screen-space position just above the disk. We keep the
     // boxes as flat arrays to avoid GC churn at 663 entries.
+    //
+    // Phase 6d — fairness fix: previously a single top-down walk
+    // with one shared cap meant that when tiers 0-2 produced
+    // many candidates, tier 3 frequently got zero. Now each
+    // tier gets its own SOFT BUDGET so even if higher tiers
+    // claim most of the screen, tier 3 still gets a shot. We
+    // also collide more leniently for tier 3 (50% padding) since
+    // those labels are the "everyone else" group and the user
+    // explicitly opted them in.
     const out = new Set();
     const boxes = [];   // [x0, y0, x1, y1] per shown label
     const halfH = sizePx * 0.6 + padPx;
+    // Per-tier budget — higher tiers get more room, but every
+    // tier reserves at least some labels so tier 3 isn't starved.
+    const tierBudget = [Math.floor(cap * 0.40), Math.floor(cap * 0.30), Math.floor(cap * 0.20), Math.floor(cap * 0.40)];
     for (let T = 0; T < 4; T++) {
       const bucket = tierBuckets[T];
+      const budget = tierBudget[T];
+      let addedThisTier = 0;
+      // Tier 3 (rest) gets a slightly relaxed pad — the user
+      // dialled its threshold low specifically because they want
+      // these labels to show.
+      const padFactor = (T === 3) ? 0.5 : 1.0;
       for (let i = 0; i < bucket.length; i++) {
         if (out.size >= cap) return out;
+        if (addedThisTier >= budget) break;
         const n = bucket[i];
         const s = w2s(n.x, n.y);
-        const halfW = estW(n.id) * 0.5 + padPx;
-        // Label sits above disk — same anchor convention as the
-        // existing forge syncLabelPositions: cy = s.y - n.r*camScale - 6.
+        const halfW = (estW(n.id) * 0.5 + padPx) * padFactor;
+        const halfHT = halfH * padFactor;
         const cy = s.y - n.r * camScale - 6;
         const cx = s.x;
-        const x0 = cx - halfW, y0 = cy - halfH;
-        const x1 = cx + halfW, y1 = cy + halfH;
+        const x0 = cx - halfW, y0 = cy - halfHT;
+        const x1 = cx + halfW, y1 = cy + halfHT;
         let collides = false;
         for (let b = 0; b < boxes.length; b += 4) {
           if (x0 < boxes[b+2] && x1 > boxes[b] && y0 < boxes[b+3] && y1 > boxes[b+1]) {
@@ -95,6 +113,7 @@
         if (collides) continue;
         out.add(n.id);
         boxes.push(x0, y0, x1, y1);
+        addedThisTier++;
       }
     }
     return out;

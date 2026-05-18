@@ -5512,7 +5512,7 @@ body.view-alphabets main.canvas { padding-bottom: 220px; }
   color: var(--gold);
 }
 .item.forge-nav::after {
-  content: 'p6c';
+  content: 'p6d';
   margin-left: 6px;
   font-family: var(--mono); font-size: 9px;
   letter-spacing: 0.08em;
@@ -5573,9 +5573,14 @@ body.nav-collapsed .item.forge-nav::after { display: none; }
   letter-spacing: 0.04em;
   border: 1px solid var(--border, #2a2e3a);
   border-radius: 3px;
-  padding: 3px 22px 3px 8px;
+  /* Phase 6d — align vertically with the rest of the status
+     strip. Match the row's effective text baseline by sharing
+     the parent's line-height + balanced top/bottom padding. */
+  padding: 4px 22px 4px 10px;
+  line-height: 1;
+  height: 24px;
+  vertical-align: middle;
   cursor: pointer;
-  /* Caret SVG — simple downward chevron in gold-soft */
   background-image:
     linear-gradient(45deg, transparent 50%, var(--gold-soft, #a87f3e) 50%),
     linear-gradient(135deg, var(--gold-soft, #a87f3e) 50%, transparent 50%);
@@ -5617,7 +5622,75 @@ body.nav-collapsed .item.forge-nav::after { display: none; }
 
 /* The status bar uses flex; ensure the right-aligned children
    (spacer + search) actually flex-align correctly. */
-.forge-status { display: flex; align-items: center; }
+.forge-status {
+  display: flex;
+  align-items: center;
+  /* Phase 6d — when the dev panel is open it covers the right
+     side. Inset the status row's right padding so the last
+     visible field isn't clipped. The panel is 380 px wide. */
+  padding-right: 12px;
+  transition: padding-right .22s ease;
+}
+body:has(#forge-dev-panel.is-open) .forge-status {
+  padding-right: 392px;
+}
+
+/* Phase 6d — bottom bar inside .forge-stage. Floating row at
+   the bottom edge holding the search input + zoom gizmo.
+   Behind the dev panel z-stack so the panel can cover it. */
+.forge-bottombar {
+  position: absolute;
+  left: 14px;
+  right: 14px;
+  bottom: 14px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  z-index: 12;
+  pointer-events: none;   /* children re-enable below */
+  transition: right .22s ease;
+}
+body:has(#forge-dev-panel.is-open) .forge-bottombar {
+  right: 394px;
+}
+.forge-zoom-gizmo,
+.forge-bottom-search {
+  pointer-events: auto;
+}
+.forge-zoom-gizmo {
+  appearance: none; -webkit-appearance: none;
+  background: rgba(13, 17, 25, 0.85);
+  color: var(--gold);
+  font-family: var(--mono, "JetBrains Mono", Menlo, monospace);
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  border: 1px solid var(--border, #2a2e3a);
+  border-radius: 4px;
+  padding: 5px 10px;
+  cursor: pointer;
+  min-width: 70px;
+  text-align: center;
+  font-variant-numeric: tabular-nums;
+}
+.forge-zoom-gizmo:hover { border-color: var(--gold-soft); color: var(--gold); }
+.forge-zoom-gizmo.is-at-fit { color: var(--text-2); border-color: var(--border, #2a2e3a); }
+.forge-bottom-search {
+  appearance: none; -webkit-appearance: none;
+  background: rgba(13, 17, 25, 0.85);
+  color: var(--text-0);
+  font-family: var(--mono, "JetBrains Mono", Menlo, monospace);
+  font-size: 12px;
+  letter-spacing: 0.04em;
+  border: 1px solid var(--border, #2a2e3a);
+  border-radius: 4px;
+  padding: 5px 10px;
+  outline: none;
+  flex: 1 1 320px;
+  max-width: 360px;
+}
+.forge-bottom-search::placeholder { color: var(--text-3); }
+.forge-bottom-search:hover { border-color: var(--gold-soft); }
+.forge-bottom-search:focus { border-color: var(--gold); }
 
 .forge-stage {
   flex: 1 1 auto;

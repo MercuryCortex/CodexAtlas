@@ -223,8 +223,7 @@
     status.innerHTML = [
       '<span class="forge-status-tag">FORGE</span>',
       '<span class="forge-status-sep">·</span>',
-      '<span class="forge-status-k">mode</span>',
-      '<select class="forge-status-mode" id="forge-status-mode">' + modeOptionsHtml + '</select>',
+      '<select class="forge-status-mode" id="forge-status-mode" title="What is this wheel showing?">' + modeOptionsHtml + '</select>',
       '<span class="forge-status-sep">·</span>',
       '<span class="forge-status-k">device</span>',
       '<span class="forge-status-v forge-status-pending" id="forge-status-device">acquiring…</span>',
@@ -239,13 +238,23 @@
       '<span class="forge-status-sep">·</span>',
       '<span class="forge-status-k">frame</span><span class="forge-status-v" id="forge-status-frame">—</span>',
       '<span class="forge-status-spacer"></span>',
-      '<input type="text" class="forge-status-search" id="forge-status-search" placeholder="search…" autocomplete="off" spellcheck="false">',
     ].join('');
     shell.appendChild(status);
 
     const stage = document.createElement('div');
     stage.className = 'forge-stage';
     shell.appendChild(stage);
+
+    // Phase 6d — bottom bar: search + zoom gizmo. Floating
+    // over the canvas at the bottom edge. Lives below the
+    // dev panel z-stack so the panel can cover it when needed.
+    const bottomBar = document.createElement('div');
+    bottomBar.className = 'forge-bottombar';
+    bottomBar.innerHTML = [
+      '<button class="forge-zoom-gizmo" id="forge-zoom-gizmo" title="Current zoom — click to reset to fit">100%</button>',
+      '<input type="text" class="forge-bottom-search" id="forge-status-search" placeholder="search…" autocomplete="off" spellcheck="false">',
+    ].join('');
+    stage.appendChild(bottomBar);
 
     const canvas = document.createElement('canvas');
     canvas.className = 'forge-canvas';
@@ -454,16 +463,29 @@
         if (lastScale > 0) {
           const ratio = camScale / lastScale;
           if (ratio < 0.95 || ratio > 1.05) {
-            // Cheap re-pack (663 nodes ≈ 0.3 ms). Rebuilds
-            // hitNodes (radii update) + glyph DOM (size sync)
-            // + idle-label tier visibility.
             rebakeNodes();
-            return;   // rebakeNodes already calls drawFrame
+            updateZoomGizmo();
+            return;
           }
         }
         drawFrame();
         scheduleIdleLabelSync();
+        updateZoomGizmo();
       });
+
+      // Phase 6d — zoom gizmo wire-up. Shows current camera
+      // scale as a %, click resets to the fit-the-wheel scale.
+      const gizmoEl = document.getElementById('forge-zoom-gizmo');
+      if (gizmoEl) {
+        gizmoEl.addEventListener('click', () => {
+          camera.flyTo({
+            centerX: 0, centerY: 0,
+            scale:   computeFitScale(),
+          }, 0.35);
+          if (camera.isAnimating()) startAnimLoop();
+        });
+      }
+      updateZoomGizmo();
 
       // Mode dropdown wire-up (Phase 4d).
       const modeSelectEl = document.getElementById('forge-status-mode');
@@ -618,6 +640,30 @@
       drawFrame();
     }
 
+    // ── Zoom gizmo (Phase 6d) ────────────────────────────
+    // Reports current camera scale as a percentage relative to
+    // the FIT scale (the scale that frames the whole wheel into
+    // the viewport). 100% = wheel fills the viewport; >100% =
+    // zoomed in; <100% = zoomed out. Click = fly back to fit.
+    function computeFitScale() {
+      const vp = local.lastSize;
+      if (!vp.w || !vp.h || !local.mode || !local.mode.worldExtent) return 1;
+      const ext = local.mode.worldExtent;
+      const wx = ext.x1 - ext.x0;
+      const wy = ext.y1 - ext.y0;
+      if (wx <= 0 || wy <= 0) return 1;
+      return Math.min(vp.w / wx, vp.h / wy);
+    }
+    function updateZoomGizmo() {
+      const gizmoEl = document.getElementById('forge-zoom-gizmo');
+      if (!gizmoEl) return;
+      const fit = computeFitScale();
+      if (fit <= 0) { gizmoEl.textContent = '—'; return; }
+      const pct = Math.round((camera.state.scale / fit) * 100);
+      gizmoEl.textContent = pct + '%';
+      gizmoEl.classList.toggle('is-at-fit', Math.abs(pct - 100) <= 1);
+    }
+
     // ── resize + fit ─────────────────────────────────────
     function resizeAndFit(initial) {
       if (!local.renderer || local.destroyed) return;
@@ -637,6 +683,18 @@
       } else if (sizeChanged) {
         // On resize, re-fit so the wheel doesn't get cropped.
         camera.fitToExtent(local.mode.worldExtent, { w, h }, 0);
+        // Phase 6d — defensive: rebuild the focus-dependent
+        // buffers from the CURRENT focus state. Resize triggers
+        // a cascade (camera fit → onChange → rebakeNodes when
+        // scale drifts) that has been observed to occasionally
+        // leave the edge-state buffer out of sync with the
+        // current focus, painting non-focused wires in their
+        // ACTIVE colour. Re-running recomputeFocus is cheap
+        // (3033 edges × ~50ns) and guarantees the state buffers
+        // match the user's hover/lock state.
+        if (local.mode && local.mode.adjacency && !initial) {
+          recomputeFocus();
+        }
       }
       // camera.onChange would have triggered draw, but if
       // camera state was already at fit (e.g., first call before

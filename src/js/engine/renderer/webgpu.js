@@ -139,8 +139,14 @@
       let quad_scale = mix(1.0, v.selected_glow.w, inst_selected);
       let world      = inst_pos + quad_vertex * inst_radius * size_mult * quad_scale;
       let ndc        = world * v.view_scale + v.view_offset;
+      // Phase 6d — depth-layer:
+      //   selected (sel=1)   → z = 0.0  (closest, paints on top)
+      //   highlighted (state=0)→ z = 0.3
+      //   dimmed (state=1)   → z = 0.6
+      let z_focus = mix(0.6, 0.3, 1.0 - inst_state);
+      let z       = mix(z_focus, 0.0, inst_selected);
       var out: VsOut;
-      out.position   = vec4<f32>(ndc, 0.0, 1.0);
+      out.position   = vec4<f32>(ndc, z, 1.0);
       out.local_pos  = quad_vertex * quad_scale;
       out.inst_color = inst_color;
       out.state      = inst_state;
@@ -175,6 +181,11 @@
       // Composite the glow UNDER the disk (premultiplied alpha).
       let final_rgb = disk_rgb + glow_rgb * (1.0 - disk_a);
       let final_a   = disk_a   + glow_a   * (1.0 - disk_a);
+      // Phase 6d — discard near-transparent fragments so they
+      // don't write depth. Without this, the SDF anti-alias
+      // halo of a dimmed disk would block focused disks behind
+      // it (depth test less-equal). Threshold 0.04 = ~10/255.
+      if (final_a < 0.04) { discard; }
       return vec4<f32>(final_rgb, final_a);
     }
   `;
@@ -251,7 +262,12 @@
       let ndc = world * v.view_scale + v.view_offset;
 
       var out: VsOut;
-      out.position     = vec4<f32>(ndc, 0.0, 1.0);
+      // Phase 6d — edges always paint BEHIND all nodes (z=0.8).
+      // Within edges, hot (state=0) sits slightly forward of
+      // idle (state=1) so a focused incident edge isn't masked
+      // by a stale dimmed one in the same pass.
+      let z = mix(0.75, 0.85, inst_state);
+      out.position     = vec4<f32>(ndc, z, 1.0);
       out.edge_y       = quad_vertex.y;
       out.edge_color   = inst_color;
       out.state        = inst_state;
@@ -277,6 +293,9 @@
       let color    = mix(hot, in.edge_color, in.state);
       let dim_mult = mix(1.0, 1.0 - v.dim_amount, in.state);
       let a        = color.a * alpha_aa * dim_mult;
+      // Phase 6d — same discard logic as nodes: AA halo fragments
+      // shouldn't write depth, else they block disks behind them.
+      if (a < 0.02) { discard; }
       return vec4<f32>(color.rgb * a, a);
     }
   `;
@@ -406,6 +425,7 @@
         targets: [{ format, blend: premultBlend() }],
       },
       primitive: { topology: 'triangle-list' },
+      depthStencil: { format: 'depth24plus', depthWriteEnabled: true, depthCompare: 'less-equal' },
     });
 
     // ── Phase 3: EDGE pipeline with state attribute ──
@@ -451,6 +471,7 @@
         targets: [{ format, blend: premultBlend() }],
       },
       primitive: { topology: 'triangle-strip' },
+      depthStencil: { format: 'depth24plus', depthWriteEnabled: true, depthCompare: 'less-equal' },
     });
 
     // ── Instance buffers ─────────────────────────────
@@ -458,6 +479,23 @@
     let nodeStateVbo        = null, nodeStateVboSize        = 0;
     let edgeInstanceVbo     = null, edgeInstanceVboSize     = 0;
     let edgeStateVbo        = null, edgeStateVboSize        = 0;
+    // Phase 6d — depth attachment for z-layering. Selected
+    // nodes paint on top of highlighted on top of dimmed; edges
+    // paint behind all nodes. See vs_main z-writes per shader.
+    let depthTex = null;
+    let depthTexW = 0, depthTexH = 0;
+    function ensureDepthTex(fbW, fbH) {
+      if (depthTex && depthTexW === fbW && depthTexH === fbH) return depthTex;
+      if (depthTex) { try { depthTex.destroy(); } catch (e) { /* ignore */ } }
+      depthTex = device.createTexture({
+        label: 'forge-depth',
+        size:  { width: fbW, height: fbH },
+        format: 'depth24plus',
+        usage:  GPUTextureUsage.RENDER_ATTACHMENT,
+      });
+      depthTexW = fbW; depthTexH = fbH;
+      return depthTex;
+    }
 
     function ensureBuffer(current, currentSize, neededSize, label) {
       if (current && currentSize >= neededSize) return { buf: current, size: currentSize };
@@ -644,11 +682,18 @@
 
         // ── Encode + submit ───────────────────────────
         const encoder = device.createCommandEncoder({ label: 'forge-frame' });
+        const dTex = ensureDepthTex(canvas.width, canvas.height);
         const pass = encoder.beginRenderPass({
           colorAttachments: [{
             view: context.getCurrentTexture().createView(),
             clearValue: CLEAR_COLOR, loadOp: 'clear', storeOp: 'store',
           }],
+          depthStencilAttachment: {
+            view: dTex.createView(),
+            depthClearValue: 1.0,
+            depthLoadOp: 'clear',
+            depthStoreOp: 'store',
+          },
         });
 
         if (edgeCount > 0) {
@@ -681,6 +726,7 @@
         if (edgeInstanceVbo) { try { edgeInstanceVbo.destroy(); } catch (e) { /* ignore */ } }
         if (nodeStateVbo)    { try { nodeStateVbo.destroy(); }    catch (e) { /* ignore */ } }
         if (edgeStateVbo)    { try { edgeStateVbo.destroy(); }    catch (e) { /* ignore */ } }
+        if (depthTex)        { try { depthTex.destroy(); }        catch (e) { /* ignore */ } }
         try { device.destroy(); } catch (e) { /* ignore */ }
       },
     };
