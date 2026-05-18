@@ -245,9 +245,10 @@
       let perp  = vec2<f32>(-tnorm.y, tnorm.x);
       // Phase 6: per-bucket idle + hot stroke widths are baked
       // into the instance attribute. inst_extra.x = idle width,
-      // inst_extra.w = hot width. state=0 (focused) → use hot;
-      // state=1 (idle) → use idle.
-      let world_w_raw = mix(inst_extra.w, inst_extra.x, inst_state);
+      // inst_extra.w = hot width.
+      // Phase 6d4 — convention flip: state=0 → IDLE, state=1 → HOT.
+      // mix(a, b, t) → a*(1-t) + b*t. So mix(idle, hot, state).
+      let world_w_raw = mix(inst_extra.x, inst_extra.w, inst_state);
       // Phase 6b: zoom-aware clamp. Convert world width →
       // framebuffer-px (= cam.scale × DPR × world), clamp to
       // [wire_min_screen_px, wire_max_screen_px] (also in FB px),
@@ -263,10 +264,10 @@
 
       var out: VsOut;
       // Phase 6d — edges always paint BEHIND all nodes (z=0.8).
-      // Within edges, hot (state=0) sits slightly forward of
-      // idle (state=1) so a focused incident edge isn't masked
-      // by a stale dimmed one in the same pass.
-      let z = mix(0.75, 0.85, inst_state);
+      // Phase 6d4 convention flip: state=0 IDLE → behind (z=0.85),
+      // state=1 HOT → slightly forward (z=0.75) so a focused
+      // incident edge isn't masked by a dimmed neighbour.
+      let z = mix(0.85, 0.75, inst_state);
       out.position     = vec4<f32>(ndc, z, 1.0);
       out.edge_y       = quad_vertex.y;
       out.edge_color   = inst_color;
@@ -287,11 +288,16 @@
       let bidx     = clamp(i32(bidx_raw), 0, 7);
       let hot      = v.bucket_hot_colors[bidx];
 
-      // state=0 → fully hot (bucket hex at hot alpha).
-      // state=1 → idle (instance color = slate or headline-bucket at idle alpha).
+      // Phase 6d4 convention flip:
+      //   state=0 → IDLE (instance color = slate or headline-bucket idle).
+      //   state=1 → HOT  (bucket hex at hot alpha).
       // Linear blend in between for any future fractional state.
-      let color    = mix(hot, in.edge_color, in.state);
-      let dim_mult = mix(1.0, 1.0 - v.dim_amount, in.state);
+      let color    = mix(in.edge_color, hot, in.state);
+      // Dim multiplier: idle (state=0) is dimmed by dim_amount
+      // when a focus is active. The view layer passes
+      // dim_amount = 0 when no focus is active, so the idle
+      // constellation isn't attenuated in the no-focus case.
+      let dim_mult = mix(1.0 - v.dim_amount, 1.0, in.state);
       let a        = color.a * alpha_aa * dim_mult;
       // Phase 6d — same discard logic as nodes: AA halo fragments
       // shouldn't write depth, else they block disks behind them.

@@ -80,22 +80,24 @@
   }
 
   // Per-edge state.
-  //   0.0 = HOT — paint with bucket-hex hot color (focused, in 1-hop)
-  //   1.0 = IDLE — paint with instance_color (slate / headline-low-alpha)
-  // An edge is "hot" iff BOTH endpoints are in focusedSet.
+  //   0.0 = IDLE — paint with instance_color (slate / headline-low-alpha)
+  //   1.0 = HOT  — paint with bucket-hex hot color (focused, in 1-hop)
+  // An edge is HOT iff BOTH endpoints are in focusedSet.
   //
-  // When focusedSet is null (truly idle — no hover, no lock),
-  // every edge gets state=1 so the whole wire constellation
-  // sits at IDLE (faint slate atmosphere + headline-color
-  // whispers for polemic/fusion). The drawFrame caller is
-  // expected to also drop dimAmount to 0 in this case so the
-  // already-faint idle alphas aren't further attenuated.
+  // Phase 6d4 convention flip (see AUDIT/forge-edge-state-
+  // invariant-2026-05-18.md): the safe default — zero-init GPU
+  // memory — is now IDLE. This matches the node-state convention
+  // (state=0 → no special treatment) and eliminates the recurring
+  // "fresh buffer paints every wire HOT" bug class. The drawFrame
+  // caller is still responsible for dropping dimAmount to 0 when
+  // no focus is active so the already-faint idle alphas aren't
+  // further attenuated.
   function computeEdgeStates(edges, focusedSet) {
     const out = new Float32Array(edges.length);
-    if (!focusedSet) { out.fill(1.0); return out; }
+    if (!focusedSet) return out;   // all-zeros = all-idle
     for (let i = 0; i < edges.length; i++) {
       const e = edges[i];
-      out[i] = (focusedSet.has(e.source) && focusedSet.has(e.target)) ? 0.0 : 1.0;
+      out[i] = (focusedSet.has(e.source) && focusedSet.has(e.target)) ? 1.0 : 0.0;
     }
     return out;
   }

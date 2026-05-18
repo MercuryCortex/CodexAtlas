@@ -5549,7 +5549,7 @@ body.view-alphabets main.canvas { padding-bottom: 220px; }
   color: var(--gold);
 }
 .item.forge-nav::after {
-  content: 'p6d3';
+  content: 'p6d4';
   margin-left: 6px;
   font-family: var(--mono); font-size: 9px;
   letter-spacing: 0.08em;

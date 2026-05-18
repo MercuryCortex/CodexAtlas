@@ -614,9 +614,11 @@
       // State buffers must size to the new instance counts.
       // Nodes: 2 floats per instance — (state, selected). state
       // defaults to 0 (no dim, full alpha); selected defaults to 0.
-      // Edges: 1 float per instance, default 1 (idle).
+      // Edges: 1 float per instance. Phase 6d4 — convention flip:
+      // 0 = IDLE (safe default), 1 = HOT. Zero-init is now correct
+      // by construction; no .fill() needed.
       local.nodeStates = new Float32Array(nodePack.instanceCount * 2);
-      local.edgeStates = new Float32Array(edgePack.instanceCount).fill(1.0);
+      local.edgeStates = new Float32Array(edgePack.instanceCount);
 
       // Cross-mode hover/lock cleared — node ids don't map
       // between modes.

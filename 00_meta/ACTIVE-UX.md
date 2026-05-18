@@ -8,7 +8,6 @@
 
 | Handle | Scope | Owned files (explicit) | Started | Status |
 |---|---|---|---|---|
-
 _Slot is open. Claim it by filling the row above. If the slot is taken, switch to investigation work or wait._
 
 ## Current rollout queue (UX agent picks the next one)
