@@ -5383,12 +5383,34 @@ body.view-alphabets main.canvas { padding-bottom: 220px; }
    and overlay chrome; this block is the design seed.
    ═══════════════════════════════════════════════════════════════════ */
 .forge-pane {
-  position: absolute; inset: 0;
+  /* APP-SHELL CONTRACT — Phase 6d audit.
+     The other views (Atlas / Timeline / Documents / etc.) sit
+     inside `main.canvas` which is `position: fixed; inset: 0`
+     — i.e. it spans the ENTIRE viewport on purpose, including
+     under the left nav rail and the right detail rail.
+     Each view's wrapper is responsible for insetting ITSELF
+     using the cascading width vars:
+       --eff-nav-w    : left rail effective width (`body.nav-collapsed`
+                        flips to nav-w-collapsed)
+       --eff-detail-w : right rail effective width
+     `#svg-wrap` does this with `left: var(--eff-nav-w); width:
+     calc(100% - var(--eff-nav-w) - var(--eff-detail-w))`.
+     Forge was ignoring the contract (inset: 0) which is why
+     the FORGE label was sitting UNDER the nav rail and the
+     bottom bar was anchored to the viewport edge instead of
+     the pane edge. Fixed: respect both rails like everyone
+     else. The transition matches `--t-layout` so the pane
+     slides with the rest of the chrome when rails collapse. */
+  position: absolute;
+  top: 0; bottom: 0;
+  left:  var(--eff-nav-w);
+  right: var(--eff-detail-w);
   display: flex; align-items: center; justify-content: center;
   background:
     radial-gradient(ellipse at center, rgba(212,165,90,0.04) 0%, transparent 60%),
     var(--bg-0);
   overflow: auto;
+  transition: left var(--t-layout) var(--ease), right var(--t-layout) var(--ease);
 }
 .forge-error {
   max-width: 520px; padding: 24px 32px;
@@ -5632,7 +5654,14 @@ body.nav-collapsed .item.forge-nav::after { display: none; }
   transition: padding-right .22s ease;
 }
 body:has(#forge-dev-panel.is-open) .forge-status {
-  padding-right: 392px;
+  /* Phase 6d2: with .forge-pane now respecting the right rail
+     (right: var(--eff-detail-w)), the dev panel (380 px at
+     viewport right edge) covers `380 - --eff-detail-w` px into
+     the pane on the right side. We inset the status row's
+     right padding by that much so trailing fields aren't
+     clipped under the panel.
+     `--eff-detail-w` is 36 px when collapsed, 400 px otherwise. */
+  padding-right: calc(380px - var(--eff-detail-w) + 12px);
 }
 
 /* Phase 6d — bottom bar inside .forge-stage. Floating row at
@@ -5651,7 +5680,10 @@ body:has(#forge-dev-panel.is-open) .forge-status {
   transition: right .22s ease;
 }
 body:has(#forge-dev-panel.is-open) .forge-bottombar {
-  right: 394px;
+  /* Same maths as .forge-status above — shift the floating
+     bottom bar in by `(380 - eff-detail-w)` so the search +
+     zoom gizmo aren't covered by the dev panel. */
+  right: calc(380px - var(--eff-detail-w) + 14px);
 }
 .forge-zoom-gizmo,
 .forge-bottom-search {

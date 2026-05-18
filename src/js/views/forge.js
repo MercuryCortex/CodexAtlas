@@ -4,6 +4,42 @@
 // Forge renders the full Pantheon wheel via the proprietary
 // WebGPU engine. Isolated from production Pantheon V2.
 //
+// ─── APP-SHELL CONTRACT (read this before touching layout) ───
+// The Atlas shell is a fixed-edge layout: left `<nav.side>` rail
+// + right `<aside.detail>` rail, both `position: fixed`. Their
+// effective widths are CSS custom properties on <body>:
+//   --nav-w-collapsed     /  --nav-w
+//   --detail-w-collapsed  /  --detail-w
+//   --eff-nav-w / --eff-detail-w  ← resolve via body.nav-collapsed
+//                                   and body.detail-collapsed
+//
+// `main.canvas` is `position: fixed; inset: 0` — it covers the
+// WHOLE viewport on purpose. Each view INSETS ITSELF using the
+// vars (see `#svg-wrap`):
+//     left:  var(--eff-nav-w);
+//     width: calc(100% - var(--eff-nav-w) - var(--eff-detail-w));
+//
+// `.forge-pane` honours that contract: it uses `left: var(--eff-nav-w);
+// right: var(--eff-detail-w)` so the WebGPU canvas + chrome
+// (status strip, bottom bar) live BETWEEN the rails and adjust
+// when either rail collapses/expands.
+//
+// View-time body classes worth knowing:
+//   body.view-forge                  this view is mounted
+//   body.nav-collapsed               left rail at --nav-w-collapsed
+//   body.detail-collapsed            right rail at --detail-w-collapsed
+//   #forge-dev-panel.is-open         right-edge drawer is open
+//                                    (width 380 px overlapping the
+//                                    right rail; chrome that needs
+//                                    to shift left when it opens
+//                                    should use `body:has(#forge-dev-panel.is-open)`).
+//
+// New chrome MUST:
+//   - position INSIDE .forge-stage / .forge-pane, never against
+//     the viewport edge.
+//   - never assume the rails are absent — they're collapsed by
+//     shrinking --eff-* vars, not by display:none.
+//
 // PHASE 3 ADDS (this commit)
 //   - Camera pan (mouse drag) + zoom (wheel toward cursor)
 //   - Hover hit-test (CPU side: distance < node radius)
@@ -683,17 +719,20 @@
       } else if (sizeChanged) {
         // On resize, re-fit so the wheel doesn't get cropped.
         camera.fitToExtent(local.mode.worldExtent, { w, h }, 0);
-        // Phase 6d — defensive: rebuild the focus-dependent
-        // buffers from the CURRENT focus state. Resize triggers
-        // a cascade (camera fit → onChange → rebakeNodes when
-        // scale drifts) that has been observed to occasionally
-        // leave the edge-state buffer out of sync with the
-        // current focus, painting non-focused wires in their
-        // ACTIVE colour. Re-running recomputeFocus is cheap
-        // (3033 edges × ~50ns) and guarantees the state buffers
-        // match the user's hover/lock state.
-        if (local.mode && local.mode.adjacency && !initial) {
-          recomputeFocus();
+        // Phase 6d — defensive: REBUILD EVERY GPU-side per-instance
+        // buffer from scratch. The "wires turn orange after resize"
+        // bug John reported was a state-buffer corruption that I
+        // can't reproduce in the preview iframe but is clearly
+        // observable on his machine. This hammer guarantees the
+        // GPU sees the correct edge instance data (idle colours +
+        // widths from packEdges) AND the correct edge state
+        // (computed from the current hover/lock set), independent
+        // of whatever transient state the rest of the pipeline
+        // might have left behind. Cost: ~1 ms at 3033 edges, only
+        // when the canvas actually resizes — not per pan.
+        if (local.mode && local.mode.adjacency) {
+          rebakeEdges();      // re-pack instance buffer (colour + widths)
+          recomputeFocus();   // re-derive node + edge state buffers
         }
       }
       // camera.onChange would have triggered draw, but if
