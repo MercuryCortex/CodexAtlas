@@ -5411,6 +5411,21 @@ body.view-alphabets main.canvas { padding-bottom: 220px; }
     var(--bg-0);
   overflow: auto;
   transition: left var(--t-layout) var(--ease), right var(--t-layout) var(--ease);
+  /* Phase 6d3 — drag-near-edge during a window resize was
+     triggering the browser's text-selection (visible as a blue
+     overlay across the canvas + status bar). The wheel is not
+     text; selecting it serves no purpose. Suppress selection
+     across the entire Forge surface; re-enable on inputs that
+     explicitly need it (search field). */
+  user-select: none;
+  -webkit-user-select: none;
+}
+.forge-pane input,
+.forge-pane select,
+.forge-bottom-search,
+.forge-status-search {
+  user-select: text;
+  -webkit-user-select: text;
 }
 .forge-error {
   max-width: 520px; padding: 24px 32px;
@@ -5534,7 +5549,7 @@ body.view-alphabets main.canvas { padding-bottom: 220px; }
   color: var(--gold);
 }
 .item.forge-nav::after {
-  content: 'p6d';
+  content: 'p6d3';
   margin-left: 6px;
   font-family: var(--mono); font-size: 9px;
   letter-spacing: 0.08em;

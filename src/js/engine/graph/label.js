@@ -82,32 +82,41 @@
     const out = new Set();
     const boxes = [];   // [x0, y0, x1, y1] per shown label
     const halfH = sizePx * 0.6 + padPx;
-    // Per-tier budget — higher tiers get more room, but every
-    // tier reserves at least some labels so tier 3 isn't starved.
-    const tierBudget = [Math.floor(cap * 0.40), Math.floor(cap * 0.30), Math.floor(cap * 0.20), Math.floor(cap * 0.40)];
+    // Per-tier budget — higher tiers get a soft cap so they
+    // don't blow through the overall cap and starve tier 3.
+    // Tier 3 is UNCAPPED (only the overall `cap` limits it) so
+    // the "reveal all the rest" zoom-in case actually reveals
+    // EVERY tier-3 label, in file-order, until cap is reached.
+    const tierBudget = [Math.floor(cap * 0.40), Math.floor(cap * 0.30), Math.floor(cap * 0.20), cap];
     for (let T = 0; T < 4; T++) {
       const bucket = tierBuckets[T];
       const budget = tierBudget[T];
       let addedThisTier = 0;
-      // Tier 3 (rest) gets a slightly relaxed pad — the user
-      // dialled its threshold low specifically because they want
-      // these labels to show.
-      const padFactor = (T === 3) ? 0.5 : 1.0;
+      // Phase 6d3 — tier 3 (the "rest" group) is the user's
+      // intentional zoom-in reveal. When they crank the
+      // threshold low it means they want to see SPECIFIC
+      // names in a cluster, even if those labels overlap a
+      // higher-tier label next door. Skip collision entirely
+      // for tier 3 — at deep zoom, the user can pan around to
+      // read them in turn, and at low zoom the threshold
+      // gates them anyway.
+      const skipCollision = (T === 3);
       for (let i = 0; i < bucket.length; i++) {
         if (out.size >= cap) return out;
         if (addedThisTier >= budget) break;
         const n = bucket[i];
         const s = w2s(n.x, n.y);
-        const halfW = (estW(n.id) * 0.5 + padPx) * padFactor;
-        const halfHT = halfH * padFactor;
+        const halfW = estW(n.id) * 0.5 + padPx;
         const cy = s.y - n.r * camScale - 6;
         const cx = s.x;
-        const x0 = cx - halfW, y0 = cy - halfHT;
-        const x1 = cx + halfW, y1 = cy + halfHT;
+        const x0 = cx - halfW, y0 = cy - halfH;
+        const x1 = cx + halfW, y1 = cy + halfH;
         let collides = false;
-        for (let b = 0; b < boxes.length; b += 4) {
-          if (x0 < boxes[b+2] && x1 > boxes[b] && y0 < boxes[b+3] && y1 > boxes[b+1]) {
-            collides = true; break;
+        if (!skipCollision) {
+          for (let b = 0; b < boxes.length; b += 4) {
+            if (x0 < boxes[b+2] && x1 > boxes[b] && y0 < boxes[b+3] && y1 > boxes[b+1]) {
+              collides = true; break;
+            }
           }
         }
         if (collides) continue;

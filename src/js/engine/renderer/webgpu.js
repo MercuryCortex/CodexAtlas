@@ -559,6 +559,20 @@
         context.configure({ device, format, alphaMode: 'premultiplied' });
       },
 
+      // Phase 6d3 — guarantee the edge-state VBO holds exactly
+      // `stateData` (an N-length Float32Array, one float per
+      // edge). Called from the view layer's resize path as a
+      // hard-stop against any pipeline-state corruption that
+      // might leave non-focused wires painting in their ACTIVE
+      // (hot) colour. No-op if buffer not yet allocated.
+      forceWriteEdgeState(stateData) {
+        if (!edgeStateVbo || !stateData || !stateData.length) return;
+        const stateBytes = stateData.length * 4;
+        const r = ensureBuffer(edgeStateVbo, edgeStateVboSize, stateBytes, 'forge-edge-state-vbo');
+        edgeStateVbo = r.buf; edgeStateVboSize = r.size;
+        device.queue.writeBuffer(edgeStateVbo, 0, stateData, 0, stateData.length);
+      },
+
       drawDisk(pxX, pxY, pxR, color, viewportCss) {
         const dpr = window.devicePixelRatio || 1;
         const ndcX  = (pxX / viewportCss.w) * 2 - 1;

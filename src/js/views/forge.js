@@ -180,14 +180,16 @@
     // ── LABELS ──
     // Per-tier zoom thresholds for IDLE-state labels.
     // Use 999 to mean "never show at idle for this tier".
+    // Thresholds are in % units of the FIT scale (1.0 = whole
+    // wheel fills viewport). At 4.0 = zoomed in 4× past fit.
     label_idle_zoom_tier1: 0,      // tier 0 (top 4%) — always
     label_idle_zoom_tier2: 1.0,    // tier 1 (next 11%)
-    label_idle_zoom_tier3: 1.8,    // tier 2 (next 25%)
-    label_idle_zoom_tier4: 999,    // tier 3 (rest) — only on focus
-    label_idle_max:        200,    // safety cap on idle labels
+    label_idle_zoom_tier3: 2.0,    // tier 2 (next 25%)
+    label_idle_zoom_tier4: 4.0,    // tier 3 (rest) — reveal at 4× zoom
+    label_idle_max:        800,    // safety cap on idle labels (raised so tier 3 isn't truncated)
     label_size:            11,
     label_cap:             80,     // focus-state label cap
-    label_collision_pad:   4,      // AABB padding in px
+    label_collision_pad:   2,      // AABB padding in px
 
     // ── GLOBAL PALETTE ──
     palette_background: '#0a0c10',
@@ -733,6 +735,16 @@
         if (local.mode && local.mode.adjacency) {
           rebakeEdges();      // re-pack instance buffer (colour + widths)
           recomputeFocus();   // re-derive node + edge state buffers
+          // Phase 6d3 — final hard-stop. Push the recomputed edge
+          // state straight to the GPU. If anything in the pipeline
+          // (Safari WebGPU implementation, swap-chain reconfigure
+          // race, etc.) discarded the upload from the recomputeFocus
+          // drawFrame, this guarantees the buffer holds the correct
+          // values before the next draw.
+          if (local.renderer && local.renderer.forceWriteEdgeState && local.edgeStates) {
+            local.renderer.forceWriteEdgeState(local.edgeStates);
+          }
+          drawFrame();
         }
       }
       // camera.onChange would have triggered draw, but if
@@ -830,11 +842,34 @@
     //   only iterates currently-visible labels.
     function ensureLabelEl(id) {
       let el = local.labelEls.get(id);
-      if (el) return el;
+      if (el) {
+        // Phase 6d3 — guard against the "empty label" repro
+        // John flagged: if a label was created before the node's
+        // title was resolvable (early in mount, or mid-mode-
+        // switch), the textContent could be empty. Re-resolve
+        // on every reveal so the cached div doesn't show ''.
+        if (!el.textContent) {
+          const n = nodeById(id);
+          el.textContent = (n && n.title) || id;
+        }
+        return el;
+      }
       el = document.createElement('div');
       el.className = 'forge-label';
+      // Title resolution chain: global index → mode nodes →
+      // fallback to the id itself. Never leave textContent empty.
+      let title = '';
       const node = nodeById(id);
-      el.textContent = (node && node.title) || id;
+      if (node && node.title) title = node.title;
+      if (!title && local.mode && local.mode.nodes) {
+        for (let i = 0; i < local.mode.nodes.length; i++) {
+          if (local.mode.nodes[i].id === id) {
+            title = local.mode.nodes[i].title || '';
+            break;
+          }
+        }
+      }
+      el.textContent = title || id;
       labelsOverlay.appendChild(el);
       local.labelEls.set(id, el);
       return el;

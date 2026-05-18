@@ -31,7 +31,7 @@
 
   if (typeof window === 'undefined') return;
 
-  const LS_KEY = 'codex-atlas/forge-dev-panel-v3';   // v3 schema (Phase 6c: SELECTED state + dim split)
+  const LS_KEY = 'codex-atlas/forge-dev-panel-v4';   // v4 schema (Phase 6d3: tier-4 default 4.0, cap 800)
 
   // Bucket order matches `BUCKET_INDEX` in engine/graph/edge.js.
   const BUCKETS = [
@@ -172,11 +172,11 @@
           title: 'IDLE HIERARCHY (zoom thresholds)',
           blurb: 'Show a label at IDLE when the camera scale is at or above this. 0 = always; 999 = never.',
           controls: [
-            { kind: 'slider', id: 'label_idle_zoom_tier1', label: 'Tier 1 — show at zoom ≥', hint: 'Top 4% by degree (huge hubs). 0 = always visible.', min: 0, max: 5, step: 0.05, default: 0,    unit: '×' },
-            { kind: 'slider', id: 'label_idle_zoom_tier2', label: 'Tier 2 — show at zoom ≥', hint: 'Next 11%.',                                          min: 0, max: 5, step: 0.05, default: 1.0,  unit: '×' },
-            { kind: 'slider', id: 'label_idle_zoom_tier3', label: 'Tier 3 — show at zoom ≥', hint: 'Next 25%.',                                          min: 0, max: 5, step: 0.05, default: 1.8,  unit: '×' },
-            { kind: 'slider', id: 'label_idle_zoom_tier4', label: 'Tier 4 — show at zoom ≥', hint: 'Rest. 999 = only show on hover/lock.',               min: 0, max: 999, step: 0.05, default: 999, unit: '×' },
-            { kind: 'slider', id: 'label_idle_max',        label: 'Max idle labels at once', hint: 'Safety cap. Collision-pruning will hide further ones.', min: 10, max: 500, step: 10, default: 200 },
+            { kind: 'slider', id: 'label_idle_zoom_tier1', label: 'Tier 1 — show at zoom ≥', hint: 'Top 4% by degree (huge hubs). 0 = always visible.',                       min: 0, max: 10, step: 0.05, default: 0,    unit: '×' },
+            { kind: 'slider', id: 'label_idle_zoom_tier2', label: 'Tier 2 — show at zoom ≥', hint: 'Next 11%.',                                                                min: 0, max: 10, step: 0.05, default: 1.0,  unit: '×' },
+            { kind: 'slider', id: 'label_idle_zoom_tier3', label: 'Tier 3 — show at zoom ≥', hint: 'Next 25%.',                                                                min: 0, max: 10, step: 0.05, default: 2.0,  unit: '×' },
+            { kind: 'slider', id: 'label_idle_zoom_tier4', label: 'Tier 4 — show at zoom ≥', hint: 'Everyone else. 999 = only show on hover/lock. Try 4.0 to reveal at zoom-in.', min: 0, max: 999, step: 0.05, default: 4.0, unit: '×' },
+            { kind: 'slider', id: 'label_idle_max',        label: 'Max idle labels at once', hint: 'Safety cap. Collision-pruning will hide further ones.',                       min: 10, max: 1200, step: 10, default: 800 },
           ],
         },
         {
