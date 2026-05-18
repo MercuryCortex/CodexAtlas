@@ -507,7 +507,12 @@
       if (current && currentSize >= neededSize) return { buf: current, size: currentSize };
       if (current && current.destroy) { try { current.destroy(); } catch (e) { /* ignore */ } }
       const size = Math.max(4096, Math.ceil(neededSize / 4096) * 4096);
-      const buf = device.createBuffer({ label, size, usage: GPUBufferUsage.VERTEX | GPUBufferUsage.COPY_DST });
+      // Phase 6d5 — COPY_SRC added so the debug readback methods
+      // (debugReadEdgeStates / debugReadNodeStates) can use this
+      // buffer as the source of a copyBufferToBuffer into a
+      // MAP_READ staging buffer. Adding the flag is free for
+      // non-readback usage.
+      const buf = device.createBuffer({ label, size, usage: GPUBufferUsage.VERTEX | GPUBufferUsage.COPY_DST | GPUBufferUsage.COPY_SRC });
       return { buf, size };
     }
 
@@ -577,6 +582,122 @@
         const r = ensureBuffer(edgeStateVbo, edgeStateVboSize, stateBytes, 'forge-edge-state-vbo');
         edgeStateVbo = r.buf; edgeStateVboSize = r.size;
         device.queue.writeBuffer(edgeStateVbo, 0, stateData, 0, stateData.length);
+      },
+
+      // ── Phase 6d5 — GPU READBACK PROBE ────────────────────
+      // Read the actual bytes currently sitting in the edge-state
+      // VBO. This is the ground-truth probe for the recurring
+      // "wires light up after resize" bug. The JS-side
+      // `local.edgeStates` has been verified correct by every
+      // prior fix attempt; the question is whether the GPU buffer
+      // agrees. If JS says all-0 but GPU says all-1, we have a
+      // write race / pipeline-state corruption. If both say all-0
+      // and wires are still HOT, the bug is in the shader path
+      // (uniform palette, bucket index, dim_amount, etc.).
+      //
+      // Uses a MAP_READ staging buffer + copyBufferToBuffer +
+      // mapAsync. Async; returns a Promise<{ length, zeros, ones,
+      // other, first20, last20, sampleHash }>.
+      //
+      // @param maxFloats  Optional cap on bytes copied (default = full buffer).
+      //                   Useful if the buffer is huge and you only want a sample.
+      async debugReadEdgeStates(maxFloats) {
+        if (!edgeStateVbo) return { error: 'edgeStateVbo not yet allocated' };
+        const floats = Math.min(
+          (typeof maxFloats === 'number' && maxFloats > 0) ? maxFloats : 1e9,
+          Math.floor(edgeStateVboSize / 4),
+        );
+        const bytes  = floats * 4;
+        const staging = device.createBuffer({
+          label: 'forge-edge-state-readback',
+          size:  bytes,
+          usage: GPUBufferUsage.MAP_READ | GPUBufferUsage.COPY_DST,
+        });
+        const enc = device.createCommandEncoder({ label: 'forge-edge-state-readback-enc' });
+        enc.copyBufferToBuffer(edgeStateVbo, 0, staging, 0, bytes);
+        device.queue.submit([enc.finish()]);
+        await staging.mapAsync(GPUMapMode.READ, 0, bytes);
+        const view = new Float32Array(staging.getMappedRange(0, bytes).slice(0));
+        staging.unmap();
+        try { staging.destroy(); } catch (e) { /* ignore */ }
+        let zeros = 0, ones = 0, other = 0;
+        for (let i = 0; i < view.length; i++) {
+          if      (view[i] === 0) zeros++;
+          else if (view[i] === 1) ones++;
+          else                    other++;
+        }
+        const first20 = Array.from(view.slice(0, 20));
+        const last20  = Array.from(view.slice(Math.max(0, view.length - 20)));
+        let h = 2166136261;     // FNV-1a sample hash so consecutive reads can be diffed
+        for (let i = 0; i < view.length; i++) {
+          h ^= Math.floor(view[i] * 1000);
+          h = Math.imul(h, 16777619);
+        }
+        return {
+          length: view.length,
+          zeros, ones, other,
+          first20, last20,
+          sampleHash: (h >>> 0).toString(16),
+          bufferSize: edgeStateVboSize,
+        };
+      },
+
+      // ── Phase 6d5 — node-state readback (vec2 per instance) ──
+      // Same pattern as debugReadEdgeStates, but for the node-state
+      // VBO. Returns counts split by .x (state: 0=focused, 1=dimmed)
+      // and .y (selected: 0/1). Helpful for diagnosing whether the
+      // bug touches nodes too or is edges-only.
+      async debugReadNodeStates(maxPairs) {
+        if (!nodeStateVbo) return { error: 'nodeStateVbo not yet allocated' };
+        const pairs = Math.min(
+          (typeof maxPairs === 'number' && maxPairs > 0) ? maxPairs : 1e9,
+          Math.floor(nodeStateVboSize / 8),
+        );
+        const bytes = pairs * 8;
+        const staging = device.createBuffer({
+          label: 'forge-node-state-readback',
+          size:  bytes,
+          usage: GPUBufferUsage.MAP_READ | GPUBufferUsage.COPY_DST,
+        });
+        const enc = device.createCommandEncoder({ label: 'forge-node-state-readback-enc' });
+        enc.copyBufferToBuffer(nodeStateVbo, 0, staging, 0, bytes);
+        device.queue.submit([enc.finish()]);
+        await staging.mapAsync(GPUMapMode.READ, 0, bytes);
+        const view = new Float32Array(staging.getMappedRange(0, bytes).slice(0));
+        staging.unmap();
+        try { staging.destroy(); } catch (e) { /* ignore */ }
+        let stateZ = 0, stateO = 0, stateX = 0, selZ = 0, selO = 0, selX = 0;
+        for (let i = 0; i < view.length; i += 2) {
+          const s = view[i], sl = view[i + 1];
+          if      (s === 0) stateZ++; else if (s === 1) stateO++; else stateX++;
+          if      (sl === 0) selZ++;  else if (sl === 1) selO++;  else selX++;
+        }
+        return {
+          pairs: view.length / 2,
+          state: { zeros: stateZ, ones: stateO, other: stateX },
+          selected: { zeros: selZ, ones: selO, other: selX },
+        };
+      },
+
+      // ── Phase 6d5 — bucket palette uniform readback ──
+      // The view-uniform is what the edge fragment shader uses for
+      // the HOT color lookup. If the wires render in HOT color but
+      // the state buffer is all-0, the palette uniform itself must
+      // hold the suspect values — read them here to compare against
+      // `local.params.active_color_*`.
+      bucketHotPalette() {
+        // bucketPalette is a JS-side Float32Array kept in sync with
+        // every setBucketPalette() call; we don't need a GPU readback.
+        const out = [];
+        for (let i = 0; i < 7; i++) {
+          out.push([
+            bucketPalette[i * 4 + 0],
+            bucketPalette[i * 4 + 1],
+            bucketPalette[i * 4 + 2],
+            bucketPalette[i * 4 + 3],
+          ]);
+        }
+        return out;
       },
 
       drawDisk(pxX, pxY, pxR, color, viewportCss) {

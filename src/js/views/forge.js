@@ -430,6 +430,79 @@
       // can verify the animation system without depending on
       // setTimeout cadence (which the preview iframe throttles).
       kickPanVelocity: (vx, vy) => { camera.kickPanVelocity(vx, vy); },
+
+      // ── Phase 6d5 — ground-truth bug probe ─────────────────
+      // dumpBugState() captures every signal we'd need to diagnose
+      // the recurring "wires light up after resize" bug in ONE
+      // snapshot. Call it from the console right after the bug
+      // appears and paste the JSON back. Combines:
+      //   - JS-side state (focusedSet, lockedSet, hoverId,
+      //     local.edgeStates counts, dim_amount, hasFocus)
+      //   - GPU-side state (actual edge-state VBO bytes via
+      //     renderer.debugReadEdgeStates — async)
+      //   - Bucket palette uniform (the HOT color lookup)
+      //   - Camera state + viewport + DPR
+      // Returns a Promise<{js, gpu, palette, env, params}>.
+      dumpBugState: async () => {
+        const r = local.renderer;
+        const fs = local.focusedSet;
+        const es = local.edgeStates || new Float32Array(0);
+        let jsZeros = 0, jsOnes = 0, jsOther = 0;
+        for (let i = 0; i < es.length; i++) {
+          if      (es[i] === 0) jsZeros++;
+          else if (es[i] === 1) jsOnes++;
+          else                  jsOther++;
+        }
+        const ns = local.nodeStates || new Float32Array(0);
+        let nsStateZ = 0, nsStateO = 0, nsSelZ = 0, nsSelO = 0;
+        for (let i = 0; i < ns.length; i += 2) {
+          if (ns[i] === 0) nsStateZ++; else if (ns[i] === 1) nsStateO++;
+          if (ns[i + 1] === 0) nsSelZ++; else if (ns[i + 1] === 1) nsSelO++;
+        }
+        const gpuEdges  = r && r.debugReadEdgeStates ? await r.debugReadEdgeStates() : null;
+        const gpuNodes  = r && r.debugReadNodeStates ? await r.debugReadNodeStates() : null;
+        const palette   = r && r.bucketHotPalette ? r.bucketHotPalette() : null;
+        return {
+          js: {
+            mode:           local.mode && local.mode.id,
+            hoverId:        local.hoverId,
+            lockedIdsSize:  local.lockedSet ? local.lockedSet.size : 0,
+            lockedIds:      local.lockedSet ? Array.from(local.lockedSet) : [],
+            focusedSetSize: fs ? fs.size : null,
+            edgeStates: {
+              length: es.length,
+              zeros: jsZeros, ones: jsOnes, other: jsOther,
+            },
+            nodeStates: {
+              pairs: ns.length / 2,
+              state: { zeros: nsStateZ, ones: nsStateO },
+              selected: { zeros: nsSelZ, ones: nsSelO },
+            },
+            modeEdgesLen: local.mode && local.mode.edges ? local.mode.edges.length : null,
+          },
+          gpu: { edges: gpuEdges, nodes: gpuNodes },
+          palette,
+          env: {
+            dpr:        window.devicePixelRatio || 1,
+            lastSize:   { w: local.lastSize.w, h: local.lastSize.h },
+            canvas:     { w: canvas.width, h: canvas.height },
+            camera:     camera.state,
+            cacheBust:  (document.querySelector('script[src*="views/forge"]') || {}).src,
+          },
+          params: {
+            dim_amount:               local.params.dim_amount,
+            dim_amount_nodes:         local.params.dim_amount_nodes,
+            wire_min_screen_px:       local.params.wire_min_screen_px,
+            wire_max_screen_px:       local.params.wire_max_screen_px,
+            idle_opacity_fusion:      local.params.idle_opacity_fusion,
+            idle_color_fusion:        local.params.idle_color_fusion,
+            active_color_transmission: local.params.active_color_transmission,
+            active_color_fusion:      local.params.active_color_fusion,
+            active_opacity_fusion:    local.params.active_opacity_fusion,
+          },
+          ts: new Date().toISOString(),
+        };
+      },
     };
 
     // ── Bootstrap renderer + first frame ────────────────

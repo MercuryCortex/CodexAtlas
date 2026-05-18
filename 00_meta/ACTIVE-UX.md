@@ -11,6 +11,10 @@
 _Slot is open. Claim it by filling the row above. If the slot is taken, switch to investigation work or wait._
 
 ### Recently released
+- `opus-forge-edge-state-readback` (2026-05-18 PM) — added GPU-side readback probe to break the speculation loop on the recurring "wires light up after resize" bug. Renderer now exposes `debugReadEdgeStates()` + `debugReadNodeStates()` (async, MAP_READ staging buffer). View exposes one-shot `_forgeDebug.dumpBugState()` that combines JS-side state + GPU-side readback + bucket palette + camera/viewport/DPR/cache-bust in a single JSON dump. Ground truth for John to paste back when the bug appears. `ensureBuffer` now adds `COPY_SRC` to all state/instance VBOs so the readback methods are valid.
+- `opus-forge-cachebust-bump` (2026-05-18 PM) — bumped cache-bust slugs in `index.html` to force fresh JS fetch.
+
+### Recently released
 - `opus-forge-cachebust-bump` (2026-05-18 PM) — bumped 17 cache-bust slugs in `index.html` from `20260518-forge-edge-state-invariant` → `20260518-cachebust-bump` so John's Brave fetches fresh JS on reload. Diagnostic step for the resize-hot-wires issue per `AUDIT/forge-edge-state-invariant-2026-05-18.md` addendum (H1: cached old JS).
 
 ## Current rollout queue (UX agent picks the next one)
