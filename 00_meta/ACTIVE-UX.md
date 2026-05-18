@@ -10,6 +10,9 @@
 |---|---|---|---|---|
 _Slot is open. Claim it by filling the row above. If the slot is taken, switch to investigation work or wait._
 
+### Recently released
+- `opus-forge-cachebust-bump` (2026-05-18 PM) — bumped 17 cache-bust slugs in `index.html` from `20260518-forge-edge-state-invariant` → `20260518-cachebust-bump` so John's Brave fetches fresh JS on reload. Diagnostic step for the resize-hot-wires issue per `AUDIT/forge-edge-state-invariant-2026-05-18.md` addendum (H1: cached old JS).
+
 ## Current rollout queue (UX agent picks the next one)
 
 Priority order for the kit + view migration sequence (from the Workflow Reset plan):

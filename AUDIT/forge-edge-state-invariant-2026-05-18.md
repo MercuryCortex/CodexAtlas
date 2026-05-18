@@ -298,3 +298,83 @@ Run after Option A is applied. All checks via `mcp__Claude_Preview__` on `http:/
 ---
 
 — audit closed 2026-05-18
+
+---
+
+## ADDENDUM — 2026-05-18 PM — bug "persists" after fix shipped
+
+**Reporter:** John, with three screenshots: (1) cold load = clean idle; (2) after camera move = zoomed-in nodes + tier-label reveal (expected); (3) after window resize = every wire painted bright orange across the wheel, HOVER `—`, LOCK `—`, FRAME 0.2 ms.
+
+### What was verified in the preview iframe
+
+After the convention-flip commit (`6bfa018`) shipped:
+
+- All four affected scripts (`engine/graph/edge.js`, `engine/graph/adjacency.js`, `engine/renderer/webgpu.js`, `views/forge.js`) are served with the new cache-bust `?v=20260518-forge-edge-state-invariant`.
+- `window.AtlasEngineGraph.computeEdgeStates` was instrumented and observed across a programmatic resize cycle (1216×855 → 1016×655 → 1300×900 → 900×600 → 1500×1000). Every invocation returned `Float32Array(3033)` with **3033 zeros / 0 ones / focusedSet=null** — i.e. the safe-default-idle the fix was supposed to produce. Wheel stayed idle visually across every resize.
+- `_forgeDebug.lockedIds()` returned `[]`, `hoverId()` returned `null` throughout.
+
+**The fix is structurally correct and is taking effect in the preview iframe.**
+
+### Why the 6d4 verification missed John's repro
+
+The commit message says:
+
+> §3 Zeus locked + window.resize event with user's exact prior-bug config (all active = #C9743A orange): wheel re-renders at new size with state preserved, NO mass-hot flash. ✓ (bug is gone)
+
+That test verifies a **focused** state survives resize. John's actual repro is **no-focus → resize → wires light up HOT**. The 6d4 verification never exercised the path where the bug actually surfaces. §6 of this audit prescribed a 7-step checklist including a no-focus resize case (`§6.3`), and that step was not actually run with John's tweaked dev-panel palette. Future fixes must run §6 in full, not just the focus-preservation scenario.
+
+### Why the wires look uniformly orange in screenshot 3 (not a separate bug)
+
+John's persisted dev-panel state (`localStorage["codex-atlas/forge-dev-panel-v4"].params`) has **every** `active_color_*` bucket set to `#C9743A`:
+
+```
+active_color_transmission: "#C9743A"
+active_color_parallel:     "#C9743A"
+active_color_association:  "#C9743A"
+active_color_kinship:      "#C9743A"
+active_color_attestation:  "#C9743A"
+active_color_polemic:      "#C9743A"
+active_color_fusion:       "#C9743A"
+```
+
+So *whenever* a wire enters HOT state, it paints exactly that orange — regardless of bucket. The uniform-orange appearance is purely a consequence of this palette + the wires being in HOT state. **The colour itself is not evidence of a separate bug; it's just diagnostic of "every wire is in HOT state right now."**
+
+### Why the bug still appears on John's machine — ranked hypotheses
+
+#### H1 (≈80% likely) — cached old JS
+
+Brave aggressively caches `index.html`. If John soft-refreshed (Cmd+R) after the commit landed, his browser may still be serving the pre-fix `index.html` whose script `<script src="…?v=20260518-forge-p6d3">` tags point at the old bodies. The convention flip never reaches his page. The bug is the old bug, on the old code.
+
+**Confirm/refute in 5 seconds:** John does **Cmd+Shift+R** (hard refresh in Brave). If wires stay idle after a resize, this was it.
+
+#### H2 (≈15%) — silent phantom `lockedSet`
+
+If the status bar's `LOCK —` doesn't faithfully reflect `local.lockedSet.size`, John may have clicked a node before resizing without realizing the lock stuck. With `lockedSet.size > 0`, `focusedSetFor` returns a non-null set, every connected edge ends up state=1 (HOT under new convention), and on resize the camera re-fit makes the previously-already-HOT edges more visually prominent (closer zoom, thicker clamped strokes, more pixel buildup).
+
+**Confirm/refute:** add `lockedSet.size` to the status-strip render, OR expose `window._forgeDebug.lockedSize()` so John can `console.log` it after the bug appears. If it's > 0 when the status bar shows `—`, this is it.
+
+#### H3 (≈5%) — DPR=2 or real-GPU-only path
+
+The preview iframe runs at DPR=1 with a throttled background-tab GPU pipeline. John's retina display + foreground real GPU could expose:
+
+- A buffer-reuse race that's invisible at the iframe's slower frame cadence
+- A swap-chain reconfigure ordering issue specific to certain Chrome / GPU driver combos
+- A `wire_min_screen_px * dpr` clamp behavior that pins every wire to the visible minimum at his viewport size
+
+Lowest priority because the JS-side state is already proven correct in §H1's preview verification — for the bug to be real-GPU-only, the GPU would have to be reading state values that disagree with what JS wrote.
+
+### Concrete next-action checklist for the agent picking this up
+
+1. **Ask John to Cmd+Shift+R.** If the bug goes away, confirmed H1 — no further code change needed. Document the "hard refresh after a convention change" requirement in the agent runbook so this doesn't recur.
+2. If H1 doesn't fix it, **run §6 of this audit IN FULL on John's machine** (not the preview). Specifically:
+   - §6.3 no-focus → resize → confirm wire state in his real browser. Use `console.log(window._forgeDebug.lockedIds(), window._forgeDebug.hoverId())` immediately after the bug appears to rule out H2.
+3. If still failing after H1 + H2 ruled out, **add a real GPU-side state probe**: expose a renderer method `_debugReadEdgeStates()` that uses a `GPUBufferUsage.MAP_READ` staging buffer to read back the actual edge-state VBO contents. Compare against `local.edgeStates`. Any disagreement is the smoking gun for H3.
+4. **Bump the dev-panel LS_KEY v4 → v5** in the next batch even if H1 is the cause, just to flush any drift between persisted params and shipped defaults. Cheap belt-and-braces.
+5. **Update the agent runbook**: future "verified live" claims must enumerate which §6 steps were run, not just say "verified." 6d4's verification was a single focused-state test that didn't cover the actual repro.
+
+### What the auditor (me) is NOT recommending
+
+- Do **not** revert the convention flip. The structural fix is correct and the preview confirms it. Reverting reopens the bug class.
+- Do **not** add a fourth defensive write path on the resize/mode-switch trail. The pattern of "patch one more downstream path" is what produced the multi-attempt history this audit was supposed to end.
+
+— addendum closed 2026-05-18 PM
