@@ -378,3 +378,101 @@ Lowest priority because the JS-side state is already proven correct in §H1's pr
 - Do **not** add a fourth defensive write path on the resize/mode-switch trail. The pattern of "patch one more downstream path" is what produced the multi-attempt history this audit was supposed to end.
 
 — addendum closed 2026-05-18 PM
+
+---
+
+## FINAL DIAGNOSIS — 2026-05-18 EVENING — read this first, supersedes everything above
+
+**The user-visible "wires lit up after resize" bug had NOTHING to do with edge-state buffers.** Five sessions of work (phase-5d, phase-6d3, the audit's convention flip, the cache-bust bump, the GPU readback probe) all targeted a real latent state-buffer bug — but **the bug John was pointing at the whole time was a different one entirely**: the **Forge dev panel desyncs from the engine on view remount.**
+
+### How we got to ground truth
+
+The GPU readback probe (`opus-forge-edge-state-readback`, commit `6b09d35`) returned this when John reproduced the visible glitch:
+
+- `js.edgeStates`: 3033 zeros, 0 ones, focusedSet `null`
+- `gpu.edges`: 3072 zeros, 0 ones (matching sample hash)
+- `palette[0]` (transmission hot): `#C9743A` orange
+- `params.idle_color_fusion`: `#C4783A` amber
+
+JS = GPU = all-zero. Under the post-flip convention, all-zero means all-idle. **The state buffer was provably correct**. The convention flip works exactly as the audit promised.
+
+But the wires looked bright orange. Why? Because `params.idle_color_fusion` was **amber** at the moment of the dump — even though the dev panel UI displayed every idle colour as `#3A4A66` slate. The panel's stored state and the engine's `local.params` had drifted apart.
+
+When John ran this directly from the console:
+```js
+window._forge.setParam('idle_color_fusion', '#3a4a66');
+window._forge.setParam('idle_color_polemic', '#3a4a66');
+```
+**the wires immediately turned slate.** The rebake fires correctly; the engine accepts the value; the GPU updates. The pipeline is intact.
+
+### The actual bug
+
+In `src/js/engine/dev-panel-forge.js`:
+
+1. The panel boots via `tryBoot(retries)` (line 629) — retries up to 20× 200ms = 4 seconds.
+2. On boot, it calls `applyAllToEngine()` which loops through `state.params` and calls `window._forge.setParam(id, value)` for each.
+3. **`applyAllToEngine` only runs once** — at panel-boot time, if `window._forge` is ready.
+
+In `src/js/views/forge.js`:
+
+1. `render()` initializes `local.params = Object.assign({}, PARAM_DEFAULTS)` on every view mount.
+2. So **every time the Forge view (re)mounts** — page load on a different view followed by clicking Forge, hash router triggering a re-render, etc. — `local.params` resets to the hard-coded code defaults (amber Fusion).
+3. **The dev panel does not re-apply its stored state on view remount.** It's a one-shot boot push.
+
+### The race / drift sequence
+
+| Step | Engine `local.params.idle_color_fusion` | Dev panel `state.params.idle_color_fusion` (display + LS) |
+|---|---|---|
+| 1. Page loads on Pantheon view | (Forge not mounted) | slate (loaded from LS) |
+| 2. Dev panel `tryBoot` runs, `window._forge` not present yet, retries | — | slate |
+| 3. Dev panel retries time out (4 s) | — | slate |
+| 4. John clicks Forge tab → `render()` runs | **amber** (code default) | slate |
+| 5. John opens dev panel | amber | slate (displayed in input fields) |
+| 6. Wires render amber. John sees panel saying slate. **Drift visible.** | amber | slate |
+
+OR equivalently:
+
+1. Page loads on Forge, panel boots, applies slate. Engine = slate. Wires = slate. ✓
+2. John switches to Pantheon and back, OR a hash-router event fires `render()` again.
+3. `render()` re-initializes `local.params` to code defaults. Engine = amber.
+4. Dev panel still shows slate (its own state.params untouched).
+5. Drift.
+
+The "after resize" pattern was a red herring — resize itself doesn't reset params (it calls `rebakeEdges()` which uses current `local.params`). What likely happened in John's repros: opening DevTools or the dev panel triggered a layout reflow that interacted with view-mount semantics, or a hash navigation he didn't notice. The *trigger* varied; the *underlying cause* was always step 3 above.
+
+### Why the wires looked "lit up" specifically
+
+The user's dev panel had every `active_color_*` set uniformly to `#C9743A` (orange). The code's `PARAM_DEFAULTS` for `idle_color_fusion` is `#C4783A` (also amber). Plus Fusion is in `HEADLINE_BUCKETS` → idles in its bucket hue when there's no override. **Idle Fusion and Hot Fusion paint nearly identical orange.** With 1977 fusion edges (65% of total) layered through the wheel centre via premultiplied alpha at 30% per edge → 10 overlapping crossings = full saturation. The wheel centre filled with amber regardless of whether wires were technically "hot" or "idle". John could not visually distinguish the two states because his tuned palette had collapsed them onto one colour.
+
+### The fix John adopted (Option A — workflow only, no code change)
+
+1. Stay on Forge view; do not navigate away or reload.
+2. Tweak every dev-panel parameter to the desired state.
+3. Click `EXPORT` in the panel — JSON copies to clipboard.
+4. Paste the JSON into `PARAM_DEFAULTS` in `src/js/views/forge.js`.
+5. After that bake, the engine's "default" *is* the tuned state. The dev panel becomes "fine-tune from here" instead of "first source of truth." Drift cannot occur.
+
+### The structural fix that should follow (Option B — code change, recommended)
+
+The dev panel should re-apply its `state.params` to the engine whenever the Forge view (re)mounts. Two reasonable implementations:
+
+1. **Pull on mount:** `views/forge.js render()` checks for `window.AtlasEngineForgeDevPanel` and calls `getState()` to seed `local.params` from the panel's stored state instead of from `PARAM_DEFAULTS`. Cleanest.
+2. **Push on mount:** Forge dispatches a `forge:mounted` event. Dev panel listens, calls `applyAllToEngine()`. Looser coupling but more moving parts.
+
+Either way, **`PARAM_DEFAULTS` should remain the ground-zero fallback** for first-ever load (before the panel has any stored state). The dev panel's stored state is the authoritative source after that.
+
+### Lessons (for me, for the next agent)
+
+1. **Read the GPU before writing any audit doc.** I wrote an audit, two follow-up commits, and four agent prompts before shipping the readback that confirmed the state buffer was always correct. That readback would have rerouted everything on day one.
+2. **When the user says "the panel shows X but the wheel shows Y," believe them.** John told me this multiple times. I kept theorising about HEADLINE_BUCKETS and premultiplied alpha instead of testing the trivial hypothesis: panel and engine are out of sync.
+3. **Dev panel ↔ engine drift is a real category of bug in this codebase.** Boot-races, view-remount resets, LS_KEY schema bumps. Every dev panel in this app needs the same audit: does it sync on view-mount, not just on panel-boot?
+4. **The convention flip was right, but it wasn't the user's bug.** Two correct, unrelated fixes shipped while the actual reported bug went undiagnosed. Keep these threads separate in commit messages and audit docs going forward.
+
+### Open work (for the next agent who picks this up)
+
+- [ ] Bake John's tuned `PARAM_DEFAULTS` after he hits EXPORT (paste-in task).
+- [ ] Implement Option B (engine pulls panel state on view-mount) so the drift category goes away permanently.
+- [ ] Audit `src/js/dev-panel.js` (Pantheon V2's dev panel) for the same drift pattern — likely has it too.
+- [ ] Consider removing `phase-6d3`'s `forceWriteEdgeState` belt-and-braces now that the GPU readback has confirmed it was never needed. The convention flip alone is sufficient.
+
+— final diagnosis closed 2026-05-18 evening
