@@ -19,21 +19,38 @@ VAULT = Path(__file__).parent
 OUT = VAULT / "data.js"
 
 NODE_DIRS = {
-    "document": ["02_documents"],
-    "deity":    ["03_deities"],
-    "person":   ["04_persons"],
-    "event":    ["05_events"],
-    "theme":    ["06_themes"],
-    "tradition":["07_traditions"],
-    "symbol":   ["09_symbols"],
-    "music":    ["10_music"],
-    "alphabet": ["11_alphabets"],
-    "alchemy":  ["12_alchemy"],
-    "moral":    ["13_morals"],
-    "ritual":   ["14_rituals"],
-    "philosophy": ["15_philosophy"],
-    "mathematics": ["16_mathematics"],
-    "medicine":   ["17_medicine"],
+    # Original 16-lens spine (pre-2026-05-18). Type values match the
+    # `type:` field every node carries in YAML frontmatter.
+    "document":     ["02_documents"],
+    "deity":        ["03_deities"],
+    "person":       ["04_persons"],
+    "event":        ["05_events"],
+    "theme":        ["06_themes"],
+    "tradition":    ["07_traditions"],
+    "symbol":       ["09_symbols"],
+    "music":        ["10_music"],
+    "alphabet":     ["11_alphabets"],
+    "alchemy":      ["12_alchemy"],
+    "moral":        ["13_morals"],
+    "ritual":       ["14_rituals"],
+    "philosophy":   ["15_philosophy"],
+    "mathematics":  ["16_mathematics"],
+    "medicine":     ["17_medicine"],
+    # 10 lenses added 2026-05-18 (ontology lock pass 2).
+    "place":             ["08_places"],
+    "language":          ["18_languages"],
+    "astronomy":         ["19_astronomy"],
+    "sacred-site":       ["20_sacred_architecture"],
+    "doctrine":          ["21_theology"],
+    "practice":          ["22_practices"],
+    "relic":             ["23_material_culture"],
+    "substance":         ["24_pharmacology"],
+    "divination-system": ["25_divination"],
+    "calendar-system":   ["26_calendars"],
+    # 3 lenses added 2026-05-19 (ontology lock pass 3).
+    "attire":            ["27_attire"],
+    "exchange-network":  ["28_exchange_networks"],
+    "technology":        ["29_technology"],
 }
 
 # ---------- minimal YAML parser tailored to our schema ----------
@@ -780,6 +797,15 @@ def main():
             for md in root.rglob("*.md"):
                 if md.name.startswith("_"):
                     # _index.md and similar
+                    continue
+                # Skip per-folder READMEs (lens documentation, not
+                # graph nodes). Pre-2026-05-18 lenses (03-07, 09-17)
+                # had no README files, so this wasn't hit. The 10
+                # lenses added in pass 2 + 3 lenses added in pass 3
+                # all ship with a README.md that explains the lens
+                # scope; those documentation files would otherwise
+                # collide on the derived id "README".
+                if md.name.lower() == "readme.md":
                     continue
                 text = md.read_text(encoding="utf-8")
                 fm, body = split_frontmatter(text)

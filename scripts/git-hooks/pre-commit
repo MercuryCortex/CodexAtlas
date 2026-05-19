@@ -25,8 +25,10 @@ STAGED_ALL="$(git diff --cached --name-only --diff-filter=ACM)"
 # ---------- 3. Cross-lane check (run first; cheapest) ----------
 # Lane B owns: src/, index.html, build/lint/linkcheck/fetch python scripts, _assets/
 LANE_B="$(printf '%s\n' "$STAGED_ALL" | grep -E '^(src/|index\.html$|build_[^/]+\.py$|lint_yaml\.py$|linkcheck\.py$|fetch_[^/]+\.py$|review_thumbnails\.py$|add_depictions\.py$|_assets/|scripts/|start-atlas\.command$)' || true)"
-# Lane A owns: numbered content folders + the auto-regenerated meta files
-LANE_A="$(printf '%s\n' "$STAGED_ALL" | grep -E '^(0[1-9]_|1[0-7]_)' || true)"
+# Lane A owns: numbered content folders + the auto-regenerated meta files.
+# Regex widened 2026-05-19 from `^(0[1-9]_|1[0-7]_)` (16 lenses) to cover
+# all 29 lenses (post ontology lock pass 3): 01-09, 10-19, 20-29.
+LANE_A="$(printf '%s\n' "$STAGED_ALL" | grep -E '^(0[1-9]_|1[0-9]_|2[0-9]_)' || true)"
 
 if [ -n "$LANE_B" ] && [ -n "$LANE_A" ]; then
   echo "" >&2

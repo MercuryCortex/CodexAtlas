@@ -22,6 +22,7 @@
   //   nodeType — `n.type` value(s) this mode renders; null for
   //              non-type predicates (handled in filterNodesByMode)
   const MODES = Object.freeze([
+    // Original 16-lens modes (pre-2026-05-18).
     { value: 'deities',     label: 'Deities',     glyph: '◉',  nodeType: 'deity' },
     { value: 'authors',     label: 'Authors',     glyph: '✎',  nodeType: 'person' },
     { value: 'documents',   label: 'Documents',   glyph: '❡',  nodeType: 'document' },
@@ -39,6 +40,23 @@
     { value: 'themes',      label: 'Themes',      glyph: '◇',  nodeType: 'theme' },
     { value: 'traditions',  label: 'Traditions',  glyph: '⊙',  nodeType: 'tradition' },
     { value: 'places',      label: 'Places',      glyph: '◐',  nodeType: 'place' },
+    // 9 lenses added 2026-05-18 (ontology lock pass 2). `places`
+    // was already in the dropdown above (it had been added pre-lock
+    // because slot 08 was reserved early). Glyphs chosen distinct
+    // from existing ones + evocative of the lens.
+    { value: 'languages',           label: 'Languages',           glyph: 'A', nodeType: 'language' },
+    { value: 'astronomy',           label: 'Astronomy',           glyph: '✷', nodeType: 'astronomy' },
+    { value: 'sacred-architecture', label: 'Sacred architecture', glyph: '▲', nodeType: 'sacred-site' },
+    { value: 'theology',            label: 'Theology',            glyph: '✠', nodeType: 'doctrine' },
+    { value: 'practices',           label: 'Practices',           glyph: '☸', nodeType: 'practice' },
+    { value: 'material-culture',    label: 'Material culture',    glyph: '⌬', nodeType: 'relic' },
+    { value: 'pharmacology',        label: 'Pharmacology',        glyph: '⚱', nodeType: 'substance' },
+    { value: 'divination',          label: 'Divination',          glyph: '☯', nodeType: 'divination-system' },
+    { value: 'calendars',           label: 'Calendars',           glyph: '☉', nodeType: 'calendar-system' },
+    // 3 lenses added 2026-05-19 (ontology lock pass 3).
+    { value: 'attire',              label: 'Attire',              glyph: '⌘', nodeType: 'attire' },
+    { value: 'exchange-networks',   label: 'Exchange networks',   glyph: '⇄', nodeType: 'exchange-network' },
+    { value: 'technology',          label: 'Technology',          glyph: '⚙', nodeType: 'technology' },
   ]);
 
   const MODE_INDEX = Object.create(null);
