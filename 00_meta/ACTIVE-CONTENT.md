@@ -8,8 +8,9 @@
 
 | Handle | Document or scope | Owned paths (folder lock) | Started | Status |
 |---|---|---|---|---|
+| opus-ontology-lock-2026-05-18 | Ontology lock pass 2 — create 10 new lens folders (08, 18-26), update master ONTOLOGY+LANES, write permanent rationale doc. NO src/ or build_*.py touches in this batch (themes→motifs rename + build script updates deferred to next Lane B-free window) | 08_places/, 18_languages/, 19_astronomy/, 20_sacred_architecture/, 21_theology/, 22_practices/, 23_material_culture/, 24_pharmacology/, 25_divination/, 26_calendars/, 00_meta/ONTOLOGY.md, 00_meta/LANES.md, 00_meta/ONTOLOGY-RATIONALE-2026-05-18.md, 00_meta/STATUS.md, 00_meta/HANDOFF.md, 00_meta/ACTIVE-CONTENT.md | 2026-05-18 PM | started |
 
-_No active claims. Append your row above._
+_No active claims after this one. Append your row above._
 
 ## Stale carry-overs from pre-2026-05-17 (verify before continuing)
 
