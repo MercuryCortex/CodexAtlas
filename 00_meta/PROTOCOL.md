@@ -1,6 +1,8 @@
 # PROTOCOL — Absorb-and-Dissect SOP
 
-> **Read this second.** [`ONTOLOGY.md`](ONTOLOGY.md) tells you *what* we're mapping. This file tells you *how* to map it: claim → absorb → dissect → wire → hunt transmissions → stub-sweep → build → commit.
+> **Read this when running a full absorb-and-dissect batch on a primary text.** It is no longer pre-flight for every cast — see [`HOW-WE-WORK.md`](HOW-WE-WORK.md) for the slim cast-and-go routing.
+>
+> [`ONTOLOGY.md`](ONTOLOGY.md) tells you *what* we're mapping (the 26 lenses + 7 edge buckets). This file tells you *how* to map it: claim → absorb → dissect → wire → hunt transmissions → stub-sweep → build → commit.
 
 ---
 
@@ -10,19 +12,26 @@
 
 When you absorb the Bhagavad Gītā, the same batch:
 - Creates / extends `02_documents/_phase-2-axial-age/phase-2-027-bhagavad-gita.md` with the document node.
-- Spins out every named entity into the right category folder:
+- Spins out every named entity into the right category folder (post-2026-05-18 ontology lock; 26 lenses available):
   - Krishna, Arjuna → `03_deities/`, `04_persons/`
-  - Avatar doctrine, dharma → `06_themes/`, `13_morals/`
+  - Avatar doctrine, dharma → `06_themes/` (pending rename → `06_motifs/`), `13_morals/`
+  - Avatar *as Vaishnava doctrine* → `21_theology/` (new lens — distinct from the cross-tradition motif)
   - Sānkhya / Yoga frameworks → `15_philosophy/`
   - Vedic ritual references → `14_rituals/`
+  - Kurukshetra battlefield → `08_places/` (new lens — was previously homeless)
   - OM, cosmic sound → `09_symbols/`, `10_music/`
-  - Devanāgarī, Sanskrit script notes → `11_alphabets/`
-  - Pranayama / breath / healing → `17_medicine/`
+  - Devanāgarī (script) → `11_alphabets/`; Sanskrit (language) → `18_languages/` (new lens — script and language are distinct)
+  - Pranayama as *practice* → `22_practices/` (new lens — distinct from public ritual)
+  - Ayurvedic / pharmacological references → `17_medicine/` for the system, `24_pharmacology/` for any named substances (new lens)
+  - Sacred sites referenced (Kurukshetra-as-sacred-site, sacred Indian geography) → `20_sacred_architecture/` (new lens)
+  - Vedic vs Indian calendars / Yuga system referenced → `26_calendars/` (new lens) and `15_philosophy/` for cosmological-doctrinal layer
 - Wires every cross-reference with `[[wikilinks]]` + structured `cross-*-edges`.
 - Hunts the MASSIVE-WIN cross-tradition transmissions for this text (Krishna ↔ Christ avatar typology; OM ↔ Logos ↔ Memra ↔ Tao; Gandhi's reception → MLK).
 - Closes by running a **stub-sweep**: every dead `[[wikilink]]` becomes a minimum-viable stub. Build passes. One commit. Done.
 
-Not every text touches all 17 lenses — but a deep absorption will touch most. A liturgical text might be heavy on rituals + music + alphabets; a philosophical treatise might be heavy on philosophy + persons + transmissions. Trust the text.
+Not every text touches all 26 lenses — but a deep absorption will touch most relevant ones. A liturgical text might be heavy on rituals + music + alphabets + languages + practices; a philosophical treatise might be heavy on philosophy + theology + persons + transmissions. A medical text might span medicine + pharmacology + practices + traditions. Trust the text.
+
+**⚠️ Build-script awareness gap (as of 2026-05-18):** lenses 08 + 18–26 exist on disk and are documented but `build_data.py` `NODE_TYPE_MAP` does not yet recognize them. Nodes you stage in those folders will not appear in the graph until the deferred Lane B batch updates the build script. That update is atomic with the `06_themes/` → `06_motifs/` rename + Forge mode dropdown + pre-commit hook regex; see `00_meta/HANDOFF.md` "Deferred to next Lane B window."
 
 ---
 

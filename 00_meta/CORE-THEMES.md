@@ -2,11 +2,15 @@
 
 > **The agent's lens.** When you absorb a primary text, this is what you scan it for. Every pattern below is a node that already exists in the vault — use its **canonical slug** as a `[[wikilink]]` rather than creating a duplicate. The density column tells you how much cross-tradition weight the pattern already carries; high-density entries are the load-bearing connectors, low-density ones are emerging hooks that your absorption may strengthen.
 >
-> **Use this AFTER** reading [`ONTOLOGY.md`](ONTOLOGY.md) (structural — 17 lenses + 7 edge buckets) and [`PROTOCOL.md`](PROTOCOL.md) (the absorb-and-dissect SOP). This file is the **content-side** lens; it tells you what patterns to LOOK FOR; ONTOLOGY tells you which folder each pattern lives in and which YAML field carries the edge.
+> **Use this AFTER** reading [`ONTOLOGY.md`](ONTOLOGY.md) (structural — **26 lenses** + 7 edge buckets) and [`PROTOCOL.md`](PROTOCOL.md) (the absorb-and-dissect SOP). This file is the **content-side** lens; it tells you what patterns to LOOK FOR; ONTOLOGY tells you which folder each pattern lives in and which YAML field carries the edge.
 >
 > **Not exhaustive.** 339 themes, 278 symbols, 105 rituals, 12 morals exist; this file curates the load-bearing ~150. Use [`DASHBOARD.md`](DASHBOARD.md) for the full live state. If you find a pattern in your text that isn't on this list, it's still valid — create or extend the node per `PROTOCOL.md`.
 >
 > **The edge bucket** column tells you which Pantheon V2 bucket the cross-tradition link lands in. Most themes produce **Parallel** edges (structural resemblance, independent emergence); the strongest produce **Transmission** edges (documented chain — these are the MASSIVE WINs).
+>
+> **⚠️ Two changes from the 2026-05-18 ontology lock that affect this file:**
+> 1. **Pending rename: this file → `CORE-MOTIFS.md`.** The folder `06_themes/` is being renamed to `06_motifs/` (academic accuracy per Stith Thompson; what we call "themes" are motifs in the strict sense). The rename is queued for the next Lane B-free window (atomic with `build_data.py` updates). Until then, **keep using `type: theme` and `themes:` YAML fields** — they will be migrated together.
+> 2. **Some entries below would now live in newer lenses if created today.** Doctrinal positions (Christology, Tawhid, Trikāya, Apophatic Theology) → now `21_theology/` with `type: doctrine`. Contemplative practices (dhikr, hesychasm, vipassana, neidan) → now `22_practices/` with `type: practice`. Divinatory systems (Yi Jing, Ifá, Tarot) → now `25_divination/` with `type: divination-system`. Sacred substances (soma, haoma, ayahuasca, mercury) → now `24_pharmacology/` with `type: substance`. **Existing nodes in `06_themes/` that match these categories are NOT being migrated automatically** — they stay where they are. New nodes in those categories should go into the appropriate new lens. Cross-link instead of moving. See `00_meta/ONTOLOGY-RATIONALE-2026-05-18.md` §2 for boundary rationale.
 
 ---
 
