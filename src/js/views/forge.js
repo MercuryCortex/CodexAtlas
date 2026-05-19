@@ -709,6 +709,27 @@
       const modeEdges = layout.filterEdgesByNodes(allEdges, modeNodes);
       const degree    = layout.computeDegree(modeNodes, modeEdges);
       const lay       = layout.radialWedgeLayout(modeNodes, familyOrder, { degree });
+
+      // 2026-05-19 — pack-scale-fix. packNodes bakes the world
+      // radius using `camScale` at pack time (the screen-px clamp
+      // in node.js:126-131 reads it). If we pack BEFORE fitting
+      // the camera, the first pack uses scale=1.0 (the camera
+      // default), then fitToExtent below shrinks scale to ~0.4 —
+      // and every disk renders at the wrong on-screen size until
+      // a user gesture happens to cross the 5%-drift threshold in
+      // camera.onChange. (That's why John's three-state bug
+      // looked like "tiny dots on load, snap to correct on first
+      // mouse move, tiny dots again after resize".) Fit first,
+      // then pack at the now-correct scale.
+      const ext = {
+        x0: -(lay.rOuter + WORLD_PAD), y0: -(lay.rOuter + WORLD_PAD),
+        x1:  (lay.rOuter + WORLD_PAD), y1:  (lay.rOuter + WORLD_PAD),
+      };
+      camera.stopAnim();
+      if (local.lastSize.w && local.lastSize.h) {
+        camera.fitToExtent(ext, local.lastSize, 0);
+      }
+
       const nodePack  = graph.packNodes(modeNodes, lay.positions, degree, nodeOverridesFromParams());
       const edgePack  = graph.packEdges(modeEdges, lay.positions, edgeOverridesFromParams());
       const adj       = graph.buildAdjacency(modeEdges);
@@ -729,11 +750,6 @@
         hitNodesNew[i] = hn;
         hitByIdNew.set(id, hn);
       }
-
-      const ext = {
-        x0: -(lay.rOuter + WORLD_PAD), y0: -(lay.rOuter + WORLD_PAD),
-        x1:  (lay.rOuter + WORLD_PAD), y1:  (lay.rOuter + WORLD_PAD),
-      };
 
       local.mode = {
         id:          modeId,
@@ -807,12 +823,8 @@
       if (hEl) hEl.textContent = '—';
       if (lEl) lEl.textContent = '—';
 
-      // Refit camera to the new layout. Cancel any in-flight
-      // animation — fit-to-extent is a teleport, not an ease.
-      camera.stopAnim();
-      if (local.lastSize.w && local.lastSize.h) {
-        camera.fitToExtent(ext, local.lastSize, 0);
-      }
+      // Camera fit already done above (before packNodes) so the
+      // pack ran at the correct scale. Just draw.
       drawFrame();
     }
 
@@ -871,6 +883,16 @@
         // might have left behind. Cost: ~1 ms at 3033 edges, only
         // when the canvas actually resizes — not per pan.
         if (local.mode && local.mode.adjacency) {
+          // 2026-05-19 — pack-scale-fix. Resize changes the
+          // camera scale (because fitToExtent re-frames to the
+          // new viewport), and packNodes bakes the world radius
+          // using that scale. Without rebakeNodes, the cached
+          // wrong-scale radii survive every resize — visible as
+          // John's "tiny dots after resize even though the bake
+          // landed correctly" report. camera.onChange's 5%-drift
+          // guard does NOT reliably catch this (a small or
+          // gradual resize doesn't cross the threshold).
+          rebakeNodes();      // re-pack at new scale (radii + glyphs)
           rebakeEdges();      // re-pack instance buffer (colour + widths)
           recomputeFocus();   // re-derive node + edge state buffers
           // Phase 6d3 — final hard-stop. Push the recomputed edge
