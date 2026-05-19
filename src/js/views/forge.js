@@ -659,11 +659,21 @@
           const ratio = camScale / lastScale;
           if (ratio < 0.95 || ratio > 1.05) {
             rebakeNodes();
+            // rebakeNodes calls drawFrame which calls
+            // syncGlyphPositions, but glyph-FOCUS (occlusion
+            // zones around selected nodes) depends on screen
+            // positions of selected nodes — needs re-eval on
+            // every camera move, not just rebakes.
+            syncGlyphFocus();
             updateZoomGizmo();
             return;
           }
         }
         drawFrame();
+        // 2026-05-19 — glyph occlusion zones track selected-node
+        // screen positions; need re-eval on pan/zoom so non-
+        // selected glyphs hide/show as they enter/leave the halo.
+        if (local.selectedSet && local.selectedSet.size > 0) syncGlyphFocus();
         scheduleIdleLabelSync();
         updateZoomGizmo();
       });
@@ -1330,24 +1340,70 @@
       const baseOp = local.params.glyph_opacity;
       const dimMul = local.params.dim_amount_glyphs;
       const dimOp  = baseOp * (1 - dimMul);
-      // 2026-05-19 — z-index per state so selected glyphs always
-      // paint on top, focused-1-hop glyphs above the dim
-      // constellation, dim glyphs at the back. Without this DOM
-      // order rules and a selected node's glyph could get buried
-      // under whatever was appended after it during
-      // rebakeGlyphsForMode, making the "I clicked this" cue
-      // visually weaker when neighbors overlap.
+      // 2026-05-19 — occlusion zones around SELECTED nodes. The
+      // canvas-side disks already z-layer correctly (selected z=0
+      // wins over neighbors at z=0.3/0.6), but DOM glyphs sit on
+      // top of the canvas with no awareness of disk depth — so a
+      // focused-neighbor's glyph paints over the selected node's
+      // glow halo, breaking the visual hierarchy John flagged.
+      // This is a surgical fix: any non-selected glyph whose
+      // screen center falls inside a selected node's glow zone
+      // is hidden so the halo stays clean. The deeper architectural
+      // fix (move glyphs into the WebGPU canvas with texture-atlas
+      // + per-instance shader so they participate in the same depth
+      // pipeline as disks) is a separate, larger batch.
+      let occlusionZones = null;
+      if (sel && sel.size > 0) {
+        const vp = local.lastSize;
+        const hitById = local.mode && local.mode.hitById;
+        // Match the canvas-side glow extent (selected_glow.w in
+        // the shader, fed from local.params.selected_glow_extent).
+        // Quad headroom 1.5× isn't included — we want to clear the
+        // VISIBLE halo, not the empty quad padding.
+        const glowExtent = local.params.selected_glow_extent || 2.5;
+        const occ = [];
+        if (hitById && vp.w && vp.h) {
+          for (const id of sel) {
+            const n = hitById.get(id);
+            if (!n) continue;
+            const s = camera.worldToScreen(n.x, n.y, vp);
+            const r = n.r * camera.state.scale * glowExtent;
+            occ.push({ x: s.x, y: s.y, r2: r * r });
+          }
+        }
+        if (occ.length) occlusionZones = occ;
+      }
       for (let i = 0; i < local.glyphEls.length; i++) {
         const g = local.glyphEls[i];
         const isSel   = !!(sel   && sel.has(g.id));
         const isFocus = !focus || focus.has(g.id);
-        if (isFocus) {
-          g.el.style.opacity = '';   // fall back to CSS var
+        let occluded  = false;
+        if (!isSel && occlusionZones) {
+          const n = local.mode && local.mode.hitById && local.mode.hitById.get(g.id);
+          if (n) {
+            const s = camera.worldToScreen(n.x, n.y, local.lastSize);
+            for (let z = 0; z < occlusionZones.length; z++) {
+              const oz = occlusionZones[z];
+              const dx = s.x - oz.x;
+              const dy = s.y - oz.y;
+              if (dx*dx + dy*dy < oz.r2) { occluded = true; break; }
+            }
+          }
+        }
+        if (isSel) {
+          g.el.style.opacity = '';
+          g.el.style.zIndex  = '3';
+        } else if (occluded) {
+          // Hidden so it doesn't intrude on the selected halo.
+          g.el.style.opacity = '0';
+          g.el.style.zIndex  = '0';
+        } else if (isFocus) {
+          g.el.style.opacity = '';
+          g.el.style.zIndex  = '2';
         } else {
           g.el.style.opacity = String(dimOp);
+          g.el.style.zIndex  = '1';
         }
-        // 1 = dim back row, 2 = focused 1-hop, 3 = selected anchor.
-        g.el.style.zIndex = isSel ? '3' : (isFocus ? '2' : '1');
       }
     }
 
