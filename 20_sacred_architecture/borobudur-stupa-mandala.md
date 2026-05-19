@@ -146,7 +146,7 @@ Across civilisations, religious traditions facing the architectural problem of "
 | Egyptian | [[pyramid-of-khufu|Great Pyramid]] | ~2570 BCE | True-geometric pyramid |
 | Mesoamerican | [[temple-of-the-feathered-serpent-teotihuacan]] | ~200 CE | Stepped pyramid-temple |
 | **Indonesian Buddhist** | **Borobudur** | **~800 CE** | **Stepped stupa-mandala** |
-| Mesoamerican | [[temple-i-tikal]] | ~700 CE | Stepped pyramid |
+| Mesoamerican | [[tikal-temple-i]] | ~700 CE | Stepped pyramid |
 | Khmer | [[angkor-wat-temple-complex]] | ~1120 CE | Stepped temple-mountain |
 
 **No documented architectural-form transmission** between these traditions at the deep level. **The same theological problem produces convergent architectural solutions.** Borobudur — Mahayana Buddhist Java, ~800 CE — is in this convergence-cluster the **best-preserved monumental stepped sacred building anchored in a written cosmological theology** (the *Trailokya*).
