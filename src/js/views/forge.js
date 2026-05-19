@@ -1135,17 +1135,37 @@
         for (const id of idleSet) visible.add(id);
       }
 
-      // 2026-05-19 — opacity-driven show/hide (was display:none).
-      // Setting data-visible flips the CSS rule that targets
-      // `.forge-label[data-visible="1"]` from opacity 0 → 1 with
-      // a 0.25s ease-out. Labels leaving the visible set fade out
-      // instead of vanishing. Pass 1 clears the flag on everyone,
-      // pass 2 sets it on the new visible set.
-      for (const el of local.labelEls.values()) {
-        el.removeAttribute('data-visible');
+      // 2026-05-19 — diff-based show/hide (was: clear-all-then-set).
+      // The clear-all version caused every visible label to FLICKER
+      // (opacity 1 → 0 transition began, then 0 → 1 began, the two
+      // overlapping = the "VERY slow" perceived fade John flagged).
+      // Diff version: only toggle labels whose membership CHANGED.
+      // Labels staying visible keep their data-visible (no transition
+      // restart). Labels staying hidden stay hidden. Only entering /
+      // leaving labels animate.
+      //
+      // Plus: NEW labels (just created this call) need a forced
+      // reflow between DOM insert and data-visible so the browser
+      // computes opacity:0 first; otherwise it skips the transition
+      // as a first-paint optimization. el.getBoundingClientRect()
+      // triggers the layout pass synchronously.
+      for (const [id, el] of local.labelEls) {
+        const shouldShow = visible.has(id);
+        const isShowing  = el.hasAttribute('data-visible');
+        if (shouldShow && !isShowing) {
+          el.setAttribute('data-visible', '1');
+        } else if (!shouldShow && isShowing) {
+          el.removeAttribute('data-visible');
+        }
       }
+      // New labels — create + force-reflow + flip.
       for (const id of visible) {
+        if (local.labelEls.has(id)) continue;
         const el = ensureLabelEl(id);
+        // Force computed-style flush so the browser registers
+        // opacity:0 BEFORE we set data-visible. Cheap (single
+        // element, single layout query).
+        el.getBoundingClientRect();
         el.setAttribute('data-visible', '1');
       }
       syncLabelPositions();
@@ -1329,10 +1349,11 @@
     // 2026-05-19 — advance per-edge state toward its target by
     // dt / FADE_DURATION per second. Returns true if any edge is
     // still in flight (loop must keep ticking). Tunable from
-    // here. First shipped at 0.10s — John said "no fade visible";
-    // bumped to 0.25s so the ease is clearly perceivable. Reduce
-    // if it feels sluggish.
-    const FADE_DURATION = 0.25;
+    // here. Iteration log: 0.10s (invisible) → 0.25s (John: "VERY
+    // slow") → 0.15s (snappy but ease is perceivable). Match the
+    // CSS .forge-label / .forge-glyph transition duration so node-
+    // canvas-fade and label/glyph-DOM-fade end together.
+    const FADE_DURATION = 0.15;
     function tickEdgeFades(dt) {
       const cur = local.edgeStates;
       const tgt = local.edgeTargets;

@@ -5836,13 +5836,13 @@ body:has(#forge-dev-panel.is-open) .forge-bottombar {
      transition settles. */
   pointer-events: none;
   opacity: 0;
-  transition: opacity 0.25s ease-out;
+  transition: opacity 0.15s ease-out;
 }
 .forge-label[data-visible="1"] { opacity: 1; }
 /* Glyphs (per-disk SVG symbols) get the same fade so dim-mode
    transitions match. The dynamic z-index from syncGlyphFocus still
    handles glyph stacking; this is purely the in/out ease. */
-.forge-glyph { transition: opacity 0.25s ease-out; }
+.forge-glyph { transition: opacity 0.15s ease-out; }
 
 /* ============================================================
    FORGE — Phase 5: Visual-tuning dev panel
