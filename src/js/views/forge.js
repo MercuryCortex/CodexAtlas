@@ -364,7 +364,16 @@
         worldExtent:  { x0: -100, y0: -100, x1: 100, y1: 100 },
       },
       nodeStates:  new Float32Array(0),
+      // 2026-05-19 — edge fade animation. `edgeStates` is the
+      // LIVE-ANIMATING value pushed to the GPU each frame;
+      // `edgeTargets` is the snap-to value computed by
+      // `recomputeFocus` from the current focused set. animTick
+      // advances states toward targets at FADE_DURATION s. A
+      // fresh recomputeFocus updates targets but leaves states
+      // alone, so a mid-fade hover-change picks up the new
+      // target smoothly without snapping.
       edgeStates:  new Float32Array(0),
+      edgeTargets: new Float32Array(0),
       // Pan-drag state
       panActive:   false,
       panLastX:    0,
@@ -510,11 +519,18 @@
         const r = local.renderer;
         const fs = local.focusedSet;
         const es = local.edgeStates || new Float32Array(0);
+        const et = local.edgeTargets || new Float32Array(0);
         let jsZeros = 0, jsOnes = 0, jsOther = 0;
         for (let i = 0; i < es.length; i++) {
           if      (es[i] === 0) jsZeros++;
           else if (es[i] === 1) jsOnes++;
           else                  jsOther++;
+        }
+        let tgtZeros = 0, tgtOnes = 0, tgtOther = 0;
+        for (let i = 0; i < et.length; i++) {
+          if      (et[i] === 0) tgtZeros++;
+          else if (et[i] === 1) tgtOnes++;
+          else                  tgtOther++;
         }
         const ns = local.nodeStates || new Float32Array(0);
         let nsStateZ = 0, nsStateO = 0, nsSelZ = 0, nsSelO = 0;
@@ -536,6 +552,11 @@
               length: es.length,
               zeros: jsZeros, ones: jsOnes, other: jsOther,
             },
+            edgeTargets: {
+              length: et.length,
+              zeros: tgtZeros, ones: tgtOnes, other: tgtOther,
+            },
+            animRafActive: local.animRafId != null,
             nodeStates: {
               pairs: ns.length / 2,
               state: { zeros: nsStateZ, ones: nsStateO },
@@ -769,8 +790,9 @@
       // Edges: 1 float per instance. Phase 6d4 — convention flip:
       // 0 = IDLE (safe default), 1 = HOT. Zero-init is now correct
       // by construction; no .fill() needed.
-      local.nodeStates = new Float32Array(nodePack.instanceCount * 2);
-      local.edgeStates = new Float32Array(edgePack.instanceCount);
+      local.nodeStates  = new Float32Array(nodePack.instanceCount * 2);
+      local.edgeStates  = new Float32Array(edgePack.instanceCount);
+      local.edgeTargets = new Float32Array(edgePack.instanceCount);
 
       // Cross-mode hover/lock cleared — node ids don't map
       // between modes.
@@ -1159,7 +1181,16 @@
       // teleports the camera. 100ms cap keeps motion sane.
       const dtClamped = Math.min(dt, 0.1);
       const stillMoving = camera.tick(dtClamped);
-      if (stillMoving) {
+      // 2026-05-19 — edge fade tick. If the camera didn't move
+      // but a fade is in flight, we still need to redraw each
+      // frame because the per-instance state buffer changed.
+      const stillFading = tickEdgeFades(dtClamped);
+      if (stillFading && !stillMoving) {
+        // camera.tick already calls drawFrame via onChange when
+        // it moves; pure-fade frames need an explicit redraw.
+        drawFrame();
+      }
+      if (stillMoving || stillFading) {
         local.animRafId = requestAnimationFrame(animTick);
       } else {
         local.animRafId = null;
@@ -1196,10 +1227,56 @@
         : new Float32Array(idx.length);
       // Interleave into the 2-float-per-instance VBO layout.
       local.nodeStates = interleavePairs(states, selectFlags);
-      local.edgeStates = graph.computeEdgeStates(local.mode.edges, local.focusedSet);
+      // 2026-05-19 — edge fade. Compute the snap-to TARGET value
+      // for each edge; the live edgeStates buffer is animated
+      // toward it by `tickEdgeFades` (FADE_DURATION = 0.1s). On
+      // first run (or after rebuildForMode) sizes may mismatch;
+      // resize and pre-fill targets without touching states so
+      // the GPU sees a coherent buffer immediately.
+      const newTargets = graph.computeEdgeStates(local.mode.edges, local.focusedSet);
+      if (!local.edgeTargets || local.edgeTargets.length !== newTargets.length) {
+        local.edgeTargets = newTargets;
+      } else {
+        local.edgeTargets.set(newTargets);
+      }
+      if (!local.edgeStates || local.edgeStates.length !== newTargets.length) {
+        // First-time alloc — initial value matches target so no surprise flash.
+        local.edgeStates = new Float32Array(newTargets);
+      }
+      // Kick the animation loop. It self-exits when both the
+      // camera and all edge fades have settled.
+      startAnimLoop();
       syncGlyphFocus();
       syncLabels();
       drawFrame();
+    }
+
+    // 2026-05-19 — advance per-edge state toward its target by
+    // dt / FADE_DURATION per second. Returns true if any edge is
+    // still in flight (loop must keep ticking). Hover-in feels
+    // snappy at 0.1s; hover-out lingers just long enough that
+    // the eye registers the highlight even on a fast cursor swipe.
+    const FADE_DURATION = 0.1;
+    function tickEdgeFades(dt) {
+      const cur = local.edgeStates;
+      const tgt = local.edgeTargets;
+      if (!cur || !tgt || cur.length !== tgt.length) return false;
+      const step = dt / FADE_DURATION;
+      let stillFading = false;
+      for (let i = 0; i < cur.length; i++) {
+        const c = cur[i];
+        const t = tgt[i];
+        if (c === t) continue;
+        const diff = t - c;
+        const absDiff = diff < 0 ? -diff : diff;
+        if (absDiff <= step) {
+          cur[i] = t;
+        } else {
+          cur[i] = c + (diff > 0 ? step : -step);
+          stillFading = true;
+        }
+      }
+      return stillFading;
     }
 
     function computeSelectedSet(hoverId, lockedSet) {
@@ -1612,8 +1689,21 @@
     function rebakeEdges() {
       const m = local.mode;
       m.edgePacked = graph.packEdges(m.edges, m.positions, edgeOverridesFromParams());
-      // Preserve current focus state if any; recompute fresh otherwise.
-      local.edgeStates = graph.computeEdgeStates(m.edges, local.focusedSet);
+      // 2026-05-19 — fade-aware. Don't replace `local.edgeStates`
+      // wholesale; that would snap mid-fade values to a fresh
+      // binary array and kill the animation. Update TARGETS
+      // (which the next animTick will fade toward) and only
+      // resize the live states buffer if the edge count changed.
+      const newTargets = graph.computeEdgeStates(m.edges, local.focusedSet);
+      if (!local.edgeTargets || local.edgeTargets.length !== newTargets.length) {
+        local.edgeTargets = newTargets;
+      } else {
+        local.edgeTargets.set(newTargets);
+      }
+      if (!local.edgeStates || local.edgeStates.length !== newTargets.length) {
+        local.edgeStates = new Float32Array(newTargets);
+      }
+      startAnimLoop();
       drawFrame();
     }
     // Push hot palette to the renderer.

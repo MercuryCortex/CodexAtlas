@@ -215,6 +215,7 @@
       @location(1) edge_color:   vec4<f32>,
       @location(2) state:        f32,
       @location(3) bucket_index: f32,    // interpolated; floor() in fs
+      @location(4) edge_t:       f32,    // 0 at source, 1 at target — gradient direction
     };
 
     fn bezier_pos(p0: vec2<f32>, p1: vec2<f32>, p2: vec2<f32>, t: f32) -> vec2<f32> {
@@ -273,6 +274,7 @@
       out.edge_color   = inst_color;
       out.state        = inst_state;
       out.bucket_index = inst_extra.z;
+      out.edge_t       = t;
       return out;
     }
 
@@ -298,11 +300,19 @@
       // dim_amount = 0 when no focus is active, so the idle
       // constellation isn't attenuated in the no-focus case.
       let dim_mult = mix(1.0 - v.dim_amount, 1.0, in.state);
+      // 2026-05-19 — directional gradient. Every wire darkens
+      // from source (in.edge_t=0) toward target (in.edge_t=1).
+      // Eye-readable cue for edge direction + helps separate
+      // wires that overlap or share endpoints. Multiplier mixes
+      // 1.0 (no change at source) → 0.55 (45% darker at target).
+      // Applies equally to IDLE and HOT — gradient is universal,
+      // not state-dependent.
+      let grad_mult = mix(1.0, 0.55, in.edge_t);
       let a        = color.a * alpha_aa * dim_mult;
       // Phase 6d — same discard logic as nodes: AA halo fragments
       // shouldn't write depth, else they block disks behind them.
       if (a < 0.02) { discard; }
-      return vec4<f32>(color.rgb * a, a);
+      return vec4<f32>(color.rgb * grad_mult * a, a);
     }
   `;
 
