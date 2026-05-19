@@ -1,6 +1,6 @@
 ---
 type: event
-id: "step-pyramid-djoser-saqqara"
+id: "djoser-pyramid-construction"
 name: "Step Pyramid of Djoser (Saqqara)"
 aka: ["Step Pyramid", "Pyramid of Djoser", "Horus Netjerikhet pyramid", "Saqqara step pyramid"]
 date-start: -2650
