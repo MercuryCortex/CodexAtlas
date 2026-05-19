@@ -1,6 +1,6 @@
 ---
 type: event
-id: "el-castillo-chichen-itza"
+id: "el-castillo-chichen-itza-construction"
 name: "El Castillo (Chichen Itza)"
 aka: ["El Castillo", "Temple of Kukulkan", "Pyramid of Kukulkan", "Structure 5B18"]
 date-start: 900

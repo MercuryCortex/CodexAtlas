@@ -1,6 +1,6 @@
 ---
 type: event
-id: "pyramid-of-the-sun-teotihuacan"
+id: "pyramid-of-the-sun-teotihuacan-construction"
 name: "Pyramid of the Sun (Teotihuacan)"
 aka: ["Pirámide del Sol", "Pyramid of the Sun", "Teotihuacan Sun Pyramid"]
 date-start: 100
