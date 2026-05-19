@@ -5828,9 +5828,21 @@ body:has(#forge-dev-panel.is-open) .forge-bottombar {
     -1px  1px 0 var(--forge-label-halo, var(--bg-0)),
      1px -1px 0 var(--forge-label-halo, var(--bg-0)),
     -1px -1px 0 var(--forge-label-halo, var(--bg-0));
-  /* Hidden by default; JS toggles display when in focused set. */
-  display: none;
+  /* 2026-05-19 — opacity-driven hide instead of display:none so
+     labels ease in/out across focus transitions. JS sets
+     `data-visible="1"` on shown labels, opacity follows via the
+     transition rule below. Hidden labels stay in DOM at opacity:0
+     with pointer-events:none — same perf cost as before once the
+     transition settles. */
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.25s ease-out;
 }
+.forge-label[data-visible="1"] { opacity: 1; }
+/* Glyphs (per-disk SVG symbols) get the same fade so dim-mode
+   transitions match. The dynamic z-index from syncGlyphFocus still
+   handles glyph stacking; this is purely the in/out ease. */
+.forge-glyph { transition: opacity 0.25s ease-out; }
 
 /* ============================================================
    FORGE — Phase 5: Visual-tuning dev panel

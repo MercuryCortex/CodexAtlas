@@ -143,6 +143,15 @@
     const oOver  = (opts && opts.idleOps)    || null;
     const cOver  = (opts && opts.curves)     || null;
     const colOver = (opts && opts.idleColors) || null;
+    // 2026-05-19 — optional id→worldRadius map. When present, each
+    // wire's endpoint is pulled from the node center to the disk
+    // perimeter ALONG the line to its partner. Different wires
+    // out of the same hub then emerge from different points on
+    // its circumference, fixing the "all wires bundle at center"
+    // bunching John flagged. Without this map, endpoints stay at
+    // centers (legacy behavior). The view layer builds the map
+    // from the packed node-radius column after packNodes runs.
+    const radii = (opts && opts.nodeRadii) || null;
     const FLOATS_PER_INSTANCE = 12;
 
     // First pass: collect renderable edges (both endpoints
@@ -184,11 +193,37 @@
       // (matches the pre-Phase-6 global `hot_width_mult`).
       const hotW     = (hwOver && typeof hwOver[buc] === 'number') ? hwOver[buc] : idleW * 2.4;
 
+      // 2026-05-19 — offset endpoints to disk perimeter when
+      // node radii are known. dx/dy point source → target; the
+      // unit vector × radius pulls each end OUTWARD from its
+      // node's center. If the partners are essentially on top of
+      // each other (dist near 0) we fall back to centers.
+      let srcX = sp.x, srcY = sp.y, tgtX = tp.x, tgtY = tp.y;
+      if (radii) {
+        const dx = tp.x - sp.x;
+        const dy = tp.y - sp.y;
+        const dist = Math.sqrt(dx * dx + dy * dy);
+        if (dist > 0.0001) {
+          const nx = dx / dist;
+          const ny = dy / dist;
+          const rs = radii.get(e.source) || 0;
+          const rt = radii.get(e.target) || 0;
+          // Inset by 0.92r — just inside the disk edge, so the
+          // anti-aliased disk halo cleanly covers the bezier
+          // start/end and there's no visible "stub" sticking out
+          // of the wrong side of a small disk.
+          srcX = sp.x + nx * rs * 0.92;
+          srcY = sp.y + ny * rs * 0.92;
+          tgtX = tp.x - nx * rt * 0.92;
+          tgtY = tp.y - ny * rt * 0.92;
+        }
+      }
+
       const off = i * FLOATS_PER_INSTANCE;
-      data[off +  0] = sp.x;
-      data[off +  1] = sp.y;
-      data[off +  2] = tp.x;
-      data[off +  3] = tp.y;
+      data[off +  0] = srcX;
+      data[off +  1] = srcY;
+      data[off +  2] = tgtX;
+      data[off +  3] = tgtY;
       data[off +  4] = rgb[0];
       data[off +  5] = rgb[1];
       data[off +  6] = rgb[2];

@@ -272,8 +272,9 @@
       '<option value="' + m.value + '">' + m.glyph + '  ' + m.label + '</option>'
     ).join('');
     status.innerHTML = [
-      '<span class="forge-status-tag">FORGE</span>',
-      '<span class="forge-status-sep">·</span>',
+      // 2026-05-19 — dropped the redundant "FORGE" status tag.
+      // The app shell's #view-title already shows "Forge" in the
+      // top header bar; carrying it again here doubled up.
       '<select class="forge-status-mode" id="forge-status-mode" title="What is this wheel showing?">' + modeOptionsHtml + '</select>',
       '<span class="forge-status-sep">·</span>',
       '<span class="forge-status-k">device</span>',
@@ -364,6 +365,12 @@
         worldExtent:  { x0: -100, y0: -100, x1: 100, y1: 100 },
       },
       nodeStates:  new Float32Array(0),
+      // 2026-05-19 — node fade animation. Same target/states
+      // split as edges below. nodeStates carries (dim, selected)
+      // pairs; we fade BOTH axes so the dim transition and the
+      // selected-glow appearance both ease in/out at FADE_DURATION
+      // instead of snapping.
+      nodeTargets: new Float32Array(0),
       // 2026-05-19 — edge fade animation. `edgeStates` is the
       // LIVE-ANIMATING value pushed to the GPU each frame;
       // `edgeTargets` is the snap-to value computed by
@@ -482,7 +489,7 @@
       hoverId:      () => local.hoverId,
       lockedIds:    () => Array.from(local.lockedSet),
       visibleLabels:() => Array.from(local.labelEls.entries())
-                            .filter(([, el]) => el.style.display !== 'none')
+                            .filter(([, el]) => el.hasAttribute('data-visible'))
                             .map(([id]) => id),
       hitNodesAt:   (i) => local.mode.hitNodes[i],
       hitNodeCount: () => local.mode.hitNodes.length,
@@ -775,7 +782,12 @@
       }
 
       const nodePack  = graph.packNodes(modeNodes, lay.positions, degree, nodeOverridesFromParams());
-      const edgePack  = graph.packEdges(modeEdges, lay.positions, edgeOverridesFromParams());
+      // 2026-05-19 — Build the radii lookup so packEdges can
+      // offset each wire to the source/target disk perimeter,
+      // fanning wires out around each hub's circumference
+      // instead of bundling them all at the center.
+      const radiiById = buildRadiiMap(nodePack);
+      const edgePack  = graph.packEdges(modeEdges, lay.positions, Object.assign({}, edgeOverridesFromParams(), { nodeRadii: radiiById }));
       const adj       = graph.buildAdjacency(modeEdges);
       const tierFor   = graph.buildTierClassifier(modeNodes, degree);
 
@@ -814,6 +826,7 @@
       // 0 = IDLE (safe default), 1 = HOT. Zero-init is now correct
       // by construction; no .fill() needed.
       local.nodeStates  = new Float32Array(nodePack.instanceCount * 2);
+      local.nodeTargets = new Float32Array(nodePack.instanceCount * 2);
       local.edgeStates  = new Float32Array(edgePack.instanceCount);
       local.edgeTargets = new Float32Array(edgePack.instanceCount);
 
@@ -1116,15 +1129,18 @@
         for (const id of idleSet) visible.add(id);
       }
 
-      // Pass 2: show/hide the DOM. Create lazily for new ids.
-      // Hide everything first so transitions out of the visible
-      // set don't leave stale labels.
+      // 2026-05-19 — opacity-driven show/hide (was display:none).
+      // Setting data-visible flips the CSS rule that targets
+      // `.forge-label[data-visible="1"]` from opacity 0 → 1 with
+      // a 0.25s ease-out. Labels leaving the visible set fade out
+      // instead of vanishing. Pass 1 clears the flag on everyone,
+      // pass 2 sets it on the new visible set.
       for (const el of local.labelEls.values()) {
-        el.style.display = 'none';
+        el.removeAttribute('data-visible');
       }
       for (const id of visible) {
         const el = ensureLabelEl(id);
-        el.style.display = 'block';
+        el.setAttribute('data-visible', '1');
       }
       syncLabelPositions();
     }
@@ -1149,7 +1165,13 @@
       // not all nodes.
       const hitById = local.mode.hitById;
       for (const [id, el] of local.labelEls) {
-        if (el.style.display === 'none') continue;
+        // 2026-05-19 — labels are now opacity-faded, not display-
+        // toggled, so the old display:none skip is gone. Skip any
+        // label that's NOT in the current visible set (no
+        // data-visible attribute) — its position is frozen at its
+        // last known spot while the fade-out completes, which is
+        // visually correct and saves per-frame worldToScreen.
+        if (!el.hasAttribute('data-visible')) continue;
         const n = hitById ? hitById.get(id) : null;
         if (!n) continue;
         const s = camera.worldToScreen(n.x, n.y, vp);
@@ -1213,13 +1235,16 @@
       // teleports the camera. 100ms cap keeps motion sane.
       const dtClamped = Math.min(dt, 0.1);
       const stillMoving = camera.tick(dtClamped);
-      // 2026-05-19 — edge fade tick. If the camera didn't move
-      // but a fade is in flight, we still need to redraw each
-      // frame because the per-instance state buffer changed.
-      const stillFading = tickEdgeFades(dtClamped);
+      // 2026-05-19 — fade ticks. Both edge state buffer and the
+      // node (state, selected) interleaved buffer animate toward
+      // their targets at FADE_DURATION. Either pulse keeps the
+      // rAF loop alive; pure-fade frames need an explicit redraw
+      // since camera.tick → onChange → drawFrame only fires when
+      // camera state actually changes.
+      const stillFadingE = tickEdgeFades(dtClamped);
+      const stillFadingN = tickNodeFades(dtClamped);
+      const stillFading  = stillFadingE || stillFadingN;
       if (stillFading && !stillMoving) {
-        // camera.tick already calls drawFrame via onChange when
-        // it moves; pure-fade frames need an explicit redraw.
         drawFrame();
       }
       if (stillMoving || stillFading) {
@@ -1257,8 +1282,20 @@
       const selectFlags = graph.computeSelectedStates
         ? graph.computeSelectedStates(idx, local.selectedSet)
         : new Float32Array(idx.length);
-      // Interleave into the 2-float-per-instance VBO layout.
-      local.nodeStates = interleavePairs(states, selectFlags);
+      // 2026-05-19 — node fade. Interleaved (dim, selected) pairs
+      // go into nodeTargets; tickNodeFades advances nodeStates
+      // toward them at FADE_DURATION. On first run / mode switch,
+      // sizes might mismatch — resize without flashing the user
+      // by seeding edgeStates from the targets on initial alloc.
+      const newNodeTargets = interleavePairs(states, selectFlags);
+      if (!local.nodeTargets || local.nodeTargets.length !== newNodeTargets.length) {
+        local.nodeTargets = newNodeTargets;
+      } else {
+        local.nodeTargets.set(newNodeTargets);
+      }
+      if (!local.nodeStates || local.nodeStates.length !== newNodeTargets.length) {
+        local.nodeStates = new Float32Array(newNodeTargets);
+      }
       // 2026-05-19 — edge fade. Compute the snap-to TARGET value
       // for each edge; the live edgeStates buffer is animated
       // toward it by `tickEdgeFades` (FADE_DURATION = 0.1s). On
@@ -1293,6 +1330,30 @@
     function tickEdgeFades(dt) {
       const cur = local.edgeStates;
       const tgt = local.edgeTargets;
+      if (!cur || !tgt || cur.length !== tgt.length) return false;
+      const step = dt / FADE_DURATION;
+      let stillFading = false;
+      for (let i = 0; i < cur.length; i++) {
+        const c = cur[i];
+        const t = tgt[i];
+        if (c === t) continue;
+        const diff = t - c;
+        const absDiff = diff < 0 ? -diff : diff;
+        if (absDiff <= step) {
+          cur[i] = t;
+        } else {
+          cur[i] = c + (diff > 0 ? step : -step);
+          stillFading = true;
+        }
+      }
+      return stillFading;
+    }
+    // 2026-05-19 — same advancing logic for the node (state,
+    // selected) interleaved buffer. Same FADE_DURATION so the
+    // node dim + the edge fade ease together.
+    function tickNodeFades(dt) {
+      const cur = local.nodeStates;
+      const tgt = local.nodeTargets;
       if (!cur || !tgt || cur.length !== tgt.length) return false;
       const step = dt / FADE_DURATION;
       let stillFading = false;
@@ -1680,6 +1741,18 @@
         local.params.node_radius_tier4,
       ];
     }
+    // 2026-05-19 — extract the packed (post-clamp) world radius
+    // per node id so packEdges can offset wires to the disk
+    // perimeter. Cheap (one O(n) pass), called once per pack/
+    // rebake. Returns null-safe Map for the radii option.
+    function buildRadiiMap(nodePack) {
+      const m = new Map();
+      if (!nodePack || !nodePack.idIndex) return m;
+      for (let i = 0; i < nodePack.instanceCount; i++) {
+        m.set(nodePack.idIndex[i], nodePack.data[i * NODE_FLOATS + 2]);
+      }
+      return m;
+    }
     function edgeOverridesFromParams() {
       const p = local.params;
       const o = { idleColors: {}, idleOps: {}, idleWidths: {}, hotWidths: {}, curves: {} };
@@ -1774,12 +1847,17 @@
       local.packedAtScale = (camera && camera.state) ? camera.state.scale : 1;
       rebakeGlyphsForMode();
       scheduleIdleLabelSync();
-      drawFrame();
+      // 2026-05-19 — edge endpoints depend on node radii (offset
+      // to disk perimeter). When zoom-aware re-pack changes
+      // radii, the edges must follow or they detach visually.
+      // rebakeEdges itself ends in drawFrame, so we skip the
+      // explicit drawFrame below to avoid double work.
+      rebakeEdges();
     }
     // Rebake edge instances (idle alpha / width / curve).
     function rebakeEdges() {
       const m = local.mode;
-      m.edgePacked = graph.packEdges(m.edges, m.positions, edgeOverridesFromParams());
+      m.edgePacked = graph.packEdges(m.edges, m.positions, Object.assign({}, edgeOverridesFromParams(), { nodeRadii: buildRadiiMap(m.nodePacked) }));
       // 2026-05-19 — fade-aware. Don't replace `local.edgeStates`
       // wholesale; that would snap mid-fade values to a fresh
       // binary array and kill the animation. Update TARGETS
