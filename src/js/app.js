@@ -10266,7 +10266,16 @@ document.addEventListener('keydown', (ev) => {
 let resizeTimer;
 window.addEventListener('resize', () => {
   clearTimeout(resizeTimer);
-  resizeTimer = setTimeout(() => setView(STATE.view), 200);
+  resizeTimer = setTimeout(() => {
+    // 2026-05-19 — Forge owns its own ResizeObserver and handles
+    // canvas resize without a re-mount; calling setView('forge')
+    // here destroys the engine + re-runs setup() which refits the
+    // camera to the world extent, snapping the wheel back to
+    // fit-and-centered ~200ms after every window resize. Skip
+    // Forge so it preserves the user's zoom + pan state.
+    if (STATE.view === 'forge') return;
+    setView(STATE.view);
+  }, 200);
 });
 
 // ============================================================

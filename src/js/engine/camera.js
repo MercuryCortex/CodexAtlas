@@ -63,6 +63,20 @@
     let zoomAnim  = null;  // { targetScale, worldX, worldY, screenX, screenY, vw, vh }
     let flyToAnim = null;  // { fromX, fromY, fromScale, toX, toY, toScale, duration, elapsed }
 
+    // 2026-05-19 — pan bounds. View-layer sets these via
+    // `setPanBounds(x0, y0, x1, y1)` once the world extent is
+    // known. `panByScreen` + animation tick clamp centerX/centerY
+    // to keep the world-space center inside the bounds — so the
+    // user can't infinite-pan away from the wheel and get lost.
+    let bounds = null;   // { x0, y0, x1, y1 } in world units, or null = no clamp
+    function clampCenter() {
+      if (!bounds) return;
+      if (state.centerX < bounds.x0) state.centerX = bounds.x0;
+      else if (state.centerX > bounds.x1) state.centerX = bounds.x1;
+      if (state.centerY < bounds.y0) state.centerY = bounds.y0;
+      else if (state.centerY > bounds.y1) state.centerY = bounds.y1;
+    }
+
     // Listeners — view layer subscribes to re-draw when the
     // camera moves. Multiple subscribers supported.
     const listeners = new Set();
@@ -133,7 +147,17 @@
         if (dxPx === 0 && dyPx === 0) return;
         state.centerX -= dxPx / state.scale;
         state.centerY -= dyPx / state.scale;
+        clampCenter();
         _emit();
+      },
+
+      // View layer calls this after fitToExtent so the camera
+      // knows the world span; pan then clamps to keep the wheel
+      // within reach. Pass null to clear (no clamping).
+      setPanBounds(x0, y0, x1, y1) {
+        if (x0 == null) { bounds = null; return; }
+        bounds = { x0, y0, x1, y1 };
+        clampCenter();
       },
 
       // Zoom toward a viewport anchor point (the mouse cursor).
@@ -328,7 +352,16 @@
           changed = true;
         }
 
-        if (changed) _emit();
+        if (changed) {
+          // Pan-inertia and fly-to can push center outside the
+          // bounds set by setPanBounds; clamp once per tick.
+          // zoomAnim's anchored math is fine to clamp too — the
+          // user's "world point under cursor" invariant only
+          // matters mid-zoom-ease and re-establishes itself on
+          // each new wheel event.
+          clampCenter();
+          _emit();
+        }
         return !!(panAnim || zoomAnim || flyToAnim);
       },
     };

@@ -750,6 +750,19 @@
       if (local.lastSize.w && local.lastSize.h) {
         camera.fitToExtent(ext, local.lastSize, 0);
       }
+      // 2026-05-19 — pan bounds. Allow the user to pan a half-
+      // viewport-worth beyond each edge of the wheel so the
+      // outermost nodes can be brought toward center, but stop
+      // them from infinite-panning into empty space. Margin is
+      // generous (worldSpan units) so they always have headroom.
+      if (camera.setPanBounds) {
+        const span = Math.max(ext.x1 - ext.x0, ext.y1 - ext.y0);
+        const margin = span * 0.5;
+        camera.setPanBounds(
+          ext.x0 - margin, ext.y0 - margin,
+          ext.x1 + margin, ext.y1 + margin,
+        );
+      }
 
       const nodePack  = graph.packNodes(modeNodes, lay.positions, degree, nodeOverridesFromParams());
       const edgePack  = graph.packEdges(modeEdges, lay.positions, edgeOverridesFromParams());
