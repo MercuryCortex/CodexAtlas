@@ -9,6 +9,7 @@
 | Handle | Document or scope | Owned paths (folder lock) | Started | Status |
 |---|---|---|---|---|
 | opus-ontology-lock-2026-05-18 | Ontology lock pass 2 — 10 new lens folders (08, 18-26) + ONTOLOGY/LANES updated + permanent rationale doc. Deferred to next Lane B window: themes→motifs rename + build script updates + pre-commit hook regex + Forge mode dropdown. | as listed | 2026-05-18 PM | FINISHED 2026-05-18 evening |
+| opus-rarefact-2026-05-18-pm | Rarefaction pass — write HOW-WE-WORK.md (slim routing doc replacing 100KB pre-flight burden), sync PROTOCOL.md + CORE-THEMES.md to 26-lens awareness, AUDIT note on pagan-usage review verdict | 00_meta/HOW-WE-WORK.md, 00_meta/PROTOCOL.md, 00_meta/CORE-THEMES.md, AUDIT/pagan-usage-verdict-2026-05-18.md, 00_meta/STATUS.md, 00_meta/ACTIVE-CONTENT.md | 2026-05-18 PM late | started |
 
 _No active claims after this one. Append your row above._
 
