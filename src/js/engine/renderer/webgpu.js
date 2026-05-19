@@ -197,13 +197,20 @@
       // Phase 6d — discard near-transparent fragments so they
       // don't write depth. Without this, the SDF anti-alias
       // halo of a dimmed disk would block focused disks behind
-      // it (depth test less-equal). Threshold bumped 0.04 → 0.08
-      // (2026-05-19) to cleanly cut the faint outer band of the
-      // selected glow that was leaving a thin square outline
-      // around the glow's quad bounding box — combined with the
-      // 1.5× quad headroom above, the glow now falls off
-      // perfectly circular with no visible quad geometry.
-      if (final_a < 0.08) { discard; }
+      // it (depth test less-equal).
+      // 2026-05-19: threshold 0.04 → 0.08 + 1.5× quad headroom
+      // killed most of the glow's square clipping artifact.
+      // 2026-05-20: John flagged Raijin + Vairocana still show
+      // residual clip — happens when selected_glow_strength is
+      // high enough that the glow alpha just inside the smoothstep
+      // upper bound is still above 0.08 (writes depth → blocks
+      // adjacent disk fragments at z=0.3/0.6). Bumped to 0.15 to
+      // cut a thicker outer band; combined with the 1.5× quad
+      // headroom this discards the entire glow tail that was
+      // depth-blocking neighbors. Trade-off: the very outer glow
+      // pixels (alpha < 0.15) don't render — barely visible, far
+      // better than the square artifact.
+      if (final_a < 0.15) { discard; }
       return vec4<f32>(final_rgb, final_a);
     }
   `;

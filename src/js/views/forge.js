@@ -311,21 +311,23 @@
     bottomBar.innerHTML = [
       '<button class="forge-zoom-gizmo" id="forge-zoom-gizmo" title="Current zoom — click to reset to fit">100%</button>',
       '<input type="text" class="forge-bottom-search" id="forge-status-search" placeholder="search…" autocomplete="off" spellcheck="false">',
-      // 2026-05-20 — Timeline scrubber. 3 handles: IN (lower bound),
-      // OUT (upper bound), CENTER (playhead). Half the search bar's
-      // width (compact). Same dark + mono + gold-accent styling as
-      // the search input. v1 ships the UI + range-derivation +
-      // value-display; filter wiring (dim out-of-range nodes) lands
-      // in a follow-up.
-      '<div class="forge-timeline" id="forge-timeline" title="Timeline — drag IN / OUT bounds; drag center to scrub">' +
-        '<div class="forge-timeline-track">' +
-          '<div class="forge-timeline-range" id="forge-timeline-range"></div>' +
-          '<div class="forge-timeline-thumb forge-timeline-in"     id="forge-timeline-in"     data-handle="in"></div>' +
-          '<div class="forge-timeline-thumb forge-timeline-center" id="forge-timeline-center" data-handle="center"></div>' +
-          '<div class="forge-timeline-thumb forge-timeline-out"    id="forge-timeline-out"    data-handle="out"></div>' +
+      // 2026-05-20 — Timeline scrubber redesigned per John's spec:
+      // 4 separate boxes (IN value | slider | OUT value | PRESENT
+      // value), each the SAME height as the zoom-gizmo + search.
+      // Drag IN/OUT/CENTER thumbs in the slider; values update
+      // live in the boxes. v2 wires the filter — nodes outside the
+      // IN-OUT range get dimmed via the existing state pipeline.
+      '<div class="forge-scrub-box" id="forge-scrub-in"      title="IN: lower bound of date range">—</div>',
+      '<div class="forge-scrub-slider" id="forge-scrub-slider" title="Drag IN / OUT bounds; drag center to scrub">' +
+        '<div class="forge-scrub-track">' +
+          '<div class="forge-scrub-range" id="forge-scrub-range"></div>' +
+          '<div class="forge-scrub-thumb forge-scrub-in-thumb"     id="forge-scrub-in-thumb"     data-handle="in"></div>' +
+          '<div class="forge-scrub-thumb forge-scrub-center-thumb" id="forge-scrub-center-thumb" data-handle="center"></div>' +
+          '<div class="forge-scrub-thumb forge-scrub-out-thumb"    id="forge-scrub-out-thumb"    data-handle="out"></div>' +
         '</div>' +
-        '<div class="forge-timeline-readout" id="forge-timeline-readout">—</div>' +
       '</div>',
+      '<div class="forge-scrub-box" id="forge-scrub-out"     title="OUT: upper bound of date range">—</div>',
+      '<div class="forge-scrub-box forge-scrub-present" id="forge-scrub-present" title="PRESENT: scrub playhead">—</div>',
     ].join('');
     stage.appendChild(bottomBar);
 
@@ -587,9 +589,25 @@
             animRafActive: local.animRafId != null,
             nodeStates: {
               pairs: ns.length / 2,
-              state: { zeros: nsStateZ, ones: nsStateO },
+              state: { zeros: nsStateZ, ones: nsStateO, other: (ns.length / 2) - nsStateZ - nsStateO },
               selected: { zeros: nsSelZ, ones: nsSelO },
             },
+            nodeTargets: (() => {
+              const nt = local.nodeTargets || new Float32Array(0);
+              let z = 0, o = 0, ot = 0;
+              for (let i = 0; i < nt.length; i += 2) {  // state channel only
+                if (nt[i] === 0) z++;
+                else if (nt[i] === 1) o++;
+                else ot++;
+              }
+              return { pairs: nt.length / 2, state: { zeros: z, ones: o, other: ot } };
+            })(),
+            timeline: local.timeline ? {
+              lo: local.timeline.lo, hi: local.timeline.hi,
+              inDate: local.timeline.inDate, outDate: local.timeline.outDate,
+              centerDate: local.timeline.centerDate,
+              isNarrowed: (local.timeline.inDate > local.timeline.lo || local.timeline.outDate < local.timeline.hi),
+            } : null,
             modeEdgesLen: local.mode && local.mode.edges ? local.mode.edges.length : null,
           },
           gpu: { edges: gpuEdges, nodes: gpuNodes },
@@ -1333,6 +1351,28 @@
       const selectFlags = graph.computeSelectedStates
         ? graph.computeSelectedStates(idx, local.selectedSet)
         : new Float32Array(idx.length);
+      // 2026-05-20 — timeline scrubber filter. If the user has
+      // narrowed the IN/OUT range (i.e., it's tighter than the
+      // full bounds), force out-of-range nodes to state=1 (dim).
+      // Overlap rule: a node is "in range" if its existence
+      // period [date_earliest..date_latest] intersects the
+      // [inDate..outDate] range. Nodes without dates are kept
+      // in range (don't dim them just for missing data).
+      const tl = local.timeline;
+      if (tl && (tl.inDate > tl.lo || tl.outDate < tl.hi)) {
+        const nodesById = {};
+        for (const n of local.mode.nodes) nodesById[n.id] = n;
+        const lo = tl.inDate, hi = tl.outDate;
+        for (let i = 0; i < idx.length; i++) {
+          const n = nodesById[idx[i]];
+          if (!n) continue;
+          const ne = (typeof n.date_earliest === 'number') ? n.date_earliest : null;
+          const nl = (typeof n.date_latest   === 'number') ? n.date_latest   : ne;
+          if (ne == null) continue;   // undated nodes stay visible
+          const overlaps = (nl == null ? ne : nl) >= lo && ne <= hi;
+          if (!overlaps) states[i] = 1.0;
+        }
+      }
       // 2026-05-19 — node fade. Interleaved (dim, selected) pairs
       // go into nodeTargets; tickNodeFades advances nodeStates
       // toward them at FADE_DURATION. On first run / mode switch,
@@ -1362,6 +1402,31 @@
       if (!local.edgeStates || local.edgeStates.length !== newTargets.length) {
         // First-time alloc — initial value matches target so no surprise flash.
         local.edgeStates = new Float32Array(newTargets);
+      }
+      // 2026-05-20 — pre-warm the fade. Root cause of John's
+      // "IDLE-hover slow + no animation" report: the drawFrame
+      // below uses the CURRENT state buffer (pre-animation).
+      // animTick advances the state on the NEXT rAF (~16ms
+      // later). For LOCKED-hover the delta is tiny (most state
+      // values barely change) so the gap is invisible. For
+      // IDLE→hover the delta is massive (hundreds of nodes flip
+      // from state=0 to state=1, plus selected glow appears on
+      // the hovered node), and that 16ms of "nothing happened"
+      // before the animation begins reads as a delayed pop, not
+      // a smooth fade. Fix: advance the live buffer ~30% toward
+      // the new target right here so the very first drawFrame
+      // shows visible progress. The remaining 70% completes via
+      // tickNodeFades / tickEdgeFades over the next ~7 frames.
+      // Visually: the hover response is now immediate instead of
+      // one-frame-stale.
+      const WARM_STEP = 0.3;
+      for (let i = 0; i < local.nodeStates.length; i++) {
+        const c = local.nodeStates[i], t = local.nodeTargets[i];
+        if (c !== t) local.nodeStates[i] = c + (t - c) * WARM_STEP;
+      }
+      for (let i = 0; i < local.edgeStates.length; i++) {
+        const c = local.edgeStates[i], t = local.edgeTargets[i];
+        if (c !== t) local.edgeStates[i] = c + (t - c) * WARM_STEP;
       }
       // Kick the animation loop. It self-exits when both the
       // camera and all edge fades have settled.
@@ -1577,29 +1642,29 @@
     }
 
     // ── Timeline scrubber (2026-05-20) ──────────────────────
-    // Three-handle compact slider in the bottom bar — IN (lower
-    // bound) + OUT (upper bound) + CENTER (playhead). Half the
-    // search bar's width.
+    // 4-box layout per John 2026-05-20: separate IN value box +
+    // slider + OUT value box + PRESENT (playhead) value box. All
+    // four match the height of the zoom-gizmo + search input. v2
+    // wires the FILTER too — `recomputeFocus` reads
+    // `local.timeline.{inDate, outDate}` and dims any node whose
+    // date range doesn't overlap [inDate, outDate].
     //
-    // v1: UI + range-derivation + value-display only. Filter
-    // wiring (dim out-of-range nodes via a separate per-instance
-    // attribute) is the next batch. The values are kept on the
-    // `local.timeline` state object so the future filter pass can
-    // read them.
-    //
-    // Range derivation: scan current mode's nodes for date-start /
-    // date-end / date-attested-earliest YAML fields; min/max give
-    // the timeline bounds. If the mode has no dated nodes (e.g.,
-    // symbols), the scrubber is hidden.
+    // Range derivation: scan current mode's nodes for normalized
+    // `date_earliest` / `date_latest` (build_data.py output) plus
+    // YAML-raw fallbacks; min/max give the timeline bounds. Clamped
+    // to a sane archaeology window [-15000, 3000] so cosmogonic
+    // outliers don't squash human-history span to a hairline.
     function wireTimelineScrubber() {
-      const root = document.getElementById('forge-timeline');
-      if (!root) return;
-      const track   = root.querySelector('.forge-timeline-track');
-      const rangeEl = root.querySelector('#forge-timeline-range');
-      const inEl    = root.querySelector('#forge-timeline-in');
-      const ctrEl   = root.querySelector('#forge-timeline-center');
-      const outEl   = root.querySelector('#forge-timeline-out');
-      const readout = root.querySelector('#forge-timeline-readout');
+      const slider  = document.getElementById('forge-scrub-slider');
+      if (!slider) return;
+      const track   = slider.querySelector('.forge-scrub-track');
+      const rangeEl = slider.querySelector('#forge-scrub-range');
+      const inEl    = slider.querySelector('#forge-scrub-in-thumb');
+      const ctrEl   = slider.querySelector('#forge-scrub-center-thumb');
+      const outEl   = slider.querySelector('#forge-scrub-out-thumb');
+      const inBox      = document.getElementById('forge-scrub-in');
+      const outBox     = document.getElementById('forge-scrub-out');
+      const presentBox = document.getElementById('forge-scrub-present');
 
       // Derive [minYear, maxYear] from the current mode's nodes.
       // Negative = BCE per the vault convention.
@@ -1651,7 +1716,11 @@
 
       const bounds = deriveBounds();
       if (!bounds) {
-        root.style.display = 'none';
+        // Hide all four boxes when the current mode has no dated nodes.
+        slider.style.display = 'none';
+        if (inBox)      inBox.style.display = 'none';
+        if (outBox)     outBox.style.display = 'none';
+        if (presentBox) presentBox.style.display = 'none';
         return;
       }
       const [lo, hi] = bounds;
@@ -1686,10 +1755,11 @@
         ctrEl.style.left  = ctrF + '%';
         rangeEl.style.left  = inF + '%';
         rangeEl.style.width = (outF - inF) + '%';
-        readout.textContent =
-          formatYear(t.inDate) + ' · ' +
-          formatYear(t.centerDate) + ' · ' +
-          formatYear(t.outDate);
+        // 4-box readouts. Each box gets just the year (no
+        // separator) so it stays compact at fixed height.
+        if (inBox)      inBox.textContent      = formatYear(t.inDate);
+        if (outBox)     outBox.textContent     = formatYear(t.outDate);
+        if (presentBox) presentBox.textContent = formatYear(t.centerDate);
       }
 
       // Drag state. Pointer events on track + thumbs; track captures
@@ -1708,16 +1778,25 @@
         const frac = (ev.clientX - rect.left) / rect.width;
         const date = fracToDate(frac);
         const t = local.timeline;
+        let rangeChanged = false;
         if (dragHandle === 'in') {
-          t.inDate = Math.min(date, t.outDate - 1);
+          const newIn = Math.min(date, t.outDate - 1);
+          if (newIn !== t.inDate) { t.inDate = newIn; rangeChanged = true; }
           if (t.centerDate < t.inDate) t.centerDate = t.inDate;
         } else if (dragHandle === 'out') {
-          t.outDate = Math.max(date, t.inDate + 1);
+          const newOut = Math.max(date, t.inDate + 1);
+          if (newOut !== t.outDate) { t.outDate = newOut; rangeChanged = true; }
           if (t.centerDate > t.outDate) t.centerDate = t.outDate;
         } else if (dragHandle === 'center') {
           t.centerDate = Math.max(t.inDate, Math.min(t.outDate, date));
+          // Center scrub doesn't re-filter (no IN/OUT change), just
+          // updates the playhead readout.
         }
         refreshUI();
+        // Filter wiring: when IN or OUT change, re-run focus so
+        // the date-range-dim is applied to nodes outside the
+        // range. Center moves don't change the filter.
+        if (rangeChanged) recomputeFocus();
       }
       function onPointerUp(ev) {
         if (!dragHandle) return;

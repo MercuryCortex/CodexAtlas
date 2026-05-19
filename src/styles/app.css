@@ -5732,45 +5732,65 @@ body:has(#forge-dev-panel.is-open) .forge-bottombar {
   border-radius: 4px;
   padding: 5px 10px;
   outline: none;
-  flex: 1 1 320px;
-  max-width: 360px;
+  /* 2026-05-20 — halved per John's spec (was 320/360 → 160/180). */
+  flex: 0 1 160px;
+  max-width: 180px;
 }
 .forge-bottom-search::placeholder { color: var(--text-3); }
 .forge-bottom-search:hover { border-color: var(--gold-soft); }
 .forge-bottom-search:focus { border-color: var(--gold); }
 
-/* Timeline scrubber (2026-05-20) — compact 3-handle slider next to
-   the search bar in the bottom bar. Same dark + mono + gold-accent
-   styling. Roughly half the search bar's width (180px) so it stays
-   compact. */
-.forge-timeline {
+/* Timeline scrubber — 4-box layout per John 2026-05-20:
+   IN box | slider | OUT box | PRESENT box. All four match the
+   height of the zoom-gizmo + search input (single line, 11px
+   font, ~24px total height with padding + border). Same dark +
+   mono + gold-accent styling for visual consistency. */
+.forge-scrub-box {
+  pointer-events: auto;
+  background: rgba(13, 17, 25, 0.85);
+  color: var(--text-2);
+  font-family: var(--mono, "JetBrains Mono", Menlo, monospace);
+  font-size: 11px;
+  font-variant-numeric: tabular-nums;
+  letter-spacing: 0.04em;
+  border: 1px solid var(--border, #2a2e3a);
+  border-radius: 4px;
+  padding: 5px 10px;
+  flex: 0 0 auto;
+  min-width: 56px;
+  text-align: center;
+  white-space: nowrap;
+  box-sizing: border-box;
+}
+.forge-scrub-box:hover { border-color: var(--gold-soft); }
+/* PRESENT box — slightly emphasized (gold text) to distinguish it
+   as the playhead readout vs the IN/OUT range bounds. */
+.forge-scrub-present {
+  color: var(--gold, #d4a55a);
+}
+/* Slider container — same height as the boxes (matches the
+   zoom-gizmo + search height). Holds the track + 3 thumbs. */
+.forge-scrub-slider {
   pointer-events: auto;
   background: rgba(13, 17, 25, 0.85);
   border: 1px solid var(--border, #2a2e3a);
   border-radius: 4px;
-  padding: 4px 10px 6px;
-  font-family: var(--mono, "JetBrains Mono", Menlo, monospace);
-  font-size: 10px;
-  letter-spacing: 0.04em;
-  color: var(--text-2);
-  /* Half the search bar's max-width (360 → 180), locked so the
-     flex parent doesn't squeeze it. */
-  flex: 0 0 180px;
-  width: 180px;
+  padding: 5px 10px;
+  flex: 0 1 220px;
+  max-width: 260px;
+  min-width: 140px;
   box-sizing: border-box;
   display: flex;
-  flex-direction: column;
-  gap: 4px;
+  align-items: center;
   transition: border-color 0.2s ease;
 }
-.forge-timeline:hover { border-color: var(--gold-soft); }
-.forge-timeline-track {
+.forge-scrub-slider:hover { border-color: var(--gold-soft); }
+.forge-scrub-track {
   position: relative;
+  width: 100%;
   height: 14px;
-  margin: 0 6px;            /* leave room for thumbs at ends */
 }
-/* Track baseline — thin gold-soft line at vertical center. */
-.forge-timeline-track::before {
+.forge-scrub-track::before {
   content: "";
   position: absolute;
   left: 0; right: 0;
@@ -5779,8 +5799,7 @@ body:has(#forge-dev-panel.is-open) .forge-bottombar {
   background: var(--border, #2a2e3a);
   transform: translateY(-50%);
 }
-/* Highlighted IN→OUT range. Sits above the baseline. */
-.forge-timeline-range {
+.forge-scrub-range {
   position: absolute;
   top: 50%;
   height: 2px;
@@ -5789,22 +5808,21 @@ body:has(#forge-dev-panel.is-open) .forge-bottombar {
   pointer-events: none;
   border-radius: 1px;
 }
-/* Three thumbs. data-handle attr drives the drag routing in JS. */
-.forge-timeline-thumb {
+.forge-scrub-thumb {
   position: absolute;
   top: 50%;
   width: 8px;
   height: 12px;
-  margin-left: -4px;        /* center horizontally on `left` */
+  margin-left: -4px;
   margin-top: -6px;
   background: var(--gold-soft, #8a7430);
   border-radius: 1px;
   cursor: ew-resize;
   touch-action: none;
 }
-.forge-timeline-thumb:hover { background: var(--gold, #d4a55a); }
-.forge-timeline-center {
-  /* Playhead: a vertical needle, slimmer + brighter than IN/OUT. */
+.forge-scrub-thumb:hover { background: var(--gold, #d4a55a); }
+.forge-scrub-center-thumb {
+  /* Playhead: a slimmer brighter needle. */
   width: 2px;
   height: 14px;
   margin-left: -1px;
@@ -5813,13 +5831,7 @@ body:has(#forge-dev-panel.is-open) .forge-bottombar {
   cursor: grab;
   border-radius: 0;
 }
-.forge-timeline-center:active { cursor: grabbing; }
-.forge-timeline-readout {
-  font-variant-numeric: tabular-nums;
-  color: var(--text-2);
-  text-align: center;
-  line-height: 1;
-}
+.forge-scrub-center-thumb:active { cursor: grabbing; }
 
 .forge-stage {
   flex: 1 1 auto;
