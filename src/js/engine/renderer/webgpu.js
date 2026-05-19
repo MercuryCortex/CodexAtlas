@@ -136,7 +136,20 @@
       // so the SDF distance equals 1 at the disk edge and equals
       // glow_extent at the glow's outer edge.
       let size_mult  = mix(1.0, v.selected_size_mult, inst_selected);
-      let quad_scale = mix(1.0, v.selected_glow.w, inst_selected);
+      // 2026-05-19 — quad needs HEADROOM beyond the glow's outer
+      // smoothstep edge. If quad_scale equals glow_outer (as it
+      // used to), the smoothstep reaches 0 exactly at the quad's
+      // axis-aligned edge — meaning pixels just inside that edge
+      // still have a tiny glow_a above the discard threshold and
+      // WRITE depth at z=0 (the selected layer). Adjacent disk
+      // quads at z=0.3/0.6 then fail the depth test there,
+      // creating a visible SQUARE-shaped "bite" out of the
+      // background where adjacent disks would otherwise show.
+      // Padding the quad 1.5× past glow_outer means the smoothstep
+      // completes well inside the quad; outer pixels return
+      // glow_fade=0 → final_a=0 → discard → no depth write →
+      // adjacent disks paint cleanly through.
+      let quad_scale = mix(1.0, v.selected_glow.w * 1.5, inst_selected);
       let world      = inst_pos + quad_vertex * inst_radius * size_mult * quad_scale;
       let ndc        = world * v.view_scale + v.view_offset;
       // Phase 6d — depth-layer:
@@ -184,8 +197,13 @@
       // Phase 6d — discard near-transparent fragments so they
       // don't write depth. Without this, the SDF anti-alias
       // halo of a dimmed disk would block focused disks behind
-      // it (depth test less-equal). Threshold 0.04 = ~10/255.
-      if (final_a < 0.04) { discard; }
+      // it (depth test less-equal). Threshold bumped 0.04 → 0.08
+      // (2026-05-19) to cleanly cut the faint outer band of the
+      // selected glow that was leaving a thin square outline
+      // around the glow's quad bounding box — combined with the
+      // 1.5× quad headroom above, the glow now falls off
+      // perfectly circular with no visible quad geometry.
+      if (final_a < 0.08) { discard; }
       return vec4<f32>(final_rgb, final_a);
     }
   `;

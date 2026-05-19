@@ -1326,16 +1326,28 @@
     // bright on top, making the focus state look weak.
     function syncGlyphFocus() {
       const focus  = local.focusedSet;
+      const sel    = local.selectedSet;
       const baseOp = local.params.glyph_opacity;
       const dimMul = local.params.dim_amount_glyphs;
       const dimOp  = baseOp * (1 - dimMul);
+      // 2026-05-19 — z-index per state so selected glyphs always
+      // paint on top, focused-1-hop glyphs above the dim
+      // constellation, dim glyphs at the back. Without this DOM
+      // order rules and a selected node's glyph could get buried
+      // under whatever was appended after it during
+      // rebakeGlyphsForMode, making the "I clicked this" cue
+      // visually weaker when neighbors overlap.
       for (let i = 0; i < local.glyphEls.length; i++) {
         const g = local.glyphEls[i];
-        if (focus && !focus.has(g.id)) {
-          g.el.style.opacity = String(dimOp);
-        } else {
+        const isSel   = !!(sel   && sel.has(g.id));
+        const isFocus = !focus || focus.has(g.id);
+        if (isFocus) {
           g.el.style.opacity = '';   // fall back to CSS var
+        } else {
+          g.el.style.opacity = String(dimOp);
         }
+        // 1 = dim back row, 2 = focused 1-hop, 3 = selected anchor.
+        g.el.style.zIndex = isSel ? '3' : (isFocus ? '2' : '1');
       }
     }
 
