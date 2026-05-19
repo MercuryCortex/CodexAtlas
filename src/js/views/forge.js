@@ -311,6 +311,21 @@
     bottomBar.innerHTML = [
       '<button class="forge-zoom-gizmo" id="forge-zoom-gizmo" title="Current zoom — click to reset to fit">100%</button>',
       '<input type="text" class="forge-bottom-search" id="forge-status-search" placeholder="search…" autocomplete="off" spellcheck="false">',
+      // 2026-05-20 — Timeline scrubber. 3 handles: IN (lower bound),
+      // OUT (upper bound), CENTER (playhead). Half the search bar's
+      // width (compact). Same dark + mono + gold-accent styling as
+      // the search input. v1 ships the UI + range-derivation +
+      // value-display; filter wiring (dim out-of-range nodes) lands
+      // in a follow-up.
+      '<div class="forge-timeline" id="forge-timeline" title="Timeline — drag IN / OUT bounds; drag center to scrub">' +
+        '<div class="forge-timeline-track">' +
+          '<div class="forge-timeline-range" id="forge-timeline-range"></div>' +
+          '<div class="forge-timeline-thumb forge-timeline-in"     id="forge-timeline-in"     data-handle="in"></div>' +
+          '<div class="forge-timeline-thumb forge-timeline-center" id="forge-timeline-center" data-handle="center"></div>' +
+          '<div class="forge-timeline-thumb forge-timeline-out"    id="forge-timeline-out"    data-handle="out"></div>' +
+        '</div>' +
+        '<div class="forge-timeline-readout" id="forge-timeline-readout">—</div>' +
+      '</div>',
     ].join('');
     stage.appendChild(bottomBar);
 
@@ -732,6 +747,10 @@
         });
       }
 
+      // Timeline scrubber wire-up (2026-05-20). Three handles —
+      // IN / CENTER / OUT — drag to set bounds + playhead.
+      wireTimelineScrubber();
+
       // Bind interaction handlers AFTER renderer is ready.
       attachInteractions();
     })();
@@ -1137,18 +1156,21 @@
 
       // 2026-05-19 — diff-based show/hide (was: clear-all-then-set).
       // The clear-all version caused every visible label to FLICKER
-      // (opacity 1 → 0 transition began, then 0 → 1 began, the two
-      // overlapping = the "VERY slow" perceived fade John flagged).
+      // (opacity 1 → 0 transition began, then 0 → 1 began).
       // Diff version: only toggle labels whose membership CHANGED.
-      // Labels staying visible keep their data-visible (no transition
-      // restart). Labels staying hidden stay hidden. Only entering /
-      // leaving labels animate.
       //
-      // Plus: NEW labels (just created this call) need a forced
-      // reflow between DOM insert and data-visible so the browser
-      // computes opacity:0 first; otherwise it skips the transition
-      // as a first-paint optimization. el.getBoundingClientRect()
-      // triggers the layout pass synchronously.
+      // 2026-05-20 — perf fix for John's "IDLE-hover is slow + no
+      // fade" report. The previous version called
+      // el.getBoundingClientRect() PER new label (forcing a
+      // synchronous layout reflow N times for N new labels).
+      // Hovering from idle creates ~47 labels at once → 47 reflows
+      // per pointermove → layout thrash, fade stutters, hover
+      // feels sluggish. BATCH the reflow: insert all new labels
+      // into the DOM first, force ONE reflow for the whole batch
+      // via document.body.offsetHeight, then flip data-visible on
+      // all of them. Browser registers opacity:0 once for the
+      // whole batch before transitions fire — same fade-in
+      // guarantee, ~N× faster.
       for (const [id, el] of local.labelEls) {
         const shouldShow = visible.has(id);
         const isShowing  = el.hasAttribute('data-visible');
@@ -1158,15 +1180,18 @@
           el.removeAttribute('data-visible');
         }
       }
-      // New labels — create + force-reflow + flip.
+      // New labels — collect, single reflow, then flip-all.
+      const pendingFlip = [];
       for (const id of visible) {
         if (local.labelEls.has(id)) continue;
-        const el = ensureLabelEl(id);
-        // Force computed-style flush so the browser registers
-        // opacity:0 BEFORE we set data-visible. Cheap (single
-        // element, single layout query).
-        el.getBoundingClientRect();
-        el.setAttribute('data-visible', '1');
+        pendingFlip.push(ensureLabelEl(id));
+      }
+      if (pendingFlip.length > 0) {
+        // ONE synchronous reflow for the whole batch (cheap), so
+        // the browser registers initial opacity:0 before the
+        // attribute flips trigger the transitions.
+        void document.body.offsetHeight;
+        for (const el of pendingFlip) el.setAttribute('data-visible', '1');
       }
       syncLabelPositions();
     }
@@ -1549,6 +1574,163 @@
         }
       }
       return bestExact || bestPrefix || bestContains;
+    }
+
+    // ── Timeline scrubber (2026-05-20) ──────────────────────
+    // Three-handle compact slider in the bottom bar — IN (lower
+    // bound) + OUT (upper bound) + CENTER (playhead). Half the
+    // search bar's width.
+    //
+    // v1: UI + range-derivation + value-display only. Filter
+    // wiring (dim out-of-range nodes via a separate per-instance
+    // attribute) is the next batch. The values are kept on the
+    // `local.timeline` state object so the future filter pass can
+    // read them.
+    //
+    // Range derivation: scan current mode's nodes for date-start /
+    // date-end / date-attested-earliest YAML fields; min/max give
+    // the timeline bounds. If the mode has no dated nodes (e.g.,
+    // symbols), the scrubber is hidden.
+    function wireTimelineScrubber() {
+      const root = document.getElementById('forge-timeline');
+      if (!root) return;
+      const track   = root.querySelector('.forge-timeline-track');
+      const rangeEl = root.querySelector('#forge-timeline-range');
+      const inEl    = root.querySelector('#forge-timeline-in');
+      const ctrEl   = root.querySelector('#forge-timeline-center');
+      const outEl   = root.querySelector('#forge-timeline-out');
+      const readout = root.querySelector('#forge-timeline-readout');
+
+      // Derive [minYear, maxYear] from the current mode's nodes.
+      // Negative = BCE per the vault convention.
+      // Field naming: the YAML uses kebab-case (date-start,
+      // date-attested-earliest, etc.) but build_data.py normalizes
+      // to underscored snake_case (date_earliest, date_latest) in
+      // data.js. Read the normalized form first, fall back to raw
+      // for safety.
+      function deriveBounds() {
+        const nodes = local.mode && local.mode.nodes;
+        if (!nodes || !nodes.length) return null;
+        let lo = Infinity, hi = -Infinity;
+        for (const n of nodes) {
+          const candidates = [
+            n.date_earliest, n.date_latest,                // normalized
+            n['date-start'],  n['date-end'],               // raw fallback
+            n['date-attested-earliest'], n['date-attested-latest'],
+            n['originating-date'], n['date-composed-earliest'],
+            n['date-composed-latest'], n['date-formulated'],
+            n['date-founded'], n['date-built-earliest'],
+            n['date-built-latest'], n['date-birth'], n['date-death'],
+          ];
+          for (const v of candidates) {
+            if (v == null) continue;
+            const num = typeof v === 'number' ? v : parseInt(v, 10);
+            if (!isFinite(num)) continue;
+            if (num < lo) lo = num;
+            if (num > hi) hi = num;
+          }
+        }
+        if (!isFinite(lo) || !isFinite(hi) || lo >= hi) return null;
+        // Sanity clamp. Some nodes carry cosmological / pre-history
+        // dates (e.g., date_earliest = -1e9 for Big Bang / Earth
+        // formation references in cosmogonic-motif nodes). Those
+        // skew the timeline so far that the human-history span is
+        // a hairline. Clamp to a useful archaeology floor (-15000)
+        // and future ceiling (3000) — nodes outside this window
+        // are visible at the extreme end of the slider.
+        const HIST_LO = -15000;  // 15,000 BCE — before any writing
+        const HIST_HI =   3000;  // CE — near-future ceiling
+        if (lo < HIST_LO) lo = HIST_LO;
+        if (hi > HIST_HI) hi = HIST_HI;
+        // Round outward to nice century-edges so the readout looks
+        // tidy. -3142 → -3200; 2024 → 2100.
+        const lopad = Math.floor(lo / 100) * 100;
+        const hipad = Math.ceil(hi / 100) * 100;
+        return [lopad, hipad];
+      }
+
+      const bounds = deriveBounds();
+      if (!bounds) {
+        root.style.display = 'none';
+        return;
+      }
+      const [lo, hi] = bounds;
+
+      // local.timeline: {lo, hi, in, out, center} — `lo`/`hi` are
+      // immutable spine bounds; the others are user-driven within.
+      local.timeline = {
+        lo, hi,
+        inDate:     lo,
+        outDate:    hi,
+        centerDate: Math.floor((lo + hi) / 2),
+      };
+
+      // Date → fraction along track (0..1).
+      function dateToFrac(d) { return (d - lo) / (hi - lo); }
+      function fracToDate(f) {
+        f = Math.max(0, Math.min(1, f));
+        return Math.round(lo + f * (hi - lo));
+      }
+      function formatYear(y) {
+        if (y < 0) return Math.abs(y) + ' BCE';
+        if (y === 0) return '0';
+        return y + ' CE';
+      }
+      function refreshUI() {
+        const t = local.timeline;
+        const inF  = dateToFrac(t.inDate)     * 100;
+        const outF = dateToFrac(t.outDate)    * 100;
+        const ctrF = dateToFrac(t.centerDate) * 100;
+        inEl.style.left   = inF  + '%';
+        outEl.style.left  = outF + '%';
+        ctrEl.style.left  = ctrF + '%';
+        rangeEl.style.left  = inF + '%';
+        rangeEl.style.width = (outF - inF) + '%';
+        readout.textContent =
+          formatYear(t.inDate) + ' · ' +
+          formatYear(t.centerDate) + ' · ' +
+          formatYear(t.outDate);
+      }
+
+      // Drag state. Pointer events on track + thumbs; track captures
+      // so dragging outside the track still updates.
+      let dragHandle = null;
+      function onPointerDown(ev) {
+        const handle = ev.target && ev.target.dataset && ev.target.dataset.handle;
+        if (!handle) return;
+        dragHandle = handle;
+        track.setPointerCapture(ev.pointerId);
+        ev.preventDefault();
+      }
+      function onPointerMove(ev) {
+        if (!dragHandle) return;
+        const rect = track.getBoundingClientRect();
+        const frac = (ev.clientX - rect.left) / rect.width;
+        const date = fracToDate(frac);
+        const t = local.timeline;
+        if (dragHandle === 'in') {
+          t.inDate = Math.min(date, t.outDate - 1);
+          if (t.centerDate < t.inDate) t.centerDate = t.inDate;
+        } else if (dragHandle === 'out') {
+          t.outDate = Math.max(date, t.inDate + 1);
+          if (t.centerDate > t.outDate) t.centerDate = t.outDate;
+        } else if (dragHandle === 'center') {
+          t.centerDate = Math.max(t.inDate, Math.min(t.outDate, date));
+        }
+        refreshUI();
+      }
+      function onPointerUp(ev) {
+        if (!dragHandle) return;
+        dragHandle = null;
+        try { track.releasePointerCapture(ev.pointerId); } catch (e) { /* ignore */ }
+      }
+      track.addEventListener('pointerdown', onPointerDown);
+      track.addEventListener('pointermove', onPointerMove);
+      track.addEventListener('pointerup',   onPointerUp);
+      track.addEventListener('pointercancel', onPointerUp);
+
+      // First render.
+      refreshUI();
     }
 
     // Submit a search query. On match: lock the node, fly the
