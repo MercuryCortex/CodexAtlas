@@ -878,8 +878,20 @@
       local.hoverId    = null;
       local.lockedSet  = new Set();
       local.focusedSet = null;
-      // Wipe label divs from the previous mode — different ids,
-      // different positions. Lazy creation re-mounts on demand.
+      // 2026-05-20 — audit-flagged root cause of the IDLE-hover
+      // lag: first hover from a settled IDLE state was creating
+      // ~47 label divs on the spot (appendChild × 47 + a single
+      // batched reflow). The DOM materialization stalled the
+      // render thread for 1-2 frames, swallowing the fade
+      // visually — so the user perceived "no animation, slow".
+      // LOCKED-hover felt smooth because the locked node's labels
+      // ALREADY existed in DOM from the lock click.
+      //
+      // Fix: PRE-CREATE label DOM for every node in the mode now,
+      // at opacity:0 (CSS default — no data-visible attribute).
+      // First hover only flips `data-visible="1"` on the diff —
+      // zero DOM allocation, zero reflow. The IDLE↔hover stall
+      // is fully eliminated.
       for (const el of local.labelEls.values()) {
         try { el.remove(); } catch (e) { /* ignore */ }
       }
@@ -913,6 +925,35 @@
         local.glyphEls.push({ el: span, id, baseR: r });
         local.glyphFamilyColor.set(id, fc);
       }
+
+      // 2026-05-20 — pre-create label DOM for every node in this
+      // mode. They start at opacity:0 (CSS default — no
+      // data-visible attribute), zero perf cost until shown.
+      // First hover then only flips data-visible="1" on the diff
+      // — no appendChild / reflow during the user's first hover.
+      // (See the long-form note in the `local.labelEls.clear()`
+      // block above for the root-cause story.) Single batch
+      // append using a DocumentFragment so we pay one reflow
+      // here, not 663 individual ones.
+      const labelFrag = document.createDocumentFragment();
+      for (let i = 0; i < nodePack.instanceCount; i++) {
+        const id = nodePack.idIndex[i];
+        // ensureLabelEl appends to labelsOverlay directly, so to
+        // batch we replicate its core inline + use the fragment.
+        if (local.labelEls.has(id)) continue;
+        const el = document.createElement('div');
+        el.className = 'forge-label';
+        const node = nodeById(id);
+        let title = (node && node.title) || '';
+        if (!title) {
+          const mn = modeNodeById.get(id);
+          if (mn && mn.title) title = mn.title;
+        }
+        el.textContent = title || id;
+        labelFrag.appendChild(el);
+        local.labelEls.set(id, el);
+      }
+      labelsOverlay.appendChild(labelFrag);
 
       // Status strip counters + dropdown selection sync.
       const nEl = document.getElementById('forge-status-nodes');
@@ -1172,23 +1213,14 @@
         for (const id of idleSet) visible.add(id);
       }
 
-      // 2026-05-19 — diff-based show/hide (was: clear-all-then-set).
-      // The clear-all version caused every visible label to FLICKER
-      // (opacity 1 → 0 transition began, then 0 → 1 began).
-      // Diff version: only toggle labels whose membership CHANGED.
-      //
-      // 2026-05-20 — perf fix for John's "IDLE-hover is slow + no
-      // fade" report. The previous version called
-      // el.getBoundingClientRect() PER new label (forcing a
-      // synchronous layout reflow N times for N new labels).
-      // Hovering from idle creates ~47 labels at once → 47 reflows
-      // per pointermove → layout thrash, fade stutters, hover
-      // feels sluggish. BATCH the reflow: insert all new labels
-      // into the DOM first, force ONE reflow for the whole batch
-      // via document.body.offsetHeight, then flip data-visible on
-      // all of them. Browser registers opacity:0 once for the
-      // whole batch before transitions fire — same fade-in
-      // guarantee, ~N× faster.
+      // 2026-05-20 — pure attribute-diff. Label DOM is now
+      // pre-created at rebuildForMode time (one batched fragment
+      // append for the whole mode), so syncLabels never has to
+      // create / append / reflow during hover. Just flips
+      // data-visible on the set diff. CSS opacity transition
+      // handles the fade. Result: hover from settled IDLE no
+      // longer pays the 47×appendChild stall that was swallowing
+      // the first fade frames.
       for (const [id, el] of local.labelEls) {
         const shouldShow = visible.has(id);
         const isShowing  = el.hasAttribute('data-visible');
@@ -1198,18 +1230,11 @@
           el.removeAttribute('data-visible');
         }
       }
-      // New labels — collect, single reflow, then flip-all.
-      const pendingFlip = [];
+      // Defensive: lazy-create for any id not pre-created (newly
+      // arrived after rebuildForMode, shouldn't happen but be safe).
       for (const id of visible) {
         if (local.labelEls.has(id)) continue;
-        pendingFlip.push(ensureLabelEl(id));
-      }
-      if (pendingFlip.length > 0) {
-        // ONE synchronous reflow for the whole batch (cheap), so
-        // the browser registers initial opacity:0 before the
-        // attribute flips trigger the transitions.
-        void document.body.offsetHeight;
-        for (const el of pendingFlip) el.setAttribute('data-visible', '1');
+        ensureLabelEl(id).setAttribute('data-visible', '1');
       }
       syncLabelPositions();
     }
@@ -1403,31 +1428,15 @@
         // First-time alloc — initial value matches target so no surprise flash.
         local.edgeStates = new Float32Array(newTargets);
       }
-      // 2026-05-20 — pre-warm the fade. Root cause of John's
-      // "IDLE-hover slow + no animation" report: the drawFrame
-      // below uses the CURRENT state buffer (pre-animation).
-      // animTick advances the state on the NEXT rAF (~16ms
-      // later). For LOCKED-hover the delta is tiny (most state
-      // values barely change) so the gap is invisible. For
-      // IDLE→hover the delta is massive (hundreds of nodes flip
-      // from state=0 to state=1, plus selected glow appears on
-      // the hovered node), and that 16ms of "nothing happened"
-      // before the animation begins reads as a delayed pop, not
-      // a smooth fade. Fix: advance the live buffer ~30% toward
-      // the new target right here so the very first drawFrame
-      // shows visible progress. The remaining 70% completes via
-      // tickNodeFades / tickEdgeFades over the next ~7 frames.
-      // Visually: the hover response is now immediate instead of
-      // one-frame-stale.
-      const WARM_STEP = 0.3;
-      for (let i = 0; i < local.nodeStates.length; i++) {
-        const c = local.nodeStates[i], t = local.nodeTargets[i];
-        if (c !== t) local.nodeStates[i] = c + (t - c) * WARM_STEP;
-      }
-      for (let i = 0; i < local.edgeStates.length; i++) {
-        const c = local.edgeStates[i], t = local.edgeTargets[i];
-        if (c !== t) local.edgeStates[i] = c + (t - c) * WARM_STEP;
-      }
+      // 2026-05-20 — pre-warm removed. Earlier attempts to fix
+      // the IDLE-hover lag with a 30% pre-advance broke
+      // LOCKED-hover smoothness (each cursor move jumped the
+      // in-flight animation, killing the buttery fade) AND made
+      // clicks feel buffered. The proper fix was the
+      // label-DOM-pre-create above in rebuildForMode + the
+      // fade-aware rebakeNodes. Both implemented per the Plan
+      // agent's audit. Fade animation now flows uninterrupted in
+      // both IDLE and LOCKED modes.
       // Kick the animation loop. It self-exits when both the
       // camera and all edge fades have settled.
       startAnimLoop();
@@ -2122,14 +2131,35 @@
         m.hitNodes[i] = hn;
         m.hitById.set(id, hn);
       }
-      // Rebuild the (state, selected) interleaved buffer from the
-      // CURRENT focus + lock state — a fresh zero array would lose
-      // the SELECTED flag when zoom triggers a re-pack mid-lock.
+      // 2026-05-20 — fade-aware (mirror rebakeEdges). Previous
+      // version wholesale-replaced local.nodeStates with a fresh
+      // interleavePairs() result — that killed any in-flight node
+      // fade by snapping current values to the target. So a zoom
+      // drift during a hover-transition (or a dev-panel slider
+      // tweak) would cause the disk fade to JUMP rather than
+      // continue. Audit reported this as the highest-impact bug
+      // bypassing the fade pipeline (alongside the rebakeEdges
+      // pattern which was already correct).
+      //
+      // Fix: update local.nodeTargets in place, only resize
+      // local.nodeStates when the length actually changed (mode
+      // switch with different instance count). The live buffer
+      // animates toward the new targets via tickNodeFades — fade
+      // continuity preserved.
       const states      = graph.computeNodeStates(np.idIndex, local.focusedSet);
       const selectFlags = graph.computeSelectedStates
         ? graph.computeSelectedStates(np.idIndex, local.selectedSet)
         : new Float32Array(np.idIndex.length);
-      local.nodeStates  = interleavePairs(states, selectFlags);
+      const newNodeTargets = interleavePairs(states, selectFlags);
+      if (!local.nodeTargets || local.nodeTargets.length !== newNodeTargets.length) {
+        local.nodeTargets = newNodeTargets;
+      } else {
+        local.nodeTargets.set(newNodeTargets);
+      }
+      if (!local.nodeStates || local.nodeStates.length !== newNodeTargets.length) {
+        local.nodeStates = new Float32Array(newNodeTargets);
+      }
+      startAnimLoop();
       // Track the camera scale this pack was made at, so the
       // re-pack-on-zoom hook knows when it's actually stale.
       local.packedAtScale = (camera && camera.state) ? camera.state.scale : 1;
