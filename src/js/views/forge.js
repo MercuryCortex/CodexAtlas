@@ -272,9 +272,15 @@
       '<option value="' + m.value + '">' + m.glyph + '  ' + m.label + '</option>'
     ).join('');
     status.innerHTML = [
-      // 2026-05-19 — dropped the redundant "FORGE" status tag.
-      // The app shell's #view-title already shows "Forge" in the
-      // top header bar; carrying it again here doubled up.
+      // 2026-05-19 — restored the clean monospace FORGE tag here.
+      // The dup was the OTHER way around: app shell's view-header
+      // was rendering "FORGE" in big stretched serif (the global
+      // .view-header h2 rule with letter-spacing 0.32em +
+      // text-transform: uppercase), AND this neat tag below.
+      // John wanted the neat one kept; CSS now hides the app
+      // shell header for body.view-forge entirely.
+      '<span class="forge-status-tag">FORGE</span>',
+      '<span class="forge-status-sep">·</span>',
       '<select class="forge-status-mode" id="forge-status-mode" title="What is this wheel showing?">' + modeOptionsHtml + '</select>',
       '<span class="forge-status-sep">·</span>',
       '<span class="forge-status-k">device</span>',

@@ -5862,6 +5862,15 @@ body:has(#forge-dev-panel.is-open) .forge-bottombar {
    <footer> with `#filter-search`) is also Pantheon-only — its
    filter wiring doesn't reach the Forge view, so it's just dead
    chrome here. Hide it + its toggle button. */
+/* 2026-05-19 — hide the app shell view-header in Forge. The
+   global .view-header h2 rule renders "FORGE" in big stretched
+   serif (text-transform: uppercase + letter-spacing: 0.32em),
+   doubling up with the canvas-overlay status strip. Forge owns
+   its own chrome via the status strip, so the global header
+   isn't needed — same pattern as Transmutation + Scripture
+   views already do (lines 2894 + 4258). */
+body.view-forge .view-header { display: none; }
+
 body.view-forge #codex-dev-panel,
 body.view-forge #codex-dev-tab,
 body.view-forge > footer,
