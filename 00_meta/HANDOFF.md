@@ -1,12 +1,83 @@
-# Session HANDOFF — 2026-05-18 PM (logout)
+# Session HANDOFF — 2026-05-18 evening (after ontology lock pass 2)
 
-**Last work:** Forge engine Phases 5 → 6d4 + `opus-forge-edge-state-invariant` + `opus-forge-cachebust-bump`. **One critical bug remains open** — resize → all wires turn HOT. John logged out asking for a mission log + outstanding plan; this is it.
+**Last work:**
+1. Forge engine Phases 5 → 6d4 + the edge-state-invariant audit + cache-bust dance.
+2. The "wires lit up after resize" bug — **diagnosed and closed** — was dev-panel/engine drift, NOT state-buffer corruption. See `AUDIT/forge-edge-state-invariant-2026-05-18.md` "FINAL DIAGNOSIS" section.
+3. **Ontology lock pass 2** — 26-lens vocabulary established (was 16). 10 new lenses added (08, 18–26). See commits `4ba1a2b` → `67e751e` and the permanent rationale doc `00_meta/ONTOLOGY-RATIONALE-2026-05-18.md`.
 
 ---
 
-## ⚠️ READ FIRST — the open bug
+## ⚠️ READ FIRST — current state
 
-Bug class: `resize → all wires render in HOT bucket color`.
+### 1. Forge UX work (John in flight)
+
+John is working on the Forge map view (visual tuning, dev panel). When ready, he will EXPORT the tuned JSON from the dev panel. The next agent's job:
+- Bake the EXPORT JSON into `PARAM_DEFAULTS` in `src/js/views/forge.js` (Lane B).
+- Then ship the structural fix from the audit's "FINAL DIAGNOSIS" §Option B: Forge view `render()` should pull dev-panel state on mount so the engine and panel can't desync.
+- **Do NOT re-investigate the edge-state-buffer bug — it's closed. The audit's earlier sections are historical reference, not active work.**
+
+### 2. Ontology lock pass 2 (just shipped)
+
+The 16-lens vocabulary expanded to 26. New folders exist on disk with READMEs:
+- `08_places/` (filled the historic gap)
+- `18_languages/`, `19_astronomy/`, `20_sacred_architecture/`, `21_theology/`, `22_practices/`, `23_material_culture/`, `24_pharmacology/`, `25_divination/`, `26_calendars/`
+
+**Read `00_meta/ONTOLOGY.md` (§2 lens table) and `00_meta/ONTOLOGY-RATIONALE-2026-05-18.md` (permanent rationale).** Any future change to the ontology requires writing a NEW dated rationale doc, not editing the existing one.
+
+### 3. Deferred to next Lane B window — atomic batch (must ship together)
+
+When John frees the Lane B slot (after Forge tuning settles), the next Lane B claimant must ship all of these in one atomic batch:
+
+- [ ] **Themes → Motifs rename** — `06_themes/` → `06_motifs/`, `type: theme` → `type: motif`, vault-wide YAML field references (`themes:` → `motifs:`), `CORE-THEMES.md` → `CORE-MOTIFS.md`.
+- [ ] **`build_data.py` `NODE_TYPE_MAP`** updates for the 10 new lens types.
+- [ ] **`build_dashboard.py`, `lint_yaml.py`, `fetch_thumbnails.py`, `review_thumbnails.py`, `fetch_wikidata_thumbnails.py`** — sweep for hardcoded folder lists; update to cover 08 + 18–26.
+- [ ] **Pre-commit hook regex** — `scripts/git-hooks/pre-commit` LANE_A regex from `^(0[1-9]_|1[0-7]_)` → `^(0[1-9]_|1[0-9]_|2[0-6]_)`. Re-install to `.git/hooks/pre-commit`.
+- [ ] **Forge mode dropdown** — add the new node types to the renderable modes.
+
+**Why deferred:** every item touches Lane B paths. Shipping them while John has the Lane B slot would collide with his map DEV work. Ship them as one atomic Lane B batch when the slot frees.
+
+### 4. Investigation agents (Lane A) — what they can do NOW
+
+May begin staging nodes in the 10 new folders. Use the `type:` value documented in each folder's `README.md`. **Nodes will not appear in the graph until the deferred Lane B batch lands** (step 3 above) — but the disk structure is correct, the YAML skeletons are documented, and the work will integrate the moment the build script catches up.
+
+### 5. Bug class to test FIRST if any visual glitch in Forge
+
+`feedback_devpanel_engine_drift.md` (memory) — when John reports a visual glitch in Forge, test dev-panel ↔ engine sync first. Run:
+
+```js
+await _forgeDebug.dumpBugState()
+```
+
+Compare `params.X` against what the dev panel displays. If they differ → drift. **Don't theorise about shaders or state buffers before testing this.**
+
+---
+
+## Bug class CLOSED (was open in previous HANDOFF)
+
+The "wires lit up after resize" bug class is **resolved**.
+
+**What it actually was:** dev-panel `state.params` and engine `local.params` desyncing on view (re)mount. Forge `render()` initializes `local.params` from `PARAM_DEFAULTS` on every mount; dev panel only pushes its state once via `tryBoot`. View remount → engine resets to code defaults → panel still displays saved values → drift.
+
+**What it WASN'T:** edge-state buffer corruption. The state-convention flip (commit `6bfa018`) was a correct fix for a real latent bug but not for the user-visible "wires lit" symptom.
+
+**Workflow fix John adopted:** stay on Forge while tuning; EXPORT panel JSON; bake into `PARAM_DEFAULTS`. Then the engine's "default" IS the tuned state. Drift impossible by construction.
+
+**Structural fix queued (Option B in the audit):** Forge `render()` should pull dev-panel state on mount instead of resetting to `PARAM_DEFAULTS`. Ships with the deferred Lane B batch.
+
+---
+
+## Lane status
+
+- **Lane A:** OPEN. opus-ontology-lock-2026-05-18 FINISHED 2026-05-18 evening.
+- **Lane B:** John in flight (Forge map DEV / visual tuning).
+
+---
+
+_Older content from previous handoff preserved below for reference._
+
+---
+
+## Previous handoff content (pre-ontology-lock)
 
 ### Symptom (John's repro, both Safari + Brave/Chrome)
 
