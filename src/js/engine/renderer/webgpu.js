@@ -304,10 +304,13 @@
       // from source (in.edge_t=0) toward target (in.edge_t=1).
       // Eye-readable cue for edge direction + helps separate
       // wires that overlap or share endpoints. Multiplier mixes
-      // 1.0 (no change at source) → 0.55 (45% darker at target).
+      // 1.0 (no change at source) → 0.25 (75% darker at target).
+      // First iteration shipped at 0.55 — John couldn't see the
+      // darken on faint idle wires. Cranked to make the
+      // direction unmissable; tunable from here.
       // Applies equally to IDLE and HOT — gradient is universal,
       // not state-dependent.
-      let grad_mult = mix(1.0, 0.55, in.edge_t);
+      let grad_mult = mix(1.0, 0.25, in.edge_t);
       let a        = color.a * alpha_aa * dim_mult;
       // Phase 6d — same discard logic as nodes: AA halo fragments
       // shouldn't write depth, else they block disks behind them.

@@ -891,8 +891,17 @@
         // Frame the wheel into the viewport on mount.
         camera.fitToExtent(local.mode.worldExtent, { w, h }, 0);
       } else if (sizeChanged) {
-        // On resize, re-fit so the wheel doesn't get cropped.
-        camera.fitToExtent(local.mode.worldExtent, { w, h }, 0);
+        // 2026-05-19 — DO NOT auto-refit on resize. John's
+        // feedback: "Resizing on zooms makes the wheel zoom out
+        // to 100% and centers it — we don't want that." The
+        // camera should preserve the user's zoom + pan state
+        // through a viewport resize. Only the canvas pixel size
+        // changes; world coords stay anchored.
+        //
+        // We still need rebakeNodes() below because packNodes
+        // bakes the on-screen-px clamp into the world radius
+        // using camera.state.scale at pack time — but the scale
+        // itself stays where the user left it.
         // Phase 6d — defensive: REBUILD EVERY GPU-side per-instance
         // buffer from scratch. The "wires turn orange after resize"
         // bug John reported was a state-buffer corruption that I
@@ -1253,10 +1262,11 @@
 
     // 2026-05-19 — advance per-edge state toward its target by
     // dt / FADE_DURATION per second. Returns true if any edge is
-    // still in flight (loop must keep ticking). Hover-in feels
-    // snappy at 0.1s; hover-out lingers just long enough that
-    // the eye registers the highlight even on a fast cursor swipe.
-    const FADE_DURATION = 0.1;
+    // still in flight (loop must keep ticking). Tunable from
+    // here. First shipped at 0.10s — John said "no fade visible";
+    // bumped to 0.25s so the ease is clearly perceivable. Reduce
+    // if it feels sluggish.
+    const FADE_DURATION = 0.25;
     function tickEdgeFades(dt) {
       const cur = local.edgeStates;
       const tgt = local.edgeTargets;
