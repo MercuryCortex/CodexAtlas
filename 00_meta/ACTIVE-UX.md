@@ -8,9 +8,11 @@
 
 | Handle | Scope | Owned files (explicit) | Started | Status |
 |---|---|---|---|---|
+
 _Slot is open. Claim it by filling the row above. If the slot is taken, switch to investigation work or wait._
 
 ### Recently released
+- `opus-forge-bake-step02-plus-optionB` (2026-05-18 night) — baked John's step-02 dev-panel JSON into Forge `PARAM_DEFAULTS` + shipped Option B structural fix (engine pulls dev-panel state via `window.AtlasEngineForgeDevPanel.getState()` on view mount, eliminating the panel-vs-engine drift bug class permanently) + fixed dual-defaults architectural bug discovered during verification (exposed `window._forge.PARAM_DEFAULTS` as single source of truth; `dev-panel-forge.js` hydration now prefers engine defaults over per-control fallback). Verified live in preview iframe: all bake values landing (active_color_transmission #5a4bd5, dim_amount 0.80, wire_min 1 / wire_max 2, label thresholds 0.10/1.20/1.65/1.95, idle slate palette), `forge_PARAM_DEFAULTS_exposed: true`, GPU + JS edge states both all-zero (idle convention flip still holding). Files: `src/js/views/forge.js`, `src/js/engine/dev-panel-forge.js`, `index.html` (cache-bust `20260518-bake-step02-optB`).
 - `opus-forge-edge-state-readback` (2026-05-18 PM) — added GPU-side readback probe to break the speculation loop on the recurring "wires light up after resize" bug. Renderer now exposes `debugReadEdgeStates()` + `debugReadNodeStates()` (async, MAP_READ staging buffer). View exposes one-shot `_forgeDebug.dumpBugState()` that combines JS-side state + GPU-side readback + bucket palette + camera/viewport/DPR/cache-bust in a single JSON dump. Ground truth for John to paste back when the bug appears. `ensureBuffer` now adds `COPY_SRC` to all state/instance VBOs so the readback methods are valid.
 - `opus-forge-cachebust-bump` (2026-05-18 PM) — bumped cache-bust slugs in `index.html` to force fresh JS fetch.
 

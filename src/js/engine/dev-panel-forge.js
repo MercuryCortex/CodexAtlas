@@ -269,9 +269,27 @@
     fonts:  Object.assign({}, FONT_SCOPES.reduce((o, s) => (o[s.id] = s.defaultFont, o), {}), stored.fonts || {}),
     open:   stored.open || false,
   };
+  // 2026-05-18 — single-source-of-truth fix. Defaults priority on
+  // hydration:
+  //   1) persisted LS value (user customization wins)
+  //   2) engine's PARAM_DEFAULTS (the canonical engine defaults — the
+  //      latest bake; exposed by forge.js as window._forge.PARAM_DEFAULTS)
+  //   3) ALL_PARAMS[id].default (local fallback for params the engine
+  //      doesn't know about — exists for resilience but should not
+  //      be needed in practice)
+  // Eliminates the dual-defaults bug class where dev-panel local
+  // defaults drifted from engine PARAM_DEFAULTS every time the engine
+  // was baked from an EXPORT.
+  const engineDefaults = (window._forge && window._forge.PARAM_DEFAULTS) || null;
   for (const id of Object.keys(ALL_PARAMS)) {
     const stash = stored.params && stored.params[id];
-    state.params[id] = (stash !== undefined) ? stash : ALL_PARAMS[id].default;
+    if (stash !== undefined) {
+      state.params[id] = stash;
+    } else if (engineDefaults && id in engineDefaults) {
+      state.params[id] = engineDefaults[id];
+    } else {
+      state.params[id] = ALL_PARAMS[id].default;
+    }
   }
   function persist() {
     saveStored({ params: state.params, icons: state.icons, fonts: state.fonts, open: state.open });

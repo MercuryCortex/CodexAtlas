@@ -84,112 +84,125 @@
   //   LABELS        — idle-tier visibility hierarchy.
   //   PALETTE       — global colours (background / label text + halo).
   //   CAMERA        — pan inertia + zoom + fly-to timing.
+  // ── 2026-05-18 BAKE (step-02) ──────────────────────────────
+  // John's tuned dev-panel JSON exported and baked here as the
+  // canonical engine defaults. Every value below is HIS chosen
+  // value, not the original code-defaults. Cumulative consequence:
+  //  (1) fresh page load on any machine shows John's tuned state,
+  //  (2) PARAM_DEFAULTS = the ground-zero fallback that the
+  //      dev-panel/engine sync (Option B in render()) reconciles
+  //      against, so drift on view-remount is structurally
+  //      impossible.
+  // Original code-defaults preserved in git history; recover via
+  //   git show 4976623:src/js/views/forge.js | grep PARAM_DEFAULTS
+  // (commit just before the bake).
+  //
+  // To re-bake from a new EXPORT JSON: replace the values below
+  // with the matching keys from the new JSON. Don't add keys here
+  // that the JSON doesn't have — every PARAM_DEFAULTS key must
+  // match the dev-panel's params catalog in dev-panel-forge.js.
+  // ----------------------------------------------------------
+  // Default-icons + default-fonts are NOT baked into PARAM_DEFAULTS
+  // (those are not parameters); they apply via the Option B pull
+  // in render() if the dev panel's LS state is present. Fresh
+  // installs see the default per-type glyphs; John's icons load
+  // from his dev panel's LS.
   const PARAM_DEFAULTS = Object.freeze({
-    // ── WIRES · IDLE STATE (per bucket) ──
-    idle_color_transmission: '#3a4a66',  // slate atmospheric
+    // ── WIRES · IDLE STATE (per bucket) ── slate atmospheric across all buckets
+    idle_color_transmission: '#3a4a66',
     idle_color_parallel:     '#3a4a66',
     idle_color_association:  '#3a4a66',
     idle_color_kinship:      '#3a4a66',
     idle_color_attestation:  '#3a4a66',
-    idle_color_polemic:      '#A83E4A',  // headline bucket idles in its hue
-    idle_color_fusion:       '#C4783A',
+    idle_color_polemic:      '#3a4a66',
+    idle_color_fusion:       '#3a4a66',
     idle_opacity_transmission: 0.10,
-    idle_opacity_parallel:     0.12,
-    idle_opacity_association:  0.08,
-    idle_opacity_kinship:      0.14,
+    idle_opacity_parallel:     0.10,
+    idle_opacity_association:  0.10,
+    idle_opacity_kinship:      0.10,
     idle_opacity_attestation:  0.10,
-    idle_opacity_polemic:      0.25,
-    idle_opacity_fusion:       0.30,
-    idle_stroke_transmission:  0.34,
+    idle_opacity_polemic:      0.10,
+    idle_opacity_fusion:       0.10,
+    idle_stroke_transmission:  0.30,
     idle_stroke_parallel:      0.30,
-    idle_stroke_association:   0.22,
-    idle_stroke_kinship:       0.32,
+    idle_stroke_association:   0.30,
+    idle_stroke_kinship:       0.30,
     idle_stroke_attestation:   0.30,
-    idle_stroke_polemic:       0.40,
-    idle_stroke_fusion:        0.36,
+    idle_stroke_polemic:       0.30,
+    idle_stroke_fusion:        0.30,
 
-    // ── WIRES · ACTIVE STATE (per bucket) ──
-    active_color_transmission: '#C9743A',
-    active_color_parallel:     '#5A9A8F',
-    active_color_association:  '#4A5AA4',
-    active_color_kinship:      '#C9A5D4',
-    active_color_attestation:  '#D4A55A',
-    active_color_polemic:      '#A83E4A',
-    active_color_fusion:       '#C4783A',
-    active_opacity_transmission: 0.95,
-    active_opacity_parallel:     0.85,
-    active_opacity_association:  0.55,
-    active_opacity_kinship:      0.85,
-    active_opacity_attestation:  0.90,
-    active_opacity_polemic:      0.95,
-    active_opacity_fusion:       0.95,
-    active_stroke_transmission:  0.82,   // pre-Phase-6: 2.4× idle
-    active_stroke_parallel:      0.72,
-    active_stroke_association:   0.53,
-    active_stroke_kinship:       0.77,
-    active_stroke_attestation:   0.72,
-    active_stroke_polemic:       0.96,
-    active_stroke_fusion:        0.86,
+    // ── WIRES · ACTIVE STATE (per bucket) ── John's tuned palette
+    active_color_transmission: '#5a4bd5',  // violet
+    active_color_parallel:     '#004093',  // deep blue
+    active_color_association:  '#097a8e',  // teal
+    active_color_kinship:      '#0f8f31',  // green
+    active_color_attestation:  '#9cad8c',  // sage
+    active_color_polemic:      '#710713',  // deep crimson
+    active_color_fusion:       '#725b3f',  // warm brown
+    active_opacity_transmission: 0.75,
+    active_opacity_parallel:     0.76,
+    active_opacity_association:  0.78,
+    active_opacity_kinship:      0.75,
+    active_opacity_attestation:  0.74,
+    active_opacity_polemic:      0.90,
+    active_opacity_fusion:       0.75,
+    active_stroke_transmission:  0.57,
+    active_stroke_parallel:      0.51,
+    active_stroke_association:   0.51,
+    active_stroke_kinship:       0.51,
+    active_stroke_attestation:   0.55,
+    active_stroke_polemic:       0.80,
+    active_stroke_fusion:        0.51,
 
-    // ── WIRES · SHAPE (state-independent) ──
-    curve_transmission: 0.35,
-    curve_parallel:     0.30,
-    curve_association:  0.22,
-    curve_kinship:      0.40,
-    curve_attestation:  0.32,
-    curve_polemic:      0.42,
-    curve_fusion:       0.45,
+    // ── WIRES · SHAPE (state-independent) ── John's tuned curvatures
+    curve_transmission: 0.22,
+    curve_parallel:     0.31,
+    curve_association:  0.21,
+    curve_kinship:      0.13,
+    curve_attestation:  0.14,
+    curve_polemic:      0.20,
+    curve_fusion:       0.30,
 
-    // ── FOCUS / DIM ──
-    // Three separate channels: edges (wires), nodes (disks),
-    // glyphs (SVG overlay). The glyphs were previously not
-    // fading at all because they're DOM elements with their own
-    // opacity — the shader-side dim only touched the disks.
-    dim_amount:        0.85,    // edges
-    dim_amount_nodes:  0.85,
-    dim_amount_glyphs: 0.85,
+    // ── FOCUS / DIM ── tighter than pre-bake (was 0.85 across)
+    dim_amount:        0.80,    // edges
+    dim_amount_nodes:  0.90,
+    dim_amount_glyphs: 0.90,
     atmosphere:        0.025,
 
-    // ── SELECTED STATE (Phase 6c — 3rd state above HIGHLIGHTED) ──
-    // The actually clicked / hovered node, distinct from its
-    // 1-hop neighbours. Renders with an SDF glow ring + optional
-    // size bump so the anchor stays visually distinct from its
-    // illuminated tree.
-    selected_size_mult:     1.15,
-    selected_glow_strength: 0.65,
+    // ── SELECTED STATE ──
+    selected_size_mult:     1.20,
+    selected_glow_strength: 0.50,
     selected_glow_extent:   1.6,
-    selected_glow_color:    '#FFE9B0',  // warm gold-cream
+    selected_glow_color:    '#FFE9B0',
 
-    // ── NODES ──
-    node_radius_tier1:    16,
-    node_radius_tier2:    12,
-    node_radius_tier3:     9,
-    node_radius_tier4:     7,
-    node_min_screen_px:    3,    // dynamic-sizing clamps
-    node_max_screen_px:   28,
+    // ── NODES ── smaller than pre-bake (was 16/12/9/7 max 28)
+    node_radius_tier1:     8,
+    node_radius_tier2:     7,
+    node_radius_tier3:     6,
+    node_radius_tier4:     5,
+    node_min_screen_px:    3,
+    node_max_screen_px:   22,
 
-    // ── WIRES · ZOOM CLAMP (Phase 6b) ──
-    wire_min_screen_px:   0.5,   // don't shrink below this CSS-px width
-    wire_max_screen_px:   4,     // don't grow above this CSS-px width
+    // ── WIRES · ZOOM CLAMP ── narrower band than pre-bake (was 0.5/4)
+    wire_min_screen_px:   1,
+    wire_max_screen_px:   2,
 
     // ── GLYPHS ──
-    glyph_scale:   0.95,
+    glyph_scale:   0.85,
     glyph_opacity: 0.86,
-    glyph_tint:    0.55,
+    glyph_tint:    0.25,
 
-    // ── LABELS ──
-    // Per-tier zoom thresholds for IDLE-state labels.
-    // Use 999 to mean "never show at idle for this tier".
-    // Thresholds are in % units of the FIT scale (1.0 = whole
-    // wheel fills viewport). At 4.0 = zoomed in 4× past fit.
-    label_idle_zoom_tier1: 0,      // tier 0 (top 4%) — always
-    label_idle_zoom_tier2: 1.0,    // tier 1 (next 11%)
-    label_idle_zoom_tier3: 2.0,    // tier 2 (next 25%)
-    label_idle_zoom_tier4: 4.0,    // tier 3 (rest) — reveal at 4× zoom
-    label_idle_max:        800,    // safety cap on idle labels (raised so tier 3 isn't truncated)
-    label_size:            11,
-    label_cap:             80,     // focus-state label cap
-    label_collision_pad:   2,      // AABB padding in px
+    // ── LABELS ── John's progressive zoom thresholds (step-02 values;
+    // step-01 was much more aggressive at 0/0.2/0.35/0.45 — step-02
+    // tightened to reduce label clutter at lower zoom).
+    label_idle_zoom_tier1: 0.10,   // tier 0 — basically always
+    label_idle_zoom_tier2: 1.20,
+    label_idle_zoom_tier3: 1.65,
+    label_idle_zoom_tier4: 1.95,
+    label_idle_max:        750,    // bumped from 800 → 1200 in step-01, settled at 750 in step-02
+    label_size:            12,
+    label_cap:             120,
+    label_collision_pad:   6,
 
     // ── GLOBAL PALETTE ──
     palette_background: '#0a0c10',
@@ -376,10 +389,60 @@
       // Phase 5: live-tweak parameter dict + per-type icon overrides.
       // Populated from PARAM_DEFAULTS on mount; the Forge dev panel
       // overrides via setParam / setIcon / setFont.
+      //
+      // 2026-05-18 — Option B structural fix (audit
+      // AUDIT/forge-edge-state-invariant-2026-05-18.md "FINAL
+      // DIAGNOSIS" §Option B): on view-mount, after seeding from
+      // PARAM_DEFAULTS, ALSO pull the dev panel's persisted state
+      // (its `state.params` + icons + fonts hydrated from LS at
+      // panel-boot). Eliminates the drift bug class — every time
+      // Forge re-mounts (page reload, view switch, hash route),
+      // the engine now reads from the panel's source-of-truth
+      // rather than falling back to code defaults. Previously the
+      // dev panel only pushed once at panel-boot via tryBoot, so
+      // any later view-remount lost the user's customizations.
       params:       Object.assign({}, PARAM_DEFAULTS),
       iconByType:   {},           // type → iconId (from icon library)
       fontByScope:  {},           // scope → { family }
     };
+
+    // ── Option B: pull dev-panel state on mount ──────────────
+    // The dev panel exposes `getState()` returning { params, icons,
+    // fonts }. If the panel module is loaded AND has been hydrated
+    // from LS (which happens synchronously at panel module init),
+    // its `state.params` already contains the user's persisted
+    // overrides. Apply them now so the engine and panel are in
+    // sync from frame zero — never desync on remount again.
+    try {
+      const panelApi = window.AtlasEngineForgeDevPanel;
+      if (panelApi && typeof panelApi.getState === 'function') {
+        const ps = panelApi.getState();
+        if (ps && ps.params) {
+          for (const [k, v] of Object.entries(ps.params)) {
+            if (k in local.params) local.params[k] = v;
+          }
+        }
+        if (ps && ps.icons) {
+          for (const [t, iconId] of Object.entries(ps.icons)) {
+            if (iconId) local.iconByType[t] = iconId;
+          }
+        }
+        if (ps && ps.fonts) {
+          // The font value in the panel state is a font ID string
+          // (e.g. "inter"); setFont expects { family } once we
+          // wire it through. Store the raw ID under fontByScope
+          // for now; setFont call paths translate at use time.
+          for (const [scope, fontId] of Object.entries(ps.fonts)) {
+            if (fontId) local.fontByScope[scope] = { id: fontId };
+          }
+        }
+      }
+    } catch (e) {
+      // Panel may not be loaded (e.g. early bootstrap, or dev-panel
+      // script failed). Engine falls back to PARAM_DEFAULTS — same
+      // as before Option B. Non-fatal.
+      console.warn('[forge] Option B dev-panel pull skipped:', e && e.message);
+    }
 
     rootEl._engine = {
       destroy() {
@@ -1672,4 +1735,12 @@
   }
 
   window._forge = { render: render };
+  // 2026-05-18 — expose PARAM_DEFAULTS as the SINGLE source of truth
+  // for default values. The dev panel reads this at hydration time
+  // to populate its state.params, eliminating the dual-defaults
+  // architectural problem (was: dev-panel-forge.js had its own
+  // `default:` per control, drifting from forge.js PARAM_DEFAULTS
+  // every time PARAM_DEFAULTS was baked). Now: bake forge.js
+  // PARAM_DEFAULTS once, dev panel inherits automatically.
+  window._forge.PARAM_DEFAULTS = PARAM_DEFAULTS;
 })();
