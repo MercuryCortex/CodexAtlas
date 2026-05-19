@@ -22,9 +22,11 @@ Mixing both kinds of work under one coordination protocol is what's been slowing
 **Slot model:** unlimited. Two or more agents may run in parallel as long as they pick disjoint documents / disjoint slug ranges. Same era is fine; same document is not.
 
 **Owns (may stage):**
-- `01_timeline/`, `02_documents/`, `03_deities/`, `04_persons/`, `05_events/`, `06_themes/`, `07_traditions/`, `09_symbols/`, `10_music/`, `11_alphabets/`, `12_alchemy/`, `13_morals/`, `14_rituals/`, `15_philosophy/`, `16_mathematics/`, `17_medicine/`
+- **Original 16 lenses:** `01_timeline/`, `02_documents/`, `03_deities/`, `04_persons/`, `05_events/`, `06_themes/`, `07_traditions/`, `09_symbols/`, `10_music/`, `11_alphabets/`, `12_alchemy/`, `13_morals/`, `14_rituals/`, `15_philosophy/`, `16_mathematics/`, `17_medicine/`
+- **10 lenses added 2026-05-18 (ontology lock pass 2):** `08_places/`, `18_languages/`, `19_astronomy/`, `20_sacred_architecture/`, `21_theology/`, `22_practices/`, `23_material_culture/`, `24_pharmacology/`, `25_divination/`, `26_calendars/`
 - `00_meta/STATUS.md`, `00_meta/ACTIVE-CONTENT.md`, `00_meta/canonical-slugs.md` (regenerated), `00_meta/dead-links.md` (regenerated), `00_meta/DASHBOARD.md` (regenerated), `00_meta/orphan-nodes.md` (regenerated), `00_meta/quality-issues.md` (regenerated)
 - `AUDIT/` (only adding new findings; not editing the active-five)
+- `00_meta/ONTOLOGY-RATIONALE-2026-05-18.md` (permanent rationale doc — read-only after creation; updates require a new dated rationale doc, not edits to this one)
 
 **Cannot touch (commit will be refused):**
 - `src/js/`, `src/styles/`, `src/` of any kind
@@ -60,7 +62,7 @@ Mixing both kinds of work under one coordination protocol is what's been slowing
 - `AUDIT/` design-spec docs (`edge-color-spec`, `edge-logic-spec`, `dev-panel-inventory`, `pantheon-v2-parity`, `premium-dynamics-research`)
 
 **Cannot touch (commit will be refused):**
-- `01_*` through `17_*` content folders (no editing content nodes mid-UX-batch)
+- `01_*` through `26_*` content folders (no editing content nodes mid-UX-batch). After the 2026-05-18 ontology lock, lenses now run 01–07, 08 (places), 09–17, 18 (languages), 19 (astronomy), 20 (sacred-architecture), 21 (theology), 22 (practices), 23 (material-culture), 24 (pharmacology), 25 (divination), 26 (calendars).
 - `00_meta/ACTIVE-CONTENT.md`
 - `00_meta/ONTOLOGY.md`, `00_meta/PROTOCOL.md`, `00_meta/LANES.md` (master files; only update by explicit decision)
 - `00_meta/STATUS.md` (you may log a one-line entry, but not edit historical entries)
@@ -83,7 +85,7 @@ Every staged file under `src/js/` is run through `node --check`. Syntax error �
 ### Rule 2 — Lane purity (new in Phase 2)
 The hook scans staged paths and asks:
 - Does **any** path match a Lane B prefix (`^src/`, `^index\.html$`, `^build_.*\.py$`, `^lint_yaml\.py$`, `^linkcheck\.py$`, `^fetch_.*\.py$`, `^review_thumbnails\.py$`, `^add_depictions\.py$`, `^_assets/`)?
-- Does **any** path match a Lane A prefix (`^0[1-9]_`, `^1[0-7]_`, `^00_meta/(STATUS|ACTIVE-CONTENT|DASHBOARD|dead-links|orphan-nodes|quality-issues|canonical-slugs)\.md$`)?
+- Does **any** path match a Lane A prefix (`^0[1-9]_`, `^1[0-9]_`, `^2[0-6]_`, `^00_meta/(STATUS|ACTIVE-CONTENT|DASHBOARD|dead-links|orphan-nodes|quality-issues|canonical-slugs|ONTOLOGY-RATIONALE-.*)\.md$`)?
 
 If **both**, the commit is refused with:
 ```
