@@ -11,6 +11,7 @@
 | opus-ontology-lock-2026-05-18 | Ontology lock pass 2 — 10 new lens folders (08, 18-26) + ONTOLOGY/LANES updated + permanent rationale doc. Deferred to next Lane B window: themes→motifs rename + build script updates + pre-commit hook regex + Forge mode dropdown. | as listed | 2026-05-18 PM | FINISHED 2026-05-18 evening |
 | opus-rarefact-2026-05-18-pm | Rarefaction pass — HOW-WE-WORK.md (slim cast-and-go pre-flight), PROTOCOL+CORE-THEMES synced to 26-lens, pagan-usage audit verdict (existing usage academically appropriate; one slug flagged for John's future decision) | as listed | 2026-05-18 PM late | FINISHED 2026-05-18 late evening |
 | opus-new-lens-candidates-2026-05-18 | Read-only audit — scan existing vault for entities already mentioned that need their own node in the 10 new lenses. Output: AUDIT/new-lens-candidates-2026-05-18.md (per-lens backlog, top-5 per lens + 10-node first-wave pick). All 10 lenses validated as demand-driven. | AUDIT/new-lens-candidates-2026-05-18.md, 00_meta/STATUS.md, 00_meta/ACTIVE-CONTENT.md | 2026-05-18 late | FINISHED 2026-05-18 late evening |
+| opus-deferred-laneb-spec-2026-05-18 | Concrete spec doc for the deferred Lane B batch — 7 items in execution order with file paths, code diffs, verification steps, risk levels, ~2.5–3 hour total estimate. | AUDIT/deferred-laneb-batch-spec-2026-05-18.md, 00_meta/STATUS.md, 00_meta/ACTIVE-CONTENT.md | 2026-05-18 late | FINISHED 2026-05-18 late evening |
 
 _No active claims after this one. Append your row above._
 
