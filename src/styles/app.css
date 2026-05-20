@@ -5772,7 +5772,13 @@ body.nav-collapsed .nav-more > summary .lbl { display: none; }
   border-radius: 4px;
   padding: 5px 10px;
   flex: 0 0 auto;
-  min-width: 56px;
+  /* Phase 11 (2026-05-20) — FIXED width. Was min-width:56 which let
+     the box jump from ~60px (e.g. "0") to ~90px ("15000 BCE") as the
+     user scrubbed, shifting everything next to it. Now the width is
+     constant; max content "15000 BCE" (9 chars × ~7px) + 20px padding
+     + 2px border ≈ 84px. Use 86px to give "15000 BCE" 1-2px breathing
+     room without crowding adjacent UI. */
+  width: 86px;
   text-align: center;
   white-space: nowrap;
   box-sizing: border-box;
@@ -5822,6 +5828,22 @@ body.nav-collapsed .nav-more > summary .lbl { display: none; }
   transform: translateY(-50%);
   pointer-events: none;
   border-radius: 1px;
+}
+/* Phase 11 (2026-05-20) — Year-0 reference tick on the slider track.
+   A faint grey vertical line, behind the thumbs (lower z), purely
+   informational. JS sets `left: %` from dateToFrac(0); CSS keeps it
+   1px wide and slightly taller than the track so it reads as a tick. */
+.forge-scrub-year-zero {
+  position: absolute;
+  top: 50%;
+  width: 1px;
+  height: 10px;
+  margin-left: 0;
+  margin-top: -5px;
+  background: var(--text-3, #6b7280);
+  opacity: 0.45;
+  pointer-events: none;
+  z-index: 0;
 }
 .forge-scrub-thumb {
   position: absolute;

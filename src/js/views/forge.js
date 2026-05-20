@@ -712,6 +712,10 @@
       '<div class="forge-scrub-slider" id="forge-scrub-slider" title="Drag IN / OUT bounds; drag center to scrub">' +
         '<div class="forge-scrub-track">' +
           '<div class="forge-scrub-range" id="forge-scrub-range"></div>' +
+          // Phase 11 — Year-0 reference tick. Positioned at the
+          // fraction along the track where year 0 sits. Hidden via
+          // display:none when bounds don't straddle 0.
+          '<div class="forge-scrub-year-zero" id="forge-scrub-year-zero" title="Year 0"></div>' +
           '<div class="forge-scrub-thumb forge-scrub-in-thumb"     id="forge-scrub-in-thumb"     data-handle="in"></div>' +
           '<div class="forge-scrub-thumb forge-scrub-center-thumb" id="forge-scrub-center-thumb" data-handle="center"></div>' +
           '<div class="forge-scrub-thumb forge-scrub-out-thumb"    id="forge-scrub-out-thumb"    data-handle="out"></div>' +
@@ -2317,37 +2321,34 @@
       const selectFlags = graph.computeSelectedStates
         ? graph.computeSelectedStates(idx, local.selectedSet)
         : new Float32Array(idx.length);
-      // 2026-05-20 — timeline scrubber filter. If the user has
-      // narrowed the IN/OUT range (i.e., it's tighter than the
-      // full bounds), force out-of-range nodes to state=1 (FADED).
-      // Overlap rule: a node is "in range" if its existence
-      // period [date_earliest..date_latest] intersects the
-      // [inDate..outDate] range. Nodes without dates are kept
-      // in range (don't dim them just for missing data).
+      // Timeline scrubber filter — Phase 11 (2026-05-20).
+      // Out-of-range nodes are HIDDEN (state = 2.0), not just FADED.
+      // The shader animates state continuously 0 → 1 → 2 (IDLE →
+      // FADED → HIDDEN); the fade pipeline gives a smooth
+      // disappearance rather than a hard pop-out.
       //
-      // **Phase 10 (2026-05-20) — explicit focus wins.**
-      // Nodes in `focusedSet` (the OVER anchor + its 1-hop) are
-      // SKIPPED by this override. Otherwise, hovering or locking
-      // a node whose date falls outside the scrubber range would
-      // produce `selected=1, state=1` simultaneously — the bug
-      // signature: a bigger gold-stroked DISK rendered at FADED
-      // opacity (because state=1). User intent beats automatic
-      // filter; if you point at a node, you want to see it.
+      // Overlap rule: a node is "in range" if its existence
+      // period [date_earliest..date_latest] intersects
+      // [inDate..outDate]. Undated nodes stay visible (don't hide
+      // them just for missing data).
+      //
+      // **Explicit focus wins (Phase 10).** Nodes in focusedSet
+      // (OVER anchor + its 1-hop) are SKIPPED — if the user points
+      // at a node we never hide it on them, regardless of date.
       const tl = local.timeline;
       if (tl && (tl.inDate > tl.lo || tl.outDate < tl.hi)) {
         const nodesById = (local.mode && local.mode.nodesById) || new Map();
         const focused   = local.focusedSet;
         const lo = tl.inDate, hi = tl.outDate;
         for (let i = 0; i < idx.length; i++) {
-          // Phase 10 — explicit focus override.
           if (focused && focused.has(idx[i])) continue;
           const n = nodesById.get ? nodesById.get(idx[i]) : nodesById[idx[i]];
           if (!n) continue;
           const ne = (typeof n.date_earliest === 'number') ? n.date_earliest : null;
           const nl = (typeof n.date_latest   === 'number') ? n.date_latest   : ne;
-          if (ne == null) continue;   // undated nodes stay visible
+          if (ne == null) continue;
           const overlaps = (nl == null ? ne : nl) >= lo && ne <= hi;
-          if (!overlaps) states[i] = 1.0;
+          if (!overlaps) states[i] = 2.0;   // HIDDEN
         }
       }
       // 2026-05-19 — node fade. Interleaved (dim, selected) pairs
@@ -2776,6 +2777,7 @@
       const inEl    = slider.querySelector('#forge-scrub-in-thumb');
       const ctrEl   = slider.querySelector('#forge-scrub-center-thumb');
       const outEl   = slider.querySelector('#forge-scrub-out-thumb');
+      const yearZeroEl = slider.querySelector('#forge-scrub-year-zero');
       const inBox      = document.getElementById('forge-scrub-in');
       const outBox     = document.getElementById('forge-scrub-out');
       const presentBox = document.getElementById('forge-scrub-present');
@@ -2814,17 +2816,28 @@
         // dates (e.g., date_earliest = -1e9 for Big Bang / Earth
         // formation references in cosmogonic-motif nodes). Those
         // skew the timeline so far that the human-history span is
-        // a hairline. Clamp to a useful archaeology floor (-15000)
-        // and future ceiling (3000) — nodes outside this window
-        // are visible at the extreme end of the slider.
-        const HIST_LO = -15000;  // 15,000 BCE — before any writing
-        const HIST_HI =   3000;  // CE — near-future ceiling
+        // a hairline.
+        //
+        // Phase 11 (2026-05-20):
+        //   - HIST_LO is the OLDEST entry's clamped lower bound
+        //     (no fixed floor; -15000 was just a safety net and we
+        //     still keep it for cosmogonic outliers).
+        //   - HIST_HI is TODAY'S year — the future ceiling is now
+        //     pinned to "now", not an arbitrary 3000. Past-only
+        //     timeline; nothing in the chart is in the future of
+        //     the user.
+        const HIST_LO = -15000;                    // 15,000 BCE safety floor
+        const HIST_HI = new Date().getFullYear();  // today (Phase 11)
         if (lo < HIST_LO) lo = HIST_LO;
         if (hi > HIST_HI) hi = HIST_HI;
         // Round outward to nice century-edges so the readout looks
-        // tidy. -3142 → -3200; 2024 → 2100.
+        // tidy. -3142 → -3200. Phase 11: do NOT round PAST today.
+        // If the century-ceiling would exceed HIST_HI (e.g. 2024 →
+        // 2100), clamp back to HIST_HI. The upper bound is "now",
+        // not "next century."
         const lopad = Math.floor(lo / 100) * 100;
-        const hipad = Math.ceil(hi / 100) * 100;
+        let   hipad = Math.ceil(hi / 100) * 100;
+        if (hipad > HIST_HI) hipad = HIST_HI;
         return [lopad, hipad];
       }
 
@@ -2893,6 +2906,19 @@
         ctrEl.style.left  = ctrF + '%';
         rangeEl.style.left  = inF + '%';
         rangeEl.style.width = (outF - inF) + '%';
+        // Phase 11 — Year-0 marker. Visible only when the bounds
+        // straddle year 0 (almost always, but defensive). Positioned
+        // by the same dateToFrac map the thumbs use; CSS makes it
+        // a faint grey tick that doesn't compete with the thumbs.
+        if (yearZeroEl) {
+          if (t.lo < 0 && t.hi > 0) {
+            const zeroF = dateToFrac(0) * 100;
+            yearZeroEl.style.left    = zeroF + '%';
+            yearZeroEl.style.display = '';
+          } else {
+            yearZeroEl.style.display = 'none';
+          }
+        }
         // 4-box readouts. Each box gets just the year (no
         // separator) so it stays compact at fixed height.
         if (inBox)      inBox.textContent      = formatYear(t.inDate);

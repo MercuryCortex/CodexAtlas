@@ -196,15 +196,28 @@
       let disk_alpha = 1.0 - smoothstep(1.0 - aa, 1.0, dist);
       if (disk_alpha < 0.01) { discard; }
 
-      // ── State → alpha (Phase 9, 2026-05-20) ─────────────────
-      //   IDLE  (state=0): alpha = 1.0          (full opaque)
-      //   FADED (state=1): alpha = 1 - dim_amount_nodes  (e.g. 0.25)
-      // Color stays the same in BOTH states. The family color is
-      // the family color is the family color. Only the opacity
-      // changes between IDLE and FADED. No RGB darkening. No mask
-      // tricks. No discard threshold catching faded disks (the
-      // discard floor was deleted in Phase 7).
-      let state_alpha = mix(1.0, 1.0 - v.dim_amount_nodes, in.state);
+      // ── State → alpha (Phase 11, 2026-05-20) ─────────────────
+      //   IDLE   (state = 0): alpha = 1.0                       (full opaque)
+      //   FADED  (state = 1): alpha = 1 - dim_amount_nodes      (e.g. 0.25)
+      //   HIDDEN (state = 2): alpha = 0                          (discarded)
+      //   Animation: state interpolates as a float; alpha rides
+      //   the same curve. 0 → 1 is the IDLE→FADED fade; 1 → 2 is
+      //   the FADED→HIDDEN fade. One scalar input drives the whole
+      //   transition.
+      //
+      // Formula (piecewise linear in state):
+      //   segA = mix(1, 1 - dim_amount, min(state, 1))           // segment 0..1
+      //   segB-factor = 1 - clamp(state - 1, 0, 1)               // segment 1..2 → 1..0
+      //   state_alpha = segA × segB-factor
+      //
+      // Trace:
+      //   state = 0:    1.0  × 1.0 = 1.0
+      //   state = 1:    0.25 × 1.0 = 0.25
+      //   state = 1.5:  0.25 × 0.5 = 0.125
+      //   state = 2:    0.25 × 0.0 = 0.0  → discarded below
+      let segA        = mix(1.0, 1.0 - v.dim_amount_nodes, min(in.state, 1.0));
+      let segB_factor = 1.0 - clamp(in.state - 1.0, 0.0, 1.0);
+      let state_alpha = segA * segB_factor;
       let rgb_fill    = in.inst_color.rgb;
 
       // Selected stroke (only painted when sel = 1).
@@ -216,9 +229,12 @@
       let rgb          = mix(rgb_fill, v.selected_stroke.rgb, stroke_mix);
 
       // Final alpha = state_alpha × disk_alpha.
-      //   - state_alpha: 1.0 (idle/over) or 0.25 (faded)
+      //   - state_alpha: 1.0 (idle/over), 0.25 (faded), 0 (hidden)
       //   - disk_alpha:  1.0 inside, fades only at the 1-px AA edge
       let final_a = state_alpha * disk_alpha;
+      // Phase 11 — HIDDEN drops final_a to 0; discard those fragments
+      // so they neither paint nor write depth.
+      if (final_a < 0.005) { discard; }
       // Premultiplied alpha output.
       return vec4<f32>(rgb * final_a, final_a);
     }
@@ -510,16 +526,19 @@
       let tex = textureSample(atlasTex, atlasSamp, in.uv);
       if (tex.a < 0.02) { discard; }
 
-      // Phase 9 (2026-05-20) — WHITE glyph, alpha-based fade.
-      //   IDLE  (state=0): alpha = tex.a × 1.0    (full white symbol)
-      //   FADED (state=1): alpha = tex.a × 0.25   (translucent symbol)
-      // Same shape as the disk fragment: alpha changes, color stays
-      // the same. No RGB darkening of the white symbol — just
-      // opacity drop. Same family-color disk, same white symbol;
-      // both fade together.
+      // Phase 11 (2026-05-20) — WHITE glyph, alpha follows disk:
+      //   IDLE   (state=0): alpha = tex.a × 1.0    (full white symbol)
+      //   FADED  (state=1): alpha = tex.a × 0.25
+      //   HIDDEN (state=2): alpha = 0   → discarded
+      // Same piecewise formula as the disk fragment so the glyph
+      // and its parent disk stay in lockstep through the IDLE →
+      // FADED → HIDDEN animation.
       let dim_g       = v.glyph_params.y;
-      let state_alpha = mix(1.0, 1.0 - dim_g, in.state);
+      let segA        = mix(1.0, 1.0 - dim_g, min(in.state, 1.0));
+      let segB_factor = 1.0 - clamp(in.state - 1.0, 0.0, 1.0);
+      let state_alpha = segA * segB_factor;
       let a           = tex.a * state_alpha;
+      if (a < 0.005) { discard; }
 
       // Premultiplied alpha output. White symbol carved into the disk.
       return vec4<f32>(vec3<f32>(1.0, 1.0, 1.0) * a, a);
