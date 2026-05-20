@@ -115,7 +115,21 @@ The audit also flagged `rebakeNodes` wholesale-replacing `nodeStates` (parallel 
 
 **Result:** John reports LOCKED-hover restored. IDLE-hover STILL feels different ("works highlighted inside, not outside").
 
-### #6 — Architectural fixes (`<this commit>`, 2026-05-20)
+### #7 — Glyph culling — viewport + min-size (`<later commit>`, 2026-05-20)
+
+John's clinching observation: *"IF I zoom REALLY close, it animates well! this is a memory thing most likely."* Pinpointed the perf cliff.
+
+Root cause: `syncGlyphPositions` runs every `drawFrame` (60Hz) and iterates **all N glyphs** (663 for deities), setting 4 style properties per glyph (left / top / width / height). That's ~160k DOM writes per second. When zoomed IN, off-screen glyphs are clipped by the browser composite so paint work is small. When zoomed OUT, **ALL 663 SVG glyphs are in viewport simultaneously** — browser paints all of them every frame → memory pressure + paint stall → JS thread can't keep up with rAF → fade animation stutters.
+
+Two cheap culls in `syncGlyphPositions`:
+1. **Min-size cull** — glyphs computing to < 4px on screen get `display: none`. Too small to convey info anyway. At fit-to-extent (default zoom-out), 100% of glyphs are culled → browser does zero paint work for them.
+2. **Viewport cull** — glyphs whose screen bbox falls outside `[0, vp.w] × [0, vp.h]` get `display: none`. At deep zoom, the few visible glyphs near the cursor are the only ones the browser paints.
+
+Both use `display: none` (cheaper than `visibility: hidden` — browser skips paint entirely) with a state-cache check (only set display when state actually changes — avoids redundant DOM writes).
+
+**Verified:** at fit-to-extent in deities mode, all 676 glyphs culled (visible: 0). No glyph DOM paint work.
+
+### #6 — Architectural fixes (`98bc609`, 2026-05-20)
 
 John flagged the persistent IDLE-vs-LOCKED hover asymmetry as an "architectural flaw". Implementing the remaining audit recommendations:
 

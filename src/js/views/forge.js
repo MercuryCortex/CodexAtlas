@@ -1127,17 +1127,47 @@
       const sc = camera.state.scale;
       const glyphScale = local.params.glyph_scale;
       const hitNodes = local.mode.hitNodes;
-      // hitNodes order matches glyphEls order (both come from
-      // nodePack.idIndex). Iterate by index for O(N) with no
-      // per-frame Map lookups.
+      // 2026-05-20 — John discovered the "hover is slow when
+      // zoomed out, smooth when zoomed in" perf cliff. Root
+      // cause: this loop iterates ALL N glyphs (663 for deities)
+      // every drawFrame (60Hz) and writes 4 style properties to
+      // each — ~160k DOM writes per second. When zoomed IN most
+      // glyphs are clipped off-screen so the browser's composite
+      // work is small. When zoomed OUT ALL 663 SVG glyphs are in
+      // viewport, browser paints all of them every frame →
+      // memory pressure + paint stall.
+      //
+      // Two cheap culls:
+      //   (1) MIN-SIZE: skip + hide glyphs smaller than 4px —
+      //       too small to convey info anyway.
+      //   (2) VIEWPORT: skip + hide glyphs whose screen bbox
+      //       falls outside the viewport.
+      //
+      // Both use `display: none` when culled (cheaper than
+      // `visibility: hidden` because the browser skips paint
+      // entirely) and only set display when the state actually
+      // changes (avoids redundant DOM writes).
+      const MIN_GLYPH_PX = 4;
       for (let i = 0; i < els.length; i++) {
         const g = els[i];
         const n = hitNodes[i];
         if (!n) continue;
-        const s = camera.worldToScreen(n.x, n.y, vp);
-        // Glyph fills the disk × glyph_scale (dev-tweakable).
         const dPx = Math.max(2, 2 * g.baseR * sc * glyphScale);
+        // (1) Min-size cull.
+        if (dPx < MIN_GLYPH_PX) {
+          if (g.el.style.display !== 'none') g.el.style.display = 'none';
+          continue;
+        }
+        const s = camera.worldToScreen(n.x, n.y, vp);
         const half = dPx / 2;
+        // (2) Viewport cull.
+        if (s.x + half < 0 || s.x - half > vp.w ||
+            s.y + half < 0 || s.y - half > vp.h) {
+          if (g.el.style.display !== 'none') g.el.style.display = 'none';
+          continue;
+        }
+        // Visible — restore display + write position.
+        if (g.el.style.display === 'none') g.el.style.display = '';
         g.el.style.left   = (s.x - half) + 'px';
         g.el.style.top    = (s.y - half) + 'px';
         g.el.style.width  = dPx + 'px';
