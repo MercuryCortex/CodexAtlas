@@ -538,10 +538,15 @@
     curve_polemic:      0.20,
     curve_fusion:       0.30,
 
-    // ── FOCUS / DIM ── tighter than pre-bake (was 0.85 across)
-    dim_amount:        0.80,    // edges
-    dim_amount_nodes:  0.90,
-    dim_amount_glyphs: 0.90,
+    // ── FOCUS / DIM ──
+    // Phase 9 (2026-05-20) — semantics: `dim_amount_*` is the amount
+    // by which OPACITY drops when a node/glyph is in FADED state.
+    // Final alpha = (1 - dim_amount). So 0.75 → FADED at 0.25 alpha.
+    // No RGB darkening. Same family color in IDLE and FADED states;
+    // only the alpha changes.
+    dim_amount:        0.80,    // edges (still color-blend on edges; node/glyph rules differ)
+    dim_amount_nodes:  0.75,    // FADED node alpha = 1 - 0.75 = 0.25
+    dim_amount_glyphs: 0.75,    // FADED glyph alpha = 1 - 0.75 = 0.25
     atmosphere:        0.025,
 
     // ── SELECTED STATE ──

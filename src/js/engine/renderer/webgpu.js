@@ -196,23 +196,31 @@
       let disk_alpha = 1.0 - smoothstep(1.0 - aa, 1.0, dist);
       if (disk_alpha < 0.01) { discard; }
 
-      // Fill color: family_color, darkened for dim.
-      //   state = 0 → fill = family
-      //   state = 1 → fill = family × (1 - dim_amount_nodes)
-      let dim_mult = mix(1.0, 1.0 - v.dim_amount_nodes, in.state);
-      let fill_rgb = in.inst_color.rgb * dim_mult;
+      // ── State → alpha (Phase 9, 2026-05-20) ─────────────────
+      //   IDLE  (state=0): alpha = 1.0          (full opaque)
+      //   FADED (state=1): alpha = 1 - dim_amount_nodes  (e.g. 0.25)
+      // Color stays the same in BOTH states. The family color is
+      // the family color is the family color. Only the opacity
+      // changes between IDLE and FADED. No RGB darkening. No mask
+      // tricks. No discard threshold catching faded disks (the
+      // discard floor was deleted in Phase 7).
+      let state_alpha = mix(1.0, 1.0 - v.dim_amount_nodes, in.state);
+      let rgb_fill    = in.inst_color.rgb;
 
-      // Selected stroke: solid ring inside the disk's outer edge.
-      // stroke_w is the band thickness as a fraction of radius (e.g. 0.12).
-      // Only painted on selected nodes (sel = 1).
+      // Selected stroke (only painted when sel = 1).
+      // The stroke band sits inside the disk's outer edge,
+      // thickness = selected_stroke_w as a fraction of radius.
       let stroke_inner = 1.0 - v.selected_stroke_w;
       let stroke_band  = smoothstep(stroke_inner - aa, stroke_inner, dist);
       let stroke_mix   = in.sel * stroke_band;
-      let rgb          = mix(fill_rgb, v.selected_stroke.rgb, stroke_mix);
+      let rgb          = mix(rgb_fill, v.selected_stroke.rgb, stroke_mix);
 
-      // Premultiplied alpha. Inside the disk the output is solid color.
-      // Only the 1-pixel AA edge is fractional.
-      return vec4<f32>(rgb * disk_alpha, disk_alpha);
+      // Final alpha = state_alpha × disk_alpha.
+      //   - state_alpha: 1.0 (idle/over) or 0.25 (faded)
+      //   - disk_alpha:  1.0 inside, fades only at the 1-px AA edge
+      let final_a = state_alpha * disk_alpha;
+      // Premultiplied alpha output.
+      return vec4<f32>(rgb * final_a, final_a);
     }
   `;
 
@@ -502,21 +510,19 @@
       let tex = textureSample(atlasTex, atlasSamp, in.uv);
       if (tex.a < 0.02) { discard; }
 
-      // Phase 8 — WHITE glyph, dimmed by the same rule as the disk.
-      //   state = 0 (focused/selected/idle) → full white
-      //   state = 1 (dim background)        → white × (1 - dim_g)
-      // No focus rule, no screen-size fade, no per-instance tint.
-      // dim_g is the param; in idle, JS still gates it to 0 so all
-      // glyphs paint at full white (no dim effect when nothing is in
-      // focus).
-      let dim_g    = v.glyph_params.y;
-      let dim_mult = mix(1.0, 1.0 - dim_g, in.state);
-      let rgb      = vec3<f32>(1.0, 1.0, 1.0) * dim_mult;
-      let a        = tex.a;
+      // Phase 9 (2026-05-20) — WHITE glyph, alpha-based fade.
+      //   IDLE  (state=0): alpha = tex.a × 1.0    (full white symbol)
+      //   FADED (state=1): alpha = tex.a × 0.25   (translucent symbol)
+      // Same shape as the disk fragment: alpha changes, color stays
+      // the same. No RGB darkening of the white symbol — just
+      // opacity drop. Same family-color disk, same white symbol;
+      // both fade together.
+      let dim_g       = v.glyph_params.y;
+      let state_alpha = mix(1.0, 1.0 - dim_g, in.state);
+      let a           = tex.a * state_alpha;
 
-      // Premultiplied alpha output. Glyph is solid (full alpha
-      // inside the stencil); color carries the dim.
-      return vec4<f32>(rgb * a, a);
+      // Premultiplied alpha output. White symbol carved into the disk.
+      return vec4<f32>(vec3<f32>(1.0, 1.0, 1.0) * a, a);
     }
   `;
 
