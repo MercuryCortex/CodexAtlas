@@ -1958,20 +1958,37 @@
     // animates via tickNodeFades) and updates the alpha column
     // so glyphs fade with their parent disk's dim transition.
     //
-    // Phase 4B FX1+FX2 (2026-05-20) — full redesign per
-    // AUDIT/forge-rebuild-4A-fx-2026-05-20.md.
-    //   FX1 settled-fade short-circuit — drawFrame now gates this
-    //     call on local.glyphInstancesDirty. When the flag is false
-    //     this function isn't invoked at all; the buffer's alpha
-    //     column from the previous tick stays. Renderer skips the
-    //     ~21 KB GPU write (~1.6 MB at 50k) when dirty=false.
-    //   FX2 viewport + min-size cull — each instance is screen-
-    //     projected; alpha forced to 0 when screen_r < 4 px OR the
-    //     instance is outside the viewport bounds. The existing
-    //     fragment-discard at webgpu.js (alpha < 0.02) catches the
-    //     downstream cost; vertex shader still runs, but at 10k
-    //     this drops fragment fill from O(N × pixel-coverage) to
-    //     ~O(visible-N × pixel-coverage).
+    // Phase 4B FX1 (2026-05-20) — settled-fade short-circuit:
+    //   drawFrame gates this call on local.glyphInstancesDirty.
+    //   When the flag is false this function isn't invoked at
+    //   all; the buffer's alpha column from the previous tick
+    //   stays. Renderer skips the ~21 KB GPU write (~1.6 MB at
+    //   50k) when dirty=false.
+    //
+    // Phase 4B FX2 + post-cast fix (2026-05-20) — off-viewport
+    // cull only; the min-size cull was DROPPED.
+    //   Off-viewport: alpha forced to 0 when the instance's
+    //   screen bbox falls outside the viewport. Real win at
+    //   deep zoom-in; no visible-info loss.
+    //   Min-size cull (dropped): the audit recommended
+    //   screen_r < 4 px → cull, reasoning "below 4 px the glyph
+    //   isn't conveying info." But the node screen-px-clamp
+    //   (node_min_screen_px=3) keeps disks at 3 px minimum, and
+    //   glyph_world_r = disk_world_r × glyph_scale (0.85), so
+    //   glyph_screen_r at the clamp floor is 3 × 0.85 = 2.55 px
+    //   — BELOW the audit's 4 px threshold. Result: every glyph
+    //   on every disk at the clamp floor was culled (visible at
+    //   default-zoom deities mode = ALL of them), producing
+    //   "empty circles" everywhere. John caught this immediately
+    //   after Phase 4B + 5B shipped (Nergal/Ninlil hover screenshot).
+    //   The existing `alpha < 0.02` fragment-discard in webgpu.js
+    //   handles the per-pixel cost; the vertex shader's per-
+    //   instance cost at 663 nodes is ~5 µs total — not worth
+    //   the visible regression. Phase 6 can revisit if a 10k
+    //   benchmark surfaces a real perf cliff. See
+    //   feedback_audit_formulas_need_default_check.md for the
+    //   pattern: audit-recommended thresholds need a default-
+    //   parameter check before shipping.
     function refreshGlyphAlphas() {
       const data = local.glyphInstanceData;
       const states = local.nodeStates;
@@ -1981,8 +1998,6 @@
         ? local.params.glyph_opacity : 0.85;
       const dimMul = (local.params && typeof local.params.dim_amount_glyphs === 'number')
         ? local.params.dim_amount_glyphs : 0.7;
-      // FX2 cull setup — read camera + viewport. If unavailable
-      // (early boot), skip cull and just compute alpha.
       const cam = camera && camera.state;
       const vp  = local.lastSize;
       const cullActive = !!(cam && vp.w && vp.h);
@@ -1991,7 +2006,6 @@
       const camCY      = cullActive ? cam.centerY : 0;
       const halfW = vp.w * 0.5;
       const halfH = vp.h * 0.5;
-      const minScreenR = 4;
       let culled = 0;
       for (let i = 0; i < N; i++) {
         let alpha;
@@ -2002,12 +2016,12 @@
           const screenR = wr * camScale;
           const screenX = (wx - camCX) * camScale + halfW;
           const screenY = (wy - camCY) * camScale + halfH;
+          // Off-viewport only. Min-size cull dropped.
           const offScreen = (screenX + screenR < 0)
                          || (screenX - screenR > vp.w)
                          || (screenY + screenR < 0)
                          || (screenY - screenR > vp.h);
-          const tooSmall = screenR < minScreenR;
-          if (offScreen || tooSmall) {
+          if (offScreen) {
             alpha = 0;
             culled++;
           } else {
