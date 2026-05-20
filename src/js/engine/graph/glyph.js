@@ -130,7 +130,33 @@
     for (const [alias, target] of Object.entries(TYPE_ALIAS)) {
       if (target in typeToIdx) typeToIdx[alias] = typeToIdx[target];
     }
-    return { canvas, uvRects, typeToIdx, cellPx, cols, rows };
+    // Phase 4B FX4 (2026-05-20) — generate mip pyramid via
+    // browser drawImage downsampling. Each successive level halves
+    // both dims (ceil so a 5×4-cell atlas's odd dims still produce
+    // a valid chain to 1×1). The browser's scaled drawImage
+    // applies a reasonable filter — sharper than naive box average
+    // for hand-illustrated SVG content. Used by setGlyphAtlas to
+    // upload mip 0..N so the sampler's `mipmapFilter:'linear'`
+    // actually has a mip chain to interpolate.
+    const mipCanvases = [canvas];
+    let prev   = canvas;
+    let mipW   = atlasW;
+    let mipH   = atlasH;
+    while (mipW > 1 || mipH > 1) {
+      mipW = Math.max(1, mipW >> 1);
+      mipH = Math.max(1, mipH >> 1);
+      const mipCanvas = document.createElement('canvas');
+      mipCanvas.width  = mipW;
+      mipCanvas.height = mipH;
+      const mctx = mipCanvas.getContext('2d');
+      mctx.imageSmoothingEnabled = true;
+      mctx.imageSmoothingQuality = 'high';
+      mctx.clearRect(0, 0, mipW, mipH);
+      mctx.drawImage(prev, 0, 0, mipW, mipH);
+      mipCanvases.push(mipCanvas);
+      prev = mipCanvas;
+    }
+    return { canvas, mipCanvases, uvRects, typeToIdx, cellPx, cols, rows };
   }
 
   function idxForType(typeToIdx, type) {

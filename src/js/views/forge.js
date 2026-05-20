@@ -266,6 +266,82 @@
   //  - countEdgeVboWrites() — see dirty-flag invariant above.
   // ════════════════════════════════════════════════════════════
   //
+  // ════════════════════════════════════════════════════════════
+  // FX — spec lock (Phase 4B, 2026-05-20)
+  // ════════════════════════════════════════════════════════════
+  // The ornament layer that rides on top of NODE / BEHAVIORS /
+  // WIRES: selected glow, GPU glyphs (atlas + per-frame alpha
+  // refresh + cull), CSS-positioned labels. Full spec at AUDIT/
+  // forge-rebuild-4A-fx-2026-05-20.md §2.
+  //
+  // Selected glow:
+  //  - Quad scale = `selected_glow.w × 1.5` (1.5× headroom past
+  //    glow extent so the smoothstep completes well inside the
+  //    quad — kills the square-clip artifact). See node vertex
+  //    shader in webgpu.js.
+  //  - Discard threshold DERIVED from `selected_glow_strength`
+  //    (FX5, 2026-05-20). Replaces the 3-session magic-number
+  //    bump trail (0.04 → 0.08 → 0.15). Threshold adapts as the
+  //    slider moves; the square-clip class cannot return at any
+  //    strength value.
+  //
+  // Glyphs:
+  //  - Atlas at 128 px cells + full mip chain (FX4). `mipmapFilter:
+  //    'linear'` sampler now has a chain — Retina deep-zoom sharp.
+  //  - Glyph z = parent disk z EXACTLY (selected=0.0, focused=0.3,
+  //    dim=0.6). Wins by draw-order tiebreak in less-equal depth
+  //    test. Read-site invariant documented inline in webgpu.js
+  //    GLYPH_SHADER header (mirrors Phase 1B's nodeStateVbo
+  //    write-site comment — see CROSS-PIPELINE INVARIANT).
+  //  - Tint factor frozen at 0.55 literal in
+  //    rebuildGlyphInstanceBuffer (FX7 — `glyph_tint` deleted from
+  //    PARAM_DEFAULTS per Phase 0 consistency).
+  //
+  // Glyph dirty-flag + cull (FX1 + FX2):
+  //  - local.glyphInstancesDirty defaults true; reset after each
+  //    drawFrame; re-set by every site whose output the alpha
+  //    column depends on: rebuildGlyphInstanceBuffer (rebake),
+  //    recomputeFocus (state change), tickNodeFades (fade in
+  //    flight), camera.onChange (cull viewport-dependent).
+  //  - drawFrame skips refreshGlyphAlphas + renderer.writeBuffer
+  //    when dirty=false. At idle the per-frame ~21 KB GPU upload
+  //    drops to 0 (~1.6 MB at 50k saved).
+  //  - refreshGlyphAlphas screen-projects each instance; sets
+  //    alpha=0 when screen_r < 4 px OR off-viewport. Fragment
+  //    discard at alpha<0.02 handles the GPU side. Pure alpha
+  //    gating — no pipeline change.
+  //  - Verify via `_forgeDebug.countGlyphVboWrites()` (should
+  //    track rebake/fade/camera counts, NOT frame count) and
+  //    `_forgeDebug.countCulledGlyphs()` (number of instances
+  //    forced to alpha 0 in the last refresh).
+  //
+  // Labels:
+  //  - Pre-create cap = `min(N, label_idle_max + label_cap × 2)`
+  //    (FX3). Walks at most ~1k <div>s at mode-switch instead of
+  //    full N. Lazy-create the rest via ensureLabelEl on first
+  //    reveal. At 10k N this cuts mode-switch stall from
+  //    ~200-300 ms to ~10 ms; at 50k from ~1-2 s freeze to ~20 ms.
+  //  - `local.visibleLabelEls` Set is the SSOT for what's
+  //    currently shown (FX6). syncLabels writes data-visible only
+  //    on the symmetric-difference vs previously-visible;
+  //    syncLabelPositions iterates the Set directly instead of
+  //    walking the full labelEls Map.
+  //  - CSS opacity transition (0.15s ease-out) drives the visible
+  //    fade — `.forge-label[data-visible="1"] { opacity: 1; }`.
+  //    JS only flips the attribute.
+  //
+  // Dead-state cleanup (FX9):
+  //  - `syncGlyphPositions` / `syncGlyphFocus` no-op stubs DELETED
+  //    (Phase 4B). Their callers (camera.onChange, recomputeFocus)
+  //    are also cleaned up.
+  //
+  // Debug surfaces (window._forgeDebug):
+  //  - countGlyphVboWrites() — gate verification.
+  //  - countCulledGlyphs()   — number of instances at alpha=0 in
+  //                            the last refresh (viewport+min-size cull).
+  //  - dumpAtlasInfo()       — { width, height, mipLevelCount }.
+  // ════════════════════════════════════════════════════════════
+  //
   // PARAM_DEFAULTS — the SINGLE SOURCE OF TRUTH for every visual
   // parameter in Forge. Dev panel removed 2026-05-20 (Phase 0 of
   // the layered rebuild — see AUDIT/forge-rebuild-layered-spec-
@@ -372,7 +448,13 @@
     // ── GLYPHS ──
     glyph_scale:   0.85,
     glyph_opacity: 0.86,
-    glyph_tint:    0.25,
+    // Phase 4B FX7 (2026-05-20) — `glyph_tint` DELETED. Was a
+    // dev-panel-era tunable that the GPU glyph pipeline never
+    // read (handoff doc flagged it as known-not-done). Tint
+    // factor is now frozen at the literal 0.55 in
+    // rebuildGlyphInstanceBuffer. To re-tune, change that
+    // literal. Consistent with Phase 0's deletion of iconByType
+    // + fontByScope (same shape — half-wired param ghosts).
 
     // ── LABELS ── John's progressive zoom thresholds (step-02 values;
     // step-01 was much more aggressive at 0/0.2/0.35/0.45 — step-02
@@ -593,6 +675,16 @@
       // first drawFrame uploads; drawFrame resets to false after
       // each call. ~130 MB/s saved at 10k mode / ~648 MB/s at 50k.
       edgeInstancesDirty: true,
+      // Phase 4B FX1+FX2 (2026-05-20) — glyphInstanceVbo dirty flag.
+      // Set true by every site whose output the glyph alpha column
+      // depends on: rebuildGlyphInstanceBuffer (static rebuild),
+      // recomputeFocus (state change), tickNodeFades (fade in flight),
+      // camera.onChange (cull viewport-dependent). drawFrame gates
+      // refreshGlyphAlphas + the GPU writeBuffer on this flag and
+      // resets to false after upload. Combined with the viewport+
+      // min-size cull below, idle GPU upload at deities drops from
+      // ~21 KB/frame to 0 once fade settles.
+      glyphInstancesDirty: true,
       // 2026-05-19 — edge fade animation. `edgeStates` is the
       // LIVE-ANIMATING value pushed to the GPU each frame;
       // `edgeTargets` is the snap-to value computed by
@@ -694,9 +786,11 @@
       lastSize:     () => ({ w: local.lastSize.w, h: local.lastSize.h }),
       hoverId:      () => local.hoverId,
       lockedIds:    () => Array.from(local.lockedSet),
-      visibleLabels:() => Array.from(local.labelEls.entries())
-                            .filter(([, el]) => el.hasAttribute('data-visible'))
-                            .map(([id]) => id),
+      // Phase 4B FX6 (2026-05-20) — uses the new visibleLabelEls
+      // Set. Returns the ids of currently-shown labels.
+      visibleLabels:() => local.visibleLabelEls
+        ? Array.from(local.visibleLabelEls)
+        : [],
       hitNodesAt:   (i) => local.mode.hitNodes[i],
       hitNodeCount: () => local.mode.hitNodes.length,
       currentMode:  () => local.mode.id,
@@ -784,6 +878,25 @@
       // count. Mirror of countNodeVboWrites().
       countEdgeVboWrites: () => (local.renderer && local.renderer.debugCountEdgeVboWrites
         ? local.renderer.debugCountEdgeVboWrites() : null),
+
+      // ── Phase 4B FX-only debug helpers (2026-05-20) ────────
+      // Glyph dirty-flag verification (mirrors node + edge).
+      // Should track rebake/fade/camera-change counts, NOT frame
+      // count. At idle the delta over 500ms should be 0.
+      countGlyphVboWrites: () => (local.renderer && local.renderer.debugCountGlyphVboWrites
+        ? local.renderer.debugCountGlyphVboWrites() : null),
+      // Number of glyph instances forced to alpha=0 in the last
+      // `refreshGlyphAlphas` (viewport + min-size cull). At
+      // zoom-fit on deities most glyphs should NOT be culled
+      // (radii are ~60 world units × scale ~0.05 = ~3 px which
+      // is borderline against the 4 px minScreenR threshold).
+      // At deep zoom-in most off-screen glyphs ARE culled.
+      countCulledGlyphs: () => local.glyphCulledCount || 0,
+      // Atlas diagnostic: { width, height, mipLevelCount }.
+      // Returns null until the async buildAtlas+setGlyphAtlas
+      // completes at boot.
+      dumpAtlasInfo: () => (local.renderer && local.renderer.debugAtlasInfo
+        ? local.renderer.debugAtlasInfo() : null),
 
       // ── Phase 2B BEHAVIORS-only debug helpers (2026-05-20) ─
       // Toggle the dim model used by hover dimming. A4 (default)
@@ -978,9 +1091,15 @@
       // we fire the next drawFrame after upload completes so the
       // glyphs appear without needing a user interaction.
       local.glyphAtlas = null;
-      glyphmod.buildAtlas(64).then((atlas) => {
+      // Phase 4B FX4 (2026-05-20) — atlas cell size bumped 64 → 128
+      // and a full mip chain shipped. ~1.3 MB texture vs ~70 KB
+      // pre-Phase-4B; one-shot at boot. Removes Retina blur at deep
+      // zoom on DPR=2/3 displays. The atlas builder generates per-
+      // mip downsampled canvases via browser drawImage at high
+      // quality; setGlyphAtlas uploads each mip level.
+      glyphmod.buildAtlas(128).then((atlas) => {
         if (local.destroyed || !local.renderer) return;
-        local.renderer.setGlyphAtlas(atlas.canvas, atlas.uvRects);
+        local.renderer.setGlyphAtlas(atlas.canvas, atlas.uvRects, atlas.mipCanvases);
         local.glyphAtlas = atlas;
         // Rebuild glyph instance buffer + draw once the atlas
         // is live so we don't wait for the next user action.
@@ -1020,6 +1139,12 @@
       // visibility recomputation (per-tier zoom thresholds).
       camera.onChange(() => {
         if (local.destroyed) return;
+        // Phase 4B FX1 (2026-05-20) — camera moved → glyph cull
+        // recompute on next drawFrame (screen-projection depends
+        // on cam.scale / centerX / centerY + viewport). Cheap to
+        // over-set: the cull is in refreshGlyphAlphas which is
+        // gated by this flag.
+        local.glyphInstancesDirty = true;
         // Re-pack nodes if the camera scale has drifted enough
         // since the last pack. 5% threshold keeps a smooth pan
         // free from re-packs while a real zoom triggers one.
@@ -1029,21 +1154,11 @@
           const ratio = camScale / lastScale;
           if (ratio < 0.95 || ratio > 1.05) {
             rebakeNodes();
-            // rebakeNodes calls drawFrame which calls
-            // syncGlyphPositions, but glyph-FOCUS (occlusion
-            // zones around selected nodes) depends on screen
-            // positions of selected nodes — needs re-eval on
-            // every camera move, not just rebakes.
-            syncGlyphFocus();
             updateZoomGizmo();
             return;
           }
         }
         drawFrame();
-        // 2026-05-19 — glyph occlusion zones track selected-node
-        // screen positions; need re-eval on pan/zoom so non-
-        // selected glyphs hide/show as they enter/leave the halo.
-        if (local.selectedSet && local.selectedSet.size > 0) syncGlyphFocus();
         scheduleIdleLabelSync();
         updateZoomGizmo();
       });
@@ -1285,6 +1400,9 @@
         try { el.remove(); } catch (e) { /* ignore */ }
       }
       local.labelEls.clear();
+      // Phase 4B FX6 (2026-05-20) — clear the visibility tracker
+      // alongside labelEls so syncLabels starts from a clean slate.
+      if (local.visibleLabelEls) local.visibleLabelEls.clear();
 
       // 2026-05-20 — DOM glyph overlay removed. The 663-span
       // DOM layer was the perf cliff (syncGlyphPositions ran
@@ -1304,17 +1422,27 @@
       for (const n of modeNodes) modeNodeById.set(n.id, n);
       local.mode.nodesById = modeNodeById;
 
-      // 2026-05-20 — pre-create label DOM for every node in this
-      // mode. They start at opacity:0 (CSS default — no
-      // data-visible attribute), zero perf cost until shown.
-      // First hover then only flips data-visible="1" on the diff
-      // — no appendChild / reflow during the user's first hover.
-      // (See the long-form note in the `local.labelEls.clear()`
-      // block above for the root-cause story.) Single batch
-      // append using a DocumentFragment so we pay one reflow
-      // here, not 663 individual ones.
+      // 2026-05-20 — pre-create label DOM so a first hover doesn't
+      // pay the appendChild + reflow cost mid-interaction.
+      //
+      // Phase 4B FX3 (2026-05-20) — pre-create cap. Previously this
+      // walked the full mode (N), producing 10k <div>s on a 10k-N
+      // mode-switch (~150-300 ms stall) and ~50k <div>s at 50k
+      // (~1-2 s freeze). The hover-stall fix only needs enough
+      // pre-created headroom for the idle-tier hierarchy + focused-
+      // set cap. The cap = `label_idle_max + label_cap × 2` ≈ 1000
+      // today and tracks the user's tuned params automatically.
+      // Anything beyond the cap lazy-creates via `ensureLabelEl`
+      // on first reveal — a single appendChild is fast enough to
+      // be invisible. See AUDIT/forge-rebuild-4A-fx-2026-05-20.md
+      // §3 FX3.
+      const idleMax = (local.params && typeof local.params.label_idle_max === 'number')
+        ? local.params.label_idle_max : 750;
+      const labelCap = (local.params && typeof local.params.label_cap === 'number')
+        ? local.params.label_cap : 120;
+      const preCreateCap = Math.min(nodePack.instanceCount, idleMax + labelCap * 2);
       const labelFrag = document.createDocumentFragment();
-      for (let i = 0; i < nodePack.instanceCount; i++) {
+      for (let i = 0; i < preCreateCap; i++) {
         const id = nodePack.idIndex[i];
         // ensureLabelEl appends to labelsOverlay directly, so to
         // batch we replicate its core inline + use the fragment.
@@ -1481,18 +1609,25 @@
         parseInt(gh.slice(3, 5), 16) / 255,
         parseInt(gh.slice(5, 7), 16) / 255,
       ];
-      // N2 (Phase 1B) / Phase 3B F3 — gate the static instance
-      // buffer writes on the dirty flags (skips ~21KB node + ~145KB
-      // edge GPU upload per frame at deities / ~250 MB/s combined
-      // saved at 10k). _forgeDebug.nodeOnly() hides edges + glyphs;
+      // N2 (Phase 1B) / Phase 3B F3 / Phase 4B FX1 — gate the
+      // static instance buffer writes on the dirty flags (skips
+      // ~21KB node + ~145KB edge + ~21KB glyph GPU upload per
+      // frame at deities / ~270 MB/s combined saved at 10k).
+      // _forgeDebug.nodeOnly() hides edges + glyphs;
       // _forgeDebug.edgesAndNodesOnly() hides only glyphs.
       const nodeOnly         = !!local._nodeOnly;
       const edgesAndNodesOnly = !!local._edgesAndNodesOnly;
       const frameNVB  = local.mode.nodePacked.data;
       const frameEVB  = nodeOnly ? null : local.mode.edgePacked.data;
-      const frameGVB  = (nodeOnly || edgesAndNodesOnly)
-        ? null
-        : (refreshGlyphAlphas(), local.glyphInstanceData || null);
+      // FX1 — refresh ONLY when the alpha column may have changed
+      // (rebake, focus change, fade in flight, or camera moved).
+      // When settled the JS O(N) loop is skipped + the buffer
+      // reference passes through unchanged. The dirty bool propagates
+      // to the renderer, which skips the writeBuffer too.
+      const glyphsHidden = nodeOnly || edgesAndNodesOnly;
+      const glyphsDirty  = !glyphsHidden && local.glyphInstancesDirty;
+      if (glyphsDirty) refreshGlyphAlphas();
+      const frameGVB = glyphsHidden ? null : (local.glyphInstanceData || null);
       local.renderer.drawFrame({
         viewportCss:           { w: vp.w, h: vp.h },
         camera:                camera.state,
@@ -1511,11 +1646,14 @@
         nodeStates:            local.nodeStates,
         edgeStates:            local.edgeStates,
         glyphInstances:        frameGVB,
+        glyphInstancesDirty:   glyphsDirty,
       });
       // After the renderer has consumed the dirty buffers, reset
-      // both flags. Next pack(s) re-set them.
-      local.nodeInstancesDirty = false;
-      local.edgeInstancesDirty = false;
+      // all three flags. Next pack / focus / fade / camera sets
+      // re-set them.
+      local.nodeInstancesDirty  = false;
+      local.edgeInstancesDirty  = false;
+      local.glyphInstancesDirty = false;
       const dt = performance.now() - t0;
       const fEl = document.getElementById('forge-status-frame');
       if (fEl) fEl.textContent = dt.toFixed(1) + ' ms';
@@ -1528,12 +1666,11 @@
       // no per-frame DOM sync needed.
     }
 
-    // 2026-05-20 — DOM glyph machinery retired; glyphs now live
-    // in the WebGPU canvas via the GPU glyph pass. These functions
-    // are kept as no-ops so the existing callers (drawFrame,
-    // camera.onChange) don't need to be hunted down individually —
-    // a single follow-up cleanup batch will delete them.
-    function syncGlyphPositions() { /* no-op — GPU glyph pass */ }
+    // Phase 4B FX9 (2026-05-20) — `syncGlyphPositions` /
+    // `syncGlyphFocus` stubs DELETED. The DOM glyph machinery
+    // they wrapped was retired with the GPU glyph migration; the
+    // no-op stubs were kept as breadcrumbs for stragglers. All
+    // callers are now removed (this commit), so the stubs go too.
 
     // ── GPU glyph instance buffer (2026-05-20) ──────────
     // Builds the per-node instance data the WebGPU glyph pass
@@ -1576,8 +1713,10 @@
         // Glyph type index from the atlas lookup.
         const typeKey = n && n.type ? n.type : 'theme';
         data[off + 3] = glyphmod.idxForType(idxOf, typeKey);
-        // Tint = lighter hue of family color (matches the old
-        // DOM-glyph behavior so the visual reads the same).
+        // Tint = lighter hue of family color. Phase 4B FX7
+        // (2026-05-20) — glyph_tint deleted from PARAM_DEFAULTS;
+        // factor frozen at 0.55 (matches the prior DOM-glyph
+        // visual reading). To re-tune, change the literal here.
         const fc = (n && (n.family_color || n.tradition_color)) || '#cccccc';
         const tint = mth.lightenColor(fc, 0.55);
         const rgb = hex2rgba(tint, 1);
@@ -1587,32 +1726,80 @@
         data[off + 7] = baseOp;
       }
       local.glyphInstanceData = data;
+      // FX1 — fresh static data; mark dirty so the next drawFrame
+      // uploads + the cull recomputes against the current camera.
+      local.glyphInstancesDirty = true;
+      // FX2 — counter for the cull diagnostic helper (number of
+      // instances whose alpha was forced to 0 in the last refresh).
+      local.glyphCulledCount = 0;
     }
     // Per-frame alpha refresh — reads local.nodeStates (which
     // animates via tickNodeFades) and updates the alpha column
     // so glyphs fade with their parent disk's dim transition.
     //
-    // 2026-05-20 — short-circuit when nothing is animating. If
-    // nodeStates equals nodeTargets element-wise (fade settled),
-    // the alphas don't need recomputing and the GPU upload can
-    // be skipped via the unchanged buffer. Saves ~21KB GPU write
-    // per frame at IDLE — the "slowness from fading bubbles" John
-    // asked about reduces to its actual cause: only the active
-    // fade frames pay the cost.
+    // Phase 4B FX1+FX2 (2026-05-20) — full redesign per
+    // AUDIT/forge-rebuild-4A-fx-2026-05-20.md.
+    //   FX1 settled-fade short-circuit — drawFrame now gates this
+    //     call on local.glyphInstancesDirty. When the flag is false
+    //     this function isn't invoked at all; the buffer's alpha
+    //     column from the previous tick stays. Renderer skips the
+    //     ~21 KB GPU write (~1.6 MB at 50k) when dirty=false.
+    //   FX2 viewport + min-size cull — each instance is screen-
+    //     projected; alpha forced to 0 when screen_r < 4 px OR the
+    //     instance is outside the viewport bounds. The existing
+    //     fragment-discard at webgpu.js (alpha < 0.02) catches the
+    //     downstream cost; vertex shader still runs, but at 10k
+    //     this drops fragment fill from O(N × pixel-coverage) to
+    //     ~O(visible-N × pixel-coverage).
     function refreshGlyphAlphas() {
       const data = local.glyphInstanceData;
       const states = local.nodeStates;
-      const tgts   = local.nodeTargets;
       if (!data || !states) return;
       const N = data.length >>> 3;  // /8
       const baseOp = (local.params && typeof local.params.glyph_opacity === 'number')
         ? local.params.glyph_opacity : 0.85;
       const dimMul = (local.params && typeof local.params.dim_amount_glyphs === 'number')
         ? local.params.dim_amount_glyphs : 0.7;
+      // FX2 cull setup — read camera + viewport. If unavailable
+      // (early boot), skip cull and just compute alpha.
+      const cam = camera && camera.state;
+      const vp  = local.lastSize;
+      const cullActive = !!(cam && vp.w && vp.h);
+      const camScale   = cullActive ? cam.scale   : 1;
+      const camCX      = cullActive ? cam.centerX : 0;
+      const camCY      = cullActive ? cam.centerY : 0;
+      const halfW = vp.w * 0.5;
+      const halfH = vp.h * 0.5;
+      const minScreenR = 4;
+      let culled = 0;
       for (let i = 0; i < N; i++) {
-        const state = states[i * 2] || 0;       // 0=focused, 1=dim
-        data[i * 8 + 7] = baseOp * (1 - state * dimMul);
+        let alpha;
+        if (cullActive) {
+          const wx = data[i * 8 + 0];
+          const wy = data[i * 8 + 1];
+          const wr = data[i * 8 + 2];
+          const screenR = wr * camScale;
+          const screenX = (wx - camCX) * camScale + halfW;
+          const screenY = (wy - camCY) * camScale + halfH;
+          const offScreen = (screenX + screenR < 0)
+                         || (screenX - screenR > vp.w)
+                         || (screenY + screenR < 0)
+                         || (screenY - screenR > vp.h);
+          const tooSmall = screenR < minScreenR;
+          if (offScreen || tooSmall) {
+            alpha = 0;
+            culled++;
+          } else {
+            const state = states[i * 2] || 0;     // 0=focused, 1=dim
+            alpha = baseOp * (1 - state * dimMul);
+          }
+        } else {
+          const state = states[i * 2] || 0;
+          alpha = baseOp * (1 - state * dimMul);
+        }
+        data[i * 8 + 7] = alpha;
       }
+      local.glyphCulledCount = culled;
     }
 
     // ── Labels ─────────────────────────────────────────
@@ -1692,24 +1879,40 @@
       // append for the whole mode), so syncLabels never has to
       // create / append / reflow during hover. Just flips
       // data-visible on the set diff. CSS opacity transition
-      // handles the fade. Result: hover from settled IDLE no
-      // longer pays the 47×appendChild stall that was swallowing
-      // the first fade frames.
-      for (const [id, el] of local.labelEls) {
-        const shouldShow = visible.has(id);
-        const isShowing  = el.hasAttribute('data-visible');
-        if (shouldShow && !isShowing) {
+      // handles the fade.
+      //
+      // Phase 4B FX6 (2026-05-20) — visible-labels Set. Previously
+      // both this diff AND syncLabelPositions walked the full
+      // local.labelEls Map every call (O(N) attribute reads, even
+      // when only a handful are visible). Now `local.visibleLabelEls`
+      // is the source of truth for "what's currently shown"; only
+      // the diff loop touches the union (visible ∪ previously-
+      // visible), and syncLabelPositions iterates the Set directly.
+      // At 10k with ~20 labels visible, position loop drops from
+      // 10k Map entries to 20.
+      const wasVisible = local.visibleLabelEls || (local.visibleLabelEls = new Set());
+      // Compute the symmetric difference: items to hide + items to show.
+      // Iterate previously-visible to hide non-members.
+      for (const id of wasVisible) {
+        if (visible.has(id)) continue;
+        const el = local.labelEls.get(id);
+        if (el) el.removeAttribute('data-visible');
+      }
+      // Iterate target-visible to show new members + lazy-create.
+      for (const id of visible) {
+        let el = local.labelEls.get(id);
+        if (!el) {
+          // Lazy-create — pre-create cap (FX3) means high-index
+          // hub labels weren't pre-created in large modes; ensure
+          // here on first reveal.
+          el = ensureLabelEl(id);
+        }
+        if (!el.hasAttribute('data-visible')) {
           el.setAttribute('data-visible', '1');
-        } else if (!shouldShow && isShowing) {
-          el.removeAttribute('data-visible');
         }
       }
-      // Defensive: lazy-create for any id not pre-created (newly
-      // arrived after rebuildForMode, shouldn't happen but be safe).
-      for (const id of visible) {
-        if (local.labelEls.has(id)) continue;
-        ensureLabelEl(id).setAttribute('data-visible', '1');
-      }
+      // Swap the Set (cheap; both are small).
+      local.visibleLabelEls = new Set(visible);
       syncLabelPositions();
     }
     // Idle-label visibility depends on camera scale; positions
@@ -1727,19 +1930,17 @@
     function syncLabelPositions() {
       const vp = local.lastSize;
       if (!vp.w || !vp.h) return;
-      if (local.labelEls.size === 0) return;
-      // Position every currently-displayed label (focus AND
-      // idle-tier hubs). Cheap because we iterate the label map,
-      // not all nodes.
+      // Phase 4B FX6 (2026-05-20) — iterate local.visibleLabelEls
+      // Set directly instead of walking the full local.labelEls
+      // Map and skipping non-data-visible entries. At 10k this
+      // drops the per-camera-tick cost from 10k attribute reads
+      // to (visible count) — typically <100.
+      const visible = local.visibleLabelEls;
+      if (!visible || visible.size === 0) return;
       const hitById = local.mode.hitById;
-      for (const [id, el] of local.labelEls) {
-        // 2026-05-19 — labels are now opacity-faded, not display-
-        // toggled, so the old display:none skip is gone. Skip any
-        // label that's NOT in the current visible set (no
-        // data-visible attribute) — its position is frozen at its
-        // last known spot while the fade-out completes, which is
-        // visually correct and saves per-frame worldToScreen.
-        if (!el.hasAttribute('data-visible')) continue;
+      for (const id of visible) {
+        const el = local.labelEls.get(id);
+        if (!el) continue;
         const n = hitById ? hitById.get(id) : null;
         if (!n) continue;
         const s = camera.worldToScreen(n.x, n.y, vp);
@@ -2001,8 +2202,11 @@
       // next rAF tick), so we don't need an explicit drawFrame
       // here — saves one redundant GPU submit per recomputeFocus.
       // (2026-05-20 — audit-flagged minor optimization.)
+      // Phase 4B FX1 (2026-05-20) — focus change → glyph alpha
+      // column will reflect new dim states on the next refresh.
+      // Mark dirty so refreshGlyphAlphas + writeBuffer fire.
+      local.glyphInstancesDirty = true;
       startAnimLoop();
-      syncGlyphFocus();
       syncLabels();
     }
 
@@ -2077,6 +2281,12 @@
           }
         }
       }
+      // Phase 4B FX1 (2026-05-20) — fade in flight → glyph alphas
+      // need updating on the next drawFrame. When stillFading
+      // settles to false, the flag stops being re-set; the dirty
+      // gate in drawFrame then skips the refreshGlyphAlphas O(N)
+      // loop + the GPU writeBuffer for the glyph instance buffer.
+      if (stillFading) local.glyphInstancesDirty = true;
       return stillFading;
     }
 
@@ -2096,13 +2306,6 @@
       }
       return out;
     }
-
-    // 2026-05-20 — replaced by `refreshGlyphAlphas` (called per
-    // frame from drawFrame). With glyphs in the WebGPU canvas at
-    // their parent disk's depth, the focus-dim falls out of the
-    // existing nodeStates → alpha mapping. No occlusion zone hack
-    // needed — depth pipeline handles it natively.
-    function syncGlyphFocus() { /* no-op — GPU glyph pass */ }
 
     // Update hoverId, then refresh focus. No-op when the hover
     // hasn't actually changed.

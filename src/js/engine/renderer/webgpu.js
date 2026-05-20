@@ -195,22 +195,25 @@
       let final_rgb = disk_rgb + glow_rgb * (1.0 - disk_a);
       let final_a   = disk_a   + glow_a   * (1.0 - disk_a);
       // Phase 6d — discard near-transparent fragments so they
-      // don't write depth. Without this, the SDF anti-alias
-      // halo of a dimmed disk would block focused disks behind
-      // it (depth test less-equal).
-      // 2026-05-19: threshold 0.04 → 0.08 + 1.5× quad headroom
-      // killed most of the glow's square clipping artifact.
-      // 2026-05-20: John flagged Raijin + Vairocana still show
-      // residual clip — happens when selected_glow_strength is
-      // high enough that the glow alpha just inside the smoothstep
-      // upper bound is still above 0.08 (writes depth → blocks
-      // adjacent disk fragments at z=0.3/0.6). Bumped to 0.15 to
-      // cut a thicker outer band; combined with the 1.5× quad
-      // headroom this discards the entire glow tail that was
-      // depth-blocking neighbors. Trade-off: the very outer glow
-      // pixels (alpha < 0.15) don't render — barely visible, far
-      // better than the square artifact.
-      if (final_a < 0.15) { discard; }
+      // don't write depth. Without this, the SDF anti-alias halo
+      // of a dimmed disk would block focused disks behind it
+      // (depth test less-equal).
+      //
+      // Phase 4B FX5 (2026-05-20) — discard threshold derived from
+      // the selected_glow_strength uniform instead of a hardcoded
+      // 0.15. History: 0.04 -> 0.08 -> 0.15 across 3 sessions; each
+      // bump was John turning the glow slider higher and seeing the
+      // square clip return. With derivation the threshold tracks
+      // the strength automatically: base 0.05 at strength <= 1.0;
+      // +0.10 per unit above 1.0. Combined with the 1.5x quad
+      // headroom (vs at top of vertex shader), the entire glow tail
+      // is discarded no matter what the slider says. Adapts to any
+      // strength value. Trade-off: very outer glow pixels (alpha <
+      // derived) do not render -- barely visible, far better than
+      // the square clip artifact. See AUDIT/forge-rebuild-4A-fx-
+      // 2026-05-20.md section 3 FX5.
+      let discard_t = 0.05 + max(0.0, v.selected_glow_strength - 1.0) * 0.1;
+      if (final_a < discard_t) { discard; }
       return vec4<f32>(final_rgb, final_a);
     }
   `;
@@ -361,12 +364,32 @@
   // Per-instance attrs:
   //   inst_pos_r_idx  vec4   xy=world center, z=disk radius, w=glyphIdx (0..16)
   //   inst_tint_alpha vec4   rgba — family tint × base alpha (× dim mult)
+  //   inst_state      vec2   x=state(0=focused,1=dim), y=selected flag
+  //                          REUSES nodeStateVbo — CROSS-PIPELINE
+  //                          INVARIANT documented at the write site
+  //                          (search "CROSS-PIPELINE INVARIANT" in
+  //                          this file). DO NOT split the glyph pass
+  //                          into a separate render pass.
   //
-  // Uniform: a 17-entry array of vec4 UV rects (u0,v0,u1,v1).
-  // Depth: glyphs render at z slightly in FRONT of their parent
-  // disk (selected z=0.0 → glyph 0.05; highlighted 0.3 → 0.25;
-  // dimmed 0.6 → 0.55) so the glyph paints ON TOP of its disk
-  // but BEHIND any disk that's selected/highlighted in front.
+  // Uniform: a 32-entry array of vec4 UV rects (u0,v0,u1,v1) —
+  // padded for headroom; only 17 used today.
+  //
+  // Depth (Phase 1B `bfc35d2` + Phase 4A doc-lock):
+  //   - Glyph z = parent disk z EXACTLY.
+  //   - selected glyph @ z=0.0; focused @ z=0.3; dim @ z=0.6.
+  //   - Glyph pass draws AFTER nodes in the SAME render pass; at
+  //     equal z, `depthCompare:'less-equal'` lets the later draw
+  //     win. Across instances at different z, depth test correctly
+  //     hides a dim glyph behind a focused-disk halo.
+  //   - Relies on (a) pass order edges→nodes→glyphs, (b) all three
+  //     in the same render pass, (c) `less-equal` not flipping to
+  //     `less`. Each is a "convention not enforcement" — see the
+  //     audit at AUDIT/forge-robustness-05-gpu-pipeline-2026-05-20.md
+  //     §3 I1.
+  //
+  // Atlas (Phase 4B FX4): 128 px cell, full mip chain via
+  // setGlyphAtlas; `mipmapFilter:'linear'` sampler now has a chain
+  // to interpolate so Retina deep-zoom is sharp.
   // ============================================================
   const GLYPH_SHADER = /* wgsl */ `
     struct View {
@@ -523,6 +546,13 @@
     // Phase 3B F3 (2026-05-20) — matching counter for the edge
     // instance VBO. Same shape; verified via debugCountEdgeVboWrites().
     let edgeInstanceWrites = 0;
+    // Phase 4B FX1 (2026-05-20) — matching counter for the glyph
+    // instance VBO. Should equal rebake-count + fade-frame-count
+    // + camera-change count (cull may shift) — NOT every drawFrame.
+    let glyphInstanceWrites = 0;
+    // Phase 4B FX4 (2026-05-20) — atlas diagnostic surface,
+    // populated by setGlyphAtlas. Exposed via debugAtlasInfo().
+    let atlasInfo = null;
 
     const context = canvas.getContext('webgpu');
     const format  = navigator.gpu.getPreferredCanvasFormat();
@@ -825,6 +855,11 @@
       debugCountNodeVboWrites() { return nodeInstanceWrites; },
       // Phase 3B F3 (2026-05-20) — same shape for edges.
       debugCountEdgeVboWrites() { return edgeInstanceWrites; },
+      // Phase 4B FX1 (2026-05-20) — same shape for glyphs.
+      debugCountGlyphVboWrites() { return glyphInstanceWrites; },
+      // Phase 4B FX4 (2026-05-20) — atlas dimensions + mip count.
+      // Returns null until setGlyphAtlas runs at boot.
+      debugAtlasInfo() { return atlasInfo; },
       // Phase 1B — sanity-check the owned[] list. Returns the
       // count of live GPU resources tracked for cleanup.
       debugOwnedCount() { return owned.length; },
@@ -985,32 +1020,57 @@
       // 2026-05-20 — upload the glyph atlas to the GPU. Called
       // once at engine boot by the view layer after
       // `AtlasEngineGlyph.buildAtlas` resolves. `atlasCanvas` is
-      // a 2D canvas containing the rasterized 17-glyph grid;
+      // the mip-0 canvas; `mipCanvases` (Phase 4B FX4) is an array
+      // of per-mip canvases at successively halved dimensions.
       // `uvRects` is a Float32Array of (u0,v0,u1,v1) tuples in
       // atlas-space [0,1] per glyph index.
-      setGlyphAtlas(atlasCanvas, uvRects) {
+      //
+      // Phase 4B FX4 (2026-05-20) — mipmap support. The sampler
+      // declares `mipmapFilter:'linear'` (`webgpu.js:700` area).
+      // Without a mip chain that was a silent no-op; minification
+      // fell back to bilinear, producing visible blur at deep
+      // zoom on DPR=2/3 displays. We now allocate the texture
+      // with `mipLevelCount = ceil(log2(maxDim)) + 1` and upload
+      // each level from `mipCanvases`. Atlas-builder downsamples
+      // via browser drawImage at high quality. Cost: ~280 KB
+      // total vs ~70 KB pre-fix.
+      setGlyphAtlas(atlasCanvas, uvRects, mipCanvases) {
+        // Use the provided mip chain if given; fall back to the
+        // single mip-0 atlas canvas (for older callers).
+        const mips = (Array.isArray(mipCanvases) && mipCanvases.length)
+          ? mipCanvases : [atlasCanvas];
+        const w = atlasCanvas.width;
+        const h = atlasCanvas.height;
+        const mipLevelCount = mips.length;
         // Reallocate the texture at the actual atlas size, then
-        // copy the canvas data in.
+        // copy each mip level in.
         disown(atlasTex);
         try { atlasTex.destroy(); } catch (e) { /* ignore */ }
         atlasTex = own(device.createTexture({
           label: 'forge-glyph-atlas',
-          size: { width: atlasCanvas.width, height: atlasCanvas.height, depthOrArrayLayers: 1 },
+          size: { width: w, height: h, depthOrArrayLayers: 1 },
           format: 'rgba8unorm',
+          mipLevelCount,
           usage: GPUTextureUsage.TEXTURE_BINDING | GPUTextureUsage.COPY_DST | GPUTextureUsage.RENDER_ATTACHMENT,
         }));
-        // copyExternalImageToTexture handles the rgba premultiply.
-        device.queue.copyExternalImageToTexture(
-          { source: atlasCanvas, flipY: false },
-          { texture: atlasTex, premultipliedAlpha: true },
-          { width: atlasCanvas.width, height: atlasCanvas.height },
-        );
+        // Upload each mip level. copyExternalImageToTexture
+        // handles rgba premultiply for each.
+        for (let level = 0; level < mips.length; level++) {
+          const mc = mips[level];
+          device.queue.copyExternalImageToTexture(
+            { source: mc, flipY: false },
+            { texture: atlasTex, premultipliedAlpha: true, mipLevel: level },
+            { width: mc.width, height: mc.height },
+          );
+        }
         // Upload UV rects to the uniform buffer (padded to 512 bytes).
         const uvData = new Float32Array(GLYPH_UV_UBO_SIZE / 4);
         uvData.set(uvRects.subarray(0, Math.min(uvRects.length, uvData.length)));
         device.queue.writeBuffer(glyphUvUbo, 0, uvData);
         // Re-bind the group since the texture handle changed.
         glyphBg = makeGlyphBindGroup();
+        // Diagnostic surface for _forgeDebug.dumpAtlasInfo().
+        atlasInfo = { width: w, height: h, mipLevelCount };
       },
 
       drawDisk(pxX, pxY, pxR, color, viewportCss) {
@@ -1218,7 +1278,15 @@
         if (glyphCount > 0 && nodeStateVbo) {
           const r = ensureBuffer(glyphInstanceVbo, glyphInstanceVboSize, glyphVB.byteLength, 'forge-glyph-inst-vbo');
           glyphInstanceVbo = r.buf; glyphInstanceVboSize = r.size;
-          device.queue.writeBuffer(glyphInstanceVbo, 0, glyphVB);
+          // Phase 4B FX1 (2026-05-20) — gate on the dirty flag
+          // (or grew). Mirrors node + edge gates above. Caller
+          // sets glyphInstancesDirty=true after rebake / focus
+          // change / fade tick / camera move; false at idle.
+          // Saves ~21 KB/frame at deities / ~1.6 MB at 50k.
+          if (frame.glyphInstancesDirty || r.grew) {
+            device.queue.writeBuffer(glyphInstanceVbo, 0, glyphVB);
+            glyphInstanceWrites++;
+          }
           pass.setPipeline(glyphPipeline);
           pass.setBindGroup(0, glyphBg);
           pass.setVertexBuffer(0, quadVbo);
