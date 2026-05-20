@@ -296,6 +296,16 @@
   //  - Tint factor frozen at 0.55 literal in
   //    rebuildGlyphInstanceBuffer (FX7 — `glyph_tint` deleted from
   //    PARAM_DEFAULTS per Phase 0 consistency).
+  //  - **Phase 6A (2026-05-20) — screen-size fade.** Glyph alpha is
+  //    multiplied by `smoothstep(5, 10, screen_r_px)` in the
+  //    fragment. Below 5 px the stencil is hidden entirely so the
+  //    disk's family color reads clearly (root cause of John's
+  //    "transparent disk + faint symbol on top" at fit-zoom — the
+  //    lightened stencil covered ~85% of the disk and washed it to
+  //    pastel). Above 10 px the glyph paints at full opacity; in
+  //    between, smooth blend. Implemented in GLYPH_SHADER vs+fs;
+  //    no per-frame JS work. The disk now reads SOLID at the
+  //    overview zoom John works at; symbols appear on inspection.
   //
   // Glyph dirty-flag + cull (FX1 + FX2):
   //  - local.glyphInstancesDirty defaults true; reset after each

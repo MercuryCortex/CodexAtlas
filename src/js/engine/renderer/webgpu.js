@@ -455,6 +455,15 @@
       // the entire opacity multiplier, refreshed every frame
       // from JS — that path is gone.
       @location(2) state: f32,
+      // Phase 6A (2026-05-20) — screen radius in pixels, computed
+      // in vertex so fragment can fade glyph based on apparent
+      // size. At fit-zoom small disks (~3 px), the deity stencil
+      // covered ~85% of the disk in a pastel tint → disk read
+      // "transparent." Above the threshold (size_fade_hi), glyph
+      // renders at full alpha; below (size_fade_lo) it's hidden
+      // entirely and the disk shows clean. See AUDIT/forge-rebuild-
+      // 6A-glyph-size-fade-2026-05-20.md.
+      @location(3) screen_r: f32,
     };
 
     @vertex
@@ -513,11 +522,17 @@
       // old occlusion-zone hack was approximating.
       let z_focus = mix(0.3, 0.6, state);
       let z       = mix(z_focus, 0.0, selected);
+      // Phase 6A (2026-05-20) — screen radius. world radius r maps to
+      // NDC half-width r*|view_scale.x|, then to pixels by multiplying
+      // by viewport_px.x/2. view_scale is (2/(camW * camScale), -2/...)
+      // so the magnitude × viewport.x/2 collapses to r * camScale.
+      let screen_r = r * abs(v.view_scale.x) * v.viewport_px.x * 0.5;
       var out: VsOut;
       out.position = vec4<f32>(ndc, z, 1.0);
       out.uv       = vec2<f32>(uvX, uvY);
       out.tint     = inst_tint_alpha;
       out.state    = state;
+      out.screen_r = screen_r;
       return out;
     }
 
@@ -547,7 +562,16 @@
       let glyph_op  = v.glyph_params.x;
       let dim_g     = v.glyph_params.y;
       let dim_mult  = mix(1.0, 1.0 - dim_g, in.state);
-      let a         = tex.a * in.tint.a * glyph_op * dim_mult;
+      // Phase 6A (2026-05-20) — screen-size fade. At fit-zoom the
+      // disk is ~3 px and the deity stencil covered ~85% of that
+      // in a lightened tint, washing the family-color disk to a
+      // pastel that John read as "transparent" + "symbol fainted on
+      // top." Faded out below 5 px screen radius; restored fully
+      // above 10 px (the zoom level where the stencil reads as a
+      // symbol rather than a wash). Smoothstep gives a clean fade
+      // when the user zooms in to inspect a node.
+      let size_fade = smoothstep(5.0, 10.0, in.screen_r);
+      let a         = tex.a * in.tint.a * glyph_op * dim_mult * size_fade;
       if (a < 0.02) { discard; }
       // Premultiplied alpha output.
       return vec4<f32>(in.tint.rgb * a, a);
