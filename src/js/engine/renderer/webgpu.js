@@ -108,7 +108,14 @@
       selected_size_mult:     f32,
       selected_glow_strength: f32,
       selected_glow:          vec4<f32>,  // xyz = color, w = extent (×r)
-      bucket_hot_colors:      array<vec4<f32>, 8>,
+      bucket_hot_colors:      array<vec4<f32>, 7>,
+      // Phase 5C (2026-05-20) — node-unified opacity. Both disk
+      // and glyph share the same dim formula now (uniform-driven,
+      // state-derived), so glyph opacity no longer needs CPU per-
+      // frame computation. xy carries glyph_opacity + dim_amount_glyphs;
+      // zw spare. Lives in the slot freed by collapsing the unused
+      // 8th bucket entry (only 7 buckets are real).
+      glyph_params:           vec4<f32>,
     };
     @group(0) @binding(0) var<uniform> v: View;
 
@@ -240,7 +247,14 @@
       selected_size_mult:     f32,
       selected_glow_strength: f32,
       selected_glow:          vec4<f32>,
-      bucket_hot_colors:      array<vec4<f32>, 8>,
+      bucket_hot_colors:      array<vec4<f32>, 7>,
+      // Phase 5C (2026-05-20) — node-unified opacity. Both disk
+      // and glyph share the same dim formula now (uniform-driven,
+      // state-derived), so glyph opacity no longer needs CPU per-
+      // frame computation. xy carries glyph_opacity + dim_amount_glyphs;
+      // zw spare. Lives in the slot freed by collapsing the unused
+      // 8th bucket entry (only 7 buckets are real).
+      glyph_params:           vec4<f32>,
     };
     @group(0) @binding(0) var<uniform> v: View;
 
@@ -322,7 +336,10 @@
       // (not per-vertex) so interpolation is exact; floor + clamp for
       // safety against float drift at instance boundaries.
       let bidx_raw = floor(in.bucket_index + 0.5);
-      let bidx     = clamp(i32(bidx_raw), 0, 7);
+      // Phase 5C (2026-05-20) — clamp to 6 (was 7). The 8th vec4
+      // slot in the View uniform was repurposed for glyph_params;
+      // bucket count is now 7 (real bucket count anyway).
+      let bidx     = clamp(i32(bidx_raw), 0, 6);
       let hot      = v.bucket_hot_colors[bidx];
 
       // Phase 6d4 convention flip:
@@ -410,7 +427,14 @@
       selected_size_mult:     f32,
       selected_glow_strength: f32,
       selected_glow:          vec4<f32>,
-      bucket_hot_colors:      array<vec4<f32>, 8>,
+      bucket_hot_colors:      array<vec4<f32>, 7>,
+      // Phase 5C (2026-05-20) — node-unified opacity. Both disk
+      // and glyph share the same dim formula now (uniform-driven,
+      // state-derived), so glyph opacity no longer needs CPU per-
+      // frame computation. xy carries glyph_opacity + dim_amount_glyphs;
+      // zw spare. Lives in the slot freed by collapsing the unused
+      // 8th bucket entry (only 7 buckets are real).
+      glyph_params:           vec4<f32>,
     };
     @group(0) @binding(0) var<uniform> v: View;
     // 17 UV rects in atlas space — (u0,v0,u1,v1) per glyph type.
@@ -425,6 +449,12 @@
       @builtin(position) position: vec4<f32>,
       @location(0) uv:    vec2<f32>,
       @location(1) tint:  vec4<f32>,
+      // Phase 5C (2026-05-20) — pass state to fragment so it can
+      // compute alpha from uniforms (same shape as NODE_SHADER's
+      // disk fragment). Previously the per-instance tint.a was
+      // the entire opacity multiplier, refreshed every frame
+      // from JS — that path is gone.
+      @location(2) state: f32,
     };
 
     @vertex
@@ -487,6 +517,7 @@
       out.position = vec4<f32>(ndc, z, 1.0);
       out.uv       = vec2<f32>(uvX, uvY);
       out.tint     = inst_tint_alpha;
+      out.state    = state;
       return out;
     }
 
@@ -495,8 +526,28 @@
       let tex = textureSample(atlasTex, atlasSamp, in.uv);
       // Atlas is rasterized in white-on-transparent. tex.a carries
       // the stencil, tex.rgb is white where stencil is opaque.
-      // Multiply by tint to get the per-instance colored glyph.
-      let a = tex.a * in.tint.a;
+      //
+      // Phase 5C (2026-05-20) — node-unified opacity. The glyph
+      // fragment now computes alpha the same shape as the disk
+      // fragment:
+      //   atlas_alpha × tint.a × glyph_opacity_uniform × dim_mult
+      // where dim_mult mirrors NODE_SHADER's disk dim formula
+      // exactly: mix(1.0, 1.0 - dim_amount_glyphs, state). At
+      // focused (state=0) the multiplier is 1.0 (full); at dim
+      // (state=1) it drops to (1 - dim_amount_glyphs). Identical
+      // shape to the disk's dim → opacity drift between disk and
+      // glyph is now impossible by construction.
+      //
+      // Previously the per-instance tint.a column was refreshed
+      // every frame in JS from local.nodeStates × dim_amount_glyphs.
+      // That CPU path was the slow-pan source and the place where
+      // glyph and disk opacity could diverge. Now alpha is one
+      // thing, in one place, derived from the same per-instance
+      // state both the disk and glyph already read.
+      let glyph_op  = v.glyph_params.x;
+      let dim_g     = v.glyph_params.y;
+      let dim_mult  = mix(1.0, 1.0 - dim_g, in.state);
+      let a         = tex.a * in.tint.a * glyph_op * dim_mult;
       if (a < 0.02) { discard; }
       // Premultiplied alpha output.
       return vec4<f32>(in.tint.rgb * a, a);
@@ -1135,6 +1186,11 @@
         const selStr  = (typeof frame.selectedGlowStrength === 'number') ? frame.selectedGlowStrength : 0.0;
         const selExt  = (typeof frame.selectedGlowExtent   === 'number') ? frame.selectedGlowExtent   : 1.5;
         const selCol  = frame.selectedGlowColorRgb || [1, 1, 1];
+        // Phase 5C (2026-05-20) — glyph opacity uniforms. Same
+        // role for glyphs that dim_amount_nodes plays for disks.
+        // Caller (forge.js drawFrame) passes from local.params.
+        const glyphOp   = (typeof frame.glyphOpacity     === 'number') ? frame.glyphOpacity     : 0.85;
+        const glyphDim  = (typeof frame.dimAmountGlyphs  === 'number') ? frame.dimAmountGlyphs  : 0.7;
 
         const nVB  = frame.nodeInstances;
         const eVB  = frame.edgeInstances;
@@ -1167,8 +1223,17 @@
         viewData[13] = selCol[1];
         viewData[14] = selCol[2];
         viewData[15] = selExt;
-        // Bucket palette (8 × 4 floats) starts at offset 16 (64 bytes).
+        // Bucket palette (7 × 4 floats = 28 floats) starts at
+        // offset 16 (64 bytes). Phase 5C (2026-05-20) — the 8th
+        // bucket slot was repurposed as glyph_params (slot 7 in
+        // the bucketPalette mirror = floats 28..31). We write the
+        // first 28 floats from the palette + override the last 4
+        // with the glyph uniforms.
         viewData.set(bucketPalette, 16);
+        viewData[44] = glyphOp;
+        viewData[45] = glyphDim;
+        viewData[46] = 0;
+        viewData[47] = 0;
         device.queue.writeBuffer(viewUbo, 0, viewData);
 
         // ── Instance buffers (static geometry) ──────

@@ -768,16 +768,14 @@
       // first drawFrame uploads; drawFrame resets to false after
       // each call. ~130 MB/s saved at 10k mode / ~648 MB/s at 50k.
       edgeInstancesDirty: true,
-      // Phase 4B FX1+FX2 (2026-05-20) — glyphInstanceVbo dirty flag.
-      // Set true by every site whose output the glyph alpha column
-      // depends on: rebuildGlyphInstanceBuffer (static rebuild),
-      // recomputeFocus (state change), tickNodeFades (fade in flight),
-      // camera.onChange (cull viewport-dependent). drawFrame gates
-      // refreshGlyphAlphas + the GPU writeBuffer on this flag and
-      // resets to false after upload. Combined with the viewport+
-      // min-size cull below, idle GPU upload at deities drops from
-      // ~21 KB/frame to 0 once fade settles.
-      glyphInstancesDirty: true,
+      // Phase 5C (2026-05-20) — glyphInstancesDirty REMOVED.
+      // Glyph opacity is now uniform-driven in GPU (same shape as
+      // disk opacity), so there is no per-frame CPU work for the
+      // glyph alpha column. The glyph instance buffer is now
+      // truly static: it changes only on rebake / mode-switch.
+      // The next drawFrame's first upload happens because
+      // ensureBuffer.grew is true on first allocation; subsequent
+      // re-uploads only fire when rebake replaces the data.
       // 2026-05-19 — edge fade animation. `edgeStates` is the
       // LIVE-ANIMATING value pushed to the GPU each frame;
       // `edgeTargets` is the snap-to value computed by
@@ -1280,12 +1278,12 @@
       // visibility recomputation (per-tier zoom thresholds).
       camera.onChange(() => {
         if (local.destroyed) return;
-        // Phase 4B FX1 (2026-05-20) — camera moved → glyph cull
-        // recompute on next drawFrame (screen-projection depends
-        // on cam.scale / centerX / centerY + viewport). Cheap to
-        // over-set: the cull is in refreshGlyphAlphas which is
-        // gated by this flag.
-        local.glyphInstancesDirty = true;
+        // Phase 5C (2026-05-20) — glyph opacity is uniform-driven
+        // on the GPU now, so camera motion no longer needs to
+        // mark the glyph buffer dirty. The off-viewport cull is
+        // also gone (WebGPU's vertex-clip step handles it for
+        // free; the previous CPU cull was redundant). Pan/zoom
+        // is now purely a GPU-side view-uniform refresh.
         // Re-pack nodes if the camera scale has drifted enough
         // since the last pack. Threshold is N-aware (Phase 5B
         // M-F4, 2026-05-20): at 663 nodes a 5% band feels right;
@@ -1830,24 +1828,19 @@
         parseInt(gh.slice(3, 5), 16) / 255,
         parseInt(gh.slice(5, 7), 16) / 255,
       ];
-      // N2 (Phase 1B) / Phase 3B F3 / Phase 4B FX1 — gate the
-      // static instance buffer writes on the dirty flags (skips
-      // ~21KB node + ~145KB edge + ~21KB glyph GPU upload per
-      // frame at deities / ~270 MB/s combined saved at 10k).
-      // _forgeDebug.nodeOnly() hides edges + glyphs;
-      // _forgeDebug.edgesAndNodesOnly() hides only glyphs.
+      // N2 (Phase 1B) / Phase 3B F3 — gate the static node + edge
+      // instance buffer writes on the dirty flags (~270 MB/s saved
+      // at 10k). Phase 5C (2026-05-20) — the glyph dirty flag is
+      // GONE; the glyph instance buffer is now truly static and
+      // re-uploads only on rebake/mode-switch (via ensureBuffer's
+      // grew path or when rebuildGlyphInstanceBuffer signals via
+      // its own dirty flag below). _forgeDebug.nodeOnly() hides
+      // edges + glyphs; _forgeDebug.edgesAndNodesOnly() hides glyphs.
       const nodeOnly         = !!local._nodeOnly;
       const edgesAndNodesOnly = !!local._edgesAndNodesOnly;
       const frameNVB  = local.mode.nodePacked.data;
       const frameEVB  = nodeOnly ? null : local.mode.edgePacked.data;
-      // FX1 — refresh ONLY when the alpha column may have changed
-      // (rebake, focus change, fade in flight, or camera moved).
-      // When settled the JS O(N) loop is skipped + the buffer
-      // reference passes through unchanged. The dirty bool propagates
-      // to the renderer, which skips the writeBuffer too.
       const glyphsHidden = nodeOnly || edgesAndNodesOnly;
-      const glyphsDirty  = !glyphsHidden && local.glyphInstancesDirty;
-      if (glyphsDirty) refreshGlyphAlphas();
       const frameGVB = glyphsHidden ? null : (local.glyphInstanceData || null);
       local.renderer.drawFrame({
         viewportCss:           { w: vp.w, h: vp.h },
@@ -1860,6 +1853,11 @@
         selectedGlowStrength:  local.params.selected_glow_strength,
         selectedGlowExtent:    local.params.selected_glow_extent,
         selectedGlowColorRgb:  glowRgb,
+        // Phase 5C — glyph opacity uniforms passed alongside the
+        // disk dim uniforms. Shader applies them with the same
+        // dim formula the disk uses.
+        glyphOpacity:          (typeof local.params.glyph_opacity === 'number') ? local.params.glyph_opacity : 0.85,
+        dimAmountGlyphs:       (typeof local.params.dim_amount_glyphs === 'number') ? local.params.dim_amount_glyphs : 0.7,
         nodeInstances:         frameNVB,
         nodeInstancesDirty:    local.nodeInstancesDirty,
         edgeInstances:         frameEVB,
@@ -1867,14 +1865,14 @@
         nodeStates:            local.nodeStates,
         edgeStates:            local.edgeStates,
         glyphInstances:        frameGVB,
-        glyphInstancesDirty:   glyphsDirty,
+        glyphInstancesDirty:   !!local._glyphRebuildDirty,
       });
       // After the renderer has consumed the dirty buffers, reset
-      // all three flags. Next pack / focus / fade / camera sets
-      // re-set them.
+      // the two remaining flags. Glyphs are static — only the
+      // rebuild marks the rebuild-dirty flag.
       local.nodeInstancesDirty  = false;
       local.edgeInstancesDirty  = false;
-      local.glyphInstancesDirty = false;
+      local._glyphRebuildDirty  = false;
       const dt = performance.now() - t0;
       const fEl = document.getElementById('forge-status-frame');
       if (fEl) fEl.textContent = dt.toFixed(1) + ' ms';
@@ -1944,98 +1942,51 @@
         data[off + 4] = rgb[0];
         data[off + 5] = rgb[1];
         data[off + 6] = rgb[2];
-        data[off + 7] = baseOp;
+        // Phase 5C (2026-05-20) — per-instance alpha is now a
+        // base multiplier (1.0 = no per-instance override). The
+        // glyph fragment shader applies glyph_opacity uniform +
+        // state-driven dim_mult on top of this. So per-instance
+        // alpha is reserved for future per-node overrides; today
+        // it's identity (1.0) for every instance.
+        data[off + 7] = 1.0;
       }
       local.glyphInstanceData = data;
-      // FX1 — fresh static data; mark dirty so the next drawFrame
-      // uploads + the cull recomputes against the current camera.
-      local.glyphInstancesDirty = true;
-      // FX2 — counter for the cull diagnostic helper (number of
-      // instances whose alpha was forced to 0 in the last refresh).
-      local.glyphCulledCount = 0;
+      // Signal drawFrame that the static glyph buffer needs a
+      // GPU upload on the next pass (mode-switch / rebake). After
+      // that single upload the buffer is stable until the next
+      // rebake; no per-frame work.
+      local._glyphRebuildDirty = true;
     }
-    // Per-frame alpha refresh — reads local.nodeStates (which
-    // animates via tickNodeFades) and updates the alpha column
-    // so glyphs fade with their parent disk's dim transition.
+    // Phase 5C (2026-05-20) — refreshGlyphAlphas DELETED.
+    // The per-frame CPU loop that recomputed alpha = baseOp ×
+    // (1 - state × dimMul) for every glyph instance is gone.
+    // Glyph opacity is now computed in the fragment shader from
+    // the same per-instance state the disk already reads, using
+    // the same dim formula (uniform-driven). One opacity logic,
+    // one place. No drift between disk and glyph possible.
     //
-    // Phase 4B FX1 (2026-05-20) — settled-fade short-circuit:
-    //   drawFrame gates this call on local.glyphInstancesDirty.
-    //   When the flag is false this function isn't invoked at
-    //   all; the buffer's alpha column from the previous tick
-    //   stays. Renderer skips the ~21 KB GPU write (~1.6 MB at
-    //   50k) when dirty=false.
+    // Removed:
+    //  - The O(N) JS loop that ran every drawFrame (the slow-pan
+    //    source John flagged).
+    //  - The off-viewport CPU cull (WebGPU's vertex-clip handles
+    //    it for free; the min-size cull was already dropped in
+    //    the post-Phase-4B fix).
+    //  - The glyphInstancesDirty per-frame flag (state change
+    //    no longer needs to bump anything; the shader picks up
+    //    the new state via nodeStateVbo automatically).
     //
-    // Phase 4B FX2 + post-cast fix (2026-05-20) — off-viewport
-    // cull only; the min-size cull was DROPPED.
-    //   Off-viewport: alpha forced to 0 when the instance's
-    //   screen bbox falls outside the viewport. Real win at
-    //   deep zoom-in; no visible-info loss.
-    //   Min-size cull (dropped): the audit recommended
-    //   screen_r < 4 px → cull, reasoning "below 4 px the glyph
-    //   isn't conveying info." But the node screen-px-clamp
-    //   (node_min_screen_px=3) keeps disks at 3 px minimum, and
-    //   glyph_world_r = disk_world_r × glyph_scale (0.85), so
-    //   glyph_screen_r at the clamp floor is 3 × 0.85 = 2.55 px
-    //   — BELOW the audit's 4 px threshold. Result: every glyph
-    //   on every disk at the clamp floor was culled (visible at
-    //   default-zoom deities mode = ALL of them), producing
-    //   "empty circles" everywhere. John caught this immediately
-    //   after Phase 4B + 5B shipped (Nergal/Ninlil hover screenshot).
-    //   The existing `alpha < 0.02` fragment-discard in webgpu.js
-    //   handles the per-pixel cost; the vertex shader's per-
-    //   instance cost at 663 nodes is ~5 µs total — not worth
-    //   the visible regression. Phase 6 can revisit if a 10k
-    //   benchmark surfaces a real perf cliff. See
-    //   feedback_audit_formulas_need_default_check.md for the
-    //   pattern: audit-recommended thresholds need a default-
-    //   parameter check before shipping.
-    function refreshGlyphAlphas() {
-      const data = local.glyphInstanceData;
-      const states = local.nodeStates;
-      if (!data || !states) return;
-      const N = data.length >>> 3;  // /8
-      const baseOp = (local.params && typeof local.params.glyph_opacity === 'number')
-        ? local.params.glyph_opacity : 0.85;
-      const dimMul = (local.params && typeof local.params.dim_amount_glyphs === 'number')
-        ? local.params.dim_amount_glyphs : 0.7;
-      const cam = camera && camera.state;
-      const vp  = local.lastSize;
-      const cullActive = !!(cam && vp.w && vp.h);
-      const camScale   = cullActive ? cam.scale   : 1;
-      const camCX      = cullActive ? cam.centerX : 0;
-      const camCY      = cullActive ? cam.centerY : 0;
-      const halfW = vp.w * 0.5;
-      const halfH = vp.h * 0.5;
-      let culled = 0;
-      for (let i = 0; i < N; i++) {
-        let alpha;
-        if (cullActive) {
-          const wx = data[i * 8 + 0];
-          const wy = data[i * 8 + 1];
-          const wr = data[i * 8 + 2];
-          const screenR = wr * camScale;
-          const screenX = (wx - camCX) * camScale + halfW;
-          const screenY = (wy - camCY) * camScale + halfH;
-          // Off-viewport only. Min-size cull dropped.
-          const offScreen = (screenX + screenR < 0)
-                         || (screenX - screenR > vp.w)
-                         || (screenY + screenR < 0)
-                         || (screenY - screenR > vp.h);
-          if (offScreen) {
-            alpha = 0;
-            culled++;
-          } else {
-            const state = states[i * 2] || 0;     // 0=focused, 1=dim
-            alpha = baseOp * (1 - state * dimMul);
-          }
-        } else {
-          const state = states[i * 2] || 0;
-          alpha = baseOp * (1 - state * dimMul);
-        }
-        data[i * 8 + 7] = alpha;
-      }
-      local.glyphCulledCount = culled;
-    }
+    // What remains:
+    //  - local.glyphInstanceData (built once per rebake) carries
+    //    static fields: pos, radius, glyphIdx, tint rgb, base
+    //    alpha=1.0. No per-frame mutation.
+    //  - local._glyphRebuildDirty flag — set true ONLY when
+    //    rebuildGlyphInstanceBuffer reallocates. Cleared after
+    //    one drawFrame uploads. Mirrors nodeInstancesDirty +
+    //    edgeInstancesDirty for the static-VBO upload gate.
+    //
+    // See AUDIT/forge-rebuild-4A-fx-2026-05-20.md §3 FX1 for
+    // the original design; this supersedes it post John's
+    // architectural critique.
 
     // ── Labels ─────────────────────────────────────────
     // Only paint labels for nodes in the focused set (hover or
@@ -2437,10 +2388,10 @@
       // next rAF tick), so we don't need an explicit drawFrame
       // here — saves one redundant GPU submit per recomputeFocus.
       // (2026-05-20 — audit-flagged minor optimization.)
-      // Phase 4B FX1 (2026-05-20) — focus change → glyph alpha
-      // column will reflect new dim states on the next refresh.
-      // Mark dirty so refreshGlyphAlphas + writeBuffer fire.
-      local.glyphInstancesDirty = true;
+      // Phase 5C (2026-05-20) — no glyph dirty-flag needed.
+      // Glyph opacity is uniform + state driven on GPU; the
+      // shader picks up the new state from nodeStateVbo on the
+      // next drawFrame without any per-instance buffer write.
       startAnimLoop();
       syncLabels();
     }
@@ -2516,12 +2467,11 @@
           }
         }
       }
-      // Phase 4B FX1 (2026-05-20) — fade in flight → glyph alphas
-      // need updating on the next drawFrame. When stillFading
-      // settles to false, the flag stops being re-set; the dirty
-      // gate in drawFrame then skips the refreshGlyphAlphas O(N)
-      // loop + the GPU writeBuffer for the glyph instance buffer.
-      if (stillFading) local.glyphInstancesDirty = true;
+      // Phase 5C (2026-05-20) — no glyph dirty-flag needed.
+      // The glyph fragment shader reads state from nodeStateVbo
+      // (the same buffer animTick is writing). When fade
+      // advances the state values, the next drawFrame's shader
+      // run picks them up automatically — no JS-side glyph work.
       return stillFading;
     }
 
