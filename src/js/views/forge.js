@@ -2906,19 +2906,46 @@
       });
 
       // Row-hover → explainer tooltip.
+      // Phase 15 (2026-05-21) — viewport-clamped positioning. Default
+      // placement is to the right of the legend panel, top-aligned
+      // with the hovered row. But the tooltip can be tall (200+ px),
+      // and the legend opens NEAR the bottom of the screen — so the
+      // default position often overflowed BELOW the viewport. Fix:
+      // measure the tooltip's actual height after rendering content,
+      // then clamp into [margin, viewport - tooltipHeight - margin].
+      // Same for the horizontal axis: if the right side would
+      // overflow, place it to the LEFT of the panel instead.
       function showTooltipFor(row) {
         const key = row.getAttribute('data-bucket');
         const body = bodyByKey[key];
         if (!body) return;
         tooltip.textContent = body;
-        // Position to the right of the legend panel; top-aligned with
-        // the hovered row.
+        // Reveal first so we can measure dimensions.
+        tooltip.style.display = '';
+        tooltip.setAttribute('aria-hidden', 'false');
         const rPanel = panel.getBoundingClientRect();
         const rRow   = row.getBoundingClientRect();
-        tooltip.style.left = (rPanel.right + 8) + 'px';
-        tooltip.style.top  = rRow.top + 'px';
-        tooltip.setAttribute('aria-hidden', 'false');
-        tooltip.style.display = '';
+        const rTip   = tooltip.getBoundingClientRect();
+        const margin = 8;
+        // Horizontal: default to the right of the panel; if that
+        // would overflow the right edge, switch to the left of the
+        // panel; clamp to viewport in either case.
+        let left = rPanel.right + margin;
+        if (left + rTip.width + margin > window.innerWidth) {
+          left = rPanel.left - rTip.width - margin;
+        }
+        if (left < margin) left = margin;
+        // Vertical: top-align with the hovered row, then clamp so
+        // the tooltip fits inside the viewport. If the row sits near
+        // the bottom, the tooltip slides up until its bottom touches
+        // the viewport bottom (minus margin).
+        let top = rRow.top;
+        if (top + rTip.height + margin > window.innerHeight) {
+          top = window.innerHeight - rTip.height - margin;
+        }
+        if (top < margin) top = margin;
+        tooltip.style.left = left + 'px';
+        tooltip.style.top  = top  + 'px';
       }
       function hideTooltip() {
         tooltip.setAttribute('aria-hidden', 'true');
@@ -2966,18 +2993,91 @@
       card.className   = 'forge-hover-card';
       card.id          = 'forge-hover-card';
       card.style.display = 'none';
+      // Layout: thumbnail on top, then header (name + tradition),
+      // then the data rows (description, connections, date, place).
       card.innerHTML = ''
         + '<div class="forge-hover-card-thumb">'
         +   '<img id="forge-hover-card-img" alt="" />'
         + '</div>'
         + '<div class="forge-hover-card-body">'
         +   '<div class="forge-hover-card-name" id="forge-hover-card-name"></div>'
-        +   '<div class="forge-hover-card-type" id="forge-hover-card-type"></div>'
+        +   '<div class="forge-hover-card-tradition" id="forge-hover-card-tradition"></div>'
+        +   '<div class="forge-hover-card-desc" id="forge-hover-card-desc"></div>'
+        +   '<div class="forge-hover-card-wires" id="forge-hover-card-wires"></div>'
+        +   '<div class="forge-hover-card-meta" id="forge-hover-card-meta"></div>'
         + '</div>';
       stage.appendChild(card);
-      const img      = card.querySelector('#forge-hover-card-img');
-      const nameEl   = card.querySelector('#forge-hover-card-name');
-      const typeEl   = card.querySelector('#forge-hover-card-type');
+      const img       = card.querySelector('#forge-hover-card-img');
+      const nameEl    = card.querySelector('#forge-hover-card-name');
+      const tradEl    = card.querySelector('#forge-hover-card-tradition');
+      const descEl    = card.querySelector('#forge-hover-card-desc');
+      const wiresEl   = card.querySelector('#forge-hover-card-wires');
+      const metaEl    = card.querySelector('#forge-hover-card-meta');
+
+      // Param-derived bucket → hex color map. Built once per show
+      // call so the legend stays the SSOT.
+      function bucketHex(bucket) {
+        const p = local.params || {};
+        return p['active_color_' + bucket] || '#999999';
+      }
+      // Catchy "role" / brief-description picker. Tries multiple
+      // YAML fields in vault-convention order. Empty string if none.
+      function pickDescription(n) {
+        const candidates = [
+          n.role, n.description, n.brief, n.subtitle,
+          Array.isArray(n.domains) ? n.domains.join(', ') : null,
+        ];
+        for (const c of candidates) if (c && typeof c === 'string') return c;
+        return '';
+      }
+      function pickPlace(n) {
+        return n.region
+            || n['place-of-origin']
+            || n['originating-place']
+            || n.location
+            || n.origin
+            || '';
+      }
+      function pickTradition(n) {
+        return n.tradition || n.family || n.religion || '';
+      }
+      // Year formatter — same shape as the scrubber's formatYear.
+      function fmtYear(y) {
+        if (typeof y !== 'number' || !isFinite(y)) return '';
+        if (y < 0) return Math.abs(y) + ' BCE';
+        if (y === 0) return '0';
+        return y + ' CE';
+      }
+      function pickDate(n) {
+        // Normalized fields from build_data.py first; YAML raw as fallback.
+        const e = (typeof n.date_earliest === 'number') ? n.date_earliest
+                : (typeof n['period-active-earliest'] === 'number') ? n['period-active-earliest']
+                : null;
+        const l = (typeof n.date_latest === 'number') ? n.date_latest
+                : (typeof n['period-active-latest'] === 'number') ? n['period-active-latest']
+                : null;
+        if (e == null && l == null) return '';
+        if (e != null && l != null && e !== l) return fmtYear(e) + ' – ' + fmtYear(l);
+        return fmtYear(e != null ? e : l);
+      }
+      // Count edges connected to `id`, grouped by bucket. Walks
+      // local.mode.edges once. O(E) per show — cheap at 3k edges,
+      // could be precomputed if hover frequency demands it.
+      function countWires(id) {
+        const counts = Object.create(null);
+        const edges = local.mode && local.mode.edges;
+        if (!edges) return counts;
+        const EB = window.EDGE_BUCKET || {};
+        for (let i = 0; i < edges.length; i++) {
+          const e = edges[i];
+          if (e.source !== id && e.target !== id) continue;
+          const b = EB[e.type] || 'association';
+          counts[b] = (counts[b] || 0) + 1;
+        }
+        return counts;
+      }
+      // Bucket render order — matches the legend's BUCKET_ORDER.
+      const BUCKET_ORDER = ['transmission','parallel','association','kinship','attestation','polemic','fusion'];
 
       let showId      = 0;     // setTimeout token
       let loadToken   = 0;     // per-hover stale-load guard
@@ -2993,15 +3093,42 @@
         const m = local.mode;
         const node = (m && m.nodesById && m.nodesById.get) ? m.nodesById.get(id) : null;
         if (!node) return;
+        // Header — name + tradition (acts as the "religion title").
         nameEl.textContent = node.name || id;
-        typeEl.textContent = node.type || '';
-        // Stale-load guard: every show bumps the token; only the
-        // matching onload is allowed to swap the image src.
+        tradEl.textContent = pickTradition(node);
+        tradEl.style.display = tradEl.textContent ? '' : 'none';
+        // Description (role / domains).
+        const desc = pickDescription(node);
+        descEl.textContent = desc;
+        descEl.style.display = desc ? '' : 'none';
+        // Wires — colored pills with counts. One pill per non-zero bucket.
+        const counts = countWires(id);
+        const pills = [];
+        for (const b of BUCKET_ORDER) {
+          const n = counts[b] || 0;
+          if (!n) continue;
+          pills.push(
+            '<span class="forge-hover-card-wire" style="color:' + bucketHex(b) + '">'
+            +   '<span class="forge-hover-card-wire-dot" style="background:' + bucketHex(b) + '"></span>'
+            +   n
+            + '</span>'
+          );
+        }
+        wiresEl.innerHTML = pills.join('');
+        wiresEl.style.display = pills.length ? '' : 'none';
+        // Meta — date + place, only show what exists.
+        const date  = pickDate(node);
+        const place = pickPlace(node);
+        const metaParts = [];
+        if (date)  metaParts.push('<div class="forge-hover-card-meta-row"><span class="forge-hover-card-meta-k">Date</span><span class="forge-hover-card-meta-v">' + date  + '</span></div>');
+        if (place) metaParts.push('<div class="forge-hover-card-meta-row"><span class="forge-hover-card-meta-k">Place</span><span class="forge-hover-card-meta-v">' + place + '</span></div>');
+        metaEl.innerHTML = metaParts.join('');
+        metaEl.style.display = metaParts.length ? '' : 'none';
+        // Thumbnail — stale-load guarded.
         loadToken++;
         const myToken = loadToken;
         img.style.display = 'none';
         img.removeAttribute('src');
-        // Try .jpg, then .png, then .webp — first that loads wins.
         const candidates = ['jpg', 'png', 'webp'].map(ext =>
           'thumbnails/' + encodeURIComponent(id) + '.' + ext);
         (function tryNext(i) {

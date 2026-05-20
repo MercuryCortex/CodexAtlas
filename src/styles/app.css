@@ -6000,12 +6000,68 @@ body.nav-collapsed .nav-more > summary .lbl { display: none; }
   color: var(--text-1, #e5e7eb);
   letter-spacing: 0.02em;
 }
-.forge-hover-card-type {
+/* Tradition title (formerly `forge-hover-card-type`). Small caps,
+   acts as the "religion title" line just under the name. */
+.forge-hover-card-tradition {
   font-size: 10px;
   color: var(--text-3, #6b7280);
   letter-spacing: 0.08em;
   text-transform: uppercase;
   margin-top: 2px;
+}
+/* Brief description / catchy role (Phase 15). */
+.forge-hover-card-desc {
+  font-size: 11px;
+  color: var(--text-2, #b5b9c5);
+  letter-spacing: 0.02em;
+  line-height: 1.35;
+  margin-top: 8px;
+  font-style: italic;
+}
+/* Connection-counts row — one colored pill per wire bucket. */
+.forge-hover-card-wires {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 8px;
+}
+.forge-hover-card-wire {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 11px;
+  font-variant-numeric: tabular-nums;
+  letter-spacing: 0.04em;
+}
+.forge-hover-card-wire-dot {
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+}
+/* Meta rows — Date, Place. Each is a key on the left + value. */
+.forge-hover-card-meta {
+  margin-top: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+.forge-hover-card-meta-row {
+  display: flex;
+  gap: 8px;
+  font-size: 11px;
+  color: var(--text-2, #b5b9c5);
+  letter-spacing: 0.02em;
+}
+.forge-hover-card-meta-k {
+  flex: 0 0 36px;
+  color: var(--text-3, #6b7280);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-size: 10px;
+}
+.forge-hover-card-meta-v {
+  flex: 1 1 auto;
 }
 
 .forge-stage {
