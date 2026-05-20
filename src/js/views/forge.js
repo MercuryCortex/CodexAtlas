@@ -908,8 +908,12 @@
       // Iterate via nodePack.idIndex so the order matches
       // hitNodes / state buffers exactly (and any node that
       // failed positioning is correctly skipped).
+      // 2026-05-20 — audit-flagged hoist: also expose this Map on
+      // local.mode so the scrubber filter in recomputeFocus
+      // doesn't have to rebuild it from scratch every hover.
       const modeNodeById = new Map();
       for (const n of modeNodes) modeNodeById.set(n.id, n);
+      local.mode.nodesById = modeNodeById;
       for (let i = 0; i < nodePack.instanceCount; i++) {
         const id = nodePack.idIndex[i];
         const n  = modeNodeById.get(id);
@@ -1385,11 +1389,14 @@
       // in range (don't dim them just for missing data).
       const tl = local.timeline;
       if (tl && (tl.inDate > tl.lo || tl.outDate < tl.hi)) {
-        const nodesById = {};
-        for (const n of local.mode.nodes) nodesById[n.id] = n;
+        // 2026-05-20 — reuse the pre-built mode.nodesById Map
+        // (built once in rebuildForMode) instead of allocating a
+        // fresh object every hover. Was the audit-flagged
+        // O(N)-per-hover allocation.
+        const nodesById = (local.mode && local.mode.nodesById) || new Map();
         const lo = tl.inDate, hi = tl.outDate;
         for (let i = 0; i < idx.length; i++) {
-          const n = nodesById[idx[i]];
+          const n = nodesById.get ? nodesById.get(idx[i]) : nodesById[idx[i]];
           if (!n) continue;
           const ne = (typeof n.date_earliest === 'number') ? n.date_earliest : null;
           const nl = (typeof n.date_latest   === 'number') ? n.date_latest   : ne;
@@ -1438,11 +1445,14 @@
       // agent's audit. Fade animation now flows uninterrupted in
       // both IDLE and LOCKED modes.
       // Kick the animation loop. It self-exits when both the
-      // camera and all edge fades have settled.
+      // camera and all edge fades have settled. animTick will
+      // call drawFrame on its first iteration (this frame or the
+      // next rAF tick), so we don't need an explicit drawFrame
+      // here — saves one redundant GPU submit per recomputeFocus.
+      // (2026-05-20 — audit-flagged minor optimization.)
       startAnimLoop();
       syncGlyphFocus();
       syncLabels();
-      drawFrame();
     }
 
     // 2026-05-19 — advance per-edge state toward its target by
@@ -1596,22 +1606,50 @@
 
     // Update hoverId, then refresh focus. No-op when the hover
     // hasn't actually changed.
+    //
+    // 2026-05-20 — audit-flagged architectural fix: COALESCE
+    // recomputeFocus via rAF. Previously, every pointermove that
+    // crossed a node boundary fired setHoverId → recomputeFocus
+    // synchronously. At 120Hz pointer events, that's 120 full
+    // recomputes per second — the JS thread can't keep up with
+    // rAF (60Hz), animation stutters, hover feels "slow + no
+    // fade". Now: setHoverId records the pending id and schedules
+    // ONE recompute on the next rAF, regardless of how many
+    // pointer events fire in between. Capped at 60Hz max, same
+    // perceived responsiveness, ~2× less work.
+    //
+    // The actual hoverId mutation + DOM-cue updates stay
+    // synchronous (cursor class, status text) — only the
+    // heavy recomputeFocus call is coalesced.
+    let _hoverPendingId = undefined;
+    let _hoverRafId = 0;
     function setHoverId(newId) {
-      if (newId === local.hoverId) return;
-      local.hoverId = newId;
-      // Cursor cue — pointer over a node, default arrow elsewhere.
-      // is-panning (set on pointerdown) wins via CSS rule order.
-      canvas.classList.toggle('is-hover-node', !!newId);
-      const hEl = document.getElementById('forge-status-hover');
-      if (hEl) {
-        if (newId) {
-          const node = nodeById(newId);
-          hEl.textContent = (node && node.title) || newId;
-        } else {
-          hEl.textContent = '—';
+      if (newId === local.hoverId && _hoverPendingId === undefined) return;
+      // Light synchronous updates — cheap, must fire on every move
+      // for the cursor feedback to feel responsive.
+      if (newId !== local.hoverId) {
+        local.hoverId = newId;
+        canvas.classList.toggle('is-hover-node', !!newId);
+        const hEl = document.getElementById('forge-status-hover');
+        if (hEl) {
+          if (newId) {
+            const node = nodeById(newId);
+            hEl.textContent = (node && node.title) || newId;
+          } else {
+            hEl.textContent = '—';
+          }
         }
       }
-      recomputeFocus();
+      // Coalesce the heavy recompute. If one is already pending,
+      // just update the target; rAF will pick it up.
+      _hoverPendingId = newId;
+      if (_hoverRafId) return;
+      _hoverRafId = requestAnimationFrame(() => {
+        _hoverRafId = 0;
+        _hoverPendingId = undefined;
+        if (local.destroyed) return;
+        recomputeFocus();
+      });
     }
 
     // ── Search (Phase 4f) ─────────────────────────────
