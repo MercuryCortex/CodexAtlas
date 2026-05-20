@@ -433,151 +433,90 @@
       @builtin(position) position: vec4<f32>,
       @location(0) uv:    vec2<f32>,
       @location(1) tint:  vec4<f32>,
-      // Phase 5C (2026-05-20) — pass state to fragment so it can
-      // compute alpha from uniforms (same shape as NODE_SHADER's
-      // disk fragment). Previously the per-instance tint.a was
-      // the entire opacity multiplier, refreshed every frame
-      // from JS — that path is gone.
+      // state (0 = focused/selected, 1 = dim) — drives the same
+      // dim formula as the disk shader. Carried for color dim only;
+      // no independent visibility rules (Phase 6A screen-size fade
+      // and Phase 6B focus rule both DELETED in Phase 8).
       @location(2) state: f32,
-      // Phase 6A (2026-05-20) — screen radius in pixels, computed
-      // in vertex so fragment can fade glyph based on apparent
-      // size. At fit-zoom small disks (~3 px), the deity stencil
-      // covered ~85% of the disk in a pastel tint → disk read
-      // "transparent." Above the threshold (size_fade_hi), glyph
-      // renders at full alpha; below (size_fade_lo) it's hidden
-      // entirely and the disk shows clean. See AUDIT/forge-rebuild-
-      // 6A-glyph-size-fade-2026-05-20.md.
-      @location(3) screen_r: f32,
     };
 
+    // ============================================================
+    //  Phase 8 (2026-05-20) — GLYPH NESTED WITH DISK.
+    // ============================================================
+    //  Glyph quad sits INSIDE the disk quad, sized at disk_radius
+    //  × selected_size_mult (matches disk size growth) × glyph_scale
+    //  (the constant 0.85 already baked into r_base in JS).
+    //
+    //  No independent visibility rules. If the disk renders, the
+    //  glyph renders. Same family-color dim, same fade pipeline.
+    //  No screen-size cutoff (Phase 6A DELETED). No focus rule
+    //  (Phase 6B DELETED).
+    //
+    //  Tint: WHITE. The stencil reads as a clean white symbol
+    //  inside the colored disk — Apple-icon style, universal
+    //  contrast against any family color. No more pastel wash.
+    //
+    //  Dim follows the disk: when state=1, fill_rgb = white ×
+    //  (1 - dim_amount_nodes), same shape as the disk. Glyph
+    //  alpha stays 1.0 inside the stencil; only the color darkens.
+    // ============================================================
     @vertex
     fn vs_main(
       @location(0) quad_vertex:     vec2<f32>,     // [-1, +1] per axis
-      @location(1) inst_pos_r_idx:  vec4<f32>,     // xy=center, z=radius, w=glyphIdx
-      @location(2) inst_tint_alpha: vec4<f32>,     // rgba
-      // 2026-05-20 — per-instance state from the nodeStateVbo
-      // (same order as nodes). .x = state (0=focused, 1=dim),
-      // .y = selected (1=anchor). Drives:
-      //   - size growth on selected nodes (matches disk)
-      //   - per-instance z so overlapping glyphs layer correctly
-      //     (selected on top, focused middle, dim back) instead
-      //     of last-drawn-wins
-      @location(3) inst_state_sel:  vec2<f32>,
+      @location(1) inst_pos_r_idx:  vec4<f32>,     // xy=center, z=glyph_radius, w=glyphIdx
+      @location(2) inst_tint_alpha: vec4<f32>,     // rgba (carried but unused — see fragment)
+      @location(3) inst_state_sel:  vec2<f32>,     // .x = state, .y = selected
     ) -> VsOut {
-      let center = inst_pos_r_idx.xy;
-      let r_base = inst_pos_r_idx.z;
-      let idx_f  = inst_pos_r_idx.w;
-      let idx    = clamp(i32(floor(idx_f + 0.5)), 0, 31);
+      let center   = inst_pos_r_idx.xy;
+      let r_base   = inst_pos_r_idx.z;            // already × glyph_scale in JS
+      let idx_f    = inst_pos_r_idx.w;
+      let idx      = clamp(i32(floor(idx_f + 0.5)), 0, 31);
       let state    = inst_state_sel.x;
       let selected = inst_state_sel.y;
-      // Selected disk grows by v.selected_size_mult; glyph must
-      // follow or the disk covers it. Non-selected stays at base.
+      // Same size_mult as the disk → glyph grows with the disk
+      // when selected. ONE growth rule shared with the disk.
       let size_mult = mix(1.0, v.selected_size_mult, selected);
-      let r = r_base * size_mult;
-      // Glyph quad sized to scaled radius each side.
-      let world = center + quad_vertex * r;
-      let ndc   = world * v.view_scale + v.view_offset;
-      // UV lookup from atlas rect for this glyph type.
+      let r         = r_base * size_mult;
+      let world     = center + quad_vertex * r;
+      let ndc       = world * v.view_scale + v.view_offset;
+      // Atlas UV from this type's rect.
       let rect = g.rects[idx];
-      let u0 = rect.x; let v0 = rect.y;
-      let u1 = rect.z; let v1 = rect.w;
-      // quad_vertex is [-1,+1]; map to [0,1] for UV.
-      let uvX = mix(u0, u1, (quad_vertex.x + 1.0) * 0.5);
-      let uvY = mix(v0, v1, (quad_vertex.y + 1.0) * 0.5);
-      // Per-instance z — MATCH the parent disk's z exactly so
-      // less-equal depth test passes (0 <= 0) and the later-
-      // drawn glyph wins via draw order. The previous values
-      // (glyph z slightly LARGER than disk z) were backwards —
-      // in clip space smaller z = closer = wins. Selected
-      // anchor disk at z=0.0 + glyph at z=0.01 meant
-      // 0.01 <= 0.0 is FALSE → glyph rejected → bigger disk
-      // with no symbol. John's report: "lots of nodes hover
-      // without the symbol just bigger circle".
-      //
-      // With matched z + glyph drawn AFTER disks:
-      //   selected anchor (sel=1, state=0) → z=0.0
-      //   focused 1-hop   (state=0)        → z=0.3
-      //   dim background  (state=1)        → z=0.6
-      // Within same node, glyph wins by draw order. Across
-      // overlapping instances, depth test orders correctly:
-      // dim glyph (z=0.6) over focused disk (z=0.3) →
-      // 0.6 <= 0.3 false → dim glyph hidden behind focused
-      // (and same for focused vs selected). Exactly what the
-      // old occlusion-zone hack was approximating.
+      let uvX  = mix(rect.x, rect.z, (quad_vertex.x + 1.0) * 0.5);
+      let uvY  = mix(rect.y, rect.w, (quad_vertex.y + 1.0) * 0.5);
+      // Per-instance z = parent disk z exactly. Drawn AFTER disks
+      // so equal-z passes less-equal depth test → glyph on top.
       let z_focus = mix(0.3, 0.6, state);
       let z       = mix(z_focus, 0.0, selected);
-      // Phase 6A (2026-05-20) — screen radius. world radius r maps to
-      // NDC half-width r*|view_scale.x|, then to pixels by multiplying
-      // by viewport_px.x/2. view_scale is (2/(camW * camScale), -2/...)
-      // so the magnitude × viewport.x/2 collapses to r * camScale.
-      let screen_r = r * abs(v.view_scale.x) * v.viewport_px.x * 0.5;
       var out: VsOut;
       out.position = vec4<f32>(ndc, z, 1.0);
       out.uv       = vec2<f32>(uvX, uvY);
       out.tint     = inst_tint_alpha;
       out.state    = state;
-      out.screen_r = screen_r;
       return out;
     }
 
     @fragment
     fn fs_main(in: VsOut) -> @location(0) vec4<f32> {
+      // Stencil alpha from the atlas. Where stencil is opaque,
+      // tex.a ≈ 1; where transparent, tex.a ≈ 0.
       let tex = textureSample(atlasTex, atlasSamp, in.uv);
-      // Atlas is rasterized in white-on-transparent. tex.a carries
-      // the stencil, tex.rgb is white where stencil is opaque.
-      //
-      // Phase 5C (2026-05-20) — node-unified opacity. The glyph
-      // fragment now computes alpha the same shape as the disk
-      // fragment:
-      //   atlas_alpha × tint.a × glyph_opacity_uniform × dim_mult
-      // where dim_mult mirrors NODE_SHADER's disk dim formula
-      // exactly: mix(1.0, 1.0 - dim_amount_glyphs, state). At
-      // focused (state=0) the multiplier is 1.0 (full); at dim
-      // (state=1) it drops to (1 - dim_amount_glyphs). Identical
-      // shape to the disk's dim → opacity drift between disk and
-      // glyph is now impossible by construction.
-      //
-      // Previously the per-instance tint.a column was refreshed
-      // every frame in JS from local.nodeStates × dim_amount_glyphs.
-      // That CPU path was the slow-pan source and the place where
-      // glyph and disk opacity could diverge. Now alpha is one
-      // thing, in one place, derived from the same per-instance
-      // state both the disk and glyph already read.
-      let glyph_op  = v.glyph_params.x;
-      let dim_g     = v.glyph_params.y;
-      // Phase 6B (2026-05-20) — focus rule:
-      // glyphs render ONLY on DIM background nodes when focus is
-      // active. Focused / selected disks (state=0 with active focus)
-      // show as solid family-color circles with no symbol overlay.
-      // In idle (no focus), every node renders its glyph at full
-      // opacity (so the user can identify types at a glance).
-      //
-      // This was John's bug class — the deity stencil's inner-circle
-      // fill covered the disk center at ~85% alpha, making the
-      // locked node read as "transparent disk with faint symbol
-      // on top + glow." With the focus rule the locked anchor is
-      // a clean solid disk + glow halo (John's "SOLID NODE"
-      // directive); the dim periphery still carries glyphs for
-      // at-a-glance type identification.
-      //
-      // Mechanism: JS gates dim_amount_glyphs on hasFocus —
-      //   idle:   dim_g = 0   (no focus is active)
-      //   active: dim_g = 0.9 (the param value)
-      //
-      // Trace:
-      //   idle (dim_g=0, state=0):        mult = 1
-      //   active focused (dim_g>0, s=0):  mult = 0  (HIDDEN — disk is clean)
-      //   active dim     (dim_g>0, s=1):  mult = 1 - dim_g  (faint context glyph)
-      let is_active = step(0.01, dim_g);
-      let dim_mult  = mix(1.0, 1.0 - dim_g, in.state);
-      let mult      = mix(1.0, in.state * dim_mult, is_active);
-      // Phase 6A (2026-05-20) — screen-size fade. Below 5 px the
-      // stencil renders as a wash; faded out so disk reads clean.
-      let size_fade = smoothstep(5.0, 10.0, in.screen_r);
-      let a         = tex.a * in.tint.a * glyph_op * mult * size_fade;
-      if (a < 0.02) { discard; }
-      // Premultiplied alpha output.
-      return vec4<f32>(in.tint.rgb * a, a);
+      if (tex.a < 0.02) { discard; }
+
+      // Phase 8 — WHITE glyph, dimmed by the same rule as the disk.
+      //   state = 0 (focused/selected/idle) → full white
+      //   state = 1 (dim background)        → white × (1 - dim_g)
+      // No focus rule, no screen-size fade, no per-instance tint.
+      // dim_g is the param; in idle, JS still gates it to 0 so all
+      // glyphs paint at full white (no dim effect when nothing is in
+      // focus).
+      let dim_g    = v.glyph_params.y;
+      let dim_mult = mix(1.0, 1.0 - dim_g, in.state);
+      let rgb      = vec3<f32>(1.0, 1.0, 1.0) * dim_mult;
+      let a        = tex.a;
+
+      // Premultiplied alpha output. Glyph is solid (full alpha
+      // inside the stencil); color carries the dim.
+      return vec4<f32>(rgb * a, a);
     }
   `;
 

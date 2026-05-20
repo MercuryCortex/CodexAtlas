@@ -308,34 +308,18 @@
   //  - Tint factor frozen at 0.55 literal in
   //    rebuildGlyphInstanceBuffer (FX7 — `glyph_tint` deleted from
   //    PARAM_DEFAULTS per Phase 0 consistency).
-  //  - **Phase 6A (2026-05-20) — screen-size fade.** Glyph alpha is
-  //    multiplied by `smoothstep(5, 10, screen_r_px)` in the
-  //    fragment. Below 5 px the stencil is hidden entirely so the
-  //    disk's family color reads clearly (root cause of John's
-  //    "transparent disk + faint symbol on top" at fit-zoom — the
-  //    lightened stencil covered ~85% of the disk and washed it to
-  //    pastel). Above 10 px the glyph paints at full opacity; in
-  //    between, smooth blend. Implemented in GLYPH_SHADER vs+fs;
-  //    no per-frame JS work. The disk now reads SOLID at the
-  //    overview zoom John works at; symbols appear on inspection.
-  //  - **Phase 6B (2026-05-20) — focus rule (THE actual fix).**
-  //    Phase 6A reduced the wash at small sizes but the same bug
-  //    persisted at higher zooms because the deity-stencil's inner-
-  //    fill covered the disk center at ~85% alpha even when the
-  //    disk was big. Phase 6B kills it architecturally:
-  //      - When focus is ACTIVE (hover or lock present): glyphs are
-  //        HIDDEN on the focused / selected ring (state=0) so those
-  //        disks render clean solid + halo. Dim background (state=1)
-  //        keeps glyphs at the faint dim opacity for at-a-glance
-  //        type identification.
-  //      - When IDLE (no focus): glyphs paint on every node at full
-  //        opacity, same as before.
-  //    Mechanism: JS gates dim_amount_glyphs on hasFocus (idle → 0,
-  //    active → param value 0.9). Fragment uses
-  //      is_active = step(0.01, dim_g);
-  //      mult     = mix(1.0, state * (1 - dim_g), is_active);
-  //    Trace: idle/s=0 → mult=1; active/s=0 → mult=0 (HIDDEN); active/s=1 → mult=1-dim_g (~0.1).
-  //    See AUDIT/forge-rebuild-6A-glyph-focus-rule-2026-05-20.md.
+  //  - **Phase 8 (2026-05-20) — NESTED WITH DISK, WHITE TINT.**
+  //    Both Phase 6A (screen-size fade) and Phase 6B (focus rule)
+  //    are DELETED. The glyph has NO independent visibility rules.
+  //    If the disk renders, the glyph renders. The glyph quad is
+  //    geometrically nested inside the disk quad (same size_mult,
+  //    radius = inst_radius × glyph_scale = ~0.85 of disk radius).
+  //    Tint is WHITE. The stencil reads as a clean white symbol
+  //    inside the colored disk — Apple-icon style, universal
+  //    contrast against any family color. Dim follows the disk's
+  //    rule (color × (1 - dim_g)). No more pastel wash, no more
+  //    "symbol missing at this zoom" frames, no more focus rule
+  //    asymmetry between focused and dim.
   //
   // Glyph dirty-flag + cull (FX1 + FX2):
   //  - local.glyphInstancesDirty defaults true; reset after each
