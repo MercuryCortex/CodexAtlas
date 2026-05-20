@@ -2110,7 +2110,25 @@
         const opts     = labelHierarchyFromParams();
         opts.worldToScreen = (x, y) => camera.worldToScreen(x, y, vp);
         const idleSet = graph.computeIdleLabelVisibility(local.mode.hitNodes, camScale, opts);
-        for (const id of idleSet) visible.add(id);
+        // Phase 11C (2026-05-21) — filter out HIDDEN nodes. Labels
+        // shouldn't render for nodes the timeline has hidden.
+        // The fastest check is the nodeTargets buffer (post-override),
+        // not the YAML dates — that way the rule mirrors what the
+        // shader does, and a node hidden by ANY future filter
+        // (search, mode-filter, etc.) also drops its label without
+        // re-coding this loop.
+        const idx = local.mode.nodePacked.idIndex;
+        const nt  = local.nodeTargets;
+        if (nt && nt.length === idx.length * 2) {
+          // Build a "hidden by target state" set in one O(N) pass.
+          const hidden = new Set();
+          for (let i = 0; i < idx.length; i++) {
+            if (nt[i * 2] >= 1.5) hidden.add(idx[i]);
+          }
+          for (const id of idleSet) if (!hidden.has(id)) visible.add(id);
+        } else {
+          for (const id of idleSet) visible.add(id);
+        }
       }
 
       // 2026-05-20 — pure attribute-diff. Label DOM is now
@@ -2293,6 +2311,45 @@
       }
     }
 
+    // ════════════════════════════════════════════════════════════
+    // applyTimelineHiddenOverride  —  Phase 11 (2026-05-21).
+    // ════════════════════════════════════════════════════════════
+    // Mutates `states[]` in place. For each node id NOT in
+    // `focusedSet`, if its existence range falls outside the
+    // current scrubber [inDate, outDate], set state = 2.0 (HIDDEN).
+    //
+    // Called from BOTH recomputeFocus (hover/lock/scrubber-drag)
+    // and rebakeNodes (zoom rebake) so that on zoom-back, HIDDEN
+    // nodes don't pop back as FADED. Was the bug: rebakeNodes
+    // computed fresh states from focusedSet but didn't apply the
+    // override, leaving out-of-range nodes at state=1 (FADED)
+    // visually re-appearing on zoom.
+    //
+    // Contract:
+    //  - `states` is a Float32Array of length idx.length.
+    //  - `focusedSet` may be null (idle) or a Set<id>; nodes in
+    //    focusedSet are SKIPPED (explicit focus wins, Phase 10).
+    //  - Undated nodes (no date_earliest) stay visible — never
+    //    hidden by the timeline filter.
+    // ════════════════════════════════════════════════════════════
+    function applyTimelineHiddenOverride(idx, states, focusedSet) {
+      const tl = local.timeline;
+      if (!tl) return;
+      if (!(tl.inDate > tl.lo || tl.outDate < tl.hi)) return;
+      const nodesById = (local.mode && local.mode.nodesById) || new Map();
+      const lo = tl.inDate, hi = tl.outDate;
+      for (let i = 0; i < idx.length; i++) {
+        if (focusedSet && focusedSet.has(idx[i])) continue;
+        const n = nodesById.get ? nodesById.get(idx[i]) : nodesById[idx[i]];
+        if (!n) continue;
+        const ne = (typeof n.date_earliest === 'number') ? n.date_earliest : null;
+        const nl = (typeof n.date_latest   === 'number') ? n.date_latest   : ne;
+        if (ne == null) continue;
+        const overlaps = (nl == null ? ne : nl) >= lo && ne <= hi;
+        if (!overlaps) states[i] = 2.0;
+      }
+    }
+
     // Look up a node by id. NODES_BY_ID is a plain object in
     // this codebase (not a Map). Defensive handling so a future
     // Map refactor doesn't break callers.
@@ -2321,36 +2378,12 @@
       const selectFlags = graph.computeSelectedStates
         ? graph.computeSelectedStates(idx, local.selectedSet)
         : new Float32Array(idx.length);
-      // Timeline scrubber filter — Phase 11 (2026-05-20).
-      // Out-of-range nodes are HIDDEN (state = 2.0), not just FADED.
-      // The shader animates state continuously 0 → 1 → 2 (IDLE →
-      // FADED → HIDDEN); the fade pipeline gives a smooth
-      // disappearance rather than a hard pop-out.
-      //
-      // Overlap rule: a node is "in range" if its existence
-      // period [date_earliest..date_latest] intersects
-      // [inDate..outDate]. Undated nodes stay visible (don't hide
-      // them just for missing data).
-      //
-      // **Explicit focus wins (Phase 10).** Nodes in focusedSet
-      // (OVER anchor + its 1-hop) are SKIPPED — if the user points
-      // at a node we never hide it on them, regardless of date.
-      const tl = local.timeline;
-      if (tl && (tl.inDate > tl.lo || tl.outDate < tl.hi)) {
-        const nodesById = (local.mode && local.mode.nodesById) || new Map();
-        const focused   = local.focusedSet;
-        const lo = tl.inDate, hi = tl.outDate;
-        for (let i = 0; i < idx.length; i++) {
-          if (focused && focused.has(idx[i])) continue;
-          const n = nodesById.get ? nodesById.get(idx[i]) : nodesById[idx[i]];
-          if (!n) continue;
-          const ne = (typeof n.date_earliest === 'number') ? n.date_earliest : null;
-          const nl = (typeof n.date_latest   === 'number') ? n.date_latest   : ne;
-          if (ne == null) continue;
-          const overlaps = (nl == null ? ne : nl) >= lo && ne <= hi;
-          if (!overlaps) states[i] = 2.0;   // HIDDEN
-        }
-      }
+      // Phase 11 (2026-05-20) — apply the timeline-HIDDEN override
+      // via the shared helper so rebakeNodes (zoom rebake) ALSO
+      // honors it. Without this, zoom-out would reset out-of-range
+      // nodes to FADED and they'd visibly pop back. See helper at
+      // the bottom of this file.
+      applyTimelineHiddenOverride(idx, states, local.focusedSet);
       // 2026-05-19 — node fade. Interleaved (dim, selected) pairs
       // go into nodeTargets; tickNodeFades advances nodeStates
       // toward them at FADE_DURATION. On first run / mode switch,
@@ -3409,6 +3442,12 @@
       const selectFlags = graph.computeSelectedStates
         ? graph.computeSelectedStates(np.idIndex, local.selectedSet)
         : new Float32Array(np.idIndex.length);
+      // Phase 11 (2026-05-21) — preserve timeline HIDDEN on zoom rebake.
+      // Without this, rebakeNodes (fired by camera.onChange when
+      // zoom drifts past the N-aware threshold) would reset
+      // out-of-range nodes from state=2 (HIDDEN) back to state=1
+      // (FADED). User report: "the hidden nodes appear on zoom back."
+      applyTimelineHiddenOverride(np.idIndex, states, local.focusedSet);
       const newNodeTargets = interleavePairs(states, selectFlags);
       if (!local.nodeTargets || local.nodeTargets.length !== newNodeTargets.length) {
         local.nodeTargets = newNodeTargets;
