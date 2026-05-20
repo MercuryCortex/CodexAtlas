@@ -5870,6 +5870,144 @@ body.nav-collapsed .nav-more > summary .lbl { display: none; }
 }
 .forge-scrub-center-thumb:active { cursor: grabbing; }
 
+/* ============================================================
+   Phase 13 (2026-05-21) — wire color LEGEND
+   ============================================================
+   - Wrapper: position-relative parent so the panel anchors to
+     the button.
+   - Button: same height as the zoom-gizmo and scrub-boxes.
+   - Panel: absolutely positioned above the button.
+   - Tooltip: secondary explainer popup; positioned by JS to the
+     right of the panel; one persistent element, content swaps.
+   ============================================================ */
+.forge-legend-wrap {
+  position: relative;
+  flex: 0 0 auto;
+  pointer-events: auto;
+}
+.forge-legend-btn {
+  pointer-events: auto;
+  background: rgba(13, 17, 25, 0.85);
+  color: var(--text-2);
+  font-family: var(--mono, "JetBrains Mono", Menlo, monospace);
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  border: 1px solid var(--border, #2a2e3a);
+  border-radius: 4px;
+  padding: 5px 10px;
+  flex: 0 0 auto;
+  width: 80px;
+  text-align: center;
+  white-space: nowrap;
+  box-sizing: border-box;
+  cursor: pointer;
+}
+.forge-legend-btn:hover { border-color: var(--gold-soft, #8a7430); color: var(--gold, #d4a55a); }
+.forge-legend-btn[aria-expanded="true"] {
+  border-color: var(--gold, #d4a55a);
+  color: var(--gold, #d4a55a);
+}
+.forge-legend-panel {
+  /* Position above the LEGEND button. JS handles open/close via
+     `display`; CSS handles the visual styling. */
+  position: absolute;
+  bottom: 100%;
+  left: 0;
+  margin-bottom: 6px;
+  background: rgba(13, 17, 25, 0.95);
+  border: 1px solid var(--border, #2a2e3a);
+  border-radius: 4px;
+  padding: 6px 0;
+  min-width: 180px;
+  box-sizing: border-box;
+  z-index: 50;
+  font-family: var(--mono, "JetBrains Mono", Menlo, monospace);
+  font-size: 11px;
+}
+.forge-legend-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 5px 12px;
+  color: var(--text-2);
+  cursor: default;
+}
+.forge-legend-row:hover { background: rgba(212, 165, 90, 0.08); color: var(--text-1, #e5e7eb); }
+.forge-legend-swatch {
+  display: inline-block;
+  width: 14px;
+  height: 4px;
+  border-radius: 1px;
+  flex: 0 0 auto;
+}
+.forge-legend-name { letter-spacing: 0.04em; }
+.forge-legend-tooltip {
+  position: fixed;
+  max-width: 280px;
+  background: rgba(13, 17, 25, 0.97);
+  border: 1px solid var(--border, #2a2e3a);
+  border-radius: 4px;
+  padding: 8px 12px;
+  font-family: var(--mono, "JetBrains Mono", Menlo, monospace);
+  font-size: 11px;
+  line-height: 1.45;
+  color: var(--text-2);
+  z-index: 60;
+  pointer-events: none;
+  letter-spacing: 0.02em;
+}
+
+/* ============================================================
+   Phase 14 (2026-05-21) — hover thumbnail CARD
+   ============================================================
+   Floating card next to the cursor on node hover. Position is
+   updated via transform (no left/top thrash). Initial styling is
+   scaffolding — iterate after live review.
+   ============================================================ */
+.forge-hover-card {
+  position: fixed;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  width: 220px;
+  background: rgba(13, 17, 25, 0.95);
+  border: 1px solid var(--border, #2a2e3a);
+  border-radius: 4px;
+  overflow: hidden;
+  font-family: var(--mono, "JetBrains Mono", Menlo, monospace);
+  z-index: 70;
+  will-change: transform;
+}
+.forge-hover-card-thumb {
+  width: 100%;
+  height: 140px;
+  background: rgba(0, 0, 0, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+.forge-hover-card-thumb img {
+  max-width: 100%;
+  max-height: 100%;
+  display: none;       /* JS shows when loaded */
+}
+.forge-hover-card-body {
+  padding: 8px 12px;
+}
+.forge-hover-card-name {
+  font-size: 13px;
+  color: var(--text-1, #e5e7eb);
+  letter-spacing: 0.02em;
+}
+.forge-hover-card-type {
+  font-size: 10px;
+  color: var(--text-3, #6b7280);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-top: 2px;
+}
+
 .forge-stage {
   flex: 1 1 auto;
   position: relative;

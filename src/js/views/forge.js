@@ -701,6 +701,18 @@
     bottomBar.className = 'forge-bottombar';
     bottomBar.innerHTML = [
       '<button class="forge-zoom-gizmo" id="forge-zoom-gizmo" title="Current zoom — click to reset to fit">100%</button>',
+      // Phase 13 (2026-05-21) — Legend button. Same height/style as
+      // the zoom gizmo. Click toggles a panel that expands upward
+      // listing the 7 wire-bucket colors + names. Hovering a row
+      // pops a secondary explainer tooltip describing what that
+      // wire type means and our methodology for using it.
+      // The button + panel live in a position-relative wrapper so
+      // the panel anchors above the button (not the whole bar).
+      '<div class="forge-legend-wrap">' +
+        '<button class="forge-legend-btn" id="forge-legend-btn" title="Wire color legend" aria-expanded="false">LEGEND</button>' +
+        '<div class="forge-legend-panel" id="forge-legend-panel" aria-hidden="true"></div>' +
+      '</div>',
+      '<div class="forge-legend-tooltip" id="forge-legend-tooltip" aria-hidden="true"></div>',
       '<input type="text" class="forge-bottom-search" id="forge-status-search" placeholder="search…" autocomplete="off" spellcheck="false">',
       // 2026-05-20 — Timeline scrubber redesigned per John's spec:
       // 4 separate boxes (IN value | slider | OUT value | PRESENT
@@ -1399,6 +1411,14 @@
       // Timeline scrubber wire-up (2026-05-20). Three handles —
       // IN / CENTER / OUT — drag to set bounds + playhead.
       wireTimelineScrubber();
+
+      // Phase 13 (2026-05-21) — Wire-color legend with nested
+      // explainer tooltips. Reads bucket hexes from PARAM_DEFAULTS
+      // so there's a single source of truth for color values.
+      wireLegend();
+      // Phase 14 (2026-05-21) — On-canvas hover thumbnail card.
+      // First-step scaffolding; iterate styling after live review.
+      wireHoverCard();
 
       // Phase 5B M-F2 (2026-05-20) — apply LS-saved timeline +
       // lockedSet now that local.timeline exists + adjacency is
@@ -2622,6 +2642,12 @@
             hEl.textContent = '—';
           }
         }
+        // Phase 14 (2026-05-21) — notify the hover card observer
+        // (wireHoverCard installs this). Single hook; defensive
+        // try/catch so a card-side error never breaks hover.
+        if (typeof local._onHoverChange === 'function') {
+          try { local._onHoverChange(newId); } catch (e) { /* ignore */ }
+        }
       }
       // Coalesce the heavy recompute. If one is already pending,
       // just update the target; rAF will pick it up.
@@ -2802,6 +2828,227 @@
     // YAML-raw fallbacks; min/max give the timeline bounds. Clamped
     // to a sane archaeology window [-15000, 3000] so cosmogonic
     // outliers don't squash human-history span to a hairline.
+    // ════════════════════════════════════════════════════════════
+    //  wireLegend()  —  Phase 13 (2026-05-21)
+    // ════════════════════════════════════════════════════════════
+    //  Toggle-able color-code legend for the 7 wire buckets. Click
+    //  the LEGEND button to expand a panel upward listing each
+    //  bucket with its swatch + name. Hovering a row pops a
+    //  secondary tooltip describing the wire type's meaning + our
+    //  methodology for using it.
+    //
+    //  Architecture rules:
+    //   - Bucket hex colors come from PARAM_DEFAULTS only (single
+    //     source of truth — same values the shader reads). No
+    //     duplication.
+    //   - Rows are generated once; panel is `display:none` when
+    //     closed (no per-frame cost).
+    //   - The hover tooltip is ONE persistent element; content swaps
+    //     on row hover. Hidden via aria-hidden + opacity-0 CSS.
+    //   - Bucket order matches BUCKET_ORDER (shader bucket_index).
+    // ════════════════════════════════════════════════════════════
+    function wireLegend() {
+      const btn     = document.getElementById('forge-legend-btn');
+      const panel   = document.getElementById('forge-legend-panel');
+      const tooltip = document.getElementById('forge-legend-tooltip');
+      if (!btn || !panel || !tooltip) return;
+      // Per-bucket meta. Order = BUCKET_ORDER (shader bucket_index).
+      // `title` is the row label; `body` is the explainer-tooltip
+      // text (what it means + our criteria for using it).
+      const BUCKETS = [
+        { key: 'transmission',  param: 'active_color_transmission', title: 'Transmission',
+          body: 'One tradition adopted from another. Documented contact, dated borrowing, or direct lineage. Use when there is evidence A INFLUENCED B (texts cite, archaeology, missionary record, trade-route attestation).' },
+        { key: 'parallel',      param: 'active_color_parallel',     title: 'Parallel',
+          body: 'Independent same-shape phenomena across traditions with NO documented contact. Use when two cultures separately arrived at structurally identical motif/figure/practice — strongest when geographically isolated.' },
+        { key: 'association',   param: 'active_color_association',  title: 'Association',
+          body: 'Co-appearance in the same texts, sites, or rituals without one causing the other. Use when items recur together in primary sources but the relationship is contextual, not generative.' },
+        { key: 'kinship',       param: 'active_color_kinship',      title: 'Kinship',
+          body: 'Family relationships INSIDE a pantheon or tradition: parent-child, sibling, consort. Use only for in-tradition genealogy.' },
+        { key: 'attestation',   param: 'active_color_attestation',  title: 'Attestation',
+          body: 'Source → claim. One node is a textual or archaeological witness to another. Use when a text/inscription/artifact attests to a deity, practice, or event.' },
+        { key: 'polemic',       param: 'active_color_polemic',      title: 'Polemic',
+          body: 'Contested or contradicting relationship. One tradition denies, refutes, or polemicizes against another. Use for theological disputes, heresies, refutations.' },
+        { key: 'fusion',        param: 'active_color_fusion',       title: 'Fusion',
+          body: 'Syncretic merge — two figures or practices fuse into one. Use when historical synthesis produces a new combined identity (e.g. Serapis = Osiris + Apis).' },
+      ];
+      // Build rows ONCE. Colors read from local.params so the
+      // legend stays in sync if PARAM_DEFAULTS ever changes.
+      const rowsHtml = BUCKETS.map(b => {
+        const hex = (local.params && local.params[b.param]) || '#999999';
+        return '<div class="forge-legend-row" data-bucket="' + b.key + '">'
+          + '<span class="forge-legend-swatch" style="background:' + hex + '"></span>'
+          + '<span class="forge-legend-name">' + b.title + '</span>'
+          + '</div>';
+      }).join('');
+      panel.innerHTML = rowsHtml;
+      // Map for fast lookup on hover.
+      const bodyByKey = Object.create(null);
+      for (const b of BUCKETS) bodyByKey[b.key] = b.body;
+
+      let isOpen = false;
+      function openPanel()  {
+        isOpen = true;
+        btn.setAttribute('aria-expanded', 'true');
+        panel.setAttribute('aria-hidden', 'false');
+        panel.style.display = '';
+      }
+      function closePanel() {
+        isOpen = false;
+        btn.setAttribute('aria-expanded', 'false');
+        panel.setAttribute('aria-hidden', 'true');
+        panel.style.display = 'none';
+        hideTooltip();
+      }
+      closePanel();
+
+      btn.addEventListener('click', () => {
+        if (isOpen) closePanel(); else openPanel();
+      });
+
+      // Row-hover → explainer tooltip.
+      function showTooltipFor(row) {
+        const key = row.getAttribute('data-bucket');
+        const body = bodyByKey[key];
+        if (!body) return;
+        tooltip.textContent = body;
+        // Position to the right of the legend panel; top-aligned with
+        // the hovered row.
+        const rPanel = panel.getBoundingClientRect();
+        const rRow   = row.getBoundingClientRect();
+        tooltip.style.left = (rPanel.right + 8) + 'px';
+        tooltip.style.top  = rRow.top + 'px';
+        tooltip.setAttribute('aria-hidden', 'false');
+        tooltip.style.display = '';
+      }
+      function hideTooltip() {
+        tooltip.setAttribute('aria-hidden', 'true');
+        tooltip.style.display = 'none';
+      }
+      panel.addEventListener('mouseover', (e) => {
+        const row = e.target.closest('.forge-legend-row');
+        if (row) showTooltipFor(row);
+      });
+      panel.addEventListener('mouseleave', hideTooltip);
+
+      // Click outside → close.
+      document.addEventListener('click', (e) => {
+        if (!isOpen) return;
+        if (e.target === btn || btn.contains(e.target)) return;
+        if (panel.contains(e.target)) return;
+        closePanel();
+      });
+    }
+
+    // ════════════════════════════════════════════════════════════
+    //  wireHoverCard()  —  Phase 14 (2026-05-21)
+    // ════════════════════════════════════════════════════════════
+    //  Floating thumbnail card that appears next to the cursor when
+    //  hovering a node on the canvas. First-step scaffolding —
+    //  iterate styling after live review.
+    //
+    //  Architecture rules:
+    //   - ONE persistent DOM element appended at mount. No per-hover
+    //     create/destroy.
+    //   - Position updated on mousemove via transform: translate3d.
+    //     rAF-coalesced through the same hoverRafId path so we don't
+    //     burn CPU at 120Hz pointer events.
+    //   - Image load: try thumbnails/<id>.jpg; onerror swap to a
+    //     simple colored placeholder. Stale image loads ignored via
+    //     a per-hover token.
+    //   - Hidden via display:none when no hover, OR when a click-lock
+    //     is active (lock interaction wins; the card would just be
+    //     noise on top of the locked anchor).
+    //   - Show-delay: 150ms — long enough to ignore mouse-passing,
+    //     short enough to feel responsive.
+    // ════════════════════════════════════════════════════════════
+    function wireHoverCard() {
+      const card = document.createElement('div');
+      card.className   = 'forge-hover-card';
+      card.id          = 'forge-hover-card';
+      card.style.display = 'none';
+      card.innerHTML = ''
+        + '<div class="forge-hover-card-thumb">'
+        +   '<img id="forge-hover-card-img" alt="" />'
+        + '</div>'
+        + '<div class="forge-hover-card-body">'
+        +   '<div class="forge-hover-card-name" id="forge-hover-card-name"></div>'
+        +   '<div class="forge-hover-card-type" id="forge-hover-card-type"></div>'
+        + '</div>';
+      stage.appendChild(card);
+      const img      = card.querySelector('#forge-hover-card-img');
+      const nameEl   = card.querySelector('#forge-hover-card-name');
+      const typeEl   = card.querySelector('#forge-hover-card-type');
+
+      let showId      = 0;     // setTimeout token
+      let loadToken   = 0;     // per-hover stale-load guard
+      let lastClientX = 0;
+      let lastClientY = 0;
+
+      function hide() {
+        if (showId) { clearTimeout(showId); showId = 0; }
+        card.style.display = 'none';
+      }
+
+      function showFor(id) {
+        const m = local.mode;
+        const node = (m && m.nodesById && m.nodesById.get) ? m.nodesById.get(id) : null;
+        if (!node) return;
+        nameEl.textContent = node.name || id;
+        typeEl.textContent = node.type || '';
+        // Stale-load guard: every show bumps the token; only the
+        // matching onload is allowed to swap the image src.
+        loadToken++;
+        const myToken = loadToken;
+        img.style.display = 'none';
+        img.removeAttribute('src');
+        // Try .jpg, then .png, then .webp — first that loads wins.
+        const candidates = ['jpg', 'png', 'webp'].map(ext =>
+          'thumbnails/' + encodeURIComponent(id) + '.' + ext);
+        (function tryNext(i) {
+          if (i >= candidates.length) return;
+          const probe = new Image();
+          probe.onload = function () {
+            if (myToken !== loadToken) return;   // stale
+            img.src = probe.src;
+            img.style.display = '';
+          };
+          probe.onerror = function () { tryNext(i + 1); };
+          probe.src = candidates[i];
+        })(0);
+        positionCard();
+        card.style.display = '';
+      }
+
+      function positionCard() {
+        const offX = 16, offY = 16;
+        card.style.transform = 'translate3d('
+          + (lastClientX + offX) + 'px, '
+          + (lastClientY + offY) + 'px, 0)';
+      }
+
+      // mousemove on canvas: track cursor + reposition card if visible.
+      canvas.addEventListener('mousemove', (e) => {
+        lastClientX = e.clientX;
+        lastClientY = e.clientY;
+        if (card.style.display !== 'none') positionCard();
+      });
+
+      // Drive show/hide from the existing hover pipeline. Phase 2B
+      // setHoverId already coalesces; we hook into it via a hover
+      // observer in local. setHoverId is the SSOT for "which node
+      // is the cursor over." We watch it via a custom hook.
+      local._onHoverChange = function (id) {
+        if (showId) { clearTimeout(showId); showId = 0; }
+        if (!id) { hide(); return; }
+        // Don't show if a click-lock is being processed mid-frame
+        // (cursor sits on the anchor). The lock UI is sufficient.
+        if (local.lockedSet && local.lockedSet.has(id)) { hide(); return; }
+        showId = setTimeout(() => { showId = 0; showFor(id); }, 150);
+      };
+      // Also hide on canvas leave.
+      canvas.addEventListener('mouseleave', hide);
+    }
+
     function wireTimelineScrubber() {
       const slider  = document.getElementById('forge-scrub-slider');
       if (!slider) return;
