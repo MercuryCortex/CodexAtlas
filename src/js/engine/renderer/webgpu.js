@@ -335,6 +335,12 @@
       // direction unmissable; tunable from here.
       // Applies equally to IDLE and HOT — gradient is universal,
       // not state-dependent.
+      // Phase 3B D2 (2026-05-20) — gradient applied to color RGB,
+      // NOT alpha. Keeps the AA footprint constant from source to
+      // target end while the visible color darkens. Intentional —
+      // see AUDIT/forge-robustness-05-gpu-pipeline-2026-05-20.md
+      // §P4: makes the wire-end blunt against the disk it
+      // terminates into. DO NOT extend grad_mult to alpha.
       let grad_mult = mix(1.0, 0.25, in.edge_t);
       let a        = color.a * alpha_aa * dim_mult;
       // Phase 6d — same discard logic as nodes: AA halo fragments
@@ -514,6 +520,9 @@
     // the dirty-flag gate in place, this should increment only on
     // mode-switch / rebake / first-frame — NOT every drawFrame.
     let nodeInstanceWrites = 0;
+    // Phase 3B F3 (2026-05-20) — matching counter for the edge
+    // instance VBO. Same shape; verified via debugCountEdgeVboWrites().
+    let edgeInstanceWrites = 0;
 
     const context = canvas.getContext('webgpu');
     const format  = navigator.gpu.getPreferredCanvasFormat();
@@ -814,6 +823,8 @@
       // upload count since renderer creation. With the dirty-flag
       // gate, this should be ≈ rebake-count, not frame-count.
       debugCountNodeVboWrites() { return nodeInstanceWrites; },
+      // Phase 3B F3 (2026-05-20) — same shape for edges.
+      debugCountEdgeVboWrites() { return edgeInstanceWrites; },
       // Phase 1B — sanity-check the owned[] list. Returns the
       // count of live GPU resources tracked for cleanup.
       debugOwnedCount() { return owned.length; },
@@ -847,19 +858,13 @@
         context.configure({ device, format, alphaMode: 'premultiplied' });
       },
 
-      // Phase 6d3 — guarantee the edge-state VBO holds exactly
-      // `stateData` (an N-length Float32Array, one float per
-      // edge). Called from the view layer's resize path as a
-      // hard-stop against any pipeline-state corruption that
-      // might leave non-focused wires painting in their ACTIVE
-      // (hot) colour. No-op if buffer not yet allocated.
-      forceWriteEdgeState(stateData) {
-        if (!edgeStateVbo || !stateData || !stateData.length) return;
-        const stateBytes = stateData.length * 4;
-        const r = ensureBuffer(edgeStateVbo, edgeStateVboSize, stateBytes, 'forge-edge-state-vbo');
-        edgeStateVbo = r.buf; edgeStateVboSize = r.size;
-        device.queue.writeBuffer(edgeStateVbo, 0, stateData, 0, stateData.length);
-      },
+      // Phase 3B F2 (2026-05-20) — `forceWriteEdgeState` deleted.
+      // It was a 2026-05-18 belt-and-braces hammer added before
+      // the convention flip (`adjacency.js:87-94`) made zero-init
+      // safe. With the flip, `recomputeFocus` writes JS-side
+      // `local.edgeStates`; the next drawFrame uploads via the
+      // standard path. No race-mitigation needed. See AUDIT/
+      // forge-rebuild-3A-wires-2026-05-20.md §3 F2.
 
       // ── Phase 6d5 — GPU READBACK PROBE ────────────────────
       // Read the actual bytes currently sitting in the edge-state
@@ -1115,7 +1120,14 @@
         if (edgeCount > 0) {
           const r = ensureBuffer(edgeInstanceVbo, edgeInstanceVboSize, eVB.byteLength, 'forge-edge-inst-vbo');
           edgeInstanceVbo = r.buf; edgeInstanceVboSize = r.size;
-          device.queue.writeBuffer(edgeInstanceVbo, 0, eVB);
+          // Phase 3B F3 (2026-05-20) — gate on the dirty flag (or
+          // grew). Mirrors the node-instance gate above. ~145 KB
+          // upload at 3033 edges / ~2.16 MB at 45k edges per frame
+          // saved when geometry is stable.
+          if (frame.edgeInstancesDirty || r.grew) {
+            device.queue.writeBuffer(edgeInstanceVbo, 0, eVB);
+            edgeInstanceWrites++;
+          }
         }
 
         // ── State buffers (dynamic) ──

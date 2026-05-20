@@ -179,6 +179,93 @@
   //  Switch live via window._forgeDebug.setDimModel('AX').
   // ════════════════════════════════════════════════════════════
   //
+  // ════════════════════════════════════════════════════════════
+  // WIRES — spec lock (Phase 3B, 2026-05-20)
+  // ════════════════════════════════════════════════════════════
+  // The edge primitive connecting nodes. Full spec at AUDIT/
+  // forge-rebuild-3A-wires-2026-05-20.md §2. Phase 3B locks
+  // invariants + ships the edgeInstanceVbo dirty flag + deletes
+  // two dead-code drift surfaces (forceWriteEdgeState and
+  // rebakeBucketPalette).
+  //
+  // 7-bucket palette (single source of truth):
+  //  - Buckets: Transmission / Parallel / Association / Kinship /
+  //    Attestation / Polemic / Fusion. BUCKET_INDEX in
+  //    src/js/engine/graph/edge.js is the canonical ordering;
+  //    BUCKET_ORDER in this file is DERIVED from it (D1).
+  //  - Active colors + opacities live in PARAM_DEFAULTS
+  //    (active_color_{bucket} + active_opacity_{bucket}).
+  //  - Renderer-side `bucketPalette` cache is pushed ONCE at boot
+  //    via `setBucketPalette(hotPaletteFromParams())`. With
+  //    PARAM_DEFAULTS frozen and the dev panel removed (Phase 0),
+  //    there is NO live mutation route — the cache cannot drift.
+  //    If a future V2 panel ever lands, it MUST re-push on every
+  //    mutation of `local.params.active_color_*` /
+  //    `local.params.active_opacity_*`. (Audit Q1 safe-default: B.)
+  //
+  // Edge state channel (convention-flip, 2026-05-18):
+  //  - 0 = IDLE (slate / instance-color), 1 = HOT (bucket-hex).
+  //  - Zero-init is now the SAFE default — `forceWriteEdgeState`
+  //    hammer deleted in Phase 3B F2.
+  //  - In-place `.set()` everywhere except the documented
+  //    wholesale-replace at the FADE-PIPELINE INVARIANT —
+  //    EXCEPTION SITE block (rebuildForMode, ~line 1145).
+  //
+  // Gradient (universal source→target darken):
+  //  - Shader: `mix(1.0, 0.25, edge_t)` on color RGB only.
+  //  - DO NOT extend grad_mult to alpha (D2) — keeps AA footprint
+  //    constant so the wire-end stays blunt against its disk.
+  //  - Applies to IDLE + HOT alike; symmetric buckets carry no
+  //    semantic direction, but the gradient is still applied as
+  //    a visual cue (D4).
+  //
+  // Width clamp (screen-px):
+  //  - Shader: `clamp(world_w × cam.scale × DPR × vp.x × 0.5,
+  //    wire_min_screen_px, wire_max_screen_px)` in framebuffer-px,
+  //    converted back to world-units before extrusion.
+  //  - Defaults: min=1, max=2. Naming parallel to node clamps
+  //    (intentional; do not collapse only one — audit Q3=A).
+  //
+  // Endpoint offset (disk perimeter):
+  //  - `packEdges(..., { nodeRadii: Map<id, r> })` insets each
+  //    bezier endpoint 0.92r along source→target. Wires emerge
+  //    from disk circumference, not center.
+  //  - `nodeRadii` is REQUIRED for forge-view callers. Center-
+  //    fallback (dist < 1e-4) is for the same-pixel edge case
+  //    ONLY, not for missing radii (D3).
+  //
+  // Depth z (BELOW every node layer):
+  //  - IDLE z = 0.85, HOT z = 0.75 — both behind nodes (max 0.6
+  //    for dim disks). Shader: `mix(0.85, 0.75, inst_state)`.
+  //
+  // GPU instance layout (frozen):
+  //  - 12 floats × 48 bytes per instance. Layout documented at
+  //    src/js/engine/graph/edge.js lines 8-19. Frozen — any
+  //    change requires a dated rationale doc + a migration plan.
+  //  - State VBO: separate, 4 bytes per instance (single float).
+  //
+  // Dirty-flag invariant (Phase 3B F3, mirrors NODE N2):
+  //  - `local.edgeInstancesDirty` defaults true; reset after each
+  //    drawFrame; re-set by every packEdges site (rebuildForMode,
+  //    rebakeEdges). Renderer gates `edgeInstanceVbo writeBuffer`
+  //    on `frame.edgeInstancesDirty || r.grew`. State VBO write
+  //    stays unconditional (fades animate per frame).
+  //  - Verify via window._forgeDebug.countEdgeVboWrites() — at
+  //    rest, the counter equals the rebake count, NOT the frame
+  //    count.
+  //
+  // rAF ownership:
+  //  - No new rAF id introduced. Edges share the existing
+  //    `local.animRafId` via `tickEdgeFades` running inside
+  //    animTick. destroy()/rebuildForMode cancellation covered
+  //    by the BEHAVIORS section above.
+  //
+  // Debug surfaces (window._forgeDebug):
+  //  - edgesAndNodesOnly() — hides the glyph pass (keeps nodes +
+  //    wires) for visual isolation testing.
+  //  - countEdgeVboWrites() — see dirty-flag invariant above.
+  // ════════════════════════════════════════════════════════════
+  //
   // PARAM_DEFAULTS — the SINGLE SOURCE OF TRUTH for every visual
   // parameter in Forge. Dev panel removed 2026-05-20 (Phase 0 of
   // the layered rebuild — see AUDIT/forge-rebuild-layered-spec-
@@ -499,6 +586,13 @@
       // every pack site re-sets to true. The state VBO is NOT
       // gated (it animates per-frame via tickNodeFades).
       nodeInstancesDirty: true,
+      // Phase 3B F3 (2026-05-20) — edgeInstanceVbo dirty flag.
+      // Same shape as nodeInstancesDirty above; static geometry
+      // (endpoints + colors + widths) only changes when packEdges
+      // runs (rebuildForMode / rebakeEdges). Default = true so
+      // first drawFrame uploads; drawFrame resets to false after
+      // each call. ~130 MB/s saved at 10k mode / ~648 MB/s at 50k.
+      edgeInstancesDirty: true,
       // 2026-05-19 — edge fade animation. `edgeStates` is the
       // LIVE-ANIMATING value pushed to the GPU each frame;
       // `edgeTargets` is the snap-to value computed by
@@ -674,6 +768,22 @@
       // owned[] list. View-switch should leave this constant at 0.
       ownedCount: () => (local.renderer && local.renderer.debugOwnedCount
         ? local.renderer.debugOwnedCount() : null),
+
+      // ── Phase 3B WIRES-only debug helpers (2026-05-20) ─────
+      // Toggle: render nodes + edges only (hide the glyph pass).
+      // Pair to Phase 1B's nodeOnly() — useful for verifying the
+      // edge primitive in isolation without removing nodes. Pass
+      // true / false to set explicitly; pass nothing to flip.
+      edgesAndNodesOnly: (on) => {
+        local._edgesAndNodesOnly = (typeof on === 'boolean') ? on : !local._edgesAndNodesOnly;
+        drawFrame();
+        return local._edgesAndNodesOnly;
+      },
+      // Count of static edge-instance VBO uploads since renderer
+      // create. Should equal rebake/mode-switch count — NOT frame
+      // count. Mirror of countNodeVboWrites().
+      countEdgeVboWrites: () => (local.renderer && local.renderer.debugCountEdgeVboWrites
+        ? local.renderer.debugCountEdgeVboWrites() : null),
 
       // ── Phase 2B BEHAVIORS-only debug helpers (2026-05-20) ─
       // Toggle the dim model used by hover dimming. A4 (default)
@@ -1112,6 +1222,10 @@
       // state animation skips the ~21KB upload at 663 nodes
       // (~106 MB/s saved at 10k).
       local.nodeInstancesDirty = true;
+      // Phase 3B F3 — same shape for the edge instance VBO.
+      // packEdges ran above; the static geometry needs re-upload
+      // on the next drawFrame.
+      local.edgeInstancesDirty = true;
       // ════════════════════════════════════════════════════════════
       // FADE-PIPELINE INVARIANT — EXCEPTION SITE (Phase 2B B5,
       // 2026-05-20)
@@ -1315,15 +1429,12 @@
           rebakeNodes();      // re-pack at new scale (radii + glyphs)
           rebakeEdges();      // re-pack instance buffer (colour + widths)
           recomputeFocus();   // re-derive node + edge state buffers
-          // Phase 6d3 — final hard-stop. Push the recomputed edge
-          // state straight to the GPU. If anything in the pipeline
-          // (Safari WebGPU implementation, swap-chain reconfigure
-          // race, etc.) discarded the upload from the recomputeFocus
-          // drawFrame, this guarantees the buffer holds the correct
-          // values before the next draw.
-          if (local.renderer && local.renderer.forceWriteEdgeState && local.edgeStates) {
-            local.renderer.forceWriteEdgeState(local.edgeStates);
-          }
+          // Phase 3B F2 (2026-05-20) — `forceWriteEdgeState` deleted.
+          // The 2026-05-18 hard-stop hammer is dead-code post the
+          // adjacency.js convention flip: zero-init = IDLE is the
+          // safe default, and `recomputeFocus` above wrote
+          // `local.edgeStates`; the trailing `drawFrame()` uploads
+          // it through the normal path. No belt-and-braces needed.
           drawFrame();
         }
       }
@@ -1370,14 +1481,16 @@
         parseInt(gh.slice(3, 5), 16) / 255,
         parseInt(gh.slice(5, 7), 16) / 255,
       ];
-      // N2 / nodeOnly — gate the static instance buffer write on
-      // the dirty flag (skips ~21KB GPU upload per frame at deities
-      // / ~106 MB/s saved at 10k) and let _forgeDebug.nodeOnly()
-      // hide edges + glyphs by zeroing their counts.
-      const nodeOnly  = !!local._nodeOnly;
+      // N2 (Phase 1B) / Phase 3B F3 — gate the static instance
+      // buffer writes on the dirty flags (skips ~21KB node + ~145KB
+      // edge GPU upload per frame at deities / ~250 MB/s combined
+      // saved at 10k). _forgeDebug.nodeOnly() hides edges + glyphs;
+      // _forgeDebug.edgesAndNodesOnly() hides only glyphs.
+      const nodeOnly         = !!local._nodeOnly;
+      const edgesAndNodesOnly = !!local._edgesAndNodesOnly;
       const frameNVB  = local.mode.nodePacked.data;
       const frameEVB  = nodeOnly ? null : local.mode.edgePacked.data;
-      const frameGVB  = nodeOnly
+      const frameGVB  = (nodeOnly || edgesAndNodesOnly)
         ? null
         : (refreshGlyphAlphas(), local.glyphInstanceData || null);
       local.renderer.drawFrame({
@@ -1394,13 +1507,15 @@
         nodeInstances:         frameNVB,
         nodeInstancesDirty:    local.nodeInstancesDirty,
         edgeInstances:         frameEVB,
+        edgeInstancesDirty:    local.edgeInstancesDirty,
         nodeStates:            local.nodeStates,
         edgeStates:            local.edgeStates,
         glyphInstances:        frameGVB,
       });
-      // After the renderer has consumed the dirty buffer, reset
-      // the flag. Next pack sets it back to true.
+      // After the renderer has consumed the dirty buffers, reset
+      // both flags. Next pack(s) re-set them.
       local.nodeInstancesDirty = false;
+      local.edgeInstancesDirty = false;
       const dt = performance.now() - t0;
       const fEl = document.getElementById('forge-status-frame');
       if (fEl) fEl.textContent = dt.toFixed(1) + ' ms';
@@ -2496,8 +2611,19 @@
       }
     }
 
-    // ── Param helpers (Phase 5 + 6 — dev panel wires) ──
-    const BUCKET_ORDER = ['transmission','parallel','association','kinship','attestation','polemic','fusion'];
+    // ── Param helpers ──────────────────────────────────────
+    // Phase 3B D1 (2026-05-20) — BUCKET_ORDER derived from
+    // AtlasEngineGraph.BUCKET_INDEX (single source of truth in
+    // src/js/engine/graph/edge.js). Eliminates the 3-source
+    // duplication (was: hardcoded array here + BUCKET_INDEX in
+    // edge.js + a docstring mirror in webgpu.js setBucketPalette).
+    // The sort by numeric index guarantees the ORDER matches the
+    // shader's bucket_hot_colors array indexing. Fallback to the
+    // canonical literal preserves load-order safety.
+    const BUCKET_ORDER = (window.AtlasEngineGraph && window.AtlasEngineGraph.BUCKET_INDEX)
+      ? Object.keys(window.AtlasEngineGraph.BUCKET_INDEX)
+          .sort((a, b) => window.AtlasEngineGraph.BUCKET_INDEX[a] - window.AtlasEngineGraph.BUCKET_INDEX[b])
+      : ['transmission','parallel','association','kinship','attestation','polemic','fusion'];
 
     function tierRadiiFromParams() {
       return [
@@ -2682,6 +2808,10 @@
     function rebakeEdges() {
       const m = local.mode;
       m.edgePacked = graph.packEdges(m.edges, m.positions, Object.assign({}, edgeOverridesFromParams(), { nodeRadii: buildRadiiMap(m.nodePacked) }));
+      // Phase 3B F3 (2026-05-20) — fresh edgePacked.data; next
+      // drawFrame needs to upload the static instance VBO. Reset
+      // to false after the upload (see drawFrame).
+      local.edgeInstancesDirty = true;
       // 2026-05-19 — fade-aware. Don't replace `local.edgeStates`
       // wholesale; that would snap mid-fade values to a fresh
       // binary array and kill the animation. Update TARGETS
@@ -2699,12 +2829,13 @@
       startAnimLoop();
       drawFrame();
     }
-    // Push hot palette to the renderer.
-    function rebakeBucketPalette() {
-      if (!local.renderer) return;
-      local.renderer.setBucketPalette(hotPaletteFromParams());
-      drawFrame();
-    }
+    // Phase 3B R3 (2026-05-20) — `rebakeBucketPalette` deleted.
+    // Its only caller was the (now-removed) dev panel; with
+    // PARAM_DEFAULTS frozen + panel gone, there's no live mutation
+    // route for active_color_*. Palette is pushed ONCE at boot via
+    // setBucketPalette(hotPaletteFromParams()); subsequent calls
+    // would have no effect. See AUDIT/forge-rebuild-3A-wires-
+    // 2026-05-20.md §3 F5.
     // Rebuild glyph DOM (called by mode switch + tier-radii change
     // + icon override + tint change).
     function rebakeGlyphsForMode() {

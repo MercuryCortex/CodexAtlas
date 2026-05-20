@@ -198,6 +198,13 @@
       // unit vector × radius pulls each end OUTWARD from its
       // node's center. If the partners are essentially on top of
       // each other (dist near 0) we fall back to centers.
+      //
+      // Phase 3B D3 (2026-05-20) — `nodeRadii` is REQUIRED for
+      // forge-view callers (rebuildForMode + rebakeEdges always
+      // build the Map via `buildRadiiMap`). Center-fallback below
+      // is for the same-pixel edge case ONLY (dist < 1e-4), NOT
+      // for missing radii. Omitting `nodeRadii` is allowed for
+      // headless tests; live forge frames must pass it.
       let srcX = sp.x, srcY = sp.y, tgtX = tp.x, tgtY = tp.y;
       if (radii) {
         const dx = tp.x - sp.x;
@@ -219,6 +226,14 @@
         }
       }
 
+      // Phase 3B D4 (2026-05-20) — gradient direction (in shader
+      // edge_t 0→1) follows this vault edge's natural source→target
+      // order. Bucket-asymmetric edges (transmission, polemic,
+      // fusion) carry semantic direction; symmetric edges (parallel,
+      // kinship, association, attestation) carry no direction but
+      // the gradient is still applied universally as a visual
+      // cue. This is intentional — see AUDIT/forge-rebuild-3A-
+      // wires-2026-05-20.md §3 F7.
       const off = i * FLOATS_PER_INSTANCE;
       data[off +  0] = srcX;
       data[off +  1] = srcY;
