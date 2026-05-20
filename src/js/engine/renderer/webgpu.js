@@ -199,20 +199,27 @@
       // of a dimmed disk would block focused disks behind it
       // (depth test less-equal).
       //
-      // Phase 4B FX5 (2026-05-20) — discard threshold derived from
-      // the selected_glow_strength uniform instead of a hardcoded
-      // 0.15. History: 0.04 -> 0.08 -> 0.15 across 3 sessions; each
-      // bump was John turning the glow slider higher and seeing the
-      // square clip return. With derivation the threshold tracks
-      // the strength automatically: base 0.05 at strength <= 1.0;
-      // +0.10 per unit above 1.0. Combined with the 1.5x quad
-      // headroom (vs at top of vertex shader), the entire glow tail
-      // is discarded no matter what the slider says. Adapts to any
-      // strength value. Trade-off: very outer glow pixels (alpha <
-      // derived) do not render -- barely visible, far better than
-      // the square clip artifact. See AUDIT/forge-rebuild-4A-fx-
-      // 2026-05-20.md section 3 FX5.
-      let discard_t = 0.05 + max(0.0, v.selected_glow_strength - 1.0) * 0.1;
+      // Phase 4B FX5 + post-cast fix (2026-05-20) — discard
+      // threshold derived from the selected_glow_strength uniform,
+      // with the 0.15 floor restored.
+      //
+      // History: 0.04 -> 0.08 -> 0.15 across 3 sessions. The Phase
+      // 4B audit recommended deriving from strength as
+      //   0.05 + max(0, strength - 1.0) * 0.1
+      // which at default strength=0.5 gives 0.05 -- LOWER than the
+      // proven-safe 0.15, so the square-clip artifact returned
+      // (John spotted it on Mastema, Mullissu, Fujin/Raijin within
+      // one session of the cast).
+      //
+      // Fix: keep the 0.15 floor AND scale UP as strength rises
+      // past the default. At strength=0.5 the threshold equals the
+      // pre-FX5 working value; at strength=1.0 it climbs to 0.25;
+      // at strength=2.0 to 0.45 -- the entire wider glow tail is
+      // discarded so neighbouring disks at z=0.3/0.6 paint cleanly
+      // through. Trade-off: outer glow pixels below the derived
+      // threshold do not render. Barely visible at default
+      // strength, more aggressive crop at high strength.
+      let discard_t = 0.15 + max(0.0, v.selected_glow_strength - 0.5) * 0.20;
       if (final_a < discard_t) { discard; }
       return vec4<f32>(final_rgb, final_a);
     }
