@@ -8,7 +8,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&family=EB+Garamond:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@300;400;500;600&family=Noto+Serif+Hebrew:wght@400;700&family=Noto+Sans+Egyptian+Hieroglyphs&display=swap" rel="stylesheet" />
 <link rel="stylesheet" href="_assets/vendor/maplibre/maplibre-gl.css?v=5.24.0" />
-<link rel="stylesheet" href="src/styles/app.css?v=20260520-rebuild-phase-4b-fx5fix" />
+<link rel="stylesheet" href="src/styles/app.css?v=20260520-rebuild-phase-5b" />
 </head>
 <body class="nav-collapsed detail-collapsed footer-collapsed">
 
@@ -23,36 +23,47 @@
   </div>
 
   <div class="nav-inner">
-    <div class="section-label"><span class="lbl">Maps</span></div>
-    <div class="item active" data-view="pantheon"><span class="sym">◯</span><span class="lbl">Pantheon</span></div>
-    <div class="item forge-nav" data-view="forge" title="Forge — proprietary WebGPU engine (under construction)"><span class="sym">⚒</span><span class="lbl">Forge</span></div>
-    <div class="item" data-view="timeline"><span class="sym">⎯</span><span class="lbl">Timeline</span></div>
-    <div class="item" data-view="documents"><span class="sym">❡</span><span class="lbl">Documents</span></div>
-    <div class="item" data-view="scripture"><span class="sym">✠</span><span class="lbl">Scripture</span></div>
-    <div class="item" data-view="transmission"><span class="sym">⇌</span><span class="lbl">Transmission</span></div>
-    <div class="item" data-view="atlas"><span class="sym">⌖</span><span class="lbl">Atlas</span></div>
-    <div class="item" data-view="alchemy"><span class="sym">☿</span><span class="lbl">Alchemy</span></div>
-    <div class="item" data-view="transmutation"><span class="sym">⚗</span><span class="lbl">Transmutation</span></div>
-    <div class="item" data-view="morals"><span class="sym">⚖</span><span class="lbl">Morals</span></div>
-    <div class="item" data-view="rituals"><span class="sym">☽</span><span class="lbl">Rituals</span></div>
-    <div class="item" data-view="philosophy"><span class="sym">∞</span><span class="lbl">Philosophy</span></div>
-    <div class="item" data-view="mathematics"><span class="sym">∑</span><span class="lbl">Mathematics</span></div>
-    <div class="item" data-view="astrology"><span class="sym">♄</span><span class="lbl">Astrology</span></div>
-    <div class="item" data-view="medicine"><span class="sym">⚕</span><span class="lbl">Medicine</span></div>
-    <div class="item" data-view="alphabets"><span class="sym">𓀀</span><span class="lbl">Alphabets</span></div>
-    <div class="item" data-view="music"><span class="sym">♫</span><span class="lbl">Music</span></div>
+    <!-- Phase 5B M-F6 (2026-05-20) — Forge promoted to primary
+         entry. Other views collapsed behind a "More views"
+         disclosure so they stay reachable (every Lane B view-
+         migration still needs them) but the visual hierarchy
+         signals Forge as the active focus. -->
+    <div class="item forge-nav active" data-view="forge" title="Forge — primary view"><span class="sym">⚒</span><span class="lbl">Forge</span></div>
 
-    <div class="section-label"><span class="lbl">Indexes</span></div>
-    <div class="item" data-view="authors"><span class="sym">✎</span><span class="lbl">Authors</span></div>
-    <div class="item" data-view="themes"><span class="sym">◇</span><span class="lbl">Themes list</span></div>
-    <div class="item" data-view="edges"><span class="sym">→</span><span class="lbl">Connections</span></div>
-    <div class="item" data-view="traditions"><span class="sym">∴</span><span class="lbl">Traditions</span></div>
-    <div class="item" data-view="patterns"><span class="sym">✦</span><span class="lbl">Patterns</span></div>
-    <div class="item" data-view="observations"><span class="sym">◉</span><span class="lbl">Observations</span></div>
-    <div class="item" data-view="all"><span class="sym">≡</span><span class="lbl">All nodes</span></div>
+    <details class="nav-more">
+      <summary><span class="sym">⋯</span><span class="lbl">More views</span></summary>
+      <div class="nav-more-body">
+        <div class="section-label"><span class="lbl">Maps</span></div>
+        <div class="item" data-view="pantheon"><span class="sym">◯</span><span class="lbl">Pantheon</span></div>
+        <div class="item" data-view="timeline"><span class="sym">⎯</span><span class="lbl">Timeline</span></div>
+        <div class="item" data-view="documents"><span class="sym">❡</span><span class="lbl">Documents</span></div>
+        <div class="item" data-view="scripture"><span class="sym">✠</span><span class="lbl">Scripture</span></div>
+        <div class="item" data-view="transmission"><span class="sym">⇌</span><span class="lbl">Transmission</span></div>
+        <div class="item" data-view="atlas"><span class="sym">⌖</span><span class="lbl">Atlas</span></div>
+        <div class="item" data-view="alchemy"><span class="sym">☿</span><span class="lbl">Alchemy</span></div>
+        <div class="item" data-view="transmutation"><span class="sym">⚗</span><span class="lbl">Transmutation</span></div>
+        <div class="item" data-view="morals"><span class="sym">⚖</span><span class="lbl">Morals</span></div>
+        <div class="item" data-view="rituals"><span class="sym">☽</span><span class="lbl">Rituals</span></div>
+        <div class="item" data-view="philosophy"><span class="sym">∞</span><span class="lbl">Philosophy</span></div>
+        <div class="item" data-view="mathematics"><span class="sym">∑</span><span class="lbl">Mathematics</span></div>
+        <div class="item" data-view="astrology"><span class="sym">♄</span><span class="lbl">Astrology</span></div>
+        <div class="item" data-view="medicine"><span class="sym">⚕</span><span class="lbl">Medicine</span></div>
+        <div class="item" data-view="alphabets"><span class="sym">𓀀</span><span class="lbl">Alphabets</span></div>
+        <div class="item" data-view="music"><span class="sym">♫</span><span class="lbl">Music</span></div>
 
-    <div class="section-label"><span class="lbl">Project</span></div>
-    <div class="item" data-view="about"><span class="sym">ⓘ</span><span class="lbl">About</span></div>
+        <div class="section-label"><span class="lbl">Indexes</span></div>
+        <div class="item" data-view="authors"><span class="sym">✎</span><span class="lbl">Authors</span></div>
+        <div class="item" data-view="themes"><span class="sym">◇</span><span class="lbl">Themes list</span></div>
+        <div class="item" data-view="edges"><span class="sym">→</span><span class="lbl">Connections</span></div>
+        <div class="item" data-view="traditions"><span class="sym">∴</span><span class="lbl">Traditions</span></div>
+        <div class="item" data-view="patterns"><span class="sym">✦</span><span class="lbl">Patterns</span></div>
+        <div class="item" data-view="observations"><span class="sym">◉</span><span class="lbl">Observations</span></div>
+        <div class="item" data-view="all"><span class="sym">≡</span><span class="lbl">All nodes</span></div>
+
+        <div class="section-label"><span class="lbl">Project</span></div>
+        <div class="item" data-view="about"><span class="sym">ⓘ</span><span class="lbl">About</span></div>
+      </div>
+    </details>
   </div>
 
   <div class="utility-section">
@@ -203,19 +214,19 @@
 <script src="src/js/views/pantheon-v2.js?v=20260517-edge-buckets-universal"></script>
 
 <!-- Forge: proprietary WebGPU engine (Phase 5 — dev panel). -->
-<script src="src/js/engine/contract.js?v=20260520-rebuild-phase-4b-fx5fix"></script>
-<script src="src/js/engine/types.js?v=20260520-rebuild-phase-4b-fx5fix"></script>
-<script src="src/js/engine/math.js?v=20260520-rebuild-phase-4b-fx5fix"></script>
-<script src="src/js/engine/camera.js?v=20260520-rebuild-phase-4b-fx5fix"></script>
-<script src="src/js/engine/layout/radial.js?v=20260520-rebuild-phase-4b-fx5fix"></script>
-<script src="src/js/engine/graph/node.js?v=20260520-rebuild-phase-4b-fx5fix"></script>
-<script src="src/js/engine/graph/edge.js?v=20260520-rebuild-phase-4b-fx5fix"></script>
-<script src="src/js/engine/graph/adjacency.js?v=20260520-rebuild-phase-4b-fx5fix"></script>
-<script src="src/js/engine/graph/label.js?v=20260520-rebuild-phase-4b-fx5fix"></script>
-<script src="src/js/engine/graph/mode.js?v=20260520-rebuild-phase-4b-fx5fix"></script>
-<script src="src/js/engine/graph/glyph.js?v=20260520-rebuild-phase-4b-fx5fix"></script>
-<script src="src/js/engine/renderer/webgpu.js?v=20260520-rebuild-phase-4b-fx5fix"></script>
-<script src="src/js/views/forge.js?v=20260520-rebuild-phase-4b-fx5fix"></script>
+<script src="src/js/engine/contract.js?v=20260520-rebuild-phase-5b"></script>
+<script src="src/js/engine/types.js?v=20260520-rebuild-phase-5b"></script>
+<script src="src/js/engine/math.js?v=20260520-rebuild-phase-5b"></script>
+<script src="src/js/engine/camera.js?v=20260520-rebuild-phase-5b"></script>
+<script src="src/js/engine/layout/radial.js?v=20260520-rebuild-phase-5b"></script>
+<script src="src/js/engine/graph/node.js?v=20260520-rebuild-phase-5b"></script>
+<script src="src/js/engine/graph/edge.js?v=20260520-rebuild-phase-5b"></script>
+<script src="src/js/engine/graph/adjacency.js?v=20260520-rebuild-phase-5b"></script>
+<script src="src/js/engine/graph/label.js?v=20260520-rebuild-phase-5b"></script>
+<script src="src/js/engine/graph/mode.js?v=20260520-rebuild-phase-5b"></script>
+<script src="src/js/engine/graph/glyph.js?v=20260520-rebuild-phase-5b"></script>
+<script src="src/js/engine/renderer/webgpu.js?v=20260520-rebuild-phase-5b"></script>
+<script src="src/js/views/forge.js?v=20260520-rebuild-phase-5b"></script>
 
 <script src="src/js/graph/theme.js?v=20260517-handoff"></script>
 <script src="src/js/graph/layout.js?v=20260517-handoff"></script>

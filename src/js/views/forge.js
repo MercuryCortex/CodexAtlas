@@ -342,6 +342,99 @@
   //  - dumpAtlasInfo()       — { width, height, mipLevelCount }.
   // ════════════════════════════════════════════════════════════
   //
+  // ════════════════════════════════════════════════════════════
+  // MANAGEMENT — spec lock (Phase 5B, 2026-05-20)
+  // ════════════════════════════════════════════════════════════
+  // The orchestration layer that holds NODE / BEHAVIORS / WIRES /
+  // FX together: camera, mode-switch, scrubber, search, fly-to,
+  // persistence, mount path, side-nav. Full spec at
+  // AUDIT/forge-rebuild-5A-management-2026-05-20.md §2. Phase 5B
+  // ships the residual fixes; the layers below are already LOCKED.
+  //
+  // Camera contract (src/js/engine/camera.js):
+  //  - pan/zoom/fit/setPanBounds API. fitToExtent teleports +
+  //    cancels in-flight anims + aspect-correct letterbox.
+  //  - rebuildForMode is the ONLY non-resize fitToExtent caller in
+  //    forge.js (plus the zoom-gizmo click). Pan/wheel never refit.
+  //  - M-F1 (Phase 5B) — `local.packedAtScale = camera.state.scale`
+  //    is written IMMEDIATELY after rebuildForMode's fitToExtent so
+  //    the synchronous onChange emit can't fire a spurious
+  //    rebakeNodes() against the OLD mode (stale-radius class).
+  //
+  // Resize handling (forge.js: resizeAndFit):
+  //  - initial=true: getBoundingClientRect → fitToExtent.
+  //  - initial=false (ResizeObserver): preserve zoom/pan, only
+  //    rebakeNodes+Edges+recomputeFocus (radii depend on scale).
+  //  - M-F7 (Phase 5B) — zero-size bail (`rect.w/h < 8 → return`)
+  //    so a hidden-tab mount doesn't corrupt camera state.
+  //  - app.js's global window.resize handler short-circuits for
+  //    Forge (we own our own ResizeObserver).
+  //
+  // rebuildForMode lifecycle ORDER (extended from BEHAVIORS step):
+  //   1. cancelHoverCoalesce()
+  //   2. filterNodesByMode → layout → degree
+  //   3. camera.stopAnim()
+  //   4. camera.fitToExtent(ext, vp)
+  //   5. local.packedAtScale = camera.state.scale   <-- M-F1
+  //   6. camera.setPanBounds(...)
+  //   7. packNodes(...)
+  //   8. local.packedAtScale = camera.state.scale   (belt-and-braces)
+  //   9. build hitNodes + hitGrid
+  //  10. WHOLESALE-REPLACE state buffers (FADE-PIPELINE INVARIANT
+  //      — EXCEPTION SITE; see BEHAVIORS section)
+  //  11. reset hoverId/lockedSet/focusedSet
+  //  12. label DOM pre-create (N-aware cap)
+  //  13. rebuildGlyphInstanceBuffer
+  //  14. buildSearchIndex()              <-- M-F5
+  //  15. local.scrubber.refreshBounds()  <-- M-F3
+  //  16. drawFrame()
+  //
+  // Scrubber bounds (M-F3, Phase 5B):
+  //  - wireTimelineScrubber runs ONCE at boot — DOM + handlers +
+  //    initial refreshBounds.
+  //  - local.scrubber.refreshBounds() runs on every mode-switch.
+  //    Preserves user's IN/OUT/CENTER if still inside the new
+  //    lo/hi; otherwise clamps to closest valid bound.
+  //  - Scrubber drag rAF-coalesce + cancel-on-destroy locked in
+  //    BEHAVIORS (Phase 2B).
+  //
+  // Search index (M-F5, Phase 5B):
+  //  - Eager — buildSearchIndex() at end of rebuildForMode.
+  //    Precomputes lowercase haystacks + degree per node.
+  //  - findBestMatch walks local.searchIndex, not local.mode.nodes.
+  //    O(N) per query but constant-time per entry (no lowercase
+  //    re-allocation, no adjacency map-get per entry).
+  //
+  // Camera-drift threshold (M-F4, Phase 5B):
+  //  - N-aware band: <1k → 5%, <10k → 15%, ≥10k → 30%. Trades a
+  //    little screen-px-clamp accuracy for wall-time savings at
+  //    scale (rebakeNodes→rebakeEdges chain is ~10-20 ms at 10k).
+  //
+  // Runtime persistence (M-F2, Phase 5B):
+  //  - One LS key: `codex-atlas/forge-runtime-v1`.
+  //    Carries { mode, timeline: {in, out, center}, lockedSet }.
+  //  - Hydrated at mount: mode override BEFORE first rebuildForMode;
+  //    timeline + lockedSet AFTER wireTimelineScrubber.
+  //  - Saved on: mode-dropdown change, scrubber pointerup,
+  //    toggleLock. All three persisted on every save.
+  //  - I/O wrapped in try/catch — silently no-ops in private-mode
+  //    browsers + on quota exceeded.
+  //
+  // Side-nav (M-F6, Phase 5B):
+  //  - Forge is the primary entry; other views collapsed behind a
+  //    "More views" <details> disclosure. Reversible: tabs still
+  //    reachable, just demoted. CSS at src/styles/app.css around
+  //    the `.nav-more` rules + `.item.forge-nav` active-focus pill.
+  //
+  // Debug surfaces (window._forgeDebug additions Phase 5B):
+  //  - timeline()         — { lo, hi, inDate, outDate, centerDate }.
+  //  - countRebakeNodes() — number of rebakeNodes() calls since
+  //                         mount; verifies M-F1 (mode-switch
+  //                         increments by 1, not 2).
+  //  - dumpRuntime()      — current LS-serialisable snapshot
+  //                         (mode + timeline + lockedSet).
+  // ════════════════════════════════════════════════════════════
+  //
   // PARAM_DEFAULTS — the SINGLE SOURCE OF TRUTH for every visual
   // parameter in Forge. Dev panel removed 2026-05-20 (Phase 0 of
   // the layered rebuild — see AUDIT/forge-rebuild-layered-spec-
@@ -898,6 +991,43 @@
       dumpAtlasInfo: () => (local.renderer && local.renderer.debugAtlasInfo
         ? local.renderer.debugAtlasInfo() : null),
 
+      // ── Phase 5B MANAGEMENT-only debug helpers (2026-05-20) ─
+      // Current timeline bounds + user-driven thumbs.
+      timeline: () => local.timeline ? {
+        lo:         local.timeline.lo,
+        hi:         local.timeline.hi,
+        inDate:     local.timeline.inDate,
+        outDate:    local.timeline.outDate,
+        centerDate: local.timeline.centerDate,
+      } : null,
+      // Number of rebakeNodes() calls since mount. Verifies M-F1:
+      // a mode-switch should increment this by exactly 1; if 2,
+      // the spurious onChange-rebake-on-old-mode bug is back.
+      countRebakeNodes: () => local.rebakeNodesCount || 0,
+      // Current LS-serialisable runtime snapshot. Returns the same
+      // shape saveRuntimeState would write — useful for verifying
+      // hydration round-trip without touching localStorage from
+      // the test.
+      dumpRuntime: () => {
+        const tl = local.timeline;
+        return {
+          mode: local.mode && local.mode.id || null,
+          timeline: tl ? {
+            in:     tl.inDate,
+            out:    tl.outDate,
+            center: tl.centerDate,
+          } : null,
+          lockedSet: local.lockedSet ? Array.from(local.lockedSet) : [],
+        };
+      },
+      // Read raw LS value (for diagnosing persistence issues).
+      dumpLsRuntime: () => {
+        try {
+          const raw = window.localStorage && window.localStorage.getItem(LS_RUNTIME_KEY);
+          return raw ? JSON.parse(raw) : null;
+        } catch (e) { return null; }
+      },
+
       // ── Phase 2B BEHAVIORS-only debug helpers (2026-05-20) ─
       // Toggle the dim model used by hover dimming. A4 (default)
       // is the legacy uniform mass-dim. A1 halves the IDLE-hover
@@ -1120,6 +1250,17 @@
       // do NOT defer through rAF (preview iframe throttles it).
       resizeAndFit(true);
 
+      // Phase 5B M-F2 (2026-05-20) — load LS runtime state BEFORE
+      // first rebuildForMode so the saved mode (if any) is honored.
+      // Timeline + lockedSet are restored AFTER the scrubber wires
+      // up (post-rebuildForMode) so local.timeline.lo/hi exist for
+      // clamping.
+      const savedRuntime = loadRuntimeState();
+      if (savedRuntime && typeof savedRuntime.mode === 'string'
+          && modemod.isValidMode(savedRuntime.mode)) {
+        local.mode.id = savedRuntime.mode;
+      }
+
       // Phase 4d: bake the initial mode (deities by default).
       // Must happen AFTER resizeAndFit so the camera has a valid
       // viewport for the fitToExtent call inside rebuildForMode.
@@ -1146,13 +1287,22 @@
         // gated by this flag.
         local.glyphInstancesDirty = true;
         // Re-pack nodes if the camera scale has drifted enough
-        // since the last pack. 5% threshold keeps a smooth pan
-        // free from re-packs while a real zoom triggers one.
+        // since the last pack. Threshold is N-aware (Phase 5B
+        // M-F4, 2026-05-20): at 663 nodes a 5% band feels right;
+        // at 10k+ the rebakeNodes→rebakeEdges chain is ~10-20 ms,
+        // so successive crossings inside one wheel gesture cause
+        // visible stutter. Widening the band trades a little
+        // screen-px-clamp accuracy for huge wall-time savings
+        // at scale. Tiers: <1k = 5%, <10k = 15%, ≥10k = 30%.
         const camScale = camera.state.scale;
         const lastScale = local.packedAtScale || camScale;
+        const N = (local.mode && local.mode.nodePacked && local.mode.nodePacked.instanceCount) || 0;
+        const driftBand = N < 1000 ? 0.05 : N < 10000 ? 0.15 : 0.30;
+        const driftLo = 1 - driftBand;
+        const driftHi = 1 + driftBand;
         if (lastScale > 0) {
           const ratio = camScale / lastScale;
-          if (ratio < 0.95 || ratio > 1.05) {
+          if (ratio < driftLo || ratio > driftHi) {
             rebakeNodes();
             updateZoomGizmo();
             return;
@@ -1184,6 +1334,12 @@
         modeSelectEl.addEventListener('change', (ev) => {
           if (local.destroyed) return;
           rebuildForMode(ev.target.value);
+          // Phase 5B M-F2 (2026-05-20) — persist mode on change.
+          // saveRuntimeState reads the current local.mode.id +
+          // any preserved-or-clamped timeline (refreshBounds was
+          // called inside rebuildForMode) + the (now-cleared)
+          // lockedSet.
+          saveRuntimeState();
         });
       }
 
@@ -1207,6 +1363,37 @@
       // Timeline scrubber wire-up (2026-05-20). Three handles —
       // IN / CENTER / OUT — drag to set bounds + playhead.
       wireTimelineScrubber();
+
+      // Phase 5B M-F2 (2026-05-20) — apply LS-saved timeline +
+      // lockedSet now that local.timeline exists + adjacency is
+      // populated. saved.timeline is clamped to current mode's
+      // lo/hi by local.scrubber.applySavedTimeline; saved.lockedSet
+      // ids are filtered against current adjacency (silently drop
+      // ids that don't exist in this mode — could be a stale lock
+      // from another mode or a removed vault node).
+      if (savedRuntime) {
+        if (local.scrubber && savedRuntime.timeline) {
+          local.scrubber.applySavedTimeline(savedRuntime.timeline);
+        }
+        if (Array.isArray(savedRuntime.lockedSet)
+            && local.mode && local.mode.adjacency) {
+          for (const id of savedRuntime.lockedSet) {
+            if (typeof id === 'string' && local.mode.adjacency.has(id)) {
+              local.lockedSet.add(id);
+            }
+          }
+          if (local.lockedSet.size > 0) {
+            const lEl = document.getElementById('forge-status-lock');
+            if (lEl) lEl.textContent = String(local.lockedSet.size);
+            recomputeFocus();
+          }
+        }
+        // Also sync the mode dropdown to the saved mode (if any).
+        const modeSelectEl2 = document.getElementById('forge-status-mode');
+        if (modeSelectEl2 && local.mode && local.mode.id) {
+          modeSelectEl2.value = local.mode.id;
+        }
+      }
 
       // Bind interaction handlers AFTER renderer is ready.
       attachInteractions();
@@ -1258,6 +1445,20 @@
       camera.stopAnim();
       if (local.lastSize.w && local.lastSize.h) {
         camera.fitToExtent(ext, local.lastSize, 0);
+        // Phase 5B M-F1 (2026-05-20) — synchronously record the
+        // new pack-scale BEFORE the listener-emit from fitToExtent
+        // propagates. Otherwise the onChange listener (camera.js
+        // emits inside fitToExtent → forge.js:onChange) computes
+        // ratio against the OLD mode's packedAtScale and may fire
+        // a spurious rebakeNodes() on the OLD mode (local.mode is
+        // still the previous mode here — replacement is below).
+        // Today the only effect is wasted work (rebake is discarded
+        // when local.mode swaps below); becomes a stale-radius bug
+        // the moment anyone optimises the listener's drift check.
+        // Sets the same value the redundant write at line 1281
+        // would have set; that line stays as belt-and-braces +
+        // covers any non-fit packNodes call sites.
+        local.packedAtScale = (camera && camera.state) ? camera.state.scale : 1;
       }
       // 2026-05-19 — pan bounds. Allow the user to pan a half-
       // viewport-worth beyond each edge of the wheel so the
@@ -1476,6 +1677,18 @@
       // Now a single typed array → one GPU buffer write → drawn
       // as instanced quads sampling the atlas.
       rebuildGlyphInstanceBuffer();
+      // Phase 5B M-F5 (2026-05-20) — eager search index for the
+      // new mode. O(N) one-shot; findBestMatch then walks this
+      // instead of re-lowercasing strings + looking up adjacency
+      // on every call.
+      buildSearchIndex();
+      // Phase 5B M-F3 (2026-05-20) — re-derive scrubber bounds for
+      // the new mode. local.scrubber.refreshBounds preserves the
+      // user's in/out/center when they fit the new lo/hi; clamps
+      // otherwise. Skipped on the very first rebuildForMode (before
+      // wireTimelineScrubber runs) — wireTimelineScrubber itself
+      // calls refreshBounds at the end of its initial setup.
+      if (local.scrubber) local.scrubber.refreshBounds();
       // Camera fit already done above (before packNodes) so the
       // pack ran at the correct scale. Just draw.
       drawFrame();
@@ -1509,6 +1722,14 @@
     function resizeAndFit(initial) {
       if (!local.renderer || local.destroyed) return;
       const rect = stage.getBoundingClientRect();
+      // Phase 5B M-F7 (2026-05-20) — bail when the stage is
+      // effectively zero-size. Previously fell through to
+      // Math.max(1, ...) which fit the camera to a 1×1 viewport
+      // producing garbage state. Today not reproducible because
+      // setView('forge') makes the pane visible before render,
+      // but a future route-guard mounting Forge in a hidden tab
+      // would trip this. Audit-03 F13 / lock-plan T2.14.
+      if (rect.width < 8 || rect.height < 8) return;
       const w = Math.max(1, Math.floor(rect.width));
       const h = Math.max(1, Math.floor(rect.height));
       const sizeChanged = (w !== local.lastSize.w || h !== local.lastSize.h);
@@ -2383,40 +2604,134 @@
       local.scrubPendingChange = false;
     }
 
+    // ── Phase 5B M-F2 (2026-05-20) — runtime persistence ─
+    // Single LS key `codex-atlas/forge-runtime-v1`. Carries:
+    //   mode      — modemod id; hydrated at mount if isValidMode.
+    //   timeline  — { in, out, center }; clamped to current mode's
+    //               lo/hi on hydrate.
+    //   lockedSet — array of node ids; filtered to ids that exist
+    //               in current mode's adjacency on hydrate.
+    // saveRuntimeState is called after each user-visible state
+    // change (mode-switch, scrubber pointerup, lock toggle). LS
+    // I/O wrapped in try/catch — silently no-ops in private-mode
+    // browsers + on quota exceeded.
+    const LS_RUNTIME_KEY = 'codex-atlas/forge-runtime-v1';
+    function loadRuntimeState() {
+      try {
+        const raw = window.localStorage && window.localStorage.getItem(LS_RUNTIME_KEY);
+        if (!raw) return null;
+        const parsed = JSON.parse(raw);
+        return (parsed && typeof parsed === 'object') ? parsed : null;
+      } catch (e) { return null; }
+    }
+    function saveRuntimeState() {
+      try {
+        if (!window.localStorage) return;
+        const tl = local.timeline;
+        const state = {
+          mode: local.mode && local.mode.id || null,
+          timeline: tl ? {
+            in:     tl.inDate,
+            out:    tl.outDate,
+            center: tl.centerDate,
+          } : null,
+          lockedSet: local.lockedSet ? Array.from(local.lockedSet) : [],
+        };
+        window.localStorage.setItem(LS_RUNTIME_KEY, JSON.stringify(state));
+      } catch (e) { /* ignore quota / privacy mode */ }
+    }
+
     // ── Search (Phase 4f) ─────────────────────────────
     // Substring match (case-insensitive) across title, id, and
     // aka of the CURRENT mode's nodes. First match wins; ties
     // broken by degree (highest first) so "zeus" beats a tiny
     // "zeusite" stub. Returns the node id, or null.
+    // Phase 5B M-F5 (2026-05-20) — eager search index built at
+    // the end of rebuildForMode (see buildSearchIndex below).
+    // findBestMatch walks local.searchIndex instead of re-lowercasing
+    // titles + re-looking-up adjacency on every call. Same exact >
+    // prefix > contains > degree-tiebreak algorithm; just constant-
+    // time per entry. At 663 deities the saving is ~5 ms; at 10k
+    // synthetic mode it's ~20-30 ms → <5 ms. Falls back to a fresh
+    // walk when the index is missing (defensive).
     function findBestMatch(query) {
       const q = (query || '').trim().toLowerCase();
       if (!q) return null;
-      const nodes = local.mode.nodes;
+      const idx = local.searchIndex;
       let bestExact = null, bestExactDeg = -1;
       let bestPrefix = null, bestPrefixDeg = -1;
       let bestContains = null, bestContainsDeg = -1;
-      for (const n of nodes) {
-        if (!n) continue;
-        const title = String(n.title || '').toLowerCase();
-        const id    = String(n.id || '').toLowerCase();
-        // Build a small haystack list: title, id, then any aka aliases.
-        const akaArr = Array.isArray(n.aka) ? n.aka : [];
-        const haystacks = [title, id];
-        for (const a of akaArr) {
-          if (typeof a === 'string') haystacks.push(a.toLowerCase());
+      if (idx) {
+        for (let i = 0; i < idx.length; i++) {
+          const entry = idx[i];
+          const hs = entry.haystacks;
+          for (let j = 0; j < hs.length; j++) {
+            const h = hs[j];
+            if (h === q) {
+              if (entry.deg > bestExactDeg) { bestExact = entry.id; bestExactDeg = entry.deg; }
+            } else if (h.startsWith(q)) {
+              if (entry.deg > bestPrefixDeg) { bestPrefix = entry.id; bestPrefixDeg = entry.deg; }
+            } else if (h.indexOf(q) >= 0) {
+              if (entry.deg > bestContainsDeg) { bestContains = entry.id; bestContainsDeg = entry.deg; }
+            }
+          }
         }
-        const deg = (local.mode.adjacency.get(n.id) || new Set()).size;
-        for (const h of haystacks) {
-          if (h === q) {
-            if (deg > bestExactDeg) { bestExact = n.id; bestExactDeg = deg; }
-          } else if (h.startsWith(q)) {
-            if (deg > bestPrefixDeg) { bestPrefix = n.id; bestPrefixDeg = deg; }
-          } else if (h.indexOf(q) >= 0) {
-            if (deg > bestContainsDeg) { bestContains = n.id; bestContainsDeg = deg; }
+      } else if (local.mode && Array.isArray(local.mode.nodes)) {
+        // Defensive fallback if the index wasn't built (e.g. very
+        // early call before rebuildForMode's tail block ran).
+        for (const n of local.mode.nodes) {
+          if (!n) continue;
+          const title = String(n.title || '').toLowerCase();
+          const id    = String(n.id || '').toLowerCase();
+          const akaArr = Array.isArray(n.aka) ? n.aka : [];
+          const haystacks = [title, id];
+          for (const a of akaArr) {
+            if (typeof a === 'string') haystacks.push(a.toLowerCase());
+          }
+          const deg = (local.mode.adjacency.get(n.id) || new Set()).size;
+          for (const h of haystacks) {
+            if (h === q) {
+              if (deg > bestExactDeg) { bestExact = n.id; bestExactDeg = deg; }
+            } else if (h.startsWith(q)) {
+              if (deg > bestPrefixDeg) { bestPrefix = n.id; bestPrefixDeg = deg; }
+            } else if (h.indexOf(q) >= 0) {
+              if (deg > bestContainsDeg) { bestContains = n.id; bestContainsDeg = deg; }
+            }
           }
         }
       }
       return bestExact || bestPrefix || bestContains;
+    }
+
+    // Phase 5B M-F5 (2026-05-20) — build the search index from
+    // the current mode's nodes + adjacency. Called at the end of
+    // rebuildForMode. O(N × avg-aka-count) one-shot, no allocations
+    // beyond the index itself. Walks `local.mode.nodes` once and
+    // precomputes lowercase haystacks + degree per entry, so
+    // findBestMatch is allocation-free + lookup-free per query.
+    function buildSearchIndex() {
+      const m = local.mode;
+      if (!m || !Array.isArray(m.nodes) || !m.adjacency) {
+        local.searchIndex = [];
+        return;
+      }
+      const adj = m.adjacency;
+      const out = [];
+      for (const n of m.nodes) {
+        if (!n || !n.id) continue;
+        const title = String(n.title || '').toLowerCase();
+        const id    = String(n.id   || '').toLowerCase();
+        const haystacks = [title, id];
+        if (Array.isArray(n.aka)) {
+          for (const a of n.aka) {
+            if (typeof a === 'string') haystacks.push(a.toLowerCase());
+          }
+        }
+        const adjSet = adj.get(n.id);
+        const deg = adjSet ? adjSet.size : 0;
+        out.push({ id: n.id, deg, haystacks });
+      }
+      local.searchIndex = out;
     }
 
     // ── Timeline scrubber (2026-05-20) ──────────────────────
@@ -2492,31 +2807,54 @@
         return [lopad, hipad];
       }
 
-      const bounds = deriveBounds();
-      if (!bounds) {
-        // Hide all four boxes when the current mode has no dated nodes.
-        slider.style.display = 'none';
-        if (inBox)      inBox.style.display = 'none';
-        if (outBox)     outBox.style.display = 'none';
-        if (presentBox) presentBox.style.display = 'none';
-        return;
+      // Phase 5B M-F3 (2026-05-20) — refreshBounds is the per-mode
+      // entry point. wireTimelineScrubber runs ONCE at boot to set
+      // up DOM + handlers + a first refresh; rebuildForMode calls
+      // local.scrubber.refreshBounds() at the end to re-derive
+      // lo/hi for the new mode + preserve-or-clamp the user's
+      // in/out/center. Preserves user state when it fits the new
+      // mode's date span; clamps to nearest valid bound otherwise.
+      function refreshBounds() {
+        const b = deriveBounds();
+        if (!b) {
+          slider.style.display = 'none';
+          if (inBox)      inBox.style.display = 'none';
+          if (outBox)     outBox.style.display = 'none';
+          if (presentBox) presentBox.style.display = 'none';
+          local.timeline = null;
+          return;
+        }
+        const [lo, hi] = b;
+        const prev = local.timeline;
+        const inDate     = prev && typeof prev.inDate     === 'number'
+          ? Math.max(lo, Math.min(hi, prev.inDate))   : lo;
+        const outDate    = prev && typeof prev.outDate    === 'number'
+          ? Math.max(inDate, Math.min(hi, prev.outDate)) : hi;
+        const centerDate = prev && typeof prev.centerDate === 'number'
+          ? Math.max(inDate, Math.min(outDate, prev.centerDate))
+          : Math.floor((inDate + outDate) / 2);
+        local.timeline = { lo, hi, inDate, outDate, centerDate };
+        // Re-show in case a previous mode had no dated nodes.
+        slider.style.display = '';
+        if (inBox)      inBox.style.display = '';
+        if (outBox)     outBox.style.display = '';
+        if (presentBox) presentBox.style.display = '';
+        refreshUI();
       }
-      const [lo, hi] = bounds;
 
-      // local.timeline: {lo, hi, in, out, center} — `lo`/`hi` are
-      // immutable spine bounds; the others are user-driven within.
-      local.timeline = {
-        lo, hi,
-        inDate:     lo,
-        outDate:    hi,
-        centerDate: Math.floor((lo + hi) / 2),
-      };
-
-      // Date → fraction along track (0..1).
-      function dateToFrac(d) { return (d - lo) / (hi - lo); }
+      // Date → fraction along track (0..1). Reads from
+      // local.timeline (NOT closure-local lo/hi) so it picks up
+      // the current mode's bounds after refreshBounds().
+      function dateToFrac(d) {
+        const tl = local.timeline;
+        if (!tl) return 0;
+        return (d - tl.lo) / (tl.hi - tl.lo);
+      }
       function fracToDate(f) {
+        const tl = local.timeline;
+        if (!tl) return 0;
         f = Math.max(0, Math.min(1, f));
-        return Math.round(lo + f * (hi - lo));
+        return Math.round(tl.lo + f * (tl.hi - tl.lo));
       }
       function formatYear(y) {
         if (y < 0) return Math.abs(y) + ' BCE';
@@ -2525,6 +2863,7 @@
       }
       function refreshUI() {
         const t = local.timeline;
+        if (!t) return;
         const inF  = dateToFrac(t.inDate)     * 100;
         const outF = dateToFrac(t.outDate)    * 100;
         const ctrF = dateToFrac(t.centerDate) * 100;
@@ -2538,6 +2877,21 @@
         if (inBox)      inBox.textContent      = formatYear(t.inDate);
         if (outBox)     outBox.textContent     = formatYear(t.outDate);
         if (presentBox) presentBox.textContent = formatYear(t.centerDate);
+      }
+
+      // Phase 5B M-F3 (2026-05-20) — apply LS-saved timeline state
+      // (clamped to current mode's lo/hi) + refreshUI. Called once
+      // at boot AFTER wireTimelineScrubber + after initial
+      // rebuildForMode populates local.timeline.lo/hi. Safe when
+      // saved is null or saved.timeline missing.
+      function applySavedTimeline(saved) {
+        if (!saved || !local.timeline) return;
+        const tl = local.timeline;
+        const lo = tl.lo, hi = tl.hi;
+        if (typeof saved.in === 'number')     tl.inDate     = Math.max(lo, Math.min(hi, saved.in));
+        if (typeof saved.out === 'number')    tl.outDate    = Math.max(tl.inDate, Math.min(hi, saved.out));
+        if (typeof saved.center === 'number') tl.centerDate = Math.max(tl.inDate, Math.min(tl.outDate, saved.center));
+        refreshUI();
       }
 
       // Drag state. Pointer events on track + thumbs; track captures
@@ -2598,14 +2952,29 @@
         if (!dragHandle) return;
         dragHandle = null;
         try { track.releasePointerCapture(ev.pointerId); } catch (e) { /* ignore */ }
+        // Phase 5B M-F2 (2026-05-20) — persist timeline state on
+        // drag release. Saves all three (mode + timeline + lockedSet).
+        saveRuntimeState();
       }
       track.addEventListener('pointerdown', onPointerDown);
       track.addEventListener('pointermove', onPointerMove);
       track.addEventListener('pointerup',   onPointerUp);
       track.addEventListener('pointercancel', onPointerUp);
 
-      // First render.
-      refreshUI();
+      // Phase 5B M-F3 (2026-05-20) — expose the per-mode refresh
+      // entry on `local.scrubber` so rebuildForMode + LS-hydrate
+      // can drive it. Each call re-derives lo/hi for the current
+      // mode + clamps any preserved in/out/center to the new
+      // bounds + refreshes UI.
+      local.scrubber = {
+        refreshBounds,
+        refreshUI,
+        applySavedTimeline,
+      };
+
+      // First render — populates local.timeline from the current
+      // mode's bounds + paints the UI.
+      refreshBounds();
     }
 
     // Submit a search query. On match: lock the node, fly the
@@ -2675,6 +3044,9 @@
       const lEl = document.getElementById('forge-status-lock');
       if (lEl) lEl.textContent = local.lockedSet.size > 0 ? String(local.lockedSet.size) : '—';
       recomputeFocus();
+      // Phase 5B M-F2 (2026-05-20) — persist lock state on every
+      // toggle (including click-empty clear).
+      saveRuntimeState();
     }
 
     // ── Interaction handlers ────────────────────────────
@@ -2931,6 +3303,11 @@
     // Rebake node instances + glyph DOM (called when tier radii,
     // glyph tint, screen-px clamps, OR camera scale change).
     function rebakeNodes() {
+      // Phase 5B M-F1 + AT-11 diagnostic — count every rebake so
+      // _forgeDebug.countRebakeNodes() can verify mode-switch
+      // increments by exactly 1 (and not 2, which would prove the
+      // M-F1 spurious-rebake-on-old-mode bug is back).
+      local.rebakeNodesCount = (local.rebakeNodesCount || 0) + 1;
       const m = local.mode;
       const deg = layout.computeDegree(m.nodes, m.edges);
       const np = graph.packNodes(m.nodes, m.positions, deg, nodeOverridesFromParams());

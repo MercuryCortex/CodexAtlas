@@ -5543,23 +5543,59 @@ body.view-alphabets main.canvas { padding-bottom: 220px; }
   padding: 1px 4px; border-radius: 2px;
 }
 
-/* Side-nav badge: small "p1" tag next to the Forge label so it's
-   visually marked as under construction. Bumps phase per release. */
+/* Phase 5B M-F6 (2026-05-20) — Forge marked as the active focus,
+   other views demoted behind a "More views" disclosure. The
+   construction badge from Phases 0-6d4 was replaced by a small
+   active-focus pill since Forge is now the primary entry, not the
+   under-construction one. */
 .item.forge-nav .sym {
   color: var(--gold);
 }
 .item.forge-nav::after {
-  content: 'p6d4';
+  content: '●';
   margin-left: 6px;
-  font-family: var(--mono); font-size: 9px;
-  letter-spacing: 0.08em;
-  color: var(--gold-soft);
-  border: 1px solid var(--gold-soft);
-  border-radius: 2px;
-  padding: 1px 4px;
-  opacity: 0.7;
+  font-size: 8px;
+  color: var(--gold);
+  opacity: 0.85;
 }
 body.nav-collapsed .item.forge-nav::after { display: none; }
+
+/* Phase 5B M-F6 — "More views" disclosure. Collapses every non-
+   Forge nav item behind a small summary. <details> handles open/
+   closed state natively; we just style summary like a nav item +
+   the body like a sub-list. */
+.nav-more {
+  margin-top: 10px;
+  border-top: 1px solid var(--rule, rgba(255, 255, 255, 0.06));
+  padding-top: 6px;
+}
+.nav-more > summary {
+  list-style: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 10px;
+  font-size: 12px;
+  color: var(--text-2);
+  border-radius: 4px;
+  user-select: none;
+  transition: color .12s ease, background .12s ease;
+}
+.nav-more > summary::-webkit-details-marker { display: none; }
+.nav-more > summary:hover { color: var(--text-0); background: rgba(255, 255, 255, 0.025); }
+.nav-more > summary .sym {
+  display: inline-block;
+  width: 16px; text-align: center;
+  color: var(--text-3);
+  font-size: 13px;
+}
+.nav-more[open] > summary { color: var(--text-1); }
+.nav-more[open] > summary .sym { transform: rotate(90deg); transition: transform .15s ease; }
+.nav-more-body {
+  padding-top: 4px;
+}
+body.nav-collapsed .nav-more > summary .lbl { display: none; }
 
 /* ═══════════════════════════════════════════════════════════════════
    FORGE — Phase 1: WebGPU bootstrap + first disk
