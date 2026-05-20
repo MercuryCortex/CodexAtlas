@@ -2319,20 +2319,28 @@
         : new Float32Array(idx.length);
       // 2026-05-20 — timeline scrubber filter. If the user has
       // narrowed the IN/OUT range (i.e., it's tighter than the
-      // full bounds), force out-of-range nodes to state=1 (dim).
+      // full bounds), force out-of-range nodes to state=1 (FADED).
       // Overlap rule: a node is "in range" if its existence
       // period [date_earliest..date_latest] intersects the
       // [inDate..outDate] range. Nodes without dates are kept
       // in range (don't dim them just for missing data).
+      //
+      // **Phase 10 (2026-05-20) — explicit focus wins.**
+      // Nodes in `focusedSet` (the OVER anchor + its 1-hop) are
+      // SKIPPED by this override. Otherwise, hovering or locking
+      // a node whose date falls outside the scrubber range would
+      // produce `selected=1, state=1` simultaneously — the bug
+      // signature: a bigger gold-stroked DISK rendered at FADED
+      // opacity (because state=1). User intent beats automatic
+      // filter; if you point at a node, you want to see it.
       const tl = local.timeline;
       if (tl && (tl.inDate > tl.lo || tl.outDate < tl.hi)) {
-        // 2026-05-20 — reuse the pre-built mode.nodesById Map
-        // (built once in rebuildForMode) instead of allocating a
-        // fresh object every hover. Was the audit-flagged
-        // O(N)-per-hover allocation.
         const nodesById = (local.mode && local.mode.nodesById) || new Map();
+        const focused   = local.focusedSet;
         const lo = tl.inDate, hi = tl.outDate;
         for (let i = 0; i < idx.length; i++) {
+          // Phase 10 — explicit focus override.
+          if (focused && focused.has(idx[i])) continue;
           const n = nodesById.get ? nodesById.get(idx[i]) : nodesById[idx[i]];
           if (!n) continue;
           const ne = (typeof n.date_earliest === 'number') ? n.date_earliest : null;
