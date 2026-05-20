@@ -274,16 +274,28 @@
   // refresh + cull), CSS-positioned labels. Full spec at AUDIT/
   // forge-rebuild-4A-fx-2026-05-20.md §2.
   //
-  // Selected glow:
-  //  - Quad scale = `selected_glow.w × 1.5` (1.5× headroom past
-  //    glow extent so the smoothstep completes well inside the
-  //    quad — kills the square-clip artifact). See node vertex
-  //    shader in webgpu.js.
-  //  - Discard threshold DERIVED from `selected_glow_strength`
-  //    (FX5, 2026-05-20). Replaces the 3-session magic-number
-  //    bump trail (0.04 → 0.08 → 0.15). Threshold adapts as the
-  //    slider moves; the square-clip class cannot return at any
-  //    strength value.
+  // Selected state — Phase 7 (2026-05-20):
+  //  - DELETED the glow halo. The whole alpha-blended annulus
+  //    (selected_glow_strength + selected_glow_extent + the quad
+  //    headroom + the FX5 discard threshold) is GONE. Three sessions
+  //    of bugs all traced back to that one decoration:
+  //      * square-clip artifact (depth writes inside the AA halo)
+  //      * disappearing dim disks (the 0.15 discard floor caught
+  //        every disk where alpha-dim brought it below 0.15)
+  //      * flicker during fade transitions (disks popping in/out
+  //        as their alpha crossed the discard threshold)
+  //    Replaced by a SOLID STROKE drawn inside the disk's outer
+  //    edge — a single ring computed in the same SDF fragment, no
+  //    separate object, no extra quad, no alpha compositing.
+  //  - Selected nodes show TWO differences vs focused/idle:
+  //      1. disk size × selected_size_mult (1.5 default)
+  //      2. solid gold stroke ring at outer edge (width =
+  //         selected_stroke_width fraction of radius, e.g. 0.12)
+  //  - Quad scale = 1.0 always. No headroom needed.
+  //  - Dim is now COLOR-based, not ALPHA-based. dim_amount_nodes
+  //    multiplies the fill RGB. Disk stays fully opaque, just gets
+  //    darker. No alpha math anywhere in the node fragment except
+  //    the single AA pixel at the disk edge.
   //
   // Glyphs:
   //  - Atlas at 128 px cells + full mip chain (FX4). `mipmapFilter:
@@ -549,10 +561,15 @@
     atmosphere:        0.025,
 
     // ── SELECTED STATE ──
-    selected_size_mult:     1.20,
-    selected_glow_strength: 0.50,
-    selected_glow_extent:   1.6,
-    selected_glow_color:    '#FFE9B0',
+    // Phase 7 (2026-05-20) — bulletproof. No glow halo. Selected nodes
+    // gain TWO visual differences from focused/idle:
+    //   1. bigger disk (size × selected_size_mult)
+    //   2. a solid gold stroke ring drawn INSIDE the disk's outer edge
+    // Both come from a single SDF fragment. No alpha-blended halo,
+    // no composite math, no discard threshold.
+    selected_size_mult:      1.50,
+    selected_stroke_width:   0.12,    // fraction of disk radius
+    selected_stroke_color:   '#FFE9B0',
 
     // ── NODES ── smaller than pre-bake (was 16/12/9/7 max 28)
     node_radius_tier1:     8,
@@ -1849,12 +1866,13 @@
         ? 0.5 : 1.0;
       const effectiveDim  = hasFocus ? local.params.dim_amount               : 0;
       const effectiveDimN = hasFocus ? local.params.dim_amount_nodes * dimMulN : 0;
-      // Hex glow → rgb in 0..1. Cheap; called once per frame.
-      const gh = local.params.selected_glow_color || '#FFFFFF';
-      const glowRgb = [
-        parseInt(gh.slice(1, 3), 16) / 255,
-        parseInt(gh.slice(3, 5), 16) / 255,
-        parseInt(gh.slice(5, 7), 16) / 255,
+      // Phase 7 (2026-05-20) — stroke color (replaces deleted glow color).
+      // Parsed once per frame; cheap.
+      const strokeHex = local.params.selected_stroke_color || '#FFE9B0';
+      const strokeRgb = [
+        parseInt(strokeHex.slice(1, 3), 16) / 255,
+        parseInt(strokeHex.slice(3, 5), 16) / 255,
+        parseInt(strokeHex.slice(5, 7), 16) / 255,
       ];
       // N2 (Phase 1B) / Phase 3B F3 — gate the static node + edge
       // instance buffer writes on the dirty flags (~270 MB/s saved
@@ -1877,10 +1895,12 @@
         dimAmountNodes:        effectiveDimN,
         wireMinScreenPx:       local.params.wire_min_screen_px,
         wireMaxScreenPx:       local.params.wire_max_screen_px,
+        // Phase 7 (2026-05-20) — SELECTED uniforms: size + stroke.
+        // Glow halo deleted. Stroke is a solid ring inside the disk edge.
         selectedSizeMult:      local.params.selected_size_mult,
-        selectedGlowStrength:  local.params.selected_glow_strength,
-        selectedGlowExtent:    local.params.selected_glow_extent,
-        selectedGlowColorRgb:  glowRgb,
+        selectedStrokeWidth:   local.params.selected_stroke_width,
+        selectedStrokeColorRgb: strokeRgb,
+        selectedStrokeAlpha:   1.0,
         // Phase 5C — glyph opacity uniforms passed alongside the
         // disk dim uniforms. Shader applies them with the same
         // dim formula the disk uses.

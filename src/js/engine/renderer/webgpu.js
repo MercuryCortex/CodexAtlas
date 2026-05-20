@@ -77,9 +77,9 @@
   //   wire_min_screen_px       f32      — Phase 6b: clamp stroke widths in FB px
   //   wire_max_screen_px       f32
   //   dim_amount_nodes         f32      — Phase 6c: separate node dim channel
-  //   selected_size_mult       f32      — Phase 6c: ×r for SELECTED instances
-  //   selected_glow_strength   f32      — Phase 6c: outer-ring alpha
-  //   selected_glow            vec4     — xyz = glow color, w = glow extent (×r)
+  //   selected_size_mult       f32      — Phase 7: ×r for SELECTED instances
+  //   selected_stroke_w        f32      — Phase 7: stroke band thickness (fraction of r)
+  //   selected_stroke          vec4     — Phase 7: stroke RGBA (gold ring for SELECTED)
   //   bucket_hot_colors        [8]vec4  — bucket-hex at hot alpha, indexed by
   //                                       bucket_index 0..6 (slot 7 unused).
   //                                       0:transmission 1:parallel 2:association
@@ -96,25 +96,58 @@
   // ============================================================
   // Phase 2 → 3: INSTANCED NODE shader with state attribute.
   // ============================================================
+  // ============================================================
+  //  NODE_SHADER  —  Phase 7 (2026-05-20)  —  HARD-CORE SIMPLE.
+  // ============================================================
+  //
+  //  A node is ONE shape: a colored disk. Anti-aliased at the edge.
+  //  ALWAYS OPAQUE inside the disk. No glow. No alpha tricks. No
+  //  composited masks. No discard threshold catching dim disks.
+  //
+  //  Per-instance attributes drive everything:
+  //
+  //    state    in [0..1]   0 = focused, 1 = dim
+  //    selected in [0..1]   1 = anchor (hovered or locked)
+  //
+  //  State table (4 visual states, 3 attributes):
+  //
+  //                    size           fill_rgb                  stroke
+  //    IDLE      base           family_color                 none
+  //    FOCUSED   base           family_color                 none
+  //    SELECTED  base × 1.5     family_color                 gold ring
+  //    DIM       base           family_color × (1 - dim)     none
+  //
+  //  Animation: state + selected animate as floats 0..1 in JS via
+  //  tickNodeFades. The shader interpolates fill_rgb and the
+  //  stroke mask along those floats; no pop-out at any threshold
+  //  because nothing here is conditional on alpha crossing a value.
+  //  The disk's alpha is 1.0 inside, with a single AA pixel at the
+  //  edge — that's the only fractional alpha anywhere in the node.
+  //
+  //  What was deleted:
+  //   - Glow halo (annulus, glow_a, glow_rgb, composite math)
+  //   - Quad headroom (quad_scale = 1.5 × glow_outer) — quad is 1.0
+  //   - discard_t threshold (no more "below 0.15 → vanish")
+  //   - Alpha-based dim (dim_mult applied to alpha → killed disks)
+  //
+  //  What replaced them:
+  //   - Color-based dim: dim_mult multiplies RGB; alpha stays 1.0
+  //   - Selected stroke: solid ring drawn inside the disk's SDF
+  //   - Single AA edge: smoothstep(1-aa, 1, dist) at the rim only
+  // ============================================================
   const NODE_SHADER = /* wgsl */ `
     struct View {
       view_scale:             vec2<f32>,
       view_offset:            vec2<f32>,
       viewport_px:            vec2<f32>,
-      dim_amount:             f32,    // edges
+      dim_amount:             f32,
       wire_min_screen_px:     f32,
       wire_max_screen_px:     f32,
-      dim_amount_nodes:       f32,    // Phase 6c
-      selected_size_mult:     f32,
-      selected_glow_strength: f32,
-      selected_glow:          vec4<f32>,  // xyz = color, w = extent (×r)
+      dim_amount_nodes:       f32,    // Phase 7: darkens RGB, not alpha
+      selected_size_mult:     f32,    // disk grows for selected
+      selected_stroke_w:      f32,    // stroke band thickness, fraction of radius
+      selected_stroke:        vec4<f32>,  // stroke RGBA (gold ring)
       bucket_hot_colors:      array<vec4<f32>, 7>,
-      // Phase 5C (2026-05-20) — node-unified opacity. Both disk
-      // and glyph share the same dim formula now (uniform-driven,
-      // state-derived), so glyph opacity no longer needs CPU per-
-      // frame computation. xy carries glyph_opacity + dim_amount_glyphs;
-      // zw spare. Lives in the slot freed by collapsing the unused
-      // 8th bucket entry (only 7 buckets are real).
       glyph_params:           vec4<f32>,
     };
     @group(0) @binding(0) var<uniform> v: View;
@@ -138,36 +171,17 @@
       let inst_radius   = inst_pos_r.z;
       let inst_state    = inst_state_sel.x;
       let inst_selected = inst_state_sel.y;
-      // Phase 6c — selected nodes grow + need quad room for the
-      // glow ring. The quad spans local_pos ∈ [-quad_scale, quad_scale]
-      // so the SDF distance equals 1 at the disk edge and equals
-      // glow_extent at the glow's outer edge.
-      let size_mult  = mix(1.0, v.selected_size_mult, inst_selected);
-      // 2026-05-19 — quad needs HEADROOM beyond the glow's outer
-      // smoothstep edge. If quad_scale equals glow_outer (as it
-      // used to), the smoothstep reaches 0 exactly at the quad's
-      // axis-aligned edge — meaning pixels just inside that edge
-      // still have a tiny glow_a above the discard threshold and
-      // WRITE depth at z=0 (the selected layer). Adjacent disk
-      // quads at z=0.3/0.6 then fail the depth test there,
-      // creating a visible SQUARE-shaped "bite" out of the
-      // background where adjacent disks would otherwise show.
-      // Padding the quad 1.5× past glow_outer means the smoothstep
-      // completes well inside the quad; outer pixels return
-      // glow_fade=0 → final_a=0 → discard → no depth write →
-      // adjacent disks paint cleanly through.
-      let quad_scale = mix(1.0, v.selected_glow.w * 1.5, inst_selected);
-      let world      = inst_pos + quad_vertex * inst_radius * size_mult * quad_scale;
-      let ndc        = world * v.view_scale + v.view_offset;
-      // Phase 6d — depth-layer:
-      //   selected (sel=1)   → z = 0.0  (closest, paints on top)
-      //   highlighted (state=0)→ z = 0.3
-      //   dimmed (state=1)   → z = 0.6
-      let z_focus = mix(0.6, 0.3, 1.0 - inst_state);
+      // Quad matches the disk exactly. Selected disks grow by size_mult.
+      // No glow → no headroom → no quad_scale. ONE shape, ONE radius.
+      let size_mult = mix(1.0, v.selected_size_mult, inst_selected);
+      let world     = inst_pos + quad_vertex * inst_radius * size_mult;
+      let ndc       = world * v.view_scale + v.view_offset;
+      // Depth: selected on top, focused middle, dim back.
+      let z_focus = mix(0.3, 0.6, inst_state);
       let z       = mix(z_focus, 0.0, inst_selected);
       var out: VsOut;
       out.position   = vec4<f32>(ndc, z, 1.0);
-      out.local_pos  = quad_vertex * quad_scale;
+      out.local_pos  = quad_vertex;
       out.inst_color = inst_color;
       out.state      = inst_state;
       out.sel        = inst_selected;
@@ -176,59 +190,29 @@
 
     @fragment
     fn fs_main(in: VsOut) -> @location(0) vec4<f32> {
-      let dist  = length(in.local_pos);
-      let aa    = fwidth(dist);
-      // Disk: SDF edge at dist=1.0 (independent of quad_scale —
-      // the vs lifts local_pos into the same normalised frame).
+      // SDF disk: alpha 1 inside, 0 outside, single AA pixel at edge.
+      let dist       = length(in.local_pos);
+      let aa         = fwidth(dist);
       let disk_alpha = 1.0 - smoothstep(1.0 - aa, 1.0, dist);
-      let c = in.inst_color;
-      // Background dim — separate channel from edges so the user
-      // can fade nodes harder than the wire constellation.
+      if (disk_alpha < 0.01) { discard; }
+
+      // Fill color: family_color, darkened for dim.
+      //   state = 0 → fill = family
+      //   state = 1 → fill = family × (1 - dim_amount_nodes)
       let dim_mult = mix(1.0, 1.0 - v.dim_amount_nodes, in.state);
-      let disk_a   = c.a * disk_alpha * dim_mult;
-      let disk_rgb = c.rgb * disk_a;
+      let fill_rgb = in.inst_color.rgb * dim_mult;
 
-      // Glow ring — only painted for SELECTED instances, only in
-      // the annulus dist ∈ (1.0, glow_extent). Smooth fade on both
-      // edges so it integrates with the disk's anti-aliasing.
-      let glow_outer  = v.selected_glow.w;
-      let glow_inner  = 1.0;
-      let glow_fade   = (1.0 - smoothstep(glow_inner, glow_outer, dist))
-                      * smoothstep(glow_inner - aa, glow_inner, dist);
-      let glow_a      = in.sel * v.selected_glow_strength * glow_fade;
-      let glow_rgb    = v.selected_glow.xyz * glow_a;
+      // Selected stroke: solid ring inside the disk's outer edge.
+      // stroke_w is the band thickness as a fraction of radius (e.g. 0.12).
+      // Only painted on selected nodes (sel = 1).
+      let stroke_inner = 1.0 - v.selected_stroke_w;
+      let stroke_band  = smoothstep(stroke_inner - aa, stroke_inner, dist);
+      let stroke_mix   = in.sel * stroke_band;
+      let rgb          = mix(fill_rgb, v.selected_stroke.rgb, stroke_mix);
 
-      // Composite the glow UNDER the disk (premultiplied alpha).
-      let final_rgb = disk_rgb + glow_rgb * (1.0 - disk_a);
-      let final_a   = disk_a   + glow_a   * (1.0 - disk_a);
-      // Phase 6d — discard near-transparent fragments so they
-      // don't write depth. Without this, the SDF anti-alias halo
-      // of a dimmed disk would block focused disks behind it
-      // (depth test less-equal).
-      //
-      // Phase 4B FX5 + post-cast fix (2026-05-20) — discard
-      // threshold derived from the selected_glow_strength uniform,
-      // with the 0.15 floor restored.
-      //
-      // History: 0.04 -> 0.08 -> 0.15 across 3 sessions. The Phase
-      // 4B audit recommended deriving from strength as
-      //   0.05 + max(0, strength - 1.0) * 0.1
-      // which at default strength=0.5 gives 0.05 -- LOWER than the
-      // proven-safe 0.15, so the square-clip artifact returned
-      // (John spotted it on Mastema, Mullissu, Fujin/Raijin within
-      // one session of the cast).
-      //
-      // Fix: keep the 0.15 floor AND scale UP as strength rises
-      // past the default. At strength=0.5 the threshold equals the
-      // pre-FX5 working value; at strength=1.0 it climbs to 0.25;
-      // at strength=2.0 to 0.45 -- the entire wider glow tail is
-      // discarded so neighbouring disks at z=0.3/0.6 paint cleanly
-      // through. Trade-off: outer glow pixels below the derived
-      // threshold do not render. Barely visible at default
-      // strength, more aggressive crop at high strength.
-      let discard_t = 0.15 + max(0.0, v.selected_glow_strength - 0.5) * 0.20;
-      if (final_a < discard_t) { discard; }
-      return vec4<f32>(final_rgb, final_a);
+      // Premultiplied alpha. Inside the disk the output is solid color.
+      // Only the 1-pixel AA edge is fractional.
+      return vec4<f32>(rgb * disk_alpha, disk_alpha);
     }
   `;
 
@@ -245,8 +229,8 @@
       wire_max_screen_px:     f32,
       dim_amount_nodes:       f32,
       selected_size_mult:     f32,
-      selected_glow_strength: f32,
-      selected_glow:          vec4<f32>,
+      selected_stroke_w:      f32,
+      selected_stroke:        vec4<f32>,
       bucket_hot_colors:      array<vec4<f32>, 7>,
       // Phase 5C (2026-05-20) — node-unified opacity. Both disk
       // and glyph share the same dim formula now (uniform-driven,
@@ -425,8 +409,8 @@
       wire_max_screen_px:     f32,
       dim_amount_nodes:       f32,
       selected_size_mult:     f32,
-      selected_glow_strength: f32,
-      selected_glow:          vec4<f32>,
+      selected_stroke_w:      f32,
+      selected_stroke:        vec4<f32>,
       bucket_hot_colors:      array<vec4<f32>, 7>,
       // Phase 5C (2026-05-20) — node-unified opacity. Both disk
       // and glyph share the same dim formula now (uniform-driven,
@@ -711,9 +695,11 @@
 
     // ── Shared view-uniform ────────────────────────────
     // 192 bytes: 64-byte view header + 128-byte bucket palette (8 × vec4).
-    // Phase 6c grew the header 176→192: added dim_amount_nodes,
-    // selected_size_mult, selected_glow_strength + selected_glow
-    // (vec4 = rgb + extent).
+    // Phase 7 (2026-05-20) — same 192-byte layout, the trailing
+    // SELECTED slot is now (size_mult, stroke_w, stroke RGBA) instead
+    // of (size_mult, glow_strength, glow RGB + extent). Identical
+    // binary layout — only the meaning of the values changed when
+    // the glow halo was deleted and replaced by a solid stroke ring.
     const VIEW_UBO_SIZE = 192;
     const viewUbo = own(device.createBuffer({
       label: 'forge-view-ubo', size: VIEW_UBO_SIZE,
@@ -1224,11 +1210,16 @@
         const dpr  = window.devicePixelRatio || 1;
         const wMin = (typeof frame.wireMinScreenPx === 'number') ? frame.wireMinScreenPx * dpr : 0;
         const wMax = (typeof frame.wireMaxScreenPx === 'number') ? frame.wireMaxScreenPx * dpr : 1e9;
-        // Phase 6c — SELECTED-state uniforms.
-        const selSize = (typeof frame.selectedSizeMult     === 'number') ? frame.selectedSizeMult     : 1.0;
-        const selStr  = (typeof frame.selectedGlowStrength === 'number') ? frame.selectedGlowStrength : 0.0;
-        const selExt  = (typeof frame.selectedGlowExtent   === 'number') ? frame.selectedGlowExtent   : 1.5;
-        const selCol  = frame.selectedGlowColorRgb || [1, 1, 1];
+        // Phase 7 (2026-05-20) — SELECTED-state uniforms.
+        //   size_mult   — disk grows for selected (e.g. 1.5×)
+        //   stroke_w    — stroke band thickness, fraction of radius (e.g. 0.12)
+        //   stroke_col  — gold stroke RGB. Replaces the deleted glow halo;
+        //                 the disk now carries a solid ring at its edge.
+        //   stroke_a    — alpha of the stroke (1.0 = fully opaque)
+        const selSize    = (typeof frame.selectedSizeMult     === 'number') ? frame.selectedSizeMult     : 1.0;
+        const selStrokeW = (typeof frame.selectedStrokeWidth  === 'number') ? frame.selectedStrokeWidth  : 0.12;
+        const selStrokeC = frame.selectedStrokeColorRgb || [1, 0.91, 0.69];
+        const selStrokeA = (typeof frame.selectedStrokeAlpha  === 'number') ? frame.selectedStrokeAlpha  : 1.0;
         // Phase 5C (2026-05-20) — glyph opacity uniforms. Same
         // role for glyphs that dim_amount_nodes plays for disks.
         // Caller (forge.js drawFrame) passes from local.params.
@@ -1248,7 +1239,8 @@
 
         // 192-byte view-uniform: 64-byte header + 128-byte bucket palette.
         // Phase 6c grew the header 176→192 (added dim_nodes,
-        // selected_size_mult, selected_glow_strength + vec4 glow).
+        // Phase 7 (2026-05-20) — selected slot now carries
+        // (size_mult, stroke_w, stroke RGBA) instead of glow uniforms.
         const viewData = new Float32Array(48);  // 192 / 4
         viewData[0]  = viewScaleX;
         viewData[1]  = viewScaleY;
@@ -1261,11 +1253,11 @@
         viewData[8]  = wMax;
         viewData[9]  = dimN;
         viewData[10] = selSize;
-        viewData[11] = selStr;
-        viewData[12] = selCol[0];
-        viewData[13] = selCol[1];
-        viewData[14] = selCol[2];
-        viewData[15] = selExt;
+        viewData[11] = selStrokeW;
+        viewData[12] = selStrokeC[0];
+        viewData[13] = selStrokeC[1];
+        viewData[14] = selStrokeC[2];
+        viewData[15] = selStrokeA;
         // Bucket palette (7 × 4 floats = 28 floats) starts at
         // offset 16 (64 bytes). Phase 5C (2026-05-20) — the 8th
         // bucket slot was repurposed as glyph_params (slot 7 in
