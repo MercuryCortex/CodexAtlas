@@ -360,23 +360,26 @@
       // dim_amount = 0 when no focus is active, so the idle
       // constellation isn't attenuated in the no-focus case.
       let dim_mult = mix(1.0 - v.dim_amount, 1.0, in.state);
-      // 2026-05-19 — directional gradient. Every wire darkens
-      // from source (in.edge_t=0) toward target (in.edge_t=1).
-      // Eye-readable cue for edge direction + helps separate
-      // wires that overlap or share endpoints. Multiplier mixes
-      // 1.0 (no change at source) → 0.25 (75% darker at target).
-      // First iteration shipped at 0.55 — John couldn't see the
-      // darken on faint idle wires. Cranked to make the
-      // direction unmissable; tunable from here.
+      // Directional gradient. Every wire darkens from source
+      // (in.edge_t=0) toward target (in.edge_t=1). Eye-readable
+      // cue for edge direction; helps separate wires that
+      // overlap or share endpoints.
+      //
+      // Tuning history:
+      //   0.55 (2026-05-19)  — John couldn't see darken on idle wires.
+      //   0.25 (2026-05-19)  — too aggressive; target end nearly black.
+      //   0.50 (2026-05-21)  — readable but balanced. Target end is
+      //                        50% of source RGB; clear direction
+      //                        cue without crushing the target end.
+      //
       // Applies equally to IDLE and HOT — gradient is universal,
       // not state-dependent.
       // Phase 3B D2 (2026-05-20) — gradient applied to color RGB,
       // NOT alpha. Keeps the AA footprint constant from source to
       // target end while the visible color darkens. Intentional —
-      // see AUDIT/forge-robustness-05-gpu-pipeline-2026-05-20.md
-      // §P4: makes the wire-end blunt against the disk it
-      // terminates into. DO NOT extend grad_mult to alpha.
-      let grad_mult = mix(1.0, 0.25, in.edge_t);
+      // makes the wire-end blunt against the disk it terminates
+      // into. DO NOT extend grad_mult to alpha.
+      let grad_mult = mix(1.0, 0.50, in.edge_t);
       let a        = color.a * alpha_aa * dim_mult;
       // Phase 6d — same discard logic as nodes: AA halo fragments
       // shouldn't write depth, else they block disks behind them.
