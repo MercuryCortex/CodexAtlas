@@ -425,15 +425,28 @@
       // quad_vertex is [-1,+1]; map to [0,1] for UV.
       let uvX = mix(u0, u1, (quad_vertex.x + 1.0) * 0.5);
       let uvY = mix(v0, v1, (quad_vertex.y + 1.0) * 0.5);
-      // Per-instance z mirrors the disk depth layers so
-      // overlapping glyphs sort cleanly:
-      //   selected (sel=1)    → z = 0.01  (in front of selected disk z=0.0)
-      //   focused (state=0)   → z = 0.10  (in front of focused disks z=0.3)
-      //   dim (state=1)       → z = 0.50  (in front of dim disks z=0.6)
-      // The glyph always sits just in front of its own disk, and
-      // selected-anchor glyphs paint on top of focused/dim glyphs.
-      let z_focus = mix(0.10, 0.50, state);
-      let z       = mix(z_focus, 0.01, selected);
+      // Per-instance z — MATCH the parent disk's z exactly so
+      // less-equal depth test passes (0 <= 0) and the later-
+      // drawn glyph wins via draw order. The previous values
+      // (glyph z slightly LARGER than disk z) were backwards —
+      // in clip space smaller z = closer = wins. Selected
+      // anchor disk at z=0.0 + glyph at z=0.01 meant
+      // 0.01 <= 0.0 is FALSE → glyph rejected → bigger disk
+      // with no symbol. John's report: "lots of nodes hover
+      // without the symbol just bigger circle".
+      //
+      // With matched z + glyph drawn AFTER disks:
+      //   selected anchor (sel=1, state=0) → z=0.0
+      //   focused 1-hop   (state=0)        → z=0.3
+      //   dim background  (state=1)        → z=0.6
+      // Within same node, glyph wins by draw order. Across
+      // overlapping instances, depth test orders correctly:
+      // dim glyph (z=0.6) over focused disk (z=0.3) →
+      // 0.6 <= 0.3 false → dim glyph hidden behind focused
+      // (and same for focused vs selected). Exactly what the
+      // old occlusion-zone hack was approximating.
+      let z_focus = mix(0.3, 0.6, state);
+      let z       = mix(z_focus, 0.0, selected);
       var out: VsOut;
       out.position = vec4<f32>(ndc, z, 1.0);
       out.uv       = vec2<f32>(uvX, uvY);
