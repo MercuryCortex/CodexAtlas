@@ -109,6 +109,76 @@
   // bug from memory feedback_pack_scale_invariant.md.
   // ════════════════════════════════════════════════════════════
   //
+  // ════════════════════════════════════════════════════════════
+  // BEHAVIORS — spec lock (Phase 2B, 2026-05-20)
+  // ════════════════════════════════════════════════════════════
+  // The interaction + state-transition layer that sits on top of
+  // the locked NODE atom. Full spec at AUDIT/forge-rebuild-2A-
+  // behaviors-2026-05-20.md §2.
+  //
+  // Three-state model:
+  //  - IDLE      = no hover AND no lock; focusedSet === null;
+  //                drawFrame passes dimAmount = 0 (no attenuation).
+  //  - FOCUSED   = hover or lock present; focusedSet = {hoverId}
+  //                ∪ 1-hop(hoverId) ∪ ⋃(lockedSet ∪ 1-hop(lockedSet));
+  //                non-members get nodeStates[i*2] = 1 (dim) at
+  //                depth z = 0.6.
+  //  - SELECTED  = hover ∪ lockedSet (the anchors only — no 1-hop);
+  //                nodeStates[i*2+1] = 1; size_mult applied in
+  //                shader; glow ring; depth z = 0.0.
+  //
+  // Hover transition:
+  //  - setHoverId() — synchronous: hoverId mutation + cursor
+  //    class + status text. Coalesced: recomputeFocus deferred to
+  //    next rAF via local.hoverRafId. At most 1 recompute per
+  //    frame regardless of pointer rate.
+  //
+  // Click-lock transition:
+  //  - toggleLock(id) — id present: lockedSet.add/.delete (toggle).
+  //    id null (click-empty): lockedSet.clear(). recomputeFocus
+  //    runs synchronously (click rate is low; no coalesce needed).
+  //
+  // Fade pipeline:
+  //  - FADE_DURATION = 0.15 s (a constant in this file).
+  //  - local.nodeStates ↔ nodeTargets, local.edgeStates ↔ edgeTargets.
+  //  - tickNodeFades / tickEdgeFades advance current toward target
+  //    IN PLACE every animTick. The only legitimate WHOLESALE
+  //    replace is in rebuildForMode (cross-mode N differs); see
+  //    the FADE-PIPELINE INVARIANT — EXCEPTION SITE comment block
+  //    around line 1051 below.
+  //
+  // rAF ownership map (all four cancelled by destroy()):
+  //  - local.animRafId     — fade + camera motion (animTick)
+  //  - local.hoverRafId    — hover coalesce → recomputeFocus
+  //  - local.idleLabelRaf  — idle-tier label visibility recompute
+  //  - local.scrubRafId    — scrubber drag coalesce → recomputeFocus
+  // Helpers in this file: cancelHoverCoalesce(), cancelIdleLabelRaf(),
+  // cancelScrubCoalesce(). destroy() calls all three plus the
+  // explicit animRafId cancel.
+  //
+  // rebuildForMode lifecycle ORDER (extends the NODE order above):
+  //   1. cancelHoverCoalesce()        // drain pending recompute
+  //   2. modemod.filterNodesByMode → layout → degree
+  //   3. camera.fitToExtent(ext, vp)  // BEFORE packNodes
+  //   4. camera.setPanBounds(...)
+  //   5. graph.packNodes(...)
+  //   6. local.packedAtScale = camera.state.scale  // N4 invariant
+  //   7. buildHitGrid(hitNodes, ext, maxRadius)
+  //   8. local.nodeStates / nodeTargets / edgeStates / edgeTargets
+  //      WHOLESALE-REPLACED (the documented exception)
+  //   9. local.hoverId / lockedSet / focusedSet reset
+  //   10. label DOM pre-creation
+  //   11. rebuildGlyphInstanceBuffer + drawFrame
+  //
+  // Dim model dispatcher (Phase 2B B6, default A4):
+  //  - A4 (default) — accept asymmetry; IDLE-hover dims whole scene.
+  //  - A1 — halved IDLE-hover dim multiplier; LOCKED keeps full.
+  //  - A2 — same as A1 in Phase 2B; lock-indicator CSS deferred to P4.
+  //  - A3 — staggered ring cascade via scratch.fadeDelay (precomputed
+  //    in recomputeFocus, consumed by tickNodeFades).
+  //  Switch live via window._forgeDebug.setDimModel('AX').
+  // ════════════════════════════════════════════════════════════
+  //
   // PARAM_DEFAULTS — the SINGLE SOURCE OF TRUTH for every visual
   // parameter in Forge. Dev panel removed 2026-05-20 (Phase 0 of
   // the layered rebuild — see AUDIT/forge-rebuild-layered-spec-
@@ -449,9 +519,30 @@
       // most recent ~80ms to derive release velocity. Avoids the
       // jitter you get from using just the final move's delta.
       panSamples:  [],
-      // Animation loop rAF id. Null when idle.
-      animRafId:   null,
-      animLastT:   0,
+      // Phase 2B (2026-05-20) — three rAF ids tracked on `local` so
+      // destroy() + rebuildForMode can cancel them symmetrically.
+      // See the BEHAVIORS section of the spec-lock header for the
+      // ownership map (which scheduler writes which id, when each
+      // is cancelled). Internal `if (local.destroyed) return;`
+      // guards inside each rAF callback are belt-and-braces;
+      // explicit cancellation in destroy() is load-bearing.
+      animRafId:        null,   // fade + camera-motion loop (animTick)
+      animLastT:        0,
+      hoverRafId:       0,      // hover coalesce → recomputeFocus
+      hoverPendingId:   undefined,
+      idleLabelRaf:     0,      // idle-tier label visibility recompute
+      scrubRafId:       0,      // B4: scrubber drag coalesce → recomputeFocus
+      scrubPendingChange: false,
+      // Phase 2B B6 — dim-model dispatcher. Default A4 (accept
+      // asymmetry — IDLE-hover dims the whole scene; LOCKED feels
+      // surgical). Other options: A1 = softer IDLE dim; A2 = A1
+      // + Phase-4 lock indicator (in Phase 2B same effect as A1);
+      // A3 = staggered ring cascade (uses scratch.fadeDelay).
+      // Toggle via window._forgeDebug.setDimModel('AX').
+      _dimModel:        'A4',
+      // Scratch buffers reused across recomputeFocus / tickNodeFades.
+      // Allocated on demand at the right size; reused thereafter.
+      scratch:          { ringDist: null, fadeDelay: null },
       // Label DOM nodes — one per renderable deity. Created lazily
       // (only when first shown) to avoid 663 hidden divs at mount.
       labelEls:    new Map(),     // id → HTMLDivElement
@@ -473,10 +564,21 @@
     rootEl._engine = {
       destroy() {
         local.destroyed = true;
+        // Phase 2B B1 (2026-05-20) — symmetric rAF cancellation.
+        // Previously only animRafId was cancelled; the hover +
+        // idle-label + scrubber rAFs relied on internal
+        // `if (local.destroyed) return;` guards inside their
+        // callbacks. Those guards are belt-and-braces; explicit
+        // cancellation here is load-bearing — one missed guard
+        // in a future refactor produces use-after-destroy on
+        // stale local.mode.
         if (local.animRafId != null) {
           try { cancelAnimationFrame(local.animRafId); } catch (e) { /* ignore */ }
           local.animRafId = null;
         }
+        cancelHoverCoalesce();
+        cancelIdleLabelRaf();
+        cancelScrubCoalesce();
         if (local.resizeObs) {
           try { local.resizeObs.disconnect(); } catch (e) { /* ignore */ }
           local.resizeObs = null;
@@ -572,6 +674,59 @@
       // owned[] list. View-switch should leave this constant at 0.
       ownedCount: () => (local.renderer && local.renderer.debugOwnedCount
         ? local.renderer.debugOwnedCount() : null),
+
+      // ── Phase 2B BEHAVIORS-only debug helpers (2026-05-20) ─
+      // Toggle the dim model used by hover dimming. A4 (default)
+      // is the legacy uniform mass-dim. A1 halves the IDLE-hover
+      // dim multiplier (LOCKED keeps full); A2 = A1 in Phase 2B
+      // (CSS treatment deferred to Phase 4); A3 staggers the
+      // cascade by ring distance over ~0.3s. Returns the model
+      // that was set, or null if the argument is invalid.
+      setDimModel: (s) => {
+        if (!['A1', 'A2', 'A3', 'A4'].includes(s)) return null;
+        local._dimModel = s;
+        // Force a recompute so the new model takes effect on the
+        // current hover/lock state without waiting for the next
+        // pointermove. drawFrame call inside animTick picks up
+        // the new dim multiplier on its next tick.
+        if (local.hoverId || (local.lockedSet && local.lockedSet.size)) {
+          recomputeFocus();
+        }
+        drawFrame();
+        return s;
+      },
+      // Snapshot the dim-model-relevant state for side-by-side
+      // comparisons. Call setDimModel('A1') → screenshot → call
+      // setDimModel('A2') → screenshot → compare. The values
+      // here are stable across model swaps; only the visible
+      // rendering changes.
+      compareDimModels: () => ({
+        current:        local._dimModel || 'A4',
+        hoverId:        local.hoverId,
+        lockedSize:     local.lockedSet ? local.lockedSet.size : 0,
+        focusedSize:    local.focusedSet ? local.focusedSet.size : 0,
+        ringDistFilled: local.scratch && local.scratch.ringDist
+          ? (() => {
+              const r = local.scratch.ringDist;
+              let r0 = 0, r1 = 0, r2 = 0, beyond = 0;
+              for (let i = 0; i < r.length; i++) {
+                if      (r[i] === 0)   r0++;
+                else if (r[i] === 1)   r1++;
+                else if (r[i] === 2)   r2++;
+                else                   beyond++;
+              }
+              return { r0, r1, r2, beyond };
+            })()
+          : null,
+      }),
+      // Read the count of cancelled-vs-fired rAFs since mount.
+      // Useful for verifying destroy() / rebuildForMode B1+B2.
+      rafIds: () => ({
+        anim:  local.animRafId,
+        hover: local.hoverRafId,
+        idle:  local.idleLabelRaf,
+        scrub: local.scrubRafId,
+      }),
 
       // ── Phase 6d5 — ground-truth bug probe ─────────────────
       // dumpBugState() captures every signal we'd need to diagnose
@@ -845,6 +1000,16 @@
     function rebuildForMode(modeId) {
       if (!modemod.isValidMode(modeId)) modeId = modemod.defaultMode();
 
+      // Phase 2B B2 (2026-05-20) — drain any pending hover-coalesce
+      // BEFORE swapping local.mode. Without this, the pending rAF
+      // callback would fire post-swap and call recomputeFocus()
+      // against the new mode's adjacency with the old hoverPendingId,
+      // producing a brief ghost-hover on a node id that may not
+      // exist in the new mode. The hoverId reset further down at
+      // local.hoverId = null is correct but doesn't address the
+      // pending recompute the rAF still holds.
+      cancelHoverCoalesce();
+
       const modeNodes = modemod.filterNodesByMode(modeId, allNodes, allEdges);
       const modeEdges = layout.filterEdgesByNodes(allEdges, modeNodes);
       const degree    = layout.computeDegree(modeNodes, modeEdges);
@@ -947,12 +1112,37 @@
       // state animation skips the ~21KB upload at 663 nodes
       // (~106 MB/s saved at 10k).
       local.nodeInstancesDirty = true;
-      // State buffers must size to the new instance counts.
-      // Nodes: 2 floats per instance — (state, selected). state
-      // defaults to 0 (no dim, full alpha); selected defaults to 0.
-      // Edges: 1 float per instance. Phase 6d4 — convention flip:
-      // 0 = IDLE (safe default), 1 = HOT. Zero-init is now correct
-      // by construction; no .fill() needed.
+      // ════════════════════════════════════════════════════════════
+      // FADE-PIPELINE INVARIANT — EXCEPTION SITE (Phase 2B B5,
+      // 2026-05-20)
+      // ════════════════════════════════════════════════════════════
+      // The four lines below WHOLESALE-REPLACE local.nodeStates /
+      // nodeTargets / edgeStates / edgeTargets. This is the SOLE
+      // legitimate wholesale-replace site in the entire fade
+      // pipeline. Every OTHER mutation must update in place via
+      // .set() so an in-flight fade keeps animating (see
+      // tickNodeFades / tickEdgeFades + rebakeNodes / rebakeEdges
+      // for the fade-aware pattern).
+      //
+      // Why this site IS the exception: mode-switch changes the
+      // instance count (deities=676 vs documents=494 etc.). The
+      // buffers MUST be re-sized; preserving the old values would
+      // index into the wrong nodes. Hover + lock are cleared just
+      // below, so there's no in-flight fade to corrupt.
+      //
+      // DO NOT factor these lines into a helper that rebakeNodes
+      // or recomputeFocus could call. Doing so brought back the
+      // "fade snaps mid-transition" bug class twice in history
+      // (see AUDIT/forge-animation-pipeline-2026-05-20.md §1).
+      //
+      // State buffer shapes:
+      //   - Nodes: 2 floats per instance (state, selected).
+      //     state defaults to 0 (no dim, full alpha); selected
+      //     defaults to 0.
+      //   - Edges: 1 float per instance. Convention (post-2026-
+      //     05-18 flip): 0 = IDLE (safe default), 1 = HOT.
+      //   Zero-init is correct by construction; no .fill() needed.
+      // ════════════════════════════════════════════════════════════
       local.nodeStates  = new Float32Array(nodePack.instanceCount * 2);
       local.nodeTargets = new Float32Array(nodePack.instanceCount * 2);
       local.edgeStates  = new Float32Array(edgePack.instanceCount);
@@ -1153,8 +1343,26 @@
       // true idle (no hover, no lock) we pass 0 so the already-
       // faint idle alphas (0.10–0.30) aren't further attenuated.
       const hasFocus      = !!(local.focusedSet && local.focusedSet.size);
-      const effectiveDim  = hasFocus ? local.params.dim_amount       : 0;
-      const effectiveDimN = hasFocus ? local.params.dim_amount_nodes : 0;
+      // Phase 2B B6 (2026-05-20) — dim-model dispatcher.
+      //   A4 (default) — full mass-dim on both IDLE-hover and
+      //     LOCKED-hover (current behavior; audit verdict says
+      //     this is semantically correct: IDLE = "I'm navigating,
+      //     scene reacts"; LOCKED = "I've committed, surgical").
+      //   A1 — halved IDLE-hover dim so the mass-flip is gentler;
+      //     LOCKED keeps full dim.
+      //   A2 — A1 + Phase-4 CSS treatment on lock indicator (CSS
+      //     side TODO). In Phase 2B A2 = A1.
+      //   A3 — staggered cascade by ring; handled in tickNodeFades
+      //     via local.scratch.ringDist (precomputed in recomputeFocus
+      //     when A3 is active). The drawFrame dim-amount itself
+      //     uses A4 values.
+      // Toggle via window._forgeDebug.setDimModel('A1'|'A2'|'A3'|'A4').
+      const dimModel    = local._dimModel || 'A4';
+      const isIdleHover = !local.lockedSet || local.lockedSet.size === 0;
+      const dimMulN = (isIdleHover && (dimModel === 'A1' || dimModel === 'A2'))
+        ? 0.5 : 1.0;
+      const effectiveDim  = hasFocus ? local.params.dim_amount               : 0;
+      const effectiveDimN = hasFocus ? local.params.dim_amount_nodes * dimMulN : 0;
       // Hex glow → rgb in 0..1. Cheap; called once per frame.
       const gh = local.params.selected_glow_color || '#FFFFFF';
       const glowRgb = [
@@ -1597,6 +1805,56 @@
       if (!local.nodeStates || local.nodeStates.length !== newNodeTargets.length) {
         local.nodeStates = new Float32Array(newNodeTargets);
       }
+      // Phase 2B B6 (2026-05-20) — A3 staggered cascade. Precompute
+      // per-node fade delay via BFS from selectedSet (anchors) so
+      // tickNodeFades can release each ring after the inner one
+      // has visibly started moving. Default A4 path skips this
+      // entirely (zero cost). Allocates two scratch buffers + one
+      // Map per call when A3 is active; acceptable because the
+      // dispatcher is opt-in and the call rate is hover-rate
+      // (≤60Hz). Ring 0 (anchor) = 0s delay; ring 1 = 0.05s;
+      // ring 2 = 0.10s; ring ≥3 / unreached = 0.15s (cascades
+      // outward over ~0.3s total).
+      if (local._dimModel === 'A3') {
+        const N  = idx.length;
+        const sc = local.scratch;
+        if (!sc.ringDist  || sc.ringDist.length  !== N) sc.ringDist  = new Uint8Array(N);
+        if (!sc.fadeDelay || sc.fadeDelay.length !== N) sc.fadeDelay = new Float32Array(N);
+        sc.ringDist.fill(255);
+        const idxOf = new Map();
+        for (let i = 0; i < N; i++) idxOf.set(idx[i], i);
+        const queue = [];
+        if (local.selectedSet) {
+          for (const id of local.selectedSet) {
+            const i = idxOf.get(id);
+            if (i !== undefined) {
+              sc.ringDist[i] = 0;
+              queue.push(i);
+            }
+          }
+        }
+        const adj = local.mode.adjacency;
+        let head = 0;
+        while (head < queue.length) {
+          const ci = queue[head++];
+          const d  = sc.ringDist[ci];
+          if (d >= 2) continue;
+          const neighbors = adj.get(idx[ci]);
+          if (!neighbors) continue;
+          for (const nid of neighbors) {
+            const ni = idxOf.get(nid);
+            if (ni === undefined) continue;
+            if (sc.ringDist[ni] === 255) {
+              sc.ringDist[ni] = d + 1;
+              queue.push(ni);
+            }
+          }
+        }
+        for (let i = 0; i < N; i++) {
+          const r = sc.ringDist[i];
+          sc.fadeDelay[i] = (r === 255) ? 0.15 : r * 0.05;
+        }
+      }
       // 2026-05-19 — edge fade. Compute the snap-to TARGET value
       // for each edge; the live edgeStates buffer is animated
       // toward it by `tickEdgeFades` (FADE_DURATION = 0.1s). On
@@ -1671,17 +1929,37 @@
       if (!cur || !tgt || cur.length !== tgt.length) return false;
       const step = dt / FADE_DURATION;
       let stillFading = false;
-      for (let i = 0; i < cur.length; i++) {
-        const c = cur[i];
-        const t = tgt[i];
-        if (c === t) continue;
-        const diff = t - c;
-        const absDiff = diff < 0 ? -diff : diff;
-        if (absDiff <= step) {
-          cur[i] = t;
-        } else {
-          cur[i] = c + (diff > 0 ? step : -step);
+      // Phase 2B B6 (2026-05-20) — A3 dispatcher: per-node fade
+      // delay precomputed by recomputeFocus into scratch.fadeDelay.
+      // Until a node's delay counts down to 0 its (state, selected)
+      // pair holds its current value, producing a ring-by-ring
+      // cascade. Other dim models (A1/A2/A4) skip this branch and
+      // tick uniformly across all nodes (existing behavior).
+      const N = cur.length >> 1;   // node count (2 floats per node)
+      const useDelay = local._dimModel === 'A3'
+        && local.scratch.fadeDelay
+        && local.scratch.fadeDelay.length === N;
+      const delays = useDelay ? local.scratch.fadeDelay : null;
+      for (let n = 0; n < N; n++) {
+        if (delays && delays[n] > 0) {
+          delays[n] = Math.max(0, delays[n] - dt);
           stillFading = true;
+          continue;
+        }
+        // Advance both floats for this node (state + selected).
+        for (let k = 0; k < 2; k++) {
+          const i = (n << 1) + k;
+          const c = cur[i];
+          const t = tgt[i];
+          if (c === t) continue;
+          const diff = t - c;
+          const absDiff = diff < 0 ? -diff : diff;
+          if (absDiff <= step) {
+            cur[i] = t;
+          } else {
+            cur[i] = c + (diff > 0 ? step : -step);
+            stillFading = true;
+          }
         }
       }
       return stillFading;
@@ -1728,10 +2006,14 @@
     // The actual hoverId mutation + DOM-cue updates stay
     // synchronous (cursor class, status text) — only the
     // heavy recomputeFocus call is coalesced.
-    let _hoverPendingId = undefined;
-    let _hoverRafId = 0;
+    // Phase 2B (2026-05-20) — hoverRafId + hoverPendingId lifted
+    // onto `local` (audit Q3 recommendation). Lets destroy() and
+    // rebuildForMode call cancelHoverCoalesce() to drain pending
+    // recomputes against stale state. See cancelHoverCoalesce
+    // below + the BEHAVIORS spec-lock header for the rAF
+    // ownership map.
     function setHoverId(newId) {
-      if (newId === local.hoverId && _hoverPendingId === undefined) return;
+      if (newId === local.hoverId && local.hoverPendingId === undefined) return;
       // Light synchronous updates — cheap, must fire on every move
       // for the cursor feedback to feel responsive.
       if (newId !== local.hoverId) {
@@ -1749,14 +2031,38 @@
       }
       // Coalesce the heavy recompute. If one is already pending,
       // just update the target; rAF will pick it up.
-      _hoverPendingId = newId;
-      if (_hoverRafId) return;
-      _hoverRafId = requestAnimationFrame(() => {
-        _hoverRafId = 0;
-        _hoverPendingId = undefined;
+      local.hoverPendingId = newId;
+      if (local.hoverRafId) return;
+      local.hoverRafId = requestAnimationFrame(() => {
+        local.hoverRafId = 0;
+        local.hoverPendingId = undefined;
         if (local.destroyed) return;
         recomputeFocus();
       });
+    }
+
+    // Phase 2B (2026-05-20) — cancel helpers used by destroy() (B1)
+    // and rebuildForMode (B2) to drain pending rAFs before swapping
+    // state out from under them.
+    function cancelHoverCoalesce() {
+      if (local.hoverRafId) {
+        try { cancelAnimationFrame(local.hoverRafId); } catch (e) { /* ignore */ }
+        local.hoverRafId = 0;
+      }
+      local.hoverPendingId = undefined;
+    }
+    function cancelIdleLabelRaf() {
+      if (local.idleLabelRaf) {
+        try { cancelAnimationFrame(local.idleLabelRaf); } catch (e) { /* ignore */ }
+        local.idleLabelRaf = 0;
+      }
+    }
+    function cancelScrubCoalesce() {
+      if (local.scrubRafId) {
+        try { cancelAnimationFrame(local.scrubRafId); } catch (e) { /* ignore */ }
+        local.scrubRafId = 0;
+      }
+      local.scrubPendingChange = false;
     }
 
     // ── Search (Phase 4f) ─────────────────────────────
@@ -1950,7 +2256,25 @@
         // Filter wiring: when IN or OUT change, re-run focus so
         // the date-range-dim is applied to nodes outside the
         // range. Center moves don't change the filter.
-        if (rangeChanged) recomputeFocus();
+        //
+        // Phase 2B B4 (2026-05-20) — rAF-coalesce the recompute.
+        // Scrubber drag fires pointermove at up to 120Hz; without
+        // this gate `recomputeFocus` runs synchronously per move,
+        // burning the JS thread on full-buffer fade-target writes.
+        // Mirrors the setHoverId pattern from commit 98bc609.
+        // refreshUI (cheap DOM text updates) stays synchronous so
+        // drag feedback feels immediate.
+        if (rangeChanged) {
+          local.scrubPendingChange = true;
+          if (!local.scrubRafId) {
+            local.scrubRafId = requestAnimationFrame(() => {
+              local.scrubRafId = 0;
+              local.scrubPendingChange = false;
+              if (local.destroyed) return;
+              recomputeFocus();
+            });
+          }
+        }
       }
       function onPointerUp(ev) {
         if (!dragHandle) return;
