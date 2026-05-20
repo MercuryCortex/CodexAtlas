@@ -561,17 +561,36 @@
       // state both the disk and glyph already read.
       let glyph_op  = v.glyph_params.x;
       let dim_g     = v.glyph_params.y;
+      // Phase 6B (2026-05-20) — focus rule:
+      // glyphs render ONLY on DIM background nodes when focus is
+      // active. Focused / selected disks (state=0 with active focus)
+      // show as solid family-color circles with no symbol overlay.
+      // In idle (no focus), every node renders its glyph at full
+      // opacity (so the user can identify types at a glance).
+      //
+      // This was John's bug class — the deity stencil's inner-circle
+      // fill covered the disk center at ~85% alpha, making the
+      // locked node read as "transparent disk with faint symbol
+      // on top + glow." With the focus rule the locked anchor is
+      // a clean solid disk + glow halo (John's "SOLID NODE"
+      // directive); the dim periphery still carries glyphs for
+      // at-a-glance type identification.
+      //
+      // Mechanism: JS gates dim_amount_glyphs on hasFocus —
+      //   idle:   dim_g = 0   (no focus is active)
+      //   active: dim_g = 0.9 (the param value)
+      //
+      // Trace:
+      //   idle (dim_g=0, state=0):        mult = 1
+      //   active focused (dim_g>0, s=0):  mult = 0  (HIDDEN — disk is clean)
+      //   active dim     (dim_g>0, s=1):  mult = 1 - dim_g  (faint context glyph)
+      let is_active = step(0.01, dim_g);
       let dim_mult  = mix(1.0, 1.0 - dim_g, in.state);
-      // Phase 6A (2026-05-20) — screen-size fade. At fit-zoom the
-      // disk is ~3 px and the deity stencil covered ~85% of that
-      // in a lightened tint, washing the family-color disk to a
-      // pastel that John read as "transparent" + "symbol fainted on
-      // top." Faded out below 5 px screen radius; restored fully
-      // above 10 px (the zoom level where the stencil reads as a
-      // symbol rather than a wash). Smoothstep gives a clean fade
-      // when the user zooms in to inspect a node.
+      let mult      = mix(1.0, in.state * dim_mult, is_active);
+      // Phase 6A (2026-05-20) — screen-size fade. Below 5 px the
+      // stencil renders as a wash; faded out so disk reads clean.
       let size_fade = smoothstep(5.0, 10.0, in.screen_r);
-      let a         = tex.a * in.tint.a * glyph_op * dim_mult * size_fade;
+      let a         = tex.a * in.tint.a * glyph_op * mult * size_fade;
       if (a < 0.02) { discard; }
       // Premultiplied alpha output.
       return vec4<f32>(in.tint.rgb * a, a);

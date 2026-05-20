@@ -306,6 +306,24 @@
   //    between, smooth blend. Implemented in GLYPH_SHADER vs+fs;
   //    no per-frame JS work. The disk now reads SOLID at the
   //    overview zoom John works at; symbols appear on inspection.
+  //  - **Phase 6B (2026-05-20) — focus rule (THE actual fix).**
+  //    Phase 6A reduced the wash at small sizes but the same bug
+  //    persisted at higher zooms because the deity-stencil's inner-
+  //    fill covered the disk center at ~85% alpha even when the
+  //    disk was big. Phase 6B kills it architecturally:
+  //      - When focus is ACTIVE (hover or lock present): glyphs are
+  //        HIDDEN on the focused / selected ring (state=0) so those
+  //        disks render clean solid + halo. Dim background (state=1)
+  //        keeps glyphs at the faint dim opacity for at-a-glance
+  //        type identification.
+  //      - When IDLE (no focus): glyphs paint on every node at full
+  //        opacity, same as before.
+  //    Mechanism: JS gates dim_amount_glyphs on hasFocus (idle → 0,
+  //    active → param value 0.9). Fragment uses
+  //      is_active = step(0.01, dim_g);
+  //      mult     = mix(1.0, state * (1 - dim_g), is_active);
+  //    Trace: idle/s=0 → mult=1; active/s=0 → mult=0 (HIDDEN); active/s=1 → mult=1-dim_g (~0.1).
+  //    See AUDIT/forge-rebuild-6A-glyph-focus-rule-2026-05-20.md.
   //
   // Glyph dirty-flag + cull (FX1 + FX2):
   //  - local.glyphInstancesDirty defaults true; reset after each
@@ -1866,8 +1884,20 @@
         // Phase 5C — glyph opacity uniforms passed alongside the
         // disk dim uniforms. Shader applies them with the same
         // dim formula the disk uses.
+        //
+        // Phase 6B (2026-05-20) — dim_amount_glyphs is GATED on
+        // hasFocus, matching effectiveDim / effectiveDimN above.
+        // In idle (no hover/lock) dim_g is 0; the glyph fragment's
+        // is_active=step(0.01, dim_g) check then disables the
+        // "hide on focused, dim on dim" rule so glyphs paint on
+        // every node at full opacity. When focus is active, dim_g
+        // is the param value (0.9) and the shader's focus rule
+        // kicks in: focused/selected disks render clean (no glyph
+        // wash), dim background renders the faint context glyph.
         glyphOpacity:          (typeof local.params.glyph_opacity === 'number') ? local.params.glyph_opacity : 0.85,
-        dimAmountGlyphs:       (typeof local.params.dim_amount_glyphs === 'number') ? local.params.dim_amount_glyphs : 0.7,
+        dimAmountGlyphs:       hasFocus
+                                 ? ((typeof local.params.dim_amount_glyphs === 'number') ? local.params.dim_amount_glyphs : 0.7)
+                                 : 0,
         nodeInstances:         frameNVB,
         nodeInstancesDirty:    local.nodeInstancesDirty,
         edgeInstances:         frameEVB,
