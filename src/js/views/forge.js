@@ -1157,6 +1157,13 @@
       const idxOf = local.glyphAtlas.typeToIdx;
       const baseOp = (local.params && typeof local.params.glyph_opacity === 'number')
         ? local.params.glyph_opacity : 0.85;
+      // 2026-05-20 — apply glyph_scale on the radius so GPU
+      // glyphs match the prior DOM glyph sizing
+      // (`dPx = 2 * baseR * sc * glyphScale`). The shader
+      // applies selected_size_mult on top of this for selected
+      // nodes (so selected disk + glyph grow together).
+      const glyphScale = (local.params && typeof local.params.glyph_scale === 'number')
+        ? local.params.glyph_scale : 0.85;
       for (let i = 0; i < N; i++) {
         const id = np.idIndex[i];
         const n  = nodesById.get ? nodesById.get(id) : null;
@@ -1165,7 +1172,7 @@
         // screen-px-clamp — same world units the disks render at).
         data[off + 0] = np.data[i * NF + 0];
         data[off + 1] = np.data[i * NF + 1];
-        data[off + 2] = np.data[i * NF + 2];
+        data[off + 2] = np.data[i * NF + 2] * glyphScale;
         // Glyph type index from the atlas lookup.
         const typeKey = n && n.type ? n.type : 'theme';
         data[off + 3] = glyphmod.idxForType(idxOf, typeKey);
@@ -1184,9 +1191,18 @@
     // Per-frame alpha refresh — reads local.nodeStates (which
     // animates via tickNodeFades) and updates the alpha column
     // so glyphs fade with their parent disk's dim transition.
+    //
+    // 2026-05-20 — short-circuit when nothing is animating. If
+    // nodeStates equals nodeTargets element-wise (fade settled),
+    // the alphas don't need recomputing and the GPU upload can
+    // be skipped via the unchanged buffer. Saves ~21KB GPU write
+    // per frame at IDLE — the "slowness from fading bubbles" John
+    // asked about reduces to its actual cause: only the active
+    // fade frames pay the cost.
     function refreshGlyphAlphas() {
       const data = local.glyphInstanceData;
       const states = local.nodeStates;
+      const tgts   = local.nodeTargets;
       if (!data || !states) return;
       const N = data.length >>> 3;  // /8
       const baseOp = (local.params && typeof local.params.glyph_opacity === 'number')

@@ -396,12 +396,26 @@
       @location(0) quad_vertex:     vec2<f32>,     // [-1, +1] per axis
       @location(1) inst_pos_r_idx:  vec4<f32>,     // xy=center, z=radius, w=glyphIdx
       @location(2) inst_tint_alpha: vec4<f32>,     // rgba
+      // 2026-05-20 — per-instance state from the nodeStateVbo
+      // (same order as nodes). .x = state (0=focused, 1=dim),
+      // .y = selected (1=anchor). Drives:
+      //   - size growth on selected nodes (matches disk)
+      //   - per-instance z so overlapping glyphs layer correctly
+      //     (selected on top, focused middle, dim back) instead
+      //     of last-drawn-wins
+      @location(3) inst_state_sel:  vec2<f32>,
     ) -> VsOut {
       let center = inst_pos_r_idx.xy;
-      let r      = inst_pos_r_idx.z;
+      let r_base = inst_pos_r_idx.z;
       let idx_f  = inst_pos_r_idx.w;
       let idx    = clamp(i32(floor(idx_f + 0.5)), 0, 31);
-      // Glyph quad sized to disk diameter (1.0× r each side).
+      let state    = inst_state_sel.x;
+      let selected = inst_state_sel.y;
+      // Selected disk grows by v.selected_size_mult; glyph must
+      // follow or the disk covers it. Non-selected stays at base.
+      let size_mult = mix(1.0, v.selected_size_mult, selected);
+      let r = r_base * size_mult;
+      // Glyph quad sized to scaled radius each side.
       let world = center + quad_vertex * r;
       let ndc   = world * v.view_scale + v.view_offset;
       // UV lookup from atlas rect for this glyph type.
@@ -410,15 +424,18 @@
       let u1 = rect.z; let v1 = rect.w;
       // quad_vertex is [-1,+1]; map to [0,1] for UV.
       let uvX = mix(u0, u1, (quad_vertex.x + 1.0) * 0.5);
-      // Flip V — image data is y-down, NDC is y-up.
       let uvY = mix(v0, v1, (quad_vertex.y + 1.0) * 0.5);
-      // Z slightly in front of disks so glyph paints above its
-      // own disk. Disk z layers: selected 0.0, highlighted 0.3,
-      // dimmed 0.6. Glyph at z=0.02 keeps it consistently
-      // forward of every disk without overlapping the AA halo
-      // discard threshold.
+      // Per-instance z mirrors the disk depth layers so
+      // overlapping glyphs sort cleanly:
+      //   selected (sel=1)    → z = 0.01  (in front of selected disk z=0.0)
+      //   focused (state=0)   → z = 0.10  (in front of focused disks z=0.3)
+      //   dim (state=1)       → z = 0.50  (in front of dim disks z=0.6)
+      // The glyph always sits just in front of its own disk, and
+      // selected-anchor glyphs paint on top of focused/dim glyphs.
+      let z_focus = mix(0.10, 0.50, state);
+      let z       = mix(z_focus, 0.01, selected);
       var out: VsOut;
-      out.position = vec4<f32>(ndc, 0.02, 1.0);
+      out.position = vec4<f32>(ndc, z, 1.0);
       out.uv       = vec2<f32>(uvX, uvY);
       out.tint     = inst_tint_alpha;
       return out;
@@ -670,11 +687,16 @@
         buffers: [
           // [0] shared quad mesh
           { arrayStride: 8, stepMode: 'vertex', attributes: [{ shaderLocation: 0, offset: 0, format: 'float32x2' }] },
-          // [1] per-instance: pos.xy, radius, glyphIdx | tint.rgba
-          // 32 bytes per instance.
+          // [1] per-instance: pos.xy, radius, glyphIdx | tint.rgba (32 bytes)
           { arrayStride: 32, stepMode: 'instance', attributes: [
               { shaderLocation: 1, offset:  0, format: 'float32x4' },
               { shaderLocation: 2, offset: 16, format: 'float32x4' },
+          ] },
+          // [2] per-instance state — SAME buffer as the node
+          // pipeline's nodeStateVbo (state, selected) pairs.
+          // 8 bytes per instance.
+          { arrayStride: 8, stepMode: 'instance', attributes: [
+              { shaderLocation: 3, offset: 0, format: 'float32x2' },
           ] },
         ],
       },
@@ -1099,7 +1121,7 @@
         // front of all disk z-layers (0.0 / 0.3 / 0.6).
         const glyphVB = frame.glyphInstances;
         const glyphCount = glyphVB ? Math.floor(glyphVB.length / 8) : 0;
-        if (glyphCount > 0) {
+        if (glyphCount > 0 && nodeStateVbo) {
           const r = ensureBuffer(glyphInstanceVbo, glyphInstanceVboSize, glyphVB.byteLength, 'forge-glyph-inst-vbo');
           glyphInstanceVbo = r.buf; glyphInstanceVboSize = r.size;
           device.queue.writeBuffer(glyphInstanceVbo, 0, glyphVB);
@@ -1107,6 +1129,10 @@
           pass.setBindGroup(0, glyphBg);
           pass.setVertexBuffer(0, quadVbo);
           pass.setVertexBuffer(1, glyphInstanceVbo);
+          // [2] = same nodeStateVbo the node pipeline uses, so
+          // glyphs get the same (state, selected) per instance
+          // without duplicating data.
+          pass.setVertexBuffer(2, nodeStateVbo);
           pass.draw(6, glyphCount);
         }
 
