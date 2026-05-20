@@ -493,6 +493,28 @@
       console.error('[forge.webgpu] uncaptured GPU error:', e.error);
     });
 
+    // N3 (Phase 1B, 2026-05-20) — single OWNED resource list. Every
+    // GPUBuffer + GPUTexture the renderer creates is registered via
+    // own(). destroy() iterates this list before device.destroy()
+    // so the cleanup is symmetric with creation. disown() removes
+    // an entry — used by ensureBuffer + ensureDepthTex when an old
+    // resource is being torn down to make room for a larger one.
+    // Phase 3/4 will keep using this pattern as they add their own
+    // resources; nothing here is layer-specific.
+    const owned = [];
+    const own    = (o) => { if (o) owned.push(o); return o; };
+    const disown = (o) => {
+      if (!o) return;
+      const i = owned.indexOf(o);
+      if (i >= 0) owned.splice(i, 1);
+    };
+
+    // N2 (Phase 1B, 2026-05-20) — write counter for the static node-
+    // instance VBO. Exposed via api.debugCountNodeVboWrites(). With
+    // the dirty-flag gate in place, this should increment only on
+    // mode-switch / rebake / first-frame — NOT every drawFrame.
+    let nodeInstanceWrites = 0;
+
     const context = canvas.getContext('webgpu');
     const format  = navigator.gpu.getPreferredCanvasFormat();
     context.configure({ device, format, alphaMode: 'premultiplied' });
@@ -511,18 +533,18 @@
     }
 
     // ── Shared quad VBO ─────────────────────────────────
-    const quadVbo = device.createBuffer({
+    const quadVbo = own(device.createBuffer({
       label: 'forge-quad-vbo',
       size:  QUAD_VERTICES.byteLength,
       usage: GPUBufferUsage.VERTEX | GPUBufferUsage.COPY_DST,
-    });
+    }));
     device.queue.writeBuffer(quadVbo, 0, QUAD_VERTICES);
 
     // ── Phase 1 disk pipeline (diagnostic) ─────────────
-    const diskUbo = device.createBuffer({
+    const diskUbo = own(device.createBuffer({
       label: 'forge-disk-ubo', size: 48,
       usage: GPUBufferUsage.UNIFORM | GPUBufferUsage.COPY_DST,
-    });
+    }));
     const diskBgl = device.createBindGroupLayout({
       entries: [{ binding: 0, visibility: GPUShaderStage.VERTEX | GPUShaderStage.FRAGMENT, buffer: { type: 'uniform' } }],
     });
@@ -553,10 +575,10 @@
     // selected_size_mult, selected_glow_strength + selected_glow
     // (vec4 = rgb + extent).
     const VIEW_UBO_SIZE = 192;
-    const viewUbo = device.createBuffer({
+    const viewUbo = own(device.createBuffer({
       label: 'forge-view-ubo', size: VIEW_UBO_SIZE,
       usage: GPUBufferUsage.UNIFORM | GPUBufferUsage.COPY_DST,
-    });
+    }));
     const viewBgl = device.createBindGroupLayout({
       entries: [{ binding: 0, visibility: GPUShaderStage.VERTEX | GPUShaderStage.FRAGMENT, buffer: { type: 'uniform' } }],
     });
@@ -605,11 +627,11 @@
       edgeRibbonVerts[base + 0] = x; edgeRibbonVerts[base + 1] = -1;
       edgeRibbonVerts[base + 2] = x; edgeRibbonVerts[base + 3] =  1;
     }
-    const edgeRibbonVbo = device.createBuffer({
+    const edgeRibbonVbo = own(device.createBuffer({
       label: 'forge-edge-ribbon-vbo',
       size:  edgeRibbonVerts.byteLength,
       usage: GPUBufferUsage.VERTEX | GPUBufferUsage.COPY_DST,
-    });
+    }));
     device.queue.writeBuffer(edgeRibbonVbo, 0, edgeRibbonVerts);
     const EDGE_RIBBON_COUNT = (EDGE_SEGMENTS + 1) * 2;
 
@@ -650,18 +672,18 @@
     // UV uniform: 32 vec4 rects × 16 bytes = 512 bytes (room for
     // 32 types; we use 17 today, headroom for future additions).
     const GLYPH_UV_UBO_SIZE = 512;
-    const glyphUvUbo = device.createBuffer({
+    const glyphUvUbo = own(device.createBuffer({
       label: 'forge-glyph-uv-ubo', size: GLYPH_UV_UBO_SIZE,
       usage: GPUBufferUsage.UNIFORM | GPUBufferUsage.COPY_DST,
-    });
+    }));
     // Dummy 1×1 atlas texture so the pipeline can bind before
     // setGlyphAtlas is called. Replaced by the real atlas at boot.
-    let atlasTex = device.createTexture({
+    let atlasTex = own(device.createTexture({
       label: 'forge-glyph-atlas',
       size: { width: 1, height: 1, depthOrArrayLayers: 1 },
       format: 'rgba8unorm',
       usage: GPUTextureUsage.TEXTURE_BINDING | GPUTextureUsage.COPY_DST | GPUTextureUsage.RENDER_ATTACHMENT,
-    });
+    }));
     const atlasSampler = device.createSampler({
       label: 'forge-glyph-sampler',
       magFilter: 'linear',
@@ -734,28 +756,34 @@
     let depthTexW = 0, depthTexH = 0;
     function ensureDepthTex(fbW, fbH) {
       if (depthTex && depthTexW === fbW && depthTexH === fbH) return depthTex;
-      if (depthTex) { try { depthTex.destroy(); } catch (e) { /* ignore */ } }
-      depthTex = device.createTexture({
+      if (depthTex) {
+        disown(depthTex);
+        try { depthTex.destroy(); } catch (e) { /* ignore */ }
+      }
+      depthTex = own(device.createTexture({
         label: 'forge-depth',
         size:  { width: fbW, height: fbH },
         format: 'depth24plus',
         usage:  GPUTextureUsage.RENDER_ATTACHMENT,
-      });
+      }));
       depthTexW = fbW; depthTexH = fbH;
       return depthTex;
     }
 
     function ensureBuffer(current, currentSize, neededSize, label) {
-      if (current && currentSize >= neededSize) return { buf: current, size: currentSize };
-      if (current && current.destroy) { try { current.destroy(); } catch (e) { /* ignore */ } }
+      if (current && currentSize >= neededSize) return { buf: current, size: currentSize, grew: false };
+      if (current && current.destroy) {
+        disown(current);
+        try { current.destroy(); } catch (e) { /* ignore */ }
+      }
       const size = Math.max(4096, Math.ceil(neededSize / 4096) * 4096);
       // Phase 6d5 — COPY_SRC added so the debug readback methods
       // (debugReadEdgeStates / debugReadNodeStates) can use this
       // buffer as the source of a copyBufferToBuffer into a
       // MAP_READ staging buffer. Adding the flag is free for
       // non-readback usage.
-      const buf = device.createBuffer({ label, size, usage: GPUBufferUsage.VERTEX | GPUBufferUsage.COPY_DST | GPUBufferUsage.COPY_SRC });
-      return { buf, size };
+      const buf = own(device.createBuffer({ label, size, usage: GPUBufferUsage.VERTEX | GPUBufferUsage.COPY_DST | GPUBufferUsage.COPY_SRC }));
+      return { buf, size, grew: true };
     }
 
     const CLEAR_COLOR = { r: 0.0274, g: 0.0353, b: 0.0588, a: 1 };
@@ -781,6 +809,14 @@
     const api = {
       device, context, format, canvas,
       EDGE_SEGMENTS,
+
+      // N2 (Phase 1B) — read-only counter for the static node-VBO
+      // upload count since renderer creation. With the dirty-flag
+      // gate, this should be ≈ rebake-count, not frame-count.
+      debugCountNodeVboWrites() { return nodeInstanceWrites; },
+      // Phase 1B — sanity-check the owned[] list. Returns the
+      // count of live GPU resources tracked for cleanup.
+      debugOwnedCount() { return owned.length; },
 
       // Write the 7-bucket hot-color palette into the renderer.
       // @param colors  Array of 7 [r, g, b, a] in [0, 1].
@@ -950,13 +986,14 @@
       setGlyphAtlas(atlasCanvas, uvRects) {
         // Reallocate the texture at the actual atlas size, then
         // copy the canvas data in.
+        disown(atlasTex);
         try { atlasTex.destroy(); } catch (e) { /* ignore */ }
-        atlasTex = device.createTexture({
+        atlasTex = own(device.createTexture({
           label: 'forge-glyph-atlas',
           size: { width: atlasCanvas.width, height: atlasCanvas.height, depthOrArrayLayers: 1 },
           format: 'rgba8unorm',
           usage: GPUTextureUsage.TEXTURE_BINDING | GPUTextureUsage.COPY_DST | GPUTextureUsage.RENDER_ATTACHMENT,
-        });
+        }));
         // copyExternalImageToTexture handles the rgba premultiply.
         device.queue.copyExternalImageToTexture(
           { source: atlasCanvas, flipY: false },
@@ -1066,7 +1103,14 @@
         if (nodeCount > 0) {
           const r = ensureBuffer(nodeInstanceVbo, nodeInstanceVboSize, nVB.byteLength, 'forge-node-inst-vbo');
           nodeInstanceVbo = r.buf; nodeInstanceVboSize = r.size;
-          device.queue.writeBuffer(nodeInstanceVbo, 0, nVB);
+          // N2 (Phase 1B, 2026-05-20) — gate on the dirty flag
+          // OR on a fresh allocation (r.grew). Static geometry
+          // only changes on rebake / mode-switch; gating cuts a
+          // ~21 KB upload at 663 nodes / ~106 MB/s saved at 10k.
+          if (frame.nodeInstancesDirty || r.grew) {
+            device.queue.writeBuffer(nodeInstanceVbo, 0, nVB);
+            nodeInstanceWrites++;
+          }
         }
         if (edgeCount > 0) {
           const r = ensureBuffer(edgeInstanceVbo, edgeInstanceVboSize, eVB.byteLength, 'forge-edge-inst-vbo');
@@ -1077,6 +1121,32 @@
         // ── State buffers (dynamic) ──
         // Phase 6c: node state is now (state, selected) per
         // instance — 2 floats × 4 bytes = 8 bytes/instance.
+        // ════════════════════════════════════════════════════════
+        // CROSS-PIPELINE INVARIANT (Phase 1B / N5, 2026-05-20):
+        // The glyph pass (later in this same encoder, search for
+        // "setVertexBuffer(2, nodeStateVbo)" in the glyph dispatch
+        // block) reads THIS buffer as its third vertex buffer so
+        // glyphs inherit (state, selected) per node without a
+        // duplicate VBO. The contract:
+        //   1. nodeStateVbo must be allocated BEFORE the glyph
+        //      pass tries to bind it (the `if (glyphCount > 0 &&
+        //      nodeStateVbo)` guard handles this).
+        //   2. nodeStateVbo must be WRITTEN above (this block) so
+        //      the glyph pass reads correct data. WebGPU queue
+        //      order: writeBuffer is enqueued before pass-encode,
+        //      so this is sequenced correctly.
+        //   3. nodeStateVbo length must be >= max(nodeCount,
+        //      glyphCount) × 8 bytes. They're 1:1 today, so
+        //      growing for nodeCount automatically suffices for
+        //      glyphCount.
+        // DO NOT split the glyph pass into a separate render pass,
+        // re-order writes, or stop writing this buffer when nodes
+        // are absent — every one of those silently breaks the
+        // glyph (state, selected) channel and gets misdiagnosed
+        // as a "fade animation bug." See AUDIT/forge-robustness-
+        // 05-gpu-pipeline-2026-05-20.md §C1 + AUDIT/forge-rebuild-
+        // 1A-node-atom-2026-05-20.md §3 N5.
+        // ════════════════════════════════════════════════════════
         if (nodeCount > 0) {
           const stateBytes = nodeCount * 8;
           const r = ensureBuffer(nodeStateVbo, nodeStateVboSize, stateBytes, 'forge-node-state-vbo');
@@ -1152,16 +1222,22 @@
         device.queue.submit([encoder.finish()]);
       },
 
+      // N3 (Phase 1B, 2026-05-20) — symmetric destroy via the
+      // owned[] list. Every device.createBuffer / createTexture
+      // above was registered via own(); ensureBuffer + ensureDepthTex
+      // disown the old before creating new on grow. So this single
+      // loop covers every GPU resource the renderer has alive
+      // (including atlasTex / glyphUvUbo / glyphInstanceVbo which
+      // the prior explicit list silently leaked). device.destroy()
+      // is still called after as a final hammer.
       destroy() {
-        try { quadVbo.destroy(); }          catch (e) { /* ignore */ }
-        try { edgeRibbonVbo.destroy(); }    catch (e) { /* ignore */ }
-        try { diskUbo.destroy(); }          catch (e) { /* ignore */ }
-        try { viewUbo.destroy(); }          catch (e) { /* ignore */ }
-        if (nodeInstanceVbo) { try { nodeInstanceVbo.destroy(); } catch (e) { /* ignore */ } }
-        if (edgeInstanceVbo) { try { edgeInstanceVbo.destroy(); } catch (e) { /* ignore */ } }
-        if (nodeStateVbo)    { try { nodeStateVbo.destroy(); }    catch (e) { /* ignore */ } }
-        if (edgeStateVbo)    { try { edgeStateVbo.destroy(); }    catch (e) { /* ignore */ } }
-        if (depthTex)        { try { depthTex.destroy(); }        catch (e) { /* ignore */ } }
+        for (let i = 0; i < owned.length; i++) {
+          const r = owned[i];
+          if (r && r.destroy) {
+            try { r.destroy(); } catch (e) { /* ignore */ }
+          }
+        }
+        owned.length = 0;
         try { device.destroy(); } catch (e) { /* ignore */ }
       },
     };

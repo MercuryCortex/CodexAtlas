@@ -66,6 +66,49 @@
   // tuning keeps a normal scroll click feeling like a step.
   const WHEEL_ZOOM_K = 0.0015;
 
+  // ════════════════════════════════════════════════════════════
+  // NODE ATOM — spec lock (Phase 1B, 2026-05-20)
+  // ════════════════════════════════════════════════════════════
+  // The node primitive is locked at this commit. The spec lives
+  // in AUDIT/forge-rebuild-1A-node-atom-2026-05-20.md (§2 — the
+  // locked spec table). Do not change tier radii / state channels
+  // / depth z / GPU layout without writing a dated rationale doc
+  // that supersedes the relevant section.
+  //
+  // Dimensions:
+  //  - Tier classification: graph.buildTierClassifier(nodes,
+  //    degreeMap). Quantile cuts p4 / p15 / p40. 4 tiers.
+  //  - Tier radii (world units, this PARAM_DEFAULTS): 4 numbers,
+  //    threaded via tierRadiiFromParams() → packNodes.
+  //  - Screen-px clamp: node_min/max_screen_px applied in
+  //    packNodes using camera.state.scale at pack time. Re-pack
+  //    on 5%-drift via camera.onChange → rebakeNodes.
+  //  - State channel (semantics): 0 = focused (no dim), 1 = dim.
+  //    Storage: local.nodeStates (live) + local.nodeTargets
+  //    (snap-to), interleaved (state, selected) pairs.
+  //  - Selected channel: 0 / 1 float; size_mult = selected_size_mult
+  //    in shader; glow ring under disk via premultiplied composite.
+  //  - Depth z: selected=0.0, focused=0.3, dim=0.6. Glyph z =
+  //    SAME value (depth tiebreak by draw-order; see CROSS-PIPELINE
+  //    INVARIANT in webgpu.js at the nodeStateVbo write site).
+  //  - GPU layout: 8 floats × 32 bytes per instance —
+  //    (x, y, r, _pad, R, G, B, A). Frozen.
+  //
+  // rebuildForMode ORDER (for the NODE parts in scope):
+  //   1. ext = lay.worldExtent
+  //   2. camera.fitToExtent(ext, vp)         // BEFORE packNodes
+  //   3. camera.setPanBounds(...)
+  //   4. packNodes(modeNodes, …)             // reads camera.scale
+  //   5. local.packedAtScale = camera.state.scale  // N4 invariant
+  //   6. build hitNodes + hitGrid in one loop
+  //   7. allocate local.nodeStates / nodeTargets
+  // The lifecycle invariant: every pack site must update
+  // packedAtScale immediately after the pack. The `||` fallback in
+  // camera.onChange masks the absence today; a future agent who
+  // "cleans up" the fallback brings back the pack-scale invariant
+  // bug from memory feedback_pack_scale_invariant.md.
+  // ════════════════════════════════════════════════════════════
+  //
   // PARAM_DEFAULTS — the SINGLE SOURCE OF TRUTH for every visual
   // parameter in Forge. Dev panel removed 2026-05-20 (Phase 0 of
   // the layered rebuild — see AUDIT/forge-rebuild-layered-spec-
@@ -378,6 +421,14 @@
       // selected-glow appearance both ease in/out at FADE_DURATION
       // instead of snapping.
       nodeTargets: new Float32Array(0),
+      // N2 (2026-05-20) — nodeInstanceVbo dirty flag. The packed
+      // node geometry (positions + radii + family color) only
+      // changes when packNodes runs (rebuildForMode / rebakeNodes).
+      // Default = true so the first drawFrame after mount uploads
+      // the buffer; drawFrame resets to false after each call;
+      // every pack site re-sets to true. The state VBO is NOT
+      // gated (it animates per-frame via tickNodeFades).
+      nodeInstancesDirty: true,
       // 2026-05-19 — edge fade animation. `edgeStates` is the
       // LIVE-ANIMATING value pushed to the GPU each frame;
       // `edgeTargets` is the snap-to value computed by
@@ -468,6 +519,59 @@
       // can verify the animation system without depending on
       // setTimeout cadence (which the preview iframe throttles).
       kickPanVelocity: (vx, vy) => { camera.kickPanVelocity(vx, vy); },
+
+      // ── Phase 1B NODE-only debug helpers (2026-05-20) ─────
+      // Acceptance instrumentation for the layered rebuild's
+      // NODE atom phase. See AUDIT/forge-rebuild-1A-node-atom-
+      // 2026-05-20.md §6.
+      // Toggle: render only nodes (no edges, no glyphs). Useful
+      // for verifying the node primitive in isolation. Pass true /
+      // false to set explicitly; pass nothing to flip.
+      nodeOnly: (on) => {
+        local._nodeOnly = (typeof on === 'boolean') ? on : !local._nodeOnly;
+        drawFrame();
+        return local._nodeOnly;
+      },
+      // Inspect the hit-test spatial grid (N1).
+      dumpHitGrid: () => {
+        const g = local.mode && local.mode.hitGrid;
+        if (!g) return null;
+        const totalCells = g.cols * g.rows;
+        // buckets is sparse — iterate length, treat undefined as 0.
+        let nonEmpty = 0, maxOcc = 0, totalEntries = 0;
+        for (let i = 0; i < totalCells; i++) {
+          const bucket = g.buckets[i];
+          const s = bucket ? bucket.length : 0;
+          if (s > 0) nonEmpty++;
+          if (s > maxOcc) maxOcc = s;
+          totalEntries += s;
+        }
+        return {
+          cellSize: g.cellSize,
+          cols: g.cols, rows: g.rows,
+          totalCells,
+          nonEmptyCells: nonEmpty,
+          maxBucketSize: maxOcc,
+          totalEntries,
+          avgPerNonEmpty: nonEmpty ? +(totalEntries / nonEmpty).toFixed(2) : 0,
+        };
+      },
+      // Inspect the pack-scale invariant (N4).
+      dumpPackedAtScale: () => ({
+        packedAtScale: local.packedAtScale,
+        currentScale:  camera && camera.state ? camera.state.scale : null,
+        ratio: local.packedAtScale && camera && camera.state
+          ? (camera.state.scale / local.packedAtScale).toFixed(4)
+          : null,
+      }),
+      // Count of static node-VBO uploads since renderer create.
+      // Should approximate rebake/mode-switch count — NOT frame count.
+      countNodeVboWrites: () => (local.renderer && local.renderer.debugCountNodeVboWrites
+        ? local.renderer.debugCountNodeVboWrites() : null),
+      // Count of live GPU resources tracked by the renderer's
+      // owned[] list. View-switch should leave this constant at 0.
+      ownedCount: () => (local.renderer && local.renderer.debugOwnedCount
+        ? local.renderer.debugOwnedCount() : null),
 
       // ── Phase 6d5 — ground-truth bug probe ─────────────────
       // dumpBugState() captures every signal we'd need to diagnose
@@ -780,6 +884,11 @@
       }
 
       const nodePack  = graph.packNodes(modeNodes, lay.positions, degree, nodeOverridesFromParams());
+      // N4 (2026-05-20) — pack-scale invariant: every site that
+      // calls packNodes must immediately record the scale the pack
+      // was made at. Saves the `||` fallback in camera.onChange
+      // from masking the bug from feedback_pack_scale_invariant.md.
+      local.packedAtScale = (camera && camera.state) ? camera.state.scale : 1;
       // 2026-05-19 — Build the radii lookup so packEdges can
       // offset each wire to the source/target disk perimeter,
       // fanning wires out around each hub's circumference
@@ -787,10 +896,22 @@
       const radiiById = buildRadiiMap(nodePack);
       const edgePack  = graph.packEdges(modeEdges, lay.positions, Object.assign({}, edgeOverridesFromParams(), { nodeRadii: radiiById }));
       const adj       = graph.buildAdjacency(modeEdges);
-      const tierFor   = graph.buildTierClassifier(modeNodes, degree);
+      // N6 (Phase 1B) — reuse the classifier built inside packNodes
+      // instead of recomputing. Eliminates two redundant O(N log N)
+      // sorts per mode rebuild and the drift risk if classifier
+      // semantics change.
+      const tierFor   = nodePack.tierFor || graph.buildTierClassifier(modeNodes, degree);
 
+      // N1 (2026-05-20) — hit-test spatial grid built alongside
+      // the hitNodes array in one pass. cellSize = 2 × maxRadius
+      // ensures a node CENTER is within 1 cell of any point its
+      // disk contains; hitTestAt queries the 3×3 neighborhood.
+      // Drops hit-test from O(N) per pointermove to O(neighborhood)
+      // — ~2-10 candidates regardless of N. See AUDIT/forge-rebuild-
+      // 1A-node-atom-2026-05-20.md §3 N1.
       const hitNodesNew = new Array(nodePack.instanceCount);
       const hitByIdNew  = new Map();
+      let maxRadius     = 0;
       for (let i = 0; i < nodePack.instanceCount; i++) {
         const off = i * NODE_FLOATS;
         const id  = nodePack.idIndex[i];
@@ -803,7 +924,9 @@
         };
         hitNodesNew[i] = hn;
         hitByIdNew.set(id, hn);
+        if (hn.r > maxRadius) maxRadius = hn.r;
       }
+      const hitGridNew = buildHitGrid(hitNodesNew, ext, maxRadius);
 
       local.mode = {
         id:          modeId,
@@ -815,8 +938,15 @@
         edgePacked:  edgePack,
         hitNodes:    hitNodesNew,
         hitById:     hitByIdNew,
+        hitGrid:     hitGridNew,
         worldExtent: ext,
       };
+      // N2 (2026-05-20) — fresh nodePacked.data means the GPU
+      // node-instance VBO needs re-upload on the next drawFrame.
+      // After upload, drawFrame resets the flag to false so steady-
+      // state animation skips the ~21KB upload at 663 nodes
+      // (~106 MB/s saved at 10k).
+      local.nodeInstancesDirty = true;
       // State buffers must size to the new instance counts.
       // Nodes: 2 floats per instance — (state, selected). state
       // defaults to 0 (no dim, full alpha); selected defaults to 0.
@@ -1032,6 +1162,16 @@
         parseInt(gh.slice(3, 5), 16) / 255,
         parseInt(gh.slice(5, 7), 16) / 255,
       ];
+      // N2 / nodeOnly — gate the static instance buffer write on
+      // the dirty flag (skips ~21KB GPU upload per frame at deities
+      // / ~106 MB/s saved at 10k) and let _forgeDebug.nodeOnly()
+      // hide edges + glyphs by zeroing their counts.
+      const nodeOnly  = !!local._nodeOnly;
+      const frameNVB  = local.mode.nodePacked.data;
+      const frameEVB  = nodeOnly ? null : local.mode.edgePacked.data;
+      const frameGVB  = nodeOnly
+        ? null
+        : (refreshGlyphAlphas(), local.glyphInstanceData || null);
       local.renderer.drawFrame({
         viewportCss:           { w: vp.w, h: vp.h },
         camera:                camera.state,
@@ -1043,12 +1183,16 @@
         selectedGlowStrength:  local.params.selected_glow_strength,
         selectedGlowExtent:    local.params.selected_glow_extent,
         selectedGlowColorRgb:  glowRgb,
-        nodeInstances:         local.mode.nodePacked.data,
-        edgeInstances:         local.mode.edgePacked.data,
+        nodeInstances:         frameNVB,
+        nodeInstancesDirty:    local.nodeInstancesDirty,
+        edgeInstances:         frameEVB,
         nodeStates:            local.nodeStates,
         edgeStates:            local.edgeStates,
-        glyphInstances:        (refreshGlyphAlphas(), local.glyphInstanceData || null),
+        glyphInstances:        frameGVB,
       });
+      // After the renderer has consumed the dirty buffer, reset
+      // the flag. Next pack sets it back to true.
+      local.nodeInstancesDirty = false;
       const dt = performance.now() - t0;
       const fEl = document.getElementById('forge-status-frame');
       if (fEl) fEl.textContent = dt.toFixed(1) + ' ms';
@@ -1286,6 +1430,12 @@
     // ── Hover hit-test ──────────────────────────────────
     // Returns the topmost node ID under the cursor, or null.
     // CSS-pixel input; converts to world via camera.
+    //
+    // N1 (2026-05-20) — queries local.mode.hitGrid (spatial grid)
+    // instead of iterating every hitNode. Cell layout ensures any
+    // node CENTER that contains the query point is in the 3×3
+    // cells around the point's cell. The tie-break (nearest
+    // within radius for overlapping disks) is preserved.
     function hitTestAt(cssX, cssY) {
       const w = local.lastSize.w;
       const h = local.lastSize.h;
@@ -1293,19 +1443,44 @@
       const world = camera.screenToWorld(cssX, cssY, { w, h });
       let best = null;
       let bestDist = Infinity;
-      // Iterate forward — later instances paint on top of
-      // earlier ones in the wheel, so we want the LAST
-      // matching node. Track the nearest within radius as a
-      // tie-break for overlapping disks (rare but possible).
-      const hitNodes = local.mode.hitNodes;
-      for (let i = 0; i < hitNodes.length; i++) {
-        const n = hitNodes[i];
-        const dx = world.x - n.x;
-        const dy = world.y - n.y;
-        const d2 = dx * dx + dy * dy;
-        if (d2 <= n.r * n.r && d2 < bestDist) {
-          best = n.id;
-          bestDist = d2;
+      const grid = local.mode && local.mode.hitGrid;
+      if (!grid) {
+        // Defensive fallback for the (theoretical) case where the
+        // grid hasn't been built yet — e.g. a pointermove racing
+        // mount before the first rebuildForMode resolves.
+        const hitNodes = (local.mode && local.mode.hitNodes) || [];
+        for (let i = 0; i < hitNodes.length; i++) {
+          const n = hitNodes[i];
+          const dx = world.x - n.x;
+          const dy = world.y - n.y;
+          const d2 = dx * dx + dy * dy;
+          if (d2 <= n.r * n.r && d2 < bestDist) {
+            best = n.id;
+            bestDist = d2;
+          }
+        }
+        return best;
+      }
+      const gx = Math.floor((world.x - grid.x0) / grid.cellSize);
+      const gy = Math.floor((world.y - grid.y0) / grid.cellSize);
+      for (let dy = -1; dy <= 1; dy++) {
+        const cy = gy + dy;
+        if (cy < 0 || cy >= grid.rows) continue;
+        for (let dx = -1; dx <= 1; dx++) {
+          const cx = gx + dx;
+          if (cx < 0 || cx >= grid.cols) continue;
+          const bucket = grid.buckets[cy * grid.cols + cx];
+          if (!bucket) continue;
+          for (let i = 0; i < bucket.length; i++) {
+            const n = bucket[i];
+            const ddx = world.x - n.x;
+            const ddy = world.y - n.y;
+            const d2  = ddx * ddx + ddy * ddy;
+            if (d2 <= n.r * n.r && d2 < bestDist) {
+              best = n.id;
+              bestDist = d2;
+            }
+          }
         }
       }
       return best;
@@ -2020,6 +2195,33 @@
       }
       return m;
     }
+
+    // N1 (2026-05-20) — hit-test spatial grid. Uniform grid over
+    // worldExtent with cellSize = 2 × maxRadius, guaranteeing every
+    // node CENTER is within ±1 cell of any query point its disk
+    // contains. hitTestAt then queries a 3×3 cell neighborhood
+    // (~2-10 candidates instead of N). Built in rebuildForMode +
+    // rebakeNodes. Empty/missing buckets are skipped during query.
+    // See AUDIT/forge-rebuild-1A-node-atom-2026-05-20.md §3 N1.
+    function buildHitGrid(hitNodes, ext, maxRadius) {
+      const cellSize = Math.max(1, 2 * (maxRadius || 1));
+      const x0 = ext.x0;
+      const y0 = ext.y0;
+      const wExt = Math.max(1, ext.x1 - ext.x0);
+      const hExt = Math.max(1, ext.y1 - ext.y0);
+      const cols = Math.max(1, Math.ceil(wExt / cellSize));
+      const rows = Math.max(1, Math.ceil(hExt / cellSize));
+      const buckets = new Array(cols * rows);
+      for (let i = 0; i < hitNodes.length; i++) {
+        const n = hitNodes[i];
+        const cx = Math.max(0, Math.min(cols - 1, Math.floor((n.x - x0) / cellSize)));
+        const cy = Math.max(0, Math.min(rows - 1, Math.floor((n.y - y0) / cellSize)));
+        const idx = cy * cols + cx;
+        if (!buckets[idx]) buckets[idx] = [];
+        buckets[idx].push(n);
+      }
+      return { cellSize, cols, rows, x0, y0, buckets };
+    }
     function edgeOverridesFromParams() {
       const p = local.params;
       const o = { idleColors: {}, idleOps: {}, idleWidths: {}, hotWidths: {}, curves: {} };
@@ -2081,13 +2283,19 @@
       const np = graph.packNodes(m.nodes, m.positions, deg, nodeOverridesFromParams());
       m.nodePacked = np;
       // Tier classifier so hitNodes know their tier for the
-      // label-hierarchy module.
-      const tierFor = graph.buildTierClassifier(m.nodes, deg);
+      // label-hierarchy module. N6 (Phase 1B) — reuse the
+      // classifier packNodes already built; falls back to a
+      // fresh build for older packNodes implementations.
+      const tierFor = np.tierFor || graph.buildTierClassifier(m.nodes, deg);
       // Re-derive hit-test index. Tier is stored on the hitNode
       // so the label module can route per-tier without needing
       // a side lookup.
+      // N1 (2026-05-20) — rebuild hitGrid here too. Camera-zoom
+      // re-pack changes node radii, which can shift maxRadius and
+      // thus cellSize; rebuilding the grid keeps queries correct.
       m.hitNodes = new Array(np.instanceCount);
       m.hitById  = new Map();
+      let maxRadius = 0;
       for (let i = 0; i < np.instanceCount; i++) {
         const off = i * NODE_FLOATS;
         const id  = np.idIndex[i];
@@ -2100,7 +2308,11 @@
         };
         m.hitNodes[i] = hn;
         m.hitById.set(id, hn);
+        if (hn.r > maxRadius) maxRadius = hn.r;
       }
+      m.hitGrid = buildHitGrid(m.hitNodes, m.worldExtent, maxRadius);
+      // N2 — fresh nodePack means re-upload on next drawFrame.
+      local.nodeInstancesDirty = true;
       // 2026-05-20 — fade-aware (mirror rebakeEdges). Previous
       // version wholesale-replaced local.nodeStates with a fresh
       // interleavePairs() result — that killed any in-flight node

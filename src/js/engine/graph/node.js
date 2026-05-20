@@ -18,17 +18,23 @@
 (function () {
   'use strict';
 
-  // Tier radii — bigger nodes for more-connected deities.
-  // Same shape as pantheon-v2 (current production values), but
-  // expressed at world-scale (the camera maps world→screen).
-  // Tuned slightly larger than V2 so disks read clearly in
-  // the proprietary renderer where there are no SVG overlays
-  // or labels on top to anchor them yet.
+  // N8 (Phase 1B, 2026-05-20) — legacy fallback for callers that
+  // don't pass opts.tierRadii. Forge always overrides with its
+  // PARAM_DEFAULTS values via tierRadiiFromParams() so this path
+  // is dead in the Forge view; kept for non-Forge callers (e.g.,
+  // any future test harness or alternate front-end) and as a
+  // defensive default. Do not tune from here — change the
+  // PARAM_DEFAULTS node_radius_tier* values in forge.js.
   const TIER_RADIUS = [18, 14, 11, 8]; // top4% / next11% / next25% / rest
 
   // ── Color parsing — hex / rgb / rgba → [r, g, b, a] in [0, 1] ──
-  // Cached because the same family-color hex repeats across ~50
-  // members of a family. Keeps the inner loop allocation-free.
+  // N7 (Phase 1B, 2026-05-20) — Module-scope cache by design:
+  // bounded by the count of distinct family / tradition colors
+  // in the vault (~100 entries today), survives view-remount
+  // for cross-mount perf, never evicted. If a future refactor
+  // tries to "fix" this by moving into a per-mount `local`,
+  // re-read this comment + the audit doc first. NOTE: hex (#RRGGBB
+  // and #RRGGBBAA) + rgb()/rgba() only — vault convention.
   const _colorCache = new Map();
   function parseColor(s, fallback) {
     if (!s || typeof s !== 'string') return fallback || [0.5, 0.5, 0.5, 1];
@@ -89,6 +95,10 @@
   //   data:           Float32Array, length = nodes.length * 8
   //   instanceCount:  number
   //   idIndex:        Array<string>  — instance index → node id (for hover dispatch)
+  //   tierFor:        (deg) → 0..3   — the classifier this pack used (N6, Phase 1B
+  //                                    2026-05-20). Callers may reuse instead of
+  //                                    rebuilding to avoid drift if classifier
+  //                                    semantics change.
   // }
   function packNodes(nodes, positions, degree, opts) {
     const tiers = (opts && Array.isArray(opts.tierRadii)) ? opts.tierRadii : TIER_RADIUS;
@@ -144,7 +154,7 @@
 
       idIndex[i] = n.id;
     }
-    return { data, instanceCount: renderable.length, idIndex };
+    return { data, instanceCount: renderable.length, idIndex, tierFor };
   }
 
   // ── Export ────────────────────────────────────────────
