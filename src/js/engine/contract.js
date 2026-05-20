@@ -170,7 +170,7 @@
         _notify();
       },
 
-      // Subscribe to camera changes. Renderer + dev-panel both use this.
+      // Subscribe to camera changes.
       onChange(fn) {
         subscribers.add(fn);
         return () => subscribers.delete(fn);

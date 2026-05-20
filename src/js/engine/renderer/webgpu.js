@@ -788,8 +788,7 @@
       //                src/js/engine/graph/edge.js:
       //                0:transmission 1:parallel 2:association
       //                3:kinship 4:attestation 5:polemic 6:fusion
-      // Effect is immediate — applied on next drawFrame. Safe to
-      // call from a dev-panel slider without bouncing the renderer.
+      // Effect is immediate — applied on next drawFrame.
       setBucketPalette(colors) {
         if (!Array.isArray(colors)) return;
         for (let i = 0; i < Math.min(colors.length, 7); i++) {

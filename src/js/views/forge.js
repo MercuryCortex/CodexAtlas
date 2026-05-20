@@ -28,11 +28,6 @@
 //   body.view-forge                  this view is mounted
 //   body.nav-collapsed               left rail at --nav-w-collapsed
 //   body.detail-collapsed            right rail at --detail-w-collapsed
-//   #forge-dev-panel.is-open         right-edge drawer is open
-//                                    (width 380 px overlapping the
-//                                    right rail; chrome that needs
-//                                    to shift left when it opens
-//                                    should use `body:has(#forge-dev-panel.is-open)`).
 //
 // New chrome MUST:
 //   - position INSIDE .forge-stage / .forge-pane, never against
@@ -71,11 +66,13 @@
   // tuning keeps a normal scroll click feeling like a step.
   const WHEEL_ZOOM_K = 0.0015;
 
-  // Default values for every dev-panel parameter. setParam(id, v)
-  // writes into local.params and dispatches the right rebake.
-  // Keys MUST match the SECTIONS catalog in dev-panel-forge.js.
+  // PARAM_DEFAULTS — the SINGLE SOURCE OF TRUTH for every visual
+  // parameter in Forge. Dev panel removed 2026-05-20 (Phase 0 of
+  // the layered rebuild — see AUDIT/forge-rebuild-layered-spec-
+  // 2026-05-20.md). Values below are John's last tuned set,
+  // preserved verbatim from the 2026-05-18 bake.
   //
-  // Phase 6: organised by visual state.
+  // Phase 6 organisation, kept as section markers for readers:
   //   IDLE state    — what you see when nothing is hovered or locked.
   //   ACTIVE state  — what lights up when something is in focus.
   //   SHAPE         — state-independent geometry (curvature).
@@ -84,29 +81,14 @@
   //   LABELS        — idle-tier visibility hierarchy.
   //   PALETTE       — global colours (background / label text + halo).
   //   CAMERA        — pan inertia + zoom + fly-to timing.
-  // ── 2026-05-18 BAKE (step-02) ──────────────────────────────
-  // John's tuned dev-panel JSON exported and baked here as the
-  // canonical engine defaults. Every value below is HIS chosen
-  // value, not the original code-defaults. Cumulative consequence:
-  //  (1) fresh page load on any machine shows John's tuned state,
-  //  (2) PARAM_DEFAULTS = the ground-zero fallback that the
-  //      dev-panel/engine sync (Option B in render()) reconciles
-  //      against, so drift on view-remount is structurally
-  //      impossible.
-  // Original code-defaults preserved in git history; recover via
-  //   git show 4976623:src/js/views/forge.js | grep PARAM_DEFAULTS
-  // (commit just before the bake).
   //
-  // To re-bake from a new EXPORT JSON: replace the values below
-  // with the matching keys from the new JSON. Don't add keys here
-  // that the JSON doesn't have — every PARAM_DEFAULTS key must
-  // match the dev-panel's params catalog in dev-panel-forge.js.
+  // Pre-bake originals preserved in git history; recover via
+  //   git show 4976623:src/js/views/forge.js | grep PARAM_DEFAULTS
+  // (commit just before the 2026-05-18 bake).
   // ----------------------------------------------------------
-  // Default-icons + default-fonts are NOT baked into PARAM_DEFAULTS
-  // (those are not parameters); they apply via the Option B pull
-  // in render() if the dev panel's LS state is present. Fresh
-  // installs see the default per-type glyphs; John's icons load
-  // from his dev panel's LS.
+  // Default per-type glyphs apply to every node; icon overrides
+  // were a dev-panel feature, removed in Phase 0. Same for font
+  // overrides per scope.
   const PARAM_DEFAULTS = Object.freeze({
     // ── WIRES · IDLE STATE (per bucket) ── slate atmospheric across all buckets
     idle_color_transmission: '#3a4a66',
@@ -422,68 +404,20 @@
       // Label DOM nodes — one per renderable deity. Created lazily
       // (only when first shown) to avoid 663 hidden divs at mount.
       labelEls:    new Map(),     // id → HTMLDivElement
-      // Glyph DOM nodes (Phase 4e) — one per node, all visible.
-      // Created at rebuildForMode time so the overlay matches the
-      // current mode exactly.
-      glyphEls:    [],            // Array<{ el, id, baseR, family }>
-      glyphFamilyColor: new Map(),// id → string  (for label tint)
-      // Phase 5: live-tweak parameter dict + per-type icon overrides.
-      // Populated from PARAM_DEFAULTS on mount; the Forge dev panel
-      // overrides via setParam / setIcon / setFont.
-      //
-      // 2026-05-18 — Option B structural fix (audit
-      // AUDIT/forge-edge-state-invariant-2026-05-18.md "FINAL
-      // DIAGNOSIS" §Option B): on view-mount, after seeding from
-      // PARAM_DEFAULTS, ALSO pull the dev panel's persisted state
-      // (its `state.params` + icons + fonts hydrated from LS at
-      // panel-boot). Eliminates the drift bug class — every time
-      // Forge re-mounts (page reload, view switch, hash route),
-      // the engine now reads from the panel's source-of-truth
-      // rather than falling back to code defaults. Previously the
-      // dev panel only pushed once at panel-boot via tryBoot, so
-      // any later view-remount lost the user's customizations.
+      // Dead state from the retired DOM glyph overlay + dev panel.
+      // Kept as no-op fields so any stragglers still reading them
+      // don't NPE; deletion handled by Phase 1 cleanup once we've
+      // pruned every reader.
+      glyphEls:    [],
+      glyphFamilyColor: new Map(),
+      // Visual params — seeded once from PARAM_DEFAULTS at mount.
+      // Single source of truth; no live-mutation surface now that
+      // the dev panel is gone. iconByType / fontByScope stay as
+      // empty-init for the same Phase-1-cleanup reason as above.
       params:       Object.assign({}, PARAM_DEFAULTS),
-      iconByType:   {},           // type → iconId (from icon library)
-      fontByScope:  {},           // scope → { family }
+      iconByType:   {},
+      fontByScope:  {},
     };
-
-    // ── Option B: pull dev-panel state on mount ──────────────
-    // The dev panel exposes `getState()` returning { params, icons,
-    // fonts }. If the panel module is loaded AND has been hydrated
-    // from LS (which happens synchronously at panel module init),
-    // its `state.params` already contains the user's persisted
-    // overrides. Apply them now so the engine and panel are in
-    // sync from frame zero — never desync on remount again.
-    try {
-      const panelApi = window.AtlasEngineForgeDevPanel;
-      if (panelApi && typeof panelApi.getState === 'function') {
-        const ps = panelApi.getState();
-        if (ps && ps.params) {
-          for (const [k, v] of Object.entries(ps.params)) {
-            if (k in local.params) local.params[k] = v;
-          }
-        }
-        if (ps && ps.icons) {
-          for (const [t, iconId] of Object.entries(ps.icons)) {
-            if (iconId) local.iconByType[t] = iconId;
-          }
-        }
-        if (ps && ps.fonts) {
-          // The font value in the panel state is a font ID string
-          // (e.g. "inter"); setFont expects { family } once we
-          // wire it through. Store the raw ID under fontByScope
-          // for now; setFont call paths translate at use time.
-          for (const [scope, fontId] of Object.entries(ps.fonts)) {
-            if (fontId) local.fontByScope[scope] = { id: fontId };
-          }
-        }
-      }
-    } catch (e) {
-      // Panel may not be loaded (e.g. early bootstrap, or dev-panel
-      // script failed). Engine falls back to PARAM_DEFAULTS — same
-      // as before Option B. Non-fatal.
-      console.warn('[forge] Option B dev-panel pull skipped:', e && e.message);
-    }
 
     rootEl._engine = {
       destroy() {
@@ -1128,11 +1062,10 @@
     }
 
     // 2026-05-20 — DOM glyph machinery retired; glyphs now live
-    // in the WebGPU canvas via the GPU glyph pass. These
-    // functions are kept as no-ops so the existing callers
-    // (drawFrame, camera.onChange, setParam) don't need to be
-    // hunted down individually — a single follow-up cleanup
-    // batch will delete them.
+    // in the WebGPU canvas via the GPU glyph pass. These functions
+    // are kept as no-ops so the existing callers (drawFrame,
+    // camera.onChange) don't need to be hunted down individually —
+    // a single follow-up cleanup batch will delete them.
     function syncGlyphPositions() { /* no-op — GPU glyph pass */ }
 
     // ── GPU glyph instance buffer (2026-05-20) ──────────
@@ -2247,100 +2180,15 @@
       drawFrame();
     }
 
-    // ── Public API for dev panel ────────────────────────
-    // setParam accepts both numbers (sliders) and hex strings
-    // (color pickers). The param name uniquely determines which.
-    function setParam(name, value) {
-      if (!(name in local.params)) return;
-      if (typeof value === 'number' && isNaN(value)) return;
-      local.params[name] = value;
-
-      // Cheap one-liners first — CSS vars + redraws.
-      if (name === 'dim_amount')        { drawFrame(); return; }
-      if (name === 'dim_amount_nodes')  { drawFrame(); return; }
-      // 2026-05-20 — glyph params now flow through the GPU
-      // pipeline. Rebuilding the instance buffer + redrawing
-      // picks up new opacity / tint / size in one pass.
-      if (name === 'dim_amount_glyphs') { drawFrame(); return; }
-      if (name.startsWith('selected_')) { drawFrame(); return; }
-      if (name === 'atmosphere')   { document.documentElement.style.setProperty('--forge-atmosphere',    String(value)); return; }
-      if (name === 'label_size')   { document.documentElement.style.setProperty('--forge-label-size',    value + 'px'); scheduleIdleLabelSync(); return; }
-      if (name === 'glyph_opacity'){ rebuildGlyphInstanceBuffer(); drawFrame(); return; }
-      if (name === 'glyph_scale')  { rebuildGlyphInstanceBuffer(); drawFrame(); return; }
-      if (name === 'glyph_tint')   { rebuildGlyphInstanceBuffer(); drawFrame(); return; }
-
-      // Palette → CSS vars.
-      if (name === 'palette_background') { document.documentElement.style.setProperty('--forge-bg',         value); return; }
-      if (name === 'palette_label_text') { document.documentElement.style.setProperty('--forge-label-text', value); return; }
-      if (name === 'palette_label_halo') { document.documentElement.style.setProperty('--forge-label-halo', value); return; }
-
-      // Nodes — tier radii OR screen-px clamps both require a pack.
-      if (name.startsWith('node_radius_tier') ||
-          name === 'node_min_screen_px' ||
-          name === 'node_max_screen_px') {
-        rebakeNodes(); return;
-      }
-      // Wire-width zoom clamp — uniform-only, just redraw.
-      if (name === 'wire_min_screen_px' || name === 'wire_max_screen_px') {
-        drawFrame(); return;
-      }
-
-      // Wires — IDLE state (instance buffer attributes).
-      if (name.startsWith('idle_color_')  ||
-          name.startsWith('idle_opacity_')||
-          name.startsWith('idle_stroke_') ||
-          name.startsWith('active_stroke_')||
-          name.startsWith('curve_')) {
-        rebakeEdges(); return;
-      }
-      // Wires — ACTIVE color + opacity (uniform palette).
-      if (name.startsWith('active_color_') ||
-          name.startsWith('active_opacity_')) {
-        rebakeBucketPalette(); return;
-      }
-      // Wires — focus dim handled above.
-
-      // Labels — idle-tier hierarchy.
-      if (name === 'label_cap' ||
-          name === 'label_idle_max' ||
-          name === 'label_collision_pad' ||
-          name.startsWith('label_idle_zoom_')) {
-        scheduleIdleLabelSync(); return;
-      }
-
-      // Camera tuning — stored; live wiring goes through the
-      // camera module setters (Phase 6b — not blocking).
-      if (name === 'pan_tau' || name === 'zoom_tau' || name === 'flyto_dur') {
-        return;
-      }
-    }
-
-    function setIcon(nodeType, iconId) {
-      if (!nodeType) return;
-      local.iconByType[nodeType] = iconId;
-      rebakeGlyphsForMode();
-    }
-
-    function setFont(scope, font) {
-      if (!scope || !font || !font.family) return;
-      local.fontByScope[scope] = font;
-      const cssVar = '--forge-font-' + scope;
-      document.documentElement.style.setProperty(cssVar, font.family);
-    }
-
-    // Apply CSS vars so the DOM overlay matches local.params at
-    // mount. Each is also re-pushed from setParam when dialed live.
+    // Apply CSS vars from PARAM_DEFAULTS at mount. With the dev
+    // panel removed (Phase 0, 2026-05-20), these values are static
+    // for the lifetime of the mount — no live-mutation path remains.
     document.documentElement.style.setProperty('--forge-glyph-opacity', String(local.params.glyph_opacity));
     document.documentElement.style.setProperty('--forge-atmosphere',    String(local.params.atmosphere));
     document.documentElement.style.setProperty('--forge-label-size',    local.params.label_size + 'px');
     document.documentElement.style.setProperty('--forge-bg',            local.params.palette_background);
     document.documentElement.style.setProperty('--forge-label-text',    local.params.palette_label_text);
     document.documentElement.style.setProperty('--forge-label-halo',    local.params.palette_label_halo);
-
-    // Expose on window for dev panel.
-    window._forge.setParam = setParam;
-    window._forge.setIcon  = setIcon;
-    window._forge.setFont  = setFont;
   }
 
   function escapeHtml(s) {
@@ -2350,12 +2198,4 @@
   }
 
   window._forge = { render: render };
-  // 2026-05-18 — expose PARAM_DEFAULTS as the SINGLE source of truth
-  // for default values. The dev panel reads this at hydration time
-  // to populate its state.params, eliminating the dual-defaults
-  // architectural problem (was: dev-panel-forge.js had its own
-  // `default:` per control, drifting from forge.js PARAM_DEFAULTS
-  // every time PARAM_DEFAULTS was baked). Now: bake forge.js
-  // PARAM_DEFAULTS once, dev panel inherits automatically.
-  window._forge.PARAM_DEFAULTS = PARAM_DEFAULTS;
 })();
