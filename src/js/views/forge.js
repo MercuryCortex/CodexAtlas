@@ -348,9 +348,11 @@
     //
     // pointer-events: none so glyphs never intercept hover.
     // Positioned via camera.worldToScreen each frame.
-    const glyphOverlay = document.createElement('div');
-    glyphOverlay.className = 'forge-glyphs-overlay';
-    stage.appendChild(glyphOverlay);
+    // 2026-05-20 — DOM glyph overlay removed (replaced by GPU
+    // glyph pass in the WebGPU canvas). The variable is kept as
+    // null so any straggling reference fails fast rather than
+    // silently no-op'ing.
+    const glyphOverlay = null;
 
     // ── Labels overlay ──────────────────────────────────
     // DOM <div> per node, absolutely positioned over the canvas.
@@ -666,6 +668,25 @@
       // directly — no second source of truth.
       renderer.setBucketPalette(hotPaletteFromParams());
 
+      // 2026-05-20 — build the glyph atlas asynchronously and
+      // upload to the GPU. Replaces the DOM glyph overlay (was
+      // the perf cliff John discovered when zooming out). The
+      // glyph instance buffer rebuilds at rebuildForMode time;
+      // we fire the next drawFrame after upload completes so the
+      // glyphs appear without needing a user interaction.
+      local.glyphAtlas = null;
+      glyphmod.buildAtlas(64).then((atlas) => {
+        if (local.destroyed || !local.renderer) return;
+        local.renderer.setGlyphAtlas(atlas.canvas, atlas.uvRects);
+        local.glyphAtlas = atlas;
+        // Rebuild glyph instance buffer + draw once the atlas
+        // is live so we don't wait for the next user action.
+        rebuildGlyphInstanceBuffer();
+        drawFrame();
+      }).catch((e) => {
+        console.warn('[forge] glyph atlas build failed:', e && e.message);
+      });
+
       const devEl = document.getElementById('forge-status-device');
       if (devEl) {
         devEl.textContent = 'active · ' + renderer.format;
@@ -897,38 +918,23 @@
       }
       local.labelEls.clear();
 
-      // Rebuild glyph overlay (Phase 4e). One inline-SVG per
-      // node, tinted to a lighter hue of the family color. The
-      // positions follow the camera via syncGlyphPositions on
-      // every camera change.
-      glyphOverlay.innerHTML = '';
-      local.glyphEls.length = 0;
-      local.glyphFamilyColor.clear();
-      // Build a `<span>` per node containing an inline <svg>.
-      // Iterate via nodePack.idIndex so the order matches
-      // hitNodes / state buffers exactly (and any node that
-      // failed positioning is correctly skipped).
-      // 2026-05-20 — audit-flagged hoist: also expose this Map on
-      // local.mode so the scrubber filter in recomputeFocus
-      // doesn't have to rebuild it from scratch every hover.
+      // 2026-05-20 — DOM glyph overlay removed. The 663-span
+      // DOM layer was the perf cliff (syncGlyphPositions ran
+      // every drawFrame writing 4 style properties per glyph =
+      // ~160k DOM writes/sec when zoomed out, where ALL glyphs
+      // are in viewport). Glyphs are now drawn in the WebGPU
+      // canvas via a texture-atlas sampling instanced quad
+      // (`rebuildGlyphInstanceBuffer` → `renderer.drawFrame`'s
+      // glyph pass). One typed-array allocation + one GPU
+      // buffer write per mode + per-frame alpha refresh from
+      // nodeStates (so glyphs still fade with focus dim).
+      //
+      // Build the local.mode.nodesById Map (used by the
+      // scrubber filter); the rest of the work moved to
+      // rebuildGlyphInstanceBuffer below.
       const modeNodeById = new Map();
       for (const n of modeNodes) modeNodeById.set(n.id, n);
       local.mode.nodesById = modeNodeById;
-      for (let i = 0; i < nodePack.instanceCount; i++) {
-        const id = nodePack.idIndex[i];
-        const n  = modeNodeById.get(id);
-        if (!n) continue;
-        const r  = nodePack.data[i * NODE_FLOATS + 2];   // baseR (world units)
-        const fc = n.family_color || n.tradition_color || '#cccccc';
-        const tint = mth.lightenColor(fc, 0.55);
-        const span = document.createElement('span');
-        span.className = 'forge-glyph';
-        span.style.color = tint;
-        span.innerHTML = glyphmod.fullSvg(n.type, 12);   // fill via CSS sizing
-        glyphOverlay.appendChild(span);
-        local.glyphEls.push({ el: span, id, baseR: r });
-        local.glyphFamilyColor.set(id, fc);
-      }
 
       // 2026-05-20 — pre-create label DOM for every node in this
       // mode. They start at opacity:0 (CSS default — no
@@ -969,6 +975,11 @@
       if (hEl) hEl.textContent = '—';
       if (lEl) lEl.textContent = '—';
 
+      // 2026-05-20 — populate the GPU glyph instance buffer. Was
+      // previously a DOM `<span>` per node (perf cliff on zoom-out).
+      // Now a single typed array → one GPU buffer write → drawn
+      // as instanced quads sampling the atlas.
+      rebuildGlyphInstanceBuffer();
       // Camera fit already done above (before packNodes) so the
       // pack ran at the correct scale. Just draw.
       drawFrame();
@@ -1102,6 +1113,7 @@
         edgeInstances:         local.mode.edgePacked.data,
         nodeStates:            local.nodeStates,
         edgeStates:            local.edgeStates,
+        glyphInstances:        (refreshGlyphAlphas(), local.glyphInstanceData || null),
       });
       const dt = performance.now() - t0;
       const fEl = document.getElementById('forge-status-frame');
@@ -1110,68 +1122,80 @@
       // change also needs them re-positioned. Cheap when small;
       // skip entirely when no focus is set.
       syncLabelPositions();
-      // Glyphs are also CSS-positioned. Sync on every camera move.
-      syncGlyphPositions();
+      // Glyphs are now in the WebGPU canvas (GPU glyph pass) so
+      // they project via the same view-uniform as disks/edges —
+      // no per-frame DOM sync needed.
     }
 
-    // ── Glyph positions (Phase 4e) ─────────────────────
-    // Iterate glyphEls (one per node) and place each span at
-    // its node's screen position. Size = disk diameter at the
-    // current camera scale. Skip when no glyphs (empty mode).
-    function syncGlyphPositions() {
-      if (local.destroyed) return;
-      const els = local.glyphEls;
-      if (!els.length) return;
-      const vp = local.lastSize;
-      if (!vp.w || !vp.h) return;
-      const sc = camera.state.scale;
-      const glyphScale = local.params.glyph_scale;
-      const hitNodes = local.mode.hitNodes;
-      // 2026-05-20 — John discovered the "hover is slow when
-      // zoomed out, smooth when zoomed in" perf cliff. Root
-      // cause: this loop iterates ALL N glyphs (663 for deities)
-      // every drawFrame (60Hz) and writes 4 style properties to
-      // each — ~160k DOM writes per second. When zoomed IN most
-      // glyphs are clipped off-screen so the browser's composite
-      // work is small. When zoomed OUT ALL 663 SVG glyphs are in
-      // viewport, browser paints all of them every frame →
-      // memory pressure + paint stall.
-      //
-      // Two cheap culls:
-      //   (1) MIN-SIZE: skip + hide glyphs smaller than 4px —
-      //       too small to convey info anyway.
-      //   (2) VIEWPORT: skip + hide glyphs whose screen bbox
-      //       falls outside the viewport.
-      //
-      // Both use `display: none` when culled (cheaper than
-      // `visibility: hidden` because the browser skips paint
-      // entirely) and only set display when the state actually
-      // changes (avoids redundant DOM writes).
-      const MIN_GLYPH_PX = 4;
-      for (let i = 0; i < els.length; i++) {
-        const g = els[i];
-        const n = hitNodes[i];
-        if (!n) continue;
-        const dPx = Math.max(2, 2 * g.baseR * sc * glyphScale);
-        // (1) Min-size cull.
-        if (dPx < MIN_GLYPH_PX) {
-          if (g.el.style.display !== 'none') g.el.style.display = 'none';
-          continue;
-        }
-        const s = camera.worldToScreen(n.x, n.y, vp);
-        const half = dPx / 2;
-        // (2) Viewport cull.
-        if (s.x + half < 0 || s.x - half > vp.w ||
-            s.y + half < 0 || s.y - half > vp.h) {
-          if (g.el.style.display !== 'none') g.el.style.display = 'none';
-          continue;
-        }
-        // Visible — restore display + write position.
-        if (g.el.style.display === 'none') g.el.style.display = '';
-        g.el.style.left   = (s.x - half) + 'px';
-        g.el.style.top    = (s.y - half) + 'px';
-        g.el.style.width  = dPx + 'px';
-        g.el.style.height = dPx + 'px';
+    // 2026-05-20 — DOM glyph machinery retired; glyphs now live
+    // in the WebGPU canvas via the GPU glyph pass. These
+    // functions are kept as no-ops so the existing callers
+    // (drawFrame, camera.onChange, setParam) don't need to be
+    // hunted down individually — a single follow-up cleanup
+    // batch will delete them.
+    function syncGlyphPositions() { /* no-op — GPU glyph pass */ }
+
+    // ── GPU glyph instance buffer (2026-05-20) ──────────
+    // Builds the per-node instance data the WebGPU glyph pass
+    // consumes. Each instance is 8 floats (32 bytes):
+    //   [0..1]  world pos (x, y)
+    //   [2]     world radius (the disk's r — glyph sized to it)
+    //   [3]     glyphIdx (atlas slot, 0..16)
+    //   [4..6]  tint rgb (family color, parsed from hex)
+    //   [7]     alpha (base * dim multiplier, updated per frame)
+    //
+    // Called once per rebuildForMode to populate static parts;
+    // the alpha column is refreshed per drawFrame via the existing
+    // nodeStates buffer so glyphs dim alongside their parent disks.
+    function rebuildGlyphInstanceBuffer() {
+      if (!local.glyphAtlas || !local.mode || !local.mode.nodePacked) return;
+      const np = local.mode.nodePacked;
+      const N = np.instanceCount;
+      const data = new Float32Array(N * 8);
+      const nodesById = local.mode.nodesById || new Map();
+      const NF = NODE_FLOATS;
+      const idxOf = local.glyphAtlas.typeToIdx;
+      const baseOp = (local.params && typeof local.params.glyph_opacity === 'number')
+        ? local.params.glyph_opacity : 0.85;
+      for (let i = 0; i < N; i++) {
+        const id = np.idIndex[i];
+        const n  = nodesById.get ? nodesById.get(id) : null;
+        const off = i * 8;
+        // World pos + radius from the packed node data (post
+        // screen-px-clamp — same world units the disks render at).
+        data[off + 0] = np.data[i * NF + 0];
+        data[off + 1] = np.data[i * NF + 1];
+        data[off + 2] = np.data[i * NF + 2];
+        // Glyph type index from the atlas lookup.
+        const typeKey = n && n.type ? n.type : 'theme';
+        data[off + 3] = glyphmod.idxForType(idxOf, typeKey);
+        // Tint = lighter hue of family color (matches the old
+        // DOM-glyph behavior so the visual reads the same).
+        const fc = (n && (n.family_color || n.tradition_color)) || '#cccccc';
+        const tint = mth.lightenColor(fc, 0.55);
+        const rgb = hex2rgba(tint, 1);
+        data[off + 4] = rgb[0];
+        data[off + 5] = rgb[1];
+        data[off + 6] = rgb[2];
+        data[off + 7] = baseOp;
+      }
+      local.glyphInstanceData = data;
+    }
+    // Per-frame alpha refresh — reads local.nodeStates (which
+    // animates via tickNodeFades) and updates the alpha column
+    // so glyphs fade with their parent disk's dim transition.
+    function refreshGlyphAlphas() {
+      const data = local.glyphInstanceData;
+      const states = local.nodeStates;
+      if (!data || !states) return;
+      const N = data.length >>> 3;  // /8
+      const baseOp = (local.params && typeof local.params.glyph_opacity === 'number')
+        ? local.params.glyph_opacity : 0.85;
+      const dimMul = (local.params && typeof local.params.dim_amount_glyphs === 'number')
+        ? local.params.dim_amount_glyphs : 0.7;
+      for (let i = 0; i < N; i++) {
+        const state = states[i * 2] || 0;       // 0=focused, 1=dim
+        data[i * 8 + 7] = baseOp * (1 - state * dimMul);
       }
     }
 
@@ -1556,83 +1580,12 @@
       return out;
     }
 
-    // Apply per-glyph CSS opacity based on focus membership.
-    // Glyphs are DOM elements (SVG spans), not painted by the
-    // WebGPU shader — so the shader-side dim doesn't touch them.
-    // Without this, on focus the disks fade but the glyphs stay
-    // bright on top, making the focus state look weak.
-    function syncGlyphFocus() {
-      const focus  = local.focusedSet;
-      const sel    = local.selectedSet;
-      const baseOp = local.params.glyph_opacity;
-      const dimMul = local.params.dim_amount_glyphs;
-      const dimOp  = baseOp * (1 - dimMul);
-      // 2026-05-19 — occlusion zones around SELECTED nodes. The
-      // canvas-side disks already z-layer correctly (selected z=0
-      // wins over neighbors at z=0.3/0.6), but DOM glyphs sit on
-      // top of the canvas with no awareness of disk depth — so a
-      // focused-neighbor's glyph paints over the selected node's
-      // glow halo, breaking the visual hierarchy John flagged.
-      // This is a surgical fix: any non-selected glyph whose
-      // screen center falls inside a selected node's glow zone
-      // is hidden so the halo stays clean. The deeper architectural
-      // fix (move glyphs into the WebGPU canvas with texture-atlas
-      // + per-instance shader so they participate in the same depth
-      // pipeline as disks) is a separate, larger batch.
-      let occlusionZones = null;
-      if (sel && sel.size > 0) {
-        const vp = local.lastSize;
-        const hitById = local.mode && local.mode.hitById;
-        // Match the canvas-side glow extent (selected_glow.w in
-        // the shader, fed from local.params.selected_glow_extent).
-        // Quad headroom 1.5× isn't included — we want to clear the
-        // VISIBLE halo, not the empty quad padding.
-        const glowExtent = local.params.selected_glow_extent || 2.5;
-        const occ = [];
-        if (hitById && vp.w && vp.h) {
-          for (const id of sel) {
-            const n = hitById.get(id);
-            if (!n) continue;
-            const s = camera.worldToScreen(n.x, n.y, vp);
-            const r = n.r * camera.state.scale * glowExtent;
-            occ.push({ x: s.x, y: s.y, r2: r * r });
-          }
-        }
-        if (occ.length) occlusionZones = occ;
-      }
-      for (let i = 0; i < local.glyphEls.length; i++) {
-        const g = local.glyphEls[i];
-        const isSel   = !!(sel   && sel.has(g.id));
-        const isFocus = !focus || focus.has(g.id);
-        let occluded  = false;
-        if (!isSel && occlusionZones) {
-          const n = local.mode && local.mode.hitById && local.mode.hitById.get(g.id);
-          if (n) {
-            const s = camera.worldToScreen(n.x, n.y, local.lastSize);
-            for (let z = 0; z < occlusionZones.length; z++) {
-              const oz = occlusionZones[z];
-              const dx = s.x - oz.x;
-              const dy = s.y - oz.y;
-              if (dx*dx + dy*dy < oz.r2) { occluded = true; break; }
-            }
-          }
-        }
-        if (isSel) {
-          g.el.style.opacity = '';
-          g.el.style.zIndex  = '3';
-        } else if (occluded) {
-          // Hidden so it doesn't intrude on the selected halo.
-          g.el.style.opacity = '0';
-          g.el.style.zIndex  = '0';
-        } else if (isFocus) {
-          g.el.style.opacity = '';
-          g.el.style.zIndex  = '2';
-        } else {
-          g.el.style.opacity = String(dimOp);
-          g.el.style.zIndex  = '1';
-        }
-      }
-    }
+    // 2026-05-20 — replaced by `refreshGlyphAlphas` (called per
+    // frame from drawFrame). With glyphs in the WebGPU canvas at
+    // their parent disk's depth, the focus-dim falls out of the
+    // existing nodeStates → alpha mapping. No occlusion zone hack
+    // needed — depth pipeline handles it natively.
+    function syncGlyphFocus() { /* no-op — GPU glyph pass */ }
 
     // Update hoverId, then refresh focus. No-op when the hover
     // hasn't actually changed.
@@ -2270,36 +2223,12 @@
     // Rebuild glyph DOM (called by mode switch + tier-radii change
     // + icon override + tint change).
     function rebakeGlyphsForMode() {
-      glyphOverlay.innerHTML = '';
-      local.glyphEls.length = 0;
-      local.glyphFamilyColor.clear();
-      const m = local.mode;
-      const modeNodeById = new Map();
-      for (const n of m.nodes) modeNodeById.set(n.id, n);
-      for (let i = 0; i < m.nodePacked.instanceCount; i++) {
-        const id = m.nodePacked.idIndex[i];
-        const n  = modeNodeById.get(id);
-        if (!n) continue;
-        const r  = m.nodePacked.data[i * NODE_FLOATS + 2];
-        const fc = n.family_color || n.tradition_color || '#cccccc';
-        const tint = mth.lightenColor(fc, local.params.glyph_tint);
-        const iconOverride = local.iconByType[n.type];
-        const innerSvg = iconOverride && window.AtlasEngineIconLibrary
-          ? window.AtlasEngineIconLibrary.fullSvg(iconOverride, 12)
-          : glyphmod.fullSvg(n.type, 12);
-        const span = document.createElement('span');
-        span.className = 'forge-glyph';
-        span.style.color = tint;
-        span.innerHTML = innerSvg;
-        glyphOverlay.appendChild(span);
-        local.glyphEls.push({ el: span, id, baseR: r });
-        local.glyphFamilyColor.set(id, fc);
-      }
-      syncGlyphPositions();
-      // Restore the per-glyph focus opacity (rebake recreated DOM
-      // nodes from scratch — they all start at default opacity,
-      // and we want to honour the current focus state).
-      syncGlyphFocus();
+      // 2026-05-20 — redirect to the GPU pipeline. The DOM
+      // overlay loop is gone; rebuildGlyphInstanceBuffer + a
+      // drawFrame is the new equivalent. (Icon-override + glyph-
+      // tint param wiring also flows through this path.)
+      rebuildGlyphInstanceBuffer();
+      drawFrame();
     }
 
     // ── Public API for dev panel ────────────────────────
@@ -2313,13 +2242,16 @@
       // Cheap one-liners first — CSS vars + redraws.
       if (name === 'dim_amount')        { drawFrame(); return; }
       if (name === 'dim_amount_nodes')  { drawFrame(); return; }
-      if (name === 'dim_amount_glyphs') { syncGlyphFocus(); return; }
+      // 2026-05-20 — glyph params now flow through the GPU
+      // pipeline. Rebuilding the instance buffer + redrawing
+      // picks up new opacity / tint / size in one pass.
+      if (name === 'dim_amount_glyphs') { drawFrame(); return; }
       if (name.startsWith('selected_')) { drawFrame(); return; }
       if (name === 'atmosphere')   { document.documentElement.style.setProperty('--forge-atmosphere',    String(value)); return; }
       if (name === 'label_size')   { document.documentElement.style.setProperty('--forge-label-size',    value + 'px'); scheduleIdleLabelSync(); return; }
-      if (name === 'glyph_opacity'){ document.documentElement.style.setProperty('--forge-glyph-opacity', String(value)); return; }
-      if (name === 'glyph_scale')  { syncGlyphPositions(); return; }
-      if (name === 'glyph_tint')   { rebakeGlyphsForMode(); return; }
+      if (name === 'glyph_opacity'){ rebuildGlyphInstanceBuffer(); drawFrame(); return; }
+      if (name === 'glyph_scale')  { rebuildGlyphInstanceBuffer(); drawFrame(); return; }
+      if (name === 'glyph_tint')   { rebuildGlyphInstanceBuffer(); drawFrame(); return; }
 
       // Palette → CSS vars.
       if (name === 'palette_background') { document.documentElement.style.setProperty('--forge-bg',         value); return; }

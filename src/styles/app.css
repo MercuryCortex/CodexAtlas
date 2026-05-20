@@ -5876,19 +5876,9 @@ body:has(#forge-dev-panel.is-open) .forge-bottombar {
    the canvas. The SVG `currentColor` is driven by the wrapper
    span's `color` style (set inline at rebuild time to a lighter
    hue of the family color). */
-.forge-glyphs-overlay {
-  position: absolute; inset: 0;
-  pointer-events: none;
-  z-index: 4;   /* above canvas (z auto/2), below labels (5) */
-}
-.forge-glyph {
-  position: absolute;
-  display: block;
-  pointer-events: none;
-  /* The SVG inside fills the span. */
-  line-height: 0;
-}
-.forge-glyph svg { display: block; width: 100%; height: 100%; overflow: visible; }
+/* 2026-05-20 — DOM glyph overlay retired. Glyphs are now drawn
+   in the WebGPU canvas via a texture-atlas instanced quad pass.
+   The .forge-glyph CSS rules are gone with the DOM elements. */
 
 /* Phase 4b — Labels overlay.
    DOM <div>s positioned over the canvas. Pointer-events: none so
@@ -5933,10 +5923,9 @@ body:has(#forge-dev-panel.is-open) .forge-bottombar {
   transition: opacity 0.15s ease-out;
 }
 .forge-label[data-visible="1"] { opacity: 1; }
-/* Glyphs (per-disk SVG symbols) get the same fade so dim-mode
-   transitions match. The dynamic z-index from syncGlyphFocus still
-   handles glyph stacking; this is purely the in/out ease. */
-.forge-glyph { transition: opacity 0.15s ease-out; }
+/* (Glyph fade transition removed 2026-05-20 — glyphs are now GPU
+   instanced quads with alpha refreshed per frame from nodeStates,
+   inheriting the same fade timing as their parent disks.) */
 
 /* ============================================================
    FORGE — Phase 5: Visual-tuning dev panel

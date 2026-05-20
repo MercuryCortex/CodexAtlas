@@ -73,10 +73,80 @@
       + '</svg>';
   }
 
+  // 2026-05-20 — atlas rasterizer. Builds ONE canvas containing
+  // every TYPE_GLYPHS entry rasterized at `cellPx` resolution,
+  // arranged in a grid. Returns the canvas + per-type UV rects
+  // (in [0,1] atlas coords) + a `typeToIdx` Map for shader-side
+  // lookup. The atlas uploads to a single WebGPU texture; the
+  // glyph render pass then samples it per node instance.
+  //
+  // Color: glyphs rasterized in WHITE (substituting `currentColor`).
+  // The shader multiplies by a per-instance tint so the family
+  // color drives the visible color — same logical behavior as the
+  // pre-2026-05-20 DOM-overlay approach, just in the GPU pipeline.
+  //
+  // Async because SVG → Image loading is async. Awaited once at
+  // engine boot, then re-used for the lifetime of the page.
+  async function buildAtlas(cellPx) {
+    const types = Object.keys(TYPE_GLYPHS);
+    const cols = Math.ceil(Math.sqrt(types.length));   // 17 → 5
+    const rows = Math.ceil(types.length / cols);       // 17/5 = 4
+    const atlasW = cols * cellPx;
+    const atlasH = rows * cellPx;
+    const canvas = document.createElement('canvas');
+    canvas.width  = atlasW;
+    canvas.height = atlasH;
+    const ctx = canvas.getContext('2d');
+    ctx.clearRect(0, 0, atlasW, atlasH);
+    const uvRects = new Float32Array(types.length * 4);  // (u0,v0,u1,v1) per type
+    const typeToIdx = Object.create(null);
+    // Rasterize each SVG into its grid cell.
+    for (let i = 0; i < types.length; i++) {
+      const type = types[i];
+      const col = i % cols, row = Math.floor(i / cols);
+      const x = col * cellPx, y = row * cellPx;
+      // Substitute currentColor → white so the rasterized glyph
+      // is the "stencil" the shader tints. Stroke + fill alike.
+      const inner = TYPE_GLYPHS[type].replace(/currentColor/g, '#ffffff');
+      const svg = '<svg xmlns="http://www.w3.org/2000/svg" width="' + cellPx
+        + '" height="' + cellPx + '" viewBox="0 0 12 12">' + inner + '</svg>';
+      const blob = new Blob([svg], { type: 'image/svg+xml' });
+      const url  = URL.createObjectURL(blob);
+      try {
+        const img = new Image();
+        img.src = url;
+        await img.decode();
+        ctx.drawImage(img, x, y, cellPx, cellPx);
+      } finally {
+        URL.revokeObjectURL(url);
+      }
+      uvRects[i * 4 + 0] = x / atlasW;
+      uvRects[i * 4 + 1] = y / atlasH;
+      uvRects[i * 4 + 2] = (x + cellPx) / atlasW;
+      uvRects[i * 4 + 3] = (y + cellPx) / atlasH;
+      typeToIdx[type] = i;
+    }
+    // Aliases route to canonical types (no extra atlas cells).
+    for (const [alias, target] of Object.entries(TYPE_ALIAS)) {
+      if (target in typeToIdx) typeToIdx[alias] = typeToIdx[target];
+    }
+    return { canvas, uvRects, typeToIdx, cellPx, cols, rows };
+  }
+
+  function idxForType(typeToIdx, type) {
+    if (!type) return typeToIdx.theme || 0;
+    if (type in typeToIdx) return typeToIdx[type];
+    const alias = TYPE_ALIAS[type];
+    if (alias && (alias in typeToIdx)) return typeToIdx[alias];
+    return typeToIdx.theme || 0;
+  }
+
   window.AtlasEngineGlyph = Object.freeze({
     TYPE_GLYPHS,
     typeKey,
     glyphMarkup,
     fullSvg,
+    buildAtlas,
+    idxForType,
   });
 })();

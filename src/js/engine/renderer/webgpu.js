@@ -344,6 +344,99 @@
     }
   `;
 
+  // ============================================================
+  // 2026-05-20 — GLYPH SHADER (instanced texture-atlas sample).
+  // ============================================================
+  // Replaces the old DOM-overlay glyph layer (~663 SVG spans
+  // positioned every frame via JS — the perf cliff John discovered
+  // when zooming out). One textured quad per node, sampled from a
+  // pre-rasterized atlas containing all 17 type-glyph variants.
+  //
+  // Per-instance attrs:
+  //   inst_pos_r_idx  vec4   xy=world center, z=disk radius, w=glyphIdx (0..16)
+  //   inst_tint_alpha vec4   rgba — family tint × base alpha (× dim mult)
+  //
+  // Uniform: a 17-entry array of vec4 UV rects (u0,v0,u1,v1).
+  // Depth: glyphs render at z slightly in FRONT of their parent
+  // disk (selected z=0.0 → glyph 0.05; highlighted 0.3 → 0.25;
+  // dimmed 0.6 → 0.55) so the glyph paints ON TOP of its disk
+  // but BEHIND any disk that's selected/highlighted in front.
+  // ============================================================
+  const GLYPH_SHADER = /* wgsl */ `
+    struct View {
+      view_scale:             vec2<f32>,
+      view_offset:            vec2<f32>,
+      viewport_px:            vec2<f32>,
+      dim_amount:             f32,
+      wire_min_screen_px:     f32,
+      wire_max_screen_px:     f32,
+      dim_amount_nodes:       f32,
+      selected_size_mult:     f32,
+      selected_glow_strength: f32,
+      selected_glow:          vec4<f32>,
+      bucket_hot_colors:      array<vec4<f32>, 8>,
+    };
+    @group(0) @binding(0) var<uniform> v: View;
+    // 17 UV rects in atlas space — (u0,v0,u1,v1) per glyph type.
+    struct GlyphUVs {
+      rects: array<vec4<f32>, 32>,
+    };
+    @group(0) @binding(1) var<uniform> g: GlyphUVs;
+    @group(0) @binding(2) var atlasTex: texture_2d<f32>;
+    @group(0) @binding(3) var atlasSamp: sampler;
+
+    struct VsOut {
+      @builtin(position) position: vec4<f32>,
+      @location(0) uv:    vec2<f32>,
+      @location(1) tint:  vec4<f32>,
+    };
+
+    @vertex
+    fn vs_main(
+      @location(0) quad_vertex:     vec2<f32>,     // [-1, +1] per axis
+      @location(1) inst_pos_r_idx:  vec4<f32>,     // xy=center, z=radius, w=glyphIdx
+      @location(2) inst_tint_alpha: vec4<f32>,     // rgba
+    ) -> VsOut {
+      let center = inst_pos_r_idx.xy;
+      let r      = inst_pos_r_idx.z;
+      let idx_f  = inst_pos_r_idx.w;
+      let idx    = clamp(i32(floor(idx_f + 0.5)), 0, 31);
+      // Glyph quad sized to disk diameter (1.0× r each side).
+      let world = center + quad_vertex * r;
+      let ndc   = world * v.view_scale + v.view_offset;
+      // UV lookup from atlas rect for this glyph type.
+      let rect = g.rects[idx];
+      let u0 = rect.x; let v0 = rect.y;
+      let u1 = rect.z; let v1 = rect.w;
+      // quad_vertex is [-1,+1]; map to [0,1] for UV.
+      let uvX = mix(u0, u1, (quad_vertex.x + 1.0) * 0.5);
+      // Flip V — image data is y-down, NDC is y-up.
+      let uvY = mix(v0, v1, (quad_vertex.y + 1.0) * 0.5);
+      // Z slightly in front of disks so glyph paints above its
+      // own disk. Disk z layers: selected 0.0, highlighted 0.3,
+      // dimmed 0.6. Glyph at z=0.02 keeps it consistently
+      // forward of every disk without overlapping the AA halo
+      // discard threshold.
+      var out: VsOut;
+      out.position = vec4<f32>(ndc, 0.02, 1.0);
+      out.uv       = vec2<f32>(uvX, uvY);
+      out.tint     = inst_tint_alpha;
+      return out;
+    }
+
+    @fragment
+    fn fs_main(in: VsOut) -> @location(0) vec4<f32> {
+      let tex = textureSample(atlasTex, atlasSamp, in.uv);
+      // Atlas is rasterized in white-on-transparent. tex.a carries
+      // the stencil, tex.rgb is white where stencil is opaque.
+      // Multiply by tint to get the per-instance colored glyph.
+      let a = tex.a * in.tint.a;
+      if (a < 0.02) { discard; }
+      // Premultiplied alpha output.
+      return vec4<f32>(in.tint.rgb * a, a);
+    }
+  `;
+
   function premultBlend() {
     return {
       color: { srcFactor: 'one', dstFactor: 'one-minus-src-alpha', operation: 'add' },
@@ -517,6 +610,82 @@
       primitive: { topology: 'triangle-strip' },
       depthStencil: { format: 'depth24plus', depthWriteEnabled: true, depthCompare: 'less-equal' },
     });
+
+    // ── Phase 7: GLYPH pipeline (2026-05-20) ──────────
+    // Replaces the DOM glyph overlay with a textured-quad GPU
+    // pass. Atlas of all 17 type-glyph variants sampled per
+    // instance. See GLYPH_SHADER comment block for the depth
+    // strategy + uniform layout.
+    const glyphShaderModule = device.createShaderModule({ label: 'forge-glyph-shader', code: GLYPH_SHADER });
+    // UV uniform: 32 vec4 rects × 16 bytes = 512 bytes (room for
+    // 32 types; we use 17 today, headroom for future additions).
+    const GLYPH_UV_UBO_SIZE = 512;
+    const glyphUvUbo = device.createBuffer({
+      label: 'forge-glyph-uv-ubo', size: GLYPH_UV_UBO_SIZE,
+      usage: GPUBufferUsage.UNIFORM | GPUBufferUsage.COPY_DST,
+    });
+    // Dummy 1×1 atlas texture so the pipeline can bind before
+    // setGlyphAtlas is called. Replaced by the real atlas at boot.
+    let atlasTex = device.createTexture({
+      label: 'forge-glyph-atlas',
+      size: { width: 1, height: 1, depthOrArrayLayers: 1 },
+      format: 'rgba8unorm',
+      usage: GPUTextureUsage.TEXTURE_BINDING | GPUTextureUsage.COPY_DST | GPUTextureUsage.RENDER_ATTACHMENT,
+    });
+    const atlasSampler = device.createSampler({
+      label: 'forge-glyph-sampler',
+      magFilter: 'linear',
+      minFilter: 'linear',
+      mipmapFilter: 'linear',
+      addressModeU: 'clamp-to-edge',
+      addressModeV: 'clamp-to-edge',
+    });
+    const glyphBgl = device.createBindGroupLayout({
+      label: 'forge-glyph-bgl',
+      entries: [
+        { binding: 0, visibility: GPUShaderStage.VERTEX | GPUShaderStage.FRAGMENT, buffer: { type: 'uniform' } },
+        { binding: 1, visibility: GPUShaderStage.VERTEX,                            buffer: { type: 'uniform' } },
+        { binding: 2, visibility: GPUShaderStage.FRAGMENT, texture: {} },
+        { binding: 3, visibility: GPUShaderStage.FRAGMENT, sampler: {} },
+      ],
+    });
+    function makeGlyphBindGroup() {
+      return device.createBindGroup({
+        label: 'forge-glyph-bg',
+        layout: glyphBgl,
+        entries: [
+          { binding: 0, resource: { buffer: viewUbo } },
+          { binding: 1, resource: { buffer: glyphUvUbo } },
+          { binding: 2, resource: atlasTex.createView() },
+          { binding: 3, resource: atlasSampler },
+        ],
+      });
+    }
+    let glyphBg = makeGlyphBindGroup();
+    const glyphPipeline = device.createRenderPipeline({
+      label: 'forge-glyph-pipeline',
+      layout: device.createPipelineLayout({ bindGroupLayouts: [glyphBgl] }),
+      vertex: {
+        module: glyphShaderModule, entryPoint: 'vs_main',
+        buffers: [
+          // [0] shared quad mesh
+          { arrayStride: 8, stepMode: 'vertex', attributes: [{ shaderLocation: 0, offset: 0, format: 'float32x2' }] },
+          // [1] per-instance: pos.xy, radius, glyphIdx | tint.rgba
+          // 32 bytes per instance.
+          { arrayStride: 32, stepMode: 'instance', attributes: [
+              { shaderLocation: 1, offset:  0, format: 'float32x4' },
+              { shaderLocation: 2, offset: 16, format: 'float32x4' },
+          ] },
+        ],
+      },
+      fragment: {
+        module: glyphShaderModule, entryPoint: 'fs_main',
+        targets: [{ format, blend: premultBlend() }],
+      },
+      primitive: { topology: 'triangle-list' },
+      depthStencil: { format: 'depth24plus', depthWriteEnabled: true, depthCompare: 'less-equal' },
+    });
+    let glyphInstanceVbo = null, glyphInstanceVboSize = 0;
 
     // ── Instance buffers ─────────────────────────────
     let nodeInstanceVbo     = null, nodeInstanceVboSize     = 0;
@@ -738,6 +907,36 @@
         return out;
       },
 
+      // 2026-05-20 — upload the glyph atlas to the GPU. Called
+      // once at engine boot by the view layer after
+      // `AtlasEngineGlyph.buildAtlas` resolves. `atlasCanvas` is
+      // a 2D canvas containing the rasterized 17-glyph grid;
+      // `uvRects` is a Float32Array of (u0,v0,u1,v1) tuples in
+      // atlas-space [0,1] per glyph index.
+      setGlyphAtlas(atlasCanvas, uvRects) {
+        // Reallocate the texture at the actual atlas size, then
+        // copy the canvas data in.
+        try { atlasTex.destroy(); } catch (e) { /* ignore */ }
+        atlasTex = device.createTexture({
+          label: 'forge-glyph-atlas',
+          size: { width: atlasCanvas.width, height: atlasCanvas.height, depthOrArrayLayers: 1 },
+          format: 'rgba8unorm',
+          usage: GPUTextureUsage.TEXTURE_BINDING | GPUTextureUsage.COPY_DST | GPUTextureUsage.RENDER_ATTACHMENT,
+        });
+        // copyExternalImageToTexture handles the rgba premultiply.
+        device.queue.copyExternalImageToTexture(
+          { source: atlasCanvas, flipY: false },
+          { texture: atlasTex, premultipliedAlpha: true },
+          { width: atlasCanvas.width, height: atlasCanvas.height },
+        );
+        // Upload UV rects to the uniform buffer (padded to 512 bytes).
+        const uvData = new Float32Array(GLYPH_UV_UBO_SIZE / 4);
+        uvData.set(uvRects.subarray(0, Math.min(uvRects.length, uvData.length)));
+        device.queue.writeBuffer(glyphUvUbo, 0, uvData);
+        // Re-bind the group since the texture handle changed.
+        glyphBg = makeGlyphBindGroup();
+      },
+
       drawDisk(pxX, pxY, pxR, color, viewportCss) {
         const dpr = window.devicePixelRatio || 1;
         const ndcX  = (pxX / viewportCss.w) * 2 - 1;
@@ -890,6 +1089,25 @@
           pass.setVertexBuffer(1, nodeInstanceVbo);
           pass.setVertexBuffer(2, nodeStateVbo);
           pass.draw(6, nodeCount);
+        }
+        // 2026-05-20 — GPU glyph pass. Replaces the DOM glyph
+        // overlay (which was the perf cliff John discovered when
+        // zooming out). Each instance is 32 bytes (vec4 pos+r+idx,
+        // vec4 tint+alpha). Atlas sampled per fragment, tinted by
+        // instance attr. Renders AFTER disks so glyph paints on
+        // top of its parent disk; z=0.02 in shader keeps it in
+        // front of all disk z-layers (0.0 / 0.3 / 0.6).
+        const glyphVB = frame.glyphInstances;
+        const glyphCount = glyphVB ? Math.floor(glyphVB.length / 8) : 0;
+        if (glyphCount > 0) {
+          const r = ensureBuffer(glyphInstanceVbo, glyphInstanceVboSize, glyphVB.byteLength, 'forge-glyph-inst-vbo');
+          glyphInstanceVbo = r.buf; glyphInstanceVboSize = r.size;
+          device.queue.writeBuffer(glyphInstanceVbo, 0, glyphVB);
+          pass.setPipeline(glyphPipeline);
+          pass.setBindGroup(0, glyphBg);
+          pass.setVertexBuffer(0, quadVbo);
+          pass.setVertexBuffer(1, glyphInstanceVbo);
+          pass.draw(6, glyphCount);
         }
 
         pass.end();
