@@ -17,7 +17,7 @@ attributes: ["worthlessness (the etymology: *beliyya'al* = without-worth)", "dar
 attested-in: ["[[phase-2-011-hebrew-bible-d-source]]", "[[phase-3-011-dead-sea-scrolls]]", "[[phase-3-015-pauline-epistles]]"]
 equivalents: []
 syncretic-edges: []
-status: "stub"
+status: "metadata"
 refs:
   - title: "The Apocalyptic Imagination"
     author: "Collins, John J."

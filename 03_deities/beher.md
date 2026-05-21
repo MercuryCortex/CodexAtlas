@@ -15,7 +15,7 @@ child-of: []
 consort: []
 attributes: ["sea", "water"]
 attested-in: ["Pre-Christian Ezana stelae (RIE 185, 270, 271 — alongside [[almaqah]], [[mahrem]], [[astar-aksumite]], [[meder]])"]
-equivalents: ["[[poseidon]] (parallel-form — Greek sea-god)", "[[yam-canaanite]] (parallel-form — Canaanite/Ugaritic Sea-personification)"]
+equivalents: ["[[poseidon]] (parallel-form — Greek sea-god)", "[[yam]] (parallel-form — Canaanite/Ugaritic Sea-personification)"]
 syncretic-edges:
   - target: "poseidon"
     type: "scholarly-parallel"
@@ -78,7 +78,7 @@ Some scholars (Marrassini 2003) propose that Beher may also have had a **sky / c
 
 ## Cross-tradition identifications
 - **[[poseidon]]** (Greek) — *parallel-form* (no ancient identification attested): structurally cognate sea-deity.
-- **[[yam-canaanite]]** — *parallel-form*: Canaanite/Ugaritic Yam (the Sea-personification) is the Northwest-Semitic cognate of a sea-as-deity figure.
+- **[[yam]]** — *parallel-form*: Canaanite/Ugaritic Yam (the Sea-personification) is the Northwest-Semitic cognate of a sea-as-deity figure.
 - The Ezana Greek version (RIE 270) does *not* explicitly identify Beher with Poseidon (unlike the explicit Mahrem-Ares identification), so the Beher-Poseidon parallel is scholarly inference rather than ancient identification.
 
 ## Iconography

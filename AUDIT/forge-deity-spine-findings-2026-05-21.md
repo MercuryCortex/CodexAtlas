@@ -173,3 +173,42 @@ Both files are 105 lines, both `status: "full"`, both cover the same Greek deity
 **Wikilinks scanned:** ~95 unique targets. 1 dead-link unwrapped.
 
 ---
+
+## Batch 10 — baraqel → belial (2026-05-21) — milestone: 100 deities done
+
+**Files:** baraqel, barbelo, baron-samedi, bastet, bau-sumerian, beelzebub, beher, belenos, belet-seri-akkadian, belial.
+
+**Fixes applied:**
+
+- 1 status flip stub → metadata (`belial.md`).
+- `beher.md` — fixed dead `[[yam-canaanite]]` (both YAML + body, 2 occurrences) → `[[yam]]` (canonical slug; `yam.md` exists, no suffix).
+- `belet-seri-akkadian.md` — referenced `[[amurru]]` which didn't exist. Created `03_deities/amurru.md` as a metadata-tier stub (West-Semitic / Amorite tutelary god; Sumerian Martu = Akkadian Amurrum equation; *Marriage of Martu* hymn cited; Belet-Seri pairing noted) so the wikilink resolves.
+
+**Wikilinks scanned:** ~105 unique targets. 2 dead-links repaired (1 fix + 1 outward-stub).
+
+---
+
+## Mid-sweep checkpoint — 100 / 676 deities (14.7%)
+
+**Aggregate across batches 1–10:**
+
+| Metric | Count |
+|---|---:|
+| Deities surveyed | 100 |
+| Status `stub` → `metadata` flips | ~35 |
+| Dead wikilinks fixed (rewrites + unwraps) | ~15 |
+| Outward stubs created | 3 (`sarutahiko`, `amurru`, plus `ame-no-hohi` promoted from breadcrumb) |
+| YAML bugs fixed | 1 (`ahura-mazda` duplicate `parent-of:` key) |
+| Duplicate clusters flagged | 3 (`adonis`, `ahriman`, `asclepius`) |
+| New dead-links shipped | **0** (WIRING LAW held) |
+
+**Patterns now confirmed:**
+
+1. **Stub mis-flag is system-wide and consistent.** Almost every "status: stub" deity is actually a 50–150-line metadata-grade node. The flag was set at creation and never updated. Per-file inspection catches associated bugs (mis-suffixed wikilink targets, YAML key dupes) that a blind regex-flip would not.
+2. **The deities lens has cleaner wikilink hygiene than the audit suggested.** Dead-link rate on touched files is hovering ~2.5% local, vs. the global 1.74%. The 2026-05-19 sacred-architecture batches deposited most of the slop in `04_persons/`, not here.
+3. **Spelling/transliteration duplicates are the dominant duplicate-cluster shape.** Same deity, two romanizations (`asclepius` vs `asklepios`), or same deity, suffix-vs-no-suffix (`adonis` vs `adonis-hellenistic`). Schema's splitting rule does NOT justify these — they should be merged on a dedicated pass.
+4. **MASSIVE-WIN parallels already wired.** The `aditi ↔ ein-sof ↔ the-one-plotinus` Infinite-Ground triangle, the Apkallu ↔ Watchers chain, the Awonawilona ↔ Ein-Sof apophatic parallel, the Amitabha ↔ Aten ↔ Sol-Invictus ↔ Christ light-saviour grid, the Iranian↔Christian Satan-transfer through Angra Mainyu — all already in the deity bodies. The sentinel pass is preserving and re-resolving these, not authoring them. Good news: John's MASSIVE-WIN ethic has been deeply absorbed by the prior content waves.
+
+**Pacing:** ~10 minutes per batch of 10 deities once warm. At this rate the full 676-file sweep is ~10–12 hours of focused work. Continuing alphabetically — bel- through z.
+
+---
