@@ -11,6 +11,19 @@ participants: ["[[husayn-ibn-ali]]", "[[ali-zayn-al-abidin]] (survivor, taken ca
 traditions-affected: ["[[tradition-shia-islam]]", "[[tradition-ismailism]]", "[[tradition-islam]]"]
 documents-produced: ["the *maqtal al-Ḥusayn* literature (martyrology narratives — Abu Mikhnaf, late 8th c.; preserved in [[al-tabari]]'s *Ta'rikh*; ibn Sa'd; later Shi'i compilations)", "*Ziyarat Ashura* (pilgrimage prayer text)", "*ta'ziya* passion-play texts (later, esp. Safavid–Qajar Iran)"]
 documents-affected: ["the [[phase-5-007-sahih-al-bukhari]] and Sunni hadith corpus (Husayn-related traditions filtered through Sunni–Umayyad political pressure)"]
+hub-edges:
+  - target: "executed-divine-claimant"
+    type: "paradigmatic-Islamic-instance-of-pattern"
+    source: "Ayoub 1978 *Redemptive Suffering in Islam*; Hussain 2005 *The Karbala Paradigm*; Halm 1997 *Shi'a Islam* — Husayn at Karbala is the central Shi'i instance of the redemptive-suffering martyred-claimant pattern. Ayoub explicitly draws the structural parallel to Christian Passion theology. Husayn's martyrdom is the foundational salvific event of Twelver Shi'i piety, ritualized annually in ʿAshura"
+    notes: "Cross-lens: 05_events → 06_themes. MASSIVE-WIN: paired with crucifixion-of-jesus and execution-of-al-hallaj as the three central Christian-Shi'i-Sufi articulations of the cross-tradition pattern"
+  - target: "occultation-hidden-imam"
+    type: "inaugurating-event-of-imamate-persecution-pattern"
+    source: "Halm 1997; Madelung 1997 *The Succession to Muhammad*; Amir-Moezzi 1994 *The Divine Guide in Early Shi'ism* — Karbala establishes the structural pattern (the legitimate Imam persecuted-to-death by an illegitimate political authority) that culminates in the Twelfth Imam's occultation in 874 CE; without Karbala the hidden-Imam doctrine has no theological backbone"
+    notes: "Cross-lens: 05_events → 06_themes. The persecution-of-the-Imams pattern is rooted in this event"
+  - target: "messianic-genealogy"
+    type: "anchor-event-of-Ahl-al-Bayt-genealogy"
+    source: "Madelung 1997; Halm 1997 — Husayn is the son of [[ali-ibn-abi-talib]] and Fatima (Muhammad's daughter); the Twelver Imamate descends through his line. Karbala makes the genealogy salvifically-charged: the Imams are not just biological successors but inheritors of a redemptive-suffering vocation"
+    notes: "Cross-lens: 05_events → 06_themes"
 status: "metadata"
 refs:
   - title: "Redemptive Suffering in Islam: A Study of the Devotional Aspects of ʿAshura in Twelver Shi'ism"

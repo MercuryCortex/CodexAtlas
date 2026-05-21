@@ -7,6 +7,19 @@ date-latest: 922
 region: "Baghdad (Abbasid Caliphate)"
 traditions-involved: ["[[tradition-sufism]]", "[[tradition-islam-sunni]]"]
 persons-involved: ["[[al-hallaj]]"]
+hub-edges:
+  - target: "executed-divine-claimant"
+    type: "paradigmatic-Sufi-instance-of-pattern"
+    source: "Massignon 1982 *The Passion of al-Hallaj* (4 vols, Princeton); Schimmel 1975 *Mystical Dimensions of Islam*; Sells 1996 *Early Islamic Mysticism* — Massignon's 50-year project explicitly names the structural parallel: Hallaj's *Ana al-Haqq* + judicial-religious trial + crucifixion in 922 CE is structurally isomorphic to Jesus's trial + crucifixion in 30 CE. The Hallaj case is the cleanest Islamic instance of the cross-tradition pattern"
+    notes: "Cross-lens: 05_events → 06_themes. MASSIVE-WIN: the title of Massignon's monumental study (*La Passion d'al-Hallāj*) names the cross-tradition pattern directly; pairs with crucifixion-of-jesus and karbala-680 as the three central articulations"
+  - target: "soul-exile-longing"
+    type: "ultimate-articulation-event-of-pattern"
+    source: "Massignon 1982; Schimmel 1975; Sells 1996 — Hallaj's smile at the cross frames execution as the lover and the Beloved finally annihilated into each other (*fana*); the death event is presented in Hallaj's own poetry as the consummation of the mystical-exile pattern in which the soul returns to its divine origin. This is the highest-stakes existential articulation of soul-exile-longing in the Islamic tradition"
+    notes: "Cross-lens: 05_events → 06_themes"
+  - target: "neoplatonic-henosis"
+    type: "Islamic-mystical-union-event"
+    source: "Schimmel 1975; Sells 1996; Chittick 1989 *The Sufi Path of Knowledge* — *Ana al-Haqq* is the Islamic vocabulary for the henotic union (the self dissolved into the divine One) that Plotinus articulates in *Ennead* VI.9; Hallaj's death enacts the henotic terminus the Sufi *fana* tradition aims at"
+    notes: "Cross-lens: 05_events → 06_themes. Hallaj is one of the two clearest non-Greek articulations of henosis alongside Ibn Arabi's *waḥdat al-wujūd*"
 status: "metadata"
 refs:
   - title: "The Passion of al-Hallaj: Mystic and Martyr of Islam (4 vols)"

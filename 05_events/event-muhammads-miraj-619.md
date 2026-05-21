@@ -22,6 +22,15 @@ documents-produced:
   - "Quranic references: Sura 17 (al-Isrāʾ), Sura 53:1-18 (al-Najm — Lote Tree vision)"
   - "Later *Miʿrāj-nāma* texts (Persian illustrated heavenly-journey manuscripts)"
   - "*Kitāb al-Miʿrāj* (Arabic, translated into Latin and Castilian for Alfonso X, c. 1264)"
+hub-edges:
+  - target: "merkabah-miraj-ascent-chain"
+    type: "central-event-of-ascent-chain"
+    source: "Schäfer 2009 *Mohammed's Journey to Heaven* (De Gruyter); Asín Palacios 1919 *Islam and the Divine Comedy*; Gardiner 1989 *Visions of Heaven and Hell before Dante* — the Mi'raj is the central event of the four-stage chain Ezekiel-1 (~593 BCE) → Hekhalot Literature (~3rd-7th c.) → Mi'raj (619 CE) → Dante's *Paradiso* (1320). Schäfer demonstrates specific formal parallels between Hekhalot heavenly-palace narratives and the Mi'raj's seven-heavens structure, confirming the Jewish-Christian-Islamic transmission via Arabian Jewish communities"
+    notes: "Cross-lens: 05_events → 06_themes. MASSIVE-WIN: the Mi'raj is the hinge event of the 1,900-year merkabah-miraj-ascent transmission chain. Both Ezekiel 1 + Sura 53 use the same divine-throne-vision vocabulary; Mi'raj is the Islamic articulation of the Jewish heavenly-ascent genre"
+  - target: "soul-exile-longing"
+    type: "Islamic-ascent-articulation"
+    source: "Schimmel 1975 *Mystical Dimensions of Islam*; Corbin 1969 *Creative Imagination in the Sufism of Ibn Arabi* — the Mi'raj becomes the structural template for Sufi ascent narratives (Bayazid Bistami's *miʿrāj*, Ibn Arabi's *al-Isrāʾ ilā al-Maqām al-Asrā*, Suhrawardi's *Hayakil al-Nur*) which articulate the soul's exile-and-return to the divine origin"
+    notes: "Cross-lens: 05_events → 06_themes. The Mi'raj is the prophetic prototype Sufi-mystical articulation builds on"
 status: "metadata"
 refs:
   - title: "Mohammed's Journey to Heaven"

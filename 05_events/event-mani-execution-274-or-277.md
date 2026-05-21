@@ -9,6 +9,23 @@ region: "Sasanian Iran (Gundeshapur / Bēth Lapaṭ)"
 event-type: "persecution"
 participants: ["[[mani]]", "Bahram I (Sasanian king of kings)", "Kartir (Zoroastrian high priest)"]
 traditions-affected: ["[[tradition-manichaeism]]", "[[tradition-zoroastrianism]]"]
+hub-edges:
+  - target: "executed-divine-claimant"
+    type: "paradigmatic-instance-of-pattern"
+    source: "Lieu 1992 *Manichaeism in the Later Roman Empire and Medieval China*; Gardner & Lieu 2004 *Manichaean Texts from the Roman Empire*; BeDuhn 2000 *The Manichaean Body* — the Manichaean community refers to Mani's death as the *Crucifixion* of Mani; his death is structurally modelled on Christ's and salvifically interpreted. Mani thus joins the cross-tradition pattern of the executed-divine-claimant whose death becomes the founding event of the religion"
+    notes: "Cross-lens: 05_events → 06_themes. Pairs with the crucifixion-of-jesus and execution-of-al-hallaj as the three-fold Iranian-Christian-Sufi articulation of the pattern"
+  - target: "theme-dying-founder-paradigm"
+    type: "founder-death-event"
+    source: "Lieu 1992; Tardieu 2008 *Manichaeism* — Mani's death is the foundational martyrdom of Manichaeism; Manichaean hymnody dwells on it the way Christian liturgy dwells on the Passion"
+    notes: "Cross-lens: 05_events → 06_themes"
+  - target: "theme-manichaeism-synthesis"
+    type: "pivot-event-of-synthesis"
+    source: "Lieu 1992; BeDuhn 2000; Tardieu 2008 — Mani's execution ended his life but triggered the diaspora that carried Manichaeism west into the Roman Empire and east along the Silk Road, transforming a Sasanian-Iranian movement into the first global religious synthesis"
+    notes: "Cross-lens: 05_events → 06_themes. The persecution paradoxically GLOBALIZED the synthesis"
+  - target: "third-century-collision-zone"
+    type: "anchor-event-of-collision-zone"
+    source: "Lieu 1992; Brown 1971 *The World of Late Antiquity*; Fowden 1993 *Empire to Commonwealth* — 274-277 sits at the dead center of the 3rd-century collision zone in which Manichaeism, Neoplatonism, Christianity, the Hermetica, and reformed Zoroastrianism (Kartir) all crystallize against each other"
+    notes: "Cross-lens: 05_events → 06_themes. Kartir's Manichaean-persecution inscription is itself a primary document of the collision"
 status: "metadata"
 refs:
   - title: "Mani and Manichaeism"

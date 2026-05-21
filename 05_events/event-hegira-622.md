@@ -10,6 +10,11 @@ event-type: "founding"
 participants: ["[[muhammad-ibn-abdullah]]", "[[abu-bakr]]", "[[umar-ibn-al-khattab]]", "[[aisha-bint-abi-bakr]] (child, emigrated with her father Abū Bakr)", "the early Muslim community"]
 traditions-affected: ["[[tradition-islam]]", "[[tradition-pre-islamic-arabian]] (pre-Hegira religious context)"]
 documents-produced: ["the Constitution of Medina (Sahifat al-Madinah) shortly after", "the Medinan-period suras of [[phase-4-034-quran]] eventually compiled under [[uthman|ʿUthmān]]"]
+hub-edges:
+  - target: "soul-exile-longing"
+    type: "name-event-of-Sufi-hijra-metaphor"
+    source: "Schimmel 1975 *Mystical Dimensions of Islam*; Chittick 1989 *The Sufi Path of Knowledge*; Sells 1996 *Early Islamic Mysticism* — the 622 historical *hijra* becomes the lexical-conceptual root of the Sufi *hijra* metaphor (the soul's migration from worldly attachment toward divine reality, *hijra ilā Allāh*); the historical event names a religious-metaphysical movement of return that becomes a cornerstone of Sufi soul-exile vocabulary"
+    notes: "Cross-lens: 05_events → 06_themes. The 622 event lexically grounds an entire downstream Islamic mystical-vocabulary that articulates soul-exile-longing"
 status: "metadata"
 refs:
   - title: "Muhammad and the Believers"

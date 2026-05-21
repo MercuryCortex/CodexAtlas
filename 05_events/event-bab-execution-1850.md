@@ -7,6 +7,23 @@ date-latest: 1850
 region: "Tabriz, Iran (Qajar Persia)"
 traditions-involved: ["[[tradition-baha-i]]", "[[tradition-shia-islam]]"]
 persons-involved: ["[[the-bab]]", "[[bahaullah]]"]
+hub-edges:
+  - target: "executed-divine-claimant"
+    type: "modern-Iranian-instance-of-pattern"
+    source: "Momen 1981 *The Bábí and Bahá'í Religions, 1844–1944*; Maneck 1994 *A History of the Bahá'í Faith in Iran*; Balyuzi 1973 *The Báb* — the Bab was executed by the Qajar state after a 6-year imprisonment on a charge of heretical claim-to-divine-authority (the Bab claimed Mahdi/Qa'im status and ultimately a station of *manifestation*). The 1850 execution is the cleanest 19th-century repetition of the executed-divine-claimant pattern in the Iranian-Shi'i sphere — and the founding martyrdom of the Bahá'í Faith"
+    notes: "Cross-lens: 05_events → 06_themes. The Bab is the modern Iranian articulation paired with karbala-680 (Husayn) + execution-of-al-hallaj-922 + crucifixion-of-jesus across the same pattern"
+  - target: "theme-dying-founder-paradigm"
+    type: "founding-martyrdom-of-Babism-and-Baha-i"
+    source: "Shoghi Effendi 1944 *God Passes By*; Momen 1981; Balyuzi 1973 — the Bab's execution is the foundational sacrificial event of Babism and downstream the Bahá'í Faith; Bahá'u'lláh's later disclosure ('He whom God shall make manifest') is theologically dependent on the Bab's prior martyrdom"
+    notes: "Cross-lens: 05_events → 06_themes"
+  - target: "occultation-hidden-imam"
+    type: "modern-rearticulation-of-Qaim-doctrine"
+    source: "Amir-Moezzi 1994 *The Divine Guide in Early Shi'ism*; Maneck 1994 — the Bab's claim begins as *Bab al-Qa'im* (Gate to the Hidden Imam) and develops into *Qa'im-as-manifested*, ending the period of occultation. The 1850 execution is the Qajar state's response to the most consequential rearticulation of the hidden-Imam doctrine in the modern period"
+    notes: "Cross-lens: 05_events → 06_themes. The Babi/Bahá'í case is a critical end-state for the occultation-hidden-imam pattern: occultation ends in manifested Mahdi"
+  - target: "messianic-genealogy"
+    type: "Bab-as-Mahdi-claimant-event"
+    source: "Maneck 1994; Balyuzi 1973 — the Bab claimed lineal descent from Muhammad through Fatima (Sayyid status) and theological succession to the Twelfth Imam; his messianic-genealogical claim is the basis for the execution"
+    notes: "Cross-lens: 05_events → 06_themes"
 status: "metadata"
 refs:
   - title: "The Dawn-Breakers (Nabil's Narrative)"
