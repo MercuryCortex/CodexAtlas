@@ -20,7 +20,7 @@ syncretic-edges:
   - target: "vishnu"
     type: "ancient-identification"
     source: "Mahabharata, Bhagavad Gita passim"
-status: "stub"
+status: "metadata"
 refs:
   - title: "Hindu Goddesses: Visions of the Divine Feminine in the Hindu Religious Tradition"
     author: "Kinsley, David"
