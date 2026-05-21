@@ -870,6 +870,19 @@
       // trigger, footer, detail panel, hover card) paints over it.
       document.body.insertBefore(bgImage, document.body.firstChild);
     }
+    // Phase 21C (2026-05-21) — re-introduce aspect tracking. Used
+    // by syncBackgroundImage() to size the image at its natural
+    // proportions; otherwise the IMG box would stretch.
+    if (!bgImage._bgAspect) bgImage._bgAspect = 4 / 3;
+    if (!bgImage._bgAspectListenerAttached) {
+      bgImage._bgAspectListenerAttached = true;
+      bgImage.addEventListener('load', () => {
+        if (bgImage.naturalWidth > 0 && bgImage.naturalHeight > 0) {
+          bgImage._bgAspect = bgImage.naturalWidth / bgImage.naturalHeight;
+          if (typeof syncBackgroundImage === 'function') syncBackgroundImage();
+        }
+      });
+    }
 
     const canvas = document.createElement('canvas');
     canvas.className = 'forge-canvas';
@@ -2759,21 +2772,69 @@
     function syncBackgroundImage() {
       if (!bgImage) return;
       if (!camera || !camera.state) return;
+      const vp = local.lastSize;
+      if (!vp || !vp.w || !vp.h) return;
       const fitScale = computeFitScale();
       if (!fitScale || fitScale <= 0) return;
-      // Phase 21A2 (2026-05-21) — sizing is FULLY CSS-driven now
-      // (`position: fixed; inset: 0; object-fit: cover`). JS only
-      // sets opacity. The image always covers the entire viewport
-      // (every corner) — left/right or top/bottom gaps are
-      // impossible — and the cover-fit math is handled by the
-      // browser, which has done rectangular-into-rectangular
-      // fitting reliably for thirty years.
+
       const zoomPct = camera.state.scale / fitScale;
+      // Opacity ramp (gizmo terms): invisible ≥ 50%, full ≤ 10%.
       let bgFade;
       if      (zoomPct >= 0.50) bgFade = 0;
       else if (zoomPct <= 0.10) bgFade = 1;
       else                      bgFade = (0.50 - zoomPct) / (0.50 - 0.10);
       bgImage.style.opacity = bgFade.toFixed(3);
+
+      // Phase 21C (2026-05-21) — WORLD-ANCHORED sizing + position.
+      // The image follows the wheel:
+      //   • anchored at world (0, 0) — the wheel's centre — so
+      //     pan moves it with the wheel
+      //   • size scales linearly with the camera so zooming the
+      //     wheel zooms the image with it
+      //   • at gizmo zoom 10% (floor) the image is COVER-FIT
+      //     against the viewport (smaller dim ≥ vp dim) — same
+      //     directive as before: max-axis matched + smaller
+      //     axis overflows
+      //   • floor below 10% — image stays at fill-coverage even
+      //     if the camera goes lower (engine MIN_SCALE = 0.05)
+      //
+      // The canvas is offset from the viewport's top-left by the
+      // page chrome (nav-hub trigger, status pill, bottom-bar).
+      // worldToScreen returns coords in CANVAS space, so we add
+      // the canvas's bounding-rect offset to land in viewport
+      // coords (which is what `position: fixed` reads).
+      const sizeZoomPct = Math.max(0.10, zoomPct);
+      const aspect      = bgImage._bgAspect || (4 / 3);
+      const vpAspect    = vp.w / Math.max(1, vp.h);
+      let coverW, coverH;
+      if (aspect >= vpAspect) {
+        coverH = vp.h;
+        coverW = vp.h * aspect;
+      } else {
+        coverW = vp.w;
+        coverH = vp.w / aspect;
+      }
+      const scaleFactor = sizeZoomPct / 0.10;
+      const imgW = coverW * scaleFactor;
+      const imgH = coverH * scaleFactor;
+
+      // World (0, 0) → canvas screen coords.
+      const centerCanvas = camera.worldToScreen(0, 0, vp);
+      // Canvas → viewport (the BG is position:fixed, so it reads
+      // viewport coords). canvas.getBoundingClientRect() gives
+      // canvas top-left in viewport space.
+      let offX = 0, offY = 0;
+      if (canvas && canvas.getBoundingClientRect) {
+        const r = canvas.getBoundingClientRect();
+        offX = r.left;
+        offY = r.top;
+      }
+      const centerVp = { x: offX + centerCanvas.x, y: offY + centerCanvas.y };
+
+      bgImage.style.width  = imgW.toFixed(1) + 'px';
+      bgImage.style.height = imgH.toFixed(1) + 'px';
+      bgImage.style.left   = (centerVp.x - imgW / 2).toFixed(1) + 'px';
+      bgImage.style.top    = (centerVp.y - imgH / 2).toFixed(1) + 'px';
     }
 
     function syncLabelPositions() {
