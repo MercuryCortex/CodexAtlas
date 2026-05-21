@@ -3,10 +3,38 @@ type: theme
 id: "theme-baal-set-syncretism"
 name: "Baal–Set Syncretism (Hyksos Period)"
 category: "political-theological | ritual"
-appearances: []
+appearances:
+  - "[[phase-1-013-baal-cycle]]"
+  - "[[phase-1-009-coffin-texts]]"
+  - "[[phase-4-072-plutarch-de-iside-et-osiride]]"
+  - "[[event-hyksos-period]]"
+  - "Year 400 Stela of Ramesses II (Cairo Museum CG 34504)"
 deity-instances:
   - "[[baal-hadad]]"
-status: "stub"
+  - "[[set]]"
+  - "[[yam]]"
+  - "[[mot]]"
+  - "[[horus]]"
+  - "[[osiris]]"
+traditions-where-attested:
+  - "[[tradition-egyptian]]"
+  - "[[tradition-canaanite-ugaritic]]"
+related-themes:
+  - "[[theme-exodus-hyksos-thesis]]"
+  - "[[theme-akhenaten-moses-monotheism-thesis]]"
+  - "[[syncretism-egyptian-greek]]"
+  - "[[syncretism-deliberate]]"
+  - "[[theme-rebel-against-the-divine]]"
+hub-edges:
+  - target: "theme-egyptian-gnostic-transmission"
+    type: "Bronze-Age-Egyptian-substrate-of-transmission"
+    source: "Schneider 2008 'Seth is Baal'; Redford 1992 'Hyksos' (Anchor Bible Dictionary); Oren 1997 *The Hyksos: New Historical and Archaeological Perspectives*; Fowden 1986 *The Egyptian Hermes* — the Hyksos-period Set/Baal compound is part of the 1,500-year-deep Egyptian theological substrate that Hellenistic-Egyptian religion (and downstream Gnosticism) draws on; Set/Typhon's role in Plutarch *De Iside et Osiride* preserves the Baal/Set syncretic afterlife in Greek allegorical-Egyptian theology"
+    notes: "Cross-theme: 06_themes → 06_themes. The Set/Typhon equation in Plutarch is the late-antique survival of the Hyksos-period syncretism into the Hellenistic-Egyptian framework Fowden's transmission chain operates on"
+  - target: "theme-rebel-against-the-divine"
+    type: "Egyptian-rebel-god-pole-of-pattern"
+    source: "Te Velde 1967 *Seth, God of Confusion*; Kemp 2006 *Ancient Egypt: Anatomy of a Civilization*; Smith 2002 *The Early History of God* — Set is the Egyptian canonical rebel-god (Osiris-murder, Horus-opponent), and the Baal-Set equation extends this pattern: the foreigner-storm-god as cosmic-disrupter. Theological vocabulary that supplies Israelite + later traditions with the rebel-against-the-divine pattern partly flows through this Hyksos-mediated channel"
+    notes: "Cross-theme: 06_themes → 06_themes"
+status: "metadata"
 refs:
   - title: "Seth is Baal: Evidence from the Egyptian Script"
     author: "Schneider, Thomas"

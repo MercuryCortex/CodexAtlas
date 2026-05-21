@@ -5,6 +5,24 @@ name: "Bronze Age substrate of Greek religion"
 category: "historiographic-substrate"
 appearances: ["[[phase-2-008-homeric-epics]]", "[[phase-2-009-hesiod-theogony-works-and-days]]", "[[phase-1-028-kumarbi-cycle]]", "[[phase-1-030-illuyanka-myth]]"]
 deity-instances: ["[[zeus]]", "[[hera]]", "[[poseidon]]", "[[hermes-greek]]", "[[artemis]]", "[[dionysus]]", "[[athena]]"]
+traditions-where-attested:
+  - "[[tradition-greek-religion]]"
+related-themes:
+  - "[[syncretism-egyptian-greek]]"
+  - "[[theme-baal-set-syncretism]]"
+hub-edges:
+  - target: "zeus-pantokrator-transmission"
+    type: "Bronze-Age-deep-substrate-of-Zeus-iconography"
+    source: "Burkert 1985 *Greek Religion* §1.3; Ventris & Chadwick 1973 *Documents in Mycenaean Greek*; Chadwick 1976 *The Mycenaean World*; Bachvarova 2016 *From Hittite to Homer* — the Mycenaean-Bronze-Age attestation of Zeus (Diwo, ~-1400) establishes the deep-time substrate of the Phidian classical Zeus iconography that the Pantokrator-transmission hypothesis builds on. Without 800+ years of pre-Phidian Zeus-attestation, the iconographic-theological identity of Zeus that Phidias monumentalizes has no historical-documentary anchor"
+    notes: "Cross-theme: 06_themes → 06_themes. The Pantokrator-transmission's Zeus-pole roots in this Bronze Age substrate"
+  - target: "theme-soma-haoma-eucharist"
+    type: "Bronze-Age-substrate-of-Dionysian-pole"
+    source: "Burkert 1985; Bachvarova 2016; Henrichs 1982 *Greek Maenadism from Olympias to Messalina* — the Linear B attestation of Dionysus (di-wo-nu-so at Pylos + Khania, ~-1400 to -1180) overturns the older 'Dionysus as late Phrygian arrival' thesis and establishes the vine-and-ecstatic-cult substrate as Mycenaean-Bronze-Age. The Mediterranean wing of the soma-haoma-eucharist chain begins in Mycenaean prehistory"
+    notes: "Cross-theme: 06_themes → 06_themes"
+  - target: "third-century-collision-zone"
+    type: "deep-substrate-of-Greek-pole-of-collision-zone"
+    source: "Burkert 1985; West 1997 *The East Face of Helicon: West Asiatic Elements in Greek Poetry and Myth*; Bachvarova 2016 — the Greek religious-pole that participates in the 3rd-c. Hellenistic-Roman collision (Neoplatonism, Greek-philosophical Christianity, Hermetic Hellenism) rests on a 1,500-year-deep substrate continuous from Mycenaean cult through Archaic crystallization (Homer, Hesiod) into Classical and Hellenistic philosophical refinement. Without the Bronze-Age substrate the Greek pole of the collision-zone has no continuous theological-ritual tradition to articulate"
+    notes: "Cross-theme: 06_themes → 06_themes"
 status: "metadata"
 refs:
   - title: "Greek Religion"

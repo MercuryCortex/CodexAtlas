@@ -6,7 +6,34 @@ aka: ["Hellenistic Egyptian religion", "interpretatio graeca / aegyptiaca"]
 category: "ritual"
 appearances: ["[[phase-2-028-herodotus-histories-book-2]]", "[[phase-3-025-manetho-aegyptiaca]]", "[[phase-3-026-diodorus-bibliotheca-book-1]]", "[[phase-3-021-hermetic-corpus-earliest]]", "[[phase-4-011-corpus-hermeticum-i]]", "[[phase-4-012-asclepius]]", "[[phase-4-020-iamblichus-on-the-mysteries]]", "[[phase-4-072-plutarch-de-iside-et-osiride]]"]
 deity-instances: ["[[hermes-trismegistus]]", "[[serapis]]", "[[isis-hellenistic]]", "[[amun]]", "[[amun-ra]]", "[[asclepius-greek]]", "[[imhotep]]"]
-status: "stub"
+traditions-where-attested:
+  - "[[tradition-hellenistic-philosophy]]"
+  - "[[tradition-hellenistic-alchemy]]"
+  - "[[tradition-hermeticism]]"
+  - "[[tradition-isis-mysteries]]"
+  - "[[tradition-egyptian]]"
+  - "[[tradition-egyptian-religion]]"
+  - "[[tradition-greek-religion]]"
+  - "[[tradition-neoplatonism]]"
+related-themes:
+  - "[[syncretism-deliberate]]"
+  - "[[theme-baal-set-syncretism]]"
+  - "[[bronze-age-substrate-of-greek-religion]]"
+  - "[[prisca-theologia]]"
+hub-edges:
+  - target: "theme-egyptian-gnostic-transmission"
+    type: "Hellenistic-condition-of-transmission"
+    source: "Fowden 1986 *The Egyptian Hermes*; Pearson 1990 *Gnosticism, Judaism, and Egyptian Christianity*; Bagnall 1993 *Egypt in Late Antiquity* — Egyptian-Greek syncretism is the Hellenistic religious-cultural framework within which Egyptian theological material crystallizes into Greek-language Hermetic and Gnostic forms; Fowden's five chains of Egyptian-to-Gnostic continuity all operate within this syncretic vocabulary. The four-document spine (Herodotus → Manetho → Diodorus → Plutarch) is the textual evidence of the syncretism's continuous evolution"
+    notes: "Cross-theme: 06_themes → 06_themes. Sibling-condition-theme of the 317L Egyptian-Gnostic-transmission hub"
+  - target: "hermetic-transmission-chain"
+    type: "founding-syncretic-condition-of-chain"
+    source: "Fowden 1986; Copenhaver 1992 *Hermetica*; Yates 1964 *Giordano Bruno and the Hermetic Tradition* — the Hermetic Corpus is the prime articulation of Egyptian-Greek syncretism (Hermes Trismegistus = Hellenized Thoth); the 2,300-year hermetic-transmission-chain presupposes Egyptian-Greek syncretism as its founding condition. Imhotep/Asklepios identification is the most consequential single instance and grounds the *Asclepius* dialogue"
+    notes: "Cross-theme: 06_themes → 06_themes. Bridge-conditional of the 187L hermetic-chain hub"
+  - target: "third-century-collision-zone"
+    type: "Hellenistic-substrate-of-collision-zone"
+    source: "Brown 1971 *The World of Late Antiquity*; Fowden 1993 *Empire to Commonwealth*; Bagnall 1993 — the 3rd-c. collision zone in Alexandria operates ON TOP OF a 300-year-deep Egyptian-Greek syncretic framework (Serapis cult founded -300 by Ptolemy I; the Isis-mysteries spread; the Hellenistic-Egyptian temple-priestly tradition). Without this substrate the collision has no shared theological-vocabulary to collide on"
+    notes: "Cross-theme: 06_themes → 06_themes"
+status: "metadata"
 refs:
   - title: "The Egyptian Hermes: A Historical Approach to the Late Pagan Mind"
     author: "Fowden, Garth"
