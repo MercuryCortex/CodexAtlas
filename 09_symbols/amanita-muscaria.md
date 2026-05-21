@@ -34,6 +34,11 @@ cross-symbol-edges:
     notes: "The Siberian shaman's Amanita muscaria journey IS the axis-mundi descent in its fungal form: the shaman ascends the World Tree (the mushroom's cap inverted = a cosmic dome; the stalk = the world-pillar in some Siberian cosmologies) to the upper world, or descends its roots to the lower world. The mushroom = a portable world-axis in Siberian shamanic cosmology"
     refs: ["Eliade 1964"]
 mystery-status: "contested"
+hub-edges:
+  - target: "theme-soma-haoma-eucharist"
+    type: "contested-substance-identification-of-Soma-pole"
+    source: "Wasson 1968 *Soma: Divine Mushroom of Immortality* (Tier 2 — influential, not consensus); Ott 1993 *Pharmacotheon* (Tier 1 pharmacology); Schultes & Hofmann 1979 *Plants of the Gods*; Wujastyk 2003 'Soma in Brahmin Tradition' (Tier 1 critical assessment); Eliade 1964 *Shamanism: Archaic Techniques of Ecstasy* — Wasson's 1968 identification of Vedic Soma with Amanita muscaria is the single most influential ethnomycological proposal for the substance underlying the Indo-Iranian pole of the ritual-meal chain; current Vedic scholarship largely rejects the mushroom identification (favoring Ephedra or Peganum harmala), but the substance-question remains the principal contested anchor of the soma-haoma-eucharist hub's Indo-European root"
+    notes: "Cross-lens: 09_symbols → 06_themes. Tier-discipline: Wasson is Tier-2, the broader Siberian-shamanic ethnographic record is Tier-1; the contested identification belongs in the hub regardless of resolution direction"
 status: "full"
 refs:
   - title: "Soma: Divine Mushroom of Immortality"

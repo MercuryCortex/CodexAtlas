@@ -37,6 +37,15 @@ cross-symbol-edges:
     notes: "The ayahuasca ceremony is accompanied by *icaros* (spirit songs sung by the healer/shaman) rather than a drum — but the structural function is identical: the sonic vehicle that guides the shaman's and initiate's journey through the spirit world. The icaro IS the shaman's drum in sonic form: it marks the path, calls the spirits, and guides the return"
     refs: ["Shanon 2002"]
 mystery-status: "documented"
+hub-edges:
+  - target: "theme-soma-haoma-eucharist"
+    type: "Amazonian-independent-parallel-of-ritual-meal-pattern"
+    source: "Shanon 2002 *The Antipodes of the Mind* (Oxford UP, 1 Tier); Schultes & Hofmann 1979 *Plants of the Gods*; Metzner 1999 *Ayahuasca: Hallucinogens, Consciousness, and the Spirit of Nature*; Labate & MacRae 2010 *Ayahuasca, Ritual and Religion in Brazil* — ayahuasca is the Amazonian-independent parallel-form articulation of the cross-tradition ritual-plant-sacrament pattern. The Santo Daime + UDV Christian-syncretic incorporations (1930s-1961 onward) make ayahuasca the most striking modern syncretic-fusion case of indigenous-plant-sacrament with Christian liturgical content (parallel to the Native American Church / peyote pattern)"
+    notes: "Cross-lens: 09_symbols → 06_themes. Tier-discipline: independent-convergence not transmission; the Indo-European soma-haoma-eucharist chain and the Amazonian ayahuasca tradition arise separately. The syncretic UDV + Santo Daime developments parallel NAC/peyote as documented modern Christian-plant-sacrament syncretisms"
+  - target: "serpent-dual-nature"
+    type: "neurobiological-substrate-of-serpent-universal"
+    source: "Shanon 2002 (Oxford UP) — Shanon's systematic phenomenological study of 178 ayahuasca interviews documents the giant-serpent vision as the SINGLE most common visionary content across thousands of reports from multiple cultures; the neurobiological universality of serpent visions under 5-HT2A agonism (the pharmacological mode of action of DMT in ayahuasca) is one of the strongest current hypotheses for the global prevalence of the divine-serpent symbol across cultures with no documented historical contact"
+    notes: "Cross-lens: 09_symbols → 06_themes. MASSIVE-WIN: the serpent-dual-nature hub may have a neurobiological-universal substrate via 5-HT2A agonism; Shanon 2002 is the principal scholarly anchor for that hypothesis"
 status: "full"
 refs:
   - title: "The Antipodes of the Mind: Charting the Phenomenology of the Ayahuasca Experience"

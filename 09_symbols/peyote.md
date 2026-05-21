@@ -37,6 +37,11 @@ cross-symbol-edges:
     notes: "In the NAC syncretic tradition, peyote occupies the sacramental role of wine in Christian ceremony: it is the sacred substance consumed in the ritual meal that mediates communion with the divine. The NAC's integration of peyote with Christian prayer is one of the most significant living syncretic-fusion examples in religious history"
     refs: ["Stewart 1987"]
 mystery-status: "documented"
+hub-edges:
+  - target: "theme-soma-haoma-eucharist"
+    type: "Americas-independent-parallel-of-ritual-sacrament-pattern"
+    source: "El-Seedi et al. 2005 *Journal of Ethnopharmacology* 98 (carbon-dating to ~3700 BCE Shumla Caves); Myerhoff 1974 *Peyote Hunt*; Stewart 1987 *Peyote Religion: A History* — peyote is the principal Americas-independent instance of the cross-tradition ritual-sacrament pattern: 5,700-year continuity of plant-as-sacrament usage; ~250,000-member Native American Church integrates peyote with Christian liturgy as the sacramental substance (one of the most significant living syncretic-fusion examples). The Indo-European soma-haoma-eucharist chain and the Americas peyote tradition are independent convergences"
+    notes: "Cross-lens: 09_symbols → 06_themes. Tier-discipline: this is NOT transmission — peyote in the Americas predates Eurasian contact by millennia. The connection to soma-haoma-eucharist is parallel-form/independent-convergence, marked as such"
 status: "full"
 refs:
   - title: "Prehistoric Peyote Use: Alkaloid Analysis and Radiocarbon Dating of Archaeological Specimens of Lophophora from Texas"
