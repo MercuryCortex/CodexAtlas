@@ -14,13 +14,13 @@ parent-of: []
 child-of: ["[[tlazolteotl]] (in some mythographic traditions)"]
 consort: ["[[xochiquetzal]] (in some traditions)"]
 attributes: ["young male figure with maize-ear emerging from headdress", "yellow body paint", "spear", "the corn-husk"]
-attested-in: ["[[phase-6-002-florentine-codex]]"]
+attested-in: ["[[phase-8-004-florentine-codex-sahagun]]"]
 equivalents: ["[[mayahuel]] (the maguey/pulque-mother, female counterpart in the broader agricultural complex)", "[[corn-mother]] (structural parallel — body-of-the-deity-is-the-cultivar)"]
 syncretic-edges:
   - target: "[[corn-mother]]"
     type: "structural-parallel"
     source: "Both are deities whose body IS the maize plant; the Aztec cluster is gendered (Centeotl male / Chicomecoatl mature female / Xilonen young female) while the Cherokee Selu / Pueblo Corn Maidens are exclusively female"
-status: "stub"
+status: "metadata"
 refs:
   - title: "Aztec Religion and the Cosmovision"
     author: "Carrasco, David"

@@ -227,3 +227,20 @@ Both files are 105 lines, both `status: "full"`, both cover the same Greek deity
 **Wikilinks scanned:** ~80 unique targets. 1 dead-link fixed across 2 files.
 
 ---
+
+## Batch 12 — brigid → chaac (2026-05-21)
+
+**Files:** brigid, bunjil, cagn, cao-dai-god, catequil, centeotl, ceres-roman, cernunnos, cerridwen, chaac.
+
+**Fixes applied:**
+
+- 5 status flips stub → metadata (catequil, centeotl, ceres-roman, cerridwen, chaac). `chaac.md` had `status: stub` (unquoted) instead of the more common `status: "stub"` — quote-styles vary file-to-file across the lens; both YAML-valid; the sed pattern in my flip-script missed unquoted form. Caught it on the spot-check.
+- `centeotl.md` — fixed dead `[[phase-6-002-florentine-codex]]` → `[[phase-8-004-florentine-codex-sahagun]]`. **Third instance of the phase-6 / phase-8 misnumbering** pattern in three batches (Chilam Balam x2 in batch 11, now Florentine Codex). Looks like a single authoring batch consistently put non-western primary texts into phase 6 (early modern) when they belong in phase 8.
+- `cernunnos.md` — unwrapped `[[methodology]]` (refers to `00_meta/methodology.md` — a meta doc, not a graph node; the dead link was a passing methodological aside).
+- `bunjil.md` referenced `[[waa-the-crow]]` which didn't exist. Created `03_deities/waa-the-crow.md` as a metadata-tier stub (Kulin moiety-ancestor binary Bunjil/Waa, fire-bringer tradition, Howitt 1904 citation). The Bunjil/Waa binary is structurally important for the Aboriginal-Australian section so the wikilink shouldn't be unwrapped.
+
+**Convention finding (`chaac.md`):** the deity lens has mixed YAML quote-styles. Some files use `status: "stub"`, others `status: stub`. Both valid; just a heads-up for any future blind regex-flip.
+
+**Wikilinks scanned:** ~95 unique targets. 2 dead-links fixed (1 rewrite + 1 outward-stub) + 1 unwrap.
+
+---

@@ -2,7 +2,7 @@
 id: chaac
 title: "Chaac"
 type: deity
-status: stub
+status: metadata
 tier: 2
 tradition: tradition-maya-religion
 date_earliest: -300

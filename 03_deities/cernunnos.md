@@ -45,7 +45,7 @@ Antlered nature-god of the Celts — the cross-legged **horned figure** holding 
 
 ## Cross-tradition identifications
 - **[[pan-greek]]** — *parallel-motif*: horned wild-nature god.
-- **Pashupati seal** — *parallel-form* (NOT *ancestor-of*; per [[methodology]] symbol-research discipline): visual cognacy without documented transmission.
+- **Pashupati seal** — *parallel-form* (NOT *ancestor-of*; per vault methodology — symbol-research discipline): visual cognacy without documented transmission.
 
 ## Iconography
 The single most distinctive Celtic divine iconography: stag-antlered, cross-legged, holding a torc (Celtic status-marker) and a horned/ram-headed serpent (uniquely Celtic motif).

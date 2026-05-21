@@ -15,7 +15,7 @@ consort: ["Tegid Foel (a lake-giant associated with Lake Tegid)"]
 attributes: ["cauldron of awen (one year's brew of divine inspiration)", "shape-shifting (greyhound, otter, hawk, black hen)", "herbalism (precise astrological gathering of magical herbs)"]
 attested-in: ["Book of Taliesin (Llyfr Taliesin, c. 1275 CE)", "Hanes Taliesin (The Story of Taliesin, various manuscript sources)"]
 mystery-status: "documented"
-status: "stub"
+status: "metadata"
 cross-links:
   - target: "[[sacred-cauldron]]"
     type: "owns"
