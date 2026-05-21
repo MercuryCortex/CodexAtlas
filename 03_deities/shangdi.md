@@ -21,7 +21,7 @@ syncretic-edges:
     type: "scholarly-parallel"
     source: "Eno 1990, The Confucian Creation of Heaven; Puett 2002"
     notes: "In the Zhou period Tian (Heaven) gradually replaces Shangdi as the supreme cosmic principle; the two are partly distinct, partly overlapping. Christian missionaries (Matteo Ricci, 1583) used 'Shangdi' as a translation for the Christian God."
-status: "stub"
+status: "metadata"
 refs:
   - title: "Sources of Shang History: The Oracle-Bone Inscriptions of Bronze Age China"
     author: "Keightley, David N."
