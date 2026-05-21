@@ -29,7 +29,7 @@ syncretic-edges:
     type: "emanation-of"
     source: "Idowu (1962). Olodumare: God in Yoruba Belief."
     notes: "In some Yoruba theological accounts, Olokun is the orisha who most closely represents the unfathomable, inscrutable aspect of Olodumare (the supreme deity) — because the deep ocean floor is literally beyond human sight or comprehension, like the divine essence itself."
-status: "stub"
+status: "metadata"
 refs:
   - title: "Olodumare: God in Yoruba Belief"
     author: "Idowu, E. Bolaji"
