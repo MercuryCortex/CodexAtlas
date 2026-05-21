@@ -14,7 +14,7 @@ parent-of: []
 child-of: []
 consort: ["Vellamo (goddess of water and fishing; his wife; queen of Ahtola)"]
 attributes: ["underwater realm Ahtola", "fish (his charges)", "fishing nets", "blue-green beard of lake-weed", "storms (when angered)"]
-attested-in: []
+attested-in: ["[[phase-8-018-kalevala]]"]
 syncretic-edges:
   - target: "[[enki-ea]] (lord of the Abzu / underground fresh water; abundance of water)"
     type: "scholarly-parallel"

@@ -10,12 +10,11 @@ period-active-latest: 700
 domains: ["wisdom", "truth (aša)", "creation", "supreme deity"]
 gender: "masculine (transcendent / non-anthropomorphic in Gathic theology)"
 role: "supreme god; uncreated creator; principle of truth and good"
-parent-of: ["Spenta Mainyu (the Bounteous Spirit, in some accounts identified with Ahura Mazda himself)"]
+parent-of: ["[[asha-vahishta]] (the first Amesha Spenta)", "[[vohu-manah]] (the second Amesha Spenta)", "[[atar]] (the divine fire)", "Spenta Mainyu (the Bounteous Spirit, in some accounts identified with Ahura Mazda himself)"]
 child-of: []
 consort: ["Spənta Ārmaiti (Holy Devotion, an Amesha Spenta) in some traditions"]
 attributes: ["winged-disc fravahar (later iconography)", "fire as symbol/presence", "the seven Amesha Spentas as his hypostases"]
 attested-in: ["[[phase-2-002-gathas-of-zarathustra]]", "[[phase-2-004-yasna-younger-avesta]]", "Achaemenid royal inscriptions (Bisotun / [[darius-i-the-great]]'s Behistun Inscription, Persepolis, Naqsh-e Rustam)"]
-parent-of: ["[[asha-vahishta]] (the first Amesha Spenta)", "[[vohu-manah]] (the second Amesha Spenta)", "[[atar]] (the divine fire)", "Spenta Mainyu (the Bounteous Spirit, in some accounts identified with Ahura Mazda himself)"]
 related-events: ["[[event-cyrus-conquest-of-babylon-539-bce]]"]
 eschatological-agents: ["[[saoshyant]] (the future cosmic-savior whose deeds inaugurate the [[frashokereti-cosmic-renovation]])", "[[sraosha]] (psychopomp at the [[cinvat-bridge-judgment|Cinvat Bridge]])"]
 priestly-class: "[[the-magi]]"
@@ -29,7 +28,7 @@ syncretic-edges:
     type: "scholarly-parallel"
     source: "Boyce & Grenet 1991; Shaked 1984"
     notes: "Persian-period contact: structural and functional parallels between Ahura Mazda's role and the post-exilic Jewish development of YHWH as transcendent sole god."
-status: "stub"
+status: "metadata"
 refs:
   - title: "A History of Zoroastrianism, vol. I-III"
     author: "Boyce, Mary (with Grenet for vol. III)"

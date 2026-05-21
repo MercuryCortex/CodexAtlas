@@ -34,3 +34,33 @@ Recommendation: option 3. But this requires a vault-wide wikilink rewrite (`[[ad
 - `abrasax` already wires the gematria-as-cosmology grid across 5 traditions in the body. Excellent template for what RANK A looks like.
 
 ---
+
+## Batch 2 — aganju → al-haqq (2026-05-21)
+
+**Files:** aganju, agathos-daimon, agni, ah-puch, ahriman, ahti, ahura-mazda, aine, akshobhya, al-haqq.
+
+**State on arrival:** another high-quality batch. 6/10 had `status: "stub"` while carrying 50–140 lines of structured YAML + body — exactly the over-application pattern the stubs audit identified. Zero dead wikilinks across all 63 unique targets — best result yet, suggesting the deities lens has cleaner wiring discipline than `04_persons/`.
+
+**Fixes applied:**
+
+- `aganju.md` — flipped `status: stub` → `metadata`. 62 lines with full syncretic-edges grid (Shango / Vulcan / Hephaestus / Pele).
+- `agathos-daimon.md` — populated empty `attested-in: []` with `[[phase-4-011-corpus-hermeticum-i]]` + `[[phase-3-021-hermetic-corpus-earliest]]`. The Agathos Daimon's revealer role is documented in CH XVI and the Stobaean fragments; CH I (Poimandres) is the closest existing node.
+- `agni.md` — three changes: (a) syncretic-edges target `atar-zoroastrian` corrected to `atar` (no such suffixed file); (b) edge type changed from `scholarly-parallel` to `shared-inheritance` — Agni ↔ Atar are Indo-Iranian cognates from common pre-IIr fire-cult, not later structural parallel; (c) status stub → metadata. Promoted equivalents to include `[[atar]]` directly.
+- `ah-puch.md` — already RANK A, no change.
+- `ahriman.md` — populated empty `attested-in` (Gathas + Younger Avesta); added syncretic-edge target braket fix (`[[flint-deity]]` → `flint-deity` per YAML field convention); flagged duplicate with `angra-mainyu-ahriman.md`. **The Flint/Haudenosaunee MASSIVE-WIN parallel was unique to `ahriman.md` and would have been LOST on naive consolidation** — I have additively copied it into `angra-mainyu-ahriman.md` so either file can be safely deprecated by John.
+- `angra-mainyu-ahriman.md` (out-of-batch but touched defensively) — added the Flint/Haudenosaunee scholarly-parallel from `ahriman.md` so the cross-tradition link survives any future merge.
+- `ahti.md` — populated empty `attested-in: []` with `[[phase-8-018-kalevala]]`.
+- `ahura-mazda.md` — **fixed a real YAML bug**: duplicate `parent-of:` key (lines 13 + 18). YAML parsers silently drop the first occurrence, meaning Spenta Mainyu was the only declared offspring downstream. Merged the two parent-of lists into one entry on line 13 (the richer one with Asha Vahishta, Vohu Manah, Atar, and Spenta Mainyu). Also flipped status stub → metadata.
+- `aine.md` — already at RANK A modulo empty `attested-in:`. No appropriate primary-source document node exists in the vault (no Lebor Gabála Érenn, Acallam na Senórach, or Aislinge Óenguso nodes). Left empty; flagged for a future Irish-Celtic absorption wave.
+- `akshobhya.md` — flipped status stub → metadata. Already had Indra-vajra MASSIVE-WIN edge.
+- `al-haqq.md` — flipped status stub → metadata.
+
+**Systemic finding: `status: "stub"` saturation in the deities lens.**
+
+The stubs audit flagged this (590 stubs ≥30 lines, mis-labeled). Confirmed in this batch: 6/10 deities carried the stub flag while having complete YAML + multi-paragraph body + multi-tier refs + syncretic-edges arrays. The stubs audit's recommendation #1 (one-shot reclassification) is correct in principle; doing it deity-by-deity in this sweep is slower but catches *associated* issues at the same time (Agni's mis-suffixed Atar target, ahura-mazda's duplicate YAML key) that a blind regex-flip would not. Continuing per-file inspection.
+
+**Duplicate cluster #2:** `ahriman.md` ↔ `angra-mainyu-ahriman.md`. Same recommendation pattern as the adonis cluster. The `angra-mainyu-ahriman.md` slug is the higher-in-degree one (57 inbound per the stubs audit) and carries the MASSIVE-WIN Satan-transfer content; recommend deprecating `ahriman.md` in favor of it, with a vault-wide `[[ahriman]]` → `[[angra-mainyu-ahriman]]` rewrite. Flint parallel already preserved in the canonical node.
+
+**Wikilinks scanned:** 63 unique targets across 10 files. **0 dead links.**
+
+---

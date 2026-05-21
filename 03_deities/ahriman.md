@@ -14,12 +14,13 @@ parent-of: []
 child-of: []
 consort: []
 attributes: ["darkness", "serpent", "destruction", "the twin who chose evil at the primordial moment of choice (Yasna 30)"]
-attested-in: []
-equivalents: []
+attested-in: ["[[phase-2-002-gathas-of-zarathustra]]", "[[phase-2-004-yasna-younger-avesta]]"]
+equivalents: ["[[angra-mainyu-ahriman]] (alias — same figure under combined-name slug)"]
 syncretic-edges:
-  - target: "[[flint-deity]]"
+  - target: "flint-deity"
     type: "scholarly-parallel"
     source: "Structural parallel: both are the destructive twin/adversary in a cosmic dualism opposed by a good-mind creator figure (Sapling / Ahura Mazda). Independent convergence. No transmission documented. See tradition-haudenosaunee MASSIVE WIN section."
+# DUPLICATE WARNING: see also 03_deities/angra-mainyu-ahriman.md — same deity, far richer node (62 lines, MASSIVE-WIN-tagged Satan-transfer content). The Flint/Haudenosaunee parallel here is UNIQUE to this file and must be preserved on any consolidation. See AUDIT/forge-deity-spine-findings-2026-05-21.md.
 status: "stub"
 refs:
   - title: "The Encyclopedia of Religion"

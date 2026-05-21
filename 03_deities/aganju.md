@@ -31,7 +31,7 @@ syncretic-edges:
   - target: "pele"
     type: "scholarly-parallel"
     source: "Mbiti 1991 — Hawaiian Pele as volcano goddess (gender-inverted parallel); Aganju as Yoruba volcano-and-fire-of-earth god"
-status: "stub"
+status: "metadata"
 refs:
   - title: "Notes sur le culte des Orisha et Vodun à Bahia"
     author: "Verger, Pierre Fatumbi"

@@ -19,7 +19,7 @@ syncretic-edges:
   - target: "the-godhead-eckhart"
     type: "scholarly-parallel"
     source: "Sells 1994; structurally parallel apophatic-Real-beyond-manifestation"
-status: "stub"
+status: "metadata"
 refs:
   - title: "Ibn al-ʿArabī's Metaphysics of Imagination: The Sufi Path of Knowledge"
     author: "Chittick, William C."

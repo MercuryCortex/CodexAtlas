@@ -30,7 +30,7 @@ syncretic-edges:
     type: "scholarly-parallel"
     source: "Snellgrove 1987 — Akshobhya is the head of the Vajra family of Buddhas; Vajrapani is the wrathful bodhisattva of that family; both inherit Indra's vajra"
     notes: "Within-family vajra-cluster pairing"
-status: "stub"
+status: "metadata"
 refs:
   - title: "Indo-Tibetan Buddhism"
     author: "Snellgrove, David"

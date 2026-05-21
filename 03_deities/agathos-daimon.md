@@ -14,7 +14,7 @@ parent-of: []
 child-of: []
 consort: []
 attributes: ["serpent (especially a coiled serpent or uraeus)", "libation cup (phiale)", "grain stalk", "cornucopia", "poppy"]
-attested-in: []
+attested-in: ["[[phase-4-011-corpus-hermeticum-i]]", "[[phase-3-021-hermetic-corpus-earliest]]"]
 equivalents: ["[[hermes-trismegistus]]", "[[nous-hermetic]]", "[[sophia-gnostic]]", "[[ningishzida]]", "[[asclepius-greek]]", "[[the-shepherd-angel-of-repentance]]"]
 syncretic-edges:
   - target: "[[hermes-trismegistus]]"

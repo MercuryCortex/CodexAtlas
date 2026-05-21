@@ -15,12 +15,12 @@ child-of: ["various — born of many; born in the waters, born of friction-stick
 consort: ["Svāhā"]
 attributes: ["seven tongues of flame", "two heads", "rides a ram", "carries the sacrificial offering to the gods"]
 attested-in: ["[[phase-2-001-rig-veda-family-books]]", "[[phase-2-003-atharva-veda]]", "[[phase-2-006-brahmanas-aranyakas]]"]
-equivalents: []
+equivalents: ["[[atar]] (Indo-Iranian cognate — Zoroastrian holy fire)"]
 syncretic-edges:
-  - target: "atar-zoroastrian"
-    type: "scholarly-parallel"
-    source: "Boyce 1975, A History of Zoroastrianism vol. I"
-status: "stub"
+  - target: "atar"
+    type: "shared-inheritance"
+    source: "Boyce 1975, A History of Zoroastrianism vol. I — Agni and Atar are Indo-Iranian cognates, not parallels: both descend from a common pre-Indo-Iranian fire-cult and ritual vocabulary (Vedic *hotṛ* ↔ Avestan *zaotar*). The relationship is shared inheritance, not later borrowing."
+status: "metadata"
 refs:
   - title: "The Rigveda: The Earliest Religious Poetry of India"
     author: "Jamison, S.W. and Brereton, J.P."
