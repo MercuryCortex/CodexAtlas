@@ -26,6 +26,10 @@ syncretic-edges:
   - target: "[[jesus-the-splendor]]"
     type: "scholarly-parallel"
     source: "Manichaean Jesus the Splendor is a parallel cosmic-Christ figure with shared structural elements; not the same as the Christian Christ"
+  - target: "[[zeus-pantokrator-transmission]]"
+    type: "iconographic-transmission-hypothesis"
+    source: "Grabar 1968; Mathews 1993; Mango 1972 — the Christ-as-cosmic-ruler iconographic type (enthroned, bearded, frontal, right-hand-raised) inherits formal vocabulary from the Phidian Zeus of Olympia via the documented presence of the statue in the Lauseion at Constantinople (~391–426 CE) during the precise period when the Pantokrator type crystallizes (5th–6th c. CE). Tier 2–3 hypothesis (Jensen 2005 skeptic); see [[zeus-pantokrator-transmission]] for full chain"
+    notes: "MASSIVE-WIN: pertains to the Pantokrator iconographic emergence rather than to Christological doctrine; the divine subject is the same, but the *image-form* may carry an unacknowledged pagan-sculptural lineage"
 status: "metadata"
 refs:
   - title: "The Christian Tradition, vol. 1: The Emergence of the Catholic Tradition (100-600)"

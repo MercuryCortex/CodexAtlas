@@ -30,6 +30,10 @@ syncretic-edges:
   - target: "phanes-protogonos"
     type: "ancient-identification"
     source: "Orphic Rhapsodic Theogony: Zeus swallows [[phanes-protogonos]] (the first-born from the cosmic egg laid by [[nyx-primordial]]) and re-originates the cosmos from within himself — the Orphic basis for the Zeus-is-all henotheist articulation"
+  - target: "christ-pantokrator"
+    type: "iconographic-transmission-hypothesis"
+    source: "Grabar 1968, *Christian Iconography*; Mathews 1993, *The Clash of Gods*; Mango 1972, *The Art of the Byzantine Empire* — Phidias' chryselephantine Zeus at Olympia (c. 435 BCE) → reportedly transported to the Lauseion palace in Constantinople (~391–426 CE, per Cedrenus and the Suda) → its enthroned-frontal-bearded-right-hand-raised posture is the only well-attested antecedent in Mediterranean culture for the Christ Pantokrator iconographic type that crystallizes in the 5th–6th c. CE precisely when the Zeus was documented in the imperial city. See [[zeus-pantokrator-transmission]]"
+    notes: "MASSIVE-WIN: contested Tier-2/3 transmission hypothesis (Lauseion gap is permanent; Jensen 2005 is Tier-1 skeptic) — but if even partially correct it is the longest documented religious transmission chain in the vault (~2,400 years from Phidias' chisel to global Christian iconography)"
 status: "metadata"
 refs:
   - title: "Greek Religion"
