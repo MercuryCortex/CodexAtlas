@@ -1,6 +1,6 @@
 # HANDOFF — Bridge-Hub Cross-Lens Wiring (2026-05-21)
 
-> **Read this first if you're a fresh agent picking up Lane A bridge-wiring work.** Status as of commit `b496253` (Phase 16 complete; SEVEN-lens navigable + 5 medium-stub themes promoted; the named bridge-hub queue is CLOSED). Read `STATUS.md` top entries for the per-phase detail; this file is the synthesis.
+> **Read this first if you're a fresh agent picking up Lane A bridge-wiring / cleanup work.** Status as of commit `fbe1e5f` (Phase 17 essay series COMPLETE + Buckets A/B/C dead-link sweep COMPLETE — 564/703 baseline, down 14.8% in occurrences from the 595/825 starting baseline). Read `STATUS.md` top entries for the per-phase detail; this file is the synthesis.
 
 ---
 
@@ -22,11 +22,13 @@ Twelve phases of progressive vault densification:
 | 14 | Symbol-end audit (09_symbols → 06_themes) | ~26 |
 | 15 | Place-end audit (08_places → 06_themes) | ~30 |
 | 16 | Medium-stub theme promotion (5 themes stub→metadata) | ~11 |
-| **TOTAL** | **~450 hub-edges across 28+ substantial bridge hubs from 7 lens-poles** | |
+| 17 | MASSIVE-WIN narrative essay series (5 essays + collection README) | — (1,203 lines of cross-tradition scholarship) |
+| Post-17 | Dead-link sweep Buckets A+B+C (placeholder cleanup + 17 slug rewrites + 14 substantive new stubs) | — (−122 dead occurrences, +16 new nodes) |
+| **TOTAL** | **~450 hub-edges across 28+ substantial bridge hubs from 7 lens-poles + 5 essays + 14 new stubs** | |
 
-**Vault baseline dead-link count: 595/825 (unchanged across Phases 13-16). WIRING LAW held — 0 dead links shipped across ~152 commits.**
+**Vault baseline dead-link count: 564/703 (down from 595/825 starting baseline; −31 targets, −122 occurrences). WIRING LAW held — 0 dead links shipped across ~160 commits.**
 
-**Cross-lens bridge-hub wiring + theme-promotion queue COMPLETE.** Every substantial bridge hub is now reachable from every legitimate lens-pole; the 5 medium-stub themes John flagged for promotion are now substantial-metadata bridge hubs.
+**Cross-lens bridge-hub wiring + theme-promotion queue + Phase-17 essay series + cleanup buckets COMPLETE.** Every substantial bridge hub is reachable from every legitimate lens-pole; 5 essays make the cross-tradition spine legible as scholarship; the easy-cleanup pass has closed all high-occurrence dead-link clusters.
 
 ---
 
@@ -101,10 +103,20 @@ After 15 phases (~439 hub-edges, ~150 commits, zero dead links), the cross-tradi
 - ~11 cross-theme hub-edges added (06_themes → 06_themes within-lens wiring per dogma adaptation).
 - `syncretism-deliberate` got prose expansion 36→~80 lines covering 6 cross-tradition instances spanning ~2,300 years (Ptolemaic Serapis → Manichaeism → Renaissance prisca theologia → Akbar's Din-i-Ilahi → Bahá'í Faith → Cao Dai), with structural-variables-frame as novel scholarship.
 
-### Remaining queue (lower priority)
-- **Vault-wide 594-target dead-link sweep** — the long-standing pre-existing baseline (~80% are auto-generated A2-batch stubs needing content)
-- **Place stub-prose content** — all 11 Phase-15 places (alexandria, constantinople, antioch, ctesiphon, merv, samarkand, dunhuang, bukhara, mecca, umayyad-caliphate, sasanian-empire) have rich hub-edge semantic content but thin prose; a content pass would round them out
-- **Hub-edge back-edge audit** — verify each of the 28 substantial bridge hubs has its 7-lens companion-pole coverage actually visible at the hub (rather than only at the source lens-end); ad hoc scan of theme-soma-haoma-eucharist as the most-densely-wired exemplar would confirm
+### Remaining queue (the work left)
+
+#### High-leverage but bigger-scope
+- **Multi-hub connector audit** — surface figures/events that appear at MULTIPLE 28-hubs simultaneously as a discoverable cross-pattern finding. Suhrawardī sits at executed-divine-claimant + soul-exile-longing; Mani sits at executed-divine-claimant + theme-manichaeism-synthesis + soul-exile-longing + third-century-collision-zone; Hallaj similar. This would be a new MASSIVE-WIN finding the Phase-17 essays implied but didn't formalize. ~half-day of investigation work + a possible 6th essay or audit document.
+- **Place prose pass** — 11 Phase-15 places (place-alexandria, place-constantinople, place-antioch, place-ctesiphon, place-merv, place-samarkand, place-dunhuang, place-bukhara, mecca-place, umayyad-caliphate, sasanian-empire) all have rich YAML hub-edges from Phase 15 but thin prose. ~150-200 lines of scholarly prose per place = ~1,500-2,200 lines of cross-tradition content work.
+
+#### Slower / lower-leverage
+- **Bucket C continuation** — keep stubbing the remaining ~250 2-occurrence dead targets one by one. Each stub closes ~2 occurrences but requires real scholarship per node. Diminishing returns vs Buckets A+B+C-subset rate.
+- **Hub-edge back-edge visibility audit** — verify each of the 28 substantial bridge hubs has its 7-lens companion-pole coverage visible AT THE HUB (rather than only at the source lens-end); audit pass.
+
+### Done in this session block (2026-05-21)
+- Phase 17 essay series (5 essays + collection README, ~1,203 lines of cross-tradition scholarship)
+- Buckets A+B+C dead-link sweep (16 new substantive stubs + 17 slug rewrites + 50+ backtick-conversions)
+- Phase-17 essay series + cleanup buckets are the COMPLETE deliverables for this session block
 
 ---
 
@@ -160,13 +172,13 @@ python3 linkcheck.py 2>&1 | tail -3
 # Expected: "TOTAL DEAD: 594 targets / 823 occurrences" (unchanged)
 ```
 
-If the number rises after your batch, you introduced a dead link — find the new `[[slug]]` you added that doesn't resolve and either rewrite to the canonical slug OR stub the target.
+If the number rises after your batch, you introduced a dead link — find the new ``slug`` you added that doesn't resolve and either rewrite to the canonical slug OR stub the target.
 
 ---
 
 ## What to tell the new agent (one-paragraph brief)
 
-> **The bridge-hub cross-lens wiring project (Phases 7-15) is COMPLETE and the medium-stub theme promotion queue (Phase 16) is CLOSED** at `~/Desktop/Codex Atlas` (commit `b496253`). ~450 hub-edges from 7 lens-poles to 28+ substantial bridge hubs; vault baseline 595/825 dead-link count unchanged across ~152 commits. The remaining queue is lower-priority maintenance work: (1) vault-wide 594-target dead-link sweep (~80% are A2-batch auto-stubs needing content), (2) prose-content pass on the 11 Phase-15 places (rich hub-edge semantic content + thin prose), (3) hub-edge back-edge visibility audit at each of the 28 hubs. If the user requests more wiring work, read this handoff first — it lists the 28 hubs, the 7 cardinal rules, the lens-aware edge pattern, and the Phase 10-16 format. Never touch Lane B paths (src/, index.html, build_*.py). Lane A slot is OPEN.
+> **The cross-tradition spine the Codex Atlas was built to investigate is now legible at THREE altitudes** (YAML hub-edges Phases 7-16, individual hub-file prose Phases 10-16, Phase-17 cross-hub essays at `00_meta/MASSIVE-WIN-essays/`) at `~/Desktop/Codex Atlas` (commit `fbe1e5f`). Dead-link baseline is **564/703 occurrences** (down 14.8% in this session block from the 595/825 pre-cleanup baseline; WIRING LAW held across ~160 commits). The natural next-step menu: (1) **Multi-hub connector audit** — surface figures/events at multiple 28-hubs simultaneously (Suhrawardī, Mani, Hallaj) as a discoverable cross-pattern finding; ~half-day + possible 6th essay; (2) **Phase-15 place prose pass** — 11 places with rich YAML edges but thin prose, ~1,500-2,200 lines of scholarly content; (3) **Bucket C continuation** — slower stub-by-stub dead-link sweep, ~250 2-occurrence targets remaining; (4) **Hub-edge back-edge audit** — verify each of 28 hubs has visible 7-lens companion coverage. Read this handoff + `STATUS.md` top entries before starting. **Lessons memorialized in memory**: `feedback_status_log_backtick_wikilinks.md` (use backticks not ``...`` when describing dead slugs in STATUS prose, or linkcheck will count them as new dead links). Never touch Lane B paths (src/, index.html, build_*.py). Lane A slot is OPEN.
 
 ---
 
