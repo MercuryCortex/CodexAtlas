@@ -24,7 +24,7 @@ syncretic-edges:
   - target: "[[chaos-primordial]]"
     type: "scholarly-parallel"
     source: "Both are the pre-cosmic substrate from which the cosmos emerges; Awonawilona is the more apophatic / mind-centred pole, Chaos the more spatial / void-centred"
-status: "stub"
+status: "metadata"
 refs:
   - title: "Outlines of Zuni Creation Myths"
     author: "Cushing, Frank Hamilton"
@@ -56,4 +56,4 @@ The Zuni **primordial-being** — "the All-Container," the unmanifest from which
 
 The **zero-possible-contact** between 13th-century Castilian Kabbalists and pre-Conquest Zuni makes Awonawilona a high-quality case of **convergent emergence** of an apophatic-primordial theological category. Either the category reflects a deep cognitive-universal of religious thinking, or two independently-arising theological traditions reached the same place from radically different starting points.
 
-The Zuni cosmology continues through eight underworld emergences — humanity climbs up through stratified worlds — that structurally parallels the [[hopi]] emergence-cosmology and is one of the most-developed Native American creation-architectures. Awonawilona is the unmanifest top of that architecture.
+The Zuni cosmology continues through eight underworld emergences — humanity climbs up through stratified worlds — that structurally parallels the [[tradition-hopi]] emergence-cosmology and is one of the most-developed Native American creation-architectures. Awonawilona is the unmanifest top of that architecture.

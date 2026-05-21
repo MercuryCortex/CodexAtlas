@@ -25,7 +25,7 @@ syncretic-edges:
     type: "structural-parallel"
     source: "Typological — the descent-to-the-underworld pattern."
     notes: "Inanna's descent to the Great Below (Sumerian text, ~2100 BCE), Persephone's abduction by Hades, and the Ataecina-as-Proserpina identification all encode the same mythological structure: a goddess who crosses the threshold between the living and dead, transforming through that crossing, and whose return marks the regeneration of the earth. Inanna is the oldest attested version of this myth-type; Ataecina is the westernmost."
-status: "stub"
+status: "metadata"
 refs:
   - title: "Divindades Indígenas sob o Domínio Romano em Portugal"
     author: "Encarnação, José d'"

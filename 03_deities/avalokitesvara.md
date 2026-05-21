@@ -15,7 +15,7 @@ child-of: ["[[amitabha]] (his cosmic emanation-source in Pure Land theology)"]
 consort: []
 attributes: ["multi-armed (in tantric forms — up to a thousand arms with eyes in palms)", "carrying lotus (padma), water-vessel (kalaśa), and sometimes rosary", "depicted seated on lotus or in lalitāsana pose", "small image of [[amitabha]] in his crown identifies him"]
 attested-in: ["Aṣṭasāhasrikā Prajñāpāramitā (~-100 to +100)", "Saddharmapuṇḍarīka (Lotus Sūtra, ~+100, esp. Ch. 25 Avalokiteśvara Samantamukha)", "Kāraṇḍavyūha (~+400, the locus classicus)", "[[phase-5-002-heart-sutra]]", "[[phase-5-029-bardo-thodol]]", "innumerable Chinese, Tibetan, and Japanese ritual texts"]
-equivalents: ["[[guanyin]] (Chinese feminized form)", "[[tara]] (closely related Tibetan compassion-deity, traditionally said to be born from his tear)", "[[chenrezig]] (Tibetan name; same deity)"]
+equivalents: ["[[guanyin]] (Chinese feminized form)", "[[tara]] (closely related Tibetan compassion-deity, traditionally said to be born from his tear)", "Chenrezig (Tibetan name; same deity — no separate node, alias only)"]
 syncretic-edges:
   - target: "guanyin"
     type: "gender-transformation"
@@ -38,7 +38,7 @@ syncretic-edges:
     type: "scholarly-parallel"
     source: "Conze 1958; Suzuki, *Mysticism: Christian and Buddhist* (1957) — both are suffering-compassion saviors who postpone their own salvation/glorification to remain with sentient beings; the bodhisattva-vow of Avalokitesvara parallels Christ's redemptive-suffering-for-humanity vocation"
     notes: "Suffering-compassion savior partial parallel (Suzuki)"
-status: "stub"
+status: "metadata"
 refs:
   - title: "Kuan-yin: The Chinese Transformation of Avalokitesvara"
     author: "Yü, Chün-fang"

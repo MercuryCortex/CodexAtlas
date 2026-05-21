@@ -146,3 +146,17 @@ Both files are 105 lines, both `status: "full"`, both cover the same Greek deity
 **Wikilinks scanned:** ~90 unique targets across 10 files. 3 dead-link references unwrapped (pergamon, kos, athtart — to plain text rather than stub-create, since they're trivia mentions, not load-bearing).
 
 ---
+
+## Batch 8 — ataecina → awonawilona (2026-05-21)
+
+**Files:** ataecina, atar, aten, athena, atlas-titan, attis, atum, aurora-roman, avalokitesvara, awonawilona.
+
+**Fixes applied:**
+
+- 4 status flips stub → metadata (ataecina, athena, avalokitesvara, awonawilona).
+- `awonawilona.md` — fixed `[[hopi]]` → `[[tradition-hopi]]` (the deity-slug `hopi` doesn't exist; the tradition node does).
+- `avalokitesvara.md` — unwrapped `[[chenrezig]]` to plain text in equivalents (Chenrezig is the Tibetan name for Avalokiteshvara, same deity, no separate node planned per the alias-convention).
+
+**Wikilinks scanned:** ~110 unique targets. 2 dead-link references fixed.
+
+---

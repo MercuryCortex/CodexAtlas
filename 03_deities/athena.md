@@ -24,7 +24,7 @@ syncretic-edges:
     type: "ancient-identification"
     source: "Herodotus 2.59, 2.169-170; Plato Timaeus 21e"
     notes: "Herodotus and Plato identified Athena with the Egyptian goddess Neith of Sais."
-status: "stub"
+status: "metadata"
 refs:
   - title: "Greek Religion"
     author: "Burkert, Walter"
