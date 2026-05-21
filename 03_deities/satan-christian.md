@@ -45,6 +45,13 @@ syncretic-edges:
     type: "etymological-descent"
     source: "Russell (1977); Shaked, Shaul (1984). 'Iranian influence on Judaism.' Cambridge History of Judaism vol. 1."
     notes: "Avestan *Aēšma* (daeva of wrath) → Hebrew *Ashmedai* → Tobit's *Asmodaios* (3:8, 6:14–17) → Latin *Asmodeus*. The cleanest single Zoroastrian→Abrahamic demonological-entity transmission, running from Avestan ritual text through Aramaic diaspora literature into the Latin Catholic canon."
+  - target: "persian-period-injection"
+    type: "transformation-endpoint"
+    source: "Boyce 1982; Russell 1977 *The Devil*; Shaked 1984; Collins 1998 — the Christian Satan is the most consequential downstream-endpoint of the Persian-period injection: the pre-exilic *ha-satan* (divine-council prosecutorial functionary) transformed via Persian-Zoroastrian contact (~539–332 BCE) into the cosmic adversary commanding a demonic army documented in 1 Enoch + Daniel + the Dead Sea Scrolls + the New Testament. See [[persian-period-injection]] Channel 2 (Satan and the Cosmic Adversary)"
+    notes: "MASSIVE-WIN: Christian Satan as the late-antique Western-Mediterranean reception of the Zoroastrian Angra Mainyu adversary-template; the structural transformation is the load-bearing example of Persian → Abrahamic theological injection"
+  - target: "theme-zoroastrian-jewish-exchange"
+    type: "transformation-endpoint"
+    source: "Boyce & Grenet 1991; Russell 1977; Forsyth 1987; Shaked 1984 — see [[theme-satan-angra-mainyu-transfer]] (dedicated theme) and the broader [[theme-zoroastrian-jewish-exchange]] hub for the full six-channel exchange that produces this figure"
 status: "metadata"
 refs:
   - title: "The Origin of Satan"

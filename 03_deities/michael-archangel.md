@@ -26,6 +26,13 @@ syncretic-edges:
   - target: "[[the-elect-one-enochic]]"
     type: "scholarly-parallel"
     source: "Michael identified by some scholars (Hannah 1999) as proto-form of the Son of Man figure"
+  - target: "[[persian-period-injection]]"
+    type: "source-deity-of-transmission"
+    source: "Boyce & Grenet 1991; Hultgård 1998; Collins 1998 — Michael's first appearance in Hebrew Bible is in [[phase-3-008-book-of-daniel]] (10:13, 10:21, 12:1) where he is 'one of the chief princes' guardian of Israel against the angelic princes of Persia and Greece — already explicitly inside the Persian-period angelological framework. The Daniel-Michael 'Prince of nations' structure is part of Channel 4 (cosmic-administrator angelology) of the [[persian-period-injection]]"
+    notes: "MASSIVE-WIN: Michael as Prince-of-Israel in Daniel is the angelological-cosmic-administrator template inherited from the Persian Amesha Spentas + Yazatas-of-nations scheme"
+  - target: "[[theme-zoroastrian-jewish-exchange]]"
+    type: "source-deity-of-transmission"
+    source: "Boyce 1975-1991; Shaked 1984 — Michael's role at the eschatological resurrection (Daniel 12:1) participates in the broader Persian-influenced cluster of resurrection + angelic-warfare + Last-Judgment theology that the Zoroastrian-Jewish exchange installs in Second Temple Judaism"
 status: "metadata"
 refs:
   - title: "Angelomorphic Christology: Antecedents and Early Evidence"

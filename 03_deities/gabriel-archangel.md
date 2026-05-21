@@ -29,6 +29,13 @@ syncretic-edges:
   - target: "[[asha-vahishta]]"
     type: "scholarly-parallel"
     source: "First Amesha Spenta (cosmic Truth-and-Order); Gabriel is first-named archangel in many Jewish-Christian-Islamic angel-hierarchies. Possible structural-parallel inheritance of the 'first-named-supreme-divine-being-after-God' angelological pattern"
+  - target: "[[persian-period-injection]]"
+    type: "source-deity-of-transmission"
+    source: "Boyce 1979, *An Outline of Zoroastrianism*; Hultgård 1998; Collins 1998 — Gabriel first appears in Hebrew scripture in Daniel 8:16 and 9:21 — Maccabean-era apocalyptic, downstream of the Persian-period angelological transformation. The named-archangel architecture (Gabriel + Michael + Raphael + Uriel + ...) inherits the Amesha Spenta heptad template. See [[persian-period-injection]] Channel 4"
+    notes: "MASSIVE-WIN: Gabriel as Annunciator in Daniel → Luke 1 → Quranic Jibril is the Persian-derived archangel-messenger template carried across three Abrahamic traditions"
+  - target: "[[theme-zoroastrian-jewish-exchange]]"
+    type: "source-deity-of-transmission"
+    source: "Boyce & Grenet 1991; Hultgård 1998 — Gabriel + the broader named-archangel hierarchy is one of the cleanest demonstrations of the Persian-into-Jewish angelological transmission documented at [[theme-zoroastrian-jewish-exchange]]"
 status: "metadata"
 refs:
   - title: "Ascent to Heaven in Jewish and Christian Apocalypses"

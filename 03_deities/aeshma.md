@@ -20,6 +20,13 @@ syncretic-edges:
   - target: "satan-christian"
     type: "scholarly-parallel"
     source: "**THE LOAD-BEARING ZOROASTRIAN-CHRISTIAN DEMON CHAIN.** Aeshma → Asmodeus (Tobit 3.8, 6.14-17, 8.1-3) is **the single most-direct etymological-genealogical chain from Zoroastrian demonology into Hebrew-Christian demonology**. The Avestan *Aēšma* is borrowed phonetically into Hebrew Apocryphal *Ashmedai* / Greek *Asmodaios* (Tobit, 4th-2nd c. BCE; Targum / rabbinic literature continues) and from there into Christian demonology (medieval Christian demonological catalogs include Asmodeus as one of the seven princes of hell). Hutter 1992 *Behexung* and the Encyclopaedia Iranica entry on Aeshma document the philological-genealogical chain"
+  - target: "theme-zoroastrian-jewish-exchange"
+    type: "etymological-source-of-transmission"
+    source: "Shaked 1984, *Iranian Influences in Judaism*; Hutter 1988; Skjærvø 1985 (EIr 'Aēšma') — the Aēšma → Ashmedai → Asmodaios → Asmodeus phonetic chain is the cleanest single transmitted demon-name from Avestan ritual literature into the Hellenistic-Jewish Apocrypha (Tobit) and through it into the Christian Latin canon. Documented at [[theme-zoroastrian-jewish-exchange]] Channel 4 (Demonology — the Aeshma → Asmodeus chain)"
+    notes: "MASSIVE-WIN: more than a structural parallel — this is *direct linguistic-transmission* of a demon-name across 1500+ years and four languages, the cleanest etymological case in the entire Persian → Abrahamic transmission record"
+  - target: "persian-period-injection"
+    type: "etymological-source-of-transmission"
+    source: "Hutter 1988; Skjærvø 1985; Shaked 1984 — Tobit's Asmodeus-narrative (seven-archangel scheme + the Iranian-named demon + Raphael's desert-binding) is the most concentrated single instance of the Persian-period injection's demonology+angelology channel concentrated in a single Hellenistic-Diaspora Jewish text"
 status: "metadata"
 refs:
   - title: "A History of Zoroastrianism (vol. 1)"

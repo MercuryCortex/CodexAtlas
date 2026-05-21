@@ -30,8 +30,13 @@ syncretic-edges:
     type: "ancestor-of"
     source: "Russell 1977; Forsyth 1987; Shaked 1984"
     notes: "Angra Mainyu's structural role as independent cosmic adversary commanding a demonic army is the primary comparative model for the Second Temple transformation of ha-satan into Satan. See the dedicated theme node for the full scholarly analysis."
+  - target: "persian-period-injection"
+    type: "source-deity-of-transmission"
+    source: "Alexander 2010, 'The Dualism of the Two Spirits in the Community Rule'; Collins 1998, *The Apocalyptic Imagination*; Boyce 1982 — Angra Mainyu is the source-deity for Channel 1 (cosmic dualism — the Qumran Two-Spirits tractate 1QS 3:13–4:26 vs. the Ahura Mazda/Spenta Mainyu vs. Angra Mainyu structure) and Channel 2 (the cosmic-adversary transformation of ha-satan into Satan) of the Persian-period injection event"
+    notes: "MASSIVE-WIN: load-bearing Persian-end source for the dualism + adversary channels of [[persian-period-injection]]; also see [[theme-zoroastrian-jewish-exchange]] for the broader six-channel exchange"
 related-themes:
   - "[[theme-zoroastrian-jewish-exchange]]"
+  - "[[persian-period-injection]]"
   - "[[theme-satan-angra-mainyu-transfer]]"
   - "[[dualism-cosmic]]"
 status: "metadata"
