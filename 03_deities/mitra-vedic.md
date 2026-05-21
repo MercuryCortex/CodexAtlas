@@ -25,7 +25,7 @@ syncretic-edges:
     type: "scholarly-parallel"
     source: "Cumont 1903 (asserts continuity); Beck 2006 (limits the continuity)"
     notes: "The Roman Mithras of the mystery cult (Phase 3-4) bears the name but the cult has substantial Roman invention; continuity from Iranian Mithra is partial and debated."
-status: "stub"
+status: "metadata"
 refs:
   - title: "Mitra-Varuna: An Essay on Two Indo-European Representations of Sovereignty"
     author: "Dumézil, Georges (trans. Derek Coltman)"

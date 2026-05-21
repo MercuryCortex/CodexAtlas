@@ -24,7 +24,7 @@ syncretic-edges:
   - target: "[[tezcatlipoca]]"
     type: "ancient-identification"
     source: "Some Aztec theological texts treat the four Tezcatlipocas (black, red, white, blue) as aspects of a single deity; Mixcoatl/Camaxtli is the red Tezcatlipoca in this scheme"
-status: "stub"
+status: "metadata"
 refs:
   - title: "The Aztecs"
     author: "Townsend, Richard F."
