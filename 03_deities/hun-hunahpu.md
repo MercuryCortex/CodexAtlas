@@ -14,7 +14,7 @@ parent-of: ["[[hunahpu]]", "[[ixbalanque]]"]
 child-of: []
 consort: ["Xquic ('Blood Moon' — daughter of a Xibalban lord; conceives the Hero Twins from Hun Hunahpu's severed-head saliva)"]
 attributes: ["maize-foliated forehead (the classic Maya 'Maize God' iconography)", "youthful idealized male body", "the calabash/gourd-tree (where his head is hung after his sacrifice)"]
-attested-in: ["[[phase-8-002-popol-vuh]]"]
+attested-in: ["[[phase-8-001-popol-vuh]]"]
 equivalents: ["[[osiris]] (canonical scholarly parallel — see body)"]
 syncretic-edges:
   - target: "[[osiris]]"
@@ -24,7 +24,7 @@ syncretic-edges:
   - target: "[[hunahpu]]"
     type: "ancient-identification"
     source: "Popol Vuh, Parts I-III — Hun Hunahpu is the father; Hunahpu is one of the twin sons. The names overlap in modern misreadings"
-status: "stub"
+status: "metadata"
 refs:
   - title: "Popol Vuh: The Mayan Book of the Dawn of Life"
     author: "Tedlock, Dennis (trans.)"
@@ -49,7 +49,7 @@ tags: [deity, maya, mesoamerican, maize-god, hun-hunahpu, hero-twins-father, pop
 
 # Hun Hunahpu
 
-The **Maya Maize God** — father of the Hero Twins [[hunahpu]] and [[ixbalanque]], and the **central resurrection myth of Mesoamerican civilization**. The narrative (recorded in the K'iche' [[phase-8-002-popol-vuh]] from oral tradition that reaches back to Classic Maya c. 250-900 CE):
+The **Maya Maize God** — father of the Hero Twins [[hunahpu]] and [[ixbalanque]], and the **central resurrection myth of Mesoamerican civilization**. The narrative (recorded in the K'iche' [[phase-8-001-popol-vuh]] from oral tradition that reaches back to Classic Maya c. 250-900 CE):
 
 1. Hun Hunahpu and his brother are summoned to the underworld (Xibalba) by its lords for offending them. Both are defeated and killed in the ball-court.
 2. Hun Hunahpu's severed head is hung in a **calabash tree**. The tree fills with calabashes indistinguishable from his head.

@@ -29,7 +29,7 @@ syncretic-edges:
     type: "structural-parallel"
     source: "Grayson (2002)"
     notes: "Both are divine figures who descend to the human world to give civilization — culture, law, agriculture, medicine. Hwanung governs all 360 aspects of human affairs; Prometheus gives fire and technical knowledge. Both are partially divine figures mediating between the heavenly and human realms. Typological parallel only."
-status: "stub"
+status: "metadata"
 refs:
   - title: "Samguk Yusa (Memorabilia of the Three Kingdoms)"
     author: "Iryeon (trans. Ha Tae-hung & Grafton K. Mintz)"

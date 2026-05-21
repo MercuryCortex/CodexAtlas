@@ -25,7 +25,7 @@ syncretic-edges:
     type: "structural-parallel"
     source: "Grayson, James Huntley (2002). Korea: A Religious History. Routledge."
     notes: "Hwanin is the supreme heavenly deity whose son descends to order the earthly realm — structurally parallel to Zeus's role in Greek cosmology (supreme sky-father; his children intervene in earthly affairs). Typological parallel only — no transmission."
-status: "stub"
+status: "metadata"
 refs:
   - title: "Samguk Yusa (Memorabilia of the Three Kingdoms)"
     author: "Iryeon (trans. Ha Tae-hung & Grafton K. Mintz)"
