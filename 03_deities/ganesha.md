@@ -13,7 +13,7 @@ role: "first-invoked deity in Hindu ritual; remover and placer of obstacles; son
 attested-in: ["Maitrayāṇī Saṃhitā (Yajurveda — earliest possible reference, contested)", "Gṛhya Sūtras (~-500)", "Mahābhārata insertions (as scribe of the epic)", "Purāṇic literature (esp. Gaṇeśa Purāṇa, Mudgala Purāṇa)"]
 equivalents: ["[[hermes-greek]] (parallel-motif — both threshold-figures, scribes, patrons of language)"]
 syncretic-edges: []
-status: "stub"
+status: "metadata"
 refs:
   - title: "Gaṇeśa: Studies of an Asian God"
     author: "Brown, Robert L. (ed.)"

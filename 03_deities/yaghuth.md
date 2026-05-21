@@ -14,7 +14,7 @@ parent-of: []
 child-of: []
 consort: []
 attributes: ["lion-form idol (Ibn al-Kalbi describes a lion-shaped idol)"]
-attested-in: ["[[phase-4-040-quran]] (Surah Nuh 71:23)", "Ibn al-Kalbi, *Kitāb al-Aṣnām*"]
+attested-in: ["[[phase-4-034-quran]] (Surah Nuh 71:23)", "Ibn al-Kalbi, *Kitāb al-Aṣnām*"]
 equivalents: ["[[wadd]]", "[[suwa]]", "[[yauq]]", "[[nasr-pre-islamic]]"]
 syncretic-edges:
   - target: "[[suwa]]"

@@ -14,7 +14,7 @@ parent-of: []
 child-of: []
 consort: []
 attributes: ["horse-form idol (Ibn al-Kalbi describes a horse-shaped idol — alternate descriptions exist)"]
-attested-in: ["[[phase-4-040-quran]] (Surah Nuh 71:23)", "Ibn al-Kalbi, *Kitāb al-Aṣnām*"]
+attested-in: ["[[phase-4-034-quran]] (Surah Nuh 71:23)", "Ibn al-Kalbi, *Kitāb al-Aṣnām*"]
 equivalents: ["[[wadd]]", "[[suwa]]", "[[yaghuth]]", "[[nasr-pre-islamic]]"]
 syncretic-edges:
   - target: "[[suwa]]"

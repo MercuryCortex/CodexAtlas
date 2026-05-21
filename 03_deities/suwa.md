@@ -14,7 +14,7 @@ parent-of: []
 child-of: []
 consort: []
 attributes: ["idol-form (Ibn al-Kalbi describes a female-figured idol at Yanbū)"]
-attested-in: ["[[phase-4-040-quran]] (Surah Nuh 71:23 names Suwāʿ alongside Wadd, Yaghūth, Yaʿūq, and Nasr as the deities the Arabs inherited from Noah's people)", "Ibn al-Kalbi, *Kitāb al-Aṣnām* (*Book of Idols*, c. 819 CE) — the principal early Islamic account of pre-Islamic Arabian idolatry"]
+attested-in: ["[[phase-4-034-quran]] (Surah Nuh 71:23 names Suwāʿ alongside Wadd, Yaghūth, Yaʿūq, and Nasr as the deities the Arabs inherited from Noah's people)", "Ibn al-Kalbi, *Kitāb al-Aṣnām* (*Book of Idols*, c. 819 CE) — the principal early Islamic account of pre-Islamic Arabian idolatry"]
 equivalents: ["[[wadd]]", "[[yaghuth]]", "[[yauq]]", "[[nasr-pre-islamic]]"]
 syncretic-edges:
   - target: "[[wadd]]"

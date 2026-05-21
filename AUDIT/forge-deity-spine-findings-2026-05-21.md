@@ -304,3 +304,42 @@ Both files are 105 lines, both `status: "full"`, both cover the same Greek deity
 **Letter coverage:** A through D (`dazhbog` is the last D-deity processed). Remaining: D-tail through Z. The Greek/Egyptian/Mesopotamian deep-cluster is mostly intact; the longest tail will be the East-Asian (G/I/K/T/Y prefixes), Native-American (M/Q/T/W prefixes), and Polytheistic-Christian cluster (S prefix). Continuing.
 
 ---
+
+## Batches 16–20 — demeter → geshtinanna (2026-05-21)
+
+Per-batch summaries kept terse from here on; full details in commit messages.
+
+- **Batch 16** (demeter–donn-celtic): 3 status flips; 1 wikilink unwrap (`[[semele]]` — mortal mother of Dionysus, not a deity). Confirmed `dionysus.md` + `dionysus-mystery.md` is an INTENTIONAL split (civic vs mystery cult), not a duplicate.
+- **Batch 17** (druj–el-elohim-hebrew): 4 status flips; 1 unwrap (`[[shahar-shalim]]` — Canaanite twin Dawn/Dusk gods; no node yet, left as plain-text trail).
+- **Batch 18** (el-shaddai–erra-akkadian): 2 status flips (enki-ea, enlil — both high-in-degree spine nodes at #15 and #21 per the stubs audit); cleaned 3 trailing-`?` wikilinks in `erra-akkadian.md`.
+- **Batch 19** (erzulie–frigg): 1 status flip (flint-deity); 0 dead links.
+- **Batch 20** (fujin–geshtinanna): 3 status flips (gabriel-archangel, gaia, ganesha); 2 dead-link rewrites (`[[phase-4-040-quran]]` → `[[phase-4-034-quran]]` in `gabriel-archangel.md` + 3 vault-wide instances in `suwa`/`yaghuth`/`yauq`); 2 unwraps (`[[tellus-roman]]`/`[[terra-roman]]` in gaia, `[[ninsun]]` in geshtinanna — Roman/Mesopotamian deities not yet nodes).
+
+**Recurring phase-misnumbering catalog (so far):**
+- `phase-6-006-chilam-balam` (wrong) → `phase-8-005-chilam-balam` (canonical) — 2 instances, swept in batch 11
+- `phase-6-002-florentine-codex` (wrong) → `phase-8-004-florentine-codex-sahagun` (canonical) — 5 instances total (1 in batch 12, 4 swept in batch 13)
+- `phase-4-040-quran` (wrong) → `phase-4-034-quran` (canonical) — 4 instances total (1 in batch 20, 3 swept vault-wide same batch)
+
+**Pattern:** these all share a structure (`phase-X-NNN-canonical-slug`) where agents have guessed the wrong middle number. Each cleanup is mechanical once the canonical filename is known. Recommend a one-shot grep-sed sweep over all 7 content lenses + `06_themes/`+`07_traditions/` at end-of-sweep to catch any I haven't surfaced.
+
+---
+
+## 200-deity checkpoint (batches 1–20) — 29.6% of `03_deities/` complete
+
+**Cumulative across 200 deities:**
+
+| Metric | Count |
+|---|---:|
+| Status `stub` → `metadata` flips | **~62** |
+| Dead wikilinks fixed (rewrites + unwraps + vault-wide cleanups) | **~33** |
+| Outward stubs created (in-lens) | 3 (sarutahiko, amurru, waa-the-crow) |
+| Breadcrumb stubs promoted to metadata | 1 (ame-no-hohi) |
+| YAML bugs fixed | 1 (ahura-mazda) |
+| Duplicate clusters flagged for John | 3 (adonis, ahriman, asclepius) |
+| Vault-wide phase-misnumbering classes swept | 3 (Chilam Balam, Florentine Codex, Qur'an) — 9 instances fixed |
+| New dead-links shipped | **0** |
+| Commits | 20 batch commits + 1 status update |
+
+**Letter coverage:** A through Gas. Remaining ~476 deities (G-tail through Z). At this rate the full sweep is ~45 batches more (~7 hours). Pausing here for now to give John a checkpoint to review and decide whether to continue.
+
+---

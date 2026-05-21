@@ -14,7 +14,7 @@ parent-of: []
 child-of: []
 consort: []
 attributes: ["lily (Annunciation)", "trumpet (some Western traditions)", "scroll", "Madonna lily in Christian iconography"]
-attested-in: ["[[phase-3-008-book-of-daniel]]", "[[phase-3-018-luke-acts]]", "[[phase-4-040-quran]]"]
+attested-in: ["[[phase-3-008-book-of-daniel]]", "[[phase-3-018-luke-acts]]", "[[phase-4-034-quran]]"]
 equivalents: []
 syncretic-edges:
   - target: "[[michael-archangel]]"
@@ -29,7 +29,7 @@ syncretic-edges:
   - target: "[[asha-vahishta]]"
     type: "scholarly-parallel"
     source: "First Amesha Spenta (cosmic Truth-and-Order); Gabriel is first-named archangel in many Jewish-Christian-Islamic angel-hierarchies. Possible structural-parallel inheritance of the 'first-named-supreme-divine-being-after-God' angelological pattern"
-status: "stub"
+status: "metadata"
 refs:
   - title: "Ascent to Heaven in Jewish and Christian Apocalypses"
     author: "Himmelfarb, Martha"

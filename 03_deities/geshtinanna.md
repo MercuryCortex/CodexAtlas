@@ -11,8 +11,8 @@ domains: ["vine and wine", "scribe of the netherworld", "lamentation and mournin
 gender: "feminine"
 role: "sister of Dumuzi; netherworld scribe; substitute for Dumuzi half the year"
 parent-of: []
-child-of: ["[[enki-ea]]", "[[ninsun]]"]
-consort: ["[[ningishzida]]?"]
+child-of: ["[[enki-ea]]", "Ninsun (wild-cow mother-goddess; Gilgamesh's mother — no node yet)"]
+consort: ["[[ningishzida]] (relationship uncertain)"]
 attributes: ["grape vine", "stylus and tablet (netherworld scribe)", "veil of mourning"]
 attested-in: ["[[phase-1-017-descent-of-inanna]]", "[[phase-1-004-gilgamesh-old-babylonian]]?"]
 equivalents: ["[[belet-seri-akkadian]]"]

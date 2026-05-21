@@ -15,7 +15,7 @@ child-of: ["Chaos (in Hesiod's cosmogonic sequence — she emerges *from* or *af
 consort: ["[[uranus-greek]]", "Pontos", "Tartarus"]
 attributes: ["enthroned earth-mother", "fruits and grain"]
 attested-in: ["[[phase-2-009-hesiod-theogony-works-and-days]]", "[[phase-2-008-homeric-epics]]", "Homeric Hymn to Earth, Mother of All"]
-equivalents: ["[[tellus-roman]]", "[[terra-roman]]"]
+equivalents: ["Tellus / Terra (Roman earth-mother — no node yet)"]
 syncretic-edges:
   - target: "prithivi-vedic"
     type: "scholarly-parallel"
@@ -25,7 +25,7 @@ syncretic-edges:
     type: "scholarly-parallel"
     source: "Burkert 1992"
     notes: "Mesopotamian Ki (Earth) paired with An (Sky) is the closest Near Eastern primordial-couple parallel."
-status: "stub"
+status: "metadata"
 refs:
   - title: "Hesiod's Theogony, edited with commentary"
     author: "West, M.L."
