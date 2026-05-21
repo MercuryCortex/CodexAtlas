@@ -2785,56 +2785,49 @@
       else                      bgFade = (0.50 - zoomPct) / (0.50 - 0.10);
       bgImage.style.opacity = bgFade.toFixed(3);
 
-      // Phase 21C (2026-05-21) — WORLD-ANCHORED sizing + position.
-      // The image follows the wheel:
-      //   • anchored at world (0, 0) — the wheel's centre — so
-      //     pan moves it with the wheel
-      //   • size scales linearly with the camera so zooming the
-      //     wheel zooms the image with it
-      //   • at gizmo zoom 10% (floor) the image is COVER-FIT
-      //     against the viewport (smaller dim ≥ vp dim) — same
-      //     directive as before: max-axis matched + smaller
-      //     axis overflows
-      //   • floor below 10% — image stays at fill-coverage even
-      //     if the camera goes lower (engine MIN_SCALE = 0.05)
+      // Phase 21D (2026-05-21) — FUNDAMENTAL transform-driven BG.
+      // The element is fixed at 100vw × 100vh with object-fit:
+      // cover (CSS guarantees no gaps at any viewport size).
+      // All we compute here is the TRANSFORM that makes the
+      // already-covered box follow the wheel:
       //
-      // The canvas is offset from the viewport's top-left by the
-      // page chrome (nav-hub trigger, status pill, bottom-bar).
-      // worldToScreen returns coords in CANVAS space, so we add
-      // the canvas's bounding-rect offset to land in viewport
-      // coords (which is what `position: fixed` reads).
+      //   • scale = zoom relative to the fill-coverage floor.
+      //     At gizmo 10% (floor) scale = 1 (box = viewport, full
+      //     cover). At higher zoom, scale > 1 so the box grows
+      //     beyond viewport — the visible window through the
+      //     viewport shows a smaller central crop of the image,
+      //     same as the wheel growing in pixels.
+      //   • dx, dy = how far the wheel's world centre has moved
+      //     from the viewport centre. Pan moves world (0, 0)
+      //     across the viewport; the BG follows by the same
+      //     pixel delta. transform-origin is the centre of the
+      //     box so scale and translate compose cleanly.
+      //   • Below gizmo 10% we floor scale at 1.0 — the image
+      //     stays at fill-coverage even if the user / engine
+      //     manages to push the camera further out.
       const sizeZoomPct = Math.max(0.10, zoomPct);
-      const aspect      = bgImage._bgAspect || (4 / 3);
-      const vpAspect    = vp.w / Math.max(1, vp.h);
-      let coverW, coverH;
-      if (aspect >= vpAspect) {
-        coverH = vp.h;
-        coverW = vp.h * aspect;
-      } else {
-        coverW = vp.w;
-        coverH = vp.w / aspect;
-      }
-      const scaleFactor = sizeZoomPct / 0.10;
-      const imgW = coverW * scaleFactor;
-      const imgH = coverH * scaleFactor;
-
-      // World (0, 0) → canvas screen coords.
+      const scale       = sizeZoomPct / 0.10;
+      // World (0, 0) projected to canvas-screen, then converted
+      // to viewport-screen using the canvas's bounding rect.
       const centerCanvas = camera.worldToScreen(0, 0, vp);
-      // Canvas → viewport (the BG is position:fixed, so it reads
-      // viewport coords). canvas.getBoundingClientRect() gives
-      // canvas top-left in viewport space.
       let offX = 0, offY = 0;
       if (canvas && canvas.getBoundingClientRect) {
         const r = canvas.getBoundingClientRect();
         offX = r.left;
         offY = r.top;
       }
-      const centerVp = { x: offX + centerCanvas.x, y: offY + centerCanvas.y };
+      const wheelVpX = offX + centerCanvas.x;
+      const wheelVpY = offY + centerCanvas.y;
+      // Viewport's own centre (where the un-transformed BG
+      // image's centre starts).
+      const vpCenterX = window.innerWidth  / 2;
+      const vpCenterY = window.innerHeight / 2;
+      const dx = wheelVpX - vpCenterX;
+      const dy = wheelVpY - vpCenterY;
 
-      bgImage.style.width  = imgW.toFixed(1) + 'px';
-      bgImage.style.height = imgH.toFixed(1) + 'px';
-      bgImage.style.left   = (centerVp.x - imgW / 2).toFixed(1) + 'px';
-      bgImage.style.top    = (centerVp.y - imgH / 2).toFixed(1) + 'px';
+      bgImage.style.transform =
+        'translate(' + dx.toFixed(1) + 'px,' + dy.toFixed(1) + 'px) ' +
+        'scale(' + scale.toFixed(4) + ')';
     }
 
     function syncLabelPositions() {

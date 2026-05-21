@@ -6830,24 +6830,27 @@ body.view-forge #detail-inner {
    Hulls + labels both pointer-events:none so they never
    intercept hover.
    --family-color is set per group from JS (node.family_color). */
-/* Phase 21C (2026-05-21) — backdrop image lives at document.body
-   root (so .forge-stage's opaque background can't cover it),
-   but its size + position are now WORLD-ANCHORED: the image
-   tracks the wheel's world centre and grows with the camera
-   scale, so panning + zooming the wheel pans + zooms the BG
-   with it. CSS only sets the static layer + initial state;
-   syncBackgroundImage() in forge.js writes left / top / width /
-   height / opacity each camera tick. */
+/* Phase 21D (2026-05-21) — FUNDAMENTAL BG. The image element is
+   ALWAYS 100vw × 100vh with `object-fit: cover`, so the browser's
+   own engine guarantees it covers every viewport corner at every
+   viewport size — there is no JS path that can compute a wrong
+   pixel size and leave a gap. To follow the wheel through pan +
+   zoom, JS only writes `transform: translate(dx, dy) scale(s)`
+   + `opacity`. The transform-origin is the centre of the box,
+   so scale grows from the same point pan tracks. */
 .forge-bg-image {
   position: fixed;
+  top: 0; left: 0;
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+  object-position: center center;
+  transform-origin: 50% 50%;
   z-index: 0;
   pointer-events: none;
   user-select: none;
   opacity: 0;
-  /* JS-driven width/height/left/top; no object-fit (image renders
-     stretched-to-box, but we set box to image-aspect so it isn't
-     visibly stretched). */
-  will-change: opacity, transform, left, top, width, height;
+  will-change: opacity, transform;
 }
 .forge-hulls-overlay {
   position: absolute; inset: 0;
