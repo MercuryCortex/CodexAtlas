@@ -792,7 +792,22 @@
         '<div class="forge-legend-panel" id="forge-legend-panel" aria-hidden="true"></div>' +
       '</div>',
       '<div class="forge-legend-tooltip" id="forge-legend-tooltip" aria-hidden="true"></div>',
-      '<input type="text" class="forge-bottom-search" id="forge-status-search" placeholder="search…" autocomplete="off" spellcheck="false">',
+      // Phase 21B (2026-05-21) — view-settings dropdown. Drop-up
+      // menu of layer toggles (hulls / wires / future map). Click
+      // a row to flip the toggle; menu stays open so multiple
+      // toggles can be set in one go. Persists in LocalStorage.
+      '<div class="forge-viewset-wrap">' +
+        '<button class="forge-viewset-btn" id="forge-viewset-btn" title="View settings" aria-expanded="false">⚏ VIEW</button>' +
+        '<div class="forge-viewset-panel" id="forge-viewset-panel" aria-hidden="true">' +
+          '<button class="forge-viewset-row" data-toggle="hulls"><span class="vs-check"></span>Show family hulls</button>' +
+          '<button class="forge-viewset-row" data-toggle="wires"><span class="vs-check"></span>Show wires</button>' +
+          '<button class="forge-viewset-row" data-toggle="map" disabled><span class="vs-check"></span>Show map <em>(coming soon)</em></button>' +
+        '</div>' +
+      '</div>',
+      '<div class="forge-search-wrap">' +
+        '<input type="text" class="forge-bottom-search" id="forge-status-search" placeholder="search…" autocomplete="off" spellcheck="false">' +
+        '<div class="forge-search-suggest" id="forge-search-suggest" aria-hidden="true"></div>' +
+      '</div>',
       // 2026-05-20 — Timeline scrubber redesigned per John's spec:
       // 4 separate boxes (IN value | slider | OUT value | PRESENT
       // value), each the SAME height as the zoom-gizmo + search.
@@ -1583,6 +1598,10 @@
       // present-date box (replaces the old persistent top-bar
       // stats display).
       wireDebugStats();
+      // Phase 21B (2026-05-21) — View-settings dropdown (hulls /
+      // wires / map) + search autocomplete suggestions.
+      wireViewSettings();
+      wireSearchAutocomplete();
 
       // Phase 5B M-F2 (2026-05-20) — apply LS-saved timeline +
       // lockedSet now that local.timeline exists + adjacency is
@@ -3466,6 +3485,185 @@
       });
     }
 
+    // ════════════════════════════════════════════════════════════
+    //  wireViewSettings()  —  Phase 21B (2026-05-21)
+    // ════════════════════════════════════════════════════════════
+    //  Drop-up menu in the bottom-bar with layer toggles. State
+    //  persists in localStorage. Active toggles add classes to
+    //  the body so CSS controls visibility:
+    //    body.fv-hide-hulls    — pie slices + dividers + labels gone
+    //    body.fv-hide-wires    — edge canvas layer dimmed to 0
+    //    body.fv-hide-map      — placeholder, not implemented
+    //  CSS in app.css wires the actual visibility — JS only
+    //  flips classes.
+    // ════════════════════════════════════════════════════════════
+    function wireViewSettings() {
+      const btn   = document.getElementById('forge-viewset-btn');
+      const panel = document.getElementById('forge-viewset-panel');
+      if (!btn || !panel) return;
+      const LS_KEY = 'forge.viewSettings.v1';
+      const state = (() => {
+        try {
+          const raw = localStorage.getItem(LS_KEY);
+          if (raw) return JSON.parse(raw);
+        } catch (_) {}
+        return { hulls: true, wires: true, map: false };
+      })();
+      function applyState() {
+        document.body.classList.toggle('fv-hide-hulls', !state.hulls);
+        document.body.classList.toggle('fv-hide-wires', !state.wires);
+        document.body.classList.toggle('fv-hide-map',   !state.map);
+        // Mark each row's checkbox state for CSS.
+        panel.querySelectorAll('.forge-viewset-row').forEach(row => {
+          const key = row.dataset.toggle;
+          row.classList.toggle('is-on', !!state[key]);
+        });
+        try { localStorage.setItem(LS_KEY, JSON.stringify(state)); } catch (_) {}
+      }
+      function open() {
+        panel.classList.add('is-open');
+        panel.setAttribute('aria-hidden', 'false');
+        btn.setAttribute('aria-expanded', 'true');
+      }
+      function close() {
+        panel.classList.remove('is-open');
+        panel.setAttribute('aria-hidden', 'true');
+        btn.setAttribute('aria-expanded', 'false');
+      }
+      btn.addEventListener('click', (ev) => {
+        ev.stopPropagation();
+        if (panel.classList.contains('is-open')) close(); else open();
+      });
+      panel.addEventListener('click', (ev) => {
+        const row = ev.target.closest('.forge-viewset-row');
+        if (!row || row.disabled) return;
+        const key = row.dataset.toggle;
+        if (!(key in state)) return;
+        state[key] = !state[key];
+        applyState();
+      });
+      document.addEventListener('click', (ev) => {
+        if (!panel.classList.contains('is-open')) return;
+        if (panel.contains(ev.target) || btn.contains(ev.target)) return;
+        close();
+      });
+      document.addEventListener('keydown', (ev) => {
+        if (ev.key === 'Escape' && panel.classList.contains('is-open')) close();
+      });
+      applyState();
+    }
+
+    // ════════════════════════════════════════════════════════════
+    //  wireSearchAutocomplete()  —  Phase 21B (2026-05-21)
+    // ════════════════════════════════════════════════════════════
+    //  Adds an upward-expanding suggestion list under the
+    //  #forge-status-search input. Reads from the SAME
+    //  local.mode.search index the existing search machinery
+    //  uses (no second source of truth). On match-click, locks +
+    //  flies to the node via the existing lock pipeline.
+    // ════════════════════════════════════════════════════════════
+    function wireSearchAutocomplete() {
+      const inp     = document.getElementById('forge-status-search');
+      const suggest = document.getElementById('forge-search-suggest');
+      if (!inp || !suggest) return;
+
+      function modeNodes() {
+        return (local.mode && local.mode.nodes) || [];
+      }
+      function escapeHtml(s) {
+        return String(s || '')
+          .replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;')
+          .replace(/"/g, '&quot;').replace(/'/g, '&#39;');
+      }
+      function render(matches) {
+        if (!matches.length) {
+          suggest.innerHTML = '';
+          suggest.classList.remove('is-open');
+          suggest.setAttribute('aria-hidden', 'true');
+          return;
+        }
+        suggest.innerHTML = matches.slice(0, 8).map(m => {
+          return '<button class="forge-search-suggest-item" data-id="' + escapeHtml(m.id) + '">'
+            + '<span class="fss-dot" style="background:' + escapeHtml(m.color || '#888') + '"></span>'
+            + '<span class="fss-title">' + escapeHtml(m.title || m.id) + '</span>'
+            + '<span class="fss-fam">' + escapeHtml(m.family || '') + '</span>'
+            + '</button>';
+        }).join('');
+        suggest.classList.add('is-open');
+        suggest.setAttribute('aria-hidden', 'false');
+      }
+      function search(q) {
+        q = (q || '').trim().toLowerCase();
+        if (!q) return [];
+        const all = modeNodes();
+        const out = [];
+        for (let i = 0; i < all.length && out.length < 12; i++) {
+          const n = all[i];
+          const title = (n.title || n.id || '').toLowerCase();
+          if (title.indexOf(q) === -1) {
+            // Also try alias hits via n.aka if present.
+            const aka = Array.isArray(n.aka) ? n.aka.join(' ').toLowerCase() : '';
+            if (!aka || aka.indexOf(q) === -1) continue;
+          }
+          out.push({
+            id:     n.id,
+            title:  n.title || n.id,
+            family: n.family || '',
+            color:  n.family_color || n.tradition_color || '#888',
+          });
+        }
+        // Sort: title-startsWith ranks above title-contains.
+        out.sort((a, b) => {
+          const ai = a.title.toLowerCase().startsWith(q) ? 0 : 1;
+          const bi = b.title.toLowerCase().startsWith(q) ? 0 : 1;
+          return ai - bi || a.title.localeCompare(b.title);
+        });
+        return out;
+      }
+      inp.addEventListener('input', () => render(search(inp.value)));
+      inp.addEventListener('focus', () => {
+        if (inp.value.trim()) render(search(inp.value));
+      });
+      inp.addEventListener('keydown', (ev) => {
+        if (ev.key === 'Escape') {
+          suggest.innerHTML = '';
+          suggest.classList.remove('is-open');
+          suggest.setAttribute('aria-hidden', 'true');
+        } else if (ev.key === 'Enter') {
+          const first = suggest.querySelector('.forge-search-suggest-item');
+          if (first) {
+            ev.preventDefault();
+            first.click();
+          }
+        }
+      });
+      suggest.addEventListener('mousedown', (ev) => {
+        // mousedown not click — so the input doesn't blur before
+        // we read data-id.
+        const item = ev.target.closest('.forge-search-suggest-item');
+        if (!item) return;
+        ev.preventDefault();
+        const id = item.dataset.id;
+        if (id && local && local.lockedSet) {
+          try {
+            local.lockedSet.clear();
+            local.lockedSet.add(id);
+            if (typeof recomputeFocus === 'function') recomputeFocus();
+          } catch (e) { /* best-effort */ }
+        }
+        inp.value = '';
+        suggest.innerHTML = '';
+        suggest.classList.remove('is-open');
+        suggest.setAttribute('aria-hidden', 'true');
+        inp.blur();
+      });
+      document.addEventListener('click', (ev) => {
+        if (suggest.contains(ev.target) || inp.contains(ev.target)) return;
+        suggest.classList.remove('is-open');
+        suggest.setAttribute('aria-hidden', 'true');
+      });
+    }
+
     function wireLegend() {
       const btn     = document.getElementById('forge-legend-btn');
       const panel   = document.getElementById('forge-legend-panel');
@@ -4319,6 +4517,17 @@
       // lo/hi for the new mode + preserve-or-clamp the user's
       // in/out/center. Preserves user state when it fits the new
       // mode's date span; clamps to nearest valid bound otherwise.
+      // Phase 21B (2026-05-21) — cosmetic floor on the timeline's
+      // left bracket. The vault has a handful of outlier deities
+      // older than 9000 BCE (Aboriginal Dreamtime, San Bushmen)
+      // plus one YAML bug (rishabha-jain at -999,999,999). They
+      // distort the slider's effective range. John's directive:
+      // cap the visible LEFT bracket at -9000 BCE and display
+      // "+9000 BCE" when the IN handle is fully left, meaning
+      // "includes every deity dated before that too". Wiring is
+      // untouched — the filter still passes every deity whose
+      // date is ≤ outDate when inDate is at the cosmetic floor.
+      const TIMELINE_FLOOR_BCE = -9000;
       function refreshBounds() {
         const b = deriveBounds();
         if (!b) {
@@ -4329,7 +4538,11 @@
           local.timeline = null;
           return;
         }
-        const [lo, hi] = b;
+        let [lo, hi] = b;
+        // Cosmetic floor: never let the slider's left edge go
+        // below TIMELINE_FLOOR_BCE. The "real" minimum is kept
+        // around in case any future code needs it.
+        if (lo < TIMELINE_FLOOR_BCE) lo = TIMELINE_FLOOR_BCE;
         const prev = local.timeline;
         const inDate     = prev && typeof prev.inDate     === 'number'
           ? Math.max(lo, Math.min(hi, prev.inDate))   : lo;
@@ -4392,7 +4605,15 @@
         }
         // 4-box readouts. Each box gets just the year (no
         // separator) so it stays compact at fixed height.
-        if (inBox)      inBox.textContent      = formatYear(t.inDate);
+        // Phase 21B (2026-05-21) — IN box shows "+9000 BCE" when
+        // the handle is at the cosmetic floor: the "+" signals
+        // that everything earlier is also included.
+        if (inBox) {
+          const atFloor = (t.inDate <= t.lo + 0.5);
+          inBox.textContent = atFloor
+            ? ('+' + Math.abs(t.lo) + ' BCE')
+            : formatYear(t.inDate);
+        }
         if (outBox)     outBox.textContent     = formatYear(t.outDate);
         if (presentBox) presentBox.textContent = formatYear(t.centerDate);
       }

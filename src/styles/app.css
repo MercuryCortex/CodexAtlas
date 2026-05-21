@@ -523,6 +523,156 @@ body.nav-hidden .side-tab { display: none !important; }
 .forge-debug-panel .forge-debug-v {
   color: var(--text-1, #e5e7eb);
 }
+
+/* ── Phase 21B (2026-05-21) — BG-image visibility fixes ── */
+/* The body-root `.forge-bg-image` was being covered by the
+   stage / pane / canvas opaque backgrounds. Make them
+   transparent in view-forge mode so the BG paints through. */
+body.view-forge main.canvas,
+body.view-forge .forge-pane,
+body.view-forge .forge-shell-v1 {
+  background: transparent !important;
+}
+body.view-forge .forge-stage {
+  /* Keep the subtle radial atmosphere gradient (low-alpha rgba)
+     but drop the opaque base colour so the body-root BG image
+     shows through. */
+  --forge-bg: transparent;
+}
+
+/* ── Phase 21B (2026-05-21) — View-settings dropdown ── */
+.forge-viewset-wrap {
+  position: relative;
+  display: inline-flex; align-items: center;
+}
+.forge-viewset-btn {
+  height: 32px;
+  padding: 0 12px;
+  background: rgba(13,17,25,0.78);
+  border: 1px solid rgba(212,165,90,0.22);
+  border-radius: 6px;
+  color: var(--text-2, #9099a8);
+  font-family: var(--mono, "JetBrains Mono", monospace);
+  font-size: 10.5px;
+  letter-spacing: 0.16em;
+  cursor: pointer;
+  transition: border-color 120ms ease, color 120ms ease, background 120ms ease;
+}
+.forge-viewset-btn:hover,
+.forge-viewset-btn[aria-expanded="true"] {
+  border-color: var(--gold, #d4a55a);
+  color: var(--gold, #d4a55a);
+  background: rgba(20,26,38,0.92);
+}
+.forge-viewset-panel {
+  position: absolute;
+  bottom: 40px;     /* drops UPWARD over the button */
+  left: 0;
+  min-width: 220px;
+  padding: 6px 0;
+  background: rgba(13,17,25,0.92);
+  border: 1px solid rgba(212,165,90,0.22);
+  border-radius: 8px;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  box-shadow: 0 6px 24px rgba(0,0,0,0.45);
+  z-index: 235;
+  display: none;
+}
+.forge-viewset-panel.is-open { display: block; }
+.forge-viewset-row {
+  display: flex; align-items: center; gap: 10px;
+  width: 100%;
+  padding: 8px 14px;
+  background: transparent;
+  border: 0;
+  text-align: left;
+  font-family: var(--sans, Inter, sans-serif);
+  font-size: 12px;
+  color: var(--text-1, #e5e7eb);
+  cursor: pointer;
+  transition: background 90ms ease, color 90ms ease;
+}
+.forge-viewset-row:hover { background: rgba(212,165,90,0.10); }
+.forge-viewset-row[disabled] { color: var(--text-3, #6b7280); cursor: not-allowed; opacity: 0.6; }
+.forge-viewset-row em { font-style: normal; color: var(--text-3, #6b7280); font-size: 10px; margin-left: 4px; }
+.forge-viewset-row .vs-check {
+  display: inline-block;
+  width: 14px; height: 14px;
+  border-radius: 3px;
+  border: 1px solid rgba(212,165,90,0.45);
+  background: transparent;
+  position: relative;
+  flex: 0 0 auto;
+}
+.forge-viewset-row.is-on .vs-check {
+  background: var(--gold, #d4a55a);
+  border-color: var(--gold, #d4a55a);
+}
+.forge-viewset-row.is-on .vs-check::after {
+  content: '';
+  position: absolute;
+  top: 2px; left: 4px;
+  width: 4px; height: 8px;
+  border-right: 2px solid #0a0c10;
+  border-bottom: 2px solid #0a0c10;
+  transform: rotate(45deg);
+}
+
+/* Layer-toggle effects driven by body classes set in JS. */
+body.fv-hide-hulls .forge-hulls-overlay { display: none !important; }
+body.fv-hide-wires .forge-canvas { /* placeholder — wire-only hide is a renderer-side change deferred */ }
+
+/* ── Phase 21B (2026-05-21) — Search autocomplete (drop-up) ── */
+.forge-search-wrap {
+  position: relative;
+  display: inline-flex; align-items: center;
+}
+.forge-search-suggest {
+  position: absolute;
+  bottom: 40px;
+  left: 0;
+  width: 260px;
+  max-height: 320px;
+  overflow-y: auto;
+  padding: 4px 0;
+  background: rgba(13,17,25,0.94);
+  border: 1px solid rgba(212,165,90,0.22);
+  border-radius: 8px;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  box-shadow: 0 6px 24px rgba(0,0,0,0.45);
+  z-index: 235;
+  display: none;
+}
+.forge-search-suggest.is-open { display: block; }
+.forge-search-suggest-item {
+  display: flex; align-items: center; gap: 10px;
+  width: 100%;
+  padding: 6px 12px;
+  background: transparent;
+  border: 0;
+  text-align: left;
+  font-family: var(--sans, Inter, sans-serif);
+  font-size: 12px;
+  color: var(--text-1, #e5e7eb);
+  cursor: pointer;
+}
+.forge-search-suggest-item:hover { background: rgba(212,165,90,0.10); }
+.forge-search-suggest-item .fss-dot {
+  width: 8px; height: 8px; border-radius: 50%;
+  flex: 0 0 auto;
+}
+.forge-search-suggest-item .fss-title {
+  flex: 1 1 auto;
+  white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+}
+.forge-search-suggest-item .fss-fam {
+  font-size: 10px;
+  color: var(--text-3, #6b7280);
+  letter-spacing: 0.06em;
+  white-space: nowrap;
+}
 body.detail-collapsed  { --eff-detail-w: var(--detail-w-collapsed); }
 
 /* BRAND-SECTION (lives at top of left nav) */
