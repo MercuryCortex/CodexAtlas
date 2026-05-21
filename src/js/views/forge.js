@@ -2156,7 +2156,28 @@
       const isIdleHover = !local.lockedSet || local.lockedSet.size === 0;
       const dimMulN = (isIdleHover && (dimModel === 'A1' || dimModel === 'A2'))
         ? 0.5 : 1.0;
-      const effectiveDim  = hasFocus ? local.params.dim_amount               : 0;
+      // Phase 21M (2026-05-21) — IDLE wires fade with zoom-out.
+      // Mapping (in gizmo terms): wires at full alpha when
+      // zoomPct ≥ 1.0 (gizmo 100% = fit); linearly fade to 0
+      // alpha as zoomPct drops to 0.5 (gizmo 50%); fully faded
+      // below 0.5. We reuse the existing `dim_amount` uniform
+      // (which the edge shader applies as an alpha multiplier);
+      // the fade kicks in independent of hasFocus so wires
+      // dim during idle zoom-out too. The MAX of the two dim
+      // sources wins: focused-state dim and zoom-fade dim
+      // never accidentally underflow.
+      let wireZoomFade = 0;
+      if (camera && camera.state && typeof computeFitScale === 'function') {
+        const fitSc = computeFitScale();
+        if (fitSc > 0) {
+          const zp = camera.state.scale / fitSc;
+          if      (zp >= 1.0) wireZoomFade = 0;
+          else if (zp <= 0.5) wireZoomFade = 1;
+          else                wireZoomFade = (1.0 - zp) / 0.5;
+        }
+      }
+      const focusDim      = hasFocus ? local.params.dim_amount : 0;
+      const effectiveDim  = Math.max(focusDim, wireZoomFade);
       const effectiveDimN = hasFocus ? local.params.dim_amount_nodes * dimMulN : 0;
       // Phase 7 (2026-05-20) — stroke color (replaces deleted glow color).
       // Parsed once per frame; cheap.
@@ -2817,17 +2838,14 @@
     //  - Opacity = linear interpolation between zoomPct 0.50 (0)
     //    and 0.10 (1).
     // ════════════════════════════════════════════════════════════
-    // Phase 21L (2026-05-21) — BG world-anchor constant.
-    // Raised from 18000 → 60000 wu so the world-scaled BG size
-    // ALWAYS exceeds the viewport at the camera floor on every
-    // common aspect ratio (4:3, 16:9, 21:9, up to 32:9). With
-    // 60000 wu, Rule A (world-scaled) wins at every zoom level
-    // on every typical monitor — no viewport-floor breakpoint
-    // is needed any more, so the BG scales SMOOTHLY all the
-    // way down to the camera floor instead of stopping at
-    // around gizmo 15% on wide monitors. Full reference doc:
-    // AUDIT/forge-zoom-world-system-2026-05-21.md
-    const BG_WORLD_WIDTH = 60000; // wu
+    // Phase 21M (2026-05-21) — BG world size tuned to ~1.5×
+    // viewport at the camera floor on a normal 16:9 monitor.
+    // Phase 21L overshot at 60000 (BG ~3× viewport — "gigantic").
+    // 30000 wu reproduces the Phase 21K visual size at gizmo 10%
+    // WITHOUT the breakpoint that pegged scaling at gizmo 15%,
+    // so the BG still rides the wheel's full zoom range smoothly.
+    // Full reference: AUDIT/forge-zoom-world-system-2026-05-21.md
+    const BG_WORLD_WIDTH = 30000; // wu
 
     function syncBackgroundImage() {
       if (!bgImage) return;
