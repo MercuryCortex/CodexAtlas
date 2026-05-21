@@ -74,7 +74,7 @@ The agricultural and territorial dimensions of Meder were likely emphasized — 
 - **[[gaia]] / Gaia** — *parallel-form*: Greek primordial earth-personification (Hesiod *Theogony* 116ff); structurally cognate.
 - **[[geb]]** — *parallel-form*: Egyptian earth-god (here gendered masculine like Meder; the gender-variation between male and female earth-deities across Mediterranean and ANE cultures is a recurring pattern).
 - **[[ki-sumerian]]** — *parallel-form*: Sumerian earth-personification.
-- **[[tellus-mater]] / Terra Mater (Roman)** — *parallel-form*: Roman earth-mother.
+- **Tellus Mater / Terra Mater (Roman)** — *parallel-form*: Roman earth-mother; no node yet in the vault.
 
 ## Iconography
 Not standardized in surviving Aksumite material culture.

@@ -34,7 +34,7 @@ syncretic-edges:
   - target: "ranginui"
     type: "scholarly-parallel"
     source: "Best, *Maori Religion and Mythology* (1924) — Maori Ranginui-Papatuanuku cosmic sky-earth couple; Mawu-Lisa as Fon cosmic moon-sun pair. Cosmic primordial-couple convergence"
-status: "stub"
+status: "metadata"
 refs:
   - title: "Dahomey: An Ancient West African Kingdom"
     author: "Herskovits, Melville J."

@@ -14,7 +14,7 @@ attested-in:
 key-themes:
   - "[[dualism-cosmic]]"
   - "[[theme-persecution-as-legitimation]]"
-status: "stub"
+status: "metadata"
 tags: [deity, yazidi, angel, peacock, kurdish, melek-taus, contested, angelology]
 ---
 

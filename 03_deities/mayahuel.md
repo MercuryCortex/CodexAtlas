@@ -14,14 +14,14 @@ parent-of: ["the Centzon Totochtin (Four Hundred Rabbits — collective of pulqu
 child-of: []
 consort: ["Patecatl (god who discovered fermentation; together they fathered the 400 rabbits)"]
 attributes: ["maguey plant (her body)", "many breasts (depicted nursing multiple offspring)", "a vessel of pulque", "shells (lunar-feminine motif)", "rabbit (the 400 pulque-gods are rabbits)"]
-attested-in: ["[[phase-6-001-codex-borgia]] (pre-Conquest Mesoamerican religious manuscript depicting Mayahuel)", "[[phase-8-004-florentine-codex-sahagun]] (Sahagún's compendium; Book 1 names her among the great gods)"]
+attested-in: ["[[phase-8-002-codex-borgia]] (pre-Conquest Mesoamerican religious manuscript depicting Mayahuel)", "[[phase-8-004-florentine-codex-sahagun]] (Sahagún's compendium; Book 1 names her among the great gods)"]
 equivalents: []
 syncretic-edges:
   - target: "[[corn-mother]]"
     type: "scholarly-parallel"
     source: "Both are female deities embodied IN the plant (Mayahuel IS the maguey; Selu/Corn Mother IS the corn) — the body-of-the-goddess as the cultivar is one of the most distinctive Mesoamerican-Native-American religious patterns"
     notes: "Independent emergence in two Mesoamerican-and-North-American agricultural traditions; not a transmission claim, a structural parallel"
-status: "stub"
+status: "metadata"
 refs:
   - title: "Aztec Religion and the Cosmovision"
     author: "Carrasco, David"
