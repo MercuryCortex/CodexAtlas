@@ -383,10 +383,16 @@
     //     across the rim labels; soft inner stop so newest
     //     nodes don't pile at r=0.
     //
-    // Wedge angular bounds are intentionally NOT re-applied —
-    // a small amount of cross-family drift at the family
-    // boundaries is the organic signature John asked for,
-    // and the convex hull overlay just expands to enclose it.
+    // Phase 20D-4 (2026-05-21): wedge angular bounds ARE
+    // re-applied at the end of each iteration. The previous
+    // "no clamp" version let Shinto / Pacific members drift
+    // ACROSS the family dividers, which then read as a layout
+    // bug ("shinto over the line"). Now: every member is
+    // re-clamped to its own family's [a0, a1] after each
+    // global-pass move, so dividers (at the wedge boundaries)
+    // always sit BETWEEN families. The clamp is HARD because
+    // John asked for "PERFECT RADIAL" divider alignment —
+    // any softness would re-introduce the drift.
     {
       const PADDING   = 10;      // wu of extra space per pair
       const G_ITERS   = 5;
@@ -403,12 +409,27 @@
       let maxDegGlobal = 1;
       for (const m of degree.values()) if (m > maxDegGlobal) maxDegGlobal = m;
 
-      // Snapshot all placed nodes.
+      // Snapshot all placed nodes — also remember each node's
+      // wedge so we can re-clamp angularly after every move.
+      // ANG_PAD is a tiny inward set-back from a0/a1 so disks
+      // visibly clear the divider line (which sits AT a1+gap/2
+      // — i.e. a few hundredths of a radian past a1).
+      const ANG_PAD = 0.005;
       const all = [];
       for (const n of nodes) {
         const p = positions.get(n.id);
         if (!p) continue;
-        all.push({ id: n.id, x: p.x, y: p.y, deg: degree.get(n.id) || 0 });
+        const famName = (n.family && String(n.family).trim()) || 'Other';
+        const w = wedges[famName];
+        all.push({
+          id:    n.id,
+          x:     p.x,
+          y:     p.y,
+          deg:   degree.get(n.id) || 0,
+          a0:    w ? w.a0 + ANG_PAD : null,
+          a1:    w ? w.a1 - ANG_PAD : null,
+          actr:  w ? w.center : 0,
+        });
       }
       const M = all.length;
 
@@ -456,14 +477,35 @@
           // Apply.
           pi.x += pushX;
           pi.y += pushY;
-          // Annulus clamp.
-          const nr = Math.hypot(pi.x, pi.y);
+          // Annulus clamp (radial).
+          let nr = Math.hypot(pi.x, pi.y);
           if (nr > outerCap) {
             const s = outerCap / nr;
             pi.x *= s; pi.y *= s;
+            nr = outerCap;
           } else if (nr < innerCap) {
             const s = innerCap / Math.max(nr, 0.001);
             pi.x *= s; pi.y *= s;
+            nr = innerCap;
+          }
+          // Wedge angular clamp — keep member inside its
+          // family's [a0, a1] so the wedge-boundary dividers
+          // always sit BETWEEN families.
+          if (pi.a0 != null && nr > 0.001) {
+            const ang = Math.atan2(pi.y, pi.x);
+            // Compute signed offset from wedge centre, wrapped
+            // to (-π, π], so wrap-around wedges (e.g. one that
+            // crosses ±π) get a consistent comparison.
+            let off = ang - pi.actr;
+            while (off >  Math.PI) off -= 2 * Math.PI;
+            while (off < -Math.PI) off += 2 * Math.PI;
+            const halfArc = (pi.a1 - pi.a0) / 2;
+            if (off >  halfArc || off < -halfArc) {
+              const clamped = Math.max(-halfArc, Math.min(halfArc, off));
+              const newAng  = pi.actr + clamped;
+              pi.x = nr * Math.cos(newAng);
+              pi.y = nr * Math.sin(newAng);
+            }
           }
         }
       }

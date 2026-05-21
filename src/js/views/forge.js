@@ -1792,10 +1792,17 @@
       // - center    world centre of the wheel
       // - innerRadius / outerRadius
       //             min / max distance from center over all nodes
-      // - dividers[] radial bisector angle between angularly-
-      //             adjacent families (used for separator lines).
+      // - dividers[] radial separators between angularly-adjacent
+      //             families. Phase 20D-4 (2026-05-21): the third
+      //             arg is the layout's exact wedge boundaries —
+      //             dividers are now computed from a1[i] → a0[i+1]
+      //             mid-points, so they sit on the IMMUTABLE wedge
+      //             edges instead of the post-relaxation centroids.
+      //             Fixes the bug where Shinto / Pacific members
+      //             drifted across the centroid-bisector dividers
+      //             after the global relaxation pass.
       local.mode.hullData = (graph.buildFamilyHulls)
-        ? graph.buildFamilyHulls(nodePack, modeNodeById)
+        ? graph.buildFamilyHulls(nodePack, modeNodeById, lay.wedges)
         : { hulls: [], center: { x: 0, y: 0 }, innerRadius: 0, outerRadius: 0, dividers: [] };
       rebuildHullElements();
 
@@ -2489,16 +2496,25 @@
       }
 
       // ── Radial separators between adjacent families.
-      // Each line runs from (inner - 50 px) to (outer + 50 px) along
-      // its bisector angle. The per-line gradient's userSpaceOnUse
-      // endpoints are updated to match so the fade rides the line.
-      const OVERSHOOT = 50;   // px — both sides of the ring
+      // Each line is PERFECTLY RADIAL from the wheel centre at
+      // its wedge-boundary angle (Phase 20D-4 — was previously
+      // a centroid bisector that could drift off the boundary
+      // after relaxation).
+      //
+      // Length: from (inner − INNER_OVERSHOOT) to (outer +
+      // OUTER_OVERSHOOT). Phase 20D-4 reduced OUTER_OVERSHOOT
+      // from 50 px to 8 px so the line ends just past the outer
+      // node ring instead of intruding into the family-label
+      // band at +28 px. Inner overshoot stays at 50 px so the
+      // line still reads through the centre void.
+      const INNER_OVERSHOOT = 50;
+      const OUTER_OVERSHOOT = 8;
       const lines = hullDividersG.children;
       for (let i = 0; i < data.dividers.length && i < lines.length; i++) {
         const d = data.dividers[i];
         const a = d.angle;
-        const r0 = Math.max(0, innerPxRadius - OVERSHOOT);
-        const r1 = ringPxRadius + OVERSHOOT;
+        const r0 = Math.max(0, innerPxRadius - INNER_OVERSHOOT);
+        const r1 = ringPxRadius + OUTER_OVERSHOOT;
         const x1 = centerScreen.x + Math.cos(a) * r0;
         const y1 = centerScreen.y + Math.sin(a) * r0;
         const x2 = centerScreen.x + Math.cos(a) * r1;

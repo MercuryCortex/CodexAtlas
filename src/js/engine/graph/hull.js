@@ -97,7 +97,16 @@
   //     prevFamily: string,      // family on the -ω side
   //   }>
   // }
-  function buildFamilyHulls(nodePacked, nodesById) {
+  // @param wedgeData (optional) — the `wedges` object from
+  //   radialWedgeLayout. Each entry has { name, a0, a1, center,
+  //   members, color }. When supplied, dividers are computed
+  //   from the EXACT wedge boundaries (a1[i] → a0[i+1] mid-
+  //   point) instead of from the placed-member centroids.
+  //   That matters when the layout's relaxation pass has
+  //   drifted member positions: centroid-based dividers wander
+  //   off the family wedge boundary, but a0/a1 boundaries
+  //   never move. Use this path for "PERFECT RADIAL" dividers.
+  function buildFamilyHulls(nodePacked, nodesById, wedgeData) {
     if (!nodePacked || !nodePacked.idIndex) {
       return { hulls: [], center: { x: 0, y: 0 }, innerRadius: 0, outerRadius: 0, dividers: [] };
     }
@@ -159,31 +168,69 @@
         count: data.points.length,
       });
     }
-    // Largest first for layering — but compute dividers by angular
-    // order, not by count.
+    // Largest first for layering.
     out.sort((a, b) => b.count - a.count);
-    // Order families angularly to find adjacent neighbours on the
-    // wheel rim. Wrap-around handled by repeating the first at the
-    // end.
-    const byAngle = out.slice().sort((a, b) => a.centroidAngle - b.centroidAngle);
-    const dividers = [];
-    for (let i = 0; i < byAngle.length; i++) {
-      const cur = byAngle[i];
-      const next = byAngle[(i + 1) % byAngle.length];
-      // Bisector between the two centroids. Handle wrap-around
-      // (the gap crosses -π/+π) by adding 2π to the smaller value
-      // when their gap exceeds π.
-      let a = cur.centroidAngle;
-      let b = next.centroidAngle;
-      if (b < a) b += 2 * Math.PI;
-      let mid = (a + b) / 2;
-      while (mid > Math.PI)  mid -= 2 * Math.PI;
-      while (mid < -Math.PI) mid += 2 * Math.PI;
-      dividers.push({
-        angle: mid,
-        family: next.family,
-        prevFamily: cur.family,
-      });
+
+    // ── Dividers ────────────────────────────────────────
+    // PREFERRED path: use the layout's exact wedge boundaries
+    // (wedgeData.a1 → next.a0 mid-point). These boundaries
+    // are immutable across the layout's relaxation passes, so
+    // the dividers ALWAYS sit between adjacent families even
+    // when members have drifted across the family centroid.
+    //
+    // FALLBACK path (no wedgeData passed): use centroid-bisector,
+    // which works but can drift off-boundary after relaxation —
+    // that's the bug John reported in Phase 20D-3 ("shinto
+    // over the line", "pacific over the line").
+    let dividers;
+    if (wedgeData && typeof wedgeData === 'object') {
+      const wedgeList = [];
+      for (const name in wedgeData) {
+        const w = wedgeData[name];
+        if (!w || typeof w.a0 !== 'number' || typeof w.a1 !== 'number') continue;
+        wedgeList.push(w);
+      }
+      // Sort by wedge centre angle so adjacency = list order.
+      wedgeList.sort((a, b) => a.center - b.center);
+      dividers = [];
+      const W = wedgeList.length;
+      for (let i = 0; i < W; i++) {
+        const cur  = wedgeList[i];
+        const next = wedgeList[(i + 1) % W];
+        // Divider sits in the middle of the gap between cur.a1
+        // and next.a0. Wrap-around: next.a0 may have already
+        // wrapped past -π, so we add 2π when next.a0 < cur.a1.
+        let a = cur.a1;
+        let b = next.a0;
+        if (b < a) b += 2 * Math.PI;
+        let mid = (a + b) / 2;
+        while (mid > Math.PI)  mid -= 2 * Math.PI;
+        while (mid < -Math.PI) mid += 2 * Math.PI;
+        dividers.push({
+          angle: mid,
+          family: next.name,
+          prevFamily: cur.name,
+        });
+      }
+    } else {
+      // Legacy fallback — centroid-bisector dividers.
+      const byAngle = out.slice().sort((a, b) => a.centroidAngle - b.centroidAngle);
+      dividers = [];
+      for (let i = 0; i < byAngle.length; i++) {
+        const cur = byAngle[i];
+        const next = byAngle[(i + 1) % byAngle.length];
+        let a = cur.centroidAngle;
+        let b = next.centroidAngle;
+        if (b < a) b += 2 * Math.PI;
+        let mid = (a + b) / 2;
+        while (mid > Math.PI)  mid -= 2 * Math.PI;
+        while (mid < -Math.PI) mid += 2 * Math.PI;
+        dividers.push({
+          angle: mid,
+          family: next.family,
+          prevFamily: cur.family,
+        });
+      }
     }
     return { hulls: out, center, innerRadius, outerRadius, dividers };
   }
