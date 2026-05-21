@@ -12,6 +12,15 @@ historicity: "documented"
 texts-authored: ["[[phase-6-012-dee-monas-hieroglyphica]] (1564)", "*Mathematicall Praeface* to Henry Billingsley's Euclid (1570)", "*General and Rare Memorials Pertayning to the Perfect Arte of Navigation* (1577)", "*Mysteriorum Libri Quinque* and other angelic-conversation diaries (1581–1607)"]
 status: "metadata"
 events-participated: ["1583–1589 continental tour with Edward Kelley; visits to Polish and Bohemian courts"]
+hub-edges:
+  - target: "hermetic-transmission-chain"
+    type: "Phase-4-Elizabethan-Hermetic-synthesist"
+    source: "Yates 1964 *Giordano Bruno and the Hermetic Tradition*; Yates 1979 *The Occult Philosophy in the Elizabethan Age*; Clulee 1988 *John Dee's Natural Philosophy*; French 1972 *John Dee: The World of an Elizabethan Magus* — Dee is the Elizabethan-English instance of the Phase 4 radical-wing Hermetic synthesis. His *Monas Hieroglyphica* (1564) pushes sacred geometry + alchemical symbolism + Kabbalistic letter-mysticism to a single emblematic glyph; his angelic-conversation diaries (*Mysteriorum Libri Quinque*, 1581-1607) document the Enochian-magic system he developed with Edward Kelley. Dee shapes English Renaissance science (his *Mathematicall Praeface* to Euclid 1570 is foundational) AND English esoteric tradition simultaneously. See [[hermetic-transmission-chain]] Phase 4"
+    notes: "Cross-lens: 04_persons → 06_themes. Dee is the load-bearing Elizabethan Hermetic figure — the bridge from Renaissance Italian-German Hermetism (Ficino → Agrippa) to Anglo-Saxon esoteric tradition (Royal Society scientific-occult overlap → 18th c. English Masonry)"
+  - target: "theme-solomonic-transmission-spine"
+    type: "Solomonic-grimoire-tradition-figure"
+    source: "Sherman 1995 *John Dee: The Politics of Reading and Writing*; Clulee 1988; Torijano 2002 *Solomon the Esoteric King* — Dee operated within the Solomonic grimoire-tradition framework, working with Enochian angels partly in dialogue with the Lemegeton + Clavicula Salomonis tradition. His angelic-conversation system extends the Solomonic command-of-spirits tradition into Elizabethan Protestant context. See [[theme-solomonic-transmission-spine]] Thread 4 (Key of Solomon → Western ceremonial magic)"
+    notes: "Cross-lens: 04_persons → 06_themes. Dee is the named relay node in the Thread 4 chain (Solomonic grimoires → Dee → Crowley → modern Western magical orders)"
 refs:
   - title: "John Dee's Natural Philosophy: Between Science and Religion"
     author: "Clulee, Nicholas H."

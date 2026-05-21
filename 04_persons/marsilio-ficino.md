@@ -13,6 +13,11 @@ texts-authored: ["[[phase-6-001-ficino-pimander]]", "[[phase-6-002-ficino-theolo
 texts-attributed-to: []
 events-participated: ["[[event-ficino-corpus-hermeticum-translation-1463]]"]
 mentioned-in: ["[[phase-6-003-pico-oration-900-conclusions]]", "[[phase-6-014-bruno-de-la-causa-eroici-furori]]"]
+hub-edges:
+  - target: "hermetic-transmission-chain"
+    type: "Phase-3-Florentine-ignition-figure"
+    source: "Yates 1964 *Giordano Bruno and the Hermetic Tradition*; Hankins 1990 *Plato in the Italian Renaissance* (2 vols.); Allen & Rees 2002 *Marsilio Ficino: His Theology, His Philosophy, His Legacy*; Kristeller 1943 — Ficino IS the ignition-figure of the Florentine Phase 3 of the hermetic-transmission-chain. The 1462-63 episode is canonical: Cosimo de' Medici interrupts Ficino's Plato translation to demand he translate the Corpus Hermeticum FIRST because Cosimo believes he is receiving pre-Mosaic wisdom older than Plato and dying men cannot wait. Ficino's *Pimander* (1463-71) is the founding document of Renaissance Hermeticism. See [[hermetic-transmission-chain]] Phase 3"
+    notes: "MASSIVE-WIN: Ficino is the single most consequential person in the post-Byzantine Western reception of Hermetic literature — the Plato-was-interrupted-for-Hermes urgency is the measure of how seriously the Renaissance took the false-antiquity claim. Cross-lens: 04_persons → 06_themes"
 status: "metadata"
 refs:
   - title: "Marsilio Ficino: His Theology, His Philosophy, His Legacy"

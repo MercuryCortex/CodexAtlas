@@ -14,6 +14,15 @@ region: "Mystras (Peloponnese), Constantinople, Florence"
 affiliations: ["[[tradition-neoplatonism]]"]
 key-figures: ["[[marsilio-ficino]]", "[[cosimo-de-medici]]", "[[giovanni-pico-della-mirandola]]"]
 themes: ["[[prisca-theologia]]", "[[neoplatonic-henosis]]"]
+hub-edges:
+  - target: "hermetic-transmission-chain"
+    type: "Phase-2-to-Phase-3-bridge-figure"
+    source: "Yates 1964 *Giordano Bruno and the Hermetic Tradition*; Woodhouse 1986 *Plethon: The Last of the Hellenes*; Hankins 1990 *The Platonic Academy of Florence* — Plethon (~1355-1452) is THE bridge figure between Phase 2 (Byzantine preservation) and Phase 3 (Florentine ignition) of the hermetic-transmission-chain. He arrived in Florence with the Greek Orthodox delegation for the Council of Florence (1438-39) carrying his full Proclean Neoplatonism + *Chaldean Oracles* commentary + secret pagan-religious-restoration program. His lectures to Cosimo de' Medici directly inspired the founding of the Platonic Academy + Ficino's translation program. See [[hermetic-transmission-chain]] Phase 2 → Phase 3"
+    notes: "MASSIVE-WIN: 'The last of the Hellenes' — Plethon was the last to practice Neoplatonism as a *living religion* rather than academic heritage. His secret pagan-restoration project (*Nomoi* / *Laws*, burned by Patriarch Scholarios after Plethon's death) makes him the most theologically-radical late-Byzantine figure. Cross-lens: 04_persons → 06_themes"
+  - target: "neoplatonic-henosis"
+    type: "last-living-practitioner-of-Neoplatonic-mysticism"
+    source: "Woodhouse 1986; Hankins 1990; Plethon's *Nomoi* fragments — Plethon practiced *henosis* (mystical union with the One) as the living religious goal of his pagan-Neoplatonic system; he is the historical bridge between the closed Athenian Academy tradition (529 CE) and the Renaissance Hermetic revival. See [[neoplatonic-henosis]]"
+status: "metadata"
 influenced-by: ["[[plato]]", "[[plotinus]]", "[[proclus]]", "[[iamblichus]]", "Zoroastrian sources (via Byzantine transmission)"]
 influences: ["[[marsilio-ficino]]", "[[cosimo-de-medici]]", "[[event-council-of-florence-1439]]", "all subsequent Renaissance Platonism"]
 geo-lat: 37.07

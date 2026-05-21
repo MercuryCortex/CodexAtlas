@@ -11,6 +11,11 @@ date-died: 1535
 historicity: "documented"
 texts-authored: ["[[phase-6-009-agrippa-de-occulta-philosophia]] (drafted 1510, printed 1531–1533)", "*De Vanitate Scientiarum et Artium* (1530)", "*De Nobilitate et Praecellentia Foeminei Sexus* (1529)"]
 texts-attributed-to: ["*Liber Quartus de Occulta Philosophia* (1559) — pseudo-Agrippa"]
+hub-edges:
+  - target: "hermetic-transmission-chain"
+    type: "Phase-4-systematizer-of-Renaissance-magic"
+    source: "Yates 1964 *Giordano Bruno and the Hermetic Tradition*; Nauert 1965 *Cornelius Agrippa and the Crisis of Renaissance Thought*; van der Poel 1997 *Cornelius Agrippa, the Humanist Theologian* — Agrippa's three-volume *De Occulta Philosophia* (drafted 1510, printed 1531-33) is THE central single compendium of Renaissance magic — the systematization-into-textbook-form of the entire Hermetic-Kabbalistic-Neoplatonic synthesis Ficino + Pico assembled. Agrippa organizes the synthesis into three levels (elemental + celestial + intellectual magic) and provides the operational handbook that subsequent magicians (Dee, Bruno, Paracelsus) presuppose. See [[hermetic-transmission-chain]] Phase 4"
+    notes: "Cross-lens: 04_persons → 06_themes. Agrippa is the *manual-writer* of Renaissance magic — the figure who transforms the Hermetic synthesis from learned-elite project into a practical operational system that subsequent practitioners can deploy. The paradoxical *De Vanitate* (1530) is humanist *paradoxon* per Nauert, not serious recantation"
 status: "metadata"
 refs:
   - title: "Cornelius Agrippa and the Crisis of Renaissance Thought"

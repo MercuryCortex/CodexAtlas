@@ -19,6 +19,15 @@ related-themes:
   - "[[hermetic-correspondences]]"
   - "[[hermetic-cosmogony]]"
   - "[[microcosm-macrocosm]]"
+hub-edges:
+  - target: "hermetic-transmission-chain"
+    type: "Phase-4-radical-Hermetic-martyr"
+    source: "Yates 1964 *Giordano Bruno and the Hermetic Tradition* (the founding thesis); Couliano 1987 *Eros and Magic in the Renaissance*; Rowland 2008 *Giordano Bruno: Philosopher / Heretic* — Bruno is the radical-wing endpoint of the Renaissance Hermetic synthesis. *De l'infinito universo et mondi* (1584) uses Hermetic Egyptian theology to argue for an infinite universe and multiple worlds — a claim his contemporaries correctly understood as incompatible with Christianity. Bruno's burning at the stake (Campo de' Fiori, 17 Feb 1600) is the *symbolic end of the Renaissance Hermetic golden age* — the Church's answer to the synthesis. See [[hermetic-transmission-chain]] Phase 4"
+    notes: "MASSIVE-WIN: Bruno's execution is the hinge that closes the Renaissance Hermetic golden age (Phase 4) and opens the Rosicrucian / Masonic underground tradition (Phase 5 — the Rosicrucian manifestos appear 1614, 14 years later, as the esoteric response). Cross-lens: 04_persons → 06_themes"
+  - target: "executed-divine-claimant"
+    type: "Renaissance-instance-of-pattern"
+    source: "Yates 1964; Rowland 2008; Roman Inquisition trial documents (Vatican Archives) — Bruno's seven-year trial (1592-1600) and burning at Campo de' Fiori is the Renaissance instance of the executed-divine-claimant pattern. His Hermetic-philosophical claims (multiple worlds + infinite universe + divine-immanence/pantheism) were judged heretical; his refusal to recant under torture made the execution inevitable. The pattern: mystic-philosopher claims direct unmediated access to divine truth; institutional religion uses political power to eliminate the threat; the death becomes the seed of the tradition's spread. See [[executed-divine-claimant]]"
+    notes: "Cross-lens: 04_persons → 06_themes. Bruno's place in the cross-tradition executed-divine-claimant cluster: Socrates → Jesus → al-Hallaj → Mani → Suhrawardī → Bruno. Each death exemplifies the pattern's mechanism + amplifies the tradition's later resilience"
 related-traditions:
   - "[[tradition-hermeticism]]"
   - "[[tradition-renaissance-hermeticism]]"

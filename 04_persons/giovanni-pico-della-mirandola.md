@@ -13,6 +13,11 @@ texts-authored: ["[[phase-6-003-pico-oration-900-conclusions]]", "[[phase-6-004-
 texts-attributed-to: []
 events-participated: ["1487 papal condemnation of thirteen of the 900 Conclusions"]
 mentioned-in: ["[[phase-6-006-reuchlin-de-arte-cabalistica]]"]
+hub-edges:
+  - target: "hermetic-transmission-chain"
+    type: "Phase-3-Florentine-synthesis-figure"
+    source: "Yates 1964; Wirszubski 1989 *Pico della Mirandola's Encounter with Jewish Mysticism*; Farmer 1998 *Syncretism in the West: Pico's 900 Theses*; Copenhaver 2019 *Magic and the Dignity of Man* — Pico is the Phase 3 synthesist who *adds Christian Kabbalah* to Ficino's Hermetic-Platonic synthesis. His 900 Conclusions (1486) + the Oration on the Dignity of Man are the high-water mark of Renaissance syncretism: Hermes Trismegistus + Plato + Moses + the Kabbalah + the Quran + the Magi + all converging on Christ via the *prisca theologia* framework. The 1487 papal condemnation of 13 of the 900 Conclusions documents the institutional resistance. See [[hermetic-transmission-chain]] Phase 3"
+    notes: "MASSIVE-WIN: Pico is the Christian-Kabbalah origin point — the single Renaissance figure who imports Jewish Kabbalistic technique into the Western Hermetic synthesis, opening the channel that Reuchlin + Knorr von Rosenroth + Lurianic-influence subsequently develop. Cross-lens: 04_persons → 06_themes"
 status: "metadata"
 refs:
   - title: "Pico della Mirandola's Encounter with Jewish Mysticism"
