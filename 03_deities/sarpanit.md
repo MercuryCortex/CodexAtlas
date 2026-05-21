@@ -14,10 +14,10 @@ parent-of: ["[[nabu]]"]
 child-of: []
 consort: ["[[marduk]]"]
 attributes: ["seated divine queen alongside Marduk", "ear of grain", "the new moon"]
-attested-in: ["[[phase-1-005-enuma-elish]]"]
+attested-in: ["[[phase-1-008-enuma-elish]]"]
 equivalents: []
 syncretic-edges: []
-status: "stub"
+status: "metadata"
 refs:
   - title: "Dictionary of Deities and Demons in the Bible (DDD)"
     author: "van der Toorn, K., Becking, B., van der Horst, P. (eds.)"

@@ -16,7 +16,7 @@ syncretic-edges:
   - target: "yaldabaoth"
     type: "scholarly-parallel"
     source: "Stoyanov 2000; Hamilton 1979 — structural and likely genealogical link between Sethian Yaldabaoth and Bogomil Satanael, via Manichaean → Paulician → Bogomil transmission. Contested by Moore 2012."
-status: "stub"
+status: "metadata"
 refs:
   - title: "The Other God: Dualist Religions from Antiquity to the Cathar Heresy"
     author: "Stoyanov, Yuri"
