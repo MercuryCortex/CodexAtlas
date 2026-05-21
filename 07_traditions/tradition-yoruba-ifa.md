@@ -11,6 +11,11 @@ key-deities: ["[[olodumare]]", "[[obatala]]", "[[oshun]]", "[[shango]]", "[[yemo
 key-persons: ["[[samuel-ajayi-crowther]] (linguistic standardization)"]
 key-documents: ["[[phase-8-007-ifa-divination-corpus]]"]
 sister-traditions: ["[[tradition-vodou-haitian]]", "[[tradition-santeria-lucumi]]", "[[tradition-rastafari]] (partly, via Garveyite Ethiopianism + Yoruba diasporic substrate)"]
+hub-edges:
+  - target: "afro-diasporic-syncretism"
+    type: "African-source-tradition-of-syncretism"
+    source: "Murphy 1988 *Santería*; Desmangles 1992; Cros Sandoval 2006 — Yoruba-Ifá religion is the West-African source-tradition of the Afro-diasporic syncretism. All orisha-saint correspondences (Shango↔Santa Bárbara, Oshun↔Caridad del Cobre, Ogun↔Santiago, Obatala↔Las Mercedes) begin with the Yoruba pantheon. See [[afro-diasporic-syncretism]]"
+    notes: "MASSIVE-WIN: 07_traditions → 06_themes. Yoruba is the most widely diaspora-transmitted African tradition"
 status: "metadata"
 refs:
   - title: "Ifa: An Exposition of Ifa Literary Corpus"

@@ -11,6 +11,10 @@ key-deities: ["[[olodumare]] (Yoruba); Chukwu (Igbo); Nyame (Akan); uNkulunkulu 
 key-persons: ["[[samuel-ajayi-crowther]]"]
 key-documents: ["[[phase-8-007-ifa-divination-corpus]] (Yoruba Ifá); largely oral traditions across the continent"]
 sister-traditions: ["[[tradition-yoruba-ifa]]", "[[tradition-vodou-haitian]]", "[[tradition-santeria-lucumi]]", "[[tradition-rastafari]]"]
+hub-edges:
+  - target: "afro-diasporic-syncretism"
+    type: "broader-African-substrate-tradition"
+    source: "Mbiti 1969 *African Religions and Philosophy*; Murphy 1988 — African traditional religions broadly (Yoruba + Fon/Dahomean + Akan + Kongo) constitute the substrate the Atlantic slave trade dispersed into the Americas. Yoruba most-widely-transmitted; Fon-Dahomean dominates in Haitian Vodou (Dan = Damballa). See [[afro-diasporic-syncretism]]"
 status: "metadata"
 refs:
   - title: "African Religions and Philosophy"

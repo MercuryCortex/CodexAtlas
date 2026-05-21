@@ -32,6 +32,17 @@ sister-traditions:
   - "[[tradition-coptic-orthodox]]"
   - "[[tradition-syriac-orthodox]]"
   - "[[tradition-ethiopian-orthodox-tewahedo]]"
+hub-edges:
+  - target: "merkabah-miraj-ascent-chain"
+    type: "Byzantine-Christian-tradition-of-mystical-ascent"
+    source: "Scholem 1941; Sells 1994 *Mystical Languages of Unsaying*; McGinn 1991 *The Foundations of Mysticism* — Eastern Orthodoxy preserves the apophatic + ascent tradition via Pseudo-Dionysius (the most direct Christianization of Proclus's Neoplatonism); the hesychast tradition + Palamite essence-energies distinction are the Eastern-Christian instantiations of the mystical-ascent template. See [[merkabah-miraj-ascent-chain]]"
+  - target: "neoplatonic-henosis"
+    type: "Christian-articulation-as-theosis"
+    source: "McGinn 1991; Sells 1994; Athanasius *On the Incarnation* ('God became man so that man might become God') — Eastern Orthodox *theosis* (deification) is the Christian articulation of the cross-tradition mystical-union pattern Plotinus articulates as henosis. The Cappadocians + Pseudo-Dionysius + Maximus the Confessor + Gregory Palamas develop this tradition. See [[neoplatonic-henosis]]"
+    notes: "MASSIVE-WIN: 07_traditions → 06_themes. Theosis is the Christian-tradition's most direct inheritance from Plotinian Neoplatonism, mediated via Pseudo-Dionysius"
+  - target: "zeus-pantokrator-transmission"
+    type: "Byzantine-iconographic-tradition"
+    source: "Mathews 1993 *The Clash of Gods*; Grabar 1968; Mango 1972 — Eastern Orthodoxy is the Christian tradition that develops + canonizes the Christ Pantokrator iconographic type. Every Byzantine + Eastern Orthodox church dome carries this image; the 6th-c. Sinai Pantokrator is the oldest surviving Christian portrait icon. See [[zeus-pantokrator-transmission]]"
 status: "metadata"
 refs:
   - title: "The Orthodox Church"

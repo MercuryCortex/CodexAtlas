@@ -11,6 +11,14 @@ key-deities: ["[[jesus-christ-deity]]", "[[mary-theotokos]]"]
 key-persons: ["[[hugues-de-payens]] (Templar founder; institutional ancestor)", "[[jacques-de-molay]] (last Templar Grand Master; institutional predecessor)", "[[pope-clement-v]] (suppressor of the Templars 1312)", "King Dinis I of Portugal (founder of the Order of Christ, 1319 — not yet stubbed)", "Pope John XXII (papal bull *Ad ea ex quibus*, 14 March 1319 — not yet stubbed)", "Henry the Navigator (Infante D. Henrique, Grand Master 1418–1460 — not yet stubbed; financed the Discoveries from Order revenues)", "King Manuel I (Grand Master from 1495; first king-grand-master — not yet stubbed)"]
 key-documents: ["[[phase-5-038-chinon-parchment-1308]] (institutional context: Templar-survival papal-pre-history)", "Papal bull *Ad ea ex quibus* (14 March 1319, John XXII) — not yet stubbed", "[[phase-5-036-rule-of-templars-latin]] (institutional ancestor)"]
 sister-traditions: ["[[tradition-knights-templar]]", "[[tradition-hospitallers]]", "[[tradition-teutonic-knights]]", "[[tradition-strict-templar-observance]]", "[[tradition-portuguese-hermeticism]]", "[[tradition-sebastianism]]"]
+hub-edges:
+  - target: "templar-gnostic-transmission-hypothesis"
+    type: "Portuguese-Templar-continuation-tradition"
+    source: "Barber 2006; Pereira 2012; Genin 2011 — the Portuguese Order of Christ (founded 1319 by King Dinis I in direct continuation of the suppressed Templars in Portugal — only major European jurisdiction where Templars escaped formal suppression) is the documented institutional-continuation tradition. The Charola at Tomar is among the highest-fidelity surviving Templar round-naved churches. See [[templar-gnostic-transmission-hypothesis]]"
+    notes: "Cross-lens: 07_traditions → 06_themes. Most documented legitimate-Templar-continuation tradition (distinct from speculative Scottish-Templar Masonic construction)"
+  - target: "theme-round-church-as-anastasis-imitatio"
+    type: "Portuguese-architectural-continuation"
+    source: "Pereira 2012; Krautheimer 1942 — the Convent of Christ at Tomar is one of the highest-fidelity surviving examples of the Templar round-naved church programme. See [[theme-round-church-as-anastasis-imitatio]]"
 status: "metadata"
 refs:
   - title: "The Knights Templar: A New History"

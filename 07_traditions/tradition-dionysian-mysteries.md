@@ -11,6 +11,11 @@ key-deities: ["[[dionysus]]", "[[dionysus-mystery]]", "[[bacchus]] (Roman name)"
 key-persons: ["legendary founder: Orpheus (the Thracian poet-musician — see [[orpheus]] in vault)", "various Hellenistic and Roman cult-organizers (the historical individuals are mostly unknown by name; mystery-cult was non-priestly)"]
 key-documents: ["**[[phase-3-027-derveni-papyrus|Derveni Papyrus]]** (~340 BCE — the oldest surviving Orphic-Dionysian theogonic commentary)", "**[[phase-3-028-orphic-hymns|Orphic Hymns]]** (Hellenistic compilation, 87 hymns to deities of the Orphic-Dionysian theogony)", "**Orphic Gold Tablets** (~4th c. BCE onward; afterlife-instructions from Bacchic/Orphic initiate burials)", "**Euripides *Bacchae*** (~405 BCE — the principal Greek tragic-dramatic witness)", "**Livy *Ab Urbe Condita* 39.8–19** (the Roman 186 BCE Bacchanalia suppression narrative)", "**inscriptions** including the *Senatusconsultum de Bacchanalibus* bronze tablet (CIL I² 581)"]
 sister-traditions: ["[[tradition-orphic]] (direct theogonic overlap; the Orphic-Dionysian-Zagreus narrative is the joint theological core)", "[[tradition-eleusinian-mysteries]] (Iacchos-Dionysus identification)", "[[tradition-mystery-cults]]", "[[tradition-cybele-attis-mysteries]] (Anatolian-substrate parallel)"]
+hub-edges:
+  - target: "theme-soma-haoma-eucharist"
+    type: "Greek-mystery-tradition-of-sacred-drink-chain"
+    source: "Kerényi 1976; Otto 1933; Burkert 1985 — Dionysian mysteries are the Greek mystery-cult tradition of the sacred-drink chain. Wine = divine blood + *entheos* + Orphic Zagreus dismemberment-reconstitution = drinking-the-substance-as-drinking-the-god. See [[theme-soma-haoma-eucharist]]"
+    notes: "Cross-lens: 07_traditions → 06_themes"
 status: "metadata"
 refs:
   - title: "Ancient Mystery Cults"

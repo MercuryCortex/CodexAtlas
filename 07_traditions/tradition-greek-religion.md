@@ -11,6 +11,17 @@ key-deities: ["[[zeus]]", "[[hera]]", "[[poseidon]]", "[[hades]]", "[[athena]]",
 key-persons: ["[[homer]]", "[[hesiod]]", "[[herodotus]]", "[[plato]]", "[[aristotle]]", "[[empedocles]]", "[[plutarch]]", "[[diodorus-siculus]]"]
 key-documents: ["[[phase-2-008-homeric-epics]]", "[[phase-2-009-hesiod-theogony-works-and-days]]", "[[phase-2-028-herodotus-histories-book-2]]", "[[phase-3-026-diodorus-bibliotheca-book-1]]", "[[phase-4-072-plutarch-de-iside-et-osiride]]"]
 sister-traditions: ["[[tradition-roman-religion]]", "[[tradition-mystery-cults]]", "[[tradition-orphic]]", "[[tradition-hellenistic-philosophy]]"]
+hub-edges:
+  - target: "zeus-pantokrator-transmission"
+    type: "source-tradition-of-iconographic-transmission"
+    source: "Grabar 1968; Mathews 1993; Mango 1972 — Greek religion is the source-tradition: Phidias' chryselephantine Zeus of Olympia (~435 BCE) → Lauseion in Constantinople → Pantokrator iconographic crystallization. See [[zeus-pantokrator-transmission]]"
+    notes: "MASSIVE-WIN: 07_traditions → 06_themes"
+  - target: "theme-gandharan-buddhism"
+    type: "source-tradition-of-Buddha-image-iconography"
+    source: "Tanabe 2003; Foucher 1905-1951; Boardman 1994 — Greek religion is the iconographic source-tradition: Apollo's drapery + profile = first Buddha image; Heracles's body = Vajrapāṇi. See [[theme-gandharan-buddhism]]"
+  - target: "theme-soma-haoma-eucharist"
+    type: "Greek-branch-tradition-of-sacred-drink-chain"
+    source: "Kerényi 1976; Wasson/Hofmann/Ruck 1978 — Greek religion (Dionysus + Eleusinian kykeon) is the Mediterranean-branch of the chain. See [[theme-soma-haoma-eucharist]]"
 key-themes:
   - "[[dying-rising-god]]"
   - "[[logos-cosmic-reason]]"

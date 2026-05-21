@@ -11,6 +11,14 @@ key-deities: []
 key-persons: ["[[wolega-tafari-makonnen-haile-selassie]] (the messianic figure)", "Marcus Garvey (proto-Rastafarian Black-nationalist prophet)", "Leonard Howell (first Rastafarian preacher)"]
 key-documents: ["[[phase-8-008-kebra-nagast]] (foundational genealogical text)", "*The Promised Key* (Leonard Howell, 1935)", "Holy Bible (King James Version, with Ethiopian-perspective reading)"]
 sister-traditions: ["[[tradition-vodou-haitian]] (sibling Afro-Caribbean tradition)"]
+hub-edges:
+  - target: "theme-solomonic-transmission-spine"
+    type: "Thread-1-Ethiopian-Solomonic-tradition"
+    source: "Ullendorff 1968 *Ethiopia and the Bible*; Kebra Nagast; Haile Selassie's 1955 Constitution — Rastafari is Thread 1 endpoint: Kebra Nagast Solomonic-dynasty claim → Haile Selassie I as 233rd descendant → Rastafari deification of Selassie as the returned Christ + Lion of Judah. The Solomonic bloodline is the mechanism by which God walks on earth in Black Africa. See [[theme-solomonic-transmission-spine]] Thread 1"
+    notes: "MASSIVE-WIN: 07_traditions → 06_themes. 20th-century instance of Solomonic-genealogy theological generativity"
+  - target: "afro-diasporic-syncretism"
+    type: "Jamaican-Afro-Christian-tradition"
+    source: "Chevannes 1994 *Rastafari: Roots and Ideology* — Rastafari (1930s Jamaica) emerges at intersection of Garveyite Ethiopianism + Yoruba-diasporic substrate + Hebraic identification + 1930 coronation. Operates in Afro-Atlantic religious-creative space. See [[afro-diasporic-syncretism]]"
 status: "metadata"
 refs:
   - title: "Rastafari: Roots and Ideology"

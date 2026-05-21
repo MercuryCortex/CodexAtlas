@@ -35,6 +35,14 @@ sister-traditions:
   - "[[tradition-gnosticism]]"
   - "[[tradition-neoplatonism]]"
   - "[[tradition-zoroastrianism]]"
+hub-edges:
+  - target: "third-century-collision-zone"
+    type: "Christian-tradition-of-3rd-c-synthesis-window"
+    source: "Brown 2000 *Augustine of Hippo*; BeDuhn 'Co-formation of Manichaean and Zoroastrian Religions'; Crouzel 1989 *Origen* — early Christianity is one of the four major traditions operating in the 200-280 CE collision zone: Origen (Alexandria + Caesarea) shared Ammonius-Saccas with Plotinus, making Western Christian theology + Neoplatonic philosophy SIBLING traditions from the same Alexandrian teaching milieu. See [[third-century-collision-zone]]"
+    notes: "MASSIVE-WIN: 07_traditions → 06_themes"
+  - target: "executed-divine-claimant"
+    type: "founding-tradition-of-pattern"
+    source: "Brown 1994 *Death of the Messiah*; Pauline Epistles (~50-58 CE, the earliest Christian texts) — early Christianity articulates the executed-divine-claimant pattern in its founding moment (Paul's *we preach Christ crucified*, 1 Cor 1:23). See [[executed-divine-claimant]]"
 status: "metadata"
 refs:
   - title: "The Rise of Christianity"

@@ -11,6 +11,23 @@ key-deities: ["[[yahweh]]", "[[jesus-of-nazareth]]", "[[holy-spirit]]", "[[logos
 key-persons: ["[[jesus-of-nazareth]]", "[[john-the-baptist]]", "[[paul-of-tarsus]]", "[[peter-apostle]]", "[[james-brother-of-jesus]]", "[[mary-magdalene]]", "[[mark-evangelist]]", "[[matthew-evangelist]]", "[[luke-evangelist]]", "[[john-evangelist]]"]
 key-documents: ["[[phase-3-014-q-source]]", "[[phase-3-015-pauline-epistles]]", "[[phase-3-016-gospel-of-mark]]", "[[phase-3-017-gospel-of-matthew]]", "[[phase-3-018-luke-acts]]", "[[phase-3-020-gospel-of-john]]"]
 sister-traditions: ["[[tradition-judaism]]", "[[tradition-gnosticism]]", "[[tradition-mystery-cults]]", "[[tradition-hellenistic-philosophy]]"]
+hub-edges:
+  - target: "theme-soma-haoma-eucharist"
+    type: "global-endpoint-tradition-of-sacred-drink-chain"
+    source: "Mark 14:22-24; 1 Cor 10:16 (kos ha-berakha); Kerényi 1976; BeDuhn 2000 — Christianity is the global-distribution endpoint of the 3,500-year sacred-drink transmission chain. See [[theme-soma-haoma-eucharist]]"
+    notes: "MASSIVE-WIN: 07_traditions → 06_themes"
+  - target: "theme-dying-founder-paradigm"
+    type: "paradigm-tradition-of-pattern"
+    source: "Brown 1994; Girard 1977; Moltmann 1972 — Christianity IS the paradigm-tradition of the dying-founder pattern; every major Christian doctrine is a dispute about the meaning of the crucifixion. See [[theme-dying-founder-paradigm]]"
+  - target: "theme-two-powers-in-heaven"
+    type: "Christianized-Two-Powers-tradition"
+    source: "Boyarin 2004 + 2012; Segal 1977 — Christianity preserves what Judaism subsequently expunged: Johannine Logos + Pauline pre-existent Christ + Nicene homoousios = Christianized particularization of the Jewish second-God tradition. See [[theme-two-powers-in-heaven]]"
+  - target: "zeus-pantokrator-transmission"
+    type: "iconographic-recipient-tradition"
+    source: "Grabar 1968; Mathews 1993; Mango 1972 — Christianity's Christ Pantokrator iconographic type crystallizes 5th-6th c. CE when Phidian Zeus documented in Constantinople's Lauseion. See [[zeus-pantokrator-transmission]]"
+  - target: "theme-akhenaten-moses-monotheism-thesis"
+    type: "Abrahamic-monotheism-downstream"
+    source: "Assmann 1997; Assmann 2008 — Christianity is the second Abrahamic monotheism in the hypothesis's downstream chain. See [[theme-akhenaten-moses-monotheism-thesis]]"
 status: "metadata"
 refs:
   - title: "The New Testament: A Historical Introduction to the Early Christian Writings"

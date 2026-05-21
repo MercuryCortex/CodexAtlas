@@ -11,6 +11,11 @@ key-deities: ["[[olodumare]]", "[[obatala]]", "[[shango]]", "[[yemoja]]", "[[osh
 key-persons: []
 key-documents: []
 sister-traditions: ["[[tradition-yoruba-ifa]]", "[[tradition-santeria-lucumi]]", "[[tradition-vodou-haitian]]"]
+hub-edges:
+  - target: "afro-diasporic-syncretism"
+    type: "Brazilian-diaspora-tradition-of-syncretism"
+    source: "Murphy 1988; Brandon 1993; Desmangles 1992 — Brazilian Candomblé is the Brazilian Afro-diasporic syncretic tradition. Oxalá ↔ Jesus Christ is the deepest Christological identification (going beyond surface iconography to structural theological equivalence). Iemanjá's Rio de Janeiro New Year festivities draw millions. See [[afro-diasporic-syncretism]]"
+    notes: "MASSIVE-WIN: 07_traditions → 06_themes"
 key-themes:
   - "[[dying-rising-god]]"
   - "[[divine-feminine]]"

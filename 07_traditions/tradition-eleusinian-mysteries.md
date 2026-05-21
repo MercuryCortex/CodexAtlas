@@ -11,6 +11,10 @@ key-deities: ["[[demeter]]", "[[persephone-greek]]", "[[hades]] (as abductor)", 
 key-persons: ["the **Eumolpidae** (the hierophant-priestly *genos* of Eleusis, traditionally descended from Eumolpus)", "the **Kerykes** (the *genos* providing the *hierokeryx* / sacred herald)", "[[julian-the-apostate]] (4th-c. Roman emperor who personally received Eleusinian initiation)", "the *hierophant* (the chief priest, an Eumolpid)", "the *dadouchos* (the torch-bearer, a Keryx)"]
 key-documents: ["**Homeric Hymn to Demeter** (~600 BCE — the principal aetiological narrative for the mysteries)", "**Pausanias *Description of Greece* I.38** (~150 CE — the principal physical-topographical witness on Eleusis)", "**Clement of Alexandria *Protrepticus* 2** (~200 CE — the principal Christian polemical witness, attempts to reveal what initiates were sworn to keep secret)", "**Hippolytus *Refutation of All Heresies* V.7–9** (~225 CE — Christian polemical witness)", "Plutarch's fragments on the mysteries", "various inscriptions from Eleusis itself (cataloged in IG II²)"]
 sister-traditions: ["[[tradition-dionysian-mysteries]] (Iacchos-Dionysus identification links the two)", "[[tradition-orphic]] (mythic and theological overlap, especially through Persephone-narratives)", "[[tradition-mystery-cults]]", "[[tradition-isis-mysteries]] (Hellenistic-era parallel mystery)", "[[tradition-cybele-attis-mysteries]]"]
+hub-edges:
+  - target: "theme-soma-haoma-eucharist"
+    type: "Greek-mystery-tradition-of-kykeon"
+    source: "Wasson/Hofmann/Ruck 1978 *The Road to Eleusis*; Burkert 1985 — the kykeon (barley + mint + possibly ergot per the W-H-R thesis) is the vision-inducing mystery-drink. Structural parallel to soma/haoma. See [[theme-soma-haoma-eucharist]]"
 status: "metadata"
 refs:
   - title: "Eleusis: Archetypal Image of Mother and Daughter"

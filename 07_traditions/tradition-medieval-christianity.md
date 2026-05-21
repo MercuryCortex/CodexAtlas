@@ -37,6 +37,14 @@ sister-traditions:
   - "[[tradition-catharism]]"
   - "[[tradition-bogomilism]]"
   - "tradition-hussitism (Hussite movement)"
+hub-edges:
+  - target: "merkabah-miraj-ascent-chain"
+    type: "Western-Christian-tradition-of-ascent-endpoint"
+    source: "Asín Palacios 1919; Cerulli 1949 *Il 'Libro della Scala'*; Schäfer 2009 — medieval Christianity is the Western-tradition endpoint of the 2000-year ascent chain via Dante's *Paradiso* (~1320). The 1264 *Liber Scalae Machometi* translated by Abraham Alfaquim for Alfonso X of Castile (Brunetto Latini was at Alfonso's court — Dante's own teacher) made the Islamic Mi'raj materials available in Christian Italy. See [[merkabah-miraj-ascent-chain]]"
+    notes: "Cross-lens: 07_traditions → 06_themes"
+  - target: "theme-round-church-as-anastasis-imitatio"
+    type: "tradition-of-Holy-Sepulchre-imitatio-architecture"
+    source: "Krautheimer 1942 'Iconography of Mediaeval Architecture' JWCI; Ousterhout 1990 *Loca Sancta* — medieval Christianity is the tradition that develops the Anastasis Rotunda → Pantheon → Hagia Sophia → Dome of the Rock typology into the Templar round-naved churches and Lalibela rock-hewn complex. See [[theme-round-church-as-anastasis-imitatio]]"
 status: "metadata"
 refs:
   - title: "The Making of the Middle Ages"

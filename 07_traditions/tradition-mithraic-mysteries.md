@@ -11,6 +11,11 @@ key-deities: ["[[mithras-roman]] (the cult's central deity)", "**Sol Invictus** 
 key-persons: ["the **seven priestly grades** (rather than named individuals; the cult was decentralized, lay-led, and male-only): *Corax* (Raven), *Nymphus* (Bridegroom), *Miles* (Soldier), *Leo* (Lion), *Perses* (Persian), *Heliodromus* (Sun-Runner), *Pater* (Father)", "the cult was decentralized and produced few named individuals in the historical record"]
 key-documents: ["**no Mithraic-written-internal documents survive** — the cult is reconstructed entirely from (1) archaeology (~600 known mithraea across the empire), (2) iconography (the *tauroctony* and its associated zodiacal-astronomical iconography), (3) inscriptions (~1,000 known Mithraic dedications, mostly Latin), (4) hostile Christian polemic ([[firmicus-maternus]] *Error of Profane Religions* 5; Tertullian *De Praescriptione Haereticorum* 40; Augustine)"]
 sister-traditions: ["[[tradition-mystery-cults]]", "[[tradition-isis-mysteries]]", "[[tradition-cybele-attis-mysteries]]", "[[tradition-zoroastrianism]] (the Iranian Mithra-substrate — but the *direct genealogical-religious connection* is far weaker than older Cumont-thesis scholarship claimed; Beck 2006 + Ulansey 1989 read Roman Mithraism as a *new Hellenistic-Roman cult* using Iranian iconographic vocabulary)"]
+hub-edges:
+  - target: "theme-soma-haoma-eucharist"
+    type: "parallel-tradition-of-sacred-meal"
+    source: "Clauss 2000; Beck 2006; Justin Martyr *First Apology* 66 (the *diabolical imitation* charge) — the Mithraic bread-and-wine agape meal in the *spelaeum* + the tauroctony bull-blood = parallel mystery-tradition of the sacred-meal chain. See [[theme-soma-haoma-eucharist]]"
+    notes: "Cross-lens: 07_traditions → 06_themes"
 status: "metadata"
 refs:
   - title: "The Religion of the Mithras Cult in the Roman Empire: Mysteries of the Unconquered Sun"

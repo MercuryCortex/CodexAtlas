@@ -11,6 +11,10 @@ key-deities: ["[[olodumare]] (as Olófin)", "[[obatala]]", "[[oshun]]", "[[shang
 key-persons: []
 key-documents: ["[[phase-8-017-santeria-lucumi]]"]
 sister-traditions: ["[[tradition-yoruba-ifa]]", "[[tradition-vodou-haitian]]"]
+hub-edges:
+  - target: "afro-diasporic-syncretism"
+    type: "Cuban-diaspora-tradition-of-syncretism"
+    source: "Murphy 1988; Brandon 1993; Cros Sandoval 2006 — Cuban Santería / Lucumí is the principal Cuban Afro-diasporic syncretic tradition. *Santeros/santeras* maintain both Catholic and Yoruba ritual competencies simultaneously. Cuba's national patroness Virgen de la Caridad del Cobre = Oshun. See [[afro-diasporic-syncretism]]"
 status: "metadata"
 refs:
   - title: "The Dead Sell Memories: An Anthropological Study of Santería in New York City"

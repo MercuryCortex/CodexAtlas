@@ -11,6 +11,11 @@ key-deities: ["[[papa-legba]]", "[[erzulie]]", "[[damballa]]", "[[baron-samedi]]
 key-persons: ["[[dutty-boukman]]", "[[marie-laveau]] (related New Orleans tradition)"]
 key-documents: ["[[phase-8-016-haitian-vodou-liturgical-tradition]]"]
 sister-traditions: ["[[tradition-yoruba-ifa]]", "[[tradition-santeria-lucumi]]"]
+hub-edges:
+  - target: "afro-diasporic-syncretism"
+    type: "Haitian-diaspora-tradition-of-syncretism"
+    source: "Desmangles 1992 *The Faces of the Gods*; Brown 1991 *Mama Lola*; McAlister 2002 *Rara!*; Métraux 1959 — Haitian Vodou is the principal Haitian Afro-diasporic syncretic tradition. lwa-Catholic-saint correspondences (Erzulie↔Mater Dolorosa + Czestochowa, Damballa↔Saint Patrick, Baron Samedi↔Saint Martin de Porres + Fèt Gede=All Souls). See [[afro-diasporic-syncretism]]"
+    notes: "MASSIVE-WIN: 07_traditions → 06_themes"
 status: "metadata"
 refs:
   - title: "Le Vaudou haïtien"
