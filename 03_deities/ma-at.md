@@ -14,7 +14,7 @@ region: "Egypt"
 parents: ["[[ra]]"]
 consort: ["[[thoth]]"]
 epithets: ["Daughter of Ra", "Eye of Ra", "Lady of the Hall of Two Truths", "She who feeds the gods"]
-symbols: ["ostrich feather", "scales", "[[was-sceptre]]", "[[ankh]]"]
+symbols: ["ostrich feather", "scales", "[[was-scepter]]", "[[ankh]]"]
 key-figures: ["[[jan-assmann]]", "[[philo-of-alexandria]]"]
 themes: ["[[psychostasia-soul-weighing]]", "[[divine-kingship-solar]]", "[[ma-at-logos-sophia]]", "[[zep-tepi]]"]
 parallels: []
@@ -23,19 +23,19 @@ cross-tradition-edges:
     target: "[[psychostasia-soul-weighing]]"
     note: "Ma'at's feather IS the counterweight in the Weighing of the Heart (Book of the Dead Ch. 125) — the entire divine judgment operates by her principle as the standard of measure"
   - type: "parallel-form"
-    target: "[[logos-platonic]]"
+    target: "[[logos-philonic]]"
     note: "Philo of Alexandria (c. 20 BCE–50 CE) explicitly equates Egyptian divine wisdom/cosmic-order with the Platonic Logos — Ma'at is the functional Egyptian precursor of the Logos concept that John 1:1 Christianizes"
   - type: "parallel-form"
     target: "[[shekhinah]]"
     note: "The Kabbalistic Shekhinah (divine feminine presence, the immanent aspect of God) is structurally parallel to Ma'at as the feminine cosmic-order principle that pervades and sustains creation"
   - type: "parallel-form"
-    target: "[[sophia-wisdom]]"
+    target: "[[sophia-gnostic]]"
     note: "The Sophia/Wisdom tradition (Proverbs 8, Wisdom of Solomon, Gnostic Sophia) — the feminine cosmic wisdom present at creation — is the Hellenistic reception of the Ma'at pattern, mediated through Alexandrian Jewish thought"
   - type: "parallel-form"
-    target: "[[rita-vedic]]"
+    target: "Rita (Vedic — cosmic order; no node yet)"
     note: "The Vedic Rita (cosmic right order governing sacrifice and cosmic regularity) is the direct structural parallel to Ma'at: both are feminine-coded cosmic-order principles that must be actively maintained through ritual; both predate all deities"
   - type: "parallel-form"
-    target: "[[dharma]]"
+    target: "Dharma (Hindu cosmic order / duty; no node yet — concept-level)"
     note: "Hindu Dharma (cosmic right order + moral duty + social law) is the evolved form of Vedic Rita; as Rita:Ma'at, so Dharma:Ma'at — independent parallel developments of the same deep structure"
 status: "full"
 refs:

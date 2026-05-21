@@ -16,7 +16,7 @@ syncretic-edges:
   - target: "rudra-shiva-early"
     type: "direct-influence"
     source: "Sanderson 2009 — Buddhist tantric appropriation of Śaiva Mahākāla; the Buddhist version inherits iconography from Śaiva originals"
-status: "stub"
+status: "metadata"
 refs:
   - title: "Indo-Tibetan Buddhism"
     author: "Snellgrove, David L."
