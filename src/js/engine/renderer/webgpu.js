@@ -879,7 +879,14 @@
       return { buf, size, grew: true };
     }
 
-    const CLEAR_COLOR = { r: 0.0274, g: 0.0353, b: 0.0588, a: 1 };
+    // Phase 20G (2026-05-21) — transparent clear (a = 0) so the
+    // .forge-bg-image element placed beneath the canvas can show
+    // through the empty areas of the wheel. With alphaMode
+    // 'premultiplied' a (0, 0, 0, 0) clear leaves the canvas alpha
+    // at zero where nothing is drawn, letting the page composite
+    // the BG image through. Disk / edge / glyph shaders all write
+    // their own alpha for opaque-where-drawn coverage.
+    const CLEAR_COLOR = { r: 0.0, g: 0.0, b: 0.0, a: 0.0 };
 
     // ── Bucket palette storage (Phase 4a hot-edge brighten) ─
     // Float32Array of 8 × 4 = 32 floats. Indexed at the bucket-

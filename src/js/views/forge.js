@@ -2497,6 +2497,17 @@
       const ringPxRadius = Math.hypot(ringEdgeScreen.x - centerScreen.x, ringEdgeScreen.y - centerScreen.y);
       const innerEdgeScreen = camera.worldToScreen(centerWorld.x + innerWorld, centerWorld.y, vp);
       const innerPxRadius = Math.hypot(innerEdgeScreen.x - centerScreen.x, innerEdgeScreen.y - centerScreen.y);
+      // Phase 20G (2026-05-21) — pie-slice radial padding so the
+      // disk EDGES (not just centres) fit fully inside the slice.
+      // data.outerRadius is the max DISK CENTRE radius across all
+      // families; disks extend ~6–9 px past that. We pad the pie
+      // slice outer arc by 14 px and the inner arc inward by 14 px
+      // so the slice fully contains every disk + a small breathing
+      // margin. The dividers (rendered below) use the SAME padded
+      // radii so the divider lines align with the slice edges.
+      const DISK_FIT_PAD = 14;
+      const pieOuterPx = ringPxRadius + DISK_FIT_PAD;
+      const pieInnerPx = Math.max(0, innerPxRadius - DISK_FIT_PAD);
 
       // ── Pie-slice paths (one annular sector per family).
       // Outer arc at ringPxRadius (the data-driven outer rim),
@@ -2515,8 +2526,8 @@
           //   → L (a1, rIn) → A inner-arc back to (a0, rIn) → Z
           const a0 = h.a0, a1 = h.a1;
           const cx = centerScreen.x, cy = centerScreen.y;
-          const rIn  = innerPxRadius;
-          const rOut = ringPxRadius;
+          const rIn  = pieInnerPx;
+          const rOut = pieOuterPx;
           const x0 = cx + Math.cos(a0) * rIn;
           const y0 = cy + Math.sin(a0) * rIn;
           const x1 = cx + Math.cos(a0) * rOut;
@@ -2560,7 +2571,9 @@
       //
       // Phase 20F (2026-05-21) — labels also fade by zoom: full
       // opacity at scale ≥ 0.50, fully invisible at scale ≤ 0.25.
-      const LABEL_OUTSIDE_PAD = 28;
+      // Labels sit OUTSIDE the padded pie-slice outer arc so they
+      // never overlap the slice fill or its outer boundary.
+      const LABEL_OUTSIDE_PAD = 24;
       let labelFade;
       if      (camScale >= 0.50) labelFade = 1;
       else if (camScale <= 0.25) labelFade = 0;
@@ -2570,7 +2583,7 @@
       for (let i = 0; i < data.hulls.length && i < labelGroups.length; i++) {
         const h = data.hulls[i];
         const a = (h.wedgeCenter != null) ? h.wedgeCenter : h.centroidAngle;
-        const rPx = ringPxRadius + LABEL_OUTSIDE_PAD;
+        const rPx = pieOuterPx + LABEL_OUTSIDE_PAD;
         const lx = centerScreen.x + Math.cos(a) * rPx;
         const ly = centerScreen.y + Math.sin(a) * rPx;
         const labelEl = labelGroups[i].firstChild;
@@ -2590,14 +2603,19 @@
       // node ring instead of intruding into the family-label
       // band at +28 px. Inner overshoot stays at 50 px so the
       // line still reads through the centre void.
-      const INNER_OVERSHOOT = 50;
-      const OUTER_OVERSHOOT = 8;
+      // Phase 20G (2026-05-21) — dividers now share the SAME
+      // outer + inner radii as the pie-slice arcs (pieOuterPx /
+      // pieInnerPx). The line is the wedge boundary between two
+      // slices, so it should start exactly at the slice inner
+      // arc and end exactly at the slice outer arc — no
+      // overshoot past either, no gap.
+      const INNER_EXTRA = 30;  // dividers still poke a bit further inward
       const lines = hullDividersG.children;
       for (let i = 0; i < data.dividers.length && i < lines.length; i++) {
         const d = data.dividers[i];
         const a = d.angle;
-        const r0 = Math.max(0, innerPxRadius - INNER_OVERSHOOT);
-        const r1 = ringPxRadius + OUTER_OVERSHOOT;
+        const r0 = Math.max(0, pieInnerPx - INNER_EXTRA);
+        const r1 = pieOuterPx;
         const x1 = centerScreen.x + Math.cos(a) * r0;
         const y1 = centerScreen.y + Math.sin(a) * r0;
         const x2 = centerScreen.x + Math.cos(a) * r1;
