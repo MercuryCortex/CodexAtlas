@@ -117,13 +117,13 @@ The Native American Church represents one of the most significant living example
 Peyote is the Americas node in a cross-continental pattern that the vault documents across four primary traditions:
 - **Peyote** (*Lophophora williamsii* / mescaline) — North America (→ this node)
 - Ayahuasca (*Banisteriopsis caapi* + DMT-plants) — Amazonia (→ ayahuasca node)
-- [[haoma]] (Vedic Soma / Avestan Haoma / *Ephedra* or *Peganum harmala*) — Indo-Iranian
+- [[haoma-zoroastrian]] (Vedic Soma / Avestan Haoma / *Ephedra* or *Peganum harmala*) — Indo-Iranian
 - Eleusinian kykeon (barley + ergot alkaloids, hypothetically) — Greek (→ eleusinian-kykeon node)
 
 No common origin is documented or claimed. The convergence is genuine — independent traditions on every inhabited continent discovering that a plant-substance can function as the medium of contact with divine reality. The consistency of the phenomenology (vision, death-and-rebirth, encounter with divine beings, loss of fear of death, moral transformation) across these chemically and culturally unrelated traditions is one of the most significant unresolved questions in comparative religion.
 
 ## Cross-symbol edges (provisional)
-- → [[haoma]] — *parallel-form*. Cross-continental sacred plant-sacrament: both mediate direct divine contact in their respective traditions.
+- → [[haoma-zoroastrian]] — *parallel-form*. Cross-continental sacred plant-sacrament: both mediate direct divine contact in their respective traditions.
 - → [[axis-mundi]] — *parallel-motif*. Peyote ceremony = shamanic axis-mundi traversal through chemical means; underworld-descent → visionary-middle-world → upper-world ascent.
 - → [[shamanic-drum]] — *parallel-form*. Both are instruments of shamanic trance-journey; drum and plant serve identical structural functions via different mechanisms.
 - → [[vine-grape]] — *parallel-form*. NAC peyote = Christian wine in structural sacramental role; syncretic fusion.

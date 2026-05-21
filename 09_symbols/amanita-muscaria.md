@@ -16,7 +16,7 @@ variants:
   - id: "amanita-folk-visual"
     description: "The iconic red-and-white spotted mushroom of European folk culture: fairy tales (Alice in Wonderland illustrators used it), Christmas decorations, video games (Super Mario Bros. 'power-up mushroom'). The folk-visual tradition is culturally pervasive regardless of ceremonial use questions"
 appearances:
-  - "[[haoma]]"
+  - "[[haoma-zoroastrian]]"
   - "[[shamanic-drum]]"
   - "[[axis-mundi]]"
 tradition-context: []
@@ -112,7 +112,7 @@ The Rigveda's Soma is the subject of **Book 9** (the Soma Pavamāna — "Soma Se
 
 **However**: the Wasson hypothesis's significance is not reducible to whether it is correct. It prompted decades of Vedic scholarship to engage with the pharmacological question of Soma, generated the Flattery & Schwartz 1989 Peganum harmala counter-proposal (which itself remains controversial), and established the comparative-religion entheogen-hypothesis as a serious scholarly category. The debate has produced more rigorous Soma scholarship than any prior century.
 
-The vault's [[haoma]] node already documents the full Soma-botanical debate; this node documents Amanita muscaria specifically as the subject of Wasson's thesis.
+The vault's [[haoma-zoroastrian]] node already documents the full Soma-botanical debate; this node documents Amanita muscaria specifically as the subject of Wasson's thesis.
 
 ## The Allegro hypothesis (Tier 4): the limit case
 **John Marco Allegro** was a Dead Sea Scrolls scholar who in 1970 published *The Sacred Mushroom and the Cross* (Doubleday), proposing that:
@@ -143,12 +143,12 @@ Independent of any specific tradition, Amanita muscaria is a symbol of **life em
 The mycelial-network metaphor has become increasingly central to spiritual and ecological discourse in the 21st century (cf. Merlin Sheldrake, *Entangled Life*, 2020), giving Amanita muscaria renewed symbolic weight.
 
 ## Cross-symbol edges (provisional)
-- → [[haoma]] — *contested-identification*. Wasson's Soma hypothesis makes this the most consequential contested identification in comparative-religion ethnomycology.
+- → [[haoma-zoroastrian]] — *contested-identification*. Wasson's Soma hypothesis makes this the most consequential contested identification in comparative-religion ethnomycology.
 - → [[shamanic-drum]] — *parallel-form*. Both are Siberian shamanic axis-mundi journey instruments; the mushroom and drum serve identical structural functions via different means.
 - → [[axis-mundi]] — *parallel-motif*. Siberian shaman's mushroom journey = axis-mundi traversal; the mushroom = portable world-axis in some Siberian cosmologies.
 
 ## Contested interpretations
-1. **Soma identification** (Wasson 1968): Tier-2 — influential, not consensus; see [[haoma]] for the full debate.
+1. **Soma identification** (Wasson 1968): Tier-2 — influential, not consensus; see [[haoma-zoroastrian]] for the full debate.
 2. **Extent of Siberian use**: Eliade 1964 notes that mushroom-using Siberian shamanic traditions are real but not universal; drum-and-dance shamanism is more widespread.
 3. **Santa Claus connection**: Tier-3 — structural resonance documented; transmission pathway unverified.
 4. **Christian mushroom-cult** (Allegro 1970): Tier-4 — definitively rejected; documented as reception history.

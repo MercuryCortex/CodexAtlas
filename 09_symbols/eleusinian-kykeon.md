@@ -143,7 +143,7 @@ The absolute silence maintained by the Eleusinian initiates — over 2,000 years
 ## Cross-symbol edges (provisional)
 - → [[wheat-grain]] — *parallel-form*. Kykeon is barley-water; Demeter IS the grain; the initiate = the seed dying and rising.
 - → [[vine-grape]] — *parallel-form*. Kykeon (Demeter) + wine (Dionysus) = two sacred plant-drinks of Greek religion; both precede and parallel the Christian Eucharist.
-- → [[haoma]] — *parallel-form*. Both are the primary pre-Christian sacred ritual drinks with documented transformative-consciousness effects on initiates.
+- → [[haoma-zoroastrian]] — *parallel-form*. Both are the primary pre-Christian sacred ritual drinks with documented transformative-consciousness effects on initiates.
 - → [[axis-mundi]] — *parallel-motif*. The Eleusinian initiation = ritual katabasis (descent to Hades and return) = axis-mundi traversal; structurally identical to shamanic descent and Christian paschal mystery.
 
 ## Contested interpretations

@@ -2,7 +2,7 @@
 type: deity
 id: "haoma-zoroastrian"
 name: "Haoma"
-aka: ["Hōm (Middle Persian / Pahlavi)", "Haomahe (Avestan genitive)", "Hom Yazad"]
+aka: ["Haoma", "Hōm (Middle Persian / Pahlavi)", "Haomahe (Avestan genitive)", "Hom Yazad"]
 tradition: "Zoroastrian (Avestan) — Yasna ritual tradition"
 region: "Iran / Central Asia (Avestan cultural zone)"
 period-active-earliest: -1500

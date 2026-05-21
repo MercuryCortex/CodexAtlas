@@ -135,7 +135,7 @@ Both churches represent the same historical phenomenon as the Native American Ch
 Ayahuasca is the Amazonian node in the cross-continental convergence:
 - Ayahuasca (*B. caapi* + DMT-plants) — Amazonia (→ this node)
 - Peyote (*Lophophora williamsii* / mescaline) — North America (→ peyote node)
-- [[haoma]] (Vedic Soma / Avestan Haoma) — Indo-Iranian
+- [[haoma-zoroastrian]] (Vedic Soma / Avestan Haoma) — Indo-Iranian
 - Eleusinian kykeon (barley + ergot alkaloids, hypothetically) — Greek (→ eleusinian-kykeon node)
 
 No common origin is documented. The convergence is independent, continent-by-continent, reflecting what Shanon 2002 calls "the common human response to certain pharmacological invitations."
@@ -143,7 +143,7 @@ No common origin is documented. The convergence is independent, continent-by-con
 ## Cross-symbol edges (provisional)
 - → [[axis-mundi]] — *parallel-motif*. Ayahuasca ceremony = shamanic axis-mundi descent in its most pharmacologically explicit form.
 - → [[naga-serpent]] — *parallel-motif*. Giant serpents are the single most universal ayahuasca vision entity; may explain the global prevalence of the divine-serpent symbol.
-- → [[haoma]] — *parallel-form*. Both are ritual plant-drinks on opposite sides of the world; genuine cross-continental convergence of the divine-teacher-plant category.
+- → [[haoma-zoroastrian]] — *parallel-form*. Both are ritual plant-drinks on opposite sides of the world; genuine cross-continental convergence of the divine-teacher-plant category.
 - → [[shamanic-drum]] — *parallel-form*. Icaros (spirit songs) = the Amazonian functional equivalent of the shamanic drum as axis-mundi journey-vehicle.
 
 ## Refs

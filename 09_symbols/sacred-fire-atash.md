@@ -154,7 +154,7 @@ None — the sacred-fire cult is well-documented. `mystery-status: documented`.
 ## Cross-symbol edges (provisional)
 - → [[sun-disk]] — *parallel-form*. The two principal cosmic-luminous-divine symbols (fire = divine on earth; sun = divine in heaven).
 - → [[tree-of-life]] — *parallel-motif*. Ever-living cosmic emblems.
-- → [[haoma]] — *parallel-form*. The two principal Zoroastrian cult-substances (fire and the ritual plant-drink).
+- → [[haoma-zoroastrian]] — *parallel-form*. The two principal Zoroastrian cult-substances (fire and the ritual plant-drink).
 
 ## Refs
 1. Boyce, M. (1979). *Zoroastrians*. Routledge.

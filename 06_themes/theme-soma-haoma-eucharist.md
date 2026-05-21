@@ -11,7 +11,7 @@ status: "full"
 tags: [theme, soma, haoma, eucharist, vedic, zoroastrian, christianity, dionysian, comparative-religion, ritual, MASSIVE-WIN, cross-tradition, proto-indo-iranian]
 related-nodes:
   - "[[soma]]"
-  - "[[haoma]]"
+  - "[[haoma-zoroastrian]]"
   - "[[theme-proto-indo-iranian-religion]]"
   - "[[theme-vedic-avestan-split]]"
   - "[[tradition-vedic-hinduism]]"
@@ -213,7 +213,7 @@ The Eucharist consumed in a Catholic church in São Paulo, a Protestant church i
 | Edge | Type | Description |
 |---|---|---|
 | → [[soma]] | symbol/deity | The Vedic divine plant; Book 9 of the Rigveda |
-| → [[haoma]] | symbol | The Avestan cognate; Haoma Yasht (Yasna 9–11) |
+| → [[haoma-zoroastrian]] | symbol | The Avestan cognate; Haoma Yasht (Yasna 9–11) |
 | → [[theme-proto-indo-iranian-religion]] | ancestral-tradition | The shared PII *\*sauma-* = the common ancestor of both |
 | → [[theme-vedic-avestan-split]] | split-point | The divergence that produces both soma and haoma from one ancestor |
 | → [[phase-1-031-rigveda]] | primary-source | Book 9 (Soma Mandala) — the primary Vedic soma documentation |

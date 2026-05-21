@@ -79,7 +79,7 @@ The words "yajna" and "yasna" are the same word. Sanskrit and Avestan are daught
 
 **Sacred substances:**
 - [[soma]] — sacred plant drink pressed and offered during yajna; haoma cognate
-- [[haoma]] — Avestan form of soma; used in the yasna as yajna's direct counterpart
+- [[haoma-zoroastrian]] — Avestan form of soma; used in the yasna as yajna's direct counterpart
 - [[theme-soma-haoma-eucharist]] — cross-tradition sacred-drink pattern
 
 **Traditions:**

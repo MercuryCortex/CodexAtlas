@@ -70,7 +70,7 @@ The *haoma* (Avestan) / *soma* (Sanskrit) is the sacred plant at the center of t
 
 The contemporary Zoroastrian *haoma* is prepared from ephedra twigs, milk, and pomegranate juice. The priest pounds the twigs with a stone mortar (*havan*), strains the juice through a bundle of *barsom* twigs, and prepares the ritual drink. Whether this preparation resembles the original proto-Indo-Iranian *\*sauma* is unknown.
 
-The haoma/soma complex connects to the [[theme-soma-haoma-eucharist]] pattern: the sacred divine drink that confers immortality, clarity, and proximity to the divine is a pan-Eurasian ritual technology. See also [[soma]], [[haoma]].
+The haoma/soma complex connects to the [[theme-soma-haoma-eucharist]] pattern: the sacred divine drink that confers immortality, clarity, and proximity to the divine is a pan-Eurasian ritual technology. See also [[soma]], [[haoma-zoroastrian]].
 
 ### The Sacred Fire: Atash as the Divine Witness
 
@@ -94,7 +94,7 @@ The Yasna is embedded in a comprehensive purity framework (*ashoi*):
 
 The Avestan language of the Yasna is so archaic that many Zoroastrian priests today recite it from memorization without full comprehension — the sound itself carries the ritual efficacy. This parallels: Latin liturgy in pre-Vatican II Catholicism, Sanskrit Vedic recitation in Brahmin ritual, Classical Arabic Quran recitation, and Pali Patimokkha recitation by Theravada monks. The archaic sacred language functions as a temporal bridge — the sounds that reach the divine are the same sounds that have always reached the divine, unchanged by modernization.
 
-See also: [[ritual-sacrifice]], [[haoma]], [[soma]], [[ahura-mazda]], [[zarathustra]], [[atar]], [[asha-vahishta]], [[angra-mainyu-ahriman]], [[tradition-zoroastrianism]], [[tradition-vedic-hinduism]], [[phase-2-002-gathas-of-zarathustra]], [[phase-2-004-yasna-younger-avesta]], [[theme-soma-haoma-eucharist]].
+See also: [[ritual-sacrifice]], [[haoma-zoroastrian]], [[soma]], [[ahura-mazda]], [[zarathustra]], [[atar]], [[asha-vahishta]], [[angra-mainyu-ahriman]], [[tradition-zoroastrianism]], [[tradition-vedic-hinduism]], [[phase-2-002-gathas-of-zarathustra]], [[phase-2-004-yasna-younger-avesta]], [[theme-soma-haoma-eucharist]].
 
 ## Vault Connections
 
@@ -112,7 +112,7 @@ See also: [[ritual-sacrifice]], [[haoma]], [[soma]], [[ahura-mazda]], [[zarathus
 - [[angra-mainyu-ahriman]] — the principle of Druj (deceit) that the yasna explicitly rejects in the Nirang prayer
 
 **Sacred substances:**
-- [[haoma]] — the sacred plant drink central to the yasna; etymological and ritual cognate of Vedic soma
+- [[haoma-zoroastrian]] — the sacred plant drink central to the yasna; etymological and ritual cognate of Vedic soma
 - [[soma]] — Vedic counterpart
 - [[theme-soma-haoma-eucharist]] — cross-tradition sacred-drink pattern
 

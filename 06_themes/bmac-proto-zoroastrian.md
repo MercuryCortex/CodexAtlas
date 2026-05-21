@@ -22,7 +22,7 @@ tradition-instances:
 deity-instances:
   - "[[ahura-mazda]]"
   - "[[soma]]"
-  - "[[haoma]]"
+  - "[[haoma-zoroastrian]]"
   - "[[zarathustra]]"
 refs:
   - title: "The Horse, the Wheel, and Language"
@@ -110,7 +110,7 @@ The BMAC ritual equipment provides material evidence that the soma/haoma entheog
 - The BMAC gives a material-culture date anchor for this practice: ~2100–1800 BCE, predating both texts by centuries
 - The sacramental **ritual ingestion of a sacred plant preparation** as a vehicle for divine encounter is one of the oldest documented religious practices in the vault
 
-See [[theme-soma-haoma-eucharist]], [[soma]], [[haoma]].
+See [[theme-soma-haoma-eucharist]], [[soma]], [[haoma-zoroastrian]].
 
 ### BMAC aniconic tendency → Zoroastrian aniconism → Mosaic prohibition → Islamic aniconism
 
