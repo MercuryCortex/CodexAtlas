@@ -24,7 +24,7 @@ syncretic-edges:
   - target: "[[persephone-greek]]"
     type: "scholarly-parallel"
     source: "Living goddess who becomes underworld-queen via taboo (eats food of the dead → cannot return)"
-status: "stub"
+status: "metadata"
 refs:
   - title: "Kojiki"
     author: "Philippi, Donald L. (trans.)"

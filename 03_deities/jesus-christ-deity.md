@@ -26,7 +26,7 @@ syncretic-edges:
   - target: "[[jesus-the-splendor]]"
     type: "scholarly-parallel"
     source: "Manichaean Jesus the Splendor is a parallel cosmic-Christ figure with shared structural elements; not the same as the Christian Christ"
-status: "stub"
+status: "metadata"
 refs:
   - title: "The Christian Tradition, vol. 1: The Emergence of the Catholic Tradition (100-600)"
     author: "Pelikan, Jaroslav"
@@ -64,7 +64,7 @@ The Christ-deity node is methodologically distinct from [[jesus-of-nazareth]] (t
 Key theological developments tracked in this graph:
 - **Logos Christology**: [[phase-3-020-gospel-of-john]]'s prologue identifies Christ with the [[logos-cosmic-reason|Logos]] — a move foreshadowed by [[philo-of-alexandria]]'s Logos doctrine in Hellenistic Judaism, itself synthesizing [[logos-stoic|Stoic logos]] with the divine Word of Genesis. Three-step transmission chain.
 - **Cosmic Christ**: [[paul-of-tarsus|Paul]] in Colossians 1 ("in him all things hold together") presents Christ as the agent and goal of creation — load-bearing for [[event-council-of-nicaea-325]] and patristic Christology.
-- **Gnostic Christology**: [[phase-4-001-gospel-of-thomas]], [[phase-4-002-apocryphon-of-john]], [[phase-4-005-gospel-of-philip]] develop a substantially different Christ — primarily revealer of *gnosis*, often docetic (apparently embodied rather than truly so).
+- **Gnostic Christology**: [[phase-4-001-gospel-of-thomas]], [[phase-4-002-apocryphon-of-john]], [[phase-4-004-gospel-of-philip]] develop a substantially different Christ — primarily revealer of *gnosis*, often docetic (apparently embodied rather than truly so).
 - **Christ Pantokrator**: the imperial-cosmic Christ of Byzantine iconography (post-Justinian), enthroned, judging — the standard apse mosaic of Eastern church architecture.
 
 Manichaean *Jesus the Splendor* (see [[jesus-the-splendor]]) is a separate cosmological figure structurally distinct from the Christian Christ; not the same node.

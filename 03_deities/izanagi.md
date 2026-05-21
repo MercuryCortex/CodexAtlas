@@ -26,7 +26,7 @@ syncretic-edges:
   - target: "[[apsu]]"
     type: "scholarly-parallel"
     source: "Primordial creator-couple in Mesopotamian Enuma Elish (Apsu/Tiamat)"
-status: "stub"
+status: "metadata"
 refs:
   - title: "Kojiki"
     author: "Philippi, Donald L. (trans.)"

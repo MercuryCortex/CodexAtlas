@@ -54,7 +54,7 @@ The supreme sovereign of the **celestial bureaucracy** of Daoism and Chinese fol
 ## Cross-tradition identifications
 - **[[shangdi]] / [[tian-heaven]]** — *ancient-identification*: the Jade Emperor is the personalized form of the earlier abstract High God / Heaven.
 - **[[zeus]] / [[indra]] / [[odin]]** — *parallel-motif*: chief of a celestial assembly.
-- **[[the-three-pure-ones]]** — Daoist supreme triad; the Jade Emperor's relationship to them varies by school.
+- **[[three-pure-ones]]** — Daoist supreme triad; the Jade Emperor's relationship to them varies by school.
 
 ## Refs
 1. Pregadio (ed.), *The Encyclopedia of Taoism* (Routledge, 2008) — Tier 1.
