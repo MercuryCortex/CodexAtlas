@@ -821,9 +821,9 @@
     // Sits BELOW the canvas in z-order so the wheel paints on top.
     // syncBackgroundImage() repositions + rescales + fades per
     // camera change: invisible at scale ≥ 0.50, fades in to full
-    // opacity by scale ≤ 0.07 (max zoom-out). The image is anchored
+    // opacity by scale ≤ 0.10 (max zoom-out). The image is anchored
     // at the wheel centre in world space, sized so it fills the
-    // viewport when scale = 0.07.
+    // viewport when scale = 0.10.
     const bgImage = document.createElement('img');
     bgImage.className = 'forge-bg-image';
     bgImage.src = '_assets/bg/bg-a01.jpg?v=20260521';
@@ -1444,6 +1444,24 @@
       // visibility recomputation (per-tier zoom thresholds).
       camera.onChange(() => {
         if (local.destroyed) return;
+        // Phase 20K (2026-05-21) — gizmo-10% zoom-out floor.
+        // The camera's absolute MIN_SCALE (0.05) can map to gizmo
+        // percentages well below 10% on landscape viewports.
+        // John's spec is "limit the max zoom out to 10%" — so
+        // when the user / wheel / pinch tries to push below
+        // 10% of fit-scale, we clamp it back. setScale early-
+        // returns on no-op, so this won't loop on its own
+        // re-fire of onChange.
+        if (camera.state && local.lastSize && local.lastSize.w && local.lastSize.h) {
+          const fitNow = computeFitScale();
+          if (fitNow > 0) {
+            const minScale = fitNow * 0.10;
+            if (camera.state.scale < minScale - 1e-6) {
+              camera.setScale(minScale);
+              return; // re-entrant onChange will pick up the clamped state
+            }
+          }
+        }
         // Phase 5C (2026-05-20) — glyph opacity is uniform-driven
         // on the GPU now, so camera motion no longer needs to
         // mark the glyph buffer dirty. The off-viewport cull is
@@ -2484,16 +2502,29 @@
       hullsOverlay.setAttribute('width',  vp.w);
       hullsOverlay.setAttribute('height', vp.h);
       const camScale = camera.state.scale;
-      // Zoom fade for the WHOLE hulls overlay — overview chrome
-      // only. Fades out only at deep zoom (≥ 3.0) so the pie
-      // slices read cleanly at default + slightly-zoomed-in
-      // viewing. Phase 20F (2026-05-21) — the family LABELS
-      // have their own zoom fade (set further down inside this
-      // function) so the pie slices can stay visible at small
-      // scales while the labels fade out separately.
-      const fade = camScale <= 2.0 ? 1.0
-                 : camScale >= 3.0 ? 0.0
-                 : (3.0 - camScale) / 1.0;
+      // Phase 20K (2026-05-21) — hull fade now matches the
+      // family-label fade so the WHOLE family-zone overlay
+      // (pie slices + dividers + labels) breathes together as
+      // the user zooms in / out.
+      //   • Low-zoom fade (zoom-out): opacity 1 at gizmo ≥ 50%,
+      //     0 at gizmo ≤ 25%. Same range as the label fade.
+      //   • Deep-zoom fade (zoom-in):  opacity 1 at scale ≤ 2.0,
+      //     0 at scale ≥ 3.0 (so deep-zoom inspection of an
+      //     individual deity isn't crowded by overlay chrome).
+      // The two ramps combine via min() — overlay fades when
+      // either extreme is hit. The hullLabelsG no longer gets
+      // its own opacity (the WHOLE overlay carries the fade).
+      const hullFitScale = computeFitScale();
+      const hullZoomPct  = (hullFitScale > 0) ? (camScale / hullFitScale) : 1;
+      let lowZoomFade;
+      if      (hullZoomPct >= 0.50) lowZoomFade = 1;
+      else if (hullZoomPct <= 0.25) lowZoomFade = 0;
+      else                          lowZoomFade = (hullZoomPct - 0.25) / 0.25;
+      let deepZoomFade;
+      if      (camScale <= 2.0) deepZoomFade = 1;
+      else if (camScale >= 3.0) deepZoomFade = 0;
+      else                      deepZoomFade = (3.0 - camScale);
+      const fade = Math.min(lowZoomFade, deepZoomFade);
       hullsOverlay.style.opacity = fade.toFixed(3);
       if (fade <= 0.001) return;
 
@@ -2589,18 +2620,14 @@
       // opacity at scale ≥ 0.50, fully invisible at scale ≤ 0.25.
       // Labels sit OUTSIDE the padded pie-slice outer arc so they
       // never overlap the slice fill or its outer boundary.
-      // Phase 20I (2026-05-21) — label fade now uses the zoom-
-      // gizmo's percentage-of-fit semantics (camera.state.scale /
-      // fit_scale), not raw camera scale. Spec from John: fade out
-      // starting at 50% zoom-pct, fully invisible at 25%.
+      // Phase 20K (2026-05-21) — per-label-group opacity REMOVED.
+      // The whole hullsOverlay carries the zoom fade now (see
+      // the lowZoomFade / deepZoomFade block above), so labels
+      // breathe together with the pie slices + dividers as a
+      // single overlay layer. Setting this explicitly to 1 in
+      // case any prior frame stamped a lower value.
       const LABEL_OUTSIDE_PAD = 24;
-      const labelFitScale     = computeFitScale();
-      const labelZoomPct      = (labelFitScale > 0) ? (camScale / labelFitScale) : 1;
-      let labelFade;
-      if      (labelZoomPct >= 0.50) labelFade = 1;
-      else if (labelZoomPct <= 0.25) labelFade = 0;
-      else                           labelFade = (labelZoomPct - 0.25) / (0.50 - 0.25);
-      hullLabelsG.style.opacity = labelFade.toFixed(3);
+      hullLabelsG.style.opacity = '1';
       const labelGroups = hullLabelsG.children;
       for (let i = 0; i < data.hulls.length && i < labelGroups.length; i++) {
         const h = data.hulls[i];
@@ -2666,20 +2693,20 @@
     //  NOT raw camera scale. The zoom-gizmo "100%" = fit, "50%" =
     //  half-fit, "7%" = max-zoom-out — those are the numbers John
     //  designs against. Comparing raw camera.state.scale to 0.50,
-    //  0.25, 0.07 was wrong in Phase 20F/G/H (the same numeric
+    //  0.25, 0.10 was wrong in Phase 20F/G/H (the same numeric
     //  value means very different zoom levels depending on the
     //  current viewport's fit-scale).
     //
     //  IMPLEMENTATION
     //  - zoomPct = camera.state.scale / computeFitScale()
-    //  - Image side = max(vp.w, vp.h) at zoomPct = 0.07 (so the
+    //  - Image side = max(vp.w, vp.h) at zoomPct = 0.10 (so the
     //    LARGER viewport axis is matched edge-to-edge, the
     //    smaller axis overflows + crops — proper "cover" fit
     //    against the larger window dimension as John asked).
     //  - At higher zoomPct the image grows proportionally and
     //    extends well past the viewport (the user is "inside" it).
     //  - Opacity = linear interpolation between zoomPct 0.50 (0)
-    //    and 0.07 (1).
+    //    and 0.10 (1).
     // ════════════════════════════════════════════════════════════
     function syncBackgroundImage() {
       if (!bgImage) return;
@@ -2689,13 +2716,13 @@
       const fitScale = computeFitScale();
       if (!fitScale || fitScale <= 0) return;
       // zoomPct mirrors what the zoom-gizmo displays: 1.0 at fit,
-      // 0.07 at max-zoom-out, 2.0 at 2× zoom-in, etc.
+      // 0.10 at max-zoom-out, 2.0 at 2× zoom-in, etc.
       const zoomPct = camera.state.scale / fitScale;
       // Opacity ramp: invisible at ≥ 50% zoom, full at ≤ 7%.
       let bgFade;
       if      (zoomPct >= 0.50) bgFade = 0;
-      else if (zoomPct <= 0.07) bgFade = 1;
-      else                      bgFade = (0.50 - zoomPct) / (0.50 - 0.07);
+      else if (zoomPct <= 0.10) bgFade = 1;
+      else                      bgFade = (0.50 - zoomPct) / (0.50 - 0.10);
       if (bgFade <= 0.001) {
         bgImage.style.opacity = '0';
         return;
@@ -2707,15 +2734,15 @@
       // 2048 square so on a non-square viewport the LARGER axis
       // is matched and the smaller axis sees image bleed past.
       //
-      // Phase 20J (2026-05-21) — floor the SIZING zoomPct at 0.07
+      // Phase 20J (2026-05-21) — floor the SIZING zoomPct at 0.10
       // so the image stays at fill-coverage when the user zooms
       // BELOW 7% (the camera allows down to absolute scale 0.05,
       // which depending on the viewport can map to gizmo
       // percentages well below 7%). Opacity already clamps at
       // 1.0 below 7%; sizing now matches.
-      const sizeZoomPct = Math.max(0.07, zoomPct);
+      const sizeZoomPct = Math.max(0.10, zoomPct);
       const maxVp       = Math.max(vp.w, vp.h);
-      const imgSize     = (maxVp / 0.07) * sizeZoomPct;
+      const imgSize     = (maxVp / 0.10) * sizeZoomPct;
       // Anchor: world (0, 0) → screen.
       const centerScreen = camera.worldToScreen(0, 0, vp);
       bgImage.style.opacity = bgFade.toFixed(3);
