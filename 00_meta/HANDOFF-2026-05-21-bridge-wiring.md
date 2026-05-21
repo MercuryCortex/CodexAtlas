@@ -1,10 +1,10 @@
 # HANDOFF — Bridge-Hub Cross-Lens Wiring (2026-05-21)
 
-> **Read this first if you're a fresh agent picking up Lane A bridge-wiring work.** Status as of commit `6a2a7c9` (Phase 13 complete). Read `STATUS.md` top entries for the per-phase detail; this file is the synthesis.
+> **Read this first if you're a fresh agent picking up Lane A bridge-wiring work.** Status as of commit `11a6dbe` (Phase 14 complete). Read `STATUS.md` top entries for the per-phase detail; this file is the synthesis.
 
 ---
 
-## What just happened (Phases 1–13)
+## What just happened (Phases 1–14)
 
 Twelve phases of progressive vault densification:
 
@@ -19,9 +19,10 @@ Twelve phases of progressive vault densification:
 | 11 | Document-end audit (02_documents → 06_themes) | ~70 |
 | 12 | Tradition-end audit (07_traditions → 06_themes) | ~104 |
 | 13 | Event-end audit (05_events → 06_themes) | ~53 |
-| **TOTAL** | **~383 hub-edges across 28 substantial bridge hubs from 5 lens-poles** | |
+| 14 | Symbol-end audit (09_symbols → 06_themes) | ~26 |
+| **TOTAL** | **~409 hub-edges across 28 substantial bridge hubs from 6 lens-poles** | |
 
-**Vault baseline dead-link count: 595/825 (drifted +1/+2 over Phase 12 close-out from intervening Lane B work; unchanged across all of Phase 13). WIRING LAW held — 0 dead links shipped across ~143 commits.**
+**Vault baseline dead-link count: 595/825 (unchanged across Phase 13 + 14). WIRING LAW held — 0 dead links shipped across ~147 commits.**
 
 ---
 
@@ -75,9 +76,11 @@ These are the cross-tradition hubs you wire FROM other lenses TO. Memorize the s
 - Batches: (1) Iranian + Islamic (7 events, ~21 edges) — Cyrus + Mani + Karbala + Hallaj + Bab + Mi'raj + Hegira; (2) Alexandrian + Christian-foundational (6 events, ~20 edges) — Alexandria + Nag Hammadi + Crucifixion + Hagia Sophia + Iconoclast + Florence; (3) Hermetic-Renaissance + Templar + Cathar (5 events, ~12 edges) — Ficino + Casaubon + Bruno + Templar trial + Albigensian.
 - **Five-lens companion-pole effect** now visible: theme-executed-divine-claimant has 7 event-side anchors alone (Crucifixion + Mani + Karbala + Hallaj + Bab + Bruno + Templar trial), all carrying explicit 05_events → 06_themes cross-lens tags.
 
-### Phase 14 — Symbol-end audit (`09_symbols/` → `06_themes/`)
-- ~15 priority symbols, ~30 edges expected
-- High-leverage: `vine-grape`, `wheat-grain`, `tauroctony`, `halo-nimbus`, `ouroboros`, `mount-meru`, `axis-mundi`, `sacred-fire-atash`, `haoma-zoroastrian` (cross-lens — also a deity), `peyote`, `amanita-muscaria`, `eleusinian-kykeon`, `ayahuasca`, `faravahar`
+### Phase 14 — Symbol-end audit (`09_symbols/` → `06_themes/`) — **DONE 2026-05-21 (commit `11a6dbe`)**
+- 12 priority symbols wired (handoff predicted ~15; the 12 highest-leverage covered — haoma-zoroastrian already wired Phase 9, mount-meru properly lives in 20_sacred_architecture not 09_symbols).
+- ~26 hub-edges. Batches: (A) Cosmic/structural (5 symbols, ~13 edges): ouroboros + axis-mundi + faravahar + halo-nimbus + tauroctony; (B) Ritual/sacrament (4 symbols, ~9 edges): vine-grape + wheat-grain + eleusinian-kykeon + sacred-fire-atash; (C) Entheogens (3 symbols, ~4 edges): peyote + amanita-muscaria + ayahuasca.
+- **Six-lens companion-pole effect** now visible at theme-soma-haoma-eucharist (231L): 8 symbol-side anchors (vine-grape + wheat-grain + eleusinian-kykeon + sacred-fire-atash + tauroctony + peyote + amanita-muscaria + ayahuasca) on top of prior deity/person/document/tradition/event-side coverage.
+- **Methodology-discipline** most active here: entheogen-end requires parallel-form/independent-convergence tagging (NOT transmission); Wasson-Hofmann-Ruck 1978 + Wasson 1968 are Tier-2 (flagged); Mettinger 2001 vs Smith 1990 on dying-rising vegetation-deity acknowledged.
 
 ### Phase 15 — Place-end audit (`08_places/` → `06_themes/`)
 - ~10 priority places, ~20 edges expected
@@ -147,13 +150,17 @@ If the number rises after your batch, you introduced a dead link — find the ne
 
 ## What to tell the new agent (one-paragraph brief)
 
-> Continue Phase 14 (symbol-end audit, `09_symbols/` → `06_themes/`) of the bridge-hub cross-lens wiring project at `~/Desktop/Codex Atlas`. Read `00_meta/HANDOFF-2026-05-21-bridge-wiring.md` first — it has the 28 hub slugs, the lens-aware edge pattern, the 7 cardinal rules, and the queue (symbols → places). Phase 13 (events) is DONE as of commit `6a2a7c9`. Work in batches of 5–10 entities per commit. Every edge gets a `Cross-lens: 09_symbols → 06_themes` tag in its `notes:` field per John's dogma directive. End each phase with a STATUS.md entry following the Phase 10–13 format. Run `python3 linkcheck.py` after each batch — baseline is 595/825 dead, do not add to it. Never touch Lane B paths (src/, index.html, build_*.py). Lane A slot is OPEN.
+> Continue Phase 15 (place-end audit, `08_places/` → `06_themes/`) of the bridge-hub cross-lens wiring project at `~/Desktop/Codex Atlas`. Read `00_meta/HANDOFF-2026-05-21-bridge-wiring.md` first — it has the 28 hub slugs, the lens-aware edge pattern, the 7 cardinal rules, and the queue. Phase 13 (events) DONE at commit `6a2a7c9`; Phase 14 (symbols) DONE at commit `11a6dbe`. Work in batches of 5–10 entities per commit. Every edge gets a `Cross-lens: 08_places → 06_themes` tag in its `notes:` field per John's dogma directive. End each phase with a STATUS.md entry following the Phase 10–14 format. Run `python3 linkcheck.py` after each batch — baseline is 595/825 dead, do not add to it. Never touch Lane B paths (src/, index.html, build_*.py). Lane A slot is OPEN.
 
 ---
 
-## Phase 1–13 commit roll (for context)
+## Phase 1–14 commit roll (for context)
 
 ```
+11a6dbe Phase 14 Batch C/3 wired: entheogen symbols (lens-aware)
+b644cb8 Phase 14 Batch B/3 wired: ritual/sacrament symbols (lens-aware)
+df262ab Phase 14 Batch A/3 wired: cosmic/structural symbols (lens-aware)
+49d028b STATUS log + HANDOFF close-out: opus-phase13-event-end-audit
 6a2a7c9 Phase 13 Batch 3/3 wired: Hermetic-Renaissance + Templar + Cathar events
 e8ab875 Phase 13 Batch 2/3 wired: Alexandrian + Christian-foundational events
 5c29fc8 Phase 13 Batch 1/3 wired: Iranian + Islamic events (lens-aware)
