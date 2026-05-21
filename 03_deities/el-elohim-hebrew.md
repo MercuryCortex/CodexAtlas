@@ -25,7 +25,7 @@ syncretic-edges:
     type: "syncretic-identification"
     source: "Smith 2002; Day 2000"
     notes: "YHWH is identified with El at some early stage in Israelite religion. The Tetragrammaton's *use* with the *patriarchal El-names* marks the textual editing of this identification."
-status: "stub"
+status: "metadata"
 refs:
   - title: "The Early History of God: Yahweh and the Other Deities in Ancient Israel"
     author: "Smith, Mark S."

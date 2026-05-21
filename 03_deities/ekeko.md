@@ -20,7 +20,7 @@ syncretic-edges:
   - target: "[[pachamama]]"
     type: "shared-tradition"
     source: "Both are Andean deities of abundance/material-flourishing; Ekeko is the personal-household god, Pachamama the cosmic-earth-mother. In modern Bolivian Aymara practice they are often invoked together"
-status: "stub"
+status: "metadata"
 refs:
   - title: "Andean Lives: Gregorio Condori Mamani and Asunta Quispe Huamán"
     author: "Valderrama, R.; Escalante, C. (eds.); trans. Gelles, P. & Martínez Escobar, G."

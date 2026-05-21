@@ -23,7 +23,7 @@ syncretic-edges:
   - target: "adonis-greek"
     type: "ancient-identification"
     source: "Hellenistic-period equation of Adonis with Tammuz; Lucian, *De Dea Syria*; the Greek 'Adonia' festivals"
-status: "stub"
+status: "metadata"
 refs:
   - title: "The Treasures of Darkness: A History of Mesopotamian Religion"
     author: "Jacobsen, Thorkild"

@@ -10,7 +10,7 @@ period-active-latest: -500
 domains: ["high god", "creator", "patriarch of the divine assembly", "wisdom"]
 gender: "masculine"
 role: "high god of the Canaanite pantheon; head of the divine council; father of the gods"
-parent-of: ["[[baal-hadad]] (in some traditions; in others Dagon is Baal's father)", "[[mot]]", "[[yam]]", "[[shahar-shalim]]"]
+parent-of: ["[[baal-hadad]] (in some traditions; in others Dagon is Baal's father)", "[[mot]]", "[[yam]]", "Shahar and Shalim (twin Dawn and Dusk gods; no node yet)"]
 child-of: []
 consort: ["[[asherah]]"]
 attributes: ["bull horns", "patriarchal beard", "throne", "seated and enthroned (not active warrior)"]
