@@ -15,9 +15,8 @@ deity-instances:
   - "[[yahweh]]"
   - "[[el-shaddai]]"
   - "[[el-elohim-hebrew]]"
-  - "[[el-elohim-hebrew]]"
   - "[[asherah]]"
-status: "stub"
+status: "metadata"
 refs:
   - title: "Canaanite Myth and Hebrew Epic"
     author: "Cross, Frank Moore"

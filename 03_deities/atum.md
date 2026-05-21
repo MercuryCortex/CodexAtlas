@@ -24,6 +24,10 @@ syncretic-edges:
     type: "upstream-Egyptian-source"
     source: "Allen 1988; Fowden 1986 — Atum's Heliopolitan self-emergent-creator theology is one of the substrate sources for the Hermetic cosmogony of self-originating divine principle that the Corpus Hermeticum (~100–300 CE Alexandria) crystallizes and that the Plotinian One inherits. The Atum-Ra solar-creator complex is the Egyptian-priestly material that Hellenistic Alexandrian intellectuals reformulate as Hermetic Nous/Poimandres. See [[hermetic-transmission-chain]]"
     notes: "Atum is a deep-substrate Egyptian source (not a transmission node) — the structural parallel between Atum's self-creation and the Hermetic / Neoplatonic / Gnostic first-principle is the underlying theological commonality; documentation is Tier-2 (structural rather than textual transmission)"
+  - target: "[[heliopolis-ennead]]"
+    type: "head-of-ennead"
+    source: "Allen 1988 *Genesis in Egypt*; Pinch 2002 *Egyptian Mythology*; Wilkinson 2003 *The Complete Gods and Goddesses of Ancient Egypt*; Pyramid Texts (Utterances 600–601, 215–217) — Atum is THE head of the Heliopolitan Ennead: he self-creates from Nun, generates Shu and Tefnut by self-procreation (PT 600 masturbation/spit/sneeze variants), and from them descend Geb-Nut → Osiris-Isis-Set-Nephthys completing the nine. Porphyry's later editorial title 'Enneads' for Plotinus's six-groups-of-nine treatises echoes the Egyptian nine-ness. See [[heliopolis-ennead]]"
+    notes: "Cross-lens: 03_deities → 06_themes. Atum is the founding-genealogical-head of the Ennead; without him, no Heliopolitan cosmogony; with him, the entire 9-member structure that subsequently parallels (and may seed via Plotinus's Egyptian context) the Neoplatonist enneads"
 status: "full"
 refs:
   - title: "Genesis in Egypt: The Philosophy of Ancient Egyptian Creation Accounts"

@@ -20,6 +20,10 @@ syncretic-edges:
     type: "central-figure-of-ascent-spine"
     source: "Scholem 1941, *Major Trends in Jewish Mysticism*; Scholem 1965, *Jewish Gnosticism, Merkabah Mysticism, and Talmudic Tradition*; Halperin 1988; Schäfer 2009 — Metatron is the climactic transformation-endpoint of the Hekhalot heavenly-ascent tradition: in *3 Enoch / Sefer Hekhalot*, Enoch (the founding ascended patriarch of the chain) is taken up and transformed into Metatron the 'Lesser YHWH' enthroned beside God's throne. This is the most extreme statement of human-to-divine transformation in the entire Merkabah → Mi'raj → Dante ascent tradition. See [[merkabah-miraj-ascent-chain]]"
     notes: "MASSIVE-WIN: Metatron is the human-pole of the entire ascent tradition's deity-end — the patriarch who becomes the chief angel is the structural template for Christological + Sufi-perfect-human + Dantesque-Beatrice ascent figures all the way through to the 1320 *Paradiso*"
+  - target: "theme-two-powers-in-heaven"
+    type: "primary-figure-of-cross-tradition-pattern"
+    source: "Segal 1977 *Two Powers in Heaven*; Boyarin 2004 *Border Lines* + 2012 *The Jewish Gospels*; Barker 1992 *The Great Angel*; b. Hagigah 15a (Aher apostasy) — Metatron is THE Jewish-mystical figure whose 'Lesser YHWH' status crystallizes the Two-Powers-in-Heaven binitarianism that Segal documents as a pre-rabbinic Jewish tradition (later condemned as heresy). Aher's exclamation 'perhaps there are two divine powers!' upon seeing Metatron enthroned is the founding rabbinic anxiety-text; the subsequent flogging of Metatron is the literary record of the suppression. See [[theme-two-powers-in-heaven]]"
+    notes: "MASSIVE-WIN: Metatron is the deity-end pole of Boyarin's thesis that Christology = the binitarian Jewish second-God tradition particularized to Jesus; the Two-Powers figure who got divinized in Christianity is, in Jewish mysticism, Metatron. Cross-lens: 03_deities → 06_themes"
 status: "full"
 refs:
   - title: "3 Enoch / Sefer Hekhalot, translated in Old Testament Pseudepigrapha vol. 1"

@@ -26,6 +26,10 @@ syncretic-edges:
   - target: "dionysus"
     type: "ancient-identification"
     source: "Herodotus *Histories* 2.42, 2.144; Plutarch *De Iside et Osiride* 35 (Osiris and Dionysus as the same god under different names); Diodorus *Bibliotheca* 1.11, 1.25, 1.96"
+  - target: "heliopolis-ennead"
+    type: "third-generation-member-of-ennead"
+    source: "Allen 1988 *Genesis in Egypt*; Pinch 2002 *Egyptian Mythology*; Pyramid Texts (esp. 600, 670, 619) — Osiris is one of four third-generation Ennead members (son of Geb-earth and Nut-sky, brother of Set + Isis + Nephthys), the theologically most-developed of the Ennead's second-generation gods. The Osirian death-and-rebirth cycle is the Ennead's organizing dramatic content — its murder-by-Set + resurrection-by-Isis loop is what the Heliopolitan cosmogony culminates in. See [[heliopolis-ennead]]"
+    notes: "Cross-lens: 03_deities → 06_themes. Osiris is the Ennead's narrative center despite being a *third-generation* god — the Pyramid Texts and Coffin Texts collectively privilege his myth over those of the upstream generations (Atum, Shu/Tefnut, Geb/Nut)"
 status: "full"
 refs:
   - title: "Following Osiris: Perspectives on the Osirian Afterlife from Four Millennia"

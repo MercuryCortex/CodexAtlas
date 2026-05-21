@@ -16,6 +16,10 @@ syncretic-edges:
   - target: "sophia-gnostic"
     type: "scholarly-parallel"
     source: "Scholem 1941, 1962 — Shekhinah's hypostatic-feminine role in Kabbalah parallels Sophia's role in Sethian Gnostic emanationism. Contested by Idel."
+  - target: "theme-holy-spirit-sophia"
+    type: "core-figure-of-feminine-third-pattern"
+    source: "Quispel 1974 *Eranos-Jahrbuch*; Engelsman 1979 *The Feminine Dimension of the Divine*; Scholem 1941 + 1962 — the rabbinic-and-Kabbalistic Shekhinah is the Jewish-mystical articulation of the *suppressed feminine third* pattern: the divine Presence as feminine (*shekhinah* is grammatically feminine), the lowest sefirah in Kabbalah, the feminine partner in the inner-divine sacred marriage with Tiferet/the masculine. Together with the Gnostic Sophia and the Syriac Christian Spirit-as-Mother, Shekhinah is the third member of the cross-tradition feminine-third constellation that monotheistic theology consistently produces and consistently subordinates. See [[theme-holy-spirit-sophia]]"
+    notes: "MASSIVE-WIN: Shekhinah-as-Sophia-as-Holy-Spirit is a three-tradition convergence on the same theological structural problem (feminine indwelling-divinity within a masculinized supreme); the hub documents this as the *suppressed* feminine third — pushed to the margins in each tradition's official theology but persistently re-emerging. Cross-lens: 03_deities → 06_themes"
 status: "full"
 related-themes:
   - "[[wisdom-personified]]"
