@@ -13,7 +13,7 @@ floruit-latest: -945
 historicity: "legendary"
 texts-authored: []
 texts-attributed-to: []
-originator-of: ["[[solomonic-genealogical-dynasty]]"]
+originator-of: ["[[solomonic-genealogy]]"]
 events-participated: ["legendary translation of the [[ark-of-the-covenant]] from Jerusalem to Aksum"]
 mentioned-in: ["[[phase-8-008-kebra-nagast]]"]
 status: "metadata"

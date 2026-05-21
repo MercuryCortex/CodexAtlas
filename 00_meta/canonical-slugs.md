@@ -1862,7 +1862,7 @@ canonical-slug
 - `al-andalus`
 - `al-biruni`
 - `al-farabi`
-- `al-ghazali`
+- [[al-ghazali]]
 - `al-hajjaj-ibn-yusuf`
 - `al-hakim-bi-amr-allah`
 - `al-hallaj`
@@ -2437,7 +2437,7 @@ canonical-slug
 - `julio-c-tello`
 - `justin-martyr`
 - `justinian-i`
-- `kabir`
+- [[kabir]]
 - `kaleb-of-aksum`
 - `kallikrates`
 - `kangxi-emperor`
@@ -2772,7 +2772,7 @@ canonical-slug
 - `ramana-maharshi`
 - `ramanuja`
 - `ramesses-ii`
-- `ramon-llull`
+- [[ramon-llull]]
 - `ramprasad-sen`
 - `ramses-ii`
 - `raphael-sanzio`

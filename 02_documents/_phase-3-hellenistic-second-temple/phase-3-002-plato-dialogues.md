@@ -16,7 +16,7 @@ region: "Attica (Greek mainland)"
 city-of-origin: "Athens (the Academy)"
 authorship: "known — Plato of Athens (~-428/-427 to -348/-347)"
 key-figures: ["[[plato]]", "[[socrates]]"]
-themes: ["[[demiurge]]", "[[forms-and-archetypes]]", "[[soul-immortality]]", "[[ascent-and-descent]]", "[[eros-as-philosophical-motive]]", "[[myth-of-er]]"]
+themes: ["[[demiurge]]", "[[forms-and-archetypes]]", "[[soul-immortality]]", "[[katabasis-and-anabasis]]", "[[eros-as-philosophical-motive]]", "[[myth-of-er]]"]
 parallels: ["[[phase-3-003-aristotle-metaphysics]]", "[[phase-3-013-philo-of-alexandria]]", "[[phase-3-021-hermetic-corpus-earliest]]", "[[phase-3-022-plato-timaeus-critias-atlantis]]"]
 influenced-by: ["Pythagoreanism (number, soul-transmigration)", "Parmenides (being)", "Heraclitus (becoming)", "Orphic mystery traditions (soul, judgment, descent)"]
 influences: ["Middle Platonism", "Philo of Alexandria", "Plotinus and Neoplatonism", "Christian theology via Justin, Clement, Origen, Augustine", "Gnostic demiurge cosmologies (with valuation inverted)", "Hermetic corpus", "all subsequent Western metaphysics"]
@@ -152,7 +152,7 @@ Citation: *Phaedrus* 246a–246c, trans. Jowett 1892.
 - [[demiurge]] — *Timaeus* 28a–30c: the *dēmiourgos* is *good* and makes the cosmos as good as possible. **This is the pivotal point** that later Gnostics invert: the Sethian Yaldabaoth and the Valentinian craftsman are *ignorant or malevolent* demiurges, but the figure derives from Plato.
 - [[forms-and-archetypes]] — eternal Forms (*eidē*) are the patterns the demiurge copies; sensible reality is a degraded image (Tim. 29a–31b).
 - [[soul-immortality]] — argued in *Phaedo* (recollection, opposites, affinity, harmony, Forms); presupposed in *Phaedrus*, *Republic X*, *Timaeus*.
-- [[ascent-and-descent]] — souls fall into bodies (*Phaedrus* 246c–249d); the philosophical life is a *return* via dialectic and *erōs*.
+- [[katabasis-and-anabasis]] — souls fall into bodies (*Phaedrus* 246c–249d); the philosophical life is a *return* via dialectic and *erōs*.
 - [[eros-as-philosophical-motive]] — Diotima's ladder (*Symp.* 210a–212a): erotic desire is the engine of metaphysical ascent.
 
 ## Connections (provisional)

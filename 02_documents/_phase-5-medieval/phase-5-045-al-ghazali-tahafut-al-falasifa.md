@@ -14,7 +14,7 @@ language: ["Classical Arabic"]
 script: "Naskhi Arabic"
 region: "Iraq — Baghdad"
 city-of-origin: "Baghdad (at the Niẓāmiyya madrasa where al-Ghazālī was head professor)"
-authorship: "known — [[al-ghazali|Abū Ḥāmid al-Ghazālī]]"
+authorship: "known — [[al-ghazali]]"
 key-figures: ["[[al-ghazali]]", "[[ibn-sina]] (the principal target — Ghazālī's *Tahāfut* is essentially a refutation of Avicennian theses, treated as the canonical falsafa position)", "[[al-farabi]] (secondary target, treated alongside Avicenna as 'the falāsifa')"]
 themes: ["[[tahafut-controversy]]", "[[falsafa]]", "[[occasionalism]]", "[[free-will-vs-determinism]]", "[[resurrection-of-the-dead]]"]
 parallels: ["[[phase-5-044-ibn-sina-kitab-al-shifa]]", "[[phase-5-046-ibn-rushd-tahafut-al-tahafut]]", "[[phase-5-015-al-ghazali-ihya]]"]

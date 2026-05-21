@@ -97,7 +97,7 @@ Targets sorted by incoming reference count. A target referenced 30× is 30× the
 | 25 | 2 | `john-anthony-west` | `kings-chamber-great-pyramid`, `sphinx-of-giza` |
 | 26 | 2 | `theme-logos-theology` | `event-axial-age-800-200bce`, `theme-axial-age` |
 | 27 | 2 | `event-siege-of-masada-73ce` | `event-numantia-133bce`, `sacred-defeat` |
-| 28 | 2 | `divine-names` | `phase-6-044-llull-ars-magna`, `ramon-llull` |
+| 28 | 2 | `divine-names` | `phase-6-044-llull-ars-magna`, [[ramon-llull]] |
 | 29 | 2 | `tradition-lingayat` | `basavanna`, `tradition-kashmir-shaivism` |
 | 30 | 2 | `hierocles` | `apollonius-of-tyana`, `phase-4-039-celsus-true-word` |
 | 31 | 2 | `shenhui` | `phase-5-004-platform-sutra-huineng`, `shenxiu` |

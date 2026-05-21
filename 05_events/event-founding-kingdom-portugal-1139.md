@@ -6,7 +6,7 @@ date-start: 1139
 date-end: 1143
 region: "County of Portugal (between Minho and Mondego rivers) → Kingdom of Portugal"
 tradition-context: "Christian Reconquista; Crusading ideology; Portuguese national religion; Marian apparition / divine election mythology"
-participants: ["[[afonso-henriques]] (Afonso I, first King of Portugal)", "Pope Alexander III (papal recognition, 1179)", "[[order-of-christ]] (forerunner institutions: Order of the Temple in Portugal)"]
+participants: ["`afonso-henriques` (Afonso I, first King of Portugal)", "Pope Alexander III (papal recognition, 1179)", "[[order-of-christ]] (forerunner institutions: Order of the Temple in Portugal)"]
 documents-produced: ["Treaty of Zamora (1143) — Portugal's autonomy recognized by León", "Papal bull *Manifestis Probatum* (1179) — Alexander III recognizes Portugal as a papal fief"]
 caused-by: ["County of Portugal established 1096 (Henry of Burgundy as count under León)", "Afonso Henriques's victory at Battle of São Mamede (1128) against his mother; personal seizure of rule"]
 caused: ["Independent Kingdom of Portugal (continuous to present)", "Portuguese national origin mythology centered on divine election at Ourique", "Eventual Reconquista completion (Algarve, 1249)", "[[event-order-of-christ-foundation-1319]]"]

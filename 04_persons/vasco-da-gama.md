@@ -57,7 +57,7 @@ The Cape Route was navigated using **astronomical tables and cartographic knowle
 - Jewish cartographers and astronomers at the Lisbon court (notably Abraham Zacuto, who prepared astronomical tables for the voyage) were intermediaries in this knowledge chain — themselves working within the Arabic astronomical tradition.
 - The Order of Christ's pilots had been systematically developing oceanic navigation methods for 80 years before Gama sailed — methods that depended on Arabic-derived astronomical instruments (the *astrolabe* itself derived from Greek via Arabic transmission).
 
-The result: **Islamic astronomy became the instrument that broke Islamic commercial dominance in the Indian Ocean.** The tool of Islamic scholarship was used to route around Islamic trade. A precise irony of the transmission-chain dynamic. See [[tradition-islamic-philosophy]] for the broader Arabic scholarly tradition that produced this navigational knowledge.
+The result: **Islamic astronomy became the instrument that broke Islamic commercial dominance in the Indian Ocean.** The tool of Islamic scholarship was used to route around Islamic trade. A precise irony of the transmission-chain dynamic. See `tradition-islamic-philosophy` for the broader Arabic scholarly tradition that produced this navigational knowledge.
 
 ## Relations
 - [[henry-the-navigator]] — institutional precursor; Henry's Order of Christ program created the infrastructure, the trained pilots, and the mapped African coast that made Gama's voyage possible

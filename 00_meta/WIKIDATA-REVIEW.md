@@ -210,7 +210,7 @@
 | `panentheism` | Panentheism (All-in-God) | Baruch Spinoza | 0.21 |
 | `io-matua-kore` | Io-matua-kore | Māori mythology | 0.21 |
 | `tangaroa` | Tangaroa | Polynesian mythology | 0.21 |
-| `al-ghazali` | Al-Ghazali | Islamic philosophy | 0.21 |
+| [[al-ghazali]] | Al-Ghazali | Islamic philosophy | 0.21 |
 | `garth-fowden` | Garth Fowden | Byzantine Empire | 0.21 |
 | `event-destruction-of-nalanda-1193` | Destruction of Nālandā monastic university (1193) | Nalanda | 0.21 |
 | `eschatological-war` | Eschatological War | War Scroll | 0.21 |

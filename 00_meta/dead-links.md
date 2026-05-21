@@ -39,7 +39,7 @@ _Auto-generated 2026-05-21. Targets sorted by incoming reference count (descendi
 | 2 | `john-anthony-west` | `kings-chamber-great-pyramid`, `sphinx-of-giza` |
 | 2 | `theme-logos-theology` | `theme-axial-age`, `event-axial-age-800-200bce` |
 | 2 | `event-siege-of-masada-73ce` | `event-numantia-133bce`, `sacred-defeat` |
-| 2 | `divine-names` | `phase-6-044-llull-ars-magna`, `ramon-llull` |
+| 2 | `divine-names` | `phase-6-044-llull-ars-magna`, [[ramon-llull]] |
 | 2 | `tradition-lingayat` | `basavanna`, `tradition-kashmir-shaivism` |
 | 2 | `hierocles` | `apollonius-of-tyana`, `phase-4-039-celsus-true-word` |
 | 2 | `shenhui` | `shenxiu`, `phase-5-004-platform-sutra-huineng` |
