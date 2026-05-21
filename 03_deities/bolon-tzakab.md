@@ -14,13 +14,13 @@ parent-of: []
 child-of: []
 consort: []
 attributes: ["serpent-foot (the diagnostic iconographic feature — one leg ends in a serpent)", "smoking forehead / mirror in forehead (God K's diagnostic emblem)", "spear (the manikin sceptre depicting Bolon Tzakab carried by Maya kings)", "axe in headdress"]
-attested-in: ["[[phase-6-006-chilam-balam]] (the Books of Chilam Balam — colonial Yucatec Maya prophetic books name Bolon Dzacab)", "Dresden Codex; Madrid Codex"]
+attested-in: ["[[phase-8-005-chilam-balam]] (the Books of Chilam Balam — colonial Yucatec Maya prophetic books name Bolon Dzacab)", "Dresden Codex; Madrid Codex"]
 equivalents: []
 syncretic-edges:
   - target: "[[hun-hunahpu]]"
     type: "scholarly-parallel"
     source: "Freidel, Schele, Parker, *Maya Cosmos* (1993); Stuart, *The Inscriptions from Temple XIX at Palenque* (2005) — God K and the Maize God (Hun Hunahpu / Hun Nal Ye) are paired in Classic Maya royal theology: the Maize God is the king-at-resurrection; God K is the king-at-dynastic-legitimation. The two are conceptually linked but iconographically distinct"
-status: "stub"
+status: "metadata"
 refs:
   - title: "Maya Cosmos: Three Thousand Years on the Shaman's Path"
     author: "Freidel, David; Schele, Linda; Parker, Joy"

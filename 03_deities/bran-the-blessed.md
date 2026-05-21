@@ -16,7 +16,7 @@ consort: []
 attributes: ["enormous size (too large to fit in any house; straddles the river Shannon)", "Pair Dadeni (the Cauldron of Rebirth, which he gives to the Irish)", "severed head (which speaks prophecy for 87 years after death — the Hosting of the Head)", "ravens (his name means 'raven' in Welsh)"]
 attested-in: ["Mabinogion, Second Branch: Branwen ferch Llŷr (White Book of Rhydderch c. 1300–1325 CE; Red Book of Hergest c. 1382–1410 CE)"]
 mystery-status: "documented"
-status: "stub"
+status: "metadata"
 cross-links:
   - target: "[[sacred-cauldron]]"
     type: "owns"

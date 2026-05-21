@@ -37,7 +37,7 @@ syncretic-edges:
   - target: "ahura-mazda"
     type: "scholarly-parallel"
     source: "Mbiti 1969 — Iranian supreme-light deity parallel"
-status: "stub"
+status: "metadata"
 refs:
   - title: "The Faces of the Gods: Vodou and Roman Catholicism in Haiti"
     author: "Desmangles, Leslie G."

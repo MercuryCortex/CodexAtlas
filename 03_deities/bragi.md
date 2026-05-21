@@ -18,7 +18,7 @@ syncretic-edges:
   - target: "[[odin]]"
     type: "scholarly-parallel"
     source: "Some scholars (de Vries 1956) propose Bragi as hypostatized poetic-aspect of Odin, others (Lindow 2001) note possible historical Bragi Boddason (9th-c. skald) deification — euhemerist origin"
-status: "stub"
+status: "metadata"
 refs:
   - title: "Norse Mythology"
     author: "Lindow, John"

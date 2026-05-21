@@ -14,7 +14,7 @@ parent-of: ["[[itzamna]] (in some colonial sources — Hunab Ku is treated as th
 child-of: []
 consort: []
 attributes: []
-attested-in: ["[[phase-6-006-chilam-balam]] (the Books of Chilam Balam — colonial Yucatec sources name Hunab Ku)"]
+attested-in: ["[[phase-8-005-chilam-balam]] (the Books of Chilam Balam — colonial Yucatec sources name Hunab Ku)"]
 equivalents: []
 syncretic-edges:
   - target: "[[itzamna]]"

@@ -212,3 +212,18 @@ Both files are 105 lines, both `status: "full"`, both cover the same Greek deity
 **Pacing:** ~10 minutes per batch of 10 deities once warm. At this rate the full 676-file sweep is ~10–12 hours of focused work. Continuing alphabetically — bel- through z.
 
 ---
+
+## Batch 11 — bergelmir → bran-the-blessed (2026-05-21)
+
+**Files:** bergelmir, bes, bhairava, bhaisajyaguru, boann, bolon-tzakab, bondye-vodou, bragi, brahma, bran-the-blessed.
+
+**Fixes applied:**
+
+- 4 status flips stub → metadata (bolon-tzakab, bondye-vodou, bragi, bran-the-blessed).
+- `bolon-tzakab.md` AND `hunab-ku.md` (out-of-batch) — fixed phase-misnumbered wikilink `[[phase-6-006-chilam-balam]]` → `[[phase-8-005-chilam-balam]]`. The Chilam Balam books are filed under phase 8 (non-western traditional) not phase 6 (early modern). Both Maya deities that cited it had the same wrong slug — likely from the same authoring batch.
+
+**Recurring-bug pattern:** wikilinks that reference a specific phase-NNN-NNN-slug pattern can drift away from the canonical filename when an agent guesses the phase number. The fix is mechanical (grep + s/// across files) once the canonical is known.
+
+**Wikilinks scanned:** ~80 unique targets. 1 dead-link fixed across 2 files.
+
+---
