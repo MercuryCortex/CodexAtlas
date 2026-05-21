@@ -20,7 +20,7 @@ syncretic-edges:
   - target: "neptune-roman"
     type: "syncretic-identification"
     source: "interpretatio graeca"
-status: "stub"
+status: "metadata"
 refs:
   - title: "Greek Religion"
     author: "Burkert, Walter"

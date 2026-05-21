@@ -21,7 +21,7 @@ syncretic-edges:
     type: "scholarly-parallel"
     source: "Gonda 1985"
     notes: "Prajāpati is in many respects superseded by Brahmā in classical Hindu cosmology; functional continuity."
-status: "stub"
+status: "metadata"
 refs:
   - title: "Prajāpati"
     author: "Gonda, Jan"

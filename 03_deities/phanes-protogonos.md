@@ -15,9 +15,9 @@ child-of: ["[[nyx-primordial]] (Orphic) or self-generated from the cosmic egg la
 consort: []
 attributes: ["winged, hermaphroditic shining figure", "serpent-coiled", "ram, bull, lion, and serpent heads (composite)", "egg shell halves (the cosmic egg from which Phanes emerged)"]
 attested-in: []
-equivalents: ["[[eros]] (Orphic identification — Phanes-Eros)", "[[hermes-trismegistus]] (Renaissance Hermetic appropriation)"]
+equivalents: ["[[eros-primordial]] (Orphic identification — Phanes-Eros)", "[[hermes-trismegistus]] (Renaissance Hermetic appropriation)"]
 syncretic-edges:
-  - target: "eros"
+  - target: "eros-primordial"
     type: "ancient-identification"
     source: "Orphic theogony: Phanes is identified with Eros (the cosmic love-principle, distinct from Aphrodite's son Eros). Aristophanes *Birds* 693–702 parodies this Phanes-Eros emerging from the cosmic egg"
   - target: "metis"

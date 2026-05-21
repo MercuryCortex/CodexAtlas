@@ -39,7 +39,7 @@ syncretic-edges:
     type: "scholarly-parallel"
     source: "Conze 1960; the masculine-feminine wisdom-bodhisattva pair within Mahāyāna"
     notes: "Within-family pairing"
-status: "stub"
+status: "metadata"
 refs:
   - title: "The Large Sutra on Perfect Wisdom"
     author: "Conze, Edward (trans.)"
