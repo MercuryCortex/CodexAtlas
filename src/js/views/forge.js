@@ -2769,6 +2769,17 @@
     //  - Opacity = linear interpolation between zoomPct 0.50 (0)
     //    and 0.10 (1).
     // ════════════════════════════════════════════════════════════
+    // Phase 21G (2026-05-21) — BG world-anchor constant. The BG
+    // image is declared as 18000 wu wide in world space — about
+    // 16× the wheel's 1128 wu extent. At the camera floor
+    // (gizmo 10%), the BG renders at 18000 wu × (fit_scale × 0.10)
+    // pixels, which on every viewport size works out to roughly
+    // 1.6× the viewport's larger axis — guaranteed coverage with
+    // a healthy pan margin. The wheel and the BG now share one
+    // coordinate system; the BG behaves like any other world
+    // object.
+    const BG_WORLD_WIDTH = 18000; // wu
+
     function syncBackgroundImage() {
       if (!bgImage) return;
       if (!camera || !camera.state) return;
@@ -2785,33 +2796,14 @@
       else                      bgFade = (0.50 - zoomPct) / (0.50 - 0.10);
       bgImage.style.opacity = bgFade.toFixed(3);
 
-      // Phase 21F (2026-05-21) — scale anchor moved from gizmo
-      // 10% to gizmo 0% (the theoretical "infinitely zoomed out"
-      // limit). The mapping is:
-      //
-      //   scale = 1 + 9 × zoomPct
-      //
-      // so:
-      //   gizmo  0% (unreachable) → scale = 1.0  (image at its
-      //                              NATURAL pixel size)
-      //   gizmo 10% (camera floor) → scale = 1.9 (image 1.9× native)
-      //   gizmo 100% (fit zoom)   → scale = 10   (huge; invisible
-      //                              anyway, since opacity = 0
-      //                              above gizmo 50%)
-      //
-      // Why this anchor: the IMG element has its natural 2668 ×
-      // 2000 pixels at scale 1.0 (CSS no longer forces 100vw /
-      // 100vh). At the gizmo 10% floor it's 1.9× native — bigger
-      // than any normal viewport on every axis — so panning
-      // through the floor always reveals more image, never a
-      // gap. The "scale 1.0 = native size" anchor at the
-      // unreachable 0% means we never see the moment where the
-      // image just-barely-covers; we always see overflow.
-      // Same growth rate as the previous formula (10 units of
-      // scale per 1 unit of zoomPct).
-      const scale = 1 + 9 * zoomPct;
-      // World (0, 0) projected to canvas-screen, then converted
-      // to viewport-screen using the canvas's bounding rect.
+      // ── BG WORLD-OBJECT TRANSFORM ─────────────────────────
+      // Pixel width  = BG_WORLD_WIDTH × camera.scale
+      // Pixel height = BG_WORLD_WIDTH × camera.scale / imageAspect
+      // Position     = world (0, 0) projected to viewport
+      const imgAspect  = bgImage._bgAspect || (4 / 3);
+      const widthPx    = BG_WORLD_WIDTH * camera.state.scale;
+      const heightPx   = widthPx / imgAspect;
+      // World (0, 0) → canvas-screen → viewport-screen.
       const centerCanvas = camera.worldToScreen(0, 0, vp);
       let offX = 0, offY = 0;
       if (canvas && canvas.getBoundingClientRect) {
@@ -2821,24 +2813,16 @@
       }
       const wheelVpX = offX + centerCanvas.x;
       const wheelVpY = offY + centerCanvas.y;
-      // Viewport's own centre (where the un-transformed BG
-      // image's centre starts).
       const vpCenterX = window.innerWidth  / 2;
       const vpCenterY = window.innerHeight / 2;
       const dx = wheelVpX - vpCenterX;
       const dy = wheelVpY - vpCenterY;
 
-      // Phase 21E diagnostic — image is at natural size (CSS no
-      // longer enforces 100vw × 100vh). CSS positions the
-      // image's top-left at the viewport centre; `translate(-50%,
-      // -50%)` shifts it so the image's OWN centre lands at the
-      // viewport centre. The additional `translate(dx, dy)`
-      // then moves the image's centre to the wheel's projected
-      // viewport position.
+      bgImage.style.width  = widthPx.toFixed(1)  + 'px';
+      bgImage.style.height = heightPx.toFixed(1) + 'px';
       bgImage.style.transform =
         'translate(-50%, -50%) ' +
-        'translate(' + dx.toFixed(1) + 'px,' + dy.toFixed(1) + 'px) ' +
-        'scale(' + scale.toFixed(4) + ')';
+        'translate(' + dx.toFixed(1) + 'px,' + dy.toFixed(1) + 'px)';
     }
 
     function syncLabelPositions() {
