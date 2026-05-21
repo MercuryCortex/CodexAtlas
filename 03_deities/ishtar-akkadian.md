@@ -23,7 +23,7 @@ syncretic-edges:
   - target: "[[asherah]]"
     type: "scholarly-parallel"
     source: "Smith 2002; partial overlap in West Semitic mother-goddess complex (limited; Ashtart/Astarte is the closer Canaanite parallel)"
-status: "stub"
+status: "metadata"
 refs:
   - title: "Ishtar"
     author: "Pryke, Louise M."

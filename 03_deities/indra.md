@@ -23,7 +23,7 @@ syncretic-edges:
   - target: "zeus"
     type: "scholarly-parallel"
     source: "Watkins 1995, How to Kill a Dragon"
-status: "stub"
+status: "metadata"
 refs:
   - title: "Indra and the Origins of Vedic Sacrifice"
     author: "Oberlies, Thomas"

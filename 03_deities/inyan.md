@@ -16,7 +16,7 @@ consort: []
 attributes: ["stone / rock", "the primordial blue color", "aniconic"]
 attested-in: []
 syncretic-edges: []
-status: "stub"
+status: "metadata"
 refs:
   - title: "Lakota Belief and Ritual"
     author: "Walker, James R."

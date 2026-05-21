@@ -20,7 +20,7 @@ syncretic-edges:
   - target: "selket"
     type: "scholarly-parallel"
     source: "Egyptian Selket and Mesopotamian Ishara are the two canonical scorpion-goddesses of the ancient Near East; the structural parallel is independent (parallel-form, NOT ancestor-of) — both arose from the same ecological reality of deadly scorpions in their respective valley civilizations. Wilkinson 2003; Black & Green 1992."
-status: "stub"
+status: "metadata"
 refs:
   - title: "Gods, Demons and Symbols of Ancient Mesopotamia"
     author: "Black, Jeremy & Green, Anthony"

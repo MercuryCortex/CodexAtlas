@@ -24,7 +24,7 @@ syncretic-edges:
   - target: "[[viracocha]]"
     type: "scholarly-parallel"
     source: "Some Inkarri-myth recensions identify Inkarri with the returning Viracocha (the Inca creator-god who departed across the sea, prophesied to return); the conflation is uneven across regional variants"
-status: "stub"
+status: "metadata"
 refs:
   - title: "De Adaneva a Inkarri: Una visión indígena del Perú"
     author: "Ortiz Rescaniere, Alejandro"

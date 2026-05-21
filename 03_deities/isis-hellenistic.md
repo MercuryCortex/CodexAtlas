@@ -10,7 +10,8 @@ period-active-latest: 600
 domains: ["motherhood", "mystery initiation", "magic", "sea", "salvation", "universal goddess"]
 gender: "feminine"
 role: "universal mother-goddess and savior; mystery-cult initiator"
-parent-of: ["[[harpocrates]]", "[[horus-egyptian]]"]
+parent-of: ["Harpocrates (Greco-Egyptian child-Horus form; no node yet)", "[[horus]]"]
+# DUPLICATE WARNING: see also 03_deities/isis.md (Egyptian, 133L) — this is the Hellenistic / mystery-cult layer at 184L. The split may be intentional per schema's tradition-transformation rule (Hellenistic Isis acquires Greek/Roman mystery features that pre-Ptolemaic Egyptian Isis lacks). Flagged for John's review.
 child-of: []
 consort: ["[[serapis]]", "[[osiris]]"]
 attributes: ["tiet knot (Isis-knot)", "sistrum (sacred rattle)", "throne crown (Egyptian iconographic origin)", "lunar crescent + horns", "knotted Isis-garment", "snake"]
