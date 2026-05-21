@@ -39,6 +39,15 @@ cross-symbol-edges:
     notes: "The Eleusinian initiation = the mythic katabasis (descent to Hades) enacted: the initiate descends into the Telesterion's inner darkness, experiences the dissolution of ordinary consciousness, and emerges re-born with vision of Persephone. This is structurally identical to the axis-mundi descent-and-return pattern of shamanic initiation, the Orphic katabasis, and the Christian death-and-resurrection"
     refs: ["Burkert 1987"]
 mystery-status: "contested"
+hub-edges:
+  - target: "theme-soma-haoma-eucharist"
+    type: "Greek-Mediterranean-articulation-of-ritual-meal-chain"
+    source: "Mylonas 1961 *Eleusis and the Eleusinian Mysteries*; Wasson/Hofmann/Ruck 1978 *The Road to Eleusis* (Tier 2 — influential ergot hypothesis); Bowden 2010 *Mystery Cults of the Ancient World*; Burkert 1987 *Ancient Mystery Cults*; Justin Martyr *First Apology* 66 — the kykeon is the principal Greek pre-Christian articulation of the cross-tradition ritual-drink chain; 2,000-year continuity (-1600 to 392 CE) makes it the longest-running pre-Christian Mediterranean ritual-meal institution. Convergent ancient testimony (Cicero, Pindar, Sophocles) attests transformative-consciousness as the rite's content"
+    notes: "Cross-lens: 09_symbols → 06_themes. Methodology-discipline: the kykeon's PHARMACOLOGICAL content (ergot hypothesis) is Tier-2; the RITUAL-STRUCTURAL parallel to Christian Eucharist is uncontested"
+  - target: "executed-divine-claimant"
+    type: "structural-katabasis-prototype-of-pattern"
+    source: "Burkert 1987; Bowden 2010; Foley 1994 *The Homeric Hymn to Demeter* — the Persephone-descent-and-return narrative the initiate ritually enacts is the principal Greek-mystery articulation of the dying-and-returning divine pattern; the initiate undergoes the goddess's death and resurrection structurally, prefiguring the Christian baptismal-Eucharistic participatory ontology"
+    notes: "Cross-lens: 09_symbols → 06_themes"
 status: "full"
 refs:
   - title: "Eleusis and the Eleusinian Mysteries"

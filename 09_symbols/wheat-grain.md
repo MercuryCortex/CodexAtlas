@@ -70,6 +70,15 @@ cross-symbol-edges:
     notes: "Temple-cult plant-symbols: Menorah, Temple showbread (*lechem ha-panim*), and wheat-grain harvest-offerings (Shavuot/firstfruits) form the Tabernacle-and-Temple ritual-iconographic vocabulary."
     refs: ["Levine 2005"]
 mystery-status: "documented"
+hub-edges:
+  - target: "theme-soma-haoma-eucharist"
+    type: "Demeter-Osiris-Christian-articulation-of-ritual-meal-chain"
+    source: "McGowan 2014 *Ancient Christian Worship*; Burkert 1985 *Greek Religion*; Foley 1994 *The Homeric Hymn to Demeter*; Jacobsen 1976 *The Treasures of Darkness*; Plutarch *De Iside et Osiride* — wheat-grain is the principal grain-pole of the cross-tradition ritual-meal complex: Mesopotamian Tammuz/Dumuzi → Egyptian Osiris (Osiris-bed grain-sprouting) → Greek Demeter/Eleusis (single-grain revelation as ritual climax) → Christian Eucharistic bread (John 12:24 'unless a grain of wheat falls' + Mt 26:26 'this is my body')"
+    notes: "Cross-lens: 09_symbols → 06_themes. MASSIVE-WIN: pairs with vine-grape as the iconographic dyad of the Christian Eucharist; the wheat-grain-as-dying-and-rising vegetation-deity chain (Tammuz/Osiris/Demeter/Christ) is the principal cross-tradition agrarian-ritual line"
+  - target: "theme-dying-founder-paradigm"
+    type: "iconographic-emblem-of-dying-vegetation-deity-pattern"
+    source: "Burkert 1985; Smith 1990 *Drudgery Divine* (against simplistic Frazerian readings); Mettinger 2001 *The Riddle of Resurrection* (Tier 1 — argues *some* dying-rising-god patterns are pre-Christian) — wheat-grain is the principal iconographic emblem of the dying-vegetation-deity pattern (Dumuzi descending, Osiris dismembered + reassembled, Demeter's grief-and-return, Christ-as-grain) that supplies one of the principal pre-Christian articulations of the dying-founder paradigm. Methodology-discipline applied: not all parallels are direct transmission, but the iconographic chain is real"
+    notes: "Cross-lens: 09_symbols → 06_themes. Tier-discipline: the dying-rising-vegetation-deity question is contested; Mettinger 2001 accepts some pre-Christian instances, Smith 1990 rejects the Frazerian universalism"
 status: "metadata"
 refs:
   - title: "The Homeric Hymn to Demeter: Translation, Commentary, and Interpretive Essays"

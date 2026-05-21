@@ -69,6 +69,15 @@ cross-symbol-edges:
     notes: "Both are mystery-cult fruit-symbols: vine in Dionysian, pomegranate in Eleusinian-Persephone. Together they cover the principal Greco-Roman fertility-mystery-cult fruit-iconographic vocabulary; both feed Christian Marian + eucharistic iconography."
     refs: ["Burkert 1985", "Ferguson 1961"]
 mystery-status: "documented"
+hub-edges:
+  - target: "theme-soma-haoma-eucharist"
+    type: "Dionysian-Christian-articulation-of-ritual-meal-chain"
+    source: "McGowan 2014 *Ancient Christian Worship*; Burkert 1985 *Greek Religion*; Henrichs 1982 *Greek Maenadism from Olympias to Messalina*; Doniger 1981 *The Rig Veda* — the vine-and-grape is the central iconographic emblem of the Mediterranean wing of the 3,500-year ritual-meal chain: Dionysian/Bacchic mysteries → early Christian Eucharist (John 15 'I am the true vine' + the institution narratives Mt 26 / Mk 14 / Lk 22 / 1 Cor 11). The Vedic Soma is parallel-form at the ritual-functional level (sacrificial drink for divine communion) even though the *substance* is iconographically different"
+    notes: "Cross-lens: 09_symbols → 06_themes. MASSIVE-WIN: the vine-grape is the principal Mediterranean visual-emblem of the 231L soma-haoma-eucharist chain; pairs with wheat-grain as the iconographic dyad of the Christian Eucharist"
+  - target: "executed-divine-claimant"
+    type: "iconographic-emblem-of-Dionysus-Zagreus-pattern"
+    source: "Burkert 1985; West 1983 *The Orphic Poems*; Bremmer 2014 *Initiation into the Mysteries of the Ancient World* — the Zagreus-myth (Orphic-Dionysian narrative: Dionysus-Zagreus torn apart by Titans, then resurrected) is the principal pagan-Mediterranean articulation of the dying-and-rising divine-claimant pattern; the vine-grape's wine-as-blood iconographic content makes it the symbol-anchor of both the Dionysian-Zagreus and Christian-Eucharistic articulations"
+    notes: "Cross-lens: 09_symbols → 06_themes. The vine-grape symbol provides iconographic continuity between the Zagreus pattern and the Christian articulation"
 status: "metadata"
 refs:
   - title: "Greek Religion"

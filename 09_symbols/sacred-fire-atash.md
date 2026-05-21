@@ -51,6 +51,19 @@ cross-symbol-edges:
     notes: "Both are visual encodings of divine-luminous-presence — fire as actually-luminous-ritual-presence, halo as iconographic-representation-of-luminous-presence. The Iranian Atar tradition and the Hellenistic-Christian halo are independent developments from broader Near-Eastern divine-radiance iconographic vocabulary."
     refs: ["Mathews 1993", "Boyce 1982"]
 mystery-status: "documented"
+hub-edges:
+  - target: "persian-period-injection"
+    type: "principal-ritual-emblem-of-source-tradition"
+    source: "Boyce 1975-1991 *History of Zoroastrianism* (3 vols); Boyce 1979 *Zoroastrians: Their Religious Beliefs and Practices*; Stausberg 2002 *Die Religion Zarathushtras* — the sacred fire is the central non-figural ritual emblem of Zoroastrianism (the source tradition of the Achaemenid-period injection event); the *atash bahram* / *atash adaran* / *atash dadgah* three-tier consecration grade is the institutional framework of Zoroastrian ritual continuity for ~3,000 years"
+    notes: "Cross-lens: 09_symbols → 06_themes. Pairs with faravahar as the non-figural / figural emblematic dyad of the Persian-period source tradition"
+  - target: "theme-zoroastrian-cosmogony"
+    type: "central-ritual-emblem-of-cosmogony"
+    source: "Boyce 1975; Skjærvø 2011 *The Spirit of Zoroastrianism*; Stausberg 2002 — fire is the seventh and culminating creation of Ahura Mazda's good cosmos in the Zoroastrian cosmogonic sequence; the sacred fire ritualizes the cosmogonic-creative principle within human devotion. Liturgically the fire mediates between human and divine in the yasna ceremony"
+    notes: "Cross-lens: 09_symbols → 06_themes"
+  - target: "theme-soma-haoma-eucharist"
+    type: "ritual-complementary-emblem-of-yasna-meal"
+    source: "Boyce 1975; Williams Jackson 1928 *Zoroastrian Studies* — fire and haoma are the two complementary ritual substances of the yasna liturgy: fire is the masculine-igneous mediating element, haoma the plant-watery sacramental substance. The pairing places the Zoroastrian ritual-meal complex inside the cross-tradition ritual-meal chain"
+    notes: "Cross-lens: 09_symbols → 06_themes. The sacred fire is the ritual-companion of haoma in the yasna — both poles of the Iranian ritual-meal complex sit inside the 231L soma-haoma-eucharist hub"
 status: "metadata"
 refs:
   - title: "Zoroastrians: Their Religious Beliefs and Practices"
