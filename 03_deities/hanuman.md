@@ -16,7 +16,7 @@ syncretic-edges:
   - target: "madhva"
     type: "ancient-identification"
     source: "Madhva (Dvaita Vedānta founder) is traditionally regarded as third incarnation of Vāyu, after Hanumān and Bhīma"
-status: "stub"
+status: "metadata"
 refs:
   - title: "Hanuman's Tale: The Messages of a Divine Monkey"
     author: "Lutgendorf, Philip"

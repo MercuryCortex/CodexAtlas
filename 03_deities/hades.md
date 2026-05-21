@@ -15,7 +15,7 @@ child-of: ["[[kronos]]", "Rhea"]
 consort: ["Persephone (abducted)"]
 attributes: ["helm of invisibility (the *kunee*)", "scepter", "Cerberus (three-headed hound)"]
 attested-in: ["[[phase-2-008-homeric-epics]]", "[[phase-2-009-hesiod-theogony-works-and-days]]", "Homeric Hymn to Demeter"]
-equivalents: ["[[pluto-roman]]", "[[dis-pater-roman]]"]
+equivalents: ["[[pluto-roman]]", "Dis Pater (Roman chthonic equivalent — no node yet)"]
 syncretic-edges:
   - target: "pluto-roman"
     type: "syncretic-identification"
@@ -23,7 +23,7 @@ syncretic-edges:
   - target: "serapis-hellenistic"
     type: "syncretic-identification"
     source: "Plutarch, On Isis and Osiris; Hellenistic Serapis combines Osiris and Hades/Pluton."
-status: "stub"
+status: "metadata"
 refs:
   - title: "Greek Religion"
     author: "Burkert, Walter"

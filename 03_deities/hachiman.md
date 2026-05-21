@@ -20,7 +20,7 @@ syncretic-edges:
   - target: "[[ares]]"
     type: "scholarly-parallel"
     source: "War-god patron of warriors"
-status: "stub"
+status: "metadata"
 refs:
   - title: "Hachiman and the Samurai"
     author: "Bender, Ross"
