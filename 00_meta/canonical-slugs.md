@@ -4046,7 +4046,6 @@ canonical-slug
 - `theme-goddess-centric-temple`
 - `theme-gothic-light-as-divine-presence`
 - `theme-graduated-afterlife`
-- `theme-greco-buddhist-syncretism`
 - `theme-guide-through-underworld`
 - `theme-gunpowder-ends-medieval-warrior-class`
 - `theme-habiru-hebrew-origins`

@@ -18,7 +18,7 @@ tradition: "[[tradition-buddhism]]"
 traditions-related: ["[[tradition-mahayana-buddhism]]", "[[tradition-greco-buddhism]]", "[[tradition-greco-buddhism]] (Bamiyan is a downstream node of the Gandharan Greco-Buddhist art tradition)", "[[tradition-vajrayana-buddhism]] (the upper cave paintings include early Vajrayana-cognate iconography)"]
 function: "monumental-rock-cut-buddhist-monastery-and-pilgrimage-site"
 key-figures: ["[[xuanzang]] (7th-c. Chinese Buddhist pilgrim; visited Bamiyan ~630 CE and provided the principal early description in *Great Tang Records on the Western Regions*)", "[[alexander-the-great]] (the broader Hellenistic foundation of the Bactrian-Greek architectural-iconographic tradition that downstream produced Greco-Buddhist sculpture)", "[[kanishka-i]] (Kushan emperor, r. ~127–150 CE; principal patron of the Gandharan Buddhist art tradition that culminates at Bamiyan)", "[[mulla-omar]] (Taliban leader; ordered the destruction of the Buddhas in March 2001)", "[[zemaryalai-tarzi]] (Afghan archaeologist; principal modern excavator)", "[[deborah-klimburg-salter]] (modern art historian; principal interpreter of the Bamiyan cave paintings)", "[[kurt-behrendt]] (modern American scholar of Gandharan Buddhist architecture)"]
-themes: ["[[theme-monumental-religious-sculpture]]", "[[axis-mundi]]", "[[theme-rock-cut-architecture-as-meditation-cosmos]]", "[[theme-greco-buddhist-syncretism]]", "[[theme-iconoclasm]]", "[[theme-silk-road-religious-transmission]]"]
+themes: ["[[theme-monumental-religious-sculpture]]", "[[axis-mundi]]", "[[theme-rock-cut-architecture-as-meditation-cosmos]]", "[[theme-gandharan-buddhism]]", "[[theme-iconoclasm]]", "[[theme-silk-road-religious-transmission]]"]
 events-related: ["[[event-destruction-of-bamiyan-buddhas-march-2001]]", "[[event-gandhara-greco-buddhist-period-c-100-bce-500-ce]]"]
 documents-related: ["[[great-tang-records-on-the-western-regions]] (Xuanzang's 7th-c. travelogue describing the Buddhas at the height of their period)", "[[bamiyan-buddhist-sutra-fragments]] (the early Buddhist manuscript fragments recovered from the Bamiyan caves)"]
 cross-tradition-edges:
@@ -192,6 +192,6 @@ The Bamiyan destruction was one of the most internationally documented (real-tim
 - [[parthenon-athens]] — deep Hellenistic iconographic ancestor
 - [[xuanzang]] — 7th-c. pilgrim, principal historical source
 - [[event-destruction-of-bamiyan-buddhas-march-2001]] — destruction event
-- [[theme-greco-buddhist-syncretism]] — the syncretism motif
+- [[theme-gandharan-buddhism]] — the Greco-Buddhist syncretism motif (canonical hub)
 - [[theme-iconoclasm]] — the destruction motif
 - [[theme-silk-road-religious-transmission]] — the transmission motif

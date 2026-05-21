@@ -21,7 +21,7 @@ syncretic-edges:
     type: "scholarly-parallel"
     source: "Conze, *The Prajñāpāramitā Literature* (1960); Conze, *Buddhist Wisdom* (1958) — Conze's *classic* parallel: Mahāyāna Prajñāpāramitā (Mother of the Buddhas) and Gnostic Sophia (Mother of the Aeons) are independently-emerged wisdom-mother personifications"
     notes: "MASSIVE WIN: the most-cited Buddhist-Gnostic structural parallel in 20th-century comparative religion"
-  - target: "isis"
+  - target: "isis-egyptian"
     type: "scholarly-parallel"
     source: "Conze 1958; both are mother-goddesses associated with wisdom and the cosmic-feminine; the Isis-Sophia-Prajñāpāramitā triple parallel is the canonical Hellenistic-Egyptian-Buddhist wisdom-mother cluster"
   - target: "athena"

@@ -20,7 +20,7 @@ syncretic-edges:
     type: "scholarly-parallel"
     source: "Beyer, *The Cult of Tara* (1973); Conze, *Buddhist Wisdom* (1958) — both are *Saviouress* / compassionate-mother figures invoked for protection and salvation. Beyer explicitly compares the Tara-cult to the Marian-cult as the two principal saviouress-mother devotional cults in world religion"
     notes: "MASSIVE WIN: Tara-Mary saviouress-mother devotional cult parallel (Beyer 1973)"
-  - target: "isis"
+  - target: "isis-egyptian"
     type: "scholarly-parallel"
     source: "Beyer 1973 — both are mother-protector goddesses; Isis's protective-of-the-deceased role parallels Tara's protection-from-the-eight-fears function"
   - target: "durga"
