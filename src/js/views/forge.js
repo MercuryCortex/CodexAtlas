@@ -1713,14 +1713,21 @@
       for (const n of modeNodes) modeNodeById.set(n.id, n);
       local.mode.nodesById = modeNodeById;
 
-      // Phase 20 (2026-05-21) — family hulls. Built once per mode
-      // rebuild from packed node positions. Convex hull + centroid
-      // per `family` value (~34 groups in the deities mode). The
-      // hull polygon is in WORLD space; the SVG overlay does
-      // worldToScreen on each camera change via syncHulls().
-      local.mode.hulls = (graph.buildFamilyHulls)
+      // Phase 20 (2026-05-21) — family hulls + ring metrics +
+      // dividers. Built once per mode rebuild from packed node
+      // positions. Result is a record:
+      //   { hulls: [...], center, innerRadius, outerRadius,
+      //     dividers: [...] }
+      // - hulls[]   per-family convex polygon + centroid +
+      //             centroidAngle for radial label placement
+      // - center    world centre of the wheel
+      // - innerRadius / outerRadius
+      //             min / max distance from center over all nodes
+      // - dividers[] radial bisector angle between angularly-
+      //             adjacent families (used for separator lines).
+      local.mode.hullData = (graph.buildFamilyHulls)
         ? graph.buildFamilyHulls(nodePack, modeNodeById)
-        : [];
+        : { hulls: [], center: { x: 0, y: 0 }, innerRadius: 0, outerRadius: 0, dividers: [] };
       rebuildHullElements();
 
       // 2026-05-20 — pre-create label DOM so a first hover doesn't
@@ -2269,65 +2276,173 @@
     //  so they don't crowd individual-node inspection.
     // ════════════════════════════════════════════════════════════
     const SVG_NS = 'http://www.w3.org/2000/svg';
-    // Build / rebuild the SVG <g> children when hulls change
-    // (mode-switch). Each family gets one polygon + one text.
+    // ── Hull SVG structure (Phase 20B, 2026-05-21) ──────────
+    //   <svg class="forge-hulls-overlay">
+    //     <defs id="forge-hull-defs">                 ← gradients per divider
+    //     <g    id="forge-hull-polys">                ← per-family convex polys
+    //     <g    id="forge-hull-dividers">             ← radial separator lines
+    //     <g    id="forge-hull-labels">               ← family titles
+    //
+    // Z-order inside the SVG: polys (faintest) → dividers → labels
+    // so labels paint above everything else.
+    let hullDefs, hullPolysG, hullDividersG, hullLabelsG;
+    function ensureHullStructure() {
+      if (hullDefs) return;
+      hullDefs       = document.createElementNS(SVG_NS, 'defs');
+      hullDefs.setAttribute('id', 'forge-hull-defs');
+      hullPolysG     = document.createElementNS(SVG_NS, 'g');
+      hullPolysG.setAttribute('id', 'forge-hull-polys');
+      hullDividersG  = document.createElementNS(SVG_NS, 'g');
+      hullDividersG.setAttribute('id', 'forge-hull-dividers');
+      hullLabelsG    = document.createElementNS(SVG_NS, 'g');
+      hullLabelsG.setAttribute('id', 'forge-hull-labels');
+      hullsOverlay.appendChild(hullDefs);
+      hullsOverlay.appendChild(hullPolysG);
+      hullsOverlay.appendChild(hullDividersG);
+      hullsOverlay.appendChild(hullLabelsG);
+    }
     function rebuildHullElements() {
-      const hulls = (local.mode && local.mode.hulls) || [];
-      hullsOverlay.innerHTML = '';
-      for (let i = 0; i < hulls.length; i++) {
-        const h = hulls[i];
-        const g = document.createElementNS(SVG_NS, 'g');
-        g.setAttribute('class', 'forge-hull');
-        g.setAttribute('data-family', h.family);
-        g.style.setProperty('--family-color', h.color);
+      ensureHullStructure();
+      const data = (local.mode && local.mode.hullData) || { hulls: [], dividers: [] };
+      // ── Clear existing children
+      hullDefs.innerHTML = '';
+      hullPolysG.innerHTML = '';
+      hullDividersG.innerHTML = '';
+      hullLabelsG.innerHTML = '';
+      // ── One polygon + one label per family
+      for (let i = 0; i < data.hulls.length; i++) {
+        const h = data.hulls[i];
+        const polyG = document.createElementNS(SVG_NS, 'g');
+        polyG.setAttribute('class', 'forge-hull');
+        polyG.setAttribute('data-family', h.family);
+        polyG.style.setProperty('--family-color', h.color);
         const poly = document.createElementNS(SVG_NS, 'polygon');
         poly.setAttribute('class', 'forge-hull-poly');
-        g.appendChild(poly);
+        polyG.appendChild(poly);
+        hullPolysG.appendChild(polyG);
+
+        const lblG = document.createElementNS(SVG_NS, 'g');
+        lblG.setAttribute('class', 'forge-hull-label-g');
+        lblG.style.setProperty('--family-color', h.color);
         const label = document.createElementNS(SVG_NS, 'text');
         label.setAttribute('class', 'forge-hull-label');
         label.setAttribute('text-anchor', 'middle');
+        label.setAttribute('dominant-baseline', 'middle');
         label.textContent = h.family;
-        g.appendChild(label);
-        hullsOverlay.appendChild(g);
+        lblG.appendChild(label);
+        hullLabelsG.appendChild(lblG);
+      }
+      // ── One gradient + one line per divider. The gradient uses
+      // userSpaceOnUse so its endpoints align with the line's
+      // endpoints; we update both per camera change.
+      for (let i = 0; i < data.dividers.length; i++) {
+        const grad = document.createElementNS(SVG_NS, 'linearGradient');
+        grad.setAttribute('id', 'forge-hull-divgrad-' + i);
+        grad.setAttribute('gradientUnits', 'userSpaceOnUse');
+        // 4 stops: fade-in 0→15%, opaque 15→85%, fade-out 85→100%.
+        const stopColors = [
+          ['0%',   'stop-color:#fff;stop-opacity:0'],
+          ['15%',  'stop-color:#fff;stop-opacity:0.55'],
+          ['85%',  'stop-color:#fff;stop-opacity:0.55'],
+          ['100%', 'stop-color:#fff;stop-opacity:0'],
+        ];
+        for (const [off, style] of stopColors) {
+          const s = document.createElementNS(SVG_NS, 'stop');
+          s.setAttribute('offset', off);
+          s.setAttribute('style', style);
+          grad.appendChild(s);
+        }
+        hullDefs.appendChild(grad);
+        const line = document.createElementNS(SVG_NS, 'line');
+        line.setAttribute('class', 'forge-hull-divider');
+        line.setAttribute('stroke', 'url(#forge-hull-divgrad-' + i + ')');
+        hullDividersG.appendChild(line);
       }
     }
     function syncHulls() {
       const vp = local.lastSize;
       if (!vp.w || !vp.h) return;
-      const hulls = (local.mode && local.mode.hulls) || [];
-      if (!hulls.length) return;
-      // Match SVG viewBox to the actual viewport so coordinate
-      // math stays in CSS pixels.
+      const data = (local.mode && local.mode.hullData);
+      if (!data || !data.hulls || !data.hulls.length) return;
       hullsOverlay.setAttribute('viewBox', '0 0 ' + vp.w + ' ' + vp.h);
       hullsOverlay.setAttribute('width',  vp.w);
       hullsOverlay.setAttribute('height', vp.h);
       const camScale = camera.state.scale;
-      // Fade out as we zoom past 2× — hulls are overview cues, not
-      // close-inspection chrome. opacity drops 1 → 0 across [2, 3].
+      // Zoom fade — overview chrome only.
       const fade = camScale <= 2.0 ? 1.0
                  : camScale >= 3.0 ? 0.0
                  : (3.0 - camScale) / 1.0;
       hullsOverlay.style.opacity = fade.toFixed(3);
-      // Skip per-vertex work if fully faded.
       if (fade <= 0.001) return;
 
-      const groups = hullsOverlay.children;
-      for (let i = 0; i < hulls.length && i < groups.length; i++) {
-        const h = hulls[i];
-        const g = groups[i];
-        const poly = g.firstChild;
-        const label = g.lastChild;
-        // Polygon points → screen.
+      // Outer-ring radius in WORLD units + screen units.
+      const outerWorld = data.outerRadius || 0;
+      const innerWorld = data.innerRadius || 0;
+      const centerWorld = data.center || { x: 0, y: 0 };
+      const centerScreen = camera.worldToScreen(centerWorld.x, centerWorld.y, vp);
+      // Screen-radius for the outer ring (use one node along +x to
+      // measure the scale — robust to any view aspect / pan).
+      const ringEdgeScreen = camera.worldToScreen(centerWorld.x + outerWorld, centerWorld.y, vp);
+      const ringPxRadius = Math.hypot(ringEdgeScreen.x - centerScreen.x, ringEdgeScreen.y - centerScreen.y);
+      const innerEdgeScreen = camera.worldToScreen(centerWorld.x + innerWorld, centerWorld.y, vp);
+      const innerPxRadius = Math.hypot(innerEdgeScreen.x - centerScreen.x, innerEdgeScreen.y - centerScreen.y);
+
+      // ── Polygons (one per family, world → screen each vertex).
+      const polyGroups = hullPolysG.children;
+      for (let i = 0; i < data.hulls.length && i < polyGroups.length; i++) {
+        const h = data.hulls[i];
+        const polyEl = polyGroups[i].firstChild;
         let pts = '';
         for (let j = 0; j < h.polygon.length; j++) {
           const s = camera.worldToScreen(h.polygon[j].x, h.polygon[j].y, vp);
           pts += (j ? ' ' : '') + s.x.toFixed(1) + ',' + s.y.toFixed(1);
         }
-        poly.setAttribute('points', pts);
-        // Centroid label.
-        const c = camera.worldToScreen(h.centroid.x, h.centroid.y, vp);
-        label.setAttribute('x', c.x.toFixed(1));
-        label.setAttribute('y', c.y.toFixed(1));
+        polyEl.setAttribute('points', pts);
+      }
+
+      // ── Family labels: angle = centroidAngle, radius = outer+pad.
+      // Labels sit OUTSIDE the wheel rim, NEVER inside the cluttered
+      // node cloud. pad scales with viewport so it stays consistent.
+      const LABEL_OUTSIDE_PAD = 28;
+      const labelGroups = hullLabelsG.children;
+      for (let i = 0; i < data.hulls.length && i < labelGroups.length; i++) {
+        const h = data.hulls[i];
+        const a = h.centroidAngle;
+        const rPx = ringPxRadius + LABEL_OUTSIDE_PAD;
+        const lx = centerScreen.x + Math.cos(a) * rPx;
+        const ly = centerScreen.y + Math.sin(a) * rPx;
+        const labelEl = labelGroups[i].firstChild;
+        labelEl.setAttribute('x', lx.toFixed(1));
+        labelEl.setAttribute('y', ly.toFixed(1));
+      }
+
+      // ── Radial separators between adjacent families.
+      // Each line runs from (inner - 50 px) to (outer + 50 px) along
+      // its bisector angle. The per-line gradient's userSpaceOnUse
+      // endpoints are updated to match so the fade rides the line.
+      const OVERSHOOT = 50;   // px — both sides of the ring
+      const lines = hullDividersG.children;
+      for (let i = 0; i < data.dividers.length && i < lines.length; i++) {
+        const d = data.dividers[i];
+        const a = d.angle;
+        const r0 = Math.max(0, innerPxRadius - OVERSHOOT);
+        const r1 = ringPxRadius + OVERSHOOT;
+        const x1 = centerScreen.x + Math.cos(a) * r0;
+        const y1 = centerScreen.y + Math.sin(a) * r0;
+        const x2 = centerScreen.x + Math.cos(a) * r1;
+        const y2 = centerScreen.y + Math.sin(a) * r1;
+        const line = lines[i];
+        line.setAttribute('x1', x1.toFixed(1));
+        line.setAttribute('y1', y1.toFixed(1));
+        line.setAttribute('x2', x2.toFixed(1));
+        line.setAttribute('y2', y2.toFixed(1));
+        const grad = document.getElementById('forge-hull-divgrad-' + i);
+        if (grad) {
+          grad.setAttribute('x1', x1.toFixed(1));
+          grad.setAttribute('y1', y1.toFixed(1));
+          grad.setAttribute('x2', x2.toFixed(1));
+          grad.setAttribute('y2', y2.toFixed(1));
+        }
       }
     }
 

@@ -6488,19 +6488,37 @@ body.view-forge #detail-inner {
   stroke-width: 1.25;
   stroke-linejoin: round;
 }
+.forge-hull-label-g {
+  /* Wraps a single text element; inherits --family-color. */
+}
 .forge-hull-label {
   fill: var(--family-color, #888);
-  fill-opacity: 0.65;
+  fill-opacity: 0.85;
   font-family: var(--mono, "JetBrains Mono", Menlo, monospace);
   font-size: 11px;
   letter-spacing: 0.18em;
   text-transform: uppercase;
-  /* Slight outline so the label stays readable when it overlaps a
-     dim node disk in the dim background. */
+  /* Phase 20B (2026-05-21) — labels now sit OUTSIDE the wheel rim
+     so the cluttered node cloud no longer overlaps them. The
+     stroke halo is still helpful for separators / dividers
+     crossing the label area. */
   paint-order: stroke fill;
-  stroke: rgba(0, 0, 0, 0.6);
+  stroke: rgba(0, 0, 0, 0.7);
   stroke-width: 3px;
   stroke-linejoin: round;
+}
+/* Phase 20B (2026-05-21) — radial separator lines between adjacent
+   families. Drawn at the angular bisector between two families'
+   centroids, overshooting both the inner and outer ring radii by
+   50 px. The fade across the line endpoints is handled by a
+   per-line linearGradient in JS (it sets the gradient endpoint
+   coords to match the line, so 0→15% and 85→100% become the soft
+   tails on either end). */
+.forge-hull-divider {
+  stroke-width: 1px;
+  fill: none;
+  /* `stroke` attribute is set to url(#forge-hull-divgrad-N) in JS.
+     This rule provides a fallback if the gradient ref fails. */
 }
 
 .forge-labels-overlay {

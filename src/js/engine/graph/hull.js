@@ -79,58 +79,113 @@
   }
 
   // Build hulls from a packed nodes array + nodesById Map.
-  // Groups by `family` (the coarsest visual cluster — ~34 buckets
-  // across the deity mode; matches the family_color the disks use).
+  // Groups by `family`. Also computes wheel ring metrics
+  // (world center + inner / outer radii) and a per-family
+  // centroid angle so the view layer can place labels OUTSIDE
+  // the outer ring at angle=centroidAngle, radius=outer+pad.
   //
-  // Returns: Array<{
-  //   family:   string,       // e.g. 'Greek'
-  //   color:    string,       // hex from family_color (or fallback)
-  //   polygon:  [{x, y}, ...] // hull vertices in WORLD space
-  //   centroid: {x, y}        // for the title label
-  //   count:    number        // node count for this family
-  // }>
-  //
-  // Families with fewer than 2 nodes are skipped (can't draw a
-  // useful hull). Families with 2 nodes get a degenerate 2-point
-  // "hull" — the SVG layer rounds the stroke so it reads as a
-  // soft segment rather than a polygon.
+  // Returns: {
+  //   hulls: Array<{ family, color, polygon, centroid, count,
+  //                  centroidAngle }>,
+  //   center: { x, y },          // world centre of the wheel
+  //   innerRadius: number,       // min(distance(node, center))
+  //   outerRadius: number,       // max(distance(node, center))
+  //   dividers: Array<{          // radial separators between
+  //                              // adjacent families on the ring
+  //     angle:  number,          // radians (atan2 convention)
+  //     family: string,          // family on the +ω side
+  //     prevFamily: string,      // family on the -ω side
+  //   }>
+  // }
   function buildFamilyHulls(nodePacked, nodesById) {
-    if (!nodePacked || !nodePacked.idIndex) return [];
-    const NF = 8;   // floats per instance — must match graph/node.js packNodes
-    const families = new Map();   // family → { color, points: [] }
+    if (!nodePacked || !nodePacked.idIndex) {
+      return { hulls: [], center: { x: 0, y: 0 }, innerRadius: 0, outerRadius: 0, dividers: [] };
+    }
+    const NF = 8;
+    const families = new Map();
+    let sumX = 0, sumY = 0, count = 0;
     for (let i = 0; i < nodePacked.instanceCount; i++) {
       const id = nodePacked.idIndex[i];
       const node = nodesById && nodesById.get ? nodesById.get(id) : null;
       if (!node) continue;
       const family = (node.family && String(node.family).trim()) || 'Other';
+      const x = nodePacked.data[i * NF + 0];
+      const y = nodePacked.data[i * NF + 1];
+      sumX += x; sumY += y; count++;
       if (!families.has(family)) {
         families.set(family, {
           color: node.family_color || node.tradition_color || '#888888',
           points: [],
         });
       }
-      families.get(family).points.push({
-        x: nodePacked.data[i * NF + 0],
-        y: nodePacked.data[i * NF + 1],
-      });
+      families.get(family).points.push({ x, y });
     }
+    const center = count > 0
+      ? { x: sumX / count, y: sumY / count }
+      : { x: 0, y: 0 };
+    let innerRadius = Infinity, outerRadius = 0;
+    const angleSums = new Map();   // family → { sx, sy, n } for circular-mean
+    for (const [family, data] of families.entries()) {
+      let sx = 0, sy = 0;
+      for (const p of data.points) {
+        const dx = p.x - center.x, dy = p.y - center.y;
+        const r = Math.hypot(dx, dy);
+        if (r < innerRadius) innerRadius = r;
+        if (r > outerRadius) outerRadius = r;
+        // Circular mean: sum of unit vectors → atan2 of sum gives
+        // the angle robust to the -π/+π wrap.
+        const inv = r > 1e-6 ? 1 / r : 0;
+        sx += dx * inv;
+        sy += dy * inv;
+      }
+      angleSums.set(family, { sx, sy, n: data.points.length });
+    }
+    if (!isFinite(innerRadius)) innerRadius = 0;
     const out = [];
     for (const [family, data] of families.entries()) {
       if (data.points.length < 2) continue;
       const polygon = convexHull(data.points);
       const centroid = polygonCentroid(polygon);
+      const ang = angleSums.get(family);
+      const centroidAngle = (ang && (ang.sx !== 0 || ang.sy !== 0))
+        ? Math.atan2(ang.sy, ang.sx)
+        : Math.atan2(centroid.y - center.y, centroid.x - center.x);
       out.push({
         family,
         color: data.color,
         polygon,
         centroid,
+        centroidAngle,
         count: data.points.length,
       });
     }
-    // Larger clusters first so smaller hulls layer on top (less
-    // chance of a big hull's stroke crossing through a small one).
+    // Largest first for layering — but compute dividers by angular
+    // order, not by count.
     out.sort((a, b) => b.count - a.count);
-    return out;
+    // Order families angularly to find adjacent neighbours on the
+    // wheel rim. Wrap-around handled by repeating the first at the
+    // end.
+    const byAngle = out.slice().sort((a, b) => a.centroidAngle - b.centroidAngle);
+    const dividers = [];
+    for (let i = 0; i < byAngle.length; i++) {
+      const cur = byAngle[i];
+      const next = byAngle[(i + 1) % byAngle.length];
+      // Bisector between the two centroids. Handle wrap-around
+      // (the gap crosses -π/+π) by adding 2π to the smaller value
+      // when their gap exceeds π.
+      let a = cur.centroidAngle;
+      let b = next.centroidAngle;
+      if (b < a) b += 2 * Math.PI;
+      let mid = (a + b) / 2;
+      while (mid > Math.PI)  mid -= 2 * Math.PI;
+      while (mid < -Math.PI) mid += 2 * Math.PI;
+      dividers.push({
+        angle: mid,
+        family: next.family,
+        prevFamily: cur.family,
+      });
+    }
+    return { hulls: out, center, innerRadius, outerRadius, dividers };
   }
 
   // ── Export ────────────────────────────────────────────
