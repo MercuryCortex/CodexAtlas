@@ -2989,6 +2989,18 @@
     //     short enough to feel responsive.
     // ════════════════════════════════════════════════════════════
     function wireHoverCard() {
+      // ── Thumbnails cache ────────────────────────────────────
+      // Wikipedia thumbnails live in _assets/thumbs_cache.json as
+      // { id: { src, title, page, extract, width, height } }.
+      // Fetched once at view mount; lookup on hover is then a free
+      // Map.get(). The fetch is best-effort — if it fails, the card
+      // still renders text but with the thumbnail row hidden.
+      let thumbs = null;
+      fetch('_assets/thumbs_cache.json', { cache: 'force-cache' })
+        .then(r => r.ok ? r.json() : null)
+        .then(j => { thumbs = j || {}; })
+        .catch(() => { thumbs = {}; });
+
       const card = document.createElement('div');
       card.className   = 'forge-hover-card';
       card.id          = 'forge-hover-card';
@@ -3079,29 +3091,135 @@
       // Bucket render order — matches the legend's BUCKET_ORDER.
       const BUCKET_ORDER = ['transmission','parallel','association','kinship','attestation','polemic','fusion'];
 
+      // ── Position state ──────────────────────────────────────
+      // Phase 17 (2026-05-21) — anchor-once positioning.
+      //
+      // The card's anchor quadrant (top-right / top-left / bottom-
+      // right / bottom-left of the cursor) is picked ONCE at show
+      // time and STAYS THERE while the cursor moves. mousemove
+      // just translates the card by (cursor + anchor offset) using
+      // cached dimensions — no re-measurement, no quadrant
+      // re-evaluation, no flicker near screen corners.
+      //
+      // Re-flip happens only when the cursor moves far enough that
+      // the current anchor genuinely doesn't fit (the card would
+      // overflow the viewport). That's hysteresis built in for
+      // free.
+      //
+      // Cached dimensions: re-measured (1 layout read) only when
+      // content changes — on showFor() and on image-load callback.
+      // mousemove does ZERO layout reads. rAF-coalesced so we
+      // never write transform more than once per frame.
+      //
+      // OFFSET = a fixed pad large enough that even a max-clamped
+      // selected disk (22 px × 1.5 size_mult ≈ 33 px) doesn't sit
+      // under the card. Generous 38 px gives breathing room.
+      const OFFSET = 38;
+      const MARGIN = 8;
+
       let showId      = 0;     // setTimeout token
-      let loadToken   = 0;     // per-hover stale-load guard
+      let posRafId    = 0;     // rAF coalesce token for position updates
       let lastClientX = 0;
       let lastClientY = 0;
+      let cachedW     = 0;     // last measured card width
+      let cachedH     = 0;     // last measured card height
+      let anchorX     = +1;    // +1 = right of cursor, -1 = left
+      let anchorY     = +1;    // +1 = below cursor, -1 = above
 
       function hide() {
         if (showId) { clearTimeout(showId); showId = 0; }
+        if (posRafId) { cancelAnimationFrame(posRafId); posRafId = 0; }
         card.style.display = 'none';
+      }
+
+      // Single layout read. Stores width + height. Call AFTER
+      // content swap and image load — never on mousemove.
+      function measure() {
+        const r = card.getBoundingClientRect();
+        if (r.width > 0)  cachedW = r.width;
+        if (r.height > 0) cachedH = r.height;
+      }
+
+      // Pick the anchor quadrant that fully fits the card at the
+      // current cursor position. Default preference: bottom-right.
+      // Falls back through the other 3 quadrants in order. Final
+      // fallback: bottom-right + clamp on output.
+      function pickAnchor() {
+        const w = cachedW, h = cachedH;
+        const winW = window.innerWidth, winH = window.innerHeight;
+        const cx = lastClientX, cy = lastClientY;
+        const tries = [[+1, +1], [-1, +1], [+1, -1], [-1, -1]];
+        for (const [qx, qy] of tries) {
+          let x = qx > 0 ? cx + OFFSET            : cx - OFFSET - w;
+          let y = qy > 0 ? cy + OFFSET            : cy - OFFSET - h;
+          if (x >= MARGIN && x + w + MARGIN <= winW
+              && y >= MARGIN && y + h + MARGIN <= winH) {
+            anchorX = qx;
+            anchorY = qy;
+            return;
+          }
+        }
+        anchorX = +1; anchorY = +1;
+      }
+
+      // Write the transform. No layout reads. Uses cached dims +
+      // current anchor + last cursor. If the chosen anchor would
+      // now overflow (cursor crossed the edge), flips ONCE and
+      // re-evaluates — that's the hysteresis line.
+      function applyTransform() {
+        const w = cachedW, h = cachedH;
+        if (!w || !h) return;
+        const winW = window.innerWidth, winH = window.innerHeight;
+        const cx = lastClientX, cy = lastClientY;
+        let x = anchorX > 0 ? cx + OFFSET : cx - OFFSET - w;
+        let y = anchorY > 0 ? cy + OFFSET : cy - OFFSET - h;
+        // Flip X if overflowing.
+        if (x < MARGIN || x + w + MARGIN > winW) {
+          anchorX = -anchorX;
+          x = anchorX > 0 ? cx + OFFSET : cx - OFFSET - w;
+        }
+        // Flip Y if overflowing.
+        if (y < MARGIN || y + h + MARGIN > winH) {
+          anchorY = -anchorY;
+          y = anchorY > 0 ? cy + OFFSET : cy - OFFSET - h;
+        }
+        // Hard clamp to keep card inside viewport even if both
+        // sides overflow (e.g. tiny viewport).
+        if (x < MARGIN) x = MARGIN;
+        if (x + w + MARGIN > winW) x = winW - w - MARGIN;
+        if (y < MARGIN) y = MARGIN;
+        if (y + h + MARGIN > winH) y = winH - h - MARGIN;
+        card.style.transform = 'translate3d(' + x + 'px, ' + y + 'px, 0)';
+      }
+
+      function schedulePosition() {
+        if (posRafId) return;
+        posRafId = requestAnimationFrame(() => {
+          posRafId = 0;
+          applyTransform();
+        });
       }
 
       function showFor(id) {
         const m = local.mode;
         const node = (m && m.nodesById && m.nodesById.get) ? m.nodesById.get(id) : null;
         if (!node) return;
-        // Header — name + tradition (acts as the "religion title").
+        // ── Header
         nameEl.textContent = node.name || id;
         tradEl.textContent = pickTradition(node);
         tradEl.style.display = tradEl.textContent ? '' : 'none';
-        // Description (role / domains).
-        const desc = pickDescription(node);
-        descEl.textContent = desc;
+        // ── Description: try YAML role/description first; fall back
+        //    to the cache's Wikipedia extract (first sentence only).
+        let desc = pickDescription(node);
+        if (!desc && thumbs && thumbs[id] && thumbs[id].extract) {
+          const ext = String(thumbs[id].extract);
+          // First sentence; cap at 180 chars to keep card compact.
+          const cut = ext.split(/(?<=[.!?])\s/)[0] || ext;
+          desc = cut.length > 180 ? cut.slice(0, 177) + '…' : cut;
+        }
+        descEl.textContent = desc || '';
         descEl.style.display = desc ? '' : 'none';
-        // Wires — colored pills with counts. One pill per non-zero bucket.
+        // ── Wires (colored pills with bucket-edge counts)
         const counts = countWires(id);
         const pills = [];
         for (const b of BUCKET_ORDER) {
@@ -3116,7 +3234,7 @@
         }
         wiresEl.innerHTML = pills.join('');
         wiresEl.style.display = pills.length ? '' : 'none';
-        // Meta — date + place, only show what exists.
+        // ── Meta (Date + Place)
         const date  = pickDate(node);
         const place = pickPlace(node);
         const metaParts = [];
@@ -3124,67 +3242,46 @@
         if (place) metaParts.push('<div class="forge-hover-card-meta-row"><span class="forge-hover-card-meta-k">Place</span><span class="forge-hover-card-meta-v">' + place + '</span></div>');
         metaEl.innerHTML = metaParts.join('');
         metaEl.style.display = metaParts.length ? '' : 'none';
-        // Thumbnail — stale-load guarded.
-        loadToken++;
-        const myToken = loadToken;
+        // ── Thumbnail: lookup the URL in the cache. The cache's
+        //    `src` is a fully-resolved Wikipedia URL; we don't need
+        //    a probe.onload chain — just set src directly. onload
+        //    re-measures + repositions (image adds height). onerror
+        //    hides the image.
+        const entry = (thumbs && thumbs[id]) ? thumbs[id] : null;
         img.style.display = 'none';
         img.removeAttribute('src');
-        const candidates = ['jpg', 'png', 'webp'].map(ext =>
-          'thumbnails/' + encodeURIComponent(id) + '.' + ext);
-        (function tryNext(i) {
-          if (i >= candidates.length) return;
-          const probe = new Image();
-          probe.onload = function () {
-            if (myToken !== loadToken) return;   // stale
-            img.src = probe.src;
+        if (entry && entry.src) {
+          img.onload  = function () {
             img.style.display = '';
+            // Image just added height — re-measure + reposition.
+            measure();
+            schedulePosition();
           };
-          probe.onerror = function () { tryNext(i + 1); };
-          probe.src = candidates[i];
-        })(0);
-        positionCard();
+          img.onerror = function () {
+            img.style.display = 'none';
+            measure();
+            schedulePosition();
+          };
+          img.src = entry.src;
+        }
+        // ── Show + initial position
         card.style.display = '';
+        measure();
+        pickAnchor();
+        applyTransform();
       }
 
-      // Phase 16 (2026-05-21) — viewport-aware positioning. Picks
-      // one of four quadrants (top-right / top-left / bottom-right
-      // / bottom-left of the cursor) based on which corner has room
-      // for the full card. The card's cursor-side offset is the
-      // node's approximate screen radius PLUS a small pad, so the
-      // card never sits over the node the user is hovering — they
-      // can keep their eye on the disk while reading the card.
-      function positionCard() {
-        const rect = card.getBoundingClientRect();
-        if (rect.width === 0 && rect.height === 0) return;   // hidden / not measured
-        // Use a generous offset so even a large selected/locked
-        // disk (1.5× radius + stroke) doesn't sit under the card.
-        // Selected_size_mult × max disk px ≈ 33 px; round up to 40.
-        const offset = 22;
-        const margin = 8;
-        // Default placement: bottom-right of cursor.
-        let x = lastClientX + offset;
-        let y = lastClientY + offset;
-        // Flip horizontally if it would overflow the right edge.
-        if (x + rect.width + margin > window.innerWidth) {
-          x = lastClientX - offset - rect.width;
-        }
-        // Flip vertically if it would overflow the bottom edge.
-        if (y + rect.height + margin > window.innerHeight) {
-          y = lastClientY - offset - rect.height;
-        }
-        // Clamp to viewport in case both directions overflow (rare,
-        // but happens at small viewports).
-        if (x < margin) x = margin;
-        if (y < margin) y = margin;
-        card.style.transform = 'translate3d(' + x + 'px, ' + y + 'px, 0)';
-      }
-
-      // mousemove on canvas: track cursor + reposition card if visible.
+      // mousemove on canvas: track cursor + schedule a position update.
       canvas.addEventListener('mousemove', (e) => {
         lastClientX = e.clientX;
         lastClientY = e.clientY;
-        if (card.style.display !== 'none') positionCard();
+        if (card.style.display !== 'none') schedulePosition();
       });
+
+      // window resize invalidates anchor choice (viewport changed).
+      // Recompute on next show; for now just hide so user gets a
+      // fresh anchor when they hover again.
+      window.addEventListener('resize', hide);
 
       // Drive show/hide from the existing hover pipeline. Phase 2B
       // setHoverId already coalesces; we hook into it via a hover
