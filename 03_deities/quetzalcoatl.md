@@ -70,7 +70,7 @@ The Quetzalcoatl-Venus identification (attested in the *Annales de Cuauhtitlan*,
 | Tradition | Deity | Venus Role | Source |
 |-----------|-------|-----------|--------|
 | Aztec/Mexica | Quetzalcoatl / Tlahuizcalpantecuhtli | Apotheosis as Morning Star after death; 8-day inferior conjunction = death | *Annales de Cuauhtitlan*; Sahagún |
-| Mesopotamian (Sumerian/Akkadian) | [[inanna-sumerian]] / [[ishtar]] | Descent to the Underworld = Venus's inferior conjunction; ascent = heliacal rising as Morning Star | [[phase-1-017-descent-of-inanna]] |
+| Mesopotamian (Sumerian/Akkadian) | [[inanna-sumerian]] / [[ishtar-akkadian]] | Descent to the Underworld = Venus's inferior conjunction; ascent = heliacal rising as Morning Star | [[phase-1-017-descent-of-inanna]] |
 | Greek | [[aphrodite-greek]] | Venus's identification with Aphrodite; her birth from the sea = heliacal rising | Theogony; no explicit inferior-conjunction death narrative, but the mythological linkage is ancient |
 | Lucifer / Christian tradition | *Lucifer* (Latin: "light-bearer") | Isaiah 14:12 applies *helel ben shachar* ("shining son of the dawn" = Morning Star) to the fallen king of Babylon; Christian tradition identifies this with Satan's fall from heaven | Isaiah 14; Revelation 22:16 (Christ also called "morning star") |
 

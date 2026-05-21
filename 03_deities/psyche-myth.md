@@ -16,7 +16,7 @@ consort: ["[[cupid-roman]]"]
 attributes: ["butterfly wings (as Soul — Greek psyche = butterfly = soul)", "lamp", "box from the underworld"]
 attested-in: []
 equivalents: []
-status: "stub"
+status: "metadata"
 refs:
   - title: "Apuleius: The Golden Ass (Metamorphoses)"
     author: "Apuleius (trans. P.G. Walsh)"
