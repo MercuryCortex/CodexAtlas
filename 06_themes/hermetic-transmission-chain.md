@@ -86,6 +86,8 @@ tags: [theme, hermetic, transmission, neoplatonism, renaissance, alexandria, fic
 
 # The Hermetic Transmission Chain: Alexandria to the Modern World
 
+> **Seven-lens panorama essay**: [[00_meta/MASSIVE-WIN-essays/hermetic-transmission-chain|*The Hermetic Transmission Chain — 2,300 Years of Named Individuals and Specific Texts*]] (Phase 17, 2026-05-21) walks the named-individual / specific-text wiring at every link, identifies the two academic ruptures (Casaubon 1614 broke the *prisca theologia* historical claim; Yates 1964 ended 350 years of academic occlusion), and shows the chain's geographic signature is coextensive with Western imperial-civilizational history (Alexandria → Constantinople → Florence → Rome → London → Paris → Washington DC).
+
 ## Overview
 
 The **Hermetic transmission chain** is the single most important spine in the vault's cross-tradition investigation: the 2,300-year thread running from the Alexandrian synthesis of Egyptian priestly theology + Greek Neoplatonism (c. -300 CE) through Byzantine preservation, the Florentine Renaissance, the Rosicrucian manifestos, and into the Masonic-esoteric tradition of the modern world. It is the chain that connects the sphinx at Giza to the eye on the dollar bill.
