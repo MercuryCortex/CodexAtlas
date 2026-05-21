@@ -11,6 +11,14 @@ key-deities: ["[[hermes-trismegistus]]", "[[poimandres]]", "[[nous-hermetic]]"]
 key-persons: ["[[marsilio-ficino]]", "[[giovanni-pico-della-mirandola]]", "[[johannes-reuchlin]]", "[[cornelius-agrippa]]", "[[paracelsus]]", "[[giordano-bruno]]", "[[john-dee]]", "[[robert-fludd]]", "[[athanasius-kircher]]", "[[isaac-casaubon]] (its philological dismantler)"]
 key-documents: ["[[phase-6-001-ficino-pimander]]", "[[phase-6-002-ficino-theologia-platonica]]", "[[phase-6-003-pico-oration-900-conclusions]]", "[[phase-6-009-agrippa-de-occulta-philosophia]]", "[[phase-6-012-dee-monas-hieroglyphica]]", "[[phase-6-014-bruno-de-la-causa-eroici-furori]]", "[[phase-6-022-fludd-utriusque-cosmi-historia]]", "[[phase-6-024-kircher-oedipus-aegyptiacus]]"]
 sister-traditions: ["[[tradition-hermeticism]]", "[[tradition-christian-kabbalah]]", "[[tradition-rosicrucianism]]", "[[tradition-neoplatonism]]"]
+hub-edges:
+  - target: "hermetic-transmission-chain"
+    type: "Phase-3-Florentine-ignition-tradition"
+    source: "Yates 1964 *Giordano Bruno and the Hermetic Tradition*; Copenhaver 1992 *Hermetica*; Hanegraaff 2012 *Esotericism and the Academy* — Renaissance Hermeticism (1463 Ficino *Pimander* → ~1700 Casaubon redating) is Phase 3 of the hermetic-transmission-chain: the Florentine ignition that recovers the Hermetic Corpus + integrates it with Christian Kabbalah (Pico 1486) + systematizes it into Renaissance magic (Agrippa 1531-33) + radicalizes it via Bruno's burning (1600). See [[hermetic-transmission-chain]]"
+    notes: "MASSIVE-WIN: 07_traditions → 06_themes. Renaissance Hermeticism IS the Western recovery of ancient Hermetic synthesis after a millennium of Latin-Europe absence"
+  - target: "alchemy-as-spiritual-discipline"
+    type: "Renaissance-tradition-of-alchemical-practice"
+    source: "Newman 2004 *Promethean Ambitions*; Principe 2007 *Distilling Knowledge*; Jung 1944 *Psychology and Alchemy* (Tier 2) — Renaissance Hermeticism is the Latin European tradition that develops alchemy from the Arabic Jabirian inheritance into the symbolic-emblematic register (Rosarium Philosophorum 1550, Khunrath Amphitheatrum 1609, Maier Atalanta Fugiens 1617, Mutus Liber). See [[alchemy-as-spiritual-discipline]]"
 status: "metadata"
 refs:
   - title: "Giordano Bruno and the Hermetic Tradition"

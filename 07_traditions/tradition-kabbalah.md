@@ -11,6 +11,20 @@ key-deities: ["[[ein-sof]]", "[[the-sefirot]]", "[[shekhinah]]", "[[metatron]]",
 key-persons: ["[[isaac-the-blind]]", "[[moses-de-leon]]", "[[abraham-abulafia]]", "[[isaac-luria]] (Phase 6)"]
 key-documents: ["[[phase-5-012-sefer-yetzirah]]", "[[phase-5-026-sefer-ha-bahir]]", "[[phase-5-027-sefer-ha-zohar]]"]
 sister-traditions: ["[[tradition-merkavah-mysticism]]", "[[tradition-gnosticism]] (debated parallel)", "[[tradition-sufism]] (Mediterranean Sufi-Kabbalist exchange)"]
+hub-edges:
+  - target: "merkabah-miraj-ascent-chain"
+    type: "downstream-tradition-of-ascent-chain"
+    source: "Scholem 1941 *Major Trends in Jewish Mysticism*; Scholem 1962 *Origins of the Kabbalah*; Idel 1988 *Kabbalah: New Perspectives* — medieval Kabbalah (Provence + Castile ~1150-1300) inherits the Hekhalot Merkavah-mystical tradition through Hasidei Ashkenaz transmission. The Zohar's heavenly-palace imagery + Lurianic Kabbalah's partzufim cosmology develop the Merkavah substrate into systematic theosophical mysticism. See [[merkabah-miraj-ascent-chain]]"
+    notes: "Cross-lens: 07_traditions → 06_themes"
+  - target: "theme-two-powers-in-heaven"
+    type: "preservation-tradition-of-Metatron-theology"
+    source: "Scholem 1941 + 1962; Boyarin 2004 *Border Lines*; Segal 1977 *Two Powers in Heaven* — Kabbalah preserves and elaborates the Metatron 'Lesser YHWH' theology that the Hekhalot corpus (3 Enoch / Sefer Hekhalot) developed. The Zohar treats Metatron as the *Sar ha-Panim* + governor of the lowest sefirah Malkhut/Shekhinah. The rabbinic Two-Powers polemic that condemns this theology is preserved + worked-around in Kabbalistic systems. See [[theme-two-powers-in-heaven]]"
+  - target: "theme-holy-spirit-sophia"
+    type: "Jewish-mystical-tradition-of-Shekhinah-as-feminine-third"
+    source: "Scholem 1941 + 1962; Quispel 1974 'The Spirit as Mother in the Gospel of the Hebrews'; Engelsman 1979 — Kabbalah is the Jewish-mystical tradition that develops Shekhinah as the suppressed-feminine-third in the divine cosmology (lowest sefirah Malkhut; feminine partner in inner-divine sacred marriage with Tiferet). Together with Gnostic Sophia + Syriac Christian Spirit-as-Mother = the cross-tradition feminine-third constellation. See [[theme-holy-spirit-sophia]]"
+  - target: "hermetic-transmission-chain"
+    type: "Christian-Kabbalah-channel-into-Renaissance-Hermetism"
+    source: "Yates 1964; Wirszubski 1989 *Pico della Mirandola's Encounter with Jewish Mysticism*; Hanegraaff 2012 *Esotericism and the Academy* — medieval Kabbalah enters the hermetic-transmission-chain Phase 3 via Pico della Mirandola (1486) — the Christian Kabbalah he develops + the Reuchlin → Khunrath → Knorr von Rosenroth German channel feed Lurianic Kabbalistic concepts into Renaissance + early-modern Hermeticism. See [[hermetic-transmission-chain]]"
 status: "full"
 refs:
   - title: "Major Trends in Jewish Mysticism"

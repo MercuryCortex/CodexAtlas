@@ -11,6 +11,11 @@ key-deities: ["Christ as alchemical King / cosmic Logos"]
 key-persons: ["[[johann-valentin-andreae]]", "Tobias Hess", "Christoph Besold", "[[christian-rosenkreutz]] (legendary)", "[[robert-fludd]] (principal English defender)", "Michael Maier (German Rosicrucian alchemist)", "Adam Haslmayr (first respondent)", "[[jakob-boehme]] (parallel rather than direct member)"]
 key-documents: ["[[phase-6-018-rosicrucian-manifestos]] — Fama Fraternitatis (1614), Confessio Fraternitatis (1615)", "[[phase-6-021-andreae-chymical-wedding]] (1616)", "Robert Fludd's Apologia Compendiaria (1616)", "Michael Maier's Atalanta Fugiens (1617)"]
 sister-traditions: ["[[tradition-renaissance-hermeticism]]", "[[tradition-christian-kabbalah]]", "[[tradition-freemasonry]]"]
+hub-edges:
+  - target: "hermetic-transmission-chain"
+    type: "Phase-5-esoteric-response-to-Casaubon-rupture"
+    source: "Yates 1972 *The Rosicrucian Enlightenment*; Hanegraaff 2012; van Dülmen 1978 *Die Rosenkreuzer* — Rosicrucianism (the 1614-15 Manifestos + 1616 *Chymical Wedding*) is the Phase 5 esoteric response to the 1614 Casaubon rupture: the year Casaubon demonstrates the Hermetic Corpus is post-Mosaic, the Rosicrucian Brotherhood (likely never a real organization) claims to have preserved the Hermetic synthesis underground via secret initiatory lineage. The move from textual-tradition to initiatory-lineage is the defining gesture of modern esotericism. See [[hermetic-transmission-chain]] Phase 5"
+    notes: "MASSIVE-WIN: same-year coincidence between Casaubon's rupture + Rosicrucian Manifestos is the documented historical hinge of modern Western esotericism"
 status: "metadata"
 refs:
   - title: "The Rosicrucian Enlightenment"

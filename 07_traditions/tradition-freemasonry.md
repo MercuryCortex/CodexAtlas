@@ -11,6 +11,17 @@ key-deities: ["the Great Architect of the Universe (G.A.O.T.U.) — non-confessi
 key-persons: ["James Anderson (1679–1739, compiler of the Constitutions)", "John Theophilus Desaguliers (1683–1744, Newtonian natural philosopher, Grand Master)", "Elias Ashmole (1617–1692, early speculative initiation 1646)", "Robert Moray (1641 Edinburgh lodge reception)"]
 key-documents: ["[[phase-6-026-anderson-constitutions-free-masons]] (1723)", "the Old Charges manuscript tradition (Regius ms. ~1390; Cooke ms. ~1410; ~100 later)", "the 1738 second edition of Anderson's Constitutions", "the various higher-degree rituals of the 18th c. (Scottish Rite, York Rite, Rectified Scottish Rite)"]
 sister-traditions: ["[[tradition-rosicrucianism]]", "[[tradition-renaissance-hermeticism]] (indirect)"]
+hub-edges:
+  - target: "theme-solomonic-transmission-spine"
+    type: "Thread-2-tradition-of-Hiram-Abiff-Solomonic-Temple"
+    source: "Stevenson 1988 *The Origins of Freemasonry*; Jacob 1991 *Living the Enlightenment*; Ridley 2011 *The Craft*; Knight & Lomas 1996 (Tier 4) — Freemasonry IS Thread 2 of the Solomonic transmission spine: Hiram Abiff's murder + symbolic raising in the Third Degree ritual is the OPERATIVE CORE of all Masonic initiation worldwide. The Scottish Rite's 33 higher degrees are *elaborations* of this Solomonic Temple drama. The Washington Monument (1884) — Egyptian obelisk completed by Masonic cornerstone — is the Hermetic + Solomonic chain visually embodied in the U.S. capital. See [[theme-solomonic-transmission-spine]] Thread 2"
+    notes: "MASSIVE-WIN: 07_traditions → 06_themes. Without Solomon's Temple + Hiram Abiff, the entire Masonic symbolic system has no referent"
+  - target: "hermetic-transmission-chain"
+    type: "Phase-6-Masonic-absorption-of-Rosicrucian-program"
+    source: "Yates 1972 *The Rosicrucian Enlightenment*; Stevenson 1988; Hanegraaff 2012 — Freemasonry (formal date 1717 London Grand Lodge) absorbs the Rosicrucian program into ritual framework: sacred geometry of Solomon's Temple + Hiram Abiff's martyrdom-narrative + the prisca theologia curriculum + Hermetic-Kabbalistic-Egyptian wisdom encoded in degrees. See [[hermetic-transmission-chain]] Phase 6"
+  - target: "templar-gnostic-transmission-hypothesis"
+    type: "post-1751-Templar-revivalist-tradition"
+    source: "Stevenson 1988 (the debunking of the Scottish-Templar lineage as 18th-c. construction); Goodrick-Clarke 1985 — Freemasonry's Strict Templar Observance (Karl Gotthelf von Hund, ~1751) is the first systematized post-1312 positive (rather than prosecutorial) construction of a continuous Templar tradition. Stevenson 1988 demonstrates the Scottish-Templar lineage is an 18th-c. invention; the seed of every subsequent positive-Templar esoteric construction. See [[templar-gnostic-transmission-hypothesis]]"
 status: "metadata"
 refs:
   - title: "The Origins of Freemasonry: Facts and Fictions"
