@@ -867,7 +867,16 @@
     //   • set BG_ASSET_URL to the file
     //   • set BG_ASSET_KIND to 'image' or 'video'
     //   • everything else (anchoring, zoom-floor, fade) is identical
-    const BG_ASSET_URL  = '_assets/bg/bg-t01.mov?v=20260521-21p';
+    // ───────────────────────────────────────────────────────────
+    // BG asset — Phase 21Q (2026-05-22). Test #2: HD-aspect video.
+    // Source master lives in `Art Direction/BG X2 hd.mov` (John's
+    // workbench, .gitignored). The ABSORBED copy at the path below
+    // is what the site references — so John can rearrange Art
+    // Direction without breaking anything. To swap: copy the new
+    // master into _assets/bg/<stable-name>.<ext>, edit these two
+    // constants, bump the cache-bust string in index.html.
+    // ───────────────────────────────────────────────────────────
+    const BG_ASSET_URL  = '_assets/bg/bg-x2-hd.mov?v=20260522-21q';
     const BG_ASSET_KIND = 'video';   // 'image' | 'video'
     let bgImage = document.getElementById('forge-bg-image');
     // If the cached element is the WRONG tag for the current asset

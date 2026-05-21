@@ -64,6 +64,15 @@ build/
 # === Ingest / audit working directory (generated analysis outputs) ===
 99_ingest/
 
+# === John's private art-direction workbench (2026-05-22) ===
+# Raw BG videos / mockups / experiment files live here. THIS FOLDER
+# IS OWNED BY JOHN — agents must NOT modify it. When an asset is
+# implemented in the website, copy (don't move) it into _assets/bg/
+# (or the appropriate _assets/ subfolder) with a stable filename, and
+# the website references the absorbed copy. John may move/rename
+# files inside Art Direction at any time without breaking the site.
+Art Direction/
+
 # Note: the following ARE intentionally tracked (NOT in this gitignore):
 #   - 00_meta/DASHBOARD.md, dead-links.md, quality-issues.md, orphan-nodes.md, canonical-slugs.md
 #     (auto-generated but useful as historical snapshots — diff == real signal)
