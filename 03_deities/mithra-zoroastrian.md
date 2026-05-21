@@ -37,6 +37,10 @@ syncretic-edges:
     type: "Iranian-branch-substrate-of-transmission-chain"
     source: "Boyce 1975 *History of Zoroastrianism* vol. I; Clauss 2000; Beck 2006 — the Zoroastrian Mithra-complex is the Iranian substrate from which the Roman mystery Mithras inherits the name + Persian-cave + tauroctony bull-slaying, and through which the Iranian haoma-tradition feeds the Mediterranean sacred-meal cult. The Mithraic bull-blood substitution for haoma-juice may be the Roman-period transformation point of the Indo-Iranian sacred-drink chain. See [[theme-soma-haoma-eucharist]]"
     notes: "Cross-lens: 03_deities → 06_themes. Mithra-Z is the Iranian-side anchor; Mithras-R (separate node) is the Roman-period mystery-cult endpoint. Both edges into the chain represent different stages of the same Iranian-substrate transmission"
+  - target: "asura-deva-inversion"
+    type: "restored-yazata-after-Gathic-reform"
+    source: "Boyce 1975 vol. 1; Gershevitch 1959 *The Mihr Yasht*; Skjærvø 1993 EIr 'Daēva' — Mithra is the rare case of a yazata that was *initially suppressed* by the Gathic reform (absent from the Gathas, where *mithra* appears only as common noun 'covenant') and *then restored* in the Younger Avestan Mihr Yašt (Yašt 10) as a great divine figure second only to Ahura Mazda. The restoration shows that the asura-deva inversion was not uniformly applied — the *ahura/asura*-class deities of cosmic-contract (Mithra + Varuna) were preserved or restored on both sides of the schism. See [[asura-deva-inversion]]"
+    notes: "Cross-lens: 03_deities → 06_themes. Mithra-Z documents the selective application of the asura-deva inversion: cosmic-contract deities survived/were-restored while warrior-cult deities (Indra) were permanently condemned"
 status: "full"
 refs:
   - title: "A History of Zoroastrianism, vol. I-II"

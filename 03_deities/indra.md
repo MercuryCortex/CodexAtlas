@@ -23,6 +23,10 @@ syncretic-edges:
   - target: "zeus"
     type: "scholarly-parallel"
     source: "Watkins 1995, How to Kill a Dragon"
+  - target: "asura-deva-inversion"
+    type: "principal-target-deity-of-Zoroastrian-reform"
+    source: "Vendidad 10.9 (names Indra explicitly as a *daēva*); West 2007 *Indo-European Poetry and Myth* ch. 7; Boyce 1975 vol. 1; Skjærvø 1993 EIr 'Daēva' — Indra is THE most consequential deity of the asura/deva inversion. As king of the Vedic devas (more Rigvedic hymns to him than any other god) and as the explicit *daēva* condemned by name in Vidēvdad 10.9, Indra is the most prestigious deity of the sibling tradition that the Zoroastrian reform specifically targeted. The greatest-god-of-X-becomes-demon-of-Y move with him as test case becomes the structural template for every later 'old gods are now demons' inversion (Justin Martyr's daimones, Christian recasting of Greek gods, Tantric subduing of devas as dharmapālas, etc.). See [[asura-deva-inversion]]"
+    notes: "MASSIVE-WIN: Indra-as-demoted-daēva is the oldest documented prototype of the Satan/Adversary narrative — greatest-of-the-gods → cast out for wrong theology → cosmic adversary. Cross-lens: 03_deities → 06_themes"
 status: "metadata"
 refs:
   - title: "Indra and the Origins of Vedic Sacrifice"

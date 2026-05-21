@@ -21,6 +21,10 @@ syncretic-edges:
     type: "scholarly-parallel"
     source: "Boyce 1975; Thieme 1960"
     notes: "The Indo-Iranian *Asura/Ahura* connection: Vedic Varuṇa (an asura) shares the sovereign moral-order role with Avestan Ahura Mazda. Direct equation contested but the cognate role is widely accepted."
+  - target: "asura-deva-inversion"
+    type: "surviving-ahura-class-deity-of-Vedic-branch"
+    source: "Hale 1986 *The Asuras in the Rgveda*; Boyce 1975; West 2007 — Varuṇa is the singular Vedic deity who survives the post-Vedic asura-demotion with his *asura*-class status preserved in his original cosmic-order role. While most Vedic asuras are demonized in later Hinduism, Varuṇa retains his asura-cognate function (cosmic sovereignty, oath-keeping, moral surveillance) — making him the *Vedic mirror* of the *ahura* class that Zoroastrian Ahura Mazda fully elevates. The cognate Varuṇa-Ahura-Mazda pair (both *asura/ahura*-class, both cosmic-order sovereigns) is the cleanest evidence that the pre-schism Indo-Iranian *ahura/asura* class had a stable theological profile (cosmic order, binding law, truth) that both branches preserved differently. See [[asura-deva-inversion]]"
+    notes: "MASSIVE-WIN: Varuṇa is the *non-inverted* Vedic asura — the deity who escaped the post-Vedic demonization because his cosmic-sovereignty profile was too important to discard. He preserves what the inversion makes invisible: that the Indo-Iranian *asura/ahura* class was originally the supreme-divine class. Cross-lens: 03_deities → 06_themes"
 status: "metadata"
 refs:
   - title: "The Rigveda: The Earliest Religious Poetry of India"

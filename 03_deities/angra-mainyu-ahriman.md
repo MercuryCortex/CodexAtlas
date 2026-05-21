@@ -34,6 +34,10 @@ syncretic-edges:
     type: "source-deity-of-transmission"
     source: "Alexander 2010, 'The Dualism of the Two Spirits in the Community Rule'; Collins 1998, *The Apocalyptic Imagination*; Boyce 1982 — Angra Mainyu is the source-deity for Channel 1 (cosmic dualism — the Qumran Two-Spirits tractate 1QS 3:13–4:26 vs. the Ahura Mazda/Spenta Mainyu vs. Angra Mainyu structure) and Channel 2 (the cosmic-adversary transformation of ha-satan into Satan) of the Persian-period injection event"
     notes: "MASSIVE-WIN: load-bearing Persian-end source for the dualism + adversary channels of [[persian-period-injection]]; also see [[theme-zoroastrian-jewish-exchange]] for the broader six-channel exchange"
+  - target: "asura-deva-inversion"
+    type: "metaphysical-cosmic-adversary-of-Zoroastrian-branch"
+    source: "Skjærvø 1993 EIr 'Daēva'; Boyce 1975 vol. 1; West 2007 — Angra Mainyu is the personalized cosmic-adversary that crystallizes from the Zoroastrian asura-deva reform: the *daēva*-class needs a cosmic ruler, and Angra Mainyu fills that role as principle of *druj* and commander of the demoted daēvas. The inversion produces both poles simultaneously: Ahura Mazda elevated + Angra Mainyu personalized. See [[asura-deva-inversion]]"
+    notes: "Cross-lens: 03_deities → 06_themes. The asura-deva inversion is logically *prior* to the persian-period injection — the inversion creates the cosmic-dualism vocabulary that is then exported to Second-Temple Judaism centuries later"
 related-themes:
   - "[[theme-zoroastrian-jewish-exchange]]"
   - "[[persian-period-injection]]"

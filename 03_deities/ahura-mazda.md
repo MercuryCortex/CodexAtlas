@@ -36,6 +36,10 @@ syncretic-edges:
     type: "source-deity-of-transmission"
     source: "Skjærvø 2011 (EIr, AHURA MAZDĀ); Boyce 1982; Collins 1998 — Ahura Mazda's theological architecture (transcendent, ethical-cosmic dualism, divine hypostases as the Amesha Spentas) is the Persian-end of the five-channel injection event documented at [[persian-period-injection]]"
     notes: "Companion edge to theme-zoroastrian-jewish-exchange — persian-period-injection focuses on the full five-channel spectrum with Cyrus-as-mashiach as the instantiation-point"
+  - target: "asura-deva-inversion"
+    type: "elevated-ahura-class-deity-of-Zoroastrian-branch"
+    source: "Skjærvø 1993 EIr 'Daēva'; Boyce 1975 vol. 1 — Ahura Mazda is the *result* of the asura-deva inversion on the Iranian side: the elevation of one *ahura* to supreme status while the *daēva*-class (including the Vedic-cognate Indra) is demonized. The reform's positive move is the full systematization of Ahura Mazda as cosmic-Truth-source; the negative move is the daēva-condemnation. Together they constitute the asura-deva inversion's two faces. See [[asura-deva-inversion]] — also [[persian-period-injection]] for the downstream Second-Temple-Judaism transmission"
+    notes: "MASSIVE-WIN: Ahura Mazda IS the asura-deva inversion's positive theological achievement on the Iranian side; without the inversion, no Zoroastrian monotheism-trajectory. Cross-lens: 03_deities → 06_themes"
 status: "metadata"
 refs:
   - title: "A History of Zoroastrianism, vol. I-III"

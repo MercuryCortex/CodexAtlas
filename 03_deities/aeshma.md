@@ -27,6 +27,10 @@ syncretic-edges:
   - target: "persian-period-injection"
     type: "etymological-source-of-transmission"
     source: "Hutter 1988; Skjærvø 1985; Shaked 1984 — Tobit's Asmodeus-narrative (seven-archangel scheme + the Iranian-named demon + Raphael's desert-binding) is the most concentrated single instance of the Persian-period injection's demonology+angelology channel concentrated in a single Hellenistic-Diaspora Jewish text"
+  - target: "asura-deva-inversion"
+    type: "principal-daeva-of-Zoroastrian-reform"
+    source: "Skjærvø 1985 EIr 'Aēšma'; Boyce 1975 vol. 1; West 2007 — Aeshma is one of the four arch-daevas of the demonized class in the Zoroastrian reform (alongside Aka Manah, Druj, and Azi). The specific personalization of Aeshma as wrath-daeva (canonically paired against the yazata [[sraosha]]) is the asura-deva inversion's most concretized daeva-figure. The downstream Aēšma → Asmodeus chain documented at persian-period-injection inherits this reformed-cosmic-status. See [[asura-deva-inversion]]"
+    notes: "Cross-lens: 03_deities → 06_themes. Aeshma is the case where the asura-deva inversion ships its demonological vocabulary directly into Hebrew Apocrypha via etymological transmission — the only such case in the entire Persian → Abrahamic chain"
 status: "metadata"
 refs:
   - title: "A History of Zoroastrianism (vol. 1)"

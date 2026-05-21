@@ -20,6 +20,10 @@ syncretic-edges:
   - target: "satan-christian"
     type: "scholarly-parallel"
     source: "Both are personified cosmic-evil principles opposed to a personified cosmic-good principle. Zoroastrian Druj-Asha cosmic-dualism is **the principal pre-Christian Near Eastern metaphysical-dualism** that influences Second-Temple Jewish + Christian Satan-vs-God cosmic-combat theology (Boyce 1991, Hultgård 1998). Direct genealogical transmission of the Druj-figure into Christian Satan is unclaimed; the **structural cosmic-dualism pattern** is the load-bearing inheritance"
+  - target: "asura-deva-inversion"
+    type: "core-cosmic-evil-of-Zoroastrian-reform"
+    source: "Skjærvø 1996 EIr 'Drug'; Boyce 1975 — Druj as the personified cosmic Lie is the *abstract metaphysical foundation* of the Zoroastrian asura-deva inversion: the daēvas (the demonized Vedic-cognate gods) are agents of Druj; Asha-vs-Druj is the cosmic-axis on which the inversion's moral logic depends. While Indra is the most prestigious specific *daēva* condemned by name, Druj is the cosmic-principle that the entire daēva-class serves. The inversion isn't just a polemic against rival cults — it's grounded in this Asha-Druj metaphysical opposition. See [[asura-deva-inversion]]"
+    notes: "Cross-lens: 03_deities → 06_themes. Druj is the metaphysical engine that makes the asura-deva inversion theologically necessary (rather than merely a polemical move): if cosmic Lie genuinely opposes cosmic Truth, then deities that serve Lie must be demonized regardless of their prestige in the sibling tradition"
 status: "metadata"
 refs:
   - title: "A History of Zoroastrianism (3 vols.)"

@@ -37,6 +37,10 @@ syncretic-edges:
     type: "central-figure-of-transmission-spine"
     source: "Yates 1964, *Giordano Bruno and the Hermetic Tradition*; Fowden 1986; Copenhaver 1992; Hanegraaff 2012, *Esotericism and the Academy* — Hermes Trismegistus is the namesake and central figure of the 2,300-year transmission spine running from Alexandria (~100–300 CE) through Byzantine preservation → Plethon → Ficino (1463) → Pico → Bruno → Casaubon (1614) → Rosicrucian / Masonic synthesis → 19th-c. occultism → modern Western esotericism. See [[hermetic-transmission-chain]] for the full chain documentation"
     notes: "MASSIVE-WIN: the longest and most consequential documented transmission spine in Western religious-intellectual history; this deity is its load-bearing personification"
+  - target: "alchemy-as-spiritual-discipline"
+    type: "patron-deity-of-cross-civilizational-tradition"
+    source: "Fowden 1986; Principe 2007 *Distilling Knowledge*; Newman 2004 *Promethean Ambitions*; Jung 1944 *Psychology and Alchemy* (T2 reception) — Hermes Trismegistus is the sole deity-instance listed in the alchemy-as-spiritual-discipline hub, and rightly so: the Hermetic alchemical corpus (Zosimos of Panopolis ~310 CE, Tabula Smaragdina, the Latin Hermetica via Ficino 1463) is the load-bearing Greco-Egyptian → Arabic → Latin European stream of the five-civilization alchemical tradition. The figure's 'thrice-greatest' (priest + king + philosopher) identification makes him the patron of the integrated material-and-spiritual operation that defines the alchemical *opus*. See [[alchemy-as-spiritual-discipline]]"
+    notes: "Cross-lens: 03_deities → 06_themes. The Jungian reception-history (T2/T3) treats Hermes as patron of the psychological-individuation reading; the Newman-Principe critical-historiographical correction (T1) limits this to a *register* within alchemy, not its universal character — both framings preserved at the hub"
 status: "metadata"
 refs:
   - title: "The Egyptian Hermes: A Historical Approach to the Late Pagan Mind"

@@ -25,6 +25,10 @@ syncretic-edges:
     type: "scholarly-parallel"
     source: "Cumont 1903 (asserts continuity); Beck 2006 (limits the continuity)"
     notes: "The Roman Mithras of the mystery cult (Phase 3-4) bears the name but the cult has substantial Roman invention; continuity from Iranian Mithra is partial and debated."
+  - target: "asura-deva-inversion"
+    type: "shared-PII-source-deity-across-inversion"
+    source: "Dumézil 1948 *Mitra-Varuna*; Thieme 1957, 1960 — Mitra is the rare PII deity whose cognate (Avestan Mithra) is RESTORED rather than demonized after the Zoroastrian daēva-reform: the Younger Avestan Mihr Yašt (Yašt 10) magnifies Mithra as second only to Ahura Mazda. Vedic Mitra + Avestan Mithra together are the cleanest cognate-pair evidence that the inversion didn't fully apply to the *asura/ahura*-class deities of cosmic-contract — both branches preserved this PII inheritance even as they demonized each other's gods more broadly. See [[asura-deva-inversion]]"
+    notes: "MASSIVE-WIN: the Mitra-Mithra pair is the *survival case* of the asura-deva inversion — together with Varuna-Ahura-Mazda, they show that the *ahura/asura*-class deities of cosmic-order were preserved on both sides of the schism, while the *deva/daēva*-class Indra was the casualty. The pattern is selective inversion, not full inversion. Cross-lens: 03_deities → 06_themes"
 status: "metadata"
 refs:
   - title: "Mitra-Varuna: An Essay on Two Indo-European Representations of Sovereignty"
