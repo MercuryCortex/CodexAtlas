@@ -15,11 +15,11 @@ child-of: []
 consort: ["Shams (the Sun goddess of Saba)"]
 attributes: ["bull (sacred animal)", "crescent-and-disk symbol", "ibex", "thunderbolt-and-arrow ('ʾrn' weapon)", "vine"]
 attested-in: ["Sabaean inscriptions of Marib temple (Awwam, 'Mahram Bilqis'); Aksumite pre-Christian royal stelae (Ezana's pre-conversion inscriptions); pre-Christian Aksumite coinage (crescent-and-disk reverse)"]
-equivalents: ["[[sin-mesopotamian]] (parallel-form; Mesopotamian moon-god)", "[[nanna-sumerian]] (parallel-form)"]
+equivalents: ["[[nanna-sin]] (parallel-form; Sumerian Nanna / Akkadian Sin — combined Mesopotamian moon-god node)"]
 syncretic-edges:
-  - target: "sin-mesopotamian"
+  - target: "nanna-sin"
     type: "scholarly-parallel"
-    source: "Robin 2012 — South-Arabian moon-deity-supreme pattern is structurally parallel to but historically distinct from Mesopotamian Sin"
+    source: "Robin 2012 — South-Arabian moon-deity-supreme pattern is structurally parallel to but historically distinct from Mesopotamian Nanna/Sin"
 status: "metadata"
 refs:
   - title: "Arabia and the Arabs from the Bronze Age to the Coming of Islam"

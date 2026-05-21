@@ -14,7 +14,7 @@ parent-of: ["[[ninazu]]"]
 child-of: []
 consort: ["[[nergal]]", "[[erra-akkadian]]"]
 attributes: ["throne of lapis lazuli", "scepter", "the seven gates of the netherworld", "the tablets of the dead (via Belet-Seri her scribe)"]
-attested-in: ["[[phase-1-017-descent-of-inanna]]?"]
+attested-in: ["[[phase-1-017-descent-of-inanna]]"]
 equivalents: ["[[ereshkigal]]"]
 syncretic-edges:
   - target: "[[ereshkigal]]"

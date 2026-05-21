@@ -52,7 +52,7 @@ tags: [deity, shinto, japan, sun-goddess, sovereignty, imperial-cult]
 # Amaterasu Ōmikami
 
 ## Identity
-The sun-goddess and chief deity of Shinto, born from the left eye of Izanagi during his post-Yomi purification (*misogi*). Divine ancestor of the imperial line through her grandson Ninigi-no-Mikoto, whose great-grandson Jimmu became the first emperor of Japan — a genealogy formalized in the *Kojiki* (712) and *Nihon Shoki* (720) under Tenmu / Genmei court direction and used to legitimate Yamato imperial sovereignty for over 1,300 years.
+The sun-goddess and chief deity of Shinto, born from the left eye of [[izanagi]] during his post-Yomi purification (*misogi*). Divine ancestor of the imperial line through her grandson Ninigi-no-Mikoto, whose great-grandson Jimmu became the first emperor of Japan — a genealogy formalized in the *Kojiki* (712) and *Nihon Shoki* (720) under Tenmu / Genmei court direction and used to legitimate Yamato imperial sovereignty for over 1,300 years.
 
 ## Earliest attestation
 - *Kojiki* book 1 chs. 12–17 — birth-from-Izanagi narrative, the rock-cave (*Ame-no-Iwato*) hiding myth, and the descent of Ninigi.

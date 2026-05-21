@@ -64,3 +64,27 @@ The stubs audit flagged this (590 stubs ≥30 lines, mis-labeled). Confirmed in 
 **Wikilinks scanned:** 63 unique targets across 10 files. **0 dead links.**
 
 ---
+
+## Batch 3 — al-uzza → ame-no-uzume (2026-05-21)
+
+**Files:** al-uzza, albion, allah, allat, allatu-akkadian, almaqah, amaterasu, amaunet, ame-no-hohi, ame-no-uzume.
+
+**Fixes applied:**
+
+- `allatu-akkadian.md` — removed `?` suffix from wikilink `[[phase-1-017-descent-of-inanna]]?`. The question mark was authorial uncertainty about whether Allatu appears in the Descent — she does (the Akkadian Descent of Ishtar uses Allatu and Ereshkigal interchangeably), so the attestation is firm.
+- `almaqah.md` — fixed two dead wikilinks: `[[sin-mesopotamian]]` and `[[nanna-sumerian]]` (both nonexistent slugs) → `[[nanna-sin]]` (the actual combined Sumerian/Akkadian moon-god node). Vault treats Nanna/Sin as one consolidated node, not two — important convention to apply going forward.
+- `amaterasu.md` — wired "Izanagi" → `[[izanagi]]` in the body's identity paragraph (WIRING LAW: prose references to existing nodes should link).
+- `ame-no-uzume.md` — referenced `[[sarutahiko]]` (didn't exist); created a metadata-tier stub at `03_deities/sarutahiko.md` (outward stub within the deity lens, NOT outside it — so within the soft 3-outward-stub budget).
+- `ame-no-hohi.md` — was a 12-line breadcrumb stub from the 2026-05-19 sacred-architecture A2 batch. Replaced with a metadata-tier node documenting the failed-Izumo-embassy narrative + Kokusō priestly genealogy + canonical YAML. The breadcrumb was actively misleading (only YAML field was `name: "Ame No Hohi"` with the Roman-numeral title-case bug).
+
+**Convention finding: Nanna/Sin consolidation.**
+
+The Mesopotamian moon-god has *one* node (`nanna-sin.md`) covering both the Sumerian (Nanna) and Akkadian (Sin) forms. Two dead-link targets in `almaqah.md` came from agents assuming separate `nanna-sumerian.md` and `sin-mesopotamian.md` files. Worth memorizing: when wiring lunar deities, use `[[nanna-sin]]`. The vault's `dumuzi-tammuz.md` follows the same consolidated-cognate-pair convention.
+
+**Cosmetic finding: `Ame No Hohi` title-case bug.**
+
+`ame-no-hohi.md`'s `name:` field rendered as `"Ame No Hohi"` (naive title-cased slug) — the same auto-titlecase pattern flagged in the stubs audit for Roman numerals. Fixed to `"Ame-no-Hohi"` (the actual rendering preserves the hyphenated kebab structure of Japanese kami names).
+
+**Wikilinks scanned:** ~70 unique targets across 10 files. 3 dead (now fixed) + 1 syntax-bug (now fixed) = 4 issues. Still no dead links shipped — the WIRING LAW held.
+
+---
