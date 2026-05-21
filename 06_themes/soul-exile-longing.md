@@ -95,6 +95,8 @@ refs:
 
 # Soul-Exile Longing — The Luminous Self Mourning Its Separation
 
+> **Seven-lens panorama essay**: [[00_meta/MASSIVE-WIN-essays/soul-exile-longing|*Soul-Exile Longing — A Seven-Lens Panorama, and the Buddhist Outlier That Defines the Pattern*]] (Phase 17, 2026-05-21) walks the cross-lens wiring across 7 lens-poles and surfaces three findings: cross-tradition phenomenological structures are real (5-tradition convergence with no contact between 3 of 5); the Buddhist outlier is what makes the convergence credible (it's the falsification-criterion analog within the cluster); and Shanon 2002's ayahuasca scholarship suggests a possible neurobiological substrate (5-HT2A pharmacology producing exile-experience phenomenology across cultures).
+
 One of the most widely distributed structures in world mysticism: a luminous, conscious entity — soul, spirit, divine spark (*pneuma*), individual self (*jīva*) — finds itself exiled into a heavy, alien material world and mourns the separation from its source. The ache of separation is itself a theological statement. It proves that the soul does not *belong* here, and therefore implies a home it came from.
 
 This theme crosses six major traditions without demonstrated contact in most cases. The convergence is one of the vault's strongest candidates for a genuinely universal structure in human religious experience — with one crucial outlier (Buddhism) that sharpens the definition.
