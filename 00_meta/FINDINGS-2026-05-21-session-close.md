@@ -118,6 +118,35 @@ What surprised me was that **this methodological framework was already implicit 
 
 ---
 
+## 11. (added at John's prompt at session close) — Zero ↔ divine-void cross-tradition cognate
+
+John caught a deity-side angle I missed: the three independent zero-inventions are not just a mathematical cross-tradition convergence — they are structurally correlated with a **theological-mystical cross-tradition pattern** of articulating the highest divine reality as "nothing / void / formless / emptiness."
+
+| Civilization | Mathematical zero | Theological cognate |
+|---|---|---|
+| Indian | śūnya (Brahmagupta 628 CE; positional + as-a-number zero) | **Śūnyatā** (Nagarjuna Buddhist emptiness, ~2nd c. CE) + **Nirguna Brahman** (Hindu qualityless absolute) + **Bindu** (Tantric primordial point) |
+| Mayan | Long Count shell-glyph zero (~1st c. BCE) | The unmanifest pre-creation; Long Count epoch (3114 BCE) = the cosmic-zero from which the current world-age emerges |
+| Mesopotamian | Sexagesimal placeholder zero (~-3rd c. BCE) | Apsu + Tiamat primordial undifferentiated waters (Enuma Elish) |
+
+**The Indian case is the strongest correlation.** Sanskrit *śūnya* serves BOTH the mathematical zero AND the Buddhist Madhyamaka philosophical concept of emptiness — the same term, the same intellectual milieu, contemporaneous emergence (5-7th c. CE Indian mathematics + late-Madhyamaka philosophy). Brahmagupta's *Brahmasphutasiddhanta* (628 CE) treats zero as a number; Nagarjuna's *Mūlamadhyamakakārikā* (2nd c. CE) treats emptiness as the central Buddhist philosophical doctrine. The cross-fertilization between mathematical zero + apophatic-theological emptiness in classical India is documented (Plofker 2009 *Mathematics in India*; Garfield 1995 *The Fundamental Wisdom of the Middle Way*).
+
+**The broader cross-tradition divine-void cluster** — articulations of divine-as-formless that go beyond the three zero-inventing cultures:
+
+- **Egyptian Nun** — primordial dark waters from which Atum emerges
+- **Daoist Wu 無** (non-being; the *wu wei* contemplative ideal)
+- **Plotinian The One** (beyond all predication; the ineffable absolute) — see [[neoplatonic-henosis]] hub
+- **Kabbalistic Ein Sof** (אין סוף — "boundless / no end"; pre-Sefirot divine reality)
+- **Christian creatio ex nihilo** + apophatic mystical theology (Pseudo-Dionysius, Eckhart, Cusa)
+- **Sufi fanāʾ** (annihilation of self in the divine void)
+
+**The cross-tradition finding**: mathematical zero and theological-mystical formless-absolute appear cognitively cognate. The cultures that articulate one (math-zero) also typically articulate the other (theological-void). The convergence is documented + the Indian case is the cleanest cross-tradition fusion of the two (the same Sanskrit term naming both).
+
+This belongs at the deity / theme / mathematics lens intersection — a potential future Phase-17 essay subject: *"Zero and the Void — the Cross-Tradition Cognitive Cognate of Mathematical-Theological Emptiness"*. The three zero-inventing civilizations + the broader divine-void cluster + the Indian-strongest-correlation case + Plofker 2009 + Garfield 1995 + Pseudo-Dionysius's *Mystical Theology* + Eckhart's *Predigten* (the apophatic Western Christian tradition) would all be primary sources.
+
+This is the kind of cross-tradition finding the cross-lens wiring methodology surfaces almost automatically when you investigate any single node deeply — and the kind I missed in the original findings report. Good catch, John.
+
+---
+
 ## A few smaller surprises
 
 - **The Naqshbandi Sufi silent-dhikr + the Eastern Orthodox hesychast Jesus Prayer are structurally cognate in detail** — both interior-recitative + breath-coordinated + same progression from vocal-to-silent-to-spontaneous. The cross-Christian-Islamic contemplative-practice convergence is one of the cleanest cross-tradition specific-method parallels in mysticism studies.
