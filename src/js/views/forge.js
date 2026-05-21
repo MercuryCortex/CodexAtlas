@@ -3554,11 +3554,17 @@
           if (!data) return '';
           // Sort neighbors by title for predictable ordering.
           data.neighbors.sort((x, y) => x.title.localeCompare(y.title));
+          // Phase 19E (2026-05-21) — item order: dot, title, dir.
+          // The dot + title read as "this is the connected deity";
+          // the arrow at the END reads as a direction annotation
+          // rather than "this color goes via this arrow." Earlier
+          // ordering (dot → arrow → title) made the arrow look
+          // like it belonged to the color, not the relationship.
           const items = data.neighbors.map(n =>
             '<button class="forge-side-panel-wire-item" data-id="' + safeAttr(n.id) + '" title="Lock + inspect ' + safeAttr(n.title) + '">'
             + '<span class="forge-side-panel-wire-item-dot" style="background:' + safeAttr(n.color) + '"></span>'
-            + '<span class="forge-side-panel-wire-item-dir">' + (n.dir === 'out' ? '→' : '←') + '</span>'
             + '<span class="forge-side-panel-wire-item-title">' + safeAttr(n.title) + '</span>'
+            + '<span class="forge-side-panel-wire-item-dir">' + (n.dir === 'out' ? '→' : '←') + '</span>'
             + '</button>'
           ).join('');
           return '<details class="forge-side-panel-wire" data-bucket="' + b + '" style="--bucket-color:' + bucketHex(b) + '">'

@@ -6112,16 +6112,21 @@ details.forge-side-panel-wire[open] .forge-side-panel-wire-caret {
   border-radius: 50%;
   flex: 0 0 auto;
 }
-.forge-side-panel-wire-item-dir {
-  color: var(--text-3, #6b7280);
-  font-size: 10px;
-  flex: 0 0 auto;
-}
 .forge-side-panel-wire-item-title {
   flex: 1 1 auto;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
+}
+/* Direction arrow sits at the end of the row so the visual reads
+   as `[color-dot] [name] ...... [arrow]` — the arrow is a small
+   trailing annotation, not a connector between color and name. */
+.forge-side-panel-wire-item-dir {
+  color: var(--text-3, #6b7280);
+  font-size: 10px;
+  flex: 0 0 auto;
+  margin-left: auto;
+  opacity: 0.7;
 }
 
 /* Legacy hover-card wires (smaller, simpler — keep the pill style). */
@@ -6255,10 +6260,21 @@ body.view-forge.detail-collapsed {
 }
 .forge-deity-tab-dot {
   display: inline-block;
-  width: 6px;
-  height: 6px;
+  width: 8px;
+  height: 8px;
   border-radius: 50%;
   flex: 0 0 auto;
+}
+/* Phase 19E (2026-05-21) — when the panel is open, the chevron
+   is redundant (the panel itself is the open-state indicator).
+   Hide chevrons across the WHOLE tab column when .panel-open is
+   set, so tabs read as a clean column of color dots. */
+.forge-deity-tabs.panel-open .forge-deity-tab-chevron {
+  display: none;
+}
+.forge-deity-tabs.panel-open .forge-deity-tab-dot {
+  width: 10px;
+  height: 10px;
 }
 
 /* Pulse animation — added briefly when a new tab is added. */
@@ -6276,6 +6292,15 @@ body.view-forge.detail-collapsed {
 /* Forge content wrapper inside #detail-inner. */
 .forge-side-panel-content {
   font-family: var(--mono, "JetBrains Mono", Menlo, monospace);
+}
+/* Phase 19E (2026-05-21) — global .detail-inner uses
+   `padding: 16px 24px 24px 38px` (the 38 px left is to clear the
+   global .detail-toggle button). In Forge view we hide that
+   toggle, so the asymmetric left padding shows up as a much
+   bigger margin on the left than the right. Override to a
+   symmetric 18 px so the content reads balanced. */
+body.view-forge #detail-inner {
+  padding: 16px 18px 24px 18px;
 }
 .forge-side-panel-aka {
   font-size: 11px;
