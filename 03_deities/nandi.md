@@ -15,7 +15,7 @@ child-of: ["Śilāda (the sage, in some Puranic traditions — Nandi as boon-chi
 consort: ["Suyaśā (in some traditions)"]
 attributes: ["white bull (*vṛṣabha*)", "seated facing the linga in temple iconography", "in Nandīśvara form: anthropomorphic with a bull's head, three-eyed"]
 attested-in: ["[[phase-4-050-vishnu-sahasranama]] (related Shaiva-puranic context)"]
-equivalents: ["[[apis-bull]] (Egyptian bull-god — structural parallel as sacred-bull-cult; not ancient-identification)", "[[nandi-shiva-bullcult]] (the wider Indian sacred-bull tradition)"]
+equivalents: ["[[apis-bull]] (Egyptian bull-god — structural parallel as sacred-bull-cult; not ancient-identification)", "the wider Indian Nandi-Shiva sacred-bull tradition (concept; no separate deity-node)"]
 syncretic-edges:
   - target: "shiva"
     type: "ancient-identification"

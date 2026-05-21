@@ -16,7 +16,7 @@ consort: ["[[nin-gal-sumerian|Ningal]]"]
 attributes: ["crescent moon", "horned cap", "bull (the moon as 'frisky calf of the sky')"]
 attested-in: ["[[phase-1-003-enheduanna-hymns]]"]
 equivalents: []
-status: "stub"
+status: "metadata"
 refs:
   - title: "Encounters with the Divine in Mesopotamia"
     author: "Bottéro, Jean"

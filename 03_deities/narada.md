@@ -2,7 +2,7 @@
 id: narada
 title: Narada — Divine Messenger and Musician
 type: deity
-status: stub
+status: "metadata"
 tier: 1
 tradition: tradition-vedic-hinduism
 date_earliest: -1000

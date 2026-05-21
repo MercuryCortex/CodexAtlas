@@ -10,9 +10,9 @@ period-active-latest: -1700
 domains: ["social justice and care for the marginal", "fishery and waterfowl", "dream interpretation and prophecy", "weights and measures", "divination"]
 gender: "feminine"
 role: "goddess of social justice, dream-prophecy, and the fisheries of Lagash"
-parent-of: ["[[nin-girsu]]?", "[[ninmar]]"]
+parent-of: ["[[nin-girsu]] (relationship uncertain)", "Ninmar (Sumerian minor goddess; daughter of Nanshe — no node yet)"]
 child-of: ["[[enki-ea]]", "[[ninhursag-nintud]]"]
-consort: ["[[nindara]]"]
+consort: ["Nindara (Sumerian fish-and-tax-collector god; Nanshe's husband — no node yet)"]
 attributes: ["fish", "waterfowl (especially the pelican and cormorant)", "the *gi-dish* measuring reed"]
 attested-in: ["[[phase-1-018-gudea-cylinders]]", "[[phase-1-001-kesh-temple-hymn]]"]
 equivalents: []

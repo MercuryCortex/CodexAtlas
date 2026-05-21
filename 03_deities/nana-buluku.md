@@ -24,7 +24,7 @@ syncretic-edges:
   - target: "[[awonawilona]]"
     type: "scholarly-parallel"
     source: "Both are apophatic-transcendent primordial-beings from which the cosmos emerges via emanation/self-thought"
-status: "stub"
+status: "metadata"
 refs:
   - title: "Yoruba Beliefs and Sacrificial Rites"
     author: "Awolalu, J. Omosade"
