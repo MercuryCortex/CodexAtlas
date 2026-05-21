@@ -1,10 +1,10 @@
 # HANDOFF — Bridge-Hub Cross-Lens Wiring (2026-05-21)
 
-> **Read this first if you're a fresh agent picking up Lane A bridge-wiring work.** Status as of commit `9754cb4` (Phase 15 complete; SEVEN-lens navigable; bridge-hub wiring effectively complete). Read `STATUS.md` top entries for the per-phase detail; this file is the synthesis.
+> **Read this first if you're a fresh agent picking up Lane A bridge-wiring work.** Status as of commit `b496253` (Phase 16 complete; SEVEN-lens navigable + 5 medium-stub themes promoted; the named bridge-hub queue is CLOSED). Read `STATUS.md` top entries for the per-phase detail; this file is the synthesis.
 
 ---
 
-## What just happened (Phases 1–15)
+## What just happened (Phases 1–16)
 
 Twelve phases of progressive vault densification:
 
@@ -21,11 +21,12 @@ Twelve phases of progressive vault densification:
 | 13 | Event-end audit (05_events → 06_themes) | ~53 |
 | 14 | Symbol-end audit (09_symbols → 06_themes) | ~26 |
 | 15 | Place-end audit (08_places → 06_themes) | ~30 |
-| **TOTAL** | **~439 hub-edges across 28 substantial bridge hubs from 7 lens-poles** | |
+| 16 | Medium-stub theme promotion (5 themes stub→metadata) | ~11 |
+| **TOTAL** | **~450 hub-edges across 28+ substantial bridge hubs from 7 lens-poles** | |
 
-**Vault baseline dead-link count: 595/825 (unchanged across Phases 13 + 14 + 15). WIRING LAW held — 0 dead links shipped across ~150 commits.**
+**Vault baseline dead-link count: 595/825 (unchanged across Phases 13-16). WIRING LAW held — 0 dead links shipped across ~152 commits.**
 
-**Cross-lens bridge-hub wiring EFFECTIVELY COMPLETE.** Every substantial bridge hub is now reachable from every legitimate lens-pole.
+**Cross-lens bridge-hub wiring + theme-promotion queue COMPLETE.** Every substantial bridge hub is now reachable from every legitimate lens-pole; the 5 medium-stub themes John flagged for promotion are now substantial-metadata bridge hubs.
 
 ---
 
@@ -93,11 +94,17 @@ These are the cross-tradition hubs you wire FROM other lenses TO. Memorize the s
 
 ### Bridge-hub wiring project: EFFECTIVELY COMPLETE
 
-After 15 phases (~439 hub-edges, ~150 commits, zero dead links), the cross-tradition spine is navigable from every legitimate lens-pole to every substantial bridge hub. The remaining work is **not bridge-hub wiring** but:
+After 15 phases (~439 hub-edges, ~150 commits, zero dead links), the cross-tradition spine is navigable from every legitimate lens-pole to every substantial bridge hub.
 
-### Separate non-wiring tasks (now the principal queue)
+### Phase 16 — Medium-stub theme promotion (done) — **DONE 2026-05-21 (commit `b496253`)**
+- 5 themes promoted from stub to substantial-metadata bridge-hub status: `theme-baal-set-syncretism`, `syncretism-egyptian-greek`, `bronze-age-substrate-of-greek-religion`, `chain-of-being`, `syncretism-deliberate`.
+- ~11 cross-theme hub-edges added (06_themes → 06_themes within-lens wiring per dogma adaptation).
+- `syncretism-deliberate` got prose expansion 36→~80 lines covering 6 cross-tradition instances spanning ~2,300 years (Ptolemaic Serapis → Manichaeism → Renaissance prisca theologia → Akbar's Din-i-Ilahi → Bahá'í Faith → Cao Dai), with structural-variables-frame as novel scholarship.
+
+### Remaining queue (lower priority)
 - **Vault-wide 594-target dead-link sweep** — the long-standing pre-existing baseline (~80% are auto-generated A2-batch stubs needing content)
-- **5 medium-stub theme promotions** in 60–80L range: `theme-baal-set-syncretism`, `bronze-age-substrate-of-greek-religion`, `syncretism-egyptian-greek`, `chain-of-being`, `syncretism-deliberate`
+- **Place stub-prose content** — all 11 Phase-15 places (alexandria, constantinople, antioch, ctesiphon, merv, samarkand, dunhuang, bukhara, mecca, umayyad-caliphate, sasanian-empire) have rich hub-edge semantic content but thin prose; a content pass would round them out
+- **Hub-edge back-edge audit** — verify each of the 28 substantial bridge hubs has its 7-lens companion-pole coverage actually visible at the hub (rather than only at the source lens-end); ad hoc scan of theme-soma-haoma-eucharist as the most-densely-wired exemplar would confirm
 
 ---
 
@@ -159,13 +166,16 @@ If the number rises after your batch, you introduced a dead link — find the ne
 
 ## What to tell the new agent (one-paragraph brief)
 
-> **The bridge-hub cross-lens wiring project (Phases 7-15) is EFFECTIVELY COMPLETE** at `~/Desktop/Codex Atlas` (commit `9754cb4`). 439 hub-edges from 7 lens-poles to 28 substantial bridge hubs; vault baseline 595/825 dead-link count unchanged across ~150 commits. The principal remaining bridge-hub task is medium-stub theme promotion (`theme-baal-set-syncretism` / `bronze-age-substrate-of-greek-religion` / `syncretism-egyptian-greek` / `chain-of-being` / `syncretism-deliberate` — see queue section below). Beyond that, the vault-wide 594-target dead-link sweep is the long-standing baseline densification task (~80% are A2-batch auto-stubs needing content). If the user requests more wiring work, read this handoff first — it lists the 28 hubs, the 7 cardinal rules, the lens-aware edge pattern, and the Phase 10-15 format. Never touch Lane B paths (src/, index.html, build_*.py). Lane A slot is OPEN.
+> **The bridge-hub cross-lens wiring project (Phases 7-15) is COMPLETE and the medium-stub theme promotion queue (Phase 16) is CLOSED** at `~/Desktop/Codex Atlas` (commit `b496253`). ~450 hub-edges from 7 lens-poles to 28+ substantial bridge hubs; vault baseline 595/825 dead-link count unchanged across ~152 commits. The remaining queue is lower-priority maintenance work: (1) vault-wide 594-target dead-link sweep (~80% are A2-batch auto-stubs needing content), (2) prose-content pass on the 11 Phase-15 places (rich hub-edge semantic content + thin prose), (3) hub-edge back-edge visibility audit at each of the 28 hubs. If the user requests more wiring work, read this handoff first — it lists the 28 hubs, the 7 cardinal rules, the lens-aware edge pattern, and the Phase 10-16 format. Never touch Lane B paths (src/, index.html, build_*.py). Lane A slot is OPEN.
 
 ---
 
-## Phase 1–15 commit roll (for context)
+## Phase 1–16 commit roll (for context)
 
 ```
+b496253 Phase 16 Batch B/2 promoted: cosmological + deliberate cluster (stub→metadata)
+37ff3fa Phase 16 Batch A/2 promoted: Egyptian/Bronze-Age cluster (stub→metadata)
+e97c104 STATUS log + HANDOFF close-out: opus-phase15-place-end-audit (SEVEN-LENS NAVIGABLE)
 9754cb4 Phase 15 Batch C/3 wired: Islamic + imperial anchors (lens-aware)
 c41a95a Phase 15 Batch B/3 wired: Silk Road / Central Asian crossroads
 e3a6d1a Phase 15 Batch A/3 wired: late-antique cosmopolitan crossroads
