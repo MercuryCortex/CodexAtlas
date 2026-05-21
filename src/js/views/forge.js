@@ -1815,8 +1815,19 @@
       //             Fixes the bug where Shinto / Pacific members
       //             drifted across the centroid-bisector dividers
       //             after the global relaxation pass.
+      // Phase 20J (2026-05-21) — pass the CANONICAL rInner /
+      // rOuter from the layout (not just the wedges map). The
+      // hull function uses these to anchor pie-slice radii at
+      // the same world geometry the layout used, so slices
+      // line up with the deity cluster instead of with the
+      // post-relaxation centroid (which drifts 30-50 wu off
+      // origin and offsets the slices by ~60 px on screen).
       local.mode.hullData = (graph.buildFamilyHulls)
-        ? graph.buildFamilyHulls(nodePack, modeNodeById, lay.wedges)
+        ? graph.buildFamilyHulls(nodePack, modeNodeById, {
+            wedges: lay.wedges,
+            rInner: lay.rInner,
+            rOuter: lay.rOuter,
+          })
         : { hulls: [], center: { x: 0, y: 0 }, innerRadius: 0, outerRadius: 0, dividers: [] };
       rebuildHullElements();
 
@@ -2695,8 +2706,16 @@
       // smaller axis overflows (gets cropped). Image is a 2048×
       // 2048 square so on a non-square viewport the LARGER axis
       // is matched and the smaller axis sees image bleed past.
-      const maxVp   = Math.max(vp.w, vp.h);
-      const imgSize = (maxVp / 0.07) * zoomPct;
+      //
+      // Phase 20J (2026-05-21) — floor the SIZING zoomPct at 0.07
+      // so the image stays at fill-coverage when the user zooms
+      // BELOW 7% (the camera allows down to absolute scale 0.05,
+      // which depending on the viewport can map to gizmo
+      // percentages well below 7%). Opacity already clamps at
+      // 1.0 below 7%; sizing now matches.
+      const sizeZoomPct = Math.max(0.07, zoomPct);
+      const maxVp       = Math.max(vp.w, vp.h);
+      const imgSize     = (maxVp / 0.07) * sizeZoomPct;
       // Anchor: world (0, 0) → screen.
       const centerScreen = camera.worldToScreen(0, 0, vp);
       bgImage.style.opacity = bgFade.toFixed(3);

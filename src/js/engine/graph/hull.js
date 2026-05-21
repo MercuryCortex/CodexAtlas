@@ -106,13 +106,41 @@
   //   drifted member positions: centroid-based dividers wander
   //   off the family wedge boundary, but a0/a1 boundaries
   //   never move. Use this path for "PERFECT RADIAL" dividers.
-  function buildFamilyHulls(nodePacked, nodesById, wedgeData) {
+  // Phase 20J (2026-05-21) — third arg is now an OPTIONS object
+  // instead of just wedgeData. Backwards-compat: if a `wedges`-
+  // shape object is passed (entries have a0/a1), it's treated as
+  // wedgeData. The richer form is `{ wedges, rInner, rOuter }`,
+  // which lets the caller pin the hull's INNER + OUTER radii to
+  // the layout's CANONICAL values (lay.rInner / lay.rOuter)
+  // instead of the data-driven max/min-from-centroid that the
+  // original code computed. Why this matters: after global
+  // relaxation, the centroid of placed deities drifts ~30–50 wu
+  // from world origin, and `max distance from CENTROID` is
+  // ~40 wu bigger than `max distance from ORIGIN`. Using the
+  // canonical layout radii anchors the pie slices to the same
+  // origin the wedges use — so the slices ALIGN with the deity
+  // cluster instead of sliding ~60 px off to one side.
+  function buildFamilyHulls(nodePacked, nodesById, wedgeOpts) {
     if (!nodePacked || !nodePacked.idIndex) {
       return { hulls: [], center: { x: 0, y: 0 }, innerRadius: 0, outerRadius: 0, dividers: [] };
     }
+    // Resolve options. wedgeOpts may be the legacy wedgeData
+    // map (entries keyed by family name, with a0/a1) or the new
+    // { wedges, rInner, rOuter } shape.
+    let wedgeData = null;
+    let canonRInner = null;
+    let canonROuter = null;
+    if (wedgeOpts && typeof wedgeOpts === 'object') {
+      if (wedgeOpts.wedges && typeof wedgeOpts.wedges === 'object') {
+        wedgeData   = wedgeOpts.wedges;
+        canonRInner = (typeof wedgeOpts.rInner === 'number') ? wedgeOpts.rInner : null;
+        canonROuter = (typeof wedgeOpts.rOuter === 'number') ? wedgeOpts.rOuter : null;
+      } else {
+        wedgeData = wedgeOpts;
+      }
+    }
     const NF = 8;
     const families = new Map();
-    let sumX = 0, sumY = 0, count = 0;
     for (let i = 0; i < nodePacked.instanceCount; i++) {
       const id = nodePacked.idIndex[i];
       const node = nodesById && nodesById.get ? nodesById.get(id) : null;
@@ -120,7 +148,6 @@
       const family = (node.family && String(node.family).trim()) || 'Other';
       const x = nodePacked.data[i * NF + 0];
       const y = nodePacked.data[i * NF + 1];
-      sumX += x; sumY += y; count++;
       if (!families.has(family)) {
         families.set(family, {
           color: node.family_color || node.tradition_color || '#888888',
@@ -129,18 +156,21 @@
       }
       families.get(family).points.push({ x, y });
     }
-    const center = count > 0
-      ? { x: sumX / count, y: sumY / count }
-      : { x: 0, y: 0 };
-    let innerRadius = Infinity, outerRadius = 0;
+    // Phase 20J — hull centre is now WORLD ORIGIN, not the
+    // centroid of placed positions. The wedges (and therefore
+    // the pie slices we render) are angularly anchored to
+    // origin, so the hull rendering must use the same anchor or
+    // it shifts off the deity cluster by the centroid-drift.
+    const center = { x: 0, y: 0 };
+    let measuredInner = Infinity, measuredOuter = 0;
     const angleSums = new Map();   // family → { sx, sy, n } for circular-mean
     for (const [family, data] of families.entries()) {
       let sx = 0, sy = 0;
       for (const p of data.points) {
         const dx = p.x - center.x, dy = p.y - center.y;
         const r = Math.hypot(dx, dy);
-        if (r < innerRadius) innerRadius = r;
-        if (r > outerRadius) outerRadius = r;
+        if (r < measuredInner) measuredInner = r;
+        if (r > measuredOuter) measuredOuter = r;
         // Circular mean: sum of unit vectors → atan2 of sum gives
         // the angle robust to the -π/+π wrap.
         const inv = r > 1e-6 ? 1 / r : 0;
@@ -149,7 +179,13 @@
       }
       angleSums.set(family, { sx, sy, n: data.points.length });
     }
-    if (!isFinite(innerRadius)) innerRadius = 0;
+    if (!isFinite(measuredInner)) measuredInner = 0;
+    // Final inner/outer radii — prefer the canonical layout
+    // values when supplied (so the pie-slice arcs sit at the
+    // wheel's true rim, independent of any node drift), fall
+    // back to measured values otherwise.
+    const innerRadius = (canonRInner != null) ? canonRInner : measuredInner;
+    const outerRadius = (canonROuter != null) ? canonROuter : measuredOuter;
     const out = [];
     for (const [family, data] of families.entries()) {
       if (data.points.length < 2) continue;
