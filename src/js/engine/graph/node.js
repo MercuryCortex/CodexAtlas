@@ -25,7 +25,13 @@
   // any future test harness or alternate front-end) and as a
   // defensive default. Do not tune from here — change the
   // PARAM_DEFAULTS node_radius_tier* values in forge.js.
-  const TIER_RADIUS = [18, 14, 11, 8]; // top4% / next11% / next25% / rest
+  // Phase 18 (2026-05-21) — 6-tier system. T3/T4/T5 are sub-tiers
+  // of the former long-tail "tier 3" (each 20% of vault). All three
+  // sub-tiers share the smallest disk radius — visual tiering still
+  // only spans 4 levels; the extra granularity is for LABEL reveal
+  // pacing, not disk size. Forge always overrides via tierRadii in
+  // opts (see tierRadiiFromParams in forge.js).
+  const TIER_RADIUS = [18, 14, 11, 8, 8, 8];
 
   // ── Color parsing — hex / rgb / rgba → [r, g, b, a] in [0, 1] ──
   // N7 (Phase 1B, 2026-05-20) — Module-scope cache by design:
@@ -62,20 +68,36 @@
 
   // ── Tier classifier ───────────────────────────────────
   // Given a degree map and a node list, returns a function
-  // that maps a degree value to a tier index 0..3.
+  // that maps a degree value to a tier index 0..5.
+  //
+  // Phase 18 (2026-05-21) — the long tail (originally "tier 3"
+  // = the bottom 60% of nodes) was a single bucket that all
+  // revealed labels at one zoom threshold. The result at deep
+  // zoom-in was a cluttered cliff: 400+ labels arriving at once.
+  // Now the long tail is split into three sub-tiers (3 / 4 / 5
+  // = each 20% of the vault) so the reveal happens gradually
+  // as the user zooms further in. T0/T1/T2 unchanged.
+  //
+  // Cumulative cuts:  4%  /  15%  /  40%  /  60%  /  80%  /  100%
+  // Tier:              T0     T1     T2     T3     T4     T5
+  // Share of vault:    4%    11%    25%    20%    20%    20%
   function buildTierClassifier(nodes, degreeMap) {
     const sorted = nodes.map(n => degreeMap.get(n.id) || 0)
                         .sort((a, b) => b - a);
-    if (!sorted.length) return () => 3;
+    if (!sorted.length) return () => 5;
     const q = (p) => sorted[Math.min(sorted.length - 1, Math.floor(sorted.length * p))] || 0;
     const t0 = q(0.04);    // top 4%
     const t1 = q(0.15);    // next 11%
     const t2 = q(0.40);    // next 25%
+    const t3 = q(0.60);    // long-tail top third
+    const t4 = q(0.80);    // long-tail middle third
     return function tierFor(deg) {
       if (deg >= t0) return 0;
       if (deg >= t1) return 1;
       if (deg >= t2) return 2;
-      return 3;
+      if (deg >= t3) return 3;
+      if (deg >= t4) return 4;
+      return 5;
     };
   }
 

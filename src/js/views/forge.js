@@ -586,10 +586,20 @@
     // ── LABELS ── John's progressive zoom thresholds (step-02 values;
     // step-01 was much more aggressive at 0/0.2/0.35/0.45 — step-02
     // tightened to reduce label clutter at lower zoom).
-    label_idle_zoom_tier1: 0.10,   // tier 0 — basically always
-    label_idle_zoom_tier2: 1.20,
-    label_idle_zoom_tier3: 1.65,
-    label_idle_zoom_tier4: 1.95,
+    // Phase 18 (2026-05-21) — 6-tier label thresholds. Params are
+    // 1-indexed for legacy reasons; internal tier index is 0-based.
+    //   _tier1 → T0 (top 4%, always)
+    //   _tier2 → T1 (next 11%, ~120% zoom)
+    //   _tier3 → T2 (next 25%, ~165% zoom)
+    //   _tier4 → T3 (long-tail-a, ~200% zoom)   ← was the whole "rest" cliff before
+    //   _tier5 → T4 (long-tail-b, ~250% zoom)   ← new
+    //   _tier6 → T5 (long-tail-c, ~350% zoom)   ← new
+    label_idle_zoom_tier1: 0.10,   // T0 — basically always
+    label_idle_zoom_tier2: 1.20,   // T1
+    label_idle_zoom_tier3: 1.65,   // T2
+    label_idle_zoom_tier4: 2.00,   // T3
+    label_idle_zoom_tier5: 2.50,   // T4
+    label_idle_zoom_tier6: 3.50,   // T5
     label_idle_max:        750,    // bumped from 800 → 1200 in step-01, settled at 750 in step-02
     label_size:            12,
     label_cap:             120,
@@ -3782,11 +3792,18 @@
       : ['transmission','parallel','association','kinship','attestation','polemic','fusion'];
 
     function tierRadiiFromParams() {
+      // Phase 18 (2026-05-21) — 6 tiers now. T4 + T5 share the smallest
+      // (tier4) disk radius so the visual tiering of the disk SIZE still
+      // spans only 4 levels; the extra granularity is purely for label
+      // reveal pacing, not disk hierarchy.
+      const r4 = local.params.node_radius_tier4;
       return [
         local.params.node_radius_tier1,
         local.params.node_radius_tier2,
         local.params.node_radius_tier3,
-        local.params.node_radius_tier4,
+        r4,
+        r4,
+        r4,
       ];
     }
     // 2026-05-19 — extract the packed (post-clamp) world radius
@@ -3869,11 +3886,17 @@
     function labelHierarchyFromParams() {
       const p = local.params;
       return {
+        // Phase 18 (2026-05-21) — 6-tier ladder. The bottom 60% of
+        // nodes (former single "tier 3") is now split into 3 sub-
+        // tiers (T3/T4/T5) so the long-tail reveal at deep zoom is
+        // progressive instead of a 400-node cliff.
         tierZoomThresholds: [
           p.label_idle_zoom_tier1,
           p.label_idle_zoom_tier2,
           p.label_idle_zoom_tier3,
           p.label_idle_zoom_tier4,
+          p.label_idle_zoom_tier5,
+          p.label_idle_zoom_tier6,
         ],
         maxLabels:          p.label_idle_max,
         labelSizePx:        p.label_size,

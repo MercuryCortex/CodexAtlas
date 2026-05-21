@@ -45,7 +45,12 @@
   //                 }
   // @returns Set<nodeId>  the ids that SHOULD show a label at idle.
   function computeIdleLabelVisibility(hitNodes, camScale, opts) {
-    const thresh  = (opts && opts.tierZoomThresholds) || [0, 1.0, 1.8, Infinity];
+    // Phase 18 (2026-05-21) — 6-tier thresholds. T3 is no longer the
+    // long-tail catch-all that dumped 400+ labels at one zoom step;
+    // it's now the FIRST of three sub-tiers (3 / 4 / 5) each at its
+    // own threshold, so the reveal is progressive instead of a
+    // cluttered cliff at ~2.0×.
+    const thresh  = (opts && opts.tierZoomThresholds) || [0, 1.0, 1.8, 2.0, 2.5, 3.5];
     const cap     = (opts && opts.maxLabels)          || 200;
     const sizePx  = (opts && opts.labelSizePx)        || 11;
     const padPx   = (opts && opts.collisionPaddingPx) || 4;
@@ -56,11 +61,12 @@
 
     // Pass 1: per-tier eligibility by zoom threshold.
     // tierBuckets[T] = nodes of tier T that pass camScale.
-    const tierBuckets = [[], [], [], []];
+    const NUM_TIERS = 6;
+    const tierBuckets = [[], [], [], [], [], []];
     for (let i = 0; i < hitNodes.length; i++) {
       const n = hitNodes[i];
       const t = n.tier | 0;
-      if (t < 0 || t > 3) continue;
+      if (t < 0 || t >= NUM_TIERS) continue;
       const need = thresh[t];
       if (need == null || need === Infinity) continue;
       if (camScale + 1e-6 >= need) tierBuckets[t].push(n);
@@ -68,39 +74,31 @@
 
     // Pass 2: walk top-down, AABB-prune against already-shown set.
     // Each label's AABB is (cx ± halfW, cy ± halfH) where cx,cy is
-    // the screen-space position just above the disk. We keep the
-    // boxes as flat arrays to avoid GC churn at 663 entries.
+    // the screen-space position just above the disk.
     //
-    // Phase 6d — fairness fix: previously a single top-down walk
-    // with one shared cap meant that when tiers 0-2 produced
-    // many candidates, tier 3 frequently got zero. Now each
-    // tier gets its own SOFT BUDGET so even if higher tiers
-    // claim most of the screen, tier 3 still gets a shot. We
-    // also collide more leniently for tier 3 (50% padding) since
-    // those labels are the "everyone else" group and the user
-    // explicitly opted them in.
+    // Phase 18 (2026-05-21) — collision pruning applies to ALL tiers
+    // now, including T3/T4/T5. Per John's directive: lower tiers
+    // RESPECT the upper tiers and don't appear if no room. The
+    // previous skipCollision exception for the long-tail tier
+    // (which dumped 400+ overlapping labels at deep zoom) is GONE.
+    //
+    // Per-tier soft budgets prevent any single tier from starving
+    // others. The OVERALL `cap` (label_idle_max) is the hard limit.
     const out = new Set();
     const boxes = [];   // [x0, y0, x1, y1] per shown label
     const halfH = sizePx * 0.6 + padPx;
-    // Per-tier budget — higher tiers get a soft cap so they
-    // don't blow through the overall cap and starve tier 3.
-    // Tier 3 is UNCAPPED (only the overall `cap` limits it) so
-    // the "reveal all the rest" zoom-in case actually reveals
-    // EVERY tier-3 label, in file-order, until cap is reached.
-    const tierBudget = [Math.floor(cap * 0.40), Math.floor(cap * 0.30), Math.floor(cap * 0.20), cap];
-    for (let T = 0; T < 4; T++) {
+    const tierBudget = [
+      Math.floor(cap * 0.40),  // T0  top hubs
+      Math.floor(cap * 0.30),  // T1
+      Math.floor(cap * 0.20),  // T2
+      Math.floor(cap * 0.30),  // T3  long-tail-a
+      Math.floor(cap * 0.30),  // T4  long-tail-b
+      cap,                     // T5  long-tail-c (uncapped — only `cap` limits)
+    ];
+    for (let T = 0; T < NUM_TIERS; T++) {
       const bucket = tierBuckets[T];
       const budget = tierBudget[T];
       let addedThisTier = 0;
-      // Phase 6d3 — tier 3 (the "rest" group) is the user's
-      // intentional zoom-in reveal. When they crank the
-      // threshold low it means they want to see SPECIFIC
-      // names in a cluster, even if those labels overlap a
-      // higher-tier label next door. Skip collision entirely
-      // for tier 3 — at deep zoom, the user can pan around to
-      // read them in turn, and at low zoom the threshold
-      // gates them anyway.
-      const skipCollision = (T === 3);
       for (let i = 0; i < bucket.length; i++) {
         if (out.size >= cap) return out;
         if (addedThisTier >= budget) break;
@@ -112,11 +110,9 @@
         const x0 = cx - halfW, y0 = cy - halfH;
         const x1 = cx + halfW, y1 = cy + halfH;
         let collides = false;
-        if (!skipCollision) {
-          for (let b = 0; b < boxes.length; b += 4) {
-            if (x0 < boxes[b+2] && x1 > boxes[b] && y0 < boxes[b+3] && y1 > boxes[b+1]) {
-              collides = true; break;
-            }
+        for (let b = 0; b < boxes.length; b += 4) {
+          if (x0 < boxes[b+2] && x1 > boxes[b] && y0 < boxes[b+3] && y1 > boxes[b+1]) {
+            collides = true; break;
           }
         }
         if (collides) continue;
