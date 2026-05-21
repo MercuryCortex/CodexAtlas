@@ -66,7 +66,7 @@ appearances:
   - "[[phase-1-009-coffin-texts]]"
   - "[[phase-1-010-book-of-the-dead]]"
 deity-instances:
-  - "[[isis]]"                              # depicted holding ankh
+  - "`isis`"                              # depicted holding ankh
   - "[[osiris]]"
   - "[[ra]]"
   - "[[aten]]"

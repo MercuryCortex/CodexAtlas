@@ -78,7 +78,7 @@ The alchemical royal couple — Sol-King and Luna-Queen — is the same symbol u
 
 **Sumerian (c. 2100 BCE) — Inanna and Dumuzi**: The *Sacred Marriage* texts of ancient Sumer ([[phase-1-017-descent-of-inanna]], [[inanna-sumerian]]) are the oldest surviving sacred marriage texts: the Sumerian hymns of Inanna's marriage to the shepherd-king Dumuzi, conducted as an annual ritual in which the king physically embodied Dumuzi and slept with a priestess embodying Inanna. The explicit erotic poetry of these hymns (*"Plow my vulva, man of my heart"*) is the Conjunction in its most literal, least metaphorical form — the union of the sky-goddess and the earth-king that ensures the fertility of the land for another year. The [[dumuzi-tammuz]] cycle is alchemy before alchemy: the yearly dissolution (Dumuzi's death) and reconstitution (his return) is the Conjunction's seasonal rhythm.
 
-**Egyptian — Isis and Osiris**: [[isis]] and [[osiris]] constitute the Egyptian royal marriage that generates the universe — their son Horus is the Rebis-figure who reconciles the conflict of their opposites. The Osiris myth is a Conjunction: Osiris is dismembered (Separation), his parts are gathered by Isis (Conjunction's preparation), she reconstitutes his body and conceives Horus (the Conjunction proper), and the child Horus becomes the king (the Stone). [[alchemy-zosimos-of-panopolis]] explicitly uses Osiris-Isis imagery for the alchemical process; [[tradition-isis-mysteries]] transmitted this symbolism into the Greco-Roman world.
+**Egyptian — Isis and Osiris**: [[isis-egyptian]] and [[osiris]] constitute the Egyptian royal marriage that generates the universe — their son Horus is the Rebis-figure who reconciles the conflict of their opposites. The Osiris myth is a Conjunction: Osiris is dismembered (Separation), his parts are gathered by Isis (Conjunction's preparation), she reconstitutes his body and conceives Horus (the Conjunction proper), and the child Horus becomes the king (the Stone). [[alchemy-zosimos-of-panopolis]] explicitly uses Osiris-Isis imagery for the alchemical process; [[tradition-isis-mysteries]] transmitted this symbolism into the Greco-Roman world.
 
 **Hindu Tantra — Shiva and Shakti**: The Tantric cosmological schema ([[tradition-tantra]]) posits that the universe itself is the product of the eternal union (*Maithuna*) of [[shiva]] (pure consciousness, the masculine principle) and Shakti (pure energy, the feminine principle). Their union IS the cosmos; their separation would be its dissolution. The Tantric practitioner's goal is to embody this union internally — the *kundalini* energy (Shakti) ascending the spine to unite with the Shiva-consciousness at the crown is the Tantric Conjunction, conducted in the body of the practitioner. The *Ardhanarishvara* iconography — the figure that is half Shiva, half Parvati — is the Hindu Rebis: the alchemical hermaphrodite in Hindu iconographic form.
 
@@ -110,7 +110,7 @@ The hermaphrodite-as-completion is not a cultural anomaly or a pathology — it 
 - [[inanna-sumerian]] — Sumerian sacred marriage (oldest attestation, c.2100 BCE)
 - [[dumuzi-tammuz]] — Dumuzi as Sol-King in the Sumerian Conjunction
 - [[phase-1-017-descent-of-inanna]] — primary sacred marriage texts
-- [[isis]] — Egyptian Conjunction (Isis + Osiris)
+- [[isis-egyptian]] — Egyptian Conjunction (Isis + Osiris)
 - [[osiris]] — Osiris's reconstitution as Conjunction event
 - [[shiva]] — Shiva-Shakti as Tantric Conjunction
 - [[shekhinah]] — Kabbalistic Luna; the feminine divine awaiting Tiferet's union

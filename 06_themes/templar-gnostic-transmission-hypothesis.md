@@ -59,7 +59,7 @@ The historiographical claim that the medieval [[tradition-knights-templar|Knight
 2. **Tier-2 historical claim (partially defensible):** The Templar contact zone of Outremer (1099–1291) was a *geographic opportunity* for theological transmission across Latin / Eastern Christian / Mandaean / Druze / Sufi / Ismaili communities, even if *the Templars themselves* are not the documented transmission channel.
 3. **Reception-history fact (uncontestable):** Beginning ~1750 with the [[tradition-freemasonry|Masonic]] Strict Templar Observance and intensifying through 19th-c. occultism, the *idea* of the Templars as carriers of Gnostic-Hermetic-Johannite knowledge has been one of the most productive engines of modern Western esoteric thought. As reception, the hypothesis is a major data-point regardless of its historical accuracy.
 
-The methodological discipline of this vault — see [[../00_meta/methodology.md|methodology]] — requires that any entry invoking the hypothesis label which tier it is claiming.
+The methodological discipline of this vault — see [[methodology|methodology]] — requires that any entry invoking the hypothesis label which tier it is claiming.
 
 ## Earliest attestations of the hypothesis
 

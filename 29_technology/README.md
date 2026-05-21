@@ -40,13 +40,13 @@ Composite bow, crossbow, longbow, gunpowder weapons (fire arrow → rocket → b
 ## Primary YAML fields
 
 - `category` — metallurgy / architectural-technique / chemistry / information / navigation / hydraulic-agricultural / military-technology
-- `originating-tradition` — `[[tradition-...]]`
+- `originating-tradition` — ``tradition-...``
 - `originating-region` — geographic
 - `originating-date` — earliest documented attestation
 - `transmission-path` — ordered string of ``wikilinks`` showing the diffusion chain (e.g. compass: `[[china-han]], [[abbasid-caliphate]], [[europe-medieval]], [[europe-renaissance]]`)
-- `related-inventors` — `[[person-...]]` cross-link to `04_persons/`
+- `related-inventors` — ``person-...`` cross-link to `04_persons/`
 - `replaced-by` / `built-upon` — within-lens edges for technological succession
-- `related-events` — `[[event-...]]` for events the technology enabled (Reformation enabled by printing press, Age of Discovery enabled by compass)
+- `related-events` — ``event-...`` for events the technology enabled (Reformation enabled by printing press, Age of Discovery enabled by compass)
 - `related-doctrines` — `[[doctrine-...]]` for doctrines/movements the technology enabled or constrained (printing press → Sola Scriptura → Reformation; gunpowder → end of feudal knighthood)
 - `related-exchange-networks` — `[[exchange-network-...]]` for the routes that carried the technology (cross-link to `28_exchange_networks/`)
 - `related-sacred-sites` — `[[sacred-site-...]]` for sites that exemplify the technique (pendentive-dome ↔ Hagia Sophia)

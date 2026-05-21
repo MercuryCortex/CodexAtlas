@@ -77,7 +77,7 @@ The Templars matter to the Codex Atlas wedge in three distinct registers, each r
 2. **As a survivor of the Crusader-era Levantine contact zone** — the Templars are one of the few medieval Latin Christian institutions with sustained, documented physical presence among Eastern Christians, Mandaeans, Druze, Sufi orders, and the Assassin (Nizari Ismaili) network. What, if anything, was *theologically* exchanged across that contact zone is the [[templar-gnostic-transmission-hypothesis|Templar-Gnostic transmission hypothesis]] — a high-prize but evidentially fragile claim that has generated centuries of legendry. (See **Disputes**.)
 3. **As a reception phenomenon** — from the trial-extracted [[baphomet-controversy|Baphomet]] confessions through the 18th-c. [[tradition-freemasonry|Masonic]] Strict Templar Observance to the modern Holy-Blood-Holy-Grail / Priory of Sion literature, the *idea* of the Templars as carriers of secret Gnostic, Johannite, or Hermetic knowledge is itself a major early-modern and modern esoteric phenomenon, regardless of whether the historical Order ever held such doctrine.
 
-Keeping (1), (2), and (3) tiered separately is the core methodological discipline of any Templar entry in this vault — see [[../00_meta/methodology.md|methodology]] on source-tiering.
+Keeping (1), (2), and (3) tiered separately is the core methodological discipline of any Templar entry in this vault — see [[methodology|methodology]] on source-tiering.
 
 ## Historical phases
 

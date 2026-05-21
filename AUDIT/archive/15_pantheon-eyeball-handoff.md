@@ -16,7 +16,7 @@ Closed 15 eyeball-obvious pantheon gaps that the dead-link priority queue did *n
 |---|---|---|---|
 | 1 | Michael archangel deity-side | [[michael-archangel]] | Parity with the 6 other archangels already in deities; Anubis-psychostasia ancestry |
 | 2 | Shinto pantheon | [[amaterasu]], [[susanoo]], [[tsukuyomi]], [[izanagi]], [[izanami]], [[inari]], [[hachiman]] | Amaterasu↔[[vairocana]] honji-suijaku; Susanoo↔[[marduk]]/[[indra]] chaoskampf; Hachiman as earliest kami-as-bodhisattva (783) |
-| 3 | Chinese/Daoist | [[jade-emperor]], [[three-pure-ones]], [[xi-wangmu]], [[mazu]], [[pangu]], [[fuxi]], [[nuwa]] | Sanqing↔Mahāyāna Trikāya; Mazu↔[[isis]]-Pelagia↔[[mary-theotokos]]-Stella-Maris; Pangu↔[[purusha]]↔[[ymir]] cosmic-body cosmogony |
+| 3 | Chinese/Daoist | [[jade-emperor]], [[three-pure-ones]], [[xi-wangmu]], [[mazu]], [[pangu]], [[fuxi]], [[nuwa]] | Sanqing↔Mahāyāna Trikāya; Mazu↔`isis`-Pelagia↔[[mary-theotokos]]-Stella-Maris; Pangu↔[[purusha]]↔[[ymir]] cosmic-body cosmogony |
 | 4 | Slavic + Baltic | [[perun]], [[veles]], [[mokosh]], [[svarog]], [[dazhbog]], [[perkunas]], [[dievas-baltic]], [[saule]] | Svarog↔[[hephaestus]] (Hypatian Chron. 1114 *ancient-identification*); Perkūnas as cleanest PIE *\*Perkʷunos*; Dievas as cleanest PIE *\*Dyēus* |
 | 5 | Yama spine | [[yama-vedic]], [[yima-jamshid]], [[yamantaka]] | Vedic Yama↔Avestan Yima from PIE *\*Yemo-*; Yima's Vara↔Noah's ark (winter→flood variant); Yamāntaka = *polemic-inversion* of Yama into Buddhist wisdom-deity |
 | 6 | Five Dhyani Buddhas + Maitreya | [[vairocana]], [[akshobhya]], [[ratnasambhava]], [[amoghasiddhi]], [[maitreya]] | Maitreya↔[[jesus-christ-deity]]-parousia / [[muhammad-al-mahdi]] / Kalki / Saoshyant messianic-savior typology |

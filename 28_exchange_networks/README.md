@@ -66,7 +66,7 @@ Naming chosen academically. "Exchange networks" is the disciplinary term used in
 - `traded-via` — `[[silk-road-overland]], [[maritime-silk-road]]` (cross-link to route nodes)
 - `production-regions` — `[[place-...]]`
 - `date-trade-attested-earliest`
-- `cultural-meanings` — `[[theme-...]]` (motif anchors like `theme-silk-as-imperial-monopoly`)
+- `cultural-meanings` — ``theme-...`` (motif anchors like `theme-silk-as-imperial-monopoly`)
 - `also-substance` — `[[substance-...]]` (cross-link to `24_pharmacology/` when applicable)
 
 ### For INSTITUTION / PEOPLE nodes

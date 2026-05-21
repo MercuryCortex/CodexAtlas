@@ -155,7 +155,7 @@ appearances:
   - "[[phase-1-009-coffin-texts]]"
   - "[[phase-1-010-book-of-the-dead]]"
 deity-instances:
-  - "[[isis]]"
+  - "`isis`"
   - "[[osiris]]"
   - "[[ra]]"
   - "[[aten]]"

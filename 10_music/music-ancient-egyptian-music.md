@@ -34,7 +34,7 @@ music-tradition-context:
 
 music-deity-connections:
   - [[hathor]]
-  - [[isis]]
+  - [[isis-egyptian]]
 
 refs:
   - "Hans Hickmann, Musicologie pharaonique: Etudes sur l'évolution de l'art musical dans l'Egypte ancienne (1956, Heitz)"
@@ -99,6 +99,6 @@ The Egyptian harp (*benet*) appears in orchestral settings with 4–22 strings; 
 ## Connection to the Vault
 
 - [[hathor]]: The sistrum is Hathor's primary attribute; every sistrum performance is understood as an act of Hathor-worship and Hathor-embodiment by the performer
-- [[isis]]: Isis is frequently depicted with the sistrum in Ptolemaic-period iconography; the sistrum was among the instruments used in Isis cult ceremonies that spread throughout the Roman world
+- [[isis-egyptian]]: Isis is frequently depicted with the sistrum in Ptolemaic-period iconography; the sistrum was among the instruments used in Isis cult ceremonies that spread throughout the Roman world
 - [[tradition-egyptian-religion]]: Egyptian temple music was integral to the daily temple ritual — the *House of Life* curriculum included music as a core priestly competency alongside astronomy, medicine, and ritual
 - [[creation-by-word]]: The Memphite Theology (Ptah creates by speaking names) is the Egyptian form of creation-by-sound; the temple musicians participate in the ongoing sonic maintenance of that creation

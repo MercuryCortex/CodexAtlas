@@ -27,16 +27,16 @@
 
 - `aka` — alternative names / spellings
 - `category` — vestment / monastic-habit / ritual-garment / ornament / regalia / mourning-garment / initiatory-cloak / pilgrim-garment / ascetic-anti-luxury
-- `tradition` — `[[tradition-...]]`
-- `key-figures-worn-by` — `[[person-...]]` lay or clerical figures historically wearing this attire
+- `tradition` — ``tradition-...``
+- `key-figures-worn-by` — ``person-...`` lay or clerical figures historically wearing this attire
 - `liturgical-occasion` — when the attire is required (Mass, Hajj, ordination, Yom Kippur, etc.)
 - `parallel-attire` — cross-tradition resemblance (white-as-purity across ihram + alb + Daoist gao)
-- `related-symbols` — `[[symbol-...]]` for garments carrying iconographic content
+- `related-symbols` — ``symbol-...`` for garments carrying iconographic content
 - `related-rituals` — `[[ritual-...]]` for rituals requiring this attire
 - `material-fiber` — silk / linen / wool / cotton / hemp (cross-link to `28_exchange_networks/` commodity nodes)
 - `region` — geographic origin
 - `date-attested-earliest`
-- `themes` — `[[theme-...]]` (motif anchors like `theme-white-garment-as-purity`)
+- `themes` — ``theme-...`` (motif anchors like `theme-white-garment-as-purity`)
 
 ## MASSIVE-WIN clusters to watch for
 
