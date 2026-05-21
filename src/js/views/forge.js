@@ -2497,15 +2497,20 @@
       const ringPxRadius = Math.hypot(ringEdgeScreen.x - centerScreen.x, ringEdgeScreen.y - centerScreen.y);
       const innerEdgeScreen = camera.worldToScreen(centerWorld.x + innerWorld, centerWorld.y, vp);
       const innerPxRadius = Math.hypot(innerEdgeScreen.x - centerScreen.x, innerEdgeScreen.y - centerScreen.y);
-      // Phase 20G (2026-05-21) — pie-slice radial padding so the
-      // disk EDGES (not just centres) fit fully inside the slice.
-      // data.outerRadius is the max DISK CENTRE radius across all
-      // families; disks extend ~6–9 px past that. We pad the pie
-      // slice outer arc by 14 px and the inner arc inward by 14 px
-      // so the slice fully contains every disk + a small breathing
-      // margin. The dividers (rendered below) use the SAME padded
-      // radii so the divider lines align with the slice edges.
-      const DISK_FIT_PAD = 14;
+      // Phase 20H (2026-05-21) — pie-slice radial padding. The
+      // padding is SPLIT into two parts so the breathing room is
+      // visually obvious:
+      //   • DISK_CONTAIN_PAD covers the disk radius itself (so the
+      //     disk EDGES, not just centres, fit inside the arc).
+      //   • DISK_BREATHE_PAD is the visible buffer between disk
+      //     edge and slice arc — needs to read clearly at default
+      //     zoom, so we set it generously.
+      // Total = 28 px outward from ringPxRadius; same inward from
+      // innerPxRadius. Dividers + family labels use these padded
+      // radii so the whole overlay shares one outer/inner boundary.
+      const DISK_CONTAIN_PAD = 10;
+      const DISK_BREATHE_PAD = 18;
+      const DISK_FIT_PAD     = DISK_CONTAIN_PAD + DISK_BREATHE_PAD;
       const pieOuterPx = ringPxRadius + DISK_FIT_PAD;
       const pieInnerPx = Math.max(0, innerPxRadius - DISK_FIT_PAD);
 
@@ -2669,10 +2674,17 @@
         bgImage.style.opacity = '0';
         return;
       }
-      // Size: fill the larger viewport dimension at scale = 0.07.
-      // size_at_007 = max(vp.w, vp.h) → size_at_any = max(vp) / 0.07 * scale.
-      const maxVp = Math.max(vp.w, vp.h);
-      const imgSize = (maxVp / 0.07) * camScale;
+      // Size: COVER-FIT the viewport at scale = 0.07 (Phase 20H,
+      // 2026-05-21 — was max(vp.w, vp.h), which only reached the
+      // larger viewport dimension and left the corners dark on
+      // non-square viewports). For a square image to fully cover a
+      // rectangular viewport, the image side must equal the
+      // viewport DIAGONAL — every corner is then inside the image.
+      // We then scale that base size linearly with camera, so at
+      // scale = 0.07 the image exactly covers, and at higher zoom
+      // it extends well past the viewport edges.
+      const diagVp  = Math.hypot(vp.w, vp.h);
+      const imgSize = (diagVp / 0.07) * camScale;
       // Anchor: world (0, 0) → screen.
       const centerScreen = camera.worldToScreen(0, 0, vp);
       bgImage.style.opacity = bgFade.toFixed(3);
