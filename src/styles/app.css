@@ -6027,6 +6027,104 @@ body.nav-collapsed .nav-more > summary .lbl { display: none; }
   font-style: italic;
 }
 /* Connection-counts row — one colored pill per wire bucket. */
+/* Side-panel wire rows — Phase 19D upgrade.
+   Each wire bucket is now a <details> block: clicking the summary
+   expands a list of connected deity titles. Clicking a name in
+   the list locks-and-switches the panel to that deity. */
+.forge-side-panel-wires {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  margin: 10px 0 14px;
+}
+details.forge-side-panel-wire {
+  background: rgba(0, 0, 0, 0.18);
+  border: 1px solid var(--border, #2a2e3a);
+  border-left: 2px solid var(--bucket-color, #888);
+  border-radius: 3px;
+}
+details.forge-side-panel-wire[open] {
+  background: rgba(0, 0, 0, 0.28);
+}
+.forge-side-panel-wire-summary {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 10px;
+  cursor: pointer;
+  list-style: none;
+  font-size: 11px;
+  letter-spacing: 0.04em;
+  color: var(--bucket-color, #888);
+}
+.forge-side-panel-wire-summary::-webkit-details-marker { display: none; }
+.forge-side-panel-wire-count {
+  font-variant-numeric: tabular-nums;
+  font-weight: 500;
+}
+.forge-side-panel-wire-name {
+  font-style: normal;
+  color: var(--text-3, #6b7280);
+  text-transform: lowercase;
+  font-size: 10px;
+  letter-spacing: 0.06em;
+}
+.forge-side-panel-wire-caret {
+  margin-left: auto;
+  color: var(--text-3, #6b7280);
+  font-size: 10px;
+  transition: transform 0.15s ease;
+}
+details.forge-side-panel-wire[open] .forge-side-panel-wire-caret {
+  transform: rotate(180deg);
+}
+.forge-side-panel-wire-list {
+  padding: 4px 6px 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+.forge-side-panel-wire-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  width: 100%;
+  background: transparent;
+  border: 0;
+  padding: 4px 6px;
+  text-align: left;
+  color: var(--text-2, #b5b9c5);
+  font-family: var(--mono, "JetBrains Mono", Menlo, monospace);
+  font-size: 11px;
+  letter-spacing: 0.02em;
+  cursor: pointer;
+  border-radius: 2px;
+  transition: background 0.12s ease, color 0.12s ease;
+}
+.forge-side-panel-wire-item:hover {
+  background: rgba(212, 165, 90, 0.08);
+  color: var(--text-1, #e5e7eb);
+}
+.forge-side-panel-wire-item-dot {
+  display: inline-block;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  flex: 0 0 auto;
+}
+.forge-side-panel-wire-item-dir {
+  color: var(--text-3, #6b7280);
+  font-size: 10px;
+  flex: 0 0 auto;
+}
+.forge-side-panel-wire-item-title {
+  flex: 1 1 auto;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* Legacy hover-card wires (smaller, simpler — keep the pill style). */
 .forge-hover-card-wires {
   display: flex;
   flex-wrap: wrap;
@@ -6093,6 +6191,17 @@ body.view-forge .detail-toggle {
    no negative empty space sticking off the right edge. */
 body.view-forge.detail-collapsed aside.detail {
   display: none;
+}
+/* Phase 19D (2026-05-21) — also override the layout reservation
+   variable. Other views reserve `--detail-w-collapsed` at the
+   right edge even when the panel is collapsed; that reserved
+   strip was showing as a clipping artifact at the top of the
+   Forge canvas. In Forge + collapsed state, the canvas extends
+   to the full viewport width (no reservation). When the panel
+   opens, --eff-detail-w jumps to the full panel width, sliding
+   the canvas over. */
+body.view-forge.detail-collapsed {
+  --eff-detail-w: 0;
 }
 
 /* Tab stack — fixed at right viewport edge. Shifts left when the

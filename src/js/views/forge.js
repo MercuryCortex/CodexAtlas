@@ -3515,27 +3515,61 @@
         const domains    = Array.isArray(node.domains) ? node.domains.join(', ') : '';
         const familyCol  = (node.family_color || node.tradition_color || '#888');
 
-        // Wire-bucket counts.
-        const counts = Object.create(null);
+        // Wire-bucket counts + per-bucket neighbor lists.
+        // Each bucket: { count, neighbors: [{ id, title, family_color, dir }] }.
+        // dir = 'out' (this node → other) or 'in' (other → this node).
+        const buckets = Object.create(null);
         const edges = m && m.edges;
+        const nodesByIdMap = (m && m.nodesById) ? m.nodesById : null;
         if (edges) {
           const EB = window.EDGE_BUCKET || {};
           for (let i = 0; i < edges.length; i++) {
             const e = edges[i];
-            if (e.source !== id && e.target !== id) continue;
+            const isSrc = e.source === id;
+            const isTgt = e.target === id;
+            if (!isSrc && !isTgt) continue;
             const b = EB[e.type] || 'association';
-            counts[b] = (counts[b] || 0) + 1;
+            if (!buckets[b]) buckets[b] = { count: 0, neighbors: [] };
+            buckets[b].count++;
+            const otherId = isSrc ? e.target : e.source;
+            const otherNode = (nodesByIdMap && nodesByIdMap.get) ? nodesByIdMap.get(otherId) : null;
+            buckets[b].neighbors.push({
+              id: otherId,
+              title: (otherNode && (otherNode.title || otherNode.id)) || otherId,
+              color: (otherNode && (otherNode.family_color || otherNode.tradition_color)) || '#888',
+              dir: isSrc ? 'out' : 'in',
+            });
           }
         }
         const BUCKET_ORDER = ['transmission','parallel','association','kinship','attestation','polemic','fusion'];
         const bucketHex = (b) => (local.params && local.params['active_color_' + b]) || '#999999';
+        // Each bucket → a <details> block. Summary = colored pill
+        // with count + bucket name. Open content = list of neighbor
+        // titles (clickable to lock-and-switch to that deity).
+        const safeAttr = (s) => String(s || '').replace(/[&<>"']/g, c => (
+          { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]
+        ));
         const pills = BUCKET_ORDER.map(b => {
-          const n = counts[b] || 0;
-          if (!n) return '';
-          return '<span class="forge-side-panel-wire" style="color:' + bucketHex(b) + '">'
-            + '<span class="forge-side-panel-wire-dot" style="background:' + bucketHex(b) + '"></span>'
-            + n + ' <em>' + b + '</em>'
-            + '</span>';
+          const data = buckets[b];
+          if (!data) return '';
+          // Sort neighbors by title for predictable ordering.
+          data.neighbors.sort((x, y) => x.title.localeCompare(y.title));
+          const items = data.neighbors.map(n =>
+            '<button class="forge-side-panel-wire-item" data-id="' + safeAttr(n.id) + '" title="Lock + inspect ' + safeAttr(n.title) + '">'
+            + '<span class="forge-side-panel-wire-item-dot" style="background:' + safeAttr(n.color) + '"></span>'
+            + '<span class="forge-side-panel-wire-item-dir">' + (n.dir === 'out' ? '→' : '←') + '</span>'
+            + '<span class="forge-side-panel-wire-item-title">' + safeAttr(n.title) + '</span>'
+            + '</button>'
+          ).join('');
+          return '<details class="forge-side-panel-wire" data-bucket="' + b + '" style="--bucket-color:' + bucketHex(b) + '">'
+            + '<summary class="forge-side-panel-wire-summary">'
+            +   '<span class="forge-side-panel-wire-dot" style="background:' + bucketHex(b) + '"></span>'
+            +   '<span class="forge-side-panel-wire-count">' + data.count + '</span>'
+            +   '<em class="forge-side-panel-wire-name">' + b + '</em>'
+            +   '<span class="forge-side-panel-wire-caret">▾</span>'
+            + '</summary>'
+            + '<div class="forge-side-panel-wire-list">' + items + '</div>'
+            + '</details>';
         }).filter(Boolean).join('');
 
         const fmtYear = (y) => {
@@ -3575,6 +3609,26 @@
       }
 
       local._renderSidePanel = render;
+
+      // Phase 19D — click a neighbor inside an expanded wire list →
+      // lock + switch the panel to that deity. Event-delegated on
+      // the global inner so it works for every render pass without
+      // re-binding.
+      inner.addEventListener('click', (e) => {
+        const item = e.target.closest('.forge-side-panel-wire-item');
+        if (!item) return;
+        const targetId = item.getAttribute('data-id');
+        if (!targetId) return;
+        // Lock only if not already locked (toggleLock toggles).
+        if (!local.lockedSet.has(targetId)) {
+          toggleLock(targetId);    // adds + pulses tab + (if open) renders
+        } else {
+          // Already locked: just switch the panel to it.
+          local.openTabId = targetId;
+          render();
+          renderTabs();
+        }
+      });
     }
 
     function wireTimelineScrubber() {
