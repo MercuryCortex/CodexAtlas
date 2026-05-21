@@ -2,7 +2,7 @@
 type: deity
 id: "kotoshironushi"
 name: "Kotoshironushi"
-status: "stub"
+status: "metadata"
 ---
 
 # Kotoshironushi
