@@ -17,10 +17,10 @@ attributes: ["serpentine/dragon form (in late iconography)", "horn", "tail"]
 attested-in: ["[[phase-1-008-enuma-elish]]"]
 equivalents: []
 syncretic-edges:
-  - target: "[[tehom-hebrew-concept]]"
+  - target: "Tehom (Hebrew primordial-waters concept, Gen 1:2; no node yet — concept-level, would belong in 06_themes/)"
     type: "scholarly-parallel"
     source: "Heidel 1951; Gunkel 1895"
-status: "stub"
+status: "metadata"
 refs:
   - title: "The Babylonian Genesis"
     author: "Heidel, Alexander"

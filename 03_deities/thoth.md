@@ -12,7 +12,7 @@ gender: "masculine"
 role: "scribe of the gods; lord of divine knowledge; recorder of the weighing of the heart"
 parent-of: []
 child-of: []
-consort: ["[[seshat]]"]
+consort: ["Seshat (Egyptian goddess of writing and measurement; Thoth's consort — no node yet)"]
 attributes: ["ibis-headed (most commonly)", "baboon-headed (alternative)", "scribe's palette and reed pen", "lunar disc with crescent"]
 attested-in: ["[[phase-1-002-pyramid-texts]]", "[[phase-1-009-coffin-texts]]", "[[phase-1-010-book-of-the-dead]]", "[[phase-2-028-herodotus-histories-book-2]]", "[[phase-3-026-diodorus-bibliotheca-book-1]]", "[[phase-4-072-plutarch-de-iside-et-osiride]]"]
 equivalents: ["[[hermes-greek]]", "[[hermes-trismegistus]]", "[[khonsu]] (alternative lunar identification)"]

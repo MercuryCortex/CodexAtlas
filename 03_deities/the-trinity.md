@@ -29,7 +29,7 @@ syncretic-edges:
   - target: "[[the-amesha-spentas]]"
     type: "scholarly-parallel"
     source: "Some scholars (controversial — Boyce, Hultgård) note structural parallels between Trinitarian dogma and Zoroastrian Amesha Spenta heptad through Ahura Mazda; majority view sees no direct dependence"
-status: "stub"
+status: "metadata"
 refs:
   - title: "Early Christian Doctrines"
     author: "Kelly, J.N.D."

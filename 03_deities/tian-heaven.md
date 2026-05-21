@@ -21,7 +21,7 @@ syncretic-edges:
     type: "scholarly-parallel"
     source: "Eno 1990; Puett 2002"
     notes: "Tian gradually replaces Shangdi as the supreme principle through the Zhou; the two terms overlap and partly distinguish in early Zhou usage."
-status: "stub"
+status: "metadata"
 refs:
   - title: "The Confucian Creation of Heaven"
     author: "Eno, Robert"
