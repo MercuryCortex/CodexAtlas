@@ -23,7 +23,7 @@ syncretic-edges:
   - target: "[[ishtar-akkadian]]"
     type: "scholarly-parallel"
     source: "Both combine sexuality and violence; functionally similar though distinct"
-status: "stub"
+status: "metadata"
 refs:
   - title: "Anat: Warrior Virgin of the Ancient Levant"
     author: "Walls, Neal H."

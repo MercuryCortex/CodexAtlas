@@ -34,7 +34,7 @@ related-themes:
   - "[[theme-zoroastrian-jewish-exchange]]"
   - "[[theme-satan-angra-mainyu-transfer]]"
   - "[[dualism-cosmic]]"
-status: "stub"
+status: "metadata"
 refs:
   - title: "A History of Zoroastrianism, vol. I-III"
     author: "Boyce, Mary (with Grenet for vol. III)"

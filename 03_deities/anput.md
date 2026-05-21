@@ -17,7 +17,7 @@ attributes: ["jackal-headed (female form)", "funerary iconography mirroring Anub
 attested-in: ["[[phase-1-010-book-of-the-dead]]"]
 equivalents: []
 syncretic-edges: []
-status: "stub"
+status: "metadata"
 refs:
   - title: "The Complete Gods and Goddesses of Ancient Egypt"
     author: "Wilkinson, Richard H."

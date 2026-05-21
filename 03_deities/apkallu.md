@@ -111,7 +111,7 @@ The figure of **Enmeduranki**, the seventh antediluvian *king* (paired with Utu-
 
 ## Hermetic Parallel
 
-**[[hermes-trismegistus]]** — the founding figure of the Hermetic tradition — occupies the structurally identical role: a primordial or antediluvian divine teacher who transmits cosmic wisdom before the corruption of the world. The Hermetic texts' claim to pre-flood origins (*prisca theologia* framing in the Asclepius and Kore Kosmou) echoes the Apkallu's temporal positioning precisely. The *nēmequ* (divine wisdom) transmitted by the Apkallu structurally parallels the Hermetic *gnōsis* — both are pre-cosmological divine knowledge held by a special category of mediating beings (fish-men / divine scribe) and transmitted to qualified humans through initiatory channels. Whether direct transmission is documentable or only [[parallel-motif]] is the live scholarly question; what is certain is that Berossus's Greek-language Oannes description reached the Hellenistic intellectual world that also produced the Hermetic corpus.
+**[[hermes-trismegistus]]** — the founding figure of the Hermetic tradition — occupies the structurally identical role: a primordial or antediluvian divine teacher who transmits cosmic wisdom before the corruption of the world. The Hermetic texts' claim to pre-flood origins (*prisca theologia* framing in the Asclepius and Kore Kosmou) echoes the Apkallu's temporal positioning precisely. The *nēmequ* (divine wisdom) transmitted by the Apkallu structurally parallels the Hermetic *gnōsis* — both are pre-cosmological divine knowledge held by a special category of mediating beings (fish-men / divine scribe) and transmitted to qualified humans through initiatory channels. Whether direct transmission is documentable or only a *parallel-motif* is the live scholarly question; what is certain is that Berossus's Greek-language Oannes description reached the Hellenistic intellectual world that also produced the Hermetic corpus.
 
 ## Connections (Provisional)
 
@@ -124,4 +124,4 @@ The figure of **Enmeduranki**, the seventh antediluvian *king* (paired with Utu-
 - **parallel-motif** → [[watchers-and-fallen-angels]] theme: the structural Apkallu ↔ Watchers inversion is the primary content of this theme node.
 - **parallel-motif** → [[antediluvian-civilization]] theme: Apkallu as the founding myth of antediluvian wisdom transmission — the Mesopotamian grounding of the vault's "before the flood" investigation cluster.
 - **parallel-motif** → [[flood-motif]]: the Apkallu era is defined by and bounded by the Flood; without the Flood, the sages' temporal role has no meaning.
-- **parallel-motif** → [[divine-wisdom]] (if node exists) / [[wisdom-as-cosmic-order]]: *nēmequ* as the divine wisdom substance transmitted from Enki through the Apkallu to the scribal tradition.
+- **parallel-motif** → [[wisdom-as-cosmic-order]]: *nēmequ* as the divine wisdom substance transmitted from Enki through the Apkallu to the scribal tradition.

@@ -31,7 +31,7 @@ syncretic-edges:
   - target: "anahita"
     type: "ancient-identification"
     source: "Berossus via Clement of Alexandria — Achaemenid period Anāhitā ≡ Aphrodite/Artemis."
-status: "stub"
+status: "metadata"
 refs:
   - title: "Greek Religion"
     author: "Burkert, Walter"
