@@ -638,6 +638,125 @@ window.STATE = STATE;
 window.setView = setView;
 
 // ============================================================
+// NAV HUB DROPDOWN  —  Phase 21A (2026-05-21)
+// ============================================================
+// The persistent sidebar was removed across the whole site so
+// the Forge backdrop image can extend to the viewport edges.
+// The brand glyph at top-left is now a floating button that
+// expands a dropdown menu mirroring the (now hidden) sidebar's
+// view list. Clicking an item calls the existing setView() so
+// every view-switch wire keeps working — this is pure chrome.
+//
+// Items are READ from the hidden nav.side at mount time, so any
+// future view added there automatically appears in the dropdown
+// (no second source of truth to keep in sync).
+(function mountNavHub() {
+  const trigger = document.getElementById('nav-hub-trigger');
+  const menu    = document.getElementById('nav-hub-menu');
+  if (!trigger || !menu) return;
+
+  function buildMenu() {
+    const html = [];
+    // Top-level items live directly under .nav-inner; the
+    // expandable "More views" group has them inside
+    // .nav-more-body. We render everything as a flat list with
+    // section headings for clarity.
+    const navInner = document.querySelector('nav.side .nav-inner');
+    if (!navInner) return;
+    // First pass — top-level items outside <details>
+    navInner.querySelectorAll(':scope > .item').forEach(srcItem => {
+      const view = srcItem.dataset.view;
+      const sym  = (srcItem.querySelector('.sym') || {}).textContent || '';
+      const lbl  = (srcItem.querySelector('.lbl') || {}).textContent || '';
+      html.push(
+        '<div class="nh-item" data-view="' + view + '" role="menuitem">' +
+          '<span class="nh-sym">' + sym + '</span>' +
+          '<span class="nh-lbl">' + lbl + '</span>' +
+        '</div>'
+      );
+    });
+    // Second pass — sections inside <details class="nav-more">
+    const moreBody = navInner.querySelector('.nav-more-body');
+    if (moreBody) {
+      html.push('<div class="nh-divider"></div>');
+      moreBody.childNodes.forEach(node => {
+        if (node.nodeType !== 1) return;
+        if (node.classList.contains('section-label')) {
+          const lbl = (node.querySelector('.lbl') || {}).textContent || '';
+          html.push('<div class="nh-section">' + lbl + '</div>');
+        } else if (node.classList.contains('item')) {
+          const view = node.dataset.view;
+          const sym  = (node.querySelector('.sym') || {}).textContent || '';
+          const lbl  = (node.querySelector('.lbl') || {}).textContent || '';
+          html.push(
+            '<div class="nh-item" data-view="' + view + '" role="menuitem">' +
+              '<span class="nh-sym">' + sym + '</span>' +
+              '<span class="nh-lbl">' + lbl + '</span>' +
+            '</div>'
+          );
+        }
+      });
+    }
+    menu.innerHTML = html.join('');
+    updateActive();
+  }
+
+  function updateActive() {
+    const cur = (STATE && STATE.view) || 'forge';
+    menu.querySelectorAll('.nh-item').forEach(el => {
+      el.classList.toggle('is-active', el.dataset.view === cur);
+    });
+  }
+
+  function open() {
+    menu.classList.add('is-open');
+    menu.setAttribute('aria-hidden', 'false');
+    trigger.setAttribute('aria-expanded', 'true');
+    updateActive();
+  }
+  function close() {
+    menu.classList.remove('is-open');
+    menu.setAttribute('aria-hidden', 'true');
+    trigger.setAttribute('aria-expanded', 'false');
+  }
+  function toggle(ev) {
+    if (ev) ev.stopPropagation();
+    if (menu.classList.contains('is-open')) close(); else open();
+  }
+
+  trigger.addEventListener('click', toggle);
+
+  menu.addEventListener('click', (ev) => {
+    const item = ev.target.closest('.nh-item');
+    if (!item) return;
+    const v = item.dataset.view;
+    if (v) {
+      try { setView(v); } catch (e) { console.warn('nav-hub setView failed', e); }
+    }
+    close();
+  });
+
+  // Close on outside click or Esc.
+  document.addEventListener('click', (ev) => {
+    if (!menu.classList.contains('is-open')) return;
+    if (menu.contains(ev.target) || trigger.contains(ev.target)) return;
+    close();
+  });
+  document.addEventListener('keydown', (ev) => {
+    if (ev.key === 'Escape' && menu.classList.contains('is-open')) close();
+  });
+
+  buildMenu();
+  // Re-build if the sidebar ever changes structure (e.g. future
+  // view added). Cheap MutationObserver, no perf concern.
+  const navInnerEl = document.querySelector('nav.side .nav-inner');
+  if (navInnerEl && 'MutationObserver' in window) {
+    const mo = new MutationObserver(() => buildMenu());
+    mo.observe(navInnerEl, { childList: true, subtree: true });
+  }
+})();
+
+// ============================================================
 // DETAIL
 // ============================================================
 function renderDetail() {

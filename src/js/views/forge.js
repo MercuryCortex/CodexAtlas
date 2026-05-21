@@ -826,9 +826,22 @@
     // viewport when scale = 0.10.
     const bgImage = document.createElement('img');
     bgImage.className = 'forge-bg-image';
-    bgImage.src = '_assets/bg/bg-a01.jpg?v=20260521';
+    bgImage.src = '_assets/bg/bg-a02.jpg?v=20260521';
     bgImage.alt = '';
     bgImage.draggable = false;
+    // Cache aspect ratio so cover-fit sizing in syncBackgroundImage
+    // preserves the image proportions (BG A02 is 2668×2000 ≈ 4:3,
+    // not square — the previous square-stretch behaviour squished
+    // it). Defaulted to 4:3 until onload fires; recomputed once
+    // the natural dimensions are available.
+    bgImage._bgAspect = 4 / 3;
+    bgImage.addEventListener('load', () => {
+      if (bgImage.naturalWidth > 0 && bgImage.naturalHeight > 0) {
+        bgImage._bgAspect = bgImage.naturalWidth / bgImage.naturalHeight;
+        // Force a re-sync so the very first paint uses the real aspect.
+        if (typeof syncBackgroundImage === 'function') syncBackgroundImage();
+      }
+    });
     stage.appendChild(bgImage);
 
     const canvas = document.createElement('canvas');
@@ -2727,29 +2740,46 @@
         bgImage.style.opacity = '0';
         return;
       }
-      // Size: image side = MAX(vp.w, vp.h) at 7% zoom-out.
-      // The "fit always the larger window x or y" spec John gave —
-      // image matches the larger viewport axis edge-to-edge, the
-      // smaller axis overflows (gets cropped). Image is a 2048×
-      // 2048 square so on a non-square viewport the LARGER axis
-      // is matched and the smaller axis sees image bleed past.
+      // Size: COVER-FIT the viewport at gizmo 10%, preserving the
+      // image's natural aspect ratio. Phase 21A (2026-05-21) —
+      // BG A02 is 2668×2000 (4:3), not square. Previously the
+      // image was rendered as a square box (`width === height`)
+      // which stretched non-square images and left visible gaps
+      // on whichever axis didn't match. Now we compute the COVER
+      // box (the smallest rect containing the viewport that also
+      // matches the image aspect) and scale it linearly with
+      // zoom-pct.
       //
-      // Phase 20J (2026-05-21) — floor the SIZING zoomPct at 0.10
-      // so the image stays at fill-coverage when the user zooms
-      // BELOW 7% (the camera allows down to absolute scale 0.05,
-      // which depending on the viewport can map to gizmo
-      // percentages well below 7%). Opacity already clamps at
-      // 1.0 below 7%; sizing now matches.
+      // Phase 20J floor: sizeZoomPct = max(0.10, zoomPct) — image
+      // stays at fill-coverage when the user is below the gizmo's
+      // 10% floor (BG opacity is at 1.0 throughout that band).
       const sizeZoomPct = Math.max(0.10, zoomPct);
-      const maxVp       = Math.max(vp.w, vp.h);
-      const imgSize     = (maxVp / 0.10) * sizeZoomPct;
+      const aspect      = bgImage._bgAspect || (4 / 3);
+      const vpAspect    = vp.w / Math.max(1, vp.h);
+      // Cover box at gizmo 10%: width / height each ≥ viewport,
+      // and aspect ratio = source image aspect ratio.
+      let coverW, coverH;
+      if (aspect >= vpAspect) {
+        // image more landscape than viewport → match height,
+        // overflow width
+        coverH = vp.h;
+        coverW = vp.h * aspect;
+      } else {
+        // image more portrait than viewport → match width,
+        // overflow height
+        coverW = vp.w;
+        coverH = vp.w / aspect;
+      }
+      const scaleFactor = sizeZoomPct / 0.10;
+      const imgW        = coverW * scaleFactor;
+      const imgH        = coverH * scaleFactor;
       // Anchor: world (0, 0) → screen.
       const centerScreen = camera.worldToScreen(0, 0, vp);
       bgImage.style.opacity = bgFade.toFixed(3);
-      bgImage.style.width   = imgSize.toFixed(1) + 'px';
-      bgImage.style.height  = imgSize.toFixed(1) + 'px';
-      bgImage.style.left    = (centerScreen.x - imgSize / 2).toFixed(1) + 'px';
-      bgImage.style.top     = (centerScreen.y - imgSize / 2).toFixed(1) + 'px';
+      bgImage.style.width   = imgW.toFixed(1) + 'px';
+      bgImage.style.height  = imgH.toFixed(1) + 'px';
+      bgImage.style.left    = (centerScreen.x - imgW / 2).toFixed(1) + 'px';
+      bgImage.style.top     = (centerScreen.y - imgH / 2).toFixed(1) + 'px';
     }
 
     function syncLabelPositions() {

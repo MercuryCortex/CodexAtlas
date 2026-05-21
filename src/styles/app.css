@@ -350,6 +350,123 @@ body {
 }
 body.footer-collapsed  { --footer-h: 0px; }
 body.nav-collapsed     { --eff-nav-w:    var(--nav-w-collapsed); }
+/* Phase 21A (2026-05-21) — sidebar fully hidden across the
+   whole site. Replaces nav-collapsed as the default. Setting
+   --eff-nav-w: 0 lets every left-anchored element (main.canvas,
+   footer, ...) snap to the viewport edge so the Forge BG image
+   has nothing reserving width on its left. */
+body.nav-hidden        { --eff-nav-w: 0; --nav-w: 0px; }
+body.nav-hidden nav.side,
+body.nav-hidden .side-tab { display: none !important; }
+
+/* ── Floating nav hub trigger + dropdown (Phase 21A, 2026-05-21) ── */
+.nav-hub-trigger {
+  position: fixed;
+  top: 14px; left: 14px;
+  width: 36px; height: 36px;
+  border-radius: 10px;
+  border: 1px solid rgba(212,165,90,0.22);
+  background: rgba(13,17,25,0.78);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  color: var(--gold, #d4a55a);
+  font-size: 18px;
+  line-height: 1;
+  cursor: pointer;
+  z-index: 250;
+  transition: transform 140ms cubic-bezier(0.2, 0.8, 0.2, 1),
+              border-color 140ms ease, background 140ms ease;
+  display: inline-flex; align-items: center; justify-content: center;
+  padding: 0;
+}
+.nav-hub-trigger:hover {
+  border-color: var(--gold, #d4a55a);
+  background: rgba(20,26,38,0.92);
+}
+.nav-hub-trigger[aria-expanded="true"] {
+  background: rgba(20,26,38,0.96);
+  border-color: var(--gold, #d4a55a);
+}
+.nav-hub-trigger[aria-expanded="true"] .nav-hub-glyph {
+  transform: rotate(180deg);
+}
+.nav-hub-glyph {
+  display: inline-block;
+  transition: transform 220ms cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+/* The menu itself — floats DOWN from under the trigger.
+   Hidden by default; .is-open expands it with a smooth scale +
+   opacity transition that reads like it grew from the trigger. */
+.nav-hub-menu {
+  position: fixed;
+  top: 56px;       /* just below the 36-px trigger + its 14-px top inset */
+  left: 14px;
+  width: 240px;
+  max-height: calc(100vh - 80px);
+  overflow-y: auto;
+  border-radius: 12px;
+  border: 1px solid rgba(212,165,90,0.22);
+  background: rgba(13,17,25,0.88);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  box-shadow: 0 8px 32px rgba(0,0,0,0.45);
+  padding: 8px 0;
+  z-index: 240;
+  /* Hidden state */
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(-8px) scale(0.96);
+  transform-origin: 28px -16px;  /* anchor near the trigger glyph */
+  transition: opacity 160ms ease, transform 200ms cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+.nav-hub-menu.is-open {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(0) scale(1);
+}
+.nav-hub-menu .nh-section {
+  font-family: var(--mono, "JetBrains Mono", Menlo, monospace);
+  font-size: 10px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--text-2, #9099a8);
+  padding: 10px 14px 4px;
+}
+.nav-hub-menu .nh-item {
+  display: flex; align-items: center; gap: 10px;
+  padding: 8px 14px;
+  font-family: var(--sans, Inter, sans-serif);
+  font-size: 13px;
+  color: var(--text-1, #e5e7eb);
+  cursor: pointer;
+  user-select: none;
+  border-left: 2px solid transparent;
+  transition: background 90ms ease, border-color 90ms ease, color 90ms ease;
+}
+.nav-hub-menu .nh-item:hover {
+  background: rgba(212,165,90,0.10);
+  border-left-color: var(--gold, #d4a55a);
+  color: var(--gold-1, #e8c889);
+}
+.nav-hub-menu .nh-item.is-active {
+  border-left-color: var(--gold, #d4a55a);
+  color: var(--gold-1, #e8c889);
+}
+.nav-hub-menu .nh-sym {
+  display: inline-block;
+  width: 18px; text-align: center;
+  color: var(--text-2, #9099a8);
+  font-size: 14px;
+}
+.nav-hub-menu .nh-item:hover .nh-sym,
+.nav-hub-menu .nh-item.is-active .nh-sym {
+  color: var(--gold, #d4a55a);
+}
+.nav-hub-menu .nh-divider {
+  height: 1px; margin: 6px 12px;
+  background: rgba(212,165,90,0.10);
+}
 body.detail-collapsed  { --eff-detail-w: var(--detail-w-collapsed); }
 
 /* BRAND-SECTION (lives at top of left nav) */
