@@ -2339,12 +2339,15 @@
         const grad = document.createElementNS(SVG_NS, 'linearGradient');
         grad.setAttribute('id', 'forge-hull-divgrad-' + i);
         grad.setAttribute('gradientUnits', 'userSpaceOnUse');
-        // 4 stops: fade-in 0→15%, opaque 15→85%, fade-out 85→100%.
+        // Phase 20C (2026-05-21) — separator color faint cool-blue
+        // + wider fade zone (20% on each end, was 15%). Fully
+        // opaque in the central 60% of the line, ramps to 0 in
+        // the outer 20% on each side.
         const stopColors = [
-          ['0%',   'stop-color:#fff;stop-opacity:0'],
-          ['15%',  'stop-color:#fff;stop-opacity:0.55'],
-          ['85%',  'stop-color:#fff;stop-opacity:0.55'],
-          ['100%', 'stop-color:#fff;stop-opacity:0'],
+          ['0%',   'stop-color:#6f8aaf;stop-opacity:0'],
+          ['20%',  'stop-color:#6f8aaf;stop-opacity:0.55'],
+          ['80%',  'stop-color:#6f8aaf;stop-opacity:0.55'],
+          ['100%', 'stop-color:#6f8aaf;stop-opacity:0'],
         ];
         for (const [off, style] of stopColors) {
           const s = document.createElementNS(SVG_NS, 'stop');
