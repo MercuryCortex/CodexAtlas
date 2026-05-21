@@ -22,6 +22,27 @@ influenced-by: ["Proto-Indo-Iranian poetic and ritual tradition"]
 influences: ["[[phase-2-004-yasna-younger-avesta]]", "Second Temple Jewish angelology and eschatology (via Persian period)", "Christian eschatology (via Jewish intermediaries)"]
 deities-mentioned: ["[[ahura-mazda]]", "[[angra-mainyu-ahriman]]", "[[spenta-mainyu]]", "[[the-amesha-spentas]]"]
 events-context: []
+hub-edges:
+  - target: "persian-period-injection"
+    type: "founding-text-of-source-tradition"
+    source: "Boyce 1982 *History of Zoroastrianism* vol. II; Collins 1998 *The Apocalyptic Imagination*; Insler 1975 *The Hymns of Zarathustra* — the Gathas (~1200-1000 BCE Old Avestan, per Boyce's linguistic dating) are the founding text of the Zoroastrian tradition that subsequently injects six doctrinal channels (dualism + Satan + angelology + demonology + resurrection + messianism) into Second Temple Judaism during the Achaemenid period. See [[persian-period-injection]]"
+    notes: "Cross-lens: 02_documents → 06_themes. The Gathas establish the Asha/Druj cosmic-opposition + Ahura Mazda supreme-creator + Saoshyant eschatological-savior templates that subsequently shape Judaism + Christianity + Islam"
+  - target: "theme-zoroastrian-jewish-exchange"
+    type: "founding-text-of-source-tradition"
+    source: "Boyce 1975-1991 *History of Zoroastrianism* (3 vols.); Shaked 1984; Hultgård 1998 — companion to [[persian-period-injection]]; the Gathas as source-text of the six-channel exchange"
+    notes: "Cross-lens: 02_documents → 06_themes"
+  - target: "asura-deva-inversion"
+    type: "founding-text-enacting-inversion"
+    source: "West 2007 *Indo-European Poetry and Myth* ch. 7; Boyce 1975; Skjærvø 1993 EIr 'Daēva'; the Gathas themselves (Yasna 30.6 'choosing the worst mind', 32.3-4 'daēvas choosing the worst thought', 44.20) — the Gathas are the FOUNDING TEXT enacting the asura-deva inversion: Zarathustra's explicit condemnation of *daēva*-worship + elevation of the *ahura* class. The condemnation IS the inversion. See [[asura-deva-inversion]]"
+    notes: "MASSIVE-WIN: the Gathas contain the OLDEST DOCUMENTED CASE of a tradition consciously inverting its own past's sacred vocabulary — direct first-person prophetic testimony to the inversion in progress. Cross-lens: 02_documents → 06_themes"
+  - target: "theme-zoroastrian-cosmogony"
+    type: "founding-text-of-Gathic-cosmogony"
+    source: "Boyce 1975 ch. 2-3; Zaehner 1955 *Zurvan*; Skjærvø 2011 *Zoroastrian Theology* — the Gathas establish the Gathic-stratum cosmogony (the twin spirits chose at the cosmic foundation between Truth and the Lie — Yasna 30:3-5) that the Pahlavi Bundahishn subsequently systematizes into the 12-millennia schema. See [[theme-zoroastrian-cosmogony]]"
+    notes: "Cross-lens: 02_documents → 06_themes"
+  - target: "theme-soma-haoma-eucharist"
+    type: "Iranian-branch-textual-witness"
+    source: "Jamison & Brereton 2014 *Rigveda* (for the Vedic-Iranian PII context); Falk 1989 *Bulletin SOAS* — though the Gathas contain Zarathustra's possible critique of haoma excess (Yasna 32:14 — debated reading), the Gathic stratum's preservation of the *haoma*-cognate vocabulary documents the Iranian-branch retention of the PII *\\*sauma-* sacred-drink tradition. See [[theme-soma-haoma-eucharist]]"
+    notes: "Cross-lens: 02_documents → 06_themes. The Gathic critique-and-retention pattern is itself evidence of the ritual's centrality"
 status: "full"
 preservation: "17 hymns embedded within the Yasna liturgy (Y.28–34, 43–46, 47–50, 51, 53). Composed orally in Old Avestan, transmitted in priestly memorization for ~1500 years before being written down. The first surviving manuscript is the Pahlavi Yasna codex K5 (Copenhagen, 1323 CE) and J2 (Oxford); the oldest dated Avestan manuscript is from 1288 CE (Yasna sade)."
 refs:

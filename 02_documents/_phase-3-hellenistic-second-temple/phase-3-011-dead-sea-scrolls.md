@@ -22,6 +22,22 @@ influenced-by: ["1 Enoch (extensive Aramaic mss at Qumran)", "Jubilees (15+ Hebr
 influences: ["Early Christianity (shared milieu — John the Baptist's wilderness, dualistic vocabulary in John, Pauline 'sons of light')", "Later Jewish mysticism (Hekhalot literature has Qumran-resonant elements)", "the *Two Ways* moral-dualistic tradition that subsequently informs [[phase-4-061-didache|*Didache*]] 1–6 (two-ways framing), [[phase-4-064-epistle-of-barnabas|*Epistle of Barnabas*]] 18–20 (two-angels framing closer to 1QS), and [[phase-4-065-shepherd-of-hermas|*Shepherd of Hermas*]] *Mandate* 6 (internalized two-angels moral psychology) — the Qumran *Treatise of the Two Spirits* (1QS 3:13–4:26) is the closest Jewish parallel and probable common-substrate source"]
 deities-mentioned: ["[[yahweh]]", "[[belial]]", "[[melchizedek]]", "[[michael-archangel]]"]
 events-context: ["Founding of Qumran community (~-150/-140)", "Roman destruction of Qumran (-68 CE)", "Discovery 1947–1956"]
+hub-edges:
+  - target: "theme-asha-druj-cosmic-opposition"
+    type: "Jewish-parallel-text-to-cosmic-axis"
+    source: "Alexander 2010 'The Dualism of the Two Spirits in the Community Rule' (the definitive analysis of 1QS 3:13-4:26); Collins 1998 *The Apocalyptic Imagination* — the Community Rule's Two-Spirits tractate (1QS 3:13-4:26) is the closest Jewish-sectarian textual parallel to the Zoroastrian Asha/Druj cosmic opposition. The two Spirits — Spirit of Truth + Spirit of Deceit — divide all humanity, each commanding an army, locked in cosmic conflict ending at the appointed eschatological moment. Alexander 2010: the structural parallel is too close to be coincidence. See [[theme-asha-druj-cosmic-opposition]]"
+    notes: "MASSIVE-WIN: the Qumran community produces the quasi-Zoroastrian dualist text *inside* Second Temple Judaism — the documentary evidence of the Persian-period injection's Channel 1 (cosmic dualism) operating in a specific Jewish sectarian community. Cross-lens: 02_documents → 06_themes"
+  - target: "persian-period-injection"
+    type: "documentation-of-injection-channels"
+    source: "Alexander 2010; Boyce 1982; Collins 1998 — Qumran corpus documents Persian-period injection across multiple channels: Two Spirits (Channel 1 dualism); Belial-vs-Prince-of-Light (Channel 2 adversary); Michael + Melchizedek heavenly figures (Channel 4 angelology); War Scroll eschatology (Channel 5). See [[persian-period-injection]]"
+    notes: "Cross-lens: 02_documents → 06_themes"
+  - target: "theme-zoroastrian-jewish-exchange"
+    type: "documentary-evidence-of-exchange"
+    source: "Boyce 1975-1991; Shaked 1984; Frey 1997 *Different Patterns of Dualistic Thought in the Qumran Library*; Charlesworth 1969 *A Critical Comparison of the Dualism in 1QS 3:13-4:26 and the Dualism Contained in the Gospel of John* — Qumran sectarian writings are the densest single documentary evidence of the six-channel Zoroastrian-Jewish exchange's operation in a specific Jewish community. See [[theme-zoroastrian-jewish-exchange]]"
+  - target: "theme-satan-angra-mainyu-transfer"
+    type: "intermediate-textual-evidence-of-transfer"
+    source: "Collins 1998; Russell 1977 *The Devil*; Alexander 2010 — Qumran's Belial (commander of the Army of Darkness in 1QM War Scroll; ruler of the lot of darkness in 1QS) is the textually-documented intermediate form between Hebrew Bible's *ha-satan* (court functionary) and developed Christian Satan (cosmic adversary). See [[theme-satan-angra-mainyu-transfer]]"
+    notes: "Cross-lens: 02_documents → 06_themes. The Qumran corpus is the missing-link documentary evidence of the cosmic-adversary transformation in progress"
 status: "full"
 preservation: "~1,000 distinct manuscripts (some near-complete, most fragmentary) found in eleven caves at Qumran between 1947 and 1956. Sectarian core texts: **Community Rule** (1QS + 4Q255–264, ~11 copies); **War Scroll** (1QM + 4Q491–496, ~7 copies); **Hodayot / Thanksgiving Hymns** (1QHᵃ + 4Q427–432, ~8 copies); **Damascus Document** (CD + 4Q266–273, ~10 copies); **Pesher commentaries** on Habakkuk, Nahum, Psalms; **Temple Scroll** (11Q19); plus *all* Hebrew Bible books except Esther. Stored in jars in caves on the cliffs above Khirbet Qumran. Now housed primarily at the Shrine of the Book (Israel Museum, Jerusalem) and the Rockefeller Museum."
 refs:

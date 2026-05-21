@@ -22,6 +22,25 @@ influenced-by: ["[[phase-2-002-gathas-of-zarathustra]]", "earlier Indo-Iranian p
 influences: ["Second Temple Jewish angelology", "Manichaean dualism (Phase 4)", "Pahlavi-period Bundahishn and Denkard"]
 deities-mentioned: ["[[ahura-mazda]]", "[[angra-mainyu-ahriman]]", "[[spenta-mainyu]]", "[[mithra-zoroastrian]]", "[[anahita]]", "[[the-amesha-spentas]]"]
 events-context: []
+hub-edges:
+  - target: "persian-period-injection"
+    type: "elaborated-source-text-of-injection"
+    source: "Boyce 1982 vol. II; Collins 1998; Hultgård 1998 — the Younger Avesta (Yasna + Yashts + Visperad + Vendidad, composed/redacted ~-1000 to -400) elaborates the Gathic cosmogony into the detailed liturgical + demonological + angelological architecture that the Achaemenid-period exchange transmits to Judaism. Yasht 10 (Mihr Yašt) restores Mithra; Yasht 19 (Zamyad) develops the Saoshyant template; Vendidad codifies purity + demonology. See [[persian-period-injection]]"
+    notes: "Cross-lens: 02_documents → 06_themes"
+  - target: "theme-zoroastrian-jewish-exchange"
+    type: "elaborated-source-text-of-exchange"
+    source: "Boyce 1975-1991; Shaked 1984 — companion to persian-period-injection edge"
+  - target: "asura-deva-inversion"
+    type: "elaborated-canonization-of-inversion"
+    source: "Skjærvø 1993 EIr 'Daēva'; the Vendidad's Vidēvdad 10.9 NAMES Indra by name as a *daēva* alongside Saurva + Naonhaithya (= the Vedic Nāsatyas/Aśvins) — the Younger-Avestan crystallization of the Gathic-era inversion. See [[asura-deva-inversion]]"
+    notes: "MASSIVE-WIN: Vendidad 10.9 is the *single most specifically targeted* moment of the asura-deva inversion — Indra, the greatest god of the Rigveda, named explicitly as a demon. Cross-lens: 02_documents → 06_themes"
+  - target: "theme-zoroastrian-cosmogony"
+    type: "elaborated-canonization-of-cosmogony"
+    source: "Boyce 1975 ch. 5-6; Skjærvø 2011 — the Younger Avesta's Yashts + Vendidad develop the Gathic cosmogony into the 12-millennia schema later systematized in the Pahlavi Bundahishn. See [[theme-zoroastrian-cosmogony]]"
+  - target: "theme-soma-haoma-eucharist"
+    type: "Avestan-haoma-corpus"
+    source: "Boyce 1975 ch. on the Haoma Yašt; Yasna 9-11 (the Haoma Yašt) — the Younger Avesta's Haoma Yašt is the canonical Avestan-tradition documentation of haoma-as-deity + haoma-as-ritual-drink. The Yasna liturgy still uses haoma (Ephedra) in modern Parsi ritual. See [[theme-soma-haoma-eucharist]]"
+    notes: "Cross-lens: 02_documents → 06_themes. The Haoma Yašt is the Iranian-branch parallel to Rigveda Mandala 9's Soma corpus"
 status: "full"
 preservation: "The Yasna (72-chapter liturgy enclosing the Gathas) plus Yashts (21 hymns to individual yazatas), Visperad (extension liturgy), and Vendidad (purity code) survive in priestly transmission. The Sasanian Great Avesta (21 nasks) is largely lost; what survives is the liturgical canon used in actual ritual. Oldest extant Avestan manuscript: K7a (Copenhagen, 1278 CE) and J2 / K5 (Yasna with Pahlavi gloss, 1323 CE)."
 refs:

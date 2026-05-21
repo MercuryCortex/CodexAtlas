@@ -22,6 +22,23 @@ influenced-by: ["[[phase-3-002-plato-dialogues]]", "Middle Platonism (Numenius)"
 influences: ["[[phase-4-020-iamblichus-on-the-mysteries]]", "[[phase-4-021-proclus-elements-of-theology]]", "Augustine (Confessions 7)", "Pseudo-Dionysius (apophatic theology)", "Renaissance Platonism (Ficino's translation 1492)"]
 deities-mentioned: ["[[the-one-plotinus]]", "[[nous-plotinus]]", "[[the-world-soul]]"]
 events-context: []
+hub-edges:
+  - target: "soul-exile-longing"
+    type: "founding-text-of-Plotinian-version"
+    source: "Plotinus *Enneads* I.6 'On Beauty' + IV.8 'On the Soul's Descent into Body'; Jonas 1963 *The Gnostic Religion* ch. 'Gnosticism, Existentialism, and Nihilism'; Sells 1994; Armstrong Loeb edition — Enneads I.6 + IV.8 are the founding philosophical-prose texts of the soul-exile-longing pattern in the Plotinian register: soul-descent (*katábasis*) via daring (*tolma*), entanglement in matter, return (*epistrophē*) via love of beauty + remembrance (*anamnesis*). The soul retains its upper part in Nous even as the lower self becomes entangled — the longing IS the homeward movement. See [[soul-exile-longing]]"
+    notes: "Cross-lens: 02_documents → 06_themes"
+  - target: "hermetic-transmission-chain"
+    type: "Phase-1-Alexandrian-canonical-text"
+    source: "Yates 1964 *Giordano Bruno and the Hermetic Tradition*; Fowden 1986 *The Egyptian Hermes*; Copenhaver 1992 *Hermetica* — the Enneads (~253-270 CE composition; Porphyry's edition ~301 CE) is the canonical philosophical text of Phase 1 of the hermetic-transmission-chain — the Plotinian systematization that the Corpus Hermeticum popularizes in Egyptian-priestly-revelation form. Ficino's 1492 Latin translation launches the Renaissance Platonist revival (Phase 3). See [[hermetic-transmission-chain]]"
+    notes: "Cross-lens: 02_documents → 06_themes. The Enneads + Corpus Hermeticum are the philosophical / esoteric twin-canons of the Alexandrian Phase 1 synthesis"
+  - target: "third-century-collision-zone"
+    type: "primary-text-of-3rd-c-synthesis-window"
+    source: "Plotinus *Enneads* II.9 'Against the Gnostics' (~250 CE); Porphyry *Vita Plotini* §16; Turner 2001; Burns 2014 *Apocalypse of the Alien God* — *Enneads* II.9 is the *single most documented* 3rd-century anti-Gnostic text in Greek philosophical literature. The treatise targets specific Sethian Gnostic books (*Allogenes*, *Zostrianos* — both preserved at Nag Hammadi) that were circulating in Plotinus's Roman school ~263-268 CE. See [[third-century-collision-zone]]"
+    notes: "MASSIVE-WIN: the Enneads + Sethian-Gnostic Nag Hammadi corpus together provide bidirectional documentary evidence of the 3rd-century Platonist-Gnostic confrontation — *both sides* of the dispute survived. Cross-lens: 02_documents → 06_themes"
+  - target: "neoplatonic-henosis"
+    type: "founding-text-of-mystical-union-tradition"
+    source: "Plotinus *Enneads* VI.9 'On the Good, or the One'; Sells 1994 *Mystical Languages of Unsaying*; McGinn 1991 *The Foundations of Mysticism* — *Enneads* VI.9 ('the flight of the alone to the Alone') is the founding text of Western mystical-union theology. Porphyry's *Vita Plotini* §23 records Plotinus achieved *henosis* with the One four times in his lifetime. The Enneads VI.9 vocabulary becomes the load-bearing template for Sufi *fanā'* + Kabbalistic *devekut* + Christian *theosis* + Hindu *samādhi*. See [[neoplatonic-henosis]]"
+    notes: "Cross-lens: 02_documents → 06_themes. MASSIVE-WIN: a single Plotinian treatise (VI.9, ~30 pages) becomes the philosophical-prose template for the most-cross-traditionally-recurring mystical-experience formulation in world religion"
 status: "full"
 preservation: "Continuous Byzantine transmission. Porphyry arranged Plotinus' 54 treatises into six sets of nine (*enneads*) and published them ~301 CE, prefaced by his *Life of Plotinus*. Greek manuscripts begin in the 10th century. Marsilio Ficino's Latin translation (1492) launched the Renaissance Platonist revival."
 refs:

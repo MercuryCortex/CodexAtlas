@@ -22,6 +22,22 @@ influenced-by: ["[[phase-2-005-hebrew-bible-j-source]]", "[[phase-3-002-plato-di
 influences: ["[[phase-4-023-irenaeus-against-heresies]] (polemicized against)", "later Sethian liturgical corpus"]
 deities-mentioned: ["[[the-monad-gnostic]]", "[[barbelo]]", "[[sophia-gnostic]]", "[[yaldabaoth]]", "[[the-pleroma]]"]
 events-context: ["[[event-nag-hammadi-discovery]]"]
+hub-edges:
+  - target: "theme-mesopotamian-gnostic-transmission"
+    type: "load-bearing-Sethian-text"
+    source: "King 2006 *The Secret Revelation of John*; Pearson 1990 *Gnosticism, Judaism, and Egyptian Christianity*; Pearson 1984/2007; Waldstein & Wisse 1995 — the *Apocryphon of John* is the load-bearing Sethian Gnostic text documenting the Marduk-Tiamat ↔ Yaldabaoth-Sophia cosmogonic-slot inversion (Chain 2) + the Hokmah-Sophia transmission line (Chain 3) + the Babylonian-astrological seven-archon system (Chain 5). See [[theme-mesopotamian-gnostic-transmission]]"
+    notes: "MASSIVE-WIN: a single Sethian text demonstrates the *multi-chain concurrent operation* of the Mesopotamian → Gnostic transmission. Cross-lens: 02_documents → 06_themes"
+  - target: "theme-egyptian-gnostic-transmission"
+    type: "load-bearing-Sethian-text"
+    source: "King 2006; Pearson 1990; Frankfurter 1998 *Religion in Roman Egypt* — Apocryphon of John's Alexandrian/Egyptian provenance (preserved in Coptic, found at Nag Hammadi in Egyptian monastic context) + its philosophical Middle-Platonist substrate document the Egyptian-end of the Egyptian → Gnostic transmission. See [[theme-egyptian-gnostic-transmission]]"
+    notes: "Cross-lens: 02_documents → 06_themes. The dual-substrate (Mesopotamian + Egyptian) convergence in Sophia's character is exemplified textually in this work"
+  - target: "soul-exile-longing"
+    type: "Sethian-text-of-pneuma-in-hyle"
+    source: "Jonas 1963 *The Gnostic Religion*; King 2006 — Apocryphon of John details how Sophia's emanated power (*pneuma*) is stolen by Yaldabaoth and breathed into Adam — the spark of divinity now inside a body built by an archon who does not know where the spark came from. The Sethian formulation is the harshest version of the exile-longing pattern: the soul as alien-occupied territory. See [[soul-exile-longing]]"
+    notes: "Cross-lens: 02_documents → 06_themes. Sophia's longing for the divine realm is the force that keeps the divine spark alive in human beings — the cosmic-mother form of the exile-longing pattern"
+  - target: "theme-two-powers-in-heaven"
+    type: "Gnostic-text-of-binitarian-cosmology"
+    source: "Boyarin 2004 *Border Lines*; Segal 1977 *Two Powers in Heaven*; King 2006 — the Sethian cosmogony (Monad + Barbelo-Mother + Christ-Autogenes) is one of the developed binitarian/triadic divine-cosmologies that the rabbinic 'two powers' polemic responds to. The Monad-Barbelo-Christ structure is structurally parallel to the Two-Powers binitarianism Boyarin documents in Second Temple Judaism. See [[theme-two-powers-in-heaven]]"
 status: "full"
 preservation: "Four Coptic copies — three from Nag Hammadi (NHC II, III, IV) and one from the Berlin Codex (BG 8502,2) acquired 1896. Survives in a 'short recension' (BG, NHC III) and 'long recension' (NHC II, IV) — the long version is roughly one-third longer and includes the Melothesia (a treatise on the demonic origin of body parts) and a long monologue of Pronoia at the end. Comparison gives an exceptionally clear window onto Gnostic textual transmission."
 refs:
