@@ -33,7 +33,7 @@ syncretic-edges:
   - target: "guanyin"
     type: "scholarly-parallel"
     source: "Yü 2001 — already partially paralleled via Avalokitesvara; Tara and Guanyin are the Tibetan and Chinese forms of the cosmic-feminine-compassion principle"
-status: "stub"
+status: "metadata"
 refs:
   - title: "In Praise of Tara: Songs to the Saviouress"
     author: "Wilson, Martin"
@@ -68,7 +68,7 @@ Indian Tantric Buddhist Tārā texts from ~7th c. onward. Tibetan adoption: Atī
 ## Cross-tradition identifications
 - **[[avalokitesvara]]** — *ancient-identification*: Tibetan tradition of origin from his tear.
 - **[[guanyin]]** (Chinese feminized Avalokiteśvara) — *parallel-motif*: East Asian Mahāyāna parallel feminine compassion-deity.
-- **[[mary-mother]]** in Christian tradition — *parallel-motif* (no historical link): structurally parallel mother-figure of mercy.
+- **[[mary-theotokos]]** in Christian tradition — *parallel-motif* (no historical link): structurally parallel mother-figure of mercy.
 
 ## Refs
 1. Beyer, S. (1973). *Tara: The Feminine Divine*. UC Press.
