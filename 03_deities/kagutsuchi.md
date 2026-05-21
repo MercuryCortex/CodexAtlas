@@ -29,7 +29,7 @@ syncretic-edges:
     type: "structural-parallel"
     source: "Ashkenazi, Michael (2003). Japanese Mythology. ABC-CLIO."
     notes: "Both are fire/forge deities associated with creation and physical deformity or violence in their origin stories (Hephaestus thrown from Olympus; Kagutsuchi killed at birth). The parallel is typological — fire deity as simultaneously creative and destructive — with no transmission relationship."
-status: "stub"
+status: "metadata"
 refs:
   - title: "The Kojiki: Records of Ancient Matters"
     author: "Chamberlain, Basil Hall (trans.)"

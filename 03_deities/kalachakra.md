@@ -29,7 +29,7 @@ syncretic-edges:
     type: "scholarly-parallel"
     source: "Newman 1987; Hinnells, *Mithraic Studies* (1975) — Roman Mithras's cosmic-time-cycle iconography (tauroctony's astrological dating) parallels Kālacakra's astrological-cosmogonic time-mandala"
     notes: "Cosmic-time-mandala structural parallel"
-status: "stub"
+status: "metadata"
 refs:
   - title: "The Kalachakra Tantra"
     author: "Newman, John R."

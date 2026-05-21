@@ -20,7 +20,7 @@ syncretic-edges:
   - target: "cupid-roman"
     type: "parallel-motif"
     source: "Both are child-deity sons of divine mothers (Venus / Brahma-lineage), armed with flower-arrows or gold/lead arrows, causing erotic compulsion. No documented transmission; parallel emergence. Zimmer, Heinrich (1951). Philosophies of India — discusses Kama's cosmological role."
-status: "stub"
+status: "metadata"
 refs:
   - title: "Philosophies of India"
     author: "Zimmer, Heinrich (ed. Joseph Campbell)"

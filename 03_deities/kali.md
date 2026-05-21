@@ -16,7 +16,7 @@ syncretic-edges:
   - target: "durga"
     type: "ancient-identification"
     source: "Devi Mahatmya: Kālī emerges from Durgā's forehead in episode 3; subsequent tradition treats as related manifestations"
-status: "stub"
+status: "metadata"
 refs:
   - title: "Hindu Goddesses"
     author: "Kinsley, David"
