@@ -10,7 +10,7 @@ period-active-latest: 2025
 domains: ["founder of Tibetan Buddhism (Nyingma tradition)", "second Buddha (Tibetan honorific)", "concealer of terma"]
 gender: "masculine"
 role: "deified-historical-person; revered as the founder of Tibetan Buddhism and as the principal source of the Nyingma school's revelation-tradition (terma)"
-attested-in: ["Tibetan biographical literature (the *Padma Kathang* cycle, ~12th–14th c., a hagiographic compilation)", "[[phase-5-029-bardo-thodol]] (attributed)", "[[phase-5-032-longchenpa-dzogchen]] (citing Padmasambhava as terma-source)"]
+attested-in: ["Tibetan biographical literature (the *Padma Kathang* cycle, ~12th–14th c., a hagiographic compilation)", "[[phase-5-029-bardo-thodol]] (attributed)", "Longchenpa's Dzogchen corpus (14th c., citing Padmasambhava as terma-source — no doc node yet)"]
 equivalents: []
 syncretic-edges:
   - target: "hermes-trismegistus"
@@ -25,7 +25,7 @@ syncretic-edges:
     type: "scholarly-parallel"
     source: "Snellgrove 1987 — both have miraculous-divine births (Padmasambhava 'lotus-born' from the pollen of a sacred flower; Christ virgin-born); both are tradition-founding saviors whose ongoing presence is accessible to devotees through ritual practice"
     notes: "Miraculous-birth tradition-founder partial parallel"
-status: "stub"
+status: "metadata"
 refs:
   - title: "The Life and Liberation of Padmasambhava (Padma bKa'i Thang)"
     author: "Douglas, Kenneth & Bays, Gwendolyn (trans.)"
