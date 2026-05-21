@@ -12,7 +12,7 @@ gender: "feminine"
 role: "goddess of the prison-house and netherworld justice; daughter of An; consort of Birtum"
 parent-of: []
 child-of: ["[[an-sumerian]]", "[[ereshkigal]]"]
-consort: ["[[birtum]]"]
+consort: ["Birtum (Sumerian; Nungal's husband — no node yet)"]
 attributes: ["the prison-house ('é-kur-ra')", "the divine net that catches the wicked", "Manungal-the-merciful epithet"]
 attested-in: ["[[phase-1-001-kesh-temple-hymn]]?"]
 equivalents: []

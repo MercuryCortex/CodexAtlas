@@ -16,7 +16,7 @@ syncretic-edges:
   - target: "logos-johannine"
     type: "scholarly-parallel"
     source: "Schimmel, Mystical Dimensions of Islam, 1975; Massignon, Passion of al-Hallaj — comparative analysis of Nur Muhammadi as the Sufi Logos-equivalent"
-status: "stub"
+status: "metadata"
 refs:
   - title: "And Muhammad is His Messenger: The Veneration of the Prophet in Islamic Piety"
     author: "Schimmel, Annemarie"

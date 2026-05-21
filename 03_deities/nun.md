@@ -26,7 +26,7 @@ syncretic-edges:
   - target: "tehom-hebrew-concept"
     type: "scholarly-parallel"
     source: "The 'deep' of Gen 1:2 functions similarly to Nun as primordial water from which creation emerges; Genesis's account demythologizes the waters but the structural role parallels Nun"
-status: "stub"
+status: "metadata"
 refs:
   - title: "Genesis in Egypt: The Philosophy of Ancient Egyptian Creation Accounts"
     author: "Allen, James P."

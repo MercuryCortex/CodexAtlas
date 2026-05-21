@@ -69,7 +69,7 @@ Two distinct cosmogonic roles:
 
 2. **Orphic Nyx**: **the supreme primordial deity**, often (in the standard Orphic recension reconstructed by West 1983) the mother of [[phanes-protogonos]] who emerges from the cosmic egg she laid. Zeus consults Nyx as the wise primordial counselor before/during/after his cosmic kingship; in some recensions Zeus *swallows* Phanes to restart the cosmogony with himself as origin — and Nyx survives as the primordial Night who remains older than all the gods.
 
-The Orphic Nyx-cosmogony is **structurally important for the reception-history of Christian darkness-mysticism**: pseudo-Dionysian "divine darkness" (the *theia gnophos*), the *via negativa* of [[gregory-of-nyssa]] and later Christian apophatic theology, and the *cloud of unknowing* tradition all stand in genealogical contact with the Greco-Orphic / Neoplatonist tradition of cosmic Night as the supreme principle. [[proclus]] and [[damascius]] are the immediate channels.
+The Orphic Nyx-cosmogony is **structurally important for the reception-history of Christian darkness-mysticism**: pseudo-Dionysian "divine darkness" (the *theia gnophos*), the *via negativa* of [[gregory-of-nyssa]] and later Christian apophatic theology, and the *cloud of unknowing* tradition all stand in genealogical contact with the Greco-Orphic / Neoplatonist tradition of cosmic Night as the supreme principle. [[proclus]] and Damascius (last head of the Platonic Academy, 6th c.; no node yet) are the immediate channels.
 
 ## Cross-tradition identifications
 - **Nox (Roman)** — *ancient-identification*: standard Roman *interpretatio*.
