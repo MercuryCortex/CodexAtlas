@@ -23,6 +23,10 @@ syncretic-edges:
   - target: "druj"
     type: "polemic-against"
     source: "**The foundational Zoroastrian cosmic-dualistic opposition**: Asha (Truth, Cosmic Order) vs. Druj (Lie, Cosmic Disorder). The two principles structure the entire Zoroastrian metaphysical universe"
+  - target: "theme-asha-druj-cosmic-opposition"
+    type: "Truth-pole-of-cosmic-axis"
+    source: "Boyce 1975 *History of Zoroastrianism* vol. 1; Skjærvø 1987 EIr 'Aša'; Gathas (the principle named more than any other in Yasna 28–53) — Asha Vahishta is the Truth-pole of the foundational Zoroastrian cosmic axis. The entire metaphysical universe of Zoroastrianism is structured by the Asha/Druj opposition; Asha-vahishta is its named-deity instantiation. See [[theme-asha-druj-cosmic-opposition]]"
+    notes: "MASSIVE-WIN: cognate with Vedic *Ṛta* (cosmic order) — the Asha/Ṛta cosmic-Truth concept is a Proto-Indo-Iranian inheritance that survives in both Vedic and Zoroastrian branches with the same Truth/Cosmic-Order semantic core. Cross-lens: 03_deities → 06_themes. Hub also lists across 02_documents ([[phase-2-002-gathas-of-zarathustra]], [[phase-3-011-dead-sea-scrolls]] for the Two-Spirits-tractate Jewish-parallel) — back-edges from those documents still pending"
 status: "metadata"
 refs:
   - title: "A History of Zoroastrianism, Vol. 1"

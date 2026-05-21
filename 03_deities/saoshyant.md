@@ -31,6 +31,10 @@ syncretic-edges:
   - target: "theme-zoroastrian-jewish-exchange"
     type: "source-deity-of-transmission"
     source: "Boyce 1975-1991 vol. 3 ch. 12; Hultgård 1998; Shaked 1984 — Saoshyant → Davidic Messiah → Christian Second Coming → Islamic Mahdi is one evolutionary chain Boyce & Hultgård document as transmitted across four traditions through the Persian-period Jewish-Persian exchange and its downstream eschatological descendants"
+  - target: "occultation-hidden-imam"
+    type: "Zoroastrian-source-of-occultation-pattern"
+    source: "Gnoli 1987 EIr 'Zoroastrianism and Islam'; Amir-Moezzi 1994 *The Divine Guide in Early Shiʿism*; Sachedina 1981 *Islamic Messianism*; Boyce 1984 *Textual Sources for the Study of Zoroastrianism* — the Saoshyant is the Zoroastrian source-template of the occultation-hidden-savior pattern that the Twelver Shiʿa doctrine instantiates in Muhammad al-Mahdi: a savior who already exists in a preserved state (Zarathustra's seed preserved in Lake Kąsaoiia / al-ʿAskarī's son in ghayba), emerges at history's end, defeats cosmic evil, inaugurates cosmic renovation/universal justice. See [[occultation-hidden-imam]]"
+    notes: "MASSIVE-WIN: Iran's population was majority-Zoroastrian through the 7th–10th centuries — the precise window when Twelver Shiʿa theology crystallized the occultation doctrine into its definitive form. The Saoshyant template was culturally available in exactly the milieu where the Hidden Imam doctrine developed. Cross-lens: 03_deities → 06_themes"
 status: "metadata"
 refs:
   - title: "A History of Zoroastrianism (3 vols.)"

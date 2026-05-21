@@ -23,6 +23,10 @@ syncretic-edges:
   - target: "aeshma"
     type: "polemic-against"
     source: "Vohu Manah (Good Mind) is the cosmic-principle opposite of Aka Manah (Evil Mind, one of the four arch-daevas); the pair is structurally parallel to [[sraosha]]-[[aeshma]] and [[asha-vahishta]]-[[druj]]"
+  - target: "theme-asha-druj-cosmic-opposition"
+    type: "secondary-Truth-pole-of-cosmic-axis"
+    source: "Boyce 1975 *History of Zoroastrianism* vol. 1; Skjærvø EIr 'Bahman / Vohu Manah'; Gathas — Vohu Manah is the second Amesha Spenta (after Asha Vahishta) and the first divine principle Zarathustra addresses in the Gathas. The Good Mind principle aligns with Asha (Truth) via the *humata-hukhta-huvarshta* triad: right-thinking generates right-speaking generates right-doing. See [[theme-asha-druj-cosmic-opposition]]"
+    notes: "Cross-lens: 03_deities → 06_themes. Vohu Manah completes the Asha/Druj cosmic-axis: Asha is the cosmological pole (the cosmos *ought-to-be* this way); Vohu Manah is the noetic-ethical pole (the *human mind* aligns with cosmos through Good Mind)"
 status: "metadata"
 refs:
   - title: "A History of Zoroastrianism, Vol. 1"

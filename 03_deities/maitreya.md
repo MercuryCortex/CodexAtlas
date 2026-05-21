@@ -26,6 +26,10 @@ syncretic-edges:
   - target: "Saoshyant"
     type: "scholarly-parallel"
     source: "Zoroastrian eschatological savior born of a virgin from Zarathustra's seed who renovates the world at the end of time"
+  - target: "occultation-hidden-imam"
+    type: "Buddhist-parallel-of-occultation-pattern"
+    source: "Sponberg & Hardacre 1988 *Maitreya, the Future Buddha*; Gnoli 1987 EIr 'Zoroastrianism and Islam' — Maitreya is the Buddhist-tradition parallel of the occultation-hidden-savior pattern: currently residing in the Tuṣita heaven awaiting his future descent as the next Buddha; the structural analog of the Shiʿa Hidden Imam in *ghayba*. The Saoshyant ↔ Hidden Imam ↔ Maitreya ↔ Kalki cluster is the four-tradition cross-cultural convergence on the preserved-future-savior template. See [[occultation-hidden-imam]]"
+    notes: "Cross-lens: 03_deities → 06_themes. Key structural difference: Maitreya transforms through dharma-teaching (Buddhist soteriology); Mahdi through political-military restoration of justice (Islamic eschatology); Saoshyant through cosmic-renovation combat (Zoroastrian apocalyptic). Same preserved-and-emerging template; different transformation mechanism per tradition"
 status: "metadata"
 refs:
   - title: "Maitreya, the Future Buddha"
