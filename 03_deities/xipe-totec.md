@@ -33,7 +33,7 @@ syncretic-edges:
     type: "scholarly-parallel"
     source: "Frazer 1911; Carrasco 1999 — Osiris's death-dismemberment-resurrection as the grain that emerges from the earth structurally parallels Xipe Totec's flayed-skin-as-spring-foliage. The flayed-skin / new-vegetation symbolism is the same theological logic across both"
     notes: "MASSIVE WIN: Frazer's full dying-rising-flayed-vegetation convergence — Xipe Totec / Dionysus / Attis / Osiris / Adonis / Dumuzi — five Old-World traditions plus one independent Mesoamerican emergence of the same theological structure"
-  - target: "adonis-hellenistic"
+  - target: "adonis"
     type: "scholarly-parallel"
     source: "Frazer 1911 — Adonis as the Hellenistic dying-rising-vegetation god; the Adonia mourning festival parallels Xipe Totec's flaying-renewal ritual structurally"
   - target: "dumuzi-tammuz"
@@ -81,7 +81,7 @@ Xipe Totec presides over the Tlacaxipehualiztli festival (roughly February–Mar
 
 - **[[quetzalcoatl]]** — *scholarly-parallel*: in some cosmological schemes Xipe Totec is identified as the East / Red aspect of a four-directional Tezcatlipoca complex; Quetzalcoatl is the White / West position. The identifications vary by source and are contested (Nicholson 1971; Klein 2000).
 - **[[tezcatlipoca]]** — *scholarly-parallel*: the four-Tezcatlipoca directional schema in some sources assigns Xipe to the East as "Red Tezcatlipoca"; the schema is found in late colonial sources and its pre-conquest form is debated.
-- **Dying-rising agricultural deity (Frazer's category)** — *scholarly-parallel*: Xipe fits the Frazerian category of dying-and-rising grain deity more explicitly than most other deities in that category — the agricultural symbolism of skin-shedding = earth renewing is stated in the indigenous sources themselves. The parallel with [[osiris]] (whose dismemberment and reconstitution parallels agricultural death-and-growth) and [[adonis-hellenistic]] (Greek grain-deity killed and mourned, linked to Adonis-gardens) is typological; no transmission is claimed.
+- **Dying-rising agricultural deity (Frazer's category)** — *scholarly-parallel*: Xipe fits the Frazerian category of dying-and-rising grain deity more explicitly than most other deities in that category — the agricultural symbolism of skin-shedding = earth renewing is stated in the indigenous sources themselves. The parallel with [[osiris]] (whose dismemberment and reconstitution parallels agricultural death-and-growth) and [[adonis]] (Greek grain-deity killed and mourned, linked to Adonis-gardens) is typological; no transmission is claimed.
 
 ## Iconography
 Uniquely identifiable in Mesoamerican art: the god wears a complete flayed human skin as a suit, with the victim's face as a mask over the priest's face and the victim's hands hanging loose at the wrists. Body paint beneath the skin is red (the living color). The *chicahuaztli* (a rattling staff used in rain petitions) is his implement. Some depictions show a golden beak-mask. Stone sculptures of Xipe Totec survive in considerable numbers from Aztec and regional contexts, many showing the characteristic double-face (priest's face visible through the eye-holes of the victim's skin-mask).

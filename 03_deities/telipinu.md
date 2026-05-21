@@ -15,7 +15,7 @@ child-of: ["the Storm-God of Hatti (Tarḫunna)"]
 consort: []
 attributes: ["sceptre or staff", "eagle (sent to search for him)", "bee (finds and stings him awake)"]
 attested-in: ["[[phase-1-029-telipinu-myth]]", "Boğazköy archive ritual texts (CTH 324)"]
-equivalents: ["[[dumuzi-tammuz]]", "[[baal-hadad]]", "[[adonis-hellenistic]]"]
+equivalents: ["[[dumuzi-tammuz]]", "[[baal-hadad]]", "[[adonis]]"]
 syncretic-edges:
   - target: "dumuzi-tammuz"
     type: "scholarly-parallel"
@@ -25,7 +25,7 @@ syncretic-edges:
     type: "scholarly-parallel"
     source: "Mazoyer 2003"
     notes: "Ugaritic Baal also vanishes (into the underworld, devoured by Mot) and returns; the Telipinu pattern is the Anatolian instance of this widespread Levantine-Anatolian motif."
-  - target: "adonis-hellenistic"
+  - target: "adonis"
     type: "scholarly-parallel"
     source: "later instance of the dying-and-returning vegetation god type"
     notes: "Adonis is a Hellenistic continuation of the same Levantine type, via Byblos-Aphrodite cult; Telipinu is its Bronze Age Anatolian cognate."
@@ -70,7 +70,7 @@ Telipinu is the Hittite vanishing-vegetation god of the disappearing-and-returni
 ## Cross-tradition identifications
 - **[[dumuzi-tammuz]]** — *scholarly-parallel*: the descent-and-return vegetation-god pattern. Dumuzi descends to the underworld in Inanna's place, and his return is mourned/celebrated annually in the Tammuz cult (still attested in Ezekiel 8:14, where Jerusalem women weep for Tammuz). Telipinu's disappearance into the steppe is structurally cognate (Mazoyer 2003).
 - **[[baal-hadad]]** — *scholarly-parallel*: Ugaritic Baal descends into Mot's gullet and is later restored; same myth-type.
-- **[[adonis-hellenistic]]** — *scholarly-parallel*: Hellenistic Levantine descendant of the type.
+- **[[adonis]]** — *scholarly-parallel*: Hellenistic Levantine descendant of the type.
 - **Persephone / Demeter-Persephone cycle** — *scholarly-parallel*: a Greek seasonal-agricultural variant of the same myth-type, with the gender reversed.
 
 ## Iconography

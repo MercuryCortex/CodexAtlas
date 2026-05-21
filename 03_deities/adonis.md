@@ -11,13 +11,15 @@ region: "Phoenicia (Byblos) → Greece → Rome"
 period-active-earliest: -1400
 period-active-latest: 400
 attested-in: ["[[phase-3-035-homeric-hymns]]", "[[document-ezekiel]]"]
-# DUPLICATE WARNING: see also 03_deities/adonis-hellenistic.md — same deity, two nodes. Awaiting consolidation decision (see AUDIT/forge-deity-spine-findings-2026-05-21.md).
 status: "metadata"
 key-texts:
   - "[[phase-3-035-homeric-hymns]]"
+  - "Sappho fr. 140 ('Cytherea, delicate Adonis is dying, what are we to do?') — the earliest surviving Greek literary attestation, ~600 BCE"
+  - "Aristophanes, *Lysistrata* 387–398 — Athenian mock of the Adonia"
+  - "Theocritus, *Idylls* XV (*Adoniazusai*) — ~275 BCE Alexandria, the most detailed surviving cult-festival account"
   - "Ovid, *Metamorphoses* X (the Adonis and Venus narrative)"
-  - "Theocritus, *Idylls* XV (*Adoniazusai*)"
   - "Bion of Smyrna, *Lament for Adonis* (~100 BCE)"
+  - "Lucian, *De Dea Syria* 6–8 — explicit identification of Byblian Adonis with Phoenician Tammuz"
 syncretic-edges:
   - target: "[[osiris]]"
     type: "structural-parallel"
@@ -80,6 +82,20 @@ refs:
     type: "encyclopedia"
     tier: 1
     notes: "T1 — the key critical revisionist treatment; Smith argues 'dying and rising gods' as a universal category is a modern scholarly construct more than an ancient emic category; usefully complicates but does not refute the structural parallels"
+  - title: "Adonis dans la littérature et l'art grecs"
+    author: "Atallah, Wahib"
+    year: 1966
+    publisher: "Klincksieck, Paris"
+    type: "monograph"
+    tier: 1
+    notes: "Foundational French-language monograph on Adonis cult and iconography"
+  - title: "The Riddle of Resurrection: 'Dying and Rising Gods' in the Ancient Near East"
+    author: "Mettinger, Tryggve N.D."
+    year: 2001
+    publisher: "Almqvist & Wiksell"
+    type: "monograph"
+    tier: 1
+    notes: "T1 — Mettinger's response to Smith's revisionism: defends a measured form of the dying-and-rising-god category against Smith's wholesale critique. Argues that for ANE evidence (esp. Adonis at Byblos via Lucian, Origen *Contra Celsum* 6.34), genuine death-and-renewal cycles are attested in cult practice — the category survives the critique. The current scholarly position is between Frazer's universalism and Smith's elimination, closer to Mettinger's defended middle"
 tags: [deity, greek, phoenician, dying-rising-god, vegetation, mystery-cult, adonis, tammuz, frazer, sexual-union, beauty]
 ---
 
@@ -95,7 +111,7 @@ From the blood of Adonis spring **anemones** (wind-flowers) — the short-lived 
 
 ## Adonis and Tammuz: the Semitic origin
 
-"Adonis" derives from Semitic *adon* (lord) — exactly the same root as Hebrew *Adonai*, the substituted pronunciation of YHWH. The Greeks received Adonis from **Phoenicia**, specifically from the cult at **Byblos** (modern Lebanon), where the annual mourning for Tammuz/Adonis was celebrated with women weeping on the rooftops — the same ritual condemned in **Ezekiel 8:14**: "there sat women weeping for Tammuz."
+"Adonis" derives from Semitic *adon* (lord) — exactly the same root as Hebrew *Adonai*, the substituted pronunciation of YHWH. The Greeks received Adonis from **Phoenicia**, specifically from the cult at **Byblos** and **Aphaca** (in Mount Lebanon — the source of the Adonis river / modern Nahr Ibrahim), where the annual mourning for Tammuz/Adonis was celebrated with women weeping on the rooftops — the same ritual condemned in **Ezekiel 8:14**: "there sat women weeping for Tammuz." Lucian's *De Dea Syria* 6–8 (~150 CE) explicitly identifies the Byblian Adonis with the Phoenician form of the Mesopotamian god — the channel of transmission Mesopotamia → Levant → Greece is etymologically clear (*ʾădōn*) and historically attested via Phoenician sea-trade and Bronze Age Levantine contact.
 
 The Adonis cult is therefore the Greek reception of the **Sumerian Dumuzi/Tammuz** myth (c. -3000 BCE), the oldest documented dying-god narrative, transmitted through Phoenician-Semitic religious culture into the Greek world. The love triangle shifts: in Sumerian myth, **Inanna** and the underworld goddesses fight over Dumuzi; in Greek myth, **Aphrodite** and **Persephone** fight over Adonis. Aphrodite = Inanna/Ishtar (goddess of love and war); Persephone = Ereshkigal (queen of the underworld). The narrative structure is preserved through the cultural translation.
 
@@ -110,6 +126,8 @@ The "gardens of Adonis" are Marcel Detienne's key structural evidence: the fast-
 James Frazer's **The Golden Bough** (1890, expanded to 12 volumes by 1915) made Adonis the paradigm case for the "dying and rising god" category that shaped a century of comparative religion. Frazer's thesis: agricultural religions universally worship a vegetation god who dies (autumn) and rises (spring); Adonis, Osiris, Attis, Dionysus, and Christ are all instances of this universal pattern.
 
 Jonathan Z. Smith's revisionist critique (1987): the "dying and rising god" category is a modern comparative construct. Adonis does not clearly *rise* in most versions — he divides time between above and below; Osiris rises but only as king of the dead, not as a living being; the Greek and Near Eastern evidence is more varied than Frazer's schema admits. The scholarly position is now: the structural parallel is real but the category of "dying and rising god" was over-systematized by Frazer for apologetic purposes (to relativize Christian resurrection).
+
+**Mettinger's defense (2001):** Tryggve Mettinger's *The Riddle of Resurrection* re-examined the evidence and argues that **Adonis-as-resurrected is firmer than Attis** — Lucian *De Dea Syria* 6, Origen *Contra Celsum* 6.34, and the Adonia rituals (which in many sources have a *joyful* second day celebrating his return, not just a mourning first day) point to a genuine death-and-renewal cycle in cult practice. The current scholarly equilibrium sits between Frazer's universalism and Smith's elimination, closer to Mettinger's defended middle.
 
 ## The Adonis–Christ connection
 

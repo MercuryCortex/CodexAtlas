@@ -7,7 +7,7 @@ date-emergence: -1500
 date-end: 400
 region-origin: "Eastern Mediterranean — Eleusis (Attica), Phrygia (Anatolia), Egypt, Syria, Phoenicia"
 regions-spread: ["entire Greco-Roman world"]
-key-deities: ["[[demeter]]", "[[persephone-greek]]", "[[dionysus-mystery]]", "[[cybele]]", "[[attis]]", "[[adonis-hellenistic]]", "[[isis-hellenistic]]", "[[serapis]]", "[[mithras-roman]]"]
+key-deities: ["[[demeter]]", "[[persephone-greek]]", "[[dionysus-mystery]]", "[[cybele]]", "[[attis]]", "[[adonis]]", "[[isis-hellenistic]]", "[[serapis]]", "[[mithras-roman]]"]
 key-persons: ["[[apuleius]] (Phase 4 author of *Metamorphoses* 11, the Lucius-Isis initiation)", "[[plutarch]] (Phase 4 *De Iside et Osiride*)"]
 key-documents: ["Homeric Hymn to Demeter (~-650, the foundational Eleusinian text)", "Orphic gold tablets (~-400/-200, 40+ tablets)", "Derveni Papyrus (~-340, Orphic-philosophical commentary)", "Apuleius *Metamorphoses* 11 (~+160, Isiac initiation)", "[[phase-3-021-hermetic-corpus-earliest]] (partial overlap)"]
 sister-traditions: ["[[tradition-greek-religion]]", "[[tradition-roman-religion]]", "[[tradition-orphic]]", "[[tradition-hermeticism]]", "[[tradition-egyptian]]"]
@@ -89,7 +89,7 @@ cross-tradition-edges:
 - [[demeter]] and [[persephone-greek]] — Eleusinian Mysteries.
 - [[dionysus-mystery]] — Bacchic mysteries; Orphic-Zagreus theology.
 - [[cybele]] and [[attis]] — Phrygian Magna Mater mysteries.
-- [[adonis-hellenistic]] — Phoenician dying-youth-god mysteries.
+- [[adonis]] — Phoenician dying-youth-god mysteries.
 - [[isis-hellenistic]] and [[serapis]] — Greco-Egyptian universal-savior cult.
 - [[mithras-roman]] — Roman cosmic-mystery cult.
 

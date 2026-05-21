@@ -89,7 +89,7 @@ The *Popol Vuh* Hero Twin narrative unfolds in three main acts:
 
 ## MASSIVE WIN — Hero Twin descent as Mesoamerican dying-rising pattern
 
-The Hunahpu / Xbalanque narrative is **the closest Mesoamerican parallel to the dying-rising deity pattern** documented in Mesopotamian (Inanna's Descent to the Underworld), Egyptian (Osiris dismemberment and reconstitution), and Levantine ([[adonis-hellenistic]], [[attis]], [[dumuzi-tammuz]]) traditions. The structural parallels are striking:
+The Hunahpu / Xbalanque narrative is **the closest Mesoamerican parallel to the dying-rising deity pattern** documented in Mesopotamian (Inanna's Descent to the Underworld), Egyptian (Osiris dismemberment and reconstitution), and Levantine ([[adonis]], [[attis]], [[dumuzi-tammuz]]) traditions. The structural parallels are striking:
 
 | Feature | Hero Twins | [[inanna-sumerian]] | Osiris ([[osiris]]) |
 |---------|-----------|---------------------|---------------------|

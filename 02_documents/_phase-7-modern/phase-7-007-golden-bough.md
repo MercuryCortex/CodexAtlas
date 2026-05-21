@@ -20,7 +20,7 @@ themes: ["[[dying-rising-god]]", "[[sacred-king]]", "[[sympathetic-magic]]"]
 parallels: ["[[phase-7-010-elementary-forms-religious-life]]", "[[phase-7-011-idea-of-the-holy]]", "[[phase-7-021-patterns-comparative-religion]]"]
 influenced-by: ["E.B. Tylor's *Primitive Culture* (1871; animism + survival theory)", "William Robertson Smith's *Religion of the Semites* (1889; sacrificial theory)", "Mannhardt's *Wald- und Feldkulte* (1875–77; European folklore)"]
 influences: ["20th-century literature (Eliot's *Waste Land*, Joyce, Lawrence, Yeats)", "[[phase-7-017-psychology-and-alchemy]] (Jung knew Frazer)", "[[phase-7-021-patterns-comparative-religion]] (Eliade engaged Frazer critically)", "Hero-myth comparativism (Lord Raglan, Campbell)"]
-deities-mentioned: ["[[adonis-hellenistic]]", "[[attis]]", "[[osiris]]", "[[dionysus]]", "[[zagreus]]", "[[dumuzi]]", "Frazer treats these as 'dying and reviving gods' — the category he most popularized"]
+deities-mentioned: ["[[adonis]]", "[[attis]]", "[[osiris]]", "[[dionysus]]", "[[zagreus]]", "[[dumuzi]]", "Frazer treats these as 'dying and reviving gods' — the category he most popularized"]
 events-context: []
 status: "metadata"
 preservation: "Continuous in print since 1890; major editions: 1st (1890, 2 vols), 2nd (1900, 3 vols), 3rd (1906–15, 12 vols + Aftermath 1936). One-volume abridgment (1922) is the most widely read version."

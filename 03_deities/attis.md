@@ -15,9 +15,9 @@ child-of: []
 consort: ["[[cybele]]"]
 attributes: ["Phrygian cap", "pine tree", "pan-pipes", "sheep-staff"]
 attested-in: []
-equivalents: ["[[adonis-hellenistic]]", "[[osiris]]", "[[dumuzi-tammuz]]"]
+equivalents: ["[[adonis]]", "[[osiris]]", "[[dumuzi-tammuz]]"]
 syncretic-edges:
-  - target: "adonis-hellenistic"
+  - target: "adonis"
     type: "scholarly-parallel"
     source: "Frazer (1906–15) classifies Attis with Adonis, Osiris, Tammuz as 'dying-and-rising gods'; modern scholarship (Mettinger 2001, Smith 2017) is more cautious"
   - target: "osiris"
@@ -78,7 +78,7 @@ The annual ritual cycle:
 - **March 25** — *Hilaria* (Joy Day): joyful celebration, traditionally interpreted as Attis's revivification.
 
 ## Cross-tradition identifications
-- **[[adonis-hellenistic]]** — *scholarly-parallel*: Frazer's "dying and rising gods" classification grouped Attis, Adonis, Osiris, Tammuz; Mettinger (2001) revisits the category with more nuance.
+- **[[adonis]]** — *scholarly-parallel*: Frazer's "dying and rising gods" classification grouped Attis, Adonis, Osiris, Tammuz; Mettinger (2001) revisits the category with more nuance.
 - **[[osiris]]** — *scholarly-parallel* / *ancient-identification* (Plutarch DIO 69 makes the comparison): both involve mourning consort and ritual renewal.
 - **[[dumuzi-tammuz]]** — *scholarly-parallel*: Mesopotamian vegetation god mourned by Inanna/Ishtar; Levantine transmission possible but not direct.
 
