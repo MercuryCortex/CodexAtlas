@@ -21,7 +21,7 @@ syncretic-edges:
     type: "shared-tradition"
     source: "Quran 71:23 — the five antediluvian Arabian deities (Wadd, Suwāʿ, Yaghūth, Yaʿūq, Nasr) are named together as a single theological category — the gods of Noah's people that the Quraysh-era Arabs adopted"
     notes: "The Quranic listing is the load-bearing textual source for treating these five as a coherent unit; Ibn al-Kalbi elaborates with tribal assignments (Wadd → Banu Kalb at Dūmat al-Jandal; Suwāʿ → Hudhayl at Yanbū; Yaghūth → Madhḥij; Yaʿūq → Hamdān; Nasr → Ḥimyar)"
-status: "stub"
+status: "metadata"
 refs:
   - title: "The Book of Idols (Kitāb al-Aṣnām)"
     author: "Ibn al-Kalbī, Hishām ibn Muhammad; trans. Faris, Nabih Amin"

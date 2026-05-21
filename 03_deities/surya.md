@@ -10,8 +10,8 @@ period-active-latest: 2026
 domains: ["sun", "solar light", "cosmic eye / witness", "day", "cosmic order / *ṛta* (in his witnessing aspect)"]
 gender: "masculine"
 role: "Vedic solar deity; eye of the cosmos; cosmic witness; lord of the day; in Puranic / sectarian tradition the supreme deity of the Saura sect"
-parent-of: ["[[yama]] (Yama-Yamī twin per *Yama-Yamī* dialogue RV 10.10; via the Vivasvat epithet)", "Manu (the lawgiver / first human in some traditions, son of Vivasvat-Surya)", "the Ashvins (twin physicians, in some traditions)"]
-child-of: ["[[aditi]] (mother — Surya as Aditya, son of Aditi)", "[[kashyapa]] (father in some traditions)"]
+parent-of: ["[[yama-vedic]] (Yama-Yamī twin per *Yama-Yamī* dialogue RV 10.10; via the Vivasvat epithet)", "Manu (the lawgiver / first human in some traditions, son of Vivasvat-Surya)", "the Ashvins (twin physicians, in some traditions)"]
+child-of: ["[[aditi]] (mother — Surya as Aditya, son of Aditi)", "Kashyapa (Vedic sage; father of Surya in some Puranic traditions — no node yet)"]
 consort: ["Saranyu / Sanjna", "Chhaya (Shadow)"]
 attributes: ["chariot drawn by **seven horses** (the seven horses of Surya, corresponding to the seven days / seven meters of Vedic recitation — canonical iconographic attribute)", "single-wheeled chariot (the cosmic wheel-of-time)", "Aruna as charioteer (the dawn-deity who drives Surya's chariot)", "blazing solar disk / halo", "two arms (in older iconography), four arms (in Puranic iconography) holding lotuses", "red / golden complexion", "boots (a distinctively non-Indic iconographic feature in some Surya images, attributed to Iranian / Magi-Brahmin influence — Pingree 1976)"]
 attested-in: ["[[phase-2-001-rig-veda-family-books]]", "[[phase-2-003-atharva-veda]]", "[[phase-2-027-bhagavad-gita]]"]
