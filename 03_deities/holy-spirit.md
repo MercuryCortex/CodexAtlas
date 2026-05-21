@@ -20,7 +20,7 @@ syncretic-edges:
   - target: "[[wisdom-personified]]"
     type: "scholarly-parallel"
     source: "Some early Syriac Christian traditions (Odes of Solomon, Aphrahat) feminine-coded the Spirit, drawing on Hebrew *Ruach* (fem.) and Wisdom-theology"
-status: "stub"
+status: "metadata"
 refs:
   - title: "God the Spirit"
     author: "Welker, Michael"

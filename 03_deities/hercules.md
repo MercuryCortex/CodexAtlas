@@ -25,7 +25,7 @@ syncretic-edges:
     type: "ancient-identification"
     source: "Herodotus 2.44 (the equation of Heracles and the Tyrian Melqart, with caution); Livy 21.21 (Hannibal sacrifices at the Hercules-Melqart temple at Gades / Cádiz)"
     notes: "The Tyrian-Phoenician Heracles-Melqart equation is older than the Roman reception and explains the Punic-Roman cult continuity at Cádiz, Carthage, and the Forum Boarium"
-status: "stub"
+status: "metadata"
 refs:
   - title: "Hercules and the Twelve Labors: A Roman Perspective"
     author: "Bonnet, Corinne"

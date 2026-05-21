@@ -14,7 +14,7 @@ parent-of: ["[[maui-polynesian]] (in many Polynesian traditions Hina is Maui's m
 child-of: []
 consort: ["[[tane]] (Māori — Hina-titama, wife of Tane the forest god, becomes Hine-nui-te-pō after discovering her parentage)", "an eel (in the Hina-and-the-eel narrative; the eel is killed and from its head grows the first coconut tree)"]
 attributes: ["the moon (Hina IS the moon in most traditions; the dark patches are her tapa-beating implements)", "tapa-beater (the wooden mallet for making bark cloth)", "white body (lunar)"]
-attested-in: ["[[phase-8-001-kumulipo]] (Hawaiian creation chant — Hina-of-the-Moon)", "Maori-tradition collections (Grey 1855, Best 1924) for Hine-nui-te-po and Hine-titama"]
+attested-in: ["[[phase-8-010-kumulipo]] (Hawaiian creation chant — Hina-of-the-Moon)", "Maori-tradition collections (Grey 1855, Best 1924) for Hine-nui-te-po and Hine-titama"]
 equivalents: []
 syncretic-edges:
   - target: "[[mama-quilla]]"
@@ -35,7 +35,7 @@ syncretic-edges:
   - target: "artemis"
     type: "scholarly-parallel"
     source: "Eliade 1958 — Greek Artemis as moon-and-wilderness virgin goddess; partial parallel to Hina as moon-goddess and protector of women"
-status: "stub"
+status: "metadata"
 refs:
   - title: "Hawaiian Mythology"
     author: "Beckwith, Martha"
