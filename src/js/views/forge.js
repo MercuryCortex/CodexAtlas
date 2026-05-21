@@ -3328,83 +3328,194 @@
     }
 
     // ════════════════════════════════════════════════════════════
-    //  wireSidePanel()  —  Phase 19B (2026-05-21)
+    //  wireSidePanel()  —  Phase 19C (2026-05-21)
     // ════════════════════════════════════════════════════════════
-    //  Wires the existing GLOBAL `aside.detail` panel (from
-    //  index.html, shared with other views) to render Forge deity
-    //  detail when the user locks a deity.
+    //  Multi-deity inspector. Each LOCK gets its own floating tab
+    //  button stacked on the right edge of the viewport. Clicking
+    //  a tab opens the existing GLOBAL aside.detail panel with
+    //  that deity's content; clicking the active tab closes the
+    //  panel; clicking-empty (toggleLock(null)) clears all tabs
+    //  and closes the panel.
     //
-    //  The panel itself + its toggle button + open/close behaviour
-    //  are owned by app.js (it ships across all views). We do NOT
-    //  rebuild those — we just:
-    //   1. Populate `#detail-inner` with our deity content when a
-    //      lock occurs OR when the panel is opened with stale data.
-    //   2. Pulse `.detail-toggle` on lock-add as the "fresh content
-    //      available" signal.
-    //   3. Observe `body.detail-collapsed` so we can re-render
-    //      when the user opens the panel.
+    //  Architecture:
+    //   - local.deityTabs[]   — ordered list of locked deity ids
+    //     (newest = bottom of the visual stack)
+    //   - local.openTabId     — which tab is currently shown in
+    //     the panel; null = panel closed
+    //   - body.view-forge     — flips `.detail-toggle` off (we
+    //     don't use the global toggle in Forge view) and lets
+    //     aside.detail hide entirely when no tab is open.
+    //   - .forge-deity-tabs   — fixed-positioned column at the
+    //     right viewport edge. Each child is a `.forge-deity-tab`
+    //     button. The active one gets `.is-active`. A freshly-
+    //     added one gets `.pulsing` for ~2.4s.
     //
-    //  Earlier Phase 19 created a second redundant panel inside
-    //  the forge stage — DELETED here once we discovered the
-    //  global one already existed.
+    //  When the panel is open, the tab column shifts left by the
+    //  panel width so the buttons stay outside the panel (per
+    //  John's "OUTSIDE of it so it doesn't clutter inside" rule).
+    //
+    //  Content uses the BAKED fields from data.js:
+    //   - node.title         (proper display name — was reading
+    //     node.name which doesn't exist; that's why earlier the
+    //     panel showed lowercase ids like "poseidon")
+    //   - node.thumbnail     (Wikipedia URL, baked per node)
+    //   - node.thumb_extract (Wikipedia extract paragraph)
+    //   - node.thumb_page    (Wikipedia article URL)
+    //   - node.role / .tradition / .region / .domains / .aka /
+    //     .date_earliest / .date_latest / .family_color
     // ════════════════════════════════════════════════════════════
     function wireSidePanel() {
-      const aside  = document.getElementById('detail');
-      const inner  = document.getElementById('detail-inner');
-      const toggle = document.getElementById('detail-toggle');
-      if (!aside || !inner || !toggle) return;
+      const inner = document.getElementById('detail-inner');
+      if (!inner) return;
 
-      // Hook called by toggleLock — adds the pulse + records id.
-      local._onLockChange = function (id) {
-        if (!id) return;   // null = cleared-all; nothing fresh to show
-        local.sidePanelLastId = id;
-        // Trigger pulse animation by adding the class.
-        toggle.classList.remove('pulsing');
-        void toggle.offsetWidth;          // restart any in-flight animation
-        toggle.classList.add('pulsing');
+      // Build the floating tabs container at the viewport level.
+      // Appended to body so it isn't constrained by the forge-stage
+      // bounding box — that way it can shift across the panel edge
+      // smoothly when the panel opens.
+      const tabsEl = document.createElement('div');
+      tabsEl.className = 'forge-deity-tabs';
+      tabsEl.id        = 'forge-deity-tabs';
+      document.body.appendChild(tabsEl);
+
+      local.deityTabs = [];
+      local.openTabId = null;
+
+      function setPanelOpen(open) {
+        // The existing global panel is collapsed via body.detail-
+        // collapsed. In Forge view, our CSS hides aside.detail
+        // entirely when that class is present, so toggling it is
+        // the SAME as opening/closing for our purposes.
+        document.body.classList.toggle('detail-collapsed', !open);
+        // Sync data attribute so CSS can shift the tabs column.
+        tabsEl.classList.toggle('panel-open', !!open);
+      }
+      // Initial state — panel closed.
+      setPanelOpen(false);
+
+      // Renders the tab stack from local.deityTabs.
+      function renderTabs() {
+        // Hide the whole container when empty.
+        if (!local.deityTabs.length) {
+          tabsEl.innerHTML = '';
+          tabsEl.style.display = 'none';
+          return;
+        }
+        tabsEl.style.display = '';
+        const m = local.mode;
+        const nodesById = (m && m.nodesById) ? m.nodesById : new Map();
+        const safe = (s) => String(s || '').replace(/[&<>"']/g, c => (
+          { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]
+        ));
+        const html = local.deityTabs.map(id => {
+          const n = nodesById.get ? nodesById.get(id) : null;
+          const color = (n && (n.family_color || n.tradition_color)) || '#999';
+          const title = (n && n.title) || id;
+          const isActive = (id === local.openTabId);
+          return '<button class="forge-deity-tab' + (isActive ? ' is-active' : '') + '"'
+               + ' data-id="' + safe(id) + '"'
+               + ' title="' + safe(title) + '">'
+               +   '<span class="forge-deity-tab-chevron">' + (isActive ? '›' : '‹') + '</span>'
+               +   '<span class="forge-deity-tab-dot" style="background:' + safe(color) + '"></span>'
+               + '</button>';
+        }).join('');
+        tabsEl.innerHTML = html;
+      }
+
+      // Trigger pulse animation on a specific tab DOM element.
+      function pulseTab(id) {
+        renderTabs();   // ensure the tab exists
+        const el = tabsEl.querySelector('.forge-deity-tab[data-id="' + id.replace(/"/g, '\\"') + '"]');
+        if (!el) return;
+        el.classList.remove('pulsing');
+        void el.offsetWidth;
+        el.classList.add('pulsing');
         clearTimeout(local._sidePanelPulseTimer);
         local._sidePanelPulseTimer = setTimeout(() => {
-          toggle.classList.remove('pulsing');
+          el.classList.remove('pulsing');
         }, 2400);
-        // If panel is already open, re-render with the new id.
-        if (!document.body.classList.contains('detail-collapsed')) render();
-      };
+      }
 
-      // Observe the toggle click so we clear the pulse + render the
-      // current content when the user opens the panel. app.js owns
-      // the actual open/close (body.detail-collapsed toggle); we
-      // just observe it as a separate listener.
-      toggle.addEventListener('click', () => {
-        // After app.js's handler runs, the class state will flip.
-        // Defer one tick so we read the post-flip state.
-        setTimeout(() => {
-          if (!document.body.classList.contains('detail-collapsed')) {
-            toggle.classList.remove('pulsing');
-            render();
-          }
-        }, 0);
+      // Tab click — event delegation on the container.
+      tabsEl.addEventListener('click', (e) => {
+        const btn = e.target.closest('.forge-deity-tab');
+        if (!btn) return;
+        const id = btn.getAttribute('data-id');
+        if (!id) return;
+        if (id === local.openTabId) {
+          // Click active tab → close panel.
+          local.openTabId = null;
+          setPanelOpen(false);
+          renderTabs();
+        } else {
+          // Switch to this deity.
+          local.openTabId = id;
+          setPanelOpen(true);
+          render();
+          renderTabs();
+        }
       });
 
+      // Lock-change observer — called by toggleLock with (id, action).
+      // action: 'add' | 'remove' | 'clear'.
+      local._onLockChange = function (id, action) {
+        if (action === 'clear') {
+          local.deityTabs = [];
+          local.openTabId = null;
+          setPanelOpen(false);
+          renderTabs();
+          return;
+        }
+        if (action === 'remove' && id != null) {
+          const idx = local.deityTabs.indexOf(id);
+          if (idx >= 0) local.deityTabs.splice(idx, 1);
+          if (local.openTabId === id) {
+            local.openTabId = null;
+            setPanelOpen(false);
+          }
+          renderTabs();
+          return;
+        }
+        if (action === 'add' && id != null) {
+          if (local.deityTabs.indexOf(id) < 0) local.deityTabs.push(id);
+          renderTabs();
+          pulseTab(id);
+          // If the panel is already open, switch the active deity
+          // to the newest add — fresh focus wins.
+          if (local.openTabId != null) {
+            local.openTabId = id;
+            render();
+            renderTabs();
+          }
+          return;
+        }
+      };
+
+      // Renders the deity inspector content into #detail-inner.
       function render() {
-        const id = local.sidePanelLastId;
+        const id = local.openTabId;
         const m = local.mode;
         const node = (id && m && m.nodesById && m.nodesById.get) ? m.nodesById.get(id) : null;
         if (!node) {
-          inner.innerHTML = '<div class="empty">Select a node to inspect.</div>';
+          inner.innerHTML = '<div class="empty">Select a deity to inspect.</div>';
           return;
         }
-
-        const thumbs = local._thumbsCache || null;
-        const thumb  = (thumbs && thumbs[id]) ? thumbs[id] : null;
+        // Field readers — use BAKED data.js fields. Falls back
+        // through alternates for robustness.
+        const title    = node.title || node.name || id;
         const tradition = (node.tradition || node.family || node.religion || '');
-        let desc = (node.role || node.description || node.brief || node.subtitle || '');
+        const aka       = Array.isArray(node.aka) ? node.aka.filter(Boolean) : [];
+        let desc        = (node.role || node.description || node.brief || node.subtitle || '');
         if (!desc && Array.isArray(node.domains) && node.domains.length) {
           desc = node.domains.join(', ');
         }
-        let extract = '';
-        if (thumb && thumb.extract) extract = String(thumb.extract);
+        const thumbSrc   = node.thumbnail || '';
+        const extract    = String(node.thumb_extract || '');
+        const wikiPage   = node.thumb_page || '';
+        const place      = (node.region || node['place-of-origin'] || node['originating-place'] || node.location || node.origin || '');
+        const domains    = Array.isArray(node.domains) ? node.domains.join(', ') : '';
+        const familyCol  = (node.family_color || node.tradition_color || '#888');
 
-        // Wire-bucket counts (same as hover card).
+        // Wire-bucket counts.
         const counts = Object.create(null);
         const edges = m && m.edges;
         if (edges) {
@@ -3433,28 +3544,22 @@
           if (y === 0) return '0';
           return y + ' CE';
         };
-        const de = (typeof node.date_earliest === 'number') ? node.date_earliest
-                 : (typeof node['period-active-earliest'] === 'number') ? node['period-active-earliest']
-                 : null;
-        const dl = (typeof node.date_latest === 'number') ? node.date_latest
-                 : (typeof node['period-active-latest'] === 'number') ? node['period-active-latest']
-                 : null;
+        const de = (typeof node.date_earliest === 'number') ? node.date_earliest : null;
+        const dl = (typeof node.date_latest   === 'number') ? node.date_latest   : null;
         const dateStr = (de == null && dl == null) ? ''
           : (de != null && dl != null && de !== dl) ? (fmtYear(de) + ' – ' + fmtYear(dl))
           : fmtYear(de != null ? de : dl);
-        const place   = (node.region || node['place-of-origin'] || node['originating-place'] || node.location || node.origin || '');
-        const domains = Array.isArray(node.domains) ? node.domains.join(', ') : '';
-        const wikiPage = thumb && thumb.page ? thumb.page : null;
 
         const safe = (s) => String(s || '').replace(/[&<>"']/g, c => (
           { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]
         ));
-        inner.innerHTML = '<div class="forge-side-panel-content">'
-          + (thumb && thumb.src
-              ? '<div class="forge-side-panel-thumb"><img src="' + safe(thumb.src) + '" alt="" /></div>'
+        inner.innerHTML = '<div class="forge-side-panel-content" style="--family-color:' + safe(familyCol) + '">'
+          + (thumbSrc
+              ? '<div class="forge-side-panel-thumb"><img src="' + safe(thumbSrc) + '" alt="" /></div>'
               : '')
           + '<div class="forge-side-panel-header">'
-          +   '<div class="forge-side-panel-name">' + safe(node.name || id) + '</div>'
+          +   '<div class="forge-side-panel-name">' + safe(title) + '</div>'
+          +   (aka.length ? '<div class="forge-side-panel-aka">' + aka.map(safe).join(' · ') + '</div>' : '')
           +   (tradition ? '<div class="forge-side-panel-tradition">' + safe(tradition) + '</div>' : '')
           + '</div>'
           + (desc ? '<div class="forge-side-panel-desc">' + safe(desc) + '</div>' : '')
@@ -3783,26 +3888,30 @@
     // canvas (no node hit) clears the entire lock — the standard
     // "click to dismiss" gesture.
     function toggleLock(id) {
+      let action;   // 'add' | 'remove' | 'clear'
+      let changedId = id;
       if (id == null) {
         if (local.lockedSet.size === 0) return;
         local.lockedSet.clear();
+        action = 'clear';
+        changedId = null;
       } else if (local.lockedSet.has(id)) {
         local.lockedSet.delete(id);
+        action = 'remove';
       } else {
         local.lockedSet.add(id);
+        action = 'add';
       }
       const lEl = document.getElementById('forge-status-lock');
       if (lEl) lEl.textContent = local.lockedSet.size > 0 ? String(local.lockedSet.size) : '—';
       recomputeFocus();
-      // Phase 5B M-F2 (2026-05-20) — persist lock state on every
-      // toggle (including click-empty clear).
+      // Phase 5B M-F2 — persist on every toggle.
       saveRuntimeState();
-      // Phase 19 (2026-05-21) — notify the side-panel observer. Fires
-      // ONLY on an ADD (id passed + new in lockedSet). Unlock /
-      // clear doesn't pulse the panel toggle (no fresh content).
+      // Phase 19C (2026-05-21) — notify the deity-tab observer with
+      // the action type so it can add / remove / clear tabs.
       // Defensive try/catch so a panel-side error never breaks lock.
-      if (id != null && local.lockedSet.has(id) && typeof local._onLockChange === 'function') {
-        try { local._onLockChange(id); } catch (e) { /* ignore */ }
+      if (typeof local._onLockChange === 'function') {
+        try { local._onLockChange(changedId, action); } catch (e) { /* ignore */ }
       }
     }
 

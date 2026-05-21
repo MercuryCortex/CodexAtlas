@@ -6073,38 +6073,107 @@ body.nav-collapsed .nav-more > summary .lbl { display: none; }
 }
 
 /* ============================================================
-   Phase 19B (2026-05-21) — Forge deity-inspector content
-   inside the existing GLOBAL aside.detail.
+   Phase 19C (2026-05-21) — Forge deity-inspector with TAB STACK
    ============================================================
-   We DO NOT add a second panel — the global one (defined above
-   under `aside.detail`) is shared across views. We just provide:
-     1. Forge-specific content styles for #detail-inner.
-     2. A pulse animation on the global .detail-toggle when a
-        deity is locked.
-     3. A Y override on the toggle when the user is in the Forge
-        view — anchored to roughly the height of the Forge icon
-        in the left nav so the two read as horizontal peers.
+   - In Forge view, the global aside.detail is HIDDEN ENTIRELY
+     when no deity is locked (no negative empty space).
+   - Per-lock floating buttons (.forge-deity-tab) stack at the
+     right viewport edge. Clicking one opens the panel for that
+     deity; clicking the active one closes it; toggleLock(null)
+     clears them all.
+   - When the panel is open, the tab column shifts left by the
+     panel width so the buttons stay OUTSIDE the panel.
+   - Global .detail-toggle is hidden in Forge view (we don't use
+     it — our tabs are the way).
    ============================================================ */
 body.view-forge .detail-toggle {
-  /* Forge logo center is around 75 px from the top (brand-section
-     ~44px + nav-inner padding 10px + first .item padding-top 11px
-     + half icon ≈ 10px). Match here. */
+  display: none;
+}
+/* Hide the GLOBAL aside.detail entirely when collapsed in Forge —
+   no negative empty space sticking off the right edge. */
+body.view-forge.detail-collapsed aside.detail {
+  display: none;
+}
+
+/* Tab stack — fixed at right viewport edge. Shifts left when the
+   panel is open so the tabs sit OUTSIDE the panel. */
+.forge-deity-tabs {
+  position: fixed;
   top: 65px;
+  right: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  z-index: 160;             /* above aside.detail (z=150) */
+  pointer-events: none;     /* children re-enable */
+  transition: right 0.18s ease-out;
 }
+.forge-deity-tabs.panel-open {
+  right: var(--detail-w, 360px);
+}
+.forge-deity-tab {
+  pointer-events: auto;
+  width: 28px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  background: rgba(13, 17, 25, 0.92);
+  border: 1px solid var(--border, #2a2e3a);
+  border-right: 0;
+  border-top-left-radius: 4px;
+  border-bottom-left-radius: 4px;
+  color: var(--text-2);
+  cursor: pointer;
+  font-family: var(--mono, "JetBrains Mono", Menlo, monospace);
+  font-size: 13px;
+  transition: color 0.15s ease, border-color 0.15s ease, box-shadow 0.15s ease, background 0.15s ease;
+  padding: 0;
+}
+.forge-deity-tab:hover {
+  color: var(--gold, #d4a55a);
+  border-color: var(--gold-soft, #8a7430);
+}
+.forge-deity-tab.is-active {
+  color: var(--gold, #d4a55a);
+  border-color: var(--gold, #d4a55a);
+  background: rgba(13, 17, 25, 0.98);
+}
+.forge-deity-tab-chevron {
+  font-size: 13px;
+  line-height: 1;
+}
+.forge-deity-tab-dot {
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  flex: 0 0 auto;
+}
+
+/* Pulse animation — added briefly when a new tab is added. */
 @keyframes forge-side-panel-pulse {
-  0%   { box-shadow: 0 0 0 0   rgba(212, 165, 90, 0.55); color: var(--gold, #d4a55a); border-color: var(--gold, #d4a55a); }
+  0%   { box-shadow: 0 0 0 0   rgba(212, 165, 90, 0.55); }
   50%  { box-shadow: 0 0 0 8px rgba(212, 165, 90, 0.00); }
-  100% { box-shadow: 0 0 0 0   rgba(212, 165, 90, 0.00); color: var(--gold, #d4a55a); border-color: var(--gold, #d4a55a); }
+  100% { box-shadow: 0 0 0 0   rgba(212, 165, 90, 0.00); }
 }
-.detail-toggle.pulsing {
+.forge-deity-tab.pulsing {
   animation: forge-side-panel-pulse 1.2s ease-out 2;
   color: var(--gold, #d4a55a);
   border-color: var(--gold, #d4a55a);
 }
 
-/* Forge-specific content wrapper inside #detail-inner. */
+/* Forge content wrapper inside #detail-inner. */
 .forge-side-panel-content {
   font-family: var(--mono, "JetBrains Mono", Menlo, monospace);
+}
+.forge-side-panel-aka {
+  font-size: 11px;
+  color: var(--text-3, #6b7280);
+  letter-spacing: 0.04em;
+  font-style: italic;
+  margin-top: 4px;
 }
 .forge-side-panel-thumb {
   width: 100%;
