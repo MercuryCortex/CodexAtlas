@@ -16,7 +16,7 @@ syncretic-edges:
   - target: "[[sky-woman-haudenosaunee]]"
     type: "parallel-form"
     source: "Structural parallel to Turtle Island cosmogony: in Haudenosaunee tradition the Great Turtle provides the foundation of the earth; in Vedic-Hindu tradition Kurma (the divine Tortoise) provides the stable base for cosmic churning. Both posit a cosmic turtle/tortoise as the fundamental support of worldly existence. No transmission documented — parallel-form convergence."
-status: stub
+status: "metadata"
 refs:
   - title: "Vishnu Purana"
     author: "Anonymous"

@@ -17,7 +17,7 @@ syncretic-edges:
   - target: "Vaiśravaṇa"
     type: "ancient-identification"
     source: "Buddhist absorption: Kubera = Vaiśravaṇa, one of the Four Heavenly Kings guarding the North; in Sino-Japanese Buddhism Bishamonten / Tamonten; in Tibetan Vajrayana the wealth-god Jambhala"
-  - target: "[[plutus|Plutus]] (Greek)"
+  - target: "Plutus (Greek wealth-god; no node yet)"
     type: "scholarly-parallel"
     source: "Greek god of wealth — etymological commonality not claimed but functional parallel"
 status: "metadata"

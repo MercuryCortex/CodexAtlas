@@ -3,6 +3,7 @@ type: deity
 id: "krishna"
 name: "Krishna"
 aka: ["Kṛṣṇa", "Govinda", "Vasudeva", "Madhava", "Hari", "Gopala"]
+# DUPLICATE WARNING: see also 03_deities/krishna-deity-vaishnava.md — same deity, both metadata-grade. See AUDIT/forge-deity-spine-findings-2026-05-21.md.
 tradition: "Vaishnavism"
 region: "North India (Mathura/Vrindavan cult centers); pan-Indian and global diaspora"
 period-active-earliest: -400
@@ -20,7 +21,7 @@ syncretic-edges:
   - target: "[[vishnu]]"
     type: "ancient-identification"
     source: "Bhagavata Purana and earlier — Krishna *is* Vishnu's complete descent (purna avatara)"
-status: "stub"
+status: "metadata"
 refs:
   - title: "Krishna: The Beautiful Legend of God (Srimad Bhagavata Purana Book X)"
     author: "Bryant, Edwin F. (trans.)"

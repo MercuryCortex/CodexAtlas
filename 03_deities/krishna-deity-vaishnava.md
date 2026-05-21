@@ -3,6 +3,7 @@ type: deity
 id: "krishna-deity-vaishnava"
 name: "Krishna (Vaiṣṇava)"
 aka: ["Kṛṣṇa", "Govinda", "Gopāla", "Vāsudeva", "Hari", "Giridhar", "Mādhava"]
+# DUPLICATE WARNING: see also 03_deities/krishna.md — same deity. See AUDIT/forge-deity-spine-findings-2026-05-21.md.
 tradition: "Hindu — Vaiṣṇava"
 region: "Indian subcontinent; Hindu diaspora"
 period-active-earliest: -400

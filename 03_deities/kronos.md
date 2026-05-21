@@ -25,7 +25,7 @@ syncretic-edges:
     type: "scholarly-parallel"
     source: "West 1997, East Face of Helicon"
     notes: "Hittite Kumarbi castrates Anu by biting off his genitals — the structural parallel to Kronos castrating Uranus."
-status: "stub"
+status: "metadata"
 refs:
   - title: "Hesiod's Theogony, edited with commentary"
     author: "West, M.L."

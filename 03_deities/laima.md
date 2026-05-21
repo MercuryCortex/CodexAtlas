@@ -25,7 +25,7 @@ syncretic-edges:
     type: "theological-companion"
     source: "Greimas (1992). Of Gods and Men."
     notes: "Laima and Saule (the sun goddess) appear together in many Lithuanian dainas as companion-deities governing human life. Saule governs the daily-seasonal cycle; Laima governs individual life-fate. The pairing suggests a complementary cosmological system: cosmic order (sun) and individual destiny (fate)."
-status: "stub"
+status: "metadata"
 refs:
   - title: "Of Gods and Men: Studies in Lithuanian Mythology"
     author: "Greimas, Algirdas Julius"
