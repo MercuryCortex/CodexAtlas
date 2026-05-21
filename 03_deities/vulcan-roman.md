@@ -21,7 +21,7 @@ syncretic-edges:
   - target: "[[svarog]]"
     type: "ancient-identification"
     source: "Hypatian Chronicle 1114 glosses Hephaestus=Svarog; transitively Vulcan↔Svarog through the Greek pivot"
-status: "stub"
+status: "metadata"
 refs:
   - title: "Religions of Rome"
     author: "Beard, North & Price"

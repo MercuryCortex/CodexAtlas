@@ -21,7 +21,7 @@ syncretic-edges:
     type: "moiety-complement"
     source: "Howitt 1904; Massola 1968"
     notes: "The Kulin social order is built on the Bunjil/Waa binary: every person belongs to either the Eaglehawk (Bunjil) or Crow (Waang) moiety, and marriage must cross the moiety line. The mythic complementarity of the two ancestor-figures encodes the social rule. The binary is widespread across southeastern Australian Aboriginal traditions (Berndt & Berndt 1989)."
-status: "stub"
+status: "metadata"
 refs:
   - title: "The Native Tribes of South-East Australia"
     author: "Howitt, A.W."

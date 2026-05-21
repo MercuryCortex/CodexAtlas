@@ -17,7 +17,7 @@ attributes: ["four arms (conch, discus, mace, lotus)", "the *cakra* Sudarśana",
 attested-in: ["[[phase-2-001-rig-veda-family-books]]", "[[phase-2-017-mahabharata-ramayana-oral-layers]]", "[[phase-5-001-devi-mahatmya]]"]
 equivalents: []
 syncretic-edges: []
-status: "stub"
+status: "metadata"
 refs:
   - title: "Hindu Goddesses: Visions of the Divine Feminine in the Hindu Religious Tradition"
     author: "Kinsley, David"
