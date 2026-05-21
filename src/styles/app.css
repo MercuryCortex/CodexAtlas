@@ -5,6 +5,48 @@
    This is app code (CSS), not vault content. Content agents should
    only stage files under 01_traditions/ … 09_symbols/ + 00_meta/.
    See AGENTS.md "CONTENT AGENTS MUST NOT TOUCH APP CODE" for the rule.
+   ============================================================
+
+   ╔══════════════════════════════════════════════════════════╗
+   ║  MASTER STYLE GUIDE — Phase 21O (2026-05-21)             ║
+   ║  Canonical UI primitives. Reuse, don't reinvent.         ║
+   ║                                                          ║
+   ║  POPUP MENUS (dropdown lists of named options):          ║
+   ║    .nav-hub-menu / .nh-item     ← global view-switcher   ║
+   ║    .forge-mode-menu / .fm-item  ← in-view picker (modes) ║
+   ║    Both share: 12-px rounded border, gold-22 border,     ║
+   ║    rgba(13,17,25,0.88-0.92) bg, blur(16px), 240 z,       ║
+   ║    grow-from-trigger scale+opacity transition, items     ║
+   ║    with gold border-left on hover/active.                ║
+   ║    → Build new ones as .nh-* or .fm-* aliases. Don't     ║
+   ║      introduce a third "panel of options" primitive.     ║
+   ║                                                          ║
+   ║  BOOLEAN TOGGLE ROWS (label + ON/OFF):                   ║
+   ║    .forge-viewset-row .vs-check  ← 14×14 square box      ║
+   ║    Empty box = OFF, gold-filled box = ON. No row-level   ║
+   ║    border/background to signal state — the BOX is the    ║
+   ║    indicator. Hover gets a faint gold-tint background    ║
+   ║    only as an affordance.                                ║
+   ║    → Build new boolean toggles around this primitive.    ║
+   ║                                                          ║
+   ║  PILL CONTAINERS (top-left FORGE status strip,           ║
+   ║                   bottom-bar zoom/legend/view buttons):  ║
+   ║    36-px height, 10-px radius, gold-22 border,           ║
+   ║    rgba(13,17,25,0.78) bg, blur(12px), 230 z.            ║
+   ║                                                          ║
+   ║  DIVIDER PATTERN inside a pill (e.g. FORGE | Deities):   ║
+   ║    Use `border-left: 1px solid rgba(212,165,90,0.28)`    ║
+   ║    on the right segment. Hide any `·` separator span     ║
+   ║    next to it. NEVER nest a bordered box inside another  ║
+   ║    bordered box — that's the "ugly nested pill" trap.    ║
+   ║                                                          ║
+   ║  ETHIC: every Phase ≥21 commit should either REUSE one   ║
+   ║  of these primitives or update this header to add a new  ║
+   ║  one. Drift between similar-purpose components is what   ║
+   ║  produces "ugly" feedback loops. If you find a new       ║
+   ║  shared pattern, document it here and refer agents to    ║
+   ║  this block from the inline class comments.              ║
+   ╚══════════════════════════════════════════════════════════╝
    ============================================================ */
 :root {
   --bg-0: #07090f;
@@ -603,35 +645,33 @@ body.view-forge .forge-stage {
 .forge-viewset-row:hover { background: rgba(212,165,90,0.10); }
 .forge-viewset-row[disabled] { color: var(--text-3, #6b7280); cursor: not-allowed; opacity: 0.6; }
 .forge-viewset-row em { font-style: normal; color: var(--text-3, #6b7280); font-size: 10px; margin-left: 4px; }
+
+/* ═══════════════════════════════════════════════════════════════
+   View-settings rows — Phase 21O (2026-05-21)
+   ═══════════════════════════════════════════════════════════════
+   STYLE-GUIDE NOTE: each row is "label + square checkbox in front".
+   The SQUARE is the ON/OFF indicator — empty box = OFF, gold-filled
+   box = ON. No row-level border, no background highlight on .is-on.
+   Hover keeps the standard gold-tint row-hover for affordance only.
+   Use this same pattern for any future boolean-toggle list.
+   ═══════════════════════════════════════════════════════════════ */
 .forge-viewset-row .vs-check {
   display: inline-block;
   width: 14px; height: 14px;
   border-radius: 3px;
-  border: 1px solid rgba(212,165,90,0.45);
+  border: 1px solid rgba(212,165,90,0.55);
   background: transparent;
   position: relative;
   flex: 0 0 auto;
+  transition: background 100ms ease, border-color 100ms ease;
 }
-/* Phase 21N (2026-05-21) — active rows wear a THICK gold-
-   bordered box (not a fill). The V tick is gone; the BORDER
-   IS the indicator. Inactive rows show no border so the box
-   only appears on the rows that are currently on. */
-.forge-viewset-row .vs-check { display: none; }
-.forge-viewset-row {
-  margin: 2px 8px;
-  border-radius: 6px;
-  border: 1px solid transparent;       /* reserve the border slot so layout doesn't jump */
-  padding-left: 12px;                   /* slight inset since vs-check is gone */
-  transition: border-color 100ms ease, background 100ms ease, color 100ms ease;
-}
-.forge-viewset-row.is-on {
+.forge-viewset-row.is-on .vs-check {
+  background: var(--gold, #d4a55a);
   border-color: var(--gold, #d4a55a);
-  color: var(--gold-1, #e8c889);
-  background: rgba(212,165,90,0.06);
 }
-.forge-viewset-row.is-on:hover {
-  background: rgba(212,165,90,0.14);
-}
+/* Subtle gold tint on the label of an ON row, no background. */
+.forge-viewset-row.is-on { color: var(--gold-1, #e8c889); }
+.forge-viewset-row.is-on:hover { background: rgba(212,165,90,0.10); }
 
 /* Layer-toggle effects driven by body classes set in JS. */
 body.fv-hide-hulls .forge-hulls-overlay { display: none !important; }
@@ -6002,19 +6042,22 @@ body.nav-collapsed .nav-more > summary .lbl { display: none; }
 .forge-status-v.forge-status-pending { color: var(--text-3); font-style: italic; }
 .forge-status-v.forge-status-fail    { color: var(--crimson, #c44a5a); }
 
-/* Mode dropdown (Phase 4d) — primary "what is this wheel" control.
-   Native <select> styled to fit the status strip.  Custom caret via
-   appearance:none + background-image gradient. */
-/* Phase 21N-REVERT-FORGE-PILL (2026-05-21) — restored the
-   `FORGE | Deities` UNIFIED PILL look from Phase 21L:
-   • Native <select> inside the FORGE status pill
-   • Transparent background + no outer border (no nested-box)
-   • Left border serves as the divider between FORGE and Deities
-   • Gradient-arrow caret stays
-   • The first ` · ` separator dot is hidden (the border is the
-     divider). */
+/* ═══════════════════════════════════════════════════════════════
+   FORGE | Deities mode picker — Phase 21O (2026-05-21)
+   ═══════════════════════════════════════════════════════════════
+   STYLE-GUIDE NOTE: this is now a CUSTOM <button> (not a native
+   <select>) so the popup can be skinned to match the nav-hub menu.
+   The popup itself lives below in `.forge-mode-menu` and is the
+   canonical "scrolling list of mode-like options" primitive.
+
+   The button face keeps the Phase 21L "FORGE | Deities ▾" pill
+   look — transparent, no outer border, left border serves as the
+   `|` divider, gradient triangle as the caret. Don't introduce a
+   third primitive for similar pickers — reuse this + the popup.
+   ═══════════════════════════════════════════════════════════════ */
 .forge-status-mode {
   appearance: none; -webkit-appearance: none;
+  display: inline-flex; align-items: center;
   background: transparent;
   color: var(--gold);
   font-family: var(--mono); font-size: 11px;
@@ -6027,6 +6070,8 @@ body.nav-collapsed .nav-more > summary .lbl { display: none; }
   height: 20px;
   vertical-align: middle;
   cursor: pointer;
+  /* Gradient triangle caret — same geometry as the old <select>
+     so the visual chrome reads identical. */
   background-image:
     linear-gradient(45deg, transparent 50%, var(--gold-soft, #a87f3e) 50%),
     linear-gradient(135deg, var(--gold-soft, #a87f3e) 50%, transparent 50%);
@@ -6039,13 +6084,82 @@ body.nav-collapsed .nav-more > summary .lbl { display: none; }
   width: auto;
   min-width: 0;
 }
-.forge-status-mode:hover  { color: var(--gold-1, #e8c889); }
-.forge-status-mode:focus  { color: var(--gold-1, #e8c889); }
-/* Drop the ` · ` separator dot between FORGE and the mode select — the border serves as the divider. */
+.forge-status-mode:hover                          { color: var(--gold-1, #e8c889); }
+.forge-status-mode:focus                          { color: var(--gold-1, #e8c889); }
+.forge-status-mode[aria-expanded="true"]          { color: var(--gold-1, #e8c889); }
+.forge-status-mode .fsm-label                     { display: inline-block; }
+/* Drop the ` · ` separator between FORGE and the mode button — the
+   left-border on the button IS the divider. */
 .forge-status > .forge-status-sep:first-of-type { display: none; }
-.forge-status-mode option {
-  background: var(--bg-1);
-  color: var(--text-1);
+
+/* ─── .forge-mode-menu ─ Phase 21O popup ───────────────────────
+   Lives at document.body root (escapes .forge-status overflow:
+   hidden). Positioned `fixed` at the button's bottom-left via JS
+   each open. Visual chrome mirrors `.nav-hub-menu` — same border,
+   blur, padding, animation. If you build another "list of named
+   options" dropdown in Forge, REUSE this primitive (or the
+   nav-hub one) rather than introducing a third. */
+.forge-mode-menu {
+  position: fixed;
+  top: 0; left: 0;            /* set by JS on open */
+  width: 220px;
+  max-height: calc(100vh - 80px);
+  overflow-y: auto;
+  border-radius: 12px;
+  border: 1px solid rgba(212,165,90,0.22);
+  background: rgba(13,17,25,0.92);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  box-shadow: 0 8px 32px rgba(0,0,0,0.45);
+  padding: 8px 0;
+  z-index: 240;
+  /* Hidden state */
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(-8px) scale(0.96);
+  transform-origin: 28px -16px;
+  transition: opacity 160ms ease, transform 200ms cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+.forge-mode-menu.is-open {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(0) scale(1);
+}
+.forge-mode-menu .fm-item {
+  display: flex; align-items: center; gap: 10px;
+  padding: 8px 14px;
+  font-family: var(--sans, Inter, sans-serif);
+  font-size: 13px;
+  color: var(--text-1, #e5e7eb);
+  cursor: pointer;
+  user-select: none;
+  border-left: 2px solid transparent;
+  transition: background 90ms ease, border-color 90ms ease, color 90ms ease;
+}
+.forge-mode-menu .fm-item:hover {
+  background: rgba(212,165,90,0.10);
+  border-left-color: var(--gold, #d4a55a);
+  color: var(--gold-1, #e8c889);
+}
+.forge-mode-menu .fm-item.is-active {
+  border-left-color: var(--gold, #d4a55a);
+  color: var(--gold-1, #e8c889);
+}
+.forge-mode-menu .fm-sym {
+  display: inline-block;
+  width: 18px; text-align: center;
+  color: var(--text-2, #9099a8);
+  font-size: 14px;
+}
+.forge-mode-menu .fm-item:hover .fm-sym,
+.forge-mode-menu .fm-item.is-active .fm-sym {
+  color: var(--gold, #d4a55a);
+}
+.forge-mode-menu .fm-label {
+  flex: 1 1 auto;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 /* Spacer pushes the search input to the right edge of the strip. */

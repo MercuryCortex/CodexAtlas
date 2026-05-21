@@ -738,18 +738,21 @@
     // Mode dropdown is FIRST in the status row so it reads as the
     // primary "what is this wheel showing" indicator.  The rest
     // (device / counts / hover / lock / frame) follow.
-    // Phase 21N-REVERT (2026-05-21) — back to the native <select>
-    // mode picker that was at the `forge-wheel-clean-2026-05-21`
-    // tag. The styled-select look John liked. No custom dropdown
-    // panel — native browser popup. The custom-popup experiments
-    // in 21N / 21N-R didn't land.
-    const modeOptionsHtml = modemod.MODES.map(m =>
-      '<option value="' + m.value + '">' + m.glyph + '  ' + m.label + '</option>'
-    ).join('');
+    // Phase 21O (2026-05-21) — STYLE GUIDE: the mode picker is now
+    // a CUSTOM BUTTON that opens a popup styled identically to the
+    // top-left nav-hub menu (.nav-hub-menu / .nh-item). Native
+    // <select> couldn't be skinned to match — its popup is browser-
+    // native. The button keeps the FORGE | Deities pill look from
+    // Phase 21L (transparent face, left-border divider as the `|`,
+    // gradient caret). Popup chrome lives in `.forge-mode-menu`
+    // (sibling of body, position:fixed) — anchored to the button's
+    // bottom-left via JS in wireModeDropdown().
     status.innerHTML = [
       '<span class="forge-status-tag">FORGE</span>',
       '<span class="forge-status-sep">·</span>',
-      '<select class="forge-status-mode" id="forge-status-mode" title="What is this wheel showing?">' + modeOptionsHtml + '</select>',
+      '<button class="forge-status-mode" id="forge-status-mode" type="button" aria-haspopup="menu" aria-expanded="false" title="What is this wheel showing?">' +
+        '<span class="fsm-label" id="fsm-current-label">Deities</span>' +
+      '</button>',
       '<span class="forge-status-sep">·</span>',
       '<span class="forge-status-k">device</span>',
       '<span class="forge-status-v forge-status-pending" id="forge-status-device">acquiring…</span>',
@@ -1137,6 +1140,15 @@
         if (local.renderer) {
           try { local.renderer.destroy(); } catch (e) { /* ignore */ }
           local.renderer = null;
+        }
+        // Phase 21O (2026-05-21) — detach the mode-dropdown popup.
+        // wireModeDropdown() appended it directly to document.body
+        // (so it escapes the .forge-status overflow:hidden); on
+        // destroy we tear it down so view-switch doesn't leak a
+        // stale popup into the next view.
+        if (local.modeMenuEl && local.modeMenuEl.parentNode) {
+          try { local.modeMenuEl.parentNode.removeChild(local.modeMenuEl); } catch (e) { /* ignore */ }
+          local.modeMenuEl = null;
         }
         try { camera.stopAnim(); } catch (e) { /* ignore */ }
       },
@@ -1605,17 +1617,13 @@
       }
       updateZoomGizmo();
 
-      // Phase 21N-REVERT — back to the native <select> .onchange
-      // handler. Pre-21N behavior, untouched.
-      const modeSelectEl = document.getElementById('forge-status-mode');
-      if (modeSelectEl) {
-        modeSelectEl.value = local.mode.id;
-        modeSelectEl.addEventListener('change', (ev) => {
-          if (local.destroyed) return;
-          rebuildForMode(ev.target.value);
-          saveRuntimeState();
-        });
-      }
+      // Phase 21O (2026-05-21) — Hub-style custom dropdown.
+      // wireModeDropdown() builds the popup (sibling of body),
+      // anchors it to the button, handles open/close/select, and
+      // returns a `setMode(id)` so external code can sync the
+      // visible label without firing a rebuild.
+      wireModeDropdown();
+      syncModeButtonLabel(local.mode.id);
 
       // Search wire-up (Phase 4f).
       const searchEl = document.getElementById('forge-status-search');
@@ -1679,10 +1687,10 @@
             recomputeFocus();
           }
         }
-        // Sync the mode <select> to the saved mode (if any).
-        const modeSelectEl2 = document.getElementById('forge-status-mode');
-        if (modeSelectEl2 && local.mode && local.mode.id) {
-          modeSelectEl2.value = local.mode.id;
+        // Sync the mode button label to the saved mode (if any).
+        // Phase 21O — replaces the old <select>.value sync.
+        if (local.mode && local.mode.id) {
+          syncModeButtonLabel(local.mode.id);
         }
       }
 
@@ -1822,6 +1830,10 @@
         hitGrid:     hitGridNew,
         worldExtent: ext,
       };
+      // Phase 21O (2026-05-21) — keep the FORGE | <label> button
+      // face + the open-menu active-row marker in sync with the
+      // current mode. Safe no-op if the button isn't mounted yet.
+      try { syncModeButtonLabel(modeId); } catch (_) {}
       // Phase 21J (2026-05-21) — apply the zoom-floor + pan-lock
       // now that local.mode.worldExtent is populated. The camera
       // is already at the new fit_scale (resizeAndFit was called
@@ -3599,6 +3611,120 @@
       });
       document.addEventListener('keydown', (ev) => {
         if (ev.key === 'Escape' && panel.classList.contains('is-open')) close();
+      });
+    }
+
+    // ════════════════════════════════════════════════════════════
+    //  syncModeButtonLabel(modeId)  —  Phase 21O (2026-05-21)
+    // ════════════════════════════════════════════════════════════
+    //  Update the FORGE | Deities button face to read the active
+    //  mode's label. Pure DOM write — does NOT trigger a rebuild.
+    //  Safe to call from save-state restore + rebuildForMode.
+    // ════════════════════════════════════════════════════════════
+    function syncModeButtonLabel(modeId) {
+      const entry = (modemod.MODES || []).find(m => m.value === modeId);
+      if (!entry) return;
+      const labelEl = document.getElementById('fsm-current-label');
+      if (labelEl) labelEl.textContent = entry.label;
+      // Mirror the active row in the open menu, if any.
+      const menu = local.modeMenuEl;
+      if (menu) {
+        menu.querySelectorAll('.fm-item').forEach(el => {
+          el.classList.toggle('is-active', el.dataset.value === modeId);
+        });
+      }
+    }
+
+    // ════════════════════════════════════════════════════════════
+    //  wireModeDropdown()  —  Phase 21O (2026-05-21)
+    // ════════════════════════════════════════════════════════════
+    //  STYLE-GUIDE NOTE: this dropdown reuses the same chrome as
+    //  the top-left nav-hub menu. The popup is appended to
+    //  document.body (escapes the .forge-status `overflow:hidden`)
+    //  and positioned `fixed` at the trigger's bottom-left on each
+    //  open. Class names:
+    //    .forge-mode-menu  ← popup container (mirrors .nav-hub-menu)
+    //    .fm-item          ← row (mirrors .nh-item)
+    //    .fm-sym           ← glyph cell
+    //    .fm-label         ← label text
+    //  Future similar dropdowns SHOULD reuse one of these two
+    //  primitives instead of introducing a third style.
+    //
+    //  Lifecycle: the popup element is referenced by
+    //  `local.modeMenuEl` so destroy() can detach it cleanly when
+    //  the view unmounts.
+    // ════════════════════════════════════════════════════════════
+    function wireModeDropdown() {
+      const btn = document.getElementById('forge-status-mode');
+      if (!btn) return;
+
+      // Build the popup once per mount and cache on local.
+      const menu = document.createElement('div');
+      menu.className = 'forge-mode-menu';
+      menu.id = 'forge-mode-menu';
+      menu.setAttribute('role', 'menu');
+      menu.setAttribute('aria-hidden', 'true');
+      menu.innerHTML = (modemod.MODES || []).map(m =>
+        '<div class="fm-item" role="menuitem" tabindex="0" data-value="' + m.value + '">' +
+          '<span class="fm-sym">' + (m.glyph || '·') + '</span>' +
+          '<span class="fm-label">' + m.label + '</span>' +
+        '</div>'
+      ).join('');
+      document.body.appendChild(menu);
+      local.modeMenuEl = menu;
+
+      function position() {
+        const r = btn.getBoundingClientRect();
+        // Drop DOWN from the bottom of the trigger pill, aligned
+        // to the trigger's left edge. 6 px gap matches the nav-hub
+        // gap. Clamp so the menu never escapes the viewport.
+        const top  = Math.round(r.bottom + 6);
+        const left = Math.round(r.left);
+        menu.style.top  = top  + 'px';
+        menu.style.left = left + 'px';
+      }
+      function open() {
+        position();
+        menu.classList.add('is-open');
+        menu.setAttribute('aria-hidden', 'false');
+        btn.setAttribute('aria-expanded', 'true');
+      }
+      function close() {
+        menu.classList.remove('is-open');
+        menu.setAttribute('aria-hidden', 'true');
+        btn.setAttribute('aria-expanded', 'false');
+      }
+
+      btn.addEventListener('click', (ev) => {
+        ev.stopPropagation();
+        if (local.destroyed) return;
+        if (menu.classList.contains('is-open')) close(); else open();
+      });
+      menu.addEventListener('click', (ev) => {
+        const row = ev.target.closest('.fm-item');
+        if (!row) return;
+        const v = row.dataset.value;
+        if (!v || local.destroyed) { close(); return; }
+        close();
+        if (v !== local.mode.id) {
+          rebuildForMode(v);
+          syncModeButtonLabel(v);
+          saveRuntimeState();
+        }
+      });
+      document.addEventListener('click', (ev) => {
+        if (!menu.classList.contains('is-open')) return;
+        if (menu.contains(ev.target) || btn.contains(ev.target)) return;
+        close();
+      });
+      document.addEventListener('keydown', (ev) => {
+        if (ev.key === 'Escape' && menu.classList.contains('is-open')) close();
+      });
+      // Reposition when the viewport reflows (the trigger pill is
+      // fixed at top:14 left:62, so resize is the only reflow trigger
+      // that matters here — pan/zoom don't move it).
+      window.addEventListener('resize', () => {
+        if (menu.classList.contains('is-open')) position();
       });
     }
 
