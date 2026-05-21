@@ -738,20 +738,33 @@
     // Mode dropdown is FIRST in the status row so it reads as the
     // primary "what is this wheel showing" indicator.  The rest
     // (device / counts / hover / lock / frame) follow.
-    const modeOptionsHtml = modemod.MODES.map(m =>
-      '<option value="' + m.value + '">' + m.glyph + '  ' + m.label + '</option>'
+    // Phase 21N (2026-05-21) — Mode picker is a custom button +
+    // dropdown menu, styled to match the view-settings panel.
+    // Native <select> is gone. The button shows the active mode's
+    // glyph + label; clicking opens a menu drop-down with all
+    // modes; clicking a row calls rebuildForMode() (same handler
+    // the old select.onchange called).
+    const modeMenuHtml = modemod.MODES.map(m =>
+      '<button class="forge-mode-row" type="button" data-mode="' + m.value + '">' +
+        '<span class="forge-mode-row-glyph">' + m.glyph + '</span>' +
+        '<span class="forge-mode-row-label">' + m.label + '</span>' +
+      '</button>'
     ).join('');
     status.innerHTML = [
-      // 2026-05-19 — restored the clean monospace FORGE tag here.
-      // The dup was the OTHER way around: app shell's view-header
-      // was rendering "FORGE" in big stretched serif (the global
-      // .view-header h2 rule with letter-spacing 0.32em +
-      // text-transform: uppercase), AND this neat tag below.
-      // John wanted the neat one kept; CSS now hides the app
-      // shell header for body.view-forge entirely.
       '<span class="forge-status-tag">FORGE</span>',
       '<span class="forge-status-sep">·</span>',
-      '<select class="forge-status-mode" id="forge-status-mode" title="What is this wheel showing?">' + modeOptionsHtml + '</select>',
+      '<div class="forge-mode-wrap">' +
+        '<button class="forge-mode-btn" id="forge-status-mode" type="button" ' +
+          'aria-haspopup="menu" aria-expanded="false" aria-controls="forge-mode-menu" ' +
+          'title="What is this wheel showing?">' +
+          '<span class="forge-mode-glyph" id="forge-mode-btn-glyph">⊕</span>' +
+          '<span class="forge-mode-label" id="forge-mode-btn-label">Deities</span>' +
+          '<span class="forge-mode-caret">▾</span>' +
+        '</button>' +
+        '<div class="forge-mode-menu" id="forge-mode-menu" role="menu" aria-hidden="true">' +
+          modeMenuHtml +
+        '</div>' +
+      '</div>',
       '<span class="forge-status-sep">·</span>',
       '<span class="forge-status-k">device</span>',
       '<span class="forge-status-v forge-status-pending" id="forge-status-device">acquiring…</span>',
@@ -967,7 +980,11 @@
     //       extent (~world span × 0.5 margin on each side).
     //       Between, bounds expand linearly with t.
     // ════════════════════════════════════════════════════════════
-    const FLOOR_PCT = 0.10;
+    // Phase 21N (2026-05-21) — camera zoom-out floor at gizmo
+    // 11% (was 10%). Tied to BG_WORLD_WIDTH = 18000 wu so the
+    // BG exactly kisses the viewport at the floor on a 16:9
+    // monitor (no over-sized halo, no exposed gap).
+    const FLOOR_PCT = 0.11;
     function applyZoomFloor() {
       if (!camera || !camera.setScaleBounds) return;
       const fit = (typeof computeFitScale === 'function') ? computeFitScale() : 0;
@@ -1603,21 +1620,64 @@
       }
       updateZoomGizmo();
 
-      // Mode dropdown wire-up (Phase 4d).
-      const modeSelectEl = document.getElementById('forge-status-mode');
-      if (modeSelectEl) {
-        modeSelectEl.value = local.mode.id;
-        modeSelectEl.addEventListener('change', (ev) => {
-          if (local.destroyed) return;
-          rebuildForMode(ev.target.value);
-          // Phase 5B M-F2 (2026-05-20) — persist mode on change.
-          // saveRuntimeState reads the current local.mode.id +
-          // any preserved-or-clamped timeline (refreshBounds was
-          // called inside rebuildForMode) + the (now-cleared)
-          // lockedSet.
+      // Phase 21N (2026-05-21) — custom Deities dropdown wire-up.
+      // Replaces the native <select>.onchange path. The button
+      // face is updated to reflect the active mode (glyph + label);
+      // the menu opens/closes on the button; clicking a row calls
+      // rebuildForMode + saveRuntimeState.
+      (function wireModeDropdown() {
+        const btn   = document.getElementById('forge-status-mode');
+        const menu  = document.getElementById('forge-mode-menu');
+        const glyph = document.getElementById('forge-mode-btn-glyph');
+        const label = document.getElementById('forge-mode-btn-label');
+        if (!btn || !menu) return;
+        function refreshFace() {
+          const m = modemod.MODES.find(x => x.value === local.mode.id);
+          if (m) {
+            if (glyph) glyph.textContent = m.glyph;
+            if (label) label.textContent = m.label;
+          }
+          menu.querySelectorAll('.forge-mode-row').forEach(row => {
+            row.classList.toggle('is-active', row.dataset.mode === local.mode.id);
+          });
+        }
+        function open() {
+          menu.classList.add('is-open');
+          menu.setAttribute('aria-hidden', 'false');
+          btn.setAttribute('aria-expanded', 'true');
+        }
+        function close() {
+          menu.classList.remove('is-open');
+          menu.setAttribute('aria-hidden', 'true');
+          btn.setAttribute('aria-expanded', 'false');
+        }
+        btn.addEventListener('click', (ev) => {
+          ev.stopPropagation();
+          if (menu.classList.contains('is-open')) close(); else open();
+        });
+        menu.addEventListener('click', (ev) => {
+          const row = ev.target.closest('.forge-mode-row');
+          if (!row) return;
+          const id = row.dataset.mode;
+          close();
+          if (!id || id === local.mode.id || local.destroyed) return;
+          rebuildForMode(id);
+          refreshFace();
           saveRuntimeState();
         });
-      }
+        document.addEventListener('click', (ev) => {
+          if (!menu.classList.contains('is-open')) return;
+          if (menu.contains(ev.target) || btn.contains(ev.target)) return;
+          close();
+        });
+        document.addEventListener('keydown', (ev) => {
+          if (ev.key === 'Escape' && menu.classList.contains('is-open')) close();
+        });
+        // Expose a tiny helper so the LS-restore path below can
+        // resync the button face when STATE.mode is re-applied.
+        local._modeBtnRefresh = refreshFace;
+        refreshFace();
+      })();
 
       // Search wire-up (Phase 4f).
       const searchEl = document.getElementById('forge-status-search');
@@ -1681,10 +1741,9 @@
             recomputeFocus();
           }
         }
-        // Also sync the mode dropdown to the saved mode (if any).
-        const modeSelectEl2 = document.getElementById('forge-status-mode');
-        if (modeSelectEl2 && local.mode && local.mode.id) {
-          modeSelectEl2.value = local.mode.id;
+        // Sync the custom mode dropdown's button face to the saved mode.
+        if (typeof local._modeBtnRefresh === 'function') {
+          try { local._modeBtnRefresh(); } catch (e) { /* best-effort */ }
         }
       }
 
@@ -2838,14 +2897,13 @@
     //  - Opacity = linear interpolation between zoomPct 0.50 (0)
     //    and 0.10 (1).
     // ════════════════════════════════════════════════════════════
-    // Phase 21M (2026-05-21) — BG world size tuned to ~1.5×
-    // viewport at the camera floor on a normal 16:9 monitor.
-    // Phase 21L overshot at 60000 (BG ~3× viewport — "gigantic").
-    // 30000 wu reproduces the Phase 21K visual size at gizmo 10%
-    // WITHOUT the breakpoint that pegged scaling at gizmo 15%,
-    // so the BG still rides the wheel's full zoom range smoothly.
-    // Full reference: AUDIT/forge-zoom-world-system-2026-05-21.md
-    const BG_WORLD_WIDTH = 30000; // wu
+    // Phase 21N (2026-05-21) — BG world size tuned so the image
+    // EXACTLY covers the viewport at gizmo 11% (which we also
+    // make the camera floor — see FLOOR_PCT below). On a 16:9
+    // monitor, BG ≈ vp.larger at floor — no oversized halo,
+    // no gap. Full reference:
+    // AUDIT/forge-zoom-world-system-2026-05-21.md
+    const BG_WORLD_WIDTH = 18000; // wu
 
     function syncBackgroundImage() {
       if (!bgImage) return;

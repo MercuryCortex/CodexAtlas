@@ -612,16 +612,25 @@ body.view-forge .forge-stage {
   position: relative;
   flex: 0 0 auto;
 }
-/* Phase 21M (2026-05-21) — no V tick inside the box. ACTIVE
-   rows get the box-highlight treatment: gold background + dark
-   text. The box itself is the indicator. */
+/* Phase 21N (2026-05-21) — active rows wear a THICK gold-
+   bordered box (not a fill). The V tick is gone; the BORDER
+   IS the indicator. Inactive rows show no border so the box
+   only appears on the rows that are currently on. */
 .forge-viewset-row .vs-check { display: none; }
+.forge-viewset-row {
+  margin: 2px 8px;
+  border-radius: 6px;
+  border: 1px solid transparent;       /* reserve the border slot so layout doesn't jump */
+  padding-left: 12px;                   /* slight inset since vs-check is gone */
+  transition: border-color 100ms ease, background 100ms ease, color 100ms ease;
+}
 .forge-viewset-row.is-on {
-  background: rgba(212,165,90,0.18);
+  border-color: var(--gold, #d4a55a);
   color: var(--gold-1, #e8c889);
+  background: rgba(212,165,90,0.06);
 }
 .forge-viewset-row.is-on:hover {
-  background: rgba(212,165,90,0.26);
+  background: rgba(212,165,90,0.14);
 }
 
 /* Layer-toggle effects driven by body classes set in JS. */
@@ -5996,50 +6005,92 @@ body.nav-collapsed .nav-more > summary .lbl { display: none; }
 /* Mode dropdown (Phase 4d) — primary "what is this wheel" control.
    Native <select> styled to fit the status strip.  Custom caret via
    appearance:none + background-image gradient. */
-/* Phase 21M (2026-05-21) — Deities select rendered as a styled
-   "box" matching the other bottom-bar pills (legend / view /
-   debug). Subtle dark background, gold border, rounded corners,
-   custom caret. Sits inside the same forge-status pill as the
-   FORGE tag; a thin gap (via margin-left) instead of an
-   inner border. Width is `auto` so the chip expands with the
-   selected mode's label. */
-.forge-status-mode {
-  appearance: none; -webkit-appearance: none;
+/* Phase 21N (2026-05-21) — Mode picker is now a custom button +
+   menu, NOT a native <select>. The button is a styled chip that
+   sits inside the FORGE status pill; the menu drops DOWN from
+   the button matching the view-settings panel style (nested-
+   blur card with gold-bordered rows). */
+.forge-mode-wrap {
+  position: relative;
+  display: inline-flex; align-items: center;
+  margin-left: 8px;
+}
+.forge-mode-btn {
+  display: inline-flex; align-items: center; gap: 8px;
+  height: 24px;
+  padding: 0 8px 0 10px;
   background: rgba(20,26,38,0.92);
+  border: 1px solid rgba(212,165,90,0.28);
+  border-radius: 6px;
   color: var(--gold-1, #e8c889);
   font-family: var(--mono); font-size: 11px;
   letter-spacing: 0.06em;
-  border: 1px solid rgba(212,165,90,0.28);
-  border-radius: 6px;
-  padding: 0 22px 0 10px;
-  margin-left: 8px;
-  line-height: 1;
-  height: 24px;
-  vertical-align: middle;
   cursor: pointer;
-  background-image:
-    linear-gradient(45deg, transparent 50%, var(--gold-soft, #a87f3e) 50%),
-    linear-gradient(135deg, var(--gold-soft, #a87f3e) 50%, transparent 50%);
-  background-position:
-    right 9px top 50%,
-    right 5px top 50%;
-  background-size: 4px 4px, 4px 4px;
-  background-repeat: no-repeat;
   outline: none;
-  width: auto;
-  min-width: 0;
   transition: border-color 120ms ease, background 120ms ease, color 120ms ease;
 }
-.forge-status-mode:hover {
+.forge-mode-btn:hover,
+.forge-mode-btn[aria-expanded="true"] {
   border-color: var(--gold, #d4a55a);
   background: rgba(28,36,52,0.96);
   color: var(--gold, #d4a55a);
 }
-.forge-status-mode:focus {
-  border-color: var(--gold, #d4a55a);
+.forge-mode-btn .forge-mode-glyph { font-size: 12px; line-height: 1; }
+.forge-mode-btn .forge-mode-label { line-height: 1; }
+.forge-mode-btn .forge-mode-caret { color: var(--gold-soft, #a87f3e); font-size: 9px; margin-left: 2px; }
+.forge-mode-btn[aria-expanded="true"] .forge-mode-caret { transform: rotate(180deg); }
+
+/* The dropdown menu — anchored below the button. Visual style
+   mirrors .forge-viewset-panel (drop-up) but flipped to drop-DOWN. */
+.forge-mode-menu {
+  position: absolute;
+  top: 30px;       /* button is 24 px high + 6 px gap */
+  left: 0;
+  min-width: 200px;
+  padding: 6px 0;
+  background: rgba(13,17,25,0.92);
+  border: 1px solid rgba(212,165,90,0.22);
+  border-radius: 8px;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  box-shadow: 0 6px 24px rgba(0,0,0,0.45);
+  z-index: 240;
+  display: none;
+  white-space: nowrap;
+}
+.forge-mode-menu.is-open { display: block; }
+.forge-mode-row {
+  display: flex; align-items: center; gap: 10px;
+  width: 100%;
+  padding: 7px 14px;
+  background: transparent;
+  border: 0;
+  text-align: left;
+  font-family: var(--mono); font-size: 11.5px;
+  letter-spacing: 0.04em;
+  color: var(--text-1, #e5e7eb);
+  cursor: pointer;
+  transition: background 90ms ease, color 90ms ease;
+}
+.forge-mode-row:hover {
+  background: rgba(212,165,90,0.10);
+  color: var(--gold-1, #e8c889);
+}
+.forge-mode-row.is-active {
   color: var(--gold, #d4a55a);
 }
-/* Drop the now-redundant separator dot between FORGE and the mode select. */
+.forge-mode-row-glyph {
+  display: inline-block;
+  width: 16px; text-align: center;
+  color: var(--gold-soft, #a87f3e);
+  font-size: 13px;
+}
+.forge-mode-row.is-active .forge-mode-row-glyph,
+.forge-mode-row:hover .forge-mode-row-glyph {
+  color: var(--gold, #d4a55a);
+}
+
+/* Drop the separator dot between FORGE and the mode dropdown — the gap is enough. */
 .forge-status > .forge-status-sep:first-of-type { display: none; }
 .forge-status-mode option {
   background: var(--bg-1);
