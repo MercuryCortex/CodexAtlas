@@ -2578,11 +2578,17 @@
       // opacity at scale ≥ 0.50, fully invisible at scale ≤ 0.25.
       // Labels sit OUTSIDE the padded pie-slice outer arc so they
       // never overlap the slice fill or its outer boundary.
+      // Phase 20I (2026-05-21) — label fade now uses the zoom-
+      // gizmo's percentage-of-fit semantics (camera.state.scale /
+      // fit_scale), not raw camera scale. Spec from John: fade out
+      // starting at 50% zoom-pct, fully invisible at 25%.
       const LABEL_OUTSIDE_PAD = 24;
+      const labelFitScale     = computeFitScale();
+      const labelZoomPct      = (labelFitScale > 0) ? (camScale / labelFitScale) : 1;
       let labelFade;
-      if      (camScale >= 0.50) labelFade = 1;
-      else if (camScale <= 0.25) labelFade = 0;
-      else                       labelFade = (camScale - 0.25) / (0.50 - 0.25);
+      if      (labelZoomPct >= 0.50) labelFade = 1;
+      else if (labelZoomPct <= 0.25) labelFade = 0;
+      else                           labelFade = (labelZoomPct - 0.25) / (0.50 - 0.25);
       hullLabelsG.style.opacity = labelFade.toFixed(3);
       const labelGroups = hullLabelsG.children;
       for (let i = 0; i < data.hulls.length && i < labelGroups.length; i++) {
@@ -2641,50 +2647,56 @@
     }
 
     // ════════════════════════════════════════════════════════════
-    //  Backdrop image  —  Phase 20F (2026-05-21)
+    //  Backdrop image  —  Phase 20I (2026-05-21)
     // ════════════════════════════════════════════════════════════
     //  A star-field / nebula image anchored at the wheel's WORLD
-    //  centre. It scales WITH the camera (so when the user zooms
-    //  out the image grows and starts to fill the frame) and FADES
-    //  IN as scale drops from 0.50 → 0.07. Above 0.50 it's
-    //  invisible (the wheel is the focus). Below 0.07 it's at full
-    //  opacity (the wheel is a small thing inside the cosmos).
+    //  centre. Fades in + scales based on the ZOOM PERCENTAGE
+    //  shown in the zoom-gizmo (`camera.state.scale / fit_scale`),
+    //  NOT raw camera scale. The zoom-gizmo "100%" = fit, "50%" =
+    //  half-fit, "7%" = max-zoom-out — those are the numbers John
+    //  designs against. Comparing raw camera.state.scale to 0.50,
+    //  0.25, 0.07 was wrong in Phase 20F/G/H (the same numeric
+    //  value means very different zoom levels depending on the
+    //  current viewport's fit-scale).
     //
     //  IMPLEMENTATION
-    //  - Image is positioned with left/top + width/height so the
-    //    centre of the image sits at the WORLD-zero point projected
-    //    to screen.
-    //  - At scale = 0.07, image fills the larger viewport dimension.
-    //    At any other scale, image size = (vp.max / 0.07) * scale.
-    //  - Opacity = linear interpolation between scale 0.50 (0) and
-    //    scale 0.07 (1).
+    //  - zoomPct = camera.state.scale / computeFitScale()
+    //  - Image side = max(vp.w, vp.h) at zoomPct = 0.07 (so the
+    //    LARGER viewport axis is matched edge-to-edge, the
+    //    smaller axis overflows + crops — proper "cover" fit
+    //    against the larger window dimension as John asked).
+    //  - At higher zoomPct the image grows proportionally and
+    //    extends well past the viewport (the user is "inside" it).
+    //  - Opacity = linear interpolation between zoomPct 0.50 (0)
+    //    and 0.07 (1).
     // ════════════════════════════════════════════════════════════
     function syncBackgroundImage() {
       if (!bgImage) return;
       const vp = local.lastSize;
       if (!vp.w || !vp.h) return;
       if (!camera || !camera.state) return;
-      const camScale = camera.state.scale;
-      // Opacity ramp: invisible above 0.50, full below 0.07.
+      const fitScale = computeFitScale();
+      if (!fitScale || fitScale <= 0) return;
+      // zoomPct mirrors what the zoom-gizmo displays: 1.0 at fit,
+      // 0.07 at max-zoom-out, 2.0 at 2× zoom-in, etc.
+      const zoomPct = camera.state.scale / fitScale;
+      // Opacity ramp: invisible at ≥ 50% zoom, full at ≤ 7%.
       let bgFade;
-      if      (camScale >= 0.50) bgFade = 0;
-      else if (camScale <= 0.07) bgFade = 1;
-      else                       bgFade = (0.50 - camScale) / (0.50 - 0.07);
+      if      (zoomPct >= 0.50) bgFade = 0;
+      else if (zoomPct <= 0.07) bgFade = 1;
+      else                      bgFade = (0.50 - zoomPct) / (0.50 - 0.07);
       if (bgFade <= 0.001) {
         bgImage.style.opacity = '0';
         return;
       }
-      // Size: COVER-FIT the viewport at scale = 0.07 (Phase 20H,
-      // 2026-05-21 — was max(vp.w, vp.h), which only reached the
-      // larger viewport dimension and left the corners dark on
-      // non-square viewports). For a square image to fully cover a
-      // rectangular viewport, the image side must equal the
-      // viewport DIAGONAL — every corner is then inside the image.
-      // We then scale that base size linearly with camera, so at
-      // scale = 0.07 the image exactly covers, and at higher zoom
-      // it extends well past the viewport edges.
-      const diagVp  = Math.hypot(vp.w, vp.h);
-      const imgSize = (diagVp / 0.07) * camScale;
+      // Size: image side = MAX(vp.w, vp.h) at 7% zoom-out.
+      // The "fit always the larger window x or y" spec John gave —
+      // image matches the larger viewport axis edge-to-edge, the
+      // smaller axis overflows (gets cropped). Image is a 2048×
+      // 2048 square so on a non-square viewport the LARGER axis
+      // is matched and the smaller axis sees image bleed past.
+      const maxVp   = Math.max(vp.w, vp.h);
+      const imgSize = (maxVp / 0.07) * zoomPct;
       // Anchor: world (0, 0) → screen.
       const centerScreen = camera.worldToScreen(0, 0, vp);
       bgImage.style.opacity = bgFade.toFixed(3);
