@@ -43,7 +43,7 @@ syncretic-edges:
   - target: "imhotep"
     type: "scholarly-parallel"
     source: "Murphy & Sanford 2001 — Egyptian Imhotep as deified-healer; Babalu-Aye as Yoruba healing orisha"
-status: "stub"
+status: "metadata"
 refs:
   - title: "Notes sur le culte des Orisha et Vodun à Bahia"
     author: "Verger, Pierre Fatumbi"

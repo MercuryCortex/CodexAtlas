@@ -160,3 +160,16 @@ Both files are 105 lines, both `status: "full"`, both cover the same Greek deity
 **Wikilinks scanned:** ~110 unique targets. 2 dead-link references fixed.
 
 ---
+
+## Batch 9 — azazel → baphomet (2026-05-21)
+
+**Files:** azazel, ba-xian, baal-hadad, baal, babalu-aye, bacchus, baiame, baldr, bandua, baphomet.
+
+**Fixes applied:**
+
+- 4 status flips stub → metadata (azazel, ba-xian, babalu-aye, bandua).
+- `bandua.md` — unwrapped `[[dunatis-gaulish]]` to plain text in YAML equivalents (no Dunatis node planned; the structural cognate context is preserved in the body's "Atlantic fortress-god type" section).
+
+**Wikilinks scanned:** ~95 unique targets. 1 dead-link unwrapped.
+
+---

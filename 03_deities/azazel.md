@@ -20,7 +20,7 @@ syncretic-edges:
   - target: "satanael"
     type: "scholarly-parallel"
     source: "Stuckenbruck 1997"
-status: "stub"
+status: "metadata"
 refs:
   - title: "The Book of Giants from Qumran: Texts, Translation, and Commentary"
     author: "Stuckenbruck, Loren T."
