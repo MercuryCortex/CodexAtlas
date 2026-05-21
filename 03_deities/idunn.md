@@ -21,7 +21,7 @@ syncretic-edges:
   - target: "Hesperides (Greek)"
     type: "scholarly-parallel"
     source: "Nymphs who guard the golden apples at the edge of the world"
-status: "stub"
+status: "metadata"
 refs:
   - title: "Norse Mythology"
     author: "Lindow, John"

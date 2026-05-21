@@ -24,7 +24,7 @@ syncretic-edges:
   - target: "[[hermes-greek]]"
     type: "scholarly-parallel"
     source: "Hyde, *Trickster Makes This World* (1998) compares the Lakota Iktomi, Greek Hermes, Norse Loki, and West African Eshu as cross-cultural instances of the trickster archetype — boundary-crosser, language-inventor, thief, deceiver-who-also-teaches"
-status: "stub"
+status: "metadata"
 refs:
   - title: "Lakota Belief and Ritual"
     author: "Walker, James R.; ed. DeMallie, Raymond J.; Jahner, Elaine A."

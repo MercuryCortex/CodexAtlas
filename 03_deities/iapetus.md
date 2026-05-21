@@ -14,12 +14,12 @@ parent-of: ["[[atlas-titan]]", "[[prometheus]]", "Epimetheus", "Menoetius"]
 child-of: ["[[uranus-greek]]", "[[gaia]]"]
 consort: ["Clymene (Oceanid) or Asia (in some recensions)"]
 attested-in: ["[[phase-2-009-hesiod-theogony-works-and-days]] 134, 507–520"]
-equivalents: ["[[japheth]] (proposed)"]
+equivalents: ["Japheth (Genesis 10 — proposed phonological/typological equivalence; no node — son of Noah, belongs in 04_persons/)"]
 syncretic-edges:
   - target: "Japheth (Genesis 10)"
     type: "scholarly-parallel"
     source: "From the early modern period (Bochart 1646 *Geographia Sacra*) through 19th-c. comparative philology, the etymological identification *Iapetos* ↔ *Yepheth* / *Japheth* has been proposed as the Greek-Hebrew naming-pair for the ancestor of the (Indo-)European peoples; West 1997 considers it suggestive but not established — keep `[claim: contested]`"
-status: "stub"
+status: "metadata"
 refs:
   - title: "Hesiod: Theogony"
     author: "Athanassakis, Apostolos N. (trans.)"

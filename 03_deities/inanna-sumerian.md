@@ -10,7 +10,7 @@ period-active-latest: -1700
 domains: ["love", "sexuality", "war", "sovereign power (mes)", "Venus (the planet)"]
 gender: "feminine"
 role: "complex sovereign goddess of contradictions — love and war, fertility and combat"
-parent-of: ["[[shara]]"]
+parent-of: ["Shara (minor Sumerian war-god of Umma; Inanna's son — no node yet)"]
 child-of: ["[[nanna-sin]]", "[[an-sumerian]]"]
 consort: ["[[dumuzi-tammuz]]"]
 attributes: ["eight-pointed star", "lions", "rosette", "reed bundle (her standard at Uruk)", "the *me* (cosmic powers)"]
@@ -20,7 +20,7 @@ syncretic-edges:
   - target: "[[ishtar-akkadian]]"
     type: "ancient-identification"
     source: "Enheduanna's hymns and the entire OB tradition explicitly identify the two; the equation is fully realized by the Sargonic period"
-status: "stub"
+status: "metadata"
 refs:
   - title: "Inanna, Queen of Heaven and Earth: Her Stories and Hymns from Sumer"
     author: "Wolkstein, Diane, and Kramer, Samuel Noah"

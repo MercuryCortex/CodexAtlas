@@ -11,7 +11,7 @@ domains: ["primordial waters", "creation", "cosmic egg", "the sky", "motherhood"
 gender: feminine
 role: "primordial Water-Mother who floats on the cosmic ocean; her knee serves as the nest for the cosmic egg from which the world is created; mother of Väinämöinen"
 historicity: legendary
-attested-in: ["[[phase-6-026-kalevala]]"]
+attested-in: ["[[phase-8-018-kalevala]]"]
 syncretic-edges:
   - target: "[[earth-diver-creation]]"
     type: "parallel-motif"
@@ -22,7 +22,7 @@ syncretic-edges:
   - target: "[[cosmic-egg]]"
     type: "attested-in"
     source: "The cosmic egg is laid on Ilmatar's knee; Ilmatar is the floating medium for the cosmic egg cosmogony in the Kalevala"
-status: stub
+status: "metadata"
 refs:
   - title: "Kalevala"
     author: "Lönnrot, Elias (compiler)"
