@@ -3,6 +3,7 @@ type: deity
 id: "asklepios"
 name: "Asklepios"
 aka: ["Asclepius (Latin)", "Asclepios", "Ἀσκληπιός", "Asclépios"]
+# DUPLICATE WARNING: see also 03_deities/asclepius-greek.md — same deity. Both 105 lines, both status: full. See AUDIT/forge-deity-spine-findings-2026-05-21.md.
 tradition: "Greek"
 region: "Greece — principal sanctuaries at Epidauros, Kos, Pergamon, Athens, Corinth; Rome (Tiber Island)"
 period-active-earliest: -1200

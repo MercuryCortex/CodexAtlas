@@ -128,3 +128,21 @@ The Mesopotamian moon-god has *one* node (`nanna-sin.md`) covering both the Sume
 **Tradition-suffix convention learned (revising batch 4 note):** the vault uses BOTH `tradition-X` and `tradition-X-religion` slugs interchangeably across different traditions. `tradition-akan` exists without suffix; `tradition-maya-religion`, `tradition-lusitanian-religion`, `tradition-greek-religion` exist with it. There is no single convention — each tradition's slug was chosen ad hoc. Future renames should check the actual file before changing.
 
 ---
+
+## Batch 7 — asbeel → astghik (2026-05-21)
+
+**Files:** asbeel, asclepius-greek, asha-vahishta, asherah, ashur, asklepios, asmodeus, astar-aksumite, astarte-canaanite, astghik.
+
+**Fixes applied:**
+
+- `astarte-canaanite.md` — flipped status stub → metadata (86 lines + rich YAML).
+- `asclepius-greek.md` — unwrapped 2 dead body-wikilinks: `[[pergamon]]` and `[[kos]]` to plain text (places, no node exists yet — not worth stub-creating for a single passing mention of cult-temple distribution).
+- `astar-aksumite.md` — unwrapped dead `[[athtart]]` references (YAML equivalents + body) to plain text, folded the Athtart context into the existing `[[astarte-canaanite]]` citation (Athtart is the Ugaritic spelling, already covered by astarte-canaanite).
+
+**Flagged for John's decision: duplicate cluster #3 — asclepius-greek ↔ asklepios.**
+
+Both files are 105 lines, both `status: "full"`, both cover the same Greek deity. The split is purely orthographic — `asclepius-greek.md` uses the Latin transliteration; `asklepios.md` uses the Greek-Greek transliteration. Per the schema's splitting rule, a Latin-vs-Greek spelling does NOT justify two nodes (the deity is identical, not "transformed across traditions"). Recommend: keep `asclepius-greek.md` (matches the `-greek` suffix convention used by `aphrodite-greek`, `persephone-greek`, etc.); deprecate `asklepios.md` after merging any unique content; rewrite vault-wide `[[asklepios]]` → `[[asclepius-greek]]`. YAML comment added to both files. Quick audit confirmed `[[asclepius-greek]]` is the more in-degree-prominent slug.
+
+**Wikilinks scanned:** ~90 unique targets across 10 files. 3 dead-link references unwrapped (pergamon, kos, athtart — to plain text rather than stub-create, since they're trivia mentions, not load-bearing).
+
+---

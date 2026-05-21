@@ -15,7 +15,7 @@ child-of: []
 consort: []
 attributes: ["Venus star", "ibex (in some Sabaean iconography)", "thunderbolt-arrow"]
 attested-in: ["Pre-Christian Ezana stelae (RIE 185, 270, 271 — alongside [[almaqah]], [[mahrem]], [[beher]], [[meder]])", "Sabaean inscriptions extensively"]
-equivalents: ["[[ishtar-akkadian]] (cognate name; *masculinized* in South-Semitic vs. *feminine* in East-Semitic — same etymological root)", "[[astarte-canaanite]] (cognate feminine form in NW Semitic)", "[[athtart]] (Ugaritic feminine cognate)", "[[venus-roman]] (Roman planetary equivalent)", "[[inanna-sumerian]] (parallel-form)"]
+equivalents: ["[[ishtar-akkadian]] (cognate name; *masculinized* in South-Semitic vs. *feminine* in East-Semitic — same etymological root)", "[[astarte-canaanite]] (cognate feminine form in NW Semitic — includes Ugaritic Athtart)", "[[venus-roman]] (Roman planetary equivalent)", "[[inanna-sumerian]] (parallel-form)"]
 syncretic-edges:
   - target: "ishtar-akkadian"
     type: "ancient-identification"
@@ -72,7 +72,7 @@ Concrete mythological narratives around Aksumite Astar are not preserved (the do
 
 ## Cross-tradition identifications
 - **[[ishtar-akkadian]]** — *ancient-identification* (etymological): direct etymological cognate of the Proto-Semitic ʿṯtr root; gender-variation (feminine east, masculine south) is the principal divergence.
-- **[[astarte-canaanite]]** / **[[athtart]] (Ugaritic)** — *ancient-identification* (etymological): Northwest-Semitic feminine cognates.
+- **[[astarte-canaanite]]** (NW Semitic feminine; includes the Ugaritic Athtart form) — *ancient-identification* (etymological): Northwest-Semitic feminine cognates.
 - **Athtar / ʿAttar** in pre-Islamic North Arabian and Ugaritic — *ancient-identification*: same masculine form attested elsewhere in South-Semitic and adjacent contexts.
 - **[[venus-roman]]** / **[[aphrodite-greek]]** — *parallel-form*: Venus-star personification across cultural-religious systems.
 - **[[inanna-sumerian]]** — *parallel-form*: pre-Semitic-language cognate Venus-deity.

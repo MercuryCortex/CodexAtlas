@@ -3,6 +3,7 @@ type: deity
 id: "asclepius-greek"
 name: "Asclepius"
 aka: ["Ἀσκληπιός", "Asklepios", "Aesculapius (Roman)"]
+# DUPLICATE WARNING: see also 03_deities/asklepios.md — same deity, Latin (Asclepius) vs Greek-transliteration (Asklepios) spelling. Both 105 lines, both status: full. See AUDIT/forge-deity-spine-findings-2026-05-21.md.
 tradition: "Greek (Thessalian / Epidaurian origin); pan-Hellenic and Greco-Roman healing cult"
 region: "Greece — principal sanctuaries at Epidaurus, Trikka (Thessaly), Kos, Pergamon; spread to Rome (Tiber Island, -293) and across the Roman Empire; cult-equivalent in Egypt as Imhotep-Asklepios"
 period-active-earliest: -700
@@ -71,7 +72,7 @@ Asclepius (Greek *Ἀσκληπιός*) is the **divine physician of Greek relig
 - **Hesiod** fragments — Asclepius as son of Apollo; gradual mythological elaboration.
 - Cult institution at **Epidaurus** in the late Archaic / early Classical period (~6th c. BCE); the great Epidaurian sanctuary becomes pan-Hellenic in the 5th–4th c. BCE.
 - Spread to **Athens** in -420 during the plague (the cult-snake of Asclepius is brought from Epidaurus); to **Rome** in -293 by request of the Sibylline books after a plague (the cult-snake transported from Epidaurus along the Tiber to the island that becomes his Roman cult-center).
-- **Hellenistic spread**: cult-temples (*Asklepieia*) across the Greek world, with [[pergamon]] and [[kos]] particularly influential (Kos was Hippocrates' island, conventionally linked to scientific medicine alongside the religious dream-cult).
+- **Hellenistic spread**: cult-temples (*Asklepieia*) across the Greek world, with Pergamon and Kos particularly influential (Kos was Hippocrates' island, conventionally linked to scientific medicine alongside the religious dream-cult).
 - **Imhotep-Asklepios identification**: documented from the early Ptolemaic period onward in Egypt; cult-temples at Saqqara, Karnak, Deir el-Bahari, and the Asklepieion of Memphis serve the syncretic deity.
 
 ## Mythological role

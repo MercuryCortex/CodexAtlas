@@ -26,7 +26,7 @@ syncretic-edges:
   - target: "anat"
     type: "folk-syncretism"
     source: "In some Egyptian New Kingdom syncretic forms, Anat and Astarte are conflated (compound goddess 'Antit-Anat'); in distinct cultic contexts at Ugarit they are separate goddesses with overlapping war-aspect."
-status: "stub"
+status: "metadata"
 refs:
   - title: "The Origin of Aphrodite"
     author: "Budin, Stephanie L."
