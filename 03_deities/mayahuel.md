@@ -14,7 +14,7 @@ parent-of: ["the Centzon Totochtin (Four Hundred Rabbits — collective of pulqu
 child-of: []
 consort: ["Patecatl (god who discovered fermentation; together they fathered the 400 rabbits)"]
 attributes: ["maguey plant (her body)", "many breasts (depicted nursing multiple offspring)", "a vessel of pulque", "shells (lunar-feminine motif)", "rabbit (the 400 pulque-gods are rabbits)"]
-attested-in: ["[[phase-6-001-codex-borgia]] (pre-Conquest Mesoamerican religious manuscript depicting Mayahuel)", "[[phase-6-002-florentine-codex]] (Sahagún's compendium; Book 1 names her among the great gods)"]
+attested-in: ["[[phase-6-001-codex-borgia]] (pre-Conquest Mesoamerican religious manuscript depicting Mayahuel)", "[[phase-8-004-florentine-codex-sahagun]] (Sahagún's compendium; Book 1 names her among the great gods)"]
 equivalents: []
 syncretic-edges:
   - target: "[[corn-mother]]"

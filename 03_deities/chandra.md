@@ -11,7 +11,7 @@ domains: ["moon", "time", "mind/manas", "dew", "tides", "lunar mansions", "month
 gender: "masculine"
 role: "lunar deity; lord of time and months; embodiment of the ritual drink soma; consort of the 27 Nakshatras"
 parent-of: ["[[mercury-roman]]"]
-child-of: ["[[atri-rishi]] (in Puranic tradition)"]
+child-of: ["Atri Rishi (in Puranic tradition; one of the Saptarishi — no node yet)"]
 consort: ["the 27 Nakshatras (lunar mansions) — daughters of Daksha"]
 attributes: ["silver chariot drawn by white horses or antelopes", "crescent moon as crown or attribute", "white/silver complexion", "soma cup", "the waxing and waning disk"]
 attested-in: ["[[phase-2-001-rig-veda-family-books]]", "[[phase-2-003-atharva-veda]]", "[[phase-2-006-brahmanas-aranyakas]]"]

@@ -14,7 +14,7 @@ parent-of: []
 child-of: []
 consort: []
 attributes: ["headdress of dried maize-cobs", "corn in both hands", "red body-paint", "the *chicahuaztli* rattle-staff (the agricultural ritual implement)"]
-attested-in: ["[[phase-6-002-florentine-codex]] (Sahagún Book 1)"]
+attested-in: ["[[phase-8-004-florentine-codex-sahagun]] (Sahagún Book 1)"]
 equivalents: ["[[mayahuel]]", "[[corn-mother]]"]
 syncretic-edges:
   - target: "[[centeotl]]"
@@ -24,7 +24,7 @@ syncretic-edges:
   - target: "[[corn-mother]]"
     type: "structural-parallel"
     source: "Both are mature female maize goddesses whose body IS the harvest"
-status: "stub"
+status: "metadata"
 refs:
   - title: "The Aztecs"
     author: "Townsend, Richard F."

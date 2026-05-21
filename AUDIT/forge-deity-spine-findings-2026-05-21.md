@@ -244,3 +244,17 @@ Both files are 105 lines, both `status: "full"`, both cover the same Greek deity
 **Wikilinks scanned:** ~95 unique targets. 2 dead-links fixed (1 rewrite + 1 outward-stub) + 1 unwrap.
 
 ---
+
+## Batch 13 — chac → chicomecoatl (2026-05-21)
+
+**Files:** chac, chakrasamvara, chalchiuhtlicue, chandra, chang-e, changing-woman, chaos-primordial, charun-etruscan, chernobog, chicomecoatl.
+
+**Fixes applied:**
+
+- 1 status flip stub → metadata (chicomecoatl).
+- `chicomecoatl.md` — fixed dead `[[phase-6-002-florentine-codex]]` → `[[phase-8-004-florentine-codex-sahagun]]`. **Fourth Florentine-Codex phase-misnumbering** in three batches. At this rate, recommended to a do a vault-wide `grep -r 'phase-6-002-florentine-codex'` after the sweep completes; this batch's fix may not be the last instance.
+- `chandra.md` — unwrapped `[[atri-rishi]]` (Vedic Saptarishi sage) to plain text in `child-of:`. Atri is a Vedic person/sage; would belong in `04_persons/`, not `03_deities/`. The reference is one passing Puranic genealogical note, not load-bearing — unwrapping rather than out-of-lens-stubbing keeps scope tight.
+
+**Wikilinks scanned:** ~115 unique targets. 1 dead-link fixed + 1 unwrap.
+
+---

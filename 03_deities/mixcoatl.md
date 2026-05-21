@@ -14,7 +14,7 @@ parent-of: ["[[quetzalcoatl]] (in the central Aztec mythography; Mixcoatl is Que
 child-of: []
 consort: ["Chimalman / Coatlicue (in different tellings)"]
 attributes: ["bow and arrow", "hunter's net", "black mask around eyes (Chichimec hunter face-paint)", "two-coloured body (red and white stripes)"]
-attested-in: ["[[phase-6-002-florentine-codex]] (Sahagún Book 3 — Mixcoatl as father of Quetzalcoatl)"]
+attested-in: ["[[phase-8-004-florentine-codex-sahagun]] (Sahagún Book 3 — Mixcoatl as father of Quetzalcoatl)"]
 equivalents: []
 syncretic-edges:
   - target: "[[quetzalcoatl]]"

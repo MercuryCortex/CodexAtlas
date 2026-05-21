@@ -14,7 +14,7 @@ parent-of: []
 child-of: []
 consort: []
 attributes: ["black mouth-area (the eating of filth)", "spindle in headdress (textile and birth-thread)", "earth-coloured body-paint"]
-attested-in: ["[[phase-6-002-florentine-codex]] (Sahagún Book 1, Book 6)"]
+attested-in: ["[[phase-8-004-florentine-codex-sahagun]] (Sahagún Book 1, Book 6)"]
 equivalents: []
 syncretic-edges:
   - target: "coatlicue"

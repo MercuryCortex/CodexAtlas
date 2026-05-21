@@ -14,7 +14,7 @@ parent-of: []
 child-of: ["[[coatlicue]]"]
 consort: []
 attributes: ["bells on cheeks", "skull-and-cross-bones girdle", "dismembered body parts (the Templo Mayor stone disk)", "feathered head-dress", "warrior's regalia"]
-attested-in: ["[[phase-6-002-florentine-codex]] (Sahagún Book 3 — the myth of Huitzilopochtli's birth and Coyolxauhqui's defeat)"]
+attested-in: ["[[phase-8-004-florentine-codex-sahagun]] (Sahagún Book 3 — the myth of Huitzilopochtli's birth and Coyolxauhqui's defeat)"]
 equivalents: []
 syncretic-edges:
   - target: "[[huitzilopochtli]]"
