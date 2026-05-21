@@ -2796,13 +2796,33 @@
       else                      bgFade = (0.50 - zoomPct) / (0.50 - 0.10);
       bgImage.style.opacity = bgFade.toFixed(3);
 
-      // ── BG WORLD-OBJECT TRANSFORM ─────────────────────────
-      // Pixel width  = BG_WORLD_WIDTH × camera.scale
-      // Pixel height = BG_WORLD_WIDTH × camera.scale / imageAspect
-      // Position     = world (0, 0) projected to viewport
-      const imgAspect  = bgImage._bgAspect || (4 / 3);
-      const widthPx    = BG_WORLD_WIDTH * camera.state.scale;
-      const heightPx   = widthPx / imgAspect;
+      // ── BG WORLD-OBJECT TRANSFORM (Phase 21H) ─────────────
+      // Two sizing rules, max()'d together so the BG NEVER falls
+      // below viewport-coverage at the camera floor:
+      //
+      //   A. World-scaled width: BG_WORLD_WIDTH × camera.scale
+      //      Behaves like a world object (zooms with wheel).
+      //   B. Viewport-floor width: viewport.larger × 1.5
+      //      Guarantees BG always fills viewport with 50% pan
+      //      margin, regardless of monitor aspect ratio.
+      //
+      // The MAX of the two wins. At low zoom (where the world
+      // scaling drops below viewport×1.5), rule B engages and
+      // pins the BG at a viewport-relative minimum. At higher
+      // zoom (where world×scale exceeds 1.5× viewport), rule A
+      // takes over and the BG grows with the wheel.
+      //
+      // John's earlier diagnosis: at max-zoom-out, BG width is
+      // at its MINIMUM (because camera.scale is at its minimum).
+      // If world×scale is below viewport at that point, gaps
+      // appear. The viewport-floor rule prevents that always,
+      // on every aspect ratio.
+      const imgAspect       = bgImage._bgAspect || (4 / 3);
+      const vpLarger        = Math.max(window.innerWidth, window.innerHeight);
+      const widthPxFromWorld = BG_WORLD_WIDTH * camera.state.scale;
+      const widthPxFloor     = vpLarger * 1.5;
+      const widthPx         = Math.max(widthPxFromWorld, widthPxFloor);
+      const heightPx        = widthPx / imgAspect;
       // World (0, 0) → canvas-screen → viewport-screen.
       const centerCanvas = camera.worldToScreen(0, 0, vp);
       let offX = 0, offY = 0;
