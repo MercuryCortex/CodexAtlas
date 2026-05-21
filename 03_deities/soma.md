@@ -33,7 +33,7 @@ syncretic-edges:
     type: "foundational"
     source: "Wujastyk 2003 *Roots of Ayurveda*; Charaka Samhita — Soma listed as *oshadhi-raja* ('king of plants') in Ayurvedic pharmacology; the concept of ojas (vital essence) derives from Soma theology"
     notes: "Soma is the theoretical root of Ayurvedic pharmacology: identified as *oshadhi-raja* ('king of plants') in the Charaka Samhita; the Ayurvedic concept of *ojas* (vital essence produced by perfect digestion and health) derives directly from Vedic soma theology. The plant that powered Vedic sacrifice became the conceptual foundation of the first systematic pharmacopeia."
-status: "stub"
+status: "metadata"
 refs:
   - title: "Soma: Divine Mushroom of Immortality"
     author: "Wasson, R. Gordon"

@@ -133,7 +133,7 @@ Spider Grandmother's teaching of weaving is not merely craft instruction. Weavin
 - → [[tradition-hopi]] — tradition of origin; Kokyangwuti is the central creative figure in Hopi cosmogony
 - → [[spider-woman-navajo]] — Navajo parallel-form; both traditions develop spider-woman as wisdom/weaving figure; no hierarchical dependency
 - → [[creation-by-word]] — MASSIVE WIN parallel: Hopi creation-by-thought-and-song is the most complete independent cognate to the Memphite/Hebrew/Christian/Islamic/Vedic creation-by-word cluster
-- → [[ptah-egyptian]] — parallel-motif: Ptah creates by thought-of-heart and tongue, the closest Egyptian parallel to Spider Grandmother's thought-and-song creation
+- → [[ptah]] — parallel-motif: Ptah creates by thought-of-heart and tongue, the closest Egyptian parallel to Spider Grandmother's thought-and-song creation
 - → [[poqanghoya]] — Twin War God (Elder); Spider Grandmother's son who maintains physical order
 - → [[palongawhoya]] — Twin War God (Younger); Spider Grandmother's son who governs vibration and sound; most structurally similar to Vedic *nada brahman*
 - → [[axis-mundi]] — the sipapu (emergence hole) through which Spider Grandmother guides the people between worlds is the Hopi axis-mundi figure

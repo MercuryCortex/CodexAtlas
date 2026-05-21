@@ -16,7 +16,7 @@ consort: ["[[changing-woman]]"]
 attributes: ["the sun disk", "the turquoise-and-shell house in the east", "the sunbeam path", "armor of white shell, turquoise, abalone, and jet"]
 attested-in: ["[[phase-8-013-navajo-blessingway]]"]
 syncretic-edges: []
-status: "stub"
+status: "metadata"
 refs:
   - title: "Navajo Religion: A Study of Symbolism"
     author: "Reichard, Gladys A."

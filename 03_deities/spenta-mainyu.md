@@ -21,7 +21,7 @@ syncretic-edges:
     type: "scholarly-parallel"
     source: "Boyce & Grenet 1991"
     notes: "The trans-religious 'Holy Spirit' (ruaḥ ha-qodesh, pneuma hagion) concept may have absorbed Zoroastrian Spenta Mainyu vocabulary in the post-exilic and Hellenistic Jewish/Christian milieu. Heavily contested mechanism."
-status: "stub"
+status: "metadata"
 refs:
   - title: "A History of Zoroastrianism, vol. I"
     author: "Boyce, Mary"

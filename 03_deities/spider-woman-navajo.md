@@ -16,7 +16,7 @@ consort: []
 attributes: ["spider web", "loom", "tiny spider form on the tip of Spider Rock in Canyon de Chelly"]
 attested-in: ["[[phase-8-013-navajo-blessingway]]"]
 syncretic-edges: []
-status: "stub"
+status: "metadata"
 refs:
   - title: "Navajo Religion: A Study of Symbolism"
     author: "Reichard, Gladys A."

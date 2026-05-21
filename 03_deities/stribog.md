@@ -34,7 +34,7 @@ syncretic-edges:
     source: "Ivanits, Linda J. (1989). Slavic Mythology. M.E. Sharpe."
     notes: "Both Stribog (wind/air) and Svarog (celestial fire/sky forge) are sky-realm deities in Slavic cosmology; Stribog as atmospheric, Svarog as fire — complementary upper-world domains."
 traditions: ["[[tradition-slavic]]"]
-status: "stub"
+status: "metadata"
 refs:
   - title: "The Russian Primary Chronicle (Povest' Vremennykh Let)"
     author: "Cross, Samuel Hazzard; Sherbowitz-Wetzor, Olgerd P. (trans.)"
