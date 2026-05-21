@@ -21,7 +21,7 @@ syncretic-edges:
     type: "scholarly-parallel"
     source: "Marshall 1931 (proposed); Doniger 2009 (contested)"
     notes: "The 'Paśupati seal' (Mohenjo-Daro, ~-2500) shows a horned figure surrounded by animals — Marshall proposed proto-Śiva; many scholars now reject."
-status: "stub"
+status: "metadata"
 refs:
   - title: "Śiva: The Erotic Ascetic"
     author: "Doniger, Wendy"

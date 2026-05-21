@@ -26,7 +26,7 @@ syncretic-edges:
   - target: "vishnu"
     type: "scholarly-parallel"
     source: "Snellgrove 1987 — both are cosmic-preserver / all-pervading deities; Samantabhadra ('all-good') and Vishnu (the cosmic preserver-of-dharma) share the omnipresent-cosmic-principle function"
-status: "stub"
+status: "metadata"
 refs:
   - title: "The Practice of Dzogchen: Longchen Rabjam's Writings on the Great Perfection"
     author: "Tulku Thondup; Talbott, Harold (ed.)"

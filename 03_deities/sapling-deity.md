@@ -19,7 +19,7 @@ syncretic-edges:
   - target: "[[ahura-mazda]]"
     type: "scholarly-parallel"
     source: "Structural parallel: both are the good-mind / truth-order principle in a cosmic dualism opposed by a destructive twin/opponent. Both create life-sustaining aspects of the world. No transmission documented. See tradition-haudenosaunee for the full comparison table."
-status: "stub"
+status: "metadata"
 refs:
   - title: "The Great Law and the Longhouse"
     author: "Fenton, William N."

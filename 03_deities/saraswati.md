@@ -16,7 +16,7 @@ syncretic-edges:
   - target: "benzaiten-japanese"
     type: "manuscript-transmission"
     source: "Buddhist transmission to East Asia; Saraswati becomes Benzaiten in Japanese Buddhist tradition"
-status: "stub"
+status: "metadata"
 refs:
   - title: "Hindu Goddesses"
     author: "Kinsley, David"
