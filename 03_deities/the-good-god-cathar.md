@@ -19,7 +19,7 @@ syncretic-edges:
   - target: "father-of-greatness"
     type: "scholarly-parallel"
     source: "Manichaean Father of Greatness as parallel supreme good principle in two-principles cosmology"
-status: "stub"
+status: "metadata"
 refs:
   - title: "Heresies of the High Middle Ages"
     author: "Wakefield, Walter L. & Evans, Austin P. (eds./trans.)"
