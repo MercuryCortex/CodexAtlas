@@ -6073,95 +6073,38 @@ body.nav-collapsed .nav-more > summary .lbl { display: none; }
 }
 
 /* ============================================================
-   Phase 19 (2026-05-21) — Forge SIDE PANEL (deity inspector)
+   Phase 19B (2026-05-21) — Forge deity-inspector content
+   inside the existing GLOBAL aside.detail.
    ============================================================
-   - Lives at the right edge of .forge-stage.
-   - User-toggled only — never auto-opens.
-   - Toggle button stays visible whether the panel is open or
-     closed. Its Y anchors near the top so it reads as a peer of
-     the left-nav Forge icon.
-   - Pulse class is applied briefly when toggleLock fires to
-     signal "fresh content available."
+   We DO NOT add a second panel — the global one (defined above
+   under `aside.detail`) is shared across views. We just provide:
+     1. Forge-specific content styles for #detail-inner.
+     2. A pulse animation on the global .detail-toggle when a
+        deity is locked.
+     3. A Y override on the toggle when the user is in the Forge
+        view — anchored to roughly the height of the Forge icon
+        in the left nav so the two read as horizontal peers.
    ============================================================ */
-.forge-side-panel {
-  position: absolute;
-  right: 0;
-  top: 0;
-  bottom: 0;
-  width: 0;
-  pointer-events: none;
-  z-index: 14;
-  transition: width 0.18s ease-out;
-  font-family: var(--mono, "JetBrains Mono", Menlo, monospace);
+body.view-forge .detail-toggle {
+  /* Forge logo center is around 75 px from the top (brand-section
+     ~44px + nav-inner padding 10px + first .item padding-top 11px
+     + half icon ≈ 10px). Match here. */
+  top: 65px;
 }
-.forge-side-panel.is-open {
-  width: 360px;
-  pointer-events: auto;
-  background: rgba(13, 17, 25, 0.94);
-  border-left: 1px solid var(--border, #2a2e3a);
-}
-
-/* Toggle button — chevron pill, sticks out on the LEFT edge of the
-   panel so it's visible whether panel is open or closed. Y matches
-   the left-nav Forge icon row (slightly below it for visual peer). */
-.forge-side-panel-toggle {
-  pointer-events: auto;
-  position: absolute;
-  top: 76px;             /* a bit below the left-nav Forge icon */
-  left: -28px;           /* sticks out left of the panel edge */
-  width: 28px;
-  height: 36px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: rgba(13, 17, 25, 0.92);
-  border: 1px solid var(--border, #2a2e3a);
-  border-right: 0;       /* visually merges into the panel */
-  border-top-left-radius: 4px;
-  border-bottom-left-radius: 4px;
-  color: var(--text-2);
-  font-family: var(--mono, "JetBrains Mono", Menlo, monospace);
-  font-size: 14px;
-  cursor: pointer;
-  transition: color 0.15s ease, border-color 0.15s ease, box-shadow 0.15s ease;
-}
-.forge-side-panel-toggle:hover {
-  color: var(--gold, #d4a55a);
-  border-color: var(--gold-soft, #8a7430);
-}
-
-/* Pulse animation — triggered briefly when a deity is locked.
-   A soft gold glow that breathes 2 times then settles. The
-   .pulsing class is added by JS and removed after ~2.4s. */
 @keyframes forge-side-panel-pulse {
   0%   { box-shadow: 0 0 0 0   rgba(212, 165, 90, 0.55); color: var(--gold, #d4a55a); border-color: var(--gold, #d4a55a); }
   50%  { box-shadow: 0 0 0 8px rgba(212, 165, 90, 0.00); }
   100% { box-shadow: 0 0 0 0   rgba(212, 165, 90, 0.00); color: var(--gold, #d4a55a); border-color: var(--gold, #d4a55a); }
 }
-.forge-side-panel-toggle.pulsing {
+.detail-toggle.pulsing {
   animation: forge-side-panel-pulse 1.2s ease-out 2;
   color: var(--gold, #d4a55a);
   border-color: var(--gold, #d4a55a);
 }
 
-/* Inner content — only visible when panel is open. */
-.forge-side-panel-inner {
-  height: 100%;
-  overflow-y: auto;
-  padding: 18px 18px 24px;
-  opacity: 0;
-  transition: opacity 0.18s ease-out 0.05s;
-  box-sizing: border-box;
-}
-.forge-side-panel.is-open .forge-side-panel-inner {
-  opacity: 1;
-}
-.forge-side-panel-empty {
-  color: var(--text-3, #6b7280);
-  font-size: 11px;
-  letter-spacing: 0.06em;
-  text-align: center;
-  padding-top: 50px;
+/* Forge-specific content wrapper inside #detail-inner. */
+.forge-side-panel-content {
+  font-family: var(--mono, "JetBrains Mono", Menlo, monospace);
 }
 .forge-side-panel-thumb {
   width: 100%;

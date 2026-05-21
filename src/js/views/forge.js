@@ -782,33 +782,13 @@
     labelsOverlay.className = 'forge-labels-overlay';
     stage.appendChild(labelsOverlay);
 
-    // ── Side panel (Phase 19, 2026-05-21) ──────────────────
-    // Collapsible deity-detail panel at the right edge of the
-    // forge stage. NOT auto-opened by anything — the user toggles
-    // it at their will via the chevron button. When opened, it
-    // renders the LAST locked deity's full info (toggleLock writes
-    // local.sidePanelLastId and pulses the toggle button as a
-    // signal that fresh content is available).
-    //
-    // The toggle button stays visible whether the panel is open
-    // or closed. Its Y position is anchored to roughly the height
-    // of the left-nav Forge icon (a bit below) so the two read as
-    // peers on the same horizontal line.
-    const sidePanel = document.createElement('aside');
-    sidePanel.className = 'forge-side-panel';
-    sidePanel.id        = 'forge-side-panel';
-    sidePanel.setAttribute('aria-hidden', 'true');
-    sidePanel.innerHTML = ''
-      + '<button class="forge-side-panel-toggle" id="forge-side-panel-toggle"'
-      +         ' aria-controls="forge-side-panel" aria-expanded="false"'
-      +         ' title="Deity inspector (click to toggle)">‹</button>'
-      + '<div class="forge-side-panel-inner" id="forge-side-panel-inner">'
-      +   '<div class="forge-side-panel-empty" id="forge-side-panel-empty">'
-      +     'Lock a deity to view its details.'
-      +   '</div>'
-      +   '<div class="forge-side-panel-body" id="forge-side-panel-body" hidden></div>'
-      + '</div>';
-    stage.appendChild(sidePanel);
+    // Phase 19B (2026-05-21) — Forge uses the existing GLOBAL
+    // aside.detail panel from index.html for the deity inspector.
+    // No second panel inside .forge-stage (the earlier Phase 19
+    // duplicate was removed once we found the global one already
+    // existed and is shared with the other views). See
+    // wireSidePanel() below for the content render + pulse-on-lock
+    // hook wiring.
 
     // ── Camera ──────────────────────────────────────────
     const camera = cammod.create({ centerX: 0, centerY: 0, scale: 1 });
@@ -3348,59 +3328,37 @@
     }
 
     // ════════════════════════════════════════════════════════════
-    //  wireSidePanel()  —  Phase 19 (2026-05-21)
+    //  wireSidePanel()  —  Phase 19B (2026-05-21)
     // ════════════════════════════════════════════════════════════
-    //  Right-edge collapsible deity-inspector panel. NOT auto-
-    //  triggered by hover or lock — user-driven toggle only, so
-    //  it never interrupts flow. The toggle button stays visible
-    //  whether the panel is open or closed; its Y matches the
-    //  left-nav Forge icon so the two read as horizontal peers.
+    //  Wires the existing GLOBAL `aside.detail` panel (from
+    //  index.html, shared with other views) to render Forge deity
+    //  detail when the user locks a deity.
     //
-    //  Lock signal: toggleLock(id) records `local.sidePanelLastId`
-    //  and momentarily adds `.pulsing` to the toggle — a brief
-    //  CSS-driven glow that signals "fresh content available
-    //  here." If the panel is already open, the body re-renders
-    //  immediately with the new deity. If closed, the next open
-    //  picks up the latest id.
+    //  The panel itself + its toggle button + open/close behaviour
+    //  are owned by app.js (it ships across all views). We do NOT
+    //  rebuild those — we just:
+    //   1. Populate `#detail-inner` with our deity content when a
+    //      lock occurs OR when the panel is opened with stale data.
+    //   2. Pulse `.detail-toggle` on lock-add as the "fresh content
+    //      available" signal.
+    //   3. Observe `body.detail-collapsed` so we can re-render
+    //      when the user opens the panel.
     //
-    //  Empty state: when no deity has been locked yet, the body
-    //  shows "Lock a deity to view its details."
-    //
-    //  Content reuses the same data pickers as wireHoverCard (so
-    //  the panel and the hover card stay in lockstep about which
-    //  YAML fields surface where).
+    //  Earlier Phase 19 created a second redundant panel inside
+    //  the forge stage — DELETED here once we discovered the
+    //  global one already existed.
     // ════════════════════════════════════════════════════════════
     function wireSidePanel() {
-      const panel = document.getElementById('forge-side-panel');
-      const toggle = document.getElementById('forge-side-panel-toggle');
-      const emptyEl = document.getElementById('forge-side-panel-empty');
-      const bodyEl  = document.getElementById('forge-side-panel-body');
-      if (!panel || !toggle) return;
-
-      function setOpen(open) {
-        local.sidePanelOpen = !!open;
-        panel.classList.toggle('is-open', !!open);
-        panel.setAttribute('aria-hidden', open ? 'false' : 'true');
-        toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
-        toggle.textContent = open ? '›' : '‹';
-        if (open) {
-          // Clear the pulse — the user has acknowledged the signal.
-          toggle.classList.remove('pulsing');
-          render();
-        }
-      }
-      // Initial state — closed.
-      setOpen(false);
-
-      toggle.addEventListener('click', () => setOpen(!local.sidePanelOpen));
+      const aside  = document.getElementById('detail');
+      const inner  = document.getElementById('detail-inner');
+      const toggle = document.getElementById('detail-toggle');
+      if (!aside || !inner || !toggle) return;
 
       // Hook called by toggleLock — adds the pulse + records id.
       local._onLockChange = function (id) {
         if (!id) return;   // null = cleared-all; nothing fresh to show
         local.sidePanelLastId = id;
-        // Trigger pulse animation by adding the class. Removed via
-        // animationend (fallback timeout — animationend can miss
-        // when the element is hidden via display).
+        // Trigger pulse animation by adding the class.
         toggle.classList.remove('pulsing');
         void toggle.offsetWidth;          // restart any in-flight animation
         toggle.classList.add('pulsing');
@@ -3408,32 +3366,37 @@
         local._sidePanelPulseTimer = setTimeout(() => {
           toggle.classList.remove('pulsing');
         }, 2400);
-        // If already open, re-render with the new id.
-        if (local.sidePanelOpen) render();
+        // If panel is already open, re-render with the new id.
+        if (!document.body.classList.contains('detail-collapsed')) render();
       };
 
-      // Render the body for local.sidePanelLastId. Reuses the same
-      // data pickers + bucket palette as the hover card, but lays
-      // them out with more breathing room — bigger thumbnail,
-      // longer description, fuller meta block.
+      // Observe the toggle click so we clear the pulse + render the
+      // current content when the user opens the panel. app.js owns
+      // the actual open/close (body.detail-collapsed toggle); we
+      // just observe it as a separate listener.
+      toggle.addEventListener('click', () => {
+        // After app.js's handler runs, the class state will flip.
+        // Defer one tick so we read the post-flip state.
+        setTimeout(() => {
+          if (!document.body.classList.contains('detail-collapsed')) {
+            toggle.classList.remove('pulsing');
+            render();
+          }
+        }, 0);
+      });
+
       function render() {
         const id = local.sidePanelLastId;
         const m = local.mode;
         const node = (id && m && m.nodesById && m.nodesById.get) ? m.nodesById.get(id) : null;
         if (!node) {
-          emptyEl.hidden = false;
-          bodyEl.hidden  = true;
+          inner.innerHTML = '<div class="empty">Select a node to inspect.</div>';
           return;
         }
-        emptyEl.hidden = true;
-        bodyEl.hidden  = false;
 
         const thumbs = local._thumbsCache || null;
         const thumb  = (thumbs && thumbs[id]) ? thumbs[id] : null;
         const tradition = (node.tradition || node.family || node.religion || '');
-        // Description: YAML role/description first, fall back to
-        // Wikipedia extract (full first paragraph here, vs. the
-        // hover card's single-sentence cap).
         let desc = (node.role || node.description || node.brief || node.subtitle || '');
         if (!desc && Array.isArray(node.domains) && node.domains.length) {
           desc = node.domains.join(', ');
@@ -3441,20 +3404,18 @@
         let extract = '';
         if (thumb && thumb.extract) extract = String(thumb.extract);
 
-        // Wires breakdown — same colored pills as the hover card.
-        const counts = (() => {
-          const out = Object.create(null);
-          const edges = m && m.edges;
-          if (!edges) return out;
+        // Wire-bucket counts (same as hover card).
+        const counts = Object.create(null);
+        const edges = m && m.edges;
+        if (edges) {
           const EB = window.EDGE_BUCKET || {};
           for (let i = 0; i < edges.length; i++) {
             const e = edges[i];
             if (e.source !== id && e.target !== id) continue;
             const b = EB[e.type] || 'association';
-            out[b] = (out[b] || 0) + 1;
+            counts[b] = (counts[b] || 0) + 1;
           }
-          return out;
-        })();
+        }
         const BUCKET_ORDER = ['transmission','parallel','association','kinship','attestation','polemic','fusion'];
         const bucketHex = (b) => (local.params && local.params['active_color_' + b]) || '#999999';
         const pills = BUCKET_ORDER.map(b => {
@@ -3466,7 +3427,6 @@
             + '</span>';
         }).filter(Boolean).join('');
 
-        // Date.
         const fmtYear = (y) => {
           if (typeof y !== 'number' || !isFinite(y)) return '';
           if (y < 0) return Math.abs(y) + ' BCE';
@@ -3482,20 +3442,14 @@
         const dateStr = (de == null && dl == null) ? ''
           : (de != null && dl != null && de !== dl) ? (fmtYear(de) + ' – ' + fmtYear(dl))
           : fmtYear(de != null ? de : dl);
-        // Place.
-        const place = (node.region || node['place-of-origin'] || node['originating-place'] || node.location || node.origin || '');
-        // Domains.
+        const place   = (node.region || node['place-of-origin'] || node['originating-place'] || node.location || node.origin || '');
         const domains = Array.isArray(node.domains) ? node.domains.join(', ') : '';
-        // Wikipedia link.
         const wikiPage = thumb && thumb.page ? thumb.page : null;
 
-        // Assemble. Uses safe text for everything user-facing
-        // except the bucket pills (which we built with known
-        // hex / English bucket strings — no untrusted input).
         const safe = (s) => String(s || '').replace(/[&<>"']/g, c => (
           { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]
         ));
-        bodyEl.innerHTML = ''
+        inner.innerHTML = '<div class="forge-side-panel-content">'
           + (thumb && thumb.src
               ? '<div class="forge-side-panel-thumb"><img src="' + safe(thumb.src) + '" alt="" /></div>'
               : '')
@@ -3511,12 +3465,10 @@
           +   (domains ? '<dt>Domains</dt><dd>' + safe(domains) + '</dd>' : '')
           + '</dl>'
           + (extract ? '<div class="forge-side-panel-extract">' + safe(extract) + '</div>' : '')
-          + (wikiPage ? '<a class="forge-side-panel-wikilink" href="' + safe(wikiPage) + '" target="_blank" rel="noopener noreferrer">Open Wikipedia ↗</a>' : '');
+          + (wikiPage ? '<a class="forge-side-panel-wikilink" href="' + safe(wikiPage) + '" target="_blank" rel="noopener noreferrer">Open Wikipedia ↗</a>' : '')
+          + '</div>';
       }
 
-      // Expose the rerender entry so other code paths (e.g. mode
-      // switch) can refresh the panel when the underlying node may
-      // have been replaced.
       local._renderSidePanel = render;
     }
 
