@@ -29,6 +29,11 @@ key-figures:
 related-traditions:
   - "[[tradition-zoroastrianism]]"
   - "[[tradition-islam]]"
+hub-edges:
+  - target: "persian-period-injection"
+    type: "Zoroastrian-substrate-preservation-channel-into-Islamic-era"
+    source: "Boyce 1991 *History of Zoroastrianism* Vol. 3; Frye 1975 *Cambridge History of Iran*; Aminrazavi 2005 *Omar Khayyam* — the Jalali calendar (1079 CE) preserves Zoroastrian-substrate calendrical-festival anchoring (Nowruz at vernal equinox; Yalda Night at winter solstice; Mehregan in autumn) within Islamic-Iranian state-calendrical framework. The cleanest single Iranian case of pre-Islamic Zoroastrian-substrate continuity through Islamic-era institutional adoption. Cross-tradition resonance with the broader Persian-period-injection finding: Zoroastrian theological-cultural material persists deeply across the Islamic transition"
+    notes: "Cross-lens: 26_calendars → 06_themes. Calendrical-institutional evidence of Zoroastrian-substrate continuity"
 status: "metadata"
 refs:
   - title: "Mapping Time: The Calendar and Its History"

@@ -33,6 +33,11 @@ related-traditions:
   - "`tradition-babi`"
 related-events:
   - "[[event-bab-execution-1850]]"
+hub-edges:
+  - target: "persian-period-injection"
+    type: "modern-Zoroastrian-substrate-preservation-channel"
+    source: "Smith 2008 *The Bahá'í Faith*; Boyce 1991 *History of Zoroastrianism* Vol. 3 — the Bahá'í Badíʿ calendar preserves Persian-Nowruz Zoroastrian-substrate at the modern (post-1844) religious-institutional level, paralleling [[iranian-jalali-calendar|Iranian Jalali]] preservation in the medieval period. The Bahá'í calendar's vernal-equinox anchoring + Tehran-equinox-time computational definition + Naw-Rúz festival institutionalize pre-Islamic Iranian calendrical-religious substrate within the modern Bahá'í tradition. The post-Islamic Iranian-derived tradition reverses its Islamic-Hijri-lunar parent's deliberate-anti-intercalation by reverting to Zoroastrian-substrate solar-anchoring"
+    notes: "Cross-lens: 26_calendars → 06_themes. Modern (1844-onward) calendrical-institutional evidence of Persian-period substrate continuity"
 status: "metadata"
 refs:
   - title: "The Kitab-i-Aqdas (Most Holy Book)"

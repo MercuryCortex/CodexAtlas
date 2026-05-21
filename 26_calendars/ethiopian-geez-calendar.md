@@ -30,6 +30,11 @@ related-traditions:
   - "`tradition-coptic-orthodox-christianity`"
 related-places:
   - "[[aksum]]"
+hub-edges:
+  - target: "solomonic-genealogy"
+    type: "calendrical-institutional-anchor-of-Solomonic-dynastic-claim"
+    source: "Ullendorff 1968 *Ethiopia and the Bible*; Munro-Hay 1991 *Aksum*; Phillipson 2012 *Aksum: A Civilisation and Its Monuments* — the Ethiopian Ge'ez calendar's New Year (Ənkutatash, Mäskäräm 1, Sep 11) is theologically anchored to the Queen of Sheba's return from Jerusalem with Solomon's gifts narrative + Aksumite institutional continuity. The calendar carries the Solomonic-dynastic claim at the calendrical-temporal-institutional level — every Ethiopian New Year reaffirms the Solomonic narrative ritually"
+    notes: "Cross-lens: 26_calendars → 06_themes"
 status: "metadata"
 refs:
   - title: "Ethiopia and the Bible"

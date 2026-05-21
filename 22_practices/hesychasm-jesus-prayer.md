@@ -32,6 +32,15 @@ related-themes:
   - "[[neoplatonic-henosis]]"
 related-systems:
   - "[[dhikr-sufi-remembrance]] (structurally cognate Islamic repetitive-prayer; Sufi-Christian comparative-mysticism documents the convergence)"
+hub-edges:
+  - target: "soul-exile-longing"
+    type: "Eastern-Christian-articulation-practice-of-soul-exile-pattern"
+    source: "Ware 1979 *The Orthodox Way*; Lossky 1944 *The Mystical Theology of the Eastern Church*; Palmer-Sherrard-Ware 1979 *Philokalia* — the Jesus Prayer's continuous interior repetition + descent-of-mind-into-heart trajectory articulates the soul's exile-and-return pattern in Eastern Christian form. The hesychast progression from vocal → silent → spontaneous heart-prayer parallels the cross-Indic ajapa-japa stage + the Sufi continuous-dhikr"
+    notes: "Cross-lens: 22_practices → 06_themes"
+  - target: "neoplatonic-henosis"
+    type: "Christian-Neoplatonic-synthesis-practice"
+    source: "Lossky 1944; Meyendorff 1959 *A Study of Gregory Palamas* — Eastern Christian hesychasm's theological framework (Palamas's essence-energies distinction; the uncreated-light theology) is the Christian Neoplatonic-henosis synthesis. The 14th-c Hesychast Controversy explicitly contested the Plotinian-Christian fusion that hesychast practice instantiates"
+    notes: "Cross-lens: 22_practices → 06_themes. The principal Christian PRACTICE-anchor of the 126L neoplatonic-henosis hub"
 status: "metadata"
 refs:
   - title: "The Philokalia: The Complete Text"

@@ -27,6 +27,11 @@ related-themes:
   - "[[fanaa-annihilation]]"
 related-themes-secondary:
   - "[[divine-names]]"
+hub-edges:
+  - target: "soul-exile-longing"
+    type: "Sufi-articulation-practice-of-soul-exile-pattern"
+    source: "Schimmel 1975 *Mystical Dimensions of Islam*; Chittick 1989 *The Sufi Path of Knowledge* — dhikr is the principal Sufi PRACTICE articulating the soul's continuous-remembrance-of-the-Beloved + progressing toward fanāʾ (annihilation of self in the divine). The cross-Sufi articulation of the universal-phenomenological-structure documented at the [[soul-exile-longing]] hub"
+    notes: "Cross-lens: 22_practices → 06_themes. Pairs with [[mantra-japa-hindu]] + [[hesychasm-jesus-prayer]] in the cross-tradition repetitive-prayer cluster"
 status: "metadata"
 refs:
   - title: "Mystical Dimensions of Islam"

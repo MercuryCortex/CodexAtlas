@@ -25,6 +25,11 @@ key-traditions:
   - "`tradition-etruscan`"
 related-systems:
   - "[[extispicy-mesopotamian]] (the parent tradition; Mesopotamian liver-omen reading transmitted via Hatti / Hittite + Etruscan reception)"
+hub-edges:
+  - target: "third-century-collision-zone"
+    type: "pagan-divinatory-institution-suppressed-during-collision"
+    source: "Wardle 2006 *Divination and Magic in the Religion of Augustan Rome*; Brown 1971 *The World of Late Antiquity*; Bardill 2012 *Constantine and the Christian Empire* — haruspicy is one of the principal pagan-state-religious institutions that the 3rd-c. Christianization process suppresses. Constantine's regulations + Theodosius I's 391 CE formal prohibition of haruspicy mark the institutional terminus of a 1,700-year-old extispicy-haruspicy transmission chain (Mesopotamian → Etruscan → Roman). The institutional-suppression event sits within the broader [[third-century-collision-zone]] phenomenon"
+    notes: "Cross-lens: 25_divination → 06_themes. Cicero's *De Divinatione* (-44) + Augustine's *De Divinatione Daemonum* + later Christian polemic + Theodosius's prohibitions are the documented suppression-chain endpoints"
 status: "metadata"
 refs:
   - title: "Divination and Magic in the Religion of Augustan Rome"

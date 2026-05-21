@@ -36,6 +36,11 @@ related-practices:
   - "[[dhikr-sufi-remembrance]] (Islamic-Sufi cognate)"
   - "[[hesychasm-jesus-prayer]] (Eastern Christian cognate)"
   - "[[rosary-catholic-prayer]] (Catholic cognate)"
+hub-edges:
+  - target: "soul-exile-longing"
+    type: "Hindu-articulation-practice-of-soul-exile-pattern"
+    source: "Bryant 2009 *The Yoga Sutras of Patanjali*; Patañjali Yoga Sutras 1.27-28 (Om as the vācaka of Īśvara; repetition + reflection as samadhi-attainment); Eliade 1958 *Yoga: Immortality and Freedom* — mantra-japa is the principal Hindu PRACTICE that articulates the soul's continuous-remembrance-of-the-divine + the trajectory from gross-vocal to subtle-interior (ajapa-japa) parallels the cross-tradition soul-exile-return pattern. Cross-Indic articulation of the universal-phenomenological-structure documented at the [[soul-exile-longing]] hub"
+    notes: "Cross-lens: 22_practices → 06_themes. Pairs with [[dhikr-sufi-remembrance]] + [[hesychasm-jesus-prayer]] as the cross-tradition repetitive-prayer cluster articulating soul-exile-longing through embodied recitation"
 status: "metadata"
 refs:
   - title: "The Yoga Sutras of Patanjali"

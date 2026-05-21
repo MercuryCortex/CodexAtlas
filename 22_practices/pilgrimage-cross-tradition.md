@@ -25,6 +25,11 @@ pilgrimage-traditions:
   - "Bahá'í pilgrimage to Haifa + Akko (Bahji Mansion; Shrines of Bab + Bahaullah)"
   - "Modern secular-political pilgrimage variants: Auschwitz-Birkenau memorialization; Hiroshima Peace Park; civil-rights March on Washington commemorations"
 key-traditions: "every major religious tradition"
+hub-edges:
+  - target: "merkabah-miraj-ascent-chain"
+    type: "embodied-articulation-of-ascent-pattern"
+    source: "Turner & Turner 1978 *Image and Pilgrimage in Christian Culture*; Schäfer 2009 *Mohammed's Journey to Heaven* — pilgrimage is the cross-tradition EMBODIED articulation of the heavenly-ascent narrative pattern: the pilgrim physically travels TO a sacred destination that is theologically interpreted as a place-of-meeting with the divine. Cross-tradition cognate with the interior ascent-narrative of [[merkabah-miraj-ascent-chain]]; some traditions explicitly merge the two (Sufi Mi'raj-and-Hajj theology; Christian pilgrimage as imitation-of-Christ's earthly journey culminating in the heavenly ascension)"
+    notes: "Cross-lens: 22_practices → 06_themes. The body-walking-to-sacred-place practice is the universal cross-tradition counterpart of the interior-heavenly-ascent narrative tradition"
 status: "metadata"
 refs:
   - title: "Image and Pilgrimage in Christian Culture"

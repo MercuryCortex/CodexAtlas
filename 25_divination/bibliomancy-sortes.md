@@ -21,6 +21,11 @@ key-traditions:
   - "[[tradition-sufism]] (Hafez Falnameh — opening the Divan-i Hafez)"
 themes:
   - "[[theme-axial-age]] (every textually-oriented tradition develops a bibliomancy variant)"
+hub-edges:
+  - target: "hermetic-transmission-chain"
+    type: "cross-tradition-divinatory-engagement-with-sacred-text-channel"
+    source: "Stewart 2001 *Sortes Astrampsychi*; Wardle 2006 *Divination and Magic*; Yates 1964 *Giordano Bruno and the Hermetic Tradition* — bibliomancy's emergence in late-antique Hermetic-Hellenistic contexts (Sortes Astrampsychi + Sortes Sangallenses + Christian Sortes Sanctorum) anchors the practice within the broader [[hermetic-transmission-chain|hermetic-transmission framework]]. The Renaissance Hermetic reception of bibliomancy (Court de Gébelin reframings; Falnameh tradition; sortes Virgilianae Renaissance use) continues this chain into modernity"
+    notes: "Cross-lens: 25_divination → 06_themes. Bibliomancy is the cross-tradition divinatory practice MOST attached to the hermetic-textual-tradition framework"
 status: "metadata"
 refs:
   - title: "Sortes Astrampsychi: A Hellenistic Oracle"

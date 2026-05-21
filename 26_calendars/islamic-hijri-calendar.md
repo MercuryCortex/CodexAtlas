@@ -32,6 +32,11 @@ related-traditions:
   - "[[tradition-shia-islam]]"
 related-events:
   - "[[event-hegira-622]] (the epoch-event)"
+hub-edges:
+  - target: "merkabah-miraj-ascent-chain"
+    type: "calendrical-anchor-of-Miraj-event"
+    source: "Schäfer 2009 *Mohammed's Journey to Heaven*; Ibn Ishaq *Sirat Rasul Allah* — the Mi'raj (Night Journey + Ascension of Muhammad) is calendrically situated as occurring before the Hegira (~619 CE) and commemorated in Islamic ritual life as Lailat al-Mi'raj (27th of Rajab, the 7th Hijri month). The Hijri calendar therefore anchors the Mi'raj event in lunar-calendrical time + structures the annual Mi'raj commemorative observance"
+    notes: "Cross-lens: 26_calendars → 06_themes. Calendrical-temporal articulation of the central Islamic instance of the heavenly-ascent chain"
 status: "metadata"
 refs:
   - title: "Mapping Time: The Calendar and Its History"

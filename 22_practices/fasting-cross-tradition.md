@@ -22,6 +22,11 @@ fasting-traditions:
   - "Indigenous vision-quest fasting (variable duration; transformational-initiatory)"
   - "Mormon (LDS) Fast Sunday (1st Sunday/month; 2 meals + offering)"
 key-traditions: "every major religious tradition"
+hub-edges:
+  - target: "theme-soma-haoma-eucharist"
+    type: "inverse-practice-of-ritual-meal-pattern"
+    source: "Bynum 1987 *Holy Feast and Holy Fast*; McGowan 2014 *Ancient Christian Worship*; Bell 1985 *Holy Anorexia* — fasting + ritual-meal participation are structurally complementary cross-tradition food-religion practices. Where [[theme-soma-haoma-eucharist|the ritual-meal pattern]] is the cross-tradition CONSUMPTION of sacred substance to participate in the divine, fasting is the cross-tradition ABSTENTION from food to similarly participate in the divine (Bynum 1987 documents the medieval-Christian female saints' Eucharistic-fasting dyad: extreme Eucharistic devotion + extreme food-abstention as twin-practices of the same theological framework)"
+    notes: "Cross-lens: 22_practices → 06_themes. Fasting is the inverse-practice of the ritual-meal pattern; both anchor cross-tradition food-religion at the practice-level"
 status: "metadata"
 refs:
   - title: "Fasting and Eating for Health"

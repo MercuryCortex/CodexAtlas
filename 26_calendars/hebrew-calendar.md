@@ -31,6 +31,11 @@ related-traditions:
   - "[[tradition-judaism]]"
   - "[[tradition-rabbinic-judaism]]"
   - "[[tradition-second-temple-judaism]]"
+hub-edges:
+  - target: "persian-period-injection"
+    type: "calendrical-channel-of-Babylonian-substrate-injection"
+    source: "Stern 2001 *Calendar and Community*; Boyce 1982 *History of Zoroastrianism* Vol. 2; Hultgård 1998 — the Hebrew calendar's month-names (Nisan, Iyyar, Sivan, Tammuz, Av, Elul, Tishrei, etc.) are Akkadian/Babylonian loan-words adopted during the Babylonian Exile (-586 to -538), replacing earlier Hebrew month-names. The calendrical-Babylonian substrate is one of the documented channels of the Persian-period exposure that introduced the broader doctrinal channels (dualism + angelology + demonology + resurrection + Messianic theology) documented at the [[persian-period-injection]] hub"
+    notes: "Cross-lens: 26_calendars → 06_themes. The Hebrew calendar is one of the calendrical-institutional evidence-channels for the Persian-period injection's depth"
 status: "metadata"
 refs:
   - title: "A Comprehensive Hebrew Calendar"
