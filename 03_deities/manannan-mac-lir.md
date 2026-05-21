@@ -23,7 +23,7 @@ syncretic-edges:
     type: "structural-parallel"
     source: "Typological — both ferry the dead/heroes to the afterlife realm across water"
     notes: "Manannán's boat Sguabuisce carries souls to Tír na nÓg as Charon's boat carries souls across the Styx. The ferryman-to-the-dead function is a cross-tradition archetype appearing also in Anubis (weighing before admission), Hermes Psychopompos (guide, not ferryman), and the Norse Valkyries."
-status: "stub"
+status: "metadata"
 refs:
   - title: "Celtic Mythology"
     author: "Mac Cana, Proinsias"

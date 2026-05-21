@@ -15,7 +15,7 @@ child-of: []
 consort: []
 attributes: ["spear", "shield", "the king's personal-deity epithet"]
 attested-in: ["Pre-Christian Aksumite royal inscriptions (Ezana's pre-conversion stelae — RIE 185 vocalized Ge'ez; RIE 270 Greek; pre-Christian-formula passages of the Beja-campaign and Noba-campaign inscriptions)"]
-equivalents: ["[[ares]] (ancient-identification — Greek-version of Ezana's RIE 270 explicitly translates the Aksumite war-god as *Ares*)", "[[mars]] (Roman equivalent of Ares)"]
+equivalents: ["[[ares]] (ancient-identification — Greek-version of Ezana's RIE 270 explicitly translates the Aksumite war-god as *Ares*)", "[[mars-roman]] (Roman equivalent of Ares)"]
 syncretic-edges:
   - target: "ares"
     type: "ancient-identification"
@@ -71,7 +71,7 @@ The Christianization disrupts the Mahrem-as-royal-war-patron pattern: Ezana's po
 
 ## Cross-tradition identifications
 - **[[ares]]** — *ancient-identification*: the Greek version of Ezana's own inscriptions explicitly identifies Mahrem with Ares. This is one of the cleanest *contemporary-textual* identifications of an Ethiopian deity with a Mediterranean one.
-- **[[mars]]** — *parallel-form*: Roman Mars is the Latin equivalent of Greek Ares; by transitive identification Mahrem ≈ Mars.
+- **[[mars-roman]]** — *parallel-form*: Roman Mars is the Latin equivalent of Greek Ares; by transitive identification Mahrem ≈ Mars.
 
 ## Iconography
 Not standardized in surviving Aksumite material culture. The pre-Christian Aksumite stelae are inscriptional rather than iconographic for the war-god in particular.
