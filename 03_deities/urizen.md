@@ -18,8 +18,8 @@ attested-in:
   - "*Europe: A Prophecy* (1794)"
 equivalents:
   - "[[yaldabaoth]] — Gnostic Demiurge (structural parallel; independent invention)"
-  - "[[plato-demiurge]] — Platonic Demiurge (Blake inverts the Platonic valuation)"
-  - "[[angra-mainyu]] — the principle of restriction/evil (functional parallel, not identity)"
+  - "[[demiurge-platonic]] — Platonic Demiurge (Blake inverts the Platonic valuation)"
+  - "[[angra-mainyu-ahriman]] — the principle of restriction/evil (functional parallel, not identity)"
 syncretic-edges:
   - target: "sophia-gnostic"
     type: "structural-parallel"

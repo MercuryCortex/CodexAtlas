@@ -15,7 +15,7 @@ child-of: ["[[gaia]] (with whom he is paired in some genealogies; in Hesiod's Th
 consort: ["[[gaia]]"]
 attributes: []
 attested-in: ["[[phase-2-009-hesiod-theogony-works-and-days]]"]
-equivalents: ["[[caelus-roman]]"]
+equivalents: ["Caelus (Roman sky-personification; no node yet)"]
 syncretic-edges:
   - target: "anu-hittite"
     type: "scholarly-parallel"
@@ -25,7 +25,7 @@ syncretic-edges:
     type: "scholarly-parallel"
     source: "West 2007, Indo-European Poetry and Myth"
     notes: "Indo-European *Dyēus 'Sky' reflexes split into the sovereign type (Zeus/Jupiter/Dyauṣ Pitṛ) and the displaced primordial-sky type (Uranus). Uranus's name *ourani- is unclear etymologically — possibly non-Indo-European."
-status: "stub"
+status: "metadata"
 refs:
   - title: "Hesiod's Theogony, edited with commentary"
     author: "West, M.L."

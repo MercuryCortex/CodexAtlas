@@ -26,7 +26,7 @@ syncretic-edges:
   - target: "[[raphael-archangel]]"
     type: "scholarly-parallel"
     source: "Co-archangel — together they form the apocalyptic four"
-status: "stub"
+status: "metadata"
 refs:
   - title: "1 Enoch: A Commentary"
     author: "Nickelsburg, George W.E."

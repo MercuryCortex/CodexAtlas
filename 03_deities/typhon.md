@@ -10,9 +10,9 @@ period-active-latest: -100
 domains: ["chaos", "storm and primordial winds", "monstrous serpent / dragon", "antagonist of Zeus"]
 gender: "masculine (monstrous)"
 role: "chaos-serpent antagonist of Zeus; chthonic-storm monster; chaoskampf antagonist of the king-of-the-gods"
-parent-of: ["[[echidna]] (consort/sister; mother of his monstrous offspring — Cerberus, the Hydra, the Chimaera, the Nemean Lion, etc.)"]
-child-of: ["[[gaia]] (Earth) and [[tartarus]] (Hesiod *Theogony* 821–822)"]
-consort: ["[[echidna]]"]
+parent-of: ["Echidna (consort/sister; mother of his monstrous offspring — Cerberus, the Hydra, the Chimaera, the Nemean Lion, etc.; no node yet)"]
+child-of: ["[[gaia]] (Earth) and Tartarus (Hesiod *Theogony* 821–822; primordial-abyss, concept-level no deity node)"]
+consort: ["Echidna (no node yet)"]
 attributes: ["a hundred serpent / dragon heads (Hesiod *Theog.* 825)", "wings", "fire-breathing", "thunderous many-voices", "serpent-coils from the thighs down"]
 attested-in: ["[[phase-2-009-hesiod-theogony-works-and-days]]"]
 equivalents: ["[[illuyanka]]", "[[tiamat]]", "[[lotan]]", "[[vritra]]", "[[apophis]]", "Python (later Greek instance of the type)", "[[set]] (Greek interpretatio: Plutarch *De Iside et Osiride* identifies Typhon with Set)"]
