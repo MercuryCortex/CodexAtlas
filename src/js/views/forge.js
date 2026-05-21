@@ -3252,7 +3252,7 @@
         img.removeAttribute('src');
         if (entry && entry.src) {
           img.onload  = function () {
-            img.style.display = '';
+            img.style.display = 'block';
             // Image just added height — re-measure + reposition.
             measure();
             schedulePosition();
