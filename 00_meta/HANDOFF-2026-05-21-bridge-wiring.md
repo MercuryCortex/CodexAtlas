@@ -1,6 +1,6 @@
 # HANDOFF — Bridge-Hub Cross-Lens Wiring (2026-05-21)
 
-> **Read this first if you're a fresh agent picking up Lane A bridge-wiring / cleanup work.** Status as of commit `fbe1e5f` (Phase 17 essay series COMPLETE + Buckets A/B/C dead-link sweep COMPLETE — 564/703 baseline, down 14.8% in occurrences from the 595/825 starting baseline). Read `STATUS.md` top entries for the per-phase detail; this file is the synthesis.
+> **Read this first if you're a fresh agent picking up Lane A work.** Status as of commit `b56f7bd` (Phase 17 essay series COMPLETE + Buckets A/B/C cleanup COMPLETE + Track A 3-empty-lens-population COMPLETE + new lens content wired into bridge-hub graph + findings report shipped — 563/702 baseline, down 14.9% in occurrences from the 595/825 starting baseline). **John is pausing Lane A to work on design**; vault state is robustly closed. Read `STATUS.md` top entries for per-phase detail + `FINDINGS-2026-05-21-session-close.md` for the 10 surprising findings; this file is the synthesis.
 
 ---
 
@@ -114,9 +114,13 @@ After 15 phases (~439 hub-edges, ~150 commits, zero dead links), the cross-tradi
 - **Hub-edge back-edge visibility audit** — verify each of the 28 substantial bridge hubs has its 7-lens companion-pole coverage visible AT THE HUB (rather than only at the source lens-end); audit pass.
 
 ### Done in this session block (2026-05-21)
-- Phase 17 essay series (5 essays + collection README, ~1,203 lines of cross-tradition scholarship)
+- Phase 17 essay series (6 essays + collection README, ~1,424 lines of cross-tradition scholarship)
 - Buckets A+B+C dead-link sweep (16 new substantive stubs + 17 slug rewrites + 50+ backtick-conversions)
-- Phase-17 essay series + cleanup buckets are the COMPLETE deliverables for this session block
+- Assessment doc (188 lines, 6-dimension state-of-the-vault snapshot)
+- 03_deities/README.md (lens-scope clarification in response to John's Holy-Spirit-and-pre-9000-BCE-deity methodology question)
+- Track A: 3 empty lenses populated (25_divination + 26_calendars + 22_practices) — 32 substantive metadata-tier nodes ~3,500 lines
+- 13 hub-edges wiring the new lens content into the bridge-hub graph — the new content is now graph-testable from the 28 bridge hubs
+- FINDINGS report (`00_meta/FINDINGS-2026-05-21-session-close.md`) — 10 surprising findings from the session block
 
 ---
 
@@ -178,7 +182,7 @@ If the number rises after your batch, you introduced a dead link — find the ne
 
 ## What to tell the new agent (one-paragraph brief)
 
-> **The cross-tradition spine the Codex Atlas was built to investigate is now legible at THREE altitudes** (YAML hub-edges Phases 7-16, individual hub-file prose Phases 10-16, Phase-17 cross-hub essays at `00_meta/MASSIVE-WIN-essays/`) at `~/Desktop/Codex Atlas` (commit `fbe1e5f`). Dead-link baseline is **564/703 occurrences** (down 14.8% in this session block from the 595/825 pre-cleanup baseline; WIRING LAW held across ~160 commits). The natural next-step menu: (1) **Multi-hub connector audit** — surface figures/events at multiple 28-hubs simultaneously (Suhrawardī, Mani, Hallaj) as a discoverable cross-pattern finding; ~half-day + possible 6th essay; (2) **Phase-15 place prose pass** — 11 places with rich YAML edges but thin prose, ~1,500-2,200 lines of scholarly content; (3) **Bucket C continuation** — slower stub-by-stub dead-link sweep, ~250 2-occurrence targets remaining; (4) **Hub-edge back-edge audit** — verify each of 28 hubs has visible 7-lens companion coverage. Read this handoff + `STATUS.md` top entries before starting. **Lessons memorialized in memory**: `feedback_status_log_backtick_wikilinks.md` (use backticks not ``...`` when describing dead slugs in STATUS prose, or linkcheck will count them as new dead links). Never touch Lane B paths (src/, index.html, build_*.py). Lane A slot is OPEN.
+> **The cross-tradition spine is now legible at FOUR altitudes** (YAML hub-edges Phases 7-16 + individual hub-file prose Phases 10-16 + Phase-17 cross-hub essays at `00_meta/MASSIVE-WIN-essays/` + connector-node audit at essay #6) at `~/Desktop/Codex Atlas` (commit `b56f7bd`). Dead-link baseline is **563/702 occurrences** (down 14.9% in this session block from 595/825 pre-cleanup baseline; WIRING LAW held across ~165 commits). **John is pausing Lane A to work on design.** Three empty lenses now populated this session (25_divination + 26_calendars + 22_practices, ~32 substantive nodes, ~3,500 lines); the new lens content is wired into the bridge-hub graph via 13 hub-edges. Findings report at `00_meta/FINDINGS-2026-05-21-session-close.md` documents 10 surprising findings. **When resuming**, the natural next-step menu is (1) populate remaining empty lenses (19_astronomy + 24_pharmacology + 23_material_culture + 27_attire + 16_mathematics + 18_languages — astronomy first since every tradition observes the sky); (2) write Phase-17 essay #7 on `third-century-collision-zone` (rank-3 most-connected hub by inbound-edge count, 28 inbound files, no essay yet); (3) Phase-15 place prose pass (11 places with thin prose); (4) continue Bucket C stub-creation. Read this handoff + `STATUS.md` top entries + `FINDINGS-2026-05-21-session-close.md` before starting. **Lessons memorialized in memory**: `feedback_status_log_backtick_wikilinks.md` (use backticks not double-bracketed slugs when describing dead links in STATUS/HANDOFF prose). Never touch Lane B paths (src/, index.html, build_*.py). Lane A slot is OPEN.
 
 ---
 
