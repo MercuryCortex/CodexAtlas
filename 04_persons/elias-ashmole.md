@@ -19,7 +19,7 @@ geo-lon: -1.26
 geo-label: "Oxford (Ashmolean Museum, his bequest)"
 historicity: "documented"
 texts-authored: ["[[phase-6-047-ashmole-theatrum-chemicum-britannicum]]"]
-traditions: ["[[tradition-freemasonry]]", "[[tradition-rosicrucian]]"]
+traditions: ["[[tradition-freemasonry]]", "[[tradition-rosicrucianism]]"]
 influenced-by:
   - "[[phase-6-046-ripley-compound-of-alchemy]] — Ripley as canonical English alchemist"
   - "[[phase-6-018-rosicrucian-manifestos]] — Rosicrucian Hermeticism"

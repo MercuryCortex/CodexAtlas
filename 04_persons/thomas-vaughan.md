@@ -19,7 +19,7 @@ geo-lon: -3.25
 geo-label: "Breconshire, Wales (birthplace)"
 historicity: "documented"
 texts-authored: ["[[phase-6-050-thomas-vaughan-anthroposophia]]"]
-traditions: ["[[tradition-rosicrucian]]", "[[tradition-latin-christianity]]"]
+traditions: ["[[tradition-rosicrucianism]]", "[[tradition-latin-christianity]]"]
 influenced-by:
   - "[[phase-6-018-rosicrucian-manifestos]] — first English translator of the Fama and Confessio"
   - "[[phase-6-009-agrippa-de-occulta-philosophia]]"

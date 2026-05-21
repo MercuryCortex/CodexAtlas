@@ -17,7 +17,7 @@ city-of-origin: "Aksum (traditional); Tigray region monastic milieu"
 authorship: "redactor named in colophon: Nebura'ed Yeshaq of Aksum (~1314–1322); compiled from earlier Arabic and Coptic sources"
 key-figures: ["[[wolega-tafari-makonnen-haile-selassie]]", "[[makeda-queen-of-sheba]]", "[[menelik-i-legendary]]", "Nebura'ed Yeshaq of Aksum (redactor c. 1322)"]
 themes: ["[[solomonic-genealogy]]", "[[messianic-genealogy]]", "[[ark-of-the-covenant]]", "[[tabot-ark-replica]]", "[[divine-kingship]]", "[[chosen-people]]"]
-parallels: ["[[phase-2-034-books-of-kings]]", "[[phase-2-004-1-2-chronicles]]"]
+parallels: ["[[phase-2-034-books-of-kings]]", "[[document-2-chronicles]]"]
 influenced-by: ["1 Kings 10 (Solomon and Queen of Sheba narrative)", "Targum Sheni to Esther", "Quranic Solomon-Bilqis material (Surah 27)", "Coptic / Syriac Christian legends"]
 influences: ["[[event-solomonic-restoration-1270]]", "Ethiopian Solomonic dynasty legitimation (1270–1974)", "1955 Ethiopian Constitution Article 2 (Solomonic descent codified)", "[[tradition-rastafari]] (foundational for Rastafarian theology of Haile Selassie)"]
 deities-mentioned: []
