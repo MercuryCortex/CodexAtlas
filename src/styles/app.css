@@ -6472,6 +6472,21 @@ body.view-forge #detail-inner {
    Hulls + labels both pointer-events:none so they never
    intercept hover.
    --family-color is set per group from JS (node.family_color). */
+/* Phase 20F (2026-05-21) — backdrop image. Sits behind the
+   canvas (z=0); the canvas defaults to z-auto = above this.
+   JS syncBackgroundImage() sets left, top, width, height,
+   opacity per frame so the image stays centred on the world
+   wheel-centre and scales with the camera. */
+.forge-bg-image {
+  position: absolute;
+  z-index: 0;
+  pointer-events: none;
+  user-select: none;
+  opacity: 0;
+  /* No transitions — JS smooths via per-frame interpolation. */
+  /* Hint to compositor that this layer transforms a lot. */
+  will-change: opacity, transform;
+}
 .forge-hulls-overlay {
   position: absolute; inset: 0;
   pointer-events: none;

@@ -817,6 +817,20 @@
     ].join('');
     stage.appendChild(bottomBar);
 
+    // Phase 20F (2026-05-21) — backdrop image (star-field / nebula).
+    // Sits BELOW the canvas in z-order so the wheel paints on top.
+    // syncBackgroundImage() repositions + rescales + fades per
+    // camera change: invisible at scale ≥ 0.50, fades in to full
+    // opacity by scale ≤ 0.07 (max zoom-out). The image is anchored
+    // at the wheel centre in world space, sized so it fills the
+    // viewport when scale = 0.07.
+    const bgImage = document.createElement('img');
+    bgImage.className = 'forge-bg-image';
+    bgImage.src = '_assets/bg/bg-a01.jpg?v=20260521';
+    bgImage.alt = '';
+    bgImage.draggable = false;
+    stage.appendChild(bgImage);
+
     const canvas = document.createElement('canvas');
     canvas.className = 'forge-canvas';
     stage.appendChild(canvas);
@@ -2087,6 +2101,10 @@
       // at camera.scale > 3.0 so deep-zoom inspection isn't
       // cluttered.
       syncHulls();
+      // Phase 20F (2026-05-21) — backdrop image follows the same
+      // camera transform. Position + size + opacity recomputed
+      // each tick; cheap (one DOM element).
+      syncBackgroundImage();
       // Glyphs are now in the WebGPU canvas (GPU glyph pass) so
       // they project via the same view-uniform as disks/edges —
       // no per-frame DOM sync needed.
@@ -2385,14 +2403,22 @@
       hullPolysG.innerHTML = '';
       hullDividersG.innerHTML = '';
       hullLabelsG.innerHTML = '';
-      // ── One polygon + one label per family
+      // ── One pie-slice path + one label per family
+      // Phase 20E (2026-05-21) — was a <polygon> set from the
+      // convex hull of placed deity positions, which gave
+      // STRAIGHT polygon edges that didn't match the radial
+      // dividers. Now a <path> drawn as a true annular sector
+      // (curved outer/inner arcs + radial sides) using the
+      // wedge's exact a0 / a1 bounds — so the family zone is
+      // a pie-chart slice that ALIGNS with the divider lines
+      // by construction.
       for (let i = 0; i < data.hulls.length; i++) {
         const h = data.hulls[i];
         const polyG = document.createElementNS(SVG_NS, 'g');
         polyG.setAttribute('class', 'forge-hull');
         polyG.setAttribute('data-family', h.family);
         polyG.style.setProperty('--family-color', h.color);
-        const poly = document.createElementNS(SVG_NS, 'polygon');
+        const poly = document.createElementNS(SVG_NS, 'path');
         poly.setAttribute('class', 'forge-hull-poly');
         polyG.appendChild(poly);
         hullPolysG.appendChild(polyG);
@@ -2447,7 +2473,13 @@
       hullsOverlay.setAttribute('width',  vp.w);
       hullsOverlay.setAttribute('height', vp.h);
       const camScale = camera.state.scale;
-      // Zoom fade — overview chrome only.
+      // Zoom fade for the WHOLE hulls overlay — overview chrome
+      // only. Fades out only at deep zoom (≥ 3.0) so the pie
+      // slices read cleanly at default + slightly-zoomed-in
+      // viewing. Phase 20F (2026-05-21) — the family LABELS
+      // have their own zoom fade (set further down inside this
+      // function) so the pie slices can stay visible at small
+      // scales while the labels fade out separately.
       const fade = camScale <= 2.0 ? 1.0
                  : camScale >= 3.0 ? 0.0
                  : (3.0 - camScale) / 1.0;
@@ -2466,27 +2498,78 @@
       const innerEdgeScreen = camera.worldToScreen(centerWorld.x + innerWorld, centerWorld.y, vp);
       const innerPxRadius = Math.hypot(innerEdgeScreen.x - centerScreen.x, innerEdgeScreen.y - centerScreen.y);
 
-      // ── Polygons (one per family, world → screen each vertex).
+      // ── Pie-slice paths (one annular sector per family).
+      // Outer arc at ringPxRadius (the data-driven outer rim),
+      // inner arc at innerPxRadius. Angular extent = wedge
+      // [a0, a1]. The wedges are contiguous (gap is between
+      // adjacent wedges' a1 / a0), so adjacent pie slices share
+      // a tiny gap where the divider line lives.
       const polyGroups = hullPolysG.children;
       for (let i = 0; i < data.hulls.length && i < polyGroups.length; i++) {
         const h = data.hulls[i];
         const polyEl = polyGroups[i].firstChild;
-        let pts = '';
-        for (let j = 0; j < h.polygon.length; j++) {
-          const s = camera.worldToScreen(h.polygon[j].x, h.polygon[j].y, vp);
-          pts += (j ? ' ' : '') + s.x.toFixed(1) + ',' + s.y.toFixed(1);
+        let d;
+        if (h.a0 != null && h.a1 != null) {
+          // Annular sector path.
+          //   M (a0, rIn) → L (a0, rOut) → A outer-arc to (a1, rOut)
+          //   → L (a1, rIn) → A inner-arc back to (a0, rIn) → Z
+          const a0 = h.a0, a1 = h.a1;
+          const cx = centerScreen.x, cy = centerScreen.y;
+          const rIn  = innerPxRadius;
+          const rOut = ringPxRadius;
+          const x0 = cx + Math.cos(a0) * rIn;
+          const y0 = cy + Math.sin(a0) * rIn;
+          const x1 = cx + Math.cos(a0) * rOut;
+          const y1 = cy + Math.sin(a0) * rOut;
+          const x2 = cx + Math.cos(a1) * rOut;
+          const y2 = cy + Math.sin(a1) * rOut;
+          const x3 = cx + Math.cos(a1) * rIn;
+          const y3 = cy + Math.sin(a1) * rIn;
+          let delta = a1 - a0;
+          while (delta < 0)            delta += 2 * Math.PI;
+          while (delta >= 2 * Math.PI) delta -= 2 * Math.PI;
+          const largeArc = delta > Math.PI ? 1 : 0;
+          // SVG y-axis is flipped vs math, so a math-CCW arc
+          // reads as CW in SVG → sweep-flag 1 for the outer arc
+          // (going a0→a1 forwards), sweep-flag 0 for the inner
+          // arc (returning a1→a0).
+          d = 'M ' + x0.toFixed(1) + ',' + y0.toFixed(1)
+            + ' L ' + x1.toFixed(1) + ',' + y1.toFixed(1)
+            + ' A ' + rOut.toFixed(1) + ',' + rOut.toFixed(1) + ' 0 ' + largeArc + ' 1 ' + x2.toFixed(1) + ',' + y2.toFixed(1)
+            + ' L ' + x3.toFixed(1) + ',' + y3.toFixed(1)
+            + ' A ' + rIn.toFixed(1)  + ',' + rIn.toFixed(1)  + ' 0 ' + largeArc + ' 0 ' + x0.toFixed(1) + ',' + y0.toFixed(1)
+            + ' Z';
+        } else {
+          // Fallback — convex-hull polygon as before.
+          let pts = '';
+          for (let j = 0; j < h.polygon.length; j++) {
+            const s = camera.worldToScreen(h.polygon[j].x, h.polygon[j].y, vp);
+            pts += (j ? ' L ' : 'M ') + s.x.toFixed(1) + ',' + s.y.toFixed(1);
+          }
+          d = pts + ' Z';
         }
-        polyEl.setAttribute('points', pts);
+        polyEl.setAttribute('d', d);
       }
 
-      // ── Family labels: angle = centroidAngle, radius = outer+pad.
+      // ── Family labels: angle = wedge centre, radius = outer+pad.
       // Labels sit OUTSIDE the wheel rim, NEVER inside the cluttered
-      // node cloud. pad scales with viewport so it stays consistent.
+      // node cloud. Phase 20E (2026-05-21) — was h.centroidAngle
+      // (computed from drifted member positions); now h.wedgeCenter
+      // (the wedge's canonical centre angle) so labels sit DIRECTLY
+      // above their pie slice.
+      //
+      // Phase 20F (2026-05-21) — labels also fade by zoom: full
+      // opacity at scale ≥ 0.50, fully invisible at scale ≤ 0.25.
       const LABEL_OUTSIDE_PAD = 28;
+      let labelFade;
+      if      (camScale >= 0.50) labelFade = 1;
+      else if (camScale <= 0.25) labelFade = 0;
+      else                       labelFade = (camScale - 0.25) / (0.50 - 0.25);
+      hullLabelsG.style.opacity = labelFade.toFixed(3);
       const labelGroups = hullLabelsG.children;
       for (let i = 0; i < data.hulls.length && i < labelGroups.length; i++) {
         const h = data.hulls[i];
-        const a = h.centroidAngle;
+        const a = (h.wedgeCenter != null) ? h.wedgeCenter : h.centroidAngle;
         const rPx = ringPxRadius + LABEL_OUTSIDE_PAD;
         const lx = centerScreen.x + Math.cos(a) * rPx;
         const ly = centerScreen.y + Math.sin(a) * rPx;
@@ -2532,6 +2615,53 @@
           grad.setAttribute('y2', y2.toFixed(1));
         }
       }
+    }
+
+    // ════════════════════════════════════════════════════════════
+    //  Backdrop image  —  Phase 20F (2026-05-21)
+    // ════════════════════════════════════════════════════════════
+    //  A star-field / nebula image anchored at the wheel's WORLD
+    //  centre. It scales WITH the camera (so when the user zooms
+    //  out the image grows and starts to fill the frame) and FADES
+    //  IN as scale drops from 0.50 → 0.07. Above 0.50 it's
+    //  invisible (the wheel is the focus). Below 0.07 it's at full
+    //  opacity (the wheel is a small thing inside the cosmos).
+    //
+    //  IMPLEMENTATION
+    //  - Image is positioned with left/top + width/height so the
+    //    centre of the image sits at the WORLD-zero point projected
+    //    to screen.
+    //  - At scale = 0.07, image fills the larger viewport dimension.
+    //    At any other scale, image size = (vp.max / 0.07) * scale.
+    //  - Opacity = linear interpolation between scale 0.50 (0) and
+    //    scale 0.07 (1).
+    // ════════════════════════════════════════════════════════════
+    function syncBackgroundImage() {
+      if (!bgImage) return;
+      const vp = local.lastSize;
+      if (!vp.w || !vp.h) return;
+      if (!camera || !camera.state) return;
+      const camScale = camera.state.scale;
+      // Opacity ramp: invisible above 0.50, full below 0.07.
+      let bgFade;
+      if      (camScale >= 0.50) bgFade = 0;
+      else if (camScale <= 0.07) bgFade = 1;
+      else                       bgFade = (0.50 - camScale) / (0.50 - 0.07);
+      if (bgFade <= 0.001) {
+        bgImage.style.opacity = '0';
+        return;
+      }
+      // Size: fill the larger viewport dimension at scale = 0.07.
+      // size_at_007 = max(vp.w, vp.h) → size_at_any = max(vp) / 0.07 * scale.
+      const maxVp = Math.max(vp.w, vp.h);
+      const imgSize = (maxVp / 0.07) * camScale;
+      // Anchor: world (0, 0) → screen.
+      const centerScreen = camera.worldToScreen(0, 0, vp);
+      bgImage.style.opacity = bgFade.toFixed(3);
+      bgImage.style.width   = imgSize.toFixed(1) + 'px';
+      bgImage.style.height  = imgSize.toFixed(1) + 'px';
+      bgImage.style.left    = (centerScreen.x - imgSize / 2).toFixed(1) + 'px';
+      bgImage.style.top     = (centerScreen.y - imgSize / 2).toFixed(1) + 'px';
     }
 
     function syncLabelPositions() {

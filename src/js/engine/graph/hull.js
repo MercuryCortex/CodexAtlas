@@ -159,13 +159,24 @@
       const centroidAngle = (ang && (ang.sx !== 0 || ang.sy !== 0))
         ? Math.atan2(ang.sy, ang.sx)
         : Math.atan2(centroid.y - center.y, centroid.x - center.x);
+      // Phase 20E (2026-05-21) — also stamp the wedge's exact
+      // angular bounds + centre angle onto the hull record. The
+      // renderer uses these to draw an ANNULAR SECTOR ("pie
+      // slice") for the family instead of a convex polygon — so
+      // family zones become perfect chart-pie shapes with
+      // circular inner / outer edges, regardless of where the
+      // individual deity positions drifted during relaxation.
+      const wd = wedgeData && wedgeData[family];
       out.push({
         family,
-        color: data.color,
+        color:         data.color,
         polygon,
         centroid,
         centroidAngle,
-        count: data.points.length,
+        count:         data.points.length,
+        a0:            wd ? wd.a0     : null,
+        a1:            wd ? wd.a1     : null,
+        wedgeCenter:   wd ? wd.center : centroidAngle,
       });
     }
     // Largest first for layering.
