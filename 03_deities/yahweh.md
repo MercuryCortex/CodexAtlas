@@ -33,7 +33,7 @@ syncretic-edges:
     type: "scholarly-parallel"
     source: "Boyce & Grenet 1991; Barr 1985"
     notes: "Persian-period transcendent-creator monotheism parallels in Judah and Iran; structural rather than direct."
-status: "stub"
+status: "metadata"
 refs:
   - title: "The Early History of God: Yahweh and the Other Deities in Ancient Israel"
     author: "Smith, Mark S."

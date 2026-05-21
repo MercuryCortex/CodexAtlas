@@ -39,9 +39,7 @@ syncretic-edges:
   - target: "romulus-and-remus"
     type: "scholarly-parallel"
     source: "Idowu 1962 — Roman founder-twins; Oduduwa as Yoruba founder. The founding-king-of-the-people archetype"
-  - target: "manu-vedic"
-    type: "scholarly-parallel"
-    source: "Idowu 1962 — Vedic Manu as primordial-first-man-and-lawgiver; Oduduwa as Yoruba primordial-founder"
+  # Vedic Manu parallel preserved as note — no Manu node yet. Idowu 1962 — Vedic Manu as primordial-first-man-and-lawgiver; Oduduwa as Yoruba primordial-founder.
 status: "metadata"
 refs:
   - title: "Olodumare: God in Yoruba Belief"

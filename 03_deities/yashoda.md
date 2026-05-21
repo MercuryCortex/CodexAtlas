@@ -17,7 +17,7 @@ attributes: ["the curd-pot", "the binding-rope (Damodara story)"]
 attested-in: ["[[phase-2-017-mahabharata-ramayana-oral-layers]]", "[[phase-6-020-chaitanya-charitamrita]]"]
 equivalents: []
 syncretic-edges: []
-status: "stub"
+status: "metadata"
 refs:
   - title: "Krishna: The Beautiful Legend of God (Srimad Bhagavata Purana Book X)"
     author: "Bryant, Edwin F. (trans.)"

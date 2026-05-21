@@ -53,7 +53,7 @@ The **Yama-Yamī dialogue** (Rig Veda 10.10) is the earliest known incest-refusa
 - **[[yima-jamshid]]** — Indo-Iranian deity-cognate (PIE *\*Yemo-* "twin"). The cleanest cross-Indo-Iranian deity identification.
 - **[[yamantaka]]** — Vajrayana: "the ender of Yama," the wisdom-deity who slays death.
 - **Yan Wang / Enma** — *folk-syncretism*: Buddhist Yama imported into China as Yan Wang (judge of the underworld) and into Japan as Enma; the missing keystone for East Asian afterlife mythology that previously had no proper Sinitic anthropomorphic death-god.
-- **[[hades]] / [[osiris]] / [[mictlantecuhtli]] / [[hel]] / [[anubis]] / [[ereshkigal]] / [[ix-chel|Ixchel]]** — *parallel-motif*: cross-tradition death-god / death-goddess.
+- **[[hades]] / [[osiris]] / [[mictlantecuhtli]] / [[hel]] / [[anubis]] / [[ereshkigal]] / [[ixchel]]** — *parallel-motif*: cross-tradition death-god / death-goddess.
 
 ## Refs
 1. Doniger, *The Rig Veda* (Penguin Classics, 1981) — Tier 1.
