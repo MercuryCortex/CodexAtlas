@@ -981,11 +981,19 @@
         const span    = Math.max(ext.x1 - ext.x0, ext.y1 - ext.y0);
         const maxMrg  = span * 0.5;
         const t       = Math.max(0, Math.min(1, (camera.state.scale - floor) / Math.max(1e-6, fit - floor)));
-        const margin  = maxMrg * t;
-        camera.setPanBounds(
-          ext.x0 - margin, ext.y0 - margin,
-          ext.x1 + margin, ext.y1 + margin,
-        );
+        // Phase 21K (2026-05-21) — INTERPOLATE THE BOUNDS, not
+        // just the margin. The previous formula collapsed only
+        // the extra margin at t = 0, leaving bounds at the full
+        // world extent (~±564 wu) — plenty of room to drag the
+        // wheel around at the floor. Now the bounds COLLAPSE TO
+        // A SINGLE POINT (0, 0, 0, 0) at t = 0 (floor), so the
+        // camera centre is dead-locked there, and expand linearly
+        // out to (ext ± margin) at t = 1 (fit zoom).
+        const x0 = (ext.x0 - maxMrg) * t;
+        const y0 = (ext.y0 - maxMrg) * t;
+        const x1 = (ext.x1 + maxMrg) * t;
+        const y1 = (ext.y1 + maxMrg) * t;
+        camera.setPanBounds(x0, y0, x1, y1);
       }
     }
 
