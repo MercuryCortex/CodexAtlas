@@ -6515,7 +6515,10 @@ body.view-forge #detail-inner {
    coords to match the line, so 0→15% and 85→100% become the soft
    tails on either end). */
 .forge-hull-divider {
-  stroke-width: 1px;
+  /* Phase 20D (2026-05-21) — John feedback: halve the line
+     width (was 1px) so dividers read as quiet structure
+     rather than chrome. */
+  stroke-width: 0.5px;
   fill: none;
   /* `stroke` attribute is set to url(#forge-hull-divgrad-N) in JS.
      This rule provides a fallback if the gradient ref fails. */

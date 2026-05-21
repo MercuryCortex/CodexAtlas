@@ -649,7 +649,76 @@
     const vault       = window.VAULT_DATA || { nodes: [], edges: [], families: [] };
     const allNodes    = vault.nodes || [];
     const allEdges    = vault.edges || [];
-    const familyOrder = (vault.families || []).map(f => f.name);
+
+    // ── THEMATIC FAMILY ORDER (Phase 20D, 2026-05-21) ────
+    // 36 families paired across the wheel so CONTESTING /
+    // RELEVANT-CONTEXT religions sit ~180° apart. The 18
+    // pairs are listed below; reading slot i and slot i+18
+    // gives the opposite-pair.
+    //
+    //  0 Christian          ↔ 18 Islamic              (Abrahamic main axis)
+    //  1 Israelite          ↔ 19 Canaanite            (Hebrew Bible contesting)
+    //  2 Rabbinic           ↔ 20 Pre-Islamic-Arabian  (late-antique Semitic, Jewish vs Arabian)
+    //  3 Greek              ↔ 21 Roman                (Mediterranean classical)
+    //  4 Norse              ↔ 22 Egyptian             (north pagan / south structured)
+    //  5 Mesopotamian       ↔ 23 Chinese              (oldest high-civs, east/west)
+    //  6 Vedic              ↔ 24 Buddhist             (Indian sequential / contesting)
+    //  7 Celtic             ↔ 25 Mesoamerican         (tribal-priestly, two continents)
+    //  8 Hermetic           ↔ 26 Modern-Esoteric      (ancient/modern occult lineage)
+    //  9 African            ↔ 27 Andean               (indigenous continents)
+    // 10 Mystery            ↔ 28 Gnostic              (initiatory vs revelatory)
+    // 11 Neoplatonist       ↔ 29 Manichaean           (late-antique heterodoxies)
+    // 12 Native-American    ↔ 30 Pacific              (indigenous, ocean-apart)
+    // 13 Baltic             ↔ 31 Slavic-Finnic        (eastern european cluster split)
+    // 14 Armenian           ↔ 32 Other                (Armenian small / Other = catch-all)
+    // 15 Zoroastrian        ↔ 33 Shinto               (state religions, east/west)
+    // 16 Hittite            ↔ 34 Etruscan             (bronze-age Anatolian / Italian)
+    // 17 Mandaean           ↔ 35 Academic             (surviving Gnostic / scholarly meta)
+    //
+    // Any family present in the vault but NOT in this list
+    // is appended in encounter order by radialWedgeLayout
+    // (its fallback). This keeps new families auto-supported
+    // without code change; opposite-pairing only applies to
+    // the curated 36.
+    const FAMILY_ORDER = [
+      'Christian',           // 0
+      'Israelite',           // 1
+      'Rabbinic',            // 2
+      'Greek',               // 3
+      'Norse',               // 4
+      'Mesopotamian',        // 5
+      'Vedic',               // 6
+      'Celtic',              // 7
+      'Hermetic',            // 8
+      'African',             // 9
+      'Mystery',             // 10
+      'Neoplatonist',        // 11
+      'Native-American',     // 12
+      'Baltic',              // 13
+      'Armenian',            // 14
+      'Zoroastrian',         // 15
+      'Hittite',             // 16
+      'Mandaean',            // 17
+      'Islamic',             // 18  (opp Christian)
+      'Canaanite',           // 19  (opp Israelite)
+      'Pre-Islamic-Arabian', // 20  (opp Rabbinic)
+      'Roman',               // 21  (opp Greek)
+      'Egyptian',            // 22  (opp Norse)
+      'Chinese',             // 23  (opp Mesopotamian)
+      'Buddhist',            // 24  (opp Vedic)
+      'Mesoamerican',        // 25  (opp Celtic)
+      'Modern-Esoteric',     // 26  (opp Hermetic)
+      'Andean',              // 27  (opp African)
+      'Gnostic',             // 28  (opp Mystery)
+      'Manichaean',          // 29  (opp Neoplatonist)
+      'Pacific',             // 30  (opp Native-American)
+      'Slavic-Finnic',       // 31  (opp Baltic)
+      'Other',               // 32  (opp Armenian)
+      'Shinto',              // 33  (opp Zoroastrian)
+      'Etruscan',            // 34  (opp Hittite)
+      'Academic',            // 35  (opp Mandaean)
+    ];
+    const familyOrder = FAMILY_ORDER;
 
     // ── Mode-dependent state lives on `local.mode` ────────
     // rebuildForMode(id) repopulates this object whenever the
