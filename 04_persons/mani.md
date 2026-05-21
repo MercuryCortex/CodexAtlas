@@ -31,6 +31,19 @@ originator-of:
   - "[[tradition-manichaeism]]"
 events-participated:
   - "[[event-mani-execution-274-or-277]]"
+hub-edges:
+  - target: "theme-manichaeism-synthesis"
+    type: "founder-of-synthesis"
+    source: "Tardieu 2008 *Manichaeism*; Lieu 1992 *Manichaeism in the Later Roman Empire and Medieval China*; BeDuhn 2000 *The Manichaean Body*; Cologne Mani Codex (Cameron & Dewey 1979) — Mani (216–274/277 CE) IS the founder of the deliberate syncretism documented at [[theme-manichaeism-synthesis]]. His meta-religious claim ('I know the other religions, I use them, I improve on them, I complete them') is without parallel in religious history until modern reformers; the explicit prophetic-chain Adam → Seth → Enoch → Buddha → Zarathustra → Jesus → Mani makes synthesis itself a programmatic theological move"
+    notes: "Cross-lens: 04_persons → 06_themes. MASSIVE-WIN: Mani is the most consequential single person in the first global religious synthesis — the Atlantic-to-Pacific spread of Manichaeism is what his theology of universal-revelation-to-all-nations enabled"
+  - target: "third-century-collision-zone"
+    type: "Manichaean-anchor-of-3rd-c-synthesis-window"
+    source: "BeDuhn 'The Co-formation of the Manichaean and Zoroastrian Religions'; Tardieu 2008; Lieu 1992 — Mani is the Manichaean-tradition anchor of the 3rd-century collision zone: he founds his religion ~240 CE under Shapur I's patronage, is executed ~274 CE under Bahram I — squarely inside the 200–280 CE synthesis-window where Plotinus + Origen + Mani + Sethian Gnostics all operate in overlapping intellectual networks. See [[third-century-collision-zone]]"
+    notes: "Cross-lens: 04_persons → 06_themes. The four supreme-deity articulations emerging simultaneously in the collision-zone (Plotinian One + Manichaean Father-of-Greatness + Origen's Christian Logos + Sasanian Ahura Mazda) document the cross-tradition convergence-and-differentiation that the window crystallizes"
+  - target: "theme-dying-founder-paradigm"
+    type: "Manichaean-instance-of-cross-tradition-pattern"
+    source: "Lieu 1992; BeDuhn 2010-2013 *Augustine and the Manichaeans*; Brown 2000 *Augustine of Hippo* — Mani's execution under Bahram I at Kartir's instigation (~274 CE) is one of the cross-tradition instances of the dying-founder paradigm. The pattern (mystic-prophet killed by religious establishment, death seeds the tradition's spread) is documented across Jesus + al-Hallaj + Mani + Giordano Bruno + others. Manichaeism survives 1,000 years across Spain → China — the *most geographically dispersed pre-modern religion* — partly *because* of the founder's execution + the resulting persecution-resilience theology. See [[theme-dying-founder-paradigm]]"
+    notes: "Cross-lens: 04_persons → 06_themes. Mani's execution is the founding-martyrdom that makes Manichaeism's universalist-syncretist program resilient to suppression — the founder's death disperses rather than destroys the tradition"
 status: "full"
 tags: [person, manichaean, mani, prophet, founder, sasanian, syncretism, MASSIVE-WIN, phase-4, cross-tradition]
 refs:

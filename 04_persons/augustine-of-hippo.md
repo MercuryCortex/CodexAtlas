@@ -11,6 +11,15 @@ date-died: 430
 historicity: "documented"
 texts-authored: ["[[phase-4-028-augustine-confessions]]", "[[phase-4-029-augustine-city-of-god]]", "*De Trinitate*", "*De Doctrina Christiana*", "*Contra Faustum*", "*De Natura Boni*", "*Enchiridion*", "*De Civitate Dei* (= City of God)", "hundreds of letters and sermons"]
 originator-of: ["[[original-sin]]", "[[city-of-god-vs-earthly-city]]"]
+hub-edges:
+  - target: "theme-manichaeism-synthesis"
+    type: "former-Manichaean-shaper-via-opposition"
+    source: "Brown 2000 *Augustine of Hippo: A Biography*; BeDuhn 2010-2013 *Augustine and the Manichaeans* (3 vols.); Augustine's own *Contra Faustum* + *De Moribus Manichaeorum* + *De Natura Boni* + *Confessions* III–V — Augustine was a Manichaean *auditor* (Hearer) for nine years (~373–382 CE) before his conversion to Catholic Christianity. His subsequent anti-Manichaean polemic shapes the *most consequential* doctrines of Western Christianity: original sin (against Manichaean cosmic-evil-as-substance), evil-as-privatio-boni (against Manichaean ontological dualism), and the doctrine of the will (against Manichaean determinism). The greatest theological influence Manichaeism had on Western Christianity was through its most famous opponent. See [[theme-manichaeism-synthesis]]"
+    notes: "Cross-lens: 04_persons → 06_themes. MASSIVE-WIN: Augustine is the *Christian endpoint* of Manichaean influence — his synthesis-by-opposition shapes 1,500+ years of Western Catholic + Reformed theology on sin / grace / will / evil"
+  - target: "third-century-collision-zone"
+    type: "downstream-figure-of-3rd-c-synthesis-window"
+    source: "Brown 2000; BeDuhn 2010-2013 — Augustine (354–430 CE) is the downstream synthesizer who carries the 3rd-century collision-zone material forward into the Latin Christian world via his Manichaean-period engagement + his Neoplatonist reading (Plotinus and Porphyry in Marius Victorinus's Latin translation). His Confessions credit 'the books of the Platonists' as the decisive intellectual breakthrough before his conversion. See [[third-century-collision-zone]]"
+    notes: "Cross-lens: 04_persons → 06_themes. Augustine is the *time-lapse* figure of the collision zone — he doesn't operate within the 200–280 window itself (he's later) but his theology is the downstream synthesis of what that window produced"
 status: "metadata"
 refs:
   - title: "Augustine of Hippo: A Biography"
