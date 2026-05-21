@@ -34,12 +34,12 @@ See [[label-taxonomy]].
 
 ## ⚠️ THE WIRING LAW (added 2026-05-15 — highest priority rule)
 
-**Connection IS the product. Every `[[wikilink]]` must resolve to a real node before you commit.**
+**Connection IS the product. Every ``wikilink`` must resolve to a real node before you commit.**
 
 When you write `[[some-concept]]` in any node, you are making a promise: that concept has a home in the vault. If the file doesn't exist, create it immediately — at minimum a stub. For figures that are MASSIVE WIN cross-tradition targets (Logos figures, Cosmic Human variants, divine feminine manifestations, demiurge figures, etc.), create `metadata`-tier nodes, not just stubs. A stub signals existence. A metadata node carries the edge's meaning.
 
 **Before your final commit:**
-1. Scan every `[[wikilink]]` you wrote this session.
+1. Scan every ``wikilink`` you wrote this session.
 2. `find . -name "<slug>.md"` for each one.
 3. Missing → create now. Non-negotiable.
 4. Run `python3 build_data.py` and check the output for dead-link warnings. Zero introduced dead links = a clean close.

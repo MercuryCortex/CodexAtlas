@@ -56,7 +56,7 @@ music-tradition-context:
 music-deity-connections:
   - [[deity-slug]]            # deity nodes connected to this music
 music-appearances:
-  - [[document-slug]]         # document nodes where this appears
+  - `document-slug`         # document nodes where this appears
 
 refs:
   - "Author, Title, date"     # Tier-1 or Tier-2 scholarly sources only

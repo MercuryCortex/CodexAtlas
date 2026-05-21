@@ -42,7 +42,7 @@ Click any node to see:
 ## How to add a node
 
 1. Write the markdown file under the right folder, following the appropriate schema in `00_meta/schema-*.md`.
-2. Use `[[wikilinks]]` to reference other nodes — these become edges automatically.
+2. Use ``wikilinks`` to reference other nodes — these become edges automatically.
 3. Re-run `python3 build_data.py`.
 4. Refresh the browser.
 
@@ -89,5 +89,5 @@ window.VAULT_DATA = {
 
 ## Known limitations
 
-- Body markdown uses `marked` for rendering; some Obsidian-specific syntax (callouts, dataview blocks) won't render. `[[wikilinks]]` are rewritten to in-app clicks.
+- Body markdown uses `marked` for rendering; some Obsidian-specific syntax (callouts, dataview blocks) won't render. ``wikilinks`` are rewritten to in-app clicks.
 - Loading from `file://` in some browsers may block CORS for the CDN scripts (D3, marked). If you see a blank canvas, serve locally instead: `python3 -m http.server 8000` then visit `http://localhost:8000`.

@@ -69,7 +69,7 @@ The warnings are not friction. They prevent the "I worked for 45 min and then re
 1. **Lane A may not stage paths under `src/`, `index.html`, `build_*.py`, `lint_yaml.py`, `linkcheck.py`, `fetch_*.py`, `review_thumbnails.py`, `add_depictions.py`, `_assets/`, `scripts/`.** The pre-commit hook will refuse.
 2. **Lane B may not stage paths under `01_*` through `26_*` content folders** (no editing content nodes mid-UX-batch). The hook will refuse.
 3. **Never `git commit --no-verify`** unless John explicitly said to. The hook is the safety net; bypassing it is logged as a protocol violation.
-4. **WIRING LAW (current behaviour):** every `[[wikilink]]` must point to a real node before commit. Stub-sweep at the end of every batch. (`[[ARTHURIAN-CYCLE]]` without a target file = build hard-fails.)
+4. **WIRING LAW (current behaviour):** every ``wikilink`` must point to a real node before commit. Stub-sweep at the end of every batch. (`[[ARTHURIAN-CYCLE]]` without a target file = build hard-fails.)
 5. **Commit cadence in Lane B:** every 1–2 surgical edits, not at session end. Reduces the parallel-sweep window if a content agent slips through.
 6. **Confirm-on-cast every time** (§3 above).
 
@@ -188,7 +188,7 @@ Cast a Lane B agent only if Lane B is currently free, and only with John's expli
 Before you say "done":
 - [ ] Commit cadence respected (Lane B: every 1–2 surgical edits; Lane A: per logical chunk).
 - [ ] Pre-commit hook passed (no `--no-verify`).
-- [ ] Wiring law satisfied — no dead `[[wikilink]]` in your staged content.
+- [ ] Wiring law satisfied — no dead ``wikilink`` in your staged content.
 - [ ] Your claim row in `ACTIVE-CONTENT.md` (Lane A) or `ACTIVE-UX.md` (Lane B) marked FINISHED with timestamp.
 - [ ] One-line entry at the top of `00_meta/STATUS.md` summarizing what landed.
 - [ ] If a structural finding emerged (recurring bug class, naming gotcha, new agent-pattern), save it as a feedback memory.

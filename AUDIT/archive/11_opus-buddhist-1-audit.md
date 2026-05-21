@@ -61,9 +61,9 @@ If a follow-up agent wants 30 minutes of pure graph-integrity gain: stub these t
 
 ---
 
-## 5. The `[[document]]` dead-link (6 refs) is a copy-paste artifact
+## 5. The ``document`` dead-link (6 refs) is a copy-paste artifact
 
-Six nodes have wikilinks to literally `[[document]]` — the schema template at [schema-document.md](../00_meta/schema-document.md) uses `[[other-document]]` and similar as illustrations, and some agents have replicated this as a placeholder that escaped into live nodes. Trivial cleanup: grep and rewrite or comment out. 5-minute fix.
+Six nodes have wikilinks to literally ``document`` — the schema template at [schema-document.md](../00_meta/schema-document.md) uses `[[other-document]]` and similar as illustrations, and some agents have replicated this as a placeholder that escaped into live nodes. Trivial cleanup: grep and rewrite or comment out. 5-minute fix.
 
 ---
 
@@ -156,7 +156,7 @@ If a follow-up agent wants a punch list:
 
 1. **Stub `tradition-syriac-orthodox` + `tradition-armenian-apostolic` + `dioscorus-of-alexandria` + `hagiography` theme** — closes 7+5+5+4 = 21 dead-link references, ~1 hour.
 2. **Fix `derive_id()` in build_data.py to canonicalize on file-stem** — closes an estimated 50-100 more dead-link occurrences, ~30 min.
-3. **Cleanup `[[document]]` copy-paste dead-links** — closes 6 dead-link refs, ~10 min.
+3. **Cleanup ``document`` copy-paste dead-links** — closes 6 dead-link refs, ~10 min.
 4. **Wire `vedas` + `tao-corpus` Scripture-view corpora** — 4 more live corpora in the Scripture-tab dropdown, ~1 hour combined.
 5. **Wire `tanakh` Scripture-view corpus** — Bible's Hebrew-canon-order companion view, ~30 min using existing nodes.
 6. **Yoruba/Vodun/Akan wedge batch** — `opus-yoruba-vodun-1` style, ~30 nodes, closes the biggest mission-vs-reality gap (sub-Saharan Africa beyond Egypt + Ethiopia).

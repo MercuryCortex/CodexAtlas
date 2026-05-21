@@ -42,7 +42,7 @@ These are book-title citations. Required by `refs:` integrity.
 
 **Why I'm NOT recommending a rename in this batch:**
 
-1. **Slug rename has migration cost.** `tradition-germanic-paganism` is referenced from other nodes via `[[wikilinks]]`; renaming requires vault-wide find-replace + verifying all references resolve. That's Lane A work but consequential.
+1. **Slug rename has migration cost.** `tradition-germanic-paganism` is referenced from other nodes via ``wikilinks``; renaming requires vault-wide find-replace + verifying all references resolve. That's Lane A work but consequential.
 2. **Lower priority than the 26-lens lock work itself.** Don't bundle a separate decision into a structural batch.
 3. **Worth a separate small decision later.** Could be `tradition-germanic-religion` or `tradition-germanic-heathenry`. Either defensible; John should pick.
 

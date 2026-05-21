@@ -601,7 +601,7 @@ Ordered by impact × ease.
 
 4. **Defer-but-queue: name-mention orphan detection.** A text scan looking for orphan node `name` fields appearing in *other* nodes' body text (un-wikilinked) would surface the next 100–500 cheap inbound-link wirings. Estimated implementation: 1 hour in a Python sweep; estimated payoff: 100+ free wikilink wirings. Worth a dedicated session.
 
-5. **Sanity issues are minor.** Most are missing-field or id-stem-mismatch issues in technical stubs (`_index.md` files, ingest files). The duplicate-stem flag is real and should be checked — duplicate stems cause `[[wikilink]]` ambiguity.
+5. **Sanity issues are minor.** Most are missing-field or id-stem-mismatch issues in technical stubs (`_index.md` files, ingest files). The duplicate-stem flag is real and should be checked — duplicate stems cause ``wikilink`` ambiguity.
 
 6. **Don't trust the `build_dashboard.py` orphan count** (it reported 6). Its definition is the strict version (zero-in AND zero-out) AND it only scopes the 7 historic node types in `NODE_DIRS`. The new lens folders aren't included. This audit's number (341 zero-in) is the correct one for the post-expansion vault. Consider patching `build_dashboard.py` to (a) scan all 30 lens folders and (b) report the zero-incoming definition (which is what 'orphan' usually means in graph-integrity terms).
 

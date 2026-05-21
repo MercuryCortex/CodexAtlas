@@ -38,9 +38,9 @@ The README's folder map listed only phases 1–4 (vault has 1–8) and didn't me
 
 `.obsidian/app.json` and `.obsidian/appearance.json` were 2-byte stubs (`{}`). The vault opens in Obsidian (the user explicitly mentioned wanting Obsidian files updated) without sane defaults: no attachment-folder routing (drops paste anywhere), no link-format consistency (mixed wikilink/markdown styles), no spellcheck, no readable-line-length, no inline-title, no front-matter display. **Resolved this batch:** populated both files with reading-friendly + ingestion-friendly defaults.
 
-### 1.8 Schema-template `[[document]]` and `[[document-slug]]` placeholder leak
+### 1.8 Schema-template ``document`` and ``document-slug`` placeholder leak
 
-Already being closed by `opus-gaps-1` in this same session — schema files used un-backticked `[[document]]` as illustrative placeholders, which got counted by `build_dashboard.py`'s wikilink extractor as real dead-link targets. **Not touched this batch** to avoid collision; flagged here for the record.
+Already being closed by `opus-gaps-1` in this same session — schema files used un-backticked ``document`` as illustrative placeholders, which got counted by `build_dashboard.py`'s wikilink extractor as real dead-link targets. **Not touched this batch** to avoid collision; flagged here for the record.
 
 ---
 

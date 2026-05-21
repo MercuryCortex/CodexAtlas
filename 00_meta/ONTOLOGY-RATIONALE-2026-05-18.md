@@ -21,7 +21,7 @@
 
 A confusion that came up early in the conversation and needs to stay clear forever:
 
-- **Ontology lens** = a folder on disk under the vault root (`03_deities/`, `14_rituals/`, etc.). Nodes physically live in exactly one lens. The lens determines the node's primary type. Renaming a lens means moving every node + updating every `[[wikilink]]` + updating every YAML field that references its type — a vault-wide migration.
+- **Ontology lens** = a folder on disk under the vault root (`03_deities/`, `14_rituals/`, etc.). Nodes physically live in exactly one lens. The lens determines the node's primary type. Renaming a lens means moving every node + updating every ``wikilink`` + updating every YAML field that references its type — a vault-wide migration.
 - **App tab** = a surface in the viewer that filters/presents/composes nodes (often cross-lens). Tabs can be added, renamed, retired without touching the vault disk structure.
 
 **Mapping is not 1:1.** The Scripture tab is a *filter view* of `02_documents/` (documents where `is_scripture: true`). The Astrology tab is a *cross-cutting view* that pulls astrology-tagged nodes from many lenses. The Pantheon tab is *one view of* `03_deities/`.

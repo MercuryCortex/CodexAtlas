@@ -401,7 +401,7 @@ When you pick a lens-batch from this audit:
 2. **Read this audit's section for that lens** to see the priority list + signal levels.
 3. **Claim a row in `ACTIVE-CONTENT.md`** with scope (which lens + which top-N nodes).
 4. **Verify each candidate doesn't already exist** under a different slug — `grep -rln "^id: \"<candidate-slug>\"" .`.
-5. **Stub-sweep at the end** — every `[[wikilink]]` you add must point to a real node, per the WIRING LAW.
+5. **Stub-sweep at the end** — every ``wikilink`` you add must point to a real node, per the WIRING LAW.
 6. **Cross-link aggressively** to existing nodes — that's where the demand signal comes from.
 
 **Build-script reminder:** new-folder nodes won't appear in the graph until the deferred Lane B batch updates `build_data.py`'s `NODE_TYPE_MAP`. Disk content is fine to stage; graph integration follows.

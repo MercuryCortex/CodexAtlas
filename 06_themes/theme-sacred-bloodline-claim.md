@@ -55,7 +55,7 @@ The pattern recurs across virtually every complex society before modernity (and 
 
 ### The Sumerian King List (~2100 BCE, but describes earlier kings)
 
-The Sumerian King List (ANE cuneiform tablets; Weld-Blundell Prism, c. 2100 BCE) asserts that "kingship descended from heaven" after the Flood — the same families held power before and after the deluge, with antediluvian reigns in the tens of thousands of years. The parallel with the biblical antediluvian patriarchs (Adam → Noah, Genesis 5) is structural and probably genealogical (see [[parallel-motif]] between Sumerian and biblical antediluvian lists). Both traditions use impossible longevity to signal divine favor for the bloodline. Both reset with a flood. **The Sumerian King List is the earliest known explicit sacred-bloodline document in world history.**
+The Sumerian King List (ANE cuneiform tablets; Weld-Blundell Prism, c. 2100 BCE) asserts that "kingship descended from heaven" after the Flood — the same families held power before and after the deluge, with antediluvian reigns in the tens of thousands of years. The parallel with the biblical antediluvian patriarchs (Adam → Noah, Genesis 5) is structural and probably genealogical (see `parallel-motif` between Sumerian and biblical antediluvian lists). Both traditions use impossible longevity to signal divine favor for the bloodline. Both reset with a flood. **The Sumerian King List is the earliest known explicit sacred-bloodline document in world history.**
 
 ### Egyptian Pharaonic Legitimacy (~3100 BCE → 30 BCE)
 

@@ -25,9 +25,9 @@ When you absorb the Bhagavad Gītā, the same batch:
   - Ayurvedic / pharmacological references → `17_medicine/` for the system, `24_pharmacology/` for any named substances (new lens)
   - Sacred sites referenced (Kurukshetra-as-sacred-site, sacred Indian geography) → `20_sacred_architecture/` (new lens)
   - Vedic vs Indian calendars / Yuga system referenced → `26_calendars/` (new lens) and `15_philosophy/` for cosmological-doctrinal layer
-- Wires every cross-reference with `[[wikilinks]]` + structured `cross-*-edges`.
+- Wires every cross-reference with ``wikilinks`` + structured `cross-*-edges`.
 - Hunts the MASSIVE-WIN cross-tradition transmissions for this text (Krishna ↔ Christ avatar typology; OM ↔ Logos ↔ Memra ↔ Tao; Gandhi's reception → MLK).
-- Closes by running a **stub-sweep**: every dead `[[wikilink]]` becomes a minimum-viable stub. Build passes. One commit. Done.
+- Closes by running a **stub-sweep**: every dead ``wikilink`` becomes a minimum-viable stub. Build passes. One commit. Done.
 
 Not every text touches all 26 lenses — but a deep absorption will touch most relevant ones. A liturgical text might be heavy on rituals + music + alphabets + languages + practices; a philosophical treatise might be heavy on philosophy + theology + persons + transmissions. A medical text might span medicine + pharmacology + practices + traditions. Trust the text.
 
@@ -110,9 +110,9 @@ Add a `## MASSIVE WIN` prose section to your node summarising the transmission w
 
 ### Step 7 — Stub-sweep (THE WIRING LAW, applied at close, not mid-sentence)
 
-You're free to write `[[wikilinks]]` to non-existent nodes **during** the dissection — don't context-switch mid-sentence to create stubs. **At close**, before you build:
+You're free to write ``wikilinks`` to non-existent nodes **during** the dissection — don't context-switch mid-sentence to create stubs. **At close**, before you build:
 
-1. Scan every `[[wikilink]]` you wrote this batch (or run `python3 linkcheck.py` for the full sweep).
+1. Scan every ``wikilink`` you wrote this batch (or run `python3 linkcheck.py` for the full sweep).
 2. For each unresolved target: create a minimum-viable stub in the right folder. The stub needs at least:
    ```yaml
    ---
@@ -155,7 +155,7 @@ If `build_data.py` raises `SystemExit: duplicate id`: see §3.2 (INTEGRITY LAW) 
 
 > **The objective of this vault is to CONNECT. A wikilink that points to nothing is a broken promise. You may not finish a batch having created dead links.**
 
-Every `[[wikilink]]` you write must point to a real node by the time you commit. If the target doesn't exist, you create it — minimum a stub with the correct YAML skeleton — before you close. No exceptions.
+Every ``wikilink`` you write must point to a real node by the time you commit. If the target doesn't exist, you create it — minimum a stub with the correct YAML skeleton — before you close. No exceptions.
 
 **This applies at batch close, not at sentence-write time.** Write the prose; then sweep stubs; then build; then commit.
 
@@ -487,7 +487,7 @@ One factual paragraph: who or what this is in its primary tradition.
 The political / religious / social milieu. Who was behind it. Why it survived (or didn't).
 
 ## Themes and motifs
-Brief, link-heavy. One bullet per major motif with [[wikilinks]] to theme nodes.
+Brief, link-heavy. One bullet per major motif with `wikilinks` to theme nodes.
 
 ## Cross-tradition connections / MASSIVE WIN
 - **[[other-node]]** — *transmission* (with T1/T2 source) | *parallel* (independent convergence) | *fusion* (syncretic identification) | *polemic* (inversion).

@@ -55,7 +55,7 @@ The older docs (`methodology.md`, the seven `schema-*.md` files, `source-integri
 
 ## The four laws (in 30 seconds)
 
-- **WIRING LAW** — every `[[wikilink]]` resolves to a real node by commit time. Stub-sweep at batch close (not mid-sentence).
+- **WIRING LAW** — every ``wikilink`` resolves to a real node by commit time. Stub-sweep at batch close (not mid-sentence).
 - **INTEGRITY LAW** — globally unique slugs. Build hard-fails on duplicates. Rename the conflict; never set `ATLAS_ALLOW_DUP_ID=1`.
 - **GOBLIN-AUDIT** — when one-line fixes stop closing a bug class, dispatch three parallel read-only audit agents (correctness / rule-fragility / structural integrity). One pass, not ten.
 - **APP-CODE SERIALIZES** — Lane B has one slot. Lane A may not stage anything under `src/`, `index.html`, build scripts, `_assets/`. The pre-commit hook enforces.

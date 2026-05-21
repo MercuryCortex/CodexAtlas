@@ -112,7 +112,7 @@ The Mesopotamian moon-god has *one* node (`nanna-sin.md`) covering both the Sume
 **Fixes applied:**
 
 - 5 status flips stub → metadata: `anat`, `angra-mainyu-ahriman`, `anput`, `aphrodite-greek` (all have 30–62 lines + structured YAML + refs).
-- `apkallu.md` — fixed 2 dead wikilinks: removed `[[parallel-motif]]` (methodological term in prose, not a node) and `[[divine-wisdom]]` (the author had hedged "if node exists" — replaced with the existing `[[wisdom-as-cosmic-order]]` only).
+- `apkallu.md` — fixed 2 dead wikilinks: removed ``parallel-motif`` (methodological term in prose, not a node) and `[[divine-wisdom]]` (the author had hedged "if node exists" — replaced with the existing `[[wisdom-as-cosmic-order]]` only).
 - `angra-mainyu-ahriman.md` was flipped — its content was already rich (Satan-transfer MASSIVE-WIN + Flint parallel added by batch 2). The stub flag persisted across two batches of touching it.
 
 **Wikilinks scanned:** ~120 unique targets across 10 files. 2 dead (now fixed).

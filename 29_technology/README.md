@@ -43,7 +43,7 @@ Composite bow, crossbow, longbow, gunpowder weapons (fire arrow → rocket → b
 - `originating-tradition` — `[[tradition-...]]`
 - `originating-region` — geographic
 - `originating-date` — earliest documented attestation
-- `transmission-path` — ordered string of `[[wikilinks]]` showing the diffusion chain (e.g. compass: `[[china-han]], [[abbasid-caliphate]], [[europe-medieval]], [[europe-renaissance]]`)
+- `transmission-path` — ordered string of ``wikilinks`` showing the diffusion chain (e.g. compass: `[[china-han]], [[abbasid-caliphate]], [[europe-medieval]], [[europe-renaissance]]`)
 - `related-inventors` — `[[person-...]]` cross-link to `04_persons/`
 - `replaced-by` / `built-upon` — within-lens edges for technological succession
 - `related-events` — `[[event-...]]` for events the technology enabled (Reformation enabled by printing press, Age of Discovery enabled by compass)

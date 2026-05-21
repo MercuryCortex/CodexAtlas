@@ -1,6 +1,6 @@
 # CORE-THEMES — The hunt-list
 
-> **The agent's lens.** When you absorb a primary text, this is what you scan it for. Every pattern below is a node that already exists in the vault — use its **canonical slug** as a `[[wikilink]]` rather than creating a duplicate. The density column tells you how much cross-tradition weight the pattern already carries; high-density entries are the load-bearing connectors, low-density ones are emerging hooks that your absorption may strengthen.
+> **The agent's lens.** When you absorb a primary text, this is what you scan it for. Every pattern below is a node that already exists in the vault — use its **canonical slug** as a ``wikilink`` rather than creating a duplicate. The density column tells you how much cross-tradition weight the pattern already carries; high-density entries are the load-bearing connectors, low-density ones are emerging hooks that your absorption may strengthen.
 >
 > **Use this AFTER** reading [`ONTOLOGY.md`](ONTOLOGY.md) (structural — **26 lenses** + 7 edge buckets) and [`PROTOCOL.md`](PROTOCOL.md) (the absorb-and-dissect SOP). This file is the **content-side** lens; it tells you what patterns to LOOK FOR; ONTOLOGY tells you which folder each pattern lives in and which YAML field carries the edge.
 >

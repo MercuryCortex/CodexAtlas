@@ -1,6 +1,6 @@
 # Massive Wins Index — Cross-Tradition Connections Worth Investigating
 
-_Compiled 2026-05-16. Every item here is documented in at least one vault node with Tier-1 sourcing. This file is a navigator — follow the [[wikilinks]] to the full analysis. Organized by type of connection: documented transmission (historical chain with evidence) → structural parallel (independent convergence) → inversion (one tradition's claim read as another's refutation)._
+_Compiled 2026-05-16. Every item here is documented in at least one vault node with Tier-1 sourcing. This file is a navigator — follow the `wikilinks` to the full analysis. Organized by type of connection: documented transmission (historical chain with evidence) → structural parallel (independent convergence) → inversion (one tradition's claim read as another's refutation)._
 
 ---
 

@@ -29,7 +29,7 @@ No `.github/`, no `Makefile`, no test runner. `linkcheck.py` and `build_dashboar
 ### 1.3 No automated YAML / wikilink linter
 The schemas are documented in markdown (`schema-deity.md` etc.) but not enforced. Slug drift is the single largest source of dead links; `04_methodology_proposals.md` proposes a registry; the registry exists; nothing checks against it at write time.
 
-**Concrete first step.** `lint_yaml.py` that walks each phase folder, parses each YAML frontmatter, and ASSERTS each value against schema. For `parallels`, `influenced-by`, `influences`, `themes`, `key-figures`, `deities-mentioned`, `events-context` — verify each `[[wikilink]]` resolves to either a real slug or to a known canonical-slugs alias.
+**Concrete first step.** `lint_yaml.py` that walks each phase folder, parses each YAML frontmatter, and ASSERTS each value against schema. For `parallels`, `influenced-by`, `influences`, `themes`, `key-figures`, `deities-mentioned`, `events-context` — verify each ``wikilink`` resolves to either a real slug or to a known canonical-slugs alias.
 
 ### 1.4 Multi-agent coordination is hand-edited and unverified
 `ACTIVE-AGENTS.md` is a markdown file any process can claim any handle in. The "lock" is social, not technical. Detection of collision is post-facto via the harness's "File has been modified since read" warning. There is no agent identity verification (any agent can claim `opus-templar-1`'s edits), no audit log of who-touched-what, no automatic "claim expired after 24h" reaping.

@@ -138,7 +138,7 @@ hub-edges:
 
 1. **Lane A only.** Never touch `src/`, `index.html`, `build_*.py`, `lint_yaml.py`, `linkcheck.py`, `_assets/`, `scripts/`. Pre-commit hook will reject cross-lane commits. If hook catches you, `git reset HEAD -- <wrong-lane-path>` and re-commit Lane A only.
 2. **Never `--no-verify`.** Don't bypass hooks unless John explicitly says so.
-3. **WIRING LAW: every `[[wikilink]]` must resolve.** Run `python3 linkcheck.py` after each batch and confirm zero of your new edge-target slugs appear in the dead-list. Baseline = 594 (pre-existing). Don't add to it.
+3. **WIRING LAW: every ``wikilink`` must resolve.** Run `python3 linkcheck.py` after each batch and confirm zero of your new edge-target slugs appear in the dead-list. Baseline = 594 (pre-existing). Don't add to it.
 4. **Read before Edit.** The Edit tool requires the file to have been Read first in this session.
 5. **Commit per batch.** Use the per-batch commit message format the prior phases used (see `git log --oneline | head -30`). End every commit message with: `Co-Authored-By: Claude Opus 4.7 (1M context) <noreply@anthropic.com>` (heredoc-wrapped to preserve formatting).
 6. **Status log per phase.** End each phase with a STATUS.md entry at the top of the file (above the most-recent prior entry). Update the format established in Phases 10-12.
