@@ -11,7 +11,7 @@ domains: ["beer brewing", "fermentation", "the daily ration of bread and beer", 
 gender: "feminine"
 role: "patron goddess of brewing; one of the seven daughters of Enki and Ninti in some traditions"
 parent-of: []
-child-of: ["[[enki-ea]]", "[[ninti]]"]
+child-of: ["[[enki-ea]]", "Ninti (Sumerian rib/life goddess; mother of Ninkasi in some traditions — no node yet)"]
 consort: []
 attributes: ["beer-vat", "drinking-tube (the cuneiform sign for beer)", "barley sheaf"]
 attested-in: ["[[phase-1-005-instructions-of-shuruppak]]?"]

@@ -10,9 +10,9 @@ period-active-latest: -1700
 domains: ["grain (her oldest function)", "writing and accounting", "scribal craft", "boundary-stones and measurement", "wisdom"]
 gender: "feminine"
 role: "patron goddess of scribes; goddess of grain"
-parent-of: ["[[ninlil-sumerian]]?"]
-child-of: ["[[an-sumerian]]", "[[uraš]]"]
-consort: ["[[haya]]"]
+parent-of: ["[[nin-lil-sumerian]] (relationship uncertain)"]
+child-of: ["[[an-sumerian]]", "Uraš (Sumerian earth-goddess; mother of Nisaba — no node yet)"]
+consort: ["Haya (Sumerian grain-god; Nisaba's husband — no node yet)"]
 attributes: ["sheaf of grain", "stylus", "tablet", "measuring rod and line", "the *gi-dub-ba* reed pen"]
 attested-in: ["[[phase-1-001-kesh-temple-hymn]]", "[[phase-1-005-instructions-of-shuruppak]]", "[[phase-1-018-gudea-cylinders]]"]
 equivalents: ["[[nabu]]"]

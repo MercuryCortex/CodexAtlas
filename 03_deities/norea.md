@@ -17,7 +17,7 @@ attributes: ["fire-resistance", "association-with-Seth"]
 attested-in: ["[[phase-4-006-hypostasis-of-the-archons]]", "[[phase-4-007-on-the-origin-of-the-world]]"]
 equivalents: []
 syncretic-edges: []
-status: "stub"
+status: "metadata"
 refs:
   - title: "The Nag Hammadi Scriptures"
     author: "Meyer, Marvin (ed.)"
