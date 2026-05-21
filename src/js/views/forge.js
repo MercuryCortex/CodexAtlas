@@ -2869,7 +2869,7 @@
         { key: 'polemic',       param: 'active_color_polemic',      title: 'Polemic',
           body: 'Contested or contradicting relationship. One tradition denies, refutes, or polemicizes against another. Use for theological disputes, heresies, refutations.' },
         { key: 'fusion',        param: 'active_color_fusion',       title: 'Fusion',
-          body: 'Syncretic merge — two figures or practices fuse into one. Use when historical synthesis produces a new combined identity (e.g. Serapis = Osiris + Apis).' },
+          body: 'Two figures or practices merged into one new identity over time. Use when historical blending produced a combined entity that absorbs both originals — e.g. Serapis = Osiris + Apis; Hermes Trismegistus = Hermes + Thoth.' },
       ];
       // Build rows ONCE. Colors read from local.params so the
       // legend stays in sync if PARAM_DEFAULTS ever changes.
@@ -3146,11 +3146,37 @@
         card.style.display = '';
       }
 
+      // Phase 16 (2026-05-21) — viewport-aware positioning. Picks
+      // one of four quadrants (top-right / top-left / bottom-right
+      // / bottom-left of the cursor) based on which corner has room
+      // for the full card. The card's cursor-side offset is the
+      // node's approximate screen radius PLUS a small pad, so the
+      // card never sits over the node the user is hovering — they
+      // can keep their eye on the disk while reading the card.
       function positionCard() {
-        const offX = 16, offY = 16;
-        card.style.transform = 'translate3d('
-          + (lastClientX + offX) + 'px, '
-          + (lastClientY + offY) + 'px, 0)';
+        const rect = card.getBoundingClientRect();
+        if (rect.width === 0 && rect.height === 0) return;   // hidden / not measured
+        // Use a generous offset so even a large selected/locked
+        // disk (1.5× radius + stroke) doesn't sit under the card.
+        // Selected_size_mult × max disk px ≈ 33 px; round up to 40.
+        const offset = 22;
+        const margin = 8;
+        // Default placement: bottom-right of cursor.
+        let x = lastClientX + offset;
+        let y = lastClientY + offset;
+        // Flip horizontally if it would overflow the right edge.
+        if (x + rect.width + margin > window.innerWidth) {
+          x = lastClientX - offset - rect.width;
+        }
+        // Flip vertically if it would overflow the bottom edge.
+        if (y + rect.height + margin > window.innerHeight) {
+          y = lastClientY - offset - rect.height;
+        }
+        // Clamp to viewport in case both directions overflow (rare,
+        // but happens at small viewports).
+        if (x < margin) x = margin;
+        if (y < margin) y = margin;
+        card.style.transform = 'translate3d(' + x + 'px, ' + y + 'px, 0)';
       }
 
       // mousemove on canvas: track cursor + reposition card if visible.
@@ -3163,13 +3189,17 @@
       // Drive show/hide from the existing hover pipeline. Phase 2B
       // setHoverId already coalesces; we hook into it via a hover
       // observer in local. setHoverId is the SSOT for "which node
-      // is the cursor over." We watch it via a custom hook.
+      // is the cursor over."
+      //
+      // Phase 16 (2026-05-21) — show on locked nodes too. The card
+      // was previously hidden when the hovered node was the locked
+      // anchor (rationale: lock UI is sufficient). John pushed
+      // back: when you point at a locked deity you still want the
+      // info card; the lock visual + the card are complementary,
+      // not redundant. Removed the lockedSet check.
       local._onHoverChange = function (id) {
         if (showId) { clearTimeout(showId); showId = 0; }
         if (!id) { hide(); return; }
-        // Don't show if a click-lock is being processed mid-frame
-        // (cursor sits on the anchor). The lock UI is sufficient.
-        if (local.lockedSet && local.lockedSet.has(id)) { hide(); return; }
         showId = setTimeout(() => { showId = 0; showFor(id); }, 150);
       };
       // Also hide on canvas leave.
