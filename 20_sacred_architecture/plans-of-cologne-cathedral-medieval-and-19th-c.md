@@ -1,11 +1,11 @@
 ---
-type: person
-id: "salmon-ruin"
-name: "Salmon Ruin"
+type: sacred-site
+id: "plans-of-cologne-cathedral-medieval-and-19th-c"
+name: "Plans of Cologne Cathedral (medieval and 19th c.)"
 status: "stub"
 ---
 
-# Salmon Ruin
+# Plans Of Cologne Cathedral Medieval And 19Th C
 
 historical / mythical / scholarly figure referenced by the A2 sacred-architecture batch (2026-05-19). Needs full expansion.
 

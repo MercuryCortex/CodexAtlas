@@ -1,11 +1,11 @@
 ---
-type: person
-id: "temple-of-the-warriors-chichen-itza"
-name: "Temple Of The Warriors Chichen Itza"
+type: place
+id: "salmon-ruin"
+name: "Salmon Ruin"
 status: "stub"
 ---
 
-# Temple Of The Warriors Chichen Itza
+# Salmon Ruin
 
 historical / mythical / scholarly figure referenced by the A2 sacred-architecture batch (2026-05-19). Needs full expansion.
 

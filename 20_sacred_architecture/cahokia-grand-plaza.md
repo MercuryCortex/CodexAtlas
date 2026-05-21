@@ -1,11 +1,11 @@
 ---
-type: person
-id: "gyeongbokgung-palace"
-name: "Gyeongbokgung Palace"
+type: sacred-site
+id: "cahokia-grand-plaza"
+name: "Cahokia Grand Plaza"
 status: "stub"
 ---
 
-# Gyeongbokgung Palace
+# Cahokia Grand Plaza
 
 historical / mythical / scholarly figure referenced by the A2 sacred-architecture batch (2026-05-19). Needs full expansion.
 

@@ -1,11 +1,11 @@
 ---
-type: person
-id: "pyramid-of-the-moon-teotihuacan"
-name: "Pyramid Of The Moon Teotihuacan"
+type: place
+id: "ollantaytambo-town"
+name: "Ollantaytambo (town)"
 status: "stub"
 ---
 
-# Pyramid Of The Moon Teotihuacan
+# Ollantaytambo Town
 
 historical / mythical / scholarly figure referenced by the A2 sacred-architecture batch (2026-05-19). Needs full expansion.
 

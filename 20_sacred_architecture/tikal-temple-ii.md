@@ -1,11 +1,11 @@
 ---
-type: person
-id: "temple-of-the-three-windows-machu-picchu"
-name: "Temple Of The Three Windows Machu Picchu"
+type: sacred-site
+id: "tikal-temple-ii"
+name: "Tikal Temple II"
 status: "stub"
 ---
 
-# Temple Of The Three Windows Machu Picchu
+# Tikal Temple Ii
 
 historical / mythical / scholarly figure referenced by the A2 sacred-architecture batch (2026-05-19). Needs full expansion.
 

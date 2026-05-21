@@ -1,11 +1,11 @@
 ---
-type: person
-id: "new-temple-chavin"
-name: "New Temple Chavin"
+type: sacred-site
+id: "old-temple-chavin"
+name: "Old Temple, Chavín de Huántar"
 status: "stub"
 ---
 
-# New Temple Chavin
+# Old Temple Chavin
 
 historical / mythical / scholarly figure referenced by the A2 sacred-architecture batch (2026-05-19). Needs full expansion.
 

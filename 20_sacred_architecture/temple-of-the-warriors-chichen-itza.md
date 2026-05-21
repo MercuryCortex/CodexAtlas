@@ -1,11 +1,11 @@
 ---
-type: person
-id: "plans-of-cologne-cathedral-medieval-and-19th-c"
-name: "Plans Of Cologne Cathedral Medieval And 19Th C"
+type: sacred-site
+id: "temple-of-the-warriors-chichen-itza"
+name: "Temple of the Warriors, Chichén Itzá"
 status: "stub"
 ---
 
-# Plans Of Cologne Cathedral Medieval And 19Th C
+# Temple Of The Warriors Chichen Itza
 
 historical / mythical / scholarly figure referenced by the A2 sacred-architecture batch (2026-05-19). Needs full expansion.
 

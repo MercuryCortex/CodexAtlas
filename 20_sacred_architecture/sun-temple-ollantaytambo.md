@@ -1,11 +1,11 @@
 ---
-type: person
-id: "valley-of-the-kings"
-name: "Valley Of The Kings"
+type: sacred-site
+id: "sun-temple-ollantaytambo"
+name: "Sun Temple, Ollantaytambo"
 status: "stub"
 ---
 
-# Valley Of The Kings
+# Sun Temple Ollantaytambo
 
 historical / mythical / scholarly figure referenced by the A2 sacred-architecture batch (2026-05-19). Needs full expansion.
 

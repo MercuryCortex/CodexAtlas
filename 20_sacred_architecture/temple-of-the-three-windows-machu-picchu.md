@@ -1,11 +1,11 @@
 ---
-type: person
-id: "baekje-kingdom"
-name: "Baekje Kingdom"
+type: sacred-site
+id: "temple-of-the-three-windows-machu-picchu"
+name: "Temple of the Three Windows, Machu Picchu"
 status: "stub"
 ---
 
-# Baekje Kingdom
+# Temple Of The Three Windows Machu Picchu
 
 historical / mythical / scholarly figure referenced by the A2 sacred-architecture batch (2026-05-19). Needs full expansion.
 

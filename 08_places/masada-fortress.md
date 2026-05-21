@@ -1,11 +1,11 @@
 ---
-type: person
-id: "tikal-temple-ii"
-name: "Tikal Temple Ii"
+type: place
+id: "masada-fortress"
+name: "Masada Fortress"
 status: "stub"
 ---
 
-# Tikal Temple Ii
+# Masada Fortress
 
 historical / mythical / scholarly figure referenced by the A2 sacred-architecture batch (2026-05-19). Needs full expansion.
 

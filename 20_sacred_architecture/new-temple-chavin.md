@@ -1,11 +1,11 @@
 ---
-type: person
-id: "masada-fortress"
-name: "Masada Fortress"
+type: sacred-site
+id: "new-temple-chavin"
+name: "New Temple, Chavín de Huántar"
 status: "stub"
 ---
 
-# Masada Fortress
+# New Temple Chavin
 
 historical / mythical / scholarly figure referenced by the A2 sacred-architecture batch (2026-05-19). Needs full expansion.
 

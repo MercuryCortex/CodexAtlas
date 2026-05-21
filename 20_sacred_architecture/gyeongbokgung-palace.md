@@ -1,11 +1,11 @@
 ---
-type: person
-id: "sun-temple-ollantaytambo"
-name: "Sun Temple Ollantaytambo"
+type: sacred-site
+id: "gyeongbokgung-palace"
+name: "Gyeongbokgung Palace"
 status: "stub"
 ---
 
-# Sun Temple Ollantaytambo
+# Gyeongbokgung Palace
 
 historical / mythical / scholarly figure referenced by the A2 sacred-architecture batch (2026-05-19). Needs full expansion.
 

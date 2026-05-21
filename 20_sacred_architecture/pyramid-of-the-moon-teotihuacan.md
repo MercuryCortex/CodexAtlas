@@ -1,11 +1,11 @@
 ---
-type: person
-id: "old-temple-chavin"
-name: "Old Temple Chavin"
+type: sacred-site
+id: "pyramid-of-the-moon-teotihuacan"
+name: "Pyramid of the Moon, Teotihuacan"
 status: "stub"
 ---
 
-# Old Temple Chavin
+# Pyramid Of The Moon Teotihuacan
 
 historical / mythical / scholarly figure referenced by the A2 sacred-architecture batch (2026-05-19). Needs full expansion.
 

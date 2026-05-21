@@ -1,11 +1,11 @@
 ---
-type: person
-id: "ollantaytambo-town"
-name: "Ollantaytambo Town"
+type: place
+id: "valley-of-the-kings"
+name: "Valley of the Kings"
 status: "stub"
 ---
 
-# Ollantaytambo Town
+# Valley Of The Kings
 
 historical / mythical / scholarly figure referenced by the A2 sacred-architecture batch (2026-05-19). Needs full expansion.
 
