@@ -32,7 +32,7 @@ syncretic-edges:
   - target: "persephone-greek"
     type: "scholarly-parallel"
     source: "Carrasco 1999 — Persephone's underworld-abduction and seasonal-bound annual return; structurally related to the dismembered-female-principle pattern through the seasonal-mythology lens"
-status: "stub"
+status: "metadata"
 refs:
   - title: "The Great Temple of the Aztecs (Templo Mayor)"
     author: "Matos Moctezuma, Eduardo"

@@ -33,7 +33,7 @@ syncretic-edges:
   - target: "ereshkigal"
     type: "scholarly-parallel"
     source: "Eliade 1958; Sumerian Ereshkigal as queen of the underworld; the underworld-rulership pole that Cizin/Ah Puch occupy in the Maya pantheon"
-status: "stub"
+status: "metadata"
 refs:
   - title: "The Major Gods of Ancient Yucatan"
     author: "Taube, Karl A."

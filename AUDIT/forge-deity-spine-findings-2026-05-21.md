@@ -258,3 +258,15 @@ Both files are 105 lines, both `status: "full"`, both cover the same Greek deity
 **Wikilinks scanned:** ~115 unique targets. 1 dead-link fixed + 1 unwrap.
 
 ---
+
+## Batch 14 — chitragupta → coyote-navajo (2026-05-21)
+
+**Files:** chitragupta, christ-pantokrator, christos-gnostic, cipactli, cizin, coatlicue, coniraya, corn-mother, coyolxauhqui, coyote-navajo.
+
+**Fixes applied:**
+
+- 3 status flips stub → metadata (christ-pantokrator, cizin, coyolxauhqui). All structured YAML; christ-pantokrator at 52 lines includes the Byzantine icon-typology body + the Sinai apse-mosaic attestation; coyolxauhqui covers the Mexica moon-goddess + the Templo Mayor disk's archaeological context.
+
+**Wikilinks scanned:** ~70 unique targets. **Zero dead links** — second cleanest batch of the sweep.
+
+---

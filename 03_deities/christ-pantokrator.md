@@ -23,7 +23,7 @@ syncretic-edges:
   - target: "[[zeus]]"
     type: "scholarly-parallel"
     source: "Iconographic continuity from Hellenistic Zeus Pantokrator (the type emerged in late-antique Mediterranean visual culture); cited e.g. by Mathews 1993 *The Clash of Gods*"
-status: "stub"
+status: "metadata"
 refs:
   - title: "The Clash of Gods: A Reinterpretation of Early Christian Art"
     author: "Mathews, Thomas F."
