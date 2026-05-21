@@ -43,7 +43,7 @@ syncretic-edges:
   - target: "amaterasu"
     type: "scholarly-parallel"
     source: "Williams 1989 — Japanese Pure Land Buddhism's Amitabha and Shinto's Amaterasu were the two principal solar-light deities of medieval Japan; the *honji-suijaku* doctrine identified them as different aspects of the same cosmic light-source"
-status: "stub"
+status: "metadata"
 refs:
   - title: "The Land of Bliss: The Paradise of the Buddha of Measureless Light"
     author: "Gomez, Luis O. (trans.)"

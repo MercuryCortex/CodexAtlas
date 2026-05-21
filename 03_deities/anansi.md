@@ -28,7 +28,7 @@ syncretic-edges:
     type: "structural-parallel"
     notes: "Both are shapeshifting tricksters in a divine hierarchy who win through cunning what cannot be obtained through force. Both have stories involving negotiation with powerful craftspeople (Loki with the dwarves for divine gifts; Anansi capturing dangerous creatures for Nyame). Both are simultaneously beloved storytelling figures and figures of genuine danger."
 mentioned-in:
-  - "[[tradition-akan-religion]]"
+  - "[[tradition-akan]]"
 refs:
   - title: "Akan-Ashanti Folk-Tales"
     author: "Rattray, R.S."

@@ -24,7 +24,7 @@ syncretic-edges:
   - target: "aphrodite-greek"
     type: "syncretic-identification"
     source: "Berossus (via Clement of Alexandria) reports Artaxerxes II set up Anāhitā statues identified with Aphrodite/Hera/Athena/Artemis"
-status: "stub"
+status: "metadata"
 refs:
   - title: "A History of Zoroastrianism, vol. II"
     author: "Boyce, Mary"

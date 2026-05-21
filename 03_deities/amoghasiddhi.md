@@ -12,6 +12,7 @@ gender: "masculine"
 role: "Northern Dhyani Buddha"
 consort: ["Tārā (green)"]
 attributes: ["green body", "double-vajra (viśva-vajra)", "*abhaya mudrā* (fearlessness gesture)", "garuḍa throne"]
+attested-in: ["[[phase-4-104-sukhavativyuha-larger]] (the Five-Buddha mandala system in Pure Land sutras)"]
 equivalents: ["[[vairocana]] (center)", "[[akshobhya]] (east)", "[[ratnasambhava]] (south)", "[[amitabha]] (west)"]
 syncretic-edges:
   - target: "[[vairocana]]"
@@ -28,7 +29,7 @@ syncretic-edges:
     type: "scholarly-parallel"
     source: "Snellgrove 1987 — Varuna as the Vedic guardian of the northern direction; Amoghasiddhi occupies the northern position of the Five Dhyani Buddha mandala"
     notes: "Directional-guardian parallel (north)"
-status: "stub"
+status: "metadata"
 refs:
   - title: "Indo-Tibetan Buddhism"
     author: "Snellgrove, David"

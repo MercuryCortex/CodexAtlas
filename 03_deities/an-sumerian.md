@@ -16,7 +16,7 @@ consort: ["[[ki-sumerian]]"]
 attributes: ["horned crown", "throne"]
 attested-in: ["[[phase-1-001-kesh-temple-hymn]]", "[[phase-1-008-enuma-elish]]"]
 equivalents: []
-status: "stub"
+status: "metadata"
 refs:
   - title: "Mesopotamian Cosmic Geography"
     author: "Horowitz, Wayne"

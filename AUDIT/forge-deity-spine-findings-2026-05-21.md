@@ -88,3 +88,19 @@ The Mesopotamian moon-god has *one* node (`nanna-sin.md`) covering both the Sume
 **Wikilinks scanned:** ~70 unique targets across 10 files. 3 dead (now fixed) + 1 syntax-bug (now fixed) = 4 issues. Still no dead links shipped — the WIRING LAW held.
 
 ---
+
+## Batch 4 — amenominakanushi → anansi (2026-05-21)
+
+**Files:** amenominakanushi, amitabha, amma-dogon, amoghasiddhi, amun-ra, amun, an-sumerian, anahit-armenian, anahita, anansi.
+
+**Fixes applied:**
+
+- `amitabha.md`, `amoghasiddhi.md`, `an-sumerian.md`, `anahita.md` — four status flips stub → metadata. All had structured YAML + refs + body identity content. The five-Dhyani-Buddha cluster (`vairocana`/`akshobhya`/`ratnasambhava`/`amitabha`/`amoghasiddhi`) was *uniformly* mis-flagged as stub despite carrying full mandala-cross-tradition syncretic-edges grids — that's a systematic mis-flag pattern likely from a 2026-05-19 batch that created the Dhyani group together and never came back to flip them.
+- `amoghasiddhi.md` — also populated empty `attested-in` with the Sukhāvatīvyūha node (canonical source for the Five-Buddha mandala in Pure Land sutras).
+- `anansi.md` — fixed dead wikilink `[[tradition-akan-religion]]` → `[[tradition-akan]]` (vault convention drops the redundant `-religion` suffix on tradition slugs — verified `tradition-akan.md` is the canonical node).
+
+**Convention finding: tradition-X-religion is wrong.** The vault uses bare `tradition-X` slugs (e.g. `tradition-akan`, `tradition-zoroastrianism`, `tradition-daoism`). `tradition-akan-religion` was an out-of-pattern construction. Worth scanning the whole `03_deities/` lens for similar mis-suffixed tradition wikilinks once the sweep is complete.
+
+**Wikilinks scanned:** ~80 unique targets across 10 files. 1 dead (now fixed).
+
+---
