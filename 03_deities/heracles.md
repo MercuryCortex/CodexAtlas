@@ -26,6 +26,13 @@ syncretic-edges:
   - target: "hercules"
     type: "ancient-identification"
     source: "Standard Roman *interpretatio*; Heracles cult arrived in Italy via Greek colonies in southern Italy (Magna Graecia) and was institutionally absorbed early"
+  - target: "vajrapani"
+    type: "iconographic-transmission-eastward"
+    source: "Tanabe 2003; Foucher 1905-1951; Boardman 1994 — Gandhāran Buddhist reliefs (1st-3rd c. CE) depict Vajrapāṇi with Heracles's muscular nude torso, lion-skin, and club (substituted by vajra). The iconography then travels east as Niō (Kongōrikishi) temple-gate guardians in Japanese Buddhism. Heracles → Vajrapāṇi → Niō is a documented 2000-year visual-cognate chain. See [[theme-gandharan-buddhism]]"
+    notes: "MASSIVE-WIN: Greek hero iconography becomes the most important Buddhist protector-deity figure across all of East Asia"
+  - target: "theme-gandharan-buddhism"
+    type: "primary-Greek-source"
+    source: "Heracles is the load-bearing Greek-end deity of the Hercules→Vajrapāṇi chain — the most-iconographically-documented Greco-Buddhist transmission case. See [[theme-gandharan-buddhism]] for the full bridge analysis"
 status: "metadata"
 refs:
   - title: "Greek Religion"

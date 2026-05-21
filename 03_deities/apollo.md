@@ -29,6 +29,10 @@ syncretic-edges:
     type: "cross-tradition-archetype"
     source: "Comparative religion — Iliad 1.43–52 (Apollo sends plague-arrows); Lesko 1999 on Sekhmet as plague-sender and healer; both are sun-associated divine figures who send plague as punishment and preside over healing"
     notes: "Destroyer-healer archetype: Apollo sends plague (Iliad I arrows), is called 'Apollo Physician,' and fathers the divine physician Asklepios. Sekhmet sends plague as the Eye of Ra and is patron of Egypt's priest-physicians. Independent Greek and Egyptian convergence on the destroyer-healer theological structure."
+  - target: "theme-gandharan-buddhism"
+    type: "iconographic-source"
+    source: "Boardman 1994; Foucher 1905-1951; theme-gandharan-buddhism — the Gandhāran sculptors who created the first anthropomorphic Buddha images (1st-2nd c. CE) drew on Apollo's iconographic conventions: idealized Greek facial features, straight Greek nose / 'Greek profile', eyes modeled on classical Greek sculpture, wavy hair, idealized athletic body proportions. The ushnisha (cranial protuberance) may derive from the Hellenistic solar crown (radiate crown of Apollo / Helios) localized as a physical mark. The standing-Buddha contrapposto draws on Greek classical sculpture's weight-shift stance. The Buddha's halo descends from Apollo's solar nimbus"
+    notes: "MASSIVE-WIN: every Buddha image in every Buddhist tradition worldwide carries Apollo's iconographic DNA via the Gandhāran synthesis. The visual form of Buddhism was invented by Greek sculptors trained in the Apolline tradition. See [[theme-gandharan-buddhism]] for the full case"
 tags:
   - medicine
   - healing-deity

@@ -15,7 +15,7 @@ date-large-buddha: 554
 date-small-buddha: 507
 date-destroyed: 2001
 tradition: "[[tradition-buddhism]]"
-traditions-related: ["[[tradition-mahayana-buddhism]]", "[[tradition-greco-buddhism]]", "[[tradition-gandhara-buddhism]] (Bamiyan is a downstream node of the Gandharan Greco-Buddhist art tradition)", "[[tradition-vajrayana-buddhism]] (the upper cave paintings include early Vajrayana-cognate iconography)"]
+traditions-related: ["[[tradition-mahayana-buddhism]]", "[[tradition-greco-buddhism]]", "[[tradition-greco-buddhism]] (Bamiyan is a downstream node of the Gandharan Greco-Buddhist art tradition)", "[[tradition-vajrayana-buddhism]] (the upper cave paintings include early Vajrayana-cognate iconography)"]
 function: "monumental-rock-cut-buddhist-monastery-and-pilgrimage-site"
 key-figures: ["[[xuanzang]] (7th-c. Chinese Buddhist pilgrim; visited Bamiyan ~630 CE and provided the principal early description in *Great Tang Records on the Western Regions*)", "[[alexander-the-great]] (the broader Hellenistic foundation of the Bactrian-Greek architectural-iconographic tradition that downstream produced Greco-Buddhist sculpture)", "[[kanishka-i]] (Kushan emperor, r. ~127–150 CE; principal patron of the Gandharan Buddhist art tradition that culminates at Bamiyan)", "[[mulla-omar]] (Taliban leader; ordered the destruction of the Buddhas in March 2001)", "[[zemaryalai-tarzi]] (Afghan archaeologist; principal modern excavator)", "[[deborah-klimburg-salter]] (modern art historian; principal interpreter of the Bamiyan cave paintings)", "[[kurt-behrendt]] (modern American scholar of Gandharan Buddhist architecture)"]
 themes: ["[[theme-monumental-religious-sculpture]]", "[[axis-mundi]]", "[[theme-rock-cut-architecture-as-meditation-cosmos]]", "[[theme-greco-buddhist-syncretism]]", "[[theme-iconoclasm]]", "[[theme-silk-road-religious-transmission]]"]
@@ -188,7 +188,7 @@ The Bamiyan destruction was one of the most internationally documented (real-tim
 - [[ellora-cave-complex]] — near-contemporary Indic rock-cut parallel
 - [[mogao-grottoes-dunhuang]] — eastern downstream of the Silk Road Buddhist transmission
 - [[tradition-greco-buddhism]] — the tradition Bamiyan embodies
-- [[tradition-gandhara-buddhism]] — the upstream Indo-Greek tradition
+- [[tradition-greco-buddhism]] — the upstream Indo-Greek tradition
 - [[parthenon-athens]] — deep Hellenistic iconographic ancestor
 - [[xuanzang]] — 7th-c. pilgrim, principal historical source
 - [[event-destruction-of-bamiyan-buddhas-march-2001]] — destruction event

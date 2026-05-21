@@ -25,6 +25,10 @@ syncretic-edges:
     type: "scholarly-parallel"
     source: "Tanabe, K. (2003) 'Why is Vajrapāṇi-Heracles depicted in Gandhāran Buddhist art?' — Greco-Buddhist Gandhāran reliefs (1st-3rd c. CE) depict Vajrapāṇi with the muscular nude torso, lion-skin, and club of Heracles, the closest documented iconographic fusion between Greek and Buddhist religion"
     notes: "Bactrian / Gandhāran Greek-Buddhist fusion; the Heraclean iconography travels east to Japan as the Niō temple-guardian (Kongōrikishi) — Heracles → Vajrapāṇi → Japanese temple-gate guardian is a documented 2,000-year visual-cognate chain"
+  - target: "theme-gandharan-buddhism"
+    type: "documented-transmission-locus"
+    source: "Tanabe 2003; Foucher 1905-1951; Boardman 1994 — Vajrapāṇi is the SINGLE most-iconographically-documented Greco-Buddhist transmission case. The Hercules-bodied Vajrapāṇi at Gandhāra is the load-bearing visual evidence for the Greek-Buddhist synthesis. See [[theme-gandharan-buddhism]] for the full bridge analysis"
+    notes: "MASSIVE-WIN: the Hercules → Vajrapani → Niō chain runs Mediterranean → Gandhara → China → Japan over 2000 years with visual continuity"
 status: "metadata"
 refs:
   - title: "Indo-Tibetan Buddhism"

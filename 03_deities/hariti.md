@@ -25,6 +25,13 @@ syncretic-edges:
   - target: "[[demeter]]"
     type: "scholarly-parallel"
     source: "Pomegranate-fertility-mother typology (Demeter / Persephone pomegranate, Hārītī pomegranate)"
+  - target: "tyche-greek"
+    type: "iconographic-source"
+    source: "Foucher 1905; Quagliotti 1996 — the Hellenistic Tyche (city-fortune goddess with cornucopia + mural crown) and Cybele (mother-goddess) iconographic conventions transfer into Hārītī's Gandhāran sculptural type. Tyche's cornucopia becomes Hārītī's cornucopia / pomegranate; Cybele's enthroned-children iconography parallels Hārītī's many-children-at-her-feet. The visual vocabulary is Hellenistic, the theology Buddhist"
+    notes: "MASSIVE-WIN: Greek city-goddess iconography becomes a major Buddhist protector-deity figure, then forms the iconographic precursor of the Christian Madonna"
+  - target: "theme-gandharan-buddhism"
+    type: "load-bearing-Greco-Buddhist-instance"
+    source: "Hārītī's Peshawar-workshop sculptural type (1st-4th c. CE) is one of the canonical examples of Greek-iconography-on-Buddhist-theological-frame. See [[theme-gandharan-buddhism]] for the full bridge analysis and the Hārītī → Madonna-and-Child transmission hypothesis"
 status: "metadata"
 refs:
   - title: "L'art gréco-bouddhique du Gandhâra"
