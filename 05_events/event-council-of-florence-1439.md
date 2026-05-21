@@ -22,6 +22,15 @@ figures-enabled:
   - "[[marsilio-ficino]] (Ficino's career directly funded by Cosimo after this event)"
   - "[[giovanni-pico-della-mirandola]]"
   - "[[giordano-bruno]]"
+hub-edges:
+  - target: "hermetic-transmission-chain"
+    type: "Byzantine-to-Renaissance-hinge-event"
+    source: "Gill 1959 *The Council of Florence*; Woodhouse 1986 *Plethon: The Last of the Hellenes*; Hankins 1990 *Plato in the Italian Renaissance*; Yates 1964 *Giordano Bruno and the Hermetic Tradition* — the 1438-39 Council brings Plethon, Bessarion, and the Greek Platonic manuscript tradition to Florence; Cosimo de' Medici is inspired by Plethon's lectures to found the Platonic Academy; Ficino's translation career (including the 1463 Corpus Hermeticum) is the direct consequence. The Council is the Byzantine→Renaissance hinge of the 2,300-year hermetic chain"
+    notes: "Cross-lens: 05_events → 06_themes. MASSIVE-WIN: without this event the Renaissance hermetic-transmission has no institutional-political trigger; Ficino's whole project flows from this 1439 conjunction"
+  - target: "neoplatonic-henosis"
+    type: "Renaissance-rebirth-event-of-henosis-doctrine"
+    source: "Woodhouse 1986; Hankins 1990; Kristeller 1979 *Renaissance Thought and Its Sources* — Plethon's Florence-lectures revive Plotinian Neoplatonism in the Latin West; Ficino's subsequent translation of Plotinus's *Enneads* (1492) re-installs the henosis doctrine in Renaissance philosophy and downstream Western mysticism"
+    notes: "Cross-lens: 05_events → 06_themes. The 1439 event is the institutional-textual rebirth of henosis in the Latin West after the 1,100-year gap since Alexandrian Neoplatonism"
 status: "metadata"
 refs:
   - title: "The Council of Florence"

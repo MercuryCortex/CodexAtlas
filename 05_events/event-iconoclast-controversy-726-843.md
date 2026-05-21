@@ -11,6 +11,15 @@ participants: ["Emperor Leo III (Isaurian), 717–741", "Emperor Constantine V C
 traditions-affected: ["[[tradition-christianity-canonical]]", "[[tradition-islam]]"]
 documents-produced: ["*Three Treatises on the Divine Images* by John of Damascus (~726–730)", "Acta of Hieria 754 (preserved only in the iconophile refutation at Nicaea II 787)", "Acta of Nicaea II 787 (iconophile)", "*Antirrhetics* of Theodore the Studite and Patriarch Nikephoros (second iconoclasm)", "Synodikon of Orthodoxy (843, recited annually on the First Sunday of Lent)"]
 documents-affected: ["icon production halted in iconoclast periods, mass destruction of icons", "rebuilding of icon production after each restoration"]
+hub-edges:
+  - target: "zeus-pantokrator-transmission"
+    type: "decisive-event-for-Pantokrator-iconographic-survival"
+    source: "Brubaker & Haldon 2011 *Byzantine in the Iconoclast Era*; Pelikan 1990 *Imago Dei*; Mathews 1993 *The Clash of Gods* — the 117-year controversy is the decisive theological-political event securing the legitimacy of the Christ-Pantokrator dome-image (and the broader figural-Christological iconographic program of which Phidias's enthroned Zeus is the morphological ancestor). The 843 *Triumph of Orthodoxy* makes the Pantokrator-iconography permanent in Eastern Orthodox + downstream Catholic visual theology"
+    notes: "Cross-lens: 05_events → 06_themes. The Pantokrator-iconography survives ONLY because iconophiles win in 843; iconoclast victory would have foreclosed the entire 235L transmission-hypothesis hub"
+  - target: "third-century-collision-zone"
+    type: "delayed-reverberation-event-of-Hellenistic-Christian-iconography-debate"
+    source: "Brubaker & Haldon 2011; Mathews 1993 — the iconoclast theological argumentation explicitly relitigates the early-Christian debate (Tertullian, Eusebius) over the legitimacy of inheriting pagan-Hellenistic visual culture into Christian use; the controversy is the late-Byzantine theological-political crystallization of unresolved 3rd-century collision-zone tensions"
+    notes: "Cross-lens: 05_events → 06_themes. The collision-zone tensions return 500 years later under Islamic-aniconist pressure"
 status: "metadata"
 refs:
   - title: "Byzantium in the Iconoclast Era"

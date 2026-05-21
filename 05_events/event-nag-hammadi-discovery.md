@@ -11,6 +11,23 @@ participants: ["Muhammad Ali al-Samman (discoverer)", "Jean Doresse (early schol
 traditions-affected: ["[[tradition-gnosticism]]", "[[tradition-christianity-canonical]]", "[[tradition-hermeticism]]"]
 documents-produced: []
 documents-affected: ["[[phase-4-001-gospel-of-thomas]]", "[[phase-4-002-apocryphon-of-john]]", "[[phase-4-003-gospel-of-truth]]", "[[phase-4-004-gospel-of-philip]]", "[[phase-4-006-hypostasis-of-the-archons]]", "[[phase-4-007-on-the-origin-of-the-world]]", "[[phase-4-008-trimorphic-protennoia]]", "[[phase-4-010-sophia-of-jesus-christ]]", "[[phase-4-013-discourse-on-the-eighth-and-ninth]]", "[[phase-4-078-prayer-of-thanksgiving-nhc-vi-7]]", "[[phase-4-079-coptic-asclepius-nhc-vi-8]]"]
+hub-edges:
+  - target: "theme-egyptian-gnostic-transmission"
+    type: "evidentiary-watershed-event-for-transmission"
+    source: "Robinson 1977 *The Nag Hammadi Library in English*; Pearson 1990 *Gnosticism, Judaism, and Egyptian Christianity*; Burns 2022 *Rediscovering the Lost Library of Nag Hammadi* — pre-1945 Gnostic scholarship depended on hostile heresiological citation (Irenaeus, Hippolytus, Epiphanius). The Nag Hammadi discovery provides 52 PRIMARY Coptic Gnostic tractates buried by Pachomian monks ~370 CE, enabling Fowden's and Pearson's five-channel Egyptian-Gnostic transmission thesis with documentary evidence"
+    notes: "Cross-lens: 05_events → 06_themes. MASSIVE-WIN: this is the evidentiary watershed without which the entire 317L Egyptian-Gnostic-transmission hub remains hypothetical"
+  - target: "theme-mesopotamian-gnostic-transmission"
+    type: "evidentiary-watershed-event-for-transmission"
+    source: "Pearson 2007 *Ancient Gnosticism*; Pearson 1990 — the Apocryphon of John, Hypostasis of the Archons, and Trimorphic Protennoia (all in the Nag Hammadi corpus) preserve Jewish-apocalyptic + Mesopotamian-Jewish midrashic material in Gnostic recension; Pearson's five Mesopotamian channels are documented from these texts"
+    notes: "Cross-lens: 05_events → 06_themes. Pairs with the Egyptian-channel evidence; the same 1945 event grounds both 317L + 292L hubs"
+  - target: "hermetic-transmission-chain"
+    type: "Coptic-Hermetica-evidentiary-event"
+    source: "Mahé 1978-82 *Hermès en Haute-Égypte* (2 vols); Copenhaver 1992 *Hermetica*; Fowden 1986 — Nag Hammadi Codex VI contains the earliest surviving Hermetic texts in Coptic translation (Discourse on the Eighth and Ninth, Prayer of Thanksgiving, Coptic Asclepius); the discovery is the principal pre-modern evidence for the Egyptian-Coptic phase of the hermetic chain prior to the Arabic Harranian transmission"
+    notes: "Cross-lens: 05_events → 06_themes. Confirms the Egyptian phase of the hermetic-transmission-chain hub"
+  - target: "soul-exile-longing"
+    type: "documentary-evidence-event-for-pattern"
+    source: "Pagels 1979 *The Gnostic Gospels*; Williams 1996 *Rethinking Gnosticism*; Jonas 1963 *The Gnostic Religion* — Nag Hammadi texts (Apocryphon of John, Gospel of Truth, Trimorphic Protennoia, Hypostasis of the Archons) preserve the canonical Gnostic articulations of the soul's exile-from-the-Pleroma and longing for return; the 1945 discovery is the textual basis for understanding the pattern's Gnostic-systematic form"
+    notes: "Cross-lens: 05_events → 06_themes"
 status: "metadata"
 refs:
   - title: "The Nag Hammadi Library in English"

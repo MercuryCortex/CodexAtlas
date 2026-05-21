@@ -7,6 +7,27 @@ date-latest: 33
 region: "Jerusalem (Golgotha / Calvary)"
 traditions-involved: ["[[tradition-christianity-canonical]]", "[[tradition-second-temple-judaism]]"]
 persons-involved: ["[[jesus-christ-deity]]", "[[pontius-pilate]]", "[[herod-antipas]]", "[[judas-iscariot]]", "[[mary-mother-of-jesus]]"]
+hub-edges:
+  - target: "executed-divine-claimant"
+    type: "paradigmatic-Christian-instance-of-pattern"
+    source: "Brown 1994 *The Death of the Messiah* (Anchor Bible); Hengel 1977 *Crucifixion in the Ancient World*; Wright 1996 *Jesus and the Victory of God*; Massignon 1982 *The Passion of al-Hallaj* (which explicitly names the structural Christ-Hallaj parallel) — the crucifixion is the central historical-theological articulation of the executed-divine-claimant pattern; every downstream instance (Mani, Hallaj, the Bab, Husayn read structurally) is interpreted against this template"
+    notes: "Cross-lens: 05_events → 06_themes. MASSIVE-WIN: this is the Christian terminus of the four-fold pattern (paired with mani-execution + karbala + hallaj + bab); also the canonical *executed-divine-claimant* event the others are read against"
+  - target: "theme-dying-founder-paradigm"
+    type: "central-event-of-paradigm"
+    source: "Brown 1994; Wright 1996; Dunn 2003 *The Passion of the Christ in History and Interpretation* — the crucifixion is the founding-sacrificial event of Christianity; the Pauline kerygma (1 Cor 15:3-5) makes the death-and-resurrection event the foundational doctrinal-historical claim of the tradition"
+    notes: "Cross-lens: 05_events → 06_themes"
+  - target: "messianic-genealogy"
+    type: "Davidic-Messianic-claim-event"
+    source: "Brown 1994; Wright 1996; Fitzmyer 1981 *The Gospel According to Luke* (Anchor Bible) — the crucifixion's titulus 'King of the Jews' (INRI) explicitly frames the execution as a messianic-political claim; Matthew 1 + Luke 3 construct Jesus's Davidic genealogy as the messianic-credential frame; Romans 1:3 makes 'descended from David according to the flesh' part of the earliest Pauline confession"
+    notes: "Cross-lens: 05_events → 06_themes"
+  - target: "theme-two-powers-in-heaven"
+    type: "Christological-development-event"
+    source: "Boyarin 2004 *Border Lines*; Segal 1977 *Two Powers in Heaven*; Hurtado 2003 *Lord Jesus Christ* — the post-crucifixion development of Christology (Jesus as enthroned alongside YHWH, Acts 7, Hebrews 1, Revelation 5) is the central first-century Jewish-Christian articulation of the *two-powers-in-heaven* heresy/exegesis; the crucifixion is the historical condition for the divine-Christology that follows"
+    notes: "Cross-lens: 05_events → 06_themes. Companion-pole node: jesus-christ-deity (deity lens) + jesus-of-nazareth (person lens) + gospel-of-john (document lens) + christianity-canonical (tradition lens) all wired to this hub from prior phases"
+  - target: "soul-exile-longing"
+    type: "central-Christian-articulation-event"
+    source: "Brown 1994; Bauckham 1998 *God Crucified*; Dunn 2003 — the crucifixion + harrowing of hell + ascension articulate the Christian form of the cosmic descent/ascent pattern (Phil 2:6-11 hymn): the divine descends into death, is lifted up, and the soul's exile-and-return becomes a participation in the Pauline 'in Christ' pattern (Rom 6:3-11)"
+    notes: "Cross-lens: 05_events → 06_themes"
 status: "metadata"
 refs:
   - title: "The Death of the Messiah (2 vols)"

@@ -11,6 +11,11 @@ participants: ["[[justinian-i]]", "Anthemius of Tralles (mathematician / archite
 traditions-affected: ["[[tradition-christianity-canonical]]", "[[tradition-islam]]"]
 documents-produced: []
 documents-affected: ["[[phase-4-046-john-of-damascus-exposition-orthodox-faith]]"]
+hub-edges:
+  - target: "zeus-pantokrator-transmission"
+    type: "imperial-archetype-event-for-Pantokrator-iconography"
+    source: "Mango 1986 *The Art of the Byzantine Empire 312–1453*; Mainstone 1988 *Hagia Sophia*; Necipoğlu 2020 *Hagia Sophia: A History*; Mathews 1993 *The Clash of Gods* (which discusses the imperial-Pantokrator iconographic program) — Hagia Sophia is the imperial archetype that establishes the dome-Pantokrator iconographic program (post-iconoclast apse Theotokos + Child 867; the type of the Christ-Pantokrator dome-image radiates from this building); the Justinianic building thus anchors the Phidias-derived Pantokrator-iconography hypothesis at the imperial-architectural scale"
+    notes: "Cross-lens: 05_events → 06_themes. The Justinianic building is the imperial-architectural seat of the Pantokrator-iconography pattern; the building is also why Mehmed II's 1453 conversion mattered iconographically (Islamic plastering-over of figural mosaics)"
 status: "metadata"
 refs:
   - title: "The Art of the Byzantine Empire 312–1453: Sources and Documents"
