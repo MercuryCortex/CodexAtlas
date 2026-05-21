@@ -49,12 +49,10 @@
   const R_INNER = 220;
   const R_OUTER = 540;
 
-  // (Phase 20D, 2026-05-21 — the previous Vogel/golden-angle
-  // spiral was replaced by AGE-RADIAL BAND PACKING. See the
-  // comment block above and inside `radialWedgeLayout`. The
-  // GOLDEN_ANGLE constant is retired — its old value
-  // π · (3 − √5) ≈ 2.39996 rad is preserved here as a comment
-  // for archival reference only.)
+  // Golden angle — Vogel/sunflower divergence. Used for the
+  // angular spread inside each wedge so the placement reads
+  // organic and never bands into rigid rings.
+  const GOLDEN_ANGLE = Math.PI * (3 - Math.sqrt(5)); // ≈ 2.39996 rad
 
   // Compute the radial wedge layout.
   //
@@ -127,24 +125,42 @@
     });
 
     // ── 3. Place nodes inside each wedge ──────────────────
-    // AGE-RADIAL BAND PACKING (Phase 20D, 2026-05-21).
+    // AGE-RADIAL ORGANIC FAN PACKING (Phase 20D-2, 2026-05-21).
     //
-    // Each wedge spans the full annulus from rInner to rOuter.
-    // Members are SORTED by date_earliest ascending so the
-    // oldest deity lands at the OUTER radius, the newest at
-    // the INNER radius. Members without a date sort to the
-    // very inner end (treated as "newest / unknown").
+    // John feedback after the first 20D pass: the band/grid
+    // version felt mechanical. We're keeping the OLD Vogel
+    // sunflower "feel" but constraining it with three layers
+    // on top:
     //
-    // Inside the wedge we pack into BANDS — concentric arcs.
-    // Band count adapts to wedge angular width: a wide wedge
-    // (Vedic ~60, Greek ~48) gets ~4-5 members per band so
-    // the family ring fills its arc with room to breathe;
-    // a narrow wedge (Manichaean 4, Mandaean 5) gets 1-2
-    // members per band so it still spans outer→inner.
+    //   (a) AGE → RADIUS, soft.   Members sort by date_earliest.
+    //       Oldest pulls toward rOuter, newest toward rInner.
+    //       The pull is SOFT (a hash-jittered band ±~15% of
+    //       the annulus span) so age-equivalent members never
+    //       form a perfect ring.
     //
-    // Within a band, members fan across the wedge arc, with
-    // alternating-row STAGGER so the layout reads organic
-    // rather than gridded.
+    //   (b) VOGEL + HASH → ANGLE.  Each member gets an angular
+    //       offset built from cos(i · golden_angle) blended
+    //       with an FNV-hash term. Vogel's irrational rotation
+    //       guarantees no clustering; the hash blend kills
+    //       any residual visible spiral.
+    //
+    //   (c) FAN FACTOR.   Angular offsets multiply by a factor
+    //       that GROWS with radius — narrow at the inner edge,
+    //       wide at the outer edge — so the wedge literally
+    //       opens like a fan instead of reading as a parallel
+    //       rectangle.
+    //
+    //   (d) DEGREE → PERSONAL SPACE.   High-degree deities
+    //       (degree near the wedge max) contract their u-offset
+    //       toward the wedge centre — i.e. they grab more
+    //       central screen real-estate and push their lower-
+    //       degree neighbours toward the edges. A small final
+    //       relaxation pass (anti-collision, angular-only) keeps
+    //       overlap from accidents.
+    //
+    // The result preserves the OLD organic sunflower feel
+    // (chaotic, no rings, no rows) while now ALSO encoding
+    // age radially and importance centrally.
     const positions = new Map();
 
     Object.keys(wedges).forEach(famName => {
@@ -166,82 +182,183 @@
         return String(a.id || '').localeCompare(String(b.id || ''));
       });
 
+      // Max degree inside this wedge — used to normalise the
+      // degree contraction below.
+      let maxDeg = 1;
+      for (const m of sorted) {
+        const dv = degree.get(m.id) || 0;
+        if (dv > maxDeg) maxDeg = dv;
+      }
+
       // Wedge geometry.
       const arc       = w.a1 - w.a0;
       const padA      = Math.min(0.04, (arc / 2) * 0.14);
       const arcUsable = arc - 2 * padA;
+      const padR      = 18;
+      const rOut      = rOuter - padR;
+      const rIn       = rInner + padR;
+      const radHalf   = (rOut - rIn) / 2;
+      const rMid      = (rOut + rIn) / 2;
 
-      // Decide band capacity from wedge arc width. We want
-      // a member spaced every ~52 world units along the band's
-      // mean radius so disks (radius ~14 at default scale)
-      // don't kiss neighbours.
-      const meanR = (rInner + rOuter) / 2;
-      const targetSpacing = 52;
-      const rawCap = Math.floor((arcUsable * meanR) / targetSpacing);
-      // Clamp: at least 1 per band; never wider than ~6 in
-      // small wedges so small families still span the annulus.
-      const bandCap = Math.max(1, Math.min(rawCap, 6, N));
-      const bands   = Math.max(1, Math.ceil(N / bandCap));
+      // Per-wedge target radius for each rank — stored on the
+      // point so the relaxation pass can pull members back
+      // toward their age band after angular pushing.
+      const targetR = new Array(N);
+      for (let i = 0; i < N; i++) {
+        const ageT = N > 1 ? i / (N - 1) : 0.5;
+        targetR[i] = rMid + (1 - 2 * ageT) * radHalf;
+      }
 
-      // Radial padding so disks don't graze the inner/outer
-      // ring borders. Outer is the "anchor" radius for
-      // oldest; inner is for newest. We pull both in slightly
-      // so very-old / very-new deities don't sit ON the rim.
-      const padR    = 18;
-      const rOut    = rOuter - padR;
-      const rIn     = rInner + padR;
+      // Phase 1 — initial placement.
+      //   v ← AGE rank with soft hash jitter (so age-equivalent
+      //        members spread radially instead of forming a ring)
+      //   u ← VAN DER CORPUT bit-reversal sequence with soft
+      //        hash jitter (so consecutive ages get well-spread,
+      //        non-monotonic angular slots — gives the organic
+      //        sunflower feel without rigid bands or rows).
+      //
+      // The van der Corput sequence is a classic low-discrepancy
+      // sequence: vdc(1)=½, vdc(2)=¼, vdc(3)=¾, vdc(4)=⅛, vdc(5)=⅝,
+      // vdc(6)=⅜, vdc(7)=⅞, … Each rank gets a UNIQUE u-slot in
+      // [0, 1] with no clustering, so two age-adjacent members
+      // (similar v) automatically diverge angularly (different u).
+      // That eliminates the pile-up that plain Vogel/cos(i·φ)
+      // could produce when paired with a sorted-by-age v-axis.
+      const pts = new Array(N);
 
       sorted.forEach((d, i) => {
-        const band      = Math.floor(i / bandCap);
-        const colInBand = i % bandCap;
-        // Members in THIS band (last band may be partial).
-        const remaining = N - band * bandCap;
-        const colCount  = Math.min(bandCap, remaining);
+        const h  = strHash(d.id);
+        const hU = (h         & 0xffff) / 0xffff;  // ∈ [0, 1]
+        const hV = ((h >>> 16) & 0xffff) / 0xffff;  // ∈ [0, 1]
 
-        // Band → radius. Band 0 = oldest = rOut. Last band = newest = rIn.
-        // Use the radial-density formula so bands distribute
-        // EVENLY around the annulus (equal arc-area per band)
-        // rather than equal radial step — that keeps node
-        // density visually balanced inner vs outer.
-        //
-        // For equal-area concentric bands between r0 and r1,
-        // band k of K has mean radius sqrt( r0² + (k+0.5)/K * (r1² - r0²) ).
-        // We invert so band 0 (oldest) is at OUTER (k=K-1 of the formula).
-        let r;
-        if (bands === 1) {
-          r = (rOut + rIn) / 2;
-        } else {
-          const k = bands - 1 - band; // flip: band 0 → outermost
-          const t = (k + 0.5) / bands;
-          r = Math.sqrt(rIn * rIn + t * (rOut * rOut - rIn * rIn));
-        }
+        // ── RADIUS ── soft pull toward age-rank position.
+        const ageT = N > 1 ? i / (N - 1) : 0.5;     // 0 oldest, 1 newest
+        let v = 1 - 2 * ageT;                       // +1 outer, −1 inner
+        v += (hV - 0.5) * 0.32;                     // ±16% radial jitter
+        v = Math.max(-0.97, Math.min(0.97, v));
+        const r = rMid + v * radHalf;
 
-        // Column → angle inside the wedge. Each band's
-        // colCount members fan EVENLY across the usable arc.
-        // Alternate bands are shifted half a sub-slot so two
-        // adjacent radial bands don't share the same angular
-        // columns (avoids a "rectangular grid" look — gives
-        // the brick-row stagger that reads organic).
-        const baseSlot  = (colCount > 1) ? (colInBand + 0.5) / colCount : 0.5;
-        const slotShift = (band % 2 === 0) ? 0 : (0.5 / Math.max(1, colCount));
-        const tCol      = clamp01(baseSlot + slotShift);
-        const ang       = w.a0 + padA + tCol * arcUsable;
+        // ── ANGLE ── van der Corput slot + hash sub-jitter.
+        const uBase = vdcBase2(i + 1) * 2 - 1;      // unique ∈ (-1, 1)
+        const slotW = 2 / Math.max(8, N);           // width of one vdc slot
+        let u       = uBase + (hU - 0.5) * slotW * 0.9;
 
-        // Tiny deterministic perturbation so members at the
-        // same band don't sit on a perfectly clean ring —
-        // hash the id to a stable jitter in [-1, 1].
-        const h = strHash(d.id);
-        const angJit = ((h         & 0xffff) / 0xffff - 0.5) * Math.min(0.012, arcUsable / Math.max(1, colCount) * 0.18);
-        const radJit = (((h >>> 16) & 0xffff) / 0xffff - 0.5) * Math.min(12, (rOut - rIn) / Math.max(1, bands) * 0.20);
+        // Fan factor: angles squeeze toward inner radius, open
+        // toward outer. The annulus naturally widens arc-length
+        // outward — this multiplier amplifies that visual cue
+        // so the wedge reads as an opening fan instead of as a
+        // parallel-walled rectangle.
+        const radNorm   = (r - rIn) / Math.max(1, rOut - rIn);
+        const fanFactor = 0.45 + 0.55 * radNorm;
+        u *= fanFactor;
+        u  = Math.max(-0.96, Math.min(0.96, u));
+        const ang = w.center + u * (arcUsable / 2);
 
-        const finalAng = ang + angJit;
-        const finalR   = r   + radJit;
-
-        positions.set(d.id, {
-          x: finalR * Math.cos(finalAng),
-          y: finalR * Math.sin(finalAng),
-        });
+        pts[i] = { id: d.id, r, ang, deg: degree.get(d.id) || 0 };
       });
+
+      // Convert (r, ang) initial placement to (x, y) so the
+      // relaxation pass can push in 2D — angular-only push
+      // doesn't work in tight wedges (no room to escape
+      // sideways) so we let radius drift too, and pull it
+      // back toward the age-target with a soft spring.
+      const xy = new Array(N);
+      for (let i = 0; i < N; i++) {
+        const p = pts[i];
+        xy[i] = { id: p.id, x: p.r * Math.cos(p.ang), y: p.r * Math.sin(p.ang), deg: p.deg };
+      }
+
+      // Phase 2 — 2D anti-collision relaxation with age spring.
+      //   • Each pair (i, j) within minDist pushes APART in 2D
+      //     along the line between them (handles coincident
+      //     pairs with a hash-derived bearing).
+      //   • Each member is pulled toward its age-target radius
+      //     by a soft radial spring — gentle enough that
+      //     age-equivalent members can drift apart radially
+      //     when angular space runs out, but strong enough
+      //     that the wedge keeps the "oldest outer, newest
+      //     inner" reading.
+      //   • Final clamp: keep r inside [rIn, rOut] and the
+      //     angle inside the fan-constrained wedge bounds.
+      //
+      // Personal-space targets are chosen to MATCH the
+      // physical packing limit of the wedge area, not to
+      // exceed it. For Vedic (60 deities in ~23,000 wu² of
+      // annulus), the natural min spacing is ~20 wu — we
+      // target 16–24 so relaxation can settle.
+      const BASE_SIZE   = 11;   // world units for tail nodes
+      const HUB_BONUS   = 7;    // extra space for top-degree nodes
+      const SPRING_K    = 0.10; // age-spring stiffness (per iter)
+      const PUSH_STEP   = 0.55; // 2D push step
+      const RELAX_ITERS = 8;
+      for (let iter = 0; iter < RELAX_ITERS; iter++) {
+        for (let i = 0; i < N; i++) {
+          const pi    = xy[i];
+          const sizeI = BASE_SIZE + (pi.deg / maxDeg) * HUB_BONUS;
+          let pushX = 0, pushY = 0;
+          // Repulsion from neighbors.
+          for (let j = 0; j < N; j++) {
+            if (i === j) continue;
+            const pj = xy[j];
+            const dx = pi.x - pj.x;
+            const dy = pi.y - pj.y;
+            const d2 = dx * dx + dy * dy;
+            const sizeJ   = BASE_SIZE + (pj.deg / maxDeg) * HUB_BONUS;
+            const minDist = sizeI + sizeJ;
+            if (d2 < minDist * minDist) {
+              const d = Math.sqrt(d2);
+              let ux, uy;
+              if (d < 0.01) {
+                // Coincident — pick a deterministic bearing
+                // from a hash of both ids so the pair always
+                // splits in the same direction.
+                const h = (strHash(pi.id) ^ strHash(pj.id)) >>> 0;
+                const theta = (h % 10000) / 10000 * Math.PI * 2;
+                ux = Math.cos(theta);
+                uy = Math.sin(theta);
+              } else {
+                ux = dx / d;
+                uy = dy / d;
+              }
+              const force = (minDist - d) * 0.5 * PUSH_STEP;
+              pushX += ux * force;
+              pushY += uy * force;
+            }
+          }
+          // Age-spring: pull current radius back toward
+          // age-target along the current radial direction.
+          const curR = Math.hypot(pi.x, pi.y);
+          if (curR > 1) {
+            const dr   = targetR[i] - curR;
+            const radX = pi.x / curR;
+            const radY = pi.y / curR;
+            pushX += radX * dr * SPRING_K;
+            pushY += radY * dr * SPRING_K;
+          }
+          // Apply combined push.
+          let nx = pi.x + pushX;
+          let ny = pi.y + pushY;
+          // Clamp to wedge bounds (radial + fan-angular).
+          let nr   = Math.hypot(nx, ny);
+          let nang = (nr > 0.001) ? Math.atan2(ny, nx) : w.center;
+          nr = Math.max(rIn, Math.min(rOut, nr));
+          const radNorm   = (nr - rIn) / Math.max(1, rOut - rIn);
+          const fanFactor = 0.45 + 0.55 * radNorm;
+          const maxOff    = (arcUsable / 2) * fanFactor * 0.96;
+          let off = nang - w.center;
+          while (off >  Math.PI) off -= 2 * Math.PI;
+          while (off < -Math.PI) off += 2 * Math.PI;
+          off = Math.max(-maxOff, Math.min(maxOff, off));
+          nang = w.center + off;
+          pi.x = nr * Math.cos(nang);
+          pi.y = nr * Math.sin(nang);
+        }
+      }
+
+      // Write final positions.
+      for (let i = 0; i < N; i++) {
+        positions.set(xy[i].id, { x: xy[i].x, y: xy[i].y });
+      }
     });
 
     return { wedges, positions, rInner, rOuter };
@@ -258,6 +375,30 @@
   }
 
   function clamp01(t) { return t < 0 ? 0 : (t > 1 ? 1 : t); }
+
+  // Van der Corput base-2 sequence — classic low-discrepancy
+  // 1D sampling. Bit-reverses `n` into [0, 1):
+  //   1 → 0.1₂   → 0.5
+  //   2 → 0.01₂  → 0.25
+  //   3 → 0.11₂  → 0.75
+  //   4 → 0.001₂ → 0.125
+  //   5 → 0.101₂ → 0.625
+  //   …
+  // Each integer index gets a unique value, and consecutive
+  // indices land FAR apart in [0, 1) — perfect for "spread N
+  // members across an arc without any of them landing on top
+  // of each other".
+  function vdcBase2(n) {
+    let q = 0;
+    let bk = 0.5;
+    let k = n;
+    while (k > 0) {
+      if (k & 1) q += bk;
+      bk *= 0.5;
+      k >>>= 1;
+    }
+    return q;
+  }
 
   // Cheap deterministic string hash (FNV-1a). Used only for
   // tiny jitter — no security / distribution guarantees needed.
