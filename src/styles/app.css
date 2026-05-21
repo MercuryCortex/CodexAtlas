@@ -6005,76 +6005,91 @@ body.nav-collapsed .nav-more > summary .lbl { display: none; }
 /* Mode dropdown (Phase 4d) — primary "what is this wheel" control.
    Native <select> styled to fit the status strip.  Custom caret via
    appearance:none + background-image gradient. */
-/* Phase 21N (2026-05-21) — Mode picker is now a custom button +
-   menu, NOT a native <select>. The button is a styled chip that
-   sits inside the FORGE status pill; the menu drops DOWN from
-   the button matching the view-settings panel style (nested-
-   blur card with gold-bordered rows). */
+/* Phase 21N-R (2026-05-21) — restyled per John:
+   • Button face matches the 21M styled-<select> look they liked:
+     same dark bg, gold-soft border, rounded 6 px, gradient-arrow
+     caret pixel-aligned (not Unicode ▾).
+   • Popup MENU matches the LEGEND popup style: neutral gray
+     border, dark bg, simple flat rows. No nested-blur fanciness. */
 .forge-mode-wrap {
   position: relative;
   display: inline-flex; align-items: center;
   margin-left: 8px;
 }
 .forge-mode-btn {
-  display: inline-flex; align-items: center; gap: 8px;
+  /* Match the 21M styled-select dimensions + chrome. */
+  appearance: none; -webkit-appearance: none;
+  display: inline-flex; align-items: center;
   height: 24px;
-  padding: 0 8px 0 10px;
+  padding: 0 22px 0 10px;       /* 22 px right pad for the gradient caret */
   background: rgba(20,26,38,0.92);
   border: 1px solid rgba(212,165,90,0.28);
   border-radius: 6px;
   color: var(--gold-1, #e8c889);
   font-family: var(--mono); font-size: 11px;
   letter-spacing: 0.06em;
+  line-height: 1;
   cursor: pointer;
   outline: none;
-  transition: border-color 120ms ease, background 120ms ease, color 120ms ease;
+  white-space: nowrap;
+  /* Gradient-arrow caret — two crossed gradients form a tidy
+     pixel-aligned triangle (same trick the styled <select> used
+     in 21M). The Unicode ▾ in 21N looked uneven across fonts. */
+  background-image:
+    linear-gradient(45deg, transparent 50%, var(--gold-soft, #a87f3e) 50%),
+    linear-gradient(135deg, var(--gold-soft, #a87f3e) 50%, transparent 50%);
+  background-position: right 9px top 50%, right 5px top 50%;
+  background-size: 4px 4px, 4px 4px;
+  background-repeat: no-repeat;
+  transition: border-color 120ms ease, background-color 120ms ease, color 120ms ease;
 }
 .forge-mode-btn:hover,
 .forge-mode-btn[aria-expanded="true"] {
   border-color: var(--gold, #d4a55a);
-  background: rgba(28,36,52,0.96);
+  background-color: rgba(28,36,52,0.96);
   color: var(--gold, #d4a55a);
 }
-.forge-mode-btn .forge-mode-glyph { font-size: 12px; line-height: 1; }
+.forge-mode-btn .forge-mode-glyph { margin-right: 6px; font-size: 12px; line-height: 1; }
 .forge-mode-btn .forge-mode-label { line-height: 1; }
-.forge-mode-btn .forge-mode-caret { color: var(--gold-soft, #a87f3e); font-size: 9px; margin-left: 2px; }
-.forge-mode-btn[aria-expanded="true"] .forge-mode-caret { transform: rotate(180deg); }
+/* No Unicode caret span — the CSS gradient above is the caret. */
+.forge-mode-btn .forge-mode-caret { display: none; }
 
-/* The dropdown menu — anchored below the button. Visual style
-   mirrors .forge-viewset-panel (drop-up) but flipped to drop-DOWN. */
+/* Popup menu — Phase 21N-R: mirror the LEGEND popup
+   (`.forge-legend-panel`) — neutral grey border, flat dark
+   background, simple rows. Drops DOWN from the button. */
 .forge-mode-menu {
   position: absolute;
-  top: 30px;       /* button is 24 px high + 6 px gap */
+  top: 100%;
   left: 0;
-  min-width: 200px;
+  margin-top: 6px;
+  background: rgba(13, 17, 25, 0.95);
+  border: 1px solid var(--border, #2a2e3a);
+  border-radius: 4px;
   padding: 6px 0;
-  background: rgba(13,17,25,0.92);
-  border: 1px solid rgba(212,165,90,0.22);
-  border-radius: 8px;
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  box-shadow: 0 6px 24px rgba(0,0,0,0.45);
+  min-width: 200px;
+  box-sizing: border-box;
   z-index: 240;
+  font-family: var(--mono, "JetBrains Mono", Menlo, monospace);
+  font-size: 11px;
   display: none;
-  white-space: nowrap;
 }
 .forge-mode-menu.is-open { display: block; }
 .forge-mode-row {
   display: flex; align-items: center; gap: 10px;
   width: 100%;
-  padding: 7px 14px;
+  padding: 5px 12px;
   background: transparent;
   border: 0;
   text-align: left;
-  font-family: var(--mono); font-size: 11.5px;
+  font-family: var(--mono); font-size: 11px;
   letter-spacing: 0.04em;
-  color: var(--text-1, #e5e7eb);
+  color: var(--text-2, #9099a8);
   cursor: pointer;
   transition: background 90ms ease, color 90ms ease;
 }
 .forge-mode-row:hover {
-  background: rgba(212,165,90,0.10);
-  color: var(--gold-1, #e8c889);
+  background: rgba(212, 165, 90, 0.08);
+  color: var(--text-1, #e5e7eb);
 }
 .forge-mode-row.is-active {
   color: var(--gold, #d4a55a);
@@ -6082,7 +6097,7 @@ body.nav-collapsed .nav-more > summary .lbl { display: none; }
 .forge-mode-row-glyph {
   display: inline-block;
   width: 16px; text-align: center;
-  color: var(--gold-soft, #a87f3e);
+  color: var(--text-3, #6b7280);
   font-size: 13px;
 }
 .forge-mode-row.is-active .forge-mode-row-glyph,
@@ -6090,7 +6105,7 @@ body.nav-collapsed .nav-more > summary .lbl { display: none; }
   color: var(--gold, #d4a55a);
 }
 
-/* Drop the separator dot between FORGE and the mode dropdown — the gap is enough. */
+/* Drop the separator dot between FORGE and the mode dropdown. */
 .forge-status > .forge-status-sep:first-of-type { display: none; }
 .forge-status-mode option {
   background: var(--bg-1);
