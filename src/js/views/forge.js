@@ -858,31 +858,89 @@
     // shell decides where the image goes (always full screen);
     // JS only controls opacity by zoom. The view module owns
     // its lifecycle — adds on render, removes on destroy.
+    // Phase 21P (2026-05-21) — BG can be a still image OR a looping
+    // video. The element keeps the SAME id (#forge-bg-image), class
+    // (.forge-bg-image), DOM position (first child of <body>), and
+    // sizing math (width/height in pixels written each tick by
+    // syncBackgroundImage()). Only the element TAG and the aspect-
+    // listener event differ between image and video. To swap assets:
+    //   • set BG_ASSET_URL to the file
+    //   • set BG_ASSET_KIND to 'image' or 'video'
+    //   • everything else (anchoring, zoom-floor, fade) is identical
+    const BG_ASSET_URL  = '_assets/bg/bg-t01.mov?v=20260521-21p';
+    const BG_ASSET_KIND = 'video';   // 'image' | 'video'
     let bgImage = document.getElementById('forge-bg-image');
+    // If the cached element is the WRONG tag for the current asset
+    // kind (e.g. an <img> left over from a prior load and now we
+    // want <video>), drop it so the create-branch builds the
+    // correct element.
+    if (bgImage) {
+      const wantTag = (BG_ASSET_KIND === 'video') ? 'VIDEO' : 'IMG';
+      if (bgImage.tagName !== wantTag) {
+        try { bgImage.parentNode && bgImage.parentNode.removeChild(bgImage); } catch (_) {}
+        bgImage = null;
+      }
+    }
     if (!bgImage) {
-      bgImage = document.createElement('img');
-      bgImage.id = 'forge-bg-image';
-      bgImage.className = 'forge-bg-image';
-      bgImage.src = '_assets/bg/bg-a02.jpg?v=20260521';
-      bgImage.alt = '';
-      bgImage.draggable = false;
+      if (BG_ASSET_KIND === 'video') {
+        bgImage = document.createElement('video');
+        bgImage.id = 'forge-bg-image';
+        bgImage.className = 'forge-bg-image';
+        bgImage.src = BG_ASSET_URL;
+        // Required for browsers to autoplay without user gesture.
+        bgImage.autoplay    = true;
+        bgImage.muted       = true;
+        bgImage.defaultMuted= true;
+        bgImage.loop        = true;
+        bgImage.playsInline = true;
+        bgImage.setAttribute('muted', '');
+        bgImage.setAttribute('playsinline', '');
+        bgImage.setAttribute('autoplay', '');
+        bgImage.setAttribute('loop', '');
+        bgImage.preload     = 'auto';
+        bgImage.disablePictureInPicture = true;
+        bgImage.controls    = false;
+      } else {
+        bgImage = document.createElement('img');
+        bgImage.id = 'forge-bg-image';
+        bgImage.className = 'forge-bg-image';
+        bgImage.src = BG_ASSET_URL;
+        bgImage.alt = '';
+        bgImage.draggable = false;
+      }
       // PREPEND so it sits at the bottom of the document stacking
       // order — every other positioned element (canvas, nav-hub
       // trigger, footer, detail panel, hover card) paints over it.
       document.body.insertBefore(bgImage, document.body.firstChild);
+      if (BG_ASSET_KIND === 'video') {
+        // Some browsers block autoplay if the gesture-check fires
+        // before the muted attribute is committed; nudge play().
+        try { bgImage.play().catch(() => {}); } catch (_) { /* ignore */ }
+      }
     }
     // Phase 21C (2026-05-21) — re-introduce aspect tracking. Used
-    // by syncBackgroundImage() to size the image at its natural
-    // proportions; otherwise the IMG box would stretch.
+    // by syncBackgroundImage() to size the asset at its natural
+    // proportions; otherwise the element box would stretch.
     if (!bgImage._bgAspect) bgImage._bgAspect = 4 / 3;
     if (!bgImage._bgAspectListenerAttached) {
       bgImage._bgAspectListenerAttached = true;
-      bgImage.addEventListener('load', () => {
-        if (bgImage.naturalWidth > 0 && bgImage.naturalHeight > 0) {
-          bgImage._bgAspect = bgImage.naturalWidth / bgImage.naturalHeight;
-          if (typeof syncBackgroundImage === 'function') syncBackgroundImage();
-        }
-      });
+      if (BG_ASSET_KIND === 'video') {
+        // <video> exposes natural dims as videoWidth / videoHeight,
+        // settled on `loadedmetadata`.
+        bgImage.addEventListener('loadedmetadata', () => {
+          if (bgImage.videoWidth > 0 && bgImage.videoHeight > 0) {
+            bgImage._bgAspect = bgImage.videoWidth / bgImage.videoHeight;
+            if (typeof syncBackgroundImage === 'function') syncBackgroundImage();
+          }
+        });
+      } else {
+        bgImage.addEventListener('load', () => {
+          if (bgImage.naturalWidth > 0 && bgImage.naturalHeight > 0) {
+            bgImage._bgAspect = bgImage.naturalWidth / bgImage.naturalHeight;
+            if (typeof syncBackgroundImage === 'function') syncBackgroundImage();
+          }
+        });
+      }
     }
 
     const canvas = document.createElement('canvas');
