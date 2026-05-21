@@ -28,7 +28,7 @@ syncretic-edges:
     type: "scholarly-parallel"
     source: "Snellgrove 1987 — Surya as Vedic sun god of the southern direction in some directional schemes; the gold-yellow color of Ratnasambhava reflects the solar-southern association"
     notes: "Solar-southern directional parallel"
-status: "stub"
+status: "metadata"
 refs:
   - title: "Indo-Tibetan Buddhism"
     author: "Snellgrove, David"

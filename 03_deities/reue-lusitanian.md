@@ -25,7 +25,7 @@ syncretic-edges:
     type: "partial-identification"
     source: "No direct inscriptional identification known, but the sky/thunder function would map to Jupiter in Roman interpretatio"
     notes: "Unlike [[endovelicus]] (→ Silvanus/Dis Pater) or [[nabia]] (→ Vittoria), Reue does not appear in direct compound dedications with Roman deities, suggesting Roman interpretatio was incomplete or locally variable."
-status: "stub"
+status: "metadata"
 refs:
   - title: "Divindades Indígenas sob o Domínio Romano em Portugal"
     author: "Encarnação, José d'"
