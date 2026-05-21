@@ -23,6 +23,14 @@ persons-mentioned:
   - "[[sraosha]]"
   - "[[mithra-zoroastrian]]"
 attested-in: []
+hub-edges:
+  - target: "merkabah-miraj-ascent-chain"
+    type: "Zoroastrian-text-of-ascent-tradition"
+    source: "Gignoux 1984 *The Ardā Wirāz Nāmag: The Iranian 'Divina Commedia'*; Schäfer 2009 *Mohammed's Journey to Heaven*; Asín Palacios 1919 *Islam and the Divine Comedy* — the *Ardā Wirāz Nāmag* (Middle Persian, ~400-900 CE) is the most explicit pre-Dante heavenly-journey narrative outside the Jewish tradition. Viraf the righteous priest, escorted by Sraosha and Atar through seven heavens + hell, then returns to earth to report. The work is structurally the *Iranian Divina Commedia* per the scholarly consensus + Asín Palacios's documentation of the transmission chain Arda Viraf → Islamic Mi'raj → Liber Scalae → Dante's Paradiso. See [[merkabah-miraj-ascent-chain]]"
+    notes: "MASSIVE-WIN: Arda Viraf is the Zoroastrian-tradition's contribution to the cross-tradition ascent chain — almost certainly influenced (via the Achaemenid + Parthian period contact) the Quranic eschatological geography that subsequently produces the Mi'raj. Cross-lens: 02_documents → 06_themes"
+  - target: "theme-zoroastrian-cosmogony"
+    type: "Pahlavi-eschatological-text"
+    source: "Gignoux 1984; Cereti 1995 *The Zand i Wahman Yasn*; Boyce 1975 vol. I — Arda Viraf documents the Pahlavi-period (~400-900 CE) elaboration of Zoroastrian eschatology: the Chinvat Bridge soul-judgment, the heavens of good thought / good speech / good action, the Garōdmān paradise, the hell of the wicked. The work is the most extended single Zoroastrian eschatological-geography text. See [[theme-zoroastrian-cosmogony]]"
 status: "full"
 refs:
   - title: "The Ardā Wirāz Nāmag: The Iranian 'Divina Commedia'"

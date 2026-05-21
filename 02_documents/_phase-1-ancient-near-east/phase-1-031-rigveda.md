@@ -24,6 +24,15 @@ influences: ["[[phase-2-003-atharva-veda]]", "[[phase-2-006-brahmanas-aranyakas]
 deities-mentioned: ["[[agni]]", "[[indra]]", "[[varuna]]", "[[soma]]", "[[ushas]]", "[[mitra-vedic]]", "[[dyaus-pita]]", "[[vishnu]]", "[[rudra-shiva-early]]", "[[prajapati]]"]
 attested-in: ["[[tradition-vedic-hinduism]]", "[[tradition-zoroastrianism]]"]
 events-context: ["Indo-Iranian migration period (~-2000 to -1200)"]
+hub-edges:
+  - target: "theme-soma-haoma-eucharist"
+    type: "Vedic-branch-canonical-source"
+    source: "Jamison & Brereton 2014 *The Rigveda*; Falk 1989 *Bulletin SOAS* — Rigveda Mandala 9 (the *Soma Mandala*) consists ENTIRELY of 114 hymns addressed to Soma Pavamāna — without parallel in any other ancient religious text: an entire book of the oldest Indo-European religious corpus devoted to a single sacred substance. The Soma corpus is the load-bearing Vedic-branch documentary witness to the PII *\\*sauma-* sacred-drink tradition. See [[theme-soma-haoma-eucharist]]"
+    notes: "MASSIVE-WIN: the entire Mandala 9 = the Vedic headwater of the 3,500-year sacred-drink transmission chain. Cross-lens: 02_documents → 06_themes"
+  - target: "asura-deva-inversion"
+    type: "Vedic-side-pre-inversion-witness"
+    source: "West 2007 *Indo-European Poetry and Myth* ch. 7; Boyce 1975 *History of Zoroastrianism* vol. 1 — the Rigveda preserves the *pre-inversion* state of the Indo-Iranian deva/asura vocabulary: *devas* are the benevolent gods (Indra, Varuṇa, Mitra), *asuras* are also positive in earliest stratum (Varuṇa is *asura*-class). The Gathic-Avestan inversion (~1200-600 BCE) is the negative-mirror of the Rigvedic baseline. See [[asura-deva-inversion]]"
+    notes: "Cross-lens: 02_documents → 06_themes. The Rigveda + Gathas comparison documents the inversion's mechanics by preserving both pre- and post-inversion states"
 status: "full"
 preservation: "Transmitted with extraordinary fidelity through a multilayer oral memorization system (saṃhitā-pāṭha, pada-pāṭha, krama-pāṭha, jaṭā-pāṭha, ghana-pāṭha) for ~2,500 years before any surviving manuscript. The oldest physical manuscripts are paper and birch-bark from ~1000–1500 CE. Two ancient recensions (Śākala and Bāṣkala) agree to a remarkable degree, corroborating the oral-transmission fidelity. The UNESCO 2003 Intangible Cultural Heritage designation recognizes the living oral tradition. Electronic texts: GRETIL (van Nooten/Holland metrically restored text); TITUS; Vedic Heritage Portal (India)."
 refs:

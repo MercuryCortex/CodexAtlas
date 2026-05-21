@@ -22,6 +22,14 @@ influenced-by: ["Zoroastrian cosmology and eschatology (Mani adapted Iranian the
 influences: ["all later Iranian Manichaean texts", "[[phase-4-015-kephalaia-of-the-teacher]] (Coptic theological corpus echoes the same system)"]
 deities-mentioned: ["[[father-of-greatness]]", "[[prince-of-darkness-manichaean]]", "[[jesus-the-splendor]]", "[[ohrmazd]]", "[[angra-mainyu-ahriman]]"]
 events-context: ["[[event-mani-execution-274-or-277]]"]
+hub-edges:
+  - target: "theme-manichaeism-synthesis"
+    type: "Mani-authored-Persian-language-canon"
+    source: "Tardieu 2008 *Manichaeism*; Lieu 1992; Boyce 1975 *Reader in Manichaean Middle Persian and Parthian* — the *Šābuhragān* is Mani's ONLY surviving Persian-language work + the only canonical Manichaean text we are nearly certain Mani himself wrote. Composed ~242 CE for King Shapur I (Sasanian) using deliberately Iranian theological vocabulary (Zurvan substituted for Father-of-Greatness; Ohrmazd-vs-Ahriman as the Iranian-audience version of the cosmic dualism). See [[theme-manichaeism-synthesis]]"
+    notes: "MASSIVE-WIN: the Šābuhragān is the documentary evidence of Mani's missionary-translation strategy — deliberate Iranian-vocabulary version of the synthesis for the Sasanian court. Cross-lens: 02_documents → 06_themes"
+  - target: "third-century-collision-zone"
+    type: "Iranian-tradition-document-of-3rd-c-synthesis"
+    source: "BeDuhn 'The Co-formation of the Manichaean and Zoroastrian Religions'; Boyce 1975 — composed ~242-270 CE squarely in the 200-280 CE collision-zone window; documents Manichaeism's deliberate engagement with Iranian Zoroastrianism at the Sasanian court. See [[third-century-collision-zone]]"
 status: "metadata"
 preservation: "Lost as a complete work; survives in Iranian Manichaean fragments recovered at Turfan (Chinese Central Asia) by the four German Turfan expeditions 1902–1914. The Turfan fragments give us substantial portions of an eschatological section (often called the 'Šābuhragān eschatology'). Mani's other six canonical works (Living Gospel, Treasure of Life, Pragmateia, Book of Mysteries, Book of Giants, Epistles) survive only in fragments and citations."
 refs:

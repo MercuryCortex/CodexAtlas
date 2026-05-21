@@ -22,6 +22,14 @@ influenced-by: ["older Heliopolitan Ennead theology (which the Memphite text app
 influences: ["arguably the broader ANE 'creation by word' tradition culminating in Genesis 1 P; later Egyptian theologies of Ptah; Hellenistic-era Logos speculation (via Egyptian-Greek syncretism in Alexandria)"]
 deities-mentioned: ["[[ptah]]", "[[atum]]", "[[horus]]", "[[set]]", "[[osiris]]", "[[isis-egyptian]]", "[[nephthys]]", "[[geb]]", "the Heliopolitan Ennead generally"]
 events-context: ["Reign of Shabaka, 25th Dynasty (Nubian / Kushite), ~-716 to -702 BCE"]
+hub-edges:
+  - target: "theme-egyptian-gnostic-transmission"
+    type: "load-bearing-Egyptian-substrate-text"
+    source: "Allen 1988 *Genesis in Egypt*; Fowden 1986 *The Egyptian Hermes*; Lichtheim 1973 vol. I — the Memphite Theology is the load-bearing Egyptian-priestly text documenting the creation-by-word (heart-and-tongue) theology that runs Ptah → Genesis 1 P → Philonic Logos → Johannine Logos → Hermetic Nous. The Shabaka Stone is the direct documentary witness to the Egyptian *Logos-creator* template the Hermetic-Gnostic synthesis subsequently develops. See [[theme-egyptian-gnostic-transmission]]"
+    notes: "MASSIVE-WIN: the Shabaka Stone is the oldest documented articulation of creation-by-divine-word theology — ~700 BCE inscription preserving Old/Middle Kingdom content (~2350-2000 BCE per Allen). Cross-lens: 02_documents → 06_themes"
+  - target: "hermetic-transmission-chain"
+    type: "deep-substrate-Egyptian-source"
+    source: "Allen 1988; Fowden 1986; Yates 1964 — the Memphite heart-and-tongue creation theology is the Egyptian-priestly substrate that the Corpus Hermeticum (~100-300 CE Alexandria) crystallizes via Hermes Trismegistus = Thoth identification. Without the Memphite Theology's prior tradition, no Hermetic Logos-Nous template. See [[hermetic-transmission-chain]]"
 status: "full"
 preservation: "A single basalt slab (~92 × 137 cm) carved with hieroglyphic text in horizontal columns. British Museum EA 498. The stone was later reused as a millstone — the central portion is worn away in a circular pattern, destroying significant text. The legible portions contain the prologue (Shabaka's commissioning statement), a Memphite cosmogony centered on Ptah, and an Osirian-Horus succession narrative tied to Memphis as the seat of Horus's coronation."
 refs:

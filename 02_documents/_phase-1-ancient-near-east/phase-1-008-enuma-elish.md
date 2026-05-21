@@ -22,6 +22,17 @@ influenced-by: ["earlier Sumerian creation/combat traditions (e.g., Ninurta-Anzu
 influences: ["Hebrew Bible Genesis 1 cosmogony (contested mechanism — common-stock vs. literary dependence)", "later Near Eastern combat-creation imagery"]
 deities-mentioned: ["[[marduk]]", "[[tiamat]]", "[[apsu]]", "[[an-sumerian]]", "[[enlil]]", "[[enki-ea]]", "[[kingu]]", "[[damkina]]"]
 events-context: ["Read aloud during the Babylonian Akitu (New Year) festival, days 4–5 of Nisanu"]
+hub-edges:
+  - target: "theme-rebel-against-the-divine"
+    type: "founding-cosmogonic-combat-text"
+    source: "Forsyth 1987 *The Old Enemy: Satan and the Combat Myth*; Lambert 2013 *Babylonian Creation Myths* — the Enuma Elish (~1700-1100 BCE) is the founding cosmogonic-combat substrate text from which the cross-tradition rebel-against-divine-order pattern descends through Hurrian-Hittite Teshub-Illuyanka → Greek Zeus-Typhon → Jewish chaoskampf residues → Christian Satan theology. See [[theme-rebel-against-the-divine]]"
+    notes: "Cross-lens: 02_documents → 06_themes"
+  - target: "serpent-dual-nature"
+    type: "founding-chaoskampf-text"
+    source: "Day 1985 *God's Conflict with the Dragon and the Sea*; Joines 1974; Lambert 2013 — the Marduk-vs-Tiamat combat is the prototypical cosmic-serpent chaos-pole narrative. Tiamat dismembered to form heaven and earth = founding chaoskampf cosmogony. See [[serpent-dual-nature]]"
+  - target: "theme-mesopotamian-gnostic-transmission"
+    type: "load-bearing-substrate-text"
+    source: "Pearson 1984/2007; the Enuma Elish cosmogonic structure (chaos-mother diminished to produce cosmos) is the Mesopotamian substrate that the Sethian Yaldabaoth-Sophia narrative polemically inverts. See [[theme-mesopotamian-gnostic-transmission]] Chain 2"
 status: "full"
 preservation: "Seven cuneiform tablets per copy; ~1100 lines total. Best-preserved exemplars from the Library of [[ashurbanipal]] at Nineveh (excavated 1849–1854 by Layard, Rassam, and George Smith). Additional copies from Aššur, Kish, Sippar, Sultantepe, and Babylon itself."
 refs:

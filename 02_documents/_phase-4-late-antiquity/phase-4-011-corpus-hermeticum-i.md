@@ -22,6 +22,17 @@ influenced-by: ["Middle Platonism", "Egyptian theological tradition (Memphite, H
 influences: ["Renaissance Hermeticism (Ficino, Pico)", "Western esotericism broadly"]
 deities-mentioned: ["[[poimandres]]", "[[nous-hermetic]]", "[[hermes-trismegistus]]"]
 events-context: []
+hub-edges:
+  - target: "hermetic-transmission-chain"
+    type: "canonical-text-of-Phase-1-synthesis"
+    source: "Yates 1964 *Giordano Bruno and the Hermetic Tradition*; Copenhaver 1992 *Hermetica*; Fowden 1986 *The Egyptian Hermes* — *Poimandres* (Corpus Hermeticum I, ~100-300 CE Alexandria) is the central single text of the hermetic-transmission-chain Phase 1: the cosmogonic-soteriological treatise in which Hermes Trismegistus narrates Poimandres's revelation of the cosmic descent + return of the soul. Ficino's 1463 *Pimander* translation makes this treatise the founding document of Renaissance Hermeticism (Phase 3). See [[hermetic-transmission-chain]]"
+    notes: "MASSIVE-WIN: the *Poimandres* is the entire Hermetic synthesis in single-treatise form — Egyptian priestly framing + Platonic emanation + Stoic logos + Genesis-cognate cosmogony + soul-ascent soteriology. Cross-lens: 02_documents → 06_themes"
+  - target: "theme-egyptian-gnostic-transmission"
+    type: "Alexandrian-canonical-text"
+    source: "Fowden 1986; Pearson 1990 *Gnosticism, Judaism, and Egyptian Christianity*; Copenhaver 1992 — the *Poimandres* is the load-bearing Hermetic text of the Egyptian → Gnostic transmission Chain 1 (Thoth → Hermes Trismegistus → Hermetic-Gnostic saving-knowledge soteriology). The Coptic *Discourse on the Eighth and Ninth* (NHC VI.6) is a specifically Egyptian ritual liturgy of soul-ascent that the Hermetic Greek tradition reads like translation of. See [[theme-egyptian-gnostic-transmission]]"
+  - target: "alchemy-as-spiritual-discipline"
+    type: "Hermetic-source-text-of-alchemical-tradition"
+    source: "Principe 2007 *Distilling Knowledge*; Fowden 1986; Copenhaver 1992 — the *Poimandres* is the Hermetic-philosophical wellspring of the alchemical Greco-Egyptian → Arabic → Latin European stream. Zosimos of Panopolis (~310 CE) explicitly draws on Hermetic cosmology for his visionary-alchemical works. See [[alchemy-as-spiritual-discipline]]"
 status: "full"
 preservation: "Survives in ~Byzantine Greek manuscripts (oldest ~14th c.). The Corpus of seventeen treatises was rediscovered in 1460 when Cosimo de' Medici's agent Leonardo da Pistoia brought a Greek manuscript from Macedonia to Florence; Ficino's Latin translation (1471) launched Renaissance Hermeticism. Isaac Casaubon's 1614 demonstration that the texts are Hellenistic-Egyptian, not pre-Mosaic, ended their authority as primordial revelation but began their study as late-antique evidence."
 refs:

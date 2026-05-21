@@ -22,6 +22,17 @@ influenced-by: ["Hebrew Bible (LXX)", "Pharisaic Judaism (Paul's training)", "Wi
 influences: ["All subsequent Christian theology (especially Augustine, Luther, modern Protestant theology)", "Marcionism (which canonized only Paul + edited Luke)", "Gnostic exegesis (Valentinians treated Paul as their own; Elaine Pagels)", "Western soteriology, anthropology, and ethics", "the Apostolic Fathers — Paul is quoted densely by [[phase-4-062-1-clement|1 Clement]] (~+95), [[phase-4-063-ignatius-letters|Ignatius]] (~+108), and especially [[phase-4-066-polycarp-philippians|Polycarp]] (whose letter is the densest 2nd-c. external witness to a substantially complete Pauline-corpus collection)"]
 deities-mentioned: ["[[yahweh]]", "[[jesus-of-nazareth]]"]
 events-context: ["Paul's conversion (~+34)", "Council of Jerusalem (~+49)", "First and Second Missionary Journeys (~+47/+52, +52/+55)", "Paul's collection for Jerusalem (~+55/+57)", "Paul's arrest in Jerusalem (~+58)"]
+hub-edges:
+  - target: "theme-soma-haoma-eucharist"
+    type: "earliest-extant-Eucharist-text"
+    source: "Jewett 2007 *Romans*; 1 Corinthians 10:14-22 + 11:23-26 (the institution-narrative — the earliest Eucharist documentation in any Christian text, ~54 CE, predating the Synoptic Gospels) — 1 Cor 10:16 calls the Eucharistic cup *to potērion tēs eulogias* ('the cup of blessing') = the Hebrew Passover *kos ha-berakha* (third Seder cup). Paul's identification makes explicit that the Eucharistic cup IS the third Passover cup, re-interpreted as the blood of Christ. See [[theme-soma-haoma-eucharist]]"
+    notes: "MASSIVE-WIN: 1 Cor 10:16-21 is the earliest extant Christian Eucharist text (~54 CE) AND the explicit philological link to the Hebrew Passover kos ha-berakha terminology. The transmission chain Vedic Soma → Iranian Haoma → Dionysian wine → Passover cup → Christian Eucharist passes through Paul. Cross-lens: 02_documents → 06_themes"
+  - target: "theme-dying-founder-paradigm"
+    type: "earliest-systematic-articulation-of-paradigm"
+    source: "Brown 1994 *The Death of the Messiah*; Moltmann 1972 *The Crucified God*; Pauline Epistles esp. 1 Corinthians 1:18-25 + Galatians 3:1 + Romans 6 — Paul's letters are the earliest extant Christian texts (~50-58 CE) and the founding systematic theology of the dying-founder paradigm: 'we preach Christ crucified — a stumbling block to Jews and foolishness to Gentiles' (1 Cor 1:23); 'I decided to know nothing among you except Jesus Christ and him crucified' (1 Cor 2:2). The crucifixion-as-organizing-content theology IS Paul's invention. See [[theme-dying-founder-paradigm]]"
+  - target: "executed-divine-claimant"
+    type: "earliest-Christian-articulation-of-pattern"
+    source: "Brown 1994; Sanders 1985 *Jesus and Judaism* — Paul's letters articulate the executed-divine-claimant paradigm at its founding moment: the crucifixion as both scandal (to outside observers) AND cosmic-redemptive event (to insiders). The pattern that later runs through al-Hallaj + Mani + Bruno is given its first articulate theology in 1 Cor 1-2. See [[executed-divine-claimant]]"
 status: "full"
 preservation: "Earliest substantial witness: **P46 (Chester Beatty II)**, ~+200, containing most of the Pauline corpus. Earlier scrap: P32 (Titus, ~+175). The 'Pauline corpus' as a unit appears to have been assembled and circulated quite early (by ~+90/+100); Marcion's canonical Pauline collection (~+140) testifies to its established status."
 refs:

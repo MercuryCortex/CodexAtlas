@@ -22,6 +22,11 @@ influenced-by: ["earlier Canaanite oral mythological tradition (no direct earlie
 influences: ["Hebrew Bible chaoskampf residues (Ps 74:13–14; Isa 27:1, 51:9–10; Job 26:12–13); prophetic anti-Baal polemic (Hosea, Jeremiah); broader Mediterranean storm-god myth"]
 deities-mentioned: ["[[baal-hadad]]", "[[el-canaanite]]", "[[asherah]]", "[[anat]]", "[[mot]]", "[[yam]]", "[[dagon]]"]
 events-context: ["Late Bronze Age Ugarit — a Syrian coastal kingdom, Egyptian and then Hittite vassal; destroyed ~1185 BCE in the Late Bronze Age collapse"]
+hub-edges:
+  - target: "theme-el-yahweh-merger"
+    type: "Canaanite-source-text-of-merger"
+    source: "Smith 2002 *The Early History of God*; Cross 1973 *Canaanite Myth and Hebrew Epic*; Day 2000 — the Baal Cycle (KTU 1.1-1.6, Ugarit ~1400-1200 BCE) is the founding documentary witness to the Canaanite pantheon (El + Baal + Asherah + Anat + Mot + Yam) that Israelite religion subsequently absorbs into YHWH. El's *patriarch-of-divine-council* profile + Baal's *storm-warrior* profile + Yam-the-Sea's *chaoskampf-adversary* role all reappear in Hebrew Bible refracted through the El-YHWH merger. See [[theme-el-yahweh-merger]]"
+    notes: "MASSIVE-WIN: the Baal Cycle is the *most direct documentary witness* to the Canaanite religious world that Israelite monotheism emerges from. Cross-lens: 02_documents → 06_themes"
 status: "full"
 preservation: "Six cuneiform tablets (KTU 1.1, 1.2, 1.3, 1.4, 1.5, 1.6 — abbreviated CTA 1–6 in the older Herdner edition) discovered 1929–1933 at Ras Shamra (Ugarit) by Claude F.-A. Schaeffer's French archaeological mission. Tablets are in poor preservation in many sections; the sequence and even the relative order of some tablets is partly reconstructive. Smaller related fragments (KTU 1.7–1.13) supplement the cycle. The colophons identify the scribe Ilimilku (ʾilmlk) son of Igušaru, working under Niqmaddu (probably Niqmaddu II, ~1350 BCE)."
 refs:

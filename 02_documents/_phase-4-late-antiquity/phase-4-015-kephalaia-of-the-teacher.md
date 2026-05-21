@@ -22,6 +22,11 @@ influenced-by: ["Mani's own teaching (Šābuhragān, Living Gospel, Treasure of 
 influences: ["later Manichaean theology across Roman, Iranian, Central Asian, and Chinese contexts"]
 deities-mentioned: ["[[father-of-greatness]]", "[[prince-of-darkness-manichaean]]", "[[jesus-the-splendor]]", "[[the-living-spirit]]", "[[the-mother-of-life]]"]
 events-context: []
+hub-edges:
+  - target: "theme-manichaeism-synthesis"
+    type: "fullest-systematic-source"
+    source: "Gardner 1995 *The Kephalaia of the Teacher*; Tardieu 2008; Lieu 1992; Pettipiece 2009 *Pentadic Redaction in the Manichaean Kephalaia* — the Coptic Kephalaia (Berlin Kephalaia ~520 pages + Dublin Kephalaia ~400+ pages) together constitute our fullest single source on Manichaean cosmology + praxis. The text systematically expounds Mani's two-principle cosmology + the light-extraction soteriology + the prophetic chain + the Elect/Auditor distinction. See [[theme-manichaeism-synthesis]]"
+    notes: "Cross-lens: 02_documents → 06_themes. The Medinet Madi codices (~1929-30 discovery) are among the great Manichaean manuscript finds of the 20th century"
 status: "metadata"
 preservation: "Two Coptic codices from Medinet Madi (Fayyum, Egypt) acquired 1929–30 — among the great Manichaean manuscript discoveries. The 'Berlin Kephalaia' (~520 pages) and the 'Dublin Kephalaia' (~~400+ pages) survive in poor condition; editing has continued since the 1930s and remains incomplete. Together they constitute our fullest single source on Manichaean cosmology and praxis."
 refs:

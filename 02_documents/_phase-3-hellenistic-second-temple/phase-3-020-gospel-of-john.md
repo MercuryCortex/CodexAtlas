@@ -22,6 +22,18 @@ influenced-by: ["Synoptic Gospel tradition (whether direct dependence or indepen
 influences: ["Christian high Christology (Nicaea, Chalcedon)", "Christian mysticism (Origen, Eckhart, the entire mystical tradition reads through John)", "Gnostic Christianity (Valentinians: Heracleon wrote the earliest extant Bible commentary on John)", "Mandaean Johannite tradition (John the Baptist)", "All subsequent Trinitarian theology"]
 deities-mentioned: ["[[yahweh]]", "[[jesus-of-nazareth]]", "[[logos-johannine]]", "[[holy-spirit]]"]
 events-context: ["Jesus's ministry, passion, resurrection (~+30/+33)", "Expulsion of Christians from synagogues (the *aposynagōgos* of John 9:22; 12:42; 16:2 — post-70 Yavneh-era)"]
+hub-edges:
+  - target: "theme-two-powers-in-heaven"
+    type: "Christological-canonical-text"
+    source: "Boyarin 2004 *Border Lines*; Boyarin 2012 *The Jewish Gospels*; Segal 1977; Bauckham 2008 *Jesus and the God of Israel* — John 1:1-18 ('In the beginning was the Word, and the Word was with God, and the Word was God... And the Word became flesh') is the *defining text* of the Christian Two-Powers theology that Boyarin documents as the Christianized particularization of pre-Christian Jewish binitarian tradition. The Logos becomes flesh in Jesus — Christianity preserves what Judaism subsequently expunged in Aher's flogging of Metatron. See [[theme-two-powers-in-heaven]]"
+    notes: "MASSIVE-WIN: John 1's prologue is the single most consequential ~18-verse passage in Christian theology — establishing the high Christology + the Logos-incarnate doctrine that Nicaea (325) + Chalcedon (451) crystallize. Cross-lens: 02_documents → 06_themes"
+  - target: "theme-holy-spirit-sophia"
+    type: "Paraclete-text-of-feminine-third"
+    source: "Brown 1966 *The Gospel According to John*; Quispel 1974 'The Spirit as Mother in the Gospel of the Hebrews'; Engelsman 1979 — the Johannine Paraclete texts (John 14:16-17, 14:26, 15:26, 16:7-15) develop the third-person-of-Trinity vocabulary (*paraklētos* = Advocate / Comforter) that subsequently fuses with the Hebrew *ruach ha-qodesh* + Greek *pneuma hagion* feminine-suppressed-third pattern. See [[theme-holy-spirit-sophia]]"
+  - target: "theme-soma-haoma-eucharist"
+    type: "high-Eucharist-canonical-text"
+    source: "Kerényi 1976; BeDuhn 2000 *The Manichaean Body* (for the cross-tradition Eucharist context) — John 6:53-56 ('Unless you eat the flesh of the Son of Man and drink his blood, you have no life in you... whoever eats my flesh and drinks my blood abides in me') is the high-Eucharist text of Christian canon — the most explicit drinking-the-substance = drinking-the-god formulation in the New Testament, structurally parallel to the Vedic Soma + Bacchic *entheos* logic. See [[theme-soma-haoma-eucharist]]"
+    notes: "Cross-lens: 02_documents → 06_themes"
 status: "full"
 preservation: "**P52 (Rylands Papyrus 457), ~+125**, a credit-card-sized fragment of John 18 — the oldest surviving New Testament fragment, demonstrating John's circulation in Egypt within decades of composition. Substantial early witnesses: P66 (Bodmer II, ~+200, nearly complete) and P75 (Bodmer XIV/XV, ~+175/+225). Complete: Vaticanus, Sinaiticus."
 refs:

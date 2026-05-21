@@ -22,6 +22,14 @@ influenced-by: ["Elchasaite baptists (Jewish-Christian sect)", "Jewish-Christian
 influences: ["[[phase-4-015-kephalaia-of-the-teacher]]", "later Manichaean hagiography"]
 deities-mentioned: ["[[father-of-greatness]]", "[[jesus-the-splendor]]"]
 events-context: ["[[event-mani-execution-274-or-277]]"]
+hub-edges:
+  - target: "theme-manichaeism-synthesis"
+    type: "autobiographical-foundational-text"
+    source: "Tardieu 2008 *Manichaeism*; Lieu 1992 *Manichaeism in the Later Roman Empire and Medieval China*; Koenen & Römer 1988 *Der Kölner Mani-Kodex* — the Cologne Mani Codex (CMC) is the autobiographical foundational text of Manichaeism — Mani's own first-person account (via disciple transmission) of his commissioning visions by the heavenly Twin (*al-Tawm*) at age 12 + 24, his break with the Elkasaites, and the inception of his deliberate-synthesis project. See [[theme-manichaeism-synthesis]]"
+    notes: "MASSIVE-WIN: the smallest known antique codex (4.5×3.8 cm) contains the densest single biographical witness to the first global religious synthesis. Cross-lens: 02_documents → 06_themes"
+  - target: "third-century-collision-zone"
+    type: "Manichaean-tradition-document"
+    source: "BeDuhn 'The Co-formation of the Manichaean and Zoroastrian Religions'; Tardieu 2008 — the CMC documents Mani's prophetic call (age 24, ~240 CE) at the start of the 200-280 CE synthesis-window. Mani's deliberate prophetic-chain (Adam → Buddha → Zarathustra → Jesus → Mani) IS the explicit articulation of the synthesis-as-program that the collision-zone produces across multiple traditions simultaneously. See [[third-century-collision-zone]]"
 status: "metadata"
 preservation: "A miniature Greek parchment codex, ~192 surviving pages, identified in 1969 by Albert Henrichs and Ludwig Koenen among manuscripts the University of Cologne had acquired (the *Kölner Mani-Kodex* was thus identified 25 years after Nag Hammadi). Acquired in Egypt; the texts are translations from Aramaic Manichaean sources. Editio princeps Koenen & Römer 1988. Among the most important Manichaean discoveries of the 20th century — gives Mani's own biography in first-person and witness-quotation form."
 refs:

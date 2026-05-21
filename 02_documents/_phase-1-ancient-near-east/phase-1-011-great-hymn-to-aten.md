@@ -22,6 +22,11 @@ influenced-by: ["earlier 18th-Dynasty solar hymns to Amun-Ra and Ra-Horakhty (e.
 influences: ["(contested) Hebrew Bible Psalm 104; (contested, indirect) later monotheistic theology via Egyptian-Hebrew contact under the New Kingdom"]
 deities-mentioned: ["[[aten]]"]
 events-context: ["Reign of Amenhotep IV / Akhenaten (~1353–1336 BCE); the Amarna religious reform"]
+hub-edges:
+  - target: "theme-akhenaten-moses-monotheism-thesis"
+    type: "founding-primary-text-of-hypothesis"
+    source: "Assmann 1997 *Moses the Egyptian*; Assmann 2008 *The Price of Monotheism*; Redford 1984 *Akhenaten: The Heretic King*; Lichtheim 1976 — the Great Hymn to the Aten (~1340 BCE, tomb of Ay at Amarna) is THE founding primary text of the Akhenaten-Moses monotheism hypothesis. The structural parallels with Psalm 104 (Assmann's most-cited textual evidence) + the document's articulation of exclusive monotheism (first documented case in human history) + its subsequent erasure under Tutankhamun together provide the textual basis Freud 1939, Assmann 1997, and modern Egyptology debate. See [[theme-akhenaten-moses-monotheism-thesis]]"
+    notes: "MASSIVE-WIN: the Great Hymn IS the single document at the center of the monotheism-origin debate — its preservation in Ay's tomb + the Psalm 104 parallel is the most directly documented Egyptian-Hebrew literary connection. Cross-lens: 02_documents → 06_themes"
 status: "full"
 preservation: "Inscribed in the tomb of Ay (the courtier who later became pharaoh) at Amarna — Northern Tombs no. 25. A shorter version is preserved in several other Amarna tombs, including those of Apy, Tutu, Mahu, Meryra II, and Suti. The hymn's destruction was as deliberate as its inscription: after Akhenaten's death and Tutankhamun's restoration of Amun-Ra, the Amarna religious texts were systematically erased, the city of Akhetaten abandoned, and the king listed as 'the heretic' in later king lists. Surviving inscriptions are damaged but legible."
 refs:

@@ -22,6 +22,14 @@ influenced-by: ["1 Enoch (esp. Animal Apocalypse, contemporary)", "Persian / Zor
 influences: ["New Testament eschatology — Mark 13 'desolating sacrilege' explicitly quotes Daniel; the 'Son of Man' of the Gospels is Daniel 7's figure", "Book of Revelation (modeled structurally on Daniel)", "All subsequent Jewish and Christian apocalyptic literature", "Islamic eschatology (Dajjal partly modeled on Daniel's beast)"]
 deities-mentioned: ["[[yahweh]]", "[[ancient-of-days]]", "[[michael-archangel]]", "[[gabriel-archangel]]"]
 events-context: ["Antiochus IV Epiphanes's persecution of Jews (-167/-164)", "Desecration of the Temple (-167)", "Maccabean revolt (-167/-160)"]
+hub-edges:
+  - target: "persian-period-injection"
+    type: "documentary-witness-of-injection-channels"
+    source: "Collins 1993 *Daniel*; Collins 1998 *The Apocalyptic Imagination*; Hultgård 1998; Dobroruka 2022 *Persian Influence on Daniel and Jewish Apocalyptic Literature* — Daniel (~165 BCE final form) documents multiple Persian-period injection channels concurrently: (1) Daniel 12:2 is the FIRST UNAMBIGUOUS resurrection-of-the-dead text in the Hebrew Bible (Channel 5); (2) Daniel 7's Son of Man + Ancient of Days vision establishes the messianic-future-savior + binitarian template (Channels 3 + 4); (3) Daniel 10-12's named angelic princes (Michael, Gabriel) is the angelology Channel 4; (4) the four-kingdoms schema + final-battle eschatology is Persian-influenced apocalyptic. Dobroruka 2022 documents Persian influence at the document level. See [[persian-period-injection]]"
+    notes: "MASSIVE-WIN: Daniel is the most concentrated single Hebrew-canon document of Persian-period injection — multi-channel operation in a single late-2nd-c. BCE apocalyptic text. Cross-lens: 02_documents → 06_themes"
+  - target: "theme-two-powers-in-heaven"
+    type: "Son-of-Man-Ancient-of-Days-canonical-text"
+    source: "Boyarin 2012 *The Jewish Gospels*; Segal 1977 *Two Powers in Heaven*; Collins 1993 — Daniel 7:13-14 ('one like a son of man came with the clouds of heaven and... was presented before the Ancient of Days') is the founding canonical text of the Two-Powers binitarian theology that subsequently develops through 1 Enoch's Elect One → Metatron → Christological Logos. Boyarin's argument: Daniel 7 is the Hebrew-canon SEED of the Christianized particularization Christianity later achieves. See [[theme-two-powers-in-heaven]]"
 status: "full"
 preservation: "Hebrew-Aramaic Masoretic text + Old Greek (LXX) and Theodotion-Greek (the version the Christian church preferred, displacing the OG); Qumran witnesses (1QDanᵃ, 4QDanᵃ⁻ᵉ, etc.) confirm the Hebrew-Aramaic text by ~-125."
 refs:
