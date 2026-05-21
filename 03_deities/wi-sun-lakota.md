@@ -16,7 +16,7 @@ consort: ["Haŋwí (the Moon)"]
 attributes: ["the sun disk", "the red of sunrise", "the sun dance (Wiwáŋyaŋg Wačhípi)"]
 attested-in: []
 syncretic-edges: []
-status: "stub"
+status: "metadata"
 refs:
   - title: "Lakota Belief and Ritual"
     author: "Walker, James R."

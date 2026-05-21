@@ -31,8 +31,8 @@ syncretic-edges:
     type: "shared-tradition"
     source: "Berndt & Berndt, *The World of the First Australians* (1988) — Wandjina and Baiame represent two of the principal regional Australian Aboriginal creation-ancestor traditions (western Kimberley and south-eastern Australia respectively)"
     notes: "Australian regional creation-ancestor pairing"
-status: "stub"
-status: "stub"
+status: "metadata"
+status: "metadata"
 refs:
   - title: "The Art of the Wandjina: Aboriginal Cave Paintings in Kimberley, Western Australia"
     author: "Crawford, Ian M."

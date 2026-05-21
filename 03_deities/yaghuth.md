@@ -20,7 +20,7 @@ syncretic-edges:
   - target: "[[suwa]]"
     type: "shared-tradition"
     source: "Quran 71:23 — the five antediluvian Arabian deities named together; Ibn al-Kalbi elaborates the tribal assignments"
-status: "stub"
+status: "metadata"
 refs:
   - title: "The Book of Idols (Kitāb al-Aṣnām)"
     author: "Ibn al-Kalbī, Hishām ibn Muhammad; trans. Faris, Nabih Amin"
