@@ -31,7 +31,7 @@ syncretic-edges:
   - target: "tradition-lusitanian-religion"
     type: "presence-in"
     source: "Phoenician temple at Gades; Phoenician commercial presence in Tartessian zone from ~1100 BCE"
-status: "stub"
+status: "metadata"
 refs:
   - title: "Melqart: Cultes et mythes de l'Héraclès tyrien en Méditerranée"
     author: "Bonnet, Corinne"

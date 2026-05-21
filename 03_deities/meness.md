@@ -25,7 +25,7 @@ syncretic-edges:
     type: "structural-parallel"
     source: "West (2007). Indo-European Poetry and Myth. pp. 196–200."
     notes: "GENDER INVERSION: in most Indo-European traditions the moon is female (Selene/Luna/Chandra) and the sun male. Baltic is the paradigmatic exception: [[saule]] is female (sun) and Mēness is male (moon). West (2007) uses this Baltic evidence to argue that the PIE solar deity may have been feminine, with the masculine-solar pattern being a later development in some branches. Mēness's masculinity is thus cosmologically significant beyond Baltic religion."
-status: "stub"
+status: "metadata"
 refs:
   - title: "The Balts"
     author: "Gimbutas, Marija"
