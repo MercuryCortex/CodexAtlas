@@ -11,6 +11,14 @@ key-persons: ["[[shankara]]", "Rāmānuja (1017–1137, counter-systematizer, Vi
 key-documents: ["Brahmasūtras of Bādarāyaṇa (~+200 CE)", "Upanishads (especially Brihadāranyaka, Chāndogya, Māndūkya, Taittirīya, Aitareya)", "Bhagavad Gītā", "Shankara's *Brahmasūtra Bhāshya*, *Māndūkya Kārikā Bhāshya*, *Vivekacūdāmaṇi*"]
 key-themes: ["[[idealism-metaphysical]]", "[[divine-immanence]]", "[[henosis]]", "[[reincarnation]]", "[[soul-immortality]]", "[[emptiness-sunyata]]"]
 sister-traditions: ["[[tradition-vedic-hinduism]]", "[[tradition-bhakti-vaishnavism]]", "[[tradition-buddhism]]", "[[tradition-gnosticism]]", "[[tradition-hermeticism]]", "[[tradition-neoplatonism]]"]
+hub-edges:
+  - target: "soul-exile-longing"
+    type: "Vedantic-epistemological-exile-tradition"
+    source: "Deutsch 1969 *Advaita Vedānta*; Isayeva 1993; Mayeda 1979 — Advaita Vedānta is the philosophically *quietest* version of the cross-tradition pattern: *jīva* IS Brahman, exile is epistemological (*avidyā*), liberation is *vivekakhyāti*. *Tat tvam asi*. See [[soul-exile-longing]]"
+    notes: "MASSIVE-WIN: 07_traditions → 06_themes. Advaita sharpens the cluster by contrast with Gnostic + Sufi + Neoplatonic ontological readings"
+  - target: "neoplatonic-henosis"
+    type: "Indic-mystical-union-tradition"
+    source: "Sells 1994; Deutsch 1969 — Advaita's *samādhi* + *jīvanmukti* via nirguṇa-Brahman is the strongest cross-tradition structural convergence with Plotinian henosis. See [[neoplatonic-henosis]]"
 status: "metadata"
 refs:
   - title: "A Source Book in Indian Philosophy"

@@ -10,6 +10,17 @@ key-deities: ["[[allah]]"]
 key-persons: ["[[muhammad-ibn-abdullah]]", "[[khadija-bint-khuwaylid]]", "[[abu-bakr]]", "[[umar-ibn-al-khattab]]", "[[uthman]]", "[[ali-ibn-abi-talib]]", "[[aisha-bint-abi-bakr]]", "[[muawiya-ibn-abi-sufyan]]", "[[ibn-ishaq]]", "[[al-kindi]]", "[[al-farabi]]", "[[ibn-sina|Ibn Sīnā / Avicenna]]", "[[ibn-rushd|Ibn Rushd / Averroes]]", "[[ibn-tufayl]]", "[[al-ghazali]]", "[[ibn-taymiyya]]"]
 key-documents: ["[[phase-4-034-quran]]", "[[phase-5-007-sahih-al-bukhari]]", "[[phase-5-042-sahih-muslim]]", "Other hadith collections (the *Sunan* of Abū Dāwūd, al-Tirmidhī, al-Nasāʾī, Ibn Mājah — the *Kutub al-Sitta* / Six Books)", "[[phase-5-043-ibn-ishaq-sirat-rasul-allah]] (Sira)", "[[phase-5-009-tabari-tafsir]] (Tafsir + Tārīkh)", "[[phase-5-044-ibn-sina-kitab-al-shifa]] (falsafa)", "[[phase-5-045-al-ghazali-tahafut-al-falasifa]] + [[phase-5-046-ibn-rushd-tahafut-al-tahafut]] (the Tahafut controversy)", "[[phase-5-015-al-ghazali-ihya]]"]
 sister-traditions: ["[[tradition-pre-islamic-arabian]] (parent religious milieu)", "[[tradition-judaism]]", "[[tradition-christianity-canonical]]", "[[tradition-ethiopian-orthodox-tewahedo]] (Aksumite-Arabian late-antique context)", "[[tradition-mandaeism]]", "[[tradition-sufism]]", "[[tradition-shia-islam]]", "[[tradition-ismailism]]", "[[tradition-yazidi]]", "[[tradition-druze]]", "[[tradition-baha-i]]"]
+hub-edges:
+  - target: "merkabah-miraj-ascent-chain"
+    type: "Islamic-recipient-tradition-of-ascent"
+    source: "Schäfer 2009 *Mohammed's Journey to Heaven*; Ibn Ishaq *Sirat Rasul Allah*; Schimmel 1975 — Islam inherits + transforms the Jewish heavenly-ascent tradition via Muhammad's Mi'raj (619 CE). Schäfer 2009 documents specific Hekhalot parallels confirming transmission via Arabian Jewish communities. See [[merkabah-miraj-ascent-chain]]"
+    notes: "MASSIVE-WIN: 07_traditions → 06_themes"
+  - target: "theme-solomonic-transmission-spine"
+    type: "Thread-3-Islamic-Sulayman-tradition"
+    source: "Torijano 2002; Quran 27:17, 34:12-14, 38:36-40 — Sulayman (Solomon) as Quranic prophet-king commanding jinn = seedbed for Islamic demonology + grimoire tradition feeding Western ceremonial magic. See [[theme-solomonic-transmission-spine]] Thread 3"
+  - target: "theme-akhenaten-moses-monotheism-thesis"
+    type: "Abrahamic-downstream-tradition"
+    source: "Assmann 1997; Assmann 2008 — Islam is the third Abrahamic monotheism inheriting the exclusive-worship structure the Akhenaten-Moses hypothesis traces to ultimate origin. Tawhid is the most uncompromising monotheistic articulation in any Abrahamic tradition. See [[theme-akhenaten-moses-monotheism-thesis]]"
 status: "metadata"
 refs:
   - title: "Muhammad and the Believers"

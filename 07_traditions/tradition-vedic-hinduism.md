@@ -11,6 +11,17 @@ key-deities: ["[[indra]]", "[[agni]]", "[[varuna]]", "[[soma]]", "[[mitra-vedic]
 key-persons: []
 key-documents: ["[[phase-2-001-rig-veda-family-books]]", "[[phase-2-003-atharva-veda]]", "[[phase-2-006-brahmanas-aranyakas]]", "[[phase-2-012-brihadaranyaka-upanishad]]", "[[phase-2-013-chandogya-upanishad]]", "[[phase-2-017-mahabharata-ramayana-oral-layers]]"]
 sister-traditions: ["[[tradition-zoroastrianism]]", "[[tradition-buddhism]]", "[[tradition-jainism]]"]
+hub-edges:
+  - target: "asura-deva-inversion"
+    type: "Vedic-side-pre-inversion-tradition"
+    source: "West 2007 ch. 7; Boyce 1975 vol. 1; Jamison & Brereton 2014 — Vedic Hinduism preserves the *pre-inversion* state: *devas* benevolent, *asuras* (esp. Varuṇa) positive in earliest stratum. The Zoroastrian Gathic reform inverts this; Rigveda = baseline against which inversion is measured. See [[asura-deva-inversion]]"
+    notes: "MASSIVE-WIN: 07_traditions → 06_themes"
+  - target: "theme-soma-haoma-eucharist"
+    type: "Vedic-branch-tradition-of-sacred-drink-chain"
+    source: "Jamison & Brereton 2014; Falk 1989 — Rigveda Mandala 9 = 114 hymns to Soma Pavamāna = Vedic-branch witness to the 3,500-year sacred-drink transmission chain. See [[theme-soma-haoma-eucharist]]"
+  - target: "bmac-proto-zoroastrian"
+    type: "downstream-tradition-of-PII-substrate"
+    source: "Anthony 2007 ch. 16; Witzel 1998; Sarianidi 1998 — Vedic Hinduism + Zoroastrianism are SIBLING traditions from the BMAC Proto-Indo-Iranian archaeological substrate. See [[bmac-proto-zoroastrian]]"
 key-themes:
   - "[[asura-deva-inversion]]"
   - "[[dying-rising-god]]"

@@ -11,6 +11,17 @@ key-deities: ["[[allah]]"]
 key-persons: ["[[ismail-ibn-jafar]]", "[[al-muizz-fatimid]]", "[[hasan-i-sabbah]]", "[[al-kirmani]]", "[[nasir-i-khusraw]]"]
 key-documents: ["[[phase-5-011-rasail-ikhwan-al-safa]]", "the Fatimid daʿwa corpus (Sijistānī, Kirmānī, Muʾayyad fī al-Dīn al-Shīrāzī)", "Nizārī esoteric texts"]
 sister-traditions: ["[[tradition-shia-islam]] (Imami/Twelver)", "[[tradition-sufism]]", "[[tradition-neoplatonism]]"]
+hub-edges:
+  - target: "occultation-hidden-imam"
+    type: "Sevener-Shia-variant-of-occultation"
+    source: "Daftary 2007 *The Ismāʿīlīs: Their History and Doctrines*; Walker 1993 *Early Philosophical Shiism*; Amir-Moezzi 1994 — Ismailism is the Sevener-branch Shiʿa variant of the occultation doctrine (Imam-line through Ismaʿil ibn Jaʿfar). Modern Nizari Ismailism (Aga Khan) is the most active surviving community. See [[occultation-hidden-imam]]"
+    notes: "Cross-lens: 07_traditions → 06_themes"
+  - target: "neoplatonic-henosis"
+    type: "Islamic-Neoplatonist-philosophical-tradition"
+    source: "Walker 1993; Daftary 2007 — Fatimid-period Ismaili dāʿīs (al-Kirmānī, al-Sijistānī, Nāṣir-i Khusraw) develop the most explicitly Neoplatonist Islamic philosophical tradition. Ismaili cosmology of emanated Intellect + Soul + spheres = direct parallel to Plotinian One → Nous → Soul. See [[neoplatonic-henosis]]"
+  - target: "hermetic-transmission-chain"
+    type: "Islamic-channel-of-Hellenistic-transmission"
+    source: "Walker 1993; Daftary 2007; Hanegraaff 2012 — Ismailism is one of the Islamic-philosophical channels preserving late-antique Neoplatonist + Hermetic material. The *Rasāʾil Ikhwān al-Ṣafāʾ* (10th c. Basra/Baghdad, traditionally Ismaili-associated) is the densest compendium of Hellenistic philosophy in Arabic. See [[hermetic-transmission-chain]]"
 key-themes:
   - "[[messianic-future-savior]]"
   - "[[theme-apophatic-theology]]"

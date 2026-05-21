@@ -11,6 +11,23 @@ key-deities: []
 key-persons: ["[[siddhartha-gautama-buddha]]", "[[ananda-disciple]]", "[[mahakasyapa]]", "[[shariputra]]", "[[asoka-maurya]]", "[[menander-i-soter]]", "[[nagasena]]", "[[kanishka]]", "[[buddhaghosa]]", "[[nagarjuna]]", "[[xuanzang]]", "[[atisa]]"]
 key-documents: ["[[phase-2-016-early-buddhist-suttas]]", "[[phase-2-029-dhammapada]]", "[[phase-3-029-milindapanha]]", "[[phase-3-030-asokan-edicts]]", "[[phase-3-031-asthasahasrika-prajnaparamita]]", "[[phase-4-075-mulamadhyamakakarika]]", "[[phase-4-076-visuddhimagga]]", "[[phase-5-002-heart-sutra]]", "[[phase-5-002b-diamond-sutra]]"]
 sister-traditions: ["[[tradition-jainism]]", "[[tradition-vedic-hinduism]]", "[[tradition-theravada-buddhism]]", "[[tradition-mahayana-buddhism]]", "[[tradition-vajrayana-buddhism]]", "[[tradition-zen]]", "[[tradition-pure-land-buddhism]]", "[[tradition-greco-buddhism]]"]
+hub-edges:
+  - target: "theme-gandharan-buddhism"
+    type: "tradition-of-Greco-Buddhist-synthesis"
+    source: "Tanabe 2003; Foucher 1905-1951; Boardman 1994 — Buddhism is the Indic-tradition pole of the Gandhāran Greco-Buddhist synthesis (1st-3rd c. CE). The first anthropomorphic Buddha images emerge from Gandhāran sculptors drawing on Apollo's iconographic conventions; Vajrapāṇi gets Heracles's body. Every Buddha image worldwide carries Apollo's iconographic DNA via this synthesis. See [[theme-gandharan-buddhism]]"
+    notes: "MASSIVE-WIN: 07_traditions → 06_themes"
+  - target: "soul-exile-longing"
+    type: "structural-outlier-tradition"
+    source: "Gombrich 1996 *How Buddhism Began*; Jonas 1963 — Buddhism is the STRUCTURAL OUTLIER in the cross-tradition cluster: shares dukkha phenomenology but inverts the metaphysics. Has the exile experience while denying the exiled entity. See [[soul-exile-longing]]"
+  - target: "theme-manichaeism-synthesis"
+    type: "claimed-predecessor-tradition"
+    source: "Tardieu 2008; Lieu 1992 — Buddhism is one of Mani's synthesis sources via the prophetic chain (Buddha → Zarathustra → Jesus → Mani). Manichaean missions ride Silk Road into Buddhist Central Asia + China as *Mingjiao*. See [[theme-manichaeism-synthesis]]"
+  - target: "theme-dying-founder-paradigm"
+    type: "non-violent-instance-tradition"
+    source: "Gombrich 1996; Schumann 1989 — Buddhism is the rare non-violent instance: Buddha dies of natural causes age 80; the parinirvāṇa is founding-event without execution-violence. See [[theme-dying-founder-paradigm]]"
+  - target: "occultation-hidden-imam"
+    type: "Buddhist-parallel-via-Maitreya"
+    source: "Sponberg & Hardacre 1988 *Maitreya, the Future Buddha*; Gnoli 1987 EIr — Maitreya in Tuṣita heaven = Buddhist structural analog of Shiʿa Hidden Imam in ghayba. See [[occultation-hidden-imam]]"
 status: "metadata"
 refs:
   - title: "How Buddhism Began"

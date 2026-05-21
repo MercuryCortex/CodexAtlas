@@ -11,6 +11,15 @@ key-deities: ["[[allah]]"]
 key-persons: ["[[ali-ibn-abi-talib]] (1st Imam)", "[[hasan-ibn-ali]] (2nd Imam)", "[[husayn-ibn-ali]] (3rd Imam — martyr of Karbala)", "[[ali-zayn-al-abidin]] (4th Imam)", "[[muhammad-al-baqir]] (5th Imam)", "[[jafar-al-sadiq]] (6th Imam — eponym of Ja'fari jurisprudence)", "[[musa-al-kazim]] (7th Imam)", "[[ali-al-rida]] (8th Imam — shrine at Mashhad)", "[[muhammad-al-jawad]] (9th Imam)", "[[ali-al-hadi]] (10th Imam)", "[[hasan-al-askari]] (11th Imam)", "[[muhammad-al-mahdi-person]] (12th Imam — Hidden Imam, in occultation)", "[[suhrawardi]] (broadly Shi'a-leaning)", "Mulla Sadra (Phase 6)"]
 key-documents: ["[[phase-5-058-nahj-al-balagha]] (sayings of Ali, compiled by al-Sharif al-Radi ~1009)", "Twelver Shi'a hadith collections (al-Kulayni's *al-Kafi* ~941; al-Tusi's *Tahdhib*; Ibn Babawayh's *Man la yahduruhu al-faqih*)"]
 sister-traditions: ["[[tradition-islam]] (Sunni)", "[[tradition-ismailism]] (Sevener Shi'a branch)", "[[tradition-sufism]] (substantial overlap)"]
+hub-edges:
+  - target: "occultation-hidden-imam"
+    type: "namesake-tradition-of-occultation"
+    source: "Madelung EI2 'al-Mahdī'; Amir-Moezzi 1994; Sachedina 1981; Gnoli 1987 EIr — Twelver Shiʿa Islam IS the namesake tradition of the Hidden-Imam occultation doctrine. The Twelfth Imam (al-ʿAskarī's son) entered Lesser Occultation 874 CE; doctrine crystallized in 9th-10th c. Iran when population was still majority-Zoroastrian. The Saoshyant template was culturally available exactly when Twelver doctrine formed. See [[occultation-hidden-imam]]"
+    notes: "MASSIVE-WIN: 07_traditions → 06_themes. Cleanest documented Iranian → Islamic theological transmission"
+  - target: "theme-dying-founder-paradigm"
+    type: "tradition-organized-around-Karbala-martyrdom"
+    source: "Schimmel 1975; Pinault 1992 *The Shiites* — Shiʿa identity IS organized around Karbala (680 CE): Hussein + 72 companions killed by Yazid's forces. Ashura commemoration (10 Muharram) is the most emotionally intense Shiʿa observance. To be Shiʿa = to identify with Hussein's martyred cause. See [[theme-dying-founder-paradigm]]"
+status: "metadata"
 key-themes:
   - "[[messianic-future-savior]]"
   - "[[martyrdom-theology]]"
