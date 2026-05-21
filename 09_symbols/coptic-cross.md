@@ -20,7 +20,7 @@ appearances:
   - "[[phase-1-010-book-of-the-dead]]"
   - "[[phase-3-016-gospel-of-mark]]"
 deity-instances:
-  - "[[isis]]"
+  - "[[isis-egyptian]]"
   - "[[christ-pantokrator]]"
 tradition-context:
   - "[[tradition-egyptian]]"

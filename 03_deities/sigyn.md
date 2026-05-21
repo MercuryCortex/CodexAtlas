@@ -16,7 +16,7 @@ consort: ["[[loki]]"]
 attributes: ["bowl (held above Loki's face to catch venom)", "steadfastness", "the moment of catastrophe when the bowl is emptied"]
 attested-in: []
 syncretic-edges:
-  - target: "[[isis]] (devoted wife who never abandons the broken/scattered divine body)"
+  - target: "[[isis-egyptian]] (devoted wife who never abandons the broken/scattered divine body)"
     type: "scholarly-parallel"
     source: "Typological: the wife-who-stays as cross-tradition archetype of absolute fidelity; Orchard 1997"
   - target: "[[parvati]] (devoted service to Shiva even through his ascetic withdrawal)"
@@ -68,7 +68,7 @@ Norse goddess of loyalty and devotion; wife of [[loki]] and one of the most spar
 Sigyn's entire mythology is the vigil. After [[loki]] was bound beneath a mountain for engineering [[baldr]]'s death, [[frigg]] having ensured all things swore not to harm Baldr except the mistletoe, and Loki having guided [[odin]]'s blind son Höðr to throw the mistletoe dart — the Æsir bound Loki with the entrails of his son Narfi, transformed into iron fetters, with a serpent fastened above his face to drip venom. Sigyn chose to remain. She holds the bowl. She saves him from full venom-agony for as long as she can stand it — and when she cannot, the earth shakes. The Norse tradition thus explains earthquakes not as tectonic events but as the consequence of a wife's impossible act of compassion reaching its limit. In this she stands apart from the gods who bound her husband — she is the only Aesir-adjacent figure who refuses the community's judgment.
 
 ## Cross-tradition identifications
-- **[[isis]]** — *scholarly-parallel*: Isis's patient reassembly of [[osiris]]'s scattered body, her flight through Egypt, her refusal to abandon her murdered husband — the greatest parallel in ancient religion to Sigyn's vigil. Both are wives who stay when the male god is broken. Both operate outside the revenge/justice framework that otherwise structures their mythology. The typological resonance is profound even without genetic connection.
+- **[[isis-egyptian]]** — *scholarly-parallel*: Isis's patient reassembly of [[osiris]]'s scattered body, her flight through Egypt, her refusal to abandon her murdered husband — the greatest parallel in ancient religion to Sigyn's vigil. Both are wives who stay when the male god is broken. Both operate outside the revenge/justice framework that otherwise structures their mythology. The typological resonance is profound even without genetic connection.
 - **[[parvati]]** — *scholarly-parallel*: Parvati's devoted perseverance alongside Shiva through his ascetic withdrawal, his periods of inaccessibility, the violence of his nature — a pattern of female divine loyalty outlasting male divine extremity.
 - **[[osiris]]** — *scholarly-parallel* (as recipient): as the bound/destroyed god who is sustained by female devotion, Osiris is the counterpart-figure to Loki. Both are divine males whose helplessness is met by female loyalty rather than abandonment.
 - **Grail-as-vessel** — *scholarly-parallel* (motif): Sigyn's bowl is one of mythology's most quietly powerful vessel-images — a container whose function is to hold suffering back, to delay catastrophe. It parallels the Grail's function as a vessel of redemption and grace, and the Buddhist offering bowl as a compassion-gesture. The bowl that catches what would otherwise destroy is a rare and resonant mythological object.

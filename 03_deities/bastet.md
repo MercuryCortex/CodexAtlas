@@ -78,7 +78,7 @@ The annual Bubastis festival described by Herodotus is the principal ritual prac
 ## Cross-tradition identifications
 - **[[artemis]]** — *ancient-identification*: [[herodotus]] *Histories* 2.137 and 2.156 explicitly equate Bastet/Bubastis with Artemis. The identification is structurally reasonable (both are feminine, both are associated with feral / wild creatures, both have animal-associated cult), and it is one of the most stably transmitted Greek-Egyptian theological equations.
 - **[[sekhmet]]** — *ancient-identification*: theologically twin manifestations of feline divine power.
-- **[[isis]]** — *parallel-motif* + late *syncretic-identification*: in Greco-Roman Egypt, Isis absorbs many of Bastet's protective functions.
+- **[[isis-egyptian]]** — *parallel-motif* + late *syncretic-identification*: in Greco-Roman Egypt, Isis absorbs many of Bastet's protective functions.
 
 ## Iconography
 - Early form: **lioness-headed** woman (essentially indistinguishable from Sekhmet in pre-Middle-Kingdom contexts)

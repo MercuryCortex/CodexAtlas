@@ -12,7 +12,7 @@ variants:
   - id: "masonic-five-pointed-blazing"
     description: "The primary Masonic form: a **five-pointed star with radiating rays or flames** at the centre of the lodge ceiling or tracing board. First documented on Masonic tracing boards c. 1730–1740s. The five points connect it to the **Pythagorean pentagram** (*pentalpha*), the five-pointed figure held sacred by the Pythagorean brotherhood. Masonic monitors explicitly describe the Blazing Star as 'the great star in the East' and as a symbol of divine light illuminating the lodge."
   - id: "sirius-dog-star-identification"
-    description: "Albert Pike in *Morals and Dogma* (1871) gives the most explicit identification: 'The Blazing Star in our Lodges ... is the star of the East, Sirius, that blazed so brilliantly and magnificently in the night sky, that it was placed in the centre of the Lodge.' Sirius (Alpha Canis Majoris) is the brightest star in the night sky. In Egyptian religion it was **Sopdet** (Greek *Sothis*), identified with **[[isis]]** in her celestial aspect. Its **heliacal rising** (first appearance at dawn after a period of invisibility) announced the annual Nile flood and the beginning of the Egyptian New Year. This is the **THE MASSIVE WIN**: Masonic Blazing Star → SIRIUS → Egyptian SOPDET/ISIS → the entire Egyptian religious and agricultural calendar cycle encoded in stellar form."
+    description: "Albert Pike in *Morals and Dogma* (1871) gives the most explicit identification: 'The Blazing Star in our Lodges ... is the star of the East, Sirius, that blazed so brilliantly and magnificently in the night sky, that it was placed in the centre of the Lodge.' Sirius (Alpha Canis Majoris) is the brightest star in the night sky. In Egyptian religion it was **Sopdet** (Greek *Sothis*), identified with **[[isis-egyptian]]** in her celestial aspect. Its **heliacal rising** (first appearance at dawn after a period of invisibility) announced the annual Nile flood and the beginning of the Egyptian New Year. This is the **THE MASSIVE WIN**: Masonic Blazing Star → SIRIUS → Egyptian SOPDET/ISIS → the entire Egyptian religious and agricultural calendar cycle encoded in stellar form."
   - id: "divine-light-shekinah"
     description: "In the Hebrew/Kabbalistic reading favoured by the *Régime Écossais Rectifié* and other initiatic Masonic orders, the Blazing Star is the **Shekinah** (שְׁכִינָה, divine presence/glory) — the luminous manifestation of God's presence that filled the Holy of Holies of Solomon's Temple. **[[shekhinah]]** is the divine indwelling female aspect in Kabbalah. The Blazing Star = Shekinah identification is the Masonic-Kabbalistic reading; it integrates the stellar-light of the lodge with the Temple-presence symbolism."
   - id: "polaris-north-star"
@@ -20,7 +20,7 @@ variants:
 appearances:
   - "[[phase-6-026-anderson-constitutions-free-masons]]"
 deity-instances:
-  - "[[isis]]"
+  - "[[isis-egyptian]]"
   - "[[thoth]]"
   - "[[shekhinah]]"
   - "[[pythagoras]]"
@@ -113,7 +113,7 @@ tags: [symbol, astral, masonic, egyptian, pythagorean, hermetic, sirius, isis, f
 
 The **Blazing Star** (*Étoile Flamboyante* in French Masonry) is the radiant stellar emblem at the centre of the **[[tradition-freemasonry|Masonic]]** lodge. Depicted as a **five-pointed (or occasionally six-pointed) star with radiating rays or flames**, it occupies the ceiling of the lodge room or the centre of the tracing board — the pivot-point of the lodge's symbolic architecture. First documented on Masonic tracing boards c. **1730–1740s**, the Blazing Star is identified by Masonic monitors as simultaneously: (a) **Sirius**, the Dog Star; (b) the **letter G** (Geometry/God); (c) divine light, the **Shekinah** (divine presence); (d) **Polaris**, the fixed north star.
 
-**THE MASSIVE WIN in this node**: Albert Pike (*Morals and Dogma*, 1871) explicitly identifies the Masonic Blazing Star as **Sirius**. Sirius in ancient Egypt was **Sopdet** (Greek *Sothis*) — identified with **[[isis]]** in her celestial aspect. Sopdet's **heliacal rising** (first appearance at dawn after 70 days of invisibility, c. July 19 in the ancient calendar) announced the annual Nile flood and the **Egyptian New Year**. The entire Egyptian agricultural-religious calendar was organised around this one stellar event. The chain of transmission: **Masonic Blazing Star → SIRIUS/SOPDET → ISIS → Egyptian Religion** is documented in a Tier-1 primary source (Pike) and grounded in academic Egyptology (Frankfort 1948).
+**THE MASSIVE WIN in this node**: Albert Pike (*Morals and Dogma*, 1871) explicitly identifies the Masonic Blazing Star as **Sirius**. Sirius in ancient Egypt was **Sopdet** (Greek *Sothis*) — identified with **[[isis-egyptian]]** in her celestial aspect. Sopdet's **heliacal rising** (first appearance at dawn after 70 days of invisibility, c. July 19 in the ancient calendar) announced the annual Nile flood and the **Egyptian New Year**. The entire Egyptian agricultural-religious calendar was organised around this one stellar event. The chain of transmission: **Masonic Blazing Star → SIRIUS/SOPDET → ISIS → Egyptian Religion** is documented in a Tier-1 primary source (Pike) and grounded in academic Egyptology (Frankfort 1948).
 
 ## Earliest attestation
 
@@ -127,7 +127,7 @@ The **Blazing Star** (*Étoile Flamboyante* in French Masonry) is the radiant st
 
 - **Masonic primary (G-reading)**: The Blazing Star = G = **Geometry** = the science by which the lodge operates and by which the universe was built. The Grand Architect of the Universe blazes at the centre of the lodge as a star of divine knowledge.
 - **Masonic Sirius-reading (Pike, Mackey)**: The Blazing Star is **Sirius** (Alpha Canis Majoris) — the brightest star in the night sky, the star that blazes most intensely. Pike: *"Sirius still glitters in our lodges as the Blazing Star."* In this reading the lodge is a stellar temple oriented to the Egyptian Dog Star.
-- **Egyptian Sopdet/Sothis**: Sirius in Egyptian religion = **Sopdet**, identified with **[[isis]]** as the weeping mother whose tears cause the Nile to flood. Sopdet's heliacal rising (c. July 19) was the most important astronomical event of the Egyptian year — it announced the *akhet* (inundation) season and began the Egyptian New Year. The Great Pyramid's shafts are aligned to this star (and to Orion/Osiris), embedding Sirius into monumental architecture thousands of years before Freemasonry.
+- **Egyptian Sopdet/Sothis**: Sirius in Egyptian religion = **Sopdet**, identified with **[[isis-egyptian]]** as the weeping mother whose tears cause the Nile to flood. Sopdet's heliacal rising (c. July 19) was the most important astronomical event of the Egyptian year — it announced the *akhet* (inundation) season and began the Egyptian New Year. The Great Pyramid's shafts are aligned to this star (and to Orion/Osiris), embedding Sirius into monumental architecture thousands of years before Freemasonry.
 - **Kabbalistic Shekinah (Régime Écossais Rectifié reading)**: The Blazing Star = **[[shekhinah]]** — the luminous divine presence that filled Solomon's Temple. In this reading the star's light at the lodge-centre IS the divine presence dwelling in the symbolic Temple.
 - **Polaris/axis-mundi reading**: The Blazing Star as **Polaris** (North Star) — the still point around which all creation rotates. The lodge's north orientation maps to the fixed celestial axis. This connects the Blazing Star to the **[[axis-mundi]]** cosmological pattern (Eliade 1959).
 
@@ -138,7 +138,7 @@ See YAML — Five-pointed Masonic blazing form (1730s), Sirius/Dog Star identifi
 ## Cross-family appearance
 
 **Egyptian (Tier 1, fully documented)**:
-- **Sopdet/Sothis** = Sirius in Egyptian religion = **[[isis]]** in her stellar aspect. The heliacal rising of Sirius was the Egyptian New Year and the announcement of the Nile flood (Frankfort 1948). Pike explicitly makes this identification in *Morals and Dogma* (1871) — so this is not speculative; it is documented in the primary Masonic esoteric source.
+- **Sopdet/Sothis** = Sirius in Egyptian religion = **[[isis-egyptian]]** in her stellar aspect. The heliacal rising of Sirius was the Egyptian New Year and the announcement of the Nile flood (Frankfort 1948). Pike explicitly makes this identification in *Morals and Dogma* (1871) — so this is not speculative; it is documented in the primary Masonic esoteric source.
 - The Great Pyramid of Giza's southern shaft from the King's Chamber is aligned to Orion's Belt (Osiris); the Queen's Chamber shaft aligns to Sirius (Sopdet/Isis). This encodes the same stellar theology into monumental architecture.
 
 **Pythagorean (Tier 1)**:

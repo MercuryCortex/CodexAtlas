@@ -126,7 +126,7 @@ This costuming-as-identity-replacement has a near-universal parallel: shamanic a
 **Deity connections**:
 - [[anubis]] — patron of embalming; the jackal who guards the dead and guides them; embalmers wore his mask
 - [[osiris]] — the first mummy; his story is the template for all Egyptian funerary practice
-- [[isis]] — gathered Osiris's dismembered body; the collecting and reassembling is the mythological parallel to the mummifier's work
+- [[isis-egyptian]] — gathered Osiris's dismembered body; the collecting and reassembling is the mythological parallel to the mummifier's work
 - [[horus]] — performs the opening of the mouth on the completed mummy; the son completes the work the mother began
 - [[thoth]] — oversees the ritual spells; the correct invocations at each wrapping stage are Thoth's domain
 - [[ra]] — the sun's daily death and rebirth is the cosmic model that the mummy follows

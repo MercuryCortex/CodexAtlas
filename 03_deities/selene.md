@@ -75,7 +75,7 @@ In Hellenistic and Roman magical practice Selene is the principal **goddess of m
 - **[[artemis]]** — *ancient-identification*: late-Hellenistic lunar Artemis absorbs Selene.
 - **[[isis-hellenistic]]** — *ancient-identification*: Isis as lunar goddess in Apuleius's universal-goddess aretalogy.
 - **Mary as "Stella Maris" and Marian lunar iconography** — *appropriated-by*: medieval and early-modern Christian Mariology absorbs lunar iconography — Mary "clothed with the sun, with the moon under her feet" (Revelation 12:1) is read through and integrates Selene-Isis-Hekate-Artemis lunar-feminine tradition; widespread in medieval and Renaissance Marian art (the *Immaculata* standing on the crescent moon).
-- **[[hathor]] / [[isis]] (Egyptian lunar contexts)** — *parallel-motif* and *syncretic-identification*: Greek-Egyptian magical papyri merge Selene with Egyptian lunar deities (Iah / Khonsu / lunar Isis).
+- **[[hathor]] / [[isis-egyptian]] (Egyptian lunar contexts)** — *parallel-motif* and *syncretic-identification*: Greek-Egyptian magical papyri merge Selene with Egyptian lunar deities (Iah / Khonsu / lunar Isis).
 
 ## Iconography
 - **Crescent moon** atop her head (cresting like horns) — her signature attribute

@@ -10,7 +10,7 @@ period-active-latest: 400
 domains: ["earth", "vegetation", "kingship (the earthly throne)"]
 gender: "masculine"
 role: "earth god; member of the Heliopolitan Ennead"
-parent-of: ["[[osiris]]", "[[isis]]", "[[set]]", "[[nephthys]]"]
+parent-of: ["[[osiris]]", "[[isis-egyptian]]", "[[set]]", "[[nephthys]]"]
 child-of: ["[[shu]]", "[[tefnut]]"]
 consort: ["[[nut]]"]
 attributes: ["green-skinned (vegetation)", "goose hieroglyph (his name's logogram)", "supine posture with Nut arched above him"]

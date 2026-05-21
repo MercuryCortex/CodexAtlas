@@ -90,7 +90,7 @@ Neith (Egyptian *Nt*) is one of the **oldest attested Egyptian deities**, a Pred
 
 ## Cross-tradition identifications
 - **[[athena]]** — *ancient-identification*: the Saite priest in **Plato's *[[phase-3-022-plato-timaeus-critias-atlantis]]* 21E** explicitly identifies the Saite goddess Neith with the Athenian Athena: "The name of the goddess of the Egyptian city of Saïs in their language is Neith, in Greek, as they affirm, Athena. They are very friendly to the Athenians, and consider themselves in some sort akin to our people." [[herodotus]] *Histories* 2.59, 2.62, 2.83 also equates Neith with Athena. **This is one of the structurally most important Greek-Egyptian theological identifications**, because it sits at the foundation of the Atlantis narrative.
-- **[[isis]]** — *parallel-motif* + late *syncretic-identification*: in the late period and Greco-Roman Egypt, Isis absorbs Neith's universal-mother functions.
+- **[[isis-egyptian]]** — *parallel-motif* + late *syncretic-identification*: in the late period and Greco-Roman Egypt, Isis absorbs Neith's universal-mother functions.
 - **Self-existent ground of being** — *scholarly-parallel*: Neith's "the one who is, who was, who will be" epithet is structurally parallel to YHWH's "I am that I am" (Exodus 3:14) and to Revelation 1:8 ("him who is and who was and who is to come"). Direct genealogical transmission is unprovable but the formal parallel is striking and is regularly noted (Hornung 1982; Assmann 2002).
 
 ## Neith as Primordial Creator: A Matriarchal Creation Theology

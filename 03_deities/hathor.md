@@ -15,12 +15,12 @@ child-of: ["[[ra]] (variant; Hathor as Eye-of-Ra and daughter)"]
 consort: ["[[horus]] (in the Dendera-Edfu sacred marriage)", "[[ra]] (as Eye-of-Ra consort in some traditions)"]
 attributes: ["cow-horns enclosing solar disk", "menat-necklace and sistrum", "cow form / cow-eared woman form", "sycamore tree"]
 attested-in: ["[[phase-1-002-pyramid-texts]]", "[[phase-1-010-book-of-the-dead]]"]
-equivalents: ["[[aphrodite-greek]]", "[[isis]] (assimilation pathway in the Late and Ptolemaic periods)"]
+equivalents: ["[[aphrodite-greek]]", "[[isis-egyptian]] (assimilation pathway in the Late and Ptolemaic periods)"]
 syncretic-edges:
   - target: "aphrodite-greek"
     type: "ancient-identification"
     source: "Standard Greco-Egyptian *interpretatio*; Herodotus 2.41 and the Ptolemaic temple inscriptions identify Hathor with Aphrodite"
-  - target: "isis"
+  - target: "isis-egyptian"
     type: "folk-syncretism"
     source: "Late Period and Ptolemaic Hathor-Isis assimilation; many of Hathor's attributes (sun-disk-and-horns crown, mother-of-Horus role) are transferred to Isis"
 status: "partial"
@@ -111,7 +111,7 @@ The **Dendera Zodiac** (now in the Louvre, removed by French archaeologists in 1
 ## Cross-tradition identifications
 - **[[aphrodite-greek]]** — *ancient-identification*: Herodotus 2.41 identifies Hathor with Aphrodite; Ptolemaic-period bilingual contexts confirm the equivalence. The pairing rests on Hathor's love-fertility-music domain.
 - **[[astarte-canaanite]]** — *ancestor-of*: Hathor's Byblos-cult form fed directly into the Phoenician Astarte through documented contact at the major Levantine port of Byblos (Old and Middle Kingdom Egyptian inscriptions at Byblos; Zevit 2001).
-- **[[isis]]** — *folk-syncretism*: in the Late Period and especially Ptolemaic Egypt, many of Hathor's distinctive attributes (the cow-horns-and-disk crown, the role as mother-of-Horus) transfer wholesale to Isis. The fully Hellenized [[isis-hellenistic]] in the Roman period absorbs much of Hathor's iconographic stock.
+- **[[isis-egyptian]]** — *folk-syncretism*: in the Late Period and especially Ptolemaic Egypt, many of Hathor's distinctive attributes (the cow-horns-and-disk crown, the role as mother-of-Horus) transfer wholesale to Isis. The fully Hellenized [[isis-hellenistic]] in the Roman period absorbs much of Hathor's iconographic stock.
 - **[[sekhmet]]** — *splitting-doublet*: Hathor and Sekhmet are explicitly two aspects of the same goddess in the *Book of the Heavenly Cow*; Sekhmet is the rage-and-punishment face, Hathor the joy-and-music face.
 
 ## Disputes

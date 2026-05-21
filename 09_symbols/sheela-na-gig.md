@@ -23,7 +23,7 @@ variants:
 appearances: []
 
 deity-instances:
-  - "[[isis]]"
+  - "[[isis-egyptian]]"
   - "[[kali]]"
   - "[[durga]]"
 

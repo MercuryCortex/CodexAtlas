@@ -32,7 +32,7 @@ deity-instances:
   - "[[kali]]"
   - "[[durga]]"
   - "[[parvati]]"
-  - "[[isis]]"
+  - "[[isis-egyptian]]"
   - "[[gaia]]"
   - "[[tiamat]]"
   - "[[nut]]"

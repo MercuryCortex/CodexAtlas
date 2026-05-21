@@ -5,7 +5,7 @@ name: "Divine feminine"
 aka: ["goddess traditions", "feminine divine principle"]
 category: "theological"
 appearances: ["[[phase-1-003-enheduanna-hymns]]", "[[phase-1-013-baal-cycle]]", "[[phase-3-012-wisdom-of-solomon]]", "[[phase-3-007-sirach]]", "[[phase-4-002-apocryphon-of-john]]", "[[phase-4-005-gospel-of-mary]]", "[[phase-4-008-trimorphic-protennoia]]"]
-deity-instances: ["[[inanna-sumerian]]", "[[ishtar-akkadian]]", "[[isis]]", "[[asherah]]", "[[sophia-gnostic]]", "[[barbelo]]", "[[anat]]", "[[cybele]]"]
+deity-instances: ["[[inanna-sumerian]]", "[[ishtar-akkadian]]", "[[isis-egyptian]]", "[[asherah]]", "[[sophia-gnostic]]", "[[barbelo]]", "[[anat]]", "[[cybele]]"]
 status: "full"
 related-themes:
   - "[[theme-axial-age]]"
@@ -49,7 +49,7 @@ The *category* (not a single motif): traditions in which feminine divine figures
 
 ## Manifestations
 - **Sumerian / Akkadian:** [[inanna-sumerian]] / [[ishtar-akkadian]] — Queen of Heaven, war and love, the most fully developed goddess of the ancient Near East. [[phase-1-003-enheduanna-hymns]] are the earliest signed authored literature in history and they are *hymns to Inanna* by a woman, Enheduanna, daughter of Sargon.
-- **Egyptian:** [[isis]] — magic, motherhood, kingship; in the Hellenistic period her cult becomes pan-Mediterranean and proto-monotheistic ("I am all that has been, is, and shall be").
+- **Egyptian:** [[isis-egyptian]] — magic, motherhood, kingship; in the Hellenistic period her cult becomes pan-Mediterranean and proto-monotheistic ("I am all that has been, is, and shall be").
 - **Canaanite / Hebrew:** [[asherah]] consort of [[el-canaanite]], present in pre-exilic Israelite folk religion (Kuntillet Ajrud inscriptions "Yahweh and his Asherah"); systematically removed by Deuteronomic and post-exilic redaction.
 - **Wisdom personified:** Hokmah / Sophia as feminine principle in [[phase-3-007-sirach]] 24 and [[phase-3-012-wisdom-of-solomon]] 7–9 — a female cosmic agent who plays before God and elects to dwell with Israel. See [[wisdom-personified]].
 - **Gnostic:** [[sophia-gnostic]] and [[barbelo]] are structurally central to Sethian theology; the [[phase-4-002-apocryphon-of-john]] cosmogony cannot proceed without Sophia's deviation. [[phase-4-008-trimorphic-protennoia]] features a triple-feminine revealer.

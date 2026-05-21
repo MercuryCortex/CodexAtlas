@@ -20,7 +20,7 @@ themes: ["[[mystery-initiation]]", "[[katabasis-and-anabasis]]", "[[apotheosis]]
 parallels: ["[[phase-4-072-plutarch-de-iside-et-osiride]] (Greek philosophical-allegorical counterpart)", "Petronius *Satyricon* (the only other extant substantial Latin novel)", "the Greek novels (Achilles Tatius, Heliodorus, Chariton, Longus) — possibly drawing on Greek-novel sources"]
 influenced-by: ["**Lucian of Samosata's *Onos* / *Lucius or the Ass*** (or a common Greek source) — the proximate non-religious frame-narrative", "**Middle-Platonist philosophical-religious culture**", "**actual Isis-cult practice** in Hellenistic-Roman Egypt and the broader Mediterranean (Griffiths 1975 reads the Bk 11 cultic detail as authentic)"]
 influences: ["Boccaccio *Decameron* (medieval reception)", "Cervantes *Don Quixote* (the picaresque-novel form)", "the entire Western novel tradition", "C.S. Lewis *Till We Have Faces* (1956 — modern Isis-Psyche reception)", "Robert Graves *The White Goddess* (1948)", "Apuleian-influence on modern mystery-cult comparative-religion literature is pervasive"]
-deities-mentioned: ["[[isis]]", "[[isis-hellenistic]]", "[[osiris]]", "[[serapis]]"]
+deities-mentioned: ["[[isis-egyptian]]", "[[isis-hellenistic]]", "[[osiris]]", "[[serapis]]"]
 events-context: []
 status: "full"
 preservation: "the ***Mediceus*** (Florence, Biblioteca Medicea Laurenziana ms. 68.2 — 11th c.) is the principal manuscript, the source of all surviving copies; additional manuscripts ms. Laur. 29.2 (~12th c.) and ms. Vat. lat. 2194 (~13th c.). First printed edition: Rome 1469. Modern critical edition: Helm 1907 (Teubner); Hanson 1989 (Loeb Classical Library)"

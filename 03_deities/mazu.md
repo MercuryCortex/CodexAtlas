@@ -12,12 +12,12 @@ gender: "feminine"
 role: "deified mortal → maritime patron goddess"
 attributes: ["red lantern", "court robes", "thousand-mile-eye and following-wind-ear attendants"]
 attested-in: ["imperial canonization edicts (Song through Qing)"]
-equivalents: ["[[guanyin]]", "[[isis]]", "[[mary-theotokos]]", "[[yemoja]]"]
+equivalents: ["[[guanyin]]", "[[isis-egyptian]]", "[[mary-theotokos]]", "[[yemoja]]"]
 syncretic-edges:
   - target: "[[guanyin]]"
     type: "folk-syncretism"
     source: "Mazu and Guanyin frequently co-enshrined and iconographically conflated in maritime Fujianese-Taiwanese practice"
-  - target: "[[isis]]"
+  - target: "[[isis-egyptian]]"
     type: "scholarly-parallel"
     source: "*Isis Pelagia* / Mary Stella Maris / Mazu — cross-tradition maritime-protectress feminine-divine type"
   - target: "[[mary-theotokos]]"
@@ -48,7 +48,7 @@ The principal sea-goddess of Chinese maritime culture, originally **Lin Moniang*
 
 ## Cross-tradition identifications
 - **[[guanyin]]** — *folk-syncretism*: co-enshrined, iconographically conflated.
-- **[[isis]]** (as *Isis Pelagia*) / **[[mary-theotokos]]** (as *Stella Maris*) — *parallel-motif*: the trans-Mediterranean / trans-Pacific feminine-divine sea-protector type.
+- **[[isis-egyptian]]** (as *Isis Pelagia*) / **[[mary-theotokos]]** (as *Stella Maris*) — *parallel-motif*: the trans-Mediterranean / trans-Pacific feminine-divine sea-protector type.
 - **[[yemoja]]** — *parallel-motif*: Yoruba/Afro-Atlantic maritime mother-goddess.
 
 ## Refs

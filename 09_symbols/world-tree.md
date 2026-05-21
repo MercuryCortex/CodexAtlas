@@ -35,7 +35,7 @@ deity-instances:
   - "[[odin]]"
   - "[[osiris]]"
   - "[[vishnu]]"
-  - "[[isis]]"
+  - "[[isis-egyptian]]"
 tradition-context:
   - "[[tradition-norse]]"
   - "[[tradition-vedic-hinduism]]"

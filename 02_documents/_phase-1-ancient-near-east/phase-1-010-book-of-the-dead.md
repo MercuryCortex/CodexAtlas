@@ -20,7 +20,7 @@ themes: ["[[afterlife-judgment]]", "[[creation-by-word]]", "[[primordial-waters]
 parallels: ["[[phase-1-002-pyramid-texts]]", "[[phase-1-009-coffin-texts]]", "[[phase-2-040-orphic-gold-tablets]]", "[[phase-5-029-bardo-thodol]]"]
 influenced-by: ["[[phase-1-009-coffin-texts]]", "[[phase-1-002-pyramid-texts]]"]
 influences: ["[[phase-2-040-orphic-gold-tablets]] (afterlife-instruction genre)", "Hellenistic-Egyptian funerary literature; later Mediterranean afterlife imagery (Greek mysteries, early Christian apocalyptic, Coptic visionary literature)"]
-deities-mentioned: ["[[osiris]]", "[[isis]]", "[[horus]]", "[[ra]]", "[[atum]]", "[[ptah]]", "[[anubis]]", "[[thoth]]", "[[ma-at]]", "[[set]]", "[[nun]]"]
+deities-mentioned: ["[[osiris]]", "[[isis-egyptian]]", "[[horus]]", "[[ra]]", "[[atum]]", "[[ptah]]", "[[anubis]]", "[[thoth]]", "[[ma-at]]", "[[set]]", "[[nun]]"]
 events-context: ["Egyptian New Kingdom and subsequent periods; widespread elite and middle-class use across the second and first millennia BCE"]
 status: "full"
 preservation: "Written on papyrus rolls placed in tombs, sometimes also inscribed on tomb walls, sarcophagi, and mummy wrappings. ~200 numbered 'spells' or 'chapters' (BD 1–192 in modern editions, with regional and chronological variation). Famous papyri include the **Papyrus of Ani** (~1250 BCE, British Museum EA 10470), the **Papyrus of Hunefer** (BM EA 9901, with the canonical weighing-of-the-heart vignette), the **Papyrus of Nu**, and the **Greenfield Papyrus** (BM EA 10554, the longest known BD papyrus, ~37 m). The corpus continues to be used into Ptolemaic and Roman times."

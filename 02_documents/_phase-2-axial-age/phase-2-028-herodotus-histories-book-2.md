@@ -43,7 +43,7 @@ influences:
 deities-mentioned:
   - "[[zeus]]"
   - "[[amun]]"
-  - "[[isis]]"
+  - "[[isis-egyptian]]"
   - "[[demeter]]"
   - "[[osiris]]"
   - "[[dionysus]]"

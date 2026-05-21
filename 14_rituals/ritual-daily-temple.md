@@ -99,7 +99,7 @@ The daily service was performed for every deity with a temple — the specific t
 - [[ptah]] — Memphis temple; the daily service before Ptah replays his cosmogonic mouth-opening; each service is a micro-creation event
 - [[osiris]] — Abydos service; maintaining Osiris's daily service keeps his resurrection alive; interruption risks his second death
 - [[horus]] — Edfu temple; the best-preserved daily-service documentation; Edfu ritual texts describe the wepet-ra miniaturization in exceptional detail
-- [[isis]] — present in the daily service theology as the mythological agent who first assembled the divine body; her role grounds the statue-care logic
+- [[isis-egyptian]] — present in the daily service theology as the mythological agent who first assembled the divine body; her role grounds the statue-care logic
 
 **Documents**:
 - [[phase-1-002-pyramid-texts]] — earliest attestation of the daily awakening formula in Egyptian religious texts; the Pyramid Texts preserve the primordial waking-spell that became the standard daily liturgy

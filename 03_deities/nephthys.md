@@ -17,7 +17,7 @@ attributes: ["basket and house hieroglyph headdress", "kite-bird form", "linen f
 attested-in: ["[[phase-1-002-pyramid-texts]]", "[[phase-1-010-book-of-the-dead]]"]
 equivalents: []
 syncretic-edges:
-  - target: "isis"
+  - target: "isis-egyptian"
     type: "scholarly-parallel"
     source: "Nephthys is Isis's structural twin and inseparable cultic companion; in Plutarch's *De Iside et Osiride* (~+100) she is the feminine principle of the lower/marginal realms paired with Isis as upper/central"
 status: "partial"
@@ -63,13 +63,13 @@ tags: [deity, egyptian, funerary, heliopolitan-ennead, osiris-cycle, sister-mour
 # Nephthys
 
 ## Identity
-Nephthys is the funerary goddess of the Heliopolitan ennead, daughter of [[geb]] and [[nut]], sister and ritual mourner of [[osiris]], sister and nominal consort of [[set]], and the inseparable cultic companion of her sister [[isis]]. Her Egyptian name *Nbt-ḥwt* means "Lady of the House" or "Lady of the Mansion" (where *ḥwt* can mean a built enclosure, a temple precinct, or — in funerary use — the tomb-house). She is one of the four protective goddesses (with Isis, Neith, and Selket) who guard the four canopic jars and the corners of the sarcophagus; her station is the head of the bier, alongside Isis at the foot, where the two sisters mourn and revivify Osiris in the funerary liturgy. Despite her marriage to Set, Nephthys is consistently aligned with the Osirian side of the conflict in Egyptian mythology; in one tradition she bears [[anubis]] by Osiris (sometimes by trickery in Set's absence), aligning her further with the mortuary complex.
+Nephthys is the funerary goddess of the Heliopolitan ennead, daughter of [[geb]] and [[nut]], sister and ritual mourner of [[osiris]], sister and nominal consort of [[set]], and the inseparable cultic companion of her sister [[isis-egyptian]]. Her Egyptian name *Nbt-ḥwt* means "Lady of the House" or "Lady of the Mansion" (where *ḥwt* can mean a built enclosure, a temple precinct, or — in funerary use — the tomb-house). She is one of the four protective goddesses (with Isis, Neith, and Selket) who guard the four canopic jars and the corners of the sarcophagus; her station is the head of the bier, alongside Isis at the foot, where the two sisters mourn and revivify Osiris in the funerary liturgy. Despite her marriage to Set, Nephthys is consistently aligned with the Osirian side of the conflict in Egyptian mythology; in one tradition she bears [[anubis]] by Osiris (sometimes by trickery in Set's absence), aligning her further with the mortuary complex.
 
 ## Role in the Osiris Myth: Divided Loyalty
-Nephthys is married to [[set]], who murders [[osiris]] in the principal Egyptian myth-complex. Despite this consortship, Nephthys joins [[isis]] in mourning [[osiris]]'s death and in the reconstruction of his dismembered body — she is a loyal member of the Osirian party against her own husband. This positions Nephthys as a figure of **theologically significant divided loyalty**: she belongs structurally to Set's household (as his consort) but her *allegiance* is to Osiris and the funerary order. This paradox is not resolved in Egyptian theology; it is allowed to stand as the constitutive tension that gives Nephthys her distinctive character. She is the figure who crosses the boundary between the two sides — Set's wife, Osiris's mourner — which is precisely why she is a liminal and funerary goddess. The border between life and death, which she patrols, is structurally the same as the border between Set's world (the desert margin, chaos) and Osiris's world (the fertile Nile, cosmic order).
+Nephthys is married to [[set]], who murders [[osiris]] in the principal Egyptian myth-complex. Despite this consortship, Nephthys joins [[isis-egyptian]] in mourning [[osiris]]'s death and in the reconstruction of his dismembered body — she is a loyal member of the Osirian party against her own husband. This positions Nephthys as a figure of **theologically significant divided loyalty**: she belongs structurally to Set's household (as his consort) but her *allegiance* is to Osiris and the funerary order. This paradox is not resolved in Egyptian theology; it is allowed to stand as the constitutive tension that gives Nephthys her distinctive character. She is the figure who crosses the boundary between the two sides — Set's wife, Osiris's mourner — which is precisely why she is a liminal and funerary goddess. The border between life and death, which she patrols, is structurally the same as the border between Set's world (the desert margin, chaos) and Osiris's world (the fertile Nile, cosmic order).
 
 ## MASSIVE WIN: The Twin Mourners Archetype
-The canonical image of **Nephthys and [[isis]] mourning at the body of [[osiris]]** is one of the most reproduced and transmitted images in ancient Mediterranean culture, and its structural descendants can be traced across traditions into Christian iconography:
+The canonical image of **Nephthys and [[isis-egyptian]] mourning at the body of [[osiris]]** is one of the most reproduced and transmitted images in ancient Mediterranean culture, and its structural descendants can be traced across traditions into Christian iconography:
 
 **Twin mourner cross-tradition table:**
 
@@ -82,10 +82,10 @@ The canonical image of **Nephthys and [[isis]] mourning at the body of [[osiris]
 
 The Egyptian twin-mourner is **documented as entering Coptic and early Christian funerary iconography through continuous artistic production**. Frankurter (1998) documents Coptic textile workshops continuing to produce the paired-mourner motif with explicitly Isis-Nephthys forms as late as the 4th century CE; the transition to Mary-and-Mary framing occurs within the same workshop tradition. This is one of the vault's clearest cases of direct iconographic transmission: Egyptian → Coptic → Christian funerary art. The paired feminine mourner at the male figure's death and resurrection is not a generic archetype but a specific compositional formula with a traceable lineage.
 
-Wire: [[isis]], [[osiris]], [[tradition-early-christianity]].
+Wire: [[isis-egyptian]], [[osiris]], [[tradition-early-christianity]].
 
 ## Anubis and the Deception Parentage: Child of Both Realms
-In the tradition preserved by Plutarch (*De Iside* 14) and attested in Egyptian sources, Nephthys conceives [[anubis]] by [[osiris]] by **impersonating [[isis]]** — she disguises herself as Isis and lies with Osiris, who does not know which wife he is with. This makes [[anubis]] simultaneously:
+In the tradition preserved by Plutarch (*De Iside* 14) and attested in Egyptian sources, Nephthys conceives [[anubis]] by [[osiris]] by **impersonating [[isis-egyptian]]** — she disguises herself as Isis and lies with Osiris, who does not know which wife he is with. This makes [[anubis]] simultaneously:
 - The nominal son of Set (by marriage)
 - The biological son of Osiris (by the deception)
 - Born from Nephthys, who is herself Set's wife but Osiris's lover in this episode
@@ -93,7 +93,7 @@ In the tradition preserved by Plutarch (*De Iside* 14) and attested in Egyptian 
 The theological richness of this parentage is that [[anubis]] — the guide of the dead, the weigher of hearts in the Hall of Ma'at, the god who navigates between the living and the dead — is thereby the **child of both cosmic order (Osiris) and its disruption (Set-household)**. His access to both realms is built into his very birth. The deception motif also places the origin of the funerary complex in a boundary-crossing act: it is Nephthys's transgression of Set's household boundary that produces the deity who makes death navigable. This is structurally parallel to other cross-tradition births in which the mediating figure is born from a union that crosses a prohibited boundary (the birth of Eros from Poverty and Resource in Plato's *Symposium* 203b; the Vedic figure Martanda born from the dark/rejected egg of Aditi).
 
 ## Cross-tradition identifications
-- **[[isis]]** — *paired-twin*: Nephthys and Isis are virtually inseparable in funerary ritual and iconography; the *Lamentations of Isis and Nephthys* (a Late Period and Ptolemaic ritual text) is a duet between the two sisters mourning Osiris.
+- **[[isis-egyptian]]** — *paired-twin*: Nephthys and Isis are virtually inseparable in funerary ritual and iconography; the *Lamentations of Isis and Nephthys* (a Late Period and Ptolemaic ritual text) is a duet between the two sisters mourning Osiris.
 - The Greco-Roman *interpretatio* did not give Nephthys a single fixed Greek equivalent; Plutarch (*De Iside* 38) identifies her structurally with the marginal/peripheral aspect of Egypt (the desert edge), in contrast to Isis as the fertile black-land core.
 
 ## Disputes

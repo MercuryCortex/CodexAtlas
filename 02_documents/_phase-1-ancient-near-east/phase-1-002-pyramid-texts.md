@@ -20,7 +20,7 @@ themes: ["[[afterlife-judgment]]", "[[divine-kingship]]", "[[primordial-waters]]
 parallels: ["[[phase-1-009-coffin-texts]]", "[[phase-1-010-book-of-the-dead]]", "[[phase-1-036-amduat]]"]
 influenced-by: ["earlier Egyptian oral mortuary tradition; royal ritual stretching back to Early Dynastic period"]
 influences: ["[[phase-1-009-coffin-texts]]", "[[phase-1-010-book-of-the-dead]]", "[[phase-1-036-amduat]]", "later Egyptian funerary literature (Book of Gates, Book of the Earth)"]
-deities-mentioned: ["[[ra]]", "[[atum]]", "[[osiris]]", "[[isis]]", "[[horus]]", "[[set]]", "[[thoth]]", "[[nun]]", "[[anubis]]", "[[ma-at]]", "[[nut]]", "[[ptah]]"]
+deities-mentioned: ["[[ra]]", "[[atum]]", "[[osiris]]", "[[isis-egyptian]]", "[[horus]]", "[[set]]", "[[thoth]]", "[[nun]]", "[[anubis]]", "[[ma-at]]", "[[nut]]", "[[ptah]]"]
 events-context: ["End of the 5th Dynasty and the entire 6th Dynasty of the Egyptian Old Kingdom"]
 status: "full"
 preservation: "Carved in vertical columns on the interior walls of royal pyramids at Saqqara. First attested in the pyramid of Unas (last king of Dynasty 5, ~2345 BCE); subsequently in the pyramids of Teti, Pepi I, Merenre, Pepi II, and several queens. ~800 distinct utterances (spells) survive across the corpus; no single pyramid contains all of them."
@@ -114,7 +114,7 @@ One of the most revealing features of the Pyramid Texts is the presence of **thr
 
 **b. Solar afterlife (Ra-union theology)**: The deceased joins [[ra]] in his solar barque; the king sails across the sky with the sun. He is reborn each morning with the sun.
 
-**c. Osirian afterlife (death-resurrection theology)**: The deceased is identified with [[osiris]] — murdered by [[set]], mourned and restored by [[isis]], revivified and justified. The deceased *is* Osiris in death.
+**c. Osirian afterlife (death-resurrection theology)**: The deceased is identified with [[osiris]] — murdered by [[set]], mourned and restored by [[isis-egyptian]], revivified and justified. The deceased *is* Osiris in death.
 
 These three theologies are in tension throughout the corpus and are never synthesized into a fully coherent system. The Amduat ([[phase-1-036-amduat]]) later achieves a partial synthesis: the Ra-Osiris midnight union brings solar and Osirian theologies together. The [[phase-1-010-book-of-the-dead]] inherits all three strands simultaneously. The tension between stellar, solar, and Osirian models is one of Egyptian religion's most interesting internal developments. Wire to [[osiris]], [[ra]], [[theme-graduated-afterlife]].
 

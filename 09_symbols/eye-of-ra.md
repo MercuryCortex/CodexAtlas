@@ -33,7 +33,7 @@ deity-instances:
   - "[[sekhmet]]"
   - "[[ra]]"
   - "[[amun-ra]]"
-  - "[[isis]]"
+  - "[[isis-egyptian]]"
   - "[[thoth]]"
 tradition-context:
   - "[[tradition-egyptian-religion]]"

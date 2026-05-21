@@ -82,7 +82,7 @@ In the Armenian pantheon Anahit occupies the role of supreme mother-goddess and 
 - **[[aphrodite-greek]]** — *ancient-identification* (Strabo): Hellenistic *interpretatio graeca* at the Erez temple.
 - **[[athena]]** — *ancient-identification* (Agathangelos; Russell 1987): wisdom and war aspects.
 - **[[mary-theotokos]]** — *folk-syncretism*: after 301 CE Armenian Christianization, Anahit's cult functions were substantially absorbed into Marian devotion — the "mother of all virtue" became the Theotokos. A textbook case of goddess-to-Mary continuity (Russell 1987).
-- **[[isis]]** — *scholarly-parallel*: both are supreme mother-goddesses described as "mother of all"; both underwent syncretization with Greco-Roman Aphrodite/Venus; both had their cult absorbed into Christian Marian devotion.
+- **[[isis-egyptian]]** — *scholarly-parallel*: both are supreme mother-goddesses described as "mother of all"; both underwent syncretization with Greco-Roman Aphrodite/Venus; both had their cult absorbed into Christian Marian devotion.
 - **[[inanna-sumerian]]** / **[[ishtar-akkadian]]** — *scholarly-parallel*: the triple-function goddess (love + war + sovereignty) is a Near Eastern pattern Anahit participates in.
 - **[[astarte-canaanite]]** — *scholarly-parallel*: Levantine parallel to the Near Eastern love-war goddess form.
 

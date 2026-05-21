@@ -87,14 +87,14 @@ Yemọja stands in a cross-cultural cluster of cosmic water-mother deities that 
 |---|---|---|---|
 | Yemọja / Yemayá | Yoruba / diaspora | River → ocean | Mother of 14 orishas; protector of children |
 | [[tiamat]] | Babylonian | Salt-sea primordial | Cosmic mother; killed to form the world |
-| [[isis]] | Egyptian | Nile flooding; cosmic | Great Mother; universal protector |
+| [[isis-egyptian]] | Egyptian | Nile flooding; cosmic | Great Mother; universal protector |
 | [[aphrodite-greek]] | Greek | Sea-born (from sea-foam) | Goddess of generative love |
 | Tethys | Greek | Ocean personified | Mother of the rivers (Oceanids) |
 | Nut | Egyptian | Sky-as-cosmic-sea | Mother of Osiris, Isis, Set, Nephthys |
 
 The Yemayá-Marian convergence in Santería (Our Lady of Regla) adds a further cross-tradition layer: both are specifically sea-protectors of sailors, both are rendered in blue (Mary's traditional color; Yemayá's sacred color), and both have significant popular basilica-shrines at coastal locations (Our Lady of Regla at Havana harbor; Our Lady of Loreto on the Adriatic coast). This convergence was not forced by missionaries but developed organically in the Cuban context (Drewal 2008) — an instance of the worshipper's theological intelligence mapping structural equivalences across traditions.
 
-**Edge type: `parallel-form`** for ancient cross-cultural convergence. **Edge type: `folk-syncretism`** for the Marian-Yemayá mapping. See [[tiamat]], [[isis]], [[aphrodite-greek]], [[tradition-yoruba-ifa]], [[tradition-santeria-lucumi]], [[tradition-candomble]].
+**Edge type: `parallel-form`** for ancient cross-cultural convergence. **Edge type: `folk-syncretism`** for the Marian-Yemayá mapping. See [[tiamat]], [[isis-egyptian]], [[aphrodite-greek]], [[tradition-yoruba-ifa]], [[tradition-santeria-lucumi]], [[tradition-candomble]].
 
 ## Iconography
 Blue-and-white cloth (Cuban / Brazilian); fish; anchor; mirror-fan; her sacred number is seven.

@@ -22,7 +22,7 @@ appearances:
   - "[[phase-1-010-book-of-the-dead]]"
   - "[[phase-1-011-great-hymn-to-aten]]"
 deity-instances:
-  - "[[isis]]"
+  - "[[isis-egyptian]]"
   - "[[osiris]]"
   - "[[ra]]"
   - "[[aten]]"

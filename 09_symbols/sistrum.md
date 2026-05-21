@@ -24,7 +24,7 @@ appearances:
 
 deity-instances:
   - "[[hathor]]"
-  - "[[isis]]"
+  - "[[isis-egyptian]]"
 
 tradition-context:
   - "[[tradition-egyptian-religion]]"

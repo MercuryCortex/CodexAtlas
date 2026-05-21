@@ -42,7 +42,7 @@ influences:
   - "[[phase-4-027-eusebius-ecclesiastical-history]]"
 deities-mentioned:
   - "[[osiris]]"
-  - "[[isis]]"
+  - "[[isis-egyptian]]"
   - "[[horus]]"
   - "[[set]]"
   - "[[ptah]]"

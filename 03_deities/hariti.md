@@ -14,12 +14,12 @@ consort: ["Pāñcika (Yakṣa general)"]
 parent-of: ["500 demon-children (pre-conversion narrative)"]
 attributes: ["child on hip or breast", "cornucopia / pomegranate (fertility)", "many children at her feet"]
 attested-in: ["Mūlasarvāstivāda Vinaya (Hārītī conversion narrative)", "Lotus Sūtra ch. 26 (Dharani chapter)", "Faxian and Xuanzang travel records (cult at Peshawar)"]
-equivalents: ["[[mary-theotokos]]", "[[isis]]", "[[demeter]]"]
+equivalents: ["[[mary-theotokos]]", "[[isis-egyptian]]", "[[demeter]]"]
 syncretic-edges:
   - target: "[[mary-theotokos]]"
     type: "scholarly-parallel"
     source: "**MASSIVE-win cross-tradition iconography**: Hārītī's mother-with-child-on-hip Gandhāran sculptural type (1st–4th c. CE, Peshawar workshops) is *the* most-cited prototype for Buddhist-to-Christian iconographic transmission of the Madonna-and-Child image, since Gandhāra's Greco-Buddhist sculptural milieu is contemporary with and connected to early Christian Egypt via the Silk Road / Red Sea trade (Foucher 1905; Foltz 2010; Quagliotti 1996)"
-  - target: "[[isis]]"
+  - target: "[[isis-egyptian]]"
     type: "scholarly-parallel"
     source: "Isis-Lactans nursing-Horus iconography — also a candidate for the Madonna-and-Child source, parallel route via Coptic Egypt"
   - target: "[[demeter]]"
@@ -51,11 +51,11 @@ tags: [deity, buddhism, gandhara, child-protector, converted-demon, mother-and-c
 **The Mother-of-Demons converted by the Buddha into the protector of children**. Originally a Yakṣinī of Rājagṛha who fed her 500 demon-children by stealing and devouring human infants; the grieving parents petitioned the Buddha, who **hid Hārītī's youngest, most beloved child** beneath his begging-bowl. When she discovered her loss and was distraught, the Buddha asked her: *"You have 500 children and grieve so much for one. What of the mothers who had only one and lost that one to you?"* Hārītī, awakened, took refuge in the Dharma and became the protectress of children — the iconography of the once-demoness now nursing-and-protecting-children encoded in her cult.
 
 ## Mythological role
-**Gandhāran iconography (1st–4th c. CE)**: the Peshawar-region workshops produced numerous **Hārītī-and-Pāñcika sculptures**, with Hārītī as **richly draped seated woman holding an infant on her hip, surrounded by smaller children**, sometimes with cornucopia or pomegranate. **This iconographic type is the principal proposed Buddhist precursor of the Christian Madonna-and-Child** (Foucher 1905, Quagliotti 1996, Foltz 2010), since Gandhāra's Greco-Buddhist sculptural workshops were contemporary with and connected by Silk Road trade to Coptic Egypt where the parallel **[[isis]]-Lactans nursing Horus** iconography was undergoing its Christian Marian transformation in the 3rd–5th c. CE. **Smallpox-warding**: in East Asian Buddhism Hārītī (Kishimojin in Japan) became the principal apotropaic deity against the historically devastating smallpox / childhood-disease epidemics.
+**Gandhāran iconography (1st–4th c. CE)**: the Peshawar-region workshops produced numerous **Hārītī-and-Pāñcika sculptures**, with Hārītī as **richly draped seated woman holding an infant on her hip, surrounded by smaller children**, sometimes with cornucopia or pomegranate. **This iconographic type is the principal proposed Buddhist precursor of the Christian Madonna-and-Child** (Foucher 1905, Quagliotti 1996, Foltz 2010), since Gandhāra's Greco-Buddhist sculptural workshops were contemporary with and connected by Silk Road trade to Coptic Egypt where the parallel **[[isis-egyptian]]-Lactans nursing Horus** iconography was undergoing its Christian Marian transformation in the 3rd–5th c. CE. **Smallpox-warding**: in East Asian Buddhism Hārītī (Kishimojin in Japan) became the principal apotropaic deity against the historically devastating smallpox / childhood-disease epidemics.
 
 ## Cross-tradition identifications
 - **[[mary-theotokos]]** — *scholarly-parallel*: **MASSIVE-win iconographic-transmission hypothesis** (Foucher 1905; Foltz 2010).
-- **[[isis]]** — *scholarly-parallel*: parallel mother-and-child iconographic source.
+- **[[isis-egyptian]]** — *scholarly-parallel*: parallel mother-and-child iconographic source.
 - **[[demeter]]** — *parallel-motif*: pomegranate / fertility-mother.
 
 ## Refs

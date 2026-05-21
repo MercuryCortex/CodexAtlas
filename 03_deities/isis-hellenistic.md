@@ -11,12 +11,12 @@ domains: ["motherhood", "mystery initiation", "magic", "sea", "salvation", "univ
 gender: "feminine"
 role: "universal mother-goddess and savior; mystery-cult initiator"
 parent-of: ["Harpocrates (Greco-Egyptian child-Horus form; no node yet)", "[[horus]]"]
-# DUPLICATE WARNING: see also 03_deities/isis.md (Egyptian, 133L) — this is the Hellenistic / mystery-cult layer at 184L. The split may be intentional per schema's tradition-transformation rule (Hellenistic Isis acquires Greek/Roman mystery features that pre-Ptolemaic Egyptian Isis lacks). Flagged for John's review.
+# INTENTIONAL SPLIT (resolved 2026-05-21): the Egyptian dynastic-funerary Isis is at [[isis-egyptian]]. This file (`isis-hellenistic`) covers the Ptolemaic / Greco-Roman mystery-cult Isis that absorbs Hera/Demeter/Aphrodite/Athena/Cybele — theologically distinct per schema's tradition-transformation splitting rule (same pattern as inanna-sumerian ↔ ishtar-akkadian ↔ aphrodite-greek).
 child-of: []
 consort: ["[[serapis]]", "[[osiris]]"]
 attributes: ["tiet knot (Isis-knot)", "sistrum (sacred rattle)", "throne crown (Egyptian iconographic origin)", "lunar crescent + horns", "knotted Isis-garment", "snake"]
 attested-in: ["[[phase-3-010-sibylline-oracles]]", "[[phase-2-028-herodotus-histories-book-2]]", "[[phase-3-026-diodorus-bibliotheca-book-1]]", "[[phase-4-072-plutarch-de-iside-et-osiride]]"]
-equivalents: ["[[isis]] (Egyptian)", "[[ishtar-akkadian]]", "[[astarte-canaanite]]", "[[aphrodite-greek]]", "[[demeter]]", "[[cybele]]", "[[hera]]"]
+equivalents: ["[[isis-egyptian]] (Egyptian)", "[[ishtar-akkadian]]", "[[astarte-canaanite]]", "[[aphrodite-greek]]", "[[demeter]]", "[[cybele]]", "[[hera]]"]
 syncretic-edges:
   - target: "isis-egyptian"
     type: "ancient-identification"
@@ -97,7 +97,7 @@ tags: [deity, hellenistic, mystery-cult, isis, feminine, universal-goddess, sync
 # Isis (Hellenistic)
 
 ## Identity
-The Hellenistic-Roman Isis is the cosmopolitan expansion of the Egyptian goddess [[isis]] (Egyptian) into a universal mother-savior worshipped across the Mediterranean from the early Ptolemaic period through Late Antiquity. **We split her into a separate node from the Egyptian Isis** because the cult-form, theology, and reach are substantially transformed: in Egypt she was Osiris's sister-wife and Horus's mother within a circumscribed national pantheon; in the Hellenistic and Roman world she became a *Myrionymos* ("of ten thousand names") universal goddess to whom all other female deities are subordinated or identified, the patroness of a mystery cult with elaborate initiation rites, and the savior-goddess of urban Roman citizens far from Egypt.
+The Hellenistic-Roman Isis is the cosmopolitan expansion of the Egyptian goddess [[isis-egyptian]] (Egyptian) into a universal mother-savior worshipped across the Mediterranean from the early Ptolemaic period through Late Antiquity. **We split her into a separate node from the Egyptian Isis** because the cult-form, theology, and reach are substantially transformed: in Egypt she was Osiris's sister-wife and Horus's mother within a circumscribed national pantheon; in the Hellenistic and Roman world she became a *Myrionymos* ("of ten thousand names") universal goddess to whom all other female deities are subordinated or identified, the patroness of a mystery cult with elaborate initiation rites, and the savior-goddess of urban Roman citizens far from Egypt.
 
 ## Earliest attestation
 - Cult dispersion outward from Egypt begins under Ptolemy I (~-300), paired with Serapis.
@@ -111,7 +111,7 @@ Hellenistic Isis takes over Osiris's resurrection-narrative as her *active* role
 The mystery initiation, as described by Apuleius, included ritual purification, a symbolic descent to the underworld and ascent to the heavenly realm (Lucius: "I approached the boundary of death... I saw the sun shining with brilliant light at midnight"), and identification of the initiate with Isis's solar-cosmic dominion.
 
 ## Cross-tradition identifications
-- **[[isis]] (Egyptian)** — *direct continuity* (different cultic form): the same goddess developed in cosmopolitan Hellenistic-Roman context.
+- **[[isis-egyptian]] (Egyptian)** — *direct continuity* (different cultic form): the same goddess developed in cosmopolitan Hellenistic-Roman context.
 - **[[demeter]]** — *ancient-identification*: Herodotus *Histories* 2.59 identifies Isis with Demeter on grain-fertility grounds.
 - **[[aphrodite-greek]]** — *ancient-identification*: Apuleius *Met.* 11.2 lists her as Venus/Aphrodite (and Diana, Proserpina, Ceres, Minerva, Hecate, Rhamnusia...).
 - **[[cybele]]** — *ancient-identification* + *parallel-motif*: Apuleius *Met.* 11.5 has Isis say: "the Phrygians ... call me Mother of the Gods; the Athenians call me Cecropian Minerva; the Cyprians, Paphian Venus..."
@@ -164,7 +164,7 @@ This "searching divine figure" whose grief is cosmogonically active is a cross-t
 
 | Tradition | Figure | Grief Object | Creative Power of Grief |
 |---|---|---|---|
-| Egyptian | [[isis]] | [[osiris]] (dismembered) | Reassembly + resurrection; conceives [[horus]] from revived corpse |
+| Egyptian | [[isis-egyptian]] | [[osiris]] (dismembered) | Reassembly + resurrection; conceives [[horus]] from revived corpse |
 | Greek | [[demeter]] | [[persephone-greek]] (abducted) | Withdrawal causes winter; return causes spring (Herodotus *Hist.* 2.59 explicitly identifies Isis's search with Demeter's search) |
 | Sumerian | [[inanna-sumerian]] | [[dumuzi-tammuz]] (sent to underworld) | Descent-and-return structures the vegetative cycle |
 | Christian | [[mary-theotokos]] | [[jesus-of-nazareth]] (crucified) | Mary at the foot of the cross; Stabat Mater; intercessory power rooted in maternal grief |

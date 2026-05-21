@@ -27,7 +27,7 @@ appearances:
 deity-instances:
   - "[[atum]]"
   - "[[ra]]"
-  - "[[isis]]"
+  - "[[isis-egyptian]]"
 
 tradition-context:
   - "[[tradition-egyptian-religion]]"

@@ -23,7 +23,7 @@ appearances:
 deity-instances:
   - "[[inanna-sumerian]]"
   - "[[dumuzi-tammuz]]"
-  - "[[isis]]"
+  - "[[isis-egyptian]]"
   - "[[osiris]]"
   - "[[shiva]]"
   - "[[parvati]]"
@@ -169,7 +169,7 @@ The Hieros Gamos is not a curiosity confined to ancient Sumer and medieval alche
 | Tradition | The Sacred Marriage | The Product |
 |---|---|---|
 | Sumerian (c. -2100 BCE) | Inanna + Dumuzi (annual rite) | Royal legitimacy + land's fertility |
-| Egyptian | [[isis]] + [[osiris]] (their union generates Horus; her grief-union with his corpse generates the resurrection) | Horus born; Osiris resurrected; cosmos renewed |
+| Egyptian | [[isis-egyptian]] + [[osiris]] (their union generates Horus; her grief-union with his corpse generates the resurrection) | Horus born; Osiris resurrected; cosmos renewed |
 | Kabbalistic (c. 1280 CE) | Tiferet + Shekhinah (every Shabbat) | Divine presence in the world; Torah's living reality |
 | Alchemical (c. 1470 CE) | Sol + Luna in the vas hermeticum | [[rebis]] = Philosopher's Stone; perfected matter |
 | Tantric Shaiva | Shiva + Shakti (eternal) | The manifest universe; all 36 tattvas |

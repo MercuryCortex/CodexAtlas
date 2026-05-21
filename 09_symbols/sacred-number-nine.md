@@ -35,7 +35,7 @@ deity-instances:
   - "[[odin]]"
   - "[[heimdall]]"
   - "[[osiris]]"
-  - "[[isis]]"
+  - "[[isis-egyptian]]"
   - "[[atum]]"
   - "[[shu]]"
   - "[[tefnut]]"

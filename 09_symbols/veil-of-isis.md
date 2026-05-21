@@ -21,7 +21,7 @@ appearances:
   - "[[phase-4-006-hypostasis-of-the-archons]]"
 
 deity-instances:
-  - "[[isis]]"
+  - "[[isis-egyptian]]"
 
 tradition-context:
   - "[[tradition-egyptian-religion]]"

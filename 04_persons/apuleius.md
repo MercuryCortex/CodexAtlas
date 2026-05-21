@@ -73,7 +73,7 @@ Apuleius is exceptionally well-documented for an ancient author:
 ## Works
 
 ### ***Metamorphoses*** (also called ***The Golden Ass***) — see [[phase-4-105-apuleius-metamorphoses-book-11]]
-The only complete surviving Latin novel from antiquity. 11 books. The narrator Lucius is accidentally transformed into a donkey by a magical mishap; after picaresque adventures he is restored to human form by the goddess [[isis]] at the seashore and initiated into her mysteries. **Book 11 is the Isis-Book** — the longest first-person ancient-mystery-cult initiation narrative.
+The only complete surviving Latin novel from antiquity. 11 books. The narrator Lucius is accidentally transformed into a donkey by a magical mishap; after picaresque adventures he is restored to human form by the goddess [[isis-egyptian]] at the seashore and initiated into her mysteries. **Book 11 is the Isis-Book** — the longest first-person ancient-mystery-cult initiation narrative.
 
 ### ***Apologia*** / ***Pro Se de Magia***
 Defense speech (~+158) at his magic trial. Major source for Roman-imperial magic-law practice, autobiographical detail, and the late-2nd-c. North African intellectual milieu.

@@ -29,7 +29,7 @@ appearances:
 deity-instances:
   - "[[ra]]"
   - "[[horus]]"
-  - "[[isis]]"
+  - "[[isis-egyptian]]"
   - "[[hathor]]"
   - "[[sekhmet]]"
 tradition-context:

@@ -61,7 +61,7 @@ The Nine, in generational order:
 | 3rd | [[geb]] — the earth (masculine) | The physical ground; from whose body grain grows |
 | 3rd | [[nut]] — the sky (feminine) | The arching sky-body who swallows and rebirths the sun daily |
 | 4th | [[osiris]] — the dead king; the Nile flood; grain; afterlife | The murdered and resurrected lord of the dead |
-| 4th | [[isis]] — the great mother; magical healer; mourner | Wife of Osiris; mother of Horus; supreme magician |
+| 4th | [[isis-egyptian]] — the great mother; magical healer; mourner | Wife of Osiris; mother of Horus; supreme magician |
 | 4th | [[set]] — storm, desert, violence, foreignness | Murderer of Osiris; chaotic necessary force |
 | 4th | [[nephthys]] — liminal protective goddess; the twin of Isis | Sister of Isis; protector of the dead; mourner |
 
@@ -75,7 +75,7 @@ The Ennead encodes a complete cosmological theory as a *family drama*:
 
 **Second act — creation of the physical world.** [[shu]] (air/space) and [[tefnut]] (moisture) couple and produce [[geb]] (earth, masculine) and [[nut]] (sky, feminine). Geb and Nut are originally locked in sexual embrace until Shu physically separates them — lifting Nut upward to become the sky-vault over Geb's horizontal earth. This separation of heaven and earth is the creation of the habitable cosmos. From two comes the physical structure of the world.
 
-**Third act — the family drama that drives history.** The children of Geb and Nut — [[osiris]], [[isis]], [[set]], [[nephthys]] — constitute the operating mythological engine of Egyptian religion. Osiris is the good king murdered by his jealous brother [[set]]; Isis and Nephthys recover and reassemble his body; Osiris is resurrected as lord of the dead; his posthumous son Horus avenges him against Set; the Horus-Set conflict becomes the model for every legitimate Egyptian king (= living Horus who becomes Osiris at death). The myth structure justifies the entire Egyptian royal-religious system.
+**Third act — the family drama that drives history.** The children of Geb and Nut — [[osiris]], [[isis-egyptian]], [[set]], [[nephthys]] — constitute the operating mythological engine of Egyptian religion. Osiris is the good king murdered by his jealous brother [[set]]; Isis and Nephthys recover and reassemble his body; Osiris is resurrected as lord of the dead; his posthumous son Horus avenges him against Set; the Horus-Set conflict becomes the model for every legitimate Egyptian king (= living Horus who becomes Osiris at death). The myth structure justifies the entire Egyptian royal-religious system.
 
 **The architectural logic:** creation proceeds *numerically* — from 0 (the pre-existent Atum) through 1 (Atum as distinct individual) to 2 (Shu/Tefnut) to 4 (Geb/Nut/Osiris-etc.) to 9 (the Ennead). This is not accidental; Egyptian theology was self-consciously interested in the sacred arithmetic of divine families. Attested in [[phase-1-002-pyramid-texts]] (Old Kingdom, ~2400–2300 BCE) — the earliest body of religious text in the world.
 
@@ -143,7 +143,7 @@ The theological competition between these three schools was not purely academic:
 - **[[geb]]** — second generation; earth; father of the Osiris-cycle generation
 - **[[nut]]** — second generation; sky-vault; mother of Osiris, Isis, Set, Nephthys
 - **[[osiris]]** — third generation; the murdered-and-resurrected lord of the dead; central figure of Egyptian religion
-- **[[isis]]** — third generation; supreme magical healer; model of devotion and cosmic mother
+- **[[isis-egyptian]]** — third generation; supreme magical healer; model of devotion and cosmic mother
 - **[[set]]** — third generation; necessary chaos force; murderer of Osiris; desert storms
 - **[[nephthys]]** — third generation; liminal protective goddess; paired sister to Isis
 - **[[tradition-neoplatonism]]** — structural parallel (one → successive hypostases); Plotinus's title *Enneads* likely echoes Egyptian nine-ness

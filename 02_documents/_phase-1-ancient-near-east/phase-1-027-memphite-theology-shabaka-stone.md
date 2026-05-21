@@ -20,7 +20,7 @@ themes: ["[[creation-by-word]]", "[[logos-cosmic-reason]]", "[[divine-kingship]]
 parallels: ["[[phase-2-018-hebrew-bible-p-source]]", "[[phase-3-020-gospel-of-john]]"]
 influenced-by: ["older Heliopolitan Ennead theology (which the Memphite text appropriates and subsumes under Ptah)"]
 influences: ["arguably the broader ANE 'creation by word' tradition culminating in Genesis 1 P; later Egyptian theologies of Ptah; Hellenistic-era Logos speculation (via Egyptian-Greek syncretism in Alexandria)"]
-deities-mentioned: ["[[ptah]]", "[[atum]]", "[[horus]]", "[[set]]", "[[osiris]]", "[[isis]]", "[[nephthys]]", "[[geb]]", "the Heliopolitan Ennead generally"]
+deities-mentioned: ["[[ptah]]", "[[atum]]", "[[horus]]", "[[set]]", "[[osiris]]", "[[isis-egyptian]]", "[[nephthys]]", "[[geb]]", "the Heliopolitan Ennead generally"]
 events-context: ["Reign of Shabaka, 25th Dynasty (Nubian / Kushite), ~-716 to -702 BCE"]
 status: "full"
 preservation: "A single basalt slab (~92 × 137 cm) carved with hieroglyphic text in horizontal columns. British Museum EA 498. The stone was later reused as a millstone — the central portion is worn away in a circular pattern, destroying significant text. The legible portions contain the prologue (Shabaka's commissioning statement), a Memphite cosmogony centered on Ptah, and an Osirian-Horus succession narrative tied to Memphis as the seat of Horus's coronation."

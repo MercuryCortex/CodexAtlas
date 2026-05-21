@@ -21,7 +21,7 @@ appearances:
   - "[[phase-6-026-anderson-constitutions-free-masons]]"
 deity-instances:
   - "[[osiris]]"
-  - "[[isis]]"
+  - "[[isis-egyptian]]"
 tradition-context:
   - "[[tradition-freemasonry]]"
   - "[[tradition-scottish-rite-freemasonry]]"

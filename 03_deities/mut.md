@@ -15,7 +15,7 @@ child-of: []
 consort: ["[[amun]]", "[[amun-ra]]"]
 attributes: ["vulture headdress", "double crown of Upper and Lower Egypt", "lioness-headed in her wrathful aspect (assimilated to Sekhmet)", "ankh and was-scepter"]
 attested-in: ["[[phase-2-028-herodotus-histories-book-2]]", "[[phase-3-026-diodorus-bibliotheca-book-1]]"]
-equivalents: ["[[hera]]", "[[isis]]"]
+equivalents: ["[[hera]]", "[[isis-egyptian]]"]
 syncretic-edges:
   - target: "sekhmet"
     type: "ancient-identification"
@@ -63,7 +63,7 @@ Mut has comparatively little narrative mythology — like her consort Amun, she 
 ## Cross-tradition identifications
 - **[[sekhmet]]** — *ancient-identification*: Mut's wrathful lioness aspect is Sekhmet; the Amenhotep-III Sekhmet-Mut statues at Karnak make this iconographically explicit.
 - **[[hera]]** — *ancient-identification*: in Hellenistic-Roman religious-ethnographic literature, the consort of Zeus-Ammon is identified with Hera.
-- **[[isis]]** — *parallel-motif* + late-period *syncretic-identification*: in late-period and Greco-Roman Egypt, Isis absorbs many of Mut's functions as universal mother-goddess.
+- **[[isis-egyptian]]** — *parallel-motif* + late-period *syncretic-identification*: in late-period and Greco-Roman Egypt, Isis absorbs many of Mut's functions as universal mother-goddess.
 
 ## Iconography
 - Tall figure in long sheath dress with double-crown (the *pschent* — combined Upper and Lower Egypt crown) topping a **vulture headdress**

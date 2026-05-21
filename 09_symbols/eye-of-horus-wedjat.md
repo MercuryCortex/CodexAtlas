@@ -25,7 +25,7 @@ deity-instances:
   - "[[ra]]"
   - "[[thoth]]"
   - "[[hathor]]"
-  - "[[isis]]"
+  - "[[isis-egyptian]]"
 tradition-context:
   - "[[tradition-egyptian]]"
   - "[[tradition-freemasonry]]"

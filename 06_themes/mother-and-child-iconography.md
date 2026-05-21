@@ -4,7 +4,7 @@ id: "mother-and-child-iconography"
 name: "Mother and Child Iconography"
 category: "iconographic-transmission"
 appearances: ["[[phase-4-095-new-testament-canon]]"]
-deity-instances: ["[[isis]]", "[[horus]]", "[[hariti]]", "[[mary-theotokos]]"]
+deity-instances: ["[[isis-egyptian]]", "[[horus]]", "[[hariti]]", "[[mary-theotokos]]"]
 status: "metadata"
 refs:
   - title: "The Origins of Christian Art"
@@ -63,7 +63,7 @@ A seated goddess or holy woman nursing or cradling a divine infant — one of th
 ## The three source traditions
 
 ### Isis-Horus — Egyptian (from ~2500 BCE, widespread from ~700 BCE)
-The seated [[isis]] nursing the infant [[horus]] (*Isis Lactans*) is the oldest and most documented version of the mother-and-child icon. The image type dates to the New Kingdom (~1400 BCE) in rudimentary form, but the fully developed nursing-mother seated on throne type proliferates in the Late Period and Ptolemaic era (~700–30 BCE), when the Isis cult spread throughout the Mediterranean world. The iconographic formula is specific: Isis seated on a throne, divine headdress (cow horns + solar disc), infant Horus at her breast.
+The seated [[isis-egyptian]] nursing the infant [[horus]] (*Isis Lactans*) is the oldest and most documented version of the mother-and-child icon. The image type dates to the New Kingdom (~1400 BCE) in rudimentary form, but the fully developed nursing-mother seated on throne type proliferates in the Late Period and Ptolemaic era (~700–30 BCE), when the Isis cult spread throughout the Mediterranean world. The iconographic formula is specific: Isis seated on a throne, divine headdress (cow horns + solar disc), infant Horus at her breast.
 
 In the Hellenistic period (post-Alexander) this image traveled throughout the Mediterranean: Isis-Lactans figurines have been found in Italy, Gaul, Britain, and the Black Sea coast. In Coptic Egypt (4th–7th c. CE), scholars have documented specific examples of the Isis-Lactans formula being **reused** (same body posture, same seated-throne type) in Virgin-and-Child images — in some cases the same sculptural mould. This is the closest thing to a documented iconographic transmission in the ancient world. (Quagliotti 1996, Witt 1971)
 

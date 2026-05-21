@@ -4,7 +4,7 @@ id: "hermetic-cosmogony"
 name: "Hermetic cosmogony"
 category: "cosmogonic"
 appearances: ["[[phase-4-011-corpus-hermeticum-i]]", "[[phase-4-012-asclepius]]", "[[phase-4-076-stobaean-hermetica-kore-kosmou]]", "[[phase-4-077-definitions-hermes-asclepius-armenian]]", "[[phase-4-079-coptic-asclepius-nhc-vi-8]]", "[[phase-3-021-hermetic-corpus-earliest]]"]
-deity-instances: ["[[hermes-trismegistus]]", "[[poimandres]]", "[[nous-hermetic]]", "[[isis]]", "[[horus]]"]
+deity-instances: ["[[hermes-trismegistus]]", "[[poimandres]]", "[[nous-hermetic]]", "[[isis-egyptian]]", "[[horus]]"]
 status: "metadata"
 refs:
   - title: "The Egyptian Hermes"

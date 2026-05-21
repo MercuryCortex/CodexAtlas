@@ -38,7 +38,7 @@ influences:
   - "[[phase-6-024-kircher-oedipus-aegyptiacus]]"
 deities-mentioned:
   - "[[osiris]]"
-  - "[[isis]]"
+  - "[[isis-egyptian]]"
   - "[[horus]]"
   - "[[set]]"
   - "[[typhon]]"

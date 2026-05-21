@@ -36,7 +36,7 @@ The deceased enters the *Aaru* — the Field of Reeds — only by passing throug
 3. **[[ma-at]]** — the feather on the opposite pan; she IS the standard (truth, cosmic order, justice); the heart is weighed not against an abstraction but against the deity herself
 4. **[[ammit-devourer]]** — the composite beast (crocodile head / lion body / hippopotamus haunches); waits beside the scale; if the heart is heavy (weighted with moral failure) she devours it
 
-[[osiris]] presides from his throne as judge, flanked by [[isis]] and Nephthys, and receives the declaration of Thoth.
+[[osiris]] presides from his throne as judge, flanked by [[isis-egyptian]] and Nephthys, and receives the declaration of Thoth.
 
 ## The Negative Confession (42 Assessors)
 
@@ -93,7 +93,7 @@ This is structurally distinct from Christian hell (eternal conscious torment), B
 - [[anubis]] — calibrates the scale; the judge's technician
 - [[thoth]] — records the verdict; divine scribe
 - [[osiris]] — presides over the hall; himself the resurrection-judge
-- [[isis]] — present as intercessor; mourner-advocate for the deceased
+- [[isis-egyptian]] — present as intercessor; mourner-advocate for the deceased
 - [[chitragupta]] — Hindu parallel scribe of the dead; Chitragupta maintains the karmic ledger for Yama's judgment, exactly as Thoth records Osiris's verdict; both are divine bureaucrats of cosmic moral accounting
 
 **Documents**:

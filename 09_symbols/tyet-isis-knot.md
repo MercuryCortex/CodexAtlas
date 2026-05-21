@@ -19,7 +19,7 @@ appearances:
   - "[[phase-1-010-book-of-the-dead]]"
   - "[[phase-1-036-amduat]]"
 deity-instances:
-  - "[[isis]]"
+  - "[[isis-egyptian]]"
   - "[[osiris]]"
 tradition-context:
   - "[[tradition-egyptian-religion]]"

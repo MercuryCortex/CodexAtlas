@@ -10,7 +10,7 @@ period-active-latest: 400
 domains: ["sky", "stars", "celestial cosmos", "rebirth/regeneration of the sun"]
 gender: "feminine"
 role: "sky goddess; mother of Osiris, Isis, Set, Nephthys; member of the Heliopolitan Ennead"
-parent-of: ["[[osiris]]", "[[isis]]", "[[set]]", "[[nephthys]]"]
+parent-of: ["[[osiris]]", "[[isis-egyptian]]", "[[set]]", "[[nephthys]]"]
 child-of: ["[[shu]]", "[[tefnut]]"]
 consort: ["[[geb]]"]
 attributes: ["arched body across sky", "star-spangled body", "sun-disc in mouth (swallowing the sun at evening)", "sycamore tree (sometimes)"]
@@ -77,7 +77,7 @@ This is one of the most powerful **resurrection-theology images in world religio
 
 1. **Solar register**: the deceased enacts the sun's nightly journey — entering Nut at sundown, traversing the underworld, being reborn at dawn. Every morning the sun rises; the deceased's hoped-for resurrection is the same event.
 2. **Maternal register**: to die is to return to the mother's body. Resurrection is not escape from the body but *re-emergence from it*. This is a theological inversion of the common anxiety about death: the coffin is not a box of confinement but a womb of transformation.
-3. **Cosmic register**: the individual deceased is placed in the same position as [[osiris]] — the dying-god whose body is held within the cosmic structure, awaiting resurrection through the intercession of [[isis]] and the mechanism of [[ra]]'s daily cycle.
+3. **Cosmic register**: the individual deceased is placed in the same position as [[osiris]] — the dying-god whose body is held within the cosmic structure, awaiting resurrection through the intercession of [[isis-egyptian]] and the mechanism of [[ra]]'s daily cycle.
 
 The [[phase-1-002-pyramid-texts]] (the oldest religious texts in the world, c. 2350–2175 BCE) contain explicit address to Nut as the mother of the dead king: *"O my mother Nut, spread yourself over me, so that I may be placed among the imperishable stars and never die"* (Utterance 443, Allen 2005 trans.). This formula is the theological origin of every coffin-lid painting of Nut — the image enacts the prayer.
 

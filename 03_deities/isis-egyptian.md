@@ -1,9 +1,9 @@
 ---
 type: deity
-id: "isis"
-name: "Isis"
-aka: ["Aset", "Iset", "Eset", "Isis Myrionymos ('Isis of Ten Thousand Names', in Hellenistic syncretic cult)"]
-tradition: "Egyptian"
+id: "isis-egyptian"
+name: "Isis (Egyptian)"
+aka: ["Aset", "Iset", "Eset", "Isis"]
+tradition: "Egyptian (dynastic-funerary cult, Old Kingdom through Ptolemaic core — distinct from the Hellenistic mystery-cult layer; see [[isis-hellenistic]])"
 region: "Egypt (cult centers Philae, Behbeit el-Hagar, Coptos; spread throughout the Greco-Roman Mediterranean as the Isis-mysteries)"
 period-active-earliest: -2400
 period-active-latest: 600

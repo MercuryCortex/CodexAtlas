@@ -90,7 +90,7 @@ Anubis (Egyptian *Inpu*) is the jackal-headed Egyptian god of embalming, mummifi
 
 Anubis presides over the embalming process: the embalmer-priest performing mummification rites wore an Anubis mask, making the human craftsman temporarily become the divine patron of his craft. He guides the deceased into the netherworld as **psychopomp** and tends the scales at the weighing of the heart in the Hall of Two Truths (*Ahet*), with [[thoth]] recording the verdict and [[osiris]] enthroned as judge.
 
-In the Osirian myth as developed in the Middle and New Kingdoms, Anubis is presented as the son of [[osiris]] by [[nephthys]], born of a clandestine encounter and raised by [[isis]] — a mythological etiology grafted onto a much older independent jackal-god. In the central Osirian narrative, when [[osiris]] is murdered and dismembered by [[set]], it is Anubis whom [[isis]] and [[nephthys]] call upon to embalm the restored body. Anubis performs the first mummification — making the preservation of the physical body a theological act directly ordained by divine necessity. The body must be preserved because it is the vehicle for resurrection: [[osiris]] cannot rise, and the sun cannot rise, and the dead cannot proceed, unless the body is intact.
+In the Osirian myth as developed in the Middle and New Kingdoms, Anubis is presented as the son of [[osiris]] by [[nephthys]], born of a clandestine encounter and raised by [[isis-egyptian]] — a mythological etiology grafted onto a much older independent jackal-god. In the central Osirian narrative, when [[osiris]] is murdered and dismembered by [[set]], it is Anubis whom [[isis-egyptian]] and [[nephthys]] call upon to embalm the restored body. Anubis performs the first mummification — making the preservation of the physical body a theological act directly ordained by divine necessity. The body must be preserved because it is the vehicle for resurrection: [[osiris]] cannot rise, and the sun cannot rise, and the dead cannot proceed, unless the body is intact.
 
 ## The weighing of the heart
 
@@ -116,7 +116,7 @@ Griffiths (1970, pp. 488–491) documents the §61 parallel in detail. This iden
 
 ## MASSIVE WIN: Embalming as resurrection theology
 
-The theological logic of Egyptian mummification is precisely articulated through Anubis: when [[isis]] and [[nephthys]] reconstitute the dismembered body of [[osiris]] and call on Anubis to embalm it, they are establishing the metaphysical principle that the **physical body matters for the afterlife**. The preservation of the body is not mere sentiment — it is a theological requirement. Osiris can only be resurrected (and the king can only participate in that resurrection) if the body survives.
+The theological logic of Egyptian mummification is precisely articulated through Anubis: when [[isis-egyptian]] and [[nephthys]] reconstitute the dismembered body of [[osiris]] and call on Anubis to embalm it, they are establishing the metaphysical principle that the **physical body matters for the afterlife**. The preservation of the body is not mere sentiment — it is a theological requirement. Osiris can only be resurrected (and the king can only participate in that resurrection) if the body survives.
 
 This is the Egyptian position in a debate that runs through every major religious tradition: does the body matter after death?
 
@@ -145,7 +145,7 @@ By the Ptolemaic period (323–30 BCE), Anubis was being actively identified wit
 ## Relations
 
 - **[[osiris]]** — Anubis's mythological father and the deity on whose behalf Anubis performs the first embalming; Osiris presides as judge at the heart-weighing where Anubis operates the scales
-- **[[isis]]** — calls Anubis to embalm Osiris; mythological foster-mother in some traditions
+- **[[isis-egyptian]]** — calls Anubis to embalm Osiris; mythological foster-mother in some traditions
 - **[[nephthys]]** — Anubis's mythological mother; joins Isis in mourning and reassembling Osiris
 - **[[thoth]]** — companion in the Hall of Two Truths: Thoth records the verdict of the scales that Anubis holds
 - **[[ma-at]]** — the feather against which the heart is weighed; the cosmic principle Anubis serves as impartial measurer

@@ -10,7 +10,7 @@ period-latest: 2026
 region: "Global"
 variants:
   - id: "osiris-death-resurrection"
-    description: "Osiris murdered by Set, dismembered, reassembled by [[isis]], revived by the [[djed-pillar]] ceremony. The deceased pharaoh *becomes* Osiris. The annual 'Raising of the Djed' reenacts the resurrection as a cosmogonic act. Primary sources: Pyramid Texts (c. −2400 BCE), Coffin Texts."
+    description: "Osiris murdered by Set, dismembered, reassembled by [[isis-egyptian]], revived by the [[djed-pillar]] ceremony. The deceased pharaoh *becomes* Osiris. The annual 'Raising of the Djed' reenacts the resurrection as a cosmogonic act. Primary sources: Pyramid Texts (c. −2400 BCE), Coffin Texts."
   - id: "dumuzi-tammuz-descent"
     description: "[[dumuzi-tammuz]] the shepherd-lover of [[inanna-sumerian]], consigned to the underworld in her place after [[inanna-sumerian]]'s descent. Spends half the year below (summer drought, flocks absent) and half above (spring, flocks return). The agricultural calendar personified. Source: *Inanna's Descent to the Netherworld* (c. −2000 BCE). Weeping for Tammuz attested in Ezekiel 8:14."
   - id: "baal-mot-cycle"
@@ -145,7 +145,7 @@ The deepest structural insight: the dying-and-rising pattern maps onto the annua
 
 ### Osiris (Egypt, c. −3000 BCE onward)
 
-[[Osiris]] is murdered by Set, dismembered across Egypt, reassembled by [[isis]]. The **[[djed-pillar]]** ceremony — the annual raising of the Djed — enacts his resurrection. The deceased pharaoh *becomes* Osiris; every initiate into Egyptian funerary religion participates in Osiris's resurrection. Osiris is simultaneously the paradigm of death (he reigns in the underworld) and the paradigm of renewal (his body IS the fertile Nile flood-silt). See [[tradition-egyptian-religion]].
+[[Osiris]] is murdered by Set, dismembered across Egypt, reassembled by [[isis-egyptian]]. The **[[djed-pillar]]** ceremony — the annual raising of the Djed — enacts his resurrection. The deceased pharaoh *becomes* Osiris; every initiate into Egyptian funerary religion participates in Osiris's resurrection. Osiris is simultaneously the paradigm of death (he reigns in the underworld) and the paradigm of renewal (his body IS the fertile Nile flood-silt). See [[tradition-egyptian-religion]].
 
 ### Dumuzi/Tammuz (Mesopotamia, c. −2000 BCE onward)
 

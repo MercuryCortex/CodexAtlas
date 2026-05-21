@@ -29,7 +29,7 @@ appearances:
   - "[[phase-3-015-pauline-epistles]]"
 deity-instances:
   - "[[osiris]]"
-  - "[[isis]]"
+  - "[[isis-egyptian]]"
   - "[[dumuzi-tammuz]]"
   - "[[adonis]]"
   - "[[dionysus]]"

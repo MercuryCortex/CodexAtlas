@@ -42,7 +42,7 @@ influences:
   - "[[phase-6-001-ficino-pimander]]"
   - "[[phase-6-024-kircher-oedipus-aegyptiacus]]"
 deities-mentioned:
-  - "[[isis]]"
+  - "[[isis-egyptian]]"
   - "[[isis-hellenistic]]"
   - "[[osiris]]"
   - "[[set]]"
