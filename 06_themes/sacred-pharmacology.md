@@ -75,4 +75,4 @@ This is not metaphor for naive cultures. It is a transmission technology: the ex
 - [[panacea]] — the goddess of universal cure; her name is the mythological name for the pharmacological search
 - [[destroyer-healer]] — every medicine is a poison at wrong dose; the dose-makes-the-poison principle encodes this
 - [[dhanvantari]] — holds the pot of amrita; divine origin of pharmacological knowledge
-- [[asklepios]] — the Asklepion's sacred healing herbal gardens
+- [[asclepius-greek]] — the Asklepion's sacred healing herbal gardens

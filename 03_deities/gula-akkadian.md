@@ -30,7 +30,7 @@ syncretic-edges:
     type: "cross-tradition-archetype"
     source: "Comparative religion — Stol 2000 *Epilepsy in Babylonia*; Lesko 1999 *The Great Goddesses of Egypt*; both are the supreme healing deity who sends disease and cures it; both have institutionalized priest-healer corps"
     notes: "Destroyer-healer archetype: Gula (Mesopotamia) and Sekhmet (Egypt) are independent instantiations of the same theological structure — the deity who commands disease commands the cure. Gula's *āšipu* and *asû* practitioners parallel Sekhmet's *wabw-Sḫmt* priest-physicians."
-  - target: "asklepios"
+  - target: "asclepius-greek"
     type: "functional-parallel"
     source: "Comparative religion — Edelstein 1945 on Asklepios cult dogs at Epidauros; Black & Green 1992 on dog-figurine votives at Gula/Ninisina sanctuaries"
     notes: "Sacred Healing Dog parallel: votive dog deposits at Gula's sanctuaries (Isin, Nippur, Borsippa) and sacred dogs at Asklepios's Epidauros are 1,000–1,400 years apart. Both encode the pharmacological truth that dog saliva is antimicrobial (lysozyme, IgA, histatins). Independent cross-cultural convergence on the same empirical observation."
@@ -118,7 +118,7 @@ Seated goddess in horned crown, often with a **dog** at her feet or under her th
 - [[sacred-pharmacology]] — the Uruanna plant-medicine series is associated with her cult at Isin and Nippur
 - [[destroyer-healer]] — the archetype she exemplifies: Hammurabi invokes her to inflict incurable disease; she is simultaneously the supreme healing-goddess
 - [[sekhmet]] — Egyptian structural parallel: destroyer-healer; same divine logic, different civilization
-- [[asklepios]] — Greek structural parallel: divine physician with sacred healing dogs at sanctuaries; Gula's votive dog-figurines serve the same healing function — 1,500-year cross-civilizational dog-healer convergence
+- [[asclepius-greek]] — Greek structural parallel: divine physician with sacred healing dogs at sanctuaries; Gula's votive dog-figurines serve the same healing function — 1,500-year cross-civilizational dog-healer convergence
 - [[phase-1-007-code-of-hammurabi]] — the epilogue curse-formula invokes Ninkarrak/Gula to afflict lawbreakers with incurable disease
 
 ## Refs

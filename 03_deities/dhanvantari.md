@@ -15,9 +15,9 @@ child-of: ["[[vishnu]] (avatar relationship)"]
 consort: []
 attributes: ["pot of amrita (immortality nectar)", "leech (surgical tool)", "conch shell", "discus (Sudarshana chakra)", "four arms"]
 attested-in: ["Bhagavata Purana (Book 8, churning narrative)", "Agni Purana", "Garuda Purana", "Charaka Samhita (invocation)"]
-equivalents: ["[[asklepios]] (functional parallel — both divine physicians born of a supreme deity, both bring medical knowledge as divine gift)"]
+equivalents: ["[[asclepius-greek]] (functional parallel — both divine physicians born of a supreme deity, both bring medical knowledge as divine gift)"]
 syncretic-edges:
-  - target: "asklepios"
+  - target: "asclepius-greek"
     type: "parallel"
     source: "Comparative religion — Walter Edelstein, Rudolf Arbesmann"
     notes: "Both are divine physicians born of a supreme deity (Vishnu / Apollo). Both bring medical knowledge as a divine gift to humanity. Both have divine families specializing in aspects of health. Developed in parallel, c. 500 BCE, with no documented contact."
@@ -84,7 +84,7 @@ In this tradition, Sushruta approaches Divodasa/Dhanvantari in Varanasi and requ
 
 ## The Medical Family Structure — Parallel with Asclepius
 
-Like [[asklepios]], Dhanvantari's divine medical family structures the entire domain of healing:
+Like [[asclepius-greek]], Dhanvantari's divine medical family structures the entire domain of healing:
 - **Dhanvantari** (Vishnu avatar) = medicine as divine knowledge
 - **Sushruta** (his primary student) = surgery
 - **Charaka** (systematizer of internal medicine, associated with Atreya Punarvasu, Dhanvantari's contemporary) = internal medicine
@@ -103,7 +103,7 @@ Three independent traditions, same claim: the supreme deity is the ultimate phys
 ## Vault Connections
 
 - [[vishnu]] — Dhanvantari is his avatar; preservation principle → medicine
-- [[asklepios]] — Greek structural parallel; divine physician born of supreme deity
+- [[asclepius-greek]] — Greek structural parallel; divine physician born of supreme deity
 - [[medicine-ayurveda]] — the tradition Dhanvantari founded and authorizes
 - [[phase-3-036-charaka-samhita]] — the foundational text of the tradition he anchors
 - [[sacred-pharmacology]] — the amrita pot = pharmacological immortality; the materia medica as divine chemistry

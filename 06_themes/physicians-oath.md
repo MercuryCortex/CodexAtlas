@@ -188,7 +188,7 @@ The Oath's anti-surgery clause is arguably the most consequential single sentenc
 - [[hippocrates]] — the physician whose name the Oath bears
 - [[phase-2-045-hippocratic-corpus]] — the textual source
 - [[phase-3-036-charaka-samhita]] — the Indian parallel oath (Vimānasthāna 8.13)
-- [[asklepios]] — invoked in Oath line 1 as divine witness
+- [[asclepius-greek]] — invoked in Oath line 1 as divine witness
 - [[hygieia]] — invoked in Oath line 1 as divine witness
 - [[panacea]] — invoked in Oath line 1 as divine witness
 - [[apollo]] — invoked in Oath line 1 as grandfather of the medical divine family

@@ -62,7 +62,7 @@ Freud owned a figurine of Asclepius. He recognized the connection explicitly. Th
 
 ## Vault Connections
 
-- [[asklepios]] — the god of the Greek incubation tradition
+- [[asclepius-greek]] — the god of the Greek incubation tradition
 - [[medicine-asklepion-cult]] — the Greek temple healing system
 - [[medicine-egyptian-temple]] — Egyptian incubation at Imhotep's Saqqara sanctuary
 - [[imhotep]] — deified healer whose tomb became an incubation sanctuary

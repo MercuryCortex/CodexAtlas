@@ -27,7 +27,7 @@ cross-tradition-edges:
   - target: "apollo"
     type: "primary-instance"
     note: "Apollo sends the plague in Iliad Book I (his arrows = disease arrows); he is simultaneously 'Apollo Physician' — his healing epithet invoked in the Hippocratic Oath. He fathers Asklepios (the divine healer). The same god destroys by disease and heals through his lineage."
-  - target: "asklepios"
+  - target: "asclepius-greek"
     type: "instance"
     note: "The Rod of Asklepios features the serpent — whose venom is the prototype of the dose-makes-the-poison insight. Asklepios himself was struck dead for healing TOO completely (resurrection), suggesting that total mastery over death, the ultimate destroyer, is the ultimate healer's domain."
   - target: "ninisina"
@@ -58,7 +58,7 @@ This pattern appears independently across six distinct civilizational traditions
 The **Code of Hammurabi epilogue** (c. 1754 BCE) invokes [[ninkarrak]] (= [[gula-akkadian]]) in the curse-formula: *"May Ninkarrak, daughter of An, inflict upon him a serious injury which never heals, whose nature no physician understands, which cannot be relieved with bandaging..."* This is the *same deity* who is the supreme healing-goddess of Mesopotamia — patron of the *azu* (physicians), the Uruanna pharmacopoeia, and the healing sanctuaries of Isin. The Mesopotamian healing-goddess can inflict incurable disease AND can heal disease — depending on whether she has been appeased or provoked.
 
 ### Greece: Apollo
-In *Iliad* Book I, Apollo sends the plague that devastates the Greek camp — his arrows = disease. The opening catastrophe of the founding text of Western literature is a medical crisis caused by the healer's divine ancestor. But Apollo is simultaneously **Apollo Iatros** (Apollo Physician) — his healing epithet opens the Hippocratic Oath. He fathers [[asklepios]], the divine physician. The god who plagues and the god who heals are the same divine personality in two modes.
+In *Iliad* Book I, Apollo sends the plague that devastates the Greek camp — his arrows = disease. The opening catastrophe of the founding text of Western literature is a medical crisis caused by the healer's divine ancestor. But Apollo is simultaneously **Apollo Iatros** (Apollo Physician) — his healing epithet opens the Hippocratic Oath. He fathers [[asclepius-greek]], the divine physician. The god who plagues and the god who heals are the same divine personality in two modes.
 
 ### Hindu: Shiva + Kali
 Shiva is simultaneously the destroyer (Mahakala, Lord of Death, bearer of the trident that pierces) and the physician (Vaidyanatha, the Lord-Physician, a major Shiva epithet with 12 jyotirlinga shrines). Kali in her terrifying aspect destroys ego/attachment/illness — her destruction IS the healing, because the illness often IS the attachment she destroys. The Shakta medical tradition treats her violent aspect as the active principle of surgery and the aggressive treatment of disease.
@@ -83,7 +83,7 @@ The most surprising cross-tradition expression of the destroyer-healer archetype
 - The dog represents healing through the goddess: to deposit a dog-figurine is to invoke her canine attribute
 
 **Greece (c. 700 BCE–400 CE):**
-- [[asklepios]]'s healing sanctuaries kept **sacred dogs** that licked the wounds of petitioners
+- [[asclepius-greek]]'s healing sanctuaries kept **sacred dogs** that licked the wounds of petitioners
 - The Epidauros *iamata* (cure inscriptions) explicitly record dogs licking patients as healing acts: *"A dog healed a boy with a growth on his neck. While the sanctuary was open, one of the sacred dogs licked him and made him well."*
 - Dogs licking wounds = healing in the Asklepion treatment protocol
 
@@ -113,7 +113,7 @@ Both models converge on the same principle: **mastery of destruction is the prer
 - [[ninkarrak]] — Mesopotamia: explicitly named in Hammurabi as disease-inflicter AND healer
 - [[ninisina]] — Mesopotamia: her son Damu (dying-and-restored) enacts the destruction-restoration cycle
 - [[apollo]] — Greece: sends plague AND is the healing deity's divine father; physician-god epithet
-- [[asklepios]] — Greece: serpent-rod (venom/medicine unity); sacred dogs that heal wounds
+- [[asclepius-greek]] — Greece: serpent-rod (venom/medicine unity); sacred dogs that heal wounds
 - [[medicine-mesopotamian-temple]] — institutional expression of the archetype in the Āšipu diagnosis model
 - [[sacred-pharmacology]] — pharmacological expression: dose-makes-the-poison; every medicine is a poison
 - [[healer-priest]] — the human practitioner who embodies the destroyer-healer in ritual

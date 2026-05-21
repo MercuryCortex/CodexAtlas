@@ -11,14 +11,14 @@ domains: ["health", "cleanliness", "prevention", "mental well-being", "hygiene"]
 gender: "feminine"
 role: "goddess of health, cleanliness, and the maintenance of well-being — daughter of Asklepios; named in the Hippocratic Oath"
 parent-of: []
-child-of: ["[[asklepios]]", "Epione"]
+child-of: ["[[asclepius-greek]]", "Epione"]
 sibling-of: ["[[panacea]]", "Iaso", "Aceso", "Aglaea", "Telesphorus", "Machaon", "Podalirius"]
 consort: []
 attributes: ["serpent (drinking from a bowl or cup she holds)", "bowl/patera", "white robes", "the snake accepting food from her hand — the Hygieia iconographic signature"]
 attested-in: ["Hippocratic Oath (invoked as divine witness)", "Pindar *Pythian Odes*", "Thucydides (plague of Athens — her absence noted)", "Pausanias *Description of Greece* (cult at Athens Acropolis)"]
 equivalents: ["Salus (Roman)", "Sirona (Gaulish health goddess — functional parallel)"]
 syncretic-edges:
-  - target: "asklepios"
+  - target: "asclepius-greek"
     type: "child-of"
     source: "Pausanias 1.23.4 — Hygieia worshipped alongside Asklepios on the Acropolis; daughter in standard genealogy"
     notes: "Hygieia and her father Asklepios are always worshipped together; she represents the maintenance of health, he the restoration of health after illness. The pairing encodes a medical philosophy: prevention alongside cure."
@@ -67,7 +67,7 @@ refs:
 
 ## Identity
 
-Hygieia ("Health" in Greek — ὑγίεια from *hygieinós*, healthy) is the Greek goddess of health and cleanliness — specifically the *maintenance* of health rather than its restoration. She is the daughter of [[asklepios]] and Epione, sister of [[panacea]], and granddaughter of [[apollo]]. Her most famous iconographic form shows her feeding a serpent from a bowl she holds in her hand — the snake, the universal ancient symbol of healing and chthonic wisdom, accepting sustenance from her.
+Hygieia ("Health" in Greek — ὑγίεια from *hygieinós*, healthy) is the Greek goddess of health and cleanliness — specifically the *maintenance* of health rather than its restoration. She is the daughter of [[asclepius-greek]] and Epione, sister of [[panacea]], and granddaughter of [[apollo]]. Her most famous iconographic form shows her feeding a serpent from a bowl she holds in her hand — the snake, the universal ancient symbol of healing and chthonic wisdom, accepting sustenance from her.
 
 She is named in the **first line of the Hippocratic Oath**: *"I swear by Apollo Physician, Asklepios, Hygieia, and Panacea, and all the gods and goddesses, making them my witnesses..."* — placing her at the literal founding moment of Western medical ethics.
 
@@ -109,7 +109,7 @@ The divine patroness of preventive medicine appears across traditions:
 
 ## Vault Connections
 
-- [[asklepios]] — her father; co-worshipped at all major cult sites
+- [[asclepius-greek]] — her father; co-worshipped at all major cult sites
 - [[panacea]] — her sister; together they are the two daughter-goddesses of medicine
 - [[apollo]] — her grandfather; the divine genealogy encoded in the Oath witness list
 - [[hippocrates]] — the Oath he stands for names her in line 1

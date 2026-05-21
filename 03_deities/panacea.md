@@ -11,7 +11,7 @@ domains: ["universal cure", "healing remedies", "herbal medicine", "the pharmaco
 gender: "feminine"
 role: "goddess of the universal remedy — daughter of Asklepios; named in the Hippocratic Oath; her name became the word for universal cure in all Western languages"
 parent-of: []
-child-of: ["[[asklepios]]", "Epione"]
+child-of: ["[[asclepius-greek]]", "Epione"]
 sibling-of: ["[[hygieia]]", "Iaso", "Aceso", "Aglaea", "Telesphorus", "Machaon", "Podalirius"]
 consort: []
 attributes: ["healing herbs", "medicine bowl", "often depicted alongside Hygieia at Asklepion sanctuaries"]
@@ -22,7 +22,7 @@ syncretic-edges:
     type: "sibling-of"
     source: "Hippocratic Oath; standard Asklepian genealogy — both daughters of Asklepios"
     notes: "Hygieia and Panacea represent the two poles of medicine — maintenance of health (Hygieia) vs. universal cure (Panacea). Their co-invocation in the Oath's opening line encodes a complete medical philosophy in two names."
-  - target: "asklepios"
+  - target: "asclepius-greek"
     type: "child-of"
     source: "Standard Asklepian genealogy; confirmed in cult inscriptions at Epidauros and Pergamon"
     notes: "Daughter of Asklepios and Epione; her healing power is the pharmacological aspect of her father's general healing dominion."
@@ -64,7 +64,7 @@ refs:
 
 ## Identity
 
-Panacea ("All-Healing" — from Greek *pan* (all) + *akos* (remedy/cure)) is the Greek goddess of the universal healing remedy. Daughter of [[asklepios]] and Epione, sister of [[hygieia]], she represents the pharmacological and curative dimension of healing — the search for a remedy that can heal any ailment. She is named in the **first line of the Hippocratic Oath** as a divine witness, alongside Apollo, Asklepios, and Hygieia.
+Panacea ("All-Healing" — from Greek *pan* (all) + *akos* (remedy/cure)) is the Greek goddess of the universal healing remedy. Daughter of [[asclepius-greek]] and Epione, sister of [[hygieia]], she represents the pharmacological and curative dimension of healing — the search for a remedy that can heal any ailment. She is named in the **first line of the Hippocratic Oath** as a divine witness, alongside Apollo, Asklepios, and Hygieia.
 
 Her name has achieved total semantic absorption into Western language: "panacea" is the universal word — in every European language and most global languages via colonization — for a supposed cure-all remedy. Every reference to a "panacea" in politics, medicine, or philosophy is an invocation of this goddess.
 
@@ -101,7 +101,7 @@ The concept is mythological in origin, but the *search* it motivates has produce
 
 ## Vault Connections
 
-- [[asklepios]] — her father; divine physician from whom she inherits her healing authority
+- [[asclepius-greek]] — her father; divine physician from whom she inherits her healing authority
 - [[hygieia]] — her sister; together the two daughters define medicine's scope
 - [[apollo]] — her grandfather; the divine genealogy that the Oath encodes
 - [[hippocrates]] — whose Oath names her in line 1

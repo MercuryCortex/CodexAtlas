@@ -2,8 +2,7 @@
 type: deity
 id: "asclepius-greek"
 name: "Asclepius"
-aka: ["Ἀσκληπιός", "Asklepios", "Aesculapius (Roman)"]
-# DUPLICATE WARNING: see also 03_deities/asklepios.md — same deity, Latin (Asclepius) vs Greek-transliteration (Asklepios) spelling. Both 105 lines, both status: full. See AUDIT/forge-deity-spine-findings-2026-05-21.md.
+aka: ["Ἀσκληπιός", "Asklepios", "Aesculapius (Roman)", "Asclépios"]
 tradition: "Greek (Thessalian / Epidaurian origin); pan-Hellenic and Greco-Roman healing cult"
 region: "Greece — principal sanctuaries at Epidaurus, Trikka (Thessaly), Kos, Pergamon; spread to Rome (Tiber Island, -293) and across the Roman Empire; cult-equivalent in Egypt as Imhotep-Asklepios"
 period-active-earliest: -700
@@ -11,12 +10,12 @@ period-active-latest: 400
 domains: ["healing", "dream-incubation", "medicine", "death-and-revival"]
 gender: "masculine"
 role: "healing-god / divine physician; recipient of dream-incubation (*enkoimēsis*) at his sanctuaries"
-parent-of: ["Hygieia (Health)", "Iaso", "Panacea"]
-child-of: ["[[apollo]]"]
-consort: ["Epione"]
+parent-of: ["[[hygieia]] (Health)", "[[panacea]] (All-Cure)", "Machaon (battlefield surgery)", "Podalirius (internal medicine)", "Telesphoros (convalescence)", "Iaso (recovery)", "Aceso (healing process)"]
+child-of: ["[[apollo]]", "Coronis (mortal mother — killed by Apollo for infidelity while pregnant)"]
+consort: ["Epione (Soother of Pain)"]
 attributes: ["serpent-entwined staff (the *rod of Asclepius* — still the symbol of medicine)", "mature bearded male figure (often resembling Zeus)", "dog and serpent (his sacred animals)", "votive body-parts at his sanctuaries"]
-attested-in: ["[[phase-2-008-homeric-epics]]", "[[phase-2-009-hesiod-theogony-works-and-days]]", "[[phase-4-012-asclepius]]"]
-equivalents: ["[[imhotep]] (Egyptian — Hellenistic identification)", "Eshmun (Phoenician)"]
+attested-in: ["[[phase-2-008-homeric-epics]]", "[[phase-2-009-hesiod-theogony-works-and-days]]", "[[phase-4-012-asclepius]]", "[[phase-2-045-hippocratic-corpus]]", "Homeric Hymn to Asclepius", "Pindar Pythian 3", "Aelius Aristides Sacred Tales (Hieroi Logoi)"]
+equivalents: ["[[imhotep]] (Egyptian — Hellenistic identification)", "Eshmun (Phoenician)", "[[dhanvantari]] (Hindu — divine physician of the gods; functional parallel)"]
 syncretic-edges:
   - target: "imhotep"
     type: "ancient-identification"
@@ -24,6 +23,21 @@ syncretic-edges:
   - target: "eshmun"
     type: "ancient-identification"
     source: "Phoenician Eshmun is identified with Asclepius in bilingual inscriptions (e.g., the Eshmun temple at Sidon); the equation is widespread in Hellenistic Levant"
+  - target: "dhanvantari"
+    type: "scholarly-parallel"
+    source: "Comparative religion — both are divine physicians born of a supreme deity (Apollo / Vishnu); both bring medical knowledge as divine gift; both have divine offspring personifying aspects of health. Structurally identical divine medical families"
+  - target: "ninisina"
+    type: "functional-parallel"
+    source: "Stol 2011 *RlA* 'Hund' on dog burials at Isin; Edelstein 1945 *Asclepius* vol. 1 on sacred dogs at Epidauros; both healing cults independently deploy the dog as the sacred healing animal across a 1,400-year gap"
+    notes: "MASSIVE WIN — Sacred Healing Dog. Ninisina's cult at Isin (c. 2000 BCE) has the earliest archaeological evidence of ritual healing dogs; Asclepius's wound-licking dogs at Epidauros are 1,400 years later. Dog saliva contains lysozyme, IgA, and histatins — real antimicrobial agents. Mesopotamia and Greece independently encoded the same pharmacological truth in religious form"
+  - target: "gula-akkadian"
+    type: "functional-parallel"
+    source: "Black & Green 1992 on votive dogs at Gula sanctuaries; Edelstein 1945 on dogs at Asclepius sanctuaries"
+    notes: "Gula's votive dogs at Nippur, Isin, and Borsippa and Asclepius's dogs at Epidauros are parallel expressions of the healing-dog tradition across a 1,000-year gap and a 2,500-mile geographical distance"
+  - target: "ningishzida"
+    type: "structural-precedent"
+    source: "Edelstein 1945; iconographic comparison"
+    notes: "Mesopotamian serpent-staff deity Ningishzida (coiled serpent on a staff, c. 2000 BCE) is the iconographic precedent for the Rod of Asclepius. The symbolic chain: Ningishzida → Asclepius cult (c. 700 BCE) → Roman Aesculapius → modern medical iconography (WHO, AMA, BMA)"
 status: "metadata"
 refs:
   - title: "Asclepius: A Collection and Interpretation of the Testimonies"
@@ -59,6 +73,13 @@ refs:
     type: "primary-translation"
     tier: 1
     notes: "The most extensive surviving personal narrative of Asclepius dream-incubation, 2nd c. CE"
+  - title: "Where Dreams May Come: Incubation Sanctuaries in the Greco-Roman World"
+    author: "Renberg, Gil"
+    year: 2016
+    publisher: "Brill"
+    type: "monograph"
+    tier: 1
+    notes: "Definitive modern study of *enkoimēsis* incubation practice across Asclepieia and other ancient healing-dream sanctuaries"
 tags: [deity, greek, healing, dream-incubation, epidaurus, imhotep-syncretism, hellenistic, asclepius-staff]
 ---
 
@@ -92,6 +113,33 @@ The principal **cultic practice** is *enkoimēsis* (dream-incubation): the suppl
 - **Dog** at his feet — temple-dogs at Asclepieia licked wounds as part of the curative practice
 - **Serpent** — sacred and curative; the cult-snakes at sanctuaries were considered manifestations of the god
 - Votive **terracotta body-parts** offered at his sanctuaries — eyes, breasts, limbs, ears — surviving in vast quantities, especially from Corinth and Athens
+
+## The Rod of Asclepius — universal medical symbol
+
+The **Rod of Asclepius** — a single serpent coiled around a plain staff — is the oldest and most universal symbol of medicine. It appears on the logo of the **World Health Organization, the American Medical Association, the British Medical Association**, and virtually every national medical organization worldwide.
+
+The symbolism layers:
+- **Snake + shedding skin = regeneration** — the snake that renews itself mirrors the body's capacity for healing.
+- **Serpent = chthonic healing** — snakes live close to the earth and its medicinal plants; they embody the ambivalence of medicine (same creature, poison and cure).
+- **Staff = journey** — the physician travels to the patient.
+- **Single serpent = medicine** (the *caduceus* of Hermes, with two serpents, is the symbol of commerce and was adopted by the US Army Medical Corps in error in 1902 — a mistake that persists).
+
+The symbolic chain: **Mesopotamian serpent-healing deity [[ningishzida]]** (coiled serpent staff, c. 2000 BCE) → **Asclepius cult** (c. 700 BCE) → **Roman Aesculapius** → **modern medical iconography**.
+
+## The Asklepion — healing architecture
+
+The Asklepion at Epidaurus (c. 600 BCE) combined under one sanctuary complex:
+- The **abaton** (sleeping hall for incubation dreams).
+- **Thermal baths** (hydrotherapy).
+- **Gymnasium** (exercise as medicine).
+- **Theater** (entertainment and community as healing — the famous theatron at Epidaurus seats 14,000 and is acoustically the finest surviving from antiquity).
+- Sacred serpents kept in the sanctuary.
+
+Patients who slept in the abaton received diagnostic or curative dreams from Asclepius. The preserved **iamata** (cure-inscriptions) from Epidaurus record hundreds of cases — the oldest continuous patient record in history.
+
+## Death and deification — the boundary of medicine
+
+The myth of Asclepius's death at Zeus's thunderbolt is one of Greek mythology's deepest medical statements: **the physician who can heal everything crosses a boundary (resurrection) that threatens cosmic order**. The limit of medicine is written into the founder's myth. This boundary — what medicine can and cannot do — remains the central ethical question in medical practice.
 
 ## Disputes
 - **Historical kernel.** Whether there was a historical Thessalian healer-king Asclepius later deified, or whether Asclepius is from the start a divine figure with no historical kernel, is debated; Edelstein & Edelstein (1945) lean historical, modern scholarship is more skeptical.

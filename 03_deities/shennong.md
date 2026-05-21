@@ -99,5 +99,5 @@ All four are divine beings who function as the **first and authoritative pharmac
 - [[phase-3-037-shennong-bencao-jing]] — the pharmacopeia text attributed to his divine authorship
 - [[sacred-pharmacology]] — Shennong's tasting of 365 herbs is the Chinese tradition's paradigm case
 - [[dhanvantari]] — Hindu structural parallel: divine pharmacologist who delivers complete medical knowledge to humanity
-- [[asklepios]] — Greek structural parallel: divine physician-founder who establishes the canon
+- [[asclepius-greek]] — Greek structural parallel: divine physician-founder who establishes the canon
 - [[soma]] — Vedic parallel: the plant-deity whose consumption yields divine pharmacological knowledge

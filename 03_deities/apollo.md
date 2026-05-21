@@ -21,7 +21,7 @@ syncretic-edges:
     type: "ancient-identification"
     source: "Herodotus 2.144, 2.156"
     notes: "Herodotus equates Apollo with the Egyptian Horus."
-  - target: "asklepios"
+  - target: "asclepius-greek"
     type: "parent-of"
     source: "Hesiod (Coronis myth); Pindar Pythian 3; Homeric Hymn to Asklepios"
     notes: "Apollo fathered Asclepius on the mortal Coronis; raised him via Chiron; Asclepius became the divine physician, eclipsing Apollo's healing function."

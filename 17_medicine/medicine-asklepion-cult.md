@@ -28,7 +28,7 @@ cross-tradition-edges:
     note: Galen practiced in the Pergamon Asklepion before becoming court physician in Rome. His synthesis of Hippocratic rationalism with the Asklepion's empirical case-observation entered Arabic medicine wholesale via Hunayn ibn Ishaq's translations.
 ---
 
-The Asklepion network was the most elaborate healing institution in the ancient Mediterranean — hundreds of temple complexes dedicated to [[asklepios]], the divine physician, where the sick came to sleep, dream, and be cured by the god. At its peak (3rd century BCE–3rd century CE), over 400 Asklepeia operated across the Greek world.
+The Asklepion network was the most elaborate healing institution in the ancient Mediterranean — hundreds of temple complexes dedicated to [[asclepius-greek]], the divine physician, where the sick came to sleep, dream, and be cured by the god. At its peak (3rd century BCE–3rd century CE), over 400 Asklepeia operated across the Greek world.
 
 ## The Architecture of Healing Sleep
 
@@ -45,7 +45,7 @@ The Epidauros iamata (4th century BCE) are one of history's most extraordinary m
 
 ## Asklepios — The Divine Surgeon
 
-[[asklepios]] was the son of [[apollo]] (god of music, prophecy, and healing) and the mortal Coronis. His divine lineage embedded medicine in the celestial hierarchy: Apollo's healing function descended through Asclepius to his children ([[hygieia]] — Health, [[panacea]] — All-Cure, [[iaso]] — Recovery), creating the first systematic divine medical family.
+[[asclepius-greek]] was the son of [[apollo]] (god of music, prophecy, and healing) and the mortal Coronis. His divine lineage embedded medicine in the celestial hierarchy: Apollo's healing function descended through Asclepius to his children ([[hygieia]] — Health, [[panacea]] — All-Cure, [[iaso]] — Recovery), creating the first systematic divine medical family.
 
 His instrument was the **Rod of Asclepius** — a single serpent coiled around a staff. The snake symbolized:
 - Regeneration (shedding skin = renewal)
@@ -92,7 +92,7 @@ In 291 BCE Rome imported the Asclepius cult from Epidauros during a plague epide
 
 ## Vault Connections
 
-- [[asklepios]] — the god; divine physician; son of Apollo
+- [[asclepius-greek]] — the god; divine physician; son of Apollo
 - [[apollo]] — father of Asklepios; original Greek healing deity
 - [[hygieia]] — daughter of Asklepios; goddess of health and prevention (root of "hygiene")
 - [[imhotep]] — Egyptian source of the divine healer archetype; identified with Asclepius in Ptolemaic Egypt

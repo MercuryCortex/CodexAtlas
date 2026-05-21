@@ -27,7 +27,7 @@ syncretic-edges:
   - target: "damu"
     type: "ancient-identification"
     source: "Black & Green 1992 — Damu, the dying-and-restored young healing god, is consistently named as Ninisina's son"
-  - target: "asklepios"
+  - target: "asclepius-greek"
     type: "functional-parallel"
     source: "Comparative religion — Stol 2011 *RlA* 'Hund' on dog burials at Isin healing-cult sites; Edelstein 1945 on sacred dogs at Epidauros; both healing traditions independently deploy the dog as the sacred healing animal"
     notes: "MASSIVE WIN: Sacred Healing Dog. Dog burials at Ninisina's Egalmah temple (Isin, c. 2000 BCE) are the oldest archaeological evidence of ritual healing dogs; Asklepios's wound-licking dogs at Epidauros (c. 600 BCE) are 1,400 years later. Pharmacological truth: dog saliva contains lysozyme, IgA, and histatins — antimicrobial agents. Both traditions encoded empirical wound-treatment knowledge in religious form."
@@ -89,7 +89,7 @@ The **dog** is her most distinctive emblem — dog burials and votive dog-figuri
 
 ## MASSIVE WIN: The Dog-Healer Connection
 
-Ninisina's dog — shared with [[gula-akkadian]] and [[ninkarrak]] — reappears at [[asklepios]]'s healing sanctuaries in Greece 1,500 years later. At Epidauros, sacred dogs licked the wounds of petitioners as healing acts (recorded in the *iamata* inscriptions). Dog saliva contains lysozyme, immunoglobulin A, and histatins — genuine antibacterial and wound-healing agents. The ancient observation was pharmacologically accurate. Two civilizations, independently, embedded the same animal in the same healing-sanctuary role because it worked. See [[destroyer-healer]] for the full pattern.
+Ninisina's dog — shared with [[gula-akkadian]] and [[ninkarrak]] — reappears at [[asclepius-greek]]'s healing sanctuaries in Greece 1,500 years later. At Epidauros, sacred dogs licked the wounds of petitioners as healing acts (recorded in the *iamata* inscriptions). Dog saliva contains lysozyme, immunoglobulin A, and histatins — genuine antibacterial and wound-healing agents. The ancient observation was pharmacologically accurate. Two civilizations, independently, embedded the same animal in the same healing-sanctuary role because it worked. See [[destroyer-healer]] for the full pattern.
 
 ## Vault Connections
 
@@ -100,7 +100,7 @@ Ninisina's dog — shared with [[gula-akkadian]] and [[ninkarrak]] — reappears
 - [[healer-priest]] — the *azu* and *āšipu* act in her name; the Āšipu/Asû dyad is her institutional expression
 - [[sacred-pharmacology]] — the Uruanna plant list descends from her priestly pharmaceutical tradition
 - [[destroyer-healer]] — the archetype she embodies: the healing-goddess can also afflict
-- [[asklepios]] — Greek parallel divine physician; both traditions deploy sacred dogs in healing sanctuaries
+- [[asclepius-greek]] — Greek parallel divine physician; both traditions deploy sacred dogs in healing sanctuaries
 - [[dhanvantari]] — Hindu parallel: divine physician patron of pharmacological tradition
 - [[sekhmet]] — Egyptian parallel: destroyer-healer goddess; same archetype, different civilization
 

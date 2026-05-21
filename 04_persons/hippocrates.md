@@ -110,7 +110,7 @@ This is the founding text of **secular medicine**: the argument that divine myst
 - [[medicine-hippocratic]] — the tradition he founded
 - [[phase-2-045-hippocratic-corpus]] — the textual tradition bearing his name
 - [[physicians-oath]] — the Oath as cross-tradition sacred form; its 6 MASSIVE WIN connections
-- [[asklepios]] — the divine physician whose name opens the Hippocratic Oath
+- [[asclepius-greek]] — the divine physician whose name opens the Hippocratic Oath
 - [[hygieia]] — Asklepios's daughter; goddess of Health; named in Oath line 1; root of "hygiene"
 - [[panacea]] — Asklepios's daughter; goddess of universal cure; named in Oath line 1; root of "panacea"
 - [[apollo]] — grandfather of the medical divine family; invoked first in the Oath
