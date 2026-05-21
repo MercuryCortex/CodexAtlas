@@ -36,6 +36,10 @@ syncretic-edges:
   - target: "ouroboros"
     type: "scholarly-parallel"
     source: "Eliade 1958 — Damballa-and-Aida-Wedo (his consort) coiled together encircling the cosmos parallels the Ouroboros encircling iconography"
+  - target: "afro-diasporic-syncretism"
+    type: "source-deity-of-diaspora-fusion"
+    source: "Métraux 1959, *Le Vaudou haïtien*; Desmangles 1992, *The Faces of the Gods*; Thompson 1983, *Flash of the Spirit* — Damballa/Danbala Wèdo (direct West-African Fon transmission from Dan / Aida-Hwedo) is the serpent/sky-domain Atlantic-diaspora syncretism with Saint Patrick (snake-iconography, paradoxically the saint who *removed* snakes from Ireland) and in some lineages Moses (serpent-staff). The Saint Patrick pairing is the cleanest example of operational (iconographic) rather than theological syncretism — the icons share serpent-imagery without any theological alignment. See [[afro-diasporic-syncretism]]"
+    notes: "MASSIVE-WIN: the Damballa-Saint Patrick pairing is the textbook case of camouflage-without-theological-fusion — pure iconographic operational syncretism that the Desmangles 1992 three-mechanism framework explicitly accommodates"
 status: "metadata"
 refs:
   - title: "Le Vaudou haïtien"

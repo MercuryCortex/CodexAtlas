@@ -39,6 +39,10 @@ syncretic-edges:
     type: "scholarly-parallel"
     source: "Carrasco 1999 — Aztec Xochiquetzal as flower-love-beauty goddess"
     notes: "MASSIVE WIN: 6-tradition love-beauty-fertility goddess convergence (Greek Aphrodite, Roman Venus, Vedic Lakshmi, Norse Freyja, Egyptian Hathor, Aztec Xochiquetzal, Yoruba Oshun)"
+  - target: "afro-diasporic-syncretism"
+    type: "source-deity-of-diaspora-fusion"
+    source: "Murphy 1988; Brandon 1993; Murphy & Sanford 2001 — Oshun/Ochún's canonical Cuban-Lucumí pairing with Our Lady of Charity (*Virgen de la Caridad del Cobre*), Cuba's national patroness whose 1612 sea-rescue legend (three fishermen saved in Bay of Nipe) was assimilated into the Oshun-Yemayá water-protection schema. The yellow iconography, the river/sea connection, and the universality of protection define one of the politically most-freighted syncretisms in modern religion: Cuba's national Marian patroness IS its primary Santería orisha. See [[afro-diasporic-syncretism]]"
+    notes: "MASSIVE-WIN: the Cuban-Marian convergence as 'genuine theological synthesis' rather than mere camouflage — Desmangles 1992's mid-channel mechanism, where Cubans across four centuries came to see the orisha-saint as truly correspondent"
 status: "metadata"
 refs:
   - title: "Òṣun across the Waters: A Yoruba Goddess in Africa and the Americas"

@@ -34,6 +34,10 @@ syncretic-edges:
   - target: "khnum"
     type: "scholarly-parallel"
     source: "Wilkinson 2003 — Egyptian Khnum as ram-headed potter-god who shapes humans on the potter's wheel; the closest Egyptian parallel to Obatala's clay-shaping function"
+  - target: "afro-diasporic-syncretism"
+    type: "source-deity-of-diaspora-fusion"
+    source: "Murphy 1988, *Santería* p. 91; Brandon 1993; Desmangles 1992 — Obatalá/Oxalá's canonical Cuban-Lucumí pairing with Our Lady of Mercy (Las Mercedes — the white-garbed Marian figure) is the canonical purity/creation-domain syncretism. In Brazilian Candomblé, Oxalá is identified with Jesus Christ himself — one of the most theologically sophisticated Orisha-Christian identifications, going beyond surface iconography to structural theological equivalence (creative-Logos + purity + suffering + protection of vulnerable). See [[afro-diasporic-syncretism]]"
+    notes: "MASSIVE-WIN: the Oxalá-Christ identification in Candomblé is the rare case where the syncretic mapping reaches Christological depth — the orisha-saint correspondence pattern collapses into orisha-Christ correspondence, suggesting the deepest theological move the syncretism can make"
 status: "metadata"
 refs:
   - title: "Ifa: An Exposition of Ifa Literary Corpus"

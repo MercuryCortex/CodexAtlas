@@ -36,6 +36,10 @@ syncretic-edges:
     type: "scholarly-parallel"
     source: "Eliade 1958 — Maya Ah-Puch as death-god"
     notes: "MASSIVE WIN: 6-tradition lord-of-the-dead convergence (Vodou Baron Samedi, Greek Hades, Egyptian Anubis, Aztec Mictlantecuhtli, Vedic Yama, Maya Ah-Puch)"
+  - target: "afro-diasporic-syncretism"
+    type: "source-deity-of-diaspora-fusion"
+    source: "McAlister 2002, *Rara!*; Cosentino 1995, *Sacred Arts of Haitian Vodou*; Brown 1991, *Mama Lola* — Baron Samedi (and the broader Gede nasyon) is the death/cemetery-domain Atlantic-diaspora syncretism with Saint Martin de Porres / Saint Gerard / Saint Expedite (regional variation). The Gede liturgy + the November 1–2 Fèt Gede synchronization with All Saints / All Souls is one of the calendrically-locked Vodou-Catholic fusions. See [[afro-diasporic-syncretism]]"
+    notes: "MASSIVE-WIN: the calendrical alignment of Fèt Gede with All Saints/All Souls is the cleanest example of the Catholic liturgical calendar absorbing the African ancestor-festival cycle — bidirectional rather than purely camouflage"
 status: "metadata"
 refs:
   - title: "Rara!"

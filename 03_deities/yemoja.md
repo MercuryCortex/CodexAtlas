@@ -39,6 +39,10 @@ syncretic-edges:
     type: "scholarly-parallel"
     source: "Brandon 1993 — Cuban Lucumí Yemaya is identified with Our Lady of Regla (the Black Madonna of the Havana harbor); the cosmic-mother-of-the-sea function parallels the Marian title 'Stella Maris' (Star of the Sea, the Marian patroness of sailors)"
     notes: "Marian Stella Maris ocean-mother parallel"
+  - target: "afro-diasporic-syncretism"
+    type: "source-deity-of-diaspora-fusion"
+    source: "Murphy 1988, *Santería*; Brandon 1993; Drewal 2008, *Mami Wata*; Desmangles 1992 — Yemọja's canonical Cuban-Lucumí pairing with Our Lady of Regla (the dark-skinned Marian patroness of Regla, the harbor town across the bay from Havana — both protectors of sailors and the harbor) is the maternal-ocean-domain syncretism. The river-to-ocean reconfiguration of Yemọja (Ogun River in West Africa → Atlantic Ocean in diaspora) is itself a Middle-Passage theological transformation — the orisha's domain stretches to accommodate the new geography. In Brazil, Iemanjá's New Year's Eve festivities at Rio de Janeiro draw millions. See [[afro-diasporic-syncretism]]"
+    notes: "MASSIVE-WIN: the domain-shift Yemọja-river→Yemayá/Iemanjá-ocean as the cleanest case of African theology being reshaped by the Atlantic experience — the orisha's water-jurisdiction grew to encompass the sea that defined the Middle Passage"
 status: "metadata"
 refs:
   - title: "Mami Wata: Arts for Water Spirits in Africa and Its Diasporas"

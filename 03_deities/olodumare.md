@@ -45,6 +45,10 @@ syncretic-edges:
   - target: "ahura-mazda"
     type: "scholarly-parallel"
     source: "Mbiti 1969 — Iranian supreme-light deity parallel; both are the supreme being whose name is invoked but whose direct cult is mediated"
+  - target: "afro-diasporic-syncretism"
+    type: "supreme-deity-of-diaspora-substrate"
+    source: "Murphy 1988, *Santería*; Brandon 1993; Desmangles 1992 — Olódùmarè is the supreme-being apex of the Yoruba pantheon whose deus-otiosus structure (approached only through the orisha intermediaries) survives the Atlantic crossing largely intact as Cuban Lucumí *Olófin* and as Haitian Vodou *Bondye* ('Good God', from French *Bon Dieu*). The supreme being is loosely identified with God the Father in Catholic syncretism, but unlike the orishas it lacks a specific saint-pairing — its transcendence makes one-to-one correspondence theologically unnecessary. See [[afro-diasporic-syncretism]]"
+    notes: "MASSIVE-WIN: Olódùmarè/Bondye demonstrates that the orisha-saint syncretism mechanism applies to the *operational mediator deities* of the pantheon but is bypassed for the *supreme transcendent* — the apex translates directly as 'God' without needing a saint surrogate, evidence that the syncretism operates at the working-pantheon level rather than the metaphysical-supreme level"
 status: "metadata"
 refs:
   - title: "Ifa: An Exposition of Ifa Literary Corpus"

@@ -33,6 +33,10 @@ syncretic-edges:
     type: "ancient-identification"
     source: "Brown 1991; McAlister 2002 — the Mater Dolorosa folk-syncretism with Erzulie Freda (love-pole) and the Black Madonna of Czestochowa with Erzulie Dantor (warrior-mother pole) are the most theologically rich Haitian Vodou-Catholic syncretisms"
     notes: "MASSIVE WIN: Vodou-Marian syncretism — the Black Madonna/Mater Dolorosa to Erzulie Dantor/Freda identification documented since the early colonial period"
+  - target: "afro-diasporic-syncretism"
+    type: "source-deity-of-diaspora-fusion"
+    source: "Brown 1991, *Mama Lola*; McAlister 2002, *Rara!*; Desmangles 1992 — Erzulie is the love/beauty-domain Atlantic-diaspora syncretism, split across the Rada/Petwo bifurcation: Erzulie Freda ↔ Mater Dolorosa / Our Lady of Sorrows (heart-pierced-by-sword shared iconography); Erzulie Dantor ↔ Our Lady of Czestochowa (the Polish Black Madonna whose image arrived in Haiti via Polish soldiers sent by Napoleon ~1802–1803 who defected to the Haitian Revolution). See [[afro-diasporic-syncretism]]"
+    notes: "MASSIVE-WIN: the historical accident of Polish soldiers carrying the Black Madonna of Czestochowa into Saint-Domingue during the Haitian Revolution is one of the cleanest documented cases of a specific Catholic image becoming load-bearing for a specific orisha/lwa identification — material-iconographic transmission via a tiny named historical episode"
 status: "metadata"
 refs:
   - title: "Mama Lola: A Vodou Priestess in Brooklyn"

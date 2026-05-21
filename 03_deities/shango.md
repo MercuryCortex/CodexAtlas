@@ -39,6 +39,10 @@ syncretic-edges:
     type: "scholarly-parallel"
     source: "Eliade 1958 — Aztec Tlaloc as storm-rain god"
     notes: "MASSIVE WIN: 7-tradition storm-deity-with-axe/hammer/thunderbolt convergence (Vedic Indra, Norse Thor, Greek Zeus, Slavic Perun, Canaanite Baal-Hadad, Yoruba Shango, Aztec Tlaloc) — one of the most-universally-attested mythological constellations"
+  - target: "afro-diasporic-syncretism"
+    type: "source-deity-of-diaspora-fusion"
+    source: "Murphy 1988, *Santería*; Brandon 1993; Desmangles 1992 — Shango/Changó's canonical Atlantic-diaspora syncretism with Santa Bárbara (martyred-with-lightning Catholic virgin-saint) is the load-bearing thunder-domain instance of the lwa/orisha-to-saint correspondence pattern. The Shango-Bárbara pairing is the most globally visible afro-Catholic syncretism (Cuban Lucumí, Brazilian Candomblé). See [[afro-diasporic-syncretism]]"
+    notes: "MASSIVE-WIN: Shango → Santa Bárbara is the textbook example of cross-gender orisha-saint mapping where shared functional domain (thunder/lightning) overrides gender match — used by Murphy + Desmangles as the introductory case for the syncretism mechanism"
 status: "metadata"
 refs:
   - title: "Flash of the Spirit: African and Afro-American Art and Philosophy"

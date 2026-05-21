@@ -35,6 +35,10 @@ syncretic-edges:
   - target: "iktomi"
     type: "scholarly-parallel"
     source: "Eliade 1958; Métraux 1959 — Lakota Iktomi as trickster-mediator; partial trickster-messenger parallel"
+  - target: "afro-diasporic-syncretism"
+    type: "source-deity-of-diaspora-fusion"
+    source: "Métraux 1959, *Le Vaudou haïtien*; Desmangles 1992, *The Faces of the Gods*; Brandon 1993 — Papa Legba/Atibon-Legba is the crossroads/gatekeeper-domain Atlantic-diaspora syncretism with Saint Peter (keys + gatekeeper of heaven) and Saint Lazarus (regional variation, beggar-iconography pairing). The transformation of the West-African young-virile Èṣù-Legba into the elderly-infirm Haitian Papa Legba is itself a Vodou theological move documented as one of the most interpretively meaningful Middle-Passage iconographic shifts. See [[afro-diasporic-syncretism]]"
+    notes: "MASSIVE-WIN: the African-to-diaspora age-and-iconography transformation (vigorous Èṣù → elderly Papa Legba with cane) carries theological weight — the most powerful seeming the most vulnerable as a Vodou interpretive move"
 status: "metadata"
 refs:
   - title: "Le Vaudou haïtien"
