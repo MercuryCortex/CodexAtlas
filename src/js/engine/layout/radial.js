@@ -383,16 +383,26 @@
     //     across the rim labels; soft inner stop so newest
     //     nodes don't pile at r=0.
     //
-    // Phase 20D-4 (2026-05-21): wedge angular bounds ARE
-    // re-applied at the end of each iteration. The previous
-    // "no clamp" version let Shinto / Pacific members drift
-    // ACROSS the family dividers, which then read as a layout
-    // bug ("shinto over the line"). Now: every member is
-    // re-clamped to its own family's [a0, a1] after each
-    // global-pass move, so dividers (at the wedge boundaries)
-    // always sit BETWEEN families. The clamp is HARD because
-    // John asked for "PERFECT RADIAL" divider alignment —
-    // any softness would re-introduce the drift.
+    // Phase 20D-5 (2026-05-21): the dividers are now treated
+    // as ACTIVE REPULSION SOURCES (John's directive: "the
+    // nodes should also be repellent from the lines, attempt
+    // to stay away from them ~4 px").
+    //
+    //   1. The dividers are the AUTHORITY — set by the wedge
+    //      a0 / a1 boundaries.
+    //   2. Each node feels three forces during this pass:
+    //        - neighbour repulsion (existing)
+    //        - inward gravity (existing — "toward centre when possible")
+    //        - DIVIDER REPULSION (new) — tangential push away
+    //          from the two wedge boundaries when within
+    //          DIVIDER_BUFFER_WU world units.
+    //   3. A final hard angular clamp using the same
+    //      DIVIDER_BUFFER_WU runs after the push is applied —
+    //      catches any overshoot from the repulsion impulse.
+    //
+    // DIVIDER_BUFFER_WU = 8 wu, which is ~5 px at the default
+    // fit-to-extent zoom and ~10 px at 2× zoom. Comfortably
+    // exceeds John's 4-px target at every zoom we ship at.
     {
       const PADDING   = 10;      // wu of extra space per pair
       const G_ITERS   = 5;
@@ -401,6 +411,7 @@
       const BASE_SZ   = 11;
       const HUB_SZ    = 7;
       const RIM_PAD   = 6;
+      const DIVIDER_BUFFER_WU = 8;
       const outerCap  = rOuter - RIM_PAD;
       const innerCap  = rInner + RIM_PAD;
 
@@ -409,12 +420,11 @@
       let maxDegGlobal = 1;
       for (const m of degree.values()) if (m > maxDegGlobal) maxDegGlobal = m;
 
-      // Snapshot all placed nodes — also remember each node's
-      // wedge so we can re-clamp angularly after every move.
-      // ANG_PAD is a tiny inward set-back from a0/a1 so disks
-      // visibly clear the divider line (which sits AT a1+gap/2
-      // — i.e. a few hundredths of a radian past a1).
-      const ANG_PAD = 0.005;
+      // Snapshot all placed nodes — store RAW wedge a0 / a1
+      // (no pre-applied padding). The buffer is applied per-
+      // iteration as `DIVIDER_BUFFER_WU / r` rad, which gives
+      // CONSTANT 8 wu of clearance regardless of how far out
+      // the node sits.
       const all = [];
       for (const n of nodes) {
         const p = positions.get(n.id);
@@ -426,8 +436,8 @@
           x:     p.x,
           y:     p.y,
           deg:   degree.get(n.id) || 0,
-          a0:    w ? w.a0 + ANG_PAD : null,
-          a1:    w ? w.a1 - ANG_PAD : null,
+          a0:    w ? w.a0 : null,
+          a1:    w ? w.a1 : null,
           actr:  w ? w.center : 0,
         });
       }
@@ -467,14 +477,42 @@
             }
           }
           // Inward gravity — "toward the centre when possible".
-          // Small constant pull so the layout naturally compacts
-          // rather than expands when conflicts resolve.
-          const r = Math.hypot(pi.x, pi.y);
-          if (r > 1) {
-            pushX -= (pi.x / r) * G_GRAVITY;
-            pushY -= (pi.y / r) * G_GRAVITY;
+          const curR = Math.hypot(pi.x, pi.y);
+          if (curR > 1) {
+            pushX -= (pi.x / curR) * G_GRAVITY;
+            pushY -= (pi.y / curR) * G_GRAVITY;
           }
-          // Apply.
+          // Divider repulsion (NEW in Phase 20D-5). Tangential
+          // push that fires when the node is within
+          // DIVIDER_BUFFER_WU world units of either of its
+          // wedge boundary lines. Force scales with how deep
+          // into the buffer the node has crept.
+          if (pi.a0 != null && curR > 1) {
+            const ang = Math.atan2(pi.y, pi.x);
+            let off = ang - pi.actr;
+            while (off >  Math.PI) off -= 2 * Math.PI;
+            while (off < -Math.PI) off += 2 * Math.PI;
+            const halfArc   = (pi.a1 - pi.a0) / 2;
+            const distA1Rad = halfArc - off;   // toward +ω boundary
+            const distA0Rad = halfArc + off;   // toward −ω boundary
+            const distA1Wu  = curR * distA1Rad;
+            const distA0Wu  = curR * distA0Rad;
+            // Tangent: rotate (x,y)/r by +90° → (−y, +x)/r.
+            // +ω tangent direction at this point.
+            const tanX = -pi.y / curR;
+            const tanY =  pi.x / curR;
+            if (distA1Wu < DIVIDER_BUFFER_WU) {
+              const f = (DIVIDER_BUFFER_WU - distA1Wu) * 0.5;
+              pushX -= tanX * f;   // push toward −ω
+              pushY -= tanY * f;
+            }
+            if (distA0Wu < DIVIDER_BUFFER_WU) {
+              const f = (DIVIDER_BUFFER_WU - distA0Wu) * 0.5;
+              pushX += tanX * f;   // push toward +ω
+              pushY += tanY * f;
+            }
+          }
+          // Apply combined push.
           pi.x += pushX;
           pi.y += pushY;
           // Annulus clamp (radial).
@@ -488,20 +526,18 @@
             pi.x *= s; pi.y *= s;
             nr = innerCap;
           }
-          // Wedge angular clamp — keep member inside its
-          // family's [a0, a1] so the wedge-boundary dividers
-          // always sit BETWEEN families.
+          // Wedge angular HARD clamp with the same buffer.
           if (pi.a0 != null && nr > 0.001) {
             const ang = Math.atan2(pi.y, pi.x);
-            // Compute signed offset from wedge centre, wrapped
-            // to (-π, π], so wrap-around wedges (e.g. one that
-            // crosses ±π) get a consistent comparison.
             let off = ang - pi.actr;
             while (off >  Math.PI) off -= 2 * Math.PI;
             while (off < -Math.PI) off += 2 * Math.PI;
-            const halfArc = (pi.a1 - pi.a0) / 2;
-            if (off >  halfArc || off < -halfArc) {
-              const clamped = Math.max(-halfArc, Math.min(halfArc, off));
+            const halfArc    = (pi.a1 - pi.a0) / 2;
+            // Buffer in rad at this radius.
+            const padRad     = Math.min(halfArc * 0.5, DIVIDER_BUFFER_WU / Math.max(nr, 10));
+            const usableHalf = Math.max(0.001, halfArc - padRad);
+            if (off > usableHalf || off < -usableHalf) {
+              const clamped = Math.max(-usableHalf, Math.min(usableHalf, off));
               const newAng  = pi.actr + clamped;
               pi.x = nr * Math.cos(newAng);
               pi.y = nr * Math.sin(newAng);
