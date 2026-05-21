@@ -64,6 +64,15 @@ cross-symbol-edges:
     notes: "The Christian-era reception of the Bennu/phoenix as Resurrection-symbol travels alongside the halo iconographic development — the radiant-resurrection-bird and the solar-radiance halo both feed the visual vocabulary of Christ's risen body in Late-Antique mosaic and sarcophagus iconography (Van den Broek 1972 ch. 5)."
     refs: ["Van den Broek 1972", "Jensen 2017"]
 mystery-status: "documented"
+hub-edges:
+  - target: "zeus-pantokrator-transmission"
+    type: "iconographic-component-of-Pantokrator-type"
+    source: "Mathews 1993 *The Clash of Gods*; Grabar 1968 *Christian Iconography*; Hijmans 2009 *Sol: The Sun in the Art and Religions of Rome*; Bardill 2012 *Constantine and the Christian Empire* — the Christian halo descends from the Hellenistic-Roman Sol-Invictus radiate crown via the late-3rd-c. iconographic appropriation; Mathews's *Clash of Gods* documents this as the principal pagan-to-Christian iconographic continuity. The halo is part of the visual-vocabulary complex that produces the Christ-Pantokrator type alongside the Phidian enthroned-Zeus body and Sol-Invictus solar attributes"
+    notes: "Cross-lens: 09_symbols → 06_themes. Symbol-end visual-iconographic component of the Pantokrator-transmission hypothesis"
+  - target: "third-century-collision-zone"
+    type: "iconographic-witness-event-of-collision-zone"
+    source: "Mathews 1993; Beck 2006 *The Religion of the Mithras Cult*; Bardill 2012 — the halo's formation as the Sol-Invictus + Mithraic-Sol + emergent-Christian-Christ iconographic complex IS a 3rd-century event; the halo's 4th-c. settlement on Christ is the iconographic crystallization of the 3rd-c. religious collision"
+    notes: "Cross-lens: 09_symbols → 06_themes. The halo's transmission documents the iconographic dimension of the 3rd-century collision zone"
 status: "metadata"
 refs:
   - title: "The Clash of Gods: A Reinterpretation of Early Christian Art"

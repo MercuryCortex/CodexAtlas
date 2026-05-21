@@ -84,6 +84,23 @@ cross-symbol-edges:
     notes: "Both are **alchemical regeneration emblems** in the Renaissance and early-modern Hermetic tradition. The ouroboros encodes cyclic self-regeneration-through-self-consumption; the pelican-in-piety encodes regeneration-through-self-sacrifice. Maier's *Atalanta Fugiens* (1617) and Khunrath's *Amphitheatrum Sapientiae* deploy both in the same alchemical-emblem tradition. They are conceptually paired as the two principal animal-regeneration symbols of the Western Hermetic-alchemical emblem-book tradition."
     refs: ["Newman 2018", "Hakansson 2001"]
 mystery-status: "documented"
+hub-edges:
+  - target: "serpent-dual-nature"
+    type: "cyclic-eternity-pole-of-serpent-symbolism"
+    source: "Hornung 1999 *The Ancient Egyptian Books of the Afterlife*; Charlesworth 2010 *The Good and Evil Serpent*; Eliade 1956 *The Forge and the Crucible* (Tier 2 — alchemical phase only) — the ouroboros is the non-hostile, cyclic-eternity pole of the cross-tradition serpent-symbolism complex; against the chaoskampf/cosmic-enemy register (Apophis hostile, Leviathan, Vritra, Tiamat), the ouroboros encodes the serpent as boundary-maker, cosmos-encircler, eternal-cyclic-time"
+    notes: "Cross-lens: 09_symbols → 06_themes. The serpent-dual-nature hub (147L) needs BOTH poles wired; the ouroboros is the cleanest non-hostile articulation"
+  - target: "hermetic-transmission-chain"
+    type: "signature-emblem-of-chain"
+    source: "Principe 2013 *The Secrets of Alchemy*; Yates 1964 *Giordano Bruno and the Hermetic Tradition*; Yates 1972 *The Rosicrucian Enlightenment*; Hanegraaff 2012 *Esotericism and the Academy* — the ouroboros is THE signature emblem of the hermetic-alchemical chain: Greek-alchemical *Chrysopoeia of Cleopatra* (1st-3rd c. CE, *en to pan*) → medieval Arabic alchemy (Jabir/Razi) → Latin medieval alchemy → Renaissance Hermetic emblem-books (Maier *Atalanta Fugiens* 1617; Khunrath; Mylius) → 19th-c. occult revival → Jung 1956. Best-documented symbol-transmission in the vault"
+    notes: "Cross-lens: 09_symbols → 06_themes. MASSIVE-WIN: the ouroboros's transmission chain IS the hermetic chain at the iconographic level"
+  - target: "alchemy-as-spiritual-discipline"
+    type: "canonical-emblem-of-discipline"
+    source: "Principe 2013; Eliade 1956 (Tier 2 — alchemical phase only); Jung 1956 *Mysterium Coniunctionis* (Tier 2 Jungian-tradition source); Newman 2018 *Newton the Alchemist* — the ouroboros is the canonical visual signature of the alchemical opus: cyclic self-transformation, unity-of-opposites, eternal work. Every major alchemical emblem-book deploys it as central organizing image"
+    notes: "Cross-lens: 09_symbols → 06_themes"
+  - target: "theme-egyptian-gnostic-transmission"
+    type: "iconographic-evidence-event-for-Egyptian-channel"
+    source: "Hornung 1999; Fowden 1986 *The Egyptian Hermes*; Principe 2013 — the Egyptian (c. -1325 Tutankhamun shrines) → Alexandrian alchemical (*Chrysopoeia*) → Christian-Gnostic Ophite/Naasene (2nd-3rd c.) ouroboros chain is one of the cleanest iconographic-documented Egyptian-to-Gnostic transmissions; Origen *Contra Celsum* 6.24 records the Ophite ouroboros usage from inside the orthodox condemnation"
+    notes: "Cross-lens: 09_symbols → 06_themes. Symbol-end evidence for the ~317L Egyptian-Gnostic transmission hub at iconographic register"
 status: "metadata"
 refs:
   - title: "The Ancient Egyptian Books of the Afterlife"

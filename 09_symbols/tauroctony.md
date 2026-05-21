@@ -52,6 +52,19 @@ cross-symbol-edges:
     notes: "Luna's crescent in the upper-right of the canonical tauroctony (mirroring Sol's radiate-crown upper-left) is the canonical Roman lunar emblem in this Mithraic context; the crescent-and-bull pairing is the broader iconographic substrate of which the tauroctony is the Mithraic specification."
     refs: ["Beck 2006", "Ulansey 1989"]
 mystery-status: "partially-deciphered"
+hub-edges:
+  - target: "theme-soma-haoma-eucharist"
+    type: "Roman-Mithraic-articulation-of-ritual-meal-pattern"
+    source: "Beck 2006 *The Religion of the Mithras Cult*; Ulansey 1989 *The Origins of the Mithraic Mysteries*; Justin Martyr *First Apology* 66 (~155 CE; the patristic complaint that Mithraists ritualize a bread-and-water meal in imitation of the Eucharist) — the tauroctony's sacrificial-victim (the bull, wheat-tipped tail) and the Mithraic communal ritual-meal (bread + water/wine, attested in Mithraea seating-benches and *Cautes/Cautopates* meal-iconography) place the Mithraic mysteries inside the 3,500-year cross-tradition ritual-meal chain"
+    notes: "Cross-lens: 09_symbols → 06_themes. The Mithraic ritual-meal is one of the principal pagan-Roman articulations of the soma-haoma-eucharist pattern; Justin Martyr's complaint is the canonical patristic witness"
+  - target: "third-century-collision-zone"
+    type: "iconographic-witness-of-collision-zone"
+    source: "Beck 2006; Mathews 1993 *The Clash of Gods*; Cumont 1899 *Textes et monuments figurés relatifs aux mystères de Mithra* (Tier 1 for the corpus, Tier 2 for the now-rejected Iranian-derivation thesis); Bardill 2012 *Constantine and the Christian Empire* — Mithraism's peak (~150-300 CE) is the central pagan-mystery-cult phase of the 3rd-c. collision zone; the tauroctony is its visual-iconographic signature. Mithras and Christ are the two principal competing soteriological-savior figures of the period"
+    notes: "Cross-lens: 09_symbols → 06_themes. The tauroctony is the visual emblem of one of the principal traditions in the 3rd-c. collision-zone hub"
+  - target: "zeus-pantokrator-transmission"
+    type: "iconographic-tributary-of-Sol-Invictus-channel"
+    source: "Mathews 1993; Beck 2006; Hijmans 2009 *Sol: The Sun in the Art and Religions of Rome* — Sol's radiate crown in the upper-left of canonical tauroctonies is the principal pre-Christian Roman site of Sol Invictus radiate-crown iconography that feeds the Christian halo and ultimately the Pantokrator-iconographic complex"
+    notes: "Cross-lens: 09_symbols → 06_themes. The Mithraic Sol-iconography is a tributary of the Pantokrator-transmission chain alongside Phidian Zeus"
 status: "metadata"
 refs:
   - title: "The Religion of the Mithras Cult in the Roman Empire"

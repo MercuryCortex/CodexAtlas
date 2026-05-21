@@ -48,6 +48,15 @@ cross-symbol-edges:
     notes: "Both function as imperial-religious identifying-emblems carried on royal/military standards. The Achaemenid Faravahar appears above royal-titulary reliefs at Persepolis and Naqsh-e Rustam; the Constantinian Chi-Rho appears on the *labarum*. The 'sacred standard borne over the king' iconographic vocabulary has structural parallels across the Near East — independent developments, parallel iconographic strategy."
     refs: ["Frye 1962", "Mathews 1993"]
 mystery-status: "partially-deciphered"
+hub-edges:
+  - target: "persian-period-injection"
+    type: "iconographic-emblem-of-source-tradition"
+    source: "Boyce 1982 *History of Zoroastrianism* Vol. 2; Frye 1962 *The Heritage of Persia*; Stausberg 2002 *Die Religion Zarathushtras* — the Faravahar is the principal iconographic emblem of Achaemenid-period Zoroastrianism, the religion whose six theological channels (cosmic dualism + structured angelology + named demonology + resurrection + future-Messiah + final-judgment) are transmitted into Second-Temple Judaism during the Persian period (-539 to -332). The Persepolis + Naqsh-e Rustam attestations are contemporary with the contact event"
+    notes: "Cross-lens: 09_symbols → 06_themes. The Faravahar is the symbol-end visual-religious anchor for the Persian-period source tradition"
+  - target: "theme-zoroastrian-cosmogony"
+    type: "iconographic-emblem-of-Mazdean-cosmogony"
+    source: "Boyce 1982; Stausberg 2002; Skjærvø 2011 *The Spirit of Zoroastrianism* — the Faravahar represents (in one major interpretive line) the *fravashi* — the pre-existent divine soul-aspect of Ahura Mazda, the soul of Zarathustra, or the ideal-soul of the human; in this register it is the visual-iconographic articulation of the Mazdean cosmogonic anthropology in which souls participate in the cosmic struggle of Asha against Druj"
+    notes: "Cross-lens: 09_symbols → 06_themes"
 status: "metadata"
 refs:
   - title: "A History of Zoroastrianism, Vol. 2"

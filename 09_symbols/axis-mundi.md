@@ -62,6 +62,15 @@ cross-symbol-edges:
     target: "[[cross]]"
     note: "The Christian cross functions as axis mundi (vertical bar = heaven-earth-underworld connector; horizontal bar = four directions); Golgotha identified as the world's navel in medieval cosmology"
 mystery-status: "solved"
+hub-edges:
+  - target: "theme-ziggurat-as-stairway-to-heaven"
+    type: "symbolic-substrate-of-architectural-form"
+    source: "Eliade 1959 *The Sacred and the Profane*; Eliade 1954 *The Myth of the Eternal Return*; Frankfort 1948 *Kingship and the Gods*; George 1992 *Babylonian Topographical Texts* — the Mesopotamian ziggurat is the architectural-monumental instantiation of the axis-mundi symbol-complex; *dur-an-ki* ('bond of heaven and earth') is the Sumerian theological vocabulary for the axis-mundi function. Babylon's Etemenanki ('House of the Foundation of Heaven and Earth') is the axis-mundi as institutional architecture"
+    notes: "Cross-lens: 09_symbols → 06_themes. The architectural ziggurat-as-stairway hub is the built-form of the axis-mundi symbolic substrate"
+  - target: "theme-stupa-as-cosmic-mountain"
+    type: "symbolic-substrate-of-architectural-form"
+    source: "Eliade 1959; Snodgrass 1985 *The Symbolism of the Stupa*; Tucci 1932-41 *Indo-Tibetica* — the Buddhist stupa is the South Asian axis-mundi made monumental: the central axis (*yashti*) rising through harmika and chattra plates represents Mount Meru and the cosmic axis simultaneously. Stupa and Hindu lingam/Mount Meru share the same axis-mundi symbolic root"
+    notes: "Cross-lens: 09_symbols → 06_themes. Pairs with ziggurat-as-stairway: axis-mundi is the common symbolic substrate of cross-tradition cosmic-axis architecture"
 status: "metadata"
 refs:
   - title: "The Sacred and the Profane"
