@@ -88,6 +88,8 @@ refs:
 
 # Soma → Haoma → Eucharist: The Sacred Drink Transmission Chain
 
+> **Six-lens panorama essay**: [[00_meta/MASSIVE-WIN-essays/soma-haoma-eucharist|*Soma → Haoma → Eucharist — Six-Lens Panorama of the Densest Hub in the Vault*]] (Phase 17, 2026-05-21) walks the 30+ inbound edges from deity / person / document / tradition / event / symbol lens-poles (8 symbol-side anchors alone — the densest single-lens cluster in the 28-hub framework) and surfaces three findings: this hub is the methodology showcase; the Tier-1/Tier-2 calibration is most active here (Wasson 1968 + Wasson-Hofmann-Ruck 1978 + Mettinger-vs-Smith); and both documented transmission AND independent convergence are present at the same hub (uniquely).
+
 ## Overview
 
 One of the longest continuous ritual transmission chains in human religious history runs from the Proto-Indo-Iranian sacred drink reconstructed as *\*sauma-* (c. 2000–1500 BCE on the Pontic-Caspian steppe) to the bread and wine consumed in Christian Eucharistic liturgy today — a span of approximately 3,500 years. This chain does not require a single unbroken organizational transmission; it is a series of documented historical contacts, borrowings, and structural parallels that trace the migration of the concept "drinking the divine substance transforms the worshiper into the divine."
