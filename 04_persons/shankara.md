@@ -11,6 +11,11 @@ date-died: 820
 historicity: "documented (though traditional biographies are heavily hagiographic)"
 texts-authored: ["[[phase-5-005-shankara-brahma-sutra-bhasya]]", "*Upadeśasāhasrī*", "commentaries on the ten principal Upaniṣads", "*Gītā-Bhāṣya* (Bhagavadgītā commentary)", "smaller hymns and treatises (many attributed but disputed — e.g., *Vivekacūḍāmaṇi*)"]
 mentioned-in: ["[[phase-5-016-ramanuja-sribhasya]] (polemic target)", "[[phase-5-022-madhva-brahma-sutra-bhasya]] (polemic target)"]
+hub-edges:
+  - target: "soul-exile-longing"
+    type: "Vedantic-articulator-of-cross-tradition-pattern"
+    source: "Deutsch 1969 *Advaita Vedānta: A Philosophical Reconstruction*; Isayeva 1993 *Shankara and Indian Philosophy*; Mayeda 1979 *Studies in Śaṅkara* — Shankara's *Brahma Sūtra Bhāṣya* + *Upadeśasāhasrī* (and the attributed *Vivekacūḍāmaṇi*) articulate the Vedāntic version of the cross-tradition exile-longing pattern: the *jīva* (individual soul) does not descend from a transcendent source — it *is* Brahman and has always been. The exile is epistemological, not ontological. *Avidyā* (mis-perception) is the mechanism of the apparent-exile; *vivekakhyāti* (discriminative recognition) is the liberating act. *Tat tvam asi* — that thou art. See [[soul-exile-longing]]"
+    notes: "MASSIVE-WIN: Shankara's Advaita is the *philosophically quietest* version of the exile-longing pattern — there is no cosmic drama of descent and return, no grieving God missing the soul, no archon blocking the exit. Just a fundamental perceptual error that perpetuates unnecessary suffering. The contrast with the Plotinian + Gnostic + Sufi versions makes the cross-tradition cluster sharper. Cross-lens: 04_persons → 06_themes"
 status: "stub"
 refs:
   - title: "Studies in Śaṅkara"

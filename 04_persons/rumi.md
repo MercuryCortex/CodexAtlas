@@ -11,6 +11,15 @@ date-died: 1273
 historicity: "documented"
 texts-authored: ["[[phase-5-025-rumi-masnavi]]", "*Dīvān-i Shams-i Tabrīzī* (~40,000 lyric verses)", "*Fīhi mā Fīhi* (prose discourses)", "*Majālis-i Sabʿa* (Seven Sermons)", "*Maktūbāt* (letters)"]
 mentioned-in: []
+hub-edges:
+  - target: "soul-exile-longing"
+    type: "central-figure-of-cross-tradition-pattern"
+    source: "Chittick 1983 *The Sufi Path of Love*; Schimmel 1978 *The Triumphal Sun*; Lewis 2000 *Rumi: Past and Present, East and West* — Rumi is THE most-globally-recognized articulator of the soul-exile-longing pattern. The opening 18 couplets of the Masnavi (the Nay-nāmeh / Reed-flute Song) — 'Listen to the reed, how it tells a tale of separations / Ever since I was cut from the reed bed, man and woman have lamented my complaint' — is the most-cited Sufi formulation of *shawq* (longing) in world literature. The reed cut from the reed bed = the soul cut from God. See [[soul-exile-longing]]"
+    notes: "Cross-lens: 04_persons → 06_themes. MASSIVE-WIN: Rumi's Nay-nāmeh is the single most-quoted passage in cross-tradition mysticism — the poetic-prose form of the cross-tradition exile-longing pattern that Plotinus articulates philosophically + Suhrawardī systematizes cosmologically + Vedānta articulates epistemologically"
+  - target: "merkabah-miraj-ascent-chain"
+    type: "Sufi-articulator-of-mystical-ascent"
+    source: "Schimmel 1975 *Mystical Dimensions of Islam*; Schäfer 2009 *Mohammed's Journey to Heaven*; Chittick 1983 — Rumi's Masnavi inherits and elaborates the Sufi Mi'raj-mysticism tradition that descends from Muhammad's Night Journey through Ibn Arabi's *Kitāb al-Isrāʾ* + Suhrawardī's ascent-narratives. Rumi cites the Mi'raj structure throughout the Masnavi as the template for the soul's progressive purification-through-stages. See [[merkabah-miraj-ascent-chain]]"
+    notes: "Cross-lens: 04_persons → 06_themes. Rumi is the Sufi-tradition endpoint of the Merkabah → Hekhalot → Mi'raj → Sufi-mystical-ascent chain"
 status: "stub"
 refs:
   - title: "Rumi: Past and Present, East and West"

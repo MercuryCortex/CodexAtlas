@@ -11,6 +11,15 @@ date-died: 1191
 historicity: "documented"
 texts-authored: ["[[phase-5-018-suhrawardi-hikmat-al-ishraq]]", "*Kitāb al-Talwīḥāt*", "*Kitāb al-Muqāwamāt*", "*Kitāb al-Mashāriʿ wa-l-Muṭāraḥāt*", "Persian visionary recitals (*Tale of Western Exile*, etc.)"]
 mentioned-in: []
+hub-edges:
+  - target: "soul-exile-longing"
+    type: "Illuminationist-synthesizer-of-cross-tradition-pattern"
+    source: "Walbridge 2000 *The Leaven of the Ancients: Suhrawardi and the Heritage of the Greeks*; Corbin 1971 *En Islam Iranien* vol. 2; Nasr 1964 *Three Muslim Sages* — Suhrawardī's *Qiṣṣat al-Ghurba al-Gharbiyya* (Story of the Occidental Exile, ~1186 CE) is the most-explicit-cross-traditional formulation of the exile-longing pattern in any single text. A traveler from the East (divine origin) is imprisoned in the West (material world) and must find the way back. The East is not a geography — it is the Ishrāqī (Illuminationist) Orient of pure light from which the soul descends. See [[soul-exile-longing]]"
+    notes: "MASSIVE-WIN: Suhrawardī's *Hikmat al-Ishrāq* + *Occidental Exile* is the *moment the traditions consciously merged in one text* — a Persian philosopher in a Sunni Islamic context writes a cosmology that is explicitly Zoroastrian light-metaphysics recast as Islamic illuminationist philosophy, using the same East/West directional symbolism as Plotinus's emanationism. Cross-lens: 04_persons → 06_themes"
+  - target: "executed-divine-claimant"
+    type: "instance-of-pattern"
+    source: "Walbridge 2000; Ziai 1990 *Knowledge and Illumination*; Corbin 1971 — Suhrawardī al-Maqtūl ('the executed one') was executed in Aleppo in 1191 CE at age 36-37 at the order of Saladin's son al-Malik al-Ẓāhir for heretical metaphysical doctrines (*Ishrāqī* synthesis of Zoroastrian light-metaphysics + Platonic + Islamic). His death belongs to the executed-divine-claimant cross-tradition pattern documented across Socrates + Jesus + al-Hallaj + Bruno + Suhrawardī. See [[executed-divine-claimant]]"
+    notes: "Cross-lens: 04_persons → 06_themes. Suhrawardī's execution is the Sunni-Islamic instance of the pattern — the philosopher-mystic killed by the religious-political establishment for synthesis-doctrines deemed heretical"
 status: "stub"
 refs:
   - title: "The Leaven of the Ancients: Suhrawardi and the Heritage of the Greeks"
