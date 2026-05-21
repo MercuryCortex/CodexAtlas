@@ -480,6 +480,10 @@ body.nav-hidden .side-tab { display: none !important; }
   font-family: var(--mono, "JetBrains Mono", monospace);
   font-size: 14px; line-height: 1;
   cursor: pointer;
+  /* Phase 21L (2026-05-21) — the parent .forge-bottombar is
+     pointer-events: none (so canvas hits pass through gaps);
+     interactive children must opt back in. */
+  pointer-events: auto;
   transition: border-color 120ms ease, color 120ms ease, background 120ms ease;
 }
 .forge-debug-btn:hover {
@@ -544,6 +548,8 @@ body.view-forge .forge-stage {
 .forge-viewset-wrap {
   position: relative;
   display: inline-flex; align-items: center;
+  /* Bottom-bar parent is pointer-events: none — opt in. */
+  pointer-events: auto;
 }
 .forge-viewset-btn {
   height: 32px;
@@ -556,6 +562,7 @@ body.view-forge .forge-stage {
   font-size: 10.5px;
   letter-spacing: 0.16em;
   cursor: pointer;
+  pointer-events: auto;
   transition: border-color 120ms ease, color 120ms ease, background 120ms ease;
 }
 .forge-viewset-btn:hover,
@@ -627,6 +634,9 @@ body.fv-hide-wires .forge-canvas { /* placeholder — wire-only hide is a render
 .forge-search-wrap {
   position: relative;
   display: inline-flex; align-items: center;
+  /* Bottom-bar parent is pointer-events: none — opt in so the
+     autocomplete suggestion list can receive clicks. */
+  pointer-events: auto;
 }
 .forge-search-suggest {
   position: absolute;
@@ -5988,20 +5998,24 @@ body.nav-collapsed .nav-more > summary .lbl { display: none; }
 /* Mode dropdown (Phase 4d) — primary "what is this wheel" control.
    Native <select> styled to fit the status strip.  Custom caret via
    appearance:none + background-image gradient. */
+/* Phase 21L (2026-05-21) — the mode <select> sits INSIDE the
+   FORGE pill as a single combined chip: `FORGE | Deities ▾`.
+   No nested-box border, no inner background. A left border
+   serves as the divider between the static FORGE tag and the
+   active mode. Width is `auto` so the pill expands with the
+   selected mode's label. */
 .forge-status-mode {
   appearance: none; -webkit-appearance: none;
-  background: rgba(13, 17, 25, 0.85);
+  background: transparent;
   color: var(--gold);
   font-family: var(--mono); font-size: 11px;
   letter-spacing: 0.04em;
-  border: 1px solid var(--border, #2a2e3a);
-  border-radius: 3px;
-  /* Phase 6d — align vertically with the rest of the status
-     strip. Match the row's effective text baseline by sharing
-     the parent's line-height + balanced top/bottom padding. */
-  padding: 4px 22px 4px 10px;
+  border: 0;
+  border-left: 1px solid rgba(212,165,90,0.28);
+  border-radius: 0;
+  padding: 0 22px 0 12px;
   line-height: 1;
-  height: 24px;
+  height: 20px;
   vertical-align: middle;
   cursor: pointer;
   background-image:
@@ -6013,10 +6027,13 @@ body.nav-collapsed .nav-more > summary .lbl { display: none; }
   background-size: 4px 4px, 4px 4px;
   background-repeat: no-repeat;
   outline: none;
-  min-width: 140px;
+  width: auto;
+  min-width: 0;
 }
-.forge-status-mode:hover  { border-color: var(--gold-soft); }
-.forge-status-mode:focus  { border-color: var(--gold); }
+.forge-status-mode:hover  { color: var(--gold-1, #e8c889); }
+.forge-status-mode:focus  { color: var(--gold-1, #e8c889); }
+/* Drop the now-redundant separator dot between FORGE and the mode select. */
+.forge-status > .forge-status-sep:first-of-type { display: none; }
 .forge-status-mode option {
   background: var(--bg-1);
   color: var(--text-1);
@@ -6627,10 +6644,14 @@ body.view-forge.detail-collapsed {
    is redundant (the panel itself is the open-state indicator).
    Hide chevrons across the WHOLE tab column when .panel-open is
    set, so tabs read as a clean column of color dots. */
-.forge-deity-tabs.panel-open .forge-deity-tab-chevron {
+/* Phase 21L (2026-05-21) — when the side panel is open, hide
+   chevrons on EVERY tab EXCEPT the active one. The active tab
+   keeps its chevron so the user sees which tab the panel is
+   currently showing. */
+.forge-deity-tabs.panel-open .forge-deity-tab:not(.is-active) .forge-deity-tab-chevron {
   display: none;
 }
-.forge-deity-tabs.panel-open .forge-deity-tab-dot {
+.forge-deity-tabs.panel-open .forge-deity-tab:not(.is-active) .forge-deity-tab-dot {
   width: 10px;
   height: 10px;
 }

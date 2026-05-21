@@ -2817,16 +2817,17 @@
     //  - Opacity = linear interpolation between zoomPct 0.50 (0)
     //    and 0.10 (1).
     // ════════════════════════════════════════════════════════════
-    // Phase 21G (2026-05-21) — BG world-anchor constant. The BG
-    // image is declared as 18000 wu wide in world space — about
-    // 16× the wheel's 1128 wu extent. At the camera floor
-    // (gizmo 10%), the BG renders at 18000 wu × (fit_scale × 0.10)
-    // pixels, which on every viewport size works out to roughly
-    // 1.6× the viewport's larger axis — guaranteed coverage with
-    // a healthy pan margin. The wheel and the BG now share one
-    // coordinate system; the BG behaves like any other world
-    // object.
-    const BG_WORLD_WIDTH = 18000; // wu
+    // Phase 21L (2026-05-21) — BG world-anchor constant.
+    // Raised from 18000 → 60000 wu so the world-scaled BG size
+    // ALWAYS exceeds the viewport at the camera floor on every
+    // common aspect ratio (4:3, 16:9, 21:9, up to 32:9). With
+    // 60000 wu, Rule A (world-scaled) wins at every zoom level
+    // on every typical monitor — no viewport-floor breakpoint
+    // is needed any more, so the BG scales SMOOTHLY all the
+    // way down to the camera floor instead of stopping at
+    // around gizmo 15% on wide monitors. Full reference doc:
+    // AUDIT/forge-zoom-world-system-2026-05-21.md
+    const BG_WORLD_WIDTH = 60000; // wu
 
     function syncBackgroundImage() {
       if (!bgImage) return;
@@ -2844,33 +2845,17 @@
       else                      bgFade = (0.50 - zoomPct) / (0.50 - 0.10);
       bgImage.style.opacity = bgFade.toFixed(3);
 
-      // ── BG WORLD-OBJECT TRANSFORM (Phase 21H) ─────────────
-      // Two sizing rules, max()'d together so the BG NEVER falls
-      // below viewport-coverage at the camera floor:
-      //
-      //   A. World-scaled width: BG_WORLD_WIDTH × camera.scale
-      //      Behaves like a world object (zooms with wheel).
-      //   B. Viewport-floor width: viewport.larger × 1.5
-      //      Guarantees BG always fills viewport with 50% pan
-      //      margin, regardless of monitor aspect ratio.
-      //
-      // The MAX of the two wins. At low zoom (where the world
-      // scaling drops below viewport×1.5), rule B engages and
-      // pins the BG at a viewport-relative minimum. At higher
-      // zoom (where world×scale exceeds 1.5× viewport), rule A
-      // takes over and the BG grows with the wheel.
-      //
-      // John's earlier diagnosis: at max-zoom-out, BG width is
-      // at its MINIMUM (because camera.scale is at its minimum).
-      // If world×scale is below viewport at that point, gaps
-      // appear. The viewport-floor rule prevents that always,
-      // on every aspect ratio.
-      const imgAspect       = bgImage._bgAspect || (4 / 3);
-      const vpLarger        = Math.max(window.innerWidth, window.innerHeight);
-      const widthPxFromWorld = BG_WORLD_WIDTH * camera.state.scale;
-      const widthPxFloor     = vpLarger * 1.5;
-      const widthPx         = Math.max(widthPxFromWorld, widthPxFloor);
-      const heightPx        = widthPx / imgAspect;
+      // ── BG WORLD-OBJECT TRANSFORM (Phase 21L) ─────────────
+      // Pure world-scaling. BG_WORLD_WIDTH = 60000 wu — large
+      // enough that BG_WORLD_WIDTH × camera.scale_at_floor
+      // exceeds the viewport on every aspect ratio up to 32:9.
+      // The viewport-floor breakpoint (Phase 21H) is gone:
+      // BG scales smoothly with the wheel down to (and past)
+      // the camera floor, matching the wheel's zoom-ease tail
+      // instead of pegging at vp×1.5 around gizmo 15%.
+      const imgAspect = bgImage._bgAspect || (4 / 3);
+      const widthPx   = BG_WORLD_WIDTH * camera.state.scale;
+      const heightPx  = widthPx / imgAspect;
       // World (0, 0) → canvas-screen → viewport-screen.
       const centerCanvas = camera.worldToScreen(0, 0, vp);
       let offX = 0, offY = 0;
@@ -3761,11 +3746,22 @@
         if (!item) return;
         ev.preventDefault();
         const id = item.dataset.id;
-        if (id && local && local.lockedSet) {
+        if (id) {
+          // Phase 21L (2026-05-21) — go through the canonical lock
+          // pipeline so the side-panel + lock-pill chrome updates,
+          // not just lockedSet + recomputeFocus.
           try {
-            local.lockedSet.clear();
-            local.lockedSet.add(id);
-            if (typeof recomputeFocus === 'function') recomputeFocus();
+            if (local && local.lockedSet) {
+              // Clear any prior locks first so a single click on a
+              // suggestion produces a single-locked state (not an
+              // additive multi-lock).
+              if (local.lockedSet.size) {
+                for (const oldId of Array.from(local.lockedSet)) {
+                  if (typeof toggleLock === 'function') toggleLock(oldId);
+                }
+              }
+              if (typeof toggleLock === 'function') toggleLock(id);
+            }
           } catch (e) { /* best-effort */ }
         }
         inp.value = '';
