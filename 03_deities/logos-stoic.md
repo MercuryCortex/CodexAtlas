@@ -85,7 +85,7 @@ The Stoic logos is not narrative — it has no biography, no consort, no childre
 - **[[zeus]]** — *scholarly-parallel* (within Stoic theology): Stoics identify Zeus *philosophically* with the cosmic logos; this is interpretive theology, not a new mythic claim about civic Zeus.
 - **[[logos-philonic]]** — *direct-influence*: Philo of Alexandria takes the Stoic immanent-cosmic-rationality logos and fuses it with the Platonic world of Forms, producing a *Logos as God's first-born son and architect of creation*. **Step 1 → Step 2 of the great Stoic → Philo → John transmission.**
 - **[[logos-johannine]]** — *direct-influence*: John 1:1's "In the beginning was the Logos..." presupposes Philonic-Hellenistic-Jewish logos theology, which presupposes Stoic logos.
-- **[[heraclitus-logos]]** — *direct-influence* (ancestor): Heraclitus is the philosophical ancestor of the Stoic logos doctrine.
+- **[[heraclitus]]** — *direct-influence* (ancestor): Heraclitus is the philosophical ancestor of the Stoic logos doctrine.
 
 ## Iconography
 None proper. Symbolic associations:

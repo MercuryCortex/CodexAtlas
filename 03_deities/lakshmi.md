@@ -16,7 +16,7 @@ syncretic-edges:
   - target: "aphrodite-greek"
     type: "scholarly-parallel"
     source: "Doniger 2009; cross-cultural parallel of sea-born goddesses of beauty and fortune"
-status: "stub"
+status: "metadata"
 refs:
   - title: "Hindu Goddesses"
     author: "Kinsley, David"

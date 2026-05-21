@@ -15,9 +15,9 @@ child-of: []
 consort: ["[[nergal]]", "[[erra-akkadian]] (in the Erra-Mami complex; the underworld-god's consort across textual periods)"]
 attributes: ["underworld throne alongside Nergal"]
 attested-in: []
-equivalents: ["[[mami-akkadian]] (in some periods Laz and Mami appear as alternate names for the underworld-god's consort)", "[[ereshkigal]] (cult-context: at Kutha, Laz functions as Nergal's consort; in the Descent-of-Inanna textual tradition, Ereshkigal is Nergal's consort — the two are reconciled differently in different periods)"]
+equivalents: ["Mami (Akkadian mother-goddess; in some periods Laz and Mami appear as alternate names for the underworld-god's consort — no node)", "[[ereshkigal]] (cult-context: at Kutha, Laz functions as Nergal's consort; in the Descent-of-Inanna textual tradition, Ereshkigal is Nergal's consort — the two are reconciled differently in different periods)"]
 syncretic-edges: []
-status: "stub"
+status: "metadata"
 refs:
   - title: "Dictionary of Deities and Demons in the Bible"
     author: "van der Toorn, K., Becking, B., van der Horst, P. (eds.)"

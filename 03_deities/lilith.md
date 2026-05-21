@@ -16,7 +16,7 @@ syncretic-edges:
   - target: "lilitu-akkadian"
     type: "ancient-identification"
     source: "Hebrew *lilit* (Isa 34:14) cognate with Akkadian *lilītu*, a class of night-demon attested in incantations. Cf. Hutter 1999"
-status: "stub"
+status: "metadata"
 refs:
   - title: "Lilith's Cave: Jewish Tales of the Supernatural"
     author: "Schwartz, Howard"

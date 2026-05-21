@@ -12,7 +12,7 @@ gender: "masculine"
 role: "thunder deity and divine punisher within the celestial bureaucracy"
 parent-of: []
 child-of: []
-consort: ["[[dianmu-lady-of-lightning]]"]
+consort: ["Dianmu (Lady of Lightning; Leigong's wife — no node yet)"]
 attributes: ["blue or green skin", "eagle claws", "wings", "drum(s) arranged in a ring", "drum-mallet or chisel", "fierce grimace", "naked or near-naked torso"]
 attested-in: []
 equivalents: ["[[thor]]", "[[indra]]", "[[perun]]", "[[teshub]]", "[[susanoo]]", "[[tlaloc]]"]
