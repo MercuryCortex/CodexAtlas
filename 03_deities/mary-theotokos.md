@@ -26,7 +26,7 @@ syncretic-edges:
   - target: "[[wisdom-personified]]"
     type: "scholarly-parallel"
     source: "Patristic and medieval allegorical exegesis read Wisdom-passages (Prov 8, Wisd 7) as Marian"
-status: "stub"
+status: "metadata"
 refs:
   - title: "Alone of All Her Sex: The Myth and the Cult of the Virgin Mary"
     author: "Warner, Marina"

@@ -10,7 +10,7 @@ period-active-latest: 400
 domains: ["war", "agriculture", "spring fertility", "manly virtue", "fatherhood of Rome"]
 gender: "masculine"
 role: "war god; agricultural protector; father of Romulus and Remus; tutelary of the Roman legions"
-parent-of: ["[[romulus]]", "[[remus]]"]
+parent-of: ["[[romulus]]", "Remus (twin brother of Romulus; no node — belongs in 04_persons/)"]
 child-of: []
 consort: ["[[venus-roman]] (in literary mythology, not cultic)"]
 attributes: ["spear", "shield (the ancilia)", "helmet", "wolf", "woodpecker"]

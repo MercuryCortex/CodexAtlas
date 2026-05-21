@@ -10,7 +10,7 @@ period-active-latest: 2025
 domains: ["snakes and serpents", "protection from snakebite", "fertility and childbirth", "poison and its antidote", "the nagas (divine serpent beings)", "folk medicine"]
 gender: "feminine"
 role: "folk goddess; protector from snakebite; patron of nagas; goddess of fertility and the earth's serpentine powers; the deity who demands and achieves recognition"
-parent-of: ["[[astika]]"]
+parent-of: ["Astika (sage who halted Janamejaya's snake sacrifice; Manasa's son in Mahabharata — no node, would belong in 04_persons/)"]
 child-of: ["[[shiva]]"]
 consort: []
 attributes: ["seated on a lotus or a coiled serpent", "surrounded by snakes", "holds a bowl of snakes or a bunch of serpents", "one eye (sometimes depicted as semi-divine and half-blind)", "associated with the neem tree", "snakes in her hair"]
@@ -111,7 +111,7 @@ Manasa Devi is depicted seated on a lotus or on a coiled serpent, surrounded by 
 ## Disputes
 
 - The question of whether Manasa is a pre-Brahminic folk deity who was partially incorporated into Hinduism, or a Puranic goddess whose cult then spread into folk practice, is debated; the predominant scholarly view (Kinsley 1988; Dimock 1966) is the former.
-- The relationship between Manasa and [[shitala-devi]] (goddess of smallpox and disease) is complex — both are folk goddesses of disease who protect from their own domain, and they are sometimes conflated in folk practice.
+- The relationship between Manasa and Shitala Devi (Hindu goddess of smallpox and disease — no node yet) is complex — both are folk goddesses of disease who protect from their own domain, and they are sometimes conflated in folk practice.
 - Manasa's legitimacy within Shaiva tradition (whether she is truly Shiva's daughter, and how this claim was used to gain Brahminic recognition for a folk goddess) is a theological and political question the Manasa-Mangal texts themselves address directly.
 
 ## Refs

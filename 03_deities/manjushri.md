@@ -42,7 +42,7 @@ syncretic-edges:
   - target: "hermes-trismegistus"
     type: "scholarly-parallel"
     source: "Conze 1958 — Hermes Trismegistus as Hellenistic wisdom-revealer; partial parallel to Manjushri's transmitter-of-esoteric-tantric-wisdom role"
-status: "stub"
+status: "metadata"
 refs:
   - title: "Indo-Tibetan Buddhism"
     author: "Snellgrove, David"

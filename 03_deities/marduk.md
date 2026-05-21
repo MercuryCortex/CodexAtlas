@@ -16,7 +16,7 @@ consort: ["[[sarpanit]]"]
 attributes: ["spade (marru)", "the mušḫuššu dragon", "fifty names"]
 attested-in: ["[[phase-1-008-enuma-elish]]", "[[phase-1-007-code-of-hammurabi]]"]
 equivalents: []
-status: "stub"
+status: "metadata"
 refs:
   - title: "Babylonian Creation Myths"
     author: "Lambert, Wilfred G."
