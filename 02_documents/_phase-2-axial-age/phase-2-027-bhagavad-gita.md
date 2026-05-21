@@ -20,7 +20,7 @@ themes: ["[[bhakti-devotion]]", "[[avatar-doctrine]]", "[[non-duality]]", "[[div
 parallels: ["[[phase-2-017-mahabharata-ramayana-oral-layers]]", "[[phase-2-021-shvetashvatara-upanishad]]", "[[phase-2-012-brihadaranyaka-upanishad]]", "[[phase-2-013-chandogya-upanishad]]"]
 influenced-by: ["[[phase-2-001-rig-veda-family-books]]", "[[phase-2-012-brihadaranyaka-upanishad]] / [[phase-2-013-chandogya-upanishad]] (Upaniṣadic ātman-Brahman speculation)", "[[phase-2-021-shvetashvatara-upanishad]] (proto-bhakti Upaniṣad of theistic Śaiva-Vaiṣṇava devotional shape)", "early Sāṃkhya psychology"]
 influences: ["all subsequent Hindu philosophy and devotional theology", "[[phase-5-005-shankara-brahma-sutra-bhasya]] (Śaṅkara's Gītā Bhāṣya, the foundational Advaita commentary)", "[[phase-5-016-ramanuja-sribhasya]] (Rāmānuja's Gītā Bhāṣya, the foundational Viśiṣṭādvaita commentary)", "[[phase-5-022-madhva-brahma-sutra-bhasya]] (Madhva's Gītā Bhāṣya, the foundational Dvaita commentary)", "[[phase-5-050-bhagavata-purana]] (continues and amplifies Gītā Krishna-theology)", "[[mirabai]] / [[surdas]] / [[tulsidas]] (medieval bhakti poets)", "[[ram-mohan-roy]] (1785 first English translation by Wilkins shaped Brahmo Samaj)", "[[swami-vivekananda]] / [[sri-aurobindo]] (modern Hindu reception)", "Western reception: Schopenhauer's enthusiasm, Emerson and Thoreau's Transcendentalism, Gandhi's allegorical reading (Gandhi 1929), Aldous Huxley's *The Perennial Philosophy* (1945)"]
-deities-mentioned: ["[[krishna]]", "[[vishnu]]", "[[krishna-deity-vaishnava]]"]
+deities-mentioned: ["[[krishna]]", "[[vishnu]]", "[[krishna]]"]
 events-context: ["[[event-bhakti-movement-c-700-1700]] (the Gītā is the textual root of the entire bhakti tradition that flowers from ~700 CE onward)"]
 status: "full"
 preservation: "700 verses (śloka) in 18 chapters, embedded in Mahābhārata Book 6 (*Bhīṣmaparvan*), chapters 23-40 (BORI critical-edition numbering) or 25-42 (in some recensions). Standard text via the BORI Mahābhārata critical edition (Belvalkar 1947 for Book 6). Earliest substantial commentary tradition: Śaṅkara's *Gītā Bhāṣya* (~8th c.). Continuous Indian transmission as both an embedded Mahābhārata text and a freestanding scripture; from the medieval period onward routinely circulated independently. Earliest physical manuscripts of the freestanding Gītā: ~8th-10th c. on palm-leaf."
@@ -104,7 +104,7 @@ The 700-verse philosophical-devotional poem embedded in Mahābhārata Book 6 (*B
 - → [[phase-2-001-rig-veda-family-books]] — *substrate-influence*: the Gītā's ritual-action vocabulary (*karma*, *yajña*) goes back to the Vedic ritual-sacrificial tradition; the Gītā re-interprets *yajña* as inner discipline.
 - → [[phase-5-050-bhagavata-purana]] — *direct-influence*: the Bhāgavata Purāṇa continues and amplifies Gītā Krishna-theology; the lila-narratives of Bhāgavata Book 10 are the devotional payoff of the Gītā's avatāra-doctrine.
 - → [[phase-5-005-shankara-brahma-sutra-bhasya]] / [[phase-5-016-ramanuja-sribhasya]] / [[phase-5-022-madhva-brahma-sutra-bhasya]] — *commentary-on*: all three founding Vedānta commentators wrote major Gītā commentaries. The Gītā is the prasthāna-traya ("triple foundation") alongside the Upaniṣads and the Brahma Sūtras for all Vedānta.
-- → [[krishna]] / [[krishna-deity-vaishnava]] — *deity-source*: the Gītā is the textual foundation of mature Krishna-theology.
+- → [[krishna]] / [[krishna]] — *deity-source*: the Gītā is the textual foundation of mature Krishna-theology.
 - → [[ram-mohan-roy]] / [[swami-vivekananda]] / [[sri-aurobindo]] — *direct-influence*: modern Hindu reception; the Gītā is the operational scripture of modern global Hinduism. Ram Mohan Roy's Brahmo Samaj reading; Vivekananda's Chicago presentations; Aurobindo's *Essays on the Gita* (1922-28) and Integral Yoga.
 - → **Western reception** — Wilkins 1785, Schopenhauer's enthusiasm (*Parerga und Paralipomena*), Emerson and Thoreau's Transcendentalist absorption (Emerson's "Brahma" poem; Thoreau's allusions in *Walden*), Aldous Huxley's *The Perennial Philosophy* (1945), the Hare Krishna (ISKCON) translation and dissemination (Bhaktivedanta Swami's *Bhagavad-Gita As It Is*, 1972). The Gītā is the most globally read Hindu text and the operational scripture of much modern Western spiritual culture.
 
@@ -200,7 +200,7 @@ The 1960s–70s reception context: the Gita arrived in Western counterculture si
 | Target | Relation type | Notes |
 |---|---|---|
 | [[krishna]] | deity-source | Krishna is the Gita's revealer and cosmic protagonist; the Gita is the primary textual foundation of mature Krishna theology |
-| [[krishna-deity-vaishnava]] | deity-source | Vaishnava devotional Krishna; the Gita is the prasthāna-traya text for all Vedānta including Vaishnavism |
+| [[krishna]] | deity-source | Vaishnava devotional Krishna; the Gita is the prasthāna-traya text for all Vedānta including Vaishnavism |
 | [[vishnu]] | deity-source | Krishna identifies as Vishnu's avatāra in Gita 10:21; the avatāra doctrine receives its textual foundation here |
 | [[shankara]] | commentary-basis | Śaṅkara's *Gītā Bhāṣya* (~8th c.) is the foundational Advaita Vedānta commentary; defines the Gita for centuries |
 | [[ramanuja]] | commentary-basis | Rāmānuja's *Gītā Bhāṣya* (11th–12th c.) is the foundational Viśiṣṭādvaita commentary |

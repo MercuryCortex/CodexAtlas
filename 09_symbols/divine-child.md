@@ -60,7 +60,7 @@ Key episodes of the child Krishna:
 - **The cosmic mouth**: When mother Yasoda forces the child Krishna to open his mouth (suspecting he has eaten dirt), she sees the entire cosmos — all stars, all worlds, all time — within his infant mouth. The infinite revealed in the most domestic of moments.
 - **The lifting of Govardhan**: The adolescent Krishna lifts an entire mountain on one finger for seven days to shelter the villagers from Indra's punishing rainstorm.
 
-The child [[krishna-deity-vaishnava]] embodies the concept of *lila* (divine play): the cosmos itself is the deity's playground, and the childlike quality of Krishna's activity — innocent, uncalculating, overflowing with joy — is the closest mortal experience comes to the nature of ultimate reality.
+The child [[krishna]] embodies the concept of *lila* (divine play): the cosmos itself is the deity's playground, and the childlike quality of Krishna's activity — innocent, uncalculating, overflowing with joy — is the closest mortal experience comes to the nature of ultimate reality.
 
 ### Jesus as the Christ-Child
 
@@ -88,7 +88,7 @@ One of the strongest structural parallels in world religion is the motif of the 
 | Egyptian | [[horus]] | Set (his murderous uncle) | Papyrus marshes of the Nile Delta |
 | Greek | [[dionysus]] | Hera's rage (illegitimate son of Zeus) | Nymphs of Nysa / sewn into Zeus's thigh |
 | Hebrew | Moses | Pharaoh's decree killing infant boys | Hidden in a reed basket on the Nile |
-| Hindu | [[krishna-deity-vaishnava]] | Kamsa's decree killing infant boys | Hidden in Gokula (Yasoda's cowherd village) |
+| Hindu | [[krishna]] | Kamsa's decree killing infant boys | Hidden in Gokula (Yasoda's cowherd village) |
 | Christian | [[jesus-christ-deity]] | Herod's massacre of the innocents | Flight to Egypt |
 | Norse | [[baldr]] | Loki's mistletoe scheme | [[frigg]] extracted oaths from all things — except mistletoe |
 

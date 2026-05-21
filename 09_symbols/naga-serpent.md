@@ -30,7 +30,7 @@ appearances:
   - "[[phase-2-027-bhagavad-gita]]"
 deity-instances:
   - "[[vishnu]]"
-  - "[[krishna-deity-vaishnava]]"
+  - "[[krishna]]"
   - "[[shiva]]"
   - "[[ganesha]]"
   - "[[siddhartha-gautama-buddha]]"

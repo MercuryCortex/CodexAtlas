@@ -16,7 +16,7 @@ region: "South India (likely Tamil-Kannada region; Hardy 1983 demonstrates Tamil
 city-of-origin: ""
 authorship: "attributed (traditional: Vyāsa; critically: anonymous Vaiṣṇava theologians of the South Indian bhakti milieu)"
 key-figures:
-  - "[[krishna-deity-vaishnava]]"
+  - "[[krishna]]"
   - "[[vishnu]]"
   - "[[vishnu]]"
   - "[[brahma]]"
@@ -46,7 +46,7 @@ influences:
   - "ISKCON / Hare Krishna (Prabhupāda's 30-vol. translation, 1972–1994)"
   - "all Krishna-līlā iconography, music, dance, and painting across South and Southeast Asia"
 deities-mentioned:
-  - "[[krishna-deity-vaishnava]]"
+  - "[[krishna]]"
   - "[[vishnu]]"
   - "[[vishnu]]"
   - "[[brahma]]"

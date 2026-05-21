@@ -12,12 +12,12 @@ gender: "feminine"
 role: "supreme consort and śakti of Krishna; paradigm of the highest devotion; in Gaudiya theology, the personification of the hlādinī-śakti (pleasure potency of God)"
 parent-of: []
 child-of: []
-consort: ["[[krishna-deity-vaishnava]]", "[[krishna]]"]
+consort: ["[[krishna]]", "[[krishna]]"]
 attributes: ["paired with Krishna in iconography", "associated with the rasalila", "golden complexion (contrasting Krishna's blue)"]
 attested-in: ["[[phase-6-020-chaitanya-charitamrita]]", "[[phase-6-019-tulsidas-ramcharitmanas]]"]
 equivalents: []
 syncretic-edges:
-  - target: "[[krishna-deity-vaishnava]]"
+  - target: "[[krishna]]"
     type: "sacred-marriage"
     source: "Gaudiya Vaishnava theology — Radha-Krishna as the primal divine couple"
 status: "metadata"
@@ -48,7 +48,7 @@ tags: [deity, vaishnavism, divine-feminine, bhakti, gaudiya, krishna-devotion, s
 
 See also [[radha]] (stub node).
 
-Rādhā, the supreme beloved of [[krishna-deity-vaishnava]] and the paradigmatic figure of *madhurya bhakti* — devotion in the mode of passionate, erotic intimacy. In Gaudiya Vaishnava theology (founded by Sri Chaitanya Mahaprabhu, ~1486–1534 CE), Radha is not merely a mythological consort but the *hlādinī-śakti* — God's own capacity for infinite bliss, made personal and relational.
+Rādhā, the supreme beloved of [[krishna]] and the paradigmatic figure of *madhurya bhakti* — devotion in the mode of passionate, erotic intimacy. In Gaudiya Vaishnava theology (founded by Sri Chaitanya Mahaprabhu, ~1486–1534 CE), Radha is not merely a mythological consort but the *hlādinī-śakti* — God's own capacity for infinite bliss, made personal and relational.
 
 ## Textual emergence
 
@@ -92,7 +92,7 @@ All three traditions — Hindu bhakti, Christian mysticism, Jewish kabbalah — 
 ## Related
 
 - [[radha]] — base stub node
-- [[krishna-deity-vaishnava]] — Radha's divine beloved
+- [[krishna]] — Radha's divine beloved
 - [[tradition-bhakti-vaishnavism]] — the devotional framework
 - [[soul-as-bride]] — the broader theme
 - [[bridal-mysticism]] — Christian parallel theme

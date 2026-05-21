@@ -56,7 +56,7 @@ The seventh *avatāra* of [[vishnu]] (or [[vishnu]]) in Puranic theology; hero o
 
 ## Maryādā Puruṣottama
 
-Rama's distinctive theological title is *maryādā puruṣottama* — "the highest person of the limit / norm." Where [[krishna-deity-vaishnava]] embodies *lila* (divine play, transcending limits), Rama embodies *maryādā* (the binding norm, the socially and cosmically given limit). Rama keeps every promise and obligation even at devastating personal cost:
+Rama's distinctive theological title is *maryādā puruṣottama* — "the highest person of the limit / norm." Where [[krishna]] embodies *lila* (divine play, transcending limits), Rama embodies *maryādā* (the binding norm, the socially and cosmically given limit). Rama keeps every promise and obligation even at devastating personal cost:
 - Keeps his father's boon (goes into 14-year exile rather than become king as rightfully his)
 - Keeps his warrior dharma (kills Ravana despite Ravana's Brahmin status)
 - Keeps his king's duty (banishes Sita on a citizen's rumor, despite his love for her)

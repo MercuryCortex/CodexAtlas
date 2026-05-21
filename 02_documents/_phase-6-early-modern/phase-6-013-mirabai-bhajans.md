@@ -18,9 +18,9 @@ authorship: "attributed — Mirabai (Mira Bai); the corpus is a fluid oral-and-m
 key-figures: ["[[mirabai]]"]
 themes: ["[[bhakti-devotion]]", "[[divine-feminine]]", "[[soul-as-bride]]"]
 parallels: ["[[phase-6-020-chaitanya-charitamrita]]", "[[phase-6-031-bijak-kabir]]", "Andal (Phase 5 — Tamil Alvars)"]
-influenced-by: ["[[krishna-deity-vaishnava]]", "Bhagavata Purana (Phase 5)", "Sant tradition (Kabir, Ravidas — Phase 5)", "Tamil Alvar poetry (Phase 5)", "Jayadeva's *Gita Govinda* (Phase 5)"]
+influenced-by: ["[[krishna]]", "Bhagavata Purana (Phase 5)", "Sant tradition (Kabir, Ravidas — Phase 5)", "Tamil Alvar poetry (Phase 5)", "Jayadeva's *Gita Govinda* (Phase 5)"]
 influences: ["Modern Hindi devotional canon", "Modern Indian feminist hagiography", "Sikh Adi Granth includes related bhakti poetry (though not Mira's directly)"]
-deities-mentioned: ["[[krishna-deity-vaishnava]] (especially as Giridhar Gopal / Govind)"]
+deities-mentioned: ["[[krishna]] (especially as Giridhar Gopal / Govind)"]
 events-context: ["Sisodia Rajput court at Chittor mid-16th c."]
 status: "partial"
 preservation: "The Mirabai corpus is a striking case of fluid oral-and-manuscript transmission. No manuscript closer to Mirabai's lifetime than the late 17th c. (the earliest dated padas attributed to Mira are in the Kishangarh, Jaipur, and Dadu-panthi manuscripts of ~1690+). Hawley & Juergensmeyer (1988, *Songs of the Saints of India*) and Hawley (2005, *Three Bhakti Voices*) have shown that the popular Mira corpus is a continuous accretion; only a fraction can be reasonably attributed to a historical Mirabai (c. 1498–c. 1547). The tradition remains powerfully alive in North Indian devotional singing."
@@ -80,7 +80,7 @@ A large and fluid corpus of devotional songs (*padas* / *bhajans*) in mixed Nort
 - **Caste-defiance and gender-defiance** — Mirabai eats with the *sants*, drinks from a low-caste poet's cup, leaves the women's quarters to sing in public; the social register is critical, not just devotional.
 
 ## Connections (provisional)
-- → [[krishna-deity-vaishnava]] — *direct-devotion-to*: Krishna as Giridhar Gopal is the addressee of nearly all the songs.
+- → [[krishna]] — *direct-devotion-to*: Krishna as Giridhar Gopal is the addressee of nearly all the songs.
 - → Bhagavata Purana (Phase 5) — *direct-influence*: the cowherd Krishna of Vrindavan is the Krishna of the Bhagavata's Book X.
 - → [[phase-6-020-chaitanya-charitamrita]] — *parallel*: Chaitanya's Gaudiya Vaishnavism (founded c. 1510) is the contemporary Bengali Krishna-bhakti movement; Mirabai is its Rajasthani cousin (tradition reports a meeting, but historicity is uncertain).
 - → Sant tradition (Kabir, Ravidas, Dadu — Phase 5/6) — *shared-milieu*: caste-defiance and devotional minimalism.

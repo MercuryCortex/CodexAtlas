@@ -7,7 +7,7 @@ date-emergence: 600
 date-end: ""
 region-origin: "South India (Tamil Alvars, ~7th c.) → North India (15th c. onward)"
 regions-spread: ["South India (Tamil Alvars, Sri Vaishnava tradition)", "Karnataka (Madhva, Haridasas)", "Maharashtra (Varkari tradition — Tukaram, Namdev)", "Bengal (Gaudiya Vaishnavism)", "Braj (Krishna-bhakti — Surdas, Vallabhacharya, Radhavallabha)", "Rajasthan (Mirabai)", "Awadh and Banaras (Tulsidas, Ram-bhakti)", "global diaspora (especially via ISKCON since 1966)"]
-key-deities: ["[[krishna-deity-vaishnava]]", "[[radha-deity]]", "[[rama-deity-vaishnava]]", "[[vishnu]]"]
+key-deities: ["[[krishna]]", "[[radha-deity]]", "[[rama-deity-vaishnava]]", "[[vishnu]]"]
 key-persons: ["the Tamil Alvars (Andal, Nammalvar, ~7th–10th c., Phase 5)", "Ramanuja (1077–1157, Phase 5)", "Madhva (1238–1317, Phase 5)", "Ramananda (~15th c., Phase 5)", "Vallabhacharya (1479–1531)", "[[chaitanya-mahaprabhu]] (1486–1534)", "the Six Goswamis of Vrindavan", "Surdas (Krishna-bhakti, Braj)", "[[mirabai]] (Krishna-bhakti, Rajasthan)", "[[tulsidas]] (Ram-bhakti, Awadh)", "Tukaram (Marathi Varkari, 17th c.)", "Bhaktivedanta Swami Prabhupada (ISKCON founder, 1965)"]
 key-documents: ["Bhagavata Purana (Phase 5)", "Bhagavad Gita (Phase 2/3)", "Jayadeva's *Gita Govinda* (Phase 5)", "[[phase-6-013-mirabai-bhajans]]", "[[phase-6-019-tulsidas-ramcharitmanas]]", "[[phase-6-020-chaitanya-charitamrita]]", "Surdas's *Sur Sagar*", "Tukaram's Abhangas"]
 sister-traditions: ["Hindu Shaivism", "Shaktism", "Sant tradition (Kabir, Ravidas, Sikh Gurus)", "[[tradition-sikhism]]"]
