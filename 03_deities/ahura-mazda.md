@@ -40,6 +40,10 @@ syncretic-edges:
     type: "elevated-ahura-class-deity-of-Zoroastrian-branch"
     source: "Skjærvø 1993 EIr 'Daēva'; Boyce 1975 vol. 1 — Ahura Mazda is the *result* of the asura-deva inversion on the Iranian side: the elevation of one *ahura* to supreme status while the *daēva*-class (including the Vedic-cognate Indra) is demonized. The reform's positive move is the full systematization of Ahura Mazda as cosmic-Truth-source; the negative move is the daēva-condemnation. Together they constitute the asura-deva inversion's two faces. See [[asura-deva-inversion]] — also [[persian-period-injection]] for the downstream Second-Temple-Judaism transmission"
     notes: "MASSIVE-WIN: Ahura Mazda IS the asura-deva inversion's positive theological achievement on the Iranian side; without the inversion, no Zoroastrian monotheism-trajectory. Cross-lens: 03_deities → 06_themes"
+  - target: "bmac-proto-zoroastrian"
+    type: "downstream-deity-of-archaeological-substrate"
+    source: "Anthony 2007 *The Horse, the Wheel, and Language* ch. 16; Sarianidi 1998 *Margiana and Protozoroastrianism*; Witzel 1998 — the BMAC (Bactria-Margiana Archaeological Complex ~2200–1700 BCE, modern Turkmenistan/Afghanistan) is the Bronze Age archaeological substrate in which Proto-Indo-Iranian religion crystallized before the Vedic-Avestan split. Ahura Mazda is the eventual Iranian-branch elevation of the *asura/ahura* class that the BMAC contact-zone fostered. See [[bmac-proto-zoroastrian]]"
+    notes: "Cross-lens: 03_deities → 06_themes. BMAC documents the *pre-religious* archaeological-substrate context from which both Vedic and Zoroastrian religions emerge — Ahura Mazda is the downstream Iranian-branch endpoint"
 status: "metadata"
 refs:
   - title: "A History of Zoroastrianism, vol. I-III"

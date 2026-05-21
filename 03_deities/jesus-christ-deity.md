@@ -46,6 +46,10 @@ syncretic-edges:
     type: "Christological-endpoint-of-cross-tradition-pattern"
     source: "Boyarin 2004 *Border Lines* + 2012 *The Jewish Gospels*; Segal 1977; Hannah 1999; Bauckham 2008 *Jesus and the God of Israel* — divine-Christ Christology IS the *Christianized particularization* of the pre-Christian Jewish Two-Powers binitarianism that the rabbis subsequently condemned as heresy. The Johannine Logos-becomes-flesh + Pauline pre-existent Christ + Patristic homoousios are the Christian-doctrinal trajectory of the Jewish Two-Powers tradition — what Judaism suppressed in Aher's flogging of Metatron, Christianity preserved and developed as orthodoxy. See [[theme-two-powers-in-heaven]]"
     notes: "MASSIVE-WIN: Boyarin's thesis collapses the supposed Greek-philosophical-origin-of-Christology argument — high Christology is not a Hellenistic graft but the continuation of a Jewish second-God tradition that the rabbis subsequently expunged from Judaism. Christianity preserved what Judaism suppressed. Cross-lens: 03_deities → 06_themes"
+  - target: "[[third-century-collision-zone]]"
+    type: "Christian-pole-of-3rd-c-synthesis-window"
+    source: "Origen's biblical commentaries and *De Principiis* (~220–230s CE); Augustine's later Confessions on his Manichaean → Christian conversion (~386 CE) — divine-Christ Christology as systematized by Origen in 3rd-century Alexandria + Caesarea is the Christian-tradition contribution to the collision zone. Origen's *apokatastasis* (final restoration) doctrine in particular reads as a Christian-theological response to Plotinian + Manichaean cosmologies developing simultaneously. See [[third-century-collision-zone]]"
+    notes: "Cross-lens: 03_deities → 06_themes. Origen's anti-Gnostic theology + Plotinus's Enneads II.9 'Against the Gnostics' + Mani's syncretic counter-synthesis all happen in the same intellectual networks across the same 80-year window — the collision-zone is where the four supreme-deity articulations crystallize their permanent doctrinal differences"
 status: "metadata"
 refs:
   - title: "The Christian Tradition, vol. 1: The Emergence of the Catholic Tradition (100-600)"

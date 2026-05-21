@@ -37,6 +37,10 @@ syncretic-edges:
     type: "origin-deity-of-transmission-chain"
     source: "Jamison & Brereton 2014 *Rigveda* (esp. Mandala 9); Falk 1989 on PII *\\*sauma-*; Flattery & Schwartz 1989 — Soma is the Vedic-branch origin-deity of the 3,500-year sacred-drink transmission chain (PII *\\*sauma-* → Vedic Soma → Avestan Haoma → Dionysian wine → Passover *kos ha-berakha* → Christian Eucharist → Mithraic agape meal). The drinking-the-substance = drinking-the-god ritual logic is the conceptual core; soma-as-deity (the entire Rigveda Mandala 9 devoted to Soma Pavamāna) is its earliest documented articulation. See [[theme-soma-haoma-eucharist]]"
     notes: "MASSIVE-WIN: Soma is the headwater deity of the vault's longest documented ritual-transmission chain. Cross-lens: 03_deities → 06_themes. Hub also lists across 02_documents ([[phase-1-031-rigveda]], [[phase-2-002-gathas-of-zarathustra]], [[phase-2-004-yasna-younger-avesta]]), 07_traditions ([[tradition-vedic-hinduism]], [[tradition-zoroastrianism]], [[tradition-dionysian-mysteries]], [[tradition-christianity-canonical]], [[tradition-mithraic-mysteries]], [[tradition-eleusinian-mysteries]]), and 09_symbols ([[vine-grape]], [[wheat-grain]], [[tauroctony]]) — back-edges from those lenses still pending"
+  - target: "bmac-proto-zoroastrian"
+    type: "archaeologically-attested-PII-substrate"
+    source: "Sarianidi 1998 *Margiana and Protozoroastrianism* (Gonur Tepe excavations); Falk 1989 *Bulletin SOAS*; Anthony 2007 ch. 16 — BMAC ritual deposits at Gonur Tepe (~1800 BCE) included *Ephedra* stems alongside mortar-and-pestle equipment, providing the strongest direct archaeological evidence for the Proto-Indo-Iranian *\\*sauma-* ritual *as a Bronze-Age archaeological reality* prior to its bifurcation into Vedic Soma + Avestan Haoma. See [[bmac-proto-zoroastrian]]"
+    notes: "Cross-lens: 03_deities → 06_themes. BMAC is the rare case where the *archaeological substrate* of a deity is recoverable; Soma is one of the few deities whose pre-textual ritual practice has direct material evidence"
 status: "metadata"
 refs:
   - title: "Soma: Divine Mushroom of Immortality"

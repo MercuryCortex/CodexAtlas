@@ -23,6 +23,10 @@ syncretic-edges:
   - target: "amun"
     type: "polemic-against"
     source: "Akhenaten's Atenist reform was *explicitly* anti-[[amun]] — the Theban Amun priesthood being the rival power center suppressed by the move to Akhetaten. The post-Amarna restoration under Tutankhamun re-elevated [[amun-ra]] with vengeance"
+  - target: "theme-akhenaten-moses-monotheism-thesis"
+    type: "Egyptian-source-deity-of-hypothesis"
+    source: "Assmann 1997 *Moses the Egyptian* + 2008 *The Price of Monotheism*; Redford 1984 *Akhenaten: The Heretic King*; Lichtheim 1976 vol. II (Great Hymn translation); Freud 1939 (Tier 4 founding statement) — Aten is THE Egyptian source-deity of the Akhenaten-Moses monotheism hypothesis. The Atenist innovation (~1353–1336 BCE) of *exclusive* worship of a single non-anthropomorphic deity is the *first documented exclusive monotheism* in human history; whether it directly fed Mosaic monotheism (Freud's strong claim) or shaped it indirectly via cultural memory (Assmann's mnemohistory reformulation) is the hub's contested question. See [[theme-akhenaten-moses-monotheism-thesis]]"
+    notes: "MASSIVE-WIN: Aten is the deity where the question 'where did monotheism come from?' becomes textually concrete — the Great Hymn to the Aten + Psalm 104 structural parallel is the most directly documented Egyptian-Hebrew literary connection in the entire monotheism-origin debate. Cross-lens: 03_deities → 06_themes"
 parallels:
   - target: "[[tradition-judaism]]"
     type: "parallel-motif"

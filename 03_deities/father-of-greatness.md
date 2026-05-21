@@ -21,6 +21,10 @@ syncretic-edges:
     type: "supreme-deity-of-syncretic-religion"
     source: "Tardieu 2008 *Manichaeism*; Lieu 1992 *Manichaeism in the Later Roman Empire and Medieval China*; BeDuhn 2000 *The Manichaean Body*; Reeves 1992 — the Father of Greatness is the supreme-Light pole of Mani's deliberately syncretic two-principle cosmology (Zurvanite Zoroastrian cosmic dualism + Buddhist enlightenment-teacher prophet-chain + Christian Paraclete-claim + Mesopotamian astrological framework). His Zurvanite-derived co-eternal-equal-with-Darkness structure is the structural skeleton of the *first global religious synthesis*. See [[theme-manichaeism-synthesis]]"
     notes: "Cross-lens: 03_deities → 06_themes. Hub also lists [[mani]] + [[zarathustra]] + [[siddhartha-gautama-buddha]] + [[augustine-of-hippo]] (04_persons); [[tradition-manichaeism]] + [[tradition-zoroastrianism]] + [[tradition-buddhism]] + [[tradition-christianity-canonical]] + [[tradition-catharism]] (07_traditions); [[phase-4-014-cologne-mani-codex]] + [[phase-4-015-kephalaia-of-the-teacher]] + [[phase-4-016-shabuhragan]] (02_documents) — those lens-back-edges still pending"
+  - target: "third-century-collision-zone"
+    type: "Manichaean-pole-of-3rd-c-synthesis-window"
+    source: "BeDuhn 'The Co-formation of the Manichaean and Zoroastrian Religions'; Tardieu 2008 — Mani's Father-of-Greatness is the Manichaean-tradition contribution to the 3rd-century collision zone (Mani founded the religion ~240 CE, was executed ~274–277 CE — squarely in the 200–280 CE window). Together with Plotinus's One + Origen's Christian Logos + Sasanian Zoroastrianism's Ahura Mazda, this is one of the four supreme-deity articulations that the collision-zone is producing simultaneously across Roman + Persian + Mesopotamian + Egyptian intellectual networks. See [[third-century-collision-zone]]"
+    notes: "Cross-lens: 03_deities → 06_themes. The simultaneous emergence of four supreme-deity articulations across four traditions in 80 years is the collision-zone hub's structural finding — the deity-end documents this convergence"
 status: "metadata"
 refs:
   - title: "Mani and Manichaeism"
