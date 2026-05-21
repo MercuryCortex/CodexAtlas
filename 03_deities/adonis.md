@@ -6,9 +6,12 @@ aka: ["Adon", "Tammuz", "Dumuzi", "the Beautiful Youth", "the Dying God"]
 tradition: "Greek"
 sub-tradition: "Greco-Phoenician mystery religion; dying-and-rising deity cluster"
 gender: "male"
-domain: ["beauty", "vegetation", "death and rebirth", "hunting", "desire"]
+domains: ["beauty", "vegetation", "death and rebirth", "hunting", "desire"]
 region: "Phoenicia (Byblos) → Greece → Rome"
-date-earliest: -1400
+period-active-earliest: -1400
+period-active-latest: 400
+attested-in: ["[[phase-3-035-homeric-hymns]]", "[[document-ezekiel]]"]
+# DUPLICATE WARNING: see also 03_deities/adonis-hellenistic.md — same deity, two nodes. Awaiting consolidation decision (see AUDIT/forge-deity-spine-findings-2026-05-21.md).
 status: "metadata"
 key-texts:
   - "[[phase-3-035-homeric-hymns]]"
@@ -28,7 +31,7 @@ syncretic-edges:
   - target: "[[jesus-of-nazareth]]"
     type: "structural-parallel"
     notes: "Frazer's most controversial claim: Adonis is a dying-and-rising god prefiguring Christ. The scholarly assessment is mixed: (1) the structural parallel is real — a beautiful divine figure dies violently, is mourned by devoted followers, and returns (in some versions); (2) Adonis does not 'resurrect' in most versions — he divides the year between Aphrodite above and Persephone below; (3) the early Christians were aware of the Adonis cult and explicitly polemicized against it (Jerome reports the Adonis cult in Bethlehem; Christians placed Jesus's birth in Adonis's cave); (4) the shared underlying grammar (divine beauty → violent death → divine mourning → return/restoration) may reflect a common ancient Near Eastern pattern rather than direct influence. The connection is best documented as a structural-typological parallel, not transmission"
-  - target: "[[persephone]]"
+  - target: "[[persephone-greek]]"
     type: "structural-parallel"
     notes: "Adonis divides his time between Aphrodite (above) and Persephone (below) — exactly the same schema as Persephone dividing her time between Demeter (above) and Hades (below). Both are half-year-below / half-year-above deities whose cycle maps onto the agricultural seasons. Both anchor major mystery-cult festivals (the Adonia; the Eleusinian Mysteries)"
 mentioned-in:

@@ -14,8 +14,9 @@ parent-of: []
 child-of: []
 consort: ["[[aphrodite-greek]]", "[[astarte-canaanite]]"]
 attributes: ["wild boar (his killer)", "anemone (flower from his blood)", "myrrh tree (his birth)"]
-attested-in: []
+attested-in: ["[[document-ezekiel]]"]
 equivalents: ["[[dumuzi-tammuz]]", "[[attis]]", "[[osiris]]"]
+# DUPLICATE WARNING: see also 03_deities/adonis.md — same deity, two nodes. Awaiting consolidation decision (see AUDIT/forge-deity-spine-findings-2026-05-21.md).
 syncretic-edges:
   - target: "dumuzi-tammuz"
     type: "ancient-identification"

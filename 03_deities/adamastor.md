@@ -29,7 +29,7 @@ syncretic-edges:
     type: "structural-parallel"
     source: "Camões, Os Lusíadas V; Bascom, William (1969). Ifa Divination. Indiana UP."
     notes: "Both represent the terrifying, unfathomable dimension of the deep ocean — the ocean as a divine power that resists human navigation. Olokun (Yoruba) is chained at the ocean bottom by Obatala to prevent flooding; Adamastor is petrified at the Cape by the logic of failed love. Both are chained/frozen divine ocean powers. The typological parallel — the ocean's deepest terror as a bound giant/deity — has no documented transmission between the Yoruba West African and Portuguese Renaissance traditions; it is an independent resolution of the same theological problem: how to represent the sea's most extreme hostility as a divine figure."
-  - target: "os-lusiadas"
+  - target: "phase-6-041-camoes-os-lusiadas"
     type: "part-of"
     source: "Camões, Os Lusíadas V.37–60"
     notes: "Adamastor is Camões's most original poetic creation — a figure with no antecedent in classical or medieval tradition. He is synthesized from the Titan tradition (Hesiod's Titanomachy; Virgil's giants), the Polyphemus topos (unrequited love for a sea-nymph), and the navigational reality of Cape Agulhas/Cape of Good Hope as the most feared geographical obstacle of the Age of Discovery. His prophecies in Canto V accurately foretell the disasters of later Portuguese navigators (Bartolomeu Dias's death, Francisco de Almeida's killing on the Cape shore) — structuring the epic's tragedy as foretold by the landscape itself."
@@ -68,7 +68,7 @@ tags: [deity, portuguese, renaissance, literary-mythology, titan, cape-of-good-h
 # Adamastor
 
 ## Identity
-Adamastor is the most original mythological figure created in Renaissance European literature — a Titan invented by **Luís de Camões** in *[[os-lusiadas]]* (1572) who functions as the Spirit of the Cape of Good Hope. He is not merely a deity associated with the Cape: **he IS the Cape**, petrified by unrequited love for the Nereid Thetis, his stone body the physical geography that Portuguese navigators must pass to reach India. In Canto V of the epic, he appears to Vasco da Gama's fleet as an enormous dark figure emerging from storm-clouds to prophesy disaster.
+Adamastor is the most original mythological figure created in Renaissance European literature — a Titan invented by **Luís de Camões** in *[[phase-6-041-camoes-os-lusiadas]]* (1572) who functions as the Spirit of the Cape of Good Hope. He is not merely a deity associated with the Cape: **he IS the Cape**, petrified by unrequited love for the Nereid Thetis, his stone body the physical geography that Portuguese navigators must pass to reach India. In Canto V of the epic, he appears to Vasco da Gama's fleet as an enormous dark figure emerging from storm-clouds to prophesy disaster.
 
 Adamastor is simultaneously:
 - A **Titan** in the Greco-Roman tradition (one of the defeated giants of the Titanomachy)
