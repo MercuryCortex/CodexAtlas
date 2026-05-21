@@ -270,3 +270,37 @@ Both files are 105 lines, both `status: "full"`, both cover the same Greek deity
 **Wikilinks scanned:** ~70 unique targets. **Zero dead links** — second cleanest batch of the sweep.
 
 ---
+
+## Batch 15 — cupid-roman → dazhbog (2026-05-21) — milestone: 150 deities
+
+**Files:** cupid-roman, cybele, dagda, dagon, damballa, damkina, danu, daramulan, dattatreya, dazhbog.
+
+**Fixes applied:**
+
+- 3 status flips stub → metadata (dagda, dagon, daramulan).
+
+**Wikilinks scanned:** ~75 unique targets. **Zero dead links.** Third clean batch in a row.
+
+---
+
+## 150-deity checkpoint (batches 1–15)
+
+**Cumulative across 150 deities (22.2% of the lens):**
+
+| Metric | Count |
+|---|---:|
+| Status `stub` → `metadata` flips | ~50 |
+| Dead wikilinks fixed / unwrapped | ~21 (including 4 out-of-batch Florentine-Codex misnumberings cleaned in batch 13) |
+| Outward stubs created (within lens) | 3 (sarutahiko, amurru, waa-the-crow) |
+| Outward stubs created (cross-lens) | 0 |
+| Breadcrumb stubs promoted to metadata | 1 (ame-no-hohi) |
+| YAML bugs fixed | 1 (ahura-mazda duplicate `parent-of:`) |
+| Duplicate clusters flagged | 3 (adonis, ahriman, asclepius) |
+| Recurring patterns identified | phase-6/phase-8 misnumbering swept vault-wide; `tradition-X` vs `tradition-X-religion` mixed convention (no fix needed); YAML quote-style `"stub"` vs `stub` mixed (both valid; sed scripts must handle both) |
+| New dead-links shipped | **0** (WIRING LAW held across all 15 batches) |
+
+**Batches with zero dead links:** 6, 14, 15 (and parts of others). The deity lens's wikilink hygiene is genuinely good — the stubs audit's local-rate estimate (1.74% global) holds for this lens.
+
+**Letter coverage:** A through D (`dazhbog` is the last D-deity processed). Remaining: D-tail through Z. The Greek/Egyptian/Mesopotamian deep-cluster is mostly intact; the longest tail will be the East-Asian (G/I/K/T/Y prefixes), Native-American (M/Q/T/W prefixes), and Polytheistic-Christian cluster (S prefix). Continuing.
+
+---

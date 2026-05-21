@@ -19,7 +19,7 @@ syncretic-edges:
   - target: "[[odin]]"
     type: "scholarly-parallel"
     source: "Father-god / chief of pantheon / lord of magical knowledge"
-status: "stub"
+status: "metadata"
 refs:
   - title: "Celtic Mythology"
     author: "Mac Cana, Proinsias"

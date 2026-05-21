@@ -30,8 +30,8 @@ syncretic-edges:
   - target: "thor"
     type: "scholarly-parallel"
     source: "Eliade 1958; Norse Thor as thunder-god; the bullroarer-as-divine-voice (Daramulan) parallels the thunder-as-divine-voice motif in Indo-European storm-gods"
-status: "stub"
-status: "stub"
+status: "metadata"
+status: "metadata"
 refs:
   - title: "The Native Tribes of South-East Australia"
     author: "Howitt, Alfred William"

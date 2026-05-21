@@ -16,7 +16,7 @@ consort: ["Šalaš (at Mari)"]
 attributes: ["grain", "no consistent iconography"]
 attested-in: ["[[phase-1-013-baal-cycle]]", "[[phase-1-014-ugaritic-ritual-texts]]"]
 equivalents: []
-status: "stub"
+status: "metadata"
 refs:
   - title: "Dagan and Šalaš"
     author: "Feliu, Lluís"
