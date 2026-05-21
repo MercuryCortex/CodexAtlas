@@ -41,6 +41,13 @@ syncretic-edges:
     type: "documented-substrate"
     source: "Pearson 2007 + Quispel 1974; the Hokmah-Sophia chain runs Mesopotamian *nēmequ* → Hellenistic Jewish Hokmah → Philonic Sophia → Gnostic Sophia. See [[theme-mesopotamian-gnostic-transmission]] Chain 3 for the load-bearing argument"
     notes: "MASSIVE-WIN: HIGH-confidence chain. Mesopotamian wisdom literature's *nēmequ* feeds personified Hokmah (Proverbs 8, Sirach 24, Wisdom 7-9), which Philo fuses with Greek Sophia and Platonic Logos, which becomes the Gnostic Sophia. Cleanest documentable transmission line"
+  - target: "isis-hellenistic"
+    type: "Alexandrian-milieu-parallel"
+    source: "Witt 1971 + Pearson 2007 — Hellenistic Isis and Gnostic Sophia share structural-and-iconographic continuity in the same 1st-3rd c. Alexandrian milieu. Both: cosmic-feminine principles, fall-loss-mourning narratives, active recovery agents, saving-mother figures invoked by initiates. Workshop-level iconographic continuity at Alexandrian icon-production. See [[theme-egyptian-gnostic-transmission]] Chain 3"
+  - target: "theme-egyptian-gnostic-transmission"
+    type: "documented-substrate"
+    source: "Sophia receives the Egyptian Isis-substrate alongside the Mesopotamian Hokmah-substrate, both fusing in the Alexandrian milieu. The Gnostic Sophia is the synthesis-endpoint of both bridges"
+    notes: "MASSIVE-WIN: Sophia is the convergence point where the Mesopotamian and Egyptian bridges into Gnosticism meet — the cleanest single locus of the dual-substrate documentation"
 status: "full"
 refs:
   - title: "The Secret Revelation of John"

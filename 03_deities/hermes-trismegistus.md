@@ -26,6 +26,13 @@ syncretic-edges:
   - target: "mercury-roman"
     type: "ancient-identification"
     source: "Latin Hermetica translate Hermes Trismegistus as Mercurius Ter Maximus; cf. Cicero *De Natura Deorum* 3.56"
+  - target: "theme-egyptian-gnostic-transmission"
+    type: "synthesis-endpoint"
+    source: "Hermes Trismegistus is the canonical Hellenistic-synthesis endpoint of Chain 1 (Thoth → Hermes Trismegistus). The Hermetic corpus authored under his name is the load-bearing literary witness to the Egyptian → Gnostic transmission via Alexandria. See [[theme-egyptian-gnostic-transmission]] Chain 1"
+  - target: "imhotep"
+    type: "Hermetic-dialogue-pair"
+    source: "Fowden 1986 — the Hermetic Asclepius dialogue ([[phase-4-012-asclepius]]) is structurally Hermes Trismegistus (Thoth) instructing Asclepius (Imhotep). Both deified Egyptian sages renamed in their Greek equivalents. The dialogue is temple-cult literature translated into Greek philosophical idiom. See [[theme-egyptian-gnostic-transmission]] Chain 4 (the Imhotep-Asklepios-Hermes triangulation)"
+    notes: "MASSIVE-WIN: the deified-Egyptian-sage transmission as the most documentable triangulation in the Egyptian → Gnostic chain"
 status: "metadata"
 refs:
   - title: "The Egyptian Hermes: A Historical Approach to the Late Pagan Mind"

@@ -26,6 +26,10 @@ syncretic-edges:
   - target: "tehom-hebrew-concept"
     type: "scholarly-parallel"
     source: "The 'deep' of Gen 1:2 functions similarly to Nun as primordial water from which creation emerges; Genesis's account demythologizes the waters but the structural role parallels Nun"
+  - target: "theme-egyptian-gnostic-transmission"
+    type: "primary-Egyptian-source"
+    source: "Nun is the load-bearing Egyptian-end deity of Chain 2 (Nun = Tiamat = Tehom primordial-waters cosmogonic substrate). The cluster of Egyptian Nun + Akkadian Tiamat + Hebrew Tehom forms the Bronze-Age Near Eastern primordial-waters vocabulary that fuses in Alexandrian Hellenistic-Jewish-Egyptian intellectual life into the Gnostic and Hermetic cosmogonies. See [[theme-egyptian-gnostic-transmission]] Chain 2"
+    notes: "MASSIVE-WIN: convergent vocabulary cluster across three Bronze-Age Near Eastern traditions feeding the Gnostic-Hermetic synthesis"
 status: "metadata"
 refs:
   - title: "Genesis in Egypt: The Philosophy of Ancient Egyptian Creation Accounts"

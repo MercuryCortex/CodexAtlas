@@ -23,6 +23,10 @@ syncretic-edges:
   - target: "hermes-trismegistus"
     type: "ancient-identification"
     source: "Fowden 1986, *The Egyptian Hermes*; the Hellenistic-Egyptian composite 'thrice-great Hermes' of the Corpus Hermeticum is a deliberate syncretic deity. The Hermetic *Asclepius* dialogue ([[phase-4-012-asclepius]]) presents Hermes Trismegistus = Thoth speaking to Asclepius = [[imhotep]]"
+  - target: "theme-egyptian-gnostic-transmission"
+    type: "primary-Egyptian-source"
+    source: "Thoth is the load-bearing Egyptian-end deity of Chain 1 (Thoth → Hermes Trismegistus → Hermetic-Gnostic saving-knowledge soteriology). The Egyptian → Gnostic transmission's most concrete documentary line runs through this identification. See [[theme-egyptian-gnostic-transmission]] Chain 1 for the full argument (Fowden 1986, Copenhaver 1992, Layton 1987)"
+    notes: "MASSIVE-WIN: HIGH-confidence Egyptian → Hermetic-Gnostic transmission. The Coptic Discourse on the Eighth and Ninth (NHC VI.6) is a specifically Egyptian ritual liturgy of soul-ascent, the Greek tradition reading like translation of an Egyptian original"
 status: "full"
 refs:
   - title: "The Egyptian Hermes: A Historical Approach to the Late Pagan Mind"

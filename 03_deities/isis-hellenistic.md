@@ -30,6 +30,13 @@ syncretic-edges:
   - target: "cybele"
     type: "ancient-identification"
     source: "Apuleius *Metamorphoses* 11.5 — Isis lists all the names by which she is known across nations"
+  - target: "sophia-gnostic"
+    type: "structural-parallel-with-iconographic-continuity"
+    source: "Witt 1971, *Isis in the Graeco-Roman World*; Pearson 2007 — Hellenistic Isis and Gnostic Sophia share substantial structural overlap: both are cosmic-feminine principles spanning heavenly and earthly domains; both have fall/loss/mourning narratives (Isis: Osiris's death; Sophia: unsanctioned generative act); both are active recovery agents; both are saving-mother figures invoked by initiates; both have elaborate cosmic-function epithets (Isis Myrionymos / Sophia's many titles). Workshop-level iconographic continuity at Alexandrian icon-production: Isis-Lactans (nursing Horus) → Marian-nursing-Christ icons; the Sophia parallel sits in the same iconographic-cultic continuum. See [[theme-egyptian-gnostic-transmission]] Chain 3"
+    notes: "MASSIVE-WIN: Alexandrian-milieu cultural-religious continuity between Hellenistic Isis-cult and emerging Gnostic Sophia / Christian Mariology"
+  - target: "theme-egyptian-gnostic-transmission"
+    type: "documented-substrate"
+    source: "Hellenistic Isis is the load-bearing Egyptian-end deity for Chain 3 (Isis ↔ Sophia divine-feminine continuity through Alexandria)"
 status: "full"
 refs:
   - title: "Apuleius: Metamorphoses (The Golden Ass), Book 11"
