@@ -21,7 +21,7 @@ syncretic-edges:
     type: "ancient-identification"
     source: "Herodotus 2.59, 2.156; Plutarch, On Isis and Osiris"
     notes: "Greeks identified Demeter with Egyptian Isis (Isis-Demeter syncretism is well-documented in Hellenistic period)."
-status: "stub"
+status: "metadata"
 refs:
   - title: "Greek Religion"
     author: "Burkert, Walter"

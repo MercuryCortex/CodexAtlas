@@ -11,7 +11,7 @@ domains: ["wine and intoxication", "ecstatic possession (mania)", "theater and t
 gender: "masculine"
 role: "ecstatic mystery-god; dying-and-returning child-god in the Orphic tradition; initiator into post-mortem blessedness"
 parent-of: []
-child-of: ["[[zeus]]", "[[semele]] (or Persephone in Orphic-Zagreus version)"]
+child-of: ["[[zeus]]", "Semele (mortal mother; or Persephone in Orphic-Zagreus version — no node)"]
 consort: ["[[ariadne]]"]
 attributes: ["thyrsus (ivy-tipped staff)", "grape vine", "leopard/panther", "bull horns", "torch"]
 attested-in: ["[[phase-3-021-hermetic-corpus-earliest]]"]

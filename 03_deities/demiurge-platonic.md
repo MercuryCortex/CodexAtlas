@@ -23,7 +23,7 @@ syncretic-edges:
   - target: "yahweh"
     type: "philo-identification"
     source: "Philo of Alexandria identifies the Mosaic Creator with the Platonic Demiurge; Christian-Platonist tradition follows."
-status: "stub"
+status: "metadata"
 refs:
   - title: "Plato's Cosmology: The Timaeus of Plato"
     author: "Cornford, F.M."

@@ -24,7 +24,7 @@ syncretic-edges:
   - target: "zagreus-orphic"
     type: "ancient-identification"
     source: "Orphic theogonies; Dionysus-Zagreus is dismembered by Titans and reborn — the central Orphic mystery."
-status: "stub"
+status: "metadata"
 refs:
   - title: "Greek Religion"
     author: "Burkert, Walter"
