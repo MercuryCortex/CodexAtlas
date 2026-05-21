@@ -23,7 +23,7 @@ syncretic-edges:
   - target: "[[michael-archangel]]"
     type: "scholarly-parallel"
     source: "Co-archangel"
-status: "stub"
+status: "metadata"
 refs:
   - title: "Ascent to Heaven in Jewish and Christian Apocalypses"
     author: "Himmelfarb, Martha"

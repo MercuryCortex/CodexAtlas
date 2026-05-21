@@ -3,6 +3,7 @@ type: deity
 id: "rama-deity-vaishnava"
 name: "Rama (Vaishnava avatar)"
 aka: ["Rāma", "Ramachandra", "Maryādā Puruṣottama", "Rāghava"]
+# DUPLICATE WARNING: see also 03_deities/rama.md — same deity, suffix-vs-no-suffix split. See AUDIT/forge-deity-spine-findings-2026-05-21.md.
 tradition: "Vaishnavism — Ramaite devotionalism"
 region: "North India (Ayodhya cult center); pan-Indian and Southeast Asian"
 period-active-earliest: -400

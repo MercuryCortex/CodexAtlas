@@ -3,6 +3,7 @@ type: deity
 id: "rama"
 name: "Rama"
 aka: ["Rāma", "Ramachandra", "Maryada Purushottama"]
+# DUPLICATE WARNING: see also 03_deities/rama-deity-vaishnava.md (104L, metadata). Same deity, suffix-vs-no-suffix split (same pattern as krishna/krishna-deity-vaishnava). See AUDIT/forge-deity-spine-findings-2026-05-21.md.
 tradition: "Vaishnavism"
 region: "North India (Ayodhya cult center); pan-Indian, Southeast Asian"
 period-active-earliest: -400
@@ -20,7 +21,7 @@ syncretic-edges:
   - target: "[[vishnu]]"
     type: "ancient-identification"
     source: "Late Puranic theology — Rama as seventh avatar"
-status: "stub"
+status: "metadata"
 refs:
   - title: "The Rāmāyaṇa of Vālmīki: An Epic of Ancient India"
     author: "Goldman, Robert P. et al. (trans.)"

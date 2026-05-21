@@ -3,6 +3,7 @@ type: deity
 id: "radha"
 name: "Radha"
 aka: ["Rādhā", "Rādhārāṇī", "Sri Radhika"]
+# DUPLICATE WARNING: see also 03_deities/radha-deity.md (105L, metadata). This file is the 52L stub. Already flagged in stubs audit. See AUDIT/forge-deity-spine-findings-2026-05-21.md.
 tradition: "Gaudiya Vaishnavism (with antecedents in Bengali, Braj, and earlier bhakti)"
 region: "North India — Vrindavan/Braj region; Bengal (Gaudiya); diaspora"
 period-active-earliest: 800
@@ -17,7 +18,7 @@ attributes: ["paired with Krishna in iconography", "associated with the rasalila
 attested-in: ["[[phase-6-020-chaitanya-charitamrita]]"]
 equivalents: []
 syncretic-edges: []
-status: "stub"
+status: "metadata"
 refs:
   - title: "Viraha-Bhakti: The Early History of Kṛṣṇa Devotion in South India"
     author: "Hardy, Friedhelm"
