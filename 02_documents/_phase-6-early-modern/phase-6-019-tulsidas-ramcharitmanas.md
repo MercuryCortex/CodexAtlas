@@ -20,7 +20,7 @@ themes: ["[[bhakti-devotion]]", "[[avatar-doctrine]]", "[[divine-name]]"]
 parallels: ["Valmiki's Sanskrit *Ramayana* (Phase 2)", "Adhyatma Ramayana (Phase 5)", "[[phase-6-013-mirabai-bhajans]]", "[[phase-6-020-chaitanya-charitamrita]]"]
 influenced-by: ["Valmiki's *Ramayana* (Phase 2)", "Adhyatma Ramayana (Phase 5) — the principal proximate Sanskrit source for Tulsi's *bhakti* Rama", "Bhakti tradition (Ramananda's lineage)", "Bhagavata Purana (Phase 5)"]
 influences: ["North Indian Vaishnava devotional life", "Ramlila theatrical tradition", "modern Hindi literary canon (the Manas is widely treated as the founding text of modern Hindi)", "Indian nationalist religious imagination (Gandhi's lifelong daily reading)"]
-deities-mentioned: ["[[rama-deity-vaishnava]]", "[[sita-deity]]", "[[hanuman-deity]]", "[[shiva-deity]]", "[[krishna]]"]
+deities-mentioned: ["[[rama]]", "[[sita-deity]]", "[[hanuman-deity]]", "[[shiva-deity]]", "[[krishna]]"]
 events-context: ["Composition begun on Ram Navami (9th day of Chaitra), 1574 per Tulsi's own statement"]
 status: "metadata"
 preservation: "Composed 1574–1576 per Tulsi's internal dating. Earliest dated manuscript fragment: Ayodhya 1604 (autograph claims have been made and disputed). The Manas is divided into seven *kāṇḍa* (books) corresponding to Valmiki's structure: Bala, Ayodhya, Aranya, Kishkindha, Sundara, Lanka, Uttara. ~12800 verses in *chaupai* and *doha* meters. Continuous active liturgical recitation; the standard editions are the Gita Press, Gorakhpur Hindi edition (1923+) and the multiple critical-academic editions."
