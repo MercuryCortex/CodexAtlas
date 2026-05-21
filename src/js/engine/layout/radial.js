@@ -361,6 +361,119 @@
       }
     });
 
+    // ── 4. GLOBAL relaxation (Phase 20D-3, 2026-05-21) ────
+    // After all wedges have placed their members, run an
+    // all-vs-all repulsion pass so cross-wedge boundaries
+    // get the same organic spacing as within-wedge pairs.
+    //
+    // John's request: "make all nodes repel from each other
+    // (naturally and organically) attempting to move out
+    // 10 px (towards the center when possible)".
+    //
+    //   • PADDING = 10 wu  → each pair targets an extra
+    //     ~10 wu of breathing room on top of size-based
+    //     personal space.
+    //   • INWARD_GRAVITY → a small constant pull toward
+    //     the wheel centre. Makes the "toward the centre
+    //     when possible" preference physical: when a node
+    //     gets pushed, the gravity term biases its trajectory
+    //     inward so the layout compacts gracefully rather
+    //     than ballooning outward into the divider zones.
+    //   • Hard outer clamp at rOuter − 6 so nothing leaks
+    //     across the rim labels; soft inner stop so newest
+    //     nodes don't pile at r=0.
+    //
+    // Wedge angular bounds are intentionally NOT re-applied —
+    // a small amount of cross-family drift at the family
+    // boundaries is the organic signature John asked for,
+    // and the convex hull overlay just expands to enclose it.
+    {
+      const PADDING   = 10;      // wu of extra space per pair
+      const G_ITERS   = 5;
+      const G_STEP    = 0.55;
+      const G_GRAVITY = 0.6;     // wu/iter pull toward origin
+      const BASE_SZ   = 11;
+      const HUB_SZ    = 7;
+      const RIM_PAD   = 6;
+      const outerCap  = rOuter - RIM_PAD;
+      const innerCap  = rInner + RIM_PAD;
+
+      // Compute the global max degree once so size scaling
+      // is consistent across families.
+      let maxDegGlobal = 1;
+      for (const m of degree.values()) if (m > maxDegGlobal) maxDegGlobal = m;
+
+      // Snapshot all placed nodes.
+      const all = [];
+      for (const n of nodes) {
+        const p = positions.get(n.id);
+        if (!p) continue;
+        all.push({ id: n.id, x: p.x, y: p.y, deg: degree.get(n.id) || 0 });
+      }
+      const M = all.length;
+
+      for (let iter = 0; iter < G_ITERS; iter++) {
+        for (let i = 0; i < M; i++) {
+          const pi    = all[i];
+          const sizeI = BASE_SZ + (pi.deg / maxDegGlobal) * HUB_SZ;
+          let pushX = 0, pushY = 0;
+          // Repulsion against every other node.
+          for (let j = 0; j < M; j++) {
+            if (i === j) continue;
+            const pj = all[j];
+            const dx = pi.x - pj.x;
+            const dy = pi.y - pj.y;
+            const d2 = dx * dx + dy * dy;
+            const sizeJ   = BASE_SZ + (pj.deg / maxDegGlobal) * HUB_SZ;
+            const minDist = sizeI + sizeJ + PADDING;
+            if (d2 < minDist * minDist) {
+              let ux, uy, d;
+              if (d2 < 0.0001) {
+                // Coincident — deterministic split bearing.
+                const h = (strHash(pi.id) ^ strHash(pj.id)) >>> 0;
+                const theta = (h % 10000) / 10000 * Math.PI * 2;
+                ux = Math.cos(theta);
+                uy = Math.sin(theta);
+                d  = 0;
+              } else {
+                d  = Math.sqrt(d2);
+                ux = dx / d;
+                uy = dy / d;
+              }
+              const force = (minDist - d) * 0.5 * G_STEP;
+              pushX += ux * force;
+              pushY += uy * force;
+            }
+          }
+          // Inward gravity — "toward the centre when possible".
+          // Small constant pull so the layout naturally compacts
+          // rather than expands when conflicts resolve.
+          const r = Math.hypot(pi.x, pi.y);
+          if (r > 1) {
+            pushX -= (pi.x / r) * G_GRAVITY;
+            pushY -= (pi.y / r) * G_GRAVITY;
+          }
+          // Apply.
+          pi.x += pushX;
+          pi.y += pushY;
+          // Annulus clamp.
+          const nr = Math.hypot(pi.x, pi.y);
+          if (nr > outerCap) {
+            const s = outerCap / nr;
+            pi.x *= s; pi.y *= s;
+          } else if (nr < innerCap) {
+            const s = innerCap / Math.max(nr, 0.001);
+            pi.x *= s; pi.y *= s;
+          }
+        }
+      }
+
+      // Write back.
+      for (let i = 0; i < M; i++) {
+        positions.set(all[i].id, { x: all[i].x, y: all[i].y });
+      }
+    }
+
     return { wedges, positions, rInner, rOuter };
   }
 
