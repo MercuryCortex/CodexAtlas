@@ -17,7 +17,7 @@ attributes: ["the thread (clew)", "the wreath/crown (Corona Borealis catasterism
 attested-in: ["[[phase-2-008-homeric-epics]]", "[[phase-2-009-hesiod-theogony-works-and-days]]"]
 equivalents: []
 syncretic-edges: []
-status: "stub"
+status: "metadata"
 refs:
   - title: "Greek Religion"
     author: "Burkert, Walter"

@@ -32,7 +32,7 @@ syncretic-edges:
 tags:
   - medicine
   - healing-deity
-status: "stub"
+status: "metadata"
 refs:
   - title: "Greek Religion"
     author: "Burkert, Walter"

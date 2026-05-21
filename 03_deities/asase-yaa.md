@@ -23,7 +23,7 @@ syncretic-edges:
   - target: "Pacha Mama (Andean earth goddess)"
     type: "parallel-form"
     source: "Mbiti 1969; typological"
-status: "stub"
+status: "metadata"
 refs:
   - title: "West African Traditional Religion"
     author: "Opoku, Kofi Asare"

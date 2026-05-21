@@ -23,7 +23,7 @@ syncretic-edges:
   - target: "artemis-of-ephesus"
     type: "syncretic-identification"
     source: "Hellenistic period — Anatolian Mother-Goddess (Cybele-adjacent) syncretized with Artemis at Ephesus"
-status: "stub"
+status: "metadata"
 refs:
   - title: "Greek Religion"
     author: "Burkert, Walter"

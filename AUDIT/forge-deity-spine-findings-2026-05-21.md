@@ -118,3 +118,13 @@ The Mesopotamian moon-god has *one* node (`nanna-sin.md`) covering both the Sume
 **Wikilinks scanned:** ~120 unique targets across 10 files. 2 dead (now fixed).
 
 ---
+
+## Batch 6 — apollo → asase-yaa (2026-05-21)
+
+**Files:** apollo, apophis, apsu, apus, aramazd, ares, ariadne, armaros, artemis, asase-yaa.
+
+**Fixes applied:** 7 status flips stub → metadata (apollo, apsu, apus, ares, ariadne, artemis, asase-yaa). All had 32–62 lines + structured YAML. **Zero dead wikilinks** across the batch — the Olympian cluster has the cleanest wiring discipline yet observed.
+
+**Tradition-suffix convention learned (revising batch 4 note):** the vault uses BOTH `tradition-X` and `tradition-X-religion` slugs interchangeably across different traditions. `tradition-akan` exists without suffix; `tradition-maya-religion`, `tradition-lusitanian-religion`, `tradition-greek-religion` exist with it. There is no single convention — each tradition's slug was chosen ad hoc. Future renames should check the actual file before changing.
+
+---

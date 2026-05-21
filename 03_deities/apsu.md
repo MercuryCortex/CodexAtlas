@@ -16,7 +16,7 @@ consort: ["[[tiamat]]"]
 attributes: []
 attested-in: ["[[phase-1-008-enuma-elish]]"]
 equivalents: []
-status: "stub"
+status: "metadata"
 refs:
   - title: "Babylonian Creation Myths"
     author: "Lambert, Wilfred G."
