@@ -944,6 +944,64 @@
     // ── Camera ──────────────────────────────────────────
     const camera = cammod.create({ centerX: 0, centerY: 0, scale: 1 });
 
+    // ── Phase 21I (2026-05-21) — proactive gizmo-10% zoom-out
+    // floor. Wrap every camera scale-input method so a below-
+    // floor scale value is rounded up to the floor BEFORE the
+    // camera stores it. The engine's own MIN_SCALE = 0.05 stays
+    // intact; this is a per-view policy layer.
+    // Why: a reactive clamp inside camera.onChange fired AFTER
+    // the camera had already accepted a below-floor value, then
+    // snapped back — visible to John as "drifts a bit while
+    // zooming then catches up on the way back". Clamping the
+    // INPUT (factor / target scale) means the camera never
+    // crosses the floor at all.
+    (function wrapCameraFloor() {
+      const FLOOR_PCT = 0.10;
+      // computeFitScale is defined later (closure capture). We
+      // resolve it lazily inside each wrapper.
+      function viewMin() {
+        if (typeof computeFitScale !== 'function') return 0;
+        const fit = computeFitScale();
+        return (fit > 0) ? fit * FLOOR_PCT : 0;
+      }
+      const origSetScale         = camera.setScale.bind(camera);
+      const origZoomAt           = camera.zoomAt.bind(camera);
+      const origNudgeZoomTarget  = camera.nudgeZoomTarget.bind(camera);
+      const origFlyTo            = camera.flyTo.bind(camera);
+      camera.setScale = function (s) {
+        const lo = viewMin();
+        if (lo > 0 && s < lo) s = lo;
+        return origSetScale(s);
+      };
+      // zoomAt / nudgeZoomTarget take a factor (× current scale).
+      // We translate "below-floor target" into an adjusted factor
+      // that lands exactly on the floor — so the wheel still feels
+      // continuous, just stopped at the floor.
+      camera.zoomAt = function (factor, ax, ay, vp) {
+        const lo = viewMin();
+        if (lo > 0 && camera.state.scale > 0) {
+          const would = camera.state.scale * factor;
+          if (would < lo) factor = lo / camera.state.scale;
+        }
+        return origZoomAt(factor, ax, ay, vp);
+      };
+      camera.nudgeZoomTarget = function (factor, ax, ay, vp) {
+        const lo = viewMin();
+        if (lo > 0 && camera.state.scale > 0) {
+          const would = camera.state.scale * factor;
+          if (would < lo) factor = lo / camera.state.scale;
+        }
+        return origNudgeZoomTarget(factor, ax, ay, vp);
+      };
+      camera.flyTo = function (target, duration) {
+        const lo = viewMin();
+        if (lo > 0 && target && typeof target.scale === 'number' && target.scale < lo) {
+          target = Object.assign({}, target, { scale: lo });
+        }
+        return origFlyTo(target, duration);
+      };
+    })();
+
     // ── Local mount state ──────────────────────────────
     const local = {
       renderer:    null,
@@ -1497,24 +1555,16 @@
       // visibility recomputation (per-tier zoom thresholds).
       camera.onChange(() => {
         if (local.destroyed) return;
-        // Phase 20K (2026-05-21) — gizmo-10% zoom-out floor.
-        // The camera's absolute MIN_SCALE (0.05) can map to gizmo
-        // percentages well below 10% on landscape viewports.
-        // John's spec is "limit the max zoom out to 10%" — so
-        // when the user / wheel / pinch tries to push below
-        // 10% of fit-scale, we clamp it back. setScale early-
-        // returns on no-op, so this won't loop on its own
-        // re-fire of onChange.
-        if (camera.state && local.lastSize && local.lastSize.w && local.lastSize.h) {
-          const fitNow = computeFitScale();
-          if (fitNow > 0) {
-            const minScale = fitNow * 0.10;
-            if (camera.state.scale < minScale - 1e-6) {
-              camera.setScale(minScale);
-              return; // re-entrant onChange will pick up the clamped state
-            }
-          }
-        }
+        // Phase 21I (2026-05-21) — the gizmo-10% zoom-out floor
+        // is now enforced PROACTIVELY by wrapping the camera's
+        // scale-input methods (setScale / zoomAt /
+        // nudgeZoomTarget / flyTo) below. The previous reactive
+        // clamp here fired AFTER state.scale dipped under the
+        // floor, then snapped back — that snap was the visible
+        // "drift then catch up" John was reporting. With the
+        // input-layer clamp, state.scale never crosses the
+        // floor in the first place, so onChange can stay
+        // strictly read-only.
         // Phase 5C (2026-05-20) — glyph opacity is uniform-driven
         // on the GPU now, so camera motion no longer needs to
         // mark the glyph buffer dirty. The off-viewport cull is
