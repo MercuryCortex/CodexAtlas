@@ -77,6 +77,20 @@
       else if (state.centerY > bounds.y1) state.centerY = bounds.y1;
     }
 
+    // 2026-05-21 (Phase 21I-revised) — per-instance scale bounds.
+    // View layer sets these via `setScaleBounds(lo, hi)` to enforce
+    // a tighter range than the module-level MIN_SCALE / MAX_SCALE
+    // constants. ALL internal scale clamping uses `clampScale(s)`
+    // below so any zoom path (setScale / zoomAt / nudgeZoomTarget
+    // / flyTo / animation tick) respects the per-instance bounds.
+    let scaleLo = MIN_SCALE;
+    let scaleHi = MAX_SCALE;
+    function clampScale(s) {
+      if (s < scaleLo) return scaleLo;
+      if (s > scaleHi) return scaleHi;
+      return s;
+    }
+
     // Listeners — view layer subscribes to re-draw when the
     // camera moves. Multiple subscribers supported.
     const listeners = new Set();
@@ -101,7 +115,7 @@
         _emit();
       },
       setScale(s) {
-        const clamped = Math.max(MIN_SCALE, Math.min(MAX_SCALE, s));
+        const clamped = clampScale(s);
         if (state.scale === clamped) return;
         state.scale = clamped;
         _emit();
@@ -110,7 +124,7 @@
       set(c) {
         const cx = (typeof c.centerX === 'number') ? c.centerX : state.centerX;
         const cy = (typeof c.centerY === 'number') ? c.centerY : state.centerY;
-        const sc = (typeof c.scale   === 'number') ? Math.max(MIN_SCALE, Math.min(MAX_SCALE, c.scale)) : state.scale;
+        const sc = (typeof c.scale   === 'number') ? clampScale(c.scale) : state.scale;
         if (state.centerX === cx && state.centerY === cy && state.scale === sc) return;
         state.centerX = cx;
         state.centerY = cy;
@@ -160,12 +174,35 @@
         clampCenter();
       },
 
+      // 2026-05-21 — per-instance scale bounds. View layer
+      // (e.g. forge.js) calls this once after fit so the wheel
+      // can't zoom out below `fit × 0.10`. Both arguments are
+      // optional: pass `null` to revert to the module-level
+      // MIN_SCALE / MAX_SCALE defaults. Any in-flight animation
+      // targeting a now-out-of-bounds scale gets re-clamped on
+      // next tick; the current state.scale is snap-clamped here
+      // so the next emit reflects the new bounds immediately.
+      setScaleBounds(lo, hi) {
+        scaleLo = (typeof lo === 'number') ? lo : MIN_SCALE;
+        scaleHi = (typeof hi === 'number') ? hi : MAX_SCALE;
+        // Re-clamp animation targets so a below-floor zoomAnim
+        // doesn't keep dragging the current scale past the new
+        // floor.
+        if (zoomAnim) zoomAnim.targetScale = clampScale(zoomAnim.targetScale);
+        if (flyToAnim) flyToAnim.toScale  = clampScale(flyToAnim.toScale);
+        const clamped = clampScale(state.scale);
+        if (state.scale !== clamped) {
+          state.scale = clamped;
+          _emit();
+        }
+      },
+
       // Zoom toward a viewport anchor point (the mouse cursor).
       // The world point under the anchor stays under the anchor.
       //   factor > 1 → zoom in
       //   factor < 1 → zoom out
       zoomAt(factor, anchorScreenX, anchorScreenY, viewport) {
-        const newScale = Math.max(MIN_SCALE, Math.min(MAX_SCALE, state.scale * factor));
+        const newScale = clampScale(state.scale * factor);
         if (newScale === state.scale) return;
         // World point currently under the anchor (straight map).
         const wAnchorX = (anchorScreenX - viewport.w / 2) / state.scale + state.centerX;
@@ -188,7 +225,7 @@
         // both axes fit. (Aspect-correct letterbox.)
         const sx = viewport.w / w;
         const sy = viewport.h / h;
-        const s  = Math.max(MIN_SCALE, Math.min(MAX_SCALE, Math.min(sx, sy)));
+        const s  = clampScale(Math.min(sx, sy));
         state.centerX = (extent.x0 + extent.x1) / 2;
         state.centerY = (extent.y0 + extent.y1) / 2;
         state.scale   = s;
@@ -241,7 +278,7 @@
         // against the EXISTING target (not the current scale) so
         // rapid wheel ticks accumulate cleanly.
         const base = zoomAnim ? zoomAnim.targetScale : state.scale;
-        const next = Math.max(MIN_SCALE, Math.min(MAX_SCALE, base * factor));
+        const next = clampScale(base * factor);
         if (next === state.scale && !zoomAnim) return;
         // World anchor — resolve at CURRENT scale (not target),
         // so successive wheel events at the same cursor position
@@ -278,7 +315,7 @@
       flyTo(target, duration) {
         const tx = (typeof target.centerX === 'number') ? target.centerX : state.centerX;
         const ty = (typeof target.centerY === 'number') ? target.centerY : state.centerY;
-        const ts = (typeof target.scale   === 'number') ? Math.max(MIN_SCALE, Math.min(MAX_SCALE, target.scale)) : state.scale;
+        const ts = (typeof target.scale   === 'number') ? clampScale(target.scale) : state.scale;
         panAnim  = null;
         zoomAnim = null;
         flyToAnim = {

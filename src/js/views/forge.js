@@ -944,63 +944,50 @@
     // ── Camera ──────────────────────────────────────────
     const camera = cammod.create({ centerX: 0, centerY: 0, scale: 1 });
 
-    // ── Phase 21I (2026-05-21) — proactive gizmo-10% zoom-out
-    // floor. Wrap every camera scale-input method so a below-
-    // floor scale value is rounded up to the floor BEFORE the
-    // camera stores it. The engine's own MIN_SCALE = 0.05 stays
-    // intact; this is a per-view policy layer.
-    // Why: a reactive clamp inside camera.onChange fired AFTER
-    // the camera had already accepted a below-floor value, then
-    // snapped back — visible to John as "drifts a bit while
-    // zooming then catches up on the way back". Clamping the
-    // INPUT (factor / target scale) means the camera never
-    // crosses the floor at all.
-    (function wrapCameraFloor() {
-      const FLOOR_PCT = 0.10;
-      // computeFitScale is defined later (closure capture). We
-      // resolve it lazily inside each wrapper.
-      function viewMin() {
-        if (typeof computeFitScale !== 'function') return 0;
-        const fit = computeFitScale();
-        return (fit > 0) ? fit * FLOOR_PCT : 0;
+    // ════════════════════════════════════════════════════════════
+    //  Phase 21J (2026-05-21) — zoom-floor + pan-lock policy
+    // ════════════════════════════════════════════════════════════
+    //  applyZoomFloor() is called whenever fit_scale could have
+    //  changed (resize, rebuildForMode) AND on every camera
+    //  change (so pan bounds tighten as scale approaches the
+    //  floor).
+    //
+    //  Two things wired together:
+    //
+    //    1. SCALE FLOOR — camera.setScaleBounds(floor, undefined)
+    //       so the engine clamps every internal scale write
+    //       (setScale / zoomAt / nudgeZoomTarget / flyTo /
+    //       animation tick) up to floor. No drift past gizmo 10%.
+    //
+    //    2. PAN LOCK — pan bounds tighten with zoom:
+    //         t = (scale − floor) / (fit − floor)   ∈ [0, 1]
+    //       At scale = floor (t = 0), bounds = (0, 0, 0, 0): the
+    //       camera is locked dead-centre, no pan possible.
+    //       At scale = fit (t = 1), bounds = the full world-pad
+    //       extent (~world span × 0.5 margin on each side).
+    //       Between, bounds expand linearly with t.
+    // ════════════════════════════════════════════════════════════
+    const FLOOR_PCT = 0.10;
+    function applyZoomFloor() {
+      if (!camera || !camera.setScaleBounds) return;
+      const fit = (typeof computeFitScale === 'function') ? computeFitScale() : 0;
+      if (!fit || fit <= 0) return;
+      const floor = fit * FLOOR_PCT;
+      camera.setScaleBounds(floor, undefined);
+      // Pan bounds tied to current scale.
+      if (camera.setPanBounds) {
+        const ext = (local.mode && local.mode.worldExtent) || null;
+        if (!ext) return;
+        const span    = Math.max(ext.x1 - ext.x0, ext.y1 - ext.y0);
+        const maxMrg  = span * 0.5;
+        const t       = Math.max(0, Math.min(1, (camera.state.scale - floor) / Math.max(1e-6, fit - floor)));
+        const margin  = maxMrg * t;
+        camera.setPanBounds(
+          ext.x0 - margin, ext.y0 - margin,
+          ext.x1 + margin, ext.y1 + margin,
+        );
       }
-      const origSetScale         = camera.setScale.bind(camera);
-      const origZoomAt           = camera.zoomAt.bind(camera);
-      const origNudgeZoomTarget  = camera.nudgeZoomTarget.bind(camera);
-      const origFlyTo            = camera.flyTo.bind(camera);
-      camera.setScale = function (s) {
-        const lo = viewMin();
-        if (lo > 0 && s < lo) s = lo;
-        return origSetScale(s);
-      };
-      // zoomAt / nudgeZoomTarget take a factor (× current scale).
-      // We translate "below-floor target" into an adjusted factor
-      // that lands exactly on the floor — so the wheel still feels
-      // continuous, just stopped at the floor.
-      camera.zoomAt = function (factor, ax, ay, vp) {
-        const lo = viewMin();
-        if (lo > 0 && camera.state.scale > 0) {
-          const would = camera.state.scale * factor;
-          if (would < lo) factor = lo / camera.state.scale;
-        }
-        return origZoomAt(factor, ax, ay, vp);
-      };
-      camera.nudgeZoomTarget = function (factor, ax, ay, vp) {
-        const lo = viewMin();
-        if (lo > 0 && camera.state.scale > 0) {
-          const would = camera.state.scale * factor;
-          if (would < lo) factor = lo / camera.state.scale;
-        }
-        return origNudgeZoomTarget(factor, ax, ay, vp);
-      };
-      camera.flyTo = function (target, duration) {
-        const lo = viewMin();
-        if (lo > 0 && target && typeof target.scale === 'number' && target.scale < lo) {
-          target = Object.assign({}, target, { scale: lo });
-        }
-        return origFlyTo(target, duration);
-      };
-    })();
+    }
 
     // ── Local mount state ──────────────────────────────
     const local = {
@@ -1555,16 +1542,12 @@
       // visibility recomputation (per-tier zoom thresholds).
       camera.onChange(() => {
         if (local.destroyed) return;
-        // Phase 21I (2026-05-21) — the gizmo-10% zoom-out floor
-        // is now enforced PROACTIVELY by wrapping the camera's
-        // scale-input methods (setScale / zoomAt /
-        // nudgeZoomTarget / flyTo) below. The previous reactive
-        // clamp here fired AFTER state.scale dipped under the
-        // floor, then snapped back — that snap was the visible
-        // "drift then catch up" John was reporting. With the
-        // input-layer clamp, state.scale never crosses the
-        // floor in the first place, so onChange can stay
-        // strictly read-only.
+        // Phase 21J (2026-05-21) — recompute pan bounds on every
+        // camera change so the lock tightens / loosens with the
+        // current zoom. Scale clamping happens inside the camera
+        // module via setScaleBounds; here we only re-apply pan
+        // bounds based on the just-changed state.scale.
+        applyZoomFloor();
         // Phase 5C (2026-05-20) — glyph opacity is uniform-driven
         // on the GPU now, so camera motion no longer needs to
         // mark the glyph buffer dirty. The off-viewport cull is
@@ -1767,14 +1750,13 @@
       // outermost nodes can be brought toward center, but stop
       // them from infinite-panning into empty space. Margin is
       // generous (worldSpan units) so they always have headroom.
-      if (camera.setPanBounds) {
-        const span = Math.max(ext.x1 - ext.x0, ext.y1 - ext.y0);
-        const margin = span * 0.5;
-        camera.setPanBounds(
-          ext.x0 - margin, ext.y0 - margin,
-          ext.x1 + margin, ext.y1 + margin,
-        );
-      }
+      // Phase 21J (2026-05-21) — pan bounds are now computed
+      // dynamically by applyZoomFloor() based on the current
+      // camera scale (tightens at the zoom floor, widens at fit).
+      // We just need the worldExtent on local.mode for it to
+      // read; the actual setPanBounds call lives inside
+      // applyZoomFloor. Below we kick the first computation
+      // right after rebuildForMode populates local.mode.
 
       const nodePack  = graph.packNodes(modeNodes, lay.positions, degree, nodeOverridesFromParams());
       // N4 (2026-05-20) — pack-scale invariant: every site that
@@ -1834,6 +1816,11 @@
         hitGrid:     hitGridNew,
         worldExtent: ext,
       };
+      // Phase 21J (2026-05-21) — apply the zoom-floor + pan-lock
+      // now that local.mode.worldExtent is populated. The camera
+      // is already at the new fit_scale (resizeAndFit was called
+      // above), so this also pegs the scale bounds correctly.
+      applyZoomFloor();
       // N2 (2026-05-20) — fresh nodePacked.data means the GPU
       // node-instance VBO needs re-upload on the next drawFrame.
       // After upload, drawFrame resets the flag to false so steady-
@@ -2128,6 +2115,9 @@
       // camera state was already at fit (e.g., first call before
       // listener attached), draw explicitly.
       drawFrame();
+      // Phase 21J (2026-05-21) — viewport size changed → fit_scale
+      // changed → zoom floor changed. Re-apply.
+      applyZoomFloor();
     }
 
     // ── Frame draw ──────────────────────────────────────
