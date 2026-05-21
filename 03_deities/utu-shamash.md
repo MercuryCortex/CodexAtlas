@@ -12,11 +12,11 @@ gender: "masculine"
 role: "sun god and divine judge; patron of law and oaths"
 parent-of: []
 child-of: ["[[nanna-sin]]"]
-consort: ["[[aya]]"]
+consort: ["Aya (Akkadian dawn-goddess; Utu/Shamash's consort — no node yet)"]
 attributes: ["solar disc", "rod-and-ring (handed to kings as authority)", "saw (with which he cuts through mountains at sunrise)", "rays emanating from shoulders"]
 attested-in: ["[[phase-1-007-code-of-hammurabi]]", "[[phase-1-004-gilgamesh-old-babylonian]]", "[[phase-1-012-amarna-letters]]"]
 equivalents: []
-status: "stub"
+status: "metadata"
 refs:
   - title: "Encounters with the Divine in Mesopotamia"
     author: "Bottéro, Jean"

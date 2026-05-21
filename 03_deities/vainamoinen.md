@@ -9,7 +9,7 @@ period-active-earliest: -500
 period-active-latest:
 domains: ["song", "shamanic power (*tietäjä*)", "wisdom", "cosmogony"]
 gender: "masculine"
-role: "primordial shaman-singer / cosmogonic figure (in Kalevala) — also a mythologized cultural hero (link to [[vainamoinen-figure]] in person-node)"
+role: "primordial shaman-singer / cosmogonic figure (in Kalevala) — also a mythologized cultural hero (a separate person-node may be seeded in 04_persons/ later)"
 parent-of: []
 child-of: ["Ilmatar (in the Kalevala cosmogony)"]
 consort: []

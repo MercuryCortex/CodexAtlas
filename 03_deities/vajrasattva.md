@@ -28,7 +28,7 @@ syncretic-edges:
     type: "scholarly-parallel"
     source: "Snellgrove 1987 — both bear the vajra; Vajrapani as wrathful protector-bodhisattva and Vajrasattva as peaceful purification-Buddha are the wrathful/peaceful pair within the vajra-family"
     notes: "Within-family vajra-pairing (peaceful/wrathful)"
-status: "stub"
+status: "metadata"
 refs:
   - title: "Indo-Tibetan Buddhism"
     author: "Snellgrove, David L."

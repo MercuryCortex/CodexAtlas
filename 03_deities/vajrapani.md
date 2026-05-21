@@ -14,7 +14,7 @@ parent-of: []
 child-of: []
 consort: []
 attributes: ["vajra (thunderbolt-sceptre, held in the right hand)", "bell (in some forms)", "wrathful expression (fangs, third eye, flaming halo)", "lasso", "skull cup (in tantric forms)", "blue body (most common iconographic colour)"]
-attested-in: ["[[phase-3-002-lotus-sutra]] (Mahāyāna scripture naming Vajrapāṇi as Buddha-protector)", "[[phase-5-029-bardo-thodol]] (Tibetan iconographic appearances)"]
+attested-in: ["[[phase-4-101-lotus-sutra]] (Mahāyāna scripture naming Vajrapāṇi as Buddha-protector)", "[[phase-5-029-bardo-thodol]] (Tibetan iconographic appearances)"]
 equivalents: ["[[indra]] (early Vedic origin — Vajrapāṇi inherited Indra's *vajra* and his thunderbolt-wielding warrior role)"]
 syncretic-edges:
   - target: "[[indra]]"
@@ -25,7 +25,7 @@ syncretic-edges:
     type: "scholarly-parallel"
     source: "Tanabe, K. (2003) 'Why is Vajrapāṇi-Heracles depicted in Gandhāran Buddhist art?' — Greco-Buddhist Gandhāran reliefs (1st-3rd c. CE) depict Vajrapāṇi with the muscular nude torso, lion-skin, and club of Heracles, the closest documented iconographic fusion between Greek and Buddhist religion"
     notes: "Bactrian / Gandhāran Greek-Buddhist fusion; the Heraclean iconography travels east to Japan as the Niō temple-guardian (Kongōrikishi) — Heracles → Vajrapāṇi → Japanese temple-gate guardian is a documented 2,000-year visual-cognate chain"
-status: "stub"
+status: "metadata"
 refs:
   - title: "Indo-Tibetan Buddhism"
     author: "Snellgrove, David L."

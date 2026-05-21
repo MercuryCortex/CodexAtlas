@@ -4,7 +4,7 @@ name: "Vak / Vac"
 type: deity
 aka: ["Vak", "Vac", "Vagdevi", "the Goddess of Speech"]
 gender: female
-status: stub
+status: "metadata"
 tier: 1
 tradition: tradition-vedic-hinduism
 pantheon: vedic

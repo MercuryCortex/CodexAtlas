@@ -28,7 +28,7 @@ syncretic-edges:
     type: "scholarly-parallel"
     source: "Snellgrove 1987 — Vajradhara and Vairocana are alternate primordial-Buddha conceptions; Vairocana as cosmic-illumination (dharmakaya) and Vajradhara as cosmic-vajra-essence are parallel doctrinal articulations"
     notes: "Within-family alternate-primordial parallel"
-status: "stub"
+status: "metadata"
 refs:
   - title: "Indo-Tibetan Buddhism: Indian Buddhists and Their Tibetan Successors"
     author: "Snellgrove, David L."
@@ -56,7 +56,7 @@ Emergence in later Indian Tantric Buddhism (~700–1100); systematic treatment i
 ## Cross-tradition identifications
 - **[[samantabhadra-buddha]]** — same role in Nyingma; the Sarma vs Nyingma difference is sectarian-iconographic.
 - **[[vajrasattva]]** — closely related Vajra-family Buddha; sometimes conflated.
-- **[[adi-buddha]]** (general term) — Vajradhara is *the* Ādibuddha (primordial Buddha) in Sarma traditions.
+- **Ādibuddha** (general term — no node yet; concept-level) — Vajradhara is *the* Ādibuddha (primordial Buddha) in Sarma traditions.
 
 ## Refs
 1. Snellgrove, D. (1987). *Indo-Tibetan Buddhism*. Shambhala.
