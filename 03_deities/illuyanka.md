@@ -37,6 +37,10 @@ syncretic-edges:
     type: "scholarly-parallel"
     source: "Watkins 1995; West 2007"
     notes: "Vedic Indra-vs-Vritra is the Indo-European serpent-slaying formula (PIE *gʷhen- 'to slay' + serpent); Illuyanka is its Anatolian Indo-European instance, semantically continuous (Hittite *kuenta* 'he slew' < same PIE root)."
+  - target: "serpent-dual-nature"
+    type: "chaos-pole-of-serpent-symbolism"
+    source: "Watkins 1995 *How to Kill a Dragon*; West 2007; Day 1985 — Illuyanka is the Anatolian-Hittite instance of the PIE serpent-slaying mytheme, defeated by the storm-god Tarhunna/Teshub in the Purulli-festival narrative. See [[serpent-dual-nature]]"
+    notes: "Cross-lens: 03_deities → 06_themes"
 status: "metadata"
 refs:
   - title: "Hittite Myths (2nd ed.)"

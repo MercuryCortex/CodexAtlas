@@ -20,6 +20,10 @@ syncretic-edges:
   - target: "[[nin-girsu]]"
     type: "ancient-identification"
     source: "From the Ur III period (~-2100) and definitively by the Old Babylonian period (~-1800), Ninurta and Ningirsu are treated as the same god under different cultic names — Ningirsu the local Lagashite form (cult center Girsu, in the Lagash state), Ninurta the standard Nippur-centered form (the pan-Sumerian recension). Both are warrior-agricultural sons of Enlil. The two great Ninurta myths (Lugal-e / *Ninurta and the Asakku*; Anzu / *Ninurta's Return to Nippur*) are set in Nippur but the figure is theologically identical to Lagashite Ningirsu. Refs: Annus 2002; Streck 2001 *RlA*."
+  - target: "theme-rebel-against-the-divine"
+    type: "rebel-suppressor-figure"
+    source: "Annus 2002 *The God Ninurta*; Vogelzang 1988 *Anzu in Mesopotamian Mythology*; Forsyth 1987 — Ninurta is the *suppressor* of cosmic rebellion: in the Anzu epic, the bird-monster Anzu steals the Tablet of Destinies from Enlil; Ninurta defeats him and restores divine order. Ninurta thus appears at the hub as the *anti-rebel* divine warrior — the structural mirror that defines the rebel-against-divine pattern by being its successful suppressor. See [[theme-rebel-against-the-divine]]"
+    notes: "Cross-lens: 03_deities → 06_themes. Ninurta represents the warrior-god-restores-order side; Tiamat/Lucifer/Prometheus represent the rebel side — together they document both poles of the pattern"
 status: "metadata"
 refs:
   - title: "The God Ninurta in the Mythology and Royal Ideology of Ancient Mesopotamia"

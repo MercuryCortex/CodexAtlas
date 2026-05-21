@@ -41,6 +41,10 @@ syncretic-edges:
     type: "scholarly-parallel"
     source: "Boyce & Grenet 1991; Barr 1985"
     notes: "Persian-period transcendent-creator monotheism parallels in Judah and Iran; structural rather than direct."
+  - target: "messianic-genealogy"
+    type: "covenant-source-of-Davidic-genealogy"
+    source: "Brown 1977 *The Birth of the Messiah*; Vermes 1973 — YHWH is the covenant-grounding source of the Davidic-genealogy tradition. 2 Samuel 7 (Nathan's oracle: 'I will establish his kingdom forever') is the covenantal source; Psalm 89, Psalm 132, and the post-exilic prophets (Isaiah 9, 11; Jeremiah 23, 33; Ezekiel 34, 37; Zechariah) re-state it in messianic terms. The genealogical claim only matters because the covenant promises require a Davidic-descended fulfillment. See [[messianic-genealogy]]"
+    notes: "Cross-lens: 03_deities → 06_themes. The genealogy-as-theology pattern is YHWH-grounded — without the 2 Sam 7 covenantal premise, the genealogical legitimation has no force"
 status: "metadata"
 refs:
   - title: "The Early History of God: Yahweh and the Other Deities in Ancient Israel"

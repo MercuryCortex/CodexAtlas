@@ -44,6 +44,10 @@ syncretic-edges:
     type: "downstream-deity-of-archaeological-substrate"
     source: "Anthony 2007 *The Horse, the Wheel, and Language* ch. 16; Sarianidi 1998 *Margiana and Protozoroastrianism*; Witzel 1998 — the BMAC (Bactria-Margiana Archaeological Complex ~2200–1700 BCE, modern Turkmenistan/Afghanistan) is the Bronze Age archaeological substrate in which Proto-Indo-Iranian religion crystallized before the Vedic-Avestan split. Ahura Mazda is the eventual Iranian-branch elevation of the *asura/ahura* class that the BMAC contact-zone fostered. See [[bmac-proto-zoroastrian]]"
     notes: "Cross-lens: 03_deities → 06_themes. BMAC documents the *pre-religious* archaeological-substrate context from which both Vedic and Zoroastrian religions emerge — Ahura Mazda is the downstream Iranian-branch endpoint"
+  - target: "theme-zoroastrian-cosmogony"
+    type: "supreme-creator-of-cosmogony"
+    source: "Boyce 1975 *History of Zoroastrianism* vol. I; Zaehner 1955 *Zurvan: A Zoroastrian Dilemma*; Skjærvø 2011 *Zoroastrian Theology from the Gathas to the Achaemenids*; Greater Bundahishn (Anklesaria 1956) — Ahura Mazda is the supreme creator of the developed Bundahishn cosmogony schema: the uncreated Wise Lord who creates the world over twelve millennia in response to Angra Mainyu's invasion. The cosmogony resolves the theological paradox (why did the maximally-good Ahura Mazda create a world Angra Mainyu could invade?) through the Zurvanite framework or through the Gathic free-choice framework. See [[theme-zoroastrian-cosmogony]]"
+    notes: "Cross-lens: 03_deities → 06_themes. The Bundahishn cosmogony is the load-bearing Pahlavi-period (~9th–10th c. CE compilation of Sasanian sources) systematization of Gathic + Avestan creation theology"
 status: "metadata"
 refs:
   - title: "A History of Zoroastrianism, vol. I-III"

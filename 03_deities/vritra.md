@@ -35,6 +35,10 @@ syncretic-edges:
   - target: "apaosha"
     type: "ancient-identification"
     source: "Macdonell 1897 *Vedic Mythology*; Boyce 1975 *A History of Zoroastrianism* vol. 1 — Apaosha (the Avestan drought-demon defeated by Tištrya in Yašt 8) is the closest Iranian cognate of Vedic Vṛtra; both Indo-Iranian dragons obstruct the waters/rain"
+  - target: "serpent-dual-nature"
+    type: "chaos-pole-of-serpent-symbolism"
+    source: "Watkins 1995 *How to Kill a Dragon*; West 2007 *Indo-European Poetry and Myth* — Vṛtra is the Vedic-end instance of the PIE serpent-slaying formula (*gʷhen- h₃gʷhi-* 'slew serpent'); the dragon-of-obstruction whose slaying releases the waters. The Indra-Vṛtra mytheme is the most-cited Indo-European exemplar of the serpent-as-cosmic-chaos pole. See [[serpent-dual-nature]]"
+    notes: "Cross-lens: 03_deities → 06_themes"
 status: "metadata"
 refs:
   - title: "Rig Veda 1.32 — *Indrasya nu vīryāṇi*"

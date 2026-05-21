@@ -23,6 +23,10 @@ syncretic-edges:
   - target: "[[phosphoros|Phosphoros (planet Venus)]]"
     type: "ancient-identification"
     source: "Literally — the Latin 'Lucifer' is the morning-star Venus, named for the same celestial body before any Satanic identification"
+  - target: "theme-rebel-against-the-divine"
+    type: "Christian-rebel-figure"
+    source: "Forsyth 1987 *The Old Enemy*; Russell 1984 *Lucifer: The Devil in the Middle Ages*; Milton's *Paradise Lost* (1667) — Lucifer (via Jerome's Vulgate Isaiah 14:12 interpretation of *Heylel ben-Shahar*) is the Christianized cosmic-rebel: the highest-of-the-angels who falls from heaven through pride, the explicit Christian-tradition instantiation of the rebel-against-supreme-power pattern. See [[theme-rebel-against-the-divine]]"
+    notes: "MASSIVE-WIN: Milton's *Paradise Lost* Lucifer is the literary-canonical figure that fuses the entire combat-myth substrate (Tiamat + Titans + Prometheus + Watchers + Belial + Christian Lucifer) into one Romantically-charged rebel-figure. Cross-lens: 03_deities → 06_themes"
 status: "metadata"
 refs:
   - title: "The Birth of Satan: Tracing the Devil's Biblical Roots"

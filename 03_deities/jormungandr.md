@@ -27,6 +27,10 @@ syncretic-edges:
   - target: "leviathan"
     type: "parallel-form"
     source: "Day 1985 *God's Conflict with the Dragon and the Sea* — chaos-serpent cosmic-enemy parallel; not direct transmission"
+  - target: "serpent-dual-nature"
+    type: "chaos-pole-of-serpent-symbolism"
+    source: "Watkins 1995 *How to Kill a Dragon*; West 2007 — Jörmungandr is the Norse-end instance of the PIE *HERO SLAY SERPENT* poetic formula (Thor-slays-Jörmungandr cognate with Indra-slays-Vṛtra). The ouroboros-encircling-Midgard motif adds cosmic-boundary symbolism on top of the chaos-pole. See [[serpent-dual-nature]]"
+    notes: "Cross-lens: 03_deities → 06_themes"
 status: "metadata"
 refs:
   - title: "Norse Mythology: A Guide to the Gods, Heroes, Rituals, and Beliefs"

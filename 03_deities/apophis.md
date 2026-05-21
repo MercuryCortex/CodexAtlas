@@ -35,6 +35,10 @@ syncretic-edges:
   - target: "vritra"
     type: "parallel-form"
     source: "Watkins 1995 *How to Kill a Dragon* — Indo-European-Vedic instance; Egyptian-Vedic parallel is structural, not genetic"
+  - target: "serpent-dual-nature"
+    type: "chaos-pole-of-serpent-symbolism"
+    source: "Joines 1974 *The Symbolism of the Serpent*; Forsyth 1987 *The Old Enemy*; Hornung 1982 — Apophis is the Egyptian-end instance of the serpent-as-cosmic-chaos pole; Ra's nightly battle with Apep is the paradigm Egyptian chaoskampf and the cosmic enemy par excellence. See [[serpent-dual-nature]]"
+    notes: "Cross-lens: 03_deities → 06_themes"
 status: "metadata"
 refs:
   - title: "Ancient Egyptian Magical Texts"

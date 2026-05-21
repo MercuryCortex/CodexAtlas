@@ -26,6 +26,13 @@ syncretic-edges:
   - target: "theme-mesopotamian-gnostic-transmission"
     type: "documented-substrate"
     source: "Tiamat-as-cosmogonic-mother-source is Chain 2 of the Mesopotamian → Gnostic transmission documentation"
+  - target: "serpent-dual-nature"
+    type: "primordial-chaos-pole-of-serpent-symbolism"
+    source: "Joines 1974; Forsyth 1987; Day 1985 — Tiamat is the *primordial* chaos-serpent of Mesopotamian cosmogony; her dismemberment by Marduk in Enuma Elish is the founding chaoskampf narrative. See [[serpent-dual-nature]]"
+    notes: "Cross-lens: 03_deities → 06_themes"
+  - target: "theme-rebel-against-the-divine"
+    type: "primordial-rebel-figure"
+    source: "Forsyth 1987 *The Old Enemy: Satan and the Combat Myth*; Russell 1977 — Tiamat is the *original* divine rebel in the cosmogonic-combat substrate that runs from Enuma Elish through Greek Typhon/Titans → Jewish Belial → Christian Satan. See [[theme-rebel-against-the-divine]]"
 status: "metadata"
 refs:
   - title: "The Babylonian Genesis"

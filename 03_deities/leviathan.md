@@ -30,6 +30,10 @@ syncretic-edges:
   - target: "apophis"
     type: "parallel-form"
     source: "Day 1985; Wakeman 1973 — Egyptian cosmic-serpent parallel"
+  - target: "serpent-dual-nature"
+    type: "chaos-pole-of-serpent-symbolism"
+    source: "Joines 1974 *The Symbolism of the Serpent in the Abrahamic Religions*; Day 1985 *God's Conflict with the Dragon and the Sea*; Forsyth 1987 — Leviathan is the Hebrew-Bible instance of the cosmic-serpent chaos-pole. Job 26:12-13 + Ps 74:14 + Isa 27:1 preserve the chaoskampf tradition Genesis 1 demythologizes. See [[serpent-dual-nature]]"
+    notes: "Cross-lens: 03_deities → 06_themes"
 status: "metadata"
 refs:
   - title: "God's Conflict with the Dragon and the Sea: Echoes of a Canaanite Myth in the Old Testament"

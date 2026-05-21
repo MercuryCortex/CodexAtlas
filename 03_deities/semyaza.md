@@ -23,6 +23,10 @@ syncretic-edges:
   - target: "satanael"
     type: "scholarly-parallel"
     source: "Stuckenbruck 1997 — Watchers-tradition substrate for Slavonic / Bogomil Satanael"
+  - target: "theme-rebel-against-the-divine"
+    type: "Enochic-rebel-figure"
+    source: "Reed 2005 *Fallen Angels and the History of Judaism and Christianity*; Stuckenbruck 1997 *The Book of Giants from Qumran*; Forsyth 1987 — Šemiḥazah is the Enochic-tradition leader of the Watchers' rebellion (1 Enoch 6–11): the heavenly being who descends with 200 companions to take human wives in violation of divine order, fathering the giants whose violence triggers the Flood. See [[theme-rebel-against-the-divine]]"
+    notes: "Cross-lens: 03_deities → 06_themes. Semyaza + Azazel together are the *two* Watcher-leader traditions in 1 Enoch's textual stratigraphy"
 status: "metadata"
 refs:
   - title: "1 Enoch: A New Translation"
