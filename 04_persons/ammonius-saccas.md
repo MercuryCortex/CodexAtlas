@@ -14,6 +14,18 @@ region: "Alexandria, Egypt"
 affiliations: ["[[tradition-neoplatonism]]"]
 key-figures: ["[[plotinus]]", "[[origen]]"]
 themes: ["[[neoplatonic-henosis]]"]
+hub-edges:
+  - target: "hermetic-transmission-chain"
+    type: "fork-point-teacher-of-Alexandrian-synthesis"
+    source: "Porphyry *Vita Plotini*; Schroeder 1987 *Ammonius Saccas and the Origin of Neoplatonism*; Armstrong 1967 *Cambridge History of Later Greek and Early Medieval Philosophy* — Ammonius Saccas (c. 175–242 CE Alexandria) is the FORK-POINT teacher whose two principal students [[plotinus]] and [[origen]] founded the two great late-antique synthesis-traditions: Neoplatonism (via Plotinus → Porphyry → Iamblichus → Proclus → Pseudo-Dionysius) AND Alexandrian Christianity (via Origen → Cappadocians → Byzantine theology). The lost title *On the Harmony of Moses and Jesus* attributed to Ammonius signals his explicit synthesis-project. See [[hermetic-transmission-chain]] Phase 1"
+    notes: "Cross-lens: 04_persons → 06_themes. MASSIVE-WIN: Ammonius is the *missing common node* between Neoplatonism and Christian theology — the teacher whose synthesis each student developed in a different direction. The fact that two world-historical traditions share a common Alexandrian teacher explains why their conceptual vocabularies are so deeply intertwined"
+  - target: "third-century-collision-zone"
+    type: "upstream-teacher-of-collision-zone-figures"
+    source: "Schroeder 1987; Armstrong 1967; Eusebius (Origen-as-Ammonius-student attestation, disputed) — Ammonius Saccas (~175–242 CE) is the upstream teacher whose students Plotinus + Origen are central figures of the 3rd-century collision zone (200–280 CE). The collision-zone synthesis-window IS what Ammonius's teaching set in motion. See [[third-century-collision-zone]]"
+    notes: "Cross-lens: 04_persons → 06_themes. Ammonius died ~242 CE just as the collision-zone window opens; his students carry the synthesis forward"
+  - target: "neoplatonic-henosis"
+    type: "founding-Alexandrian-teacher-of-union-tradition"
+    source: "Porphyry *Vita Plotini*; Schroeder 1987 — though Ammonius wrote nothing surviving, his nickname *Theodidaktos* ('God-taught') indicates the reverence his students held him in; the *henosis* mystical-union tradition Plotinus systematizes was almost certainly already present in Ammonius's teaching. See [[neoplatonic-henosis]]"
 influenced-by: ["[[plato]]", "Egyptian philosophical tradition of Alexandria", "Pythagorean tradition", "early Christianity (disputed)"]
 influences: ["[[plotinus]]", "[[origen]]", "[[porphyry]]", "[[proclus]]", "[[pseudo-dionysius]]", "all subsequent Neoplatonism"]
 status: "metadata"

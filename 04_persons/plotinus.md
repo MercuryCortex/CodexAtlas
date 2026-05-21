@@ -11,6 +11,23 @@ date-died: 270
 historicity: "documented"
 texts-authored: ["[[phase-4-019-plotinus-enneads]]"]
 mentioned-in: ["Porphyry's *Life of Plotinus* (prefixed to the Enneads)", "Eunapius *Lives of Philosophers*"]
+hub-edges:
+  - target: "neoplatonic-henosis"
+    type: "founding-figure-of-mystical-union-tradition"
+    source: "Plotinus *Enneads* VI.9 'On the Good, or the One' (the founding text of Western mystical-union theology); Porphyry *Vita Plotini* §23 (Plotinus achieved henōsis with the One four times); Sells 1994 *Mystical Languages of Unsaying*; McGinn 1991 — Plotinus IS the founding figure of the *henosis* tradition. His four documented unions during the six years Porphyry knew him + the systematic articulation in Enneads VI.9 establish the conceptual + experiential template that downstream Sufi *fanā'* + Kabbalistic *devekut* + Christian *theosis* all inherit. See [[neoplatonic-henosis]]"
+    notes: "Cross-lens: 04_persons → 06_themes. MASSIVE-WIN: Plotinus is the most important single person in the cross-tradition mystical-union convergence — the one whose specific philosophical articulation becomes the load-bearing vocabulary for every downstream Mediterranean + Iranian mystical tradition through 1300+ years"
+  - target: "hermetic-transmission-chain"
+    type: "Phase-1-Alexandrian-synthesis-figure"
+    source: "Yates 1964 *Giordano Bruno and the Hermetic Tradition*; Fowden 1986 *The Egyptian Hermes*; Copenhaver 1992 *Hermetica*; Hanegraaff 2012 *Esotericism and the Academy* — Plotinus is the systematizing philosopher of the Alexandrian Phase-1 synthesis of the hermetic-transmission-chain (Egyptian priestly theology + Platonic philosophy + Hermetic corpus). His *Enneads* (~253–270 CE) provide the philosophical architecture that the Corpus Hermeticum (~100–300 CE) popularizes in Egyptian-priestly-revelation form. The Plotinus→Porphyry→Iamblichus→Proclus→Pseudo-Dionysius chain is the load-bearing transmission line into Byzantine Christianity. See [[hermetic-transmission-chain]] Phase 1"
+    notes: "Cross-lens: 04_persons → 06_themes. Plotinus failed his attempt to reach Persian + Indian sages via Gordian III's expedition — making his subsequent achievement of structural parallels with Eastern apophatic traditions a case of *independent convergence* rather than direct transmission"
+  - target: "third-century-collision-zone"
+    type: "central-figure-of-3rd-c-synthesis-window"
+    source: "Porphyry *Vita Plotini* §16 (the Sethian-Gnostic confrontation in Plotinus's Roman school ~263–268 CE — *the* documented evidence of Platonist-Gnostic intellectual contact); Plotinus *Enneads* II.9 'Against the Gnostics'; BeDuhn 'The Co-formation of the Manichaean and Zoroastrian Religions'; Turner 2001; Burns 2014 *Apocalypse of the Alien God* — Plotinus is the Neoplatonist anchor of the 3rd-century collision zone (~200–280 CE) where his school, the Sethian Gnostic circle ([[phase-4-056-zostrianos]] + [[phase-4-057-allogenes]]), Mani's emerging synthesis, and Origen's Christian Platonism all operate in overlapping Alexandrian-Roman intellectual networks. See [[third-century-collision-zone]]"
+    notes: "MASSIVE-WIN: the most-documented Christian-Gnostic / Platonist-philosophical confrontation in late antiquity happens in Plotinus's Roman school. Porphyry's forty-book refutation of *Zostrianos* + Amelius's refutation of *Allogenes* are the documentary evidence that Sethian Gnostic literature was operating in shared philosophical space with school-Neoplatonism. Cross-lens: 04_persons → 06_themes"
+  - target: "soul-exile-longing"
+    type: "philosophical-articulator-of-cross-tradition-pattern"
+    source: "Plotinus *Enneads* I.6 ('On Beauty') + IV.8 ('On the Soul's Descent into Body') — the Plotinian version of the soul-exile-longing cross-tradition pattern. The soul descends (*katábasis*) into matter via daring (*tolma*) and returns (*epistrophē*) through love-of-beauty + remembrance (*anamnesis*). The longing IS already the homeward movement. See [[soul-exile-longing]]"
+    notes: "Cross-lens: 04_persons → 06_themes. Plotinus is the named philosopher whose specific articulation of soul-descent-and-return becomes the philosophical-prose form of the cross-tradition exile-longing pattern that also appears in Rumi's reed-flute Nay-nāmeh + Gnostic pneuma-in-hyle + Suhrawardī's *Occidental Exile* + Vedāntic *avidyā* + Buddhist *dukkha*"
 status: "metadata"
 refs:
   - title: "Plotinus: Enneads (Loeb Classical Library)"

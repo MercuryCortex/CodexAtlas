@@ -37,6 +37,12 @@ cross-tradition-edges:
   - target: tradition-neoplatonism
     type: member-of
     note: Porphyry is Plotinus's primary student and editor. Without Porphyry's editorial work — assembling the *Enneads*, writing the *Life of Plotinus*, arranging the 54 treatises into six groups of nine — Neoplatonism's foundational text would not exist in its current form. He is also responsible for the Porphyrian tree (genus-species logic diagram) that structured medieval Western logic for 600 years.
+  - target: hermetic-transmission-chain
+    type: Phase-1-Alexandrian-synthesis-figure
+    note: Porphyry is the *editorial preserver* of Plotinian Neoplatonism — without his *Enneads* compilation, the Alexandrian Phase-1 synthesis of the hermetic-transmission-chain would lack its philosophical canon. He is the relay node between Plotinus (synthesis-articulation) and Iamblichus (theurgical-elaboration) in the Neoplatonist transmission line that runs Alexandria → Byzantium → Plethon → Ficino → Renaissance Hermeticism. See [[hermetic-transmission-chain]]
+  - target: third-century-collision-zone
+    type: documentary-witness-to-3rd-c-synthesis-window
+    note: Porphyry's *Vita Plotini* §16 is the single most-cited documentary source for the 3rd-century collision zone — his own account of Plotinus's Roman school engaging the Sethian-Gnostic texts ([[phase-4-056-zostrianos]] + [[phase-4-057-allogenes]]) ~263–268 CE. Porphyry himself wrote a 40-book refutation of *Zostrianos*; Amelius wrote against *Allogenes*. Without Porphyry's testimony, the documentary evidence for the Platonist-Gnostic confrontation collapses. See [[third-century-collision-zone]]
 ---
 
 # Porphyry
