@@ -16,6 +16,14 @@ consort: ["[[sarpanit]]"]
 attributes: ["spade (marru)", "the mušḫuššu dragon", "fifty names"]
 attested-in: ["[[phase-1-008-enuma-elish]]", "[[phase-1-007-code-of-hammurabi]]"]
 equivalents: []
+syncretic-edges:
+  - target: "yaldabaoth"
+    type: "polemic-inverse"
+    source: "Pearson 1984/2007 — Sethian Gnostic cosmogony inverts the Marduk-Tiamat structure: Marduk's legitimate-warrior-king cosmogony becomes Yaldabaoth's illegitimate-ignorant-demiurge cosmogony. Same structural slot, opposite theological content. See [[theme-mesopotamian-gnostic-transmission]] Chain 2"
+    notes: "MASSIVE-WIN: Marduk's cosmogonic-victory establishing Babylonian cosmic kingship is the foundation Gnostic cosmogony polemically inverts"
+  - target: "theme-mesopotamian-gnostic-transmission"
+    type: "documented-substrate"
+    source: "Marduk-Tiamat cosmogony (Enuma Elish) is one of the 5 documented Mesopotamian → Gnostic transmission chains; mediated through Hellenistic-Jewish reception into Sethian polemical inversion"
 status: "metadata"
 refs:
   - title: "Babylonian Creation Myths"

@@ -20,6 +20,12 @@ syncretic-edges:
   - target: "Tehom (Hebrew primordial-waters concept, Gen 1:2; no node yet — concept-level, would belong in 06_themes/)"
     type: "scholarly-parallel"
     source: "Heidel 1951; Gunkel 1895"
+  - target: "sophia-gnostic"
+    type: "polemic-inverse-structural-parallel"
+    source: "Pearson 1984/2007 — both Tiamat and Sophia occupy structurally parallel positions in their cosmogonies (the divine mother-source whose diminishment makes the lower cosmos possible) but with opposite moral valence. Tiamat is the chaos-monster Marduk must defeat; Sophia is the wronged divine mother whose unsanctioned generative act produces the demiurge. The Gnostic narrative inverts the Mesopotamian moral charge while preserving the structural slot. See [[theme-mesopotamian-gnostic-transmission]] Chain 2"
+  - target: "theme-mesopotamian-gnostic-transmission"
+    type: "documented-substrate"
+    source: "Tiamat-as-cosmogonic-mother-source is Chain 2 of the Mesopotamian → Gnostic transmission documentation"
 status: "metadata"
 refs:
   - title: "The Babylonian Genesis"

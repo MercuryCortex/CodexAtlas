@@ -20,6 +20,13 @@ syncretic-edges:
   - target: "[[ishtar-akkadian]]"
     type: "ancient-identification"
     source: "Enheduanna's hymns and the entire OB tradition explicitly identify the two; the equation is fully realized by the Sargonic period"
+  - target: "sophia-gnostic"
+    type: "structural-parallel-with-typological-transmission"
+    source: "Pearson 1984/2007 — Inanna's seven-gated descent through stratified cosmic levels (surrendering a *me* at each gate) is the structural type the Sethian Gnostic Sophia's fall through the aeons inherits. Specific transmission line runs through the Babylonian seven-planet astrological substrate via Hellenistic mediation (Berossus → Hellenistic astrology → Gnostic seven-archon system). See [[theme-mesopotamian-gnostic-transmission]] Chains 4 + 5"
+    notes: "MASSIVE-WIN — typological connection via the astrological substrate. Confidence MEDIUM: the descent-pattern parallel is striking; the specific transmission mechanism runs through Mesopotamian astrology rather than direct mythological inheritance"
+  - target: "theme-mesopotamian-gnostic-transmission"
+    type: "structural-substrate"
+    source: "Inanna's-descent → Sophia's-fall typological mapping is Chain 4 of the documented Mesopotamian → Gnostic transmission"
 status: "metadata"
 refs:
   - title: "Inanna, Queen of Heaven and Earth: Her Stories and Hymns from Sumer"

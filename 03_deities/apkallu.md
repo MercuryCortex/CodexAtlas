@@ -22,6 +22,10 @@ parallels:
   - "[[nabu]]"
   - "[[ningishzida]]"
   - "[[lamassu]]"
+documented-transmission-chains:
+  - target: "[[theme-mesopotamian-gnostic-transmission]]"
+    type: "load-bearing-substrate"
+    notes: "Apkallu → Watchers → Sethian-Gnostic archonic-knowledge framework is Chain 1 of the documented Mesopotamian → Gnostic transmission. HIGH-confidence chain per Annus 2010 / Nickelsburg & VanderKam 2001-2011 / Wright 2005 — antediluvian wisdom-mediator paradigm inherited then theologically inverted (civilizing-arts-givers become forbidden-knowledge-corruptors). Most-traceable single Mesopotamian → late-antique-Mediterranean transmission line"
 status: "metadata"
 refs:
   - title: "Ancestors, Authors, and Canonicity"
