@@ -23,7 +23,7 @@ syncretic-edges:
   - target: "[[ereshkigal]]"
     type: "scholarly-parallel"
     source: "Pazuzu operates in the zone between the underworld and the living world — the liminal space of illness, demonic attack, and the wind that carries disease from below. Ereshkigal as queen of the dead presides over the same threshold from the other side. Both are figures whose power resides in the dangerous borderland between life and death."
-  - target: "[[ahriman]]"
+  - target: "[[angra-mainyu-ahriman]]"
     type: "scholarly-parallel"
     source: "Both Pazuzu and Ahriman (Zoroastrian evil principle) are powerful demonic forces associated with disease, death, and destruction — but Pazuzu's role is more complex than Ahriman's: Pazuzu can be invoked *against* other demons, giving him a protective dimension Ahriman lacks. The shared domain is demonic control of the wind as a vector of disease."
 status: "metadata"

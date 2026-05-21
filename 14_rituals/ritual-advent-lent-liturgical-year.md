@@ -68,7 +68,7 @@ The Christian liturgical year is built on the Jewish agricultural festival calen
 
 ### Nowruz Parallel
 
-The Persian/Zoroastrian *Nowruz* (New Year, spring equinox) has been celebrated continuously for ~3,000 years and is the world's oldest continuously celebrated festival. It falls on the exact moment of the spring equinox — the same astronomical moment that defines Easter's calculation. Nowruz celebrates the defeat of winter (darkness, evil) by spring (light, good) — the Zoroastrian cosmic drama of Ahura Mazda vs. Ahriman mapped onto the solar year. [[tradition-persian-zoroastrian]], [[ahura-mazda]], [[ahriman]].
+The Persian/Zoroastrian *Nowruz* (New Year, spring equinox) has been celebrated continuously for ~3,000 years and is the world's oldest continuously celebrated festival. It falls on the exact moment of the spring equinox — the same astronomical moment that defines Easter's calculation. Nowruz celebrates the defeat of winter (darkness, evil) by spring (light, good) — the Zoroastrian cosmic drama of Ahura Mazda vs. Ahriman mapped onto the solar year. [[tradition-persian-zoroastrian]], [[ahura-mazda]], [[angra-mainyu-ahriman]].
 
 The Easter-Nowruz convergence on the equinox is structural, not coincidental: both traditions inherited the Near Eastern recognition that the spring equinox is the moment of cosmic victory of light over darkness.
 

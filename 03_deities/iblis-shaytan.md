@@ -38,7 +38,7 @@ edges:
     target: "[[satan-christian]]"
     note: "shared Second Temple pseudepigraphic substrate (Adam's-fall + angelic-rebellion via 1 Enoch / Vita Adae et Evae) but independent development; Iblīs ≠ direct descendant of Christian Satan — Reynolds 2018 ch. 1"
   - type: parallel-form
-    target: "[[ahriman]]"
+    target: "[[angra-mainyu-ahriman]]"
     note: "cosmic adversary archetype; independent Zoroastrian substrate reaching Islam through late-antique milieu"
   - type: mentioned-in
     target: "[[phase-4-034-quran]]"

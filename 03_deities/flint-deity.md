@@ -16,7 +16,7 @@ consort: []
 attributes: ["flint stone", "cold", "thorns and briars", "monsters"]
 attested-in: ["[[phase-8-023-gayanashagowa]]"]
 syncretic-edges:
-  - target: "[[ahriman]]"
+  - target: "[[angra-mainyu-ahriman]]"
     type: "scholarly-parallel"
     source: "Structural parallel: both are the adversarial twin/opponent in a cosmic dualism system; both create harmful aspects of the world; both are opposed by a good-mind creator figure. No transmission documented. See tradition-haudenosaunee for the full comparison table."
 status: "metadata"

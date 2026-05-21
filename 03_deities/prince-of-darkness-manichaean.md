@@ -13,7 +13,7 @@ role: "the supreme evil; co-eternal antagonist"
 attested-in: ["[[phase-4-014-cologne-mani-codex]]", "[[phase-4-015-kephalaia-of-the-teacher]]", "[[phase-4-016-shabuhragan]]"]
 equivalents: ["Ahriman (Iranian Manichaean)"]
 syncretic-edges:
-  - target: "ahriman"
+  - target: "angra-mainyu-ahriman"
     type: "ancient-identification"
     source: "Mani's own Iranian-language usage; Boyce & Grenet 1991"
 status: "metadata"

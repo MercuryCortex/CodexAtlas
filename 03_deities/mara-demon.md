@@ -15,12 +15,12 @@ child-of: []
 consort: []
 attributes: ["army of demons (Māra's host)", "daughters Taṇhā / Arati / Ragā (Thirst, Aversion, Passion — the three temptations)", "elephant mount", "flower-arrows (of desire)", "dark/threatening appearance in conflict narratives; beautiful / deceptive appearance in temptation narratives"]
 attested-in: []
-equivalents: ["[[satan-christian]] (temptation-narrative parallel)", "[[ahriman]] (cosmic opponent of the Holy)"]
+equivalents: ["[[satan-christian]] (temptation-narrative parallel)", "[[angra-mainyu-ahriman]] (cosmic opponent of the Holy)"]
 syncretic-edges:
   - target: "satan-christian"
     type: "scholarly-parallel"
     source: "The three temptations of the Buddha under the Bodhi Tree (Pāli Canon, Sutta Nipāta, Buddhavamsa) are structurally parallel to Satan's three temptations of Christ in the wilderness (Matthew 4:1–11 / Luke 4:1–13): a supreme teacher at the threshold of cosmic mission is confronted by the cosmic adversary, offered pleasure/power/fear in sequence, and defeats each temptation through mastery of spiritual truth. The structural parallel is one of the most-cited in comparative religion; no direct historical borrowing is established — likely parallel mythic patterning of initiatory temptation."
-  - target: "ahriman"
+  - target: "angra-mainyu-ahriman"
     type: "scholarly-parallel"
     source: "Both Māra and Ahriman (Angra Mainyu) function as the cosmic principle opposing the salvific holy — Māra opposes Buddhahood / enlightenment; Ahriman opposes Ahura Mazdā / Asha. Both command hosts of demonic beings; both are conceived as ultimately defeatable (Zoroastrianism: Frashegird; Buddhism: Māra is transcended by each Buddha). Iranian-Buddhist contact in Gandhara makes some cross-influence possible."
 status: "metadata"
@@ -69,7 +69,7 @@ The temptation of the Bodhisattva under the Bodhi Tree is attested in the **Padh
 
 ## Cross-tradition identifications
 - **[[satan-christian]]** — *scholarly-parallel*: **MASSIVE cross-tradition parallel**. The three temptations of the Buddha (pleasure, power, fear — rendered through daughters, army, and challenge) structurally mirror Satan's three temptations of Christ in the wilderness (bread, kingdoms, proving divine status). Both are cosmic adversary figures confronting the founder-teacher at the threshold of his mission; both use desire, power, and fear as weapons; both are defeated through the teacher's spiritual mastery. The parallel is among the most-discussed in comparative religion (Boyd 1975, Ling 1962).
-- **[[ahriman]]** — *scholarly-parallel*: Both are the cosmic principle opposing salvific liberation — Māra opposes the Buddha's enlightenment as Ahriman opposes Ahura Mazdā's holy truth. Both command demonic hosts; both are conceived as ultimately transcendable. Gandharan Buddhist-Zoroastrian contact makes some historical cross-influence possible.
+- **[[angra-mainyu-ahriman]]** — *scholarly-parallel*: Both are the cosmic principle opposing salvific liberation — Māra opposes the Buddha's enlightenment as Ahriman opposes Ahura Mazdā's holy truth. Both command demonic hosts; both are conceived as ultimately transcendable. Gandharan Buddhist-Zoroastrian contact makes some historical cross-influence possible.
 - **[[amitabha]]** — Māra's realm (Kāmadhātu / Samsara) is the condition that [[amitabha]]'s Pure Land offers escape from; Amitābha's compassion is the antithesis of Māra's entrapment.
 - **[[avalokitesvara]]** — in Mahāyāna tradition, Avalokiteśvara's boundless compassion operates precisely within the realm Māra governs; the bodhisattva's vow to remain until all beings are liberated implicitly engages Māra's domain.
 - **[[mahakala]]** — the wrathful protector-deity whose ferocity is directed against forces that obstruct liberation; structurally opposed to Māra.

@@ -20,7 +20,7 @@ themes: ["[[dualism-cosmic]]", "[[end-times-judgment]]", "[[divine-kingship]]"]
 parallels: ["[[phase-4-015-kephalaia-of-the-teacher]]", "[[phase-4-014-cologne-mani-codex]]"]
 influenced-by: ["Zoroastrian cosmology and eschatology (Mani adapted Iranian theological vocabulary deliberately to address Shapur)"]
 influences: ["all later Iranian Manichaean texts", "[[phase-4-015-kephalaia-of-the-teacher]] (Coptic theological corpus echoes the same system)"]
-deities-mentioned: ["[[father-of-greatness]]", "[[prince-of-darkness-manichaean]]", "[[jesus-the-splendor]]", "[[ohrmazd]]", "[[ahriman]]"]
+deities-mentioned: ["[[father-of-greatness]]", "[[prince-of-darkness-manichaean]]", "[[jesus-the-splendor]]", "[[ohrmazd]]", "[[angra-mainyu-ahriman]]"]
 events-context: ["[[event-mani-execution-274-or-277]]"]
 status: "metadata"
 preservation: "Lost as a complete work; survives in Iranian Manichaean fragments recovered at Turfan (Chinese Central Asia) by the four German Turfan expeditions 1902–1914. The Turfan fragments give us substantial portions of an eschatological section (often called the 'Šābuhragān eschatology'). Mani's other six canonical works (Living Gospel, Treasure of Life, Pragmateia, Book of Mysteries, Book of Giants, Epistles) survive only in fragments and citations."
