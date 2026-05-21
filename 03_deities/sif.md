@@ -19,7 +19,7 @@ syncretic-edges:
   - target: "[[demeter]]"
     type: "scholarly-parallel"
     source: "Golden-haired grain-goddess typology (de Vries 1956, Davidson 1964)"
-status: "stub"
+status: "metadata"
 refs:
   - title: "Norse Mythology"
     author: "Lindow, John"

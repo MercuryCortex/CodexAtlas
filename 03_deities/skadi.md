@@ -18,7 +18,7 @@ syncretic-edges:
   - target: "[[artemis]]"
     type: "scholarly-parallel"
     source: "Bow-hunting wilderness goddess; the *huntress of the cold uplands* type"
-status: "stub"
+status: "metadata"
 refs:
   - title: "Norse Mythology"
     author: "Lindow, John"
