@@ -17,6 +17,10 @@ syncretic-edges:
   - target: "the-monad-gnostic"
     type: "scholarly-parallel"
     source: "Turner 2001"
+  - target: "soul-exile-longing"
+    type: "primary-instance-of-cross-tradition-pattern"
+    source: "Plotinus *Enneads* I.6 (On Beauty) + IV.8 (On the Soul's Descent into Body); Jonas 1963; Schimmel 1975 — the One is the source FROM which the soul descends (*katábasis*) and TO which it returns (*epistrophē*) in the Plotinian version of the cross-tradition exile-longing pattern. The soul's *anamnesis* (remembrance) when it encounters Beauty is the homeward movement of an exile recognizing its true source. See [[soul-exile-longing]]"
+    notes: "Cross-lens: 03_deities → 06_themes. Hub also lists [[plotinus]] (04_persons) and [[tradition-neoplatonism]] (07_traditions) — back-edges from those lenses still pending. MASSIVE-WIN: the One is the *destination* pole of the cross-tradition exile-longing structure (along with Pleroma in Gnosticism, God in Sufism, Brahman in Advaita, the reed bed in Rumi)"
 status: "metadata"
 refs:
   - title: "Plotinus: Enneads"

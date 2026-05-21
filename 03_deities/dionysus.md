@@ -24,6 +24,10 @@ syncretic-edges:
   - target: "zagreus-orphic"
     type: "ancient-identification"
     source: "Orphic theogonies; Dionysus-Zagreus is dismembered by Titans and reborn — the central Orphic mystery."
+  - target: "theme-soma-haoma-eucharist"
+    type: "Greek-branch-of-transmission-chain"
+    source: "Kerényi 1976 *Dionysos*; Wasson/Hofmann/Ruck 1978 *The Road to Eleusis* — Dionysus is the Greek node of the sacred-drink transmission chain. Wine as divine blood + *entheos* (god-within) ritual logic + the Greek-Iranian Thrace/Scythia contact zone connecting Dionysian and haoma traditions. The vine-god IS the vine; drinking the wine is drinking the god — the same ritual logic that emerges in Vedic Soma (Mandala 9) and downstream as the Christian Eucharist. See [[theme-soma-haoma-eucharist]]"
+    notes: "MASSIVE-WIN: Dionysus is the Mediterranean-end pivot of the 3,500-year sacred-drink chain — the bridge between the Indo-Iranian *\\*sauma-* tradition (via Thracian/Scythian contact) and the Christian Eucharist. Cross-lens: 03_deities → 06_themes"
 status: "metadata"
 refs:
   - title: "Greek Religion"

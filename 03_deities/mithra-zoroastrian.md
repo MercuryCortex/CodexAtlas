@@ -33,6 +33,10 @@ syncretic-edges:
     type: "scholarly-parallel"
     source: "Boyce 1975; Hultgård 1995"
     notes: "The archangel Michael in Second Temple Judaism and Christianity functions as warrior-leader, covenant enforcer, and psychopomp — structural functions that overlap with Mithra's in the Zoroastrian system. Hultgård notes that the angelic warrior-protector complex in Jewish apocalypticism may carry Iranian Mithra-complex influence."
+  - target: "theme-soma-haoma-eucharist"
+    type: "Iranian-branch-substrate-of-transmission-chain"
+    source: "Boyce 1975 *History of Zoroastrianism* vol. I; Clauss 2000; Beck 2006 — the Zoroastrian Mithra-complex is the Iranian substrate from which the Roman mystery Mithras inherits the name + Persian-cave + tauroctony bull-slaying, and through which the Iranian haoma-tradition feeds the Mediterranean sacred-meal cult. The Mithraic bull-blood substitution for haoma-juice may be the Roman-period transformation point of the Indo-Iranian sacred-drink chain. See [[theme-soma-haoma-eucharist]]"
+    notes: "Cross-lens: 03_deities → 06_themes. Mithra-Z is the Iranian-side anchor; Mithras-R (separate node) is the Roman-period mystery-cult endpoint. Both edges into the chain represent different stages of the same Iranian-substrate transmission"
 status: "full"
 refs:
   - title: "A History of Zoroastrianism, vol. I-II"

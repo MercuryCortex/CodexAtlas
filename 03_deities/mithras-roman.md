@@ -23,6 +23,10 @@ syncretic-edges:
   - target: "sol-invictus"
     type: "ancient-identification"
     source: "Mithraeum dedications: *Deo Soli Invicto Mithrae* — explicit fusion in cult titulature"
+  - target: "theme-soma-haoma-eucharist"
+    type: "parallel-branch-of-transmission-chain"
+    source: "Justin Martyr, *First Apology* 66 (~150 CE) — explicitly identified the Mithraic bread-and-wine meal as a 'diabolical imitation' of the Christian Eucharist; Clauss 2000; Beck 2006 — the Mithraic *agapē* meal of the spelaeum (bread marked with cross + wine) consumed after the tauroctony reflects the same Iranian-substrate sacred-meal logic that runs through the soma-haoma-eucharist transmission chain. The tauroctony may preserve an earlier Iranian sacrifice where bull's blood substitutes for haoma juice as the divine-substance medium. See [[theme-soma-haoma-eucharist]]"
+    notes: "Cross-lens: 03_deities → 06_themes. The Justin Martyr 'diabolical imitation' charge is theologically revealing — the early Christians noticed the parallel and felt obliged to assert priority, which itself is evidence the parallel was conspicuous"
 status: "metadata"
 refs:
   - title: "The Roman Cult of Mithras: The Mysteries of the Unconquered God"

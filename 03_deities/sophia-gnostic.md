@@ -56,6 +56,10 @@ syncretic-edges:
     type: "core-figure-of-occult-reception"
     source: "Hammer-Purgstall 1818, *Mysterium Baphometis revelatum* (Tier 4 primary); Goodrick-Clarke 1985 (Tier 1 reception-historian); Lévi 1854; Picknett & Prince 1997 — the Hammer-Purgstall Gnostic-variant of the Templar-Gnostic transmission hypothesis identifies the alleged Templar 'Baphomet head' as a Gnostic Sophia-image. While the Tier-1 historical claim is rejected by current scholarship (Barber 2006), the *reception-history* of the post-1700 Templar-occult tradition genuinely makes Sophia load-bearing for the imagined Gnostic-Templar continuity. See [[templar-gnostic-transmission-hypothesis]]"
     notes: "Reception-history Tier-3 edge: Sophia features in the 19th-c. occult reconstruction (Hammer-Purgstall → Lévi → Theosophy → Holy-Blood-Holy-Grail) of an alleged Gnostic Templar tradition. The historical claim is unsupported; the reception is the actual edge"
+  - target: "soul-exile-longing"
+    type: "primary-instance-of-cross-tradition-pattern"
+    source: "Jonas 1963, *The Gnostic Religion* ch. 'Gnosticism, Existentialism, and Nihilism'; King 2006; *Apocryphon of John* + *Gospel of Truth* + *Letter to Flora* — Sophia is one of three named deity-instances in the soul-exile-longing hub. Her fall from the Pleroma and her *pneuma* trapped in matter (after Yaldabaoth steals it from her and breathes it into Adam) is the *Gnostic* version of the cross-tradition exile-longing pattern that also appears in Plotinian Neoplatonism, Sufi *ghurba*, Vedāntic *avidyā*, Buddhist *dukkha*, and Rumi's *Nay-nāmeh*. See [[soul-exile-longing]]"
+    notes: "Cross-lens: 03_deities → 06_themes. The hub also lists key-figures across 04_persons (rumi, plotinus, suhrawardi, shankara, siddhartha-gautama-buddha, ibn-arabi) and traditions across 07_traditions (sufism, neoplatonism, gnosticism, advaita-vedanta, buddhism) — those lens-back-edges still pending. MASSIVE-WIN: Sophia is the figure whose *trapped pneuma* gives the exile-longing cluster its sharpest cosmic-drama formulation"
 status: "full"
 refs:
   - title: "The Secret Revelation of John"

@@ -17,6 +17,10 @@ syncretic-edges:
   - target: "zurvan"
     type: "ancient-identification"
     source: "Mani's own use in Šābuhragān; cf. Boyce & Grenet 1991"
+  - target: "theme-manichaeism-synthesis"
+    type: "supreme-deity-of-syncretic-religion"
+    source: "Tardieu 2008 *Manichaeism*; Lieu 1992 *Manichaeism in the Later Roman Empire and Medieval China*; BeDuhn 2000 *The Manichaean Body*; Reeves 1992 — the Father of Greatness is the supreme-Light pole of Mani's deliberately syncretic two-principle cosmology (Zurvanite Zoroastrian cosmic dualism + Buddhist enlightenment-teacher prophet-chain + Christian Paraclete-claim + Mesopotamian astrological framework). His Zurvanite-derived co-eternal-equal-with-Darkness structure is the structural skeleton of the *first global religious synthesis*. See [[theme-manichaeism-synthesis]]"
+    notes: "Cross-lens: 03_deities → 06_themes. Hub also lists [[mani]] + [[zarathustra]] + [[siddhartha-gautama-buddha]] + [[augustine-of-hippo]] (04_persons); [[tradition-manichaeism]] + [[tradition-zoroastrianism]] + [[tradition-buddhism]] + [[tradition-christianity-canonical]] + [[tradition-catharism]] (07_traditions); [[phase-4-014-cologne-mani-codex]] + [[phase-4-015-kephalaia-of-the-teacher]] + [[phase-4-016-shabuhragan]] (02_documents) — those lens-back-edges still pending"
 status: "metadata"
 refs:
   - title: "Mani and Manichaeism"

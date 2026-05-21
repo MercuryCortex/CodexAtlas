@@ -34,6 +34,10 @@ syncretic-edges:
     type: "Wisdom-Christology-endpoint"
     source: "Hahn 2008, *King and Messiah as Son of God*; Torijano 2002, *Solomon the Esoteric King* — Thread 5 of the Solomonic transmission spine: the New Testament explicitly positions Jesus as 'greater than Solomon' (Matt 12:42, Luke 11:31) in a wisdom-contest framing. The Wisdom books pseudonymously attributed to Solomon (Proverbs, Ecclesiastes, Song of Songs, Wisdom of Solomon, Sirach) become the *substrate of early Christian Wisdom Christology* — Jesus as the personified Wisdom (Sophia) who was with God before creation (John 1, Proverbs 8:22–31). Solomon as the paradigmatic Wisdom-bearer makes his texts the raw material for the Christological synthesis. See [[theme-solomonic-transmission-spine]] Thread 5"
     notes: "MASSIVE-WIN: the Solomonic Wisdom-corpus attribution is the load-bearing mechanism by which the personified-Sophia of Hellenistic Judaism becomes the pre-incarnate Christ of patristic theology — Solomon → Wisdom of Solomon → Philonic Sophia/Logos → Johannine Logos → incarnate Christ"
+  - target: "[[theme-soma-haoma-eucharist]]"
+    type: "endpoint-of-transmission-chain"
+    source: "Mark 14:22–24 + parallels; 1 Cor 10:16 (Paul calls the Eucharistic cup *to potērion tēs eulogias* = the Hebrew Passover *kos ha-berakha*); Kerényi 1976; BeDuhn 2000 — the Christian Eucharist is the global-distribution endpoint of the 3,500-year sacred-drink transmission chain that begins with Proto-Indo-Iranian *\\*sauma-*. The bread/wine = body/blood ritual logic is structurally identical to the Vedic Soma-as-deity (drinking the substance = drinking the god + grants immortality + creates real divine union). See [[theme-soma-haoma-eucharist]]"
+    notes: "MASSIVE-WIN: the Eucharist consumed in any Christian church today is the structural last-transformation of a ritual performed on the Pontic-Caspian steppe ~4,000 years ago — the longest documented ritual-transmission chain in world religion. Cross-lens: 03_deities → 06_themes"
 status: "metadata"
 refs:
   - title: "The Christian Tradition, vol. 1: The Emergence of the Catholic Tradition (100-600)"

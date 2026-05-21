@@ -16,6 +16,10 @@ syncretic-edges:
   - target: "angra-mainyu-ahriman"
     type: "ancient-identification"
     source: "Mani's own Iranian-language usage; Boyce & Grenet 1991"
+  - target: "theme-manichaeism-synthesis"
+    type: "co-eternal-evil-of-syncretic-religion"
+    source: "Tardieu 2008; Lieu 1992; BeDuhn 2000 — the Prince of Darkness is the co-eternal evil pole of Mani's two-principle cosmology. Unlike orthodox Zoroastrian dualism where Ahura Mazda is supreme and Angra Mainyu a secondary cosmic rebel, Mani's dualism is fully symmetrical at the beginning: Darkness existed as a separate realm before invading the Light. The Prince invades; his attack triggers the Father's emanative response and the construction of the cosmos as a light-extraction machine. See [[theme-manichaeism-synthesis]]"
+    notes: "Cross-lens: 03_deities → 06_themes. The Prince of Darkness's *fully symmetrical* status with the Father (rather than subordinate cosmic-rebel as in orthodox Zoroastrianism) is the Zurvanite-strand structural inheritance that distinguishes the Manichaean synthesis. Augustine's anti-Manichaean polemic on evil-as-privation (*privatio boni*) directly targets this co-eternal-evil claim"
 status: "metadata"
 refs:
   - title: "Mani and Manichaeism"

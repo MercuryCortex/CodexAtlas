@@ -14,6 +14,11 @@ parent-of: ["[[the-world-soul]]"]
 child-of: ["[[the-one-plotinus]]"]
 attested-in: ["[[phase-4-019-plotinus-enneads]]"]
 equivalents: ["[[nous-hermetic]] (philosophical-parallel)"]
+syncretic-edges:
+  - target: "soul-exile-longing"
+    type: "primary-instance-of-cross-tradition-pattern"
+    source: "Plotinus *Enneads* IV.8; Jonas 1963; Schimmel 1975 — Nous is the Second Hypostasis through which the soul descends to matter; the soul's *upper part* remains in Nous even as the lower self becomes entangled below. The exile-pattern's structural insight (the soul never fully descends; part of it remains in the divine) is Nous-as-anchor. See [[soul-exile-longing]]"
+    notes: "Cross-lens: 03_deities → 06_themes. Hub also lists [[plotinus]] (04_persons) and [[tradition-neoplatonism]] (07_traditions) — back-edges from those lenses still pending"
 status: "metadata"
 refs:
   - title: "Plotinus: Enneads"

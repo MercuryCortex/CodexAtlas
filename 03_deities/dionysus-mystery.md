@@ -26,6 +26,10 @@ syncretic-edges:
   - target: "sabazios"
     type: "ancient-identification"
     source: "Phrygian-Thracian Sabazios was identified by Greeks with Dionysus in ecstatic-mystery aspects"
+  - target: "theme-soma-haoma-eucharist"
+    type: "mystery-cult-branch-of-transmission-chain"
+    source: "Kerényi 1976; Wasson/Hofmann/Ruck 1978; Otto 1933; Graf & Johnston 2007 *Ritual Texts for the Afterlife* — the mystery-cult Dionysus (Bacchic + Orphic-Zagreus + gold-tablet initiations) is the cult-form through which the sacred-drink transmission chain operates in its initiatory register. The *entheos* logic (drinking the wine = god in-dwelling) generates the same conceptual ground as the Vedic Soma and the Christian Eucharist. See [[theme-soma-haoma-eucharist]]"
+    notes: "Cross-lens: 03_deities → 06_themes. Companion to civic-Olympian dionysus.md — this mystery-Dionysus carries the soteriological weight of the transmission chain (the dismemberment/rebirth + initiatory wine + gold-tablet death-navigation pattern)"
 status: "metadata"
 refs:
   - title: "Dionysos"
