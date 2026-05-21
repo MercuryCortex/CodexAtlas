@@ -6466,6 +6466,43 @@ body.view-forge #detail-inner {
    the overlay never intercepts cursor → canvas hit-testing. Label
    visibility is JS-driven (focused nodes only); positions are
    sync'd to GPU positions via camera.worldToScreen each frame. */
+/* Phase 20 (2026-05-21) — family hulls overlay.
+   SVG sits above the canvas, below the labels overlay, so:
+     canvas (z-auto) < hulls (z=3) < labels (z=5) < bottom-bar.
+   Hulls + labels both pointer-events:none so they never
+   intercept hover.
+   --family-color is set per group from JS (node.family_color). */
+.forge-hulls-overlay {
+  position: absolute; inset: 0;
+  pointer-events: none;
+  z-index: 3;
+  transition: opacity 0.18s ease-out;
+  /* CSS opacity (JS sets element.style.opacity per frame for the
+     zoom fade); the transition is for the fade-on-fade only. */
+}
+.forge-hull-poly {
+  fill: var(--family-color, #888);
+  fill-opacity: 0.05;
+  stroke: var(--family-color, #888);
+  stroke-opacity: 0.32;
+  stroke-width: 1.25;
+  stroke-linejoin: round;
+}
+.forge-hull-label {
+  fill: var(--family-color, #888);
+  fill-opacity: 0.65;
+  font-family: var(--mono, "JetBrains Mono", Menlo, monospace);
+  font-size: 11px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  /* Slight outline so the label stays readable when it overlaps a
+     dim node disk in the dim background. */
+  paint-order: stroke fill;
+  stroke: rgba(0, 0, 0, 0.6);
+  stroke-width: 3px;
+  stroke-linejoin: round;
+}
+
 .forge-labels-overlay {
   position: absolute; inset: 0;
   pointer-events: none;

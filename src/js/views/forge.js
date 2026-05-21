@@ -778,6 +778,21 @@
     // (hover or lock + their 1-hop neighbours). Phase 4c will
     // add an idle-time hub-label pass with deconfliction; for
     // now, labels only paint on focus to stay readable.
+    // Phase 20 (2026-05-21) — family hulls SVG overlay. Drawn ABOVE
+    // the canvas (so the SVG can be styled directly with CSS) but
+    // BEFORE the labels overlay so labels paint on top of hull
+    // titles when they collide.
+    //
+    // The SVG is sized to match the canvas via 100%/100% + CSS
+    // absolute positioning. World→screen for polygon vertices is
+    // computed on each camera change inside `syncHulls()`.
+    //
+    // pointer-events: none so hulls never intercept hover.
+    const hullsOverlay = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
+    hullsOverlay.setAttribute('class', 'forge-hulls-overlay');
+    hullsOverlay.setAttribute('xmlns', 'http://www.w3.org/2000/svg');
+    stage.appendChild(hullsOverlay);
+
     const labelsOverlay = document.createElement('div');
     labelsOverlay.className = 'forge-labels-overlay';
     stage.appendChild(labelsOverlay);
@@ -1698,6 +1713,16 @@
       for (const n of modeNodes) modeNodeById.set(n.id, n);
       local.mode.nodesById = modeNodeById;
 
+      // Phase 20 (2026-05-21) — family hulls. Built once per mode
+      // rebuild from packed node positions. Convex hull + centroid
+      // per `family` value (~34 groups in the deities mode). The
+      // hull polygon is in WORLD space; the SVG overlay does
+      // worldToScreen on each camera change via syncHulls().
+      local.mode.hulls = (graph.buildFamilyHulls)
+        ? graph.buildFamilyHulls(nodePack, modeNodeById)
+        : [];
+      rebuildHullElements();
+
       // 2026-05-20 — pre-create label DOM so a first hover doesn't
       // pay the appendChild + reflow cost mid-interaction.
       //
@@ -1972,6 +1997,13 @@
       // change also needs them re-positioned. Cheap when small;
       // skip entirely when no focus is set.
       syncLabelPositions();
+      // Phase 20 (2026-05-21) — same shape for the hulls overlay.
+      // syncHulls walks local.mode.hulls and rewrites SVG polygon
+      // points + label coordinates from worldToScreen. Cheap
+      // (~34 polygons × ~10 vertices each) and fades to opacity 0
+      // at camera.scale > 3.0 so deep-zoom inspection isn't
+      // cluttered.
+      syncHulls();
       // Glyphs are now in the WebGPU canvas (GPU glyph pass) so
       // they project via the same view-uniform as disks/edges —
       // no per-frame DOM sync needed.
@@ -2223,6 +2255,82 @@
         syncLabels();
       });
     }
+    // ════════════════════════════════════════════════════════════
+    //  Hulls overlay  —  Phase 20 (2026-05-21)
+    // ════════════════════════════════════════════════════════════
+    //  Family-level convex hulls + centroid titles drawn as an SVG
+    //  overlay above the canvas. Polygon vertices are in WORLD
+    //  space (computed once per mode rebuild in `local.mode.hulls`).
+    //  On every camera change, `syncHulls()` walks the hull list
+    //  and rewrites the SVG `points` + label transform from
+    //  world→screen.
+    //
+    //  Fade rule: hulls fade out at deep zoom (camera.scale > 2.0)
+    //  so they don't crowd individual-node inspection.
+    // ════════════════════════════════════════════════════════════
+    const SVG_NS = 'http://www.w3.org/2000/svg';
+    // Build / rebuild the SVG <g> children when hulls change
+    // (mode-switch). Each family gets one polygon + one text.
+    function rebuildHullElements() {
+      const hulls = (local.mode && local.mode.hulls) || [];
+      hullsOverlay.innerHTML = '';
+      for (let i = 0; i < hulls.length; i++) {
+        const h = hulls[i];
+        const g = document.createElementNS(SVG_NS, 'g');
+        g.setAttribute('class', 'forge-hull');
+        g.setAttribute('data-family', h.family);
+        g.style.setProperty('--family-color', h.color);
+        const poly = document.createElementNS(SVG_NS, 'polygon');
+        poly.setAttribute('class', 'forge-hull-poly');
+        g.appendChild(poly);
+        const label = document.createElementNS(SVG_NS, 'text');
+        label.setAttribute('class', 'forge-hull-label');
+        label.setAttribute('text-anchor', 'middle');
+        label.textContent = h.family;
+        g.appendChild(label);
+        hullsOverlay.appendChild(g);
+      }
+    }
+    function syncHulls() {
+      const vp = local.lastSize;
+      if (!vp.w || !vp.h) return;
+      const hulls = (local.mode && local.mode.hulls) || [];
+      if (!hulls.length) return;
+      // Match SVG viewBox to the actual viewport so coordinate
+      // math stays in CSS pixels.
+      hullsOverlay.setAttribute('viewBox', '0 0 ' + vp.w + ' ' + vp.h);
+      hullsOverlay.setAttribute('width',  vp.w);
+      hullsOverlay.setAttribute('height', vp.h);
+      const camScale = camera.state.scale;
+      // Fade out as we zoom past 2× — hulls are overview cues, not
+      // close-inspection chrome. opacity drops 1 → 0 across [2, 3].
+      const fade = camScale <= 2.0 ? 1.0
+                 : camScale >= 3.0 ? 0.0
+                 : (3.0 - camScale) / 1.0;
+      hullsOverlay.style.opacity = fade.toFixed(3);
+      // Skip per-vertex work if fully faded.
+      if (fade <= 0.001) return;
+
+      const groups = hullsOverlay.children;
+      for (let i = 0; i < hulls.length && i < groups.length; i++) {
+        const h = hulls[i];
+        const g = groups[i];
+        const poly = g.firstChild;
+        const label = g.lastChild;
+        // Polygon points → screen.
+        let pts = '';
+        for (let j = 0; j < h.polygon.length; j++) {
+          const s = camera.worldToScreen(h.polygon[j].x, h.polygon[j].y, vp);
+          pts += (j ? ' ' : '') + s.x.toFixed(1) + ',' + s.y.toFixed(1);
+        }
+        poly.setAttribute('points', pts);
+        // Centroid label.
+        const c = camera.worldToScreen(h.centroid.x, h.centroid.y, vp);
+        label.setAttribute('x', c.x.toFixed(1));
+        label.setAttribute('y', c.y.toFixed(1));
+      }
+    }
+
     function syncLabelPositions() {
       const vp = local.lastSize;
       if (!vp.w || !vp.h) return;
