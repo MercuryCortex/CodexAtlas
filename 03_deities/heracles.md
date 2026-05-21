@@ -15,15 +15,15 @@ child-of: ["[[zeus]]", "Alcmene (mortal mother)"]
 consort: ["Megara", "Deianira", "Hebe (divine wife after apotheosis)"]
 attributes: ["lion-skin (the Nemean Lion's hide)", "club (olive-wood, self-made)", "bow and arrows", "horse (Diomedes's), bull (Cretan), cattle (Geryon's), apples (Hesperides) — the labor-trophies"]
 attested-in: ["[[phase-2-008-homeric-epics]]", "[[phase-2-009-hesiod-theogony-works-and-days]]", "[[phase-2-028-herodotus-histories-book-2]]"]
-equivalents: ["[[hercules-roman]]", "[[khonsu]] (Egyptian — per Herodotus 2.43–44)", "Melkart (Phoenician)"]
+equivalents: ["[[hercules]]", "[[khonsu]] (Egyptian — per Herodotus 2.43–44)", "[[melqart]] (Phoenician)"]
 syncretic-edges:
   - target: "khonsu"
     type: "ancient-identification"
     source: "[[herodotus]] *Histories* 2.43–44: a Greek Heracles identified with an Egyptian god dated 17,000 years before Amasis; most plausibly Khonsu of Thebes (Lloyd 1976 commentary)"
-  - target: "melkart"
+  - target: "melqart"
     type: "ancient-identification"
     source: "Phoenician Melkart (Baal-of-Tyre) is consistently identified with Heracles in Greek-Phoenician contact zones (Tyre, Cyprus, Cadiz / Gadir, Sicily). The Heracles temple at Gadir (Cadiz, founded ~-1100) was actually a Melkart temple — Greek-Phoenician syncretism predates Greek-Egyptian"
-  - target: "hercules-roman"
+  - target: "hercules"
     type: "ancient-identification"
     source: "Standard Roman *interpretatio*; Heracles cult arrived in Italy via Greek colonies in southern Italy (Magna Graecia) and was institutionally absorbed early"
 status: "metadata"
@@ -87,7 +87,7 @@ His **apotheosis** is the **paradigmatic Greek case of mortal-to-god transition*
 ## Cross-tradition identifications
 - **Melkart (Phoenician)** — *ancient-identification* + *syncretic-fusion*: the Tyrian Melkart (Baal-of-Tyre) is identified with Heracles from earliest Greek-Phoenician contact. The Heracles temple at Gadir / Cadiz (founded ~-1100) is a Melkart temple in Greek dress. Phoenician-Greek Mediterranean trade-network theology depends substantially on this identification (Bonnet 1988).
 - **[[khonsu]] (Egyptian)** — *ancient-identification*: [[herodotus]] *Histories* 2.43–44 reports an Egyptian god dated 17,000 years before Amasis whom the Egyptians identify as Heracles; most modern scholars identify this as Khonsu of Thebes (Lloyd 1976).
-- **[[hercules-roman]]** — *ancient-identification*: Roman cult-twin, institutionally absorbed via Magna Graecia.
+- **[[hercules]]** — *ancient-identification*: Roman cult-twin, institutionally absorbed via Magna Graecia.
 - **Sandan / Sandon (Cilician)** — *ancient-identification*: the Tarsus Sandan-cult is identified with Heracles in Hellenistic-Roman period; Sandan's annual cult-fire ceremony at Tarsus is the local *imitatio* of Heracles's Oetan pyre apotheosis.
 - **Vedic Indra** — *scholarly-parallel* (cautious): both are dragon-slaying / monster-slaying strong-warrior gods with cattle-rustling labor-narratives; the Indo-European parallel is suggested by Watkins 1995 *How to Kill a Dragon* but is structural rather than genealogical.
 - **Christian Christ as boundary-crossing mortal-to-divine figure** — *scholarly-parallel* (cautious; debated): the Heracles apotheosis was used in pagan polemics against Christian resurrection (Celsus, Porphyry) as evidence that the pattern is not novel; Christian apologists (Justin, Origen) responded both by rejecting and (selectively) appropriating Heraclean motifs.

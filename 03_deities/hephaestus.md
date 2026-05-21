@@ -23,7 +23,7 @@ syncretic-edges:
   - target: "ptah-egyptian"
     type: "ancient-identification"
     source: "Herodotus 2.3, 2.99 — identifies Egyptian Ptah with Greek Hephaestus."
-status: "stub"
+status: "metadata"
 refs:
   - title: "Greek Religion"
     author: "Burkert, Walter"

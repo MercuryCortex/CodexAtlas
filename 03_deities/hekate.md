@@ -20,7 +20,7 @@ syncretic-edges:
   - target: "artemis"
     type: "ancient-identification"
     source: "Hellenistic syncretism passim"
-status: "stub"
+status: "metadata"
 refs:
   - title: "Hekate Soteira: A Study of Hekate's Roles in the Chaldean Oracles and Related Literature"
     author: "Johnston, Sarah Iles"
