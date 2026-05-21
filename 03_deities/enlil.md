@@ -16,7 +16,7 @@ consort: ["[[nin-lil-sumerian|Ninlil]]"]
 attributes: ["horned crown"]
 attested-in: ["[[phase-1-001-kesh-temple-hymn]]", "[[phase-1-006-atrahasis]]", "[[phase-1-008-enuma-elish]]"]
 equivalents: []
-status: "stub"
+status: "metadata"
 refs:
   - title: "Sumerian Religion"
     author: "Black, Jeremy & Green, Anthony"

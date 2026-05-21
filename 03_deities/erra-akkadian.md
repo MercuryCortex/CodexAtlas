@@ -12,9 +12,9 @@ gender: "masculine"
 role: "Akkadian god of plague, sudden destruction, and civic catastrophe; functionally identified with [[nergal]] from the Old Babylonian period onward"
 parent-of: []
 child-of: ["[[enlil]]", "[[nin-lil-sumerian]]"]
-consort: ["[[mami]]?", "[[laz]]?"]
+consort: ["Mami (mother-goddess; consort relationship uncertain — no node)", "[[laz]] (consort relationship uncertain)"]
 attributes: ["the Seven (Sibitti) — his divine weapon-companions", "lion-headed mace", "scorching torch", "burning brand"]
-attested-in: ["[[phase-1-008-enuma-elish]]?"]
+attested-in: ["[[phase-1-008-enuma-elish]]"]
 equivalents: ["[[nergal]]"]
 syncretic-edges:
   - target: "[[nergal]]"

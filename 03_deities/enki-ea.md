@@ -16,7 +16,7 @@ consort: ["[[damkina]]"]
 attributes: ["streams flowing from shoulders", "goat-fish"]
 attested-in: ["[[phase-1-006-atrahasis]]", "[[phase-1-008-enuma-elish]]", "[[phase-1-004-gilgamesh-old-babylonian]]"]
 equivalents: []
-status: "stub"
+status: "metadata"
 refs:
   - title: "Encounters with the Divine in Mesopotamia"
     author: "Bottéro, Jean"
