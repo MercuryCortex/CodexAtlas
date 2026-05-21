@@ -33,6 +33,10 @@ syncretic-edges:
     type: "Hermetic-dialogue-pair"
     source: "Fowden 1986 — the Hermetic Asclepius dialogue ([[phase-4-012-asclepius]]) is structurally Hermes Trismegistus (Thoth) instructing Asclepius (Imhotep). Both deified Egyptian sages renamed in their Greek equivalents. The dialogue is temple-cult literature translated into Greek philosophical idiom. See [[theme-egyptian-gnostic-transmission]] Chain 4 (the Imhotep-Asklepios-Hermes triangulation)"
     notes: "MASSIVE-WIN: the deified-Egyptian-sage transmission as the most documentable triangulation in the Egyptian → Gnostic chain"
+  - target: "hermetic-transmission-chain"
+    type: "central-figure-of-transmission-spine"
+    source: "Yates 1964, *Giordano Bruno and the Hermetic Tradition*; Fowden 1986; Copenhaver 1992; Hanegraaff 2012, *Esotericism and the Academy* — Hermes Trismegistus is the namesake and central figure of the 2,300-year transmission spine running from Alexandria (~100–300 CE) through Byzantine preservation → Plethon → Ficino (1463) → Pico → Bruno → Casaubon (1614) → Rosicrucian / Masonic synthesis → 19th-c. occultism → modern Western esotericism. See [[hermetic-transmission-chain]] for the full chain documentation"
+    notes: "MASSIVE-WIN: the longest and most consequential documented transmission spine in Western religious-intellectual history; this deity is its load-bearing personification"
 status: "metadata"
 refs:
   - title: "The Egyptian Hermes: A Historical Approach to the Late Pagan Mind"

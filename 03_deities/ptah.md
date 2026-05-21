@@ -37,6 +37,9 @@ influences:
   - target: "[[tradition-neoplatonism]]"
     type: "parallel-motif"
     note: "Hermetic texts fuse Ptah and the Demiurge; the Neoplatonic tradition's Egyptian sources include Memphite theology via Hermeticism"
+  - target: "[[hermetic-transmission-chain]]"
+    type: "upstream-Egyptian-source"
+    note: "Allen 1988; Fowden 1986; Yates 1964 — Ptah's creative heart-and-tongue theology (~2350 BCE Memphite Theology) is the oldest documented articulation of the Logos/Demiurge cluster that the Hermetic Corpus Hellenizes and that Ficino (1463) and the Renaissance Hermetists reintroduce to Latin Europe. Ptah is one of the deepest Egyptian-source layers of the [[hermetic-transmission-chain]] spine"
 influenced-by: []
 status: "full"
 refs:

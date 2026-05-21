@@ -20,6 +20,10 @@ syncretic-edges:
   - target: "[[ra]]"
     type: "ancient-identification"
     source: "Already in the Pyramid Texts Atum is fused with Ra as Atum-Ra; the Heliopolitan theology treats them as aspects of the same creator — Ra as the midday sun in his power, Atum as the primordial origin and the aging sun descending into the west. Allen 1988."
+  - target: "[[hermetic-transmission-chain]]"
+    type: "upstream-Egyptian-source"
+    source: "Allen 1988; Fowden 1986 — Atum's Heliopolitan self-emergent-creator theology is one of the substrate sources for the Hermetic cosmogony of self-originating divine principle that the Corpus Hermeticum (~100–300 CE Alexandria) crystallizes and that the Plotinian One inherits. The Atum-Ra solar-creator complex is the Egyptian-priestly material that Hellenistic Alexandrian intellectuals reformulate as Hermetic Nous/Poimandres. See [[hermetic-transmission-chain]]"
+    notes: "Atum is a deep-substrate Egyptian source (not a transmission node) — the structural parallel between Atum's self-creation and the Hermetic / Neoplatonic / Gnostic first-principle is the underlying theological commonality; documentation is Tier-2 (structural rather than textual transmission)"
 status: "full"
 refs:
   - title: "Genesis in Egypt: The Philosophy of Ancient Egyptian Creation Accounts"

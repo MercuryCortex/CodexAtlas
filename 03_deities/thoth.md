@@ -27,6 +27,10 @@ syncretic-edges:
     type: "primary-Egyptian-source"
     source: "Thoth is the load-bearing Egyptian-end deity of Chain 1 (Thoth → Hermes Trismegistus → Hermetic-Gnostic saving-knowledge soteriology). The Egyptian → Gnostic transmission's most concrete documentary line runs through this identification. See [[theme-egyptian-gnostic-transmission]] Chain 1 for the full argument (Fowden 1986, Copenhaver 1992, Layton 1987)"
     notes: "MASSIVE-WIN: HIGH-confidence Egyptian → Hermetic-Gnostic transmission. The Coptic Discourse on the Eighth and Ninth (NHC VI.6) is a specifically Egyptian ritual liturgy of soul-ascent, the Greek tradition reading like translation of an Egyptian original"
+  - target: "hermetic-transmission-chain"
+    type: "upstream-Egyptian-source"
+    source: "Yates 1964; Fowden 1986; Copenhaver 1992 — Thoth is the Egyptian-end origin of the 2,300-year Hermetic transmission spine. The chain (Thoth → Thoth-Hermes equation → Hermes Trismegistus → Corpus Hermeticum → Ficino 1463 → Renaissance Hermeticism → Masonic / 19th-c. occult / modern esotericism) begins with this deity's identification with Greek Hermes. See [[hermetic-transmission-chain]] for the full Alexandria-to-Washington-Monument spine"
+    notes: "MASSIVE-WIN: the load-bearing Egyptian source of Western esotericism; the city Khmun was renamed Hermopolis Magna ('Great City of Hermes') as institutional acknowledgement of the equation"
 status: "full"
 refs:
   - title: "The Egyptian Hermes: A Historical Approach to the Late Pagan Mind"
