@@ -33,6 +33,11 @@ Essays are self-contained; you can read any one without reading the others. The 
 5. **[[christianity-five-inheritances|Christianity's Five Documented Inheritances — A Synthesis]]** (177 lines)
    Ties the four prior essays into a single thesis: what did Christianity inherit, what did it innovate, and what does the cumulative cross-tradition map reveal? Five inheritances (Eucharist, executed-divine-claimant, Pantokrator iconography, Logos/Trinity, soul-exile-and-return) + Christianity's two distinctive maximal-deification moves (Eucharistic transubstantiation + Chalcedonian Christology). Direct hit on the user's stated "Christianity → older traditions" investigation framing.
 
+### Structural audit essay
+
+6. **[[connector-nodes|Connector Nodes — The Cross-Tradition Pivots the Hub-Wiring Exposed]]** (221 lines)
+   Audits the cross-lens wiring as a graph and surfaces three structural findings the per-pattern essays implied but didn't formalize. `tradition-zoroastrianism` at 10 hubs is the mega-connector (densest single cross-tradition pivot — empirically resolves the Boyce-Shaked thesis at graph-resolution). Two super-connectors at 6 hubs: `sophia-gnostic` and `event-school-of-alexandria`. Three findings: (a) Iranian-Zoroastrian dominance is now graph-resolved; (b) the Alexandrian crossroads is the only non-Iranian high-density site; (c) event-vs-tradition asymmetry — the Crucifixion-event connects to different hubs than Christianity-canonical-tradition.
+
 ---
 
 ## Reading order
