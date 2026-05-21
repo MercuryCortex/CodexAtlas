@@ -738,33 +738,18 @@
     // Mode dropdown is FIRST in the status row so it reads as the
     // primary "what is this wheel showing" indicator.  The rest
     // (device / counts / hover / lock / frame) follow.
-    // Phase 21N (2026-05-21) — Mode picker is a custom button +
-    // dropdown menu, styled to match the view-settings panel.
-    // Native <select> is gone. The button shows the active mode's
-    // glyph + label; clicking opens a menu drop-down with all
-    // modes; clicking a row calls rebuildForMode() (same handler
-    // the old select.onchange called).
-    const modeMenuHtml = modemod.MODES.map(m =>
-      '<button class="forge-mode-row" type="button" data-mode="' + m.value + '">' +
-        '<span class="forge-mode-row-glyph">' + m.glyph + '</span>' +
-        '<span class="forge-mode-row-label">' + m.label + '</span>' +
-      '</button>'
+    // Phase 21N-REVERT (2026-05-21) — back to the native <select>
+    // mode picker that was at the `forge-wheel-clean-2026-05-21`
+    // tag. The styled-select look John liked. No custom dropdown
+    // panel — native browser popup. The custom-popup experiments
+    // in 21N / 21N-R didn't land.
+    const modeOptionsHtml = modemod.MODES.map(m =>
+      '<option value="' + m.value + '">' + m.glyph + '  ' + m.label + '</option>'
     ).join('');
     status.innerHTML = [
       '<span class="forge-status-tag">FORGE</span>',
       '<span class="forge-status-sep">·</span>',
-      '<div class="forge-mode-wrap">' +
-        '<button class="forge-mode-btn" id="forge-status-mode" type="button" ' +
-          'aria-haspopup="menu" aria-expanded="false" aria-controls="forge-mode-menu" ' +
-          'title="What is this wheel showing?">' +
-          '<span class="forge-mode-glyph" id="forge-mode-btn-glyph">⊕</span>' +
-          '<span class="forge-mode-label" id="forge-mode-btn-label">Deities</span>' +
-          '<span class="forge-mode-caret">▾</span>' +
-        '</button>' +
-        '<div class="forge-mode-menu" id="forge-mode-menu" role="menu" aria-hidden="true">' +
-          modeMenuHtml +
-        '</div>' +
-      '</div>',
+      '<select class="forge-status-mode" id="forge-status-mode" title="What is this wheel showing?">' + modeOptionsHtml + '</select>',
       '<span class="forge-status-sep">·</span>',
       '<span class="forge-status-k">device</span>',
       '<span class="forge-status-v forge-status-pending" id="forge-status-device">acquiring…</span>',
@@ -1620,64 +1605,17 @@
       }
       updateZoomGizmo();
 
-      // Phase 21N (2026-05-21) — custom Deities dropdown wire-up.
-      // Replaces the native <select>.onchange path. The button
-      // face is updated to reflect the active mode (glyph + label);
-      // the menu opens/closes on the button; clicking a row calls
-      // rebuildForMode + saveRuntimeState.
-      (function wireModeDropdown() {
-        const btn   = document.getElementById('forge-status-mode');
-        const menu  = document.getElementById('forge-mode-menu');
-        const glyph = document.getElementById('forge-mode-btn-glyph');
-        const label = document.getElementById('forge-mode-btn-label');
-        if (!btn || !menu) return;
-        function refreshFace() {
-          const m = modemod.MODES.find(x => x.value === local.mode.id);
-          if (m) {
-            if (glyph) glyph.textContent = m.glyph;
-            if (label) label.textContent = m.label;
-          }
-          menu.querySelectorAll('.forge-mode-row').forEach(row => {
-            row.classList.toggle('is-active', row.dataset.mode === local.mode.id);
-          });
-        }
-        function open() {
-          menu.classList.add('is-open');
-          menu.setAttribute('aria-hidden', 'false');
-          btn.setAttribute('aria-expanded', 'true');
-        }
-        function close() {
-          menu.classList.remove('is-open');
-          menu.setAttribute('aria-hidden', 'true');
-          btn.setAttribute('aria-expanded', 'false');
-        }
-        btn.addEventListener('click', (ev) => {
-          ev.stopPropagation();
-          if (menu.classList.contains('is-open')) close(); else open();
-        });
-        menu.addEventListener('click', (ev) => {
-          const row = ev.target.closest('.forge-mode-row');
-          if (!row) return;
-          const id = row.dataset.mode;
-          close();
-          if (!id || id === local.mode.id || local.destroyed) return;
-          rebuildForMode(id);
-          refreshFace();
+      // Phase 21N-REVERT — back to the native <select> .onchange
+      // handler. Pre-21N behavior, untouched.
+      const modeSelectEl = document.getElementById('forge-status-mode');
+      if (modeSelectEl) {
+        modeSelectEl.value = local.mode.id;
+        modeSelectEl.addEventListener('change', (ev) => {
+          if (local.destroyed) return;
+          rebuildForMode(ev.target.value);
           saveRuntimeState();
         });
-        document.addEventListener('click', (ev) => {
-          if (!menu.classList.contains('is-open')) return;
-          if (menu.contains(ev.target) || btn.contains(ev.target)) return;
-          close();
-        });
-        document.addEventListener('keydown', (ev) => {
-          if (ev.key === 'Escape' && menu.classList.contains('is-open')) close();
-        });
-        // Expose a tiny helper so the LS-restore path below can
-        // resync the button face when STATE.mode is re-applied.
-        local._modeBtnRefresh = refreshFace;
-        refreshFace();
-      })();
+      }
 
       // Search wire-up (Phase 4f).
       const searchEl = document.getElementById('forge-status-search');
@@ -1741,9 +1679,10 @@
             recomputeFocus();
           }
         }
-        // Sync the custom mode dropdown's button face to the saved mode.
-        if (typeof local._modeBtnRefresh === 'function') {
-          try { local._modeBtnRefresh(); } catch (e) { /* best-effort */ }
+        // Sync the mode <select> to the saved mode (if any).
+        const modeSelectEl2 = document.getElementById('forge-status-mode');
+        if (modeSelectEl2 && local.mode && local.mode.id) {
+          modeSelectEl2.value = local.mode.id;
         }
       }
 
