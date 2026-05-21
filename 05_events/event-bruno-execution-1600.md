@@ -11,6 +11,15 @@ participants: ["[[giordano-bruno]] (the condemned)", "Cardinal Roberto Bellarmin
 traditions-affected: ["[[tradition-renaissance-hermeticism]]", "[[tradition-christianity-canonical]] (Roman Catholicism in its Counter-Reformation Inquisitorial form)"]
 documents-produced: ["Roman Inquisition trial records (partly extant; the principal dossier — Cardinal Caetani's volume — is lost)", "the formal sentence of 8 February 1600", "Gaspar Schoppe's letter narrating the execution (the principal surviving eyewitness account)"]
 documents-affected: ["Bruno's entire published corpus placed on the Index"]
+hub-edges:
+  - target: "hermetic-transmission-chain"
+    type: "persecution-event-of-Renaissance-phase"
+    source: "Yates 1964 *Giordano Bruno and the Hermetic Tradition*; Rowland 2008 *Giordano Bruno: Philosopher / Heretic*; Gatti 1999 *Giordano Bruno and Renaissance Science* — Bruno is the most ambitious Renaissance synthesizer of the Ficinian Hermetic corpus + Copernican cosmology + Lullian art-of-memory + heterodox Christology; his 1600 execution at the Campo de' Fiori is the Roman Inquisition's verdict on the late-Renaissance Hermetic project. The execution does not end the chain but politically forecloses its open-Catholic articulation"
+    notes: "Cross-lens: 05_events → 06_themes. Pairs with ficino-translation-1463 (founding) and casaubon-redating-1614 (demarcation) as the three event-side anchors of the Renaissance phase of the hermetic chain"
+  - target: "executed-divine-claimant"
+    type: "Renaissance-Hermetic-instance-of-pattern"
+    source: "Yates 1964; Rowland 2008 — Bruno's *La cena de le ceneri* and *De gli eroici furori* articulate a Hermetic-deification anthropology in which the philosopher participates in divine intelligence; his 1600 execution under accusation of denial of orthodox Christology + claim to Hermetic-philosophical inspiration places him in the structural pattern of the executed-divine-claimant (though at a more philosophical-mystical register than Hallaj or the Bab)"
+    notes: "Cross-lens: 05_events → 06_themes. The Bruno case extends the pattern from explicitly-religious mystics into philosophical-mystical Hermeticism"
 status: "metadata"
 refs:
   - title: "Il Sommario del processo di Giordano Bruno"

@@ -11,6 +11,19 @@ participants: ["[[pope-innocent-iii]]", "[[simon-de-montfort-elder]]", "[[raymon
 traditions-affected: ["[[tradition-catharism]]", "Latin Christianity"]
 documents-produced: []
 documents-affected: ["systematic destruction of Cathar literature; the [[phase-5-020-interrogatio-iohannis]] and [[phase-5-023-liber-de-duobus-principiis]] survive only through accidental preservation"]
+hub-edges:
+  - target: "theme-manichaeism-synthesis"
+    type: "extermination-event-of-western-dualist-descendant"
+    source: "Lambert 2002 *Medieval Heresy*; Pegg 2008 *A Most Holy War*; Stoyanov 2000 *The Other God: Dualist Religions from Antiquity to the Cathar Heresy* — Catharism is the medieval Western European dualist tradition with structural-historical continuities to Manichaean-Bogomil dualist Christianity; whether the continuity is genuine textual-descent (Stoyanov 2000) or partly inquisitorial-reconstruction (Pegg 2001, 2008) is debated. The 1209-1229 crusade is the political-military event that effectively terminates Western European dualist-Christian articulation"
+    notes: "Cross-lens: 05_events → 06_themes. Tier-discipline: the Cathar-Manichaean continuity is genuine but partly inquisitorially mediated; the crusade is the historical event of extermination either way"
+  - target: "theme-mesopotamian-gnostic-transmission"
+    type: "Western-terminus-of-dualist-Christian-channel"
+    source: "Stoyanov 2000 *The Other God*; Hamilton 1998 *Hugh Eteriano and the Greek Sources of his Treatise against the Patarenes* — the dualist-Christian channel from Mesopotamian Manichaeism → Paulicians (7th c. Armenia) → Bogomils (10th c. Bulgaria) → Cathars (12th c. Languedoc) is the principal medieval afterlife of the Mesopotamian-Gnostic transmission stream; the crusade ends the Western terminus"
+    notes: "Cross-lens: 05_events → 06_themes. The Paulician-Bogomil-Cathar chain is the dualist-Christian descent route from the Mesopotamian-Gnostic upstream"
+  - target: "soul-exile-longing"
+    type: "medieval-dualist-articulation-extermination-event"
+    source: "Lambert 2002; Stoyanov 2000 — Cathar theology (preserved in Interrogatio Iohannis and Liber de Duobus Principiis) articulates soul-exile-longing in radically dualist form: souls are angelic-light trapped in material-evil bodies, longing to return to the Good Father. The crusade is the political-military event that ends this Latin-Christian dualist articulation"
+    notes: "Cross-lens: 05_events → 06_themes"
 status: "stub"
 refs:
   - title: "The Albigensian Crusades"

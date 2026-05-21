@@ -11,6 +11,15 @@ participants: ["[[isaac-casaubon]]", "King James I (Casaubon's English patron)"]
 traditions-affected: ["[[tradition-renaissance-hermeticism]]", "[[tradition-hermeticism]]", "[[tradition-christianity-canonical]] (Catholic-Protestant historiographic controversy)"]
 documents-produced: ["*De rebus sacris et ecclesiasticis exercitationes XVI* (Casaubon, 1614) — especially Exercitatio I, sections X–XX on the Hermetica"]
 documents-affected: ["[[phase-4-011-corpus-hermeticum-i]] — re-classified from pre-Mosaic primordial revelation to Hellenistic-Egyptian late-antique literature", "[[phase-4-075-corpus-hermeticum-xiii-rebirth]] — re-classified along with the rest of the Greek Corpus", "[[phase-4-076-stobaean-hermetica-kore-kosmou]] — Stobaean Hermetic excerpts re-classified", "[[phase-4-012-asclepius]] — Latin Asclepius re-classified as Hellenistic", "[[phase-6-001-ficino-pimander]] and the entire Renaissance Hermetic project — philological foundation demolished", "[[phase-6-024-kircher-oedipus-aegyptiacus]] — last great rear-guard attempt to maintain the pre-Casaubon framework"]
+hub-edges:
+  - target: "hermetic-transmission-chain"
+    type: "demarcation-event-between-Renaissance-phase-and-modern-critical-phase"
+    source: "Grafton & Weinberg 2011 *Isaac Casaubon: The Patristic Roots of Modern Historical Scholarship*; Grafton 1991 *Defenders of the Text*; Yates 1964 *Giordano Bruno and the Hermetic Tradition*; Hanegraaff 2012 *Esotericism and the Academy* — Casaubon's 1614 redating ends the *prisca-theologia* phase of the chain (Hermes-older-than-Moses) and inaugurates the modern critical phase (Hermetica as Hellenistic-Egyptian compositions of the early Christian era). The 2,300-year chain continues after Casaubon but on different philological foundations"
+    notes: "Cross-lens: 05_events → 06_themes. MASSIVE-WIN: this is the demarcation event Yates uses to periodize Hermetic studies; the chain runs through both pre-Casaubon (mythical-prophetic) and post-Casaubon (historical-critical) phases"
+  - target: "theme-egyptian-gnostic-transmission"
+    type: "philological-grounding-event-for-Egyptian-Hellenistic-dating"
+    source: "Grafton & Weinberg 2011; Fowden 1986 *The Egyptian Hermes*; Copenhaver 1992 *Hermetica* — Casaubon's redating establishes the philological framework in which the Hermetica become datable as Hellenistic-Egyptian (1st-3rd c. CE), enabling Fowden's later 1986 reading of the Hermetica as continuous with Egyptian-Gnostic transmission rather than as pre-Mosaic primordial revelation"
+    notes: "Cross-lens: 05_events → 06_themes. Casaubon's philology is the modern condition of possibility for scholarly Egyptian-Gnostic-transmission work"
 status: "metadata"
 refs:
   - title: "Isaac Casaubon: The Patristic Roots of Modern Historical Scholarship"

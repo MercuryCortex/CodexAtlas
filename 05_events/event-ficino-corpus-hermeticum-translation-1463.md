@@ -11,6 +11,19 @@ participants: ["[[marsilio-ficino]] (translator)", "[[cosimo-de-medici]] (patron
 traditions-affected: ["[[tradition-renaissance-hermeticism]]", "[[tradition-hermeticism]]", "[[tradition-neoplatonism]]"]
 documents-produced: ["[[phase-6-001-ficino-pimander]] — Ficino's Latin Pimander (translation 1463; printed Treviso 1471)"]
 documents-affected: ["[[phase-4-011-corpus-hermeticum-i]] — recirculated to Western readership for the first time in over a millennium", "[[phase-4-075-corpus-hermeticum-xiii-rebirth]] — Ficino translated as *Sermo arcanus de regeneratione*", "[[phase-4-012-asclepius]] — already in continuous Latin transmission; Ficino's Pimander placed it in Renaissance circulation alongside the rediscovered Greek Corpus"]
+hub-edges:
+  - target: "hermetic-transmission-chain"
+    type: "founding-event-of-Renaissance-phase-of-chain"
+    source: "Copenhaver 1992 *Hermetica*; Yates 1964 *Giordano Bruno and the Hermetic Tradition*; Hanegraaff 2012 *Esotericism and the Academy*; Hankins 1990 *Plato in the Italian Renaissance* — Ficino's 1463 Latin Pimander (printed Treviso 1471) is the founding act of the Renaissance phase of the 2,300-year hermetic chain. The 1471 first edition is reprinted 16+ times before 1500 and dozens more times in the 16th century; every subsequent Renaissance Hermetic-Kabbalist figure (Pico, Reuchlin, Agrippa, Bruno) presupposes the Ficinian translation"
+    notes: "Cross-lens: 05_events → 06_themes. MASSIVE-WIN: this is THE single text-event that detonates the Renaissance hermetic movement; without 1463 the chain has no Latin-Western Renaissance instantiation"
+  - target: "neoplatonic-henosis"
+    type: "Renaissance-anchor-event-for-Hermetic-Neoplatonism"
+    source: "Hankins 1990; Copenhaver 1992; Kristeller 1979 *Renaissance Thought and Its Sources* — Ficino's *Pimander* reads the Corpus through a Plotinian lens, fusing Hermetic deification (CH XIII rebirth) with Plotinian henosis; the synthesis becomes the standard Renaissance philosophical-mystical anthropology"
+    notes: "Cross-lens: 05_events → 06_themes"
+  - target: "soul-exile-longing"
+    type: "Renaissance-articulation-event-of-pattern"
+    source: "Copenhaver 1992; Hanegraaff 2012; Yates 1964 — the Hermetic anthropology Ficino introduces (the soul descends from the Father through the seven planetary spheres into materiality and ascends back) is the Renaissance Latin-Christian articulation of soul-exile-longing; the *Asclepius* and CH XIII deification-treatises become standard reference points for Western mystical theology"
+    notes: "Cross-lens: 05_events → 06_themes"
 status: "metadata"
 refs:
   - title: "Hermetica: The Greek Corpus Hermeticum and the Latin Asclepius"

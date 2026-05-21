@@ -11,6 +11,15 @@ participants: ["[[philip-iv-of-france]]", "[[pope-clement-v]]", "[[jacques-de-mo
 traditions-affected: ["[[tradition-knights-templar]]", "[[tradition-hospitallers]] (received most Templar assets via *Ad providam*)", "[[tradition-christianity-canonical]]"]
 documents-produced: ["*Processus Contra Templarios* — the trial transcripts (Paris, Poitiers, Chinon, London, Aragonese, Cypriote, German)", "[[phase-5-038-chinon-parchment-1308]] (Avignon Reg. 308, the Chinon papal absolution)", "Clement V's bull *Pastoralis praeeminentiae* (22 November 1307)", "Clement V's bull *Vox in excelso* (22 March 1312, suppression)", "Clement V's bull *Ad providam* (2 May 1312, asset-transfer to Hospitallers)", "Clement V's bull *Considerantes dudum* (6 May 1312, individual disposition)"]
 documents-affected: ["the Templar Latin Rule and statutes effectively become inquisitorial-archive material"]
+hub-edges:
+  - target: "templar-gnostic-transmission-hypothesis"
+    type: "originating-event-of-hypothesis"
+    source: "Barber 2006 *The Trial of the Templars* (2nd ed.); Demurger 2007 *The Last Templar*; Nicholson 2001 *The Knights Templar: A New History*; Frale 2007 *Processus Contra Templarios* — the 1307-1314 trial is the originating event of the Templar-Gnostic-transmission hypothesis: the inquisitorial charges (idol-worship of Baphomet, denial of Christ, secret rites) are the textual seed from which 18th-19th c. occult-romantic reception (von Hammer-Purgstall 1818 *Mysterium Baphometis Revelatum*, Eliphas Lévi, the Strict Observance) constructs the Templar-as-secret-Gnostics narrative"
+    notes: "Cross-lens: 05_events → 06_themes. MASSIVE-WIN with TIER-DISCIPLINE: the trial is the primary-historical seed; modern scholarship (Barber, Frale, Nicholson) treats the heresy-charges as inquisitorial constructions, but the trial REMAINS the event the hypothesis is built on. The Tier-1 historical record + the Tier-4 occult-romantic reception must both be tracked"
+  - target: "executed-divine-claimant"
+    type: "structural-instance-of-pattern"
+    source: "Barber 2006; Demurger 2007 — Jacques de Molay's 1314 execution at the Île aux Juifs after recanting his recantation, and his curse-from-the-flames against Philip IV and Clement V (both of whom died within the year — Clement V on 20 April 1314; Philip IV on 29 November 1314), enters the cross-tradition pattern of the executed-religious-leader whose death is followed by the demise of the persecutors. The structural framing in later esoteric literature treats Molay as a martyred-master-of-secret-wisdom"
+    notes: "Cross-lens: 05_events → 06_themes. Tier-discipline: the pattern is structural; the historical Molay is not a divine-claimant but the death-and-curse narrative enters the occult-reception of the pattern"
 status: "metadata"
 refs:
   - title: "The Trial of the Templars"
