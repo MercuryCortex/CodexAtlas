@@ -814,6 +814,13 @@
       '</div>',
       '<div class="forge-scrub-box" id="forge-scrub-out"     title="OUT: upper bound of date range">—</div>',
       '<div class="forge-scrub-box forge-scrub-present" id="forge-scrub-present" title="PRESENT: scrub playhead">—</div>',
+      // Phase 21A2 (2026-05-21) — debug-stats toggle. Tiny
+      // square button next to the present-date box. Click pops
+      // a small panel listing device / nodes / edges / hover /
+      // lock / frame stats. Hidden by default to keep the
+      // bottom-bar clean for everyday use.
+      '<button class="forge-debug-btn" id="forge-debug-btn" type="button" title="Show engine stats" aria-expanded="false" aria-controls="forge-debug-panel">⌗</button>',
+      '<div class="forge-debug-panel" id="forge-debug-panel" aria-hidden="true"></div>',
     ].join('');
     stage.appendChild(bottomBar);
 
@@ -824,25 +831,30 @@
     // opacity by scale ≤ 0.10 (max zoom-out). The image is anchored
     // at the wheel centre in world space, sized so it fills the
     // viewport when scale = 0.10.
-    const bgImage = document.createElement('img');
-    bgImage.className = 'forge-bg-image';
-    bgImage.src = '_assets/bg/bg-a02.jpg?v=20260521';
-    bgImage.alt = '';
-    bgImage.draggable = false;
-    // Cache aspect ratio so cover-fit sizing in syncBackgroundImage
-    // preserves the image proportions (BG A02 is 2668×2000 ≈ 4:3,
-    // not square — the previous square-stretch behaviour squished
-    // it). Defaulted to 4:3 until onload fires; recomputed once
-    // the natural dimensions are available.
-    bgImage._bgAspect = 4 / 3;
-    bgImage.addEventListener('load', () => {
-      if (bgImage.naturalWidth > 0 && bgImage.naturalHeight > 0) {
-        bgImage._bgAspect = bgImage.naturalWidth / bgImage.naturalHeight;
-        // Force a re-sync so the very first paint uses the real aspect.
-        if (typeof syncBackgroundImage === 'function') syncBackgroundImage();
-      }
-    });
-    stage.appendChild(bgImage);
+    // Phase 21A2 (2026-05-21) — BG image is now attached to
+    // document.body (NOT the forge stage) and CSS-positioned
+    // `fixed; inset: 0; object-fit: cover;` so it covers the
+    // entire VIEWPORT regardless of where the canvas / stage
+    // sits inside the page chrome. Earlier versions parented
+    // it under .forge-stage, which left visible gaps wherever
+    // the stage was offset from the viewport edge (top status
+    // bar, sidebar reservation, etc). Now: the page's outer
+    // shell decides where the image goes (always full screen);
+    // JS only controls opacity by zoom. The view module owns
+    // its lifecycle — adds on render, removes on destroy.
+    let bgImage = document.getElementById('forge-bg-image');
+    if (!bgImage) {
+      bgImage = document.createElement('img');
+      bgImage.id = 'forge-bg-image';
+      bgImage.className = 'forge-bg-image';
+      bgImage.src = '_assets/bg/bg-a02.jpg?v=20260521';
+      bgImage.alt = '';
+      bgImage.draggable = false;
+      // PREPEND so it sits at the bottom of the document stacking
+      // order — every other positioned element (canvas, nav-hub
+      // trigger, footer, detail panel, hover card) paints over it.
+      document.body.insertBefore(bgImage, document.body.firstChild);
+    }
 
     const canvas = document.createElement('canvas');
     canvas.className = 'forge-canvas';
@@ -1567,6 +1579,10 @@
       wireHoverCard();
       // Phase 19 (2026-05-21) — Right-edge deity inspector panel.
       wireSidePanel();
+      // Phase 21A2 (2026-05-21) — Debug-stats popover next to the
+      // present-date box (replaces the old persistent top-bar
+      // stats display).
+      wireDebugStats();
 
       // Phase 5B M-F2 (2026-05-20) — apply LS-saved timeline +
       // lockedSet now that local.timeline exists + adjacency is
@@ -2723,63 +2739,22 @@
     // ════════════════════════════════════════════════════════════
     function syncBackgroundImage() {
       if (!bgImage) return;
-      const vp = local.lastSize;
-      if (!vp.w || !vp.h) return;
       if (!camera || !camera.state) return;
       const fitScale = computeFitScale();
       if (!fitScale || fitScale <= 0) return;
-      // zoomPct mirrors what the zoom-gizmo displays: 1.0 at fit,
-      // 0.10 at max-zoom-out, 2.0 at 2× zoom-in, etc.
+      // Phase 21A2 (2026-05-21) — sizing is FULLY CSS-driven now
+      // (`position: fixed; inset: 0; object-fit: cover`). JS only
+      // sets opacity. The image always covers the entire viewport
+      // (every corner) — left/right or top/bottom gaps are
+      // impossible — and the cover-fit math is handled by the
+      // browser, which has done rectangular-into-rectangular
+      // fitting reliably for thirty years.
       const zoomPct = camera.state.scale / fitScale;
-      // Opacity ramp: invisible at ≥ 50% zoom, full at ≤ 7%.
       let bgFade;
       if      (zoomPct >= 0.50) bgFade = 0;
       else if (zoomPct <= 0.10) bgFade = 1;
       else                      bgFade = (0.50 - zoomPct) / (0.50 - 0.10);
-      if (bgFade <= 0.001) {
-        bgImage.style.opacity = '0';
-        return;
-      }
-      // Size: COVER-FIT the viewport at gizmo 10%, preserving the
-      // image's natural aspect ratio. Phase 21A (2026-05-21) —
-      // BG A02 is 2668×2000 (4:3), not square. Previously the
-      // image was rendered as a square box (`width === height`)
-      // which stretched non-square images and left visible gaps
-      // on whichever axis didn't match. Now we compute the COVER
-      // box (the smallest rect containing the viewport that also
-      // matches the image aspect) and scale it linearly with
-      // zoom-pct.
-      //
-      // Phase 20J floor: sizeZoomPct = max(0.10, zoomPct) — image
-      // stays at fill-coverage when the user is below the gizmo's
-      // 10% floor (BG opacity is at 1.0 throughout that band).
-      const sizeZoomPct = Math.max(0.10, zoomPct);
-      const aspect      = bgImage._bgAspect || (4 / 3);
-      const vpAspect    = vp.w / Math.max(1, vp.h);
-      // Cover box at gizmo 10%: width / height each ≥ viewport,
-      // and aspect ratio = source image aspect ratio.
-      let coverW, coverH;
-      if (aspect >= vpAspect) {
-        // image more landscape than viewport → match height,
-        // overflow width
-        coverH = vp.h;
-        coverW = vp.h * aspect;
-      } else {
-        // image more portrait than viewport → match width,
-        // overflow height
-        coverW = vp.w;
-        coverH = vp.w / aspect;
-      }
-      const scaleFactor = sizeZoomPct / 0.10;
-      const imgW        = coverW * scaleFactor;
-      const imgH        = coverH * scaleFactor;
-      // Anchor: world (0, 0) → screen.
-      const centerScreen = camera.worldToScreen(0, 0, vp);
       bgImage.style.opacity = bgFade.toFixed(3);
-      bgImage.style.width   = imgW.toFixed(1) + 'px';
-      bgImage.style.height  = imgH.toFixed(1) + 'px';
-      bgImage.style.left    = (centerScreen.x - imgW / 2).toFixed(1) + 'px';
-      bgImage.style.top     = (centerScreen.y - imgH / 2).toFixed(1) + 'px';
     }
 
     function syncLabelPositions() {
@@ -3425,6 +3400,72 @@
     //     on row hover. Hidden via aria-hidden + opacity-0 CSS.
     //   - Bucket order matches BUCKET_ORDER (shader bucket_index).
     // ════════════════════════════════════════════════════════════
+    // ════════════════════════════════════════════════════════════
+    //  wireDebugStats()  —  Phase 21A2 (2026-05-21)
+    // ════════════════════════════════════════════════════════════
+    //  Toggleable popover next to the present-date box. When
+    //  open, displays a one-pass copy of the engine stats
+    //  (device / nodes / edges / hover / lock / frame) read
+    //  from the existing #forge-status-* spans (which still get
+    //  written by the existing updaters — we just relocate the
+    //  *display*). Stats refresh while the panel is open via a
+    //  shared MutationObserver on the hidden status spans.
+    // ════════════════════════════════════════════════════════════
+    function wireDebugStats() {
+      const btn   = document.getElementById('forge-debug-btn');
+      const panel = document.getElementById('forge-debug-panel');
+      if (!btn || !panel) return;
+      const FIELDS = [
+        { id: 'forge-status-device', label: 'device' },
+        { id: 'forge-status-nodes',  label: 'nodes'  },
+        { id: 'forge-status-edges',  label: 'edges'  },
+        { id: 'forge-status-hover',  label: 'hover'  },
+        { id: 'forge-status-lock',   label: 'lock'   },
+        { id: 'forge-status-frame',  label: 'frame'  },
+      ];
+      // One row per field. We CLONE the live span into the panel
+      // each refresh so the displayed text always tracks the source.
+      function renderRows() {
+        panel.innerHTML = FIELDS.map(f => {
+          const src = document.getElementById(f.id);
+          const v = src ? src.textContent : '—';
+          return '<div class="forge-debug-row">' +
+            '<span class="forge-debug-k">' + f.label + '</span>' +
+            '<span class="forge-debug-v">' + v + '</span>' +
+          '</div>';
+        }).join('');
+      }
+      function open() {
+        renderRows();
+        panel.classList.add('is-open');
+        panel.setAttribute('aria-hidden', 'false');
+        btn.setAttribute('aria-expanded', 'true');
+        // While open, refresh on every frame's status update.
+        local._debugStatsTimer = setInterval(renderRows, 250);
+      }
+      function close() {
+        panel.classList.remove('is-open');
+        panel.setAttribute('aria-hidden', 'true');
+        btn.setAttribute('aria-expanded', 'false');
+        if (local._debugStatsTimer) {
+          clearInterval(local._debugStatsTimer);
+          local._debugStatsTimer = 0;
+        }
+      }
+      btn.addEventListener('click', (ev) => {
+        ev.stopPropagation();
+        if (panel.classList.contains('is-open')) close(); else open();
+      });
+      document.addEventListener('click', (ev) => {
+        if (!panel.classList.contains('is-open')) return;
+        if (panel.contains(ev.target) || btn.contains(ev.target)) return;
+        close();
+      });
+      document.addEventListener('keydown', (ev) => {
+        if (ev.key === 'Escape' && panel.classList.contains('is-open')) close();
+      });
+    }
+
     function wireLegend() {
       const btn     = document.getElementById('forge-legend-btn');
       const panel   = document.getElementById('forge-legend-panel');
@@ -4120,10 +4161,13 @@
           // ordering (dot → arrow → title) made the arrow look
           // like it belonged to the color, not the relationship.
           const items = data.neighbors.map(n =>
+            // Phase 21A2 (2026-05-21) — row order is now
+            // ARROW → DOT → NAME per John's spec. Was DOT →
+            // NAME → ARROW which read backwards visually.
             '<button class="forge-side-panel-wire-item" data-id="' + safeAttr(n.id) + '" title="Lock + inspect ' + safeAttr(n.title) + '">'
+            + '<span class="forge-side-panel-wire-item-dir">' + (n.dir === 'out' ? '→' : '←') + '</span>'
             + '<span class="forge-side-panel-wire-item-dot" style="background:' + safeAttr(n.color) + '"></span>'
             + '<span class="forge-side-panel-wire-item-title">' + safeAttr(n.title) + '</span>'
-            + '<span class="forge-side-panel-wire-item-dir">' + (n.dir === 'out' ? '→' : '←') + '</span>'
             + '</button>'
           ).join('');
           return '<details class="forge-side-panel-wire" data-bucket="' + b + '" style="--bucket-color:' + bucketHex(b) + '">'

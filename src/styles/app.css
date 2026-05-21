@@ -467,6 +467,62 @@ body.nav-hidden .side-tab { display: none !important; }
   height: 1px; margin: 6px 12px;
   background: rgba(212,165,90,0.10);
 }
+
+/* ── Phase 21A2 (2026-05-21) ─ Debug-stats button + popover ── */
+.forge-debug-btn {
+  width: 38px; height: 32px;
+  display: inline-flex; align-items: center; justify-content: center;
+  margin-left: 6px;
+  background: rgba(13,17,25,0.78);
+  border: 1px solid rgba(212,165,90,0.22);
+  border-radius: 6px;
+  color: var(--text-2, #9099a8);
+  font-family: var(--mono, "JetBrains Mono", monospace);
+  font-size: 14px; line-height: 1;
+  cursor: pointer;
+  transition: border-color 120ms ease, color 120ms ease, background 120ms ease;
+}
+.forge-debug-btn:hover {
+  border-color: var(--gold, #d4a55a);
+  color: var(--gold, #d4a55a);
+}
+.forge-debug-btn[aria-expanded="true"] {
+  border-color: var(--gold, #d4a55a);
+  color: var(--gold, #d4a55a);
+  background: rgba(20,26,38,0.92);
+}
+.forge-debug-panel {
+  position: fixed;
+  bottom: 58px;        /* sits just above the bottom-bar pill row */
+  right: 14px;
+  width: 240px;
+  padding: 10px 12px;
+  background: rgba(13,17,25,0.92);
+  border: 1px solid rgba(212,165,90,0.22);
+  border-radius: 8px;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  box-shadow: 0 6px 24px rgba(0,0,0,0.4);
+  z-index: 235;
+  display: none;
+  font-family: var(--mono, "JetBrains Mono", monospace);
+  font-size: 10.5px;
+}
+.forge-debug-panel.is-open { display: block; }
+.forge-debug-panel .forge-debug-row {
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 3px 0;
+  border-bottom: 1px dashed rgba(212,165,90,0.07);
+}
+.forge-debug-panel .forge-debug-row:last-child { border-bottom: 0; }
+.forge-debug-panel .forge-debug-k {
+  color: var(--text-3, #6b7280);
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+}
+.forge-debug-panel .forge-debug-v {
+  color: var(--text-1, #e5e7eb);
+}
 body.detail-collapsed  { --eff-detail-w: var(--detail-w-collapsed); }
 
 /* BRAND-SECTION (lives at top of left nav) */
@@ -5726,15 +5782,42 @@ body.nav-collapsed .nav-more > summary .lbl { display: none; }
   display: flex; flex-direction: column;
   background: var(--bg-0);
 }
+/* Phase 21A2 (2026-05-21) — Forge status row is no longer a
+   full-width top bar. It's now a FLOATING PILL fixed at top-left
+   right of the nav-hub button (14 + 36 + 12 = 62 px). It carries
+   only the FORGE tag + mode dropdown by default; the debug stats
+   (device / nodes / edges / hover / lock / frame) collapse behind
+   a debug toggle and only render when `.is-debug` is set. The
+   visual style matches the bottom-bar pill controls (rounded,
+   blurred dark background, gold accent). */
 .forge-status {
+  position: fixed;
+  top: 14px;
+  left: 62px;     /* nav-hub trigger sits at 14 px + 36 px wide + 12 px gap */
+  z-index: 230;   /* over canvas, below nav-hub menu (240) */
   flex: 0 0 auto;
-  display: flex; align-items: center; gap: 8px;
-  padding: 10px 16px;
-  border-bottom: 1px solid var(--border-soft);
+  display: inline-flex; align-items: center; gap: 8px;
+  padding: 0 12px;
+  height: 36px;   /* same height as nav-hub-trigger */
+  border: 1px solid rgba(212,165,90,0.22);
+  border-radius: 10px;
+  background: rgba(13,17,25,0.78);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
   font-family: var(--mono); font-size: 10.5px;
   letter-spacing: 0.04em;
   color: var(--text-2);
-  background: rgba(13, 17, 25, 0.6);
+  max-width: calc(100vw - 80px);
+  overflow: hidden;
+}
+/* By default the debug-only spans (everything past the FORGE
+   tag + mode select + the first separator) are hidden. The
+   debug-stats popover renders them on demand instead. */
+.forge-status > .forge-status-k,
+.forge-status > .forge-status-v,
+.forge-status > .forge-status-sep:nth-of-type(n + 2),
+.forge-status > .forge-status-spacer {
+  display: none;
 }
 .forge-status-tag {
   font-weight: 500;
@@ -6235,16 +6318,24 @@ details.forge-side-panel-wire[open] .forge-side-panel-wire-caret {
   text-overflow: ellipsis;
   white-space: nowrap;
 }
-/* Direction arrow sits at the end of the row so the visual reads
-   as `[color-dot] [name] ...... [arrow]` — the arrow is a small
-   trailing annotation, not a connector between color and name. */
+/* Phase 21A2 (2026-05-21) — direction arrow LEADS the row per
+   John's spec: `[arrow] [color-dot] [name…]`. The arrow now
+   sits to the LEFT of the dot, not as a right-trailing
+   annotation. The name truncates with an ellipsis so long
+   titles never cause horizontal scroll. */
 .forge-side-panel-wire-item-dir {
   color: var(--text-3, #6b7280);
-  font-size: 10px;
+  font-size: 11px;
   flex: 0 0 auto;
-  margin-left: auto;
+  margin-left: 0;
   opacity: 0.7;
+  min-width: 12px; text-align: center;
 }
+/* Whole right-side panel must never scroll horizontally — long
+   titles, families, dates etc. are truncated at the container
+   edge with an ellipsis. */
+aside.detail, aside.detail * { max-width: 100%; }
+aside.detail { overflow-x: hidden; }
 
 /* Legacy hover-card wires (smaller, simpler — keep the pill style). */
 .forge-hover-card-wires {
@@ -6589,20 +6680,23 @@ body.view-forge #detail-inner {
    Hulls + labels both pointer-events:none so they never
    intercept hover.
    --family-color is set per group from JS (node.family_color). */
-/* Phase 20F (2026-05-21) — backdrop image. Sits behind the
-   canvas (z=0); the canvas defaults to z-auto = above this.
-   JS syncBackgroundImage() sets left, top, width, height,
-   opacity per frame so the image stays centred on the world
-   wheel-centre and scales with the camera. */
+/* Phase 21A2 (2026-05-21) — backdrop image lives at document.body
+   root, not inside .forge-stage. Fixed to the VIEWPORT (not the
+   canvas) so it always covers all four corners regardless of
+   chrome offset. `object-fit: cover` lets the browser handle
+   aspect-correct rect-into-rect fitting natively. JS only
+   modulates opacity by zoom — no sizing or positioning math. */
 .forge-bg-image {
-  position: absolute;
+  position: fixed;
+  inset: 0;
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
   z-index: 0;
   pointer-events: none;
   user-select: none;
   opacity: 0;
-  /* No transitions — JS smooths via per-frame interpolation. */
-  /* Hint to compositor that this layer transforms a lot. */
-  will-change: opacity, transform;
+  will-change: opacity;
 }
 .forge-hulls-overlay {
   position: absolute; inset: 0;
