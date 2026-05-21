@@ -10,6 +10,14 @@ key-deities: ["[[hayyi-rabbi]]", "[[manda-d-hayyi]]", "[[abathur]]", "[[ptahil]]
 key-persons: ["John the Baptist (Yahya — central prophet figure)"]
 key-documents: ["[[phase-4-017-ginza-rba]]", "[[phase-4-018-mandaean-book-of-john]]", "Qolasta (canonical prayer book)"]
 sister-traditions: ["[[tradition-gnosticism]]", "[[tradition-manichaeism]]", "[[tradition-judaism]]", "[[tradition-christianity-canonical]]"]
+hub-edges:
+  - target: "theme-mesopotamian-gnostic-transmission"
+    type: "surviving-Mesopotamian-Gnostic-tradition"
+    source: "Buckley 2002 *The Mandaeans: The Last Gnostics*; Drower 1937 *The Mandaeans of Iraq and Iran*; Häberl & McGrath 2019 *The Great Treasure* — Mandaeism is the only continuously-surviving Gnostic tradition (Southern Mesopotamia ~100 CE → present), making it the load-bearing *living* witness to the Mesopotamian → Gnostic transmission. The Mandaean cosmology preserves Mesopotamian astrological-cosmological substrate elements in a Gnostic-soteriological framework. See [[theme-mesopotamian-gnostic-transmission]]"
+    notes: "MASSIVE-WIN: Mandaeism is the rare case of a Gnostic tradition that survives to the present day. Cross-lens: 07_traditions → 06_themes"
+  - target: "templar-gnostic-transmission-hypothesis"
+    type: "alleged-source-tradition-of-Johannite-variant"
+    source: "Goodrick-Clarke 1985 *The Occult Roots of Nazism* (reception-historian); Fabré-Palaprat 1804 (founder of *Église Johannite*, claimed Templar succession via forged 1804 Larmenius Charter); Picknett & Prince 1997 (Tier 4) — the Johannite variant of the Templar-Gnostic hypothesis claims Templars preserved a John-the-Baptist tradition descending from Mesopotamian Mandaeism (Mandaeans venerate John the Baptist / Yahya as central prophet). The historical claim is unsupported but the Mandaean tradition IS the documented Mesopotamian-marshlands Johannite-Baptist tradition the post-1700 occult reconstruction invokes. See [[templar-gnostic-transmission-hypothesis]]"
 status: "metadata"
 refs:
   - title: "The Mandaeans: The Last Gnostics"

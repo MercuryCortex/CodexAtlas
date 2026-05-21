@@ -11,6 +11,21 @@ key-deities: ["[[the-monad-gnostic]]", "[[barbelo]]", "[[sophia-gnostic]]", "[[y
 key-persons: ["[[valentinus]]", "[[basilides]]", "[[ptolemaeus-valentinian]]", "[[heracleon-valentinian]]", "[[marcion-of-sinope]]"]
 key-documents: ["[[phase-4-001-gospel-of-thomas]]", "[[phase-4-002-apocryphon-of-john]]", "[[phase-4-003-gospel-of-truth]]", "[[phase-4-004-gospel-of-philip]]", "[[phase-4-005-gospel-of-mary]]", "[[phase-4-006-hypostasis-of-the-archons]]", "[[phase-4-007-on-the-origin-of-the-world]]", "[[phase-4-008-trimorphic-protennoia]]", "[[phase-4-009-pistis-sophia]]"]
 sister-traditions: ["[[tradition-hermeticism]]", "[[tradition-manichaeism]]", "[[tradition-mandaeism]]", "[[tradition-christianity-canonical]]"]
+hub-edges:
+  - target: "theme-mesopotamian-gnostic-transmission"
+    type: "endpoint-tradition-of-transmission"
+    source: "Pearson 1990 *Gnosticism, Judaism, and Egyptian Christianity*; Pearson 1984/2007; Annus 2010; King 2006; Williams 1996 *Rethinking 'Gnosticism'* — Gnosticism is the endpoint tradition of the 5-chain Mesopotamian → Gnostic transmission: Apkallu → Watchers + Marduk-Tiamat ↔ Yaldabaoth-Sophia + nēmequ → Hokmah → Sophia + Inanna's seven-gated descent → Sophia's fall + Babylonian astrology → Sethian seven-archon cosmology. See [[theme-mesopotamian-gnostic-transmission]]"
+    notes: "MASSIVE-WIN: Cross-lens: 07_traditions → 06_themes"
+  - target: "theme-egyptian-gnostic-transmission"
+    type: "endpoint-tradition-of-transmission"
+    source: "Fowden 1986 *The Egyptian Hermes*; Pearson 1990; Frankfurter 1998 *Religion in Roman Egypt*; Layton 1987 — Gnosticism is the endpoint tradition of the 5-chain Egyptian → Gnostic transmission: Thoth → Hermes-Trismegistus + Nun primordial-waters + Isis ↔ Sophia + Imhotep-Asklepios-Hermes + Sethian-Egyptian-inheritance via Alexandria. See [[theme-egyptian-gnostic-transmission]]"
+  - target: "soul-exile-longing"
+    type: "harshest-formulation-tradition"
+    source: "Jonas 1963 *The Gnostic Religion* ch. 'Gnosticism, Existentialism, and Nihilism'; King 2006 — Gnosticism provides the HARSHEST formulation of the cross-tradition soul-exile-longing pattern: the divine spark (*pneuma*) is not merely descended but actively *trapped* in matter by a malevolent or ignorant Demiurge. The material world is a *prison*, not a school. See [[soul-exile-longing]]"
+  - target: "templar-gnostic-transmission-hypothesis"
+    type: "alleged-source-tradition-of-occult-reception"
+    source: "Hammer-Purgstall 1818 (Tier 4 primary); Lévi 1854; Goodrick-Clarke 1985 (Tier 1 reception-historian); Barber 2006 (Tier 1 historical debunking) — Gnosticism is the alleged-source-tradition that the post-1700 Templar-Gnostic reception-tradition (Hammer-Purgstall → Lévi → 19th-c. occultism → Holy Blood Holy Grail 1982 → Da Vinci Code 2003) claims medieval Templars secretly inherited. Tier-1 historical claim REJECTED by current scholarship; Tier-3 reception-history fact uncontestable. See [[templar-gnostic-transmission-hypothesis]]"
+    notes: "Cross-lens: 07_traditions → 06_themes"
 status: "full"
 refs:
   - title: "Rethinking 'Gnosticism': An Argument for Dismantling a Dubious Category"

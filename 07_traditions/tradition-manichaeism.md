@@ -11,6 +11,17 @@ key-persons: ["[[mani]]", "Mar Sisin", "Faustus of Mileve", "[[augustine-of-hipp
 key-documents: ["[[phase-4-014-cologne-mani-codex]]", "[[phase-4-015-kephalaia-of-the-teacher]]", "[[phase-4-016-shabuhragan]]", "Manichaean Psalm-Book (Coptic)"]
 sister-traditions: ["[[tradition-gnosticism]]", "[[tradition-zoroastrianism]]", "[[tradition-mandaeism]]"]
 downstream-traditions: ["[[tradition-bogomilism]]", "[[tradition-catharism]]"]
+hub-edges:
+  - target: "theme-manichaeism-synthesis"
+    type: "namesake-tradition-of-synthesis"
+    source: "Tardieu 2008 *Manichaeism*; Lieu 1992 *Manichaeism in the Later Roman Empire and Medieval China*; BeDuhn 2000 *The Manichaean Body*; Pettipiece 2009 — Manichaeism IS the first global religious synthesis: Mani (216-274 CE) deliberately assembled it from Zoroastrianism + Buddhism + Christianity + Mesopotamian astrology, claiming each tradition received partial revelation he now completed. Spread Atlantic-to-Pacific by ~800 CE. See [[theme-manichaeism-synthesis]]"
+    notes: "MASSIVE-WIN: 07_traditions → 06_themes. Manichaeism is the only pre-modern religion to achieve global Eurasian spread"
+  - target: "third-century-collision-zone"
+    type: "Manichaean-tradition-of-3rd-c-window"
+    source: "BeDuhn 'The Co-formation of the Manichaean and Zoroastrian Religions'; Tardieu 2008 — Manichaeism founded ~240 CE under Shapur I's patronage + Mani executed ~274 CE under Bahram I — Manichaeism's foundation IS in the 200-280 CE collision-zone synthesis-window. See [[third-century-collision-zone]]"
+  - target: "theme-dying-founder-paradigm"
+    type: "tradition-shaped-by-founder-execution"
+    source: "Lieu 1992; BeDuhn 2010-2013 — Mani's execution under Bahram I (~274 CE) is one of the cross-tradition dying-founder paradigm instances. Manichaeism survives 1000 years across Spain → China — the MOST geographically dispersed pre-modern religion — partly *because* of the founder's execution + resulting persecution-resilience theology. See [[theme-dying-founder-paradigm]]"
 status: "metadata"
 refs:
   - title: "Mani and Manichaeism"
