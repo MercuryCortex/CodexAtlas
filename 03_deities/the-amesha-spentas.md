@@ -22,7 +22,7 @@ syncretic-edges:
     type: "scholarly-parallel"
     source: "Boyce & Grenet 1991; Barr 1985"
     notes: "The seven Amesha Spentas have been compared with the seven archangels of late Second Temple Jewish (1 Enoch, Tobit) and early Christian angelology. Mechanism: Persian-period contact."
-status: "stub"
+status: "metadata"
 refs:
   - title: "A History of Zoroastrianism, vol. I-III"
     author: "Boyce, Mary (with Grenet)"
