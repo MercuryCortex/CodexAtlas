@@ -1,10 +1,10 @@
 # HANDOFF — Bridge-Hub Cross-Lens Wiring (2026-05-21)
 
-> **Read this first if you're a fresh agent picking up Lane A bridge-wiring work.** Status as of commit `6e08871`. Read `STATUS.md` top entries for the per-phase detail; this file is the synthesis.
+> **Read this first if you're a fresh agent picking up Lane A bridge-wiring work.** Status as of commit `6a2a7c9` (Phase 13 complete). Read `STATUS.md` top entries for the per-phase detail; this file is the synthesis.
 
 ---
 
-## What just happened (Phases 1–12)
+## What just happened (Phases 1–13)
 
 Twelve phases of progressive vault densification:
 
@@ -18,9 +18,10 @@ Twelve phases of progressive vault densification:
 | 10 | Person-end audit (04_persons → 06_themes) | ~50 |
 | 11 | Document-end audit (02_documents → 06_themes) | ~70 |
 | 12 | Tradition-end audit (07_traditions → 06_themes) | ~104 |
-| **TOTAL** | **~330 hub-edges across 28 substantial bridge hubs from 4 lens-poles** | |
+| 13 | Event-end audit (05_events → 06_themes) | ~53 |
+| **TOTAL** | **~383 hub-edges across 28 substantial bridge hubs from 5 lens-poles** | |
 
-**Vault baseline dead-link count: 594/823. Unchanged across all 12 phases. WIRING LAW held — 0 dead links shipped across ~140 commits.**
+**Vault baseline dead-link count: 595/825 (drifted +1/+2 over Phase 12 close-out from intervening Lane B work; unchanged across all of Phase 13). WIRING LAW held — 0 dead links shipped across ~143 commits.**
 
 ---
 
@@ -69,10 +70,10 @@ These are the cross-tradition hubs you wire FROM other lenses TO. Memorize the s
 
 ## What's queued next (the work to pick up)
 
-### Phase 13 — Event-end audit (`05_events/` → `06_themes/`)
-- ~25 priority events, ~50 edges expected
-- High-leverage events: `event-cyrus-conquest-of-babylon-539-bce`, `event-ficino-corpus-hermeticum-translation-1463`, `event-mani-execution-274-or-277`, `event-bruno-execution-1600`, `event-council-of-florence-1439`, `event-crucifixion-of-jesus-c30ce`, `event-bab-execution-1850`, `event-karbala-680`, `event-execution-of-al-hallaj-922`, `event-school-of-alexandria-300bce-415ce`, `event-casaubon-redates-hermetica-1614`, `event-trial-of-templars-1307-1314`, `event-albigensian-crusade-1209-1229`, `event-nag-hammadi-discovery`, `event-hagia-sophia-construction-537`, `event-iconoclast-controversy-726-843`, `event-muhammads-miraj-619`, `event-hegira-622`
-- Pattern: each event's YAML may have `themes:` or `related-themes:` array → add `hub-edges:` block above `status:` line same as Phase 10-12
+### Phase 13 — Event-end audit (`05_events/` → `06_themes/`) — **DONE 2026-05-21 (commit `6a2a7c9`)**
+- 18 priority events wired, ~53 hub-edges (handoff predicted ~25/~50; the 18 highest-leverage covered).
+- Batches: (1) Iranian + Islamic (7 events, ~21 edges) — Cyrus + Mani + Karbala + Hallaj + Bab + Mi'raj + Hegira; (2) Alexandrian + Christian-foundational (6 events, ~20 edges) — Alexandria + Nag Hammadi + Crucifixion + Hagia Sophia + Iconoclast + Florence; (3) Hermetic-Renaissance + Templar + Cathar (5 events, ~12 edges) — Ficino + Casaubon + Bruno + Templar trial + Albigensian.
+- **Five-lens companion-pole effect** now visible: theme-executed-divine-claimant has 7 event-side anchors alone (Crucifixion + Mani + Karbala + Hallaj + Bab + Bruno + Templar trial), all carrying explicit 05_events → 06_themes cross-lens tags.
 
 ### Phase 14 — Symbol-end audit (`09_symbols/` → `06_themes/`)
 - ~15 priority symbols, ~30 edges expected
@@ -146,13 +147,16 @@ If the number rises after your batch, you introduced a dead link — find the ne
 
 ## What to tell the new agent (one-paragraph brief)
 
-> Continue Phase 13 of the bridge-hub cross-lens wiring project at `~/Desktop/Codex Atlas`. Read `00_meta/HANDOFF-2026-05-21-bridge-wiring.md` first — it has the 28 hub slugs, the lens-aware edge pattern, the 7 cardinal rules, and the queue (events → symbols → places). Work in batches of 5–10 entities per commit. Every edge gets a `Cross-lens: 05_events → 06_themes` (etc.) tag in its `notes:` field per John's dogma directive. End each phase with a STATUS.md entry following the Phase 10–12 format. Run `python3 linkcheck.py` after each batch — baseline is 594/823 dead, do not add to it. Never touch Lane B paths (src/, index.html, build_*.py). Lane A slot is OPEN.
+> Continue Phase 14 (symbol-end audit, `09_symbols/` → `06_themes/`) of the bridge-hub cross-lens wiring project at `~/Desktop/Codex Atlas`. Read `00_meta/HANDOFF-2026-05-21-bridge-wiring.md` first — it has the 28 hub slugs, the lens-aware edge pattern, the 7 cardinal rules, and the queue (symbols → places). Phase 13 (events) is DONE as of commit `6a2a7c9`. Work in batches of 5–10 entities per commit. Every edge gets a `Cross-lens: 09_symbols → 06_themes` tag in its `notes:` field per John's dogma directive. End each phase with a STATUS.md entry following the Phase 10–13 format. Run `python3 linkcheck.py` after each batch — baseline is 595/825 dead, do not add to it. Never touch Lane B paths (src/, index.html, build_*.py). Lane A slot is OPEN.
 
 ---
 
-## Phase 1–12 commit roll (for context)
+## Phase 1–13 commit roll (for context)
 
 ```
+6a2a7c9 Phase 13 Batch 3/3 wired: Hermetic-Renaissance + Templar + Cathar events
+e8ab875 Phase 13 Batch 2/3 wired: Alexandrian + Christian-foundational events
+5c29fc8 Phase 13 Batch 1/3 wired: Iranian + Islamic events (lens-aware)
 6e08871 STATUS log: opus-phase12-tradition-end-audit (FOUR-LENS NAVIGABLE)
 5c7c1b1 Phase 12 Batch 5/5 wired: Christian + Greek/Roman + Afro-Atlantic
 c887f05 Phase 12 Batch 4/5 wired: Indic + Islamic streams
