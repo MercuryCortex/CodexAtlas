@@ -20,7 +20,7 @@ syncretic-edges:
   - target: "proserpina-roman"
     type: "syncretic-identification"
     source: "Roman *interpretatio graeca*"
-status: "stub"
+status: "metadata"
 refs:
   - title: "Greek Religion"
     author: "Burkert, Walter"
