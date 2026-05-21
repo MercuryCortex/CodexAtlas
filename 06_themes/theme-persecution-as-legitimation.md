@@ -3,10 +3,24 @@ type: theme
 id: "theme-persecution-as-legitimation"
 name: "Persecution as Legitimation — the structural paradox of religious violence"
 category: "political-theological"
-appearances: []
+aka: ["suffering as proof", "martyrdom-identity loop", "oppression → consolidation", "persecution complex"]
+appearances:
+  - "[[tradition-hussitism]]"
+  - "[[tradition-judaism-sephardic]]"
+  - "[[tradition-islam-mughal]]"
+  - "[[tradition-rabbinic-judaism]]"
+  - "[[event-death-of-jan-hus-1415]]"
+  - "[[event-spanish-inquisition-1478]]"
+  - "[[event-bab-execution-1850]]"
 deity-instances: []
 status: "metadata"
 refs:
+  - title: "Martyrdom and Memory: Early Christian Culture Making"
+    author: "Castelli, Elizabeth A."
+    year: 2004
+    publisher: "Columbia University Press"
+    type: "monograph"
+    tier: 1
   - title: "The Girard Reader"
     author: "Girard, René; Williams, James G. (ed.)"
     year: 1996
@@ -81,6 +95,10 @@ Within Islam, the **Sufi** persecution pattern reproduces the same dynamic: al-H
 The most dramatic transformation: Sikhism under Guru Nanak (1469–1539) was a **pacifist bhakti devotional movement**, drawing on Hindu and Muslim sources, emphasizing the equality of all humans before God and the rejection of ritual hierarchy.
 
 Mughal persecution — the **torture-execution of Guru Arjan Dev Ji** (1606, [[event-death-of-guru-arjan-1606]]) and the **beheading of Guru Tegh Bahadur** (1675, [[event-death-of-guru-tegh-bahadur-1675]]) — transformed this pacifist tradition into the **Khalsa** (1699), an initiated warrior community with distinctive identity markers (the Five Ks), committed to defending the weak regardless of religion (Guru Tegh Bahadur was executed for defending *Hindu* rights to their faith — the ultimate interfaith martyrdom). The persecution did not just strengthen Sikhism; it **changed its fundamental character** — from devotional-pacifist to warrior-saint.
+
+### Hussitism — Persecution Defeats Five Crusades
+
+The **Hussite Wars** (1419–1434) are a textbook case: **Jan Hus is burned at the Council of Constance** (1415, [[event-death-of-jan-hus-1415]]) for proto-Reformation doctrine; the Catholic Church launches **five crusades** to suppress his Bohemian followers; **all five crusades are defeated** by the Hussite peasant-and-burgher armies under Jan Žižka and Prokop the Great. The Church ends up conceding Hus's central liturgical demand (lay communion under both kinds) in the Compacts of Basel (1436). A burned heretic's followers militarily defeated the medieval Church and forced doctrinal concession — the suppression produced exactly the opposite of the intended effect. The pattern continues into the Bohemian Reformation and later Czech national identity.
 
 ### Bahá'í — Persecution as Founding Narrative
 The Bahá'í faith has the most concentrated founding-persecution sequence of any modern religion: **the Bab** (Siyyid Ali-Muhammad) proclaimed himself a new prophet in 1844, was imprisoned, and publicly executed by firing squad in 1850 ([[event-bab-execution-1850]]). **Bahá'u'lláh**, his successor, was imprisoned and exiled for 40 years. The Bábi-Bahá'í community suffered massacres (estimated 20,000 killed in 1848–1852). Bahá'u'lláh composed his major works *in prison and exile*. The persecution narrative is so central to Bahá'í identity that the faith's founding texts were almost all composed under imprisonment conditions — making the tradition's scriptures literally the product of persecution.

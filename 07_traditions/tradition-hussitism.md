@@ -9,7 +9,7 @@ region-origin: "Bohemia (Kingdom of Bohemia, Holy Roman Empire)"
 region-spread: ["Bohemia", "Moravia", "Poland", "Hungary (limited)"]
 key-persons: ["[[jan-hus]]"]
 key-themes:
-  - "[[persecution-as-legitimation]]"
+  - "[[theme-persecution-as-legitimation]]"
   - "[[anti-roman-polemic]]"
 parent-tradition: "[[tradition-latin-christianity]]"
 status: "stub"

@@ -9,7 +9,7 @@ region-origin: "Iberian Peninsula (al-Andalus and Christian Spain)"
 region-spread: ["Ottoman Empire (Thessaloniki, Istanbul, Izmir)", "North Africa (Morocco, Algeria, Tunisia)", "Netherlands", "Italian city-states", "Levant", "Americas (from 17th c.)"]
 key-themes:
   - "[[diaspora-formation]]"
-  - "[[persecution-as-legitimation]]"
+  - "[[theme-persecution-as-legitimation]]"
 parent-tradition: "[[tradition-rabbinic-judaism]]"
 status: "stub"
 refs:

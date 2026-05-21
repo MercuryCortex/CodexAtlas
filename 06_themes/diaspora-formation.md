@@ -8,7 +8,7 @@ appearances:
   - "[[tradition-judaism-sephardic]]"
   - "[[event-spanish-inquisition-1478]]"
 related-themes:
-  - "[[persecution-as-legitimation]]"
+  - "[[theme-persecution-as-legitimation]]"
   - "[[martyrdom-theology]]"
 status: "stub"
 refs:

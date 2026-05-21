@@ -10,7 +10,7 @@ region-spread: ["Indian subcontinent", "Afghanistan", "Kashmir"]
 key-persons: ["[[akbar-mughal]]", "[[aurangzeb-emperor]]"]
 key-themes:
   - "[[syncretism-deliberate]]"
-  - "[[persecution-as-legitimation]]"
+  - "[[theme-persecution-as-legitimation]]"
 parent-tradition: "[[tradition-sunni-islam]]"
 status: "stub"
 refs:

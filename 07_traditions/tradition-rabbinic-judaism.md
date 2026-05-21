@@ -11,7 +11,7 @@ key-texts: []
 key-persons: ["[[rabbi-akiva]]", "[[maimonides]]"]
 key-themes:
   - "[[diaspora-formation]]"
-  - "[[persecution-as-legitimation]]"
+  - "[[theme-persecution-as-legitimation]]"
 sub-traditions:
   - "[[tradition-judaism-sephardic]]"
 parent-tradition: "[[tradition-second-temple-judaism]]"
