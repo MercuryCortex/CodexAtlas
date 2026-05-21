@@ -22,6 +22,14 @@ influenced-by: ["[[phase-4-034-quran]]", "[[phase-5-007-sahih-al-bukhari]]", "[[
 influences: ["the Mevlevi order founded by Rūmī's son Sulṭān Walad", "all subsequent Persian, Turkish, Urdu, and Mughal-Indian Sufi poetry", "Persianate literary culture across the Ottoman-Safavid-Mughal world", "modern Western reception (Coleman Barks's loose paraphrases; serious academic translations by Nicholson and Mojaddedi)"]
 deities-mentioned: ["[[allah]]", "[[al-haqq]]"]
 events-context: []
+hub-edges:
+  - target: "soul-exile-longing"
+    type: "Sufi-canonical-text-of-pattern"
+    source: "Chittick 1983 *The Sufi Path of Love*; Schimmel 1978 *The Triumphal Sun*; Nicholson 1925-1940 edition — the opening 18 couplets of the Masnavi (the Nay-nāmeh / Reed-flute Song) is the most-globally-quoted articulation of the soul-exile-longing pattern in any tradition. 'Listen to the reed, how it tells a tale of separations / Ever since I was cut from the reed bed...' = the reed cut from the reed bed = the soul cut from God. The entire 25,000-couplet Masnavi elaborates on this opening conceit. See [[soul-exile-longing]]"
+    notes: "MASSIVE-WIN: the Masnavi's Nay-nāmeh opening is the single most-quoted passage in cross-tradition mysticism — the poetic-prose form of the cross-tradition exile-longing pattern. Cross-lens: 02_documents → 06_themes"
+  - target: "merkabah-miraj-ascent-chain"
+    type: "Sufi-elaboration-of-Mi'raj-tradition"
+    source: "Schimmel 1975 *Mystical Dimensions of Islam*; Chittick 1983 — Rumi cites the Mi'raj structure throughout the Masnavi as the template for the soul's progressive purification-through-stages; the Masnavi is the Sufi-tradition endpoint of the Merkabah → Hekhalot → Mi'raj → Sufi-mystical-ascent chain. See [[merkabah-miraj-ascent-chain]]"
 status: "metadata"
 preservation: "Continuous Mevlevi and broader Persianate transmission. Six books, ~25,000 couplets (*bayts*) in *masnavi* meter. Earliest manuscripts within 5 years of completion (Konya manuscripts ~1278). Standard critical edition: Nicholson 1925–1940 (Persian text + English translation + commentary, 8 vols)."
 refs:

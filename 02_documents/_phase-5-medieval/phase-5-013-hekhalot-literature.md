@@ -22,6 +22,14 @@ influenced-by: ["[[phase-3-004-1-enoch]]", "[[phase-3-008-book-of-daniel]] (char
 influences: ["[[phase-5-012-sefer-yetzirah]]", "[[phase-5-026-sefer-ha-bahir]]", "Hasidei Ashkenaz", "Lurianic Kabbalah (Phase 6 — via reception)"]
 deities-mentioned: ["[[yahweh]]", "[[metatron]]", "[[the-merkavah]]"]
 events-context: []
+hub-edges:
+  - target: "merkabah-miraj-ascent-chain"
+    type: "canonical-corpus-of-ascent-tradition"
+    source: "Schäfer 1981 *Synopse zur Hekhalot-Literatur*; Scholem 1941 *Major Trends in Jewish Mysticism*; Halperin 1988 *The Faces of the Chariot*; Schäfer 2009 *Mohammed's Journey to Heaven* — the Hekhalot corpus (Heikhalot Rabbati + Heikhalot Zutarti + 3 Enoch / Sefer Hekhalot + Maaseh Merkavah + Shi'ur Qomah, composed ~200-900 CE) is the canonical corpus of the Jewish-mystical ascent tradition. The *yorde merkavah* ('descenders to the chariot') practice + the seven-hekhalot ascent + the angelic-guardian gate-challenges + Metatron's transformation = the load-bearing texts of the Merkabah → Mi'raj → Paradiso chain. See [[merkabah-miraj-ascent-chain]]"
+    notes: "MASSIVE-WIN: Schäfer 2009 documents specific Hekhalot-Mi'raj parallels that prove transmission via Arabian Jewish communities — the Hekhalot corpus is the direct ancestor of Muhammad's ascension narrative. Cross-lens: 02_documents → 06_themes"
+  - target: "theme-two-powers-in-heaven"
+    type: "central-corpus-of-Lesser-YHWH-tradition"
+    source: "Boyarin 2004 *Border Lines*; Segal 1977 *Two Powers in Heaven*; Schäfer 1981 — *3 Enoch / Sefer Hekhalot* is THE canonical text of Metatron-as-Lesser-YHWH; the Aher apostasy in b. Hagigah 15a IS the founding rabbinic anxiety-text the Hekhalot corpus generates. The corpus preserves the Two-Powers binitarianism the rabbis subsequently tried to suppress. See [[theme-two-powers-in-heaven]]"
 status: "metadata"
 preservation: "Loose corpus of texts in fluctuating manuscript clusters — Schäfer's *Synopse zur Hekhalot-Literatur* (1981) presents seven principal mss synoptically (Oxford, New York, Munich, Dropsie, Vatican, Budapest, Florence). No single 'canonical' text — the genre is fluid. Earliest substantial witnesses 11th–12th c., but key text-fragments in the Cairo Geniza push attestation back several centuries. Medieval reception in Ashkenazi Pietism (Hasidei Ashkenaz) ~1150–1250."
 refs:

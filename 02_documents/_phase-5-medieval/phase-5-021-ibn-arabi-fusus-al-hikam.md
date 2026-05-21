@@ -22,6 +22,14 @@ influenced-by: ["[[phase-4-034-quran]]", "[[phase-5-007-sahih-al-bukhari]]", "Ib
 influences: ["the entire Akbarī school: Ṣadr al-Dīn al-Qūnawī (Ibn ʿArabī's stepson, ~1273), Muʾayyad al-Dīn al-Jandī, ʿAbd al-Razzāq al-Kāshānī, Dāʾūd al-Qayṣarī", "[[phase-5-025-rumi-masnavi]] (parallel rather than influence, but the same intellectual moment)", "Persian Sufi poetry tradition (ʿIrāqī, Jāmī)", "Mullā Ṣadrā (Phase 6); modern Sufi theology globally"]
 deities-mentioned: ["[[allah]]", "[[al-haqq]]", "[[nur-muhammadi]]"]
 events-context: []
+hub-edges:
+  - target: "soul-exile-longing"
+    type: "Akbari-metaphysical-resolution-of-pattern"
+    source: "Chittick 1989 *Ibn al-ʿArabī's Metaphysics of Imagination*; Corbin 1969 *Creative Imagination in the Ṣūfism of Ibn ʿArabī*; Austin 1980 *The Bezels of Wisdom* — the *Fuṣūṣ al-Ḥikam* (1229-30, claimed prophetic revelation) addresses the exile-longing paradox at its deepest theological level via *waḥdat al-wujūd* (unity of being): if God is unity-of-being, the soul is never truly separate from God — the exile-experience is God experiencing God through the mirror of creation. The longing is God's longing for Godself. See [[soul-exile-longing]]"
+    notes: "MASSIVE-WIN: the Fusus dissolves the duality the exile-longing presupposes — the most theologically-sophisticated resolution of the cross-tradition pattern in any literature. Cross-lens: 02_documents → 06_themes"
+  - target: "merkabah-miraj-ascent-chain"
+    type: "Sufi-Akbari-systematization-of-Mi'raj"
+    source: "Schäfer 2009; Schimmel 1975; Corbin 1969 — Ibn Arabi's *Kitāb al-Isrāʾ* (companion text to Fusus) is the philosophical allegorization of Muhammad's Mi'raj in which each heaven corresponds to a stage of mystical-philosophical ascent. The Fusus and Kitab al-Isra together systematize the Mi'raj into Sufi metaphysical pedagogy. See [[merkabah-miraj-ascent-chain]]"
 status: "full"
 preservation: "Continuous Islamic transmission; one of the most-commented-on books in Islamic intellectual history (~150 medieval and early-modern commentaries documented). Standard Arabic edition: ʿAfīfī (Cairo 1946). The *Fuṣūṣ* is short (27 chapters, ~150 pages); the *Futūḥāt al-Makkiyya* is by contrast a 560-chapter, 37-volume work."
 refs:

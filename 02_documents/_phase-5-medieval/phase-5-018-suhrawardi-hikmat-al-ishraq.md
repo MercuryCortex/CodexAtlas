@@ -22,6 +22,17 @@ influenced-by: ["[[phase-3-002-plato-dialogues]] (Suhrawardī cites Plato repeat
 influences: ["the Iranian Illuminationist tradition: Shams al-Dīn al-Shahrazūrī (~1300), Quṭb al-Dīn al-Shīrāzī (~1310)", "Mullā Ṣadrā (Phase 6) and the Safavid Isfahan school", "modern Iranian philosophy (Henry Corbin's reception)"]
 deities-mentioned: ["[[allah]]", "[[the-light-of-lights]] (Nūr al-Anwār)"]
 events-context: []
+hub-edges:
+  - target: "soul-exile-longing"
+    type: "Illuminationist-cosmological-foundation-of-pattern"
+    source: "Walbridge 2000 *The Leaven of the Ancients*; Corbin 1971 *En Islam Iranien* vol. 2; Nasr 1964 *Three Muslim Sages*; Walbridge & Ziai 1999 — the *Ḥikmat al-Ishrāq* provides the cosmological scaffolding for Suhrawardī's companion *Qiṣṣat al-Ghurba al-Gharbiyya* (Occidental Exile): a hierarchy of light emanating from the Light of Lights (*nūr al-anwār*) descending through planes until trapped in matter's darkness. The East = the divine origin; the West = the material world. See [[soul-exile-longing]]"
+    notes: "MASSIVE-WIN: *Hikmat al-Ishrāq* is the most-explicit-cross-traditional cosmology in Islamic philosophy — Zoroastrian light-metaphysics + Platonic emanation + Islamic theology articulated as a single system. Cross-lens: 02_documents → 06_themes"
+  - target: "neoplatonic-henosis"
+    type: "Islamic-Illuminationist-articulation-of-mystical-union"
+    source: "Walbridge 2000; Ziai 1990 *Knowledge and Illumination*; Corbin 1971 — Suhrawardī's *ishrāq* (illumination) is the Islamic-Illuminationist articulation of the mystical-union pattern that Plotinus's *henosis* + Sufi *fanā'* + Christian *theosis* all instantiate. See [[neoplatonic-henosis]]"
+  - target: "executed-divine-claimant"
+    type: "text-from-figure-executed-for-heresy"
+    source: "Walbridge 2000; Ziai 1990 — the *Hikmat al-Ishrāq* (1186) is the principal heretical text for which Suhrawardī al-Maqtūl was executed in Aleppo 1191 CE at age 36-37 at the order of Saladin's son al-Malik al-Ẓāhir. The work IS the doctrinal evidence the execution targeted. See [[executed-divine-claimant]]"
 status: "metadata"
 preservation: "Continuous Iranian and Anatolian transmission; principal manuscripts in Iran (Tehran, Mashhad), India, Turkey. The *Opera Metaphysica et Mystica* edition by Henry Corbin (1945–1976, three volumes) is the modern foundational critical edition; J. Walbridge & H. Ziai's 1999 critical edition is the standard contemporary text."
 refs:

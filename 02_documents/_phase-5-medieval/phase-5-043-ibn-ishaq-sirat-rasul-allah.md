@@ -22,6 +22,11 @@ influenced-by: ["the early 8th-c. Medinan hadith and biographical-historical tra
 influences: ["all subsequent Islamic biographical tradition; al-Wāqidī *Kitāb al-Maghāzī* (~822); Ibn Saʿd *Ṭabaqāt* (~840); al-Balādhurī *Ansāb al-Ashrāf* (~890); Ṭabarī's *Tārīkh* (~915); via these the entire Islamic-tradition memory of Muhammad's life"]
 deities-mentioned: ["[[allah]]", "[[hubal]]", "[[allat]]", "[[al-uzza]]", "[[manat]]"]
 events-context: ["[[event-hegira-622]]", "[[event-conquest-of-mecca-630]]", "[[event-death-of-muhammad-632]]"]
+hub-edges:
+  - target: "merkabah-miraj-ascent-chain"
+    type: "canonical-Mi'raj-text"
+    source: "Schäfer 2009 *Mohammed's Journey to Heaven* (the definitive modern treatment of the Mi'raj's Jewish antecedents); Guillaume 1955 *The Life of Muhammad* — the Sīra is the canonical Islamic source for the Mi'raj narrative (619 CE per Sira tradition): Muhammad's Night Journey to Jerusalem on the Buraq + Ascension through seven heavens encountering Adam + Jesus + John + Joseph + Idris (Enoch) + Aaron + Moses + Abraham. Schäfer documents specific parallels with Hekhalot literature confirming transmission via Arabian Jewish communities. See [[merkabah-miraj-ascent-chain]]"
+    notes: "Cross-lens: 02_documents → 06_themes. The Sīra's Mi'raj narrative is the textual hinge between the Hekhalot ascent tradition and the Sufi mystical-ascent tradition that subsequently feeds Dante's Paradiso via the 1264 Liber Scalae transmission"
 status: "metadata"
 preservation: "The original Ibn Isḥāq *Sīra* is lost; the work survives in three principal forms: (1) **the canonical recension by Ibn Hisham (~833)**, the standard form by which the *Sīra* is read; (2) **Ṭabarī's independent preservation** of Ibn Isḥāq material not in the Ibn Hisham recension (especially material Ibn Hisham edited out — including the [[satanic-verses-incident|*gharānīq* / Satanic Verses narrative]]); (3) **other indirect quotations** in subsequent Islamic-tradition material. Modern English: A. Guillaume *The Life of Muhammad* (1955, Oxford UP) — the standard translation of the Ibn Hisham recension, with Ṭabarī material in footnotes."
 refs:

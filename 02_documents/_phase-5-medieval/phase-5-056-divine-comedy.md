@@ -18,6 +18,11 @@ refs:
   - "Asín Palacios, Miguel. *La escatología musulmana en la Divina Comedia*. Madrid, 1919. — Tier 1"
   - "Singleton, Charles S. *Dante Studies 1: Commedia, Elements of Structure*. Harvard UP, 1954. — Tier 2"
 tags: [document, medieval-christianity, italy, afterlife, dante, commedia, MASSIVE-WIN, cross-tradition, inferno, purgatorio, paradiso, phase-5, metadata]
+hub-edges:
+  - target: "merkabah-miraj-ascent-chain"
+    type: "Christian-literary-terminus-of-ascent-tradition"
+    source: "Asín Palacios 1919 *La escatología musulmana en la Divina Comedia*; Cerulli 1949 *Il 'Libro della Scala'*; Schäfer 2009 *Mohammed's Journey to Heaven* — the *Divina Commedia* (~1308-1321) is the Christian literary terminus of the 2000-year ascent tradition: Ezekiel chariot vision (-593 BCE) → Hekhalot mysticism → Muhammad's Mi'raj (619 CE) → *Liber Scalae Machometi* (1264 Castile, translated by Abraham Alfaquim for Alfonso X) → Dante's *Paradiso*. Cerulli 1949 demonstrated the *Liber Scalae* was available to Brunetto Latini (Dante's own teacher who worked at Alfonso's court) — making the transmission chain demonstrably possible. See [[merkabah-miraj-ascent-chain]]"
+    notes: "MASSIVE-WIN: the *Commedia* is the Western-literary endpoint of a continuous cross-tradition imagination of the afterlife running from Zoroastrian Iran (Arda Viraf) through Jewish mysticism + Islamic expansion to Christian high Middle Ages. Cross-lens: 02_documents → 06_themes"
 ---
 
 # Divina Commedia (Divine Comedy)
