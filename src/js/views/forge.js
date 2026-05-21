@@ -782,6 +782,34 @@
     labelsOverlay.className = 'forge-labels-overlay';
     stage.appendChild(labelsOverlay);
 
+    // ── Side panel (Phase 19, 2026-05-21) ──────────────────
+    // Collapsible deity-detail panel at the right edge of the
+    // forge stage. NOT auto-opened by anything — the user toggles
+    // it at their will via the chevron button. When opened, it
+    // renders the LAST locked deity's full info (toggleLock writes
+    // local.sidePanelLastId and pulses the toggle button as a
+    // signal that fresh content is available).
+    //
+    // The toggle button stays visible whether the panel is open
+    // or closed. Its Y position is anchored to roughly the height
+    // of the left-nav Forge icon (a bit below) so the two read as
+    // peers on the same horizontal line.
+    const sidePanel = document.createElement('aside');
+    sidePanel.className = 'forge-side-panel';
+    sidePanel.id        = 'forge-side-panel';
+    sidePanel.setAttribute('aria-hidden', 'true');
+    sidePanel.innerHTML = ''
+      + '<button class="forge-side-panel-toggle" id="forge-side-panel-toggle"'
+      +         ' aria-controls="forge-side-panel" aria-expanded="false"'
+      +         ' title="Deity inspector (click to toggle)">‹</button>'
+      + '<div class="forge-side-panel-inner" id="forge-side-panel-inner">'
+      +   '<div class="forge-side-panel-empty" id="forge-side-panel-empty">'
+      +     'Lock a deity to view its details.'
+      +   '</div>'
+      +   '<div class="forge-side-panel-body" id="forge-side-panel-body" hidden></div>'
+      + '</div>';
+    stage.appendChild(sidePanel);
+
     // ── Camera ──────────────────────────────────────────
     const camera = cammod.create({ centerX: 0, centerY: 0, scale: 1 });
 
@@ -1427,8 +1455,9 @@
       // so there's a single source of truth for color values.
       wireLegend();
       // Phase 14 (2026-05-21) — On-canvas hover thumbnail card.
-      // First-step scaffolding; iterate styling after live review.
       wireHoverCard();
+      // Phase 19 (2026-05-21) — Right-edge deity inspector panel.
+      wireSidePanel();
 
       // Phase 5B M-F2 (2026-05-20) — apply LS-saved timeline +
       // lockedSet now that local.timeline exists + adjacency is
@@ -3008,8 +3037,13 @@
       let thumbs = null;
       fetch('_assets/thumbs_cache.json', { cache: 'force-cache' })
         .then(r => r.ok ? r.json() : null)
-        .then(j => { thumbs = j || {}; })
-        .catch(() => { thumbs = {}; });
+        .then(j => {
+          thumbs = j || {};
+          // Phase 19 — share the cache with the side panel so both
+          // surfaces lookup from the same in-memory map.
+          local._thumbsCache = thumbs;
+        })
+        .catch(() => { thumbs = {}; local._thumbsCache = {}; });
 
       const card = document.createElement('div');
       card.className   = 'forge-hover-card';
@@ -3311,6 +3345,179 @@
       };
       // Also hide on canvas leave.
       canvas.addEventListener('mouseleave', hide);
+    }
+
+    // ════════════════════════════════════════════════════════════
+    //  wireSidePanel()  —  Phase 19 (2026-05-21)
+    // ════════════════════════════════════════════════════════════
+    //  Right-edge collapsible deity-inspector panel. NOT auto-
+    //  triggered by hover or lock — user-driven toggle only, so
+    //  it never interrupts flow. The toggle button stays visible
+    //  whether the panel is open or closed; its Y matches the
+    //  left-nav Forge icon so the two read as horizontal peers.
+    //
+    //  Lock signal: toggleLock(id) records `local.sidePanelLastId`
+    //  and momentarily adds `.pulsing` to the toggle — a brief
+    //  CSS-driven glow that signals "fresh content available
+    //  here." If the panel is already open, the body re-renders
+    //  immediately with the new deity. If closed, the next open
+    //  picks up the latest id.
+    //
+    //  Empty state: when no deity has been locked yet, the body
+    //  shows "Lock a deity to view its details."
+    //
+    //  Content reuses the same data pickers as wireHoverCard (so
+    //  the panel and the hover card stay in lockstep about which
+    //  YAML fields surface where).
+    // ════════════════════════════════════════════════════════════
+    function wireSidePanel() {
+      const panel = document.getElementById('forge-side-panel');
+      const toggle = document.getElementById('forge-side-panel-toggle');
+      const emptyEl = document.getElementById('forge-side-panel-empty');
+      const bodyEl  = document.getElementById('forge-side-panel-body');
+      if (!panel || !toggle) return;
+
+      function setOpen(open) {
+        local.sidePanelOpen = !!open;
+        panel.classList.toggle('is-open', !!open);
+        panel.setAttribute('aria-hidden', open ? 'false' : 'true');
+        toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+        toggle.textContent = open ? '›' : '‹';
+        if (open) {
+          // Clear the pulse — the user has acknowledged the signal.
+          toggle.classList.remove('pulsing');
+          render();
+        }
+      }
+      // Initial state — closed.
+      setOpen(false);
+
+      toggle.addEventListener('click', () => setOpen(!local.sidePanelOpen));
+
+      // Hook called by toggleLock — adds the pulse + records id.
+      local._onLockChange = function (id) {
+        if (!id) return;   // null = cleared-all; nothing fresh to show
+        local.sidePanelLastId = id;
+        // Trigger pulse animation by adding the class. Removed via
+        // animationend (fallback timeout — animationend can miss
+        // when the element is hidden via display).
+        toggle.classList.remove('pulsing');
+        void toggle.offsetWidth;          // restart any in-flight animation
+        toggle.classList.add('pulsing');
+        clearTimeout(local._sidePanelPulseTimer);
+        local._sidePanelPulseTimer = setTimeout(() => {
+          toggle.classList.remove('pulsing');
+        }, 2400);
+        // If already open, re-render with the new id.
+        if (local.sidePanelOpen) render();
+      };
+
+      // Render the body for local.sidePanelLastId. Reuses the same
+      // data pickers + bucket palette as the hover card, but lays
+      // them out with more breathing room — bigger thumbnail,
+      // longer description, fuller meta block.
+      function render() {
+        const id = local.sidePanelLastId;
+        const m = local.mode;
+        const node = (id && m && m.nodesById && m.nodesById.get) ? m.nodesById.get(id) : null;
+        if (!node) {
+          emptyEl.hidden = false;
+          bodyEl.hidden  = true;
+          return;
+        }
+        emptyEl.hidden = true;
+        bodyEl.hidden  = false;
+
+        const thumbs = local._thumbsCache || null;
+        const thumb  = (thumbs && thumbs[id]) ? thumbs[id] : null;
+        const tradition = (node.tradition || node.family || node.religion || '');
+        // Description: YAML role/description first, fall back to
+        // Wikipedia extract (full first paragraph here, vs. the
+        // hover card's single-sentence cap).
+        let desc = (node.role || node.description || node.brief || node.subtitle || '');
+        if (!desc && Array.isArray(node.domains) && node.domains.length) {
+          desc = node.domains.join(', ');
+        }
+        let extract = '';
+        if (thumb && thumb.extract) extract = String(thumb.extract);
+
+        // Wires breakdown — same colored pills as the hover card.
+        const counts = (() => {
+          const out = Object.create(null);
+          const edges = m && m.edges;
+          if (!edges) return out;
+          const EB = window.EDGE_BUCKET || {};
+          for (let i = 0; i < edges.length; i++) {
+            const e = edges[i];
+            if (e.source !== id && e.target !== id) continue;
+            const b = EB[e.type] || 'association';
+            out[b] = (out[b] || 0) + 1;
+          }
+          return out;
+        })();
+        const BUCKET_ORDER = ['transmission','parallel','association','kinship','attestation','polemic','fusion'];
+        const bucketHex = (b) => (local.params && local.params['active_color_' + b]) || '#999999';
+        const pills = BUCKET_ORDER.map(b => {
+          const n = counts[b] || 0;
+          if (!n) return '';
+          return '<span class="forge-side-panel-wire" style="color:' + bucketHex(b) + '">'
+            + '<span class="forge-side-panel-wire-dot" style="background:' + bucketHex(b) + '"></span>'
+            + n + ' <em>' + b + '</em>'
+            + '</span>';
+        }).filter(Boolean).join('');
+
+        // Date.
+        const fmtYear = (y) => {
+          if (typeof y !== 'number' || !isFinite(y)) return '';
+          if (y < 0) return Math.abs(y) + ' BCE';
+          if (y === 0) return '0';
+          return y + ' CE';
+        };
+        const de = (typeof node.date_earliest === 'number') ? node.date_earliest
+                 : (typeof node['period-active-earliest'] === 'number') ? node['period-active-earliest']
+                 : null;
+        const dl = (typeof node.date_latest === 'number') ? node.date_latest
+                 : (typeof node['period-active-latest'] === 'number') ? node['period-active-latest']
+                 : null;
+        const dateStr = (de == null && dl == null) ? ''
+          : (de != null && dl != null && de !== dl) ? (fmtYear(de) + ' – ' + fmtYear(dl))
+          : fmtYear(de != null ? de : dl);
+        // Place.
+        const place = (node.region || node['place-of-origin'] || node['originating-place'] || node.location || node.origin || '');
+        // Domains.
+        const domains = Array.isArray(node.domains) ? node.domains.join(', ') : '';
+        // Wikipedia link.
+        const wikiPage = thumb && thumb.page ? thumb.page : null;
+
+        // Assemble. Uses safe text for everything user-facing
+        // except the bucket pills (which we built with known
+        // hex / English bucket strings — no untrusted input).
+        const safe = (s) => String(s || '').replace(/[&<>"']/g, c => (
+          { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]
+        ));
+        bodyEl.innerHTML = ''
+          + (thumb && thumb.src
+              ? '<div class="forge-side-panel-thumb"><img src="' + safe(thumb.src) + '" alt="" /></div>'
+              : '')
+          + '<div class="forge-side-panel-header">'
+          +   '<div class="forge-side-panel-name">' + safe(node.name || id) + '</div>'
+          +   (tradition ? '<div class="forge-side-panel-tradition">' + safe(tradition) + '</div>' : '')
+          + '</div>'
+          + (desc ? '<div class="forge-side-panel-desc">' + safe(desc) + '</div>' : '')
+          + (pills ? '<div class="forge-side-panel-wires">' + pills + '</div>' : '')
+          + '<dl class="forge-side-panel-meta">'
+          +   (dateStr ? '<dt>Date</dt><dd>' + safe(dateStr) + '</dd>' : '')
+          +   (place   ? '<dt>Place</dt><dd>' + safe(place)   + '</dd>' : '')
+          +   (domains ? '<dt>Domains</dt><dd>' + safe(domains) + '</dd>' : '')
+          + '</dl>'
+          + (extract ? '<div class="forge-side-panel-extract">' + safe(extract) + '</div>' : '')
+          + (wikiPage ? '<a class="forge-side-panel-wikilink" href="' + safe(wikiPage) + '" target="_blank" rel="noopener noreferrer">Open Wikipedia ↗</a>' : '');
+      }
+
+      // Expose the rerender entry so other code paths (e.g. mode
+      // switch) can refresh the panel when the underlying node may
+      // have been replaced.
+      local._renderSidePanel = render;
     }
 
     function wireTimelineScrubber() {
@@ -3638,6 +3845,13 @@
       // Phase 5B M-F2 (2026-05-20) — persist lock state on every
       // toggle (including click-empty clear).
       saveRuntimeState();
+      // Phase 19 (2026-05-21) — notify the side-panel observer. Fires
+      // ONLY on an ADD (id passed + new in lockedSet). Unlock /
+      // clear doesn't pulse the panel toggle (no fresh content).
+      // Defensive try/catch so a panel-side error never breaks lock.
+      if (id != null && local.lockedSet.has(id) && typeof local._onLockChange === 'function') {
+        try { local._onLockChange(id); } catch (e) { /* ignore */ }
+      }
     }
 
     // ── Interaction handlers ────────────────────────────
