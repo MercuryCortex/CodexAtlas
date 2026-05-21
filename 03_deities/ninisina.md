@@ -10,9 +10,9 @@ period-active-latest: -1700
 domains: ["healing", "medicine", "midwifery", "city-goddess of Isin"]
 gender: "feminine"
 role: "patron healing-goddess of Isin; divine physician; queen of the *azu* (physicians) and *asû* lore"
-parent-of: ["[[damu]] (her son, also a healing god)"]
-child-of: ["[[an-sumerian|An]]", "[[uras]]"]
-consort: ["[[pabilsag]]"]
+parent-of: ["damu (her son, also a healing god)"]
+child-of: ["[[an-sumerian|An]]", "uras"]
+consort: ["pabilsag"]
 attributes: ["dog (her sacred animal — dog burials and dog-figurines at Isin healing-cult sites)", "surgical / scalpel-iconography (rare)", "lance / staff in some seal scenes"]
 attested-in: ["[[phase-1-003-enheduanna-hymns]]"]
 equivalents: ["[[gula-akkadian|Gula]]", "[[bau-sumerian|Bau]] (partially overlapping, distinct in Early Dynastic)", "Ninkarrak (closely identified)"]

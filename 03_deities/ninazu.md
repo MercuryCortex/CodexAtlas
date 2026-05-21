@@ -12,10 +12,10 @@ gender: "masculine"
 role: "chthonic god; underworld deity; lord of healing; father of Ningishzida"
 parent-of: ["[[ningishzida]]"]
 child-of: ["[[ereshkigal]] (in the Enegi tradition — son of Ereshkigal alone)", "[[enlil]] and [[nin-lil-sumerian|Ninlil]] (alternate tradition)"]
-consort: ["[[ningirida]]"]
+consort: ["ningirida"]
 attributes: ["the *mušḫuššu* (snake-dragon) — Ninazu's emblematic creature, later transferred to Tishpak of Eshnunna and then to Marduk of Babylon", "serpent / snake imagery generally", "the underworld-gate"]
 attested-in: ["[[phase-1-001-kesh-temple-hymn]]", "[[phase-1-003-enheduanna-hymns]]"]
-equivalents: ["[[tishpak]] (replaces Ninazu at Eshnunna in the Akkadian period — direct cult-successor)", "[[ningishzida]] (his son, very similar chthonic-healing profile)"]
+equivalents: ["tishpak (replaces Ninazu at Eshnunna in the Akkadian period — direct cult-successor)", "[[ningishzida]] (his son, very similar chthonic-healing profile)"]
 syncretic-edges:
   - target: "tishpak"
     type: "ancient-identification"
@@ -71,7 +71,7 @@ Ninazu ("Lord-Physician" in Sumerian) is a chthonic deity with a double profile:
 Ninazu has limited mythological narrative; he is a regularly-named member of the underworld pantheon (alongside Ereshkigal, Namtar, and others) and a frequent recipient of cult-attention in healing and apotropaic contexts. His son **Ningishzida** has a more developed mythology — including the descent-to-the-underworld text *Ningishzida's Journey to the Underworld* — that probably reflects the family-business of chthonic-healing inherited from Ninazu.
 
 ## Cross-tradition identifications
-- **[[tishpak]]** — *ancient-identification*: cult-successor at Eshnunna. Wiggermann 1992 traces the *mušḫuššu* snake-dragon: Ninazu → Tishpak → Marduk (after Hammurabi's incorporation of Eshnunna ~-1762, the Marduk cult of Babylon absorbs the Tishpak emblem). The Babylonian *mušḫuššu* — the snake-dragon at the Ishtar Gate and on Marduk's standard — is therefore traceable back to Ninazu at Eshnunna.
+- **tishpak** — *ancient-identification*: cult-successor at Eshnunna. Wiggermann 1992 traces the *mušḫuššu* snake-dragon: Ninazu → Tishpak → Marduk (after Hammurabi's incorporation of Eshnunna ~-1762, the Marduk cult of Babylon absorbs the Tishpak emblem). The Babylonian *mušḫuššu* — the snake-dragon at the Ishtar Gate and on Marduk's standard — is therefore traceable back to Ninazu at Eshnunna.
 - **[[ningishzida]]** — *ancient-identification*: son and functional successor in chthonic-healing.
 - **[[ereshkigal]]** — *ancient-identification*: in the Enegi tradition, his mother — the Mesopotamian queen of the underworld.
 

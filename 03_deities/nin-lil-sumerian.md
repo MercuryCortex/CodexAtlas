@@ -11,7 +11,7 @@ domains: ["grain (Sud aspect)", "air/wind (as consort of Enlil)", "motherhood", 
 gender: "feminine"
 role: "high goddess; consort of Enlil; mother of major deities"
 parent-of: ["[[nanna-sin]]", "[[nergal]]", "[[ninurta]]", "[[ninazu]]"]
-child-of: ["[[haya]]", "[[ninshebargunu]]"]
+child-of: ["haya", "ninshebargunu"]
 consort: ["[[enlil]]"]
 attributes: ["horned crown", "no fixed independent iconography — depicted alongside Enlil"]
 attested-in: ["[[phase-1-001-kesh-temple-hymn]]", "[[phase-1-006-atrahasis]]", "[[phase-1-015-sumerian-king-list]]"]

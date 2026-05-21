@@ -16,7 +16,7 @@ consort: ["[[enki-ea]]"]
 attributes: ["omega-shaped symbol (uterus/womb)"]
 attested-in: ["[[phase-1-001-kesh-temple-hymn]]", "[[phase-1-006-atrahasis]]"]
 equivalents: []
-status: "stub"
+status: "metadata"
 refs:
   - title: "Sumerian Religion"
     author: "Black, Jeremy & Green, Anthony"

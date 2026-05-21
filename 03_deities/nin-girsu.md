@@ -10,7 +10,7 @@ period-active-latest: -1700
 domains: ["thunderstorm and rain", "agriculture (irrigation, plowing)", "warfare and conquest", "kingship of Lagash"]
 gender: "masculine"
 role: "warrior-storm-agricultural god; city god of Girsu; son of Enlil"
-parent-of: ["[[ig-alima]]", "[[shul-shaga]]"]
+parent-of: ["ig-alima", "shul-shaga"]
 child-of: ["[[enlil]]", "[[nin-lil-sumerian]]"]
 consort: ["[[bau-sumerian]]"]
 attributes: ["lion-headed mace", "Anzu-bird emblem (the Imdugud / lion-headed eagle of the Lagash state)", "plow", "thunderbolt"]

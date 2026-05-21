@@ -10,7 +10,7 @@ period-active-latest: -1700
 domains: ["reeds and marshland (her father Ningikuga is a reed god)", "consort-queen of the moon", "motherhood of the major astral deities"]
 gender: "feminine"
 role: "consort of Nanna/Sin the moon god; mother of Inanna and Utu"
-parent-of: ["[[inanna-sumerian]]", "[[utu-shamash]]", "[[ishkur]]"]
+parent-of: ["[[inanna-sumerian]]", "[[utu-shamash]]", "ishkur"]
 child-of: ["[[ningikuga]]", "[[ninhursag-nintud]]"]
 consort: ["[[nanna-sin]]"]
 attributes: ["seated goddess in horned crown beside Nanna", "lunar disc by association"]
@@ -56,7 +56,7 @@ tags: [deity, sumerian, ur, ningal, nanna-consort, moon-goddess, mother-of-inann
 # Ningal
 
 ## Identity
-Ningal ("Great Lady") is the consort of [[nanna-sin]] (the Sumerian moon god) and mother of the two major astral deities — [[inanna-sumerian]] (Venus) and [[utu-shamash]] (the sun) — and in many traditions also of [[ishkur]] (storm). Her cult center is the **Egipar**, the *en*-priestess's residence within the Ekishnugal temple complex at Ur; she is the female counterpart to Nanna and the divine recipient of the *en*-priestess's service (the same office held by [[enheduanna]]). She is the daughter of Ningikuga (a reed god) and Ninhursag in some genealogies. From the Old Babylonian period she is increasingly known by her Akkadian/West-Semitic name Nikkal, and the cult migrates into Aramaic and Ugaritic spheres via Harran, where the moon-cult of Sin and Nikkal survives into Late Antiquity.
+Ningal ("Great Lady") is the consort of [[nanna-sin]] (the Sumerian moon god) and mother of the two major astral deities — [[inanna-sumerian]] (Venus) and [[utu-shamash]] (the sun) — and in many traditions also of ishkur (storm). Her cult center is the **Egipar**, the *en*-priestess's residence within the Ekishnugal temple complex at Ur; she is the female counterpart to Nanna and the divine recipient of the *en*-priestess's service (the same office held by [[enheduanna]]). She is the daughter of Ningikuga (a reed god) and Ninhursag in some genealogies. From the Old Babylonian period she is increasingly known by her Akkadian/West-Semitic name Nikkal, and the cult migrates into Aramaic and Ugaritic spheres via Harran, where the moon-cult of Sin and Nikkal survives into Late Antiquity.
 
 ## Earliest attestation
 - Early Dynastic god lists from Fara/Shuruppak and Abu Salabikh (~-2600 to -2500) name NIN.GAL among the senior pantheon.

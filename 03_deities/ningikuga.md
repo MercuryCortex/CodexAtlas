@@ -17,7 +17,7 @@ attributes: ["reed-bundle (the standard Sumerian symbol of [[inanna-sumerian]] i
 attested-in: []
 equivalents: []
 syncretic-edges: []
-status: "stub"
+status: "metadata"
 refs:
   - title: "Götterepitheta des sumerischen Pantheons"
     author: "Tallqvist, Knut L."

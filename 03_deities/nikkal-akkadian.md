@@ -12,7 +12,7 @@ gender: "feminine"
 role: "Akkadian/West-Semitic counterpart of Sumerian [[nin-gal-sumerian]]; consort of Sin/Yarikh"
 parent-of: ["[[inanna-sumerian]] (inherited)", "[[utu-shamash]] (inherited)"]
 child-of: []
-consort: ["[[nanna-sin]] (Mesopotamian)", "[[yarikh-ugaritic]] (Ugaritic, in *Marriage of Nikkal*)"]
+consort: ["[[nanna-sin]] (Mesopotamian)", "yarikh-ugaritic (Ugaritic, in *Marriage of Nikkal*)"]
 attributes: ["seated goddess in horned crown", "crescent moon (by consort association)", "fruits and dowry-vessels (in the Ugaritic Marriage)"]
 attested-in: []
 equivalents: ["[[nin-gal-sumerian]]"]
