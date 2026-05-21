@@ -10,9 +10,9 @@ period-active-latest: 400
 domains: ["love", "beauty", "sexuality", "vegetation/gardens (original sphere)", "victory", "ancestor of the Julians"]
 gender: "feminine"
 role: "goddess of love; ancestral mother of the Julian house and (via Aeneas) of Rome itself"
-parent-of: ["[[aeneas]]"]
+parent-of: ["Aeneas (Trojan hero / ancestor of Rome; Venus's son via Anchises — no node yet)"]
 child-of: []
-consort: ["[[mars-roman]] (in literary mythology)", "[[vulcan]] (Greek Hephaestus pairing imported)"]
+consort: ["[[mars-roman]] (in literary mythology)", "[[vulcan-roman]] (Greek Hephaestus pairing imported)"]
 attributes: ["dove", "scallop shell", "myrtle", "rose"]
 attested-in: []
 equivalents: ["[[aphrodite-greek]]", "[[astarte-canaanite]] (via Venus Erycina)", "[[ishtar-akkadian]]", "[[inanna-sumerian]]"]

@@ -20,7 +20,7 @@ syncretic-edges:
   - target: "hestia"
     type: "ancient-identification"
     source: "Plutarch, Cicero passim"
-status: "stub"
+status: "metadata"
 refs:
   - title: "Religions of Rome"
     author: "Beard, Mary; North, John; Price, Simon"

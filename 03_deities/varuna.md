@@ -21,7 +21,7 @@ syncretic-edges:
     type: "scholarly-parallel"
     source: "Boyce 1975; Thieme 1960"
     notes: "The Indo-Iranian *Asura/Ahura* connection: Vedic Varuṇa (an asura) shares the sovereign moral-order role with Avestan Ahura Mazda. Direct equation contested but the cognate role is widely accepted."
-status: "stub"
+status: "metadata"
 refs:
   - title: "The Rigveda: The Earliest Religious Poetry of India"
     author: "Jamison, S.W. and Brereton, J.P."
