@@ -25,7 +25,7 @@ syncretic-edges:
     type: "cosmic-pair"
     source: "Greimas, Algirdas Julius (1992). Of Gods and Men: Studies in Lithuanian Mythology. Indiana UP."
     notes: "The sky-father (Dievas or Perkūnas) / earth-mother (Žemyna) pairing is the Baltic form of the most widespread Indo-European cosmological dyad. Žemyna's intimate household presence (addressed at every meal, childbirth, and death by pouring a libation on the ground) contrasts with the more distant sky-father deities — suggesting older, pre-Indo-European substrate religious practice that survived alongside the later PIE sky-god theology."
-status: "stub"
+status: "metadata"
 refs:
   - title: "The Balts"
     author: "Gimbutas, Marija"

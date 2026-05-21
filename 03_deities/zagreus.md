@@ -20,7 +20,7 @@ syncretic-edges:
   - target: "dionysus"
     type: "ancient-identification"
     source: "Orphic theology identifies Zagreus as the *first* Dionysus, son of Zeus and Persephone; the *second* Dionysus is the Theban son of Zeus and Semele who carries the same divine substance."
-status: "stub"
+status: "metadata"
 refs:
   - title: "Redefining Ancient Orphism"
     author: "Edmonds, Radcliffe G. III"

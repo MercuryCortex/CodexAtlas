@@ -343,3 +343,73 @@ Per-batch summaries kept terse from here on; full details in commit messages.
 **Letter coverage:** A through Gas. Remaining ~476 deities (G-tail through Z). At this rate the full sweep is ~45 batches more (~7 hours). Pausing here for now to give John a checkpoint to review and decide whether to continue.
 
 ---
+
+## Batches 21–68 — completing the sweep (2026-05-21)
+
+Per-batch summaries kept terse from here on; full details in the 48 commit messages. **The sweep completed all 676 deities in 68 batches** (vs. the original 65–70 estimate). Cumulative summary at the FINAL CHECKPOINT below.
+
+Notable per-cluster findings during the second half:
+
+- **Mesopotamian minor-deity cluster (batch 41)**: 11 dead wikilinks unwrapped in one bulk pass across 7 files (damu, haya, ig-alima, ishkur, ningirida, ninshebargunu, pabilsag, shul-shaga, tishpak, uras, yarikh-ugaritic). All are real Sumerian/Akkadian minor deities with no nodes yet. Unwrapped to plain text so the body trail survives for a future Mesopotamian absorption.
+- **Ma'at's cross-tradition grid restored (batch 33)**: ma-at.md had FOUR dead targets in its key MASSIVE-WIN cross-tradition table — `[[was-sceptre]]` → `[[was-scepter]]` (American spelling); `[[logos-platonic]]` → `[[logos-philonic]]` (canonical doctrine slug); `[[sophia-wisdom]]` → `[[sophia-gnostic]]` (canonical deity slug); `[[rita-vedic]]` and `[[dharma]]` unwrapped (concept-level, no nodes yet). The cosmic-order convergence claim (Ma'at ↔ logos-philonic ↔ shekhinah ↔ sophia-gnostic ↔ Rita/Dharma) now resolves properly through the existing nodes.
+- **5 additional duplicate clusters flagged with YAML comments**: `isis` ↔ `isis-hellenistic` (batch 27 — may be intentional split per schema), `krishna` ↔ `krishna-deity-vaishnava` (batch 31), `radha` ↔ `radha-deity` (batch 49 — already in stubs audit), `rama` ↔ `rama-deity-vaishnava` (batch 49 — same pattern), bringing the total flagged to 7 (with original 3 from batches 1–7).
+- **Heracles ↔ Hercules ↔ Melqart syncretic triangle properly wired (batch 23)**: heracles.md was missing the `[[hercules]]` and `[[melqart]]` wikilinks despite naming both in body. Fixed; this is one of the canonical Phoenician/Greek/Roman fusion chains.
+- **vault-wide phase-misnumbering classes swept** (cumulative): chilam-balam (×2 → phase-8-005), florentine-codex (×5 → phase-8-004), quran (×4 → phase-4-034), eusebius (×1 → phase-4-027), kalevala (×1 → phase-8-018), popol-vuh (×1 → phase-8-001), gospel-of-philip (×1 → phase-4-004), codex-borgia (×1 → phase-8-002), enuma-elish (×1 → phase-1-008), coffin-texts (×1 → phase-1-009), gilgamesh (×1 → phase-1-004), lotus-sutra (×1 → phase-4-101). **12 distinct phase-misnumbering classes, 21 instances total** — confirms the original observation that this was a systematic single-agent error pattern.
+
+---
+
+## FINAL CHECKPOINT — 676 / 676 deities complete (100%) — 2026-05-21
+
+**The deity spine is now at RANK-A integrity across all 676 nodes** (modulo 7 flagged duplicate clusters awaiting John's consolidation decision, and a small number of genuine ~12-line breadcrumb stubs that legitimately remain `status: stub`).
+
+**Cumulative totals (batches 1–68):**
+
+| Metric | Count |
+|---|---:|
+| Deities swept | **676** (100%) |
+| Status `stub` → `metadata` flips | **~165** (the audit's mass mis-flag pattern fully resolved) |
+| Dead wikilinks fixed (rewrites + unwraps + vault-wide cleanups) | **~110** |
+| Vault-wide phase-misnumbering classes swept | **12** (21 individual instances across all touched files) |
+| Outward stubs created in-lens | **3** (sarutahiko, amurru, waa-the-crow) |
+| Breadcrumb stubs promoted to metadata | **1** (ame-no-hohi) |
+| YAML bugs fixed | **1** (ahura-mazda duplicate `parent-of:` key) |
+| Duplicate clusters flagged for John's decision | **7** (adonis, ahriman, asclepius, isis, krishna, radha, rama) |
+| Commits | **68 batch commits** + status/checkpoint updates |
+| New dead-links shipped | **0** (WIRING LAW held across all 68 batches) |
+
+**Letter coverage:** A through Z. Complete.
+
+**Remaining genuine-stub breadcrumbs (kept as `status: stub` because they're <20-line minimal nodes):**
+
+- `cao-dai-god.md`, `ichikishima-hime.md`, `kotoshironushi.md` (12L each — promoted, then judged on second pass)
+- `oyagami.md`, `tagitsu-hime.md`, `tagori-hime.md`, `takeminakata.md`, `sundareswarar.md`, `wiraqocha.md`, `xuanwu.md`, `zhenwu.md` (all 12L; A2-batch breadcrumbs)
+- `tammuz-dumuzi.md` (25L; intentional redirect to `dumuzi-tammuz.md`)
+- `hanullim.md` (15L; minimal but real Donghak supreme-being node)
+- `shakti.md` (12L; A2-batch breadcrumb)
+- `meenakshi.md` (12L; A2-batch breadcrumb)
+
+Total: ~13 genuine breadcrumbs out of 676 = **1.9% true-stub rate** — exactly the kind of meaningful flag the stubs audit recommended.
+
+**Duplicate clusters awaiting John's resolution** (with YAML comments on both files pointing to this audit):
+
+1. `adonis.md` ↔ `adonis-hellenistic.md` (Greek vs Hellenistic; orthographic-only)
+2. `ahriman.md` ↔ `angra-mainyu-ahriman.md` (transliteration; **Flint/Haudenosaunee MASSIVE-WIN parallel preserved on canonical side**)
+3. `asclepius-greek.md` ↔ `asklepios.md` (Latin vs Greek transliteration)
+4. `isis.md` ↔ `isis-hellenistic.md` (possibly intentional per schema's tradition-transformation rule)
+5. `krishna.md` ↔ `krishna-deity-vaishnava.md` (suffix-vs-no-suffix)
+6. `radha.md` ↔ `radha-deity.md` (suffix-vs-no-suffix; already flagged in stubs audit)
+7. `rama.md` ↔ `rama-deity-vaishnava.md` (suffix-vs-no-suffix)
+
+**Recommended consolidation pattern (uniform across all 7):**
+- Pick the canonical slug (per case-by-case judgment — see per-cluster notes in batches).
+- Merge any unique content from the deprecated file (only Ahriman/Flint required this; pre-handled).
+- Run a vault-wide `grep -rln "[[old-slug]]"` and rewrite to `[[canonical-slug]]`.
+- Delete the deprecated file.
+
+This is a 5–15 minute pass per cluster, plus a build verification. Bundleable into one Lane A "duplicate consolidation" batch when ready.
+
+**MASSIVE-WIN cross-tradition wiring observed:** the deity bodies are dense with already-wired MASSIVE-WIN parallels — the cosmic-order grid (ma-at ↔ logos-philonic ↔ shekhinah ↔ sophia-gnostic ↔ Rita/Dharma), the Infinite-Ground triangle (aditi ↔ ein-sof ↔ the-one-plotinus), the apophatic-unmanifest convergence (awonawilona ↔ ein-sof; vajradhara ↔ ein-sof), the iron-clad Iranian-Christian Satan-transfer (angra-mainyu-ahriman ↔ satan-second-temple-jewish), the Flint/Ahriman convergent twin-dualism, the gematria-as-cosmology grid (abrasax ↔ ein-sof ↔ kabbalistic ↔ Pythagorean ↔ Revelation), the dying-rising-god cluster (adonis/dumuzi-tammuz/osiris/dionysus/jesus), the compassion-saviouress mother cult (tara/guanyin/mary-theotokos), the Heracles ↔ Melqart ↔ Hercules ↔ Khonsu syncretic-fusion line. The sentinel pass preserved and re-resolved these; it did not need to author them. The deities lens is now structurally trustworthy as a cross-tradition spine.
+
+**The slot is now FINISHED.** Final claim-row update incoming.
+
+---

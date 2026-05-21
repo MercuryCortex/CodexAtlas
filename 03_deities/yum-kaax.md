@@ -23,7 +23,7 @@ syncretic-edges:
   - target: "[[corn-mother]]"
     type: "structural-parallel"
     source: "Body-of-the-deity-is-the-cultivar pattern; in the Maya tradition the maize-god is male (Hun Hunahpu, Yum Kaax), in Cherokee/Pueblo the maize-deity is female (Selu, the Corn Maidens) — the same theological logic with opposite gender assignment"
-status: "stub"
+status: "metadata"
 refs:
   - title: "The Major Gods of Ancient Yucatan"
     author: "Taube, Karl A."

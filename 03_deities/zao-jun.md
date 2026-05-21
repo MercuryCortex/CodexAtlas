@@ -15,7 +15,7 @@ key-texts:
   - "Wang Chong, *Lunheng* (~80 CE) — earliest detailed literary reference to kitchen god worship"
   - "Various Ming and Qing dynasty household almanacs describing the ritual cycle"
 syncretic-edges:
-  - target: "[[yu-huang]]"
+  - target: "[[jade-emperor]]"
     type: "reports-to"
     notes: "Zao Jun reports directly to the Jade Emperor (Yu Huang) on the 23rd day of the 12th lunar month — the annual divine audit of household behavior. He is the Jade Emperor's intelligence agent at the domestic level: the celestial bureaucracy's smallest and most intimate surveillance node. Through this reporting chain, every Chinese household is connected to the highest divine authority."
   - target: "[[chitragupta]]"

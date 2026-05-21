@@ -30,7 +30,7 @@ syncretic-edges:
   - target: "phanes-protogonos"
     type: "ancient-identification"
     source: "Orphic Rhapsodic Theogony: Zeus swallows [[phanes-protogonos]] (the first-born from the cosmic egg laid by [[nyx-primordial]]) and re-originates the cosmos from within himself — the Orphic basis for the Zeus-is-all henotheist articulation"
-status: "stub"
+status: "metadata"
 refs:
   - title: "Greek Religion"
     author: "Burkert, Walter"
