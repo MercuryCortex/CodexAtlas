@@ -30,6 +30,10 @@ syncretic-edges:
     type: "iconographic-transmission-hypothesis"
     source: "Grabar 1968; Mathews 1993; Mango 1972 — the Christ-as-cosmic-ruler iconographic type (enthroned, bearded, frontal, right-hand-raised) inherits formal vocabulary from the Phidian Zeus of Olympia via the documented presence of the statue in the Lauseion at Constantinople (~391–426 CE) during the precise period when the Pantokrator type crystallizes (5th–6th c. CE). Tier 2–3 hypothesis (Jensen 2005 skeptic); see [[zeus-pantokrator-transmission]] for full chain"
     notes: "MASSIVE-WIN: pertains to the Pantokrator iconographic emergence rather than to Christological doctrine; the divine subject is the same, but the *image-form* may carry an unacknowledged pagan-sculptural lineage"
+  - target: "[[theme-solomonic-transmission-spine]]"
+    type: "Wisdom-Christology-endpoint"
+    source: "Hahn 2008, *King and Messiah as Son of God*; Torijano 2002, *Solomon the Esoteric King* — Thread 5 of the Solomonic transmission spine: the New Testament explicitly positions Jesus as 'greater than Solomon' (Matt 12:42, Luke 11:31) in a wisdom-contest framing. The Wisdom books pseudonymously attributed to Solomon (Proverbs, Ecclesiastes, Song of Songs, Wisdom of Solomon, Sirach) become the *substrate of early Christian Wisdom Christology* — Jesus as the personified Wisdom (Sophia) who was with God before creation (John 1, Proverbs 8:22–31). Solomon as the paradigmatic Wisdom-bearer makes his texts the raw material for the Christological synthesis. See [[theme-solomonic-transmission-spine]] Thread 5"
+    notes: "MASSIVE-WIN: the Solomonic Wisdom-corpus attribution is the load-bearing mechanism by which the personified-Sophia of Hellenistic Judaism becomes the pre-incarnate Christ of patristic theology — Solomon → Wisdom of Solomon → Philonic Sophia/Logos → Johannine Logos → incarnate Christ"
 status: "metadata"
 refs:
   - title: "The Christian Tradition, vol. 1: The Emergence of the Catholic Tradition (100-600)"

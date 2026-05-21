@@ -44,6 +44,10 @@ syncretic-edges:
   - target: "abrasax"
     type: "comparative-Gnostic"
     source: "Both Yaldabaoth and Abrasax are Gnostic demiurgic / supreme-archon figures; the Basilidean Abrasax 365-aeon system shares the Mesopotamian-Hellenistic astrological substrate (Babylonian calendar science) that the Sethian seven-archon system also draws on. See [[theme-mesopotamian-gnostic-transmission]] Chain 5"
+  - target: "templar-gnostic-transmission-hypothesis"
+    type: "polemic-inversion-figure-of-occult-reception"
+    source: "Hammer-Purgstall 1818, *Mysterium Baphometis revelatum*; Goodrick-Clarke 1985 — the Hammer-Purgstall Gnostic-variant of the Templar-Gnostic transmission hypothesis claims the Templars' alleged renunciation of Christ in the trial confessions was a renunciation of the *demiurgic Yahwistic Christ* (i.e. Yaldabaoth) in favor of a Gnostic *true* Christ. While the Tier-1 historical claim is unsupported, the figure of Yaldabaoth-as-demiurgic-false-creator becomes load-bearing for the 19th–21st-c. esoteric reconstruction of an alleged Templar Gnostic theology. See [[templar-gnostic-transmission-hypothesis]]"
+    notes: "Reception-history Tier-3 edge: Yaldabaoth as the Gnostic anti-creator is invoked in the imagined Templar-Gnostic theology (Hammer-Purgstall 1818 → Lévi 1854 → modern occult continuator literature) to explain the Templar trial-confession renunciation. The historical claim is unsupported; the reception is the actual edge"
 status: "full"
 refs:
   - title: "The Secret Revelation of John"

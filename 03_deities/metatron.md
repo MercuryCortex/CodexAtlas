@@ -16,6 +16,10 @@ syncretic-edges:
   - target: "michael-archangel"
     type: "scholarly-parallel"
     source: "Functional overlap as chief angel; not identification in source texts. Cf. Boustan 2005"
+  - target: "merkabah-miraj-ascent-chain"
+    type: "central-figure-of-ascent-spine"
+    source: "Scholem 1941, *Major Trends in Jewish Mysticism*; Scholem 1965, *Jewish Gnosticism, Merkabah Mysticism, and Talmudic Tradition*; Halperin 1988; Schäfer 2009 — Metatron is the climactic transformation-endpoint of the Hekhalot heavenly-ascent tradition: in *3 Enoch / Sefer Hekhalot*, Enoch (the founding ascended patriarch of the chain) is taken up and transformed into Metatron the 'Lesser YHWH' enthroned beside God's throne. This is the most extreme statement of human-to-divine transformation in the entire Merkabah → Mi'raj → Dante ascent tradition. See [[merkabah-miraj-ascent-chain]]"
+    notes: "MASSIVE-WIN: Metatron is the human-pole of the entire ascent tradition's deity-end — the patriarch who becomes the chief angel is the structural template for Christological + Sufi-perfect-human + Dantesque-Beatrice ascent figures all the way through to the 1320 *Paradiso*"
 status: "full"
 refs:
   - title: "3 Enoch / Sefer Hekhalot, translated in Old Testament Pseudepigrapha vol. 1"
