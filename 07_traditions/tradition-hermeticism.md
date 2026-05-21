@@ -10,6 +10,17 @@ key-deities: ["[[hermes-trismegistus]]", "[[poimandres]]", "[[nous-hermetic]]"]
 key-persons: []
 key-documents: ["[[phase-4-011-corpus-hermeticum-i]]", "[[phase-4-012-asclepius]]", "[[phase-4-013-discourse-on-the-eighth-and-ninth]]"]
 sister-traditions: ["[[tradition-gnosticism]]", "[[tradition-neoplatonism]]"]
+hub-edges:
+  - target: "hermetic-transmission-chain"
+    type: "namesake-tradition-of-transmission"
+    source: "Yates 1964 *Giordano Bruno and the Hermetic Tradition*; Fowden 1986 *The Egyptian Hermes*; Copenhaver 1992 *Hermetica*; Hanegraaff 2012 *Esotericism and the Academy* — Hermeticism IS the namesake tradition of the 2,300-year hermetic-transmission-chain. The Corpus Hermeticum (~100-300 CE Alexandria) is the founding canon; the tradition runs through Phase 2 Byzantine preservation → Phase 3 Florentine ignition (Ficino 1463) → Phase 4 radical-wing (Bruno, Agrippa, Dee) → Phase 5 Rosicrucian/Masonic underground → Phase 6 modern occult revival → Phase 7 academic recovery (Yates 1964). See [[hermetic-transmission-chain]]"
+    notes: "MASSIVE-WIN: 07_traditions → 06_themes"
+  - target: "theme-egyptian-gnostic-transmission"
+    type: "Alexandrian-synthesis-tradition"
+    source: "Fowden 1986; Pearson 1990 *Gnosticism, Judaism, and Egyptian Christianity*; Copenhaver 1992 — Hermeticism is the Alexandrian-Egyptian-priestly intellectual tradition that operates in the same milieu as Sethian Gnosticism (Nag Hammadi Codex VI contains Hermetic texts), serving as the Egyptian-end channel for the Egyptian → Gnostic transmission. See [[theme-egyptian-gnostic-transmission]]"
+  - target: "alchemy-as-spiritual-discipline"
+    type: "philosophical-source-tradition-of-alchemical-stream"
+    source: "Principe 2007 *Distilling Knowledge*; Newman 2004 *Promethean Ambitions*; Fowden 1986 — Hermeticism is the philosophical source-tradition of the Greco-Egyptian → Arabic → Latin European alchemical stream. Zosimos of Panopolis (~310 CE) draws on Hermetic cosmology for his visionary-alchemical works; the *Tabula Smaragdina* is Hermetic-attributed. See [[alchemy-as-spiritual-discipline]]"
 status: "metadata"
 refs:
   - title: "The Egyptian Hermes"

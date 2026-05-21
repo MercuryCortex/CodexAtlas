@@ -10,6 +10,21 @@ key-deities: ["[[the-one-plotinus]]", "[[nous-plotinus]]", "[[the-world-soul]]"]
 key-persons: ["[[plotinus]]", "[[porphyry]]", "[[iamblichus]]", "[[proclus]]", "[[hypatia]]", "Damascius", "Simplicius", "[[julian-the-apostate]] (imperial adherent)"]
 key-documents: ["[[phase-4-019-plotinus-enneads]]", "[[phase-4-020-iamblichus-on-the-mysteries]]", "[[phase-4-021-proclus-elements-of-theology]]", "[[phase-4-022-chaldean-oracles]]"]
 sister-traditions: ["[[tradition-hellenistic-philosophy]]", "[[tradition-hermeticism]]", "[[tradition-gnosticism]]"]
+hub-edges:
+  - target: "neoplatonic-henosis"
+    type: "namesake-tradition-of-mystical-union"
+    source: "Plotinus *Enneads* VI.9; Porphyry *Vita Plotini* §23 (Plotinus's four documented unions); Sells 1994 *Mystical Languages of Unsaying*; McGinn 1991 *The Foundations of Mysticism* — Neoplatonism is the namesake tradition of *henosis* (mystical union with the One). The hub documents the cross-tradition convergence Plotinian *henosis* → Sufi *fanā'* → Kabbalistic *devekut* → Hindu *samādhi* → Christian *theosis*; Neoplatonism is the source-tradition the others structurally parallel. See [[neoplatonic-henosis]]"
+    notes: "MASSIVE-WIN: 07_traditions → 06_themes. Neoplatonism gives the tradition its philosophical vocabulary"
+  - target: "hermetic-transmission-chain"
+    type: "philosophical-spine-of-transmission"
+    source: "Yates 1964 *Giordano Bruno and the Hermetic Tradition*; Fowden 1986 *The Egyptian Hermes*; Hanegraaff 2012 — Neoplatonism is the philosophical spine of the 2,300-year hermetic-transmission-chain: Plotinus → Porphyry → Iamblichus → Proclus → Pseudo-Dionysius (Phase 1-2 Byzantine preservation) → Plethon → Ficino (Phase 3 Florentine ignition) → Renaissance Platonist revival. Without the Neoplatonist tradition, no Hermetic synthesis as we know it. See [[hermetic-transmission-chain]]"
+    notes: "Cross-lens: 07_traditions → 06_themes"
+  - target: "soul-exile-longing"
+    type: "philosophical-tradition-of-pattern"
+    source: "Jonas 1963 *The Gnostic Religion*; Plotinus *Enneads* I.6 + IV.8 — Neoplatonism is the philosophical tradition that articulates the soul-exile-longing pattern in its prose-philosophical form (soul-descent → entanglement → epistrophē-return). The Plotinian formulation becomes the template Christian + Sufi + Vedāntic traditions structurally parallel. See [[soul-exile-longing]]"
+  - target: "third-century-collision-zone"
+    type: "tradition-anchor-of-3rd-c-synthesis-window"
+    source: "Porphyry *Vita Plotini* §16; Plotinus *Enneads* II.9 'Against the Gnostics'; Turner 2001; Burns 2014 — Neoplatonism is one of the four major traditions operating in the 3rd-century collision zone (Plotinian school in Rome + Sethian Gnostics + Mani's emerging synthesis + Origen's Christian Platonism), with documentary evidence of direct cross-tradition contact (Plotinus's anti-Gnostic refutations, Porphyry's 40-book refutation of *Zostrianos*). See [[third-century-collision-zone]]"
 status: "metadata"
 refs:
   - title: "Stanford Encyclopedia of Philosophy: Neoplatonism"
