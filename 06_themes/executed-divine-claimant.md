@@ -86,6 +86,8 @@ tags:
 
 # The Executed Divine Claimant — Mystic Martyrdom Pattern
 
+> **Seven-lens panorama essay**: [[00_meta/MASSIVE-WIN-essays/executed-divine-claimant|*The Executed Divine Claimant — A Seven-Lens Panorama of the Cross-Tradition Spine*]] (Phase 17, 2026-05-21) tours every lens-pole wired to this hub (deity / person / document / tradition / event / symbol / place) and identifies three findings the panorama exposes: the Iranian-Shīʿī chain as the densest non-Christian articulation; Mani at the structural center; Bruno as the modern boundary case.
+
 A recurring cross-cultural pattern: a figure who publicly claims direct union with, identity to, or mission from the divine — or who possesses knowledge that threatens the established religious order — is executed by state or priestly authority. The community around the figure reinterprets the execution as itself a divine event. The killing becomes the proof.
 
 This is not a diffusionist claim (the pattern is not transmitted from one tradition to the next in every case) but a **structural finding**: independent traditions produce the same pattern because the logic is inherent to the relationship between mystical disclosure and institutional religion. The pattern also has a traceable relay line — Justin Martyr consciously connecting Socrates to Christ, Sufi masters consciously connecting al-Hallaj to their tradition — which makes it a MASSIVE-WIN in the vault's terms: a pattern that is both structurally universal AND partially historically connected.
