@@ -22,7 +22,7 @@ syncretic-edges:
   - target: "[[nanna-sin]]"
     type: "scholarly-parallel"
     source: "Cross-tradition lunar deity associated with time-reckoning and calendrics"
-status: "stub"
+status: "metadata"
 refs:
   - title: "Kojiki"
     author: "Philippi, Donald L. (trans.)"

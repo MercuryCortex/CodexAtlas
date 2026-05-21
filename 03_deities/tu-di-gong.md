@@ -10,7 +10,7 @@ period-active-latest: 2025
 domains: ["protection of local territory", "agriculture", "prosperity", "mediation between community and heaven"]
 gender: "masculine (usually depicted as an elderly, white-bearded official)"
 role: "hyper-local bureaucratic deity; lowest rung of the divine hierarchy; annual report-sender to the Jade Emperor; every neighborhood, village, and plot has one"
-status: "stub"
+status: "metadata"
 refs:
   - title: "Popular Religion in China: The Imperial Metaphor"
     author: "Feuchtwang, Stephan"

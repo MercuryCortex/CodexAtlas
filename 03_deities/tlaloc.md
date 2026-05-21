@@ -68,7 +68,7 @@ Tlaloc's attributes and functions parallel the rain-storm god complex across wor
 | Aztec | Tlaloc | Goggle-eyes; mountain-caves as rain-source; Tlalocan paradise; children's tears as rain-mechanism |
 | Maya | [[chac]] | Long nose; serpentine lightning; ax-god aspect |
 | Zapotec | Cocijo | Combines Tlaloc and Cociyo features; clearly in same pan-Mesoamerican complex |
-| Mesopotamian | [[adad]] / [[ishkur-sumerian]] | Thunder and rain; storm as divine warfare |
+| Mesopotamian | Adad (Akkadian) / Ishkur (Sumerian) — no nodes yet | Thunder and rain; storm as divine warfare |
 | Greek | [[zeus]] | Thunderbolt; rain as divine power |
 | Vedic / Hindu | [[indra]] | Storm-warrior; rain-giver; slayer of Vritra (drought-demon) |
 | Norse | [[thor]] | Thunder-hammer; storm; agriculture protector |

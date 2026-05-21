@@ -30,7 +30,7 @@ syncretic-edges:
   - target: "demeter"
     type: "scholarly-parallel"
     source: "Eliade 1958 — earth-mother / fertility-grief parallel; Demeter as Greek earth-fertility-mother with chthonic aspect"
-status: "stub"
+status: "metadata"
 refs:
   - title: "The Aztecs"
     author: "Townsend, Richard F."
