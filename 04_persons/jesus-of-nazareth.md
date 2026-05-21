@@ -15,6 +15,19 @@ texts-authored: []
 texts-attributed-to: ["sayings collections including [[phase-3-014-q-source]]; the Synoptic and Johannine traditions claim him as their core figure"]
 events-participated: ["Baptism by John (~+29)", "Galilean ministry (~+29/+30)", "Cleansing of the Temple", "Last Supper (~+30 Passover)", "Crucifixion under Pontius Pilate (~+30/+33)"]
 mentioned-in: ["[[phase-3-014-q-source]]", "[[phase-3-015-pauline-epistles]] (earliest extant references, ~+50)", "[[phase-3-016-gospel-of-mark]]", "[[phase-3-017-gospel-of-matthew]]", "[[phase-3-018-luke-acts]]", "[[phase-3-020-gospel-of-john]]", "**Josephus *Antiquities* 18.63–64** (*Testimonium Flavianum* — partially interpolated)", "**Josephus *Antiquities* 20.200** (James 'brother of Jesus who was called Christ')", "Tacitus *Annals* 15.44 (executed under Pilate)", "Pliny the Younger *Epistles* 10.96 (Christians worship 'Christ as to a god')", "Suetonius *Claudius* 25 (disturbances at Rome 'at the instigation of Chrestus')", "rabbinic traditions in b. Sanh. 43a, 107b (later, polemical)"]
+hub-edges:
+  - target: "theme-dying-founder-paradigm"
+    type: "paradigmatic-person-of-cross-tradition-pattern"
+    source: "Brown 1994 *The Death of the Messiah* (2 vols.); Sanders 1985 *Jesus and Judaism*; Meier 1991+ *A Marginal Jew* — the crucifixion under Pontius Pilate (~30 CE) is the paradigm case of the dying-founder pattern at the *person* lens (jesus-of-nazareth as historical individual). The fact of execution is documented externally (Tacitus *Annals* 15.44; Josephus 18.63-64); subsequently the meaning of the death becomes the tradition's entire organizing content. See [[theme-dying-founder-paradigm]]"
+    notes: "Cross-lens: 04_persons → 06_themes. Companion to [[jesus-christ-deity]]'s edge from the 03_deities lens — the dying-founder paradigm operates across BOTH lens-poles of the same dual-nature figure (the person's death + the deity's cosmic-meaning together generate Christianity)"
+  - target: "executed-divine-claimant"
+    type: "paradigmatic-person-of-cross-tradition-pattern"
+    source: "Massignon 1982 *The Passion of al-Hallaj* (the canonical Socrates-Jesus-Hallaj structural-isomorphism argument); Brown 1994; Moltmann 1972 *The Crucified God* — Jesus is the central instance of the executed-divine-claimant pattern. The Sanhedrin charge of blasphemy (per Mark 14:61-64) is the divine-claim-as-trigger-for-execution mechanism the pattern documents. See [[executed-divine-claimant]]"
+    notes: "Cross-lens: 04_persons → 06_themes. The Massignon thesis (Socrates → Jesus → al-Hallaj as the three-isomorphism case) puts Jesus at the structural center of the cross-tradition cluster"
+  - target: "messianic-genealogy"
+    type: "endpoint-of-Davidic-genealogy-claim"
+    source: "Brown 1977 *The Birth of the Messiah*; Vermes 1973 *Jesus the Jew* — Matthew 1:1-17 (3×14 generations encoding David's gematria) + Luke 3:23-38 (back to Adam via the alternative Lukan line) construct Jesus's Davidic genealogy as the load-bearing Christological legitimation. See [[messianic-genealogy]]"
+    notes: "Cross-lens: 04_persons → 06_themes. The genealogy-as-theology pattern: the gospels' opening genealogies are not biographical record but theological argument structured in numerical-genealogical form"
 status: "metadata"
 refs:
   - title: "Jesus and Judaism"

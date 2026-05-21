@@ -11,6 +11,11 @@ date-died: 254
 historicity: "documented"
 texts-authored: ["[[phase-4-026-origen-on-first-principles]]", "*Contra Celsum*", "*Commentary on John*", "*Hexapla* (six-column synopsis of OT versions)", "Homilies on most biblical books"]
 originator-of: ["[[apokatastasis]]"]
+hub-edges:
+  - target: "third-century-collision-zone"
+    type: "Christian-anchor-of-3rd-c-synthesis-window"
+    source: "Crouzel 1989 *Origen*; Trigg 1998 *Origen* (Early Church Fathers); BeDuhn 'The Co-formation of the Manichaean and Zoroastrian Religions' — Origen (~185-254 CE Alexandria → Caesarea) is the CHRISTIAN-tradition anchor of the 3rd-century collision zone (200–280 CE). He shared Ammonius Saccas as teacher with Plotinus — making the two founders of subsequent Greek philosophical theology + systematic Christian theology siblings of the same Alexandrian teaching milieu. His *De Principiis* (~220-230s CE) + his apokatastasis doctrine reads as a Christian-theological synthesis of the same problems Plotinus + Mani + Sethian Gnostics were working in the same period. See [[third-century-collision-zone]]"
+    notes: "MASSIVE-WIN: the Ammonius-Saccas → (Plotinus + Origen) fork is THE structural origin of the collision-zone — Western Christian theology and Neoplatonic philosophy are SIBLING traditions from the same Alexandrian parent. Cross-lens: 04_persons → 06_themes"
 status: "metadata"
 refs:
   - title: "Origen: An Introduction to His Life and Thought"

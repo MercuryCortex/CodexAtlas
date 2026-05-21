@@ -17,6 +17,15 @@ events-participated: ["Conquest of Media -550", "Conquest of Lydia -547", "[[eve
 mentioned-in: ["Cyrus Cylinder", "Nabonidus Chronicle", "Behistun inscription (referenced by [[darius-i-the-great]])", "Herodotus Histories book 1", "Xenophon Cyropaedia", "Ezra 1, 6", "Isaiah 44:28, 45:1 ('YHWH's anointed' — the only Gentile so called)"]
 successor: "[[darius-i-the-great]] (third Achaemenid king after Cyrus and Cambyses; the Zoroastrian-imperial-religious systematizer)"
 priestly-class-of-cyrus's-religion: "[[the-magi]] (the Zoroastrian priestly class; explicitly named in Matthew 2 Christian Nativity as 'Wise Men from the East')"
+hub-edges:
+  - target: "persian-period-injection"
+    type: "instantiation-point-of-mashiach"
+    source: "Briant 2002 *From Cyrus to Alexander*; Boyce 1982 *History of Zoroastrianism* vol. II; Collins 1998 *The Apocalyptic Imagination*; the Cyrus Cylinder; Isaiah 44:28 + 45:1 — Cyrus II is THE instantiation-point of the Persian-period injection. Isaiah 45:1 calls him *YHWH's anointed (mashiach)* — the *only* Gentile so designated in the entire Hebrew Bible. His 539 BCE conquest of Babylon + the Restoration Edict (538 BCE) trigger the two-century Achaemenid-period contact in which the six-channel doctrinal exchange operates. See [[persian-period-injection]]"
+    notes: "MASSIVE-WIN: Cyrus is the historical individual whose specific kingship-theology gives the developing Jewish messianic concept its first concrete instantiation. The messiah-concept Christianity later attaches to a Davidic descendant BEGINS by being attached to a Persian Achaemenid king. Cross-lens: 04_persons → 06_themes"
+  - target: "theme-zoroastrian-jewish-exchange"
+    type: "triggering-historical-figure-of-exchange"
+    source: "Boyce 1975-1991; Shaked 1984 *Iranian Influences in Judaism*; Briant 2002 — Cyrus's conquest of Babylon (539 BCE) + the Restoration Edict (538 BCE) authorize the Jewish return from exile + initiate the two-century Achaemenid-period contact in which the six-channel Zoroastrian-Jewish theological exchange operates (cosmic dualism + Satan + angelology + demonology + resurrection + messianism). See [[theme-zoroastrian-jewish-exchange]]"
+    notes: "Cross-lens: 04_persons → 06_themes. Cyrus's policy of religious tolerance + restoration-of-conquered-peoples'-temples is the historical-political mechanism that creates the conditions for the theological exchange to occur"
 status: "stub"
 refs:
   - title: "From Cyrus to Alexander: A History of the Persian Empire"

@@ -15,6 +15,15 @@ texts-authored: []
 texts-attributed-to: []
 mentioned-in: ["[[phase-3-002-plato-dialogues]] (the central interlocutor in virtually all dialogues)", "[[phase-3-022-plato-timaeus-critias-atlantis]] (as the framing interlocutor)", "[[phase-2-030-euripides-bacchae]] (Euripides was his contemporary; Aristophanes parodied him in The Clouds c.423 BCE)"]
 events-participated: []
+hub-edges:
+  - target: "executed-divine-claimant"
+    type: "Greek-philosophical-precursor-of-pattern"
+    source: "Vlastos 1991 *Socrates: Ironist and Moral Philosopher*; Brickhouse & Smith 1989 *Socrates on Trial*; Waterfield 2009 *Why Socrates Died*; Massignon 1982 *The Passion of al-Hallaj* (for the Socrates-Jesus-Hallaj structural isomorphism) — Socrates's execution by Athens in 399 BCE on charges of impiety and corrupting the youth is the Greek-philosophical precursor of the executed-divine-claimant pattern. His daimonion (divine voice) + claim to philosophical-religious authority + refusal to recant + acceptance of the hemlock all instantiate the pattern. See [[executed-divine-claimant]]"
+    notes: "MASSIVE-WIN: Socrates is the *non-religious* precursor of the pattern — the case that establishes the pattern can run in philosophical-rationalist register, not only in mystical-prophetic register. Massignon's Socrates → Jesus → al-Hallaj argument places him at the structural origin of the cluster. Cross-lens: 04_persons → 06_themes"
+  - target: "theme-dying-founder-paradigm"
+    type: "philosophical-precursor-of-founder-paradigm"
+    source: "Plato's *Apology* + *Phaedo* (the dramatic record of the trial and death, the most influential ancient philosophical biography); Vlastos 1991 — Socrates is the *philosophical* precursor of the dying-founder paradigm: the teacher who wrote nothing, whose execution catalyzed his student Plato to write everything. Plato's dialogues are partly a 40-year meditation on the meaning and injustice of Socrates's death. The Socrates-Plato relationship structurally parallels Jesus-Paul (executed teacher → systematizing student who builds the tradition). See [[theme-dying-founder-paradigm]]"
+    notes: "Cross-lens: 04_persons → 06_themes. The *Phaedo* is structurally a passion narrative — the executed-teacher's last hours as the genre that Plato invents"
 status: "metadata"
 refs:
   - title: "Socrates: Ironist and Moral Philosopher"

@@ -15,6 +15,11 @@ texts-authored: []
 texts-attributed-to: ["[[phase-3-004-1-enoch]]", "2 Enoch (Slavonic)", "3 Enoch (Sefer Hekhalot)"]
 events-participated: []
 mentioned-in: ["[[phase-2-005-hebrew-bible-j-source]]", "[[phase-3-004-1-enoch]]", "[[phase-3-009-jubilees]]", "[[phase-5-013-hekhalot-literature]]", "[[phase-4-034-quran]]"]
+hub-edges:
+  - target: "merkabah-miraj-ascent-chain"
+    type: "founding-ascended-patriarch"
+    source: "Nickelsburg 2001 *1 Enoch* (Hermeneia); Boccaccini 2009 *Enoch and the Mosaic Torah*; Scholem 1941 — Enoch is the founding-ascended-patriarch of the heavenly-journey tradition: Genesis 5:24 ('Enoch walked with God, and he was not, for God took him') is the seed-text; 1 Enoch (composed in stages ~300 BCE - 50 BCE) elaborates the celestial tours; *3 Enoch* / *Sefer Hekhalot* climactically transforms Enoch into [[metatron]] the 'Lesser YHWH'. The Enochic tradition establishes: human-bodily-ascent + gnosis-from-ascent + angelic-mediation + transformation-of-ascender. See [[merkabah-miraj-ascent-chain]]"
+    notes: "MASSIVE-WIN: Enoch is the *human pole* of the entire ascent tradition's deity-end — his transformation into Metatron IS the most extreme statement of human-to-divine transformation in Jewish mystical literature. Cross-lens: 04_persons → 06_themes"
 status: "stub"
 refs:
   - title: "1 Enoch (Hermeneia)"

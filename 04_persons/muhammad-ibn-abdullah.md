@@ -12,6 +12,11 @@ historicity: "documented (with debates about details of biography that are typic
 texts-authored: ["[[phase-4-034-quran]] (transmitted, in Islamic tradition; recipient of revelation in scholarly historiography)"]
 events-participated: ["[[event-hegira-622]]", "[[event-conquest-of-mecca-630]]", "[[event-death-of-muhammad-632]]"]
 mentioned-in: ["[[phase-5-043-ibn-ishaq-sirat-rasul-allah]] (canonical Sira-tradition biography)", "[[phase-5-007-sahih-al-bukhari]]", "[[phase-5-042-sahih-muslim]]"]
+hub-edges:
+  - target: "merkabah-miraj-ascent-chain"
+    type: "Islamic-recipient-of-ascent-tradition"
+    source: "Schäfer 2009 *Mohammed's Journey to Heaven* (the definitive modern scholarly treatment of the Mi'raj's Jewish antecedents); Ibn Ishaq *Sirat Rasul Allah* (the canonical biography); Surah 17:1 (the *Isrāʾ*) + 53:13-18 (the *Mi'raj*) — Muhammad's Night Journey + Ascension (619 CE per Sira tradition) carries Muhammad from Mecca to Jerusalem on the Buraq + ascends through the seven heavens encountering Adam + Jesus + John + Joseph + Idris (Enoch) + Aaron + Moses + Abraham at successive levels, culminating at the Lote Tree of the Uttermost Boundary. Schäfer documents specific parallels with Hekhalot literature that cannot be coincidental — Muhammad was in contact with Jewish communities in Arabia (including the Medinan Jewish tribes pre-Hijra); the Mi'raj is the Islamic reception and transformation of the Jewish heavenly-journey tradition. See [[merkabah-miraj-ascent-chain]]"
+    notes: "MASSIVE-WIN: Muhammad's Mi'raj is the Islamic-Arabian inheritance + transformation of the Jewish Merkabah-Hekhalot tradition; the Mi'raj subsequently becomes the model for Sufi mystical ascent (Ibn Arabi's *Kitāb al-Isrāʾ*) AND feeds Dante's *Paradiso* via 13th-c. Andalusian transmission (the *Liber Scalae*). Cross-lens: 04_persons → 06_themes"
 status: "metadata"
 refs:
   - title: "Muhammad and the Believers"

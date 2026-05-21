@@ -29,6 +29,11 @@ influences:
   - "[[phase-5-056-divine-comedy]] (Dante's Paradiso — the living creatures of Ezekiel 1 as the four evangelists in the Empyrean)"
   - "[[tetramorph]] (the four living creatures of Ezekiel 1 = the Tetramorph of Christian iconography)"
   - "Revelation 4 (the Apocalypse's throne scene directly quotes Ezekiel 1)"
+hub-edges:
+  - target: "merkabah-miraj-ascent-chain"
+    type: "founding-figure-of-ascent-tradition"
+    source: "Scholem 1941 *Major Trends in Jewish Mysticism*; Halperin 1988 *The Faces of the Chariot*; Schäfer 2009 *Mohammed's Journey to Heaven* — Ezekiel's chariot vision (Ezekiel 1, ~593 BCE Babylonian exile) is THE founding text of the entire 2,000-year heavenly-ascent tradition that runs Merkabah → Hekhalot → Mi'raj → Dante. The Talmud's secrecy protocol (b. Hagigah 11b-16a) — 'the divine chariot may not be expounded in public' — is itself the founding-attestation of the chariot-vision as the gateway to an esoteric tradition. See [[merkabah-miraj-ascent-chain]]"
+    notes: "MASSIVE-WIN: Ezekiel is the person-lens origin of the ascent tradition — the priest in exile by the Chebar canal whose vision starts the chain. Without his Ezekiel 1 vision, no Merkabah → Hekhalot → Mi'raj → Paradiso chain. Cross-lens: 04_persons → 06_themes"
 status: "metadata"
 refs:
   - title: "Ezekiel 1-20 (Anchor Bible)"
