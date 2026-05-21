@@ -24,7 +24,7 @@ syncretic-edges:
   - target: "[[raven-trickster]]"
     type: "scholarly-parallel"
     source: "Across North America, the **culture-hero-and-trickster** is one figure (Glooscap, Manabozho, Coyote, Raven, Wisakedjak) — the same theological-narrative role is filled by regionally appropriate animal-or-anthropomorphic figures; the cross-tradition pattern is universal across the continent"
-status: "stub"
+status: "metadata"
 refs:
   - title: "The Algonquin Legends of New England"
     author: "Leland, Charles G."

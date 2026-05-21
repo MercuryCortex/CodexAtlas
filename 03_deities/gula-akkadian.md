@@ -10,7 +10,7 @@ period-active-latest: -100
 domains: ["healing and medicine", "midwifery", "exorcistic and incantation healing (alongside the *asû* and *āšipu*)", "dogs (her sacred animal)"]
 gender: "feminine"
 role: "supreme healing goddess of the Akkadian/Babylonian pantheon; the Akkadian counterpart and absorber of Sumerian [[bau-sumerian]], [[ninisina]], and Ninkarrak"
-parent-of: ["[[damu]]", "[[ninazu]]?", "[[gunura]]"]
+parent-of: ["Damu (Sumerian healer-god, son of Gula — no node yet)", "[[ninazu]] (relationship uncertain)", "Gunura (sister of Damu in Gula's family — no node yet)"]
 child-of: ["[[an-sumerian]]"]
 consort: ["[[ninurta]] (in the Isin/Babylonian theological system, after Ninurta absorbs Pabilsag)"]
 attributes: ["dog (her sacred animal — votive dogs deposited at her sanctuaries)", "scalpel and bandage", "seated goddess in horned crown", "stars and surgical implements on kudurrus"]

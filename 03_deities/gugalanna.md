@@ -14,7 +14,7 @@ parent-of: []
 child-of: []
 consort: ["[[ereshkigal]]"]
 attributes: ["bull-form (the celestial Bull)", "horns of cosmic destruction"]
-attested-in: ["[[phase-1-006-gilgamesh-standard-version]]", "Descent of Inanna textual tradition (the funeral for Gugalanna is the pretext for Inanna's descent — she comes ostensibly to mourn her sister Ereshkigal's husband)"]
+attested-in: ["[[phase-1-004-gilgamesh-old-babylonian]]", "[[phase-1-017-descent-of-inanna]] (the funeral for Gugalanna is the pretext for Inanna's descent — she comes ostensibly to mourn her sister Ereshkigal's husband)"]
 equivalents: []
 syncretic-edges:
   - target: "[[ereshkigal]]"
@@ -24,7 +24,7 @@ syncretic-edges:
   - target: "[[bull]]"
     type: "structural-parallel"
     source: "Gugalanna is the canonical Mesopotamian instance of the cosmic-bull motif that recurs across the ancient Near East — the Apis bull, the Cretan Minotaur, the Mithraic tauroctony"
-status: "stub"
+status: "metadata"
 refs:
   - title: "The Babylonian Gilgamesh Epic: Introduction, Critical Edition, and Cuneiform Texts"
     author: "George, Andrew R."

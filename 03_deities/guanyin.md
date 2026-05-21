@@ -26,7 +26,7 @@ syncretic-edges:
   - target: "mazu"
     type: "popular-religious-parallel"
     source: "Mazu (Lin Moniang) — Chinese sea-goddess; both function as compassionate feminine saviours in popular religion; sometimes assimilated."
-status: "stub"
+status: "metadata"
 refs:
   - title: "Kuan-yin: The Chinese Transformation of Avalokitesvara"
     author: "Yü, Chün-fang"

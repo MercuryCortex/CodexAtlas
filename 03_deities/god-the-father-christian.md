@@ -14,7 +14,7 @@ parent-of: ["[[jesus-christ-deity]]"]
 child-of: []
 consort: []
 attributes: ["throne (apocalyptic)", "ancient-of-days iconography (white hair, white robe, per Daniel 7)", "hand emerging from cloud (Byzantine and medieval art)"]
-attested-in: ["[[phase-3-015-pauline-epistles]]", "[[phase-3-020-gospel-of-john]]", "[[phase-3-016-gospel-of-mark]]", "[[phase-4-020-eusebius-ecclesiastical-history]]"]
+attested-in: ["[[phase-3-015-pauline-epistles]]", "[[phase-3-020-gospel-of-john]]", "[[phase-3-016-gospel-of-mark]]", "[[phase-4-027-eusebius-ecclesiastical-history]]"]
 equivalents: []
 syncretic-edges:
   - target: "[[yahweh]]"
@@ -26,7 +26,7 @@ syncretic-edges:
   - target: "[[the-monad-gnostic]]"
     type: "polemic-against"
     source: "Sethian Gnostic systems distinguish the Father from the OT creator; Apocryphon of John identifies the OT creator as Yaldabaoth and the true Father as the Monad"
-status: "stub"
+status: "metadata"
 refs:
   - title: "The Christian Tradition, vol. 1: The Emergence of the Catholic Tradition (100-600)"
     author: "Pelikan, Jaroslav"
