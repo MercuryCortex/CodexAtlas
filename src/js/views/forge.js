@@ -2785,28 +2785,31 @@
       else                      bgFade = (0.50 - zoomPct) / (0.50 - 0.10);
       bgImage.style.opacity = bgFade.toFixed(3);
 
-      // Phase 21D (2026-05-21) — FUNDAMENTAL transform-driven BG.
-      // The element is fixed at 100vw × 100vh with object-fit:
-      // cover (CSS guarantees no gaps at any viewport size).
-      // All we compute here is the TRANSFORM that makes the
-      // already-covered box follow the wheel:
+      // Phase 21F (2026-05-21) — scale anchor moved from gizmo
+      // 10% to gizmo 0% (the theoretical "infinitely zoomed out"
+      // limit). The mapping is:
       //
-      //   • scale = zoom relative to the fill-coverage floor.
-      //     At gizmo 10% (floor) scale = 1 (box = viewport, full
-      //     cover). At higher zoom, scale > 1 so the box grows
-      //     beyond viewport — the visible window through the
-      //     viewport shows a smaller central crop of the image,
-      //     same as the wheel growing in pixels.
-      //   • dx, dy = how far the wheel's world centre has moved
-      //     from the viewport centre. Pan moves world (0, 0)
-      //     across the viewport; the BG follows by the same
-      //     pixel delta. transform-origin is the centre of the
-      //     box so scale and translate compose cleanly.
-      //   • Below gizmo 10% we floor scale at 1.0 — the image
-      //     stays at fill-coverage even if the user / engine
-      //     manages to push the camera further out.
-      const sizeZoomPct = Math.max(0.10, zoomPct);
-      const scale       = sizeZoomPct / 0.10;
+      //   scale = 1 + 9 × zoomPct
+      //
+      // so:
+      //   gizmo  0% (unreachable) → scale = 1.0  (image at its
+      //                              NATURAL pixel size)
+      //   gizmo 10% (camera floor) → scale = 1.9 (image 1.9× native)
+      //   gizmo 100% (fit zoom)   → scale = 10   (huge; invisible
+      //                              anyway, since opacity = 0
+      //                              above gizmo 50%)
+      //
+      // Why this anchor: the IMG element has its natural 2668 ×
+      // 2000 pixels at scale 1.0 (CSS no longer forces 100vw /
+      // 100vh). At the gizmo 10% floor it's 1.9× native — bigger
+      // than any normal viewport on every axis — so panning
+      // through the floor always reveals more image, never a
+      // gap. The "scale 1.0 = native size" anchor at the
+      // unreachable 0% means we never see the moment where the
+      // image just-barely-covers; we always see overflow.
+      // Same growth rate as the previous formula (10 units of
+      // scale per 1 unit of zoomPct).
+      const scale = 1 + 9 * zoomPct;
       // World (0, 0) projected to canvas-screen, then converted
       // to viewport-screen using the canvas's bounding rect.
       const centerCanvas = camera.worldToScreen(0, 0, vp);
@@ -2825,7 +2828,15 @@
       const dx = wheelVpX - vpCenterX;
       const dy = wheelVpY - vpCenterY;
 
+      // Phase 21E diagnostic — image is at natural size (CSS no
+      // longer enforces 100vw × 100vh). CSS positions the
+      // image's top-left at the viewport centre; `translate(-50%,
+      // -50%)` shifts it so the image's OWN centre lands at the
+      // viewport centre. The additional `translate(dx, dy)`
+      // then moves the image's centre to the wheel's projected
+      // viewport position.
       bgImage.style.transform =
+        'translate(-50%, -50%) ' +
         'translate(' + dx.toFixed(1) + 'px,' + dy.toFixed(1) + 'px) ' +
         'scale(' + scale.toFixed(4) + ')';
     }

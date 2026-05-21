@@ -6830,21 +6830,21 @@ body.view-forge #detail-inner {
    Hulls + labels both pointer-events:none so they never
    intercept hover.
    --family-color is set per group from JS (node.family_color). */
-/* Phase 21D (2026-05-21) — FUNDAMENTAL BG. The image element is
-   ALWAYS 100vw × 100vh with `object-fit: cover`, so the browser's
-   own engine guarantees it covers every viewport corner at every
-   viewport size — there is no JS path that can compute a wrong
-   pixel size and leave a gap. To follow the wheel through pan +
-   zoom, JS only writes `transform: translate(dx, dy) scale(s)`
-   + `opacity`. The transform-origin is the centre of the box,
-   so scale grows from the same point pan tracks. */
+/* Phase 21E (2026-05-21) — DIAGNOSTIC: BG image at its natural
+   resolution (2668 × 2000), positioned at viewport top-left,
+   then translated to the wheel centre via JS transform. No
+   fill, no cover-fit. If this renders visibly the underlying
+   DOM/CSS path is intact; if it STILL appears clipped to a
+   smaller box, something outside this code path is establishing
+   a containing block or sizing cap. Width/height/object-fit
+   were removed so the <img> element falls back to its intrinsic
+   dimensions. */
 .forge-bg-image {
   position: fixed;
-  top: 0; left: 0;
-  width: 100vw;
-  height: 100vh;
-  object-fit: cover;
-  object-position: center center;
+  /* Anchor the image's top-left at viewport centre; JS then adds
+     translate(-50%, -50%) to centre the image on its own midpoint,
+     plus the (dx, dy) offset that follows the wheel. */
+  top: 50%; left: 50%;
   transform-origin: 50% 50%;
   z-index: 0;
   pointer-events: none;
