@@ -7316,16 +7316,16 @@ body.view-forge .forge-canvas {
    control rhythm. */
 body.view-forge {
   /* Heartbeat rhythm — period of one full pulse. */
-  --fx-period:           5.5s;
+  --fx-period:           7.0s;
   /* Disk — rest state (the calm between beats). */
-  --fx-blur-base:        16.0px;
-  --fx-bright-base:      1.00;
-  --fx-sat-base:         1.00;
+  --fx-blur-base:        20.0px;
+  --fx-bright-base:      1.50;
+  --fx-sat-base:         1.50;
   /* Disk — pulse state (the brightest moment of the beat). */
-  --fx-blur-peak:        14.0px;
+  --fx-blur-peak:        20.0px;
   --fx-bright-peak:      2.00;
-  --fx-sat-peak:         2.00;
-  --fx-hue-peak:        -16deg;
+  --fx-sat-peak:         3.00;
+  --fx-hue-peak:         0deg;
   /* Hull — calm counter-phased layer. */
   --fx-hull-bright-peak: 1.30;
   --fx-hull-sat-peak:    1.55;
@@ -7333,7 +7333,14 @@ body.view-forge {
 }
 body.view-forge.fx-bloom .forge-canvas {
   filter: blur(var(--fx-blur-base)) brightness(var(--fx-bright-base)) saturate(var(--fx-sat-base));
-  animation: forge-fx-heartbeat var(--fx-period) ease-in-out infinite;
+  /* Phase 21AD (2026-05-22) — symmetric transitions. The 0.45s
+     animation-delay lets the `transition: filter` on the base rule
+     ramp from "no filter" to the rest state smoothly. Without it,
+     the animation starts immediately at its 0% keyframe (=the rest
+     state) and snaps the filter, preempting the transition — which
+     is what made close→wide zoom feel jumpy while wide→close was
+     smooth (the exit had no such preemption). */
+  animation: forge-fx-heartbeat var(--fx-period) ease-in-out 0.45s infinite;
   will-change: filter;
 }
 /* Heartbeat — "lub-dub" with a quick double-pump at the peak so it
@@ -7354,7 +7361,9 @@ body.view-forge .forge-hulls-overlay {
 }
 body.view-forge.fx-bloom .forge-hulls-overlay {
   filter: brightness(1.12) saturate(1.30);
-  animation: forge-fx-hull-heartbeat var(--fx-period) ease-in-out infinite;
+  /* Matches the canvas animation-delay so disks + hulls start
+     pulsing in sync after the entry transition completes. */
+  animation: forge-fx-hull-heartbeat var(--fx-period) ease-in-out 0.45s infinite;
   will-change: filter;
 }
 @keyframes forge-fx-hull-heartbeat {

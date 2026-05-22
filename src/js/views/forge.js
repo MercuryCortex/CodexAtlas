@@ -1099,16 +1099,16 @@
         '<button class="forge-fxpanel-btn" id="forge-fxpanel-btn" title="Floor-zoom FX tuning" aria-expanded="false">FX</button>' +
         '<div class="forge-fxpanel" id="forge-fxpanel" aria-hidden="true">' +
           '<div class="forge-fxpanel-section">Heartbeat rhythm</div>' +
-          '<div class="forge-fxpanel-row"><label>period <span class="forge-fxpanel-val" data-val="period">5.5s</span></label><input type="range" data-fx="period" min="1.5" max="14" step="0.1" value="5.5"></div>' +
+          '<div class="forge-fxpanel-row"><label>period <span class="forge-fxpanel-val" data-val="period">7.0s</span></label><input type="range" data-fx="period" min="1.5" max="14" step="0.1" value="7.0"></div>' +
           '<div class="forge-fxpanel-section">Disk — rest</div>' +
-          '<div class="forge-fxpanel-row"><label>blur <span class="forge-fxpanel-val" data-val="blur-base">16.0px</span></label><input type="range" data-fx="blur-base" min="0" max="30" step="0.1" value="16.0"></div>' +
-          '<div class="forge-fxpanel-row"><label>brightness <span class="forge-fxpanel-val" data-val="bright-base">1.00</span></label><input type="range" data-fx="bright-base" min="0.3" max="3" step="0.01" value="1.00"></div>' +
-          '<div class="forge-fxpanel-row"><label>saturate <span class="forge-fxpanel-val" data-val="sat-base">1.00</span></label><input type="range" data-fx="sat-base" min="0.3" max="3" step="0.01" value="1.00"></div>' +
+          '<div class="forge-fxpanel-row"><label>blur <span class="forge-fxpanel-val" data-val="blur-base">20.0px</span></label><input type="range" data-fx="blur-base" min="0" max="30" step="0.1" value="20.0"></div>' +
+          '<div class="forge-fxpanel-row"><label>brightness <span class="forge-fxpanel-val" data-val="bright-base">1.50</span></label><input type="range" data-fx="bright-base" min="0.3" max="3" step="0.01" value="1.50"></div>' +
+          '<div class="forge-fxpanel-row"><label>saturate <span class="forge-fxpanel-val" data-val="sat-base">1.50</span></label><input type="range" data-fx="sat-base" min="0.3" max="3" step="0.01" value="1.50"></div>' +
           '<div class="forge-fxpanel-section">Disk — pulse</div>' +
-          '<div class="forge-fxpanel-row"><label>blur <span class="forge-fxpanel-val" data-val="blur-peak">14.0px</span></label><input type="range" data-fx="blur-peak" min="0" max="30" step="0.1" value="14.0"></div>' +
+          '<div class="forge-fxpanel-row"><label>blur <span class="forge-fxpanel-val" data-val="blur-peak">20.0px</span></label><input type="range" data-fx="blur-peak" min="0" max="30" step="0.1" value="20.0"></div>' +
           '<div class="forge-fxpanel-row"><label>brightness <span class="forge-fxpanel-val" data-val="bright-peak">2.00</span></label><input type="range" data-fx="bright-peak" min="0.5" max="4" step="0.01" value="2.00"></div>' +
-          '<div class="forge-fxpanel-row"><label>saturate <span class="forge-fxpanel-val" data-val="sat-peak">2.00</span></label><input type="range" data-fx="sat-peak" min="0.5" max="3.5" step="0.01" value="2.00"></div>' +
-          '<div class="forge-fxpanel-row"><label>hue shift <span class="forge-fxpanel-val" data-val="hue-peak">-16°</span></label><input type="range" data-fx="hue-peak" min="-60" max="60" step="1" value="-16"></div>' +
+          '<div class="forge-fxpanel-row"><label>saturate <span class="forge-fxpanel-val" data-val="sat-peak">3.00</span></label><input type="range" data-fx="sat-peak" min="0.5" max="3.5" step="0.01" value="3.00"></div>' +
+          '<div class="forge-fxpanel-row"><label>hue shift <span class="forge-fxpanel-val" data-val="hue-peak">0°</span></label><input type="range" data-fx="hue-peak" min="-60" max="60" step="1" value="0"></div>' +
           '<div class="forge-fxpanel-section">Hulls (calm layer)</div>' +
           '<div class="forge-fxpanel-row"><label>brightness <span class="forge-fxpanel-val" data-val="hull-bright-peak">1.30</span></label><input type="range" data-fx="hull-bright-peak" min="0.8" max="2" step="0.01" value="1.30"></div>' +
           '<div class="forge-fxpanel-row"><label>saturate <span class="forge-fxpanel-val" data-val="hull-sat-peak">1.55</span></label><input type="range" data-fx="hull-sat-peak" min="0.5" max="2.5" step="0.01" value="1.55"></div>' +
@@ -2473,6 +2473,40 @@
       // Camera fit already done above (before packNodes) so the
       // pack ran at the correct scale. Just draw.
       drawFrame();
+    }
+
+    // ════════════════════════════════════════════════════════════
+    //  computeFaceObjectPosition(w, h) — Phase 21AD (2026-05-22)
+    // ════════════════════════════════════════════════════════════
+    //  Human heuristic for portraits in square crops: faces are
+    //  usually in the upper portion of vertical images, so the
+    //  square should clip MORE from the BOTTOM (i.e. image shifts
+    //  up). Square or horizontal images get the standard centered
+    //  position.
+    //
+    //  Returns a CSS `object-position` value (e.g. "center 11.4%").
+    //  Lower Y% = image's TOP aligns with crop TOP (more clipped at
+    //  bottom). Higher Y% = inverse.
+    //
+    //  Anchor case (John's spec, 2026-05-22):
+    //    image 960×1865 (aspect 0.515) → 103 px clipped above out
+    //    of 905 px excess → 11.4% of excess above center.
+    //
+    //  Formula (linear in verticality 1-aspect, clamped at 0):
+    //    if aspect ≥ 1.0  → "center" (50%)
+    //    else             → max(0, 50 - 79.6 × (1 - aspect)) %
+    //
+    //  The 79.6 slope is calibrated so the anchor case lands exactly
+    //  at 11.4%. Eases smoothly toward 50% as the image approaches
+    //  square; clamps to 0% (full top-align) for very thin portraits.
+    // ════════════════════════════════════════════════════════════
+    function computeFaceObjectPosition(w, h) {
+      if (!w || !h || w <= 0 || h <= 0) return 'center';
+      const aspect = w / h;
+      if (aspect >= 1) return 'center';
+      const verticality = 1 - aspect;       // 0..1, where 0 = square
+      const topPct      = Math.max(0, 50 - 79.6 * verticality);
+      return 'center ' + topPct.toFixed(1) + '%';
     }
 
     // ── Zoom gizmo (Phase 6d) ────────────────────────────
@@ -4512,7 +4546,7 @@
       // swapped the flicker-spike model for the heartbeat. v1
       // values reference dead keys (bright-flicker, -big) and
       // outdated defaults; ignore them silently on first load.
-      const LS_KEY = 'forge.fxParams.v2';
+      const LS_KEY = 'forge.fxParams.v3';
 
       // Format each slider's value for the on-screen readout AND
       // for the CSS var write. Three flavors:
@@ -5142,6 +5176,10 @@
         if (entry && entry.src) {
           img.onload  = function () {
             img.style.display = 'block';
+            // Phase 21AD (2026-05-22) — face-aware object-position.
+            // Portrait images shift upward so the head/face stays in
+            // the visible square crop. See computeFaceObjectPosition.
+            img.style.objectPosition = computeFaceObjectPosition(img.naturalWidth, img.naturalHeight);
             // Image just added height — re-measure + reposition.
             measure();
             schedulePosition();
@@ -5538,6 +5576,20 @@
           + (extract ? '<div class="forge-side-panel-extract">' + safe(extract) + '</div>' : '')
           + (wikiPage ? '<a class="forge-side-panel-wikilink" href="' + safe(wikiPage) + '" target="_blank" rel="noopener noreferrer">Open Wikipedia ↗</a>' : '')
           + '</div>';
+
+        // Phase 21AD (2026-05-22) — face-aware object-position on the
+        // carousel image. Same heuristic as the hover card: portraits
+        // shift up to keep the head visible inside the square crop.
+        const thumbImg = inner.querySelector('.forge-side-panel-thumb img');
+        if (thumbImg) {
+          const setPos = () => {
+            thumbImg.style.objectPosition = computeFaceObjectPosition(
+              thumbImg.naturalWidth, thumbImg.naturalHeight
+            );
+          };
+          if (thumbImg.complete && thumbImg.naturalWidth > 0) setPos();
+          else thumbImg.addEventListener('load', setPos, { once: true });
+        }
       }
 
       local._renderSidePanel = render;
@@ -6034,9 +6086,34 @@
     // ── Interaction handlers ────────────────────────────
     function attachInteractions() {
       // Pointer move → hover hit-test.
-      // Cache rect to avoid layout thrashing per pointermove.
+      // Cache rect to avoid layout thrashing per pointermove. The
+      // refresh hooks below keep it in sync.
       let canvasRect = canvas.getBoundingClientRect();
       const refreshRect = () => { canvasRect = canvas.getBoundingClientRect(); };
+
+      // Phase 21AD (2026-05-22) — `canvasRect` was being computed
+      // ONCE at attach time and never refreshed. When the side
+      // panel opened (or closed), the canvas shifted by ~360 px but
+      // canvasRect stayed at the old position. Result: clicks +
+      // hovers used stale coordinates and either missed the node
+      // under the cursor OR hit the wrong node. The "double-click
+      // to select" + "click anywhere first" symptoms BOTH trace
+      // back to this single staleness.
+      //
+      // Three refresh hooks, no per-frame cost on the hot path:
+      //   • pointerenter — definitive sync when cursor enters canvas
+      //   • pointerdown  — definitive sync just before click hit-test
+      //   • ResizeObserver — covers viewport + panel-toggle reflow
+      // Cheaper than calling getBoundingClientRect on every pointermove.
+      canvas.addEventListener('pointerenter', refreshRect);
+      // (pointerdown's refreshRect lives at its handler top — see below.)
+      try {
+        if (window.ResizeObserver) {
+          const rectObs = new ResizeObserver(refreshRect);
+          rectObs.observe(canvas);
+          if (canvas.parentElement) rectObs.observe(canvas.parentElement);
+        }
+      } catch (_) { /* ignore — fallback: pointerenter still fires */ }
 
       canvas.addEventListener('pointermove', (ev) => {
         if (local.destroyed) return;
@@ -6074,6 +6151,12 @@
         if (local.destroyed) return;
         // Only primary button. Touch / pen come through as button=0.
         if (ev.button !== 0) return;
+        // Phase 21AD — definitive rect sync right before the click
+        // hit-test reads it. Belt-and-braces with pointerenter +
+        // ResizeObserver above; keeps the click correct even if a
+        // layout shift happened between enter and click (e.g. a tab
+        // chevron animated in while the cursor was held still).
+        refreshRect();
         // setPointerCapture throws on untrusted (synthetic) events in
         // Chromium; we still want pan to work for automated testing.
         // It's a UX nicety for real input, not a correctness gate.
