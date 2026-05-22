@@ -7346,13 +7346,25 @@ body.view-forge {
      New separator vars (--style-sep-*) apply to BOTH the short
      and converging separator modes (the long-faded mode was
      removed in 21AK). */
+  /* Guide rings — single shared color + width + opacity OR per-ring
+     colors (inner / mid / outer). The per-ring colors default to the
+     same value as the shared ring-color; the Style panel exposes
+     them separately so they can be tinted independently. */
   --style-ring-color:        #6f8aaf;
+  --style-ring-inner-color:  #6f8aaf;
+  --style-ring-mid-color:    #6f8aaf;
+  --style-ring-outer-color:  #6f8aaf;
   --style-ring-width:        0.5;
   --style-ring-opacity:      0.5;
+  /* Separators — short + converging share width + opacity. The
+     converging mode has independent endpoint color + opacity for
+     each end (center vs outer). */
+  --style-sep-width:         0.5;
+  --style-sep-opacity:       0.5;
   --style-conv-center-color: #6f8aaf;
   --style-conv-edge-color:   #6f8aaf;
-  --style-sep-width:         0.5;
-  --style-sep-opacity:       1.0;
+  --style-conv-center-opacity: 1.0;
+  --style-conv-edge-opacity:   0.0;
 }
 body.view-forge.fx-bloom .forge-canvas {
   filter: blur(var(--fx-blur-base)) brightness(var(--fx-bright-base)) saturate(var(--fx-sat-base));
@@ -7702,11 +7714,16 @@ body.view-forge.fx-belowfifteen .forge-labels-overlay { display: none !important
   cursor: pointer;
 }
 
-/* Guide ring CSS — binds the stroke style to the Style panel vars
-   so they update live. JS no longer needs to setAttribute these. */
+/* Guide ring CSS — binds the stroke style to the Style panel vars.
+   Width + opacity are shared across all three rings; colour is
+   per-ring (--style-ring-inner-color, -mid-color, -outer-color)
+   so each ring can be tinted independently. */
 .forge-hull-guide-ring {
   fill: none;
   stroke: var(--style-ring-color, #6f8aaf);
   stroke-opacity: var(--style-ring-opacity, 0.5);
-  stroke-width: var(--style-ring-width, 1);
+  stroke-width: var(--style-ring-width, 0.5);
 }
+.forge-hull-guide-ring[data-ring="inner"] { stroke: var(--style-ring-inner-color, var(--style-ring-color, #6f8aaf)); }
+.forge-hull-guide-ring[data-ring="mid"]   { stroke: var(--style-ring-mid-color,   var(--style-ring-color, #6f8aaf)); }
+.forge-hull-guide-ring[data-ring="outer"] { stroke: var(--style-ring-outer-color, var(--style-ring-color, #6f8aaf)); }

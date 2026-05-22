@@ -219,10 +219,39 @@
       // Per-wedge target radius for each rank — stored on the
       // point so the relaxation pass can pull members back
       // toward their age band after angular pushing.
+      // Phase 21AL (2026-05-23) — distribution mode controls how
+      // targetR is computed: 'organic' (default, oldest=outer
+      // linear), 'age-bands' (concentric fixed-year bands),
+      // 'vogel' (sqrt(i/N) for sunflower equal-area distribution).
+      const distribution = (o.distribution || 'organic');
+      const AGE_BANDS    = [-3000, -1500, -500, 500, 1500, 2026];
       const targetR = new Array(N);
       for (let i = 0; i < N; i++) {
         const ageT = N > 1 ? i / (N - 1) : 0.5;
-        targetR[i] = rMid + (1 - 2 * ageT) * radHalf;
+        if (distribution === 'vogel') {
+          // Sqrt for equal-area sunflower seed distribution.
+          const t = N > 1 ? i / (N - 1) : 0.5;
+          targetR[i] = rIn + (rOut - rIn) * Math.sqrt(t);
+        } else if (distribution === 'age-bands') {
+          // Find the band index for this member's date_earliest.
+          // No date → innermost band (Modern/undated bucket).
+          const m = sorted[i];
+          const yr = (m && typeof m.date_earliest === 'number') ? m.date_earliest : null;
+          let bandIdx = AGE_BANDS.length - 1;  // default = inner (newest/undated)
+          if (yr != null) {
+            for (let b = 0; b < AGE_BANDS.length - 1; b++) {
+              if (yr < AGE_BANDS[b + 1]) { bandIdx = b; break; }
+            }
+          }
+          // Older bands → outer radius. Band 0 (-3000 to -1500) sits
+          // at the OUTER ring; the highest band index sits at INNER.
+          const K   = AGE_BANDS.length - 1;
+          const t   = bandIdx / Math.max(1, K - 1);
+          targetR[i] = rOut - t * (rOut - rIn);
+        } else {
+          // organic — current behaviour
+          targetR[i] = rMid + (1 - 2 * ageT) * radHalf;
+        }
       }
 
       // Phase 1 — initial placement.
@@ -242,33 +271,53 @@
       // could produce when paired with a sorted-by-age v-axis.
       const pts = new Array(N);
 
+      const GOLDEN_ANG = Math.PI * (3 - Math.sqrt(5));  // ≈ 2.39996 rad
       sorted.forEach((d, i) => {
         const h  = strHash(d.id);
         const hU = (h         & 0xffff) / 0xffff;  // ∈ [0, 1]
         const hV = ((h >>> 16) & 0xffff) / 0xffff;  // ∈ [0, 1]
 
-        // ── RADIUS ── soft pull toward age-rank position.
-        const ageT = N > 1 ? i / (N - 1) : 0.5;     // 0 oldest, 1 newest
-        let v = 1 - 2 * ageT;                       // +1 outer, −1 inner
-        v += (hV - 0.5) * 0.32;                     // ±16% radial jitter
-        v = Math.max(-0.97, Math.min(0.97, v));
-        const r = rMid + v * radHalf;
+        let r, ang;
 
-        // ── ANGLE ── van der Corput slot + hash sub-jitter.
-        const uBase = vdcBase2(i + 1) * 2 - 1;      // unique ∈ (-1, 1)
-        const slotW = 2 / Math.max(8, N);           // width of one vdc slot
-        let u       = uBase + (hU - 0.5) * slotW * 0.9;
-
-        // Fan factor: angles squeeze toward inner radius, open
-        // toward outer. The annulus naturally widens arc-length
-        // outward — this multiplier amplifies that visual cue
-        // so the wedge reads as an opening fan instead of as a
-        // parallel-walled rectangle.
-        const radNorm   = (r - rIn) / Math.max(1, rOut - rIn);
-        const fanFactor = 0.45 + 0.55 * radNorm;
-        u *= fanFactor;
-        u  = Math.max(-0.96, Math.min(0.96, u));
-        const ang = w.center + u * (arcUsable / 2);
+        if (distribution === 'vogel') {
+          // Phyllotaxis sunflower. Sqrt(i/N) = equal-area radius;
+          // golden angle wrapped into the wedge produces the
+          // classic seed-head spiral. Wedge-relative so each
+          // family gets its own spiral.
+          const t = N > 1 ? i / (N - 1) : 0.5;
+          r = rIn + (rOut - rIn) * Math.sqrt(t);
+          // Map an unbounded golden-angle index into the wedge arc
+          // by wrapping into [-1, 1] in u-space, then to the wedge.
+          const rawAng = i * GOLDEN_ANG;
+          const wrapped = ((rawAng % (2 * Math.PI)) + 2 * Math.PI) % (2 * Math.PI);
+          const u = (wrapped / (2 * Math.PI)) * 2 - 1;   // ∈ [-1, 1]
+          ang = w.center + u * (arcUsable / 2);
+        } else if (distribution === 'age-bands') {
+          // Concentric chronological bands. r snaps to targetR
+          // (computed per band above) + small hash jitter to
+          // break perfect ring monotony. Angle stays vdc + jitter.
+          r = targetR[i] + (hV - 0.5) * 6;   // ±3 wu vertical jitter
+          const uBase = vdcBase2(i + 1) * 2 - 1;
+          const slotW = 2 / Math.max(8, N);
+          let u       = uBase + (hU - 0.5) * slotW * 0.9;
+          u = Math.max(-0.96, Math.min(0.96, u));
+          ang = w.center + u * (arcUsable / 2);
+        } else {
+          // organic (default) — unchanged from Phase 20D-2.
+          const ageT = N > 1 ? i / (N - 1) : 0.5;
+          let v = 1 - 2 * ageT;
+          v += (hV - 0.5) * 0.32;
+          v = Math.max(-0.97, Math.min(0.97, v));
+          r = rMid + v * radHalf;
+          const uBase = vdcBase2(i + 1) * 2 - 1;
+          const slotW = 2 / Math.max(8, N);
+          let u       = uBase + (hU - 0.5) * slotW * 0.9;
+          const radNorm   = (r - rIn) / Math.max(1, rOut - rIn);
+          const fanFactor = 0.45 + 0.55 * radNorm;
+          u *= fanFactor;
+          u  = Math.max(-0.96, Math.min(0.96, u));
+          ang = w.center + u * (arcUsable / 2);
+        }
 
         pts[i] = { id: d.id, r, ang, deg: degree.get(d.id) || 0 };
       });

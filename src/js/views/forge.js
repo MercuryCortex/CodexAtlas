@@ -983,8 +983,19 @@
       ],
     };
 
+    // Phase 21AL (2026-05-23) — Distribution themes: the algorithm
+    // that places nodes INSIDE each wedge. Sibling to color +
+    // family-order themes. Three shipped + the rest documented
+    // in 00_meta/forge-distribution-patterns-2026-05-22.md for
+    // future expansion (wave-interference, voronoi, penrose, etc).
+    const DISTRIBUTION_THEMES = {
+      organic:    'organic',       // current default — age-radial fan + relaxation
+      'age-bands':'age-bands',     // fixed-year concentric bands, scholarly chart
+      vogel:      'vogel',         // golden-angle phyllotaxis sunflower
+    };
+
     // Default ux-mode used until LS-restore (if any) overrides it.
-    const DEFAULT_UX_MODE = { colorMode: 'default', orderMode: 'opposites' };
+    const DEFAULT_UX_MODE = { colorMode: 'default', orderMode: 'opposites', distributionMode: 'organic' };
 
     // ── Mode-dependent state lives on `local.mode` ────────
     // rebuildForMode(id) repopulates this object whenever the
@@ -1078,6 +1089,7 @@
           '<button class="forge-viewset-row" data-toggle="dividersConverging"><span class="vs-check"></span>Show converging separators <em>(solid → fade)</em></button>' +
           '<button class="forge-viewset-row" data-toggle="guideRings"><span class="vs-check"></span>Show guide rings <em>(inner / mid / outer)</em></button>' +
           '<button class="forge-viewset-row" data-toggle="wires"><span class="vs-check"></span>Show wires</button>' +
+          '<button class="forge-viewset-row" data-toggle="sfx"><span class="vs-check"></span>Soundtrack <em>(zoom-tied)</em></button>' +
           '<button class="forge-viewset-row" data-toggle="map" disabled><span class="vs-check"></span>Show map <em>(coming soon)</em></button>' +
           '<div class="forge-viewset-divider"></div>' +
           '<div class="forge-viewset-section">Color theme</div>' +
@@ -1093,6 +1105,11 @@
           '<button class="forge-viewset-row" data-order="roots"><span class="vs-radio"></span>Roots clustered</button>' +
           '<button class="forge-viewset-row" data-order="chronological"><span class="vs-radio"></span>Chronological</button>' +
           '<button class="forge-viewset-row" data-order="geography"><span class="vs-radio"></span>Geographic sweep</button>' +
+          '<div class="forge-viewset-divider"></div>' +
+          '<div class="forge-viewset-section">Node distribution</div>' +
+          '<button class="forge-viewset-row" data-distribution="organic"><span class="vs-radio"></span>Organic <em>(age-radial fan)</em></button>' +
+          '<button class="forge-viewset-row" data-distribution="age-bands"><span class="vs-radio"></span>Age bands <em>(scholarly chart)</em></button>' +
+          '<button class="forge-viewset-row" data-distribution="vogel"><span class="vs-radio"></span>Vogel sunflower <em>(phyllotaxis)</em></button>' +
         '</div>' +
       '</div>',
       // Phase 21AJ (2026-05-22) — FX wrap moved to the right side
@@ -1171,15 +1188,19 @@
         '<button class="forge-stylepanel-btn" id="forge-stylepanel-btn" title="Stroke style tuning" aria-expanded="false">STYLE</button>' +
         '<div class="forge-stylepanel" id="forge-stylepanel" aria-hidden="true">' +
           '<div class="forge-fxpanel-section">Guide rings</div>' +
-          '<div class="forge-stylepanel-rowcolor"><label>color</label><input type="color" data-style="ring-color" value="#6f8aaf"></div>' +
+          '<div class="forge-stylepanel-rowcolor"><label>inner color</label><input type="color" data-style="ring-inner-color" value="#6f8aaf"></div>' +
+          '<div class="forge-stylepanel-rowcolor"><label>mid color</label><input type="color" data-style="ring-mid-color" value="#6f8aaf"></div>' +
+          '<div class="forge-stylepanel-rowcolor"><label>outer color</label><input type="color" data-style="ring-outer-color" value="#6f8aaf"></div>' +
           '<div class="forge-fxpanel-row"><label>stroke width <span class="forge-fxpanel-val" data-val="ring-width">0.5px</span></label><input type="range" data-style="ring-width" min="0.2" max="6" step="0.1" value="0.5"></div>' +
           '<div class="forge-fxpanel-row"><label>opacity <span class="forge-fxpanel-val" data-val="ring-opacity">0.50</span></label><input type="range" data-style="ring-opacity" min="0" max="1" step="0.01" value="0.5"></div>' +
-          '<div class="forge-fxpanel-section">Separators</div>' +
+          '<div class="forge-fxpanel-section">Separators (both modes)</div>' +
           '<div class="forge-fxpanel-row"><label>stroke width <span class="forge-fxpanel-val" data-val="sep-width">0.5px</span></label><input type="range" data-style="sep-width" min="0.2" max="6" step="0.1" value="0.5"></div>' +
-          '<div class="forge-fxpanel-row"><label>opacity <span class="forge-fxpanel-val" data-val="sep-opacity">1.00</span></label><input type="range" data-style="sep-opacity" min="0" max="1" step="0.01" value="1.0"></div>' +
-          '<div class="forge-fxpanel-section">Converging separator colors</div>' +
+          '<div class="forge-fxpanel-row"><label>opacity <span class="forge-fxpanel-val" data-val="sep-opacity">0.50</span></label><input type="range" data-style="sep-opacity" min="0" max="1" step="0.01" value="0.5"></div>' +
+          '<div class="forge-fxpanel-section">Converging separator</div>' +
           '<div class="forge-stylepanel-rowcolor"><label>center color</label><input type="color" data-style="conv-center-color" value="#6f8aaf"></div>' +
+          '<div class="forge-fxpanel-row"><label>center opacity <span class="forge-fxpanel-val" data-val="conv-center-opacity">1.00</span></label><input type="range" data-style="conv-center-opacity" min="0" max="1" step="0.01" value="1.0"></div>' +
           '<div class="forge-stylepanel-rowcolor"><label>outer color</label><input type="color" data-style="conv-edge-color" value="#6f8aaf"></div>' +
+          '<div class="forge-fxpanel-row"><label>outer opacity <span class="forge-fxpanel-val" data-val="conv-edge-opacity">0.00</span></label><input type="range" data-style="conv-edge-opacity" min="0" max="1" step="0.01" value="0.0"></div>' +
           '<button class="forge-fxpanel-reset" id="forge-stylepanel-reset">RESET TO DEFAULTS</button>' +
         '</div>' +
       '</div>',
@@ -1300,6 +1321,34 @@
           }
         });
       }
+    }
+
+    // ────────────────────────────────────────────────────────────
+    // Phase 21AL (2026-05-23) — soundtrack BG. Looping audio whose
+    // volume rides the same zoom curve as the BG opacity: silent at
+    // zoomPct >= 0.50, full at the floor (0.10). Toggleable from
+    // View settings via the body.fv-hide-sfx class.
+    //
+    // Browser autoplay: audio with sound can't auto-play before a
+    // user gesture. We attach a one-shot pointerdown listener that
+    // calls .play() on first interaction. Until then the element
+    // is loaded but silent.
+    // ────────────────────────────────────────────────────────────
+    let bgAudio = document.getElementById('forge-bg-audio');
+    if (!bgAudio) {
+      bgAudio = document.createElement('audio');
+      bgAudio.id = 'forge-bg-audio';
+      bgAudio.src = '_assets/audio/bg-sfx-01.mp3?v=20260523-21al';
+      bgAudio.loop = true;
+      bgAudio.preload = 'auto';
+      bgAudio.volume = 0;     // start silent; ramps in via syncSoundtrack
+      // No autoplay attribute — we kick it on first pointerdown.
+      document.body.appendChild(bgAudio);
+      const kickPlay = () => {
+        try { bgAudio.play().catch(() => {}); } catch (_) {}
+      };
+      document.addEventListener('pointerdown', kickPlay, { once: true });
+      local._bgAudio = bgAudio;
     }
 
     const canvas = document.createElement('canvas');
@@ -1581,6 +1630,15 @@
         // canvas reference.
         if (local._hoverFlashTimer)  { clearTimeout(local._hoverFlashTimer);  local._hoverFlashTimer = 0; }
         if (local._clickPulseTimer)  { clearTimeout(local._clickPulseTimer);  local._clickPulseTimer = 0; }
+        // Phase 21AL (2026-05-23) — stop + detach the soundtrack
+        // audio so it doesn't keep playing into the next view.
+        if (local._bgAudio) {
+          try { local._bgAudio.pause(); } catch (_) {}
+          if (local._bgAudio.parentNode) {
+            try { local._bgAudio.parentNode.removeChild(local._bgAudio); } catch (_) {}
+          }
+          local._bgAudio = null;
+        }
         // Phase 21AG (2026-05-22) — dot elem cleanup. The
         // _clickPendingTimer from 21AF is gone (single-click is
         // instant now); no timer to cancel.
@@ -1994,6 +2052,9 @@
         if (typeof u.orderMode === 'string' && ORDER_THEMES.hasOwnProperty(u.orderMode)) {
           local.uxMode.orderMode = u.orderMode;
         }
+        if (typeof u.distributionMode === 'string' && DISTRIBUTION_THEMES.hasOwnProperty(u.distributionMode)) {
+          local.uxMode.distributionMode = u.distributionMode;
+        }
       }
 
       // Phase 4d: bake the initial mode (deities by default).
@@ -2195,6 +2256,7 @@
       const lay       = layout.radialWedgeLayout(modeNodes, currentFamilyOrder(), {
         degree,
         colorOverride: currentColorOverride(),
+        distribution:  currentDistribution(),
       });
 
       // 2026-05-19 — pack-scale-fix. packNodes bakes the world
@@ -3254,15 +3316,16 @@
         const mode = local._dividerMode || 'short';
         let stopColors;
         if (mode === 'long-centered') {
-          // Phase 21AJ — colors read from the Style panel vars
-          // (--style-conv-center-color + --style-conv-edge-color).
-          // SVG stop-color in an inline style attribute accepts
-          // CSS variables.
+          // Phase 21AL (2026-05-23) — colors AND opacities read
+          // from Style panel vars. Per-end controls let John tune
+          // center alone vs outer alone. The interior mid-stops
+          // interpolate via opacity multiplication so the smooth
+          // fade preserved.
           stopColors = [
-            ['0%',   'stop-color:var(--style-conv-center-color,#6f8aaf);stop-opacity:1.0'],
-            ['30%',  'stop-color:var(--style-conv-center-color,#6f8aaf);stop-opacity:0.85'],
-            ['55%',  'stop-color:var(--style-conv-edge-color,#6f8aaf);stop-opacity:0.45'],
-            ['100%', 'stop-color:var(--style-conv-edge-color,#6f8aaf);stop-opacity:0'],
+            ['0%',   'stop-color:var(--style-conv-center-color,#6f8aaf);stop-opacity:var(--style-conv-center-opacity,1.0)'],
+            ['30%',  'stop-color:var(--style-conv-center-color,#6f8aaf);stop-opacity:calc(var(--style-conv-center-opacity,1.0) * 0.85)'],
+            ['55%',  'stop-color:var(--style-conv-edge-color,#6f8aaf);stop-opacity:calc(var(--style-conv-edge-opacity,0.0) + (var(--style-conv-center-opacity,1.0) - var(--style-conv-edge-opacity,0.0)) * 0.45)'],
+            ['100%', 'stop-color:var(--style-conv-edge-color,#6f8aaf);stop-opacity:var(--style-conv-edge-opacity,0.0)'],
           ];
         } else {
           stopColors = [
@@ -3612,6 +3675,41 @@
       bgImage.style.transform =
         'translate(-50%, -50%) ' +
         'translate(' + dx.toFixed(1) + 'px,' + dy.toFixed(1) + 'px)';
+      // Phase 21AL — soundtrack volume rides the same per-frame
+      // zoom curve as the BG opacity.
+      syncSoundtrack();
+    }
+
+    // Phase 21AL (2026-05-23) — soundtrack volume tracks the same
+    // zoomPct curve as the BG opacity:
+    //   zoomPct >= 0.50 → volume 0  (focused on a node, quiet)
+    //   zoomPct <= 0.10 → volume MAX (immersive at the floor)
+    //   linear between
+    // Cap at 0.6 so the soundtrack stays atmospheric, not loud.
+    // Forced to 0 when the SFX toggle is off (local._sfxEnabled).
+    const SFX_MAX_VOLUME = 0.6;
+    function syncSoundtrack() {
+      const audio = local._bgAudio;
+      if (!audio) return;
+      const fitScale = (typeof computeFitScale === 'function') ? computeFitScale() : 0;
+      if (!fitScale || fitScale <= 0) return;
+      const zoomPct = camera.state.scale / fitScale;
+      let target;
+      if      (!local._sfxEnabled)  target = 0;
+      else if (zoomPct >= 0.50)     target = 0;
+      else if (zoomPct <= 0.10)     target = SFX_MAX_VOLUME;
+      else                          target = SFX_MAX_VOLUME * (0.50 - zoomPct) / (0.50 - 0.10);
+      // Smooth ramp — single-pole low-pass at ~0.05 per call so
+      // the volume slides instead of stepping.
+      const cur = audio.volume;
+      const next = cur + (target - cur) * 0.18;
+      audio.volume = Math.max(0, Math.min(1, next));
+      // If we somehow paused (autoplay never kicked) and the user
+      // is interacting at floor zoom, try a play() — harmless if
+      // already playing.
+      if (target > 0 && audio.paused) {
+        try { audio.play().catch(() => {}); } catch (_) {}
+      }
     }
 
     function syncLabelPositions() {
@@ -4264,8 +4362,9 @@
           // order alongside mode/timeline/locks so the wheel comes
           // back with the user's last UX choice.
           uxMode: local.uxMode ? {
-            colorMode: local.uxMode.colorMode,
-            orderMode: local.uxMode.orderMode,
+            colorMode:        local.uxMode.colorMode,
+            orderMode:        local.uxMode.orderMode,
+            distributionMode: local.uxMode.distributionMode,
           } : null,
         };
         window.localStorage.setItem(LS_RUNTIME_KEY, JSON.stringify(state));
@@ -4655,7 +4754,7 @@
           hulls: true, familyTitles: true,
           dividers: true, dividersConverging: false,
           guideRings: false,
-          wires: true, map: false,
+          wires: true, sfx: true, map: false,
         };
       })();
       // Defensive defaults — additive.
@@ -4663,6 +4762,7 @@
       if (typeof state.dividers           !== 'boolean') state.dividers           = true;
       if (typeof state.dividersConverging !== 'boolean') state.dividersConverging = false;
       if (typeof state.guideRings         !== 'boolean') state.guideRings         = false;
+      if (typeof state.sfx                !== 'boolean') state.sfx                = true;
       function applyState() {
         document.body.classList.toggle('fv-hide-hulls',         !state.hulls);
         document.body.classList.toggle('fv-hide-family-titles', !state.familyTitles);
@@ -4671,6 +4771,10 @@
         document.body.classList.toggle('fv-hide-wires',         !state.wires);
         document.body.classList.toggle('fv-hide-map',           !state.map);
         document.body.classList.toggle('fv-hide-guide-rings',   !state.guideRings);
+        // Phase 21AL (2026-05-23) — SFX toggle: when OFF, body
+        // class signals the audio sync loop to force volume 0.
+        document.body.classList.toggle('fv-hide-sfx',           !state.sfx);
+        local._sfxEnabled = !!state.sfx;
         // Push the divider mode into the layout layer.
         const newMode = state.dividersConverging ? 'long-centered'
                       : state.dividers           ? 'short'
@@ -4698,6 +4802,9 @@
         panel.querySelectorAll('.forge-viewset-row[data-order]').forEach(row => {
           row.classList.toggle('is-on', row.dataset.order === ux.orderMode);
         });
+        panel.querySelectorAll('.forge-viewset-row[data-distribution]').forEach(row => {
+          row.classList.toggle('is-on', row.dataset.distribution === (ux.distributionMode || 'organic'));
+        });
         try { localStorage.setItem(LS_KEY, JSON.stringify(state)); } catch (_) {}
       }
       function open() {
@@ -4722,6 +4829,13 @@
           const key = row.dataset.toggle;
           if (!(key in state)) return;
           state[key] = !state[key];
+          // Phase 21AL (2026-05-23) — force a redraw on layer-toggle
+          // change. The wires toggle in particular reads body.fv-hide-
+          // wires inside drawFrame to zero idle alpha; without a draw
+          // tick triggered here the canvas keeps showing the previous
+          // frame until something else (hover, zoom, …) calls drawFrame.
+          // Safe one-line: drawFrame is in the same closure scope.
+          try { if (typeof drawFrame === 'function') setTimeout(drawFrame, 0); } catch (_) {}
           // Phase 21AK — separator modes are mutually exclusive
           // (short ↔ converging). Turning one ON forces the other OFF.
           if (key === 'dividers' && state.dividers) {
@@ -4749,6 +4863,16 @@
           if (!ORDER_THEMES.hasOwnProperty(v)) return;
           if (local.uxMode.orderMode === v) return;
           local.uxMode.orderMode = v;
+          applyState();
+          applyUxMode();
+          return;
+        }
+        // Phase 21AL (2026-05-23) — node distribution radio.
+        if (row.dataset.distribution) {
+          const v = row.dataset.distribution;
+          if (!DISTRIBUTION_THEMES.hasOwnProperty(v)) return;
+          if ((local.uxMode.distributionMode || 'organic') === v) return;
+          local.uxMode.distributionMode = v;
           applyState();
           applyUxMode();
           return;
@@ -5036,29 +5160,29 @@
 
       function formatForCss(key, raw) {
         const n = parseFloat(raw);
-        if (key === 'ring-width')   return n.toFixed(1) + 'px';
-        if (key === 'ring-opacity') return n.toFixed(2);
+        if (key === 'ring-width' || key === 'sep-width') return n.toFixed(1) + 'px';
+        if (/opacity$/.test(key))                        return n.toFixed(2);
         // Color pickers: raw value is already a #rrggbb string.
         return raw;
       }
       function formatForDisplay(key, raw) {
         const n = parseFloat(raw);
-        if (key === 'ring-width')   return n.toFixed(1) + 'px';
-        if (key === 'ring-opacity') return n.toFixed(2);
+        if (key === 'ring-width' || key === 'sep-width') return n.toFixed(1) + 'px';
+        if (/opacity$/.test(key))                        return n.toFixed(2);
         return raw;
       }
       function applyOne(key, val) {
         document.body.style.setProperty('--style-' + key, formatForCss(key, val));
         const valEl = panel.querySelector('[data-val="' + key + '"]');
         if (valEl) valEl.textContent = formatForDisplay(key, val);
-        // Converging-separator color changes require the gradient
-        // stops to re-render (the inline style refs the var, but
-        // SVG sometimes caches; cheaper to just rebuild on color).
-        if (key === 'conv-center-color' || key === 'conv-edge-color') {
-          if (local._dividerMode === 'long-centered') {
-            try { rebuildHullElements(); syncHulls(); } catch (_) {}
-          }
+        // Converging gradient stops cache aggressively in SVG; any
+        // conv-* change forces a clean rebuild + sync to flush.
+        if (key.indexOf('conv-') === 0 && local._dividerMode === 'long-centered') {
+          try { rebuildHullElements(); syncHulls(); } catch (_) {}
         }
+        // Force a redraw so the changes appear without waiting for
+        // a camera tick (same reason as the layer-toggle fix).
+        try { if (typeof drawFrame === 'function') setTimeout(drawFrame, 0); } catch (_) {}
       }
       function loadSaved() {
         let saved = null;
@@ -6890,6 +7014,10 @@
     function currentFamilyOrder() {
       const m = (local.uxMode && local.uxMode.orderMode) || 'opposites';
       return ORDER_THEMES[m] || FAMILY_ORDER;
+    }
+    function currentDistribution() {
+      const m = (local.uxMode && local.uxMode.distributionMode) || 'organic';
+      return DISTRIBUTION_THEMES[m] || 'organic';
     }
     function hex2rgba(hex, a) {
       if (!hex || typeof hex !== 'string' || hex[0] !== '#' || hex.length < 7) {
