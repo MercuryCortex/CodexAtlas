@@ -7340,6 +7340,14 @@ body.view-forge {
      read by the CSS animation directly. */
   --fx-pulse-size-mult:  4.0;
   --fx-pulse-duration:   0.8s;
+  /* Phase 21AJ (2026-05-23) — Style-panel vars: guide ring stroke
+     + converging-separator gradient endpoint colours. Sliders +
+     color pickers in the Style dev panel write to these. */
+  --style-ring-color:        #6f8aaf;
+  --style-ring-width:        1;
+  --style-ring-opacity:      0.5;
+  --style-conv-center-color: #6f8aaf;
+  --style-conv-edge-color:   #6f8aaf;
 }
 body.view-forge.fx-bloom .forge-canvas {
   filter: blur(var(--fx-blur-base)) brightness(var(--fx-bright-base)) saturate(var(--fx-sat-base));
@@ -7616,3 +7624,84 @@ body.view-forge.fx-pulse-enabled .forge-fx-pulse-dot.fx-click-pulse {
    so the bloom heartbeat owns the visual; hit-testing is
    short-circuited in JS (see hitTestAt). */
 body.view-forge.fx-belowfifteen .forge-labels-overlay { display: none !important; }
+
+/* Phase 21AJ (2026-05-23) — right-anchored panels (FX + Style live
+   on the right side of the bottom bar now). Override the default
+   left:0 with right:0 so the panel extends LEFT from its button
+   instead of off-screen to the right. */
+.forge-fxpanel--right,
+.forge-stylepanel {
+  left: auto;
+  right: 0;
+}
+
+/* Style panel — mirrors the FX panel structurally. */
+.forge-stylepanel-wrap {
+  position: relative;
+  display: inline-flex; align-items: center;
+  pointer-events: auto;
+}
+.forge-stylepanel-btn {
+  height: 32px;
+  padding: 0 12px;
+  background: rgba(13,17,25,0.78);
+  border: 1px solid rgba(212,165,90,0.22);
+  border-radius: 6px;
+  color: var(--text-2, #9099a8);
+  font-family: var(--mono, "JetBrains Mono", monospace);
+  font-size: 10.5px;
+  letter-spacing: 0.16em;
+  cursor: pointer;
+  pointer-events: auto;
+  transition: border-color 120ms ease, color 120ms ease, background 120ms ease;
+}
+.forge-stylepanel-btn:hover,
+.forge-stylepanel-btn[aria-expanded="true"] {
+  border-color: var(--gold, #d4a55a);
+  color: var(--gold, #d4a55a);
+  background: rgba(20,26,38,0.92);
+}
+.forge-stylepanel {
+  position: absolute;
+  bottom: 40px;
+  width: 280px;
+  padding: 10px 14px 12px;
+  background: rgba(13,17,25,0.92);
+  border: 1px solid rgba(212,165,90,0.22);
+  border-radius: 8px;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  box-shadow: 0 6px 24px rgba(0,0,0,0.45);
+  z-index: 235;
+  display: none;
+}
+.forge-stylepanel.is-open { display: block; }
+
+/* Color-input rows. The native <input type="color"> is small + dark
+   on most browsers; this gives it a gold-tinted frame to match the
+   rest of the panel. */
+.forge-stylepanel-rowcolor {
+  display: flex; align-items: center; justify-content: space-between;
+  gap: 10px;
+  padding: 4px 0;
+  font-family: var(--sans, Inter, sans-serif);
+  font-size: 11px;
+  color: var(--text-1, #e5e7eb);
+}
+.forge-stylepanel-rowcolor input[type="color"] {
+  width: 28px; height: 22px;
+  padding: 0;
+  border: 1px solid rgba(212,165,90,0.35);
+  border-radius: 4px;
+  background: transparent;
+  cursor: pointer;
+}
+
+/* Guide ring CSS — binds the stroke style to the Style panel vars
+   so they update live. JS no longer needs to setAttribute these. */
+.forge-hull-guide-ring {
+  fill: none;
+  stroke: var(--style-ring-color, #6f8aaf);
+  stroke-opacity: var(--style-ring-opacity, 0.5);
+  stroke-width: var(--style-ring-width, 1);
+}

@@ -1096,36 +1096,9 @@
           '<button class="forge-viewset-row" data-order="geography"><span class="vs-radio"></span>Geographic sweep</button>' +
         '</div>' +
       '</div>',
-      // Phase 21AB (2026-05-22) — FX dev-slider panel. Live-tunes the
-      // floor-zoom visual params via CSS vars on body.view-forge.
-      // Lives as a SIBLING of forge-viewset-wrap in the bottom bar.
-      '<div class="forge-fxpanel-wrap">' +
-        '<button class="forge-fxpanel-btn" id="forge-fxpanel-btn" title="Floor-zoom FX tuning" aria-expanded="false">FX</button>' +
-        '<div class="forge-fxpanel" id="forge-fxpanel" aria-hidden="true">' +
-          '<div class="forge-fxpanel-section">Heartbeat rhythm</div>' +
-          '<div class="forge-fxpanel-row"><label>period <span class="forge-fxpanel-val" data-val="period">7.0s</span></label><input type="range" data-fx="period" min="1.5" max="14" step="0.1" value="7.0"></div>' +
-          '<div class="forge-fxpanel-section">Disk — rest</div>' +
-          '<div class="forge-fxpanel-row"><label>blur <span class="forge-fxpanel-val" data-val="blur-base">20.0px</span></label><input type="range" data-fx="blur-base" min="0" max="30" step="0.1" value="20.0"></div>' +
-          '<div class="forge-fxpanel-row"><label>brightness <span class="forge-fxpanel-val" data-val="bright-base">1.50</span></label><input type="range" data-fx="bright-base" min="0.3" max="3" step="0.01" value="1.50"></div>' +
-          '<div class="forge-fxpanel-row"><label>saturate <span class="forge-fxpanel-val" data-val="sat-base">1.50</span></label><input type="range" data-fx="sat-base" min="0.3" max="3" step="0.01" value="1.50"></div>' +
-          '<div class="forge-fxpanel-section">Disk — pulse</div>' +
-          '<div class="forge-fxpanel-row"><label>blur <span class="forge-fxpanel-val" data-val="blur-peak">20.0px</span></label><input type="range" data-fx="blur-peak" min="0" max="30" step="0.1" value="20.0"></div>' +
-          '<div class="forge-fxpanel-row"><label>brightness <span class="forge-fxpanel-val" data-val="bright-peak">2.00</span></label><input type="range" data-fx="bright-peak" min="0.5" max="4" step="0.01" value="2.00"></div>' +
-          '<div class="forge-fxpanel-row"><label>saturate <span class="forge-fxpanel-val" data-val="sat-peak">3.00</span></label><input type="range" data-fx="sat-peak" min="0.5" max="3.5" step="0.01" value="3.00"></div>' +
-          '<div class="forge-fxpanel-row"><label>hue shift <span class="forge-fxpanel-val" data-val="hue-peak">0°</span></label><input type="range" data-fx="hue-peak" min="-60" max="60" step="1" value="0"></div>' +
-          '<div class="forge-fxpanel-section">Hover &amp; click</div>' +
-          // Phase 21AE (2026-05-22) — opt-in bloom flash on hover/click.
-          // Phase 21AF (2026-05-22) — added size + duration sliders.
-          '<button class="forge-fxpanel-toggle" data-fx-toggle="pulse-enabled" type="button"><span class="vs-check"></span>Pulse on hover / click</button>' +
-          '<div class="forge-fxpanel-row"><label>pulse size <span class="forge-fxpanel-val" data-val="pulse-size-mult">4.0</span></label><input type="range" data-fx="pulse-size-mult" min="0.5" max="10" step="0.1" value="4.0"></div>' +
-          '<div class="forge-fxpanel-row"><label>pulse duration <span class="forge-fxpanel-val" data-val="pulse-duration">0.8s</span></label><input type="range" data-fx="pulse-duration" min="0.2" max="2.0" step="0.05" value="0.8"></div>' +
-          '<div class="forge-fxpanel-section">Hulls (calm layer)</div>' +
-          '<div class="forge-fxpanel-row"><label>brightness <span class="forge-fxpanel-val" data-val="hull-bright-peak">1.30</span></label><input type="range" data-fx="hull-bright-peak" min="0.8" max="2" step="0.01" value="1.30"></div>' +
-          '<div class="forge-fxpanel-row"><label>saturate <span class="forge-fxpanel-val" data-val="hull-sat-peak">1.55</span></label><input type="range" data-fx="hull-sat-peak" min="0.5" max="2.5" step="0.01" value="1.55"></div>' +
-          '<div class="forge-fxpanel-row"><label>hue shift <span class="forge-fxpanel-val" data-val="hull-hue-peak">10°</span></label><input type="range" data-fx="hull-hue-peak" min="-60" max="60" step="1" value="10"></div>' +
-          '<button class="forge-fxpanel-reset" id="forge-fxpanel-reset">RESET TO DEFAULTS</button>' +
-        '</div>' +
-      '</div>',
+      // Phase 21AJ (2026-05-22) — FX wrap moved to the right side
+      // of the bottom bar (next to the # debug button). See the
+      // forge-debug-btn site below for the new position.
       '<div class="forge-search-wrap">' +
         '<input type="text" class="forge-bottom-search" id="forge-status-search" placeholder="search…" autocomplete="off" spellcheck="false">' +
         '<div class="forge-search-suggest" id="forge-search-suggest" aria-hidden="true"></div>' +
@@ -1161,11 +1134,55 @@
       // playhead (Timeline) inherits them. CSS hides them under
       // body.view-forge only.
       '<div class="forge-scrub-box forge-scrub-present" id="forge-scrub-present" title="PRESENT: scrub playhead">—</div>',
+      // Phase 21AJ (2026-05-23) — FX + Style dev panels, grouped on
+      // the right side of the bottom bar next to the # debug button.
+      // Both anchor their dropdowns to the RIGHT edge of the wrap so
+      // the panels don't overflow the viewport's right side.
+      '<div class="forge-fxpanel-wrap forge-fxpanel-wrap--right">' +
+        '<button class="forge-fxpanel-btn" id="forge-fxpanel-btn" title="Floor-zoom FX tuning" aria-expanded="false">FX</button>' +
+        '<div class="forge-fxpanel forge-fxpanel--right" id="forge-fxpanel" aria-hidden="true">' +
+          '<div class="forge-fxpanel-section">Heartbeat rhythm</div>' +
+          '<div class="forge-fxpanel-row"><label>period <span class="forge-fxpanel-val" data-val="period">7.0s</span></label><input type="range" data-fx="period" min="1.5" max="14" step="0.1" value="7.0"></div>' +
+          '<div class="forge-fxpanel-section">Disk — rest</div>' +
+          '<div class="forge-fxpanel-row"><label>blur <span class="forge-fxpanel-val" data-val="blur-base">20.0px</span></label><input type="range" data-fx="blur-base" min="0" max="30" step="0.1" value="20.0"></div>' +
+          '<div class="forge-fxpanel-row"><label>brightness <span class="forge-fxpanel-val" data-val="bright-base">1.50</span></label><input type="range" data-fx="bright-base" min="0.3" max="3" step="0.01" value="1.50"></div>' +
+          '<div class="forge-fxpanel-row"><label>saturate <span class="forge-fxpanel-val" data-val="sat-base">1.50</span></label><input type="range" data-fx="sat-base" min="0.3" max="3" step="0.01" value="1.50"></div>' +
+          '<div class="forge-fxpanel-section">Disk — pulse</div>' +
+          '<div class="forge-fxpanel-row"><label>blur <span class="forge-fxpanel-val" data-val="blur-peak">20.0px</span></label><input type="range" data-fx="blur-peak" min="0" max="30" step="0.1" value="20.0"></div>' +
+          '<div class="forge-fxpanel-row"><label>brightness <span class="forge-fxpanel-val" data-val="bright-peak">2.00</span></label><input type="range" data-fx="bright-peak" min="0.5" max="4" step="0.01" value="2.00"></div>' +
+          '<div class="forge-fxpanel-row"><label>saturate <span class="forge-fxpanel-val" data-val="sat-peak">3.00</span></label><input type="range" data-fx="sat-peak" min="0.5" max="3.5" step="0.01" value="3.00"></div>' +
+          '<div class="forge-fxpanel-row"><label>hue shift <span class="forge-fxpanel-val" data-val="hue-peak">0°</span></label><input type="range" data-fx="hue-peak" min="-60" max="60" step="1" value="0"></div>' +
+          '<div class="forge-fxpanel-section">Hover &amp; click</div>' +
+          '<button class="forge-fxpanel-toggle" data-fx-toggle="pulse-enabled" type="button"><span class="vs-check"></span>Pulse on hover / click</button>' +
+          '<div class="forge-fxpanel-row"><label>pulse size <span class="forge-fxpanel-val" data-val="pulse-size-mult">4.0</span></label><input type="range" data-fx="pulse-size-mult" min="0.5" max="10" step="0.1" value="4.0"></div>' +
+          '<div class="forge-fxpanel-row"><label>pulse duration <span class="forge-fxpanel-val" data-val="pulse-duration">0.8s</span></label><input type="range" data-fx="pulse-duration" min="0.2" max="2.0" step="0.05" value="0.8"></div>' +
+          '<div class="forge-fxpanel-section">Hulls (calm layer)</div>' +
+          '<div class="forge-fxpanel-row"><label>brightness <span class="forge-fxpanel-val" data-val="hull-bright-peak">1.30</span></label><input type="range" data-fx="hull-bright-peak" min="0.8" max="2" step="0.01" value="1.30"></div>' +
+          '<div class="forge-fxpanel-row"><label>saturate <span class="forge-fxpanel-val" data-val="hull-sat-peak">1.55</span></label><input type="range" data-fx="hull-sat-peak" min="0.5" max="2.5" step="0.01" value="1.55"></div>' +
+          '<div class="forge-fxpanel-row"><label>hue shift <span class="forge-fxpanel-val" data-val="hull-hue-peak">10°</span></label><input type="range" data-fx="hull-hue-peak" min="-60" max="60" step="1" value="10"></div>' +
+          '<button class="forge-fxpanel-reset" id="forge-fxpanel-reset">RESET TO DEFAULTS</button>' +
+        '</div>' +
+      '</div>',
+      // Phase 21AJ (2026-05-23) — Style dev panel. Controls the
+      // stroke style of the guide-ring circles + the endpoint
+      // colors of the long-centered converging separator gradient.
+      // Sliders + color pickers write to CSS vars on body.view-forge
+      // (see :root block at the top of app.css for defaults).
+      '<div class="forge-stylepanel-wrap">' +
+        '<button class="forge-stylepanel-btn" id="forge-stylepanel-btn" title="Stroke style tuning" aria-expanded="false">STYLE</button>' +
+        '<div class="forge-stylepanel" id="forge-stylepanel" aria-hidden="true">' +
+          '<div class="forge-fxpanel-section">Guide rings</div>' +
+          '<div class="forge-stylepanel-rowcolor"><label>color</label><input type="color" data-style="ring-color" value="#6f8aaf"></div>' +
+          '<div class="forge-fxpanel-row"><label>stroke width <span class="forge-fxpanel-val" data-val="ring-width">1.0px</span></label><input type="range" data-style="ring-width" min="0.5" max="6" step="0.1" value="1.0"></div>' +
+          '<div class="forge-fxpanel-row"><label>opacity <span class="forge-fxpanel-val" data-val="ring-opacity">0.50</span></label><input type="range" data-style="ring-opacity" min="0" max="1" step="0.01" value="0.5"></div>' +
+          '<div class="forge-fxpanel-section">Converging separator</div>' +
+          '<div class="forge-stylepanel-rowcolor"><label>center color</label><input type="color" data-style="conv-center-color" value="#6f8aaf"></div>' +
+          '<div class="forge-stylepanel-rowcolor"><label>outer color</label><input type="color" data-style="conv-edge-color" value="#6f8aaf"></div>' +
+          '<button class="forge-fxpanel-reset" id="forge-stylepanel-reset">RESET TO DEFAULTS</button>' +
+        '</div>' +
+      '</div>',
       // Phase 21A2 (2026-05-21) — debug-stats toggle. Tiny
-      // square button next to the present-date box. Click pops
-      // a small panel listing device / nodes / edges / hover /
-      // lock / frame stats. Hidden by default to keep the
-      // bottom-bar clean for everyday use.
+      // square button next to the present-date box.
       '<button class="forge-debug-btn" id="forge-debug-btn" type="button" title="Show engine stats" aria-expanded="false" aria-controls="forge-debug-panel">⌗</button>',
       '<div class="forge-debug-panel" id="forge-debug-panel" aria-hidden="true"></div>',
     ].join('');
@@ -2099,6 +2116,7 @@
       // wires / map) + search autocomplete suggestions.
       wireViewSettings();
       wireFXPanel();
+      wireStylePanel();
       wireSearchAutocomplete();
 
       // Phase 5B M-F2 (2026-05-20) — apply LS-saved timeline +
@@ -3164,12 +3182,11 @@
       const labels = ['inner', 'mid', 'outer'];
       for (const role of labels) {
         const c = document.createElementNS(SVG_NS, 'circle');
+        // Phase 21AJ — stroke + opacity + width all driven by CSS
+        // vars on body.view-forge so the Style panel can mutate
+        // them live. See .forge-hull-guide-ring in app.css.
         c.setAttribute('class', 'forge-hull-guide-ring');
         c.setAttribute('data-ring', role);
-        c.setAttribute('fill', 'none');
-        c.setAttribute('stroke', '#6f8aaf');
-        c.setAttribute('stroke-opacity', '0.5');
-        c.setAttribute('stroke-width', '1');
         hullGuideRingsG.appendChild(c);
       }
     }
@@ -3235,11 +3252,15 @@
         const mode = local._dividerMode || 'short';
         let stopColors;
         if (mode === 'long-centered') {
+          // Phase 21AJ — colors read from the Style panel vars
+          // (--style-conv-center-color + --style-conv-edge-color).
+          // SVG stop-color in an inline style attribute accepts
+          // CSS variables.
           stopColors = [
-            ['0%',   'stop-color:#6f8aaf;stop-opacity:1.0'],
-            ['30%',  'stop-color:#6f8aaf;stop-opacity:0.85'],
-            ['55%',  'stop-color:#6f8aaf;stop-opacity:0.45'],
-            ['100%', 'stop-color:#6f8aaf;stop-opacity:0'],
+            ['0%',   'stop-color:var(--style-conv-center-color,#6f8aaf);stop-opacity:1.0'],
+            ['30%',  'stop-color:var(--style-conv-center-color,#6f8aaf);stop-opacity:0.85'],
+            ['55%',  'stop-color:var(--style-conv-edge-color,#6f8aaf);stop-opacity:0.45'],
+            ['100%', 'stop-color:var(--style-conv-edge-color,#6f8aaf);stop-opacity:0'],
           ];
         } else {
           stopColors = [
@@ -3546,17 +3567,26 @@
       else                      bgFade = (0.50 - zoomPct) / (0.50 - 0.10);
       bgImage.style.opacity = bgFade.toFixed(3);
 
-      // ── BG WORLD-OBJECT TRANSFORM (Phase 21L) ─────────────
-      // Pure world-scaling. BG_WORLD_WIDTH = 60000 wu — large
-      // enough that BG_WORLD_WIDTH × camera.scale_at_floor
-      // exceeds the viewport on every aspect ratio up to 32:9.
-      // The viewport-floor breakpoint (Phase 21H) is gone:
-      // BG scales smoothly with the wheel down to (and past)
-      // the camera floor, matching the wheel's zoom-ease tail
-      // instead of pegging at vp×1.5 around gizmo 15%.
-      const imgAspect = bgImage._bgAspect || (4 / 3);
-      const widthPx   = BG_WORLD_WIDTH * camera.state.scale;
-      const heightPx  = widthPx / imgAspect;
+      // ── BG WORLD-OBJECT TRANSFORM (Phase 21AJ, 2026-05-22) ────
+      // World-scaled by default, with a VIEWPORT-COVER FLOOR so
+      // the BG never shrinks smaller than the viewport. John bug:
+      // at the very last percentage of zoom-out, the BG was
+      // visibly cropping/leaving margins because pure world-
+      // scaling at floor scale (e.g. 18000 × 0.077 ≈ 1390 px on a
+      // 1920 px screen) is smaller than the larger viewport axis.
+      //
+      // The Phase 21H vp×1.5 floor was the right idea but its
+      // 1.5× factor pegged too early (around gizmo 15%). New
+      // rule: minimum width is exactly viewport-cover (= max of
+      // vp.w and vp.h × imgAspect), no padding margin. As soon
+      // as world-scaled exceeds cover, world-scaled wins (smooth
+      // transition because both expressions are continuous and
+      // they meet at the threshold).
+      const imgAspect    = bgImage._bgAspect || (4 / 3);
+      const worldWidthPx = BG_WORLD_WIDTH * camera.state.scale;
+      const coverWidthPx = Math.max(vp.w, vp.h * imgAspect);
+      const widthPx      = Math.max(worldWidthPx, coverWidthPx);
+      const heightPx     = widthPx / imgAspect;
       // World (0, 0) → canvas-screen → viewport-screen.
       const centerCanvas = camera.worldToScreen(0, 0, vp);
       let offX = 0, offY = 0;
@@ -4992,6 +5022,108 @@
     }
 
     // ════════════════════════════════════════════════════════════
+    // ════════════════════════════════════════════════════════════
+    //  wireStylePanel()  —  Phase 21AJ (2026-05-23)
+    // ════════════════════════════════════════════════════════════
+    //  Stroke-style controls for the guide rings + the converging
+    //  separator gradient. Writes to CSS vars on body.view-forge
+    //  which are picked up by .forge-hull-guide-ring (rings) and
+    //  by the gradient stops inline-style (converging separators).
+    //  Persists state under forge.styleParams.v1.
+    // ════════════════════════════════════════════════════════════
+    function wireStylePanel() {
+      const btn   = document.getElementById('forge-stylepanel-btn');
+      const panel = document.getElementById('forge-stylepanel');
+      if (!btn || !panel) return;
+      const LS_KEY = 'forge.styleParams.v1';
+      const controls = Array.from(panel.querySelectorAll('[data-style]'));
+      const defaults = Object.create(null);
+      for (const c of controls) defaults[c.getAttribute('data-style')] = c.value;
+
+      function formatForCss(key, raw) {
+        const n = parseFloat(raw);
+        if (key === 'ring-width')   return n.toFixed(1) + 'px';
+        if (key === 'ring-opacity') return n.toFixed(2);
+        // Color pickers: raw value is already a #rrggbb string.
+        return raw;
+      }
+      function formatForDisplay(key, raw) {
+        const n = parseFloat(raw);
+        if (key === 'ring-width')   return n.toFixed(1) + 'px';
+        if (key === 'ring-opacity') return n.toFixed(2);
+        return raw;
+      }
+      function applyOne(key, val) {
+        document.body.style.setProperty('--style-' + key, formatForCss(key, val));
+        const valEl = panel.querySelector('[data-val="' + key + '"]');
+        if (valEl) valEl.textContent = formatForDisplay(key, val);
+        // Converging-separator color changes require the gradient
+        // stops to re-render (the inline style refs the var, but
+        // SVG sometimes caches; cheaper to just rebuild on color).
+        if (key === 'conv-center-color' || key === 'conv-edge-color') {
+          if (local._dividerMode === 'long-centered') {
+            try { rebuildHullElements(); syncHulls(); } catch (_) {}
+          }
+        }
+      }
+      function loadSaved() {
+        let saved = null;
+        try {
+          const raw = localStorage.getItem(LS_KEY);
+          if (raw) saved = JSON.parse(raw);
+        } catch (_) {}
+        for (const c of controls) {
+          const key = c.getAttribute('data-style');
+          if (saved && typeof saved[key] === 'string') c.value = saved[key];
+          applyOne(key, c.value);
+        }
+      }
+      function saveAll() {
+        try {
+          const state = {};
+          for (const c of controls) state[c.getAttribute('data-style')] = c.value;
+          localStorage.setItem(LS_KEY, JSON.stringify(state));
+        } catch (_) {}
+      }
+      function resetAll() {
+        for (const c of controls) {
+          const key = c.getAttribute('data-style');
+          c.value = defaults[key];
+          applyOne(key, c.value);
+        }
+        saveAll();
+      }
+
+      let savePending = 0;
+      panel.addEventListener('input', (ev) => {
+        const c = ev.target;
+        if (!c || !c.hasAttribute('data-style')) return;
+        const key = c.getAttribute('data-style');
+        applyOne(key, c.value);
+        if (savePending) clearTimeout(savePending);
+        savePending = setTimeout(() => { savePending = 0; saveAll(); }, 250);
+      });
+      const resetBtn = document.getElementById('forge-stylepanel-reset');
+      if (resetBtn) resetBtn.addEventListener('click', resetAll);
+
+      function open()  { panel.classList.add('is-open');  panel.setAttribute('aria-hidden', 'false'); btn.setAttribute('aria-expanded', 'true');  }
+      function close() { panel.classList.remove('is-open'); panel.setAttribute('aria-hidden', 'true');  btn.setAttribute('aria-expanded', 'false'); }
+      btn.addEventListener('click', (ev) => {
+        ev.stopPropagation();
+        if (panel.classList.contains('is-open')) close(); else open();
+      });
+      document.addEventListener('click', (ev) => {
+        if (!panel.classList.contains('is-open')) return;
+        if (panel.contains(ev.target) || btn.contains(ev.target)) return;
+        close();
+      });
+      document.addEventListener('keydown', (ev) => {
+        if (ev.key === 'Escape' && panel.classList.contains('is-open')) close();
+      });
+
+      loadSaved();
+    }
+
     //  wireSearchAutocomplete()  —  Phase 21B (2026-05-21)
     // ════════════════════════════════════════════════════════════
     //  Adds an upward-expanding suggestion list under the
