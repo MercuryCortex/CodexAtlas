@@ -7199,13 +7199,14 @@ body.view-forge #detail-inner {
    coords to match the line, so 0→15% and 85→100% become the soft
    tails on either end). */
 .forge-hull-divider {
-  /* Phase 20D (2026-05-21) — John feedback: halve the line
-     width (was 1px) so dividers read as quiet structure
-     rather than chrome. */
-  stroke-width: 0.5px;
+  /* Phase 21AK (2026-05-23) — width + opacity now driven by the
+     Style panel vars so they update live. The `stroke` attribute
+     is still set to url(#forge-hull-divgrad-N) in JS (gradient
+     reference). The `opacity` here multiplies the gradient alpha,
+     giving us a single dimming control without rewriting stops. */
+  stroke-width: var(--style-sep-width, 0.5);
+  opacity: var(--style-sep-opacity, 1.0);
   fill: none;
-  /* `stroke` attribute is set to url(#forge-hull-divgrad-N) in JS.
-     This rule provides a fallback if the gradient ref fails. */
 }
 
 .forge-labels-overlay {
@@ -7340,14 +7341,18 @@ body.view-forge {
      read by the CSS animation directly. */
   --fx-pulse-size-mult:  4.0;
   --fx-pulse-duration:   0.8s;
-  /* Phase 21AJ (2026-05-23) — Style-panel vars: guide ring stroke
-     + converging-separator gradient endpoint colours. Sliders +
-     color pickers in the Style dev panel write to these. */
+  /* Phase 21AJ+21AK (2026-05-23) — Style-panel vars. Updated
+     defaults: ring width 1 → 0.5 (John baseline preference).
+     New separator vars (--style-sep-*) apply to BOTH the short
+     and converging separator modes (the long-faded mode was
+     removed in 21AK). */
   --style-ring-color:        #6f8aaf;
-  --style-ring-width:        1;
+  --style-ring-width:        0.5;
   --style-ring-opacity:      0.5;
   --style-conv-center-color: #6f8aaf;
   --style-conv-edge-color:   #6f8aaf;
+  --style-sep-width:         0.5;
+  --style-sep-opacity:       1.0;
 }
 body.view-forge.fx-bloom .forge-canvas {
   filter: blur(var(--fx-blur-base)) brightness(var(--fx-bright-base)) saturate(var(--fx-sat-base));

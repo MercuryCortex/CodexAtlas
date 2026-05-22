@@ -1075,7 +1075,6 @@
           '<button class="forge-viewset-row" data-toggle="hulls"><span class="vs-check"></span>Show family hulls</button>' +
           '<button class="forge-viewset-row" data-toggle="familyTitles"><span class="vs-check"></span>Show family titles</button>' +
           '<button class="forge-viewset-row" data-toggle="dividers"><span class="vs-check"></span>Show family separators</button>' +
-          '<button class="forge-viewset-row" data-toggle="dividersLong"><span class="vs-check"></span>Show long separators <em>(faded both ends)</em></button>' +
           '<button class="forge-viewset-row" data-toggle="dividersConverging"><span class="vs-check"></span>Show converging separators <em>(solid → fade)</em></button>' +
           '<button class="forge-viewset-row" data-toggle="guideRings"><span class="vs-check"></span>Show guide rings <em>(inner / mid / outer)</em></button>' +
           '<button class="forge-viewset-row" data-toggle="wires"><span class="vs-check"></span>Show wires</button>' +
@@ -1173,9 +1172,12 @@
         '<div class="forge-stylepanel" id="forge-stylepanel" aria-hidden="true">' +
           '<div class="forge-fxpanel-section">Guide rings</div>' +
           '<div class="forge-stylepanel-rowcolor"><label>color</label><input type="color" data-style="ring-color" value="#6f8aaf"></div>' +
-          '<div class="forge-fxpanel-row"><label>stroke width <span class="forge-fxpanel-val" data-val="ring-width">1.0px</span></label><input type="range" data-style="ring-width" min="0.5" max="6" step="0.1" value="1.0"></div>' +
+          '<div class="forge-fxpanel-row"><label>stroke width <span class="forge-fxpanel-val" data-val="ring-width">0.5px</span></label><input type="range" data-style="ring-width" min="0.2" max="6" step="0.1" value="0.5"></div>' +
           '<div class="forge-fxpanel-row"><label>opacity <span class="forge-fxpanel-val" data-val="ring-opacity">0.50</span></label><input type="range" data-style="ring-opacity" min="0" max="1" step="0.01" value="0.5"></div>' +
-          '<div class="forge-fxpanel-section">Converging separator</div>' +
+          '<div class="forge-fxpanel-section">Separators</div>' +
+          '<div class="forge-fxpanel-row"><label>stroke width <span class="forge-fxpanel-val" data-val="sep-width">0.5px</span></label><input type="range" data-style="sep-width" min="0.2" max="6" step="0.1" value="0.5"></div>' +
+          '<div class="forge-fxpanel-row"><label>opacity <span class="forge-fxpanel-val" data-val="sep-opacity">1.00</span></label><input type="range" data-style="sep-opacity" min="0" max="1" step="0.01" value="1.0"></div>' +
+          '<div class="forge-fxpanel-section">Converging separator colors</div>' +
           '<div class="forge-stylepanel-rowcolor"><label>center color</label><input type="color" data-style="conv-center-color" value="#6f8aaf"></div>' +
           '<div class="forge-stylepanel-rowcolor"><label>outer color</label><input type="color" data-style="conv-edge-color" value="#6f8aaf"></div>' +
           '<button class="forge-fxpanel-reset" id="forge-stylepanel-reset">RESET TO DEFAULTS</button>' +
@@ -3487,7 +3489,10 @@
       const LONG_OUTER_EXTRA  = 500;    // long-mode outer extension (px)
       const LONG_INNER_RADIUS = 4;      // pull-in from exact (0,0) to avoid AA
       const mode = local._dividerMode || 'short';
-      const isLongMode = (mode === 'long' || mode === 'long-centered');
+      // Phase 21AK — only 'long-centered' uses the long geometry now
+      // (the long-faded mode was removed). 'short' / 'off' use the
+      // hull-band geometry.
+      const isLongMode = (mode === 'long-centered');
       const lines = hullDividersG.children;
       for (let i = 0; i < data.dividers.length && i < lines.length; i++) {
         const d = data.dividers[i];
@@ -4637,9 +4642,10 @@
       const btn   = document.getElementById('forge-viewset-btn');
       const panel = document.getElementById('forge-viewset-panel');
       if (!btn || !panel) return;
-      // Phase 21AI (2026-05-22) — schema v4: added dividersConverging
-      // (third separator mode) + guideRings (concentric ring grid).
-      const LS_KEY = 'forge.viewSettings.v4';
+      // Phase 21AK (2026-05-23) — schema v5. Removed dividersLong
+      // (the faded-both-ends long mode). Only two separator modes
+      // remain now: short (default) and converging (long-centered).
+      const LS_KEY = 'forge.viewSettings.v5';
       const state = (() => {
         try {
           const raw = localStorage.getItem(LS_KEY);
@@ -4647,7 +4653,7 @@
         } catch (_) {}
         return {
           hulls: true, familyTitles: true,
-          dividers: true, dividersLong: false, dividersConverging: false,
+          dividers: true, dividersConverging: false,
           guideRings: false,
           wires: true, map: false,
         };
@@ -4655,24 +4661,18 @@
       // Defensive defaults — additive.
       if (typeof state.familyTitles       !== 'boolean') state.familyTitles       = true;
       if (typeof state.dividers           !== 'boolean') state.dividers           = true;
-      if (typeof state.dividersLong       !== 'boolean') state.dividersLong       = false;
       if (typeof state.dividersConverging !== 'boolean') state.dividersConverging = false;
       if (typeof state.guideRings         !== 'boolean') state.guideRings         = false;
       function applyState() {
         document.body.classList.toggle('fv-hide-hulls',         !state.hulls);
         document.body.classList.toggle('fv-hide-family-titles', !state.familyTitles);
-        const noDividers = !state.dividers && !state.dividersLong && !state.dividersConverging;
+        const noDividers = !state.dividers && !state.dividersConverging;
         document.body.classList.toggle('fv-hide-dividers',      noDividers);
         document.body.classList.toggle('fv-hide-wires',         !state.wires);
         document.body.classList.toggle('fv-hide-map',           !state.map);
         document.body.classList.toggle('fv-hide-guide-rings',   !state.guideRings);
-        // Push the divider mode into the layout layer. Three "long"
-        // family modes share the same geometry (centre → outer+500
-        // px); only the gradient differs. rebuildHullElements reads
-        // local._dividerMode for the gradient stops; syncHulls reads
-        // it for the geometry.
+        // Push the divider mode into the layout layer.
         const newMode = state.dividersConverging ? 'long-centered'
-                      : state.dividersLong       ? 'long'
                       : state.dividers           ? 'short'
                       : 'off';
         const modeChanged = (local._dividerMode !== newMode);
@@ -4722,19 +4722,13 @@
           const key = row.dataset.toggle;
           if (!(key in state)) return;
           state[key] = !state[key];
-          // Phase 21AI — separator modes are mutually exclusive
-          // across all three; turning one ON forces the other two OFF.
+          // Phase 21AK — separator modes are mutually exclusive
+          // (short ↔ converging). Turning one ON forces the other OFF.
           if (key === 'dividers' && state.dividers) {
-            state.dividersLong = false;
-            state.dividersConverging = false;
-          }
-          if (key === 'dividersLong' && state.dividersLong) {
-            state.dividers = false;
             state.dividersConverging = false;
           }
           if (key === 'dividersConverging' && state.dividersConverging) {
             state.dividers = false;
-            state.dividersLong = false;
           }
           applyState();
           return;
