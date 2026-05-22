@@ -1298,19 +1298,6 @@
     labelsOverlay.className = 'forge-labels-overlay';
     stage.appendChild(labelsOverlay);
 
-    // Phase 21Y (2026-05-22) — twinkle overlay. Two stacked
-    // radial-gradient noise patterns drift at different speeds. With
-    // mix-blend-mode they modulate the brightness of the canvas
-    // underneath in patches — so different parts of the disk
-    // constellation feel like they're flickering INDEPENDENTLY
-    // (rather than the whole canvas pulsing in sync, which the
-    // shimmer keyframes do). Opacity is 0 by default; .fx-bloom
-    // fades it in. Sits above the canvas, below the hulls.
-    const twinkleOverlay = document.createElement('div');
-    twinkleOverlay.className = 'forge-fx-twinkle';
-    twinkleOverlay.setAttribute('aria-hidden', 'true');
-    stage.appendChild(twinkleOverlay);
-
     // Phase 19B (2026-05-21) — Forge uses the existing GLOBAL
     // aside.detail panel from index.html for the deity inspector.
     // No second panel inside .forge-stage (the earlier Phase 19
@@ -2463,22 +2450,6 @@
     // the FIT scale (the scale that frames the whole wheel into
     // the viewport). 100% = wheel fills the viewport; >100% =
     // zoomed in; <100% = zoomed out. Click = fly back to fit.
-    // Phase 21Y (2026-05-22) — label-aware fit. The original math
-    // ("wheel-diameter fills the shorter viewport axis") was the pure
-    // geometric fit, but the family-name labels sit OUTSIDE the rim
-    // (LABEL_OUTSIDE_PAD ≈ 44 px + label text up to ~80 px on either
-    // side), so at "100%" the wider labels (Pre-Islamic-Arabian,
-    // Modern-Esoteric) clipped at the viewport edge.
-    //
-    // Fix: subtract a label-band buffer from the EFFECTIVE viewport
-    // before computing the fit ratio. Result: 100% on the gizmo =
-    // wheel-with-labels-and-margins-comfortably-visible. Everything
-    // downstream (gizmo %, floor at 11% of fit, BG sizing, pan-bounds
-    // collapse) automatically becomes label-aware because they all
-    // read computeFitScale().
-    //
-    // Label band = LABEL_OUTSIDE_PAD (44) + worst-case-label-half-
-    // width (≈ 80) + extra breathing room (≈ 16) ≈ 140 px on each side.
     function computeFitScale() {
       const vp = local.lastSize;
       if (!vp.w || !vp.h || !local.mode || !local.mode.worldExtent) return 1;
@@ -2486,11 +2457,7 @@
       const wx = ext.x1 - ext.x0;
       const wy = ext.y1 - ext.y0;
       if (wx <= 0 || wy <= 0) return 1;
-      const LABEL_BAND_PX = 140;                       // see comment above
-      const totalBuffer   = 2 * LABEL_BAND_PX;          // both sides of each axis
-      const effectiveW    = Math.max(200, vp.w - totalBuffer);
-      const effectiveH    = Math.max(200, vp.h - totalBuffer);
-      return Math.min(effectiveW / wx, effectiveH / wy);
+      return Math.min(vp.w / wx, vp.h / wy);
     }
     function updateZoomGizmo() {
       const gizmoEl = document.getElementById('forge-zoom-gizmo');
