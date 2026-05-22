@@ -7178,3 +7178,56 @@ body.view-forge #footer-toggle {
 }
 
 
+
+/* ════════════════════════════════════════════════════════════
+   FORGE FLOOR FX — Phase 21V (2026-05-22)
+   ════════════════════════════════════════════════════════════
+   When the user zooms out to ~25% gizmo or below, individual deity
+   readability is gone — the wheel becomes a constellation. We lean
+   into that with three layered effects:
+
+     1. Bloom — soft additive feel via blur + brightness + saturate
+                on the canvas (disks become points of light).
+     2. Shimmer — slow hue-rotate cycle on the disks (the wheel
+                  reads as alive, not static).
+     3. Counter-shimmer — hulls hue-rotate the opposite direction
+                          so the whole layout breathes color.
+
+   Toggled by JS via body.fx-bloom (forge.js drawFrame computes the
+   ramp from camera.scale / fit_scale and toggles the class). The
+   class transitions filter values smoothly so the FX fades in/out
+   rather than snapping.
+
+   No hit-test impact — these are purely visual filters on the
+   rendered output. Performance: GPU-compositor work, no JS cost.
+   ════════════════════════════════════════════════════════════ */
+body.view-forge .forge-canvas {
+  /* Transition is on the FILTER property; the animation overrides
+     it once .fx-bloom is set. Smooth fade-in/out at the threshold. */
+  transition: filter 0.45s ease-out;
+}
+body.view-forge.fx-bloom .forge-canvas {
+  filter: blur(0.6px) brightness(1.18) saturate(1.25);
+  animation: forge-fx-shimmer 6.5s ease-in-out infinite;
+  will-change: filter;
+}
+@keyframes forge-fx-shimmer {
+  0%,   100% { filter: blur(0.5px) brightness(1.15) saturate(1.20) hue-rotate(0deg); }
+  50%        { filter: blur(0.9px) brightness(1.32) saturate(1.45) hue-rotate(-7deg); }
+}
+
+body.view-forge .forge-hulls-overlay {
+  transition: filter 0.45s ease-out;
+}
+body.view-forge.fx-bloom .forge-hulls-overlay {
+  filter: brightness(1.08) saturate(1.20);
+  animation: forge-fx-hull-shimmer 6.5s ease-in-out infinite;
+  will-change: filter;
+}
+/* Counter-phased relative to the canvas — disks shift one way,
+   hulls shift the other. Produces a subtle color interplay across
+   the whole composition. */
+@keyframes forge-fx-hull-shimmer {
+  0%,   100% { filter: brightness(1.08) saturate(1.20) hue-rotate(0deg); }
+  50%        { filter: brightness(1.20) saturate(1.40) hue-rotate(7deg); }
+}

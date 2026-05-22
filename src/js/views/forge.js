@@ -1514,6 +1514,11 @@
           try { local.modeMenuEl.parentNode.removeChild(local.modeMenuEl); } catch (e) { /* ignore */ }
           local.modeMenuEl = null;
         }
+        // Phase 21V (2026-05-22) — clear the FX class so the bloom +
+        // shimmer don't bleed into the next view if the user was at
+        // floor zoom at unmount time.
+        document.body.classList.remove('fx-bloom');
+        local._fxBloomActive = false;
         try { camera.stopAnim(); } catch (e) { /* ignore */ }
       },
     };
@@ -2581,6 +2586,16 @@
       // sources wins: focused-state dim and zoom-fade dim
       // never accidentally underflow.
       let wireZoomFade = 0;
+      // Phase 21V (2026-05-22) — at the zoom floor the wheel reads
+      // as a constellation, not as readable nodes. Toggle a body
+      // class so the CSS bloom + shimmer FX activate. The ramp:
+      //   zp >= 0.30 → fx OFF
+      //   zp <= 0.20 → fx ON (full)
+      //   in between → ON (the CSS transition handles the soft
+      //                    fade-in over 0.45s)
+      // We use a small hysteresis (0.25 ↔ 0.30) so the class doesn't
+      // flicker right at the edge as the user grazes the threshold.
+      let fxBloomActive = !!local._fxBloomActive;
       if (camera && camera.state && typeof computeFitScale === 'function') {
         const fitSc = computeFitScale();
         if (fitSc > 0) {
@@ -2588,7 +2603,14 @@
           if      (zp >= 1.0) wireZoomFade = 0;
           else if (zp <= 0.5) wireZoomFade = 1;
           else                wireZoomFade = (1.0 - zp) / 0.5;
+          // FX class toggle with hysteresis.
+          if (!fxBloomActive && zp <= 0.25) fxBloomActive = true;
+          else if (fxBloomActive && zp >= 0.30) fxBloomActive = false;
         }
+      }
+      if (fxBloomActive !== local._fxBloomActive) {
+        local._fxBloomActive = fxBloomActive;
+        document.body.classList.toggle('fx-bloom', fxBloomActive);
       }
       const focusDim      = hasFocus ? local.params.dim_amount : 0;
       const effectiveDim  = Math.max(focusDim, wireZoomFade);
