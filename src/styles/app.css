@@ -673,6 +673,44 @@ body.view-forge .forge-stage {
 .forge-viewset-row.is-on { color: var(--gold-1, #e8c889); }
 .forge-viewset-row.is-on:hover { background: rgba(212,165,90,0.10); }
 
+/* ═══════════════════════════════════════════════════════════════
+   View-settings — Phase 21S (2026-05-22)
+   Section header + divider + radio-dot variants. The radio dot
+   (.vs-radio) is the same 14×14 box as the checkbox, but rendered
+   as a CIRCLE — gold-filled when its row is .is-on. Same primitive
+   spirit: the indicator is the dot; no row-level border.
+   ═══════════════════════════════════════════════════════════════ */
+.forge-viewset-section {
+  font-family: var(--mono, "JetBrains Mono", Menlo, monospace);
+  font-size: 10px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--text-3, #6b7280);
+  padding: 8px 16px 4px;
+}
+.forge-viewset-divider {
+  height: 1px;
+  margin: 4px 12px;
+  background: rgba(212,165,90,0.10);
+}
+.forge-viewset-row .vs-radio {
+  display: inline-block;
+  width: 14px; height: 14px;
+  border-radius: 50%;
+  border: 1px solid rgba(212,165,90,0.55);
+  background: transparent;
+  position: relative;
+  flex: 0 0 auto;
+  transition: background 100ms ease, border-color 100ms ease;
+}
+.forge-viewset-row.is-on .vs-radio {
+  background: var(--gold, #d4a55a);
+  border-color: var(--gold, #d4a55a);
+  /* Subtle inner-ring affordance — the filled dot has a thin gold
+     ring around it so the active radio reads at a glance. */
+  box-shadow: inset 0 0 0 2px var(--bg-1, #0d1119);
+}
+
 /* Layer-toggle effects driven by body classes set in JS. */
 /* Phase 21R (2026-05-22) — `dividers` toggle is independent from
    `hulls`. Hide just the radial divider lines while keeping the

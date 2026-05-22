@@ -720,6 +720,227 @@
     ];
     const familyOrder = FAMILY_ORDER;
 
+    // ════════════════════════════════════════════════════════════
+    //  COLOR THEMES + FAMILY ORDER THEMES — Phase 21S (2026-05-22)
+    // ════════════════════════════════════════════════════════════
+    //  John's directive: he liked all 4 color rubrics + all 4 order
+    //  rubrics, so each is a togglable mode. Stored under
+    //  `local.uxMode.colorMode` and `local.uxMode.orderMode`.
+    //  Persisted in LS as `forge.uxMode.v1`.
+    //
+    //  COLOR_THEMES[<id>] is a family→hex map. `default` is null —
+    //  null means "use the baked color from data.js". For each
+    //  named theme, every curated family has an entry; unknown
+    //  families fall through to baked.
+    //
+    //  Christian #c44a5a and Gnostic #6b3a8a are PINNED in the
+    //  Roots theme — they anchor the Semitic / Late-Antique cluster
+    //  John already loved. Other themes are free to pick their own.
+    // ════════════════════════════════════════════════════════════
+    const COLOR_THEMES = {
+      // null = pass-through; the layout reads n.family_color directly
+      // (the colors currently baked into data.js by build_data.py).
+      default: null,
+
+      // ROOTS — civilizational-linguistic root families. Hue per
+      // root cluster; saturation/lightness distinguishes branches.
+      roots: {
+        // Semitic / Abrahamic — wine + violet + amber (Christian +
+        // Gnostic pinned).
+        'Israelite':           '#b87a45',
+        'Rabbinic':            '#a8703a',
+        'Christian':           '#c44a5a',  // PINNED
+        'Gnostic':             '#6b3a8a',  // PINNED
+        'Islamic':             '#9a3a6a',
+        'Manichaean':          '#7a4a9a',
+        'Mandaean':            '#5a4a8a',
+        'Canaanite':           '#a85a5a',
+        'Pre-Islamic-Arabian': '#b87a55',
+
+        // Indo-European West (Mediterranean classical + N-Eur) —
+        // rust to bronze.
+        'Greek':       '#9a5ac4',  // anchor pulled toward violet for IE root tie-in
+        'Roman':       '#8a4a9a',
+        'Celtic':      '#5a8a4a',
+        'Norse':       '#4a6aa4',
+        'Baltic':      '#6a8a4a',
+        'Slavic-Finnic':'#7a5a8a',
+        'Hittite':     '#8a6a40',
+        'Armenian':    '#a04a6a',
+        'Etruscan':    '#b85a40',
+
+        // Indo-European East (Indo-Iranian) — saffron + ochre.
+        'Vedic':       '#e08a3a',
+        'Buddhist':    '#c4a05a',
+        'Zoroastrian': '#d49a3a',
+
+        // East Asian — jade + celadon + cinnabar.
+        'Chinese':     '#5a9a8f',
+        'Shinto':      '#7aa49a',
+
+        // Egyptian / Mesopotamian-Mediterranean basin — lapis +
+        // turquoise + ochre.
+        'Mesopotamian':'#3a6aa4',
+        'Egyptian':    '#3a8aa4',
+        'Hermetic':    '#5a9ab8',
+        'Mystery':     '#7a8ab8',
+        'Neoplatonist':'#4a8a9a',
+
+        // African.
+        'African':     '#b86a3a',
+
+        // Mesoamerican / Andean.
+        'Mesoamerican':'#9a4a3a',
+        'Andean':      '#a06a40',
+
+        // Indigenous (Americas + Pacific).
+        'Native-American':'#8a7a50',
+        'Pacific':     '#5a8a9a',
+
+        // Modern syncretic / meta.
+        'Modern-Esoteric':'#9a7ac4',
+        'Academic':    '#6a7a8a',
+        'Other':       '#7a8090',
+      },
+
+      // GEOGRAPHY — colored by climate / latitude band.
+      // Tropical = warm; temperate = green; arid = ochre;
+      // polar / oceanic = cool. Honest as a climate map.
+      geography: {
+        // Mediterranean basin — gold + ochre.
+        'Greek':'#d4a55a','Roman':'#c49a4a','Etruscan':'#c4863a','Egyptian':'#d4b04a',
+        'Mesopotamian':'#c47a4a','Israelite':'#c89a5a','Rabbinic':'#b8904a','Canaanite':'#c48a4a',
+        'Phoenician':'#c4904a','Pre-Islamic-Arabian':'#b87a40','Mystery':'#c4a06a','Hermetic':'#d4b06a',
+        'Neoplatonist':'#c4a070','Christian':'#c46a5a','Gnostic':'#7a5aa4',
+        // Near-East arid — wine + ochre.
+        'Islamic':'#9a6a40','Mandaean':'#8a6a5a','Manichaean':'#9a5a6a','Zoroastrian':'#a07050',
+        'Armenian':'#a06a5a','Hittite':'#a07a4a',
+        // Temperate Europe — green + slate.
+        'Celtic':'#6a8a5a','Norse':'#5a7a9a','Baltic':'#7a8a5a','Slavic-Finnic':'#6a7a8a',
+        // South / South-East Asia — saffron + jade.
+        'Vedic':'#d4853a','Buddhist':'#c4a060','Chinese':'#5a9a7a','Shinto':'#7aa49a',
+        // Tropical / Pacific — coral + sea-green.
+        'African':'#b85a3a','Pacific':'#3a8aa4',
+        // Americas — obsidian + sienna.
+        'Mesoamerican':'#8a3a3a','Andean':'#a06a4a','Native-American':'#8a6a4a',
+        // Meta.
+        'Modern-Esoteric':'#9a7ac4','Academic':'#6a7a8a','Other':'#7a8090',
+      },
+
+      // COSMOLOGY — by theological structure.
+      // Monotheist = gold | Dualist = violet | Polytheist = rust |
+      // Pantheist = jade | Animist = moss
+      cosmology: {
+        // Monotheist (single supreme deity).
+        'Israelite':'#d4a55a','Rabbinic':'#c49a50','Christian':'#c44a5a','Islamic':'#d4a040',
+        'Zoroastrian':'#c8954a','Mandaean':'#b8904a','Sikh':'#c89a5a',
+        // Dualist (two opposing principles).
+        'Gnostic':'#6b3a8a','Manichaean':'#7a4a9a','Neoplatonist':'#8a5a9a',
+        // Polytheist (many gods).
+        'Greek':'#c47a4a','Roman':'#b86a3a','Egyptian':'#c4854a','Mesopotamian':'#c4754a',
+        'Norse':'#a86a4a','Celtic':'#b87a4a','Vedic':'#d4854a','Hittite':'#a87a4a',
+        'Canaanite':'#b8704a','Etruscan':'#c4753a','Slavic-Finnic':'#a87a5a','Baltic':'#a88a5a',
+        'Armenian':'#b86a5a','Pre-Islamic-Arabian':'#b87a40','Hermetic':'#c4a070','Mystery':'#c49a6a',
+        // Pantheist / Non-dual (divine ≡ cosmos).
+        'Buddhist':'#5a9a8a','Chinese':'#5a8a7a','Shinto':'#7aa49a',
+        // Animist (spirits in things).
+        'African':'#7a8a4a','Mesoamerican':'#7a8a5a','Andean':'#7a8a6a',
+        'Native-American':'#8a8a5a','Pacific':'#6a8a8a',
+        // Meta.
+        'Modern-Esoteric':'#9a7ac4','Academic':'#6a7a8a','Other':'#7a8090',
+      },
+
+      // TIME — by era of emergence (the radial axis already encodes
+      // age within a family; this colors-by-era too for an even
+      // stronger temporal read).
+      // Stone/Bronze pre-3000 BCE = deep umber | Bronze/Iron Age =
+      // copper | Classical = ochre | Late-Antique = wine | Medieval
+      // = teal | Early-Modern = indigo | Modern = silver
+      time: {
+        // Stone / Bronze (≥ -3000 BCE).
+        'Mesopotamian':'#5a3a2a','Egyptian':'#6a4a2a','African':'#5a4a3a',
+        'Native-American':'#5a4a3a','Pacific':'#5a4a4a',
+        // Bronze / Iron Age (-3000 to -800).
+        'Canaanite':'#8a5a3a','Israelite':'#8a6a3a','Vedic':'#a8703a','Hittite':'#9a6a3a',
+        'Etruscan':'#a8703a','Mesoamerican':'#8a5a3a','Andean':'#8a6a3a',
+        // Classical Antiquity (-800 to 0).
+        'Greek':'#c4a040','Celtic':'#b89a4a','Norse':'#c4a04a','Roman':'#c89a4a',
+        'Zoroastrian':'#c8a04a','Buddhist':'#c8a050','Chinese':'#c89a4a','Shinto':'#c8a05a',
+        'Baltic':'#b8a04a','Slavic-Finnic':'#a89a4a','Pre-Islamic-Arabian':'#b89a3a',
+        // Late-Antique (0 to 400 CE).
+        'Christian':'#c44a5a','Gnostic':'#6b3a8a','Manichaean':'#7a4a9a','Mandaean':'#5a4a8a',
+        'Neoplatonist':'#8a5a9a','Hermetic':'#9a6aa0','Mystery':'#a06a8a','Rabbinic':'#a06a8a',
+        'Armenian':'#9a5a8a',
+        // Medieval (400 to 1500).
+        'Islamic':'#3a8a8a',
+        // Modern.
+        'Modern-Esoteric':'#5a6aa4','Academic':'#7a8a9a','Other':'#7a8090',
+      },
+    };
+
+    // ────────────────────────────────────────────────────────────
+    // ORDER_THEMES[<id>] is a FAMILY_ORDER-shaped array (or null
+    // for 'default' which uses the existing FAMILY_ORDER).
+    // Missing families fall through to the layout's auto-append.
+    // ────────────────────────────────────────────────────────────
+    const ORDER_THEMES = {
+      // Existing opposites-pair layout.
+      opposites: FAMILY_ORDER,
+
+      // Cluster by root, chronologically within. Near-East spine
+      // first, then Indo-Iranian, East Asia, Classical Med,
+      // IE-North/West, extra-Eurasian, Modern.
+      roots: [
+        // Near-East spine, oldest → youngest.
+        'Mesopotamian','Egyptian','Hittite','Canaanite','Israelite','Rabbinic',
+        'Christian','Gnostic','Mandaean','Manichaean','Pre-Islamic-Arabian','Islamic',
+        // Indo-Iranian.
+        'Zoroastrian','Vedic','Buddhist',
+        // East Asia.
+        'Chinese','Shinto',
+        // Classical Mediterranean.
+        'Greek','Mystery','Hermetic','Neoplatonist','Roman','Etruscan',
+        // Broader Indo-European.
+        'Celtic','Norse','Baltic','Slavic-Finnic','Armenian',
+        // Extra-Eurasian.
+        'African','Mesoamerican','Andean','Native-American','Pacific',
+        // Modern / meta.
+        'Modern-Esoteric','Academic','Other',
+      ],
+
+      // Strict global chronological emergence — oldest first, regardless
+      // of cluster. Pure historical sweep.
+      chronological: [
+        'Mesopotamian','Egyptian','African','Native-American','Pacific',
+        'Canaanite','Israelite','Vedic','Hittite','Etruscan',
+        'Mesoamerican','Andean',
+        'Greek','Zoroastrian','Buddhist','Celtic','Norse','Roman',
+        'Chinese','Shinto','Baltic','Slavic-Finnic','Pre-Islamic-Arabian',
+        'Rabbinic','Christian','Gnostic','Mandaean','Manichaean',
+        'Hermetic','Mystery','Neoplatonist','Armenian',
+        'Islamic',
+        'Modern-Esoteric','Academic','Other',
+      ],
+
+      // Geographic sweep — Americas → Atlantic → Med → Near East →
+      // India → East Asia → Pacific.
+      geography: [
+        'Mesoamerican','Andean','Native-American',
+        'Celtic','Norse','Baltic','Slavic-Finnic',
+        'Etruscan','Roman','Greek','Mystery','Hermetic','Neoplatonist',
+        'Egyptian','African',
+        'Mesopotamian','Canaanite','Israelite','Rabbinic','Christian','Gnostic',
+        'Mandaean','Manichaean','Armenian','Hittite',
+        'Pre-Islamic-Arabian','Islamic','Zoroastrian',
+        'Vedic','Buddhist',
+        'Chinese','Shinto','Pacific',
+        'Modern-Esoteric','Academic','Other',
+      ],
+    };
+
+    // Default ux-mode used until LS-restore (if any) overrides it.
+    const DEFAULT_UX_MODE = { colorMode: 'default', orderMode: 'opposites' };
+
     // ── Mode-dependent state lives on `local.mode` ────────
     // rebuildForMode(id) repopulates this object whenever the
     // user picks a different mode in the dropdown.  Keeping the
@@ -799,15 +1020,30 @@
       // toggles can be set in one go. Persists in LocalStorage.
       '<div class="forge-viewset-wrap">' +
         '<button class="forge-viewset-btn" id="forge-viewset-btn" title="View settings" aria-expanded="false">⚏ VIEW</button>' +
-        // Phase 21R (2026-05-22) — separators split from hulls. The
-        // pie-slice fills and the radial divider lines are now
-        // independently toggleable; the family-name labels track
-        // the hulls toggle (they ARE the slice labels).
+        // Phase 21R+21S (2026-05-22) — view-settings panel with
+        // three sections: layer toggles (booleans), color theme
+        // (radio), family order (radio). The color/order radios
+        // re-run rebuildForMode with the preserve-locks path so
+        // the user's selection survives the swap.
         '<div class="forge-viewset-panel" id="forge-viewset-panel" aria-hidden="true">' +
+          '<div class="forge-viewset-section">Layers</div>' +
           '<button class="forge-viewset-row" data-toggle="hulls"><span class="vs-check"></span>Show family hulls</button>' +
           '<button class="forge-viewset-row" data-toggle="dividers"><span class="vs-check"></span>Show family separators</button>' +
           '<button class="forge-viewset-row" data-toggle="wires"><span class="vs-check"></span>Show wires</button>' +
           '<button class="forge-viewset-row" data-toggle="map" disabled><span class="vs-check"></span>Show map <em>(coming soon)</em></button>' +
+          '<div class="forge-viewset-divider"></div>' +
+          '<div class="forge-viewset-section">Color theme</div>' +
+          '<button class="forge-viewset-row" data-color="default"><span class="vs-radio"></span>Default <em>(baked)</em></button>' +
+          '<button class="forge-viewset-row" data-color="roots"><span class="vs-radio"></span>Roots <em>(civilizational families)</em></button>' +
+          '<button class="forge-viewset-row" data-color="geography"><span class="vs-radio"></span>Geography <em>(climate band)</em></button>' +
+          '<button class="forge-viewset-row" data-color="cosmology"><span class="vs-radio"></span>Cosmology <em>(theology)</em></button>' +
+          '<button class="forge-viewset-row" data-color="time"><span class="vs-radio"></span>Time <em>(era)</em></button>' +
+          '<div class="forge-viewset-divider"></div>' +
+          '<div class="forge-viewset-section">Family order</div>' +
+          '<button class="forge-viewset-row" data-order="opposites"><span class="vs-radio"></span>Opposites <em>(default)</em></button>' +
+          '<button class="forge-viewset-row" data-order="roots"><span class="vs-radio"></span>Roots clustered</button>' +
+          '<button class="forge-viewset-row" data-order="chronological"><span class="vs-radio"></span>Chronological</button>' +
+          '<button class="forge-viewset-row" data-order="geography"><span class="vs-radio"></span>Geographic sweep</button>' +
         '</div>' +
       '</div>',
       '<div class="forge-search-wrap">' +
@@ -1626,6 +1862,19 @@
           && modemod.isValidMode(savedRuntime.mode)) {
         local.mode.id = savedRuntime.mode;
       }
+      // Phase 21S (2026-05-22) — restore color theme + family order
+      // BEFORE the first rebuildForMode so the initial layout uses
+      // the right choices. Unknown ids fall back to default.
+      local.uxMode = Object.assign({}, DEFAULT_UX_MODE);
+      if (savedRuntime && savedRuntime.uxMode) {
+        const u = savedRuntime.uxMode;
+        if (typeof u.colorMode === 'string' && COLOR_THEMES.hasOwnProperty(u.colorMode)) {
+          local.uxMode.colorMode = u.colorMode;
+        }
+        if (typeof u.orderMode === 'string' && ORDER_THEMES.hasOwnProperty(u.orderMode)) {
+          local.uxMode.orderMode = u.orderMode;
+        }
+      }
 
       // Phase 4d: bake the initial mode (deities by default).
       // Must happen AFTER resizeAndFit so the camera has a valid
@@ -1790,8 +2039,16 @@
     // Heavy work scales with the active mode's node count, not
     // the whole vault — `documents` at 700+ nodes is the busiest
     // and still finishes in <20 ms on modern hardware.
-    function rebuildForMode(modeId) {
+    function rebuildForMode(modeId, opts) {
       if (!modemod.isValidMode(modeId)) modeId = modemod.defaultMode();
+      // Phase 21S (2026-05-22) — `opts.preserveLocks` skips the
+      // cross-mode lock-clear. Used by the ux-mode (color/order)
+      // re-apply path where node ids stay valid even though the
+      // wheel re-lays-out. The default (no opts) keeps the
+      // existing cross-mode behavior: locks clear because node
+      // ids don't carry between modes.
+      const preserveLocks = !!(opts && opts.preserveLocks);
+      const savedLocks    = preserveLocks ? Array.from(local.lockedSet || []) : null;
 
       // Phase 2B B2 (2026-05-20) — drain any pending hover-coalesce
       // BEFORE swapping local.mode. Without this, the pending rAF
@@ -1806,7 +2063,12 @@
       const modeNodes = modemod.filterNodesByMode(modeId, allNodes, allEdges);
       const modeEdges = layout.filterEdgesByNodes(allEdges, modeNodes);
       const degree    = layout.computeDegree(modeNodes, modeEdges);
-      const lay       = layout.radialWedgeLayout(modeNodes, familyOrder, { degree });
+      // Phase 21S (2026-05-22) — order + color from the active
+      // ux-mode (radio selections in View settings; LS-persisted).
+      const lay       = layout.radialWedgeLayout(modeNodes, currentFamilyOrder(), {
+        degree,
+        colorOverride: currentColorOverride(),
+      });
 
       // 2026-05-19 — pack-scale-fix. packNodes bakes the world
       // radius using `camScale` at pack time (the screen-px clamp
@@ -1969,9 +2231,23 @@
 
       // Cross-mode hover/lock cleared — node ids don't map
       // between modes.
+      // Phase 21S (2026-05-22) — preserveLocks restores the lock
+      // set after the wholesale-replace (which has to allocate a
+      // fresh Set per re-build). Only valid ids in the new mode's
+      // adjacency are restored; stale ones (shouldn't happen for
+      // same-mode color/order swaps but defensive) drop silently.
       local.hoverId    = null;
       local.lockedSet  = new Set();
       local.focusedSet = null;
+      if (preserveLocks && savedLocks && savedLocks.length) {
+        for (const id of savedLocks) {
+          if (typeof id === 'string' && adj && adj.has(id)) {
+            local.lockedSet.add(id);
+          }
+        }
+        const lEl = document.getElementById('forge-status-lock');
+        if (lEl) lEl.textContent = String(local.lockedSet.size || '—');
+      }
       // 2026-05-20 — audit-flagged root cause of the IDLE-hover
       // lag: first hover from a settled IDLE state was creating
       // ~47 label divs on the spot (appendChild × 47 + a single
@@ -3515,9 +3791,33 @@
             center: tl.centerDate,
           } : null,
           lockedSet: local.lockedSet ? Array.from(local.lockedSet) : [],
+          // Phase 21S (2026-05-22) — persist color theme + family
+          // order alongside mode/timeline/locks so the wheel comes
+          // back with the user's last UX choice.
+          uxMode: local.uxMode ? {
+            colorMode: local.uxMode.colorMode,
+            orderMode: local.uxMode.orderMode,
+          } : null,
         };
         window.localStorage.setItem(LS_RUNTIME_KEY, JSON.stringify(state));
       } catch (e) { /* ignore quota / privacy mode */ }
+    }
+
+    // Phase 21S (2026-05-22) — Re-apply the current ux-mode (color
+    // theme + family order). Triggered by the View-settings radio
+    // groups. Uses rebuildForMode({preserveLocks:true}) so the
+    // user doesn't lose their selection when toggling a theme.
+    function applyUxMode() {
+      if (!local.mode || !local.mode.id) return;
+      rebuildForMode(local.mode.id, { preserveLocks: true });
+      // Hover-boost palette could have stale alphas (the boost path
+      // tracks _hoverBoostActive); refresh it now to be safe.
+      try {
+        if (local.renderer && local.renderer.setBucketPalette) {
+          local.renderer.setBucketPalette(hotPaletteFromParams());
+        }
+      } catch (_) { /* ignore */ }
+      saveRuntimeState();
     }
 
     // ── Search (Phase 4f) ─────────────────────────────
@@ -3862,10 +4162,19 @@
         document.body.classList.toggle('fv-hide-dividers', !state.dividers);
         document.body.classList.toggle('fv-hide-wires',    !state.wires);
         document.body.classList.toggle('fv-hide-map',      !state.map);
-        // Mark each row's checkbox state for CSS.
-        panel.querySelectorAll('.forge-viewset-row').forEach(row => {
+        // Mark each toggle row's checkbox state for CSS.
+        panel.querySelectorAll('.forge-viewset-row[data-toggle]').forEach(row => {
           const key = row.dataset.toggle;
           row.classList.toggle('is-on', !!state[key]);
+        });
+        // Phase 21S (2026-05-22) — radio-style highlight for the
+        // active color theme + family order rows.
+        const ux = local.uxMode || DEFAULT_UX_MODE;
+        panel.querySelectorAll('.forge-viewset-row[data-color]').forEach(row => {
+          row.classList.toggle('is-on', row.dataset.color === ux.colorMode);
+        });
+        panel.querySelectorAll('.forge-viewset-row[data-order]').forEach(row => {
+          row.classList.toggle('is-on', row.dataset.order === ux.orderMode);
         });
         try { localStorage.setItem(LS_KEY, JSON.stringify(state)); } catch (_) {}
       }
@@ -3886,10 +4195,34 @@
       panel.addEventListener('click', (ev) => {
         const row = ev.target.closest('.forge-viewset-row');
         if (!row || row.disabled) return;
-        const key = row.dataset.toggle;
-        if (!(key in state)) return;
-        state[key] = !state[key];
-        applyState();
+        // Layer toggle (boolean).
+        if (row.dataset.toggle) {
+          const key = row.dataset.toggle;
+          if (!(key in state)) return;
+          state[key] = !state[key];
+          applyState();
+          return;
+        }
+        // Phase 21S (2026-05-22) — color-theme radio.
+        if (row.dataset.color) {
+          const v = row.dataset.color;
+          if (!COLOR_THEMES.hasOwnProperty(v)) return;
+          if (local.uxMode.colorMode === v) return;   // no-op if already
+          local.uxMode.colorMode = v;
+          applyState();
+          applyUxMode();
+          return;
+        }
+        // Phase 21S (2026-05-22) — order radio.
+        if (row.dataset.order) {
+          const v = row.dataset.order;
+          if (!ORDER_THEMES.hasOwnProperty(v)) return;
+          if (local.uxMode.orderMode === v) return;
+          local.uxMode.orderMode = v;
+          applyState();
+          applyUxMode();
+          return;
+        }
       });
       document.addEventListener('click', (ev) => {
         if (!panel.classList.contains('is-open')) return;
@@ -5454,11 +5787,24 @@
     }
     function nodeOverridesFromParams() {
       return {
-        tierRadii:   tierRadiiFromParams(),
-        camScale:    (camera && camera.state) ? camera.state.scale : 1,
-        minScreenPx: local.params.node_min_screen_px,
-        maxScreenPx: local.params.node_max_screen_px,
+        tierRadii:    tierRadiiFromParams(),
+        camScale:     (camera && camera.state) ? camera.state.scale : 1,
+        minScreenPx:  local.params.node_min_screen_px,
+        maxScreenPx:  local.params.node_max_screen_px,
+        // Phase 21S (2026-05-22) — current ux-mode color override.
+        // Null when colorMode === 'default' (preserve baked colors).
+        colorOverride: currentColorOverride(),
       };
+    }
+    // Phase 21S (2026-05-22) — return the active family→hex map for
+    // the selected color theme (null = default, use baked).
+    function currentColorOverride() {
+      const m = (local.uxMode && local.uxMode.colorMode) || 'default';
+      return COLOR_THEMES[m] || null;
+    }
+    function currentFamilyOrder() {
+      const m = (local.uxMode && local.uxMode.orderMode) || 'opposites';
+      return ORDER_THEMES[m] || FAMILY_ORDER;
     }
     function hex2rgba(hex, a) {
       if (!hex || typeof hex !== 'string' || hex[0] !== '#' || hex.length < 7) {

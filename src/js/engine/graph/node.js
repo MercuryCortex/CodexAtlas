@@ -162,7 +162,21 @@
         if (maxPx !== null && targetScreen > maxPx) targetScreen = maxPx;
         r = targetScreen / camScale;
       }
-      const col = parseColor(n.family_color || n.tradition_color, fallbackColor);
+      // Phase 21S (2026-05-22) — view-layer color override. If
+      // opts.colorOverride is provided (Map or plain object keyed
+      // by family name) and contains an entry for this node's
+      // family, use that hex instead of the baked node color. Lets
+      // the Forge view re-skin the wheel without touching data.js.
+      let overrideHex = null;
+      if (opts && opts.colorOverride) {
+        const fam = n.family;
+        if (typeof opts.colorOverride.get === 'function') {
+          overrideHex = opts.colorOverride.get(fam) || null;
+        } else {
+          overrideHex = opts.colorOverride[fam] || null;
+        }
+      }
+      const col = parseColor(overrideHex || n.family_color || n.tradition_color, fallbackColor);
 
       const off = i * FLOATS_PER_INSTANCE;
       data[off + 0] = pos.x;

@@ -73,14 +73,30 @@
     const degree = o.degree instanceof Map ? o.degree : new Map();
 
     // ── 1. Group nodes by family ──────────────────────────
+    // Phase 21S (2026-05-22) — opts.colorOverride lets the caller
+    // re-skin the wheel without touching baked node colors. If a
+    // family name is present in the override map, its wedge color
+    // (used by hulls + dividers + label) uses the override; absent
+    // names fall back to the baked color on the first encountered
+    // node. The override does NOT touch n.family_color directly —
+    // downstream consumers that read node colors (disk tints,
+    // glyph tints) need their own override path; see forge.js
+    // packNodes for that hook.
+    const colorOverride = o.colorOverride || null;
+    const overrideFor = (familyName) => {
+      if (!colorOverride) return null;
+      if (typeof colorOverride.get === 'function') return colorOverride.get(familyName) || null;
+      return colorOverride[familyName] || null;
+    };
     const famByName = Object.create(null);
     nodes.forEach(n => {
       const fam = n.family || 'Other';
       if (!famByName[fam]) {
+        const baked = n.family_color || n.tradition_color || '#7a8090';
         famByName[fam] = {
           name:    fam,
           members: [],
-          color:   n.family_color || n.tradition_color || '#7a8090',
+          color:   overrideFor(fam) || baked,
         };
       }
       famByName[fam].members.push(n);
