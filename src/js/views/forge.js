@@ -4743,6 +4743,15 @@
         chronological: 'Globally oldest to globally youngest, ignoring family. Pure historical sweep.',
         geography:     'West to East: Americas → Europe → Mediterranean → Near East → India → East Asia → Pacific.',
       },
+      // ── Node distributions ──────────────────────────────────
+      // Phase 21AL (2026-05-23). Each wedge sorts its members by
+      // date_earliest (oldest first); the distribution decides
+      // how that ordered list gets mapped into (radius, angle).
+      distribution: {
+        organic:    'Default. Oldest nodes sit near the outer rim, newest near the centre, with hash-jitter so siblings don\'t line up perfectly. The wedge opens outward like a fan.',
+        'age-bands':'Concentric chronological rings. Each node lands on the ring matching its century (Bronze Age outer → Modern inner). Reads like a radar chart of historical periods across all traditions at once.',
+        vogel:      'Phyllotaxis sunflower (Vogel). Each next node steps by the golden angle (≈ 137.5°) and a √(i/N) radius, packing into the spiral pattern of real sunflower seeds. The OLDEST node is the seed at the centre; younger nodes spiral outward. Family colour is preserved.',
+      },
     };
 
     function wireViewSettings() {
@@ -4917,6 +4926,8 @@
           return VIEWSET_CRITERIA.color[row.dataset.color];
         if (row.dataset.order && VIEWSET_CRITERIA.order[row.dataset.order])
           return VIEWSET_CRITERIA.order[row.dataset.order];
+        if (row.dataset.distribution && VIEWSET_CRITERIA.distribution[row.dataset.distribution])
+          return VIEWSET_CRITERIA.distribution[row.dataset.distribution];
         return null;
       }
       function positionTooltip(row) {
@@ -4961,7 +4972,7 @@
       }
       panel.addEventListener('mousemove', (ev) => {
         const row = ev.target.closest('.forge-viewset-row');
-        if (!row || (!row.dataset.color && !row.dataset.order)) {
+        if (!row || (!row.dataset.color && !row.dataset.order && !row.dataset.distribution)) {
           clearDwell();
           hideTip();
           return;

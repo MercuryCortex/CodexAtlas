@@ -229,8 +229,13 @@
       for (let i = 0; i < N; i++) {
         const ageT = N > 1 ? i / (N - 1) : 0.5;
         if (distribution === 'vogel') {
-          // Sqrt for equal-area sunflower seed distribution.
-          const t = N > 1 ? i / (N - 1) : 0.5;
+          // Phase 21AL fix (2026-05-23) — was `i/(N-1)` which put
+          // i=0 at exactly rIn and i=1 at sqrt(1/(N-1))·R away —
+          // a visible empty band near the centre. The standard
+          // sunflower offset (i+0.5)/N spreads the first few seeds
+          // evenly: the innermost seed sits at sqrt(0.5/N)·R from
+          // rIn, so no node sits at the perfect centre singularity.
+          const t = (i + 0.5) / N;
           targetR[i] = rIn + (rOut - rIn) * Math.sqrt(t);
         } else if (distribution === 'age-bands') {
           // Find the band index for this member's date_earliest.
@@ -284,7 +289,11 @@
           // golden angle wrapped into the wedge produces the
           // classic seed-head spiral. Wedge-relative so each
           // family gets its own spiral.
-          const t = N > 1 ? i / (N - 1) : 0.5;
+          // Phase 21AL fix (2026-05-23) — (i+0.5)/N instead of
+          // i/(N-1). See targetR comment above; same reasoning —
+          // avoids the centre-of-wedge empty band that came from
+          // i=0 sitting exactly at rIn.
+          const t = (i + 0.5) / N;
           r = rIn + (rOut - rIn) * Math.sqrt(t);
           // Map an unbounded golden-angle index into the wedge arc
           // by wrapping into [-1, 1] in u-space, then to the wedge.
