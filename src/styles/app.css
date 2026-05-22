@@ -718,10 +718,13 @@ body.view-forge .forge-stage {
    which contains BOTH the pie-slice polys AND the divider lines —
    so toggling hulls off also killed separators. Fixed by
    targeting just the polys + the family-titles labels here. */
-body.fv-hide-hulls    #forge-hull-polys  { display: none !important; }
-body.fv-hide-hulls    #forge-hull-labels { display: none !important; }
-body.fv-hide-dividers #forge-hull-dividers { display: none !important; }
-body.fv-hide-wires    .forge-canvas { /* placeholder — wire-only hide is a renderer-side change deferred */ }
+/* Phase 21AH (2026-05-22) — family titles are now an INDEPENDENT
+   toggle from hulls. fv-hide-hulls hides only the pie polygons;
+   fv-hide-family-titles hides only the labels. */
+body.fv-hide-hulls         #forge-hull-polys    { display: none !important; }
+body.fv-hide-family-titles #forge-hull-labels   { display: none !important; }
+body.fv-hide-dividers      #forge-hull-dividers { display: none !important; }
+body.fv-hide-wires         .forge-canvas { /* placeholder — wire-only hide is a renderer-side change deferred */ }
 
 /* ── Phase 21B (2026-05-21) — Search autocomplete (drop-up) ── */
 .forge-search-wrap {
@@ -7606,3 +7609,9 @@ body.view-forge.fx-pulse-enabled .forge-fx-pulse-dot.fx-click-pulse {
   border-color: var(--gold, #d4a55a);
 }
 .forge-fxpanel-toggle.is-on { color: var(--gold-1, #e8c889); }
+
+/* Phase 21AH (2026-05-22) — below 15% gizmo the wheel is too
+   compressed for individual interaction. Hide every node label
+   so the bloom heartbeat owns the visual; hit-testing is
+   short-circuited in JS (see hitTestAt). */
+body.view-forge.fx-belowfifteen .forge-labels-overlay { display: none !important; }

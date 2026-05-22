@@ -1073,7 +1073,9 @@
         '<div class="forge-viewset-panel" id="forge-viewset-panel" aria-hidden="true">' +
           '<div class="forge-viewset-section">Layers</div>' +
           '<button class="forge-viewset-row" data-toggle="hulls"><span class="vs-check"></span>Show family hulls</button>' +
+          '<button class="forge-viewset-row" data-toggle="familyTitles"><span class="vs-check"></span>Show family titles</button>' +
           '<button class="forge-viewset-row" data-toggle="dividers"><span class="vs-check"></span>Show family separators</button>' +
+          '<button class="forge-viewset-row" data-toggle="dividersLong"><span class="vs-check"></span>Show long separators <em>(center → out)</em></button>' +
           '<button class="forge-viewset-row" data-toggle="wires"><span class="vs-check"></span>Show wires</button>' +
           '<button class="forge-viewset-row" data-toggle="map" disabled><span class="vs-check"></span>Show map <em>(coming soon)</em></button>' +
           '<div class="forge-viewset-divider"></div>' +
@@ -1548,8 +1550,10 @@
         // shimmer don't bleed into the next view if the user was at
         // floor zoom at unmount time.
         document.body.classList.remove('fx-bloom');
+        document.body.classList.remove('fx-belowfifteen');
         document.body.classList.remove('fx-pulse-enabled');
-        local._fxBloomActive = false;
+        local._fxBloomActive    = false;
+        local._fxBelowFifteen   = false;
         // Phase 21AE (2026-05-22) — pulse cleanup. Any pending
         // hover/click pulse timer would otherwise fire on the
         // next view and re-add the class to a no-longer-existing
@@ -2720,6 +2724,14 @@
       // We use a small hysteresis (0.25 ↔ 0.30) so the class doesn't
       // flicker right at the edge as the user grazes the threshold.
       let fxBloomActive = !!local._fxBloomActive;
+      // Phase 21AH (2026-05-22) — second threshold: BELOW 15% gizmo
+      // the wheel is too compressed for any single node to be
+      // readable. Nodes become un-selectable AND labels are hidden
+      // (CSS via body.fx-belowfifteen). The user can only enjoy
+      // the bloom heartbeat. Zoom back ABOVE 17% restores
+      // interactivity (small hysteresis to avoid jitter on the
+      // boundary).
+      let belowFifteen = !!local._fxBelowFifteen;
       if (camera && camera.state && typeof computeFitScale === 'function') {
         const fitSc = computeFitScale();
         if (fitSc > 0) {
@@ -2727,14 +2739,21 @@
           if      (zp >= 1.0) wireZoomFade = 0;
           else if (zp <= 0.5) wireZoomFade = 1;
           else                wireZoomFade = (1.0 - zp) / 0.5;
-          // FX class toggle with hysteresis.
+          // FX bloom class toggle (hysteresis 0.25 / 0.30).
           if (!fxBloomActive && zp <= 0.25) fxBloomActive = true;
           else if (fxBloomActive && zp >= 0.30) fxBloomActive = false;
+          // Below-15% class toggle (hysteresis 0.15 / 0.17).
+          if (!belowFifteen && zp <= 0.15) belowFifteen = true;
+          else if (belowFifteen && zp >= 0.17) belowFifteen = false;
         }
       }
       if (fxBloomActive !== local._fxBloomActive) {
         local._fxBloomActive = fxBloomActive;
         document.body.classList.toggle('fx-bloom', fxBloomActive);
+      }
+      if (belowFifteen !== local._fxBelowFifteen) {
+        local._fxBelowFifteen = belowFifteen;
+        document.body.classList.toggle('fx-belowfifteen', belowFifteen);
       }
       const focusDim      = hasFocus ? local.params.dim_amount : 0;
       const effectiveDim  = Math.max(focusDim, wireZoomFade);
@@ -3351,13 +3370,31 @@
       // slices, so it should start exactly at the slice inner
       // arc and end exactly at the slice outer arc — no
       // overshoot past either, no gap.
-      const INNER_EXTRA = 30;  // dividers still poke a bit further inward
+      // Phase 21AH (2026-05-22) — divider geometry depends on mode:
+      //   • 'short' (default) — line spans the hull band only, from
+      //     pieInnerPx (− small inner-overshoot) to pieOuterPx.
+      //   • 'long'  — radial spokes from the centre all the way out
+      //     past the hull rim by ~500 px. Reads as "this slice
+      //     reaches from the heart of the wheel into the distance."
+      //   • 'off'   — the hullDividersG group is `display:none` via
+      //     body.fv-hide-dividers, so we still write geometry but
+      //     nothing renders.
+      const INNER_EXTRA       = 30;     // short-mode inner overshoot
+      const LONG_OUTER_EXTRA  = 500;    // long-mode outer extension (px)
+      const LONG_INNER_RADIUS = 4;      // pull-in from exact (0,0) to avoid AA
+      const mode = local._dividerMode || 'short';
       const lines = hullDividersG.children;
       for (let i = 0; i < data.dividers.length && i < lines.length; i++) {
         const d = data.dividers[i];
         const a = d.angle;
-        const r0 = Math.max(0, pieInnerPx - INNER_EXTRA);
-        const r1 = pieOuterPx;
+        let r0, r1;
+        if (mode === 'long') {
+          r0 = LONG_INNER_RADIUS;
+          r1 = pieOuterPx + LONG_OUTER_EXTRA;
+        } else {
+          r0 = Math.max(0, pieInnerPx - INNER_EXTRA);
+          r1 = pieOuterPx;
+        }
         const x1 = centerScreen.x + Math.cos(a) * r0;
         const y1 = centerScreen.y + Math.sin(a) * r0;
         const x2 = centerScreen.x + Math.cos(a) * r1;
@@ -3492,6 +3529,13 @@
     // cells around the point's cell. The tie-break (nearest
     // within radius for overlapping disks) is preserved.
     function hitTestAt(cssX, cssY) {
+      // Phase 21AH (2026-05-22) — below 15% gizmo, nodes are not
+      // individually selectable. The bloom heartbeat owns the
+      // floor visual; clicking returns null so the user can pan/
+      // zoom without accidentally picking a deity they can't
+      // even see. Matches the body.fx-belowfifteen class set in
+      // drawFrame.
+      if (local._fxBelowFifteen) return null;
       const w = local.lastSize.w;
       const h = local.lastSize.h;
       if (!w || !h) return null;
@@ -3948,21 +3992,32 @@
       dot.style.setProperty('--fx-pulse-color', color);
       return dot;
     }
+    // Phase 21AH (2026-05-22) — single-flight guard. John's bug:
+    // double-clicking fired two click pulses in rapid succession,
+    // they overlapped, and the visual was glitchy. Rule (per John):
+    // if a hover OR click pulse is currently animating, skip the
+    // trigger. Same params on both → no information lost by skipping.
+    function isPulsePlaying() {
+      const dot = local._fxPulseDot;
+      if (!dot) return false;
+      return dot.classList.contains('fx-hover-flash')
+          || dot.classList.contains('fx-click-pulse');
+    }
     function triggerHoverFlash() {
+      if (isPulsePlaying()) return;
       const dot = positionPulseDot(local.hoverId);
       if (!dot) return;
       if (local._hoverFlashTimer) { clearTimeout(local._hoverFlashTimer); local._hoverFlashTimer = 0; }
       dot.classList.remove('fx-hover-flash', 'fx-click-pulse');
       void dot.offsetWidth;
       dot.classList.add('fx-hover-flash');
-      // Buffer: longest possible duration slider × 1.05 + safety.
-      // Duration is read from CSS var so we estimate generously.
       local._hoverFlashTimer = setTimeout(() => {
         dot.classList.remove('fx-hover-flash');
         local._hoverFlashTimer = 0;
       }, 2200);
     }
     function triggerClickPulse(nodeId) {
+      if (isPulsePlaying()) return;
       const dot = positionPulseDot(nodeId);
       if (!dot) return;
       if (local._clickPulseTimer) { clearTimeout(local._clickPulseTimer); local._clickPulseTimer = 0; }
@@ -4458,27 +4513,36 @@
       const btn   = document.getElementById('forge-viewset-btn');
       const panel = document.getElementById('forge-viewset-panel');
       if (!btn || !panel) return;
-      // Phase 21R (2026-05-22) — added `dividers` key. Bumped the
-      // LS schema to v2 so an old v1 record (without `dividers`)
-      // doesn't quietly disable separators on load; v1 records are
-      // ignored, and the v2 default starts everything ON.
-      const LS_KEY = 'forge.viewSettings.v2';
+      // Phase 21AH (2026-05-22) — schema v3: split family titles
+      // from hulls (independent toggle) + added long-separators
+      // mode (mutually exclusive with the short dividers).
+      const LS_KEY = 'forge.viewSettings.v3';
       const state = (() => {
         try {
           const raw = localStorage.getItem(LS_KEY);
           if (raw) return JSON.parse(raw);
         } catch (_) {}
-        return { hulls: true, dividers: true, wires: true, map: false };
+        return {
+          hulls: true, familyTitles: true,
+          dividers: true, dividersLong: false,
+          wires: true, map: false,
+        };
       })();
-      // Defensive: if a partial v2 record is missing a key, default
-      // it to ON. Avoids "feature ghosted on load" if we add a key
-      // again without bumping the schema.
-      if (typeof state.dividers !== 'boolean') state.dividers = true;
+      // Defensive defaults — additive, OFF by default for new
+      // long-dividers, ON for the existing keys.
+      if (typeof state.familyTitles  !== 'boolean') state.familyTitles  = true;
+      if (typeof state.dividers      !== 'boolean') state.dividers      = true;
+      if (typeof state.dividersLong  !== 'boolean') state.dividersLong  = false;
       function applyState() {
-        document.body.classList.toggle('fv-hide-hulls',    !state.hulls);
-        document.body.classList.toggle('fv-hide-dividers', !state.dividers);
-        document.body.classList.toggle('fv-hide-wires',    !state.wires);
-        document.body.classList.toggle('fv-hide-map',      !state.map);
+        document.body.classList.toggle('fv-hide-hulls',         !state.hulls);
+        document.body.classList.toggle('fv-hide-family-titles', !state.familyTitles);
+        document.body.classList.toggle('fv-hide-dividers',      !state.dividers && !state.dividersLong);
+        document.body.classList.toggle('fv-dividers-long',       !!state.dividersLong);
+        document.body.classList.toggle('fv-hide-wires',         !state.wires);
+        document.body.classList.toggle('fv-hide-map',           !state.map);
+        // Phase 21AH — push the divider mode into the layout layer
+        // so syncHulls renders the long radial spokes when active.
+        local._dividerMode = state.dividersLong ? 'long' : (state.dividers ? 'short' : 'off');
         // Mark each toggle row's checkbox state for CSS.
         panel.querySelectorAll('.forge-viewset-row[data-toggle]').forEach(row => {
           const key = row.dataset.toggle;
@@ -4517,6 +4581,10 @@
           const key = row.dataset.toggle;
           if (!(key in state)) return;
           state[key] = !state[key];
+          // Phase 21AH — separators are mutually exclusive:
+          // turning one ON forces the other OFF.
+          if (key === 'dividers'     && state.dividers)     state.dividersLong = false;
+          if (key === 'dividersLong' && state.dividersLong) state.dividers     = false;
           applyState();
           return;
         }
