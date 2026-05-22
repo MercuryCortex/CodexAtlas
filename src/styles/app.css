@@ -723,8 +723,9 @@ body.view-forge .forge-stage {
    fv-hide-family-titles hides only the labels. */
 body.fv-hide-hulls         #forge-hull-polys    { display: none !important; }
 body.fv-hide-family-titles #forge-hull-labels   { display: none !important; }
-body.fv-hide-dividers      #forge-hull-dividers { display: none !important; }
-body.fv-hide-wires         .forge-canvas { /* placeholder — wire-only hide is a renderer-side change deferred */ }
+body.fv-hide-dividers      #forge-hull-dividers     { display: none !important; }
+body.fv-hide-guide-rings   #forge-hull-guide-rings  { display: none !important; }
+body.fv-hide-wires         .forge-canvas { /* the actual hide is renderer-side: drawFrame forces effectiveDim to 1.0 when this body class is set, which zeros idle wire alpha while leaving HOT/selected wires fully visible. */ }
 
 /* ── Phase 21B (2026-05-21) — Search autocomplete (drop-up) ── */
 .forge-search-wrap {

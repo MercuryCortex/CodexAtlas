@@ -1075,7 +1075,9 @@
           '<button class="forge-viewset-row" data-toggle="hulls"><span class="vs-check"></span>Show family hulls</button>' +
           '<button class="forge-viewset-row" data-toggle="familyTitles"><span class="vs-check"></span>Show family titles</button>' +
           '<button class="forge-viewset-row" data-toggle="dividers"><span class="vs-check"></span>Show family separators</button>' +
-          '<button class="forge-viewset-row" data-toggle="dividersLong"><span class="vs-check"></span>Show long separators <em>(center → out)</em></button>' +
+          '<button class="forge-viewset-row" data-toggle="dividersLong"><span class="vs-check"></span>Show long separators <em>(faded both ends)</em></button>' +
+          '<button class="forge-viewset-row" data-toggle="dividersConverging"><span class="vs-check"></span>Show converging separators <em>(solid → fade)</em></button>' +
+          '<button class="forge-viewset-row" data-toggle="guideRings"><span class="vs-check"></span>Show guide rings <em>(inner / mid / outer)</em></button>' +
           '<button class="forge-viewset-row" data-toggle="wires"><span class="vs-check"></span>Show wires</button>' +
           '<button class="forge-viewset-row" data-toggle="map" disabled><span class="vs-check"></span>Show map <em>(coming soon)</em></button>' +
           '<div class="forge-viewset-divider"></div>' +
@@ -2756,7 +2758,16 @@
         document.body.classList.toggle('fx-belowfifteen', belowFifteen);
       }
       const focusDim      = hasFocus ? local.params.dim_amount : 0;
-      const effectiveDim  = Math.max(focusDim, wireZoomFade);
+      // Phase 21AI (2026-05-22) — "Show wires" toggle. When OFF
+      // (body.fv-hide-wires), force dim_amount to 1.0 so the IDLE
+      // wires get alpha = (1 - 1) = 0 (invisible). HOT/selected
+      // wires use state=1 and read mix(1-dim, 1.0, 1) = 1.0 — they
+      // stay fully visible regardless of dim_amount. So toggling
+      // "wires" off hides the faint blue mesh while keeping the
+      // active focus/selected wires visible. Single-line fix on
+      // the existing dim path.
+      const wiresHidden   = document.body.classList.contains('fv-hide-wires');
+      const effectiveDim  = wiresHidden ? 1.0 : Math.max(focusDim, wireZoomFade);
       const effectiveDimN = hasFocus ? local.params.dim_amount_nodes * dimMulN : 0;
       // Phase 7 (2026-05-20) — stroke color (replaces deleted glow color).
       // Parsed once per frame; cheap.
@@ -3117,7 +3128,7 @@
     //
     // Z-order inside the SVG: polys (faintest) → dividers → labels
     // so labels paint above everything else.
-    let hullDefs, hullPolysG, hullDividersG, hullLabelsG;
+    let hullDefs, hullPolysG, hullDividersG, hullLabelsG, hullGuideRingsG;
     function ensureHullStructure() {
       if (hullDefs) return;
       hullDefs       = document.createElementNS(SVG_NS, 'defs');
@@ -3126,15 +3137,45 @@
       hullPolysG.setAttribute('id', 'forge-hull-polys');
       hullDividersG  = document.createElementNS(SVG_NS, 'g');
       hullDividersG.setAttribute('id', 'forge-hull-dividers');
+      // Phase 21AI (2026-05-22) — three concentric guide circles:
+      // inner-rim, mid-hull, outer-rim. Hidden by default via
+      // body.fv-hide-guide-rings. Same colour as the dividers but
+      // a uniform 50% stroke-opacity (no gradient needed — a closed
+      // ring doesn't have endpoints to fade between).
+      hullGuideRingsG = document.createElementNS(SVG_NS, 'g');
+      hullGuideRingsG.setAttribute('id', 'forge-hull-guide-rings');
       hullLabelsG    = document.createElementNS(SVG_NS, 'g');
       hullLabelsG.setAttribute('id', 'forge-hull-labels');
       hullsOverlay.appendChild(hullDefs);
       hullsOverlay.appendChild(hullPolysG);
       hullsOverlay.appendChild(hullDividersG);
+      hullsOverlay.appendChild(hullGuideRingsG);
       hullsOverlay.appendChild(hullLabelsG);
+    }
+    // Phase 21AI (2026-05-22) — guide rings (inner / mid / outer).
+    // Three SVG circles, same family colour as the dividers, fixed
+    // 50% stroke-opacity. Created once; r updated each syncHulls
+    // call based on pieInnerPx / pieOuterPx. Visibility gated by
+    // body.fv-hide-guide-rings (CSS).
+    function ensureGuideRings() {
+      if (!hullGuideRingsG) return;
+      if (hullGuideRingsG.children.length >= 3) return;
+      hullGuideRingsG.innerHTML = '';
+      const labels = ['inner', 'mid', 'outer'];
+      for (const role of labels) {
+        const c = document.createElementNS(SVG_NS, 'circle');
+        c.setAttribute('class', 'forge-hull-guide-ring');
+        c.setAttribute('data-ring', role);
+        c.setAttribute('fill', 'none');
+        c.setAttribute('stroke', '#6f8aaf');
+        c.setAttribute('stroke-opacity', '0.5');
+        c.setAttribute('stroke-width', '1');
+        hullGuideRingsG.appendChild(c);
+      }
     }
     function rebuildHullElements() {
       ensureHullStructure();
+      ensureGuideRings();
       const data = (local.mode && local.mode.hullData) || { hulls: [], dividers: [] };
       // ── Clear existing children
       hullDefs.innerHTML = '';
@@ -3179,16 +3220,35 @@
         const grad = document.createElementNS(SVG_NS, 'linearGradient');
         grad.setAttribute('id', 'forge-hull-divgrad-' + i);
         grad.setAttribute('gradientUnits', 'userSpaceOnUse');
-        // Phase 20C (2026-05-21) — separator color faint cool-blue
-        // + wider fade zone (20% on each end, was 15%). Fully
-        // opaque in the central 60% of the line, ramps to 0 in
-        // the outer 20% on each side.
-        const stopColors = [
-          ['0%',   'stop-color:#6f8aaf;stop-opacity:0'],
-          ['20%',  'stop-color:#6f8aaf;stop-opacity:0.55'],
-          ['80%',  'stop-color:#6f8aaf;stop-opacity:0.55'],
-          ['100%', 'stop-color:#6f8aaf;stop-opacity:0'],
-        ];
+        // Phase 21AI (2026-05-22) — gradient stops vary by divider
+        // mode. 0% = the (x1,y1) end of the line, 100% = (x2,y2).
+        // In 'short' mode the line spans the hull band only and
+        // both ends should fade. In 'long' and 'long-centered'
+        // the line goes from CENTER (x1,y1=centerScreen + r=4)
+        // to the FAR EDGE (x2,y2 at pieOuterPx + 500). Mode rules:
+        //   short          — fade both ends (centre 60% opaque)
+        //   long           — fade both ends (centre 60% opaque)
+        //   long-centered  — solid at centre, fades outward over
+        //                    the second half. ~50% point sits near
+        //                    the hull band mid-line; opacity is 1.0
+        //                    at 0% (centre) and 0 at 100% (far).
+        const mode = local._dividerMode || 'short';
+        let stopColors;
+        if (mode === 'long-centered') {
+          stopColors = [
+            ['0%',   'stop-color:#6f8aaf;stop-opacity:1.0'],
+            ['30%',  'stop-color:#6f8aaf;stop-opacity:0.85'],
+            ['55%',  'stop-color:#6f8aaf;stop-opacity:0.45'],
+            ['100%', 'stop-color:#6f8aaf;stop-opacity:0'],
+          ];
+        } else {
+          stopColors = [
+            ['0%',   'stop-color:#6f8aaf;stop-opacity:0'],
+            ['20%',  'stop-color:#6f8aaf;stop-opacity:0.55'],
+            ['80%',  'stop-color:#6f8aaf;stop-opacity:0.55'],
+            ['100%', 'stop-color:#6f8aaf;stop-opacity:0'],
+          ];
+        }
         for (const [off, style] of stopColors) {
           const s = document.createElementNS(SVG_NS, 'stop');
           s.setAttribute('offset', off);
@@ -3370,6 +3430,29 @@
       // slices, so it should start exactly at the slice inner
       // arc and end exactly at the slice outer arc — no
       // overshoot past either, no gap.
+      // Phase 21AI (2026-05-22) — position guide rings. inner = a
+      // bit INSIDE the inner hull boundary (so it traces the
+      // innermost-node arc without overlapping the hull line);
+      // outer = a bit OUTSIDE the outer hull boundary; mid =
+      // midpoint between the two. Visibility is CSS-driven via
+      // body.fv-hide-guide-rings.
+      if (hullGuideRingsG) {
+        const RING_INSET = 10;     // pull-in from the hull boundary
+        const rInner  = Math.max(0, pieInnerPx + RING_INSET);
+        const rOuter  = pieOuterPx - RING_INSET;
+        const rMid    = (rInner + rOuter) / 2;
+        const radii   = { inner: rInner, mid: rMid, outer: rOuter };
+        for (let i = 0; i < hullGuideRingsG.children.length; i++) {
+          const c = hullGuideRingsG.children[i];
+          const role = c.getAttribute('data-ring');
+          const r = radii[role];
+          if (r == null) continue;
+          c.setAttribute('cx', centerScreen.x.toFixed(1));
+          c.setAttribute('cy', centerScreen.y.toFixed(1));
+          c.setAttribute('r',  Math.max(0, r).toFixed(1));
+        }
+      }
+
       // Phase 21AH (2026-05-22) — divider geometry depends on mode:
       //   • 'short' (default) — line spans the hull band only, from
       //     pieInnerPx (− small inner-overshoot) to pieOuterPx.
@@ -3383,12 +3466,13 @@
       const LONG_OUTER_EXTRA  = 500;    // long-mode outer extension (px)
       const LONG_INNER_RADIUS = 4;      // pull-in from exact (0,0) to avoid AA
       const mode = local._dividerMode || 'short';
+      const isLongMode = (mode === 'long' || mode === 'long-centered');
       const lines = hullDividersG.children;
       for (let i = 0; i < data.dividers.length && i < lines.length; i++) {
         const d = data.dividers[i];
         const a = d.angle;
         let r0, r1;
-        if (mode === 'long') {
+        if (isLongMode) {
           r0 = LONG_INNER_RADIUS;
           r1 = pieOuterPx + LONG_OUTER_EXTRA;
         } else {
@@ -3992,41 +4076,51 @@
       dot.style.setProperty('--fx-pulse-color', color);
       return dot;
     }
-    // Phase 21AH (2026-05-22) — single-flight guard. John's bug:
-    // double-clicking fired two click pulses in rapid succession,
-    // they overlapped, and the visual was glitchy. Rule (per John):
-    // if a hover OR click pulse is currently animating, skip the
-    // trigger. Same params on both → no information lost by skipping.
-    function isPulsePlaying() {
+    // Phase 21AI (2026-05-22) — per-node single-flight guard. The
+    // 21AH version blocked ALL triggers if any pulse was playing,
+    // which suppressed legitimate hover/click on OTHER nodes when
+    // the cursor moved between disks quickly. New rule (per John):
+    // only block the trigger when the SAME node is mid-pulse.
+    // Different node → cancel the in-flight pulse + start the new
+    // one. local._fxPulseNodeId tracks the node currently animating.
+    function isPulsePlayingFor(nodeId) {
       const dot = local._fxPulseDot;
       if (!dot) return false;
-      return dot.classList.contains('fx-hover-flash')
-          || dot.classList.contains('fx-click-pulse');
+      const playing = dot.classList.contains('fx-hover-flash')
+                   || dot.classList.contains('fx-click-pulse');
+      if (!playing) return false;
+      return local._fxPulseNodeId === nodeId;
     }
     function triggerHoverFlash() {
-      if (isPulsePlaying()) return;
-      const dot = positionPulseDot(local.hoverId);
+      const id = local.hoverId;
+      if (id == null) return;
+      if (isPulsePlayingFor(id)) return;
+      const dot = positionPulseDot(id);
       if (!dot) return;
       if (local._hoverFlashTimer) { clearTimeout(local._hoverFlashTimer); local._hoverFlashTimer = 0; }
       dot.classList.remove('fx-hover-flash', 'fx-click-pulse');
       void dot.offsetWidth;
       dot.classList.add('fx-hover-flash');
+      local._fxPulseNodeId = id;
       local._hoverFlashTimer = setTimeout(() => {
         dot.classList.remove('fx-hover-flash');
         local._hoverFlashTimer = 0;
+        if (local._fxPulseNodeId === id) local._fxPulseNodeId = null;
       }, 2200);
     }
     function triggerClickPulse(nodeId) {
-      if (isPulsePlaying()) return;
+      if (isPulsePlayingFor(nodeId)) return;
       const dot = positionPulseDot(nodeId);
       if (!dot) return;
       if (local._clickPulseTimer) { clearTimeout(local._clickPulseTimer); local._clickPulseTimer = 0; }
       dot.classList.remove('fx-hover-flash', 'fx-click-pulse');
       void dot.offsetWidth;
       dot.classList.add('fx-click-pulse');
+      local._fxPulseNodeId = nodeId;
       local._clickPulseTimer = setTimeout(() => {
         dot.classList.remove('fx-click-pulse');
         local._clickPulseTimer = 0;
+        if (local._fxPulseNodeId === nodeId) local._fxPulseNodeId = null;
       }, 2800);
     }
 
@@ -4513,10 +4607,9 @@
       const btn   = document.getElementById('forge-viewset-btn');
       const panel = document.getElementById('forge-viewset-panel');
       if (!btn || !panel) return;
-      // Phase 21AH (2026-05-22) — schema v3: split family titles
-      // from hulls (independent toggle) + added long-separators
-      // mode (mutually exclusive with the short dividers).
-      const LS_KEY = 'forge.viewSettings.v3';
+      // Phase 21AI (2026-05-22) — schema v4: added dividersConverging
+      // (third separator mode) + guideRings (concentric ring grid).
+      const LS_KEY = 'forge.viewSettings.v4';
       const state = (() => {
         try {
           const raw = localStorage.getItem(LS_KEY);
@@ -4524,25 +4617,43 @@
         } catch (_) {}
         return {
           hulls: true, familyTitles: true,
-          dividers: true, dividersLong: false,
+          dividers: true, dividersLong: false, dividersConverging: false,
+          guideRings: false,
           wires: true, map: false,
         };
       })();
-      // Defensive defaults — additive, OFF by default for new
-      // long-dividers, ON for the existing keys.
-      if (typeof state.familyTitles  !== 'boolean') state.familyTitles  = true;
-      if (typeof state.dividers      !== 'boolean') state.dividers      = true;
-      if (typeof state.dividersLong  !== 'boolean') state.dividersLong  = false;
+      // Defensive defaults — additive.
+      if (typeof state.familyTitles       !== 'boolean') state.familyTitles       = true;
+      if (typeof state.dividers           !== 'boolean') state.dividers           = true;
+      if (typeof state.dividersLong       !== 'boolean') state.dividersLong       = false;
+      if (typeof state.dividersConverging !== 'boolean') state.dividersConverging = false;
+      if (typeof state.guideRings         !== 'boolean') state.guideRings         = false;
       function applyState() {
         document.body.classList.toggle('fv-hide-hulls',         !state.hulls);
         document.body.classList.toggle('fv-hide-family-titles', !state.familyTitles);
-        document.body.classList.toggle('fv-hide-dividers',      !state.dividers && !state.dividersLong);
-        document.body.classList.toggle('fv-dividers-long',       !!state.dividersLong);
+        const noDividers = !state.dividers && !state.dividersLong && !state.dividersConverging;
+        document.body.classList.toggle('fv-hide-dividers',      noDividers);
         document.body.classList.toggle('fv-hide-wires',         !state.wires);
         document.body.classList.toggle('fv-hide-map',           !state.map);
-        // Phase 21AH — push the divider mode into the layout layer
-        // so syncHulls renders the long radial spokes when active.
-        local._dividerMode = state.dividersLong ? 'long' : (state.dividers ? 'short' : 'off');
+        document.body.classList.toggle('fv-hide-guide-rings',   !state.guideRings);
+        // Push the divider mode into the layout layer. Three "long"
+        // family modes share the same geometry (centre → outer+500
+        // px); only the gradient differs. rebuildHullElements reads
+        // local._dividerMode for the gradient stops; syncHulls reads
+        // it for the geometry.
+        const newMode = state.dividersConverging ? 'long-centered'
+                      : state.dividersLong       ? 'long'
+                      : state.dividers           ? 'short'
+                      : 'off';
+        const modeChanged = (local._dividerMode !== newMode);
+        local._dividerMode = newMode;
+        if (modeChanged) {
+          // Rebuild the gradient stops (they depend on mode) and
+          // re-layout the geometry.
+          if (typeof rebuildHullElements === 'function') {
+            try { rebuildHullElements(); syncHulls(); } catch (_) {}
+          }
+        }
         // Mark each toggle row's checkbox state for CSS.
         panel.querySelectorAll('.forge-viewset-row[data-toggle]').forEach(row => {
           const key = row.dataset.toggle;
@@ -4581,10 +4692,20 @@
           const key = row.dataset.toggle;
           if (!(key in state)) return;
           state[key] = !state[key];
-          // Phase 21AH — separators are mutually exclusive:
-          // turning one ON forces the other OFF.
-          if (key === 'dividers'     && state.dividers)     state.dividersLong = false;
-          if (key === 'dividersLong' && state.dividersLong) state.dividers     = false;
+          // Phase 21AI — separator modes are mutually exclusive
+          // across all three; turning one ON forces the other two OFF.
+          if (key === 'dividers' && state.dividers) {
+            state.dividersLong = false;
+            state.dividersConverging = false;
+          }
+          if (key === 'dividersLong' && state.dividersLong) {
+            state.dividers = false;
+            state.dividersConverging = false;
+          }
+          if (key === 'dividersConverging' && state.dividersConverging) {
+            state.dividers = false;
+            state.dividersLong = false;
+          }
           applyState();
           return;
         }
