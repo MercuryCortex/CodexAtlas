@@ -711,12 +711,15 @@ body.view-forge .forge-stage {
   box-shadow: inset 0 0 0 2px var(--bg-1, #0d1119);
 }
 
-/* Layer-toggle effects driven by body classes set in JS. */
-/* Phase 21R (2026-05-22) — `dividers` toggle is independent from
-   `hulls`. Hide just the radial divider lines while keeping the
-   pie-slice fills visible. Selector reaches inside the overlay
-   SVG to the dividers group. */
-body.fv-hide-hulls    .forge-hulls-overlay { display: none !important; }
+/* Layer-toggle effects driven by body classes set in JS.
+   Phase 21U (2026-05-22) — hulls and separators are FULLY
+   independent: hiding hulls keeps the dividers visible. Earlier
+   the `fv-hide-hulls` rule blanket-hid `.forge-hulls-overlay`,
+   which contains BOTH the pie-slice polys AND the divider lines —
+   so toggling hulls off also killed separators. Fixed by
+   targeting just the polys + the family-titles labels here. */
+body.fv-hide-hulls    #forge-hull-polys  { display: none !important; }
+body.fv-hide-hulls    #forge-hull-labels { display: none !important; }
 body.fv-hide-dividers #forge-hull-dividers { display: none !important; }
 body.fv-hide-wires    .forge-canvas { /* placeholder — wire-only hide is a renderer-side change deferred */ }
 

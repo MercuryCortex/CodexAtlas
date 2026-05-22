@@ -738,9 +738,45 @@
     //  John already loved. Other themes are free to pick their own.
     // ════════════════════════════════════════════════════════════
     const COLOR_THEMES = {
-      // null = pass-through; the layout reads n.family_color directly
-      // (the colors currently baked into data.js by build_data.py).
+      // Phase 21U (2026-05-22) — null = pass-through to the baked
+      // data.js palette. The UI labels this as "Atlas" because the
+      // baked palette IS the curated atlas baseline: tones tuned for
+      // visual distinction between adjacent slices, with a soft
+      // warm-Mediterranean / cool-Northern / saffron-Asian /
+      // obsidian-American drift around the wheel.
       default: null,
+
+      // ─────────────────────────────────────────────────────────
+      // LONGITUDE — color follows geographic longitude of origin.
+      // West (Americas) = violet; through Europe (blue) → Med (gold)
+      // → Near East (copper) → India (saffron) → East Asia (jade)
+      // → Pacific (cyan). Forms a near-rainbow as you sweep east.
+      // Added per John's Phase 21U directive — distinct from
+      // GEOGRAPHY (which is climate band, not longitude).
+      // ─────────────────────────────────────────────────────────
+      longitude: {
+        // Americas — violet to magenta.
+        'Native-American':'#7a4ac4','Mesoamerican':'#8a4ab8','Andean':'#9a4aa8',
+        // Atlantic / N-Europe — blue.
+        'Celtic':'#5a7ac4','Norse':'#5a8ac4','Baltic':'#5a9ac4','Slavic-Finnic':'#5aa4b8',
+        // Western & Central Med — gold.
+        'Etruscan':'#c4a04a','Roman':'#d4a040','Greek':'#d4a55a','Mystery':'#d4a560',
+        'Hermetic':'#d4ab60','Neoplatonist':'#d4b06a','Egyptian':'#d4a85a',
+        'African':'#d4a05a',
+        // Near East — copper.
+        'Israelite':'#c8854a','Rabbinic':'#c4855a','Canaanite':'#c4805a','Christian':'#c4855a',
+        'Gnostic':'#c47a5a','Mandaean':'#b8704a','Manichaean':'#b8704a',
+        'Mesopotamian':'#c47a4a','Hittite':'#c4854a','Armenian':'#b8704a',
+        'Pre-Islamic-Arabian':'#c8703a','Islamic':'#c87a3a','Zoroastrian':'#c4753a',
+        // South Asia — saffron.
+        'Vedic':'#e08a3a','Buddhist':'#d49040',
+        // East Asia — jade.
+        'Chinese':'#5a9a7a','Shinto':'#5aa48a',
+        // Pacific — teal-cyan.
+        'Pacific':'#3a8aa4',
+        // No clear longitude — silver.
+        'Modern-Esoteric':'#8a8aa4','Academic':'#7a8a9a','Other':'#7a8090',
+      },
 
       // ROOTS — civilizational-linguistic root families. Hue per
       // root cluster; saturation/lightness distinguishes branches.
@@ -833,14 +869,15 @@
       // COSMOLOGY — by theological structure.
       // Monotheist = gold | Dualist = violet | Polytheist = rust |
       // Pantheist = jade | Animist = moss
-      // Phase 21S-fix (2026-05-22) — Christian + Gnostic follow the
-      // theological hue here (Christian = Monotheist gold; Gnostic =
-      // Dualist violet). The Roots theme is the only one that pins
-      // the crimson/violet from data.js.
+      // Phase 21U (2026-05-22) — Monotheist hue switched from gold
+      // to RED per John's directive. Red reads as "concentrated /
+      // unitary" which matches the theological claim (one supreme
+      // deity) better than gold. Gold now belongs to no specific
+      // theme so it doesn't fight Roots' Semitic anchor.
       cosmology: {
-        // Monotheist (single supreme deity) — gold.
-        'Israelite':'#d4a55a','Rabbinic':'#c49a50','Christian':'#d4a045','Islamic':'#d4a040',
-        'Zoroastrian':'#c8954a','Mandaean':'#b8904a','Sikh':'#c89a5a',
+        // Monotheist (single supreme deity) — red spectrum.
+        'Israelite':'#c44a4a','Rabbinic':'#b84a4a','Christian':'#c44a5a','Islamic':'#b03a3a',
+        'Zoroastrian':'#c4505a','Mandaean':'#a04848','Sikh':'#c45a55',
         // Dualist (two opposing principles) — violet.
         'Gnostic':'#7a4a9a','Manichaean':'#8a5aa4','Neoplatonist':'#9a6ab8',
         // Polytheist (many gods).
@@ -1027,7 +1064,7 @@
       // a row to flip the toggle; menu stays open so multiple
       // toggles can be set in one go. Persists in LocalStorage.
       '<div class="forge-viewset-wrap">' +
-        '<button class="forge-viewset-btn" id="forge-viewset-btn" title="View settings" aria-expanded="false">⚏ VIEW</button>' +
+        '<button class="forge-viewset-btn" id="forge-viewset-btn" title="View settings" aria-expanded="false">VIEW</button>' +
         // Phase 21R+21S (2026-05-22) — view-settings panel with
         // three sections: layer toggles (booleans), color theme
         // (radio), family order (radio). The color/order radios
@@ -1041,9 +1078,10 @@
           '<button class="forge-viewset-row" data-toggle="map" disabled><span class="vs-check"></span>Show map <em>(coming soon)</em></button>' +
           '<div class="forge-viewset-divider"></div>' +
           '<div class="forge-viewset-section">Color theme</div>' +
-          '<button class="forge-viewset-row" data-color="default"><span class="vs-radio"></span>Default <em>(baked)</em></button>' +
+          '<button class="forge-viewset-row" data-color="default"><span class="vs-radio"></span>Atlas <em>(curated)</em></button>' +
           '<button class="forge-viewset-row" data-color="roots"><span class="vs-radio"></span>Roots <em>(civilizational families)</em></button>' +
-          '<button class="forge-viewset-row" data-color="geography"><span class="vs-radio"></span>Geography <em>(climate band)</em></button>' +
+          '<button class="forge-viewset-row" data-color="geography"><span class="vs-radio"></span>Geography <em>(climate)</em></button>' +
+          '<button class="forge-viewset-row" data-color="longitude"><span class="vs-radio"></span>Longitude <em>(east-west)</em></button>' +
           '<button class="forge-viewset-row" data-color="cosmology"><span class="vs-radio"></span>Cosmology <em>(theology)</em></button>' +
           '<button class="forge-viewset-row" data-color="time"><span class="vs-radio"></span>Time <em>(era)</em></button>' +
           '<div class="forge-viewset-divider"></div>' +
@@ -4150,21 +4188,30 @@
     // row for ~1 s → a floating box appears with the rule that
     // governs that mode. Helps the user remember which theme uses
     // which logic without opening a separate help panel.
+    // Phase 21U (2026-05-22) — simpler tooltip copy per John's
+    // feedback: drop the family-arrow lists; keep just the rule.
+    // Color words are HTML-styled in the actual color so the user
+    // can read the criterion AS the palette. Tooltip rendering
+    // switched from textContent to innerHTML below.
+    function _c(hex, text) {
+      return '<span style="color:' + hex + ';font-weight:600">' + text + '</span>';
+    }
     const VIEWSET_CRITERIA = {
       // ── Color themes ────────────────────────────────────────
       color: {
-        default: 'Colors come from data.js — each family was assigned a hand-picked hue at vault-build time. No single rule; this is the historical baseline.',
-        roots:   'Civilizational-linguistic root families. Semitic / Abrahamic (Israelite, Christian, Gnostic, Islamic, Manichaean, Mandaean) cluster in wine + violet — Christian and Gnostic are pinned at their original tones so this theme anchors the Late-Antique cluster. Indo-European branches diverge: classical Med = violet, North-European = blue/green, Indo-Iranian = saffron. East Asia = jade. Egypt + Mesopotamia = lapis. Mesoamerica + Andean = obsidian / sienna. Modern syncretic = silver-violet.',
-        geography: 'Climate / latitude band. Mediterranean basin = gold + ochre. Temperate Europe = green / slate. Indo-Iranian arid = saffron. East Asia = jade. Sub-Saharan + tropical = coral. Pacific / oceanic = cool blue. Americas = obsidian / sienna. Traditions native to similar climates share a tone — honest as a climate map.',
-        cosmology: 'Theological structure (what the tradition claims about ultimate reality). Monotheist (one supreme deity) = gold. Dualist (two opposing principles) = violet. Polytheist (many gods) = rust. Pantheist / non-dual (divine ≡ cosmos) = jade. Animist (spirits in things) = moss-green.',
-        time:    'Era of emergence. Stone / Bronze (≥ -3000 BCE) = deep umber. Bronze / Iron Age (-3000 to -800) = copper. Classical Antiquity (-800 to 0) = ochre. Late-Antique (0 to 400 CE) = wine. Medieval = teal. Modern = silver. The radial axis already encodes age within a family — this layers a temporal hue across them.',
+        default:   'Curated palette tuned for visual distinction between neighbouring slices. Soft pattern: warm tones around the Mediterranean, cooler tones toward the North, saffron toward Asia, obsidian toward the Americas. Not a strict rule — the goal is legibility.',
+        roots:     'Each civilizational root has its own hue range. Family relationship drives the colour; brightness distinguishes branches within a root. The only theme where Christian and Gnostic stay at their original tones.',
+        geography: 'Colour follows climate band. ' + _c('#d4a55a','Warm') + ' for Mediterranean and tropical regions. ' + _c('#5a9a7a','Cool green') + ' for temperate Europe and East Asia. ' + _c('#e08a3a','Saffron') + ' for Indo-Iranian arid zones. Same climate ⇒ same tone.',
+        longitude: 'Colour tracks geographic longitude of origin. Americas = ' + _c('#7a4ac4','violet') + '. Europe = ' + _c('#5a7ac4','blue') + '. Mediterranean = ' + _c('#d4a55a','gold') + '. Near East = ' + _c('#c4855a','copper') + '. India = ' + _c('#e08a3a','saffron') + '. East Asia = ' + _c('#5a9a7a','jade') + '. Pacific = ' + _c('#3a8aa4','teal') + '.',
+        cosmology: 'Colour follows the tradition\'s claim about ultimate reality. Monotheist (one supreme deity) = ' + _c('#c44a5a','red') + '. Dualist (two opposing principles) = ' + _c('#8a5aa4','violet') + '. Polytheist (many gods) = ' + _c('#c47a4a','rust') + '. Pantheist (divine ≡ cosmos) = ' + _c('#5a9a7a','jade') + '. Animist (spirits in things) = ' + _c('#8a8a5a','moss') + '.',
+        time:      'Colour follows the era a tradition emerged in. Stone and Bronze ages = ' + _c('#8a6a3a','umber') + '. Classical antiquity = ' + _c('#c4a040','ochre') + '. Late antiquity = ' + _c('#9a4a6a','wine') + '. Medieval = ' + _c('#3a8a8a','teal') + '. Modern = ' + _c('#7a8a9a','silver') + '.',
       },
       // ── Family orders ───────────────────────────────────────
       order: {
-        opposites:     'Each family sits across the wheel from its conceptual opposite — Christian ↔ Islamic, Greek ↔ Roman, Vedic ↔ Buddhist, Hermetic ↔ Modern-Esoteric. Reading across the diameter gives you paired traditions. The original Forge layout.',
-        roots:         'Walk clockwise through root clusters. Near-East spine (Mesopotamian → Egyptian → Israelite → Christian → Gnostic → Islamic), then Indo-Iranian (Zoroastrian → Vedic → Buddhist), then East Asia, Classical Med, broader Indo-European, extra-Eurasian (Africa / Americas / Pacific), Modern. Similar traditions sit adjacent.',
-        chronological: 'Globally oldest → globally youngest, ignoring family. Mesopotamian / Egyptian first; Modern-Esoteric last. Pure historical sweep — Vedic falls between Egypt and Greece, Buddhism between Vedic and Roman, etc.',
-        geography:     'Geographic sweep, west → east. Americas → Atlantic Europe → Mediterranean → Near East → India → East Asia → Pacific. The story is geography; same-region traditions cluster.',
+        opposites:     'Each family sits across the wheel from its conceptual opposite. Reading along a diameter gives you paired traditions.',
+        roots:         'Walk clockwise through root clusters — similar traditions sit adjacent.',
+        chronological: 'Globally oldest to globally youngest, ignoring family. Pure historical sweep.',
+        geography:     'West to East: Americas → Europe → Mediterranean → Near East → India → East Asia → Pacific.',
       },
     };
 
@@ -4311,7 +4358,11 @@
       function showTip(row) {
         const text = getCriterion(row);
         if (!text) return;
-        tipEl.textContent = text;
+        // Phase 21U (2026-05-22) — innerHTML so color-name spans
+        // render with their inline color. The criterion strings are
+        // assembled from controlled constants in VIEWSET_CRITERIA;
+        // no user input, so this is safe.
+        tipEl.innerHTML = text;
         tipEl.style.display = '';
         tipEl.setAttribute('aria-hidden', 'false');
         positionTooltip(row);
