@@ -2450,6 +2450,21 @@
     // the FIT scale (the scale that frames the whole wheel into
     // the viewport). 100% = wheel fills the viewport; >100% =
     // zoomed in; <100% = zoomed out. Click = fly back to fit.
+    // Phase 21Z (2026-05-22, re-applied after reverting 21Y) —
+    // label-aware fit. The pure geometric fit ("wheel diameter fills
+    // shorter viewport axis") was cropping the family-name labels
+    // sitting OUTSIDE the rim — LABEL_OUTSIDE_PAD = 44 px + label
+    // text up to ~80 px wide on either side. At 100% the wider
+    // names (Pre-Islamic-Arabian, Modern-Esoteric) ran off-screen.
+    //
+    // Fix: subtract a label-band buffer from the effective viewport
+    // before computing the ratio. 100% now means "wheel + labels +
+    // margin all visible". Everything downstream (gizmo %, the 11%
+    // zoom floor, BG sizing, pan-bound collapse) reads this same
+    // function so the whole pipeline becomes label-aware together.
+    //
+    // Buffer is on EACH side of EACH axis (= 2× per axis) so the
+    // wheel still centers naturally.
     function computeFitScale() {
       const vp = local.lastSize;
       if (!vp.w || !vp.h || !local.mode || !local.mode.worldExtent) return 1;
@@ -2457,7 +2472,11 @@
       const wx = ext.x1 - ext.x0;
       const wy = ext.y1 - ext.y0;
       if (wx <= 0 || wy <= 0) return 1;
-      return Math.min(vp.w / wx, vp.h / wy);
+      const LABEL_BAND_PX = 140;                       // outside-pad + half label text + breathing
+      const totalBuffer   = 2 * LABEL_BAND_PX;
+      const effectiveW    = Math.max(200, vp.w - totalBuffer);
+      const effectiveH    = Math.max(200, vp.h - totalBuffer);
+      return Math.min(effectiveW / wx, effectiveH / wy);
     }
     function updateZoomGizmo() {
       const gizmoEl = document.getElementById('forge-zoom-gizmo');
