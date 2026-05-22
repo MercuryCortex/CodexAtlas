@@ -1092,6 +1092,31 @@
           '<button class="forge-viewset-row" data-order="geography"><span class="vs-radio"></span>Geographic sweep</button>' +
         '</div>' +
       '</div>',
+      // Phase 21AB (2026-05-22) — FX dev-slider panel. Live-tunes the
+      // floor-zoom visual params via CSS vars on body.view-forge.
+      // Lives as a SIBLING of forge-viewset-wrap in the bottom bar.
+      '<div class="forge-fxpanel-wrap">' +
+        '<button class="forge-fxpanel-btn" id="forge-fxpanel-btn" title="Floor-zoom FX tuning" aria-expanded="false">FX</button>' +
+        '<div class="forge-fxpanel" id="forge-fxpanel" aria-hidden="true">' +
+          '<div class="forge-fxpanel-section">Disk bloom — base</div>' +
+          '<div class="forge-fxpanel-row"><label>blur <span class="forge-fxpanel-val" data-val="blur-base">2.0px</span></label><input type="range" data-fx="blur-base" min="0" max="20" step="0.1" value="2.0"></div>' +
+          '<div class="forge-fxpanel-row"><label>brightness <span class="forge-fxpanel-val" data-val="bright-base">1.30</span></label><input type="range" data-fx="bright-base" min="0.5" max="3" step="0.01" value="1.30"></div>' +
+          '<div class="forge-fxpanel-row"><label>saturate <span class="forge-fxpanel-val" data-val="sat-base">1.40</span></label><input type="range" data-fx="sat-base" min="0.5" max="3" step="0.01" value="1.40"></div>' +
+          '<div class="forge-fxpanel-section">Disk bloom — peak</div>' +
+          '<div class="forge-fxpanel-row"><label>blur <span class="forge-fxpanel-val" data-val="blur-peak">3.5px</span></label><input type="range" data-fx="blur-peak" min="0" max="20" step="0.1" value="3.5"></div>' +
+          '<div class="forge-fxpanel-row"><label>brightness <span class="forge-fxpanel-val" data-val="bright-peak">1.55</span></label><input type="range" data-fx="bright-peak" min="0.5" max="3.5" step="0.01" value="1.55"></div>' +
+          '<div class="forge-fxpanel-row"><label>saturate <span class="forge-fxpanel-val" data-val="sat-peak">1.70</span></label><input type="range" data-fx="sat-peak" min="0.5" max="3" step="0.01" value="1.70"></div>' +
+          '<div class="forge-fxpanel-row"><label>hue shift <span class="forge-fxpanel-val" data-val="hue-peak">-12°</span></label><input type="range" data-fx="hue-peak" min="-60" max="60" step="1" value="-12"></div>' +
+          '<div class="forge-fxpanel-section">Flicker spikes</div>' +
+          '<div class="forge-fxpanel-row"><label>small flicker <span class="forge-fxpanel-val" data-val="bright-flicker">1.68</span></label><input type="range" data-fx="bright-flicker" min="0.5" max="4" step="0.01" value="1.68"></div>' +
+          '<div class="forge-fxpanel-row"><label>big flicker <span class="forge-fxpanel-val" data-val="bright-flicker-big">1.85</span></label><input type="range" data-fx="bright-flicker-big" min="0.5" max="5" step="0.01" value="1.85"></div>' +
+          '<div class="forge-fxpanel-section">Hulls (calm layer)</div>' +
+          '<div class="forge-fxpanel-row"><label>brightness <span class="forge-fxpanel-val" data-val="hull-bright-peak">1.30</span></label><input type="range" data-fx="hull-bright-peak" min="0.8" max="2" step="0.01" value="1.30"></div>' +
+          '<div class="forge-fxpanel-row"><label>saturate <span class="forge-fxpanel-val" data-val="hull-sat-peak">1.55</span></label><input type="range" data-fx="hull-sat-peak" min="0.5" max="2.5" step="0.01" value="1.55"></div>' +
+          '<div class="forge-fxpanel-row"><label>hue shift <span class="forge-fxpanel-val" data-val="hull-hue-peak">10°</span></label><input type="range" data-fx="hull-hue-peak" min="-60" max="60" step="1" value="10"></div>' +
+          '<button class="forge-fxpanel-reset" id="forge-fxpanel-reset">RESET TO DEFAULTS</button>' +
+        '</div>' +
+      '</div>',
       '<div class="forge-search-wrap">' +
         '<input type="text" class="forge-bottom-search" id="forge-status-search" placeholder="search…" autocomplete="off" spellcheck="false">' +
         '<div class="forge-search-suggest" id="forge-search-suggest" aria-hidden="true"></div>' +
@@ -2048,6 +2073,7 @@
       // Phase 21B (2026-05-21) — View-settings dropdown (hulls /
       // wires / map) + search autocomplete suggestions.
       wireViewSettings();
+      wireFXPanel();
       wireSearchAutocomplete();
 
       // Phase 5B M-F2 (2026-05-20) — apply LS-saved timeline +
@@ -4463,6 +4489,119 @@
       });
 
       applyState();
+    }
+
+    // ════════════════════════════════════════════════════════════
+    //  wireFXPanel()  —  Phase 21AB (2026-05-22)
+    // ════════════════════════════════════════════════════════════
+    //  Floor-zoom FX dev sliders. Live-tunes CSS vars on
+    //  body.view-forge. Persists to LS as forge.fxParams.v1.
+    //
+    //  Scope: ONLY the visual look of the floor FX. The trigger
+    //  threshold (25%) and the transition fade timing (0.45s) are
+    //  intentionally NOT in this panel.
+    //
+    //  Each slider has data-fx="<var-suffix>". The var written is
+    //  --fx-<var-suffix>. Defaults match the Phase 21W baseline.
+    //  Units (px / deg) are baked into the format() helper.
+    // ════════════════════════════════════════════════════════════
+    function wireFXPanel() {
+      const btn   = document.getElementById('forge-fxpanel-btn');
+      const panel = document.getElementById('forge-fxpanel');
+      if (!btn || !panel) return;
+      const LS_KEY = 'forge.fxParams.v1';
+
+      // Format each slider's value for the on-screen readout AND
+      // for the CSS var write. Three flavors:
+      //   - blur-*       → "<n>px"
+      //   - *-hue-peak   → "<n>deg" (CSS) / "<n>°" (display)
+      //   - everything   → bare number (1.30 etc.)
+      function formatForCss(key, raw) {
+        const n = parseFloat(raw);
+        if (key.indexOf('blur') === 0)        return n.toFixed(1) + 'px';
+        if (key.indexOf('hue-') === 0 || key.indexOf('-hue-') > 0) return n.toFixed(0) + 'deg';
+        if (key.indexOf('hull-hue') === 0)    return n.toFixed(0) + 'deg';
+        return n.toFixed(2);
+      }
+      function formatForDisplay(key, raw) {
+        const n = parseFloat(raw);
+        if (key.indexOf('blur') === 0)        return n.toFixed(1) + 'px';
+        if (key.indexOf('hue-') === 0 || key.indexOf('-hue-') > 0 || key.indexOf('hull-hue') === 0) {
+          return (n > 0 ? '+' : '') + n.toFixed(0) + '°';
+        }
+        return n.toFixed(2);
+      }
+
+      const sliders = Array.from(panel.querySelectorAll('input[type="range"]'));
+      // Snapshot of defaults from the markup so RESET works.
+      const defaults = Object.create(null);
+      for (const s of sliders) defaults[s.getAttribute('data-fx')] = s.value;
+
+      function applyOne(key, val) {
+        document.body.style.setProperty('--fx-' + key, formatForCss(key, val));
+        const valEl = panel.querySelector('[data-val="' + key + '"]');
+        if (valEl) valEl.textContent = formatForDisplay(key, val);
+      }
+
+      // Load saved values (if any) and push to body + sliders + readouts.
+      function loadSaved() {
+        let saved = null;
+        try {
+          const raw = localStorage.getItem(LS_KEY);
+          if (raw) saved = JSON.parse(raw);
+        } catch (_) {}
+        for (const s of sliders) {
+          const key = s.getAttribute('data-fx');
+          if (saved && typeof saved[key] === 'string') s.value = saved[key];
+          applyOne(key, s.value);
+        }
+      }
+      function saveAll() {
+        try {
+          const state = {};
+          for (const s of sliders) state[s.getAttribute('data-fx')] = s.value;
+          localStorage.setItem(LS_KEY, JSON.stringify(state));
+        } catch (_) {}
+      }
+      function resetAll() {
+        for (const s of sliders) {
+          const key = s.getAttribute('data-fx');
+          s.value = defaults[key];
+          applyOne(key, s.value);
+        }
+        saveAll();
+      }
+
+      // Slider drag → live-update var + readout (+ debounced LS write).
+      let savePending = 0;
+      panel.addEventListener('input', (ev) => {
+        const s = ev.target;
+        if (!s || s.tagName !== 'INPUT' || !s.hasAttribute('data-fx')) return;
+        const key = s.getAttribute('data-fx');
+        applyOne(key, s.value);
+        if (savePending) clearTimeout(savePending);
+        savePending = setTimeout(() => { savePending = 0; saveAll(); }, 250);
+      });
+      const resetBtn = document.getElementById('forge-fxpanel-reset');
+      if (resetBtn) resetBtn.addEventListener('click', resetAll);
+
+      // Open / close (same pattern as wireViewSettings).
+      function open()  { panel.classList.add('is-open');  panel.setAttribute('aria-hidden', 'false'); btn.setAttribute('aria-expanded', 'true');  }
+      function close() { panel.classList.remove('is-open'); panel.setAttribute('aria-hidden', 'true');  btn.setAttribute('aria-expanded', 'false'); }
+      btn.addEventListener('click', (ev) => {
+        ev.stopPropagation();
+        if (panel.classList.contains('is-open')) close(); else open();
+      });
+      document.addEventListener('click', (ev) => {
+        if (!panel.classList.contains('is-open')) return;
+        if (panel.contains(ev.target) || btn.contains(ev.target)) return;
+        close();
+      });
+      document.addEventListener('keydown', (ev) => {
+        if (ev.key === 'Escape' && panel.classList.contains('is-open')) close();
+      });
+
+      loadSaved();
     }
 
     // ════════════════════════════════════════════════════════════
