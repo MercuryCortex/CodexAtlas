@@ -6877,7 +6877,14 @@ body.view-forge #detail-inner {
   font-style: italic;
   margin-top: 4px;
 }
+/* Phase 21X (2026-05-22) — multi-image carousel. Arrows + meta
+   strip show only when has-carousel (length > 1) is set on the
+   container. Layout: image fills the box; arrows sit absolutely
+   on the left + right edges, vertically centered; meta strip
+   sits absolutely at the bottom with a gradient backdrop so the
+   text reads over the image. */
 .forge-side-panel-thumb {
+  position: relative;
   width: 100%;
   height: 200px;
   margin-bottom: 14px;
@@ -6894,6 +6901,71 @@ body.view-forge #detail-inner {
   object-fit: cover;
   width: 100%;
   height: 100%;
+}
+.forge-side-panel-thumb-prev,
+.forge-side-panel-thumb-next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 32px; height: 56px;
+  background: rgba(0, 0, 0, 0.45);
+  color: #fff;
+  border: 0;
+  border-radius: 3px;
+  font-size: 22px;
+  font-family: var(--mono, monospace);
+  line-height: 1;
+  cursor: pointer;
+  opacity: 0;
+  transition: opacity 0.18s ease-out, background 0.18s ease-out;
+  z-index: 2;
+}
+.forge-side-panel-thumb-prev { left:  4px; }
+.forge-side-panel-thumb-next { right: 4px; }
+.forge-side-panel-thumb:hover .forge-side-panel-thumb-prev,
+.forge-side-panel-thumb:hover .forge-side-panel-thumb-next {
+  opacity: 0.85;
+}
+.forge-side-panel-thumb-prev:hover,
+.forge-side-panel-thumb-next:hover {
+  background: rgba(0, 0, 0, 0.70);
+  opacity: 1 !important;
+}
+.forge-side-panel-thumb-meta {
+  position: absolute;
+  left: 0; right: 0; bottom: 0;
+  padding: 18px 10px 6px;
+  background: linear-gradient(to top, rgba(0,0,0,0.78) 0%, rgba(0,0,0,0.50) 60%, rgba(0,0,0,0) 100%);
+  color: var(--text-1, #e5e7eb);
+  font-family: var(--sans, Inter, sans-serif);
+  font-size: 11px;
+  line-height: 1.35;
+  pointer-events: none;
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+  z-index: 1;
+}
+.forge-side-panel-thumb-caption {
+  /* Single line, ellipsis if too long. */
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.forge-side-panel-thumb-attribution {
+  color: var(--text-3, #6b7280);
+  font-size: 10px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.forge-side-panel-thumb-index {
+  color: var(--gold, #d4a55a);
+  font-family: var(--mono, monospace);
+  font-size: 10px;
+  letter-spacing: 0.08em;
+  align-self: flex-end;
+  margin-top: 2px;
 }
 .forge-side-panel-header {
   margin-bottom: 10px;

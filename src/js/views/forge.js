@@ -5153,6 +5153,10 @@
         }
         if (action === 'add' && id != null) {
           if (local.deityTabs.indexOf(id) < 0) local.deityTabs.push(id);
+          // Phase 21X (2026-05-22) — fresh lock starts at image #1
+          // of the carousel. If the user re-locks the same node, the
+          // index resets so they see the curated lead image again.
+          if (local._sidePanelImageIdx) delete local._sidePanelImageIdx[id];
           renderTabs();
           pulseTab(id);
           // If the panel is already open, switch the active deity
@@ -5272,10 +5276,64 @@
         const safe = (s) => String(s || '').replace(/[&<>"']/g, c => (
           { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]
         ));
+        // Phase 21X (2026-05-22) — multi-image carousel.
+        // Combine node.depictions[] (curated, with captions + license)
+        // + node.thumbnail (auto-fetched from Wikipedia) into a single
+        // list. Dedupe by URL. If length > 1, show ← / → arrows + a
+        // running index (e.g. "2 / 5"). Index is tracked per-node in
+        // local._sidePanelImageIdx so cycling persists while the panel
+        // is open, but a fresh lock resets to 0.
+        const depictionsList = Array.isArray(node.depictions) ? node.depictions : [];
+        const imageList = [];
+        const seenUrls = new Set();
+        for (const d of depictionsList) {
+          if (!d || typeof d.source !== 'string') continue;
+          if (seenUrls.has(d.source)) continue;
+          seenUrls.add(d.source);
+          imageList.push({
+            src:         d.source,
+            caption:     d.caption || '',
+            license:     d.license || '',
+            attribution: d.attribution || '',
+          });
+        }
+        if (thumbSrc && !seenUrls.has(thumbSrc)) {
+          seenUrls.add(thumbSrc);
+          imageList.push({ src: thumbSrc, caption: '', license: '', attribution: 'Wikipedia' });
+        }
+        if (!local._sidePanelImageIdx) local._sidePanelImageIdx = Object.create(null);
+        // Initialize OR clamp the saved index (a re-render after a
+        // depictions edit may have shrunk the list).
+        let curIdx = local._sidePanelImageIdx[id];
+        if (typeof curIdx !== 'number') curIdx = 0;
+        if (curIdx < 0) curIdx = 0;
+        if (curIdx >= imageList.length) curIdx = Math.max(0, imageList.length - 1);
+        local._sidePanelImageIdx[id] = curIdx;
+
+        function carouselHtml() {
+          if (!imageList.length) return '';
+          const img = imageList[curIdx];
+          const total = imageList.length;
+          const showArrows = total > 1;
+          const captionLine = img.caption ? safe(img.caption) : '';
+          const attribLine  = img.attribution ? safe(img.attribution) : '';
+          return '<div class="forge-side-panel-thumb' + (showArrows ? ' has-carousel' : '') + '" data-node-id="' + safeAttr(id) + '">'
+            + '<img src="' + safe(img.src) + '" alt="' + safe(img.caption || title) + '" />'
+            + (showArrows
+                ? '<button class="forge-side-panel-thumb-prev" data-thumb-nav="prev" aria-label="Previous image">‹</button>'
+                + '<button class="forge-side-panel-thumb-next" data-thumb-nav="next" aria-label="Next image">›</button>'
+                : '')
+            + (showArrows || captionLine || attribLine
+                ? '<div class="forge-side-panel-thumb-meta">'
+                  + (captionLine ? '<div class="forge-side-panel-thumb-caption">' + captionLine + '</div>' : '')
+                  + (attribLine  ? '<div class="forge-side-panel-thumb-attribution">' + attribLine + '</div>' : '')
+                  + (showArrows  ? '<div class="forge-side-panel-thumb-index">' + (curIdx + 1) + ' / ' + total + '</div>' : '')
+                  + '</div>'
+                : '')
+            + '</div>';
+        }
         inner.innerHTML = '<div class="forge-side-panel-content" style="--family-color:' + safe(familyCol) + '">'
-          + (thumbSrc
-              ? '<div class="forge-side-panel-thumb"><img src="' + safe(thumbSrc) + '" alt="" /></div>'
-              : '')
+          + carouselHtml()
           + '<div class="forge-side-panel-header">'
           +   '<div class="forge-side-panel-name">' + safe(title) + '</div>'
           +   (aka.length ? '<div class="forge-side-panel-aka">' + aka.map(safe).join(' · ') + '</div>' : '')
@@ -5300,6 +5358,37 @@
       // the global inner so it works for every render pass without
       // re-binding.
       inner.addEventListener('click', (e) => {
+        // Phase 21X (2026-05-22) — carousel arrows. Check first since
+        // the buttons live inside .forge-side-panel-thumb which would
+        // otherwise pass through to other handlers.
+        const navBtn = e.target.closest('[data-thumb-nav]');
+        if (navBtn) {
+          e.stopPropagation();
+          const direction = navBtn.getAttribute('data-thumb-nav');
+          const thumbBox  = navBtn.closest('.forge-side-panel-thumb');
+          const targetId  = thumbBox && thumbBox.getAttribute('data-node-id');
+          if (!targetId || !local._renderSidePanel) return;
+          // Compute total via the node's combined image list, mirror
+          // of the render-time logic. We re-derive instead of caching
+          // so the count stays correct if the data changes underneath.
+          const nodeRec = (local.mode && local.mode.nodesById && local.mode.nodesById.get(targetId)) || null;
+          if (!nodeRec) return;
+          const deps  = Array.isArray(nodeRec.depictions) ? nodeRec.depictions : [];
+          const seen  = new Set();
+          let total   = 0;
+          for (const d of deps) { if (d && d.source && !seen.has(d.source)) { seen.add(d.source); total++; } }
+          if (nodeRec.thumbnail && !seen.has(nodeRec.thumbnail)) total++;
+          if (total <= 1) return;
+          if (!local._sidePanelImageIdx) local._sidePanelImageIdx = Object.create(null);
+          let cur = local._sidePanelImageIdx[targetId];
+          if (typeof cur !== 'number') cur = 0;
+          if (direction === 'next') cur = (cur + 1) % total;
+          else                      cur = (cur - 1 + total) % total;
+          local._sidePanelImageIdx[targetId] = cur;
+          // Re-render the side panel (cheap; the panel is small).
+          local._renderSidePanel();
+          return;
+        }
         const item = e.target.closest('.forge-side-panel-wire-item');
         if (!item) return;
         const targetId = item.getAttribute('data-id');
