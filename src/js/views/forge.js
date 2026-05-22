@@ -1348,7 +1348,10 @@
         try { bgAudio.play().catch(() => {}); } catch (_) {}
       };
       document.addEventListener('pointerdown', kickPlay, { once: true });
-      local._bgAudio = bgAudio;
+      // NOTE: `local._bgAudio = bgAudio` is set BELOW once `const local`
+      // is declared. Doing it here triggered a TDZ ReferenceError
+      // that aborted mount() before the canvas was created (the
+      // forge view stayed stuck at "device acquiring…").
     }
 
     const canvas = document.createElement('canvas');
@@ -1580,6 +1583,11 @@
       iconByType:   {},
       fontByScope:  {},
     };
+
+    // Phase 21AL (2026-05-23) — deferred bgAudio binding. The audio
+    // element was created above (before `local` existed); bind it
+    // onto local now so destroy() can pause + detach it.
+    if (bgAudio) local._bgAudio = bgAudio;
 
     rootEl._engine = {
       destroy() {
