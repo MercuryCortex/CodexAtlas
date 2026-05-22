@@ -1990,9 +1990,14 @@
       const gizmoEl = document.getElementById('forge-zoom-gizmo');
       if (gizmoEl) {
         gizmoEl.addEventListener('click', () => {
+          // Phase 21AA (2026-05-22) — click target is the NICE fit
+          // (label-aware), not the pure geometric fit. The gizmo's
+          // own % readout stays referenced to computeFitScale, so
+          // after this click the gizmo will display ~85% — that's
+          // intended: "comfortable viewing zoom, not math-max fit".
           camera.flyTo({
             centerX: 0, centerY: 0,
-            scale:   computeFitScale(),
+            scale:   computeNiceFitScale(),
           }, 0.35);
           if (camera.isAnimating()) startAnimLoop();
         });
@@ -2458,6 +2463,46 @@
       const wy = ext.y1 - ext.y0;
       if (wx <= 0 || wy <= 0) return 1;
       return Math.min(vp.w / wx, vp.h / wy);
+    }
+    // ════════════════════════════════════════════════════════════
+    //  computeNiceFitScale() — Phase 21AA (2026-05-22)
+    // ════════════════════════════════════════════════════════════
+    //  The "click the zoom button" target scale. Smaller than the
+    //  pure geometric fit_scale by a label-band buffer, so the
+    //  family-name titles (which sit OUTSIDE the rim by ~44 px +
+    //  text width) don't clip at the viewport edge.
+    //
+    //  ── CRITICAL: this is NOT a replacement for computeFitScale.
+    //  ──   computeFitScale is the canonical metric (see
+    //  ──   AUDIT/forge-zoom-world-system-2026-05-21.md §3).
+    //  ──   Everything reads it: gizmo %, the 11% zoom floor, BG
+    //  ──   opacity ramp, label fade, pan-bound collapse. If you
+    //  ──   change computeFitScale, the floor moves, the BG ramp
+    //  ──   moves, the floor wheel shrinks into oblivion. That
+    //  ──   exact bug is Phases 21Y / 21Z (reverted).
+    //  ──
+    //  ──   computeNiceFitScale is a UX preset for ONE caller —
+    //  ──   the gizmo-click flyTo. The gizmo % stays referenced
+    //  ──   to computeFitScale, so the gizmo will read e.g. 85%
+    //  ──   after the click. That's honest: "you're at a
+    //  ──   comfortable viewing zoom, not the math-max fit."
+    // ════════════════════════════════════════════════════════════
+    function computeNiceFitScale() {
+      const vp = local.lastSize;
+      if (!vp.w || !vp.h || !local.mode || !local.mode.worldExtent) return computeFitScale();
+      const ext = local.mode.worldExtent;
+      const wx = ext.x1 - ext.x0;
+      const wy = ext.y1 - ext.y0;
+      if (wx <= 0 || wy <= 0) return computeFitScale();
+      // Label band: LABEL_OUTSIDE_PAD (44 px) + worst-case half-
+      // label-text-width (~80 px) + breathing room (~16 px) = 140 px
+      // on each side. 280 px total per axis. Conservative — better
+      // a slightly-too-small wheel than a clipped label.
+      const LABEL_BAND_PX = 140;
+      const totalBuffer   = 2 * LABEL_BAND_PX;
+      const effectiveW    = Math.max(200, vp.w - totalBuffer);
+      const effectiveH    = Math.max(200, vp.h - totalBuffer);
+      return Math.min(effectiveW / wx, effectiveH / wy);
     }
     function updateZoomGizmo() {
       const gizmoEl = document.getElementById('forge-zoom-gizmo');

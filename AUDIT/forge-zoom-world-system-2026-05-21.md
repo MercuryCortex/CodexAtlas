@@ -89,6 +89,36 @@ When you see `0.10`, `0.25`, `0.50` constants in the view code (BG opacity ramps
 
 ---
 
+## 4.5. `nice_fit` — the click-to-fit UX preset (Phase 21AA, 2026-05-22)
+
+The family-name labels sit OUTSIDE the wheel rim (`LABEL_OUTSIDE_PAD = 44 px` + label text up to ~80 px on either side). At pure `fit_scale`, the wheel's outer rim touches the smaller viewport axis exactly — so the wider labels (`Pre-Islamic-Arabian`, `Modern-Esoteric`) crop at the viewport edge.
+
+The fix is a SEPARATE preset, **not** a redefinition of `fit_scale`:
+
+```js
+function computeNiceFitScale() {
+  const LABEL_BAND_PX = 140;                    // outside-pad + half label text + breathing
+  const effectiveW    = vp.w - 2 * LABEL_BAND_PX;
+  const effectiveH    = vp.h - 2 * LABEL_BAND_PX;
+  return Math.min(effectiveW / world_w, effectiveH / world_h);
+}
+```
+
+`nice_fit < fit_scale`. The ratio is viewport-dependent — typically ~0.80–0.90 on common monitors.
+
+**`nice_fit` is used by EXACTLY ONE caller: the zoom-gizmo's click handler.** It feeds `camera.flyTo({ ..., scale: niceFit })`. Everything else (gizmo % readout, zoom floor at 11% of fit, BG opacity ramp, label fade, pan-bound collapse) continues to read `fit_scale` unchanged. After the click, the gizmo displays roughly **85%** (i.e. `niceFit / fit_scale × 100`) — that's intended: "you're at a comfortable viewing zoom, not the math-max fit."
+
+> **HISTORICAL LESSON (Phases 21Y, 21Z — both reverted, 2026-05-22):**
+> The first two attempts modified `computeFitScale` itself to be label-aware. The cascade was catastrophic:
+> - 11% floor moved from `0.11 × pure_fit ≈ 0.105` to `0.11 × nice_fit ≈ 0.078`
+> - Wheel diameter at the floor shrank from ~120 px to ~88 px
+> - BG video kept its `max(world-scaled, viewport×1.5)` floor → wheel disappeared inside a viewport-filling nebula
+> - The gizmo % displayed 100% at the click position because the click target AND the denominator were both the new value — leaving the user no way to read the system state honestly
+>
+> **NEVER add a label-band buffer (or any UX preset) into `computeFitScale`.** Define a new function. Use it from one place. Don't cascade.
+
+---
+
 ## 5. Backdrop image (BG) — anchored in world units
 
 The BG image is a world object, same as the wheel. It has a declared world size in `src/js/views/forge.js`:
