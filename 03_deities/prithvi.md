@@ -66,6 +66,11 @@ refs:
     tier: 1
     notes: "PIE *pl̥th₂wíh₂ reconstruction; sky-father/earth-mother pair as PIE heritage."
 tags: [deity, vedic, hindu, prithvi, bhumi, earth, earth-goddess, sky-earth-pair, proto-indo-european, pie, dyaus-pita, pachamama, gaia]
+depictions:
+  - src: "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/Prithu_-_Crop.jpg/330px-Prithu_-_Crop.jpg"
+    caption: "Pṛthivī — Vedic earth goddess; depicted with King Prithu (her eponym)"
+    source: "Wikimedia Commons"
+    license: "Public Domain"
 ---
 
 # Pṛthivī

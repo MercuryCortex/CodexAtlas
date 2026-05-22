@@ -40,6 +40,11 @@ refs:
     type: "monograph"
     tier: 1
 tags: [deity, shinto, japan, amaterasu-son, izumo, kokuso-ancestor, failed-emissary, ukehi]
+depictions:
+  - src: "https://upload.wikimedia.org/wikipedia/commons/thumb/3/31/Amenohohi_shinbutsu-zue.jpg/330px-Amenohohi_shinbutsu-zue.jpg"
+    caption: "Ame-no-Hohi — Japanese kami; Shinbutsu-zue (1832) illustration"
+    source: "Wikimedia Commons"
+    license: "Public Domain"
 ---
 
 # Ame-no-Hohi

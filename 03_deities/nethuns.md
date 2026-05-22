@@ -70,6 +70,11 @@ refs:
     tier: 2
     notes: "Entry on Neptune notes the Etruscan Nethuns as probable etymological source"
 tags: [deity, etruscan, water, springs, sea, freshwater, piacenza-liver, thermal-springs, sacred-water]
+depictions:
+  - src: "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8c/Usil%2C_Nethuns%2C_Thesan.jpg/330px-Usil%2C_Nethuns%2C_Thesan.jpg"
+    caption: "Usil, Nethuns, Thesan — Etruscan sun/water/dawn triad; bronze mirror engraving"
+    source: "Wikimedia Commons"
+    license: "Public Domain"
 ---
 
 # Nethuns

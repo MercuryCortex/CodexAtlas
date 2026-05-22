@@ -50,6 +50,11 @@ refs:
     type: "monograph"
     tier: 2
 tags: [deity, celtic, irish, munster, sun-goddess, sovereignty, fairy-queen, love, fertility, knockainy]
+depictions:
+  - src: "https://upload.wikimedia.org/wikipedia/commons/thumb/4/42/Ainefairyqueen.jpg/330px-Ainefairyqueen.jpg"
+    caption: "Áine, fairy-queen of Munster — Irish illustration of the sovereignty/sun goddess"
+    source: "Wikimedia Commons"
+    license: "Public Domain"
 ---
 
 # Áine

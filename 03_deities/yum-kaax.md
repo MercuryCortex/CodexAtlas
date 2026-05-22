@@ -38,6 +38,11 @@ refs:
     type: "primary-source-colonial-Spanish"
     tier: 1
 tags: [deity, maya, yucatec, yum-kaax, maize-god, post-classic, forest-deity]
+depictions:
+  - src: "https://upload.wikimedia.org/wikipedia/commons/8/87/Maya_Hieroglyphs_Fig_06.jpg"
+    caption: "Yum Kaax — Maya maize and harvest god; hieroglyphic representation"
+    source: "Wikimedia Commons"
+    license: "Public Domain"
 ---
 
 # Yum Kaax

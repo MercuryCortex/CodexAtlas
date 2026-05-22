@@ -69,6 +69,11 @@ refs:
     type: "monograph"
     tier: 2
 tags: [deity, islamic, angel, eschatology, last-day, trumpet, resurrection, hadith, archangel, suspended-time]
+depictions:
+  - src: "https://upload.wikimedia.org/wikipedia/commons/9/92/Israfil1.png"
+    caption: "Isrāfīl — angel who blows the trumpet of resurrection; Islamic miniature"
+    source: "Wikimedia Commons"
+    license: "Public Domain"
 ---
 
 # Isrāfīl (إسرافيل)

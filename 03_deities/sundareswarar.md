@@ -3,6 +3,11 @@ type: deity
 id: "sundareswarar"
 name: "Sundareswarar"
 status: "stub"
+depictions:
+  - src: "https://upload.wikimedia.org/wikipedia/commons/thumb/7/78/Unidentified_-_Sundareshvara_feeding_sugarcane_to_the_elephant_-_2021.328_-_Metropolitan_Museum_of_Art.jpg/330px-Unidentified_-_Sundareshvara_feeding_sugarcane_to_the_elephant_-_2021.328_-_Metropolitan_Museum_of_Art.jpg"
+    caption: "Sundareshvara feeding sugarcane to the elephant — Tamil temple painting; Metropolitan Museum of Art"
+    source: "Wikimedia Commons"
+    license: "CC0"
 ---
 
 # Sundareswarar

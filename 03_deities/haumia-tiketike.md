@@ -50,6 +50,11 @@ refs:
     year: 1995
     tier: 2
 tags: [maori, polynesian, nature-deity, food, phase-8]
+depictions:
+  - src: "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f2/Maorigodsymbols.jpg/330px-Maorigodsymbols.jpg"
+    caption: "Māori god-symbols — chart of the atua family including Haumia-tiketike (fern-root deity)"
+    source: "Wikimedia Commons"
+    license: "Public Domain"
 ---
 
 # Haumia-tike-tike

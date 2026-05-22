@@ -78,6 +78,11 @@ refs:
     type: "monograph"
     tier: 1
 tags: [mahayana-buddhism, east-asian-buddhism, chinese-buddhism, japanese-buddhism, bodhisattva, underworld, compassion, children, hell-realms, jizo]
+depictions:
+  - src: "https://upload.wikimedia.org/wikipedia/commons/0/04/Ksitigarbha_Bodhisattva_Painting.jpeg"
+    caption: "Kṣitigarbha — bodhisattva of the underworld; East Asian painting tradition"
+    source: "Wikimedia Commons"
+    license: "Public Domain"
 ---
 
 # Kṣitigarbha (Dìzàng / Jizō)

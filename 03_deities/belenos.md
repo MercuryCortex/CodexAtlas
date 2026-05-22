@@ -46,6 +46,11 @@ refs:
     publisher: "Errance"
     tier: 1
 tags: [deity, celtic, gaulish, solar, healing, fire-festival, indo-european]
+depictions:
+  - src: "https://upload.wikimedia.org/wikipedia/commons/thumb/9/92/Gundestrupkarret_F.I.7074b.jpg/330px-Gundestrupkarret_F.I.7074b.jpg"
+    caption: "Gundestrup cauldron, plate b — Celtic ritual silver vessel; iconographic context for Belenos"
+    source: "Wikimedia Commons"
+    license: "Public Domain"
 ---
 
 # Belenos

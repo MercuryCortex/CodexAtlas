@@ -40,6 +40,11 @@ refs:
     type: "primary-translation"
     tier: 1
 tags: [deity, sumerian, mesopotamian, gugalanna, bull-of-heaven, ereshkigal-consort, gilgamesh-antagonist]
+depictions:
+  - src: "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7d/Ea_%28Babilonian%29_-_EnKi_%28Sumerian%29.jpg/330px-Ea_%28Babilonian%29_-_EnKi_%28Sumerian%29.jpg"
+    caption: "Mesopotamian deity Ea/Enki — Sumerian pantheon context for Gugalanna (husband of Ereshkigal)"
+    source: "Wikimedia Commons"
+    license: "Public Domain"
 ---
 
 # Gugalanna

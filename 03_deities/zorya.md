@@ -54,6 +54,11 @@ refs:
     type: "reference"
     tier: 2
 tags: [deity, slavic, dawn, dusk, star, venus, cosmic-guardian, healing, apocalyptic, simargl, sky-gates, phase-2]
+depictions:
+  - src: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ae/Zvezda-Zirka_by_Andrey_Shishkin.jpg/330px-Zvezda-Zirka_by_Andrey_Shishkin.jpg"
+    caption: "Zorya — Slavic dawn goddess; modern painting by Andrey Shishkin"
+    source: "Wikimedia Commons"
+    license: "CC BY-SA 4.0"
 ---
 
 # Zorya

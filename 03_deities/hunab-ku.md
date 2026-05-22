@@ -43,6 +43,11 @@ refs:
     tier: 1
     notes: "The principal scholarly article addressing the Hunab-Ku-as-missionary-projection hypothesis"
 tags: [deity, maya, mesoamerican, hunab-ku, contested-historicity, colonial-period-attestation, missionary-projection, new-age-appropriation]
+depictions:
+  - src: "https://upload.wikimedia.org/wikipedia/commons/thumb/f/ff/Maya_calendar_%28Hunab-Ku%29.svg/330px-Maya_calendar_%28Hunab-Ku%29.svg.png"
+    caption: "Hunab Ku — Maya central-deity glyph as cosmic-calendar symbol (post-Conquest formulation)"
+    source: "Wikimedia Commons"
+    license: "Public Domain"
 ---
 
 # Hunab Ku

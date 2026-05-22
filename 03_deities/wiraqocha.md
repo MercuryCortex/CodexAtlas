@@ -3,6 +3,11 @@ type: deity
 id: "wiraqocha"
 name: "Wiraqocha"
 status: "stub"
+depictions:
+  - src: "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3c/2Wiener-Tintin-Dieu_Soleil.jpg/330px-2Wiener-Tintin-Dieu_Soleil.jpg"
+    caption: "Viracocha — Inca creator deity; Tiwanaku-stylization line drawing (Wiener/Tintin)"
+    source: "Wikimedia Commons"
+    license: "Public Domain"
 ---
 
 # Wiraqocha

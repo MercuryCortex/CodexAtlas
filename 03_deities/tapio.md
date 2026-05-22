@@ -62,6 +62,11 @@ refs:
     tier: 1
     notes: "Primary treatment of the Finnish bear-killing ceremony; Tapio's role as owner of the bear"
 tags: [deity, finnish, finno-ugric, forest, hunting, bear, wild-animals, folk-religion, kalevala, hunt-sovereign, phase-2]
+depictions:
+  - src: "https://upload.wikimedia.org/wikipedia/commons/thumb/2/26/Tapio_v%C3%A4kineen_1898.jpg/330px-Tapio_v%C3%A4kineen_1898.jpg"
+    caption: "Tapio with his retinue — Finnish forest-spirit; 1898 illustration"
+    source: "Wikimedia Commons"
+    license: "Public Domain"
 ---
 
 # Tapio

@@ -43,6 +43,11 @@ refs:
     type: "encyclopedia"
     tier: 1
 tags: [deity, pre-islamic-arabian, hudhayl, hejazi, quran-71-23, antediluvian-list, suwa]
+depictions:
+  - src: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5b/Antico_yemen%2C_al-jawf%2C_statuette_di_donne_sedute%2C_III-I_sec._ac._03.JPG/330px-Antico_yemen%2C_al-jawf%2C_statuette_di_donne_sedute%2C_III-I_sec._ac._03.JPG"
+    caption: "Pre-Islamic Arabian female statuettes from al-Jawf, Yemen — cultic context for Suwāʿ"
+    source: "Wikimedia Commons"
+    license: "CC BY-SA 3.0"
 ---
 
 # Suwāʿ
