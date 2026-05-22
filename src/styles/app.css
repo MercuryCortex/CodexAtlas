@@ -674,8 +674,13 @@ body.view-forge .forge-stage {
 .forge-viewset-row.is-on:hover { background: rgba(212,165,90,0.10); }
 
 /* Layer-toggle effects driven by body classes set in JS. */
-body.fv-hide-hulls .forge-hulls-overlay { display: none !important; }
-body.fv-hide-wires .forge-canvas { /* placeholder — wire-only hide is a renderer-side change deferred */ }
+/* Phase 21R (2026-05-22) — `dividers` toggle is independent from
+   `hulls`. Hide just the radial divider lines while keeping the
+   pie-slice fills visible. Selector reaches inside the overlay
+   SVG to the dividers group. */
+body.fv-hide-hulls    .forge-hulls-overlay { display: none !important; }
+body.fv-hide-dividers #forge-hull-dividers { display: none !important; }
+body.fv-hide-wires    .forge-canvas { /* placeholder — wire-only hide is a renderer-side change deferred */ }
 
 /* ── Phase 21B (2026-05-21) — Search autocomplete (drop-up) ── */
 .forge-search-wrap {
@@ -6274,11 +6279,33 @@ body.nav-collapsed .nav-more > summary .lbl { display: none; }
   box-sizing: border-box;
 }
 .forge-scrub-box:hover { border-color: var(--gold-soft); }
+/* Phase 21R (2026-05-22) — IN / OUT are now <input> elements
+   (typable). Match the readout look. Editable affordance: subtle
+   gold border + lighter text on hover/focus. */
+.forge-scrub-box-editable {
+  appearance: none; -webkit-appearance: none;
+  outline: none;
+  cursor: text;
+}
+.forge-scrub-box-editable:focus {
+  border-color: var(--gold, #d4a55a);
+  color: var(--text-0);
+  background: rgba(20, 26, 38, 0.92);
+}
+.forge-scrub-box-editable::selection { background: rgba(212,165,90,0.30); }
+
 /* PRESENT box — slightly emphasized (gold text) to distinguish it
    as the playhead readout vs the IN/OUT range bounds. */
 .forge-scrub-present {
   color: var(--gold, #d4a55a);
 }
+/* Phase 21R (2026-05-22) — in Forge specifically, the PRESENT
+   playhead box + the CENTER thumb on the slider are REDUNDANT
+   (the wheel filter is driven by IN/OUT alone). Hide them under
+   body.view-forge ONLY; JS + DOM stay intact so any future view
+   that wants a playhead inherits the wiring. */
+body.view-forge #forge-scrub-present     { display: none !important; }
+body.view-forge #forge-scrub-center-thumb { display: none !important; }
 /* Slider container — same height as the boxes (matches the
    zoom-gizmo + search height). Holds the track + 3 thumbs. */
 .forge-scrub-slider {

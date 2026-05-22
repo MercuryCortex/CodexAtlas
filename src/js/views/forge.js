@@ -799,8 +799,13 @@
       // toggles can be set in one go. Persists in LocalStorage.
       '<div class="forge-viewset-wrap">' +
         '<button class="forge-viewset-btn" id="forge-viewset-btn" title="View settings" aria-expanded="false">⚏ VIEW</button>' +
+        // Phase 21R (2026-05-22) — separators split from hulls. The
+        // pie-slice fills and the radial divider lines are now
+        // independently toggleable; the family-name labels track
+        // the hulls toggle (they ARE the slice labels).
         '<div class="forge-viewset-panel" id="forge-viewset-panel" aria-hidden="true">' +
           '<button class="forge-viewset-row" data-toggle="hulls"><span class="vs-check"></span>Show family hulls</button>' +
+          '<button class="forge-viewset-row" data-toggle="dividers"><span class="vs-check"></span>Show family separators</button>' +
           '<button class="forge-viewset-row" data-toggle="wires"><span class="vs-check"></span>Show wires</button>' +
           '<button class="forge-viewset-row" data-toggle="map" disabled><span class="vs-check"></span>Show map <em>(coming soon)</em></button>' +
         '</div>' +
@@ -815,7 +820,11 @@
       // Drag IN/OUT/CENTER thumbs in the slider; values update
       // live in the boxes. v2 wires the filter — nodes outside the
       // IN-OUT range get dimmed via the existing state pipeline.
-      '<div class="forge-scrub-box" id="forge-scrub-in"      title="IN: lower bound of date range">—</div>',
+      // Phase 21R (2026-05-22) — IN / OUT are now typable. Click
+      // the box, edit "1500 BCE" / "200 CE" / "-500" / "2024",
+      // press Enter or blur → parsed + clamped to [lo, hi] +
+      // recomputeFocus. The slider thumbs stay live too.
+      '<input type="text" class="forge-scrub-box forge-scrub-box-editable" id="forge-scrub-in"  title="IN: lower bound of date range — click to type" autocomplete="off" spellcheck="false" />',
       '<div class="forge-scrub-slider" id="forge-scrub-slider" title="Drag IN / OUT bounds; drag center to scrub">' +
         '<div class="forge-scrub-track">' +
           '<div class="forge-scrub-range" id="forge-scrub-range"></div>' +
@@ -828,7 +837,13 @@
           '<div class="forge-scrub-thumb forge-scrub-out-thumb"    id="forge-scrub-out-thumb"    data-handle="out"></div>' +
         '</div>' +
       '</div>',
-      '<div class="forge-scrub-box" id="forge-scrub-out"     title="OUT: upper bound of date range">—</div>',
+      '<input type="text" class="forge-scrub-box forge-scrub-box-editable" id="forge-scrub-out" title="OUT: upper bound of date range — click to type" autocomplete="off" spellcheck="false" />',
+      // Phase 21R (2026-05-22) — PRESENT box + the CENTER-thumb on
+      // the slider are HIDDEN in Forge (redundant for the age-radial
+      // wheel; the IN/OUT range alone drives the filter here). The
+      // JS handlers + DOM remain so a future view that NEEDS a
+      // playhead (Timeline) inherits them. CSS hides them under
+      // body.view-forge only.
       '<div class="forge-scrub-box forge-scrub-present" id="forge-scrub-present" title="PRESENT: scrub playhead">—</div>',
       // Phase 21A2 (2026-05-21) — debug-stats toggle. Tiny
       // square button next to the present-date box. Click pops
@@ -2833,7 +2848,10 @@
       // breathe together with the pie slices + dividers as a
       // single overlay layer. Setting this explicitly to 1 in
       // case any prior frame stamped a lower value.
-      const LABEL_OUTSIDE_PAD = 24;
+      // Phase 21R (2026-05-22) — labels shifted further outward
+      // (was 24). Decouples the title band from the dividers so
+      // they read clearly when both are visible.
+      const LABEL_OUTSIDE_PAD = 44;
       hullLabelsG.style.opacity = '1';
       const labelGroups = hullLabelsG.children;
       for (let i = 0; i < data.hulls.length && i < labelGroups.length; i++) {
@@ -3162,6 +3180,18 @@
       const idx       = local.mode.nodePacked.idIndex;
       local.focusedSet  = graph.focusedSetFor(local.hoverId, local.lockedSet, local.mode.adjacency);
       local.selectedSet = computeSelectedSet(local.hoverId, local.lockedSet);
+      // Phase 21R (2026-05-22) — hover-boost wire palette. Re-upload
+      // only on hover-state transitions (null ↔ non-null) so steady-
+      // state hover doesn't burn writes. The boost itself lives in
+      // hotPaletteFromParams() — this site is just the trigger.
+      const wantBoost = (local.hoverId != null);
+      if (local._hoverBoostActive !== wantBoost) {
+        local._hoverBoostActive = wantBoost;
+        if (local.renderer && local.renderer.setBucketPalette) {
+          try { local.renderer.setBucketPalette(hotPaletteFromParams()); }
+          catch (_) { /* ignore — renderer may be tearing down */ }
+        }
+      }
       const states    = graph.computeNodeStates(idx, local.focusedSet);
       const selectFlags = graph.computeSelectedStates
         ? graph.computeSelectedStates(idx, local.selectedSet)
@@ -3811,18 +3841,27 @@
       const btn   = document.getElementById('forge-viewset-btn');
       const panel = document.getElementById('forge-viewset-panel');
       if (!btn || !panel) return;
-      const LS_KEY = 'forge.viewSettings.v1';
+      // Phase 21R (2026-05-22) — added `dividers` key. Bumped the
+      // LS schema to v2 so an old v1 record (without `dividers`)
+      // doesn't quietly disable separators on load; v1 records are
+      // ignored, and the v2 default starts everything ON.
+      const LS_KEY = 'forge.viewSettings.v2';
       const state = (() => {
         try {
           const raw = localStorage.getItem(LS_KEY);
           if (raw) return JSON.parse(raw);
         } catch (_) {}
-        return { hulls: true, wires: true, map: false };
+        return { hulls: true, dividers: true, wires: true, map: false };
       })();
+      // Defensive: if a partial v2 record is missing a key, default
+      // it to ON. Avoids "feature ghosted on load" if we add a key
+      // again without bumping the schema.
+      if (typeof state.dividers !== 'boolean') state.dividers = true;
       function applyState() {
-        document.body.classList.toggle('fv-hide-hulls', !state.hulls);
-        document.body.classList.toggle('fv-hide-wires', !state.wires);
-        document.body.classList.toggle('fv-hide-map',   !state.map);
+        document.body.classList.toggle('fv-hide-hulls',    !state.hulls);
+        document.body.classList.toggle('fv-hide-dividers', !state.dividers);
+        document.body.classList.toggle('fv-hide-wires',    !state.wires);
+        document.body.classList.toggle('fv-hide-map',      !state.map);
         // Mark each row's checkbox state for CSS.
         panel.querySelectorAll('.forge-viewset-row').forEach(row => {
           const key = row.dataset.toggle;
@@ -4929,13 +4968,20 @@
         // Phase 21B (2026-05-21) — IN box shows "+9000 BCE" when
         // the handle is at the cosmetic floor: the "+" signals
         // that everything earlier is also included.
-        if (inBox) {
+        // Phase 21R (2026-05-22) — IN / OUT are now <input>s. Use
+        // .value for them; skip the write while the user is
+        // actively typing (document.activeElement check) so we
+        // don't clobber a partial entry. PRESENT stays a <div>
+        // (read-only playhead readout) — uses .textContent.
+        if (inBox && document.activeElement !== inBox) {
           const atFloor = (t.inDate <= t.lo + 0.5);
-          inBox.textContent = atFloor
+          inBox.value = atFloor
             ? ('+' + Math.abs(t.lo) + ' BCE')
             : formatYear(t.inDate);
         }
-        if (outBox)     outBox.textContent     = formatYear(t.outDate);
+        if (outBox && document.activeElement !== outBox) {
+          outBox.value = formatYear(t.outDate);
+        }
         if (presentBox) presentBox.textContent = formatYear(t.centerDate);
       }
 
@@ -5020,6 +5066,75 @@
       track.addEventListener('pointermove', onPointerMove);
       track.addEventListener('pointerup',   onPointerUp);
       track.addEventListener('pointercancel', onPointerUp);
+
+      // ─── Phase 21R (2026-05-22) — typable date boxes ──────────
+      // Accept several formats and clamp to the current mode's
+      // [lo, hi]. After commit: write back canonical formatted
+      // text, push to local.timeline, re-position the thumb, and
+      // re-run the filter (recomputeFocus). Cancel on Escape.
+      //
+      // Parse rules — case-insensitive, whitespace-tolerant:
+      //   "1500 BCE" / "1500 BC" / "-1500"   →  -1500
+      //   "200 CE"   / "200 AD"  / "+200" / "200"  →   200
+      //   "0"  →  0
+      //   empty / unparseable → reject, restore prior text
+      function parseYearText(raw) {
+        if (raw == null) return null;
+        const s = String(raw).trim().toLowerCase();
+        if (!s) return null;
+        // "+9000 bce" (timeline floor cosmetic) — strip leading +
+        // so the BCE branch below handles it as a magnitude.
+        const stripped = s.replace(/^\+\s*/, '');
+        const bceMatch = stripped.match(/^(\d+)\s*(?:bce|bc)$/);
+        if (bceMatch) return -parseInt(bceMatch[1], 10);
+        const ceMatch  = stripped.match(/^(\d+)\s*(?:ce|ad)$/);
+        if (ceMatch)   return  parseInt(ceMatch[1], 10);
+        // Bare integer (signed or unsigned). Negative = BCE.
+        const num = parseInt(stripped, 10);
+        if (Number.isFinite(num) && /^-?\d+$/.test(stripped)) return num;
+        return null;
+      }
+      function commitDateBox(boxEl, kind) {
+        const t = local.timeline;
+        if (!t || !boxEl) return;
+        const raw = boxEl.value;
+        const parsed = parseYearText(raw);
+        if (parsed == null) {
+          // Reject — restore current displayed value.
+          refreshUI();
+          return;
+        }
+        // Clamp to bounds + maintain in < out ordering.
+        let y = parsed;
+        if (y < t.lo) y = t.lo;
+        if (y > t.hi) y = t.hi;
+        if (kind === 'in') {
+          if (y >= t.outDate) y = t.outDate - 1;
+          t.inDate = y;
+          if (t.centerDate < t.inDate) t.centerDate = t.inDate;
+        } else { // 'out'
+          if (y <= t.inDate) y = t.inDate + 1;
+          t.outDate = y;
+          if (t.centerDate > t.outDate) t.centerDate = t.outDate;
+        }
+        refreshUI();
+        if (!local.destroyed) {
+          recomputeFocus();
+          saveRuntimeState();
+        }
+      }
+      function wireDateBox(boxEl, kind) {
+        if (!boxEl) return;
+        // Select-all on focus so a click is "ready to retype".
+        boxEl.addEventListener('focus', () => { boxEl.select(); });
+        boxEl.addEventListener('keydown', (ev) => {
+          if (ev.key === 'Enter')  { ev.preventDefault(); boxEl.blur(); }
+          if (ev.key === 'Escape') { ev.preventDefault(); refreshUI(); boxEl.blur(); }
+        });
+        boxEl.addEventListener('blur', () => commitDateBox(boxEl, kind));
+      }
+      wireDateBox(inBox,  'in');
+      wireDateBox(outBox, 'out');
 
       // Phase 5B M-F3 (2026-05-20) — expose the per-mode refresh
       // entry on `local.scrubber` so rebuildForMode + LS-hydrate
@@ -5356,12 +5471,22 @@
         a,
       ];
     }
+    // Phase 21R (2026-05-22) — when a node is HOVERED, the visible
+    // active wires become the cue for "this is what's connected".
+    // Boost their opacity to 1.0 so they read decisively over the
+    // BG video. When the focus is from LOCK only (no hover), keep
+    // the calmer baseline (~0.75) so a sustained selection isn't
+    // shouty. Boost is a one-line palette multiplier — no shader
+    // or per-edge state change.
+    const HOVER_BOOST_ALPHA = 1.0;
     function hotPaletteFromParams() {
       const p = local.params;
-      return BUCKET_ORDER.map(b => hex2rgba(
-        p['active_color_'   + b],
-        p['active_opacity_' + b],
-      ));
+      const boost = (local.hoverId != null);
+      return BUCKET_ORDER.map(b => {
+        const baseA = p['active_opacity_' + b];
+        const a = boost ? Math.min(1.0, Math.max(baseA, HOVER_BOOST_ALPHA)) : baseA;
+        return hex2rgba(p['active_color_' + b], a);
+      });
     }
     function labelHierarchyFromParams() {
       const p = local.params;
