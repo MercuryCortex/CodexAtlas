@@ -806,12 +806,15 @@
       // GEOGRAPHY — colored by climate / latitude band.
       // Tropical = warm; temperate = green; arid = ochre;
       // polar / oceanic = cool. Honest as a climate map.
+      // Phase 21S-fix (2026-05-22) — Christian + Gnostic follow the
+      // Mediterranean-basin gold here (no more crimson/violet pin);
+      // the Roots theme is the only one that anchors them.
       geography: {
         // Mediterranean basin — gold + ochre.
         'Greek':'#d4a55a','Roman':'#c49a4a','Etruscan':'#c4863a','Egyptian':'#d4b04a',
         'Mesopotamian':'#c47a4a','Israelite':'#c89a5a','Rabbinic':'#b8904a','Canaanite':'#c48a4a',
         'Phoenician':'#c4904a','Pre-Islamic-Arabian':'#b87a40','Mystery':'#c4a06a','Hermetic':'#d4b06a',
-        'Neoplatonist':'#c4a070','Christian':'#c46a5a','Gnostic':'#7a5aa4',
+        'Neoplatonist':'#c4a070','Christian':'#c89a5a','Gnostic':'#b89060',
         // Near-East arid — wine + ochre.
         'Islamic':'#9a6a40','Mandaean':'#8a6a5a','Manichaean':'#9a5a6a','Zoroastrian':'#a07050',
         'Armenian':'#a06a5a','Hittite':'#a07a4a',
@@ -830,12 +833,16 @@
       // COSMOLOGY — by theological structure.
       // Monotheist = gold | Dualist = violet | Polytheist = rust |
       // Pantheist = jade | Animist = moss
+      // Phase 21S-fix (2026-05-22) — Christian + Gnostic follow the
+      // theological hue here (Christian = Monotheist gold; Gnostic =
+      // Dualist violet). The Roots theme is the only one that pins
+      // the crimson/violet from data.js.
       cosmology: {
-        // Monotheist (single supreme deity).
-        'Israelite':'#d4a55a','Rabbinic':'#c49a50','Christian':'#c44a5a','Islamic':'#d4a040',
+        // Monotheist (single supreme deity) — gold.
+        'Israelite':'#d4a55a','Rabbinic':'#c49a50','Christian':'#d4a045','Islamic':'#d4a040',
         'Zoroastrian':'#c8954a','Mandaean':'#b8904a','Sikh':'#c89a5a',
-        // Dualist (two opposing principles).
-        'Gnostic':'#6b3a8a','Manichaean':'#7a4a9a','Neoplatonist':'#8a5a9a',
+        // Dualist (two opposing principles) — violet.
+        'Gnostic':'#7a4a9a','Manichaean':'#8a5aa4','Neoplatonist':'#9a6ab8',
         // Polytheist (many gods).
         'Greek':'#c47a4a','Roman':'#b86a3a','Egyptian':'#c4854a','Mesopotamian':'#c4754a',
         'Norse':'#a86a4a','Celtic':'#b87a4a','Vedic':'#d4854a','Hittite':'#a87a4a',
@@ -867,10 +874,11 @@
         'Greek':'#c4a040','Celtic':'#b89a4a','Norse':'#c4a04a','Roman':'#c89a4a',
         'Zoroastrian':'#c8a04a','Buddhist':'#c8a050','Chinese':'#c89a4a','Shinto':'#c8a05a',
         'Baltic':'#b8a04a','Slavic-Finnic':'#a89a4a','Pre-Islamic-Arabian':'#b89a3a',
-        // Late-Antique (0 to 400 CE).
-        'Christian':'#c44a5a','Gnostic':'#6b3a8a','Manichaean':'#7a4a9a','Mandaean':'#5a4a8a',
-        'Neoplatonist':'#8a5a9a','Hermetic':'#9a6aa0','Mystery':'#a06a8a','Rabbinic':'#a06a8a',
-        'Armenian':'#9a5a8a',
+        // Late-Antique (0 to 400 CE) — wine spectrum (no Christian/
+        // Gnostic pin in this theme; era is what colors them).
+        'Christian':'#9a4a6a','Gnostic':'#8a4a78','Manichaean':'#7a4a8a','Mandaean':'#6a4a7a',
+        'Neoplatonist':'#8a5a8a','Hermetic':'#9a6a8a','Mystery':'#a06a8a','Rabbinic':'#a06a8a',
+        'Armenian':'#9a5a7a',
         // Medieval (400 to 1500).
         'Islamic':'#3a8a8a',
         // Modern.
@@ -4137,6 +4145,29 @@
     //  CSS in app.css wires the actual visibility — JS only
     //  flips classes.
     // ════════════════════════════════════════════════════════════
+    // Phase 21T (2026-05-22) — criterion tooltips for the color +
+    // order radios. Same pattern as the legend tooltip: dwell on a
+    // row for ~1 s → a floating box appears with the rule that
+    // governs that mode. Helps the user remember which theme uses
+    // which logic without opening a separate help panel.
+    const VIEWSET_CRITERIA = {
+      // ── Color themes ────────────────────────────────────────
+      color: {
+        default: 'Colors come from data.js — each family was assigned a hand-picked hue at vault-build time. No single rule; this is the historical baseline.',
+        roots:   'Civilizational-linguistic root families. Semitic / Abrahamic (Israelite, Christian, Gnostic, Islamic, Manichaean, Mandaean) cluster in wine + violet — Christian and Gnostic are pinned at their original tones so this theme anchors the Late-Antique cluster. Indo-European branches diverge: classical Med = violet, North-European = blue/green, Indo-Iranian = saffron. East Asia = jade. Egypt + Mesopotamia = lapis. Mesoamerica + Andean = obsidian / sienna. Modern syncretic = silver-violet.',
+        geography: 'Climate / latitude band. Mediterranean basin = gold + ochre. Temperate Europe = green / slate. Indo-Iranian arid = saffron. East Asia = jade. Sub-Saharan + tropical = coral. Pacific / oceanic = cool blue. Americas = obsidian / sienna. Traditions native to similar climates share a tone — honest as a climate map.',
+        cosmology: 'Theological structure (what the tradition claims about ultimate reality). Monotheist (one supreme deity) = gold. Dualist (two opposing principles) = violet. Polytheist (many gods) = rust. Pantheist / non-dual (divine ≡ cosmos) = jade. Animist (spirits in things) = moss-green.',
+        time:    'Era of emergence. Stone / Bronze (≥ -3000 BCE) = deep umber. Bronze / Iron Age (-3000 to -800) = copper. Classical Antiquity (-800 to 0) = ochre. Late-Antique (0 to 400 CE) = wine. Medieval = teal. Modern = silver. The radial axis already encodes age within a family — this layers a temporal hue across them.',
+      },
+      // ── Family orders ───────────────────────────────────────
+      order: {
+        opposites:     'Each family sits across the wheel from its conceptual opposite — Christian ↔ Islamic, Greek ↔ Roman, Vedic ↔ Buddhist, Hermetic ↔ Modern-Esoteric. Reading across the diameter gives you paired traditions. The original Forge layout.',
+        roots:         'Walk clockwise through root clusters. Near-East spine (Mesopotamian → Egyptian → Israelite → Christian → Gnostic → Islamic), then Indo-Iranian (Zoroastrian → Vedic → Buddhist), then East Asia, Classical Med, broader Indo-European, extra-Eurasian (Africa / Americas / Pacific), Modern. Similar traditions sit adjacent.',
+        chronological: 'Globally oldest → globally youngest, ignoring family. Mesopotamian / Egyptian first; Modern-Esoteric last. Pure historical sweep — Vedic falls between Egypt and Greece, Buddhism between Vedic and Roman, etc.',
+        geography:     'Geographic sweep, west → east. Americas → Atlantic Europe → Mediterranean → Near East → India → East Asia → Pacific. The story is geography; same-region traditions cluster.',
+      },
+    };
+
     function wireViewSettings() {
       const btn   = document.getElementById('forge-viewset-btn');
       const panel = document.getElementById('forge-viewset-panel');
@@ -4232,6 +4263,87 @@
       document.addEventListener('keydown', (ev) => {
         if (ev.key === 'Escape' && panel.classList.contains('is-open')) close();
       });
+
+      // ─── Phase 21T (2026-05-22) — criterion tooltips ──────────
+      // Dwell ~1 s on a color/order radio → tooltip appears with
+      // the criterion text. Reuses the legend-tooltip element so
+      // we don't grow a second floating-box CSS surface.
+      let tipEl = document.getElementById('forge-legend-tooltip');
+      if (!tipEl) {
+        // Defensive: if wireLegend hasn't created it (load-order),
+        // make our own with the same class.
+        tipEl = document.createElement('div');
+        tipEl.className = 'forge-legend-tooltip';
+        tipEl.id = 'forge-legend-tooltip';
+        tipEl.setAttribute('aria-hidden', 'true');
+        document.body.appendChild(tipEl);
+      }
+      let dwellTimer = 0;
+      let dwellRow   = null;
+      function getCriterion(row) {
+        if (!row) return null;
+        if (row.dataset.color && VIEWSET_CRITERIA.color[row.dataset.color])
+          return VIEWSET_CRITERIA.color[row.dataset.color];
+        if (row.dataset.order && VIEWSET_CRITERIA.order[row.dataset.order])
+          return VIEWSET_CRITERIA.order[row.dataset.order];
+        return null;
+      }
+      function positionTooltip(row) {
+        const rPanel = panel.getBoundingClientRect();
+        const rRow   = row.getBoundingClientRect();
+        const rTip   = tipEl.getBoundingClientRect();
+        const margin = 8;
+        // Default: place to the RIGHT of the panel, top-aligned with
+        // the hovered row. Same mirror-clamp rules as the legend.
+        let left = rPanel.right + margin;
+        if (left + rTip.width + margin > window.innerWidth) {
+          left = rPanel.left - rTip.width - margin;
+        }
+        if (left < margin) left = margin;
+        let top = rRow.top;
+        if (top + rTip.height + margin > window.innerHeight) {
+          top = window.innerHeight - rTip.height - margin;
+        }
+        if (top < margin) top = margin;
+        tipEl.style.left = left + 'px';
+        tipEl.style.top  = top  + 'px';
+      }
+      function showTip(row) {
+        const text = getCriterion(row);
+        if (!text) return;
+        tipEl.textContent = text;
+        tipEl.style.display = '';
+        tipEl.setAttribute('aria-hidden', 'false');
+        positionTooltip(row);
+      }
+      function hideTip() {
+        tipEl.setAttribute('aria-hidden', 'true');
+        tipEl.style.display = 'none';
+      }
+      function clearDwell() {
+        if (dwellTimer) { clearTimeout(dwellTimer); dwellTimer = 0; }
+        dwellRow = null;
+      }
+      panel.addEventListener('mousemove', (ev) => {
+        const row = ev.target.closest('.forge-viewset-row');
+        if (!row || (!row.dataset.color && !row.dataset.order)) {
+          clearDwell();
+          hideTip();
+          return;
+        }
+        if (row === dwellRow) return;       // already counting this row
+        clearDwell();
+        hideTip();
+        dwellRow = row;
+        dwellTimer = setTimeout(() => {
+          if (dwellRow === row) showTip(row);
+        }, 1000);
+      });
+      panel.addEventListener('mouseleave', () => {
+        clearDwell();
+        hideTip();
+      });
+
       applyState();
     }
 

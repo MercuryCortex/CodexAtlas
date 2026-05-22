@@ -203,9 +203,15 @@
       // circular inner / outer edges, regardless of where the
       // individual deity positions drifted during relaxation.
       const wd = wedgeData && wedgeData[family];
+      // Phase 21S-fix (2026-05-22) — when wedge data is supplied,
+      // its `color` is the source of truth (it already has the
+      // view-layer color theme applied via radial.js's colorOverride).
+      // Without this, the hulls kept the baked node color while the
+      // disks recolored — visible mismatch.
+      const wedgeColor = (wd && typeof wd.color === 'string') ? wd.color : null;
       out.push({
         family,
-        color:         data.color,
+        color:         wedgeColor || data.color,
         polygon,
         centroid,
         centroidAngle,
