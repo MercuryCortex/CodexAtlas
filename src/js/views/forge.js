@@ -1098,18 +1098,17 @@
       '<div class="forge-fxpanel-wrap">' +
         '<button class="forge-fxpanel-btn" id="forge-fxpanel-btn" title="Floor-zoom FX tuning" aria-expanded="false">FX</button>' +
         '<div class="forge-fxpanel" id="forge-fxpanel" aria-hidden="true">' +
-          '<div class="forge-fxpanel-section">Disk bloom — base</div>' +
-          '<div class="forge-fxpanel-row"><label>blur <span class="forge-fxpanel-val" data-val="blur-base">2.0px</span></label><input type="range" data-fx="blur-base" min="0" max="20" step="0.1" value="2.0"></div>' +
-          '<div class="forge-fxpanel-row"><label>brightness <span class="forge-fxpanel-val" data-val="bright-base">1.30</span></label><input type="range" data-fx="bright-base" min="0.5" max="3" step="0.01" value="1.30"></div>' +
-          '<div class="forge-fxpanel-row"><label>saturate <span class="forge-fxpanel-val" data-val="sat-base">1.40</span></label><input type="range" data-fx="sat-base" min="0.5" max="3" step="0.01" value="1.40"></div>' +
-          '<div class="forge-fxpanel-section">Disk bloom — peak</div>' +
-          '<div class="forge-fxpanel-row"><label>blur <span class="forge-fxpanel-val" data-val="blur-peak">3.5px</span></label><input type="range" data-fx="blur-peak" min="0" max="20" step="0.1" value="3.5"></div>' +
-          '<div class="forge-fxpanel-row"><label>brightness <span class="forge-fxpanel-val" data-val="bright-peak">1.55</span></label><input type="range" data-fx="bright-peak" min="0.5" max="3.5" step="0.01" value="1.55"></div>' +
-          '<div class="forge-fxpanel-row"><label>saturate <span class="forge-fxpanel-val" data-val="sat-peak">1.70</span></label><input type="range" data-fx="sat-peak" min="0.5" max="3" step="0.01" value="1.70"></div>' +
-          '<div class="forge-fxpanel-row"><label>hue shift <span class="forge-fxpanel-val" data-val="hue-peak">-12°</span></label><input type="range" data-fx="hue-peak" min="-60" max="60" step="1" value="-12"></div>' +
-          '<div class="forge-fxpanel-section">Flicker spikes</div>' +
-          '<div class="forge-fxpanel-row"><label>small flicker <span class="forge-fxpanel-val" data-val="bright-flicker">1.68</span></label><input type="range" data-fx="bright-flicker" min="0.5" max="4" step="0.01" value="1.68"></div>' +
-          '<div class="forge-fxpanel-row"><label>big flicker <span class="forge-fxpanel-val" data-val="bright-flicker-big">1.85</span></label><input type="range" data-fx="bright-flicker-big" min="0.5" max="5" step="0.01" value="1.85"></div>' +
+          '<div class="forge-fxpanel-section">Heartbeat rhythm</div>' +
+          '<div class="forge-fxpanel-row"><label>period <span class="forge-fxpanel-val" data-val="period">5.5s</span></label><input type="range" data-fx="period" min="1.5" max="14" step="0.1" value="5.5"></div>' +
+          '<div class="forge-fxpanel-section">Disk — rest</div>' +
+          '<div class="forge-fxpanel-row"><label>blur <span class="forge-fxpanel-val" data-val="blur-base">16.0px</span></label><input type="range" data-fx="blur-base" min="0" max="30" step="0.1" value="16.0"></div>' +
+          '<div class="forge-fxpanel-row"><label>brightness <span class="forge-fxpanel-val" data-val="bright-base">1.00</span></label><input type="range" data-fx="bright-base" min="0.3" max="3" step="0.01" value="1.00"></div>' +
+          '<div class="forge-fxpanel-row"><label>saturate <span class="forge-fxpanel-val" data-val="sat-base">1.00</span></label><input type="range" data-fx="sat-base" min="0.3" max="3" step="0.01" value="1.00"></div>' +
+          '<div class="forge-fxpanel-section">Disk — pulse</div>' +
+          '<div class="forge-fxpanel-row"><label>blur <span class="forge-fxpanel-val" data-val="blur-peak">14.0px</span></label><input type="range" data-fx="blur-peak" min="0" max="30" step="0.1" value="14.0"></div>' +
+          '<div class="forge-fxpanel-row"><label>brightness <span class="forge-fxpanel-val" data-val="bright-peak">2.00</span></label><input type="range" data-fx="bright-peak" min="0.5" max="4" step="0.01" value="2.00"></div>' +
+          '<div class="forge-fxpanel-row"><label>saturate <span class="forge-fxpanel-val" data-val="sat-peak">2.00</span></label><input type="range" data-fx="sat-peak" min="0.5" max="3.5" step="0.01" value="2.00"></div>' +
+          '<div class="forge-fxpanel-row"><label>hue shift <span class="forge-fxpanel-val" data-val="hue-peak">-16°</span></label><input type="range" data-fx="hue-peak" min="-60" max="60" step="1" value="-16"></div>' +
           '<div class="forge-fxpanel-section">Hulls (calm layer)</div>' +
           '<div class="forge-fxpanel-row"><label>brightness <span class="forge-fxpanel-val" data-val="hull-bright-peak">1.30</span></label><input type="range" data-fx="hull-bright-peak" min="0.8" max="2" step="0.01" value="1.30"></div>' +
           '<div class="forge-fxpanel-row"><label>saturate <span class="forge-fxpanel-val" data-val="hull-sat-peak">1.55</span></label><input type="range" data-fx="hull-sat-peak" min="0.5" max="2.5" step="0.01" value="1.55"></div>' +
@@ -1198,7 +1197,7 @@
     // master into _assets/bg/<stable-name>.<ext>, edit these two
     // constants, bump the cache-bust string in index.html.
     // ───────────────────────────────────────────────────────────
-    const BG_ASSET_URL  = '_assets/bg/bg-x2-hd.mov?v=20260522-21q';
+    const BG_ASSET_URL  = '_assets/bg/bg-x1-hd.mov?v=20260522-21ac';
     const BG_ASSET_KIND = 'video';   // 'image' | 'video'
     let bgImage = document.getElementById('forge-bg-image');
     // If the cached element is the WRONG tag for the current asset
@@ -4509,7 +4508,11 @@
       const btn   = document.getElementById('forge-fxpanel-btn');
       const panel = document.getElementById('forge-fxpanel');
       if (!btn || !panel) return;
-      const LS_KEY = 'forge.fxParams.v1';
+      // Phase 21AC (2026-05-22) — bumped from v1 → v2 when we
+      // swapped the flicker-spike model for the heartbeat. v1
+      // values reference dead keys (bright-flicker, -big) and
+      // outdated defaults; ignore them silently on first load.
+      const LS_KEY = 'forge.fxParams.v2';
 
       // Format each slider's value for the on-screen readout AND
       // for the CSS var write. Three flavors:
@@ -4518,6 +4521,7 @@
       //   - everything   → bare number (1.30 etc.)
       function formatForCss(key, raw) {
         const n = parseFloat(raw);
+        if (key === 'period')                 return n.toFixed(1) + 's';
         if (key.indexOf('blur') === 0)        return n.toFixed(1) + 'px';
         if (key.indexOf('hue-') === 0 || key.indexOf('-hue-') > 0) return n.toFixed(0) + 'deg';
         if (key.indexOf('hull-hue') === 0)    return n.toFixed(0) + 'deg';
@@ -4525,6 +4529,7 @@
       }
       function formatForDisplay(key, raw) {
         const n = parseFloat(raw);
+        if (key === 'period')                 return n.toFixed(1) + 's';
         if (key.indexOf('blur') === 0)        return n.toFixed(1) + 'px';
         if (key.indexOf('hue-') === 0 || key.indexOf('-hue-') > 0 || key.indexOf('hull-hue') === 0) {
           return (n > 0 ? '+' : '') + n.toFixed(0) + '°';
