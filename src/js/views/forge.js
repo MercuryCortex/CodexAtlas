@@ -1109,6 +1109,11 @@
           '<div class="forge-fxpanel-row"><label>brightness <span class="forge-fxpanel-val" data-val="bright-peak">2.00</span></label><input type="range" data-fx="bright-peak" min="0.5" max="4" step="0.01" value="2.00"></div>' +
           '<div class="forge-fxpanel-row"><label>saturate <span class="forge-fxpanel-val" data-val="sat-peak">3.00</span></label><input type="range" data-fx="sat-peak" min="0.5" max="3.5" step="0.01" value="3.00"></div>' +
           '<div class="forge-fxpanel-row"><label>hue shift <span class="forge-fxpanel-val" data-val="hue-peak">0°</span></label><input type="range" data-fx="hue-peak" min="-60" max="60" step="1" value="0"></div>' +
+          '<div class="forge-fxpanel-section">Hover &amp; click</div>' +
+          // Phase 21AE (2026-05-22) — opt-in bloom flash on hover/click.
+          // Re-uses the .vs-check primitive from the View panel for
+          // visual consistency.
+          '<button class="forge-fxpanel-toggle" data-fx-toggle="pulse-enabled" type="button"><span class="vs-check"></span>Pulse on hover / click</button>' +
           '<div class="forge-fxpanel-section">Hulls (calm layer)</div>' +
           '<div class="forge-fxpanel-row"><label>brightness <span class="forge-fxpanel-val" data-val="hull-bright-peak">1.30</span></label><input type="range" data-fx="hull-bright-peak" min="0.8" max="2" step="0.01" value="1.30"></div>' +
           '<div class="forge-fxpanel-row"><label>saturate <span class="forge-fxpanel-val" data-val="hull-sat-peak">1.55</span></label><input type="range" data-fx="hull-sat-peak" min="0.5" max="2.5" step="0.01" value="1.55"></div>' +
@@ -1542,7 +1547,14 @@
         // shimmer don't bleed into the next view if the user was at
         // floor zoom at unmount time.
         document.body.classList.remove('fx-bloom');
+        document.body.classList.remove('fx-pulse-enabled');
         local._fxBloomActive = false;
+        // Phase 21AE (2026-05-22) — pulse cleanup. Any pending
+        // hover/click pulse timer would otherwise fire on the
+        // next view and re-add the class to a no-longer-existing
+        // canvas reference.
+        if (local._hoverFlashTimer)  { clearTimeout(local._hoverFlashTimer);  local._hoverFlashTimer = 0; }
+        if (local._clickPulseTimer)  { clearTimeout(local._clickPulseTimer);  local._clickPulseTimer = 0; }
         try { camera.stopAnim(); } catch (e) { /* ignore */ }
       },
     };
@@ -3872,13 +3884,69 @@
     // recomputes against stale state. See cancelHoverCoalesce
     // below + the BEHAVIORS spec-lock header for the rAF
     // ownership map.
+    // ════════════════════════════════════════════════════════════
+    //  Hover / click bloom pulse triggers — Phase 21AE (2026-05-22)
+    // ════════════════════════════════════════════════════════════
+    //  Add a class to the canvas → CSS animation runs once → JS
+    //  removes the class after the duration so the next trigger
+    //  can re-start cleanly. Browsers don't re-trigger a CSS
+    //  animation by re-applying the SAME class without a reflow,
+    //  so we force one via `void canvas.offsetWidth` between
+    //  remove + add. Cost: one layout read, ~50µs. Fine for hover
+    //  / click rates (well under 60 Hz).
+    //
+    //  Both are no-ops when:
+    //    • body.fx-pulse-enabled is not set (toggle off — default), OR
+    //    • body.fx-bloom is set (floor FX owns the filter; the CSS
+    //      rule is :not(.fx-bloom) gated, so the class would be
+    //      dead-styled — we still skip the work for cleanliness).
+    // ════════════════════════════════════════════════════════════
+    function triggerHoverFlash() {
+      if (!canvas) return;
+      if (local._hoverFlashTimer) {
+        clearTimeout(local._hoverFlashTimer);
+        local._hoverFlashTimer = 0;
+      }
+      canvas.classList.remove('fx-hover-flash');
+      void canvas.offsetWidth;                  // reflow → restart anim
+      canvas.classList.add('fx-hover-flash');
+      local._hoverFlashTimer = setTimeout(() => {
+        canvas.classList.remove('fx-hover-flash');
+        local._hoverFlashTimer = 0;
+      }, 240);   // keyframe is 220 ms; small buffer for safety
+    }
+    function triggerClickPulse() {
+      if (!canvas) return;
+      if (local._clickPulseTimer) {
+        clearTimeout(local._clickPulseTimer);
+        local._clickPulseTimer = 0;
+      }
+      canvas.classList.remove('fx-click-pulse');
+      void canvas.offsetWidth;
+      canvas.classList.add('fx-click-pulse');
+      local._clickPulseTimer = setTimeout(() => {
+        canvas.classList.remove('fx-click-pulse');
+        local._clickPulseTimer = 0;
+      }, 440);   // keyframe is 420 ms; buffer
+    }
+
     function setHoverId(newId) {
       if (newId === local.hoverId && local.hoverPendingId === undefined) return;
       // Light synchronous updates — cheap, must fire on every move
       // for the cursor feedback to feel responsive.
       if (newId !== local.hoverId) {
+        const prevId = local.hoverId;
         local.hoverId = newId;
         canvas.classList.toggle('is-hover-node', !!newId);
+        // Phase 21AE (2026-05-22) — fire hover bloom flash when the
+        // cursor TRANSITIONS onto a node (newId becomes non-null).
+        // Gated by the pulse-enabled toggle + the floor-FX is off
+        // (CSS rule scoped via :not(.fx-bloom)). Restart-trick via
+        // class-remove + reflow + class-add so rapid hovers always
+        // re-trigger the keyframe.
+        if (newId && !prevId && local._fxToggles && local._fxToggles['pulse-enabled'] && !local._fxBloomActive) {
+          triggerHoverFlash();
+        }
         const hEl = document.getElementById('forge-status-hover');
         if (hEl) {
           if (newId) {
@@ -4572,9 +4640,13 @@
       }
 
       const sliders = Array.from(panel.querySelectorAll('input[type="range"]'));
+      const toggles = Array.from(panel.querySelectorAll('[data-fx-toggle]'));
       // Snapshot of defaults from the markup so RESET works.
       const defaults = Object.create(null);
       for (const s of sliders) defaults[s.getAttribute('data-fx')] = s.value;
+      // Toggle defaults — all OFF in markup.
+      const toggleDefaults = Object.create(null);
+      for (const t of toggles) toggleDefaults[t.getAttribute('data-fx-toggle')] = false;
 
       function applyOne(key, val) {
         document.body.style.setProperty('--fx-' + key, formatForCss(key, val));
@@ -4582,6 +4654,16 @@
         if (valEl) valEl.textContent = formatForDisplay(key, val);
       }
 
+      function applyToggle(key, on) {
+        const cls = 'fx-' + key;     // e.g. 'fx-pulse-enabled'
+        document.body.classList.toggle(cls, !!on);
+        // Mirror UI state on the corresponding button.
+        const btn = panel.querySelector('[data-fx-toggle="' + key + '"]');
+        if (btn) btn.classList.toggle('is-on', !!on);
+        // Expose for the JS-side hover/click handlers.
+        local._fxToggles = local._fxToggles || Object.create(null);
+        local._fxToggles[key] = !!on;
+      }
       // Load saved values (if any) and push to body + sliders + readouts.
       function loadSaved() {
         let saved = null;
@@ -4594,11 +4676,25 @@
           if (saved && typeof saved[key] === 'string') s.value = saved[key];
           applyOne(key, s.value);
         }
+        const savedToggles = (saved && saved._toggles) || null;
+        for (const t of toggles) {
+          const key = t.getAttribute('data-fx-toggle');
+          const on  = savedToggles && typeof savedToggles[key] === 'boolean'
+            ? savedToggles[key]
+            : toggleDefaults[key];
+          applyToggle(key, on);
+        }
       }
       function saveAll() {
         try {
           const state = {};
           for (const s of sliders) state[s.getAttribute('data-fx')] = s.value;
+          const togState = Object.create(null);
+          for (const t of toggles) {
+            const key = t.getAttribute('data-fx-toggle');
+            togState[key] = !!(local._fxToggles && local._fxToggles[key]);
+          }
+          state._toggles = togState;
           localStorage.setItem(LS_KEY, JSON.stringify(state));
         } catch (_) {}
       }
@@ -4607,6 +4703,10 @@
           const key = s.getAttribute('data-fx');
           s.value = defaults[key];
           applyOne(key, s.value);
+        }
+        for (const t of toggles) {
+          const key = t.getAttribute('data-fx-toggle');
+          applyToggle(key, toggleDefaults[key]);
         }
         saveAll();
       }
@@ -4623,6 +4723,16 @@
       });
       const resetBtn = document.getElementById('forge-fxpanel-reset');
       if (resetBtn) resetBtn.addEventListener('click', resetAll);
+
+      // Toggle-row clicks (Phase 21AE) — pulse-enabled, etc.
+      panel.addEventListener('click', (ev) => {
+        const btn = ev.target.closest('[data-fx-toggle]');
+        if (!btn) return;
+        const key = btn.getAttribute('data-fx-toggle');
+        const on = !(local._fxToggles && local._fxToggles[key]);
+        applyToggle(key, on);
+        saveAll();
+      });
 
       // Open / close (same pattern as wireViewSettings).
       function open()  { panel.classList.add('is-open');  panel.setAttribute('aria-hidden', 'false'); btn.setAttribute('aria-expanded', 'true');  }
@@ -5384,6 +5494,12 @@
           // of the carousel. If the user re-locks the same node, the
           // index resets so they see the curated lead image again.
           if (local._sidePanelImageIdx) delete local._sidePanelImageIdx[id];
+          // Phase 21AE (2026-05-22) — optional click bloom pulse.
+          // Confirms the selection with a brief "lub-DUB" canvas
+          // flare. Gated by the pulse-enabled toggle + non-floor zoom.
+          if (local._fxToggles && local._fxToggles['pulse-enabled'] && !local._fxBloomActive) {
+            triggerClickPulse();
+          }
           renderTabs();
           pulseTab(id);
           // If the panel is already open, switch the active deity

@@ -7499,3 +7499,81 @@ body.view-forge.fx-bloom .forge-hulls-overlay {
   border-color: var(--gold, #d4a55a);
   color: var(--gold, #d4a55a);
 }
+
+/* ════════════════════════════════════════════════════════════
+   FORGE HOVER + CLICK PULSE FX — Phase 21AE (2026-05-22)
+   ════════════════════════════════════════════════════════════
+   Optional bloom flares triggered by user interaction:
+     • Hover flash — short gentle bloom when cursor enters a node
+                     (220 ms ease-out, runs ONCE on null → id transition)
+     • Click pulse — stronger double-pump bloom on lock-add
+                     (420 ms, "lub-DUB" rhythm)
+
+   Both gated by body.fx-pulse-enabled (master toggle from the FX
+   panel) AND :not(.fx-bloom) (floor FX has its own filter and only
+   one filter per element can be active at a time — the bloom owns
+   it at the floor; pulse takes over at close zoom).
+
+   Animation is fire-and-forget: JS adds the class, browser plays
+   the keyframes once, JS removes the class after the duration so
+   the next trigger can restart the animation cleanly. The
+   `void canvas.offsetWidth` reflow trick in JS forces a re-trigger
+   on rapid hover-changes.
+
+   Default state: body.fx-pulse-enabled is NOT set on the body.
+   The CSS rules below are dead until the user enables the toggle.
+   ════════════════════════════════════════════════════════════ */
+body.view-forge.fx-pulse-enabled:not(.fx-bloom) .forge-canvas.fx-hover-flash {
+  animation: forge-fx-hover-flash 0.22s ease-out;
+  will-change: filter;
+}
+@keyframes forge-fx-hover-flash {
+  0%   { filter: none; }
+  40%  { filter: blur(0.5px) brightness(1.22) saturate(1.18); }
+  100% { filter: none; }
+}
+
+body.view-forge.fx-pulse-enabled:not(.fx-bloom) .forge-canvas.fx-click-pulse {
+  animation: forge-fx-click-pulse 0.42s ease-out;
+  will-change: filter;
+}
+@keyframes forge-fx-click-pulse {
+  0%   { filter: none; }
+  /* "lub" */
+  28%  { filter: blur(0.8px) brightness(1.55) saturate(1.35); }
+  42%  { filter: blur(0.6px) brightness(1.30) saturate(1.20); }
+  /* "DUB" */
+  60%  { filter: blur(0.9px) brightness(1.45) saturate(1.28); }
+  100% { filter: none; }
+}
+
+/* FX panel toggle row (Phase 21AE) — reuses the .vs-check primitive
+   for visual consistency with the View panel's layer toggles. */
+.forge-fxpanel-toggle {
+  display: flex; align-items: center; gap: 10px;
+  width: 100%;
+  padding: 6px 0;
+  background: transparent;
+  border: 0;
+  text-align: left;
+  font-family: var(--sans, Inter, sans-serif);
+  font-size: 12px;
+  color: var(--text-1, #e5e7eb);
+  cursor: pointer;
+  transition: color 90ms ease;
+}
+.forge-fxpanel-toggle:hover { color: var(--gold-1, #e8c889); }
+.forge-fxpanel-toggle .vs-check {
+  display: inline-block;
+  width: 14px; height: 14px;
+  border-radius: 3px;
+  border: 1px solid rgba(212,165,90,0.55);
+  background: transparent;
+  flex: 0 0 auto;
+  transition: background 100ms ease, border-color 100ms ease;
+}
+.forge-fxpanel-toggle.is-on .vs-check {
+  background: var(--gold, #d4a55a);
+  border-color: var(--gold, #d4a55a);
+}
+.forge-fxpanel-toggle.is-on { color: var(--gold-1, #e8c889); }
