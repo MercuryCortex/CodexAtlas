@@ -7278,34 +7278,91 @@ body.view-forge .forge-canvas {
      it once .fx-bloom is set. Smooth fade-in/out at the threshold. */
   transition: filter 0.45s ease-out;
 }
-/* Phase 21W (2026-05-22) — pushed harder per John's feedback:
-   stronger blur (was 0.5-0.9 px → now 2.0-3.5 px), brighter highs
-   (1.32 → 1.85 peak), richer saturation (1.45 → 1.75), plus three
-   embedded candle-flicker brightness spikes per shimmer cycle.
-   Period shortened 6.5s → 5.5s. Each flicker spike is ~3% of the
-   cycle (≈165 ms) so it reads as candle-light flicker, NOT strobe. */
+/* Phase 21Y (2026-05-22) — pushed harder still: blur now 3.5-5.5 px
+   (was 2.0-3.5), peak brightness 1.85 → 2.10, plus the global shimmer
+   on the canvas is complemented by a SEPARATE twinkle overlay (see
+   .forge-fx-twinkle below) that gives the constellation a per-node
+   independent flicker feel. */
 body.view-forge.fx-bloom .forge-canvas {
-  filter: blur(2.0px) brightness(1.30) saturate(1.40);
+  filter: blur(3.5px) brightness(1.40) saturate(1.50);
   animation: forge-fx-shimmer 5.5s ease-in-out infinite;
   will-change: filter;
 }
 @keyframes forge-fx-shimmer {
-  0%   { filter: blur(2.0px) brightness(1.30) saturate(1.40) hue-rotate(0deg); }
-  /* Flicker #1 — brightness burst right after the low point, like
-     a candle catching the wind. */
-  6%   { filter: blur(2.0px) brightness(1.68) saturate(1.55) hue-rotate(-1deg); }
-  9%   { filter: blur(2.0px) brightness(1.28) saturate(1.40) hue-rotate(-2deg); }
-  25%  { filter: blur(2.5px) brightness(1.40) saturate(1.50) hue-rotate(-5deg); }
-  40%  { filter: blur(3.0px) brightness(1.48) saturate(1.60) hue-rotate(-9deg); }
+  0%   { filter: blur(3.5px) brightness(1.40) saturate(1.50) hue-rotate(0deg); }
+  /* Flicker #1 — brightness burst right after the low point. */
+  6%   { filter: blur(3.5px) brightness(1.85) saturate(1.65) hue-rotate(-1deg); }
+  9%   { filter: blur(3.5px) brightness(1.35) saturate(1.50) hue-rotate(-2deg); }
+  25%  { filter: blur(4.0px) brightness(1.50) saturate(1.60) hue-rotate(-5deg); }
+  40%  { filter: blur(4.5px) brightness(1.60) saturate(1.70) hue-rotate(-9deg); }
   /* Flicker #2 — peak bloom moment, biggest spike. */
-  43%  { filter: blur(3.0px) brightness(1.85) saturate(1.75) hue-rotate(-10deg); }
-  46%  { filter: blur(3.0px) brightness(1.50) saturate(1.60) hue-rotate(-10deg); }
-  50%  { filter: blur(3.5px) brightness(1.55) saturate(1.70) hue-rotate(-12deg); }
-  75%  { filter: blur(2.5px) brightness(1.40) saturate(1.55) hue-rotate(-6deg); }
-  /* Flicker #3 — fading-out flicker, smaller + softer. */
-  86%  { filter: blur(2.2px) brightness(1.55) saturate(1.50) hue-rotate(-3deg); }
-  89%  { filter: blur(2.2px) brightness(1.32) saturate(1.45) hue-rotate(-3deg); }
-  100% { filter: blur(2.0px) brightness(1.30) saturate(1.40) hue-rotate(0deg); }
+  43%  { filter: blur(4.5px) brightness(2.10) saturate(1.85) hue-rotate(-10deg); }
+  46%  { filter: blur(4.5px) brightness(1.65) saturate(1.70) hue-rotate(-10deg); }
+  50%  { filter: blur(5.5px) brightness(1.70) saturate(1.80) hue-rotate(-12deg); }
+  75%  { filter: blur(4.0px) brightness(1.50) saturate(1.65) hue-rotate(-6deg); }
+  /* Flicker #3 — fading-out flicker. */
+  86%  { filter: blur(3.7px) brightness(1.70) saturate(1.60) hue-rotate(-3deg); }
+  89%  { filter: blur(3.7px) brightness(1.42) saturate(1.55) hue-rotate(-3deg); }
+  100% { filter: blur(3.5px) brightness(1.40) saturate(1.50) hue-rotate(0deg); }
+}
+
+/* ─── Phase 21Y twinkle overlay ──────────────────────────────
+   A separate element above the canvas with two stacked radial-
+   gradient layers drifting at DIFFERENT speeds + directions. With
+   mix-blend-mode: overlay it modulates the brightness of patches
+   of the canvas underneath, so the disk constellation looks like
+   it has dozens of independent lights flickering — instead of one
+   monolithic shimmer pulse.
+
+   The two layers run on PRIME-RATIO periods (7s + 11s) so they
+   never realign — the combined brightness pattern is aperiodic to
+   the eye, giving the "alive" feel.
+
+   Opacity is gated by body.fx-bloom (the same class that triggers
+   the canvas shimmer); same hysteresis-driven on/off as the
+   canvas filter. */
+.forge-fx-twinkle {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 2;                   /* canvas is z 1; hulls are 3. */
+  opacity: 0;
+  transition: opacity 0.6s ease-out;
+  mix-blend-mode: overlay;
+  /* Two layered patterns. EACH is a tile that repeats; size
+     governs the "patch granularity" — smaller tile = more
+     independent-looking flickers. */
+  background-image:
+    radial-gradient(circle at 25% 25%, rgba(255, 220, 180, 0.55) 0px, transparent 12px),
+    radial-gradient(circle at 75% 75%, rgba(255, 200, 150, 0.50) 0px, transparent 14px),
+    radial-gradient(circle at 50% 10%, rgba(255, 240, 210, 0.40) 0px, transparent 10px),
+    radial-gradient(circle at 10% 80%, rgba(255, 210, 170, 0.45) 0px, transparent 11px),
+    radial-gradient(circle at 90% 30%, rgba(255, 230, 190, 0.50) 0px, transparent 13px);
+  background-size: 60px 60px, 70px 70px, 55px 55px, 65px 65px, 50px 50px;
+  background-position: 0 0, 30px 35px, 12px 8px, 45px 22px, 18px 40px;
+  animation: forge-fx-twinkle-drift-a 7s linear infinite,
+             forge-fx-twinkle-pulse  11s ease-in-out infinite;
+  will-change: background-position, opacity;
+}
+body.view-forge.fx-bloom .forge-fx-twinkle {
+  opacity: 0.85;
+}
+/* Drift: scroll the tile so each light moves slowly across the
+   composition. Different prime offsets per layer keep them
+   non-correlated. */
+@keyframes forge-fx-twinkle-drift-a {
+  0%   { background-position:  0    0,  30px  35px,  12px  8px,  45px  22px,  18px  40px; }
+  100% { background-position: 60px  60px, 100px  -35px,  -43px  63px,  110px  87px,  68px -10px; }
+}
+/* Brightness pulse on the whole twinkle layer at a DIFFERENT
+   period from the drift. The two cycles compound aperiodically,
+   so individual gradients appear to flicker at irregular
+   intervals — the eye reads this as per-node twinkle. */
+@keyframes forge-fx-twinkle-pulse {
+  0%, 100% { filter: brightness(0.85); }
+  35%      { filter: brightness(1.20); }
+  62%      { filter: brightness(0.95); }
+  78%      { filter: brightness(1.15); }
 }
 
 body.view-forge .forge-hulls-overlay {
