@@ -1111,9 +1111,10 @@
           '<div class="forge-fxpanel-row"><label>hue shift <span class="forge-fxpanel-val" data-val="hue-peak">0°</span></label><input type="range" data-fx="hue-peak" min="-60" max="60" step="1" value="0"></div>' +
           '<div class="forge-fxpanel-section">Hover &amp; click</div>' +
           // Phase 21AE (2026-05-22) — opt-in bloom flash on hover/click.
-          // Re-uses the .vs-check primitive from the View panel for
-          // visual consistency.
+          // Phase 21AF (2026-05-22) — added size + duration sliders.
           '<button class="forge-fxpanel-toggle" data-fx-toggle="pulse-enabled" type="button"><span class="vs-check"></span>Pulse on hover / click</button>' +
+          '<div class="forge-fxpanel-row"><label>pulse size <span class="forge-fxpanel-val" data-val="pulse-size-mult">4.0</span></label><input type="range" data-fx="pulse-size-mult" min="0.5" max="10" step="0.1" value="4.0"></div>' +
+          '<div class="forge-fxpanel-row"><label>pulse duration <span class="forge-fxpanel-val" data-val="pulse-duration">0.8s</span></label><input type="range" data-fx="pulse-duration" min="0.2" max="2.0" step="0.05" value="0.8"></div>' +
           '<div class="forge-fxpanel-section">Hulls (calm layer)</div>' +
           '<div class="forge-fxpanel-row"><label>brightness <span class="forge-fxpanel-val" data-val="hull-bright-peak">1.30</span></label><input type="range" data-fx="hull-bright-peak" min="0.8" max="2" step="0.01" value="1.30"></div>' +
           '<div class="forge-fxpanel-row"><label>saturate <span class="forge-fxpanel-val" data-val="hull-sat-peak">1.55</span></label><input type="range" data-fx="hull-sat-peak" min="0.5" max="2.5" step="0.01" value="1.55"></div>' +
@@ -1555,6 +1556,12 @@
         // canvas reference.
         if (local._hoverFlashTimer)  { clearTimeout(local._hoverFlashTimer);  local._hoverFlashTimer = 0; }
         if (local._clickPulseTimer)  { clearTimeout(local._clickPulseTimer);  local._clickPulseTimer = 0; }
+        // Phase 21AF (2026-05-22) — double-click timer + dot elem.
+        if (local._clickPendingTimer) { clearTimeout(local._clickPendingTimer); local._clickPendingTimer = 0; }
+        if (local._fxPulseDot && local._fxPulseDot.parentNode) {
+          try { local._fxPulseDot.parentNode.removeChild(local._fxPulseDot); } catch (_) {}
+          local._fxPulseDot = null;
+        }
         try { camera.stopAnim(); } catch (e) { /* ignore */ }
       },
     };
@@ -3901,33 +3908,70 @@
     //      rule is :not(.fx-bloom) gated, so the class would be
     //      dead-styled — we still skip the work for cleanliness).
     // ════════════════════════════════════════════════════════════
-    function triggerHoverFlash() {
-      if (!canvas) return;
-      if (local._hoverFlashTimer) {
-        clearTimeout(local._hoverFlashTimer);
-        local._hoverFlashTimer = 0;
-      }
-      canvas.classList.remove('fx-hover-flash');
-      void canvas.offsetWidth;                  // reflow → restart anim
-      canvas.classList.add('fx-hover-flash');
-      local._hoverFlashTimer = setTimeout(() => {
-        canvas.classList.remove('fx-hover-flash');
-        local._hoverFlashTimer = 0;
-      }, 240);   // keyframe is 220 ms; small buffer for safety
+    // Phase 21AF (2026-05-22) — per-node pulse dot (replaces the
+    // canvas-wide filter approach from 21AE). The dot is one fixed-
+    // position element shared across hover + click; JS positions
+    // it at the node's screen coords, sets a size based on the
+    // node radius × the user's --fx-pulse-size-mult var, and
+    // toggles the animation class. Only the targeted node glows.
+    function ensurePulseDot() {
+      if (local._fxPulseDot && local._fxPulseDot.isConnected) return local._fxPulseDot;
+      const d = document.createElement('div');
+      d.className = 'forge-fx-pulse-dot';
+      d.id        = 'forge-fx-pulse-dot';
+      d.setAttribute('aria-hidden', 'true');
+      document.body.appendChild(d);
+      local._fxPulseDot = d;
+      return d;
     }
-    function triggerClickPulse() {
-      if (!canvas) return;
-      if (local._clickPulseTimer) {
-        clearTimeout(local._clickPulseTimer);
-        local._clickPulseTimer = 0;
-      }
-      canvas.classList.remove('fx-click-pulse');
-      void canvas.offsetWidth;
-      canvas.classList.add('fx-click-pulse');
+    function positionPulseDot(nodeId) {
+      const m   = local.mode;
+      const vp  = local.lastSize;
+      const hit = m && m.hitById && m.hitById.get ? m.hitById.get(nodeId) : null;
+      const full= m && m.nodesById && m.nodesById.get ? m.nodesById.get(nodeId) : null;
+      if (!hit || !vp || !vp.w) return null;
+      const dot = ensurePulseDot();
+      // Node centre in viewport coordinates.
+      const screen = camera.worldToScreen(hit.x, hit.y, vp);
+      const cr     = canvas.getBoundingClientRect();
+      const px = cr.left + screen.x;
+      const py = cr.top  + screen.y;
+      // Base size: node radius (screen px) × the panel slider mult.
+      const rPx     = Math.max(2, hit.r * camera.state.scale);
+      const sizeMult= parseFloat(getComputedStyle(document.body).getPropertyValue('--fx-pulse-size-mult')) || 4;
+      const sizePx  = rPx * 2 * sizeMult;
+      const color   = (full && (full.family_color || full.tradition_color)) || '#d4a55a';
+      dot.style.left = px + 'px';
+      dot.style.top  = py + 'px';
+      dot.style.setProperty('--fx-pulse-size',  sizePx + 'px');
+      dot.style.setProperty('--fx-pulse-color', color);
+      return dot;
+    }
+    function triggerHoverFlash() {
+      const dot = positionPulseDot(local.hoverId);
+      if (!dot) return;
+      if (local._hoverFlashTimer) { clearTimeout(local._hoverFlashTimer); local._hoverFlashTimer = 0; }
+      dot.classList.remove('fx-hover-flash', 'fx-click-pulse');
+      void dot.offsetWidth;
+      dot.classList.add('fx-hover-flash');
+      // Buffer: longest possible duration slider × 1.05 + safety.
+      // Duration is read from CSS var so we estimate generously.
+      local._hoverFlashTimer = setTimeout(() => {
+        dot.classList.remove('fx-hover-flash');
+        local._hoverFlashTimer = 0;
+      }, 2200);
+    }
+    function triggerClickPulse(nodeId) {
+      const dot = positionPulseDot(nodeId);
+      if (!dot) return;
+      if (local._clickPulseTimer) { clearTimeout(local._clickPulseTimer); local._clickPulseTimer = 0; }
+      dot.classList.remove('fx-hover-flash', 'fx-click-pulse');
+      void dot.offsetWidth;
+      dot.classList.add('fx-click-pulse');
       local._clickPulseTimer = setTimeout(() => {
-        canvas.classList.remove('fx-click-pulse');
+        dot.classList.remove('fx-click-pulse');
         local._clickPulseTimer = 0;
-      }, 440);   // keyframe is 420 ms; buffer
+      }, 2800);
     }
 
     function setHoverId(newId) {
@@ -4614,7 +4658,7 @@
       // swapped the flicker-spike model for the heartbeat. v1
       // values reference dead keys (bright-flicker, -big) and
       // outdated defaults; ignore them silently on first load.
-      const LS_KEY = 'forge.fxParams.v3';
+      const LS_KEY = 'forge.fxParams.v4';
 
       // Format each slider's value for the on-screen readout AND
       // for the CSS var write. Three flavors:
@@ -4624,6 +4668,8 @@
       function formatForCss(key, raw) {
         const n = parseFloat(raw);
         if (key === 'period')                 return n.toFixed(1) + 's';
+        if (key === 'pulse-duration')         return n.toFixed(2) + 's';
+        if (key === 'pulse-size-mult')        return n.toFixed(1);          // unitless (read by JS)
         if (key.indexOf('blur') === 0)        return n.toFixed(1) + 'px';
         if (key.indexOf('hue-') === 0 || key.indexOf('-hue-') > 0) return n.toFixed(0) + 'deg';
         if (key.indexOf('hull-hue') === 0)    return n.toFixed(0) + 'deg';
@@ -4632,6 +4678,8 @@
       function formatForDisplay(key, raw) {
         const n = parseFloat(raw);
         if (key === 'period')                 return n.toFixed(1) + 's';
+        if (key === 'pulse-duration')         return n.toFixed(2) + 's';
+        if (key === 'pulse-size-mult')        return n.toFixed(1) + '×';
         if (key.indexOf('blur') === 0)        return n.toFixed(1) + 'px';
         if (key.indexOf('hue-') === 0 || key.indexOf('-hue-') > 0 || key.indexOf('hull-hue') === 0) {
           return (n > 0 ? '+' : '') + n.toFixed(0) + '°';
@@ -5402,6 +5450,10 @@
         // Sync data attribute so CSS can shift the tabs column.
         tabsEl.classList.toggle('panel-open', !!open);
       }
+      // Phase 21AF (2026-05-22) — expose so the canvas click handler
+      // can open the panel on double-click. Local-scope hook so
+      // there's no global pollution.
+      local._setPanelOpen = setPanelOpen;
       // Initial state — panel closed.
       setPanelOpen(false);
 
@@ -5494,11 +5546,11 @@
           // of the carousel. If the user re-locks the same node, the
           // index resets so they see the curated lead image again.
           if (local._sidePanelImageIdx) delete local._sidePanelImageIdx[id];
-          // Phase 21AE (2026-05-22) — optional click bloom pulse.
-          // Confirms the selection with a brief "lub-DUB" canvas
-          // flare. Gated by the pulse-enabled toggle + non-floor zoom.
+          // Phase 21AE+AF (2026-05-22) — optional per-node click
+          // pulse on the clicked node. Gated by pulse-enabled +
+          // non-floor zoom (floor has its own heartbeat).
           if (local._fxToggles && local._fxToggles['pulse-enabled'] && !local._fxBloomActive) {
-            triggerClickPulse();
+            triggerClickPulse(id);
           }
           renderTabs();
           pulseTab(id);
@@ -6300,7 +6352,54 @@
           const cssX = ev.clientX - canvasRect.left;
           const cssY = ev.clientY - canvasRect.top;
           const hit = hitTestAt(cssX, cssY);
-          toggleLock(hit);   // hit === null → clear all
+          // Phase 21AF (2026-05-22) — double-click detection.
+          // ─ Single click  → toggleLock (existing behaviour)
+          // ─ Double click  → ensure lock-added + OPEN side panel
+          //                   on this deity, preserving any other
+          //                   already-locked tabs.
+          // Click on empty space (hit==null) bypasses double-click
+          // and fires the clear-all immediately — no surprise lag.
+          const DBL_WINDOW_MS = 280;
+          const now = (performance && performance.now) ? performance.now() : Date.now();
+          if (hit == null) {
+            if (local._clickPendingTimer) {
+              clearTimeout(local._clickPendingTimer);
+              local._clickPendingTimer = 0;
+            }
+            local._lastClickId = null;
+            local._lastClickT  = 0;
+            toggleLock(null);
+            return;
+          }
+          const sameAsLast    = local._lastClickId === hit;
+          const withinWindow  = local._lastClickT && (now - local._lastClickT) < DBL_WINDOW_MS;
+          if (sameAsLast && withinWindow) {
+            // DOUBLE — cancel the deferred single-click action.
+            if (local._clickPendingTimer) {
+              clearTimeout(local._clickPendingTimer);
+              local._clickPendingTimer = 0;
+            }
+            local._lastClickId = null;
+            local._lastClickT  = 0;
+            // Ensure this deity is in the lock set (toggleLock with
+            // 'add' is idempotent via the lockedSet.has check).
+            if (!local.lockedSet.has(hit)) {
+              toggleLock(hit);
+            }
+            local.openTabId = hit;
+            if (typeof local._setPanelOpen === 'function') local._setPanelOpen(true);
+            if (typeof local._renderSidePanel === 'function') local._renderSidePanel();
+            return;
+          }
+          // SINGLE — defer briefly so a follow-up second click can
+          // override. Track id + time for the comparison above.
+          local._lastClickId = hit;
+          local._lastClickT  = now;
+          if (local._clickPendingTimer) clearTimeout(local._clickPendingTimer);
+          local._clickPendingTimer = setTimeout(() => {
+            local._clickPendingTimer = 0;
+            toggleLock(hit);
+          }, DBL_WINDOW_MS);
           return;
         }
         // Phase 4c — release-velocity from the last ~80ms of samples.

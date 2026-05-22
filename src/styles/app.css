@@ -7330,6 +7330,12 @@ body.view-forge {
   --fx-hull-bright-peak: 1.30;
   --fx-hull-sat-peak:    1.55;
   --fx-hull-hue-peak:    10deg;
+  /* Phase 21AF — per-node hover/click pulse controls. The SIZE
+     mult is read by JS to derive pixel size from node radius
+     (sizePx = nodeRadiusPx × 2 × pulse-size-mult). Duration is
+     read by the CSS animation directly. */
+  --fx-pulse-size-mult:  4.0;
+  --fx-pulse-duration:   0.8s;
 }
 body.view-forge.fx-bloom .forge-canvas {
   filter: blur(var(--fx-blur-base)) brightness(var(--fx-bright-base)) saturate(var(--fx-sat-base));
@@ -7523,28 +7529,51 @@ body.view-forge.fx-bloom .forge-hulls-overlay {
    Default state: body.fx-pulse-enabled is NOT set on the body.
    The CSS rules below are dead until the user enables the toggle.
    ════════════════════════════════════════════════════════════ */
-body.view-forge.fx-pulse-enabled:not(.fx-bloom) .forge-canvas.fx-hover-flash {
-  animation: forge-fx-hover-flash 0.22s ease-out;
-  will-change: filter;
+/* Phase 21AF (2026-05-22) — pulse is now a PER-NODE overlay dot,
+   not a canvas-wide filter. The previous version applied the filter
+   to .forge-canvas which bloomed every disk (even hidden ones).
+   Now: JS positions a single .forge-fx-pulse-dot over the hovered/
+   clicked node's screen coordinates, sized to the node radius. The
+   bloom only affects that one spot. */
+.forge-fx-pulse-dot {
+  position: fixed;
+  top: 0; left: 0;
+  pointer-events: none;
+  width:  var(--fx-pulse-size, 80px);
+  height: var(--fx-pulse-size, 80px);
+  border-radius: 50%;
+  background: radial-gradient(
+    circle at center,
+    var(--fx-pulse-color, #d4a55a) 0%,
+    var(--fx-pulse-color, #d4a55a) 18%,
+    transparent 65%
+  );
+  filter: blur(10px);
+  z-index: 8;
+  opacity: 0;
+  transform: translate(-50%, -50%);
+  will-change: transform, opacity;
 }
-@keyframes forge-fx-hover-flash {
-  0%   { filter: none; }
-  40%  { filter: blur(0.5px) brightness(1.22) saturate(1.18); }
-  100% { filter: none; }
+body.view-forge.fx-pulse-enabled .forge-fx-pulse-dot.fx-hover-flash {
+  animation: forge-fx-pulse-dot-hover var(--fx-pulse-duration, 0.8s) ease-out;
 }
-
-body.view-forge.fx-pulse-enabled:not(.fx-bloom) .forge-canvas.fx-click-pulse {
-  animation: forge-fx-click-pulse 0.42s ease-out;
-  will-change: filter;
+body.view-forge.fx-pulse-enabled .forge-fx-pulse-dot.fx-click-pulse {
+  animation: forge-fx-pulse-dot-click calc(var(--fx-pulse-duration, 0.8s) * 1.3) ease-out;
 }
-@keyframes forge-fx-click-pulse {
-  0%   { filter: none; }
+@keyframes forge-fx-pulse-dot-hover {
+  0%   { opacity: 0;    transform: translate(-50%, -50%) scale(0.5); }
+  35%  { opacity: 0.9;  transform: translate(-50%, -50%) scale(1.1); }
+  65%  { opacity: 0.55; transform: translate(-50%, -50%) scale(1.55); }
+  100% { opacity: 0;    transform: translate(-50%, -50%) scale(2.0); }
+}
+@keyframes forge-fx-pulse-dot-click {
+  0%   { opacity: 0;    transform: translate(-50%, -50%) scale(0.4); }
   /* "lub" */
-  28%  { filter: blur(0.8px) brightness(1.55) saturate(1.35); }
-  42%  { filter: blur(0.6px) brightness(1.30) saturate(1.20); }
+  25%  { opacity: 1.0;  transform: translate(-50%, -50%) scale(1.25); }
+  42%  { opacity: 0.5;  transform: translate(-50%, -50%) scale(1.6); }
   /* "DUB" */
-  60%  { filter: blur(0.9px) brightness(1.45) saturate(1.28); }
-  100% { filter: none; }
+  60%  { opacity: 0.95; transform: translate(-50%, -50%) scale(1.4); }
+  100% { opacity: 0;    transform: translate(-50%, -50%) scale(2.4); }
 }
 
 /* FX panel toggle row (Phase 21AE) — reuses the .vs-check primitive
