@@ -1556,8 +1556,9 @@
         // canvas reference.
         if (local._hoverFlashTimer)  { clearTimeout(local._hoverFlashTimer);  local._hoverFlashTimer = 0; }
         if (local._clickPulseTimer)  { clearTimeout(local._clickPulseTimer);  local._clickPulseTimer = 0; }
-        // Phase 21AF (2026-05-22) — double-click timer + dot elem.
-        if (local._clickPendingTimer) { clearTimeout(local._clickPendingTimer); local._clickPendingTimer = 0; }
+        // Phase 21AG (2026-05-22) — dot elem cleanup. The
+        // _clickPendingTimer from 21AF is gone (single-click is
+        // instant now); no timer to cancel.
         if (local._fxPulseDot && local._fxPulseDot.parentNode) {
           try { local._fxPulseDot.parentNode.removeChild(local._fxPulseDot); } catch (_) {}
           local._fxPulseDot = null;
@@ -5451,7 +5452,7 @@
         tabsEl.classList.toggle('panel-open', !!open);
       }
       // Phase 21AF (2026-05-22) — expose so the canvas click handler
-      // can open the panel on double-click. Local-scope hook so
+      // can open the panel on double-click. Local-scope hooks so
       // there's no global pollution.
       local._setPanelOpen = setPanelOpen;
       // Initial state — panel closed.
@@ -5761,6 +5762,10 @@
       }
 
       local._renderSidePanel = render;
+      // Phase 21AG (2026-05-22) — expose renderTabs so the canvas
+      // double-click handler can refresh the active-tab marker
+      // immediately when it switches openTabId.
+      local._renderTabs = renderTabs;
 
       // Phase 19D — click a neighbor inside an expanded wire list →
       // lock + switch the panel to that deity. Event-delegated on
@@ -6352,54 +6357,58 @@
           const cssX = ev.clientX - canvasRect.left;
           const cssY = ev.clientY - canvasRect.top;
           const hit = hitTestAt(cssX, cssY);
-          // Phase 21AF (2026-05-22) — double-click detection.
-          // ─ Single click  → toggleLock (existing behaviour)
-          // ─ Double click  → ensure lock-added + OPEN side panel
-          //                   on this deity, preserving any other
-          //                   already-locked tabs.
-          // Click on empty space (hit==null) bypasses double-click
-          // and fires the clear-all immediately — no surprise lag.
+          // Phase 21AG (2026-05-22) — INSTANT click. Post-hoc
+          // double-click detection — no defer, ever. The 21AF
+          // deferral introduced a 280 ms visual lag between click
+          // and "selected" appearance which felt broken. The new
+          // semantics:
+          //   • Click on node  → toggleLock IMMEDIATELY (instant
+          //                       visual feedback). The pulse FX,
+          //                       tab pulse, side-panel pulse-pulse
+          //                       all fire on the spot. None of
+          //                       these are dependent on a timer.
+          //   • Click on empty → instant clear (unchanged).
+          //   • Second click on the SAME node within 280 ms →
+          //     "double-click intent". The first click's toggle
+          //     already executed; the second click would normally
+          //     toggle BACK. Instead, we detect the double and
+          //     REPAIR the state: ensure the lock is added, mark
+          //     the tab active, open the side panel.
+          // This means a double-click on an already-locked node
+          // briefly unlocks-then-relocks (the unlock blip is one
+          // frame, well below the 280 ms detection window). For
+          // unlocked-then-double-clicked, the lock is added by the
+          // first click and just stays — no blip at all.
           const DBL_WINDOW_MS = 280;
           const now = (performance && performance.now) ? performance.now() : Date.now();
           if (hit == null) {
-            if (local._clickPendingTimer) {
-              clearTimeout(local._clickPendingTimer);
-              local._clickPendingTimer = 0;
-            }
             local._lastClickId = null;
             local._lastClickT  = 0;
             toggleLock(null);
             return;
           }
-          const sameAsLast    = local._lastClickId === hit;
-          const withinWindow  = local._lastClickT && (now - local._lastClickT) < DBL_WINDOW_MS;
+          const sameAsLast   = local._lastClickId === hit;
+          const withinWindow = local._lastClickT && (now - local._lastClickT) < DBL_WINDOW_MS;
+          // ALWAYS toggle first — selection feedback is instant.
+          toggleLock(hit);
           if (sameAsLast && withinWindow) {
-            // DOUBLE — cancel the deferred single-click action.
-            if (local._clickPendingTimer) {
-              clearTimeout(local._clickPendingTimer);
-              local._clickPendingTimer = 0;
-            }
-            local._lastClickId = null;
-            local._lastClickT  = 0;
-            // Ensure this deity is in the lock set (toggleLock with
-            // 'add' is idempotent via the lockedSet.has check).
+            // DOUBLE detected post-hoc. The toggle just fired may
+            // have removed the lock (if click #1 added it and
+            // click #2 removed it). Restore + open the panel.
             if (!local.lockedSet.has(hit)) {
-              toggleLock(hit);
+              toggleLock(hit);   // re-add
             }
             local.openTabId = hit;
-            if (typeof local._setPanelOpen === 'function') local._setPanelOpen(true);
-            if (typeof local._renderSidePanel === 'function') local._renderSidePanel();
-            return;
+            if (typeof local._setPanelOpen   === 'function') local._setPanelOpen(true);
+            if (typeof local._renderTabs     === 'function') local._renderTabs();
+            if (typeof local._renderSidePanel=== 'function') local._renderSidePanel();
+            local._lastClickId = null;
+            local._lastClickT  = 0;
+          } else {
+            // Single click — record for the next click's window check.
+            local._lastClickId = hit;
+            local._lastClickT  = now;
           }
-          // SINGLE — defer briefly so a follow-up second click can
-          // override. Track id + time for the comparison above.
-          local._lastClickId = hit;
-          local._lastClickT  = now;
-          if (local._clickPendingTimer) clearTimeout(local._clickPendingTimer);
-          local._clickPendingTimer = setTimeout(() => {
-            local._clickPendingTimer = 0;
-            toggleLock(hit);
-          }, DBL_WINDOW_MS);
           return;
         }
         // Phase 4c — release-velocity from the last ~80ms of samples.
