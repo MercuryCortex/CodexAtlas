@@ -133,6 +133,15 @@
     'polemic-against':                     'polemic',
     'syncretic-polemic-against':           'polemic',       // 11
     'syncretic-polemic-inversion':         'polemic',
+    // Phase 21AV (2026-05-23) — the Sitchin batch syncretic-edges
+    // emit as `syncretic-negative-identification` (build_data.py
+    // prepends `syncretic-` to anything from a syncretic-edges
+    // block). Without this row those T4 polemic edges fell through
+    // to the 'association' default and the side panel hid them
+    // under the wrong bucket.
+    'syncretic-negative-identification':   'polemic',
+    'syncretic-demonization':              'polemic',
+    'syncretic-prefiguration-claim':       'polemic',
 
     // ── Fusion (genuine merger / identification) ──────────────
     // Per ONTOLOGY.md §3: equivalents[] → syncretic → Fusion.

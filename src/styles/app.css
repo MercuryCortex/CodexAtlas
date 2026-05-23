@@ -6817,6 +6817,34 @@ details.forge-side-panel-wire[open] .forge-side-panel-wire-caret {
 .forge-side-panel-wire-item.is-risky:hover {
   background: rgba(226,91,91,0.10);
 }
+/* Phase 21AV (2026-05-23) — cross-folder neighbor row. The
+   target is NOT a deity (theme/event/person/etc.) so the row
+   isn't clickable on the wheel. Tiny subtype tag after the
+   title; the title itself dims slightly to read as secondary;
+   cursor flips to default so users don't expect a click. */
+.forge-side-panel-wire-item.is-cross-folder {
+  cursor: default;
+}
+.forge-side-panel-wire-item.is-cross-folder .forge-side-panel-wire-item-title {
+  color: var(--text-3, #6b7280);
+  font-style: italic;
+}
+.forge-side-panel-wire-item.is-cross-folder:hover {
+  background: rgba(255,255,255,0.025);
+}
+.forge-side-panel-wire-item-subtype {
+  flex: 0 0 auto;
+  font-family: var(--mono, "JetBrains Mono", Menlo, monospace);
+  font-size: 8px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--text-3, #6b7280);
+  padding: 1px 4px;
+  margin-left: 4px;
+  border-radius: 2px;
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(255,255,255,0.08);
+}
 
 /* ═══════════════════════════════════════════════════════════════
    Phase 21AU (2026-05-23) — Side-panel connection tooltip

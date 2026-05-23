@@ -6254,15 +6254,40 @@
         const familyCol  = (node.family_color || node.tradition_color || '#888');
 
         // Wire-bucket counts + per-bucket neighbor lists.
-        // Each bucket: { count, neighbors: [{ id, title, family_color, dir }] }.
+        // Each bucket: { count, neighbors: [{ id, title, family_color, dir, … }] }.
         // dir = 'out' (this node → other) or 'in' (other → this node).
+        //
+        // Phase 21AV (2026-05-23) — read from the FULL vault.edges set
+        // (not local.mode.edges). The deity wedge mode filters edges to
+        // deity-deity only — so all cross-folder connections (e.g. a
+        // deity → theme/event/person syncretic-edge) were dropped before
+        // the side panel ever saw them. That hid every T4 / T5 disclaimer
+        // that lives on a deity→theme edge (the entire Sitchin / nibiru-
+        // anunnaki batch is exactly this shape). Now the panel surfaces
+        // ALL connections incident on this node; out-of-mode neighbors
+        // get a subtype tag + are click-disabled (they're not on the
+        // wheel to lock). The wheel itself still only paints in-mode
+        // wires — that's correct, the wheel is the deity wheel.
         const buckets = Object.create(null);
-        const edges = m && m.edges;
-        const nodesByIdMap = (m && m.nodesById) ? m.nodesById : null;
-        if (edges) {
+        // Cache the full vault.nodes by id; reuse across renders.
+        if (!local._vaultNodesById) {
+          const vd = window.VAULT_DATA;
+          const map = new Map();
+          if (vd && Array.isArray(vd.nodes)) {
+            for (let i = 0; i < vd.nodes.length; i++) {
+              const n = vd.nodes[i];
+              if (n && n.id) map.set(n.id, n);
+            }
+          }
+          local._vaultNodesById = map;
+        }
+        const vaultNodesById = local._vaultNodesById;
+        const modeNodesById  = (m && m.nodesById) ? m.nodesById : null;
+        const vaultEdges     = (window.VAULT_DATA && window.VAULT_DATA.edges) || [];
+        if (vaultEdges) {
           const EB = window.EDGE_BUCKET || {};
-          for (let i = 0; i < edges.length; i++) {
-            const e = edges[i];
+          for (let i = 0; i < vaultEdges.length; i++) {
+            const e = vaultEdges[i];
             const isSrc = e.source === id;
             const isTgt = e.target === id;
             if (!isSrc && !isTgt) continue;
@@ -6270,19 +6295,18 @@
             if (!buckets[b]) buckets[b] = { count: 0, neighbors: [] };
             buckets[b].count++;
             const otherId = isSrc ? e.target : e.source;
-            const otherNode = (nodesByIdMap && nodesByIdMap.get) ? nodesByIdMap.get(otherId) : null;
+            const otherNode = vaultNodesById.get(otherId) || null;
+            // out-of-mode = the wheel doesn't have this node, so the
+            // click-to-lock handler can't do anything useful with it.
+            const inMode = !!(modeNodesById && modeNodesById.has && modeNodesById.has(otherId));
+            const subtype = otherNode ? (otherNode.type || '') : '';
             buckets[b].neighbors.push({
               id: otherId,
               title: (otherNode && (otherNode.title || otherNode.id)) || otherId,
               color: (otherNode && (otherNode.family_color || otherNode.tradition_color)) || '#888',
               dir: isSrc ? 'out' : 'in',
-              // Phase 21AS (2026-05-23) — surface CODEX v1.1 per-edge
-              // disclaimer metadata in the side panel. tier is always
-              // present (defaults to T1 in build_data.py). source +
-              // notes + political_risk_flag are optional. The renderer
-              // shows a tier pill for non-T1 tiers and a ⚠ marker for
-              // T5 / political-risk edges; full source + notes go into
-              // the row's title= browser tooltip.
+              inMode,
+              subtype,           // 'deity' | 'theme' | 'person' | 'event' | …
               edgeType:  e.type || '',
               tier:      e.source_tier || 'T1',
               source:    e.edge_source || '',
@@ -6293,6 +6317,97 @@
         }
         const BUCKET_ORDER = ['transmission','parallel','association','kinship','attestation','polemic','fusion'];
         const bucketHex = (b) => (local.params && local.params['active_color_' + b]) || '#999999';
+        // Phase 21AV (2026-05-23) — human-readable headers + tooltip
+        // labels. Replaces the raw kebab-case slugs (`parallel-form`,
+        // `syncretic-negative-identification`) the panel was showing
+        // earlier with plain-English phrases the reader can actually
+        // parse. Keys cover every type emitted by build_data.py:
+        // - the 21 PROTOCOL §3.1 edge types
+        // - the syncretic- prefixed variants from syncretic-edges
+        // - the legacy types still in older nodes
+        // - the plain-list kinship fields (consort/child-of/…)
+        const BUCKET_HUMAN = {
+          transmission: 'Transmission',
+          parallel:     'Parallel',
+          association:  'Association',
+          kinship:      'Kinship',
+          attestation:  'Attestation',
+          polemic:      'Polemic',
+          fusion:       'Fusion',
+        };
+        const TYPE_HUMAN = {
+          // PROTOCOL §3.1 — Transmission
+          'cognate':                     'Cognate (shared linguistic root)',
+          'direct-borrowing':            'Direct borrowing',
+          'iconographic-borrowing':      'Iconographic borrowing',
+          'substrate-influence':         'Substrate influence',
+          'continuous-development':      'Continuous development',
+          // PROTOCOL §3.1 — Parallel
+          'scholarly-parallel':          'Scholarly parallel',
+          'parallel-motif':              'Same motif, independent origin',
+          'functional-equivalent':       'Functional equivalent',
+          'interpretatio-nominal':       'Name mapping across traditions',
+          // PROTOCOL §3.1 — Fusion / identification
+          'same-as':                     'Identified as same figure',
+          'interpretatio-cultic':        'Cult / ritual mapping across traditions',
+          'ancient-identification':      'Ancient identification',
+          'composite-deity':             'Composite deity (merger)',
+          'folk-syncretism':             'Folk syncretism',
+          'identification':              'Identification',
+          // PROTOCOL §3.1 — Kinship / hierarchy
+          'manifestation-of':            'Manifestation / aspect of',
+          'avatara-of':                  'Avatara / incarnation of',
+          'constituent-of':              'Constituent of',
+          // PROTOCOL §3.1 — Polemic
+          'polemic-against':             'Polemic — rejects / refutes',
+          'polemic-inversion':           'Polemic — inverts opponent',
+          'demonization':                'Demonized rival figure',
+          'prefiguration-claim':         'Claimed as prefiguration',
+          'negative-identification':     'Rejected identification',
+          // Legacy / build_data.py defaults
+          'parallel-form':               'Parallel form',
+          'visual-cognate':              'Visual cognate',
+          'ancestor-of':                 'Ancestor of',
+          'connects-to':                 'Connected to',
+          // Plain-list kinship fields
+          'consort':                     'Consort',
+          'child-of':                    'Child of',
+          'parent-of':                   'Parent of',
+          'attested-in':                 'Attested in',
+        };
+        function humanType(t) {
+          if (!t) return '';
+          if (TYPE_HUMAN[t]) return TYPE_HUMAN[t];
+          // Strip the syncretic- prefix that build_data.py adds for
+          // anything from a syncretic-edges block.
+          if (t.indexOf('syncretic-') === 0) {
+            const tail = t.slice(10);
+            if (TYPE_HUMAN[tail]) return TYPE_HUMAN[tail];
+            return tail.split('-').map(w => w.charAt(0).toUpperCase() + w.slice(1)).join(' ');
+          }
+          // Fallback: kebab → Title Case.
+          return t.split('-').map(w => w.charAt(0).toUpperCase() + w.slice(1)).join(' ');
+        }
+        // Phase 21AV (2026-05-23) — subtype label shown after the
+        // neighbor name when the neighbor is NOT a deity (i.e. lives
+        // outside the current wheel mode). Keeps the panel honest
+        // about cross-folder relationships without misrepresenting
+        // them as wheel-clickable.
+        const SUBTYPE_HUMAN = {
+          theme:       'theme',
+          person:      'person',
+          event:       'event',
+          tradition:   'tradition',
+          symbol:      'symbol',
+          music:       'music',
+          alphabet:    'alphabet',
+          alchemy:     'alchemy',
+          ritual:      'ritual',
+          moral:       'moral',
+          philosophy:  'philosophy',
+          mathematics: 'mathematics',
+          medicine:    'medicine',
+        };
         // Each bucket → a <details> block. Summary = colored pill
         // with count + bucket name. Open content = list of neighbor
         // titles (clickable to lock-and-switch to that deity).
@@ -6304,39 +6419,45 @@
           if (!data) return '';
           // Sort neighbors by title for predictable ordering.
           data.neighbors.sort((x, y) => x.title.localeCompare(y.title));
-          // Phase 19E (2026-05-21) — item order: dot, title, dir.
-          // The dot + title read as "this is the connected deity";
-          // the arrow at the END reads as a direction annotation
-          // rather than "this color goes via this arrow." Earlier
-          // ordering (dot → arrow → title) made the arrow look
-          // like it belonged to the color, not the relationship.
           const items = data.neighbors.map(n => {
             // Phase 21AS (2026-05-23) — disclaimer-machine row chrome.
             // Phase 21AT (2026-05-23) — tier badge on EVERY row.
             // Phase 21AU (2026-05-23) — store tooltip data on data-*
-            // attrs instead of the title="" attribute. The browser-
-            // native title= tooltip has a ~1.5s delay and ugly OS
-            // chrome; our custom tooltip (see side-panel custom-tip
-            // wiring below) fires at 500ms in atlas dark-glass styling.
+            // attrs instead of the title="" attribute.
+            // Phase 21AV (2026-05-23) — cross-folder neighbors (theme/
+            // event/person targets) render with a small subtype tag +
+            // are click-disabled (the wheel doesn't have them). The
+            // tier badge + tooltip still surface so the disclaimer
+            // machine works for cross-folder T4/T5 edges.
             const tier   = n.tier || 'T1';
             const risky  = (tier === 'T5') || n.polRisk;
             const pillHtml = '<span class="forge-side-panel-wire-item-tier vs-tier-pill vs-tier-pill--' + tier.toLowerCase() + '">' + tier + '</span>';
             const warnHtml = risky
               ? '<span class="forge-side-panel-wire-item-warn" aria-hidden="true">⚠</span>'
               : '';
-            return '<button class="forge-side-panel-wire-item' + (risky ? ' is-risky' : '') + '"'
+            const subTagHtml = (!n.inMode && n.subtype && SUBTYPE_HUMAN[n.subtype])
+              ? '<span class="forge-side-panel-wire-item-subtype">' + SUBTYPE_HUMAN[n.subtype] + '</span>'
+              : '';
+            const classNames = 'forge-side-panel-wire-item'
+              + (risky    ? ' is-risky'    : '')
+              + (!n.inMode ? ' is-cross-folder' : '');
+            return '<button class="' + classNames + '"'
               + ' data-id="' + safeAttr(n.id) + '"'
+              + ' data-in-mode="' + (n.inMode ? '1' : '0') + '"'
               + ' data-tier="' + safeAttr(tier) + '"'
               + ' data-edge-type="' + safeAttr(n.edgeType || '') + '"'
+              + ' data-edge-type-human="' + safeAttr(humanType(n.edgeType)) + '"'
               + ' data-edge-source="' + safeAttr(n.source || '') + '"'
               + ' data-edge-notes="' + safeAttr(n.notes || '') + '"'
               + ' data-edge-dir="' + safeAttr(n.dir) + '"'
               + ' data-edge-target-title="' + safeAttr(n.title) + '"'
+              + ' data-edge-target-subtype="' + safeAttr(n.subtype || '') + '"'
               + ' data-edge-risky="' + (risky ? '1' : '0') + '">'
               + '<span class="forge-side-panel-wire-item-dir">' + (n.dir === 'out' ? '→' : '←') + '</span>'
               + '<span class="forge-side-panel-wire-item-dot" style="background:' + safeAttr(n.color) + '"></span>'
               + warnHtml
               + '<span class="forge-side-panel-wire-item-title">' + safeAttr(n.title) + '</span>'
+              + subTagHtml
               + pillHtml
               + '</button>';
           }).join('');
@@ -6344,7 +6465,7 @@
             + '<summary class="forge-side-panel-wire-summary">'
             +   '<span class="forge-side-panel-wire-dot" style="background:' + bucketHex(b) + '"></span>'
             +   '<span class="forge-side-panel-wire-count">' + data.count + '</span>'
-            +   '<em class="forge-side-panel-wire-name">' + b + '</em>'
+            +   '<em class="forge-side-panel-wire-name">' + (BUCKET_HUMAN[b] || b) + '</em>'
             +   '<span class="forge-side-panel-wire-caret">▾</span>'
             + '</summary>'
             + '<div class="forge-side-panel-wire-list">' + items + '</div>'
@@ -6501,6 +6622,12 @@
         if (!item) return;
         const targetId = item.getAttribute('data-id');
         if (!targetId) return;
+        // Phase 21AV (2026-05-23) — cross-folder neighbors aren't on
+        // the deity wheel so toggleLock can't do anything useful with
+        // them. The row still shows the tier badge + disclaimer
+        // tooltip; clicking is a no-op so the user doesn't get a
+        // ghost-tab that points nowhere.
+        if (item.getAttribute('data-in-mode') !== '1') return;
         // Lock only if not already locked (toggleLock toggles).
         if (!local.lockedSet.has(targetId)) {
           toggleLock(targetId);    // adds + pulses tab + (if open) renders
@@ -6544,13 +6671,18 @@
         ));
       }
       function buildTipHtml(row) {
-        const tier   = row.getAttribute('data-tier') || 'T1';
-        const dir    = row.getAttribute('data-edge-dir') === 'out' ? '→' : '←';
-        const target = row.getAttribute('data-edge-target-title') || '';
-        const type   = row.getAttribute('data-edge-type') || '';
-        const src    = row.getAttribute('data-edge-source') || '';
-        const notes  = row.getAttribute('data-edge-notes') || '';
-        const risky  = row.getAttribute('data-edge-risky') === '1';
+        const tier      = row.getAttribute('data-tier') || 'T1';
+        const dir       = row.getAttribute('data-edge-dir') === 'out' ? '→' : '←';
+        const target    = row.getAttribute('data-edge-target-title') || '';
+        // Phase 21AV (2026-05-23) — surface the HUMAN-READABLE type
+        // label instead of the raw kebab-case slug (e.g. "Rejected
+        // identification" instead of "syncretic-negative-identification").
+        const typeHuman = row.getAttribute('data-edge-type-human') || '';
+        const src       = row.getAttribute('data-edge-source') || '';
+        const notes     = row.getAttribute('data-edge-notes') || '';
+        const risky     = row.getAttribute('data-edge-risky') === '1';
+        const inMode    = row.getAttribute('data-in-mode') === '1';
+        const subtype   = row.getAttribute('data-edge-target-subtype') || '';
         const tierClass = 'vs-tier-pill--' + tier.toLowerCase();
         let html = '';
         if (risky) {
@@ -6561,8 +6693,14 @@
           +    '<span class="forge-side-tip-title">' + escTip(target) + '</span>'
           +    '<span class="vs-tier-pill ' + tierClass + '">' + escTip(tier) + '</span>'
           +    '</div>';
-        if (type) {
-          html += '<div class="forge-side-tip-row"><span class="k">type</span><span class="v">' + escTip(type) + '</span></div>';
+        // Cross-folder subtype line — e.g., "→ a theme node (not on
+        // the deity wheel)" so the user understands why the row isn't
+        // clickable.
+        if (!inMode && subtype) {
+          html += '<div class="forge-side-tip-row"><span class="k">node</span><span class="v">a ' + escTip(subtype) + ' node — not on the deity wheel</span></div>';
+        }
+        if (typeHuman) {
+          html += '<div class="forge-side-tip-row"><span class="k">type</span><span class="v">' + escTip(typeHuman) + '</span></div>';
         }
         if (src) {
           html += '<div class="forge-side-tip-row"><span class="k">source</span><span class="v">' + escTip(src) + '</span></div>';
@@ -6570,7 +6708,7 @@
         if (notes) {
           html += '<div class="forge-side-tip-notes">' + escTip(notes) + '</div>';
         }
-        html += '<div class="forge-side-tip-hint">Click to lock + inspect</div>';
+        html += '<div class="forge-side-tip-hint">' + (inMode ? 'Click to lock + inspect' : 'Not on the deity wheel — view-only') + '</div>';
         return html;
       }
       function positionTip(row) {
