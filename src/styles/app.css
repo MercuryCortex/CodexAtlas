@@ -528,24 +528,36 @@ body.nav-hidden .side-tab { display: none !important; }
    mode (their styles are the reusable primitive — don't introduce a
    third).
    ════════════════════════════════════════════════════════════════ */
+/* Phase 22-B/AX (2026-05-23) — REVISED visual per John feedback.
+   Match the existing .forge-status compact aesthetic: position
+   next to the ✦ trigger (NOT centered), squared rectangle with
+   10px corners, NO icon inside the button, mixed-case "Deities"
+   not all-caps "DEITIES". Same chrome contract as .forge-status
+   (border-radius 10px, height 36px to match ✦ trigger row, font
+   size 11px mono, gold text on dark-glass).
+
+   Old centered-pill 32px-tall / 16px-radius / icon-inside design
+   was per the original audit; John's eye prefers the squarer
+   compact .forge-status style — keeping the visual primitive
+   consistent across the app shell.  */
 .app-pill-wrap {
   position: fixed;
   top: 14px;
-  left: 50%;
-  transform: translateX(-50%);
-  z-index: 245;        /* above nav-hub-menu (240) — pill sits above */
-  pointer-events: none; /* the wrap doesn't catch; children do */
+  left: 62px;          /* same as old .forge-status — 14 (left inset)
+                          + 36 (✦ trigger width) + 12 (gap) */
+  z-index: 245;
+  pointer-events: none;
 }
 .app-pill {
   display: inline-flex;
   align-items: stretch;
-  height: 32px;
-  border-radius: 16px;
-  border: 1px solid rgba(212,165,90,0.28);
+  height: 36px;        /* same as ✦ trigger so they baseline together */
+  border-radius: 10px; /* squared with soft rounded corners */
+  border: 1px solid rgba(212,165,90,0.22);
   background: rgba(13,17,25,0.78);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
-  box-shadow: 0 4px 14px rgba(0,0,0,0.32);
+  box-shadow: 0 4px 14px rgba(0,0,0,0.28);
   overflow: hidden;
   pointer-events: auto;
 }
@@ -553,33 +565,40 @@ body.nav-hidden .side-tab { display: none !important; }
   display: inline-flex;
   align-items: center;
   gap: 6px;
-  padding: 0 14px;
-  min-width: 130px;
+  padding: 0 22px 0 12px;   /* extra right padding for caret room */
+  min-width: 0;             /* let label define width naturally */
   height: 100%;
   background: transparent;
   border: 0;
   color: var(--gold, #d4a55a);
   font-family: var(--mono, "JetBrains Mono", Menlo, monospace);
   font-size: 11px;
-  letter-spacing: 0.10em;
-  text-transform: uppercase;
+  letter-spacing: 0.04em;   /* relaxed from .10em — matches forge-status */
   cursor: pointer;
   transition: background 100ms ease, color 100ms ease;
+  position: relative;
 }
 .app-pill-side:hover {
-  background: rgba(212,165,90,0.10);
   color: var(--gold-1, #e8c889);
 }
 .app-pill-side[aria-expanded="true"] {
-  background: rgba(212,165,90,0.16);
   color: var(--gold-1, #e8c889);
 }
+/* Left side (master view) — uppercase like the old .forge-status-tag. */
+.app-pill-master .app-pill-label {
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  font-weight: 500;
+}
+/* Right side (class) — mixed-case like the old .forge-status-mode label. */
+.app-pill-class .app-pill-label {
+  letter-spacing: 0.04em;
+}
 .app-pill-icon {
-  font-size: 13px;
-  line-height: 1;
-  color: inherit;
-  opacity: 0.85;
-  flex: 0 0 auto;
+  /* Hidden per the revised compact style — the LABEL is the identity.
+     Keep the span in DOM so existing JS doesn't break, but display:none
+     it so the chrome reads like the old .forge-status pill. */
+  display: none;
 }
 .app-pill-label {
   flex: 1 1 auto;
@@ -587,16 +606,31 @@ body.nav-hidden .side-tab { display: none !important; }
   overflow: hidden;
   text-overflow: ellipsis;
   text-align: left;
-}
-.app-pill-caret {
-  font-size: 9px;
   line-height: 1;
-  opacity: 0.65;
-  flex: 0 0 auto;
+}
+/* Gradient triangle caret — copies .forge-status-mode geometry exactly
+   so the visual reads identical to the established pill primitive. */
+.app-pill-caret {
+  display: none;     /* hide the textual ▾; replace with gradient triangle */
+}
+.app-pill-side::after {
+  content: "";
+  position: absolute;
+  right: 7px;
+  top: 50%;
+  width: 4px; height: 4px;
+  transform: translateY(-50%);
+  background-image:
+    linear-gradient(45deg, transparent 50%, var(--gold-soft, #a87f3e) 50%),
+    linear-gradient(135deg, var(--gold-soft, #a87f3e) 50%, transparent 50%);
+  background-position: 0 0, 0 0;
+  background-size: 4px 4px;
+  background-repeat: no-repeat;
+  pointer-events: none;
 }
 .app-pill-divider {
   width: 1px;
-  background: rgba(212,165,90,0.28);
+  background: rgba(212,165,90,0.22);
   flex: 0 0 auto;
 }
 /* Dropdown panels — anchored to pill bottom-left (master) and
@@ -721,14 +755,12 @@ body.nav-hidden .side-tab { display: none !important; }
   background: rgba(212,165,90,0.12);
 }
 
-/* Responsive collapse — narrow viewports drop the pill to a single
-   unified button. Spec'd in §2.5 of the refactor audit; full
-   responsive collapse + keyboard nav lands in Phase 22-E. For now
-   we just stop the pill colliding with the zoom meter at <960px by
-   shrinking the side min-widths. */
+/* Responsive collapse — narrow viewports shrink the pill side
+   padding so the pill never collides with bottom-right chrome.
+   Full responsive collapse + keyboard nav lands in Phase 22-E. */
 @media (max-width: 960px) {
-  .app-pill-side { min-width: 100px; padding: 0 10px; }
-  .app-pill-label { letter-spacing: 0.06em; }
+  .app-pill-side { padding: 0 18px 0 10px; }
+  .app-pill-master .app-pill-label { letter-spacing: 0.12em; }
 }
 @media (max-width: 720px) {
   /* Below 720px we hide the pill entirely until Phase 22-E ships
