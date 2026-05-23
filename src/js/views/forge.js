@@ -1010,27 +1010,22 @@
     shell.className = 'forge-shell-v1';
     rootEl.appendChild(shell);
 
+    // Phase 22-C (2026-05-23) — .forge-status row is now a HIDDEN
+    // data carrier. The visible FORGE | Deities pill that lived
+    // here (Phase 21L → 22-B) was DELETED in 22-C; that UI now
+    // lives at the app-shell level (.app-pill in index.html).
+    //
+    // The spans below stay in the DOM because the debug-stats
+    // popover (wireDebugStats) clones their textContent into its
+    // own panel each open — they're the LIVE source of truth for
+    // device / nodes / edges / hover / lock / frame fields. JS
+    // throughout the file writes textContent into these spans via
+    // getElementById; getElementById succeeds regardless of CSS
+    // display state, so display:none on the parent (see app.css)
+    // gives us "hidden but readable" without breaking the writes.
     const status = document.createElement('div');
     status.className = 'forge-status';
-    // Mode dropdown is FIRST in the status row so it reads as the
-    // primary "what is this wheel showing" indicator.  The rest
-    // (device / counts / hover / lock / frame) follow.
-    // Phase 21O (2026-05-21) — STYLE GUIDE: the mode picker is now
-    // a CUSTOM BUTTON that opens a popup styled identically to the
-    // top-left nav-hub menu (.nav-hub-menu / .nh-item). Native
-    // <select> couldn't be skinned to match — its popup is browser-
-    // native. The button keeps the FORGE | Deities pill look from
-    // Phase 21L (transparent face, left-border divider as the `|`,
-    // gradient caret). Popup chrome lives in `.forge-mode-menu`
-    // (sibling of body, position:fixed) — anchored to the button's
-    // bottom-left via JS in wireModeDropdown().
     status.innerHTML = [
-      '<span class="forge-status-tag">FORGE</span>',
-      '<span class="forge-status-sep">·</span>',
-      '<button class="forge-status-mode" id="forge-status-mode" type="button" aria-haspopup="menu" aria-expanded="false" title="What is this wheel showing?">' +
-        '<span class="fsm-label" id="fsm-current-label">Deities</span>' +
-      '</button>',
-      '<span class="forge-status-sep">·</span>',
       '<span class="forge-status-k">device</span>',
       '<span class="forge-status-v forge-status-pending" id="forge-status-device">acquiring…</span>',
       '<span class="forge-status-sep">·</span>',
@@ -1043,7 +1038,6 @@
       '<span class="forge-status-k">lock</span><span class="forge-status-v" id="forge-status-lock">—</span>',
       '<span class="forge-status-sep">·</span>',
       '<span class="forge-status-k">frame</span><span class="forge-status-v" id="forge-status-frame">—</span>',
-      '<span class="forge-status-spacer"></span>',
     ].join('');
     shell.appendChild(status);
 
@@ -2154,7 +2148,11 @@
       // anchors it to the button, handles open/close/select, and
       // returns a `setMode(id)` so external code can sync the
       // visible label without firing a rebuild.
-      wireModeDropdown();
+      // Phase 22-C (2026-05-23) — wireModeDropdown DELETED.
+      // The class-selector UI now lives at the app-shell level
+      // (.app-pill-class). We install the public API instead
+      // so app-pill.js can drive setClassFilter from the new pill.
+      installPublicApi();
       syncModeButtonLabel(local.mode.id);
 
       // Search wire-up (Phase 4f).
@@ -4705,116 +4703,79 @@
 
     // ════════════════════════════════════════════════════════════
     //  syncModeButtonLabel(modeId)  —  Phase 21O (2026-05-21)
+    //                                  Phase 22-C (2026-05-23 — relocated)
     // ════════════════════════════════════════════════════════════
-    //  Update the FORGE | Deities button face to read the active
-    //  mode's label. Pure DOM write — does NOT trigger a rebuild.
-    //  Safe to call from save-state restore + rebuildForMode.
+    //  Reflects the active mode's label into the UI. The legacy
+    //  in-Forge `forge-status-mode` button is GONE (Phase 22-C
+    //  deletion); the app-shell `.app-pill-class` label now owns
+    //  the display. The function:
+    //
+    //   1. Writes the label into #app-pill-class-label (if present).
+    //   2. Dispatches `codex:class-changed` so the app-pill's own
+    //      dropdown can mark the matching row .is-active.
+    //
+    //  Pure DOM write — does NOT trigger a rebuild. Safe to call
+    //  from save-state restore + rebuildForMode.
     // ════════════════════════════════════════════════════════════
     function syncModeButtonLabel(modeId) {
       const entry = (modemod.MODES || []).find(m => m.value === modeId);
       if (!entry) return;
-      const labelEl = document.getElementById('fsm-current-label');
-      if (labelEl) labelEl.textContent = entry.label;
-      // Mirror the active row in the open menu, if any.
-      const menu = local.modeMenuEl;
-      if (menu) {
-        menu.querySelectorAll('.fm-item').forEach(el => {
-          el.classList.toggle('is-active', el.dataset.value === modeId);
-        });
-      }
+      // Phase 22-C — write to the app-shell pill's class side.
+      const pillLabel = document.getElementById('app-pill-class-label');
+      if (pillLabel) pillLabel.textContent = entry.label;
+      // Emit so the pill's dropdown row marks .is-active without
+      // polling local.mode.id from outside the closure.
+      try {
+        document.dispatchEvent(new CustomEvent('codex:class-changed', {
+          detail: { modeId, label: entry.label }
+        }));
+      } catch (_) {}
     }
 
     // ════════════════════════════════════════════════════════════
-    //  wireModeDropdown()  —  Phase 21O (2026-05-21)
+    //  installPublicApi()  —  Phase 22-C (2026-05-23)
     // ════════════════════════════════════════════════════════════
-    //  STYLE-GUIDE NOTE: this dropdown reuses the same chrome as
-    //  the top-left nav-hub menu. The popup is appended to
-    //  document.body (escapes the .forge-status `overflow:hidden`)
-    //  and positioned `fixed` at the trigger's bottom-left on each
-    //  open. Class names:
-    //    .forge-mode-menu  ← popup container (mirrors .nav-hub-menu)
-    //    .fm-item          ← row (mirrors .nh-item)
-    //    .fm-sym           ← glyph cell
-    //    .fm-label         ← label text
-    //  Future similar dropdowns SHOULD reuse one of these two
-    //  primitives instead of introducing a third style.
+    //  Replaces the legacy wireModeDropdown() — the in-Forge mode
+    //  pill + popup + handlers (lived in this slot Phase 21O → 22-B)
+    //  was DELETED in 22-C. The class-selector UI now lives at the
+    //  app-shell level (.app-pill-class in index.html, behaviour in
+    //  src/js/app-pill.js).
     //
-    //  Lifecycle: the popup element is referenced by
-    //  `local.modeMenuEl` so destroy() can detach it cleanly when
-    //  the view unmounts.
+    //  Exposes a tiny app-level API on window._forge:
+    //
+    //    setClassFilter(modeId): switch the wheel to a different
+    //      node-class (e.g. 'deities' → 'authors'). Wraps
+    //      rebuildForMode + syncModeButtonLabel + saveRuntimeState
+    //      so callers don't need to know the internals.
+    //    getClassFilter(): returns the current modeId.
+    //    supportedClasses(): returns the MODES catalog.
+    //
+    //  Used by src/js/app-pill.js right-side click handler; future
+    //  view modules (Timeline / Map / etc.) will register similar
+    //  surfaces under window._forge / window._timeline / etc.
     // ════════════════════════════════════════════════════════════
-    function wireModeDropdown() {
-      const btn = document.getElementById('forge-status-mode');
-      if (!btn) return;
-
-      // Build the popup once per mount and cache on local.
-      const menu = document.createElement('div');
-      menu.className = 'forge-mode-menu';
-      menu.id = 'forge-mode-menu';
-      menu.setAttribute('role', 'menu');
-      menu.setAttribute('aria-hidden', 'true');
-      menu.innerHTML = (modemod.MODES || []).map(m =>
-        '<div class="fm-item" role="menuitem" tabindex="0" data-value="' + m.value + '">' +
-          '<span class="fm-sym">' + (m.glyph || '·') + '</span>' +
-          '<span class="fm-label">' + m.label + '</span>' +
-        '</div>'
-      ).join('');
-      document.body.appendChild(menu);
-      local.modeMenuEl = menu;
-
-      function position() {
-        const r = btn.getBoundingClientRect();
-        // Drop DOWN from the bottom of the trigger pill, aligned
-        // to the trigger's left edge. 6 px gap matches the nav-hub
-        // gap. Clamp so the menu never escapes the viewport.
-        const top  = Math.round(r.bottom + 6);
-        const left = Math.round(r.left);
-        menu.style.top  = top  + 'px';
-        menu.style.left = left + 'px';
-      }
-      function open() {
-        position();
-        menu.classList.add('is-open');
-        menu.setAttribute('aria-hidden', 'false');
-        btn.setAttribute('aria-expanded', 'true');
-      }
-      function close() {
-        menu.classList.remove('is-open');
-        menu.setAttribute('aria-hidden', 'true');
-        btn.setAttribute('aria-expanded', 'false');
-      }
-
-      btn.addEventListener('click', (ev) => {
-        ev.stopPropagation();
-        if (local.destroyed) return;
-        if (menu.classList.contains('is-open')) close(); else open();
-      });
-      menu.addEventListener('click', (ev) => {
-        const row = ev.target.closest('.fm-item');
-        if (!row) return;
-        const v = row.dataset.value;
-        if (!v || local.destroyed) { close(); return; }
-        close();
-        if (v !== local.mode.id) {
-          rebuildForMode(v);
-          syncModeButtonLabel(v);
+    function installPublicApi() {
+      window._forge = window._forge || {};
+      window._forge.setClassFilter = function (modeId) {
+        if (local.destroyed) return false;
+        if (!modemod.isValidMode || !modemod.isValidMode(modeId)) return false;
+        if (modeId === (local.mode && local.mode.id)) return true;
+        try {
+          rebuildForMode(modeId);
+          syncModeButtonLabel(modeId);
           saveRuntimeState();
+          return true;
+        } catch (e) {
+          console.warn('[forge] setClassFilter failed', e);
+          return false;
         }
-      });
-      document.addEventListener('click', (ev) => {
-        if (!menu.classList.contains('is-open')) return;
-        if (menu.contains(ev.target) || btn.contains(ev.target)) return;
-        close();
-      });
-      document.addEventListener('keydown', (ev) => {
-        if (ev.key === 'Escape' && menu.classList.contains('is-open')) close();
-      });
-      // Reposition when the viewport reflows (the trigger pill is
-      // fixed at top:14 left:62, so resize is the only reflow trigger
-      // that matters here — pan/zoom don't move it).
-      window.addEventListener('resize', () => {
-        if (menu.classList.contains('is-open')) position();
-      });
+      };
+      window._forge.getClassFilter = function () {
+        return (local.mode && local.mode.id) || (modemod.defaultMode && modemod.defaultMode()) || 'deities';
+      };
+      window._forge.supportedClasses = function () {
+        return (modemod.MODES || []).slice();
+      };
     }
 
     // ════════════════════════════════════════════════════════════

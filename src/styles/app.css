@@ -633,6 +633,13 @@ body.nav-hidden .side-tab { display: none !important; }
   background: rgba(212,165,90,0.22);
   flex: 0 0 auto;
 }
+/* Phase 22-C (2026-05-23) — when the active master view doesn't
+   expose a class-selector API (e.g., legacy Astrology mounted as
+   STAR MAP, MapLibre Atlas as MAP), the right side of the pill
+   hides so the user doesn't click a dead control. The master side
+   still works; the pill visually collapses to just the LEFT half. */
+body.app-pill-no-class .app-pill-class,
+body.app-pill-no-class .app-pill-divider { display: none; }
 /* Dropdown panels — anchored to pill bottom-left (master) and
    bottom-right (class). Position is set inline via JS in 22-B/22-C
    to handle resize + responsive collapse cleanly; the defaults
@@ -6423,199 +6430,38 @@ body.nav-collapsed .nav-more > summary .lbl { display: none; }
    a debug toggle and only render when `.is-debug` is set. The
    visual style matches the bottom-bar pill controls (rounded,
    blurred dark background, gold accent). */
-.forge-status {
-  position: fixed;
-  top: 14px;
-  left: 62px;     /* nav-hub trigger sits at 14 px + 36 px wide + 12 px gap */
-  z-index: 230;   /* over canvas, below nav-hub menu (240) */
-  flex: 0 0 auto;
-  display: inline-flex; align-items: center; gap: 8px;
-  padding: 0 12px;
-  height: 36px;   /* same height as nav-hub-trigger */
-  border: 1px solid rgba(212,165,90,0.22);
-  border-radius: 10px;
-  background: rgba(13,17,25,0.78);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  font-family: var(--mono); font-size: 10.5px;
-  letter-spacing: 0.04em;
-  color: var(--text-2);
-  max-width: calc(100vw - 80px);
-  overflow: hidden;
-}
-/* By default the debug-only spans (everything past the FORGE
-   tag + mode select + the first separator) are hidden. The
-   debug-stats popover renders them on demand instead. */
-.forge-status > .forge-status-k,
-.forge-status > .forge-status-v,
-.forge-status > .forge-status-sep:nth-of-type(n + 2),
-.forge-status > .forge-status-spacer {
-  display: none;
-}
-.forge-status-tag {
-  font-weight: 500;
-  letter-spacing: 0.24em;
-  color: var(--gold);
-}
-.forge-status-sep { color: var(--text-3); }
-.forge-status-k {
-  color: var(--text-3);
-  text-transform: uppercase;
-  letter-spacing: 0.12em;
-}
-.forge-status-v { color: var(--text-1); }
-.forge-status-v.forge-status-ok      { color: var(--sage, #6e8c6b); }
-.forge-status-v.forge-status-pending { color: var(--text-3); font-style: italic; }
-.forge-status-v.forge-status-fail    { color: var(--crimson, #c44a5a); }
-
 /* ═══════════════════════════════════════════════════════════════
-   FORGE | Deities mode picker — Phase 21O (2026-05-21)
+   Phase 22-C (2026-05-23) — .forge-status row deprecated
    ═══════════════════════════════════════════════════════════════
-   STYLE-GUIDE NOTE: this is now a CUSTOM <button> (not a native
-   <select>) so the popup can be skinned to match the nav-hub menu.
-   The popup itself lives below in `.forge-mode-menu` and is the
-   canonical "scrolling list of mode-like options" primitive.
+   The visible FORGE | Deities pill that used to live here was
+   DELETED in Phase 22-C. The UI now lives at the app-shell level
+   (.app-pill in index.html, src/js/app-pill.js).
 
-   The button face keeps the Phase 21L "FORGE | Deities ▾" pill
-   look — transparent, no outer border, left border serves as the
-   `|` divider, gradient triangle as the caret. Don't introduce a
-   third primitive for similar pickers — reuse this + the popup.
+   The .forge-status DOM node stays in the page because the debug-
+   stats popover (wireDebugStats) clones textContent from its child
+   spans (#forge-status-device, -nodes, -edges, -hover, -lock,
+   -frame) each open. JS writers throughout forge.js write to these
+   spans via getElementById — which succeeds regardless of CSS, so
+   display:none here is safe.
+
+   When the debug-stats refactor lands (removing the live-clone
+   pattern in favor of a direct probe API), this entire block goes.
+
+   DELETED rules (~150 lines, restored at 4466334^ if needed):
+   - .forge-status visible chrome (position, border, blur, padding)
+   - .forge-status-tag (FORGE caps label)
+   - .forge-status-mode (the legacy pill button)
+   - .fsm-label (label inside the button)
+   - .forge-status-sep:first-of-type (visible separators)
+   - .forge-mode-menu + .fm-item + .fm-sym + .fm-label (dropdown)
+   - .forge-status-spacer (right-edge push)
    ═══════════════════════════════════════════════════════════════ */
-.forge-status-mode {
-  appearance: none; -webkit-appearance: none;
-  display: inline-flex; align-items: center;
-  background: transparent;
-  color: var(--gold);
-  font-family: var(--mono); font-size: 11px;
-  letter-spacing: 0.04em;
-  border: 0;
-  border-left: 1px solid rgba(212,165,90,0.28);
-  border-radius: 0;
-  padding: 0 22px 0 12px;
-  line-height: 1;
-  height: 20px;
-  vertical-align: middle;
-  cursor: pointer;
-  /* Gradient triangle caret — same geometry as the old <select>
-     so the visual chrome reads identical. */
-  background-image:
-    linear-gradient(45deg, transparent 50%, var(--gold-soft, #a87f3e) 50%),
-    linear-gradient(135deg, var(--gold-soft, #a87f3e) 50%, transparent 50%);
-  background-position:
-    right 9px top 50%,
-    right 5px top 50%;
-  background-size: 4px 4px, 4px 4px;
-  background-repeat: no-repeat;
-  outline: none;
-  width: auto;
-  min-width: 0;
-}
-.forge-status-mode:hover                          { color: var(--gold-1, #e8c889); }
-.forge-status-mode:focus                          { color: var(--gold-1, #e8c889); }
-.forge-status-mode[aria-expanded="true"]          { color: var(--gold-1, #e8c889); }
-.forge-status-mode .fsm-label                     { display: inline-block; }
-/* Drop the ` · ` separator between FORGE and the mode button — the
-   left-border on the button IS the divider. */
-.forge-status > .forge-status-sep:first-of-type { display: none; }
+.forge-status { display: none !important; }
 
-/* ─── .forge-mode-menu ─ Phase 21O popup ───────────────────────
-   Lives at document.body root (escapes .forge-status overflow:
-   hidden). Positioned `fixed` at the button's bottom-left via JS
-   each open. Visual chrome mirrors `.nav-hub-menu` — same border,
-   blur, padding, animation. If you build another "list of named
-   options" dropdown in Forge, REUSE this primitive (or the
-   nav-hub one) rather than introducing a third. */
-.forge-mode-menu {
-  position: fixed;
-  top: 0; left: 0;            /* set by JS on open */
-  width: 220px;
-  max-height: calc(100vh - 80px);
-  overflow-y: auto;
-  border-radius: 12px;
-  border: 1px solid rgba(212,165,90,0.22);
-  background: rgba(13,17,25,0.92);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  box-shadow: 0 8px 32px rgba(0,0,0,0.45);
-  padding: 8px 0;
-  z-index: 240;
-  /* Hidden state */
-  opacity: 0;
-  pointer-events: none;
-  transform: translateY(-8px) scale(0.96);
-  transform-origin: 28px -16px;
-  transition: opacity 160ms ease, transform 200ms cubic-bezier(0.2, 0.8, 0.2, 1);
-}
-.forge-mode-menu.is-open {
-  opacity: 1;
-  pointer-events: auto;
-  transform: translateY(0) scale(1);
-}
-.forge-mode-menu .fm-item {
-  display: flex; align-items: center; gap: 10px;
-  padding: 8px 14px;
-  font-family: var(--sans, Inter, sans-serif);
-  font-size: 13px;
-  color: var(--text-1, #e5e7eb);
-  cursor: pointer;
-  user-select: none;
-  border-left: 2px solid transparent;
-  transition: background 90ms ease, border-color 90ms ease, color 90ms ease;
-}
-.forge-mode-menu .fm-item:hover {
-  background: rgba(212,165,90,0.10);
-  border-left-color: var(--gold, #d4a55a);
-  color: var(--gold-1, #e8c889);
-}
-.forge-mode-menu .fm-item.is-active {
-  border-left-color: var(--gold, #d4a55a);
-  color: var(--gold-1, #e8c889);
-}
-.forge-mode-menu .fm-sym {
-  display: inline-block;
-  width: 18px; text-align: center;
-  color: var(--text-2, #9099a8);
-  font-size: 14px;
-}
-.forge-mode-menu .fm-item:hover .fm-sym,
-.forge-mode-menu .fm-item.is-active .fm-sym {
-  color: var(--gold, #d4a55a);
-}
-.forge-mode-menu .fm-label {
-  flex: 1 1 auto;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-}
-
-/* Spacer pushes the search input to the right edge of the strip. */
-.forge-status-spacer { flex: 1 1 auto; }
-
-/* Search input (Phase 4f). Lives at the right end of the status
-   strip. Enter commits → camera flies to the match. */
-.forge-status-search {
-  appearance: none; -webkit-appearance: none;
-  background: rgba(13, 17, 25, 0.85);
-  color: var(--text-0);
-  font-family: var(--mono); font-size: 11px;
-  letter-spacing: 0.04em;
-  border: 1px solid var(--border, #2a2e3a);
-  border-radius: 3px;
-  padding: 3px 10px;
-  outline: none;
-  min-width: 200px;
-}
-.forge-status-search::placeholder { color: var(--text-3); }
-.forge-status-search:hover  { border-color: var(--gold-soft); }
-.forge-status-search:focus  { border-color: var(--gold); color: var(--text-0); }
-
-/* The status bar uses flex; ensure the right-aligned children
-   (spacer + search) actually flex-align correctly. */
-.forge-status {
-  display: flex;
-  align-items: center;
-  padding-right: 12px;
-}
+/* Phase 22-C (2026-05-23) — the .forge-status-search input + the
+   duplicate .forge-status `display:flex` rule that used to live here
+   were tied to the deleted top-status row. Both removed; the live
+   bottom-bar search (`.forge-bottom-search`) handles search now. */
 
 /* Phase 6d — bottom bar inside .forge-stage. Floating row at
    the bottom edge holding the search input + zoom gizmo.

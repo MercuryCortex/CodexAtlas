@@ -63,10 +63,62 @@
   const masterLabel = document.getElementById('app-pill-master-label');
   const classBtn    = document.getElementById('app-pill-class');
   const classMenu   = document.getElementById('app-pill-class-menu');
+  const classLabel  = document.getElementById('app-pill-class-label');
   if (!masterBtn || !masterMenu) return;   // pill scaffold not present
 
   // The icon span lives inside masterBtn; grab via class.
   const masterIcon  = masterBtn.querySelector('.app-pill-icon');
+
+  // ── CLASS SELECTOR (Phase 22-C) ─────────────────────────────
+  // The right-side pill lists every CLASS the active master view
+  // supports. For FORGE the classes come from
+  // window._forge.supportedClasses() — a snapshot of the 28-entry
+  // modemod.MODES catalog. Forge's installPublicApi() exposes the
+  // selector via window._forge.setClassFilter(modeId). Other master
+  // views will register their own _<view>.setClassFilter when they
+  // ship (Timeline, Map, etc.); the pill detects which view is
+  // active via STATE.view + maps to the corresponding API surface.
+  //
+  // For master views that don't expose a class API, the right side
+  // of the pill hides entirely (CSS `body.no-class-side .app-pill-
+  // class, .app-pill-divider { display:none }`).
+  function currentClassApi() {
+    // Currently only Forge has a class-selector. Timeline / Map etc.
+    // will return their own API objects once they install one.
+    const mv = currentMaster();
+    if (mv.id === 'forge' && window._forge && typeof window._forge.setClassFilter === 'function') {
+      return window._forge;
+    }
+    return null;
+  }
+  function syncClassPill() {
+    const api = currentClassApi();
+    if (!api) {
+      // Hide the right side + divider for views without a class API.
+      document.body.classList.add('app-pill-no-class');
+      return;
+    }
+    document.body.classList.remove('app-pill-no-class');
+    const cur = api.getClassFilter();
+    const classes = api.supportedClasses();
+    const entry = classes.find(c => c.value === cur);
+    if (entry && classLabel) classLabel.textContent = entry.label;
+    if (classMenu.classList.contains('is-open')) buildClassMenu();
+  }
+  function buildClassMenu() {
+    const api = currentClassApi();
+    if (!api) { classMenu.innerHTML = ''; return; }
+    const cur = api.getClassFilter();
+    const classes = api.supportedClasses();
+    classMenu.innerHTML = classes.map(c => (
+      '<button class="app-pill-menu-item' + (c.value === cur ? ' is-active' : '') + '"'
+      + ' role="menuitem" data-class="' + c.value + '" type="button">'
+      +   '<span class="app-pill-menu-icon">' + (c.glyph || '·') + '</span>'
+      +   '<span class="app-pill-menu-label">' + c.label + '</span>'
+      +   (c.value === cur ? '<span class="app-pill-menu-check">●</span>' : '')
+      + '</button>'
+    )).join('');
+  }
 
   // ── BUILD MASTER MENU ───────────────────────────────────────
   function buildMasterMenu() {
@@ -123,9 +175,22 @@
     classMenu.setAttribute('aria-hidden', 'true');
     if (classBtn) classBtn.setAttribute('aria-expanded', 'false');
   }
+  function openClass() {
+    if (!classMenu || !classBtn) return;
+    if (!currentClassApi()) return;       // no-op when view has no class API
+    closeMaster();
+    buildClassMenu();
+    classMenu.classList.add('is-open');
+    classMenu.setAttribute('aria-hidden', 'false');
+    classBtn.setAttribute('aria-expanded', 'true');
+  }
   function toggleMaster() {
     if (masterMenu.classList.contains('is-open')) closeMaster();
     else openMaster();
+  }
+  function toggleClass() {
+    if (classMenu.classList.contains('is-open')) closeClass();
+    else openClass();
   }
 
   // ── EVENT WIRING ────────────────────────────────────────────
@@ -177,10 +242,43 @@
     }
   });
 
-  // ── REACT TO VIEW CHANGES ───────────────────────────────────
-  document.addEventListener('codex:view-changed', syncPillLabel);
+  // ── CLASS BUTTON CLICK HANDLERS ────────────────────────────
+  if (classBtn) {
+    classBtn.addEventListener('click', (ev) => {
+      ev.stopPropagation();
+      toggleClass();
+    });
+  }
+  if (classMenu) {
+    classMenu.addEventListener('click', (ev) => {
+      const btn = ev.target.closest('button[data-class]');
+      if (!btn) return;
+      ev.stopPropagation();
+      const cls = btn.getAttribute('data-class');
+      const api = currentClassApi();
+      if (!api) { closeClass(); return; }
+      closeClass();
+      try { api.setClassFilter(cls); } catch (e) {
+        console.warn('app-pill setClassFilter failed', e);
+      }
+      // syncClassPill will fire via codex:class-changed listener
+      // (Forge emits it from syncModeButtonLabel after rebuild).
+    });
+  }
+
+  // ── REACT TO VIEW + CLASS CHANGES ──────────────────────────
+  document.addEventListener('codex:view-changed', () => {
+    syncPillLabel();
+    // A small delay so the new view has time to mount + install
+    // its _<view>.setClassFilter API surface before we read it.
+    setTimeout(syncClassPill, 0);
+  });
+  document.addEventListener('codex:class-changed', syncClassPill);
   // Initial paint — STATE.view may already be set from URL.
   syncPillLabel();
+  // Class label needs Forge to be mounted first; small defer so
+  // window._forge exists before we read from it.
+  setTimeout(syncClassPill, 0);
 
   // ── EXPOSE A SMALL DEBUG HANDLE ─────────────────────────────
   // No public API. Internal probes for console diagnosis.
