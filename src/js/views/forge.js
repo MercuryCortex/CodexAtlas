@@ -4212,7 +4212,19 @@
       const rPx     = Math.max(2, hit.r * camera.state.scale);
       const sizeMult= parseFloat(getComputedStyle(document.body).getPropertyValue('--fx-pulse-size-mult')) || 4;
       const sizePx  = rPx * 2 * sizeMult;
-      const color   = (full && (full.family_color || full.tradition_color)) || '#d4a55a';
+      // Phase 21AN (2026-05-23) — respect the active color theme.
+      // Previously this pulled `full.family_color` from data.js,
+      // which is the BAKED "default Atlas" palette — so when the user
+      // switched to Roots/Geography/Longitude/Cosmology/Time the
+      // hover/click pulse stayed the old colour. Now we check the
+      // active currentColorOverride() map first; if the theme has a
+      // hex for this node's family, use it. Falls back to the baked
+      // colour for the default theme (override === null).
+      const themeOverride = (typeof currentColorOverride === 'function') ? currentColorOverride() : null;
+      const familyKey     = (full && full.family) || '';
+      const color = (themeOverride && themeOverride[familyKey])
+                 || (full && (full.family_color || full.tradition_color))
+                 || '#d4a55a';
       dot.style.left = px + 'px';
       dot.style.top  = py + 'px';
       dot.style.setProperty('--fx-pulse-size',  sizePx + 'px');
