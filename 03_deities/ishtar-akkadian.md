@@ -15,14 +15,28 @@ child-of: ["[[nanna-sin]]"]
 consort: ["[[dumuzi-tammuz]]"]
 attributes: ["eight-pointed star", "lions (often as throne supporters)", "weapons (bow, quiver) plus wings", "the rosette"]
 attested-in: ["[[phase-1-004-gilgamesh-old-babylonian]]", "[[phase-1-007-code-of-hammurabi]]", "[[phase-1-008-enuma-elish]]", "[[phase-1-012-amarna-letters]]"]
-equivalents: ["[[inanna-sumerian]]"]
+equivalents: ["[[inanna-sumerian]]", "[[astarte-canaanite]]", "[[aphrodite-greek]]", "[[venus-roman]]"]
 syncretic-edges:
   - target: "[[inanna-sumerian]]"
-    type: "ancient-identification"
+    type: "same-as"
     source: "Bilingual Sumerian-Akkadian texts from Enheduanna onward; full equation in Old Babylonian hymns"
+    notes: "Sumerian Inanna and Akkadian Ishtar are the same goddess under two language-traditions; the Akkadianization is bureaucratic-linguistic, not theological substitution"
+  - target: "[[astarte-canaanite]]"
+    type: "cognate"
+    source: "Smith 2002 *The Early History of God*; West 1997 *The East Face of Helicon*"
+    notes: "West-Semitic *ʿAṯtart / Astarte is the West-Semitic cognate of Akkadian Ishtar — same divine name (Semitic *ʿAṯtar-) in feminine form; both descend from the Common-Semitic Venus-planet-goddess pattern"
+  - target: "[[aphrodite-greek]]"
+    type: "substrate-influence"
+    source: "West 1997 *The East Face of Helicon*; Burkert 1992 *The Orientalizing Revolution*; Penglase 1994 *Greek Myths and Mesopotamia*"
+    notes: "MASSIVE-WIN: Aphrodite descends substantively from Ishtar/Astarte via the Phoenician transmission. Burkert + West document the Greek-Near-Eastern transmission as the load-bearing case of Eastern influence on archaic Greek religion. Aphrodite's birth at Paphos (Cyprus) is at the Phoenician-Greek contact zone"
+  - target: "[[venus-roman]]"
+    type: "substrate-influence"
+    source: "Via Aphrodite — the Roman Venus inherits the Aphrodite-Ishtar lineage through the Greek-Roman interpretatio chain"
+    notes: "Venus is the Latin equivalent of Aphrodite, which carries the Ishtar substrate transitively"
   - target: "[[asherah]]"
     type: "scholarly-parallel"
     source: "Smith 2002; partial overlap in West Semitic mother-goddess complex (limited; Ashtart/Astarte is the closer Canaanite parallel)"
+    notes: "Asherah is the Canaanite consort-of-El, a more matriarchal-fertility figure distinct from Astarte's warrior + Venus-planet profile; the overlap is real but partial"
 status: "metadata"
 refs:
   - title: "Ishtar"

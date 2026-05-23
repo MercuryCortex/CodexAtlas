@@ -15,12 +15,25 @@ child-of: ["[[nanna-sin]]", "[[an-sumerian]]"]
 consort: ["[[dumuzi-tammuz]]"]
 attributes: ["eight-pointed star", "lions", "rosette", "reed bundle (her standard at Uruk)", "the *me* (cosmic powers)"]
 attested-in: ["[[phase-1-003-enheduanna-hymns]]", "[[phase-1-004-gilgamesh-old-babylonian]]"]
-equivalents: ["[[ishtar-akkadian]]"]
+equivalents: ["[[ishtar-akkadian]]", "[[astarte-canaanite]]", "[[aphrodite-greek]]", "[[venus-roman]]"]
 syncretic-edges:
   - target: "[[ishtar-akkadian]]"
-    type: "ancient-identification"
+    type: "same-as"
     source: "Enheduanna's hymns and the entire OB tradition explicitly identify the two; the equation is fully realized by the Sargonic period"
-  - target: "sophia-gnostic"
+    notes: "Sumerian Inanna and Akkadian Ishtar are the same goddess across two language-traditions; the equation goes back to the Sargonic synthesis"
+  - target: "[[astarte-canaanite]]"
+    type: "substrate-influence"
+    source: "Smith 2002; West 1997 — Inanna's profile passes downstream to Akkadian Ishtar, then to West-Semitic Astarte"
+    notes: "The Common-Semitic Venus-planet-goddess pattern descends from Mesopotamian Inanna-Ishtar into West-Semitic Astarte via the long shared Semitic substrate"
+  - target: "[[aphrodite-greek]]"
+    type: "substrate-influence"
+    source: "West 1997; Burkert 1992; Penglase 1994"
+    notes: "MASSIVE-WIN: the Inanna → Ishtar → Astarte → Aphrodite chain is one of the most-documented Near-East-to-Greek goddess transmissions in comparative religion. Aphrodite of Paphos preserves the Astarte cult; Aphrodite's seven-veil dance preserves Inanna's seven-gates-of-descent"
+  - target: "[[venus-roman]]"
+    type: "substrate-influence"
+    source: "Via Aphrodite — the Roman Venus inherits the Inanna-Ishtar-Aphrodite lineage through the Greek-Roman interpretatio chain"
+    notes: "The deepest single line in the Mediterranean love-goddess transmission: Inanna (-3500) → Ishtar → Astarte → Aphrodite → Venus, traceable across 3500+ years"
+  - target: "[[sophia-gnostic]]"
     type: "structural-parallel-with-typological-transmission"
     source: "Pearson 1984/2007 — Inanna's seven-gated descent through stratified cosmic levels (surrendering a *me* at each gate) is the structural type the Sethian Gnostic Sophia's fall through the aeons inherits. Specific transmission line runs through the Babylonian seven-planet astrological substrate via Hellenistic mediation (Berossus → Hellenistic astrology → Gnostic seven-archon system). See [[theme-mesopotamian-gnostic-transmission]] Chains 4 + 5"
     notes: "MASSIVE-WIN — typological connection via the astrological substrate. Confidence MEDIUM: the descent-pattern parallel is striking; the specific transmission mechanism runs through Mesopotamian astrology rather than direct mythological inheritance"
