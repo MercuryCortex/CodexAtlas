@@ -4,13 +4,12 @@ Eight intra-wedge distribution algorithms for a new View-panel toggle (sibling t
 Color-theme + Family-order). Each preserves the wheel + 36 family wedges; only the
 **(r, ang) assignment inside each wedge** changes.
 
-Implementation site: `src/js/engine/layout/radial.js` Phase 3 ("Place nodes inside
-each wedge", lines ~180–378). The global Phase-4 repulsion pass (lines ~422–569)
-stays shared across all patterns.
+Implementation site: `src/js/engine/layout/radial.js` Phase 3 (lines ~180–378).
+The Phase-4 global repulsion pass (lines ~422–569) stays shared across patterns.
 
-Frame for every section: `arc = w.a1 - w.a0`, `arcUsable = arc - 2·padA`, `rIn/rOut`
-the padded annulus, `i ∈ [0, N)` after age-sort (oldest first). Formulas yield
-`(u, v)` ∈ [-1, 1]² → `ang = w.center + u·arcUsable/2`, `r = rMid + v·radHalf`.
+Frame: `arcUsable = (w.a1 - w.a0) - 2·padA`, padded annulus `[rIn, rOut]`,
+`i ∈ [0,N)` after age-sort (oldest first). Formulas give `(u,v) ∈ [-1,1]²` →
+`ang = w.center + u·arcUsable/2`, `r = rMid + v·radHalf`.
 
 ---
 
@@ -251,16 +250,3 @@ lines, golden-angle is already imported), gives a pure-aesthetic mode for
 screenshots, and provides a non-data-encoded baseline against which the other
 modes' data-readings become legible by contrast.
 
----
-
-## Summary
-
-Report at `~/Desktop/Codex Atlas/00_meta/forge-distribution-patterns-2026-05-22.md`.
-Covers eight intra-wedge distribution algorithms — Vogel sunflower, Fermat/Archimedean
-spiral, Wave-interference grid, Poincaré disk, Concentric age-bands, Voronoi-relaxed
-lattice, Family-tree dendrogram fan, Quasi-crystal Penrose slice — each with a
-formula, the story it tells, visual feel, implementation notes anchored at
-`radial.js` Phase 3 (lines ~180–378), and tradeoffs. Final recommendation: ship
-Concentric Age-Bands, then Wave-Interference, then Vogel Sunflower — cheapest
-+ most scholarly first, John's named request second, free aesthetic baseline
-third.
