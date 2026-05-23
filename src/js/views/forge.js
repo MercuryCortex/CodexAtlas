@@ -5554,10 +5554,45 @@
           + '<span class="forge-legend-name">' + b.title + '</span>'
           + '</div>';
       }).join('');
-      panel.innerHTML = rowsHtml;
+      // Phase 21AT (2026-05-23) — Source-tier legend section. The
+      // five tiers from CODEX §IV. Each row reuses the same vs-tier-
+      // pill styling as the side-panel and view-settings so the
+      // vocabulary is visually identical everywhere. Hover-tooltip
+      // body explains the criterion + example author / school.
+      const TIERS = [
+        { key: 't1', label: 'T1',
+          title: 'Mainstream',
+          body: 'Peer-reviewed mainstream scholarship. Standard academic consensus. The silent default — most edges in the atlas are T1.' },
+        { key: 't2', label: 'T2',
+          title: 'Academic minority',
+          body: 'Contested but legitimate position within the field. Defended in peer-reviewed work by a minority of credentialed scholars. Disagreement is real but inside the academy.' },
+        { key: 't3', label: 'T3',
+          title: 'Alternative school',
+          body: 'Serious, well-researched fringe that mainstream archaeology rejects but engages — Hancock-class. Author cites primary evidence; rejected on interpretation, not on fabrication.' },
+        { key: 't4', label: 'T4',
+          title: 'Popular claim, rejected',
+          body: 'Popular pseudoarchaeology with broad audience reach but no peer-reviewed defense — Sitchin / von Däniken class. Atlas includes for in-graph rebuttal of widely-known claims.' },
+        { key: 't5', label: 'T5',
+          title: 'High-risk · disclaimer required',
+          body: 'Claims with political-risk implications (antisemitic / racist conspiracy adjacency, ethno-nationalist mobilization) — Icke / Evola-political class. OFF by default in view-settings. Opt-in only; tooltip leads with disclaimer.' },
+      ];
+      const tierRowsHtml = TIERS.map(t => (
+        '<div class="forge-legend-row forge-legend-row--tier" data-tier-key="' + t.key + '">'
+        + '<span class="forge-legend-swatch vs-tier-pill vs-tier-pill--' + t.key + '" style="background:transparent">' + t.label + '</span>'
+        + '<span class="forge-legend-name">' + t.title + '</span>'
+        + '</div>'
+      )).join('');
+      panel.innerHTML = ''
+        + '<div class="forge-legend-section">Wire color · type of connection</div>'
+        + rowsHtml
+        + '<div class="forge-legend-divider"></div>'
+        + '<div class="forge-legend-section">Source tier · disclaimer machine</div>'
+        + tierRowsHtml;
       // Map for fast lookup on hover.
       const bodyByKey = Object.create(null);
       for (const b of BUCKETS) bodyByKey[b.key] = b.body;
+      const bodyByTier = Object.create(null);
+      for (const t of TIERS) bodyByTier[t.key] = t.body;
 
       let isOpen = false;
       function openPanel()  {
@@ -5590,8 +5625,13 @@
       // Same for the horizontal axis: if the right side would
       // overflow, place it to the LEFT of the panel instead.
       function showTooltipFor(row) {
-        const key = row.getAttribute('data-bucket');
-        const body = bodyByKey[key];
+        // Phase 21AT (2026-05-23) — the legend now has two row classes:
+        // bucket rows (data-bucket) and tier rows (data-tier-key).
+        // Same tooltip element + positioning logic; only the body
+        // source differs.
+        const bKey = row.getAttribute('data-bucket');
+        const tKey = row.getAttribute('data-tier-key');
+        const body = bKey ? bodyByKey[bKey] : (tKey ? bodyByTier[tKey] : null);
         if (!body) return;
         tooltip.textContent = body;
         // Reveal first so we can measure dimensions.
@@ -6247,17 +6287,15 @@
           // like it belonged to the color, not the relationship.
           const items = data.neighbors.map(n => {
             // Phase 21AS (2026-05-23) — disclaimer-machine row chrome.
-            // T1 rows render as before (the silent mainstream default).
-            // T2-T5 rows render a tier pill after the title; T5 / any
-            // political-risk-flag also gets a ⚠ prefix. The full
-            // citation (source + notes + raw edge type) goes into the
-            // title= browser tooltip so the row stays visually quiet.
+            // Phase 21AT (2026-05-23) — show the tier pill on EVERY
+            // row (T1 included) so the disclaimer system is visible
+            // at a glance. T1 pills render quiet (grey, low contrast)
+            // since mainstream IS the silent default; T2-T5 pills
+            // pop with their color ramp. T5 / political-risk-flag
+            // additionally get a ⚠ prefix.
             const tier   = n.tier || 'T1';
-            const showPill = (tier !== 'T1');
             const risky  = (tier === 'T5') || n.polRisk;
-            const pillHtml = showPill
-              ? '<span class="forge-side-panel-wire-item-tier vs-tier-pill vs-tier-pill--' + tier.toLowerCase() + '">' + tier + '</span>'
-              : '';
+            const pillHtml = '<span class="forge-side-panel-wire-item-tier vs-tier-pill vs-tier-pill--' + tier.toLowerCase() + '">' + tier + '</span>';
             const warnHtml = risky
               ? '<span class="forge-side-panel-wire-item-warn" aria-hidden="true">⚠</span>'
               : '';
