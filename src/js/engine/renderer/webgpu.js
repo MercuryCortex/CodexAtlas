@@ -306,7 +306,10 @@
       // inst_extra.w = hot width.
       // Phase 6d4 — convention flip: state=0 → IDLE, state=1 → HOT.
       // mix(a, b, t) → a*(1-t) + b*t. So mix(idle, hot, state).
-      let world_w_raw = mix(inst_extra.x, inst_extra.w, inst_state);
+      // Phase 21AU (2026-05-23) — also clamp here so HIDDEN (state>=1.5)
+      // doesn't extrapolate the width past hot. Hidden alpha is zeroed
+      // in fs_main, but the geometry still rasterizes — keep widths sane.
+      let world_w_raw = mix(inst_extra.x, inst_extra.w, clamp(inst_state, 0.0, 1.0));
       // Phase 6b: zoom-aware clamp. Convert world width →
       // framebuffer-px (= cam.scale × DPR × world), clamp to
       // [wire_min_screen_px, wire_max_screen_px] (also in FB px),
@@ -325,7 +328,11 @@
       // Phase 6d4 convention flip: state=0 IDLE → behind (z=0.85),
       // state=1 HOT → slightly forward (z=0.75) so a focused
       // incident edge isn't masked by a dimmed neighbour.
-      let z = mix(0.85, 0.75, inst_state);
+      // Phase 21AU (2026-05-23) — clamp state to [0,1] for z (state
+      // values >= 1.5 are the new HIDDEN sentinel; their z must not
+      // be extrapolated past the HOT plane).
+      let z_state = clamp(inst_state, 0.0, 1.0);
+      let z = mix(0.85, 0.75, z_state);
       out.position     = vec4<f32>(ndc, z, 1.0);
       out.edge_y       = quad_vertex.y;
       out.edge_color   = inst_color;
@@ -353,13 +360,20 @@
       // Phase 6d4 convention flip:
       //   state=0 → IDLE (instance color = slate or headline-bucket idle).
       //   state=1 → HOT  (bucket hex at hot alpha).
-      // Linear blend in between for any future fractional state.
-      let color    = mix(in.edge_color, hot, in.state);
+      //   state=2 → HIDDEN (alpha = 0, fragment discarded).
+      // Phase 21AU (2026-05-23) — clamp the state used by the color
+      // and dim mix so values >= 1.5 don't extrapolate past HOT and
+      // produce over-saturated wires. Separately we test state>=1.5
+      // and zero the alpha so the fragment is discarded; this is
+      // the same HIDDEN convention the node shader already uses.
+      let vis_state = clamp(in.state, 0.0, 1.0);
+      let hidden    = step(1.5, in.state);            // 1.0 if HIDDEN, else 0.0
+      let color    = mix(in.edge_color, hot, vis_state);
       // Dim multiplier: idle (state=0) is dimmed by dim_amount
       // when a focus is active. The view layer passes
       // dim_amount = 0 when no focus is active, so the idle
       // constellation isn't attenuated in the no-focus case.
-      let dim_mult = mix(1.0 - v.dim_amount, 1.0, in.state);
+      let dim_mult = mix(1.0 - v.dim_amount, 1.0, vis_state);
       // Directional gradient. Every wire darkens from source
       // (in.edge_t=0) toward target (in.edge_t=1). Eye-readable
       // cue for edge direction; helps separate wires that
@@ -380,7 +394,10 @@
       // makes the wire-end blunt against the disk it terminates
       // into. DO NOT extend grad_mult to alpha.
       let grad_mult = mix(1.0, 0.50, in.edge_t);
-      let a        = color.a * alpha_aa * dim_mult;
+      // Phase 21AU (2026-05-23) — multiply alpha by (1 - hidden) so
+      // state >= 1.5 (HIDDEN, set by the source-tier filter in
+      // forge.js recomputeFocus) goes to alpha=0 and is discarded.
+      let a        = color.a * alpha_aa * dim_mult * (1.0 - hidden);
       // Phase 6d — same discard logic as nodes: AA halo fragments
       // shouldn't write depth, else they block disks behind them.
       if (a < 0.02) { discard; }

@@ -4071,15 +4071,40 @@
       // Phase 21AS (2026-05-23) — source-tier filter. Per CODEX §VII
       // the user can hide entire tiers (T1-T5) via view-settings.
       // Any edge whose source_tier is NOT in the active set is
-      // forced to HIDDEN (state=2.0 → alpha 0 in the wire shader)
-      // regardless of focus / hover state. We apply this AFTER
-      // computeEdgeStates so the HIDDEN override beats focus.
+      // forced to HIDDEN (state=2.0 → alpha 0 in the wire shader,
+      // see Phase 21AU edge-shader patch) regardless of focus or
+      // hover. We apply this AFTER computeEdgeStates so HIDDEN
+      // beats focus.
       const activeTiers = local._activeTiers;
       if (activeTiers && activeTiers.size < 5) {
         const edges = local.mode.edges;
         for (let i = 0; i < edges.length; i++) {
           const tier = edges[i].source_tier || 'T1';
           if (!activeTiers.has(tier)) newTargets[i] = 2.0;
+        }
+      }
+      // Phase 21AU (2026-05-23) — snap edgeStates around HIDDEN
+      // transitions. The fade animation linearly interpolates state
+      // toward target, so 0 → 2 passes through state=1 (HOT) for
+      // ~half the fade window — that would flash every hidden wire
+      // bright orange before it disappears (and the reverse on un-
+      // hide). Solution: for any edge that becomes HIDDEN, snap
+      // both buffers to 2.0; for any edge LEAVING HIDDEN, snap from
+      // 2.0 directly to its new target. Visible→visible transitions
+      // (IDLE ↔ HOT) keep the existing smooth fade.
+      const prevStates = local.edgeStates;
+      if (prevStates && prevStates.length === newTargets.length) {
+        for (let i = 0; i < newTargets.length; i++) {
+          const nextHidden = (newTargets[i] >= 1.5);
+          const prevHidden = (prevStates[i]   >= 1.5);
+          if (nextHidden) {
+            // Entering or staying HIDDEN: snap to 2.0, no fade.
+            prevStates[i] = 2.0;
+          } else if (prevHidden) {
+            // Leaving HIDDEN: snap directly to the new target so
+            // the fade doesn't pass through state=1 HOT.
+            prevStates[i] = newTargets[i];
+          }
         }
       }
       if (!local.edgeTargets || local.edgeTargets.length !== newTargets.length) {
@@ -6287,36 +6312,27 @@
           // like it belonged to the color, not the relationship.
           const items = data.neighbors.map(n => {
             // Phase 21AS (2026-05-23) — disclaimer-machine row chrome.
-            // Phase 21AT (2026-05-23) — show the tier pill on EVERY
-            // row (T1 included) so the disclaimer system is visible
-            // at a glance. T1 pills render quiet (grey, low contrast)
-            // since mainstream IS the silent default; T2-T5 pills
-            // pop with their color ramp. T5 / political-risk-flag
-            // additionally get a ⚠ prefix.
+            // Phase 21AT (2026-05-23) — tier badge on EVERY row.
+            // Phase 21AU (2026-05-23) — store tooltip data on data-*
+            // attrs instead of the title="" attribute. The browser-
+            // native title= tooltip has a ~1.5s delay and ugly OS
+            // chrome; our custom tooltip (see side-panel custom-tip
+            // wiring below) fires at 500ms in atlas dark-glass styling.
             const tier   = n.tier || 'T1';
             const risky  = (tier === 'T5') || n.polRisk;
             const pillHtml = '<span class="forge-side-panel-wire-item-tier vs-tier-pill vs-tier-pill--' + tier.toLowerCase() + '">' + tier + '</span>';
             const warnHtml = risky
               ? '<span class="forge-side-panel-wire-item-warn" aria-hidden="true">⚠</span>'
               : '';
-            // Build the tooltip. Lead with the risk caveat for T5 /
-            // political-risk edges so the user sees the warning before
-            // the claim (per CODEX §IV-T5).
-            const tipParts = [];
-            if (risky) tipParts.push('⚠ Disclaimer required — claim rejected by mainstream / political-risk flag');
-            tipParts.push((n.dir === 'out' ? '→ ' : '← ') + n.title);
-            if (n.edgeType) tipParts.push('type: ' + n.edgeType);
-            tipParts.push('tier: ' + tier);
-            if (n.source) tipParts.push('source: ' + n.source);
-            if (n.notes)  tipParts.push(n.notes);
-            tipParts.push('— Click to lock + inspect.');
-            const tipText = tipParts.join('\n');
-            // Phase 21A2 (2026-05-21) — row order is now
-            // ARROW → DOT → NAME per John's spec. Was DOT →
-            // NAME → ARROW which read backwards visually.
-            // Phase 21AS (2026-05-23) — append optional ⚠ + tier pill
-            // after the title for non-T1 / risky edges.
-            return '<button class="forge-side-panel-wire-item' + (risky ? ' is-risky' : '') + '" data-id="' + safeAttr(n.id) + '" data-tier="' + safeAttr(tier) + '" title="' + safeAttr(tipText) + '">'
+            return '<button class="forge-side-panel-wire-item' + (risky ? ' is-risky' : '') + '"'
+              + ' data-id="' + safeAttr(n.id) + '"'
+              + ' data-tier="' + safeAttr(tier) + '"'
+              + ' data-edge-type="' + safeAttr(n.edgeType || '') + '"'
+              + ' data-edge-source="' + safeAttr(n.source || '') + '"'
+              + ' data-edge-notes="' + safeAttr(n.notes || '') + '"'
+              + ' data-edge-dir="' + safeAttr(n.dir) + '"'
+              + ' data-edge-target-title="' + safeAttr(n.title) + '"'
+              + ' data-edge-risky="' + (risky ? '1' : '0') + '">'
               + '<span class="forge-side-panel-wire-item-dir">' + (n.dir === 'out' ? '→' : '←') + '</span>'
               + '<span class="forge-side-panel-wire-item-dot" style="background:' + safeAttr(n.color) + '"></span>'
               + warnHtml
@@ -6495,6 +6511,132 @@
           renderTabs();
         }
       });
+
+      // ─── Phase 21AU (2026-05-23) — custom side-panel tooltip ──
+      //
+      // Replaces the OS-native title="..." tooltip (ugly + slow,
+      // ~1.5s delay) with an atlas-styled floating box that fires
+      // at 500 ms. The tooltip element is created once and reused;
+      // it lives in document.body so it can escape the side panel
+      // clip + overflow. Position rule: try LEFT of the side panel
+      // first (the panel is right-anchored), fall back to RIGHT if
+      // left would overflow.
+      //
+      // Content per row is read from data-* attrs set in the row
+      // HTML: tier, edge-type, edge-source, edge-notes, edge-dir,
+      // edge-target-title, edge-risky. T5 / political-risk rows
+      // lead with the disclaimer caveat row before the claim.
+      let tipEl = document.getElementById('forge-side-tip');
+      if (!tipEl) {
+        tipEl = document.createElement('div');
+        tipEl.id = 'forge-side-tip';
+        tipEl.className = 'forge-side-tip';
+        tipEl.setAttribute('aria-hidden', 'true');
+        document.body.appendChild(tipEl);
+      }
+      let tipShowTimer = 0;
+      let tipHideTimer = 0;
+      let tipCurrentRow = null;
+      const TIP_DELAY_MS = 500;
+      function escTip(s) {
+        return String(s == null ? '' : s).replace(/[&<>"']/g, c => (
+          { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]
+        ));
+      }
+      function buildTipHtml(row) {
+        const tier   = row.getAttribute('data-tier') || 'T1';
+        const dir    = row.getAttribute('data-edge-dir') === 'out' ? '→' : '←';
+        const target = row.getAttribute('data-edge-target-title') || '';
+        const type   = row.getAttribute('data-edge-type') || '';
+        const src    = row.getAttribute('data-edge-source') || '';
+        const notes  = row.getAttribute('data-edge-notes') || '';
+        const risky  = row.getAttribute('data-edge-risky') === '1';
+        const tierClass = 'vs-tier-pill--' + tier.toLowerCase();
+        let html = '';
+        if (risky) {
+          html += '<div class="forge-side-tip-risk">⚠ Disclaimer required — claim rejected by mainstream / political-risk flag</div>';
+        }
+        html += '<div class="forge-side-tip-head">'
+          +    '<span class="forge-side-tip-dir">' + dir + '</span>'
+          +    '<span class="forge-side-tip-title">' + escTip(target) + '</span>'
+          +    '<span class="vs-tier-pill ' + tierClass + '">' + escTip(tier) + '</span>'
+          +    '</div>';
+        if (type) {
+          html += '<div class="forge-side-tip-row"><span class="k">type</span><span class="v">' + escTip(type) + '</span></div>';
+        }
+        if (src) {
+          html += '<div class="forge-side-tip-row"><span class="k">source</span><span class="v">' + escTip(src) + '</span></div>';
+        }
+        if (notes) {
+          html += '<div class="forge-side-tip-notes">' + escTip(notes) + '</div>';
+        }
+        html += '<div class="forge-side-tip-hint">Click to lock + inspect</div>';
+        return html;
+      }
+      function positionTip(row) {
+        // Measure once visible — display block already; just need rect.
+        const rRow = row.getBoundingClientRect();
+        const rTip = tipEl.getBoundingClientRect();
+        const margin = 10;
+        // Default to LEFT of the row (side panel is on the right).
+        // If that would overflow off-screen left, fall back to RIGHT.
+        let left = rRow.left - rTip.width - margin;
+        if (left < margin) left = rRow.right + margin;
+        // Clamp horizontally so we never paint off-screen right.
+        if (left + rTip.width + margin > window.innerWidth) {
+          left = Math.max(margin, window.innerWidth - rTip.width - margin);
+        }
+        // Vertical: align top of tip with top of row, clamp to fit.
+        let top = rRow.top;
+        if (top + rTip.height + margin > window.innerHeight) {
+          top = window.innerHeight - rTip.height - margin;
+        }
+        if (top < margin) top = margin;
+        tipEl.style.left = left + 'px';
+        tipEl.style.top  = top  + 'px';
+      }
+      function showTipFor(row) {
+        tipCurrentRow = row;
+        tipEl.innerHTML = buildTipHtml(row);
+        tipEl.setAttribute('data-tier', row.getAttribute('data-tier') || 'T1');
+        tipEl.setAttribute('data-risky', row.getAttribute('data-edge-risky') === '1' ? '1' : '0');
+        tipEl.classList.add('is-visible');
+        tipEl.setAttribute('aria-hidden', 'false');
+        positionTip(row);
+      }
+      function hideTip() {
+        tipEl.classList.remove('is-visible');
+        tipEl.setAttribute('aria-hidden', 'true');
+        tipCurrentRow = null;
+      }
+      inner.addEventListener('mouseover', (e) => {
+        const row = e.target.closest('.forge-side-panel-wire-item');
+        if (!row || row === tipCurrentRow) return;
+        if (tipShowTimer) { clearTimeout(tipShowTimer); tipShowTimer = 0; }
+        if (tipHideTimer) { clearTimeout(tipHideTimer); tipHideTimer = 0; }
+        tipShowTimer = setTimeout(() => {
+          tipShowTimer = 0;
+          showTipFor(row);
+        }, TIP_DELAY_MS);
+      });
+      inner.addEventListener('mouseout', (e) => {
+        const row = e.target.closest('.forge-side-panel-wire-item');
+        if (!row) return;
+        if (tipShowTimer) { clearTimeout(tipShowTimer); tipShowTimer = 0; }
+        // Short defer so moving from one row to another doesn't
+        // flash the tip out + back in — let the next mouseover
+        // cancel the hide.
+        if (tipHideTimer) { clearTimeout(tipHideTimer); }
+        tipHideTimer = setTimeout(() => {
+          tipHideTimer = 0;
+          hideTip();
+        }, 80);
+      });
+      // Hide on any scroll inside the panel (the row moved).
+      inner.addEventListener('scroll', hideTip, true);
+      // Hide on click — the panel's about to re-render and the
+      // old tip would be orphaned.
+      inner.addEventListener('click', hideTip, true);
     }
 
     function wireTimelineScrubber() {

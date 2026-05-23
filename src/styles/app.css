@@ -6751,6 +6751,13 @@ details.forge-side-panel-wire[open] .forge-side-panel-wire-caret {
   align-items: center;
   gap: 8px;
   width: 100%;
+  /* Phase 21AU (2026-05-23) — min-width:0 on the flex container so
+     a long child title can shrink past its content size, which is
+     what allows the title's text-overflow: ellipsis to fire BEFORE
+     the trailing tier badge gets pushed past the panel right edge.
+     Without this, items with long names like "Enki (Sumerian) / Ea
+     (Akkadian)" overflowed the panel and the T1 badge was clipped. */
+  min-width: 0;
   background: transparent;
   border: 0;
   padding: 4px 6px;
@@ -6776,6 +6783,11 @@ details.forge-side-panel-wire[open] .forge-side-panel-wire-caret {
 }
 .forge-side-panel-wire-item-title {
   flex: 1 1 auto;
+  /* Required for text-overflow: ellipsis to take effect inside a
+     flex item. The default min-width is "auto" (= content size),
+     which prevents shrinking. min-width: 0 lets the title actually
+     reach the ellipsis threshold instead of pushing siblings out. */
+  min-width: 0;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
@@ -6804,6 +6816,118 @@ details.forge-side-panel-wire[open] .forge-side-panel-wire-caret {
 }
 .forge-side-panel-wire-item.is-risky:hover {
   background: rgba(226,91,91,0.10);
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   Phase 21AU (2026-05-23) — Side-panel connection tooltip
+   ═══════════════════════════════════════════════════════════════
+   Custom tooltip that fires on side-panel connection-row hover
+   after a 500ms dwell. Replaces the OS-native title="" tooltip
+   (~1.5s delay, ugly OS chrome). Same dark-glass aesthetic as
+   the legend tooltip + the hover card. Lives in document.body
+   so it can escape the side panel's overflow-hidden clip.
+   ═══════════════════════════════════════════════════════════════ */
+.forge-side-tip {
+  position: fixed;
+  z-index: 280;
+  max-width: 320px;
+  min-width: 200px;
+  background: rgba(13, 17, 25, 0.97);
+  border: 1px solid var(--border, #2a2e3a);
+  border-radius: 6px;
+  padding: 8px 10px;
+  box-shadow: 0 6px 24px rgba(0,0,0,0.55);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  color: var(--text-1, #e5e7eb);
+  font-family: var(--mono, "JetBrains Mono", Menlo, monospace);
+  font-size: 11px;
+  line-height: 1.45;
+  letter-spacing: 0.02em;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.12s ease;
+  pointer-events: none;
+}
+.forge-side-tip.is-visible {
+  opacity: 1;
+  visibility: visible;
+}
+/* Risky tier — red top border accent so the disclaimer is visually
+   pre-announced even before the user reads the caveat. */
+.forge-side-tip[data-risky="1"] {
+  border-top: 2px solid #e25b5b;
+  padding-top: 7px;
+}
+.forge-side-tip-risk {
+  color: #e25b5b;
+  font-size: 10px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  margin-bottom: 6px;
+  padding-bottom: 6px;
+  border-bottom: 1px solid rgba(226,91,91,0.20);
+}
+.forge-side-tip-head {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-bottom: 6px;
+}
+.forge-side-tip-dir {
+  color: var(--text-3, #6b7280);
+  font-size: 12px;
+  flex: 0 0 auto;
+}
+.forge-side-tip-title {
+  flex: 1 1 auto;
+  min-width: 0;
+  font-weight: 600;
+  color: var(--gold-1, #e8c889);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.forge-side-tip-row {
+  display: flex;
+  gap: 8px;
+  padding: 2px 0;
+  font-size: 10.5px;
+}
+.forge-side-tip-row .k {
+  color: var(--text-3, #6b7280);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-size: 9px;
+  min-width: 48px;
+  flex: 0 0 auto;
+  padding-top: 2px;
+}
+.forge-side-tip-row .v {
+  color: var(--text-2, #b5b9c5);
+  flex: 1 1 auto;
+  word-break: break-word;
+}
+.forge-side-tip-notes {
+  margin-top: 6px;
+  padding-top: 6px;
+  border-top: 1px solid var(--border, #2a2e3a);
+  color: var(--text-2, #b5b9c5);
+  font-size: 10.5px;
+  font-style: italic;
+  font-family: var(--sans, Inter, sans-serif);
+  letter-spacing: 0;
+  line-height: 1.5;
+}
+.forge-side-tip-hint {
+  margin-top: 8px;
+  padding-top: 6px;
+  border-top: 1px dashed rgba(255,255,255,0.06);
+  color: var(--text-3, #6b7280);
+  font-size: 9px;
+  text-transform: uppercase;
+  letter-spacing: 0.10em;
 }
 /* Phase 21A2 (2026-05-21) — direction arrow LEADS the row per
    John's spec: `[arrow] [color-dot] [name…]`. The arrow now
