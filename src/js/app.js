@@ -666,48 +666,229 @@ window.setView = setView;
 
   function buildMenu() {
     const html = [];
-    // Top-level items live directly under .nav-inner; the
-    // expandable "More views" group has them inside
-    // .nav-more-body. We render everything as a flat list with
-    // section headings for clarity.
-    const navInner = document.querySelector('nav.side .nav-inner');
-    if (!navInner) return;
-    // First pass — top-level items outside <details>
-    navInner.querySelectorAll(':scope > .item').forEach(srcItem => {
-      const view = srcItem.dataset.view;
-      const sym  = (srcItem.querySelector('.sym') || {}).textContent || '';
-      const lbl  = (srcItem.querySelector('.lbl') || {}).textContent || '';
+    // Phase 22-D (2026-05-23) — Preferences drawer scope. The
+    // left-icon menu was a flat list of every legacy view; now it
+    // reads as a Codex Atlas account / settings drawer with the
+    // legacy view list demoted to an "Old prototypes (reference)"
+    // section. Architecture: same nh-* primitive (no new CSS
+    // primitives — see CODEX style-guide rule), just new section
+    // groupings + 4 new action items (login, statement, shop,
+    // about) wired via separate data-action attributes that the
+    // click handler routes by name.
+
+    // ── HEADER ─────────────────────────────────────────────
+    html.push(
+      '<div class="nh-header">' +
+        '<span class="nh-header-glyph">✦</span>' +
+        '<div class="nh-header-text">' +
+          '<div class="nh-header-title">Codex Atlas</div>' +
+          '<div class="nh-header-subtitle">an investigation tool</div>' +
+        '</div>' +
+      '</div>'
+    );
+
+    // ── ACCOUNT ────────────────────────────────────────────
+    const acct = readAccount();
+    html.push('<div class="nh-section">Account</div>');
+    if (acct && acct.signedIn) {
       html.push(
-        '<div class="nh-item" data-view="' + view + '" role="menuitem">' +
-          '<span class="nh-sym">' + sym + '</span>' +
-          '<span class="nh-lbl">' + lbl + '</span>' +
+        '<div class="nh-item" data-action="account-status" role="menuitem">' +
+          '<span class="nh-sym">●</span>' +
+          '<span class="nh-lbl">Signed in</span>' +
+          '<span class="nh-meta">' + escapeHtml(acct.displayName || 'guest') + '</span>' +
+        '</div>',
+        '<div class="nh-item" data-action="sign-out" role="menuitem">' +
+          '<span class="nh-sym">⇲</span>' +
+          '<span class="nh-lbl">Sign out</span>' +
         '</div>'
       );
-    });
-    // Second pass — sections inside <details class="nav-more">
-    const moreBody = navInner.querySelector('.nav-more-body');
-    if (moreBody) {
+    } else {
+      html.push(
+        '<div class="nh-item" data-action="sign-in" role="menuitem">' +
+          '<span class="nh-sym">⇱</span>' +
+          '<span class="nh-lbl">Sign in / Sign up</span>' +
+          '<span class="nh-meta">stub</span>' +
+        '</div>'
+      );
+    }
+
+    // ── ATLAS ──────────────────────────────────────────────
+    html.push('<div class="nh-divider"></div>');
+    html.push('<div class="nh-section">Atlas</div>');
+    html.push(
+      '<div class="nh-item" data-action="atlas-statement" role="menuitem">' +
+        '<span class="nh-sym">§</span>' +
+        '<span class="nh-lbl">Atlas Statement</span>' +
+        '<span class="nh-meta">CODEX</span>' +
+      '</div>',
+      '<div class="nh-item" data-action="codex-shop" role="menuitem">' +
+        '<span class="nh-sym">⛀</span>' +
+        '<span class="nh-lbl">Codex Shop</span>' +
+        '<span class="nh-meta">soon</span>' +
+      '</div>'
+    );
+
+    // ── OLD PROTOTYPES (reference) ─────────────────────────
+    // The flat view list from the legacy nav. Forge is the live
+    // master view (already in the top-pill); every other entry is
+    // kept here for reference. Mark Forge with "→ pill" so the user
+    // sees where the current master views live now.
+    const navInner = document.querySelector('nav.side .nav-inner');
+    if (navInner) {
       html.push('<div class="nh-divider"></div>');
-      moreBody.childNodes.forEach(node => {
-        if (node.nodeType !== 1) return;
-        if (node.classList.contains('section-label')) {
-          const lbl = (node.querySelector('.lbl') || {}).textContent || '';
-          html.push('<div class="nh-section">' + lbl + '</div>');
-        } else if (node.classList.contains('item')) {
-          const view = node.dataset.view;
-          const sym  = (node.querySelector('.sym') || {}).textContent || '';
-          const lbl  = (node.querySelector('.lbl') || {}).textContent || '';
-          html.push(
-            '<div class="nh-item" data-view="' + view + '" role="menuitem">' +
-              '<span class="nh-sym">' + sym + '</span>' +
-              '<span class="nh-lbl">' + lbl + '</span>' +
-            '</div>'
-          );
+      html.push('<div class="nh-section">Old prototypes <em class="nh-section-em">(reference)</em></div>');
+      // Forge stays accessible here too — but tagged so the user
+      // understands it's the same as the FORGE pill at top.
+      navInner.querySelectorAll(':scope > .item').forEach(srcItem => {
+        const view = srcItem.dataset.view;
+        const sym  = (srcItem.querySelector('.sym') || {}).textContent || '';
+        const lbl  = (srcItem.querySelector('.lbl') || {}).textContent || '';
+        const isForge = view === 'forge';
+        html.push(
+          '<div class="nh-item' + (isForge ? ' nh-item--live' : '') + '" data-view="' + view + '" role="menuitem">' +
+            '<span class="nh-sym">' + sym + '</span>' +
+            '<span class="nh-lbl">' + lbl + '</span>' +
+            (isForge ? '<span class="nh-meta">live</span>' : '') +
+          '</div>'
+        );
+      });
+      const moreBody = navInner.querySelector('.nav-more-body');
+      if (moreBody) {
+        moreBody.childNodes.forEach(node => {
+          if (node.nodeType !== 1) return;
+          if (node.classList.contains('section-label')) {
+            const lbl = (node.querySelector('.lbl') || {}).textContent || '';
+            html.push('<div class="nh-subsection">' + lbl + '</div>');
+          } else if (node.classList.contains('item')) {
+            const view = node.dataset.view;
+            const sym  = (node.querySelector('.sym') || {}).textContent || '';
+            const lbl  = (node.querySelector('.lbl') || {}).textContent || '';
+            html.push(
+              '<div class="nh-item" data-view="' + view + '" role="menuitem">' +
+                '<span class="nh-sym">' + sym + '</span>' +
+                '<span class="nh-lbl">' + lbl + '</span>' +
+              '</div>'
+            );
+          }
+        });
+      }
+    }
+
+    // ── ABOUT ──────────────────────────────────────────────
+    html.push('<div class="nh-divider"></div>');
+    html.push('<div class="nh-section">About</div>');
+    const counts = (window.VAULT_DATA && window.VAULT_DATA.counts) || {};
+    const nodeTotal = (window.VAULT_DATA && window.VAULT_DATA.nodes && window.VAULT_DATA.nodes.length) || 0;
+    const edgeTotal = (window.VAULT_DATA && window.VAULT_DATA.edges && window.VAULT_DATA.edges.length) || 0;
+    html.push(
+      '<div class="nh-stats">' +
+        '<div class="nh-stat-row"><span class="nh-stat-k">Nodes</span><span class="nh-stat-v">' + nodeTotal + '</span></div>' +
+        '<div class="nh-stat-row"><span class="nh-stat-k">Edges</span><span class="nh-stat-v">' + edgeTotal + '</span></div>' +
+        '<div class="nh-stat-row"><span class="nh-stat-k">Deities</span><span class="nh-stat-v">' + (counts.deity || 0) + '</span></div>' +
+        '<div class="nh-stat-row"><span class="nh-stat-k">Authors</span><span class="nh-stat-v">' + (counts.person || 0) + '</span></div>' +
+      '</div>'
+    );
+
+    menu.innerHTML = html.join('');
+    updateActive();
+  }
+
+  // ── ACCOUNT STUB ─────────────────────────────────────────
+  // Auth backend is future work — for now the drawer stores
+  // signed-in state + display name in LS. UI behaves identically
+  // to a real auth flow so the wiring is testable; the actual
+  // server-side identity check plugs in later (per CODEX §IX
+  // trusted-subscriber path).
+  const ACCT_KEY = 'codex-atlas/account-v1';
+  function readAccount() {
+    try {
+      const raw = localStorage.getItem(ACCT_KEY);
+      if (raw) return JSON.parse(raw);
+    } catch (_) {}
+    return { signedIn: false };
+  }
+  function writeAccount(a) {
+    try { localStorage.setItem(ACCT_KEY, JSON.stringify(a)); } catch (_) {}
+  }
+  function escapeHtml(s) {
+    return String(s == null ? '' : s).replace(/[&<>"']/g, c => (
+      { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]
+    ));
+  }
+
+  // ── ATLAS STATEMENT MODAL ────────────────────────────────
+  // Renders CODEX §I-V (Posture · Disclaimer Machine · 21-Type
+  // Edge Vocabulary · 5-Tier Source System · Two-Axes risk axis
+  // · Rejection list). Inline text — fetch() would 404 on file://
+  // and break the modal (per feedback_atlas_needs_http_server
+  // memory + the audit's §6 D-CODEX risk).
+  function openAtlasStatement() {
+    let modal = document.getElementById('codex-statement-modal');
+    if (!modal) {
+      modal = document.createElement('div');
+      modal.id = 'codex-statement-modal';
+      modal.className = 'codex-modal';
+      modal.innerHTML =
+        '<div class="codex-modal-backdrop" data-codex-close="1"></div>' +
+        '<div class="codex-modal-card" role="dialog" aria-labelledby="codex-modal-title">' +
+          '<button class="codex-modal-close" data-codex-close="1" aria-label="Close">×</button>' +
+          '<h1 class="codex-modal-title" id="codex-modal-title">Atlas Statement</h1>' +
+          '<div class="codex-modal-sub">An investigation tool. We surface; we cite; we tier; we never assert.</div>' +
+          '<div class="codex-modal-body">' + atlasStatementHtml() + '</div>' +
+        '</div>';
+      document.body.appendChild(modal);
+      modal.addEventListener('click', (ev) => {
+        if (ev.target.getAttribute('data-codex-close') === '1') {
+          modal.classList.remove('is-open');
+        }
+      });
+      document.addEventListener('keydown', (ev) => {
+        if (ev.key === 'Escape' && modal.classList.contains('is-open')) {
+          modal.classList.remove('is-open');
         }
       });
     }
-    menu.innerHTML = html.join('');
-    updateActive();
+    modal.classList.add('is-open');
+  }
+  function atlasStatementHtml() {
+    // CODEX §I-V condensed for user-facing display. Full text lives
+    // in 00_meta/CODEX.md; this is the public-readable abstract.
+    return [
+      '<h2>I — Posture</h2>',
+      '<p>The vault has three rules of stance:</p>',
+      '<ol>',
+        '<li><b>Investigation, not advocacy.</b> We surface the connections, name what kind of connection they are, cite the source. We do not endorse the source\'s theology.</li>',
+        '<li><b>Pluralism, not orthodoxy.</b> Multiple academic frameworks coexist (Smith / Assmann / Parker / Dumézil / Doniger). We do not adopt any single one as authoritative.</li>',
+        '<li><b>Disclosure, not concealment.</b> Widely-circulated claims that mainstream rejects (Hancock\'s pre-13,000-BCE civilization, Sitchin\'s Nibiru, Schoch\'s Sphinx) are INCLUDED — labeled with their tier and shown alongside the academic rebuttal. Pretending they don\'t exist lets them circulate unrebutted in the world.</li>',
+      '</ol>',
+      '<h2>II — The Disclaimer Machine</h2>',
+      '<p>Every cross-tradition wire surfaces three pieces of information:</p>',
+      '<table class="codex-modal-table"><tbody>',
+        '<tr><th>type</th><td>The KIND of claim — identity / borrowing / cognate / parallel / polemic.</td></tr>',
+        '<tr><th>source</th><td>WHO is making the claim — ancient writer, modern scholar, tradition itself.</td></tr>',
+        '<tr><th>tier</th><td>HOW STRONG the source is — T1 mainstream → T5 disclaimer-required.</td></tr>',
+        '<tr><th>notes</th><td>Scholarship nuance. Mainstream rebuttal for T3/T4. Political-risk source for T5.</td></tr>',
+      '</tbody></table>',
+      '<p class="codex-modal-aside">The reader hovers a wire. Sees the type. Sees the source. Sees the tier. Decides.</p>',
+      '<h2>III — The 5-Tier Source System</h2>',
+      '<table class="codex-modal-table"><tbody>',
+        '<tr><th>T1</th><td>Mainstream peer-reviewed scholarship — silent default</td></tr>',
+        '<tr><th>T2</th><td>Academic minority view — contested but legitimate in field</td></tr>',
+        '<tr><th>T3</th><td>Alternative-school — serious fringe (Hancock-class), engaged by mainstream</td></tr>',
+        '<tr><th>T4</th><td>Popular claim, rejected — broad reach + no peer-reviewed defense (Sitchin-class)</td></tr>',
+        '<tr><th>T5</th><td>Disclaimer-required — opt-in only (Icke, Evola, racial-mysticism reception)</td></tr>',
+      '</tbody></table>',
+      '<h2>IV — Two Orthogonal Axes</h2>',
+      '<p>Tier measures <i>intellectual mainstream-acceptance</i>. <b>Political-risk-flag</b> measures <i>real-world harm-wiring</i> — independently of tier. They compose with AND in the disclaimer machine; the high-alert ⛔ chrome lights up on real-world-harm content regardless of tier.</p>',
+      '<h2>V — What We Reject</h2>',
+      '<ul>',
+        '<li><b>Eliade-style telescope identification.</b> "All sun-gods are X" — dismantled by J.Z. Smith\'s <i>Drudgery Divine</i> (1990). Route via scholarly-parallel with a notes-flag, never as same-as.</li>',
+        '<li><b>Mainstream-only orthodoxy.</b> Refusing to include T3 claims because mainstream rejects them is its own doctrinal lock-in.</li>',
+        '<li><b>Single-school doctrine.</b> No single academic framework is canon.</li>',
+        '<li><b>Asserting claims without citation.</b> Every edge has a source.</li>',
+      '</ul>',
+      '<p class="codex-modal-aside">Full text: <code>00_meta/CODEX.md</code> in the vault.</p>',
+    ].join('');
   }
 
   function updateActive() {
@@ -738,6 +919,43 @@ window.setView = setView;
   menu.addEventListener('click', (ev) => {
     const item = ev.target.closest('.nh-item');
     if (!item) return;
+    // Phase 22-D — route by action FIRST (account / atlas-statement
+    // / codex-shop / sign-in / sign-out); fall through to data-view
+    // for the legacy "Old prototypes" entries.
+    const action = item.dataset.action;
+    if (action === 'sign-in') {
+      const name = prompt('Display name (auth backend is a stub for now):');
+      if (name && name.trim()) {
+        writeAccount({ signedIn: true, displayName: name.trim(), at: Date.now() });
+        buildMenu();  // rebuild so the section flips to signed-in state
+      }
+      return;
+    }
+    if (action === 'sign-out') {
+      writeAccount({ signedIn: false });
+      buildMenu();
+      return;
+    }
+    if (action === 'atlas-statement') {
+      openAtlasStatement();
+      close();
+      return;
+    }
+    if (action === 'codex-shop') {
+      // Placeholder — no shop exists yet.
+      const span = item.querySelector('.nh-meta');
+      if (span) {
+        const orig = span.textContent;
+        span.textContent = 'not built yet';
+        setTimeout(() => { if (span) span.textContent = orig; }, 1400);
+      }
+      return;
+    }
+    if (action === 'account-status') {
+      // Click on the "Signed in · name" row is a no-op — info only.
+      return;
+    }
+    // Legacy view item.
     const v = item.dataset.view;
     if (v) {
       try { setView(v); } catch (e) { console.warn('nav-hub setView failed', e); }

@@ -511,6 +511,213 @@ body.nav-hidden .side-tab { display: none !important; }
 }
 
 /* ════════════════════════════════════════════════════════════════
+   Phase 22-D (2026-05-23) — Preferences drawer chrome
+   ════════════════════════════════════════════════════════════════
+   The nav-hub-menu now carries the Preferences drawer (header,
+   account, atlas, old-prototypes, about). Same .nh-item primitive
+   as the legacy view list — additive rules for header + section
+   metadata + stats block.
+   ════════════════════════════════════════════════════════════════ */
+.nav-hub-menu { width: 280px; }   /* widen slightly for two-line items */
+.nav-hub-menu .nh-header {
+  display: flex; align-items: center; gap: 10px;
+  padding: 12px 14px 8px;
+  border-bottom: 1px solid rgba(212,165,90,0.10);
+  margin-bottom: 4px;
+}
+.nav-hub-menu .nh-header-glyph {
+  font-size: 22px;
+  color: var(--gold, #d4a55a);
+  text-shadow: 0 0 6px rgba(212,165,90,0.30);
+}
+.nav-hub-menu .nh-header-title {
+  font-family: var(--mono, "JetBrains Mono", Menlo, monospace);
+  font-size: 12px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--gold-1, #e8c889);
+}
+.nav-hub-menu .nh-header-subtitle {
+  font-family: var(--sans, Inter, sans-serif);
+  font-size: 10px;
+  font-style: italic;
+  color: var(--text-3, #6b7280);
+  margin-top: 1px;
+}
+.nav-hub-menu .nh-section-em {
+  font-style: normal;
+  font-size: 9px;
+  color: var(--text-3, #6b7280);
+  letter-spacing: 0.06em;
+  text-transform: none;
+  margin-left: 4px;
+}
+.nav-hub-menu .nh-subsection {
+  font-family: var(--mono, "JetBrains Mono", Menlo, monospace);
+  font-size: 9px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--text-3, #6b7280);
+  padding: 8px 16px 2px;
+  opacity: 0.7;
+}
+.nav-hub-menu .nh-meta {
+  flex: 0 0 auto;
+  font-family: var(--mono, "JetBrains Mono", Menlo, monospace);
+  font-size: 9px;
+  letter-spacing: 0.10em;
+  text-transform: uppercase;
+  color: var(--text-3, #6b7280);
+  padding: 1px 5px;
+  border: 1px solid rgba(255,255,255,0.10);
+  border-radius: 2px;
+  margin-left: auto;
+}
+.nav-hub-menu .nh-item--live .nh-meta {
+  color: var(--gold-1, #e8c889);
+  border-color: rgba(212,165,90,0.45);
+  background: rgba(212,165,90,0.10);
+}
+.nav-hub-menu .nh-stats {
+  padding: 6px 16px 10px;
+  font-family: var(--mono, "JetBrains Mono", Menlo, monospace);
+  font-size: 10.5px;
+}
+.nav-hub-menu .nh-stat-row {
+  display: flex; justify-content: space-between;
+  padding: 2px 0;
+  color: var(--text-2, #9099a8);
+}
+.nav-hub-menu .nh-stat-k {
+  text-transform: uppercase;
+  letter-spacing: 0.10em;
+  font-size: 9px;
+  color: var(--text-3, #6b7280);
+  padding-top: 1px;
+}
+.nav-hub-menu .nh-stat-v {
+  color: var(--gold-1, #e8c889);
+  font-variant-numeric: tabular-nums;
+}
+
+/* ════════════════════════════════════════════════════════════════
+   Phase 22-D (2026-05-23) — Atlas Statement modal
+   ════════════════════════════════════════════════════════════════
+   Centered overlay modal — backdrop blurs the wheel; the card
+   carries CODEX §I-V abstract. Same dark-glass chrome contract as
+   .forge-side-tip / .forge-side-panel — no new visual primitive.
+   ════════════════════════════════════════════════════════════════ */
+.codex-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 300;
+  display: none;
+}
+.codex-modal.is-open { display: block; }
+.codex-modal-backdrop {
+  position: absolute; inset: 0;
+  background: rgba(8, 11, 17, 0.74);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+.codex-modal-card {
+  position: relative;
+  max-width: 680px;
+  width: calc(100vw - 48px);
+  max-height: calc(100vh - 80px);
+  margin: 40px auto;
+  padding: 32px 40px 28px;
+  background: rgba(13,17,25,0.96);
+  border: 1px solid rgba(212,165,90,0.28);
+  border-radius: 14px;
+  box-shadow: 0 18px 56px rgba(0,0,0,0.55);
+  overflow-y: auto;
+  color: var(--text-1, #e5e7eb);
+  font-family: var(--sans, Inter, sans-serif);
+  line-height: 1.55;
+  font-size: 13.5px;
+}
+.codex-modal-close {
+  position: absolute; top: 12px; right: 14px;
+  width: 30px; height: 30px;
+  background: transparent;
+  border: 0;
+  color: var(--text-3, #6b7280);
+  font-size: 22px; line-height: 1;
+  cursor: pointer;
+  transition: color 100ms ease;
+}
+.codex-modal-close:hover { color: var(--gold, #d4a55a); }
+.codex-modal-title {
+  margin: 0 0 4px;
+  font-family: var(--mono, "JetBrains Mono", Menlo, monospace);
+  font-size: 14px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--gold-1, #e8c889);
+}
+.codex-modal-sub {
+  font-family: var(--sans, Inter, sans-serif);
+  font-style: italic;
+  font-size: 12px;
+  color: var(--text-3, #6b7280);
+  margin-bottom: 24px;
+}
+.codex-modal-body h2 {
+  font-family: var(--mono, "JetBrains Mono", Menlo, monospace);
+  font-size: 11px;
+  letter-spacing: 0.20em;
+  text-transform: uppercase;
+  color: var(--gold, #d4a55a);
+  margin: 28px 0 10px;
+}
+.codex-modal-body p { margin: 0 0 12px; }
+.codex-modal-body ol,
+.codex-modal-body ul { margin: 0 0 12px; padding-left: 22px; }
+.codex-modal-body li { margin-bottom: 8px; }
+.codex-modal-body b { color: var(--gold-1, #e8c889); font-weight: 600; }
+.codex-modal-body i { color: var(--text-2, #b5b9c5); font-style: italic; }
+.codex-modal-body code {
+  font-family: var(--mono, "JetBrains Mono", Menlo, monospace);
+  font-size: 12px;
+  color: var(--gold-1, #e8c889);
+  background: rgba(212,165,90,0.06);
+  padding: 1px 5px;
+  border-radius: 3px;
+}
+.codex-modal-table {
+  width: 100%; border-collapse: collapse;
+  margin: 6px 0 14px;
+  font-size: 12.5px;
+}
+.codex-modal-table th {
+  text-align: left; vertical-align: top;
+  padding: 6px 12px 6px 0;
+  font-family: var(--mono, "JetBrains Mono", Menlo, monospace);
+  font-size: 10.5px;
+  letter-spacing: 0.10em;
+  text-transform: uppercase;
+  color: var(--gold, #d4a55a);
+  width: 92px;
+  border-top: 1px solid rgba(212,165,90,0.10);
+}
+.codex-modal-table td {
+  padding: 6px 0;
+  color: var(--text-2, #b5b9c5);
+  border-top: 1px solid rgba(212,165,90,0.10);
+}
+.codex-modal-aside {
+  margin-top: 18px;
+  padding: 10px 14px;
+  background: rgba(212,165,90,0.06);
+  border-left: 2px solid rgba(212,165,90,0.35);
+  border-radius: 0 6px 6px 0;
+  font-size: 12px;
+  color: var(--text-2, #b5b9c5);
+  font-style: italic;
+}
+
+/* ════════════════════════════════════════════════════════════════
    Phase 22-A (2026-05-23) — APP-SHELL TOP-BAR PILL (SCAFFOLD)
    ════════════════════════════════════════════════════════════════
    The elegant dual-pill that lives at the app shell level, on every
