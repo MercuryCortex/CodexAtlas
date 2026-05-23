@@ -811,6 +811,39 @@ body.fv-hide-wires         .forge-canvas { /* the actual hide is renderer-side: 
 }
 .forge-viewset-row--high-risk em { color: rgba(226,91,91,0.65); }
 
+/* ═══════════════════════════════════════════════════════════════
+   Phase 21AX (2026-05-23) — CODEX v1.2 — ⛔ BLACK ALERT toggle
+   ═══════════════════════════════════════════════════════════════
+   The political-risk toggle is ORTHOGONAL to the tier system. It
+   uses BLACK + RED chrome (not the soft red of T5 alone) so the
+   row reads as a separate, higher-severity opt-in surface.
+   See 00_meta/CODEX.md §IV.5.
+   ═══════════════════════════════════════════════════════════════ */
+.forge-viewset-row--black-alert {
+  border-top: 2px solid rgba(226,91,91,0.65);
+  margin-top: 4px;
+  background: rgba(226,91,91,0.05);
+}
+.forge-viewset-row--black-alert:hover { background: rgba(226,91,91,0.12); }
+.forge-viewset-row--black-alert em { color: rgba(226,91,91,0.80); }
+.vs-alert-badge {
+  display: inline-block;
+  font-size: 14px;
+  line-height: 1;
+  flex: 0 0 auto;
+  color: #e25b5b;
+  text-shadow: 0 0 4px rgba(226,91,91,0.45);
+}
+/* Active state — when politicalRisk is ON, the row is "armed". */
+.forge-viewset-row--black-alert.is-on {
+  background: rgba(226,91,91,0.18);
+  color: #ffd5d5;
+}
+.forge-viewset-row--black-alert.is-on .vs-check {
+  background: #e25b5b;
+  border-color: #e25b5b;
+}
+
 /* ── Phase 21B (2026-05-21) — Search autocomplete (drop-up) ── */
 .forge-search-wrap {
   position: relative;
@@ -6851,6 +6884,32 @@ details.forge-side-panel-wire[open] .forge-side-panel-wire-caret {
 .forge-side-panel-wire-item.is-risky:hover {
   background: rgba(226,91,91,0.10);
 }
+/* Phase 21AX (2026-05-23) — CODEX v1.2 — ⛔ BLACK ALERT row chrome.
+   The political-risk-flag is ORTHOGONAL to the tier system; this
+   class fires on `political_risk_flag: true` regardless of tier.
+   Visual escalation co-equal with the soft .is-risky treatment:
+   - 4px BLACK left border (high-contrast at scan-level)
+   - Stronger red row background (full opacity, not faint)
+   - Black ⛔ icon coloring with red glow
+   Both .is-risky AND .is-black-alert can co-occur (e.g. Icke is
+   both T5 and political-risk); the rules cascade — .is-black-alert
+   wins the visual conflict because it's the higher-severity axis. */
+.forge-side-panel-wire-item.is-black-alert {
+  border-left: 4px solid #000;
+  background: rgba(226,91,91,0.10);
+  padding-left: 3px;     /* offset the 4px border so content doesn't shift */
+}
+.forge-side-panel-wire-item.is-black-alert:hover {
+  background: rgba(226,91,91,0.20);
+}
+.forge-side-panel-wire-item-warn--alert {
+  color: #000 !important;
+  background: #e25b5b;
+  border-radius: 2px;
+  padding: 1px 3px;
+  margin-right: 4px;
+  font-weight: 700;
+}
 /* Phase 21AV (2026-05-23) — cross-folder neighbor row. The
    target is NOT a deity (theme/event/person/etc.) so the row
    isn't clickable on the wheel. Tiny subtype tag after the
@@ -6920,6 +6979,27 @@ details.forge-side-panel-wire[open] .forge-side-panel-wire-caret {
 .forge-side-tip[data-risky="1"] {
   border-top: 2px solid #e25b5b;
   padding-top: 7px;
+}
+/* Phase 21AX (2026-05-23) — CODEX v1.2 — political-risk-flag BLACK
+   ALERT escalation. Stronger visual treatment than tier-only T5:
+   3px BLACK top border (not red), red-tinted background, the body
+   leads with the political-risk caveat (handled JS-side). */
+.forge-side-tip[data-alert="1"] {
+  border-top: 3px solid #000;
+  border-left: 3px solid #e25b5b;
+  background: rgba(38, 14, 14, 0.97);
+  padding-top: 7px;
+  padding-left: 9px;
+}
+.forge-side-tip-risk--alert {
+  color: #000 !important;
+  background: #e25b5b;
+  padding: 4px 6px !important;
+  border-radius: 3px;
+  margin: -2px -4px 6px -4px !important;
+  border-bottom: none !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.05em !important;
 }
 .forge-side-tip-risk {
   color: #e25b5b;

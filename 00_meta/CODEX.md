@@ -1,8 +1,9 @@
 # CODEX — Investigative Charter of the Codex Atlas Project
 
-*Version 1.1 — locked 2026-05-23. Living document; revisions require a dated AUDIT/ doc.*
+*Version 1.2 — locked 2026-05-23. Living document; revisions require a dated AUDIT/ doc.*
 
 *Changelog:*
+*- v1.2 (2026-05-23) — **Tier and political-risk-flag are ORTHOGONAL axes**, not the same scale. T5 measures intellectual mainstream-acceptance; political-risk-flag measures real-world harm-wiring. Codified the **⛔ BLACK ALERT** visual escalation: any node/edge with `political-risk-flag: true` gets escalated chrome regardless of tier, distinguishing politically-dangerous content (racial-mysticism, ethno-nationalist occultism) from intellectually-contested content (psychedelic mysticism, parapsychology). Added the HIGH-ALERT-INDEX.md generator for fast human + agent triage.*
 *- v1.1 (2026-05-23) — added T5 disclaimer-required tier (Icke / Evola / Theosophy-as-Nazi-substrate cases) + investigation-as-prompt rule (fringe-author claims open investigation toward legitimate-source parallels)*
 *- v1.0 (2026-05-23) — initial lock*
 
@@ -191,6 +192,98 @@ This is non-negotiable. The alternative — discarding the data — would mean t
 
 ---
 
+## IV.5 — Tier vs Political-Risk: TWO ORTHOGONAL AXES
+
+*Added in v1.2 (2026-05-23). This section clarifies a distinction that was implicit in v1.1 and surfaced explicitly because the vault contains both:*
+
+- **psychedelic mysticism** — intellectually contested but politically harmless
+- **racial-mysticism / Nazi-occultism** — politically dangerous, "highest alert"
+
+These two categories sit at completely different harm levels. Conflating them under a single "T5" badge is an integrity failure. **CODEX v1.2 makes the two axes explicit.**
+
+### The two axes
+
+| Axis | What it measures | Range | UI surface |
+|---|---|---|---|
+| **Tier** | How mainstream-accepted the *intellectual claim* is — peer-review acceptance ↔ popular rejection | T1 ··· T5 | Tier badge (green → red color ramp) |
+| **Political-risk-flag** | Whether the content carries *real-world harm wiring* — antisemitic networks, ethno-nationalist mobilization, racial-hierarchy claims | `true` / `false` | **⛔ BLACK ALERT** marker (red border + black icon, prominent and orthogonal to tier) |
+
+**These axes are independent.** A claim can be:
+
+- **T3, political-risk-flag: false** — Hancock's Younger Dryas impact hypothesis (academically contested, politically inert)
+- **T3, political-risk-flag: false** — Forman's Pure Consciousness Event defense (contested in mysticism studies, politically inert)
+- **T3, political-risk-flag: true** — *example does not exist in vault, but in principle:* a T3 alternative-school claim that is also wired into ethno-nationalist mobilization
+- **T5, political-risk-flag: false** — *example does not exist in vault* — a popular-rejected claim with no political downstream (most T4/T5 will however have political-risk because the political wiring is often WHY they reach T5)
+- **T5, political-risk-flag: true** — David Icke's reptilian-elite mythology (antisemitic dog-whistle per ADL); Evola's Traditionalist neo-fascism (per Goodrick-Clarke 2002); Theosophy's root-races as invoked by white-nationalist contexts; Sebottendorff's Thule Society mysticism
+
+### Why this matters
+
+**Two different audiences need two different signals.**
+
+1. **The reader of the site** sees the ⛔ BLACK ALERT and knows *"this is not just contested, this is dangerous content the vault is documenting under disclaimer"* — before they read the claim itself.
+
+2. **John + future agents triaging the data** can `grep political-risk-flag` to instantly produce the FULL danger-list of nodes/edges. Decisions about "what stays / what gets hidden / what gets restricted to opt-in" become triage-able rather than buried inside the tier sort.
+
+The 5-tier system measures *intellectual heat*. The political-risk-flag measures *political heat*. A tool that conflates them either:
+- under-warns (psychedelic-mysticism gets the same chrome as Nazi-mysticism), or
+- over-warns (psychedelic-mysticism gets buried under the same disclaimer as Nazi-mysticism, losing legitimate research)
+
+Either is an integrity failure. The orthogonal-axes treatment fixes both.
+
+### Visual escalation rules
+
+When rendering wires + side-panel rows + tooltips:
+
+- **`political-risk-flag: false`** (the silent default for ~99.99% of nodes) — normal chrome; tier badge alone signals the intellectual position.
+- **`political-risk-flag: true`** (every node/edge regardless of tier) — **⛔ BLACK ALERT** chrome:
+  - Replace ⚠ with ⛔ (black-circle-with-bar — the universal "stop / prohibition" sign — visually unambiguous as a high-alert marker, not a generic warning)
+  - **Black left-border** on the row (4px solid, high-contrast at scan-level)
+  - Tooltip header reads **"⛔ HIGH ALERT — political-risk content"** instead of "Disclaimer required"
+  - Tooltip body leads with the political-risk source citation (ADL / Goodrick-Clarke / Barkun / Hovorun / equivalent peer-reviewed political-history) BEFORE the claim itself
+  - Row background tint is the "danger" red (not the soft "contested" pink that T5 alone uses)
+
+The BLACK ALERT escalation is **co-equal with the tier system**, not subordinate to it. A T1 mainstream-published claim about a politically-dangerous movement (e.g., a peer-reviewed paper documenting Christian Reconstructionism) still gets the BLACK ALERT marker because the *content* is harm-wired, even though the *claim* is mainstream-academic.
+
+### Hidden-by-default policy (v1.2 update)
+
+| Filter | Default state | What it does |
+|---|---|---|
+| Tier T1-T4 | ON | Default visibility |
+| Tier T5 | OFF | Hidden until user opts in |
+| Political-risk-flag | OFF | Hidden until user opts in **independently of tier** |
+
+The two filters compose with **AND**: an edge with `tier: T5` AND `political-risk-flag: true` requires BOTH toggles ON to be visible. A `tier: T1, political-risk-flag: true` edge requires the political-risk toggle ON (tier is already on by default).
+
+### The HIGH-ALERT-INDEX.md auto-generator
+
+The build pipeline (`build_data.py`) generates `00_meta/HIGH-ALERT-INDEX.md` on every run. This file aggregates EVERY node + every edge with `political-risk-flag: true` into a single human-readable list with: id, title, tier, source citation, political-risk-flag rationale, edge endpoints. The file is the **single triage surface** — `cat 00_meta/HIGH-ALERT-INDEX.md` is the fastest path to "show me the danger list."
+
+Agents are required to read HIGH-ALERT-INDEX.md before:
+- Greenlighting a release
+- Approving any T4/T5 batch
+- Wiring any new edge that touches a node already on the index
+
+This makes the danger surface a first-class object, not buried inside tier sorts. Triage becomes a 30-second scan instead of a grep-through-the-vault expedition.
+
+### When to set political-risk-flag
+
+Set `political-risk-flag: true` when ANY of the following is documented in a peer-reviewed source or recognized civil-rights monitor (ADL / Hope Not Hate / SPLC / Barkun / Goodrick-Clarke / equivalent):
+
+1. The author/figure has documented reception by ethno-nationalist or fascist groups
+2. The claim is wired into a documented hate-speech network or conspiracy infrastructure
+3. The content describes a movement that civil-rights scholars document as active harm-vector (ethno-nationalist mobilization, organized antisemitism, racial-hierarchy theology)
+4. The content is invoked in documented political violence contexts
+
+**Do NOT set political-risk-flag for:**
+- Intellectual fringe without political wiring (psychedelic mysticism, parapsychology, Hancock-class lost-civilization claims, most parapsychology)
+- Religious nationalism that is mainstream-documented but not currently in violence-context (some forms of Christian nationalism in scholarly-historical mode)
+- Esoteric/occult content per se (Crowley, Steiner, Gurdjieff) unless specifically wired to hate networks
+- Religious traditions you personally find objectionable (this is the vault's CODEX rejection #2 — mainstream-only orthodoxy is its own integrity failure; politics ≠ political-risk-flag)
+
+The flag is a **scholarship-citation requirement**, not an editorial judgment. If you cannot cite a peer-reviewed political-history or civil-rights source, do NOT set the flag.
+
+---
+
 ## V. What We Explicitly Reject
 
 We are pluralistic, not infinite. Some moves the vault refuses to make:
@@ -229,6 +322,8 @@ Every content-lane agent working on cross-tradition wiring must:
 
 8. **Investigation-as-prompt** (T3/T4/T5). When you wire a fringe claim, ALSO check whether legitimate scholarship documents the underlying *structural pattern* the fringe author noticed. Wire BOTH layers per §IV's investigation-as-prompt rule. Use the fringe claim as a starting point for legitimate inquiry, not as an authority.
 
+9. **Political-risk-flag is ORTHOGONAL to tier** (v1.2). Set `political-risk-flag: true` per the §IV.5 criterion when content carries documented real-world harm-wiring (ethno-nationalist reception, antisemitic networks, racial-hierarchy mobilization). The flag is **independent of tier** — a T1 mainstream-academic claim about a politically-dangerous movement gets the flag if the *content* is harm-wired, even though the *source* is mainstream. The flag is a scholarship-citation requirement, NOT an editorial judgment. If you cannot cite a peer-reviewed political-history / civil-rights source, do NOT set it. After any batch that touches political-risk content, **read `00_meta/HIGH-ALERT-INDEX.md`** (auto-generated by build_data.py) to verify your additions surface correctly in the triage list.
+
 ---
 
 ## VII. The User-Facing "About" Section + Tier Toggle UX
@@ -239,26 +334,31 @@ The user-visible About page renders a SHORTENED version of this CODEX:
 - §II (Disclaimer Machine) — full text
 - §III (21 types) — summary table + link to PROTOCOL §3.1
 - §IV (5 tiers including T5) — summary table with examples + tier-toggle UI explanation
+- **§IV.5 (Two orthogonal axes — tier vs political-risk-flag, BLACK ALERT) — full text** (v1.2)
 - §V (Rejection list) — full text
 
 §VI (How agents apply) is omitted from the user-facing page — that's internal discipline.
 
-### Tier-toggle UI (Legend tab)
+### Tier-toggle + political-risk UI (Legend tab) — v1.2
 
-The Forge view (and every other view that shows cross-tradition wires) has a **tier toggle** in the legend panel — five checkboxes:
+The Forge view (and every other view that shows cross-tradition wires) has TWO independent toggle groups in the view-settings panel:
 
 ```
-Source tiers
+Source tiers (intellectual mainstream-acceptance)
   ☑ T1 — mainstream scholarship
   ☑ T2 — academic minority view
   ☑ T3 — alternative-school (Hancock, Carlson, Bauval)
   ☑ T4 — popular claim — rejected (Sitchin, Däniken, Cayce)
-  ☐ T5 — disclaimer-required (politically extreme reception — Icke, Evola)
+  ☐ T5 — disclaimer-required (rejected with extreme reception — Icke, Evola)
+
+High-alert content (real-world harm-risk, orthogonal to tier)
+  ☐ ⛔ Show political-risk-flagged content
+       (racial-mysticism, ethno-nationalist occultism, antisemitic conspiracy)
 ```
 
-Default state: T1-T4 ON, T5 OFF. The user can toggle any combination. Wires render only for currently-enabled tiers. T5 stays OFF unless the user explicitly opts-in — making the disclaimer act of opt-in itself a small consent gesture.
+Default state: T1-T4 ON, T5 OFF, political-risk-flag toggle OFF. The two toggles compose with AND — a wire must pass BOTH filters to render. A T1 + political-risk-flagged claim still requires the political-risk toggle ON.
 
-When T5 is ON and a T5 wire renders, its tooltip leads with the political-risk caveat BEFORE the claim itself — the user must read the warning before they read the alleged connection.
+When a political-risk-flagged wire renders, its row + tooltip render with **⛔ BLACK ALERT chrome** (black left-border, ⛔ icon, "HIGH ALERT" tooltip header) — visually unambiguous as harm-content vs the soft "contested" treatment used for tier-only T5.
 
 The About section makes the vault's epistemic stance LEGIBLE to every visitor before they form any opinion about the data they see. A Christian visitor, a Buddhist visitor, a secular-academic visitor, a Graham-Hancock-reader visitor — they all see the same posture statement and understand that the vault is showing them scholarship and disagreement, not making theological claims.
 
@@ -268,7 +368,7 @@ The tier toggle is the visible UX expression of CODEX's pluralism: the user cont
 
 ## VIII. Living Document
 
-CODEX is versioned by date. The current version is **1.0 — 2026-05-23**.
+CODEX is versioned by date. The current version is **1.2 — 2026-05-23**.
 
 Changes require:
 

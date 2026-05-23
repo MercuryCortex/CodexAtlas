@@ -1126,6 +1126,16 @@
           '<button class="forge-viewset-row forge-viewset-row--tier" data-toggle="tierT3" data-tier="T3"><span class="vs-check"></span><span class="vs-tier-pill vs-tier-pill--t3">T3</span>Alternative school <em>(serious, fringe — Hancock-class)</em></button>' +
           '<button class="forge-viewset-row forge-viewset-row--tier" data-toggle="tierT4" data-tier="T4"><span class="vs-check"></span><span class="vs-tier-pill vs-tier-pill--t4">T4</span>Popular claim, rejected <em>(Sitchin-class)</em></button>' +
           '<button class="forge-viewset-row forge-viewset-row--tier forge-viewset-row--high-risk" data-toggle="tierT5" data-tier="T5"><span class="vs-check"></span><span class="vs-tier-pill vs-tier-pill--t5">T5</span>High-risk <em>(disclaimer required — opt-in)</em></button>' +
+          // Phase 21AX (2026-05-23) — CODEX v1.2 — political-risk-flag
+          // is an ORTHOGONAL axis to the tier system. T5 measures
+          // intellectual mainstream-acceptance (psychedelic mysticism =
+          // T5 intellectually-fringe but politically-inert); political-
+          // risk-flag measures real-world HARM-WIRING (racial-mysticism
+          // = ⛔ BLACK ALERT regardless of tier). The two toggles
+          // compose with AND. See 00_meta/CODEX.md §IV.5.
+          '<div class="forge-viewset-divider"></div>' +
+          '<div class="forge-viewset-section">High-alert content <em>(orthogonal to tier)</em></div>' +
+          '<button class="forge-viewset-row forge-viewset-row--black-alert" data-toggle="politicalRisk"><span class="vs-check"></span><span class="vs-alert-badge">⛔</span>Show political-risk content <em>(ethno-nationalist · antisemitic · racial-mysticism)</em></button>' +
         '</div>' +
       '</div>',
       // Phase 21AJ (2026-05-22) — FX wrap moved to the right side
@@ -4075,12 +4085,29 @@
       // see Phase 21AU edge-shader patch) regardless of focus or
       // hover. We apply this AFTER computeEdgeStates so HIDDEN
       // beats focus.
-      const activeTiers = local._activeTiers;
-      if (activeTiers && activeTiers.size < 5) {
+      // Phase 21AX (2026-05-23) — CODEX v1.2 — also hide political-
+      // risk-flagged edges unless the user opts in via the
+      // (orthogonal) politicalRisk toggle. The two filters compose
+      // with AND: an edge must pass BOTH (its tier is on AND either
+      // it is not political-risk-flagged OR politicalRisk toggle is
+      // ON) to render. Triple-checked-default policy from §IV.5.
+      const activeTiers     = local._activeTiers;
+      const showPolitical   = !!local._showPoliticalRisk;
+      const tierFilterOn    = activeTiers && activeTiers.size < 5;
+      if (tierFilterOn || !showPolitical) {
         const edges = local.mode.edges;
         for (let i = 0; i < edges.length; i++) {
-          const tier = edges[i].source_tier || 'T1';
-          if (!activeTiers.has(tier)) newTargets[i] = 2.0;
+          const e = edges[i];
+          const tier = e.source_tier || 'T1';
+          // Hide by tier?
+          if (tierFilterOn && !activeTiers.has(tier)) {
+            newTargets[i] = 2.0;
+            continue;
+          }
+          // Hide by political-risk-flag? (independent of tier)
+          if (!showPolitical && e.political_risk_flag) {
+            newTargets[i] = 2.0;
+          }
         }
       }
       // Phase 21AU (2026-05-23) — snap edgeStates around HIDDEN
@@ -4867,12 +4894,14 @@
       const btn   = document.getElementById('forge-viewset-btn');
       const panel = document.getElementById('forge-viewset-panel');
       if (!btn || !panel) return;
-      // Phase 21AS (2026-05-23) — schema v6. Adds tierT1..tierT5
-      // source-tier toggles per CODEX §VII. Defaults: T1-T4 ON,
-      // T5 OFF (opt-in, disclaimer required). The renderer reads
-      // these into local._activeTiers each applyState() and
-      // tier-filters edges via the existing HIDDEN state.
-      const LS_KEY = 'forge.viewSettings.v6';
+      // Phase 21AX (2026-05-23) — schema v7. Adds the orthogonal
+      // politicalRisk toggle per CODEX v1.2 §IV.5. The 5 tier toggles
+      // measure intellectual mainstream-acceptance; politicalRisk
+      // measures real-world harm-wiring. Both compose with AND — an
+      // edge must pass BOTH filters to render. Default: T1-T4 ON,
+      // T5 OFF, politicalRisk OFF (opt-in twice for politically-
+      // dangerous content).
+      const LS_KEY = 'forge.viewSettings.v7';
       const state = (() => {
         try {
           const raw = localStorage.getItem(LS_KEY);
@@ -4886,6 +4915,7 @@
           reverseAge: false,
           tierT1: true, tierT2: true, tierT3: true,
           tierT4: true, tierT5: false,
+          politicalRisk: false,
         };
       })();
       // Defensive defaults — additive.
@@ -4900,6 +4930,7 @@
       if (typeof state.tierT3             !== 'boolean') state.tierT3             = true;
       if (typeof state.tierT4             !== 'boolean') state.tierT4             = true;
       if (typeof state.tierT5             !== 'boolean') state.tierT5             = false;
+      if (typeof state.politicalRisk      !== 'boolean') state.politicalRisk      = false;
       function applyState() {
         document.body.classList.toggle('fv-hide-hulls',         !state.hulls);
         document.body.classList.toggle('fv-hide-family-titles', !state.familyTitles);
@@ -4920,6 +4951,13 @@
         document.body.classList.toggle('fv-hide-tier-t3',       !state.tierT3);
         document.body.classList.toggle('fv-hide-tier-t4',       !state.tierT4);
         document.body.classList.toggle('fv-hide-tier-t5',       !state.tierT5);
+        // Phase 21AX (2026-05-23) — politicalRisk toggle. body class
+        // `fv-show-political-risk` is the inverse of "hide" because the
+        // default state is OFF (hidden) — CSS hooks key off the PRESENT
+        // body class to OPT IN, matching the consent gesture (you opt
+        // in to seeing high-alert content). The renderer also gates
+        // edges on this toggle via local._showPoliticalRisk.
+        document.body.classList.toggle('fv-show-political-risk', !!state.politicalRisk);
         const tiers = new Set();
         if (state.tierT1) tiers.add('T1');
         if (state.tierT2) tiers.add('T2');
@@ -4930,10 +4968,12 @@
         // every applyState() call (which fires for color / order /
         // distribution changes too).
         const prevSig = local._activeTiersSig || '';
-        const nextSig = [...tiers].sort().join(',');
-        local._activeTiers    = tiers;
-        local._activeTiersSig = nextSig;
-        const tiersChanged    = (prevSig !== nextSig);
+        const prevRisk = !!local._showPoliticalRisk;
+        const nextSig = [...tiers].sort().join(',') + '|' + (state.politicalRisk ? 'PR' : '');
+        local._activeTiers         = tiers;
+        local._activeTiersSig      = nextSig;
+        local._showPoliticalRisk   = !!state.politicalRisk;
+        const tiersChanged         = (prevSig !== nextSig) || (prevRisk !== !!state.politicalRisk);
         // Phase 21AL (2026-05-23) — SFX toggle: when OFF, body
         // class signals the audio sync loop to force volume 0.
         document.body.classList.toggle('fv-hide-sfx',           !state.sfx);
@@ -4985,6 +5025,13 @@
         // mount completes).
         if (tiersChanged && typeof recomputeFocus === 'function' && local.mode && local.mode.edges) {
           try { recomputeFocus(); } catch (_) {}
+          // Phase 21AX (2026-05-23) — also re-render the side panel
+          // so its filtered connection list stays consistent with the
+          // wheel. Without this, toggling politicalRisk would update
+          // the wires but leave the side panel showing stale rows.
+          if (typeof local._renderSidePanel === 'function') {
+            try { local._renderSidePanel(); } catch (_) {}
+          }
         }
         try { localStorage.setItem(LS_KEY, JSON.stringify(state)); } catch (_) {}
       }
@@ -6284,6 +6331,16 @@
         const vaultNodesById = local._vaultNodesById;
         const modeNodesById  = (m && m.nodesById) ? m.nodesById : null;
         const vaultEdges     = (window.VAULT_DATA && window.VAULT_DATA.edges) || [];
+        // Phase 21AX (2026-05-23) — apply the same tier + political-risk
+        // filters in the side panel that the wire renderer uses. The
+        // side panel is the disclaimer-machine surface; if the user
+        // toggled T5 OFF or politicalRisk OFF, those edges shouldn't
+        // leak into the panel either (otherwise the chrome lies about
+        // what's "active"). Same composition: tier filter AND political-
+        // risk filter, both must pass.
+        const sideActiveTiers   = local._activeTiers;
+        const sideShowPolitical = !!local._showPoliticalRisk;
+        const sideTierFilterOn  = sideActiveTiers && sideActiveTiers.size < 5;
         if (vaultEdges) {
           const EB = window.EDGE_BUCKET || {};
           for (let i = 0; i < vaultEdges.length; i++) {
@@ -6291,6 +6348,11 @@
             const isSrc = e.source === id;
             const isTgt = e.target === id;
             if (!isSrc && !isTgt) continue;
+            // Apply tier-filter to side panel too.
+            const eTier = e.source_tier || 'T1';
+            if (sideTierFilterOn && !sideActiveTiers.has(eTier)) continue;
+            // Apply political-risk filter to side panel too.
+            if (!sideShowPolitical && e.political_risk_flag) continue;
             const b = EB[e.type] || 'association';
             if (!buckets[b]) buckets[b] = { count: 0, neighbors: [] };
             buckets[b].count++;
@@ -6429,18 +6491,29 @@
             // are click-disabled (the wheel doesn't have them). The
             // tier badge + tooltip still surface so the disclaimer
             // machine works for cross-folder T4/T5 edges.
-            const tier   = n.tier || 'T1';
-            const risky  = (tier === 'T5') || n.polRisk;
+            // Phase 21AX (2026-05-23) — CODEX v1.2 — separate the two
+            // axes. `risky` (tier===T5) gets the soft ⚠ contested
+            // marker; `blackAlert` (political_risk_flag=true) gets
+            // the ⛔ HIGH ALERT escalation. The two can co-occur
+            // (Icke is both T5 AND political-risk); the visual chrome
+            // composes — black left-border + ⛔ + the tier pill.
+            const tier        = n.tier || 'T1';
+            const tierRisky   = (tier === 'T5');
+            const blackAlert  = !!n.polRisk;
+            const risky       = tierRisky || blackAlert;   // for legacy is-risky class
             const pillHtml = '<span class="forge-side-panel-wire-item-tier vs-tier-pill vs-tier-pill--' + tier.toLowerCase() + '">' + tier + '</span>';
-            const warnHtml = risky
-              ? '<span class="forge-side-panel-wire-item-warn" aria-hidden="true">⚠</span>'
-              : '';
+            const warnHtml = blackAlert
+              ? '<span class="forge-side-panel-wire-item-warn forge-side-panel-wire-item-warn--alert" aria-hidden="true">⛔</span>'
+              : (tierRisky
+                  ? '<span class="forge-side-panel-wire-item-warn" aria-hidden="true">⚠</span>'
+                  : '');
             const subTagHtml = (!n.inMode && n.subtype && SUBTYPE_HUMAN[n.subtype])
               ? '<span class="forge-side-panel-wire-item-subtype">' + SUBTYPE_HUMAN[n.subtype] + '</span>'
               : '';
             const classNames = 'forge-side-panel-wire-item'
-              + (risky    ? ' is-risky'    : '')
-              + (!n.inMode ? ' is-cross-folder' : '');
+              + (risky       ? ' is-risky'       : '')
+              + (blackAlert  ? ' is-black-alert' : '')
+              + (!n.inMode   ? ' is-cross-folder' : '');
             return '<button class="' + classNames + '"'
               + ' data-id="' + safeAttr(n.id) + '"'
               + ' data-in-mode="' + (n.inMode ? '1' : '0') + '"'
@@ -6681,12 +6754,18 @@
         const src       = row.getAttribute('data-edge-source') || '';
         const notes     = row.getAttribute('data-edge-notes') || '';
         const risky     = row.getAttribute('data-edge-risky') === '1';
+        // Phase 21AX (2026-05-23) — black-alert is the political-risk-
+        // flag axis (CODEX v1.2 §IV.5). Read directly from the row's
+        // is-black-alert class, set by the renderer when polRisk=true.
+        const blackAlert = row.classList.contains('is-black-alert');
         const inMode    = row.getAttribute('data-in-mode') === '1';
         const subtype   = row.getAttribute('data-edge-target-subtype') || '';
         const tierClass = 'vs-tier-pill--' + tier.toLowerCase();
         let html = '';
-        if (risky) {
-          html += '<div class="forge-side-tip-risk">⚠ Disclaimer required — claim rejected by mainstream / political-risk flag</div>';
+        if (blackAlert) {
+          html += '<div class="forge-side-tip-risk forge-side-tip-risk--alert">⛔ HIGH ALERT — political-risk content (real-world harm-wiring documented)</div>';
+        } else if (risky) {
+          html += '<div class="forge-side-tip-risk">⚠ Disclaimer required — claim rejected by mainstream</div>';
         }
         html += '<div class="forge-side-tip-head">'
           +    '<span class="forge-side-tip-dir">' + dir + '</span>'
@@ -6738,6 +6817,10 @@
         tipEl.innerHTML = buildTipHtml(row);
         tipEl.setAttribute('data-tier', row.getAttribute('data-tier') || 'T1');
         tipEl.setAttribute('data-risky', row.getAttribute('data-edge-risky') === '1' ? '1' : '0');
+        // Phase 21AX (2026-05-23) — propagate black-alert state to
+        // the tip element so CSS can escalate the chrome (black
+        // top border instead of red, ⛔ icon coloring, etc.).
+        tipEl.setAttribute('data-alert', row.classList.contains('is-black-alert') ? '1' : '0');
         tipEl.classList.add('is-visible');
         tipEl.setAttribute('aria-hidden', 'false');
         positionTip(row);
