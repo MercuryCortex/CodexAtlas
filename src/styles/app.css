@@ -6654,6 +6654,57 @@ body.view-forge #forge-scrub-center-thumb { display: none !important; }
   min-width: 22px;
   text-align: center;
 }
+/* Phase 21AY (2026-05-23) — interactive toggle rows in the legend.
+   Same vocabulary as VIEW's checkbox rows: 14×14 square box that
+   fills gold when ON. Buttons reset (no default browser chrome). */
+.forge-legend-row--toggle {
+  width: 100%;
+  background: transparent;
+  border: 0;
+  text-align: left;
+  font: inherit;
+  cursor: pointer;
+}
+.forge-legend-row--toggle .vs-check {
+  display: inline-block;
+  width: 14px; height: 14px;
+  border-radius: 3px;
+  border: 1px solid rgba(212,165,90,0.55);
+  background: transparent;
+  position: relative;
+  flex: 0 0 auto;
+  transition: background 100ms ease, border-color 100ms ease;
+}
+.forge-legend-row--toggle.is-on .vs-check {
+  background: var(--gold, #d4a55a);
+  border-color: var(--gold, #d4a55a);
+}
+.forge-legend-row--toggle.is-on { color: var(--gold-1, #e8c889); }
+
+/* Political-risk row in the legend — same ⛔ BLACK ALERT vocabulary
+   as the side-panel BLACK ALERT chrome. Red top border, ⛔ icon with
+   red glow, stronger background tint. */
+.forge-legend-row--black-alert {
+  border-top: 2px solid rgba(226,91,91,0.65);
+  margin-top: 4px;
+  background: rgba(226,91,91,0.05);
+}
+.forge-legend-row--black-alert:hover { background: rgba(226,91,91,0.12); }
+.forge-legend-row--black-alert.is-on {
+  background: rgba(226,91,91,0.18);
+  color: #ffd5d5;
+}
+.forge-legend-row--black-alert.is-on .vs-check {
+  background: #e25b5b;
+  border-color: #e25b5b;
+}
+.forge-legend-row--black-alert .vs-alert-badge {
+  font-size: 13px;
+  color: #e25b5b;
+  text-shadow: 0 0 4px rgba(226,91,91,0.45);
+  min-width: 22px;
+  text-align: center;
+}
 .forge-legend-tooltip {
   position: fixed;
   max-width: 280px;

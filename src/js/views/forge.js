@@ -1111,31 +1111,11 @@
           '<button class="forge-viewset-row" data-distribution="age-bands"><span class="vs-radio"></span>Age bands <em>(scholarly chart)</em></button>' +
           '<button class="forge-viewset-row" data-distribution="vogel"><span class="vs-radio"></span>Vogel sunflower <em>(phyllotaxis)</em></button>' +
           '<button class="forge-viewset-row" data-toggle="reverseAge"><span class="vs-check"></span>Reverse age direction <em>(rim = oldest)</em></button>' +
-          // Phase 21AS (2026-05-23) — Source-tier toggles, per CODEX
-          // §VII. Each connection in the atlas carries a source_tier
-          // (T1 mainstream → T5 disclaimer-required). The user can
-          // toggle entire tiers off; the wire-renderer hides edges
-          // whose tier is OFF via the existing HIDDEN state. T5 is
-          // OFF by default; turning it on opts in to claims the
-          // mainstream rejects AND that carry political-risk caveats.
-          // See 00_meta/CODEX.md §IV-VII.
-          '<div class="forge-viewset-divider"></div>' +
-          '<div class="forge-viewset-section">Source tiers <em>(disclaimer machine)</em></div>' +
-          '<button class="forge-viewset-row forge-viewset-row--tier" data-toggle="tierT1" data-tier="T1"><span class="vs-check"></span><span class="vs-tier-pill vs-tier-pill--t1">T1</span>Mainstream <em>(peer-reviewed)</em></button>' +
-          '<button class="forge-viewset-row forge-viewset-row--tier" data-toggle="tierT2" data-tier="T2"><span class="vs-check"></span><span class="vs-tier-pill vs-tier-pill--t2">T2</span>Academic minority <em>(contested in field)</em></button>' +
-          '<button class="forge-viewset-row forge-viewset-row--tier" data-toggle="tierT3" data-tier="T3"><span class="vs-check"></span><span class="vs-tier-pill vs-tier-pill--t3">T3</span>Alternative school <em>(serious, fringe — Hancock-class)</em></button>' +
-          '<button class="forge-viewset-row forge-viewset-row--tier" data-toggle="tierT4" data-tier="T4"><span class="vs-check"></span><span class="vs-tier-pill vs-tier-pill--t4">T4</span>Popular claim, rejected <em>(Sitchin-class)</em></button>' +
-          '<button class="forge-viewset-row forge-viewset-row--tier forge-viewset-row--high-risk" data-toggle="tierT5" data-tier="T5"><span class="vs-check"></span><span class="vs-tier-pill vs-tier-pill--t5">T5</span>High-risk <em>(disclaimer required — opt-in)</em></button>' +
-          // Phase 21AX (2026-05-23) — CODEX v1.2 — political-risk-flag
-          // is an ORTHOGONAL axis to the tier system. T5 measures
-          // intellectual mainstream-acceptance (psychedelic mysticism =
-          // T5 intellectually-fringe but politically-inert); political-
-          // risk-flag measures real-world HARM-WIRING (racial-mysticism
-          // = ⛔ BLACK ALERT regardless of tier). The two toggles
-          // compose with AND. See 00_meta/CODEX.md §IV.5.
-          '<div class="forge-viewset-divider"></div>' +
-          '<div class="forge-viewset-section">High-alert content <em>(orthogonal to tier)</em></div>' +
-          '<button class="forge-viewset-row forge-viewset-row--black-alert" data-toggle="politicalRisk"><span class="vs-check"></span><span class="vs-alert-badge">⛔</span>Show political-risk content <em>(ethno-nationalist · antisemitic · racial-mysticism)</em></button>' +
+          // Phase 21AY (2026-05-23) — Source-tier + political-risk
+          // toggles MOVED to the LEGEND panel where the tier vocabulary
+          // is documented. Same vocabulary in one place — the legend's
+          // tier-swatch rows become interactive checkboxes; the
+          // dedicated VIEW section is gone. See wireLegend() below.
         '</div>' +
       '</div>',
       // Phase 21AJ (2026-05-22) — FX wrap moved to the right side
@@ -4894,13 +4874,10 @@
       const btn   = document.getElementById('forge-viewset-btn');
       const panel = document.getElementById('forge-viewset-panel');
       if (!btn || !panel) return;
-      // Phase 21AX (2026-05-23) — schema v7. Adds the orthogonal
-      // politicalRisk toggle per CODEX v1.2 §IV.5. The 5 tier toggles
-      // measure intellectual mainstream-acceptance; politicalRisk
-      // measures real-world harm-wiring. Both compose with AND — an
-      // edge must pass BOTH filters to render. Default: T1-T4 ON,
-      // T5 OFF, politicalRisk OFF (opt-in twice for politically-
-      // dangerous content).
+      // Phase 21AY (2026-05-23) — schema v7 (kept; legend reads tier
+      // keys directly from same LS key). VIEW panel owns: layer
+      // toggles, color theme, family order, node distribution.
+      // LEGEND panel owns: tier filters + political-risk-flag toggle.
       const LS_KEY = 'forge.viewSettings.v7';
       const state = (() => {
         try {
@@ -4913,9 +4890,6 @@
           guideRings: false,
           wires: true, sfx: true, map: false,
           reverseAge: false,
-          tierT1: true, tierT2: true, tierT3: true,
-          tierT4: true, tierT5: false,
-          politicalRisk: false,
         };
       })();
       // Defensive defaults — additive.
@@ -4925,12 +4899,6 @@
       if (typeof state.guideRings         !== 'boolean') state.guideRings         = false;
       if (typeof state.sfx                !== 'boolean') state.sfx                = true;
       if (typeof state.reverseAge         !== 'boolean') state.reverseAge         = false;
-      if (typeof state.tierT1             !== 'boolean') state.tierT1             = true;
-      if (typeof state.tierT2             !== 'boolean') state.tierT2             = true;
-      if (typeof state.tierT3             !== 'boolean') state.tierT3             = true;
-      if (typeof state.tierT4             !== 'boolean') state.tierT4             = true;
-      if (typeof state.tierT5             !== 'boolean') state.tierT5             = false;
-      if (typeof state.politicalRisk      !== 'boolean') state.politicalRisk      = false;
       function applyState() {
         document.body.classList.toggle('fv-hide-hulls',         !state.hulls);
         document.body.classList.toggle('fv-hide-family-titles', !state.familyTitles);
@@ -4946,34 +4914,15 @@
         // the active set gets HIDDEN (state=2.0 → alpha 0). The
         // body classes are mostly for future legend chrome / side-
         // panel disclaimer styling.
-        document.body.classList.toggle('fv-hide-tier-t1',       !state.tierT1);
-        document.body.classList.toggle('fv-hide-tier-t2',       !state.tierT2);
-        document.body.classList.toggle('fv-hide-tier-t3',       !state.tierT3);
-        document.body.classList.toggle('fv-hide-tier-t4',       !state.tierT4);
-        document.body.classList.toggle('fv-hide-tier-t5',       !state.tierT5);
-        // Phase 21AX (2026-05-23) — politicalRisk toggle. body class
-        // `fv-show-political-risk` is the inverse of "hide" because the
-        // default state is OFF (hidden) — CSS hooks key off the PRESENT
-        // body class to OPT IN, matching the consent gesture (you opt
-        // in to seeing high-alert content). The renderer also gates
-        // edges on this toggle via local._showPoliticalRisk.
-        document.body.classList.toggle('fv-show-political-risk', !!state.politicalRisk);
-        const tiers = new Set();
-        if (state.tierT1) tiers.add('T1');
-        if (state.tierT2) tiers.add('T2');
-        if (state.tierT3) tiers.add('T3');
-        if (state.tierT4) tiers.add('T4');
-        if (state.tierT5) tiers.add('T5');
-        // Detect changes so we don't redundantly recomputeFocus on
-        // every applyState() call (which fires for color / order /
-        // distribution changes too).
-        const prevSig = local._activeTiersSig || '';
-        const prevRisk = !!local._showPoliticalRisk;
-        const nextSig = [...tiers].sort().join(',') + '|' + (state.politicalRisk ? 'PR' : '');
-        local._activeTiers         = tiers;
-        local._activeTiersSig      = nextSig;
-        local._showPoliticalRisk   = !!state.politicalRisk;
-        const tiersChanged         = (prevSig !== nextSig) || (prevRisk !== !!state.politicalRisk);
+        // Phase 21AY (2026-05-23) — tier + political-risk toggles
+        // MOVED to the LEGEND panel (see wireLegend(): syncLegendTierUI).
+        // The VIEW panel no longer touches `local._activeTiers` or
+        // `local._showPoliticalRisk` — those flags are owned by the
+        // legend now. VIEW's applyState only handles layer / theme /
+        // distribution settings. tiersChanged below stays false from
+        // this code path because none of the VIEW toggles affect
+        // tier state.
+        const tiersChanged         = false;
         // Phase 21AL (2026-05-23) — SFX toggle: when OFF, body
         // class signals the audio sync loop to force volume 0.
         document.body.classList.toggle('fv-hide-sfx',           !state.sfx);
@@ -5648,23 +5597,142 @@
           title: 'High-risk · disclaimer required',
           body: 'Claims with political-risk implications (antisemitic / racist conspiracy adjacency, ethno-nationalist mobilization) — Icke / Evola-political class. OFF by default in view-settings. Opt-in only; tooltip leads with disclaimer.' },
       ];
+      // Phase 21AY (2026-05-23) — tier rows are now INTERACTIVE
+      // toggles, not just legend swatches. The VIEW panel's tier
+      // section has been removed; the tier vocabulary lives where
+      // it's documented (the legend) and the filter ops on it
+      // directly. Render as <button> with the same .vs-check the
+      // VIEW panel toggles use; clicking flips the state in
+      // local._tierState + persists to LS + re-runs recomputeFocus.
       const tierRowsHtml = TIERS.map(t => (
-        '<div class="forge-legend-row forge-legend-row--tier" data-tier-key="' + t.key + '">'
+        '<button class="forge-legend-row forge-legend-row--tier forge-legend-row--toggle" data-tier-key="' + t.key + '" data-tier-uc="' + t.label + '">'
+        + '<span class="vs-check"></span>'
         + '<span class="forge-legend-swatch vs-tier-pill vs-tier-pill--' + t.key + '" style="background:transparent">' + t.label + '</span>'
         + '<span class="forge-legend-name">' + t.title + '</span>'
-        + '</div>'
+        + '</button>'
       )).join('');
+      // Phase 21AX (2026-05-23) — CODEX v1.2 §IV.5 — political-risk
+      // toggle is ORTHOGONAL to tier. Now lives next to the tier
+      // section in the legend window. Same visual treatment as the
+      // ⛔ BLACK ALERT row had in VIEW. Hover surfaces the orthogonal-
+      // axes explainer.
+      const politicalRiskBody = 'Political-risk-flag is ORTHOGONAL to tier. It marks content with documented real-world harm-wiring (ethno-nationalist reception, antisemitic networks, racial-hierarchy mobilization) — independently of how mainstream-accepted the claim is. A T1 mainstream-academic claim about a politically-dangerous movement gets the flag if the content is harm-wired. OFF by default; requires explicit opt-in. See CODEX §IV.5.';
       panel.innerHTML = ''
         + '<div class="forge-legend-section">Wire color · type of connection</div>'
         + rowsHtml
         + '<div class="forge-legend-divider"></div>'
-        + '<div class="forge-legend-section">Source tier · disclaimer machine</div>'
-        + tierRowsHtml;
+        + '<div class="forge-legend-section">Source tier · click to toggle</div>'
+        + tierRowsHtml
+        + '<div class="forge-legend-divider"></div>'
+        + '<div class="forge-legend-section">High-alert · orthogonal to tier</div>'
+        + '<button class="forge-legend-row forge-legend-row--toggle forge-legend-row--black-alert" data-political-risk="1">'
+        +   '<span class="vs-check"></span>'
+        +   '<span class="forge-legend-swatch vs-alert-badge">⛔</span>'
+        +   '<span class="forge-legend-name">Show political-risk content</span>'
+        + '</button>';
       // Map for fast lookup on hover.
       const bodyByKey = Object.create(null);
       for (const b of BUCKETS) bodyByKey[b.key] = b.body;
       const bodyByTier = Object.create(null);
       for (const t of TIERS) bodyByTier[t.key] = t.body;
+
+      // Phase 21AY (2026-05-23) — interactive toggles in the legend.
+      // The legend now OWNS the tier-filter + political-risk toggles
+      // (moved from VIEW panel). The legend's tier rows are buttons;
+      // clicking flips the corresponding flag in `local._tierState`
+      // (and `local._showPoliticalRisk` for the orthogonal row), then
+      // triggers recomputeFocus + side-panel re-render. LS persistence
+      // shares the v7 schema from the VIEW panel so an upgrade from
+      // VIEW-tier-toggles to LEGEND-tier-toggles is seamless.
+      const LEGEND_LS_KEY = 'forge.viewSettings.v7';
+      function readTierState() {
+        let s = {};
+        try {
+          const raw = localStorage.getItem(LEGEND_LS_KEY);
+          if (raw) s = JSON.parse(raw) || {};
+        } catch (_) {}
+        return {
+          T1: typeof s.tierT1 === 'boolean' ? s.tierT1 : true,
+          T2: typeof s.tierT2 === 'boolean' ? s.tierT2 : true,
+          T3: typeof s.tierT3 === 'boolean' ? s.tierT3 : true,
+          T4: typeof s.tierT4 === 'boolean' ? s.tierT4 : true,
+          T5: typeof s.tierT5 === 'boolean' ? s.tierT5 : false,
+          politicalRisk: typeof s.politicalRisk === 'boolean' ? s.politicalRisk : false,
+        };
+      }
+      function writeTierState(ts) {
+        try {
+          const raw = localStorage.getItem(LEGEND_LS_KEY);
+          const s = raw ? JSON.parse(raw) : {};
+          s.tierT1 = !!ts.T1;
+          s.tierT2 = !!ts.T2;
+          s.tierT3 = !!ts.T3;
+          s.tierT4 = !!ts.T4;
+          s.tierT5 = !!ts.T5;
+          s.politicalRisk = !!ts.politicalRisk;
+          localStorage.setItem(LEGEND_LS_KEY, JSON.stringify(s));
+        } catch (_) {}
+      }
+      function syncLegendTierUI() {
+        const ts = readTierState();
+        panel.querySelectorAll('.forge-legend-row--tier').forEach(row => {
+          const uc = row.getAttribute('data-tier-uc') || '';
+          row.classList.toggle('is-on', !!ts[uc]);
+        });
+        const prRow = panel.querySelector('.forge-legend-row[data-political-risk]');
+        if (prRow) prRow.classList.toggle('is-on', !!ts.politicalRisk);
+        // Push to the engine and refresh filtered state.
+        const tiers = new Set();
+        if (ts.T1) tiers.add('T1');
+        if (ts.T2) tiers.add('T2');
+        if (ts.T3) tiers.add('T3');
+        if (ts.T4) tiers.add('T4');
+        if (ts.T5) tiers.add('T5');
+        local._activeTiers       = tiers;
+        local._activeTiersSig    = [...tiers].sort().join(',') + '|' + (ts.politicalRisk ? 'PR' : '');
+        local._showPoliticalRisk = !!ts.politicalRisk;
+        // Body classes for any CSS that keys off them (none yet but
+        // future legend/SFW chrome will).
+        document.body.classList.toggle('fv-hide-tier-t1', !ts.T1);
+        document.body.classList.toggle('fv-hide-tier-t2', !ts.T2);
+        document.body.classList.toggle('fv-hide-tier-t3', !ts.T3);
+        document.body.classList.toggle('fv-hide-tier-t4', !ts.T4);
+        document.body.classList.toggle('fv-hide-tier-t5', !ts.T5);
+        document.body.classList.toggle('fv-show-political-risk', !!ts.politicalRisk);
+      }
+      // Click delegation on the legend panel.
+      panel.addEventListener('click', (e) => {
+        const tierRow = e.target.closest('.forge-legend-row--tier');
+        const prRow   = e.target.closest('.forge-legend-row[data-political-risk]');
+        if (!tierRow && !prRow) return;
+        e.stopPropagation();
+        const ts = readTierState();
+        if (tierRow) {
+          const uc = tierRow.getAttribute('data-tier-uc');
+          if (!uc) return;
+          ts[uc] = !ts[uc];
+        } else {
+          ts.politicalRisk = !ts.politicalRisk;
+        }
+        writeTierState(ts);
+        syncLegendTierUI();
+        // Hide the hover tooltip — the row's just been clicked,
+        // tooltip is stale until the next dwell.
+        hideTooltip();
+        // Re-run focus + side panel so filtered wires + side-panel
+        // rows refresh immediately.
+        if (typeof recomputeFocus === 'function' && local.mode && local.mode.edges) {
+          try { recomputeFocus(); } catch (_) {}
+        }
+        if (typeof local._renderSidePanel === 'function') {
+          try { local._renderSidePanel(); } catch (_) {}
+        }
+      });
+      // Hover tooltip body for the political-risk row.
+      bodyByTier['__politicalRisk'] = politicalRiskBody;
+      // Initial sync — read LS + apply check state + push to engine
+      // BEFORE the first recomputeFocus the mount flow runs.
+      syncLegendTierUI();
 
       let isOpen = false;
       function openPanel()  {
@@ -5699,11 +5767,16 @@
       function showTooltipFor(row) {
         // Phase 21AT (2026-05-23) — the legend now has two row classes:
         // bucket rows (data-bucket) and tier rows (data-tier-key).
-        // Same tooltip element + positioning logic; only the body
-        // source differs.
+        // Phase 21AY (2026-05-23) — third row class: political-risk
+        // toggle (data-political-risk). Same tooltip element + clamp
+        // logic; only the body lookup differs.
         const bKey = row.getAttribute('data-bucket');
         const tKey = row.getAttribute('data-tier-key');
-        const body = bKey ? bodyByKey[bKey] : (tKey ? bodyByTier[tKey] : null);
+        const pr   = row.getAttribute('data-political-risk');
+        const body = bKey ? bodyByKey[bKey]
+                   : tKey ? bodyByTier[tKey]
+                   : pr   ? bodyByTier['__politicalRisk']
+                   : null;
         if (!body) return;
         tooltip.textContent = body;
         // Reveal first so we can measure dimensions.
