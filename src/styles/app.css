@@ -620,6 +620,19 @@ body.view-forge .forge-stage {
   bottom: 40px;     /* drops UPWARD over the button */
   left: 0;
   min-width: 220px;
+  /* Phase 21AW (2026-05-23) — CAP the panel height to the viewport
+     so it never overflows off-screen. Earlier this session grew the
+     panel from 4 sections to 5 (Layers / Color theme / Family order
+     / Node distribution / Source tiers) — the cumulative ~35 rows
+     blew past the available drop-up window on smaller laptops, and
+     the top sections became unreachable.
+     Reservation = ~80px (bottom bar ~40px + the 40px drop-up offset
+     above the button + a small safety margin). Internal scroll
+     handles the rest with a thin gold-tinted scrollbar that matches
+     the atlas aesthetic. */
+  max-height: calc(100vh - 80px);
+  overflow-y: auto;
+  overscroll-behavior: contain;
   padding: 6px 0;
   background: rgba(13,17,25,0.92);
   border: 1px solid rgba(212,165,90,0.22);
@@ -631,10 +644,29 @@ body.view-forge .forge-stage {
   display: none;
 }
 .forge-viewset-panel.is-open { display: block; }
+/* Thin gold-tinted scrollbar — same vocabulary as the side panel. */
+.forge-viewset-panel::-webkit-scrollbar { width: 6px; }
+.forge-viewset-panel::-webkit-scrollbar-track { background: transparent; }
+.forge-viewset-panel::-webkit-scrollbar-thumb {
+  background: rgba(212,165,90,0.25);
+  border-radius: 3px;
+}
+.forge-viewset-panel::-webkit-scrollbar-thumb:hover {
+  background: rgba(212,165,90,0.45);
+}
+/* Firefox scrollbar styling. */
+.forge-viewset-panel {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(212,165,90,0.25) transparent;
+}
 .forge-viewset-row {
   display: flex; align-items: center; gap: 10px;
   width: 100%;
-  padding: 8px 14px;
+  /* Phase 21AW (2026-05-23) — tighter vertical padding so 35 rows
+     fit comfortably inside the viewport-capped panel. Was 8px → 5px
+     vertical. Hit-target stays comfortable (14×14 checkbox dominates
+     the row height). */
+  padding: 5px 14px;
   background: transparent;
   border: 0;
   text-align: left;
@@ -688,11 +720,13 @@ body.view-forge .forge-stage {
   letter-spacing: 0.18em;
   text-transform: uppercase;
   color: var(--text-3, #6b7280);
-  padding: 8px 16px 4px;
+  /* Phase 21AW (2026-05-23) — tighter section header padding to
+     reduce total panel height (5 sections × 12px saved = 60px). */
+  padding: 6px 16px 3px;
 }
 .forge-viewset-divider {
   height: 1px;
-  margin: 4px 12px;
+  margin: 3px 12px;
   background: rgba(212,165,90,0.10);
 }
 .forge-viewset-row .vs-radio {
