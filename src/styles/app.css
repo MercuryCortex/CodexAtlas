@@ -578,6 +578,42 @@ body.nav-hidden .side-tab { display: none !important; }
   border-color: rgba(212,165,90,0.45);
   background: rgba(212,165,90,0.10);
 }
+/* Collapsible "Old prototypes" section — native <details>. Summary
+   doubles as the section header; clicking flips open/closed without
+   a JS handler. The caret rotates 180° when open. */
+.nav-hub-menu .nh-collapse { padding: 0; }
+.nav-hub-menu .nh-collapse-summary {
+  display: flex; align-items: center; gap: 6px;
+  padding: 8px 16px 6px;
+  font-family: var(--mono, "JetBrains Mono", Menlo, monospace);
+  font-size: 10px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--text-3, #6b7280);
+  cursor: pointer;
+  list-style: none;
+  user-select: none;
+}
+/* Hide the default disclosure marker on Webkit + Gecko. */
+.nav-hub-menu .nh-collapse-summary::-webkit-details-marker { display: none; }
+.nav-hub-menu .nh-collapse-summary::marker { content: ""; }
+.nav-hub-menu .nh-collapse-summary:hover { color: var(--gold-1, #e8c889); }
+.nav-hub-menu .nh-collapse-label { flex: 0 0 auto; }
+.nav-hub-menu .nh-collapse-caret {
+  margin-left: auto;
+  font-size: 10px;
+  transition: transform 140ms ease;
+}
+.nav-hub-menu .nh-collapse[open] .nh-collapse-caret {
+  transform: rotate(180deg);
+}
+.nav-hub-menu .nh-collapse-body {
+  padding: 4px 0 2px;
+  /* Subtle inset so the wrapped item list reads as a nested group
+     under the collapse summary, not floating in the drawer. */
+  border-left: 2px solid rgba(212,165,90,0.10);
+  margin: 0 12px;
+}
 .nav-hub-menu .nh-stats {
   padding: 6px 16px 10px;
   font-family: var(--mono, "JetBrains Mono", Menlo, monospace);

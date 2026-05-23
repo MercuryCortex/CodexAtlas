@@ -729,16 +729,23 @@ window.setView = setView;
     );
 
     // ── OLD PROTOTYPES (reference) ─────────────────────────
-    // The flat view list from the legacy nav. Forge is the live
-    // master view (already in the top-pill); every other entry is
-    // kept here for reference. Mark Forge with "→ pill" so the user
-    // sees where the current master views live now.
+    // The flat view list from the legacy nav, wrapped in a native
+    // <details> so the section is COLLAPSED BY DEFAULT — the entry
+    // list (~22 items) was cluttering the drawer. Click the summary
+    // to expand. Forge entry tagged "live" so the user understands
+    // it's the same as the FORGE pill at top.
     const navInner = document.querySelector('nav.side .nav-inner');
     if (navInner) {
       html.push('<div class="nh-divider"></div>');
-      html.push('<div class="nh-section">Old prototypes <em class="nh-section-em">(reference)</em></div>');
-      // Forge stays accessible here too — but tagged so the user
-      // understands it's the same as the FORGE pill at top.
+      html.push('<details class="nh-collapse">');
+      html.push(
+        '<summary class="nh-collapse-summary">' +
+          '<span class="nh-collapse-label">Old prototypes</span>' +
+          '<em class="nh-section-em">(reference)</em>' +
+          '<span class="nh-collapse-caret">▾</span>' +
+        '</summary>'
+      );
+      html.push('<div class="nh-collapse-body">');
       navInner.querySelectorAll(':scope > .item').forEach(srcItem => {
         const view = srcItem.dataset.view;
         const sym  = (srcItem.querySelector('.sym') || {}).textContent || '';
@@ -772,6 +779,7 @@ window.setView = setView;
           }
         });
       }
+      html.push('</div></details>');
     }
 
     // ── ABOUT ──────────────────────────────────────────────
