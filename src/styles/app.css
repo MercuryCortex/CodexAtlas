@@ -1002,17 +1002,24 @@ body.app-pill-no-class .app-pill-divider { display: none; }
   background: rgba(212,165,90,0.12);
 }
 
-/* Responsive collapse — narrow viewports shrink the pill side
-   padding so the pill never collides with bottom-right chrome.
-   Full responsive collapse + keyboard nav lands in Phase 22-E. */
+/* Responsive collapse — Phase 22-E (2026-05-24). Three breakpoints
+   keep the pill usable across viewports:
+   - default: full ~150px each side, 18px letter-spacing on master
+   - <960px:  tighter padding, master letter-spacing tightens to 0.12
+   - <600px:  shrink heights; hide the LEFT label (master icon +
+              caret only) so the RIGHT (class) side still has room
+   - <360px:  pill hides entirely; ✦ drawer carries navigation */
 @media (max-width: 960px) {
   .app-pill-side { padding: 0 18px 0 10px; }
   .app-pill-master .app-pill-label { letter-spacing: 0.12em; }
 }
-@media (max-width: 720px) {
-  /* Below 720px we hide the pill entirely until Phase 22-E ships
-     the proper collapsed-single-button variant. The old Forge
-     bottom-bar pill stays functional on mobile. */
+@media (max-width: 600px) {
+  .app-pill { height: 32px; }
+  .app-pill-side { padding: 0 16px 0 8px; font-size: 10px; }
+  .app-pill-master .app-pill-label { display: none; }
+  .app-pill-master::after { right: 5px; }
+}
+@media (max-width: 360px) {
   .app-pill-wrap { display: none; }
 }
 
@@ -7025,6 +7032,21 @@ body.view-forge #forge-scrub-center-thumb { display: none !important; }
   border-color: var(--gold, #d4a55a);
 }
 .forge-legend-row--toggle.is-on { color: var(--gold-1, #e8c889); }
+
+/* Phase 22-E (2026-05-24) — keyboard focus state on app-pill menu
+   items. Both `:focus` (native browser focus ring) and `.is-focused`
+   (JS-added when arrow keys cycle) light up the same gold accent.
+   Same hover treatment as the existing nav-hub items. */
+.app-pill-menu-item:focus,
+.app-pill-menu-item.is-focused {
+  outline: none;
+  background: rgba(212,165,90,0.14);
+  color: var(--gold-1, #e8c889);
+}
+.app-pill-menu-item:focus .app-pill-menu-icon,
+.app-pill-menu-item.is-focused .app-pill-menu-icon {
+  color: var(--gold, #d4a55a);
+}
 
 /* Political-risk row in the legend — same ⛔ BLACK ALERT vocabulary
    as the side-panel BLACK ALERT chrome. Red top border, ⛔ icon with

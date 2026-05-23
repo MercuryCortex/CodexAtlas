@@ -274,6 +274,76 @@
     if (classMenu && classMenu.classList.contains('is-open')) positionMenu(classMenu, classBtn);
   });
 
+  // ── KEYBOARD NAV (Phase 22-E) ──────────────────────────────
+  // When a dropdown is open: ↑/↓ cycle through items, Enter activates
+  // the focused item, Tab closes (cooperate with browser focus
+  // model). Escape already handled above. Mirrors the nav-hub-menu
+  // pattern when we add it there in a future iteration.
+  function activeMenu() {
+    if (masterMenu.classList.contains('is-open')) return masterMenu;
+    if (classMenu && classMenu.classList.contains('is-open')) return classMenu;
+    return null;
+  }
+  function menuItems(menu) {
+    return Array.from(menu.querySelectorAll('button[role="menuitem"], button[data-master], button[data-class]'));
+  }
+  function focusMenuItem(menu, idx) {
+    const items = menuItems(menu);
+    if (!items.length) return;
+    const i = ((idx % items.length) + items.length) % items.length;
+    items.forEach(b => b.classList.toggle('is-focused', false));
+    items[i].classList.add('is-focused');
+    items[i].focus({ preventScroll: true });
+  }
+  function currentMenuIndex(menu) {
+    const items = menuItems(menu);
+    const cur = items.findIndex(b => b === document.activeElement || b.classList.contains('is-focused'));
+    return cur < 0 ? -1 : cur;
+  }
+  document.addEventListener('keydown', (ev) => {
+    const menu = activeMenu();
+    if (!menu) return;
+    if (ev.key === 'ArrowDown') {
+      ev.preventDefault();
+      const i = currentMenuIndex(menu);
+      focusMenuItem(menu, i + 1);
+    } else if (ev.key === 'ArrowUp') {
+      ev.preventDefault();
+      const i = currentMenuIndex(menu);
+      focusMenuItem(menu, i < 0 ? menuItems(menu).length - 1 : i - 1);
+    } else if (ev.key === 'Enter' && document.activeElement && menu.contains(document.activeElement)) {
+      ev.preventDefault();
+      document.activeElement.click();
+    } else if (ev.key === 'Tab') {
+      // Tab closes — let the browser proceed to next focusable.
+      closeMaster();
+      closeClass();
+    }
+  });
+
+  // ── SMOKE-TEST DEBUG HELPER (Phase 22-E) ───────────────────
+  // window._pillSmoke() cycles through all master views in sequence
+  // with a delay between switches, then resets to Forge. Useful for
+  // verifying the pill drives every view cleanly. Run from console
+  // when validating after Forge mounts.
+  window._appPill.smoke = function (delay) {
+    delay = delay || 1200;
+    const list = MASTER_VIEWS.slice();
+    let i = 0;
+    function step() {
+      if (i >= list.length) {
+        console.info('[pill-smoke] complete — returning to FORGE');
+        if (typeof window.setView === 'function') window.setView('forge');
+        return;
+      }
+      const mv = list[i++];
+      console.info('[pill-smoke] →', mv.label, '(' + mv.target + ')');
+      if (typeof window.setView === 'function') window.setView(mv.target);
+      setTimeout(step, delay);
+    }
+    step();
+  };
+
   // ── CLASS BUTTON CLICK HANDLERS ────────────────────────────
   if (classBtn) {
     classBtn.addEventListener('click', (ev) => {
