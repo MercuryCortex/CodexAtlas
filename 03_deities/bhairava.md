@@ -15,14 +15,16 @@ child-of: []
 consort: ["Bhairavī (Bhairava's wrathful Śakti)"]
 attributes: ["severed head (in his hand, traditionally Brahmā's fifth head)", "ash-smeared body", "garland of skulls (*muṇḍa-mālā*)", "naked or with tiger-skin", "trident", "drum", "dogs (Bhairava's vāhana)", "blood-cup (*kapāla*)"]
 attested-in: ["Tantric scriptures: *Svacchanda Tantra* (~7th–8th c.)", "[[phase-5-006-vijnana-bhairava-tantra]] (the cardinal Kashmir Tantric *dhāraṇā* text — 'the Bhairava of consciousness')", "*Bhairava-stotra* of Abhinavagupta (~1000)", "[[phase-5-014-abhinavagupta-tantraloka]] (extensive)", "[[phase-5-033-shiva-sutras]]"]
-equivalents: []
+equivalents: ["[[shiva]]", "[[mahakala]]"]
 syncretic-edges:
-  - target: "[[mahakala]]"
-    type: "ancient-identification"
-    source: "the Vajrayāna Buddhist Mahākāla is iconographically and structurally Bhairava-derivative; Sanderson 2009 argues for substantial direction of Śaiva → Buddhist borrowing."
   - target: "[[shiva]]"
-    type: "aspect-of"
-    source: "Bhairava is the fierce / wrathful manifestation of Shiva."
+    type: "same-as"
+    source: "Vijñāna-Bhairava Tantra; Sanderson 2009 *The Śaiva Age*"
+    notes: "Bhairava is Shiva in his fierce / cremation-grounds form — naked, ash-smeared, skull-garlanded, drinking from a kapāla. Kashmir Trika Shaivism makes Bhairava the supreme consciousness directly; doctrinally identical to Shiva, iconographically distinct"
+  - target: "[[mahakala]]"
+    type: "direct-borrowing"
+    source: "Sanderson 2009 — Vajrayāna Mahākāla is iconographically and structurally Bhairava-derivative; substantial directional borrowing from medieval Śaivism"
+    notes: "Buddhist Mahākāla descends from Bhairava (which descends from Shiva), inheriting wrathful iconography wholesale"
 status: "metadata"
 refs:
   - title: "Tantric Visions of the Divine Feminine: The Ten Mahāvidyās"

@@ -11,11 +11,20 @@ domains: ["protective deity / dharmapāla", "fierce manifestation of compassiona
 gender: "masculine"
 role: "in Buddhism, the principal *dharmapāla* (dharma-protector) of many Tibetan schools; in Hinduism, a fierce form of Śiva"
 attested-in: ["Buddhist Tantric corpus (Mahākāla Tantras, esp. *Vajra-mahākāla*)", "Hindu Mahākāla material in Śaiva Tantric texts and the Kālīkā Purāṇa"]
-equivalents: ["[[rudra-shiva-early]] (Buddhist Mahākāla is a tantric appropriation of Śaiva fierce manifestation)"]
+equivalents: ["[[shiva]]", "[[rudra-shiva-early]]", "[[bhairava]]"]
 syncretic-edges:
-  - target: "rudra-shiva-early"
-    type: "direct-influence"
-    source: "Sanderson 2009 — Buddhist tantric appropriation of Śaiva Mahākāla; the Buddhist version inherits iconography from Śaiva originals"
+  - target: "[[shiva]]"
+    type: "direct-borrowing"
+    source: "Sanderson 2009 *The Śaiva Age*; Stein 2010"
+    notes: "Buddhist Mahākāla is Shiva's wrathful Tantric form appropriated wholesale as a dharmapāla. Sanderson 2009 treats this as a textbook case of Vajrayāna's directional borrowing from medieval Śaivism. East-Asian Buddhism preserved Mahākāla as 大黒天 Daikokuten (Japanese Shichifukujin) — the same name softened into a wealth-and-kitchen god"
+  - target: "[[rudra-shiva-early]]"
+    type: "substrate-influence"
+    source: "Sanderson 2009"
+    notes: "The Vedic Rudra is the pre-classical source of Shiva's wrathful aspect that Mahākāla inherits via the Shiva → Buddhist-Tantric transmission"
+  - target: "[[bhairava]]"
+    type: "parallel-motif"
+    source: "Sanderson 2009"
+    notes: "Mahākāla and Bhairava are sibling wrathful forms — both derive from Shiva's terrifying-cremation-grounds aspect; Bhairava remains within Shaiva tradition while Mahākāla crosses into Buddhism"
 status: "metadata"
 refs:
   - title: "Indo-Tibetan Buddhism"
