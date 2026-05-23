@@ -140,6 +140,7 @@ You do NOT need to read these on cast. Read each only when the trigger applies.
 
 | Doc | Trigger to read |
 |---|---|
+| `00_meta/CODEX.md` | **Before ANY cross-tradition wiring batch.** The investigative-not-advocacy posture, the 21-edge-type vocabulary, the 4-tier source system (T1 mainstream / T2 academic-minority / T3 alternative-school like Hancock / T4 popular-claim-rejected like Sitchin). Every cross-tradition edge needs `type:` + `source:` + `source-tier:` + `notes:` per CODEX. |
 | `00_meta/ONTOLOGY.md` | About to create a new node — need the YAML skeleton + lens-by-lens fields. Or wiring edges and need the bucket-routing table. |
 | `00_meta/ONTOLOGY-RATIONALE-2026-05-18.md` | Considering any ontology change. Read before opening your mouth. Append-only rule applies. |
 | `00_meta/CORE-THEMES.md` | About to wire a cross-tradition pattern (flood, dying-rising god, divine kingship, etc.). Don't coin a new slug if a canonical one exists. |

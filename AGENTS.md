@@ -14,15 +14,17 @@
 
 ---
 
-## The four master files (read these, in order, before any work)
+## The five master files (read these, in order, before any work)
 
-1. **[`00_meta/ONTOLOGY.md`](00_meta/ONTOLOGY.md)** — *what* we're mapping (structural). The 17 lenses (one folder each), the 7 edge buckets (Transmission / Parallel / Association / Kinship / Attestation / Polemic / Fusion), the MASSIVE-WIN transmission patterns we hunt, the source-integrity tiers (T1–T4), the node status tiers, slug discipline.
+1. **[`00_meta/CODEX.md`](00_meta/CODEX.md)** — *who we are epistemically*. The investigative-not-advocacy posture, the disclaimer-machine ethos, the 21-type cross-tradition vocabulary (summary), the 4-tier source system (T1 mainstream peer-reviewed / T2 academic minority / T3 alternative-school like Hancock / T4 popular-claim-rejected like Sitchin), what we explicitly reject (Eliade-mode telescope claims, mainstream-only orthodoxy, single-school doctrine, hierophany-depth assertions). **Read this BEFORE any cross-tradition wiring batch.**
 
-2. **[`00_meta/CORE-THEMES.md`](00_meta/CORE-THEMES.md)** — *what* to hunt for (content). The curated hunt-list of ~150 load-bearing cross-tradition patterns — themes (cosmogonic / eschatological / soteriological / theological / dualism / political-theological / anthropological + transmission-spine), symbols (cosmological / solar / theriomorphic / vegetal / architectural / cruciform / geometric / mystery / indigenous), rituals (sacrifice / initiation / mortuary / festival / pilgrimage / divination / prayer / ascetic / civic), and morals. Each entry: canonical slug + one-line "look for" + traditions usually carrying it + edge bucket the cross-tradition link lands in.
+2. **[`00_meta/ONTOLOGY.md`](00_meta/ONTOLOGY.md)** — *what* we're mapping (structural). The 27 lenses (one folder each), the 7 edge buckets (Transmission / Parallel / Association / Kinship / Attestation / Polemic / Fusion), the MASSIVE-WIN transmission patterns we hunt, the source-integrity tiers (T1–T4), the node status tiers, slug discipline.
 
-3. **[`00_meta/PROTOCOL.md`](00_meta/PROTOCOL.md)** — *how* to map it. The absorb-and-dissect SOP (claim → absorb → dissect → wire → hunt transmissions → stub-sweep → build → commit), the four laws (WIRING / INTEGRITY / GOBLIN-AUDIT / APP-CODE-SERIALIZES), the YAML skeletons for all 17 node types.
+3. **[`00_meta/CORE-THEMES.md`](00_meta/CORE-THEMES.md)** — *what* to hunt for (content). The curated hunt-list of ~150 load-bearing cross-tradition patterns — themes (cosmogonic / eschatological / soteriological / theological / dualism / political-theological / anthropological + transmission-spine), symbols (cosmological / solar / theriomorphic / vegetal / architectural / cruciform / geometric / mystery / indigenous), rituals (sacrifice / initiation / mortuary / festival / pilgrimage / divination / prayer / ascetic / civic), and morals. Each entry: canonical slug + one-line "look for" + traditions usually carrying it + edge bucket the cross-tradition link lands in.
 
-4. **[`00_meta/LANES.md`](00_meta/LANES.md)** — *where your work belongs*. Two lanes:
+4. **[`00_meta/PROTOCOL.md`](00_meta/PROTOCOL.md)** — *how* to map it. The absorb-and-dissect SOP (claim → absorb → dissect → wire → hunt transmissions → stub-sweep → build → commit), the four laws (WIRING / INTEGRITY / GOBLIN-AUDIT / APP-CODE-SERIALIZES), the YAML skeletons for all 27 node types, and the locked 21-type cross-tradition edge vocabulary (§3.1).
+
+5. **[`00_meta/LANES.md`](00_meta/LANES.md)** — *where your work belongs*. Two lanes:
    - **Lane A — INVESTIGATION** (many agents, parallel): owns `01_*` through `17_*` content folders + the auto-regenerated meta files. Claim in [`ACTIVE-CONTENT.md`](00_meta/ACTIVE-CONTENT.md).
    - **Lane B — UX** (one agent at a time): owns `src/`, `index.html`, build scripts, `_assets/`. Claim the single slot in [`ACTIVE-UX.md`](00_meta/ACTIVE-UX.md).
 
@@ -39,7 +41,7 @@ The older docs (`methodology.md`, the seven `schema-*.md` files, `source-integri
 ## Quick-claim cheat sheet
 
 **Lane A — content agent:**
-1. Read ONTOLOGY → CORE-THEMES → PROTOCOL → LANES.
+1. Read CODEX → ONTOLOGY → CORE-THEMES → PROTOCOL → LANES.
 2. Pick a primary text from [`00_meta/ABSORPTION-QUEUE.md`](00_meta/ABSORPTION-QUEUE.md), [`00_meta/DASHBOARD.md`](00_meta/DASHBOARD.md)'s priority queue, [`AUDIT/05_priority_queue.md`](AUDIT/05_priority_queue.md), or your own hunt.
 3. Append your row to [`00_meta/ACTIVE-CONTENT.md`](00_meta/ACTIVE-CONTENT.md).
 4. Absorb the text + dissect across the 17 lenses (use CORE-THEMES as the pattern lens) + wire + hunt MASSIVE-WIN transmissions + stub-sweep + `python3 build_data.py && python3 build_dashboard.py && python3 linkcheck.py` + commit.
@@ -53,9 +55,10 @@ The older docs (`methodology.md`, the seven `schema-*.md` files, `source-integri
 
 ---
 
-## The four laws (in 30 seconds)
+## The five laws (in 30 seconds)
 
-- **WIRING LAW** — every ``wikilink`` resolves to a real node by commit time. **Edge targets MUST be `[[wikilinks]]`, never raw prose strings** (so the graph can traverse). **Every cross-tradition figure you name in body prose must appear as a structured `[[wikilink]]` entry in `equivalents:` or `syncretic-edges:` — body prose alone does NOT count as wiring.** **Reciprocal**: when you add A→B in A's file, add B→A in B's file (or document why not). Stub-sweep + reciprocity sweep at batch close. See PROTOCOL §3.1 for the 9 edge types and concrete examples.
+- **CODEX LAW** — see [`00_meta/CODEX.md`](00_meta/CODEX.md). Investigation not advocacy; pluralism not orthodoxy; disclosure not concealment. Every cross-tradition edge carries `type:` (one of 21 from PROTOCOL §3.1) + `source:` (who claims it) + `source-tier:` (T1/T2/T3/T4) + `notes:` (mainstream rebuttal for T3/T4). Never blanket-endorse a school. Never hide a widely-circulated claim. Never assert without citation.
+- **WIRING LAW** — every ``wikilink`` resolves to a real node by commit time. **Edge targets MUST be `[[wikilinks]]`, never raw prose strings** (so the graph can traverse). **Every cross-tradition figure you name in body prose must appear as a structured `[[wikilink]]` entry in `equivalents:` or `syncretic-edges:` — body prose alone does NOT count as wiring.** **Reciprocal**: when you add A→B in A's file, add B→A in B's file (or document why not). Stub-sweep + reciprocity sweep at batch close. See PROTOCOL §3.1 for the 21 edge types and concrete examples.
 - **INTEGRITY LAW** — globally unique slugs. Build hard-fails on duplicates. Rename the conflict; never set `ATLAS_ALLOW_DUP_ID=1`.
 - **GOBLIN-AUDIT** — when one-line fixes stop closing a bug class, dispatch three parallel read-only audit agents (correctness / rule-fragility / structural integrity). One pass, not ten.
 - **APP-CODE SERIALIZES** — Lane B has one slot. Lane A may not stage anything under `src/`, `index.html`, build scripts, `_assets/`. The pre-commit hook enforces.
@@ -127,7 +130,8 @@ Palette / family colors / bucket hex / dim levels / hot alphas / stroke widths /
 
 | File | Purpose |
 |---|---|
-| [`00_meta/ONTOLOGY.md`](00_meta/ONTOLOGY.md) | Structural — 17 lenses + 7 edge buckets + tiers + MASSIVE-WIN patterns |
+| [`00_meta/CODEX.md`](00_meta/CODEX.md) | **Investigative charter — posture / disclaimer-machine / 21-edge-vocabulary / 4-tier source system / what we reject** |
+| [`00_meta/ONTOLOGY.md`](00_meta/ONTOLOGY.md) | Structural — 27 lenses + 7 edge buckets + tiers + MASSIVE-WIN patterns |
 | [`00_meta/CORE-THEMES.md`](00_meta/CORE-THEMES.md) | The hunt-list — ~150 cross-tradition patterns (themes / symbols / rituals / morals) with canonical slugs |
 | [`00_meta/PROTOCOL.md`](00_meta/PROTOCOL.md) | How to map (SOP + laws + YAML skeletons) |
 | [`00_meta/LANES.md`](00_meta/LANES.md) | Where work belongs (lane definitions + path map) |
