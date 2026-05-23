@@ -16,6 +16,14 @@ texts-attributed-to: []
 originator-of: ["[[messianic-forerunner]]"]
 events-participated: []
 mentioned-in: ["[[phase-2-010-hebrew-bible-early-prophets]]", "[[phase-2-019-deuteronomistic-history]]", "[[phase-3-016-gospel-of-mark]]", "[[phase-3-017-gospel-of-matthew]]", "[[phase-3-018-luke-acts]]", "[[phase-3-020-gospel-of-john]]", "[[phase-3-015-pauline-epistles]]", "[[phase-4-034-quran]]"]
+connects-to:
+  - target: "[[perun]]"
+    relation: "folk-syncretism"
+    notes: "Eastern Slavic dvoeverie textbook case — *Ilya-Prorok / Ilya-Gromovnik* ('Elijah the Thunderer') inherits Perun's storm-god domain after the 988 Christianization of Kievan Rus'. The 2 Kings 2:11 fiery-chariot ascension provided the Christian-canonical hook; feast 20 July (Old Style) inherits Perun's harvest-storm timing. The classic Slavic pagan-deity → Christian-saint identity transfer alongside Veles → Saint Blaise. Sources: Fedotov 1948 *The Russian Religious Mind*; Levin 1993; Ivanov & Toporov 1974"
+cross-tradition-edges:
+  - type: "folk-syncretism"
+    target: "[[perun]]"
+    note: "See connects-to entry — Ilya-Gromovnik inherits Perun's thunderer-role in Eastern Slavic folk-Christianity"
 status: "metadata"
 refs:
   - title: "1 Kings 17 – 2 Kings 13: Elijah and Elisha (Anchor Yale Bible)"

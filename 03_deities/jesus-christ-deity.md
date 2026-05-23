@@ -15,8 +15,67 @@ child-of: ["[[god-the-father-christian]]", "[[mary-theotokos]] (in the flesh)"]
 consort: []
 attributes: ["cross", "lamb", "fish (ichthys)", "chi-rho", "halo", "wounds of crucifixion", "alpha and omega"]
 attested-in: ["[[phase-3-015-pauline-epistles]]", "[[phase-3-016-gospel-of-mark]]", "[[phase-3-017-gospel-of-matthew]]", "[[phase-3-018-luke-acts]]", "[[phase-3-020-gospel-of-john]]"]
-equivalents: []
+equivalents: ["[[the-trinity]]", "[[logos-johannine]]", "[[jesus-of-nazareth]]"]
+# Cross-tradition parallels in syncretic-edges below use academically-
+# neutral labels (parallel-motif / scholarly-parallel / folk-syncretism)
+# that document the comparative-religion findings WITHOUT claiming
+# identity, derivation, or that Jesus IS any of these other figures.
+# Each is honest about the type of relationship per PROTOCOL §3.1.
 syncretic-edges:
+  # ── Eschatological future-saviour pattern (parallel-motif) ─────
+  - target: "[[maitreya]]"
+    type: "parallel-motif"
+    source: "Sponberg & Hardacre (eds.) 1988 *Maitreya, the Future Buddha*; Collins 2009 *Messianism, Apocalypticism, and Redemption*"
+    notes: "Shared eschatological-returner pattern: both are future figures expected to appear at a time of cosmic need. The pattern is documented across traditions; no transmission claim — Maitreya doctrine emerges from independent Buddhist eschatology"
+  - target: "[[kalki]]"
+    type: "parallel-motif"
+    source: "Collins 2009; Revelation 19:11-16 (white horse + sword) parallels Kalki's iconography"
+    notes: "Vishnu's tenth (future) avatar shares the white-horse-warrior eschatological-returner imagery with the Christ of Revelation. Both close their respective cosmic cycles. Indo-European warrior-at-end-of-time substrate may underlie both; direct transmission unproven"
+  - target: "[[muhammad-al-mahdi]]"
+    type: "parallel-motif"
+    source: "Quranic + Hadith eschatology; Sachedina 1981 *Islamic Messianism*"
+    notes: "Islamic Mahdi is the eschatological returner who appears alongside Isa (Christian Jesus's Islamic name) at the end of days. The Islamic eschatology incorporates Jesus directly via Isa; the Mahdi parallel is the in-tradition figure of similar function"
+  - target: "[[inkarri]]"
+    type: "parallel-motif"
+    source: "Pease 1973; comparative Andean millenarianism scholarship"
+    notes: "Inca eschatological-return figure (Inkarri = 'Inca-king', the dismembered last Sapa Inca who will reassemble and return). Independent New-World formation of the dismembered-saviour-returner pattern"
+  # ── Compassion / hell-redeemer bodhisattva (scholarly-parallel) ─
+  - target: "[[avalokitesvara]]"
+    type: "scholarly-parallel"
+    source: "Studholme 2002 *The Origins of Oṃ Maṇi Padme Hūṃ*; Yü 2001 *Kuan-yin*"
+    notes: "Scholarly comparative-religion parallel: both are compassionate-saviour figures whose intervention is invoked by name. Avalokitesvara/Guanyin/Kannon develops within the Mahāyāna tradition independently; no transmission claim, only structural parallel of the bodhisattva-of-compassion pattern"
+  - target: "[[amitabha]]"
+    type: "scholarly-parallel"
+    source: "Williams 2008 *Mahāyāna Buddhism* (2nd ed.); Sharf 2002"
+    notes: "Pure Land Amitabha is the saviour-Buddha invoked by name (nembutsu/nianfo) for rebirth in his Pure Land. Scholars (esp. earlier Eurocentric comparativists like Edmunds, Eitel) once proposed direct Christian influence on Amitabha doctrine; current scholarship rejects direct transmission and treats the parallel as structural"
+  - target: "[[dizang-ksitigarbha]]"
+    type: "scholarly-parallel"
+    source: "Glassman 2012 *The Face of Jizō*; Zhiru 2007 *The Making of a Savior Bodhisattva*"
+    notes: "Hell-redeemer bodhisattva — Kṣitigarbha vowed not to attain Buddhahood until hell is empty. The descent-into-hell-to-save-souls structural parallel with the Christian Harrowing of Hell tradition is documented in comparative scholarship; no transmission claim"
+  - target: "[[padmasambhava]]"
+    type: "scholarly-parallel"
+    source: "Comparative religion — the Vajrayāna second-Buddha founder; sometimes compared with Christ in Tibetan-Christian dialogue contexts"
+    notes: "Tibetan Vajrayāna founder (Guru Rinpoche) treated by Nyingma tradition as a Buddha of present age. Scholar-monks (esp. in Tibetan-Christian dialogue circles like Sogyal Rinpoche, Lopez 1998) have noted structural saviour-figure parallels"
+  # ── Dying-rising-god pattern (parallel-motif) ─────────────────
+  - target: "[[lleu-llaw-gyffes]]"
+    type: "parallel-motif"
+    source: "Mac Cana 1970 *Celtic Mythology*; Frazer 1906-1915 (with Mettinger 2001's careful reassessment)"
+    notes: "Welsh dying-and-returning solar-hero figure from the Fourth Branch of the Mabinogi. Frazer included him in the dying-rising-god cluster; modern Celtic scholarship treats the parallel as structural rather than transmission. The crucified-on-a-stake death + return is the load-bearing similarity"
+  - target: "[[the-dioskouroi]]"
+    type: "parallel-motif"
+    source: "Ward 1968 *The Divine Twins*; West 2007 *Indo-European Poetry and Myth* ch. 5"
+    notes: "Saviour-twins Castor + Pollux who die for/with each other and ascend — parallel saviour-figure pattern. The early Christian appropriation of the Dioskouroi iconography for Christ (esp. in Roman catacomb art) is documented"
+  # ── Folk-syncretic identity in diaspora (folk-syncretism) ──────
+  - target: "[[babalu-aye]]"
+    type: "folk-syncretism"
+    source: "Brandon 1993 *Santeria from Africa to the New World*; Thompson 1984 *Flash of the Spirit*"
+    notes: "Yoruba-Cuban Lukumí / Santería folk-syncretism identifies the orisha Babalú-Ayé (sickness + healing) with Saint Lazarus, and the Saint Lazarus → Christ chain extends the identification chain to Christ in some popular-religion contexts. The 17 December festival is the canonical syncretic case. This is folk-religious syncretism on the ground, not a theological transmission claim"
+  # ── Internal Christian doctrine (constituent-of) ───────────────
+  - target: "[[the-trinity]]"
+    type: "constituent-of"
+    source: "Nicene Creed 325; Constantinople 381; the doctrinal definition of the Trinity"
+    notes: "Christ is the Second Person of the Trinity — homoousios with the Father per Nicaea. Internal Christian doctrine, not a cross-tradition claim"
+  # ── Existing edges (preserved from prior version) ─────────────
   - target: "[[logos-johannine]]"
     type: "ancient-identification"
     source: "Gospel of John 1:1–18 — the Logos was God, and the Logos became flesh in Jesus Christ"

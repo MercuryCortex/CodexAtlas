@@ -45,10 +45,10 @@ syncretic-edges:
     type: "parallel-motif"
     source: "Shinto storm-warrior; Susanoo's slaying of Yamata-no-Orochi parallels Perun-Veles myth"
     notes: "Non-PIE storm-warrior + cosmic-serpent slayer parallel from Shinto"
-  - target: "elijah-prophet"
+  - target: "[[elijah-prophet]]"
     type: "folk-syncretism"
-    source: "Fedotov 1948 *The Russian Religious Mind*; post-988 Christianization assimilated Perun's domains to Elijah, who in 2 Kings 2:11 ascends in a chariot of fire and is associated in Slavic folk-Christianity with thunderstorms; feast 20 July (Old Style) inherits Perun's harvest-storm timing"
-    notes: "Eastern Slavic folk-syncretism — *Ilya-Prorok / Ilya-Gromovnik* 'Elijah the Thunderer' is Perun under a Christian saint's name. The classic Slavic case of pagan-deity → Christian-saint identity transfer (parallel to Yoruba orisha → Catholic saint pattern). The target slug `elijah-prophet` is intentionally unbracketed: the Christian Elijah node is not yet in the corpus and this prose preserves the connection for later wiring"
+    source: "Fedotov 1948 *The Russian Religious Mind*; Levin 1993; Ivanov & Toporov 1974"
+    notes: "Eastern Slavic folk-syncretism — *Ilya-Prorok / Ilya-Gromovnik* 'Elijah the Thunderer' is Perun under a Christian saint's name. Post-988 Christianization assimilated Perun's domains to Elijah, whose 2 Kings 2:11 fiery-chariot ascension provided the Christian-canonical hook. Feast 20 July (Old Style) inherits Perun's harvest-storm timing. Textbook dvoeverie case alongside Veles → Saint Blaise"
 status: "metadata"
 refs:
   - title: "Slavic and Baltic Linguistics and Mythology"
