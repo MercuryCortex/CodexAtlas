@@ -15,7 +15,7 @@ child-of: ["[[el-canaanite]] (in some traditions); [[dagon]] (in Ugaritic, where
 consort: ["[[anat]] (sister-consort)", "[[asherah]] (in some folk-religious contexts)"]
 attributes: ["thunderbolt", "club / mace", "spear with vegetation finial", "bull (his sacred animal)", "winged crown"]
 attested-in: ["[[phase-1-013-baal-cycle]]", "[[phase-1-014-ugaritic-ritual-texts]]", "[[phase-1-012-amarna-letters]]"]
-equivalents: []
+equivalents: ["[[marduk]]", "[[indra]]", "[[zeus]]", "[[thor]]", "[[teshub]]", "[[telipinu]]", "[[melqart]]", "[[hubal]]", "[[beelzebub]]", "[[baal]]", "[[chaac]]", "[[chac]]", "[[perkunas]]", "[[raijin]]", "[[susanoo]]", "[[tinia]]", "[[shango]]"]
 syncretic-edges:
   - target: "[[set]]"
     type: "ancient-identification"

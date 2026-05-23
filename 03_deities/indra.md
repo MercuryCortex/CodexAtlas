@@ -15,7 +15,7 @@ child-of: ["Dyauṣ Pitṛ", "Pṛthivī"]
 consort: ["Śacī / Indrāṇī"]
 attributes: ["vajra (thunderbolt)", "white elephant Airāvata", "bow (Indra's bow = rainbow)", "soma cup"]
 attested-in: ["[[phase-2-001-rig-veda-family-books]]", "[[phase-2-003-atharva-veda]]", "[[phase-2-006-brahmanas-aranyakas]]", "Mitanni-Hittite treaty (-1380 BCE)"]
-equivalents: ["[[sakra-buddhist]]", "[[zeus]]", "[[jupiter]]", "[[thor]]", "[[perun]]", "[[taranis]]", "[[raijin]]", "[[susanoo]]", "[[marduk]]", "[[baal-hadad]]"]
+equivalents: ["[[sakra-buddhist]]", "[[zeus]]", "[[jupiter]]", "[[thor]]", "[[perun]]", "[[taranis]]", "[[raijin]]", "[[susanoo]]", "[[marduk]]", "[[baal-hadad]]", "[[verethraghna]]", "[[verethraghna-zoroastrian]]", "[[vajrapani]]", "[[akshobhya]]", "[[vahagn]]", "[[jade-emperor]]", "[[hou-yi]]", "[[leigong]]", "[[takemikazuchi]]", "[[chaac]]", "[[chac]]", "[[daramulan]]", "[[pariacaca]]", "[[perkunas]]", "[[shango]]"]
 syncretic-edges:
   - target: "[[sakra-buddhist]]"
     type: "direct-borrowing"

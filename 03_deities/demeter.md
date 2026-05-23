@@ -15,7 +15,7 @@ child-of: ["[[kronos]]", "Rhea"]
 consort: ["Zeus", "Iasion (in Hesiod)"]
 attributes: ["sheaf of grain", "torch", "poppy", "snake"]
 attested-in: ["[[phase-2-008-homeric-epics]]", "[[phase-2-009-hesiod-theogony-works-and-days]]", "Homeric Hymn to Demeter", "Linear B (da-ma-te, contested)"]
-equivalents: ["[[ceres-roman]]"]
+equivalents: ["[[ceres-roman]]", "[[cybele]]", "[[isis-hellenistic]]", "[[rhea]]", "[[proserpina-roman]]", "[[corn-mother]]", "[[mama-sara]]", "[[pachamama]]", "[[hariti]]", "[[inari]]", "[[ebisu]]", "[[lono]]", "[[rongo-maori]]", "[[iacchus]]", "[[sif]]", "[[tlazolteotl]]", "[[toyouke-omikami]]"]
 syncretic-edges:
   - target: "isis-egyptian"
     type: "ancient-identification"

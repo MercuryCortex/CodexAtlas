@@ -14,9 +14,7 @@ attested-in:
   - "[[phase-5-026-sefer-ha-bahir]] (implicit)"
   - "[[phase-5-027-sefer-ha-zohar]] (explicit and central)"
   - "[[phase-6-015-luria-vital-etz-chayyim]] (tzimtzum doctrine — Ein Sof's self-contraction)"
-equivalents:
-  - "[[the-godhead-eckhart]] (scholarly parallel — Eckhart's apophatic Gottheit beyond God-as-relating)"
-  - "[[al-haqq]] (Ibn ʿArabī's 'the Real' — the absolute prior to all divine Names and Attributes)"
+equivalents: ["[[the-godhead-eckhart]]", "[[al-haqq]]", "[[the-one-plotinus]]", "[[brahman-impersonal]]", "[[iao-gnostic]]", "[[abrasax]]", "[[bondye-vodou]]", "[[olodumare]]", "[[nyame]]", "[[nzambi]]", "[[nana-buluku]]", "[[ometeotl]]", "[[awonawilona]]", "[[amenominakanushi]]", "[[io-matua-kore]]", "[[vajradhara]]", "[[samantabhadra-buddha]]", "[[kalachakra]]", "[[aditi]]"]
 syncretic-edges:
   - target: "the-godhead-eckhart"
     type: "structural-parallel"
