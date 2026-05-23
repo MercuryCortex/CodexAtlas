@@ -35,26 +35,41 @@
   // V01 free-form pinboard — the "ultimate investigation tool"
   // per John's CODEX framing). MAP points at the MapLibre atlas
   // per the feedback_atlas_is_map memory.
+  // Phase TL-2 Step 2 (2026-05-24) — Each master view declares its
+  // route. Two route types:
+  //   - `target: 'forge', layout: 'wheel'|'timeline'`  → calls
+  //     setView('forge') if not active, then _forge.setLayout(layout).
+  //     Used for in-Forge-engine layouts that share the WebGPU
+  //     pipeline + bottom-bar + side-panel.
+  //   - `target: '<legacy-view-name>'`  → calls setView(target).
+  //     Used for legacy SVG views that have their own engine.
+  // The FORGE + TIMELINE entries both route to the Forge engine
+  // (target='forge') and differ only in layout. BOARD/MAP/STAR MAP
+  // still go to the legacy views until they migrate to the Forge
+  // engine in their own builds.
   const MASTER_VIEWS = [
-    { id: 'forge',        target: 'forge',        icon: '⚒', label: 'FORGE'    },
-    { id: 'timeline',     target: 'timeline',     icon: '⎯', label: 'TIMELINE' },
-    { id: 'board',        target: 'transmutation',icon: '⚗', label: 'BOARD'    },
-    { id: 'map',          target: 'atlas',        icon: '⌖', label: 'MAP'      },
-    { id: 'starmap',      target: 'astrology',    icon: '♄', label: 'STAR MAP' },
+    { id: 'forge',    target: 'forge',          layout: 'wheel',    icon: '⚒', label: 'FORGE'    },
+    { id: 'timeline', target: 'forge',          layout: 'timeline', icon: '⎯', label: 'TIMELINE' },
+    { id: 'board',    target: 'transmutation',                       icon: '⚗', label: 'BOARD'    },
+    { id: 'map',      target: 'atlas',                               icon: '⌖', label: 'MAP'      },
+    { id: 'starmap',  target: 'astrology',                           icon: '♄', label: 'STAR MAP' },
   ];
 
-  // Reverse lookup: setView name → master view entry.
-  // Multiple legacy views can map to the same master entry (e.g.,
-  // both 'pantheon' and 'pantheon-v2' map to FORGE because they're
-  // both deity wheels). Anything not in this map renders FORGE as
-  // the default — user is "in" an unrelated view but the pill at
-  // least shows a stable anchor.
+  // Reverse lookup: (STATE.view, _forge.getLayout()) → master view entry.
+  // The Forge engine carries TWO master views (FORGE wheel + TIMELINE
+  // layout) so a simple STATE.view → master lookup isn't enough. We
+  // resolve in currentMaster() below by checking layoutId too.
   const TARGET_TO_MASTER = (() => {
     const m = Object.create(null);
-    for (const mv of MASTER_VIEWS) m[mv.target] = mv;
+    for (const mv of MASTER_VIEWS) {
+      // FORGE wins the 'forge' target slot in the no-layout case;
+      // timeline is resolved by layoutId match in currentMaster.
+      if (mv.target === 'forge' && mv.layout === 'wheel') m[mv.target] = mv;
+      else if (mv.target !== 'forge') m[mv.target] = mv;
+    }
     // legacy view aliases:
-    m['pantheon']    = MASTER_VIEWS[0];   // both pantheon variants map to FORGE
-    m['transmission'] = MASTER_VIEWS[2];  // transmission was an alt board mount
+    m['pantheon']     = MASTER_VIEWS[0];   // pantheon → FORGE
+    m['transmission'] = MASTER_VIEWS[2];   // transmission → BOARD
     return m;
   })();
 
@@ -142,8 +157,16 @@
   }
 
   // ── CURRENT MASTER LOOKUP ───────────────────────────────────
+  // Phase TL-2 Step 2 — when STATE.view === 'forge', also consult
+  // _forge.getLayout() to distinguish FORGE (wheel) from TIMELINE
+  // (timeline layout, same engine, same view).
   function currentMaster() {
     const view = (window.STATE && window.STATE.view) || 'forge';
+    if (view === 'forge' && window._forge && typeof window._forge.getLayout === 'function') {
+      const lay = window._forge.getLayout();
+      const mv = MASTER_VIEWS.find(m => m.target === 'forge' && m.layout === lay);
+      if (mv) return mv;
+    }
     return TARGET_TO_MASTER[view] || MASTER_VIEWS[0];
   }
 
@@ -243,11 +266,27 @@
     const mv = MASTER_VIEWS.find(x => x.id === id);
     if (!mv) return;
     closeMaster();
-    // Switch view via the existing global setView.
-    if (typeof window.setView === 'function') {
+    // Phase TL-2 Step 2 — route by master-view contract:
+    //   1. setView(mv.target) if STATE.view isn't already there
+    //   2. if mv carries a `layout`, also call _forge.setLayout()
+    //      so FORGE/TIMELINE swap inside the Forge engine without
+    //      a teardown-remount cycle (preserves locks, color theme,
+    //      tier toggles, side panel state)
+    const curView = (window.STATE && window.STATE.view) || null;
+    const needsViewSwitch = (curView !== mv.target);
+    if (needsViewSwitch && typeof window.setView === 'function') {
       try { window.setView(mv.target); } catch (e) { console.warn('app-pill setView failed', e); }
-    } else if (typeof setView === 'function') {
-      try { setView(mv.target); } catch (e) { console.warn('app-pill setView failed', e); }
+    }
+    if (mv.layout && mv.target === 'forge') {
+      // Defer one tick so setView (if it ran) has time to mount + install
+      // the _forge public API. If we were already in forge, this fires
+      // immediately and just flips the layout.
+      setTimeout(() => {
+        if (window._forge && typeof window._forge.setLayout === 'function') {
+          try { window._forge.setLayout(mv.layout); }
+          catch (e) { console.warn('app-pill setLayout failed', e); }
+        }
+      }, needsViewSwitch ? 50 : 0);
     }
   });
 
@@ -376,6 +415,10 @@
     setTimeout(syncClassPill, 0);
   });
   document.addEventListener('codex:class-changed', syncClassPill);
+  // Phase TL-2 Step 2 — when the Forge engine swaps layouts (wheel
+  // ↔ timeline), update the pill's master-view label without a
+  // setView round-trip.
+  document.addEventListener('codex:layout-changed', syncPillLabel);
   // Initial paint — STATE.view may already be set from URL.
   syncPillLabel();
   // Class label needs Forge to be mounted first; small defer so
