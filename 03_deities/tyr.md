@@ -15,13 +15,24 @@ child-of: ["[[odin]] (in some Norse traditions); originally a primal sky-god"]
 consort: []
 attributes: ["one hand (lost binding Fenrir)", "the *Tiwaz* rune (T)", "spear or sword"]
 attested-in: ["[[phase-8-014-poetic-edda]]", "[[phase-8-015-prose-edda-snorri]]"]
+equivalents: ["[[mars-roman]]", "[[zeus]]", "[[jupiter]]", "[[dyaus-pita]]"]
 syncretic-edges:
-  - target: "Mars (Roman interpretatio germanica — Tuesday / Tīwesdæg = Martis dies)"
-    type: "ancient-identification"
-    source: "weekday-calque; Tacitus *Germania* 9"
-  - target: "Zeus / Jupiter / Dyaus Pita (cognate Indo-European sky-god)"
-    type: "scholarly-parallel"
-    source: "Indo-European etymology *Dyēus → *Tīwaz"
+  - target: "[[mars-roman]]"
+    type: "interpretatio-romana"
+    source: "Tacitus, Germania 9; weekday-calque Tuesday/Tīwesdæg = Martis dies"
+    notes: "Roman interpretatio assigned Týr the war-god role of Mars; the Tuesday-calque is the load-bearing evidence. Note Týr's primary role had already shifted from sky-father to war-god by historical times — the IE *Dyēus sky-father function was largely taken over by Thor and Odin in the Germanic branch"
+  - target: "[[zeus]]"
+    type: "cognate"
+    source: "West 2007 ch. 4; Watkins 1995; the Indo-European *Dyḗus ph₂tḗr → Proto-Germanic *Tīwaz → Old Norse Týr / Old English Tīw"
+    notes: "PIE sky-father *Dyḗus — the etymology is uncontested. Sanskrit Dyaus Pita, Greek Zeus Pater, Latin Iuppiter (Diespiter), and Germanic *Tīwaz are direct cognates of the same theonym. Týr's etymological seniority is preserved even though his cultic prominence faded by the Viking Age"
+  - target: "[[jupiter]]"
+    type: "cognate"
+    source: "West 2007 ch. 4 — Latin Iuppiter / Diespiter is the closest Italic cognate to PIE *Dyḗus ph₂tḗr"
+    notes: "Cognate via PIE *Dyḗus"
+  - target: "[[dyaus-pita]]"
+    type: "cognate"
+    source: "West 2007 ch. 4 — Sanskrit Dyaus Pita is the closest Indo-Aryan cognate to PIE *Dyḗus ph₂tḗr"
+    notes: "Cognate via PIE *Dyḗus — the Sanskrit Dyaus Pita preserves the full PIE compound (sky + father) most transparently"
 status: "metadata"
 refs:
   - title: "Old Norse Myths, Literature and Society"

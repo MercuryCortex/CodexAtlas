@@ -15,10 +15,20 @@ child-of: ["Njörðr"]
 consort: ["Óðr (a mysterious figure who often wanders)"]
 attributes: ["necklace *Brísingamen*", "cloak of falcon-feathers", "chariot pulled by cats", "the boar *Hildisvíni*"]
 attested-in: ["[[phase-8-014-poetic-edda]]", "[[phase-8-015-prose-edda-snorri]]"]
+equivalents: ["[[venus-roman]]", "[[aphrodite-greek]]", "[[frigg]]"]
 syncretic-edges:
-  - target: "Venus / Aphrodite (Roman interpretatio — Friday / Freyjudagr = Veneris dies)"
-    type: "ancient-identification"
-    source: "weekday-calque evidence; Lindow 2001"
+  - target: "[[venus-roman]]"
+    type: "interpretatio-romana"
+    source: "Lindow 2001; weekday-calque Friday/Freyjudagr = Veneris dies"
+    notes: "Roman interpretatio identified Freyja with Venus via the weekday calque. The Frigg/Freyja confusion in late sources (both linked to Friday) is a separate post-conversion conflation"
+  - target: "[[aphrodite-greek]]"
+    type: "interpretatio-graeca"
+    source: "Via Venus — the Aphrodite-Venus identity is classical"
+    notes: "Transitive identification through the Aphrodite-Venus pair"
+  - target: "[[frigg]]"
+    type: "scholarly-parallel"
+    source: "Lindow 2001; Simek 1993 — the Freyja/Frigg conflation question is one of the oldest open problems in Norse studies"
+    notes: "Some scholars (Grundy 1996, Näsström 1995) argue Freyja and Frigg are doublets of a single Proto-Germanic goddess; others (Lindow 2001) keep them distinct. The Friday-calque applies to both, which complicates the Venus identification"
 status: "metadata"
 refs:
   - title: "The Lost Beliefs of Northern Europe"

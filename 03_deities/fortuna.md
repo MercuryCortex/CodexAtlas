@@ -12,14 +12,20 @@ gender: "feminine"
 role: "goddess of fate / fortune / chance"
 attributes: ["wheel (Rota Fortunae)", "ship's rudder (steering destinies)", "cornucopia (her gifts)", "globe (her standing surface — unstable footing)", "blindfold (later development)"]
 attested-in: ["Plautus, Terence", "Cicero *De Fato*", "Pliny *NH* 2.22", "Boethius *Consolation of Philosophy*"]
-equivalents: ["Tyche (Greek)", "[[the-moirai]] (substitutive at the Hellenistic moment)"]
+equivalents: ["[[tyche-greek]]", "[[the-moirai]]", "[[lakshmi]]"]
 syncretic-edges:
-  - target: "Tyche"
-    type: "ancient-identification"
-    source: "Greek Tyche imported wholesale into Roman religion; Praeneste cult of Fortuna Primigenia predates and influences imperial-era Hellenization (Champeaux 1982-1987 *Fortuna* 2 vols.)"
-  - target: "Lakshmi / [[lakshmi]]"
+  - target: "[[tyche-greek]]"
+    type: "interpretatio-romana"
+    source: "Champeaux 1982-1987, Fortuna (2 vols.); Beard/North/Price 1998 Religions of Rome vol. 1"
+    notes: "Greek Tyche imported wholesale into Roman religion. The Praeneste cult of Fortuna Primigenia predates and influences imperial-era Hellenization — the relationship is older than a simple interpretatio"
+  - target: "[[the-moirai]]"
     type: "scholarly-parallel"
-    source: "Feminine personification of variable fortune; the *unsteady* divine gift"
+    source: "Champeaux 1982-1987"
+    notes: "Substitutive at the Hellenistic moment — Fortuna takes over functions previously divided among the Moirai (apportionment of fate)"
+  - target: "[[lakshmi]]"
+    type: "scholarly-parallel"
+    source: "Comparative religion — feminine personification of variable fortune; the unsteady divine gift; no historical transmission claim"
+    notes: "Structural parallel — both Lakshmi and Fortuna personify the FEMININE-GIFT-OF-PROSPERITY divine role; this is NOT a transmission claim, only a typological one"
 status: "metadata"
 refs:
   - title: "Religions of Rome, Vol. 1"

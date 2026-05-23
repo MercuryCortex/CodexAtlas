@@ -15,14 +15,16 @@ child-of: ["[[hermes-greek]] (most common tradition)"]
 consort: ["Syrinx (nymph, in Ovid's transformation tale)", "Echo", "Selene (in some traditions)"]
 attributes: ["goat-legs, hooves, and horns", "human torso and beard", "panpipe (syrinx)", "shepherd's crook"]
 attested-in: ["[[phase-2-008-homeric-epics]]", "[[phase-2-009-hesiod-theogony-works-and-days]]", "[[phase-2-028-herodotus-histories-book-2]]", "[[phase-4-072-plutarch-de-iside-et-osiride]]"]
-equivalents: ["Faunus (Roman)", "Banebdjedet / Mendes-ram (Egyptian — per Herodotus 2.46)"]
+equivalents: ["[[faunus-roman]]", "[[banebdjedet]]"]
 syncretic-edges:
-  - target: "faunus"
+  - target: "[[faunus-roman]]"
+    type: "interpretatio-romana"
+    source: "Standard Roman interpretatio — Faunus is the Roman Pan, with comparable rustic/sylvan domain"
+    notes: "Roman interpretatio assigns the rustic/sylvan god slot to Faunus; the Pan-Faunus identity is uncontested in classical sources"
+  - target: "[[banebdjedet]]"
     type: "ancient-identification"
-    source: "Standard Roman *interpretatio* — Faunus is the Roman Pan, with comparable rustic/sylvan domain"
-  - target: "banebdjedet"
-    type: "ancient-identification"
-    source: "Herodotus *Histories* 2.46 identifies Pan with the Egyptian ram-god of Mendes (Banebdjedet); the equation is by way of caprid imagery"
+    source: "Herodotus, Histories 2.46"
+    notes: "Herodotus equates Pan with the Egyptian ram-god of Mendes (Banebdjedet) via shared caprid imagery; the ancient identification is uncontested, though most modern Egyptologists view Mendesian Banebdjedet's primary role differently than Pan's"
 status: "metadata"
 refs:
   - title: "Pan the Goat-God: His Myth in Modern Times"

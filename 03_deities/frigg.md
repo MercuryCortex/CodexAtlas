@@ -15,13 +15,16 @@ child-of: ["Fjörgynn"]
 consort: ["[[odin]]"]
 attributes: ["distaff and spinning", "the hall *Fensalir*", "her handmaidens (Fulla, Hlín, Gná)"]
 attested-in: ["[[phase-8-014-poetic-edda]]", "[[phase-8-015-prose-edda-snorri]]"]
+equivalents: ["[[venus-roman]]", "[[freyja]]"]
 syncretic-edges:
-  - target: "Venus (Friday calque)"
-    type: "ancient-identification"
-    source: "weekday-calque (though more commonly attributed to Freyja); some philologists assign Friday to Frigg"
+  - target: "[[venus-roman]]"
+    type: "interpretatio-romana"
+    source: "weekday-calque Friday — some philologists assign Friday to Frigg, others to Freyja; both interpretations exist in the early medieval glossary tradition"
+    notes: "The Friday-calque could refer to either Frigg or Freyja (or to a conflated Proto-Germanic source goddess) — the assignment is disputed"
   - target: "[[freyja]]"
     type: "scholarly-parallel"
-    source: "Grimm 1844; current consensus treats as distinct"
+    source: "Grimm 1844; Lindow 2001; Näsström 1995 — the Frigg/Freyja doublet question"
+    notes: "Disputed conflation: some scholars (Grundy 1996, Näsström 1995) argue Frigg and Freyja descend from a single Proto-Germanic goddess; current Norse-studies consensus (Lindow 2001) keeps them distinct but acknowledges the parallel"
 status: "metadata"
 refs:
   - title: "Old Norse Myths, Literature and Society"

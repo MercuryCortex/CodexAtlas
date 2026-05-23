@@ -15,12 +15,21 @@ child-of: []
 consort: ["[[asherah]]"]
 attributes: ["bull horns", "patriarchal beard", "throne", "seated and enthroned (not active warrior)"]
 attested-in: ["[[phase-1-013-baal-cycle]]", "[[phase-1-014-ugaritic-ritual-texts]]", "[[phase-1-012-amarna-letters]]"]
-equivalents: ["el-elohim-hebrew (to be created in Phase 2)"]
+equivalents: ["[[el-elohim-hebrew]]", "[[yahweh]]", "[[allah]]"]
 syncretic-edges:
-  - target: "el-elohim-hebrew"
-    type: "ancient-identification"
-    source: "Smith 2002 (*Early History of God*) and Smith 2001 (*Origins of Biblical Monotheism*); the Canaanite El is the same name and substantially the same figure as the chief god of pre-monotheistic Israelite religion, later merged with Yahweh"
-  - target: "theme-el-yahweh-merger"
+  - target: "[[el-elohim-hebrew]]"
+    type: "same-as"
+    source: "Smith 2002 *Early History of God*; Smith 2001 *Origins of Biblical Monotheism*"
+    notes: "The Canaanite El is the same name and substantially the same figure as the chief god of pre-monotheistic Israelite religion, later merged with Yahweh. Cross (1973): 'Yahweh' may have originated as an El epithet"
+  - target: "[[yahweh]]"
+    type: "substrate-influence"
+    source: "Cross 1973 *Canaanite Myth and Hebrew Epic*; Smith 2002; Day 2000"
+    notes: "El's profile (transcendent patriarch, head of divine council, creator) is absorbed by YHWH during Iron Age I; Baal's storm-warrior profile is layered on top. The Israelite monotheism that Christianity + Islam inherit is genealogically a Canaanite El theology renamed"
+  - target: "[[allah]]"
+    type: "cognate"
+    source: "Aramaic Elaha / Arabic Allāh / Hebrew Elohim are all derivatives of the West-Semitic root *ʾil-"
+    notes: "All three Abrahamic high-god names descend from the same West-Semitic root that Canaanite El instantiates"
+  - target: "[[theme-el-yahweh-merger]]"
     type: "Canaanite-source-deity-of-merger"
     source: "Cross 1973 *Canaanite Myth and Hebrew Epic*; Smith 2002 *The Early History of God* (2nd ed.); Smith 2001 *The Origins of Biblical Monotheism*; Day 2000 *Yahweh and the Gods and Goddesses of Canaan* — the Canaanite El is the upstream high-god whose theological architecture (transcendent patriarch, head of divine council, creator, Father of Years, consort of Asherah) is absorbed by YHWH during the Iron Age I convergence phase. Cross's thesis: 'Yahweh' originated as an El epithet ('El who creates the hosts/armies') before becoming an independent name. See [[theme-el-yahweh-merger]]"
     notes: "MASSIVE-WIN: the Israelite monotheism that Christianity + Islam inherit is genealogically a Canaanite El theology with a new name — El's profile (transcendent + patriarchal + creator + council-head) survives unchanged into YHWH; Baal's storm-warrior profile gets layered on top. Cross-lens: 03_deities → 06_themes"

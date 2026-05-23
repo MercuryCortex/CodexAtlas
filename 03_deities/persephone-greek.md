@@ -15,11 +15,12 @@ child-of: ["[[demeter]]", "[[zeus]]"]
 consort: ["[[hades]]"]
 attributes: ["pomegranate", "torches", "wheat sheaf", "scepter"]
 attested-in: ["[[phase-2-008-homeric-epics]]", "[[phase-2-009-hesiod-theogony-works-and-days]]", "Homeric Hymn to Demeter"]
-equivalents: ["proserpina-roman"]
+equivalents: ["[[proserpina-roman]]"]
 syncretic-edges:
-  - target: "proserpina-roman"
-    type: "syncretic-identification"
-    source: "Roman *interpretatio graeca*"
+  - target: "[[proserpina-roman]]"
+    type: "interpretatio-romana"
+    source: "Roman interpretatio graeca — Proserpina is the Latin transliteration/translation of Persephone, with full functional identity in Roman cult"
+    notes: "Direct Roman adoption of the Eleusinian-cycle goddess; the Latin name persists into medieval and Renaissance literature"
 status: "metadata"
 refs:
   - title: "Greek Religion"
