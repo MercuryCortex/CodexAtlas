@@ -51,6 +51,14 @@ NODE_DIRS = {
     "attire":            ["27_attire"],
     "exchange-network":  ["28_exchange_networks"],
     "technology":        ["29_technology"],
+    # Phase TL-1-adjacent (2026-05-24) — seed the consciousness lens.
+    # Per AUDIT/consciousness-lens-spec-2026-05-23.md §2: ~55-figure
+    # catalog includes consciousness-figures, csr-findings, contemplative-
+    # neuroscience-findings, mysticism-studies-concepts, experiential-
+    # profiles. For TL-1-validation we whitelist consciousness-figure
+    # (Jung is the seed). Other sub-types whitelist when their first
+    # batch lands. Full lens awaits per-item §10 checklist greenlight.
+    "consciousness-figure": ["31_consciousness/figures"],
 }
 
 # ---------- minimal YAML parser tailored to our schema ----------
