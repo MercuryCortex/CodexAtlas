@@ -729,6 +729,51 @@ body.fv-hide-dividers      #forge-hull-dividers     { display: none !important; 
 body.fv-hide-guide-rings   #forge-hull-guide-rings  { display: none !important; }
 body.fv-hide-wires         .forge-canvas { /* the actual hide is renderer-side: drawFrame forces effectiveDim to 1.0 when this body class is set, which zeros idle wire alpha while leaving HOT/selected wires fully visible. */ }
 
+/* ═══════════════════════════════════════════════════════════════
+   Phase 21AS (2026-05-23) — Source-tier rows + pills
+   ═══════════════════════════════════════════════════════════════
+   Each tier row in the view-settings panel shows a small badge
+   pill (T1..T5) with a tier-specific color. The badge is
+   informational — the actual ON/OFF state is the standard
+   `.vs-check` square. The T5 row gets a faint red top-border so
+   the high-risk tier reads as visually segregated.
+   See 00_meta/CODEX.md §IV for the tier definitions. The wire-
+   filter that hides edges of off-tier is renderer-side (forge.js
+   recomputeFocus → edgeTargets HIDDEN); these CSS hooks exist for
+   future legend chrome / side-panel disclaimer styling.
+   ═══════════════════════════════════════════════════════════════ */
+.forge-viewset-row--tier { gap: 8px; }
+.vs-tier-pill {
+  display: inline-block;
+  font-family: var(--mono, "JetBrains Mono", Menlo, monospace);
+  font-size: 9px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  padding: 2px 5px;
+  border-radius: 3px;
+  background: rgba(255,255,255,0.06);
+  color: var(--text-2, #9ca3af);
+  border: 1px solid rgba(255,255,255,0.10);
+  line-height: 1;
+  flex: 0 0 auto;
+}
+.vs-tier-pill--t1 { color: #9bd1a7; border-color: rgba(155,209,167,0.35); }
+.vs-tier-pill--t2 { color: #c3b87f; border-color: rgba(195,184,127,0.35); }
+.vs-tier-pill--t3 { color: #c89867; border-color: rgba(200,152,103,0.40); }
+.vs-tier-pill--t4 { color: #c47878; border-color: rgba(196,120,120,0.40); }
+.vs-tier-pill--t5 {
+  color: #e25b5b;
+  border-color: rgba(226,91,91,0.55);
+  background: rgba(226,91,91,0.08);
+}
+/* High-risk row separator — subtle red top border above T5 so the
+   disclaimer-required tier reads as segregated from the rest. */
+.forge-viewset-row--high-risk {
+  border-top: 1px dashed rgba(226,91,91,0.20);
+  margin-top: 2px;
+}
+.forge-viewset-row--high-risk em { color: rgba(226,91,91,0.65); }
+
 /* ── Phase 21B (2026-05-21) — Search autocomplete (drop-up) ── */
 .forge-search-wrap {
   position: relative;
@@ -6697,6 +6742,31 @@ details.forge-side-panel-wire[open] .forge-side-panel-wire-caret {
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
+}
+/* Phase 21AS (2026-05-23) — disclaimer-machine chrome inside the
+   wire-item row. Tier pill sits AFTER the title (so the name
+   reads first; the tier is a small trailing badge). ⚠ marker
+   for T5 / political-risk edges sits BEFORE the title so the
+   warning lands in the reader's eye before the claim. */
+.forge-side-panel-wire-item-tier {
+  flex: 0 0 auto;
+  font-size: 8px;
+  padding: 1px 4px;
+  margin-left: 4px;
+  letter-spacing: 0.04em;
+}
+.forge-side-panel-wire-item-warn {
+  flex: 0 0 auto;
+  color: #e25b5b;
+  font-size: 10px;
+  line-height: 1;
+  margin-right: 2px;
+}
+.forge-side-panel-wire-item.is-risky {
+  background: rgba(226,91,91,0.04);
+}
+.forge-side-panel-wire-item.is-risky:hover {
+  background: rgba(226,91,91,0.10);
 }
 /* Phase 21A2 (2026-05-21) — direction arrow LEADS the row per
    John's spec: `[arrow] [color-dot] [name…]`. The arrow now

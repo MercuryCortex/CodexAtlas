@@ -1111,6 +1111,21 @@
           '<button class="forge-viewset-row" data-distribution="age-bands"><span class="vs-radio"></span>Age bands <em>(scholarly chart)</em></button>' +
           '<button class="forge-viewset-row" data-distribution="vogel"><span class="vs-radio"></span>Vogel sunflower <em>(phyllotaxis)</em></button>' +
           '<button class="forge-viewset-row" data-toggle="reverseAge"><span class="vs-check"></span>Reverse age direction <em>(rim = oldest)</em></button>' +
+          // Phase 21AS (2026-05-23) — Source-tier toggles, per CODEX
+          // §VII. Each connection in the atlas carries a source_tier
+          // (T1 mainstream → T5 disclaimer-required). The user can
+          // toggle entire tiers off; the wire-renderer hides edges
+          // whose tier is OFF via the existing HIDDEN state. T5 is
+          // OFF by default; turning it on opts in to claims the
+          // mainstream rejects AND that carry political-risk caveats.
+          // See 00_meta/CODEX.md §IV-VII.
+          '<div class="forge-viewset-divider"></div>' +
+          '<div class="forge-viewset-section">Source tiers <em>(disclaimer machine)</em></div>' +
+          '<button class="forge-viewset-row forge-viewset-row--tier" data-toggle="tierT1" data-tier="T1"><span class="vs-check"></span><span class="vs-tier-pill vs-tier-pill--t1">T1</span>Mainstream <em>(peer-reviewed)</em></button>' +
+          '<button class="forge-viewset-row forge-viewset-row--tier" data-toggle="tierT2" data-tier="T2"><span class="vs-check"></span><span class="vs-tier-pill vs-tier-pill--t2">T2</span>Academic minority <em>(contested in field)</em></button>' +
+          '<button class="forge-viewset-row forge-viewset-row--tier" data-toggle="tierT3" data-tier="T3"><span class="vs-check"></span><span class="vs-tier-pill vs-tier-pill--t3">T3</span>Alternative school <em>(serious, fringe — Hancock-class)</em></button>' +
+          '<button class="forge-viewset-row forge-viewset-row--tier" data-toggle="tierT4" data-tier="T4"><span class="vs-check"></span><span class="vs-tier-pill vs-tier-pill--t4">T4</span>Popular claim, rejected <em>(Sitchin-class)</em></button>' +
+          '<button class="forge-viewset-row forge-viewset-row--tier forge-viewset-row--high-risk" data-toggle="tierT5" data-tier="T5"><span class="vs-check"></span><span class="vs-tier-pill vs-tier-pill--t5">T5</span>High-risk <em>(disclaimer required — opt-in)</em></button>' +
         '</div>' +
       '</div>',
       // Phase 21AJ (2026-05-22) — FX wrap moved to the right side
@@ -4053,6 +4068,20 @@
       // resize and pre-fill targets without touching states so
       // the GPU sees a coherent buffer immediately.
       const newTargets = graph.computeEdgeStates(local.mode.edges, local.focusedSet);
+      // Phase 21AS (2026-05-23) — source-tier filter. Per CODEX §VII
+      // the user can hide entire tiers (T1-T5) via view-settings.
+      // Any edge whose source_tier is NOT in the active set is
+      // forced to HIDDEN (state=2.0 → alpha 0 in the wire shader)
+      // regardless of focus / hover state. We apply this AFTER
+      // computeEdgeStates so the HIDDEN override beats focus.
+      const activeTiers = local._activeTiers;
+      if (activeTiers && activeTiers.size < 5) {
+        const edges = local.mode.edges;
+        for (let i = 0; i < edges.length; i++) {
+          const tier = edges[i].source_tier || 'T1';
+          if (!activeTiers.has(tier)) newTargets[i] = 2.0;
+        }
+      }
       if (!local.edgeTargets || local.edgeTargets.length !== newTargets.length) {
         local.edgeTargets = newTargets;
       } else {
@@ -4813,10 +4842,12 @@
       const btn   = document.getElementById('forge-viewset-btn');
       const panel = document.getElementById('forge-viewset-panel');
       if (!btn || !panel) return;
-      // Phase 21AK (2026-05-23) — schema v5. Removed dividersLong
-      // (the faded-both-ends long mode). Only two separator modes
-      // remain now: short (default) and converging (long-centered).
-      const LS_KEY = 'forge.viewSettings.v5';
+      // Phase 21AS (2026-05-23) — schema v6. Adds tierT1..tierT5
+      // source-tier toggles per CODEX §VII. Defaults: T1-T4 ON,
+      // T5 OFF (opt-in, disclaimer required). The renderer reads
+      // these into local._activeTiers each applyState() and
+      // tier-filters edges via the existing HIDDEN state.
+      const LS_KEY = 'forge.viewSettings.v6';
       const state = (() => {
         try {
           const raw = localStorage.getItem(LS_KEY);
@@ -4828,6 +4859,8 @@
           guideRings: false,
           wires: true, sfx: true, map: false,
           reverseAge: false,
+          tierT1: true, tierT2: true, tierT3: true,
+          tierT4: true, tierT5: false,
         };
       })();
       // Defensive defaults — additive.
@@ -4837,6 +4870,11 @@
       if (typeof state.guideRings         !== 'boolean') state.guideRings         = false;
       if (typeof state.sfx                !== 'boolean') state.sfx                = true;
       if (typeof state.reverseAge         !== 'boolean') state.reverseAge         = false;
+      if (typeof state.tierT1             !== 'boolean') state.tierT1             = true;
+      if (typeof state.tierT2             !== 'boolean') state.tierT2             = true;
+      if (typeof state.tierT3             !== 'boolean') state.tierT3             = true;
+      if (typeof state.tierT4             !== 'boolean') state.tierT4             = true;
+      if (typeof state.tierT5             !== 'boolean') state.tierT5             = false;
       function applyState() {
         document.body.classList.toggle('fv-hide-hulls',         !state.hulls);
         document.body.classList.toggle('fv-hide-family-titles', !state.familyTitles);
@@ -4845,6 +4883,32 @@
         document.body.classList.toggle('fv-hide-wires',         !state.wires);
         document.body.classList.toggle('fv-hide-map',           !state.map);
         document.body.classList.toggle('fv-hide-guide-rings',   !state.guideRings);
+        // Phase 21AS (2026-05-23) — source-tier filter. Update body
+        // classes for CSS hooks AND build the active-tier set the
+        // renderer will read in recomputeFocus. The wire-filter
+        // is the real teeth: any edge whose source_tier is NOT in
+        // the active set gets HIDDEN (state=2.0 → alpha 0). The
+        // body classes are mostly for future legend chrome / side-
+        // panel disclaimer styling.
+        document.body.classList.toggle('fv-hide-tier-t1',       !state.tierT1);
+        document.body.classList.toggle('fv-hide-tier-t2',       !state.tierT2);
+        document.body.classList.toggle('fv-hide-tier-t3',       !state.tierT3);
+        document.body.classList.toggle('fv-hide-tier-t4',       !state.tierT4);
+        document.body.classList.toggle('fv-hide-tier-t5',       !state.tierT5);
+        const tiers = new Set();
+        if (state.tierT1) tiers.add('T1');
+        if (state.tierT2) tiers.add('T2');
+        if (state.tierT3) tiers.add('T3');
+        if (state.tierT4) tiers.add('T4');
+        if (state.tierT5) tiers.add('T5');
+        // Detect changes so we don't redundantly recomputeFocus on
+        // every applyState() call (which fires for color / order /
+        // distribution changes too).
+        const prevSig = local._activeTiersSig || '';
+        const nextSig = [...tiers].sort().join(',');
+        local._activeTiers    = tiers;
+        local._activeTiersSig = nextSig;
+        const tiersChanged    = (prevSig !== nextSig);
         // Phase 21AL (2026-05-23) — SFX toggle: when OFF, body
         // class signals the audio sync loop to force volume 0.
         document.body.classList.toggle('fv-hide-sfx',           !state.sfx);
@@ -4889,6 +4953,14 @@
         panel.querySelectorAll('.forge-viewset-row[data-distribution]').forEach(row => {
           row.classList.toggle('is-on', row.dataset.distribution === (ux.distributionMode || 'organic'));
         });
+        // Phase 21AS (2026-05-23) — when the source-tier set changes,
+        // re-run recomputeFocus so edgeTargets pick up the tier-filter
+        // (edges whose source_tier ∉ activeTiers get HIDDEN). Skip if
+        // the renderer isn't mounted yet (first applyState fires before
+        // mount completes).
+        if (tiersChanged && typeof recomputeFocus === 'function' && local.mode && local.mode.edges) {
+          try { recomputeFocus(); } catch (_) {}
+        }
         try { localStorage.setItem(LS_KEY, JSON.stringify(state)); } catch (_) {}
       }
       function open() {
@@ -6139,6 +6211,18 @@
               title: (otherNode && (otherNode.title || otherNode.id)) || otherId,
               color: (otherNode && (otherNode.family_color || otherNode.tradition_color)) || '#888',
               dir: isSrc ? 'out' : 'in',
+              // Phase 21AS (2026-05-23) — surface CODEX v1.1 per-edge
+              // disclaimer metadata in the side panel. tier is always
+              // present (defaults to T1 in build_data.py). source +
+              // notes + political_risk_flag are optional. The renderer
+              // shows a tier pill for non-T1 tiers and a ⚠ marker for
+              // T5 / political-risk edges; full source + notes go into
+              // the row's title= browser tooltip.
+              edgeType:  e.type || '',
+              tier:      e.source_tier || 'T1',
+              source:    e.edge_source || '',
+              notes:     e.edge_notes  || '',
+              polRisk:   !!e.political_risk_flag,
             });
           }
         }
@@ -6161,16 +6245,47 @@
           // rather than "this color goes via this arrow." Earlier
           // ordering (dot → arrow → title) made the arrow look
           // like it belonged to the color, not the relationship.
-          const items = data.neighbors.map(n =>
+          const items = data.neighbors.map(n => {
+            // Phase 21AS (2026-05-23) — disclaimer-machine row chrome.
+            // T1 rows render as before (the silent mainstream default).
+            // T2-T5 rows render a tier pill after the title; T5 / any
+            // political-risk-flag also gets a ⚠ prefix. The full
+            // citation (source + notes + raw edge type) goes into the
+            // title= browser tooltip so the row stays visually quiet.
+            const tier   = n.tier || 'T1';
+            const showPill = (tier !== 'T1');
+            const risky  = (tier === 'T5') || n.polRisk;
+            const pillHtml = showPill
+              ? '<span class="forge-side-panel-wire-item-tier vs-tier-pill vs-tier-pill--' + tier.toLowerCase() + '">' + tier + '</span>'
+              : '';
+            const warnHtml = risky
+              ? '<span class="forge-side-panel-wire-item-warn" aria-hidden="true">⚠</span>'
+              : '';
+            // Build the tooltip. Lead with the risk caveat for T5 /
+            // political-risk edges so the user sees the warning before
+            // the claim (per CODEX §IV-T5).
+            const tipParts = [];
+            if (risky) tipParts.push('⚠ Disclaimer required — claim rejected by mainstream / political-risk flag');
+            tipParts.push((n.dir === 'out' ? '→ ' : '← ') + n.title);
+            if (n.edgeType) tipParts.push('type: ' + n.edgeType);
+            tipParts.push('tier: ' + tier);
+            if (n.source) tipParts.push('source: ' + n.source);
+            if (n.notes)  tipParts.push(n.notes);
+            tipParts.push('— Click to lock + inspect.');
+            const tipText = tipParts.join('\n');
             // Phase 21A2 (2026-05-21) — row order is now
             // ARROW → DOT → NAME per John's spec. Was DOT →
             // NAME → ARROW which read backwards visually.
-            '<button class="forge-side-panel-wire-item" data-id="' + safeAttr(n.id) + '" title="Lock + inspect ' + safeAttr(n.title) + '">'
-            + '<span class="forge-side-panel-wire-item-dir">' + (n.dir === 'out' ? '→' : '←') + '</span>'
-            + '<span class="forge-side-panel-wire-item-dot" style="background:' + safeAttr(n.color) + '"></span>'
-            + '<span class="forge-side-panel-wire-item-title">' + safeAttr(n.title) + '</span>'
-            + '</button>'
-          ).join('');
+            // Phase 21AS (2026-05-23) — append optional ⚠ + tier pill
+            // after the title for non-T1 / risky edges.
+            return '<button class="forge-side-panel-wire-item' + (risky ? ' is-risky' : '') + '" data-id="' + safeAttr(n.id) + '" data-tier="' + safeAttr(tier) + '" title="' + safeAttr(tipText) + '">'
+              + '<span class="forge-side-panel-wire-item-dir">' + (n.dir === 'out' ? '→' : '←') + '</span>'
+              + '<span class="forge-side-panel-wire-item-dot" style="background:' + safeAttr(n.color) + '"></span>'
+              + warnHtml
+              + '<span class="forge-side-panel-wire-item-title">' + safeAttr(n.title) + '</span>'
+              + pillHtml
+              + '</button>';
+          }).join('');
           return '<details class="forge-side-panel-wire" data-bucket="' + b + '" style="--bucket-color:' + bucketHex(b) + '">'
             + '<summary class="forge-side-panel-wire-summary">'
             +   '<span class="forge-side-panel-wire-dot" style="background:' + bucketHex(b) + '"></span>'

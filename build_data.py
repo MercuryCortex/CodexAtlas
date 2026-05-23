@@ -615,6 +615,14 @@ def collect_node_edges(nodes_by_id):
                         "target": target,
                         "type": etype,
                         "field": field,
+                        # 2026-05-23 Phase 21AR — every emitted edge carries a
+                        # source_tier so the Forge tier-filter is dead simple
+                        # (renderer never has to default-T1 a missing field).
+                        # These plain-list edge fields (consort, child-of,
+                        # parent-of, …) predate the tier system and describe
+                        # within-tradition family/ritual structure that is
+                        # mainstream-accepted-by-default → T1.
+                        "source_tier": "T1",
                     })
         # === Structured-edge fields ===
         # Each of the *-edges / connections / connects-to / cross-* fields uses a
