@@ -5,7 +5,15 @@ name: "God the Father"
 aka: ["Pater", "Abba", "the Father", "God Almighty", "Pantokrator"]
 tradition: "Christianity"
 region: "Pan-Christian"
-period-active-earliest: 30
+# Date inherits from YHWH per the syncretic-edges ancient-identification
+# below. Christian doctrine (Nicene Creed, Apostles' Creed, Catechism §238)
+# identifies the Father with YHWH of the Hebrew Bible — same divine subject,
+# addressed under the relational name Jesus revealed. Dating the Father to
+# 30 CE (Jesus's ministry) would contradict the orthodox claim that the
+# Father is eternal and IS the God of Israel, the I AM of Exodus 3:14.
+# Marcion's mid-2nd-c. attempt to separate the OT God from the Father was
+# condemned as heresy precisely because the Church insisted on this identity.
+period-active-earliest: -1300
 period-active-latest:
 domains: ["creator", "sovereign", "judge", "father of Christ"]
 gender: "masculine (traditionally; doctrinally beyond gender)"
