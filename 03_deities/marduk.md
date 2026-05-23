@@ -15,12 +15,32 @@ child-of: ["[[enki-ea]]", "[[damkina]]"]
 consort: ["[[sarpanit]]"]
 attributes: ["spade (marru)", "the mušḫuššu dragon", "fifty names"]
 attested-in: ["[[phase-1-008-enuma-elish]]", "[[phase-1-007-code-of-hammurabi]]"]
-equivalents: []
+equivalents: ["[[baal-hadad]]", "[[indra]]", "[[zeus]]", "[[thor]]", "[[susanoo]]", "[[yaldabaoth]]"]
 syncretic-edges:
-  - target: "yaldabaoth"
-    type: "polemic-inverse"
-    source: "Pearson 1984/2007 — Sethian Gnostic cosmogony inverts the Marduk-Tiamat structure: Marduk's legitimate-warrior-king cosmogony becomes Yaldabaoth's illegitimate-ignorant-demiurge cosmogony. Same structural slot, opposite theological content. See [[theme-mesopotamian-gnostic-transmission]] Chain 2"
-    notes: "MASSIVE-WIN: Marduk's cosmogonic-victory establishing Babylonian cosmic kingship is the foundation Gnostic cosmogony polemically inverts"
+  - target: "[[baal-hadad]]"
+    type: "parallel-motif"
+    source: "Smith 1994 *The Ugaritic Baal Cycle*; West 1997 *The East Face of Helicon* — the storm-warrior + chaoskampf cluster across Mesopotamian and West-Semitic religion"
+    notes: "Marduk and Baal both slay chaos-monsters (Tiamat / Yam-Lotan) to establish cosmic kingship — the chaoskampf mytheme is shared substrate. Marduk-Bēl naming in Late Babylonian Hellenistic period also overlaps with Bēl/Baal etymologically"
+  - target: "[[indra]]"
+    type: "parallel-motif"
+    source: "Watkins 1995 *How to Kill a Dragon*; West 2007 *Indo-European Poetry and Myth*"
+    notes: "Indra vs Vritra = Marduk vs Tiamat at the chaoskampf level — both storm-warrior-kings slay primordial dragon/serpent to establish cosmic order. Watkins's PIE *gʷhen-dragon-slayer formula crosses into non-PIE Mesopotamia by shared substrate / convergence"
+  - target: "[[zeus]]"
+    type: "parallel-motif"
+    source: "West 1997 ch. 4 — Greek-Mesopotamian transmission of the chaoskampf mytheme via Phoenician + Hittite intermediaries"
+    notes: "Zeus vs Typhon parallels Marduk vs Tiamat structurally; West argues for documented Eastern influence on Hesiod's Theogony via Phoenician contact"
+  - target: "[[thor]]"
+    type: "parallel-motif"
+    source: "West 2007 — PIE storm-warrior parallel"
+    notes: "Thor vs Jormungandr is the Germanic instance of the storm-warrior-vs-cosmic-serpent mytheme; same divine type as Marduk-Tiamat structurally"
+  - target: "[[susanoo]]"
+    type: "parallel-motif"
+    source: "Non-PIE storm-warrior parallel from Shinto"
+    notes: "Susanoo's slaying of Yamata-no-Orochi (eight-headed serpent) is the Japanese instance of the storm-warrior-vs-cosmic-serpent mytheme — non-PIE, structurally convergent"
+  - target: "[[yaldabaoth]]"
+    type: "polemic-inversion"
+    source: "Pearson 1984/2007 — Sethian Gnostic cosmogony inverts the Marduk-Tiamat structure"
+    notes: "MASSIVE-WIN: Marduk's legitimate-warrior-king cosmogony becomes Yaldabaoth's illegitimate-ignorant-demiurge cosmogony in Sethian polemic. Same structural slot, opposite theological content. See [[theme-mesopotamian-gnostic-transmission]] Chain 2 — Marduk's cosmogonic-victory establishing Babylonian cosmic kingship is the foundation Gnostic cosmogony polemically inverts"
   - target: "theme-mesopotamian-gnostic-transmission"
     type: "documented-substrate"
     source: "Marduk-Tiamat cosmogony (Enuma Elish) is one of the 5 documented Mesopotamian → Gnostic transmission chains; mediated through Hellenistic-Jewish reception into Sethian polemical inversion"
