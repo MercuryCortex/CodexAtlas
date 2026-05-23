@@ -190,10 +190,34 @@ syncretic-edges:
 These 21 types route into the 5 active wire-color buckets. Use exactly ONE
 of these in `type:`. Do not invent new types without writing a precedent
 into ONTOLOGY first. Each type maps to a Wikidata property where applicable
-(linked-data interop). Edges live in `syncretic-edges:` with `target:` +
-`type:` + `source:` + `notes:`. `equivalents:` is a flat-list convenience
-field carrying the strongest identifications (`same-as`, `cognate`,
-`composite-deity`).
+(linked-data interop). Edges live in `syncretic-edges:` with the canonical
+6-field shape:
+
+```yaml
+syncretic-edges:
+  - target: "[[wikilink]]"            # REQUIRED — never raw prose
+    type: "<one-of-21-types>"          # REQUIRED — per the table below
+    source: "Author Year Work, page"   # REQUIRED — who is making the claim
+    source-tier: "T1"|"T2"|"T3"|"T4"|"T5"  # REQUIRED — per CODEX §IV
+    political-risk-flag: false         # OPTIONAL — true only for T5 cases per CODEX
+    notes: ""                          # OPTIONAL — scholarship nuance + rebuttal-stack for T3/T4/T5
+```
+
+**`source-tier:` is mandatory** (per CODEX v1.1 §IV — the disclaimer
+machine cannot run without it):
+
+| Tier | Default visibility | Meaning |
+|---|---|---|
+| `T1` | ON | mainstream peer-reviewed |
+| `T2` | ON | academic minority |
+| `T3` | ON | alternative-school (Hancock, Bauval, Schwaller) |
+| `T4` | ON | popular-claim-rejected (Sitchin, Däniken, Cayce) |
+| `T5` | OFF (opt-in) | disclaimer-required, political-risk (Icke, Evola) |
+
+`equivalents:` is a flat-list convenience field carrying the strongest
+identifications (`same-as`, `cognate`, `composite-deity`). Entries are
+just `[[wikilinks]]`; the type-source-tier metadata lives in
+`syncretic-edges:` of the same node.
 
 ##### Methodological pluralism — read this FIRST
 

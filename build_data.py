@@ -665,15 +665,37 @@ def collect_node_edges(nodes_by_id):
                 # then per-field default. Apply optional prefix for syncretic-edges.
                 raw_etype = (s.get("type") or s.get("relation") or default_etype).strip()
                 etype = (etype_prefix + raw_etype) if etype_prefix else raw_etype
+                # 2026-05-23 Phase 21AR — surface CODEX v1.1 source-tier
+                # + political-risk-flag onto each emitted edge so the
+                # Forge wire-renderer can filter by tier and the side-panel
+                # tooltip can render the per-tier disclaimer chrome.
+                # Per PROTOCOL §3.1: source-tier is REQUIRED on syncretic-
+                # edges from 2026-05-23 onward; legacy edges that lack it
+                # default to T1 (mainstream peer-reviewed) since they were
+                # written before the tier system existed.
+                src_tier = (s.get("source-tier") or s.get("source_tier") or "T1").strip()
+                if src_tier not in ("T1", "T2", "T3", "T4", "T5"):
+                    src_tier = "T1"   # invalid value → safe default
+                pol_risk = bool(s.get("political-risk-flag") or s.get("political_risk_flag"))
+                src_text = s.get("source") or ""
+                notes_text = s.get("notes") or ""
                 for target in candidate_targets:
                     if not target or target == node_id:
                         continue
-                    edges.append({
+                    edge_obj = {
                         "source": node_id,
                         "target": target,
                         "type": etype,
                         "field": field,
-                    })
+                        "source_tier": src_tier,
+                    }
+                    if pol_risk:
+                        edge_obj["political_risk_flag"] = True
+                    if src_text:
+                        edge_obj["edge_source"] = str(src_text)
+                    if notes_text:
+                        edge_obj["edge_notes"] = str(notes_text)
+                    edges.append(edge_obj)
     return edges
 
 
