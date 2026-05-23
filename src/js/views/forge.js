@@ -1480,6 +1480,14 @@
       hoverId:     null,
       lockedSet:   new Set(),    // Phase 4b: sticky focus from clickNode
       focusedSet:  null,
+      // Phase TL-2 Step 1 (2026-05-24) — layout selector. Default
+      // 'wheel' = radialWedgeLayout (the existing radial deity wheel).
+      // 'timeline' = timelineLayout (TL-1 module). Flipped by
+      // window._forge.setLayout(); read by rebuildForMode to pick
+      // which layout function to call. Each layout owns its own
+      // positions Map + worldExtent; everything downstream is
+      // layout-agnostic.
+      layoutId:    'wheel',
       // Mode-dependent baking, refilled by rebuildForMode(id).
       mode:        {
         id:           modemod.defaultMode(),
@@ -2264,14 +2272,31 @@
       const modeNodes = modemod.filterNodesByMode(modeId, allNodes, allEdges);
       const modeEdges = layout.filterEdgesByNodes(allEdges, modeNodes);
       const degree    = layout.computeDegree(modeNodes, modeEdges);
+      // Phase TL-2 Step 1 (2026-05-24) — layout-aware. local.layoutId
+      // picks between the radial wheel and the horizontal timeline.
+      // Default 'wheel' preserves existing behavior; setLayout('timeline')
+      // (the new public API on window._forge) flips it. The layout
+      // function picked here owns the positions Map + the worldExtent
+      // it returns; the rest of the engine (packNodes, packEdges,
+      // adjacency, hit-grid, camera) is layout-agnostic.
+      //
       // Phase 21S (2026-05-22) — order + color from the active
       // ux-mode (radio selections in View settings; LS-persisted).
-      const lay       = layout.radialWedgeLayout(modeNodes, currentFamilyOrder(), {
-        degree,
-        colorOverride: currentColorOverride(),
-        distribution:  currentDistribution(),
-        reverseAge:    !!document.body.classList.contains('fv-reverse-age'),
-      });
+      const _layoutId = local.layoutId || 'wheel';
+      let lay;
+      if (_layoutId === 'timeline' && typeof layout.timelineLayout === 'function') {
+        lay = layout.timelineLayout(modeNodes, currentFamilyOrder(), {
+          colorOverride: currentColorOverride(),
+          parkUndated:   true,
+        });
+      } else {
+        lay = layout.radialWedgeLayout(modeNodes, currentFamilyOrder(), {
+          degree,
+          colorOverride: currentColorOverride(),
+          distribution:  currentDistribution(),
+          reverseAge:    !!document.body.classList.contains('fv-reverse-age'),
+        });
+      }
 
       // 2026-05-19 — pack-scale-fix. packNodes bakes the world
       // radius using `camScale` at pack time (the screen-px clamp
@@ -2284,10 +2309,16 @@
       // looked like "tiny dots on load, snap to correct on first
       // mouse move, tiny dots again after resize".) Fit first,
       // then pack at the now-correct scale.
-      const ext = {
-        x0: -(lay.rOuter + WORLD_PAD), y0: -(lay.rOuter + WORLD_PAD),
-        x1:  (lay.rOuter + WORLD_PAD), y1:  (lay.rOuter + WORLD_PAD),
-      };
+      // Phase TL-2 Step 1 — timelineLayout returns its own
+      // worldExtent (anisotropic rectangle); radialWedgeLayout
+      // returns rOuter and the view layer builds the square
+      // worldExtent from it. Branch by what's present.
+      const ext = (lay.worldExtent)
+        ? lay.worldExtent
+        : {
+            x0: -(lay.rOuter + WORLD_PAD), y0: -(lay.rOuter + WORLD_PAD),
+            x1:  (lay.rOuter + WORLD_PAD), y1:  (lay.rOuter + WORLD_PAD),
+          };
       camera.stopAnim();
       if (local.lastSize.w && local.lastSize.h) {
         camera.fitToExtent(ext, local.lastSize, 0);
@@ -2517,11 +2548,19 @@
       // line up with the deity cluster instead of with the
       // post-relaxation centroid (which drifts 30-50 wu off
       // origin and offsets the slices by ~60 px on screen).
+      // Phase TL-2 Step 1 (2026-05-24) — defensive: hull-builder
+      // expects radial-layout shape (wedges + rInner + rOuter). In
+      // timeline-layout mode those don't exist; pass safe stubs so
+      // we don't crash. Hulls will look wrong in timeline (no pie
+      // slices = the band rectangles need their own renderer);
+      // Step 3 swaps in proper band-aware hull data. For now the
+      // hulls render as an empty/degenerate set which is fine for
+      // Step 1's "verify engine boots in timeline mode" goal.
       local.mode.hullData = (graph.buildFamilyHulls)
         ? graph.buildFamilyHulls(nodePack, modeNodeById, {
-            wedges: lay.wedges,
-            rInner: lay.rInner,
-            rOuter: lay.rOuter,
+            wedges: lay.wedges || {},
+            rInner: lay.rInner || 0,
+            rOuter: lay.rOuter || 1,
           })
         : { hulls: [], center: { x: 0, y: 0 }, innerRadius: 0, outerRadius: 0, dividers: [] };
       rebuildHullElements();
@@ -4775,6 +4814,39 @@
       };
       window._forge.supportedClasses = function () {
         return (modemod.MODES || []).slice();
+      };
+      // Phase TL-2 Step 1 (2026-05-24) — layout selector. The
+      // engine supports two layouts today: 'wheel' (radialWedgeLayout
+      // — the default; what's shipped since Phase 20D) and 'timeline'
+      // (timelineLayout — TL-1 module). Picking a layout triggers a
+      // rebuildForMode at the current modeId, with locks preserved.
+      // The Forge view stays the same view; only the geometry of
+      // node placement changes. Future master views (Map, Star Map)
+      // will register their own setLayout in their own _<view>.* API.
+      window._forge.setLayout = function (layoutId) {
+        if (local.destroyed) return false;
+        const valid = (layoutId === 'wheel' || layoutId === 'timeline');
+        if (!valid) {
+          console.warn('[forge] unknown layoutId:', layoutId);
+          return false;
+        }
+        if (layoutId === local.layoutId) return true;
+        try {
+          local.layoutId = layoutId;
+          rebuildForMode(local.mode.id, { preserveLocks: true });
+          // Emit so app-pill can update the LEFT pill label to
+          // reflect the new master view (timeline vs wheel).
+          document.dispatchEvent(new CustomEvent('codex:layout-changed', {
+            detail: { layoutId }
+          }));
+          return true;
+        } catch (e) {
+          console.warn('[forge] setLayout failed', e);
+          return false;
+        }
+      };
+      window._forge.getLayout = function () {
+        return local.layoutId || 'wheel';
       };
     }
 
