@@ -220,42 +220,59 @@
       // point so the relaxation pass can pull members back
       // toward their age band after angular pushing.
       // Phase 21AL (2026-05-23) — distribution mode controls how
-      // targetR is computed: 'organic' (default, oldest=outer
-      // linear), 'age-bands' (concentric fixed-year bands),
-      // 'vogel' (sqrt(i/N) for sunflower equal-area distribution).
+      // targetR is computed: 'organic' (default), 'age-bands'
+      // (concentric fixed-year bands), 'vogel' (sqrt(i/N) for
+      // sunflower equal-area distribution).
+      // Phase 21AM (2026-05-23) — CONSISTENT CONVENTION across
+      // all three modes: oldest = innermost (the SEED of the
+      // wedge), newest = outermost rim. The eye scans inside-out
+      // chronologically like reading tree rings. Previously
+      // Organic + Age-bands had the OPPOSITE convention (oldest
+      // = outer), which contradicted Vogel and caused a visual
+      // jump when switching modes. `o.reverseAge` (View settings
+      // toggle) inverts the rank so the rim becomes the oldest
+      // again for users who prefer the strata / "ancient at the
+      // edge" reading.
       const distribution = (o.distribution || 'organic');
+      const reverseAge   = !!o.reverseAge;
       const AGE_BANDS    = [-3000, -1500, -500, 500, 1500, 2026];
       const targetR = new Array(N);
       for (let i = 0; i < N; i++) {
-        const ageT = N > 1 ? i / (N - 1) : 0.5;
+        // Effective age-rank: by default i is the chronological
+        // index (0=oldest). reverseAge flips it (0→N-1).
+        const rank = reverseAge ? (N - 1 - i) : i;
+        const ageT = N > 1 ? rank / (N - 1) : 0.5;
         if (distribution === 'vogel') {
-          // Phase 21AL fix (2026-05-23) — was `i/(N-1)` which put
-          // i=0 at exactly rIn and i=1 at sqrt(1/(N-1))·R away —
-          // a visible empty band near the centre. The standard
-          // sunflower offset (i+0.5)/N spreads the first few seeds
-          // evenly: the innermost seed sits at sqrt(0.5/N)·R from
-          // rIn, so no node sits at the perfect centre singularity.
-          const t = (i + 0.5) / N;
+          // Phase 21AL fix — (i+0.5)/N avoids the empty band at
+          // the centre singularity. Now uses `rank` so the
+          // reverseAge toggle also flips Vogel.
+          const t = (rank + 0.5) / N;
           targetR[i] = rIn + (rOut - rIn) * Math.sqrt(t);
         } else if (distribution === 'age-bands') {
           // Find the band index for this member's date_earliest.
           // No date → innermost band (Modern/undated bucket).
           const m = sorted[i];
           const yr = (m && typeof m.date_earliest === 'number') ? m.date_earliest : null;
-          let bandIdx = AGE_BANDS.length - 1;  // default = inner (newest/undated)
+          let bandIdx = AGE_BANDS.length - 1;  // default = newest/undated
           if (yr != null) {
             for (let b = 0; b < AGE_BANDS.length - 1; b++) {
               if (yr < AGE_BANDS[b + 1]) { bandIdx = b; break; }
             }
           }
-          // Older bands → outer radius. Band 0 (-3000 to -1500) sits
-          // at the OUTER ring; the highest band index sits at INNER.
+          // New convention: oldest bands → INNER radius. Band 0
+          // (-3000 to -1500) sits at INNER; the highest band index
+          // sits at OUTER. reverseAge flips the assignment.
           const K   = AGE_BANDS.length - 1;
-          const t   = bandIdx / Math.max(1, K - 1);
+          let t     = bandIdx / Math.max(1, K - 1);
+          if (reverseAge) t = 1 - t;
           targetR[i] = rOut - t * (rOut - rIn);
         } else {
-          // organic — current behaviour
-          targetR[i] = rMid + (1 - 2 * ageT) * radHalf;
+          // organic — oldest at INNER by default, newest at OUTER
+          // rim. `ageT` already encodes the reverseAge flip via the
+          // `rank` variable above. v = 2·ageT - 1 maps ageT=0
+          // (oldest) to v=-1 (inner) and ageT=1 (newest) to v=+1
+          // (outer rim).
+          targetR[i] = rMid + (2 * ageT - 1) * radHalf;
         }
       }
 
@@ -284,20 +301,25 @@
 
         let r, ang;
 
+        // Phase 21AM (2026-05-23) — same effective rank as the
+        // targetR loop above. `reverseAge` flips i to (N-1-i) so
+        // all three distributions invert consistently when the
+        // View settings toggle is on.
+        const rank = reverseAge ? (N - 1 - i) : i;
+
         if (distribution === 'vogel') {
-          // Phyllotaxis sunflower. Sqrt(i/N) = equal-area radius;
+          // Phyllotaxis sunflower. Sqrt(rank/N) = equal-area radius;
           // golden angle wrapped into the wedge produces the
           // classic seed-head spiral. Wedge-relative so each
-          // family gets its own spiral.
-          // Phase 21AL fix (2026-05-23) — (i+0.5)/N instead of
-          // i/(N-1). See targetR comment above; same reasoning —
+          // family gets its own spiral. The (rank+0.5)/N offset
           // avoids the centre-of-wedge empty band that came from
-          // i=0 sitting exactly at rIn.
-          const t = (i + 0.5) / N;
+          // rank=0 sitting exactly at rIn (Phase 21AL fix).
+          const t = (rank + 0.5) / N;
           r = rIn + (rOut - rIn) * Math.sqrt(t);
           // Map an unbounded golden-angle index into the wedge arc
           // by wrapping into [-1, 1] in u-space, then to the wedge.
-          const rawAng = i * GOLDEN_ANG;
+          // Use `rank` so the spiral order also flips with reverseAge.
+          const rawAng = rank * GOLDEN_ANG;
           const wrapped = ((rawAng % (2 * Math.PI)) + 2 * Math.PI) % (2 * Math.PI);
           const u = (wrapped / (2 * Math.PI)) * 2 - 1;   // ∈ [-1, 1]
           ang = w.center + u * (arcUsable / 2);
@@ -312,9 +334,11 @@
           u = Math.max(-0.96, Math.min(0.96, u));
           ang = w.center + u * (arcUsable / 2);
         } else {
-          // organic (default) — unchanged from Phase 20D-2.
-          const ageT = N > 1 ? i / (N - 1) : 0.5;
-          let v = 1 - 2 * ageT;
+          // organic (default) — Phase 21AM convention: oldest at
+          // INNER (rank=0 → v=-1 inner), newest at OUTER rim
+          // (rank=N-1 → v=+1 outer). reverseAge flips via `rank`.
+          const ageT = N > 1 ? rank / (N - 1) : 0.5;
+          let v = 2 * ageT - 1;
           v += (hV - 0.5) * 0.32;
           v = Math.max(-0.97, Math.min(0.97, v));
           r = rMid + v * radHalf;

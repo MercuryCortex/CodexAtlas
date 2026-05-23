@@ -1110,6 +1110,7 @@
           '<button class="forge-viewset-row" data-distribution="organic"><span class="vs-radio"></span>Organic <em>(age-radial fan)</em></button>' +
           '<button class="forge-viewset-row" data-distribution="age-bands"><span class="vs-radio"></span>Age bands <em>(scholarly chart)</em></button>' +
           '<button class="forge-viewset-row" data-distribution="vogel"><span class="vs-radio"></span>Vogel sunflower <em>(phyllotaxis)</em></button>' +
+          '<button class="forge-viewset-row" data-toggle="reverseAge"><span class="vs-check"></span>Reverse age direction <em>(rim = oldest)</em></button>' +
         '</div>' +
       '</div>',
       // Phase 21AJ (2026-05-22) — FX wrap moved to the right side
@@ -2265,6 +2266,7 @@
         degree,
         colorOverride: currentColorOverride(),
         distribution:  currentDistribution(),
+        reverseAge:    !!document.body.classList.contains('fv-reverse-age'),
       });
 
       // 2026-05-19 — pack-scale-fix. packNodes bakes the world
@@ -4772,6 +4774,7 @@
           dividers: true, dividersConverging: false,
           guideRings: false,
           wires: true, sfx: true, map: false,
+          reverseAge: false,
         };
       })();
       // Defensive defaults — additive.
@@ -4780,6 +4783,7 @@
       if (typeof state.dividersConverging !== 'boolean') state.dividersConverging = false;
       if (typeof state.guideRings         !== 'boolean') state.guideRings         = false;
       if (typeof state.sfx                !== 'boolean') state.sfx                = true;
+      if (typeof state.reverseAge         !== 'boolean') state.reverseAge         = false;
       function applyState() {
         document.body.classList.toggle('fv-hide-hulls',         !state.hulls);
         document.body.classList.toggle('fv-hide-family-titles', !state.familyTitles);
@@ -4792,6 +4796,16 @@
         // class signals the audio sync loop to force volume 0.
         document.body.classList.toggle('fv-hide-sfx',           !state.sfx);
         local._sfxEnabled = !!state.sfx;
+        // Phase 21AM (2026-05-23) — reverseAge toggle: when ON, the
+        // layout inverts the chronological mapping (rim = oldest
+        // instead of center = oldest). The class is read by
+        // rebuildForMode → radialWedgeLayout via the opts.reverseAge
+        // flag. Toggling requires a full re-layout to take effect.
+        const ageDirChanged = document.body.classList.contains('fv-reverse-age') !== !!state.reverseAge;
+        document.body.classList.toggle('fv-reverse-age',         !!state.reverseAge);
+        if (ageDirChanged && typeof rebuildForMode === 'function') {
+          try { rebuildForMode(local.mode.id, { preserveLocks: true }); } catch (_) {}
+        }
         // Push the divider mode into the layout layer.
         const newMode = state.dividersConverging ? 'long-centered'
                       : state.dividers           ? 'short'
