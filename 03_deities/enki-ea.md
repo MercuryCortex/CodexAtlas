@@ -41,6 +41,11 @@ syncretic-edges:
     type: "primary-Mesopotamian-source"
     source: "Pearson 2007"
     notes: "Enki/Ea is the divine source of both Chain 1 (apkallu→watchers) and Chain 3 (nēmequ→hokmah→sophia) of the documented Mesopotamian → Gnostic transmission"
+  - target: "[[nibiru-anunnaki]]"
+    type: "negative-identification"
+    source: "Sitchin, Zecharia (1976) *The 12th Planet*. Stein and Day."
+    source-tier: "T4"
+    notes: "Popular pseudoarchaeology — REJECTED by mainstream Assyriology. Sitchin recast Enki as the Anunnaki chief-scientist who genetically engineered humanity from Homo erectus + Anunnaki DNA ~200,000 years ago. Mainstream rebuttal: Bottéro 2001; Lambert 2013; Black & Green 1992; Heiser 2001. Enki's actual role as wisdom-craftsman + freshwater-Abzu deity + apkallu-patron is well-documented in Sumerian theology without any genetic-engineering interpolation; the Atrahasis creation-of-humanity account uses CLAY + the BLOOD of a slain god (We-ila), a mythological cosmogony, not a genetics protocol. See [[nibiru-anunnaki]] for full investigation-as-prompt treatment."
 status: "metadata"
 refs:
   - title: "Encounters with the Divine in Mesopotamia"

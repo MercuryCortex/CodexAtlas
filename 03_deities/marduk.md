@@ -44,6 +44,11 @@ syncretic-edges:
   - target: "theme-mesopotamian-gnostic-transmission"
     type: "documented-substrate"
     source: "Marduk-Tiamat cosmogony (Enuma Elish) is one of the 5 documented Mesopotamian → Gnostic transmission chains; mediated through Hellenistic-Jewish reception into Sethian polemical inversion"
+  - target: "[[nibiru-anunnaki]]"
+    type: "negative-identification"
+    source: "Sitchin, Zecharia (1976) *The 12th Planet*. Stein and Day. + later *Earth Chronicles* volumes."
+    source-tier: "T4"
+    notes: "Popular pseudoarchaeology — REJECTED by mainstream Assyriology. Sitchin recast Marduk as an Anunnaki prince in his Earth Chronicles series. Mainstream rebuttal: Lambert 2013 *Babylonian Creation Myths* (definitive Enuma Elish scholarship); Bottéro 2001; Black & Green 1992; Heiser 2001. Marduk's role as Babylonian high god + chaoskampf-warrior + cosmic-king who establishes order via Tiamat's defeat is fully documented in *Enuma Elish* as religious mythology, NOT as Anunnaki-prince extraterrestrial history. See [[nibiru-anunnaki]] for full investigation-as-prompt treatment. Downstream-risk note: certain Anunnaki-adjacent contemporary communities have wired Marduk-as-Anunnaki claims into T5-tier antisemitic conspiracy frameworks (Icke et al.); the Sitchin-tier core is T4 but the downstream reception escalates."
 status: "metadata"
 refs:
   - title: "Babylonian Creation Myths"
