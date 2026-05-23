@@ -1638,6 +1638,7 @@
         // next view and re-add the class to a no-longer-existing
         // canvas reference.
         if (local._hoverFlashTimer)  { clearTimeout(local._hoverFlashTimer);  local._hoverFlashTimer = 0; }
+        if (local._fxBloomExitTimer) { clearTimeout(local._fxBloomExitTimer); local._fxBloomExitTimer = 0; }
         if (local._clickPulseTimer)  { clearTimeout(local._clickPulseTimer);  local._clickPulseTimer = 0; }
         // Phase 21AL (2026-05-23) — stop + detach the soundtrack
         // audio so it doesn't keep playing into the next view.
@@ -2843,7 +2844,47 @@
       }
       if (fxBloomActive !== local._fxBloomActive) {
         local._fxBloomActive = fxBloomActive;
-        document.body.classList.toggle('fx-bloom', fxBloomActive);
+        // Phase 21AO (2026-05-23) — symmetric blur transition.
+        // Zoom-OUT was already smooth because `.fx-bloom` rule has
+        // animation-delay: 0.45s, giving the base-rule `transition:
+        // filter` time to ramp before the keyframes start.
+        // Zoom-IN was snappy because removing `.fx-bloom` mid-cycle
+        // dropped the actively-animated filter back to the declared
+        // base in one frame BEFORE the transition could fire — so
+        // the eye saw the discontinuity between animation-current
+        // and declared-base.
+        // Fix: on EXIT, snapshot the current rendered filter into an
+        // inline style first (which becomes the transition's "from"),
+        // THEN remove .fx-bloom. The transition now ramps from the
+        // captured real-rendered filter → base no-filter smoothly.
+        // ~500 ms later, clear the inline style.
+        if (fxBloomActive) {
+          // Re-entering bloom before the exit transition completed:
+          // cancel any pending inline-clear + drop the inline filter
+          // so the .fx-bloom rule + animation take over cleanly.
+          if (local._fxBloomExitTimer) {
+            clearTimeout(local._fxBloomExitTimer);
+            local._fxBloomExitTimer = 0;
+          }
+          if (canvas && canvas.style.filter) canvas.style.filter = '';
+          document.body.classList.add('fx-bloom');
+        } else {
+          const cnv = canvas;  // closure capture
+          if (cnv) {
+            try {
+              const computed = getComputedStyle(cnv).filter;
+              if (computed && computed !== 'none') cnv.style.filter = computed;
+            } catch (_) {}
+            document.body.classList.remove('fx-bloom');
+            if (local._fxBloomExitTimer) clearTimeout(local._fxBloomExitTimer);
+            local._fxBloomExitTimer = setTimeout(() => {
+              try { cnv.style.filter = ''; } catch (_) {}
+              local._fxBloomExitTimer = 0;
+            }, 500);
+          } else {
+            document.body.classList.remove('fx-bloom');
+          }
+        }
       }
       if (belowFifteen !== local._fxBelowFifteen) {
         local._fxBelowFifteen = belowFifteen;
