@@ -11,11 +11,12 @@ domains: ["speech / Vāc", "learning", "music", "poetry", "the Sarasvatī river"
 gender: "feminine"
 role: "goddess of speech, learning, and the arts; consort of Brahmā"
 attested-in: ["Rig Veda (multiple hymns)", "Mahābhārata, Rāmāyaṇa", "Purāṇic literature"]
-equivalents: ["[[wisdom-personified]] (parallel-motif — personified wisdom / speech)"]
+equivalents: ["[[benzaiten]]", "[[wisdom-personified]]"]
 syncretic-edges:
-  - target: "benzaiten-japanese"
-    type: "manuscript-transmission"
-    source: "Buddhist transmission to East Asia; Saraswati becomes Benzaiten in Japanese Buddhist tradition"
+  - target: "[[benzaiten]]"
+    type: "direct-borrowing"
+    source: "Ludvik, Catherine (2007). *Sarasvatī: Riverine Goddess of Knowledge*. Brill"
+    notes: "MASSIVE-WIN: Buddhist transmission of Sarasvatī to East Asia via the Suvarṇaprabhāsa Sūtra produces Chinese Biancaitian and Japanese Benzaiten. The biwa-as-vīṇā iconographic continuity + the riverine→island-shrine continuity make this one of the cleanest documented Vedic→Japanese transmissions"
 status: "metadata"
 refs:
   - title: "Hindu Goddesses"

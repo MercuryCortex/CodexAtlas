@@ -15,11 +15,15 @@ child-of: ["Vivasvant (the Sun)"]
 consort: ["Yamī (his twin sister)"]
 attributes: ["buffalo mount", "noose (pāśa)", "mace (daṇḍa)", "scales of judgment"]
 attested-in: ["[[phase-2-001-rig-veda-family-books]] — Rig Veda 10.10, 10.14, 10.135", "[[phase-2-003-atharva-veda]]", "Kaṭha Upaniṣad"]
-equivalents: ["[[yima-jamshid]]", "[[yamantaka]]", "[[hades]]", "[[osiris]]", "[[mictlantecuhtli]]", "[[hel]]", "[[anubis]]", "[[ereshkigal]]"]
+equivalents: ["[[enma-japanese]]", "[[yima-jamshid]]", "[[yamantaka]]", "[[hades]]", "[[osiris]]", "[[mictlantecuhtli]]", "[[hel]]", "[[anubis]]", "[[ereshkigal]]"]
 syncretic-edges:
+  - target: "[[enma-japanese]]"
+    type: "direct-borrowing"
+    source: "Teiser 1988 *The Ghost Festival in Medieval China*; Teiser 1994 *The Scripture on the Ten Kings*; Glassman 2012 *The Face of Jizō*"
+    notes: "MASSIVE-WIN: direct phonetic descent. Sanskrit Yama → Middle Chinese 閻摩 Yán-mó → Chinese 閻羅王 Yánluó-wáng → Japanese 閻魔王 Enma-Ō. The Vedic underworld-king is preserved by name across the Buddhist transmission, with Chinese Buddhism elaborating his role into the Ten Kings of Hell tribunal. Cleanest documented Vedic→East-Asian deity transmission alongside Sarasvatī→Benzaiten and Indra→Śakra"
   - target: "[[yima-jamshid]]"
-    type: "ancient-identification"
-    source: "Indo-Iranian common inheritance: Vedic Yama and Avestan Yima both descend from PIE *Yemo- 'twin', and both are the first mortal who founds the realm of the dead — the cleanest deity-cognacy across the Indo-Iranian split (Lincoln 1986)"
+    type: "cognate"
+    source: "Lincoln 1986; PIE *Yemo- 'twin'; Vedic Yama and Avestan Yima both descend from the same PIE source — the first mortal who founds the realm of the dead — the cleanest deity-cognacy across the Indo-Iranian split"
   - target: "[[yamantaka]]"
     type: "scholarly-parallel"
     source: "Vajrayana Yamāntaka is *the conqueror of Yama* (yamāntaka = 'ender of Yama') — Yama redeployed as antagonist; the Buddhist tantric *yidam* deity"

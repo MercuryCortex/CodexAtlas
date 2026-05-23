@@ -15,8 +15,12 @@ child-of: ["Dyauṣ Pitṛ", "Pṛthivī"]
 consort: ["Śacī / Indrāṇī"]
 attributes: ["vajra (thunderbolt)", "white elephant Airāvata", "bow (Indra's bow = rainbow)", "soma cup"]
 attested-in: ["[[phase-2-001-rig-veda-family-books]]", "[[phase-2-003-atharva-veda]]", "[[phase-2-006-brahmanas-aranyakas]]", "Mitanni-Hittite treaty (-1380 BCE)"]
-equivalents: ["[[zeus]]", "[[jupiter]]", "[[thor]]", "[[perun]]", "[[taranis]]", "[[raijin]]", "[[susanoo]]", "[[marduk]]", "[[baal-hadad]]"]
+equivalents: ["[[sakra-buddhist]]", "[[zeus]]", "[[jupiter]]", "[[thor]]", "[[perun]]", "[[taranis]]", "[[raijin]]", "[[susanoo]]", "[[marduk]]", "[[baal-hadad]]"]
 syncretic-edges:
+  - target: "[[sakra-buddhist]]"
+    type: "direct-borrowing"
+    source: "Sumi 2014; DeCaroli 2004; Boucher 2008"
+    notes: "MASSIVE-WIN: Buddhism preserves Indra by name in the canonical form *Śakra Devānām Indra* — Pali Sakka, Chinese Dìshìtiān, Japanese Taishakuten. The doctrinal move is subordination not demonization (contrast Zoroastrian Verethraghna): Śakra remains king of his heaven but is positioned below the Buddha. Cleanest documented Vedic→East-Asian deity transmission alongside Sarasvatī→Benzaiten and Yama→Enma"
   - target: "[[verethraghna-zoroastrian]]"
     type: "cognate"
     source: "Boyce 1975, History of Zoroastrianism vol. 1"
