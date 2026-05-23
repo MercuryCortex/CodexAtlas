@@ -185,21 +185,157 @@ syncretic-edges:
 3. Reciprocity sweep — for every new A→B edge, open B's file and add B→A.
 4. Build — `python3 build_data.py`.
 
-#### Edge types (use one of these in `type:`; don't invent new ones without writing a precedent into ONTOLOGY)
+#### Edge types — the 21-type cross-tradition vocabulary (locked 2026-05-23)
 
-| Type | When to use | Example |
-|---|---|---|
-| `same-as` | dogmatic / textual identity claim | God the Father = YHWH per Nicene Creed |
-| `direct-borrowing` | one tradition explicitly reuses the named figure | Iblis ← Christian Satan (Quran 2:34) |
-| `cognate` | shared etymological ancestor (esp. PIE) | Dyaus Pita → Zeus → Jupiter → Týr (PIE *Dyḗus) |
-| `interpretatio-romana` / `-graeca` / `-germanica` | one tradition "translates" another's deity, esp. via calendric calque | Wōden = Mercury (Wōdnesdæg = Mercurii dies) |
-| `ancient-identification` | a named ancient source explicitly identifies the two | Apollo = Horus per Herodotus 2.144 |
-| `substrate-influence` | one figure structurally absorbs another (no name-identity required) | Christian Satan ← Zoroastrian Angra Mainyu |
-| `scholarly-parallel` | comparative-religion scholarship treats them as parallels; contested-by-source-tradition | Shiva ↔ Dionysus (Doniger, Daniélou) |
-| `parallel-motif` | shared mythic pattern with no transmission claim | chaoskampf serpents (Tiamat, Typhon, Vritra, Apophis) |
-| `polemic-against` / `polemic-inversion` | one tradition rejects or inverts the other's claim | Marduk → Yaldabaoth (Gnostic) |
+These 21 types route into the 5 active wire-color buckets. Use exactly ONE
+of these in `type:`. Do not invent new types without writing a precedent
+into ONTOLOGY first. Each type maps to a Wikidata property where applicable
+(linked-data interop). Edges live in `syncretic-edges:` with `target:` +
+`type:` + `source:` + `notes:`. `equivalents:` is a flat-list convenience
+field carrying the strongest identifications (`same-as`, `cognate`,
+`composite-deity`).
 
-`equivalents:` (the flat-list field) carries the strongest identification (`same-as`, `cognate`, `interpretatio-*`). `syncretic-edges:` (the structured-list field) is for everything where you need to attach `type:` + `source:` + `notes:`.
+##### Methodological pluralism — read this FIRST
+
+This catalog deliberately accommodates **multiple academic frameworks** for
+cross-tradition deity relationships. We do NOT adopt any one school as
+authoritative:
+
+- **J.Z. Smith** (*Drudgery Divine* 1990) — homological/genealogical vs
+  analogical comparison ≈ our **transmission** vs **parallel** bucket
+  boundary.
+- **Jan Assmann** (*Moses the Egyptian* 1997; *Of God and Gods* 2008) —
+  *translatio deorum* / cosmotheism ≈ our `interpretatio-nominal` (a
+  parallel-bucket relation, NOT a fusion).
+- **Robert Parker** (*Greek Gods Abroad* 2017) — three-axis interpretatio
+  (nominal / iconographic / cultic) ≈ our `interpretatio-nominal`
+  (parallel) + `iconographic-borrowing` (transmission) +
+  `interpretatio-cultic` (fusion) splits.
+- **Georges Dumézil** (*Mythe et Épopée* 1968-73) — trifunctional
+  hypothesis (sovereignty / warrior / fertility classes) ≈ our
+  `functional-equivalent` type.
+- **Mark S. Smith** (*God in Translation* 2008) — horizontal vs vertical
+  translatability ≈ our cross-tradition edges (horizontal) vs
+  `continuous-development` (vertical, within-tradition).
+- **Carsten Colpe**, **Stewart & Shaw** (*Syncretism / Anti-Syncretism*
+  1994), **Michael Pye** — the syncretism-as-process literature
+  ≈ our fusion vs polemic bucket split.
+
+We **reject** Eliade-style telescope-scale "all sun-gods are X"
+identification (Smith 1990 dismantles it; Doniger keeps it firewalled).
+If a source makes such a claim, route via `scholarly-parallel` with a
+notes-flag.
+
+Each wire surfaces (a) the `type:` (what KIND of claim), (b) the
+`source:` (who is making it — Tacitus, Doniger, the Nicene Creed,
+Sponberg/Hardacre, etc), and (c) the `notes:` (the scholarship nuance).
+The reader sees all three and judges. The schema serves investigation,
+not orthodoxy.
+
+##### TRANSMISSION (bronze) — 5 types
+*Smith's homological / genealogical comparison. The two figures share descent.*
+
+| Type | Meaning | Example | Wikidata |
+|---|---|---|---|
+| `cognate` | Shared etymological/PIE ancestor | Dyaus → Zeus → Jupiter → Týr (PIE *Dyḗus) | P138 |
+| `direct-borrowing` | Explicit re-use of a named figure | Iblis ← Christian Satan (Quran 2:34) | P144 |
+| `iconographic-borrowing` | Visual-form transfer with no name/cult identity | Apollonian → Gandharan Buddha image (Parker 2017) | — |
+| `substrate-influence` | Structural absorption, no name-identity required | Christian Satan ← Zoroastrian Angra Mainyu | P144 (weak) |
+| `continuous-development` | Within-tradition deity evolution (Smith's "vertical translatability") | Rudra → Shiva via Śvetāśvatara Upaniṣad | — |
+
+##### PARALLEL (teal) — 4 types
+*Smith's analogical comparison. Structures resemble; no descent claim.*
+
+| Type | Meaning | Example | Wikidata |
+|---|---|---|---|
+| `scholarly-parallel` | Modern comparative-religion finding, contested by source traditions | Shiva ↔ Dionysus (Doniger, Daniélou 1979) | — |
+| `parallel-motif` | Shared mythic pattern, no transmission claim | chaoskampf serpents (Tiamat / Typhon / Vritra / Apophis) | — |
+| `functional-equivalent` | Dumézilian trifunctional class-match | Odin / Varuna / Jupiter (sovereignty class) | P5800 |
+| `interpretatio-nominal` | Pure name-translation (Assmann's *translatio deorum*; Parker's nominal mode) | Wōden = Mercury per Tacitus (Wōdnesdæg = Mercurii dies) | P460 |
+
+##### FUSION (orange) — 5 types
+*A new third entity emerges, OR a doctrinal-identity claim merges two figures.*
+
+| Type | Meaning | Example | Wikidata |
+|---|---|---|---|
+| `same-as` | **First-person dogmatic claim by the source tradition itself**. NOT a scholarly identity claim. | God the Father IS YHWH per Nicene Creed (Christianity's own doctrine) | P460 (stronger sense) |
+| `interpretatio-cultic` | Parker's cultic-mode interpretatio — shared cult/ritual emerges | Greco-Egyptian Hermes-Anubis cult | — |
+| `ancient-identification` | A NAMED ancient writer attests an identification | Apollo = Horus per Herodotus 2.144 | — |
+| `composite-deity` | Genuinely new merged entity emerges from synthesis | Sarapis (Osiris+Apis+Hades+Dionysos); Hermes Trismegistus; Amun-Re | — |
+| `folk-syncretism` | Folk-level merger (popular religion, not doctrine) | Yoruba Eshu ↔ Catholic Saint Lazarus (Cuban Lukumí); Perun ↔ Saint Elijah (Slavic dvoeverie) | — |
+
+##### KINSHIP (lilac) — 2 types
+*Mythic family / aspect / part-of relations.*
+
+| Type | Meaning | Example | Wikidata |
+|---|---|---|---|
+| `manifestation-of` | "X is a local/temporal manifestation of Y" — generalised across honji-suijaku, avatara, hypostasis, incarnation | Amaterasu = suijaku of Mahavairocana; Krishna = avatara of Vishnu; Christ = incarnation of Logos. Tradition-specific subtype carried in `notes:` (avatara/suijaku/gongen/etc) | P361 (weak) |
+| `constituent-of` | Part-of-whole within a tradition | Christ is constituent-of the Trinity | P361 |
+
+##### POLEMIC (red) — 5 types
+*One tradition reframes / rejects / contests another.*
+
+| Type | Meaning | Example | Wikidata |
+|---|---|---|---|
+| `polemic-against` | One tradition rejects another's claim generally | Islam vs Trinity ("they say three"); Reformation iconoclasm | — |
+| `polemic-inversion` | Venerated figure morally flipped in another tradition | Marduk → Yaldabaoth (Sethian Gnostic inversion of Babylonian cosmogony) | P461 |
+| `demonization` | Pagan god preserved AS A REAL DEMONIC BEING (Augustine *City of God* II.4) — distinct from polemic-inversion; here the *figure-class* is real, the *morality* is inverted | Augustine on pagan gods as "real demons"; Christian saints' polemic against folk-deities | — |
+| `prefiguration-claim` | "X anticipates / prefigures Y" (one-directional, claimed by the later tradition about the earlier) | Justin Martyr's *logos spermatikos* (Heraclitus + Socrates were Christians before Christ); OT-prefigures-Christ typological reading | — |
+| `negative-identification` | Explicit "X is NOT Y" claim | Marcion: OT-God ≠ Christian Father; Islamic critique of Trinity-as-shirk | P1889 |
+
+##### The 21 types in summary
+
+```
+TRANSMISSION (bronze): cognate, direct-borrowing, iconographic-borrowing,
+                       substrate-influence, continuous-development
+PARALLEL (teal):       scholarly-parallel, parallel-motif,
+                       functional-equivalent, interpretatio-nominal
+FUSION (orange):       same-as, interpretatio-cultic, ancient-identification,
+                       composite-deity, folk-syncretism
+KINSHIP (lilac):       manifestation-of, constituent-of
+POLEMIC (red):         polemic-against, polemic-inversion, demonization,
+                       prefiguration-claim, negative-identification
+```
+
+##### Tradition variants on interpretatio + manifestation
+
+When you write an interpretatio or manifestation edge, encode the
+tradition-specific variant in `notes:`:
+
+```yaml
+# interpretatio
+- target: "[[mercury-roman]]"
+  type: "interpretatio-nominal"
+  source: "Tacitus, Germania 9; West 2007 ch. 4"
+  notes: "interpretatio-romana — Roman writers identify the chief Germanic god as Mercury. Wednesday/Wōdnesdæg = Mercurii dies = the load-bearing calendric calque"
+
+# manifestation-of
+- target: "[[mahavairocana]]"
+  type: "manifestation-of"
+  source: "Teeuwen & Rambelli 2003 *Buddhas and Kami in Japan*"
+  notes: "honji-suijaku — Amaterasu treated as the local/Japanese suijaku of the cosmic Buddha Mahavairocana in medieval shinbutsu shūgō"
+
+# avatara variant of manifestation-of
+- target: "[[vishnu]]"
+  type: "manifestation-of"
+  source: "Bhāgavata Purāṇa 1.3.28"
+  notes: "avatara — Krishna is the pūrṇa avatāra (complete descent) of Vishnu in Vaishnava theology"
+```
+
+The five primary interpretatio sub-variants by source-tradition (carried
+in `notes:`): `interpretatio-romana`, `-graeca`, `-germanica`,
+`-aegyptia`, `-egyptiaca-greca` (Herodotus's Greco-Egyptian). The
+type-level distinction (`-nominal` vs `-cultic`) is Parker's *axis* of
+interpretatio (what KIND of identification — name only vs new ritual);
+the variant in notes is *whose interpretatio* (which tradition's writer
+is making the claim).
+
+##### Hard cap
+
+We hold this vocabulary at **≤21 cross-tradition types**. Adding a 22nd
+requires an AUDIT/ doc justifying the new category with peer-reviewed
+scholarship + bucket-assignment + Wikidata mapping. Document drift past
+21 types degrades the legend's scannability.
 
 ### 3.2 THE INTEGRITY LAW
 
