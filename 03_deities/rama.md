@@ -15,11 +15,12 @@ child-of: ["Dasharatha", "Kaushalya"]
 consort: ["[[sita]]"]
 attributes: ["bow (Kodanda)", "blue-dark complexion (in some iconographies)", "monkey companions [[hanuman]] / Sugriva / Angada", "the *tilaka* mark"]
 attested-in: ["[[phase-2-017-mahabharata-ramayana-oral-layers]]", "[[phase-6-019-tulsidas-ramcharitmanas]]", "[[phase-5-050-bhagavata-purana]]", "Valmiki *Rāmāyaṇa* (Sanskrit, ~3rd–2nd c. BCE core; Goldman et al. Princeton 7-vol. critical edition)", "Kamban *Iramavataram* (Tamil, ~12th c. CE)", "Buddhist *Dasaratha Jātaka* (Rama as previous Bodhisattva birth)", "Thai *Ramakien*", "Indonesian *Kakawin Ramayana*"]
-equivalents: ["[[vishnu]] (seventh *avatāra*)"]
+equivalents: ["[[vishnu]]"]
 syncretic-edges:
-  - target: "vishnu"
-    type: "avatāra-identification"
-    source: "Puranic theology — Rama as the seventh avatar (*saptama avatāra*) in the classical *daśāvatāra* scheme; Valmiki *Rāmāyaṇa* and later Puranic tradition establish the identification"
+  - target: "[[vishnu]]"
+    type: "avatara-of"
+    source: "Vālmīki Rāmāyaṇa; Puranic daśāvatāra tradition; Bhāgavata Purāṇa 9.10-11"
+    notes: "Rama is the seventh avatara (*saptama avatāra*) of Vishnu in the classical daśāvatāra scheme. In Rāmānanda + later Rāmāvat traditions Rama becomes the supreme God himself, with Vishnu as his transcendent aspect"
 status: "metadata"
 refs:
   - title: "The Ramayana of Valmiki: An Epic of Ancient India (7 volumes)"

@@ -15,14 +15,16 @@ child-of: []
 consort: ["Lakṣmī (in Lakṣmī-Narasiṃha iconography)"]
 attributes: ["man's upper body with a lion's head", "multiple arms", "claws (no weapon — he tears the demon apart with his bare hands)", "appears at the threshold of palace hall and courtyard", "appears at twilight", "demon Hiranyakashipu across his thighs — neither the earth nor the air"]
 attested-in: []
-equivalents: ["[[ganesha]]", "[[coatlicue]]"]
+equivalents: ["[[vishnu]]", "[[ganesha]]", "[[coatlicue]]"]
 syncretic-edges:
-  - target: "vishnu"
-    type: "ancient-identification"
-    source: "Vishnu Purana, Bhagavata Purana — Narasimha IS Vishnu, the fourth of the ten avatars (Dashavatara); the identification is intrinsic to the theology"
-  - target: "ganesha"
-    type: "scholarly-parallel"
-    source: "Scholarly parallel — both are theriomorphic divine forms (man + animal) that transgress the boundary between human and animal ontological orders; independent parallel within Hindu iconography"
+  - target: "[[vishnu]]"
+    type: "avatara-of"
+    source: "Vishnu Purana, Bhagavata Purana 7.2-10 — Narasimha IS Vishnu, the fourth avatara"
+    notes: "The man-lion avatara who slays Hiraṇyakaśipu; one of the canonical daśāvatāra"
+  - target: "[[ganesha]]"
+    type: "parallel-motif"
+    source: "Hindu iconography — theriomorphic divine forms (man + animal) transgressing the human/animal ontological boundary"
+    notes: "Structural parallel within Hindu iconography, not a transmission claim"
   - target: "coatlicue"
     type: "scholarly-parallel"
     source: "Scholarly parallel — Aztec multi-form deity combining human and animal elements (skirt of serpents, claws, skull); hybrid-divine-form parallel; no transmission"

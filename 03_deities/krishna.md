@@ -15,12 +15,13 @@ child-of: ["[[vishnu]] (in classical avatāra theology)", "Devakī and Vasudeva 
 consort: ["[[radha]]", "Rukminī", "Satyabhāmā", "the gopīs (mystical-devotional)"]
 attributes: ["dark-blue or black-skinned", "peacock-feather crown", "yellow garments (*pītāmbara*)", "flute (*vēṇu*)", "Sudarśana cakra (discus)", "*śrīvatsa* curl on chest", "*kaustubha* gem", "cowherd staff"]
 attested-in: ["[[phase-2-017-mahabharata-ramayana-oral-layers]]", "[[phase-2-027-bhagavad-gita]]", "Harivaṃśa (~+300)", "Viṣṇu Purāṇa (~+400)", "[[phase-5-050-bhagavata-purana]] (Bhāgavata Purāṇa, ~+900)", "[[phase-6-013-mirabai-bhajans]]", "[[phase-6-019-tulsidas-ramcharitmanas]]", "[[phase-6-020-chaitanya-charitamrita]]"]
-equivalents: ["[[vishnu]] (one *aṃśa* / avatāra in classical theology; *svayaṃ bhagavān* in Gauḍīya)"]
+equivalents: ["[[vishnu]]"]
 syncretic-edges:
-  - target: "vishnu"
-    type: "ancient-identification"
-    source: "Classical Pāñcarātra and Bhāgavata theology — Bhāgavata Purāṇa and earlier: Krishna *is* Vishnu's complete descent (*pūrṇa avatāra*)"
-  - target: "vasudeva-vrishni"
+  - target: "[[vishnu]]"
+    type: "avatara-of"
+    source: "Bhagavad Gita 4.6-8; Bhāgavata Purāṇa 1.3.28; Hardy 1983 *Viraha-Bhakti*"
+    notes: "Krishna is the eighth (or in Bhāgavata + Gauḍīya theology the supreme) avatara of Vishnu — *pūrṇa avatāra*, the complete descent. In Gauḍīya Vaishnavism the polarity inverts: Krishna is *svayaṃ bhagavān* (God Himself) and Vishnu is his expansion"
+  - target: "[[vasudeva-vrishni]]"
     type: "historical-merger"
     source: "Hardy 1983 — the cult of Vāsudeva-Kṛṣṇa, the cult of the Yādava-Vrishni hero Kṛṣṇa, the Gopāla cowherd-deity, and the Vedic dark-deity Kṛṣṇa-Aṅgirasa were originally distinct streams that the Mahābhārata, Harivaṃśa, and later Purāṇas combined into the single classical Kṛṣṇa"
 status: "metadata"

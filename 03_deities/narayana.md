@@ -17,9 +17,10 @@ attributes: ["recumbent on the cosmic serpent Ananta-Śeṣa on the milky ocean"
 attested-in: ["[[phase-2-006-brahmanas-aranyakas]]", "[[phase-2-017-mahabharata-ramayana-oral-layers]]"]
 equivalents: ["[[vishnu]]"]
 syncretic-edges:
-  - target: "vishnu"
-    type: "ancient-identification"
-    source: "Mahabharata, Bhagavad Gita passim"
+  - target: "[[vishnu]]"
+    type: "same-as"
+    source: "Mahānārāyaṇopaniṣad; Bhāgavata Purāṇa 1.1; Mahabharata, Bhagavad Gita passim"
+    notes: "Nārāyaṇa is Vishnu in his supreme transcendent-resting aspect — same divine subject, iconographically distinct (sleeping on Śeṣa on the cosmic ocean vs the standing four-armed Vishnu pose)"
 status: "metadata"
 refs:
   - title: "Hindu Goddesses: Visions of the Divine Feminine in the Hindu Religious Tradition"
