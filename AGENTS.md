@@ -55,7 +55,7 @@ The older docs (`methodology.md`, the seven `schema-*.md` files, `source-integri
 
 ## The four laws (in 30 seconds)
 
-- **WIRING LAW** — every ``wikilink`` resolves to a real node by commit time. Stub-sweep at batch close (not mid-sentence).
+- **WIRING LAW** — every ``wikilink`` resolves to a real node by commit time. **Edge targets MUST be `[[wikilinks]]`, never raw prose strings** (so the graph can traverse). **Every cross-tradition figure you name in body prose must appear as a structured `[[wikilink]]` entry in `equivalents:` or `syncretic-edges:` — body prose alone does NOT count as wiring.** **Reciprocal**: when you add A→B in A's file, add B→A in B's file (or document why not). Stub-sweep + reciprocity sweep at batch close. See PROTOCOL §3.1 for the 9 edge types and concrete examples.
 - **INTEGRITY LAW** — globally unique slugs. Build hard-fails on duplicates. Rename the conflict; never set `ATLAS_ALLOW_DUP_ID=1`.
 - **GOBLIN-AUDIT** — when one-line fixes stop closing a bug class, dispatch three parallel read-only audit agents (correctness / rule-fragility / structural integrity). One pass, not ten.
 - **APP-CODE SERIALIZES** — Lane B has one slot. Lane A may not stage anything under `src/`, `index.html`, build scripts, `_assets/`. The pre-commit hook enforces.

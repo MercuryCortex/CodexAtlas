@@ -153,11 +153,53 @@ If `build_data.py` raises `SystemExit: duplicate id`: see §3.2 (INTEGRITY LAW) 
 
 ### 3.1 THE WIRING LAW (apply at batch close, not mid-sentence)
 
-> **The objective of this vault is to CONNECT. A wikilink that points to nothing is a broken promise. You may not finish a batch having created dead links.**
+> **The objective of this vault is to CONNECT. A wikilink that points to nothing is a broken promise. A figure named in prose but absent from the structured edge fields is a hidden promise — equally broken.**
 
-Every ``wikilink`` you write must point to a real node by the time you commit. If the target doesn't exist, you create it — minimum a stub with the correct YAML skeleton — before you close. No exceptions.
+The law has FOUR sub-rules. All four must hold by commit time.
 
-**This applies at batch close, not at sentence-write time.** Write the prose; then sweep stubs; then build; then commit.
+**(a) No dead wikilinks.** Every ``wikilink`` you write must point to a real node when you commit. If the target doesn't exist, you create it — minimum a stub with the correct YAML skeleton — before you close. Run `python3 linkcheck.py`; zero new dead links is the close-bar.
+
+**(b) Targets must BE wikilinks.** When you write a `syncretic-edges:` entry, its `target:` field MUST be a `[[wikilink]]`, never a raw prose string. Same for `equivalents:` — every entry MUST be a `[[wikilink]]`. The graph can only traverse wikilinks. Scholarship nuance goes in the `notes:` field, not in the target.
+
+```yaml
+# ❌ WRONG — the graph can't follow this
+syncretic-edges:
+  - target: "Mercury / Hermes (Roman interpretatio germanica)"
+    type: "interpretatio"
+
+# ✓ RIGHT — wikilink target + nuance in notes
+syncretic-edges:
+  - target: "[[mercury-roman]]"
+    type: "interpretatio-germanica"
+    source: "Tacitus, Germania 9; West 2007 ch. 4"
+    notes: "Wednesday/Wōdnesdæg = Mercurii dies; the weekday calque is the load-bearing evidence for the Roman→Germanic interpretatio identification"
+```
+
+**(c) Body prose must be wired.** Every cross-tradition figure you name in body prose ("through Buddhist transmission she became Benzaiten in Japan", "the Roman interpretatio identified Odin with Mercury") MUST also appear as a structured `[[wikilink]]` entry in `equivalents:` or `syncretic-edges:`. Body prose is for human readers; the graph reads only the structured fields. Both must agree.
+
+**(d) Reciprocity.** When you add A→B in A's file, add B→A in B's file (or in the case of an asymmetric relationship like `polemic-inversion`, document the asymmetry in the `notes:` of A's edge). Asymmetric back-links accumulate into the audit problem documented in `AUDIT/cross-tradition-deity-bridges-2026-05-23.md`.
+
+**Sweep order at batch close:**
+1. Body-prose sweep — re-read every cross-tradition figure named in your prose; ensure each has a `[[wikilink]]` entry in the right structured field.
+2. Stub sweep — `python3 linkcheck.py` then create stubs for every unresolved target.
+3. Reciprocity sweep — for every new A→B edge, open B's file and add B→A.
+4. Build — `python3 build_data.py`.
+
+#### Edge types (use one of these in `type:`; don't invent new ones without writing a precedent into ONTOLOGY)
+
+| Type | When to use | Example |
+|---|---|---|
+| `same-as` | dogmatic / textual identity claim | God the Father = YHWH per Nicene Creed |
+| `direct-borrowing` | one tradition explicitly reuses the named figure | Iblis ← Christian Satan (Quran 2:34) |
+| `cognate` | shared etymological ancestor (esp. PIE) | Dyaus Pita → Zeus → Jupiter → Týr (PIE *Dyḗus) |
+| `interpretatio-romana` / `-graeca` / `-germanica` | one tradition "translates" another's deity, esp. via calendric calque | Wōden = Mercury (Wōdnesdæg = Mercurii dies) |
+| `ancient-identification` | a named ancient source explicitly identifies the two | Apollo = Horus per Herodotus 2.144 |
+| `substrate-influence` | one figure structurally absorbs another (no name-identity required) | Christian Satan ← Zoroastrian Angra Mainyu |
+| `scholarly-parallel` | comparative-religion scholarship treats them as parallels; contested-by-source-tradition | Shiva ↔ Dionysus (Doniger, Daniélou) |
+| `parallel-motif` | shared mythic pattern with no transmission claim | chaoskampf serpents (Tiamat, Typhon, Vritra, Apophis) |
+| `polemic-against` / `polemic-inversion` | one tradition rejects or inverts the other's claim | Marduk → Yaldabaoth (Gnostic) |
+
+`equivalents:` (the flat-list field) carries the strongest identification (`same-as`, `cognate`, `interpretatio-*`). `syncretic-edges:` (the structured-list field) is for everything where you need to attach `type:` + `source:` + `notes:`.
 
 ### 3.2 THE INTEGRITY LAW
 
@@ -288,11 +330,17 @@ child-of: []
 consort: []
 attributes: []                      # iconographic — bull, double-axe, ankh, halo
 attested-in: []                     # links to 02_documents/
-equivalents: []                     # cross-tradition syncretic identifications
-syncretic-edges:                    # structured form (preferred when source-citing)
-  - target: ""
-    type: ""                        # ancient-identification | scholarly-parallel | folk-syncretism
-    source: ""                      # ref ID or short citation
+equivalents: []                     # cross-tradition syncretic identifications — MUST be [[wikilinks]], never raw prose
+                                    # Example: ["[[jupiter]]", "[[dyaus-pita]]", "[[tyr]]"]
+syncretic-edges:                    # structured form — use when you need type/source/notes
+                                    # `target:` MUST be a [[wikilink]]; nuance goes in `notes:` (see PROTOCOL §3.1)
+  - target: "[[other-deity-slug]]"
+    type: ""                        # same-as | cognate | interpretatio-romana/graeca/germanica | direct-borrowing |
+                                    # ancient-identification | substrate-influence | scholarly-parallel |
+                                    # parallel-motif | polemic-against | polemic-inversion
+                                    # (See PROTOCOL §3.1 edge-types table — do NOT invent new types ad-hoc.)
+    source: ""                      # T1/T2 citation: author + year + work + page if specific
+    notes: ""                       # the scholarship nuance that doesn't fit in `type:` alone
 cross-tradition-edges: []           # for documented Transmission claims (ancestor-of, heir-of, distant-heir)
 status: "stub"
 refs: []
