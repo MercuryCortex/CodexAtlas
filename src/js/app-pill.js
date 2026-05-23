@@ -156,6 +156,28 @@
     if (masterMenu.classList.contains('is-open')) buildMasterMenu();
   }
 
+  // ── POSITIONING ─────────────────────────────────────────────
+  // Anchor each dropdown to its trigger button's bottom-left rect.
+  // The pill lives at top:14 left:62 (next to the ✦ trigger), so we
+  // can't use any CSS centering math — measure the trigger each open
+  // and set position: fixed via inline style. Same pattern the legacy
+  // wireModeDropdown used. Reposition on window resize while open.
+  function positionMenu(menu, anchorBtn) {
+    if (!menu || !anchorBtn) return;
+    const r = anchorBtn.getBoundingClientRect();
+    const top  = Math.round(r.bottom + 6);
+    let left   = Math.round(r.left);
+    // Clamp horizontally so the menu never escapes the viewport.
+    const margin = 8;
+    const menuW = menu.offsetWidth || 220;
+    if (left + menuW + margin > window.innerWidth) {
+      left = window.innerWidth - menuW - margin;
+    }
+    if (left < margin) left = margin;
+    menu.style.top  = top  + 'px';
+    menu.style.left = left + 'px';
+  }
+
   // ── OPEN / CLOSE MENUS ──────────────────────────────────────
   function openMaster() {
     closeClass();              // mutual exclusion
@@ -163,6 +185,7 @@
     masterMenu.classList.add('is-open');
     masterMenu.setAttribute('aria-hidden', 'false');
     masterBtn.setAttribute('aria-expanded', 'true');
+    positionMenu(masterMenu, masterBtn);
   }
   function closeMaster() {
     masterMenu.classList.remove('is-open');
@@ -183,6 +206,7 @@
     classMenu.classList.add('is-open');
     classMenu.setAttribute('aria-hidden', 'false');
     classBtn.setAttribute('aria-expanded', 'true');
+    positionMenu(classMenu, classBtn);
   }
   function toggleMaster() {
     if (masterMenu.classList.contains('is-open')) closeMaster();
@@ -240,6 +264,14 @@
       closeMaster();
       closeClass();
     }
+  });
+
+  // Reposition open menus on resize — the pill is fixed at top:14
+  // left:62 (browser-relative), so resize is the only reflow that
+  // can move it; same pattern the legacy wireModeDropdown used.
+  window.addEventListener('resize', () => {
+    if (masterMenu.classList.contains('is-open')) positionMenu(masterMenu, masterBtn);
+    if (classMenu && classMenu.classList.contains('is-open')) positionMenu(classMenu, classBtn);
   });
 
   // ── CLASS BUTTON CLICK HANDLERS ────────────────────────────

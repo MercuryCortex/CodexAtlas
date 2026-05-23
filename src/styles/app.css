@@ -640,14 +640,15 @@ body.nav-hidden .side-tab { display: none !important; }
    still works; the pill visually collapses to just the LEFT half. */
 body.app-pill-no-class .app-pill-class,
 body.app-pill-no-class .app-pill-divider { display: none; }
-/* Dropdown panels — anchored to pill bottom-left (master) and
-   bottom-right (class). Position is set inline via JS in 22-B/22-C
-   to handle resize + responsive collapse cleanly; the defaults
-   below position the panels just below the pill assuming the pill
-   stays roughly centered on a desktop viewport. */
+/* Dropdown panels — anchored under their trigger button via JS
+   (app-pill.js positionMenu() reads getBoundingClientRect on open
+   and sets top/left inline). The pill itself lives at top:14
+   left:62, NOT centered, so no CSS fallback positioning would be
+   correct — we just paint at top:0 left:0 until JS positions.
+   Same pattern the legacy wireModeDropdown used. */
 .app-pill-menu {
   position: fixed;
-  top: 52px;            /* 14 (pill top) + 32 (pill height) + 6 (gap) */
+  top: 0; left: 0;       /* JS overrides on open */
   min-width: 220px;
   max-height: calc(100vh - 80px);
   overflow-y: auto;
@@ -663,7 +664,7 @@ body.app-pill-no-class .app-pill-divider { display: none; }
   opacity: 0;
   pointer-events: none;
   transform: translateY(-6px) scale(0.97);
-  transform-origin: 50% -8px;
+  transform-origin: 28px -8px;
   transition: opacity 140ms ease, transform 180ms cubic-bezier(0.2, 0.8, 0.2, 1);
 }
 .app-pill-menu.is-open {
@@ -671,10 +672,6 @@ body.app-pill-no-class .app-pill-divider { display: none; }
   pointer-events: auto;
   transform: translateY(0) scale(1);
 }
-/* Anchor by side — JS sets `left:` explicitly to align under the
-   correct pill half; these are fallbacks for the initial paint. */
-.app-pill-menu--master { left: calc(50% - 145px); transform-origin: 30% -8px; }
-.app-pill-menu--class  { left: calc(50% + 5px);   transform-origin: 70% -8px; }
 /* Empty-state placeholder (visible only when the menu opens without
    any items wired — i.e., before Phase 22-B/22-C land their content).
    Renders a faint "wiring in next phase" hint so the scaffold doesn't
