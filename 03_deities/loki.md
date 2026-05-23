@@ -15,6 +15,7 @@ child-of: ["Fárbauti and Laufey (both giants)"]
 consort: ["Sigyn"]
 attributes: ["fire imagery (contested)", "shape-shifting", "shoes that allow him to run on air and water"]
 attested-in: ["[[phase-8-014-poetic-edda]]", "[[phase-8-015-prose-edda-snorri]]"]
+equivalents: ["[[prometheus]]", "[[hermes-greek]]", "[[tezcatlipoca]]", "[[sun-wukong]]", "[[anansi]]", "[[manabozho]]", "[[raven-trickster]]", "[[coyote-navajo]]", "[[iktomi]]", "[[fenrir]]", "[[hod]]", "[[cagn]]", "[[aegir-norse]]"]
 syncretic-edges:
   - target: "[[trickster-archetype]]"
     type: "instantiation"

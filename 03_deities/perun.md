@@ -15,7 +15,7 @@ child-of: []
 consort: ["[[mokosh]] (folkloric-reconstructive, contested; Ivanov & Toporov 1965/1974 read the Perun/Veles myth as Perun's wife stolen by Veles, identifying her with Mokosh — the so-called *fundamental myth*)"]
 attributes: ["axe (cult-axes in archaeology)", "oak (Perun's sacred tree)", "horse — Vladimirian Kievan idol described in *Primary Chronicle* as wooden with silver head and gold mustache", "stone arrowheads ('thunderstones' = Neolithic flint axes reinterpreted as Perun's thrown weapons in folk tradition)", "iris (the flower *Perunika* in Bulgarian / Serbian)"]
 attested-in: ["*Primary Chronicle* / *Tale of Bygone Years* (12th-c. Rus' compilation, on the Kievan idols of 980 and the Rus'-Byzantine treaties of 907, 945, 971)", "treaty of Prince Oleg with Byzantium (907) — Rus' swear 'by Perun their god'", "treaty of Prince Igor (945)", "treaty of Prince Svyatoslav (971)"]
-equivalents: ["[[thor]]", "[[indra]]", "[[zeus]]", "[[jupiter]]", "[[taranis]]", "[[raijin]]", "[[susanoo]]"]
+equivalents: ["[[thor]]", "[[indra]]", "[[zeus]]", "[[jupiter]]", "[[taranis]]", "[[raijin]]", "[[susanoo]]", "[[perkunas]]", "[[chaac]]", "[[chac]]", "[[kupala]]", "[[leigong]]", "[[marzanna]]", "[[reue-lusitanian]]", "[[rod-slavic]]", "[[shango]]", "[[svantovit]]", "[[tawhirimatea]]", "[[tishtrya]]", "[[zorya]]"]
 syncretic-edges:
   - target: "[[thor]]"
     type: "cognate"

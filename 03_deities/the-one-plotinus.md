@@ -12,7 +12,7 @@ gender: "non-gendered (described apophatically)"
 role: "the first hypostasis; the absolute beyond being"
 parent-of: ["[[nous-plotinus]] (the second hypostasis)"]
 attested-in: ["[[phase-4-019-plotinus-enneads]]", "[[phase-4-020-iamblichus-on-the-mysteries]]", "[[phase-4-021-proclus-elements-of-theology]]", "[[phase-4-030-pseudo-dionysius]]"]
-equivalents: ["[[the-monad-gnostic]] (philosophical-parallel)"]
+equivalents: ["[[the-monad-gnostic]]", "[[ein-sof]]", "[[ahura-mazda]]", "[[brahman-impersonal]]", "[[shiva]]", "[[vishnu]]", "[[waheguru]]", "[[melek-hamza]]", "[[ometeotl]]", "[[amenominakanushi]]", "[[aditi]]"]
 syncretic-edges:
   - target: "the-monad-gnostic"
     type: "scholarly-parallel"

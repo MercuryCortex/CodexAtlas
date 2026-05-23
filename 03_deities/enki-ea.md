@@ -15,7 +15,7 @@ child-of: ["[[an-sumerian]]"]
 consort: ["[[damkina]]"]
 attributes: ["streams flowing from shoulders", "goat-fish"]
 attested-in: ["[[phase-1-006-atrahasis]]", "[[phase-1-008-enuma-elish]]", "[[phase-1-004-gilgamesh-old-babylonian]]"]
-equivalents: ["[[thoth]]", "[[hermes-greek]]", "[[hermes-trismegistus]]", "[[sophia-gnostic]]"]
+equivalents: ["[[thoth]]", "[[hermes-greek]]", "[[hermes-trismegistus]]", "[[sophia-gnostic]]", "[[prometheus]]", "[[itzamna]]", "[[kukulkan]]", "[[matsya-avatar]]", "[[mimir-norse]]", "[[nethuns]]", "[[okuninushi]]", "[[pachacamac]]", "[[ran]]", "[[rishabha-jain]]", "[[viracocha]]"]
 syncretic-edges:
   - target: "[[thoth]]"
     type: "parallel-motif"

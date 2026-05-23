@@ -15,7 +15,7 @@ child-of: ["[[kronos]]", "Rhea"]
 consort: ["Amphitrite"]
 attributes: ["trident", "horses", "bull", "dolphin"]
 attested-in: ["[[phase-2-008-homeric-epics]]", "[[phase-2-009-hesiod-theogony-works-and-days]]", "Linear B (po-se-da-o), strongly attested at Pylos"]
-equivalents: ["[[neptune-roman]]"]
+equivalents: ["[[neptune-roman]]", "[[aegir-norse]]", "[[adamastor]]", "[[ahti]]", "[[beher]]", "[[lir]]", "[[manannan-mac-lir]]", "[[nethuns]]", "[[njord]]", "[[olokun]]", "[[pachacamac]]", "[[ryujin]]"]
 syncretic-edges:
   - target: "neptune-roman"
     type: "syncretic-identification"

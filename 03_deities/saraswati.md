@@ -11,7 +11,7 @@ domains: ["speech / Vāc", "learning", "music", "poetry", "the Sarasvatī river"
 gender: "feminine"
 role: "goddess of speech, learning, and the arts; consort of Brahmā"
 attested-in: ["Rig Veda (multiple hymns)", "Mahābhārata, Rāmāyaṇa", "Purāṇic literature"]
-equivalents: ["[[benzaiten]]", "[[wisdom-personified]]"]
+equivalents: ["[[benzaiten]]", "[[wisdom-personified]]", "[[brigid]]", "[[boann]]", "[[minerva-roman]]", "[[menvra-etruscan]]", "[[mnemosyne]]", "[[nabia]]", "[[parvati]]", "[[manjushri]]", "[[prajnaparamita-goddess]]", "[[ebisu]]"]
 syncretic-edges:
   - target: "[[benzaiten]]"
     type: "direct-borrowing"

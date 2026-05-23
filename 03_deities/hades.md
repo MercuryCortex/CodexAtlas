@@ -15,7 +15,7 @@ child-of: ["[[kronos]]", "Rhea"]
 consort: ["Persephone (abducted)"]
 attributes: ["helm of invisibility (the *kunee*)", "scepter", "Cerberus (three-headed hound)"]
 attested-in: ["[[phase-2-008-homeric-epics]]", "[[phase-2-009-hesiod-theogony-works-and-days]]", "Homeric Hymn to Demeter"]
-equivalents: ["[[pluto-roman]]", "Dis Pater (Roman chthonic equivalent — no node yet)"]
+equivalents: ["[[pluto-roman]]", "[[yama-vedic]]", "[[osiris]]", "[[serapis]]", "[[ah-puch]]", "[[baron-samedi]]", "[[charun-etruscan]]", "[[cizin]]", "[[donn-celtic]]", "[[kubera]]", "[[veles]]", "[[velinas]]"]
 syncretic-edges:
   - target: "pluto-roman"
     type: "syncretic-identification"

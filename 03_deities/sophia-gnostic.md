@@ -19,9 +19,7 @@ attested-in:
   - "[[phase-4-003-gospel-of-truth]]"
   - "[[phase-4-004-gospel-of-philip]]"
   - "[[phase-4-009-pistis-sophia]]"
-equivalents:
-  - "[[hokmah-hebrew]] (Hebrew Wisdom personified, Proverbs 8; Sirach 24 — the ancestor-figure Gnostics transform)"
-  - "[[shekhinah]] (parallel: divine feminine in exile, longing to return — Scholem's reading)"
+equivalents: ["[[hokmah-hebrew]]", "[[shekhinah]]", "[[holy-spirit]]", "[[enki-ea]]", "[[asherah]]", "[[ma-at]]", "[[manjushri]]", "[[agathos-daimon]]", "[[melek-hamza]]", "[[ebisu]]", "[[the-lady-ecclesia-hermas]]"]
   - "[[albion]]-Jerusalem connection (Blake's Jerusalem = Albion's Emanation = Sophia-Shekinah in exile)"
 syncretic-edges:
   - target: "hokmah-hebrew"

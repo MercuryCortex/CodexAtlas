@@ -15,7 +15,7 @@ child-of: []
 consort: []
 attributes: ["blue mantle", "crescent moon underfoot (Immaculate Conception iconography)", "twelve stars (Rev 12)", "rose", "lily", "infant in arms (hodegetria, eleousa)"]
 attested-in: ["[[phase-3-016-gospel-of-mark]]", "[[phase-3-017-gospel-of-matthew]]", "[[phase-3-018-luke-acts]]", "[[phase-3-020-gospel-of-john]]"]
-equivalents: []
+equivalents: ["[[isis-hellenistic]]", "[[mary-of-zion]]", "[[the-lady-ecclesia-hermas]]", "[[anahit-armenian]]", "[[amaterasu]]", "[[avalokitesvara]]", "[[erzulie]]", "[[hariti]]", "[[mazu]]", "[[prajnaparamita-goddess]]", "[[tara]]", "[[yemoja]]"]
 syncretic-edges:
   - target: "[[isis-hellenistic]]"
     type: "scholarly-parallel"

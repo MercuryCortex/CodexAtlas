@@ -15,7 +15,7 @@ key-texts:
   - "[[phase-2-008-homeric-epics]] — Hermes as divine messenger"
   - "[[phase-2-009-hesiod-theogony-works-and-days]]"
   - "Plato, *Phaedrus* 274c-d (Hermes/Thoth invents writing)"
-equivalents: ["[[mercury-roman]]", "[[thoth]]", "[[hermes-trismegistus]]", "[[odin]]", "[[eshu]]", "[[enki-ea]]"]
+equivalents: ["[[mercury-roman]]", "[[thoth]]", "[[hermes-trismegistus]]", "[[odin]]", "[[eshu]]", "[[enki-ea]]", "[[anansi]]", "[[bragi]]", "[[ehecatl]]", "[[ganesha]]", "[[gwydion]]", "[[iktomi]]", "[[loki]]", "[[lugh]]", "[[nabu]]", "[[ogma]]", "[[papa-legba]]", "[[sarutahiko]]", "[[tezcatlipoca]]", "[[turms]]", "[[veles]]"]
 syncretic-edges:
   - target: "[[mercury-roman]]"
     type: "interpretatio-romana"

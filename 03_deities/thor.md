@@ -15,7 +15,7 @@ child-of: ["[[odin]] and Jörð (Earth)"]
 consort: ["Sif"]
 attributes: ["hammer *Mjölnir*", "iron gloves *Járngreipr*", "belt of strength *Megingjörð*", "goat-drawn chariot (*Tanngrisnir* and *Tanngnjóstr*)", "red beard"]
 attested-in: ["[[phase-8-014-poetic-edda]]", "[[phase-8-015-prose-edda-snorri]]"]
-equivalents: ["[[jupiter]]", "[[zeus]]", "[[indra]]", "[[perun]]", "[[taranis]]", "[[susanoo]]", "[[raijin]]", "[[baal-hadad]]", "[[marduk]]"]
+equivalents: ["[[jupiter]]", "[[zeus]]", "[[indra]]", "[[perun]]", "[[taranis]]", "[[susanoo]]", "[[raijin]]", "[[baal-hadad]]", "[[marduk]]", "[[perkunas]]", "[[chaac]]", "[[chac]]", "[[daramulan]]", "[[leigong]]", "[[reue-lusitanian]]", "[[shango]]", "[[takemikazuchi]]", "[[tawhirimatea]]", "[[tishtrya]]", "[[vahagn]]"]
 syncretic-edges:
   - target: "[[jupiter]]"
     type: "interpretatio-romana"

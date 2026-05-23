@@ -15,7 +15,7 @@ child-of: ["[[an-sumerian]]", "[[nanna-sin]]"]
 consort: ["[[gugalanna]] (first husband)", "[[nergal]] (second husband, in the Nergal-Ereshkigal myth)"]
 attributes: ["throne of lapis lazuli", "scepter", "the seven gates of the netherworld", "the *kurgarru* and *galaturra* attendants"]
 attested-in: ["[[phase-1-017-descent-of-inanna]]"]
-equivalents: ["[[allatu-akkadian]]"]
+equivalents: ["[[allatu-akkadian]]", "[[yama-vedic]]", "[[pluto-roman]]", "[[hades]]", "[[ah-puch]]", "[[ataecina]]", "[[cizin]]", "[[izanami]]", "[[laz]]", "[[ninazu]]", "[[pazuzu]]"]
 syncretic-edges:
   - target: "[[allatu-akkadian]]"
     type: "ancient-identification"

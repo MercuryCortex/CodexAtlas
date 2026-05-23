@@ -15,7 +15,7 @@ child-of: []
 consort: ["[[hathor]]"]
 attributes: ["falcon head with solar disk and uraeus", "solar barque (day and night journeys)", "scepter", "ram-headed (underworld night form)", "scarab (Khepri dawn form)"]
 attested-in: ["[[phase-1-002-pyramid-texts]]", "[[phase-1-009-coffin-texts]]", "[[phase-1-010-book-of-the-dead]]", "[[phase-1-036-amduat]]", "[[phase-1-011-great-hymn-to-aten]]", "[[phase-2-028-herodotus-histories-book-2]]", "[[phase-3-026-diodorus-bibliotheca-book-1]]", "[[phase-4-072-plutarch-de-iside-et-osiride]]"]
-equivalents: ["[[amun-ra]] (Theban New Kingdom synthesis)", "[[aten]] (solar disk form; Akhenaten's monotheist intensification)", "[[helios]] (Greek solar equation via interpretatio graeca)", "[[sol-invictus]] (Roman imperial solar theology via Hellenistic mediation)"]
+equivalents: ["[[amun-ra]]", "[[aten]]", "[[helios]]", "[[sol-invictus]]", "[[amaterasu]]", "[[amitabha]]", "[[amun]]", "[[eos-greek]]", "[[inti]]", "[[kane-hawaiian]]", "[[khepri]]", "[[nefertem]]", "[[surya]]", "[[ushas]]", "[[vairocana]]", "[[osiris]]"]
 syncretic-edges:
   - target: "[[atum]]"
     type: "syncretic-identification"

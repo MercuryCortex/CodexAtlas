@@ -15,7 +15,7 @@ child-of: ["[[nanna-sin]]", "[[an-sumerian]]"]
 consort: ["[[dumuzi-tammuz]]"]
 attributes: ["eight-pointed star", "lions", "rosette", "reed bundle (her standard at Uruk)", "the *me* (cosmic powers)"]
 attested-in: ["[[phase-1-003-enheduanna-hymns]]", "[[phase-1-004-gilgamesh-old-babylonian]]"]
-equivalents: ["[[ishtar-akkadian]]", "[[astarte-canaanite]]", "[[aphrodite-greek]]", "[[venus-roman]]"]
+equivalents: ["[[ishtar-akkadian]]", "[[astarte-canaanite]]", "[[aphrodite-greek]]", "[[venus-roman]]", "[[astar-aksumite]]", "[[astghik]]", "[[ataecina]]", "[[cybele]]", "[[uni-etruscan]]", "[[coyolxauhqui]]", "[[ixbalanque]]", "[[sedna-inuit]]", "[[tlazolteotl]]", "[[dizang-ksitigarbha]]"]
 syncretic-edges:
   - target: "[[ishtar-akkadian]]"
     type: "same-as"
