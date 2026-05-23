@@ -649,6 +649,78 @@ body.nav-hidden .side-tab { display: none !important; }
   text-transform: uppercase;
 }
 
+/* Phase 22-B (2026-05-23) — dropdown items inside the pill menus.
+   Same vocabulary as .nav-hub-menu .nh-item: gold-on-hover, left-
+   border accent on .is-active, mono caps label. Reuses the
+   primitive style per the audit's style-guide rule. */
+.app-pill-menu-item {
+  display: flex; align-items: center; gap: 10px;
+  width: 100%;
+  padding: 8px 14px;
+  background: transparent;
+  border: 0;
+  border-left: 2px solid transparent;
+  text-align: left;
+  font-family: var(--sans, Inter, sans-serif);
+  font-size: 13px;
+  color: var(--text-1, #e5e7eb);
+  cursor: pointer;
+  user-select: none;
+  transition: background 90ms ease, border-color 90ms ease, color 90ms ease;
+}
+.app-pill-menu-item:hover {
+  background: rgba(212,165,90,0.10);
+  border-left-color: var(--gold, #d4a55a);
+  color: var(--gold-1, #e8c889);
+}
+.app-pill-menu-item.is-active {
+  border-left-color: var(--gold, #d4a55a);
+  color: var(--gold-1, #e8c889);
+}
+.app-pill-menu-icon {
+  display: inline-block;
+  width: 18px;
+  text-align: center;
+  color: var(--text-2, #9099a8);
+  font-size: 14px;
+  flex: 0 0 auto;
+}
+.app-pill-menu-item:hover .app-pill-menu-icon,
+.app-pill-menu-item.is-active .app-pill-menu-icon {
+  color: var(--gold, #d4a55a);
+}
+.app-pill-menu-label {
+  flex: 1 1 auto;
+  font-family: var(--mono, "JetBrains Mono", Menlo, monospace);
+  font-size: 11px;
+  letter-spacing: 0.10em;
+  text-transform: uppercase;
+}
+.app-pill-menu-check {
+  flex: 0 0 auto;
+  color: var(--gold, #d4a55a);
+  font-size: 9px;
+  opacity: 0.85;
+}
+.app-pill-menu-hint {
+  flex: 0 0 auto;
+  font-family: var(--mono, "JetBrains Mono", Menlo, monospace);
+  font-size: 9px;
+  letter-spacing: 0.08em;
+  color: var(--text-3, #6b7280);
+  text-transform: uppercase;
+}
+.app-pill-menu-item--meta {
+  /* "Old prototypes" entry — slightly dimmer to read as utility,
+     not as a primary master view. */
+  color: var(--text-2, #9099a8);
+}
+.app-pill-menu-divider {
+  height: 1px;
+  margin: 4px 12px;
+  background: rgba(212,165,90,0.12);
+}
+
 /* Responsive collapse — narrow viewports drop the pill to a single
    unified button. Spec'd in §2.5 of the refactor audit; full
    responsive collapse + keyboard nav lands in Phase 22-E. For now

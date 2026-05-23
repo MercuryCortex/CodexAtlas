@@ -518,6 +518,15 @@ function setView(name) {
   // changes the SVG width; without this guard, the panel would slam shut.
   const _isViewChange = STATE.view !== name;
   STATE.view = name; STATE.focusId = null;
+  // Phase 22-B (2026-05-23) — dispatch a custom event so app-shell
+  // chrome (top-bar pill, preferences drawer, etc.) can react to
+  // view changes without polling STATE.view. Listeners attach via
+  // document.addEventListener('codex:view-changed', ...).
+  try {
+    document.dispatchEvent(new CustomEvent('codex:view-changed', {
+      detail: { view: name, isViewChange: _isViewChange }
+    }));
+  } catch (_) { /* CustomEvent unavailable in very old browsers */ }
   // Body class for view-specific styling hooks (e.g., timeline gets uniform bg, no radial gradient).
   document.body.className = document.body.className.replace(/\bview-\S+\b/g, '').trim() + ' view-' + name;
   document.querySelectorAll('nav.side .item').forEach(el => el.classList.toggle('active', el.dataset.view === name));
