@@ -15,13 +15,21 @@ child-of: ["Aditi (in some hymns)"]
 consort: ["Varuṇānī"]
 attributes: ["noose (pāśa)", "thousand eyes", "rides a makara (sea-monster) in later iconography"]
 attested-in: ["[[phase-2-001-rig-veda-family-books]]", "Mitanni-Hittite treaty (-1380 BCE)"]
-equivalents: []
+equivalents: ["[[ahura-mazda]]", "[[mitra-vedic]]", "[[uranus-greek]]"]
 syncretic-edges:
-  - target: "ahura-mazda"
-    type: "scholarly-parallel"
-    source: "Boyce 1975; Thieme 1960"
-    notes: "The Indo-Iranian *Asura/Ahura* connection: Vedic Varuṇa (an asura) shares the sovereign moral-order role with Avestan Ahura Mazda. Direct equation contested but the cognate role is widely accepted."
-  - target: "asura-deva-inversion"
+  - target: "[[ahura-mazda]]"
+    type: "cognate"
+    source: "Boyce 1975; Thieme 1960; West 2007"
+    notes: "The Indo-Iranian *Asura/Ahura* connection: Vedic Varuṇa (an asura) shares the sovereign moral-order role with Avestan Ahura Mazda. Direct etymological equation contested in detail but the cognate role and class are widely accepted — both are 'ahura/asura-class' deities of cosmic-order"
+  - target: "[[mitra-vedic]]"
+    type: "same-as"
+    source: "Dumézil 1948 *Mitra-Varuna*; Brereton 1981 *The Rigvedic Adityas*"
+    notes: "The Mitra-Varuna dual sovereignty pair — Dumézil's classic IE 'first function' (sovereignty) split into juridical-friendly (Mitra) vs magical-terrifying (Varuna) poles. Doctrinally inseparable; appear together more often than apart"
+  - target: "[[uranus-greek]]"
+    type: "cognate"
+    source: "Mayrhofer 1996 KEWA; debated PIE *Wer-uno- → Varuṇa = Greek Ouranos; Watkins 1995"
+    notes: "The Varuṇa-Ouranos etymology is contested (Mayrhofer treats it as plausible; not all comparativists accept). If accepted, both are sky-encompassing supreme-sovereign IE figures who get demoted in their respective traditions — Varuna by Indra's ascendance, Uranus by Cronos's castration"
+  - target: "[[asura-deva-inversion]]"
     type: "surviving-ahura-class-deity-of-Vedic-branch"
     source: "Hale 1986 *The Asuras in the Rgveda*; Boyce 1975; West 2007 — Varuṇa is the singular Vedic deity who survives the post-Vedic asura-demotion with his *asura*-class status preserved in his original cosmic-order role. While most Vedic asuras are demonized in later Hinduism, Varuṇa retains his asura-cognate function (cosmic sovereignty, oath-keeping, moral surveillance) — making him the *Vedic mirror* of the *ahura* class that Zoroastrian Ahura Mazda fully elevates. The cognate Varuṇa-Ahura-Mazda pair (both *asura/ahura*-class, both cosmic-order sovereigns) is the cleanest evidence that the pre-schism Indo-Iranian *ahura/asura* class had a stable theological profile (cosmic order, binding law, truth) that both branches preserved differently. See [[asura-deva-inversion]]"
     notes: "MASSIVE-WIN: Varuṇa is the *non-inverted* Vedic asura — the deity who escaped the post-Vedic demonization because his cosmic-sovereignty profile was too important to discard. He preserves what the inversion makes invisible: that the Indo-Iranian *asura/ahura* class was originally the supreme-divine class. Cross-lens: 03_deities → 06_themes"

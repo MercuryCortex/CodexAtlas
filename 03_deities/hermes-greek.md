@@ -15,7 +15,12 @@ key-texts:
   - "[[phase-2-008-homeric-epics]] — Hermes as divine messenger"
   - "[[phase-2-009-hesiod-theogony-works-and-days]]"
   - "Plato, *Phaedrus* 274c-d (Hermes/Thoth invents writing)"
+equivalents: ["[[mercury-roman]]", "[[thoth]]", "[[hermes-trismegistus]]", "[[odin]]", "[[eshu]]", "[[enki-ea]]"]
 syncretic-edges:
+  - target: "[[mercury-roman]]"
+    type: "interpretatio-romana"
+    source: "Standard Roman interpretatio graeca — attested from Plautus onward; Versnel 2011 *Coping with the Gods*"
+    notes: "Mercury IS Hermes — Roman interpretation graeca; the Hermes-Mercury identity is classical and uncontested. Wednesday/Wōdnesdæg = Mercurii dies = Hermes-day via the Roman calendric calque, which is also what mediates the Mercury ↔ Odin interpretatio germanica"
   - target: "[[thoth]]"
     type: "ancient-identification"
     notes: "Greeks systematically identified Hermes with Egyptian Thoth — both messenger/scribe/psychopomp gods of writing and wisdom. From Herodotus (2.138, 2.144) onward, the identification is canonical. The Hellenistic Hermes Trismegistus is the joint figure: Thoth's scribal wisdom + Hermes's boundary-crossing merged into the founding revelatory figure of Hermetism."

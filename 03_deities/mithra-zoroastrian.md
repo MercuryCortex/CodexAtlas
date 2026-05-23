@@ -15,17 +15,17 @@ child-of: []
 consort: []
 attributes: ["thousand ears, ten-thousand eyes", "mace (gurz)", "white horses drawing his chariot", "lord of wide pastures", "dawn light"]
 attested-in: ["[[phase-2-004-yasna-younger-avesta]]", "Yašt 10 (Mihr Yašt) — the principal Avestan hymn to Mithra"]
-equivalents: []
+equivalents: ["[[mitra-vedic]]", "[[mithras-roman]]", "[[sol-invictus]]"]
 syncretic-edges:
-  - target: "mitra-vedic"
-    type: "scholarly-parallel"
-    source: "Boyce 1975; Thieme 1960; Mayrhofer 1966"
-    notes: "Both inherit Proto-Indo-Iranian *Mitra (covenant). Avestan Mithra is more militarized and solar; Vedic Mitra is more abstract sovereign-of-contract. The PII root *mitra = 'covenant, contract' is preserved in both."
-  - target: "mithras-roman"
-    type: "scholarly-parallel"
-    source: "Cumont 1903; Beck 2006; Clauss 2000"
-    notes: "The Roman mystery-cult Mithras (1st-4th c. CE) takes the name and a few iconographic elements (Phrygian cap, bull-slaying tauroctony) but substantially reinvents the figure. The tauroctony has no Iranian precedent. Beck and current scholarship treat the Roman cult as a Roman-period construction with Iranian veneer, not a transplant of Iranian Mithra-worship."
-  - target: "sol-invictus"
+  - target: "[[mitra-vedic]]"
+    type: "cognate"
+    source: "Boyce 1975; Thieme 1960 'The Aryan Gods of the Mitanni Treaties'; Mayrhofer 1966"
+    notes: "Both inherit Proto-Indo-Iranian *Mitra (covenant). Avestan Mithra is more militarized and solar; Vedic Mitra is more abstract sovereign-of-contract. The PII root *mitra = 'covenant, contract' is preserved in both"
+  - target: "[[mithras-roman]]"
+    type: "cognate"
+    source: "Cumont 1903 (continuity); Beck 2006 *The Religion of the Mithras Cult* (limits continuity); Clauss 2000 *The Roman Cult of Mithras*"
+    notes: "The Roman mystery-cult Mithras (1st-4th c. CE) takes the name and a few iconographic elements (Phrygian cap, bull-slaying tauroctony) but substantially reinvents the figure. The tauroctony has no Iranian precedent. Beck and current scholarship treat the Roman cult as a Roman-period construction with Iranian veneer, not a transplant of Iranian Mithra-worship"
+  - target: "[[sol-invictus]]"
     type: "scholarly-parallel"
     source: "Turcan 1996; Beck 2006"
     notes: "Roman Sol Invictus (Unconquered Sun, official Roman state cult from 274 CE under Aurelian) shares the solar domain with Mithra. The two cults were sometimes conflated in the Roman period. Structural parallel in the solar, warrior, and covenant domains but no direct equation; Sol Invictus draws on multiple solar traditions."
