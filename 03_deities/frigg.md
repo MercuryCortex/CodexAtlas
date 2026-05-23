@@ -18,9 +18,9 @@ attested-in: ["[[phase-8-014-poetic-edda]]", "[[phase-8-015-prose-edda-snorri]]"
 equivalents: ["[[venus-roman]]", "[[freyja]]"]
 syncretic-edges:
   - target: "[[venus-roman]]"
-    type: "interpretatio-romana"
+    type: "interpretatio-nominal"
     source: "weekday-calque Friday — some philologists assign Friday to Frigg, others to Freyja; both interpretations exist in the early medieval glossary tradition"
-    notes: "The Friday-calque could refer to either Frigg or Freyja (or to a conflated Proto-Germanic source goddess) — the assignment is disputed"
+    notes: "interpretatio-romana (Germanic→Roman name-mapping via weekday calque). The Friday-calque could refer to either Frigg or Freyja (or to a conflated Proto-Germanic source goddess) — the assignment is disputed"
   - target: "[[freyja]]"
     type: "scholarly-parallel"
     source: "Grimm 1844; Lindow 2001; Näsström 1995 — the Frigg/Freyja doublet question"

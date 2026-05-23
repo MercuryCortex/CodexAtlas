@@ -18,9 +18,9 @@ attested-in: ["[[phase-8-014-poetic-edda]]", "[[phase-8-015-prose-edda-snorri]]"
 equivalents: ["[[mars-roman]]", "[[zeus]]", "[[jupiter]]", "[[dyaus-pita]]"]
 syncretic-edges:
   - target: "[[mars-roman]]"
-    type: "interpretatio-romana"
+    type: "interpretatio-nominal"
     source: "Tacitus, Germania 9; weekday-calque Tuesday/Tīwesdæg = Martis dies"
-    notes: "Roman interpretatio assigned Týr the war-god role of Mars; the Tuesday-calque is the load-bearing evidence. Note Týr's primary role had already shifted from sky-father to war-god by historical times — the IE *Dyēus sky-father function was largely taken over by Thor and Odin in the Germanic branch"
+    notes: "Tacitus interpretatio-romana (Germanic→Roman name-mapping). Roman interpretatio assigned Týr the war-god role of Mars; the Tuesday-calque is the load-bearing evidence. Note Týr's primary role had already shifted from sky-father to war-god by historical times — the IE *Dyēus sky-father function was largely taken over by Thor and Odin in the Germanic branch"
   - target: "[[zeus]]"
     type: "cognate"
     source: "West 2007 ch. 4; Watkins 1995; the Indo-European *Dyḗus ph₂tḗr → Proto-Germanic *Tīwaz → Old Norse Týr / Old English Tīw"

@@ -15,9 +15,9 @@ attested-in: ["Plautus, Terence", "Cicero *De Fato*", "Pliny *NH* 2.22", "Boethi
 equivalents: ["[[tyche-greek]]", "[[the-moirai]]", "[[lakshmi]]"]
 syncretic-edges:
   - target: "[[tyche-greek]]"
-    type: "interpretatio-romana"
+    type: "interpretatio-cultic"
     source: "Champeaux 1982-1987, Fortuna (2 vols.); Beard/North/Price 1998 Religions of Rome vol. 1"
-    notes: "Greek Tyche imported wholesale into Roman religion. The Praeneste cult of Fortuna Primigenia predates and influences imperial-era Hellenization — the relationship is older than a simple interpretatio"
+    notes: "interpretatio-romana with shared cult: Greek Tyche imported wholesale into Roman religion at the level of cult-practice. The Praeneste cult of Fortuna Primigenia predates and influences imperial-era Hellenization — the relationship is older than a simple name-mapping and involves the actual sanctuary cult"
   - target: "[[the-moirai]]"
     type: "scholarly-parallel"
     source: "Champeaux 1982-1987"

@@ -18,9 +18,9 @@ attested-in: ["[[phase-2-008-homeric-epics]]", "[[phase-2-009-hesiod-theogony-wo
 equivalents: ["[[faunus-roman]]", "[[banebdjedet]]"]
 syncretic-edges:
   - target: "[[faunus-roman]]"
-    type: "interpretatio-romana"
+    type: "interpretatio-nominal"
     source: "Standard Roman interpretatio — Faunus is the Roman Pan, with comparable rustic/sylvan domain"
-    notes: "Roman interpretatio assigns the rustic/sylvan god slot to Faunus; the Pan-Faunus identity is uncontested in classical sources"
+    notes: "Roman interpretatio-graeca (Greek→Roman name-mapping). Roman interpretatio assigns the rustic/sylvan god slot to Faunus; the Pan-Faunus identity is uncontested in classical sources"
   - target: "[[banebdjedet]]"
     type: "ancient-identification"
     source: "Herodotus, Histories 2.46"
