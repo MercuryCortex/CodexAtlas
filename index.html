@@ -8,7 +8,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&family=EB+Garamond:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@300;400;500;600&family=Noto+Serif+Hebrew:wght@400;700&family=Noto+Sans+Egyptian+Hieroglyphs&display=swap" rel="stylesheet" />
 <link rel="stylesheet" href="_assets/vendor/maplibre/maplibre-gl.css?v=5.24.0" />
-<link rel="stylesheet" href="src/styles/app.css?v=20260523-21ay-21az-sfw-pipeline" />
+<link rel="stylesheet" href="src/styles/app.css?v=20260523-22a-pill-scaffold" />
 </head>
 <body class="nav-hidden detail-collapsed footer-collapsed">
 
@@ -23,6 +23,51 @@
   <span class="nav-hub-glyph">✦</span>
 </button>
 <div class="nav-hub-menu" id="nav-hub-menu" role="menu" aria-hidden="true"></div>
+
+<!-- ════════════════════════════════════════════════════════════════
+     Phase 22-A (2026-05-23) — app-shell top-bar pill SCAFFOLD
+     ════════════════════════════════════════════════════════════════
+     The elegant dual-pill that will eventually replace the in-Forge
+     bottom-bar "FORGE | Deities" pill. This Phase ships pure HTML+CSS
+     scaffold — the dropdowns exist but DO NOTHING YET (no click
+     handlers wired). Master-view selector + class selector behavior
+     comes in Phase 22-B + 22-C respectively. Old Forge pill remains
+     fully functional during the transition. Per AUDIT/topbar-pill-
+     refactor-design-2026-05-23.md §2 visual spec.
+
+     Construction: ONE pill-shaped <div> containing TWO independent
+     click targets (.app-pill-master + .app-pill-class) fused by a
+     vertical `|` divider. Two dropdown panels (one per side) anchor
+     to the pill's bottom-left + bottom-right edges. The pill is
+     always-on (every view shows it); class side will hide for views
+     that don't support class-filtering (Phase 22-C).
+     ════════════════════════════════════════════════════════════════ -->
+<div class="app-pill-wrap" id="app-pill-wrap" aria-label="Master view and class">
+  <div class="app-pill" role="group">
+    <button class="app-pill-side app-pill-master" id="app-pill-master" type="button"
+            aria-haspopup="menu" aria-expanded="false" aria-controls="app-pill-master-menu"
+            title="Master view — Forge / Timeline / Map / Star Map">
+      <span class="app-pill-icon" aria-hidden="true">⚒</span>
+      <span class="app-pill-label" id="app-pill-master-label">FORGE</span>
+      <span class="app-pill-caret" aria-hidden="true">▾</span>
+    </button>
+    <span class="app-pill-divider" aria-hidden="true"></span>
+    <button class="app-pill-side app-pill-class" id="app-pill-class" type="button"
+            aria-haspopup="menu" aria-expanded="false" aria-controls="app-pill-class-menu"
+            title="Class filter — Deities / Persons / Themes / etc.">
+      <span class="app-pill-label" id="app-pill-class-label">DEITIES</span>
+      <span class="app-pill-caret" aria-hidden="true">▾</span>
+    </button>
+  </div>
+  <!-- Master-view dropdown (anchored to .app-pill-master bottom-left).
+       Items populated in Phase 22-B; scaffold for now. -->
+  <div class="app-pill-menu app-pill-menu--master" id="app-pill-master-menu"
+       role="menu" aria-hidden="true"></div>
+  <!-- Class dropdown (anchored to .app-pill-class bottom-right).
+       Items populated in Phase 22-C; scaffold for now. -->
+  <div class="app-pill-menu app-pill-menu--class" id="app-pill-class-menu"
+       role="menu" aria-hidden="true"></div>
+</div>
 
 <!-- Legacy sidebar — kept in the DOM so existing JS handlers
      (setView, style picker, themes button, tier toggle, stats)
@@ -230,20 +275,20 @@
 <script src="src/js/views/pantheon-v2.js?v=20260517-edge-buckets-universal"></script>
 
 <!-- Forge: proprietary WebGPU engine (Phase 5 — dev panel). -->
-<script src="src/js/engine/contract.js?v=20260523-21ay-21az-sfw-pipeline"></script>
-<script src="src/js/engine/types.js?v=20260523-21ay-21az-sfw-pipeline"></script>
-<script src="src/js/engine/math.js?v=20260523-21ay-21az-sfw-pipeline"></script>
-<script src="src/js/engine/camera.js?v=20260523-21ay-21az-sfw-pipeline"></script>
-<script src="src/js/engine/layout/radial.js?v=20260523-21ay-21az-sfw-pipeline"></script>
-<script src="src/js/engine/graph/node.js?v=20260523-21ay-21az-sfw-pipeline"></script>
-<script src="src/js/engine/graph/edge.js?v=20260523-21ay-21az-sfw-pipeline"></script>
-<script src="src/js/engine/graph/adjacency.js?v=20260523-21ay-21az-sfw-pipeline"></script>
-<script src="src/js/engine/graph/label.js?v=20260523-21ay-21az-sfw-pipeline"></script>
-<script src="src/js/engine/graph/hull.js?v=20260523-21ay-21az-sfw-pipeline"></script>
-<script src="src/js/engine/graph/mode.js?v=20260523-21ay-21az-sfw-pipeline"></script>
-<script src="src/js/engine/graph/glyph.js?v=20260523-21ay-21az-sfw-pipeline"></script>
-<script src="src/js/engine/renderer/webgpu.js?v=20260523-21ay-21az-sfw-pipeline"></script>
-<script src="src/js/views/forge.js?v=20260523-21ay-21az-sfw-pipeline"></script>
+<script src="src/js/engine/contract.js?v=20260523-22a-pill-scaffold"></script>
+<script src="src/js/engine/types.js?v=20260523-22a-pill-scaffold"></script>
+<script src="src/js/engine/math.js?v=20260523-22a-pill-scaffold"></script>
+<script src="src/js/engine/camera.js?v=20260523-22a-pill-scaffold"></script>
+<script src="src/js/engine/layout/radial.js?v=20260523-22a-pill-scaffold"></script>
+<script src="src/js/engine/graph/node.js?v=20260523-22a-pill-scaffold"></script>
+<script src="src/js/engine/graph/edge.js?v=20260523-22a-pill-scaffold"></script>
+<script src="src/js/engine/graph/adjacency.js?v=20260523-22a-pill-scaffold"></script>
+<script src="src/js/engine/graph/label.js?v=20260523-22a-pill-scaffold"></script>
+<script src="src/js/engine/graph/hull.js?v=20260523-22a-pill-scaffold"></script>
+<script src="src/js/engine/graph/mode.js?v=20260523-22a-pill-scaffold"></script>
+<script src="src/js/engine/graph/glyph.js?v=20260523-22a-pill-scaffold"></script>
+<script src="src/js/engine/renderer/webgpu.js?v=20260523-22a-pill-scaffold"></script>
+<script src="src/js/views/forge.js?v=20260523-22a-pill-scaffold"></script>
 
 <script src="src/js/graph/theme.js?v=20260517-handoff"></script>
 <script src="src/js/graph/layout.js?v=20260517-handoff"></script>

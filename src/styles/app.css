@@ -510,6 +510,161 @@ body.nav-hidden .side-tab { display: none !important; }
   background: rgba(212,165,90,0.10);
 }
 
+/* ════════════════════════════════════════════════════════════════
+   Phase 22-A (2026-05-23) — APP-SHELL TOP-BAR PILL (SCAFFOLD)
+   ════════════════════════════════════════════════════════════════
+   The elegant dual-pill that lives at the app shell level, on every
+   view. Two independent click targets fused by a vertical `|` —
+   visually one object, functionally two dropdowns. LEFT = master
+   view (Forge / Timeline / Map / Star Map / Board); RIGHT = class
+   subset (Deities / Persons / Themes / etc.).
+
+   This phase ships HTML + CSS only — no behavior wiring. The
+   dropdowns exist but their item lists are empty until Phase 22-B
+   (master-view selector) and Phase 22-C (class selector).
+
+   Visual contract per AUDIT/topbar-pill-refactor-design-2026-05-23.md
+   §2: same glass-on-dark chrome as .nav-hub-trigger + .forge-status-
+   mode (their styles are the reusable primitive — don't introduce a
+   third).
+   ════════════════════════════════════════════════════════════════ */
+.app-pill-wrap {
+  position: fixed;
+  top: 14px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 245;        /* above nav-hub-menu (240) — pill sits above */
+  pointer-events: none; /* the wrap doesn't catch; children do */
+}
+.app-pill {
+  display: inline-flex;
+  align-items: stretch;
+  height: 32px;
+  border-radius: 16px;
+  border: 1px solid rgba(212,165,90,0.28);
+  background: rgba(13,17,25,0.78);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  box-shadow: 0 4px 14px rgba(0,0,0,0.32);
+  overflow: hidden;
+  pointer-events: auto;
+}
+.app-pill-side {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 0 14px;
+  min-width: 130px;
+  height: 100%;
+  background: transparent;
+  border: 0;
+  color: var(--gold, #d4a55a);
+  font-family: var(--mono, "JetBrains Mono", Menlo, monospace);
+  font-size: 11px;
+  letter-spacing: 0.10em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: background 100ms ease, color 100ms ease;
+}
+.app-pill-side:hover {
+  background: rgba(212,165,90,0.10);
+  color: var(--gold-1, #e8c889);
+}
+.app-pill-side[aria-expanded="true"] {
+  background: rgba(212,165,90,0.16);
+  color: var(--gold-1, #e8c889);
+}
+.app-pill-icon {
+  font-size: 13px;
+  line-height: 1;
+  color: inherit;
+  opacity: 0.85;
+  flex: 0 0 auto;
+}
+.app-pill-label {
+  flex: 1 1 auto;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  text-align: left;
+}
+.app-pill-caret {
+  font-size: 9px;
+  line-height: 1;
+  opacity: 0.65;
+  flex: 0 0 auto;
+}
+.app-pill-divider {
+  width: 1px;
+  background: rgba(212,165,90,0.28);
+  flex: 0 0 auto;
+}
+/* Dropdown panels — anchored to pill bottom-left (master) and
+   bottom-right (class). Position is set inline via JS in 22-B/22-C
+   to handle resize + responsive collapse cleanly; the defaults
+   below position the panels just below the pill assuming the pill
+   stays roughly centered on a desktop viewport. */
+.app-pill-menu {
+  position: fixed;
+  top: 52px;            /* 14 (pill top) + 32 (pill height) + 6 (gap) */
+  min-width: 220px;
+  max-height: calc(100vh - 80px);
+  overflow-y: auto;
+  border-radius: 10px;
+  border: 1px solid rgba(212,165,90,0.22);
+  background: rgba(13,17,25,0.92);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  box-shadow: 0 8px 32px rgba(0,0,0,0.50);
+  padding: 8px 0;
+  z-index: 246;
+  /* Hidden by default; .is-open is the visible state */
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(-6px) scale(0.97);
+  transform-origin: 50% -8px;
+  transition: opacity 140ms ease, transform 180ms cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+.app-pill-menu.is-open {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(0) scale(1);
+}
+/* Anchor by side — JS sets `left:` explicitly to align under the
+   correct pill half; these are fallbacks for the initial paint. */
+.app-pill-menu--master { left: calc(50% - 145px); transform-origin: 30% -8px; }
+.app-pill-menu--class  { left: calc(50% + 5px);   transform-origin: 70% -8px; }
+/* Empty-state placeholder (visible only when the menu opens without
+   any items wired — i.e., before Phase 22-B/22-C land their content).
+   Renders a faint "wiring in next phase" hint so the scaffold doesn't
+   read as broken. */
+.app-pill-menu:empty::after {
+  content: "wiring in next phase";
+  display: block;
+  padding: 10px 14px;
+  color: var(--text-3, #6b7280);
+  font-family: var(--mono, "JetBrains Mono", Menlo, monospace);
+  font-size: 10px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+/* Responsive collapse — narrow viewports drop the pill to a single
+   unified button. Spec'd in §2.5 of the refactor audit; full
+   responsive collapse + keyboard nav lands in Phase 22-E. For now
+   we just stop the pill colliding with the zoom meter at <960px by
+   shrinking the side min-widths. */
+@media (max-width: 960px) {
+  .app-pill-side { min-width: 100px; padding: 0 10px; }
+  .app-pill-label { letter-spacing: 0.06em; }
+}
+@media (max-width: 720px) {
+  /* Below 720px we hide the pill entirely until Phase 22-E ships
+     the proper collapsed-single-button variant. The old Forge
+     bottom-bar pill stays functional on mobile. */
+  .app-pill-wrap { display: none; }
+}
+
 /* ── Phase 21A2 (2026-05-21) ─ Debug-stats button + popover ── */
 .forge-debug-btn {
   width: 38px; height: 32px;
