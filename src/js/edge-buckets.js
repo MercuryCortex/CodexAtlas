@@ -150,6 +150,65 @@
     'syncretic-syncretic-fusion':          'fusion',
     'appropriated-by':                     'fusion',        // 16
     'visual-cognate':                      'fusion',        // 105
+
+    // ════════════════════════════════════════════════════════════
+    // Phase 21AP (2026-05-23) — PROTOCOL §3.1 21-type vocabulary
+    // ════════════════════════════════════════════════════════════
+    // The 21 locked cross-tradition edge types from PROTOCOL §3.1.
+    // Previously most of these fell through to the default
+    // 'association' bucket (ambient blue) — making ~250 cross-
+    // tradition edges I wired earlier in this session paint as if
+    // they were "shared-tradition" / "has-theme" relations. Now they
+    // paint in their semantically correct bucket so the wheel's
+    // color-coding actually means what the legend will say it means.
+    //
+    // Buckets routed PER the methodological-pluralism note in
+    // PROTOCOL §3.1 — see that doc for the framework rationale per
+    // type (Smith / Assmann / Parker / Dumézil / Mark Smith / etc).
+    // ════════════════════════════════════════════════════════════
+
+    // ── PROTOCOL §3.1 — TRANSMISSION (bronze): 5 types ────────
+    'cognate':                             'transmission',
+    'direct-borrowing':                    'transmission',
+    'iconographic-borrowing':              'transmission',
+    'substrate-influence':                 'transmission',
+    'continuous-development':              'transmission',
+
+    // ── PROTOCOL §3.1 — PARALLEL (teal): 4 types ──────────────
+    'scholarly-parallel':                  'parallel',
+    // 'parallel-motif' already mapped above (1025 existing edges)
+    'functional-equivalent':               'parallel',
+    'interpretatio-nominal':               'parallel',      // Assmann translatio deorum
+    // Tacitus/Herodotus-era interpretatio variants. The TYPE-level
+    // distinction is Parker's nominal/cultic axis; the tradition
+    // doing the interpretatio (romana / graeca / germanica / etc)
+    // lives in `notes:`. We keep these legacy types in PARALLEL
+    // (the safer Assmann reading — "Wōden=Mercury" is translation
+    // not merger of cults) for the edges I wired earlier this
+    // session before the Phase 1 rename. The Phase 3 data sweep
+    // will migrate them to `interpretatio-nominal` over time; until
+    // then they paint as parallel like the new type.
+    'interpretatio-romana':                'parallel',
+    'interpretatio-graeca':                'parallel',
+    'interpretatio-germanica':             'parallel',
+
+    // ── PROTOCOL §3.1 — FUSION (orange): 5 types ──────────────
+    'same-as':                             'fusion',
+    'interpretatio-cultic':                'fusion',        // Parker cultic-mode — new shared cult
+    'ancient-identification':              'fusion',
+    'composite-deity':                     'fusion',        // Sarapis, Hermes Trismegistus, Amun-Re
+    'folk-syncretism':                     'fusion',
+
+    // ── PROTOCOL §3.1 — KINSHIP (lilac): 2 types ──────────────
+    'manifestation-of':                    'kinship',       // honji-suijaku / avatara / incarnation
+    'avatara-of':                          'kinship',       // legacy — subsumed by manifestation-of via notes variant
+    'constituent-of':                      'kinship',
+
+    // ── PROTOCOL §3.1 — POLEMIC (red): 5 types ────────────────
+    // 'polemic-against' + 'polemic-inversion' already mapped above
+    'demonization':                        'polemic',       // Augustine City of God II.4 — distinct from inversion
+    'prefiguration-claim':                 'polemic',       // Justin Martyr logos spermatikos; OT-prefigures-Christ
+    'negative-identification':             'polemic',       // Marcion / Islamic Trinity-critique; Wikidata P1889
   };
 
   // Directional edge types. Bright stop sits on the SEMANTIC origin.
