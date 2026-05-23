@@ -13,7 +13,7 @@ The default mental model: gods of polytheistic pantheons. *Zeus, Vishnu, Amatera
 The single deity of monotheistic traditions: *Allah, Yahweh, the Judeo-Christian Father*. These are theologically **NOT** "one god among many" — they are the sole divine reality within their framework. The `role` field of each node specifies the doctrinal status.
 
 ### 3. Trinitarian persons (Christian-specific)
-The three Persons of the Trinity: *god-the-father-christian, jesus-christ-deity, holy-spirit-christian, the-trinity*. Christian doctrine asserts these are **one God in three Persons** (*homoousios* per Nicaea 325 + Constantinople 381). They are filed in 03_deities/ because Trinitarian theology treats each Person as fully divine, but the `role` field of each node explicitly notes the Trinitarian-doctrinal status to distinguish from polytheistic god-framing.
+The three Persons of the Trinity: *god-the-father-christian, jesus-christ-deity, holy-spirit, the-trinity*. Christian doctrine asserts these are **one God in three Persons** (*homoousios* per Nicaea 325 + Constantinople 381). They are filed in 03_deities/ because Trinitarian theology treats each Person as fully divine, but the `role` field of each node explicitly notes the Trinitarian-doctrinal status to distinguish from polytheistic god-framing.
 
 ### 4. Composite / syncretic divine figures
 Cross-tradition syncretic deities + late-antique constructions: *Serapis (Osiris-Apis-Zeus, Ptolemaic engineered fusion), Sol Invictus (Roman imperial sun-cult), Hermes Trismegistus (Greek-Egyptian Thoth-Hermes fusion), Christ Pantokrator (iconographic-theological synthesis figure)*. Filed in 03_deities/ because they functioned as objects of worship in their context.

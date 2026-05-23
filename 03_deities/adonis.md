@@ -27,7 +27,7 @@ syncretic-edges:
   - target: "[[dionysus]]"
     type: "structural-parallel"
     notes: "Both are beautiful young male deities associated with vegetation, wine, ecstatic ritual, and premature violent death. The Adonia (mourning festival for Adonis) parallels the sparagmos (tearing-apart) rituals of Dionysian religion. Both are foreign gods absorbed into Greek religion from the East — Dionysus from Thrace/Phrygia, Adonis from Phoenicia. Both were associated with mystery cults that promised initiates a participation in the divine cycle of death and rebirth"
-  - target: "[[tammuz-dumuzi]]"
+  - target: "[[dumuzi-tammuz]]"
     type: "identification"
     notes: "MASSIVE WIN: Adonis IS Tammuz/Dumuzi — the Mesopotamian shepherd-god whose descent to the underworld is narrated in the Sumerian 'Descent of Inanna' (~2100 BCE). The name 'Adonis' derives from Semitic *adon* ('lord'), the same title as the Phoenician/Hebrew *Adonai*. The Byblos cult of Adonis was a Hellenized form of the Semitic Tammuz cult: Aphrodite = Ishtar/Inanna mourning her dead lover. The six-month underworld / six-month return cycle of Adonis maps exactly onto Inanna's descent-and-return narrative and the seasonal agricultural cycle"
   - target: "[[jesus-of-nazareth]]"
@@ -41,7 +41,7 @@ mentioned-in:
   - "[[tradition-roman-religion]]"
   - "[[tradition-mystery-cults]]"
 syncretic-with:
-  - "[[tammuz-dumuzi]]"
+  - "[[dumuzi-tammuz]]"
   - "[[osiris]]"
   - "[[dionysus]]"
 events:

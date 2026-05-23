@@ -15,13 +15,13 @@ child-of: ["Ahura Mazda (in the transcendent-creator reading) or co-eternal with
 consort: []
 attributes: []
 attested-in: ["[[phase-2-002-gathas-of-zarathustra]]", "[[phase-2-004-yasna-younger-avesta]]"]
-equivalents: []
+equivalents: ["[[holy-spirit]]"]
 syncretic-edges:
-  - target: "holy-spirit-christian"
-    type: "scholarly-parallel"
-    source: "Boyce & Grenet 1991"
-    notes: "The trans-religious 'Holy Spirit' (ruaḥ ha-qodesh, pneuma hagion) concept may have absorbed Zoroastrian Spenta Mainyu vocabulary in the post-exilic and Hellenistic Jewish/Christian milieu. Heavily contested mechanism."
-  - target: "persian-period-injection"
+  - target: "[[holy-spirit]]"
+    type: "substrate-influence"
+    source: "Boyce & Grenet 1991 *A History of Zoroastrianism* vol. 3"
+    notes: "The trans-religious 'Holy Spirit' (ruaḥ ha-qodesh, pneuma hagion) concept may have absorbed Zoroastrian Spenta Mainyu vocabulary in the post-exilic and Hellenistic Jewish/Christian milieu. The translation of Avestan *Spenta Mainyu* = 'Holy Spirit' is structurally striking. Heavily contested mechanism but the structural parallel is uncontested"
+  - target: "[[persian-period-injection]]"
     type: "source-deity-of-transmission"
     source: "Alexander 2010 on the Qumran 1QS 3:13–4:26 Two-Spirits tractate; Boyce 1975, *History of Zoroastrianism* vol. I — Spenta Mainyu is the Bounteous-Spirit pole of the Gathic primordial pair whose Spirit-of-Truth / Spirit-of-Deceit structure is the closest documented Persian source for the Essene Two Spirits doctrine. See [[persian-period-injection]] Channel 1 (cosmic dualism)"
     notes: "Spenta Mainyu's role is theologically subtler than Angra Mainyu's — in Younger-Avestan + Pahlavi Zoroastrianism Spenta Mainyu is increasingly identified WITH Ahura Mazda, leaving Ahriman as the standalone adversary; this collapse is one of the source-templates for the Jewish/Christian Holy Spirit (pneuma hagion) developing as God's own active-creative aspect rather than a separate hypostasis"
