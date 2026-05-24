@@ -119,7 +119,9 @@ Numbered content folders under the vault root. Each = one lens. Each holds nodes
 
 **Rationale for every lens (academic + bars-cleared):** `00_meta/ONTOLOGY-RATIONALE-2026-05-18.md`. Read before proposing any change.
 
-**⚠️ Build-script awareness gap:** lenses 08 + 18–26 are real on disk but `build_data.py` does not yet recognize them (queued for the next Lane B window). Investigation agents may stage nodes there; they integrate into the graph the moment the build script update lands.
+**✅ Build-script awareness:** all 29 lenses (08 + 18–26 + 27–29 + 31 consciousness-figure) are recognized by `build_data.py` lines 21–62. (The previous "queued for next Lane B window" warning here was stale — code was current well before 2026-05-25 tyrant audit corrected this doc per finding #16.)
+
+**🆕 Forward-queued lens (2026-05-25):** John has flagged **LAW / Judiciary** as a future lens — "absorbing law books the same way we did with scriptures, this crossover will be gold." Will land as folder `30_law/` (or next free number) once the tyrant remediation Phase 4 decision is made. Sources at ingest: Code of Hammurabi · Mosaic Law · Manusmṛti · Twelve Tables · Justinian Codex · Sharia + fiqh schools · canon law (CIC) · common law / Magna Carta · US Constitution · UDHR. See `AUDIT/2026-05-25-tyrant-remediation-plan.md` "LAW / JUDICIARY lens" section.
 
 ---
 
